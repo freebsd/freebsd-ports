@@ -1,0 +1,12 @@
+--- orig/unexelf.c	Wed Jul 17 07:39:03 1996
++++ src/unexelf.c	Wed Sep 30 09:35:47 1998
+@@ -845,7 +845,9 @@
+ 
+       for (; symp < symendp; symp ++)
+ 	if (strcmp ((char *) (symnames + symp->st_name), "_end") == 0
+-	    || strcmp ((char *) (symnames + symp->st_name), "_edata") == 0)
++	    || strcmp ((char *) (symnames + symp->st_name), "end") == 0
++	    || strcmp ((char *) (symnames + symp->st_name), "_edata") == 0
++	    || strcmp ((char *) (symnames + symp->st_name), "edata") == 0)
+ 	  memcpy (&symp->st_value, &new_bss_addr, sizeof (new_bss_addr));
+     }
