@@ -1,0 +1,16 @@
+   Short description of Xrus
+   ~~~~~~~~~~~~~~~~~~~~~~~~~
+   Xrus - program for switching two keyboard layouts with a hot
+key combination. It also serves as autolock.
+   It can be  compiled with Motif, Lesstif, Xaw  or without any
+widget library. In  the later case it won't show  its icon with
+keyboard indicator.
+   It gets all keyboard and mouse events; when a particular hot
+key combination  is pressed,  it swaps 1,2  and 3,4  columns of
+keyboard map. When a timeout  without keyboard and mouse events
+passes, it starts a locker.
+
+   Author: Alexander V. Lukaynov <lav@yars.free.net>
+
+-- Igor
+igor@zynaps.ru
