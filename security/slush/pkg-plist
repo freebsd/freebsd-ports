@@ -1,0 +1,8 @@
+bin/slush
+sbin/slushd
+share/doc/slush/COPYING
+share/doc/slush/HISTORY
+share/doc/slush/INSTALL
+share/doc/slush/README
+share/doc/slush/control.txt
+@dirrm share/doc/slush
