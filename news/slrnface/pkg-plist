@@ -1,0 +1,3 @@
+bin/slrnface
+share/examples/slrnface/slrnface.sl
+@dirrm share/examples/slrnface

@@ -1,0 +1,20 @@
+--- Makefile.orig	Mon Dec 25 02:38:17 2000
++++ Makefile	Thu Aug 22 21:28:44 2002
+@@ -1,13 +1,12 @@
+-CC = cc
+-X_INCL = # location of X include files, if needed
++X_INCL = -I${X11BASE}/include # location of X include files, if needed
+ X_LIBS = -lXt -lX11 # X libs
+-XF_LIB = -L/usr/local/lib -lcompface # compface library
+-C_FLAGS = -O -D_REENTRANT
++XF_LIB = -L${X11BASE}/lib -L${LOCALBASE}/lib -lcompface # compface library
++C_FLAGS+= -O -D_REENTRANT
+ 
+ OS_DEFS = #-DLINUX_SUX
+ 
+ CFLAGS = $(C_FLAGS) $(OS_DEFS) $(X_INCL)
+-LDFLAGS = $(XF_LIB) $(X_LIBS) -lpthread
++LDFLAGS = $(XF_LIB) $(X_LIBS) "-pthread"
+ 
+ slrnface: slrnface.c
+ 	$(CC) $(CFLAGS) -o slrnface slrnface.c $(LDFLAGS)
