@@ -18,6 +18,7 @@
     SUBDIR += iconv-rfc1345
     SUBDIR += ish
     SUBDIR += konwert
+    SUBDIR += ktextdecode
     SUBDIR += libiconv
     SUBDIR += libutf-8
     SUBDIR += mimelib
