@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Coro
-PORTVERSION=	1.0a
+PORTVERSION=	1.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Coro
@@ -19,9 +19,20 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Event.pm:${PORTSDIR}/devel/p5-Event \
 		${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-WRKSRC=		${WRKDIR}/${DISTNAME:S/a$//}
-
 PERL_CONFIGURE=	yes
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	Changes
+EXAMPLES=	eg/attributes eg/bench eg/cont eg/dns eg/event eg/lwp eg/myhttpd eg/prodcons1 eg/prodcons2 eg/prodcons3 eg/readline
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${EXAMPLES:S|^|${WRKSRC}/|} ${EXAMPLESDIR}
+	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
+.endif
 
 .include <bsd.port.pre.mk>
 

@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Coro/Event/Event.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Coro/Event/Event.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Coro/State/State.so
@@ -20,8 +21,19 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Coro/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Coro/Event.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Coro/Socket.pm
+%%PORTDOCS%%%%EXAMPLESDIR%%/attributes
+%%PORTDOCS%%%%EXAMPLESDIR%%/bench
+%%PORTDOCS%%%%EXAMPLESDIR%%/cont
+%%PORTDOCS%%%%EXAMPLESDIR%%/dns
+%%PORTDOCS%%%%EXAMPLESDIR%%/event
+%%PORTDOCS%%%%EXAMPLESDIR%%/lwp
+%%PORTDOCS%%%%EXAMPLESDIR%%/myhttpd
+%%PORTDOCS%%%%EXAMPLESDIR%%/prodcons1
+%%PORTDOCS%%%%EXAMPLESDIR%%/prodcons2
+%%PORTDOCS%%%%EXAMPLESDIR%%/prodcons3
+%%PORTDOCS%%%%EXAMPLESDIR%%/readline
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Coro/Event
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Coro/State
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Coro
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Coro
-@unexec rmdir %D/%%SITE_PERL%%/mach 2>/dev/null || true
