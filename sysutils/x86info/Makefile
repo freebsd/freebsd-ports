@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	x86info
-PORTVERSION=	1.8
+PORTVERSION=	1.9
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.suse.com/pub/people/davej/x86info/ \
 		${MASTER_SITE_SOURCEFORGE}
