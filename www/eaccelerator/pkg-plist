@@ -1,4 +1,7 @@
+bin/encoder
 lib/php/%%EXT_DIR%%/mmcache.so
 %%PORTDOCS%%share/doc/turck-mmcache/README
 @unexec rmdir %D/lib/php/%%EXT_DIR%% 2> /dev/null || true
+share/examples/turck-mmcache/mmcache.php
 %%PORTDOCS%%@dirrm share/doc/turck-mmcache
+@dirrm share/examples/turck-mmcache
