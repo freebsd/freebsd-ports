@@ -8,7 +8,8 @@
 PORTNAME=	horde
 PORTVERSION=	2.1
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.horde.org/pub/horde/tarballs/
+MASTER_SITES=	ftp://ftp.horde.org/pub/horde/tarballs/%SUBDIR%/
+MASTER_SITE_SUBDIR=	. old
 DISTNAME=	${PORTNAME}-${PORTVERSION}-RC2
 
 MAINTAINER=	thierry@pompo.net
