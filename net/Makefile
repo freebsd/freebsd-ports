@@ -588,6 +588,8 @@
     SUBDIR += py-bittornado-core
     SUBDIR += py-bittorrent
     SUBDIR += py-bittorrent-core
+    SUBDIR += py-bittorrent-core-devel
+    SUBDIR += py-bittorrent-devel
     SUBDIR += py-fngrab
     SUBDIR += py-google
     SUBDIR += py-jabber
