@@ -1,12 +1,12 @@
 # New ports collection makefile for:    cdrecord
-# Version required:     1.8a37
+# Version required:     1.8a40
 # Date created:         2 November 1997
 # Whom:                 jmz
 #
 # $FreeBSD$
 #
 
-DISTNAME=	cdrecord-1.8a37
+DISTNAME=	cdrecord-1.8a40
 CATEGORIES=	sysutils audio
 MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/alpha/ \
 		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/alpha/ \
