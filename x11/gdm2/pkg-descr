@@ -1,6 +1,3 @@
 The GNOME version of the xdm display manager. It has support for
 face pixmaps, multiple sessions plus clean shutdowns from the login
 menu.
-
-For now it only works with the 3.3.x series of XFree86 and a fairly
-recent FreeBSD (4.x-STABLE).
