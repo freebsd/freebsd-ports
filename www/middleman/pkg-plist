@@ -6,5 +6,5 @@ etc/mman.xml.dist
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @cwd /
 @exec mkdir -p %%MMAN_CACHE%%
-@unexec rm -rf %%MMAN_CACHE%%
+@unexec rmdir %D/%%MMAN_CACHE%% 2>/dev/null || true
 @dirrm /var/cache
