@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	tcsh
-PORTVERSION= 	6.09
+PORTVERSION= 	6.09.00
 CATEGORIES=	shells
 MASTER_SITES=   ftp://ftp.astron.com/pub/tcsh/
+DISTNAME=	tcsh-6.09
 
 MAINTAINER=     ache@FreeBSD.org
 
