@@ -1,0 +1,8 @@
+--- README.orig	Tue Sep  5 19:46:43 2000
++++ README	Thu Mar  8 03:31:32 2001
+@@ -60 +60 @@
+- -e, --rsh=COMMAND           specify rsh replacement
++ -e, --rsh=COMMAND           specify rsh replacement (default ssh)
+@@ -96 +96 @@
+-rsh or ssh system. Using ssh is recommended for its security
++rsh or ssh system. Using rsh is discouraged for lack of security

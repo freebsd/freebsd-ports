@@ -8,6 +8,7 @@
 
 PORTNAME=	rsync
 PORTVERSION=	2.4.6
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://samba.anu.edu.au/pub/rsync/  \
 		ftp://sunsite.auc.dk/pub/unix/rsync/  \
@@ -24,6 +25,16 @@ MAINTAINER=	obrien@FreeBSD.org
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 400016
+USE_SSH?=	yes
+.else
+USE_SSH?=	no
+.endif
+
+.if ${USE_SSH:U} == YES
+EXTRA_PATCHES=	${FILESDIR}/ssh-patch-*
+.endif
 
 .if ${OSVERSION} >= 400014
 CONFIGURE_ARGS=	--enable-ipv6
@@ -48,5 +59,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/doc/rsync
 	${INSTALL_DATA} ${WRKSRC}/tech_report.tex ${PREFIX}/share/doc/rsync
 .endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
