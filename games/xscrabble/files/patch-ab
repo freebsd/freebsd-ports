@@ -1,5 +1,5 @@
 --- XScrabble.ad.orig	Tue Mar 11 06:57:16 1997
-+++ XScrabble.ad	Sun Jul 27 09:53:56 1997
++++ XScrabble.ad	Tue Jan 18 00:00:00 1997
 @@ -1,9 +1,9 @@
  ! *** XScrabble resource file ***
  
@@ -7,9 +7,9 @@
 -XScrabble.dictfile:		/usr/local/lib/OSPD3
 -XScrabble.permfile:		/usr/local/lib/scrabble_permutations
 -XScrabble.scorefile:		/usr/local/lib/xscrabble.scores
-+XScrabble.dictfile:		@XSCRABBLEDIR@/OSPD3
-+XScrabble.permfile:		@XSCRABBLEDIR@/scrabble_permutations
-+XScrabble.scorefile:		@XSCRABBLEDIR@/xscrabble.scores
++XScrabble.dictfile:		%%PREFIX%%/lib/X11/xscrabble/OSPD3
++XScrabble.permfile:		%%PREFIX%%/lib/X11/xscrabble/scrabble_permutations
++XScrabble.scorefile:		%%PREFIX%%/lib/X11/xscrabble/xscrabble.scores
  
  ! version string, to make sure correct resource file is loaded
  XScrabble*version:		100
