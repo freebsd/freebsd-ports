@@ -1,6 +1,6 @@
 The Free Software Foundation's "sed" stream editor.
 
-This utility exist in the FreeBSD base collection, but the GNU
+This utility exists in the FreeBSD base collection, but the GNU
 versions have added functionality that is sometimes useful.
 
 Note that this port will install this utility with a `g' prefix,
