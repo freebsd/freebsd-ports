@@ -1,13 +1,20 @@
---- Makefile.in.orig	Mon Mar 22 13:52:13 2004
-+++ Makefile.in	Mon Mar 22 13:59:02 2004
-@@ -163,7 +163,7 @@
+--- Makefile.in.orig	Wed Mar 31 01:57:05 2004
++++ Makefile.in	Wed Mar 31 02:07:39 2004
+@@ -163,12 +163,12 @@
  
  SUBDIRS = include util
  
 -AM_CFLAGS = $(RENDER_CFLAGS) $(X_CFLAGS) -I$(top_srcdir)/include/X11
-+AM_CFLAGS = $(RENDER_CFLAGS) $(X_CFLAGS) -I$(top_srcdir)/include -I$(top_srcdir)/include/X11
++AM_CFLAGS = $(RENDER_CFLAGS) $(X_CFLAGS) $(SM_CFLAGS) -I$(top_srcdir)/include -I$(top_srcdir)/include/X11
  
  lib_LTLIBRARIES = libXt.la
+ 
+-BUILT_SOURCES = StringDefs.c StringDefs.h Shell.h
+-CLEANFILES = StringDefs.c StringDefs.h Shell.h
++BUILT_SOURCES = StringDefs.c include/X11/StringDefs.h include/X11/Shell.h
++CLEANFILES=StringDefs.c StringDefs.h Shell.h include/X11/StringDefs.h include/X11/Shell.h
+ 
+ nodist_libXt_la_SOURCES = StringDefs.c
  
 @@ -210,7 +210,6 @@
  	Manage.c \
@@ -17,3 +24,11 @@
  	PassivGraI.h \
  	PassivGrab.c \
  	Pointer.c \
+@@ -899,6 +898,7 @@
+ 	$(top_builddir)/util/makestrs $(STRINGSABIOPTIONS) < $(STRING_LIST) > StringDefs.c
+ 	install -d include/X11/
+ 	install -m644 $(top_builddir)/StringDefs.h include/X11/
++	install -m644 $(top_builddir)/Shell.h include/X11/
+ 
+ $(top_builddir)/util/makestrs$(EXEEXT): force
+ 	cd util; $(MAKE)

@@ -1,5 +1,5 @@
---- include/Makefile.in.orig	Mon Mar 22 13:58:27 2004
-+++ include/Makefile.in	Mon Mar 22 13:58:41 2004
+--- include/Makefile.in.orig	Wed Mar 31 01:57:05 2004
++++ include/Makefile.in	Wed Mar 31 02:09:56 2004
 @@ -148,6 +148,7 @@
  	X11/Intrinsic.h \
  	X11/IntrinsicP.h \
@@ -8,3 +8,16 @@
  	X11/RectObj.h \
  	X11/RectObjP.h \
  	X11/ShellP.h \
+@@ -155,9 +156,10 @@
+ 	X11/VendorP.h
+ 
+ nodist_xtinclude_HEADERS = \
+-	X11/StringDefs.h
++	X11/StringDefs.h \
++	X11/Shell.h
+ 
+-DISTCLEANFILES = X11/StringDefs.h
++DISTCLEANFILES = X11/StringDefs.h X11/Shell.h
+ subdir = include
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
