@@ -80,6 +80,7 @@ share/sip/qt/qlineedit.sip
 share/sip/qt/qlist.sip
 share/sip/qt/qlistbox.sip
 share/sip/qt/qlistview.sip
+share/sip/qt/qlocale.sip
 share/sip/qt/qmainwindow.sip
 share/sip/qt/qmemarray.sip
 share/sip/qt/qmenubar.sip
@@ -222,6 +223,7 @@ share/sip/qtnetwork/qlocalfs.sip
 share/sip/qtnetwork/qnetwork.sip
 share/sip/qtnetwork/qserversocket.sip
 share/sip/qtnetwork/qsocket.sip
+share/sip/qtnetwork/qsocketdevice.sip
 share/sip/qtnetwork/qtnetworkmod.sip
 share/sip/qtsql/copying.sip
 share/sip/qtsql/qdatabrowser.sip
