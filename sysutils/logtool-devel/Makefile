@@ -7,37 +7,40 @@
 #
 
 PORTNAME=	logtool
-PORTVERSION=	1.0.7
+PORTVERSION=	1.2.2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://xjack.org/logtool/logtool/
+MASTER_SITES=	http://xjack.org/logtool/download/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Parse syslog logfile into a palatable format
+MAINTAINER=	sergei@kolobov.com
+COMMENT=	Parse ASCII logfiles into ANSI, CSV, HTML formats
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+USE_GMAKE= 		yes
+USE_GETOPT_LONG= 	yes
 
-USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --sysconfdir=${PREFIX}/etc/logtool
+GNU_CONFIGURE=		yes
+CONFIGURE_ENV= 		CFLAGS="${CFLAGS}" 
+CONFIGURE_ARGS=		--sysconfdir=${PREFIX}/etc/${PORTNAME}
 
-ALL_TARGET=	build
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 MAN1=		logtool.1
+DOCS=		CREDITS Changes README TODO doc/logtool.txt
 
-post-patch:
-	@${REINPLACE_CMD} -e "s,%%CFLAGS%%,${CFLAGS},g" ${WRKSRC}/configure
+do-build:
+	cd ${WRKSRC}/src && ${GMAKE} INCLUDES="${CPPFLAGS}"
 
-post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/logtool.1 ${PREFIX}/man/man1
-	@${CP} ${WRKSRC}/conf/logtool.conf ${PREFIX}/etc/logtool/logtool.conf.dist
-	@${CP} ${WRKSRC}/conf/exclude ${PREFIX}/etc/logtool/exclude.dist
-	@${CP} ${WRKSRC}/conf/green ${PREFIX}/etc/logtool/green.dist
-	@${CP} ${WRKSRC}/conf/include ${PREFIX}/etc/logtool/include.dist
-	@${CP} ${WRKSRC}/conf/yellow ${PREFIX}/etc/logtool/yellow.dist
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/src/logtool ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doc/logtool.1 ${MANPREFIX}/man/man1
+	@${MKDIR} ${EXAMPLESDIR} ${EXAMPLESDIR}/scripts
+	${INSTALL_DATA} ${WRKSRC}/conf/* ${EXAMPLESDIR}
+	@${RM} ${EXAMPLESDIR}/logtool.conf.in
+	${INSTALL_DATA} ${WRKSRC}/scripts/* ${EXAMPLESDIR}/scripts
 .if !defined(NOPORTDOCS)
-	@${ECHO_MSG} "===>   Installing logtool docs in ${PREFIX}/share/doc/logtool"
 	@${MKDIR} ${DOCSDIR}
-	@${CP} -Rvf ${WRKSRC}/scripts ${WRKSRC}/doc/logtool.txt ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
+	@${SED} -e 's!PREFIX!${PREFIX}!' ${.CURDIR}/pkg-message > ${PKGMESSAGE}
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
