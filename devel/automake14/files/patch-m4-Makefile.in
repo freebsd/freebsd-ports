@@ -1,0 +1,11 @@
+--- m4/Makefile.in.orig	Sun Jul 15 13:23:30 2001
++++ m4/Makefile.in	Sun Oct 13 08:42:46 2002
+@@ -65,7 +65,7 @@
+ 
+ MAINT_CHARSET = latin1
+ 
+-m4datadir = $(datadir)/aclocal
++m4datadir = $(datadir)/aclocal14
+ m4data_DATA = ccstdc.m4 cond.m4 dmalloc.m4 error.m4 header.m4 init.m4 lex.m4 lispdir.m4 maintainer.m4 missing.m4 mktime.m4 multi.m4 obstack.m4 protos.m4 ptrdiff.m4 regex.m4 sanity.m4 strtod.m4 termios.m4 winsz.m4
+ 
+ 
