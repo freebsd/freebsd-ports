@@ -145,6 +145,7 @@
     SUBDIR += icontact
     SUBDIR += imageindex
     SUBDIR += imagesort
+    SUBDIR += imageviewer
     SUBDIR += imc
     SUBDIR += imlib
     SUBDIR += imlib2
