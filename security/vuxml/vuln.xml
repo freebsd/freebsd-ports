@@ -83,6 +83,9 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	    (kdelibs-3.3.2/dcop/dcopidlng/dcopidlng) creates temporary
 	    files in a unsecure manner.</p>
 	</blockquote>
+	<p><strong>Note:</strong> dcopidlng is only used at build
+	  time, so only users installing KDE are vulnerable, not users
+	  already running KDE.</p>
       </body>
     </description>
     <references>
@@ -93,6 +96,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2005-01-21</discovery>
       <entry>2005-02-18</entry>
+      <modified>2005-02-20</modified>
     </dates>
   </vuln>
 
