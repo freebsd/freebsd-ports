@@ -7012,6 +7012,7 @@ uzoo-console	ports/audio/uzoo-console
 v		ports/x11-toolkits/v
 vMac		ports/emulators/vMac
 vacation	src/usr.bin/vacation
+vamos		ports/games/vamos
 varconf		ports/devel/varconf
 vat		ports/mbone/vat
 vb2c		ports/devel/vb2c
