@@ -7,13 +7,14 @@
 
 PORTNAME=	gkrellmms
 PORTVERSION=	0.5.8
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://gkrellm.luon.net/files/
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	GKrellM XMMS Plugin
 
-LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
 
