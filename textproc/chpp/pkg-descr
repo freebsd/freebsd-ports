@@ -16,3 +16,5 @@ features:
      Most importantly, it provides support for complex data structures,
      namely lists and hashes (associative arrays), which can be nested
      arbitrarily.
+
+WWW: http://trick.unix.cslab.tuwien.ac.at/~chpp/

@@ -1,0 +1,56 @@
+--- gc/Makefile.orig	Tue Feb  9 23:03:04 1999
++++ gc/Makefile	Tue Jul  4 04:04:14 2000
+@@ -8,15 +8,15 @@
+ #	 c++ interface to gc.a
+ # cord/de - builds dumb editor based on cords.
+ ABI_FLAG= 
+-CC=cc $(ABI_FLAG)
+-CXX=CC $(ABI_FLAG)
++CC+= $(ABI_FLAG)
++CXX+= $(ABI_FLAG)
+ AS=as $(ABI_FLAG)
+ #  The above doesn't work with gas, which doesn't run cpp.
+ #  Define AS as `gcc -c -x assembler-with-cpp' instead.
+ #  Under Irix 6, you will have to specify the ABI for as if you specify
+ #  it for the C compiler.
+ 
+-CFLAGS= -O -DNO_SIGNALS -DALL_INTERIOR_POINTERS -DNO_EXECUTE_PERMISSION -DSILENT
++CFLAGS+= -DNO_SIGNALS -DALL_INTERIOR_POINTERS -DNO_EXECUTE_PERMISSION -DSILENT
+ 
+ # Setjmp_test may yield overly optimistic results when compiled
+ # without optimization.
+@@ -98,12 +98,12 @@
+ 
+ 
+ 
+-LIBGC_CFLAGS= -O -DNO_SIGNALS -DSILENT \
++LIBGC_CFLAGS= -DNO_SIGNALS -DSILENT \
+     -DREDIRECT_MALLOC=GC_malloc_uncollectable \
+     -DDONT_ADD_BYTE_AT_END -DALL_INTERIOR_POINTERS
+ #   Flags for building libgc.a -- the last two are required.
+ 
+-CXXFLAGS= $(CFLAGS) 
++#CXXFLAGS= $(CFLAGS) 
+ AR= ar
+ RANLIB= ranlib
+ 
+@@ -168,8 +168,8 @@
+ all: gc.a gctest
+ 
+ pcr: PCR-Makefile gc_private.h gc_hdrs.h gc.h config.h mach_dep.o $(SRCS)
+-	make -f PCR-Makefile depend
+-	make -f PCR-Makefile
++	$(MAKE) -f PCR-Makefile depend
++	$(MAKE) -f PCR-Makefile
+ 
+ $(OBJS) test.o dyn_load.o dyn_load_sunos53.o: $(srcdir)/gc_priv.h $(srcdir)/gc_hdrs.h $(srcdir)/gc.h \
+     $(srcdir)/config.h $(srcdir)/gc_typed.h Makefile
+@@ -189,7 +189,7 @@
+ #	ignore ranlib failure; that usually means it doesn't exist, and isn't needed
+ 
+ libgc.a: 
+-	make CFLAGS="$(LIBGC_CFLAGS)" clean gc.a gcc_support.o
++	$(MAKE) CFLAGS="$(LIBGC_CFLAGS)" clean gc.a gcc_support.o
+ 	mv gc.a libgc.a
+ 	rm -f on_sparc_sunos5
+ 	./if_mach SPARC SUNOS5 touch on_sparc_sunos5
