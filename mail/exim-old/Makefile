@@ -30,7 +30,6 @@ MAKE_ENV+=	OSTYPE=${OPSYS} ARCHTYPE=${MACHINE_ARCH}
 
 # Uncomment the WITH_LDAP, WITH_MYSQL, and WITH_PGSQL definitions
 # to link against libmysqlclient and libpq respectively.
-# The libpam linkage is required for SMTP AUTH support.
 #WITH_LDAP=	yes
 #WITH_MYSQL=	yes
 #WITH_PGSQL=	yes
