@@ -14,11 +14,9 @@ MASTER_SITES=	ftp://ftp.samba.org/pub/samba/%SUBDIR%/ \
 		ftp://de.samba.org/pub/mirror/samba/%SUBDIR%/ \
 		ftp://se.samba.org/pub/samba/%SUBDIR%/ \
 		ftp://ftp.sunet.se/pub/unix/utilities/samba/%SUBDIR%/
-MASTER_SITE_SUBDIR= . old-versions old
+MASTER_SITE_SUBDIR=	. old-versions old
 
 MAINTAINER=	dwcjr@FreeBSD.org
-
-USE_AUTOCONF=	yes
 
 .if defined(WITH_CUPS)
 LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups
@@ -34,19 +32,19 @@ SAMBA_CONFDIR=	${PREFIX}/etc
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/samba.sh.sample
 SAMPLE_CONFIG=	${SAMBA_CONFDIR}/smb.conf.default
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	 --libdir=${SAMBA_CONFDIR} \
+USE_AUTOCONF=	yes
+CONFIGURE_ARGS=	--libdir=${SAMBA_CONFDIR} \
 		--localstatedir=${VARDIR} --with-swatdir=${PREFIX}/share/swat \
 		--with-sambabook=${PREFIX}/share/swat/using_samba \
 		--with-lockdir=${VARDIR}/spool/lock \
 		--with-privatedir=${SAMBA_PRIVATE}
 
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
-CONFIGURE_ARGS+=--with-krb5=${KRB5_HOME}
+CONFIGURE_ARGS+=	--with-krb5=${KRB5_HOME}
 .endif
 
 .if defined(WITH_CUPS)
-CONFIGURE_ARGS+=--with-cups=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-cups=${LOCALBASE}
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
@@ -96,7 +94,7 @@ post-install:
 .endif
 
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/samba
+	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${PREFIX}/share/doc/samba
 	for i in ${WRKDIR}/${DISTNAME}/README				\
 			${WRKDIR}/${DISTNAME}/COPYING			\
@@ -108,18 +106,17 @@ post-install:
 			${WRKDIR}/${DISTNAME}/docs/THANKS		\
 			${WRKDIR}/${DISTNAME}/docs/announce		\
 			${WRKDIR}/${DISTNAME}/docs/history ; do		\
-		${INSTALL_DATA} $$i ${PREFIX}/share/doc/samba ;		\
+		${INSTALL_DATA} $$i ${DOCSDIR} ;		\
 	done
 	for i in faq htmldocs textdocs yodldocs ; do			\
-		${MKDIR} ${PREFIX}/share/doc/samba/$$i ;		\
+		${MKDIR} ${DOCSDIR}/$$i ;		\
 		for j in ${WRKDIR}/${DISTNAME}/docs/$$i/* ; do		\
 			if [ $$j != ${WRKDIR}/${DISTNAME}/docs/htmldocs/using_samba ] ; then \
-				${INSTALL_DATA} $$j ${PREFIX}/share/doc/samba/$$i ;\
+				${INSTALL_DATA} $$j ${DOCSDIR}/$$i ;\
 			fi; \
 		done							\
 	done
-	${MKDIR} ${PREFIX}/share/doc/samba
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/swat/README ${PREFIX}/share/doc/samba/README.swat
+	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/swat/README ${DOCSDIR}/README.swat
 .endif
 
 .include <bsd.port.mk>
