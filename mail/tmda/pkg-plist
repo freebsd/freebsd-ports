@@ -7,28 +7,30 @@ bin/tmda-ofmipd
 bin/tmda-pending
 bin/tmda-rfilter
 bin/tmda-sendmail
-lib/%%PYTHON_VERSION%%/site-packages/TMDA/Cookie.py
-lib/%%PYTHON_VERSION%%/site-packages/TMDA/Cookie.pyc
-lib/%%PYTHON_VERSION%%/site-packages/TMDA/Defaults.py
-lib/%%PYTHON_VERSION%%/site-packages/TMDA/Defaults.pyc
-lib/%%PYTHON_VERSION%%/site-packages/TMDA/Deliver.py
-lib/%%PYTHON_VERSION%%/site-packages/TMDA/Deliver.pyc
-lib/%%PYTHON_VERSION%%/site-packages/TMDA/Errors.py
-lib/%%PYTHON_VERSION%%/site-packages/TMDA/Errors.pyc
-lib/%%PYTHON_VERSION%%/site-packages/TMDA/FilterParser.py
-lib/%%PYTHON_VERSION%%/site-packages/TMDA/FilterParser.pyc
-lib/%%PYTHON_VERSION%%/site-packages/TMDA/HMAC.py
-lib/%%PYTHON_VERSION%%/site-packages/TMDA/HMAC.pyc
-lib/%%PYTHON_VERSION%%/site-packages/TMDA/MTA.py
-lib/%%PYTHON_VERSION%%/site-packages/TMDA/MTA.pyc
-lib/%%PYTHON_VERSION%%/site-packages/TMDA/SMTP.py
-lib/%%PYTHON_VERSION%%/site-packages/TMDA/SMTP.pyc
-lib/%%PYTHON_VERSION%%/site-packages/TMDA/Util.py
-lib/%%PYTHON_VERSION%%/site-packages/TMDA/Util.pyc
-lib/%%PYTHON_VERSION%%/site-packages/TMDA/Version.py
-lib/%%PYTHON_VERSION%%/site-packages/TMDA/Version.pyc
-lib/%%PYTHON_VERSION%%/site-packages/TMDA/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/TMDA/__init__.pyc
+%%PYTHON_SITELIBDIR%%/TMDA/Cookie.py
+%%PYTHON_SITELIBDIR%%/TMDA/Cookie.pyc
+%%PYTHON_SITELIBDIR%%/TMDA/Defaults.py
+%%PYTHON_SITELIBDIR%%/TMDA/Defaults.pyc
+%%PYTHON_SITELIBDIR%%/TMDA/Deliver.py
+%%PYTHON_SITELIBDIR%%/TMDA/Deliver.pyc
+%%PYTHON_SITELIBDIR%%/TMDA/Errors.py
+%%PYTHON_SITELIBDIR%%/TMDA/Errors.pyc
+%%PYTHON_SITELIBDIR%%/TMDA/FilterParser.py
+%%PYTHON_SITELIBDIR%%/TMDA/FilterParser.pyc
+%%PYTHON_SITELIBDIR%%/TMDA/HMAC.py
+%%PYTHON_SITELIBDIR%%/TMDA/HMAC.pyc
+%%PYTHON_SITELIBDIR%%/TMDA/MTA.py
+%%PYTHON_SITELIBDIR%%/TMDA/MTA.pyc
+%%PYTHON_SITELIBDIR%%/TMDA/MessageLogger.py
+%%PYTHON_SITELIBDIR%%/TMDA/MessageLogger.pyc
+%%PYTHON_SITELIBDIR%%/TMDA/SMTP.py
+%%PYTHON_SITELIBDIR%%/TMDA/SMTP.pyc
+%%PYTHON_SITELIBDIR%%/TMDA/Util.py
+%%PYTHON_SITELIBDIR%%/TMDA/Util.pyc
+%%PYTHON_SITELIBDIR%%/TMDA/Version.py
+%%PYTHON_SITELIBDIR%%/TMDA/Version.pyc
+%%PYTHON_SITELIBDIR%%/TMDA/__init__.py
+%%PYTHON_SITELIBDIR%%/TMDA/__init__.pyc
 %%PORTDOCS%%share/doc/tmda/COPYING
 %%PORTDOCS%%share/doc/tmda/CRYPTO
 %%PORTDOCS%%share/doc/tmda/ChangeLog
@@ -51,11 +53,13 @@ lib/%%PYTHON_VERSION%%/site-packages/TMDA/__init__.pyc
 %%PORTDOCS%%share/doc/tmda/htdocs/config.html
 %%PORTDOCS%%share/doc/tmda/htdocs/download.html
 %%PORTDOCS%%share/doc/tmda/htdocs/features.html
+%%PORTDOCS%%share/doc/tmda/htdocs/filter-sources.html
 %%PORTDOCS%%share/doc/tmda/htdocs/history.html
 %%PORTDOCS%%share/doc/tmda/htdocs/howtos.html
 %%PORTDOCS%%share/doc/tmda/htdocs/index.html
 %%PORTDOCS%%share/doc/tmda/htdocs/install.html
 %%PORTDOCS%%share/doc/tmda/htdocs/inuse.html
+%%PORTDOCS%%share/doc/tmda/htdocs/press.html
 %%PORTDOCS%%share/doc/tmda/htdocs/requirements.html
 %%PORTDOCS%%share/doc/tmda/htdocs/resources.html
 %%PORTDOCS%%share/doc/tmda/htdocs/results.html
@@ -68,4 +72,4 @@ share/tmda/confirm_request.txt
 %%PORTDOCS%%@dirrm share/doc/tmda/contrib
 %%PORTDOCS%%@dirrm share/doc/tmda/htdocs
 %%PORTDOCS%%@dirrm share/doc/tmda
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/TMDA
+@dirrm %%PYTHON_SITELIBDIR%%/TMDA

@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	tmda
-PORTVERSION=	0.59
+PORTVERSION=	0.61
 CATEGORIES=	mail python
-MASTER_SITES=	http://tmda.net/releases/ \
-		http://tmda.net/releases/old/
+MASTER_SITES=	http://tmda.net/releases/%SUBDIR%/
+MASTER_SITE_SUBDIR= . old
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mwm@mired.org
@@ -25,23 +25,21 @@ pre-install:
 do-install:
 	${MKDIR} ${PYTHON_SITELIBDIR}/TMDA
 	${INSTALL_SCRIPT} ${WRKSRC}/TMDA/*.py* ${PYTHON_SITELIBDIR}/TMDA
-	${MKDIR} ${PREFIX}/share/tmda
-	${INSTALL_DATA} ${WRKSRC}/templates/*.txt ${PREFIX}/share/tmda
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/templates/*.txt ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/tmda-* ${PREFIX}/bin
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/tmda
-	${MKDIR} ${PREFIX}/share/doc/tmda/contrib
-	${MKDIR} ${PREFIX}/share/doc/tmda/htdocs
+	${MKDIR} ${DOCSDIR} ${DOCSDIR}/contrib ${DOCSDIR}/htdocs
 .for f in COPYING CRYPTO ChangeLog INSTALL README THANKS UPGRADE
-	@${INSTALL_DATA} ${WRKSRC}/$f ${PREFIX}/share/doc/tmda
+	@${INSTALL_DATA} ${WRKSRC}/$f ${DOCSDIR}
 .endfor
-	@${INSTALL_DATA} ${WRKSRC}/contrib/* ${PREFIX}/share/doc/tmda/contrib
-	@${INSTALL_DATA} ${WRKSRC}/htdocs/*.html ${PREFIX}/share/doc/tmda/htdocs
+	@${INSTALL_DATA} ${WRKSRC}/contrib/* ${DOCSDIR}/contrib
+	@${INSTALL_DATA} ${WRKSRC}/htdocs/*.html ${DOCSDIR}/htdocs
 	@${ECHO_MSG}
-	@${ECHO_MSG} See ${PREFIX}/share/doc/tmda/INSTALL for configuration instructions
-	@${ECHO_MSG} See ${PREFIX}/share/doc/tmda/UPGRADE if upgrading from a previous release
+	@${ECHO_MSG} See ${DOCSDIR}/INSTALL for configuration instructions
+	@${ECHO_MSG} See ${DOCSDIR}/UPGRADE if upgrading from a previous release
 .endif
 	@${ECHO_MSG} All related programs have been installed in ${PREFIX}/bin
 	@${ECHO_MSG}
