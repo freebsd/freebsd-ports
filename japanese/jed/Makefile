@@ -9,8 +9,7 @@
 DISTNAME=	jed-B0.99-8__J067
 PKGNAME=	ja-jed-0.99.8.j067
 CATEGORIES=	japanese editors
-MASTER_SITES=	http://knu.and.or.jp/ports/distfiles/ \
-		http://www.idaemons.org/ports/distfiles/ \
+MASTER_SITES=	http://people.FreeBSD.org/~knu/ports/distfiles/ \
 		http://kondara.sdri.co.jp/~kikutani/slang/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		jed-extralibs-0.99.8${EXTRACT_SUFX}
