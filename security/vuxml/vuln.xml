@@ -360,6 +360,10 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <references>
       <url>http://www.idefense.com/application/poi/display?id=107&amp;type=vulnerabilities&amp;flashstatus=false</url>
       <cvename>CAN-2004-0541</cvename>
+      <url>http://www.osvdb.org/6791</url>
+      <url>http://secunia.com/advisories/11804</url>
+      <bid>10500</bid>
+      <url>http://www.squid-cache.org/bugs/show_bug.cgi?id=998</url>
     </references>
     <dates>
       <discovery>2004-05-20</discovery>
@@ -4210,6 +4214,8 @@ misc.c:
       <url>http://secunia.com/advisories/12232</url>
       <url>http://bugzilla.mozilla.org/show_bug.cgi?id=251381</url>
       <url>http://secunia.com/advisories/12236</url>
+      <uscertta>TA04-217A</uscertta>
+      <url>http://dl.sourceforge.net/sourceforge/libpng/ADVISORY.txt</url>
     </references>
     <dates>
       <discovery>2004-08-04</discovery>
