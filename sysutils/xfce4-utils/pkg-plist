@@ -10,7 +10,9 @@ etc/xfce4/xinitrc
 lib/xfce4/mcs-plugins/xftaskbar_plugin.a
 lib/xfce4/mcs-plugins/xftaskbar_plugin.la
 lib/xfce4/mcs-plugins/xftaskbar_plugin.so
+share/locale/ar/LC_MESSAGES/xfce-utils.mo
 share/locale/az/LC_MESSAGES/xfce-utils.mo
+share/locale/bg/LC_MESSAGES/xfce-utils.mo
 share/locale/ca/LC_MESSAGES/xfce-utils.mo
 share/locale/cs/LC_MESSAGES/xfce-utils.mo
 share/locale/de/LC_MESSAGES/xfce-utils.mo
@@ -51,6 +53,8 @@ share/xfce4/AUTHORS.html.ca
 share/xfce4/AUTHORS.html.de
 share/xfce4/AUTHORS.html.es
 share/xfce4/AUTHORS.html.fr
+share/xfce4/AUTHORS.html.it
+share/xfce4/AUTHORS.it
 share/xfce4/AUTHORS.vi
 share/xfce4/COPYING
 share/xfce4/COPYING.html
@@ -68,6 +72,8 @@ share/xfce4/INFO.html.ca
 share/xfce4/INFO.html.de
 share/xfce4/INFO.html.es
 share/xfce4/INFO.html.fr
+share/xfce4/INFO.html.it
+share/xfce4/INFO.it
 share/xfce4/INFO.vi
 share/xfce4/LGPL
 share/xfce4/LGPL.html

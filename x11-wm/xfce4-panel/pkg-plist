@@ -1,8 +1,10 @@
 bin/xfce4-panel
 etc/xfce4/xfce4rc
+etc/xfce4/xfce4rc.ar
 etc/xfce4/xfce4rc.az
 etc/xfce4/xfce4rc.ca
 etc/xfce4/xfce4rc.hu
+etc/xfce4/xfce4rc.it
 etc/xfce4/xfce4rc.nl
 etc/xfce4/xfce4rc.vi
 include/xfce4/panel/controls.h
@@ -30,7 +32,9 @@ lib/xfce4/panel-plugins/libswitcher.so
 lib/xfce4/panel-plugins/libsystembuttons.la
 lib/xfce4/panel-plugins/libsystembuttons.so
 libdata/pkgconfig/xfce4-panel-1.0.pc
+share/locale/ar/LC_MESSAGES/xfce4-panel.mo
 share/locale/az/LC_MESSAGES/xfce4-panel.mo
+share/locale/bg/LC_MESSAGES/xfce4-panel.mo
 share/locale/ca/LC_MESSAGES/xfce4-panel.mo
 share/locale/cs/LC_MESSAGES/xfce4-panel.mo
 share/locale/de/LC_MESSAGES/xfce4-panel.mo
@@ -41,6 +45,7 @@ share/locale/fi/LC_MESSAGES/xfce4-panel.mo
 share/locale/fr/LC_MESSAGES/xfce4-panel.mo
 share/locale/hi/LC_MESSAGES/xfce4-panel.mo
 share/locale/hu/LC_MESSAGES/xfce4-panel.mo
+share/locale/it/LC_MESSAGES/xfce4-panel.mo
 share/locale/ja/LC_MESSAGES/xfce4-panel.mo
 share/locale/ko/LC_MESSAGES/xfce4-panel.mo
 share/locale/lt/LC_MESSAGES/xfce4-panel.mo

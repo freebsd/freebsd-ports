@@ -7,6 +7,7 @@ lib/xfce4/mcs-plugins/xfwm4_plugin.la
 lib/xfce4/mcs-plugins/xfwm4_plugin.so
 share/locale/az/LC_MESSAGES/xfwm4.mo
 share/locale/ar/LC_MESSAGES/xfwm4.mo
+share/locale/bg/LC_MESSAGES/xfwm4.mo
 share/locale/ca/LC_MESSAGES/xfwm4.mo
 share/locale/cs/LC_MESSAGES/xfwm4.mo
 share/locale/de/LC_MESSAGES/xfwm4.mo
@@ -17,6 +18,7 @@ share/locale/fi/LC_MESSAGES/xfwm4.mo
 share/locale/fr/LC_MESSAGES/xfwm4.mo
 share/locale/hi/LC_MESSAGES/xfwm4.mo
 share/locale/hu/LC_MESSAGES/xfwm4.mo
+share/locale/it/LC_MESSAGES/xfwm4.mo
 share/locale/ja/LC_MESSAGES/xfwm4.mo
 share/locale/ko/LC_MESSAGES/xfwm4.mo
 share/locale/lt/LC_MESSAGES/xfwm4.mo
