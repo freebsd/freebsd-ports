@@ -55,6 +55,7 @@ Have fun with this new configuration style !     -andreas \n\n\
   "cdjmono"  "HP DeskJet 500/510/520/540C b/w printing" ON \
   "cdj500"   "HP DeskJet 500/540C (same as cdjcolor)" OFF \
   "cdj550"   "HP DeskJet 550C/560C/660C/660Cse" ON \
+  "cdj850"   "HP DeskJet 670/690/850/855/870/890/1100/1600" ON \
   "cdj970"   "HP DeskJet 970, 3rd party" ON \
   "laserjet" "HP LaserJet" ON \
   "ljetplus" "HP LaserJet Plus" ON \
