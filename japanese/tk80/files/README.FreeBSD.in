@@ -1,0 +1,48 @@
+FreeBSDにおける，Tk の ports/packages について
+	田口 毅 taguchi@tohoku.iij.ad.jp
+
+本文章では，FreeBSD環境におけるTkの特徴的な部分をまとめる．
+
+1. インストールされるファイルについて．
+FreeBSD 上では，数多くのプログラムが標準配布に組み込まれており，それに
+加えて1200を越えるプログラムが，ports/packagesの仕組みを用いて提供され
+ている．
+
+そこでのリリースエンジニアリング的問題に付いては，Tcl8.0のドキュメント
+で述べたので，そちらを参照されたい．ここでは，実際に注意しなければなら
+ない事柄を述べるのみとする．
+
+FreeBSDのports/packagesでインストールされるTk8.0においても，標準の
+Tcl/Tkとは，インストールされるディレクトリ階層が異なるファイルが存在す
+る．
+
+相違があるファイルで重要なものは以下の2個であり，それぞれ以下の場所に
+インストールされる．
+
+ファイル名	インストール場所		デフォルトの場所
+tkConfig.sh  @prefix@/lib/tk@TK_VERSION@	@exec_prefix@/lib
+tk.h	      @prefix@/include/tk@TK_VERSION@	@prefix@/include
+
+なお，Tkのソースに含まれるヘッダファイル群は，すべて，
+		@prefix@/include/tk@TK_VERSION@
+以下の階層にインストールするようにしているのは，Tclと同様である．
+
+また,これは日本語版に限った話であるが，日本語版tk8.0でも，オンラインマ
+ニュアルページ(manファイル群)のインストールを行わないことにしている．
+その理由はTcl8.0でのそれと同じである．
+
+2. その他の相違点
+Tcl/Tk は，Scriptics社によって保守されているが，インターネット上でも
+comp.lang.tclを中心に保守が行われている．そして，そこでは，正式なバー
+ジョンではまだ修正されていないバグのfixも行われている．こうしたバグ報
+告は，
+	http://www.cs.uoregon.edu/research/tcl/patch/
+にまとめられている．いずれ，本家にも反映されることが期待されるfixであ
+るが，とりあえずja-tk-8.0 でも，これらのfixも一部独自に反映させること
+にした．従って，FreeBSDのports/packages版は，より安定して動作すること
+が期待できるかもしれない．
+
+また，オリジナルのTk8.0のports/packagesでは，TkMan-2.0のため？，Tom
+Phelps氏のElide patchが含まれている．そのため，日本語化Tkに対する 
+Elide patchをオリジナルのpatchをもとに作成して添付した．textウィジェッ
+トのtagのオプションに-elideの指定を行えるはずである.
