@@ -3,7 +3,7 @@
 # Date created:			10 August 1996
 # Whom:				Michael Butschky <butsch@computi.erols.com>
 #
-# $Id: Makefile,v 1.2 1996/10/29 06:33:58 max Exp $              
+# $Id: Makefile,v 1.3 1996/10/31 01:40:26 max Exp $              
 #
 
 DISTNAME=	pl-2.7.15
@@ -24,10 +24,8 @@ post-install:
 .for f in pl pl-bite chpl
 	@strip ${PREFIX}/lib/${DISTNAME}/bin/i386-freebsd/$f
 .endfor
-.if !defined(NOMANCOMPRESS)
 .for f in pl.1 chpl.1 plld.1
-	gzip -9nf ${PREFIX}/man/man1/$f
+	${COMPRESS_MAN} ${PREFIX}/man/man1/$f
 .endfor
-.endif
 
 .include <bsd.port.mk>
