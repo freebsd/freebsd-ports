@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	svk
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 PORTREVISION=	0
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -37,7 +37,6 @@ PERL_CONFIGURE=	yes
 
 MAN1=		svk.1
 MAN3=		SVK.3 \
-		SVK::CombineEditor.3 \
 		SVK::Command::Add.3 \
 		SVK::Command::Annotate.3 \
 		SVK::Command::Cat.3 \
@@ -53,26 +52,31 @@ MAN3=		SVK.3 \
 		SVK::Command::Help.3 \
 		SVK::Command::Import.3 \
 		SVK::Command::Info.3 \
-	       	SVK::Command::List.3 \
+		SVK::Command::List.3 \
 		SVK::Command::Log.3 \
 		SVK::Command::Merge.3 \
 		SVK::Command::Mirror.3 \
 		SVK::Command::Mkdir.3 \
+		SVK::Command::Patch.3 \
 		SVK::Command::Propdel.3 \
-	       	SVK::Command::Propedit.3 \
+		SVK::Command::Propedit.3 \
 		SVK::Command::Proplist.3 \
 		SVK::Command::Propset.3 \
 		SVK::Command::Resolved.3 \
 		SVK::Command::Revert.3 \
 		SVK::Command::Smerge.3 \
 		SVK::Command::Status.3 \
-	       	SVK::Command::Switch.3 \
+		SVK::Command::Switch.3 \
 		SVK::Command::Sync.3 \
 		SVK::Command::Update.3 \
 		SVK::Command::Verify.3 \
-		SVK::DiffEditor.3 \
-		SVK::MergeEditor.3 \
+		SVK::Editor::Combine.3 \
+		SVK::Editor::Diff.3 \
+		SVK::Editor::Merge.3 \
+		SVK::Editor::Patch.3 \
+		SVK::Editor::XD.3 \
 		SVK::Notify.3 \
+		SVK::Patch.3 \
 		SVK::XD.3
 
 .include <bsd.port.pre.mk>
