@@ -17,6 +17,8 @@ MAINTAINER=	lioux@FreeBSD.org
 
 LIB_DEPENDS+=	ldap.1:${PORTSDIR}/net/openldap
 
+NO_PACKAGE=	Unsure of djb\'s packaging license
+
 .if !defined(PRE_MK_INCLUDED)
 .include <bsd.port.pre.mk>
 .endif
