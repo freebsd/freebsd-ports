@@ -3,12 +3,8 @@ share/xmame/xmamerc
 %%PORTDOCS%%share/doc/xmame/changes.mame
 %%PORTDOCS%%share/doc/xmame/changes.unix
 %%PORTDOCS%%share/doc/xmame/credits.txt
-%%PORTDOCS%%share/doc/xmame/imgtool.txt     
+%%PORTDOCS%%share/doc/xmame/gamelist.mame
 %%PORTDOCS%%share/doc/xmame/liesmich.unix
-%%PORTDOCS%%share/doc/xmame/mess.txt
-%%PORTDOCS%%share/doc/xmame/messnew.txt
-%%PORTDOCS%%share/doc/xmame/messold.txt
-%%PORTDOCS%%share/doc/xmame/messroms.txt
 %%PORTDOCS%%share/doc/xmame/multiplayer-readme.txt
 %%PORTDOCS%%share/doc/xmame/readme.mame
 %%PORTDOCS%%share/doc/xmame/xmame-doc-1.html
@@ -17,7 +13,7 @@ share/xmame/xmamerc
 %%PORTDOCS%%share/doc/xmame/xmame-doc-4.html
 %%PORTDOCS%%share/doc/xmame/xmame-doc-5.html
 %%PORTDOCS%%share/doc/xmame/xmame-doc-6.html
-%%PORTDOCS%%share/doc/xmame/xmame-doc-7.html 
+%%PORTDOCS%%share/doc/xmame/xmame-doc-7.html
 %%PORTDOCS%%share/doc/xmame/xmame-doc.html
 %%PORTDOCS%%share/doc/xmame/xmame-doc.lyx
 %%PORTDOCS%%share/doc/xmame/xmame-doc.ps
