@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	pan
-PORTVERSION=	0.11.3
+PORTVERSION=	0.11.4
 CATEGORIES=	news gnome
-MASTER_SITES=	http://pan.rebelbase.com/download/releases/${PORTVERSION}/SOURCE/ \
-		http://pan.rebelbase.com/download/obsolete/${PORTVERSION}/SOURCE/ \
+MASTER_SITES=	http://pan.rebelbase.com/download/releases/${PORTVERSION}/SOURCES/ \
+		http://pan.rebelbase.com/download/obsolete/${PORTVERSION}/SOURCES/ \
 		${MASTER_SITE_GNOME}
 		
 MASTER_SITE_SUBDIR=	stable/sources/pan
