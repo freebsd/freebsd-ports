@@ -10,7 +10,8 @@
 PORTNAME=	h2ps
 PORTVERSION=	2.06
 CATEGORIES=	korean print
-MASTER_SITES=	ftp://cglab.snu.ac.kr/pub/hangul/n3f/tar/
+MASTER_SITES=	ftp://cglab.snu.ac.kr/pub/hangul/n3f/tar/ \
+		ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/
 
 MAINTAINER=	cjh@FreeBSD.org
 
