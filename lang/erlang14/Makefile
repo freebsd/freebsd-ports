@@ -144,7 +144,7 @@ post-install:
 
 	@for LIBRARY in ${OTP_LIBS}; do \
 		cd ${PREFIX} ; ${FIND} lib/erlang/lib/$${LIBRARY} -type d -empty \
-		    	| ${SED} -e 's#^#@exec mkdir %D/#g'; \
+		    	| ${SED} -e 's#^#@exec mkdir -p %D/#g'; \
 	done | ${SORT} >> ${WRKDIR}/PLIST.lib-erlang
 
 	@for LIBRARY in ${OTP_LIBS}; do \
