@@ -27,7 +27,6 @@
     SUBDIR += hcode
     SUBDIR += helvis
     SUBDIR += hlatex
-    SUBDIR += hlatex-mffonts-wansung
     SUBDIR += hlatex-psfonts-uhc-extra
     SUBDIR += hlatex-psfonts-wansung
     SUBDIR += hlatex-wansung
@@ -39,7 +38,6 @@
     SUBDIR += hmconv
     SUBDIR += hpscat
     SUBDIR += imhangul
-    SUBDIR += imhangul_status_applet
     SUBDIR += johabfonts
     SUBDIR += kaistfonts
     SUBDIR += kde3-i18n
