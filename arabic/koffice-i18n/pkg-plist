@@ -1,0 +1,36 @@
+share/locale/ar/LC_MESSAGES/csvfilter.mo
+share/locale/ar/LC_MESSAGES/desktop_koffice.mo
+share/locale/ar/LC_MESSAGES/example.mo
+share/locale/ar/LC_MESSAGES/graphite.mo
+share/locale/ar/LC_MESSAGES/kchart.mo
+share/locale/ar/LC_MESSAGES/kfile_koffice.mo
+share/locale/ar/LC_MESSAGES/kformula.mo
+share/locale/ar/LC_MESSAGES/kformulalatexfilter.mo
+share/locale/ar/LC_MESSAGES/kformulapngfilter.mo
+share/locale/ar/LC_MESSAGES/kivio.mo
+share/locale/ar/LC_MESSAGES/koconverter.mo
+share/locale/ar/LC_MESSAGES/kocryptfilter.mo
+share/locale/ar/LC_MESSAGES/koffice.mo
+share/locale/ar/LC_MESSAGES/kontour.mo
+share/locale/ar/LC_MESSAGES/koshell.mo
+share/locale/ar/LC_MESSAGES/kounavail.mo
+share/locale/ar/LC_MESSAGES/kpresenter.mo
+share/locale/ar/LC_MESSAGES/kpresenterkwordfilter.mo
+share/locale/ar/LC_MESSAGES/krita.mo
+share/locale/ar/LC_MESSAGES/kscan_plugin.mo
+share/locale/ar/LC_MESSAGES/kspread.mo
+share/locale/ar/LC_MESSAGES/kspreadcalc_calc.mo
+share/locale/ar/LC_MESSAGES/kspreadqprofilter.mo
+share/locale/ar/LC_MESSAGES/kugar.mo
+share/locale/ar/LC_MESSAGES/kword.mo
+share/locale/ar/LC_MESSAGES/kwordasciifilter.mo
+share/locale/ar/LC_MESSAGES/kwordhtmlexportfilter.mo
+share/locale/ar/LC_MESSAGES/kwordhtmlfilter.mo
+share/locale/ar/LC_MESSAGES/kwordhtmlimportfilter.mo
+share/locale/ar/LC_MESSAGES/kwordlatexfilter.mo
+share/locale/ar/LC_MESSAGES/olefilterswinword97filter.mo
+share/locale/ar/LC_MESSAGES/xsltexportfilter.mo
+share/locale/ar/LC_MESSAGES/xsltfilter.mo
+share/locale/ar/LC_MESSAGES/xsltimportfilter.mo
+@dirrm share/locale/ar/LC_MESSAGES
+@dirrm share/locale/ar
