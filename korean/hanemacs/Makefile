@@ -3,7 +3,7 @@
 # Date created:		12 Mar 1998
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/05/17 22:25:54 kuriyama Exp $
 #
 
 DISTNAME=	hanemacs-19.34b-1
@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.kaist.ac.kr/pub/hangul/editor/HanEmacs/ \
 		ftp://ftp.kreonet.re.kr/pub/hangul/cair-archive/editor/HanEmacs/
 
 MAINTAINER=	junker@jazz.snu.ac.kr
+
+BROKEN_ELF=	yes
 
 WRKSRC=		${WRKDIR}/hanemacs-19.34
 GNU_CONFIGURE=	yes
