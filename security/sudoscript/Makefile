@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sudoscript
-PORTVERSION=	2.1.1
-PORTREVISION=	3
+PORTVERSION=	2.1.2
 CATEGORIES=	security
 MASTER_SITES=	http://download.sourceforge.net/sudoscript/ \
 		http://egbok.com/sudoscript/
