@@ -1,0 +1,11 @@
+--- src/broker/Glimpse/index.c.old	Fri Oct 25 19:52:18 2002
++++ src/broker/Glimpse/index.c	Fri Oct 25 19:52:34 2002
+@@ -192,7 +192,7 @@
+ 		GL_GlimpseSrvPort = -1;
+ 		return;
+ 	}
+-	if (GL_GlimpseSrvPort <= IPPORT_USERRESERVED) {
++	if (GL_GlimpseSrvPort <= 5000) {
+ 		/* choose a random port number between 16384-30000 */
+ #if defined(HAVE_SRAND48) && defined(HAVE_LRAND48)
+ 		srand48(time(NULL));
