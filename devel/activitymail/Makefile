@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	activitymail
-PORTVERSION=	1.16
+PORTVERSION=	1.19
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/D/DW/DWHEELER/activitymail
@@ -16,6 +16,7 @@ COMMENT=	A program for sending email messages for CVS repository commits
 
 PERL_MODBUILD=	yes
 
+PLIST_FILES=	bin/activitymail
 MAN1=		activitymail.1
 
 .include <bsd.port.mk>
