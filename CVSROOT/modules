@@ -6178,6 +6178,7 @@ p5-Lingua-Ispell	ports/textproc/p5-Lingua-Ispell
 p5-Lingua-PT-Stemmer	ports/textproc/p5-Lingua-PT-Stemmer
 p5-Lingua-Preferred	ports/textproc/p5-Lingua-Preferred
 p5-Lingua-Stem	ports/textproc/p5-Lingua-Stem
+p5-Lingua-Stem-It	ports/textproc/p5-Lingua-Stem-It
 p5-Locale-Codes	ports/misc/p5-Locale-Codes
 p5-Locale-Maketext	ports/devel/p5-Locale-Maketext
 p5-Locale-Maketext-Fuzzy	ports/devel/p5-Locale-Maketext-Fuzzy
