@@ -1,5 +1,5 @@
-*** sim/cider/common/src/bin/main.c.orig	Sat Mar 12 08:20:59 1994
---- sim/cider/common/src/bin/main.c	Mon Dec 13 10:16:13 1999
+*** cider/common/src/bin/main.c.orig	Sat Mar 12 08:20:59 1994
+--- cider/common/src/bin/main.c	Mon Dec 13 10:16:13 1999
 ***************
 *** 25,30 ****
 --- 25,37 ----

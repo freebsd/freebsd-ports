@@ -1,0 +1,38 @@
+--- spice/common/src/include/misc.h.orig	Sat Jan 29 19:14:17 1994
++++ spice/common/src/include/misc.h	Sun Dec 26 18:49:39 1999
+@@ -5,6 +5,10 @@
+ #ifndef MISC_H
+ #define MISC_H
+ 
++#if (defined(__unix__) || defined(unix)) && !defined(USG)
++#include <sys/param.h>
++#endif
++
+ #define BSIZE_SP      512
+ 
+ #ifdef HAS_EXIT1
+@@ -86,7 +90,9 @@
+ extern char *realloc();
+ extern char *getenv();
+ extern int errno;
++#if !(defined(BSD) && (BSD >= 199306))
+ extern char *sys_errlist[];
++#endif
+ extern char *getenv();
+ extern char *getwd();
+ extern int rand();
+@@ -109,12 +115,14 @@
+ #    endif /* clearerr */
+ #  endif /* HAS_CLEARERR */
+ 
++#if !(defined(BSD) && (BSD >= 199306))
+ #  ifndef bzero
+ extern int bzero();
+ #  endif
+ #  ifndef bcopy
+ extern void bcopy();
+ #  endif
++#endif
+ 
+ #  ifndef index
+ #    ifdef HAS_INDEX

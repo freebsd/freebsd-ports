@@ -1,5 +1,5 @@
-*** sim/spice/common/src/lib/cp/history.c.orig	Sat Jan 29 18:44:09 1994
---- sim/spice/common/src/lib/cp/history.c	Sun Dec 12 14:56:43 1999
+*** spice/common/src/lib/cp/history.c.orig	Sat Jan 29 18:44:09 1994
+--- spice/common/src/lib/cp/history.c	Sun Dec 12 14:56:43 1999
 ***************
 *** 11,16 ****
 --- 11,24 ----

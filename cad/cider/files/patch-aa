@@ -1,5 +1,5 @@
-*** sim/spice/common/conf/defaults.orig	Sat Jan 29 19:15:53 1994
---- sim/spice/common/conf/defaults	Sun Dec 12 14:40:09 1999
+*** spice/common/conf/defaults.orig	Sat Jan 29 19:15:53 1994
+--- spice/common/conf/defaults	Sun Dec 12 14:40:09 1999
 ***************
 *** 105,116 ****
   #	identified as and SYSTEM is the name of the per-system definitions
@@ -27,8 +27,8 @@
   S_SPICE_EXEC_DIR= $(S_SPICE_DIR)/bin
   
   #	INSTALL_DIRS lists the directories that need to be created before
-*** sim/spice/common/util/build.orig	Sat Jan 29 19:16:26 1994
---- sim/spice/common/util/build	Sun Dec 12 14:38:33 1999
+*** spice/common/util/build.orig	Sat Jan 29 19:16:26 1994
+--- spice/common/util/build	Sun Dec 12 14:38:33 1999
 ***************
 *** 96,102 ****
   

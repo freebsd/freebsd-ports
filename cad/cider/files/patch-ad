@@ -1,5 +1,5 @@
-*** sim/spice/common/src/bin/main.c.orig	Sat Mar 12 08:22:28 1994
---- sim/spice/common/src/bin/main.c	Sun Dec 12 14:58:04 1999
+*** spice/common/src/bin/main.c.orig	Sat Mar 12 08:22:28 1994
+--- spice/common/src/bin/main.c	Sun Dec 12 14:58:04 1999
 ***************
 *** 25,30 ****
 --- 25,37 ----

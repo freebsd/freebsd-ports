@@ -1,0 +1,11 @@
+--- spice/common/util/makelib.sh.orig	Sat Jan 29 19:16:27 1994
++++ spice/common/util/makelib.sh	Sun Dec 26 18:12:42 1999
+@@ -35,7 +35,7 @@
+ 			cat >> makedefs <<ENDOFMAKEDEFSX
+ 
+ INCLUDE		= -I$(INCLUDE_DIR) $(INCX)
+-CFLAGS		= $(CC_OPT) $(SYS_CFLAGS) $(INTERFACE_OPTS)
++REAL_CFLAGS		= $(CC_OPT) $(SYS_CFLAGS) $(INTERFACE_OPTS)
+ CONF_DEP_EXTRA	= $(CONF_XCC)
+ ENDOFMAKEDEFSX
+ 		fi

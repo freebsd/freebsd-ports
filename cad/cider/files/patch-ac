@@ -1,5 +1,5 @@
-*** sim/spice/common/src/bin/sconvert.c.orig	Sat Jan 29 19:12:56 1994
---- sim/spice/common/src/bin/sconvert.c	Sun Dec 12 14:49:36 1999
+*** spice/common/src/bin/sconvert.c.orig	Sat Jan 29 19:12:56 1994
+--- spice/common/src/bin/sconvert.c	Sun Dec 12 14:49:36 1999
 ***************
 *** 80,98 ****
   
@@ -41,8 +41,8 @@
               t = buf[0];
               break;
           default:
-*** sim/spice/common/src/lib/fte/inp.c.orig	Sat Jan 29 18:48:10 1994
---- sim/spice/common/src/lib/fte/inp.c	Sun Dec 12 14:49:36 1999
+*** spice/common/src/lib/fte/inp.c.orig	Sat Jan 29 18:48:10 1994
+--- spice/common/src/lib/fte/inp.c	Sun Dec 12 14:49:36 1999
 ***************
 *** 666,672 ****
   

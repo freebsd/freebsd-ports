@@ -1,0 +1,80 @@
+--- spice/common/src/bin/makeops.orig	Mon Jan 31 02:14:05 1994
++++ spice/common/src/bin/makeops	Sun Dec 26 18:11:11 1999
+@@ -39,20 +39,20 @@
+ 	mkdir $(SPICE_EXEC_DIR)
+ 
+ spice3.o: main.c $(SRC_TOP)/include/patchlev.h $(SYS_CONF)/$(OBJECTIVE)-cc
+-	$(CC) -c $(CFLAGS) $(INCLUDE) -DSIMULATOR $(SRC_DIR)/main.c $(ASM_HACK)
++	$(CC) -c $(REAL_CFLAGS) $(INCLUDE) -DSIMULATOR $(SRC_DIR)/main.c $(ASM_HACK)
+ 	mv -f main.o $@
+ 
+ bspice.o: main.c $(SRC_TOP)/include/patchlev.h $(SYS_CONF)/$(OBJECTIVE)-cc
+-	$(CC) -c $(CFLAGS) $(INCLUDE) -DSIMULATOR -DBATCH $(SRC_DIR)/main.c $(ASM_HACK)
++	$(CC) -c $(REAL_CFLAGS) $(INCLUDE) -DSIMULATOR -DBATCH $(SRC_DIR)/main.c $(ASM_HACK)
+ 	mv -f main.o $@
+ 
+ cspice.o: main.c $(SRC_TOP)/include/patchlev.h $(SYS_CONF)/$(OBJECTIVE)-cc
+-	$(CC) -c $(CFLAGS) $(INCLUDE) -DSIMULATOR -DBATCH -DSPICE2 $(SRC_DIR)/main.c \
++	$(CC) -c $(REAL_CFLAGS) $(INCLUDE) -DSIMULATOR -DBATCH -DSPICE2 $(SRC_DIR)/main.c \
+ 		$(ASM_HACK)
+ 	mv -f main.o $@
+ 
+ nutmeg.o: main.c $(SRC_TOP)/include/patchlev.h $(SYS_CONF)/$(OBJECTIVE)-cc
+-	$(CC) -c $(CFLAGS) $(INCLUDE) $(SRC_DIR)/main.c $(ASM_HACK)
++	$(CC) -c $(REAL_CFLAGS) $(INCLUDE) $(SRC_DIR)/main.c $(ASM_HACK)
+ 	mv -f main.o $@
+ 
+ conf.c: config.c $(SYS_CONF)/$(OBJECTIVE)
+@@ -63,7 +63,7 @@
+ 	chmod -w "$@"
+ 
+ cconf.o: $(OBJ_DIR)/cconf.c
+-	$(CC) -c $(CFLAGS) $(INCLUDE) -DSIMULATOR $(OBJ_DIR)/cconf.c $(ASM_HACK)
++	$(CC) -c $(REAL_CFLAGS) $(INCLUDE) -DSIMULATOR $(OBJ_DIR)/cconf.c $(ASM_HACK)
+ 
+ bconf.c: config.c $(SYS_CONF)/$(OBJECTIVE)
+ 	@echo Creating "$@": ; rm -f "$@"
+@@ -73,7 +73,7 @@
+ 	chmod -w "$@"
+ 
+ bconf.o: $(OBJ_DIR)/bconf.c
+-	$(CC) -c $(CFLAGS) $(INCLUDE) -DSIMULATOR $(OBJ_DIR)/bconf.c $(ASM_HACK)
++	$(CC) -c $(REAL_CFLAGS) $(INCLUDE) -DSIMULATOR $(OBJ_DIR)/bconf.c $(ASM_HACK)
+ 
+ cconf.c: config.c $(SYS_CONF)/$(OBJECTIVE)
+ 	@echo Creating "$@": ; rm -f "$@"
+@@ -97,13 +97,13 @@
+ 	chmod -w "$@"
+ 
+ $(TUNEFILE).o: $(TUNEFILE).c
+-	${CC} ${CFLAGS} ${INCLUDE} -c $(TUNEFILE).c $(ASM_HACK)
++	${CC} ${REAL_CFLAGS} ${INCLUDE} -c $(TUNEFILE).c $(ASM_HACK)
+ 
+ nconf.o: nconf.c
+-	${CC} ${CFLAGS} ${INCLUDE} -c nconf.c $(ASM_HACK)
++	${CC} ${REAL_CFLAGS} ${INCLUDE} -c nconf.c $(ASM_HACK)
+ 
+ conf.o: conf.c
+-	${CC} ${CFLAGS} ${INCLUDE} -c conf.c $(ASM_HACK)
++	${CC} ${REAL_CFLAGS} ${INCLUDE} -c conf.c $(ASM_HACK)
+ 
+ $(TUNEFILE).c: $(SYS_CONF)/$(OBJECTIVE)
+ 	@echo "Creating $(TUNEFILE).c";					      \
+@@ -122,14 +122,14 @@
+ 	chmod -w "$@"
+ 
+ help.o: help.c $(SYS_CONF)/$(OBJECTIVE) $(SYS_CONF)/$(OBJECTIVE)-cc
+-	$(CC) $(CFLAGS) $(INTERFACE_OPTS) $(INCX) \
++	$(CC) $(REAL_CFLAGS) $(INTERFACE_OPTS) $(INCX) \
+ 	-c $(INCLUDE) $(SRC_DIR)/help.c $(ASM_HACK)
+ 
+ spiced.o: spiced.c $(SYS_CONF)/$(OBJECTIVE) $(SYS_CONF)/$(OBJECTIVE)-cc
+-	$(CC) $(CFLAGS) -c $(INCLUDE) $(SRC_DIR)/spiced.c $(ASM_HACK)
++	$(CC) $(REAL_CFLAGS) -c $(INCLUDE) $(SRC_DIR)/spiced.c $(ASM_HACK)
+ 
+ multidec.o: multidec.c $(SYS_CONF)/$(OBJECTIVE)-cc
+-	$(CC) $(CFLAGS) -c $(INCLUDE) $(SRC_DIR)/multidec.c $(ASM_HACK)
++	$(CC) $(REAL_CFLAGS) -c $(INCLUDE) $(SRC_DIR)/multidec.c $(ASM_HACK)
+ 
+ LIB	= $(OBJLIB_DIR)
+ 

@@ -1,5 +1,5 @@
-*** sim/cider/common/lib/helpdir/spice.txt.orig	Mon Dec 13 10:57:16 1999
---- sim/cider/common/lib/helpdir/spice.txt	Mon Dec 13 10:50:01 1999
+*** cider/common/lib/helpdir/spice.txt.orig	Mon Dec 13 10:57:16 1999
+--- cider/common/lib/helpdir/spice.txt	Mon Dec 13 10:50:01 1999
 ***************
 *** 7,12 ****
 --- 7,13 ----

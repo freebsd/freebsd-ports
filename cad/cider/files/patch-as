@@ -1,0 +1,24 @@
+--- spice/common/src/include/util.h.orig	Sat Jan 29 19:14:24 1994
++++ spice/common/src/include/util.h	Sun Dec 26 19:26:14 1999
+@@ -6,6 +6,10 @@
+ #ifndef UTIL
+ #define UTIL
+ 
++#if (defined(__unix__) || defined(unix)) && !defined(USG)
++#include <sys/param.h>
++#endif
++
+ /* #define MALLOC(x) calloc(1,(unsigned)(x)) */
+ #define MALLOC(x) tmalloc((unsigned)(x))
+ #define FREE(x) {if (x) {free((char *)(x));(x) = 0;}}
+@@ -44,8 +48,10 @@
+ #endif
+ 
+ /* XXX Move these into the above ifdef someday */
++#if !(defined(BSD) && (BSD >= 199306))
+ #define MIN(a,b) ((a) < (b) ? (a) : (b))
+ #define MAX(a,b) ((a) > (b) ? (a) : (b))
++#endif
+ #define SIGN(a,b) ( b >= 0 ? (a >= 0 ? a : - a) : (a >= 0 ? - a : a))
+ 
+ #define ABORT() fflush(stderr);fflush(stdout);abort();
