@@ -1,0 +1,271 @@
+diff -rc work-orig/iv/src/include/IV-X11/xwindow.h work/iv/src/include/IV-X11/xwindow.h
+*** work-orig/iv/src/include/IV-X11/xwindow.h	Fri Sep 25 07:46:22 1992
+--- ./src/include/IV-X11/xwindow.h	Sun May 28 12:49:16 1995
+***************
+*** 46,53 ****
+  class Style;
+  class WindowCursorStack;
+  class WindowTable;
+  class XDisplay;
+! 
+  struct WindowOverlayInfo {
+      VisualID id_;
+      long type_;
+--- 46,58 ----
+  class Style;
+  class WindowCursorStack;
+  class WindowTable;
++ /*
++  * modified by jj@ldjpc.apana.org.au
++  *
++  * this seems to break the compile...
+  class XDisplay;
+!  *
+!  */
+  struct WindowOverlayInfo {
+      VisualID id_;
+      long type_;
+diff -rc work-orig/iv/src/lib/TIFF/prototypes.h work/iv/src/lib/TIFF/prototypes.h
+*** work-orig/iv/src/lib/TIFF/prototypes.h	Sun May 28 12:39:56 1995
+--- ./src/lib/TIFF/prototypes.h	Sun May 28 14:21:04 1995
+***************
+*** 25,31 ****
+   */
+  
+  #if USE_PROTOTYPES
+- va_dcl
+  #define	DECLARE1(f,t1,a1)		f(t1 a1)
+  #define	DECLARE2(f,t1,a1,t2,a2)		f(t1 a1, t2 a2)
+  #define	DECLARE3(f,t1,a1,t2,a2,t3,a3)	f(t1 a1, t2 a2, t3 a3)
+--- 25,30 ----
+diff -rc work-orig/iv/src/lib/TIFF/tif_aux.c work/iv/src/lib/TIFF/tif_aux.c
+*** work-orig/iv/src/lib/TIFF/tif_aux.c	Sat Mar 28 08:23:06 1992
+--- ./src/lib/TIFF/tif_aux.c	Sun May 28 14:15:50 1995
+***************
+*** 42,47 ****
+--- 42,49 ----
+   *	explcit values so that defaults exist only one
+   *	place in the library -- in TIFFDefaultDirectory.
+   */
++  ;
++  /* for some reason it needs a ; before this line */
+  TIFFVGetFieldDefaulted(tif, tag, ap)
+  	TIFF *tif;
+  	int tag;
+diff -rc work-orig/iv/src/lib/TIFF/tif_dir.c work/iv/src/lib/TIFF/tif_dir.c
+*** work-orig/iv/src/lib/TIFF/tif_dir.c	Sat Mar  7 06:29:51 1992
+--- ./src/lib/TIFF/tif_dir.c	Sun May 28 13:00:03 1995
+***************
+*** 950,956 ****
+  		}
+  		if (tif->tif_flags & TIFF_SWAB)
+  			TIFFSwabShort(&dircount);
+! 		lseek(tif->tif_fd, dircount*sizeof (TIFFDirEntry), L_INCR);
+  		if (!ReadOK(tif->tif_fd, &nextdir, sizeof (nextdir))) {
+  			TIFFError(module, "%s: Error fetching directory link",
+  			    tif->tif_name);
+--- 950,957 ----
+  		}
+  		if (tif->tif_flags & TIFF_SWAB)
+  			TIFFSwabShort(&dircount);
+! 		/*added (off_t) .. jj@ldjpc.apana.org.au*/
+! 		lseek(tif->tif_fd, (off_t)(dircount*sizeof (TIFFDirEntry)), L_INCR);
+  		if (!ReadOK(tif->tif_fd, &nextdir, sizeof (nextdir))) {
+  			TIFFError(module, "%s: Error fetching directory link",
+  			    tif->tif_name);
+diff -rc work-orig/iv/src/lib/TIFF/tif_dirwrite.c work/iv/src/lib/TIFF/tif_dirwrite.c
+*** work-orig/iv/src/lib/TIFF/tif_dirwrite.c	Wed Mar 18 05:39:29 1992
+--- ./src/lib/TIFF/tif_dirwrite.c	Sun May 28 12:57:11 1995
+***************
+*** 177,183 ****
+  	dataoff = tif->tif_diroff + sizeof (short) + dirsize + sizeof (long);
+  	if (dataoff & 1)
+  		dataoff++;
+! 	(void) lseek(tif->tif_fd, dataoff, L_SET);
+  	tif->tif_curdir++;
+  	dir = (TIFFDirEntry *)data;
+  	/*
+--- 177,184 ----
+  	dataoff = tif->tif_diroff + sizeof (short) + dirsize + sizeof (long);
+  	if (dataoff & 1)
+  		dataoff++;
+! 	/* added (off_t) below.....jj@ldjpc.apana.org.au*/
+! 	(void) lseek(tif->tif_fd, (off_t)(dataoff), L_SET);
+  	tif->tif_curdir++;
+  	dir = (TIFFDirEntry *)data;
+  	/*
+***************
+*** 314,320 ****
+  	/*
+  	 * Write directory.
+  	 */
+! 	(void) lseek(tif->tif_fd, tif->tif_diroff, L_SET);
+  	dircount = nfields;
+  	if (!WriteOK(tif->tif_fd, &dircount, sizeof (short))) {
+  		TIFFError(tif->tif_name, "Error writing directory count");
+--- 315,322 ----
+  	/*
+  	 * Write directory.
+  	 */
+! 	/*added (off_t) below.....jj@ldjpc.apana.org.au*/
+! 	(void) lseek(tif->tif_fd, (off_t)(tif->tif_diroff), L_SET);
+  	dircount = nfields;
+  	if (!WriteOK(tif->tif_fd, &dircount, sizeof (short))) {
+  		TIFFError(tif->tif_name, "Error writing directory count");
+***************
+*** 762,774 ****
+  	u_short dircount;
+  	long nextdir;
+  
+! 	tif->tif_diroff = (lseek(tif->tif_fd, 0L, L_XTND)+1) &~ 1L;
+  	if (tif->tif_header.tiff_diroff == 0) {
+  		/*
+  		 * First directory, overwrite header.
+  		 */
+  		tif->tif_header.tiff_diroff = tif->tif_diroff;
+! 		(void) lseek(tif->tif_fd, 0L, L_SET);
+  		if (!WriteOK(tif->tif_fd, &tif->tif_header,
+  		    sizeof (tif->tif_header))) {
+  			TIFFError(tif->tif_name, "Error writing TIFF header");
+--- 764,778 ----
+  	u_short dircount;
+  	long nextdir;
+  
+! 	/* changed 0L to (off_t)0 below...jj@ldjpc.apana.org.au*/
+! 	tif->tif_diroff = (lseek(tif->tif_fd, (off_t)0, L_XTND)+1) &~ 1L;
+  	if (tif->tif_header.tiff_diroff == 0) {
+  		/*
+  		 * First directory, overwrite header.
+  		 */
+  		tif->tif_header.tiff_diroff = tif->tif_diroff;
+! 		/* changed 0L to (off_t)0 .. jj@ldjpc.apana.org.au*/
+! 		(void) lseek(tif->tif_fd, (off_t)0, L_SET);
+  		if (!WriteOK(tif->tif_fd, &tif->tif_header,
+  		    sizeof (tif->tif_header))) {
+  			TIFFError(tif->tif_name, "Error writing TIFF header");
+***************
+*** 788,794 ****
+  		}
+  		if (tif->tif_flags & TIFF_SWAB)
+  			TIFFSwabShort(&dircount);
+! 		lseek(tif->tif_fd, dircount * sizeof (TIFFDirEntry), L_INCR);
+  		if (!ReadOK(tif->tif_fd, &nextdir, sizeof (nextdir))) {
+  			TIFFError(module, "Error fetching directory link");
+  			return (0);
+--- 792,799 ----
+  		}
+  		if (tif->tif_flags & TIFF_SWAB)
+  			TIFFSwabShort(&dircount);
+! 		/*added (off_t) below....jj@ldjpc.apana.org.au*/
+! 		lseek(tif->tif_fd, (off_t)(dircount * sizeof (TIFFDirEntry)), L_INCR);
+  		if (!ReadOK(tif->tif_fd, &nextdir, sizeof (nextdir))) {
+  			TIFFError(module, "Error fetching directory link");
+  			return (0);
+***************
+*** 796,802 ****
+  		if (tif->tif_flags & TIFF_SWAB)
+  			TIFFSwabLong((u_long *)&nextdir);
+  	} while (nextdir != 0);
+! 	(void) lseek(tif->tif_fd, -sizeof (nextdir), L_INCR);
+  	if (!WriteOK(tif->tif_fd, &tif->tif_diroff, sizeof (tif->tif_diroff))) {
+  		TIFFError(module, "Error writing directory link");
+  		return (0);
+--- 801,808 ----
+  		if (tif->tif_flags & TIFF_SWAB)
+  			TIFFSwabLong((u_long *)&nextdir);
+  	} while (nextdir != 0);
+! 	/*added (off_t) below ... jj@ldjpc.apana.org.au*/
+! 	(void) lseek(tif->tif_fd, (off_t)(-sizeof (nextdir)), L_INCR);
+  	if (!WriteOK(tif->tif_fd, &tif->tif_diroff, sizeof (tif->tif_diroff))) {
+  		TIFFError(module, "Error writing directory link");
+  		return (0);
+diff -rc work-orig/iv/src/lib/TIFF/tif_write.c work/iv/src/lib/TIFF/tif_write.c
+*** work-orig/iv/src/lib/TIFF/tif_write.c	Tue Feb 11 13:36:47 1992
+--- ./src/lib/TIFF/tif_write.c	Sun May 28 12:57:57 1995
+***************
+*** 550,556 ****
+  			}
+  		} else
+  			td->td_stripoffset[strip] =
+! 			    lseek(tif->tif_fd, 0L, L_XTND);
+  		tif->tif_curoff = td->td_stripoffset[strip];
+  	}
+  	if (!WriteOK(tif->tif_fd, data, cc)) {
+--- 550,557 ----
+  			}
+  		} else
+  			td->td_stripoffset[strip] =
+! 			    /*changed 0L to (off_t)0 .. jj@ldjpc.apana.org.au*/
+! 			    lseek(tif->tif_fd, (off_t)0, L_XTND);
+  		tif->tif_curoff = td->td_stripoffset[strip];
+  	}
+  	if (!WriteOK(tif->tif_fd, data, cc)) {
+diff -rc work-orig/iv/src/lib/TIFF/tiffcompat.h work/iv/src/lib/TIFF/tiffcompat.h
+*** work-orig/iv/src/lib/TIFF/tiffcompat.h	Tue Mar 31 12:01:04 1992
+--- ./src/lib/TIFF/tiffcompat.h	Sun May 28 14:13:59 1995
+***************
+*** 154,160 ****
+  #define	lseek	mpw_lseek
+  extern long mpw_lseek(int, long, int);
+  #else
+! extern	long lseek();
+  #endif
+  
+  /*
+--- 154,161 ----
+  #define	lseek	mpw_lseek
+  extern long mpw_lseek(int, long, int);
+  #else
+! /*changed to the correct one...jj@ldjpc.apana.org.au*/
+! extern	off_t lseek();
+  #endif
+  
+  /*
+***************
+*** 163,170 ****
+  #ifndef ReadOK
+  #define	ReadOK(fd, buf, size)	(read(fd, (char *)buf, size) == size)
+  #endif
+  #ifndef SeekOK
+! #define	SeekOK(fd, off)	(lseek(fd, (long)off, L_SET) == (long)off)
+  #endif
+  #ifndef WriteOK
+  #define	WriteOK(fd, buf, size)	(write(fd, (char *)buf, size) == size)
+--- 164,172 ----
+  #ifndef ReadOK
+  #define	ReadOK(fd, buf, size)	(read(fd, (char *)buf, size) == size)
+  #endif
++ /*changed (long) to (off_t) to compile....jj@ldjpc.apana.org.au*/
+  #ifndef SeekOK
+! #define	SeekOK(fd, off)	(lseek(fd, (off_t)off, L_SET) == (off_t)off)
+  #endif
+  #ifndef WriteOK
+  #define	WriteOK(fd, buf, size)	(write(fd, (char *)buf, size) == size)
+***************
+*** 202,211 ****
+   */
+  #if defined(__STDC__) && !defined(USE_VARARGS)
+  #define	USE_VARARGS	0
+  #endif
+  
+  #if defined(USE_VARARGS)
+! #if USE_VARARGS
+  #include <varargs.h>
+  #define	VA_START(ap, parmN)	va_start(ap)
+  #else
+--- 204,218 ----
+   */
+  #if defined(__STDC__) && !defined(USE_VARARGS)
+  #define	USE_VARARGS	0
++ #else 
++ #if defined(__FreeBSD__)
++ #undef USE_VARARGS
++ #define USE_VARARGS     0
++ #endif
+  #endif
+  
+  #if defined(USE_VARARGS)
+! #if USE_VARARGS && !defined(__FreeBSD__)
+  #include <varargs.h>
+  #define	VA_START(ap, parmN)	va_start(ap)
+  #else
