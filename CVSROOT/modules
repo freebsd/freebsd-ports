@@ -10582,6 +10582,7 @@ vls		ports/net/vls
 vm		ports/mail/vm
 vm-pop3d	ports/mail/vm-pop3d
 vmailmgr	ports/mail/vmailmgr
+vmd		ports/science/vmd
 vmips		ports/emulators/vmips
 vmsbackup	ports/emulators/vmsbackup
 vmware-guestd3	ports/emulators/vmware-guestd3
