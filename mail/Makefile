@@ -235,6 +235,7 @@
     SUBDIR += p5-Email-Find
     SUBDIR += p5-Email-Folder
     SUBDIR += p5-Email-FolderType
+    SUBDIR += p5-Email-FolderType-Net
     SUBDIR += p5-Email-LocalDelivery
     SUBDIR += p5-Email-LocalDelivery-Ezmlm
     SUBDIR += p5-Email-MIME
