@@ -150,7 +150,7 @@ RUN_DEPENDS+=	quanta:${PORTSDIR}/www/quanta
 RUN_DEPENDS+=	kmoon:${PORTSDIR}/x11-clocks/kdetoys3
 .endif
 .if !defined(WITHOUT_KDEARTWORK)
-RUN_DEPENDS+=	kmatrix.kss:${PORTSDIR}/x11-wm/kdeartwork3
+RUN_DEPENDS+=	kbanner.kss:${PORTSDIR}/x11-wm/kdeartwork3
 .endif
 .if !defined(WITHOUT_KDEACCESSIBILITY)
 RUN_DEPENDS+=	kmag:${PORTSDIR}/accessibility/kdeaccessibility
