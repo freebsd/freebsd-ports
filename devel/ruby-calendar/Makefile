@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	calendar
-PORTVERSION=	1.10.2r
+PORTVERSION=	1.10.3r
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.funaba.org/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -15,30 +15,25 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 
 USE_RUBY=	yes
+USE_RUBY_SETUP=	yes
+RUBY_SETUP=	install.rb
 
-MAKE_ARGS=	RUBY="${RUBY}"
-INSTALL_TARGET=	site-install
-
-DOCS_EN=	README.en sdn/README.sdncal20
+DOCS_EN=	README.en ext/sdn/README.sdncal20
 DOCS_JA=	README
-EXAMPLES_EN=	calendar/cal.rb
-
-post-extract:
-	${MKDIR} ${WRKSRC}/calendar/lib
-	${MV} ${WRKSRC}/calendar/calclass.rb ${WRKSRC}/calendar/lib/
+EXAMPLES_EN=	ext/calendar/cal*.rb
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_EXAMPLESDIR}/calendar
+	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
 .for f in ${EXAMPLES_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_EXAMPLESDIR}/calendar/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_EXAMPLESDIR}/${PORTNAME}/
 .endfor
-	${MKDIR} ${RUBY_DOCDIR}/calendar/ja
+	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}/ja
 .for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/calendar/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
 .endfor
 .for f in ${DOCS_JA}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/calendar/ja/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/ja/
 .endfor
 .endif
 
