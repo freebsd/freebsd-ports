@@ -3791,6 +3791,7 @@ kcpuload	ports/sysutils/kcpuload
 kdbg		ports/devel/kdbg
 kdc2tiff	ports/graphics/kdc2tiff
 kde-icons-amaranth	ports/x11-themes/kde-icons-amaranth
+kde-icons-amaranth-althaea	ports/x11-themes/kde-icons-amaranth-althaea
 kde-icons-noia	ports/x11-themes/kde-icons-noia
 kde-lite	ports/x11/kde-lite
 kde3		ports/x11/kde3
