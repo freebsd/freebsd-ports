@@ -186,8 +186,10 @@ share/gnome/pixmaps/gnome-media/gnome-sound-recorder/media-stop.png
 share/gnome/pixmaps/gnome-mixer.png
 share/gnome/pixmaps/gnome-reclevel.png
 share/gnome/pixmaps/gnome-vumeter.png
+share/locale/am/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/ar/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/az/LC_MESSAGES/gnome-media-2.0.mo
+share/locale/be/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/bg/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/ca/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/cs/LC_MESSAGES/gnome-media-2.0.mo
