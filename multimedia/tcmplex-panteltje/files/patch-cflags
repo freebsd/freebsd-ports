@@ -1,0 +1,11 @@
+$FreeBSD$
+
+--- Makefile.orig	Thu Oct 21 18:59:27 2004
++++ Makefile	Thu Oct 21 18:59:52 2004
+@@ -1,5 +1,5 @@
+ 
+-CFLAGS = -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
++CFLAGS+= -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+ 
+ LIBRARY = -lm
+ #-lpthread

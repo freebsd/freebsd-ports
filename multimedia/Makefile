@@ -118,6 +118,7 @@
     SUBDIR += spigot
     SUBDIR += splitmpg
     SUBDIR += subconv
+    SUBDIR += tcmplex-panteltje
     SUBDIR += tkxanim
     SUBDIR += tosvcd
     SUBDIR += totem
