@@ -7,6 +7,7 @@
 
 PORTNAME=	less+iso
 PORTVERSION=	358.254
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.io.com/~kazushi/less/ \
 		${MASTER_SITE_LOCAL}
