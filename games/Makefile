@@ -5,6 +5,7 @@
     SUBDIR += 3dc
     SUBDIR += 3dpong
     SUBDIR += 44bsd-hunt
+    SUBDIR += 4stattack
     SUBDIR += 54321
     SUBDIR += BillardGL
     SUBDIR += CaribbeanStud
