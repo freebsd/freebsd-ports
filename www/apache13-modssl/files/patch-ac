@@ -1,53 +1,40 @@
-*** conf/httpd.conf-dist.orig	Tue Jan 12 13:51:58 1999
---- conf/httpd.conf-dist	Tue Jan 12 13:52:37 1999
-***************
-*** 252,258 ****
-  #  don't use Group #-1 on these systems!
-  #
-  User nobody
-! Group #-1
-  
-  #
-  # ServerAdmin: Your address, where problems with the server should be
---- 252,258 ----
-  #  don't use Group #-1 on these systems!
-  #
-  User nobody
-! Group nobody
-  
-  #
-  # ServerAdmin: Your address, where problems with the server should be
-***************
-*** 470,476 ****
-  # define per-<VirtualHost> access logfiles, transactions will be
-  # logged therein and *not* in this file.
-  #
-! CustomLog logs/access_log common
-  
-  #
-  # If you would like to have agent and referer logfiles, uncomment the
---- 470,476 ----
-  # define per-<VirtualHost> access logfiles, transactions will be
-  # logged therein and *not* in this file.
-  #
-! #CustomLog logs/access_log common
-  
-  #
-  # If you would like to have agent and referer logfiles, uncomment the
-***************
-*** 483,489 ****
-  # If you prefer a single logfile with access, agent, and referer information
-  # (Combined Logfile Format) you can use the following directive.
-  #
-! #CustomLog logs/access_log combined
-  
-  #
-  # Optionally add a line containing the server version and virtual host
---- 483,489 ----
-  # If you prefer a single logfile with access, agent, and referer information
-  # (Combined Logfile Format) you can use the following directive.
-  #
-! CustomLog logs/access_log combined
-  
-  #
-  # Optionally add a line containing the server version and virtual host
+--- conf/httpd.conf-dist.orig	Wed Mar 24 10:30:16 1999
++++ conf/httpd.conf-dist	Wed Mar 24 10:33:06 1999
+@@ -94,8 +94,8 @@
+ # these files altogether by using "/dev/null" (for Unix) or
+ # "nul" (for Win32) for the arguments to the directives.
+ #
+-#ResourceConfig conf/srm.conf
+-#AccessConfig conf/access.conf
++ResourceConfig /dev/null
++AccessConfig   /dev/null
+ 
+ #
+ # Timeout: The number of seconds before receives and sends time out.
+@@ -251,7 +251,7 @@
+ #  don't use Group #-1 on these systems!
+ #
+ User nobody
+-Group #-1
++Group nobody
+ 
+ #
+ # ServerAdmin: Your address, where problems with the server should be
+@@ -469,7 +469,7 @@
+ # define per-<VirtualHost> access logfiles, transactions will be
+ # logged therein and *not* in this file.
+ #
+-CustomLog logs/access_log common
++#CustomLog logs/access_log common
+ 
+ #
+ # If you would like to have agent and referer logfiles, uncomment the
+@@ -482,7 +482,7 @@
+ # If you prefer a single logfile with access, agent, and referer information
+ # (Combined Logfile Format) you can use the following directive.
+ #
+-#CustomLog logs/access_log combined
++CustomLog logs/access_log combined
+ 
+ #
+ # Optionally add a line containing the server version and virtual host
