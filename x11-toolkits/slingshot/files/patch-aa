@@ -1,0 +1,91 @@
+*** Makefile.orig	Thu Apr 24 20:12:18 1997
+--- Makefile	Thu Apr 24 20:30:17 1997
+***************
+*** 2,8 ****
+  #	@(#) Makefile 1.21 93/10/25 
+  
+  SSPKGHOME = 	.
+! INSTALL_DIR =	/home2/install
+  TARFILE =	/home2/tmp/sspkgs-tar
+  
+  SRCDIR =	$(SSPKGHOME)/src
+--- 2,8 ----
+  #	@(#) Makefile 1.21 93/10/25 
+  
+  SSPKGHOME = 	.
+! INSTALL_DIR =	$(PREFIX)
+  TARFILE =	/home2/tmp/sspkgs-tar
+  
+  SRCDIR =	$(SSPKGHOME)/src
+***************
+*** 16,29 ****
+  subdirs: $(INCLUDEDIR) $(SRCDIR) examples
+  
+  $(INCLUDEDIR): FORCE
+! 	cd $@; make
+  
+  $(SRCDIR): FORCE Make.config
+! 	cd $@; make
+  
+  
+  examples: FORCE
+! 	cd $@; make
+  
+  #
+  # Make.config has things that are needed to build on various platforms.
+--- 16,29 ----
+  subdirs: $(INCLUDEDIR) $(SRCDIR) examples
+  
+  $(INCLUDEDIR): FORCE
+! 	cd $@; $(MAKE)
+  
+  $(SRCDIR): FORCE Make.config
+! 	cd $@; $(MAKE)
+  
+  
+  examples: FORCE
+! 	cd $@; $(MAKE)
+  
+  #
+  # Make.config has things that are needed to build on various platforms.
+***************
+*** 35,40 ****
+--- 35,43 ----
+  	@ if [ -s /vmunix ]; then  \
+  		echo cp config.sunos4x Make.config ; \
+  		cp config.sunos4x Make.config ; \
++ 	elif [ -s /kernel ]; then  \
++ 		echo cp config.fbsd Make.config ; \
++ 		cp config.fbsd Make.config ; \
+  	else  \
+  		echo cp config.svr4 Make.config ; \
+  		cp config.svr4 Make.config ; \
+***************
+*** 45,57 ****
+  
+  clean:
+  	-sccs clean
+! 	(cd $(INCLUDEDIR); make clean)
+! 	(cd $(SRCDIR); make clean)
+! 	(cd examples; make clean)
+  	rm -f Make.config
+  
+! install: $(INSTALL_DIR) FORCE
+! 	(cd $(INCLUDEDIR); make install INSTALL_DIR=$(INSTALL_DIR))
+  	(cp $(LIBDIR)/* $(INSTALL_DIR)/lib)
+  	-ranlib $(INSTALL_DIR)/lib/libsspkg.a
+  	-ranlib $(INSTALL_DIR)/lib/libsspkg.sa.*
+--- 48,60 ----
+  
+  clean:
+  	-sccs clean
+! 	(cd $(INCLUDEDIR); $(MAKE) clean)
+! 	(cd $(SRCDIR); $(MAKE) clean)
+! 	(cd examples; $(MAKE) clean)
+  	rm -f Make.config
+  
+! install: all $(INSTALL_DIR) FORCE
+! 	(cd $(INCLUDEDIR); $(MAKE) install INSTALL_DIR=$(INSTALL_DIR))
+  	(cp $(LIBDIR)/* $(INSTALL_DIR)/lib)
+  	-ranlib $(INSTALL_DIR)/lib/libsspkg.a
+  	-ranlib $(INSTALL_DIR)/lib/libsspkg.sa.*

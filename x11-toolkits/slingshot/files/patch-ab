@@ -1,0 +1,21 @@
+*** config.sunos4x	Fri Oct 22 12:35:02 1993
+--- config.fbsd	Thu Apr 24 20:32:41 1997
+***************
+*** 1,8 ****
+  
+  #	@(#) config.sunos4x 1.6 92/10/27 
+  
+! CONFIGPIC		= -pic
+! CONFIGSHAREDLIBLD	= ld -o $@ -assert pure-text $?
+  
+  SHAREDLIB	= $(LIBDIR)/libsspkg.so.1.0
+  SHAREDLIBDATA	= $(LIBDIR)/libsspkg.sa.1.0
+--- 1,8 ----
+  
+  #	@(#) config.sunos4x 1.6 92/10/27 
+  
+! CONFIGPIC		= -fpic
+! CONFIGSHAREDLIBLD	= ld -o $@ -Bshareable $?
+  
+  SHAREDLIB	= $(LIBDIR)/libsspkg.so.1.0
+  SHAREDLIBDATA	= $(LIBDIR)/libsspkg.sa.1.0
