@@ -5,10 +5,6 @@
 # $FreeBSD$
 #
 
-# Note: this port cannot be built when the textproc/mswordview port is
-# already installed, due to header file conflicts and the very broken
-# AbiWord build system.
-
 PORTNAME=	AbiWord
 PORTVERSION=	1.0.2
 CATEGORIES=	editors
@@ -58,6 +54,10 @@ WITH_GNOME=	yes
 USE_GNOME+=	gnomeprint gal gnomevfs
 CONFIGURE_ARGS+=--enable-gnome
 PKGNAMESUFFIX=	-gnome
+.endif
+
+.if exists(${LOCALBASE}/include/wv.h)
+BROKEN=	"This port cannot be built when textproc/wv is installed because of a header conflict.  Please remove textproc/wv, and resume the build.  If textproc/wv is no longer installed, please remove ${LOCALBASE}/include/wv.h, and resume the AbiWord build"
 .endif
 
 post-patch:
