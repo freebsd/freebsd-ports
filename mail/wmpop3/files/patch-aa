@@ -4,7 +4,7 @@
  LIBDIR = -L/usr/X11R6/lib
  LIBS   = -lXpm -lXext -lX11
 -FLAGS  = -O2
-+CFLAGS  = -O2
++CFLAGS  ?= -O2
  OBJS   =	wmpop3.o \
      	    Pop3Client.o \
  		    ../wmgeneral/wmgeneral.o \

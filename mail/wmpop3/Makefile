@@ -1,13 +1,13 @@
 # New ports collection makefile for:	wmpop3
-# Version required:		0.2.1a
+# Version required:		0.5.0a
 # Date created:			28 Mar 1999
 # Whom:				Jim Mock <jim@phrantic.phear.net>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/03/30 19:05:47 taoka Exp $
 #
 
-DISTNAME=	WMPop3-0.2.2a
-PKGNAME=	wmpop3-0.2.2a
+DISTNAME=	WMPop3-0.5.0a
+PKGNAME=	wmpop3-0.5.0a
 CATEGORIES=	mail windowmaker
 MASTER_SITES=	http://www.cs.mun.ca/~scotth/download/
 EXTRACT_SUFX=	.tgz
@@ -17,7 +17,7 @@ MAINTAINER=	jim@phrantic.phear.net
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/wmpop3.app/wmpop3
+WRKSRC=		${WRKDIR}/${PKGNAME}/wmpop3
 USE_X_PREFIX=	yes
 
 .include <bsd.port.pre.mk>
@@ -41,6 +41,6 @@ post-install:
 	@${ECHO} "-----------------------------------------------------------"
 	@${ECHO} "		"
 	@${MKDIR} ${PREFIX}/share/doc/wmpop3 && chmod a+rx ${PREFIX}/share/doc/wmpop3
-	${INSTALL_DATA} ${WRKDIR}/wmpop3.app/README ${PREFIX}/share/doc/wmpop3
+	${INSTALL_DATA} ${WRKDIR}/${PKGNAME}/README ${PREFIX}/share/doc/wmpop3
 
 .include <bsd.port.mk>
