@@ -11,7 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	emacs
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	amakawa@jp.FreeBSD.org
 
 USE_AUTOCONF=	yes
 
