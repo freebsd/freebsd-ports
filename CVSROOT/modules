@@ -10149,6 +10149,7 @@ xbae		ports/x11-toolkits/xbae
 xballoon	ports/x11/xballoon
 xbanner		ports/x11/xbanner
 xbarcode	ports/graphics/xbarcode
+xbase		ports/databases/xbase
 xbat		ports/games/xbat
 xbatt		ports/sysutils/xbatt
 xbattbar	ports/sysutils/xbattbar
