@@ -6,8 +6,7 @@
 #
 
 MASTERDIR=	${.CURDIR}/../../japanese/kon2-16dot
-EXTRA_PATCHES=	${.CURDIR}/files/patch-kon.cfg.FreeBSD \
-	       	${.CURDIR}/files/patch-lib::coding.c
+EXTRA_PATCHES=	${.CURDIR}/files/patch-lib::coding.c
 CATEGORIES=	chinese
 
 MAINTAINER=	statue@freebsd.sinica.edu.tw
@@ -32,6 +31,7 @@ post-patch:
 		-e "s;BIG5,      0;BIG5, 0xfefe;g" \
 		-e "s,GB2312.1980,GBK,g" \
 		${WRKSRC}/lib/coding.c
+	cd ${WRKSRC} && ${PATCH} < ${.CURDIR}/files/kon.cfg.FreeBSD-patch
 
 pre-install:
 	${MKDIR} ${PREFIX}/share/fonts/bdf
