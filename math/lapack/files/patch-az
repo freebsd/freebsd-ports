@@ -1,0 +1,19 @@
+--- TESTING/LIN/zchkaa.f.orig	Thu Nov  4 19:27:22 1999
++++ TESTING/LIN/zchkaa.f	Wed Dec 22 12:51:16 1999
+@@ -120,7 +120,7 @@
+      $                   ZCHKQ3, ZCHKQL, ZCHKQP, ZCHKQR, ZCHKRQ, ZCHKSP,
+      $                   ZCHKSY, ZCHKTB, ZCHKTP, ZCHKTR, ZCHKTZ, ZDRVGB,
+      $                   ZDRVGE, ZDRVGT, ZDRVHE, ZDRVHP, ZDRVLS, ZDRVPB,
+-     $                   ZDRVPO, ZDRVPP, ZDRVPT, ZDRVSP, ZDRVSY
++     $                   ZDRVPO, ZDRVPP, ZDRVPT, ZDRVSP, ZDRVSY, FPMCLR
+ *     ..
+ *     .. Scalars in Common ..
+       LOGICAL            LERR, OK
+@@ -140,6 +140,7 @@
+ *     ..
+ *     .. Executable Statements ..
+ *
++      CALL FPMCLR( )
+       S1 = DSECND( )
+       LDA = NMAX
+       FATAL = .FALSE.

@@ -1,0 +1,11 @@
+--- TESTING/LIN/Makefile.orig	Thu Nov  4 19:27:21 1999
++++ TESTING/LIN/Makefile	Wed Dec 22 10:06:14 1999
+@@ -36,7 +36,7 @@
+ 
+ ALINTST = \
+    aladhd.o alaerh.o alaesm.o alahd.o alareq.o \
+-   alasum.o alasvm.o chkxer.o icopy.o ilaenv.o xlaenv.o xerbla.o
++   alasum.o alasvm.o chkxer.o icopy.o ilaenv.o xlaenv.o xerbla.o $(FPMCLR)
+ 
+ SCLNTST= slaord.o
+ 

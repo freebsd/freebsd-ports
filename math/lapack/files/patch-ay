@@ -1,0 +1,19 @@
+--- TESTING/LIN/dchkaa.f.orig	Thu Nov  4 19:27:22 1999
++++ TESTING/LIN/dchkaa.f	Wed Dec 22 11:37:13 1999
+@@ -118,7 +118,7 @@
+      $                   DCHKQP, DCHKQR, DCHKRQ, DCHKSP, DCHKSY, DCHKTB,
+      $                   DCHKTP, DCHKTR, DCHKTZ, DDRVGB, DDRVGE, DDRVGT,
+      $                   DDRVLS, DDRVPB, DDRVPO, DDRVPP, DDRVPT, DDRVSP,
+-     $                   DDRVSY
++     $                   DDRVSY, FPMCLR
+ *     ..
+ *     .. Scalars in Common ..
+       LOGICAL            LERR, OK
+@@ -138,6 +138,7 @@
+ *     ..
+ *     .. Executable Statements ..
+ *
++      CALL FPMCLR( )
+       S1 = DSECND( )
+       LDA = NMAX
+       FATAL = .FALSE.

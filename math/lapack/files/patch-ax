@@ -1,0 +1,19 @@
+--- TESTING/LIN/cchkaa.f.orig	Thu Nov  4 19:26:41 1999
++++ TESTING/LIN/cchkaa.f	Wed Dec 22 10:46:17 1999
+@@ -120,7 +120,7 @@
+      $                   CCHKQ3, CCHKQL, CCHKQP, CCHKQR, CCHKRQ, CCHKSP,
+      $                   CCHKSY, CCHKTB, CCHKTP, CCHKTR, CCHKTZ, CDRVGB,
+      $                   CDRVGE, CDRVGT, CDRVHE, CDRVHP, CDRVLS, CDRVPB,
+-     $                   CDRVPO, CDRVPP, CDRVPT, CDRVSP, CDRVSY
++     $                   CDRVPO, CDRVPP, CDRVPT, CDRVSP, CDRVSY, FPMCLR
+ *     ..
+ *     .. Scalars in Common ..
+       LOGICAL            LERR, OK
+@@ -140,6 +140,7 @@
+ *     ..
+ *     .. Executable Statements ..
+ *
++      CALL FPMCLR( )
+       S1 = SECOND( )
+       LDA = NMAX
+       FATAL = .FALSE.

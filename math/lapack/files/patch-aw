@@ -1,0 +1,19 @@
+--- TESTING/LIN/schkaa.f.orig	Thu Nov  4 19:27:00 1999
++++ TESTING/LIN/schkaa.f	Wed Dec 22 10:03:15 1999
+@@ -118,7 +118,7 @@
+      $                   SCHKQP, SCHKQR, SCHKRQ, SCHKSP, SCHKSY, SCHKTB,
+      $                   SCHKTP, SCHKTR, SCHKTZ, SDRVGB, SDRVGE, SDRVGT,
+      $                   SDRVLS, SDRVPB, SDRVPO, SDRVPP, SDRVPT, SDRVSP,
+-     $                   SDRVSY
++     $                   SDRVSY, FPMCLR
+ *     ..
+ *     .. Scalars in Common ..
+       LOGICAL            LERR, OK
+@@ -138,6 +138,7 @@
+ *     ..
+ *     .. Executable Statements ..
+ *
++      CALL FPMCLR( )
+       S1 = SECOND( )
+       LDA = NMAX
+       FATAL = .FALSE.
