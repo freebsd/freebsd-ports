@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	cadaver
-PORTVERSION=	0.18.0
-PORTREVISION=	2
+PORTVERSION=	0.19.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/cadaver/
 
-MAINTAINER=	tarkhil@over.ru
+MAINTAINER=	ports@FreeBSD.org
 
-BROKEN=		"Dependency out of date"
+BROKEN=		"Does not compile"
 
-LIB_DEPENDS=	neon.18:${PORTSDIR}/www/neon \
+LIB_DEPENDS=	neon.19:${PORTSDIR}/www/neon \
 		intl.2:${PORTSDIR}/devel/gettext
 
 .ifndef NO_OPENSSL
