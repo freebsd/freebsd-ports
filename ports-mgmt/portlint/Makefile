@@ -3,10 +3,10 @@
 # Date created:		13 Jun 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.9 1997/09/14 14:24:54 itojun Exp $
+# $Id: Makefile,v 1.10 1997/09/21 02:02:33 itojun Exp $
 #
 
-DISTNAME=       portlint-1.49
+DISTNAME=       portlint-1.51
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.foretune.co.jp/pub/tools/portlint/
 EXTRACT_SUFX=	.shar
