@@ -23,6 +23,8 @@ RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/msn
 
+BROKEN=		"Broken dependencies"
+
 LIBDIR=		${PREFIX}/lib/msn
 DOCSDIR=	${PREFIX}/share/doc/amsn
 CORE=		FAQ HELP README amsn jwakeup langlist *tcl *htm*
