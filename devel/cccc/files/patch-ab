@@ -1,0 +1,17 @@
+*** cccc.h	Sun Aug 10 16:52:24 1997
+--- /home/andy/tmp/wrk/cccc.h	Fri Sep 12 23:00:32 1997
+***************
+*** 21,27 ****
+--- 21,32 ----
+  #else
+  
+  #define SIGNAL_HEADER <sys/signal.h>
++ 
++ #ifdef __FreeBSD__
++ #define DEFAULT_LIBDIR "/usr/local/share/cccc"
++ #else
+  #define DEFAULT_LIBDIR "/usr/local/lib/cccc"
++ #endif
+  
+  #endif
+  

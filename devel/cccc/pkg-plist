@@ -1,0 +1,8 @@
+bin/cccc
+share/cccc/cccc_inf.dat
+share/cccc/cccc_met.dat
+share/cccc/cccc_tmt.dat
+share/cccc/cccc_ug.htm
+share/doc/cccc/readme.txt
+@dirrm share/cccc
+@dirrm share/doc/cccc
