@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.28 1997/06/27 23:02:54 brian Exp $
+# $Id: Makefile,v 1.29 1997/10/13 07:03:30 obrien Exp $
 #
 
     SUBDIR += aub
@@ -9,7 +9,6 @@
     SUBDIR += knews
     SUBDIR += leafnode
     SUBDIR += nn
-    SUBDIR += nn-current
     SUBDIR += nntp
     SUBDIR += nntpbtr
     SUBDIR += nntpcache
