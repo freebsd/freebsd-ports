@@ -1,0 +1,62 @@
+--- /dev/null	Fri Sep 19 10:51:17 2003
++++ bin/mklib.freebsd	Fri Sep 19 10:51:54 2003
+@@ -0,0 +1,59 @@
++#!/bin/sh
++
++# Make a FreeBSD ELF shared library
++
++# $Id$
++
++#--common--------------------------------------------------------------
++
++# Usage:  mklib <archflags> <libname> <major> <minor> <file.o ... >
++#
++# <archflags> are arcitecture specific build flags
++# <libname> is name of output library (LIBRARY)
++# <major> is major version number (MAJOR)
++# <minor> is minor version number (MINOR)
++# <file.o ... > remaining arguments are object files (OBJECTS)
++# 
++# added local installation target prefix (RM_INSTALL)
++# tidied up the build
++#
++# 04/23/01  jdb
++#
++
++ARCHFLAGS=$1
++shift 1
++
++LIBRARY=$1
++shift 1
++
++MAJOR=$1
++shift 1
++
++MINOR=$1
++shift 1
++
++# we don't care about ${MINOR} here
++VERSION=$MAJOR
++
++OBJECTS=$*
++
++DEPLIBS="-lGL -lGLU -L${X11BASE}/lib -lXmu"
++
++#--platform------------------------------------------------------------
++
++# build library objects
++${ECHO_CMD} "Building shared object $LIBRARY.so.$VERSION and the archive library $LIBRARY.a"
++${RM} -f ${LIBRARY}.a ${LIBRARY}.so.${VERSION}
++${AR} qv ${LIBRARY}.a ${OBJECTS}
++
++# FreeBSD specific build
++${CC} -shared -Wl,-soname,${LIBRARY}.so.${VERSION} -o ${LIBRARY}.so.${VERSION} ${OBJECTS} ${DEPLIBS}
++if [ ${ARCHFLAGS##*-} != "debug" ]; then
++    ${STRIP_CMD} ${LIBRARY}.so.${VERSION}
++    ${ECHO_CMD} "library has been stripped (non-debug build)."
++fi 
++
++# code tree
++${CP} ${LIBRARY}.a ${LIBRARY}.so.${VERSION} ../lib
++${RM} -f ../lib/${LIBRARY}.so
++${LN} -s ${LIBRARY}.so.${VERSION} ${LIBRARY}.so
