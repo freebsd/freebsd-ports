@@ -5,7 +5,7 @@ bin/kfax
 bin/kfract
 bin/kghostview
 bin/kiconedit
-bin/kooka
+%%SANE%%bin/kooka
 bin/kpaint
 bin/kruler
 bin/ksnapshot
@@ -239,8 +239,8 @@ share/icons/locolor/32x32/apps/kcoloredit.png
 @dirrm share/apps/kruler
 @dirrm share/apps/kpaint/toolbar
 @dirrm share/apps/kpaint
-@dirrm share/apps/kooka/pics
-@dirrm share/apps/kooka
+%%SANE%%@dirrm share/apps/kooka/pics
+%%SANE%%@dirrm share/apps/kooka
 @dirrm share/apps/kiconedit/toolbar
 @dirrm share/apps/kiconedit/pics
 @dirrm share/apps/kiconedit
