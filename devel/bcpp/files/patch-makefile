@@ -1,0 +1,14 @@
+--- makefile.orig	Tue Aug 10 16:04:32 1999
++++ makefile	Mon Jun  3 02:26:21 2002
+@@ -2,9 +2,8 @@
+ 
+ D		=./
+ 
+-CXX		=gcc
+-CPPFLAGS	=-I$(D) -O2 -Wall #-DDEBUG -DDEBUG2
+-CXXFLAGS	= -x c++ $(CPPFLAGS)
++CXX		?=gcc
++CXXFLAGS	+=-I$(D) -Wall #-DDEBUG -DDEBUG2
+ 
+ .SUFFIXES:	.cpp .o
+ 
