@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	crawl
-PORTVERSION=	0.3
-PORTREVISION=	2
+PORTVERSION=	0.4
 CATEGORIES=	www
 MASTER_SITES=	http://www.monkey.org/~provos/
 
@@ -17,20 +16,15 @@ COMMENT=	A small, efficient web crawler with advanced features
 BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent
 LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
+GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
-USE_AUTOCONF=	yes
-CONFIGURE_ARGS=	--with-libevent=${LOCALBASE}
-CONFIGURE_ENV=	LIBS="${LDFLAGS} -lmd"
-CFLAGS+=	-D__FUNCTION__='""'
+CONFIGURE_ARGS+=	--with-libevent=${LOCALBASE} --program-transform-name=''
 
 MAN1=	crawl.1
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,/usr/include/db2,${LOCALBASE}/include/db3,g ; \
-		s,db2,db3,g' ${WRKSRC}/configure.in
-	${CHMOD} u+w ${WRKSRC}/*
+	@${REINPLACE_CMD} -e 's,/usr/include/db2,${LOCALBASE}/include/db3,g' \
+		-e 's,db2,db3,g' ${WRKSRC}/configure.in
 
 post-install:
 .if !defined(NOPORTDOCS)
