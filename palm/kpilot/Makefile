@@ -3,7 +3,7 @@
 # Date created:        09 April 1998
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.18 1998/11/04 03:35:10 nectar Exp $
+# $Id: Makefile,v 1.19 1998/11/06 04:20:59 asami Exp $
 #
 
 DISTNAME=	kpilot-3.0.2
@@ -34,6 +34,7 @@ CONFIGURE_ENV=	CXXFLAGS="$(CFLAGS)" \
 MAKE_ENV=	KDEDIR="${KDEDIR}"
 
 pre-configure:
-		${CP} ${FILESDIR}/libtool ${FILESDIR}/ltmain.sh $(WRKSRC)/kpilot/libpilot
+		${CP} ${FILESDIR}/libtool.${PORTOBJFORMAT} ${WRKSRC}/kpilot/libpilot/libtool
+		${CP} ${FILESDIR}/ltmain.sh ${WRKSRC}/kpilot/libpilot/ltmain.sh
 
 .include <bsd.port.mk>
