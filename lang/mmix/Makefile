@@ -13,6 +13,8 @@ DISTNAME=	mmix
 
 MAINTAINER=	keith@FreeBSD.org
 
+BROKEN=		"Incorrect checksum"
+
 BUILD_DEPENDS=	ctangle:${PORTSDIR}/devel/cweb
 
 NO_WRKSUBDIR=	yes
