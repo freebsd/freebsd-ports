@@ -1,11 +1,20 @@
---- smf/SMFTrack.cxx.orig	Wed Dec 11 04:11:04 2002
-+++ smf/SMFTrack.cxx	Wed Dec 11 04:11:22 2002
-@@ -355,7 +355,8 @@
+--- smf/SMFTrack.cxx.orig	Mon Aug  5 05:47:36 1996
++++ smf/SMFTrack.cxx	Wed May 14 03:51:51 2003
+@@ -352,10 +352,17 @@
+ 	return (1);
+ }
+ 
++#include <sys/param.h>
  ostream &
  operator<<(ostream &os, const SMFTrack &t)
  {
 -	long i, prev_flags;
-+  std::_Ios_Fmtflags prev_flags;
++#if __FreeBSD_version < 500000
++	long
++#else
++        std::_Ios_Fmtflags
++#endif
++             prev_flags;
 +	long i;
  	int prev_width;
  	unsigned char *ptr;
