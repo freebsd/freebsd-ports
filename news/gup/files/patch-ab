@@ -1,0 +1,10 @@
+--- rfc822.h.orig	Sun May  9 12:53:24 1999
++++ rfc822.h	Sun May  9 12:53:58 1999
+@@ -246,7 +246,6 @@
+ extern int	errno;
+ extern int	sys_nerr;
+ extern int	optind;
+-extern char	*sys_errlist[];
+ extern char	**environ;
+ extern char	*optarg;
+ 
