@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	edonkey
-PORTVERSION=	16.38
+PORTVERSION=	16.39
 CATEGORIES=	net linux
 MASTER_SITES=	http://www.edonkey2000.com/files/
 PKGNAMEPREFIX=	linux-
