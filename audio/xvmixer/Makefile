@@ -8,8 +8,7 @@
 PORTNAME=	xvmixer
 PORTVERSION=	1.0
 CATEGORIES=	audio
-MASTER_SITES=	http://ftp.auxio.org/pub/mirrors/step.polymtl.ca/pub/Xview/apps/xvmixer/ \
-		ftp://quenix.dyndns.org/freebsd/
+MASTER_SITES=	http://ftp.auxio.org/pub/mirrors/step.polymtl.ca/pub/Xview/apps/xvmixer/
 
 MAINTAINER=	gagnon_s@sympatico.ca
 COMMENT=	Open Look-based audio mixer
