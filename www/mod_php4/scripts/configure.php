@@ -74,9 +74,6 @@ while [ "$1" ]; do
 			ZLIB=1
 			;;
 		\"mcrypt\")
-			echo "mcrypt support doesn't compile at the moment. Ignoring." > /dev/stderr
-			;;
-		\"nothing\")
 			echo "LIB_DEPENDS+=	mcrypt.5:\${PORTSDIR}/security/libmcrypt"
 			echo "CONFIGURE_ARGS+=--with-mcrypt=\${PREFIX}"
 			;;
@@ -146,6 +143,7 @@ while [ "$1" ]; do
 			echo "SNMP is DISABLED for now. Ignoring." > /dev/stderr
 			;;
 		\"nothing\")
+
 			echo "LIB_DEPENDS+=	snmp.4:\${PORTSDIR}/net/net-snmp"
 			echo "CONFIGURE_ARGS+=--with-snmp=\${PREFIX} --enable-ucd-snmp-hack"
 			;;

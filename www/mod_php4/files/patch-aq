@@ -1,5 +1,34 @@
 --- configure.orig	Tue Aug 29 20:37:36 2000
 +++ configure	Sat Sep  2 10:02:53 2000
+@@ -23088,12 +23088,7 @@
+ 
+   LIBS=$old_LIBS
+   LDFLAGS="$old_LDFLAGS"
+-  if test "$ac_cv_lib_mcrypt_init_mcrypt" = "yes"; then
+-	cat >> confdefs.h <<\EOF
+-#define HAVE_LIBMCRYPT22 1
+-EOF
+-
+-  elif test "$ac_cv_lib_mcrypt_mcrypt_module_open" = "yes"; then
++  if test "$ac_cv_lib_mcrypt_mcrypt_module_open" = "yes"; then
+     
+  case "ltdl" in
+  c|c_r|pthread*) ;;
+@@ -23106,8 +23101,13 @@
+   ;;
+   esac
+ 
+-	cat >> confdefs.h <<\EOF
++    cat >> confdefs.h <<\EOF
+ #define HAVE_LIBMCRYPT24 1
++EOF
++
++  elif test "$ac_cv_lib_mcrypt_init_mcrypt" = "yes"; then
++    cat >> confdefs.h <<\EOF
++#define HAVE_LIBMCRYPT22 1
+ EOF
+ 
+   else
 @@ -37824,18 +37824,6 @@
    fi
  
