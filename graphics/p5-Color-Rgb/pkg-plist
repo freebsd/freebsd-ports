@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Color/Rgb/.packlist
+%%SITE_PERL%%/Color/Rgb.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Color/Rgb
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Color 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Color 2>/dev/null || true
