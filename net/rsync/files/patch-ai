@@ -1,5 +1,5 @@
---- rsyncd.conf.5.orig	Tue Nov  3 14:00:46 1998
-+++ rsyncd.conf.5	Sun Nov  8 01:37:21 1998
+--- rsyncd.conf.5.orig	Tue Apr  6 08:04:17 1999
++++ rsyncd.conf.5	Tue Apr  6 14:43:50 1999
 @@ -66,7 +66,7 @@
  config file\&.
  .PP 
@@ -9,7 +9,7 @@
  connection\&. 
  .PP 
  .SH "GLOBAL OPTIONS" 
-@@ -186,7 +186,7 @@
+@@ -128,7 +128,7 @@
  .IP "\fBpath\fP" 
  The "path" option specifies the directory in the servers
  filesystem to make available in this module\&.  You must specify this option
@@ -18,16 +18,16 @@
  .IP 
  .IP "\fBuse chroot\fP" 
  If "use chroot" is true, the rsync server will chroot
-@@ -262,7 +262,7 @@
- \fBYou should make sure that the secrets file is not readable by anyone
- other than the system administrator\&.\fP There is no default for the
- "secrets file" option, you must choose a name (such as
--\f(CW/etc/rsyncd\&.secrets\fP)\&.
-+\f(CW!!PREFIX!!/etc/rsyncd\&.secrets\fP)\&.
+@@ -239,7 +239,7 @@
+ you may find that passwords longer than 8 characters don\'t work\&. 
  .IP 
- .IP "\fBhosts allow\fP" 
- The "hosts allow" option allows you to specify a
-@@ -361,7 +361,7 @@
+ There is no default for the "secrets file" option, you must choose a name
+-(such as \f(CW/etc/rsyncd\&.secrets\fP)\&.
++(such as \f(CW!!PREFIX!!/etc/rsyncd\&.secrets\fP)\&.
+ .IP 
+ .IP "\fBstrict modes\fP" 
+ The "strict modes" option determines whether or not 
+@@ -429,7 +429,7 @@
  .br 
  syslog facility = local5 
  .br 
@@ -36,7 +36,7 @@
  .PP 
  
  .DS 
-@@ -386,13 +386,13 @@
+@@ -454,13 +454,13 @@
          path = /data/cvs
          comment = CVS repository (requires authentication)
          auth users = tridge, susan
@@ -52,7 +52,7 @@
  .PP 
  tridge:mypass 
  .br 
-@@ -400,7 +400,7 @@
+@@ -468,7 +468,7 @@
  .PP 
  .SH "FILES" 
  .PP 
