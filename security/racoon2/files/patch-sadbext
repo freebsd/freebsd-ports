@@ -1,0 +1,95 @@
+--- ../libipsec/key_debug.c-	Sat Jul 12 18:49:46 2003
++++ ../libipsec/key_debug.c	Sat Jul 12 18:50:25 2003
+@@ -80,7 +80,9 @@
+ static void kdebug_sadb_address __P((struct sadb_ext *));
+ static void kdebug_sadb_key __P((struct sadb_ext *));
+ static void kdebug_sadb_x_sa2 __P((struct sadb_ext *));
++#ifdef SADB_X_EXT_TAG
+ static void kdebug_sadb_x_tag __P((struct sadb_ext *));
++#endif
+ 
+ #ifdef _KERNEL
+ static void kdebug_secreplay __P((struct secreplay *));
+@@ -166,7 +168,9 @@
+ 		TYPESTR(X_EXT_KMPRIVATE),
+ 		TYPESTR(X_EXT_POLICY),
+ 		TYPESTR(X_EXT_SA2),
++#ifdef SADB_X_EXT_TAG
+ 		TYPESTR(X_EXT_TAG),
++#endif
+ 		{ NULL }
+ 	};
+ 
+@@ -252,9 +256,11 @@
+ 		case SADB_X_EXT_SA2:
+ 			kdebug_sadb_x_sa2(ext);
+ 			break;
++#ifdef SADB_X_EXT_TAG
+ 		case SADB_X_EXT_TAG:
+ 			kdebug_sadb_x_tag(ext);
+ 			break;
++#endif
+ 		default:
+ 			printf("kdebug_sadb: invalid ext_type %u was passed.\n",
+ 			    ext->sadb_ext_type);
+@@ -494,6 +500,7 @@
+ 	return;
+ }
+ 
++#ifdef SADB_X_EXT_TAG
+ static void
+ kdebug_sadb_x_tag(ext)
+ 	struct sadb_ext *ext;
+@@ -508,6 +515,7 @@
+ 
+ 	return;
+ }
++#endif
+ 
+ void
+ kdebug_sadb_x_policy(ext)
+--- ../libipsec/pfkey.c-	Sat Jul 12 18:56:08 2003
++++ ../libipsec/pfkey.c	Sat Jul 12 18:56:18 2003
+@@ -1762,7 +1762,9 @@
+ 		case SADB_EXT_SPIRANGE:
+ 		case SADB_X_EXT_POLICY:
+ 		case SADB_X_EXT_SA2:
++#ifdef SADB_X_EXT_TAG
+ 		case SADB_X_EXT_TAG:
++#endif
+ 			mhp[ext->sadb_ext_type] = (caddr_t)ext;
+ 			break;
+ 		default:
+--- ../libipsec/pfkey_dump.c-	Sat Jul 12 18:56:47 2003
++++ ../libipsec/pfkey_dump.c	Sat Jul 12 18:57:15 2003
+@@ -352,7 +352,9 @@
+ 	char pbuf[NI_MAXSERV];
+ 	caddr_t mhp[SADB_EXT_MAX + 1];
+ 	struct sadb_address *m_saddr, *m_daddr;
++#ifdef SADB_X_EXT_TAG
+ 	struct sadb_x_tag *m_tag;
++#endif
+ 	struct sadb_x_policy *m_xpl;
+ 	struct sadb_lifetime *m_lftc = NULL, *m_lfth = NULL;
+ 	struct sockaddr *sa;
+@@ -370,7 +372,9 @@
+ 
+ 	m_saddr = (struct sadb_address *)mhp[SADB_EXT_ADDRESS_SRC];
+ 	m_daddr = (struct sadb_address *)mhp[SADB_EXT_ADDRESS_DST];
++#ifdef SADB_X_EXT_TAG
+ 	m_tag = (struct sadb_x_tag *)mhp[SADB_X_EXT_TAG];
++#endif
+ 	m_xpl = (struct sadb_x_policy *)mhp[SADB_X_EXT_POLICY];
+ 	m_lftc = (struct sadb_lifetime *)mhp[SADB_EXT_LIFETIME_CURRENT];
+ 	m_lfth = (struct sadb_lifetime *)mhp[SADB_EXT_LIFETIME_HARD];
+@@ -425,8 +429,10 @@
+ 		str_upperspec(m_saddr->sadb_address_proto, sport, dport);
+ 	}
+ 
++#ifdef SADB_X_EXT_TAG
+ 	if (m_tag)
+ 		printf("tagged \"%s\" ", m_tag->sadb_x_tag_name);
++#endif
+ 
+ 	/* policy */
+     {
