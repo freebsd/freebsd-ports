@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clearlooks-metacity
-PORTVERSION=	0.5
+PORTVERSION=	0.5.1
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.gnome-look.org/content/files/
 DISTNAME=	21237-${PORTNAME}-${PORTVERSION}
@@ -20,9 +20,8 @@ USE_X_PREFIX=	yes
 DATADIR=	share/gnome/themes/Clearlooks/metacity-1
 NO_BUILD=	yes
 
-
-PLIST_FILES=    %%DATADIR%%/metacity-theme-1.xml
-PLIST_DIRS=     %%DATADIR%% \
+PLIST_FILES=	%%DATADIR%%/metacity-theme-1.xml
+PLIST_DIRS=	%%DATADIR%% \
 		share/gnome/themes/Clearlooks
 
 do-install:
