@@ -23,7 +23,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
 pre-patch:
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${PERL} -pi -e \
 		's|\$$\(datadir\)/gnome/|\$$\(datadir\)/|g'
 
 .include <bsd.port.mk>

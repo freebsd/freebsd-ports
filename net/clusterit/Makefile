@@ -27,7 +27,8 @@ USE_XLIB=	yes
 .endif
 
 post-patch:
-	@find ${WRKSRC} -name Makefile | xargs ${PERL} -pi -e 's#/usr/X11R6#${X11BASE}#g'
+	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} \
+		${PERL} -pi -e 's#/usr/X11R6#${X11BASE}#g'
 .for file in command.c rvt.c screen.c
 	@${PERL} -pi -e "s/malloc.h/stdlib.h/g" ${WRKSRC}/rvt/${file}
 .endfor

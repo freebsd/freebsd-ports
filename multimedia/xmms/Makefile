@@ -111,7 +111,7 @@ pre-extract:
 .endif
 
 post-patch:
-	@find ${WRKSRC} -name "Makefile.in*" | xargs ${REINPLACE_CMD} -e \
+	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
 		 's|\(datadir\)/aclocal|(prefix)/share/aclocal|g'
 	@${REINPLACE_CMD} -e 's|{datadir}/locale|{prefix}/share/locale|g' \
 		${WRKSRC}/configure

@@ -24,7 +24,7 @@ JDK_VERSION=	1.1.8
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-extract:
-	@(cd ${WRKSRC} && find * -type d -exec ${CHMOD} 755 {} \;)
+	@(cd ${WRKSRC} && ${FIND} * -type d -exec ${CHMOD} 755 {} \;)
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/java/classes ${PREFIX}/share/java/fesi

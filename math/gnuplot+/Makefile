@@ -62,7 +62,7 @@ post-patch:
 	cd ${WRKSRC}; ${TOUCH} configure
 
 pre-build:
-	find ${WRKSRC} \( -name \*.orig -o -name \*~ \) -exec ${RM} -f \{} \;
+	${FIND} ${WRKSRC} \( -name \*.orig -o -name \*~ \) -exec ${RM} -f \{} \;
 
 post-build:
 	cd ${WRKSRC}/docs; ${GMAKE} info

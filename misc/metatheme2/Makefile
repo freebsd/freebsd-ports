@@ -32,12 +32,12 @@ CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 PLIST_SUB=	VERSION=${PORTVERSION}
 
 pre-patch:
-	@find ${WRKSRC} -name "Makefile.in*" | xargs ${REINPLACE_CMD} -e \
+	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|[(]datadir[)]/gnome/|(datadir)/|g ; \
 		 s|[(]datadir[)]/locale|(prefix)/share/locale|g'
 
 post-configure:
-	@find ${WRKSRC}/plugins -name "*.c" | xargs ${REINPLACE_CMD} -e \
+	@${FIND} ${WRKSRC}/plugins -name "*.c" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|%%X11BASE%%|${X11BASE}|g ; s|%%LOCALBASE%%|${LOCALBASE}|g'
 
 .include <bsd.port.mk>

@@ -24,7 +24,7 @@ PERL_CONFIGURE=	yes
 MAN3=		Math::LinearCombination.3
 
 pre-patch:
-	@${FIND} ${WRKSRC} -name "*.pm" | xargs ${PERL} -pi -e \
+	@${FIND} ${WRKSRC} -name "*.pm" | ${XARGS} ${PERL} -pi -e \
 		's!^require 5.005_62;!!; s!^use warnings;!!; s!^our\s+!my !;'
 
 .include <bsd.port.mk>

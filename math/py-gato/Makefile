@@ -33,7 +33,7 @@ do-build:
 
 do-install:
 	@ ${MKDIR} ${GATO_DIR}
-	@ cd ${WRKSRC} && find *.py *.pyc *.pyo \
+	@ cd ${WRKSRC} && ${FIND} *.py *.pyc *.pyo \
 	  -name Gato.py\* -o -name Gred.py\* -o -print \
 	  | ${CPIO} ${BINOWN}:${BINGRP} ${GATO_DIR}
 .for script in Gato Gred

@@ -66,7 +66,7 @@ DOC_ja_JP=	QuickStart.txt QuickUsage.txt guide-1.html guide-2.html \
 		guide-11.html guide.html Answers.txt Report.txt
 
 post-patch:
-	@find ${WRKSRC} -name '*.orig' -exec ${RM} -f '{}' ';'
+	@${FIND} ${WRKSRC} -name '*.orig' -exec ${RM} -f '{}' ';'
 	@${PERL} -pi -e 's/^CFLAGS/#$$&/' ${WRKSRC}/configure
 
 post-install:

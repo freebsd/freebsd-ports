@@ -26,7 +26,7 @@ CONFIGURE_ARGS=	--enable-kawa-frontend
 GNU_CONFIGURE=	yes
 
 pre-patch:
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi \
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${PERL} -pi \
 		 -e 's|sed |gsed |g;' \
 		 -e 's|JAR = jar|JAR = ${JAR}|g;'
 	perl -pi -e 's|{JAVAC-javac}|{JAVAC-${JAVAC}}|g;' \

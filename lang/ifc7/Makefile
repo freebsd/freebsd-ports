@@ -77,9 +77,9 @@ pre-patch:
 # Remove unneeded/unsafe access rights
 .for i in docs ia32/include ia32/lib
 	@${FIND} ${WRKSRC}/opt/intel/${COMPILERDIR}/${i} -type f -print0 | \
-		xargs -0 ${CHMOD} a-x,g-w
+		${XARGS} -0 ${CHMOD} a-x,g-w
 .endfor
-	@${FIND} ${WRKSRC}/opt -type d -print0 | xargs -0 ${CHMOD} go-w
+	@${FIND} ${WRKSRC}/opt -type d -print0 | ${XARGS} -0 ${CHMOD} go-w
 # Use the Linux ABI for the binaries
 .for i in ifcbin fpp icid f90com profmerge proforder xiar xild
 	@brandelf -t Linux ${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/${i}

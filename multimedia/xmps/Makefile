@@ -30,7 +30,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
-	@${FIND} ${WRKSRC} -name "Makefile.in" | xargs ${REINPLACE_CMD} -e \
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		 's|-lpthread|${PTHREAD_LIBS}|g'
 
 post-configure:
