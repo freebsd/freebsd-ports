@@ -486,6 +486,7 @@
     SUBDIR += ruby-gserver
     SUBDIR += ruby-icmp
     SUBDIR += ruby-ldap
+    SUBDIR += ruby-net-geoip
     SUBDIR += ruby-nis
     SUBDIR += ruby-pcap
     SUBDIR += ruby-romp
