@@ -29,31 +29,26 @@ lib/X11/xcin25/tab/big5/array30.tab
 lib/X11/xcin25/tab/big5/bims_pinyin.tab
 lib/X11/xcin25/tab/big5/cj.tab
 lib/X11/xcin25/tab/big5/default.phr
+lib/X11/xcin25/tab/big5/jyutping.tab
+lib/X11/xcin25/tab/big5/jyutping0.tab
 lib/X11/xcin25/tab/big5/phone.tab
 lib/X11/xcin25/tab/big5/pinyin.tab
 lib/X11/xcin25/tab/big5/simplex.tab
 lib/X11/xcin25/tab/big5/sys.tab
 lib/X11/xcin25/tab/big5/tsi.db
 lib/X11/xcin25/tab/big5/yin.db
-lib/X11/xcin25/tab/big5hkscs/cj.tab
-lib/X11/xcin25/tab/big5hkscs/default.phr
-lib/X11/xcin25/tab/big5hkscs/sys.tab
-lib/X11/xcin25/tab/gb2312/default.phr
-lib/X11/xcin25/tab/gb2312/jtcj_gb.tab
-lib/X11/xcin25/tab/gb2312/pinyin.tab
-lib/X11/xcin25/tab/gb2312/shuangpin.tab
-lib/X11/xcin25/tab/gb2312/sys.tab
-lib/X11/xcin25/tab/gb2312/wubizixing.tab
-lib/X11/xcin25/tab/gbk/default.phr
-lib/X11/xcin25/tab/gbk/sys.tab
+lib/X11/xcin25/tab/EUC/default.phr
+lib/X11/xcin25/tab/EUC/jtcj_gb.tab
+lib/X11/xcin25/tab/EUC/pinyin.tab
+lib/X11/xcin25/tab/EUC/shuangpin.tab
+lib/X11/xcin25/tab/EUC/sys.tab
+lib/X11/xcin25/tab/EUC/wubizixing.tab
 share/locale/zh_TW.Big5/LC_MESSAGES/xcin.mo
 @dirrm lib/X11/xcin25/bin
 @dirrm lib/X11/xcin25/doc/internal
 @dirrm lib/X11/xcin25/doc/modules
 @dirrm lib/X11/xcin25/doc
 @dirrm lib/X11/xcin25/tab/big5
-@dirrm lib/X11/xcin25/tab/big5hkscs
-@dirrm lib/X11/xcin25/tab/gb2312
-@dirrm lib/X11/xcin25/tab/gbk
+@dirrm lib/X11/xcin25/tab/EUC
 @dirrm lib/X11/xcin25/tab
 @dirrm lib/X11/xcin25

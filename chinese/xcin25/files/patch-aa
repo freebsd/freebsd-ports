@@ -1,10 +1,9 @@
 --- src/util/cin2tab/Makefile.in.orig	Thu Jul 20 09:46:36 2000
 +++ src/util/cin2tab/Makefile.in	Sat Aug 12 15:13:28 2000
-@@ -72,6 +72,7 @@
+@@ -72,5 +72,7 @@
  distclean: clean
  	rm -f Makefile .depend
  install: $(BIN)
--	if [ -f $(xcin_binp)/$(BIN) ]; then mv $(xcin_binp)/$(BIN) $(xcin_binp)/$(BIN).old; fi
 -	$(INSTALL_PROGRAM) $(BIN) $(xcin_binp)
 +	if [ ! -d $(xcin_libp)/bin ]; then mkdir -p $(xcin_libp)/bin; fi
 +	if [ -f $(xcin_libp)/bin/$(BIN) ]; then mv $(xcin_libp)/bin/$(BIN) $(xcin_libp)/bin/$(BIN).old; fi
