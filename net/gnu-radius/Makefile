@@ -12,6 +12,8 @@ MASTER_SITE_SUBDIR=	radius
 
 MAINTAINER=	lance@evitel.net
 
+BROKEN=		"Does not compile"
+
 #MAKEFILE=	Makefile
 
 USE_SUBMAKE=	yes
