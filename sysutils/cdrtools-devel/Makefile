@@ -62,7 +62,7 @@ PKGNAMESUFFIX?=	-devel
 .include <bsd.port.pre.mk>
 
 pre-everything::
-.if !defined(MKISOFS)
+.if !defined(WITH_RSCSI)
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You may use the following build option(s):"
 	@${ECHO_MSG} ""
