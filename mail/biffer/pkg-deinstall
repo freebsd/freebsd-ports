@@ -1,0 +1,14 @@
+#!/bin/sh
+
+if [ x$2 != xDEINSTALL ]; then
+    exit
+fi
+
+echo "Removing biffer from /etc/services ..."
+cp /etc/services /etc/services.bak
+egrep -v '^biffer' /etc/services.bak > /etc/services
+
+echo "Removing biffer and biffer_comsat from /etc/inetd.conf ..."
+cp /etc/inetd.conf /etc/inetd.conf.bak
+egrep -v '^biffer' /etc/inetd.conf.bak | egrep -v \
+  '^comsat[[:space:]]+.*[[:space:]]+biffer_comsat' > /etc/inetd.conf
