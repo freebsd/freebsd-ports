@@ -3890,6 +3890,7 @@ libzvt		ports/x11-toolkits/libzvt
 licq		ports/net/licq
 licq-console	ports/net/licq-console
 licq-jons-gtk-gui	ports/net/licq-jons-gtk-gui
+licq-osd	ports/net/licq-osd
 licq-qt-gui	ports/net/licq-qt-gui
 liece		ports/irc/liece
 liece-dcc	ports/irc/liece-dcc
