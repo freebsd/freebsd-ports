@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.109 1997/06/22 04:09:24 brian Exp $
+# $Id: Makefile,v 1.110 1997/06/23 15:46:04 max Exp $
 #
 
     SUBDIR += archie
@@ -23,6 +23,7 @@
     SUBDIR += gated
     SUBDIR += gnu-finger
     SUBDIR += gopher
+    SUBDIR += icmpinfo
     SUBDIR += irc
     SUBDIR += ircII
     SUBDIR += isc-dhcp
