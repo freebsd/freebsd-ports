@@ -15,7 +15,7 @@ MAINTAINER=	markp@FreeBSD.org
 # Note: stegdetect includes a modified version of jpeg-6b linked statically
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
-MAN1=		stegdetect.1
+MAN1=		stegdetect.1 stegbreak.1
 
 pre-patch:
 	@${PERL} -pi -e 's@\$$\(JPEGLIB\)@\$$\(JPEGLIB\) \-lcrypto@' \
