@@ -8,7 +8,9 @@
 PORTNAME=	siphon
 PORTVERSION=	0.666
 CATEGORIES=	security
-MASTER_SITES=	http://www.subterrain.net/projects/siphon/
+MASTER_SITES=	ftp://ftp.man.szczecin.pl/pub7/security/network-mapping/siphon/ \
+		ftp://the.ausmac.net/sd3a/security/network-mapping/siphon/
+# http://www.subterrain.net/projects/siphon/
 DISTFILES=	siphon-v.666.tar.gz siphon-report.pl
 EXTRACT_ONLY=	siphon-v.666.tar.gz
 
