@@ -58,6 +58,7 @@ share/locale/sl/LC_MESSAGES/lynx.mo
 share/locale/sv/LC_MESSAGES/lynx.mo
 share/locale/tr/LC_MESSAGES/lynx.mo
 share/locale/uk/LC_MESSAGES/lynx.mo
+share/locale/zh_CN/LC_MESSAGES/lynx.mo
 share/locale/zh_TW/LC_MESSAGES/lynx.mo
 share/lynx_help/Lynx_users_guide.html
 share/lynx_help/about_lynx.html
