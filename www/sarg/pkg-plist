@@ -1,4 +1,28 @@
 bin/sarg
-@unexec if cmp -s %D/etc/sarg/sarg.conf.default %D/etc/sarg/sarg.conf; then rm -f %D/etc/sarg.conf; fi
+@unexec if cmp -s %D/etc/sarg/sarg.conf %D/etc/sarg/sarg.conf.default; then rm -f %D/etc/sarg.conf; fi
+@exec [ ! -f %B/sarg.conf ] || cp -p %B/sarg.conf.default %B/sarg.conf
 etc/sarg/sarg.conf.default
-@exec if [ ! -f %D/etc/sarg/sarg.conf ]; then cp %D/etc/sarg/%f %D/etc/sarg/sarg.conf; fi
+etc/sarg/exclude_codes
+etc/sarg/languages/Catalan
+etc/sarg/languages/Russian_koi8
+etc/sarg/languages/German
+etc/sarg/languages/French
+etc/sarg/languages/Czech
+etc/sarg/languages/Dutch
+etc/sarg/languages/Bulgarian_windows1251
+etc/sarg/languages/Romanian
+etc/sarg/languages/Polish
+etc/sarg/languages/Italian
+etc/sarg/languages/Portuguese
+etc/sarg/languages/Japanese
+etc/sarg/languages/Hungarian
+etc/sarg/languages/Latvian
+etc/sarg/languages/Russian_windows1251
+etc/sarg/languages/Serbian
+etc/sarg/languages/Indonesian
+etc/sarg/languages/English
+etc/sarg/languages/Spanish
+etc/sarg/languages/Turkish
+etc/sarg/languages/Ukrainian_windows1251
+etc/sarg/languages/.new
+@dirrm etc/sarg/languages
