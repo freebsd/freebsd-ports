@@ -3,7 +3,7 @@
 # Date created:		20 Jan 1999
 # Whom:			KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/02/11 07:56:55 kuriyama Exp $
 #
 
 DISTNAME=	canuum-1.0
@@ -24,7 +24,8 @@ WRKSRC=		${WRKDIR}/Canna32p2/canuum
 
 post-extract:
 	@${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/Canna32p2.tar.gz \
-		-C ${WRKDIR} Canna32p2/Canna.conf Canna32p2/canuum
+		${EXTRACT_AFTER_ARGS} -C ${WRKDIR} \
+		Canna32p2/Canna.conf Canna32p2/canuum
 	@${MV} ${WRKDIR}/Canna32p2/Canna.conf ${WRKSRC}/
 	@${CP} ${WRKDIR}/Uum4.109/* ${WRKSRC}
 
