@@ -1,0 +1,12 @@
+ldapsh is an interactive shell you can use to administer ldap directories. It
+provides an extensible command mechanism, with most of the necessary builtin
+commands (such as 'clone', 'edit', 'rm'), and it's relatively easy to add more
+commands.
+
+It supports configuring multiple LDAP sources, and storing your UID for each
+source so you don't have to type them each time. 
+
+WWW: http://madstop.com/?node=ldapsh
+
+- Florent Thoumie
+flz@xbsd.org
