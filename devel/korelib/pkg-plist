@@ -1,0 +1,22 @@
+bin/demo
+bin/koredlg
+include/kore/kernel.h
+include/kore/kore.h
+include/kore/module.h
+include/kore/modulemanager.h
+include/kore/plugin.h
+include/kore/pluginloader.h
+include/kore/pluginmanager.h
+include/kore/servicemanager.h
+include/kore/serviceprovider.h
+include/kore/version.h
+lib/libkore.a
+lib/libkore.so
+lib/libkore.so.0
+lib/libkoredlg_cout.a
+lib/libkoredlg_cout.so
+lib/libkoredlg_cout.so.0
+lib/libkoretest.a
+lib/libkoretest.so
+lib/libkoretest.so.0
+@dirrm include/kore
