@@ -1,14 +1,13 @@
 camediaplay
 	Camediaplay is a data downloading tool (via serial) for Sanyo
 	digital camera engine.
-	It is known to work with:
-	- Olympus C-400/400L/800L/410L, D-200L/300L
-	- Epson CP-100/500
-	- Sanyo VPC-G1
 	It should work with:
-	- Sanyo DSC-V1
+	- Olympus C-400/400L/800L, D-200L/300L
+	- Olympus C-410L
+	- Olympus C-420L/820L, D-220L/320L
+	- Epson CP-100/200/500
+	- Sanyo DSC-V1/VPC-G1
 	- Agfa ePhoto307
-	- Epson CP-200
 
 REPORTING BUGS
 	Please use one of the following methods:
