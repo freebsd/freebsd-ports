@@ -19,7 +19,7 @@ DISTNAME=	apache_${PORTVERSION}
 MAINTAINER=	ache@freebsd.org
 COMMENT=	The extremely popular Apache http server.  Very fast, very clean
 
-CONFLICTS=	apache+ipv6-1.* apache+modssl-1.* apache+ssl-1.* apache-2.* apache_fp-1.* \
+CONFLICTS=	apache+ipv6-1.* apache+mod_ssl-1.* apache+ssl-1.* apache-2.* apache_fp-1.* \
 		caudium-devel-1.* caudium10-1.* caudium12-* \
 		ru-apache+mod_ssl-1.* ru-apache-1.* thttpd-2.*
 USE_PERL5=      yes

@@ -20,7 +20,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	Apache-SSL: Apache secure webserver integrating OpenSSL
 
-CONFLICTS=	apache+ipv6-1.* apache+modssl-1.* apache-1.* apache-2.* apache_fp-1.* \
+CONFLICTS=	apache+ipv6-1.* apache+mod_ssl-1.* apache-1.* apache-2.* apache_fp-1.* \
 		caudium-devel-1.* caudium10-1.* caudium12-* \
 		ru-apache+mod_ssl-1.* ru-apache-1.* thttpd-2.*
 APACHE_VERSION=		1.3.28
