@@ -3,7 +3,7 @@
 # Date created:                         December 3 1997
 # Whom:                                 ache@freebsd.org
 #
-# $Id: Makefile,v 1.6 1998/08/23 04:12:26 jseger Exp $
+# $Id: Makefile,v 1.7 1998/09/15 21:31:31 asami Exp $
 #
 
 DISTNAME=       MLDBM-2.00
@@ -14,8 +14,8 @@ MASTER_SITE_SUBDIR=     MLDBM
 
 MAINTAINER=     ports@FreeBSD.ORG
 
-BUILD_DEPENDS= 	${PREFIX}/lib/perl5/site_perl/FreezeThaw.pm:${PORTSDIR}/devel/p5-FreezeThaw \
-		${PREFIX}/lib/perl5/site_perl/Storable.pm:${PORTSDIR}/devel/p5-Storable
+BUILD_DEPENDS= 	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/FreezeThaw.pm:${PORTSDIR}/devel/p5-FreezeThaw \
+		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
 
 USE_PERL5=	YES
 
