@@ -8,9 +8,9 @@ bin/h2ph
 bin/h2xs
 bin/libnetcfg
 bin/perl
+bin/perl%%PERL_VER%%
 @exec ln -fs %D/%F %B/perl5
 @unexec rm %B/perl5
-bin/perl%%PERL_VER%%
 bin/perlbug
 bin/perlcc
 bin/perldoc
