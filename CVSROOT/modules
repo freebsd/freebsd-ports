@@ -4311,6 +4311,7 @@ merlinmon	ports/net/merlinmon
 mesg		src/usr.bin/mesg
 mesgui		ports/x11-toolkits/mesgui
 mess822		ports/mail/mess822
+messagewall	ports/mail/messagewall
 messarge	ports/russian/messarge
 metacity	ports/x11-wm/metacity
 metacity-setup	ports/x11-wm/metacity-setup
