@@ -19,7 +19,6 @@
     SUBDIR += anthy
     SUBDIR += aterm
     SUBDIR += balsa
-    SUBDIR += bdf-fonts
     SUBDIR += bible_names-fpw
     SUBDIR += binder
     SUBDIR += bjfilter360
