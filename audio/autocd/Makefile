@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	autocd
-PORTVERSION=	3.00.02a
+PORTVERSION=	3.01.02a
 CATEGORIES=	audio sysutils
 MASTER_SITES=	ftp://kot.spb.ru/pub/src/projects/autocd/
 
@@ -14,10 +14,22 @@ MAINTAINER=	KOT@MATPOCKuH.Ru
 COMMENT=	Compact disc control utility
 
 USE_REINPLACE=	yes
+MAN1=		autocd.1 cdctl.1
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/Makefile
+.for file in Makefile
+	@${REINPLACE_CMD} -e \
+		's|/usr/local|${PREFIX}|g ; \
+		s|CFLAGS=-Wall -O2 -pipe|CFLAGS?=${CFLAGS}|g' \
+		${WRKSRC}/${file}
+.endfor
 
-MAN1=		autocd.1 cdctl.1
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for i in README.rus.html
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.endif
 
 .include	<bsd.port.mk>
