@@ -1,0 +1,6 @@
+RubyFilter is a set of Ruby classes built on top of the RubyMail
+library that make it easy to write programs that filter and deliver
+email to mailboxes.
+
+Author:	Matt Armstrong <matt@lickey.com>
+WWW:	http://www.lickey.com/rubyfilter/
