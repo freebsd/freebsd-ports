@@ -16,7 +16,7 @@ EXTRACT_SUFX=	-src.tgz
 MAINTAINER=	king@v2project.com
 COMMENT=	Lcrzoex contains over 300 functionnalities using network library lcrzo
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/liblcrzo.a:${PORTSDIR}/security/lcrzo
+BUILD_DEPENDS=	${LOCALBASE}/include/lcrzo_debugdefs.h:${PORTSDIR}/security/lcrzo
 
 WRKSRC=		${WRKDIR}/${PKGNAME}-src/src
 
