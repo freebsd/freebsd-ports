@@ -1,16 +1,17 @@
 The KASKADE 3.1 software package solves linear scalar elliptic and
 parabolic problems in 1, 2, 3 space dimensions with adaptive finite
 element methods.
+
 Furthermore, the toolbox includes extensions for handling systems of
 equations and example algorithms for nonlinear methods used in obstacle,
 porous media or Stefan problems.
-Core of the program is a variety og multilevel/multigrid preconditioners
-for the arising linear systems.
 
-The code, a programmer's manual describing the software design,
-and a user's guide are available by anonymous ftp
+The core of the program is a variety of multilevel/multigrid
+preconditioners for the arising linear systems.
 
-from the MGNet or from the eLib at the Konrad-Zuse-Zentrum in Berlin.
+The code, a programmer's manual describing the software design, and a
+user's guide are available by anonymous ftp from the MGNet or from the
+eLib at the Konrad-Zuse-Zentrum in Berlin.
 
    elib:
    =====

@@ -8,16 +8,15 @@ the X Window System. Its features include:
 	  remote hosts.
 	- Unlimited number of slots for external file transfer protocols.
 	- Support for zmodem auto-download.
-	- Translation modes. Seyon can perfrom useful trasnlations on the 
+	- Translation modes. Seyon can perform useful translations on the 
 	  user's input.
-	- interactive setting of program parameters
-	- on-line help
-	- modem speeds up to 115200 bps
-	- software (XON/XOFF) and hardware (RTS/CTS) flow control
-	- session capture to a file
-	- temporary running of a local shell in the terminal emulation window.
+	- Interactive setting of program parameters.
+	- On-line help.
+	- Modem speeds up to 115200 bps.
+	- Software (XON/XOFF) and hardware (RTS/CTS) flow control.
+	- Session capture to a file.
+	- Temporary running of a local shell in the terminal emulation window.
 
 Seyon is intended to be both simple and extensively configurable.
 Almost every aspect of Seyon can be configured via the resources
 to suit the user's taste.
-

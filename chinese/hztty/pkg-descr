@@ -4,14 +4,14 @@
  For example, running hztty on cxterm can allow you to read/write
  Chinese in HZ format, which was not supported by cxterm.
  If you have many applications in different encodings but your
- favor terminal program only supports one, hztty can make life easy.
+ favorite terminal program only supports one, hztty can make life easy.
  For example, hztty can your GB cxterm into a HZ terminal, a
  Unicode (16bit, or UTF8, or UTF7) terminal, or a Big5 terminal.
  
  The idea is to open a new shell session on top of the current one
  and to translate the encoding between the new tty and the orignal.
  For example, if your application uses encoding A and your terminal
- supports encoding B.  Hztty catches the output of the application
+ supports encoding B, hztty catches the output of the application
  and converts them from A to B before sending to the terminal.
  Similarly, hztty converts all the terminal input from B to A before
  sending to the application.
