@@ -24,7 +24,8 @@ COMMENT=	A Three-Dimensional Structural Finite Element Program
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libspooles.a:${PORTSDIR}/math/spooles \
 		${LOCALBASE}/lib/libarpack.a:${PORTSDIR}/math/arpack
-LIB_DEPENDS=    atlas.1:${PORTSDIR}/math/atlas
+LIB_DEPENDS=    atlas.1:${PORTSDIR}/math/atlas \
+		glut.3:${PORTSDIR}/graphics/libglut
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GL=	yes
