@@ -222,6 +222,7 @@ post-patch:
 
 post-configure:
 	@${ECHO_CMD} "#define CFLAGS \"${CFLAGS}\"" >> ${WRKSRC}/local.h
+	@${ECHO_CMD} "#define CC \"${CC}\"" >> ${WRKSRC}/local.h
 .if defined(MASKBITS)
 	@${ECHO_CMD} "#define MASKBITS ${MASKBITS}" >> ${WRKSRC}/local.h
 .endif
