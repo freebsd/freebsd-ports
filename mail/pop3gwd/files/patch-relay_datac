@@ -1,0 +1,12 @@
+# $OpenBSD: patch-relay_datac,v 1.1.1.1 2000/01/03 02:22:43 kevlo Exp $
+--- relay_data.c.orig	Wed Dec 29 12:28:21 1999
++++ relay_data.c	Wed Dec 29 12:29:06 1999
+@@ -39,7 +39,7 @@
+ 
+ 	while (logged_in == TRUE) {
+ 	
+-		bcopy(&master, &copy, sizeof(fd_set));  /* select() trashes copy */
++		memcpy(&copy, &master, sizeof(fd_set));  /* select() trashes copy */
+ 		deadline.tv_sec = maxwait;
+ 		deadline.tv_usec = 0;
+ 

@@ -1,0 +1,12 @@
+# $OpenBSD: patch-pop3-gwh,v 1.1.1.1 2000/01/03 02:22:43 kevlo Exp $
+--- pop3-gw.h.orig	Thu Jun 19 19:06:28 1997
++++ pop3-gw.h	Tue Dec 28 12:15:22 1999
+@@ -96,7 +96,7 @@
+ #define BAD	-1
+ #define FALSE	0
+ #define TRUE	1
+-#ifndef __FreeBSD__
++#if !defined( BSD4_4 )
+ #define MAX(A, B)	((A) > (B) ? (A) : (B))
+ #endif
+ 

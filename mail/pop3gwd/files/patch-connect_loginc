@@ -1,0 +1,34 @@
+# $OpenBSD: patch-connect_loginc,v 1.1.1.1 2000/01/03 02:22:43 kevlo Exp $
+--- connect_login.c.orig	Thu Jun 19 19:06:28 1997
++++ connect_login.c	Wed Dec 29 12:23:12 1999
+@@ -42,10 +42,10 @@
+ 		if ((remote_fd = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP)) < 0)
+ 			remote_fd = BAD;
+ 		else {
+-		        bzero(&tcp_srv_addr, sizeof(tcp_srv_addr));
++		        memset(&tcp_srv_addr, 0, sizeof(tcp_srv_addr));
+         		tcp_srv_addr.sin_family = AF_INET;
+ 			tcp_srv_addr.sin_port = htons(port);
+-		        bcopy(host_ptr->h_addr_list[0], &tcp_srv_addr.sin_addr, host_ptr->h_length);
++		        memcpy(&tcp_srv_addr.sin_addr, host_ptr->h_addr_list[0], host_ptr->h_length);
+ 			if (connect(remote_fd, (struct sockaddr *) &tcp_srv_addr, sizeof(tcp_srv_addr)) <0) {
+ 				close(remote_fd);
+ 				remote_fd = BAD;
+@@ -136,7 +136,7 @@
+ 	if (result == TRUE) {
+ 		/* server replied, check if reply is empty */
+ 		/* must save response in case it is good */
+-		strncpy(to_client, input, MAX_IO_LEN);
++		(void)strlcpy(to_client, input, MAX_IO_LEN);
+ 		if ((next_tok = strtok(input, " ")) == NULL) {
+ 			/* empty response, POP3 violation */
+ 			close(*remote_filedes);
+@@ -159,7 +159,7 @@
+ 	syslog(LOG_PRIO, "%s", to_client);
+ #endif
+ 
+-	strncat(to_client, termin, MAX_IO_LEN);
++	(void)strlcat(to_client, termin, MAX_IO_LEN);
+ 	if ((count = writen(first_filedes, to_client, strlen(to_client), maxwait)) == strlen(to_client))
+ 		*out += count;
+ 	else

@@ -1,0 +1,32 @@
+# $OpenBSD: patch-makefile,v 1.1.1.1 2000/01/03 02:22:43 kevlo Exp $
+--- Makefile.orig	Thu Jun 19 19:06:28 1997
++++ Makefile	Wed Dec 29 12:25:33 1999
+@@ -3,22 +3,23 @@
+ 
+ 
+ CC=gcc
+-CFLAGS= -O2
++CFLAGS= -O2 -Wall
+ MODULES=main.o parse_cmd_line.o get_remote_data.o connect_login.o io.o relay_data.o
+ DOCS=README COPYING HISTORY
+-INSTALL_DIR=/usr/sbin
++INSTALL_DIR=${PREFIX}/libexec
+ VERSION=1.2
+-DOC_DIR=/usr/doc/pop3gwd-$(VERSION)
++DOC_DIR=${PREFIX}/share/doc/pop3gwd-$(VERSION)
+ 
+ 
+ in.pop3gwd:	pop3-gw.h $(MODULES)
+ 	$(CC) $(CFLAGS) -o $@ $(MODULES)
+ 	strip $@
+ 	chmod 755 $@
++all:
++	make
+ 
+ install:
+-	make
+-	cp -f in.pop3gwd $(INSTALL_DIR)/
++	cp -f in.pop3gwd $(INSTALL_DIR)/pop3gwd
+ 	[ -d $(DOC_DIR) ] || mkdir $(DOC_DIR)
+ 	cp -f $(DOCS) $(DOC_DIR)
+ 
