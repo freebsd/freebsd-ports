@@ -76,10 +76,6 @@ BINARIES=	gcc cpp g++ g77 gcov gcj gcjh jcf-dump jv-scan grepjar jar
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not compile on amd64 die to platform rename"
-.endif
-
 .if ${ARCH} == "alpha"
 BROKEN=		"C++ could not be compiled on Alphas"
 .endif
