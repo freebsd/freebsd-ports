@@ -8,6 +8,7 @@ share/locale/es/LC_MESSAGES/lyx.mo
 share/locale/fi/LC_MESSAGES/lyx.mo
 share/locale/fr/LC_MESSAGES/lyx.mo
 share/locale/hu/LC_MESSAGES/lyx.mo
+share/locale/it/LC_MESSAGES/lyx.mo
 share/locale/nl/LC_MESSAGES/lyx.mo
 share/locale/no/LC_MESSAGES/lyx.mo
 share/locale/pl/LC_MESSAGES/lyx.mo
@@ -16,6 +17,7 @@ share/locale/ru/LC_MESSAGES/lyx.mo
 share/locale/sl/LC_MESSAGES/lyx.mo
 share/locale/sv/LC_MESSAGES/lyx.mo
 share/locale/tr/LC_MESSAGES/lyx.mo
+share/locale/wa/LC_MESSAGES/lyx.mo
 share/lyx/CREDITS
 share/lyx/bind/broadway.bind
 share/lyx/bind/cua.bind
@@ -49,6 +51,9 @@ share/lyx/doc/de_Extended.lyx
 share/lyx/doc/de_Intro.lyx
 share/lyx/doc/de_Tutorial.lyx
 share/lyx/doc/de_UserGuide.lyx
+share/lyx/doc/es_Intro.lyx
+share/lyx/doc/es_Tutorial.lyx
+share/lyx/doc/es_splash.lyx
 share/lyx/doc/escher-lsd.eps
 share/lyx/doc/fr_Intro.lyx
 share/lyx/doc/fr_Tutorial.lyx
@@ -74,7 +79,10 @@ share/lyx/examples/amsbook-test.lyx
 share/lyx/examples/beispiel_gelyxt.lyx
 share/lyx/examples/beispiel_roh.lyx
 share/lyx/examples/de_splash.lyx
+share/lyx/examples/ejemplo_con_lyx.lyx
+share/lyx/examples/ejemplo_sin_lyx.lyx
 share/lyx/examples/example_lyxified.lyx
+share/lyx/examples/es_splash.lyx
 share/lyx/examples/example_raw.lyx
 share/lyx/examples/exemple_brut.lyx
 share/lyx/examples/exemple_lyxifie.lyx
@@ -82,7 +90,11 @@ share/lyx/examples/fr_splash.lyx
 share/lyx/examples/landslide.lyx
 share/lyx/examples/noweb2lyx.lyx
 share/lyx/examples/pl_splash.lyx
+share/lyx/examples/primer_lyxan.lyx
+share/lyx/examples/primer_surov.lyx
+share/lyx/examples/pt_splash.lyx
 share/lyx/examples/scriptone.lyx
+share/lyx/examples/sl_splash.lyx
 share/lyx/examples/splash.lyx
 share/lyx/images/amssymb.xbm
 share/lyx/images/amssymb.xpm
