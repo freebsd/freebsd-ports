@@ -1281,6 +1281,7 @@ deleted		ports/sysutils/deleted
 demime		ports/mail/demime
 demoniac	ports/misc/demoniac
 demoroniser	ports/www/demoroniser
+denature	ports/textproc/denature
 denemo		ports/audio/denemo
 deskmenu	ports/x11/deskmenu
 despoof		ports/net/despoof
