@@ -1,15 +1,19 @@
 -----------------------------------------------------------------
 You have installed cgiwrap, a wrapper to securely execute user
-CGI programs.  cgiwrap is reported to work with most web servers
+CGI programs.  cgiwrap is reported to work with most Web servers
 that support CGI, so no one specific server has been included as
-a depend.  If you are unsure of which webserver to use, it is
-recommended to try the Apache web server package.
+a dependancy.  If you are unsure of which Web server to use, it
+is recommended that you try the Apache HTTP server.
 
-The cgiwrap scripts have been installed in:
-    %%PREFIX%%/www/cgi-bin
-...the default location for Apache's cgi-bin directory.
+The cgiwrap binaries have been installed in the following
+directory:
 
-If cgiwrap's allow/deny control is enabled, you must create either
-%%PREFIX%%/etc/cgiwrap.allow and/or %%PREFIX%%/etc/cgiwrap.deny
-before cgiwrap will function.
+  %%MAIN_CGIDIR%%
+
+You should create/manage the following two files, otherwise
+cgiwrap will not function as expected.  These ACL files define
+which users can and cannot run CGI binaries via cgiwrap:
+
+  %%ALLOWFILE%%
+  %%DENYFILE%%
 -----------------------------------------------------------------
