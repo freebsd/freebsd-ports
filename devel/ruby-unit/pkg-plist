@@ -34,22 +34,12 @@ bin/runtest.rb
 %%PORTDOCS%%%%RUBY_DOCDIR%%/runit/ToDo
 %%PORTDOCS%%%%RUBY_DOCDIR%%/runit/assert.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/runit/assert.rd
-%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/cui/testrunner.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/cui/testrunner.rd
 %%PORTDOCS%%%%RUBY_DOCDIR%%/runit/error.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/runit/error.rd
-%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/ext/repeatedtest.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/ext/repeatedtest.rd
-%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/ext/testdecorator.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/ext/testdecorator.rd
-%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/ext/testsetup.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/ext/testsetup.rd
 %%PORTDOCS%%%%RUBY_DOCDIR%%/runit/index.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/runit/ja/README.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/runit/ja/assert.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/runit/ja/assert.rd
-%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/ja/cui/testrunner.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/runit/ja/cui/testrunner.rd
 %%PORTDOCS%%%%RUBY_DOCDIR%%/runit/ja/error.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/runit/ja/error.rd
 %%PORTDOCS%%%%RUBY_DOCDIR%%/runit/ja/index.html
@@ -85,8 +75,5 @@ bin/runtest.rb
 %%PORTDOCS%%%%RUBY_DOCDIR%%/runit/testsuite.rd
 %%PORTDOCS%%%%RUBY_DOCDIR%%/runit/version.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/runit/version.rd
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/runit/cui
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/runit/ext
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/runit/ja/cui
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/runit/ja
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/runit
