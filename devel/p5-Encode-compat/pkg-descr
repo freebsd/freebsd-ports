@@ -1,0 +1,11 @@
+This module provide a compatibility layer for Encode.pm users
+on perl versions earlier than v5.7.1. It translates whatever
+call it receives into Text::Iconv, or (in the future)
+Unicode::MapUTF8 to perform the actual work.
+
+Currently, this module only support 5.6.1, and merely provides
+the three utility function above (encode(), decode() and from_to()),
+with a very kludgy FB_HTMLCREF fallback against latin-1 in from_to().
+
+
+WWW: http://search.cpan.org/dist/Encode-compat/

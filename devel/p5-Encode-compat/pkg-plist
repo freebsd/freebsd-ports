@@ -1,0 +1,9 @@
+%%SITE_PERL%%/mach/auto/Encode/compat/.packlist
+%%SITE_PERL%%/Encode/compat.pm
+%%SITE_PERL%%/Encode/compat/5006001.pm
+%%SITE_PERL%%/Encode/compat/common.pm
+%%SITE_PERL%%/Encode/compat/Alias.pm
+@dirrm %%SITE_PERL%%/mach/auto/Encode/compat
+@unexec rmdir %D/%%SITE_PERL%%/mach/auto/Encode 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Encode/compat
+@unexec rmdir %D/%%SITE_PERL%%/Encode 2>/dev/null || true
