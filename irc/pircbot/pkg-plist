@@ -1,0 +1,38 @@
+share/java/classes/pircbot.jar
+%%PORTDOCS%%share/doc/pircbot/constant-values.html
+%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/class-use/NickAlreadyInUseException.html
+%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/class-use/DccChat.html
+%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/class-use/IdentServer.html
+%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/class-use/InputThread.html
+%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/class-use/IrcException.html
+%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/class-use/OutputThread.html
+%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/class-use/PircBot.html
+%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/class-use/Queue.html
+%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/package-use.html
+%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/package-frame.html
+%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/package-summary.html
+%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/package-tree.html
+%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/DccChat.html
+%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/IdentServer.html
+%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/InputThread.html
+%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/OutputThread.html
+%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/PircBot.html
+%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/Queue.html
+%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/IrcException.html
+%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/NickAlreadyInUseException.html
+%%PORTDOCS%%share/doc/pircbot/overview-tree.html
+%%PORTDOCS%%share/doc/pircbot/index-all.html
+%%PORTDOCS%%share/doc/pircbot/deprecated-list.html
+%%PORTDOCS%%share/doc/pircbot/allclasses-frame.html
+%%PORTDOCS%%share/doc/pircbot/allclasses-noframe.html
+%%PORTDOCS%%share/doc/pircbot/index.html
+%%PORTDOCS%%share/doc/pircbot/packages.html
+%%PORTDOCS%%share/doc/pircbot/serialized-form.html
+%%PORTDOCS%%share/doc/pircbot/package-list
+%%PORTDOCS%%share/doc/pircbot/help-doc.html
+%%PORTDOCS%%share/doc/pircbot/stylesheet.css
+%%PORTDOCS%%@dirrm share/doc/pircbot/org/jibble/pircbot/class-use
+%%PORTDOCS%%@dirrm share/doc/pircbot/org/jibble/pircbot
+%%PORTDOCS%%@dirrm share/doc/pircbot/org/jibble
+%%PORTDOCS%%@dirrm share/doc/pircbot/org
+%%PORTDOCS%%@dirrm share/doc/pircbot
