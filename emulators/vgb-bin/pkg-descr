@@ -1,0 +1,13 @@
+Virtual Game Boy is the Nintendo GameBoy(tm) emulator on X-Window.
+
+  Test your VGB installation with the command(default):
+
+	vgb /usr/X11R6/share/vgb/CART.GB
+
+Virtual GameBoy (VGB) is a portable emulator of the Nintendo GameBoy
+handheld videogame console. It allows to run most of GameBoy software
+on a personal computer, as well as debug this software. As VGB is
+written in a portable C programming language, it runs on many
+different platforms and operating systems
+
+WWW: http://www.komkon.org/fms/VGB/
