@@ -274,6 +274,7 @@
     SUBDIR += menushki
     SUBDIR += mgp-mode.el
     SUBDIR += mime-support
+    SUBDIR += mirmon
     SUBDIR += misterproper
     SUBDIR += mmv
     SUBDIR += most

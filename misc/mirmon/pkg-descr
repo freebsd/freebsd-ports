@@ -1,0 +1,7 @@
+Many project are mirrored worldwide. Mirmon helps in monitoring these mirrors.
+In a concise graphic format, mirmon shows each site's history of the last two
+weeks, making it easy to spot stale or dead mirrors. Mirmon quietly probes a
+subset of the sites in a given list, writes the results in the 'state' file,
+and generates a Web page with the results
+
+WWW: http://www.cs.uu.nl/people/henkp/mirmon/
