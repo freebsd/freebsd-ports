@@ -23,6 +23,8 @@ RUN_DEPENDS=	ghc-5.04.3:${PORTSDIR}/lang/ghc5 \
 RUN_DEPENDS+=	ports-config:${PORTSDIR}/devel/hs-hpl
 .endif
 
+BROKEN=		"Configure fails"
+
 USE_SIZE=	yes
 USE_GNOME=	glib12 gtk12
 USE_REINPLACE=	yes
@@ -37,12 +39,6 @@ CONFIGURE_ARGS+=	--with-ih
 GHC_VERSION=	`${LOCALBASE}/bin/ghc --numeric-version`
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}" GHC_VERSION="${GHC_VERSION}"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502102
-BROKEN=		"Configure fails"
-.endif
-
 pre-everything::
 .if !defined(WITHOUT_IHASKELL)
 	@${ECHO_CMD} "To build gtk+hs without iHaskell define WITHOUT_IHASKELL."
@@ -53,4 +49,4 @@ post-patch:
 			s/glib-config/glib12-config/g' ${WRKSRC}/configure
 	@${RM} -f ${PREFIX}/lib/ghc-${GHC_VERSION}/package.conf.old
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
