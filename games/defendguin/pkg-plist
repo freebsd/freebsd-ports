@@ -59,6 +59,7 @@ share/defendguin/images/ship/ship-win-1.bmp
 share/defendguin/images/ship/ship-win-2.bmp
 share/defendguin/images/status/catch-the-penguinoid.bmp
 share/defendguin/images/status/circle.bmp
+share/defendguin/images/status/circle.ppm
 share/defendguin/images/status/game-over.bmp
 share/defendguin/images/status/get-ready.bmp
 share/defendguin/images/status/level-bonus.bmp
@@ -90,7 +91,6 @@ share/defendguin/images/swarmer/swarmer.bmp
 share/defendguin/images/title/arrow0.bmp
 share/defendguin/images/title/arrow1.bmp
 share/defendguin/images/title/arrow2.bmp
-share/defendguin/images/title/nutecase.bmp
 share/defendguin/images/title/one-player.bmp
 share/defendguin/images/title/options.bmp
 share/defendguin/images/title/quit.bmp
@@ -130,7 +130,6 @@ share/defendguin/music/confusio.mod
 share/defendguin/music/easytrip.mod
 share/defendguin/music/no!inhi1.mod
 share/defendguin/music/summerpa.mod
-share/defendguin/music/tetris.mid
 share/defendguin/music/wormhole.mod
 share/defendguin/sounds/baiter.wav
 share/defendguin/sounds/bullet.wav
@@ -168,9 +167,6 @@ share/defendguin/sounds/swarmers.wav
 share/defendguin/sounds/title/confirm.wav
 share/defendguin/sounds/title/impatience.wav
 share/defendguin/sounds/title/select.wav
-share/doc/defendguin/COPYING.txt
-share/doc/defendguin/README.txt
-@dirrm share/doc/defendguin
 @dirrm share/defendguin/sounds/title
 @dirrm share/defendguin/sounds/ship
 @dirrm share/defendguin/sounds/peng

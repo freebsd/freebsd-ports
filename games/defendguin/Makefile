@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	defendguin
-PORTVERSION=	0.0.6
+PORTVERSION=	0.0.9
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.sonic.net/pub/users/nbs/unix/x/defendguin/
 
