@@ -1,0 +1,7 @@
+videotext is an X11 program to display and print Videotext/Teletext
+pages saved as .vtx files.
+It can also drive a wide range of special teletext capture cards
+(both commercial and home made)
+
+To capture Teletext pages to disk, use the vbidecode program which
+captures Teletext pages with the Bt848/Bt878 TV card/frame grabber.

@@ -1,0 +1,25 @@
+*** scripts/mkpsprolog.orig	Tue Jun  8 16:10:07 1999
+--- scripts/mkpsprolog	Tue Jun  8 16:10:07 1999
+***************
+*** 8,17 ****
+  # Read COPYING for more information
+  
+  # Maybe sed would be more suitable for such a simple task, but you already
+! # need gawk for mktitlepage & mkvtxfont, so why not use it here...
+  
+  
+! exec gawk '
+    BEGIN {
+      print "/* This file was created automatically by mkpsprolog. DO NOT EDIT */"
+      print ""
+--- 8,17 ----
+  # Read COPYING for more information
+  
+  # Maybe sed would be more suitable for such a simple task, but you already
+! # need awk for mktitlepage & mkvtxfont, so why not use it here...
+  
+  
+! exec awk '
+    BEGIN {
+      print "/* This file was created automatically by mkpsprolog. DO NOT EDIT */"
+      print ""
