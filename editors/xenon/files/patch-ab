@@ -23,3 +23,8 @@
  LIBS = -L/usr/X11R6/lib -lXpm -lX11
  
  backup:
+@@ -29,4 +29,3 @@
+ floppy:
+       cd ..;tar -cvzf /dev/fd0 $(BACKUP)
+ 
+--include $(DEPEND)
