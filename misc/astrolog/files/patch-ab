@@ -1,39 +1,21 @@
-*** astrolog.h.orig	Sun Feb  2 23:06:03 1997
---- astrolog.h	Thu May 29 05:06:03 1997
-***************
-*** 82,92 ****
-  #define ENVIRON /* Comment out this #define if your system doesn't have  */
-                  /* environment variables or can't compile calls to them. */
-  
-! #define ATOF /* Comment out this #define if you have a system in which  */
-               /* 'atof' and related functions aren't defined in stdio.h, */
-               /* such as most PC's, Linux, VMS compilers, and NeXT's.    */
-  
-! /*#define PROTO /* Comment out this #define if you have an older compiler   */
-                /* which doesn't allow full Ansi function prototypes. This  */
-                /* is for programmers only and has no effect on executable. */
-  
---- 82,92 ----
-  #define ENVIRON /* Comment out this #define if your system doesn't have  */
-                  /* environment variables or can't compile calls to them. */
-  
-! /*#define ATOF /* Comment out this #define if you have a system in which  */
-               /* 'atof' and related functions aren't defined in stdio.h, */
-               /* such as most PC's, Linux, VMS compilers, and NeXT's.    */
-  
-! #define PROTO /* Comment out this #define if you have an older compiler   */
-                /* which doesn't allow full Ansi function prototypes. This  */
-                /* is for programmers only and has no effect on executable. */
-  
-***************
-*** 131,137 ****
---- 131,139 ----
-  */
-  
-  #ifndef PC
-+ #ifndef DEFAULT_DIR
-  #define DEFAULT_DIR "~/astrolog"
-+ #endif
-  #else
-  #define DEFAULT_DIR "C:\\ASTROLOG"
-  #endif
+--- astrolog.h.orig	Wed Dec 23 23:29:51 1998
++++ astrolog.h	Sat Apr  3 05:41:04 1999
+@@ -86,7 +86,7 @@
+              /* 'atof' and related functions aren't defined in stdio.h, */
+              /* such as most PC's, Linux, VMS compilers, and NeXT's.    */
+ 
+-/*#define PROTO /* Comment out this #define if you have an older compiler   */
++#define PROTO /* Comment out this #define if you have an older compiler   */
+               /* which doesn't allow full Ansi function prototypes. This  */
+               /* is for programmers only and has no effect on executable. */
+ 
+@@ -131,7 +131,9 @@
+ */
+ 
+ #ifndef PC
++#ifndef DEFAULT_DIR
+ #define DEFAULT_DIR "~/astrolog"
++#endif
+ #else
+ #define DEFAULT_DIR "C:\\ASTROLOG"
+ #endif

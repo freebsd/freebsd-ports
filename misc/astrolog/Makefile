@@ -3,15 +3,15 @@
 # http://rpkalf2.mach.uni-karlsruhe.de/~ferber/astrolog/
 # http://www.magitech.com/~cruiser1/astrolog.htm
 #
-# Version required:     5.30
+# Version required:     5.*
 # Date created:         31 July 1995
 # Whom:                 faulkner@cactus.org
 #
-# $Id: Makefile,v 1.13 1998/11/28 05:39:00 asami Exp $
+# $Id: Makefile,v 1.14 1999/02/03 11:11:54 asami Exp $
 #
 
-DISTNAME=       ast53unx
-PKGNAME=        astrolog-5.30
+DISTNAME=       ast54unx
+PKGNAME=        astrolog-5.40
 CATEGORIES=     misc
 MASTER_SITES=   http://www.astrolog.org/ftp/ephem/ \
 		http://www.astrolog.org/ftp/ \
@@ -43,13 +43,13 @@ do-install:
 	cd ${WRKSRC} && ${INSTALL_PROGRAM} astrolog ${PREFIX}/bin
 	-@${MKDIR} ${PREFIX}/share/doc/astrolog
 	cd ${WRKSRC} && \
-		${INSTALL_DATA} Helpfile.530 ${PREFIX}/share/doc/astrolog
+		${INSTALL_DATA} Helpfile.540 ${PREFIX}/share/doc/astrolog
 	cd ${WRKSRC} && \
-		${INSTALL_DATA} Update.530 ${PREFIX}/share/doc/astrolog
+		${INSTALL_DATA} Update.540 ${PREFIX}/share/doc/astrolog
 	cd ${WRKSRC} && \
-		${INSTALL_DATA} README.530 ${PREFIX}/share/doc/astrolog
+		${INSTALL_DATA} README.540 ${PREFIX}/share/doc/astrolog
 	@echo
-	@echo "See the file ${PREFIX}/share/doc/astrolog/Helpfile.530 for help"
+	@echo "See the file ${PREFIX}/share/doc/astrolog/Helpfile.540 for help"
 	@echo "and tune ${PREFIX}/lib/astrolog/astrolog.dat"
 
 .include <bsd.port.mk>
