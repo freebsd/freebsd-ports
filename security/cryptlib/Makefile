@@ -7,6 +7,7 @@
 
 PORTNAME=		cryptlib
 PORTVERSION=		3.1.b4
+PORTREVISION=		1
 CATEGORIES=		security
 MASTER_SITES=		ftp://ftp.franken.de/pub/crypt/cryptlib/beta/
 DISTNAME=		cl31beta04
@@ -21,16 +22,21 @@ NO_WRKSUBDIR=		yes
 USE_GMAKE=		yes
 MAKEFILE=		makefile
 MAKE_ARGS=		all shared
+USE_REINPLACE=		yes
 
 INSTALLS_SHLIB=		yes
 
 .include <bsd.port.pre.mk>
+
+post-patch:
+	${REINPLACE_CMD} -e "s,-fomit-frame-pointer -O3,${CFLAGS}," ${WRKSRC}/makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/endian ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/libcl.a ${WRKSRC}/libcl.so.3.1.0 \
 		${PREFIX}/lib
 	${LN} -sf ${PREFIX}/lib/libcl.so.3.1.0 ${PREFIX}/lib/libcl.so
+	${INSTALL_DATA} ${WRKSRC}/cryptlib.h ${PREFIX}/include
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/cryptlib
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/cryptlib
