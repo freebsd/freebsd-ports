@@ -1,15 +1,16 @@
-*** Makefile~	Sun Feb  1 20:48:49 1998
---- Makefile	Mon Feb  2 16:47:20 1998
+*** Makefile.orig	Sun Feb  1 20:48:49 1998
+--- Makefile	Sun Feb 22 21:27:43 1998
 ***************
-*** 13,19 ****
+*** 13,20 ****
   BINDIR = $(PREFIX)/bin
   LIBDIR = $(PREFIX)/lib/GP
   
 ! FILTERS        = `ls filters`
-  FILTERS.SAMPLE = `ls filters.sample`
+! FILTERS.SAMPLE = `ls filters.sample`
   
   ICONS   = printer.xbm exit.xbm
---- 13,24 ----
+  
+--- 13,25 ----
   BINDIR = $(PREFIX)/bin
   LIBDIR = $(PREFIX)/lib/GP
   
@@ -19,6 +20,7 @@
 ! FILTERS	=a2ps dvips ImageMagick
 ! .endif
 ! 
-  FILTERS.SAMPLE = `ls filters.sample`
+! FILTERS.SAMPLE!=	ls filters.sample
   
   ICONS   = printer.xbm exit.xbm
+  

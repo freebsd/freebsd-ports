@@ -4,31 +4,3 @@ cd ${WRKSRC}
 
 ${MV} Makefile Makefile.bak
 ${SED} -e 's@^PREFIX[ 	]*=.*$@#&@' < Makefile.bak > Makefile
-
-${MV} GP GP.bak
-${SED} \
-	-e '/^set[ 	]*PRINTER_LIST[ 	]/s@/usr/local@%%PREFIX%%@' \
-	-e '/^set[ 	]*FILETYPE_LIST[ 	]/s@/usr/local@%%PREFIX%%@' \
-	-e '/^set[ 	]*FILTERS_DIR[ 	]/s@/usr/local@%%PREFIX%%@' \
-	-e '/^set[ 	]*ICONS_PATH[ 	]/s@/usr/local@%%PREFIX%%@' \
-	< GP.bak > GP
-${MV} GP GP.bak
-${SED} \
-	-e "s@%%PREFIX%%@${PREFIX}@g" \
-	< GP.bak > GP
-
-cd ${WRKSRC}/filters.sample
-
-if [ X"${LANGUAGE}" = "XJapanese" ]; then
-	for f in a2ps-j dvi2ps-j; do
-		${MV} ${f} ${f}.bak
-		${SED} -e 's@^\(NUMBER[ 	]*=\).*$@\1 1@' < ${f}.bak > ${f}
-		${RM} -f ${f}.bak
-	done
-else
-	for f in a2ps dvips; do
-		${MV} ${f} ${f}.bak
-		${SED} -e 's@^\(NUMBER[ 	]*=\).*$@\1 1@' < ${f}.bak > ${f}
-		${RM} -f ${f}.bak
-	done
-fi
