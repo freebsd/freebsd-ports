@@ -4,19 +4,19 @@
 # Whom:			Joel Sutton <sutton@aardvark.apana.org.au>
 # FreeBSD Version:	2.1.5-RELEASE
 #
-# $Id: Makefile,v 1.1.1.1 1997/06/04 03:46:57 asami Exp $
+# $Id: Makefile,v 1.2 1998/02/01 23:23:57 fenner Exp $
 #
       
 DISTNAME=	macutils_2.0b3.orig
 PKGNAME=	macutils-2.0b3
 CATEGORIES=	emulators
-MASTER_SITES=	ftp://sunsite.unc.edu/pub/Linux/distributions/debian/bo/source/otherosfs/
+MASTER_SITES=	ftp://sunsite.unc.edu/pub/Linux/distributions/debian/main/source/otherosfs/
 # ${MASTER_SITE_SUNSITE} isn't appropriate because distributions/ isn't
 # mirrored.
 
 MAINTAINER=	sutton@aardvark.apana.org.au
 
-WRKSRC=		${WRKDIR}/macutils-2.0b3.orig
+WRKSRC=		${WRKDIR}/macutils
 MAKEFILE=	makefile
 
 MANDIR=		${PREFIX}/man/man
