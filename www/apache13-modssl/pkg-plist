@@ -518,6 +518,7 @@ www/data-dist/index.html.zh-tw.big5
 %%WITHSNMP%%%%DOCSDIR%%/snmp_agt/apache-scoreboard-mib.txt
 %%WITHSNMP%%%%DOCSDIR%%/snmp_agt/apache-config-mib.txt
 %%WITHACCEL%%%%DOCSDIR%%/mod/mod_accel.html
+%%WITHDEFLATE%%%%DOCSDIR%%/mod/mod_deflate.html
 www/cgi-bin-dist/printenv
 @exec [ -d %D/www/cgi-bin/ ] || ln -fs %B %D/www/cgi-bin
 www/cgi-bin-dist/test-cgi

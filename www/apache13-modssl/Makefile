@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	apache+mod_ssl
-PORTVERSION=	${VERSION_APACHE}+${VERSION_MODSSL}${PVERSION_MODSNMP}${PVERSION_MODACCEL}
+PORTVERSION=	${VERSION_APACHE}+${VERSION_MODSSL}${PVERSION_MODSNMP}${PVERSION_MODACCEL}${PVERSION_MODDEFLATE}
 PORTREVISION=	1
 CATEGORIES=	www security
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		${MASTER_SITES_MODSSL:S/$/:mod_ssl/} \
 		http://www.mod-snmp.com/distr/:mod_snmp \
-		http://sysoev.ru/mod_accel/:mod_accel
-PKGNAMESUFFIX=	${MODSNMP_SUFFIX}${MODACCEL_SUFFIX}${IPV6_SUFFIX}
+		http://sysoev.ru/mod_accel/:mod_accel \
+		http://sysoev.ru/mod_deflate/:mod_deflate
+PKGNAMESUFFIX=	${MODSNMP_SUFFIX}${MODACCEL_SUFFIX}${MODDEFLATE_SUFFIX}${IPV6_SUFFIX}${PKGNAMESUFFIX2}
 DISTNAME=	apache_${VERSION_APACHE}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${MODSSL_FILE}:mod_ssl \
-		${MODSNMP_DISTFILE} ${MODACCEL_DISTFILE}
+		${MODSNMP_DISTFILE} ${MODACCEL_DISTFILE} ${MODDEFLATE_DISTFILE}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ${MODSSL_FILE} \
-		${MODACCEL_FILE}
+		${MODACCEL_FILE} ${MODDEFLATE_FILE}
 
 .if defined(APACHE_WITH_IPV6) || make(makesum) || defined(FETCH_ALL)
 PATCH_SITES+=	ftp://ftp.42.org/pub/orphan/
@@ -38,6 +39,7 @@ VERSION_APACHE=	1.3.29
 VERSION_MODSSL=	2.8.16
 VERSION_MODSNMP=	1.3.14.12
 VERSION_MODACCEL=	1.0.31
+VERSION_MODDEFLATE=	1.0.20
 USE_OPENSSL=	yes
 HAS_CONFIGURE=	yes
 USE_PERL5_BUILD=	yes
@@ -49,6 +51,7 @@ MASTER_SITES_MODSSL=	http://www.modssl.org/source/ \
 MODSSL_FILE=	mod_ssl-${VERSION_MODSSL}-${VERSION_APACHE}${EXTRACT_SUFX}
 MODSNMP_FILE=	mod_snmp_${VERSION_MODSNMP}${EXTRACT_SUFX}
 MODACCEL_FILE=	mod_accel-${VERSION_MODACCEL}${EXTRACT_SUFX}
+MODDEFLATE_FILE=	mod_deflate-${VERSION_MODDEFLATE}${EXTRACT_SUFX}
 
 .include <bsd.port.pre.mk>
 
@@ -138,9 +141,14 @@ CFLAGS+=	-O3
 MODSNMP_DISTFILE=	${MODSNMP_FILE}:mod_snmp
 .endif
 .if defined(APACHE_WITH_MODSNMP)
-CONFLICTS+=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* \
+CONFLICTS+=	apache+mod_ssl-1.* \
+		apache+mod_ssl+ipv6-1.* \
 		apache+mod_ssl+mod_accel-1.* \
-		apache+mod_ssl+mod_accel+ipv6-1.* 
+		apache+mod_ssl+mod_accel+ipv6-1.* \
+		apache+mod_ssl+mod_accel+mod_deflate-1.* \
+		apache+mod_ssl+mod_accel+mod_deflate+ipv6-1.* \
+		apache+mod_ssl+mod_deflate-1.* \
+		apache+mod_ssl+mod_deflate+ipv6-1.* \
 MODSNMP_SUFFIX=	+mod_snmp
 PVERSION_MODSNMP=	+${VERSION_MODSNMP}
 CONFIGURE_ARGS+=	--activate-module=src/modules/snmp_agt/libsnmp_agt.a
@@ -156,16 +164,43 @@ PLIST_SUB+=	WITHSNMP="@comment "
 MODACCEL_DISTFILE=	${MODACCEL_FILE}:mod_accel
 .endif
 .if defined(APACHE_WITH_MODACCEL)
-CONFLICTS+=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* \
-		apache+mod_ssl+mod_snmp-1.* apache+mod_ssl+mod_snmp+ipv6-1.*
+CONFLICTS+=	apache+mod_ssl-1.* \
+		apache+mod_ssl+ipv6-1.* \
+		apache+mod_ssl+mod_snmp-1.* \
+		apache+mod_ssl+mod_snmp+ipv6-1.* \
+		apache+mod_ssl+mod_snmp+mod_deflate-1.* \
+		apache+mod_ssl+mod_snmp+mod_deflate+ipv6-1.* \
+		apache+mod_ssl+mod_deflate-1.* \
+		apache+mod_ssl+mod_deflate+ipv6-1.*
 MODACCEL_SUFFIX=	+mod_accel
 PVERSION_MODACCEL=	+${VERSION_MODACCEL}
 CONFIGURE_ARGS+=	--activate-module=src/modules/extra/mod_randban.o \
 		--activate-module=src/modules/extra/mod_freeze.o \
 		--activate-module=src/modules/accel/libaccel.a
+EXTRA_PATCHES+=	${FILESDIR}/mod_accel-preservehost.patch
 PLIST_SUB+=	WITHACCEL=""
 .else
 PLIST_SUB+=	WITHACCEL="@comment "
+.endif
+
+.if defined(APACHE_WITH_MODDEFLATE) || make(makesum) || defined(FETCH_ALL)
+MODDEFLATE_DISTFILE=	${MODDEFLATE_FILE}:mod_deflate
+.endif
+.if defined(APACHE_WITH_MODDEFLATE)
+CONFLICTS+=	apache+mod_ssl-1.* \
+		apache+mod_ssl+ipv6-1.* \
+		apache+mod_ssl+mod_snmp-1.* \
+		apache+mod_ssl+mod_snmp+ipv6-1.* \
+		apache+mod_ssl+mod_snmp+mod_accel-1.* \
+		apache+mod_ssl+mod_snmp+mod_accel+ipv6-1.* \
+		apache+mod_ssl+mod_accel-1.* \
+		apache+mod_ssl+mod_accel+ipv6-1.*
+MODDEFLATE_SUFFIX=	+mod_deflate
+PVERSION_MODDEFLATE=	+${VERSION_MODDEFLATE}
+CONFIGURE_ARGS+=	--activate-module=src/modules/extra/mod_deflate.o
+PLIST_SUB+=	WITHDEFLATE=""
+.else
+PLIST_SUB+=	WITHDEFLATE="@comment "
 .endif
 
 .if defined(APACHE_WITH_IPV6)
@@ -173,9 +208,13 @@ PLIST_SUB+=	WITHACCEL="@comment "
 BROKEN=		"mod_accel and ipv6 don't compile together"
 .endif
 
-CONFLICTS+=	apache+mod_ssl-1.* apache+mod_ssl+mod_snmp-1.* \
+CONFLICTS+=	apache+mod_ssl-1.* \
+		apache+mod_ssl+mod_snmp-1.* \
+		apache+mod_ssl+mod_snmp+mod_accel-1.* \
+		apache+mod_ssl+mod_snmp+mod_accel+mod_deflate-1.* \
 		apache+mod_ssl+mod_accel-1.* \
-		apache+mod_ssl+mod_snmp+mod_accel-1.*
+		apache+mod_ssl+mod_accel+mod_deflate-1.* \
+		apache+mod_ssl+mod_deflate-1.*
 IPV6_SUFFIX=	+ipv6
 CONFIGURE_ARGS+=	--enable-rule=INET6
 PLIST_SUB+=	WITHIPV6=""
@@ -250,6 +289,10 @@ pre-fetch:
 	@${ECHO_MSG} "				This setting activates build of mod_accel."
 	@${ECHO_MSG} "				[default is no]"
 	@${ECHO_MSG} ""
+	@${ECHO_MSG} "  APACHE_WITH_MODDEFLATE=yes	mod_deflate support."
+	@${ECHO_MSG} "				This setting activates build of mod_deflate."
+	@${ECHO_MSG} "				[default is no]"
+	@${ECHO_MSG} ""
 
 post-extract:
 
@@ -268,6 +311,12 @@ pre-patch:
 	@cd ${WRKDIR}/mod_accel-${VERSION_MODACCEL} \
 	&& ${ECHO_MSG} "===>  Applying mod_accel-${VERSION_MODACCEL} extension" \
 	&& ./configure --with-apache=../${DISTNAME} --with-mod_randban --with-mod_freeze \
+	&& ${MAKE}
+.endif
+.if defined(APACHE_WITH_MODDEFLATE)
+	@cd ${WRKDIR}/mod_deflate-${VERSION_MODDEFLATE} \
+	&& ${ECHO_MSG} "===>  Applying mod_deflate-${VERSION_MODDEFLATE} extension" \
+	&& ./configure --with-apache=../${DISTNAME} \
 	&& ${MAKE}
 .endif
 
