@@ -1,15 +1,23 @@
 bin/dbmmanage
 bin/htdigest
 bin/htpasswd
+etc/apache/access.conf
 etc/apache/access.conf.default
+etc/apache/httpd.conf
 etc/apache/httpd.conf.default
+etc/apache/magic
 etc/apache/magic.default
+etc/apache/mime.types
 etc/apache/mime.types.default
+etc/apache/srm.conf
 etc/apache/srm.conf.default
 etc/rc.d/apache.sh
 include/apache/alloc.h
 include/apache/ap.h
+include/apache/ap_compat.h
 include/apache/ap_config.h
+include/apache/ap_config_auto.h
+include/apache/ap_ctype.h
 include/apache/ap_md5.h
 include/apache/buff.h
 include/apache/compat.h
@@ -185,8 +193,6 @@ share/doc/php3/EXTENSION_STATUS
 share/doc/php3/LICENSE
 www/cgi-bin/printenv
 www/cgi-bin/test-cgi
-www/data/apache_pb.gif
-www/data/index.html
 www/icons/README
 www/icons/a.gif
 www/icons/alert.black.gif
@@ -263,7 +269,6 @@ www/icons/uu.gif
 www/icons/uuencoded.gif
 www/icons/world1.gif
 www/icons/world2.gif
-@unexec [ -h %D/www/data/manual ] && rm %D/www/data/manual
 @dirrm etc/apache
 @dirrm include/apache
 @dirrm libexec/apache
@@ -274,6 +279,9 @@ www/icons/world2.gif
 @dirrm share/doc/apache/manual
 @dirrm share/doc/apache
 @dirrm share/doc/php3
+www/data/apache_pb.gif
+www/data/index.html
+www/data/manual
 @dirrm www/cgi-bin
 @dirrm www/data
 @dirrm www/icons
