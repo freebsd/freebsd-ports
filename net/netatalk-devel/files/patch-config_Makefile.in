@@ -1,0 +1,13 @@
+--- config/Makefile.in.orig	Mon Oct  7 17:06:54 2002
++++ config/Makefile.in	Mon Oct  7 17:07:13 2002
+@@ -292,10 +292,6 @@
+ 	done
+ 
+ @USE_PAM_TRUE@install-data-local: install-config-files $(PAMFILES)
+-@USE_PAM_TRUE@	$(mkinstalldirs) $(DESTDIR)$(pamdir)
+-@USE_PAM_TRUE@	for f in $(PAMFILES); do \
+-@USE_PAM_TRUE@		$(INSTALL_DATA) $$f $(DESTDIR)$(pamdir)/netatalk; \
+-@USE_PAM_TRUE@	done
+ 
+ @USE_PAM_FALSE@install-data-local: install-config-files
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
