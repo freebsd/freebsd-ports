@@ -1,0 +1,11 @@
+--- audio_esd.c--	Fri May 28 20:36:29 1999
++++ audio_esd.c	Thu Nov 11 10:14:30 1999
+@@ -75,7 +75,7 @@
+   else if (ai->rate > esd_rate)
+     return -1;
+ 
+-  ai->fn = esd_play_stream_fallback(format, ai->rate, esdserver, "mpg123");
++  ai->fn = esd_play_stream_fallback(format, ai->rate, getenv("ESPEAKER"), "mpg123");
+   return (ai->fn);
+ }
+ 
