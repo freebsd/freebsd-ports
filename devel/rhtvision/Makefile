@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rhtvision
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tvision
@@ -35,9 +35,11 @@ pre-configure:
 
 post-patch:
 .for f in config.pl confignt.pl conflib.pl linux/compress \
-	linuxso/makemak.in linuxso/makemak.pl
+	linuxso/makemak.in linuxso/makemak.pl Makefile.in
 	@${REINPLACE_CMD} -e 's,/usr/bin/perl,${PERL5},g' \
 		-e 's/\(soname.*\)intver/\1extver/g' \
+		-e 's/\tmake/\t\\$$(MAKE)/g' \
+		-e 's/	make/	$$(MAKE)/g' \
 		${WRKSRC}/${f}
 .endfor
 
