@@ -37,7 +37,6 @@
     SUBDIR += crossgo32-djgpp2
     SUBDIR += crossgo32-djgpp2-pdcurses
     SUBDIR += crossm68k
-    SUBDIR += crosssco
     SUBDIR += cs
     SUBDIR += cscope
     SUBDIR += cssc
@@ -224,7 +223,6 @@
     SUBDIR += robodoc
     SUBDIR += rpc2
     SUBDIR += rvm
-    SUBDIR += scogdb
     SUBDIR += sdcc
     SUBDIR += sdl
     SUBDIR += sdl-devel
