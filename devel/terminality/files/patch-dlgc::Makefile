@@ -1,0 +1,13 @@
+--- dlgc/Makefile.orig	Sun Jan  7 17:53:21 2001
++++ dlgc/Makefile	Sun Apr 29 00:13:09 2001
+@@ -4,9 +4,7 @@
+ # Description: DLGC Makefile
+ # Author: Michal Safranek
+ 
+-CC = gcc
+-CPP = g++
+-CFLAGS = -g -I.. -Wall -DUSE_NCURSES
++CFLAGS += -I.. -DUSE_NCURSES
+ LIBS = -lncurses ../libtn.a
+ 
+ .SUFFIXES: .c .cpp .h
