@@ -1,5 +1,5 @@
-domtools/bin/address 
-domtools/bin/addr2net 
+domtools/bin/address
+domtools/bin/addr2net
 domtools/bin/addr2mask
 domtools/bin/axfr
 domtools/bin/basedomain
