@@ -21,16 +21,28 @@
 # SQUID_LANGUAGES
 #   A list of languages for which error page files should be installed
 #   (default: all)
+#
+#   E.g. use `make SQUID_LANGUAGES="English French"' if you want to
+#   install the files for these languages only.
+#   Use `make -VSQUID_LANGUAGES' or scroll down to this variable's
+#   definition to see which values are valid.
+#
 # SQUID_DEFAULT_LANG
 #   If you define SQUID_LANGUAGES, select which language should be the default
-#   (default: English)
+#   one (this variable defaults to English). This setting can be overwritten
+#   with squid.conf's error_directory directive.
+#
 # SQUID_CONFIGURE_ARGS
 #   Additional configuration options.
-#   To enable them, use an assignment like
-#   SQUID_CONFIGURE_ARGS="--enable-dlmalloc --enable-truncate"
-#   Below most of the additional configuration options are listed,
-#   please see the configure script in the squid source distribution for a
-#   complete list. Note that you probably do not need to worry about them.
+#
+#   To enable them, use e.g
+#   `make SQUID_CONFIGURE_ARGS="--enable-dlmalloc --enable-truncate" install'
+#
+#   The list below may be incomplete, please see the configure script
+#   in the squid source distribution for the complete list of additional
+#   options.
+#   Note that you probably do not need to worry about these options in most
+#   cases, they are included in case you want to experiment with them.
 #
 #    --enable-dlmalloc
 #     Compile and use the malloc package from Doug Lea
@@ -62,6 +74,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.5.6
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -74,7 +87,18 @@ DISTNAME=	squid-2.5.STABLE6
 DIST_SUBDIR=	squid2.5
 
 PATCH_SITES=	http://www.squid-cache.org/Versions/v2/2.5/bugs/
-PATCHFILES=	squid-2.5.STABLE6.ufs_no_valid_dir.patch
+PATCHFILES=	squid-2.5.STABLE6-ufs_no_valid_dir.patch \
+		squid-2.5.STABLE6-ldap_helpers.patch \
+		squid-2.5.STABLE6-concurrent_dns_lookups.patch \
+		squid-2.5.STABLE6-request_header_max_size.patch \
+		squid-2.5.STABLE6-ntlm_challengereuse_leak.patch \
+		squid-2.5.STABLE6-ntlm_noreuse_leak.patch \
+		squid-2.5.STABLE6-partial_hit_is_miss.patch \
+		squid-2.5.STABLE6-HEAD.patch \
+		squid-2.5.STABLE6-ufs_create_error.patch \
+		squid-2.5.STABLE6-basic_auth_caseinsensitive.patch \
+		squid-2.5.STABLE6-active_requests_delaypool.patch \
+		squid-2.5.STABLE6-client_db_gc.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de
