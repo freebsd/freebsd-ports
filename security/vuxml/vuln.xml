@@ -2856,7 +2856,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>Several vulnerabilities found in PHPNuke</topic>
     <affects>
       <package>
-	<name>PHPNuke</name>
+	<name>phpnuke</name>
 	<range><lt>7.3</lt></range>
       </package>
     </affects>
@@ -2880,6 +2880,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-05-05</discovery>
       <entry>2004-07-03</entry>
+      <modified>2004-09-28</modified>
     </dates>
   </vuln>
 
