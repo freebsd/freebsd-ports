@@ -393,6 +393,7 @@
     SUBDIR += pmf
     SUBDIR += poptop
     SUBDIR += pppoa
+    SUBDIR += portfwd
     SUBDIR += pppload
     SUBDIR += ppptraf
     SUBDIR += pptpclient

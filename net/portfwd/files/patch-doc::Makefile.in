@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	Sun May  5 18:01:09 2002
++++ doc/Makefile.in	Sun May  5 18:01:31 2002
+@@ -71,7 +71,7 @@
+ man_MANS = portfwd.8 portfwd.cfg.5
+ noinst_DATA = INSTALL.configure
+ 
+-docdir = $(prefix)/doc/portfwd
++docdir = $(prefix)/share/doc/portfwd
+ doc_DATA = FAQ conf.txt
+ mkinstalldirs = $(SHELL) $(top_srcdir)/config/mkinstalldirs
+ CONFIG_HEADER = ../config.h

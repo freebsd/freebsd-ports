@@ -1,0 +1,8 @@
+Portfwd stands for port forwarding daemon. It's a small C++
+utility which forwards incoming TCP connections and/or UDP
+packets to remote hosts.
+
+WWW: http://portfwd.sourceforge.net/
+
+- Alex Dupre
+sysadmin@alexdupre.com

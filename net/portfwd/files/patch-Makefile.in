@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sun May  5 16:53:37 2002
++++ Makefile.in	Sun May  5 16:54:13 2002
+@@ -70,7 +70,7 @@
+ 
+ SUBDIRS = getopt src tools doc
+ 
+-docdir = $(prefix)/doc/portfwd
++docdir = $(prefix)/share/doc/portfwd
+ doc_DATA = COPYING README CREDITS TODO
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/config/mkinstalldirs
