@@ -82,6 +82,8 @@ lib/aap/Exec-%%PORTVERSION%%/aap.py
 lib/aap/Exec-%%PORTVERSION%%/aap.pyc
 lib/aap/Exec-%%PORTVERSION%%/aapnetrc.py
 lib/aap/Exec-%%PORTVERSION%%/aapnetrc.pyc
+lib/aap/Exec-%%PORTVERSION%%/aapre.py
+lib/aap/Exec-%%PORTVERSION%%/aapre.pyc
 lib/aap/Exec-%%PORTVERSION%%/default.aap
 lib/aap/Exec-%%PORTVERSION%%/popenerr.py
 lib/aap/Exec-%%PORTVERSION%%/popenerr.pyc
@@ -136,8 +138,10 @@ lib/aap/Exec-%%PORTVERSION%%/popenerr.pyc
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/user-version.html
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/user.html
 lib/aap/Exec-%%PORTVERSION%%/modules/d.aap
+lib/aap/Exec-%%PORTVERSION%%/modules/kde.aap
 lib/aap/Exec-%%PORTVERSION%%/modules/libtool.aap
 lib/aap/Exec-%%PORTVERSION%%/modules/qt.aap
+lib/aap/Exec-%%PORTVERSION%%/modules/rectest.aap
 lib/aap/Exec-%%PORTVERSION%%/tools/__init__.py
 lib/aap/Exec-%%PORTVERSION%%/tools/__init__.pyc
 lib/aap/Exec-%%PORTVERSION%%/tools/bcc.py
