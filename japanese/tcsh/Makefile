@@ -3,7 +3,7 @@
 # Date created:		29 November 1997
 # Whom:			issei <issei@t-cnet.or.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1997/12/27 19:04:12 max Exp $
+# $Id: Makefile,v 1.2 1997/12/27 19:35:58 max Exp $
 #
 
 DISTNAME=	tcsh-6.07
@@ -13,17 +13,17 @@ MASTER_SITES=	ftp://ftp.jp.freebsd.org/pub/FreeBSD/distfiles/ \
 		ftp://ftp.iis.u-tokyo.ac.jp/pub7/FreeBSD/distfiles/ \
 		ftp://ftp.chem.sci.osaka-u.ac.jp/pub/unix/tools/tcsh/
 
-PATCHFILES=	tcsh-6.07.02.kanji.patch6a.gz tcsh-6.07.02-color-1.04.patch.gz
 PATCH_SITES=	http://www2.wbs.or.jp/~znc/tcsh/ \
 		ftp://ftp.ccs.dendai.ac.jp/pub/misc/shell/tcsh/ \
 		http://www.is.s.u-tokyo.ac.jp/~nayuta/pub/ \
 		ftp://ftp.lab.kdd.co.jp/Usenet/fj.sources/1996/dec/
+PATCHFILES=	tcsh-6.07.02.kanji.patch6a.gz tcsh-6.07.02-color-1.04.patch.gz
+PATCH_DIST_STRIP=       -p1
 
 MAINTAINER=	issei@t-cnet.or.jp
 
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/tcsh-6.07.02
-PATCH_DIST_STRIP=       -p1
 ALL_TARGET=	all catalogs
 INSTALL_TARGET=	install install.man
 MAN1= 		tcsh.1
