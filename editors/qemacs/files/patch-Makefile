@@ -1,0 +1,26 @@
+--- Makefile.orig	Thu May  2 02:27:40 2002
++++ Makefile	Thu Feb 20 21:46:55 2003
+@@ -42,17 +42,17 @@
+ #
+ CONFIG_PNG_OUTPUT=y
+ 
+-HOST_CC=gcc
+-CC=$(HOST_CC)
++HOST_CC?=gcc
++CC?=$(HOST_CC)
+ PROFILE=
+-CFLAGS=-Wall -O2 -g $(PROFILE)
++CFLAGS?=-Wall -O2 -g $(PROFILE)
+ #CFLAGS+=-fomit-frame-pointer
+ #CPU dependent flags
+-CFLAGS+=-m386 -malign-functions=0
+-LDFLAGS= $(PROFILE)
++#CFLAGS+=-m386 -malign-functions=0
++LDFLAGS?= $(PROFILE)
+ STRIP=strip -s -R .comment -R .note
+ DEFINES=
+-prefix=/usr/local
++prefix?=/usr/local
+ 
+ ########################################################
+ # do not modify after this
