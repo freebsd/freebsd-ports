@@ -3113,7 +3113,6 @@ ipw		ports/net/ipw
 ipython		ports/devel/ipython
 irc		ports/irc/irc
 ircII		ports/irc/ircII
-ircatlite	ports/irc/ircatlite
 ircd-hybrid	ports/irc/ircd-hybrid
 ircd-hybrid-ru	ports/irc/ircd-hybrid-ru
 ircd-ru		ports/irc/ircd-ru
