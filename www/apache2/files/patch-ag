@@ -1,0 +1,89 @@
+*** conf/httpd.conf-dist.orig	Thu Oct 16 22:55:54 1997
+--- conf/httpd.conf-dist	Wed Oct 22 20:58:36 1997
+***************
+*** 34,40 ****
+  #  suggested workaround is to create a user www and use that user.
+  
+  User nobody
+! Group #-1
+  
+  # ServerAdmin: Your address, where problems with the server should be
+  # e-mailed.
+--- 34,40 ----
+  #  suggested workaround is to create a user www and use that user.
+  
+  User nobody
+! Group nogroup
+  
+  # ServerAdmin: Your address, where problems with the server should be
+  # e-mailed.
+***************
+*** 56,76 ****
+  # ErrorLog: The location of the error log file. If this does not start
+  # with /, ServerRoot is prepended to it.
+  
+! ErrorLog logs/error_log
+  
+  # TransferLog: The location of the transfer log file. If this does not
+  # start with /, ServerRoot is prepended to it.
+  
+! TransferLog logs/access_log
+  
+  # PidFile: The file the server should log its pid to
+! PidFile logs/httpd.pid
+  
+  # ScoreBoardFile: File used to store internal server process information.
+  # Not all architectures require this.  But if yours does (you'll know because
+  # this file is created when you run Apache) then you *must* ensure that
+  # no two invocations of Apache share the same scoreboard file.
+! ScoreBoardFile logs/apache_status
+  
+  # ServerName allows you to set a host name which is sent back to clients for
+  # your server if it's different than the one the program would get (i.e. use
+--- 56,78 ----
+  # ErrorLog: The location of the error log file. If this does not start
+  # with /, ServerRoot is prepended to it.
+  
+! ErrorLog /var/log/httpd-error.log
+  
+  # TransferLog: The location of the transfer log file. If this does not
+  # start with /, ServerRoot is prepended to it.
+  
+! TransferLog /var/log/httpd-access.log
+! 
+! #LogFormat "%h %l %u %t \"%r\" %s %b \"%{Referer}i\" \"%{User-Agent}i\""
+  
+  # PidFile: The file the server should log its pid to
+! PidFile /var/run/httpd.pid
+  
+  # ScoreBoardFile: File used to store internal server process information.
+  # Not all architectures require this.  But if yours does (you'll know because
+  # this file is created when you run Apache) then you *must* ensure that
+  # no two invocations of Apache share the same scoreboard file.
+! ScoreBoardFile /var/run/apache_runtime_status
+  
+  # ServerName allows you to set a host name which is sent back to clients for
+  # your server if it's different than the one the program would get (i.e. use
+***************
+*** 175,184 ****
+   
+  #<VirtualHost host.some_domain.com>
+  #ServerAdmin webmaster@host.some_domain.com
+! #DocumentRoot /www/docs/host.some_domain.com
+  #ServerName host.some_domain.com
+! #ErrorLog logs/host.some_domain.com-error_log
+! #TransferLog logs/host.some_domain.com-access_log
+  #</VirtualHost>
+  
+  
+--- 177,186 ----
+   
+  #<VirtualHost host.some_domain.com>
+  #ServerAdmin webmaster@host.some_domain.com
+! #DocumentRoot /usr/local/www/host.some_domain.com/data
+  #ServerName host.some_domain.com
+! #ErrorLog /var/log/host.some_domain.com-error_log
+! #TransferLog /var/log/host.some_domain.com-access_log
+  #</VirtualHost>
+  
+  
