@@ -4862,6 +4862,7 @@ p5-Carp-Assert	ports/devel/p5-Carp-Assert
 p5-Carp-Datum	ports/devel/p5-Carp-Datum
 p5-Cdk		ports/devel/p5-Cdk
 p5-Cflow	ports/net/p5-Cflow
+p5-Chart-Math-Axis	ports/math/p5-Chart-Math-Axis
 p5-Chart-PNGgraph	ports/graphics/p5-Chart-PNGgraph
 p5-Chatbot-Eliza	ports/misc/p5-Chatbot-Eliza
 p5-Chemistry-Elements	ports/science/p5-Chemistry-Elements
