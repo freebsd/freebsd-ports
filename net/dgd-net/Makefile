@@ -3,10 +3,10 @@
 # Date created:		17 June 1996
 # Whom:			adam
 #
-# $Id: Makefile,v 1.7 1996/10/24 05:38:14 adam Exp $
+# $Id: Makefile,v 1.8 1996/10/25 02:31:14 adam Exp $
 #
 
-DISTNAME=	dgd-net-1.0.84
+DISTNAME=	dgd-net-1.0.86
 DISTFILES=	dgd-1.0.37.tar.gz
 CATEGORIES=	net lang
 MASTER_SITES=	ftp.lysator.liu.se:/pub/lpmud/drivers/dgd/
@@ -45,7 +45,9 @@ PATCHFILES=	1.0.37-1.0.39.gz \
 		1.0.81-1.0.82.gz \
 		1.0.82-1.0.83.gz \
 		1.0.83-1.0.84.gz \
-		net-10.dgd-84.gz
+		net-10.dgd-84.gz \
+		1.0.84-1.0.85.gz \
+		1.0.85-1.0.86.gz
 
 MAINTAINER=	adam@veda.is
 
@@ -54,14 +56,17 @@ RESTRICTED=	license required for commercial use
 
 DIST_SUBDIR=	dgd
 WRKSRC=		${WRKDIR}/dgd/src
-#PATCH_DIST_STRIP=	-p1
+.if defined(PATCH_DEBUG)
+PATCH_DIST_ARGS=	-d ${WRKDIR} -E ${PATCH_DIST_STRIP}
+.else
+PATCH_DIST_ARGS=	-d ${WRKDIR} --forward --quiet -E ${PATCH_DIST_STRIP}
+.endif
 
 pre-patch:
 	@for i in ${WRKSRC}/host/pc/res/*.ico; do \
 		mv $$i $$i.bak; \
 		echo '\ No newline at end of file' >$$i; \
 		done
-	@ln -sf ${WRKDIR}/dgd ${WRKSRC}
 
 post-patch:
 	@for i in ${WRKSRC}/host/pc/res/*.ico; do \
