@@ -1,0 +1,75 @@
+NOTE: if you want this service to be accessible from other servers,
+ change any 'conference.localhost' or 'private.localhost' listed below
+ to a fully qualified domain name!  Please make sure that your directives
+ are _NOT_ in an XML comment: there are many multi-line comments.
+
+Conference can be configured as a private conferencing server (no browse,
+all rooms locked up).  Add the following to make a private conferencing
+server (around line 446 in the sample configuration file):
+
+  <service id='private.localhost'>
+    <load><conference>${PREFIX}/lib/jabber/conference.so</conference></load>
+    <conference xmlns="jabberd:config:conference">
+      <private/>
+      <history>30</history>
+      <vCard>
+        <FN>Private Conferences</FN>
+        <DESC>This service is for private conferencing rooms.</DESC>
+        <URL>http://foo.bar/</URL>
+      </vCard>
+      <notice>
+        <join> has become available</join>
+        <leave> has left</leave>
+        <rename> is now known as </rename>
+      </notice>
+    </conference>
+  </service>
+
+Add this section to the browse area of the jsm service to advertise it
+to your users (around line 246 of the sample config file):
+
+    <conference type="private" jid="private.localhost" name="Private Conferencing"/>
+
+
+Conference can ALSO be configured as a public chatroom server (add this
+around line 446 in the sample config file):
+
+(NOTE: don't forget to change the secret and note that this is transmitted
+  in plain text.)
+
+  <service id='conference.localhost'>
+    <load><conference>${PREFIX}/lib/jabber/conference.so</conference></load>
+    <conference xmlns="jabber:config:conference">
+      <public/>
+      <vCard>
+        <FN>Public Chatrooms</FN>
+        <DESC>This service is for public chatrooms.</DESC>
+        <URL>http://foo.bar/</URL>
+      </vCard>
+      <history>20</history>
+      <notice>
+        <join> has become available</join>
+        <leave> has left</leave>
+        <rename> is now known as </rename>
+      </notice>
+      <room jid="help@conference.localhost">
+        <name>Assistance Zone</name>
+        <privacy/>
+      </room>
+      <room jid="admin@conference.localhost">
+        <name>Adminz only</name>
+        <secret>con0r</secret>
+        <notice>
+          <join> just rocks!</join>
+          <leave> gets lost</leave>
+          <rename> feels it is more important to be known as </rename>
+        </notice>
+      </room>
+    </conference>
+  </service>
+
+Add this section to the browse area of the jsm service to advertise it
+to your users (around line 246 of the sample configuration file):
+
+    <conference type="public" jid="conference.localhost" name="Public Chatrooms"/>
+
