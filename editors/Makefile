@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.68 1999/02/12 15:45:45 kuriyama Exp $
+# $Id: Makefile,v 1.69 1999/02/26 19:21:18 shige Exp $
 #
 
     SUBDIR += apel-emacs
@@ -42,7 +42,6 @@
     SUBDIR += uzap
     SUBDIR += vile
     SUBDIR += vilearn
-    SUBDIR += vim4
     SUBDIR += vim5
     SUBDIR += wemi-emacs20
     SUBDIR += wemi-emacs20-current
