@@ -1,5 +1,5 @@
---- plugin/Makefile.in.orig	Thu Mar 28 07:05:24 2002
-+++ plugin/Makefile.in	Thu May  2 01:46:10 2002
+--- plugin/Makefile.in.orig	Thu Jul 11 00:20:39 2002
++++ plugin/Makefile.in	Sat Jul 27 08:43:08 2002
 @@ -2,6 +2,7 @@
  
  prefix = @prefix@
@@ -8,7 +8,7 @@
  CC = @CC@
  CFLAGS = @CFLAGS@
  MAKE = @MAKE@
-@@ -21,7 +22,7 @@
+@@ -25,7 +26,7 @@
  endif
  
  # Installation directory
@@ -16,19 +16,17 @@
 +gretldir = $(libdir)/gretl
  
  LIBTOOL = $(topsrc)/libtool
- COMPILE = $(LIBTOOL) --mode=compile $(CC) -c -fPIC -DPIC $(CFLAGS) 
-@@ -29,8 +30,8 @@
+ COMPILE = $(LIBTOOL) --mode=compile $(CC) -c $(CFLAGS) 
+@@ -45,7 +46,7 @@
+   query-ms-ole.lo=ms-ole.lo
+   vpath %.c libole2
+   vpath %.h libole2
+-  LIBOLE2_CFLAGS = -I. `glib-config --cflags`
++  LIBOLE2_CFLAGS = -I. `$(GLIB_CONFIG) --cflags`
+ endif
  
- GRETLINC = -I$(topsrc)/lib/src
- GRETLLIB = ../lib/libgretl.la
--GTKINC = `gtk-config --cflags`
--GTKLIB = `gtk-config --libs`
-+GTKINC = `$(GTK_CONFIG) --cflags`
-+GTKLIB = `$(GTK_CONFIG) --libs`
- 
- PLUGINS = stats_tables.so panel_data.so progress_bar.so \
- 	gnumeric_import.so excel_import.so
-@@ -85,15 +86,15 @@
+ all: $(PLUGINS)
+@@ -98,15 +99,15 @@
  .PHONY: 
  
  install: $(PLUGINS) installdirs
