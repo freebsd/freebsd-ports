@@ -7,14 +7,14 @@
 #
 
 PORTNAME=	cmucl
-PORTVERSION=	18b
+PORTVERSION=	18c
 CATEGORIES=	lang
 MASTER_SITES=	http://www2.cons.org:8000/freebsd-distfiles/ \
-		ftp://ftp2.cons.org/pub/languages/lisp/cmucl/release/ \
-		http://www2.cons.org:8000/ftp-area/cmucl/release/ \
+		ftp://ftp2.cons.org/pub/languages/lisp/cmucl/release/18c/ \
+		http://www2.cons.org:8000/ftp-area/cmucl/release/18c/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	cracauer
-DISTNAME=	cmucl-18b.x86.freebsd22
+DISTNAME=	cmucl-18c.x86.freebsd41
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	cracauer@cons.org
@@ -27,9 +27,9 @@ do-install:
 	${INSTALL} -c -o ${BINOWN} -g ${BINGRP} ${WRKDIR}/bin/lisp ${PREFIX}/bin
 	-${MKDIR} ${PREFIX}/lib/cmucl
 	(cd ${WRKDIR} && tar fc - lib) | (cd ${PREFIX}/lib/cmucl && tar fx -)
-	${INSTALL} -c -o ${BINOWN} -g ${BINGRP} ${WRKDIR}/man/cmucl.1 \
+	${INSTALL} -c -o ${BINOWN} -g ${BINGRP} ${WRKDIR}/man/man1/cmucl.1 \
 		${PREFIX}/man/man1
-	${INSTALL} -c -o ${BINOWN} -g ${BINGRP} ${WRKDIR}/man/lisp.1 \
+	${INSTALL} -c -o ${BINOWN} -g ${BINGRP} ${WRKDIR}/man/man1/lisp.1 \
 		${PREFIX}/man/man1
 
 .include <bsd.port.mk>
