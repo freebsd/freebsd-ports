@@ -3,7 +3,7 @@
 # Date created:		16 Apr 1996
 # Whom:			tg@freebsd.org
 #
-# $Id: Makefile,v 1.8 1997/04/02 07:46:33 tg Exp $
+# $Id: Makefile,v 1.9 1997/04/18 06:36:11 tg Exp $
 #
 
 DISTNAME=	gv-3.2.4
@@ -14,7 +14,6 @@ MAINTAINER=	tg@freebsd.org
 
 LIB_DEPENDS=	Xaw3d\\.6\\.:${PORTSDIR}/x11/Xaw3d
 
-PATCH_STRIP=	-p1
 USE_IMAKE=	yes
 
 post-install:
