@@ -27,7 +27,7 @@ USE_GMAKE=	yes
 
 DIST_SUBDIR=	${PORTNAME}
 
-CONFIGURE_ARGS=	-prefix ${PREFIX} -cflags "${CFLAGS} -fPIC" -cc "${CC}"
+CONFIGURE_ARGS=	-prefix ${PREFIX} -cflags "${CFLAGS}" -cc "${CC}"
 
 post-install:
 	@${ECHO_CMD} "Installing ${PREFIX}/etc/rc.d/ircservices.sh.sample startup file."

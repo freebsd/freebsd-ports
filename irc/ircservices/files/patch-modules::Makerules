@@ -1,0 +1,14 @@
+--- modules/Makerules.orig	Wed Mar 10 03:22:00 2004
++++ modules/Makerules	Wed Mar 10 03:14:17 2004
+@@ -168,6 +168,11 @@
+ 	@rm -f $@
+ 	@ln -s $(TARGET).o $@
+ 
++.compiled-check.o .compiled-extsyms.o .compiled-main.o: $(TARGET).c $(DEPS) $(INCLUDES2)
++	$(CC) $(CFLAGS) -fPIC -I$(TOPDIR) -c $< -o $(TARGET).o
++	@rm -f $@
++	@ln -s $(TARGET).o $@
++
+ # Compile a source file into an object file suitable for use in a static
+ # module.  This is used with the main object file of a module to generate
+ # unique names for exported module symbols (init_module and the like).
