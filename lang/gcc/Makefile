@@ -3,7 +3,7 @@
 # Date created:		9 Jan 1998
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/01/10 21:40:09 jdp Exp $
 #
 
 DISTNAME=	egcs-1.0.1
@@ -21,7 +21,7 @@ MAN1=		cccp.1 g++.1 g77.1 gcc.1
 
 post-install:
 	if [ ! -f ${PREFIX}/info/dir ]; then \
-	    sed -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
+	    ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
 	fi
 .for info in cpp g77 gcc
 	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
