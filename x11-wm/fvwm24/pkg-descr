@@ -4,8 +4,7 @@ shaped/color icons. It gives a very good emulation of mwm. A nice
 button-bar can be used to provide convenient access to frequently used
 functions or programs.
 
-This package uses fvwm-users-jp-kits also, to add internationalized
-feature (based on X itself) to fvwm and its modules.
+See the official Fvwm home page: http://fvwm.math.uh.edu/
 
-With this package, you may use fonts of your own language, display
-characters in everywhere in fvwm, and have fun ;-)
+Jason C. Wells
+jcwells@u.washington.edu
