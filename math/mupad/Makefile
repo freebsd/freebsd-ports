@@ -16,7 +16,12 @@ DIST_SUBDIR=	mupad
 
 MAINTAINER=	maho@FreeBSD.org
 
-RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXm.so.2:${PORTSDIR}/x11-toolkits/linux-openmotif
+RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXm.so.2:${PORTSDIR}/x11-toolkits/linux-openmotif \
+		${LINUXBASE}/usr/lib/libImlib.so.1:${PORTSDIR}/graphics/linux-imlib \
+		${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg \
+		${LINUXBASE}/usr/lib/libpng.so.2:${PORTSDIR}/graphics/linux-png \
+		${LINUXBASE}/usr/lib/libtiff.so.3:${PORTSDIR}/graphics/linux-tiff \
+		${LINUXBASE}/usr/lib/libungif.so.4:${PORTSDIR}/graphics/linux-ungif
 
 NO_CDROM=	"unsure to sell for profit"
 
