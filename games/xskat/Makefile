@@ -3,12 +3,12 @@
 # Date created:		27 Apr 1996
 # Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
-# $Id: Makefile,v 1.2 1996/11/18 11:27:20 asami Exp $
+# $Id: Makefile,v 1.3 1997/08/26 07:12:21 tg Exp $
 #
 
 DISTNAME=	xskat-1.6
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.germany.eu.net/pub/X11/misc/
+MASTER_SITES=	ftp://ftp.germany.eu.net/pub/x11/misc/
 
 MAINTAINER=	tg@FreeBSD.org
 
