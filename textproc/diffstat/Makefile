@@ -19,7 +19,4 @@ GNU_CONFIGURE=	yes
 
 MAN1=		diffstat.1
 
-post-install:
-	strip -s ${PREFIX}/bin/diffstat
-
 .include <bsd.port.mk>
