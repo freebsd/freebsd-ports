@@ -1,15 +1,15 @@
 # New ports collection makefile for:	afterstep-stable
-# Version required:	1.6.10
+# Version required:	1.8.0
 # Date created:		1 May 1998
 # Whom:			Brett Taylor
 #
 # $FreeBSD$
 #
 
-DISTNAME=	AfterStep-${AS_VERSION}
-PKGNAME=	afterstep-${AS_VERSION}
-CATEGORIES=     x11-wm afterstep
-MASTER_SITES=   ${MASTER_SITE_AFTERSTEP}
+DISTNAME=	AfterStep-1.8.0
+PKGNAME=	afterstep-1.8.0
+CATEGORIES=	x11-wm afterstep
+MASTER_SITES=	${MASTER_SITE_AFTERSTEP}
 MASTER_SITE_SUBDIR=	stable
 
 MAINTAINER=	dima@Chg.ru
@@ -18,17 +18,39 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		png.3:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
-AS_VERSION=	1.6.10
-INSTALL_TARGET=	install install.man
-MAN1=	Animate.1x Audio.1x Auto.1x Banner.1x Cascade.1x Clean.1x \
-	Form.1x Ident.1x Pager.1x Save.1x Script.1x Scroll.1x Tile.1x \
-	Wharf.1x WinList.1x Zharf.1x afterstep.1x
-
-NO_LATEST_LINK= yes
+NO_LATEST_LINK=	yes
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${X11BASE} \
-		--disable-save-windows \
-		--enable-different-locknfeels
+CONFIGURE_ENV=	X_EXTRA_LIBS="-lxpg4"
+CONFIGURE_ARGS=	--with-png-includes="${LOCALBASE}/include" \
+		--with-png-libs="${LOCALBASE}/lib" \
+		--with-jpeg-includes="${LOCALBASE}/include" \
+		--with-jpeg-libs="${LOCALBASE}/lib" \
+		--with-helpcommand="xterm -e man"
+
+.if defined(USE_I18N)
+CONFIGURE_ARGS+=	--enable-i18n
+.endif
+
+.if defined(DIFFERENT_LOOKNFEELS)
+CONFIGURE_ARGS+=	--enable-different-looknfeels
+.endif
+
+.if !defined(USE_SAVEWINDOWS)
+CONFIGURE_ARGS+=	--disable-savewindows
+.endif
+
+MAN1=	Animate.1x Audio.1x Banner.1x Cascade.1x Clean.1x Form.1x Gnome.1x \
+	Ident.1x Pager.1x Save.1x Script.1x Scroll.1x Tile.1x Wharf.1x \
+	WinList.1x Zharf.1x afterstep.1x asetroot.1x
+
+post-install:
+	${INSTALL_DATA} ${FILESDIR}/monitor_bsd.xpm ${PREFIX}/share/afterstep/desktop/icons/common/
+.if defined(DIFFERENT_LOOKNFEELS)
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "===>  The WinList module is broken with different-looknfeels.  Don't use it."
+	@${ECHO_MSG} ""
+.endif
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-This is a development version of AfterStep-1.4.5.3.  AfterStep is a NeXTStep
+This is a stable version of AfterStep.  AfterStep is a NeXTStep
 style window manager and features quick easy configuration of the look and
 feel of your setup without the use of a .steprc file.  Configuration in 
 most cases is far easier than it used to be.  There are a few small bugs, 
@@ -8,3 +8,5 @@ other very Linux specific applications which are not at present included.
 
 Brett Taylor
 brett@peloton.physics.montana.edu
+
+WWW: http://www.afterstep.org/
