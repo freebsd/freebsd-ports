@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20050214:
+  AFFECTS: users of net-mgmt/nagios
+  AUTHOR: blaz@si.FreeBSD.org
+
+  Nagios has been upgraded to 2.0.b2. Native support for storing various types
+  of data (status, retention, comment, downtime, etc.) in MySQL and PostgreSQL
+  has been dropped. There are also multiple changes to the format of
+  configuration files. Carefully read
+  http://nagios.sourceforge.net/docs/2_0/whatsnew.html before upgrading.
+
 20050213:
   AFFECTS: users of print/teTeX-*
   AUTHOR: hrs@FreeBSD.org
