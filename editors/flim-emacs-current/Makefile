@@ -16,8 +16,10 @@ PORTCLASS?=	master
 
 # distfile version
 FLIM_VER=	1.12.5
-FLIMDOCDIR=	share/doc/flim
+# setupel filename
 FLIM_SETUPEL=	flim-setupel.el
+# document install directory by install-doc target
+FLIMDOCDIR?=	share/doc/flim
 
 .if (${PORTCLASS} == "master")
 # for emacs
@@ -33,15 +35,6 @@ REQUIRE_SETUPEL=  YES
 # target name for make build
 ALL_TARGET?=	elc
 
-# if RUN_DEPENDS-emacs port name has the suffix '-common'.
-.if !defined(HAVE_COMMON_PORT)
-HAVE_COMMON_PORT=	NO
-.endif
-# if RUN_DEPENDS-emacs needs setup elisp
-.if !defined(REQUIRE_SETUPEL)
-REQUIRE_SETUPEL=	NO
-.endif
-
 .if defined(EMACS_PORT)
 PKGNAME=	flim-${EMACS_PORT}-${FLIM_VER}
 EMACS_CMD=	${PREFIX}/bin/${EMACS_NAME}-${EMACS_VER}
@@ -51,21 +44,29 @@ RUN_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}-common
 .else
 RUN_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}
 .endif
-SCRIPTS_ENV=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER} \
+SCRIPTS_ENV+=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER} \
 		EMACS_LIBDIR_WITH_VER=${EMACS_LIBDIR_WITH_VER} \
+		EMACS_PACKAGESDIR=${EMACS_PACKAGESDIR} \
 		TARGETS="${FLIM_SETUPEL}"
-PLIST_SUB=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER} \
+PLIST_SUB+=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER} \
 		EMACS_LIBDIR_WITH_VER=${EMACS_LIBDIR_WITH_VER} \
+		EMACS_PACKAGESDIR=${EMACS_PACKAGESDIR} \
 		FLIMDOCDIR=${FLIMDOCDIR} FLIM_SETUPEL=${FLIM_SETUPEL}
-MAKE_FLAGS=	EMACS=${EMACS_CMD}
+MAKE_FLAGS+=	EMACS=${EMACS_CMD}
 .if (${EMACS_VER} == "19.34")
 # depends on custom: emacs-19.34 or mule-19.34
 BUILD_DEPENDS+=	${PREFIX}/${EMACS_LIBDIR_WITH_VER}/site-lisp/custom.el:${PORTSDIR}/editors/custom-${EMACS_PORT}
 RUN_DEPENDS+=	${PREFIX}/${EMACS_LIBDIR_WITH_VER}/site-lisp/custom.el:${PORTSDIR}/editors/custom-${EMACS_PORT}
 .endif
-# depends on apel
+# depends on apel (case of xemacs-21.x or later)
+.if defined(EMACS_PACKAGESDIR)
+BUILD_DEPENDS+= ${PREFIX}/${EMACS_PACKAGESDIR}/lisp/apel/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT}
+RUN_DEPENDS+=   ${PREFIX}/${EMACS_PACKAGESDIR}/lisp/apel/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT}
+.else
+# depends on apel (case of other emacsen etc...)
 BUILD_DEPENDS+=	${PREFIX}/${EMACS_LIBDIR_WITH_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT}
 RUN_DEPENDS+=	${PREFIX}/${EMACS_LIBDIR_WITH_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT}
+.endif
 # depends on mmencode
 .if (${EMACS_NAME} != "xemacs")
 RUN_DEPENDS+=	mmencode:${PORTSDIR}/mail/metamail
@@ -80,40 +81,89 @@ RUN_DEPENDS+=	mmencode:${PORTSDIR}/mail/metamail
 # info files JIS to EUC
 BUILD_DEPENDS+=	nkf:${PORTSDIR}/japanese/nkf
 
-.if (${REQUIRE_SETUPEL} == "YES")
 pre-configure:
+.if defined(REQUIRE_SETUPEL) && (${REQUIRE_SETUPEL} == "YES")
 	@${CP} ${FILESDIR}/${FLIM_SETUPEL}.in ${WRKDIR}
 .endif
 
 .include <bsd.port.pre.mk>
 
-MAKEINFO=	makeinfo --no-split --no-validate
+MAKEINFO=		makeinfo --no-split --no-validate
+MAKEINFO_EMACS=		${EMACS_CMD} -no-site-file -no-init-file -batch
+MAKEINFO_EMACS_FLAGS=	-e texinfo-format-buffer -f save-buffer
+
 
 post-build:
+	@${MAKE} info-build
+
+post-install:
+.if defined(REQUIRE_SETUPEL) && (${REQUIRE_SETUPEL} == "YES")
+	@${MAKE} setupel-install
+.endif
+.if defined(EMACS_PACKAGESDIR) && defined(MANIFEST)
+	@${MAKE} info-package-install
+	@${MAKE} manifest-install
+.else
+	@${MAKE} info-install
+.endif
+.if !defined(NOPORTDOCS)
+	@${MAKE} doc-install
+.endif
+
+
+# install functions
+info-build:
 	@(cd ${WRKSRC} ; \
 	for i in mime-en.texi mime-ja.texi; do \
 		${MV} $${i} $${i}.jis ; \
 		${CAT} $${i}.jis | nkf -e > $${i} ; \
-		${ECHO_MSG} "===>   Please ignore the following errors." ; \
 		${MAKEINFO} $${i} || ${TRUE} ; \
 	done)
 
-post-install:
+info-build-by-emacs:
 	@(cd ${WRKSRC} ; \
-	for i in mime-en.info mime-ja.info; do \
-		${INSTALL_DATA} ${WRKSRC}/$${i} ${PREFIX}/info ; \
-		install-info ${PREFIX}/info/$${i} ${PREFIX}/info/dir ; \
+	for i in mime-en.texi mime-ja.texi; do \
+		${MV} $${i} $${i}.jis ; \
+		${CAT} $${i}.jis | nkf -e > $${i} ; \
+		${MAKEINFO_EMACS} $${i} ${MAKEINFO_EMACS_FLAGS} || ${TRUE} ; \
 	done)
-.if (${REQUIRE_SETUPEL} == "YES")
-	@${INSTALL_DATA} ${WRKDIR}/${FLIM_SETUPEL} \
-			${PREFIX}/${EMACS_LIBDIR_WITH_VER}/site-lisp
-.endif
-.if !defined(NOPORTDOCS)
+
+doc-install:
 	@${MKDIR} ${PREFIX}/${FLIMDOCDIR}
 	@(cd ${WRKSRC} ; \
 	for i in ChangeLog README.* NEWS VERSION ; do \
 		${INSTALL_DATA} $${i} ${PREFIX}/${FLIMDOCDIR}/ ; \
 	done)
-.endif
+
+setupel-install:
+	@${INSTALL_DATA} ${WRKDIR}/${FLIM_SETUPEL} \
+			${PREFIX}/${EMACS_LIBDIR_WITH_VER}/site-lisp
+
+info-install:
+	@(cd ${WRKSRC} ; \
+	for i in mime-en.info mime-ja.info; do \
+		${INSTALL_DATA} ${WRKSRC}/$${i} ${PREFIX}/info ; \
+		install-info ${PREFIX}/info/$${i} ${PREFIX}/info/dir ; \
+	done)
+
+info-package-install:
+	@(cd ${WRKSRC} ; \
+	for i in mime-en.info mime-ja.info; do \
+		${INSTALL_DATA} ${WRKSRC}/$${i} \
+			${PREFIX}/${EMACS_PACKAGESDIR}/info ; \
+	done ; \
+	${MKDIR} -p ${PREFIX}/${EMACS_PACKAGESDIR}/man/flim ; \
+	for i in mime-en.texi mime-ja.texi; do \
+		${INSTALL_DATA} ${WRKSRC}/$${i} \
+			${PREFIX}/${EMACS_PACKAGESDIR}/man/flim ; \
+	done)
+
+manifest-install:
+	@${RM} -f ${WRKDIR}/${MANIFEST}
+	@${CAT} ${PKGDIR}/PLIST | ${GREP} -e "^%%EMACS_PACKAGESDIR%%" | \
+		${SED} -e "s;^%%EMACS_PACKAGESDIR%%/;;" > ${WRKDIR}/${MANIFEST}
+	@${INSTALL_DATA} ${WRKDIR}/${MANIFEST} \
+		${PREFIX}/${EMACS_PACKAGESDIR}/pkginfo/
+
 
 .include <bsd.port.post.mk>
