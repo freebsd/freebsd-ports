@@ -32,6 +32,12 @@ CONFIGURE_ARGS= -x-libraries=${PREFIX}/lib \
 		-enable-ipv6
 MAN1=		vic.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 pre-patch:
 	@${FIND} ${WRKSRC} -name "*.[c,h]" | ${XARGS} ${PERL} -pi -e \
 		's|malloc.h|stdlib.h|'
@@ -40,4 +46,4 @@ post-install:
 	${STRIP_CMD} ${PREFIX}/bin/vic
 	${STRIP_CMD} ${PREFIX}/bin/histtolut
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

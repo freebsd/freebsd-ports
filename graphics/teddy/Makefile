@@ -29,6 +29,12 @@ USE_GMAKE=	yes
 
 PLIST_FILES=	lib/libTeddy.a libdata/pkgconfig/Teddy.pc
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 post-extract:
 	@${CHMOD} +x ${WRKSRC}/configure
 
@@ -44,4 +50,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/libTeddy.a ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/Teddy.pc ${PREFIX}/libdata/pkgconfig
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -27,8 +27,14 @@ MANLANG=	ja
 MAN1=		uudx.1
 PLIST_FILES=	bin/uudx
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 pre-patch:
 	@${ECHO_MSG} "===>  Installing custom Makefile for ${DISTNAME}"
 	@(${CP} ${FILESDIR}/Makefile ${WRKSRC})
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -33,6 +33,12 @@ EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 MAKE_ARGS=	"USE_AL=1"
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 .ifndef (WITH_OPENAL)
 pre-everything::
 	@${ECHO_CMD} "********************************************************************"
@@ -73,4 +79,4 @@ post-install:
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|; s|%%DATADIR%%|${DATADIR}|' \
 		<${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

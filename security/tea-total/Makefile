@@ -20,4 +20,10 @@ ONLY_FOR_ARCHS=	i386
 USE_GMAKE=	yes
 MAN1=		teatotal.1 tea.1 untea.1 tea-kgen.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
+.include <bsd.port.post.mk>

@@ -23,6 +23,12 @@ CFLAGS+=	-I${X11BASE}/include
 ALL_TARGET=	# empty
 PLIST_FILES=	lib/libwmapp.a
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|export |#export |g" ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e "s|malloc\.h|stdlib.h|g" ${WRKSRC}/xwrapper.h
@@ -44,4 +50,4 @@ do-install:
 	@${ECHO_CMD} "@dirrm ${DOCSDIR:S,^${PREFIX}/,,}" >> ${TMPPLIST}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

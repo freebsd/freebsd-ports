@@ -21,10 +21,16 @@ LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84 \
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl-ver=8.4 --with-tk-ver=8.4
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcl2c++ ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/otcldoc ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/libtclcl.a ${PREFIX}/lib
 	@${LN} -sf ${PREFIX}/lib/libtclcl.a ${PREFIX}/lib/libTcl.a
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

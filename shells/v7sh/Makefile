@@ -36,6 +36,10 @@ OPTIONS=	V7SH_SYSIII	"System III enhancements"	on \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 .if !defined(WITHOUT_V7SH_SYSIII)
 CFLAGS+=	-DSYSIII
 .endif
