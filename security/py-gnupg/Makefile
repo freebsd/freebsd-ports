@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnupg
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 CATEGORIES=	security python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	py-gnupg
@@ -24,6 +24,6 @@ do-build:
 	@${SETUP_CMD} build
 
 do-install:
-	@${SETUP_CMD} install
+	@${SETUP_CMD} install -c -O1 --prefix=${PREFIX}
 
 .include <bsd.port.mk>
