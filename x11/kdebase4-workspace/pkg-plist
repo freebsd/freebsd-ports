@@ -1423,6 +1423,7 @@ share/apps/konqsidebartng/entries/remote.desktop
 share/apps/konqsidebartng/entries/root.desktop
 share/apps/konqsidebartng/entries/services.desktop
 share/apps/konqsidebartng/kicker_entries/bookmarks.desktop
+share/apps/konqsidebartng/kicker_entries/devices.desktop
 share/apps/konqsidebartng/kicker_entries/history.desktop
 share/apps/konqsidebartng/kicker_entries/home.desktop
 share/apps/konqsidebartng/kicker_entries/remote.desktop
@@ -3787,8 +3788,6 @@ share/wallpapers/only_k.jpg
 share/wallpapers/seaofconero.jpg
 share/wallpapers/triplegears.jpg
 @exec /bin/mkdir -p %D/share/templates/.source/emptydir
-@exec /bin/mkdir -p %D/share/templates/.source/emptydir
-@exec /bin/mkdir -p %D/share/templates/.source/emptydir
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdebase-apidocs/libkonq/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdebase-apidocs/libkonq/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdebase-apidocs/kwin/lib/html
@@ -3806,16 +3805,7 @@ share/wallpapers/triplegears.jpg
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdebase-apidocs/kioslave/imap4/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdebase-apidocs/kwin/lib/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdebase-apidocs/kwin/html
-@exec /bin/mkdir -p %D/share/applnk/Settings/Information
-@exec /bin/mkdir -p %D/share/applnk/Settings/Information
-@exec /bin/mkdir -p %D/share/applnk/Settings/Information
-@dirrm share/wallpapers
 @dirrm share/templates/.source/emptydir
-@dirrm share/templates/.source
-@dirrm share/templates
-@dirrm share/sounds
-@dirrm share/services/useragentstrings
-@dirrm share/services/searchproviders
 @dirrm share/mimelnk/print
 @dirrm share/mimelnk/kdedevice
 @dirrm share/mimelnk/fonts
@@ -4046,20 +4036,7 @@ share/wallpapers/triplegears.jpg
 @dirrm share/locale/l10n/ad
 @dirrm share/locale/l10n/C
 @dirrm share/locale/l10n
-@dirrm share/icons/locolor/32x32/apps
-@dirrm share/icons/locolor/32x32
-@dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/locolor/16x16
-@dirrm share/icons/locolor
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/32x32
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16
 @dirrm share/icons/crystalsvg/scalable/apps/gnome
-@dirrm share/icons/crystalsvg/scalable/apps
-@dirrm share/icons/crystalsvg/22x22/apps
-@dirrm share/fonts/override
-@dirrm share/fonts
 @dirrm share/doc/kdm
 @dirrm share/doc/HTML/en/kxkb
 @dirrm share/doc/HTML/en/kwrite
@@ -4156,15 +4133,11 @@ share/wallpapers/triplegears.jpg
 @dirrm share/doc/HTML/en/kcontrol/bell
 @dirrm share/doc/HTML/en/kcontrol/background
 @dirrm share/doc/HTML/en/kcontrol/arts
-@dirrm share/doc/HTML/en/kcontrol
 @dirrm share/doc/HTML/en/kate
 @dirrm share/desktop-directories
-@dirrm share/config.kcfg
 @dirrm share/apps/naughtyapplet/pics
 @dirrm share/apps/naughtyapplet
 @dirrm share/apps/kwrite
-@dirrm share/apps/kwin/pics
-@dirrm share/apps/kwin
 @dirrm share/apps/ksysguard/pics
 @dirrm share/apps/ksysguard
 @dirrm share/apps/ksplash/pics
@@ -4179,7 +4152,6 @@ share/wallpapers/triplegears.jpg
 @dirrm share/apps/ksmserver
 @dirrm share/apps/kpersonalizer/pics
 @dirrm share/apps/kpersonalizer
-@dirrm share/apps/konsole/profiles
 @dirrm share/apps/konsole/icons/crystalsvg/32x32/actions
 @dirrm share/apps/konsole/icons/crystalsvg/32x32
 @dirrm share/apps/konsole/icons/crystalsvg/22x22/actions
@@ -4188,10 +4160,7 @@ share/wallpapers/triplegears.jpg
 @dirrm share/apps/konsole/icons/crystalsvg/16x16
 @dirrm share/apps/konsole/icons/crystalsvg
 @dirrm share/apps/konsole/icons
-@dirrm share/apps/konsole
 @dirrm share/apps/konqueror/tiles
-@dirrm share/apps/konqueror/servicemenus
-@dirrm share/apps/konqueror/profiles
 @dirrm share/apps/konqueror/pics
 @dirrm share/apps/konqueror/icons/crystalsvg/16x16/actions
 @dirrm share/apps/konqueror/icons/crystalsvg/16x16
@@ -4200,18 +4169,8 @@ share/wallpapers/triplegears.jpg
 @dirrm share/apps/konqueror/dirtree/remote
 @dirrm share/apps/konqueror/dirtree
 @dirrm share/apps/konqueror/about
-@dirrm share/apps/konqueror
 @dirrm share/apps/konqsidebartng/websidebar
-@dirrm share/apps/konqsidebartng/virtual_folders/services
-@dirrm share/apps/konqsidebartng/virtual_folders/remote/web
-@dirrm share/apps/konqsidebartng/virtual_folders/remote/ftp
-@dirrm share/apps/konqsidebartng/virtual_folders/remote
-@dirrm share/apps/konqsidebartng/virtual_folders
 @dirrm share/apps/konqsidebartng/kicker_entries
-@dirrm share/apps/konqsidebartng/entries
-@dirrm share/apps/konqsidebartng/dirtree
-@dirrm share/apps/konqsidebartng/add
-@dirrm share/apps/konqsidebartng
 @dirrm share/apps/konqlistview/kpartplugins
 @dirrm share/apps/konqlistview
 @dirrm share/apps/konqiconview/kpartplugins
@@ -4230,11 +4189,7 @@ share/wallpapers/triplegears.jpg
 @dirrm share/apps/kio_info
 @dirrm share/apps/kio_finger
 @dirrm share/apps/kinfocenter
-@dirrm share/apps/kicker/wallpapers
-@dirrm share/apps/kicker/tiles
-@dirrm share/apps/kicker/pics
 @dirrm share/apps/kicker/menuext/find
-@dirrm share/apps/kicker/menuext
 @dirrm share/apps/kicker/icons/locolor/16x16/actions
 @dirrm share/apps/kicker/icons/locolor/16x16
 @dirrm share/apps/kicker/icons/locolor
@@ -4242,16 +4197,11 @@ share/wallpapers/triplegears.jpg
 @dirrm share/apps/kicker/icons/crystalsvg/16x16
 @dirrm share/apps/kicker/icons/crystalsvg
 @dirrm share/apps/kicker/icons
-@dirrm share/apps/kicker/extensions
-@dirrm share/apps/kicker/applets
-@dirrm share/apps/kicker
 @dirrm share/apps/khotkeys
 @dirrm share/apps/khelpcenter/plugins/Tutorials
 @dirrm share/apps/khelpcenter/plugins/Scrollkeeper
 @dirrm share/apps/khelpcenter/plugins/Manpages
 @dirrm share/apps/khelpcenter/plugins/Applications
-@dirrm share/apps/khelpcenter/plugins
-@dirrm share/apps/khelpcenter
 @dirrm share/apps/kfontview
 @dirrm share/apps/kfindpart/icons/locolor/22x22/actions
 @dirrm share/apps/kfindpart/icons/locolor/22x22
@@ -4268,11 +4218,6 @@ share/wallpapers/triplegears.jpg
 @dirrm share/apps/kdisplay
 @dirrm share/apps/kdewizard/pics
 @dirrm share/apps/kdewizard
-@dirrm share/apps/kdesktop/programs
-@dirrm share/apps/kdesktop/pics
-@dirrm share/apps/kdesktop/patterns
-@dirrm share/apps/kdesktop/DesktopLinks
-@dirrm share/apps/kdesktop
 @dirrm share/apps/kdeprintfax/icons/crystalsvg/16x16/actions
 @dirrm share/apps/kdeprintfax/icons/crystalsvg/16x16
 @dirrm share/apps/kdeprintfax/icons/crystalsvg
@@ -4300,7 +4245,6 @@ share/wallpapers/triplegears.jpg
 @dirrm share/apps/kcminput
 @dirrm share/apps/kcmcss
 @dirrm share/apps/kbookmark
-@dirrm share/apps/kate/scripts
 @dirrm share/apps/kate/plugins/katedefaultproject
 @dirrm share/apps/kate/plugins
 @dirrm share/apps/kate/icons/locolor/22x22/actions
@@ -4314,7 +4258,6 @@ share/wallpapers/triplegears.jpg
 @dirrm share/apps/kate/icons/crystalsvg/16x16
 @dirrm share/apps/kate/icons/crystalsvg
 @dirrm share/apps/kate/icons
-@dirrm share/apps/kate
 @dirrm share/apps/kappfinder/apps/Utilities/XUtilities
 @dirrm share/apps/kappfinder/apps/Utilities
 @dirrm share/apps/kappfinder/apps/Toys
@@ -4342,19 +4285,6 @@ share/wallpapers/triplegears.jpg
 @dirrm share/apps/drkonqi
 @dirrm share/apps/clockapplet/pics
 @dirrm share/apps/clockapplet
-@dirrm share/applnk/Utilities
-@dirrm share/applnk/Toys
-@dirrm share/applnk/System/ScreenSavers
-@dirrm share/applnk/System
-@dirrm share/applnk/Settingsmenu
-@dirrm share/applnk/Settings/WebBrowsing
-@dirrm share/applnk/Settings/LookNFeel/Themes
-@dirrm share/applnk/Settings/LookNFeel
-@dirrm share/applnk/Settings/Information
-@dirrm share/applnk/Settings
-@dirrm share/applnk/Internet
-@dirrm share/applnk/.hidden
-@dirrm share/applnk
 @dirrm lib/kconf_update_bin
 @dirrm include/kwin
 @dirrm include/ksplash

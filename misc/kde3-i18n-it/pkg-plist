@@ -126,6 +126,9 @@ share/apps/ktuberling/sounds/it/sopracciglio.wav
 share/doc/HTML/it/amor/common
 share/doc/HTML/it/amor/index.cache.bz2
 share/doc/HTML/it/amor/index.docbook
+share/doc/HTML/it/ark/common
+share/doc/HTML/it/ark/index.cache.bz2
+share/doc/HTML/it/ark/index.docbook
 share/doc/HTML/it/artsbuilder/digitalaudio.docbook
 share/doc/HTML/it/artsbuilder/glossary.docbook
 share/doc/HTML/it/artsbuilder/helping.docbook
@@ -493,6 +496,15 @@ share/doc/HTML/it/kghostview/index.docbook
 share/doc/HTML/it/kgoldrunner/common
 share/doc/HTML/it/kgoldrunner/index.cache.bz2
 share/doc/HTML/it/kgoldrunner/index.docbook
+share/doc/HTML/it/kgpg/common
+share/doc/HTML/it/kgpg/finestra_cifratura_file_konqueror.png
+share/doc/HTML/it/kgpg/finestra_config_kgpg.png
+share/doc/HTML/it/kgpg/finestra_editor_chiavi.png
+share/doc/HTML/it/kgpg/finestra_generazione_chiavi.png
+share/doc/HTML/it/kgpg/finestra_gestione_chiavi.png
+share/doc/HTML/it/kgpg/icona_vassoio_sys.png
+share/doc/HTML/it/kgpg/index.cache.bz2
+share/doc/HTML/it/kgpg/index.docbook
 share/doc/HTML/it/kgpgcertmanager/common
 share/doc/HTML/it/kgpgcertmanager/index.cache.bz2
 share/doc/HTML/it/kgpgcertmanager/index.docbook
@@ -785,6 +797,10 @@ share/doc/HTML/it/kooka/shortcut1.png
 share/doc/HTML/it/kooka/toolbar.png
 share/doc/HTML/it/kooka/toolbar1.png
 share/doc/HTML/it/kooka/toolbar2.png
+share/doc/HTML/it/kopete/common
+share/doc/HTML/it/kopete/index.cache.bz2
+share/doc/HTML/it/kopete/index.docbook
+share/doc/HTML/it/kopete/menus.docbook
 share/doc/HTML/it/korganizer/common
 share/doc/HTML/it/korganizer/ep_config.png
 share/doc/HTML/it/korganizer/ep_download.png
@@ -1145,6 +1161,8 @@ share/locale/it/LC_MESSAGES/artscontrol.mo
 share/locale/it/LC_MESSAGES/artsmodules.mo
 share/locale/it/LC_MESSAGES/atlantik.mo
 share/locale/it/LC_MESSAGES/atlantikdesigner.mo
+share/locale/it/LC_MESSAGES/audiocd_encoder_lame.mo
+share/locale/it/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/it/LC_MESSAGES/audiorename_plugin.mo
 share/locale/it/LC_MESSAGES/autorefresh.mo
 share/locale/it/LC_MESSAGES/babelfish.mo
@@ -1517,6 +1535,7 @@ share/locale/it/LC_MESSAGES/krdc.mo
 share/locale/it/LC_MESSAGES/kreadconfig.mo
 share/locale/it/LC_MESSAGES/krec.mo
 share/locale/it/LC_MESSAGES/kregexpeditor.mo
+share/locale/it/LC_MESSAGES/kres_bugzilla.mo
 share/locale/it/LC_MESSAGES/kres_exchange.mo
 share/locale/it/LC_MESSAGES/kres_imap.mo
 share/locale/it/LC_MESSAGES/kres_remote.mo
@@ -1728,6 +1747,7 @@ share/locale/it/flag.png
 @dirrm share/doc/HTML/it/kpackage
 @dirrm share/doc/HTML/it/korn
 @dirrm share/doc/HTML/it/korganizer
+@dirrm share/doc/HTML/it/kopete
 @dirrm share/doc/HTML/it/kooka
 @dirrm share/doc/HTML/it/konsole
 @dirrm share/doc/HTML/it/konquest
@@ -1785,6 +1805,7 @@ share/locale/it/flag.png
 @dirrm share/doc/HTML/it/khelpcenter
 @dirrm share/doc/HTML/it/khangman
 @dirrm share/doc/HTML/it/kgpgcertmanager
+@dirrm share/doc/HTML/it/kgpg
 @dirrm share/doc/HTML/it/kgoldrunner
 @dirrm share/doc/HTML/it/kghostview
 @dirrm share/doc/HTML/it/kget
@@ -1861,6 +1882,7 @@ share/locale/it/flag.png
 @dirrm share/doc/HTML/it/common
 @dirrm share/doc/HTML/it/atlantik
 @dirrm share/doc/HTML/it/artsbuilder
+@dirrm share/doc/HTML/it/ark
 @dirrm share/doc/HTML/it/amor
 @dirrm share/doc/HTML/it
 @dirrm share/apps/ktuberling/sounds/it

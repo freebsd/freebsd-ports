@@ -381,6 +381,7 @@ share/locale/is/LC_MESSAGES/krdc.mo
 share/locale/is/LC_MESSAGES/kreadconfig.mo
 share/locale/is/LC_MESSAGES/krec.mo
 share/locale/is/LC_MESSAGES/kregexpeditor.mo
+share/locale/is/LC_MESSAGES/kres_bugzilla.mo
 share/locale/is/LC_MESSAGES/kres_exchange.mo
 share/locale/is/LC_MESSAGES/kres_imap.mo
 share/locale/is/LC_MESSAGES/kres_remote.mo

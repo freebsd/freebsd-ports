@@ -1,0 +1,400 @@
+lib/kde3/.keep_me
+share/applications/.keep_me
+share/applnk/.hidden/.keep_me
+share/applnk/.keep_me
+share/applnk/Applications/.keep_me
+share/applnk/Development/.keep_me
+share/applnk/Editors/.keep_me
+share/applnk/Edutainment/.keep_me
+share/applnk/Games/.keep_me
+share/applnk/Games/Arcade/.keep_me
+share/applnk/Games/Board/.keep_me
+share/applnk/Games/Card/.keep_me
+share/applnk/Games/Kidsgames/.keep_me
+share/applnk/Games/Roguelikes/.keep_me
+share/applnk/Games/TacticStrategy/.keep_me
+share/applnk/Graphics/.keep_me
+share/applnk/Graphics/More/.keep_me
+share/applnk/Internet/.keep_me
+share/applnk/Internet/More/.keep_me
+share/applnk/Internet/Terminal/.keep_me
+share/applnk/Multimedia/.keep_me
+share/applnk/Multimedia/More/.keep_me
+share/applnk/Office/.keep_me
+share/applnk/Settings/.keep_me
+share/applnk/Settings/Accessibility/.keep_me
+share/applnk/Settings/Components/.keep_me
+share/applnk/Settings/Desktop/.keep_me
+share/applnk/Settings/Information/.keep_me
+share/applnk/Settings/LookNFeel/.keep_me
+share/applnk/Settings/LookNFeel/Themes/.keep_me
+share/applnk/Settings/LookNFeel/Windows/.keep_me
+share/applnk/Settings/Network/.keep_me
+share/applnk/Settings/Network/WebBrowsing/.keep_me
+share/applnk/Settings/Peripherals/.keep_me
+share/applnk/Settings/Personalization/.keep_me
+share/applnk/Settings/PowerControl/.keep_me
+share/applnk/Settings/Security/.keep_me
+share/applnk/Settings/Sound/.keep_me
+share/applnk/Settings/System/.keep_me
+share/applnk/Settings/WebBrowsing/.keep_me
+share/applnk/Settingsmenu/.keep_me
+share/applnk/System/.keep_me
+share/applnk/System/More/.keep_me
+share/applnk/System/ScreenSavers/.keep_me
+share/applnk/System/Terminal/.keep_me
+share/applnk/Toys/.keep_me
+share/applnk/Utilities/.keep_me
+share/applnk/Utilities/More/.keep_me
+share/applnk/Utilities/XUtilities/.keep_me
+share/apps/kabc/formats/binary.desktop/.keep_me
+share/apps/kabc/plugins/dir.desktop/.keep_me
+share/apps/kate/scripts/.keep_me
+share/apps/kdesktop/.keep_me
+share/apps/kdesktop/DesktopLinks/.keep_me
+share/apps/kdesktop/patterns/.keep_me
+share/apps/kdesktop/pics/.keep_me
+share/apps/kdesktop/programs/.keep_me
+share/apps/khelpcenter/plugins/.keep_me
+share/apps/kicker/.keep_me
+share/apps/kicker/applets/.keep_me
+share/apps/kicker/extensions/.keep_me
+share/apps/kicker/menuext/.keep_me
+share/apps/kicker/pics/.keep_me
+share/apps/kicker/tiles/.keep_me
+share/apps/kicker/wallpapers/.keep_me
+share/apps/konqsidebartng/add/.keep_me
+share/apps/konqsidebartng/dirtree/.keep_me
+share/apps/konqsidebartng/entries/.keep_me
+share/apps/konqsidebartng/virtual_folders/remote/.keep_me
+share/apps/konqsidebartng/virtual_folders/remote/ftp/.keep_me
+share/apps/konqsidebartng/virtual_folders/remote/web/.keep_me
+share/apps/konqsidebartng/virtual_folders/services/.keep_me
+share/apps/konqueror/profiles/.keep_me
+share/apps/konqueror/servicemenus/.keep_me
+share/apps/konsole/.keep_me
+share/apps/konsole/profiles/.keep_me
+share/apps/kthememgr/Themes/.keep_me
+share/apps/kwin/.keep_me
+share/apps/kwin/icewm-themes/.keep_me
+share/apps/kwin/pics/.keep_me
+share/config.kcfg/.keep_me
+share/doc/HTML/en/kcontrol/.keep_me
+share/fonts/.keep_me
+share/fonts/override/.keep_me
+share/icons/crystalsvg/.keep_me
+share/icons/crystalsvg/128x128/actions/.keep_me
+share/icons/crystalsvg/128x128/apps/.keep_me
+share/icons/crystalsvg/128x128/devices/.keep_me
+share/icons/crystalsvg/128x128/filesystems/.keep_me
+share/icons/crystalsvg/128x128/mimetypes/.keep_me
+share/icons/crystalsvg/16x16/actions/.keep_me
+share/icons/crystalsvg/16x16/apps/.keep_me
+share/icons/crystalsvg/16x16/devices/.keep_me
+share/icons/crystalsvg/16x16/filesystems/.keep_me
+share/icons/crystalsvg/16x16/mimetypes/.keep_me
+share/icons/crystalsvg/22x22/actions/.keep_me
+share/icons/crystalsvg/22x22/apps/.keep_me
+share/icons/crystalsvg/22x22/devices/.keep_me
+share/icons/crystalsvg/22x22/filesystems/.keep_me
+share/icons/crystalsvg/22x22/mimetypes/.keep_me
+share/icons/crystalsvg/32x32/actions/.keep_me
+share/icons/crystalsvg/32x32/apps/.keep_me
+share/icons/crystalsvg/32x32/devices/.keep_me
+share/icons/crystalsvg/32x32/filesystems/.keep_me
+share/icons/crystalsvg/32x32/mimetypes/.keep_me
+share/icons/crystalsvg/48x48/actions/.keep_me
+share/icons/crystalsvg/48x48/apps/.keep_me
+share/icons/crystalsvg/48x48/devices/.keep_me
+share/icons/crystalsvg/48x48/filesystems/.keep_me
+share/icons/crystalsvg/48x48/mimetypes/.keep_me
+share/icons/crystalsvg/64x64/actions/.keep_me
+share/icons/crystalsvg/64x64/apps/.keep_me
+share/icons/crystalsvg/64x64/devices/.keep_me
+share/icons/crystalsvg/64x64/filesystems/.keep_me
+share/icons/crystalsvg/64x64/mimetypes/.keep_me
+share/icons/crystalsvg/scalable/actions/.keep_me
+share/icons/crystalsvg/scalable/apps/.keep_me
+share/icons/crystalsvg/scalable/devices/.keep_me
+share/icons/crystalsvg/scalable/filesystems/.keep_me
+share/icons/crystalsvg/scalable/mimetype/.keep_me
+share/icons/hicolor/.keep_me
+share/icons/hicolor/128x128/actions/.keep_me
+share/icons/hicolor/128x128/apps/.keep_me
+share/icons/hicolor/128x128/devices/.keep_me
+share/icons/hicolor/128x128/filesystems/.keep_me
+share/icons/hicolor/128x128/mimetypes/.keep_me
+share/icons/hicolor/16x16/actions/.keep_me
+share/icons/hicolor/16x16/apps/.keep_me
+share/icons/hicolor/16x16/devices/.keep_me
+share/icons/hicolor/16x16/filesystems/.keep_me
+share/icons/hicolor/16x16/mimetypes/.keep_me
+share/icons/hicolor/22x22/actions/.keep_me
+share/icons/hicolor/22x22/apps/.keep_me
+share/icons/hicolor/22x22/devices/.keep_me
+share/icons/hicolor/22x22/filesystems/.keep_me
+share/icons/hicolor/22x22/mimetypes/.keep_me
+share/icons/hicolor/32x32/actions/.keep_me
+share/icons/hicolor/32x32/apps/.keep_me
+share/icons/hicolor/32x32/devices/.keep_me
+share/icons/hicolor/32x32/filesystems/.keep_me
+share/icons/hicolor/32x32/mimetypes/.keep_me
+share/icons/hicolor/48x48/actions/.keep_me
+share/icons/hicolor/48x48/apps/.keep_me
+share/icons/hicolor/48x48/devices/.keep_me
+share/icons/hicolor/48x48/filesystems/.keep_me
+share/icons/hicolor/48x48/mimetypes/.keep_me
+share/icons/hicolor/64x64/actions/.keep_me
+share/icons/hicolor/64x64/apps/.keep_me
+share/icons/hicolor/64x64/devices/.keep_me
+share/icons/hicolor/64x64/filesystems/.keep_me
+share/icons/hicolor/64x64/mimetypes/.keep_me
+share/icons/locolor/.keep_me
+share/icons/locolor/128x128/actions/.keep_me
+share/icons/locolor/128x128/apps/.keep_me
+share/icons/locolor/128x128/devices/.keep_me
+share/icons/locolor/128x128/filesystem/.keep_me
+share/icons/locolor/128x128/mimetypes/.keep_me
+share/icons/locolor/16x16/actions/.keep_me
+share/icons/locolor/16x16/apps/.keep_me
+share/icons/locolor/16x16/devices/.keep_me
+share/icons/locolor/16x16/filesystems/.keep_me
+share/icons/locolor/16x16/mimetypes/.keep_me
+share/icons/locolor/22x22/actions/.keep_me
+share/icons/locolor/22x22/apps/.keep_me
+share/icons/locolor/22x22/devices/.keep_me
+share/icons/locolor/22x22/filesystems/.keep_me
+share/icons/locolor/22x22/mimetypes/.keep_me
+share/icons/locolor/32x32/actions/.keep_me
+share/icons/locolor/32x32/apps/.keep_me
+share/icons/locolor/32x32/devices/.keep_me
+share/icons/locolor/32x32/filesystems/.keep_me
+share/icons/locolor/32x32/mimetypes/.keep_me
+share/icons/locolor/48x48/actions/.keep_me
+share/icons/locolor/48x48/apps/.keep_me
+share/icons/locolor/48x48/devices/.keep_me
+share/icons/locolor/48x48/filesystems/.keep_me
+share/icons/locolor/48x48/mimetypes/.keep_me
+share/icons/locolor/64x64/actions/.keep_me
+share/icons/locolor/64x64/apps/.keep_me
+share/icons/locolor/64x64/devices/.keep_me
+share/icons/locolor/64x64/filesystems/.keep_me
+share/icons/locolor/64x64/mimetypes/.keep_me
+share/mimelnk/all/.keep_me
+share/mimelnk/application/.keep_me
+share/mimelnk/audio/.keep_me
+share/mimelnk/image/.keep_me
+share/mimelnk/inode/.keep_me
+share/mimelnk/message/.keep_me
+share/mimelnk/model/.keep_me
+share/mimelnk/multipart/.keep_me
+share/mimelnk/text/.keep_me
+share/mimelnk/video/.keep_me
+share/services/.keep_me
+share/services/searchproviders/.keep_me
+share/services/useragentstrings/.keep_me
+share/servicetypes/.keep_me
+share/sounds/.keep_me
+share/templates/.keep_me
+share/templates/.source/.keep_me
+share/wallpapers/.keep_me
+@dirrm share/wallpapers
+@dirrm share/templates/.source
+@dirrm share/templates
+@dirrm share/sounds
+@dirrm share/servicetypes
+@dirrm share/services/useragentstrings
+@dirrm share/services/searchproviders
+@dirrm share/services
+@dirrm share/mimelnk/video
+@dirrm share/mimelnk/text
+@dirrm share/mimelnk/multipart
+@dirrm share/mimelnk/model
+@dirrm share/mimelnk/message
+@dirrm share/mimelnk/inode
+@dirrm share/mimelnk/image
+@dirrm share/mimelnk/audio
+@dirrm share/mimelnk/application
+@dirrm share/mimelnk/all
+@dirrm share/icons/locolor/64x64/mimetypes
+@dirrm share/icons/locolor/64x64/filesystems
+@dirrm share/icons/locolor/64x64/devices
+@dirrm share/icons/locolor/64x64/apps
+@dirrm share/icons/locolor/64x64/actions
+@dirrm share/icons/locolor/48x48/mimetypes
+@dirrm share/icons/locolor/48x48/filesystems
+@dirrm share/icons/locolor/48x48/devices
+@dirrm share/icons/locolor/48x48/apps
+@dirrm share/icons/locolor/48x48/actions
+@dirrm share/icons/locolor/32x32/mimetypes
+@dirrm share/icons/locolor/32x32/filesystems
+@dirrm share/icons/locolor/32x32/devices
+@dirrm share/icons/locolor/32x32/apps
+@dirrm share/icons/locolor/32x32/actions
+@dirrm share/icons/locolor/22x22/mimetypes
+@dirrm share/icons/locolor/22x22/filesystems
+@dirrm share/icons/locolor/22x22/devices
+@dirrm share/icons/locolor/22x22/apps
+@dirrm share/icons/locolor/22x22/actions
+@dirrm share/icons/locolor/16x16/mimetypes
+@dirrm share/icons/locolor/16x16/filesystems
+@dirrm share/icons/locolor/16x16/devices
+@dirrm share/icons/locolor/16x16/apps
+@dirrm share/icons/locolor/16x16/actions
+@dirrm share/icons/locolor/128x128/mimetypes
+@dirrm share/icons/locolor/128x128/filesystem
+@dirrm share/icons/locolor/128x128/devices
+@dirrm share/icons/locolor/128x128/apps
+@dirrm share/icons/locolor/128x128/actions
+@dirrm share/icons/locolor
+@dirrm share/icons/hicolor/64x64/mimetypes
+@dirrm share/icons/hicolor/64x64/filesystems
+@dirrm share/icons/hicolor/64x64/devices
+@dirrm share/icons/hicolor/64x64/apps
+@dirrm share/icons/hicolor/64x64/actions
+@dirrm share/icons/hicolor/48x48/mimetypes
+@dirrm share/icons/hicolor/48x48/filesystems
+@dirrm share/icons/hicolor/48x48/devices
+@dirrm share/icons/hicolor/48x48/apps
+@dirrm share/icons/hicolor/48x48/actions
+@dirrm share/icons/hicolor/32x32/mimetypes
+@dirrm share/icons/hicolor/32x32/filesystems
+@dirrm share/icons/hicolor/32x32/devices
+@dirrm share/icons/hicolor/32x32/apps
+@dirrm share/icons/hicolor/32x32/actions
+@dirrm share/icons/hicolor/22x22/mimetypes
+@dirrm share/icons/hicolor/22x22/filesystems
+@dirrm share/icons/hicolor/22x22/devices
+@dirrm share/icons/hicolor/22x22/apps
+@dirrm share/icons/hicolor/22x22/actions
+@dirrm share/icons/hicolor/16x16/mimetypes
+@dirrm share/icons/hicolor/16x16/filesystems
+@dirrm share/icons/hicolor/16x16/devices
+@dirrm share/icons/hicolor/16x16/apps
+@dirrm share/icons/hicolor/16x16/actions
+@dirrm share/icons/hicolor/128x128/mimetypes
+@dirrm share/icons/hicolor/128x128/filesystems
+@dirrm share/icons/hicolor/128x128/devices
+@dirrm share/icons/hicolor/128x128/apps
+@dirrm share/icons/hicolor/128x128/actions
+@dirrm share/icons/hicolor
+@dirrm share/icons/crystalsvg/scalable/mimetype
+@dirrm share/icons/crystalsvg/scalable/filesystems
+@dirrm share/icons/crystalsvg/scalable/devices
+@dirrm share/icons/crystalsvg/scalable/apps
+@dirrm share/icons/crystalsvg/scalable/actions
+@dirrm share/icons/crystalsvg/64x64/mimetypes
+@dirrm share/icons/crystalsvg/64x64/filesystems
+@dirrm share/icons/crystalsvg/64x64/devices
+@dirrm share/icons/crystalsvg/64x64/apps
+@dirrm share/icons/crystalsvg/64x64/actions
+@dirrm share/icons/crystalsvg/48x48/mimetypes
+@dirrm share/icons/crystalsvg/48x48/filesystems
+@dirrm share/icons/crystalsvg/48x48/devices
+@dirrm share/icons/crystalsvg/48x48/apps
+@dirrm share/icons/crystalsvg/48x48/actions
+@dirrm share/icons/crystalsvg/32x32/mimetypes
+@dirrm share/icons/crystalsvg/32x32/filesystems
+@dirrm share/icons/crystalsvg/32x32/devices
+@dirrm share/icons/crystalsvg/32x32/apps
+@dirrm share/icons/crystalsvg/32x32/actions
+@dirrm share/icons/crystalsvg/22x22/mimetypes
+@dirrm share/icons/crystalsvg/22x22/filesystems
+@dirrm share/icons/crystalsvg/22x22/devices
+@dirrm share/icons/crystalsvg/22x22/apps
+@dirrm share/icons/crystalsvg/22x22/actions
+@dirrm share/icons/crystalsvg/16x16/mimetypes
+@dirrm share/icons/crystalsvg/16x16/filesystems
+@dirrm share/icons/crystalsvg/16x16/devices
+@dirrm share/icons/crystalsvg/16x16/apps
+@dirrm share/icons/crystalsvg/16x16/actions
+@dirrm share/icons/crystalsvg/128x128/mimetypes
+@dirrm share/icons/crystalsvg/128x128/filesystems
+@dirrm share/icons/crystalsvg/128x128/devices
+@dirrm share/icons/crystalsvg/128x128/apps
+@dirrm share/icons/crystalsvg/128x128/actions
+@dirrm share/icons/crystalsvg
+@dirrm share/fonts/override
+@dirrm share/fonts
+@dirrm share/doc/HTML/en/kcontrol
+@dirrm share/config.kcfg
+@dirrm share/apps/kwin/pics
+@dirrm share/apps/kwin/icewm-themes
+@dirrm share/apps/kwin
+@dirrm share/apps/kthememgr/Themes
+@dirrm share/apps/konsole/profiles
+@dirrm share/apps/konsole
+@dirrm share/apps/konqueror/servicemenus
+@dirrm share/apps/konqueror/profiles
+@dirrm share/apps/konqsidebartng/virtual_folders/services
+@dirrm share/apps/konqsidebartng/virtual_folders/remote/web
+@dirrm share/apps/konqsidebartng/virtual_folders/remote/ftp
+@dirrm share/apps/konqsidebartng/virtual_folders/remote
+@dirrm share/apps/konqsidebartng/entries
+@dirrm share/apps/konqsidebartng/dirtree
+@dirrm share/apps/konqsidebartng/add
+@dirrm share/apps/kicker/wallpapers
+@dirrm share/apps/kicker/tiles
+@dirrm share/apps/kicker/pics
+@dirrm share/apps/kicker/menuext
+@dirrm share/apps/kicker/extensions
+@dirrm share/apps/kicker/applets
+@dirrm share/apps/kicker
+@dirrm share/apps/khelpcenter/plugins
+@dirrm share/apps/kdesktop/programs
+@dirrm share/apps/kdesktop/pics
+@dirrm share/apps/kdesktop/patterns
+@dirrm share/apps/kdesktop/DesktopLinks
+@dirrm share/apps/kdesktop
+@dirrm share/apps/kate/scripts
+@dirrm share/apps/kabc/plugins/dir.desktop
+@dirrm share/apps/kabc/formats/binary.desktop
+@dirrm share/applnk/Utilities/XUtilities
+@dirrm share/applnk/Utilities/More
+@dirrm share/applnk/Utilities
+@dirrm share/applnk/Toys
+@dirrm share/applnk/System/Terminal
+@dirrm share/applnk/System/ScreenSavers
+@dirrm share/applnk/System/More
+@dirrm share/applnk/System
+@dirrm share/applnk/Settingsmenu
+@dirrm share/applnk/Settings/WebBrowsing
+@dirrm share/applnk/Settings/System
+@dirrm share/applnk/Settings/Sound
+@dirrm share/applnk/Settings/Security
+@dirrm share/applnk/Settings/PowerControl
+@dirrm share/applnk/Settings/Personalization
+@dirrm share/applnk/Settings/Peripherals
+@dirrm share/applnk/Settings/Network/WebBrowsing
+@dirrm share/applnk/Settings/Network
+@dirrm share/applnk/Settings/LookNFeel/Windows
+@dirrm share/applnk/Settings/LookNFeel/Themes
+@dirrm share/applnk/Settings/LookNFeel
+@dirrm share/applnk/Settings/Information
+@dirrm share/applnk/Settings/Desktop
+@dirrm share/applnk/Settings/Components
+@dirrm share/applnk/Settings/Accessibility
+@dirrm share/applnk/Settings
+@dirrm share/applnk/Office
+@dirrm share/applnk/Multimedia/More
+@dirrm share/applnk/Multimedia
+@dirrm share/applnk/Internet/Terminal
+@dirrm share/applnk/Internet/More
+@dirrm share/applnk/Internet
+@dirrm share/applnk/Graphics/More
+@dirrm share/applnk/Graphics
+@dirrm share/applnk/Games/TacticStrategy
+@dirrm share/applnk/Games/Roguelikes
+@dirrm share/applnk/Games/Kidsgames
+@dirrm share/applnk/Games/Card
+@dirrm share/applnk/Games/Board
+@dirrm share/applnk/Games/Arcade
+@dirrm share/applnk/Games
+@dirrm share/applnk/Edutainment
+@dirrm share/applnk/Editors
+@dirrm share/applnk/Development
+@dirrm share/applnk/Applications
+@dirrm share/applnk/.hidden
+@dirrm share/applnk
+@dirrm share/applications
+@dirrm lib/kde3

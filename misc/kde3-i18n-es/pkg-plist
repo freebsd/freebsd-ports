@@ -195,6 +195,9 @@ share/doc/HTML/es/kblackbox/index.docbook
 share/doc/HTML/es/kbounce/common
 share/doc/HTML/es/kbounce/index.cache.bz2
 share/doc/HTML/es/kbounce/index.docbook
+share/doc/HTML/es/kbounce/jezball_corridor1.png
+share/doc/HTML/es/kbounce/jezball_corridor2.png
+share/doc/HTML/es/kbounce/jezball_newWall.png
 share/doc/HTML/es/kbugbuster/common
 share/doc/HTML/es/kbugbuster/index.cache.bz2
 share/doc/HTML/es/kbugbuster/index.docbook
@@ -438,6 +441,7 @@ share/doc/HTML/es/kfloppy/common
 share/doc/HTML/es/kfloppy/index.cache.bz2
 share/doc/HTML/es/kfloppy/index.docbook
 share/doc/HTML/es/kfouleggs/common
+share/doc/HTML/es/kfouleggs/gamescreen.png
 share/doc/HTML/es/kfouleggs/index.cache.bz2
 share/doc/HTML/es/kfouleggs/index.docbook
 share/doc/HTML/es/kgamma/common
@@ -446,6 +450,9 @@ share/doc/HTML/es/kgamma/index.docbook
 share/doc/HTML/es/kghostview/common
 share/doc/HTML/es/kghostview/index.cache.bz2
 share/doc/HTML/es/kghostview/index.docbook
+share/doc/HTML/es/kgoldrunner/common
+share/doc/HTML/es/kgoldrunner/index.cache.bz2
+share/doc/HTML/es/kgoldrunner/index.docbook
 share/doc/HTML/es/kgpg/common
 share/doc/HTML/es/kgpg/editor.png
 share/doc/HTML/es/kgpg/index.cache.bz2
@@ -688,6 +695,7 @@ share/doc/HTML/es/klines/index.docbook
 share/doc/HTML/es/klinkstatus/common
 share/doc/HTML/es/klinkstatus/index.cache.bz2
 share/doc/HTML/es/klinkstatus/index.docbook
+share/doc/HTML/es/klinkstatus/screenshot.png
 share/doc/HTML/es/klipper/common
 share/doc/HTML/es/klipper/index.cache.bz2
 share/doc/HTML/es/klipper/index.docbook
@@ -786,20 +794,42 @@ share/doc/HTML/es/knotes/index.docbook
 share/doc/HTML/es/kodo/common
 share/doc/HTML/es/kodo/index.cache.bz2
 share/doc/HTML/es/kodo/index.docbook
+share/doc/HTML/es/kolf/common
+share/doc/HTML/es/kolf/index.cache.bz2
+share/doc/HTML/es/kolf/index.docbook
 share/doc/HTML/es/kommander/basics.docbook
+share/doc/HTML/es/kommander/buttongroup.png
+share/doc/HTML/es/kommander/checkbox.png
+share/doc/HTML/es/kommander/combobox.png
 share/doc/HTML/es/kommander/commands.docbook
 share/doc/HTML/es/kommander/common
 share/doc/HTML/es/kommander/credits.docbook
 share/doc/HTML/es/kommander/dcop.docbook
 share/doc/HTML/es/kommander/editor.docbook
+share/doc/HTML/es/kommander/editor.png
 share/doc/HTML/es/kommander/extending.docbook
+share/doc/HTML/es/kommander/frame.png
 share/doc/HTML/es/kommander/glossary.docbook
+share/doc/HTML/es/kommander/groupbox.png
 share/doc/HTML/es/kommander/index.cache.bz2
 share/doc/HTML/es/kommander/index.docbook
 share/doc/HTML/es/kommander/installation.docbook
+share/doc/HTML/es/kommander/interface.png
 share/doc/HTML/es/kommander/introduction.docbook
+share/doc/HTML/es/kommander/label.png
+share/doc/HTML/es/kommander/lineedit.png
+share/doc/HTML/es/kommander/listbox.png
+share/doc/HTML/es/kommander/listview.png
+share/doc/HTML/es/kommander/multilineedit.png
+share/doc/HTML/es/kommander/pixlabel.png
+share/doc/HTML/es/kommander/pushbutton.png
 share/doc/HTML/es/kommander/q-and-a.docbook
+share/doc/HTML/es/kommander/radiobutton.png
+share/doc/HTML/es/kommander/richtextedit.png
+share/doc/HTML/es/kommander/shadow.png
 share/doc/HTML/es/kommander/specials.docbook
+share/doc/HTML/es/kommander/spinbox.png
+share/doc/HTML/es/kommander/tabwidget.png
 share/doc/HTML/es/kommander/tutorials.docbook
 share/doc/HTML/es/kommander/widgets.docbook
 share/doc/HTML/es/kompare/common
@@ -844,6 +874,9 @@ share/doc/HTML/es/kontact/index.docbook
 share/doc/HTML/es/kooka/common
 share/doc/HTML/es/kooka/index.cache.bz2
 share/doc/HTML/es/kooka/index.docbook
+share/doc/HTML/es/kopete/common
+share/doc/HTML/es/kopete/index.cache.bz2
+share/doc/HTML/es/kopete/index.docbook
 share/doc/HTML/es/kopete/menus.docbook
 share/doc/HTML/es/korganizer/common
 share/doc/HTML/es/korganizer/exchange-plugin.docbook
@@ -877,6 +910,9 @@ share/doc/HTML/es/kpager/settings.png
 share/doc/HTML/es/kpaint/common
 share/doc/HTML/es/kpaint/index.cache.bz2
 share/doc/HTML/es/kpaint/index.docbook
+share/doc/HTML/es/kpat/common
+share/doc/HTML/es/kpat/index.cache.bz2
+share/doc/HTML/es/kpat/index.docbook
 share/doc/HTML/es/kpat/man.docbook
 share/doc/HTML/es/kpdf/common
 share/doc/HTML/es/kpdf/index.cache.bz2
@@ -923,6 +959,7 @@ share/doc/HTML/es/kppp/wizard.docbook
 share/doc/HTML/es/kreversi/common
 share/doc/HTML/es/kreversi/index.cache.bz2
 share/doc/HTML/es/kreversi/index.docbook
+share/doc/HTML/es/kreversi/kreversi1.png
 share/doc/HTML/es/kruler/common
 share/doc/HTML/es/kruler/index.cache.bz2
 share/doc/HTML/es/kruler/index.docbook
@@ -955,6 +992,9 @@ share/doc/HTML/es/ksnapshot/index.cache.bz2
 share/doc/HTML/es/ksnapshot/index.docbook
 share/doc/HTML/es/ksnapshot/preview.png
 share/doc/HTML/es/ksnapshot/window.png
+share/doc/HTML/es/ksokoban/common
+share/doc/HTML/es/ksokoban/index.cache.bz2
+share/doc/HTML/es/ksokoban/index.docbook
 share/doc/HTML/es/kspell/common
 share/doc/HTML/es/kspell/index.cache.bz2
 share/doc/HTML/es/kspell/index.docbook
@@ -1024,6 +1064,18 @@ share/doc/HTML/es/ktnef/index.docbook
 share/doc/HTML/es/ktouch/common
 share/doc/HTML/es/ktouch/index.cache.bz2
 share/doc/HTML/es/ktouch/index.docbook
+share/doc/HTML/es/ktron/common
+share/doc/HTML/es/ktron/index.cache.bz2
+share/doc/HTML/es/ktron/index.docbook
+share/doc/HTML/es/ktuberling/common
+share/doc/HTML/es/ktuberling/index.cache.bz2
+share/doc/HTML/es/ktuberling/index.docbook
+share/doc/HTML/es/ktuberling/menu.edit.png
+share/doc/HTML/es/ktuberling/menu.game.png
+share/doc/HTML/es/ktuberling/menu.help.png
+share/doc/HTML/es/ktuberling/menu.playground.png
+share/doc/HTML/es/ktuberling/menu.raw.png
+share/doc/HTML/es/ktuberling/menu.speech.png
 share/doc/HTML/es/ktuberling/technical-reference.docbook
 share/doc/HTML/es/kuickshow/common
 share/doc/HTML/es/kuickshow/index.cache.bz2
@@ -1074,10 +1126,18 @@ share/doc/HTML/es/kwuftpd/index.docbook
 share/doc/HTML/es/kxconfig/common
 share/doc/HTML/es/kxconfig/index.cache.bz2
 share/doc/HTML/es/kxconfig/index.docbook
+share/doc/HTML/es/kxsldbg/1downarrow.png
+share/doc/HTML/es/kxsldbg/breakpoints_window.png
 share/doc/HTML/es/kxsldbg/callstack.docbook
+share/doc/HTML/es/kxsldbg/callstack_window.png
 share/doc/HTML/es/kxsldbg/common
+share/doc/HTML/es/kxsldbg/configure.png
+share/doc/HTML/es/kxsldbg/configure_window.png
 share/doc/HTML/es/kxsldbg/credits.docbook
 share/doc/HTML/es/kxsldbg/entities.docbook
+share/doc/HTML/es/kxsldbg/entities_window.png
+share/doc/HTML/es/kxsldbg/exit.png
+share/doc/HTML/es/kxsldbg/globals_window.png
 share/doc/HTML/es/kxsldbg/glossary.docbook
 share/doc/HTML/es/kxsldbg/index.cache.bz2
 share/doc/HTML/es/kxsldbg/index.docbook
@@ -1085,9 +1145,27 @@ share/doc/HTML/es/kxsldbg/kxsldbg_configure.docbook
 share/doc/HTML/es/kxsldbg/kxsldbg_inspector.docbook
 share/doc/HTML/es/kxsldbg/kxsldbg_mainwindow.docbook
 share/doc/HTML/es/kxsldbg/kxsldbg_tools.docbook
+share/doc/HTML/es/kxsldbg/main_window.png
+share/doc/HTML/es/kxsldbg/next.png
+share/doc/HTML/es/kxsldbg/publicid_window.png
+share/doc/HTML/es/kxsldbg/run.png
 share/doc/HTML/es/kxsldbg/sources.docbook
+share/doc/HTML/es/kxsldbg/sources_window.png
+share/doc/HTML/es/kxsldbg/step.png
+share/doc/HTML/es/kxsldbg/systemid_window.png
 share/doc/HTML/es/kxsldbg/templates.docbook
+share/doc/HTML/es/kxsldbg/templates_window.png
 share/doc/HTML/es/kxsldbg/variables.docbook
+share/doc/HTML/es/kxsldbg/walk_window.png
+share/doc/HTML/es/kxsldbg/xsldbg_break.png
+share/doc/HTML/es/kxsldbg/xsldbg_data.png
+share/doc/HTML/es/kxsldbg/xsldbg_delete.png
+share/doc/HTML/es/kxsldbg/xsldbg_enable.png
+share/doc/HTML/es/kxsldbg/xsldbg_output.png
+share/doc/HTML/es/kxsldbg/xsldbg_refresh.png
+share/doc/HTML/es/kxsldbg/xsldbg_source.png
+share/doc/HTML/es/kxsldbg/xsldbg_stepdown.png
+share/doc/HTML/es/kxsldbg/xsldbg_stepup.png
 share/doc/HTML/es/lisa/common
 share/doc/HTML/es/lisa/index.cache.bz2
 share/doc/HTML/es/lisa/index.docbook
@@ -1101,21 +1179,54 @@ share/doc/HTML/es/noatun/common
 share/doc/HTML/es/noatun/index.cache.bz2
 share/doc/HTML/es/noatun/index.docbook
 share/doc/HTML/es/quanta/adv-quanta.docbook
+share/doc/HTML/es/quanta/attribute_tree.png
 share/doc/HTML/es/quanta/common
 share/doc/HTML/es/quanta/config-quanta.docbook
+share/doc/HTML/es/quanta/contents2.png
 share/doc/HTML/es/quanta/credits-license.docbook
 share/doc/HTML/es/quanta/debugging-quanta.docbook
+share/doc/HTML/es/quanta/doc-view1.png
+share/doc/HTML/es/quanta/dtep_doc_img15.png
+share/doc/HTML/es/quanta/dtep_doc_img18.png
+share/doc/HTML/es/quanta/dtep_doc_img21.png
+share/doc/HTML/es/quanta/dtep_doc_img22.png
+share/doc/HTML/es/quanta/dtep_doc_img23.png
+share/doc/HTML/es/quanta/dtep_doc_img24.png
+share/doc/HTML/es/quanta/dtep_doc_img25.png
+share/doc/HTML/es/quanta/dtep_doc_img7.png
+share/doc/HTML/es/quanta/dtep_doc_img8.png
+share/doc/HTML/es/quanta/exec.png
 share/doc/HTML/es/quanta/extending-quanta.docbook
+share/doc/HTML/es/quanta/ftab.png
 share/doc/HTML/es/quanta/fundamentals.docbook
 share/doc/HTML/es/quanta/glossary.docbook
 share/doc/HTML/es/quanta/index.cache.bz2
 share/doc/HTML/es/quanta/index.docbook
+share/doc/HTML/es/quanta/info_tab.png
 share/doc/HTML/es/quanta/installation.docbook
 share/doc/HTML/es/quanta/introduction.docbook
+share/doc/HTML/es/quanta/kfr-icon.png
+share/doc/HTML/es/quanta/kfr-new-dialog.png
+share/doc/HTML/es/quanta/plugin-edit.png
+share/doc/HTML/es/quanta/project-1.png
+share/doc/HTML/es/quanta/project-tree-view-dir-rmb-menu.png
+share/doc/HTML/es/quanta/project-tree-view-file-rmb-menu.png
+share/doc/HTML/es/quanta/project-upload-dialog.png
+share/doc/HTML/es/quanta/ptab.png
 share/doc/HTML/es/quanta/q-and-a.docbook
 share/doc/HTML/es/quanta/quanta-menus.docbook
 share/doc/HTML/es/quanta/quanta-projects.docbook
+share/doc/HTML/es/quanta/quantamdi-editor.png
+share/doc/HTML/es/quanta/quantamdi-treeview.png
+share/doc/HTML/es/quanta/quantamdi.png
+share/doc/HTML/es/quanta/tag_misc.png
+share/doc/HTML/es/quanta/taginputex.png
+share/doc/HTML/es/quanta/template-rmb.png
+share/doc/HTML/es/quanta/toolbars.png
+share/doc/HTML/es/quanta/ttab.png
 share/doc/HTML/es/quanta/using-quanta.docbook
+share/doc/HTML/es/quanta/view_sidetree.png
+share/doc/HTML/es/quanta/vpsourceview.png
 share/doc/HTML/es/quanta/working-with-quanta.docbook
 share/doc/HTML/es/umbrello/authors.docbook
 share/doc/HTML/es/umbrello/credits.docbook
@@ -1135,6 +1246,8 @@ share/locale/es/LC_MESSAGES/artscontrol.mo
 share/locale/es/LC_MESSAGES/artsmodules.mo
 share/locale/es/LC_MESSAGES/atlantik.mo
 share/locale/es/LC_MESSAGES/atlantikdesigner.mo
+share/locale/es/LC_MESSAGES/audiocd_encoder_lame.mo
+share/locale/es/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/es/LC_MESSAGES/audiorename_plugin.mo
 share/locale/es/LC_MESSAGES/autorefresh.mo
 share/locale/es/LC_MESSAGES/babelfish.mo
@@ -1507,6 +1620,7 @@ share/locale/es/LC_MESSAGES/krdc.mo
 share/locale/es/LC_MESSAGES/kreadconfig.mo
 share/locale/es/LC_MESSAGES/krec.mo
 share/locale/es/LC_MESSAGES/kregexpeditor.mo
+share/locale/es/LC_MESSAGES/kres_bugzilla.mo
 share/locale/es/LC_MESSAGES/kres_exchange.mo
 share/locale/es/LC_MESSAGES/kres_imap.mo
 share/locale/es/LC_MESSAGES/kres_remote.mo
@@ -1691,6 +1805,7 @@ share/locale/es/flag.png
 @dirrm share/doc/HTML/es/kuser
 @dirrm share/doc/HTML/es/kuickshow
 @dirrm share/doc/HTML/es/ktuberling
+@dirrm share/doc/HTML/es/ktron
 @dirrm share/doc/HTML/es/ktouch
 @dirrm share/doc/HTML/es/ktnef
 @dirrm share/doc/HTML/es/ktimer
@@ -1699,6 +1814,7 @@ share/locale/es/flag.png
 @dirrm share/doc/HTML/es/ksysguard
 @dirrm share/doc/HTML/es/kstars
 @dirrm share/doc/HTML/es/kspell
+@dirrm share/doc/HTML/es/ksokoban
 @dirrm share/doc/HTML/es/ksnapshot
 @dirrm share/doc/HTML/es/ksnake
 @dirrm share/doc/HTML/es/ksirtet
@@ -1731,6 +1847,7 @@ share/locale/es/flag.png
 @dirrm share/doc/HTML/es/konq-plugins
 @dirrm share/doc/HTML/es/kompare
 @dirrm share/doc/HTML/es/kommander
+@dirrm share/doc/HTML/es/kolf
 @dirrm share/doc/HTML/es/kodo
 @dirrm share/doc/HTML/es/knotes
 @dirrm share/doc/HTML/es/knode
@@ -1787,6 +1904,7 @@ share/locale/es/flag.png
 @dirrm share/doc/HTML/es/khangman
 @dirrm share/doc/HTML/es/kgpgcertmanager
 @dirrm share/doc/HTML/es/kgpg
+@dirrm share/doc/HTML/es/kgoldrunner
 @dirrm share/doc/HTML/es/kghostview
 @dirrm share/doc/HTML/es/kgamma
 @dirrm share/doc/HTML/es/kfouleggs

@@ -280,6 +280,7 @@ share/locale/nds/LC_MESSAGES/kweather.mo
 share/locale/nds/LC_MESSAGES/kwin.mo
 share/locale/nds/LC_MESSAGES/kwin_b2_config.mo
 share/locale/nds/LC_MESSAGES/kwin_cde_config.mo
+share/locale/nds/LC_MESSAGES/kwin_clients.mo
 share/locale/nds/LC_MESSAGES/kwin_default_config.mo
 share/locale/nds/LC_MESSAGES/kwin_glow_config.mo
 share/locale/nds/LC_MESSAGES/kwin_icewm_config.mo
@@ -301,6 +302,7 @@ share/locale/nds/LC_MESSAGES/libkickermenu_kdeprint.mo
 share/locale/nds/LC_MESSAGES/libkickermenu_konsole.mo
 share/locale/nds/LC_MESSAGES/libkickermenu_prefmenu.mo
 share/locale/nds/LC_MESSAGES/libkickermenu_recentdocs.mo
+share/locale/nds/LC_MESSAGES/libkickermenu_tom.mo
 share/locale/nds/LC_MESSAGES/libkonq.mo
 share/locale/nds/LC_MESSAGES/libkpimexchange.mo
 share/locale/nds/LC_MESSAGES/libkscreensaver.mo
@@ -329,6 +331,7 @@ share/locale/nds/LC_MESSAGES/timezones.mo
 share/locale/nds/LC_MESSAGES/tippecanoe.mo
 share/locale/nds/LC_MESSAGES/tyler.mo
 share/locale/nds/LC_MESSAGES/uachangerplugin.mo
+share/locale/nds/LC_MESSAGES/useraccount.mo
 share/locale/nds/LC_MESSAGES/userinfo.mo
 share/locale/nds/LC_MESSAGES/validatorsplugin.mo
 share/locale/nds/LC_MESSAGES/vimpart.mo

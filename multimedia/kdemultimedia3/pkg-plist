@@ -554,6 +554,11 @@ share/apps/kmid/maps/YamahaPSS790.map
 share/apps/kmid/maps/YamahaQY10.map
 share/apps/kmid/maps/gm.map
 share/apps/kmix/kmixui.rc
+share/apps/kmix/pics/Listener.png
+share/apps/kmix/pics/SpeakerFrontLeft.png
+share/apps/kmix/pics/SpeakerFrontRight.png
+share/apps/kmix/pics/SpeakerRearLeft.png
+share/apps/kmix/pics/SpeakerRearRight.png
 share/apps/kmix/pics/kmixdocked.png
 share/apps/kmix/pics/kmixdocked_error.png
 share/apps/kmix/pics/kmixdocked_mute.png
@@ -1056,26 +1061,17 @@ share/services/krec_exportwave.desktop
 share/servicetypes/audiomidi.desktop
 share/servicetypes/krec_exportitem.desktop
 @dirrm share/mimelnk/interface
-@dirrm share/icons/locolor/32x32/apps
-@dirrm share/icons/locolor/32x32
-@dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/locolor/16x16
-@dirrm share/icons/locolor
-@dirrm share/icons/crystalsvg/scalable/apps
-@dirrm share/icons/crystalsvg/22x22/apps
 @dirrm share/doc/HTML/en/noatun
 @dirrm share/doc/HTML/en/kscd
 @dirrm share/doc/HTML/en/krec
 @dirrm share/doc/HTML/en/kmix
 @dirrm share/doc/HTML/en/kmid
 @dirrm share/doc/HTML/en/kcontrol/kmixcfg
-@dirrm share/doc/HTML/en/kcontrol
 @dirrm share/doc/HTML/en/kaboodle
 @dirrm share/doc/HTML/en/juk
 @dirrm share/doc/HTML/en/artsbuilder/images
 @dirrm share/doc/HTML/en/artsbuilder
 @dirrm share/desktop-directories
-@dirrm share/config.kcfg
 @dirrm share/apps/profiles
 @dirrm share/apps/noatun/skins/winamp/Winamp
 @dirrm share/apps/noatun/skins/winamp
@@ -1120,8 +1116,6 @@ share/servicetypes/krec_exportitem.desktop
 @dirrm share/apps/krec/icons/crystalsvg
 @dirrm share/apps/krec/icons
 @dirrm share/apps/krec
-@dirrm share/apps/konqueror/servicemenus
-@dirrm share/apps/konqueror
 @dirrm share/apps/kmix/pics
 @dirrm share/apps/kmix
 @dirrm share/apps/kmid/maps
@@ -1135,8 +1129,6 @@ share/servicetypes/krec_exportitem.desktop
 @dirrm share/apps/kmid/icons
 @dirrm share/apps/kmid/fm
 @dirrm share/apps/kmid
-@dirrm share/apps/kicker/applets
-@dirrm share/apps/kicker
 @dirrm share/apps/kaudiocreator/pics
 @dirrm share/apps/kaudiocreator
 @dirrm share/apps/kappfinder/apps/Multimedia

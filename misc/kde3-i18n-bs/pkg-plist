@@ -28,6 +28,7 @@ share/locale/bs/LC_MESSAGES/htmlsearch.mo
 share/locale/bs/LC_MESSAGES/imagerename_plugin.mo
 share/locale/bs/LC_MESSAGES/irkick.mo
 share/locale/bs/LC_MESSAGES/jefferson.mo
+share/locale/bs/LC_MESSAGES/joystick.mo
 share/locale/bs/LC_MESSAGES/juk.mo
 share/locale/bs/LC_MESSAGES/kabc2mutt.mo
 share/locale/bs/LC_MESSAGES/kabc_dir.mo
@@ -111,6 +112,7 @@ share/locale/bs/LC_MESSAGES/kcmkurifilt.mo
 share/locale/bs/LC_MESSAGES/kcmkvaio.mo
 share/locale/bs/LC_MESSAGES/kcmkwallet.mo
 share/locale/bs/LC_MESSAGES/kcmkwindecoration.mo
+share/locale/bs/LC_MESSAGES/kcmkwinrules.mo
 share/locale/bs/LC_MESSAGES/kcmkwintheme.mo
 share/locale/bs/LC_MESSAGES/kcmkwm.mo
 share/locale/bs/LC_MESSAGES/kcmlanbrowser.mo
@@ -346,6 +348,7 @@ share/locale/bs/LC_MESSAGES/ktexteditor_docwordcompletion.mo
 share/locale/bs/LC_MESSAGES/ktexteditor_insertfile.mo
 share/locale/bs/LC_MESSAGES/ktexteditor_isearch.mo
 share/locale/bs/LC_MESSAGES/ktexteditor_kdatatool.mo
+share/locale/bs/LC_MESSAGES/kthememanager.mo
 share/locale/bs/LC_MESSAGES/ktimemon.mo
 share/locale/bs/LC_MESSAGES/ktimer.mo
 share/locale/bs/LC_MESSAGES/ktip.mo
@@ -404,6 +407,7 @@ share/locale/bs/LC_MESSAGES/libkickermenu_kdeprint.mo
 share/locale/bs/LC_MESSAGES/libkickermenu_konsole.mo
 share/locale/bs/LC_MESSAGES/libkickermenu_prefmenu.mo
 share/locale/bs/LC_MESSAGES/libkickermenu_recentdocs.mo
+share/locale/bs/LC_MESSAGES/libkickermenu_tom.mo
 share/locale/bs/LC_MESSAGES/libkonq.mo
 share/locale/bs/LC_MESSAGES/libkpimexchange.mo
 share/locale/bs/LC_MESSAGES/libkscan.mo
@@ -431,6 +435,7 @@ share/locale/bs/LC_MESSAGES/tippecanoe.mo
 share/locale/bs/LC_MESSAGES/tyler.mo
 share/locale/bs/LC_MESSAGES/uachangerplugin.mo
 share/locale/bs/LC_MESSAGES/umbrello.mo
+share/locale/bs/LC_MESSAGES/useraccount.mo
 share/locale/bs/LC_MESSAGES/validatorsplugin.mo
 share/locale/bs/LC_MESSAGES/wakeup.mo
 share/locale/bs/LC_MESSAGES/wavecapture.mo

@@ -1386,6 +1386,8 @@ share/locale/da/LC_MESSAGES/artscontrol.mo
 share/locale/da/LC_MESSAGES/artsmodules.mo
 share/locale/da/LC_MESSAGES/atlantik.mo
 share/locale/da/LC_MESSAGES/atlantikdesigner.mo
+share/locale/da/LC_MESSAGES/audiocd_encoder_lame.mo
+share/locale/da/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/da/LC_MESSAGES/audiorename_plugin.mo
 share/locale/da/LC_MESSAGES/autorefresh.mo
 share/locale/da/LC_MESSAGES/babelfish.mo
@@ -1758,6 +1760,7 @@ share/locale/da/LC_MESSAGES/krdc.mo
 share/locale/da/LC_MESSAGES/kreadconfig.mo
 share/locale/da/LC_MESSAGES/krec.mo
 share/locale/da/LC_MESSAGES/kregexpeditor.mo
+share/locale/da/LC_MESSAGES/kres_bugzilla.mo
 share/locale/da/LC_MESSAGES/kres_exchange.mo
 share/locale/da/LC_MESSAGES/kres_imap.mo
 share/locale/da/LC_MESSAGES/kres_remote.mo

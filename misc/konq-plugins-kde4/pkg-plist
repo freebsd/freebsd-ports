@@ -44,7 +44,7 @@ lib/kde3/libwebarchiverplugin.la
 lib/kde3/libwebarchiverplugin.so
 lib/kde3/webarchivethumbnail.la
 lib/kde3/webarchivethumbnail.so
-share/applications/kdeaddons-konq-plugins-3.3.1
+share/applications/kdeaddons-konq-plugins-3.3.2
 share/applnk/.hidden/arkplugin.desktop
 share/applnk/.hidden/babelfishplugin.desktop
 share/applnk/.hidden/crashesplugin.desktop
@@ -80,7 +80,6 @@ share/apps/konqlistview/kpartplugins/kimgalleryplugin.rc
 share/apps/konqlistview/kpartplugins/smbmounterplugin.rc
 share/apps/konqsidebartng/add/mplayer_add.desktop
 share/apps/konqsidebartng/add/news_add.desktop
-share/apps/konqsidebartng/kicker_entries/mplayer.desktop
 share/apps/konqueror/icons/crystalsvg/16x16/actions/google.png
 share/apps/konqueror/kpartplugins/searchbar.rc
 share/apps/konqueror/servicemenus/imageconverter.desktop
@@ -163,8 +162,6 @@ share/services/ark_plugin.desktop
 share/services/fsview_part.desktop
 share/services/kuick_plugin.desktop
 share/services/webarchivethumbnail.desktop
-@dirrm share/icons/hicolor/22x22/apps
-@dirrm share/icons/hicolor/22x22
 @dirrm share/doc/HTML/en/konq-plugins/webarchiver
 @dirrm share/doc/HTML/en/konq-plugins/validators
 @dirrm share/doc/HTML/en/konq-plugins/uachanger

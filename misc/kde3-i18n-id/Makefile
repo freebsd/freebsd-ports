@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	id-
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Localized messages and documentation for KDE3
+COMMENT=	Indonesian messages and documentation for KDE3
 
 IGNORE=		Needs update from vendor.
 

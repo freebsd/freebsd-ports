@@ -96,7 +96,6 @@ share/services/kfile_rpm.desktop
 @dirrm share/doc/HTML/en/kpackage
 @dirrm share/doc/HTML/en/kdat
 @dirrm share/doc/HTML/en/kcron
-@dirrm share/config.kcfg
 @dirrm share/apps/kuser/pics
 @dirrm share/apps/kuser/icons/crystalsvg/22x22/actions
 @dirrm share/apps/kuser/icons/crystalsvg/22x22

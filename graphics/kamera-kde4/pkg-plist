@@ -13,6 +13,3 @@ share/icons/crystalsvg/32x32/devices/camera.png
 share/icons/crystalsvg/32x32/filesystems/camera.png
 share/services/kamera.protocol
 @dirrm share/doc/HTML/en/kamera
-@dirrm share/applnk/Settings/Peripherals
-@dirrm share/applnk/Settings
-@dirrm share/applnk

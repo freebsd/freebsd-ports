@@ -1,4 +1,3 @@
-share/doc/HTML/af/kicker-applets/kolourpicker.docbook
 share/locale/af/LC_MESSAGES/aktion.mo
 share/locale/af/LC_MESSAGES/alarmdaemonctrl.mo
 share/locale/af/LC_MESSAGES/alsaplayerui.mo
@@ -16,21 +15,6 @@ share/locale/af/LC_MESSAGES/childpanelextension.mo
 share/locale/af/LC_MESSAGES/clockapplet.mo
 share/locale/af/LC_MESSAGES/crashesplugin.mo
 share/locale/af/LC_MESSAGES/cupsdconf.mo
-share/locale/af/LC_MESSAGES/desktop_kde-i18n.mo
-share/locale/af/LC_MESSAGES/desktop_kdeaddons.mo
-share/locale/af/LC_MESSAGES/desktop_kdeadmin.mo
-share/locale/af/LC_MESSAGES/desktop_kdeartwork.mo
-share/locale/af/LC_MESSAGES/desktop_kdebase.mo
-share/locale/af/LC_MESSAGES/desktop_kdeedu.mo
-share/locale/af/LC_MESSAGES/desktop_kdegames.mo
-share/locale/af/LC_MESSAGES/desktop_kdegraphics.mo
-share/locale/af/LC_MESSAGES/desktop_kdelibs.mo
-share/locale/af/LC_MESSAGES/desktop_kdemultimedia.mo
-share/locale/af/LC_MESSAGES/desktop_kdenetwork.mo
-share/locale/af/LC_MESSAGES/desktop_kdepim.mo
-share/locale/af/LC_MESSAGES/desktop_kdesdk.mo
-share/locale/af/LC_MESSAGES/desktop_kdetoys.mo
-share/locale/af/LC_MESSAGES/desktop_kdeutils.mo
 share/locale/af/LC_MESSAGES/dirfilterplugin.mo
 share/locale/af/LC_MESSAGES/domtreeviewer.mo
 share/locale/af/LC_MESSAGES/drkonqi.mo
@@ -46,7 +30,13 @@ share/locale/af/LC_MESSAGES/imagerename_plugin.mo
 share/locale/af/LC_MESSAGES/imgalleryplugin.mo
 share/locale/af/LC_MESSAGES/jefferson.mo
 share/locale/af/LC_MESSAGES/kab3.mo
+share/locale/af/LC_MESSAGES/kabc_dir.mo
+share/locale/af/LC_MESSAGES/kabc_file.mo
 share/locale/af/LC_MESSAGES/kabc_ldap.mo
+share/locale/af/LC_MESSAGES/kabc_ldapkio.mo
+share/locale/af/LC_MESSAGES/kabc_net.mo
+share/locale/af/LC_MESSAGES/kabc_sql.mo
+share/locale/af/LC_MESSAGES/kabcformat_binary.mo
 share/locale/af/LC_MESSAGES/kaboodle.mo
 share/locale/af/LC_MESSAGES/kaccess.mo
 share/locale/af/LC_MESSAGES/kaddressbook.mo
@@ -150,13 +140,16 @@ share/locale/af/LC_MESSAGES/kdat.mo
 share/locale/af/LC_MESSAGES/kdcop.mo
 share/locale/af/LC_MESSAGES/kdebugdialog.mo
 share/locale/af/LC_MESSAGES/kdelibs.mo
+share/locale/af/LC_MESSAGES/kdelibs_colors.mo
 share/locale/af/LC_MESSAGES/kdepasswd.mo
+share/locale/af/LC_MESSAGES/kdeprint.mo
 share/locale/af/LC_MESSAGES/kdeprint_part.mo
 share/locale/af/LC_MESSAGES/kdeprintfax.mo
 share/locale/af/LC_MESSAGES/kdesktop.mo
 share/locale/af/LC_MESSAGES/kdessh.mo
 share/locale/af/LC_MESSAGES/kdesu.mo
 share/locale/af/LC_MESSAGES/kdesud.mo
+share/locale/af/LC_MESSAGES/kdevelop.mo
 share/locale/af/LC_MESSAGES/kdevtipofday.mo
 share/locale/af/LC_MESSAGES/kdf.mo
 share/locale/af/LC_MESSAGES/kdict.mo
@@ -197,6 +190,7 @@ share/locale/af/LC_MESSAGES/kfile_txt.mo
 share/locale/af/LC_MESSAGES/kfile_vcf.mo
 share/locale/af/LC_MESSAGES/kfile_wav.mo
 share/locale/af/LC_MESSAGES/kfile_xbm.mo
+share/locale/af/LC_MESSAGES/kfileaudiopreview.mo
 share/locale/af/LC_MESSAGES/kfind.mo
 share/locale/af/LC_MESSAGES/kfindpart.mo
 share/locale/af/LC_MESSAGES/kfloppy.mo
@@ -214,6 +208,7 @@ share/locale/af/LC_MESSAGES/khotkeys.mo
 share/locale/af/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/af/LC_MESSAGES/kicker.mo
 share/locale/af/LC_MESSAGES/kiconedit.mo
+share/locale/af/LC_MESSAGES/kio.mo
 share/locale/af/LC_MESSAGES/kio_audiocd.mo
 share/locale/af/LC_MESSAGES/kio_finger.mo
 share/locale/af/LC_MESSAGES/kio_floppy.mo
@@ -303,7 +298,6 @@ share/locale/af/LC_MESSAGES/kruler.mo
 share/locale/af/LC_MESSAGES/krunapplet.mo
 share/locale/af/LC_MESSAGES/ksame.mo
 share/locale/af/LC_MESSAGES/kscd.mo
-share/locale/af/LC_MESSAGES/kscoreapplet.mo
 share/locale/af/LC_MESSAGES/kshisen.mo
 share/locale/af/LC_MESSAGES/ksirc.mo
 share/locale/af/LC_MESSAGES/ksirtet.mo
@@ -326,6 +320,8 @@ share/locale/af/LC_MESSAGES/ksysv.mo
 share/locale/af/LC_MESSAGES/ktalkd.mo
 share/locale/af/LC_MESSAGES/ktaskbarapplet.mo
 share/locale/af/LC_MESSAGES/kteatime.mo
+share/locale/af/LC_MESSAGES/ktexteditor_autobookmarker.mo
+share/locale/af/LC_MESSAGES/ktexteditor_docwordcompletion.mo
 share/locale/af/LC_MESSAGES/ktexteditor_insertfile.mo
 share/locale/af/LC_MESSAGES/ktexteditor_isearch.mo
 share/locale/af/LC_MESSAGES/ktexteditor_kdatatool.mo
@@ -400,6 +396,7 @@ share/locale/af/LC_MESSAGES/secpolicy.mo
 share/locale/af/LC_MESSAGES/spy.mo
 share/locale/af/LC_MESSAGES/synaescope.mo
 share/locale/af/LC_MESSAGES/taskbarextension.mo
+share/locale/af/LC_MESSAGES/timezones.mo
 share/locale/af/LC_MESSAGES/tippecanoe.mo
 share/locale/af/LC_MESSAGES/twister.mo
 share/locale/af/LC_MESSAGES/tyler.mo
@@ -413,5 +410,3 @@ share/locale/af/entry.desktop
 share/locale/af/flag.png
 @dirrm share/locale/af/LC_MESSAGES
 @dirrm share/locale/af
-@dirrm share/doc/HTML/af/kicker-applets
-@dirrm share/doc/HTML/af

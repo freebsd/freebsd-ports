@@ -10,7 +10,7 @@ lib/kde3/kfile_lnk.so
 lib/kde3/kfile_txt.la
 lib/kde3/kfile_txt.so
 share/applications/kde/lnkforward.desktop
-share/applications/kdeaddons-kfile-plugins-3.3.1
+share/applications/kdeaddons-kfile-plugins-3.3.2
 share/mimelnk/application/x-win-lnk.desktop
 share/services/kfile_desktop.desktop
 share/services/kfile_folder.desktop

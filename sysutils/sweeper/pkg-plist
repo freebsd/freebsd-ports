@@ -406,8 +406,6 @@ share/services/kbyteseditwidget.desktop
 share/services/kregexpeditorgui.desktop
 share/services/kwallet_config.desktop
 share/services/kwalletmanager_show.desktop
-@dirrm share/icons/hicolor/22x22/apps
-@dirrm share/icons/hicolor/22x22
 @dirrm share/doc/HTML/en/kwallet
 @dirrm share/doc/HTML/en/ktimer
 @dirrm share/doc/HTML/en/ksim

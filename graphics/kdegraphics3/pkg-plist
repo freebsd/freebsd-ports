@@ -987,18 +987,6 @@ share/servicetypes/kimageviewer.desktop
 share/servicetypes/kimageviewercanvas.desktop
 share/servicetypes/ksvgrenderer.desktop
 @dirrm share/services/kconfiguredialog
-@dirrm share/icons/locolor/32x32/apps
-@dirrm share/icons/locolor/32x32
-@dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/locolor/16x16
-@dirrm share/icons/locolor
-@dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/48x48
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/32x32
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16
-@dirrm share/icons/crystalsvg/22x22/apps
 @dirrm share/doc/HTML/en/kview
 @dirrm share/doc/HTML/en/ksnapshot
 @dirrm share/doc/HTML/en/kruler
@@ -1042,8 +1030,6 @@ share/servicetypes/ksvgrenderer.desktop
 @dirrm share/apps/kpovmodeler
 @dirrm share/apps/kpdfpart
 @dirrm share/apps/kpdf
-@dirrm share/apps/konqueror/servicemenus
-@dirrm share/apps/konqueror
 @dirrm share/apps/kolourpaint/pics
 @dirrm share/apps/kolourpaint/icons/hicolor/48x48/apps
 @dirrm share/apps/kolourpaint/icons/hicolor/48x48
@@ -1064,7 +1050,5 @@ share/servicetypes/ksvgrenderer.desktop
 @dirrm share/apps/kfax
 @dirrm share/apps/kdvi
 @dirrm share/apps/kcoloredit
-@dirrm share/applnk/Graphics
-@dirrm share/applnk
 @dirrm include/libtext2path-0.1
 @dirrm include/ksvg

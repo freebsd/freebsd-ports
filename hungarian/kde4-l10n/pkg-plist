@@ -393,6 +393,8 @@ share/locale/hu/LC_MESSAGES/artscontrol.mo
 share/locale/hu/LC_MESSAGES/artsmodules.mo
 share/locale/hu/LC_MESSAGES/atlantik.mo
 share/locale/hu/LC_MESSAGES/atlantikdesigner.mo
+share/locale/hu/LC_MESSAGES/audiocd_encoder_lame.mo
+share/locale/hu/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/hu/LC_MESSAGES/audiorename_plugin.mo
 share/locale/hu/LC_MESSAGES/autorefresh.mo
 share/locale/hu/LC_MESSAGES/babelfish.mo
@@ -765,6 +767,7 @@ share/locale/hu/LC_MESSAGES/krdc.mo
 share/locale/hu/LC_MESSAGES/kreadconfig.mo
 share/locale/hu/LC_MESSAGES/krec.mo
 share/locale/hu/LC_MESSAGES/kregexpeditor.mo
+share/locale/hu/LC_MESSAGES/kres_bugzilla.mo
 share/locale/hu/LC_MESSAGES/kres_exchange.mo
 share/locale/hu/LC_MESSAGES/kres_imap.mo
 share/locale/hu/LC_MESSAGES/kres_remote.mo
@@ -929,7 +932,6 @@ share/locale/hu/charset
 share/locale/hu/entry.desktop
 share/locale/hu/flag.png
 @dirrm share/locale/hu/LC_MESSAGES
-@dirrm share/locale/hu
 @dirrm share/doc/HTML/hu/kxconfig
 @dirrm share/doc/HTML/hu/kworldclock
 @dirrm share/doc/HTML/hu/kweather

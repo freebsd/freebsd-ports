@@ -223,6 +223,8 @@ share/locale/cs/LC_MESSAGES/artscontrol.mo
 share/locale/cs/LC_MESSAGES/artsmodules.mo
 share/locale/cs/LC_MESSAGES/atlantik.mo
 share/locale/cs/LC_MESSAGES/atlantikdesigner.mo
+share/locale/cs/LC_MESSAGES/audiocd_encoder_lame.mo
+share/locale/cs/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/cs/LC_MESSAGES/audiorename_plugin.mo
 share/locale/cs/LC_MESSAGES/autorefresh.mo
 share/locale/cs/LC_MESSAGES/babelfish.mo
@@ -481,6 +483,7 @@ share/locale/cs/LC_MESSAGES/kio_floppy.mo
 share/locale/cs/LC_MESSAGES/kio_help.mo
 share/locale/cs/LC_MESSAGES/kio_imap4.mo
 share/locale/cs/LC_MESSAGES/kio_lan.mo
+share/locale/cs/LC_MESSAGES/kio_ldap.mo
 share/locale/cs/LC_MESSAGES/kio_mac.mo
 share/locale/cs/LC_MESSAGES/kio_man.mo
 share/locale/cs/LC_MESSAGES/kio_mobile.mo
@@ -574,6 +577,7 @@ share/locale/cs/LC_MESSAGES/krdc.mo
 share/locale/cs/LC_MESSAGES/kreadconfig.mo
 share/locale/cs/LC_MESSAGES/krec.mo
 share/locale/cs/LC_MESSAGES/kregexpeditor.mo
+share/locale/cs/LC_MESSAGES/kres_bugzilla.mo
 share/locale/cs/LC_MESSAGES/kres_exchange.mo
 share/locale/cs/LC_MESSAGES/kres_imap.mo
 share/locale/cs/LC_MESSAGES/kres_remote.mo

@@ -51,6 +51,5 @@ share/locale/hu/LC_MESSAGES/thesaurus_tool.mo
 share/locale/hu/LC_MESSAGES/xsltexportfilter.mo
 share/locale/hu/LC_MESSAGES/xsltimportfilter.mo
 @dirrm share/locale/hu/LC_MESSAGES
-@dirrm share/locale/hu
 @dirrm share/apps/koffice/autocorrect
 @dirrm share/apps/koffice

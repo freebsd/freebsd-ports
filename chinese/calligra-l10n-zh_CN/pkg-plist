@@ -33,7 +33,6 @@ share/locale/zh_CN/LC_MESSAGES/kwordasciifilter.mo
 share/locale/zh_CN/LC_MESSAGES/kwordhtmlexportfilter.mo
 share/locale/zh_CN/LC_MESSAGES/kwordhtmlimportfilter.mo
 share/locale/zh_CN/LC_MESSAGES/kwordlatexexportfilter.mo
-share/locale/zh_CN/LC_MESSAGES/kwordlatexfilter.mo
 share/locale/zh_CN/LC_MESSAGES/kwordlateximportfilter.mo
 share/locale/zh_CN/LC_MESSAGES/kwordmswordfilter.mo
 share/locale/zh_CN/LC_MESSAGES/kwordmswritefilter.mo

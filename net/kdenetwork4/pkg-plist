@@ -1995,16 +1995,7 @@ share/sounds/ktalkd.wav
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdenetwork-apidocs/kopete/libkopete/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdenetwork-apidocs/kopete/libkopete/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdenetwork-apidocs/kopete/libkopete/html
-@dirrm share/sounds
 @dirrm share/services/kconfiguredialog
-@dirrm share/icons/locolor/32x32/apps
-@dirrm share/icons/locolor/32x32
-@dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/locolor/16x16
-@dirrm share/icons/locolor
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16
-@dirrm share/icons/crystalsvg/22x22/apps
 @dirrm share/doc/HTML/en/kwifimanager
 @dirrm share/doc/HTML/en/ktalkd
 @dirrm share/doc/HTML/en/ksirc
@@ -2022,8 +2013,6 @@ share/sounds/ktalkd.wav
 @dirrm share/doc/HTML/en/kdenetwork-apidocs
 @dirrm share/doc/HTML/en/kcontrol/lanbrowser
 @dirrm share/doc/HTML/en/kcontrol/kcmtalkd
-@dirrm share/doc/HTML/en/kcontrol
-@dirrm share/config.kcfg
 @dirrm share/apps/ksirc/pics/emoticons
 @dirrm share/apps/ksirc/pics
 @dirrm share/apps/ksirc/icons/crystalsvg/64x64/apps
@@ -2275,8 +2264,6 @@ share/sounds/ktalkd.wav
 @dirrm share/apps/kopete
 @dirrm share/apps/knewsticker
 @dirrm share/apps/kinetd
-@dirrm share/apps/kicker/applets
-@dirrm share/apps/kicker
 @dirrm share/apps/khtml/kpartplugins
 @dirrm share/apps/kget/sounds
 @dirrm share/apps/kget/pics
@@ -2294,7 +2281,5 @@ share/sounds/ktalkd.wav
 @dirrm share/apps/kdict/icons/crystalsvg
 @dirrm share/apps/kdict/icons
 @dirrm share/apps/kdict
-@dirrm share/applnk/.hidden
-@dirrm share/applnk
 @dirrm lib/kconf_update_bin
 @dirrm include/rss
