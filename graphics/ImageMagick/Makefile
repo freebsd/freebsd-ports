@@ -3,12 +3,13 @@
 # Date created:		15 November 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.7 1995/10/03 21:58:08 ache Exp $
+# $Id: Makefile,v 1.8 1996/11/06 07:53:19 tg Exp $
 #
 
 DISTNAME=	ImageMagick-3.7.7
 CATEGORIES+=	graphics
-MASTER_SITES=	ftp://ftp.x.org/contrib/applications/ImageMagick/
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	applications/ImageMagick
 
 MAINTAINER=	ports@freebsd.org
 
