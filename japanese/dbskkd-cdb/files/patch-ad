@@ -1,0 +1,39 @@
+--- Release-Notes.Japanese.dist	Wed Jun 16 15:22:29 1999
++++ Release-Notes.Japanese	Thu Jun 17 14:07:08 1999
+@@ -75,11 +75,11 @@
+ 
+ 3. 添付のmakeskkcdb.shを実行する。このスクリプトでは
+    辞書ファイルはskktocdbm.shの標準入力に与えるようになっている。
+-   デフォルトは /usr/local/share/skk/SKK-JISYO.Lを指定している。
+-   また、デフォルトではカレントディレクトリにSKK-JISYO.L.cdbが作られる。
++   デフォルトは %%PREFIX%%/share/skk/%%JISYONAME%%を指定している。
++   また、デフォルトではカレントディレクトリに%%JISYONAME%%.cdbが作られる。
+    必要に応じてデフォルト値は変更すること。
+ 
+-4. 作られたSKK-JISYO.L.cdbを適切なディレクトリにインストールする。
++4. 作られた%%JISYONAME%%.cdbを適切なディレクトリにインストールする。
+    通常はSKK辞書のディレクトリと同じにしておくとよいだろう。
+    この辞書の整合性はcdbパッケージ中のcdbtestやcdbstatsでチェックできる。
+ 
+@@ -88,10 +88,10 @@
+ ●インストールの際の注意
+ 
+ 1. dbskkd-cdb.cのSERVER_DIRを実際にサーバを置くディレクトリに設定する。
+-   デフォルトは /usr/local/etc/dbskkd 。
++   デフォルトは %%PREFIX%%/libexec 。
+ 
+ 2. dbskkd-cdb.cのJISHO_FILEを実際にcdb形式にした辞書ファイルのパス名とする。
+-   デフォルトは /usr/local/share/skk/SKK-JISYO.L.cdb 。
++   デフォルトは %%PREFIX%%/share/dbskkd-cdb/%%JISYONAME%%.cdb 。
+ 
+ 3. コンパイルフラグのLOG_PEERINFOはtcp_wrapperなどを使わない際に
+    どのホストから接続してきたかを記録するためのものである。
+@@ -111,7 +111,7 @@
+ 
+ 2. /etc/inetd.confに
+ 
+-skkserv stream  tcp     nowait  nobody  /usr/local/libexec/tcpd       /usr/local/etc/dbskkd/dbskkd-cdb
++skkserv stream  tcp     nowait  nobody  %%PREFIX%%/libexec/tcpd       %%PREFIX%%/libexec/dbskkd-cdb
+    
+    を加える。(FreeBSD 2.2.8-RELEASEでtcp_wrapper使用の場合)
+    root権限では動作させてはならない。nobodyで動かすこと。

@@ -1,0 +1,7 @@
+libexec/dbskkd-cdb
+share/dbskkd-cdb/%%JISYONAME%%.cdb
+share/doc/dbskkd-cdb/Release-Notes.English
+share/doc/dbskkd-cdb/Release-Notes.Japanese
+share/doc/dbskkd-cdb/LICENSE
+@dirrm share/dbskkd-cdb
+@dirrm share/doc/dbskkd-cdb
