@@ -1,0 +1,100 @@
+bin/kbilliards
+share/applnk/Games/kbilliards.desktop
+share/apps/kbilliards/background.xpm
+share/apps/kbilliards/ball.png
+share/apps/kbilliards/balls/ball01.png
+share/apps/kbilliards/balls/ball01b.png
+share/apps/kbilliards/balls/ball02.png
+share/apps/kbilliards/balls/ball02b.png
+share/apps/kbilliards/balls/ball03.png
+share/apps/kbilliards/balls/ball03b.png
+share/apps/kbilliards/balls/ball04.png
+share/apps/kbilliards/balls/ball04b.png
+share/apps/kbilliards/balls/ball05.png
+share/apps/kbilliards/balls/ball05b.png
+share/apps/kbilliards/balls/ball06.png
+share/apps/kbilliards/balls/ball06b.png
+share/apps/kbilliards/balls/ball07.png
+share/apps/kbilliards/balls/ball07b.png
+share/apps/kbilliards/balls/ball08.png
+share/apps/kbilliards/balls/ball08b.png
+share/apps/kbilliards/balls/ball09.png
+share/apps/kbilliards/balls/ball09b.png
+share/apps/kbilliards/balls/ball10.png
+share/apps/kbilliards/balls/ball10b.png
+share/apps/kbilliards/balls/ball11.png
+share/apps/kbilliards/balls/ball11b.png
+share/apps/kbilliards/balls/ball12.png
+share/apps/kbilliards/balls/ball12b.png
+share/apps/kbilliards/balls/ball13.png
+share/apps/kbilliards/balls/ball13b.png
+share/apps/kbilliards/balls/ball14.png
+share/apps/kbilliards/balls/ball14b.png
+share/apps/kbilliards/balls/ball15.png
+share/apps/kbilliards/balls/ball15b.png
+share/apps/kbilliards/balls/whiteball.png
+share/apps/kbilliards/bccl.png
+share/apps/kbilliards/bccr.png
+share/apps/kbilliards/blcl.png
+share/apps/kbilliards/blcr.png
+share/apps/kbilliards/bottom_central_corner.png
+share/apps/kbilliards/bottom_left_corner.png
+share/apps/kbilliards/bottom_left_edge.png
+share/apps/kbilliards/bottom_right_corner.png
+share/apps/kbilliards/bottom_right_edge.png
+share/apps/kbilliards/brcl.png
+share/apps/kbilliards/brcr.png
+share/apps/kbilliards/holebc.png
+share/apps/kbilliards/holebl.png
+share/apps/kbilliards/holebr.png
+share/apps/kbilliards/holetc.png
+share/apps/kbilliards/holetl.png
+share/apps/kbilliards/holetr.png
+share/apps/kbilliards/left_edge.png
+share/apps/kbilliards/leftarrow.png
+share/apps/kbilliards/right_edge.png
+share/apps/kbilliards/rightarrow.png
+share/apps/kbilliards/sound/applause.wav
+share/apps/kbilliards/sound/ballinhole.wav
+share/apps/kbilliards/sound/gameover.wav
+share/apps/kbilliards/sound/hitball.wav
+share/apps/kbilliards/sound/hitedge.wav
+share/apps/kbilliards/sound/music01.mp3
+share/apps/kbilliards/sound/shot.wav
+share/apps/kbilliards/tccl.png
+share/apps/kbilliards/tccr.png
+share/apps/kbilliards/tlcl.png
+share/apps/kbilliards/tlcr.png
+share/apps/kbilliards/top_central_corner.png
+share/apps/kbilliards/top_left_corner.png
+share/apps/kbilliards/top_left_edge.png
+share/apps/kbilliards/top_right_corner.png
+share/apps/kbilliards/top_right_edge.png
+share/apps/kbilliards/trcl.png
+share/apps/kbilliards/trcr.png
+share/icons/hicolor/16x16/apps/kbilliards.png
+share/icons/hicolor/32x32/apps/kbilliards.png
+share/icons/hicolor/48x48/apps/kbilliards.png
+share/icons/locolor/16x16/apps/kbilliards.png
+share/icons/locolor/32x32/apps/kbilliards.png
+share/locale/cs/LC_MESSAGES/kbilliards.mo
+share/locale/it/LC_MESSAGES/kbilliards.mo
+@dirrm share/apps/kbilliards/balls
+@dirrm share/apps/kbilliards/sound
+@dirrm share/apps/kbilliards
+@unexec rmdir %D/share/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Games 2>/dev/null || true
+@unexec rmdir %D/share/applnk 2>/dev/null || true

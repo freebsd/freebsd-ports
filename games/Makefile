@@ -189,6 +189,7 @@
     SUBDIR += jtans
     SUBDIR += jumpnbump
     SUBDIR += jzip
+    SUBDIR += kbilliards
     SUBDIR += kdegames3
     SUBDIR += klondike
     SUBDIR += knights
