@@ -1,10 +1,10 @@
---- Makefile.orig	Thu Sep 18 12:53:12 1997
-+++ Makefile	Thu Sep 18 12:55:59 1997
+--- Makefile.orig	Fri Sep 19 10:55:34 1997
++++ Makefile	Fri Sep 19 10:56:00 1997
 @@ -0,0 +1,19 @@
 +# My makefile for Angband
 +# Matthew Hunt <mph@pobox.com>
 +
-+CFLAGS+=-I/usr/X11R6/include -D"USE_XAW" -D"USE_GCU" -DDEFAULT_PATH=\\\"$(PREFIX)/lib/X11/angband\\\"
++CFLAGS+=-I/usr/X11R6/include -D"USE_X11" -D"USE_GCU" -DDEFAULT_PATH=\\\"$(PREFIX)/lib/X11/angband\\\"
 +
 +all:	angband
 +
