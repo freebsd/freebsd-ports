@@ -5,17 +5,16 @@
 # $FreeBSD$
 
 PORTNAME=	webalizer
-PORTVERSION=	2.1.5
+PORTVERSION=	2.1.6
 CATEGORIES=	german www
-MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/pre-release/ \
+MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/ \
 		ftp://ftp.lan-ks.de/pub/FreeBSD/distfiles/
-DISTNAME=	${PORTNAME}-2.01-05-src
+PKGNAMEPREFIX?=	de-
+DISTNAME=	${PORTNAME}-2.01-06-src
 
 MAINTAINER=	dirk.meyer@dinoex.sub.org
 
 LIB_DEPENDS=	gd.1:${PORTSDIR}/graphics/gd
-
-NO_LATEST_LINK=	yes
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
