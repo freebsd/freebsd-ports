@@ -7,6 +7,7 @@
 
 PORTNAME=	qhacc
 PORTVERSION=	2.9
+PORTREVISION=	1
 CATEGORIES=	finance
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -31,8 +32,9 @@ STRIP=		# none
 
 post-patch:
 	@${REINPLACE_CMD} 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|#! /bin/sh|#!${LOCALBASE}/bin/bash|g ; \
-		 s|/usr/local/|${PREFIX}/lib/|g' ${WRKSRC}/src/qhacc.orig
+	@${REINPLACE_CMD} -e 's|/usr/local/|${PREFIX}/lib/|g ; \
+		 s|#! /bin/sh|#!${LOCALBASE}/bin/bash|g' \
+			${WRKSRC}/src/qhacc.orig
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-O2 -Wall -g||g ; \
 		 s|contrib docs qm|contrib|g ; \
