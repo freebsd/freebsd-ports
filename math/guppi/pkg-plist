@@ -1,5 +1,3 @@
-bin/gnome-guile-repl
-bin/gnome-python-repl
 bin/guppi-gnumeric
 etc/libguppiConf.sh
 include/gnome-1.0/libguppi/gnan.h
@@ -12,13 +10,16 @@ include/gnome-1.0/libguppi/guppi-axis-markers.h
 include/gnome-1.0/libguppi/guppi-basic-tools.h
 include/gnome-1.0/libguppi/guppi-canvas-group.h
 include/gnome-1.0/libguppi/guppi-canvas-item.h
+include/gnome-1.0/libguppi/guppi-category-core.h
 include/gnome-1.0/libguppi/guppi-category.h
-include/gnome-1.0/libguppi/guppi-chart-plug-in.h
-include/gnome-1.0/libguppi/guppi-chart.h
 include/gnome-1.0/libguppi/guppi-color-palette.h
 include/gnome-1.0/libguppi/guppi-config-dialog.h
 include/gnome-1.0/libguppi/guppi-config-model.h
 include/gnome-1.0/libguppi/guppi-convenient.h
+include/gnome-1.0/libguppi/guppi-curve-calc.h
+include/gnome-1.0/libguppi/guppi-curve-func.h
+include/gnome-1.0/libguppi/guppi-curve-interpolate.h
+include/gnome-1.0/libguppi/guppi-curve-poly.h
 include/gnome-1.0/libguppi/guppi-curve.h
 include/gnome-1.0/libguppi/guppi-data-flavor.h
 include/gnome-1.0/libguppi/guppi-data-importer-plug-in.h
@@ -28,12 +29,16 @@ include/gnome-1.0/libguppi/guppi-data-plug-in.h
 include/gnome-1.0/libguppi/guppi-data-popup.h
 include/gnome-1.0/libguppi/guppi-data-select.h
 include/gnome-1.0/libguppi/guppi-data-socket.h
+include/gnome-1.0/libguppi/guppi-data-table-core.h
 include/gnome-1.0/libguppi/guppi-data-table.h
 include/gnome-1.0/libguppi/guppi-data-tree-view.h
 include/gnome-1.0/libguppi/guppi-data-tree.h
 include/gnome-1.0/libguppi/guppi-data-ui-init.h
 include/gnome-1.0/libguppi/guppi-data.h
+include/gnome-1.0/libguppi/guppi-dataimpl-init.h
 include/gnome-1.0/libguppi/guppi-date-indexed.h
+include/gnome-1.0/libguppi/guppi-date-series-calc.h
+include/gnome-1.0/libguppi/guppi-date-series-core.h
 include/gnome-1.0/libguppi/guppi-date-series.h
 include/gnome-1.0/libguppi/guppi-debug.h
 include/gnome-1.0/libguppi/guppi-defaults.h
@@ -44,7 +49,6 @@ include/gnome-1.0/libguppi/guppi-element-print.h
 include/gnome-1.0/libguppi/guppi-element-state.h
 include/gnome-1.0/libguppi/guppi-element-view.h
 include/gnome-1.0/libguppi/guppi-enums.h
-include/gnome-1.0/libguppi/guppi-exit.h
 include/gnome-1.0/libguppi/guppi-file.h
 include/gnome-1.0/libguppi/guppi-fn-wrapper.h
 include/gnome-1.0/libguppi/guppi-garray.h
@@ -54,7 +58,6 @@ include/gnome-1.0/libguppi/guppi-group-state.h
 include/gnome-1.0/libguppi/guppi-group-view-layout.h
 include/gnome-1.0/libguppi/guppi-group-view.h
 include/gnome-1.0/libguppi/guppi-gsml.h
-include/gnome-1.0/libguppi/guppi-guile.h
 include/gnome-1.0/libguppi/guppi-hash.h
 include/gnome-1.0/libguppi/guppi-i18n.h
 include/gnome-1.0/libguppi/guppi-layout-constraint.h
@@ -78,13 +81,8 @@ include/gnome-1.0/libguppi/guppi-plot-toolkit.h
 include/gnome-1.0/libguppi/guppi-plug-in-spec.h
 include/gnome-1.0/libguppi/guppi-plug-in.h
 include/gnome-1.0/libguppi/guppi-polynomial.h
+include/gnome-1.0/libguppi/guppi-price-series-core.h
 include/gnome-1.0/libguppi/guppi-price-series.h
-include/gnome-1.0/libguppi/guppi-progress.h
-include/gnome-1.0/libguppi/guppi-python-data-ui.h
-include/gnome-1.0/libguppi/guppi-python-plot.h
-include/gnome-1.0/libguppi/guppi-python-stat.h
-include/gnome-1.0/libguppi/guppi-python-useful.h
-include/gnome-1.0/libguppi/guppi-python.h
 include/gnome-1.0/libguppi/guppi-raster-text.h
 include/gnome-1.0/libguppi/guppi-regression-linear.h
 include/gnome-1.0/libguppi/guppi-regression-polynomial.h
@@ -94,17 +92,19 @@ include/gnome-1.0/libguppi/guppi-root-group-item.h
 include/gnome-1.0/libguppi/guppi-root-group-state.h
 include/gnome-1.0/libguppi/guppi-root-group-tools.h
 include/gnome-1.0/libguppi/guppi-root-group-view.h
-include/gnome-1.0/libguppi/guppi-scm-data-ui.h
-include/gnome-1.0/libguppi/guppi-scm-plot.h
-include/gnome-1.0/libguppi/guppi-scm-stat.h
-include/gnome-1.0/libguppi/guppi-scm-useful.h
-include/gnome-1.0/libguppi/guppi-scripting.h
+include/gnome-1.0/libguppi/guppi-seq-boolean-core.h
 include/gnome-1.0/libguppi/guppi-seq-boolean.h
 include/gnome-1.0/libguppi/guppi-seq-categorical.h
+include/gnome-1.0/libguppi/guppi-seq-date-core.h
 include/gnome-1.0/libguppi/guppi-seq-date.h
+include/gnome-1.0/libguppi/guppi-seq-integer-core.h
 include/gnome-1.0/libguppi/guppi-seq-integer.h
 include/gnome-1.0/libguppi/guppi-seq-object.h
+include/gnome-1.0/libguppi/guppi-seq-scalar-calc.h
+include/gnome-1.0/libguppi/guppi-seq-scalar-core.h
+include/gnome-1.0/libguppi/guppi-seq-scalar-func.h
 include/gnome-1.0/libguppi/guppi-seq-scalar.h
+include/gnome-1.0/libguppi/guppi-seq-string-core.h
 include/gnome-1.0/libguppi/guppi-seq-string.h
 include/gnome-1.0/libguppi/guppi-seq.h
 include/gnome-1.0/libguppi/guppi-simple-linreg.h
@@ -113,11 +113,10 @@ include/gnome-1.0/libguppi/guppi-stat-init.h
 include/gnome-1.0/libguppi/guppi-stream-preview.h
 include/gnome-1.0/libguppi/guppi-stream.h
 include/gnome-1.0/libguppi/guppi-string.h
+include/gnome-1.0/libguppi/guppi-struct-core.h
 include/gnome-1.0/libguppi/guppi-struct.h
 include/gnome-1.0/libguppi/guppi-text-block.h
-include/gnome-1.0/libguppi/guppi-text-squeeze.h
 include/gnome-1.0/libguppi/guppi-text-tokens.h
-include/gnome-1.0/libguppi/guppi-timer.h
 include/gnome-1.0/libguppi/guppi-unique-id.h
 include/gnome-1.0/libguppi/guppi-useful-init.h
 include/gnome-1.0/libguppi/guppi-useful.h
@@ -125,80 +124,27 @@ include/gnome-1.0/libguppi/guppi-vector.h
 include/gnome-1.0/libguppi/guppi-version.h
 include/gnome-1.0/libguppi/guppi-view-interval.h
 include/gnome-1.0/libguppi/guppi-xml.h
-include/gnome-1.0/libguppi/jitter.h
 include/gnome-1.0/libguppi/mconf.h
 include/gnome-1.0/libguppi/specfns_protos.h
 include/gnome-1.0/libguppitank/guppi-object.h
 include/gnome-1.0/libguppitank/guppi-tank-init.h
 include/gnome-1.0/libguppitank/guppi-tank.h
-include/libguppi/delim-import-widget.h
-include/libguppi/guppi-delimited-importer.h
-lib/guppi/plug-ins/%%VERSION%%/data_impl/category/core.plugin
-lib/guppi/plug-ins/%%VERSION%%/data_impl/category/guppi_category_core_impl.so
-lib/guppi/plug-ins/%%VERSION%%/data_impl/curve/calc-pre.scm
-lib/guppi/plug-ins/%%VERSION%%/data_impl/curve/calc.plugin
-lib/guppi/plug-ins/%%VERSION%%/data_impl/curve/func-pre.scm
-lib/guppi/plug-ins/%%VERSION%%/data_impl/curve/func.plugin
-lib/guppi/plug-ins/%%VERSION%%/data_impl/curve/guppi_curve_calc_impl.so
-lib/guppi/plug-ins/%%VERSION%%/data_impl/curve/guppi_curve_func_impl.so
-lib/guppi/plug-ins/%%VERSION%%/data_impl/curve/guppi_curve_interpolate_impl.so
-lib/guppi/plug-ins/%%VERSION%%/data_impl/curve/guppi_curve_poly_impl.so
-lib/guppi/plug-ins/%%VERSION%%/data_impl/curve/interpolate.plugin
-lib/guppi/plug-ins/%%VERSION%%/data_impl/curve/poly.plugin
-lib/guppi/plug-ins/%%VERSION%%/data_impl/data_table/core.plugin
-lib/guppi/plug-ins/%%VERSION%%/data_impl/data_table/guppi_data_table_core.so
-lib/guppi/plug-ins/%%VERSION%%/data_impl/date_series/calc-pre.scm
-lib/guppi/plug-ins/%%VERSION%%/data_impl/date_series/calc.plugin
-lib/guppi/plug-ins/%%VERSION%%/data_impl/date_series/core-pre.scm
-lib/guppi/plug-ins/%%VERSION%%/data_impl/date_series/core.plugin
-lib/guppi/plug-ins/%%VERSION%%/data_impl/date_series/guppi_date_series_calc_impl.so
-lib/guppi/plug-ins/%%VERSION%%/data_impl/date_series/guppi_date_series_core_impl.so
-lib/guppi/plug-ins/%%VERSION%%/data_impl/price_series/core.plugin
-lib/guppi/plug-ins/%%VERSION%%/data_impl/price_series/guppi_price_series_core_impl.so
-lib/guppi/plug-ins/%%VERSION%%/data_impl/seq_boolean/core.plugin
-lib/guppi/plug-ins/%%VERSION%%/data_impl/seq_boolean/guppi_seq_boolean_core.so
-lib/guppi/plug-ins/%%VERSION%%/data_impl/seq_date/core.plugin
-lib/guppi/plug-ins/%%VERSION%%/data_impl/seq_date/guppi_seq_date_core_impl.so
-lib/guppi/plug-ins/%%VERSION%%/data_impl/seq_integer/core.plugin
-lib/guppi/plug-ins/%%VERSION%%/data_impl/seq_integer/guppi_seq_integer_core_impl.so
-lib/guppi/plug-ins/%%VERSION%%/data_impl/seq_object/core.plugin
-lib/guppi/plug-ins/%%VERSION%%/data_impl/seq_object/guppi_seq_object_core_impl.so
-lib/guppi/plug-ins/%%VERSION%%/data_impl/seq_scalar/calc-pre.scm
-lib/guppi/plug-ins/%%VERSION%%/data_impl/seq_scalar/calc.plugin
-lib/guppi/plug-ins/%%VERSION%%/data_impl/seq_scalar/core.plugin
-lib/guppi/plug-ins/%%VERSION%%/data_impl/seq_scalar/func-pre.scm
-lib/guppi/plug-ins/%%VERSION%%/data_impl/seq_scalar/func.plugin
-lib/guppi/plug-ins/%%VERSION%%/data_impl/seq_scalar/guppi_seq_scalar_calc_impl.so
-lib/guppi/plug-ins/%%VERSION%%/data_impl/seq_scalar/guppi_seq_scalar_core_impl.so
-lib/guppi/plug-ins/%%VERSION%%/data_impl/seq_scalar/guppi_seq_scalar_func_impl.so
-lib/guppi/plug-ins/%%VERSION%%/data_impl/seq_string/core.plugin
-lib/guppi/plug-ins/%%VERSION%%/data_impl/seq_string/guppi_seq_string_core_impl.so
-lib/guppi/plug-ins/%%VERSION%%/data_impl/struct/core.plugin
-lib/guppi/plug-ins/%%VERSION%%/data_impl/struct/guppi_struct_core_impl.so
-lib/guppi/plug-ins/%%VERSION%%/import/delimited/delimited-importer.glade
-lib/guppi/plug-ins/%%VERSION%%/import/delimited/delimited.plugin
-lib/guppi/plug-ins/%%VERSION%%/import/delimited/guppi_data_import_delimited.so
-lib/guppi/plug-ins/%%VERSION%%/plot/axis/axis-pre.scm
 lib/guppi/plug-ins/%%VERSION%%/plot/axis/axis.plugin
 lib/guppi/plug-ins/%%VERSION%%/plot/axis/guppi_axis.so
 lib/guppi/plug-ins/%%VERSION%%/plot/background/background.plugin
 lib/guppi/plug-ins/%%VERSION%%/plot/background/guppi_background.so
-lib/guppi/plug-ins/%%VERSION%%/plot/barchart/barchart-pre.scm
 lib/guppi/plug-ins/%%VERSION%%/plot/barchart/barchart-stackswap.png
 lib/guppi/plug-ins/%%VERSION%%/plot/barchart/barchart.plugin
 lib/guppi/plug-ins/%%VERSION%%/plot/barchart/guppi_barchart.so
-lib/guppi/plug-ins/%%VERSION%%/plot/boxplot/boxplot-pre.scm
 lib/guppi/plug-ins/%%VERSION%%/plot/boxplot/boxplot.plugin
 lib/guppi/plug-ins/%%VERSION%%/plot/boxplot/guppi_boxplot.so
 lib/guppi/plug-ins/%%VERSION%%/plot/compass-box/compass-box.plugin
 lib/guppi/plug-ins/%%VERSION%%/plot/compass-box/guppi_compass_box.so
-lib/guppi/plug-ins/%%VERSION%%/plot/frame/frame-pre.scm
 lib/guppi/plug-ins/%%VERSION%%/plot/frame/frame.plugin
 lib/guppi/plug-ins/%%VERSION%%/plot/frame/guppi_frame.so
 lib/guppi/plug-ins/%%VERSION%%/plot/image/guppi_image.so
 lib/guppi/plug-ins/%%VERSION%%/plot/image/image.plugin
 lib/guppi/plug-ins/%%VERSION%%/plot/legend/guppi_legend.so
-lib/guppi/plug-ins/%%VERSION%%/plot/legend/legend-pre.scm
 lib/guppi/plug-ins/%%VERSION%%/plot/legend/legend.plugin
 lib/guppi/plug-ins/%%VERSION%%/plot/linechart/guppi_linechart.so
 lib/guppi/plug-ins/%%VERSION%%/plot/linechart/linechart.plugin
@@ -209,40 +155,28 @@ lib/guppi/plug-ins/%%VERSION%%/plot/pie/guppi-pie-looks.glade
 lib/guppi/plug-ins/%%VERSION%%/plot/pie/guppi-pie-state-config.glade
 lib/guppi/plug-ins/%%VERSION%%/plot/pie/guppi_pie.so
 lib/guppi/plug-ins/%%VERSION%%/plot/pie/pie-explode.png
-lib/guppi/plug-ins/%%VERSION%%/plot/pie/pie-pre.scm
 lib/guppi/plug-ins/%%VERSION%%/plot/pie/pie-spin.png
 lib/guppi/plug-ins/%%VERSION%%/plot/pie/pie.plugin
 lib/guppi/plug-ins/%%VERSION%%/plot/pricebars/guppi_pricebars.so
-lib/guppi/plug-ins/%%VERSION%%/plot/pricebars/pricebars-pre.scm
 lib/guppi/plug-ins/%%VERSION%%/plot/pricebars/pricebars.plugin
 lib/guppi/plug-ins/%%VERSION%%/plot/scatter/guppi-scatter-state.glade
 lib/guppi/plug-ins/%%VERSION%%/plot/scatter/guppi_scatter.so
 lib/guppi/plug-ins/%%VERSION%%/plot/scatter/scatter-brush.png
 lib/guppi/plug-ins/%%VERSION%%/plot/scatter/scatter-drag.png
-lib/guppi/plug-ins/%%VERSION%%/plot/scatter/scatter-pre.scm
 lib/guppi/plug-ins/%%VERSION%%/plot/scatter/scatter.plugin
 lib/guppi/plug-ins/%%VERSION%%/plot/text/guppi-text-state.glade
 lib/guppi/plug-ins/%%VERSION%%/plot/text/guppi_text.so
-lib/guppi/plug-ins/%%VERSION%%/plot/text/text-pre.scm
 lib/guppi/plug-ins/%%VERSION%%/plot/text/text.plugin
 lib/guppi/plug-ins/%%VERSION%%/plot/xybox/guppi_xybox.so
-lib/guppi/plug-ins/%%VERSION%%/plot/xybox/xybox-pre.scm
 lib/guppi/plug-ins/%%VERSION%%/plot/xybox/xybox.plugin
 lib/libguppi.so
-lib/libguppi.so.15
+lib/libguppi.so.16
 lib/libguppitank.so
-lib/libguppitank.so.15
+lib/libguppitank.so.16
 share/aclocal/libguppi.m4
 share/gnome/guppi/glade/guppi-gnumeric-format-guru.glade
 share/gnome/guppi/glade/view-properties.glade
 share/gnome/guppi/scripts/guppi-gnumeric-plots.xml
-share/gnome/guppi/scripts/guppi-guile-boot.scm
-share/gnome/guppi/scripts/python/Guppi/__init__.py
-share/gnome/guppi/scripts/python/Guppi/__init__.pyc
-share/gnome/guppi/scripts/python/Guppi/data_impl/__init__.py
-share/gnome/guppi/scripts/python/Guppi/data_impl/__init__.pyc
-share/gnome/guppi/scripts/python/Guppi/plot/__init__.py
-share/gnome/guppi/scripts/python/Guppi/plot/__init__.pyc
 share/gnome/help/guppi/C/c20.html
 share/gnome/help/guppi/C/docbook.css
 share/gnome/help/guppi/C/guppi.html
@@ -328,8 +262,10 @@ share/gnome/pixmaps/guppi/resize-to-win.png
 share/gnome/pixmaps/guppi/scatter.xpm
 share/gnome/pixmaps/guppi/stock.xpm
 share/gnome/pixmaps/guppi/surface.xpm
+share/locale/az/LC_MESSAGES/Guppi.mo
 share/locale/da/LC_MESSAGES/Guppi.mo
 share/locale/de/LC_MESSAGES/Guppi.mo
+share/locale/el/LC_MESSAGES/Guppi.mo
 share/locale/es/LC_MESSAGES/Guppi.mo
 share/locale/fr/LC_MESSAGES/Guppi.mo
 share/locale/is/LC_MESSAGES/Guppi.mo
@@ -344,14 +280,11 @@ share/locale/sk/LC_MESSAGES/Guppi.mo
 share/locale/sv/LC_MESSAGES/Guppi.mo
 share/locale/tr/LC_MESSAGES/Guppi.mo
 share/locale/uk/LC_MESSAGES/Guppi.mo
+share/locale/zh_CN/LC_MESSAGES/Guppi.mo
 @dirrm share/gnome/pixmaps/guppi
 @dirrm share/gnome/help/guppi/C/images
 @dirrm share/gnome/help/guppi/C
 @dirrm share/gnome/help/guppi
-@dirrm share/gnome/guppi/scripts/python/Guppi/plot
-@dirrm share/gnome/guppi/scripts/python/Guppi/data_impl
-@dirrm share/gnome/guppi/scripts/python/Guppi
-@dirrm share/gnome/guppi/scripts/python
 @dirrm share/gnome/guppi/scripts
 @dirrm share/gnome/guppi/glade
 @dirrm share/gnome/guppi
@@ -371,24 +304,8 @@ share/locale/uk/LC_MESSAGES/Guppi.mo
 @dirrm lib/guppi/plug-ins/%%VERSION%%/plot/background
 @dirrm lib/guppi/plug-ins/%%VERSION%%/plot/axis
 @dirrm lib/guppi/plug-ins/%%VERSION%%/plot
-@dirrm lib/guppi/plug-ins/%%VERSION%%/import/delimited
-@dirrm lib/guppi/plug-ins/%%VERSION%%/import
-@dirrm lib/guppi/plug-ins/%%VERSION%%/data_impl/struct
-@dirrm lib/guppi/plug-ins/%%VERSION%%/data_impl/seq_string
-@dirrm lib/guppi/plug-ins/%%VERSION%%/data_impl/seq_scalar
-@dirrm lib/guppi/plug-ins/%%VERSION%%/data_impl/seq_object
-@dirrm lib/guppi/plug-ins/%%VERSION%%/data_impl/seq_integer
-@dirrm lib/guppi/plug-ins/%%VERSION%%/data_impl/seq_date
-@dirrm lib/guppi/plug-ins/%%VERSION%%/data_impl/seq_boolean
-@dirrm lib/guppi/plug-ins/%%VERSION%%/data_impl/price_series
-@dirrm lib/guppi/plug-ins/%%VERSION%%/data_impl/date_series
-@dirrm lib/guppi/plug-ins/%%VERSION%%/data_impl/data_table
-@dirrm lib/guppi/plug-ins/%%VERSION%%/data_impl/curve
-@dirrm lib/guppi/plug-ins/%%VERSION%%/data_impl/category
-@dirrm lib/guppi/plug-ins/%%VERSION%%/data_impl
 @dirrm lib/guppi/plug-ins/%%VERSION%%
 @dirrm lib/guppi/plug-ins
 @dirrm lib/guppi
-@dirrm include/libguppi
 @dirrm include/gnome-1.0/libguppitank
 @dirrm include/gnome-1.0/libguppi

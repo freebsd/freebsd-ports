@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	guppi
-PORTVERSION=	0.40.2
+PORTVERSION=	0.40.3
 CATEGORIES=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/Guppi
@@ -27,6 +27,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-explicit-python-linking
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include/libglade-1.0" \
 		LIBS="-L${LOCALBASE}/lib -pthread"
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
 pre-patch:
