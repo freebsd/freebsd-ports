@@ -14,7 +14,6 @@ etc/darcs/bash_completion.d/darcs
 %%PORTDOCS%%%%DOCSDIR%%/examples/zsh_completion_new
 %%PORTDOCS%%%%DOCSDIR%%/examples/zsh_completion_old
 %%PORTDOCS%%%%DOCSDIR%%/manual/contents.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/crossref.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/darcs.css
 %%PORTDOCS%%%%DOCSDIR%%/manual/darcs.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/footnode.html
@@ -54,6 +53,7 @@ etc/darcs/bash_completion.d/darcs
 %%PORTDOCS%%%%DOCSDIR%%/manual/node1.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/node10.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/node11.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/node12.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/node2.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/node3.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/node4.html
