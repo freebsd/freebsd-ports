@@ -1,5 +1,0 @@
-This is a Ruby library for handling URIs, which will replace ruby-uri
-in the not-too-distant future.
-
-Author:	akira yamada <akira@ruby-lang.org>
-WWW:	http://www.ruby-lang.org/en/raa-list.rhtml?name=URb

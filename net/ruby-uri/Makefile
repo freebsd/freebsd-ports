@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	uri
-PORTVERSION=	4.27
+PORTVERSION=	0.9
+PORTEPOCH=	1
 CATEGORIES=	net ruby
-MASTER_SITES=	http://www02.so-net.ne.jp/%7Egreentea/ruby/uri/
+MASTER_SITES=	http://arika.org/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
@@ -18,25 +19,18 @@ USE_RUBY=	yes
 
 NO_BUILD=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
-MODULES=	uri.rb urireg.rb
-
-DOCS=		index.html
-EXAMPLES=	in-uri.txt test-uri.rb
+DOCS=		ChangeLog README
 
 do-install:
-.for f in ${MODULES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_SITELIBDIR}
-.endfor
+	${MKDIR} ${RUBY_SITELIBDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/uri.rb ${RUBY_SITELIBDIR}/
+	${INSTALL_DATA} ${WRKSRC}/uri/* ${RUBY_SITELIBDIR}/${PORTNAME}
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_EXAMPLESDIR}/uri
-.for f in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_EXAMPLESDIR}/uri/
-.endfor
-	${MKDIR} ${RUBY_DOCDIR}/uri
+	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/test/* ${RUBY_EXAMPLESDIR}/${PORTNAME}/
+	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/uri/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
 .endfor
 .endif
 
