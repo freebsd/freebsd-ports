@@ -13,6 +13,7 @@ bin/dopewars
 %%PORTDOCS%%share/doc/%%DOPEWARS%%/servercommands.html
 %%PORTDOCS%%share/doc/%%DOPEWARS%%/windows.html
 share/dopewars/dopewars.sco
+@unexec if [ ! -s %D/share/dopewars/dopewars.sco.bak ]; then rm -f %D/share/dopewars/dopewars.sco.bak; fi
 share/dopewars/pixmaps/dopewars-pill.png
 share/dopewars/pixmaps/dopewars-shot.png
 share/dopewars/pixmaps/dopewars-weed.png
