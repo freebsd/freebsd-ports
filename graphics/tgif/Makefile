@@ -3,10 +3,10 @@
 # Date created:         30 Jan 1999
 # Whom:                 bmc@WillsCreek.COM
 #
-# $Id: Makefile,v 1.11 1999/03/09 09:16:40 asami Exp $
+# $Id: Makefile,v 1.12 1999/03/14 03:06:44 flathill Exp $
 #
 
-DISTNAME=	tgif-4.1.1
+DISTNAME=	tgif-4.1.4
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://bourbon.cs.umd.edu/pub/tgif/ \
 		ftp://ftp.cs.ucla.edu/pub/tgif/
@@ -22,7 +22,6 @@ RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm \
 
 USE_IMAKE=	yes
 MAN1=		tgif.1
-INSTALL_TARGET=	install install.man
 
 post-extract:
 		${RM} -f ${WRKDIR}/${DISTNAME}/Tgif.tmpl
