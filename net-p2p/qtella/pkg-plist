@@ -1,0 +1,21 @@
+bin/qtella
+share/qtella/pixmaps/p2p.xpm
+share/qtella/pixmaps/down_icon.png
+share/qtella/pixmaps/flash_icon.png
+share/qtella/pixmaps/help_icon.png
+share/qtella/pixmaps/interrupt_icon.png
+share/qtella/pixmaps/lens_icon.png
+share/qtella/pixmaps/shared_icon.png
+share/qtella/pixmaps/stats_icon.png
+share/qtella/pixmaps/up_icon.png
+share/qtella/pixmaps/ball_d.xpm
+share/qtella/pixmaps/ball_g.xpm
+share/qtella/pixmaps/ball_r.xpm
+share/qtella/pixmaps/ball_y.xpm
+share/qtella/pixmaps/gsmile.xpm
+share/qtella/pixmaps/remove.xpm
+share/qtella/pixmaps/removeresearch.xpm
+share/qtella/pixmaps/research.xpm
+share/qtella/pixmaps/smile.xpm
+@dirrm share/qtella/pixmaps
+@dirrm share/qtella
