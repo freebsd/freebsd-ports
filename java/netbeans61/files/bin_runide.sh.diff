@@ -1,14 +1,14 @@
 
-$FreeBSD: /tmp/pcvs/ports/java/netbeans61/files/Attic/bin_runide.sh.diff,v 1.2 2003-06-11 21:23:58 olgeni Exp $
+$FreeBSD: /tmp/pcvs/ports/java/netbeans61/files/Attic/bin_runide.sh.diff,v 1.3 2004-04-16 13:51:23 olgeni Exp $
 
 --- bin/runide.sh.orig	Tue Jun  3 11:23:09 2003
 +++ bin/runide.sh	Wed Jun 11 12:30:37 2003
-@@ -154,7 +154,7 @@
+@@ -131,7 +131,7 @@
              fi
              ;;
          
--        -J*) jopt=`expr "$1" : '-J\(.*\)'`; jargs="$jargs \"$jopt\"";;
-+        -J*) jopt=`expr -- "$1" : '-J\(.*\)'`; jargs="$jargs \"$jopt\"";;
+-        -J*) jopt=`expr "X-$1" : 'X--J\(.*\)'`; jargs="$jargs \"$jopt\"";;
++        -J*) jopt=`expr -- "X-$1" : 'X--J\(.*\)'`; jargs="$jargs \"$jopt\"";;
          *) args="$args \"$1\"" ;;
      esac
      shift
