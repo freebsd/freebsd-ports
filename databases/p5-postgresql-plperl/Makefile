@@ -11,10 +11,11 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	girgen@pingpong.net
 
+POSTGRESQL_PORT?=	databases/postgresql7
 POSTGRESQL_SUBPORT=YES
-.include <${.CURDIR}/../postgresql7/Makefile>
+.include <${PORTSDIR}/${POSTGRESQL_PORT}/Makefile>
 
-RUN_DEPENDS=	postgres:${PORTSDIR}/databases/postgresql7
+RUN_DEPENDS=	postgres:${PORTSDIR}/${POSTGRESQL_PORT}
 
 USE_PERL5=	yes
 CONFIGURE_ARGS=	--with-perl
