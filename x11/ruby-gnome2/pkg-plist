@@ -1,0 +1,35 @@
+%%RUBY_SITEARCHLIBDIR%%/gnome.so
+%%RUBY_SITELIBDIR%%/gnome.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/animator_demo.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/browser/rbbr.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/gnome-hello/README.ja
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/gnome-hello/gnoconfig.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/gnome-hello/gnome-hello-0-basic.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/gnome-hello/gnome-hello-1-menus.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/gnome-hello/gnome-hello-2-i18n.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/gnome-hello/gnome-hello-4-SM.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/app-helper.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/calculator.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/clock.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/color-picker.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/dateedit.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/dialog.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/file-entry.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/href.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/icon-entry.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/less.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/number-entry.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/paper-selector.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/pixmap-entry.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/sample.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/test-gnome.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/gnome/test-gnome
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/gnome/gnome-hello
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/gnome/browser
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/gnome
+%%PORTDOCS%%%%RUBY_DOCDIR%%/gnome/ChangeLog
+%%PORTDOCS%%%%RUBY_DOCDIR%%/gnome/ENVIRONMENT
+%%PORTDOCS%%%%RUBY_DOCDIR%%/gnome/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/gnome/ja/README.ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/gnome/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/gnome
