@@ -20,8 +20,8 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
 do-install:
-		@ ${MKDIR} ${PREFIX}/lib/perl5/site_perl/HTML/
-		@ ${INSTALL_DATA} ${WRKDIR}/HTML/Base.pm ${PREFIX}/lib/perl5/site_perl/HTML/
-		@ ${INSTALL_DATA} ${WRKDIR}/html_base.pod ${PREFIX}/lib/perl5/site_perl/
+		@ ${MKDIR} ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/HTML/
+		@ ${INSTALL_DATA} ${WRKDIR}/HTML/Base.pm ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/HTML/
+		@ ${INSTALL_DATA} ${WRKDIR}/html_base.pod ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/
 
 .include <bsd.port.mk>
