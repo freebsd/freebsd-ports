@@ -8,9 +8,10 @@
 PORTNAME=	gperiodic
 PORTVERSION=	1.3.3
 CATEGORIES=	biology
-MASTER_SITES=	ftp://ftp.seul.org/pub/gperiodic/
+MASTER_SITES=	ftp://ftp.seul.org/pub/gperiodic/ \
+		http://www.unixpages.org/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chris@unixpages.org
 
 USE_X_PREFIX=	yes
 USE_GTK=	yes
