@@ -9059,6 +9059,7 @@ synce-dccm	ports/palm/synce-dccm
 synce-gnomevfs	ports/palm/synce-gnomevfs
 synce-librapi2	ports/palm/synce-librapi2
 synce-libsynce	ports/palm/synce-libsynce
+synce-rra	ports/palm/synce-rra
 synce-serial	ports/palm/synce-serial
 synce-trayicon	ports/palm/synce-trayicon
 syncmal		ports/palm/syncmal
