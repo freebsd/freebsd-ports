@@ -27,6 +27,7 @@ USE_PERL5=	yes
 USE_OPENSSL=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui libgnomeprintui \
 		gtkhtml3
+USE_REINPLACE=	yes
 USE_LIBTOOL_VER=15
 USE_LIBLTDL=	yes
 USE_ICONV=	yes
@@ -53,5 +54,8 @@ OPTIONS=	LDAP "Enable LDAP support" on
 USE_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--with-ldap
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|stdint.h|malloc.h|g' ${WRKSRC}/libbalsa/mailbox_imap.c
 
 .include <bsd.port.post.mk>
