@@ -3,7 +3,7 @@
 # Date created:         3rd August, 1997
 # Whom:                 Tobias Reifenberger <tr@freebsd.mayn.de>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/10/31 09:15:14 tg Exp $
 #
 
 DISTNAME=       STonX-0.6.7-epsilon
@@ -13,6 +13,8 @@ MASTER_SITES=   ftp://ftp.complang.tuwien.ac.at/pub/nino/stonx-current/
 DISTFILES=      ${DISTNAME}${EXTRACT_SUFX} tos.img
 
 MAINTAINER=     tr@freebsd.mayn.de
+
+BROKEN="fetch"
 
 RESTRICTED=     "tos.img is Copyrighted"
 NO_PACKAGE=	${RESTRICTED}
