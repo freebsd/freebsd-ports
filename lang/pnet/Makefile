@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.southern-storm.com.au/download/
 MAINTAINER=	ahze@rgv.net
 COMMENT=	C\# compiler, assembler, disassembler, and runtime engine
 
+BROKEN=		"Broken dependency"
+
 BUILD_DEPENDS=	treecc-0.1.8:${PORTSDIR}/lang/treecc
 
 GNU_CONFIGURE=	yes
