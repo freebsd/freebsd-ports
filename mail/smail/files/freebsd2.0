@@ -1,0 +1,72 @@
+# @(#)conf/os/bsd4.4	1.9 8/8/92 18:42:25
+#
+# bsd4.4 - define the characteristics of Berkeley UNIX Release 4.4
+
+# OSNAMES - Names defining this operating system
+OSNAMES=UNIX_BSD4_2:UNIX_BSD:UNIX:POSIX_OS
+
+# LOCKING_PROTOCOL - macros for efficient file locking
+LOCKING_PROTOCOL="\
+#define lock_fd(fd)	      (flock((fd), LOCK_EX|LOCK_NB) < 0? FAIL: SUCCEED)
+#define lock_fd_wait(fd)	(flock((fd), LOCK_EX) < 0? FAIL: SUCCEED)
+#define unlock_fd(fd)		((void) flock((fd), LOCK_UN))
+#define unlock_fd_wait(fd)	((void) flock((fd), LOCK_UN))
+#define lock_fd_rd_wait(fd)	(flock((fd), LOCK_SH) < 0? FAIL: SUCCEED)
+"
+
+# MAILBOX_DIR - in which directory are user mailbox files
+MAILBOX_DIR=/var/mail
+
+# CONSOLE - name of the console device file
+CONSOLE=/dev/console
+
+# DECLARE_STRINGS - declare string routines, using macros as needed
+#DECLARE_STRINGS="\
+#include <strings.h>
+#define memcpy(s1,s2,n)		(bcopy((s2),(s1),(n)))
+#define memcmp(s1,s2,n)		(bcmp((s1),(s2),(n)))
+#/* the following are defined in string.c */
+##ifdef BSD>=199306
+#extern char	*strpbrk();
+#extern int	strspn();
+##endif
+#"
+
+# SECURE_PATH - directories containing system-supplied user programs
+SECURE_PATH=/sbin:/usr/sbin:/bin:/usr/bin
+
+# OSLIBS - name any object libraries containing routines we will need
+# OSLIBS=-ldbm
+
+# DRIVER_CONFIGURATION - configuration file describing smail drivers
+DRIVER_CONFIGURATION=bsd-network
+
+# RANLIB - how do we organize an existing object archive library
+RANLIB=ranlib
+
+# CHOWN - command to use for accessing the chown program
+CHOWN=/usr/sbin/chown
+
+# COMPRESS, etc. - Select method of file compression (use compress)
+COMPRESS=gzip
+COMP_FLAG=-f
+DOT_Z=.gz
+UNCOMPRESS=gunzip
+ZCAT=gzcat
+
+# MISC_DEFINES - miscellaneous definitions
+#
+# 4.3BSD has utime(), but does not have a header file containing the
+# utimbuf structure, so declare it ourselves.
+# MISC_DEFINES=DECLARE_UTIMBUF
+MISC_DEFINES=INET_NTOA_USE_STRUCT
+
+# HAVE - what features should be used with this operating system
+HAVE=BIND:BSD_NETWORKING:BSTRING:COMSAT:DUP2:FSYNC:FTRUNCATE:GETHOSTNAME
+HAVE=$HAVE:GETOPT:HASH_BANG:HDB_UUCP:MKDIR:READDIR:RENAME:RLIMIT:SETEUID
+HAVE=$HAVE:SETGROUPS:SYS5_STRLIB:SYSEXITS:UNAME:VFORK:VFPRINTF:MEMMOVE
+#HAVE=RENAME:MKDIR:BSD_NETWORKING:SYSEXITS:BSTRING:GETHOSTNAME:GETOPT:VFPRINTF
+#HAVE=$HAVE:HASH_BANG:DUP2:READDIR:SETGROUPS:FSYNC:FTRUNCATE:COMSAT:SYS5STRLIB
+
+# UUCP_SYSTEM_FILE - path to UUCP file containing remote systems
+UUCP_SYSTEM_FILE=/usr/lib/uucp/L.sys

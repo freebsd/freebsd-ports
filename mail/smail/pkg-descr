@@ -1,0 +1,6 @@
+This is Smail 3.1.28, a program used for receiving and delivering mail.
+Its job is to take mail from sources on the local or
+on remote hosts and deliver to the appropriate destinations.
+This may be either on remote hosts or on the local machine.
+It is not intended to be a user interface for reading and
+submitting mail.
