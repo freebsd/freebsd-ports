@@ -78,3 +78,4 @@ man/man8/newsoverview.8
 man/man8/relaynews.8cn
 man/man8/report.8cn
 man/man8/rnews.8cn
+include/dbz.h
