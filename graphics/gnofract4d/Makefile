@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnofract4d
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,11 +19,13 @@ USE_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--enable-compile-warnings=no
 
 pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
-		's|\$$\(datadir\)/gnome/|\$$\(datadir\)/|g'
+	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@find ${WRKSRC} -name "*Makefile*" | xargs ${PERL} -pi -e \
+		's|-g -O2 -Wall -D_REENTRANT|\@CXXFLAGS\@|g ; \
+		 s|\$$\(datadir\)/gnome|\$$\(datadir\)|g ; \
+		 s|\$$\(datadir\)/locale|\$$\(prefix\)/share/locale|g'
 
 .include <bsd.port.mk>

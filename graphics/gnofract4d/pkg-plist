@@ -4,18 +4,40 @@ share/gnome/help/gnofract4d/C/about.html
 share/gnome/help/gnofract4d/C/docbook.css
 share/gnome/help/gnofract4d/C/filemenu.html
 share/gnome/help/gnofract4d/C/gnofract4d.html
-share/gnome/help/gnofract4d/C/julia_perturbed.gif
-share/gnome/help/gnofract4d/C/julia_standard.gif
-share/gnome/help/gnofract4d/C/mandelbrot_perturbed.gif
-share/gnome/help/gnofract4d/C/mandelbrot_standard.gif
+share/gnome/help/gnofract4d/C/hybrid.png
+share/gnome/help/gnofract4d/C/julia_perturbed.png
+share/gnome/help/gnofract4d/C/julia_standard.png
+share/gnome/help/gnofract4d/C/mandelbrot_perturbed.png
+share/gnome/help/gnofract4d/C/mandelbrot_standard.png
 share/gnome/help/gnofract4d/C/maths.html
 share/gnome/help/gnofract4d/C/mouse.html
 share/gnome/help/gnofract4d/C/preferences.html
+share/gnome/help/gnofract4d/C/stylesheet-images/caution.gif
+share/gnome/help/gnofract4d/C/stylesheet-images/home.gif
+share/gnome/help/gnofract4d/C/stylesheet-images/important.gif
+share/gnome/help/gnofract4d/C/stylesheet-images/next.gif
+share/gnome/help/gnofract4d/C/stylesheet-images/note.gif
+share/gnome/help/gnofract4d/C/stylesheet-images/prev.gif
+share/gnome/help/gnofract4d/C/stylesheet-images/tip.gif
+share/gnome/help/gnofract4d/C/stylesheet-images/toc-blank.gif
+share/gnome/help/gnofract4d/C/stylesheet-images/toc-minus.gif
+share/gnome/help/gnofract4d/C/stylesheet-images/toc-plus.gif
+share/gnome/help/gnofract4d/C/stylesheet-images/up.gif
+share/gnome/help/gnofract4d/C/stylesheet-images/warning.gif
 share/gnome/help/gnofract4d/C/toolbar.html
 share/gnome/help/gnofract4d/C/topic.dat
 share/gnome/help/gnofract4d/C/types.html
-share/gnome/help/gnofract4d/C/xw_plane.gif
+share/gnome/help/gnofract4d/C/xw_plane.png
 share/gnome/maps/gnofract4d/4zebbowx.map
+share/gnome/maps/gnofract4d/Digiorg1.map
+share/gnome/maps/gnofract4d/Gallet02.map
+share/gnome/maps/gnofract4d/Gallet04.map
+share/gnome/maps/gnofract4d/Gallet12.map
+share/gnome/maps/gnofract4d/Gallet13.map
+share/gnome/maps/gnofract4d/Skydye03.map
+share/gnome/maps/gnofract4d/Skydye06.map
+share/gnome/maps/gnofract4d/Skydye07.map
+share/gnome/maps/gnofract4d/Wizzl011.map
 share/gnome/maps/gnofract4d/anenome.map
 share/gnome/maps/gnofract4d/basic.map
 share/gnome/maps/gnofract4d/bgold.map
@@ -33,6 +55,7 @@ share/gnome/maps/gnofract4d/chroma4.map
 share/gnome/maps/gnofract4d/coldfire.map
 share/gnome/maps/gnofract4d/copper.map
 share/gnome/maps/gnofract4d/crwn.map
+share/gnome/maps/gnofract4d/damien2.map
 share/gnome/maps/gnofract4d/egan1.map
 share/gnome/maps/gnofract4d/fadern1.map
 share/gnome/maps/gnofract4d/fadern2.map
@@ -53,6 +76,7 @@ share/gnome/maps/gnofract4d/kahki.map
 share/gnome/maps/gnofract4d/lace.map
 share/gnome/maps/gnofract4d/lite.map
 share/gnome/maps/gnofract4d/litnin1.map
+share/gnome/maps/gnofract4d/lkmtch02.map
 share/gnome/maps/gnofract4d/longs.map
 share/gnome/maps/gnofract4d/lyapunov.map
 share/gnome/maps/gnofract4d/mandmap.map
@@ -83,16 +107,12 @@ share/gnome/maps/gnofract4d/wild.map
 share/gnome/maps/gnofract4d/wine.map
 share/gnome/maps/gnofract4d/world.map
 share/gnome/pixmaps/gnofract4d/deepen_now.png
-share/gnome/pixmaps/gnofract4d/deepen_now_1.png
-share/gnome/pixmaps/gnofract4d/filmstrip.png
-share/gnome/pixmaps/gnofract4d/full_screen.png
 share/gnome/pixmaps/gnofract4d/gnofract4d-logo.png
-share/gnome/pixmaps/gnofract4d/pause.png
-share/gnome/pixmaps/gnofract4d/ptest.png
 share/locale/fr/LC_MESSAGES/gnofract4d.mo
 @dirrm share/gnome/pixmaps/gnofract4d
 @dirrm share/gnome/maps/gnofract4d
 @dirrm share/gnome/maps
+@dirrm share/gnome/help/gnofract4d/C/stylesheet-image
 @dirrm share/gnome/help/gnofract4d/C/images
 @dirrm share/gnome/help/gnofract4d/C
 @dirrm share/gnome/help/gnofract4d
