@@ -1,7 +1,8 @@
+
 $FreeBSD$
 
---- Makefile.orig	Sun Apr 16 15:40:03 2000
-+++ Makefile	Tue Oct 17 18:06:00 2000
+--- Makefile.orig	Mon Apr 17 05:40:03 2000
++++ Makefile	Sat Aug  3 02:33:28 2002
 @@ -10,23 +10,23 @@
  BUILD    = \
  
@@ -12,16 +13,18 @@ $FreeBSD$
 -    `gtk-config --libs` -lgdbm -lgdk_imlib
 -CFLAGS   = \
 -    -O -g -D_GNU_SOURCE $(DEVFLAGS)
-+    `${GTK_CONFIG} --libs` -lgdbm -lgdk_imlib -lImlib
++    `${IMLIB_CONFIG} --libs-gdk` -lgdbm
 +CFLAGS   += \
 +    -D_GNU_SOURCE $(DEVFLAGS)
  #CFLAGS   = \
  #    -O -g -W -Wall -Wno-unused  -pedantic -pedantic-errors -ansi -D_GNU_SOURCE
- OPTFLAGS   = \
-     -O6 -mpentium -mcpu=pentium -march=pentium -ffast-math -D_GNU_SOURCE
+-OPTFLAGS   = \
+-    -O6 -mpentium -mcpu=pentium -march=pentium -ffast-math -D_GNU_SOURCE
++#OPTFLAGS   = \
++#    -O6 -mpentium -mcpu=pentium -march=pentium -ffast-math -D_GNU_SOURCE
  INCLUDES = \
 -    `gtk-config --cflags` -I..
-+    `${GTK_CONFIG} --cflags` -I..
++    `${IMLIB_CONFIG} --cflags-gdk` -I..
  
  BIN      = e16menuedit
  

@@ -18,7 +18,8 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm
 
 USE_X_PREFIX=	yes
-USE_IMLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	imlib
 
 SUB_STUBS=	e16menuedit-0.1 e16keyedit-0.2
 
@@ -29,7 +30,7 @@ do-patch:
 
 do-build:
 .for i in ${SUB_STUBS}
-	@cd ${WRKDIR}/${i} ; ${SETENV} GTK_CONFIG=${GTK_CONFIG} make all
+	@cd ${WRKDIR}/${i} ; ${SETENV} ${MAKE_ENV} ${MAKE} all
 .endfor
 
 do-install:
