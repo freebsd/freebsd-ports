@@ -2,9 +2,6 @@ bin/we
 bin/wpe
 bin/xwe
 bin/xwpe
-man/man1/xwe.1.gz
-man/man1/wpe.1.gz
-man/man1/we.1.gz
 share/xwpe/help.key
 share/xwpe/help.xwpe
 share/xwpe/syntax_def 

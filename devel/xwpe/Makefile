@@ -1,17 +1,17 @@
 # ex:ts=8
 # Ports collection makefile for:  xwpe
-# Version required:     	  1.6.2
+# Version required:     	  1.5.18a
 # Date created:			  Fri Jan 24, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.7 1998/11/10 03:11:22 obrien Exp $
+# $Id: Makefile,v 1.8 1999/02/28 10:00:07 obrien Exp $
 #
 
-DISTNAME=	xwpe-1.5.16a
+DISTNAME=	xwpe-1.5.18a
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.rpi.edu/~payned/xwpe/ \
-		ftp://identical.stu.rpi.edu/pub/linux/xwpe/
+		ftp://identicalsoftware.com/pub/linux/xwpe/
 MASTER_SITE_SUBDIR=	apps/editors/X
 
 MAINTAINER=     obrien@FreeBSD.org
@@ -25,11 +25,11 @@ CONFIGURE_ENV=	LD_LIBRARY_PATH="${X11BASE}/lib"
 USE_GMAKE=	yes
 ALL_TARGET=
 MAN1=		xwpe.1
+MLINKS=		xwpe.1 xwe.1 \
+		xwpe.1 wpe.1 \
+		xwpe.1 we.1
 
 post-install:
 	@strip ${PREFIX}/bin/xwpe
-	@(cd ${PREFIX}/man/man1 ; \
-	for mp in xwe.1 wpe.1 we.1 ; \
-		do ${RM} -f $$mp ; ln -sf xwpe.1.gz $$mp.gz ; done )
 
 .include <bsd.port.mk>
