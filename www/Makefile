@@ -36,6 +36,7 @@
     SUBDIR += cgi-lib
     SUBDIR += cgic
     SUBDIR += cgicc
+    SUBDIR += cgichk
     SUBDIR += cgihtml
     SUBDIR += cgiparse
     SUBDIR += cgiwrap
