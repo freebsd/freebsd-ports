@@ -45,6 +45,7 @@
     SUBDIR += mpg123.el
     SUBDIR += mpmf20
     SUBDIR += mxv
+    SUBDIR += napster
     SUBDIR += nas
     SUBDIR += nspmod
     SUBDIR += play
