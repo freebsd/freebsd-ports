@@ -8,7 +8,7 @@
 PORTNAME=	ruby-usersguide
 PORTVERSION=	20020616
 CATEGORIES=	lang ruby
-MASTER_SITES=	http://www.ruby-lang.org/~slagell/ruby/
+MASTER_SITES=	http://www.rubyist.net/~slagell/ruby/
 DISTNAME=	${PORTNAME:S/usersguide/uguide/}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
