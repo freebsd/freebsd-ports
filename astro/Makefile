@@ -21,6 +21,7 @@
     SUBDIR += xephem
     SUBDIR += xglobe
     SUBDIR += xphoon
+    SUBDIR += xplanet
     SUBDIR += xtide
 
 .include <bsd.port.subdir.mk>
