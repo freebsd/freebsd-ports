@@ -24,30 +24,6 @@ diff -ruN ../../OLD/tank-0.4a/./Makefile ./Makefile
  	$(MAKE) -f Makefile.Linux clean
  
  backup:
-diff -ruN ../../OLD/tank-0.4a/./Makefile.Linux.Mesa ./Makefile.Linux.Mesa
---- ../../OLD/tank-0.4a/./Makefile.Linux.Mesa	Sun Feb  2 09:59:42 1997
-+++ ./Makefile.Linux.Mesa	Wed Mar  4 04:42:57 1998
-@@ -3,16 +3,16 @@
- 
- .SUFFIXES: .cc .o
- 
--ARCH = -DLINUX -DMESA #-DSOUND
-+ARCH = -DLINUX -DUSING_MESA #-DSOUND
- 
- MESA = Mesa
- 
--INCLUDE = -I/usr/include -I$(MESA)/include -I$(MESA)/include/GL
-+INCLUDE = -I/usr/include -I/usr/X11R6/include -I/usr/X11R6/include/GL
- 
--CFLAGS = $(INCLUDE) $(ARCH) -O2 -m486 -Wall -pipe \
-+CFLAGS = $(INCLUDE) $(ARCH) -DSOUND -O3 -m486 -Wall -pipe \
- 	-pedantic -funroll-loops -mieee-fp
- 
--LDFLAGS = -L/usr/X11R6/lib -L$(MESA)/lib
-+LDFLAGS = -L/usr/X11R6/lib
- 
- TAR	= tar  
- COMPRESS = compress -v
 diff -ruN ../../OLD/tank-0.4a/./collisions.c ./collisions.c
 --- ../../OLD/tank-0.4a/./collisions.c	Sun Feb  2 09:59:42 1997
 +++ ./collisions.c	Wed Mar  4 04:42:57 1998
@@ -80,7 +56,7 @@ diff -ruN ../../OLD/tank-0.4a/./defines.h ./defines.h
  /* ------------------------------------------------*/
  
 -#define TANK_HOME "/usr/games/tank-0.4a"
-+#define TANK_HOME "/usr/local/lib/tank"
++#define TANK_HOME (PREFIX "/share/tank")
  
  /* ------------------------------------------------*/
  /* Definitions du nombre maximum d'objets */
@@ -125,7 +101,7 @@ diff -ruN ../../OLD/tank-0.4a/./tank.c ./tank.c
          #ifdef SOUND
  
 -        if(system("cat eatthis.au >/dev/audio &") != 0) {
-+        if(system("cat /usr/local/lib/tank/eatthis.au >/dev/audio &") != 0) {
++        if(system("/bin/cat " PREFIX "/share/tank/eatthis.au >/dev/audio &") != 0) {
          
          }
          #endif

@@ -11,18 +11,18 @@ CATEGORIES=	games
 MASTER_SITES=	http://step.polymtl.ca/~coyote/tank/
 DISTFILES=	${DISTNAME}-src.tar.gz
 
-MAINTAINER=	dburr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
-BROKEN=	can\'t find glaux.h
+BUILD_DEPENDS=	${X11BASE}/lib/libaux.a:${PORTSDIR}/graphics/libaux
 
-USE_MESA=	YES
-USE_GMAKE=	YES
+USE_MESA=	yes
+USE_GMAKE=	yes
 ALL_TARGET=	linux-mesa-elf
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tank ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/lib/tank
-	${INSTALL_DATA} ${WRKSRC}/*.tga ${PREFIX}/lib/tank
-	${INSTALL_DATA} ${WRKSRC}/*.au ${PREFIX}/lib/tank
+	${MKDIR} ${PREFIX}/share/tank
+	${INSTALL_DATA} ${WRKSRC}/*.tga ${PREFIX}/share/tank
+	${INSTALL_DATA} ${WRKSRC}/*.au ${PREFIX}/share/tank
 
 .include <bsd.port.mk>
