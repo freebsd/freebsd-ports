@@ -96,8 +96,8 @@ MASTER_SITE_TCLTK+= \
 	ftp://ftp.lip6.fr/pub/tcl/distrib/%SUBDIR%/
 
 MASTER_SITE_SOURCEFORGE+= \
-	http://download.sourceforge.net/%SUBDIR%/ \
-	ftp://download.sourceforge.net/pub/sourceforge/%SUBDIR%/
+	ftp://download.sourceforge.net/pub/sourceforge/%SUBDIR%/ \
+	http://download.sourceforge.net/%SUBDIR%/
 
 # Where to put distfiles that don't have any other master site
 MASTER_SITE_LOCAL?= \
