@@ -7,7 +7,8 @@
 
 PORTNAME=	xmms
 PORTVERSION=	1.2.8
-CATEGORIES+=	multimedia audio
+PORTREVISION=	1
+CATEGORIES+=	multimedia audio ipv6
 MASTER_SITES=	ftp://ftp.xmms.org/pub/xmms/1.2.x/ \
 		http://www.xmms.org/files/1.2.x/ \
 		ftp://ftp.sunet.se/pub/multimedia/xmms/1.2.x/
@@ -39,6 +40,8 @@ VISUALIZATION_PLUGINS=	blur_scope,sanalyzer
 PLIST_SUB=	DATADIR="share"
 
 .include <bsd.port.pre.mk>
+
+CONFIGURE_ARGS+=	--enable-ipv6
 
 .if !defined(WITHOUT_MIKMOD)
 LIB_DEPENDS+=	mikmod.2:${PORTSDIR}/audio/libmikmod
