@@ -1,0 +1,12 @@
+--- dlls/dsound/tests/dsound.c	16 Jan 2003 00:19:49 -0000	1.4
++++ dlls/dsound/tests/dsound.c	19 Jan 2003 21:45:43 -0000
+@@ -18,8 +18,8 @@
+  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+  */
+ 
+-#include <malloc.h>
+ #include <math.h>
++#include <stdlib.h>
+ 
+ #include "wine/test.h"
+ #include "dsound.h"
