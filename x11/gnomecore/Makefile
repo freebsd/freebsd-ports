@@ -15,7 +15,7 @@ DISTNAME=	gnome-core-${PORTVERSION}
 
 MAINTAINER?=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	gtkhtml.10:${PORTSDIR}/www/gtkhtml
+LIB_DEPENDS=	gtkhtml.13:${PORTSDIR}/www/gtkhtml
 RUN_DEPENDS=	${X11BASE}/share/gnome/sounds/login.wav:${PORTSDIR}/audio/gnomeaudio
 
 USE_X_PREFIX=	yes
@@ -23,7 +23,8 @@ USE_GMAKE=	yes
 USE_GNOMECTRL=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	--with-kde-datadir=${LOCALBASE}/share --with-gtkhtml
+CONFIGURE_ARGS=	--with-kde-datadir=${LOCALBASE}/share \
+		--with-gtkhtml=${X11BASE}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
