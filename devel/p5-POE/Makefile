@@ -26,6 +26,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	--default
 
+IS_INTERACTIVE=	yes
+
 MAN3=		POE.3 POE::API::ResLoader.3 POE::Component.3 \
 		POE::Component::Client::TCP.3 POE::Component::Server::TCP.3 \
 		POE::Driver.3 POE::Driver::SysRW.3 POE::Filter.3 \
