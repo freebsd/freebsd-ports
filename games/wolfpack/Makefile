@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wolfpack
-PORTVERSION=	4.2.6
+PORTVERSION=	4.2.7
 CATEGORIES=	games
 MASTER_SITES=	ftp://empire.idlpaper.com/pub/empire/server/
 DISTNAME=	empire${PORTVERSION}
