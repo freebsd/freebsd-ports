@@ -18,13 +18,17 @@ PHP_BASE=	${LOCALBASE}
 .endif
 LPEARDIR=	share/pear
 LPKGREGDIR=	${LPEARDIR}/packages/${PKGNAME}
+LDATADIR=	${LPEARDIR}/data/${PORTNAME}
 LDOCSDIR=	share/doc/pear/${PORTNAME}
 LEXAMPLESDIR=	share/examples/pear/${PORTNAME}
+LSQLSDIR=	${LPEARDIR}/sql/${PORTNAME}
 LTESTSDIR=	${LPEARDIR}/tests/${PORTNAME}
 PEARDIR=	${PHP_BASE}/${LPEARDIR}
 PKGREGDIR=	${PHP_BASE}/${LPKGREGDIR}
+DATADIR=	${PHP_BASE}/${LDATADIR}
 DOCSDIR=	${PHP_BASE}/${LDOCSDIR}
 EXAMPLESDIR=	${PHP_BASE}/${LEXAMPLESDIR}
+SQLSDIR=	${PHP_BASE}/${LSQLSDIR}
 TESTSDIR=	${PHP_BASE}/${LTESTSDIR}
 .if defined(CATEGORY) && !empty(CATEGORY)
 LINSTDIR=	${LPEARDIR}/${CATEGORY}
@@ -37,24 +41,27 @@ INSTDIR=	${PHP_BASE}/${LINSTDIR}
 PLIST=		${WRKDIR}/PLIST
 .endif
 PLIST_SUB=	PEARDIR=${LPEARDIR} PKGREGDIR=${LPKGREGDIR} \
-		TESTSDIR=${LTESTSDIR} EXAMPLESDIR=${LEXAMPLESDIR} \
-		INSTDIR=${LINSTDIR}
+		TESTSDIR=${LTESTSDIR} INSTDIR=${LINSTDIR} SQLSDIR=${LSQLSDIR}
 
 PKGINSTALL=	${PORTSDIR}/devel/pear-PEAR/pkg-install
 PKGDEINSTALL=	${PORTSDIR}/devel/pear-PEAR/pkg-deinstall
 
 FILES?=
+DATA?=
 DOCS?=
-TESTS?=
 EXAMPLES?=
-_TESTSDIR?=	tests
+SQLS?=
+TESTS?=
+_DATADIR?=	data
 _DOCSDIR?=	docs
 _EXAMPLESDIR?=	examples
+_SQLSDIR?=	sql
+_TESTSDIR?=	tests
 
 # this is an easy way to eliminate duplicate entries in a variable :)
 # if someone knows how to achieve the result without this terrible
 # hack, please tell me!
-.for v in FILES DOCS TESTS EXAMPLES
+.for v in FILES DOCS TESTS EXAMPLES SQLS DATA
 X${v}DIRS=	${${v}:M*/*:C;/[^/]+$;;}
 . for XD in ${X${v}DIRS}
 ALREADYTHERE=	0
@@ -90,6 +97,8 @@ do-generate-plist:
 	@${ECHO_MSG} "===>   Generating packing list"; \
 	(for file in ${FILES}; do echo "${LINSTDIR}/$${file}"; done; \
 	for file in ${TESTS}; do echo "${LTESTSDIR}/$${file}"; done; \
+	for file in ${DATA}; do echo "${LDATADIR}/$${file}"; done; \
+	for file in ${SQLS}; do echo "${LSQLSDIR}/$${file}"; done; \
 	for file in ${DOCS}; do echo "%%PORTDOCS%%${LDOCSDIR}/$${file}"; done; \
 	for file in ${EXAMPLES}; do echo "%%PORTDOCS%%${LEXAMPLESDIR}/$${file}"; done; \
 	echo "${LPKGREGDIR}/package.xml"; \
@@ -97,11 +106,17 @@ do-generate-plist:
 	    while read dir; do echo "@dirrm ${LINSTDIR}/$${dir}"; done; \
 	for d in ${TESTS}; do echo $${d}; done | ${DIRFILTER} | \
 	    while read dir; do echo "@dirrm ${LTESTSDIR}/$${dir}"; done; \
+	for d in ${DATA}; do echo $${d}; done | ${DIRFILTER} | \
+	    while read dir; do echo "@dirrm ${LDATADIR}/$${dir}"; done; \
+	for d in ${SQLS}; do echo $${d}; done | ${DIRFILTER} | \
+	    while read dir; do echo "@dirrm ${LSQLSDIR}/$${dir}"; done; \
 	for d in ${DOCS}; do echo $${d}; done | ${DIRFILTER} | \
 	    while read dir; do echo "%%PORTDOCS%%@dirrm ${LDOCSDIR}/$${dir}"; done; \
 	for d in ${EXAMPLES}; do echo $${d}; done | ${DIRFILTER} | \
 	    while read dir; do echo "%%PORTDOCS%%@dirrm ${LEXAMPLESDIR}/$${dir}"; done; \
 	if [ -n "${TESTS}" ]; then echo "@dirrm ${LTESTSDIR}"; fi; \
+	if [ -n "${DATA}" ]; then echo "@dirrm ${LDATADIR}"; fi; \
+	if [ -n "${SQLS}" ]; then echo "@dirrm ${LSQLSDIR}"; fi; \
 	if [ -n "${DOCS}" ]; then echo "%%PORTDOCS%%@dirrm ${LDOCSDIR}"; fi; \
 	if [ -n "${EXAMPLES}" ]; then echo "%%PORTDOCS%%@dirrm ${LEXAMPLESDIR}"; fi; \
 	echo "@dirrm ${LPKGREGDIR}"; \
@@ -111,17 +126,20 @@ do-generate-plist:
 	echo "@unexec rmdir %D/${LPEARDIR} 2> /dev/null || true"; \
 	echo "@unexec rmdir %D/${LDOCSDIR:H} 2> /dev/null || true"; \
 	echo "@unexec rmdir %D/${LEXAMPLESDIR:H} 2> /dev/null || true"; \
-	echo "@unexec rmdir %D/${LTESTSDIR:H} 2> /dev/null || true") > ${PLIST}
+	echo "@unexec rmdir %D/${LTESTSDIR:H} 2> /dev/null || true"; \
+	echo "@unexec rmdir %D/${LDATADIR:H} 2> /dev/null || true"; \
+	echo "@unexec rmdir %D/${LSQLSDIR:H} 2> /dev/null || true") > ${PLIST}
 . endif
 
-. for t in files docs tests examples
+. for t in files docs tests sqls examples data
 .  if !target(do-install-${t}-msg)
 do-install-${t}-msg: .USE
 .  endif
 . endfor
 
-pre-install: do-generate-plist
-do-install: do-install-files do-install-docs do-install-tests do-install-examples
+pre-install: 	do-generate-plist
+do-install: 	do-install-files do-install-docs do-install-tests do-install-sqls \
+		do-install-examples do-install-data
 
 do-install-files: do-install-files-msg
 	@${MKDIR} ${INSTDIR}
@@ -153,6 +171,30 @@ do-install-tests: do-install-tests-msg
 .  endfor
 .  for file in ${TESTS}
 	@${INSTALL_DATA} ${WRKSRC}/${_TESTSDIR}/${file} ${TESTSDIR}/${file}
+.  endfor
+. endif
+
+do-install-data: do-install-data-msg
+. if !empty(DATA)
+	@${ECHO_MSG} "===> Installing data in ${DATADIR}."
+	@${MKDIR} ${DATADIR}
+.  for dir in ${DATADIRS}
+	@${MKDIR} ${DATADIR}/${dir}
+.  endfor
+.  for file in ${DATA}
+	@${INSTALL_DATA} ${WRKSRC}/${_DATADIR}/${file} ${DATADIR}/${file}
+.  endfor
+. endif
+
+do-install-sqls: do-install-sqls-msg
+. if !empty(SQLS)
+	@${ECHO_MSG} "===> Installing sqls in ${SQLSDIR}."
+	@${MKDIR} ${SQLSDIR}
+.  for dir in ${SQLSDIRS}
+	@${MKDIR} ${SQLSDIR}/${dir}
+.  endfor
+.  for file in ${SQLS}
+	@${INSTALL_DATA} ${WRKSRC}/${_SQLSDIR}/${file} ${SQLSDIR}/${file}
 .  endfor
 . endif
 
