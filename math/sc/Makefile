@@ -1,0 +1,19 @@
+# New ports collection makefile for:	sc
+# Version required:		6.21
+# Date created:			30 July 1998
+# Whom:				Heinz Tschabitscher
+#
+# $Id$
+#
+
+DISTNAME=	sc-6.21
+CATEGORIES=	math
+MASTER_SITES=	ftp://gatekeeper.dec.com/pub/misc/
+EXTRACT_SUFX=	.tar.Z
+
+MAINTAINER=	semper@doubt.com
+
+NO_WRKSUBDIR=	yes
+MAN1=		sc.1 psc.1
+
+.include <bsd.port.mk>

@@ -1,0 +1,126 @@
+--- Makefile.orig	Mon May 11 20:43:33 1992
++++ Makefile	Thu Jul 30 20:02:22 1998
+@@ -18,18 +18,18 @@
+ 
+ # This is where the install step puts it.
+ #EXDIR=/site/bin
+-EXDIR=/usr/local/bin
++EXDIR=${PREFIX}/bin
+ 
+ # This is where the man page goes.
+-#MANDIR=/usr/local/src/man/man1	# reno
+-#MANEXT=1			# reno
+-MANDIR=/usr/man/manl
+-MANEXT=l
++MANDIR=${PREFIX}/man/man1	# reno
++MANEXT=1			# reno
++#MANDIR=/usr/man/manl
++#MANEXT=l
+ MANMODE=644
+ 
+ # This is where the library file (tutorial) goes.
+ #LIBDIR=/usr/local/share/$(name) # reno
+-LIBDIR=/usr/local/lib/$(name)
++LIBDIR=${PREFIX}/share/$(name)
+ 
+ # Set SIMPLE for lex.c if you don't want arrow keys or lex.c blows up
+ SIMPLE=
+@@ -47,8 +47,8 @@
+ 
+ # Set INTERNATIONAL if you need 8 bit characters.  You should
+ # not set this if you are running 5.3.0.  I think it is OK in 5.3.1.
+-#INTERNATIONAL=-DINTERNATIONAL
+-INTERNATIONAL=
++INTERNATIONAL=-DINTERNATIONAL
++#INTERNATIONAL=
+ 
+ # Set SIGVOID if signal routines are type void.
+ # use: SIGVOID=-DSIGVOID for:
+@@ -67,30 +67,30 @@
+ # Set RINT=	on/with (they have rint):
+ #	SunOS 4.0.3c compiler
+ #	BSD4.4 (reno)
+-#RINT=
+-RINT=-DRINT
++RINT=
++#RINT=-DRINT
+ 
+ # Set RE_COMP if you have the re_comp/re_exec regular expression routines
+ # (most BSD based systems do).
+-#RE_COMP=-DRE_COMP
+-RE_COMP=
++RE_COMP=-DRE_COMP
++#RE_COMP=
+ 
+ # Set REGCMP if you have the regcmp/regex regular expression routines
+ # (most System V based systems do)
+-REGCMP=-DREGCMP
++#REGCMP=-DREGCMP
+ #REGCMP=
+ 
+ # This is the name of a pager like "more".
+ # "pg" may be appropriate for SYSV.
+-DFLT_PAGER=-DDFLT_PAGER=\"less\"
+-#DFLT_PAGER=-DDFLT_PAGER=\"more\"	# generic && reno
++#DFLT_PAGER=-DDFLT_PAGER=\"less\"
++DFLT_PAGER=-DDFLT_PAGER=\"more\"	# generic && reno
+ 
+ # this is the name to save back ups in
+ SAVE=-DSAVENAME=\"$(NAME).SAVE\"
+ 
+ # path to crypt, do not define if you don't have crypt
+ # most systems
+-CRYPT=-DCRYPT_PATH=\"/bin/crypt\"
++#CRYPT=-DCRYPT_PATH=\"/bin/crypt\"
+ # BSD
+ #CRYPT=-DCRYPT_PATH=\"/usr/bin/crypt\"
+ # other people?
+@@ -133,8 +133,8 @@
+ #		 noticing the rows become 2, 3, 40, 41, 42... (etc).
+ #	Known systems/terminfos w/ curses problems:
+ #	{Esix Rev. D+, AT&T SysV3.2.1}:at386-m,xterm, HP-UX7.0:(not sure)
+-IDLOKISBAD=-DIDLOKBAD
+-#IDLOKISBAD=
++#IDLOKISBAD=-DIDLOKBAD
++IDLOKISBAD=
+ 
+ # If you don't have idlok() in your curses define NOIDLOK
+ NO_IDLOK=
+@@ -158,8 +158,8 @@
+ YTAB=y.tab
+ 
+ # Command to use to make temporary copies of some source files.
+-LN=ln
+-#LN=ln -s
++#LN=ln
++LN=ln -s
+ #LN=cp
+ 
+ #### SYSTEM DEFINES ####
+@@ -178,11 +178,11 @@
+ #CFLAGS=  -DSYSV2 -g -pipe -traditional
+ 
+ # Use this for system V.3
+-CFLAGS=  -DSYSV3 -O
+-LDFLAGS= -s
++#CFLAGS=  -O -DSYSV3
++#LDFLAGS= -s
+ #CFLAGS=  -DSYSV3 -g
+ #LDFLAGS= -g
+-LIB=-lm -lcurses -lPW
++LIB=
+ # with gcc also use:
+ #CC=gcc
+ #CFLAGS=  -DSYSV3 -O -pipe -traditional
+@@ -221,9 +221,9 @@
+ #CFLAGS= -O -DBSD42 -pipe
+ 
+ # Use this for BSD 4.3
+-#CFLAGS= -O -DBSD43
++CFLAGS += -DBSD43
+ #LDFLAGS=
+-#LIB=-lm -lcurses -ltermcap
++LIB=-lm -lcurses -ltermcap -lcompat
+ 
+ # Use this for SunOS 4.X if you have the System V package installed.
+ # This will link with the System V curses which is preferable to the
