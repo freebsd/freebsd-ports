@@ -85,7 +85,7 @@
  	concat(	ifdef([X_FLOCK],[], ifelse(os,[aix],[],[ -DNOFLOCK])),
  		ifdef([X_LOCKF],[],
 -		   [ifdef([X_FCNTLLOCKF],[ -DLOCKFUSESFCNTL],[ -DNOLOCKF])])))
-+		   [ifdef([X_FCNTLLOCKF],[ -DLOCKFUSESFCNTL],[ -DNOLOCKF])],
++		   [ifdef([X_FCNTLLOCKF],[ -DLOCKFUSESFCNTL],[ -DNOLOCKF]),
 +		      ifelse(os,[freebsd],[ -DUSEFCNTLLOCK],[ -DNOLOCKF]))])))
  # for aufs
  define([aufsosdefs],
