@@ -1,12 +1,6 @@
---- Makefile.in.orig	Sun May 21 01:25:10 2000
-+++ Makefile.in	Mon May 22 10:10:34 2000
-@@ -152,12 +152,12 @@
- perl_val = @perl_val@
- python_val = @python_val@
- 
--SUBDIRS = . intl po macros libole2 idl plugins wizards src graph doc icons
-+SUBDIRS = . intl po macros libole2 idl plugins wizards src graph icons
- 
+--- Makefile.in.orig	Mon Jun 19 21:25:10 2000
++++ Makefile.in	Tue Jun 20 11:30:03 2000
+@@ -157,7 +157,7 @@
  change_logs =  	OOChangeLog OChangeLog ChangeLog
  
  
