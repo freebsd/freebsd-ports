@@ -1,15 +1,32 @@
---- Makefile.in.orig	Fri Mar 26 20:12:11 1999
-+++ Makefile.in	Fri Mar 26 20:20:58 1999
-@@ -509,7 +509,7 @@
+--- Makefile.in.orig	Thu Feb 17 01:08:00 2000
++++ Makefile.in	Wed Jun  7 16:07:39 2000
+@@ -500,11 +500,11 @@
+ 	pwd=`pwd`; cd $(TNM_TEST_DIR); $$pwd/scotty all.tcl
+ 
+ install: @INSTALL_TARGETS@
+-	@echo ""
+-	@echo "The Tnm extension includes two programs (nmicmpd, nmtrapd)"
+-	@echo "which require root permissions. Please get root permissions"
+-	@echo "and type >> make sinstall << to install them setuid root."
+-	@echo ""
++#	@echo ""
++#	@echo "The Tnm extension includes two programs (nmicmpd, nmtrapd)"
++#	@echo "which require root permissions. Please get root permissions"
++#	@echo "and type >> make sinstall << to install them setuid root."
++#	@echo ""
+ 
+ install-bin: tnm-install-bin tki-install-bin
+ 
+@@ -528,7 +528,7 @@
  	@$(INSTALL_PROGRAM) scotty $(BIN_INSTALL_DIR)/scotty$(TNM_VERSION)
  	@$(INSTALL_DATA) tnm$(SHLIB_SUFFIX) $(LIB_RUNTIME_DIR)/tnm$(TNM_VERSION)$(SHLIB_SUFFIX)
  	@chmod 555 $(LIB_RUNTIME_DIR)/tnm$(TNM_VERSION)$(SHLIB_SUFFIX)
 -	@echo 'package ifneeded Tnm $(TNM_VERSION) "load $(LIB_RUNTIME_DIR)/tnm$(TNM_VERSION)[info sharedlibextension]"' > $(TNM_INSTALL_DIR)/pkgIndex.tcl
 +	@echo 'package ifneeded Tnm $(TNM_VERSION) "load $(LIB_RUNTIME_DIR)/tnm$(TNM_VERSION).so"' > $(TNM_INSTALL_DIR)/pkgIndex.tcl
  
- tnm-install-mibs:
- 	@for i in $(TNM_INSTALL_DIR)/mibs ; \
-@@ -608,10 +608,14 @@
+ tnm-install-man:
+ 	@for i in $(MAN_INSTALL_DIR) $(MAN1_INSTALL_DIR) $(MAN8_INSTALL_DIR) $(MANN_INSTALL_DIR) ; \
+@@ -708,10 +708,14 @@
  		fi; \
  	    done;
  	@echo "Installing tkined$(TKI_VERSION) and tkined$(TKI_VERSION)$(SHLIB_SUFFIX)"
@@ -25,4 +42,4 @@
 +	@echo 'package ifneeded Tkined $(TKI_VERSION) "load $(LIB_RUNTIME_DIR)/tkined$(TKI_VERSION).so"' > $(TKI_INSTALL_DIR)/pkgIndex.tcl
  	@$(INSTALL_DATA) $(TKI_DIR)/tkined.defaults $(TKI_INSTALL_DIR)
  
- tki-install-library:
+ tki-install-man:

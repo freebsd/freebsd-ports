@@ -1,19 +1,8 @@
---- ../tnm/ntping/ntping.c	Thu Sep 19 10:59:13 1996
-+++ ../tnm/ntping/ntping.c	Thu Mar  6 17:32:03 1997
-@@ -749,7 +749,15 @@
- 	  return;
-       }
- 
--    dprintf (stderr, "* .. got host %s .. ", job->hname);
-+    dprintf (stderr, "* .. got host %s .. %x %x ", job->hname,
-+	sfrom.sin_addr.s_addr, job->sa.sin_addr.s_addr );
-+
-+    if ( type == ping && sfrom.sin_addr.s_addr != job->sa.sin_addr.s_addr) 
-+      {
-+          dprintf (stderr, "* non-matching IP# was: %x should be:%x.\n",
-+	  sfrom.sin_addr.s_addr, job->sa.sin_addr.s_addr );
-+          return;
-+      }
-     
-     switch (type) 
-       {
+--- tkined.sh.in.orig  Tue Jun  6 05:14:19 2000
++++ tkined.sh.in       Tue Jun  6 05:13:12 2000
+@@ -1,3 +1,3 @@
+ #!/bin/sh
+-export TCLLIBPATH="@PREFIX@/lib/tkined1.4.10 @PREFIX@/lib/tnm2.1.10"
+-exec @PREFIX@/bin/tkined1.4.10 $*
++export TCLLIBPATH="@PREFIX@/lib/tkined1.5.0 @PREFIX@/lib/tnm3.0.0"
++exec @PREFIX@/bin/tkined1.5.0 $*
