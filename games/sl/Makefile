@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar
 
 .if defined(WITH_PERSISTENT)
-SLPATCHVERSION=	-5p1
+SLPATCHVERSION=	.5p1
 PATCH_SITES=	http://www.linet.gr.jp/~izumi/sl/
 PATCHFILES=	sl5-1.patch
 PATCH_DIST_STRIP=	-p1
