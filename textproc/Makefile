@@ -275,6 +275,7 @@
     SUBDIR += smartdoc
     SUBDIR += source-highlight
     SUBDIR += sp
+    SUBDIR += spell
     SUBDIR += tclExpat
     SUBDIR += tdtd.el
     SUBDIR += tex2im
