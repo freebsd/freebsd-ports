@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	moviedb
-PORTVERSION=	3.8
+PORTVERSION=	3.24
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.imdb.com/pub/interfaces/ \
-		ftp://ftp.fu-berlin.de/pub/misc/movies/database/ \
+MASTER_SITES=	ftp://ftp.fu-berlin.de/pub/misc/movies/database/ \
 		ftp://ftp.funet.fi/pub/mirrors/ftp.imdb.com/pub/interfaces/ \
 		ftp://ftp.sunet.se/pub/tv+movies/imdb/
 DISTFILES=	tools/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} ${IGNOREFILES}
@@ -18,10 +17,6 @@ EXTRACT_ONLY=	tools/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	user@unknown.nu
 COMMENT=	The Internet Movie Database package
-
-BROKEN=		Does not build
-EXPIRATION_DATE=2005-02-18
-DEPRECATED=	${BROKEN}
 
 IGNOREFILES=	actors.list.gz actresses.list.gz aka-names.list.gz \
 	aka-titles.list.gz alternate-versions.list.gz biographies.list.gz \
@@ -55,7 +50,7 @@ pre-fetch:
 	@${ECHO}
 
 post-patch:
-	cd $(DISTDIR)/$(DIST_SUBDIR);cp -v $(IGNOREFILES) $(WRKSRC)/lists/
+	cd ${DISTDIR}/${DIST_SUBDIR};cp -v ${IGNOREFILES} ${WRKSRC}/lists/
 
 pre-install:
 	[ -d ${PREFIX}/lib/moviedb/ ] \
@@ -81,4 +76,5 @@ template templist title
 .endfor
 .endif
 
+MAKE_ENV+=	WRKSRC=${WRKSRC}
 .include <bsd.port.mk>
