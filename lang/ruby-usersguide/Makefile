@@ -9,13 +9,13 @@ PORTNAME=	ruby-usersguide
 PORTVERSION=	${VERSION}
 CATEGORIES+=	lang ruby
 MASTER_SITES?=	http://www.cs.iastate.edu/~slagell/ruby/
-DISTNAME?=	${SHORTNAME}
+DISTNAME?=	${SHORTNAME}-${VERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
 SHORTNAME=	${PORTNAME:S/usersguide/uguide/}
-VERSION?=	20000904
+VERSION?=	20000910
 
 PLIST_SUB=	LANGSUFFIX="${LANGSUFFIX}"
 
