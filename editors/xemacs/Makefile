@@ -30,7 +30,7 @@ USE_XPM=	yes
 USE_BZIP2=	yes
 
 XEMACS_REL=	21.4
-XEMACS_VER=	21.4.15
+XEMACS_VER=	21.4.16
 XEMACS_ARCH=	${CONFIGURE_TARGET}
 
 STRIP=
@@ -81,7 +81,7 @@ pre-fetch:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Set the environment variable WITHOUT_X11 if you "
 	@${ECHO_MSG} "do not want to use X11."
-CONFIG_ARGS+= --with-png=yes --with-tiff=yes
+CONFIG_ARGS+=	--with-png=yes --with-tiff=yes
 .endif
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=	--without-x11
@@ -111,6 +111,9 @@ WITH_XFACE?=	--with-xface=no
 WITH_OFFIX?=	--with-offix=no
 .endif
 .endif
+
+post-patch:
+	@${RM} ${WRKSRC}/src/s/freebsd.h.orig
 
 # fix .so references in a few man pages
 pre-configure::
