@@ -1,0 +1,9 @@
+This is an Apache module that adds a 'X-Forwarded-For' header to outgoing proxy
+requests like Squid does.
+
+You can then get the client ip back on the "proxied host" by setting
+r->connection->remote_ip from this header.
+
+See the source for more info.
+
+WWW: http://develooper.com/code/mpaf/
