@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	adzapper
-PORTVERSION=	0.3.0
-PORTREVISION=	1
+PORTVERSION=	0.4.0
 CATEGORIES=	www
-MASTER_SITES=	http://www.drizzle.com/~adamf/adzapper/ \
+MASTER_SITES=	http://www.zipcon.net/~adamf/adzapper/ \
 		ftp://ftp.aquezada.com/pub/distrib/adzapper/
 
 MAINTAINER=	jdunn@aquezada.com

@@ -40,9 +40,6 @@ share/adzapper/dtml/section1.dtml
 share/adzapper/dtml/test.dtml
 share/adzapper/dtml/thanks
 share/adzapper/dtml/zapletwizard.dtml
-share/adzapper/src/adzapper/CVS/Entries
-share/adzapper/src/adzapper/CVS/Repository
-share/adzapper/src/adzapper/CVS/Root
 share/adzapper/src/adzapper/__init__.py
 share/adzapper/src/adzapper/__init__.pyc
 share/adzapper/src/adzapper/adzapper_engine.py
@@ -61,9 +58,6 @@ share/adzapper/src/config_file/foo.xml
 share/adzapper/src/config_file/foo1.xml
 share/adzapper/src/config_file/rw_config_file.py
 share/adzapper/src/config_file/rw_config_file.pyc
-share/adzapper/src/debug/CVS/Entries
-share/adzapper/src/debug/CVS/Repository
-share/adzapper/src/debug/CVS/Root
 share/adzapper/src/debug/__init__.py
 share/adzapper/src/debug/__init__.pyc
 share/adzapper/src/debug/debug.py
@@ -72,23 +66,285 @@ share/adzapper/src/http_proxy.py
 share/adzapper/src/http_proxy.pyc
 share/adzapper/src/http_server_fixes.py
 share/adzapper/src/http_server_fixes.pyc
-share/adzapper/src/medusa/CVS/Entries
-share/adzapper/src/medusa/CVS/Repository
-share/adzapper/src/medusa/CVS/Root
+share/adzapper/src/medusa-old0/__init__.py
+share/adzapper/src/medusa-old0/__init__.pyc
+share/adzapper/src/medusa-old0/asynchat.py
+share/adzapper/src/medusa-old0/asynchat.pyc
+share/adzapper/src/medusa-old0/asyncore.py
+share/adzapper/src/medusa-old0/asyncore.pyc
+share/adzapper/src/medusa-old0/counter.py
+share/adzapper/src/medusa-old0/counter.pyc
+share/adzapper/src/medusa-old0/default_handler.py
+share/adzapper/src/medusa-old0/default_handler.pyc
+share/adzapper/src/medusa-old0/filesys.py
+share/adzapper/src/medusa-old0/filesys.pyc
+share/adzapper/src/medusa-old0/ftp_server.py
+share/adzapper/src/medusa-old0/ftp_server.pyc
+share/adzapper/src/medusa-old0/http_date.py
+share/adzapper/src/medusa-old0/http_date.pyc
+share/adzapper/src/medusa-old0/http_server.py
+share/adzapper/src/medusa-old0/http_server.pyc
+share/adzapper/src/medusa-old0/logger.py
+share/adzapper/src/medusa-old0/logger.pyc
+share/adzapper/src/medusa-old0/m_syslog.py
+share/adzapper/src/medusa-old0/m_syslog.pyc
+share/adzapper/src/medusa-old0/max_sockets.py
+share/adzapper/src/medusa-old0/max_sockets.pyc
+share/adzapper/src/medusa-old0/medusa_gif.py
+share/adzapper/src/medusa-old0/medusa_gif.pyc
+share/adzapper/src/medusa-old0/mime_type_table.py
+share/adzapper/src/medusa-old0/mime_type_table.pyc
+share/adzapper/src/medusa-old0/monitor.py
+share/adzapper/src/medusa-old0/monitor.pyc
+share/adzapper/src/medusa-old0/monitor_client.py
+share/adzapper/src/medusa-old0/monitor_client.pyc
+share/adzapper/src/medusa-old0/monitor_client_win32.py
+share/adzapper/src/medusa-old0/monitor_client_win32.pyc
+share/adzapper/src/medusa-old0/producers.py
+share/adzapper/src/medusa-old0/producers.pyc
+share/adzapper/src/medusa-old0/resolver.py
+share/adzapper/src/medusa-old0/resolver.pyc
+share/adzapper/src/medusa-old0/select_trigger.py
+share/adzapper/src/medusa-old0/select_trigger.pyc
+share/adzapper/src/medusa-old0/status_handler.py
+share/adzapper/src/medusa-old0/status_handler.pyc
+share/adzapper/src/medusa-old1/ANNOUNCE.txt
+share/adzapper/src/medusa-old1/ANNOUNCE_970922.txt
+share/adzapper/src/medusa-old1/ChangeLog
+share/adzapper/src/medusa-old1/ChangeLog.backup
+share/adzapper/src/medusa-old1/INSTALL.txt
+share/adzapper/src/medusa-old1/Makefile
+share/adzapper/src/medusa-old1/__init__.py
+share/adzapper/src/medusa-old1/__init__.pyc
+share/adzapper/src/medusa-old1/asynchat.py
+share/adzapper/src/medusa-old1/asynchat.pyc
+share/adzapper/src/medusa-old1/asynchat.tweaked.py
+share/adzapper/src/medusa-old1/asynchat.tweaked.pyc
+share/adzapper/src/medusa-old1/asyncore.py
+share/adzapper/src/medusa-old1/asyncore.pyc
+share/adzapper/src/medusa-old1/auth_handler.py
+share/adzapper/src/medusa-old1/auth_handler.pyc
+share/adzapper/src/medusa-old1/chat_server.py
+share/adzapper/src/medusa-old1/chat_server.pyc
+share/adzapper/src/medusa-old1/continuation.py
+share/adzapper/src/medusa-old1/continuation.pyc
+share/adzapper/src/medusa-old1/contrib/bobo_handler.py
+share/adzapper/src/medusa-old1/contrib/bobo_handler.pyc
+share/adzapper/src/medusa-old1/contrib/sample_cgi.py
+share/adzapper/src/medusa-old1/contrib/sample_cgi.pyc
+share/adzapper/src/medusa-old1/counter.py
+share/adzapper/src/medusa-old1/counter.pyc
+share/adzapper/src/medusa-old1/default_handler.py
+share/adzapper/src/medusa-old1/default_handler.pyc
+share/adzapper/src/medusa-old1/demo/publish.py
+share/adzapper/src/medusa-old1/demo/publish.pyc
+share/adzapper/src/medusa-old1/dist/license.html
+share/adzapper/src/medusa-old1/docs/README.html
+share/adzapper/src/medusa-old1/docs/composing_producers.gif
+share/adzapper/src/medusa-old1/docs/data_flow.gif
+share/adzapper/src/medusa-old1/docs/data_flow.html
+share/adzapper/src/medusa-old1/docs/producers.gif
+share/adzapper/src/medusa-old1/docs/programming.html
+share/adzapper/src/medusa-old1/docs/proxy.py.html
+share/adzapper/src/medusa-old1/docs/proxy_notes.txt
+share/adzapper/src/medusa-old1/docs/simple_proxy_server.py
+share/adzapper/src/medusa-old1/docs/simple_proxy_server.pyc
+share/adzapper/src/medusa-old1/event_loop.py
+share/adzapper/src/medusa-old1/event_loop.pyc
+share/adzapper/src/medusa-old1/fifo.py
+share/adzapper/src/medusa-old1/fifo.pyc
+share/adzapper/src/medusa-old1/filesys.py
+share/adzapper/src/medusa-old1/filesys.pyc
+share/adzapper/src/medusa-old1/ftp_server.py
+share/adzapper/src/medusa-old1/ftp_server.pyc
+share/adzapper/src/medusa-old1/http_bobo.py
+share/adzapper/src/medusa-old1/http_date.py
+share/adzapper/src/medusa-old1/http_date.pyc
+share/adzapper/src/medusa-old1/http_server.py
+share/adzapper/src/medusa-old1/http_server.pyc
+share/adzapper/src/medusa-old1/logger.py
+share/adzapper/src/medusa-old1/logger.pyc
+share/adzapper/src/medusa-old1/m_syslog.py
+share/adzapper/src/medusa-old1/m_syslog.pyc
+share/adzapper/src/medusa-old1/medusa.html
+share/adzapper/src/medusa-old1/medusa_gif.py
+share/adzapper/src/medusa-old1/medusa_gif.pyc
+share/adzapper/src/medusa-old1/mime_type_table.py
+share/adzapper/src/medusa-old1/mime_type_table.pyc
+share/adzapper/src/medusa-old1/misc/async_mysql.py
+share/adzapper/src/medusa-old1/misc/async_mysql.pyc
+share/adzapper/src/medusa-old1/misc/other_polls.py
+share/adzapper/src/medusa-old1/misc/other_polls.pyc
+share/adzapper/src/medusa-old1/misc/recorder.py
+share/adzapper/src/medusa-old1/misc/recorder.pyc
+share/adzapper/src/medusa-old1/misc/syncsock.py
+share/adzapper/src/medusa-old1/misc/syncsock.pyc
+share/adzapper/src/medusa-old1/monitor.py
+share/adzapper/src/medusa-old1/monitor.pyc
+share/adzapper/src/medusa-old1/monitor_client.py
+share/adzapper/src/medusa-old1/monitor_client.pyc
+share/adzapper/src/medusa-old1/monitor_client_win32.py
+share/adzapper/src/medusa-old1/monitor_client_win32.pyc
+share/adzapper/src/medusa-old1/notes/async_blurbs.txt
+share/adzapper/src/medusa-old1/notes/debugging.txt
+share/adzapper/src/medusa-old1/notes/threads.txt
+share/adzapper/src/medusa-old1/notes/tkinter.txt
+share/adzapper/src/medusa-old1/old/argparse.py
+share/adzapper/src/medusa-old1/old/argparse.pyc
+share/adzapper/src/medusa-old1/old/default_extension.py
+share/adzapper/src/medusa-old1/old/default_extension.pyc
+share/adzapper/src/medusa-old1/old/http_server.py
+share/adzapper/src/medusa-old1/old/http_server.pyc
+share/adzapper/src/medusa-old1/old/medusa.py
+share/adzapper/src/medusa-old1/old/mstatus.py
+share/adzapper/src/medusa-old1/old/mstatus.pyc
+share/adzapper/src/medusa-old1/old/producers.py
+share/adzapper/src/medusa-old1/old/producers.pyc
+share/adzapper/src/medusa-old1/output_fifo.py
+share/adzapper/src/medusa-old1/output_fifo.pyc
+share/adzapper/src/medusa-old1/patches/README
+share/adzapper/src/medusa-old1/patches/configure
+share/adzapper/src/medusa-old1/patches/posixmodule.c
+share/adzapper/src/medusa-old1/poll/pollmodule.c
+share/adzapper/src/medusa-old1/producers.py
+share/adzapper/src/medusa-old1/producers.pyc
+share/adzapper/src/medusa-old1/put_handler.py
+share/adzapper/src/medusa-old1/put_handler.pyc
+share/adzapper/src/medusa-old1/redirecting_handler.py
+share/adzapper/src/medusa-old1/redirecting_handler.pyc
+share/adzapper/src/medusa-old1/resolver.py
+share/adzapper/src/medusa-old1/resolver.pyc
+share/adzapper/src/medusa-old1/rpc_client.py
+share/adzapper/src/medusa-old1/rpc_client.pyc
+share/adzapper/src/medusa-old1/rpc_server.py
+share/adzapper/src/medusa-old1/rpc_server.pyc
+share/adzapper/src/medusa-old1/script_handler.py
+share/adzapper/src/medusa-old1/script_handler.pyc
+share/adzapper/src/medusa-old1/script_handler_demo/form.mpy
+share/adzapper/src/medusa-old1/script_handler_demo/persistent.py
+share/adzapper/src/medusa-old1/script_handler_demo/persistent.pyc
+share/adzapper/src/medusa-old1/script_handler_demo/start_demo.py
+share/adzapper/src/medusa-old1/script_handler_demo/start_demo.pyc
+share/adzapper/src/medusa-old1/script_handler_demo/today.mpy
+share/adzapper/src/medusa-old1/scripts/dual_server.py
+share/adzapper/src/medusa-old1/scripts/dual_server.pyc
+share/adzapper/src/medusa-old1/scripts/email_ftpd.py
+share/adzapper/src/medusa-old1/scripts/email_ftpd.pyc
+share/adzapper/src/medusa-old1/scripts/my_mime_types.py
+share/adzapper/src/medusa-old1/scripts/my_mime_types.pyc
+share/adzapper/src/medusa-old1/scripts/script_server.py
+share/adzapper/src/medusa-old1/scripts/simple_anon_ftpd.py
+share/adzapper/src/medusa-old1/scripts/simple_anon_ftpd.pyc
+share/adzapper/src/medusa-old1/scripts/simple_httpd.py
+share/adzapper/src/medusa-old1/scripts/simple_httpd.pyc
+share/adzapper/src/medusa-old1/sendfile/README
+share/adzapper/src/medusa-old1/sendfile/asynchat_sendfile.py
+share/adzapper/src/medusa-old1/sendfile/asynchat_sendfile.pyc
+share/adzapper/src/medusa-old1/sendfile/sendfilemodule.c
+share/adzapper/src/medusa-old1/sendfile/test_sendfile.py
+share/adzapper/src/medusa-old1/sendfile/test_sendfile.pyc
+share/adzapper/src/medusa-old1/start_medusa.py
+share/adzapper/src/medusa-old1/start_medusa.pyc
+share/adzapper/src/medusa-old1/status_handler.py
+share/adzapper/src/medusa-old1/status_handler.pyc
+share/adzapper/src/medusa-old1/test/asyn_http_bench.py
+share/adzapper/src/medusa-old1/test/asyn_http_bench.pyc
+share/adzapper/src/medusa-old1/test/max_sockets.py
+share/adzapper/src/medusa-old1/test/max_sockets.pyc
+share/adzapper/src/medusa-old1/test/test_11.py
+share/adzapper/src/medusa-old1/test/test_11.pyc
+share/adzapper/src/medusa-old1/test/test_lb.py
+share/adzapper/src/medusa-old1/test/test_lb.pyc
+share/adzapper/src/medusa-old1/test/test_medusa.py
+share/adzapper/src/medusa-old1/test/test_medusa.pyc
+share/adzapper/src/medusa-old1/test/test_single_11.py
+share/adzapper/src/medusa-old1/test/test_single_11.pyc
+share/adzapper/src/medusa-old1/test/tests.txt
+share/adzapper/src/medusa-old1/thread/old_thread_handler.py
+share/adzapper/src/medusa-old1/thread/old_thread_handler.pyc
+share/adzapper/src/medusa-old1/thread/pi_module.py
+share/adzapper/src/medusa-old1/thread/pi_module.pyc
+share/adzapper/src/medusa-old1/thread/select_trigger.py
+share/adzapper/src/medusa-old1/thread/select_trigger.pyc
+share/adzapper/src/medusa-old1/thread/test_module.py
+share/adzapper/src/medusa-old1/thread/test_module.pyc
+share/adzapper/src/medusa-old1/thread/thread_channel.py
+share/adzapper/src/medusa-old1/thread/thread_channel.pyc
+share/adzapper/src/medusa-old1/thread/thread_handler.py
+share/adzapper/src/medusa-old1/thread/thread_handler.pyc
+share/adzapper/src/medusa-old1/unix_user_handler.py
+share/adzapper/src/medusa-old1/unix_user_handler.pyc
+share/adzapper/src/medusa-old1/util/bench.py
+share/adzapper/src/medusa-old1/util/bench.pyc
+share/adzapper/src/medusa-old1/util/convert_mime_type_table.py
+share/adzapper/src/medusa-old1/util/name_dist.py
+share/adzapper/src/medusa-old1/util/name_dist.pyc
+share/adzapper/src/medusa-old1/virtual_handler.py
+share/adzapper/src/medusa-old1/virtual_handler.pyc
+share/adzapper/src/medusa-old1/work_in_progress/blank_gif.py
+share/adzapper/src/medusa-old1/work_in_progress/blank_gif.pyc
+share/adzapper/src/medusa-old1/work_in_progress/cgi_ext.py
+share/adzapper/src/medusa-old1/work_in_progress/cgi_ext.pyc
+share/adzapper/src/medusa-old1/work_in_progress/cookie.py
+share/adzapper/src/medusa-old1/work_in_progress/cookie.pyc
+share/adzapper/src/medusa-old1/work_in_progress/filecache.py
+share/adzapper/src/medusa-old1/work_in_progress/filecache.pyc
+share/adzapper/src/medusa-old1/work_in_progress/ftp_proxy.py
+share/adzapper/src/medusa-old1/work_in_progress/ftp_proxy.pyc
+share/adzapper/src/medusa-old1/work_in_progress/http_bobo.py
+share/adzapper/src/medusa-old1/work_in_progress/http_form.py
+share/adzapper/src/medusa-old1/work_in_progress/http_form.pyc
+share/adzapper/src/medusa-old1/work_in_progress/http_proxy.py
+share/adzapper/src/medusa-old1/work_in_progress/http_proxy.py.backup
+share/adzapper/src/medusa-old1/work_in_progress/http_proxy.pyc
+share/adzapper/src/medusa-old1/work_in_progress/msql.py
+share/adzapper/src/medusa-old1/work_in_progress/msql.pyc
+share/adzapper/src/medusa-old1/work_in_progress/reaper.py
+share/adzapper/src/medusa-old1/work_in_progress/reaper.pyc
+share/adzapper/src/medusa-old1/xmlrpc_handler.py
+share/adzapper/src/medusa-old1/xmlrpc_handler.pyc
+share/adzapper/src/medusa/ANNOUNCE.txt
+share/adzapper/src/medusa/ANNOUNCE_970922.txt
+share/adzapper/src/medusa/INSTALL.txt
+share/adzapper/src/medusa/Makefile
 share/adzapper/src/medusa/__init__.py
 share/adzapper/src/medusa/__init__.pyc
 share/adzapper/src/medusa/asynchat.py
 share/adzapper/src/medusa/asynchat.pyc
 share/adzapper/src/medusa/asyncore.py
 share/adzapper/src/medusa/asyncore.pyc
+share/adzapper/src/medusa/auth_handler.py
+share/adzapper/src/medusa/auth_handler.pyc
+share/adzapper/src/medusa/chat_server.py
+share/adzapper/src/medusa/chat_server.pyc
+share/adzapper/src/medusa/continuation.py
+share/adzapper/src/medusa/continuation.pyc
+share/adzapper/src/medusa/contrib/bobo_handler.py
+share/adzapper/src/medusa/contrib/bobo_handler.pyc
+share/adzapper/src/medusa/contrib/sample_cgi.py
+share/adzapper/src/medusa/contrib/sample_cgi.pyc
 share/adzapper/src/medusa/counter.py
 share/adzapper/src/medusa/counter.pyc
 share/adzapper/src/medusa/default_handler.py
 share/adzapper/src/medusa/default_handler.pyc
+share/adzapper/src/medusa/demo/publish.py
+share/adzapper/src/medusa/demo/publish.pyc
+share/adzapper/src/medusa/dist/license.html
+share/adzapper/src/medusa/docs/README.html
+share/adzapper/src/medusa/docs/composing_producers.gif
+share/adzapper/src/medusa/docs/data_flow.gif
+share/adzapper/src/medusa/docs/data_flow.html
+share/adzapper/src/medusa/docs/producers.gif
+share/adzapper/src/medusa/docs/proxy_notes.txt
+share/adzapper/src/medusa/event_loop.py
+share/adzapper/src/medusa/event_loop.pyc
+share/adzapper/src/medusa/fifo.py
+share/adzapper/src/medusa/fifo.pyc
 share/adzapper/src/medusa/filesys.py
 share/adzapper/src/medusa/filesys.pyc
 share/adzapper/src/medusa/ftp_server.py
 share/adzapper/src/medusa/ftp_server.pyc
+share/adzapper/src/medusa/http_bobo.py
 share/adzapper/src/medusa/http_date.py
 share/adzapper/src/medusa/http_date.pyc
 share/adzapper/src/medusa/http_server.py
@@ -97,26 +353,135 @@ share/adzapper/src/medusa/logger.py
 share/adzapper/src/medusa/logger.pyc
 share/adzapper/src/medusa/m_syslog.py
 share/adzapper/src/medusa/m_syslog.pyc
-share/adzapper/src/medusa/max_sockets.py
-share/adzapper/src/medusa/max_sockets.pyc
+share/adzapper/src/medusa/medusa.html
 share/adzapper/src/medusa/medusa_gif.py
 share/adzapper/src/medusa/medusa_gif.pyc
 share/adzapper/src/medusa/mime_type_table.py
 share/adzapper/src/medusa/mime_type_table.pyc
+share/adzapper/src/medusa/misc/async_mysql.py
+share/adzapper/src/medusa/misc/async_mysql.pyc
+share/adzapper/src/medusa/misc/recorder.py
+share/adzapper/src/medusa/misc/recorder.pyc
+share/adzapper/src/medusa/misc/syncsock.py
+share/adzapper/src/medusa/misc/syncsock.pyc
 share/adzapper/src/medusa/monitor.py
 share/adzapper/src/medusa/monitor.pyc
 share/adzapper/src/medusa/monitor_client.py
 share/adzapper/src/medusa/monitor_client.pyc
 share/adzapper/src/medusa/monitor_client_win32.py
 share/adzapper/src/medusa/monitor_client_win32.pyc
+share/adzapper/src/medusa/notes/async_blurbs.txt
+share/adzapper/src/medusa/notes/debugging.txt
+share/adzapper/src/medusa/notes/threads.txt
+share/adzapper/src/medusa/notes/tkinter.txt
+share/adzapper/src/medusa/old/argparse.py
+share/adzapper/src/medusa/old/argparse.pyc
+share/adzapper/src/medusa/old/default_extension.py
+share/adzapper/src/medusa/old/default_extension.pyc
+share/adzapper/src/medusa/old/http_server.py
+share/adzapper/src/medusa/old/http_server.pyc
+share/adzapper/src/medusa/old/medusa.py
+share/adzapper/src/medusa/old/mstatus.py
+share/adzapper/src/medusa/old/mstatus.pyc
+share/adzapper/src/medusa/old/producers.py
+share/adzapper/src/medusa/old/producers.pyc
+share/adzapper/src/medusa/patches/README
+share/adzapper/src/medusa/patches/configure
+share/adzapper/src/medusa/patches/posixmodule.c
+share/adzapper/src/medusa/poll/pollmodule.c
 share/adzapper/src/medusa/producers.py
 share/adzapper/src/medusa/producers.pyc
+share/adzapper/src/medusa/put_handler.py
+share/adzapper/src/medusa/put_handler.pyc
+share/adzapper/src/medusa/redirecting_handler.py
+share/adzapper/src/medusa/redirecting_handler.pyc
 share/adzapper/src/medusa/resolver.py
 share/adzapper/src/medusa/resolver.pyc
-share/adzapper/src/medusa/select_trigger.py
-share/adzapper/src/medusa/select_trigger.pyc
+share/adzapper/src/medusa/rpc_client.py
+share/adzapper/src/medusa/rpc_client.pyc
+share/adzapper/src/medusa/rpc_server.py
+share/adzapper/src/medusa/rpc_server.pyc
+share/adzapper/src/medusa/script_handler.py
+share/adzapper/src/medusa/script_handler.pyc
+share/adzapper/src/medusa/script_handler_demo/form.mpy
+share/adzapper/src/medusa/script_handler_demo/persistent.py
+share/adzapper/src/medusa/script_handler_demo/persistent.pyc
+share/adzapper/src/medusa/script_handler_demo/start_demo.py
+share/adzapper/src/medusa/script_handler_demo/start_demo.pyc
+share/adzapper/src/medusa/script_handler_demo/today.mpy
+share/adzapper/src/medusa/scripts/dual_server.py
+share/adzapper/src/medusa/scripts/dual_server.pyc
+share/adzapper/src/medusa/scripts/my_mime_types.py
+share/adzapper/src/medusa/scripts/my_mime_types.pyc
+share/adzapper/src/medusa/scripts/script_server.py
+share/adzapper/src/medusa/scripts/simple_anon_ftpd.py
+share/adzapper/src/medusa/scripts/simple_anon_ftpd.pyc
+share/adzapper/src/medusa/scripts/simple_httpd.py
+share/adzapper/src/medusa/scripts/simple_httpd.pyc
+share/adzapper/src/medusa/sendfile/README
+share/adzapper/src/medusa/sendfile/asynchat_sendfile.py
+share/adzapper/src/medusa/sendfile/asynchat_sendfile.pyc
+share/adzapper/src/medusa/sendfile/sendfilemodule.c
+share/adzapper/src/medusa/sendfile/test_sendfile.py
+share/adzapper/src/medusa/sendfile/test_sendfile.pyc
+share/adzapper/src/medusa/start_medusa.py
+share/adzapper/src/medusa/start_medusa.pyc
 share/adzapper/src/medusa/status_handler.py
 share/adzapper/src/medusa/status_handler.pyc
+share/adzapper/src/medusa/test/asyn_http_bench.py
+share/adzapper/src/medusa/test/asyn_http_bench.pyc
+share/adzapper/src/medusa/test/max_sockets.py
+share/adzapper/src/medusa/test/max_sockets.pyc
+share/adzapper/src/medusa/test/test_11.py
+share/adzapper/src/medusa/test/test_11.pyc
+share/adzapper/src/medusa/test/test_lb.py
+share/adzapper/src/medusa/test/test_lb.pyc
+share/adzapper/src/medusa/test/test_medusa.py
+share/adzapper/src/medusa/test/test_medusa.pyc
+share/adzapper/src/medusa/test/test_single_11.py
+share/adzapper/src/medusa/test/test_single_11.pyc
+share/adzapper/src/medusa/test/tests.txt
+share/adzapper/src/medusa/thread/pi_module.py
+share/adzapper/src/medusa/thread/pi_module.pyc
+share/adzapper/src/medusa/thread/select_trigger.py
+share/adzapper/src/medusa/thread/select_trigger.pyc
+share/adzapper/src/medusa/thread/test_module.py
+share/adzapper/src/medusa/thread/test_module.pyc
+share/adzapper/src/medusa/thread/thread_channel.py
+share/adzapper/src/medusa/thread/thread_channel.pyc
+share/adzapper/src/medusa/thread/thread_handler.py
+share/adzapper/src/medusa/thread/thread_handler.pyc
+share/adzapper/src/medusa/unix_user_handler.py
+share/adzapper/src/medusa/unix_user_handler.pyc
+share/adzapper/src/medusa/util/bench.py
+share/adzapper/src/medusa/util/bench.pyc
+share/adzapper/src/medusa/util/convert_mime_type_table.py
+share/adzapper/src/medusa/util/name_dist.py
+share/adzapper/src/medusa/util/name_dist.pyc
+share/adzapper/src/medusa/virtual_handler.py
+share/adzapper/src/medusa/virtual_handler.pyc
+share/adzapper/src/medusa/work_in_progress/blank_gif.py
+share/adzapper/src/medusa/work_in_progress/blank_gif.pyc
+share/adzapper/src/medusa/work_in_progress/cgi_ext.py
+share/adzapper/src/medusa/work_in_progress/cgi_ext.pyc
+share/adzapper/src/medusa/work_in_progress/cookie.py
+share/adzapper/src/medusa/work_in_progress/cookie.pyc
+share/adzapper/src/medusa/work_in_progress/filecache.py
+share/adzapper/src/medusa/work_in_progress/filecache.pyc
+share/adzapper/src/medusa/work_in_progress/ftp_proxy.py
+share/adzapper/src/medusa/work_in_progress/ftp_proxy.pyc
+share/adzapper/src/medusa/work_in_progress/http_bobo.py
+share/adzapper/src/medusa/work_in_progress/http_form.py
+share/adzapper/src/medusa/work_in_progress/http_form.pyc
+share/adzapper/src/medusa/work_in_progress/http_proxy.py
+share/adzapper/src/medusa/work_in_progress/http_proxy.py.backup
+share/adzapper/src/medusa/work_in_progress/http_proxy.pyc
+share/adzapper/src/medusa/work_in_progress/msql.py
+share/adzapper/src/medusa/work_in_progress/msql.pyc
+share/adzapper/src/medusa/work_in_progress/reaper.py
+share/adzapper/src/medusa/work_in_progress/reaper.pyc
+share/adzapper/src/medusa/xmlrpc_handler.py
+share/adzapper/src/medusa/xmlrpc_handler.pyc
 share/adzapper/src/resolver_fixes.py
 share/adzapper/src/resolver_fixes.pyc
 share/adzapper/src/ui/__init__.py
@@ -179,11 +544,10 @@ share/adzapper/src/xml/sax/saxlib.py
 share/adzapper/src/xml/sax/saxlib.pyc
 share/adzapper/src/xml/sax/saxutils.py
 share/adzapper/src/xml/sax/saxutils.pyc
-share/adzapper/src/zaplet/CVS/Entries
-share/adzapper/src/zaplet/CVS/Repository
-share/adzapper/src/zaplet/CVS/Root
 share/adzapper/src/zaplet/__init__.py
 share/adzapper/src/zaplet/__init__.pyc
+share/adzapper/src/zaplet/filter_object.py
+share/adzapper/src/zaplet/filter_object.pyc
 share/adzapper/src/zaplet/zaplet_engine.py
 share/adzapper/src/zaplet/zaplet_engine.pyc
 share/adzapper/src/zaplet/zaplet_object.py
@@ -256,6 +620,7 @@ share/adzapper/zaplets/download.macromedia.com.zap
 share/adzapper/zaplets/eads.com.zap
 share/adzapper/zaplets/economist.com.zap
 share/adzapper/zaplets/feedmag.com.zap
+share/adzapper/zaplets/finance.yahoo.zap
 share/adzapper/zaplets/flycast.com.zap
 share/adzapper/zaplets/focalink.com.zap
 share/adzapper/zaplets/fool.com.zap
@@ -263,7 +628,6 @@ share/adzapper/zaplets/free-banners.com.zap
 share/adzapper/zaplets/freshmeat.net.zap
 share/adzapper/zaplets/gnu.org.zap
 share/adzapper/zaplets/go2net.com.zap
-share/adzapper/zaplets/google.com.zap.bak
 share/adzapper/zaplets/headhunter.net.zap
 share/adzapper/zaplets/heise.de.zap
 share/adzapper/zaplets/herring.com.zap
@@ -335,8 +699,8 @@ share/adzapper/zaplets/yahoo.com.zap
 share/adzapper/zaplets/yimg.com.zap
 share/adzapper/zaplets/yoda.cybereps.com.zap
 share/adzapper/zaplets/zdnet.com.zap
+share/adzapper/zaplets/zl
 @dirrm share/adzapper/zaplets
-@dirrm share/adzapper/src/zaplet/CVS
 @dirrm share/adzapper/src/zaplet
 @dirrm share/adzapper/src/xml/sax/drivers
 @dirrm share/adzapper/src/xml/sax
@@ -344,12 +708,43 @@ share/adzapper/zaplets/zdnet.com.zap
 @dirrm share/adzapper/src/xml/parsers
 @dirrm share/adzapper/src/xml
 @dirrm share/adzapper/src/ui
-@dirrm share/adzapper/src/medusa/CVS
+@dirrm share/adzapper/src/medusa/work_in_progress
+@dirrm share/adzapper/src/medusa/util
+@dirrm share/adzapper/src/medusa/thread
+@dirrm share/adzapper/src/medusa/test
+@dirrm share/adzapper/src/medusa/sendfile
+@dirrm share/adzapper/src/medusa/scripts
+@dirrm share/adzapper/src/medusa/script_handler_demo
+@dirrm share/adzapper/src/medusa/poll
+@dirrm share/adzapper/src/medusa/patches
+@dirrm share/adzapper/src/medusa/old
+@dirrm share/adzapper/src/medusa/notes
+@dirrm share/adzapper/src/medusa/misc
+@dirrm share/adzapper/src/medusa/docs
+@dirrm share/adzapper/src/medusa/dist
+@dirrm share/adzapper/src/medusa/demo
+@dirrm share/adzapper/src/medusa/contrib
+@dirrm share/adzapper/src/medusa-old1/work_in_progress
+@dirrm share/adzapper/src/medusa-old1/util
+@dirrm share/adzapper/src/medusa-old1/thread
+@dirrm share/adzapper/src/medusa-old1/test
+@dirrm share/adzapper/src/medusa-old1/sendfile
+@dirrm share/adzapper/src/medusa-old1/scripts
+@dirrm share/adzapper/src/medusa-old1/script_handler_demo
+@dirrm share/adzapper/src/medusa-old1/poll
+@dirrm share/adzapper/src/medusa-old1/patches
+@dirrm share/adzapper/src/medusa-old1/old
+@dirrm share/adzapper/src/medusa-old1/notes
+@dirrm share/adzapper/src/medusa-old1/misc
+@dirrm share/adzapper/src/medusa-old1/docs
+@dirrm share/adzapper/src/medusa-old1/dist
+@dirrm share/adzapper/src/medusa-old1/demo
+@dirrm share/adzapper/src/medusa-old1/contrib
+@dirrm share/adzapper/src/medusa-old1
+@dirrm share/adzapper/src/medusa-old0
 @dirrm share/adzapper/src/medusa
-@dirrm share/adzapper/src/debug/CVS
 @dirrm share/adzapper/src/debug
 @dirrm share/adzapper/src/config_file
-@dirrm share/adzapper/src/adzapper/CVS
 @dirrm share/adzapper/src/adzapper
 @dirrm share/adzapper/src
 @dirrm share/adzapper/dtml
