@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Unicode
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	mcsi@agava.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module for easy conversion between encodings
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Unicode/String.pm:${PORTSDIR}/converters/p5-Unicode-String \

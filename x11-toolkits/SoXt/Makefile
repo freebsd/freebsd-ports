@@ -10,7 +10,7 @@ PORTVERSION=	1.1.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.coin3d.org/pub/coin/src/
 
-MAINTAINER=	roland.jesse@gmx.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI binding for using Open Inventor with Xt/Motif
 
 LIB_DEPENDS=	Coin:${PORTSDIR}/graphics/Coin

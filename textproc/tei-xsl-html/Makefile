@@ -13,7 +13,7 @@ PKGNAMESUFFIX=	-xsl-html
 DISTNAME=	teixsl-html
 DIST_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
-MAINTAINER=	ports@henrik-motakef.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XSLT Stylesheets to convert TEI to HTML
 
 BROKEN=		"Checksum mismatch"

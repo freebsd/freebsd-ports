@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://shallowsky.com/software/pho/
 
-MAINTAINER=	roland.jesse@gmx.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lightweight image viewer
 
 USE_GMAKE=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jj@nttmcl.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl extension for manipulating IPv6 addresses
 
 BUILD_DEPENDS=	${SITE_PERL}/Net/IPv4Addr.pm:${PORTSDIR}/net-mgmt/p5-Net-IPv4Addr \

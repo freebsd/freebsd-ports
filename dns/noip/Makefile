@@ -10,7 +10,7 @@ PORTVERSION=	2.1.1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.no-ip.com/client/linux/
 
-MAINTAINER=	esoha@attbi.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	No-IP.com's dynamic DNS update client
 
 ALL_TARGET=	noip2

@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.geocities.com/gigafalk/qextmdi/
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	KDE
 
-MAINTAINER=	roland.jesse@gmx.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt extension for creating SDI/MDI user interfaces
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake

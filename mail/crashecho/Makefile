@@ -10,7 +10,7 @@ PORTVERSION=	0.2.14
 CATEGORIES=	mail
 MASTER_SITES=	http://hell.binec.ru/crashecho/
 
-MAINTAINER=	cyrilm@tower.pp.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An FTN JAM and *.MSG tosser
 
 LIB_DEPENDS=	jam.2:${PORTSDIR}/mail/jamlib

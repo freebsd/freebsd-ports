@@ -10,7 +10,7 @@ PORTVERSION=	0.3.3
 CATEGORIES=	irc
 MASTER_SITES=	http://verplant.org/onis/
 
-MAINTAINER=	koji@jet.es
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A script that converts IRC logfiles into an HTML statistics page
 
 NO_BUILD=	YES

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=mango
 DIST_SUBDIR=	KDE
 
-MAINTAINER=	roland.jesse@gmx.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A recipe management software
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake

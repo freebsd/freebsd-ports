@@ -10,7 +10,7 @@ PORTVERSION=	1.2.2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.coin3d.org/pub/coin/src/
 
-MAINTAINER=	roland.jesse@gmx.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library with image format loaders and front-ends
 
 BUILD_DEPENDS=	guile:${PORTSDIR}/lang/guile
