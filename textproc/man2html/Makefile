@@ -21,7 +21,7 @@ CGIDIR=		${PREFIX}/www/cgi-bin
 MAN1=  		man2html.1
 
 post-patch:
-	${PERL} -pi -e "s#/usr/local/bin/perl#${PERL5}#" ${WRKSRC}/man.cgi
+	${PERL} -pi -e "s#/usr/local/bin/perl#${PERL5}#" ${WRKSRC}/man.cgi ${WRKSRC}/man2html
 
 do-install:
 
