@@ -25,11 +25,15 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CFLAGS+=	-g
 PLIST_SUB=	DOCDIR=share/doc/${PORTNAME}
+MODIFY=		Makefile.in data/Makefile.in
 
 pre-patch:
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
-		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|\$\(prefix\)/share/|\$\(datadir\)/|g'
+.for i in ${MODIFY}
+	@${MV} ${WRKSRC}/${i} ${WRKSRC}/${i}.sed
+	${SED} -e 's=$$(datadir)/gnome/=$$(datadir)/=g' \
+		-e 's=$$(prefix)/share/=$$(datadir)/=g' \
+		${WRKSRC}/${i}.sed > ${WRKSRC}/${i}
+.endfor
 
 post-install:
 .if !defined(NOPORTDOCS)
