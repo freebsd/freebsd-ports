@@ -10,6 +10,7 @@ CATEGORIES=	graphics ruby
 MASTER_SITES=	http://www.aragorn.demon.nl/lib/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
+DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
