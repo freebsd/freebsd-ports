@@ -1,0 +1,33 @@
+--- Makefile.orig	Thu Nov  2 05:04:42 2000
++++ Makefile	Thu Mar  7 23:29:30 2002
+@@ -11,15 +11,14 @@
+ VERSION = 0.6
+ 
+ # compilation and installation variables
+-CC      = gcc
+-CFLAGS  = -O2 -pedantic -Wall
+-INCDIR  = -I/usr/X11R6/include/X11 -I/usr/X11R6/include
+-LIBDIR  = -L/usr/X11R6/lib
+-DESTDIR = /usr/X11R6/bin
+-ICONDIR = /usr/share/icons/wmappl
++CFLAGS += -DICONPATH=\"${DATADIR}\"
++INCDIR  = -I${X11BASE}/include/X11 -I${X11BASE}/include -I${LOCALBASE}/include
++LIBDIR  = -L${X11BASE}/lib -L${LOCALBASE}/lib
++DESTDIR = ${X11BASE}/bin
++ICONDIR = ${DATADIR}
+ 
+ # for linux
+-LIBS   = -lXpm -lX11 -lXext
++LIBS   = -lXpm -lX11 -lXext -lgnugetopt
+ # for Solaris
+ # LIBS   = -lXpm -lX11 -lXext -lsocket
+ 
+@@ -29,7 +28,7 @@
+ all:	$(TARGET)
+ 
+ $(TARGET):	$(OBJS) 
+-	$(CC) $(CFLAGS) -o $(TARGET) $^ $(INCDIR) $(LIBDIR) $(LIBS)
++	$(CC) $(CFLAGS) -o $(TARGET) $(OBJS) $(INCDIR) $(LIBDIR) $(LIBS)
+ 
+ clean:
+ 	for i in $(OBJS) ; do \
