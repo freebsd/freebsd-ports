@@ -1,0 +1,4 @@
+Mail::Audit is a perl module for creating easy mail filters, and
+is intended as a replacement for procmail.
+
+--will
