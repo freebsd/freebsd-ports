@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://diradmin.open-it.org/
 DISTNAME=	directory_administrator-${PORTVERSION}
 
-MAINTAINER=	purple@lewiz.info
+MAINTAINER=	purple@lewiz.net
 COMMENT=	A smart LDAP directory management tool
 
 LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20-client
