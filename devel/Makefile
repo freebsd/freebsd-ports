@@ -417,7 +417,6 @@
     SUBDIR += ruby-metaruby
     SUBDIR += ruby-mmap
     SUBDIR += ruby-mo
-    SUBDIR += ruby-mutexm
     SUBDIR += ruby-optparse
     SUBDIR += ruby-property
     SUBDIR += ruby-racc
