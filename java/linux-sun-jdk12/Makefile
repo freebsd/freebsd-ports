@@ -22,7 +22,7 @@ PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///}
 
 NO_BUILD=	yes
 USE_LINUX=	yes
-JDK_VERSION=	1.2.2.011
+JDK_VERSION=	1.2.2.012
 ONLY_FOR_ARCHS=	i386
 
 NO_CDROM=	"License doesn\'t allow distribution with fee"
