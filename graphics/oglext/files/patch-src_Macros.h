@@ -1,10 +1,9 @@
---- src/Macros.h.orig	Mon Feb  2 19:23:57 2004
-+++ src/Macros.h	Mon Feb  2 19:24:13 2004
-@@ -18,7 +18,7 @@
- #define	_OGL_MACROS_H_
+--- src/Macros.h.orig	Thu Aug 19 23:19:51 2004
++++ src/Macros.h	Thu Aug 19 23:20:28 2004
+@@ -19,6 +19,7 @@
  
- #ifndef	_WIN32
--
+ #if !defined(_WIN32) && (!defined(__APPLE__) || !defined(__GNUC__)) && !defined(__MACOSX__)
+ 
 +	#define GLX_GLXEXT_PROTOTYPES
  	#include <GL/glx.h>
  
