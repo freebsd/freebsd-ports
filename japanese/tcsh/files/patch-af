@@ -1,5 +1,5 @@
---- ../../tcsh-6.07.09/config_f.h	Wed Jul 22 01:03:32 1998
-+++ config_f.h	Wed Jul 22 01:04:17 1998
+--- config_f.h.orig	Sat Sep 19 23:48:08 1998
++++ config_f.h	Sat Sep 26 23:08:09 1998
 @@ -65,7 +65,11 @@
   *		if you don't have <nl_types.h>, you don't want
   *		to define this.
@@ -13,3 +13,36 @@
  
  /*
   * LOGINFIRST   Source ~/.login before ~/.cshrc
+@@ -117,20 +121,29 @@
+  *		be used with SHORT_STRINGS
+  *
+  */
+-#undef KANJI
++#define KANJI
+ 
+ /*
+  * DSPMBYTE	add variable "dspmbyte" and display multi-byte string at
+  *		only output, when "dspmbyte" is set.
+  */
+-#undef DSPMBYTE
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
++# define DSPMBYTE
++#else
++# undef DSPMBYTE
++#endif
++
+ 
+ /*
+  * MBYTEDEBUG	when "dspmbyte" is changed, set multi-byte checktable to
+  *		variable "mbytemap".
+  *		(use for multi-byte table check)
+  */
+-#undef MBYTEDEBUG
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
++# define MBYTEDEBUG
++#else
++# undef MBYTEDEBUG
++#endif
+ 
+ /*
+  * NEWGRP	Provide a newgrp builtin.

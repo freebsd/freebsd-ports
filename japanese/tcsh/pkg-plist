@@ -1,11 +1,11 @@
 bin/tcsh
 @exec echo "updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak; echo %D/%F) >/etc/shells
 @unexec echo "updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak) >/etc/shells
-share/doc/tcsh/complete.tcsh
 share/doc/tcsh/FAQ
-share/doc/tcsh/HISTORY.kanji.patch.euc
-share/doc/tcsh/HowToMakeNLS.euc
-share/doc/tcsh/README.kanji.patch.euc
+share/doc/tcsh/Fixes
+share/doc/tcsh/README
+share/doc/tcsh/WishList
+share/doc/tcsh/complete.tcsh
 @dirrm share/doc/tcsh
 share/nls/C/tcsh.cat
 share/nls/C/tcsh.m
