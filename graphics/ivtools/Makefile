@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	johnston@vectaport.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drawing editors derived from idraw
 
 USE_XLIB=	yes
