@@ -1,3 +1,4 @@
+@cwd /usr/X11R6
 bin/tgif
 bin/prtgif
 man/man1/tgif.1.gz
