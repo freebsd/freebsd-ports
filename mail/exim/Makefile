@@ -7,7 +7,6 @@
 
 PORTNAME=	exim
 PORTVERSION=	${EXIM_VERSION}
-PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/exim4/ \
 		http://www.exim.org/ftp/exim4/ \
@@ -28,9 +27,9 @@ USE_BZIP2=	yes
 USE_PERL5=	yes
 MAN8=		exim.8
 
-EXIM_VERSION=	4.12
+EXIM_VERSION=	4.14
 EXIM_DOCVERSION=	4.10
-EXISCAN_VERSION=	4.12-25
+EXISCAN_VERSION=	4.14-26
 
 PLIST_SUB+=     EXIM_VERSION="${EXIM_VERSION}"
 
@@ -51,12 +50,11 @@ POSTGRESQL_PORT?=	databases/postgresql7
 # email content scanner support.
 #WITHOUT_EXISCAN=	yes
 
-# Define WITH_TCP_WRAPPERS, WITH_LDAP, WITH_MYSQL, and WITH_PGSQL to
-# link against libwrap, an LDAP library (see below), liblibmysqlclient
-# and libpq respectively.  Define WITH_PWCHECK to link against libsasl
-# for SMTP AUTH authentication via the Cyrus SASL pwcheck daemon.
+# Define WITH_TCP_WRAPPERS, WITH_MYSQL, and WITH_PGSQL to link against
+# libwrap, liblibmysqlclient and libpq respectively.  Define
+# WITH_PWCHECK to link against libsasl for SMTP AUTH authentication
+# via the Cyrus SASL pwcheck daemon.
 #WITH_TCP_WRAPPERS=	yes
-#WITH_LDAP=		yes
 #WITH_MYSQL=		yes
 #WITH_PGSQL=		yes
 #WITH_PWCHECK=		yes
@@ -67,11 +65,13 @@ POSTGRESQL_PORT?=	databases/postgresql7
 # be necessary.
 #WITHOUT_IPV6=		yes
 
-# If WITH_LDAP is defined, LDAP_LIB_TYPE must be either OPENLDAP1 or
-# OPENLDAP2.  UMICHIGAN is an alias for OPENLDAP1.  Exim also supports
-# NETSCAPE and SOLARIS7 lookup types, but no client libraries exist
-# for these in the ports tree.
-LDAP_LIB_TYPE?=OPENLDAP1
+# Define WITH_OPENLDAP1, WITH_OPENLDAP20 or WITH_OPENLDAP21 to link
+# against the respective OpenLDAP library.
+# Exim also supports NETSCAPE and SOLARIS7 lookup types, but no
+# client libraries exist for these in the ports tree.
+#WITH_OPENLDAP1=	yes
+#WITH_OPENLDAP20=	yes
+#WITH_OPENLDAP21=	yes
 
 # DB_LIB_VERSION is the version of the Berkeley DB library to use, and
 # may be 1, which corresponds to version 1.85 in the base system, or 4
@@ -118,7 +118,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/eximon:${PORTSDIR}/mail/exim-monitor
 .include <bsd.port.pre.mk>
 
 PORTDOC_FILES=	Exim3.upgrade Exim4.upgrade OptionLists.txt README \
-		dbm.discuss.txt filter.txt pcre.txt pcretest.txt \
+		dbm.discuss.txt filter.txt pcrepattern.txt pcretest.txt \
 		spec.txt
 .if !defined(WITHOUT_EXISCAN)
 PORTDOC_FILES+=	exiscan-readme.txt
@@ -151,13 +151,37 @@ SEDLIST+=	-e 's,XX_TCP_WRAPPERS_LIBS_XX,,'
 .endif
 
 .if defined(WITH_LDAP)
+LDAP_LIB_TYPE?=OPENLDAP1
 .if (${LDAP_LIB_TYPE} == OPENLDAP1) || (${LDAP_LIB_TYPE} == UMICHIGAN)
-LIB_DEPENDS+=	lber.1:${PORTSDIR}/net/openldap12
+WITH_OPENLDAP1=	yes
 .elif ${LDAP_LIB_TYPE} == OPENLDAP2
-LIB_DEPENDS+=	lber.2:${PORTSDIR}/net/openldap20
+WITH_OPENLDAP2=	yes
 .else
 .error LDAP_LIB_TYPE must be either OPENLDAP1 or OPENLDAP2
 .endif
+.endif
+
+.if defined(WITH_OPENLDAP1) && ( defined(WITH_OPENLDAP2) || \
+	defined(WITH_OPENLDAP20) || defined(WITH_OPENLDAP21) )
+.error please select only one OpenLDAP version
+.elif defined(WITH_OPENLDAP20) && defined(WITH_OPENLDAP21)
+.error OpenLDAP 2.0 and 2.1 are mutually exclusive
+.endif
+
+.if defined(WITH_OPENLDAP21)
+LDAP_LIB_TYPE=	OPENLDAP2
+LIB_DEPENDS+=	lber.2:${PORTSDIR}/net/openldap21
+.elif defined(WITH_OPENLDAP2) || defined(WITH_OPENLDAP20)
+LDAP_LIB_TYPE=	OPENLDAP2
+LIB_DEPENDS+=	lber.2:${PORTSDIR}/net/openldap20
+.elif defined(WITH_OPENLDAP1)
+LDAP_LIB_TYPE=	OPENLDAP1
+LIB_DEPENDS+=	lber.1:${PORTSDIR}/net/openldap12
+.elif defined(LDAP_LIB_TYPE)
+.error please choose the OpenLDAP version you want to use
+.endif
+
+.if defined(LDAP_LIB_TYPE)
 SEDLIST+=	-e 's,XX_LDAP_LIBS_XX,-L${LOCALBASE}/lib -llber -lldap,' \
 		-e 's,XX_LDAP_INCLUDE_XX,-I${LOCALBASE}/include,' \
 		-e 's,XX_LDAP_TYPE_XX,${LDAP_LIB_TYPE},' \
@@ -224,7 +248,7 @@ SEDLIST+=	-e 's,XX_PGSQL_[^ ]*_XX,,'
 SEDLIST+=	-e 's,^\# HAVE_IPV6=,HAVE_IPV6=,'
 .endif
 
-.if !defined(WITH_PGSQL) && !defined(WITH_MYSQL) && !defined(WITH_LDAP) && \
+.if !defined(WITH_PGSQL) && !defined(WITH_MYSQL) && !defined(LDAP_LIB_TYPE) && \
     ${DB_LIB_VERSION} == 1
 SEDLIST+=	-e 's,^LOOKUP_LIBS=,\#LOOKUP_LIBS=,' \
 		-e 's,^LOOKUP_INCLUDE=,\#LOOKUP_INCLUDE=,'

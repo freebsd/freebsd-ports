@@ -24,7 +24,7 @@ sbin/exiqsumm
 %%PORTDOCS%%share/doc/exim/README
 %%PORTDOCS%%share/doc/exim/dbm.discuss.txt
 %%PORTDOCS%%share/doc/exim/filter.txt
-%%PORTDOCS%%share/doc/exim/pcre.txt
+%%PORTDOCS%%share/doc/exim/pcrepattern.txt
 %%PORTDOCS%%share/doc/exim/pcretest.txt
 %%PORTDOCS%%share/doc/exim/spec.txt
 %%PORTDOCS%%%%EXISCAN%%share/doc/exim/exiscan-readme.txt
