@@ -89,9 +89,9 @@ do-install:
 	tar zxf ${DISTDIR}/${AUTOADMIN} -C ${NDIR}
 .endif
 .if defined(USE_128BIT) && !defined(NO_FORTIFY)
-	cd ${WRKDIR}/${FORTIFY} && \
-		(${ECHO} yes ; ${ECHO} no ; ${ECHO} no) \
-		| ./Fortify.sh ${NDIR}/${BROWSER}-${BROWSER_VER}.bin
+	cd ${WRKDIR}/${FORTIFY} \
+	&& (${ECHO}; ${ECHO} yes; ${ECHO} no; ${ECHO} no) \
+	| ./Fortify.sh ${NDIR}/${BROWSER}-${BROWSER_VER}.bin
 .endif
 	${CHOWN} -R root:wheel ${NDIR}
 
