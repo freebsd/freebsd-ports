@@ -1,0 +1,4 @@
+FreeBASE is the plugin subsystem of FreeRIDE, but is also a generally useful
+framework for constructing and deploying plugin-based solutions.
+
+WWW: http://freeride.rubyforge.org/wiki/wiki.pl?FreeBASE
