@@ -8,7 +8,7 @@
 PORTNAME=	stuffit
 PORTVERSION=	5.2.0.611
 CATEGORIES=	archivers linux
-MASTER_SITES=	http://www.aladdinsys.com/downloads/files/
+MASTER_SITES=	http://www.allume.com/downloads/files/
 DISTNAME=	stuffit520.611linux-i386
 
 MAINTAINER=	ports@FreeBSD.org
