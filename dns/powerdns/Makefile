@@ -7,7 +7,7 @@
 
 PORTNAME=	powerdns
 PORTVERSION=	2.9.16
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${PORTVERSION}
@@ -52,8 +52,7 @@ CONFIGURE_ARGS+=	--disable-pgsql
 .endif
 
 .if defined(WITH_MYSQL_DRIVER)
-LIB_DEPENDS+=	mysqlclient:${PORTSDIR}/${MYSQL_PORT}
-MYSQL_PORT?=	databases/mysql323-client
+USE_MYSQL?=		YES
 CONFIGURE_ARGS+=	--enable-mysql
 CONFIGURE_MODULES+=	"gmysql"
 .else
@@ -61,11 +60,9 @@ CONFIGURE_ARGS+=	--disable-mysql
 .endif
 
 .if defined(WITH_LDAP)
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/${LDAP_PORT}
-LIB_DEPENDS+=	lber.2:${PORTSDIR}/${LDAP_PORT}
-LDAP_PORT?=	net/openldap21-client
+USE_OPENLDAP?=		YES
 USE_LIBTOOL_VER=	13
-INSTALLS_SHLIB=	YES
+INSTALLS_SHLIB=		YES
 USE_GCC=3.2
 CONFIGURE_MODULES+=	"ldap"
 PLIST_SUB+=		WITHLDAP=""
