@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	xfce4-panel-themes
-PORTVERSION=	4.0.4
-PORTREVISION=	1
+PORTVERSION=	4.0.5
+PORTREVISION=	0
 CATEGORIES=	misc xfce
-MASTER_SITES=	http://www.xfce.org/archive/xfce-${PORTVERSION}/src/ \
-		ftp://ftp.berlios.de/pub/xfce-goodies/${PORTVERSION}/ \
+MASTER_SITES=	ftp://ftp.berlios.de/pub/xfce-goodies/${PORTVERSION}/ \
 		http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-${PORTVERSION}/src/
 DISTNAME=	xfce4-themes-${PORTVERSION}
 DIST_SUBDIR=	xfce4

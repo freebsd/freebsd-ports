@@ -1,7 +1,9 @@
 lib/xfce4/panel-plugins/libmixer.a
 lib/xfce4/panel-plugins/libmixer.la
 lib/xfce4/panel-plugins/libmixer.so
+share/locale/ar/LC_MESSAGES/xfce4-mixer.mo
 share/locale/az/LC_MESSAGES/xfce4-mixer.mo
+share/locale/bg/LC_MESSAGES/xfce4-mixer.mo
 share/locale/ca/LC_MESSAGES/xfce4-mixer.mo
 share/locale/cs/LC_MESSAGES/xfce4-mixer.mo
 share/locale/de/LC_MESSAGES/xfce4-mixer.mo

@@ -4,7 +4,9 @@ lib/libxfprint.a
 lib/libxfprint.la
 lib/libxfprint.so
 lib/libxfprint.so.0
+share/locale/ar/LC_MESSAGES/xfprint.mo
 share/locale/az/LC_MESSAGES/xfprint.mo
+share/locale/bg/LC_MESSAGES/xfprint.mo
 share/locale/ca/LC_MESSAGES/xfprint.mo
 share/locale/cs/LC_MESSAGES/xfprint.mo
 share/locale/de/LC_MESSAGES/xfprint.mo
@@ -14,6 +16,7 @@ share/locale/fa_IR/LC_MESSAGES/xfprint.mo
 share/locale/fr/LC_MESSAGES/xfprint.mo
 share/locale/hi/LC_MESSAGES/xfprint.mo
 share/locale/hu/LC_MESSAGES/xfprint.mo
+share/locale/it/LC_MESSAGES/xfprint.mo
 share/locale/ja/LC_MESSAGES/xfprint.mo
 share/locale/lt/LC_MESSAGES/xfprint.mo
 share/locale/ms/LC_MESSAGES/xfprint.mo

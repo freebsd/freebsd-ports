@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	xfce4-desktop
-PORTVERSION=	4.0.4
-PORTREVISION=	1
+PORTVERSION=	4.0.5
+PORTREVISION=	0
 CATEGORIES=	x11-wm xfce
-MASTER_SITES=	http://www.xfce.org/archive/xfce-${PORTVERSION}/src/ \
-		ftp://ftp.berlios.de/pub/xfce-goodies/${PORTVERSION}/ \
+MASTER_SITES=	ftp://ftp.berlios.de/pub/xfce-goodies/${PORTVERSION}/ \
 		http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-${PORTVERSION}/src/
 DISTNAME=	xfdesktop-${PORTVERSION}
 DIST_SUBDIR=	xfce4
@@ -27,7 +26,7 @@ RUN_DEPENDS=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager
 USE_GETTEXT=	yes
 USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CFLAGS=-I${LOCALBASE}/include \

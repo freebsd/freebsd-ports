@@ -5,6 +5,7 @@ etc/xfce4/menu.xml.ca
 etc/xfce4/menu.xml.de
 etc/xfce4/menu.xml.fr
 etc/xfce4/menu.xml.hu
+etc/xfce4/menu.xml.it
 etc/xfce4/menu.xml.nl
 etc/xfce4/menu.xml.ta
 etc/xfce4/menu.xml.tr
@@ -17,7 +18,9 @@ lib/xfce4/mcs-plugins/backdrop_settings.so
 lib/xfce4/mcs-plugins/workspaces_settings.a
 lib/xfce4/mcs-plugins/workspaces_settings.la
 lib/xfce4/mcs-plugins/workspaces_settings.so
+share/locale/ar/LC_MESSAGES/xfdesktop.mo
 share/locale/az/LC_MESSAGES/xfdesktop.mo
+share/locale/bg/LC_MESSAGES/xfdesktop.mo
 share/locale/ca/LC_MESSAGES/xfdesktop.mo
 share/locale/cs/LC_MESSAGES/xfdesktop.mo
 share/locale/de/LC_MESSAGES/xfdesktop.mo

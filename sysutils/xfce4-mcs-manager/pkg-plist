@@ -4,6 +4,7 @@ include/xfce4/xfce-mcs-manager/manager-plugin.h
 libdata/pkgconfig/xfce-mcs-manager.pc
 share/locale/ar/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/az/LC_MESSAGES/xfce-mcs-manager.mo
+share/locale/bg/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/ca/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/cs/LC_MESSAGES/xfce-mcs-manager.mo
 share/locale/de/LC_MESSAGES/xfce-mcs-manager.mo

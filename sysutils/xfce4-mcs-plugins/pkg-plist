@@ -9,6 +9,7 @@ lib/xfce4/mcs-plugins/ui_plugin.la
 lib/xfce4/mcs-plugins/ui_plugin.so
 share/locale/ar/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/az/LC_MESSAGES/xfce-mcs-plugins.mo
+share/locale/bg/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/ca/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/cs/LC_MESSAGES/xfce-mcs-plugins.mo
 share/locale/de/LC_MESSAGES/xfce-mcs-plugins.mo
