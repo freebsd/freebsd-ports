@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sylpheed-claws
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.1
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -22,7 +22,8 @@ USE_GTK=	yes
 CONFIGURE_ARGS=	--program-suffix="-claws" --with-included-gettext \
 		--enable-ipv6
 
-CONFIGURE_ENV=	CFLAGS="${CFLAGS}" LIBS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CFLAGS="${CFLAGS}" CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 .if defined(WITH_PIXBUF) || defined(WITH_ALL)
 LIB_DEPENDS+=		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
@@ -50,6 +51,16 @@ CONFIGURE_ARGS+=	--disable-jconv
 LIB_DEPENDS+=		pspell.4:${PORTSDIR}/textproc/pspell
 CONFIGURE_ARGS+=	--enable-pspell
 .endif
+.if defined(WITH_JPILOT) || defined(WITH_ALL)
+LIB_DEPENDS+=		pisock.4:${PORTSDIR}/palm/pilot-link
+RUN_DEPENDS+=		${LOCALBASE}/pilot/bin/jpilot:${PORTSDIR}/palm/jpilot
+CONFIGURE_ARGS+=	--enable-jpilot
+.endif
+.if defined(WITH_LDAP) || defined(WITH_ALL)
+LIB_DEPENDS+=		ldap.2:${PORTSDIR}/net/openldap2
+CONFIGURE_ARGS+=	--enable-ldap
+CONFIGURE_ENV+=		PTHREAD_LIBS=${PTHREAD_LIBS:S/"//g}
+.endif
 .if !defined(WITHOUT_SSL)
 USE_OPENSSL=		yes
 CONFIGURE_ARGS+=	--enable-ssl
@@ -60,11 +71,14 @@ pre-everything::
 	@${ECHO} "You may define the following build options:"
 	@${ECHO} ""
 	@${ECHO} "      WITH_ALL       Enable all options below"
+	@${ECHO} ""
 	@${ECHO} "      WITH_PIXBUF    Enable GDK Pixbuf support"
 	@${ECHO} "      WITH_GPGME     Enable GnuPG support using GPGME"
 	@${ECHO} "      WITH_COMPFACE  Enable compface (X-Face) support"
 	@${ECHO} "      WITH_JCONV     Enable enhanced charset conversion"
 	@${ECHO} "      WITH_PSPELL    Enable spell-checking support"
+	@${ECHO} "      WITH_JPILOT    Enable JPilot support"
+	@${ECHO} "      WITH_LDAP      Enable LDAP access support"
 	@${ECHO} ""
 	@${ECHO} "      WITHOUT_SSL    Disable OpenSSL support"
 	@${ECHO} ""
@@ -90,6 +104,10 @@ post-install:
 .for i in eud2gc.py filter_conv.pl gif2xface.pl ldif-to-xml.py newscache_clean.pl
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/${i} ${DATADIR}
 .endfor
+	@for d in `${FIND} ${WRKSRC}/themes`; do \
+		if ${TEST} -d $${d}; then ${MKDIR} ${DATADIR}/$${d#${WRKSRC}/}; else \
+		${INSTALL_DATA} $${d} ${DATADIR}/$${d#${WRKSRC}}; fi; \
+	done
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/sylpheed-switcher ${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/sylprint.pl ${PREFIX}/bin
 	@${INSTALL_DATA} ${WRKSRC}/tools/sylprint.rc ${PREFIX}/etc/sylprint.rc.example
