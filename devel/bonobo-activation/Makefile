@@ -34,6 +34,6 @@ MAN1=	bonobo-activation-server.1
 pre-patch:
 	@find ${WRKSRC} -name Makefile.in | xargs ${REINPLACE_CMD} -e \
 		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g ; \
-		s|[(]libdir[)]/bonobo/servers|(prefix)/libdata/bonobo/servers|g'
+		 s|[(]libdir[)]/bonobo/servers|(prefix)/libdata/bonobo/servers|g'
 
 .include <bsd.port.mk>
