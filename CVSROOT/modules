@@ -202,6 +202,7 @@ accessx		ports/x11/accessx
 accrete		ports/astro/accrete
 ace		ports/devel/ace
 ace+tao		ports/devel/ace+tao
+ace+tao-doc	ports/devel/ace+tao-doc
 acfax		ports/comms/acfax
 achievo		ports/misc/achievo
 acid		ports/security/acid
