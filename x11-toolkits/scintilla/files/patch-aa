@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- makefile.orig	Sun Apr 15 10:24:36 2001
-+++ makefile	Tue Apr 17 14:04:58 2001
+--- makefile.orig	Sat May 19 01:57:10 2001
++++ makefile	Thu Jun  7 11:19:46 2001
 @@ -5,10 +5,11 @@
  # GNU make does not like \r\n line endings so should be saved to CVS in binary form.
  
@@ -18,7 +18,7 @@ $FreeBSD$
  
  vpath %.h ../src ../include
  vpath %.cxx ../src
-@@ -17,20 +18,20 @@
+@@ -17,13 +18,13 @@
  CXXBASEFLAGS=-W -Wall -DGTK -DSCI_LEXER $(INCLUDEDIRS)
  
  ifdef DEBUG
@@ -31,10 +31,11 @@ $FreeBSD$
  
  .cxx.o:
 -	$(CC) `gtk-config --cflags` $(CXXFLAGS) -c $<
-+	$(CC) -DPIC -fPIC -fpic $(shell $(GTK_CONFIG) --cflags) $(CXXFLAGS) -c $<
++	$(CC) -DPIC -fpic $(shell $(GTK_CONFIG) --cflags) $(CXXFLAGS) -c $<
  
- LEXOBJS	= LexAda.o LexAVE.o LexConf.o LexCPP.o LexHTML.o LexLua.o \
- 	LexOthers.o LexPascal.o LexPerl.o LexPython.o LexSQL.o LexVB.o
+ LEXOBJS=LexAda.o LexAVE.o LexConf.o LexCPP.o LexEiffel.o LexHTML.o \
+ 	LexLisp.o LexLua.o LexOthers.o LexPascal.o LexPerl.o \
+@@ -31,7 +32,7 @@
  
  # The LEXOBJS have to be treated specially as the functions in them are not called from external code
  
@@ -43,7 +44,7 @@ $FreeBSD$
  
  clean:
  	rm -f *.o $(COMPLIB)
-@@ -42,7 +43,10 @@
+@@ -43,7 +44,10 @@
  	ScintillaBase.o ContractionState.o Editor.o PropSet.o PlatGTK.o \
  	KeyMap.o LineMarker.o ScintillaGTK.o CellBuffer.o ViewStyle.o \
  	RESearch.o Style.o Indicator.o AutoComplete.o
