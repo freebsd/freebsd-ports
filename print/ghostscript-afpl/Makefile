@@ -7,9 +7,9 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	7.04
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:DEFAULT,gprint,hpijs/} \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:DEFAULT,fonts,gprint,hpijs/} \
 		http://www.gelhaus.net/hp880c/1.4beta/:hp8xx \
 		http://home.t-online.de/home/Martin.Lottermoser/pcl3dist/:hpdj_pcl3 \
 		http://www.harsch.net/Download/:dj970 \
@@ -20,16 +20,15 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:DEFAULT,gprint,hpijs/} \
 		http://www.ceres.dti.ne.jp/~owatanab/gdevnpdl/:npdl \
 		http://www.linuxprinting.org/download/printing/samsung-gdi/:gdi \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/AFPL/fonts/:fonts \
-		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/AFPL/gs704/ \
-		ftp://gatekeeper.dec.com/pub/GNU/ghostscript/:gatekeeper
+		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/AFPL/gs704/
 MASTER_SITE_SUBDIR=	${PORTNAME} \
 			gimp-print/:gprint \
 			hpinkjet/:hpijs \
 			ghostscript/:ports_jp
 PKGNAMESUFFIX=	-afpl
 DISTFILES=	${GS_SRCS}:DEFAULT \
-		${GS_FONTS_STD}:DEFAULT \
-		${GS_FONTS_OTHER}:DEFAULT \
+		${GS_FONTS_STD}:fonts \
+		${GS_FONTS_OTHER}:fonts \
 		${HP8XX_SRCS}:hp8xx \
 		${HPDJ_SRCS}:hpdj_pcl3 \
 		${PCL3_SRCS}:hpdj_pcl3 \
@@ -144,7 +143,7 @@ DJ970_SRCS=	${DJ970}.c.gz
 # Gimp-Print - very high quality driver for Epson, HPs,...
 # http://gimp-print.sourceforge.net/
 GPRINT=		gimp-print
-GPRINT_VERS=	4.2.0
+GPRINT_VERS=	4.2.1
 GPRINT_NAME=	${GPRINT}-${GPRINT_VERS}
 GPRINT_SRCS=	${GPRINT_NAME}.tar.gz
 
@@ -396,8 +395,7 @@ post-configure:
 	${ECHO_MSG} ">>>   running configure script for ${GPRINT} library ..."
 	cd ${WRKSRC}/${GPRINT_NAME} ; \
 		${SETENV} ${MAKE_ENV} ${SH} ./configure \
-			--without-cups --without-translated-ppds \
-			--with-ghost --without-foomatic \
+			--without-translated-ppds --with-ghost \
 			--without-gimp --without-samples \
 			--without-user-guide --disable-escputil \
 			--disable-nls --disable-shared \

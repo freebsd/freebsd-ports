@@ -129,7 +129,7 @@ Have fun with this new configuration style !     -andreas \n\n\
   "pxlcolor" "HP PCL XL color printers (Color LaserJet 4500/5000)" ON \
   "pcl3"     "HP PCL 3+ (generic) [PCL3]" ON \
   "hpdj"     "HP PCL 3+ (old drv.) [HPDJ]" ON \
-  "ijs"      "HP PhotoSmart/DeskJet series [HPinkjet]" ON \
+  "ijs"      "HP Inkjet and other raster devices" ON \
   "ibmpro"   "IBM 9-pin Proprinter" OFF \
   "jetp3852" "IBM Jetprinter ink-jet color (Model #3852)" OFF \
   "imagen"   "Imagen ImPress printers" OFF \
