@@ -14,10 +14,13 @@ DISTNAME=	MasqMail-${PORTVERSION}
 MAINTAINER=	vasallia@ukr.net
 COMMENT=	Mail server for hosts, not permanently connected to the internet
 
+CONFLICTS=	masqmail-0.2*
+
 MAN5=		masqmail.aliases.5 masqmail.conf.5 masqmail.get.5 masqmail.route.5
 MAN8=		masqmail.8
 
 GNU_CONFIGURE=	yes
+CFLAGS+=	-Wno-trigraphs
 CONFIGURE_ARGS+=	--mandir=${PREFIX}/man --with-user=mailnull --with-group=mail \
 		--with-conffile=${PREFIX}/etc/masqmail --with-logdir=/var/log/masqmail
 
