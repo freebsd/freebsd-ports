@@ -83,6 +83,7 @@
     SUBDIR += sphinx
     SUBDIR += splay
     SUBDIR += splaytk
+    SUBDIR += streamripper
     SUBDIR += tclmidi
     SUBDIR += timidity
     SUBDIR += timidity++
