@@ -1,0 +1,19 @@
+This is the Linux version the Quake III Arena demo 
+from id Software / Loki Software
+
+It features single and multi player gaming.
+
+Note that the graphics performance is typically bound by your
+OpenGL driver.
+
+Tested with:
+o FreeBSD5.0-CURRENT, AMD K7-700, GeForce DDR, XFree86 3.3.6, 
+  Mesa 3.2.1, Utah glx 0.9 (the rather slow hw acc driver)
+  results in 21.5 fps (640x480x16) for time demo 'demo001'.
+  Sound worked fine (SB Live).
+
+IMPORTANT:
+Due to license restrictions, this package must be manually downloaded
+from the Loki web site:
+
+WWW: http://quake3.lokigames.com

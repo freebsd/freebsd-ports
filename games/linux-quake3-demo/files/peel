@@ -1,0 +1,3 @@
+#!/bin/sh
+cd $2
+tail +165 $1 | tar xfoz -
