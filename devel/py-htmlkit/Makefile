@@ -11,7 +11,6 @@ CATEGORIES=		devel python www
 MASTER_SITES=		http://www.dekorte.com/Software/Python/HtmlKit/Download/
 PKGNAMEPREFIX=		py-
 DISTNAME=		HtmlKit
-EXTRACT_SUFX=		.tar
 
 MAINTAINER=		kbyanc@posi.net
 
