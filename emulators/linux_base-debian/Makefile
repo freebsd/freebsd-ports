@@ -14,11 +14,12 @@ PKGNAMESUFFIX=	-debian
 DISTFILES=	basedebs.tar util-linux-locales_2.11n-4_all.deb
 EXTRACT_ONLY=	basedebs.tar
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Debian base set for the Linux mode
 
 BUILD_DEPENDS=	${DPKG_CMD}:${PORTSDIR}/archivers/dpkg
 
+CONFLICTS=	linux_base-*
 DIST_SUBDIR=	debian-${PORTVERSION}-${DISTDATE}
 DISTDATE=	2002-07-18
 WRKSRC=		${WRKDIR}/var/cache/apt/archives
