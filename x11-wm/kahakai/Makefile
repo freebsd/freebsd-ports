@@ -41,10 +41,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not compile on amd64"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/tmp/ktest|${X11BASE}|' \
 		${WRKSRC}/data/styles/Default.kastyle.in
