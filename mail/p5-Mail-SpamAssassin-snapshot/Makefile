@@ -16,6 +16,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	DougB@FreeBSD.org
 
+BROKEN=		"mail/p5-Mail-SpamAssassin has been updated to 2.50"
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/DNS.pm:${PORTSDIR}/net/p5-Net-DNS \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools
