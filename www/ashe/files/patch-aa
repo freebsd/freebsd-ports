@@ -13,7 +13,7 @@
   all: $(LIBTARGET)
 --- 1,5 ----
   LIBTARGET = libhtmlw.a
-! CFLAGS+=-I/usr/X11R6/include -DMOTIF1_2
+! CFLAGS+=-I${X11BASE}/include -DMOTIF1_2
   RANLIB=ranlib
   
   all: $(LIBTARGET)
