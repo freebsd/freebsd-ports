@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.oac.uci.edu/indiv/ehood/contrib/marc-search/
 
 MAINTAINER=	sheldonh@FreeBSD.org
 
+BROKEN=		"requires AppCfg.pm, supplied with Wilma"
+
 RUN_DEPENDS=	mhonarc:${PORTSDIR}/www/mhonarc \
 		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/CGI_Lite.pm:${PORTSDIR}/www/p5-CGI_Lite
 
