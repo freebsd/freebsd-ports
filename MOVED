@@ -1313,3 +1313,15 @@ www/galeon2|www/galeon|2004-11-09|renamed to galeon
 www/mozilla-gtk1||2004-11-09|obsoleted by gtk2 version
 devel/sdcc|lang/sdcc|2004-11-18|remove duplicate port
 devel/jude_take|devel/jude-community|2004-11-23|renamed by upstream
+chinese/linux-gtk||2004-11-27|deleted due to dependency being removed
+chinese/cle_base||2004-11-27|deleted due to security problem
+mail/xpbiff-youbin||2004-11-27|deleted due to dependency being removed
+mail/youbin||2004-11-27|deleted due to security problem
+japanese/sdic||2004-11-27|deleted due to dependency being removed
+japanese/edict-sdic||2004-11-27|deleted due to checksum failure
+devel/ruby-flex_rb||2004-11-27|deleted due to build failure
+japanese/linux_locale||2004-11-27|not needed with linux_base7 and later
+mail/postfix20|mail/postfix|2004-11-27|obsolete
+math/ruby-math3d||2004-11-27|deleted due to build failure
+misc/biblereader||2004-11-27|deleted due to fetch failure
+misc/grdb||2004-11-27|depended on GTK1, which is obsolete
