@@ -1,8 +1,8 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/editors/openoffice.org-3-devel/files/Attic/openoffice-wrapper,v 1.9 2003-09-14 21:52:25 mbr Exp $
+# $FreeBSD: /tmp/pcvs/ports/editors/openoffice.org-3-devel/files/Attic/openoffice-wrapper,v 1.10 2003-09-16 06:50:17 mbr Exp $
 
-oopath=%%PREFIX%%/OpenOffice.org-%%FRELEASE_NR%%/program/
+oopath=%%PREFIX%%/OpenOffice.org%%FRELEASE_NR%%/program/
 program=`echo $0 | sed -e 's|.*-%%RELEASE_NR%%-||'`
 
 if [ ! $LANG ]; then
