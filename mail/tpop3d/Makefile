@@ -30,7 +30,7 @@ CONFIGURE_ARGS+=	--enable-auth-mysql \
 .endif
 
 .if defined(WITH_LDAP)
-LIB_DEPENDS+=		ldap.2:${PORTSDIR}/net/openldap20-client
+LIB_DEPENDS+=		ldap-2.2:${PORTSDIR}/net/openldap22-client
 CONFIGURE_ARGS+=	--enable-auth-ldap --with-openldap-root=${LOCALBASE}
 .endif
 
