@@ -1,2 +1,3 @@
 sbin/gag
 share/doc/gag/README
+@dirrm share/doc/gag
