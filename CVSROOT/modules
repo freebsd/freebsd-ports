@@ -2083,6 +2083,7 @@ gnomba		ports/net/gnomba
 gnome--		ports/x11-toolkits/gnome--
 gnome-commander	ports/x11-fm/gnome-commander
 gnome-cups-manager	ports/print/gnome-cups-manager
+gnome-industrial-theme	ports/x11-toolkits/gnome-industrial-theme
 gnome-jabber	ports/net/gnome-jabber
 gnome-icon-theme	ports/misc/gnome-icon-theme
 gnome-look	ports/x11-toolkits/gnome-look
