@@ -86,7 +86,7 @@ post-install:
 # stop webmin if configured and enabled at startup
 	@[ -n "${BATCH}" ] || ([ ! -d ${PREFIX}/etc/webmin ] || [ ! -x ${PREFIX}/etc/rc.d/webmin.sh ] || ${PREFIX}/etc/rc.d/webmin.sh stop > /dev/null)
 # upgrade configuration if etc/webmin exists
-	@[ ! -d ${PREFIX}/etc/webmin ] || echo | nostart=Y ${PREFIX}/lib/webmin/setup.sh
+	@[ ! -d ${PREFIX}/etc/webmin ] || ${ECHO_CMD} | nostart=Y ${PREFIX}/lib/webmin/setup.sh
 # run interactive setup if not in BATCH mode and no configuration exists
 	@[ -n "${BATCH}" ] || ([ -d ${PREFIX}/etc/webmin ] || nostart=Y ${PREFIX}/lib/webmin/setup.sh)
 	@${CAT} ${PKGMESSAGE}
