@@ -37,7 +37,7 @@ post-extract:
 
 pre-patch:
 	@(cd ${WRKSRC} && \
-	${PATCH} ${PATCH_ARGS} < ${FILESDIR}/patch-texinfmt.el.patch ; \
+	${PATCH} ${PATCH_ARGS} < ${FILESDIR}/extra-patch-texinfmt.el.patch ; \
 	)
 
 post-patch:
