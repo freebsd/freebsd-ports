@@ -56,4 +56,4 @@ do-install: install-cnotice
 	@${ECHO_MSG} "Installing Doxygen to ${PREFIX}/share/vtk/doxygen :"
 	@cd ${WRKSRC}/Utilities/Doxygen ; ${MAKE} install
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

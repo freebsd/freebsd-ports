@@ -27,4 +27,4 @@ do-install:
 	@${CP} -R ${WRKSRC}/* ${VTKDATAROOT}
 
 .include "${MASTERDIR}/Makefile"
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

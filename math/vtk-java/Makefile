@@ -66,4 +66,4 @@ do-install: install-cnotice install-binaries install-libs
 	@${ECHO_MSG} "" >> ${TESTINGDIR}/Java/README
 	@${ECHO_MSG} "Be shure to use java 1.3 or greater." >> ${TESTINGDIR}/Java/README
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
