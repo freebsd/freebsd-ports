@@ -1,6 +1,6 @@
 pLaTeX2e is TeX macro package for ASCII pTeX.
 
-This version is based on LaTeX2e <97/06/01>.
+This version is based on LaTeX2e <97/12/01>.
 
 pLaTeX2e supports JIS, Japanese EUC and Shift-JIS.  This package
 installs only the files that are character code independent.  You need
