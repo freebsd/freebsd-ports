@@ -7,6 +7,7 @@
 
 PORTNAME=	console
 PORTVERSION=	${CONSOLE_LICQ_VER}
+PORTREVISION=	1
 CATEGORIES=	net
 
 LIB_DEPENDS=	cdk.4:${PORTSDIR}/devel/cdk
@@ -23,10 +24,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-USE_GCC=	3.3
-.endif
 
 .if ${ARCH} == "alpha"
 BROKEN=		gp-relative relocation against dynamic symbol
