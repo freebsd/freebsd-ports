@@ -80,6 +80,7 @@
     SUBDIR += foldoc-fpw
     SUBDIR += freepwing
     SUBDIR += fumeikai-fpw
+    SUBDIR += gaim
     SUBDIR += gal
     SUBDIR += gauche-kakasi
     SUBDIR += gawk
