@@ -29,6 +29,7 @@
     SUBDIR += barry
     SUBDIR += battfink
     SUBDIR += bbapm
+    SUBDIR += bbsmount
     SUBDIR += bchunk
     SUBDIR += bkpupsd
     SUBDIR += bksh
