@@ -7408,6 +7408,7 @@ ruby-gtk2	ports/x11-toolkits/ruby-gtk2
 ruby-hmac	ports/security/ruby-hmac
 ruby-html-fillinform	ports/textproc/ruby-html-fillinform
 ruby-html-parser	ports/textproc/ruby-html-parser
+ruby-html-template	ports/textproc/ruby-html-template
 ruby-htmlcompact	ports/textproc/ruby-htmlcompact
 ruby-htmlrepair	ports/textproc/ruby-htmlrepair
 ruby-htmlsplit	ports/textproc/ruby-htmlsplit
