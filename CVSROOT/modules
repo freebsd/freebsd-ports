@@ -3644,7 +3644,6 @@ ja-tcl80	ports/japanese/tcl80
 ja-tdiary	ports/japanese/tdiary
 ja-texinfo	ports/japanese/texinfo
 ja-tgif		ports/japanese/tgif
-ja-tgif2tex	ports/japanese/tgif2tex
 ja-timidity++-slang	ports/japanese/timidity++-slang
 ja-timidity++-tcltk	ports/japanese/timidity++-tcltk
 ja-tk42		ports/japanese/tk42
