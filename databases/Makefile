@@ -191,6 +191,7 @@
     SUBDIR += postgresql-odbc
     SUBDIR += postgresql-plruby
     SUBDIR += postgresql-pltcl
+    SUBDIR += postgresql-relay
     SUBDIR += postgresql-tcltk
     SUBDIR += postgresql7
     SUBDIR += postgresql72
