@@ -1,0 +1,31 @@
+--- uquake/Makefile.in.orig2	Tue May 14 21:27:45 2002
++++ uquake/Makefile.in	Wed May 15 15:09:43 2002
+@@ -203,6 +203,9 @@
+ CL_COMMON_SRC = $(MISC_SRC) $(CL_GUI_SRC) $(CL_SRC) \
+ 	$(CL_ADDITIONAL_GENERAL_SRC) $(SND_SRC) r_part.c
+ 
++SDL_CFLAGS  = @SDL_CFLAGS@ -DSDL
++SDL_LDFLAGS = @SDL_LIBS@
++
+ 
+ ########################################################################
+ #
+@@ -352,9 +355,6 @@
+ ALL_SDL_OBJS = $(patsubst %,$(BUILD_DIR)/soft/%,$(addsuffix .@OBJEXT@,\
+                $(basename $(ALL_SDL_SRC) .c .s)))
+ 
+-SDL_CFLAGS  = @SDL_CFLAGS@ -DSDL
+-SDL_LDFLAGS = @SDL_LIBS@
+-
+ $(BUILD_DIR)/soft/vid_sdl.@OBJEXT@: $(COMMON_DIR)/vid_sdl.c
+ 	$(CC) $(CFLAGS) $(SDL_CFLAGS) -o $@ -c $<
+ 
+@@ -447,7 +444,7 @@
+ $(BUILD_DIR)/gl/dga_check.@OBJEXT@: $(COMMON_DIR)/dga_check.c
+ 	$(CC) $(CFLAGS) $(X11_CFLAGS) -o $@ -c $<
+ 
+-$(BUILD_DIR)/soft/snd_oss.@OBJEXT@: $(COMMON_DIR)/snd_oss.c
++$(BUILD_DIR)/gl/snd_oss.@OBJEXT@: $(COMMON_DIR)/snd_oss.c
+ 	$(CC) $(CFLAGS) $(SDL_CFLAGS) -o $@ -c $<
+ 
+ $(GLQUAKE): gl_DIR $(BUILD_DIR)/../$(GLQUAKE)
