@@ -4,19 +4,20 @@
 # Date created:		25 July 1996
 # Whom:			obrien@cs.ucdavis.edu
 #
-# $Id: Makefile,v 1.64 1998/10/15 00:07:04 jseger Exp $
+# $Id: Makefile,v 1.65 1999/02/11 11:13:47 ache Exp $
 #
 
-DISTNAME=       tinpre-1.4-980818
+DISTNAME=       tinpre-1.4-19990216
 CATEGORIES=	news
 MASTER_SITES=   ftp://ftp.tin.org/pub/news/clients/tin/current/ \
-		ftp://nuxi.ucdavis.edu/pub/tin/ \
-		ftp://ftp.nuxi.com/pub/tin/
-EXTRACT_SUFX=	.tgz
+		ftp://nuxi.ucdavis.edu/pub/tin/pre-v1.4/ \
+		ftp://ftp.nuxi.com/pub/tin/pre-v1.4/
+
+MAINTAINER=     ache@FreeBSD.org
 
 LIB_DEPENDS=    uu.1:${PORTSDIR}/converters/uulib
 
-MAINTAINER=     ache@FreeBSD.org
+USE_BZIP2=	yes
 
 WRKSRC=         ${WRKDIR}/${DISTNAME:S/pre-1.4//}
 GNU_CONFIGURE=	yes
@@ -58,7 +59,7 @@ post-patch:
 post-install:
 	cd ${WRKSRC}/doc; ${INSTALL_DATA} tin.defaults ${PREFIX}/etc/tin.defaults.dist
 	if [ ! -f ${PREFIX}/etc/tin.defaults ] ; then \
-		cp ${PREFIX}/etc/tin.defaults.dist ${PREFIX}/etc/tin.defaults; \
+		${CP} ${PREFIX}/etc/tin.defaults.dist ${PREFIX}/etc/tin.defaults; \
 	fi
 
 .include <bsd.port.mk>
