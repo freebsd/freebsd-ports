@@ -1,6 +1,6 @@
-lib/php/%%EXT_DIR%%/ZendOptimizer_TS.so
-lib/php/%%EXT_DIR%%/ZendOptimizer.so
-%%PORTDOCS%%share/doc/ZendOptimizer/ZendOptimizer_TechFAQ.pdf
-%%PORTDOCS%%share/doc/ZendOptimizer/ZendOptimizer_UserGuide.pdf
-@unexec rmdir %D/lib/php/%%EXT_DIR%% 2> /dev/null || true
-%%PORTDOCS%%@dirrm share/doc/ZendOptimizer
+lib/php/%%PHP_EXT_DIR%%/ZendOptimizer_TS.so
+lib/php/%%PHP_EXT_DIR%%/ZendOptimizer.so
+%%PORTDOCS%%%%DOCSDIR%%/ZendOptimizer_TechFAQ.pdf
+%%PORTDOCS%%%%DOCSDIR%%/ZendOptimizer_UserGuide.pdf
+@unexec rmdir %D/lib/php/%%PHP_EXT_DIR%% 2> /dev/null || true
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
