@@ -26,7 +26,6 @@ lib/sr/srlatex.sty
 lib/sr/srlib.a
 lib/sr/srmap
 lib/sr/srmulti.h
-lib/sr/srwin.o
 lib/sr/srx
 share/doc/sr/notes/Memory
 share/doc/sr/notes/Questions
