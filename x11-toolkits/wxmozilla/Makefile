@@ -28,4 +28,10 @@ USE_LIBTOOL_VER=15
 CONFIGURE_ARGS=	--with-wx-config=${WXGTK_CONFIG} --enable-python
 INSTALLS_SHLIB=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+IGNORE=	"Does not build on 4.X"
+.endif
+
+.include <bsd.port.post.mk>
