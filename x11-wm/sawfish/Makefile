@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	stable/sources/sawfish
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	rep.11:${PORTSDIR}/lang/librep
+LIB_DEPENDS=	rep.12:${PORTSDIR}/lang/librep
 BUILD_DEPENDS=	${X11BASE}/libexec/rep/${GNUHOST}/gtk.so:${PORTSDIR}/x11-toolkits/rep-gtk
 RUN_DEPENDS=	${X11BASE}/libexec/rep/${GNUHOST}/gtk.so:${PORTSDIR}/x11-toolkits/rep-gtk
 
@@ -24,6 +24,7 @@ PLIST_SUB=	GNUHOST=${GNUHOST} VERSION=${PORTVERSION}
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_IMLIB=	yes
+USE_REINPLACE=	yes
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-readline \
@@ -51,14 +52,14 @@ CONFIGURE_ARGS+=--disable-capplet \
 .endif
 
 pre-patch:
-	@${PERL} -pi -e 's^-l(pthread|c_r)^${PTHREAD_LIBS}^g ; \
+	@${REINPLACE_CMD} -e 's^-l(pthread|c_r)^${PTHREAD_LIBS}^g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
 		 s|USE_INCLUDED_LIBINTL=yes|#USE_INCLUDED_LIBINTL=yes|g ; \
-		 s|\$$\(top_builddir\)/intl/libintl.a|-lintl|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
-		's|\$$\(datadir\)/gnome/|\$$\(datadir\)/|g ; \
-		 s|\$$\(datadir\)/aclocal|\$$\(prefix\)/share/aclocal|g ; \
-		 s|\$$\(datadir\)/locale|\$$\(prefix\)/share/locale|g'
+		 s|[(]top_builddir[)]/intl/libintl.a|-lintl|g' ${WRKSRC}/configure
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${REINPLACE_CMD} -e \
+		's|[(]datadir[)]/gnome/|(datadir)/|g ; \
+		 s|[(]datadir[)]/aclocal|(prefix)/share/aclocal|g ; \
+		 s|[(]datadir[)]/locale|(prefix)/share/locale|g'
 
 post-install:
 	install-info --section="X11 window manager" \
