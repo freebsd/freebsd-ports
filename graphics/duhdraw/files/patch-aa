@@ -1,0 +1,12 @@
+*** duhdraw.c.old	Fri Jun 21 18:04:08 2002
+--- duhdraw.c	Fri Jun 21 18:04:17 2002
+***************
+*** 11,17 ****
+  #include <stdio.h>
+  #include <dirent.h>
+  #include <sys/stat.h>
+- #include <malloc.h>
+  #include <time.h>
+  #include <curses.h> 
+  #include <ctype.h>
+--- 11,16 ----

@@ -46,6 +46,7 @@
     SUBDIR += dri-devel
     SUBDIR += drm-kmod
     SUBDIR += dtv
+    SUBDIR += duhdraw
     SUBDIR += dumpmpeg
     SUBDIR += dvdrip
     SUBDIR += dynamechs
