@@ -205,6 +205,7 @@
     SUBDIR += qmail-contrib
     SUBDIR += qmail-ldap
     SUBDIR += qmail-mysql
+    SUBDIR += qmail-notify
     SUBDIR += qmail-tls
     SUBDIR += qmailadmin
     SUBDIR += qmailanalog
