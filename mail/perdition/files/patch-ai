@@ -1,0 +1,24 @@
+--- perdition/str.c.orig	Sun Apr 21 04:10:48 2002
++++ perdition/str.c	Sun Apr 21 04:13:22 2002
+@@ -35,7 +35,6 @@
+ #include <stdlib.h>
+ #include <stdarg.h>
+ #include <unistd.h>
+-#include <printf.h>
+ #include <sys/uio.h>
+ #include <vanessa_socket.h>
+ 
+@@ -96,13 +95,6 @@
+ 
+   extern options_t opt;
+   extern vanessa_logger_t *perdition_vl;
+-
+-  if((fmt_args=parse_printf_format(fmt, 0, NULL)) != nargs){
+-    PERDITION_DEBUG_UNSAFE(
+-      "nargs and fmt missmatch: %d args requested, %d args in format", nargs,
+-      fmt_args);
+-    return(-1);
+-  }
+ 
+   va_start(ap, fmt);
+   if((bytes=vsnprintf(__str_write_buf, STR_WRITE_BUF_LEN-2, fmt, ap))<0){
