@@ -222,8 +222,12 @@ bin/btshowmetainfo.py
 %%PYTHON_SITELIBDIR%%/BitTornado/zurllib.pyc
 %%PYTHON_SITELIBDIR%%/BitTornado/zurllib.pyo
 share/BTQueue/ip2cc.db
+share/doc/BTQueue/examples/interest.xml
+share/doc/BTQueue/examples/tracker.xml
 @dirrm %%PYTHON_SITELIBDIR%%/BitCrawler
 @dirrm %%PYTHON_SITELIBDIR%%/BitQueue
 @dirrm %%PYTHON_SITELIBDIR%%/BitTornado/BT1
 @dirrm %%PYTHON_SITELIBDIR%%/BitTornado
 @dirrm share/BTQueue
+@dirrm share/doc/BTQueue/examples
+@dirrm share/doc/BTQueue
