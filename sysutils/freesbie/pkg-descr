@@ -2,6 +2,8 @@ The FreeSBIE port is a collection of scripts which
 help a user to create CDs/DVDs containing a complete
 operating system based on FreeBSD.
 It is used as "live-cd" and boots straight from CD.
+Consequent use of filesystem compressing techniques allow to
+include a huge number of applications on a single disc.
 
 Creation of the CDs/DVDs is completely dialog based as well as
 building and installing of packages.

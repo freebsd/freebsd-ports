@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freesbie
-PORTVERSION=	0.0.20031113
+PORTVERSION=	0.0.20040207
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.stud.uni-karlsruhe.de/~uedc/freesbie/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/0.0.//}
@@ -14,21 +14,18 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/0.0.//}
 MAINTAINER=	riggs@rrr.de
 COMMENT=	Yet another cool answer to the system-on-cd question
 
-RUN_DEPENDS=	mkisofs:${PORTSDIR}/sysutils/mkisofs
+RUN_DEPENDS=	mkisofs:${PORTSDIR}/sysutils/mkisofs \
+		create_compressed_fs:${PORTSDIR}/sysutils/cloop-utils
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-CPIO?=		/usr/bin/cpio --quiet -pdum -R
-PLIST=		${WRKDIR}/PLIST
-
-pre-install:
-	@${TOUCH} ${PLIST}
 
 do-install:
 	@${MKDIR} ${DATADIR}
-	@ cd ${WRKSRC} && ${FIND} * -type f -print | ${CPIO} ${BINOWN}:${BINGRP} ${DATADIR}
+	@ cd ${WRKSRC} && ${FIND} * -type f -print | \
+		${CPIO} --quiet -pdum -R ${BINOWN}:${BINGRP} ${DATADIR}
 	@ cd ${DATADIR} && ${FIND} * -type d -print | ${XARGS} ${CHMOD} 0755
 	@ cd ${PREFIX} && ${FIND} share/${PORTNAME} -type f -print | \
 		${SORT} -r > ${TMPPLIST}
