@@ -1,0 +1,10 @@
+--- Makefile	Tue Jan 25 07:20:33 2000
++++ Makefile.new	Sat Jan 29 20:04:56 2000
+@@ -1,5 +1,5 @@
+-CC=gcc
+-COPT=-Wall -c -O2
++CC?=gcc
++COPT=${CFLAGS} -Wall -c
+ 
+ INSTDIR=/usr/local/bin
+ MANDIR=/usr/local/man/man1

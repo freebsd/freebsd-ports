@@ -1,0 +1,13 @@
+--- mreport.1	Thu Jan 20 09:51:15 2000
++++ mreport.1.new	Sat Jan 29 20:06:13 2000
+@@ -13,8 +13,8 @@
+ .ft
+ .fi
+ ..
+-.TH mreport 1 "January 18, 2000"
+-.LO 1
++.TH mreport 8 "January 18, 2000"
++.LO 8
+ .SH NAME
+ mreport \- Maillog Report Generation Utility
+ .SH SYNOPSIS
