@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.58 1997/01/31 08:27:06 tg Exp $
+# $Id: LEGAL,v 1.59 1997/02/02 01:34:01 obrien Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -68,6 +68,9 @@ socks5-*		ports/net/socks5	No commercial use
 ssh-*			ports/security/ssh	Crypto; export-controlled
 SSLeay-0.5.1b.tar.gz	ports/security/SSLeay	Crypto; export-controlled
 su2-1.3.tar.gz		ports/sysutils/su2	Don't sell for profit.
+taipei16.bdf.gz		ports/chinese/big5con	font is transformed from
+						a font with restrictive
+						copyright
 tkman-1.7.3.tar.Z	ports/x11/tkman		Restrictive copyright
 uzap.tar.gz             ports/editors/uzap      Restrictive copyright
 vfrb101e.taz		ports/security/vscan	Commercial software
