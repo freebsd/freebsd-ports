@@ -15,13 +15,15 @@ DISTNAME=	Eterm-${PORTVERSION}
 MAINTAINER=	keichii@iteration.net
 
 BUILD_DEPENDS=	man2html:${PORTSDIR}/textproc/man2html
+RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/local/kc15f.pcf.gz:${PORTSDIR}/chinese/kcfonts
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_IMLIB=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ARGS=	--enable-trans=imlib --enable-utmp --enable-multi-charset=kanji \
+CONFIGURE_ARGS=	--enable-trans=imlib --enable-multi-charset=big5 \
 		--enable-xim --with-theme-update
+
 CONFIGURE_ENV=	LIBS="-lxpg4"
 
 MAN1=		Eterm.1
