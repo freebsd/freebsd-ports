@@ -7,7 +7,7 @@
 
 PORTNAME=	enchant
 PORTVERSION=	1.1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	abiword
@@ -26,7 +26,7 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 MAN1=		enchant.1
 
 .ifndef(WITHOUT_ASPELL)
-LIB_DEPENDS+=	pspell.15:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS+=	pspell.16:${PORTSDIR}/textproc/aspell
 PLIST_SUB+=	ASPELL=""
 .else
 PLIST_SUB+=	ASPELL="@comment "
