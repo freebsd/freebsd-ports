@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.mindcraft.com/webstone/
 DISTNAME=	ws25_src
 EXTRACT_SUFX=	.tgz 
 
-MAINTAINER=	k_nishizawa@anet.ne.jp
+MAINTAINER=	fortune@n.jpn.ph
 COMMENT=	World wide web server benchmarking
 
 GNU_CONFIGURE=	yes

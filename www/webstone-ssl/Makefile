@@ -13,7 +13,7 @@ PKGNAMESUFFIX=	-ssl
 DISTNAME=	WebStone-SSL-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	k_nishizawa@anet.ne.jp
+MAINTAINER=	fortune@n.jpn.ph
 COMMENT=	World wide web server benchmarking with SSL support
 
 USE_OPENSSL=	yes

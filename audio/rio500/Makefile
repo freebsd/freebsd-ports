@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	k_nishizawa@anet.ne.jp
+MAINTAINER=	fortune@n.jpn.ph
 COMMENT=	Utilities for Diamond Rio500
 
 USE_GNOME=	glib12
