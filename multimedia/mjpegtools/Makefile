@@ -15,8 +15,7 @@ MASTER_SITE_SUBDIR=	mjpeg
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Set of tools to record/playback/edit videos in MPEG format
 
-LIB_DEPENDS=	aviplay.0:${PORTSDIR}/multimedia/avifile \
-		jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	aviplay.0:${PORTSDIR}/multimedia/avifile
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 
 USE_GNOME=	glib12
@@ -62,6 +61,10 @@ BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 .endif
 
 # pre-detection
+# JPEGMMX
+.if exists(${LOCALBASE}/lib/libjpeg-mmx.a)
+WITH_JPEGMMX=	yes
+.endif
 # LIBDV
 .if exists(${LOCALBASE}/lib/libdv.a)
 WITH_LIBDV=	yes
@@ -90,6 +93,12 @@ USE_GNOME+=	gtk12
 PLIST_SUB+=	GTK=""
 .else
 PLIST_SUB+=	GTK="@comment "
+.endif
+#
+.ifdef(WITH_JPEGMMX)
+LIB_DEPENDS+=	jpeg-mmx.62:${PORTSDIR}/graphics/jpeg-mmx
+.else
+LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
 .endif
 #
 .ifdef(WITH_LIBDV)
@@ -128,6 +137,9 @@ CONFIGURE_ARGS+=	--with-quicktime
 pre-everything::
 .if ${HAVE_GNOME:Mgtk12}==""
 	@${ECHO_MSG} "====> You can enable GTK support by defining WITH_GNOME"
+.endif
+.ifndef(WITH_JPEGMMX)
+	@${ECHO_MSG} "====> You can enable Jpeg-MMX support by defining WITH_JPEGMMX"
 .endif
 .ifndef(WITH_LIBDV)
 	@${ECHO_MSG} "====> You can enable DV support by defining WITH_LIBDV"
