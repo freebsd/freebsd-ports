@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	net
-PORTVERSION=	0.97
-PORTREVISION=	1
+PORTVERSION=	0.98
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ocamlnet
@@ -27,6 +26,8 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 USE_GMAKE=	yes
 
 HAS_CONFIGURE=	yes
+# seems required to build www/ocaml-wdialog:
+CONFIGURE_ARGS+=	-enable-compatcgi
 
 ALL_TARGET=	all opt
 
