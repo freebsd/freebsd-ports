@@ -1,0 +1,18 @@
+lib/X11/fonts/misc/elisat10.pcf.gz
+lib/X11/fonts/misc/jpnhn4-jis.pcf.gz
+lib/X11/fonts/misc/jpnhn4-iso.pcf.gz
+share/doc/elisa/elisa100.doc
+share/doc/elisa/elisat10.doc
+share/doc/elisa/elisat10.html
+@exec  echo "Updating fonts.dir"
+@exec mkfontdir %D/lib/X11/fonts/misc
+@exec  echo "Updating fonts.alias"
+@exec cd %D/lib/X11/fonts/misc ; touch fonts.alias ; cp fonts.alias fonts.alias.orig ; (cat fonts.alias.orig ; echo "k8 -elisa100-fixed-medium-r-normal--8-70-75-75-c-80-jisx0208.1983-0" ; echo "r8 -hiro-fixed-medium-r-normal--8-70-75-75-c-40-jisx0201.1976-0"; echo "a8 -hiro-fixed-medium-r-normal--8-70-75-75-c-40-iso8859-1"; echo "4x8 -hiro-fixed-medium-r-normal--8-70-75-75-c-40-iso8859-1" ) > fonts.alias ; rm fonts.alias.orig
+@unexec  echo "Updating fonts.dir"
+@unexec mkfontdir %D/lib/X11/fonts/misc
+@unexec echo "updating fonts.alias" ; cd %D/lib/X11/fonts/misc; cp fonts.alias fonts.alias.orig; grep -v 'elisa100\-fixed\-medium\-r\-normal' fonts.alias.orig | grep -v 'hiro\-fixed\-medium\-r\-normal' > fonts.alias; rm fonts.alias.orig
+@exec echo "**********************************************************"
+@exec echo "You should restart X server or do 'xset fp rehash' command"
+@exec echo "to use installed fonts."
+@exec echo "**********************************************************"
+@dirrm share/doc/elisa
