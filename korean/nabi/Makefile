@@ -20,7 +20,12 @@ USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	${REINPLACE_CMD} -e 's,#include <malloc.h>,,' ${WRKSRC}/IMdkit/IMConn.c
+.if ${OSVERSION} < 500028
+	${ECHO_CMD} "#include <sys/types.h>" > ${WRKSRC}/src/stdint.h
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
