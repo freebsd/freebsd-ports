@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ripit
-PORTVERSION=	1.6
+PORTVERSION=	1.8
 CATEGORIES=	audio
 MASTER_SITES=	http://www.initio.no/~oyvindmo/distfiles/
 
@@ -14,6 +14,7 @@ MAINTAINER=	oyvindmo@initio.no
 
 RUN_DEPENDS=	bladeenc:${PORTSDIR}/audio/bladeenc \
 		lame:${PORTSDIR}/audio/lame \
+		gogo:${PORTSDIR}/audio/gogo \
 		tosha:${PORTSDIR}/audio/tosha \
 		cdda2wav:${PORTSDIR}/sysutils/cdrecord \
 		cda:${PORTSDIR}/audio/xmcd
