@@ -1,79 +1,122 @@
-@cwd /usr/local
-@exec echo "Updating %D/bin/netscape"; mv %D/bin/netscape %D/bin/netscape.orig
-bin/netscape
-@unexec echo "Recovering %D/bin/netscape"; mv %D/bin/netscape.orig %D/bin/netscape
+bin/ko-communicator-4.07
+@exec /bin/ln -sf %f %B/netscape
 lib/netscape/ko_KR.EUC/Netscape
-lib/netscape/ko_KR.EUC/README
 lib/netscape/ko_KR.EUC/about
-lib/netscape/ko_KR.EUC/splash
-lib/netscape/ko_KR.EUC/license
 lib/netscape/ko_KR.EUC/mail.msg
-lib/netscape/ko_KR.EUC/CAddress.pt.i.xpm
-lib/netscape/ko_KR.EUC/CAddress.pt.xpm
-lib/netscape/ko_KR.EUC/CAttachM.pt.i.xpm
-lib/netscape/ko_KR.EUC/CAttachM.pt.xpm
-lib/netscape/ko_KR.EUC/CQuote.pt.i.xpm
-lib/netscape/ko_KR.EUC/CQuote.pt.xpm
-lib/netscape/ko_KR.EUC/CSendLater.pt.i.xpm
-lib/netscape/ko_KR.EUC/CSendLater.pt.xpm
-lib/netscape/ko_KR.EUC/CSendM.pt.i.xpm
-lib/netscape/ko_KR.EUC/CSendM.pt.xpm
-lib/netscape/ko_KR.EUC/MDel.pt.i.xpm
-lib/netscape/ko_KR.EUC/MDel.pt.xpm
-lib/netscape/ko_KR.EUC/MGetM.pt.xpm
-lib/netscape/ko_KR.EUC/MMarkA.pt.i.xpm
-lib/netscape/ko_KR.EUC/MMarkA.pt.xpm
-lib/netscape/ko_KR.EUC/MMarkT.pt.i.xpm
-lib/netscape/ko_KR.EUC/MMarkT.pt.xpm
-lib/netscape/ko_KR.EUC/MMsgFwd.pt.i.xpm
-lib/netscape/ko_KR.EUC/MMsgFwd.pt.xpm
-lib/netscape/ko_KR.EUC/MMsgNew.pt.i.xpm
-lib/netscape/ko_KR.EUC/MMsgNew.pt.xpm
-lib/netscape/ko_KR.EUC/MMsgPst.pt.i.xpm
-lib/netscape/ko_KR.EUC/MMsgPst.pt.xpm
-lib/netscape/ko_KR.EUC/MMsgPstF.pt.i.xpm
-lib/netscape/ko_KR.EUC/MMsgPstF.pt.xpm
-lib/netscape/ko_KR.EUC/MMsgPstR.pt.i.xpm
-lib/netscape/ko_KR.EUC/MMsgPstR.pt.xpm
-lib/netscape/ko_KR.EUC/MMsgRep.pt.i.xpm
-lib/netscape/ko_KR.EUC/MMsgRep.pt.xpm
-lib/netscape/ko_KR.EUC/MMsgRepA.pt.i.xpm
-lib/netscape/ko_KR.EUC/MMsgRepA.pt.xpm
-lib/netscape/ko_KR.EUC/MNextU.pt.i.xpm
-lib/netscape/ko_KR.EUC/MNextU.pt.xpm
-lib/netscape/ko_KR.EUC/MPrevU.pt.i.xpm
-lib/netscape/ko_KR.EUC/MPrevU.pt.xpm
-lib/netscape/ko_KR.EUC/MPrint.xpm
-lib/netscape/ko_KR.EUC/MStop.xpm
-lib/netscape/ko_KR.EUC/TBack.pt.i.xpm
-lib/netscape/ko_KR.EUC/TBack.pt.xpm
-lib/netscape/ko_KR.EUC/TFind.pt.xpm
-lib/netscape/ko_KR.EUC/THome.pt.xpm
-lib/netscape/ko_KR.EUC/TLoadImages.pt.i.xpm
-lib/netscape/ko_KR.EUC/TLoadImages.pt.xpm
-lib/netscape/ko_KR.EUC/TNext.pt.i.xpm
-lib/netscape/ko_KR.EUC/TNext.pt.xpm
-lib/netscape/ko_KR.EUC/TOpenUrl.pt.xpm
-lib/netscape/ko_KR.EUC/TPrint.pt.xpm
-lib/netscape/ko_KR.EUC/TReload.pt.xpm
-lib/netscape/ko_KR.EUC/TStop.pt.i.xpm
-lib/netscape/ko_KR.EUC/TStop.pt.xpm
+lib/netscape/ko_KR.EUC/nethelp/Back_dep.gif
+lib/netscape/ko_KR.EUC/nethelp/Back_dis.gif
+lib/netscape/ko_KR.EUC/nethelp/Back_sel.gif
+lib/netscape/ko_KR.EUC/nethelp/Back_up.gif
+lib/netscape/ko_KR.EUC/nethelp/Blank.htm
+lib/netscape/ko_KR.EUC/nethelp/Button.js
+lib/netscape/ko_KR.EUC/nethelp/CntData.js
+lib/netscape/ko_KR.EUC/nethelp/CntTool.htm
+lib/netscape/ko_KR.EUC/nethelp/CntTool.js
+lib/netscape/ko_KR.EUC/nethelp/Exit_dep.gif
+lib/netscape/ko_KR.EUC/nethelp/Exit_sel.gif
+lib/netscape/ko_KR.EUC/nethelp/Exit_up.gif
+lib/netscape/ko_KR.EUC/nethelp/Forw_dep.gif
+lib/netscape/ko_KR.EUC/nethelp/Forw_dis.gif
+lib/netscape/ko_KR.EUC/nethelp/Forw_sel.gif
+lib/netscape/ko_KR.EUC/nethelp/Forw_up.gif
+lib/netscape/ko_KR.EUC/nethelp/Header.js
+lib/netscape/ko_KR.EUC/nethelp/IdxData.js
+lib/netscape/ko_KR.EUC/nethelp/IdxFill.htm
+lib/netscape/ko_KR.EUC/nethelp/IdxKey.htm
+lib/netscape/ko_KR.EUC/nethelp/IdxTool.htm
+lib/netscape/ko_KR.EUC/nethelp/IdxTopic.htm
+lib/netscape/ko_KR.EUC/nethelp/Local-1.js
+lib/netscape/ko_KR.EUC/nethelp/NavUI.htm
+lib/netscape/ko_KR.EUC/nethelp/NoJSerr.htm
+lib/netscape/ko_KR.EUC/nethelp/NSHIfrm.htm
+lib/netscape/ko_KR.EUC/nethelp/Prnt_dep.gif
+lib/netscape/ko_KR.EUC/nethelp/Prnt_sel.gif
+lib/netscape/ko_KR.EUC/nethelp/Prnt_up.gif
+lib/netscape/ko_KR.EUC/nethelp/Stack.js
+lib/netscape/ko_KR.EUC/nethelp/Status.htm
+lib/netscape/ko_KR.EUC/nethelp/System.htm
+lib/netscape/ko_KR.EUC/nethelp/System.js
+lib/netscape/ko_KR.EUC/nethelp/ToolUI.htm
+lib/netscape/ko_KR.EUC/nethelp/Tool_dep.gif
+lib/netscape/ko_KR.EUC/nethelp/Tool_sel.gif
+lib/netscape/ko_KR.EUC/nethelp/Tool_up.gif
+lib/netscape/ko_KR.EUC/nethelp/Topic.js
+lib/netscape/ko_KR.EUC/nethelp/Utility.js
+lib/netscape/ko_KR.EUC/nethelp/Wait.gif
+lib/netscape/ko_KR.EUC/nethelp/netscape/shared/collIcon.gif
+lib/netscape/ko_KR.EUC/nethelp/netscape/shared/commIcon.gif
+lib/netscape/ko_KR.EUC/nethelp/netscape/shared/compIcon.gif
+lib/netscape/ko_KR.EUC/nethelp/netscape/shared/confIcon.gif
+lib/netscape/ko_KR.EUC/nethelp/netscape/shared/messIcon.gif
+lib/netscape/ko_KR.EUC/nethelp/netscape/shared/navIcon.gif
+lib/netscape/ko_KR.EUC/nethelp/netscape/shared/netIcon.gif
+lib/netscape/ko_KR.EUC/nethelp/netscape/shared/NetHelp1.css
+lib/netscape/ko_KR.EUC/nethelp/netscape/shared/admnIcon.gif
+lib/netscape/ko_KR.EUC/nethelp/netscape/shared/calIcon.gif
+lib/netscape/ko_KR.EUC/nethelp/netscape/shared/ibmIcon.gif
+lib/netscape/ko_KR.EUC/nethelp/netscape/composer/comp.htm
+lib/netscape/ko_KR.EUC/nethelp/netscape/composer/compHdr.htm
+lib/netscape/ko_KR.EUC/nethelp/netscape/composer/composer.gif
+lib/netscape/ko_KR.EUC/nethelp/netscape/composer/comtlbr2.gif
+lib/netscape/ko_KR.EUC/nethelp/netscape/composer/help.hpf
+lib/netscape/ko_KR.EUC/nethelp/netscape/composer/fmtlbr3.gif
+lib/netscape/ko_KR.EUC/nethelp/netscape/composer/tagicon2.gif
+lib/netscape/ko_KR.EUC/nethelp/netscape/confernc/conf.htm
+lib/netscape/ko_KR.EUC/nethelp/netscape/confernc/confHdr.htm
+lib/netscape/ko_KR.EUC/nethelp/netscape/confernc/confernc.gif
+lib/netscape/ko_KR.EUC/nethelp/netscape/confernc/brws2.gif
+lib/netscape/ko_KR.EUC/nethelp/netscape/confernc/help.hpf
+lib/netscape/ko_KR.EUC/nethelp/netscape/confernc/chat2.gif
+lib/netscape/ko_KR.EUC/nethelp/netscape/confernc/circle2.gif
+lib/netscape/ko_KR.EUC/nethelp/netscape/confernc/eraser2.gif
+lib/netscape/ko_KR.EUC/nethelp/netscape/confernc/fhndtl2.gif
+lib/netscape/ko_KR.EUC/nethelp/netscape/confernc/filex2.gif
+lib/netscape/ko_KR.EUC/nethelp/netscape/confernc/horline2.gif
+lib/netscape/ko_KR.EUC/nethelp/netscape/confernc/line2.gif
+lib/netscape/ko_KR.EUC/nethelp/netscape/confernc/pointer2.gif
+lib/netscape/ko_KR.EUC/nethelp/netscape/confernc/rect2.gif
+lib/netscape/ko_KR.EUC/nethelp/netscape/confernc/txttool2.gif
+lib/netscape/ko_KR.EUC/nethelp/netscape/confernc/whtbd2.gif
+lib/netscape/ko_KR.EUC/nethelp/netscape/home/help.hpf
+lib/netscape/ko_KR.EUC/nethelp/netscape/home/home.gif
+lib/netscape/ko_KR.EUC/nethelp/netscape/home/home.htm
+lib/netscape/ko_KR.EUC/nethelp/netscape/home/homeHdr.htm
+lib/netscape/ko_KR.EUC/nethelp/netscape/navigatr/help.hpf
+lib/netscape/ko_KR.EUC/nethelp/netscape/navigatr/nav.htm
+lib/netscape/ko_KR.EUC/nethelp/netscape/navigatr/navHdr.htm
+lib/netscape/ko_KR.EUC/nethelp/netscape/navigatr/navigatr.gif
+lib/netscape/ko_KR.EUC/nethelp/netscape/netcastr/help.hpf
+lib/netscape/ko_KR.EUC/nethelp/netscape/netcastr/net.htm
+lib/netscape/ko_KR.EUC/nethelp/netscape/netcastr/netHdr.htm
+lib/netscape/ko_KR.EUC/nethelp/netscape/netcastr/netcastr.gif
+lib/netscape/ko_KR.EUC/nethelp/netscape/collabra/discgrps.gif
+lib/netscape/ko_KR.EUC/nethelp/netscape/collabra/coll.htm
+lib/netscape/ko_KR.EUC/nethelp/netscape/collabra/collHdr.htm
+lib/netscape/ko_KR.EUC/nethelp/netscape/collabra/collabra.gif
+lib/netscape/ko_KR.EUC/nethelp/netscape/collabra/help.hpf
+lib/netscape/ko_KR.EUC/nethelp/netscape/messengr/mailbox.gif
+lib/netscape/ko_KR.EUC/nethelp/netscape/messengr/help.hpf
+lib/netscape/ko_KR.EUC/nethelp/netscape/messengr/mess.htm
+lib/netscape/ko_KR.EUC/nethelp/netscape/messengr/messHdr.htm
+lib/netscape/ko_KR.EUC/nethelp/netscape/messengr/messengr.gif
+lib/netscape/ko_KR.EUC/nethelp/netscape/messengr/mpctrl.gif
+@dirrm lib/netscape/ko_KR.EUC/nethelp/netscape/messengr
+@dirrm lib/netscape/ko_KR.EUC/nethelp/netscape/collabra
+@dirrm lib/netscape/ko_KR.EUC/nethelp/netscape/netcastr
+@dirrm lib/netscape/ko_KR.EUC/nethelp/netscape/navigatr
+@dirrm lib/netscape/ko_KR.EUC/nethelp/netscape/home
+@dirrm lib/netscape/ko_KR.EUC/nethelp/netscape/confernc
+@dirrm lib/netscape/ko_KR.EUC/nethelp/netscape/shared
+@dirrm lib/netscape/ko_KR.EUC/nethelp/netscape/composer
+@dirrm lib/netscape/ko_KR.EUC/nethelp/netscape
+@dirrm lib/netscape/ko_KR.EUC/nethelp
+lib/netscape/ko_KR.EUC/netscape.cfg
+lib/netscape/ko_KR.EUC/plugins
+lib/netscape/ko_KR.EUC/splash
+lib/netscape/ko_KR.EUC/LICENSE.ko
+lib/netscape/preferences.js
+@exec /bin/mkdir -p %B/locale
+@exec /bin/ln -sf /usr/share/locale/en_US.ISO_8859-1 %B/locale/ko_KR.EUC
+@unexec rm -f %B/locale/ko_KR.EUC
+@dirrm lib/netscape/locale
 @dirrm lib/netscape/ko_KR.EUC
-lib/netscape/nls/C
-lib/netscape/nls/ja_JP.jis7
-lib/netscape/nls/ja_JP.jis8
-lib/netscape/nls/ja_JP.mscode
-lib/netscape/nls/ja_JP.ujis
-lib/netscape/nls/ja_JP.pjis
-lib/netscape/nls/ko_KR.euc
-lib/netscape/nls/local_im_tbl/lt_LN.bit7
-lib/netscape/nls/local_im_tbl/lt_LN.bit8
-@dirrm lib/netscape/nls/local_im_tbl
-lib/netscape/nls/lt_LN.bit7
-lib/netscape/nls/lt_LN.bit8
-lib/netscape/nls/nls.alias
-lib/netscape/nls/nls.dir
-lib/netscape/nls/wr_WR.ct
-lib/netscape/nls/zh_CN.ugb
-lib/netscape/nls/zh_TW.big5
-@dirrm lib/netscape/nls

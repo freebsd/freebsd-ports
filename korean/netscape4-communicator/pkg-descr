@@ -1,20 +1,9 @@
-Netscape 3.04(Korean)
----------------------
+This is the netscape web-surfboard.
+Please read the file `/usr/local/lib/netscape/LICENSE.ko'
+for the licensing terms.
 
-This is the netscape web-surfboard.  Please read the file
-"/usr/local/lib/netscape/LICENSE" for the licensing terms.
-And, read the file "/usr/local/lib/netscape/ko_KR.EUC/README"
-for Korean version information.
-
-Note: If Java applets fail to display.  Type this as root:
-		cd /usr/X11R6/lib/X11/fonts/misc
-		/usr/X11R6/bin/mkfontdir
-		chmod 444 fonts.dir
-      And then exit and restart your X server.
-
-This version of Netscape is some hack of Netscape 3.04 and international
-supplementary file of Korean, OSF/1 version(3.01).
-It need Hanyang X11 fonts(KSC5601-1987.0)
+Korean Netscape Localization(X11) page(written in Korean):
+  http://jazz.snu.ac.kr/~junker/work/netscape-ko/
 
 --
-Port By CHOI Junho <junker@jazz.snu.ac.kr>
+Ports by CHOI Junho <junker@jazz.snu.ac.kr>

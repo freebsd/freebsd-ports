@@ -1,155 +1,20 @@
---- netscape-ko/Netscape.ad-ko.orig	Thu Jan 30 13:56:58 1997
-+++ netscape-ko/Netscape.ad-ko	Mon Nov 16 20:28:03 1998
-@@ -7,6 +7,7 @@
- ! Bugs and commentary to x_cbug@netscape.com.
- !
- ! Modified: dp Suresh <dp@netscape.com>, 01-Aug-95
-+!           CHOI Junho <junker@jazz.snu.ac.kr>, 16-Nov-98 for FreeBSD
- !
- !      ==========================================================
- !      NOTE: If you're looking here for things to customize, look
-@@ -57,7 +58,8 @@
+--- n	Sun Oct 25 19:04:57 1998
++++ Netscape.ad-ko	Sun Oct 25 19:05:53 1998
+@@ -83,7 +83,7 @@
  
  ! This is the directory where Netscape finds external files such as icons.
  !
--*appDir:			/usr/lib/X11/ko_KR.eucKR/netscape
-+!*appDir:			/usr/lib/X11/ko_KR.eucKR/netscape
-+*appDir:			/usr/local/lib/netscape/ko_KR.EUC
+-*appDir:			/@LOC_LANG@/netscape
++*appDir:			@NDIR@/@LANG@
  
  ! This resource is the same as the -visual command line option, which selects
  ! an X visual on which the windows should be created.  Legal options are:
-@@ -141,8 +143,10 @@
- ! If you find a need to let one or both of them continue on to the actual
- ! terminal of Netscape, you can do it by setting these resources to False.
- !
--*useStderrDialog:		True
--*useStdoutDialog:		True
-+!*useStderrDialog:		True
-+*useStderrDialog:		False
-+!*useStdoutDialog:		True
-+*useStdoutDialog:		False
- 
- ! For those MIME content-encodings which are not directly understood
- ! internally, it is possible to specify another Unix program to use as
-@@ -2632,7 +2636,7 @@
- ! changed at runtime; these resources won't override that.
- *title:					Netscape
- *iconName:				Netscape
--*Navigator.title:			Netscape Navigator 3.01
-+*Navigator.title:			Netscape Navigator 3.04
- *Mail.title:				Netscape 메일
- *Mail.iconName:				메일
- 
-@@ -4347,7 +4351,7 @@
- 
- 
- ! Do not under any circumstances change the following line:
--Netscape.version:		3.01
-+Netscape.version:		3.04
- 
- 
- ! ============================================================================
-@@ -4357,10 +4361,15 @@
- ! the document display area.
- ! ============================================================================
- !
-+*fontList:\
-+	-*-helvetica-bold-r-*-*-*-120-*-*-*-*-iso8859-*;-hanyang-kodig-medium-r-normal--12-120-72-72-c-120-ksc5601.1987-0:
- !*fontList:			-*-helvetica-bold-r-*-*-*-120-*-*-*-*-iso8859-*
- !*XmTextField.fontList:		-*-courier-medium-r-*-*-*-120-*-*-*-*-iso8859-*
- !*XmText.fontList:		-*-courier-medium-r-*-*-*-120-*-*-*-*-iso8859-*
- !*XmList*fontList:		-*-courier-medium-r-*-*-*-120-*-*-*-*-iso8859-*
-+*XmTextField.fontList:		-*-courier-medium-r-*-*-*-120-*-*-*-*-iso8859-*;-hanyang-kodig-medium-r-normal--12-120-72-72-c-120-ksc5601.1987-0:
-+*XmText.fontList:		-*-courier-medium-r-*-*-*-120-*-*-*-*-iso8859-*;-hanyang-kodig-medium-r-normal--12-120-72-72-c-120-ksc5601.1987-0:
-+*XmList*fontList:		-*-courier-medium-r-*-*-*-120-*-*-*-*-iso8859-*;-hanyang-kodig-medium-r-normal--12-120-72-72-c-120-ksc5601.1987-0:
- 
- ! SGI default:
- !*menuBar*fontList:		-*-helvetica-bold-o-*-*-*-120-*-*-*-*-iso8859-*
-@@ -4369,10 +4378,17 @@
- !*menuBar*historyTruncated.fontList:\
- !			      -*-helvetica-medium-o-*-*-*-120-*-*-*-*-iso8859-*
- !*popup*fontList:		-*-helvetica-bold-r-*-*-*-120-*-*-*-*-iso8859-*
-+*menuBar*fontList:		-*-helvetica-bold-r-*-*-*-120-*-*-*-*-iso8859-*;-hanyang-kodig-medium-r-normal--12-120-72-72-c-120-ksc5601.1987-0:
-+*menuBar*historyTruncated.fontList:\
-+				-*-helvetica-medium-o-*-*-*-120-*-*-*-*-iso8859-*;-hanyang-kodig-medium-r-normal--12-120-72-72-c-120-ksc5601.1987-0:
-+*popup*fontList:		-*-helvetica-bold-r-*-*-*-120-*-*-*-*-iso8859-*;-hanyang-kodig-medium-r-normal--12-120-72-72-c-120-ksc5601.1987-0:
- 
- !*topArea*fontList:		-*-helvetica-bold-r-*-*-*-120-*-*-*-*-iso8859-*
- !*topArea*XmTextField.fontList:	-*-courier-medium-r-*-*-*-120-*-*-*-*-iso8859-*
- !*topArea*XmText.fontList:	-*-courier-medium-r-*-*-*-120-*-*-*-*-iso8859-*
-+*topArea*fontList:		-*-helvetica-bold-r-*-*-*-120-*-*-*-*-iso8859-*;-hanyang-kodig-medium-r-normal--12-120-72-72-c-120-ksc5601.1987-0:
-+*topArea*XmTextField.fontList:	-*-courier-medium-r-*-*-*-120-*-*-*-*-iso8859-*;-hanyang-kodig-medium-r-normal--12-120-72-72-c-120-ksc5601.1987-0:
-+*topArea*XmText.fontList:	-*-courier-medium-r-*-*-*-120-*-*-*-*-iso8859-*;-hanyang-kodig-medium-r-normal--12-120-72-72-c-120-ksc5601.1987-0:
- 
- !*bookmark*fontList:	      -*-helvetica-medium-r-*-*-*-120-*-*-*-*-iso8859-*
- !*bookmark*fontList:		-*-helvetica-bold-r-*-*-*-120-*-*-*-*-iso8859-*
-@@ -4380,12 +4396,20 @@
- 			 !     -*-helvetica-medium-r-*-*-*-120-*-*-*-*-iso8859-*
- !*bookmark*XmTextField.fontList:-*-courier-medium-r-*-*-*-120-*-*-*-*-iso8859-*
- !*bookmark*XmText.fontList:	-*-courier-medium-r-*-*-*-120-*-*-*-*-iso8859-*
-+*bookmark*fontList:	      -*-helvetica-medium-r-*-*-*-120-*-*-*-*-iso8859-*;-hanyang-kodig-medium-r-normal--12-120-72-72-c-120-ksc5601.1987-0:
-+*bookmark*selectedLabel.fontList: -*-helvetica-medium-r-*-*-*-120-*-*-*-*-iso8859-*;-hanyang-kodig-medium-r-normal--12-120-72-72-c-120-ksc5601.1987-0:
-+*bookmark*XmTextField.fontList:-*-courier-medium-r-*-*-*-120-*-*-*-*-iso8859-*;-hanyang-kodig-medium-r-normal--12-120-72-72-c-120-ksc5601.1987-0:
-+*bookmark*XmText.fontList:	-*-courier-medium-r-*-*-*-120-*-*-*-*-iso8859-*;-hanyang-kodig-medium-r-normal--12-120-72-72-c-120-ksc5601.1987-0:
- 
- !*mouseDocumentation.fontList: -*-helvetica-medium-r-*-*-*-120-*-*-*-*-iso8859-*
- !*docinfoButton.fontList:      -*-helvetica-medium-r-*-*-*-120-*-*-*-*-iso8859-*
- !*mailto*urlLabel.fontList:    -*-helvetica-medium-r-*-*-*-140-*-*-*-*-iso8859-*
-+*mouseDocumentation.fontList: -*-helvetica-medium-r-*-*-*-120-*-*-*-*-iso8859-*;-hanyang-kodig-medium-r-normal--12-120-72-72-c-120-ksc5601.1987-0:
-+*docinfoButton.fontList:      -*-helvetica-medium-r-*-*-*-120-*-*-*-*-iso8859-*;-hanyang-kodig-medium-r-normal--12-120-72-72-c-120-ksc5601.1987-0:
-+*mailto*urlLabel.fontList:    -*-helvetica-medium-r-*-*-*-140-*-*-*-*-iso8859-*;-hanyang-kodig-medium-r-normal--12-120-72-72-c-120-ksc5601.1987-0:
- 
- !*licenseDialog*text.fontList:	-*-courier-medium-r-*-*-*-120-*-*-*-*-iso8859-*
-+*licenseDialog*text.fontList:	-*-courier-medium-r-*-*-*-120-*-*-*-*-iso8859-*;-hanyang-kodig-medium-r-normal--12-120-72-72-c-120-ksc5601.1987-0:
- 
- 
- ! These are the fonts used in the outline lists used in Mail, News, Bookmarks,
-@@ -4395,6 +4419,14 @@
- !-*-helvetica-medium-r-*-*-*-100-*-*-*-*-iso8859-*,\
- !-*-helvetica-bold-r-*-*-*-100-*-*-*-*-iso8859-*=BOLD,\
- !-*-helvetica-medium-o-*-*-*-100-*-*-*-*-iso8859-*=ITALIC
-+*XmLGrid*fontList:\
-+-*-helvetica-medium-r-*-*-*-100-*-*-*-*-iso8859-*;\
-+-hanyang-kodig-medium-r-normal--12-120-72-72-c-120-ksc5601.1987-0:,\
-+-*-helvetica-bold-r-*-*-*-100-*-*-*-*-iso8859-*;\
-+-hanyang-kodig-medium-r-normal--12-120-72-72-c-120-ksc5601.1987-0:=BOLD,\
-+-*-helvetica-medium-o-*-*-*-100-*-*-*-*-iso8859-*;\
-+-hanyang-kodig-medium-r-normal--12-120-72-72-c-120-ksc5601.1987-0:=ITALIC
-+
+@@ -2932,6 +2932,8 @@
+ *openURLDialog*browserToggle.set:		True
+ *openURLDialog*XmTextField.columns:		45
+ !*openURLDialog.width:				500
++!*openURLDialog*XmTextField.fontList:\
++!-adobe-courier-medium-r-*-*-*-120-*-*-*-*-iso8859-*
  
  
  
-@@ -4709,6 +4741,7 @@
- ! Navigator mouse documentation.
- !
- !*tipLabel.fontList:           -*-helvetica-medium-r-*-*-*-120-*-*-*-*-iso8859-*
-+*tipLabel.fontList:           -*-helvetica-medium-r-*-*-*-120-*-*-*-*-iso8859-*;-hanyang-kodig-medium-r-normal--12-120-72-72-c-120-ksc5601.1987-0:
- Netscape*tipLabel.background:  #FFFFCC
- Netscape*tipLabel.foreground:  Black
- Netscape*tipShell.borderColor: Black
-@@ -5167,10 +5200,13 @@
- *postAndMailReply.tipString:        뉴스 및 메일 답장
- *markThreadRead.tipString:          읽은 쓰레드로 표시
- *markAllRead.tipString:             모두 읽은 것으로 표시
--*fontList:\
---adecw-screen-medium-r-normal--*-180-*-*-m-*-iso8859-1=ISO8859-1,\
---adecw-screen-medium-r-normal--*-180-*-*-m-*-ksc5601.1987-1=KSC5601.1987-1,\
---adecw-screen-medium-r-normal--*-180-*-*-m-*:
-+!*fontList:\
-+!-adecw-screen-medium-r-normal--*-180-*-*-m-*-iso8859-1=ISO8859-1,\
-+!-adecw-screen-medium-r-normal--*-180-*-*-m-*-ksc5601.1987-1=KSC5601.1987-1,\
-+!-adecw-screen-medium-r-normal--*-180-*-*-m-*:
-+!*fontList:\
-+!	-*-helvetica-medium-r-*-*-*-120-*-*-*-*-iso8859-*;-hanyang-kodig-medium-r-normal--12-120-72-72-c-120-ksc5601.1987-0:
-+!-*-*-medium-r-normal--*-120-*-*-*-*:
- *preeditType: root
- 
- *versionLocale: ko 
-@@ -5227,6 +5263,7 @@
- *localeCharset*ja_JP:			x-euc-jp
- *localeCharset*ko_KR.deckorean:		euc-kr
- *localeCharset*ko_KR.eucKR:		euc-kr
-+*localeCharset*ko_KR.EUC:		euc-kr
- *localeCharset*ko_KR:			euc-kr
- *localeCharset*nl_BE.ISO8859-1:		iso-8859-1
- *localeCharset*nl_NL.ISO8859-1:		iso-8859-1
