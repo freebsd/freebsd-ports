@@ -10,5 +10,5 @@ include/freecell-solver/fcs_user.h
 lib/libfreecell-solver.a
 lib/libfreecell-solver.la
 lib/libfreecell-solver.so
-lib/libfreecell-solver.so.0
+lib/libfreecell-solver.so.1
 @dirrm include/freecell-solver
