@@ -1,8 +1,8 @@
---- config/install.sh--	Wed Aug  5 13:43:43 1998
-+++ config/install.sh	Mon Feb  1 15:57:31 1999
-@@ -193,6 +193,12 @@
-     exit 1
-   fi
+--- config/install.sh.orig	Wed Aug  5 13:43:43 1998
++++ config/install.sh	Tue Feb  2 12:57:13 1999
+@@ -181,6 +181,12 @@
+ if [ "$?" != "0" ]; then
+   exit $?
  fi
 +# we need to patch just before build
 +patch_file="${FILESDIR}/patch-global-names"
@@ -10,6 +10,6 @@
 +	echo "applying source patches"
 +	$PATCH $PATCH_ARGS < $patch_file
 +fi
- cd $SRCDIR
- 
- #
+ if [ ! -x $RUNDIR/run.$ARCH-$OPSYS ]; then
+   cd $SRCDIR/runtime/objs
+   echo "compiling the run-time system"
