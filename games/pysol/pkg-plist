@@ -941,6 +941,7 @@ share/pysol/html/rules/thumbandpouch.html
 share/pysol/html/rules/tipati.html
 share/pysol/html/rules/towerofhanoy.html
 share/pysol/html/rules/trefoil.html
+share/pysol/html/rules/tripeaks.html
 share/pysol/html/rules/unionsquare.html
 share/pysol/html/rules/vamana.html
 share/pysol/html/rules/varaha.html
@@ -987,9 +988,11 @@ share/pysol/music/Bye_For_Now.COPYRIGHT
 share/pysol/music/Bye_For_Now.s3m
 share/pysol/music/Ranger_Song.COPYRIGHT
 share/pysol/music/Ranger_Song.s3m
-share/pysol/pysol.pyc
 share/pysol/pysol.xbm
 share/pysol/pysol.xpm
+share/pysol/pysol_15.pyc
+share/pysol/pysol_20.pyc
+share/pysol/pysol_21.pyc
 share/pysol/sound/autodrop.wav
 share/pysol/sound/autoflip.wav
 share/pysol/sound/deal01.wav
