@@ -21,5 +21,12 @@ USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 
 USE_GMAKE=	yes
+WANT_GNOME=	yes
+
+.if defined(HAVE_GNOME)
+USE_GNOME=	yes
+.else
+CONFIGURE_ARGS=	--without-gnome
+.endif
 
 .include <bsd.port.mk>
