@@ -7,12 +7,12 @@
 
 PORTNAME=	gbiff
 PORTVERSION=	2.4a
+PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	http://prdownloads.sourceforge.net/gbiff/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	nakai@FreeBSD.org
-
-LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

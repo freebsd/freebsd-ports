@@ -1,0 +1,15 @@
+--- src/gbiff.c.orig	Fri Mar 23 05:47:18 2001
++++ src/gbiff.c	Thu Apr 12 03:17:41 2001
+@@ -25,12 +25,10 @@
+ #  include <gnome.h>
+ #  include <applet-widget.h>
+ #endif
+-#include <popt.h>
+ #include <gtk/gtk.h>
+ #include <string.h>
+ #include <stdlib.h>
+ #include <stdio.h>
+-#include <popt.h>
+ 
+ #include "protocol.h"
+ #include "callbacks.h"
