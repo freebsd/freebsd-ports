@@ -7198,6 +7198,7 @@ projectionlib	ports/misc/projectionlib
 prokyon3	ports/audio/prokyon3
 prom-mew	ports/mail/prom-mew
 prom-wl		ports/mail/prom-wl
+proma		ports/ftp/proma
 pronto		ports/mail/pronto
 props		ports/x11/props
 prosper		ports/textproc/prosper
