@@ -3,7 +3,7 @@
 
 case "$2" in
 PRE-INSTALL)
-	if [ -z "`kldstat -v | grep -E 'linux(aout|elf)'`" ]; then
+	if [ -z "`kldstat -v | grep linux`" ]; then
 		echo 'Linux mode is not enabled.'
 		echo 'Loading linux kernel module now...'
 		if ! kldload linux; then
