@@ -3,16 +3,14 @@
 # Date created:        09 April 1998
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.15 1998/10/02 18:21:28 brian Exp $
+# $Id: Makefile,v 1.16 1998/10/11 23:34:36 jseger Exp $
 #
 
 DISTNAME=	kpilot-3.0.2
-CATEGORIES=	x11 kde
+CATEGORIES=	comms kde
 MASTER_SITES=	http://www.slac.com/pilone/kpilot_home/download/
 
 MAINTAINER=	dima@freebsd.org
-
-BROKEN_ELF=	library names
 
 LIB_DEPENDS=	gif.3:${PORTSDIR}/graphics/giflib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
@@ -25,13 +23,15 @@ LIB_DEPENDS=	gif.3:${PORTSDIR}/graphics/giflib \
 
 USE_QT=		yes
 KDEDIR?=	$(PREFIX)
+PILOTDIR?=	$(LOCALBASE)/pilot
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	"--with-extra-includes=$(PREFIX)/include/giflib"
 USE_GMAKE=	yes
 
 CONFIGURE_ENV=	CXXFLAGS="$(CFLAGS)" \
 		INSTALL_SCRIPT="install -c -m 555" \
-		KDEDIR="${KDEDIR}"
+		KDEDIR="${KDEDIR}" \
+		LDFLAGS="-L${PILOTDIR}/lib"
 
 MAKE_ENV=	KDEDIR="${KDEDIR}"
 
