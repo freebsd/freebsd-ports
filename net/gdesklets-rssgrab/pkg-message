@@ -1,0 +1,9 @@
+
+To list installed desklets:
+
+	ls %%PREFIX%%/share/gnome/gdesklets/Displays/%%NAME%%
+
+To add those desklets to your desktop:
+
+	gdesklets %%PREFIX%%/share/gnome/gdesklets/Displays/%%NAME%%/%%NAME%%.display
+
