@@ -120,16 +120,16 @@
 +
 +LINK=$(CXX)
  LINKFLAGS=
+-LINKFLAGSAPPGUI= -Wl,-export-dynamic
+-LINKFLAGSAPPCUI= -Wl,-export-dynamic
 +
 +# linker flags for linking applications
- LINKFLAGSAPPGUI= -Wl,-export-dynamic
- LINKFLAGSAPPCUI= -Wl,-export-dynamic
--LINKFLAGSSHLGUI= -shared
--LINKFLAGSSHLCUI= -shared
++LINKFLAGSAPPGUI= 
++LINKFLAGSAPPCUI= 
 +
 +# linker flags for linking shared libraries
-+LINKFLAGSSHLGUI= -shared -Wl,-export-dynamic
-+LINKFLAGSSHLCUI= -shared -Wl,-export-dynamic
+ LINKFLAGSSHLGUI= -shared
+ LINKFLAGSSHLCUI= -shared
  LINKFLAGSTACK=
  LINKFLAGSPROF=
  LINKFLAGSDEBUG=-g
