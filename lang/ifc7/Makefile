@@ -42,9 +42,8 @@ OBJCOPY?=	/usr/bin/objcopy
 IGNORE=	"Please manually download ${DISTFILES} from ${IFC_SITE}, ${IFC_SITE}f60l/noncom.htm or https://premier.intel.com/ \(whichever has the file, to access premier.intel.com you have to register at http://www.intel.com/software/products/registrationcenter/index.htm\). With a little bit of luck it may also be available from ftp://download.intel.com/software/products/compilers/downloads/. Put it into ${DISTDIR} and run make again"
 .endif
 
-.if exists(${LINUXBASE}/boot/kernel.h) || \
-	exists(${PREFIX}/intel/compiler60/bin/icc)
-BROKEN= Cannot coexist with linux_devtools or icc
+.if exists(${PREFIX}/intel/compiler60/bin/icc)
+BROKEN= Cannot coexist with icc
 .endif
 
 post-extract:
