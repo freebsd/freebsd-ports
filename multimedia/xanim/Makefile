@@ -1,16 +1,16 @@
 # New ports collection makefile for:	xanim
-# Version required:     2.80.1
 # Date created:         Sat Nov 5 11:43:03 PST 1994
 # Whom:                 piero
 #
 # $FreeBSD$
 #
 
-DISTNAME=       xanim2801
-PKGNAME=        xanim-2.80.1
+PORTNAME=       xanim
+PORTVERSION=	2.80.1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://xanim.va.pubnix.com/ \
 		ftp://xanim.va.pubnix.com/dlls/
+DISTNAME=       xanim2801
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${EXTRA_FILES}
 
 MAINTAINER=	ports@FreeBSD.org

@@ -1,17 +1,17 @@
 # New ports collection makefile for:    POV-Ray
-# Version required:     3.1e
 # Date created:         3 Dec 1996
 # Whom:                 paulo@isr.uc.pt
 #
 # $FreeBSD$
 #
 
-DISTNAME=	povray31
-PKGNAME=	povray-3.1g
+PORTNAME=	povray
+PORTVERSION=	3.1g
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.povray.org/pub/povray/Official/Unix/ \
 		ftp://www.hensa.ac.uk/mirrors/povray/Old-Versions/Official-3.0/Unix/ \
 		ftp://ftp.fh-aachen.de/pub/mirror/ftp.povray.org/povray/Old-Versions/Official-3.0/Unix/
+DISTNAME=	povray31
 DISTFILES=	povuni_s.tgz povuni_d.tgz
 
 MAINTAINER=	olli@fromme.com

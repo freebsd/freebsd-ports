@@ -6,11 +6,12 @@
 # $FreeBSD$
 #
 
-DISTNAME=	scanner
-PKGNAME=	hpscan-1.0
+PORTNAME=	hpscan
+PORTVERSION=	1.0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		ftp://ftp.cogsci.ed.ac.uk/pub/richard/
+DISTNAME=	scanner
 
 MAINTAINER=	jkh@FreeBSD.org
 

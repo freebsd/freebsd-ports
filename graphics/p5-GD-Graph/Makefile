@@ -1,16 +1,17 @@
 # New ports collection makefile for:	p5-GD-Graph
-# Version required:			1.24
 # Date created:				21 February 2000
 # Whom:	      				Dmitry Sivachenko <dima@Chg.RU>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	GDGraph-1.24
-PKGNAME=	p5-GD-Graph-1.24
+PORTNAME=	GD-Graph
+PORTVERSION=	1.24
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	GD
+PKGNAMEPREFIX=	p5-
+DISTNAME=	GDGraph-${PORTVERSION}
 
 MAINTAINER=	dima@Chg.RU
 

@@ -1,15 +1,16 @@
 # New ports collection makefile for:    Mesa for Linux compat
-# Version required:     2.6
 # Date created:         Oct, 8 1998
 # Whom:                 cracauer
 #
 # $FreeBSD$
 #
 
-DISTNAME=       MesaLib-2.6
-PKGNAME=	linux_mesa-2.6
+PORTNAME=	mesa
+PORTVERSION=	2.6
 CATEGORIES=	graphics linux
 MASTER_SITES= 	ftp://iris.ssec.wisc.edu/pub/Mesa/old-versions/
+PKGNAMEPREFIX=	linux_
+DISTNAME=       MesaLib-${PORTVERSION}
 
 MAINTAINER=	cracauer@cons.org
 

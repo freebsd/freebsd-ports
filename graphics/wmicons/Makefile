@@ -1,12 +1,12 @@
 # New ports collection makefile for:    icons for WindowMaker
-# Version required:     1.0
 # Date created:         26 Japnuary 1999
 # Whom:                 KIRIYAMA Kazuhiko
 #
 # $FreeBSD$
 #
 
-DISTNAME=	wmicons-1.0
+PORTNAME=	wmicons
+PORTVERSION=	1.0
 CATEGORIES=	graphics windowmaker
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER} \
 		${MASTER_SITE_PORTS_JP} \

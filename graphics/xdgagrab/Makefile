@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xdgagrab
-# Version required:	0.3
 # Date created:		99/01/18
 # Whom:			Satoshi Taoka <taoka@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xdgagrab-0.3
+PORTNAME=	xdgagrab
+PORTVERSION=	0.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.infonets.hiroshima-u.ac.jp/~taoka/FreeBSD/ports/
 

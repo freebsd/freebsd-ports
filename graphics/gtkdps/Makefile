@@ -1,15 +1,15 @@
 # New ports collection makefile for:   gtkdps
-# Version required:    0.3.2
 # Date created:        21 April 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gtkDPS-0.3.2
-PKGNAME=	gtkdps-0.3.2
+PORTNAME=	gtkdps
+PORTVERSION=	0.3.2
 CATEGORIES=	graphics
 MASTER_SITES= 	ftp://ftp.aist-nara.ac.jp/pub/personal/masata-y/gtkDPS/
+DISTNAME=	gtkDPS-${PORTVERSION}
 
 MAINTAINER=	nakai@FreeBSD.org
 

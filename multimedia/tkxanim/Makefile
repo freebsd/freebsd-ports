@@ -1,12 +1,12 @@
 # New ports collection makefile for:	tkxanim
-# Version required:			0.43
 # Date created:				24 October 1999
 # Whom:					Chris D. Faulhaber <jedgar@fxp.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tkxanim-0.43
+PORTNAME=	tkxanim
+PORTVERSION=	0.43
 CATEGORIES=	graphics tk82
 MASTER_SITES=	http://members.yourlink.net/aaron/
 

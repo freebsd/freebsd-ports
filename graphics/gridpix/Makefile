@@ -1,15 +1,15 @@
 # New ports collection makefile for:	gridpix
-# Version required:	2.1
 # Date created:		19 July 1999
 # Whom:			asami
 #
 # $FreeBSD$
 #
 
-DISTNAME=	GridPix-2.1
-PKGNAME=	gridpix-2.1
+PORTNAME=	gridpix
+PORTVERSION=	2.1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://stampede.cs.berkeley.edu/pub/GridPix/
+DISTNAME=	GridPix-${PORTVERSION}
 
 MAINTAINER=	asami@FreeBSD.org
 

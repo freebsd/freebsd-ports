@@ -1,15 +1,15 @@
 # New ports collection makefile for:	img
-# Version required:	1.2
 # Date Created:		20 February 1999
 # Whom:			Glenn Johnson
 #
 # $FreeBSD$
 #
 
-DISTNAME=	img1.2.2
-PKGNAME=	libimg-1.2.2
+PORTNAME=	libimg
+PORTVERSION=	1.2.2
 CATEGORIES=	graphics tk82
 MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/sorted/packages-8.0/graphics/Img/1.2/
+DISTNAME=	img${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 

@@ -1,20 +1,19 @@
 # ports collection makefile for:	xmagv
-# Version required:	1.11
 # Date created:		25 Oct 1998
 # Whom:			Seiichirou Hiraoka
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xmagv111
-PKGNAME=	xmagv-1.11
+PORTNAME=	xmagv
+PORTVERSION=	1.11
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.vector.co.jp/pack/unix/art/graphics/loader/mag/
-EXTRACT_SUFX=	.tgz
+DISTFILES=	xmagv111.tgz
 
 MAINTAINER=	flathill@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/xmagv
+WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
 USE_IMAKE=	yes
 XMKMF=		xmkmf

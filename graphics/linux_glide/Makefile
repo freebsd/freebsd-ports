@@ -1,5 +1,4 @@
 # New ports collection makefile for:    linux_glide
-# Version required:     2.4
 # Date created:         Oct, 8, 1998
 # Whom:                 cracauer@cons.org "Martin Cracauer"
 #
@@ -7,10 +6,12 @@
 #
 #
 
-DISTNAME=	linux_glide_2_4
-PKGNAME=	linux_glide-2.4
+PORTNAME=	glide
+PORTVERSION=	2.4
 CATEGORIES=	graphics linux
 MASTER_SITES=	ftp://ftp.3dfx.com/pub/glide/
+PKGNAMEPREFIX=	linux_
+DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}_2_4
 
 MAINTAINER= 	cracauer@cons.org
 

@@ -1,15 +1,15 @@
 # New ports collection makefile for:	Plotmtv
-# Version required:	 1.4.0
 # Date created:		19 October 1996
 # Whom:			pgs
 #
 # $FreeBSD$
 #
 
-DISTNAME=	Plotmtv1.4.1
-PKGNAME=	plotmtv-1.4.1
+PORTNAME=	plotmtv
+PORTVERSION=	1.4.1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+DISTNAME=	Plotmtv${PORTVERSION}
 
 MASTER_SITE_SUBDIR=	applications
 EXTRACT_SUFX=	.tar.Z

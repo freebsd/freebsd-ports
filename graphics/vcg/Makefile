@@ -1,15 +1,15 @@
 # New ports collection makefile for: vcg
-# Version required:     1.30.r3.17
 # Date created: 19 February 1995
 # Whom: hsu
 #
 # $FreeBSD$
 #
 
-DISTNAME=	vcg.1.30
-PKGNAME=	vcg-1.30
+PORTNAME=	vcg
+PORTVERSION=	1.30
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.cs.uni-sb.de/pub/graphics/vcg/
+DISTNAME=	vcg.1.30
 DISTFILES=	vcg.1.30.r3.17.tgz
 
 MAINTAINER=	ports@FreeBSD.org

@@ -1,15 +1,15 @@
 # New ports collection makefile for:	juno-2
-# Version required:	1.23
 # Date created:		11 Feb 2000
 # Whom:			John Polstra <jdp@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	juno-sources
-PKGNAME=	juno-2-1.23
+PORTNAME=	juno-2
+PORTVERSION=	1.23
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.research.digital.com/SRC/juno-2/
+DISTNAME=	juno-sources
 
 MAINTAINER=	jdp@FreeBSD.org
 

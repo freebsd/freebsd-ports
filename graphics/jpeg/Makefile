@@ -1,15 +1,15 @@
 # New ports collection makefile for:	jpeg
-# Version required:     6b
 # Date created:		6 November 1994
 # Whom:			smace
 #
 # $FreeBSD$
 #
 
-DISTNAME=       jpegsrc.v6b
-PKGNAME=        jpeg-6b
+PORTNAME=       jpeg
+PORTVERSION=	6b
 CATEGORIES=     graphics
 MASTER_SITES=   ftp://ftp.uu.net/graphics/jpeg/
+DISTNAME=       jpegsrc.v${PORTVERSION}
 
 MAINTAINER=	jseger@FreeBSD.org
 

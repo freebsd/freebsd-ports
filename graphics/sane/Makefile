@@ -1,12 +1,12 @@
 # New ports collection makefile for:	sane
-# Version required:		1.0.1
 # Date created:			Sat Jul 19 16:23:10 MET DST 1997
 # Whom:				gary@hotlava.com
 #
 # $FreeBSD$
 #
 
-DISTNAME=	sane-1.0.1
+PORTNAME=	sane
+PORTVERSION=	1.0.1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		ftp://ftp.mostang.com/pub/sane/

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	netpbm
-# Version required:	8.4
 # Date created:		?
 # Whom:			jmz (original)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	netpbm-8.4
+PORTNAME=	netpbm
+PORTVERSION=	8.4
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/graphics/convert

@@ -1,15 +1,15 @@
 # ports collection makefile for:	xpx
-# Version required:	1.41
 # Date created:		25 Oct 1998
 # Whom:			Seiichirou Hiraoka
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xpx141
-PKGNAME=	xpx-1.41
+PORTNAME=	xpx
+PORTVERSION=	1.41
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.oersted.co.jp/~yav/soft/xpx/
+DISTNAME=	xpx141
 
 MAINTAINER=	flathill@FreeBSD.org
 

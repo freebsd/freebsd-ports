@@ -1,12 +1,12 @@
 # New ports collection makefile for:	pngcrush
-# Version required:			1.4.0
 # Date created:				07 December 1999
 # Whom:					Chris D. Faulhaber <jedgar@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	pngcrush-1.4.0
+PORTNAME=	pngcrush
+PORTVERSION=	1.4.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.sourceforge.net/pmt/
 

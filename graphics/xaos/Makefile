@@ -1,18 +1,18 @@
 # New ports collection makefile for:	XaoS
-# Version required:			2.2
 # Date created:				24 February 1996
 # Whom:					Joseph Koshy <koshy@india.hp.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	XaoS-3.0
-PKGNAME=	xaos-3.0
+PORTNAME=	xaos
+PORTVERSION=	3.0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_XCONTRIB} \
 		ftp://ftp.ta.jcu.cz/pub/linux/hubicka/XaoS/3.0/ \
 		http://www.paru.cas.cz/~hubicka/XaoS/dist/
 MASTER_SITE_SUBDIR=	graphics
+DISTNAME=	XaoS-${PORTVERSION}
 
 MAINTAINER=	jkoshy@freebsd.org
 

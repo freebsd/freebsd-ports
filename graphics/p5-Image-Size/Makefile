@@ -1,16 +1,16 @@
 # New ports collection makefile for:	p5-Image-Size
-# Version required:			2.9
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	Image-Size-2.9
-PKGNAME=	p5-Image-Size-2.9
+PORTNAME=	Image-Size
+PORTVERSION=	2.9
 CATEGORIES=	graphics www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Image
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jfitz@FreeBSD.org
 

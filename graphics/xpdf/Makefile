@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xpdf
-# Version required:     0.90
 # Date created:         02 Feb 1996
 # Whom:                 chuckr@glue.umd.edu
 #
 # $FreeBSD$
 #
 
-DISTNAME=       xpdf-0.90
+PORTNAME=       xpdf
+PORTVERSION=	0.90
 CATEGORIES=	graphics print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} ftp://ftp.foolabs.com/pub/xpdf/  \
 		ftp://ftp.duke.edu/pub/X11/contrib/applications/

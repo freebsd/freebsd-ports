@@ -1,5 +1,4 @@
 # New ports collection makefile for:	tiff
-# Version required:	3.5.5
 # Date created:		8 October 1996
 # Whom:			Richard Hwang <rhwang@bigpanda.com>
 #			Mikhail Teterin <mi@aldan.algebra.com>
@@ -8,11 +7,12 @@
 # $FreeBSD$
 #
 
-DISTNAME=	tiff-v3.5.5
-PKGNAME=	tiff-3.5.5
+PORTNAME=	tiff
+PORTVERSION=	3.5.5
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.onshore.com/pub/libtiff/ \
 		http://www.libtiff.org/
+DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 

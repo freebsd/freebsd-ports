@@ -1,12 +1,12 @@
 # New ports collection makefile for:	libspigot.a
-# Version required:	1.7
 # Date Created:		Fri Sep 15 10:04:46 CDT 1995
 # Whom:			james@cs.uwm.edu
 #
 # $FreeBSD$
 #
 
-DISTNAME= 	spigot-1.7
+PORTNAME= 	spigot
+PORTVERSION=	1.7
 CATEGORIES=	graphics
 MASTER_SITES=	http://people.FreeBSD.org/~fenner/distfiles/
 DISTFILES=	spigot.1.7.tar.gz

@@ -1,12 +1,12 @@
 # New ports collection makefile for:    xmountains
-# Version required:     2.4
 # Date created:         16 November 1996
 # Whom:                 proff
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xmountains-2.4
+PORTNAME=	xmountains
+PORTVERSION=	2.4
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/math/fractals

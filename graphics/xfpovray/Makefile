@@ -1,12 +1,12 @@
 # New ports collection makefile for:    xfpovray
-# Version required:     1.3.1
 # Date created:         20 Sep 1997
 # Whom:                 Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=       xfpovray-1.3.1
+PORTNAME=       xfpovray
+PORTVERSION=	1.3.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.batse.msfc.nasa.gov/~mallozzi/home/software/xforms/src/ \
 		${MASTER_SITE_SUNSITE}

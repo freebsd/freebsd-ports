@@ -1,16 +1,16 @@
 # New ports collection makefile for:	pixmap
-# Version required:	2.6
 # Date created:		19 February 1995
 # Whom:			jmz
 #
 # $FreeBSD$
 #
 
-DISTNAME=	pixmap2.6
-PKGNAME=	pixmap-2.6
+PORTNAME=	pixmap
+PORTVERSION=	2.6
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications/pixmap
+DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	jmz@FreeBSD.org
 

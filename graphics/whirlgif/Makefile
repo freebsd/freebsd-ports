@@ -1,15 +1,15 @@
 # New ports collection makefile for:   whirlgif
-# Version required:     3.04
 # Date created:         20 Oct 1996
 # Whom:                 Yukihiro Nakai <nakai@mlab.t.u-tokyo.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	whirlgif304
-PKGNAME=	whirlgif-3.04
+PORTNAME=	whirlgif
+PORTVERSION=	3.04
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.danbbs.dk/~dino/whirlgif/
+DISTNAME=	whirlgif304
 
 MAINTAINER=	nakai@FreeBSD.org
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:   giftrans
-# Version required:    v1.12.2
 # Date created:        14 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	giftrans-1.12.2
+PORTNAME=	giftrans
+PORTVERSION=	1.12.2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.rz.uni-karlsruhe.de/pub/net/www/tools/giftrans/
 DISTFILES=	giftrans.c giftrans.1

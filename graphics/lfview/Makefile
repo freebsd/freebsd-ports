@@ -1,22 +1,20 @@
 # ports collection makefile for:	lfview
-# Version required:	1.1beta2
 # Date created:		24 February 1999
 # Whom:			Yuu Yashiki
 #
 # $FreeBSD$
 #
 
-DISTNAME=	lfview11beta3
-PKGNAME=	lfview-1.1b3
+PORTNAME=	lfview
+PORTVERSION=	1.1.b3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.geocities.co.jp/Playtown/6344/
+DISTNAME=	lfview11beta3
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	s974123@cc.matsuyama-u.ac.jp
 
-WRKSRC=		${WRKDIR}/lfview11beta3
 USE_IMAKE=	yes
-
 NO_INSTALL_MANPAGES=	yes
 
 do-install:

@@ -1,16 +1,15 @@
 # New ports collection makefile for:    splitmpg
-# Version required:     
 # Date created:         Wed Jul 31 21:59:42 CDT 1996
 # Whom:                 erich@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	splitmpg
-PKGNAME=	splitmpg-1.0
+PORTNAME=	splitmpg
+PORTVERSION=	1.0
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.ecel.uwa.edu.au/users/michael/
-EXTRACT_SUFX=	.tgz
+DISTFILES=	${PORTNAME}.tgz
 
 MAINTAINER=	erich@FreeBSD.org
 

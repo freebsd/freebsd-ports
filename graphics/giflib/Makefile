@@ -1,12 +1,12 @@
 # New ports collection makefile for:	libungif
-# Version required:	4.1.0
 # Date created:		03 May 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	libungif-4.1.0
+PORTNAME=	libungif
+PORTVERSION=	4.1.0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		ftp://prtr-13.ucsc.edu/pub/libungif/
