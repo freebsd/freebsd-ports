@@ -1,10 +1,10 @@
 # ex:ts=8
 # Ports collection makefile for:	GNU libstdc++
-# Version required:			2.8.0
+# Version required:			2.8.1.1
 # Date created:				03 Mar 1998
 # Whom:					David O'Brien <obrien@NUXI.com>
 #
-# $Id: Makefile,v 1.10 1998/08/17 17:03:31 obrien Exp $
+# $Id: Makefile,v 1.11 1998/10/12 15:04:35 jseger Exp $
 #
 
 DISTNAME=	libstdc++-2.8.1.1
@@ -21,12 +21,17 @@ RUN_DEPENDS=	gcc28:${PORTSDIR}/lang/gcc28 \
 
 CC=		gcc28
 CXX=		g++28
-GCC28DIR=	lib/gcc-lib/i386-unknown-freebsd${OSREL}/2.8.1
+ARE_WE_ELF!=	text -x /usr/bin/objformat && /usr/bin/objformat || echo aout
+.if ${ARE_WE_ELF} == "elf"
+GNUHOST=        i386-unknown-freebsdelf${OSREL}
+.else
+GNUHOST=        i386-unknown-freebsd${OSREL}
+.endif
+GCC28DIR=	lib/gcc-lib/${GNUHOST}/2.8.1
+CONFIGURE_ARGS= --host=${GNUHOST}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-PLIST_SUB=	GCC28SUBDIR=${GCC28DIR}
-
-BROKEN_ELF=	depends on gcc28
+PLIST_SUB=	GCC28SUBDIR=${GCC28DIR} GNUHOST=${GNUHOST}
 
 pre-install:
 	@# allow a boched ``make install'' to be re-tried

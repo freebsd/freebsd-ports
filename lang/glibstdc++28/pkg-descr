@@ -1,4 +1,4 @@
-This is the ISO Standard C++ library (includes the STL) for G++ 2.8.0,
+This is the ISO Standard C++ library (includes the STL) for G++ 2.8.x,
 the latest release of the GNU C++ compiler suite.
 It is a port for now, until its stableness is proven.
 
