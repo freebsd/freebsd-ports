@@ -1,24 +1,9 @@
---- gmix/gmix.c.orig	Sun Feb 21 12:10:17 1999
-+++ gmix/gmix.c	Mon Mar  8 20:41:05 1999
-@@ -94,6 +94,17 @@
- /* 
-  * All, that is known about a mixer-device
-  */
-+
-+#if !defined(OPEN_SOUND_SYSTEM)
-+typedef struct mixer_info
-+{
-+  char id[16];
-+  char name[32];
-+  int  modify_counter;
-+  int fillers[10];
-+} mixer_info;
-+#endif
-+
- typedef struct device_info {
- 	int fd;
- 	mixer_info info;
-@@ -272,11 +283,7 @@
+
+$FreeBSD$
+
+--- gmix/gmix.c.orig	Mon Jun 11 20:50:47 2001
++++ gmix/gmix.c	Fri Jul 13 12:45:08 2001
+@@ -499,11 +499,7 @@
  	/*
  	 * open the mixer-device
  	 */
@@ -30,9 +15,9 @@
 +	sprintf(device_name, "/dev/mixer%i", num);
  	new_device->fd=open(device_name, O_RDWR, 0);
  	if (new_device->fd<0) {
- 		free(new_device);
-@@ -291,6 +298,8 @@
- 		fprintf(stderr, "Warning: This version of gmix was compiled with a different version of\nsoundcard.h.\n");
+ 		g_free(new_device);
+@@ -535,6 +531,8 @@
+ 		}			
  	}
  #endif
 +
@@ -40,7 +25,7 @@
  	/*
  	 * mixer-name
  	 */
-@@ -301,6 +310,11 @@
+@@ -545,6 +543,11 @@
  	}
  	if(!isalpha(new_device->info.name[0]))
  		g_snprintf(new_device->info.name, 31, "Card %d", num+1);
@@ -52,7 +37,7 @@
  	/* 
  	 * several bitmasks describing the mixer
  	 */
-@@ -386,15 +400,16 @@
+@@ -677,15 +680,16 @@
  {
  	int cnt;
  	device_info *new_device;
@@ -71,4 +56,4 @@
 +		 || new_device);
  }
  
- void free_one_device(gpointer a, gpointer b)
+ #ifdef ALSA
