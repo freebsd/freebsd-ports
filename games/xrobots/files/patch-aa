@@ -1,5 +1,5 @@
-*** score.c.orig	Fri Nov 17 14:37:36 1989
---- score.c	Mon Jan  2 23:09:32 1995
+*** score.c.orig	Thu Jan 22 09:58:52 1998
+--- score.c	Sun Apr 12 14:00:32 1998
 ***************
 *** 56,61 ****
 --- 56,62 ----
@@ -15,18 +15,18 @@
   
   static SCORE scores[MAXSCORES];
   
-! void 	show_scores(), 
-  	new_high_score(), 
-  	load_scores(), 
+! void 	show_scores(),   
   	write_out_scores();
+  	
+  static void new_high_score(),
 --- 68,74 ----
   
   static SCORE scores[MAXSCORES];
   
-! static void 	show_scores(), 
-  	new_high_score(), 
-  	load_scores(), 
+! static void 	show_scores(),   
   	write_out_scores();
+  	
+  static void new_high_score(),
 ***************
 *** 110,121 ****
   #ifndef SYSV
