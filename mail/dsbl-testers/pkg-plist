@@ -1,4 +1,7 @@
+@comment $FreeBSD$
+bin/auth-relaytest
 bin/formmailtest
+bin/getcookie
 bin/httptest
 bin/relaytest
 bin/socks4test
