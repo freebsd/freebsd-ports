@@ -1,0 +1,24 @@
+[ excerpt from developer's site ]
+- What is GStreamer?
+GStreamer allows the construction of graphs of media-handling
+components, ranging from simple mp3 playback to complex audio
+(mixing) and video (non-linear editing) processing. Applications
+can take advantage of advances in codec and filter technology
+transparently. Developers can add new codecs and filters by writing
+a simple plugin with a clean, generic interface. GStreamer is
+released under the LGPL, with many of the included plugins retaining
+the license of the code they were derived from, usually GPL or BSD.
+
+- Features:
+* Comprehensive Core Library
+* Intelligent Plugin Architecture
+* Extensive Development Tools
+
+- Is GStreamer a media player?
+No, GStreamer is a development framework for creating applications
+like media players, video editors, streaming media broadcasters and
+so on. That said, very good media players can easily be built on
+top of GStreamer and we even include a simple yet functional
+mediaplayer with GStreamer called Gst-Player
+
+WWW: http://gstreamer.sourceforge.net/
