@@ -164,6 +164,7 @@
     SUBDIR += libunp
     SUBDIR += libunpipc
     SUBDIR += licq
+    SUBDIR += licq-console
     SUBDIR += licq-qt-gui
     SUBDIR += linpopup
     SUBDIR += macipgw
