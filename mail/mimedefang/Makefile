@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mimedefang
-PORTVERSION=	2.43
-PORTREVISION=	2
+PORTVERSION=	2.44
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mimedefang.org/static/
 
@@ -40,7 +39,7 @@ CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/mimedefang \
 			--prefix=${PREFIX}
 
 MAN5=	mimedefang-filter.5
-MAN7=	mimedefang-protocol.7
+MAN7=	mimedefang-notify.7 mimedefang-protocol.7
 MAN8=	mimedefang.8 mimedefang.pl.8 mimedefang-multiplexor.8 \
 	md-mx-ctrl.8 watch-mimedefang.8
 
