@@ -44,8 +44,8 @@
 -    INC			=> "-I$CCLIENT_DIR",
 -    LIBS		=> ["-lc"],
 -    OBJECT		=> "Cclient.o @objects"
-+    INC			=> "-I$ENV{'PREFIX'}/include/c-client",
-+    LIBS		=> "-lc -L$ENV{'PREFIX'}/lib -lc-client4",
++    INC			=> "-I\${PREFIX}/include/c-client",
++    LIBS		=> "-lc -L\${PREFIX}/lib -lc-client4",
 +    OBJECT		=> "Cclient.o"
  );
  
