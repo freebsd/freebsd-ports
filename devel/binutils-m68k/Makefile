@@ -3,7 +3,7 @@
 # Date created:		7 July 1998
 # Whom:			Jerry Hicks <jhicks@glenatl.glenayre.com>
 #
-# $Id: Makefile,v 1.1.1.1 1998/08/09 01:29:10 steve Exp $
+# $Id: Makefile,v 1.2 1998/08/17 00:21:04 steve Exp $
 #
 
 DISTNAME=	binutils-2.9.1
@@ -11,7 +11,7 @@ PKGNAME=	m68kbinutils-2.9.1
 CATEGORIES=	devel
 MASTER_SITES=   ${MASTER_SITE_GNU}
 
-MAINTAINER=	jhicks@glenatl.glenayre.com
+MAINTAINER=	Jerry.Hicks@Glenayre.com
 
 NO_PACKAGE=	limited audience
 USE_GMAKE=	yes

@@ -3,7 +3,7 @@
 # Date created:		7 July 1998
 # Whom:			Jerry Hicks <jhicks@glenatl.glenayre.com>
 #
-# $Id: Makefile,v 1.1.1.1 1998/08/09 01:39:04 steve Exp $
+# $Id: Makefile,v 1.2 1998/08/17 00:23:06 steve Exp $
 #
 
 DISTNAME=	newlib-1.8.1
@@ -11,7 +11,7 @@ PKGNAME=	m68knewlib-1.8.1
 CATEGORIES=	devel
 MASTER_SITES=   ftp://ftp.cygnus.com/pub/newlib/
 
-MAINTAINER=	jhicks@glenatl.glenayre.com
+MAINTAINER=	Jerry.Hicks@Glenayre.com
 
 BUILD_DEPENDS=	m68k-coff-gcc:${PORTSDIR}/devel/m68kgcc
 
