@@ -1,0 +1,8 @@
+OGMRip is an application and a set of libraries for ripping and encoding DVD
+into DivX/OGM files using a wide variety of codecs. It relies on mplayer,
+mencoder, ogmtools, oggenc and lame to perform its tasks.
+
+The GUI features a clean hig-compliant GNOME 2 interface and tries to minimize
+as much as possible esoteric settings.
+
+WWW:	http://ogmrip.sourceforge.net/
