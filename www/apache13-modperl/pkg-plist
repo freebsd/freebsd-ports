@@ -141,10 +141,6 @@ share/doc/apache/bind.html.en
 share/doc/apache/bind.html.fr
 share/doc/apache/bind.html.html
 share/doc/apache/bind.html.ja.jis
-share/doc/apache/cgi_path.html.en
-share/doc/apache/cgi_path.html.fr
-share/doc/apache/cgi_path.html.html
-share/doc/apache/cgi_path.html.ja.jis
 share/doc/apache/configuring.html.fr
 share/doc/apache/configuring.html.en
 share/doc/apache/configuring.html.ja.jis
@@ -157,6 +153,7 @@ share/doc/apache/cygwin.html
 share/doc/apache/dns-caveats.html.en
 share/doc/apache/dns-caveats.html.fr
 share/doc/apache/dns-caveats.html.html
+share/doc/apache/dns-caveats.html.ja.jis
 share/doc/apache/dso.html
 share/doc/apache/ebcdic.html
 share/doc/apache/env.html.en
@@ -189,6 +186,7 @@ share/doc/apache/install.html.en
 share/doc/apache/install.html.ja.jis
 share/doc/apache/invoking.html.en
 share/doc/apache/invoking.html.html
+share/doc/apache/invoking.html.ja.jis
 share/doc/apache/keepalive.html.en
 share/doc/apache/keepalive.html.html
 share/doc/apache/keepalive.html.ja.jis
@@ -332,7 +330,6 @@ share/doc/apache/new_features_1_1.html
 share/doc/apache/new_features_1_2.html
 share/doc/apache/new_features_1_3.html.en
 share/doc/apache/new_features_1_3.html.ja.jis
-share/doc/apache/new_features_2_0.html
 share/doc/apache/process-model.html.en
 share/doc/apache/process-model.html.html
 share/doc/apache/process-model.html.ja.jis
