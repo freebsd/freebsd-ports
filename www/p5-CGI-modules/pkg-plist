@@ -1,0 +1,16 @@
+lib/perl5/site_perl/CGI/Base.pm
+lib/perl5/site_perl/CGI/Form.pm
+lib/perl5/site_perl/CGI/Carp.pm
+lib/perl5/site_perl/CGI/BasePlus.pm
+lib/perl5/site_perl/CGI/test.pl
+lib/perl5/site_perl/CGI/MiniSvr.pm
+lib/perl5/site_perl/CGI/Request.pm
+lib/perl5/man/man3/CGI::Base.3.gz
+lib/perl5/man/man3/CGI::Form.3.gz
+lib/perl5/man/man3/CGI::Carp.3.gz
+lib/perl5/man/man3/CGI::BasePlus.3.gz
+lib/perl5/man/man3/CGI::MiniSvr.3.gz
+lib/perl5/man/man3/CGI::Request.3.gz
+lib/perl5/site_perl/i386-freebsd/auto/CGI/.packlist
+@dirrm lib/perl5/site_perl/i386-freebsd/auto/CGI
+@dirrm lib/perl5/site_perl/CGI
