@@ -15,8 +15,8 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-LIB_DEPENDS=	kdecore.${KDELIB_SHLIBVER}:${PORTSDIR}/x11/${KDE_PORTNAME}
-RUN_DEPENDS=	${LOCALBASE}/lib/ruby/site_ruby/${RUBY_VER}/qt.rb:${PORTSDIR}/x11-toolkits/${RUBY_QT_PORTNAME}
+LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11
+RUN_DEPENDS=	${LOCALBASE}/lib/ruby/site_ruby/${RUBY_VER}/qt.rb:${PORTSDIR}/x11-toolkits/ruby-qt
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
@@ -25,24 +25,12 @@ USE_GMAKE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 CONFIGURE_ARGS=	--with-x-dir=${X11BASE} \
+		--with-qti18n \
 		--with-qt-include=${X11BASE}/include/X11/qt \
 		--with-qt-lib=${X11BASE}/lib \
 		--with-kde-dir=${LOCALBASE}
 MAKE_ARGS=	LOCAL_LIBS=-lgcc
 INSTALL_TARGET=	site-install
-
-.if defined(WITH_I18N)
-QTLIB=		qti18n
-KDELIB_SHLIBVER=	2
-KDE_PORTNAME=	kdelibs11-i18n
-RUBY_QT_PORTNAME=	ruby-qt-i18n
-CONFIGURE_ARGS+=	--with-qti18n=qti18n
-.else
-QTLIB=		qt
-KDELIB_SHLIBVER=	3
-KDE_PORTNAME=	kdelibs11
-RUBY_QT_PORTNAME=	ruby-qt
-.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
