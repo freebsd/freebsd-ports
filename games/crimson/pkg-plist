@@ -1,4 +1,5 @@
 bin/crimson
+share/crimson/title.bmp
 share/crimson/levels/ArmsRace.lev
 share/crimson/levels/TheGreatBattle.lev
 share/crimson/levels/Uprising.lev

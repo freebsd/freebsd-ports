@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	crimson
-PORTVERSION=	0.2.5
+PORTVERSION=	0.2.6
 CATEGORIES=	games
 MASTER_SITES=	http://www.lanipage.de/jens/crimson/
 PKGNAMESUFFIX=	-fields
