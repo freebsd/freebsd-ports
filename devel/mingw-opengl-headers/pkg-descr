@@ -1,0 +1,6 @@
+Headers and DLLs for OpenGL development, missing in MinGW installation.
+
+Read more about MinGW + OpenGL at
+WWW: http://sites.netscape.net/ptrpck/
+
+-- Michal Pasternak <doc@lublin.t1.pl>
