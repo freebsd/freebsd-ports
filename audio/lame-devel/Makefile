@@ -47,6 +47,8 @@ WANT_GTK=	yes
 
 MAN1=		lame.1
 
+NO_LATEST_LINK=	yes
+
 .include <bsd.port.pre.mk>
 
 .if defined(HAVE_GTK)
