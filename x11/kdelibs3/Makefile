@@ -8,6 +8,7 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -23,6 +24,7 @@ LIB_DEPENDS=	art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl2 \
 		artsc.0:${PORTSDIR}/audio/arts \
 		cups.2:${PORTSDIR}/print/cups-base \
 		fam.0:${PORTSDIR}/devel/fam \
+		idn:${PORTSDIR}/devel/libidn \
 		jasper:${PORTSDIR}/graphics/jasper \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
@@ -61,6 +63,7 @@ LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 
 pre-configure:
 	${REINPLACE_CMD} "s, kspell,,g" ${WRKSRC}/doc/Makefile.in
+	${REINPLACE_CMD} "s,%%LOCALBASE%%,${LOCALBASE},g" ${WRKSRC}/kdecore/kidna.cpp
 
 post-configure:
 	${TOUCH} ${WRKSRC}/dcop/dcop-path.h.in
