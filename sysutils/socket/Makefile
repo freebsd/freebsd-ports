@@ -7,12 +7,14 @@
 
 PORTNAME=	socket
 PORTVERSION=	1.1
-CATEGORIES=	sysutils net
+PORTREVISION=	1
+CATEGORIES=	sysutils net ipv6
 MASTER_SITES=	http://www.de.freebsd.org/~wosch/src/
 
 MAINTAINER=	wosch@FreeBSD.org
 COMMENT=	Create tcp socket and connect to stdin/out
 
+MAKE_ENV+=	SWITCHES="-DUSE_INET6 -DHAVE_SYS_PARAM_H -Wall"
 MAN1=		socket.1
 
 post-install:
