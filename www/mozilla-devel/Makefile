@@ -10,7 +10,7 @@ PORTVERSION=	1.3b
 PORTEPOCH?=	1
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
-	      	${MASTER_SITE_LOCAL}:local
+	      	${MASTER_SITE_LOCAL:S/$/:local/}
 MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION:S/.rc/rc/}/src \
 		marcus/:local
 DISTFILES=	${PORTNAME}-source-${PORTVERSION:S/.rc/rc/}${EXTRACT_SUFX} \
