@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.67 1998/10/08 03:42:23 jkh Exp $
+# $Id: Makefile,v 1.68 1998/10/08 06:16:18 jkh Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -27,7 +27,8 @@ MASTER_SITES=	\
 	ftp://isdec.vc.cvut.cz/pub/security/unimi/crypt/applied-crypto/
 
 CONFIGURE_ARGS+= --with-rsaref
-BUILD_DEPENDS+= ${PORTSDIR}/security/rsaref/work/.extract_done:${PORTSDIR}/security/rsaref
+LIB_DEPENDS+=	rsaref.2:${PORTSDIR}/security/rsaref
+BUILD_DEPENDS+= /nonexistent:${PORTSDIR}/security/rsaref:extract
 .endif
 
 #
