@@ -193,7 +193,7 @@ sub inq_m {
      lines!",   $def{'port-owner'});
 
     $settings .= " port-group";
-    $def{'port-group'} = "modem" if !$def{'port-group'};
+    $def{'port-group'} = "uucp" if !$def{'port-group'};
     $def{'port-group'} = &ask ("   - `port-group' 
      If set, mgetty will `chgrp' the tty line to this group id (which
      can be given as group name, or as integer gid). If it's not given,

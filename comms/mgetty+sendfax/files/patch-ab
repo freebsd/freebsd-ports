@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Dec 16 21:44:14 1997
-+++ Makefile	Mon Dec 29 22:41:35 1997
+--- Makefile.orig	Mon Jul  6 05:24:36 1998
++++ Makefile	Thu Jul 16 14:04:54 1998
 @@ -4,8 +4,8 @@
  #
  # this is the C compiler to use (on SunOS, the standard "cc" does not
@@ -11,16 +11,16 @@
  #
  #### C Compiler Flags ####
  #
-@@ -108,7 +108,7 @@
+@@ -107,7 +107,7 @@
  # prompt first. Don't forget to activate the /AutoPPP/ line in login.config!
  #
  #CFLAGS=-Wall -O2 -pipe -DSECUREWARE -DUSE_POLL
 -CFLAGS=-O2 -Wall -pipe
-+#CFLAGS=-O2 -Wall -pipe
++CFLAGS+=-DAUTO_PPP
  #CFLAGS=-O -DSVR4
  #CFLAGS=-O -DSVR4 -DSVR42
  #CFLAGS=-O -DUSE_POLL
-@@ -151,7 +151,7 @@
+@@ -149,7 +149,7 @@
  # For Linux, add "-lutil" if the linker complains about "updwtmp".
  #
  LDFLAGS=
@@ -29,7 +29,16 @@
  #LIBS=-lprot -lsocket				# SCO Unix
  #LIBS=-lsocket
  #LIBS=-lbsd					# OSF/1
-@@ -261,9 +261,9 @@
+@@ -247,7 +247,7 @@
+ # If you have Perl with TK extentions, define it here. This may be the
+ # same as PERL=... above, or different, if you have TkPerl statically
+ # linked.
+-TKPERL=/usr/bin/tkperl
++#TKPERL=/usr/bin/tkperl
+ #
+ #
+ # An echo program that understands escapes like "\n" for newline or
+@@ -259,9 +259,9 @@
  # please use the "mg.echo" program provided in the compat/ subdirectory.
  # Set ECHO="mg.echo" and INSTALL_MECHO to mg.echo
  #
@@ -41,7 +50,7 @@
  
  #
  # for mgetty, that's it. If you want to use the voice
-@@ -271,7 +271,7 @@
+@@ -269,7 +269,7 @@
  
  # To maintain security, I recommend creating a new group for
  # users who are allowed to manipulate the recorded voice messages.
@@ -50,7 +59,7 @@
  PHONE_PERMS=770
  
  # Add -DNO_STRSTR to CFLAGS if you don't have strstr().
-@@ -303,7 +303,7 @@
+@@ -301,7 +301,7 @@
  
  all:	bin-all doc-all
  
@@ -59,7 +68,7 @@
  
  # a few C files need extra compiler arguments
  
-@@ -562,15 +562,15 @@
+@@ -560,15 +560,15 @@
  	cd bindist; gtar cvvfz mgetty$(MR).$(SR)-bin.tgz *
  
  
@@ -78,7 +87,7 @@
  
  	-test -d $(SBINDIR) || ( ./mkidirs $(SBINDIR) ; chmod 755 $(SBINDIR) )
  	-mv -f $(SBINDIR)/mgetty $(SBINDIR)/mgetty.old
-@@ -586,10 +586,10 @@
+@@ -584,10 +584,10 @@
  		( ./mkidirs $(CONFDIR); chmod 755 $(CONFDIR))
  	test -f $(CONFDIR)/login.config || \
  		$(INSTALL) -o root -m 600 login.config $(CONFDIR)/
