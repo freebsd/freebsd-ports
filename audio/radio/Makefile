@@ -17,4 +17,9 @@ NO_WRKSUBDIR=	yes
 MAKE_FLAGS=	FreeBSD -f
 MAN1=		radio.1 broadcast.1
 
+post-patch:
+	@${SED} -e 's,machine/soundcard.h,sys/soundcard.h,' < \
+		${WRKSRC}/radio.c > ${WRKSRC}/radio.c.new
+	@${MV} ${WRKSRC}/radio.c.new ${WRKSRC}/radio.c
+
 .include <bsd.port.mk>

@@ -16,6 +16,11 @@ MAINTAINER=	kunia@istc.kiev.ua
 MAN1=		fmio.1
 MANCOMPRESSED=	no
 
+post-patch:
+	@${SED} -e 's,machine/soundcard.h,sys/soundcard.h,' < \
+		${WRKSRC}/mixer.c > ${WRKSRC}/mixer.c.new
+	@${MV} ${WRKSRC}/mixer.c.new ${WRKSRC}/mixer.c
+
 pre-build:
 .if !defined(WITH_BKTR)
 	@${ECHO_MSG}
