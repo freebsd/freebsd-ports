@@ -1,37 +1,24 @@
-
-$FreeBSD$
-
---- intl/Makefile.in	2001/05/29 08:54:24	1.1
-+++ intl/Makefile.in	2001/05/29 09:00:12
-@@ -51,7 +51,7 @@
- YFLAGS = --name-prefix=__gettext
- 
+--- intl/Makefile.in.orig	Thu Jan 31 08:11:48 2002
++++ intl/Makefile.in	Fri Mar 15 17:38:20 2002
+@@ -54,3 +54,3 @@
  DEFS = -DLOCALEDIR=\"$(localedir)\" -DLOCALE_ALIAS_PATH=\"$(aliaspath)\" \
---DLIBDIR=\"$(libdir)\" @DEFS@
-+-DLIBDIR=\"$(prefix)/libdata\" @DEFS@
+--DLIBDIR=\"$(libdir)\" -DIN_LIBINTL @DEFS@
++-DLIBDIR=\"$(prefix)/libdata\" -DIN_LIBINTL @DEFS@
  CPPFLAGS = @CPPFLAGS@
- CFLAGS = @CFLAGS@
- LDFLAGS = @LDFLAGS@
-@@ -151,11 +151,11 @@
- 	  : ; \
- 	fi
+@@ -155,7 +155,7 @@
  	if test '@USE_INCLUDED_LIBINTL@' = yes; then \
--	  $(mkinstalldirs) $(DESTDIR)$(libdir); \
+-	  test @GLIBC21@ != no || $(mkinstalldirs) $(DESTDIR)$(libdir); \
 -	  temp=$(DESTDIR)$(libdir)/t-charset.alias; \
 -	  dest=$(DESTDIR)$(libdir)/charset.alias; \
 -	  if test -f $(DESTDIR)$(libdir)/charset.alias; then \
 -	    orig=$(DESTDIR)$(libdir)/charset.alias; \
-+	  $(mkinstalldirs) $(DESTDIR)$(prefix)/libdata; \
++	  test @GLIBC21@ != no || $(mkinstalldirs) $(DESTDIR)$(prefix)/libdata; \
 +	  temp=$(DESTDIR)$(prefix)/libdata/t-charset.alias; \
 +	  dest=$(DESTDIR)$(prefix)/libdata/charset.alias; \
 +	  if test -f $(DESTDIR)$(prefix)/libdata/charset.alias; then \
 +	    orig=$(DESTDIR)$(prefix)/libdata/charset.alias; \
  	    sed -f ref-add.sed $$orig > $$temp; \
- 	    $(INSTALL_DATA) $$temp $$dest; \
- 	    rm -f $$temp; \
-@@ -217,9 +217,9 @@
- 	  : ; \
- 	fi
+@@ -242,5 +242,5 @@
  	if test '@USE_INCLUDED_LIBINTL@' = yes; then \
 -	  if test -f $(DESTDIR)$(libdir)/charset.alias; then \
 -	    temp=$(DESTDIR)$(libdir)/t-charset.alias; \
@@ -40,5 +27,3 @@ $FreeBSD$
 +	    temp=$(DESTDIR)$(prefix)/libdata/t-charset.alias; \
 +	    dest=$(DESTDIR)$(prefix)/libdata/charset.alias; \
  	    sed -f ref-del.sed $$dest > $$temp; \
- 	    if grep '^# Packages using this file: $$' $$temp > /dev/null; then \
- 	      rm -f $$dest; \

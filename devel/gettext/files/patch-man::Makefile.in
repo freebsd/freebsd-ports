@@ -1,14 +1,7 @@
-
-$FreeBSD: /tmp/pcvs/ports/devel/gettext/files/Attic/patch-man::Makefile.in,v 1.1 2002-03-15 19:43:48 ade Exp $
-
---- man/Makefile.in	2001/05/29 08:45:39	1.1
-+++ man/Makefile.in	2001/05/29 08:46:06
-@@ -101,7 +101,7 @@
- 
+--- man/Makefile.in.orig	Tue Mar 12 13:04:22 2002
++++ man/Makefile.in	Fri Mar 15 17:41:43 2002
+@@ -144,3 +144,3 @@
  VERSION = @VERSION@
- mandir = @mandir@
 -docdir = $(prefix)/doc/@PACKAGE@
 +docdir = $(prefix)/share/doc/@PACKAGE@
  htmldir = $(docdir)
- 
- AUTOMAKE_OPTIONS = 1.2 gnits
