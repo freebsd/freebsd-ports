@@ -7,12 +7,15 @@
 
 PORTNAME=	openssh
 PORTVERSION=	3.1p1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/ \
 		ftp://ftp.op.net/pub/OpenBSD/OpenSSH/portable/ \
 		ftp://carroll.cac.psu.edu/pub/OpenBSD/OpenSSH/portable/
 PKGNAMESUFFIX=	-portable
+
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	openssh-3.1p1-adv.token.patch
 
 MAINTAINER=	dinoex@FreeBSD.org
 
@@ -50,11 +53,12 @@ EXTRA_PATCHES+=		${FILESDIR}/batch.patch
 .endif
 
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
-MASTER_SITES+=	${PATCH_SITES}
+GSSAPI_SITE=	http://www.sxw.org.uk/computing/patches/
+MASTER_SITES+=	${GSSAPI_SITE}
 DISTFILES=	${EXTRACT_ONLY} ${PORTNAME}-${PORTVERSION}-gssapi-20020321.diff
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
-PATCH_SITES=	http://www.sxw.org.uk/computing/patches/
-PATCHFILES=	${PORTNAME}-mit-krb5-20020319.diff
+PATCH_SITES+=	${GSSAPI_SITE}
+PATCHFILES+=	${PORTNAME}-mit-krb5-20020319.diff
 EXTRA_PATCHES+=		${FILESDIR}/servconf.c.patch
 BUILD_DEPENDS=		autoconf:${PORTSDIR}/devel/autoconf
 # USE_AUTOCONF_VER=	252 # broken

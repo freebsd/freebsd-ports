@@ -1,3 +1,4 @@
 MD5 (openssh-3.1p1.tar.gz) = c6a52d4126ed27eb57c31729ec6b2362
 MD5 (openssh-3.1p1-gssapi-20020321.diff) = d571cea9810630650139013a1af4b1d9
+MD5 (openssh-3.1p1-adv.token.patch) = 8c34327404f504f8d5bf1a2063f4e7b7
 MD5 (openssh-mit-krb5-20020319.diff) = 151af40132624a615c96027491f09f25

@@ -1,2 +1,3 @@
 MD5 (openssh-3.1.tgz) = b43deb1a3b2047216a28c00ccc45f548
 MD5 (openbsd28_3.1.patch) = eb904373fad27e1f71ddf5939f4923a6
+MD5 (openssh-3.1-adv.token.patch) = 4e37cb88fab56f7769126edfa66490ff
