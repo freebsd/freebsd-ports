@@ -32,6 +32,44 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+
+  <vuln vid="396ee517-a607-11d9-ac72-000bdb1444a4">
+    <topic>horde -- Horde Page Title Cross-Site Scripting Vulnerability</topic>
+    <affects>
+      <package>
+	<name>horde</name>
+	<name>horde-php5</name>
+	<range><gt>3.*</gt><lt>3.0.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia Advisory: SA14730</p>
+	<blockquote cite="http://secunia.com/advisories/14730">
+	  <p>A vulnerability has been reported in Horde, which can be
+	     exploited by malicious people to conduct cross-site scripting
+	     attacks.</p>
+	  <p>Input passed when setting the parent frame's page title via
+	     JavaScript is not properly sanitised before being returned to
+	     the user. This can be exploited to execute arbitrary HTML and
+	     script code in a user's browser session in context of an affected
+	     site.</p>
+	  <p>The vulnerability has been reported in version 3.0.4-RC2. Prior
+	     versions may also be affected.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0961</cvename>
+      <mlist msgid="20050329111028.6A112117243@neo.wg.de">http://lists.horde.org/archives/announce/2005/000176.html</mlist>
+      <url>http://cvs.horde.org/diff.php/horde/docs/CHANGES?r1=1.515.2.49&amp;r2=1.515.2.93&amp;ty=h</url>
+    </references>
+    <dates>
+      <discovery>2005-03-29</discovery>
+      <entry>2005-04-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ef410571-a541-11d9-a788-0001020eed82">
     <topic>wu-ftpd -- remote globbing DoS vulnerability</topic>
     <affects>
