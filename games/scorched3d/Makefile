@@ -7,6 +7,7 @@
 
 PORTNAME=		scorched3d
 PORTVERSION=		0.${SCORCH_VERSION}
+PORTREVISION=		1
 CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	scorched3d
@@ -36,8 +37,6 @@ CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 MAKE_ENV=		SDL_CONFIG="${LOCALBASE}/bin/sdl11-config"
 MAKE_ARGS=		ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" \
 			AUTOMAKE="${TRUE}" AUTOHEADER="${TRUE}"
-
-BROKEN=		"Does not compile"
 
 pre-configure:
 	@cd ${WRKSRC}/scripts && ${PERL} createAMMakefile.pl
