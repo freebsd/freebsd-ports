@@ -101,12 +101,9 @@ lib/libExtraWINGs.a
 lib/libWINGs.a
 lib/libWMaker.a
 lib/libWUtil.a
-lib/libwmfun.a
-lib/libwmfun.so
-lib/libwmfun.so.1
 lib/libwraster.a
 lib/libwraster.so
-lib/libwraster.so.3
+lib/libwraster.so.4
 share/WINGs/Images.tiff
 share/WINGs/Images.xpm
 share/WINGs/defaultIcon.tiff
@@ -351,6 +348,7 @@ share/locale/de/LC_MESSAGES/WindowMaker.mo
 share/locale/el/LC_MESSAGES/WindowMaker.mo
 share/locale/es/LC_MESSAGES/WPrefs.mo
 share/locale/es/LC_MESSAGES/WindowMaker.mo
+share/locale/et/LC_MESSAGES/WindowMaker.mo
 share/locale/fi/LC_MESSAGES/WPrefs.mo
 share/locale/fi/LC_MESSAGES/WindowMaker.mo
 share/locale/fr/LC_MESSAGES/WPrefs.mo
