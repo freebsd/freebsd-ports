@@ -1,5 +1,5 @@
---- install.sh.orig	Tue Nov 16 15:11:43 2004
-+++ install.sh	Tue Nov 16 15:26:04 2004
+--- install.sh.orig	Fri Feb 25 14:36:52 2005
++++ install.sh	Wed Mar  2 12:43:44 2005
 @@ -108,8 +108,8 @@
  
      if test ${os} = 'FreeBSD' -o ${os} = 'OpenBSD'; then
@@ -38,7 +38,7 @@
      
      wrapper_contain="#!/bin/sh
  
-@@ -838,6 +838,9 @@
+@@ -850,6 +850,9 @@
  OPERA_LD_PRELOAD=\"\${LD_PRELOAD}\"
  export OPERA_LD_PRELOAD
  
@@ -48,7 +48,7 @@
  # Native Java enviroment
  if test -f \"\${OPERA_PERSONALDIR}/javapath.txt\"; then
      INIJAVA=\`cat \${OPERA_PERSONALDIR}/javapath.txt\`
-@@ -861,47 +864,12 @@
+@@ -873,53 +876,12 @@
  
  if test ! \"\${OPERA_JAVA_DIR}\"; then
  
@@ -61,6 +61,10 @@
 +    PREFIXES=\"%%LOCALBASE%%\"
  
      for SUNJAVA in \\
+-	jre1.5.0_01 \\
+-	jdk1.5.0_01/jre \\
+-	j2re1.4.2_06 \\
+-	j2sdk1.4.2_06/jre \\
 -	j2re1.4.2_04 \\
 -	j2sdk1.4.2_04/jre \\
 -	j2re1.4.2_03 \\
@@ -82,6 +86,8 @@
 -	j2se/1.4/jre \\
 -	j2se/1.3/jre \\
 -	j2se/jre \\
+-	jre1.3.1_15 \\
+-	jre1.3.1_04 \\
 -	jre1.3.1_02 \\
 -	jre1.3.1_01 \\
 -	j2re1.3.1 \\
@@ -99,7 +105,7 @@
  	; do
  	for PREFIX in \${PREFIXES}; do
  	    if test -f \"\${PREFIX}/\${SUNJAVA}/lib/${wrapper_sunjava_machine}/libjava.so\"; then OPERA_JAVA_DIR=\"\${PREFIX}/\${SUNJAVA}/lib/${wrapper_sunjava_machine}\" && break; fi
-@@ -950,11 +918,8 @@
+@@ -970,11 +932,8 @@
  
  # Acrobat Reader
  for BINDIR in \\
@@ -113,7 +119,7 @@
      ; do
      if test -d \${BINDIR} ; then PATH=\${PATH}:\${BINDIR}; fi
  done
-@@ -965,12 +930,13 @@
+@@ -985,12 +944,13 @@
  LD_LIBRARY_PATH=\"\${OPERA_BINARYDIR}:\${LD_LIBRARY_PATH}\"
  export LD_LIBRARY_PATH
  
@@ -129,7 +135,7 @@
          LD_LIBRARY_PATH=\"\${LD_LIBRARY_PATH}:\${LIBASPELL_DIR}\"
      fi
  done
-@@ -1064,7 +1030,7 @@
+@@ -1080,7 +1040,7 @@
      chop "${OPERADESTDIR}" "str_localdirshare"
      chop "${OPERADESTDIR}" "str_localdirplugin"
  
@@ -138,7 +144,7 @@
  
      # Executable
  	debug_msg 1 "Executable"
-@@ -1099,7 +1065,7 @@
+@@ -1115,7 +1075,7 @@
  
  	#cp $cpv $cpf wrapper.sh $wrapper_dir/opera
  	generate_wrapper
@@ -147,7 +153,7 @@
  
      # Documentation
  	debug_msg 1 "Documentation"
-@@ -1264,36 +1230,13 @@
+@@ -1288,36 +1248,13 @@
  
  	if test -z "${OPERADESTDIR}"; then
  
@@ -188,7 +194,7 @@
  
  	fi # OPERADESTDIR
  
-@@ -1321,13 +1264,13 @@
+@@ -1345,13 +1282,13 @@
  {
      # arg1 = location
  
@@ -205,7 +211,7 @@
  opera group "Internet"'
  
      echo "${wmconfig_contain}" > ${wmconfig_file}
-@@ -1338,12 +1281,12 @@
+@@ -1362,12 +1299,12 @@
  {
      # arg1 = location
  
@@ -221,7 +227,7 @@
  Icon=opera.xpm
  Terminal=0
  Type=Application'
-@@ -1422,72 +1365,36 @@
+@@ -1446,72 +1383,36 @@
  
      debug_msg 1 "in gnome()"
  
@@ -316,7 +322,7 @@
     fi
     # Add ximian here
  }
-@@ -1498,39 +1405,31 @@
+@@ -1522,39 +1423,31 @@
  
      debug_msg 1 "in kde()"
  
