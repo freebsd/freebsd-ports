@@ -20,10 +20,10 @@ include/libintl.h
 @unexec install-info --delete %D/info/gettext.info %D/info/dir
 info/gettext.info
 @exec install-info %D/info/gettext.info %D/info/dir
-lib/libgettextlib-0.11.1.so
+lib/libgettextlib-%%VERSION%%.so
 lib/libgettextlib.a
 lib/libgettextlib.so
-lib/libgettextsrc-0.11.1.so
+lib/libgettextsrc-%%VERSION%%.so
 lib/libgettextsrc.a
 lib/libgettextsrc.so
 lib/libintl.a
@@ -183,7 +183,7 @@ share/locale/sk/LC_MESSAGES/gettext.mo
 share/locale/sl/LC_MESSAGES/gettext.mo
 share/locale/sv/LC_MESSAGES/gettext.mo
 share/locale/tr/LC_MESSAGES/gettext.mo
-share/locale/zh/LC_MESSAGES/gettext.mo
+share/locale/zh_TW/LC_MESSAGES/gettext.mo
 @dirrm share/gettext/projects/TP
 @dirrm share/gettext/projects/KDE
 @dirrm share/gettext/projects/GNOME
