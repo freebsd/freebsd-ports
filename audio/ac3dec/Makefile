@@ -10,7 +10,7 @@ PORTVERSION=	0.6.1
 CATEGORIES=	audio
 MASTER_SITES=	http://dara.notbsd.org/~aholtzma/ac3/tarballs/
 
-MAINTAINER=	3d@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software for research in digital audio coding/decoding
 
 GNU_CONFIGURE=	yes

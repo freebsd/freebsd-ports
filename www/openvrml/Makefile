@@ -11,7 +11,7 @@ CATEGORIES=	www graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	3d@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VRML97 runtime and browser ("lookat")
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
