@@ -1,5 +1,5 @@
 --- sshd.c.orig	Tue Jan 20 15:24:10 1998
-+++ sshd.c	Thu Jan 22 14:55:40 1998
++++ sshd.c	Thu Jan 22 16:29:19 1998
 @@ -428,6 +428,10 @@
  #include "firewall.h"	/* TIS authsrv authentication */
  #endif
@@ -356,7 +356,19 @@
    
    /* Set custom environment options from RSA authentication. */
    while (custom_environment) 
-@@ -3647,7 +3828,11 @@
+@@ -3632,7 +3813,11 @@
+ 		  struct stat mailbuf;
+ 		  
+ 		  if (stat(mailbox, &mailbuf) == -1 || mailbuf.st_size == 0)
++#ifdef __FreeBSD__
++		    ;
++#else
+ 		    printf("No mail.\n");
++#endif
+ 		  else if (mailbuf.st_atime > mailbuf.st_mtime)
+ 		    printf("You have mail.\n");
+ 		  else
+@@ -3647,7 +3832,11 @@
  	  /* Execute the shell. */
  	  argv[0] = buf;
  	  argv[1] = NULL;
@@ -368,7 +380,7 @@
  	  /* Executing the shell failed. */
  	  perror(shell);
  	  exit(1);
-@@ -3668,7 +3853,11 @@
+@@ -3668,7 +3857,11 @@
    argv[1] = "-c";
    argv[2] = (char *)command;
    argv[3] = NULL;
