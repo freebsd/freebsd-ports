@@ -1,30 +1,30 @@
-# New ports collection makefile for:	gnustep-objc
-# Date created:		28.Mar.2003
-# Whom:			dirk.meyer@dinoex.sub.org
+# New ports collection makefile for:    gnustep-objc
+# Date created:         17 April 2001
+# Whom:                 Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-CATEGORIES=		lang
-PKGNAMESUFFIX=		-objc
+PORTNAME=	gnustep-objc
+PORTVERSION=	1.3.0
+PORTEPOCH=	1
+CATEGORIES=	lang devel
+MASTER_SITES=	${MASTER_SITE_GNUSTEP}
+MASTER_SITE_SUBDIR=	libs
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	GNU Compiler Collection 3.2.3 with threads and shared libs
+COMMENT=	A snapshot of libobjc, meant to be used with GNUstep
 
-WANT_SHAREDLIBS=	yes
-WANT_THREADS_SUPPORT=	yes
-MASTERDIR?=	${.CURDIR}/../../lang/gcc32
-INSTALLS_SHLIB=		yes
-LDCONFIG_DIRS=		%%PREFIX%%/lib ${TARGLIB}
-LDFLAGS+=		-L${LOCALBASE}/lib
+PREFIX=		${LOCALBASE}/GNUstep
+USE_GMAKE=	yes
+USE_GNUSTEP=	yes
+USE_GNUSTEP_BUILD=	yes
+USE_GNUSTEP_INSTALL=	yes
+GNUSTEP_WITHOUT_LIBOBJC=	yes
+MAKEFILE=	GNUmakefile
+ALL_TARGET=
+NO_MTREE=	yes
+INSTALLS_SHLIB=	yes
+NOT_FOR_ARCHS=	ia64
 
-# does not build on:
-NOT_FOR_ARCHS=		amd64
-
-CONFLICTS?=		gcc-3.2*
-
-.if exists(${.CURDIR}/Makefile.local)
-.include "${.CURDIR}/Makefile.local"
-.endif
-
-.include "${MASTERDIR}/Makefile"
+.include <bsd.port.mk>
