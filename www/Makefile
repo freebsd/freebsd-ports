@@ -600,6 +600,7 @@
     SUBDIR += py-clientform
     SUBDIR += py-cssutils
     SUBDIR += py-fcgi
+    SUBDIR += py-forgethtml
     SUBDIR += py-htmltestcase
     SUBDIR += py-imdbpy
     SUBDIR += py-mt
