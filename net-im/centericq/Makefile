@@ -96,9 +96,6 @@ CONFIGURE_ARGS+=	--disable-gg
 .endif
 
 post-patch:
-.if ${OSVERSION} >= 502124
-	@cd ${WRKSRC} && ${PATCH} < ${PATCHDIR}/extra-patch-gcc34
-.endif
 .for file in kkconsui-0.1/include/conf.h kkstrtext-0.1/conf.h kksystr-0.1/include/conf.h
 	@(cd ${WRKSRC} ; \
 	  ${MV} -f ${file} ${file}.orig ; \
