@@ -9,7 +9,7 @@
 
 PORTNAME=		phoenix
 PORTVERSION=		0.3
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		www
 MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	trevor
@@ -23,8 +23,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		Xft2.2:${PORTSDIR}/x11-fonts/Xft
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
-		freetype-config:${PORTSDIR}/print/freetype2 \
-		perl5.8.0:${PORTSDIR}/lang/perl5.8
+		freetype-config:${PORTSDIR}/print/freetype2
 
 PREFIX=		${X11BASE}/lib/${PORTNAME}
 
@@ -37,10 +36,6 @@ LIBS+=			${PTHREAD_LIBS}
 WRKSRC=			${WRKDIR}/mozilla
 
 .include <bsd.port.pre.mk>
-
-.if !defined(PERL_VER) || ${PERL_VER} != 5.8.0
-BROKEN=	This port requires Perl 5.8.0.
-.endif
 
 post-extract:
 	${SED} -e 's|@CFLAGS@|${CFLAGS}|'		\
