@@ -273,6 +273,7 @@
     SUBDIR += ratoolset
     SUBDIR += rboot
     SUBDIR += rdist6
+    SUBDIR += redir
     SUBDIR += relay
     SUBDIR += rinetd
     SUBDIR += ripetools

@@ -1,0 +1,4 @@
+Redir is a port redirector. It can run under inetd or standalone. Redir
+also supports tcp wrappers.
+
+WWW: http://sammy.net/~sammy/hacks/

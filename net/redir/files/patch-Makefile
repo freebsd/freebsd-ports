@@ -1,0 +1,45 @@
+--- Makefile.orig	Mon Dec 27 07:21:55 1999
++++ Makefile	Tue Apr 10 17:56:11 2001
+@@ -1,7 +1,7 @@
+ ### user configuration section
+ 
+ # if your system lacks getopt_long(), remove the comment from this line
+-GETOPT_OBJS = # getopt/getopt.o getopt/getopt1.o
++GETOPT_OBJS = getopt/getopt.o getopt/getopt1.o
+ 
+ # if your system lacks strrchr() or strdup(), edit this line
+ STR_CFLAGS = # -DNEED_STRRCHR -DNEED_STRDUP
+@@ -9,8 +9,8 @@
+ # if you would like support for TCP wrappers (and have libwrap.a
+ # installed), remove these comments.
+ 
+-WRAP_CFLAGS = # -DUSE_TCP_WRAPPERS 
+-WRAP_LIBS = # -lwrap
++WRAP_CFLAGS = -DUSE_TCP_WRAPPERS 
++WRAP_LIBS = -lwrap
+ 
+ # if your system needs any additional libraries (solaris, for example, 
+ # needs the ones commented out below), edit this line.
+@@ -27,12 +27,11 @@
+ ### end of user configuration section
+ 
+ # redir requires gcc.  if you're lucky, another compiler might work.
+-CC = gcc
+ 
+ # if your system lacks getopt_long, remove the comment from this line
+ OBJS = redir.o $(GETOPT_OBJS)
+ 
+-CFLAGS = -O2 -Wall $(STR_CFLAGS) $(WRAP_CFLAGS) $(EXTRA_CFLAGS)
++CFLAGS += -Wall -Igetopt $(STR_CFLAGS) $(WRAP_CFLAGS) $(EXTRA_CFLAGS)
+ LDFLAGS = -s
+ 
+ # solaris, and others, may also need these libraries to link
+@@ -49,7 +48,7 @@
+ 	rm -f $(OBJS) redir core
+ 
+ redir:		${OBJS}
+-	${CC} ${LDFLAGS} -o redir ${OBJS} ${LIBS}
++	${CC} ${LDFLAGS} -o redir redir.o getopt.o getopt1.o ${LIBS}
+ 
+ 
+ 
