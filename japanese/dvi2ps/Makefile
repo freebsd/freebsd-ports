@@ -3,7 +3,7 @@
 # Date created:		15 Sep 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.6 1997/09/14 21:34:32 max Exp $
+# $Id: Makefile,v 1.7 1997/10/17 13:50:13 itojun Exp $
 #
 
 DISTNAME=	dvi2ps-2.0j
@@ -16,7 +16,7 @@ MAINTAINER=	mita@jp.FreeBSD.org
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 LIB_DEPENDS=	VFlib\\.2\\.:${PORTSDIR}/japanese/vflib
 
-MAN1=		dvi2ps.1 ../ja_JP.EUC/man1/dvi2ps.1
+MAN1=		dvi2ps.1 ../ja/man1/dvi2ps.1
 
 post-patch:
 	@(cd ${WRKSRC}; make newlib)
@@ -32,7 +32,7 @@ post-install:
 	${CP} -R doc ${PREFIX}/lib/dvi2ps/ ;\
 	mv ${PREFIX}/lib/dvi2ps/doc/dvi2ps.man ${PREFIX}/man/man1/dvi2ps.1 ;\
 	nkf -e ${PREFIX}/lib/dvi2ps/doc/dvi2ps.jman > \
-			${PREFIX}/man/ja_JP.EUC/man1/dvi2ps.1 ;\
+			${PREFIX}/man/ja/man1/dvi2ps.1 ;\
 	${RM} -f ${PREFIX}/lib/dvi2ps/doc/dvi2ps.jman ;\
 	${INSTALL_SCRIPT} tools/fontlink ${PREFIX}/lib/dvi2ps ;\
 	${INSTALL_PROGRAM} tools/nup ${PREFIX}/bin ;\

@@ -10,7 +10,7 @@
 +          PREFIX?= /usr/local
 +          BINPATH = ${PREFIX}/bin
 +          MANPATH = ${PREFIX}/man
-+          JMANDIR = ja_JP.EUC
++          JMANDIR = ja
             CFLAGS = -O
  
              SHELL = /bin/sh

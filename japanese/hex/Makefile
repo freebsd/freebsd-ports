@@ -3,7 +3,7 @@
 # Date created:         Nov 5, 1996
 # Whom:                 IMAMURA Tomoaki (yu@pastel.club.or.jp)
 #
-# $Id: Makefile,v 1.5 1998/04/04 21:54:57 max Exp $
+# $Id: Makefile,v 1.6 1998/04/04 21:57:43 max Exp $
 #
 
 DISTNAME=	hex203
@@ -20,6 +20,6 @@ MTREE_FILE?=	/etc/mtree/BSD.local.dist
 ALL_TARGET=	hex
 MAN1=		hex.1
 MANCOMPRESSED=	yes
-MANLANG=	ja_JP.EUC
+MANLANG=	ja
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:         26 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.8 1996/11/12 02:17:31 obrien Exp $
+# $Id: Makefile,v 1.9 1996/12/15 02:05:58 max Exp $
 #
 
 DISTNAME=       lha-114c
@@ -14,7 +14,7 @@ EXTRACT_SUFX=   .tgz
 
 MAINTAINER=     ache@FreeBSD.ORG
 
-MANLANG=	ja_JP.EUC
+MANLANG=	ja
 MAN1=		lha.1
 
 .include <bsd.port.mk>
