@@ -73,7 +73,6 @@
     SUBDIR += gcc32
     SUBDIR += gcc33
     SUBDIR += gcc34
-    SUBDIR += gcc35
     SUBDIR += gcl
     SUBDIR += generic-haskell
     SUBDIR += gforth
