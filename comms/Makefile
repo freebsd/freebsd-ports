@@ -68,6 +68,7 @@
     SUBDIR += py-bulksms
     SUBDIR += py-lirc
     SUBDIR += py-serial
+    SUBDIR += pyla
     SUBDIR += qico
     SUBDIR += qicosi
     SUBDIR += qpage

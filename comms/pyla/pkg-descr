@@ -1,0 +1,14 @@
+What's Pyla Project?
+ Pyla wants to be a new Hylafax client entirely
+ written using the Python interpreter.
+
+What can I do with Pyla?
+ With Pyla you can basically send and manage faxes.
+ It actually mimics WHFC in its interface so if you like WHFC,
+ you'll probably feel comfortable with Pyla too.
+
+Why should I use Pyla?
+ There're a lot of Hylafax clients out there,
+ Pyla's main advantage is probably its platform independence.
+
+WWW: http://www.teamsw.it/pyla/
