@@ -1,4 +1,0 @@
-bin/wmessage
-%%PORTDOCS%%share/doc/wmessage/ChangeLog
-%%PORTDOCS%%share/doc/wmessage/README
-%%PORTDOCS%%@dirrm share/doc/wmessage

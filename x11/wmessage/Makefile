@@ -7,7 +7,7 @@
 
 PORTNAME=	wmessage
 PORTVERSION=	0.11
-CATEGORIES=	misc windowmaker
+CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://members.ozemail.com.au/~crn/wmessage/
 
 MAINTAINER=	pat@FreeBSD.org
