@@ -29,6 +29,7 @@
     SUBDIR += icepref
     SUBDIR += icewm
     SUBDIR += icewm-i18n
+    SUBDIR += larswm
     SUBDIR += libdockapp
     SUBDIR += libepplet
     SUBDIR += lwm
