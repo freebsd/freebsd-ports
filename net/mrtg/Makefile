@@ -37,8 +37,8 @@ GNU_CONFIGURE=	YES
 CONFIGURE_ENV=	PERL=${PERL}
 
 MAN1=		cfgmaker.1 contrib.1 faq.1 forum.1 indexmaker.1 logfile.1 \
-		mibhelp.1 mrtg.1 mrtg-rrd.1 mrtglib.1 nt-guide.1 reference.1 \
-		squid.1 unix-guide.1 webserver.1
+		mibhelp.1 mrtg.1 mrtg-ipv6.1 mrtg-rrd.1 mrtglib.1 nt-guide.1 \
+		reference.1 squid.1 unix-guide.1 webserver.1
 
 post-patch:
 	${RM} ${WRKSRC}/lib/mrtg2/BER.pm ${WRKSRC}/lib/mrtg2/SNMP_*.pm
