@@ -3,7 +3,7 @@
 # Date created:			09 Aug 1996
 # Whom:				Masafumi NAKANE <max@sfc.wide.ad.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/08/21 09:06:53 asami Exp $
 #
 
 DISTNAME=	youbin-2.13
@@ -21,7 +21,7 @@ PREFIX=		${LOCALBASE}
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/youbind.sh
 
 post-install:
-	@if [ ! -f ${STARTUP_SCRIPT} ]; then; \
+	@if [ ! -f ${STARTUP_SCRIPT} ]; then \
 		echo "Creating startup script '${STARTUP_SCRIPT}'" ;\
 		echo "#!/bin/sh" > ${STARTUP_SCRIPT} ;\
 		echo "if [ -f ${PREFIX}/sbin/youbind ]; then" >> \
@@ -29,7 +29,7 @@ post-install:
 		echo "    ${PREFIX}/sbin/youbind &; echo -n ' youbind'" >> \
 			${STARTUP_SCRIPT} ;\
 		echo "fi" >> ${STARTUP_SCRIPT} ;\
-	chmod 755 ${STARTUP_SCRIPT} ;\
+		chmod 755 ${STARTUP_SCRIPT} ;\
 	fi
 	@-(grep -v ^# /etc/inetd.conf | grep comsat > /dev/null) && \
 	 (echo "Now you need to edit /etc/inetd.conf and comment out the" ;\
