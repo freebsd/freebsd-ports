@@ -6,13 +6,10 @@
 #
 
 PORTNAME=	fl_editor
-PORTVERSION=	0.4
+PORTVERSION=	0.4.5
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://www.mysql.com/Downloads/%SUBDIR%/ \
-		ftp://mysql.nixc.net/pub/mysql/Downloads/%SUBDIR%/ \
-		ftp://sunsite.dk/ftp/mirrors/mysql/Downloads/%SUBDIR%/ \
-		ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/%SUBDIR%/
-MASTER_SITE_SUBDIR=	mysqlgui
+MASTER_SITES=	http://robertk.com/source/fl_editor/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	cyrille.lefevre@laposte.net
 
@@ -26,8 +23,8 @@ CONFIGURE_ARGS=	--enable-shared --with-fltk=${PREFIX}
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 
+WRKSRC=		${WRKDIR}/${PORTNAME}
 DOC_FILES=	documentation/*.html documentation/*.jpg
-DOC_SUBDIR=	share/doc/${PKGBASE}
 INC1_FILES=	Fl_Editor.H Fl_FancyEditor.H Fl_FancyMultiEditor.H \
 		Fl_MultiEditor.H Fl_ProgressBox.H Fl_StatusPanel.H
 INC2_FILES=	editengine.h editvars.h lists.h stringsup.h wstring.h
@@ -52,9 +49,9 @@ symlink-lib:
 
 install-doc:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/${DOC_SUBDIR}
+	@${MKDIR} ${DOCSDIR}
 .for file in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/${DOC_SUBDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 

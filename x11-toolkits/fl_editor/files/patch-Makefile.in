@@ -1,16 +1,5 @@
 --- Makefile.in.orig	Wed Jan 10 00:11:24 2001
 +++ Makefile.in	Sat Aug 18 09:03:39 2001
-@@ -30,8 +30,8 @@
- #
- 
- ARFLAGS	=	crvs
--CFLAGS	=	-I. -I$(FLTKROOT) @CFLAGS@ @ac_fltk2@
--CXXFLAGS =	-I. -I$(FLTKROOT) @CXXFLAGS@ @ac_fltk2@
-+CFLAGS	=	-I. @CFLAGS@ @ac_fltk2@
-+CXXFLAGS =	-I. @CXXFLAGS@ @ac_fltk2@
- LIBS	=	@ac_fltk_static@ -L$(FLTKROOT)/lib @LIBS@ -lXext -lX11 -lm @ac_fltk_dso@ $(GLLIB)
- LDFLAGS	=	@LDFLAGS@
- 
 @@ -40,14 +40,19 @@
  #
  
