@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	global
-PORTVERSION=	4.8
+PORTVERSION=	4.8.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -33,5 +33,9 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/${file} ${PREFIX}/share/doc/global
 .endfor
 .endif
+
+# This target is only meant to be used by the port maintainer.
+x-generate-plist:
+	(${PORTSDIR}/Tools/scripts/plist -d -m ${MTREE_FILE} ${PREFIX}|${SED} -E 's,.*share/nls/.+$$,,;s,(@dirrm )share/doc/global,%%PORTDOCS%%\1%%DOCSDIR%%,;s,share/doc/global,%%PORTDOCS%%%%DOCSDIR%%,;s,^info/.+,,'|${TR} -s '\n') > temp-pkg-plist
 
 .include <bsd.port.mk>
