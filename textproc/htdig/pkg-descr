@@ -1,0 +1,15 @@
+	The ht://Dig system is a complete world wide web indexing and
+searching system for a small domain or intranet. This system is not
+meant to replace the need for powerful internet-wide search systems
+like Lycos, Infoseek, Webcrawler and AltaVista. Instead it is meant
+to cover the search needs for a single company, campus, or even a
+particular sub section of a web site. 
+
+   As opposed to some WAIS-based or web-server based search engines,
+ht://Dig can span several web servers at a site. The type of these
+different web servers doesn't matter as long as they understand the
+HTTP 1.0 protocol. 
+
+Homepage: http://www.htdig.org
+
+Bill Fumerola <billf@chc-chimes.com>

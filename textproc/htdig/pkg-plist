@@ -1,0 +1,33 @@
+bin/rundig
+bin/htfuzzy
+bin/htdig
+bin/htmerge
+bin/htnotify
+etc/htdig.conf
+share/htdig/footer.html
+share/htdig/bad_words
+share/htdig/header.html
+share/htdig/nomatch.html
+share/htdig/syntax.html
+share/htdig/english.0
+share/htdig/english.aff
+share/htdig/synonyms
+www/data/htdig/search.html
+www/data/htdig/button1.gif
+www/data/htdig/button2.gif
+www/data/htdig/button3.gif
+www/data/htdig/button4.gif
+www/data/htdig/button5.gif
+www/data/htdig/button6.gif
+www/data/htdig/button7.gif
+www/data/htdig/button8.gif
+www/data/htdig/button9.gif
+www/data/htdig/buttonl.gif
+www/data/htdig/buttonr.gif
+www/data/htdig/button10.gif
+www/data/htdig/htdig.gif
+www/data/htdig/star.gif
+www/data/htdig/star_blank.gif
+www/cgi-bin/htsearch
+@dirrm www/data/htdig
+@dirrm share/htdig
