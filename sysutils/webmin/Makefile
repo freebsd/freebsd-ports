@@ -7,7 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	0.92
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/webmin/updates/ \
 		http://www.webmin.com/webmin/download/
@@ -24,7 +24,7 @@ USE_PERL5=	yes
 SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
 
 WEBMIN_MODULES=	useradmin-0.92-1.wbm.gz custom-0.92-1.wbm.gz \
-		jabber-0.92-2.wbm.gz bind8-0.92-1.wbm.gz \
+		jabber-0.92-2.wbm.gz bind8-0.92-2.wbm.gz \
 		postgresql-0.92-1.wbm.gz mysql-0.92-1.wbm.gz \
 		proftpd-0.92-1.wbm.gz inetd-0.92-1.wbm.gz
 WEBMIN_THEMES=	mscstyle3-0.92-2.wbt.gz
