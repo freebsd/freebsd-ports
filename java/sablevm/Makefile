@@ -98,6 +98,8 @@ pre-install:
 		${RM} -rf ${PREFIX}/lib/sablevm/classes-${PORTVERSION}
 		${CP} -R ${WRKDIR}/${CLASSESDIR}/classes \
 		    ${PREFIX}/lib/sablevm/classes-${PORTVERSION}
+		${CP} -R ${WRKDIR}/${CLASSESDIR}/resource \
+		    ${PREFIX}/lib/sablevm/classes-${PORTVERSION}
 		@echo "===>    ${SABLEVMDIR}"
 
 .include <bsd.port.mk>
