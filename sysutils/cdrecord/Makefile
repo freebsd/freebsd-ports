@@ -3,19 +3,17 @@
 # Date created:         2 November 1997
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.7 1998/10/07 14:46:22 jmz Exp $
+# $Id: Makefile,v 1.8 1998/10/30 03:33:20 jmz Exp $
 #
 
-DISTNAME=	cdrecord-1.6.1a4
-PKGNAME=	cdrecord-1.6
+DISTNAME=	cdrecord-1.6.1
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/alpha/
+MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/
 
 MAINTAINER=	jmz@FreeBSD.org
 
 MAN1=		cdrecord.1
 USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/cdrecord-1.6.1
 
 do-build:
 	@cd ${WRKSRC}/lib && ../Gmake
