@@ -1,0 +1,8 @@
+bin/gddemo
+bin/giftogd
+bin/webgif
+lib/libgd.a
+include/gd/gd.h
+include/gd/gdfonts.h
+share/examples/gd/index.html
+share/examples/gd/demoin.gif
