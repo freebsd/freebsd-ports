@@ -65,6 +65,11 @@ pre-extract:
 packet 'pth' is installed.";\
 	  ${FALSE};\
 	fi
+pre-patch:
+	@${PERL} -pi.orig -e 's|=autoconf|=${AUTOCONF}|; \
+		s|=autoheader|=${AUTOHEADER}|' ${WRKSRC}/autogen.sh
+	@${PERL} -pi.orig -e 's|=autoconf|=${AUTOCONF}|; \
+		s|=autoheader|=${AUTOHEADER}|' ${WRKSRC}/libmmxnow/autogen.sh
 do-configure:
 	(cd ${WRKSRC} && aclocal && ./autogen.sh &&\
 	${CONFIGURE_ENV} ./configure ${CONFIGURE_ARGS})
