@@ -7,12 +7,12 @@
 
 PORTNAME=	rpm
 PORTVERSION=	3.0.6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/rpm-3.0.x/ \
 		ftp://ftp.mirror.ac.uk/sites/ftp.rpm.org/pub/rpm/dist/rpm-3.0.x/
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Red Hat Package Manager
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
