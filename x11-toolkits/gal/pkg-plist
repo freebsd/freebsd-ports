@@ -50,6 +50,7 @@ include/gal/e-table/e-table-subset-variable.h
 include/gal/e-table/e-table-subset.h
 include/gal/e-table/e-table-tooltip.h
 include/gal/e-table/e-table-utils.h
+include/gal/e-table/e-table-without.h
 include/gal/e-table/e-table.h
 include/gal/e-table/e-tree-memory-callbacks.h
 include/gal/e-table/e-tree-memory.h
@@ -127,7 +128,7 @@ include/gal/widgets/widget-color-combo.h
 include/gal/widgets/widget-pixmap-combo.h
 lib/libgal.a
 lib/libgal.so
-lib/libgal.so.9
+lib/libgal.so.11
 share/gnome/etable/%%VERSION%%/glade/e-table-config.glade
 share/gnome/etable/%%VERSION%%/glade/e-table-field-chooser.glade
 share/gnome/etable/%%VERSION%%/glade/e-table-group.glade
