@@ -12,7 +12,7 @@
  *title:					Netscape
  *iconName:				Netscape
 -*Navigator.title:			Netscape Navigator 4.76
-+*Navigator.title:			Netscape Navigator 4.78
++*Navigator.title:			Netscape Navigator 4.79
  *MailThread.title:			Netscape メール & ニュースグループ
  *MailThread.iconName:		メール & ニュースグループ
  
@@ -21,7 +21,7 @@
  
  ! Do not under any circumstances change the following line:
 -Netscape.version: 		4.76
-+Netscape.version: 		4.78
++Netscape.version: 		4.79
  
  
  ! ============================================================================

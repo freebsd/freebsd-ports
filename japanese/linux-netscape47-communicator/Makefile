@@ -9,7 +9,7 @@ RUN_DEPENDS=	${PREFIX}/bin/${BROWSER_ARC}-${BROWSER_VERSION}:${PORTSDIR}/www/lin
 RUN_DEPENDS+=	/compat/linux/usr/share/locale/ja_JP:${PORTSDIR}/japanese/linux_locale
 
 BROWSER_ARC=	${BROWSER_NAME}-linux
-BROWSER_VERSION=	4.78
+BROWSER_VERSION=	4.79
 MASTERDIR_LINUX= ${.CURDIR}/../linux-netscape47-communicator
 NSUBDIR=	lib/netscape-linux
 START_SCRIPT=	${MASTERDIR_LINUX}/files/start.sh.in
