@@ -3,7 +3,7 @@
 # Date created:				18 June 1997
 # Whom:					koshy@india.hp.com
 #
-# $Id: Makefile,v 1.2 1997/07/01 17:41:02 jfitz Exp $
+# $Id: Makefile,v 1.3 1998/03/19 02:58:53 cwt Exp $
 #
 
 DISTNAME=	MHonArc2.2.0
@@ -12,7 +12,7 @@ CATEGORIES=	www mail
 MASTER_SITES=	http://www.oac.uci.edu/indiv/ehood/tar/ \
 		ftp://hhobel.phl.univie.ac.at/MHonArc/
 
-MAINTAINER=	koshy@india.hp.com
+MAINTAINER=	jkoshy@freebsd.org
 
 USE_PERL5=	YES
 
