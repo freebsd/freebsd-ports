@@ -6,7 +6,7 @@
     辞書ファイルはskktocdbm.shの標準入力に与えるようになっている。
 -   デフォルトは /usr/local/share/skk/SKK-JISYO.Lを指定している。
 -   また、デフォルトではカレントディレクトリにSKK-JISYO.L.cdbが作られる。
-+   デフォルトは %%PREFIX%%/share/skk/%%JISYONAME%%を指定している。
++   デフォルトは %%PREFIX%%/%%SKKDIR%%/%%JISYONAME%%を指定している。
 +   また、デフォルトではカレントディレクトリに%%JISYONAME%%.cdbが作られる。
     必要に応じてデフォルト値は変更すること。
  
@@ -24,7 +24,7 @@
  
  2. dbskkd-cdb.cのJISHO_FILEを実際にcdb形式にした辞書ファイルのパス名とする。
 -   デフォルトは /usr/local/share/skk/SKK-JISYO.L.cdb 。
-+   デフォルトは %%PREFIX%%/share/dbskkd-cdb/%%JISYONAME%%.cdb 。
++   デフォルトは %%PREFIX%%/%%SKKDIR%%/%%JISYONAME%%.cdb 。
  
  3. コンパイルフラグのLOG_PEERINFOはtcp_wrapperなどを使わない際に
     どのホストから接続してきたかを記録するためのものである。
