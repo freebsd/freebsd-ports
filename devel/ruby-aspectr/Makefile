@@ -28,7 +28,7 @@ do-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PORTDOCS}${RUBY_DOCDIR}/${PORTNAME}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
 .endfor
 	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/examples/logger.rb ${RUBY_EXAMPLESDIR}/${PORTNAME}/
