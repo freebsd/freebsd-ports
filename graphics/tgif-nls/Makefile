@@ -3,7 +3,7 @@
 # Date created:         3 May 1999
 # Whom:                 one@netlab.is.tsukuba.ac.jp
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/05/03 04:24:16 steve Exp $
 #
 
 DISTNAME=	tgif-4.1.8
@@ -45,6 +45,7 @@ post-patch:
 			tgif.Xdefaults.org > tgif.Xdefaults
 
 post-install:
+		${MKDIR} ${PREFIX}/lib/X11/ja_JP.EUC/app-defaults
 		${INSTALL_DATA} ${FILESDIR}/tgif.Xdefaults.ja \
 			${PREFIX}/lib/X11/ja_JP.EUC/app-defaults/Tgif
 
