@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bsddb3
-PORTVERSION=	3.4.0
-PORTREVISION=	1
+PORTVERSION=	4.1.3
 CATEGORIES=	databases python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pybsddb
@@ -19,6 +18,7 @@ COMMENT=	Python extension module for BerkeleyDB 3 and 4
 .if defined(WITH_DB3)
 LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
 DBVERSION=	db3
+PKGNAMESUFFIX=	-db3
 .else
 LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4
 DBVERSION=	db4
@@ -32,6 +32,6 @@ PYDISTUTILS_INSTALLARGS=-c -O1 --prefix=${PREFIX} --berkeley-db=${LOCALBASE}
 
 post-patch:
 	${REINPLACE_CMD} 's,%%DBVERSION%%,${DBVERSION},g' ${WRKSRC}/setup.py
-	${REINPLACE_CMD} 's,<db\.h>,<${DBVERSION}/db.h>,' ${WRKSRC}/src/_db.c
+	${REINPLACE_CMD} 's,<db\.h>,<${DBVERSION}/db.h>,' ${WRKSRC}/extsrc/_bsddb.c
 
 .include <bsd.port.mk>
