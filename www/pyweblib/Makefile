@@ -13,16 +13,8 @@ MASTER_SITES=	http://www.stroeder.com/pylib/PyWebLib/download/ \
 
 MAINTAINER=	oddbjorn@tricknology.org
 
-BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
-RUN_DEPENDS=	python:${PORTSDIR}/lang/python
-
 USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S=-src==}
-
-do-build:
-	cd ${WRKSRC} && python setup.py build
-
-do-install:
-	cd ${WRKSRC} && python setup.py install
 
 .include <bsd.port.mk>

@@ -15,16 +15,10 @@ DISTNAME=	python-xlib-${PORTVERSION}
 
 MAINTAINER=	mwm@mired.org
 
-BUILD_DEPENDS=	${PYDISTUTILS}
-
 USE_PYTHON=	yes
-PYTHON_SETUP=	${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py
+USE_PYDISTUTILS=	yes
 
-do-build:
-	@cd ${WRKSRC} && ${PYTHON_SETUP} build
-
-do-install:
-	@cd ${WRKSRC} && ${PYTHON_SETUP} install -c -O1 --prefix=${PREFIX}
+post-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/info/python-xlib.info ${PREFIX}/info/
 	@install-info ${PREFIX}/info/python-xlib.info ${PREFIX}/info/dir
 

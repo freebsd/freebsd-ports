@@ -18,13 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 BUILD_DEPENDS=	${PYDISTUTILS}
 
 USE_PYTHON=	yes
-PYTHON_SETUP=	${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py
-
-do-build:
-	@ cd ${WRKSRC} && ${PYTHON_SETUP} build
-
-do-install:
-	@ cd ${WRKSRC} && ${PYTHON_SETUP} install -c -O1 --prefix=${PREFIX}
+USE_PYDISTUTILS=	yes
 
 post-install:
 .if !defined(NOPORTDOCS)
