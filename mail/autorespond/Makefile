@@ -7,6 +7,7 @@
 
 PORTNAME=	autorespond
 PORTVERSION=	2.0.3
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.inter7.com/devel/
 
@@ -14,7 +15,7 @@ PATCH_SITES=	http://people.FreeBSD.org/~roam/ports/patches/mail/
 PATCHFILES=	${DISTNAME}-conf-strcasestr.patch
 
 MAINTAINER=	roam@FreeBSD.org
-COMMENT=	"Simple autoresponder for qmail"
+COMMENT=	Simple autoresponder for qmail
 
 post-patch:
 	${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
