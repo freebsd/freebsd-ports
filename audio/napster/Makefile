@@ -1,13 +1,13 @@
 # New ports collection makefile for:    napster
-# Version required:     0.7BETA
+# Version required:     0.8BETA
 # Date created:         Thu Nov 18 01:07:00 PST 1999
 # Whom:                 dburr@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	nap-bsd-0.7BETA
-PKGNAME=	napster-0.7b
+DISTNAME=	nap-linux-0.8BETA
+PKGNAME=	napster-0.8b
 CATEGORIES=	audio net
 MASTER_SITES=	http://www.gis.net/~nite/
 
@@ -16,6 +16,9 @@ MAINTAINER=	dburr@FreeBSD.org
 ONLY_FOR_ARCHS=	i386
 WRKSRC=		${WRKDIR}/nap
 NO_BUILD=	yes
+
+do-patch:
+	brandelf -t Linux ${WRKSRC}/nap
 
 do-install:
 	${INSTALL} -c -o root -g wheel -m 555 ${WRKSRC}/nap ${PREFIX}/bin/nap
