@@ -1,6 +1,6 @@
 # New ports collection makefile for: 9libs
 # Date created:		15 February 2003
-# Whom:		gagnon__s@videotron.ca
+# Whom:			gagnon__s@videotron.ca
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	x11-toolkits plan9
 MASTER_SITES=	ftp://ftp.cs.yorku.ca/pub/wily/src/
 
-MAINTAINER=	gagnon__s@videotron.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plan9 compatibility libraries
 
 USE_XLIB=	YES
