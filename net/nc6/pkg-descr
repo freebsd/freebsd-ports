@@ -1,0 +1,7 @@
+Netcat 6 is a netcat clone with IPv6 support. 
+It is designed to be tiny, extensible, and elegant, 
+and it makes use of the new extended BSD socket APIs. 
+
+Author: Mauro Tortonesi <mauro@ferrara.linux.it>
+
+WWW: http://project6.ferrara.linux.it/
