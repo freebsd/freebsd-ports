@@ -32,3 +32,14 @@
   amiga:
   	@echo "See the README.AMIGA file for installation information"
   
+--- ./mklib.freebsd.org	Tue Aug 13 19:56:47 1996
++++ ./mklib.freebsd	Mon Dec 16 19:52:10 1996
+@@ -6,7 +6,7 @@
+ # First argument is name of output library
+ # Rest of arguments are object files
+ 
+-VERSION="2.0"
++VERSION="13.0"
+ 
+ LIBRARY=$1
+ shift 1
