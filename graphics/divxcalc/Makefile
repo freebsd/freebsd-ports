@@ -13,10 +13,13 @@ MASTER_SITES=	http://tuxpower.f2g.net/divxcalc/
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_BISON=	yes
+BUILD_DEPENDS=	${LOCALBASE}/share/automake14/automake/install-sh:${PORTSDIR}/devel/automake14
+
 USE_GTK=	yes
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
 	@${PERL} -pi -e "s,Bison ,Bison,g" ${WRKSRC}/configure
