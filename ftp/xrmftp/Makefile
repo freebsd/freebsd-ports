@@ -1,6 +1,6 @@
 # New ports collection Makefile for:	xrmftp
 # Date created:				28 March 2000
-# Whom:					Matt Heckaman <matt@LUCIDA.QC.CA>
+# Whom:					Matt Heckaman <matt@LUCIDA.CA>
 #
 # $FreeBSD$
 #
