@@ -8,7 +8,9 @@
 PORTNAME=	newmail
 PORTVERSION=	1.0.1
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.ugh.net.au/pub/unix/newmail/
+MASTER_SITES=	ftp://ftp.ugh.net.au/pub/unix/newmail/ \
+		ftp://ftp.megamirror.com/pub/ugh/newmail/ \
+		http://ftp.megamirror.com/pub/ugh/newmail/
 
 MAINTAINER=	andrew@ugh.net.au
 
