@@ -3352,6 +3352,7 @@ hdf5		ports/science/hdf5
 hdup		ports/sysutils/hdup
 health-nut	ports/misc/nut
 healthd		ports/sysutils/healthd
+heartbeat	ports/sysutils/heartbeat
 heimdal		ports/security/heimdal
 heirloom	ports/sysutils/heirloom
 helium		ports/lang/helium
