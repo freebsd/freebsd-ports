@@ -15,7 +15,7 @@ DISTFILES=	bootkit-1.0.2.908.tar.gz \
 		interbase0.9-4-v5examples.tar.gz \
 		Firebird-1.0.2.908.src.tar.gz
 
-MAINTAINER=	chris@e-easy.com.au
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The open-source InterBase(tm) 6.0 spin-off (Classic version)
 
 FORBIDDEN=	Local Stack Overflow, see http://packetstormsecurity.nl/0305-exploits/dsr-adv001.txt
