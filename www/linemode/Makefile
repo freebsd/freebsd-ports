@@ -3,7 +3,7 @@
 # Date created:		17 April 1995
 # Whom:			NIIMI Satoshi <sa2c@and.or.jp>
 #
-# $Id: Makefile,v 1.12 1996/11/18 11:41:24 asami Exp $
+# $Id: Makefile,v 1.13 1997/05/28 16:04:39 fenner Exp $
 #
 
 DISTNAME=	WWW
@@ -15,6 +15,8 @@ DISTFILES=      w3c-libwww-4.0D.tar.gz \
 		www_4.0D_src.tar.gz
 
 MAINTAINER=	sa2c@and.or.jp
+
+BROKEN_ELF=	yes
 
 do-build:
 	cd ${WRKSRC}; ./BUILD linemode
