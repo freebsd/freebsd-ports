@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pixie
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.16
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,12 +22,9 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 USE_REINPLACE=	yes
 USE_GL=		yes
 USE_X_PREFIX=	yes
-USE_AUTOMAKE_VER=	14
+WANT_AUTOMAKE_VER=	15
 USE_AUTOCONF_VER=	213
-USE_AUTOHEADER_VER=	213
 USE_LIBTOOL_VER=	13
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -fPIC -I${LOCALBASE}/include -I${X11BASE}/include" \
 		CXXFLAGS="${CXXFLAGS} -fPIC -I${LOCALBASE}/include -I${X11BASE}/include" \
@@ -44,13 +41,14 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502112
-BROKEN=		"Does not install on FreeBSD >= 5.x"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -i "" -e 's|malloc\.h|stdlib\.h|g' \
 		`${FIND} -E ${WRKSRC} -iregex '.*\.(cpp|h)'`
+
+pre-configure:
+	@(cd ${WRKSRC} && ${ACLOCAL} && \
+	${SETENV} ${AUTOTOOLS_ENV} ${AUTOMAKE} --add-missing && \
+	${SETENV} ${AUTOTOOLS_ENV} ${AUTOMAKE} -i)
 
 do-install:
 # exes
@@ -65,12 +63,16 @@ do-install:
 # libs
 	# avoid conflicts by installing in separate dir
 	@${MKDIR} ${PREFIX}/lib/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/src/sdr/libsdr.a ${PREFIX}/lib/${PORTNAME}
-
-	${INSTALL_DATA} ${WRKSRC}/src/ri/.libs/libri.a ${PREFIX}/lib/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/src/ri/.libs/libri.la ${PREFIX}/lib/${PORTNAME}
-	${INSTALL_PROGRAM} ${WRKSRC}/src/ri/.libs/libri.so.0 ${PREFIX}/lib/${PORTNAME}
-	${LN} -sf ${PREFIX}/lib/${PORTNAME}/libri.so.0 ${PREFIX}/lib/${PORTNAME}/libri.so
+.for i in sdr ri
+	${INSTALL_DATA} ${WRKSRC}/src/${i}/.libs/lib${i}.a \
+		${PREFIX}/lib/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/src/${i}/.libs/lib${i}.la \
+		${PREFIX}/lib/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${i}/.libs/lib${i}.so.0 \
+		${PREFIX}/lib/${PORTNAME}
+	${LN} -sf ${PREFIX}/lib/${PORTNAME}/lib${i}.so.0 \
+		${PREFIX}/lib/${PORTNAME}/lib${i}.so
+.endfor
 
 .for i in ${PIXIE_SHLIBS}
 	${INSTALL_DATA} ${WRKSRC}/src/${i}/.libs/${i}.a \
@@ -99,8 +101,11 @@ do-install:
 .ifndef (NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.htm ${DOCSDIR}
-	@${MKDIR} ${DOCSDIR}/figures
-	${INSTALL_DATA} ${WRKSRC}/doc/figures/*.jpg ${DOCSDIR}/figures
+	${INSTALL_DATA} ${WRKSRC}/doc/*.jpg ${DOCSDIR}
+.for i in figures rayreflect rayshadow running softshadow
+	@${MKDIR} ${DOCSDIR}/${i}
+	${INSTALL_DATA} ${WRKSRC}/doc/${i}/* ${DOCSDIR}/${i}
+.endfor
 .endif
 
 post-install:
