@@ -17,6 +17,7 @@ RUN_DEPENDS=	gninews:${PORTSDIR}/japanese/gn-gnspool \
 		mnews:${PORTSDIR}/japanese/mnews
 
 NO_PACKAGE=	"Redistribution of binary built from modified source is prohibited"
+BROKEN=		"Couldn't fetch now"
 
 WRKSRC=		${WRKDIR}/mnews-1.20/build
 
