@@ -1,0 +1,11 @@
+--- cdpd.sh.in.orig	Fri Jul 25 07:28:15 2003
++++ cdpd.sh.in	Fri Jul 25 07:28:23 2003
+@@ -3,7 +3,7 @@
+ case $1 in
+ start) 
+ 	[ -x @prefix@@libexecdir@/cdpd ] && @prefix@@libexecdir@/cdpd -a;
+-	echo ' cdpd';
++	echo -n ' cdpd';
+ ;;
+ stop)
+ 	killall cdpd
