@@ -7,12 +7,11 @@
 
 PORTNAME=	xcin
 PORTVERSION=	2.5.3.p2
-PORTREVISION=   1
+PORTREVISION=	1
 CATEGORIES=	chinese x11
 MASTER_SITES=	ftp://xcin.linux.org.tw/pub/xcin/xcin/ \
 		ftp://xcin.linux.org.tw/pub/xcin/xcin/devel/ \
-		http://chewing.oio.cx/download/ \
-		http://chewing.oio.cx/snapshot/
+		http://chewing.good-man.org/snapshot/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/pre/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} chewing-2002Jan07-snapshot.tar.gz
 
