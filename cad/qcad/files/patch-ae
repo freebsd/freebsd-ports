@@ -1,0 +1,20 @@
+--- rfile.cpp.orig	Sat Aug 12 03:31:54 2000
++++ rfile.cpp	Sat Sep 23 14:38:35 2000
+@@ -295,7 +295,7 @@
+ 
+ #ifndef DEF_WINDOWS
+   // Test /usr/share/<proj>/...:
+-  ret = QString("/usr/share/")+DEF_APPNAME_L+subdir+"/"+_name;
++  ret = QString("%%PREFIX%%/share/")+DEF_APPNAME_L+subdir+"/"+_name;
+   RLOG("\nret2: "); RLOG(ret);
+   if(QFileInfo(ret).exists()) return ret;
+ 
+@@ -327,7 +327,7 @@
+ #ifndef DEF_WINDOWS
+   if(_prior==0 || _prior==2) {
+     // Test /usr/share/<proj>/...:
+-    ret = QString("/usr/share/")+DEF_APPNAME_L+"/"+_subdir;
++    ret = QString("%%PREFIX%%/share/")+DEF_APPNAME_L+"/"+_subdir;
+     if(QFileInfo(ret).exists()) return ret;
+   }
+ 

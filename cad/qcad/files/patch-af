@@ -1,0 +1,14 @@
+--- rfonts.cpp.orig	Sat Aug 12 03:31:54 2000
++++ rfonts.cpp	Sat Sep 23 14:39:57 2000
+@@ -68,10 +68,7 @@
+ 
+ #ifndef DEF_WINDOWS
+   // Lookup from /usr/share/<proj>/fonts:
+-  lookupFonts( QString("/usr/share/")+DEF_APPNAME_L+"/fonts" );
+-
+-  // Lookup from /usr/local/<proj>/fonts:
+-  lookupFonts( QString("/usr/local/")+DEF_APPNAME_L+"/fonts" );
++  lookupFonts( QString("%%PREFIX%%/share/")+DEF_APPNAME_L+"/fonts" );
+ 
+   // Lookup from ~/.<proj>/fonts:
+   lookupFonts( RCONFIG->getConfigDir().path()+"/fonts" );
