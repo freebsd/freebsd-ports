@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_tidy
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://home.snafu.de/tusk/mod_tidy/
 DIST_SUBDIR=	apache
