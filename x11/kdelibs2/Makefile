@@ -17,9 +17,6 @@ MAINTAINER?=	kde@FreeBSD.org
 
 BUILD_DEPENDS=	automake14:${PORTSDIR}/devel/automake14 \
 		autoconf213:${PORTSDIR}/devel/autoconf213
-.if ${MACHINE_ARCH} == "i386" && !defined(NO_KDE_OBJPRELINK)
-BUILD_DEPENDS+=	objprelink:${PORTSDIR}/devel/objprelink
-.endif
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		audiofile.0:${PORTSDIR}/audio/libaudiofile \
 		fam.0:${PORTSDIR}/devel/fam \
@@ -39,22 +36,8 @@ USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-cups --disable-ltdl-install
-.if ${MACHINE_ARCH} == "i386" && !defined(NO_KDE_OBJPRELINK)
-CONFIGURE_ARGS+=--enable-objprelink
-.endif
-.if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_FINAL)
-CONFIGURE_ARGS+=--enable-final
-.endif
-.if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_NDEBUG)
-CONFIGURE_ARGS+=--disable-debug
-.else
-CONFIGURE_ARGS+=--enable-debug
-STRIP=''
-.endif
 
-.if ${MACHINE_ARCH} == "alpha"
-CFLAGS=		-O0 ${KDE_CFLAGS} -D__PATH_SU=/usr/bin/su
-.endif
+.include "${.CURDIR}/../../x11/kde2/Makefile.kde"
 
 USE_GMAKE=	yes
 MAKE_ENV=	SOMAJOR="${SOMAJOR}" SOMINOR="${SOMINOR}"
