@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	opera
-PORTVERSION=	6.02.20020701
+PORTVERSION=	6.03.20020813
 CATEGORIES=	www linux
-MASTER_SITES=	http://opera.online.no/linux/602/final/en/qt_static/ \
-		ftp://ftp.opera.com/pub/opera/linux/602/final/en/qt_static/
+MASTER_SITES=	http://opera.online.no/linux/603/final/en/qt_static/ \
+		ftp://ftp.opera.com/pub/opera/linux/603/final/en/qt_static/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/02./02-/}.1-static-qt.i386
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/03./03-/}.1-static-qt.i386
 
 MAINTAINER=	des@FreeBSD.org
 
