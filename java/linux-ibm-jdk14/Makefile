@@ -37,7 +37,7 @@ CPIO?=		/usr/bin/cpio
 
 .include <bsd.port.pre.mk>
 
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
 ECHO_MSG=/usr/bin/printf
 IGNORE=:\n\
 Because of licensing restrictions, you must manually fetch the IBM Java SDK\n\
