@@ -1,5 +1,5 @@
 bin/de-webalizer
-etc/webalizer.conf-dist
+etc/de-webalizer.conf-dist
 share/doc/de-webalizer/CHANGES
 share/doc/de-webalizer/COPYING
 share/doc/de-webalizer/Copyright
@@ -10,4 +10,5 @@ share/doc/de-webalizer/webalizer.LSM
 @dirrm share/doc/de-webalizer
 share/examples/de-webalizer/msfree.gif
 share/examples/de-webalizer/sample.conf
+share/examples/de-webalizer/webalizer.gif
 @dirrm share/examples/de-webalizer
