@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jftpgw
-PORTVERSION=	0.0.13a
+PORTVERSION=	0.0.13g
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.mcknight.de/jftpgw/
 
@@ -16,7 +16,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-confpath=${PREFIX}/etc \
 		--with-logpath=/var/log \
 		--enable-crypt \
-#		--enable-sftp
+		--enable-sftp
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/jftpgw ${PREFIX}/sbin/
