@@ -6,18 +6,15 @@
 #
 
 PORTNAME=	kmamerun
-PORTVERSION=	0.3.0.1
+PORTVERSION=	1.0.0
 CATEGORIES=	emulators kde
 MASTER_SITES=	ftp://ftp.sad.it/pub/kde/local/
-DISTNAME=	kmamerun-0.3.0pre1
 
-MAINTAINER=	nsayer@freebsd.org
+MAINTAINER=	ports@freebsd.org
 
 RUN_DEPENDS=	xmame:${PORTSDIR}/emulators/xmame
 
 USE_KDELIBS_VER=1
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CXXFLAGS="$(CFLAGS)" \
-		INSTALL_SCRIPT="install -c -m 555"
+USE_AUTOCONF=	yes
 
 .include <bsd.port.mk>
