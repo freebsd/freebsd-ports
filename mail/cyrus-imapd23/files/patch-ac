@@ -1,7 +1,7 @@
 Index: configure
 diff -u configure.orig configure
---- configure.orig	Wed Nov 24 03:55:47 2004
-+++ configure	Wed Nov 24 15:34:27 2004
+--- configure.orig	Tue Feb 15 02:59:46 2005
++++ configure	Thu Feb 24 04:45:06 2005
 @@ -309,6 +309,7 @@
  #endif"
  
@@ -10,16 +10,16 @@ diff -u configure.orig configure
  ac_subst_files=''
  
  # Initialize some variables set by options.
-@@ -6611,7 +6612,7 @@
+@@ -6612,7 +6613,7 @@
  	fi
  
  	saved_LIBS=$LIBS
--        for dbname in db-4.2 db4.2 db42 db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db-3.3 db3.3 db33 db-3.2 db3.2 db32 db-3.1 db3.1 db31 db-3 db30 db3 db
-+        for dbname in ${with_bdb} db-4.2 db4.2 db42 db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db-3.3 db3.3 db33 db-3.2 db3.2 db32 db-3.1 db3.1 db31 db-3 db30 db3 db
+-        for dbname in db-4.4 db4.4 db44 db-4.3 db4.3 db43 db-4.2 db4.2 db42 db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db-3.3 db3.3 db33 db-3.2 db3.2 db32 db-3.1 db3.1 db31 db-3 db30 db3 db
++        for dbname in ${with_bdb} db-4.4 db4.4 db44 db-4.3 db4.3 db43 db-4.2 db4.2 db42 db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db-3.3 db3.3 db33 db-3.2 db3.2 db32 db-3.1 db3.1 db31 db-3 db30 db3 db
            do
  	    LIBS="$saved_LIBS -l$dbname"
  	    cat >conftest.$ac_ext <<_ACEOF
-@@ -6621,6 +6622,7 @@
+@@ -6622,6 +6623,7 @@
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
@@ -27,7 +27,7 @@ diff -u configure.orig configure
  #include <db.h>
  int
  main ()
-@@ -13532,6 +13534,7 @@
+@@ -13549,6 +13551,7 @@
      EXTRA_SUBDIRS="${EXTRA_SUBDIRS} perl"
      PERL_SUBDIRS="imap"
      PERL="${with_perl}"
@@ -35,7 +35,7 @@ diff -u configure.orig configure
      PERL_CCCDLFLAGS="$cccdlflags"
  
  fi
-@@ -14050,7 +14053,9 @@
+@@ -14067,7 +14070,9 @@
  
      if test -n "$SNMP_LIBS" && test -n "$SNMP_PREFIX"; then
        CPPFLAGS="$CPPFLAGS -I${SNMP_PREFIX}/include"
@@ -46,7 +46,7 @@ diff -u configure.orig configure
  
  cat >>confdefs.h <<\_ACEOF
  #define HAVE_NETSNMP 1
-@@ -14281,7 +14286,7 @@
+@@ -14298,7 +14303,7 @@
  #define HAVE_UCDSNMP 1
  _ACEOF
  
@@ -55,7 +55,7 @@ diff -u configure.orig configure
        echo "$as_me:$LINENO: checking for rpmdbOpen in -lrpm" >&5
  echo $ECHO_N "checking for rpmdbOpen in -lrpm... $ECHO_C" >&6
  if test "${ac_cv_lib_rpm_rpmdbOpen+set}" = set; then
-@@ -15097,6 +15102,7 @@
+@@ -15114,6 +15119,7 @@
  s,@LIB_WRAP@,$LIB_WRAP,;t t
  s,@SNMP_CONFIG@,$SNMP_CONFIG,;t t
  s,@LIB_UCDSNMP@,$LIB_UCDSNMP,;t t
