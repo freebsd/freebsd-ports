@@ -1,0 +1,18 @@
+--- Makefile.in.orig	Sun Sep 14 01:00:35 2003
++++ Makefile.in	Mon Dec  8 20:48:49 2003
+@@ -182,15 +182,9 @@
+ 	$(CP) flphoto$(EXEEXT) $(DESTDIR)$(bindir)
+ 	$(FLTKCONFIG) --post $(DESTDIR)$(bindir)/flphoto$(EXEEXT)
+ 	echo Installing flPhoto manpages in $(DESTDIR)$(mandir)
+-	-$(MKDIR) $(DESTDIR)$(mandir)/cat1
+-	$(RM) $(DESTDIR)$(mandir)/cat1/flphoto.$(CAT1EXT)
+-	$(CP) $(srcdir)/doc/flphoto.1 $(DESTDIR)$(mandir)/cat1/flphoto.$(CAT1EXT)
+ 	-$(MKDIR) $(DESTDIR)$(mandir)/man1
+ 	$(RM) $(DESTDIR)$(mandir)/man1/flphoto.1
+ 	$(CP) $(srcdir)/doc/flphoto.man $(DESTDIR)$(mandir)/man1/flphoto.1
+-	-$(MKDIR) $(DESTDIR)$(mandir)/cat5
+-	$(RM) $(DESTDIR)$(mandir)/cat5/album.$(CAT5EXT)
+-	$(CP) $(srcdir)/doc/album.5 $(DESTDIR)$(mandir)/cat5/album.$(CAT5EXT)
+ 	-$(MKDIR) $(DESTDIR)$(mandir)/man5
+ 	$(RM) $(DESTDIR)$(mandir)/man5/album.5
+ 	$(CP) $(srcdir)/doc/album.man $(DESTDIR)$(mandir)/man5/album.5
