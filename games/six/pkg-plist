@@ -1,24 +1,23 @@
 bin/six
 share/applnk/Games/Board/six.desktop
 share/apps/six/sixui.rc
-share/icons/hicolor/16x16/apps/six.png
-share/icons/hicolor/16x16/apps/six.png
-share/icons/hicolor/32x32/actions/whiteplayer.png
+share/doc/HTML/en/six/common
+share/doc/HTML/en/six/filter.png
+share/doc/HTML/en/six/index.cache.bz2
+share/doc/HTML/en/six/index.docbook
 share/icons/hicolor/32x32/actions/blackplayer.png
 share/icons/hicolor/32x32/actions/swap.png
+share/icons/hicolor/32x32/actions/whiteplayer.png
 share/icons/hicolor/32x32/apps/six.png
 share/icons/hicolor/48x48/apps/six.png
+share/icons/locolor/16x16/actions/blackplayer.png
 share/icons/locolor/16x16/actions/swap.png
 share/icons/locolor/16x16/actions/whiteplayer.png
-share/icons/locolor/16x16/actions/blackplayer.png
 share/icons/locolor/16x16/apps/six.png
-share/icons/locolor/22x22/actions/swap.png
 share/icons/locolor/22x22/actions/blackplayer.png
+share/icons/locolor/22x22/actions/swap.png
 share/icons/locolor/22x22/actions/whiteplayer.png
 share/icons/locolor/32x32/apps/six.png
-share/doc/HTML/en/six/index.docbook
-share/doc/HTML/en/six/index.cache.bz2
-share/doc/HTML/en/six/filter.png
-share/doc/HTML/en/six/common
+share/mimelnk/application/vnd.kde.six.desktop
 @dirrm share/doc/HTML/en/six
 @dirrm share/apps/six

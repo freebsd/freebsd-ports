@@ -5,20 +5,23 @@
 # $FreeBSD$
 
 PORTNAME=	six
-PORTVERSION=	0.4.0
-PORTREVISION=	2
+PORTVERSION=	0.5.1
 CATEGORIES=	games kde
 MASTER_SITES=	http://six.retes.hu/download/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE HEX clone
 
 USE_KDELIBS_VER=	3
-GNU_CONFIGURE=		yes
-USE_REINPLACE=		yes
+USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
 
 post-patch:
-	${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS}," ${WRKSRC}/configure
-
+	@${REINPLACE_CMD} -e 's,-O2,,g ; \
+		 s,-pedantic,,g ; \
+		 s,-lpthread,${PTHREAD_LIBS},g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's,-lkdeprint$$,$$(LIB_KDEPRINT) $$(LIBPTHREAD),g' \
+		${WRKSRC}/six/Makefile.in
 
 .include <bsd.port.mk>
