@@ -16,13 +16,16 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dbi/test_blob.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dbi/xmltest.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/dbi
+%%PORTDOCS%%%%RUBY_DOCDIR%%/dbi/ChangeLog
 %%PORTDOCS%%%%RUBY_DOCDIR%%/dbi/DBD_SPEC
 %%PORTDOCS%%%%RUBY_DOCDIR%%/dbi/DBI_SPEC
-%%PORTDOCS%%%%RUBY_DOCDIR%%/dbi/HISTORY
 %%PORTDOCS%%%%RUBY_DOCDIR%%/dbi/README.1st
+%%PORTDOCS%%%%RUBY_DOCDIR%%/dbi/ToDo
 %%PORTDOCS%%%%RUBY_DOCDIR%%/dbi/index.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/dbi/html/ChangeLog.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/dbi/html/DBD_SPEC.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/dbi/html/DBI_SPEC.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/dbi/html/ToDo.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/dbi/html/index.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/dbi/html/rubyStyle.css
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/dbi/html
