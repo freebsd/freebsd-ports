@@ -30,6 +30,10 @@ CONFIGURE_ARGS+=--enable-phrase \
 		--localstatedir=/var/mnogosearch
 CONFIGURE_ENV+=	LOCALBASE="${LOCALBASE}"
 
+.if defined(PARALLEL_PACKAGE_BUILD)
+# OPTIONS not counted, workaround
+WITH_MNOGO_BUILTIN=true
+.endif
 OPTIONS=        MNOGO_THREADS "Enable pthreads"                   on  \
 		MNOGO_SSL     "Enable SSL"                        on  \
 		MNOGO_GUESSER "Enable Cyrillic charset guesser"   off \
