@@ -3,7 +3,7 @@
 # Date created:         5th December 1994
 # Whom:                 gpalmer@FreeBSD.org
 #
-# $Id: Makefile,v 1.7 1995/04/12 20:31:23 asami Exp $
+# $Id: Makefile,v 1.10 1996/12/08 02:30:29 obrien Exp $
 #
 
 DISTNAME=	rxvt-2.16
@@ -17,5 +17,9 @@ MAINTAINER=	winter@jurai.net
 USE_X11=	yes
 GNU_CONFIGURE=  yes
 MAN1=		rxvt.1
+
+post-install:
+	/usr/sbin/chown root ${PREFIX}/bin/rxvt
+	/bin/chmod 4755 ${PREFIX}/bin/rxvt
 
 .include <bsd.port.mk>
