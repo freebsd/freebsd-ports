@@ -4,5 +4,5 @@
  MySQLTcl - MySQL server access commands for Tcl
 +.SH SYNOPSIS
 +.P
-+package require mysql
++package require mysqltcl
  .SH "INTRODUCTION"
