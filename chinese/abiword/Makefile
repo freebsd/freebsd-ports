@@ -12,7 +12,7 @@ MASTER_SITES=	# none
 DISTFILES=	# none
 
 MAINTAINER=	keith@FreeBSD.org
-A cross-platform WYSIWYG word processor, with BIG5/GB available
+COMMENT=	A cross-platform WYSIWYG word processor, with BIG5/GB available
 
 RUN_DEPENDS=	AbiWord:${PORTSDIR}/editors/AbiWord \
 		ttfm.sh:${PORTSDIR}/chinese/ttfm \
