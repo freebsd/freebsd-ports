@@ -6,12 +6,13 @@
 # $FreeBSD$
 #
 
-DISTNAME=	archie.el-v3.0
-PKGNAME=	archie.el-3.0
+DISTNAME=	archie.el
+PKGNAME=	archie.el-3.0.2
 CATEGORIES=	net elisp
 # I don't know the master site
-MASTER_SITES=	ftp://ftp.chiba-u.ac.jp/pub/misc/archie/
-EXTRACT_SUFX=	.gz
+MASTER_SITES=	ftp://ftp.cis.ohio-state.edu/pub/elisp-lisp/interfaces/ \
+		ftp://ftp.kddlabs.co.jp/.2/gnu-attic/ohio-elisp/interfaces/
+EXTRACT_SUFX=	.Z
 
 MAINTAINER=	taoka@FreeBSD.org
 
