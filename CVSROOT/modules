@@ -4867,6 +4867,7 @@ osf1_base	ports/emulators/osf1_base
 osg		ports/graphics/osg
 osgedit		ports/graphics/osgedit
 osh		ports/shells/osh
+osiris		ports/security/osiris
 osrtspproxy	ports/net/osrtspproxy
 ossp-al		ports/devel/ossp-al
 ossp-cfg	ports/devel/ossp-cfg
