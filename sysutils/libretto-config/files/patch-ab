@@ -1,5 +1,5 @@
---- libapm.c.orig	Fri Jun 19 09:28:23 1998
-+++ libapm.c	Thu Nov 26 13:22:19 1998
+--- libapm.c.orig	Thu Jun 18 17:28:23 1998
++++ libapm.c	Wed Oct 15 06:51:53 2003
 @@ -8,12 +8,19 @@
  /*                                                         */
  /***********************************************************/
@@ -49,60 +49,82 @@
        switch (c) {
          case 'h':
            usage();
-@@ -215,8 +228,9 @@
+@@ -215,29 +228,60 @@
  void usage(void)
  {
  #ifdef CMOS_ACCESS
-+# ifdef HAVE_GETOPT_LONG
-     printf("
+-    printf("
 -usage: libapm [-v --Version]
-+usage: libretto-config [-v --Version]
-               [-h --Help]
-               [-P --PowerUp {boot,hibernation}]
-               [-T --StandbyTime {0,5,10,15,30,45,60,unlimit}]
-@@ -225,9 +239,24 @@
-               [-A --AlarmOn {disable,<time>}]
-               [-L --LcdPower {0,1,2,3}]
+-              [-h --Help]
+-              [-P --PowerUp {boot,hibernation}]
+-              [-T --StandbyTime {0,5,10,15,30,45,60,unlimit}]
+-              [-a --AutoOff {disable,10,20,30,40,50,60}]
+-              [-S --PanelSwitch {disable,enable}]
+-              [-A --AlarmOn {disable,<time>}]
+-              [-L --LcdPower {0,1,2,3}]
++# ifdef HAVE_GETOPT_LONG
++    printf("\n\
++usage: libretto-config [-v --Version]\n\
++              [-h --Help]\n\
++              [-P --PowerUp {boot,hibernation}]\n\
++              [-T --StandbyTime {0,5,10,15,30,45,60,unlimit}]\n\
++              [-a --AutoOff {disable,10,20,30,40,50,60}]\n\
++              [-S --PanelSwitch {disable,enable}]\n\
++              [-A --AlarmOn {disable,<time>}]\n\
++              [-L --LcdPower {0,1,2,3}]\n\
            \n");
 -#else
+-    printf("
+-usage: libapm [-v --Version]
+-              [-h --Help]
+-              [-P --PowerUp {boot,hibernation}]
+-              [-T --StandbyTime {0,5,10,15,30,45,60,unlimit}]
+-              [-a --AutoOff {disable,10,20,30,40,50,60}]
+-              [-S --PanelSwitch {disable,enable}]
+-              [-A --AlarmOn {disable,<time>}]
+-              [-L --LcdPower {0,1,2,3}]
+-              [-V --Volume {0,1,2,3}]
+-              [-O --Off {suspend|hibernation}  Use Only >= Libretto100]
 +# else /* not HAVE_GETOPT_LONG */
-+    printf("
-+usage: libretto-config [-v			: Version]
-+              [-h				: Help]
-+              [-P {boot,hibernation}		: PowerUp]
-+              [-T {0,5,10,15,30,45,60,unlimit}	: StandbyTime]
-+              [-a {disable,10,20,30,40,50,60}	: AutoOff]
-+              [-S {disable,enable}		: PanelSwitch]
-+              [-A {disable,<time>}		: AlarmOn]
-+              [-L {0,1,2,3}			: LcdPower]
-+          \n");
++    printf("\n\
++usage: libretto-config [-v			: Version]\n\
++              [-h				: Help]\n\
++              [-P {boot,hibernation}		: PowerUp]\n\
++              [-T {0,5,10,15,30,45,60,unlimit}	: StandbyTime]\n\
++              [-a {disable,10,20,30,40,50,60}	: AutoOff]\n\
++              [-S {disable,enable}		: PanelSwitch]\n\
++              [-A {disable,<time>}		: AlarmOn]\n\
++              [-L {0,1,2,3}			: LcdPower]\n\
+           \n");
 +# endif /* HAVE_GETOPT_LONG */
 +
 +#else /* not CMOS_ACCESS */
 +
 +# ifdef HAVE_GETOPT_LONG
-     printf("
--usage: libapm [-v --Version]
-+usage: libretto-config [-v --Version]
-               [-h --Help]
-               [-P --PowerUp {boot,hibernation}]
-               [-T --StandbyTime {0,5,10,15,30,45,60,unlimit}]
-@@ -238,6 +267,21 @@
-               [-V --Volume {0,1,2,3}]
-               [-O --Off {suspend|hibernation}  Use Only >= Libretto100]
-           \n");
++    printf("\
++usage: libretto-config [-v --Version]\n\
++              [-h --Help]\n\
++              [-P --PowerUp {boot,hibernation}]\n\
++              [-T --StandbyTime {0,5,10,15,30,45,60,unlimit}]\n\
++              [-a --AutoOff {disable,10,20,30,40,50,60}]\n\
++              [-S --PanelSwitch {disable,enable}]\n\
++              [-A --AlarmOn {disable,<time>}]\n\
++              [-L --LcdPower {0,1,2,3}]\n\
++              [-V --Volume {0,1,2,3}]\n\
++              [-O --Off {suspend|hibernation}  Use Only >= Libretto100]\n\
++          \n");
 +# else /* not HAVE_GETOPT_LONG */
-+    printf("
-+usage: libretto-config [-v			: Version]
-+              [-h				: Help]
-+              [-P {boot,hibernation}		: PowerUp]
-+              [-T {0,5,10,15,30,45,60,unlimit}	: StandbyTime]
-+              [-a {disable,10,20,30,40,50,60}	: AutoOff]
-+              [-S {disable,enable}		: PanelSwitch]
-+              [-A {disable,<time>}		: AlarmOn]
-+              [-L {0,1,2,3}			: LcdPower]
-+              [-V {0,1,2,3}			: Volume]
-+              [-O {suspend|hibernation}		: Off (Use Only>=Libretto100)]
++    printf("\
++usage: libretto-config [-v			: Version]\n\
++              [-h				: Help]\n\
++              [-P {boot,hibernation}		: PowerUp]\n\
++              [-T {0,5,10,15,30,45,60,unlimit}	: StandbyTime]\n\
++              [-a {disable,10,20,30,40,50,60}	: AutoOff]\n\
++              [-S {disable,enable}		: PanelSwitch]\n\
++              [-A {disable,<time>}		: AlarmOn]\n\
++              [-L {0,1,2,3}			: LcdPower]\n\
++              [-V {0,1,2,3}			: Volume]\n\
++              [-O {suspend|hibernation}		: Off (Use Only>=Libretto100)]\n\
 +          \n");
 +# endif /* HAVE_GETOPT_LONG */
 +
@@ -121,3 +143,53 @@
  }
  #endif /* CMOS_ACCESS */
  
+@@ -754,29 +802,29 @@
+ #endif /* CMOS_ACCESS */
+ 
+ #ifndef CMOS_ACCESS
+-    printf("
+-Power Management for Libretto V%-8s
+-+-----------------------------------------------------------+
+-|   0) Power-up Mode      : %-32s|
+-|   1) Standby Time       : %-32s|
+-|   2) System Auto Off    : %-32s|
+-|   3) Panel Power On/Off : %-32s|
+-|   4) Alarm Power On     : %-32s|
+-|   5) LCD Power          : %-32s|
+-|   6) Volume             : %-32s|
+-|   7) Off (Suspend/Hiber): %-32s|
++    printf("\
++Power Management for Libretto V%-8s\n\
+++-----------------------------------------------------------+\n\
++|   0) Power-up Mode      : %-32s|\n\
++|   1) Standby Time       : %-32s|\n\
++|   2) System Auto Off    : %-32s|\n\
++|   3) Panel Power On/Off : %-32s|\n\
++|   4) Alarm Power On     : %-32s|\n\
++|   5) LCD Power          : %-32s|\n\
++|   6) Volume             : %-32s|\n\
++|   7) Off (Suspend/Hiber): %-32s|\n\\n\
+ +-----------------------------------------------------------+\n\n",
+     version, s[0], s[1], s[2], s[3], s[4], s[5], s[6], s[7]);
+ #else
+-    printf("
+-Power Management for Libretto V%-8s
+-+-----------------------------------------------------------+
+-|   0) Power-up Mode      : %-32s|
+-|   1) Standby Time       : %-32s|
+-|   2) System Auto Off    : %-32s|
+-|   3) Panel Power On/Off : %-32s|
+-|   4) Alarm Power On     : %-32s|
+-|   5) LCD Power          : %-32s|
++    printf("\
++Power Management for Libretto V%-8s\n\
+++-----------------------------------------------------------+\n\
++|   0) Power-up Mode      : %-32s|\n\
++|   1) Standby Time       : %-32s|\n\
++|   2) System Auto Off    : %-32s|\n\
++|   3) Panel Power On/Off : %-32s|\n\
++|   4) Alarm Power On     : %-32s|\n\
++|   5) LCD Power          : %-32s|\n\
+ +-----------------------------------------------------------+\n\n",
+     version, s[0], s[1], s[2], s[3], s[4], s[5]);
+ #endif /* CMOS_ACCESS */

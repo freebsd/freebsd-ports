@@ -7,6 +7,7 @@
 
 PORTNAME=	libretto-config
 PORTVERSION=	1.0.b5
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://club.pep.ne.jp/~ishioka/Software/Linux/libapm/
 DISTNAME=	libapm-linux-1.0beta5
@@ -22,12 +23,6 @@ DOCDIR=		${PREFIX}/share/doc/${PORTNAME}
 MAN8=		${PORTNAME}.8
 MANLANG=	. ja
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
 post-install:
 # install japanese manpage also :-)
 	@${INSTALL_MAN} ${WRKSRC}/libapm-j.man ${PREFIX}/man/ja/man8/${PORTNAME}.8
@@ -40,4 +35,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/APM-EXBIOS-j.txt ${DOCDIR}/ja/APM-EXBIOS.txt
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
