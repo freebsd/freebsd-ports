@@ -3,6 +3,8 @@
 #
 # Based upon code provided by Marc Ewing (marc@redhat.com) for a previous
 # version of rxvt.
+#
+# BSD utmp code fixed again by peter@freebsd.org
 
 *** rxvt.h	Sat Feb 19 09:41:52 1994
 --- rxvt.h	Wed Jan 10 23:42:09 1996
@@ -16,8 +18,8 @@
 + void save_privs(void);
 + void get_privs(void);
 + void release_privs(void);
-*** rxvt.c	Fri Aug  5 08:52:07 1994
---- rxvt.c	Wed Jan 10 23:45:04 1996
+*** rxvt.c	Fri Aug  5 23:52:07 1994
+--- rxvt.c	Sat Feb 24 22:03:27 1996
 ***************
 *** 45,50 ****
 --- 45,54 ----
@@ -31,11 +33,11 @@
     
     for (i = 0; i < argc; i++)
       if (strcmp(argv[i],"-e") == 0)
-*** command.c	Thu Oct 20 07:35:44 1994
---- command.c	Wed Jan 10 23:46:04 1996
+*** command.c	Sat Feb 24 22:03:27 1996
+--- command.c	Sat Feb 24 22:12:26 1996
 ***************
 *** 222,227 ****
---- 222,247 ----
+--- 222,251 ----
   }
   #endif
   
@@ -50,21 +52,25 @@
 + 
 + void get_privs()
 + {
-+     seteuid(saved_uid);
-+     seteuid(saved_gid);
++     if (seteuid(saved_uid) < 0)
++ 	perror("failed to restore saved uid");
++     if (setegid(saved_gid) < 0)
++ 	perror("failed to restore saved gid");
 + }
 + 
 + void release_privs()
 + {
-+     seteuid(getuid());
-+     setegid(getgid());
++     if (seteuid(getuid()) < 0)
++ 	perror("failed to release setuid");
++     if (setegid(getgid()) < 0)
++ 	perror("failed to release setgid");
 + }
   
   /*  Catch a SIGCHLD signal and exit if the direct child has died.
    */
 ***************
 *** 337,344 ****
---- 357,366 ----
+--- 361,370 ----
   	gid = gr->gr_gid;
         else
   	gid = -1;
@@ -75,25 +81,36 @@
   #endif
   #ifdef TIOCCONS
        if (console) 
-*** utmp.c	Mon Oct  3 17:47:56 1994
---- utmp.c	Wed Jan 10 23:48:56 1996
+*** utmp.c	Tue Oct  4 08:47:56 1994
+--- utmp.c	Sat Feb 24 22:21:30 1996
 ***************
 *** 71,79 ****
---- 71,81 ----
     extern char ttynam[];
     extern struct stat ttyfd_stat;
   
-+   get_privs();
-    chmod(ttynam,ttyfd_stat.st_mode);
+!   chmod(ttynam,ttyfd_stat.st_mode);
+! 
+!   chown(ttynam,ttyfd_stat.st_uid,ttyfd_stat.st_gid);
+  #endif
+    if(madeutent)
+      cleanutent();
+--- 71,83 ----
+    extern char ttynam[];
+    extern struct stat ttyfd_stat;
   
-    chown(ttynam,ttyfd_stat.st_uid,ttyfd_stat.st_gid);
-+   release_privs();
+!   get_privs();
+!   if (chmod(ttynam,ttyfd_stat.st_mode) < 0)
+! 	perror("cant reset tty modes");
+! 
+!   if (chown(ttynam,ttyfd_stat.st_uid,ttyfd_stat.st_gid) < 0)
+! 	perror("cant reset tty owner");
+!   release_privs();
   #endif
     if(madeutent)
       cleanutent();
 ***************
 *** 166,171 ****
---- 168,174 ----
+--- 170,176 ----
   {
     FILE *utmp;
   
@@ -103,7 +120,7 @@
     utmp_pos = get_tslot(ttyname) * sizeof(struct utmp);
 ***************
 *** 174,179 ****
---- 177,183 ----
+--- 179,185 ----
     fseek(utmp,utmp_pos,0);
     fwrite((char *)u, sizeof(struct utmp),1,utmp);
     fclose(utmp);
@@ -112,8 +129,25 @@
     return(utmp_pos);
   }
 ***************
+*** 228,239 ****
+--- 234,247 ----
+    FILE *ut;
+    struct utmp u;
+    
++   get_privs();
+    if((ut = fopen(UTMP,"r+")) == NULL)
+      return;
+    fseek(ut,utmp_pos,0);
+    memset(&u,0,sizeof(u));
+    fwrite((char *)&u,sizeof(struct utmp),1,ut);
+    fclose(ut);
++   release_privs();
+  }
+  
+  
+***************
 *** 250,259 ****
---- 254,265 ----
+--- 258,269 ----
   int write_utmp(struct utmp * u) 
   {
     int pos;
@@ -135,7 +169,7 @@
     utmpname(UTMP);
     setutent();
     pid = getpid();
---- 311,318 ----
+--- 315,322 ----
   {
     int pid;
     struct utmp *u;
@@ -146,7 +180,7 @@
     pid = getpid();
 ***************
 *** 333,338 ****
---- 340,346 ----
+--- 344,350 ----
   	  endutent();
   	}
       }
