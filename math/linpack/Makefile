@@ -3,13 +3,14 @@
 # Date created:         31 October 1994
 # Whom:                 ljo
 #
-# $Id: Makefile,v 1.5 1995/04/11 01:19:04 asami Exp $
+# $Id: Makefile,v 1.6 1995/04/22 11:30:13 asami Exp $
 #
 
 DISTNAME=	linpack
 PKGNAME=	linpack-1.0
 
 DISTDIR=${PORTSDIR}/distfiles/${DISTNAME}
+CATEGORIES+=	math
 MASTER_SITES=	ftp://netlib.att.com/netlib/linpack/
 .if defined(MASTER_SITE_OVERRIDE)
 MASTER_SITES:= ${MASTER_SITE_OVERRIDE}/linpack/

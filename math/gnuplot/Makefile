@@ -3,11 +3,12 @@
 # Date created:         6 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.3 1995/04/11 02:01:00 jmz Exp $
+# $Id: Makefile,v 1.4 1995/04/22 11:30:11 asami Exp $
 #
 
 DISTNAME=	gnuplot
 PKGNAME=	gnuplot-3.5
+CATEGORIES+=	math graphics
 MASTER_SITES=	ftp://ftp.dartmouth.edu/pub/gnuplot/
 DISTFILES=	gnuplot3.5.tar.Z
 
