@@ -99,7 +99,6 @@
     SUBDIR += c_parser
     SUBDIR += calibrator
     SUBDIR += camlp4
-    SUBDIR += camomile
     SUBDIR += cbrowser
     SUBDIR += cc65
     SUBDIR += ccache
