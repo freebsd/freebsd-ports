@@ -29,6 +29,10 @@ LATEST_LINK=	gcc295
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "alpha" && ${OSVERSION} >= 502000
+BROKEN=		"Does not compile"
+.endif
+
 GCC_REV=	${DISTNAME:S/gcc-//g:S/.test3//g}
 TARGLIB=	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}
 LIBSTDCPP_REV=	2100
