@@ -1397,6 +1397,7 @@ dcraw		ports/graphics/dcraw
 dctc		ports/net/dctc
 dctc-gui	ports/net/dctc-gui
 dctc-gui-qt	ports/net/dctc-gui-qt
+dd_rescue	ports/sysutils/dd_rescue
 ddate		ports/misc/ddate
 ddc		ports/net/ddc
 ddclient	ports/dns/ddclient
