@@ -1,0 +1,17 @@
+--- m3gdb.1.orig	Wed Feb 17 09:38:59 1999
++++ m3gdb.1	Mon Mar 15 10:35:52 1999
+@@ -156,8 +156,12 @@
+ \ \ \ \(bu
+ You can use the
+ .B threads
+-command to list all currently existing threads. This seems to be
+-all the thread support that works for the moment, though.
++command to list all currently existing threads.  And with
++.B switch
++.I n
++you can switch to the stack of a different thread.  Be sure to
++switch back to the original thread before resuming execution.
++Otherwise, the program is likely to crash.
+ 
+ .TP
+ \ \ \ \(bu
