@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src/Makefile.in.orig	Sat Jul 20 15:27:46 2002
++++ src/Makefile.in	Sat Jul 20 15:27:54 2002
+@@ -99,7 +99,7 @@
+ lib_LTLIBRARIES = libao.la
+ 
+ libao_la_SOURCES = audio_out.c config.c ao_null.c ao_wav.c ao_au.c ao_raw.c ao_private.h
+-libao_la_LDFLAGS = -version-info @LIB_CURRENT@:@LIB_REVISION@:@LIB_AGE@ -ldl
++libao_la_LDFLAGS = -version-info @LIB_CURRENT@:@LIB_REVISION@:@LIB_AGE@
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_CLEAN_FILES = 
+ LTLIBRARIES =  $(lib_LTLIBRARIES)

@@ -5,7 +5,7 @@ include/ogg/os_types.h
 lib/libogg.a
 lib/libogg.la
 lib/libogg.so
-lib/libogg.so.3
+lib/libogg.so.4
 share/aclocal/ogg.m4
 %%PORTDOCS%%share/doc/libogg/framing.html
 %%PORTDOCS%%share/doc/libogg/index.html
@@ -49,14 +49,12 @@ share/aclocal/ogg.m4
 %%PORTDOCS%%share/doc/libogg/ogg/ogg_sync_wrote.html
 %%PORTDOCS%%share/doc/libogg/ogg/oggpack_adv.html
 %%PORTDOCS%%share/doc/libogg/ogg/oggpack_adv1.html
-%%PORTDOCS%%share/doc/libogg/ogg/oggpack_adv_huff.html
 %%PORTDOCS%%share/doc/libogg/ogg/oggpack_bits.html
 %%PORTDOCS%%share/doc/libogg/ogg/oggpack_buffer.html
 %%PORTDOCS%%share/doc/libogg/ogg/oggpack_bytes.html
 %%PORTDOCS%%share/doc/libogg/ogg/oggpack_get_buffer.html
 %%PORTDOCS%%share/doc/libogg/ogg/oggpack_look.html
 %%PORTDOCS%%share/doc/libogg/ogg/oggpack_look1.html
-%%PORTDOCS%%share/doc/libogg/ogg/oggpack_look_huff.html
 %%PORTDOCS%%share/doc/libogg/ogg/oggpack_read.html
 %%PORTDOCS%%share/doc/libogg/ogg/oggpack_read1.html
 %%PORTDOCS%%share/doc/libogg/ogg/oggpack_readinit.html

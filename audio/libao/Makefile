@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	libao
-PORTVERSION=	0.8.2
-PORTREVISION=	1
+PORTVERSION=	0.8.3
 CATEGORIES=	audio
-MASTER_SITES=	http://www.xiph.org/ogg/vorbis/download/ \
-		http://www.vorbis.com/files/rc3/unix/ \
-		http://www.oddsock.org/vorbisrc3/files/rc3/unix/
+MASTER_SITES=	ftp://ftp.linuxpowered.com/pub/Vorbis/unix/ \
+		ftp://ftp.wiles.org/pub/mirrors/Vorbis/unix/ \
+		http://xiph.stratius.com/vorbis/unix/ \
+		http://www.oddsock.org/vorbis/unix/ \
+		http://www.casterclub.com/vorbis/unix/ \
+		http://www.math.utoledo.edu/~chaese/Vorbis/unix/
 
 MAINTAINER=	naddy@FreeBSD.org
 

@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	libogg
-PORTVERSION=	1.0.r3
-PORTREVISION=	1
-PORTEPOCH=	2
+PORTVERSION=	1.0
+PORTEPOCH=	3
 CATEGORIES=	audio
-MASTER_SITES=	http://www.xiph.org/ogg/vorbis/download/ \
-		http://www.vorbis.com/files/rc3/unix/ \
-		http://www.oddsock.org/vorbisrc3/files/rc3/unix/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
+MASTER_SITES=	ftp://ftp.linuxpowered.com/pub/Vorbis/unix/ \
+		ftp://ftp.wiles.org/pub/mirrors/Vorbis/unix/ \
+		http://xiph.stratius.com/vorbis/unix/ \
+		http://www.oddsock.org/vorbis/unix/ \
+		http://www.casterclub.com/vorbis/unix/ \
+		http://www.math.utoledo.edu/~chaese/Vorbis/unix/
 
 MAINTAINER=	naddy@FreeBSD.org
 
