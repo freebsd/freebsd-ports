@@ -8,12 +8,13 @@
 
 PORTNAME=	autodia
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	http://droogs.org/autodia/download/
 
 MAINTAINER=	ports@FreeBSD.org
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit
+RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
