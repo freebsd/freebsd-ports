@@ -1,0 +1,55 @@
+--- wmtop.c.orig	Wed May 17 05:08:20 2000
++++ wmtop.c	Wed Sep 20 03:48:43 2000
+@@ -78,6 +78,10 @@
+  */
+ int mode = 0;
+ 
++#if defined(FREEBSD)
++int show_system = 0;
++#endif
++
+ #if defined(DEBUG)
+ /*
+  * Memory handler
+@@ -234,7 +238,7 @@
+     char deparenthesised_name[WMTOP_BUFLENGTH];
+ #endif /* defined(LINUX) */
+ #if defined(FREEBSD)
+-    int us,um,ks,km;
++    int us,um,ks,km,ppid;
+ #endif /* defined(FREEBSD) */
+ 
+ #if defined(PARANOID)
+@@ -298,11 +302,18 @@
+      * Extract cpu times from data in /proc/<pid>/stat
+      * XXX: Process name extractor for FreeBSD is untested right now.
+      */
+-    rc = sscanf(line,"%s %*s %*s %*s %*s %*s %*s %*s %d,%d %d,%d",
+-	    procname,
++    rc = sscanf(line,"%s %*s %d %*s %*s %*s %*s %*s %d,%d %d,%d",
++	    procname, &ppid,
+ 	    &us,&um,&ks,&km);
+     if (rc<5)
+ 	return 1;
++
++    if (ppid == 0 && !show_system)
++    {
++	process->time_stamp=0;
++	return 1;
++    }
++
+     if (process->name)
+ 	wmtop_free(process->name);
+     process->name = wmtop_strdup(procname);
+@@ -725,6 +736,11 @@
+ 		    i++;
+ 		}
+ 		break;
++#if defined (FREEBSD)
++	    case 'S':
++		show_system = 1;
++		break;
++#endif
+ 	    case 'r':
+ 		if (argc > (i+1)) {
+ 		    refresh_rate = (atoi(argv[i+1]) * 1000);
