@@ -1,6 +1,7 @@
 ##################################################
 #          The Exim mail transport agent         #
 ##################################################
+# $FreeBSD$
 
 # This is the template for Exim's main build-time configuration file. It
 # contains settings that are independent of any operating system. It should
@@ -473,5 +474,14 @@ TRANSPORT_SMTP=yes
 
 USE_TCP_WRAPPERS=yes
 EXTRALIBS=-lwrap
+
+
+# Experimental SMTP AUTH support, untested by the maintainer of the FreeBSD
+# port of Exim.
+
+AUTH_CRAM_MD5=yes
+AUTH_PLAINTEXT=yes
+SUPPORT_PAM=yes
+PAM_LIBS=-lpam
 
 # End of EDITME
