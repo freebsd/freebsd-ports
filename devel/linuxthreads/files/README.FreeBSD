@@ -91,7 +91,25 @@ set at 20 + 16 * MAXUSERS.
    library causes the liblgcc_r.a version of those functions to be used.
    Use liblstdc++ and liblsupc++.
 
-4) Exit handling is broken.
+   Experimental wrapper support:
+
+   If the linuxthreads library has been compiled with
+   LINUXTHREADS_WRAP_API defined in the ports makefile then
+   the API functions are internally prefixed with linuxthreads_
+   to avoid conflict with native threads.  Weak symbols without
+   that prefix points to the wrapper functions (internally
+   prefixed by _) that makes the linuxthreads functions available
+   with the native threads API.  Applications including the
+   linuxthreads version of pthread.h will try to call the
+   prefixed methods (e.g. linuxthreads_pthread_create) while 
+   applications including the native pthread.h will use the
+   wrapper functions.  This allows for some level of coexistence
+   of libraries compiled with linuxthreads header file and
+   libraries compiled with native threads header files as long
+   as none of the pthread data types leaks out as function arguments	
+   or structure members.  
+
+5) Exit handling is broken.
 
    If the linuxthreads library has been compiled with
    LINUXTHREADS_DETECT_UNSAFE_EXIT defined in the ports makefile then

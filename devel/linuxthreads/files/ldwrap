@@ -1,0 +1,117 @@
+#!/bin/sh -e
+#
+# Gross hack.  Wrapper for ld that renames various functions to avoid
+# conflicts between linuxthreads and native threads
+#
+echo "[ldwrap $@]"
+if test "$1" = "-o" -a "$2" != "wraputhread.o.tmp" -a "$2" != "wraputhread.Po.tmp" -a "$2" != "wraputhread.So.tmp"
+then
+  target=$2
+  shift
+  shift
+  ld -o $target.tmp "$@"
+objcopy \
+--redefine-sym _pthread_cleanup_pop=linuxthreads__pthread_cleanup_pop \
+--redefine-sym _pthread_cleanup_pop_restore=linuxthreads__pthread_cleanup_pop_restore \
+--redefine-sym _pthread_cleanup_push=linuxthreads__pthread_cleanup_push \
+--redefine-sym _pthread_cleanup_push_defer=linuxthreads__pthread_cleanup_push_defer \
+--redefine-sym pthread_atfork=linuxthreads_pthread_atfork \
+--redefine-sym pthread_attr_destroy=linuxthreads_pthread_attr_destroy \
+--redefine-sym pthread_attr_getdetachstate=linuxthreads_pthread_attr_getdetachstate \
+--redefine-sym pthread_attr_getguardsize=linuxthreads_pthread_attr_getguardsize \
+--redefine-sym pthread_attr_getinheritsched=linuxthreads_pthread_attr_getinheritsched \
+--redefine-sym pthread_attr_getschedparam=linuxthreads_pthread_attr_getschedparam \
+--redefine-sym pthread_attr_getschedpolicy=linuxthreads_pthread_attr_getschedpolicy \
+--redefine-sym pthread_attr_getscope=linuxthreads_pthread_attr_getscope \
+--redefine-sym pthread_attr_getstack=linuxthreads_pthread_attr_getstack \
+--redefine-sym pthread_attr_getstackaddr=linuxthreads_pthread_attr_getstackaddr \
+--redefine-sym pthread_attr_getstacksize=linuxthreads_pthread_attr_getstacksize \
+--redefine-sym pthread_attr_init=linuxthreads_pthread_attr_init \
+--redefine-sym pthread_attr_setdetachstate=linuxthreads_pthread_attr_setdetachstate \
+--redefine-sym pthread_attr_setguardsize=linuxthreads_pthread_attr_setguardsize \
+--redefine-sym pthread_attr_setinheritsched=linuxthreads_pthread_attr_setinheritsched \
+--redefine-sym pthread_attr_setschedparam=linuxthreads_pthread_attr_setschedparam \
+--redefine-sym pthread_attr_setschedpolicy=linuxthreads_pthread_attr_setschedpolicy \
+--redefine-sym pthread_attr_setscope=linuxthreads_pthread_attr_setscope \
+--redefine-sym pthread_attr_setstack=linuxthreads_pthread_attr_setstack \
+--redefine-sym pthread_attr_setstackaddr=linuxthreads_pthread_attr_setstackaddr \
+--redefine-sym pthread_attr_setstacksize=linuxthreads_pthread_attr_setstacksize \
+--redefine-sym pthread_barrier_destroy=linuxthreads_pthread_barrier_destroy \
+--redefine-sym pthread_barrier_init=linuxthreads_pthread_barrier_init \
+--redefine-sym pthread_barrier_wait=linuxthreads_pthread_barrier_wait \
+--redefine-sym pthread_barrierattr_destroy=linuxthreads_pthread_barrierattr_destroy \
+--redefine-sym pthread_barrierattr_getpshared=linuxthreads_pthread_barrierattr_getpshared \
+--redefine-sym pthread_barrierattr_init=linuxthreads_pthread_barrierattr_init \
+--redefine-sym pthread_barrierattr_setpshared=linuxthreads_pthread_barrierattr_setpshared \
+--redefine-sym pthread_cancel=linuxthreads_pthread_cancel \
+--redefine-sym pthread_cond_broadcast=linuxthreads_pthread_cond_broadcast \
+--redefine-sym pthread_cond_destroy=linuxthreads_pthread_cond_destroy \
+--redefine-sym pthread_cond_init=linuxthreads_pthread_cond_init \
+--redefine-sym pthread_cond_signal=linuxthreads_pthread_cond_signal \
+--redefine-sym pthread_cond_timedwait=linuxthreads_pthread_cond_timedwait \
+--redefine-sym pthread_cond_wait=linuxthreads_pthread_cond_wait \
+--redefine-sym pthread_condattr_destroy=linuxthreads_pthread_condattr_destroy \
+--redefine-sym pthread_condattr_getpshared=linuxthreads_pthread_condattr_getpshared \
+--redefine-sym pthread_condattr_init=linuxthreads_pthread_condattr_init \
+--redefine-sym pthread_condattr_setpshared=linuxthreads_pthread_condattr_setpshared \
+--redefine-sym pthread_create=linuxthreads_pthread_create \
+--redefine-sym pthread_detach=linuxthreads_pthread_detach \
+--redefine-sym pthread_equal=linuxthreads_pthread_equal \
+--redefine-sym pthread_exit=linuxthreads_pthread_exit \
+--redefine-sym pthread_getattr_np=linuxthreads_pthread_getattr_np \
+--redefine-sym pthread_getconcurrency=linuxthreads_pthread_getconcurrency \
+--redefine-sym pthread_getcpuclockid=linuxthreads_pthread_getcpuclockid \
+--redefine-sym pthread_getschedparam=linuxthreads_pthread_getschedparam \
+--redefine-sym pthread_getspecific=linuxthreads_pthread_getspecific \
+--redefine-sym pthread_join=linuxthreads_pthread_join \
+--redefine-sym pthread_key_create=linuxthreads_pthread_key_create \
+--redefine-sym pthread_key_delete=linuxthreads_pthread_key_delete \
+--redefine-sym pthread_kill=linuxthreads_pthread_kill \
+--redefine-sym pthread_kill_other_threads_np=linuxthreads_pthread_kill_other_threads_np \
+--redefine-sym pthread_mutex_destroy=linuxthreads_pthread_mutex_destroy \
+--redefine-sym pthread_mutex_init=linuxthreads_pthread_mutex_init \
+--redefine-sym pthread_mutex_lock=linuxthreads_pthread_mutex_lock \
+--redefine-sym pthread_mutex_timedlock=linuxthreads_pthread_mutex_timedlock \
+--redefine-sym pthread_mutex_trylock=linuxthreads_pthread_mutex_trylock \
+--redefine-sym pthread_mutex_unlock=linuxthreads_pthread_mutex_unlock \
+--redefine-sym pthread_mutexattr_destroy=linuxthreads_pthread_mutexattr_destroy \
+--redefine-sym pthread_mutexattr_getpshared=linuxthreads_pthread_mutexattr_getpshared \
+--redefine-sym pthread_mutexattr_gettype=linuxthreads_pthread_mutexattr_gettype \
+--redefine-sym pthread_mutexattr_init=linuxthreads_pthread_mutexattr_init \
+--redefine-sym pthread_mutexattr_setpshared=linuxthreads_pthread_mutexattr_setpshared \
+--redefine-sym pthread_mutexattr_settype=linuxthreads_pthread_mutexattr_settype \
+--redefine-sym pthread_once=linuxthreads_pthread_once \
+--redefine-sym pthread_rwlock_destroy=linuxthreads_pthread_rwlock_destroy \
+--redefine-sym pthread_rwlock_init=linuxthreads_pthread_rwlock_init \
+--redefine-sym pthread_rwlock_rdlock=linuxthreads_pthread_rwlock_rdlock \
+--redefine-sym pthread_rwlock_timedrdlock=linuxthreads_pthread_rwlock_timedrdlock \
+--redefine-sym pthread_rwlock_timedwrlock=linuxthreads_pthread_rwlock_timedwrlock \
+--redefine-sym pthread_rwlock_tryrdlock=linuxthreads_pthread_rwlock_tryrdlock \
+--redefine-sym pthread_rwlock_trywrlock=linuxthreads_pthread_rwlock_trywrlock \
+--redefine-sym pthread_rwlock_unlock=linuxthreads_pthread_rwlock_unlock \
+--redefine-sym pthread_rwlock_wrlock=linuxthreads_pthread_rwlock_wrlock \
+--redefine-sym pthread_rwlockattr_destroy=linuxthreads_pthread_rwlockattr_destroy \
+--redefine-sym pthread_rwlockattr_getkind_np=linuxthreads_pthread_rwlockattr_getkind_np \
+--redefine-sym pthread_rwlockattr_getpshared=linuxthreads_pthread_rwlockattr_getpshared \
+--redefine-sym pthread_rwlockattr_init=linuxthreads_pthread_rwlockattr_init \
+--redefine-sym pthread_rwlockattr_setkind_np=linuxthreads_pthread_rwlockattr_setkind_np \
+--redefine-sym pthread_rwlockattr_setpshared=linuxthreads_pthread_rwlockattr_setpshared \
+--redefine-sym pthread_self=linuxthreads_pthread_self \
+--redefine-sym pthread_setcancelstate=linuxthreads_pthread_setcancelstate \
+--redefine-sym pthread_setcanceltype=linuxthreads_pthread_setcanceltype \
+--redefine-sym pthread_setconcurrency=linuxthreads_pthread_setconcurrency \
+--redefine-sym pthread_setschedparam=linuxthreads_pthread_setschedparam \
+--redefine-sym pthread_setspecific=linuxthreads_pthread_setspecific \
+--redefine-sym pthread_sigmask=linuxthreads_pthread_sigmask \
+--redefine-sym pthread_spin_destroy=linuxthreads_pthread_spin_destroy \
+--redefine-sym pthread_spin_init=linuxthreads_pthread_spin_init \
+--redefine-sym pthread_spin_lock=linuxthreads_pthread_spin_lock \
+--redefine-sym pthread_spin_trylock=linuxthreads_pthread_spin_trylock \
+--redefine-sym pthread_spin_unlock=linuxthreads_pthread_spin_unlock \
+--redefine-sym pthread_testcancel=linuxthreads_pthread_testcancel \
+--redefine-sym pthread_yield=linuxthreads_pthread_yield \
+$target.tmp $target
+  rm -f $target.tmp
+else
+  exec ld "$@"
+fi
