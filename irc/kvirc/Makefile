@@ -25,6 +25,7 @@ USE_AUTOCONF=	yes
 USE_QT_VER=	2
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
+QT_NONSTANDARD=	yes
 CONFIGURE_ARGS=	--x-includes=$(X11BASE)/include \
 		--x-libraries=$(X11BASE)/lib \
 		--datadir=$(PREFIX)/share \
@@ -33,7 +34,8 @@ CONFIGURE_ARGS=	--x-includes=$(X11BASE)/include \
 		--with-qt-library-dir=${X11BASE}/lib \
 		--without-kde-check \
 		--with-freebsd-pthread \
-		--with-qt-name=qt2
+		--with-qt-name=qt2 \
+		--disable-static
 
 CONFIGURE_ENV+=	SS_X_EXTRA_LIBS=-lxpg4
 
