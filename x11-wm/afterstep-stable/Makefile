@@ -19,7 +19,9 @@ LIB_DEPENDS=	rplay.1:${PORTSDIR}/audio/rplay \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png \
-		freetype.9:${PORTSDIR}/print/freetype2
+		freetype.9:${PORTSDIR}/print/freetype2 \
+		tiff.4:${PORTSDIR}/graphics/tiff
+RUN_DEPENDS=	${X11BASE}/bin/xli:${PORTSDIR}/graphics/xli
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
