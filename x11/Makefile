@@ -38,6 +38,7 @@
     SUBDIR += gmessage
     SUBDIR += gnoclip
     SUBDIR += gnome
+    SUBDIR += gnome2
     SUBDIR += gnome-fifth-toe
     SUBDIR += gnomeapplets
     SUBDIR += gnomeapplets2
