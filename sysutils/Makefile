@@ -143,6 +143,7 @@
     SUBDIR += linneighborhood
     SUBDIR += linux-acu
     SUBDIR += linux-e2fsprogs
+    SUBDIR += linuxfdisk
     SUBDIR += lire
     SUBDIR += livecd
     SUBDIR += lmmon
