@@ -1,4 +1,5 @@
 lib/ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/gtk.so
+lib/ruby/%%RUBY_VER%%/gtkcompat.rb
 share/examples/ruby/gtk/drawing.rb
 share/examples/ruby/gtk/helloworld.rb
 share/examples/ruby/gtk/text.rb
@@ -8,4 +9,10 @@ share/examples/ruby/gtk/browser/rbbr_gtk.rb
 share/examples/ruby/gtk/browser/rbbr_rb.rb
 share/examples/ruby/gtk/browser/rbdump.rb
 @dirrm share/examples/ruby/gtk/browser
+share/examples/ruby/gtk/gdkimlib/sample1.rb
+share/examples/ruby/gtk/gdkimlib/sample2.rb
+share/examples/ruby/gtk/gdkimlib/sample3.rb
+share/examples/ruby/gtk/gdkimlib/sample4.rb
+share/examples/ruby/gtk/gdkimlib/sample5.rb
+@dirrm share/examples/ruby/gtk/gdkimlib
 @dirrm share/examples/ruby/gtk
