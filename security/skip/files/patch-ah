@@ -1,0 +1,12 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/certs/hashcert/dh_keygen.C skipsrc-1.0/certs/hashcert/dh_keygen.C
+--- skipsrc-1.0.orig/certs/hashcert/dh_keygen.C	Fri Oct 25 13:11:37 1996
++++ skipsrc-1.0/certs/hashcert/dh_keygen.C	Mon Dec 15 16:57:05 1997
+@@ -54,6 +54,8 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <unistd.h>
++#include <time.h>
+ #include <sys/types.h>
+ #include "Time.h"
+ #include "Bigint.h"

@@ -1,0 +1,11 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/certs/lib/asn1_der_decode.C skipsrc-1.0/certs/lib/asn1_der_decode.C
+--- skipsrc-1.0.orig/certs/lib/asn1_der_decode.C	Fri Oct 25 13:11:45 1996
++++ skipsrc-1.0/certs/lib/asn1_der_decode.C	Fri Nov 21 11:39:11 1997
+@@ -48,6 +48,7 @@
+ #include <stdarg.h>
+ #include <stdlib.h>
+ #include <stdio.h>
++#include <string.h>
+ #include "my_types.h"
+ #include "Time.h"
+ #include "Bigint.h"

@@ -1,0 +1,12 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/keymgrd/skip_log.h skipsrc-1.0/skip/keymgrd/skip_log.h
+--- skipsrc-1.0.orig/skip/keymgrd/skip_log.h	Fri Oct 25 13:12:51 1996
++++ skipsrc-1.0/skip/keymgrd/skip_log.h	Tue Dec 23 13:33:48 1997
+@@ -45,5 +45,6 @@
+ #pragma ident "@(#)skip_log.h	1.3 95/11/17"
+  
+ void skip_log(int,char*,...);
+-#define SKIP_ERROR 	1
+-#define	SKIP_NOTICE	2
++#define SKIP_ERROR 	LOG_ERR
++#define	SKIP_NOTICE	LOG_NOTICE
++#define	SKIP_INFO	LOG_INFO

@@ -1,0 +1,11 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/certs/lib/passwd_subr.C skipsrc-1.0/certs/lib/passwd_subr.C
+--- skipsrc-1.0.orig/certs/lib/passwd_subr.C	Fri Oct 25 13:11:49 1996
++++ skipsrc-1.0/certs/lib/passwd_subr.C	Fri Nov 21 11:39:11 1997
+@@ -52,6 +52,7 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ #include "Bstream.h"
+ #include "Bigint.h"
+ #include "ObjId.h"

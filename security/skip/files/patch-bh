@@ -1,0 +1,89 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/skip_wrapper.c skipsrc-1.0/skip/freebsd/skip_wrapper.c
+--- skipsrc-1.0.orig/skip/freebsd/skip_wrapper.c	Fri Oct 25 13:12:43 1996
++++ skipsrc-1.0/skip/freebsd/skip_wrapper.c	Mon Dec 22 12:48:43 1997
+@@ -66,18 +66,7 @@
+ #include <skip_es.h>
+ #include <skip_if.h>
+ 
+-
+-/*
+- * SunOS 4.1.x loadable driver wrapper for the SKIP module
+- */
+-extern char		skip_module_name[];
+-
+-/*
+- * Module linkage information for the kernel.
+- */
+-extern int		nulldev();
+-
+-struct cfdriver skipcd=
++struct cfdriver skipcd =
+         { NULL, "skip", NULL, NULL, DV_DULL, 0 };
+ 
+ struct cdevsw skipdevsw = {
+@@ -85,36 +74,55 @@
+ 	NULL, NULL, NULL, skip_ifselect, NULL, NULL 
+ };
+ 
+-MOD_DEV("skipmod", LM_DT_CHAR, -1, (void *)&skipdevsw)
++/* The following is necessary to work around a bug in versions
++   of FreeBSD's lkm.h up to and including 2.2.5 */
++
++#if __FreeBSD__ >= 2
++#include <osreldate.h>
++#if __FreeBSD_version <= 225000
++#define skip_module _module
++#endif
++#endif
++
++MOD_DEV(skip, LM_DT_CHAR, -1, (void *)&skipdevsw);
+ 
+ extern int		skip_init(), skip_uninit();
+ 
+ /*ARGSUSED*/
+-int
+-skipmod_load(struct lkm_table *lkmtp, int cmd)
++static int
++skip_load(struct lkm_table *lkmtp, int cmd)
+ {
+-
+ 	int rc;
++
+ 	rc = skip_init();
+ 	if (rc != 0) {
+ 		return (rc);
+ 	}
+-	uprintf("skip: driver loaded\n");
++	log(LOG_INFO, "skip: driver loaded\n");
+ 	return (0);
+ }
+ 
+-skipmod_unload(struct lkm_table *lkmtp, int cmd)
++static int
++skip_unload(struct lkm_table *lkmtp, int cmd)
+ {
+-	
+ 	int rc;
++
+ 	rc = skip_uninit();
+ 	if (rc == 0) {
+-		uprintf("skip: driver unloaded\n");
++		log(LOG_INFO, "skip: driver unloaded\n");
+ 	}
+ 	return (rc);
+ }
+ 
+-xxxinit(struct lkm_table *lkmtp, int cmd, int ver)
++static int
++skip_stat(struct lkm_table *lkmtp, int cmd)
++{
++	return(ENOSYS);
++}
++
++int
++skip(struct lkm_table *lkmtp, int cmd, int ver)
+ {
+-	DISPATCH(lkmtp, cmd, ver, skipmod_load, skipmod_unload, nosys);
++	MOD_DISPATCH(skip, lkmtp, cmd, ver, skip_load, skip_unload, skip_stat);
+ }
++

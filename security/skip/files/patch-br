@@ -1,0 +1,13 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/keymgrd/skiplocal.C skipsrc-1.0/skip/keymgrd/skiplocal.C
+--- skipsrc-1.0.orig/skip/keymgrd/skiplocal.C	Fri Oct 25 13:12:55 1996
++++ skipsrc-1.0/skip/keymgrd/skiplocal.C	Sat Dec 20 11:26:35 1997
+@@ -88,8 +88,7 @@
+ 
+ void
+ usage(char *s){
+-	fprintf(stderr, "%s [add|export|extract|list|keygen|rm"
+-		, s);
++	fprintf(stderr, "%s [add|export|extract|list|keygen|rm]\n", s);
+ 	exit(1);
+ }
+ 

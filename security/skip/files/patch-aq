@@ -1,0 +1,11 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/certs/lib/test_ca.C skipsrc-1.0/certs/lib/test_ca.C
+--- skipsrc-1.0.orig/certs/lib/test_ca.C	Fri Oct 25 13:11:50 1996
++++ skipsrc-1.0/certs/lib/test_ca.C	Mon Dec 15 16:56:35 1997
+@@ -46,6 +46,7 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <unistd.h>
+ #include <sys/types.h>
+ #include "Time.h"
+ #include "Bigint.h"

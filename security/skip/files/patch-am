@@ -1,0 +1,11 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/certs/lib/SkipCert.C skipsrc-1.0/certs/lib/SkipCert.C
+--- skipsrc-1.0.orig/certs/lib/SkipCert.C	Fri Oct 25 13:11:43 1996
++++ skipsrc-1.0/certs/lib/SkipCert.C	Fri Nov 21 11:39:11 1997
+@@ -46,6 +46,7 @@
+ 
+ #include <sys/types.h>
+ #include <stdio.h>
++#include <string.h>
+ 
+ #include "Bstream.h"
+ #include "Bigint.h"

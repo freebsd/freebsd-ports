@@ -1,0 +1,11 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/certs/lib/Bstream.C skipsrc-1.0/certs/lib/Bstream.C
+--- skipsrc-1.0.orig/certs/lib/Bstream.C	Fri Oct 25 13:11:38 1996
++++ skipsrc-1.0/certs/lib/Bstream.C	Fri Nov 21 11:39:11 1997
+@@ -48,6 +48,7 @@
+ #include <netinet/in.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ #include <unistd.h>
+ #include <fcntl.h>
+ #include "Bstream.h"
