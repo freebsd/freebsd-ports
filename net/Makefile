@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.97 1997/04/05 22:16:37 jfitz Exp $
+# $Id: Makefile,v 1.98 1997/04/12 17:19:11 peter Exp $
 #
 
     SUBDIR += archie
@@ -31,6 +31,7 @@
     SUBDIR += libsocket++
     SUBDIR += mirror
     SUBDIR += moxftp
+    SUBDIR += natd
     SUBDIR += ncftp
     SUBDIR += ncftp2
     SUBDIR += netcat
