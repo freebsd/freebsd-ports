@@ -7,21 +7,21 @@
 #
 
 DISTNAME=	tkrat-1.2
-CATEGORIES=	mail tk80
+CATEGORIES=	mail tk82
 MASTER_SITES=	ftp://ftp.md.chalmers.se/pub/tkrat/ \
 		ftp://ftp.sunet.se/pub/unix/mail/tkrat/
 
 MAINTAINER=	appleseed@his.com
 
-BUILD_DEPENDS=	tclsh8.0:${PORTSDIR}/lang/tcl80
-LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80 \
-		tk80.1:${PORTSDIR}/x11-toolkits/tk80 \
+BUILD_DEPENDS=	tclsh8.2:${PORTSDIR}/lang/tcl82
+LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82 \
+		tk82.1:${PORTSDIR}/x11-toolkits/tk82 \
 		c-client4.5:${PORTSDIR}/mail/imap-uw
 
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ARGS=	--with-tcl-config=${PREFIX}/lib/tcl8.0 \
-		--with-tk-config=${PREFIX}/lib/tk8.0
+CONFIGURE_ARGS=	--with-tcl-config=${PREFIX}/lib/tcl8.2 \
+		--with-tk-config=${PREFIX}/lib/tk8.2
 
 DOCFILES=	CONFIGURATION COPYRIGHT README doc/interface doc/userprocs \
 		doc/userproc.example
