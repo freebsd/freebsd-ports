@@ -9,7 +9,7 @@ PORTNAME=	snortsnarf
 PORTVERSION=	021111
 PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	http://www.silicondefense.com/software/snortsnarf/
+MASTER_SITES=	http://www.snort.org/dl/contrib/data_analysis/snortsnarf/
 DISTNAME=	SnortSnarf-${PORTVERSION}.1
 
 MAINTAINER=	ports@FreeBSD.org
