@@ -7,6 +7,7 @@
 
 PORTNAME=       milter-sender
 PORTVERSION=    0.41
+PORTREVISION=   1
 CATEGORIES=     mail
 MASTER_SITES=   http://www.snert.com/Software/download/
 DISTFILES=      libsnert-1.23.tgz milter-sender-${PORTVERSION}.tgz
@@ -39,6 +40,9 @@ CFLAGS+= ${PTHREAD_CFLAGS}
 CONFIGURE_ENV+=  LDFLAGS="${LDFLAGS}" LIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS+= --with-db
 MAKE_ENV+=       PREFIX="${PREFIX}"
+
+post-patch:
+	@${CP} ${FILESDIR}/version.h.in ${WRKSRC}/../lib/
 
 pre-configure:
 	@cd ${WRKSRC}/../lib && \
