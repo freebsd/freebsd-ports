@@ -30,6 +30,8 @@ pre-fetch:
 	@${ECHO_MSG} If you get a CHECKSUM mismatch, try doing a \'make distclean\' first.
 	@${ECHO_MSG} ""
 
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_VIEWER)
 .if ${XFREE86_VERSION} == 3
 BUILD_DEPENDS+=	imake:${PORTSDIR}/devel/imake
@@ -47,6 +49,9 @@ pre-extract:
 	@${ECHO} the molecular viewer, define WITH_VIEWER.
 	@${ECHO} ""
 .endif
+
+post-extract:
+	${CHMOD} -R u+w ${WRKDIR}/tinker
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/tinker
@@ -134,4 +139,4 @@ ${PREFIX}/share/tinker/bench
 	@${ECHO} "   **********************************************************"
 	@${ECHO} ""
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
