@@ -1,5 +1,6 @@
 PROG=	frink
-SRCS=	frink.c output.c token.c tcl.c config.c
+SRCS=	blocks.c config.c frink.c output.c tcl.c token.c util.c vars.c
+CFLAGS+=-I${.CURDIR}
 
 BINDIR=	${PREFIX}/bin
 MANDIR=	${PREFIX}/man/man
