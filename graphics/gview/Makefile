@@ -8,30 +8,22 @@
 PORTNAME=	gview
 PORTVERSION=	0.1.15
 CATEGORIES=	graphics
-MASTER_SITES=	http://netpedia.net/hosting/gview/ \
-		http://homepages.petech.ac.za/~bruces/ \
-		ftp://ftp.petech.ac.za/pub/viewers/
+MASTER_SITES=	http://homepages.petech.ac.za/~bruces/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image viewer for X Window System with interface similar to ACDSee
 
 USE_X_PREFIX=	yes
-USE_GNOME=	imlib
+USE_GNOME=	gnomehack imlib
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
-
-pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
-		 s|USE_INCLUDED_LIBINTL=yes|#USE_INCLUDED_LIBINTL=yes|g ; \
-		 s|\$$\(top_builddir\)/intl/libintl.a|-lintl|g' ${WRKSRC}/configure
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/gview
+	@${MKDIR} ${DOCSDIR}
 .for file in AUTHORS BUGS ChangeLog NEWS README TODO
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/gview
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
