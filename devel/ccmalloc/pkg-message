@@ -1,0 +1,6 @@
+
+Please take a look at sample configuration file:
+     /usr/local/share/ccmalloc/ccmalloc.cfg
+
+You should edit it and copy it to: ~/.ccmalloc
+
