@@ -6,10 +6,10 @@
 # $FreeBSD$
 #
 
-DISTNAME=       iozone3_9
+DISTNAME=       iozone
 PKGNAME=	iozone-3.9
 CATEGORIES=	benchmarks
-MASTER_SITES=   http://www.iozone.org/src/stable/
+MASTER_SITES=   http://www.iozone.org/src/
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	jmz@FreeBSD.org
