@@ -1,6 +1,6 @@
---- plug-ins/common/url.c.orig	Sat May 30 15:32:36 1998
-+++ plug-ins/common/url.c	Sun Jun  7 10:09:34 1998
-@@ -146,8 +146,8 @@
+--- plug-ins/common/url.c	Sun Nov  7 19:24:37 1999
++++ plug-ins/common/url.c.new	Sun Nov  7 19:26:39 1999
+@@ -151,8 +151,8 @@
      }
    else if (pid == 0)
      {
@@ -8,6 +8,6 @@
 -      g_message ("url: exec failed: wget: %s\n", g_strerror(errno));
 +      execlp ("fetch", "fetch", filename, "-p -o", tmpname, NULL);
 +      g_message ("url: exec failed: fetch: %s\n", g_strerror(errno));
+       g_free (tmpname);
        _exit(127);
      }
-   else
