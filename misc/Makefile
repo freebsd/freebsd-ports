@@ -83,6 +83,7 @@
     SUBDIR += gkrellmaflag
     SUBDIR += gkrellmlaunch
     SUBDIR += gkrellscore
+    SUBDIR += gkrellshoot
     SUBDIR += gkrellweather
     SUBDIR += gman
     SUBDIR += gnomemimedata
