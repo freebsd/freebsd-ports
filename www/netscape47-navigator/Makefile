@@ -3,7 +3,7 @@
 # Date created:         24 Feb 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.16 1998/03/15 15:15:22 markm Exp $
+# $Id: Makefile,v 1.17 1998/03/16 14:40:59 markm Exp $
 #
 
 DISTNAME=       netscape-navigator-4.04
@@ -43,7 +43,7 @@ do-install:
 	    ${INSTALL_DATA} ${FILESDIR}/mailcap ${NDIR}; \
 	fi
 	${RM} -rf ${NDIR}/movemail-src
-.if defined(USE_128BIT) && ${USA_RESIDENT} == NO
+.if defined(USE_128BIT) && defined(USA_RESIDENT) && ${USA_RESIDENT} == NO
 	cd ${WRKSRC}/Fortify-1.2.1-unix && \
 		(${ECHO} yes ; ${ECHO} no) | ./Fortify.sh ${NDIR}/navigator-4.04.bin
 .endif
