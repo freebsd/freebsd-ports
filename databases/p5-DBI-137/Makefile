@@ -11,7 +11,6 @@ CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBI
 PKGNAMEPREFIX=	p5-
-PKGNAMESUFFIX=	-137
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The perl5 Database Interface.  Required for DBD::* modules
@@ -21,8 +20,9 @@ BUILD_DEPENDS=	${SITE_PERL}/RPC/PlServer.pm:${PORTSDIR}/net/p5-PlRPC
 RUN_DEPENDS=	${BUILD_DEPENDS}
 .endif
 
-CONFLICTS=	p5-DBI-*
+CONFLICTS=	p5-DBI-1.[!3]*
 PERL_CONFIGURE=	yes
+LATEST_LINK=	p5-DBI-137
 
 MAN1=		dbiprof.1 \
 		dbiproxy.1
