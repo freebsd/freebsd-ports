@@ -96,3 +96,4 @@ lib/libhttrack.so.1
 %%PORTDOCS%%@dirrm share/doc/httrack/HelpHtml/img
 %%PORTDOCS%%@dirrm share/doc/httrack/HelpHtml
 %%PORTDOCS%%@dirrm share/doc/httrack/templates
+%%PORTDOCS%%@dirrm share/doc/httrack
