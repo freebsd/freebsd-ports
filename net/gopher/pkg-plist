@@ -4,7 +4,7 @@ bin/gophfilt
 etc/gopherd.conf
 etc/gopherd
 etc/gindexd
-etc/gopderdlocal.conf
+etc/gopherdlocal.conf
 etc/gopherls
 lib/gopher.rc
 lib/gopher.hlp
