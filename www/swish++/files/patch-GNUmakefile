@@ -1,7 +1,7 @@
---- GNUmakefile.orig	Tue Mar 11 03:33:13 2003
-+++ GNUmakefile	Tue Apr 15 13:42:35 2003
-@@ -229,7 +229,7 @@
- 	cd $(I_BIN) && $(STRIP) $(CPP_TARGET)
+--- GNUmakefile.orig	Mon Nov 22 23:41:54 2004
++++ GNUmakefile	Mon Nov 22 23:43:19 2004
+@@ -236,7 +236,7 @@
+ 	@$(MAKE) -C scripts $@
  
  install_lib: $(I_LIB)
 -	$(INSTALL) $(I_OWNER) $(I_GROUP) $(I_MODE) $(LIB_TARGET) $(I_LIB)

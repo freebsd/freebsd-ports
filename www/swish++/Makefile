@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	swish++
-PORTVERSION=	5.15.3
-PORTREVISION=	1
+PORTVERSION=	6.0.4
 CATEGORIES=	www textproc
 MASTER_SITES=	http://homepage.mac.com/pauljlucas/software/
 
@@ -31,13 +30,13 @@ MAN8=	searchd.8 searchmonitor.8
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.if ${OSVERSION} < 500000
+USE_GCC=	3.4
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^#error/d' ${WRKSRC}/config.h
-.for file in searchd searchmonitor
+.for file in scripts/searchd scripts/searchmonitor
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/${file}.in
 .endfor
 
@@ -45,6 +44,6 @@ pre-install:
 	@${MKDIR} ${SITE_PERL}
 
 post-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/swish++.sh ${PREFIX}/etc/rc.d
+	${INSTALL_SCRIPT} ${FILESDIR}/swish++.sh ${PREFIX}/etc/rc.d/swish++.sh.sample
 
 .include <bsd.port.post.mk>

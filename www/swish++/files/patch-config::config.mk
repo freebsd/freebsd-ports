@@ -1,17 +1,17 @@
---- config/config.mk.orig	Tue Dec 24 15:59:08 2002
-+++ config/config.mk	Tue Apr 15 13:40:16 2003
-@@ -33,8 +33,8 @@
+--- config/config.mk.orig	Mon Nov 22 23:44:48 2004
++++ config/config.mk	Mon Nov 22 23:48:27 2004
+@@ -34,8 +34,8 @@
  #
  ###############################################################################
  
--#FREE_BSD:=	-DFreeBSD
--LINUX:=		-DLinux -D_BSD_SOURCE
-+FREE_BSD:=	-DFreeBSD
-+#LINUX:=		-DLinux -D_BSD_SOURCE
- #MAC_OS_X:=	-DMacOSX
- #SOLARIS:=	-DSolaris
- #WIN32:=		-DWIN32
-@@ -112,7 +112,7 @@
+-#FREE_BSD:=1
+-LINUX:=1
++FREE_BSD:=1
++#LINUX:=1
+ #MAC_OS_X:=1
+ #SOLARIS:=1
+ #WIN32:=1
+@@ -118,7 +118,7 @@
  ifdef SEARCH_DAEMON
  
  ifdef FREE_BSD
@@ -20,7 +20,7 @@
  else
  PTHREAD_LINK:=	-lpthread
  endif
-@@ -149,7 +149,7 @@
+@@ -159,7 +159,7 @@
  #		The command to remove files recursively and ignore errors;
  #		usually "rm -fr" for Unix or "erase" for Windows.
  
@@ -28,13 +28,13 @@
 +#PERL:=		/usr/local/bin/perl
  #		The full path to the Perl 5 executable; usually "/bin/perl" or
  #		"/usr/local/bin/perl" for Unix or "\Perl\bin\perl" for
- #		Windows.  You need this only if you intend on using
-@@ -176,14 +176,14 @@
+ #		Windows.
+@@ -185,14 +185,14 @@
  #
  ###############################################################################
  
 -CC:=		g++
-+CC:=		${CXX}
++CC:=       ${CXX}
  #		The C++ compiler you are using; usually "CC" or "g++".
  
  #DEBUG:=		true
@@ -46,7 +46,7 @@
  #		The optimization level.  Many compilers allow a digit after the
  #		O to specify the level of optimization; if so, set yours to the
  #		highest number your compiler allows without eliciting problems
-@@ -227,7 +227,7 @@
+@@ -254,7 +254,7 @@
  INSTALL:=	$(ROOT)/install-sh
  #		Install command; usually "$(ROOT)/install-sh".
  
