@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.us.sgmltools.org/pub/SGMLtools/v2.0/source/ \
 DISTFILES=	${DISTNAME}.base.tar.bz2
 
 MAINTAINER=	benno@netizen.com.au
+COMMENT=	Generates various output formats from DocBook SGML documents
 
 BUILD_DEPENDS+=	python:${PORTSDIR}/lang/python \
 		jade:${PORTSDIR}/textproc/jade \

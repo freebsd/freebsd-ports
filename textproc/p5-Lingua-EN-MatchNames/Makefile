@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Lingua
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svenasse@polaris.ca
+COMMENT=	Smart matching for human names
 
 BUILD_DEPENDS=	${SITE_PERL}/Lingua/EN/NameParse.pm:${PORTSDIR}/textproc/p5-Lingua-EN-NameParse \
 		${SITE_PERL}/Lingua/EN/Nickname.pm:${PORTSDIR}/textproc/p5-Lingua-EN-Nickname \

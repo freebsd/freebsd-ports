@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	cyrille.lefevre@laposte.net
+COMMENT=	The GNU stream editor
 
 # Global variables
 #

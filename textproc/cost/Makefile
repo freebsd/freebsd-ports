@@ -12,6 +12,7 @@ MASTER_SITES=		http://www.flightlab.com/~joe/cost/ \
 			ftp://bowhill.vservers.com/pub/
 
 MAINTAINER=		kosmos@blarg.net
+COMMENT=	SGML/XML application programming tool
 
 LIB_DEPENDS=		tcl82.1:${PORTSDIR}/lang/tcl82
 BUILD_DEPENDS=		${WRKDIRPREFIXPORTSDIR}/lang/tcl82/work/tcl-8.2.3/src:${PORTSDIR}/lang/tcl82:patch

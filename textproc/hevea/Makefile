@@ -17,6 +17,7 @@ DISTFILES=		${PORTNAME}-${PORTVERSION}.tar.gz \
 EXTRACT_ONLY=		${PORTNAME}-${PORTVERSION}.tar.gz
 
 MAINTAINER=		stephen@math.missouri.edu
+COMMENT=	Convert LaTeX to HTML
 
 BUILD_DEPENDS=		ocamlc:${PORTSDIR}/lang/ocaml
 

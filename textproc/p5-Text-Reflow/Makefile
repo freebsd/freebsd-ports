@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Text
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	m@absolight.net
+COMMENT=	Perl module for reflowing text files
 
 PERL_CONFIGURE=	yes
 

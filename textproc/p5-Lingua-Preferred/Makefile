@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	../../authors/id/E/ED/EDAVIS
 PKGNAMEPREFIX=		p5-
 
 MAINTAINER=		svenasse@polaris.ca
+COMMENT=	Perl extension to choose a language
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Log/TraceMessages.pm:${PORTSDIR}/devel/p5-Log-TraceMessages
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Lingua
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svenasse@polaris.ca
+COMMENT=	Convert Perl lists into linguistic conjunctions
 
 PERL_CONFIGURE=	yes
 

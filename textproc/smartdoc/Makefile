@@ -13,6 +13,7 @@ DISTNAME=	setup${PORTVERSION:S/.//g}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	kunishi@acm.org
+COMMENT=	XML utility to create various documents
 
 BUILD_DEPENDS=	${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog
 RUN_DEPENDS=	${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog \

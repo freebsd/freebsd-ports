@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.latte.org/ \
 		ftp://ftp.brasslantern.com/pub/zanshin/latte/
 
 MAINTAINER=	nc-rotherdo@netcologne.de
+COMMENT=	Simple language for marking up text in a very expressive way
 
 USE_LIBTOOL=	yes
 MAKE_FLAGS=	CONF_ARGS="--prefix=${PREFIX}"

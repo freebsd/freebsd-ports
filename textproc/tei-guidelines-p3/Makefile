@@ -31,6 +31,7 @@ EXTRACT_ONLY+=	teip3p3x.tar.gz
 .endif
 
 MAINTAINER=	henrik.motakef@web.de
+COMMENT=	TEI's Guidelines for Electronic Text Encoding and Interchange
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

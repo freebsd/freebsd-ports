@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	diffutils
 
 MAINTAINER=	rooneg@electricjellyfish.net
+COMMENT=	The GNU diff utilities
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

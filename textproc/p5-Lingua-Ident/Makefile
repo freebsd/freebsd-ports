@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	../../authors/id/MPIOTR
 PKGNAMEPREFIX=		p5-
 
 MAINTAINER=		svenasse@polaris.ca
+COMMENT=	Statistical language identification
 
 PERL_CONFIGURE=		yes
 

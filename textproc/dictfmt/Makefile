@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.dict.org/pub/dict/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	fuyuki@hadaly.org
+COMMENT=	Formats a DICT protocol dictionary database
 
 LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
 

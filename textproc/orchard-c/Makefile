@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	orchard
 DISTNAME=	Orchard-C-${PORTVERSION}
 
 MAINTAINER=	skv@protey.ru
+COMMENT=	Innovative, lightweight API for event stream and tree views of XML
 
 LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2 \
 		gc:${PORTSDIR}/devel/boehm-gc

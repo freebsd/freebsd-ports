@@ -13,6 +13,7 @@ MASTER_SITES=		${MASTER_SITE_GNU} \
 MASTER_SITE_SUBDIR=	spell
 
 MAINTAINER=		brian@quynh-and-brian.org
+COMMENT=	A GNU implementation of the UNIX spell utility using Ispell
 
 RUN_DEPENDS=		${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/ispell
 

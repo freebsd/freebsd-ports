@@ -15,6 +15,7 @@ DISTNAME=	teixsl-html
 DIST_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 MAINTAINER=	henrik.motakef@web.de
+COMMENT=	XSLT Stylesheets to convert TEI to HTML
 
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes

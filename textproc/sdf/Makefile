@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Pod
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dannyman@tellme.com
+COMMENT=	Simple Document Format - "author-friendly" mark-up system
 
 MAN1=		pod2sdf.1
 

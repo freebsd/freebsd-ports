@@ -14,6 +14,7 @@ MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 MASTER_SITE_SUBDIR=	support/catdoc
 
 MAINTAINER=	brion@queeg.com
+COMMENT=	Convert MS Word/Excel documents to plain ASCII or TeX.  TK viewer included
 
 GNU_CONFIGURE=	yes
 MAN1=		catdoc.1 xls2csv.1

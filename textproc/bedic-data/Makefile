@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=kbedic
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	todorov@freebsd-bg.org
+COMMENT=	Data (dictionary) files for the kbedic and cbedic ports
 
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/pkg-plist

@@ -13,6 +13,7 @@ DISTNAME=	tdtd071
 EXTRACT_SUFX=	.zip
 
 MAINTAINER=	leo@florida.sarang.net
+COMMENT=	An emacs major mode for editing SGML and XML DTDs
 
 RUN_DEPENDS=	emacs:${PORTSDIR}/editors/emacs20
 

@@ -13,6 +13,7 @@ PKGNAMESUFFIX=	-guidelines
 DISTNAME=	p4html
 
 MAINTAINER=	henrik.motakef@web.de
+COMMENT=	TEI's Guidelines for Electronic Text Encoding and Interchange
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

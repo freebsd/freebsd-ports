@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.jclark.com/pub/sgmls/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	justas@mbank.lv
+COMMENT=	SGML parser
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 HAS_CONFIGURE=	yes

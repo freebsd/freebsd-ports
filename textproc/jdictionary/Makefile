@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=jdictionary
 DISTNAME=	jdictionary-1_8
 
 MAINTAINER=	janos.mohacsi@bsd.hu
+COMMENT=	JDictionary - Platform independent, plugin based dictionary
 
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
 		${LOCALBASE}/etc/javavms:${PORTSDIR}/java/jdk13

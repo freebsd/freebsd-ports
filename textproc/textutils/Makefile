@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	textutils
 
 MAINTAINER=	aw1@stade.co.uk
+COMMENT=	GNU text utilities
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

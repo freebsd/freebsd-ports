@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wvware
 
 MAINTAINER=	mzaki@e-mail.ne.jp
+COMMENT=	A library and executables which allow access to Microsoft Word files
 
 LIB_DEPENDS=	wmf.2:${PORTSDIR}/graphics/libwmf \
 		iconv.3:${PORTSDIR}/converters/libiconv \

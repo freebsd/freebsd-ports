@@ -11,6 +11,7 @@ MASTER_SITES=	ftp://ctgi.net/pub/ctgi/nicetext/src/ \
 		ftp://nicetext.com/pub/nicetext/src/
 
 MAINTAINER=	markc@ctgi.net
+COMMENT=	Convert files to pseudo-natural-language text and back again
 
 USE_GMAKE=	YES
 MAKE_FLAGS=	CXXFLAGS="${CXXFLAGS} -pedantic" CFLAGS="${CFLAGS} -pedantic"

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.nicemice.net/par/
 DISTNAME=	Par${PORTVERSION:S|.||}
 
 MAINTAINER=	mark@grondar.za
+COMMENT=	Paragraph reformatter for email
 
 ALL_TARGET=
 MAN1=		par.1

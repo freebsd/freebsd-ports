@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=kbedic
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	todorov@freebsd-bg.org
+COMMENT=	An English-to-Bulgarian and Bulgarian-to-English dictionary
 
 RUN_DEPENDS=	${DICT_DIR}/${DICT_CHECK}:${PORTSDIR}/textproc/bedic-data
 

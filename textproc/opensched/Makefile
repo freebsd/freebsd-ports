@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.m-tech.ab.ca/download/sched/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	dwm@caimis.com
+COMMENT=	A project scheduler
 
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 

@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.seki.ee.kagu.tus.ac.jp/~sakai/myfreesoft/ \
 		http://www.people.or.jp/~hsakai/myfreesoft/
 
 MAINTAINER=	sakai@seki.ee.kagu.tus.ac.jp
+COMMENT=	Insert section numbers in HTML and make a table of contents
 
 MAN1=		htmlsection.1
 MANCOMPRESSED=	yes

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	XML
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@protey.ru
+COMMENT=	Interface to GNOME's librsvg
 
 LIB_DEPENDS=	rsvg.1:${PORTSDIR}/graphics/librsvg \
 		freetype.9:${PORTSDIR}/print/freetype2 \

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.tei-c.org/Software/maketeidtd/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	henrik.motakef@web.de
+COMMENT=	Generate customized TEI-DTDs
 
 RUN_DEPENDS=	carthage:${PORTSDIR}/textproc/carthage \
 		${LOCALBASE}/share/sgml/tei/p4/tei2.dtd:${PORTSDIR}/textproc/tei-p4

@@ -12,6 +12,7 @@ MASTER_SITES=		http://www.cpan.org/authors/id/S/SH/SHLOMOY/
 PKGNAMEPREFIX=		p5-
 
 MAINTAINER=		svenasse@polaris.ca
+COMMENT=	Module for splitting text into sentences
 
 PERL_CONFIGURE=		yes
 

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.etymon.com/pub/Isearch/
 DISTNAME=	Isearch-${PORTVERSION}
 
 MAINTAINER=	pmarquis@pobox.com
+COMMENT=	Text Search Engine by CNIDR
 
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	INSTALL=${PREFIX}/bin

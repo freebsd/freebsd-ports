@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.menteith.com/xslide/data/
 DISTNAME=	xslide
 
 MAINTAINER=	leo@florida.sarang.net
+COMMENT=	Emacs major mode for editing XSL stylesheets
 
 RUN_DEPENDS=	emacs:${PORTSDIR}/editors/emacs21
 

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.easysw.com/pub/htmldoc/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	glenn@trewitt.org
+COMMENT=	Converts HTML to PDF and/or PostScript
 
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

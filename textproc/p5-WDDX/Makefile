@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	../../authors/id/G/GU/GUELICH
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	eric@talesfromthereal.com
+COMMENT=	Perl module to parse WDDX Packets
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64  \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser

@@ -11,6 +11,7 @@ CATEGORIES=	ukrainian mail news
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	kunia@istc.kiev.ua
+COMMENT=	Tune Pine for Ukrainian (KOI8-U) defaults
 
 RUN_DEPENDS=	pine:${PORTSDIR}/mail/pine4
 

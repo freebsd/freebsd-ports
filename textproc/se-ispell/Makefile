@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.sslug.dk/locale/ispell/iswedish/
 DISTNAME=	iswedish-1.2.1
 
 MAINTAINER=	kent@erix.ericsson.se
+COMMENT=	Swedish dictionary for ispell
 
 BUILD_DEPENDS=	buildhash:${PORTSDIR}/textproc/ispell
 
