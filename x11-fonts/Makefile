@@ -9,7 +9,7 @@
     SUBDIR += XFree86-4-fontLatin2
     SUBDIR += XFree86-4-fontScalable
     SUBDIR += Xg
-    SUBDIR += bitmap-font
+    SUBDIR += bitmap-fonts
     SUBDIR += etlfonts
     SUBDIR += freefonts
     SUBDIR += getbdf
