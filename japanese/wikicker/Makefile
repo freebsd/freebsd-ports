@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		WiKicker
-PORTVERSION=		0.19
+PORTVERSION=		0.21
 CATEGORIES+=		japanese www perl5
 MASTER_SITES=		\
 			http://www.naney.org/comp/distrib/WiKicker/archive/
@@ -24,7 +24,6 @@ RUN_DEPENDS+=		${SITE_PERL}/GnuPG/Interface.pm:${PORTSDIR}/security/p5-GnuPG-Int
 .endif
 RUN_DEPENDS+=		\
 			${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
-			${SITE_PERL}/MIME/Words.pm:${PORTSDIR}/mail/p5-MIME-Tools \
 			${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
 			${SITE_PERL}/Time/Zone.pm:${PORTSDIR}/devel/p5-TimeDate \
 			${SITE_PERL}/${PERL_ARCH}/Unicode/String.pm:${PORTSDIR}/converters/p5-Unicode-String \
@@ -33,6 +32,19 @@ RUN_DEPENDS+=		\
 			${SITE_PERL}/${PERL_ARCH}/Jcode.pm:${PORTSDIR}/japanese/p5-Jcode \
 			${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 			${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+BUILD_DEPENDS+=		${SITE_PERL}/Locale/Maketext.pm:${PORTSDIR}/devel/p5-Locale-Maketext
+.endif
+
+.if defined(WITH_WIKICKER_RECENTLOG)
+RUN_DEPENDS+=		${SITE_PERL}/${PERL_ARCH}/IPC/ShareLite.pm:${PORTSDIR}/devel/p5-IPC-ShareLite
+.endif
+.if !defined(WITHOUT_WIKICKER_MEMCACHED)
+RUN_DEPENDS+=		memcached:${PORTSDIR}/net/memcached
+.endif
 
 PERL_CONFIGURE=		yes
 PKGMESSAGE=		${WRKDIR}/pkg-message
@@ -83,4 +95,4 @@ post-install:
 		-e 's|%%HostName%%|${HOST}|' < ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
