@@ -8,10 +8,10 @@
 PORTNAME=	mod_python
 PORTVERSION=	2.7.8
 CATEGORIES=	www python
-MASTER_SITES=	http://www.modpython.org/dist/ \
-		ftp://ftp.nuug.no/pub/anders/distfiles/
-DIST_SUBDIR=	python
+MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
+MASTER_SITE_SUBDIR=	modpython
 EXTRACT_SUFX=	.tgz
+DIST_SUBDIR=	python
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache module for integrating Python
