@@ -1,28 +1,32 @@
---- include/config.h.orig	Sun Jan  5 19:59:44 1997
-+++ include/config.h	Wed Sep 17 15:46:08 1997
-@@ -188,6 +188,7 @@
+--- include/config.h.orig	Sat Aug  1 12:23:57 1998
++++ include/config.h	Mon Aug 31 14:19:29 1998
+@@ -163,7 +163,7 @@
+  * in the crosssite.def file if I want this.  By default, you probably
+  * dont want this defined.
+  */
+-#ifndef DEBUG
++#ifdef DEBUG
+ #define DEBUG
+ #endif
+ 
+@@ -649,7 +649,7 @@
   */
  
- /* #define EXPLORE_MODE */
-+#define EXPLORE_MODE
- 
- /****************************************************************************/
- /* Patch: NOT_PERMADEATH                Author: Charles Henrich             */
-@@ -286,7 +287,7 @@
- #ifndef LOGFILE
- #define LOGFILE "/tmp/cross.log"
+ #ifndef DM_MAIL
+-/* #define DM_MAIL "mark@pyramid.com" */
++#define DM_MAIL "root"
  #endif
--/*#define NO_ADD*/
-+#define NO_ADD
- /* #define ONE_PLAYER_PR_UID */
  
  /*
-@@ -500,7 +501,7 @@
- /*#define SAVE_PLAYER*/
+@@ -956,9 +956,9 @@
+  */
  
  /* #define SAVE_HOMEDIR */
 -/* #define LOCK_PLAYER */
 +#define LOCK_PLAYER
  #define USE_CHECKSUM
- /* #define ENABLE_CHECKSUM */ /* Will be default in distant future versions */
+-/* #define ENABLE_CHECKSUM */ /* Will be default in distant future versions */
++#define ENABLE_CHECKSUM /* Will be default in distant future versions */
  
+ #ifndef PLAYERDIR
+ #define PLAYERDIR "players"

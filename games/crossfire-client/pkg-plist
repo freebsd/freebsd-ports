@@ -1,4 +1,3 @@
-bin/crossclient
 bin/crossedit
 bin/crossfire
 bin/crossloop
@@ -14,6 +13,7 @@ lib/crossfire/fonts/crossfire.pcf
 lib/crossfire/fonts/fonts.dir
 lib/crossfire/lib/README
 lib/crossfire/lib/adm/flushlocks
+lib/crossfire/lib/animations
 lib/crossfire/lib/archetypes
 lib/crossfire/lib/artifacts
 lib/crossfire/lib/ban_file
@@ -288,6 +288,42 @@ lib/crossfire/lib/maps/city/towers/tower.mad
 lib/crossfire/lib/maps/city/towers/tower.mad1
 lib/crossfire/lib/maps/city/towers/tower.mad2
 lib/crossfire/lib/maps/city/towers/tower.mad3
+lib/crossfire/lib/maps/dragonisland/advguild
+lib/crossfire/lib/maps/dragonisland/advguild2
+lib/crossfire/lib/maps/dragonisland/advguild3
+lib/crossfire/lib/maps/dragonisland/advshop0
+lib/crossfire/lib/maps/dragonisland/advshop1
+lib/crossfire/lib/maps/dragonisland/advshop2
+lib/crossfire/lib/maps/dragonisland/advshop3
+lib/crossfire/lib/maps/dragonisland/advshop4
+lib/crossfire/lib/maps/dragonisland/advshop5
+lib/crossfire/lib/maps/dragonisland/advshop6
+lib/crossfire/lib/maps/dragonisland/apartment2
+lib/crossfire/lib/maps/dragonisland/apartment3
+lib/crossfire/lib/maps/dragonisland/beginners2
+lib/crossfire/lib/maps/dragonisland/bloodwell
+lib/crossfire/lib/maps/dragonisland/damarishouse0
+lib/crossfire/lib/maps/dragonisland/damarishouse1
+lib/crossfire/lib/maps/dragonisland/damarishouse2
+lib/crossfire/lib/maps/dragonisland/dragonmountain0
+lib/crossfire/lib/maps/dragonisland/dragonmountain1
+lib/crossfire/lib/maps/dragonisland/drowmansion
+lib/crossfire/lib/maps/dragonisland/hangar
+lib/crossfire/lib/maps/dragonisland/house1
+lib/crossfire/lib/maps/dragonisland/house4
+lib/crossfire/lib/maps/dragonisland/house5
+lib/crossfire/lib/maps/dragonisland/house6
+lib/crossfire/lib/maps/dragonisland/house7
+lib/crossfire/lib/maps/dragonisland/house8
+lib/crossfire/lib/maps/dragonisland/house9
+lib/crossfire/lib/maps/dragonisland/housebrxzl
+lib/crossfire/lib/maps/dragonisland/intwell
+lib/crossfire/lib/maps/dragonisland/island
+lib/crossfire/lib/maps/dragonisland/keysale
+lib/crossfire/lib/maps/dragonisland/luxhouse
+lib/crossfire/lib/maps/dragonisland/stoneville
+lib/crossfire/lib/maps/dragonisland/tavern
+lib/crossfire/lib/maps/dragonisland/thievesden
 lib/crossfire/lib/maps/dtabb/cave
 lib/crossfire/lib/maps/dtabb/cave2
 lib/crossfire/lib/maps/dtabb/quest/fire
@@ -1028,10 +1064,13 @@ lib/crossfire/lib/maps/terrain/plains_1
 lib/crossfire/lib/maps/terrain/plains_2
 lib/crossfire/lib/maps/terrain/swamp_1
 lib/crossfire/lib/maps/terrain/swamp_2
+lib/crossfire/lib/maps/test/bigmonpit
 lib/crossfire/lib/maps/test/connected_bug
 lib/crossfire/lib/maps/test/diagonal
+lib/crossfire/lib/maps/test/faceofdeath
 lib/crossfire/lib/maps/test/insert_bug
 lib/crossfire/lib/maps/test/multisquare
+lib/crossfire/lib/maps/test/paralyze
 lib/crossfire/lib/maps/thomas/sisters/compound1
 lib/crossfire/lib/maps/thomas/sisters/compound2
 lib/crossfire/lib/maps/thomas/sisters/compound3
@@ -1163,7 +1202,6 @@ share/doc/crossfire/playbook-html/.bmaps
 share/doc/crossfire/playbook-html/2x2.ppm
 share/doc/crossfire/playbook-html/Imakefile
 share/doc/crossfire/playbook-html/Makefile
-share/doc/crossfire/playbook-html/Makefile.bak
 share/doc/crossfire/playbook-html/Pdragonmail.111.gif
 share/doc/crossfire/playbook-html/altar.111.gif
 share/doc/crossfire/playbook-html/altar.html
@@ -1357,6 +1395,7 @@ share/doc/crossfire/playbook-html/mushroom-1.111.gif
 share/doc/crossfire/playbook-html/naz-report.111.gif
 share/doc/crossfire/playbook-html/ninja.171.gif
 share/doc/crossfire/playbook-html/note.111.gif
+share/doc/crossfire/playbook-html/odoor-1.111.gif
 share/doc/crossfire/playbook-html/onion.111.gif
 share/doc/crossfire/playbook-html/orange.111.gif
 share/doc/crossfire/playbook-html/orcchop.111.gif
@@ -1485,7 +1524,6 @@ share/doc/crossfire/skills.doc
 share/doc/crossfire/skills_developer.doc
 share/doc/crossfire/spell-docs/Imakefile
 share/doc/crossfire/spell-docs/Makefile
-share/doc/crossfire/spell-docs/Makefile.bak
 share/doc/crossfire/spell-docs/README
 share/doc/crossfire/spell-docs/prayer-list.ps
 share/doc/crossfire/spell-docs/prayer-list.txt
@@ -1521,7 +1559,6 @@ share/doc/crossfire/spoiler-html/DShield.111.gif
 share/doc/crossfire/spoiler-html/GreatDemon.111.gif
 share/doc/crossfire/spoiler-html/Imakefile
 share/doc/crossfire/spoiler-html/Makefile
-share/doc/crossfire/spoiler-html/Makefile.bak
 share/doc/crossfire/spoiler-html/Pdragonmail.111.gif
 share/doc/crossfire/spoiler-html/a-guard-h.111.gif
 share/doc/crossfire/spoiler-html/a-guard-l.111.gif
@@ -1591,6 +1628,7 @@ share/doc/crossfire/spoiler-html/byakie.111.gif
 share/doc/crossfire/spoiler-html/c-knight.111.gif
 share/doc/crossfire/spoiler-html/c-priest.131.gif
 share/doc/crossfire/spoiler-html/cancellati.111.gif
+share/doc/crossfire/spoiler-html/centipede-r.111.gif
 share/doc/crossfire/spoiler-html/centipede.111.gif
 share/doc/crossfire/spoiler-html/ch-bish.111.gif
 share/doc/crossfire/spoiler-html/ch-king.111.gif
@@ -1722,6 +1760,7 @@ share/doc/crossfire/spoiler-html/guard-hard.111.gif
 share/doc/crossfire/spoiler-html/guard-ligh.111.gif
 share/doc/crossfire/spoiler-html/guard-med.111.gif
 share/doc/crossfire/spoiler-html/guildmaste.111.gif
+share/doc/crossfire/spoiler-html/h-kobold.111.gif
 share/doc/crossfire/spoiler-html/halfling.111.gif
 share/doc/crossfire/spoiler-html/hammer-1.111.gif
 share/doc/crossfire/spoiler-html/hammer-2.121.gif
@@ -1805,6 +1844,7 @@ share/doc/crossfire/spoiler-html/mournblade.111.gif
 share/doc/crossfire/spoiler-html/mouse.111.gif
 share/doc/crossfire/spoiler-html/mystic-fist.111.gif
 share/doc/crossfire/spoiler-html/nazgul.111.gif
+share/doc/crossfire/spoiler-html/necro.111.gif
 share/doc/crossfire/spoiler-html/neko.111.gif
 share/doc/crossfire/spoiler-html/nightmare.111.gif
 share/doc/crossfire/spoiler-html/ninja-2.111.gif
@@ -1888,6 +1928,7 @@ share/doc/crossfire/spoiler-html/shield.html
 share/doc/crossfire/spoiler-html/shining-finger.111.gif
 share/doc/crossfire/spoiler-html/shootingstar.111.gif
 share/doc/crossfire/spoiler-html/shovel-1.111.gif
+share/doc/crossfire/spoiler-html/siegfried.111.gif
 share/doc/crossfire/spoiler-html/skeleton.111.gif
 share/doc/crossfire/spoiler-html/skull-gen.111.gif
 share/doc/crossfire/spoiler-html/skull.111.gif
@@ -2109,6 +2150,7 @@ share/doc/crossfire/xbmtobdf.man
 @dirrm lib/crossfire/lib/maps/pup_land/ruin_barbarian
 @dirrm lib/crossfire/lib/maps/pup_land/s_f
 @dirrm lib/crossfire/lib/maps/pup_land
+@dirrm lib/crossfire/lib/maps/dragonisland
 @dirrm lib/crossfire/lib/maps
 @dirrm lib/crossfire/lib
 @dirrm lib/crossfire/fonts
