@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if kldstat -v | grep -q linuxelf; then exit; fi
+
+cat <<_E_O_F_
+This port requires linux emulator activated before extract distfile.
+_E_O_F_
+exit 1
