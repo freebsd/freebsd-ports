@@ -115,6 +115,7 @@
 #   SUBDIR += mailman-devel
     SUBDIR += mailsync
     SUBDIR += mailx
+    SUBDIR += mairix
     SUBDIR += majorcool
     SUBDIR += majordomo
     SUBDIR += mavbiff

@@ -1,0 +1,3 @@
+bin/mairix
+%%PORTDOCS%%share/doc/mairix/mairix.txt
+%%PORTDOCS%%@dirrm share/doc/mairix
