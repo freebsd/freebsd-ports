@@ -1,0 +1,13 @@
+#!/bin/sh
+if [ x$2 != xPOST-INSTALL ]; then
+        exit
+fi
+SPOOLDIR=/var/spool/news
+export SPOOLDIR
+mkdir -p $SPOOLDIR
+csh -c 'mkdir -p $SPOOLDIR/{message.id,interesting.groups,out.going}'
+echo This is actually quite fast, for _small_ servers.
+csh -c 'mkdir -p $SPOOLDIR/message.id/{0,1,2,3,4,5,6,7,8,9}{0,1,2,3,4,5,6,7,8,9}
+{0,1,2,3,4,5,6,7,8,9}'
+chown -R news.news $SPOOLDIR
+chmod 2750 $SPOOLDIR
