@@ -1,5 +1,5 @@
---- src/config.h.orig	Tue Mar  7 04:05:53 2000
-+++ src/config.h	Tue Mar  7 04:11:33 2000
+--- src/config.h.orig	Thu Jun 22 16:39:34 2000
++++ src/config.h	Sat Jul 22 01:41:04 2000
 @@ -19,6 +19,9 @@
  #elif	defined(sgi) || defined(__sgi) || defined(__sgi__)
  #define	USE_IRIX5
@@ -7,10 +7,10 @@
 +#elif	defined(__FreeBSD__)
 +#define	USE_FREEBSD
 +
- #else
- #error	Could not determine the operating system in config.h
- #endif
-@@ -68,6 +71,13 @@
+ #elif	defined(_WIN32)
+ /* Don't get too excited here . The Windows implementation is still being
+    developed and will first appear in the non-alpha version of 1.6.
+@@ -78,6 +81,13 @@
  #define	CNETGCC		"/usr/local/bin/gcc"
  #define	CNETLD		"/bin/ld"
  
@@ -21,15 +21,15 @@
 +#define	CNETGCC		"%%CC%%"
 +#define	CNETLD		"/usr/bin/ld"
 +
+ #elif	defined(USE_WIN32)
+ #define	OS_DEFINE	"/DWIN32"
  #endif
- 
- 
-@@ -93,7 +103,7 @@
+@@ -102,7 +112,7 @@
      CNETPATH must be defined.
   */
  
--#define	CNETPATH		".:/cslinux/cnetlib:/net/tahoe6/cs78/cnetlib"
-+#define	CNETPATH		".:%%PREFIX%%/libdata/cnet:%%PREFIX%%/include"
+-#define	CNETPATH	".:/cslinux/cnetlib:/home/chris/cnetlib"
++#define	CNETPATH	".:%%PREFIX%%/share/cnet:%%PREFIX%%/include"
  
- /*  When compiled for Tcl/Tk, the Tcl/Tk script file may be taken from
-     CNETTCLTK or provided with the -F command-line option.
+ 
+ /*  A small number of common errors are detected by cnet at run-time.
