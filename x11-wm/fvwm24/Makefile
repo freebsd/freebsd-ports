@@ -15,6 +15,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	petef@FreeBSD.org
 
+RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
+
 USE_GMAKE=	yes
 USE_GTK=	yes
 USE_IMLIB=	yes
@@ -48,6 +50,10 @@ MAN1=	FvwmAnimate.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 FvwmButtons.1 \
 post-extract:
 	@${MKDIR} ${WRKDIR}/icons
 	@${TAR} -xzf ${DISTDIR}/fvwm_icons.tgz -C ${WRKDIR}/icons
+
+post-patch:
+	@${PERL} -pi -e 's,%%LOCALBASE%%,${LOCALBASE},' \
+		${WRKSRC}/modules/FvwmM4/FvwmM4.c
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/sample.fvwmrc/system.fvwm2rc \
