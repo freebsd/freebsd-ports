@@ -9712,6 +9712,7 @@ ruby-imlib2	ports/graphics/ruby-imlib2
 ruby-inline	ports/devel/ruby-inline
 ruby-interbase	ports/databases/ruby-interbase
 ruby-intl	ports/devel/ruby-intl
+ruby-io-reactor	ports/devel/ruby-io-reactor
 ruby-irc	ports/irc/ruby-irc
 ruby-jabber4r	ports/net/ruby-jabber4r
 ruby-js		ports/lang/ruby-js
