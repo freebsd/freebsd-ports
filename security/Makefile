@@ -101,6 +101,7 @@
     SUBDIR += nettle
     SUBDIR += nmap
     SUBDIR += nmapfe
+    SUBDIR += nss
     SUBDIR += oidentd
     SUBDIR += op
     SUBDIR += opencl
