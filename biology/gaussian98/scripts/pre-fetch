@@ -1,0 +1,17 @@
+#!/bin/sh
+
+[ -f ${CD_MOUNTPT}/TAR/WKSSRC.TAR ] && exit 0
+
+cat <<_E_O_F
+*****************************************************************
+To Install Gaussian, make sure your purchased CD-ROM is
+mounted on at ${CD_MOUNTPT} or an arbitrary mount point that can be
+specified by setting CD_MOUNTPT variable in a make command line.
+
+e.g.
+	mount /dev/cd0c /mnt/cdrom
+	make CD_MOUNTPT=/mnt/cdrom install
+*****************************************************************
+_E_O_F
+
+exit 1

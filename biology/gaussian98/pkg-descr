@@ -1,0 +1,11 @@
+Gaussian is ab-initio molecular orbital calculation program
+calculates energy, molecular structure, vibrational frequencies
+from the basic principle of quantum mechanics.
+
+We also included simple launcher called `gaussian98'
+for your convenience. You don't need to set any environment variable
+to run gaussian.
+
+WWW: http://www.gaussian.com
+- NAKATA, Maho
+  E-mail: chat95@mbox.kyoto-inet.or.jp

@@ -1,0 +1,15 @@
+#!/bin/csh -f
+#   usage:  gaussian98 InputFile 
+# 
+setenv g98root @PREFIX@/bin/
+setenv GAUSS_SCRDIR $cwd
+source @PREFIX@/bin/g98/bsd/g98.login
+setenv GAUSS_EXEDIR @PREFIX@/bin/g98
+if ($#argv == 0 ) then
+	echo "Usage: gaussian98 <input file>"
+	echo "   or  gaussian98 <input file> <output file>"
+else if ($#argv == 1 ) then
+	cat $1 | @PREFIX@/bin/g98/g98 
+else
+	cat $1 | @PREFIX@/bin/g98/g98 >& $2
+endif 
