@@ -1,0 +1,14 @@
+share/gnome/themes/Hacked-2/Hacked-2.tar
+share/gnome/themes/Hacked-2/metacity-1/Thumbs.db
+share/gnome/themes/Hacked-2/metacity-1/button-close-focus.png
+share/gnome/themes/Hacked-2/metacity-1/button-close.png
+share/gnome/themes/Hacked-2/metacity-1/button-inactive.png
+share/gnome/themes/Hacked-2/metacity-1/button-max-focus.png
+share/gnome/themes/Hacked-2/metacity-1/button-max.png
+share/gnome/themes/Hacked-2/metacity-1/button-min-focus.png
+share/gnome/themes/Hacked-2/metacity-1/button-min.png
+share/gnome/themes/Hacked-2/metacity-1/menu-button-pressed.png
+share/gnome/themes/Hacked-2/metacity-1/menu-button.png
+share/gnome/themes/Hacked-2/metacity-1/metacity-theme-1.xml
+@dirrm share/gnome/themes/Hacked-2/metacity-1
+@unexec /bin/rmdir %D/share/gnome/themes/Hacked-2 2>/dev/null || /usr/bin/true
