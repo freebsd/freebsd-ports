@@ -1,0 +1,11 @@
+--- snortsnarf.pl.orig	Sun Jul 29 16:53:40 2001
++++ snortsnarf.pl	Sun Jul 29 16:56:20 2001
+@@ -199,7 +199,7 @@
+ 
+ # Version control info: $Id: snortsnarf.pl,v 1.16 2000/06/14 18:40:45 jim Exp $
+ 
+-use lib qw(./include);
++use lib qw(%LOCALBASE%/libdata/snortsnarf/);
+ use Cwd;
+ 
+ # avoid needing to refer to SnortSnarf packages as SnortSnarf::*, even if
