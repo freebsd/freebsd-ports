@@ -1,0 +1,6 @@
+Emilia Pinball is a free pinball game.
+
+It requires OpenGL, if your hardware supports it; else, it is possible
+to build it with allegro (make -DWITH_ALLEGRO).
+
+WWW: http://pinball.sourceforge.net/

@@ -1,0 +1,47 @@
+bin/pinball
+%%PORTDOCS%%share/doc/pinball/README
+share/pinball/font_34.png
+share/pinball/font_35.pcx
+share/pinball/libmodule_test.a
+share/pinball/libmodule_test.la
+share/pinball/libmodule_test.so
+share/pinball/libmodule_test.so.0
+share/pinball/pinball.xpm
+share/pinball/professor/floor.png
+share/pinball/professor/floor.png.pcx
+share/pinball/professor/libmodule_professor.a
+share/pinball/professor/libmodule_professor.la
+share/pinball/professor/libmodule_professor.so
+share/pinball/professor/libmodule_professor.so.0
+share/pinball/professor/pinball.pbl
+share/pinball/professor/professor.mid
+share/pinball/tux/bump.wav
+share/pinball/tux/bumphard.wav
+share/pinball/tux/bumpsoft.wav
+share/pinball/tux/face.png
+share/pinball/tux/face.png.pcx
+share/pinball/tux/flip.wav
+share/pinball/tux/floor.pbl
+share/pinball/tux/floor2.png
+share/pinball/tux/floor2.png.pcx
+share/pinball/tux/game.mid
+share/pinball/tux/gameover.wav
+share/pinball/tux/intro.mid
+share/pinball/tux/libmodule_tux.a
+share/pinball/tux/libmodule_tux.la
+share/pinball/tux/libmodule_tux.so
+share/pinball/tux/libmodule_tux.so.0
+share/pinball/tux/locklock.wav
+share/pinball/tux/loop.wav
+share/pinball/tux/multiball.mid
+share/pinball/tux/nudge.wav
+share/pinball/tux/opentux.wav
+share/pinball/tux/pinball.pbl
+share/pinball/tux/shoot.wav
+share/pinball/tux/tiles.png
+share/pinball/tux/tiles.png.pcx
+share/pinball/tux/up.wav
+%%PORTDOCS%%@dirrm share/doc/pinball
+@dirrm share/pinball/professor
+@dirrm share/pinball/tux
+@dirrm share/pinball

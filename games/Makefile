@@ -229,6 +229,7 @@
     SUBDIR += penguin-command
     SUBDIR += pentix
     SUBDIR += phalanx
+    SUBDIR += pinball
     SUBDIR += pipenightdreams
     SUBDIR += pmars
     SUBDIR += powerpak

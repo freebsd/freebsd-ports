@@ -1,0 +1,8 @@
+*****************************************************************************
+
+ pinball has been installed in %%PREFIX%%/bin.
+
+ Remark: if run under KDE/artsd, launch it as
+         `artsdsp pinball' (else you'll get /dev/dsp is busy!).
+
+*****************************************************************************
