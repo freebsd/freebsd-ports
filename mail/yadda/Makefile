@@ -14,8 +14,7 @@ MASTER_SITES=	http://code.printf.dk/~decius/yadda/ \
 MAINTAINER=	jesper@noehr.org
 COMMENT=	Yet Another Damn Delivery Agent
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
-		${SITE_PERL}/Mail/Audit.pm:${PORTSDIR}/mail/p5-Mail-Audit
+RUN_DEPENDS=	${SITE_PERL}/Mail/Audit.pm:${PORTSDIR}/mail/p5-Mail-Audit
 
 USE_PERL5_RUN=	yes
 
@@ -26,4 +25,12 @@ do-build:
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/yadda ${PREFIX}/sbin
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
+.else
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+.endif
+
+.include <bsd.port.post.mk>
