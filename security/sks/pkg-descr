@@ -7,7 +7,7 @@ servers; and even wildly out-of-date servers, or servers that experience
 spotty connectivity, can fully synchronize with rest of the system.
 
 Refer to the online wiki for pointers on downloading a full copy of the
-public PGP databse (about 4Gb) and on customising the local configuration
+public PGP databse (about 2Gb) and on customising the local configuration
 http://documentation.penguin.de/cgi-bin/twiki/view/SKSKeyserver/WebHome
 
 WWW:	http://www.nongnu.org/sks/
