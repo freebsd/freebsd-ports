@@ -19,6 +19,8 @@ DISTNAME=	nessus-libraries-${PORTVERSION}
 
 MAINTAINER=	udo.schweigert@siemens.com
 
+FORBIDDEN=	security/nessus-libraries is newer
+
 DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/nessus-libraries
 

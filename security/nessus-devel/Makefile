@@ -19,6 +19,8 @@ DISTNAME=	nessus-core-${PORTVERSION}
 
 MAINTAINER=	udo.schweigert@siemens.com
 
+FORBIDDEN=	security/nessus is newer
+
 LIB_DEPENDS=	nasl.3:${PORTSDIR}/security/nessus-libnasl-devel
 
 DIST_SUBDIR=	nessus

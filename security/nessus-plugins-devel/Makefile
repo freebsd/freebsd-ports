@@ -19,6 +19,8 @@ DISTNAME=	nessus-plugins-${PORTVERSION}
 
 MAINTAINER=	udo.schweigert@siemens.com
 
+FORBIDDEN=	security/nessus-plugins is newer
+
 BUILD_DEPENDS=	${LOCALBASE}/include/nessus/nessus-devel.h:${PORTSDIR}/security/nessus-devel
 RUN_DEPENDS=	${LOCALBASE}/include/nessus/nessus-devel.h:${PORTSDIR}/security/nessus-devel \
 		nmap:${PORTSDIR}/security/nmap \
