@@ -1,20 +1,6 @@
---- configure.in.orig	Sat Sep  1 19:32:49 2001
-+++ configure.in	Sat Sep  1 19:34:07 2001
-@@ -262,18 +262,18 @@
- db3_found=no
- for db3dir in "" $trydb3dir /usr /usr /usr/local ; do
- 	if test -f "$db3dir/include/db3/db.h" ; then
--		LDFLAGS="$LDFLAGS -L$db3dir/lib -L$db3dir"
--		CFLAGS="$CFLAGS -I$db3dir/include"
-+		LDFLAGS="$LDFLAGS -L$db3dir/lib"
-+		CFLAGS="$CFLAGS -I$db3dir/include/db3"
- 
- 		dnl If we require DB3, die if we don't have it
- 		if test "x$db3_required" != "xno"; then
--			AC_CHECK_LIB(db, main,
-+			AC_CHECK_LIB(db3, main,
- 				dnl AC_MSG_RESULT([enabling db3 support])
- 				db3_found=yes
+--- configure.in.orig	Fri Oct  5 12:38:18 2001
++++ configure.in	Fri Oct  5 12:38:33 2001
+@@ -273,7 +273,7 @@
  				dnl -- also enable CNID DB when this is found
  				AC_DEFINE(CNID_DB, 1)
  				AC_MSG_RESULT([using persistent cnid database per volume])
