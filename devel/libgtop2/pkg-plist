@@ -45,9 +45,6 @@ include/libgtop-2.0/glibtop_machine.h
 include/libgtop-2.0/glibtop_server.h
 include/libgtop-2.0/glibtop_suid.h
 include/libgtop-2.0/gnomesupport.h
-@unexec install-info --delete %D/info/libgtop2.info %D/info/dir
-info/libgtop2.info
-@exec install-info --section="Programming \& development tools" --entry="* libgtop2: (libgtop2).  libgtop2 programming manual" %D/info/libgtop2.info %D/info/dir
 lib/libgnomesupport-2.0.a
 lib/libgnomesupport-2.0.so
 lib/libgnomesupport-2.0.so.0
@@ -77,6 +74,7 @@ share/locale/be/LC_MESSAGES/libgtop-2.0.mo
 share/locale/bg/LC_MESSAGES/libgtop-2.0.mo
 share/locale/ca/LC_MESSAGES/libgtop-2.0.mo
 share/locale/cs/LC_MESSAGES/libgtop-2.0.mo
+share/locale/cy/LC_MESSAGES/libgtop-2.0.mo
 share/locale/da/LC_MESSAGES/libgtop-2.0.mo
 share/locale/de/LC_MESSAGES/libgtop-2.0.mo
 share/locale/el/LC_MESSAGES/libgtop-2.0.mo
