@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cvsd
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	devel
 MASTER_SITES=	http://tiefighter.et.tudelft.nl/~arthur/cvsd/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
@@ -39,10 +39,10 @@ do-install:
 	@${MKDIR} ${PREFIX}/etc/cvsd
 	${INSTALL_DATA} ${WRKSRC}/cvsd.conf-dist ${PREFIX}/etc/cvsd/cvsd.conf.sample
 .for FILE in ${MAN5}
-	${INSTALL_MAN} ${WRKSRC}/${FILE} ${MANPREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/${FILE} ${MAN5PREFIX}/man/man5
 .endfor
 .for FILE in ${MAN8}
-	${INSTALL_MAN} ${WRKSRC}/${FILE} ${MANPREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/${FILE} ${MAN8PREFIX}/man/man8
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
