@@ -9,8 +9,8 @@ PORTNAME=	autoconf
 PORTVERSION=	2.53
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	autoconf
+MASTER_SITES	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	ade/gnu
 
 MAINTAINER=	ade@FreeBSD.org
 COMMENT=	Automatically configure source code on many Un*x platforms
