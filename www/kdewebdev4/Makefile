@@ -13,8 +13,9 @@ PORTVERSION= 	3.0
 PORTEPOCH=	2	# dammit! I hate this kludge.
 CATEGORIES=	www kde
 
-MASTER_SITES=		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	alane#/quanta
+MASTER_SITES=		${MASTER_SITE_LOCAL} \
+			http://people.freebsd.org/~alane	# temp only
+MASTER_SITE_SUBDIR=	alane/quanta
 DIST_SUBDIR=		${PORTNAME}
 
 .if !defined(NOPORTDOCS)
