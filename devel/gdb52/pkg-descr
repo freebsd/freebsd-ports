@@ -1,0 +1,3 @@
+GNU GDB 5.1 developmental snapshot.  This exists to allow people to test
+the upcoming GDB release, and to get any FreeBSD-needed mods submitted
+before the official 5.1 release.
