@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	cgiparse
-PORTVERSION= 	0.9a
+PORTVERSION= 	0.9b
 CATEGORIES=	devel www
 MASTER_SITES=	http://resnet.uoregon.edu/~gurney_j/jmpc/dist/	\
 		http://www.funkthat.com/~jmg/
 
 MAINTAINER=	jmg@FreeBSD.org
-
-BROKEN=		"Install script contains errors"
 
 LIB_DEPENDS=	mime.1:${PORTSDIR}/devel/mime:install
 
