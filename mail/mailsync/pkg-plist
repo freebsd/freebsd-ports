@@ -1,0 +1,5 @@
+bin/mailsync
+%%PORTDOCS%%share/doc/mailsync/README
+share/examples/mailsync/mailsync
+@dirrm share/examples/mailsync
+%%PORTDOCS%%@dirrm share/doc/mailsync
