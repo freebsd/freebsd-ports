@@ -7,18 +7,18 @@
 
 PORTNAME=	mnogosearch
 PORTVERSION=    3.1.19
-PORTREVISION=   1
+PORTREVISION=   2
 CATEGORIES=	www databases
-MASTER_SITES=	http://search.mnogo.ru/Download/
+MASTER_SITES=   http://www.mnogosearch.org/Download/
 
 MAINTAINER=	ache@FreeBSD.org
 
 MAN1=		indexer.1
 MAN5=		indexer.conf.5
 
+USE_LIBTOOL=    yes
 INSTALLS_SHLIB= yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --enable-phrase \
 		--enable-shared \
 		--enable-freebsd-pthreads \
