@@ -37,8 +37,9 @@
 .Op Ar diff ...
 .Sh DESCRIPTION
 .Nm
-reads a unidiff or context diff from stdin or a set of files and URLs, adds color
-codes, expands tabs to 8 spaces, and passes the results to
+reads a unidiff or context diff from stdin or a set of (optionally compressed)
+files and URLs, adds color codes, expands tabs to 8 spaces, and passes the
+results to
 .Xr less 1 .
 If used on a color terminal, it makes diffs much easier to read.
 .Sh AUTHORS
