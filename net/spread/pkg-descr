@@ -1,3 +1,7 @@
+Copyright (c) 1993-2001 Spread Concepts LLC. All rights reserved.
+This product uses software developed by Spread Concepts LLC for use in the
+Spread toolkit. For more information about Spread see http://www.spread.org .
+
 Spread is a toolkit and daemon that provide multicast and group communications
 support to applications across local and wide area networks. Spread is designed
 to make it easy to write groupware, networked multimedia, reliable server, and

@@ -8,7 +8,8 @@
 PORTNAME=	spread
 PORTVERSION=	3.15.2
 CATEGORIES=	net perl5 java
-MASTER_SITES=
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	sada
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	anders@fix.no
@@ -26,9 +27,7 @@ MAN3=	SP_connect.3 SP_disconnect.3 SP_equal_group_ids.3 SP_error.3 \
 	SP_scat_multicast.3 SP_scat_receive.3
 
 USE_PERL5=	yes
-NO_CDROM=	"See the license: http://www.spread.org/license/"
 NO_PACKAGE=	"User and group needs to be created"
-RESTRICTED=	"See the license: http://www.spread.org/license/"
 INSTALLS_SHLIB=	yes
 
 JAVASUBDIR=	jdk1.1.8
@@ -50,10 +49,6 @@ PLIST_SUB+=	JAVALIB='@comment ' JAVALIB_DOCS='@comment ' JAVALIBDIR=''
 MAKE_ARGS+=	PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
-
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE='You must fetch the source manually from http://www.cnds.jhu.edu/download/download_spread.cgi and copy the file to ${DISTDIR}. Then run make again.'
-.endif
 
 post-build:
 	(cd ${WRKSRC}/perl/Spread-3.15.2-1.03; ${PERL} Makefile.PL; ${MAKE})
