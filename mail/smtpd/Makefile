@@ -16,6 +16,8 @@ PATCHFILES=	patch-smtpd-2.0-RBL.gz
 
 MAINTAINER=	jonny@jonny.eng.br
 
+BROKEN=		Does not work with Sendmail-8.12
+
 #  Directory where smtpd will chroot to, and put the received mail
 #  If you change it here, change also patches/patch-aa
 SPOOLBASE=	/var/smtpd
