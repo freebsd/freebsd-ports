@@ -1,0 +1,21 @@
+@comment $FreeBSD$
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/index.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%CLASSDIR%%/agsmtst.tex
+%%CLASSDIR%%/autind.sty
+%%CLASSDIR%%/autind.tex
+%%CLASSDIR%%/bibref.ist
+%%CLASSDIR%%/bibref.sty
+%%CLASSDIR%%/index.dtx
+%%CLASSDIR%%/index.ins
+%%CLASSDIR%%/index.sty
+%%CLASSDIR%%/plaintst.tex
+%%CLASSDIR%%/sample.tex
+%%CLASSDIR%%/test.bib
+%%CLASSDIR%%/xagsm.bst
+%%CLASSDIR%%/xplain.bst
+@dirrm %%CLASSDIR%%
+@exec %%MKTEXLSR%%
+@unexec %%MKTEXLSR%%
