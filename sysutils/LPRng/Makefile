@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	LPRng
-PORTVERSION=	3.8.21
+PORTVERSION=	3.8.23
 CATEGORIES=	sysutils print
 MASTER_SITES=	ftp://ftp.lprng.com/pub/%SUBDIR%/ \
 		ftp://ftp.cise.ufl.edu/pub/mirrors/%SUBDIR%/ \
@@ -32,8 +32,8 @@ CONFIGURE_ARGS=	\
 		--with-lpd_conf_path=${PREFIX}/etc/lpd.conf \
 		--with-lpd_perms_path=${PREFIX}/etc/lpd.perms \
 		--with-printcap_path=/etc/printcap \
-		--with-ldopts="-L${LOCALBASE}/lib" \
-		--with-ccopts="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		CPPFLAGS="-I${LOCALBASE}/include" \
 		--with-ld_library_path="${PREFIX}/lib:/lib:/usr/lib:/${LOCALBASE}/lib" \
 		--enable-gdbm=${LOCALBASE}
 .if defined(PREFIX)
@@ -51,6 +51,8 @@ MAN8=	lpc.8 checkpc.8 lpd.8
 pre-everything::
 	@${ECHO_MSG} "If you want to replace the default printing system with LPRng, use:"
 	@${ECHO_MSG} "  make PREFIX=/usr SYSCONFDIR=/etc clean all install"
+	@${ECHO_MSG} " OR"
+	@${ECHO_MSG} "  make CONFIGURE_SCRIPT=STANDARD_configuration clean all install"
 	@if [ "${PREFIX}" = "/usr" -a ! -d /usr/man ] ; then \
 		${ECHO_MSG} "The man pages will be installed in /usr/man." ; \
 		${ECHO_MSG} "You should make a symbolic link /usr/share/man from /usr/man"; \
@@ -64,9 +66,13 @@ pre-everything::
 post-install:
 .if !defined(NOPORTDOCS)
 	@${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 0555 ${DOCSDIR}
+	@${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 0555 ${DOCSDIR}/Reference
+	@${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 0555 ${DOCSDIR}/PrintingCookbook
 .for ext in html pdf ppt ps txt gif jpg png
-	for i in `${LS} ${WRKSRC}/HOWTO | ${GREP} "\.${ext}$$"`; \
-		do ${INSTALL_DATA} ${WRKSRC}/HOWTO/$$i ${DOCSDIR}; done
+	for i in `${LS} ${WRKSRC}/DOCS | ${GREP} "\.${ext}$$"`; \
+		do ${INSTALL_DATA} ${WRKSRC}/DOCS/$$i ${DOCSDIR}; done
+	for i in `${LS} ${WRKSRC}/PrintingCookbook/HTML | ${GREP} "\.${ext}$$"`; \
+		do ${INSTALL_DATA} ${WRKSRC}/PrintingCookbook/HTML/$$i ${DOCSDIR}/PrintingCookbook; done;
 .endfor
 .endif
 	@${SED} -e "s!DOCSDIR!${DOCSDIR}/!" ${PKGMESSAGE}

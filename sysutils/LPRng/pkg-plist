@@ -1,14 +1,18 @@
+bin/cancel
+bin/lp
 bin/lpq
 bin/lpr
 bin/lprm
 bin/lpstat
+etc/lpd.conf
 etc/lpd.conf.sample
+etc/lpd.perms
 etc/lpd.perms.sample
-etc/lprng.sh
-etc/printcap.sample
+etc/lpd/lpd.conf.sample
+etc/lpd/lpd.perms.sample
+etc/lpd/lprng.sh.sample
+etc/lpd/printcap.sample
 lib/liblpr.a
-lib/liblpr.so.0
-lib/liblpr.so
 libexec/filters/lpbanner
 libexec/filters/lpf
 libexec/filters/pclbanner
@@ -19,12 +23,46 @@ sbin/lpd
 sbin/lprng_certs
 sbin/lprng_index_certs
 %%PORTDOCS%%%%DOCSDIR%%/LISA98.ppt
-%%PORTDOCS%%%%DOCSDIR%%/LPRng-HOWTO.html
-%%PORTDOCS%%%%DOCSDIR%%/LPRng-HOWTO.pdf
+%%PORTDOCS%%%%DOCSDIR%%/LPRng-Reference.html
+%%PORTDOCS%%%%DOCSDIR%%/LPRng-Reference.pdf
 %%PORTDOCS%%%%DOCSDIR%%/LPRng.jpg
+%%PORTDOCS%%%%DOCSDIR%%/LPRng.png
 %%PORTDOCS%%%%DOCSDIR%%/LPRngT-L.jpg
+%%PORTDOCS%%%%DOCSDIR%%/LPRngT-L.png
 %%PORTDOCS%%%%DOCSDIR%%/LPRngT-S.jpg
+%%PORTDOCS%%%%DOCSDIR%%/LPRngT-S.png
+%%PORTDOCS%%%%DOCSDIR%%/PrintingCookbook/LPRng.jpg
+%%PORTDOCS%%%%DOCSDIR%%/PrintingCookbook/LPRngT-L.jpg
+%%PORTDOCS%%%%DOCSDIR%%/PrintingCookbook/LPRngT-S.jpg
+%%PORTDOCS%%%%DOCSDIR%%/PrintingCookbook/chooser.png
+%%PORTDOCS%%%%DOCSDIR%%/PrintingCookbook/clients.png
+%%PORTDOCS%%%%DOCSDIR%%/PrintingCookbook/configfiles.png
+%%PORTDOCS%%%%DOCSDIR%%/PrintingCookbook/filter.png
+%%PORTDOCS%%%%DOCSDIR%%/PrintingCookbook/index.html
+%%PORTDOCS%%%%DOCSDIR%%/PrintingCookbook/network.png
+%%PORTDOCS%%%%DOCSDIR%%/PrintingCookbook/parallel.png
+%%PORTDOCS%%%%DOCSDIR%%/PrintingCookbook/pooling.png
+%%PORTDOCS%%%%DOCSDIR%%/PrintingCookbook/printserver.png
+%%PORTDOCS%%%%DOCSDIR%%/PrintingCookbook/samba.png
+%%PORTDOCS%%%%DOCSDIR%%/PrintingCookbook/serial.png
+%%PORTDOCS%%%%DOCSDIR%%/PrintingCookbook/spooler.png
+%%PORTDOCS%%%%DOCSDIR%%/PrintingCookbook/x_add.png
+%%PORTDOCS%%%%DOCSDIR%%/PrintingCookbook/x_advanced.png
+%%PORTDOCS%%%%DOCSDIR%%/PrintingCookbook/x_checkpc.png
+%%PORTDOCS%%%%DOCSDIR%%/PrintingCookbook/x_edit.png
+%%PORTDOCS%%%%DOCSDIR%%/PrintingCookbook/x_ifhpfilter.png
+%%PORTDOCS%%%%DOCSDIR%%/PrintingCookbook/x_nup.png
+%%PORTDOCS%%%%DOCSDIR%%/PrintingCookbook/x_open.png
+%%PORTDOCS%%%%DOCSDIR%%/PrintingCookbook/x_printcaps.png
+%%PORTDOCS%%%%DOCSDIR%%/PrintingCookbook/x_reread.png
+%%PORTDOCS%%%%DOCSDIR%%/PrintingCookbook/x_results.png
+%%PORTDOCS%%%%DOCSDIR%%/PrintingCookbook/x_smb.png
+%%PORTDOCS%%%%DOCSDIR%%/PrintingCookbook/x_write.png
 %%PORTDOCS%%%%DOCSDIR%%/license.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc1179.txt
 %%PORTDOCS%%%%DOCSDIR%%/y2k.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%PORTDOCS%%%%DOCSDIR%%/Reference
+@dirrm %%PORTDOCS%%%%DOCSDIR%%/PrintingCookbook
+@dirrm %%PORTDOCS%%%%DOCSDIR%%
+@dirrm libexec/filters
+@dirrm etc/lpd
