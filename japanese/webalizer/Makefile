@@ -4,10 +4,13 @@
 #
 # $FreeBSD$
 
-PKGNAMEPREFIX?=	ja-
-MASTERDIR?=	${.CURDIR}/../../www/webalizer
 CATEGORIES=	japanese
+PKGNAMEPREFIX?=	ja-
+
+MAINTAINER=	dinoex@FreeBSD.org
+
 WEBALIZER_LANG=	japanese
+MASTERDIR?=	${.CURDIR}/../../www/webalizer
 
 .if exists(${.CURDIR}/Makefile.local)
 .include "${.CURDIR}/Makefile.local"
