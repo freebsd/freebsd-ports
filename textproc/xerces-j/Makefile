@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_APACHE_XML}
 MASTER_SITE_SUBDIR=	xerces-j/source
 DISTFILES=	Xerces-J-src.${PORTVERSION}${EXTRACT_SUFX} Xerces-J-tools.${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	herve.quiroz@esil.univ-mrs.fr
 COMMENT=	XML parser for Java
 
 BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant
