@@ -24,12 +24,14 @@ LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
 .if !defined(WITHOUT_ICONV)
 LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
 .endif
+.if ${PORTNAME} == "mc"
+LIB_DEPENDS+=	intl.4:${PORTSDIR}/devel/gettext
+.endif
 
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
 .if ${PORTNAME} == "mc"
 USE_GNOME=	glib12
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 .else
 USE_GNOME=	gnomeprefix gnomelibs
 .endif
