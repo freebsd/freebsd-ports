@@ -23,7 +23,7 @@ echo "#define ProjectRoot $PREFIX"		>> $LOCALDEF
 echo "#define NothingOutsideProjectRoot YES"	>> $LOCALDEF
 
 # Now, we can use this configuration.
-# Thanks, Trevor Johnson <trevor@jpj.net>
+# Thanks, Trevor Johnson
 echo "#define InstallXserverSetUID NO"		>> $LOCALDEF
 
 echo "#define XInputDrivers mouse keyboard digitaledge dynapro elo2300 \
