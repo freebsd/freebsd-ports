@@ -10,7 +10,7 @@ PORTVERSION=	2.8.1
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.kondara.org/libjconv/
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 #RUN_DEPENDS=	${LOCALBASE}/libexec/iconv/iso-2022-jp.so:${PORTSDIR}/converters/iconv-extra
