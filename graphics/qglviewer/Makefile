@@ -33,6 +33,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|^SUBDIRS =.*$$|SUBDIRS = src include|g ; \
 		 s| install-pkgdocDATA||g' ${WRKSRC}/Makefile.in
 
+pre-build:
+	-@${RM} ${WRKSRC}/src/QCameraKeyPathEditor.h
+	-@${RM} ${WRKSRC}/src/QLightSourceEditor.h
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
