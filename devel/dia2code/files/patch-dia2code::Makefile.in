@@ -1,0 +1,20 @@
+--- dia2code/Makefile.in.orig	Wed Jan 24 04:43:08 2001
++++ dia2code/Makefile.in	Wed Mar  7 11:56:58 2001
+@@ -68,7 +68,7 @@
+ ####### kdevelop will overwrite this part!!! (end)############
+ bin_PROGRAMS = dia2code
+ dia2code_SOURCES = scan_tree.c generate_code_c.c parse_diagram.c dia2code.c generate_code_java.c generate_code_cpp.c main.c 
+-dia2code_LDADD = -lxml
++dia2code_LDADD = `%%XML_CONFIG%% --libs`
+ 
+ SUBDIRS = docs 
+ 
+@@ -79,7 +79,7 @@
+ PROGRAMS =  $(bin_PROGRAMS)
+ 
+ 
+-DEFS = @DEFS@ -I. -I$(srcdir) -I..
++DEFS = @DEFS@ -I. -I$(srcdir) -I.. -I/usr/local/include
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
