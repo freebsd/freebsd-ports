@@ -1,0 +1,20 @@
+--- gnats/gnats-edit-pr.sh.orig	Wed Mar 13 17:19:09 2002
++++ gnats/gnats-edit-pr.sh	Wed Mar 13 17:21:14 2002
+@@ -178,13 +178,11 @@
+ 
+ # lock the pr
+ $debug_print "Locking $pr_id."
+-lock=`$PR_EDIT --lock=$full_me $pr_id 2>&1 > $new`
+-locked=t
+-
+-if [ "$lock" != "" ] ; then
+-  echo $lock
+-  exit 0
++if ! $PR_EDIT --lock=$full_me $pr_id >$new ; then
++    echo "Failed to lock PR $pr_id"
++    exit 1
+ fi
++locked=t
+ 
+ # here's where we actually call the editor.
+ cp $new $new.old
