@@ -28,6 +28,8 @@ RMAN=		${X11BASE}/bin/rman
 
 .include <bsd.port.pre.mk>
 
+LIBBINDIR=     ${PREFIX}/lib/X11/xmcd/bin-FreeBSD_${OSREL:R}-${ARCH}
+
 post-extract:
 	@${CHMOD} -R u+w ${WRKSRC}
 
@@ -49,6 +51,10 @@ post-build:
 .endif
 
 post-install:
+	@strip ${LIBBINDIR}/cda
+	@strip ${LIBBINDIR}/gobrowser
+	@strip ${LIBBINDIR}/has_alsa
+	@strip ${LIBBINDIR}/xmcd
 	@${CAT} ${PKGMESSAGE}
 	@${CP} ${WRKSRC}/xmcd_d/XMcd.ad ${PREFIX}/lib/X11/app-defaults/XMcd
 .if ${XFREE86_VERSION} == 4
