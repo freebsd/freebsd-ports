@@ -10,8 +10,13 @@ MAINTAINER=	alex@FreeBSD.org
 ISPELL_DENEU=	yes
 PORTNAME=	ispell
 PORTVERSION=	20001109
+PORTREVISION=	3
 CATEGORIES=	german
 PKGNAMESUFFIX=	-neu
 MASTERDIR=	${.CURDIR}/../../textproc/ispell
+
+.if exists(${.CURDIR}/Makefile.local)
+.include "${.CURDIR}/Makefile.local"
+.endif
 
 .include        "${MASTERDIR}/Makefile"
