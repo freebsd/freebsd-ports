@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fox
-PORTVERSION?=	1.0.11
+PORTVERSION?=	1.0.30
 PORTREVISION?=	0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.fox-toolkit.org/ftp/ \
@@ -17,27 +17,8 @@ MASTER_SITES=	http://www.fox-toolkit.org/ftp/ \
 MAINTAINER?=	ports@FreeBSD.org
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png
-
-.if defined(WITH_XUNICODE)
-PKGNAMESUFFIX=	-unicode
-
-PATCHVERSION?=	${PORTVERSION}
-
-PATCH_SITES=	http://www.ab.wakwak.com/~tino/jatk/fox/
-PATCHFILES=	${PORTNAME}${PKGNAMESUFFIX}-${PATCHVERSION}.diff
-PATCH_DIST_STRIP=	-p1
-
-BUILD_DEPENDS=	${X11BASE}/include/xunicode/xunicode.h:${PORTSDIR}/converters/xunicode
-
-CONFIGURE_ENV=	X_CFLAGS=-DUSE_UNICODE
-
-PLIST_SUB=	OLDFILE="" \
-		NEWFILE="@comment "
-.else
-PLIST_SUB=	OLDFILE="@comment " \
-		NEWFILE=""
-.endif
+		png.5:${PORTSDIR}/graphics/png \
+		tiff.4:${PORTSDIR}/graphics/tiff
 
 USE_MESA=	yes
 INSTALLS_SHLIB=	yes
@@ -47,44 +28,109 @@ CONFIGURE_ENV+=	CXXFLAGS="${CXXFLAGS}" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=--with-opengl=mesa --with-x
-.if defined(NO_SHM)
+
+MAN1=	reswrap.1
+
+##
+## Additional Options
+##
+#
+.if defined(WITHOUT_SHM)
 CONFIGURE_ARGS+=--with-shm=no
 .else
 CONFIGURE_ARGS+=--with-shm=yes
 .endif
-.if defined(DEBUG)
+#
+.if defined(WITH_CUPS)
+CONFIGURE_ARGS+=--enable-cups
+.else
+CONFIGURE_ARGS+=--disable-cups
+.endif
+#
+.if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=--enable-debug
 .else
 CONFIGURE_ARGS+=--enable-release
 .endif
-.if defined(WANT_PROFILE)
+#
+.if defined(WITH_FOX_APPLICATIONS)
+PLIST_SUB+=	APPS=""
+
+MAN1+=	PathFinder.1 adie.1 calculator.1
+.else
+PLIST_SUB+=	APPS="@comment "
+.endif
+#
+.if defined(WITH_OPTIMIZED_CXXFLAGS)
+# turn distribution-recommended optimization flags back on
+CXXFLAGS+=	-Wuninitialized -ffast-math -finline-functions -fomit-frame-pointer -fexpensive-optimizations
+.endif
+#
+.if defined(WITH_PROFILING)
 CONFIGURE_ARGS+=--with-profiling=gprof
 .endif
-MAKE_ARGS+=	-j3
+#
 .if defined(NOPORTDOCS)
 MAKE_ARGS+=	DOC=
 .else
 MAKE_ARGS+=	DOC=doc
 .endif
-#USE_LIBTOOL=	yes
-SHLIB_MAJ=	1
-SHLIB_MIN=	0
-MAKE_ENV+=	LT_CURRENT="${SHLIB_MAJ}" LT_REVISION="${SHLIB_MIN}"
-PLIST_SUB+=	LIBVER="${SHLIB_MAJ}"
-MAN1=		reswrap.1
-
-# Uncomment this to turn the distribution-recommended optimization flags on.
-#CXXFLAGS=	-O2 -Wuninitialized -ffast-math -finline-functions -fomit-frame-pointer -fexpensive-optimizations
-
-.if defined(WITH_XUNICODE)
-post-extract:
-	cd ${WRKSRC} && ${LN} -s ${X11BASE}/include/xunicode
-.endif
 
 post-patch:
-	${REINPLACE_CMD} -E 's/^(SUBDIRS[ 	]*=[ 	]*).*/\1utils include src $${DOC}/' \
+# CXXFLAGS safeness
+.if !defined(WITH_OPTIMIZED_CXXFLAGS)
+	@${REINPLACE_CMD} -E -e \
+		's|-O2|${CXXFLAGS}|g' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+.else
+	@${REINPLACE_CMD} -E -e \
+		's|-O2|-O2 ${CXXFLAGS}|g' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+.endif
+# doc prefix safeness
+	@${REINPLACE_CMD} -E -e \
+		's|^(htmldir).*$$|\1=${DOCSDIR}/html|' \
+		${WRKSRC}/doc/Makefile.in
+	@${REINPLACE_CMD} -E -e \
+		's|^(artdir).*$$|\1=${DOCSDIR}/html|' \
+		${WRKSRC}/doc/art/Makefile.in
+	@${REINPLACE_CMD} -E -e \
+		's|^(screenshotsdir).*$$|\1=${DOCSDIR}/html|' \
+		${WRKSRC}/doc/screenshots/Makefile.in
+.if !defined(WITH_FOX_APPLICATIONS)
+	@${REINPLACE_CMD} -E -e \
+		's,^(SUBDIRS.*)adie,\1,; \
+		s,^(SUBDIRS.*)pathfinder,\1,; \
+		s,^(SUBDIRS.*)calculator,\1,' \
 		${WRKSRC}/Makefile.in
-	${FIND} ${WRKSRC} -name Makefile.in -print0 | \
-		${XARGS} -0 ${REINPLACE_CMD} -E 's:\$$\(prefix\)/@PACKAGE@:$$(datadir)/doc/@PACKAGE@:'
+.endif
+
+pre-everything::
+.if !defined(WITH_OPTIMIZED_CXXFLAGS)
+	@${ECHO_MSG}
+	@${ECHO_MSG} 'You can enable additional compilation optimizations'
+	@${ECHO_MSG} 'by defining WITH_OPTIMIZED_CXXFLAGS'
+.endif
+.if !defined(WITH_CUPS)
+	@${ECHO_MSG}
+	@${ECHO_MSG} 'You can enable CUPS support by defining WITH_CUPS'
+.endif
+.if !defined(WITH_DEBUG)
+	@${ECHO_MSG}
+	@${ECHO_MSG} 'You can build DEBUG support by defining WITH_DEBUG'
+.endif
+.if !defined(WITH_FOX_APPLICATIONS)
+	@${ECHO_MSG}
+	@${ECHO_MSG} 'You can install FOX sample applications by defining WITH_FOX_APPLICATIONS"
+.endif
+.if !defined(WITH_PROFILING)
+	@${ECHO_MSG}
+	@${ECHO_MSG} 'You can build PROFILING support by defining WITH_PROFILING'
+.endif
+.if !defined(WITHOUT_SHM)
+	@${ECHO_MSG}
+	@${ECHO_MSG} 'You can disable Shared Memory support by defining WITHOUT_SHM'
+.endif
+	@${ECHO_MSG}
 
 .include <bsd.port.mk>
