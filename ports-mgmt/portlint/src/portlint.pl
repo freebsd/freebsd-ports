@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $Id: portlint.pl,v 1.73 2005/02/14 08:17:17 marcus Exp $
+# $Id: portlint.pl,v 1.74 2005/03/21 19:50:06 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_C $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -39,8 +39,8 @@ $portdir = '.';
 
 # version variables
 my $major = 2;
-my $minor = 6;
-my $micro = 11;
+my $minor = 7;
+my $micro = 0;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -538,6 +538,10 @@ sub checkdescr {
 			}
 		}
 
+		if (!$has_url) {
+			&perror("WARN: $file: add \"WWW: UR:\" for this port if possible");
+		}
+
 		if ($has_url && ! $has_www) {
 			&perror("FATAL: $file: contains a URL but no \"WWW:\"");
 		}
@@ -635,7 +639,7 @@ sub checkplist {
 				}
 			} elsif ($_ =~ /^\@(comment)/) {
 				$rcsidseen++ if (/\$$rcsidstr[:\$]/);
-			} elsif ($_ =~ /^\@(owner|group)\s/) {
+			} elsif ($_ =~ /^\@(owner|group|mode)\s/) {
 				&perror("WARN: $file [$.]: \@$1 should not be needed");
 			} elsif ($_ =~ /^\@(dirrm|option)/) {
 				; # no check made
@@ -891,6 +895,13 @@ sub checkpatch {
 			$1 eq $rcsidstr;
 	}
 
+	if ($committer && $whole =~ /\wjavavm\w/) {
+		my $lineno = &linenumber($`);
+		&perror("WARN: $file [$lineno]: since javavmwrapper 2.0, the ".
+			"``javavm'' command to invoke a JVM is deprecated.  Use ".
+			"``java'' instead");
+	}
+
 	close(IN);
 }
 
@@ -911,6 +922,8 @@ sub checkmakefile {
 	my $masterport = 0;
 	my $slaveport = 0;
 	my $use_gnome_hack = 0;
+	my $use_java = 0;
+	my $use_ant = 0;
 	my($realwrksrc, $wrksrc, $nowrksubdir) = ('', '', '');
 	my(@mman, @pman);
 	my(@mopt, @oopt);
@@ -1181,6 +1194,13 @@ sub checkmakefile {
 		}
 	}
 
+	if ($whole =~ /\n(_USE_BSD_JAVA_MK_1_0)[+?:!]?=/) {
+		&perror("WARN: $file: This port uses bsd.java.mk 1.0 syntax. ".
+			"You should consider updating it to 2.0 syntax. ".
+			"Please refer to the Porter's Handbook for further ".
+			"information");
+	}
+
 	#
 	# whole file: direct use of command names
 	#
@@ -1263,6 +1283,22 @@ pax perl printf rm rmdir ruby sed sh sort touch tr which xargs xmkmf
 	}
 
 	#
+	# while file: check for use of paths that have macro replacements
+	#
+	my %pathnames = ();
+	print "OK: checking for paths that have macro replacements.\n"
+		if ($verbose);
+	$pathnames{'${PREFIX}/share/java/classes'} = 'JAVADIR';
+	$pathnames{'${PREFIX}/share/java'} = 'JAVASHAREDIR';
+	foreach my $i (keys %pathnames) {
+		my $lineno = &linenumber($`);
+		if ($j =~ m|$i|gm) {
+			&perror("FATAL: $file [$lineno]: you should use ".
+				"$pathnames{$i} rather than $i");
+		}
+	}
+
+	#
 	# whole file: ldconfig must come with "true" command
 	#
 	if ($ldconfigwithtrue
@@ -1333,6 +1369,50 @@ pax perl printf rm rmdir ruby sed sh sort touch tr which xargs xmkmf
 		if ($1 =~ /gnomehack/) {
 			$use_gnome_hack = 1;
 		}
+	}
+
+	#
+	# whole file: USE_JAVA check
+	#
+	if ($whole =~ /^USE_JAVA[?:]?=\s*(.*)$/m) {
+		$use_java = 1;
+	}
+
+	#
+	# whole file: USE_ANT check
+	#
+	if ($whole =~ /^USE_ANT[?:]?=\s*(.*)$/m) {
+		$use_ant = 1;
+	}
+
+	#
+	# whole file: USE_JAVA not defined, but other Java components are requested
+	#
+	if (!$use_java && ($use_ant || $whole =~ /^JAVA_VERSION[?:]?=\s*(.*)$/m ||
+		$whole =~ /^JAVA_OS[?:]?=\s*(.*)$/m ||
+		$whole =~ /^JAVA_VENDOR[?:]?=\s*(.*)$/m ||
+		$whole =~ /^JAVA_RUN[?:]?=\s*(.*)$/m ||
+		$whole =~ /^JAVA_BUILD[?:]?=\s*(.*)$/m ||
+		$whole =~ /^USE_JIKES[?:]?=\s*(.*)$/m)) {
+		&perror("FATAL: $file: the port uses Java features, but USE_JAVA ".
+			"is not defined");
+	}
+
+	#
+	# whole file: check for USE_ANT and USE_GMAKE both defined
+	#
+	if ($use_ant && $whole =~ /^USE_GMAKE[?:]?=\s*(.*)$/m) {
+		&perror("WARN: $file: a port shall not define both USE_ANT ".
+			"and USE_GMAKE");
+	}
+
+	#
+	# whole file: check for JAVA_BUILD and NO_BUILD
+	#
+	if ($whole =~ /^NO_BUILD[?:]?=\s*(.*)$/m &&
+		$whole =~ /^JAVA_BUILD[?:]?=\s*(.*)$/m) {
+		&perror("FATAL: $file: JAVA_BUILD and NO_BUILD cannot be set ".
+			"at the same time");
 	}
 
 	#
@@ -1518,6 +1598,22 @@ DIST_SUBDIR EXTRACT_ONLY
 	if (@cat == 0) {
 		&perror("FATAL: $file: CATEGORIES left blank. set it to \"misc\"".
 		" if nothing seems apropriate.");
+	}
+
+	if ($use_java && !grep /^java$/, @cat) {
+		&perror("WARN: $file: the port uses Java but is not part of the ".
+			"``java'' category");
+	}
+
+	if (scalar(@cat) == 1 && $cat[0] eq "java") {
+		&perror("FATAL: $file: the ``java'' category shall not be the only ".
+			"one for a port");
+	}
+
+	if ($newport && scalar(@cat) > 0 && $cat[0] eq "java") {
+		&perror("WARN: $file: save for ports directly related to the Java ".
+			"language, porters are encouraged not to use ``java'' as ".
+			"the main category for a port");
 	}
 
 	if ($committer && $makevar{'.CURDIR'} =~ m'${portsdir}/([^/]+)/[^/]+/?$') {
@@ -2012,6 +2108,14 @@ FETCH_DEPENDS DEPENDS DEPENDS_TARGET
 						"USE_LIBLTDL.");
 				}
 
+				# check JAVALIBDIR
+				if ($m{'dep'} =~ m|share/java/classes|) {
+					&perror("FATAL: $file: you should use \${JAVALIBDIR} ".
+						"in BUILD_DEPENDS/RUN_DEPENDS to define ".
+						"dependencies on JAR files installed in ".
+						"\${JAVAJARDIR}");
+				}
+
 				# check backslash in LIB_DEPENDS
 				if ($osname eq 'NetBSD' && $j eq 'LIB_DEPENDS'
 				 && $m{'dep'} =~ /\\\\./) {
@@ -2248,6 +2352,12 @@ FETCH_DEPENDS DEPENDS DEPENDS_TARGET
 	if ($tmp =~ /^pre-patch:/m && $use_gnome_hack) {
 		&perror("FATAL: $file: pre-patch target overwrites gnomehack component. ".
 			"use post-patch instead.");
+	}
+
+	if ($tmp =~ /^do-build:/m && $use_ant) {
+		&perror("FATAL: $file: USE_ANT is intended only for ports that ".
+			"build with Ant.  You should not override ``do-build'' when ".
+			"defining USE_ANT");
 	}
 
 	# check OPTIONS
