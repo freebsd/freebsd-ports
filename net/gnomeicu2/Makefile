@@ -1,32 +1,24 @@
-# New ports collection makefile for:	gtkicq
-# Version required:		0.56
-# Date created:			Oct 15 1998
-# Whom:				Vanilla Pooh Shu <vanilla@FreeBSD.ORG>
+# Ports collection Makefile for:	GnomeICU
+# Version required:			0.62a
+# Date created:				03/16/1999
+# Whom:					nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.5 1999/01/12 16:50:45 vanilla Exp $
+# $Id: Makefile,v 1.1.1.1 1999/03/16 08:59:57 nectar Exp $
 #
 
-DISTNAME=	gtkicq-0.56
-CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.bse.bg/pub/Unix/icq/ \
-		ftp://ftp.infodrom.north.de/pub/unix/gtk-etc/apps/gtkicq/ \
-		ftp://ftp.rnd.runnet.ru/pub/unix/GUI_Toolkits/gtk/
+DISTNAME=		gnomeicu-0.62a
+CATEGORIES=		net gnome
+MASTER_SITES=		ftp://gnomeicu.gdev.net/pub/gnomeicu/          \
+			http://www.nectar.com/distfiles/
 
-MAINTAINER=	nacai@iname.com
+LIB_DEPENDS=		gnome.1:${PORTSDIR}/x11/gnomelibs              \
+			gdk_imlib.3:${PORTSDIR}/graphics/imlib
 
-LIB_DEPENDS=	gnome.1:${PORTSDIR}/x11/gnomelibs \
-		panel_applet.0:${PORTSDIR}/x11/gnomecore
+MAINTAINER=		nectar@FreeBSD.ORG
 
-BROKEN=		"gtkicq 0.58 is out"
-
-USE_X_PREFIX=	yes
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
-		--datadir=${PREFIX}/share/gnome \
-		--with-gnome=${X11BASE}
-CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include \
-		-I${X11BASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lxpg4"
+USE_X_PREFIX=		YES
+GNU_CONFIGURE=		YES
+CONFIGURE_ENV=		GTK_CONFIG="${X11BASE}/bin/gtk12-config"
+CONFIGURE_ARGS=		--datadir=${PREFIX}/share/gnome
 
 .include <bsd.port.mk>

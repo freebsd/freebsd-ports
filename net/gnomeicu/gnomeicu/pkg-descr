@@ -1,10 +1,8 @@
-	GtkICQ is a clone of Mirabilis' popular ICQ written with GTK.
-The original source was taken from Matt Smith's mICQ.  This is ment as
-a replacement for the JavaICQ, which is slow and buggy.  If you would
-like to contribute, please contact Jeremy Wise ( jwise@pathwaynet.com ).
-You may also want to visit The ICQ Protocol Site at:
-[ http://www.student.nada.kth.se/~d95-mih/icq/ ] for information about
-the ICQ protocol and mailing list.
+ GnomeICU (previously GtkICQ) is an Internet based communications
+ program which makes use of ICQ protocol. GnomeICU also makes use of
+ Gnome, a growingly popular desktop environment.GnomeICU is released
+ under the GNU Public License, and is available free of charge.
 
-- Vanilla
-vanilla@FreeBSD.ORG
+See also http://gnomeicu.gdev.net/
+
+Jacques Vidrine <nectar@FreeBSD.ORG>
