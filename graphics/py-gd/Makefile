@@ -24,22 +24,11 @@ EXAMPLE_DIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 USE_XPM=	yes
 .endif
 
-.include <bsd.port.pre.mk>
-
 post-patch:
-.if ${OSVERSION} < 500036
 	${PERL} -pi -e 's,^(gd.*)$$,\1 -I${LOCALBASE}/include/gd -L${LOCALBASE}/lib,g; s,-lttf,,g; s,/usr/X11R6,${X11BASE},g;' \
 		${WRKSRC}/Setup
-.else
-	${SED} -i.orig -e 's,^\(gd.*\)$$,\1 -I${LOCALBASE}/include/gd -L${LOCALBASE}/lib,g' \
-		-e 's,-lttf,,g' -e 's,/usr/X11R6,${X11BASE},g' ${WRKSRC}/Setup
-.endif
 .if defined(WITHOUT_X11)
-.if ${OSVERSION} < 500036
 	${PERL} -pi -e 's,-lX11 -lXpm,,g' ${WRKSRC}/Setup
-.else
-	${SED} -i "" -e 's,-lX11 -lXpm,,g' ${WRKSRC}/Setup
-.endif
 .endif
 
 pre-build:
@@ -51,4 +40,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/gddemo.py ${EXAMPLE_DIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
