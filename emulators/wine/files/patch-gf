@@ -8,4 +8,3 @@
  #include "winsock.h"
 
  /* proper 4-byte packing */
-

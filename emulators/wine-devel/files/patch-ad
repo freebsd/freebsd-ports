@@ -1,27 +1,12 @@
-*** wine.ini.orig	Sun Oct 31 03:23:49 1999
---- wine.ini	Sat Nov 13 13:36:18 1999
-***************
-*** 107,117 ****
-  
-  [serialports]
-! Com1=/dev/ttyS0
-! Com2=/dev/ttyS1
-  Com3=/dev/modem,38400
-  Com4=/dev/modem
-  
-  [parallelports]
-! Lpt1=/dev/lp0
-  
-  [spooler]
---- 107,117 ----
-  
-  [serialports]
-! Com1=/dev/ttyd0
-! Com2=/dev/ttyd1
-  Com3=/dev/modem,38400
-  Com4=/dev/modem
-  
-  [parallelports]
-! Lpt1=/dev/lpt0
-  
-  [spooler]
+--- documentation/samples/config	Thu Jan 11 01:57:36 2001
++++ documentation/samples/config	Sat Jan 13 15:29:39 2001
+@@ -146,7 +146,7 @@ WINE REGISTRY Version 2
+ 
+ [serialports]
+-"Com1" = "/dev/ttyS0"
+-"Com2" = "/dev/ttyS1"
+-"Com3" = "/dev/ttyS2"
++"Com1" = "/dev/ttyd0"
++"Com2" = "/dev/ttyd1"
++"Com3" = "/dev/ttyd2"
+ "Com4" = "/dev/modem"

@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	wine
-PORTVERSION=	2000.12.02
+PORTVERSION=	2001.01.12
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	ALPHA/wine/development
@@ -25,7 +25,7 @@ MAN1=		wine.1 winemaker.1 wmc.1 wrc.1
 MAN5=		wine.conf.5
 ONLY_FOR_ARCHS=	i386
 USE_XPM=	yes
-USE_MESA=	yes
+#USE_MESA=	yes
 USE_GMAKE=	yes
 
 .if !defined(NDEBUG)
@@ -45,7 +45,7 @@ pre-extract:
 .endif
 
 post-patch:
-.for D in ./ ../library ../unicode advapi32 avifil32 comctl32 commdlg crtdll dciman32 ddraw dinput dplay dplayx dsound gdi icmp imagehlp imm32 kernel lzexpand mpr msacm msnet32 msvideo odbc32 ole32 oleaut32 olecli oledlg olepro32 olesvr opengl32 psapi rasapi32 richedit rpcrt4 serialui setupapi shell32 shfolder shlwapi tapi32 ttydrv urlmon user version win32s winaspi wineps wininet winmm winmm/joystick winmm/mcianim winmm/mciavi winmm/mcicda winmm/mciseq winmm/mciwave winmm/midimap winmm/wavemap winmm/wineoss winsock winspool wow32 wsock32 x11drv
+.for D in ./ ../library ../tsx11 ../unicode advapi32 avifil32 comctl32 commdlg crtdll dciman32 ddraw dinput dplay dplayx dsound gdi icmp imagehlp imm32 kernel lzexpand mpr msacm msnet32 msvideo odbc32 ole32 oleaut32 olecli oledlg olepro32 olesvr opengl32 psapi rasapi32 richedit rpcrt4 serialui setupapi shell32 shfolder shlwapi tapi32 ttydrv urlmon user version win32s winaspi wineps wininet winmm winmm/joystick winmm/mcianim winmm/mciavi winmm/mcicda winmm/mciseq winmm/mciwave winmm/midimap winmm/wavemap winmm/wineoss winsock winspool wow32 wsock32 x11drv
 	@${PERL} -pi.sofix -e 's/SOVERSION = 1.0/SOVERSION = 1/g' \
 		${WRKSRC}/dlls/${D}/Makefile.in
 .endfor
@@ -60,9 +60,9 @@ post-build:
 do-install:
 	cd ${WRKSRC} && ${GMAKE} install
 	${INSTALL_SCRIPT} ${WRKDIR}/regSet.sh ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/wine.ini ${PREFIX}/etc/wine.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/documentation/samples/config ${PREFIX}/etc/wine.conf.sample
 	[ -f ${PREFIX}/etc/wine.conf ] \
-		|| ${INSTALL_DATA} ${WRKSRC}/wine.ini ${PREFIX}/etc/wine.conf
+		|| ${INSTALL_DATA} ${PREFIX}/etc/wine.conf.sample ${PREFIX}/etc/wine.conf
 	${INSTALL_DATA} ${WRKSRC}/documentation/wine.man ${PREFIX}/man/man1/wine.1
 	${INSTALL_DATA} ${WRKSRC}/documentation/wine.conf.man ${PREFIX}/man/man5/wine.conf.5
 .if !defined(NOPORTDOCS)
