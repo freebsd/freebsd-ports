@@ -15,6 +15,8 @@ MAINTAINER=	chuynh@biolateral.com.au
 
 MAN1=		tRNAscan-SE.1
 
+USE_PERL5=	yes
+
 #
 # have to install before testing as path to data files is hardcoded
 #
