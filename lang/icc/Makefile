@@ -7,7 +7,7 @@
 
 PORTNAME=	icc
 PORTVERSION=	8.1.026
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang linux devel
 MASTER_SITES=
 DISTNAME=	l_cc_pc_${PORTVERSION:C/p.+$//}
@@ -60,9 +60,15 @@ EXTRACT_AFTER_ARGS=	| tar -xf - \
 ICCCFGVAL!=	${UNAME} -r | ${SED} -e 's/\..*//'
 
 .if ( ${OSVERSION} < 502108 )
-PLIST_SUB+=	MACHINE__TYPES_H="@comment " STDARG_H="" SYS_CDEFS_H=""
+PLIST_SUB+=	MACHINE__TYPES_H="@comment " STDARG_H="" SYS_CDEFS_H="" \
+		STDBOOL_H=""
 .else
 PLIST_SUB+=	STDARG_H="@comment " SYS_CDEFS_H="@comment "
+.if ( ${OSVERSION} < 600013 )
+PLIST_SUB+=	MACHINE__TYPES_H="" STDBOOL_H=""
+.else
+PLIST_SUB+=	MACHINE__TYPES_H="@comment " STDBOOL_H="@comment "
+.endif
 .if ${OSVERSION} < 502126
 GCCCOMPATVER=	330
 .endif
@@ -70,7 +76,6 @@ GCCCOMPATVER=	330
 GCCCOMPATVER=	340
 .endif
 GXXINCLUDE=	/usr/include/c++/${GCCCOMPATVER:C/([0-9])([0-9]).+/\1.\2/}
-PLIST_SUB+=	MACHINE__TYPES_H=""
 .endif
 
 .for file in ${DISTFILES}
@@ -165,15 +170,18 @@ post-patch:
 	@${CP} ${FILESDIR}/stdarg.h ${WRKSRC}/opt/${COMPILERDIR}/include
 	@${MKDIR} ${WRKSRC}/opt/${COMPILERDIR}/include/sys
 	@${CP} ${FILESDIR}/cdefs.h ${WRKSRC}/opt/${COMPILERDIR}/include/sys
-.else
+.endif
+.if ( ${OSVERSION} >= 502108 && ${OSVERSION} < 600013 )
 # Work around bug for ICC support in src/sys/i386/include/_types.h.
 	@${MKDIR} ${WRKSRC}/opt/${COMPILERDIR}/include/machine
 	@${CP} ${FILESDIR}/_types.h ${WRKSRC}/opt/${COMPILERDIR}/include/machine
 .endif
+.if ( ${OSVERSION} < 600013 )
 # Work around a bug in stdbool.h
 	@${SED} -e 's:__STDC_VERSION__ < 199901L.*:__STDC_VERSION__ < 199901L \&\& defined(__GNUC__) \&\& __GNUC__ < 3 \&\& !defined(__INTEL_COMPILER):g' \
 		</usr/include/stdbool.h \
 		>${WRKSRC}/opt/${COMPILERDIR}/include/stdbool.h
+.endif
 
 .if ( ${OSVERSION} >= 470101 && ${OSVERSION} < 500000 ) || \
 	( ${OSVERSION} >= 500042 )
