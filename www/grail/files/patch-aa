@@ -1,0 +1,11 @@
+--- ancillary/MailDialog.py-	Wed Jun 17 11:40:55 1998
++++ ancillary/MailDialog.py	Wed Jun 17 11:41:12 1998
+@@ -50,7 +50,7 @@
+ X-URL: %(url)s
+ """
+ else:
+-    SENDMAIL = "/usr/lib/sendmail -t" # XXX
++    SENDMAIL = "/usr/sbin/sendmail -t" # XXX
+     TEMPLATE ="""\
+ To: %(to)s
+ Subject: %(subject)s
