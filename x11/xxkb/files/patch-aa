@@ -1,11 +1,10 @@
---- Imakefile.orig	Wed Oct 25 06:39:57 2000
-+++ Imakefile	Mon Mar  5 12:38:05 2001
-@@ -12,10 +12,8 @@
- 	  su48.xpm su15.xpm ua48.xpm ua15.xpm by15.xpm by48.xpm
+--- Imakefile.orig	Sat Mar 31 15:30:22 2001
++++ Imakefile	Sat Mar 31 15:30:55 2001
+@@ -13,9 +13,7 @@
  
  DEFINES = -DAPPDEFDIR=\"$(DESTDIR)$(XAPPLOADDIR)\" \
  	-DPIXMAPDIR=\"$(DESTDIR)$(PIXMAPDIR)\"
--CDEBUGFLAGS = -g -O2
+-CDEBUGFLAGS = -O2
 +CFLAGS ?= -Wall -O2
  
 -ComplexProgramTarget(xxkb)

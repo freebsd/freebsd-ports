@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	xxkb
-PORTVERSION=	1.5.1
-CATEGORIES=	russian x11
-MASTER_SITES=	http://www.tsu.ru/~pascal/other/xxkb/ \
-		http://www.cis.ohio-state.edu/~matey/distfiles/
+PORTVERSION=	1.6
+CATEGORIES=	russian ukrainian
+MASTER_SITES=	http://www.tsu.ru/~pascal/other/xxkb/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	matey@cis.ohio-state.edu
