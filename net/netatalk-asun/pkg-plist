@@ -1,0 +1,79 @@
+bin/aecho
+bin/getzones
+bin/hqx2bin
+bin/macbinary
+bin/megatron
+bin/nbplkup
+bin/nbprgstr
+bin/nbpunrgstr
+bin/pap
+bin/papstatus
+bin/psorder
+bin/single2bin
+bin/unbin
+bin/unhex
+bin/unsingle
+etc/AppleVolumes.default.dist
+etc/AppleVolumes.system.dist
+etc/afpd.conf.dist
+etc/rc.d/netatalk.sh
+include/atalk/adouble.h
+include/atalk/aep.h
+include/atalk/afp.h
+include/atalk/asp.h
+include/atalk/atp.h
+include/atalk/compat.h
+include/atalk/ddp.h
+include/atalk/dsi.h
+include/atalk/nbp.h
+include/atalk/pap.h
+include/atalk/paths.h
+include/atalk/rtmp.h
+include/atalk/server_child.h
+include/atalk/util.h
+include/atalk/zip.h
+@dirrm include/atalk
+lib/libatalk.a
+lib/libatalk_p.a
+libexec/afpd
+libexec/atalkd
+libexec/etc2ps
+libexec/papd
+libexec/psa
+libexec/psf
+libexec/filters/ifmpap
+libexec/filters/ifmpaprev
+libexec/filters/ifpap
+libexec/filters/ifpaprev
+libexec/filters/ifwmpap
+libexec/filters/ifwmpaprev
+libexec/filters/ifwpap
+libexec/filters/ifwpaprev
+libexec/filters/ofmpap
+libexec/filters/ofpap
+libexec/filters/ofwmpap
+libexec/filters/ofwpap
+libexec/filters/tfmpap
+libexec/filters/tfmpaprev
+libexec/filters/tfpap
+libexec/filters/tfpaprev
+libexec/filters/tfwmpap
+libexec/filters/tfwmpaprev
+libexec/filters/tfwpap
+libexec/filters/tfwpaprev
+@dirrm libexec/filters
+share/examples/netatalk/atalkd.conf
+share/examples/netatalk/papd.conf
+@dirrm share/examples/netatalk
+share/pagecount.ps
+@comment	Remove man page aliases
+@unexec rm -f %D/man/man1/hqx2bin.1*
+@unexec rm -f %D/man/man1/macbinary.1*
+@unexec rm -f %D/man/man1/single2bin.1*
+@unexec rm -f %D/man/man1/unbin.1*
+@unexec rm -f %D/man/man1/unhex.1*
+@unexec rm -f %D/man/man1/unsingle.1*
+@unexec rm -f %D/man/man1/nbplkup.1*
+@unexec rm -f %D/man/man1/nbprgstr.1*
+@unexec rm -f %D/man/man1/nbpunrgstr.1*
+@unexec rm -f %D/man/man1/papstatus.1*

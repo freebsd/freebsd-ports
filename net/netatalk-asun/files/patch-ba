@@ -1,0 +1,474 @@
+--- man/man8/afpd.8.orig	Tue May 20 19:35:43 1997
++++ man/man8/afpd.8	Tue Nov 24 03:49:13 1998
+@@ -1,108 +1,59 @@
+-.TH AFPD 8 "25 Jan 1994" "netatalk 1.3"
++.TH AFPD 8 "07 Sep 1998" "netatalk 1.4b2/asun 2.1.0"
++
+ .SH NAME
+ afpd \- AppleTalk Filing Protocol daemon
++
+ .SH SYNOPSIS
+-.B :SBINDIR:/afpd
+-[
+-.B -d
+-]
+-[
+-.B -f
+-.I defaultvolumes
+-]
+-[
+-.B -s
+-.I systemvolumes
+-]
+-[
+-.B -u
+-]
+-[
+-.B -n
+-.I nbpname
+-]
+-[
+-.B -c
+-.I maxconnections
+-]
+-[
+-.B -g
+-.I guest
+-]
+-[
+-.B -G
+-]
+-[
+-.B -K
+-]
+-[
+-.B -C
+-]
+-[
+-.B -A
+-]
++\fB:SBINDIR:/afpd\fR [\fIoptions\fR]
++
+ .SH DESCRIPTION
+ .B afpd
+ provides an AppleTalk Filing Protocol (AFP)
+ interface to the Unix file system.  It is normally started at boot time
+ from
+-.BR /etc/rc .
+-The list of volumes offered to the user is generated from
+-.B :ETCDIR:/AppleVolumes.system
+-and one of
+-.BR :ETCDIR:/AppleVolumes.default ,
+-.BR $HOME/AppleVolumes ,
+-or
+-.BR $HOME/.AppleVolumes .
++.BR :ETCDIR:/rc.d/netatalk.sh .
++Configuration information is read from the configuration file 
++.BR :ETCDIR:/afpd.conf ,
++and the command line.
+ .LP
+-The
+-.B AppleVolumes
+-files is used to specify volumes to mount and file name extension mappings.
+-It is formatted as follows, one specification per line:
+-.RS
+-.sp
+-.I pathname
+-[
+-.I volumename
+-]
+-.br
+-.RI . extension
+-[
+-.I type
+-[
+-.I creator
+-]
+-]
+-.sp
+-.RE
+-If
+-.I volumename
+-is unspecified, the last component of
+-.I pathname
+-is used.  No two volumes may have the same name.  If
+-.I type
+-is unspecified
+-.RB ' ???? '
+-is used.  If
+-.I creator
+-is unspecified
+-.RB ' UNIX '
+-is used.  The extension
+-.RB ' . '
+-sets the default creator and type for otherwise untyped Unix files.
+-Blank lines and lines beginning with `#' are ignored.
++.B afpd
++supports some of AFP 2.2's features, in particular access via AFP-over-TCP,
++support for volumes larger than 2\ GB, a login greeting message, ProDOS
++support, and Two-Way Random Number Exchange for Authentication. Access via
++TCP can be protected via TCP Wrappers.
++.B afpd
++can be configured to provide multiple, seperately configured virtual
++servers.
++
+ .SH OPTIONS
+ .TP
+ .B \-d
+ Specifies that the daemon not fork, and that a trace of all AFP
+ commands be written to stdout.
+ .TP
++.BI \-c " maxconnections"
++Specifies the maximum number of connections to allow for this
++.BR afpd .
++The default is 5.
++.TP
+ .BI \-f " defaultvolumes"
+ Specifies that
+ .I defaultvolumes
+ should be read for a list of default volumes to offer, instead of
+ .BR :ETCDIR:/AppleVolumes.default .
+ .TP
++.BI \-g " guest"
++Specifies the name of the guest account.  The default is ``nobody''.
++.TP
++.BI \-n " nbpname"
++Specifies that
++.I nbpname
++should be used for NBP registration, instead of the first component of
++the hostname in the local zone.
++.TP
++.B \-p
++Don't allow the client to save the password locally.
++.TP
+ .BI \-s " systemvolumes"
+ Specifies that
+ .I systemvolumes
+@@ -110,6 +61,9 @@
+ instead of
+ .BR :ETCDIR:/AppleVolumes.system .
+ .TP
++.B \-t
++Allow the user to change her or his password.
++.TP
+ .B \-u
+ Read the user's
+ .B AppleVolumes
+@@ -123,19 +77,24 @@
+ filename extension mappings: the user's AppleVolumes file always has
+ precedence.
+ .TP
+-.BI \-n " nbpname"
+-Specifies that
+-.I nbpname
+-should be used for NBP registration, instead of the first component of
+-the hostname in the local zone.
++.B \-D
++Don't offer connections via DDP (AppleTalk).
+ .TP
+-.BI \-c " maxconnections"
+-Specifies the maximum number of connections to allow for this
+-.BR afpd .
+-The default is 5.
++\fB\-F\fR "\fIfile\fR"
++Read the configuration file from \fIfile\fR instead of the default
++\fB:ETCDIR:/afpd.conf\fR.
+ .TP
+-.BI \-g " guest"
+-Specifies the name of the guest account.  The default is ``nobody''.
++\fB\-L\fR "\fItext\fR"
++After authentication, send \fItext\fR to client.
++.TP
++\fB\-P\fR "\fIfile\fR"
++Record \fBafpd\fR's PID in \fIfile\fR.
++.TP
++\fB\-S\fR \fITCP port\fR
++Listen on port number \fITCP port\fR instead of the default 548.
++.TP
++.B \-T
++Don't offer connections via AFP-over-TCP.
+ .TP
+ .B \-G
+ .TP
+@@ -144,50 +103,191 @@
+ .B \-C
+ .TP
+ .B \-A
+-Causes the server to not offer
++Causes the server to \fBnot\fR offer
+ .BR NoUserAuthent ,
+ .BR "Kerberos IV" ,
+ .BR "Cleartxt Passwrd" ,
+ and
+ .B AFS Kerberos
+ logins, respectively.  The default is to enable all available login methods.
++
++.SH SERVER CONFIGURATION FILE
++.B afpd
++reads the configuration file 
++.BR :ETCDIR:/afpd.conf .
++Any option specified here will override any compiled-in default and any
++option specified on the command line.
++.LP
++Each line in this file specifies a virtual server to be made available.
++Empty lines and lines beginning with ``#'' are ignored. Each line is formatted
++as follows:
++.RS
++.sp
++"\fIserver name\fR"
++[\fIoptions\fR]
++.sp
++.RE
++A
++.I server name
++of ``\fB-\fR'' specifies the default server. Paramters with white space must
++be enclosed in quotes.
++.LP
++The following options are available:
++.TP
++\fB\-\fR[\fBno\fR]\fBddp\fR
++Do offer (do not offer) connections to be made to this server via AppleTalk
++(ASP over DDP).
++.TP
++\fB\-\fR[\fBno\fR]\fBtcp\fR
++Do offer (do not offer) connections to be made to this server via AFP-over-TCP,
++subject to TCP Wrapper restrictions.
++.TP
++.B \-transall
++Offer both connections via DDP and TCP (default).
++.TP
++\fB\-\fR[\fBno\fR]\fBguest\fR
++Allow (do not allow) guest logins (using the \fBNoUserAuthent\fR method).
++.TP
++\fB\-\fR[\fBno\fR]\fBcleartxt\fR
++Allow (do not allow) logins with the password transmitted as clear text
++(using the \fBCleartxt\fR method).
++.TP
++\fB\-\fR[\fBno\fR]\fBrandnum\fR
++Allow (do not allow) logins using Random Number Exchange for authentication
++(using the \fBRandNum\fR method).
++.TP
++\fB\-\fR[\fBno\fR]\fBrand2num\fR
++Allow (do not allow) logins using Two-Way Random Number Exchange for
++authentication (using the \fBTwoWayRandNum\fR method).
++.TP
++\fB\-\fR[\fBno\fR]\fBafskrb\fR
++Allow (do not allow) logins using AFS Kerberos. Whether this option is
++available depends on both the server and the client (using the \fBAFS
++Kerberos\fR method).
++.TP
++\fB\-\fR[\fBno\fR]\fBkrbiv\fR
++Allow (do not allow) logins using Kerberos IV. Whether this option is
++available depends on both the server and the client (using the 
++\fBKerberos\ IV\fR method).
++.TP
++\fB\-\fR[\fBno\fR]\fBsetpassword\fR
++Allow (do not allow) the user to change her or his password.
++.TP
++\fB\-\fR[\fBno\fR]\fBsavepassword\fR
++Allow (do not allow) the client to save the password locally.
++.TP
++\fB\-authall\fR
++Allow all available authentication methods.
++.TP
++\fB\-defaultvol\fR \fIfile\fR
++Specifies an alternate location of the default volume specification file
++instead of the default \fB:ETCDIR:/AppleVolumes.default\fR.
++.TP
++\fB\-systemvol\fR \fIfile\fR
++Specifies an alternate location of the system volume specification file
++instead of the default \fB:ETCDIR:/AppleVolumes.system\fR.
++.TP
++\fB\-\fR[\fBno\fR]\fBuservolfirst\fR
++Read the user's volume specification file before (after) the default and
++system files, allowing the user to override system-wide volume definitions.
++.TP
++\fB\-\fR[\fBno\fR]\fBuservol\fR
++Read (do not read) the user's volume specification file.
++.TP
++\fB\-guestname\fR \fIusername\fR
++User \fIusername\fR as the user id for guest access.
++.TP
++\fB\-address\fR \fIIP address\fR
++Listen on address \fIIP address\fR instead of the system's first IP address.
++.TP
++\fB\-port\fR \fITCP port\fR
++Listen on port \fITCP port\fR instead of the default port 548.
++.TP
++\fB\-loginmesg\fR \fItext\fR
++After authenticating a client, send \fItext\fR to the client. \fItext\fR can
++be up to 253 characters long and must be in Macintosh character encoding.
++.TP
++\fB\-\fR[\fBno\fR]\fBdebug\fR
++Turn on (turn off) output of debugging messages.
++
++.SH VOLUME SPECIFICATION
++The
++.B AppleVolumes
++files are used to specify parts of the file system to be made available to
++clients (``volumes'') and file name extension mappings. Empty lines and
++lines beginning with ``#'' are ignored. Each line either contains a volume
++definition or an extention mapping, providing Mac\ OS type and creator
++information for files that do not yet have this information.
++.LP
++The list of volumes offered to the user is generated from
++.B :ETCDIR:/AppleVolumes.system
++and one of
++.BR :ETCDIR:/AppleVolumes.default ,
++.BR $HOME/AppleVolumes ,
++or
++.BR $HOME/.AppleVolumes ,
++subject to the configuration file and command line options.
++.LP
++Volume definitons are formatted as follows:
++.RS
++.sp
++.I pathname
++[\fIvolumename\fR]
++.sp
++.RE
++If \fIvolumename\fR is unspecified, the last component of
++\fIpathname\fR is used.  No two volumes may have the same name.  
++.LP
++An extension mapping is formatted as follows:
++.RS
++.sp 
++.I .extension
++[\fItype\fR [\fIcreator\fR] ]
++.sp
++.RE
++If \fItype\fR is unspecified, ``\fB????\fR'' is used.  If \fIcreator\fR is
++unspecified, ``\fBUNIX\fR'' is used.  The extension ``\fB.\fR''
++sets the default creator and type for otherwise untyped Unix files.
++
+ .SH AUTHENTICATION
+ .B afpd
+-currently understands three User Authentication Methods (UAMs):
+-.BR NoUserAuthent ,
+-or guest,
+-.B Cleartxt
+-.BR passwrd ,
+-and
+-.B Kerberos
+-.BR IV .
+-If a user uses
+-.BR NoUserAuthent ,
+-s/he will only be offered default volumes to mount, and will only be able
+-to read and write files that are permitted to the guest user.  The
+-.B -G
+-option disables
+-.BR NoUserAuthent .
+-With
+-.B Cleartxt passwd
+-and
+-.B Kerberos
+-.BR IV ,
++provides a number of User Authentication Methods (UAMs). The
++\fBNoUserAuthent\fR (or guest) and the \fBCleartxt\fR methods are always
++available (subject to the configuration file and command line options).
++.LP
++The \fBRandNum\fR and \fBTwoWayRandNum\fR methods are available to a
++particular user if she or he has a file ``\fB.passwd\fR'' in the home
++directory, and that file is readable only by the user herself. When
++authenticating using one of these methods, the user also can change her or
++his password (subject to the configuration file and command line options).
++.LP
++The \fBKerberos IV\fR method depends on both the server and the client
++having installed appropriate Kerberos IV software.
++.LP
++The \fBAFP Kerberos\fR method is deprecated.
++
++.SH FILE STORAGE
+ .B afpd
+-offers the user all volumes listed in
+-.BR $HOME/AppleVolumes .
+-The user may also read and write all files that s/he normally could.
+-.B Cleartxt passwd
+-is not recommended for AFS use.
+-.B Kerberos IV
+-is recommended for AFS use.
+-A forth, depricated UAM is also included in the distribution,
+-.B AFS
+-.BR Kerberos .
++stores files in the \fBAppleDouble\fR file format, which stores the data for
++a Mac\ OS file in a regular file, and the Finder information and resource
++fork in a file with the same name in a subdirectory named
++``\fB.AppleDouble\fR.''
++.LP
++For files that do not yet have Mac OS Finder information, \fBafpd\fR
++automatically creates this information based on the extension mapping table,
++and subject to access permissions on the respective directory. No
++translation is done for files stored from a client.
++.LP
++Files created from a client whose name contains ASCII control characters or
++characters with the eighth bit set are converted, where each such character
++is replaced by the sequence ``:XX'', with ``XX'' being the hexadecimal code
++for the character. File names starting with a ``.'' or longer than 31
++characters are ignored.
++
+ .SH CAVEATS
+ .BR afpd 's
+ Directory IDs are only fixed for the duration of a session.  This means
+-that Mac aliases won't work correctly in all cases.
++that Mac\ OS aliases won't work correctly in all cases.
+ .LP
+ If a user renames a folder that has an application as its progeny, the
+ .B APPL
+@@ -195,16 +295,16 @@
+ that double-clicking on one of the application's documents will no
+ longer launch the application. The
+ .B APPL
+-mapping will be rebuilt by the mac, the next time the Finder see the
+-application.
++mapping will be rebuilt by the Mac OS Finder the next time the Finder see
++the application.
+ .LP
+ If
+ .B afpd
+-is configured to downcase Macintosh filenames, Unix filenames with
++is configured to downcase client filenames, Unix filenames with
+ mixed case will be unavailable.
+ .LP
+ If carriage return/line feed translation is enabled, it is not
+-safe to copy Unix binaries to a Macintosh.
++safe to copy Unix binaries via \fBafpd\fR.
+ .LP
+ It is not possible to move directories between devices.
+ .LP
+@@ -221,7 +321,7 @@
+ so that his home directory is no longer offered, he will no longer be able
+ to edit his
+ .B $HOME/AppleVolumes
+-from the Macintosh.
++from the client.
+ .LP
+ Unix files beginning with `.' are not accessible from the mac.
+ .LP
+@@ -252,8 +352,11 @@
+ synchronization locks use the
+ .BR flock (2)
+ interface.  This interface is not usually ``NFS-aware''.
++
+ .SH FILES
+ .TP 20
++.B :ETCDIR:/afpd.conf
++general options
+ .B :ETCDIR:/AppleVolumes.default
+ list of default volumes to mount
+ .TP 20
+@@ -262,6 +365,14 @@
+ .TP 20
+ .B $HOME/AppleVolumes
+ user's list of volumes to mount
++
++.SH AUTHORS
++\fBafpd\fR is part of the \fBnetatalk\fR suite, originally developed at the
++Research Systems Unix Group at the University of Michigan, by Wesley Craig
++<netatalk@umich.edu>, and a number of contributors. This version of
++\fBnetatalk\fR has been substantially extended by Adrian Sun
++<asun@zoology.washington.edu>.
++
+ .SH BUGS
+ Many calls from the AFP specification are not implemented, because the
+-Macintosh does not use them.
++MacOS does not use them.

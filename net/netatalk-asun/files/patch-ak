@@ -1,0 +1,20 @@
+--- etc/psf/Makefile.orig	Thu Apr 18 23:53:09 1996
++++ etc/psf/Makefile	Sat Oct 10 01:33:08 1998
+@@ -32,14 +32,14 @@
+ 
+ install : all
+ 	-mkdir ${RESDIR}
+-	-mkdir ${RESDIR}/filters
++	-mkdir ${SBINDIR}/filters
+ 	${INSTALL} -c psa ${SBINDIR}
+ 	${INSTALL} -c etc2ps.sh ${SBINDIR}/etc2ps
+ 	${INSTALL} -c pagecount.ps ${RESDIR}
+ 	${INSTALL} -c psf ${SBINDIR}
+ 	for i in ${LINKS} ; do \
+-	    rm -f ${RESDIR}/filters/$$i; \
+-	    ln -s ${SBINDIR}/psf ${RESDIR}/filters/$$i; \
++	    rm -f ${SBINDIR}/filters/$$i; \
++	    ln -s ${SBINDIR}/psf ${SBINDIR}/filters/$$i; \
+ 	done
+ 
+ clean :

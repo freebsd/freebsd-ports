@@ -1,0 +1,8 @@
+--- include/Makefile.orig	Tue May 20 19:35:42 1997
++++ include/Makefile	Tue Nov 24 00:27:05 1998
+@@ -1,4 +1,4 @@
+-TARGETS=	atalk netatalk
++TARGETS=	atalk
+ 
+ INSTALL=	install
+ 
