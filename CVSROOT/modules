@@ -1654,6 +1654,7 @@ fingerd		src/libexec/fingerd
 firebird	ports/databases/firebird
 firebird-devel	ports/databases/firebird-devel
 firedns		ports/net/firedns
+firestring	ports/misc/firestring
 firetalk	ports/net/firetalk
 firewalk	ports/security/firewalk
 fish		src/games/fish
