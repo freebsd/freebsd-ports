@@ -1,0 +1,10 @@
+--- src/server/Makefile.orig	Sun Oct 27 16:12:09 2002
++++ src/server/Makefile	Sun Oct 27 16:12:18 2002
+@@ -34,7 +34,6 @@
+ all: ../../bin/smsd ../../bin/snppd
+ 
+ install: ../../bin/smsd ../../bin/snppd
+-	$(INSTALL) -o $(SMSUSER) -g $(SMSGROUP) -m 755 -d $(BINDIR)
+ 	$(INSTALL) -o $(SMSUSER) -g $(SMSGROUP) -m 755 -s ../../bin/smsd $(BINDIR)
+ 	$(INSTALL) -o $(SMSUSER) -g $(SMSGROUP) -m 755 -s ../../bin/snppd $(BINDIR)
+ 

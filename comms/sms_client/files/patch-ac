@@ -1,0 +1,10 @@
+--- ./src/queue/Makefile.orig	Sun Oct 27 16:16:10 2002
++++ ./src/queue/Makefile	Sun Oct 27 16:16:16 2002
+@@ -35,7 +35,6 @@
+ all: ../../bin/sms_queue
+ 
+ install: ../../bin/sms_queue 
+-	$(INSTALL) -m 755 -d $(BINDIR)
+ 	$(INSTALL) -s -o $(SMSUSER) -g $(SMSGROUP) -m 755 ../../bin/sms_queue $(BINDIR)
+ 
+ uninstall:
