@@ -83,7 +83,7 @@
          return 1;               /* root can do it always */
  #endif
 -    sprintf(fname, "/dev/tty%d", vc);
-+    sprintf(fname, "/dev/ttyv%x", vc);
++    sprintf(fname, "/dev/ttyv%x", vc - 1);
      if ((stat(fname, &sbuf) >= 0) && (getuid() == sbuf.st_uid)) {
          return 1;
      }
