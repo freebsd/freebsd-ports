@@ -3,7 +3,7 @@
 # Date created:		26 August 1997
 # Whom:			Michael Elbel (me)
 #
-# $Id: Makefile,v 1.2 1997/11/08 22:15:37 gj Exp $
+# $Id: Makefile,v 1.3 1997/11/12 21:41:33 gj Exp $
 #
 
 DISTNAME=	xemacs-20.2
@@ -29,8 +29,8 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	i386--freebsd --prefix=${PREFIX} \
 		--statedir=/var/run \
 		--with-sound=native \
-		--site-includes=/usr/local/include \
-		--site-libraries=/usr/local/lib \
+		--site-includes=${PREFIX}/include \
+		--site-libraries=${PREFIX}/lib \
 		--sitelispdir="${PREFIX}/lib/xemacs/site-lisp ${PREFIX}/share/emacs/site-lisp" \
 		${WITH_MULE} ${WITH_DIALOGS}
 MAN1=		ctags.1 etags.1 gnuattach.1 gnuclient.1 gnudoit.1 \
