@@ -8,15 +8,13 @@
 
 PORTNAME=	sniffit
 PORTVERSION=	0.3.7b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net security
-MASTER_SITES=	http://reptile.rug.ac.be/~coder/sniffit/files/  \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	obrien
+MASTER_SITES=	http://reptile.rug.ac.be/~coder/sniffit/files/
 DISTNAME=	sniffit.0.3.7.beta
 
 PATCH_SITES=	${MASTER_SITE_DEBIAN_POOL}
-PATCHFILES=	sniffit_0.3.7.beta-6.1.diff.gz
+PATCHFILES=	sniffit_0.3.7.beta-10.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	edwin@mavetju.org
