@@ -1,11 +1,11 @@
 @comment $FreeBSD$
 bin/speexdec
 bin/speexenc
-bin/testenc
-bin/testenc_wb
 include/speex.h
 include/speex_bits.h
+include/speex_callbacks.h
 include/speex_header.h
+include/speex_stereo.h
 lib/libspeex.a
 lib/libspeex.so
 lib/libspeex.so.0
