@@ -37,7 +37,7 @@ TMPFILE=	${WRKSRC}/dungeon.tmp
 #	(cd ${WRKSRC} && unzip ${DISTDIR}/dungn27s.zip > /dev/null)
 
 post-extract:
-	(cd ${WRKSRC} && ls > ${TMPFILE}.1)
+	(cd ${WRKSRC} && ${LS} > ${TMPFILE}.1)
 	(cd ${WRKSRC} && ${AWK} -f ${FILESDIR}/aa.awk < ${TMPFILE}.1 \
 		> ${TMPFILE}.2)
 	(cd ${WRKSRC} && sh ${TMPFILE}.2)

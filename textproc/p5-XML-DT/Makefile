@@ -26,6 +26,6 @@ post-install:
 	@${MKDIR} ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/XML/DT/examples
 	@${MKDIR} ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/XML/DT/examples/XPath
 	@${INSTALL_DATA} ${WRKSRC}/examples/XPath/* ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/XML/DT/examples/XPath
-	@${INSTALL_DATA} `ls -d ${WRKSRC}/examples/* | ${GREP} -v XPath` ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/XML/DT/examples
+	@${INSTALL_DATA} `${LS} -d ${WRKSRC}/examples/* | ${GREP} -v XPath` ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/XML/DT/examples
 
 .include <bsd.port.mk>

@@ -40,7 +40,7 @@ post-patch:
 
 do-install:
 	@${MKDIR} ${PREFIX}/include/ARPACK++
-	@for inc in `ls ${WRKSRC}/include` ; do \
+	@for inc in `${LS} ${WRKSRC}/include` ; do \
 		${INSTALL_DATA} ${WRKSRC}/include/$$inc ${PREFIX}/include/ARPACK++; \
 	done
 .if !defined(NOPORTDOCS)

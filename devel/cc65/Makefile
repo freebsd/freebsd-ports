@@ -34,7 +34,7 @@ WRKSRC=		${WRKDIR}/cc65-${PORTVERSION}
 DEVNULL=	${__empty_string_for_portlint}/dev/null
 
 # These doc files can be compiled using the textproc/sgmltools port
-DOCFILES!=	ls ${WRKSRC}/doc 2> ${DEVNULL} | \
+DOCFILES!=	${LS} ${WRKSRC}/doc 2> ${DEVNULL} | \
 		    ${SED} -E -e 's/^/doc\//' && ${ECHO_CMD} announce.txt
 
 BINFILES= \
@@ -43,14 +43,14 @@ BINFILES= \
 
 BINSCRIPTS= src/ca65html/ca65html
 
-ASMINCFILES!=	ls ${WRKSRC}/asminc 2> ${DEVNULL} | ${EGREP} '\.inc' || true
+ASMINCFILES!=	${LS} ${WRKSRC}/asminc 2> ${DEVNULL} | ${EGREP} '\.inc' || true
 
-CC65LIBFILES!=	ls ${WRKSRC}/libsrc/ 2> ${DEVNULL} | ${EGREP} '\.(o|lib)' \
+CC65LIBFILES!=	${LS} ${WRKSRC}/libsrc/ 2> ${DEVNULL} | ${EGREP} '\.(o|lib)' \
 		    || true
 
-CC65EMDFILES!=	ls ${WRKSRC}/libsrc/ 2> ${DEVNULL} | ${EGREP} '\.emd' || true
+CC65EMDFILES!=	${LS} ${WRKSRC}/libsrc/ 2> ${DEVNULL} | ${EGREP} '\.emd' || true
 
-CC65TGIFILES!=	ls ${WRKSRC}/libsrc/ 2> ${DEVNULL} | ${EGREP} '\.tgi' || true
+CC65TGIFILES!=	${LS} ${WRKSRC}/libsrc/ 2> ${DEVNULL} | ${EGREP} '\.tgi' || true
 
 do-build:
 	cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${GMAKE} -ef make/gcc.mak

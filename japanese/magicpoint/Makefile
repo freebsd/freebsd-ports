@@ -15,7 +15,7 @@ CATEGORIES=	japanese
 MAINTAINER=	mita@jp.FreeBSD.org
 
 # dirty, but this is required for version independent-ness
-CONFIGURE_ARGS=		--with-vfontcap=`ls -1 ${LOCALBASE}/share/VFlib/*/vfontcap | tail -1`
+CONFIGURE_ARGS=		--with-vfontcap=`${LS} -1 ${LOCALBASE}/share/VFlib/*/vfontcap | tail -1`
 CONFIGURE_ARGS+=	--enable-freetype-charset16
 
 .include "${MASTERDIR}/Makefile"

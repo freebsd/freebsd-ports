@@ -28,7 +28,7 @@ MAN1=		entity.1
 post-install:
 	${LDCONFIG} -m ${PREFIX}/lib/entity/clib ${PREFIX}/lib
 	${MKDIR} ${PREFIX}/share/entity
-	cd ${WRKSRC}/apps && \
-		${PAX} -r -w `ls | ${GREP} -v Makefile` ${PREFIX}/share/entity
+	cd ${WRKSRC}/apps && ${PAX} -r -w `${LS} | \
+		${GREP} -v Makefile` ${PREFIX}/share/entity
 
 .include <bsd.port.mk>

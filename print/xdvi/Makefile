@@ -33,7 +33,7 @@ post-configure:
 	@${PERL} -pi -e "s=distclean::=distclean:=g" ${WRKSRC}/Makefile
 
 pre-install:
-	@if ls /var/db/pkg/ | grep -qi ^tetex; then\
+	@if ${LS} /var/db/pkg/ | grep -qi ^tetex; then\
 	${ECHO_MSG} "*** WARNING ***";\
 	${ECHO_MSG} "This port conflicts with teTeX!  If you have already installed";\
 	${ECHO_MSG} "teTeX, you may want to backup the xdvi and MakeTeXPK commands.";\

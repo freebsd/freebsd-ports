@@ -103,7 +103,7 @@ do-install:
 .for FILE in ${BIN2STRIP}
 	@${STRIP_CMD} ${PREFIX}/clip/bin/${FILE}
 .endfor
-	@for f in `ls ${PREFIX}/clip/lib/*.so` ;				\
+	@for f in `${LS} ${PREFIX}/clip/lib/*.so` ;				\
 	do									\
 		${STRIP_CMD} $$f ;				\
 	done

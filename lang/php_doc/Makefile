@@ -77,7 +77,7 @@ localfetch:
 	${MKDIR} ${LOCAL_TMPDIR}/${lang}
 	cd ${LOCAL_TMPDIR}/${lang} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${LOCAL_DISTDIR}/php_manual_${lang}${EXTRACT_SUFX} ${EXTRACT_AFTER_ARGS}
 
-	(cd ${LOCAL_TMPDIR}/${lang} && /bin/ls -1) | ${PERL} -pe 'print "%%PHPDOCDIR%%/$_";' > ${.CURDIR}/pkg-plist.${lang}
+	(cd ${LOCAL_TMPDIR}/${lang} && ${LS} -1) | ${PERL} -pe 'print "%%PHPDOCDIR%%/$_";' > ${.CURDIR}/pkg-plist.${lang}
 	${ECHO_CMD} "@dirrm %%PHPDOCDIR%%" >> ${.CURDIR}/pkg-plist.${lang}
 	${RM} -rf ${LOCAL_TMPDIR}/${lang}
 .endfor
