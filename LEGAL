@@ -139,6 +139,7 @@ mmosaic			ports/www/mmosaic	Do not sell (per NCSA).  Do not
 						distribute binary (GPL/BSD
 						conflict).
 msql-*			ports/databases/msql	Not free for commercial org.
+mupad/*			ports/math/mupad	unsure to sell for profit
 mypaedia		ports/japanese/mypaedia-fpw The original dictionary is not free
 netscape-*-us-*		ports/www/netscape*	Crypto; export-controlled
 netshow-*		ports/graphics/netshow	Commercial software
