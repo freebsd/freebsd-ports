@@ -8,7 +8,7 @@
 PORTNAME=	gtk
 PORTVERSION=	2.0.5
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,pre-gnome2/releases/gnome-2.0-desktop-rc2,} \
+MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,2.0.0/releases/gnome-2.0-desktop-final,} \
 		ftp://ftp.gtk.org/pub/gtk/v2.0/ \
 		ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/%SUBDIR%/ \

@@ -10,7 +10,7 @@ PORTVERSION=	0.16
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-rc2
+MASTER_SITE_SUBDIR=	2.0.0/releases/gnome-2.0-desktop-final
 DISTNAME=	rep-gtk-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
