@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.38 1998/07/15 09:58:15 dburr Exp $
+# $Id: Makefile,v 1.39 1998/07/17 17:43:18 mph Exp $
 #
 
     SUBDIR += LPRng
@@ -15,7 +15,8 @@
     SUBDIR += lsof
     SUBDIR += manck
     SUBDIR += mei
-    SUBDIR += mkhybrid
+    SUBDIR += mkhybrid11
+    SUBDIR += mkhybrid12
     SUBDIR += mkisofs
     SUBDIR += no-login
     SUBDIR += pib
