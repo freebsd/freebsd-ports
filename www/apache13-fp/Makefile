@@ -1,31 +1,37 @@
-# New ports collection makefile for:    apache HTTPD w/FrontPage
-# Version required:     1.2.6	3.0.4 (3.0.2.1330)
-# Date created:         Fri Oct 17 13:36:00 CDT 1997
+# New ports collection makefile for:    apache HTTPD w/FrontPage Module
+# Version required:     1.3*	3.0.4 (3.0.2.1330)
+# Date created:         Sat Oct 31 16:30:00 CDT 1997
 # Whom:                 hetzels@westbend.net
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/29 04:46:49 mph Exp $
+# $Id$
 #
 
-BROKEN=		awaiting upgrade after repository copy
-
-DISTNAME=	apache_1.2.6
-PKGNAME=	apache_fp-1.2.6
+DISTNAME=       apache_1.3.3
+PKGNAME=        apache_fp-1.3.3
 CATEGORIES=	www
 MASTER_SITES=	ftp://www.apache.org/apache/dist/ \
-		ftp://ftp.microsoft.com/products/frontpage/\
+		ftp://ftp.microsoft.com/products/frontpage/
+
+PATCH_SITES=    ftp://www.apache.org/apache/dist/patches/apply_to_1.3.3/ \
+		http://www.apache.org/dist/patches/apply_to_1.3.3/
+
+PATCHFILES=	core_404_log_bug.txt proxy_segv.txt
+
+# This file will not apply, fails on hunk 2 for main/http_protocol.c
+#PATCHFILES+=	server_error_filename.txt
+
+.if defined(PATCH_DEBUG)
+PATCH_DIST_ARGS=       -d ${WRKSRC}/src -E ${PATCH_DIST_STRIP}
+.else
+PATCH_DIST_ARGS=       -d ${WRKSRC}/src --forward --quiet -E ${PATCH_DIST_STRIP}
+.endif
 
 MAINTAINER=	hetzels@westbend.net
 
 APACHE=		${DISTNAME}${EXTRACT_SUFX}
-FRONTPAGE=	fp30.bsdi3
+FRONTPAGE=	fp30.bsdi3.tar.Z
 
-DISTFILES=	${APACHE} ${FRONTPAGE}.tar.Z
-
-.if defined(PATCH_DEBUG)
-PATCH_DIST_ARGS= -d ${WRKSRC}/src -E ${PATCH_DIST_STRIP}
-.else
-PATCH_DIST_ARGS= -d ${WRKSRC}/src --forward --quiet -E ${PATCH_DIST_STRIP}
-.endif
+DISTFILES=	${APACHE} ${FRONTPAGE}
 
 EXTRACT_ONLY=	${APACHE}
 
@@ -35,53 +41,85 @@ NO_PACKAGE=	\
 
 FPINSTALL=	frontpage/version3.0/fp_install.sh
 CHANGESERVER=	frontpage/version3.0/change_server.sh
-FPPATCH=	frontpage/version3.0/apache-fp/fp-patch-apache_1.2.5
+MOD_FP=		${FILESDIR}/mod_frontpage.c
 
 INSTALL_FILE=${INSTALL} -c -m 555 -o bin -g bin
 
-MAN1=		htpasswd.1
-MAN8=		httpd.8
-DOCDIR=		${PREFIX}/share/doc/apache
+#
+# Set APACHE_PERF_TUNING env. variable to YES to get maximum performance
+#
+
+GNU_CONFIGURE=  yes
+CONFIGURE_ARGS= \
+		 --sysconfdir=${PREFIX}/etc/apache \
+		 --includedir=${PREFIX}/include/apache \
+		 --logfiledir=/var/log \
+		 --runtimedir=/var/run \
+		 --datadir=${PREFIX}/www \
+		 --proxycachedir=${PREFIX}/www/proxy \
+		 --libexecdir=${PREFIX}/libexec/apache \
+		 --without-confadjust \
+		 --enable-shared=remain \
+		 --enable-module=most \
+		 --enable-module=auth_db \
+		 --disable-module=auth_dbm \
+		 --add-module=${MOD_FP} \
+		 --enable-shared=frontpage
+
+# Currently perl version doesn't matter
+#                 --with-perl=${PERL5}
+
+OPTIM=-DHARD_SERVER_LIMIT=512 \
+-DDOCUMENT_LOCATION=\\"${PREFIX}/www/data/\\" \
+-DDEFAULT_PATH=\\"/bin:/usr/bin:${PREFIX}/bin\\"
+
+.if defined(APACHE_PERF_TUNING) && ${APACHE_PERF_TUNING} == YES
+OPTIM+= -DBUFFERED_LOGS
+CFLAGS+= -O6 -fomit-frame-pointer
+.endif
+
+CONFIGURE_ENV= OPTIM='${OPTIM}'
+
+MAN1=   ab.1 apachectl.1 dbmmanage.1 htdigest.1 htpasswd.1
+MAN8=   apxs.8 httpd.8 logresolve.8 rotatelogs.8
+
+.if defined(SUEXEC)
+HTTPD_USER?=www
+USER_DIR?=public_html
+CONFIGURE_ARGS+= --enable-suexec \
+		 --suexec-caller=${HTTPD_USER} \
+		 --suexec-userdir=${USER_DIR}
+MAN8+=	suexec.8
+.endif
 
 pre-fetch:
-	@if [ ! -f /usr/lib/libdescrypt.a  -a ! -f /usr/lib/libdescrypt.so.* ] ; then \
+	@if ! ${LDCONFIG} -r | ${GREP} -q -e "-ldescrypt"; then \
 	   ${ECHO} ; \
-	   ${ECHO} "WARNING: MS Frontpage Extentions require the DES Library"; \
+	   ${ECHO} "WARNING: MS FrontPage Extentions require the DES Library"; \
 	   ${ECHO} "WARNING: Install the DES Library, then build apache-fp"; \
 	   ${ECHO} ; \
 	   ${FALSE} ; \
 	fi
 
 post-extract:
-	@${ECHO} "===>  Extracting FrontPage patch, and install scripts"
+	@${ECHO} "===>  Extracting FrontPage install scripts"
 	@cd ${WRKSRC} && \
-	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${FRONTPAGE}.tar.Z ${FPINSTALL} ${FPPATCH} ${CHANGESERVER}
-
-pre-patch:
-	@${ECHO} "===>  Applying FrontPage patch"
-	@cd ${WRKSRC} && ${PATCH} ${PATCH_DIST_ARGS} < ${WRKSRC}/${FPPATCH}
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${FRONTPAGE} ${FPINSTALL} ${CHANGESERVER}
 
 post-install:
+	@${ECHO} "Installing ${PREFIX}/etc/rc.d/apache.sh.tmpl file."
+	@${CAT} ${FILESDIR}/apache.sh.tmpl | \
+		${SED} -e 's;PREFIX;${PREFIX};' -e 's;PERL5;${PERL};' \
+		> ${PREFIX}/etc/rc.d/apache.sh.tmpl
 	@if [ ! -f ${PREFIX}/etc/rc.d/apache.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/apache.sh startup file."; \
-		${ECHO} "#!${SH}" > ${PREFIX}/etc/rc.d/apache.sh; \
-		${ECHO} "[ -x ${PREFIX}/sbin/httpd ] && ${PREFIX}/sbin/httpd && ${ECHO} -n ' httpd'" >> ${PREFIX}/etc/rc.d/apache.sh; \
+		${CP} ${PREFIX}/etc/rc.d/apache.sh.tmpl ${PREFIX}/etc/rc.d/apache.sh; \
 		chmod 751 ${PREFIX}/etc/rc.d/apache.sh; \
+	else \
+		${ECHO} "apache.sh exists, please compare with apache.sh.tmpl."; \
+		${ECHO} "The template will regenerate the FrontPage suidkey"; \
+		${ECHO} "file when the apache server is started/restarted."; \
 	fi
-.for i in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/support/$i ${PREFIX}/man/man1
-.endfor
-.for i in ${MAN8}
-	${INSTALL_MAN} ${WRKSRC}/support/$i ${PREFIX}/man/man8
-.endfor
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCDIR}
-.for i in README LICENSE ABOUT_APACHE
-	${INSTALL_DATA} ${WRKSRC}/$i ${DOCDIR}
-.endfor
-	@cd ${WRKSRC}/htdocs; ${EXTRACT_CMD} cf - . | (cd ${DOCDIR} ; \
-		${EXTRACT_CMD} xf -)
-.endif
 	@${SH} ${WRKSRC}/${FPINSTALL}
 	@${INSTALL_FILE} ${WRKSRC}/${FPINSTALL} ${PREFIX}/${FPINSTALL}
 	@${INSTALL_FILE} ${WRKSRC}/${CHANGESERVER} ${PREFIX}/${CHANGESERVER}

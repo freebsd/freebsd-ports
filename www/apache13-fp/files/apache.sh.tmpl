@@ -1,0 +1,47 @@
+#!/bin/sh
+#
+
+#
+# Create New FrontPage suidkey
+#
+
+new_key() {
+
+	skdir=PREFIX/frontpage/currentversion/apache-fp
+	PERL=PERL5
+
+	#NOTE: We need Perl 5, to generate a new key
+	if [ -x ${PERL} ]
+	then
+		${PERL} -e '@a=(split(//, "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*-=_+")); print((map {$a[rand(scalar @a)]} (1..128)), "\n");' > $skdir/suidkey
+	fi
+
+}
+
+#
+# Main
+#
+
+case "$1" in
+
+start)
+        if [ -x PREFIX/sbin/apachectl ]
+        then
+		new_key
+		PREFIX/sbin/apachectl start && echo -n ' httpd'
+	fi
+	;;
+
+stop)
+	if [ -r /var/run/httpd.pid ]
+	then
+		PREFIX/sbin/apachectl stop && echo -n ' httpd'
+	fi
+	;;
+
+*)
+	echo "usage: $0 {start|stop}" 1>&2
+	exit 64
+	;;
+
+esac
