@@ -42,8 +42,7 @@ MAKE_ARGS+=	NOCPANINSTALL=1 \
 		INSTALLARCHLIB=${PREFIX}/interchange \
 		INSTALLPRIVLIB=${PREFIX}/interchange/lib/ \
 		INSTALLMAN1DIR=${PREFIX}/man/man1 \
-		INSTALLMAN3DIR=${PREFIX}/man/man7 \
-		-DCHECK_FOR_IC_USER
+		INSTALLMAN3DIR=${PREFIX}/man/man7
 
 CONFIGURE_ARGS+=	force=1
 
@@ -55,6 +54,9 @@ post-patch:
 	@${REINPLACE_CMD} -e "s:You are now ready to cd to \$$realdir:You are now ready to cd to ${PREFIX}:g" ${WRKSRC}/Makefile.PL
 
 pre-configure:
+.if !defined(USE_THIS_PERL)
+	@[ ! "${PERL_VER}" \< "5.6.1" ] || ( ${ECHO_CMD} -e "You use perl ${PERL_VER}, interchange should be used with 5.6.1 or better,\njust install the newer perl from ports and run 'use.perl port', this will\nmake the new perl the default perl. If you already have some perl modules\ninstalled for your old perl, you have to reinstall them for the new perl.\n\nIf you absolutely want to try to run interchange with perl ${PERL_VER},\nyou have to add '-DUSE_THIS_PERL' as an option for 'make'.\n" ; exit 1 )
+.endif
 .if !defined(CHECK_FOR_IC_USER)
 	@${ECHO_CMD} -e "This port needs a specific user account ('interch') at configure time.\n\nIf it is ok for you to add a new user at configure time of this port\nadd '-DCHECK_FOR_IC_USER' as an option for 'make'.\n"
 	@exit 1
