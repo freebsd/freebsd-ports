@@ -6,6 +6,7 @@
 
 PORTNAME=	subversion
 PORTVERSION=	0.32.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://svn.collab.net/tarballs/
 
