@@ -13,7 +13,9 @@ will be a label. However, the child widget can also be a pixmap, image
 or any combination possible the programmer desires. This flexibility is
 adhered to throughout the library.
 
-Warning: this library is unstable development version, incompatible with
-version 1.2, so it could not be used as a replacement for the older one.
+GTK+-2.0 is a stable release, but many applications still require
+GTK+-1.2, the previous stable version. You can have the runtime and
+development environments for both GTK+-2.0 and GTK+-1.2 installed
+simultaneously on your computer.
 
 WWW: http://www.gtk.org/
