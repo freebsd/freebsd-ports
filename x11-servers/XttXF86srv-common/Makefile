@@ -3,7 +3,7 @@
 # Date created:		15 April 1998
 # Whom:			Taguchi Takeshi <taguchi@tohoku.iij.ad.jp>
 #
-# $Id: Makefile,v 1.2 1998/09/01 13:41:10 asami Exp $
+# $Id: Makefile,v 1.3 1998/09/21 08:41:46 asami Exp $
 #
 
 DISTNAME=	xc
@@ -38,7 +38,7 @@ EXTRACT_ONLY=	X332src-1.tgz xtt-1.0.tar.gz
 # can't use USE_X_PREFIX here
 PREFIX=		${X11BASE}
 MTREE_FILE=	/etc/mtree/BSD.x11.dist
-WRKDIR=		${.CURDIR}/../XttXF86srv-common/work
+WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/../XttXF86srv-common/work
 WRKSRC=		${WRKDIR}/xc
 PATCHDIR=	${.CURDIR}/../XttXF86srv-common/patches
 FILESDIR=	${.CURDIR}/../XttXF86srv-common/files
