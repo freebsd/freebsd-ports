@@ -7,6 +7,7 @@
 
 PORTNAME=	milter-greylist
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.espci.fr/pub/milter-greylist/
 EXTRACT_SUFX=	.tgz
@@ -20,6 +21,9 @@ MAN8=		milter-greylist.8
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-user=smmsp
+CFLAGS+=	${PTHREAD_CFLAGS}
+LIBS+=		${PTHREAD_LIBS}
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LIBS="${LIBS}"
 
 ALL_TARGET=	milter-greylist
 
