@@ -1,5 +1,6 @@
 bin/bchscheme
 bin/scheme
+
 lib/mit-scheme/SRC/edwin/abbrev.bci
 lib/mit-scheme/SRC/edwin/ansi.bci
 lib/mit-scheme/SRC/edwin/argred.bci
@@ -173,6 +174,8 @@ lib/mit-scheme/SRC/edwin/xcom.bci
 lib/mit-scheme/SRC/edwin/xform.bci
 lib/mit-scheme/SRC/edwin/xmodef.bci
 lib/mit-scheme/SRC/edwin/xterm.bci
+@exec ln -sf %D/lib/mit-scheme/SRC/edwin %D/lib/mit-scheme/edwin/autoload
+@unexec rm -f %D/lib/mit-scheme/edwin/autoload
 lib/mit-scheme/SRC/runtime/advice.bci
 lib/mit-scheme/SRC/runtime/apply.bci
 lib/mit-scheme/SRC/runtime/apropos.bci
@@ -340,9 +343,25 @@ lib/mit-scheme/SRC/runtime/x11graph.bci
 lib/mit-scheme/SRC/runtime/xeval.bci
 lib/mit-scheme/SRC/runtime/ystep.bci
 lib/mit-scheme/SRC/runtime/ystep.com
+@exec ln -sf %D/lib/mit-scheme/SRC/runtime %D/lib/mit-scheme/options
+@unexec rm -f %D/lib/mit-scheme/options
 lib/mit-scheme/all.com
 lib/mit-scheme/compiler.com
 lib/mit-scheme/doc/COPYING
+lib/mit-scheme/doc/imail.html
+lib/mit-scheme/doc/imail_1.html
+lib/mit-scheme/doc/imail_2.html
+lib/mit-scheme/doc/imail_3.html
+lib/mit-scheme/doc/imail_4.html
+lib/mit-scheme/doc/imail_5.html
+lib/mit-scheme/doc/imail_6.html
+lib/mit-scheme/doc/imail_7.html
+lib/mit-scheme/doc/imail_8.html
+lib/mit-scheme/doc/imail_9.html
+lib/mit-scheme/doc/imail_abt.html
+lib/mit-scheme/doc/imail_fot.html
+lib/mit-scheme/doc/imail_ovr.html
+lib/mit-scheme/doc/imail_toc.html
 lib/mit-scheme/doc/index.html
 lib/mit-scheme/doc/scheme.html
 lib/mit-scheme/doc/scheme_1.html
@@ -424,7 +443,6 @@ lib/mit-scheme/doc/user_fot.html
 lib/mit-scheme/doc/user_ovr.html
 lib/mit-scheme/doc/user_toc.html
 lib/mit-scheme/edwin.com
-lib/mit-scheme/edwin/autoload
 lib/mit-scheme/edwin/etc/TUTORIAL
 lib/mit-scheme/edwin/etc/mime.types
 lib/mit-scheme/edwin/info/dir
@@ -502,7 +520,6 @@ lib/mit-scheme/imail/rexp.com
 lib/mit-scheme/imail/url.bci
 lib/mit-scheme/imail/url.com
 lib/mit-scheme/optiondb.scm
-lib/mit-scheme/options
 lib/mit-scheme/runtime.com
 lib/mit-scheme/sos/class.bci
 lib/mit-scheme/sos/class.com
