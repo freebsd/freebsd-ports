@@ -24,8 +24,8 @@ MANN= base64.n cksum.n cmdline.n combinatorics.n comm.n control.n \
 	counter.n crc32.n csv.n expander.n fileutil.n ftp.n ftpd.n \
 	graph.n html.n htmlparse.n javascript.n log.n math.n matrix.n \
 	md5.n mime.n ncgi.n nntp.n pop3.n profiler.n report.n queue.n \
-	sha1.n smtp.n stack.n stooop.n sum.n textutil.n tree.n uri.n \
-	uuencode.n
+	sha1.n smtp.n smtpd.n stack.n stooop.n sum.n textutil.n tree.n \
+	uri.n uuencode.n
 
 MANCOMPRESSED=	no
 
