@@ -3,7 +3,7 @@
 # Date created:		22 December 1996
 # Whom:			jmz
 #
-# $Id: Makefile,v 1.3 1997/04/20 13:52:25 wosch Exp $
+# $Id: Makefile,v 1.4 1997/05/24 13:17:09 jfitz Exp $
 #
 
 DISTNAME=       PGPLOT1.0b_src
@@ -14,10 +14,9 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	jmz@FreeBSD.org
 
-BUILD_DEPENDS=  perl5.004:${PORTSDIR}/lang/perl5
 LIB_DEPENDS=    pgplot\\.5\\.:${PORTSDIR}/graphics/pgplot
-RUN_DEPENDS=    perl5.004:${PORTSDIR}/lang/perl5
 
+USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/PGPLOT
 ALL_TARGET=	dynamic
 
