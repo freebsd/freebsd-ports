@@ -28,7 +28,7 @@ CONFIGURE_ARGS=	-nonstop --prefix=${PREFIX} \
 			--helpdir-ja=${PREFIX}/share/doc/ja/w3m \
 			--gc-includedir=${LOCALBASE}/include \
 			--gc-libdir=${LOCALBASE}/lib \
-			-cflags="-O2"
+			-cflags="${CFLAGS}"
 HOSTNAME!=	/bin/hostname
 SCRIPTS_ENV=	HOSTNAME=${HOSTNAME} WRKSRC=${WRKSRC} PREFIX=${PREFIX} \
 		CC=${CC} LOCALBASE=${LOCALBASE} JAPANESE=${JAPANESE} \
