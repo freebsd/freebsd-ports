@@ -14,7 +14,7 @@ DISTFILES=	xisp-2.6-noufc.tar.gz \
 
 MAINTAINER=	morishim@cig.mot.com
 
-LIB_DEPENDS=	xforms:${PORTSDIR}/x11-toolkits/xforms
+LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 
 USE_XPM=	yes
 WRKSRC=		${WRKDIR}/xisp-2.6
