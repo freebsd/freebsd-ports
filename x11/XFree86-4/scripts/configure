@@ -14,7 +14,7 @@ yesno () {
   while [ $answ = X ]; do
     echo -n "$2 [$1] "
     read answ
-    if [ X$answ = X ]; then answ="YES"; fi
+    if [ X$answ = X ]; then answ=$1; fi
     case $answ in
       y|yes|Y|YES) answ=YES;;
       n|no|N|NO)   answ=NO;;
