@@ -18,6 +18,7 @@ MAINTAINER=	alane@FreeBSD.org
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+NOPRECIOUSMAKEVARS= yes # Otherwise 'make readmes' is broken
 
 .include <bsd.port.pre.mk>
 

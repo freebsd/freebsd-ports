@@ -19,6 +19,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PORTSDIR=${PORTSDIR}
 CONFIGURE_ARGS=	--enable-shared --enable-i18nImprove
 INSTALLS_SHLIB=	yes
+NOPRECIOUSMAKEVARS= yes # Otherwise 'make readmes' is broken
 MAKE_ENV=	SHORT_TCL_VER=83
 PKGINSTALL=	${PKGDIR}/INSTALL.tclsh
 

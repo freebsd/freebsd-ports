@@ -21,6 +21,7 @@ INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+NOPRECIOUSMAKEVARS= yes # Otherwise 'make readmes' is broken
 
 .include <bsd.port.pre.mk>
 
