@@ -1,0 +1,13 @@
+bin/bayes_process_email.pl
+bin/bayes_spam_check.pl
+bin/bayestest.pl
+lib/perl5/site_perl/%%PERL_VER%%/Bayespam/Process.pm
+%%PORTDOCS%%share/doc/bayespam/AUTHORS
+%%PORTDOCS%%share/doc/bayespam/COPYING
+%%PORTDOCS%%share/doc/bayespam/Changelog
+%%PORTDOCS%%share/doc/bayespam/INSTALL
+%%PORTDOCS%%share/doc/bayespam/README
+%%PORTDOCS%%share/doc/bayespam/TODO
+%%PORTDOCS%%share/doc/bayespam/qmail.sample
+%%PORTDOCS%%@dirrm share/doc/bayespam
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Bayespam
