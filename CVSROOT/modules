@@ -3702,6 +3702,7 @@ libpam		src/lib/libpam
 libpanel	src/lib/libpanel
 libparanoia	ports/security/libparanoia
 libpcap		src/lib/libpcap
+libquicktime	ports/graphics/libquicktime
 libradius	src/lib/libradius
 libranlib	ports/math/libranlib
 libreadline	src/gnu/lib/libreadline
