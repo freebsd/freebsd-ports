@@ -118,15 +118,15 @@ while [ "$1" ]; do
 			echo "PHP_CONF_ARGS+=	--with-ldap=\${PREFIX}"
 			;;
 		\"SNMP\")
-			echo "LIB_DEPENDS+=     snmp.3:\${PORTSDIR}/net/ucd-snmp"
-			echo "PHP_CONF_ARGS+=   --with-snmp=\${PREFIX} --enable-ucd-snmp-hack"
+			echo "LIB_DEPENDS+=	snmp.3:\${PORTSDIR}/net/ucd-snmp"
+			echo "PHP_CONF_ARGS+=	--with-snmp=\${PREFIX} --enable-ucd-snmp-hack"
 			;;
 		\"XML\")
 			echo "BUILD_DEPENDS+=	\${PREFIX}/lib/libexpat.a:\${PORTSDIR}/textproc/expat"
 			echo "BUILD_DEPENDS+=	\${PREFIX}/include/xml/xmlparse.h:\${PORTSDIR}/textproc/expat"
 			echo "BUILD_DEPENDS+=	\${PREFIX}/include/xml/xmltok.h:\${PORTSDIR}/textproc/expat"
 			echo "PHP_CONF_ARGS+=	--with-xml=\${PREFIX}"
-                        ;;
+			;;
 		\"modssl\")
 			cat << EOF
 PKGNAME=	apache+php+mod_ssl-\${VERSION_APACHE}+\${VERSION_PHP}+\${VERSION_MODSSL}
