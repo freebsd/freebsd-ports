@@ -1,3 +1,14 @@
-EyeClock is a simple clock application for X11. You can put an optional 
-picture on the face of the clock. And you can move the eyes of the      
-picture following the mouse.                                            
+EyeClock is a simple clock application for X11. You can put your favorite
+picture on the face of the clock. And you can move the eyes of the
+picture following the mouse pointer.
+See /usr/X11R6/lib/X11/EyeClock/README.jpn for more details.
+
+This port installs below clocks.
+boyclock, daemonclock, eyeclock, girlclock, henohenoclock,
+margueriteclock, octopusclock, punpunclock, silicagelclock,
+taroclock, umeharaclock.
+
+WWW: http://www.seki.ee.kagu.sut.ac.jp/~sakai/myfreesoft.html
+
+- Sakai Hiroaki
+sakai@seki.ee.kagu.sut.ac.jp
