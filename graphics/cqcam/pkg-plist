@@ -1,5 +1,6 @@
 bin/cqcam
 bin/gtkcam
+bin/movify
 bin/webcam
 bin/xcqcam
 %%PORTDOCS%%share/doc/cqcam/APINOTES
