@@ -1,0 +1,5 @@
+%%PORTDOCS%%share/doc/xmms-pipe/HISTORY
+%%PORTDOCS%%share/doc/xmms-pipe/LICENSE
+%%PORTDOCS%%share/doc/xmms-pipe/README
+lib/xmms/Effect/xmmspipe.so
+%%PORTDOCS%%@dirrm share/doc/xmms-pipe
