@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	white_dune
-PORTVERSION=	0.26.1
+PORTVERSION=	0.26.5
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.csv.ica.uni-stuttgart.de/vrml/dune/
