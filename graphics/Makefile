@@ -29,6 +29,7 @@
     SUBDIR += ecg2png
     SUBDIR += electriceyes
     SUBDIR += enfle
+    SUBDIR += enjoympeg
     SUBDIR += eog
     SUBDIR += eps2png
     SUBDIR += epstool
