@@ -16,7 +16,8 @@ MAINTAINER=	nakai@FreeBSD.org
 WRKSRC=		${WRKDIR}/xrubik
 USE_IMAKE=	yes
 MAN1=		xrubik.1
-MANCOMPRESSED=	no
+XFREE86_HTML_MAN=	no
+NO_INSTALL_MANPAGES=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xrubik ${PREFIX}/bin
