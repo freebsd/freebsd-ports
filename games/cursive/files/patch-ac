@@ -1,0 +1,11 @@
+--- cursive.6.orig	Sat Dec  4 17:31:42 1999
++++ cursive.6	Sat Dec  4 17:32:03 1999
+@@ -3,7 +3,7 @@
+ .SH NAME
+ cursive \- print text in cursive script
+ .SH SYNOPSIS
+-.B /usr/games/cursive
++.B cursive
+ [
+ .BI \-i n
+ ]

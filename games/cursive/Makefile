@@ -1,0 +1,23 @@
+# New ports collection makefile for:	cursive
+# Version required:	1.0
+# Date created:		4 December 1999
+# Whom:			James Howard <howardj@wam.umd.edu>
+#
+# $FreeBSD$
+#
+
+DISTNAME=	cursive
+PKGNAME=	cursive-1.0
+CATEGORIES=	games
+MASTER_SITES=	ftp://puck.nether.net/pub/janc/
+EXTRACT_SUFX=   .tgz
+
+MAINTAINER=	howardjp@wam.umd.edu
+
+MAN6=		cursive.6
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/cursive ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/cursive.6 ${PREFIX}/man/man6
+
+.include <bsd.port.mk>
