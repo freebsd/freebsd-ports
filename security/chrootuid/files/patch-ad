@@ -1,0 +1,11 @@
+--- Makefile.orig	Wed Jun 21 03:47:29 2000
++++ Makefile	Wed Jun 21 03:48:17 2000
+@@ -6,7 +6,7 @@
+ all:	chrootuid chrootuid.1
+ 
+ chrootuid: chrootuid.c
+-	$(CC) $(CFLAGS) -o $@ $?
++	$(CC) $(CFLAGS) -DUSE_SYSCTL -o $@ $?
+ 
+ #chrootuid.1: chrootuid.c
+ #	srctoman $? >$@
