@@ -3904,6 +3904,7 @@ jfreechart	ports/java/jfreechart
 jftp		ports/ftp/jftp
 jftpgw		ports/ftp/jftpgw
 jgraph		ports/graphics/jgraph
+jgrapht		ports/java/jgrapht
 jgv		ports/graphics/jgv
 jhead		ports/graphics/jhead
 jigdo		ports/ftp/jigdo
