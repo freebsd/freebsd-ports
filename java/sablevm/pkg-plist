@@ -1,0 +1,11 @@
+bin/sablevm
+include/jni.h
+include/jni_system_specific.h
+lib/libsablevm.a
+lib/libsablevm.la
+lib/libsablevm.so
+lib/libsablevm.so.0
+share/sablevm/AUTHORS
+share/sablevm/COPYING
+share/sablevm/LICENSE
+@dirrm share/sablevm

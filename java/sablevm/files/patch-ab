@@ -1,0 +1,19 @@
+diff -ur sablevm-0.1.6.orig/configure.in sablevm-0.1.6/configure.in
+--- sablevm-0.1.6.orig/configure.in	Fri Apr 27 21:14:41 2001
++++ sablevm-0.1.6/configure.in	Mon Jul  8 18:12:47 2002
+@@ -47,12 +47,13 @@
+ AC_LIBTOOL_DLOPEN
+ AM_PROG_LIBTOOL
+ 
++dnl Required FreeBSD compile flags
++CFLAGS="$CFLAGS -D_P1003_1B_VISIBLE -pthread -I/usr/local/include -L/usr/local/lib"
++
+ dnl Checks for libraries.
+-AC_CHECK_LIB(dl,dlopen,echo -n,echo ***ERROR: libdl is missing; exit 1)
+ AC_CHECK_LIB(ffi,ffi_prep_cif,echo -n,echo ***ERROR: libffi is missing; exit 1)
+ AC_CHECK_LIB(m,fmod,echo -n,echo ***ERROR: libm is missing; exit 1)
+ AC_CHECK_LIB(popt,poptGetContext,echo -n,echo ***ERROR: libpopt is missing; exit 1)
+-AC_CHECK_LIB(pthread,pthread_self,echo -n,echo ***ERROR: libpthread is missing; exit 1)
+ 
+ dnl Checks for header files.
+ AC_HEADER_STDC
