@@ -17,6 +17,8 @@ COMMENT=	A web based, hierarchical task manager
 
 RESTRICTED=	No redistribution or repackaging allowed
 
+BROKEN=		"Size mismatch"
+
 USE_APACHE=	yes
 USE_MYSQL=	yes
 USE_PHP=	yes
