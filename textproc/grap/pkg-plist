@@ -8,16 +8,17 @@ share/grap/examples/400wpairs.d
 share/grap/examples/Makefile
 share/grap/examples/army.d
 share/grap/examples/boyhts.d
+share/grap/examples/cy_fatal.d
 share/grap/examples/example.ms
 share/grap/examples/internet.d
 share/grap/examples/prof2.d
+share/grap/examples/result.SQ_MESH.Fail1.S3.R0.Global.Random1500.succ.result
+share/grap/examples/result.SQ_MESH.Fail1.S3.R0.Hybrid.Random1500.succ.result
+share/grap/examples/result.SQ_MESH.Fail1.S3.R0.Local.Random1500.succ.result
 share/grap/examples/states.d
 share/grap/examples/states2.d
 share/grap/examples/states3.d
 share/grap/examples/usapop.d
-share/grap/examples/result.SQ_MESH.Fail1.S3.R0.Global.Random1500.succ.result
-share/grap/examples/result.SQ_MESH.Fail1.S3.R0.Local.Random1500.succ.result
-share/grap/examples/result.SQ_MESH.Fail1.S3.R0.Hybrid.Random1500.succ.result
 share/grap/grap.defines
 @dirrm share/grap/examples
 @dirrm share/grap
