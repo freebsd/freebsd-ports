@@ -1,0 +1,27 @@
+escpf, escpagef, escpsf, and escpagesf are text filters for Epson compatible 
+printers:
+
+escpf:		text to ESC/P code.
+escpagef:	text to ESC/Page code.
+escpsf:		text to ESC/P code trough ESC/PS mode.
+escpagesf:	text to ESC/Page code trough ESC/PS mode.
+
+JIS, and EUC KANJI code are detected and converted automatically.
+
+A simple usage:
+Add escp entry to /etc/printcap like:
+
+escp|ESC/P printer filter :\            
+        :lp=/dev/lpt0:sd=/var/spool/lpd:\
+	:if=/usr/local/libexec/escpf:\
+	:mx#0:\ 
+	:pw#80:pl#66:\
+	:rw:sh:fo:\
+	:lf=/var/log/lpd-errs:
+
+after restarting lpd, you can print out text file by typing:
+
+lpr -Pescp textfilename
+
+See /usr/local/share/doc/escpf/escpf.doc (in English), or escpf.euc (
+in Japanese) for details.
