@@ -9,8 +9,10 @@ PORTNAME=	hlds
 PORTVERSION=	3.1.0.8.0a
 PORTREVISION=	1
 CATEGORIES=	games linux
-MASTER_SITES=	ftp://files.ausgamers.com/half-life/linux/ \
+MASTER_SITES=	http://www.carnage.q-net.net.au/downloads/server/halflife/linux/ \
+		http://carnage.q-net.net.au/~carnage/server/halflife/linux/ \
 		http://www.redphive.org/files/ \
+		ftp://ftp.splatterworld.de/hl/official/server/ \
 		http://files.ausgamers.com:81/half-life/linux/
 DISTFILES=	hlds_l_3108_full.tar.gz \
 		hlds_l_3108a_up.tar.gz
