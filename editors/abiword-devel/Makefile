@@ -60,11 +60,11 @@ GNOME_ENABLED=		yes
 CONFIGURE_ARGS+=	--disable-gucharmap
 #.endif
 
-pre-everything::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "AbiWord2 has the following tunable option(s):"
-	@${ECHO_MSG} "	WITH_GUCHARMAP=yes	Enable use of Gucharmap as the symbol insertion tool (default: auto)"
-	@${ECHO_MSG} ""
+#pre-everything::
+#	@${ECHO_MSG} ""
+#	@${ECHO_MSG} "AbiWord2 has the following tunable option(s):"
+#	@${ECHO_MSG} "	WITH_GUCHARMAP=yes	Enable use of Gucharmap as the symbol insertion tool (default: auto)"
+#	@${ECHO_MSG} ""
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%AUTOMAKE%%|${AUTOMAKE}|g ; \
