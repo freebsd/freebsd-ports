@@ -3,13 +3,13 @@
 # Date created:		5 March 1997
 # Whom:			Matthew Hunt <mph@pobox.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/03/06 09:22:35 tg Exp $
 #
 
 DISTNAME=	xpat2-1.04
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	games/x11/strategy
+MASTER_SITE_SUBDIR=	games/solitaires
 EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	mph@pobox.com
