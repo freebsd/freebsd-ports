@@ -47,8 +47,8 @@ lib/scwm/modules/app/scwm/libxpm-menus.a
 lib/scwm/modules/app/scwm/libxpm-menus.la
 lib/scwm/modules/app/scwm/libxpm-menus.so
 lib/scwm/modules/app/scwm/libxpm-menus.so.0
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
 share/doc/scwm/examples/Xmodmap-win95keyboard
 share/doc/scwm/examples/Xresources-cpp
 share/doc/scwm/examples/Xsession
