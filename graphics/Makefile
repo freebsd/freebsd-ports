@@ -76,7 +76,7 @@
     SUBDIR += enblend
     SUBDIR += enfle
     SUBDIR += entice
-    SUBDIR += eog2
+    SUBDIR += eog
     SUBDIR += epeg
     SUBDIR += epix
     SUBDIR += eps2png

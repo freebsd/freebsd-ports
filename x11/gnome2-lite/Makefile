@@ -19,7 +19,7 @@ COMMENT=	The "meta-port" of the GNOME desktop slimmed down for FreeBSD releases
 RUN_DEPENDS=	${X11BASE}/libexec/cdplayer_applet2:${PORTSDIR}/x11/gnomeapplets2 \
 		gnome-cd:${PORTSDIR}/audio/gnomemedia2 \
 	 	gnome-dictionary:${PORTSDIR}/deskutils/gnomeutils2 \
-		eog:${PORTSDIR}/graphics/eog2 \
+		eog:${PORTSDIR}/graphics/eog \
 		gnome-control-center:${PORTSDIR}/sysutils/gnomecontrolcenter2 \
 		gedit:${PORTSDIR}/editors/gedit2 \
 		gnome-terminal:${PORTSDIR}/x11/gnometerminal \
