@@ -1,28 +1,38 @@
 bin/SOAPsh.pl
+bin/XMLRPCsh.pl
 bin/stubmaker.pl
 lib/perl5/site_perl/%%PERL_VER%%/Apache/SOAP.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/XMLRPC/Lite.pm
+lib/perl5/site_perl/%%PERL_VER%%/IO/SessionData.pm
+lib/perl5/site_perl/%%PERL_VER%%/IO/SessionSet.pm
 lib/perl5/site_perl/%%PERL_VER%%/SOAP/Lite.pm
 lib/perl5/site_perl/%%PERL_VER%%/SOAP/Test.pm
 lib/perl5/site_perl/%%PERL_VER%%/SOAP/Transport/FTP.pm
 lib/perl5/site_perl/%%PERL_VER%%/SOAP/Transport/HTTP.pm
 lib/perl5/site_perl/%%PERL_VER%%/SOAP/Transport/IO.pm
+lib/perl5/site_perl/%%PERL_VER%%/SOAP/Transport/JABBER.pm
 lib/perl5/site_perl/%%PERL_VER%%/SOAP/Transport/LOCAL.pm
 lib/perl5/site_perl/%%PERL_VER%%/SOAP/Transport/MAILTO.pm
+lib/perl5/site_perl/%%PERL_VER%%/SOAP/Transport/MQ.pm
 lib/perl5/site_perl/%%PERL_VER%%/SOAP/Transport/POP3.pm
 lib/perl5/site_perl/%%PERL_VER%%/SOAP/Transport/TCP.pm
 lib/perl5/site_perl/%%PERL_VER%%/UDDI/Lite.pm
 lib/perl5/site_perl/%%PERL_VER%%/XML/Parser/Lite.pm
 lib/perl5/site_perl/%%PERL_VER%%/XMLRPC/Lite.pm
+lib/perl5/site_perl/%%PERL_VER%%/XMLRPC/Test.pm
 lib/perl5/site_perl/%%PERL_VER%%/XMLRPC/Transport/HTTP.pm
+lib/perl5/site_perl/%%PERL_VER%%/XMLRPC/Transport/POP3.pm
+lib/perl5/site_perl/%%PERL_VER%%/XMLRPC/Transport/TCP.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SOAP/Lite/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SOAP/Lite
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SOAP 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Apache/XMLRPC
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/SOAP/Transport
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/UDDI
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/XMLRPC/Transport
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/XMLRPC
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/SOAP/Transport
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Apache 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/IO 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/SOAP 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/XML/Parser 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/XML 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Apache 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/SOAP 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/UDDI
