@@ -42,6 +42,12 @@ USE_XLIB=       yes
 post-build:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/build_viewer
 .else
+pre-extract:
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} If you would like to also build
+	@${ECHO_MSG} the molecular viewer, define WITH_VIEWER.
+	@${ECHO_MSG} ""
+.endif
 
 .if defined(WITH_OPTIMIZED_FLAGS)
 FFLAGS+=        -O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations
@@ -49,17 +55,10 @@ FFLAGS+=        -O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll
 FFLAGS+=        -mfancy-math-387 -malign-double
 .endif # i386
 .endif
-
 pre-everything::
 .if !defined(WITH_OPTIMIZED_FLAGS)
 	@${ECHO_MSG} "You can optimize by setting WITH_OPTIMIZED_FLAGS=yes."
 .endif
-
-pre-extract:
-	@${ECHO} ""
-	@${ECHO} If you would like to also build
-	@${ECHO} the molecular viewer, define WITH_VIEWER.
-	@${ECHO} ""
 
 post-extract:
 	${CHMOD} -R u+w ${WRKDIR}/tinker
@@ -141,16 +140,14 @@ ${PREFIX}/share/tinker/bench
 	@${INSTALL_SCRIPT} ${FILESDIR}/tview ${PREFIX}/bin
 	@${INSTALL_DATA} ${WRKDIR}/tinker/rasmol/rasmol.hlp \
 		${PREFIX}/share/tinker/rasmol
-
 .endif
-
-	@${ECHO} ""
-	@${ECHO} "   **********************************************************"
-	@${ECHO} "       The author requests that you return a license form    "
-	@${ECHO} "       to him if you find Tinker to be useful.               "
-	@${ECHO} "                                                             "
-	@${ECHO} "       See ${PREFIX}/share/doc/tinker for license forms.     "
-	@${ECHO} "   **********************************************************"
-	@${ECHO} ""
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "   **********************************************************"
+	@${ECHO_MSG} "       The author requests that you return a license form    "
+	@${ECHO_MSG} "       to him if you find Tinker to be useful.               "
+	@${ECHO_MSG} "                                                             "
+	@${ECHO_MSG} "       See ${PREFIX}/share/doc/tinker for license forms.     "
+	@${ECHO_MSG} "   **********************************************************"
+	@${ECHO_MSG} ""
 
 .include <bsd.port.post.mk>
