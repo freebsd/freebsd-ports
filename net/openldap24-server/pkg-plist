@@ -4,24 +4,22 @@ bin/ldapmodify
 bin/ldapmodrdn
 bin/ldapsearch
 bin/ud
-bin/xrpcomp
-etc/ldap/go500gw.help
-etc/ldap/ldapfilter.conf
-etc/ldap/ldapfriendly
-etc/ldap/ldapsearchprefs.conf
-etc/ldap/ldaptemplates.conf
-etc/ldap/rcpt500.help
-etc/ldap/slapd.at.conf
-etc/ldap/slapd.conf
-etc/ldap/slapd.oc.conf
+etc/openldap/ldap.conf.default
+etc/openldap/ldapfilter.conf.default
+etc/openldap/ldapsearchprefs.conf.default
+etc/openldap/ldaptemplates.conf.default
+etc/openldap/slapd.at.conf.default
+etc/openldap/slapd.conf.default
+etc/openldap/slapd.oc.conf.default
 include/disptmpl.h
 include/lber.h
 include/ldap.h
-include/proto-lber.h
-include/proto-ldap.h
+include/ldap_cdefs.h
 include/srchpref.h
 lib/liblber.a
+lib/liblber.la
 lib/libldap.a
+lib/libldap.la
 libexec/fax500
 libexec/go500
 libexec/go500gw
@@ -31,6 +29,7 @@ libexec/rcpt500
 libexec/rp500
 libexec/slapd
 libexec/slurpd
+libexec/xrpcomp
 sbin/centipede
 sbin/ldbmcat
 sbin/ldbmtest
@@ -39,4 +38,7 @@ sbin/ldif2id2children
 sbin/ldif2id2entry
 sbin/ldif2index
 sbin/ldif2ldbm
-@dirrm etc/ldap
+share/openldap/go500gw.help
+share/openldap/ldapfriendly
+share/openldap/rcpt500.help
+@dirrm share/openldap
