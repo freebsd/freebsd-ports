@@ -6,25 +6,23 @@
 #
 
 PORTNAME=	bandwidthd
-PORTVERSION=	1.1.6
+PORTVERSION=	1.1.7
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=		${PORTNAME}-1.1.7b
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	Tracks bandwidth usage by IP address
 
-LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd\
+		iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_GMAKE=	YES
 USE_REINPLACE=	YES
-CFLAGS+=	-DFREEBSD -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
-
-post-patch:
-	@${REINPLACE_CMD} -e 's!localtime(!localtime((time_t *)!' ${WRKSRC}/graph.c
 
 post-install:
 	@${INSTALL_SCRIPT} ${FILESDIR}/bandwidthd.sh \
