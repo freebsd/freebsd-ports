@@ -1,0 +1,15 @@
+--- xlock/XLock.ad.orig	Wed Oct  1 05:55:32 1997
++++ xlock/XLock.ad	Mon Oct 13 09:08:42 1997
+@@ -47,9 +47,9 @@
+ XLock.both3d: Magenta
+ 
+ ! For marquee & nose modes
+-!XLock.program: fortune -o
+-XLock.program: fortune -s
+-!XLock.program: fortune
++!XLock.program: /usr/games/fortune -o
++XLock.program: /usr/games/fortune -s
++!XLock.program: /usr/games/fortune
+ !XLock.program: finger
+ !XLock.messagesfile: fortune.dat
+ !XLock.messagefile: /etc/hosts
