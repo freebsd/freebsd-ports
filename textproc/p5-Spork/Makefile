@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Spork
-PORTVERSION=	0.18
+PORTVERSION=	0.19
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/I/IN/INGY/
@@ -21,7 +21,9 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN1=		spork.1
-MAN3=		Spork.3 Spork::Config.3
+MAN3=		Spork.3 Spork::Config.3 \
+		Spork::Formatter.3 Spork::Slides.3 \
+		Spork::Command.3
 
 post-install:
 		@${CAT} ${PKGMESSAGE}
