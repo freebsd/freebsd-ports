@@ -1,9 +1,10 @@
 # New ports collection makefile for:    unrar
+# http://www.rarsoft.com/
 # Version required:     2.*
 # Date created:         28 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.11 1998/09/23 01:01:20 steve Exp $
+# $Id: Makefile,v 1.13 1999/04/17 15:36:16 ache Exp $
 #
 
 DISTNAME=       unrar-2.50
