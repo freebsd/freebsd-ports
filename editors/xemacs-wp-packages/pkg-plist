@@ -71,86 +71,10 @@ lib/xemacs/xemacs-packages/etc/auctex/style/swedish.elc
 lib/xemacs/xemacs-packages/etc/auctex/style/virtex.el
 lib/xemacs/xemacs-packages/etc/auctex/style/virtex.elc
 lib/xemacs/xemacs-packages/etc/enriched.doc
-lib/xemacs/xemacs-packages/etc/psgml/CATALOG
-lib/xemacs/xemacs-packages/etc/psgml/ECAT
-lib/xemacs/xemacs-packages/etc/psgml/HTMLlat1.ent
-lib/xemacs/xemacs-packages/etc/psgml/HTMLspecial.ent
-lib/xemacs/xemacs-packages/etc/psgml/HTMLsymbol.ent
-lib/xemacs/xemacs-packages/etc/psgml/ISO_8879-1986/entities/Added_Latin_1
-lib/xemacs/xemacs-packages/etc/psgml/ISO_8879-1986/entities/Added_Latin_1_for_HTML
-lib/xemacs/xemacs-packages/etc/psgml/ISO_8879-1986/entities/Added_Math_Symbols-_Delimiters
-lib/xemacs/xemacs-packages/etc/psgml/ISO_8879-1986/entities/Added_Math_Symbols-_Ordinary
-lib/xemacs/xemacs-packages/etc/psgml/ISO_8879-1986/entities/Added_Math_Symbols-_Relations
-lib/xemacs/xemacs-packages/etc/psgml/ISO_8879-1986/entities/Diacritical_Marks
-lib/xemacs/xemacs-packages/etc/psgml/ISO_8879-1986/entities/General_Technical
-lib/xemacs/xemacs-packages/etc/psgml/ISO_8879-1986/entities/Greek_Symbols
-lib/xemacs/xemacs-packages/etc/psgml/ISO_8879-1986/entities/ISOamsa
-lib/xemacs/xemacs-packages/etc/psgml/ISO_8879-1986/entities/ISOamsb
-lib/xemacs/xemacs-packages/etc/psgml/ISO_8879-1986/entities/ISOamsc
-lib/xemacs/xemacs-packages/etc/psgml/ISO_8879-1986/entities/ISOamsn
-lib/xemacs/xemacs-packages/etc/psgml/ISO_8879-1986/entities/ISOamso
-lib/xemacs/xemacs-packages/etc/psgml/ISO_8879-1986/entities/ISOamsr
-lib/xemacs/xemacs-packages/etc/psgml/ISO_8879-1986/entities/ISObox
-lib/xemacs/xemacs-packages/etc/psgml/ISO_8879-1986/entities/ISOcyr1
-lib/xemacs/xemacs-packages/etc/psgml/ISO_8879-1986/entities/ISOcyr2
-lib/xemacs/xemacs-packages/etc/psgml/ISO_8879-1986/entities/ISOdia
-lib/xemacs/xemacs-packages/etc/psgml/ISO_8879-1986/entities/ISOgrk1
-lib/xemacs/xemacs-packages/etc/psgml/ISO_8879-1986/entities/ISOgrk2
-lib/xemacs/xemacs-packages/etc/psgml/ISO_8879-1986/entities/ISOgrk3
-lib/xemacs/xemacs-packages/etc/psgml/ISO_8879-1986/entities/ISOgrk4
-lib/xemacs/xemacs-packages/etc/psgml/ISO_8879-1986/entities/ISOlat1
-lib/xemacs/xemacs-packages/etc/psgml/ISO_8879-1986/entities/ISOlat2
-lib/xemacs/xemacs-packages/etc/psgml/ISO_8879-1986/entities/ISOnum
-lib/xemacs/xemacs-packages/etc/psgml/ISO_8879-1986/entities/ISOpub
-lib/xemacs/xemacs-packages/etc/psgml/ISO_8879-1986/entities/ISOtech
-lib/xemacs/xemacs-packages/etc/psgml/ISO_8879-1986/entities/Numeric_and_Special_Graphic
-lib/xemacs/xemacs-packages/etc/psgml/ISOlat1.sgml
-lib/xemacs/xemacs-packages/etc/psgml/README.cdtd
-lib/xemacs/xemacs-packages/etc/psgml/README.htmlpro
-lib/xemacs/xemacs-packages/etc/psgml/Wing.ISOlat1.sgml
-lib/xemacs/xemacs-packages/etc/psgml/cdtd/html
-lib/xemacs/xemacs-packages/etc/psgml/cdtd/html-2
-lib/xemacs/xemacs-packages/etc/psgml/cdtd/html-3
-lib/xemacs/xemacs-packages/etc/psgml/cdtd/html-3.2
-lib/xemacs/xemacs-packages/etc/psgml/cdtd/html-3.2f
-lib/xemacs/xemacs-packages/etc/psgml/cdtd/html-4l
-lib/xemacs/xemacs-packages/etc/psgml/cdtd/html-hj
-lib/xemacs/xemacs-packages/etc/psgml/cdtd/html-mcom
-lib/xemacs/xemacs-packages/etc/psgml/cdtd/html-r
-lib/xemacs/xemacs-packages/etc/psgml/cdtd/iehtml
-lib/xemacs/xemacs-packages/etc/psgml/html-0.dtd
-lib/xemacs/xemacs-packages/etc/psgml/html-0s.dtd
-lib/xemacs/xemacs-packages/etc/psgml/html-1.dtd
-lib/xemacs/xemacs-packages/etc/psgml/html-1s.dtd
-lib/xemacs/xemacs-packages/etc/psgml/html-2.dtd
-lib/xemacs/xemacs-packages/etc/psgml/html-3.2.dtd
-lib/xemacs/xemacs-packages/etc/psgml/html-3.2f.dtd
-lib/xemacs/xemacs-packages/etc/psgml/html-3.dtd
-lib/xemacs/xemacs-packages/etc/psgml/html-3s.dtd
-lib/xemacs/xemacs-packages/etc/psgml/html-4frame.dtd
-lib/xemacs/xemacs-packages/etc/psgml/html-4l.dtd
-lib/xemacs/xemacs-packages/etc/psgml/html-4s.dtd
-lib/xemacs/xemacs-packages/etc/psgml/html-cougar.dtd
-lib/xemacs/xemacs-packages/etc/psgml/html-hj.dtd
-lib/xemacs/xemacs-packages/etc/psgml/html-hjs.dtd
-lib/xemacs/xemacs-packages/etc/psgml/html-icons.sgml
-lib/xemacs/xemacs-packages/etc/psgml/html-latin.sgml
-lib/xemacs/xemacs-packages/etc/psgml/html-math.sgml
-lib/xemacs/xemacs-packages/etc/psgml/html-mcom.dtd
-lib/xemacs/xemacs-packages/etc/psgml/html-mcoms.dtd
-lib/xemacs/xemacs-packages/etc/psgml/html-s.dtd
-lib/xemacs/xemacs-packages/etc/psgml/html.decl
-lib/xemacs/xemacs-packages/etc/psgml/html.dtd
-lib/xemacs/xemacs-packages/etc/psgml/htmlpro.dtd
-lib/xemacs/xemacs-packages/etc/psgml/ie30-s.dtd
-lib/xemacs/xemacs-packages/etc/psgml/ie30.dtd
-lib/xemacs/xemacs-packages/etc/psgml/ie3tables.dtd
-lib/xemacs/xemacs-packages/etc/psgml/iehtml-s.dtd
-lib/xemacs/xemacs-packages/etc/psgml/iehtml.dtd
-lib/xemacs/xemacs-packages/etc/psgml/ietables.dtd
-lib/xemacs/xemacs-packages/etc/psgml/iso88591.map
-lib/xemacs/xemacs-packages/etc/psgml/sinfo.dtd
-lib/xemacs/xemacs-packages/etc/psgml/webtechs.catalog
+lib/xemacs/xemacs-packages/etc/hm--html-menus/idd/drop
+lib/xemacs/xemacs-packages/etc/hm--html-menus/idd/dropmsk
+lib/xemacs/xemacs-packages/etc/hm--html-menus/templates/command-description.html.tmpl
+lib/xemacs/xemacs-packages/etc/hm--html-menus/templates/frame.html.tmpl
 lib/xemacs/xemacs-packages/etc/time/0.xpm
 lib/xemacs/xemacs-packages/etc/time/1.xpm
 lib/xemacs/xemacs-packages/etc/time/2.xpm
@@ -336,6 +260,10 @@ lib/xemacs/xemacs-packages/info/cc-mode.info-2
 lib/xemacs/xemacs-packages/info/cc-mode.info-3
 lib/xemacs/xemacs-packages/info/cc-mode.info-4
 lib/xemacs/xemacs-packages/info/efs.info
+lib/xemacs/xemacs-packages/info/hm--html-mode.info
+lib/xemacs/xemacs-packages/info/hm--html-mode.info-1
+lib/xemacs/xemacs-packages/info/hm--html-mode.info-2
+lib/xemacs/xemacs-packages/info/hm--html-mode.info-3
 lib/xemacs/xemacs-packages/info/ispell.info
 lib/xemacs/xemacs-packages/info/mailcrypt.info
 lib/xemacs/xemacs-packages/info/mailcrypt.info-1
@@ -343,8 +271,6 @@ lib/xemacs/xemacs-packages/info/mailcrypt.info-2
 lib/xemacs/xemacs-packages/info/pcl-cvs.info
 lib/xemacs/xemacs-packages/info/pcl-cvs.info-1
 lib/xemacs/xemacs-packages/info/pcl-cvs.info-2
-lib/xemacs/xemacs-packages/info/psgml-api.info
-lib/xemacs/xemacs-packages/info/psgml.info
 lib/xemacs/xemacs-packages/info/viper.info
 lib/xemacs/xemacs-packages/info/viper.info-1
 lib/xemacs/xemacs-packages/info/viper.info-2
@@ -711,6 +637,38 @@ lib/xemacs/xemacs-packages/lisp/fsf-compat/timer.el
 lib/xemacs/xemacs-packages/lisp/fsf-compat/timer.elc
 lib/xemacs/xemacs-packages/lisp/fsf-compat/x-popup-menu.el
 lib/xemacs/xemacs-packages/lisp/fsf-compat/x-popup-menu.elc
+lib/xemacs/xemacs-packages/lisp/hm--html-menus/ChangeLog
+lib/xemacs/xemacs-packages/lisp/hm--html-menus/_pkg.el
+lib/xemacs/xemacs-packages/lisp/hm--html-menus/adapt.el
+lib/xemacs/xemacs-packages/lisp/hm--html-menus/adapt.elc
+lib/xemacs/xemacs-packages/lisp/hm--html-menus/auto-autoloads.el
+lib/xemacs/xemacs-packages/lisp/hm--html-menus/auto-autoloads.elc
+lib/xemacs/xemacs-packages/lisp/hm--html-menus/custom-load.el
+lib/xemacs/xemacs-packages/lisp/hm--html-menus/custom-load.elc
+lib/xemacs/xemacs-packages/lisp/hm--html-menus/hm--date.el
+lib/xemacs/xemacs-packages/lisp/hm--html-menus/hm--date.elc
+lib/xemacs/xemacs-packages/lisp/hm--html-menus/hm--html-configuration.el
+lib/xemacs/xemacs-packages/lisp/hm--html-menus/hm--html-configuration.elc
+lib/xemacs/xemacs-packages/lisp/hm--html-menus/hm--html-drag-and-drop.el
+lib/xemacs/xemacs-packages/lisp/hm--html-menus/hm--html-drag-and-drop.elc
+lib/xemacs/xemacs-packages/lisp/hm--html-menus/hm--html-indentation.el
+lib/xemacs/xemacs-packages/lisp/hm--html-menus/hm--html-indentation.elc
+lib/xemacs/xemacs-packages/lisp/hm--html-menus/hm--html-keys.el
+lib/xemacs/xemacs-packages/lisp/hm--html-menus/hm--html-keys.elc
+lib/xemacs/xemacs-packages/lisp/hm--html-menus/hm--html-menu.el
+lib/xemacs/xemacs-packages/lisp/hm--html-menus/hm--html-menu.elc
+lib/xemacs/xemacs-packages/lisp/hm--html-menus/hm--html-mode.el
+lib/xemacs/xemacs-packages/lisp/hm--html-menus/hm--html-mode.elc
+lib/xemacs/xemacs-packages/lisp/hm--html-menus/hm--html-not-standard.el
+lib/xemacs/xemacs-packages/lisp/hm--html-menus/hm--html-not-standard.elc
+lib/xemacs/xemacs-packages/lisp/hm--html-menus/hm--html.el
+lib/xemacs/xemacs-packages/lisp/hm--html-menus/hm--html.elc
+lib/xemacs/xemacs-packages/lisp/hm--html-menus/html-view.el
+lib/xemacs/xemacs-packages/lisp/hm--html-menus/html-view.elc
+lib/xemacs/xemacs-packages/lisp/hm--html-menus/internal-drag-and-drop.el
+lib/xemacs/xemacs-packages/lisp/hm--html-menus/internal-drag-and-drop.elc
+lib/xemacs/xemacs-packages/lisp/hm--html-menus/tmpl-minor-mode.el
+lib/xemacs/xemacs-packages/lisp/hm--html-menus/tmpl-minor-mode.elc
 lib/xemacs/xemacs-packages/lisp/ispell/ChangeLog
 lib/xemacs/xemacs-packages/lisp/ispell/_pkg.el
 lib/xemacs/xemacs-packages/lisp/ispell/auto-autoloads.el
@@ -729,14 +687,14 @@ lib/xemacs/xemacs-packages/lisp/mail-lib/custom-load.el
 lib/xemacs/xemacs-packages/lisp/mail-lib/custom-load.elc
 lib/xemacs/xemacs-packages/lisp/mail-lib/highlight-headers.el
 lib/xemacs/xemacs-packages/lisp/mail-lib/highlight-headers.elc
-lib/xemacs/xemacs-packages/lisp/mail-lib/mailheader.el
-lib/xemacs/xemacs-packages/lisp/mail-lib/mailheader.elc
 lib/xemacs/xemacs-packages/lisp/mail-lib/mail-abbrevs.el
 lib/xemacs/xemacs-packages/lisp/mail-lib/mail-abbrevs.elc
 lib/xemacs/xemacs-packages/lisp/mail-lib/mail-extr.el
 lib/xemacs/xemacs-packages/lisp/mail-lib/mail-extr.elc
 lib/xemacs/xemacs-packages/lisp/mail-lib/mail-utils.el
 lib/xemacs/xemacs-packages/lisp/mail-lib/mail-utils.elc
+lib/xemacs/xemacs-packages/lisp/mail-lib/mailheader.el
+lib/xemacs/xemacs-packages/lisp/mail-lib/mailheader.elc
 lib/xemacs/xemacs-packages/lisp/mail-lib/pop3.el
 lib/xemacs/xemacs-packages/lisp/mail-lib/pop3.elc
 lib/xemacs/xemacs-packages/lisp/mail-lib/reporter.el
@@ -918,46 +876,6 @@ lib/xemacs/xemacs-packages/lisp/prog-modes/verilog-mode.el
 lib/xemacs/xemacs-packages/lisp/prog-modes/verilog-mode.elc
 lib/xemacs/xemacs-packages/lisp/prog-modes/vrml-mode.el
 lib/xemacs/xemacs-packages/lisp/prog-modes/vrml-mode.elc
-lib/xemacs/xemacs-packages/lisp/psgml/ChangeLog
-lib/xemacs/xemacs-packages/lisp/psgml/_pkg.el
-lib/xemacs/xemacs-packages/lisp/psgml/auto-autoloads.el
-lib/xemacs/xemacs-packages/lisp/psgml/auto-autoloads.elc
-lib/xemacs/xemacs-packages/lisp/psgml/custom-load.el
-lib/xemacs/xemacs-packages/lisp/psgml/custom-load.elc
-lib/xemacs/xemacs-packages/lisp/psgml/iso-sgml.el
-lib/xemacs/xemacs-packages/lisp/psgml/iso-sgml.elc
-lib/xemacs/xemacs-packages/lisp/psgml/psgml-api.el
-lib/xemacs/xemacs-packages/lisp/psgml/psgml-api.elc
-lib/xemacs/xemacs-packages/lisp/psgml/psgml-charent.el
-lib/xemacs/xemacs-packages/lisp/psgml/psgml-charent.elc
-lib/xemacs/xemacs-packages/lisp/psgml/psgml-debug.el
-lib/xemacs/xemacs-packages/lisp/psgml/psgml-debug.elc
-lib/xemacs/xemacs-packages/lisp/psgml/psgml-dtd.el
-lib/xemacs/xemacs-packages/lisp/psgml/psgml-dtd.elc
-lib/xemacs/xemacs-packages/lisp/psgml/psgml-edit.el
-lib/xemacs/xemacs-packages/lisp/psgml/psgml-edit.elc
-lib/xemacs/xemacs-packages/lisp/psgml/psgml-fs.el
-lib/xemacs/xemacs-packages/lisp/psgml/psgml-fs.elc
-lib/xemacs/xemacs-packages/lisp/psgml/psgml-html.el
-lib/xemacs/xemacs-packages/lisp/psgml/psgml-html.elc
-lib/xemacs/xemacs-packages/lisp/psgml/psgml-info.el
-lib/xemacs/xemacs-packages/lisp/psgml/psgml-info.elc
-lib/xemacs/xemacs-packages/lisp/psgml/psgml-other.el
-lib/xemacs/xemacs-packages/lisp/psgml/psgml-other.elc
-lib/xemacs/xemacs-packages/lisp/psgml/psgml-parse.el
-lib/xemacs/xemacs-packages/lisp/psgml/psgml-parse.elc
-lib/xemacs/xemacs-packages/lisp/psgml/psgml-xemacs.el
-lib/xemacs/xemacs-packages/lisp/psgml/psgml-xemacs.elc
-lib/xemacs/xemacs-packages/lisp/psgml/psgml.el
-lib/xemacs/xemacs-packages/lisp/psgml/psgml.elc
-lib/xemacs/xemacs-packages/lisp/sgml/ChangeLog
-lib/xemacs/xemacs-packages/lisp/sgml/_pkg.el
-lib/xemacs/xemacs-packages/lisp/sgml/auto-autoloads.el
-lib/xemacs/xemacs-packages/lisp/sgml/auto-autoloads.elc
-lib/xemacs/xemacs-packages/lisp/sgml/linuxdoc-sgml.el
-lib/xemacs/xemacs-packages/lisp/sgml/linuxdoc-sgml.elc
-lib/xemacs/xemacs-packages/lisp/sgml/sgml-mode.el
-lib/xemacs/xemacs-packages/lisp/sgml/sgml-mode.elc
 lib/xemacs/xemacs-packages/lisp/sh-script/ChangeLog
 lib/xemacs/xemacs-packages/lisp/sh-script/_pkg.el
 lib/xemacs/xemacs-packages/lisp/sh-script/auto-autoloads.el
@@ -1337,11 +1255,11 @@ lib/xemacs/xemacs-packages/man/auctex/math-ref.tex
 lib/xemacs/xemacs-packages/man/auctex/tex-ref.tex
 lib/xemacs/xemacs-packages/man/cc-mode/cc-mode.texi
 lib/xemacs/xemacs-packages/man/efs/efs.texi
+lib/xemacs/xemacs-packages/man/hm--html-menus/hm--html-mode.texi
+lib/xemacs/xemacs-packages/man/hm--html-menus/umlaute.texi
 lib/xemacs/xemacs-packages/man/ispell/ispell.texi
 lib/xemacs/xemacs-packages/man/mailcrypt/mailcrypt.texi
 lib/xemacs/xemacs-packages/man/pcl-cvs/pcl-cvs.texi
-lib/xemacs/xemacs-packages/man/psgml/psgml-api.texi
-lib/xemacs/xemacs-packages/man/psgml/psgml.texi
 lib/xemacs/xemacs-packages/man/viper/viper.texi
 lib/xemacs/xemacs-packages/man/w3/w3-faq.txi
 lib/xemacs/xemacs-packages/man/w3/w3.txi
@@ -1353,6 +1271,7 @@ lib/xemacs/xemacs-packages/pkginfo/MANIFEST.dired
 lib/xemacs/xemacs-packages/pkginfo/MANIFEST.edit-utils
 lib/xemacs/xemacs-packages/pkginfo/MANIFEST.efs
 lib/xemacs/xemacs-packages/pkginfo/MANIFEST.fsf-compat
+lib/xemacs/xemacs-packages/pkginfo/MANIFEST.hm--html-menus
 lib/xemacs/xemacs-packages/pkginfo/MANIFEST.ispell
 lib/xemacs/xemacs-packages/pkginfo/MANIFEST.mail-lib
 lib/xemacs/xemacs-packages/pkginfo/MANIFEST.mailcrypt
@@ -1360,8 +1279,6 @@ lib/xemacs/xemacs-packages/pkginfo/MANIFEST.net-utils
 lib/xemacs/xemacs-packages/pkginfo/MANIFEST.os-utils
 lib/xemacs/xemacs-packages/pkginfo/MANIFEST.pcl-cvs
 lib/xemacs/xemacs-packages/pkginfo/MANIFEST.prog-modes
-lib/xemacs/xemacs-packages/pkginfo/MANIFEST.psgml
-lib/xemacs/xemacs-packages/pkginfo/MANIFEST.sgml
 lib/xemacs/xemacs-packages/pkginfo/MANIFEST.sh-script
 lib/xemacs/xemacs-packages/pkginfo/MANIFEST.texinfo
 lib/xemacs/xemacs-packages/pkginfo/MANIFEST.text-modes
@@ -1371,17 +1288,17 @@ lib/xemacs/xemacs-packages/pkginfo/MANIFEST.viper
 lib/xemacs/xemacs-packages/pkginfo/MANIFEST.w3
 lib/xemacs/xemacs-packages/pkginfo/MANIFEST.xemacs-base
 lib/xemacs/xemacs-packages/pkginfo/MANIFEST.xemacs-devel
-@dirrm lib/xemacs/xemacs-packages/pkginfo
+@unexec rmdir %D/lib/xemacs/xemacs-packages/pkginfo 2>/dev/null || true
 @dirrm lib/xemacs/xemacs-packages/man/w3
 @dirrm lib/xemacs/xemacs-packages/man/viper
-@dirrm lib/xemacs/xemacs-packages/man/psgml
 @dirrm lib/xemacs/xemacs-packages/man/pcl-cvs
 @dirrm lib/xemacs/xemacs-packages/man/mailcrypt
 @dirrm lib/xemacs/xemacs-packages/man/ispell
+@dirrm lib/xemacs/xemacs-packages/man/hm--html-menus
 @dirrm lib/xemacs/xemacs-packages/man/efs
 @dirrm lib/xemacs/xemacs-packages/man/cc-mode
 @dirrm lib/xemacs/xemacs-packages/man/auctex
-@dirrm lib/xemacs/xemacs-packages/man
+@unexec rmdir %D/lib/xemacs/xemacs-packages/man 2>/dev/null || true
 @dirrm lib/xemacs/xemacs-packages/lisp/xemacs-devel
 @dirrm lib/xemacs/xemacs-packages/lisp/xemacs-base
 @dirrm lib/xemacs/xemacs-packages/lisp/w3
@@ -1391,8 +1308,6 @@ lib/xemacs/xemacs-packages/pkginfo/MANIFEST.xemacs-devel
 @dirrm lib/xemacs/xemacs-packages/lisp/text-modes
 @dirrm lib/xemacs/xemacs-packages/lisp/texinfo
 @dirrm lib/xemacs/xemacs-packages/lisp/sh-script
-@dirrm lib/xemacs/xemacs-packages/lisp/sgml
-@dirrm lib/xemacs/xemacs-packages/lisp/psgml
 @dirrm lib/xemacs/xemacs-packages/lisp/prog-modes
 @dirrm lib/xemacs/xemacs-packages/lisp/pcl-cvs
 @dirrm lib/xemacs/xemacs-packages/lisp/os-utils
@@ -1400,6 +1315,7 @@ lib/xemacs/xemacs-packages/pkginfo/MANIFEST.xemacs-devel
 @dirrm lib/xemacs/xemacs-packages/lisp/mailcrypt
 @dirrm lib/xemacs/xemacs-packages/lisp/mail-lib
 @dirrm lib/xemacs/xemacs-packages/lisp/ispell
+@dirrm lib/xemacs/xemacs-packages/lisp/hm--html-menus
 @dirrm lib/xemacs/xemacs-packages/lisp/fsf-compat
 @dirrm lib/xemacs/xemacs-packages/lisp/efs
 @dirrm lib/xemacs/xemacs-packages/lisp/edit-utils
@@ -1408,15 +1324,14 @@ lib/xemacs/xemacs-packages/pkginfo/MANIFEST.xemacs-devel
 @dirrm lib/xemacs/xemacs-packages/lisp/cc-mode
 @dirrm lib/xemacs/xemacs-packages/lisp/c-support
 @dirrm lib/xemacs/xemacs-packages/lisp/auctex
-@dirrm lib/xemacs/xemacs-packages/lisp
-@dirrm lib/xemacs/xemacs-packages/info
+@unexec rmdir %D/lib/xemacs/xemacs-packages/lisp 2>/dev/null || true
+@unexec rmdir %D/lib/xemacs/xemacs-packages/info 2>/dev/null || true
 @dirrm lib/xemacs/xemacs-packages/etc/w3
 @dirrm lib/xemacs/xemacs-packages/etc/time
-@dirrm lib/xemacs/xemacs-packages/etc/psgml/cdtd
-@dirrm lib/xemacs/xemacs-packages/etc/psgml/ISO_8879-1986/entities
-@dirrm lib/xemacs/xemacs-packages/etc/psgml/ISO_8879-1986
-@dirrm lib/xemacs/xemacs-packages/etc/psgml
+@dirrm lib/xemacs/xemacs-packages/etc/hm--html-menus/templates
+@dirrm lib/xemacs/xemacs-packages/etc/hm--html-menus/idd
+@dirrm lib/xemacs/xemacs-packages/etc/hm--html-menus
 @dirrm lib/xemacs/xemacs-packages/etc/auctex/style
 @dirrm lib/xemacs/xemacs-packages/etc/auctex
-@dirrm lib/xemacs/xemacs-packages/etc
-@dirrm lib/xemacs/xemacs-packages
+@unexec rmdir %D/lib/xemacs/xemacs-packages/etc 2>/dev/null || true
+@unexec rmdir %D/lib/xemacs/xemacs-packages 2>/dev/null || true

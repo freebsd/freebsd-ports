@@ -28,25 +28,36 @@ DISTFILES=	\
 		mailcrypt-2.04-pkg.tar.gz   vc-1.21-pkg.tar.gz \
 		sh-script-1.11-pkg.tar.gz   auctex-1.19-pkg.tar.gz \
 		ispell-1.18-pkg.tar.gz      pcl-cvs-1.41-pkg.tar.gz \
-		w3-1.15-pkg.tar.gz          texinfo-1.18-pkg.tar.gz
+		w3-1.15-pkg.tar.gz          texinfo-1.18-pkg.tar.gz \
+		hm--html-menus-1.14-pkg.tar.gz
 
 MAINTAINER=	gj@FreeBSD.org
 
 DIST_SUBDIR=	xemacs
 
 NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
+WRKSRC=		${WRKDIR}/xemacs-packages
+
+XEMACSDIR=	${PREFIX}/lib/xemacs
+
+do-extract:
+	@${MKDIR} ${WRKSRC}
+.for f in ${DISTFILES}
+	@${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${DIST_SUBDIR}/${f} \
+		${EXTRACT_AFTER_ARGS} -C ${WRKSRC}
+.endfor
 
 do-install:
-		${MKDIR} ${PREFIX}/lib/xemacs/xemacs-packages
-		${CP} -Rp ${WRKDIR}/* ${PREFIX}/lib/xemacs/xemacs-packages
+	${MKDIR} ${XEMACSDIR}
+	${CP} -Rp ${WRKSRC} ${XEMACSDIR}
 
 post-install:
 	@${ECHO_MSG} "This is only a subset of the available packages for xemacs."
 	@${ECHO_MSG} "You can install additional packages yourself from within xemacs by"
 	@${ECHO_MSG} "running it as root and using the 'Manage Packes' menu within"
 	@${ECHO_MSG} "the 'Options' menu of the menubar."
-	@${ECHO_MSG} "To install all packages, consider using the xemacs-sumo-packages"
-	@${ECHO_MSG} "and xemacs-mule-sumo-packages ports."
+	@${ECHO_MSG} "To install all packages besides basic packages(xemacs-packages or"
+	@${ECHO_MSG} "xemacs-mule-packages), consider using the xemacs-other-packages or"
+	@${ECHO_MSG} "xemacs-mule-other-packages port."
 
 .include <bsd.port.mk>
