@@ -84,6 +84,7 @@
     SUBDIR += id3lib
     SUBDIR += id3ren
     SUBDIR += id3tool
+    SUBDIR += id3v2
     SUBDIR += juke
     SUBDIR += kdemultimedia2
     SUBDIR += khordpro

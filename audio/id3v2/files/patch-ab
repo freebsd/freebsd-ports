@@ -1,0 +1,74 @@
+--- convert.cpp~	Fri Apr  7 14:11:22 2000
++++ convert.cpp	Wed Oct 10 15:50:16 2001
+@@ -14,22 +14,22 @@
+         cout << argv[nIndex] << "\"...";
+ 
+         myTag.Clear();
+-        myTag.Link(argv[nIndex]); 
++        myTag.Link(argv[nIndex], ID3TT_ALL); 
+ 
+         luint nTags;
+         switch(whichTags) 
+         {
+           case 1: 
+-            nTags = myTag.Strip(V1_TAG);
++            nTags = myTag.Strip(ID3TT_ID3V1);
+             cout << "id3v1 ";
+             break;
+           case 2:
+-            nTags = myTag.Strip(V2_TAG);
++            nTags = myTag.Strip(ID3TT_ID3V2);
+             cout << "id3v2 ";
+             break; 
+           case 0:
+           default:
+-            nTags = myTag.Strip(BOTH_ID3_TAGS);
++            nTags = myTag.Strip(ID3TT_ID3);
+             cout << "id3v1 and v2 ";
+         }
+ 
+@@ -61,11 +61,11 @@
+         cout << argv[nIndex] << "...";
+ 
+         myTag.Clear();
+-        myTag.Link(argv[nIndex]);
++        myTag.Link(argv[nIndex], ID3TT_ALL);
+ 
+         luint nTags;
+ 
+-        nTags = myTag.Update(V2_TAG);
++        nTags = myTag.Update(ID3TT_ID3V2);
+         cout << " converted ";
+         cout << endl;
+       }
+--- id3v2.cpp~	Sat Apr 22 13:46:44 2000
++++ id3v2.cpp	Wed Oct 10 15:52:09 2001
+@@ -291,7 +291,7 @@
+         // cout << "Tagging " << argv[nIndex] << ": ";
+ 
+         // fix me - not checking to see if we can link to it
+-        myTag.Link(argv[nIndex], false, false);
++        myTag.Link(argv[nIndex], ID3TT_ID3V2);
+ 
+         // loop thru the frames we need to add/modify
+         for(ii = 0; ii < frameCounter; ii++) 
+@@ -557,7 +557,7 @@
+           }
+         }  // steping thru frames
+        
+-        luint nTags = myTag.Update(V2_TAG);
++        luint nTags = myTag.Update(ID3TT_ID3V2);
+ 
+       }
+       catch(ID3_Error err)
+--- list.cpp~	Sat Apr 22 13:47:43 2000
++++ list.cpp	Wed Oct 10 15:52:37 2001
+@@ -353,7 +353,7 @@
+ 
+       if(!PrintID3v1Tag(argv[nIndex]))
+         tags = true;
+-      myTag.Link(argv[nIndex], false, false);
++      myTag.Link(argv[nIndex], ID3TT_ID3V2);
+       if(!PrintInformation(argv[nIndex],myTag))
+         tags = true;
+       if(!tags)
