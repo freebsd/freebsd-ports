@@ -18,7 +18,7 @@ MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	gimp/v${PORTVERSION:R}
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A GNU Image Manipulation Program (unstable development version)
+COMMENT=	A GNU Image Manipulation Program
 
 LIB_DEPENDS=	aa.1:${PORTSDIR}/graphics/aalib \
 		exif.10:${PORTSDIR}/graphics/libexif \
@@ -96,7 +96,7 @@ PLIST_SUB+=		HELPBROWSER:="@comment "
 
 pre-everything::
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "gimp-devel has the following tunable option(s):"
+	@${ECHO_MSG} "gimp has the following tunable option(s):"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "	WITH_PYTHON=yes		Turns on Python-Fu support"
 	@${ECHO_MSG} "	WITHOUT_PRINT=yes	Turns off GIMP printing"

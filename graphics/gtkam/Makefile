@@ -33,7 +33,7 @@ WITH_GIMP=	yes
 .endif
 
 .if defined(WITH_GIMP)
-LIB_DEPENDS+=	gimp-2.0:${PORTSDIR}/graphics/gimp-devel
+LIB_DEPENDS+=	gimp-2.0:${PORTSDIR}/graphics/gimp
 PLIST_SUB+=	GIMP=""
 .else
 CONFIGURE_ARGS+=	--without-gimp

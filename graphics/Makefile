@@ -103,7 +103,7 @@
     SUBDIR += giftool
     SUBDIR += giftrans
     SUBDIR += gimageview
-    SUBDIR += gimp-devel
+    SUBDIR += gimp
     SUBDIR += gimp-manual-html
     SUBDIR += gimp-manual-pdf
     SUBDIR += gimp-pmosaic
