@@ -1,4 +1,19 @@
 bin/gnome-jabber
+etc/gconf/gconf.xml.defaults/apps/gnome-jabber/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gnome-jabber/connection/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gnome-jabber/preferences/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gnome-jabber/preferences/chat/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gnome-jabber/preferences/misc/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gnome-jabber/preferences/notifications/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gnome-jabber/preferences/roster/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnome-jabber/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnome-jabber/connection/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnome-jabber/preferences/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnome-jabber/preferences/chat/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnome-jabber/preferences/misc/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnome-jabber/preferences/notifications/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnome-jabber/preferences/roster/%gconf.xml
+etc/gconf/schemas/gnome-jabber.schemas
 share/gnome/gnome-jabber/contact.wav
 share/gnome/gnome-jabber/emote_biggrin.png
 share/gnome/gnome-jabber/emote_confused.png
@@ -32,9 +47,25 @@ share/gnome/gnome-jabber/presence_subscribed.png
 share/gnome/gnome-jabber/presence_unsubscribe.png
 share/gnome/gnome-jabber/presence_unsubscribed.png
 share/gnome/gnome-jabber/presence_xa.png
+share/locale/cs/LC_MESSAGES/gnome-jabber.mo
 share/locale/de/LC_MESSAGES/gnome-jabber.mo
 share/locale/es/LC_MESSAGES/gnome-jabber.mo
+share/locale/fr/LC_MESSAGES/gnome-jabber.mo
 share/locale/lt/LC_MESSAGES/gnome-jabber.mo
 share/locale/nl/LC_MESSAGES/gnome-jabber.mo
 share/locale/ru/LC_MESSAGES/gnome-jabber.mo
 @dirrm share/gnome/gnome-jabber
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-jabber/preferences/roster
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-jabber/preferences/notifications
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-jabber/preferences/misc
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-jabber/preferences/chat
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-jabber/preferences
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-jabber/connection
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-jabber
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-jabber/preferences/roster
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-jabber/preferences/notifications
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-jabber/preferences/misc
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-jabber/preferences/chat
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-jabber/preferences
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-jabber/connection
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-jabber
