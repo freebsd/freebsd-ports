@@ -1,0 +1,11 @@
+--- configure.orig	Sun Nov 28 19:29:54 2004
++++ configure	Sun Nov 28 19:30:32 2004
+@@ -19384,6 +19384,8 @@
+  1.8a) MOZILLA_SNAPSHOT=16 ;;
+  1.8a2) MOZILLA_SNAPSHOT=16 ;;
+  1.8a3) MOZILLA_SNAPSHOT=17 ;;
++ 1.8a4) MOZILLA_SNAPSHOT=17 ;;
++ 1.8a5) MOZILLA_SNAPSHOT=17 ;;
+ trunk) MOZILLA_SNAPSHOT=17 ;;
+     *) { { echo "$as_me:$LINENO: error:
+ *****************************************************************************
