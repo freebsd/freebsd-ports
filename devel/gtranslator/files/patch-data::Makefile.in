@@ -1,0 +1,23 @@
+
+$FreeBSD$
+
+--- data/Makefile.in	2001/02/10 20:11:22	1.1
++++ data/Makefile.in	2001/02/10 20:16:40
+@@ -136,7 +136,7 @@
+ cxxflags_set = @cxxflags_set@
+ l = @l@
+ 
+-DEFAULT_SUBDIRS = desktop 		oaf 		scripts 		gnome-config 		pkg-config
++DEFAULT_SUBDIRS = desktop 		oaf 		scripts 		gnome-config
+ 
+ @GCONF_IS_PRESENT_TRUE@GCONF_SUBDIRS = gconf
+ @GCONF_IS_PRESENT_FALSE@GCONF_SUBDIRS = 
+@@ -154,7 +154,7 @@
+ 
+ TAR = tar
+ GZIP_ENV = --best
+-DIST_SUBDIRS =  desktop oaf scripts gnome-config pkg-config gconf mime
++DIST_SUBDIRS =  desktop oaf scripts gnome-config gconf mime
+ all: all-redirect
+ .SUFFIXES:
+ $(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ Makefile.am $(top_srcdir)/configure.in $(ACLOCAL_M4) 
