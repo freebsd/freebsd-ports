@@ -288,7 +288,7 @@ share/doc/apache/index.html.ru.ucs2
 share/doc/apache/index.html.ru.ucs4
 share/doc/apache/index.html.ru.utf8
 share/doc/apache/index.html.se
-share/doc/apache/index.html.zh
+share/doc/apache/index.html.zh-tw.big5
 share/doc/apache/manual/LICENSE
 share/doc/apache/manual/bind.html.en
 share/doc/apache/manual/bind.html.fr
@@ -302,7 +302,9 @@ share/doc/apache/manual/configuring.html.en
 share/doc/apache/manual/configuring.html.fr
 share/doc/apache/manual/configuring.html.html
 share/doc/apache/manual/configuring.html.ja.jis
-share/doc/apache/manual/content-negotiation.html
+share/doc/apache/manual/content-negotiation.html.en
+share/doc/apache/manual/content-negotiation.html.html
+share/doc/apache/manual/content-negotiation.html.ja.jis
 share/doc/apache/manual/custom-error.html.en
 share/doc/apache/manual/custom-error.html.fr
 share/doc/apache/manual/custom-error.html.html
@@ -387,6 +389,7 @@ share/doc/apache/manual/misc/windoz_keepalive.html
 share/doc/apache/manual/mod/core.html.en
 share/doc/apache/manual/mod/core.html.fr
 share/doc/apache/manual/mod/core.html.html
+share/doc/apache/manual/mod/core.html.ja.jis
 share/doc/apache/manual/mod/directive-dict.html.en
 share/doc/apache/manual/mod/directive-dict.html.fr
 share/doc/apache/manual/mod/directive-dict.html.html
@@ -413,11 +416,13 @@ share/doc/apache/manual/mod/mod_actions.html.en
 share/doc/apache/manual/mod/mod_actions.html.html
 share/doc/apache/manual/mod/mod_actions.html.ja.jis
 share/doc/apache/manual/mod/mod_alias.html.en
+share/doc/apache/manual/mod/mod_alias.html.html
 share/doc/apache/manual/mod/mod_alias.html.ja.jis
 share/doc/apache/manual/mod/mod_asis.html.en
 share/doc/apache/manual/mod/mod_asis.html.html
 share/doc/apache/manual/mod/mod_asis.html.ja.jis
 share/doc/apache/manual/mod/mod_auth.html.en
+share/doc/apache/manual/mod/mod_auth.html.html
 share/doc/apache/manual/mod/mod_auth.html.ja.jis
 share/doc/apache/manual/mod/mod_auth_anon.html
 share/doc/apache/manual/mod/mod_auth_db.html
@@ -449,7 +454,9 @@ share/doc/apache/manual/mod/mod_info.html.ja.jis
 share/doc/apache/manual/mod/mod_isapi.html
 share/doc/apache/manual/mod/mod_log_agent.html
 share/doc/apache/manual/mod/mod_log_common.html
-share/doc/apache/manual/mod/mod_log_config.html
+share/doc/apache/manual/mod/mod_log_config.html.en
+share/doc/apache/manual/mod/mod_log_config.html.html
+share/doc/apache/manual/mod/mod_log_config.html.ja.jis
 share/doc/apache/manual/mod/mod_log_referer.html
 share/doc/apache/manual/mod/mod_mime.html.en
 share/doc/apache/manual/mod/mod_mime.html.html

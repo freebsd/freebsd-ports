@@ -1,5 +1,5 @@
---- src/support/suexec.c.orig	Thu Mar 14 00:05:37 2002
-+++ src/support/suexec.c	Wed Sep 25 00:22:18 2002
+--- src/support/suexec.c.orig	Wed Mar  5 18:50:29 2003
++++ src/support/suexec.c	Fri Jul 18 18:09:56 2003
 @@ -90,6 +90,9 @@
  #include <sys/types.h>
  
@@ -10,32 +10,17 @@
  
  #include "suexec.h"
  
-@@ -296,11 +299,14 @@
-         fprintf(stderr, " -D DOC_ROOT=\"%s\"\n", DOC_ROOT);
- #endif
- #ifdef GID_MIN
--        fprintf(stderr, " -D GID_MID=%d\n", GID_MIN);
-+        fprintf(stderr, " -D GID_MIN=%d\n", GID_MIN);
- #endif
- #ifdef HTTPD_USER
-         fprintf(stderr, " -D HTTPD_USER=\"%s\"\n", HTTPD_USER);
- #endif
-+#ifdef LOGIN_CAP
-+        fprintf(stderr, " -D LOGIN_CAP\n");
-+#endif
+@@ -322,6 +325,9 @@
  #ifdef LOG_EXEC
          fprintf(stderr, " -D LOG_EXEC=\"%s\"\n", LOG_EXEC);
  #endif
-@@ -311,7 +317,7 @@
-         fprintf(stderr, " -D SUEXEC_UMASK=%03o\n", SUEXEC_UMASK);
++#ifdef LOGIN_CAP
++	fprintf(stderr, " -D LOGIN_CAP\n");
++#endif
+ #ifdef SAFE_PATH
+         fprintf(stderr, " -D SAFE_PATH=\"%s\"\n", SAFE_PATH);
  #endif
- #ifdef UID_MIN
--        fprintf(stderr, " -D UID_MID=%d\n", UID_MIN);
-+        fprintf(stderr, " -D UID_MIN=%d\n", UID_MIN);
- #endif
- #ifdef USERDIR_SUFFIX
-         fprintf(stderr, " -D USERDIR_SUFFIX=\"%s\"\n", USERDIR_SUFFIX);
-@@ -461,7 +467,28 @@
+@@ -480,7 +486,28 @@
  
      /*
       * Change UID/GID here so that the following tests work over NFS.
@@ -65,7 +50,7 @@
       * Initialize the group access list for the target user,
       * and setgid() to the target group. If unsuccessful, error out.
       */
-@@ -469,6 +496,7 @@
+@@ -488,6 +515,7 @@
  	log_err("emerg: failed to setgid (%ld: %s)\n", gid, cmd);
  	exit(109);
      }
