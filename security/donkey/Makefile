@@ -3,11 +3,11 @@
 # Date created:			17 Sep 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: porting.sgml,v 1.16 1996/03/21 14:15:01 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1996/09/19 11:33:48 max Exp $
 #
 
 DISTNAME=	donkey-0.5
-CATEGORIES+=	security
+CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.aist-nara.ac.jp/pub/Security/tool/donkey/
 
 MAINTAINER=	max@FreeBSD.ORG
