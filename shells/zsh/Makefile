@@ -3,15 +3,14 @@
 # Date created:			11 Feb. 1995
 # Whom:				torstenb
 #
-# $Id: Makefile,v 1.27 1998/08/27 02:33:51 max Exp $
+# $Id: Makefile,v 1.28 1999/06/05 22:31:58 mharo Exp $
 #
 
 DISTNAME=       zsh-3.0.5
 PKGNAME=	zsh-3.0.5
 CATEGORIES=	shells
-MASTER_SITES=   ftp://ftp.math.gatech.edu/pub/zsh/ \
-		ftp://ftp.sterling.com/zsh/ \
-		ftp://ftp.rge.com/pub/zsh/ \
+MASTER_SITES=	ftp://ftp.sterling.com/zsh/ \
+		ftp://ftp.rge.com/pub/shells/zsh/ \
 		ftp://ftp.cenatls.cena.dgac.fr/pub/shells/zsh/ \
 		ftp://mrrl.lut.ac.uk/zsh/ \
 		ftp://ftp.fu-berlin.de/pub/unix/shells/zsh/ \
