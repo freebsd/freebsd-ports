@@ -1,0 +1,21 @@
+%%SITE_PERL%%/Net/OSCAR.pm
+%%SITE_PERL%%/Net/OSCAR/Buddylist.pm
+%%SITE_PERL%%/Net/OSCAR/Callbacks.pm
+%%SITE_PERL%%/Net/OSCAR/Common.pm
+%%SITE_PERL%%/Net/OSCAR/Connection.pm
+%%SITE_PERL%%/Net/OSCAR/Connection/Chat.pm
+%%SITE_PERL%%/Net/OSCAR/Constants.pm
+%%SITE_PERL%%/Net/OSCAR/Proxy.pm
+%%SITE_PERL%%/Net/OSCAR/Screenname.pm
+%%SITE_PERL%%/Net/OSCAR/TLV.pm
+%%SITE_PERL%%/Net/OSCAR/Utility.pm
+%%SITE_PERL%%/Net/OSCAR/XML.pm
+%%SITE_PERL%%/Net/OSCAR/XML/Protocol.dtd
+%%SITE_PERL%%/Net/OSCAR/XML/Protocol.parsed-xml
+%%SITE_PERL%%/Net/OSCAR/XML/Protocol.xml
+%%SITE_PERL%%/Net/OSCAR/XML/Template.pm
+%%SITE_PERL%%/Net/OSCAR/_BLInternal.pm
+@dirrm %%SITE_PERL%%/Net/OSCAR/XML
+@dirrm %%SITE_PERL%%/Net/OSCAR/Connection
+@dirrm %%SITE_PERL%%/Net/OSCAR
+@unexec rmdir %D/%%SITE_PERL%%/Net 2>/dev/null || true
