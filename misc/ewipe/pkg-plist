@@ -1,6 +1,7 @@
 bin/ewipe
-lib/ewipe/viewer.tcl
 lib/ewipe/edittable.tcl
+lib/ewipe/setpointer.tcl
+lib/ewipe/viewer.tcl
 lib/ewipe/tclIndex
 share/doc/ewipe/Changes
 share/doc/ewipe/README
