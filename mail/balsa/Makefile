@@ -7,7 +7,7 @@
 
 PORTNAME=	balsa
 PORTVERSION=	1.4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://balsa.gnome.org/ \
 		http://www.theochem.kth.se/~pawsa/balsa/
@@ -15,8 +15,7 @@ MASTER_SITES=	http://balsa.gnome.org/ \
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A mail reader for the GNOME desktop
 
-LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap20-client \
-		aspell.15:${PORTSDIR}/textproc/aspell \
+LIB_DEPENDS=	aspell.15:${PORTSDIR}/textproc/aspell \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		esmtp.6:${PORTSDIR}/mail/libesmtp
 RUN_DEPENDS=	${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/ispell
@@ -24,6 +23,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/ispell
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomeprint gnomevfs gtkhtml gnometarget
+USE_OPENLDAP=	yes
 USE_LIBTOOL=	yes
 USE_OPENSSL=	yes
 LIBTOOLFILES=	configure libmutt/configure
