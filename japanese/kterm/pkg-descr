@@ -1,11 +1,15 @@
-kterm is a xterm replacement with Japanese (Kanji) support.  It also
-understands ANSI color sequences.  This version is 6.1.0, available
+Kterm is a xterm replacement with Japanese (Kanji) support.  It also
+understands ANSI color sequences.  This version is 6.2.0, available
 from the X11R6 contrib tape.
 
-Also included is support for Xaw3d arrow-style scrollbars.  You can
-now hold down the arrow buttons to scroll continuously.  I made this
-patch (patch-ae) by modifying the source while looking at the xterm
-patch available with Xaw3d for R5.
 
-Satoshi Asami
-asami@cs.berkeley.edu
+Also included is support for Xaw3d arrow-style scrollbars and neXtaw
+NeX-style scrollbars.  You can now hold down the arrow buttons to 
+scroll continuously.
+
+And also included kterm background-wallpaper patch.
+This patch is made by Junji Takagi <takagi@an.ip.titech.ac.jp>,
+and revised by Takuji Iimura <uirou@mma.club.uec.ac.jp>.
+
+Finally, this port is made by Satoshi Asami <asami@cs.berkeley.edu>,
+and revised by Shigeyuki Fukushima <shige@FreeBSD.ORG>.

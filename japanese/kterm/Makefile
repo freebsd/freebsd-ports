@@ -3,13 +3,14 @@
 # Date created:		18 November 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.17 1998/12/23 01:47:23 steve Exp $
+# $Id: Makefile,v 1.18 1999/03/01 09:38:10 shige Exp $
 #
 
 DISTNAME=	kterm-6.2.0
 PKGNAME=	ja-kterm-6.2.0
 CATEGORIES=	japanese x11
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITES=	${MASTER_SITE_XCONTRIB} \
+		http://www.freebsd.org/~shige/ports/kterm/
 MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=	shige@FreeBSD.ORG
@@ -17,10 +18,13 @@ MAINTAINER=	shige@FreeBSD.ORG
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
+DISTFILES=	${DISTNAME}.tar.gz README.wallpaper.ja
+EXTRACT_ONLY=	${DISTNAME}.tar.gz
 PATCH_SITES=	ftp://ftp.sra.co.jp/pub/x11/kterm/ \
-		http://karin.ip.titech.ac.jp/~takagi/kterm/
+		http://www.asahi-net.or.jp/~hc3j-tkg/kterm/
 PATCHFILES=	kterm-6.2.0.NFS-xauth.patch \
-		kterm-6.2.0-wpr1.patch.gz
+		kterm-6.2.0-wpi.patch.gz
+DIST_SUBDIR=	kterm
 PATCH_DIST_STRIP= -p1
 
 USE_IMAKE=	yes
@@ -63,7 +67,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README.kt ${DOCDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README.wallpaper ${DOCDIR}/README.wallpaper.ja
+	@${INSTALL_DATA} ${_DISTDIR}/README.wallpaper.ja ${DOCDIR}/README.wallpaper.ja
 .endif
 
 .include <bsd.port.mk>
