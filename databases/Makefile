@@ -22,6 +22,7 @@
     SUBDIR += dbtool
     SUBDIR += dbview
     SUBDIR += edb
+    SUBDIR += erserver
     SUBDIR += fastdb
     SUBDIR += firebird
     SUBDIR += firebird-devel
