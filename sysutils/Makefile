@@ -70,6 +70,7 @@
     SUBDIR += cvsweb-converters
     SUBDIR += daemontools
     SUBDIR += daemontools53
+    SUBDIR += dc42wrap
     SUBDIR += deleted
     SUBDIR += detach
     SUBDIR += di
