@@ -7404,6 +7404,7 @@ py-repl		ports/devel/py-repl
 py-reportlab	ports/print/py-reportlab
 py-reverse	ports/devel/py-reverse
 py-rijndael	ports/security/py-rijndael
+py-rlcompleter2	ports/devel/py-rlcompleter2
 py-ro		ports/devel/py-ro
 py-roxlib	ports/devel/py-roxlib
 py-rrdpipe	ports/net/py-rrdpipe
