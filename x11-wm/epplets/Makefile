@@ -12,7 +12,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.enlightenment.org/enlightenment/epplets/
 DISTNAME=	epplet-base-${PORTVERSION}
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	cmc@groupofnine.org
 
 LIB_DEPENDS=	gtop.1:${PORTSDIR}/devel/libgtop \
 		epplet.1:${PORTSDIR}/x11-wm/libepplet
