@@ -80,6 +80,7 @@
     SUBDIR += mmv
     SUBDIR += most
     SUBDIR += mshell
+    SUBDIR += muuz
     SUBDIR += numchar
     SUBDIR += nwrite
     SUBDIR += orville-write
