@@ -1,10 +1,10 @@
---- tools/sfio/sfhdr.h.orig	Thu Apr 26 21:17:42 2001
-+++ tools/sfio/sfhdr.h	Wed Nov  7 17:58:52 2001
+--- tools/sfio/sfhdr.h.orig	Thu Apr 18 10:28:45 2002
++++ tools/sfio/sfhdr.h	Thu Apr 18 10:29:17 2002
 @@ -230,7 +230,9 @@
  #endif
  
  #if _hdr_values
-+#ifndef __STDC__
++#ifdef HAVE_VALUES_H
  #include	<values.h>
 +#endif
  #if !defined(SF_MAXDOUBLE) && defined(MAXDOUBLE)

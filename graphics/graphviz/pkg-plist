@@ -9,8 +9,10 @@ bin/lefty
 bin/lneato
 bin/neato
 bin/nop
+bin/prune
 bin/sccmap
 bin/tred
+bin/twopi
 bin/unflatten
 lib/graphviz/demo/dge
 lib/graphviz/demo/dge.README
@@ -21,6 +23,8 @@ lib/graphviz/demo/doted.README
 lib/graphviz/demo/entities
 lib/graphviz/demo/entities.README
 lib/graphviz/demo/entities.html
+lib/graphviz/demo/gcat
+lib/graphviz/demo/gcat.README
 lib/graphviz/demo/ihi
 lib/graphviz/demo/ihi.README
 lib/graphviz/demo/ihi.testdata
@@ -41,6 +45,7 @@ lib/graphviz/demo/pathplan_data/unknown.dat
 lib/graphviz/demo/spline
 lib/graphviz/demo/spline.README
 lib/graphviz/graphs/directed/KW91.dot
+lib/graphviz/graphs/directed/Latin1.dot
 lib/graphviz/graphs/directed/NaN.dot
 lib/graphviz/graphs/directed/abstract.dot
 lib/graphviz/graphs/directed/alf.dot
@@ -58,9 +63,11 @@ lib/graphviz/graphs/directed/fig6.dot
 lib/graphviz/graphs/directed/fsm.dot
 lib/graphviz/graphs/directed/grammar.dot
 lib/graphviz/graphs/directed/hashtable.dot
+lib/graphviz/graphs/directed/honda-tokoro.dot
 lib/graphviz/graphs/directed/jcctree.dot
 lib/graphviz/graphs/directed/jsort.dot
 lib/graphviz/graphs/directed/ldbxtried.dot
+lib/graphviz/graphs/directed/longflat.dot
 lib/graphviz/graphs/directed/mike.dot
 lib/graphviz/graphs/directed/newarrows.dot
 lib/graphviz/graphs/directed/nhg.dot
@@ -69,6 +76,7 @@ lib/graphviz/graphs/directed/pm2way.dot
 lib/graphviz/graphs/directed/pmpipe.dot
 lib/graphviz/graphs/directed/polypoly.dot
 lib/graphviz/graphs/directed/proc3d.dot
+lib/graphviz/graphs/directed/record2.dot
 lib/graphviz/graphs/directed/records.dot
 lib/graphviz/graphs/directed/rowe.dot
 lib/graphviz/graphs/directed/shells.dot
@@ -81,9 +89,12 @@ lib/graphviz/graphs/directed/triedds.dot
 lib/graphviz/graphs/directed/try.dot
 lib/graphviz/graphs/directed/unix.dot
 lib/graphviz/graphs/directed/unix2.dot
+lib/graphviz/graphs/directed/unix2k.dot
 lib/graphviz/graphs/directed/viewfile.dot
 lib/graphviz/graphs/directed/world.dot
 lib/graphviz/graphs/undirected/ER.dot
+lib/graphviz/graphs/undirected/Heawood.dot
+lib/graphviz/graphs/undirected/Petersen.dot
 lib/graphviz/graphs/undirected/ngk10_4.dot
 lib/graphviz/graphs/undirected/process.dot
 lib/graphviz/lefty/box.lefty
@@ -98,18 +109,36 @@ lib/graphviz/lefty/fractal2.lefty
 lib/graphviz/lefty/lefty.psp
 lib/graphviz/lefty/slides.lefty
 lib/graphviz/lefty/tree.lefty
-lib/graphviz/libgdtclft.so
+lib/graphviz/libgdtclft.a
+lib/graphviz/libgdtclft.la
 lib/graphviz/libgdtclft.so.0
-lib/graphviz/libtcldgl.so
+@unexec rm -f %D/lib/graphviz/libgdtclft.so
+@exec ln -fs libgdtclft.so.0 %D/lib/graphviz/libgdtclft.so
+lib/graphviz/libtcldgl.a
+lib/graphviz/libtcldgl.la
 lib/graphviz/libtcldgl.so.0
-lib/graphviz/libtcldgr.so
+@unexec rm -f %D/lib/graphviz/libtcldgl.so
+@exec ln -fs libtcldgl.so.0 %D/lib/graphviz/libtcldgl.so
+lib/graphviz/libtcldgr.a
+lib/graphviz/libtcldgr.la
 lib/graphviz/libtcldgr.so.0
-lib/graphviz/libtcldot.so
+@unexec rm -f %D/lib/graphviz/libtcldgr.so
+@exec ln -fs libtcldgr.so.0 %D/lib/graphviz/libtcldgr.so
+lib/graphviz/libtcldot.a
+lib/graphviz/libtcldot.la
 lib/graphviz/libtcldot.so.0
-lib/graphviz/libtclplan.so
+@unexec rm -f %D/lib/graphviz/libtcldot.so
+@exec ln -fs libtcldot.so.0 %D/lib/graphviz/libtcldot.so
+lib/graphviz/libtclplan.a
+lib/graphviz/libtclplan.la
 lib/graphviz/libtclplan.so.0
-lib/graphviz/libtkspline.so
+@unexec rm -f %D/lib/graphviz/libtclplan.so
+@exec ln -fs libtclplan.so.0 %D/lib/graphviz/libtclplan.so
+lib/graphviz/libtkspline.a
+lib/graphviz/libtkspline.la
 lib/graphviz/libtkspline.so.0
+@unexec rm -f %D/lib/graphviz/libtkspline.so
+@exec ln -fs libtkspline.so.0 %D/lib/graphviz/libtkspline.so
 lib/graphviz/pkgIndex.tcl
 %%PORTDOCS%%share/doc/graphviz/Dot.ref
 %%PORTDOCS%%share/doc/graphviz/FAQ.html

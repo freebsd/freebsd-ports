@@ -1,6 +1,6 @@
---- configure.in.orig	Fri Jul 13 19:50:41 2001
-+++ configure.in	Wed Nov  7 16:50:08 2001
-@@ -97,7 +97,9 @@
+--- configure.in.orig	Fri Apr 12 07:09:14 2002
++++ configure.in	Thu Apr 18 00:58:35 2002
+@@ -166,7 +166,9 @@
  
  # Some systems don't have Tcl.  Don't build
  # the Tcl products if we don't have the library.
@@ -11,7 +11,7 @@
  if test -f $TCLCONFIG; then
      AC_MSG_RESULT([using $TCLCONFIG])
      file=${TCLCONFIG}
-@@ -173,7 +175,9 @@
+@@ -242,7 +244,9 @@
  
  # Some systems have Tcl, but not TK.  Don't build
  # the Tk products if we don't have the library.
@@ -22,3 +22,12 @@
  if test -f $TKCONFIG; then
      AC_MSG_RESULT([using $TKCONFIG])
      file=${TKCONFIG}
+@@ -561,7 +565,7 @@
+ # Checks for header files
+ # AC_STDC_HEADERS
+ # AC_HAVE_HEADERS(string.h)
+-AC_CHECK_HEADERS(malloc.h search.h getopt.h values.h termios.h \
++AC_CHECK_HEADERS(search.h getopt.h values.h termios.h \
+ 	errno.h sys/time.h unistd.h fpu_control.h sys/fpu.h strings.h)
+ AC_HEADER_TIME
+ AC_HEADER_DIRENT
