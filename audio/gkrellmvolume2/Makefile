@@ -22,6 +22,14 @@ RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 LATEST_LINK=	gkrellmvolume2
 WRKSRC=		${WRKDIR}/gkrellm-volume
 
+PLIST_FILES=	libexec/gkrellm2/plugins/volume.so \
+		share/locale/de/LC_MESSAGES/gkrellm-volume.mo \
+		share/locale/es/LC_MESSAGES/gkrellm-volume.mo \
+		share/locale/fr/LC_MESSAGES/gkrellm-volume.mo \
+		share/locale/nl/LC_MESSAGES/gkrellm-volume.mo \
+		share/locale/pl/LC_MESSAGES/gkrellm-volume.mo \
+		share/locale/ru/LC_MESSAGES/gkrellm-volume.mo
+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 
