@@ -85,7 +85,7 @@ diff -ruN ../virgin/joystick4doom/Makefile ./joystick4doom/Makefile
  clean:
  	$(RM) $(OBJS) $(PRGS)
 +
-+install:
++install: ${XBIN}
 +	install -cs ${XBIN} ${PREFIX}/libexec/doom
 +
 diff -ruN ../virgin/joystick4doom/README.FreeBSD ./joystick4doom/README.FreeBSD
