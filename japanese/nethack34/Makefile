@@ -3,7 +3,7 @@
 # Date created:		13 February 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.8 1996/09/21 00:52:29 asami Exp $
+# $Id: Makefile,v 1.9 1996/10/05 11:24:38 max Exp $
 #
 
 DISTNAME=	nethack-3.2.1
@@ -30,12 +30,10 @@ pre-install:
 	@cd ${WRKSRC}/doc; ${MAKE} PREFIX=${PREFIX} manpages
 
 post-install:
-.if !defined(NOMANCOMPRESS)
-	gzip -9nf ${PREFIX}/man/man6/dlb.6
-	gzip -9nf ${PREFIX}/man/man6/dgn_comp.6
-	gzip -9nf ${PREFIX}/man/man6/lev_comp.6
-	gzip -9nf ${PREFIX}/man/man6/nethack.6
-	gzip -9nf ${PREFIX}/man/man6/recover.6
-.endif
+	${COMPRESS_MAN} ${PREFIX}/man/man6/dlb.6
+	${COMPRESS_MAN} ${PREFIX}/man/man6/dgn_comp.6
+	${COMPRESS_MAN} ${PREFIX}/man/man6/lev_comp.6
+	${COMPRESS_MAN} ${PREFIX}/man/man6/nethack.6
+	${COMPRESS_MAN} ${PREFIX}/man/man6/recover.6
 
 .include <bsd.port.mk>

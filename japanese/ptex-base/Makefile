@@ -3,7 +3,7 @@
 # Date created:		5 Nov 1995
 # Whom:			Hideaki Ohmon <ohmon@sfc.keio.ac.jp>
 #
-# $Id: Makefile,v 1.9 1996/09/11 05:53:44 asami Exp $
+# $Id: Makefile,v 1.10 1996/09/17 15:07:50 max Exp $
 #
 
 DISTNAME=	ptex3.1415.p2.1.4
@@ -142,10 +142,8 @@ post-install:
 .for bin in ${BINARIES}
 	strip ${PREFIX}/bin/${bin}
 .endfor
-.if !defined(NOMANCOMPRESS)
 .for man in ${MANPAGES}
-	gzip -9nf ${PREFIX}/man/man1/${man}
+	${COMPRESS_MAN} ${PREFIX}/man/man1/${man}
 .endfor
-.endif
 
 .include <bsd.port.mk>
