@@ -1,74 +1,36 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/security/cyrus-sasl2-saslauthd/files/Attic/saslauthd.sh,v 1.1 2003-06-01 04:24:15 ume Exp $
+# $FreeBSD: /tmp/pcvs/ports/security/cyrus-sasl2-saslauthd/files/Attic/saslauthd.sh,v 1.2 2003-08-28 17:44:28 ume Exp $
 #
 
-action=$1
-
-PREFIX=%%PREFIX%%
-
-# Suck in the configuration variables.
-if [ -z "${source_rc_confs_defined}" ]; then
-        if [ -r /etc/defaults/rc.conf ]; then
-                . /etc/defaults/rc.conf
-                source_rc_confs
-        elif [ -r /etc/rc.conf ]; then
-                . /etc/rc.conf
-        fi
-fi
-
-# The following sasl_saslauthd_* variables may be defined in rc.conf
+# PROVIDE: saslauthd
+# REQUIRE: DAEMON
+# BEFORE: mail imap
+# KEYWORD: FreeBSD shutdown
 #
-# 	sasl_saslauthd_enable  - Set to YES to enable saslauthd
-#				 Default: YES
+# NOTE for FreeBSD 5.0+:
+# If you want this script to start with the base rc scripts
+# move saslauthd.sh to /etc/rc.d/saslauthd
+
+prefix=%%PREFIX%%
+
+# Define these saslauthd_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/saslauthd
 #
-#	sasl_saslauthd_program - Path to saslauthd program
-#				 Default: ${PREFIX}/sbin/saslauthd
+# DO NOT CHANGE THESE DEFAULT VALUES HERE 
 #
-#	sasl_saslauthd_flags   - Flags to saslauthd program
-#				 Default: -a pam
+saslauthd_enable="YES"				# Enable saslauthd
+#saslauthd_program="${prefix}/sbin/saslauthd"	# Location of saslauthd
+saslauthd_flags="-a pam"			# Flags to saslauthd program
 
-if [ -z "${sasl_saslauthd_enable}" ]; then
-	sasl_saslauthd_enable="YES"
-fi
+. %%RC_SUBR%%
 
-if [ -z "${sasl_saslauthd_program}" ]; then
-	sasl_saslauthd_program="${PREFIX}/sbin/saslauthd"
-fi
+name="saslauthd"
+rcvar=`set_rcvar`
+command="${prefix}/sbin/${name}"
+pidfile="/var/state/${name}/${name}.pid"
 
-if [ -z "${sasl_saslauthd_flags}" ]; then
-	sasl_saslauthd_flags="-a pam"
-fi
-
-rc=0
-
-case "${sasl_saslauthd_enable}" in
-    [Yy][Ee][Ss])
-	case "${action}" in
-
-	    start)
-		if [ -x ${sasl_saslauthd_program} ] ; then
-		    ${sasl_saslauthd_program} ${sasl_saslauthd_flags} \
-			&& echo -n " saslauthd"
-		fi
-		;;
-
-	    stop)
-		if [ -r /var/state/saslauthd/saslauthd.pid ]; then
-		    kill `cat /var/state/saslauthd/saslauthd.pid` && \
-			echo -n " saslauthd"
-		fi
-		;;
-
-	    *)
-		echo "usage: $0 {start|stop}" 1>&2
-		rc=64
-		;;
-	esac
-	;;
-    *)
-	rc=0
-	;;
-esac
-
-exit $rc
+load_rc_config $name
+run_rc_command "$1"

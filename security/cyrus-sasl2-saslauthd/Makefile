@@ -7,7 +7,7 @@
 
 PORTNAME=	saslauthd
 PORTVERSION=	2.1.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/%SUBDIR%/ \
 		ftp://ftp.westbend.net/pub/cyrus-mail/%SUBDIR%/ \
@@ -26,6 +26,8 @@ MD5_FILE=	${CYRUS_SASL2_DIR}/distinfo
 PATCHDIR=	${CYRUS_SASL2_DIR}/files
 INSTALL_WRKSRC=	${WRKDIR}/${DISTNAME}/saslauthd
 DOCSDIR=	${PREFIX}/share/doc/cyrus-sasl2
+
+USE_RC_SUBR=	YES
 
 GNU_CONFIGURE=	YES
 
@@ -116,6 +118,9 @@ DOCS=		AUTHORS COPYING ChangeLog INSTALL LDAP_SASLAUTHD NEWS README
 PLIST_SUB=	PREFIX=${PREFIX} \
 		DOCSDIR=${DOCSDIR:S/^${PREFIX}\///}
 
+RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
+		RC_SUBR=${RC_SUBR}
+
 do-build:
 	@${RM} -f ${WRKSRC}/saslauthd/saslauthd.8
 	cd ${WRKSRC}/sasldb && ${MAKE}
@@ -123,7 +128,7 @@ do-build:
 
 post-install:
 	${GZIP_CMD} ${MAN8PREFIX}/man/cat8/saslauthd.8
-	@${SED} -e "s;%%PREFIX%%;${PREFIX};g" \
+	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/saslauthd.sh > ${PREFIX}/etc/rc.d/saslauthd.sh
 	@${CHMOD} 755 ${PREFIX}/etc/rc.d/saslauthd.sh
 	${MKDIR} -m 770 /var/state/saslauthd
