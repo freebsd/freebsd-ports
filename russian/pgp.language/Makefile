@@ -3,7 +3,7 @@
 # Date created:         4 May 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.5 1995/07/01 08:30:48 asami Exp $
+# $Id: Makefile,v 1.6 1995/07/08 00:06:53 ache Exp $
 #
 
 DISTNAME=       pgp26ru
@@ -15,7 +15,8 @@ EXTRACT_SUFX=   .zip
 MAINTAINER=	ache@FreeBSD.ORG
 
 EXEC_DEPENDS += unzip:${PORTSDIR}/archivers/unzip
-EXEC_DEPENDS += pgp:${PORTSDIR}/utils/pgp
+EXEC_DEPENDS += pgp:${PORTSDIR}/security/pgp
+
 EXTRACT_CMD=    unzip
 EXTRACT_ARGS=   -q
 NO_WRKSUBDIR=   YES
