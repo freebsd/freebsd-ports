@@ -1,3 +1,4 @@
+bin/dtplite
 lib/tcllib%%PORTVERSION%%/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/asn/asn.tcl
 lib/tcllib%%PORTVERSION%%/asn/pkgIndex.tcl
