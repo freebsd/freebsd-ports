@@ -25,7 +25,7 @@ WANT_ESOUND=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 500013
+.if ${OSVERSION} > 500013 || ${MACHINE_ARCH} == "alpha"
 USE_ESOUND=	yes
 CONFIGURE_ARGS+=	--disable-oss --enable-esd
 .elif defined(HAVE_ESOUND)
