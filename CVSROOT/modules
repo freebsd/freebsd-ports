@@ -1890,6 +1890,7 @@ ggv		ports/print/ggv
 ggv2		ports/print/ggv2
 ghc		ports/lang/ghc
 ghc-doc		ports/lang/ghc-doc
+ghemical	ports/science/ghemical
 ghex		ports/editors/ghex
 ghex2		ports/editors/ghex2
 ghfaxviewer	ports/comms/ghfaxviewer
