@@ -28,18 +28,18 @@ CONFIGURE_ARGS= --with-tcl --with-tk \
 		--with-tkconfig=${PREFIX}/lib/tk8.0jp
 LIB_DEPENDS=	tcl80jp.1:${PORTSDIR}/japanese/tcl80 \
 		tk80jp.1:${PORTSDIR}/japanese/tk80
-PLISTS+=	PLIST.tcl
+PLISTS+=	pkg-plist.tcl
 .endif
 .if defined(MULTIBYTE)
 CONFIGURE_ARGS+= --with-mb=${MULTIBYTE}
 .endif
 .if defined(WITH_PERL)
 CONFIGURE_ARGS+= --with-perl
-PLISTS+=	PLIST.pl
+PLISTS+=	pkg-plist.pl
 .endif
 .if defined(WITH_ODBC)
 CONFIGURE_ARGS+= --with-odbc
-PLISTS+=	PLIST.odbc
+PLISTS+=	pkg-plist.odbc
 .endif
 
 NO_PACKAGE=	"Requires ${PGSQL_UID} uid"
@@ -114,12 +114,12 @@ post-build:
 	${CAT} ${PKGDIR}/${i} >> ${WRKDIR}/PLIST
 .endfor
 .if defined(WITH_TCL)
-	${CAT} ${PKGDIR}/PLIST.tcl.dirrm >> ${WRKDIR}/PLIST
+	${CAT} ${PKGDIR}/pkg-plist.tcl.dirrm >> ${WRKDIR}/PLIST
 .endif
 .if defined(WITH_ODBC)
-	${CAT} ${PKGDIR}/PLIST.odbc.dirrm >> ${WRKDIR}/PLIST
+	${CAT} ${PKGDIR}/pkg-plist.odbc.dirrm >> ${WRKDIR}/PLIST
 .endif
-	${CAT} ${PKGDIR}/PLIST.dirrm >> ${WRKDIR}/PLIST
+	${CAT} ${PKGDIR}/pkg-plist.dirrm >> ${WRKDIR}/PLIST
 
 pre-install:
 .if defined(PACKAGE_BUILDING)
