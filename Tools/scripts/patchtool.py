@@ -155,7 +155,7 @@ def querymakevar(varname, path = 'Makefile', strict = False, cache = {}):
 #
 def getrelpath(path, wrksrc):
 	path = os.path.abspath(path)
-	wrksrc = os.path.abspath(wrksrc)
+	wrksrc = os.path.abspath(wrksrc) + '/'
 	commonpart = os.path.commonprefix((path, wrksrc))
 	while commonpart[-1:] != '/':
 		commonpart = commonpart[:-1]
