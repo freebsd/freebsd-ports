@@ -62,6 +62,7 @@
     SUBDIR += kdeutils11-i18n
     SUBDIR += kp
     SUBDIR += kwatch
+    SUBDIR += lc
     SUBDIR += less
     SUBDIR += lile
     SUBDIR += logsurfer
