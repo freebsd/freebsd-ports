@@ -1,5 +1,5 @@
---- tircproxy.c.orig	Wed Jun  5 19:13:00 2002
-+++ tircproxy.c	Wed Jun  5 19:14:46 2002
+--- tircproxy.c.orig	Wed Sep 25 02:55:48 2002
++++ tircproxy.c	Wed Sep 25 02:56:17 2002
 @@ -131,6 +131,8 @@
  #	include <netinet/ip_compat.h>
  #  endif
@@ -23,14 +23,8 @@
  #endif
     
     	/* Give this thing 10 minutes to get started (paranoia).
-@@ -1148,13 +1151,13 @@
-                 natlook.nl_outip = socketin.sin_addr;
-                 natlook.nl_inip = sloc.sin_addr;
-                 natlook.nl_flags = IPN_TCP;
--                natlook.nl_outport = socketin.sin_port;
--                natlook.nl_inport = sloc.sin_port;
-+                natlook.nl_outport = ntohs(socketin.sin_port);
-+                natlook.nl_inport = ntohs(sloc.sin_port);
+@@ -1152,9 +1155,9 @@
+                 natlook.nl_inport = sloc.sin_port;
  
                  fd = open(IPL_NAT, O_RDONLY);
 -                if (ioctl(fd, SIOCGNATL, &natlook) == -1)
