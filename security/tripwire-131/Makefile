@@ -3,7 +3,7 @@
 # Date created:		31 Mar 1997
 # Whom:			Joe Greco <jgreco@ns.sol.net>
 #
-# $Id: Makefile,v 1.2 1997/04/03 23:09:49 jgreco Exp $
+# $Id: Makefile,v 1.3 1998/04/07 17:42:21 jgreco Exp $
 #
 
 DISTNAME=       tripwire-1.2
@@ -20,7 +20,7 @@ NO_PACKAGE=	"requires local database to be built"
 RESTRICTED=	"contains crypto class algorithms"
 
 post-extract:
-	@ (cd work; tar xf T1.2.tar)
+	@ (cd ${WRKDIR}; tar xf T1.2.tar)
 
 pre-configure:
 	@ ${CP} ${FILESDIR}/conf-freebsd2.h ${WRKSRC}/configs
