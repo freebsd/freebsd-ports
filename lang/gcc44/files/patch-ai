@@ -1,31 +1,35 @@
---- gcc/final.c.orig	Sat Sep  5 22:52:01 1998
-+++ gcc/final.c	Wed Oct  7 17:06:58 1998
-@@ -383,6 +383,8 @@
-       /* zero word */
-       assemble_integer (const0_rtx, long_bytes, 1);
+--- gcc/final.c.orig	Thu Jan  3 09:39:59 2002
++++ gcc/final.c	Sat Feb  2 19:20:09 2002
+@@ -295,6 +295,8 @@
+       /* Zero word.  */
+       assemble_integer (const0_rtx, long_bytes, align2, 1);
  
 +      fprintf(asm_out_file,".stabs \"bbset\", 25, 0, 0, LPBX0\n");
 +
-       /* address of filename */
+       /* Address of filename.  */
        ASM_GENERATE_INTERNAL_LABEL (name, "LPBX", 1);
-       assemble_integer (gen_rtx_SYMBOL_REF (Pmode, name), pointer_bytes, 1);
-@@ -1635,6 +1637,9 @@
+       assemble_integer (gen_rtx_SYMBOL_REF (Pmode, name), pointer_bytes,
+@@ -1524,6 +1526,11 @@
      leaf_renumber_regs (first);
  #endif
  
++/*
 +  if (profile_block_flag)
 +    add_bb (file);
++*/
 +
    /* The Sun386i and perhaps other machines don't work right
       if the profiling code comes after the prologue.  */
  #ifdef PROFILE_BEFORE_PROLOGUE
-@@ -1800,6 +1809,9 @@
+@@ -1668,6 +1675,11 @@
+   /* Finally, output the function epilogue:
       code to restore the stack frame and return to the caller.  */
-   FUNCTION_EPILOGUE (file, get_frame_size ());
- #endif
+   (*targetm.asm_out.function_epilogue) (asm_out_file, get_frame_size ());
 +
++/*
 +  if (profile_block_flag)
-+    add_bb (file);
++    add_bb (asm_out_file);
++*/
  
- #ifdef SDB_DEBUGGING_INFO
-   if (write_symbols == SDB_DEBUG)
+   /* And debug output.  */
+   (*debug_hooks->end_epilogue) ();
