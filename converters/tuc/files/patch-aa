@@ -1,0 +1,11 @@
+--- tuc.1.orig	Sat Apr 17 09:20:52 1999
++++ tuc.1	Sat Apr 17 09:21:34 1999
+@@ -84,7 +84,7 @@
+ You may also use the
+ .Fl i
+ flag to specify
+-.Ar outputfile
++.Ar inputfile
+ explicitly. If you use both
+ .Fl i
+ and
