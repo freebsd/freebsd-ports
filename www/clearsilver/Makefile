@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	clearsilver
-PORTVERSION=	0.9.7
+PORTVERSION=	0.9.13
 CATEGORIES=	www
 MASTER_SITES=	http://www.clearsilver.net/downloads/
 
@@ -71,8 +71,6 @@ BROKEN=		"Does not compile on ia64"
 .endif
 
 post-patch:
-	@# Exclude lemon.c, it gives some errors and its not used at all.
-	@${MV} ${WRKSRC}/cs/lemon.c ${WRKSRC}/cs/lemon.c.not_used
 	@# Remove CFLAGS when building the python module, pydistfile is used
 	@# and will do the right thing.
 	@${REINPLACE_CMD} -E 's,(\$$\(PYTHON\)),CFLAGS="" \1,g' ${WRKSRC}/python/Makefile
