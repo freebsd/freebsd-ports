@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	gnotime
-PORTVERSION=	2.1.5
+PORTVERSION=	2.1.7
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gttr
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	einekoai@chello.nl
 COMMENT=	GnoTime is a time tracker for gnome2
 
 LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
@@ -21,8 +21,7 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LIBS="-L${LOCALBASE}/lib -lgnuregex -lcompat"
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		gnotime.1
 

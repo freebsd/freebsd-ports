@@ -1,11 +1,13 @@
 bin/gnotime
 share/gnome/apps/Applications/gnotime.desktop
 share/gnome/gnotime/ghtml/C/bigtable.ghtml
+share/gnome/gnotime/ghtml/C/daily.ghtml
 share/gnome/gnotime/ghtml/C/gtt.scm
 share/gnome/gnotime/ghtml/C/invoice.ghtml
 share/gnome/gnotime/ghtml/C/journal.ghtml
 share/gnome/gnotime/ghtml/C/noproject.ghtml
 share/gnome/gnotime/ghtml/C/primer.ghtml
+share/gnome/gnotime/ghtml/C/status.ghtml
 share/gnome/gnotime/ghtml/C/tab-delim.ghtml
 share/gnome/gnotime/ghtml/C/todo-export.ghtml
 share/gnome/gnotime/ghtml/C/todo.ghtml
@@ -16,6 +18,7 @@ share/gnome/gnotime/glade/journal.glade
 share/gnome/gnotime/glade/not-implemented.glade
 share/gnome/gnotime/glade/notes.glade
 share/gnome/gnotime/glade/plugin.glade
+share/gnome/gnotime/glade/plugin_editor.glade
 share/gnome/gnotime/glade/prefs.glade
 share/gnome/gnotime/glade/project_properties.glade
 share/gnome/gnotime/glade/task_popup.glade
