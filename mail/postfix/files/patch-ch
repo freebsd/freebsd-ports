@@ -1,0 +1,11 @@
+--- man/man5/transport.5.orig	Fri Dec 31 20:54:51 1999
++++ man/man5/transport.5	Tue Nov  7 22:59:57 2000
+@@ -8,7 +8,7 @@
+ .SH SYNOPSIS
+ .na
+ .nf
+-\fBpostmap /etc/postfix/transport\fR
++\fBpostmap !!PREFIX!!/etc/postfix/transport\fR
+ .SH DESCRIPTION
+ .ad
+ .fi

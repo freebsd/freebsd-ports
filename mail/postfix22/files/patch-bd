@@ -1,19 +1,11 @@
-*** man/man5/canonical.5.orig	Mon Mar 29 22:36:25 1999
---- man/man5/canonical.5	Mon Mar 29 22:36:32 1999
+*** ./html/local.8.html.orig	Thu Feb  3 21:15:02 2000
+--- ./html/local.8.html	Thu Jun  1 22:22:30 2000
 ***************
-*** 8,14 ****
-  .SH SYNOPSIS
-  .na
-  .nf
-! \fBpostmap /etc/postfix/canonical\fR
-  .SH DESCRIPTION
-  .ad
-  .fi
---- 8,14 ----
-  .SH SYNOPSIS
-  .na
-  .nf
-! \fBpostmap !!PREFIX!!/etc/postfix/canonical\fR
-  .SH DESCRIPTION
-  .ad
-  .fi
+*** 99,101 ****
+         The default per-user mailbox is a file in  the  UNIX  mail
+!        spool  directory (<b>/var/mail/</b><i>user</i> or <b>/var/spool/mail/</b><i>user</i>);
+         the location can be specified with  the  <b>mail</b><i>_</i><b>spool</b><i>_</i><b>direc-</b>
+--- 99,101 ----
+         The default per-user mailbox is a file in  the  UNIX  mail
+!        spool  directory (<b>/var/mail/</b><i>user</i>);
+         the location can be specified with  the  <b>mail</b><i>_</i><b>spool</b><i>_</i><b>direc-</b>

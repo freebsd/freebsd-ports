@@ -1,0 +1,11 @@
+--- man/man5/access.5.orig	Fri Dec 11 19:55:52 1998
++++ man/man5/access.5	Tue Nov  7 22:56:25 2000
+@@ -8,7 +8,7 @@
+ .SH SYNOPSIS
+ .na
+ .nf
+-\fBpostmap /etc/postfix/access\fR
++\fBpostmap !!PREFIX!!/etc/postfix/access\fR
+ .SH DESCRIPTION
+ .ad
+ .fi

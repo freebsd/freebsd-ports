@@ -1,0 +1,11 @@
+--- man/man5/relocated.5.orig	Mon Sep  6 05:13:33 1999
++++ man/man5/relocated.5	Tue Nov  7 22:59:11 2000
+@@ -8,7 +8,7 @@
+ .SH SYNOPSIS
+ .na
+ .nf
+-\fBpostmap /etc/postfix/relocated\fR
++\fBpostmap !!PREFIX!!/etc/postfix/relocated\fR
+ .SH DESCRIPTION
+ .ad
+ .fi

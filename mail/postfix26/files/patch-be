@@ -1,19 +1,10 @@
-*** man/man5/relocated.5.orig	Mon Mar 29 22:36:36 1999
---- man/man5/relocated.5	Mon Mar 29 22:36:47 1999
-***************
-*** 8,14 ****
-  .SH SYNOPSIS
-  .na
-  .nf
-! \fBpostmap /etc/postfix/relocated\fR
-  .SH DESCRIPTION
-  .ad
-  .fi
---- 8,14 ----
-  .SH SYNOPSIS
-  .na
-  .nf
-! \fBpostmap !!PREFIX!!/etc/postfix/relocated\fR
-  .SH DESCRIPTION
-  .ad
-  .fi
+--- ./html/faq.html.orig	Sat Oct 28 23:34:51 2000
++++ ./html/faq.html	Sat Oct 28 23:36:04 2000
+@@ -2572,7 +2572,7 @@
+ 
+ Answer: instead of using <b>/usr/include/ndbm.h</b>, you're building
+ Postfix with some incompatible third-party file, typically
+-<b>/usr/local/include/ndbm.h</b>.
++<b>!!PREFIX!!/include/ndbm.h</b>.
+ 
+ <p>

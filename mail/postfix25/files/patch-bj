@@ -1,20 +1,42 @@
---- makedefs.orig	Sun Jan 23 03:04:27 2000
-+++ makedefs	Mon Apr  3 08:59:17 2000
-@@ -89,6 +89,8 @@
- 		;;
-   FreeBSD.4*)	SYSTYPE=FREEBSD4
- 		;;
-+  FreeBSD.5*)	SYSTYPE=FREEBSD5
-+		;;
-   OpenBSD.2*)	SYSTYPE=OPENBSD2
- 		;;
-    NetBSD.1*)	SYSTYPE=NETBSD1
-@@ -244,7 +246,7 @@
-         *) : ${OPT='-O'};;
- esac
- 
--: ${CC='gcc $(WARN)'} ${OPT='-O'} ${DEBUG='-g'} ${AWK=awk}
-+: ${CC='gcc $(WARN)'} ${OPT='-O'} ${AWK=awk}
- 
- export SYSTYPE AR ARFL RANLIB SYSLIBS CC OPT DEBUG AWK OPTS
- 
+*** ./html/uce.html.orig	Fri Dec 31 15:06:07 1999
+--- ./html/uce.html	Thu Jun  1 22:31:37 2000
+***************
+*** 126,130 ****
+  
+! <dd> <b>header_checks = regexp:/etc/postfix/header_checks</b>
+  
+! <dd> <b>header_checks = pcre:/etc/postfix/header_checks</b>
+  
+--- 126,130 ----
+  
+! <dd> <b>header_checks = regexp:!!PREFIX!!/etc/postfix/header_checks</b>
+  
+! <dd> <b>header_checks = pcre:!!PREFIX!!/etc/postfix/header_checks</b>
+  
+***************
+*** 169,171 ****
+  
+! <dd> <b>smtpd_client_restrictions = hash:/etc/postfix/access,
+  reject_maps_rbl</b>
+--- 169,171 ----
+  
+! <dd> <b>smtpd_client_restrictions = hash:!!PREFIX!!/etc/postfix/access,
+  reject_maps_rbl</b>
+***************
+*** 474,476 ****
+  
+! <dd> <b>smtpd_sender_restrictions = hash:/etc/postfix/access,
+  reject_unknown_sender_domain</b>
+--- 474,476 ----
+  
+! <dd> <b>smtpd_sender_restrictions = hash:!!PREFIX!!/etc/postfix/access,
+  reject_unknown_sender_domain</b>
+***************
+*** 856,858 ****
+  <dd> <b>smtpd_etrn_restrictions = permit_mynetworks,
+! hash:/etc/postfix/etrn_access, reject</b>
+  
+--- 856,858 ----
+  <dd> <b>smtpd_etrn_restrictions = permit_mynetworks,
+! hash:!!PREFIX!!/etc/postfix/etrn_access, reject</b>
+  

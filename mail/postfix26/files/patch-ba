@@ -1,19 +1,20 @@
-*** man/man1/postdrop.1.orig	Mon Mar 29 22:35:14 1999
---- man/man1/postdrop.1	Mon Mar 29 22:35:25 1999
+*** ./html/mailq.1.html.orig	Sat Apr 22 20:28:36 2000
+--- ./html/mailq.1.html	Thu Jun  1 22:19:24 2000
 ***************
-*** 51,57 ****
-  .na
-  .nf
-  /var/spool/postfix, mail queue
-! /etc/postfix, configuration files
-  .SH CONFIGURATION PARAMETERS
-  .na
-  .nf
---- 51,57 ----
-  .na
-  .nf
-  /var/spool/postfix, mail queue
-! !!PREFIX!!/etc/postfix, configuration files
-  .SH CONFIGURATION PARAMETERS
-  .na
-  .nf
+*** 83,85 ****
+                The path name of the <b>sendmail.cf</b> file. Postfix con-
+!               figuration files are kept in <b>/etc/postfix</b>.
+  
+--- 83,85 ----
+                The path name of the <b>sendmail.cf</b> file. Postfix con-
+!               figuration files are kept in <b>!!PREFIX!!/etc/postfix</b>.
+  
+***************
+*** 231,233 ****
+         /var/spool/postfix, mail queue
+!        /etc/postfix, configuration files
+  
+--- 231,233 ----
+         /var/spool/postfix, mail queue
+!        !!PREFIX!!/etc/postfix, configuration files
+  
