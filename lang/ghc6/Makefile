@@ -4,8 +4,8 @@
 #
 # $FreeBSD$
 
-PORTNAME=	ghc
-PORTVERSION=	5.04.3
+PORTNAME=	ghc6
+PORTVERSION=	6.0
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		http://www.haskell.org/ghc/dist/${PORTVERSION}/FreeBSD/:boot
@@ -30,6 +30,7 @@ DISTFILES+=	${BOOT_DIST5}
 MAINTAINER=	simonmar@microsoft.com
 COMMENT=	A Compiler for the functional language Haskell
 
+WRKSRC=		${WRKDIR}/ghc-${PORTVERSION}
 USE_PERL5=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -55,6 +56,10 @@ CONFIGURE_TARGET=
 TMPDIR = ${WRKSRC}/tmp
 MAKE_ENV += TMPDIR=${TMPDIR}
 
+# Just do a stage1 build
+ALL_TARGET = stage1
+MAKE_ENV += stage=1
+
 pre-everything::
 .if !defined(WITHOUT_PROFILE)
 	@${ECHO_CMD} "To build GHC without profiling libraries,"
@@ -69,23 +74,11 @@ post-extract:
 	@${ECHO} >>${WRKSRC}/mk/build.mk GhcLibWays=
 .endif
 
-post-patch:
-	@${PERL} -pi -e 's/DrIFT/DrIFT-ghc/g; \
-		s/DtdToHaskell/DtdToHaskell-ghc/g; \
-		s/Xtract/Xtract-ghc/g' \
-			${WRKSRC}/ghc/mk/config.mk \
-			${WRKSRC}/hslibs/tools/DrIFT/Makefile \
-			${WRKSRC}/hslibs/tools/DtdToHaskell/Makefile \
-			${WRKSRC}/hslibs/tools/Xtract/Makefile
-
 pre-configure:
 	@(cd ${BOOT_DIR} && ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS})
 	@(cd ${BOOT_DIR} && ${MAKE} in-place)
 
 pre-build:
 	@${MKDIR} ${TMPDIR}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
