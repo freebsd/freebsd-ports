@@ -1,8 +1,11 @@
---- src/Makefile.in.orig	Wed Oct 22 17:48:56 2003
-+++ src/Makefile.in	Wed Oct 22 17:51:00 2003
-@@ -62,51 +62,15 @@
+--- src/Makefile.in.orig	Fri Oct 24 10:05:04 2003
++++ src/Makefile.in	Fri Jan 30 13:11:28 2004
+@@ -61,53 +61,17 @@
+ 	fi
  
  install: all mkinstalldirs
+-	$(INSTALL) -d ${OOPS_SBINDIR}
++#	$(INSTALL) -d ${OOPS_SBINDIR}
  	$(INSTALL) oops ${OOPS_SBINDIR}
 -	if [ -f ${OOPS_SYSCONFDIR}/oops.cfg ]; then\
 -		$(INSTALL_DATA) oops.cfg ${OOPS_SYSCONFDIR}/oops.cfg.sample ;\

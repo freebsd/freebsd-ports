@@ -7,14 +7,13 @@
 
 PORTNAME=	oops
 PORTVERSION=	${OOPSVERSION}
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://oops-cache.org/
 DISTNAME=	${PORTNAME}-${OOPSVERSION}
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	A caching web proxy server
-
-FORBIDDEN=	"Changes ownership of ${PREFIX}/sbin"
 
 BUILD_DEPENDS+=	gawk:${PORTSDIR}/lang/gawk
 
