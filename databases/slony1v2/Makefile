@@ -10,7 +10,7 @@ PORTVERSION=	1.0.2
 CATEGORIES=	databases
 MASTER_SITES=	http://developer.postgresql.org/~wieck/slony1/download/
 
-MAINTAINER=	hsn@netmag.cz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PostgreSQL master to multiple slaves replication system
 
 PGSQL_PORT=	${PORTSDIR}/databases/postgresql7

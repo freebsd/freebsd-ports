@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.ludd.luth.se/~staham/linux/programs/ \
 		http://people.tecnik93.com/~radim/tarballs/
 DISTNAME=	popcheck
 
-MAINTAINER=	hsn@netmag.cz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Preview and delete messages in POP3 mailbox
 
 ALL_TARGET=	popcheck

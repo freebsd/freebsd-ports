@@ -11,7 +11,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	advancemame
 
-MAINTAINER=	hsn@netmag.cz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Recompression utilities for .ZIP, .PNG, .MNG and .GZ files
 
 GNU_CONFIGURE=	yes

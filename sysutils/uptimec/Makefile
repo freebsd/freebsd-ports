@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.mrEriksson.net/downloads/ \
 		ftp://ftp.mrEriksson.net/pub/uptimec/
 
-MAINTAINER=	hsn@netmag.cz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client for Uptime Project
 
 GNU_CONFIGURE=	yes

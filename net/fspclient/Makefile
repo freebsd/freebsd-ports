@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	hsn@netmag.cz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A ftp-like client for the fsp service
 
 GNU_CONFIGURE=	yes

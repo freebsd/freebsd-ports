@@ -11,7 +11,7 @@ CATEGORIES=	benchmarks www
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/www/servers
 
-MAINTAINER=	hsn@netmag.cz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple forking web benchmark
 
 USE_GETOPT_LONG=yes

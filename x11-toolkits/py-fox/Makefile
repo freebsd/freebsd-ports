@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	fxpy
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	FXPy-${PORTVERSION}
 
-MAINTAINER=	hsn@netmag.cz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface to FOX Graphics library
 
 LIB_DEPENDS=	FOX-1.0:${PORTSDIR}/x11-toolkits/fox

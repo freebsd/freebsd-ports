@@ -10,7 +10,7 @@ PORTVERSION=	0.2.5
 CATEGORIES=	games
 MASTER_SITES=	http://www.icculus.org/d2x/src/
 
-MAINTAINER=	hsn@netmag.cz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unix port of Descent 2 Game
 
 GNU_CONFIGURE=	yes
