@@ -1,22 +1,18 @@
-# New ports collection makefile for:	ndtpd
+# New ports collection makefile for:	ebnetd
 # Date created:			4 Aug 1998
 # Whom:				Motoyuki Kasahara <m-kasahr@sra.co.jp>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	ndtpd
-PORTVERSION=	3.1.5
-PORTREVISION=	1
+PORTNAME=	ebnetd
+PORTVERSION=	1.0
 CATEGORIES=	japanese ipv6
-MASTER_SITES=	ftp://ftp.sra.co.jp/pub/net/ndtp/ndtpd/ \
-		ftp://ftp.eos.hokudai.ac.jp/pub/net/ndtp/ndtpd/
-
-PATCH_SITES=	${MASTER_SITES}
-#PATCHFILES=	${DISTNAME}+.diff
+MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/ \
+		ftp://ftp.eos.hokudai.ac.jp/pub/net/ndtp/eb/
 
 MAINTAINER=	takamune2004@yahoo.co.jp
-COMMENT=	Server for accessing CD-ROM books with NDTP
+COMMENT=	Servers for accessing CD-ROM books via TCP/IP
 
 LIB_DEPENDS=	eb.7:${PORTSDIR}/japanese/eb
 
@@ -24,18 +20,19 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--localstatedir=${RUNDIR} --with-logdir=${LOGDIR}
 
-.if !defined(PACKAGE_BUILDING)
-IS_INTERACTIVE=	Maybe_interactive_at_install_stage
-.endif
-
 # Local variables
 LOGDIR=		/var/log
 RUNDIR=		/var/run
-STARTUP_SCRIPT=	${PORTNAME}.sh.sample
+STARTUP_SCRIPT=	${PORTNAME}.sh
+
+USE_RC_SUBR=	yes
+RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
+
+INFO=		ebnetd ebnetd-ja
 
 post-build:
-	${SED} "s,@prefix@,${PREFIX},; s,@rundir@,${RUNDIR},"\
-	  ${FILESDIR}/${STARTUP_SCRIPT} > ${WRKDIR}/${STARTUP_SCRIPT}
+	${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/${STARTUP_SCRIPT} > ${WRKDIR}/${STARTUP_SCRIPT}
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${STARTUP_SCRIPT} ${PREFIX}/etc/rc.d

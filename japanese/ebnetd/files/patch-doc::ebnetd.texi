@@ -1,0 +1,13 @@
+--- ../ebnetd-1.0-dist/doc/ebnetd.texi	Wed Sep  3 20:26:39 2003
++++ doc/ebnetd.texi	Sat Oct  2 23:46:15 2004
+@@ -8,9 +8,7 @@
+ 
+ @dircategory CD-ROM Book Utilities
+ @direntry
+-* EBNETD: (ebnetd).             Network EB Library server.
+-* NDTPD: (ndtpd).               Server for accessing CD-ROM books with NDTP.
+-* ebHTTPD: (ebhttpd).           Server for accessing CD-ROM books with HTTP.
++* EBNETD: (ebnetd).             Servers for accessing CD-ROM books via TCP/IP
+ @end direntry
+ 
+ @ifinfo

@@ -52,6 +52,7 @@
     SUBDIR += eb
     SUBDIR += ebd-fpw
     SUBDIR += eblook
+    SUBDIR += ebnetd
     SUBDIR += ebview
     SUBDIR += ebview-gtk2
     SUBDIR += ebw3
@@ -252,7 +253,6 @@
     SUBDIR += navi2ch-emacs20
     SUBDIR += navi2ch-emacs21
     SUBDIR += navi2ch-xemacs21-mule
-    SUBDIR += ndtpd
     SUBDIR += ne
     SUBDIR += nethack32
     SUBDIR += nethack34
