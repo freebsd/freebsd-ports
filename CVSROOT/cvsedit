@@ -1,12 +1,12 @@
 #! /usr/bin/perl
+#
+# $Id: cvsedit,v 1.11 1997/04/13 11:18:55 bde Exp $
 # 
 # This crude hack is to sanitise the results of what the user may have
 # "done" while editing the commit log message.. :-)   Peter Wemm.
 #
 # To use this, make it executable, and set your editinfo DEFAULT line:
 # DEFAULT   /path/to/this/program
-#
-# $Id: cvsedit,v 1.10 1996/02/07 14:35:36 peter Exp $
 #
 
 # same rules as CVS

@@ -1,8 +1,8 @@
 #! /bin/sh
 #
-#	unwrap - extract the combined package (created with wrap)
+# $Id: unwrap,v 1.1 1996/02/07 14:35:43 peter Exp $
 #
-# $Id$
+#	unwrap - extract the combined package (created with wrap)
 
 # move the file to a new name with an extension
 rm -rf $1.cvswrap

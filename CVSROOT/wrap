@@ -1,8 +1,8 @@
 #! /bin/sh
 #
-#	wrap - Combine a directory into a single tar package.
+# $Id: wrap,v 1.1 1996/02/07 14:35:44 peter Exp $
 #
-# $Id$
+#	wrap - Combine a directory into a single tar package.
 
 # This script is always called with the current directory set to
 # where the file to be combined exists. but i may get called with a
