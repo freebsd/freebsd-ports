@@ -72,7 +72,7 @@ pre-patch:
 		${WRKSRC}/../unix/Makefile.in
 .endif
 .if defined(METAKIT_WITH_PYTHON)
-	${REINPLACE_CMD} -e "s=python2.2=${PYTHON_VERSION}=" \
+	${REINPLACE_CMD} -e "s=python2.[0-9]=${PYTHON_VERSION}=" \
 		${WRKSRC}/../unix/Makefile.in ${WRKSRC}/../unix/configure
 .endif
 
