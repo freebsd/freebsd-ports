@@ -1353,6 +1353,7 @@ drac		ports/mail/drac
 dragstack	ports/deskutils/dragstack
 drbl		ports/mail/drbl
 drgeo		ports/math/drgeo
+dri		ports/graphics/dri
 dri-devel	ports/graphics/dri-devel
 driftnet	ports/net/driftnet
 driglide	ports/x11-servers/driglide
