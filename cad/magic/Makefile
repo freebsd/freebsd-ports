@@ -3,7 +3,7 @@
 # Date created:         18 Dec 1994
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.3 1995/04/01 12:44:14 jkh Exp $
+# $Id: Makefile,v 1.4 1995/04/11 20:12:58 asami Exp $
 #
 
 DISTNAME=       magic-6.4.4
@@ -13,7 +13,7 @@ EXTRACT_SUFX=   .tar.Z
 
 USE_GMAKE=	yes
 
-install:
+install: build
 	@echo "===>  Installing for ${DISTNAME}"
 	@${MAKE} ${.MAKEFLAGS} pre-install
 	@(cd ${WRKSRC}; ${MAKE} PREFIX=${PREFIX} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
