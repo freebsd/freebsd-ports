@@ -20,9 +20,9 @@ System/Applications/Preferences.app/Resources/PrefsApp.prefs/stamp.make
 System/Applications/Preferences.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/Preferences
 System/Applications/Preferences.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/library_paths.openapp
 System/Applications/Preferences.app/stamp.make
-System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libPrefsModule.so
-System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libPrefsModule.so.1
-System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libPrefsModule.so.1.0.0
+%%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libPrefsModule.so
+%%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libPrefsModule.so.1
+%%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libPrefsModule.so.1.0.0
 System/Library/Frameworks/PrefsModule.framework/Resources
 System/Library/Frameworks/PrefsModule.framework/Versions/A/Headers/PrefsModule.h
 System/Library/Frameworks/PrefsModule.framework/Versions/A/Resources/Info-gnustep.plist
