@@ -1,16 +1,16 @@
 bin/imgconv
 bin/imgutil
 bin/xgs
-%%PORTDOCS%%share/doc/xgs/CHANGES.TXT
-%%PORTDOCS%%share/doc/xgs/COMPAT.TXT
-%%PORTDOCS%%share/doc/xgs/INSTALL.TXT
-%%PORTDOCS%%share/doc/xgs/IWM-DOC.TXT
-%%PORTDOCS%%share/doc/xgs/README.FreeBSD
-%%PORTDOCS%%share/doc/xgs/TODO.TXT
-%%PORTDOCS%%share/doc/xgs/XGS-FAQ.TXT
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES.TXT
+%%PORTDOCS%%%%DOCSDIR%%/COMPAT.TXT
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.TXT
+%%PORTDOCS%%%%DOCSDIR%%/IWM-DOC.TXT
+%%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
+%%PORTDOCS%%%%DOCSDIR%%/TODO.TXT
+%%PORTDOCS%%%%DOCSDIR%%/XGS-FAQ.TXT
 share/xgs/xgs.ram
 share/xgs/xgs.rom
 share/xgs/xgs40.fnt
 share/xgs/xgs80.fnt
 @dirrm share/xgs
-%%PORTDOCS%%@dirrm share/doc/xgs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
