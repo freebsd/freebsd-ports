@@ -1,0 +1,4 @@
+Ruby extension for the UNIX PC/SC Lite API (MUSCLE).
+
+Author:	Toni Andjelkovic <toni@ants.at>
+WWW:	http://www.ants.at/ruby/PCSC-ruby/
