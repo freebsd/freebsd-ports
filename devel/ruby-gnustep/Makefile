@@ -18,6 +18,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 
 BUILD_DEPENDS=	${GNUSTEP_PREFIX}/System/Makefiles/GNUstep.sh:${PORTSDIR}/devel/gnustep-make \
+		${LOCALBASE}/lib/libcallback.a:${PORTSDIR}/devel/ffcall \
 		${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base \
 		${COMBOLIBDIR}/libgnustep-gui.so:${PORTSDIR}/x11-toolkits/gnustep-gui \
 		${BACKBUNDLEDIR}/libgnustep-back:${PORTSDIR}/x11-toolkits/gnustep-back
