@@ -163,6 +163,7 @@
     SUBDIR += inform
     SUBDIR += ishido
     SUBDIR += jetpack
+    SUBDIR += jfk
     SUBDIR += jzip
     SUBDIR += kdegames3
     SUBDIR += klondike
