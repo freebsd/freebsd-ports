@@ -48,6 +48,17 @@ INSTALLS_SHLIB=yes
 .endif
 
 pre-fetch:
+.if !defined(QT_GIF_AVAILABLE) || !defined(HAVE_UNISYS_LICENSE)
+	@${ECHO}
+	@${ECHO} "GIF support is disabled in QT by default due to the"
+	@${ECHO} "restrictive license on LZW compression owned by Unisys."
+	@${ECHO} "To build with GIF support, use"
+	@${ECHO}
+	@${ECHO} "	${MAKE} -DQT_GIF_AVAILABLE [other args]"
+	@${ECHO} "or"
+	@${ECHO} "	${MAKE} -DHAVE_UNISYS_LICENSE [other args]"
+	@${ECHO}
+.endif
 .if exists(${X11BASE}/lib/libqt2.so.3)
 .if !defined(WANT_STATIC)
 	@${ECHO} "An older version of QT2 is installed.  To avoid clobbering"
