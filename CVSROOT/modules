@@ -4098,6 +4098,7 @@ libXext		ports/x11/libXext
 libXfixes	ports/x11/libXfixes
 libXfont	ports/x11/libXfont
 libXi		ports/x11/libXi
+libXpm		ports/x11/libXpm
 libXrandr	ports/x11/libXrandr
 libXrender	ports/x11/libXrender
 libXres		ports/x11/libXres
