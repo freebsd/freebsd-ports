@@ -30,19 +30,21 @@ MAINTAINER=	obrien@FreeBSD.org
 .include <bsd.port.pre.mk>
 
 GCC_REV=	${DISTNAME:S/gcc-//g:S/.test1//g}
+TARGLIB=	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}
 LIBSTDCPP_REV=	2100
 
-.if ${PORTOBJFORMAT} == "elf"
-CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
-.else
+.if ${PORTOBJFORMAT} == "aout"
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsdaout${OSREL}
+.else
+CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .endif
 
 PLIST_SUB+=	EGCS_REV=${GCC_REV} GNU_HOST=${CONFIGURE_TARGET}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-gnu-as --with-gnu-ld \
-		--with-gxx-include-dir=${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/include/g++
+		--with-gxx-include-dir=${TARGLIB}/include/g++
+#CONFIGURE_ARGS+=	--program-suffix=-2.95.3
 .if defined(WANT_SHAREDLIBS)
 CONFIGURE_ARGS+= --enable-shared
 .endif
@@ -77,12 +79,12 @@ post-install:
 		${PREFIX}/bin/g++filt ${PREFIX}/bin/g77 ${PREFIX}/bin/gcov \
 		${PREFIX}/bin/protoize ${PREFIX}/bin/unprotoize \
 		${PREFIX}/bin/${CONFIGURE_TARGET}-gcc \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/cc1 \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/cc1obj \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/cc1plus \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/cpp0 \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/collect2 \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/f771 ; \
+		${TARGLIB}/cc1 \
+		${TARGLIB}/cc1obj \
+		${TARGLIB}/cc1plus \
+		${TARGLIB}/cpp0 \
+		${TARGLIB}/collect2 \
+		${TARGLIB}/f771 ; \
 	do \
 		strip $$prog ; \
 	done)
@@ -91,22 +93,20 @@ post-install:
 	${MV} ${PREFIX}/bin/g77 ${PREFIX}/bin/g77
 	${MV} ${PREFIX}/bin/g++filt ${PREFIX}/bin/g++filt295
 	${RM} -f ${PREFIX}/bin/cpp
-	${MV} ${PREFIX}/lib/libiberty.a  \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}
+	${MV} ${PREFIX}/lib/libiberty.a ${TARGLIB}
 	${MV} -f ${PREFIX}/lib/libstdc++.a.${LIBSTDCPP_REV}  \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/libstdc++.a
+		${TARGLIB}/libstdc++.a
 	${MV} ${PREFIX}/man/man1/gcc.1 ${PREFIX}/man/man1/gcc295.1
 	${MV} ${PREFIX}/man/man1/g++.1 ${PREFIX}/man/man1/g++295.1
 	${MV} ${PREFIX}/man/man1/g77.1 ${PREFIX}/man/man1/g77.1
 .if defined(WANT_SHAREDLIBS)
-	${MV} -f ${PREFIX}/lib/libstdc++.so*  \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}
+	${MV} -f ${PREFIX}/lib/libstdc++.so* ${TARGLIB}
 .endif
 .for info in cpp g77 gcc
 	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
 .endfor
 	cd ${PREFIX} ;\
-	    find lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV} \
+	    find lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV} \
 		-type f -o -type l >${WRKDIR}/PLIST.gcc-lib
 	${ECHO} "r ${TMPPLIST}"			> ${WRKDIR}/ex.script
 	${ECHO} "/Insert PLIST.gcc-lib"		>> ${WRKDIR}/ex.script
