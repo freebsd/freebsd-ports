@@ -3,7 +3,6 @@ bin/spam
 bin/sgmlnorm
 bin/spent
 lib/libsp.a
-lib/libsp.so.1.1
 include/sp/EventGenerator.h
 include/sp/ParserEventGeneratorKit.h
 include/sp/SGMLApplication.h
@@ -151,4 +150,5 @@ share/doc/sp/spent.htm
 share/doc/sp/sysdecl.htm
 share/doc/sp/sysid.htm
 share/doc/sp/winntu.htm
-@exec /sbin/ldconfig -m %D/lib
+@dirrm share/doc/sp
+@dirrm include/sp
