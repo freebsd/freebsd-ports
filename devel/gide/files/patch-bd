@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Sun May 14 10:11:41 2000
++++ src/Makefile.in	Wed May 17 09:46:40 2000
+@@ -161,7 +161,7 @@
+ 
+ 
+ DEFS = @DEFS@ -I. -I$(srcdir) -I..
+-LIBS = @LIBS@
++LIBS = @LIBS@ -lgnuregex
+ gide_OBJECTS =  gI_about.o gI_cfp.o gI_compile.o gI_document.o gI_edit.o \
+ gI_file.o gI_files.o gI_functions.o gI_help.o gI_menus.o gI_prefs.o \
+ gI_project.o gI_search.o gI_tools.o gI_run.o gI_tree.o gI_window.o \
