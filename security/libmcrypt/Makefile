@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libmcrypt
-PORTVERSION=	2.5.2
+PORTVERSION=	2.5.3
 CATEGORIES=	security
 MASTER_SITES=	ftp://mcrypt.hellug.gr/pub/mcrypt/libmcrypt/ \
 		ftp://ftp.ntua.gr/pub/security/mcrypt/libmcrypt/
@@ -26,11 +26,19 @@ INSTALLS_SHLIB=	yes
 
 MAN3=		mcrypt.3
 
+post-extract:
+# so we need not audit the configure scripts
+	${FIND} ${WRKSRC} -name configure -exec ${RM} -f \{\} \;
+
 pre-patch:
 	@${FIND} ${WRKSRC}/modules -name '*.[ch]' | ${XARGS} ${PERL} -pi -e \
 		's|#ifdef USE_LTDL|#if defined\(USE_LTDL\) && !defined\(__FreeBSD__\)|g'
 
 post-patch:
 	@cd ${WRKSRC}/libltdl && ${LOCALBASE}/bin/autoconf
+
+pre-configure:
+# because we removed the configure scripts
+	cd ${WRKSRC} && autoconf
 
 .include <bsd.port.mk>
