@@ -1,0 +1,10 @@
+Index: qemu/configure
+@@ -204,7 +204,7 @@
+ 
+ if test -z "$sdl" ; then
+ 
+-sdl_config="sdl-config"
++sdl_config="sdl11-config"
+ sdl=no
+ sdl_static=no
+ 

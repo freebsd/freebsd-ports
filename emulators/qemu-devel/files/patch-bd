@@ -1,0 +1,10 @@
+Index: qemu/configure
+@@ -286,7 +286,7 @@
+ if test -z "$prefix" ; then
+     prefix="/usr/local"
+ fi
+-mandir="$prefix/share/man"
++mandir="$prefix/man"
+ datadir="$prefix/share/qemu"
+ docdir="$prefix/share/doc/qemu"
+ bindir="$prefix/bin"

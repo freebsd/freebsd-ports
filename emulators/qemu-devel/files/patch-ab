@@ -1,0 +1,16 @@
+Index: qemu-snapshot-2004-05-30_23-40/target-i386/op.c
+@@ -1307,11 +1307,9 @@
+ #if defined(_BSD) && defined(USE_X86LDOUBLE)
+ 
+ CPU86_LDouble rintl(CPU86_LDouble __x) {
+-  CPU86_LDouble __rintres;
+-  __asm__ __volatile__
+-    ("fistp %0"
+-     : "=m" (__rintres) : "t" (__x) : "st");
+-  return __rintres;
++  register CPU86_LDouble __result;
++  __asm __volatile__ ("frndint" : "=t" (__result) : "0" (__x));
++  return __result;
+ }
+ 
+ int lrintl(CPU86_LDouble __x) {

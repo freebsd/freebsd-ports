@@ -1,0 +1,11 @@
+Index: qemu/block.c
+@@ -175,7 +175,9 @@
+ #ifdef _BSD
+         struct stat sb;
+         if (!fstat(fd,&sb) && (S_IFCHR & sb.st_mode)) {
++#ifdef DIOCGMEDIASIZE
+             if (ioctl(fd, DIOCGMEDIASIZE, (off_t *)&size))
++#endif
+                 size = lseek(fd, 0LL, SEEK_END);
+         } else
+ #endif                      

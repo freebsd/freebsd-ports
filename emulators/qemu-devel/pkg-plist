@@ -1,0 +1,10 @@
+bin/qemu
+bin/qemu-mkcow
+bin/vmdk2raw
+share/doc/qemu/qemu-doc.html
+share/doc/qemu/qemu-tech.html
+share/qemu/bios.bin
+share/qemu/linux_boot.bin
+share/qemu/vgabios.bin
+@dirrm share/qemu
+@dirrm share/doc/qemu
