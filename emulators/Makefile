@@ -70,6 +70,7 @@
     SUBDIR += qcl
     SUBDIR += quasi88
     SUBDIR += rtc
+    SUBDIR += scummvm
     SUBDIR += sim
     SUBDIR += sim6811
     SUBDIR += ski

@@ -1008,3 +1008,4 @@ www/zope-cmf13|www/zope-cmf|2004-04-01|old version no longer needed
 multimedia/acme|sysutils/gnomecontrolcenter2|2004-04-04|merged into gnomecontrolcenter2
 x11/gswitchit|x11/gnomeapplets2|2004-04-04|merged into gnomeapplets2
 devel/gnomevfs-extras|devel/gnomevfs2|2004-04-04|merged into gnomevfs2
+games/scummvm|emulators/scummvm|2004-04-06|new category

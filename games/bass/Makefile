@@ -16,7 +16,7 @@ DISTNAME=	BASS-CD
 MAINTAINER=	alexander@trull.com
 COMMENT=	Beneath a Steel Sky: a post-apocalyptic futuristic graphical adventure
 
-RUN_DEPENDS=	scummvm:${PORTSDIR}/games/scummvm
+RUN_DEPENDS=	scummvm:${PORTSDIR}/emulators/scummvm
 
 USE_ZIP=	yes
 NO_BUILD=	yes

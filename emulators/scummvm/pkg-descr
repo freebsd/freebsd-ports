@@ -1,12 +1,14 @@
-ScummVM is an implementation of LucasArts S.C.U.M.M. (Script Creation Utility
-for Maniac Mansion) interpreter, used in games such as Monkey Island, Indiana
-Jones, Day Of The Tentacle, Sam and Max, and many more. Some things are still
-missing, and some games cannot be completeted yet. There are quite a few known
-bugs. Regardless of the bugs it is still possible to play some games all the
-way through to the end. Still other games do not load at all. 
+ScummVM is an 'Virtual Machine' for playing several classic graphical
+point-and-click adventure games developed by LucasArts, Revolution 
+and Adventure Soft.
 
-Visit these following web pages for more information:
+See http://www.scummvm.org/compatibility.php for a full list of Games.
+
+The following freewared games are available via ports at the time of writing:
+
+Beneath a Steel Sky:        games/bass
+Flight of the Amazon Queen: games/fotaq
 
 WWW: http://scummvm.sourceforge.net/
 
--Adam Weinberger <adamw@FreeBSD.org>
+-Alex Trull (alexander@trull.com)

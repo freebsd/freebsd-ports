@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	scummvm
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for use with the SCUMMVM game emulator
 
-RUN_DEPENDS=	scummvm:${PORTSDIR}/games/scummvm
+RUN_DEPENDS=	scummvm:${PORTSDIR}/emulators/scummvm
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
