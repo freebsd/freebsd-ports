@@ -1,9 +1,7 @@
-This is FAAD 2 - Freeware Advanced Audio Decoder 2.
+FAAD2 (Freeware Advanced Audio Decoder) is a MPEG-2, MPEG-4 AAC decoder.
 
-FAAD 2 is a LC, MAIN and LTP profile, MPEG2 and MPEG-4 AAC decoder,
-completely written from scratch.
+FAAD2 is the fastest ISO AAC audio decoder available and can be used with
+DRM (Digital Radio Mondiale), and supports HE (High Efficiency), Main,
+LC, LD, LTP, PS (Parametric Stereo) AAC files.
 
 WWW: http://www.audiocoding.com/
-
-- Sean McGovern
-sean@sfarc.net
