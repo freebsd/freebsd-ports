@@ -7,6 +7,7 @@ lib/%%PYTHON_VERSION%%/site-packages/inrep.py
 lib/%%PYTHON_VERSION%%/site-packages/makbacl.py
 lib/%%PYTHON_VERSION%%/site-packages/parrot.py
 lib/%%PYTHON_VERSION%%/site-packages/pparser.py
+lib/%%PYTHON_VERSION%%/site-packages/test.py
 lib/%%PYTHON_VERSION%%/site-packages/tokpos.py
 lib/%%PYTHON_VERSION%%/site-packages/util.py
 %%PORTDOCS%%share/doc/parrot/INTRO
