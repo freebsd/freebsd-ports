@@ -1,0 +1,45 @@
+bin/giftui
+etc/gconf/schemas/giftui.schemas
+etc/gconf/gconf.xml.defaults/apps/giftui/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/giftui/daemon/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/giftui/ui/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/giftui/ui/transfers/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/giftui/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/giftui/daemon/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/giftui/ui/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/giftui/ui/transfers/%gconf.xml
+share/applications/giftui.desktop
+share/doc/giftui/AUTHORS
+share/doc/giftui/COPYING
+share/doc/giftui/ChangeLog
+share/doc/giftui/NEWS
+share/doc/giftui/README
+share/doc/giftui/TODO
+share/giftui/icons/fasttrack-down.png
+share/giftui/icons/fasttrack-network.png
+share/giftui/icons/fasttrack-search.png
+share/giftui/icons/fasttrack-up.png
+share/giftui/icons/gnutella-down.png
+share/giftui/icons/gnutella-network.png
+share/giftui/icons/gnutella-search.png
+share/giftui/icons/gnutella-up.png
+share/giftui/icons/openft-down.png
+share/giftui/icons/openft-network.png
+share/giftui/icons/openft-search.png
+share/giftui/icons/openft-up.png
+share/giftui/icons/opennap-down.png
+share/giftui/icons/opennap-network.png
+share/giftui/icons/opennap-search.png
+share/giftui/icons/opennap-up.png
+share/pixmaps/giftui.png
+@dirrm share/giftui/icons
+@dirrm share/giftui
+@dirrm share/doc/giftui
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/giftui/ui/transfers
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/giftui/ui
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/giftui/daemon
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/giftui
+@dirrm etc/gconf/gconf.xml.defaults/apps/giftui/ui/transfers
+@dirrm etc/gconf/gconf.xml.defaults/apps/giftui/ui
+@dirrm etc/gconf/gconf.xml.defaults/apps/giftui/daemon
+@dirrm etc/gconf/gconf.xml.defaults/apps/giftui

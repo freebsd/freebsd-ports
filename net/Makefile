@@ -145,6 +145,7 @@
     SUBDIR += gift-openft
     SUBDIR += giftcurs
     SUBDIR += giftoxic
+    SUBDIR += giftui
     SUBDIR += gini
     SUBDIR += ginsu
     SUBDIR += gkrellm-gift
