@@ -3,7 +3,7 @@
 # Date created:		21 October 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.7 1996/11/17 08:44:40 obrien Exp $
+# $Id: Makefile,v 1.8 1996/11/18 10:25:35 asami Exp $
 #
 
 DISTNAME=	ghostview-1.5
@@ -12,8 +12,9 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 
 MAINTAINER=	ports@FreeBSD.org
 
-RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript
-
 USE_IMAKE=	yes
+
+post-install:
+	@/bin/sh ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
