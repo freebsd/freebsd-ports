@@ -1,0 +1,10 @@
+--- KrPool.C.orig	Fri Oct 22 00:20:19 1999
++++ KrPool.C	Fri Oct 22 18:47:08 1999
+@@ -3,7 +3,6 @@
+ #include <stdlib.h>
+ #include <assert.h>
+ #include <limits.h>
+-#include <malloc.h>
+ #include <Kr/KrPool.h>
+ 
+ const uint	KrPool::BUFLEN;

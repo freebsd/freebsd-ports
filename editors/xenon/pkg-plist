@@ -1,0 +1,3 @@
+bin/xe
+share/examples/xe/sample.xerc
+@dirrm share/examples/xe

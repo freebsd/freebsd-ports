@@ -1,0 +1,26 @@
+--- Xe.C.orig	Fri Oct 22 00:20:19 1999
++++ Xe.C	Fri Oct 22 18:45:53 1999
+@@ -41,9 +41,11 @@
+ // Home directory lookup function.
+ //
+ 
++#ifndef __FreeBSD__
+ extern "C" {
+ extern char* cuserid(char*);
+ }
++#endif
+ 
+ void
+ getHomeDir(char* pathname)
+@@ -57,8 +59,10 @@
+         
+         // $$$ cuserid _should_ be in unistd.h, but egcs
+         // complains that it isn't declared
+-        username = (char*)cuserid(NULL);
++#ifndef __FreeBSD__
++        username = (char*)cuserid(NULL)
+         if (username == 0)
++#endif
+             username = getlogin();
+         
+         if (username)

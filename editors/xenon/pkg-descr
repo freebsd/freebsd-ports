@@ -1,0 +1,20 @@
+Xenon is a simple X-based text editor which is very handy for things like
+editing source code, system configuration files, scripts and whatever else
+is an ASCII text file.
+
+Features include:
+  * Speed, simplicity and low memory use.
+  * Search, substring or regular expression
+  * Unlimited undo/redo.
+  * Display of line numbers, jump to line number
+  * Some X resource configuration: mostly command keys, some colours
+  * Man page!
+  * Some error dialogs.
+  * Multiple files in separate windows.
+  * Open multiple files from the command line
+  * Run Once (only one process per uid and X connection IP number)
+
+WWW: http://www.proximity.com.au/~ben/xenon.html
+
+- Chris D. Faulhaber
+jedgar@fxp.org

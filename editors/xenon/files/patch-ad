@@ -1,0 +1,11 @@
+--- XeApp.C.orig	Fri Oct 22 00:20:19 1999
++++ XeApp.C	Fri Oct 22 18:42:42 1999
+@@ -165,7 +165,7 @@
+ #endif
+     gLocalIPAddr = 0;
+     
+-    if (getsockname(ConnectionNumber(gDisplay), &saddr, &len) != -1)
++    if (getsockname(ConnectionNumber(gDisplay), &saddr, (int *)&len) != -1)
+     	if (saddr.sa_family == AF_INET)
+     		gLocalIPAddr = ntohl(((sockaddr_in*)&saddr)->sin_addr.s_addr);
+     
