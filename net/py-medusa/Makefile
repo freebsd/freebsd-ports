@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	medusa
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.4
 CATEGORIES=	net devel python
 MASTER_SITES=	http://www.amk.ca/files/python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,8 +20,8 @@ USE_PYDISTUTILS=	yes
 DIST_SUBDIR=	python
 DOCFILES=	CHANGES.txt INSTALL.txt LICENSE.txt README.txt TODO.txt
 EXAMPLEDIRS=	demo test thread
-DOCSDIR=	${PREFIX}/share/doc/py-medusa
-EXAMPLESDIR=	${PREFIX}/share/examples/py-medusa
+DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 
 .if !defined(NOPORTDOCS)
 post-install:
