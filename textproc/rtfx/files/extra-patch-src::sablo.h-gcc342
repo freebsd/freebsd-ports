@@ -1,0 +1,15 @@
+--- src/sablo.h.orig	Sat Jul 24 12:18:06 2004
++++ src/sablo.h	Sat Aug 14 14:42:45 2004
+@@ -146,10 +146,10 @@
+ 				addref();
+ 			}
+ 
+-			Ref(C* ptr, bool addref)
++			Ref(C* ptr, bool has_addref)
+ 			{
+ 				m_ptr = ptr;
+-				if(addref)
++				if(has_addref)
+ 					addref();
+ 			}
+ 

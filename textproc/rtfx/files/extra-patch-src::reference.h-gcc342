@@ -1,0 +1,15 @@
+--- src/reference.h.orig	Fri Jul 23 05:03:03 2004
++++ src/reference.h	Sat Aug 14 14:41:14 2004
+@@ -57,10 +57,10 @@
+ 		addref();
+ 	}
+ 
+-	Reference(C* ptr, bool addref)
++	Reference(C* ptr, bool has_addref)
+ 	{
+ 		m_ptr = ptr;
+-		if(addref)
++		if(has_addref)
+ 			addref();
+ 	}
+ 
