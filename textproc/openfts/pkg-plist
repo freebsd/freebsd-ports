@@ -1,13 +1,8 @@
-lib/postgresql/openfts.so
-lib/postgresql/tsearch.so
-share/doc/postgresql/contrib/README.openfts
-share/doc/postgresql/contrib/README.tsearch
-share/postgresql/contrib/openfts.sql
-share/postgresql/contrib/tsearch.sql
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/OpenFTS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/OpenFTS/Base.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/OpenFTS/Dict/PorterEng.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/OpenFTS/Dict/Snowball.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Search/OpenFTS/Dict/Synonym.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/OpenFTS/Dict/UnknownDict.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/OpenFTS/Index.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/OpenFTS/Morph/ISpell.pm
@@ -33,6 +28,3 @@ share/postgresql/contrib/tsearch.sql
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Search/OpenFTS
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Search 2>/dev/null
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Search 2>/dev/null
-@dirrm share/doc/postgresql/contrib
-@dirrm share/doc/postgresql
-@dirrm share/postgresql/contrib
