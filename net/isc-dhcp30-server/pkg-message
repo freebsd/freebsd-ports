@@ -8,7 +8,7 @@
 	    dhcpd_flags="-q"				# command option(s)
 	    dhcpd_conf="%%PREFIX%%/etc/dhcpd.conf"	# configuration file
 	    dhcpd_ifaces=""				# ethernet interface(s)
-	    dhcpd_umask="022"				# file creation mask
+	    dhcpd_withumask="022"			# file creation mask
 
 ****  If compiled with paranoia support (the default), the following lines
       are also supported:
