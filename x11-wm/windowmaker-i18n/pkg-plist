@@ -14,9 +14,13 @@ lib/libwraster.a
 @exec ranlib %D/%F
 lib/libWMaker.a
 @exec ranlib %D/%F
+lib/libWINGs.a
+@exec ranlib %D/%F
 include/wraster.h
 include/WINGs.h
 include/WMaker.h
+share/WINGs/Images.tiff
+share/WINGs/Images.xpm
 share/WindowMaker/Backgrounds/BlueImage.jpeg
 share/WindowMaker/Copyright
 share/WindowMaker/Defaults/WMRootMenu
@@ -35,8 +39,6 @@ share/WindowMaker/Pixmaps/clip.xpm
 share/WindowMaker/Pixmaps/defaultAppIcon.tiff
 share/WindowMaker/Pixmaps/defaultAppIcon.xpm
 share/WindowMaker/README
-share/WindowMaker/Resources/Images.tiff
-share/WindowMaker/Resources/Images.xpm
 share/WindowMaker/Styles/Black
 share/WindowMaker/Styles/Blue
 share/WindowMaker/Styles/BlueAluminum
@@ -58,6 +60,7 @@ share/WindowMaker/Styles/RednBlue
 share/WindowMaker/Styles/Traditional
 share/WindowMaker/Themes/Default
 share/WindowMaker/Themes/OpenStep
+share/WindowMaker/Themes/Pastel
 share/WindowMaker/autostart.sh
 share/WindowMaker/menu
 share/WindowMaker/menu.cz
@@ -77,9 +80,9 @@ share/WindowMaker/wmmacros
 @dirrm share/WindowMaker/Themes
 @dirrm share/WindowMaker/Styles
 @dirrm share/WindowMaker/Sounds
-@dirrm share/WindowMaker/Resources
 @dirrm share/WindowMaker/Pixmaps
 @dirrm share/WindowMaker/IconSets
 @dirrm share/WindowMaker/Defaults
 @dirrm share/WindowMaker/Backgrounds
 @dirrm share/WindowMaker
+@dirrm share/WINGs
