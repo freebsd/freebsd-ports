@@ -7,7 +7,7 @@
 
 PORTNAME=	squirrelmail
 PORTVERSION?=	1.4.3a
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES?=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	squirrelmail
@@ -25,7 +25,7 @@ USE_REINPLACE=	yes
 
 .ifdef WITH_DATABASE
 WANT_PHP_PEAR=	yes
-RUN_DEPENDS+=	${PREFIX}/share/pear/DB.php:${PORTSDIR}/pear-DB
+RUN_DEPENDS+=	${PREFIX}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
 .endif
 
 .ifdef WITH_LDAP
