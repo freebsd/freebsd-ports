@@ -222,6 +222,7 @@
     SUBDIR += trinokiller
     SUBDIR += tripwire
     SUBDIR += tripwire-131
+#   SUBDIR += tripwire12
     SUBDIR += uvscan-dat
     SUBDIR += vlock
     SUBDIR += vpnd
