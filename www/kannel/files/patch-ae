@@ -1,0 +1,9 @@
+--- debian/kannel.wapconf.old	Wed Jul 19 03:28:43 2000
++++ debian/kannel.wapconf	Wed Jul 19 03:28:55 2000
+@@ -6,5 +6,5 @@
+ bearerbox-host = localhost
+ bearerbox-port = 13002
+ heartbeat-freq = 30
+-log-file = "/var/log/kannel/wapbox.log"
++log-file = "/var/log/wapbox.log"
+ log-level = 0

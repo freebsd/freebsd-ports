@@ -62,6 +62,7 @@
     SUBDIR += indexme
     SUBDIR += jesred
     SUBDIR += junkbuster
+    SUBDIR += kannel
     SUBDIR += kdreamsite
     SUBDIR += kwebsearch
     SUBDIR += kwebwatch

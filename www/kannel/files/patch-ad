@@ -1,0 +1,11 @@
+--- debian/kannel.conf.old	Wed Jul 19 03:27:31 2000
++++ debian/kannel.conf	Wed Jul 19 03:27:49 2000
+@@ -13,7 +13,7 @@
+ heartbeat-freq = 30
+ allowed-hosts = "127.0.0.1"
+ denied-hosts = "*.*.*.*"
+-log-file = "/var/log/kannel/bearerbox.log"
++log-file = "/var/log/bearerbox.log"
+ log-level = 0
+ 
+ # A fake SMSC just for testing purposes. Uncomment if you use it.
