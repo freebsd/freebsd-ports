@@ -7,7 +7,7 @@
 
 PORTNAME=	ucd-snmp
 PORTVERSION=	4.2.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ucd-snmp.ucdavis.edu/ \
