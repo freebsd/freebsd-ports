@@ -1,0 +1,15 @@
+--- Makefile.in.orig	Sat Jan 22 04:57:59 2000
++++ Makefile.in	Sat Jan 22 04:58:07 2000
+@@ -52,10 +52,10 @@
+ all: $(XGS_TARGET) $(UTIL_TARGET)
+ 
+ install: all
+-	-/bin/mkdir $(bindir)
++	-/bin/mkdir -p $(bindir)
+ 	rm -f $(bindir)/$(XGS_TARGET)
+ 	$(INSTALL_PROGRAM) $(XGS_TARGET) $(bindir)/$(XGS_TARGET)
+-	-/bin/mkdir $(XGS_DIR)
++	-/bin/mkdir -p $(XGS_DIR)
+ 	$(INSTALL_DATA) $(srcdir)/xgs40.fnt $(XGS_DIR)/xgs40.fnt
+ 	$(INSTALL_DATA) $(srcdir)/xgs80.fnt $(XGS_DIR)/xgs80.fnt
+ 	for f in $(UTIL_TARGET) ; do \
