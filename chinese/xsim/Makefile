@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
 		${PORTNAME}-data-freebsd-gb2312.tar.gz
 
-MAINTAINER=	statue@freebsd.sinica.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple and fast GBK Chinese XIM server
 
 LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3

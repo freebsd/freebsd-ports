@@ -18,7 +18,7 @@ DISTFILES=	stardict-${PORTVERSION}.tar.bz2 \
 		stardict-xdict-big5-2.1.0.tar.bz2 \
 		stardict-xdict-ce-big5-2.1.0.tar.bz2
 
-MAINTAINER=	statue@freebsd.sinica.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	English-Chinese dictionary
 
 GNU_CONFIGURE=	yes

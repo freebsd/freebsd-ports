@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://linux.ee.tku.edu.tw/~kids/resource/ \
 		ftp://freebsd.sinica.edu.tw/pub/statue/bbsnet/
 
-MAINTAINER=	statue@freebsd.sinica.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A front-end of telnet client for multiple users or in private
 
 WRKSRC=		${WRKDIR}/bbsnet

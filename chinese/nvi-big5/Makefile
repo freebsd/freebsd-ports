@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	-big5
 
 MASTERDIR=	${.CURDIR}/../../editors/nvi-m17n
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A clone of vi/ex, with multilingual patch, default settings for big5
 
 CONFIGURE_ARGS+=	--enable-multibyte=big5 --program-prefix=n

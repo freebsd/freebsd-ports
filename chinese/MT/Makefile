@@ -11,7 +11,7 @@ CATEGORIES=	chinese
 MASTER_SITES=	http://www.movabletype.org/downloads/
 DISTNAME=	mt-zh-tw
 
-MAINTAINER=	statue@freebsd.sinica.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web-based personal publishing system like weblogs
 
 RUN_DEPENDS=	${LOCALBASE}/${CGIDIR}/mt.cgi:${PORTSDIR}/www/MT

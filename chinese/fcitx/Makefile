@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.fcitx.org/ \
 		ftp://freebsd.sinica.edu.tw/pub/statue/fcitx/
 EXTRACT_SUFX=	.tar.bz2
 
-MAINTAINER=	statue@freebsd.sinica.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple and fast GBK Chinese XIM server
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv

@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://192.192.110.1/cwtex/cwTeX_linux/ \
 DISTFILES=	cwtexmain.tgz cwtexbin-16.6.tgz
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	statue@freebsd.sinica.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CwTeX let you use Chinese Big5 codes in TeX/LaTeX documents
 
 BUILD_DEPENDS=  latex:${PORTSDIR}/print/teTeX
