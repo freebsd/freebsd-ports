@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	samba-2.0.5a
-PKGNAME=	samba-2.0.5
+DISTNAME=	samba-2.0.6
+#PKGNAME=	samba-2.0.5
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.samba.org/pub/samba/ \
 		ftp://ring.asahi-net.or.jp/pub/net/samba/ \

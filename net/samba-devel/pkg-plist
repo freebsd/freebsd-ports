@@ -11,14 +11,14 @@ bin/make_smbpasswd
 bin/make_smbcodepage
 bin/make_printerdef
 bin/rpcclient
+bin/smbspool
 sbin/smbd
 sbin/nmbd
 sbin/swat
 share/examples/samba/README
 share/examples/samba/smb.conf.default
+share/examples/samba/autofs/README
 share/examples/samba/autofs/auto.a
-share/examples/samba/autofs/mount-smb.doc
-share/examples/samba/autofs/mount.smb
 share/examples/samba/dce-dfs/README
 share/examples/samba/dce-dfs/smb.conf
 share/examples/samba/misc/extra_smbstatus
@@ -47,6 +47,8 @@ share/examples/samba/validchars/nwdos70.out
 share/examples/samba/validchars/readme
 share/examples/samba/validchars/validchr.c
 share/examples/samba/validchars/validchr.com
+share/examples/samba/wins_hook/README
+share/examples/samba/wins_hook/dns_update
 @dirrm share/examples/samba/autofs
 @dirrm share/examples/samba/dce-dfs
 @dirrm share/examples/samba/misc
@@ -57,6 +59,7 @@ share/examples/samba/validchars/validchr.com
 @dirrm share/examples/samba/thoralf
 @dirrm share/examples/samba/tridge
 @dirrm share/examples/samba/validchars
+@dirrm share/examples/samba/wins_hook
 @dirrm share/examples/samba
 etc/rc.d/samba.sh.sample
 etc/smb.conf.default
@@ -85,6 +88,7 @@ share/doc/samba/Win2000_PlainPassword.reg
 share/doc/samba/Win95_PlainPassword.reg
 share/doc/samba/Win98_PlainPassword.reg
 share/doc/samba/Win9X-CacheHandling.reg
+share/doc/samba/WindowsTerminalServer.reg
 share/doc/samba/announce
 share/doc/samba/faq/Samba-Server-FAQ-1.html
 share/doc/samba/faq/Samba-Server-FAQ-2.html
@@ -118,8 +122,11 @@ share/doc/samba/htmldocs/samba.7.html
 share/doc/samba/htmldocs/smb.conf.5.html
 share/doc/samba/htmldocs/smbclient.1.html
 share/doc/samba/htmldocs/smbd.8.html
+share/doc/samba/htmldocs/smbmnt.8.html
+share/doc/samba/htmldocs/smbmount.8.html
 share/doc/samba/htmldocs/smbpasswd.5.html
 share/doc/samba/htmldocs/smbpasswd.8.html
+share/doc/samba/htmldocs/smbspool.8.html
 share/doc/samba/htmldocs/smbrun.1.html
 share/doc/samba/htmldocs/smbsh.1.html
 share/doc/samba/htmldocs/smbstatus.1.html
@@ -140,6 +147,7 @@ share/doc/samba/manpages/smbmnt.8
 share/doc/samba/manpages/smbmount.8
 share/doc/samba/manpages/smbpasswd.5
 share/doc/samba/manpages/smbpasswd.8
+share/doc/samba/manpages/smbspool.8
 share/doc/samba/manpages/smbrun.1
 share/doc/samba/manpages/smbsh.1
 share/doc/samba/manpages/smbstatus.1
@@ -180,7 +188,6 @@ share/doc/samba/textdocs/Printing.txt
 share/doc/samba/textdocs/README.DCEDFS
 share/doc/samba/textdocs/README.jis
 share/doc/samba/textdocs/README.sambatar
-share/doc/samba/textdocs/README.smbmount
 share/doc/samba/textdocs/Recent-FAQs.txt
 share/doc/samba/textdocs/RoutedNetworks.txt
 share/doc/samba/textdocs/SCO.txt
@@ -207,8 +214,11 @@ share/doc/samba/yodldocs/samba.7.yo
 share/doc/samba/yodldocs/smb.conf.5.yo
 share/doc/samba/yodldocs/smbclient.1.yo
 share/doc/samba/yodldocs/smbd.8.yo
+share/doc/samba/yodldocs/smbmnt.8.yo
+share/doc/samba/yodldocs/smbmount.8.yo
 share/doc/samba/yodldocs/smbpasswd.5.yo
 share/doc/samba/yodldocs/smbpasswd.8.yo
+share/doc/samba/yodldocs/smbspool.8.yo
 share/doc/samba/yodldocs/smbrun.1.yo
 share/doc/samba/yodldocs/smbsh.1.yo
 share/doc/samba/yodldocs/smbstatus.1.yo
@@ -233,15 +243,19 @@ share/swat/help/samba.7.html
 share/swat/help/smb.conf.5.html
 share/swat/help/smbclient.1.html
 share/swat/help/smbd.8.html
+share/swat/help/smbmnt.8.html
+share/swat/help/smbmount.8.html
 share/swat/help/smbpasswd.5.html
 share/swat/help/smbpasswd.8.html
 share/swat/help/smbrun.1.html
 share/swat/help/smbsh.1.html
+share/swat/help/smbspool.8.html
 share/swat/help/smbstatus.1.html
 share/swat/help/smbtar.1.html
 share/swat/help/swat.8.html
 share/swat/help/testparm.1.html
 share/swat/help/testprns.1.html
+share/swat/help/welcome.ja_JP.ujis.html
 share/swat/images/globals.gif
 share/swat/images/home.gif
 share/swat/images/passwd.gif
