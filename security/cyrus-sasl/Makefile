@@ -104,6 +104,10 @@ PLIST_SUB=	PREFIX=${PREFIX} \
 		EBONES=${EBONES} \
 		DOCSDIR=${DOCSDIR:S/^${PREFIX}\///} \
 
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
+PKGINSTALL=	${WRKDIR}/pkg-install
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
 pre-fetch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.sasl
 
