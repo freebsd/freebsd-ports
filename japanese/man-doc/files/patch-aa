@@ -1,0 +1,8 @@
+--- Makefile.orig	Tue Mar 17 16:08:32 1998
++++ Makefile	Tue Mar 17 16:16:26 1998
+@@ -1,4 +1,4 @@
+-BINDIR= /usr/share
++BINDIR= ${PREFIX}/share
+ SUBDIR= man1 man8
+ 
+ makedb:

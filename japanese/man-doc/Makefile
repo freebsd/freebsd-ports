@@ -1,38 +1,47 @@
 # New ports collection makefile for:	Japanese man documents
-# Version required:	2.2.5a
+# Version required:	2.2
 # Date created:		6 January 1997
 # Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.16 1997/12/10 08:57:16 asami Exp $
+# $Id: Makefile,v 1.17 1998/01/12 02:48:47 steve Exp $
 #
 
-DISTNAME=	jpman-${VERSION}a
-PKGNAME=	ja-man-doc-2.2.5a
+DISTNAME=	jpman-2.2
+PKGNAME=	ja-man-doc-2.2
 CATEGORIES=	japanese
-MASTER_SITES=	ftp://jaz.jp.freebsd.org/pub/FreeBSD-jp/man-jp/
+DISTFILES=	# none
 
 MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
 
-RUN_DEPENDS=	jman:${PORTSDIR}/japanese/man
+PREFIX?=	/usr
+NO_CHECKSUM=	yes
+NO_MTREE=	yes
+WRKSRC=		${WRKDIR}/man
 
-NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/jpman-${VERSION}
-SCRIPTS_ENV=	TMPL_FILE=${TMPL_FILE} PKGDIR=${PKGDIR} AWK=${AWK} \
-		CAT=${CAT} ECHO=${ECHO} GZIP_CMD="${GZIP_CMD}" \
-		RM=${RM} SED=${SED} 
-PLIST=		${WRKSRC}/PLIST
+LANGNAME=	ja
+MANSECS=	1 5 8
+JAMANDIR?=	/usr/opt/doc/ja/man
 
-VERSION=	2.2.5
-TMPL_FILE=	install-man
+do-extract:
+	@if [ ! -d ${JAMANDIR} ]; then \
+	  ${ECHO} "You need the Japanese manual source in"; \
+	  ${ECHO} "\"${JAMANDIR}\""; \
+	  ${ECHO} "in order to build this port."; \
+	  exit 1; \
+	fi
+	@${RM} -rf ${WRKDIR}
+	@${MKDIR} ${WRKSRC}
+	@(cd ${JAMANDIR}; ${CP} Makefile Makefile.inc  ${WRKSRC})
+.for sec in ${MANSECS}
+	@if [ -d ${JAMANDIR}/man${sec} ]; then \
+		${CP} -R ${JAMANDIR}/man${sec} ${WRKSRC}/ ; \
+	fi
+.endfor
 
-do-install:
-.if !defined(NOMANCOMPRESS)
-	@${SETENV} PREFIX=${PREFIX} LANG="${LANG}" ${SH} \
-		${WRKSRC}/${TMPL_FILE} MANCOMPRESSED
-.else
-	@${SETENV} PREFIX=${PREFIX} LANG="${LANG}" ${SH} \
-		${WRKSRC}/${TMPL_FILE} NOMANCOMPRESS
-.endif
+pre-install:
+.for sec in ${MANSECS}
+	@${MKDIR} ${PREFIX}/share/man/ja/man${sec}
+.endfor
 
 post-install:
 	@${CAT} ${PKGDIR}/MESSAGE
