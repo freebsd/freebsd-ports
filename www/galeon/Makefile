@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	galeon
-PORTVERSION=	0.12
-PORTREVISION=	1
+PORTVERSION=	0.12.1
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,7 +21,7 @@ RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZIL
 
 #BROKEN=		"b0rken with Mozilla-0.9.1"
 
-WITH_FULL_MOZILLA=	"Problems with missed scrollbars when linked with mozilla-embedded"
+#WITH_FULL_MOZILLA=	"Problems with missed scrollbars when linked with mozilla-embedded"
 
 .if !defined(WITH_FULL_MOZILLA)
 MOZILLA=	mozilla-embedded
@@ -40,6 +39,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -D_REENTRANT ${PTHREAD_CFLAGS}" 
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		MSGFMT=${LOCALBASE}/bin/msgfmt-new \
 		XGETTEXT=${LOCALBASE}/bin/xgettext-new
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 MAN1=		galeon.1
 
