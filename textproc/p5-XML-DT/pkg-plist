@@ -1,3 +1,4 @@
+bin/mkdtskel
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/DT/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/XML/DT.pm
 lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/XPath/ex1.pl
@@ -40,6 +41,7 @@ lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/gcapaper2tex.pl
 lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/jj.dtd
 lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/lat1.html
 lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/makefile
+lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/makenewexample
 lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/pub.pl
 lib/perl5/site_perl/%%PERL_VER%%/XML/DT/examples/publico.dtd
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/DT
