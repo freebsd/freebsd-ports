@@ -3,30 +3,29 @@
 # Date created:         1 Dec 1997
 # Whom:                 Makoto WATANABE <watanabe@zlab.phys.nagoya-u.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/04/25 16:02:00 kuriyama Exp $
 #
 
 DISTNAME=	mendexk2.4b
 PKGNAME=	ja-mendexk-euc-2.4b
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/ptex215/ \
-		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/ptex215/web2c/
+MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/ptex218/ \
+		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/ptex218/web2c/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${KPATHSEA_PARENT}${EXTRACT_SUFX}
 
 MAINTAINER=	watanabe@zlab.phys.nagoya-u.ac.jp
 
-USE_GMAKE=      yes
+USE_GMAKE=	yes
+DIST_SUBDIR=	ptex
 
 MANLANG=	ja
 MAN1=		mendex.1
 
-KPATHSEA_PARENT=	web2c-7.0
+KPATHSEA_PARENT=	web2c-7.2
 
 pre-configure:
-	@(\
-	  cd ${WRKDIR}/${KPATHSEA_PARENT}/kpathsea ; \
-	  ./configure --prefix=${PREFIX} \
-	)
+	@( cd ${WRKDIR}/${KPATHSEA_PARENT}/kpathsea ; \
+	    ./configure --prefix=${PREFIX} )
 
 do-build:
 	@( cd ${WRKDIR}/${KPATHSEA_PARENT}/kpathsea ; ${GMAKE} )
@@ -34,16 +33,10 @@ do-build:
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/mendex ${PREFIX}/bin
-	@(\
-	  if [ ! -d ${PREFIX}/man/${MANLANG}/man1 ] ; then \
-	    ${MKDIR} ${PREFIX}/man/${MANLANG}/man1 ; fi \
-	)
+	@${MKDIR} ${PREFIX}/man/${MANLANG}/man1
 	@${INSTALL_MAN} ${WRKSRC}/mendex.1 ${PREFIX}/man/${MANLANG}/man1
 .if !defined(NOPORTDOCS)
-	@(\
-	  if [ ! -d ${PREFIX}/share/doc/mendex ] ; then \
-	    ${MKDIR} ${PREFIX}/share/doc/mendex ; fi \
-	)
+	@${MKDIR} ${PREFIX}/share/doc/mendex
 	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/mendex
 .endif
 
