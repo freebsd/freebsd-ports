@@ -7,7 +7,6 @@
 #
 
 DISTNAME=	w3m-${W3M_VER}
-W3M_VER=	0.1.7
 CATEGORIES?=	www ipv6
 MASTER_SITES=	ftp://ei5nazha.yz.yamagata-u.ac.jp/w3m/dev/ \
 		ftp://ftp.firedrake.org/w3m/dev/ \
@@ -18,6 +17,7 @@ MAINTAINER=	nobutaka@nobutaka.com
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgc.a:${PORTSDIR}/devel/boehm-gc
 
+W3M_VER=	0.1.7
 WRKSRC=		${WRKDIR}/w3m
 MAN1=		w3m.1
 MANLANG=	""
