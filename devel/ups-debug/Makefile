@@ -7,13 +7,12 @@
 #
 
 PORTNAME=	ups
-PORTVERSION=	3.34b
+PORTVERSION=	3.34
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}  \
-		ftp://unix.hensa.ac.uk/pub/misc/unix/ups/  \
-		http://www.concerto.demon.co.uk/UPS/
+		http://www.concerto.demon.co.uk/UPS/  \
+		ftp://unix.hensa.ac.uk/pub/misc/unix/ups/
 MASTER_SITE_SUBDIR= utilities
-DISTNAME=	ups-3.34beta
 
 MAINTAINER=	obrien@FreeBSD.org
 
@@ -22,6 +21,14 @@ USE_XLIB=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	ups
 MAN1=		ups.1
+
+#It will build for either a.out or ELF depending on your 'objformat'.
+#To explicitly build for a format do :
+#	./configure --with-elf
+#	make
+#or
+#	./configure --with-aout
+#	make
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/doc/ups
