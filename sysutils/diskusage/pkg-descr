@@ -1,0 +1,10 @@
+diskusage is an ANSI C++ program, written for FreeBSD 3.x and higher.
+
+It is an add on package for FreeBSD's du and du must be present 
+for this program to work.  Shows current users diskusage in
+kilobytes.
+
+WWW: http://www.intsyst.com/freebsd/
+
+- Douglas A. Maske
+  <maske@intsyst.com>
