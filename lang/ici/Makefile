@@ -31,6 +31,10 @@ ICIDOCS=	doc/ici-a4.ps doc/ici-ltr.ps doc/ici.txt doc/ici.pdf
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502000
+BROKEN=		"Does not compile"
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's/float_t/floats_t/g' ${WRKSRC}/*.[ch]
 
