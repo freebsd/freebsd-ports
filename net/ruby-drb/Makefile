@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	drb
-PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTVERSION=	1.3
 CATEGORIES=	net ruby
 MASTER_SITES=	${MASTER_SITE_RUBY} \
 		http://www2a.biglobe.ne.jp/~seki/ruby/
