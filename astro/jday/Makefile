@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	jday
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	astro
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	jday
@@ -14,10 +14,6 @@ MAINTAINER=	naddy@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/jday
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/jday
-.endif
+MAN1=	jday.1
 
 .include <bsd.port.mk>

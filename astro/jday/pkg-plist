@@ -1,4 +1,6 @@
-bin/jday
+@comment $FreeBSD$
+bin/dbd
 bin/j2d
-%%PORTDOCS%%share/doc/jday/README
-%%PORTDOCS%%@dirrm share/doc/jday
+bin/jday
+include/jday.h
+lib/libjday.a
