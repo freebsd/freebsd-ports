@@ -1,8 +1,8 @@
 
 You now need to add an alias to apache's httpd.conf pointing to
-%%PREFIX%%/squirrelmail/ in order to access SquirrelMail from your
-web browser, or create a VirtualHost with DocumentRoot set to that
-directory.
+%%SQUIRRELDIR%% in order to access SquirrelMail from
+your web browser, or create a VirtualHost with DocumentRoot set
+to that directory.
 
 For SquirrelMail to work properly you will need to make sure the
 following option is set in your php.ini file:
@@ -13,5 +13,5 @@ you just have, the following php.ini option may help:
 session.auto_start = 1
 
 In order to do your administrative configuration you need to 
-cd %%PREFIX%%/squirrelmail && ./configure
+cd %%SQUIRRELDIR%% && ./configure
 SquirrelMail will not work until this has been done.

@@ -1,808 +1,819 @@
-squirrelmail/AUTHORS
-squirrelmail/COPYING
-squirrelmail/ChangeLog
-squirrelmail/INSTALL
-squirrelmail/README
-squirrelmail/ReleaseNotes
-squirrelmail/UPGRADE
-squirrelmail/class/deliver/Deliver.class.php
-squirrelmail/class/deliver/Deliver_IMAP.class.php
-squirrelmail/class/deliver/Deliver_SMTP.class.php
-squirrelmail/class/deliver/Deliver_SendMail.class.php
-squirrelmail/class/deliver/index.php
-squirrelmail/class/helper/VCard.class.php
-squirrelmail/class/html.class.php
-squirrelmail/class/index.php
-squirrelmail/class/mime.class.php
-squirrelmail/class/mime/AddressStructure.class.php
-squirrelmail/class/mime/ContentType.class.php
-squirrelmail/class/mime/Disposition.class.php
-squirrelmail/class/mime/Language.class.php
-squirrelmail/class/mime/Message.class.php
-squirrelmail/class/mime/MessageHeader.class.php
-squirrelmail/class/mime/Rfc822Header.class.php
-squirrelmail/class/mime/SMimeMessage.class.php
-squirrelmail/class/mime/index.php
-squirrelmail/config/conf.pl
-squirrelmail/config/config_default.php
-squirrelmail/config/config_local.php
-squirrelmail/config/index.php
-squirrelmail/configure
-squirrelmail/contrib/RPM/config.php.redhat
-squirrelmail/contrib/RPM/squirrelmail.conf
-squirrelmail/contrib/RPM/squirrelmail.cron
-squirrelmail/contrib/RPM/squirrelmail.spec
-squirrelmail/data/.htaccess
-squirrelmail/data/default_pref
-squirrelmail/data/index.php
-squirrelmail/doc/README.russian_apache
-squirrelmail/doc/ReleaseNotes/1.2/Notes-1.2.0.txt
-squirrelmail/doc/ReleaseNotes/1.2/Notes-1.2.1.txt
-squirrelmail/doc/ReleaseNotes/1.2/Notes-1.2.2.txt
-squirrelmail/doc/ReleaseNotes/1.2/Notes-1.2.3.txt
-squirrelmail/doc/ReleaseNotes/1.2/Notes-1.2.4.txt
-squirrelmail/doc/ReleaseNotes/1.2/Notes-1.2.5
-squirrelmail/doc/ReleaseNotes/1.2/Notes-1.2.6.txt
-squirrelmail/doc/ReleaseNotes/1.3/Notes-1.3.0.txt
-squirrelmail/doc/ReleaseNotes/1.3/Notes-1.3.1.txt
-squirrelmail/doc/ReleaseNotes/1.3/Notes-1.3.2.txt
-squirrelmail/doc/ReleaseNotes/1.4/Notes-1.4.0.txt
-squirrelmail/doc/ReleaseNotes/1.4/Notes-1.4.1.txt
-squirrelmail/doc/addressbook.txt
-squirrelmail/doc/authentication.txt
-squirrelmail/doc/compose.txt
-squirrelmail/doc/db-backend.txt
-squirrelmail/doc/ie_ssl.txt
-squirrelmail/doc/index.html
-squirrelmail/doc/mime.txt
-squirrelmail/doc/plugin.txt
-squirrelmail/doc/rfc_documents.txt
-squirrelmail/doc/themes.txt
-squirrelmail/doc/translating.txt
-squirrelmail/doc/translating_help.txt
-squirrelmail/doc/tree.txt
-squirrelmail/functions/abook_database.php
-squirrelmail/functions/abook_global_file.php
-squirrelmail/functions/abook_ldap_server.php
-squirrelmail/functions/abook_local_file.php
-squirrelmail/functions/addressbook.php
-squirrelmail/functions/attachment_common.php
-squirrelmail/functions/auth.php
-squirrelmail/functions/constants.php
-squirrelmail/functions/date.php
-squirrelmail/functions/db_prefs.php
-squirrelmail/functions/display_messages.php
-squirrelmail/functions/file_prefs.php
-squirrelmail/functions/gettext.php
-squirrelmail/functions/global.php
-squirrelmail/functions/html.php
-squirrelmail/functions/i18n.php
-squirrelmail/functions/imap.php
-squirrelmail/functions/imap_general.php
-squirrelmail/functions/imap_mailbox.php
-squirrelmail/functions/imap_messages.php
-squirrelmail/functions/imap_search.php
-squirrelmail/functions/imap_utf7_local.php
-squirrelmail/functions/index.php
-squirrelmail/functions/mailbox_display.php
-squirrelmail/functions/mime.php
-squirrelmail/functions/options.php
-squirrelmail/functions/page_header.php
-squirrelmail/functions/plugin.php
-squirrelmail/functions/prefs.php
-squirrelmail/functions/strings.php
-squirrelmail/functions/tree.php
-squirrelmail/functions/url_parser.php
-squirrelmail/help/bg_BG/FAQ.hlp
-squirrelmail/help/bg_BG/addresses.hlp
-squirrelmail/help/bg_BG/basic.hlp
-squirrelmail/help/bg_BG/compose.hlp
-squirrelmail/help/bg_BG/folders.hlp
-squirrelmail/help/bg_BG/main_folder.hlp
-squirrelmail/help/bg_BG/options.hlp
-squirrelmail/help/bg_BG/read_mail.hlp
-squirrelmail/help/bg_BG/search.hlp
-squirrelmail/help/ca_ES/FAQ.hlp
-squirrelmail/help/ca_ES/addresses.hlp
-squirrelmail/help/ca_ES/basic.hlp
-squirrelmail/help/ca_ES/compose.hlp
-squirrelmail/help/ca_ES/folders.hlp
-squirrelmail/help/ca_ES/main_folder.hlp
-squirrelmail/help/ca_ES/options.hlp
-squirrelmail/help/ca_ES/read_mail.hlp
-squirrelmail/help/ca_ES/search.hlp
-squirrelmail/help/cs_CZ/FAQ.hlp
-squirrelmail/help/cs_CZ/addresses.hlp
-squirrelmail/help/cs_CZ/basic.hlp
-squirrelmail/help/cs_CZ/compose.hlp
-squirrelmail/help/cs_CZ/folders.hlp
-squirrelmail/help/cs_CZ/main_folder.hlp
-squirrelmail/help/cs_CZ/options.hlp
-squirrelmail/help/cs_CZ/read_mail.hlp
-squirrelmail/help/cs_CZ/search.hlp
-squirrelmail/help/cy_GB/search.hlp
-squirrelmail/help/cy_GB/FAQ.hlp
-squirrelmail/help/cy_GB/addresses.hlp
-squirrelmail/help/cy_GB/compose.hlp
-squirrelmail/help/cy_GB/folders.hlp
-squirrelmail/help/cy_GB/main_folder.hlp
-squirrelmail/help/cy_GB/options.hlp
-squirrelmail/help/cy_GB/read_mail.hlp
-squirrelmail/help/cy_GB/basic.hlp
-squirrelmail/help/da_DK/FAQ.hlp
-squirrelmail/help/da_DK/addresses.hlp
-squirrelmail/help/da_DK/basic.hlp
-squirrelmail/help/da_DK/compose.hlp
-squirrelmail/help/da_DK/folders.hlp
-squirrelmail/help/da_DK/main_folder.hlp
-squirrelmail/help/da_DK/options.hlp
-squirrelmail/help/da_DK/read_mail.hlp
-squirrelmail/help/da_DK/search.hlp
-squirrelmail/help/de_DE/FAQ.hlp
-squirrelmail/help/de_DE/addresses.hlp
-squirrelmail/help/de_DE/basic.hlp
-squirrelmail/help/de_DE/compose.hlp
-squirrelmail/help/de_DE/folders.hlp
-squirrelmail/help/de_DE/main_folder.hlp
-squirrelmail/help/de_DE/options.hlp
-squirrelmail/help/de_DE/read_mail.hlp
-squirrelmail/help/de_DE/search.hlp
-squirrelmail/help/en_US/FAQ.hlp
-squirrelmail/help/en_US/addresses.hlp
-squirrelmail/help/en_US/basic.hlp
-squirrelmail/help/en_US/compose.hlp
-squirrelmail/help/en_US/folders.hlp
-squirrelmail/help/en_US/main_folder.hlp
-squirrelmail/help/en_US/options.hlp
-squirrelmail/help/en_US/read_mail.hlp
-squirrelmail/help/en_US/search.hlp
-squirrelmail/help/es_ES/FAQ.hlp
-squirrelmail/help/es_ES/addresses.hlp
-squirrelmail/help/es_ES/basic.hlp
-squirrelmail/help/es_ES/compose.hlp
-squirrelmail/help/es_ES/folders.hlp
-squirrelmail/help/es_ES/main_folder.hlp
-squirrelmail/help/es_ES/options.hlp
-squirrelmail/help/es_ES/read_mail.hlp
-squirrelmail/help/es_ES/search.hlp
-squirrelmail/help/fi_FI/FAQ.hlp
-squirrelmail/help/fi_FI/addresses.hlp
-squirrelmail/help/fi_FI/basic.hlp
-squirrelmail/help/fi_FI/compose.hlp
-squirrelmail/help/fi_FI/folders.hlp
-squirrelmail/help/fi_FI/main_folder.hlp
-squirrelmail/help/fi_FI/options.hlp
-squirrelmail/help/fi_FI/read_mail.hlp
-squirrelmail/help/fi_FI/search.hlp
-squirrelmail/help/fr_FR/FAQ.hlp
-squirrelmail/help/fr_FR/addresses.hlp
-squirrelmail/help/fr_FR/basic.hlp
-squirrelmail/help/fr_FR/compose.hlp
-squirrelmail/help/fr_FR/folders.hlp
-squirrelmail/help/fr_FR/main_folder.hlp
-squirrelmail/help/fr_FR/options.hlp
-squirrelmail/help/fr_FR/read_mail.hlp
-squirrelmail/help/fr_FR/search.hlp
-squirrelmail/help/id_ID/FAQ.hlp
-squirrelmail/help/id_ID/addresses.hlp
-squirrelmail/help/id_ID/basic.hlp
-squirrelmail/help/id_ID/compose.hlp
-squirrelmail/help/id_ID/folders.hlp
-squirrelmail/help/id_ID/main_folder.hlp
-squirrelmail/help/id_ID/options.hlp
-squirrelmail/help/id_ID/read_mail.hlp
-squirrelmail/help/id_ID/search.hlp
-squirrelmail/help/index.php
-squirrelmail/help/it_IT/FAQ.hlp
-squirrelmail/help/it_IT/addresses.hlp
-squirrelmail/help/it_IT/basic.hlp
-squirrelmail/help/it_IT/compose.hlp
-squirrelmail/help/it_IT/folders.hlp
-squirrelmail/help/it_IT/main_folder.hlp
-squirrelmail/help/it_IT/options.hlp
-squirrelmail/help/it_IT/read_mail.hlp
-squirrelmail/help/it_IT/search.hlp
-squirrelmail/help/ja_JP/FAQ.hlp
-squirrelmail/help/ja_JP/addresses.hlp
-squirrelmail/help/ja_JP/basic.hlp
-squirrelmail/help/ja_JP/compose.hlp
-squirrelmail/help/ja_JP/folders.hlp
-squirrelmail/help/ja_JP/main_folder.hlp
-squirrelmail/help/ja_JP/options.hlp
-squirrelmail/help/ja_JP/read_mail.hlp
-squirrelmail/help/ja_JP/search.hlp
-squirrelmail/help/ko_KR/FAQ.hlp
-squirrelmail/help/ko_KR/addresses.hlp
-squirrelmail/help/ko_KR/basic.hlp
-squirrelmail/help/ko_KR/compose.hlp
-squirrelmail/help/ko_KR/folders.hlp
-squirrelmail/help/ko_KR/main_folder.hlp
-squirrelmail/help/ko_KR/options.hlp
-squirrelmail/help/ko_KR/read_mail.hlp
-squirrelmail/help/ko_KR/search.hlp
-squirrelmail/help/lt_LT/FAQ.hlp
-squirrelmail/help/lt_LT/addresses.hlp
-squirrelmail/help/lt_LT/basic.hlp
-squirrelmail/help/lt_LT/compose.hlp
-squirrelmail/help/lt_LT/folders.hlp
-squirrelmail/help/lt_LT/main_folder.hlp
-squirrelmail/help/lt_LT/options.hlp
-squirrelmail/help/lt_LT/read_mail.hlp
-squirrelmail/help/lt_LT/search.hlp
-squirrelmail/help/nl_NL/FAQ.hlp
-squirrelmail/help/nl_NL/addresses.hlp
-squirrelmail/help/nl_NL/basic.hlp
-squirrelmail/help/nl_NL/compose.hlp
-squirrelmail/help/nl_NL/folders.hlp
-squirrelmail/help/nl_NL/main_folder.hlp
-squirrelmail/help/nl_NL/options.hlp
-squirrelmail/help/nl_NL/read_mail.hlp
-squirrelmail/help/nl_NL/search.hlp
-squirrelmail/help/pl_PL/FAQ.hlp
-squirrelmail/help/pl_PL/addresses.hlp
-squirrelmail/help/pl_PL/basic.hlp
-squirrelmail/help/pl_PL/compose.hlp
-squirrelmail/help/pl_PL/folders.hlp
-squirrelmail/help/pl_PL/main_folder.hlp
-squirrelmail/help/pl_PL/options.hlp
-squirrelmail/help/pl_PL/read_mail.hlp
-squirrelmail/help/pl_PL/search.hlp
-squirrelmail/help/pt_BR/FAQ.hlp
-squirrelmail/help/pt_BR/addresses.hlp
-squirrelmail/help/pt_BR/basic.hlp
-squirrelmail/help/pt_BR/compose.hlp
-squirrelmail/help/pt_BR/folders.hlp
-squirrelmail/help/pt_BR/main_folder.hlp
-squirrelmail/help/pt_BR/options.hlp
-squirrelmail/help/pt_BR/read_mail.hlp
-squirrelmail/help/pt_BR/search.hlp
-squirrelmail/help/pt_PT/FAQ.hlp
-squirrelmail/help/pt_PT/addresses.hlp
-squirrelmail/help/pt_PT/basic.hlp
-squirrelmail/help/pt_PT/compose.hlp
-squirrelmail/help/pt_PT/folders.hlp
-squirrelmail/help/pt_PT/main_folder.hlp
-squirrelmail/help/pt_PT/options.hlp
-squirrelmail/help/pt_PT/read_mail.hlp
-squirrelmail/help/pt_PT/search.hlp
-squirrelmail/help/ru_RU/FAQ.hlp
-squirrelmail/help/ru_RU/addresses.hlp
-squirrelmail/help/ru_RU/basic.hlp
-squirrelmail/help/ru_RU/compose.hlp
-squirrelmail/help/ru_RU/folders.hlp
-squirrelmail/help/ru_RU/main_folder.hlp
-squirrelmail/help/ru_RU/options.hlp
-squirrelmail/help/ru_RU/read_mail.hlp
-squirrelmail/help/ru_RU/search.hlp
-squirrelmail/help/sk_SK/search.hlp
-squirrelmail/help/sk_SK/FAQ.hlp
-squirrelmail/help/sk_SK/addresses.hlp
-squirrelmail/help/sk_SK/compose.hlp
-squirrelmail/help/sk_SK/folders.hlp
-squirrelmail/help/sk_SK/main_folder.hlp
-squirrelmail/help/sk_SK/options.hlp
-squirrelmail/help/sk_SK/read_mail.hlp
-squirrelmail/help/sk_SK/basic.hlp
-squirrelmail/help/sl_SI/FAQ.hlp
-squirrelmail/help/sl_SI/addresses.hlp
-squirrelmail/help/sl_SI/basic.hlp
-squirrelmail/help/sl_SI/compose.hlp
-squirrelmail/help/sl_SI/folders.hlp
-squirrelmail/help/sl_SI/main_folder.hlp
-squirrelmail/help/sl_SI/options.hlp
-squirrelmail/help/sl_SI/read_mail.hlp
-squirrelmail/help/sl_SI/search.hlp
-squirrelmail/help/sr_YU/FAQ.hlp
-squirrelmail/help/sr_YU/addresses.hlp
-squirrelmail/help/sr_YU/basic.hlp
-squirrelmail/help/sr_YU/compose.hlp
-squirrelmail/help/sr_YU/folders.hlp
-squirrelmail/help/sr_YU/main_folder.hlp
-squirrelmail/help/sr_YU/options.hlp
-squirrelmail/help/sr_YU/read_mail.hlp
-squirrelmail/help/sr_YU/search.hlp
-squirrelmail/help/sv_SE/FAQ.hlp
-squirrelmail/help/sv_SE/addresses.hlp
-squirrelmail/help/sv_SE/basic.hlp
-squirrelmail/help/sv_SE/compose.hlp
-squirrelmail/help/sv_SE/folders.hlp
-squirrelmail/help/sv_SE/main_folder.hlp
-squirrelmail/help/sv_SE/options.hlp
-squirrelmail/help/sv_SE/read_mail.hlp
-squirrelmail/help/sv_SE/search.hlp
-squirrelmail/help/th_TH/FAQ.hlp
-squirrelmail/help/th_TH/addresses.hlp
-squirrelmail/help/th_TH/basic.hlp
-squirrelmail/help/th_TH/compose.hlp
-squirrelmail/help/th_TH/folders.hlp
-squirrelmail/help/th_TH/main_folder.hlp
-squirrelmail/help/th_TH/options.hlp
-squirrelmail/help/th_TH/read_mail.hlp
-squirrelmail/help/zh_CN/search.hlp
-squirrelmail/help/zh_CN/FAQ.hlp
-squirrelmail/help/zh_CN/addresses.hlp
-squirrelmail/help/zh_CN/compose.hlp
-squirrelmail/help/zh_CN/folders.hlp
-squirrelmail/help/zh_CN/main_folder.hlp
-squirrelmail/help/zh_CN/options.hlp
-squirrelmail/help/zh_CN/read_mail.hlp
-squirrelmail/help/zh_CN/basic.hlp
-squirrelmail/images/delitem.png
-squirrelmail/help/th_TH/search.hlp
-squirrelmail/images/down_pointer.png
-squirrelmail/images/draft.png
-squirrelmail/images/folder.png
-squirrelmail/images/inbox.png
-squirrelmail/images/index.php
-squirrelmail/images/minus.gif
-squirrelmail/images/minus.png
-squirrelmail/images/plus.gif
-squirrelmail/images/plus.png
-squirrelmail/images/sec_remove_da_DK.png
-squirrelmail/images/sec_remove_eng.png
-squirrelmail/images/sec_remove_es_ES.png
-squirrelmail/images/sec_remove_fr_FR.png
-squirrelmail/images/sec_remove_id_ID.png
-squirrelmail/images/sec_remove_ja_JP.png
-squirrelmail/images/sec_remove_ko_KR.png
-squirrelmail/images/sec_remove_lt_LT.png
-squirrelmail/images/sec_remove_pt_PT.png
-squirrelmail/images/sec_remove_ru.png
-squirrelmail/images/sec_remove_sl_SI.png
-squirrelmail/images/sec_remove_sr_YU.png
-squirrelmail/images/senti.png
-squirrelmail/images/sm_logo.png
-squirrelmail/images/sort_none.png
-squirrelmail/images/up_pointer.png
-squirrelmail/include/index.php
-squirrelmail/include/load_prefs.php
-squirrelmail/include/options/display.php
-squirrelmail/include/options/folder.php
-squirrelmail/include/options/index.php
-squirrelmail/include/options/personal.php
-squirrelmail/include/validate.php
-squirrelmail/index.php
-squirrelmail/locale/ar/LC_MESSAGES/squirrelmail.mo
-squirrelmail/locale/ar/LC_MESSAGES/squirrelmail.po
-squirrelmail/locale/bg_BG/LC_MESSAGES/squirrelmail.mo
-squirrelmail/locale/bg_BG/LC_MESSAGES/squirrelmail.po
-squirrelmail/locale/ca_ES/LC_MESSAGES/squirrelmail.mo
-squirrelmail/locale/ca_ES/LC_MESSAGES/squirrelmail.po
-squirrelmail/locale/cs_CZ/LC_MESSAGES/squirrelmail.mo
-squirrelmail/locale/cs_CZ/LC_MESSAGES/squirrelmail.po
-squirrelmail/locale/cy_GB/LC_MESSAGES/squirrelmail.mo
-squirrelmail/locale/cy_GB/LC_MESSAGES/squirrelmail.po
-squirrelmail/locale/da_DK/LC_MESSAGES/squirrelmail.mo
-squirrelmail/locale/da_DK/LC_MESSAGES/squirrelmail.po
-squirrelmail/locale/de_DE/LC_MESSAGES/squirrelmail.mo
-squirrelmail/locale/de_DE/LC_MESSAGES/squirrelmail.po
-squirrelmail/locale/el_GR/LC_MESSAGES/squirrelmail.mo
-squirrelmail/locale/el_GR/LC_MESSAGES/squirrelmail.po
-squirrelmail/locale/es_ES/LC_MESSAGES/squirrelmail.mo
-squirrelmail/locale/es_ES/LC_MESSAGES/squirrelmail.po
-squirrelmail/locale/et_EE/LC_MESSAGES/squirrelmail.mo
-squirrelmail/locale/et_EE/LC_MESSAGES/squirrelmail.po
-squirrelmail/locale/fi_FI/LC_MESSAGES/squirrelmail.mo
-squirrelmail/locale/fi_FI/LC_MESSAGES/squirrelmail.po
-squirrelmail/locale/fo_FO/LC_MESSAGES/squirrelmail.mo
-squirrelmail/locale/fo_FO/LC_MESSAGES/squirrelmail.po
-squirrelmail/locale/fr_FR/LC_MESSAGES/squirrelmail.mo
-squirrelmail/locale/fr_FR/LC_MESSAGES/squirrelmail.po
-squirrelmail/locale/he_IL/LC_MESSAGES/squirrelmail.mo
-squirrelmail/locale/he_IL/LC_MESSAGES/squirrelmail.po
-squirrelmail/locale/hr_HR/LC_MESSAGES/squirrelmail.mo
-squirrelmail/locale/hr_HR/LC_MESSAGES/squirrelmail.po
-squirrelmail/locale/hu_HU/LC_MESSAGES/squirrelmail.mo
-squirrelmail/locale/hu_HU/LC_MESSAGES/squirrelmail.po
-squirrelmail/locale/id_ID/LC_MESSAGES/squirrelmail.mo
-squirrelmail/locale/id_ID/LC_MESSAGES/squirrelmail.po
-squirrelmail/locale/index.php
-squirrelmail/locale/is_IS/LC_MESSAGES/squirrelmail.mo
-squirrelmail/locale/is_IS/LC_MESSAGES/squirrelmail.po
-squirrelmail/locale/it_IT/LC_MESSAGES/squirrelmail.mo
-squirrelmail/locale/it_IT/LC_MESSAGES/squirrelmail.po
-squirrelmail/locale/ja_JP/LC_MESSAGES/squirrelmail.mo
-squirrelmail/locale/ja_JP/LC_MESSAGES/squirrelmail.po
-squirrelmail/locale/ko_KR/LC_MESSAGES/squirrelmail.mo
-squirrelmail/locale/ko_KR/LC_MESSAGES/squirrelmail.po
-squirrelmail/locale/lt_LT/LC_MESSAGES/squirrelmail.mo
-squirrelmail/locale/lt_LT/LC_MESSAGES/squirrelmail.po
-squirrelmail/locale/ms_MY/LC_MESSAGES/squirrelmail.mo
-squirrelmail/locale/ms_MY/LC_MESSAGES/squirrelmail.po
-squirrelmail/locale/nl_NL/LC_MESSAGES/squirrelmail.mo
-squirrelmail/locale/nl_NL/LC_MESSAGES/squirrelmail.po
-squirrelmail/locale/nn_NO/LC_MESSAGES/squirrelmail.mo
-squirrelmail/locale/nn_NO/LC_MESSAGES/squirrelmail.po
-squirrelmail/locale/no_NO/LC_MESSAGES/squirrelmail.mo
-squirrelmail/locale/no_NO/LC_MESSAGES/squirrelmail.po
-squirrelmail/locale/pl_PL/LC_MESSAGES/squirrelmail.mo
-squirrelmail/locale/pl_PL/LC_MESSAGES/squirrelmail.po
-squirrelmail/locale/pt_BR/LC_MESSAGES/squirrelmail.mo
-squirrelmail/locale/pt_BR/LC_MESSAGES/squirrelmail.po
-squirrelmail/locale/pt_PT/LC_MESSAGES/squirrelmail.mo
-squirrelmail/locale/pt_PT/LC_MESSAGES/squirrelmail.po
-squirrelmail/locale/ro_RO/LC_MESSAGES/squirrelmail.mo
-squirrelmail/locale/ro_RO/LC_MESSAGES/squirrelmail.po
-squirrelmail/locale/ru_RU/LC_MESSAGES/squirrelmail.mo
-squirrelmail/locale/ru_RU/LC_MESSAGES/squirrelmail.po
-squirrelmail/locale/sk_SK/LC_MESSAGES/squirrelmail.mo
-squirrelmail/locale/sk_SK/LC_MESSAGES/squirrelmail.po
-squirrelmail/locale/sl_SI/LC_MESSAGES/squirrelmail.mo
-squirrelmail/locale/sl_SI/LC_MESSAGES/squirrelmail.po
-squirrelmail/locale/sr_YU/LC_MESSAGES/squirrelmail.mo
-squirrelmail/locale/sr_YU/LC_MESSAGES/squirrelmail.po
-squirrelmail/locale/sv_SE/LC_MESSAGES/squirrelmail.mo
-squirrelmail/locale/sv_SE/LC_MESSAGES/squirrelmail.po
-squirrelmail/locale/th_TH/LC_MESSAGES/squirrelmail.mo
-squirrelmail/locale/th_TH/LC_MESSAGES/squirrelmail.po
-squirrelmail/locale/timezones.cfg
-squirrelmail/locale/tr_TR/LC_MESSAGES/squirrelmail.mo
-squirrelmail/locale/tr_TR/LC_MESSAGES/squirrelmail.po
-squirrelmail/locale/uk_UA/LC_MESSAGES/squirrelmail.mo
-squirrelmail/locale/uk_UA/LC_MESSAGES/squirrelmail.po
-squirrelmail/locale/vi_VN/LC_MESSAGES/squirrelmail.mo
-squirrelmail/locale/vi_VN/LC_MESSAGES/squirrelmail.po
-squirrelmail/locale/zh_CN/LC_MESSAGES/squirrelmail.mo
-squirrelmail/locale/zh_CN/LC_MESSAGES/squirrelmail.po
-squirrelmail/locale/zh_TW/LC_MESSAGES/squirrelmail.mo
-squirrelmail/locale/zh_TW/LC_MESSAGES/squirrelmail.po
-squirrelmail/plugins/README.plugins
-squirrelmail/plugins/abook_take/README
-squirrelmail/plugins/abook_take/setup.php
-squirrelmail/plugins/abook_take/take.php
-squirrelmail/plugins/administrator/INSTALL
-squirrelmail/plugins/administrator/auth.php
-squirrelmail/plugins/administrator/defines.php
-squirrelmail/plugins/administrator/index.php
-squirrelmail/plugins/administrator/options.php
-squirrelmail/plugins/administrator/setup.php
-squirrelmail/plugins/bug_report/INSTALL
-squirrelmail/plugins/bug_report/README
-squirrelmail/plugins/bug_report/bug_report.php
-squirrelmail/plugins/bug_report/index.php
-squirrelmail/plugins/bug_report/setup.php
-squirrelmail/plugins/calendar/README
-squirrelmail/plugins/calendar/calendar.php
-squirrelmail/plugins/calendar/calendar_data.php
-squirrelmail/plugins/calendar/day.php
-squirrelmail/plugins/calendar/event_create.php
-squirrelmail/plugins/calendar/event_delete.php
-squirrelmail/plugins/calendar/event_edit.php
-squirrelmail/plugins/calendar/functions.php
-squirrelmail/plugins/calendar/index.php
-squirrelmail/plugins/calendar/setup.php
-squirrelmail/plugins/delete_move_next/README
-squirrelmail/plugins/delete_move_next/index.php
-squirrelmail/plugins/delete_move_next/setup.php
-squirrelmail/plugins/filters/CHANGES
-squirrelmail/plugins/filters/README
-squirrelmail/plugins/filters/bulkquery/INSTALL
-squirrelmail/plugins/filters/bulkquery/Makefile
-squirrelmail/plugins/filters/bulkquery/README
-squirrelmail/plugins/filters/bulkquery/bq.in
-squirrelmail/plugins/filters/bulkquery/bq.out
-squirrelmail/plugins/filters/bulkquery/bulkquery.c
-squirrelmail/plugins/filters/filters.php
-squirrelmail/plugins/filters/index.php
-squirrelmail/plugins/filters/options.php
-squirrelmail/plugins/filters/setup.php
-squirrelmail/plugins/filters/spamoptions.php
-squirrelmail/plugins/fortune/INSTALL
-squirrelmail/plugins/fortune/setup.php
-squirrelmail/plugins/index.php
-squirrelmail/plugins/info/README
-squirrelmail/plugins/info/functions.php
-squirrelmail/plugins/info/options.php
-squirrelmail/plugins/info/setup.php
-squirrelmail/plugins/listcommands/README
-squirrelmail/plugins/listcommands/index.php
-squirrelmail/plugins/listcommands/mailout.php
-squirrelmail/plugins/listcommands/setup.php
-squirrelmail/plugins/mail_fetch/README
-squirrelmail/plugins/mail_fetch/class.POP3.php
-squirrelmail/plugins/mail_fetch/fetch.php
-squirrelmail/plugins/mail_fetch/functions.php
-squirrelmail/plugins/mail_fetch/index.php
-squirrelmail/plugins/mail_fetch/options.php
-squirrelmail/plugins/mail_fetch/setup.php
-squirrelmail/plugins/make_archive.pl
-squirrelmail/plugins/message_details/message_details_bottom.php
-squirrelmail/plugins/message_details/message_details_main.php
-squirrelmail/plugins/message_details/message_details_top.php
-squirrelmail/plugins/message_details/setup.php
-squirrelmail/plugins/newmail/HISTORY
-squirrelmail/plugins/newmail/README
-squirrelmail/plugins/newmail/index.php
-squirrelmail/plugins/newmail/newmail.php
-squirrelmail/plugins/newmail/newmail_opt.php
-squirrelmail/plugins/newmail/setup.php
-squirrelmail/plugins/newmail/sounds/FanFair.wav
-squirrelmail/plugins/newmail/sounds/Friends.wav
-squirrelmail/plugins/newmail/sounds/MontyPython.wav
-squirrelmail/plugins/newmail/sounds/Notify.wav
-squirrelmail/plugins/newmail/testsound.php
-squirrelmail/plugins/sent_subfolders/index.php
-squirrelmail/plugins/sent_subfolders/setup.php
-squirrelmail/plugins/spamcop/README
-squirrelmail/plugins/spamcop/index.php
-squirrelmail/plugins/spamcop/options.php
-squirrelmail/plugins/spamcop/setup.php
-squirrelmail/plugins/spamcop/spamcop.php
-squirrelmail/plugins/squirrelspell/INSTALL
-squirrelmail/plugins/squirrelspell/doc/CRYPTO
-squirrelmail/plugins/squirrelspell/doc/ChangeLog
-squirrelmail/plugins/squirrelspell/doc/PRIVACY
-squirrelmail/plugins/squirrelspell/doc/README
-squirrelmail/plugins/squirrelspell/doc/UPGRADING
-squirrelmail/plugins/squirrelspell/doc/index.php
-squirrelmail/plugins/squirrelspell/index.php
-squirrelmail/plugins/squirrelspell/js/WHATISTHIS
-squirrelmail/plugins/squirrelspell/js/check_me.js
-squirrelmail/plugins/squirrelspell/js/crypto_settings.js
-squirrelmail/plugins/squirrelspell/js/decrypt_error.js
-squirrelmail/plugins/squirrelspell/js/index.php
-squirrelmail/plugins/squirrelspell/js/init.js
-squirrelmail/plugins/squirrelspell/modules/.htaccess
-squirrelmail/plugins/squirrelspell/modules/WHATISTHIS
-squirrelmail/plugins/squirrelspell/modules/check_me.mod
-squirrelmail/plugins/squirrelspell/modules/crypto.mod
-squirrelmail/plugins/squirrelspell/modules/crypto_badkey.mod
-squirrelmail/plugins/squirrelspell/modules/edit_dic.mod
-squirrelmail/plugins/squirrelspell/modules/enc_setup.mod
-squirrelmail/plugins/squirrelspell/modules/forget_me.mod
-squirrelmail/plugins/squirrelspell/modules/forget_me_not.mod
-squirrelmail/plugins/squirrelspell/modules/index.php
-squirrelmail/plugins/squirrelspell/modules/init.mod
-squirrelmail/plugins/squirrelspell/modules/lang_change.mod
-squirrelmail/plugins/squirrelspell/modules/lang_setup.mod
-squirrelmail/plugins/squirrelspell/modules/options_main.mod
-squirrelmail/plugins/squirrelspell/setup.php
-squirrelmail/plugins/squirrelspell/sqspell_config.php
-squirrelmail/plugins/squirrelspell/sqspell_functions.php
-squirrelmail/plugins/squirrelspell/sqspell_interface.php
-squirrelmail/plugins/squirrelspell/sqspell_options.php
-squirrelmail/plugins/translate/INSTALL
-squirrelmail/plugins/translate/README
-squirrelmail/plugins/translate/index.php
-squirrelmail/plugins/translate/options.php
-squirrelmail/plugins/translate/setup.php
-squirrelmail/po/charsetconvert.pl
-squirrelmail/po/compilepo
-squirrelmail/po/independent_strings.txt
-squirrelmail/po/index.php
-squirrelmail/po/mergepo
-squirrelmail/po/squirrelmail.po
-squirrelmail/po/xgetpo
-squirrelmail/src/addrbook_popup.php
-squirrelmail/src/addrbook_search.php
-squirrelmail/src/addrbook_search_html.php
-squirrelmail/src/addressbook.php
-squirrelmail/src/compose.php
-squirrelmail/src/delete_message.php
-squirrelmail/src/download.php
-squirrelmail/src/empty_trash.php
-squirrelmail/src/folders.php
-squirrelmail/src/folders_create.php
-squirrelmail/src/folders_delete.php
-squirrelmail/src/folders_rename_do.php
-squirrelmail/src/folders_rename_getname.php
-squirrelmail/src/folders_subscribe.php
-squirrelmail/src/help.php
-squirrelmail/src/image.php
-squirrelmail/src/index.php
-squirrelmail/src/left_main.php
-squirrelmail/src/login.php
-squirrelmail/src/move_messages.php
-squirrelmail/src/options.php
-squirrelmail/src/options_highlight.php
-squirrelmail/src/options_identities.php
-squirrelmail/src/options_order.php
-squirrelmail/src/printer_friendly_bottom.php
-squirrelmail/src/printer_friendly_main.php
-squirrelmail/src/printer_friendly_top.php
-squirrelmail/src/read_body.php
-squirrelmail/src/redirect.php
-squirrelmail/src/right_main.php
-squirrelmail/src/search.php
-squirrelmail/src/signout.php
-squirrelmail/src/vcard.php
-squirrelmail/src/view_header.php
-squirrelmail/src/view_text.php
-squirrelmail/src/webmail.php
-squirrelmail/themes/README.themes
-squirrelmail/themes/alien_glow.php
-squirrelmail/themes/black_bean_burrito_theme.php
-squirrelmail/themes/blue_grey_theme.php
-squirrelmail/themes/bluesnews_theme.php
-squirrelmail/themes/bluesteel_theme.php
-squirrelmail/themes/christmas.php
-squirrelmail/themes/css/sans-08.css
-squirrelmail/themes/css/sans-10.css
-squirrelmail/themes/css/sans-12.css
-squirrelmail/themes/css/serif-10.css
-squirrelmail/themes/css/serif-12.css
-squirrelmail/themes/dark_green.php
-squirrelmail/themes/dark_grey_theme.php
-squirrelmail/themes/darkness.php
-squirrelmail/themes/deepocean2_theme.php
-squirrelmail/themes/deepocean_theme.php
-squirrelmail/themes/default_theme.php
-squirrelmail/themes/dompie_theme.php
-squirrelmail/themes/forest_theme.php
-squirrelmail/themes/greenhouse_effect.php
-squirrelmail/themes/high_contrast_theme.php
-squirrelmail/themes/ice_theme.php
-squirrelmail/themes/in_the_pink.php
-squirrelmail/themes/index.php
-squirrelmail/themes/kind_of_blue.php
-squirrelmail/themes/maize_theme.php
-squirrelmail/themes/methodical_theme.php
-squirrelmail/themes/midnight.php
-squirrelmail/themes/minimal_bw.php
-squirrelmail/themes/monostochastic.php
-squirrelmail/themes/penguin.php
-squirrelmail/themes/plain_blue_theme.php
-squirrelmail/themes/purple_theme.php
-squirrelmail/themes/random.php
-squirrelmail/themes/sandstorm_theme.php
-squirrelmail/themes/seaspray_theme.php
-squirrelmail/themes/servery_theme.php
-squirrelmail/themes/shades_of_grey.php
-squirrelmail/themes/slashdot_theme.php
-squirrelmail/themes/spice_of_life.php
-squirrelmail/themes/spice_of_life_dark.php
-squirrelmail/themes/spice_of_life_lite.php
-@dirrm squirrelmail/themes/css
-@dirrm squirrelmail/themes
-@dirrm squirrelmail/src
-@dirrm squirrelmail/po
-@dirrm squirrelmail/plugins/translate
-@dirrm squirrelmail/plugins/squirrelspell/modules
-@dirrm squirrelmail/plugins/squirrelspell/js
-@dirrm squirrelmail/plugins/squirrelspell/doc
-@dirrm squirrelmail/plugins/squirrelspell
-@dirrm squirrelmail/plugins/spamcop
-@dirrm squirrelmail/plugins/sent_subfolders
-@dirrm squirrelmail/plugins/newmail/sounds
-@dirrm squirrelmail/plugins/newmail
-@dirrm squirrelmail/plugins/message_details
-@dirrm squirrelmail/plugins/mail_fetch
-@dirrm squirrelmail/plugins/listcommands
-@dirrm squirrelmail/plugins/info
-@dirrm squirrelmail/plugins/fortune
-@dirrm squirrelmail/plugins/filters/bulkquery
-@dirrm squirrelmail/plugins/filters
-@dirrm squirrelmail/plugins/delete_move_next
-@dirrm squirrelmail/plugins/calendar
-@dirrm squirrelmail/plugins/bug_report
-@dirrm squirrelmail/plugins/administrator
-@dirrm squirrelmail/plugins/abook_take
-@dirrm squirrelmail/plugins
-@dirrm squirrelmail/locale/zh_TW/LC_MESSAGES
-@dirrm squirrelmail/locale/zh_TW
-@dirrm squirrelmail/locale/zh_CN/LC_MESSAGES
-@dirrm squirrelmail/locale/zh_CN
-@dirrm squirrelmail/locale/vi_VN/LC_MESSAGES
-@dirrm squirrelmail/locale/vi_VN
-@dirrm squirrelmail/locale/uk_UA/LC_MESSAGES
-@dirrm squirrelmail/locale/uk_UA
-@dirrm squirrelmail/locale/tr_TR/LC_MESSAGES
-@dirrm squirrelmail/locale/tr_TR
-@dirrm squirrelmail/locale/th_TH/LC_MESSAGES
-@dirrm squirrelmail/locale/th_TH
-@dirrm squirrelmail/locale/sv_SE/LC_MESSAGES
-@dirrm squirrelmail/locale/sv_SE
-@dirrm squirrelmail/locale/sr_YU/LC_MESSAGES
-@dirrm squirrelmail/locale/sr_YU
-@dirrm squirrelmail/locale/sl_SI/LC_MESSAGES
-@dirrm squirrelmail/locale/sl_SI
-@dirrm squirrelmail/locale/sk_SK/LC_MESSAGES
-@dirrm squirrelmail/locale/sk_SK
-@dirrm squirrelmail/locale/ru_RU/LC_MESSAGES
-@dirrm squirrelmail/locale/ru_RU
-@dirrm squirrelmail/locale/ro_RO/LC_MESSAGES
-@dirrm squirrelmail/locale/ro_RO
-@dirrm squirrelmail/locale/pt_PT/LC_MESSAGES
-@dirrm squirrelmail/locale/pt_PT
-@dirrm squirrelmail/locale/pt_BR/LC_MESSAGES
-@dirrm squirrelmail/locale/pt_BR
-@dirrm squirrelmail/locale/pl_PL/LC_MESSAGES
-@dirrm squirrelmail/locale/pl_PL
-@dirrm squirrelmail/locale/no_NO/LC_MESSAGES
-@dirrm squirrelmail/locale/no_NO
-@dirrm squirrelmail/locale/nn_NO/LC_MESSAGES
-@dirrm squirrelmail/locale/nn_NO
-@dirrm squirrelmail/locale/nl_NL/LC_MESSAGES
-@dirrm squirrelmail/locale/nl_NL
-@dirrm squirrelmail/locale/ms_MY/LC_MESSAGES
-@dirrm squirrelmail/locale/ms_MY
-@dirrm squirrelmail/locale/lt_LT/LC_MESSAGES
-@dirrm squirrelmail/locale/lt_LT
-@dirrm squirrelmail/locale/ko_KR/LC_MESSAGES
-@dirrm squirrelmail/locale/ko_KR
-@dirrm squirrelmail/locale/ja_JP/LC_MESSAGES
-@dirrm squirrelmail/locale/ja_JP
-@dirrm squirrelmail/locale/it_IT/LC_MESSAGES
-@dirrm squirrelmail/locale/it_IT
-@dirrm squirrelmail/locale/is_IS/LC_MESSAGES
-@dirrm squirrelmail/locale/is_IS
-@dirrm squirrelmail/locale/id_ID/LC_MESSAGES
-@dirrm squirrelmail/locale/id_ID
-@dirrm squirrelmail/locale/hu_HU/LC_MESSAGES
-@dirrm squirrelmail/locale/hu_HU
-@dirrm squirrelmail/locale/hr_HR/LC_MESSAGES
-@dirrm squirrelmail/locale/hr_HR
-@dirrm squirrelmail/locale/he_IL/LC_MESSAGES
-@dirrm squirrelmail/locale/he_IL
-@dirrm squirrelmail/locale/fo_FO/LC_MESSAGES
-@dirrm squirrelmail/locale/fo_FO
-@dirrm squirrelmail/locale/fr_FR/LC_MESSAGES
-@dirrm squirrelmail/locale/fr_FR
-@dirrm squirrelmail/locale/fi_FI/LC_MESSAGES
-@dirrm squirrelmail/locale/fi_FI
-@dirrm squirrelmail/locale/et_EE/LC_MESSAGES
-@dirrm squirrelmail/locale/et_EE
-@dirrm squirrelmail/locale/es_ES/LC_MESSAGES
-@dirrm squirrelmail/locale/es_ES
-@dirrm squirrelmail/locale/el_GR/LC_MESSAGES
-@dirrm squirrelmail/locale/el_GR
-@dirrm squirrelmail/locale/de_DE/LC_MESSAGES
-@dirrm squirrelmail/locale/de_DE
-@dirrm squirrelmail/locale/da_DK/LC_MESSAGES
-@dirrm squirrelmail/locale/da_DK
-@dirrm squirrelmail/locale/cy_GB/LC_MESSAGES
-@dirrm squirrelmail/locale/cy_GB
-@dirrm squirrelmail/locale/cs_CZ/LC_MESSAGES
-@dirrm squirrelmail/locale/cs_CZ
-@dirrm squirrelmail/locale/ca_ES/LC_MESSAGES
-@dirrm squirrelmail/locale/ca_ES
-@dirrm squirrelmail/locale/bg_BG/LC_MESSAGES
-@dirrm squirrelmail/locale/bg_BG
-@dirrm squirrelmail/locale/ar/LC_MESSAGES
-@dirrm squirrelmail/locale/ar
-@dirrm squirrelmail/locale
-@dirrm squirrelmail/include/options
-@dirrm squirrelmail/include
-@dirrm squirrelmail/images
-@dirrm squirrelmail/help/zh_CN
-@dirrm squirrelmail/help/th_TH
-@dirrm squirrelmail/help/sv_SE
-@dirrm squirrelmail/help/sr_YU
-@dirrm squirrelmail/help/sk_SK
-@dirrm squirrelmail/help/sl_SI
-@dirrm squirrelmail/help/ru_RU
-@dirrm squirrelmail/help/pt_PT
-@dirrm squirrelmail/help/pt_BR
-@dirrm squirrelmail/help/pl_PL
-@dirrm squirrelmail/help/nl_NL
-@dirrm squirrelmail/help/lt_LT
-@dirrm squirrelmail/help/ko_KR
-@dirrm squirrelmail/help/ja_JP
-@dirrm squirrelmail/help/it_IT
-@dirrm squirrelmail/help/id_ID
-@dirrm squirrelmail/help/fr_FR
-@dirrm squirrelmail/help/fi_FI
-@dirrm squirrelmail/help/es_ES
-@dirrm squirrelmail/help/en_US
-@dirrm squirrelmail/help/de_DE
-@dirrm squirrelmail/help/da_DK
-@dirrm squirrelmail/help/cy_GB
-@dirrm squirrelmail/help/cs_CZ
-@dirrm squirrelmail/help/ca_ES
-@dirrm squirrelmail/help/bg_BG
-@dirrm squirrelmail/help
-@dirrm squirrelmail/functions
-@dirrm squirrelmail/doc/ReleaseNotes/1.4
-@dirrm squirrelmail/doc/ReleaseNotes/1.3
-@dirrm squirrelmail/doc/ReleaseNotes/1.2
-@dirrm squirrelmail/doc/ReleaseNotes
-@dirrm squirrelmail/doc
-@dirrm squirrelmail/data
-@dirrm squirrelmail/contrib/RPM
-@dirrm squirrelmail/contrib
-@dirrm squirrelmail/config
-@dirrm squirrelmail/class/mime
-@dirrm squirrelmail/class/helper
-@dirrm squirrelmail/class/deliver
-@dirrm squirrelmail/class
-@dirrm squirrelmail
+etc/periodic/daily/111.clean-squirrelmail
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.themes
+%%PORTDOCS%%%%DOCSDIR%%/README.russian_apache
+%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes-%%PORTVERSION%%
+%%PORTDOCS%%%%DOCSDIR%%/UPGRADE
+%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/1.2/Notes-1.2.0.txt
+%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/1.2/Notes-1.2.1.txt
+%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/1.2/Notes-1.2.2.txt
+%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/1.2/Notes-1.2.3.txt
+%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/1.2/Notes-1.2.4.txt
+%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/1.2/Notes-1.2.5
+%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/1.2/Notes-1.2.6.txt
+%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/1.3/Notes-1.3.0.txt
+%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/1.3/Notes-1.3.1.txt
+%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/1.3/Notes-1.3.2.txt
+%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/1.4/Notes-1.4.0.txt
+%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/1.4/Notes-1.4.1.txt
+%%PORTDOCS%%%%DOCSDIR%%/addressbook.txt
+%%PORTDOCS%%%%DOCSDIR%%/authentication.txt
+%%PORTDOCS%%%%DOCSDIR%%/compose.txt
+%%PORTDOCS%%%%DOCSDIR%%/db-backend.txt
+%%PORTDOCS%%%%DOCSDIR%%/ie_ssl.txt
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/mime.txt
+%%PORTDOCS%%%%DOCSDIR%%/plugin.txt
+%%PORTDOCS%%%%DOCSDIR%%/plugins/README.plugins
+%%PORTDOCS%%%%DOCSDIR%%/plugins/abook_take/README
+%%PORTDOCS%%%%DOCSDIR%%/plugins/administrator/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/plugins/bug_report/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/plugins/bug_report/README
+%%PORTDOCS%%%%DOCSDIR%%/plugins/calendar/README
+%%PORTDOCS%%%%DOCSDIR%%/plugins/delete_move_next/README
+%%PORTDOCS%%%%DOCSDIR%%/plugins/filters/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/plugins/filters/README
+%%PORTDOCS%%%%DOCSDIR%%/plugins/filters/bulkquery/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/plugins/filters/bulkquery/README
+%%PORTDOCS%%%%DOCSDIR%%/plugins/fortune/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/plugins/info/README
+%%PORTDOCS%%%%DOCSDIR%%/plugins/listcommands/README
+%%PORTDOCS%%%%DOCSDIR%%/plugins/mail_fetch/README
+%%PORTDOCS%%%%DOCSDIR%%/plugins/newmail/HISTORY
+%%PORTDOCS%%%%DOCSDIR%%/plugins/newmail/README
+%%PORTDOCS%%%%DOCSDIR%%/plugins/spamcop/README
+%%PORTDOCS%%%%DOCSDIR%%/plugins/squirrelspell/CRYPTO
+%%PORTDOCS%%%%DOCSDIR%%/plugins/squirrelspell/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/plugins/squirrelspell/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/plugins/squirrelspell/PRIVACY
+%%PORTDOCS%%%%DOCSDIR%%/plugins/squirrelspell/README
+%%PORTDOCS%%%%DOCSDIR%%/plugins/squirrelspell/UPGRADING
+%%PORTDOCS%%%%DOCSDIR%%/plugins/translate/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/plugins/translate/README
+%%PORTDOCS%%%%DOCSDIR%%/rfc_documents.txt
+%%PORTDOCS%%%%DOCSDIR%%/themes.txt
+%%PORTDOCS%%%%DOCSDIR%%/translating.txt
+%%PORTDOCS%%%%DOCSDIR%%/translating_help.txt
+%%PORTDOCS%%%%DOCSDIR%%/tree.txt
+%%SQUIRRELDIR%%/class/deliver/Deliver.class.php
+%%SQUIRRELDIR%%/class/deliver/Deliver_IMAP.class.php
+%%SQUIRRELDIR%%/class/deliver/Deliver_SMTP.class.php
+%%SQUIRRELDIR%%/class/deliver/Deliver_SendMail.class.php
+%%SQUIRRELDIR%%/class/deliver/index.php
+%%SQUIRRELDIR%%/class/helper/VCard.class.php
+%%SQUIRRELDIR%%/class/html.class.php
+%%SQUIRRELDIR%%/class/index.php
+%%SQUIRRELDIR%%/class/mime.class.php
+%%SQUIRRELDIR%%/class/mime/AddressStructure.class.php
+%%SQUIRRELDIR%%/class/mime/ContentType.class.php
+%%SQUIRRELDIR%%/class/mime/Disposition.class.php
+%%SQUIRRELDIR%%/class/mime/Language.class.php
+%%SQUIRRELDIR%%/class/mime/Message.class.php
+%%SQUIRRELDIR%%/class/mime/MessageHeader.class.php
+%%SQUIRRELDIR%%/class/mime/Rfc822Header.class.php
+%%SQUIRRELDIR%%/class/mime/SMimeMessage.class.php
+%%SQUIRRELDIR%%/class/mime/index.php
+%%SQUIRRELDIR%%/config/conf.pl
+%%SQUIRRELDIR%%/config/config_default.php
+%%SQUIRRELDIR%%/config/config_local.php
+%%SQUIRRELDIR%%/config/index.php
+%%SQUIRRELDIR%%/configure
+%%SQUIRRELDIR%%/data/.htaccess
+%%SQUIRRELDIR%%/data/default_pref
+%%SQUIRRELDIR%%/data/index.php
+%%SQUIRRELDIR%%/functions/abook_database.php
+%%SQUIRRELDIR%%/functions/abook_global_file.php
+%%SQUIRRELDIR%%/functions/abook_ldap_server.php
+%%SQUIRRELDIR%%/functions/abook_local_file.php
+%%SQUIRRELDIR%%/functions/addressbook.php
+%%SQUIRRELDIR%%/functions/attachment_common.php
+%%SQUIRRELDIR%%/functions/auth.php
+%%SQUIRRELDIR%%/functions/constants.php
+%%SQUIRRELDIR%%/functions/date.php
+%%SQUIRRELDIR%%/functions/db_prefs.php
+%%SQUIRRELDIR%%/functions/display_messages.php
+%%SQUIRRELDIR%%/functions/file_prefs.php
+%%SQUIRRELDIR%%/functions/gettext.php
+%%SQUIRRELDIR%%/functions/global.php
+%%SQUIRRELDIR%%/functions/html.php
+%%SQUIRRELDIR%%/functions/i18n.php
+%%SQUIRRELDIR%%/functions/imap.php
+%%SQUIRRELDIR%%/functions/imap_general.php
+%%SQUIRRELDIR%%/functions/imap_mailbox.php
+%%SQUIRRELDIR%%/functions/imap_messages.php
+%%SQUIRRELDIR%%/functions/imap_search.php
+%%SQUIRRELDIR%%/functions/imap_utf7_local.php
+%%SQUIRRELDIR%%/functions/index.php
+%%SQUIRRELDIR%%/functions/mailbox_display.php
+%%SQUIRRELDIR%%/functions/mime.php
+%%SQUIRRELDIR%%/functions/options.php
+%%SQUIRRELDIR%%/functions/page_header.php
+%%SQUIRRELDIR%%/functions/plugin.php
+%%SQUIRRELDIR%%/functions/prefs.php
+%%SQUIRRELDIR%%/functions/strings.php
+%%SQUIRRELDIR%%/functions/tree.php
+%%SQUIRRELDIR%%/functions/url_parser.php
+%%SQUIRRELDIR%%/help/bg_BG/FAQ.hlp
+%%SQUIRRELDIR%%/help/bg_BG/addresses.hlp
+%%SQUIRRELDIR%%/help/bg_BG/basic.hlp
+%%SQUIRRELDIR%%/help/bg_BG/compose.hlp
+%%SQUIRRELDIR%%/help/bg_BG/folders.hlp
+%%SQUIRRELDIR%%/help/bg_BG/main_folder.hlp
+%%SQUIRRELDIR%%/help/bg_BG/options.hlp
+%%SQUIRRELDIR%%/help/bg_BG/read_mail.hlp
+%%SQUIRRELDIR%%/help/bg_BG/search.hlp
+%%SQUIRRELDIR%%/help/ca_ES/FAQ.hlp
+%%SQUIRRELDIR%%/help/ca_ES/addresses.hlp
+%%SQUIRRELDIR%%/help/ca_ES/basic.hlp
+%%SQUIRRELDIR%%/help/ca_ES/compose.hlp
+%%SQUIRRELDIR%%/help/ca_ES/folders.hlp
+%%SQUIRRELDIR%%/help/ca_ES/main_folder.hlp
+%%SQUIRRELDIR%%/help/ca_ES/options.hlp
+%%SQUIRRELDIR%%/help/ca_ES/read_mail.hlp
+%%SQUIRRELDIR%%/help/ca_ES/search.hlp
+%%SQUIRRELDIR%%/help/cs_CZ/FAQ.hlp
+%%SQUIRRELDIR%%/help/cs_CZ/addresses.hlp
+%%SQUIRRELDIR%%/help/cs_CZ/basic.hlp
+%%SQUIRRELDIR%%/help/cs_CZ/compose.hlp
+%%SQUIRRELDIR%%/help/cs_CZ/folders.hlp
+%%SQUIRRELDIR%%/help/cs_CZ/main_folder.hlp
+%%SQUIRRELDIR%%/help/cs_CZ/options.hlp
+%%SQUIRRELDIR%%/help/cs_CZ/read_mail.hlp
+%%SQUIRRELDIR%%/help/cs_CZ/search.hlp
+%%SQUIRRELDIR%%/help/da_DK/FAQ.hlp
+%%SQUIRRELDIR%%/help/da_DK/addresses.hlp
+%%SQUIRRELDIR%%/help/da_DK/basic.hlp
+%%SQUIRRELDIR%%/help/da_DK/compose.hlp
+%%SQUIRRELDIR%%/help/da_DK/folders.hlp
+%%SQUIRRELDIR%%/help/da_DK/main_folder.hlp
+%%SQUIRRELDIR%%/help/da_DK/options.hlp
+%%SQUIRRELDIR%%/help/da_DK/read_mail.hlp
+%%SQUIRRELDIR%%/help/da_DK/search.hlp
+%%SQUIRRELDIR%%/help/de_DE/FAQ.hlp
+%%SQUIRRELDIR%%/help/de_DE/addresses.hlp
+%%SQUIRRELDIR%%/help/de_DE/basic.hlp
+%%SQUIRRELDIR%%/help/de_DE/compose.hlp
+%%SQUIRRELDIR%%/help/de_DE/folders.hlp
+%%SQUIRRELDIR%%/help/de_DE/main_folder.hlp
+%%SQUIRRELDIR%%/help/de_DE/options.hlp
+%%SQUIRRELDIR%%/help/de_DE/read_mail.hlp
+%%SQUIRRELDIR%%/help/de_DE/search.hlp
+%%SQUIRRELDIR%%/help/en_US/FAQ.hlp
+%%SQUIRRELDIR%%/help/en_US/addresses.hlp
+%%SQUIRRELDIR%%/help/en_US/basic.hlp
+%%SQUIRRELDIR%%/help/en_US/compose.hlp
+%%SQUIRRELDIR%%/help/en_US/folders.hlp
+%%SQUIRRELDIR%%/help/en_US/main_folder.hlp
+%%SQUIRRELDIR%%/help/en_US/options.hlp
+%%SQUIRRELDIR%%/help/en_US/read_mail.hlp
+%%SQUIRRELDIR%%/help/en_US/search.hlp
+%%SQUIRRELDIR%%/help/es_ES/FAQ.hlp
+%%SQUIRRELDIR%%/help/es_ES/addresses.hlp
+%%SQUIRRELDIR%%/help/es_ES/basic.hlp
+%%SQUIRRELDIR%%/help/es_ES/compose.hlp
+%%SQUIRRELDIR%%/help/es_ES/folders.hlp
+%%SQUIRRELDIR%%/help/es_ES/main_folder.hlp
+%%SQUIRRELDIR%%/help/es_ES/options.hlp
+%%SQUIRRELDIR%%/help/es_ES/read_mail.hlp
+%%SQUIRRELDIR%%/help/es_ES/search.hlp
+%%SQUIRRELDIR%%/help/fi_FI/FAQ.hlp
+%%SQUIRRELDIR%%/help/fi_FI/addresses.hlp
+%%SQUIRRELDIR%%/help/fi_FI/basic.hlp
+%%SQUIRRELDIR%%/help/fi_FI/compose.hlp
+%%SQUIRRELDIR%%/help/fi_FI/folders.hlp
+%%SQUIRRELDIR%%/help/fi_FI/main_folder.hlp
+%%SQUIRRELDIR%%/help/fi_FI/options.hlp
+%%SQUIRRELDIR%%/help/fi_FI/read_mail.hlp
+%%SQUIRRELDIR%%/help/fi_FI/search.hlp
+%%SQUIRRELDIR%%/help/fr_FR/FAQ.hlp
+%%SQUIRRELDIR%%/help/fr_FR/addresses.hlp
+%%SQUIRRELDIR%%/help/fr_FR/basic.hlp
+%%SQUIRRELDIR%%/help/fr_FR/compose.hlp
+%%SQUIRRELDIR%%/help/fr_FR/folders.hlp
+%%SQUIRRELDIR%%/help/fr_FR/main_folder.hlp
+%%SQUIRRELDIR%%/help/fr_FR/options.hlp
+%%SQUIRRELDIR%%/help/fr_FR/read_mail.hlp
+%%SQUIRRELDIR%%/help/fr_FR/search.hlp
+%%SQUIRRELDIR%%/help/id_ID/FAQ.hlp
+%%SQUIRRELDIR%%/help/id_ID/addresses.hlp
+%%SQUIRRELDIR%%/help/id_ID/basic.hlp
+%%SQUIRRELDIR%%/help/id_ID/compose.hlp
+%%SQUIRRELDIR%%/help/id_ID/folders.hlp
+%%SQUIRRELDIR%%/help/id_ID/main_folder.hlp
+%%SQUIRRELDIR%%/help/id_ID/options.hlp
+%%SQUIRRELDIR%%/help/id_ID/read_mail.hlp
+%%SQUIRRELDIR%%/help/id_ID/search.hlp
+%%SQUIRRELDIR%%/help/index.php
+%%SQUIRRELDIR%%/help/it_IT/FAQ.hlp
+%%SQUIRRELDIR%%/help/it_IT/addresses.hlp
+%%SQUIRRELDIR%%/help/it_IT/basic.hlp
+%%SQUIRRELDIR%%/help/it_IT/compose.hlp
+%%SQUIRRELDIR%%/help/it_IT/folders.hlp
+%%SQUIRRELDIR%%/help/it_IT/main_folder.hlp
+%%SQUIRRELDIR%%/help/it_IT/options.hlp
+%%SQUIRRELDIR%%/help/it_IT/read_mail.hlp
+%%SQUIRRELDIR%%/help/it_IT/search.hlp
+%%SQUIRRELDIR%%/help/ja_JP/FAQ.hlp
+%%SQUIRRELDIR%%/help/ja_JP/addresses.hlp
+%%SQUIRRELDIR%%/help/ja_JP/basic.hlp
+%%SQUIRRELDIR%%/help/ja_JP/compose.hlp
+%%SQUIRRELDIR%%/help/ja_JP/folders.hlp
+%%SQUIRRELDIR%%/help/ja_JP/main_folder.hlp
+%%SQUIRRELDIR%%/help/ja_JP/options.hlp
+%%SQUIRRELDIR%%/help/ja_JP/read_mail.hlp
+%%SQUIRRELDIR%%/help/ja_JP/search.hlp
+%%SQUIRRELDIR%%/help/ko_KR/FAQ.hlp
+%%SQUIRRELDIR%%/help/ko_KR/addresses.hlp
+%%SQUIRRELDIR%%/help/ko_KR/basic.hlp
+%%SQUIRRELDIR%%/help/ko_KR/compose.hlp
+%%SQUIRRELDIR%%/help/ko_KR/folders.hlp
+%%SQUIRRELDIR%%/help/ko_KR/main_folder.hlp
+%%SQUIRRELDIR%%/help/ko_KR/options.hlp
+%%SQUIRRELDIR%%/help/ko_KR/read_mail.hlp
+%%SQUIRRELDIR%%/help/ko_KR/search.hlp
+%%SQUIRRELDIR%%/help/lt_LT/FAQ.hlp
+%%SQUIRRELDIR%%/help/lt_LT/addresses.hlp
+%%SQUIRRELDIR%%/help/lt_LT/basic.hlp
+%%SQUIRRELDIR%%/help/lt_LT/compose.hlp
+%%SQUIRRELDIR%%/help/lt_LT/folders.hlp
+%%SQUIRRELDIR%%/help/lt_LT/main_folder.hlp
+%%SQUIRRELDIR%%/help/lt_LT/options.hlp
+%%SQUIRRELDIR%%/help/lt_LT/read_mail.hlp
+%%SQUIRRELDIR%%/help/lt_LT/search.hlp
+%%SQUIRRELDIR%%/help/nl_NL/FAQ.hlp
+%%SQUIRRELDIR%%/help/nl_NL/addresses.hlp
+%%SQUIRRELDIR%%/help/nl_NL/basic.hlp
+%%SQUIRRELDIR%%/help/nl_NL/compose.hlp
+%%SQUIRRELDIR%%/help/nl_NL/folders.hlp
+%%SQUIRRELDIR%%/help/nl_NL/main_folder.hlp
+%%SQUIRRELDIR%%/help/nl_NL/options.hlp
+%%SQUIRRELDIR%%/help/nl_NL/read_mail.hlp
+%%SQUIRRELDIR%%/help/nl_NL/search.hlp
+%%SQUIRRELDIR%%/help/pl_PL/FAQ.hlp
+%%SQUIRRELDIR%%/help/pl_PL/addresses.hlp
+%%SQUIRRELDIR%%/help/pl_PL/basic.hlp
+%%SQUIRRELDIR%%/help/pl_PL/compose.hlp
+%%SQUIRRELDIR%%/help/pl_PL/folders.hlp
+%%SQUIRRELDIR%%/help/pl_PL/main_folder.hlp
+%%SQUIRRELDIR%%/help/pl_PL/options.hlp
+%%SQUIRRELDIR%%/help/pl_PL/read_mail.hlp
+%%SQUIRRELDIR%%/help/pl_PL/search.hlp
+%%SQUIRRELDIR%%/help/pt_BR/FAQ.hlp
+%%SQUIRRELDIR%%/help/pt_BR/addresses.hlp
+%%SQUIRRELDIR%%/help/pt_BR/basic.hlp
+%%SQUIRRELDIR%%/help/pt_BR/compose.hlp
+%%SQUIRRELDIR%%/help/pt_BR/folders.hlp
+%%SQUIRRELDIR%%/help/pt_BR/main_folder.hlp
+%%SQUIRRELDIR%%/help/pt_BR/options.hlp
+%%SQUIRRELDIR%%/help/pt_BR/read_mail.hlp
+%%SQUIRRELDIR%%/help/pt_BR/search.hlp
+%%SQUIRRELDIR%%/help/pt_PT/FAQ.hlp
+%%SQUIRRELDIR%%/help/pt_PT/addresses.hlp
+%%SQUIRRELDIR%%/help/pt_PT/basic.hlp
+%%SQUIRRELDIR%%/help/pt_PT/compose.hlp
+%%SQUIRRELDIR%%/help/pt_PT/folders.hlp
+%%SQUIRRELDIR%%/help/pt_PT/main_folder.hlp
+%%SQUIRRELDIR%%/help/pt_PT/options.hlp
+%%SQUIRRELDIR%%/help/pt_PT/read_mail.hlp
+%%SQUIRRELDIR%%/help/pt_PT/search.hlp
+%%SQUIRRELDIR%%/help/ru_RU/FAQ.hlp
+%%SQUIRRELDIR%%/help/ru_RU/addresses.hlp
+%%SQUIRRELDIR%%/help/ru_RU/basic.hlp
+%%SQUIRRELDIR%%/help/ru_RU/compose.hlp
+%%SQUIRRELDIR%%/help/ru_RU/folders.hlp
+%%SQUIRRELDIR%%/help/ru_RU/main_folder.hlp
+%%SQUIRRELDIR%%/help/ru_RU/options.hlp
+%%SQUIRRELDIR%%/help/ru_RU/read_mail.hlp
+%%SQUIRRELDIR%%/help/ru_RU/search.hlp
+%%SQUIRRELDIR%%/help/sl_SI/FAQ.hlp
+%%SQUIRRELDIR%%/help/sl_SI/addresses.hlp
+%%SQUIRRELDIR%%/help/sl_SI/basic.hlp
+%%SQUIRRELDIR%%/help/sl_SI/compose.hlp
+%%SQUIRRELDIR%%/help/sl_SI/folders.hlp
+%%SQUIRRELDIR%%/help/sl_SI/main_folder.hlp
+%%SQUIRRELDIR%%/help/sl_SI/options.hlp
+%%SQUIRRELDIR%%/help/sl_SI/read_mail.hlp
+%%SQUIRRELDIR%%/help/sl_SI/search.hlp
+%%SQUIRRELDIR%%/help/sr_YU/FAQ.hlp
+%%SQUIRRELDIR%%/help/sr_YU/addresses.hlp
+%%SQUIRRELDIR%%/help/sr_YU/basic.hlp
+%%SQUIRRELDIR%%/help/sr_YU/compose.hlp
+%%SQUIRRELDIR%%/help/sr_YU/folders.hlp
+%%SQUIRRELDIR%%/help/sr_YU/main_folder.hlp
+%%SQUIRRELDIR%%/help/sr_YU/options.hlp
+%%SQUIRRELDIR%%/help/sr_YU/read_mail.hlp
+%%SQUIRRELDIR%%/help/sr_YU/search.hlp
+%%SQUIRRELDIR%%/help/sv_SE/FAQ.hlp
+%%SQUIRRELDIR%%/help/sv_SE/addresses.hlp
+%%SQUIRRELDIR%%/help/sv_SE/basic.hlp
+%%SQUIRRELDIR%%/help/sv_SE/compose.hlp
+%%SQUIRRELDIR%%/help/sv_SE/folders.hlp
+%%SQUIRRELDIR%%/help/sv_SE/main_folder.hlp
+%%SQUIRRELDIR%%/help/sv_SE/options.hlp
+%%SQUIRRELDIR%%/help/sv_SE/read_mail.hlp
+%%SQUIRRELDIR%%/help/sv_SE/search.hlp
+%%SQUIRRELDIR%%/help/th_TH/FAQ.hlp
+%%SQUIRRELDIR%%/help/th_TH/addresses.hlp
+%%SQUIRRELDIR%%/help/th_TH/basic.hlp
+%%SQUIRRELDIR%%/help/th_TH/compose.hlp
+%%SQUIRRELDIR%%/help/th_TH/folders.hlp
+%%SQUIRRELDIR%%/help/th_TH/main_folder.hlp
+%%SQUIRRELDIR%%/help/th_TH/options.hlp
+%%SQUIRRELDIR%%/help/th_TH/read_mail.hlp
+%%SQUIRRELDIR%%/help/th_TH/search.hlp
+%%SQUIRRELDIR%%/help/zh_CN/FAQ.hlp
+%%SQUIRRELDIR%%/help/zh_CN/addresses.hlp
+%%SQUIRRELDIR%%/help/zh_CN/basic.hlp
+%%SQUIRRELDIR%%/help/zh_CN/compose.hlp
+%%SQUIRRELDIR%%/help/zh_CN/folders.hlp
+%%SQUIRRELDIR%%/help/zh_CN/main_folder.hlp
+%%SQUIRRELDIR%%/help/zh_CN/options.hlp
+%%SQUIRRELDIR%%/help/zh_CN/read_mail.hlp
+%%SQUIRRELDIR%%/help/zh_CN/search.hlp
+%%SQUIRRELDIR%%/help/cy_GB/FAQ.hlp
+%%SQUIRRELDIR%%/help/cy_GB/addresses.hlp
+%%SQUIRRELDIR%%/help/cy_GB/basic.hlp
+%%SQUIRRELDIR%%/help/cy_GB/compose.hlp
+%%SQUIRRELDIR%%/help/cy_GB/folders.hlp
+%%SQUIRRELDIR%%/help/cy_GB/main_folder.hlp
+%%SQUIRRELDIR%%/help/cy_GB/options.hlp
+%%SQUIRRELDIR%%/help/cy_GB/read_mail.hlp
+%%SQUIRRELDIR%%/help/cy_GB/search.hlp
+%%SQUIRRELDIR%%/help/sk_SK/FAQ.hlp
+%%SQUIRRELDIR%%/help/sk_SK/addresses.hlp
+%%SQUIRRELDIR%%/help/sk_SK/basic.hlp
+%%SQUIRRELDIR%%/help/sk_SK/compose.hlp
+%%SQUIRRELDIR%%/help/sk_SK/folders.hlp
+%%SQUIRRELDIR%%/help/sk_SK/main_folder.hlp
+%%SQUIRRELDIR%%/help/sk_SK/options.hlp
+%%SQUIRRELDIR%%/help/sk_SK/read_mail.hlp
+%%SQUIRRELDIR%%/help/sk_SK/search.hlp
+%%SQUIRRELDIR%%/images/down_pointer.png
+%%SQUIRRELDIR%%/images/index.php
+%%SQUIRRELDIR%%/images/minus.gif
+%%SQUIRRELDIR%%/images/plus.gif
+%%SQUIRRELDIR%%/images/draft.png
+%%SQUIRRELDIR%%/images/folder.png
+%%SQUIRRELDIR%%/images/inbox.png
+%%SQUIRRELDIR%%/images/minus.png
+%%SQUIRRELDIR%%/images/plus.png
+%%SQUIRRELDIR%%/images/senti.png
+%%SQUIRRELDIR%%/images/delitem.png
+%%SQUIRRELDIR%%/images/sec_remove_pt_PT.png
+%%SQUIRRELDIR%%/images/sec_remove_da_DK.png
+%%SQUIRRELDIR%%/images/sec_remove_eng.png
+%%SQUIRRELDIR%%/images/sec_remove_es_ES.png
+%%SQUIRRELDIR%%/images/sec_remove_fr_FR.png
+%%SQUIRRELDIR%%/images/sec_remove_id_ID.png
+%%SQUIRRELDIR%%/images/sec_remove_ja_JP.png
+%%SQUIRRELDIR%%/images/sec_remove_ko_KR.png
+%%SQUIRRELDIR%%/images/sec_remove_lt_LT.png
+%%SQUIRRELDIR%%/images/sec_remove_ru.png
+%%SQUIRRELDIR%%/images/sec_remove_sl_SI.png
+%%SQUIRRELDIR%%/images/sec_remove_sr_YU.png
+%%SQUIRRELDIR%%/images/sm_logo.png
+%%SQUIRRELDIR%%/images/sort_none.png
+%%SQUIRRELDIR%%/images/up_pointer.png
+%%SQUIRRELDIR%%/include/index.php
+%%SQUIRRELDIR%%/include/load_prefs.php
+%%SQUIRRELDIR%%/include/options/display.php
+%%SQUIRRELDIR%%/include/options/folder.php
+%%SQUIRRELDIR%%/include/options/index.php
+%%SQUIRRELDIR%%/include/options/personal.php
+%%SQUIRRELDIR%%/include/validate.php
+%%SQUIRRELDIR%%/index.php
+%%SQUIRRELDIR%%/locale/ar/LC_MESSAGES/squirrelmail.mo
+%%SQUIRRELDIR%%/locale/ar/LC_MESSAGES/squirrelmail.po
+%%SQUIRRELDIR%%/locale/bg_BG/LC_MESSAGES/squirrelmail.mo
+%%SQUIRRELDIR%%/locale/bg_BG/LC_MESSAGES/squirrelmail.po
+%%SQUIRRELDIR%%/locale/ca_ES/LC_MESSAGES/squirrelmail.mo
+%%SQUIRRELDIR%%/locale/ca_ES/LC_MESSAGES/squirrelmail.po
+%%SQUIRRELDIR%%/locale/cs_CZ/LC_MESSAGES/squirrelmail.mo
+%%SQUIRRELDIR%%/locale/cs_CZ/LC_MESSAGES/squirrelmail.po
+%%SQUIRRELDIR%%/locale/da_DK/LC_MESSAGES/squirrelmail.mo
+%%SQUIRRELDIR%%/locale/da_DK/LC_MESSAGES/squirrelmail.po
+%%SQUIRRELDIR%%/locale/de_DE/LC_MESSAGES/squirrelmail.mo
+%%SQUIRRELDIR%%/locale/de_DE/LC_MESSAGES/squirrelmail.po
+%%SQUIRRELDIR%%/locale/el_GR/LC_MESSAGES/squirrelmail.mo
+%%SQUIRRELDIR%%/locale/el_GR/LC_MESSAGES/squirrelmail.po
+%%SQUIRRELDIR%%/locale/es_ES/LC_MESSAGES/squirrelmail.mo
+%%SQUIRRELDIR%%/locale/es_ES/LC_MESSAGES/squirrelmail.po
+%%SQUIRRELDIR%%/locale/et_EE/LC_MESSAGES/squirrelmail.mo
+%%SQUIRRELDIR%%/locale/et_EE/LC_MESSAGES/squirrelmail.po
+%%SQUIRRELDIR%%/locale/fi_FI/LC_MESSAGES/squirrelmail.mo
+%%SQUIRRELDIR%%/locale/fi_FI/LC_MESSAGES/squirrelmail.po
+%%SQUIRRELDIR%%/locale/fr_FR/LC_MESSAGES/squirrelmail.mo
+%%SQUIRRELDIR%%/locale/fr_FR/LC_MESSAGES/squirrelmail.po
+%%SQUIRRELDIR%%/locale/he_IL/LC_MESSAGES/squirrelmail.mo
+%%SQUIRRELDIR%%/locale/he_IL/LC_MESSAGES/squirrelmail.po
+%%SQUIRRELDIR%%/locale/hr_HR/LC_MESSAGES/squirrelmail.mo
+%%SQUIRRELDIR%%/locale/hr_HR/LC_MESSAGES/squirrelmail.po
+%%SQUIRRELDIR%%/locale/hu_HU/LC_MESSAGES/squirrelmail.mo
+%%SQUIRRELDIR%%/locale/hu_HU/LC_MESSAGES/squirrelmail.po
+%%SQUIRRELDIR%%/locale/id_ID/LC_MESSAGES/squirrelmail.mo
+%%SQUIRRELDIR%%/locale/id_ID/LC_MESSAGES/squirrelmail.po
+%%SQUIRRELDIR%%/locale/index.php
+%%SQUIRRELDIR%%/locale/is_IS/LC_MESSAGES/squirrelmail.mo
+%%SQUIRRELDIR%%/locale/is_IS/LC_MESSAGES/squirrelmail.po
+%%SQUIRRELDIR%%/locale/it_IT/LC_MESSAGES/squirrelmail.mo
+%%SQUIRRELDIR%%/locale/it_IT/LC_MESSAGES/squirrelmail.po
+%%SQUIRRELDIR%%/locale/ja_JP/LC_MESSAGES/squirrelmail.mo
+%%SQUIRRELDIR%%/locale/ja_JP/LC_MESSAGES/squirrelmail.po
+%%SQUIRRELDIR%%/locale/ko_KR/LC_MESSAGES/squirrelmail.mo
+%%SQUIRRELDIR%%/locale/ko_KR/LC_MESSAGES/squirrelmail.po
+%%SQUIRRELDIR%%/locale/lt_LT/LC_MESSAGES/squirrelmail.mo
+%%SQUIRRELDIR%%/locale/lt_LT/LC_MESSAGES/squirrelmail.po
+%%SQUIRRELDIR%%/locale/nl_NL/LC_MESSAGES/squirrelmail.mo
+%%SQUIRRELDIR%%/locale/nl_NL/LC_MESSAGES/squirrelmail.po
+%%SQUIRRELDIR%%/locale/nn_NO/LC_MESSAGES/squirrelmail.mo
+%%SQUIRRELDIR%%/locale/nn_NO/LC_MESSAGES/squirrelmail.po
+%%SQUIRRELDIR%%/locale/no_NO/LC_MESSAGES/squirrelmail.mo
+%%SQUIRRELDIR%%/locale/no_NO/LC_MESSAGES/squirrelmail.po
+%%SQUIRRELDIR%%/locale/pl_PL/LC_MESSAGES/squirrelmail.mo
+%%SQUIRRELDIR%%/locale/pl_PL/LC_MESSAGES/squirrelmail.po
+%%SQUIRRELDIR%%/locale/pt_BR/LC_MESSAGES/squirrelmail.mo
+%%SQUIRRELDIR%%/locale/pt_BR/LC_MESSAGES/squirrelmail.po
+%%SQUIRRELDIR%%/locale/pt_PT/LC_MESSAGES/squirrelmail.mo
+%%SQUIRRELDIR%%/locale/pt_PT/LC_MESSAGES/squirrelmail.po
+%%SQUIRRELDIR%%/locale/ro_RO/LC_MESSAGES/squirrelmail.mo
+%%SQUIRRELDIR%%/locale/ro_RO/LC_MESSAGES/squirrelmail.po
+%%SQUIRRELDIR%%/locale/ru_RU/LC_MESSAGES/squirrelmail.mo
+%%SQUIRRELDIR%%/locale/ru_RU/LC_MESSAGES/squirrelmail.po
+%%SQUIRRELDIR%%/locale/sk_SK/LC_MESSAGES/squirrelmail.mo
+%%SQUIRRELDIR%%/locale/sk_SK/LC_MESSAGES/squirrelmail.po
+%%SQUIRRELDIR%%/locale/sl_SI/LC_MESSAGES/squirrelmail.mo
+%%SQUIRRELDIR%%/locale/sl_SI/LC_MESSAGES/squirrelmail.po
+%%SQUIRRELDIR%%/locale/sr_YU/LC_MESSAGES/squirrelmail.mo
+%%SQUIRRELDIR%%/locale/sr_YU/LC_MESSAGES/squirrelmail.po
+%%SQUIRRELDIR%%/locale/sv_SE/LC_MESSAGES/squirrelmail.mo
+%%SQUIRRELDIR%%/locale/sv_SE/LC_MESSAGES/squirrelmail.po
+%%SQUIRRELDIR%%/locale/th_TH/LC_MESSAGES/squirrelmail.mo
+%%SQUIRRELDIR%%/locale/th_TH/LC_MESSAGES/squirrelmail.po
+%%SQUIRRELDIR%%/locale/cy_GB/LC_MESSAGES/squirrelmail.po
+%%SQUIRRELDIR%%/locale/cy_GB/LC_MESSAGES/squirrelmail.mo
+%%SQUIRRELDIR%%/locale/fo_FO/LC_MESSAGES/squirrelmail.po
+%%SQUIRRELDIR%%/locale/fo_FO/LC_MESSAGES/squirrelmail.mo
+%%SQUIRRELDIR%%/locale/ms_MY/LC_MESSAGES/squirrelmail.po
+%%SQUIRRELDIR%%/locale/ms_MY/LC_MESSAGES/squirrelmail.mo
+%%SQUIRRELDIR%%/locale/timezones.cfg
+%%SQUIRRELDIR%%/locale/tr_TR/LC_MESSAGES/squirrelmail.mo
+%%SQUIRRELDIR%%/locale/tr_TR/LC_MESSAGES/squirrelmail.po
+%%SQUIRRELDIR%%/locale/uk_UA/LC_MESSAGES/squirrelmail.mo
+%%SQUIRRELDIR%%/locale/uk_UA/LC_MESSAGES/squirrelmail.po
+%%SQUIRRELDIR%%/locale/vi_VN/LC_MESSAGES/squirrelmail.mo
+%%SQUIRRELDIR%%/locale/vi_VN/LC_MESSAGES/squirrelmail.po
+%%SQUIRRELDIR%%/locale/zh_CN/LC_MESSAGES/squirrelmail.mo
+%%SQUIRRELDIR%%/locale/zh_CN/LC_MESSAGES/squirrelmail.po
+%%SQUIRRELDIR%%/locale/zh_TW/LC_MESSAGES/squirrelmail.mo
+%%SQUIRRELDIR%%/locale/zh_TW/LC_MESSAGES/squirrelmail.po
+%%SQUIRRELDIR%%/plugins/abook_take/setup.php
+%%SQUIRRELDIR%%/plugins/abook_take/take.php
+%%SQUIRRELDIR%%/plugins/administrator/auth.php
+%%SQUIRRELDIR%%/plugins/administrator/defines.php
+%%SQUIRRELDIR%%/plugins/administrator/index.php
+%%SQUIRRELDIR%%/plugins/administrator/options.php
+%%SQUIRRELDIR%%/plugins/administrator/setup.php
+%%SQUIRRELDIR%%/plugins/bug_report/bug_report.php
+%%SQUIRRELDIR%%/plugins/bug_report/index.php
+%%SQUIRRELDIR%%/plugins/bug_report/setup.php
+%%SQUIRRELDIR%%/plugins/calendar/calendar.php
+%%SQUIRRELDIR%%/plugins/calendar/calendar_data.php
+%%SQUIRRELDIR%%/plugins/calendar/day.php
+%%SQUIRRELDIR%%/plugins/calendar/event_create.php
+%%SQUIRRELDIR%%/plugins/calendar/event_delete.php
+%%SQUIRRELDIR%%/plugins/calendar/event_edit.php
+%%SQUIRRELDIR%%/plugins/calendar/functions.php
+%%SQUIRRELDIR%%/plugins/calendar/index.php
+%%SQUIRRELDIR%%/plugins/calendar/setup.php
+%%SQUIRRELDIR%%/plugins/delete_move_next/index.php
+%%SQUIRRELDIR%%/plugins/delete_move_next/setup.php
+%%SQUIRRELDIR%%/plugins/filters/bulkquery/Makefile
+%%SQUIRRELDIR%%/plugins/filters/bulkquery/bq.in
+%%SQUIRRELDIR%%/plugins/filters/bulkquery/bq.out
+%%SQUIRRELDIR%%/plugins/filters/bulkquery/bulkquery.c
+%%SQUIRRELDIR%%/plugins/filters/filters.php
+%%SQUIRRELDIR%%/plugins/filters/index.php
+%%SQUIRRELDIR%%/plugins/filters/options.php
+%%SQUIRRELDIR%%/plugins/filters/setup.php
+%%SQUIRRELDIR%%/plugins/filters/spamoptions.php
+%%SQUIRRELDIR%%/plugins/fortune/setup.php
+%%SQUIRRELDIR%%/plugins/index.php
+%%SQUIRRELDIR%%/plugins/info/functions.php
+%%SQUIRRELDIR%%/plugins/info/options.php
+%%SQUIRRELDIR%%/plugins/info/setup.php
+%%SQUIRRELDIR%%/plugins/listcommands/index.php
+%%SQUIRRELDIR%%/plugins/listcommands/mailout.php
+%%SQUIRRELDIR%%/plugins/listcommands/setup.php
+%%SQUIRRELDIR%%/plugins/mail_fetch/class.POP3.php
+%%SQUIRRELDIR%%/plugins/mail_fetch/fetch.php
+%%SQUIRRELDIR%%/plugins/mail_fetch/functions.php
+%%SQUIRRELDIR%%/plugins/mail_fetch/index.php
+%%SQUIRRELDIR%%/plugins/mail_fetch/options.php
+%%SQUIRRELDIR%%/plugins/mail_fetch/setup.php
+%%SQUIRRELDIR%%/plugins/make_archive.pl
+%%SQUIRRELDIR%%/plugins/message_details/message_details_bottom.php
+%%SQUIRRELDIR%%/plugins/message_details/message_details_main.php
+%%SQUIRRELDIR%%/plugins/message_details/message_details_top.php
+%%SQUIRRELDIR%%/plugins/message_details/setup.php
+%%SQUIRRELDIR%%/plugins/newmail/index.php
+%%SQUIRRELDIR%%/plugins/newmail/newmail.php
+%%SQUIRRELDIR%%/plugins/newmail/newmail_opt.php
+%%SQUIRRELDIR%%/plugins/newmail/setup.php
+%%SQUIRRELDIR%%/plugins/newmail/sounds/FanFair.wav
+%%SQUIRRELDIR%%/plugins/newmail/sounds/Friends.wav
+%%SQUIRRELDIR%%/plugins/newmail/sounds/MontyPython.wav
+%%SQUIRRELDIR%%/plugins/newmail/sounds/Notify.wav
+%%SQUIRRELDIR%%/plugins/newmail/testsound.php
+%%SQUIRRELDIR%%/plugins/sent_subfolders/index.php
+%%SQUIRRELDIR%%/plugins/sent_subfolders/setup.php
+%%SQUIRRELDIR%%/plugins/spamcop/index.php
+%%SQUIRRELDIR%%/plugins/spamcop/options.php
+%%SQUIRRELDIR%%/plugins/spamcop/setup.php
+%%SQUIRRELDIR%%/plugins/spamcop/spamcop.php
+%%SQUIRRELDIR%%/plugins/squirrelspell/index.php
+%%SQUIRRELDIR%%/plugins/squirrelspell/js/WHATISTHIS
+%%SQUIRRELDIR%%/plugins/squirrelspell/js/check_me.js
+%%SQUIRRELDIR%%/plugins/squirrelspell/js/crypto_settings.js
+%%SQUIRRELDIR%%/plugins/squirrelspell/js/decrypt_error.js
+%%SQUIRRELDIR%%/plugins/squirrelspell/js/index.php
+%%SQUIRRELDIR%%/plugins/squirrelspell/js/init.js
+%%SQUIRRELDIR%%/plugins/squirrelspell/modules/.htaccess
+%%SQUIRRELDIR%%/plugins/squirrelspell/modules/WHATISTHIS
+%%SQUIRRELDIR%%/plugins/squirrelspell/modules/check_me.mod
+%%SQUIRRELDIR%%/plugins/squirrelspell/modules/crypto.mod
+%%SQUIRRELDIR%%/plugins/squirrelspell/modules/crypto_badkey.mod
+%%SQUIRRELDIR%%/plugins/squirrelspell/modules/edit_dic.mod
+%%SQUIRRELDIR%%/plugins/squirrelspell/modules/enc_setup.mod
+%%SQUIRRELDIR%%/plugins/squirrelspell/modules/forget_me.mod
+%%SQUIRRELDIR%%/plugins/squirrelspell/modules/forget_me_not.mod
+%%SQUIRRELDIR%%/plugins/squirrelspell/modules/index.php
+%%SQUIRRELDIR%%/plugins/squirrelspell/modules/init.mod
+%%SQUIRRELDIR%%/plugins/squirrelspell/modules/lang_change.mod
+%%SQUIRRELDIR%%/plugins/squirrelspell/modules/lang_setup.mod
+%%SQUIRRELDIR%%/plugins/squirrelspell/modules/options_main.mod
+%%SQUIRRELDIR%%/plugins/squirrelspell/setup.php
+%%SQUIRRELDIR%%/plugins/squirrelspell/sqspell_config.php
+%%SQUIRRELDIR%%/plugins/squirrelspell/sqspell_functions.php
+%%SQUIRRELDIR%%/plugins/squirrelspell/sqspell_interface.php
+%%SQUIRRELDIR%%/plugins/squirrelspell/sqspell_options.php
+%%SQUIRRELDIR%%/plugins/translate/index.php
+%%SQUIRRELDIR%%/plugins/translate/options.php
+%%SQUIRRELDIR%%/plugins/translate/setup.php
+%%SQUIRRELDIR%%/po/charsetconvert.pl
+%%SQUIRRELDIR%%/po/compilepo
+%%SQUIRRELDIR%%/po/independent_strings.txt
+%%SQUIRRELDIR%%/po/index.php
+%%SQUIRRELDIR%%/po/mergepo
+%%SQUIRRELDIR%%/po/squirrelmail.po
+%%SQUIRRELDIR%%/po/xgetpo
+%%SQUIRRELDIR%%/src/addrbook_popup.php
+%%SQUIRRELDIR%%/src/addrbook_search.php
+%%SQUIRRELDIR%%/src/addrbook_search_html.php
+%%SQUIRRELDIR%%/src/addressbook.php
+%%SQUIRRELDIR%%/src/compose.php
+%%SQUIRRELDIR%%/src/delete_message.php
+%%SQUIRRELDIR%%/src/download.php
+%%SQUIRRELDIR%%/src/empty_trash.php
+%%SQUIRRELDIR%%/src/folders.php
+%%SQUIRRELDIR%%/src/folders_create.php
+%%SQUIRRELDIR%%/src/folders_delete.php
+%%SQUIRRELDIR%%/src/folders_rename_do.php
+%%SQUIRRELDIR%%/src/folders_rename_getname.php
+%%SQUIRRELDIR%%/src/folders_subscribe.php
+%%SQUIRRELDIR%%/src/help.php
+%%SQUIRRELDIR%%/src/image.php
+%%SQUIRRELDIR%%/src/index.php
+%%SQUIRRELDIR%%/src/left_main.php
+%%SQUIRRELDIR%%/src/login.php
+%%SQUIRRELDIR%%/src/move_messages.php
+%%SQUIRRELDIR%%/src/options.php
+%%SQUIRRELDIR%%/src/options_highlight.php
+%%SQUIRRELDIR%%/src/options_identities.php
+%%SQUIRRELDIR%%/src/options_order.php
+%%SQUIRRELDIR%%/src/printer_friendly_bottom.php
+%%SQUIRRELDIR%%/src/printer_friendly_main.php
+%%SQUIRRELDIR%%/src/printer_friendly_top.php
+%%SQUIRRELDIR%%/src/read_body.php
+%%SQUIRRELDIR%%/src/redirect.php
+%%SQUIRRELDIR%%/src/right_main.php
+%%SQUIRRELDIR%%/src/search.php
+%%SQUIRRELDIR%%/src/signout.php
+%%SQUIRRELDIR%%/src/vcard.php
+%%SQUIRRELDIR%%/src/view_header.php
+%%SQUIRRELDIR%%/src/view_text.php
+%%SQUIRRELDIR%%/src/webmail.php
+%%SQUIRRELDIR%%/themes/alien_glow.php
+%%SQUIRRELDIR%%/themes/black_bean_burrito_theme.php
+%%SQUIRRELDIR%%/themes/blue_grey_theme.php
+%%SQUIRRELDIR%%/themes/bluesnews_theme.php
+%%SQUIRRELDIR%%/themes/bluesteel_theme.php
+%%SQUIRRELDIR%%/themes/christmas.php
+%%SQUIRRELDIR%%/themes/css/sans-08.css
+%%SQUIRRELDIR%%/themes/css/sans-10.css
+%%SQUIRRELDIR%%/themes/css/sans-12.css
+%%SQUIRRELDIR%%/themes/css/serif-10.css
+%%SQUIRRELDIR%%/themes/css/serif-12.css
+%%SQUIRRELDIR%%/themes/dark_green.php
+%%SQUIRRELDIR%%/themes/dark_grey_theme.php
+%%SQUIRRELDIR%%/themes/darkness.php
+%%SQUIRRELDIR%%/themes/deepocean2_theme.php
+%%SQUIRRELDIR%%/themes/deepocean_theme.php
+%%SQUIRRELDIR%%/themes/default_theme.php
+%%SQUIRRELDIR%%/themes/dompie_theme.php
+%%SQUIRRELDIR%%/themes/forest_theme.php
+%%SQUIRRELDIR%%/themes/greenhouse_effect.php
+%%SQUIRRELDIR%%/themes/high_contrast_theme.php
+%%SQUIRRELDIR%%/themes/ice_theme.php
+%%SQUIRRELDIR%%/themes/in_the_pink.php
+%%SQUIRRELDIR%%/themes/index.php
+%%SQUIRRELDIR%%/themes/kind_of_blue.php
+%%SQUIRRELDIR%%/themes/maize_theme.php
+%%SQUIRRELDIR%%/themes/methodical_theme.php
+%%SQUIRRELDIR%%/themes/midnight.php
+%%SQUIRRELDIR%%/themes/minimal_bw.php
+%%SQUIRRELDIR%%/themes/monostochastic.php
+%%SQUIRRELDIR%%/themes/penguin.php
+%%SQUIRRELDIR%%/themes/plain_blue_theme.php
+%%SQUIRRELDIR%%/themes/purple_theme.php
+%%SQUIRRELDIR%%/themes/random.php
+%%SQUIRRELDIR%%/themes/sandstorm_theme.php
+%%SQUIRRELDIR%%/themes/seaspray_theme.php
+%%SQUIRRELDIR%%/themes/servery_theme.php
+%%SQUIRRELDIR%%/themes/shades_of_grey.php
+%%SQUIRRELDIR%%/themes/slashdot_theme.php
+%%SQUIRRELDIR%%/themes/spice_of_life.php
+%%SQUIRRELDIR%%/themes/spice_of_life_dark.php
+%%SQUIRRELDIR%%/themes/spice_of_life_lite.php
+@dirrm etc/periodic/daily
+@dirrm etc/periodic
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/abook_take
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/administrator
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/bug_report
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/calendar
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/delete_move_next
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/filters/bulkquery
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/filters
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/fortune
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/info
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/listcommands
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/mail_fetch
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/newmail
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/spamcop
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/squirrelspell
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins/translate
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/plugins
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ReleaseNotes/1.4
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ReleaseNotes/1.3
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ReleaseNotes/1.2
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ReleaseNotes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%SQUIRRELDIR%%/themes/css
+@dirrm %%SQUIRRELDIR%%/themes
+@dirrm %%SQUIRRELDIR%%/src
+@dirrm %%SQUIRRELDIR%%/po
+@dirrm %%SQUIRRELDIR%%/plugins/translate
+@dirrm %%SQUIRRELDIR%%/plugins/squirrelspell/modules
+@dirrm %%SQUIRRELDIR%%/plugins/squirrelspell/js
+@dirrm %%SQUIRRELDIR%%/plugins/squirrelspell
+@dirrm %%SQUIRRELDIR%%/plugins/spamcop
+@dirrm %%SQUIRRELDIR%%/plugins/sent_subfolders
+@dirrm %%SQUIRRELDIR%%/plugins/newmail/sounds
+@dirrm %%SQUIRRELDIR%%/plugins/newmail
+@dirrm %%SQUIRRELDIR%%/plugins/message_details
+@dirrm %%SQUIRRELDIR%%/plugins/mail_fetch
+@dirrm %%SQUIRRELDIR%%/plugins/listcommands
+@dirrm %%SQUIRRELDIR%%/plugins/info
+@dirrm %%SQUIRRELDIR%%/plugins/fortune
+@dirrm %%SQUIRRELDIR%%/plugins/filters/bulkquery
+@dirrm %%SQUIRRELDIR%%/plugins/filters
+@dirrm %%SQUIRRELDIR%%/plugins/delete_move_next
+@dirrm %%SQUIRRELDIR%%/plugins/calendar
+@dirrm %%SQUIRRELDIR%%/plugins/bug_report
+@dirrm %%SQUIRRELDIR%%/plugins/administrator
+@dirrm %%SQUIRRELDIR%%/plugins/abook_take
+@dirrm %%SQUIRRELDIR%%/plugins
+@dirrm %%SQUIRRELDIR%%/locale/zh_TW/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/locale/zh_TW
+@dirrm %%SQUIRRELDIR%%/locale/zh_CN/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/locale/zh_CN
+@dirrm %%SQUIRRELDIR%%/locale/vi_VN/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/locale/vi_VN
+@dirrm %%SQUIRRELDIR%%/locale/uk_UA/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/locale/uk_UA
+@dirrm %%SQUIRRELDIR%%/locale/tr_TR/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/locale/tr_TR
+@dirrm %%SQUIRRELDIR%%/locale/th_TH/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/locale/th_TH
+@dirrm %%SQUIRRELDIR%%/locale/sv_SE/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/locale/sv_SE
+@dirrm %%SQUIRRELDIR%%/locale/sr_YU/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/locale/sr_YU
+@dirrm %%SQUIRRELDIR%%/locale/sl_SI/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/locale/sl_SI
+@dirrm %%SQUIRRELDIR%%/locale/sk_SK/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/locale/sk_SK
+@dirrm %%SQUIRRELDIR%%/locale/ru_RU/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/locale/ru_RU
+@dirrm %%SQUIRRELDIR%%/locale/ro_RO/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/locale/ro_RO
+@dirrm %%SQUIRRELDIR%%/locale/pt_PT/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/locale/pt_PT
+@dirrm %%SQUIRRELDIR%%/locale/pt_BR/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/locale/pt_BR
+@dirrm %%SQUIRRELDIR%%/locale/pl_PL/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/locale/pl_PL
+@dirrm %%SQUIRRELDIR%%/locale/no_NO/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/locale/no_NO
+@dirrm %%SQUIRRELDIR%%/locale/nn_NO/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/locale/nn_NO
+@dirrm %%SQUIRRELDIR%%/locale/nl_NL/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/locale/nl_NL
+@dirrm %%SQUIRRELDIR%%/locale/lt_LT/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/locale/lt_LT
+@dirrm %%SQUIRRELDIR%%/locale/ko_KR/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/locale/ko_KR
+@dirrm %%SQUIRRELDIR%%/locale/ja_JP/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/locale/ja_JP
+@dirrm %%SQUIRRELDIR%%/locale/it_IT/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/locale/it_IT
+@dirrm %%SQUIRRELDIR%%/locale/is_IS/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/locale/is_IS
+@dirrm %%SQUIRRELDIR%%/locale/id_ID/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/locale/id_ID
+@dirrm %%SQUIRRELDIR%%/locale/hu_HU/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/locale/hu_HU
+@dirrm %%SQUIRRELDIR%%/locale/hr_HR/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/locale/hr_HR
+@dirrm %%SQUIRRELDIR%%/locale/he_IL/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/locale/he_IL
+@dirrm %%SQUIRRELDIR%%/locale/fr_FR/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/locale/fr_FR
+@dirrm %%SQUIRRELDIR%%/locale/fi_FI/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/locale/fi_FI
+@dirrm %%SQUIRRELDIR%%/locale/et_EE/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/locale/et_EE
+@dirrm %%SQUIRRELDIR%%/locale/es_ES/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/locale/es_ES
+@dirrm %%SQUIRRELDIR%%/locale/el_GR/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/locale/el_GR
+@dirrm %%SQUIRRELDIR%%/locale/de_DE/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/locale/de_DE
+@dirrm %%SQUIRRELDIR%%/locale/da_DK/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/locale/da_DK
+@dirrm %%SQUIRRELDIR%%/locale/cs_CZ/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/locale/cs_CZ
+@dirrm %%SQUIRRELDIR%%/locale/ca_ES/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/locale/ca_ES
+@dirrm %%SQUIRRELDIR%%/locale/bg_BG/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/locale/bg_BG
+@dirrm %%SQUIRRELDIR%%/locale/cy_GB/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/locale/cy_GB
+@dirrm %%SQUIRRELDIR%%/locale/fo_FO/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/locale/fo_FO
+@dirrm %%SQUIRRELDIR%%/locale/ms_MY/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/locale/ms_MY
+@dirrm %%SQUIRRELDIR%%/locale/ar/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/locale/ar
+@dirrm %%SQUIRRELDIR%%/locale
+@dirrm %%SQUIRRELDIR%%/include/options
+@dirrm %%SQUIRRELDIR%%/include
+@dirrm %%SQUIRRELDIR%%/images
+@dirrm %%SQUIRRELDIR%%/help/th_TH
+@dirrm %%SQUIRRELDIR%%/help/sv_SE
+@dirrm %%SQUIRRELDIR%%/help/sr_YU
+@dirrm %%SQUIRRELDIR%%/help/sl_SI
+@dirrm %%SQUIRRELDIR%%/help/ru_RU
+@dirrm %%SQUIRRELDIR%%/help/pt_PT
+@dirrm %%SQUIRRELDIR%%/help/pt_BR
+@dirrm %%SQUIRRELDIR%%/help/pl_PL
+@dirrm %%SQUIRRELDIR%%/help/nl_NL
+@dirrm %%SQUIRRELDIR%%/help/lt_LT
+@dirrm %%SQUIRRELDIR%%/help/ko_KR
+@dirrm %%SQUIRRELDIR%%/help/ja_JP
+@dirrm %%SQUIRRELDIR%%/help/it_IT
+@dirrm %%SQUIRRELDIR%%/help/id_ID
+@dirrm %%SQUIRRELDIR%%/help/fr_FR
+@dirrm %%SQUIRRELDIR%%/help/fi_FI
+@dirrm %%SQUIRRELDIR%%/help/es_ES
+@dirrm %%SQUIRRELDIR%%/help/en_US
+@dirrm %%SQUIRRELDIR%%/help/de_DE
+@dirrm %%SQUIRRELDIR%%/help/da_DK
+@dirrm %%SQUIRRELDIR%%/help/cs_CZ
+@dirrm %%SQUIRRELDIR%%/help/ca_ES
+@dirrm %%SQUIRRELDIR%%/help/bg_BG
+@dirrm %%SQUIRRELDIR%%/help/zh_CN
+@dirrm %%SQUIRRELDIR%%/help/cy_GB
+@dirrm %%SQUIRRELDIR%%/help/sk_SK
+@dirrm %%SQUIRRELDIR%%/help
+@dirrm %%SQUIRRELDIR%%/functions
+@dirrm %%SQUIRRELDIR%%/data
+@dirrm %%SQUIRRELDIR%%/config
+@dirrm %%SQUIRRELDIR%%/class/mime
+@dirrm %%SQUIRRELDIR%%/class/helper
+@dirrm %%SQUIRRELDIR%%/class/deliver
+@dirrm %%SQUIRRELDIR%%/class
+@dirrm %%SQUIRRELDIR%%

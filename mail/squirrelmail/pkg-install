@@ -1,4 +1,12 @@
 #!/bin/sh
+#
+#	$FreeBSD$
+#
+
+PKG_BATCH=${BATCH:=NO}
+PKG_PREFIX=${PKG_PREFIX:=/usr/local}
+
+SQUIRRELDIR=%%SQUIRRELDIR%%
 
 case $2 in
 PRE-INSTALL)
@@ -28,10 +36,21 @@ PRE-INSTALL)
 		fi
 	fi
 
-	install -d -o www -g www -m 0755 /var/spool/squirrelmail
-
 	exit 0
 	;;
 POST-INSTALL)
+	if [ "${PKG_BATCH}" = "NO" ]; then
+		install -d -o www -g www -m 0755 /var/spool/squirrelmail
+		install -d -o www -g www -m 0730 /var/spool/squirrelmail/attach
+		install -d -o www -g www -m 0750 /var/spool/squirrelmail/pref
+		if [ ! -f /var/spool/squirrelmail/pref/default_pref ]; then
+			cp -rp ${SQUIRRELDIR}/data/default_pref \
+				/var/spool/squirrelmail/pref/default_pref
+		else
+			echo "An older version of default_pref exists in"
+			echo "/var/spool/squirrelmail/pref, you may want to"
+			echo "compare it with the one in ${SQUIRRELDIR}/data"
+		fi
+	fi
 	;;
 esac
