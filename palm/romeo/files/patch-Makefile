@@ -1,0 +1,8 @@
+--- Makefile.orig	Sun Mar 25 21:30:01 2001
++++ Makefile	Sun Mar 25 21:30:12 2001
+@@ -1,5 +1,3 @@
+-CC		= gcc
+-CFLAGS	= -Wall -g 
+ LDFLAGS	= -L. -lromeo
+ AR		= ar crv
+ 

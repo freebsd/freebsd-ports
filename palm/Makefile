@@ -23,6 +23,7 @@
     SUBDIR += prc-tools
     SUBDIR += prc-tools-binutils
     SUBDIR += prc-tools-gcc
+    SUBDIR += romeo
     SUBDIR += syncal
     SUBDIR += syncmal
     SUBDIR += txt2pdbdoc
