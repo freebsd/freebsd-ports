@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	xemacs-mule-packages
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_XEMACS}
 MASTER_SITE_SUBDIR=	packages
 DISTFILES=	\
-		edict-1.09-pkg.tar.gz \
+		edict-1.10-pkg.tar.gz \
 		leim-1.15-pkg.tar.gz \
-		lookup-1.04-pkg.tar.gz
+		lookup-1.05-pkg.tar.gz
 DIST_SUBDIR=	xemacs
 
-MAINTAINER=	kiri@pis.toba-cmt.ac.jp
+MAINTAINER=	kiri@FreeBSD.org
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/mule-packages
@@ -41,7 +41,7 @@ post-install:
 	@${ECHO_MSG} "xemacs-packages, xemacs-basic-packages and xemacs-additional-packages. Where"
 	@${ECHO_MSG} "xemacs-additional-packages is a meta ports for packages out of xemacs, xemacs"
 	@${ECHO_MSG} "mule-basic and xemacs mule category packages."
-	@${ECHO_MSG} "    You can also install with running it as root and using the 'Manage Packes'"
+	@${ECHO_MSG} "    You can also install with running it as root and using the 'Manage Packages'"
 	@${ECHO_MSG} "menu within the 'Options' menu of the menubar. But using this xemacs package"
 	@${ECHO_MSG} "managing, you could not control under ports managing ;-)"
 
