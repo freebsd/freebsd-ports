@@ -10,7 +10,7 @@ DISTNAME=	GimpUserManual-1.0.0
 PKGNAME=	GimpUserManual-${DOCFORMAT}-1.0.0
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://manual.gimp.org/pub/manual/ \
-		ftp://peloton.physics.montana.edu/pub/distfiles/
+		ftp://peloton.runet.edu/pub/distfiles/
 
 MAINTAINER=	brett@peloton.runet.edu
 
