@@ -1,0 +1,99 @@
+Index: bin/portupgrade
+===================================================================
+RCS file: /home/cvs/pkgtools/bin/portupgrade,v
+retrieving revision 1.215
+retrieving revision 1.216
+diff -u -r1.215 -r1.216
+--- bin/portupgrade	16 Feb 2003 16:23:57 -0000	1.215
++++ bin/portupgrade	17 Feb 2003 20:00:57 -0000	1.216
+@@ -27,7 +27,7 @@
+ # SUCH DAMAGE.
+ #
+ 
+-RCS_ID = %q$Idaemons: /home/cvs/pkgtools/bin/portupgrade,v 1.215 2003/02/16 16:23:57 knu Exp $
++RCS_ID = %q$Idaemons: /home/cvs/pkgtools/bin/portupgrade,v 1.216 2003/02/17 20:00:57 knu Exp $
+ RCS_REVISION = RCS_ID.split[2]
+ MYNAME = File.basename($0)
+ 
+@@ -711,12 +711,11 @@
+   if origin
+     $make_args = options[:make_args] = get_make_args(origin, pkgname)
+ 
+-    skip = false
+-
+     if result = $results[origin]
+       progress_message "Skipping '#{origin}' (#{pkgname}) which has already #{result.phrase(true)}"
+ 
+-      skip = true
++      $results << PkgResult.new(origin, PkgResult::SKIPPED, pkgname)
++      return
+     elsif !$keep_going
+       deps = pkg.pkgdep || []
+ 
+@@ -727,16 +726,11 @@
+ 
+ 	if result && result.failed?
+ 	  progress_message "Skipping '#{origin}' (#{pkgname}) because '#{o}' (#{dep}) failed"
+-	  skip = true
+-	  break
++	  $results << PkgResult.new(origin, PkgResult::SKIPPED, pkgname)
++	  return
+ 	end
+       end
+     end
+-
+-    if skip
+-      $results << PkgResult.new(origin, PkgResult::SKIPPED, pkgname)
+-      next
+-    end
+   end
+ 
+   stty_sane
+@@ -784,11 +778,11 @@
+ 
+     if $noexecute
+       puts "OK? [no]" if $interactive
+-      next
++      return
+     elsif $yestoall
+       puts "OK? [yes]" if $interactive
+     elsif $interactive
+-      prompt_yesno('OK?', true) or next
++      prompt_yesno('OK?', true) or return
+     end
+ 
+     system!(PkgDB::CMD[:pkg_create], '-vb', pkgname,
+@@ -797,12 +791,11 @@
+ end
+ 
+ def do_install(origin)
+-  skip = false
+-
+   if result = $results[origin]
+     progress_message "Skipping '#{origin}' which has already #{result.phrase(true)}"
+ 
+-    skip = true
++    $results << PkgResult.new(origin, PkgResult::SKIPPED)
++    return
+   else
+     unless $keep_going
+       make_args = get_make_args(origin)
+@@ -812,16 +805,11 @@
+ 
+ 	if result && result.failed?
+ 	  progress_message "Skipping '#{origin}' because '#{o}' failed"
+-	  skip = true
+-	  break	# not next
++	  $results << PkgResult.new(origin, PkgResult::SKIPPED)
++	  return
+ 	end
+       end
+     end
+-  end
+-
+-  if skip
+-    $results << PkgResult.new(origin, PkgResult::SKIPPED)
+-    next
+   end
+ 
+   stty_sane
