@@ -1,0 +1,8 @@
+
+$FreeBSD$
+
+--- /dev/null	Wed May 30 02:21:05 2001
++++ font/fonts.dir	Wed May 30 02:24:10 2001
+@@ -0,0 +1,2 @@
++1
++vga.pcf.gz vga

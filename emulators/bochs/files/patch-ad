@@ -1,15 +1,18 @@
---- iodev/cdrom.cc.orig	Thu Nov 11 21:44:52 1999
-+++ iodev/cdrom.cc	Sun Jan 16 10:47:05 2000
-@@ -34,7 +34,7 @@
+
+$FreeBSD$
+
+--- iodev/cdrom.cc.orig	Wed May 16 09:46:26 2001
++++ iodev/cdrom.cc	Wed May 30 01:56:06 2001
+@@ -50,7 +50,7 @@
  }
- #endif
+ #endif /* __sun */
  
 -#ifdef __OpenBSD__
 +#if (defined(__OpenBSD__) || defined(__FreeBSD__))
- // Here is a diff for cdrom.cc which adds support for OpenBSD.
- //
- // Note that since the i386 sys/disklabel.h contains code which c++ considers
-@@ -134,7 +134,7 @@
+ // OpenBSD pre version 2.7 may require extern "C" { } structure around
+ // all the includes, because the i386 sys/disklabel.h contains code which 
+ // c++ considers invalid.
+@@ -148,7 +148,7 @@
    // some ioctl() calls to really eject the CD as well.
  
    if (fd >= 0) {
@@ -18,7 +21,7 @@
      (void) ioctl (fd, CDIOCALLOW);
      if (ioctl (fd, CDIOCEJECT) < 0)
  	fprintf(stderr, "#eject_cdrom: eject returns error.\n");
-@@ -240,7 +240,7 @@
+@@ -258,7 +258,7 @@
  
    return true;
    }
@@ -27,7 +30,7 @@
    {
    struct ioc_toc_header h;
    struct ioc_read_toc_entry t;
-@@ -366,6 +366,53 @@
+@@ -396,6 +396,53 @@
  
    fprintf(stderr, "#cdrom: capacity: %u\n", lp.d_secperunit);
    return(lp.d_secperunit);
