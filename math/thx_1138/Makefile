@@ -8,7 +8,8 @@
 PORTNAME=	thx_1138
 PORTVERSION=	1.0.5
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.newplanetsoftware.com/pub/thx/source/
+MASTER_SITES=	ftp://ftp.newplanetsoftware.com/pub/thx/source/ \
+		ftp://ftp.cs.itu.edu.tr/pub/linux/x11/jx/
 DISTNAME=	${PORTNAME:S,_,-,}_source-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org

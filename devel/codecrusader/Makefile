@@ -9,10 +9,7 @@ PORTNAME=	code_crusader
 PORTVERSION=	2.1.4
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.newplanetsoftware.com/pub/jx/source-1.5.3/ \
-		ftp://ftp.newplanetsoftware.com/pub/jcc/source/ \
-		ftp://ftp.newplanetsoftware.com/pub/medic/source/ \
-		ftp://ftp.cs.itu.edu.tr/pub/linux/x11/jx/
+MASTER_SITES=	ftp://ftp.cs.itu.edu.tr/pub/linux/x11/jx/
 DISTNAME=	${PORTNAME}_source-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
