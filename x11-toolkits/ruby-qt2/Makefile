@@ -20,6 +20,8 @@ LIB_DEPENDS=	${QTLIB}.${QTLIB_SHLIBVER}:${PORTSDIR}/x11-toolkits/${QT_PORTNAME}
 RUN_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
 
 INSTALL_TARGET=	site-install
+CONFIGURE_ARGS=	--with-qt-include=${X11BASE}/include/X11/qt \
+		--with-qt-lib=${X11BASE}/lib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_SUB=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
@@ -28,14 +30,12 @@ RUBY?=		${LOCALBASE}/bin/ruby
 RUBY_VER?=	1.4
 RUBY_ARCH?=	${ARCH}-freebsd${OSREL}
 
-QTLIBDIR=	${X11BASE}/lib
-QTINCDIR=	${X11BASE}/include/X11/qt
-
 .if defined(WITH_I18N)
 I18NQT=		-DI18NQT
 QTLIB=		qti18n
 QTLIB_SHLIBVER=	3
 QT_PORTNAME=	qt-i18n
+CONFIGURE_ARGS+=	--with-qti18n=qti18n
 .else
 QTLIB=		qt
 QTLIB_SHLIBVER=	3
@@ -44,18 +44,12 @@ QT_PORTNAME=	qt145
 
 post-patch:
 	${PERL} -i -pe ' \
-		s,%%I18NQT%%,${I18NQT},g; \
-		s,%%QTLIBDIR%%,${QTLIBDIR},g; \
-		s,%%QTINCDIR%%,${QTINCDIR},g; \
-		s,%%QTLIB%%,${QTLIB},g; \
-		' ${WRKSRC}/extconf.rb
-	${PERL} -i -pe ' \
 		s,/usr/X11\b,${X11BASE},g; \
 		' ${WRKSRC}/lib/qt.rb
 
 do-configure:
 	@cd ${WRKSRC}; \
-	${SETENV} ${CONFIGURE_ENV} ${RUBY} extconf.rb
+	${SETENV} ${CONFIGURE_ENV} ${RUBY} extconf.rb ${CONFIGURE_ARGS}
 
 post-install:
 .if !defined(NOPORTDOCS)
