@@ -41,7 +41,7 @@ CONFIGURE_ARGS+=--without-gtk
 USE_ESOUND=	yes
 CONFIGURE_ARGS+=--enable-sound
 .endif
-.if defined(HAVE_IPV6)
+.if defined(WITH_IPV6)
 USE_IPV6=	yes
 CONFIGURE_ARGS+=--enable-ipv6
 .endif
