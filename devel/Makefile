@@ -1066,6 +1066,7 @@
     SUBDIR += pear-OLE
     SUBDIR += pear-PEAR
     SUBDIR += pear-PHPUnit
+    SUBDIR += pear-PHPUnit2
     SUBDIR += pear-VFS
     SUBDIR += pear-Validate
     SUBDIR += pear-XML_Parser
