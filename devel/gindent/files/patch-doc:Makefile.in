@@ -1,11 +1,15 @@
---- doc/Makefile.in.orig	Tue Jun 25 14:31:43 2002
-+++ doc/Makefile.in	Tue Jun 25 14:32:50 2002
-@@ -103,7 +103,7 @@
+--- doc/Makefile.in.orig	Wed May 22 04:01:16 2002
++++ doc/Makefile.in	Sun Sep 15 03:21:16 2002
+@@ -364,9 +364,9 @@
  
- info_TEXINFOS = indent.texinfo
  
--docdir = $(prefix)/doc/@PACKAGE@
-+docdir = $(prefix)/share/doc/@PACKAGE@
- dvidir = $(docdir)
- psdir = $(docdir)
- pdfdir = $(docdir)
+ all-local: html
+-install-data-local: install-html
+-installdirs-local: installdirs-html
+-uninstall-local: uninstall-html
++install-data-local: # install-html
++installdirs-local: # installdirs-html
++uninstall-local: # uninstall-html
+ 
+ html: html-$(HTMLSTYLE)
+ install-html: install-html-$(HTMLSTYLE)

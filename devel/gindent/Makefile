@@ -8,6 +8,7 @@
 
 PORTNAME=	gindent
 PORTVERSION=	2.2.8a
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://home.hccnet.nl/d.ingamells/ \
 		${MASTER_SITE_GNU}
@@ -16,13 +17,14 @@ DISTNAME=	indent-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--program-prefix=g --without-included-gettext
+CONFIGURE_ARGS=	--program-prefix=g
 MAKE_ARGS=	BERKELEY_DEFAULTS=1
 
 MAN1=		gindent.1
@@ -30,5 +32,11 @@ MAN1=		gindent.1
 post-patch:
 	@${GREP} -lR "malloc.h" ${WRKSRC} | ${XARGS} \
 		${REINPLACE_CMD} -e "s/malloc.h/stdlib.h/g"
+
+.if !defiend(NOPORTDOCS)
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/indent.html ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>

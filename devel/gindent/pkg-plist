@@ -3,7 +3,7 @@ bin/gtexinfo2man
 @unexec install-info --delete %D/info/indent.info %D/info/dir
 info/indent.info
 @exec install-info %D/info/indent.info %D/info/dir
-share/doc/indent/indent.html
+%%PORTDOCS%%share/doc/gindent/indent.html
 share/locale/ca/LC_MESSAGES/indent.mo
 share/locale/da/LC_MESSAGES/indent.mo
 share/locale/de/LC_MESSAGES/indent.mo
@@ -21,4 +21,4 @@ share/locale/sk/LC_MESSAGES/indent.mo
 share/locale/sv/LC_MESSAGES/indent.mo
 share/locale/tr/LC_MESSAGES/indent.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/indent.mo
-@dirrm share/doc/indent
+%%PORTDOCS%%@dirrm share/doc/gindent
