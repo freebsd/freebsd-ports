@@ -27,8 +27,8 @@ PATCHFILES=	mime.c.diff-3.0.gz
 MAINTAINER=	dirk@FreeBSD.org
 
 .if !defined(STANDALONE)
-BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
-RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
+BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
+RUN_DEPENDS=	${APXS}:${APACHE_PORT}
 .endif
 
 PATCH_DIST_ARGS=	-d ${WRKSRC}/functions
@@ -36,6 +36,8 @@ PATCH_DIST_ARGS=	-d ${WRKSRC}/functions
 PHP_DISTDIR=	distributions
 
 SLAVEDIRS=	lang/php3
+APACHE_PORT?=	${PORTSDIR}/www/apache13
+APXS?=		${LOCALBASE}/sbin/apxs
 
 USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
