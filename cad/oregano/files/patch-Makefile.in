@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Fri Nov 26 13:09:27 2004
++++ Makefile.in	Fri Nov 26 18:58:35 2004
+@@ -130,7 +130,7 @@
+ 
+ MIMEFILES = oregano.xml.in
+ 
+-mimedir = $(datadir)/mime/packages
++mimedir = $(prefix)/share/mime/packages
+ mime_DATA = oregano.xml
+ 
+ CLEANFILES = $(mime_DATA)
+@@ -527,7 +527,7 @@
+ @INTLTOOL_XML_RULE@
+ 
+ install-data-hook: 
+-@UPDATE_MIME_TRUE@	update-mime-database $(datadir)/mime
++@UPDATE_MIME_TRUE@	update-mime-database $(prefix)/share/mime
+ @UPDATE_MIME_FALSE@	@true
+ 
+ oregano.keys: oregano.keys.in Makefile
