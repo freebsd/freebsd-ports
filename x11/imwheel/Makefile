@@ -13,6 +13,9 @@ MASTER_SITES=	ftp://jcatki.no-ip.org/pub/imwheel/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
+DEPRECATED=	http://vuxml.freebsd.org/e31d44a2-21e3-11d9-9289-000c41e2cdad.html (vulnerabilty)
+EXPIRATION_DATE= November 20, 2004
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to translate mouse wheel actions into X keyboard events
 
