@@ -153,6 +153,9 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_DOCDIR%%/irb/irb.rd.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/md5/md5.txt
 %%PORTDOCS%%%%RUBY_DOCDIR%%/md5/md5.txt.ja
+%%PORTDOCS%%%%RUBY_DOCDIR%%/net/http.rd.ja
+%%PORTDOCS%%%%RUBY_DOCDIR%%/net/pop.rd.ja
+%%PORTDOCS%%%%RUBY_DOCDIR%%/net/smtp.rd.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/pty/README
 %%PORTDOCS%%%%RUBY_DOCDIR%%/pty/README.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/pty/README.expect
@@ -162,6 +165,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/etc
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/irb
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/md5
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/net
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/pty
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/readline
 %%RUBY_DOCDIR%%/.keep_me
