@@ -1,0 +1,12 @@
+--- iiimp/Makefile.am.orig	Sun Sep  5 05:33:03 2004
++++ iiimp/Makefile.am	Sun Sep  5 05:33:26 2004
+@@ -9,7 +9,7 @@
+ #                   -Wl,-z -Wl,defs
+ xiiimp_la_LIBADD = $(X_LIBS)  \
+-		   $(IM_LIBDIR)/iiimcf/libiiimcf.la \
+-		   $(IM_LIBDIR)/iiimp/libiiimp.la \
++ 		   -L$(LOCALBASE)/lib -liiimcf \
++		   -L$(LOCALBASE)/lib -liiimp \
+                    $(DLOPEN_LIBS) $(THREAD_LIBS)
+ xiiimp_la_SOURCES = \
+ 	genutil.c \
