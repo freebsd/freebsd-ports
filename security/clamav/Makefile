@@ -40,7 +40,8 @@ PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 PORTDOCS=	NEWS ChangeLog html
 
 DBDIR=		/var/db/clamav
-PLIST_SUB+=	DBDIR=${DBDIR}
+RUNDIR=		/var/run/clamav
+PLIST_SUB+=	DBDIR=${DBDIR} RUNDIR=${RUNDIR}
 
 CONFIGURE_ARGS=	--with-dbdir=${DBDIR} \
 		--disable-clamuko \
@@ -63,11 +64,12 @@ CONFLICTS=	clamav-devel-[0-9]*
 
 CLAMAVUSER?=	clamav
 CLAMAVGROUP?=	clamav
-CLAMAV_CLAMD_SOCKET?=	/var/run/clamav/clamd
-CLAMAV_MILTER_SOCKET?=	/var/run/clamav/clmilter.sock
+CLAMAV_CLAMD_SOCKET?=	${RUNDIR}/clamd
+CLAMAV_MILTER_SOCKET?=	${RUNDIR}/clmilter.sock
 
 SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g' \
 		-e 's|%%DBDIR%%|${DBDIR}|g' \
+		-e 's|%%RUNDIR%%|${RUNDIR}|g' \
 		-e 's|%%CLAMAVUSER%%|${CLAMAVUSER}|g' \
 		-e 's|%%CLAMAVGROUP%%|${CLAMAVGROUP}|g' \
 		-e 's|%%CLAMAV_CLAMD_SOCKET%%|${CLAMAV_CLAMD_SOCKET}|g' \
@@ -75,7 +77,7 @@ SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g' \
 
 SED_CONF=	-E -e 's|^\#?(Example)$$|\#\1|' \
 		-e 's|^\#?((Update)?LogFile) .*/([a-z]+\.log)$$|\1 /var/log/clamav/\3|' \
-		-e 's|^\#?(PidFile) .*/([a-z]+\.pid)$$|\1 /var/run/clamav/\2|' \
+		-e 's|^\#?(PidFile) .*/([a-z]+\.pid)$$|\1 ${RUNDIR}/\2|' \
 		-e 's|^\#?(LocalSocket) .*$$|\1 ${CLAMAV_CLAMD_SOCKET}|' \
 		-e 's|^\#?(User) .*$$|\1 ${CLAMAVUSER}|' \
 		-e 's|^\#?(AllowSupplementaryGroups)$$|\1|' \
