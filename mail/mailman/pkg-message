@@ -4,17 +4,9 @@ All related binaries have been installed in %%MAILMANDIR%%/bin.
 See %%DOCSDIR%%/INSTALL for post-installation instructions,
 with "prefix" being "%%MAILMANDIR%%".
 
-In particular, you'll need to set up the mailman user's crontab(5) entry:
-As root:
-
-  # crontab -u mailman %%MAILMANDIR%%/cron/crontab.in
-
 A sample entry for Apache's httpd.conf to enable use of Mailman's web
 interface:
 
-  ScriptAlias /mailman/ %%MAILMANDIR%%/cgi-bin/
-  <Directory %%MAILMANDIR%%/cgi-bin/>
-     Options FollowSymLinks ExecCGI
-	   ... other options ...
-  </Directory>
+  ScriptAlias /mailman/ "%%MAILMANDIR%%/cgi-bin/"
+  Alias /pipermail/ "%%MAILMANDIR%%/archives/public/"
 ---------------------------------------------------------------------------

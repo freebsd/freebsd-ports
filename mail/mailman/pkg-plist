@@ -231,6 +231,7 @@
 %%MMDIR%%/cron/mailpasswds
 %%MMDIR%%/cron/nightly_gzip
 %%MMDIR%%/cron/paths.py
+%%MMDIR%%/cron/paths.pyc
 %%MMDIR%%/cron/qrunner
 %%MMDIR%%/cron/senddigests
 @exec chmod 2775 %B
@@ -251,6 +252,7 @@
 %%MMDIR%%/scripts/mailcmd
 %%MMDIR%%/scripts/mailowner
 %%MMDIR%%/scripts/paths.py
+%%MMDIR%%/scripts/paths.pyc
 %%MMDIR%%/scripts/post
 @exec chmod 2775 %B
 %%MMDIR%%/templates/admindbpreamble.html
@@ -282,6 +284,7 @@
 %%MMDIR%%/templates/userpass.txt
 %%MMDIR%%/templates/verify.txt
 @exec chmod 2775 %B
+@exec chgrp -R %%MMGRP%% %%MMDIR%%
 %%PORTDOCS%%share/doc/mailman/BUGS
 %%PORTDOCS%%share/doc/mailman/FAQ
 %%PORTDOCS%%share/doc/mailman/INSTALL

@@ -7,7 +7,7 @@
 
 PORTNAME=	mailman
 PORTVERSION=	2.0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.list.org/ \
 		${MASTER_SITE_GNU} \
@@ -37,12 +37,12 @@ MMDIR?=		mailman
 # The default value of '1' for MAIL_GID works with sendmail.  If you're using
 # an alternative MTA installed from ports, you should set MAIL_GID at build
 # time according to the following table.  (Please contact this port's
-# maintainer if you can fill in the blanks!)
+# maintainer if you can fill in the blanks, or to report mistakes!)
 #
-# MTA     | MAIL_GID
-# Exim    | 6
-# Postfix | ???
-# Qmail   | ???
+# MTA     | MAIL_GID | Submitted by
+# Exim    | 6        | <wjv>
+# Postfix | ???      | <shamrock@cypherpunks.to>
+# Qmail   | ???      |
 #
 MAIL_GID?=	1
 CGI_GID?=	80
@@ -50,43 +50,44 @@ CGI_GID?=	80
 MAILMANDIR=	${PREFIX}/${MMDIR}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGINSTALL=	${WRKDIR}/pkg-install
-PLIST_SUB=	MMDIR=${MMDIR}
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
+PLIST_SUB=	MMDIR=${MMDIR} MMGRP=${GROUPNAME}
 
 pre-configure:
-# Add the username, uid, group and gid
-# ${SH} ${FILESDIR}/configure.sh ${USERNAME} ${USERID} ${MAILMANDIR}
-
 	@ ${SED} -e 's#%%USER%%#${USERNAME}#g' -e 's#%%UID%%#${USERID}#g' \
 	  -e 's#%%GROUP%%#${GROUPNAME}#g' -e 's#%%GID%%#${GROUPID}#g' \
 	  -e 's#%%MAILMANDIR%%#${MAILMANDIR}#g' pkg-install > \
 	  ${PKGINSTALL}
 	@ ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
-# Create the dir and the correct permissions for it.
-#${MKDIR} ${MAILMANDIR}
-#${CHOWN} ${USERNAME}:${USERNAME} ${MAILMANDIR}
-#${CHMOD} 2775 ${MAILMANDIR}
-
 post-configure:
+	@ ${SED} -e 's#%%USER%%#${USERNAME}#g' \
+	  -e 's#%%GROUP%%#${GROUPNAME}#g' \
+	  -e 's#%%MAILMANDIR%%#${MAILMANDIR}#g' pkg-deinstall > \
+	  ${PKGDEINSTALL}
 	@ ${SED} -e 's#%%MAILMANDIR%%#${MAILMANDIR}#g' \
-	  -e 's#%%DOCSDIR%%#${DOCSDIR}#g' pkg-message > \
-	  ${PKGMESSAGE}
+	  -e 's#%%DOCSDIR%%#${DOCSDIR}#g' pkg-message > ${PKGMESSAGE}
 
 pre-build:
 .if !defined(BATCH)
 	@ ${ECHO_MSG} "-------------------------------------------------------"
 	@ ${ECHO_MSG} "  If you're using an alternative MTA (not Sendmail),"
 	@ ${ECHO_MSG} "  you may have to set MAIL_GID to the gid under which"
-	@ ${ECHO_MSG} "  your MTA is executing."
+	@ ${ECHO_MSG} "  your MTA is executing.  See the comments in the"
+	@ ${ECHO_MSG} "  port's Makefile for further information."
 	@ ${ECHO_MSG} "-------------------------------------------------------"
 .endif
 
 post-install:
-	@${CHOWN} -R :${USERNAME} ${MAILMANDIR}
+.for dir in cron scripts
+	@ ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${MAILMANDIR}/${dir}
+.endfor
+	@ ${CHGRP} -R ${GROUPNAME} ${MAILMANDIR}
+	@ ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for f in BUGS FAQ INSTALL NEWS README* UPGRADING
-	@${INSTALL_DATA} ${WRKSRC}/$f ${DOCSDIR}
+	@ ${MKDIR} ${DOCSDIR}
+.for docfile in BUGS FAQ INSTALL NEWS README* UPGRADING
+	@ ${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
 .endfor
 .endif
 .if !defined(BATCH)
