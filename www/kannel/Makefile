@@ -5,37 +5,38 @@
 # $FreeBSD$
 
 PORTNAME=	kannel
-PORTVERSION=	1.0.3
+PORTVERSION=	1.2.1
 CATEGORIES=	www
-MASTER_SITES=	http://www.kannel.3glab.org/download/${PORTVERSION}/
+MASTER_SITES=	http://www.kannel.3glab.org/download/%SUBDIR%/
+MASTER_SITE_SUBDIR=	${PORTVERSION}
 DISTNAME=	gateway-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
-USE_AUTOCONF=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME}/
-CFLAGS+=	${PTHREAD_LIBS}
-CONFIGURE_ARGS+=	--with-malloc=native
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
+CONFIGURE_ARGS=	--with-malloc=native --enable-start-stop-daemon=no
 
-do-install:
-.if !defined(NOPORTDOCS)
-	@cd ${WRKSRC} && make install-docs
-.endif
-	@cd ${WRKSRC} && make install
-	${INSTALL_DATA} ${WRKSRC}/gw/wapkannel.conf ${PREFIX}/etc/
-	${INSTALL_DATA} ${WRKSRC}/gw/smskannel.conf ${PREFIX}/etc/
+MAN1=		seewbmp.1 wmlsc.1 wmlsdasm.1
+MAN8=		kannel.8 run_kannel_box.8
 
-.if !defined(NOPORTDOCS)
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|-lc_r|${PTHREAD_LIBS:S/"//g}|g' ${WRKSRC}/configure
+
 post-install:
-	@cd ${WRKSRC}/doc && \
-		for a in `/usr/bin/find . -type f | ${SED} -e 's:^\./::g'` ; \
-			do ${ECHO_CMD} share/doc/kannel/$$a >> ${TMPPLIST} ; done
-	@${ECHO_CMD} "@dirrm share/doc/kannel/arch" >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrm share/doc/kannel/userguide" >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrm share/doc/kannel" >> ${TMPPLIST}
-.endif
+.for file in gw/wapkannel.conf gw/smskannel.conf
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/etc
+.endfor
+.for file in seewbmp wmlsc wmlsdasm
+	@${STRIP_CMD} ${PREFIX}/bin/${file}
+.endfor
+.for file in bearerbox run_kannel_box smsbox wapbox
+	@${STRIP_CMD} ${PREFIX}/sbin/${file}
+.endfor
 
 .include <bsd.port.mk>
