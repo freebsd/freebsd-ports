@@ -12,8 +12,10 @@ etc/raddb/dictionary.ascend
 etc/raddb/dictionary.cisco
 etc/raddb/dictionary.compat
 etc/raddb/dictionary.livingston
+etc/raddb/dictionary.shiva
 etc/raddb/dictionary.tunnel
 etc/raddb/dictionary.usr
+etc/raddb/dictionary.versanet
 etc/raddb/hints
 etc/raddb/huntgroups
 etc/raddb/naslist

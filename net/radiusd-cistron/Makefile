@@ -1,13 +1,12 @@
 # New ports collection makefile for:	radiusd-cistron
-# Version required:	cistron radiusd 1.5.4.3 (beta16)
+# Version required:	cistron radiusd 1.5.4.3 (release)
 # Date created:		15 Jan 1999
 # Whom:			john@nlc.net.au
 #
-# $Id: Makefile,v 1.4 1999/05/01 03:14:59 steve Exp $
+# $Id: Makefile,v 1.5 1999/07/22 23:25:07 billf Exp $
 #
 
-DISTNAME=	radiusd-cistron-1.5.4.3-beta18
-PKGNAME=	radiusd-cistron-1.5.4.3
+DISTNAME=	radiusd-cistron-1.5.4.3
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.cistron.nl/pub/people/miquels/radius/
 
@@ -34,8 +33,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/raddb/dictionary.cisco ${PREFIX}/etc/raddb
 	${INSTALL_DATA} ${WRKSRC}/raddb/dictionary.compat ${PREFIX}/etc/raddb
 	${INSTALL_DATA} ${WRKSRC}/raddb/dictionary.livingston ${PREFIX}/etc/raddb
+	${INSTALL_DATA} ${WRKSRC}/raddb/dictionary.shiva ${PREFIX}/etc/raddb
 	${INSTALL_DATA} ${WRKSRC}/raddb/dictionary.tunnel ${PREFIX}/etc/raddb
 	${INSTALL_DATA} ${WRKSRC}/raddb/dictionary.usr ${PREFIX}/etc/raddb
+	${INSTALL_DATA} ${WRKSRC}/raddb/dictionary.versanet ${PREFIX}/etc/raddb
 	${INSTALL_DATA} ${WRKSRC}/raddb/hints ${PREFIX}/etc/raddb
 	${INSTALL_DATA} ${WRKSRC}/raddb/huntgroups ${PREFIX}/etc/raddb
 	${INSTALL_DATA} ${WRKSRC}/raddb/naslist ${PREFIX}/etc/raddb
