@@ -1264,6 +1264,7 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/utilities/load_site.py
 %%ZOPEBASEDIR%%/utilities/load_site.pyc
 %%ZOPEBASEDIR%%/var/.cvsignore
+@unexec if ! `grep -q %B/Data.fs %B/Data.fs.in`; then rm %B/Data.fs; fi
 %%ZOPEBASEDIR%%/var/Data.fs.in
 @exec if [ ! -f %B/Data.fs ]; then cp %B/Data.fs.in %B/Data.fs; fi
 %%ZOPEBASEDIR%%/w_pcgi.py
