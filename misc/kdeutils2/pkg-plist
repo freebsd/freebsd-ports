@@ -15,12 +15,14 @@ bin/kljettool
 bin/klpq
 bin/knotes
 lib/kedit.la
+lib/kedit.so
 lib/kedit.so.0
 lib/kfind.la
 lib/kfind.so
 lib/libkcm_laptop.la
 lib/libkcm_laptop.so
 lib/libktimemon.la
+lib/libktimemon.so
 lib/libktimemon.so.1
 share/applnk/Editors/KEdit.desktop
 share/applnk/Kfind.desktop
