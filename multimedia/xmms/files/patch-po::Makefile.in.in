@@ -1,10 +1,10 @@
---- po/Makefile.in.in.orig	Mon Mar  4 22:56:47 2002
-+++ po/Makefile.in.in	Fri Aug 22 16:50:02 2003
-@@ -88,6 +88,7 @@
- 	$(XGETTEXT) --default-domain=$(PACKAGE) --directory=$(top_srcdir) \
- 	  --add-comments --keyword=_ --keyword=N_ \
+--- po/Makefile.in.in.orig	Fri Sep  5 20:26:50 2003
++++ po/Makefile.in.in	Fri Sep  5 20:27:10 2003
+@@ -85,6 +85,7 @@
+ 	$(XGETTEXT) --default-domain=$(DOMAIN) --directory=$(top_srcdir) \
+ 	  --add-comments=I18N: $(XGETTEXT_OPTIONS) \
  	  --files-from=$(srcdir)/POTFILES.in \
 +	  --from-code=ISO-8859-1 \
- 	&& test ! -f $(PACKAGE).po \
- 	   || ( rm -f $(srcdir)/$(PACKAGE).pot \
- 		&& mv $(PACKAGE).po $(srcdir)/$(PACKAGE).pot )
+ 	  --copyright-holder='$(COPYRIGHT_HOLDER)'
+ 	test ! -f $(DOMAIN).po || { \
+ 	  if test -f $(srcdir)/$(DOMAIN).pot; then \
