@@ -1,6 +1,23 @@
 bin/devdump
+bin/isodebug
 bin/isodump
 bin/isoinfo
 bin/isovfy
 bin/mkhybrid
 bin/mkisofs
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.compression
+%%PORTDOCS%%%%DOCSDIR%%/README.eltorito
+%%PORTDOCS%%%%DOCSDIR%%/README.graft_dirs
+%%PORTDOCS%%%%DOCSDIR%%/README.hfs_boot
+%%PORTDOCS%%%%DOCSDIR%%/README.hfs_magic
+%%PORTDOCS%%%%DOCSDIR%%/README.hide
+%%PORTDOCS%%%%DOCSDIR%%/README.joliet
+%%PORTDOCS%%%%DOCSDIR%%/README.macosx
+%%PORTDOCS%%%%DOCSDIR%%/README.mkhybrid
+%%PORTDOCS%%%%DOCSDIR%%/README.prep_boot
+%%PORTDOCS%%%%DOCSDIR%%/README.rootinfo
+%%PORTDOCS%%%%DOCSDIR%%/README.session
+%%PORTDOCS%%%%DOCSDIR%%/README.sort
+%%PORTDOCS%%%%DOCSDIR%%/README.sparcboot
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

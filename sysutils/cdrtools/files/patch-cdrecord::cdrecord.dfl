@@ -1,0 +1,36 @@
+--- cdrecord/cdrecord.dfl.orig	Mon Aug 18 19:45:45 2003
++++ cdrecord/cdrecord.dfl	Mon Aug 18 19:46:32 2003
+@@ -6,7 +6,7 @@
+ # 
+ # The default device, if not specified elswhere
+ #
+-CDR_DEVICE=yamaha
++#CDR_DEVICE=yamaha
+ 
+ # 
+ # The default speed, if not specified elswhere
+@@ -21,7 +21,7 @@
+ # 
+ # The default FIFO size if, not specified elswhere
+ #
+-CDR_FIFOSIZE=4m
++#CDR_FIFOSIZE=4m
+ 
+ #
+ # The following definitions allow abstract device names.
+@@ -33,9 +33,9 @@
+ #
+ # drive name	device	speed	fifosize driveropts
+ #
+-teac=		1,3,0	-1	-1	""
+-panasonic=	1,4,0	-1	-1	""
+-plextor=	1,4,0	-1	-1	""
+-sanyo=		1,4,0	-1	-1	burnfree
+-yamaha=		1,5,0	-1	-1	""
+-cdrom=		0,6,0	2	1m	""
++#teac=		1,3,0	-1	-1	""
++#panasonic=	1,4,0	-1	-1	""
++#plextor=	1,4,0	-1	-1	""
++#sanyo=		1,4,0	-1	-1	burnfree
++#yamaha=	1,5,0	-1	-1	""
++#cdrom=		0,6,0	2	1m	""
