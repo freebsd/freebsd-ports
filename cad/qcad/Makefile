@@ -45,7 +45,6 @@ do-build:
 
 pre-install:
 	@${ECHO_CMD} bin/qcad > ${PLIST}
-	@${ECHO_CMD} '@exec mkdir -p %D/share/qcad/libraries' >> ${PLIST}
 	@${FIND} ${WRKSRC}/qcad/doc/ -type f | \
 		${SED} -e "s:^${WRKSRC}/:%%PORTDOCS%%share/:g" >> ${PLIST}
 	@${FIND} ${WRKSRC}/qcad/examples/ -type f | \
@@ -58,18 +57,19 @@ pre-install:
 		${SED} -e "s:^${WRKSRC}/:share/:g" >> ${PLIST}
 	@${FIND} ${WRKSRC}/qcad/scripts/ -type f | \
 		${SED} -e "s:^${WRKSRC}/:share/:g" >> ${PLIST}
-	@${ECHO_CMD} '%%PORTDOCS%%@dirrm share/qcad/doc' >> ${PLIST}
+	@${FIND} -d ${WRKSRC}/qcad/doc -type d | \
+		${SED} -e "s:^${WRKSRC}/:%%PORTDOCS%%@dirrm share/:g" >> ${PLIST}
 	@${ECHO_CMD} '%%PORTDOCS%%@dirrm share/qcad/examples' >> ${PLIST}
-	@${ECHO_CMD} '@dirrm share/qcad/libraries' >> ${PLIST}
 	@${ECHO_CMD} '@dirrm share/qcad/fonts' >> ${PLIST}
 	@${ECHO_CMD} '@dirrm share/qcad/patterns' >> ${PLIST}
+	@${ECHO_CMD} '@dirrm share/qcad/qm' >> ${PLIST}
 	@${ECHO_CMD} '@dirrm share/qcad/scripts/python' >> ${PLIST}
 	@${ECHO_CMD} '@dirrm share/qcad/scripts' >> ${PLIST}
 	@${ECHO_CMD} '@dirrm share/qcad' >> ${PLIST}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/qcad/qcad ${PREFIX}/bin/qcad
-	@${MKDIR} ${DATADIR}/libraries
+	@${MKDIR} ${DATADIR}
 .for dir in fonts patterns qm scripts
 	${TAR} -C ${WRKSRC}/qcad --exclude CVS -cf - ${dir} | \
 		${TAR} -C ${DATADIR} --unlink -xf -
