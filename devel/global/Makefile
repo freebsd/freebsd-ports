@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	global
-PORTVERSION=	4.3.1
+PORTVERSION=	4.4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.tamacom.com/global/
 
-MAINTAINER=	josb@cncdsl.com
+MAINTAINER=	jos@catnook.com
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-MAN1=		htags.1 btreeop.1 gtags.1 global.1 gctags.1
+MAN1=		htags.1 btreeop.1 gozilla.1 gtags.1 global.1 gctags.1
 
 post-patch:
 	${PERL} -pi -e "s|\@PERL\@|${PERL}|g" ${WRKSRC}/htags/htags.in

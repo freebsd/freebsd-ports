@@ -1,11 +1,13 @@
 bin/btreeop
 bin/gctags
 bin/global
+bin/gozilla
 bin/gtags
 bin/htags
 %%PORTDOCS%%info/global.info
 %%PORTDOCS%%info/global.info-1
 %%PORTDOCS%%info/global.info-2
+%%PORTDOCS%%info/global.info-3
 %%PORTDOCS%%@exec install-info %D/info/global.info %D/info/dir
 %%PORTDOCS%%@unexec install-info --delete %D/info/global.info %D/info/dir
 %%PORTDOCS%%share/doc/global/AUTHORS
