@@ -11,7 +11,7 @@ CATEGORIES=	multimedia tcl84 tk84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}
 
-MAINTAINER=	barner@gmx.de
+MAINTAINER=	barner@FreeBSD.org
 COMMENT=	Viewer for Nextview Electronic TV Programme Guide (needs bktr driver)
 
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84

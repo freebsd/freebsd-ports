@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=Ogg
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	barner@gmx.de
+MAINTAINER=	barner@FreeBSD.org
 COMMENT=	Manipulate / fetch info from Ogg-Vorbis audio files
 
 LIB_DEPENDS=	ogg.5:${PORTSDIR}/audio/libogg \
