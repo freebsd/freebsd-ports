@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	moleskine
-PORTVERSION=	0.4
-PORTREVISION=	1
+PORTVERSION=	0.5
 CATEGORIES=	editors python gnome
 MASTER_SITES=	http://www.moleskine.f2s.com/
 DISTNAME=	${PORTNAME:S/^m/M/}-${PORTVERSION}
@@ -29,11 +28,14 @@ do-build:
 do-install:
 	${MKDIR} ${INST_DIR}/Moleskine
 	${MKDIR} ${INST_DIR}/dialogs
+	${MKDIR} ${INST_DIR}/images
 	${MKDIR} ${CONF_DIR}
 	${INSTALL_DATA} ${WRKSRC}/LanguageModes ${CONF_DIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/moleskine ${INST_DIR}
 	${LN} -sf ${INST_DIR}/moleskine ${PREFIX}/bin/moleskine
 	${INSTALL_DATA} ${WRKSRC}/Moleskine/*.py ${WRKSRC}/Moleskine/*.pyc ${INST_DIR}/Moleskine
-	${INSTALL_DATA} ${WRKSRC}/dialogs/* ${INST_DIR}/dialogs
+	${INSTALL_DATA} ${WRKSRC}/dialogs/*.glade ${INST_DIR}/dialogs
+	${INSTALL_DATA} ${WRKSRC}/images/*.jpeg ${INST_DIR}/images
+	${INSTALL_DATA} ${WRKSRC}/images/*.png ${INST_DIR}/images
 
 .include <bsd.port.mk>
