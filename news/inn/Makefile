@@ -7,6 +7,7 @@
 
 PORTNAME=	inn
 PORTVERSION=	2.3.1
+PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.isc.org/isc/inn/
 
@@ -59,6 +60,8 @@ MAN8=	actsync.8 actsyncd.8 archive.8 batcher.8 buffchan.8 cnfsheadconf.8 \
 
 EXTRA=	${WRKSRC}/HISTORY ${WRKSRC}/INSTALL ${WRKSRC}/LICENSE
 
+INN_INCLUDES=	clibrary.h config.h libinn.h storage.h
+
 pre-install:
 	${MKDIR} ${INN_NEWSSPOOL}
 
@@ -71,15 +74,19 @@ post-install:
 	    ${TOUCH} history ; \
 	    ${CHMOD} 644 history ; \
 	    ${CHOWN} news:news history ; \
-	    ../bin/makedbz -i ; \
+	    su -fm news -c "../bin/makedbz -i" ; \
 	    for s in dir hash index ; do \
-		${INSTALL} -o news -m 644 history.n.$${s} history.$${s} ; \
+		${MV} history.n.$${s} history.$${s} ; \
 	    done ; \
 	fi)
 	@${SED} <${FILESDIR}/innd.sh >${PREFIX}/etc/rc.d/innd.sh \
 	    s+!!PREFIX!!+${PREFIX}+g && ${CHMOD} +x ${PREFIX}/etc/rc.d/innd.sh
 	@${MKDIR} ${PREFIX}/share/doc/inn
 	@${INSTALL_DATA} ${EXTRA} ${PREFIX}/share/doc/inn
+	@${MKDIR} ${PREFIX}/news/include
+.for FILE in ${INN_INCLUDES}
+	@${INSTALL_DATA} ${WRKSRC}/include/${FILE} ${PREFIX}/news/include/
+.endfor
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
