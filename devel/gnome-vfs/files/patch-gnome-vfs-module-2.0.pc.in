@@ -1,9 +1,0 @@
---- gnome-vfs-module-2.0.pc.in.orig	Wed Jan 30 20:28:20 2002
-+++ gnome-vfs-module-2.0.pc.in	Wed Nov 13 10:49:35 2002
-@@ -8,5 +8,5 @@
- Description: The GNOME virtual file-system module include info
- Version: @VERSION@
- Requires: bonobo-activation-2.0,gthread-2.0,gmodule-2.0
--Libs: -L${libdir} -lgnomevfs-2
-+Libs: -L${libdir} -lgnomevfs-2 @PTHREAD_LIB@
- Cflags: -I${includedir}/gnome-vfs-2.0 -I${includedir}/gnome-vfs-module-2.0 -I${libdir}/gnome-vfs-2.0/include

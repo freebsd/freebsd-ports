@@ -1,5 +1,0 @@
-************************************************************************
-* To improve security, the X server is installed without an SUID bit.  *
-* This is suitable for use with xdm, but not with a startx script.     *
-* If you need to use a startx script, install the x11/wrapper package. *
-************************************************************************

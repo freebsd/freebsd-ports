@@ -1,7 +1,0 @@
-bin/bbapm
-share/bbtools/README.bbapm
-share/bbtools/bbapm.conf
-share/bbtools/bbapm.nobb
-share/bbtools/bbapm.style
-share/bbtools/bbtoolsrc.in
-@unexec rmdir %D/share/bbtools 2>/dev/null || true

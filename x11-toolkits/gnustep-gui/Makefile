@@ -53,7 +53,6 @@ CONFIGURE_TARGET=
 USE_GMAKE=	yes
 MAKEFILE=
 MAKE_FLAGS+=	OPTFLAG="${CFLAGS}"
-MAKE_FLAGS+=	ADDITIONAL_LIB_DIRS=/usr/local/lib
 NO_MTREE=	yes
 CONFIGURE_ARGS+=	--with-tiff-library=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-tiff-include=${LOCALBASE}/include

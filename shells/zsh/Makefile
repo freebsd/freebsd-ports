@@ -32,7 +32,7 @@ ZSH_VER=	${PORTVERSION}
 ZSHFUNC_SUBDIR=	share/zsh/${ZSH_VER}/functions
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-zsh-mem --enable-zsh-secure-free --enable-dynamic \
-		--enable-maildir-support
+		--enable-maildir-support --with-curses-terminfo
 
 .if !defined(NOPORTDOCS)
 INSTALL_TARGET=	install install.html

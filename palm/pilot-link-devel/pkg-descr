@@ -1,6 +1,0 @@
-pilot-link is a series of tools designed to extract and add data to a PalmPilot
-organizer.  There are programs in here to transfer data, debug the pilot,
-synchronize with calendars, and a set of include files and libraries with which
-you may build your own applications in C, C++, Perl5, Tcl, Java, and Python.
-
-WWW: http://www.pilot-link.org/

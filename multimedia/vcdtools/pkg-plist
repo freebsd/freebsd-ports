@@ -1,5 +1,0 @@
-bin/mkvcdfs
-bin/vcdmplex
-%%PORTDOCS%%share/doc/vcdtools/README
-%%PORTDOCS%%share/doc/vcdtools/README.html
-%%PORTDOCS%%@dirrm share/doc/vcdtools

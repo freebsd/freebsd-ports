@@ -1,4 +1,0 @@
-qtpkg simplifies the removal of packages by simulating the add/remove
-programs dialog as seen in Windows.  Handy when you can't remember the
-correct version number.  It also allows you to read the description of the
-package and its packing list.

@@ -1,6 +1,0 @@
-sbin/nsd
-sbin/nsdc
-sbin/zonec
-sbin/nsd-notify
-etc/nsd/nsd.zones.sample
-@dirrm etc/nsd

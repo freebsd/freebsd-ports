@@ -1,3 +1,0 @@
-libexec/apache/mod_gzip.so
-@exec %D/sbin/apxs -e -A -n gzip %f
-@unexec %D/sbin/apxs -e -A -n gzip %f
