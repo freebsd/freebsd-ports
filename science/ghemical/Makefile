@@ -30,10 +30,6 @@ USE_AUTOCONF_VER=	253
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 pre-configure:
 	@cd ${WRKDIR}/${DISTNAME} ; ${AUTOCONF}
 
