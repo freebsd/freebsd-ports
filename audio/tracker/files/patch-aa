@@ -1,5 +1,5 @@
-*** Makefile.orig	Sun Jun  4 17:29:07 1995
---- Makefile	Thu Jun 22 04:28:14 1995
+*** Makefile.orig	Sun Jul  2 21:47:44 1995
+--- Makefile	Tue Jul  4 04:20:10 1995
 ***************
 *** 32,38 ****
   MAN_DIR = $(PREFIX)/man
@@ -38,3 +38,35 @@
   ###############################################################################
   #
   # C compiler flags and libraries for each machine.
+***************
+*** 161,169 ****
+  prefs.o autoinit.o ${UI}ui.o display.o empty.o color.o version.o
+  
+  OBJ_SPLITMOD = split.o tools.o st_read.o dump_song.o open.o notes.o \
+! display.o prefs.o autoinit.o $(UI)ui.o empty.o color.o version.o
+  
+! all:	version.c config.h tracker randomize tcheck splitmod
+  
+  config.h: $(CONFIG)config.h Makefile
+  	rm -f config.h
+--- 163,172 ----
+  prefs.o autoinit.o ${UI}ui.o display.o empty.o color.o version.o
+  
+  OBJ_SPLITMOD = split.o tools.o st_read.o dump_song.o open.o notes.o \
+! display.o prefs.o autoinit.o $(UI)ui.o empty.o color.o version.o \
+! st_virt.o
+  
+! all:    version.c config.h tracker randomize splitmod
+  
+  config.h: $(CONFIG)config.h Makefile
+  	rm -f config.h
+***************
+*** 175,181 ****
+  install: 
+  	$(INSTALL) $(INST_BIN_OPT) tracker $(BIN_DIR)
+  	$(INSTALL) $(INST_BIN_OPT) randomize $(BIN_DIR)
+- 	$(INSTALL) $(INST_BIN_OPT) tcheck $(BIN_DIR)
+  	$(INSTALL) $(INST_BIN_OPT) splitmod $(BIN_DIR)
+  	[ -f ${COMPRESSION_FILE} ] || \
+  		$(INSTALL) $(INST_MAN_OPT) compression_methods ${COMPRESSION_FILE}
+--- 178,183 ----
