@@ -10,11 +10,11 @@ PORTVERSION=	3.2.9
 PORTREVISION=	3
 PORTEPOCH?=	1
 CATEGORIES=	databases
-MASTER_SITES=	http://www.sleepycat.com/update/${PORTVERSION}/
+MASTER_SITES=	http://www.sleepycat.com/update/snapshot/
 DISTNAME=	db-${PORTVERSION}
 DIST_SUBDIR=	bdb
 
-PATCH_SITES=	${MASTER_SITES}
+PATCH_SITES=	http://www.sleepycat.com/update/${PORTVERSION}/
 PATCHFILES=	patch.${PORTVERSION}.1 patch.${PORTVERSION}.2
 PATCH_DIST_STRIP= -d ${WRKDIR}/${DISTNAME}
 
