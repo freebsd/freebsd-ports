@@ -3,7 +3,7 @@
 # Date created:         26 June 1995
 # Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1995/07/04 10:25:20 asami Exp $
 #
 
 DISTNAME=       tksol-1.0
@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	thomas@ghpc8.ihf.rwth-aachen.de
 
-LIB_DEPENDS=	tk\\.3\\.:${PORTSDIR}/x11/tk
+RUN_DEPENDS=	wish4.0:${PORTSDIR}/x11/tk4
 
 PATCH_STRIP=	-p1
 WRKSRC=		${WRKDIR}/release
