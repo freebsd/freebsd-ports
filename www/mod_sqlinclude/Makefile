@@ -5,20 +5,25 @@
 # $FreeBSD$
 
 PORTNAME=	mod_sqlinclude
-PORTVERSION=	1.2
+PORTVERSION=	1.4
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/_/-/}
-DISTNAME=	${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	An Apache module implementing config inclusion from MySQL databases
 
-LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
+USE_MYSQL=	yes
+DOCS=	CHANGES.txt README.txt test.sql
 
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_APACHE2) || exists(${LOCALBASE}/include/apache2/apr.h)
+IGNORE=		Sorry, mod_sqlinclude only works with Apache 1.x
+.else
 USE_APACHE=	yes
-DOCS=	CHANGES.txt README.txt TODO.txt
+.endif
 
 do-build:
 	(cd ${WRKSRC} && ${APXS} -c -I${LOCALBASE}/include \
@@ -33,4 +38,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
