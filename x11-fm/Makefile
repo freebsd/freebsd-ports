@@ -29,6 +29,7 @@
     SUBDIR += x-files
     SUBDIR += xcruise
     SUBDIR += xdiskusage
+    SUBDIR += xfce4-fm
     SUBDIR += xfm
     SUBDIR += xnc
 
