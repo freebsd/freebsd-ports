@@ -28,7 +28,6 @@ CURL		"CURL support" ${WITH_CURL:-OFF} \
 DB4		"Berkeley DB4 support" ${WITH_DB4:-OFF} \
 DBASE		"dBase library support" ${WITH_DBASE:-OFF} \
 DBX		"dbx support" ${WITH_DBX:-OFF} \
-DEBUG		"debug support" ${WITH_DEBUG:-OFF} \
 DOMXML		"DOM support" ${WITH_DOMXML:-OFF} \
 DOMXSLT		"DOM XSLT and EXSLT support (implies DOMXML)" ${WITH_DOMXSLT:-OFF} \
 EXIF		"EXIF support" ${WITH_EXIF:-OFF} \
