@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	sigit
-PORTVERSION=	0.0.4
+PORTVERSION=	0.1.0
 CATEGORIES=	mail
-MASTER_SITES=	http://www.math.ku.dk/~m99khn/download/stable/
+MASTER_SITES=	http://www.redhead.dk/download/stable/
+DISTNAME=	Sigit-${PORTVERSION}
 
 MAINTAINER=	petef@FreeBSD.org
 
 USE_GMAKE=	yes
+WRKSRC=	${WRKDIR}/sigit-${PORTVERSION}
 
 MAN1=	sigit.1 sigit.rc.1
 
