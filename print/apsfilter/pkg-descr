@@ -16,7 +16,7 @@ printcap entries and creates printcap entries for one or more of
 your local printers. Please note, that such a magic printcap filter
 only works on locally connected printers.
 
-apsfilter 4.9.2 is designed to work only on FreeBSD 2.X. Call it
+apsfilter 4.9.3 is designed to work only on FreeBSD 2.X. Call it
 an interim Version for FreeBSD. It's functionally the same as
 Version 4.9.1.
 
