@@ -21,6 +21,12 @@ MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
 CFLAGS+=	-Wno-deprecated
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
+BROKEN=		"Does not compile on ia64 or sparc64"
+.endif
+
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/battleball ${PREFIX}/bin
 
@@ -32,4 +38,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
