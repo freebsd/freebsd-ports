@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.173 1999/04/13 17:17:58 taoka Exp $
+# $Id: Makefile,v 1.174 1999/04/26 18:48:47 rse Exp $
 #
 
     SUBDIR += ElectricFence
@@ -50,6 +50,7 @@
     SUBDIR += glib11-devel
     SUBDIR += glib12
     SUBDIR += gmake
+    SUBDIR += icqlib
     SUBDIR += id-utils
     SUBDIR += ilu
     SUBDIR += jam
@@ -60,6 +61,7 @@
     SUBDIR += libcii
     SUBDIR += libdlmalloc
     SUBDIR += libffi
+    SUBDIR += libgetline
     SUBDIR += libgtop
     SUBDIR += libicq
     SUBDIR += libmalloc
@@ -140,6 +142,7 @@
     SUBDIR += stlport
     SUBDIR += swarm
     SUBDIR += tclcheck
+    SUBDIR += tclcl
     SUBDIR += tkcvs
     SUBDIR += tkref
     SUBDIR += tvision
