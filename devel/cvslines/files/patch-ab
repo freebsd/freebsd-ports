@@ -1,5 +1,5 @@
---- INSTALL--	Thu May 22 03:36:16 1997
-+++ INSTALL	Tue Aug 25 14:26:30 1998
+--- INSTALL.orig	Fri Apr 19 21:26:39 2002
++++ INSTALL	Wed Oct  8 09:22:22 2003
 @@ -73,7 +73,7 @@
  }
     
@@ -9,24 +9,29 @@
  ($u_os, $u_host, $u_osrel) = split(/\s+/, $uname);
  
  #  Try to find things in the usual places, but failing those,
-@@ -121,7 +121,8 @@
-   {
+@@ -122,6 +122,7 @@
      if    ( ! (    ($u_os eq "SunOS" && $u_osrel =~ /^5\./)
                  || ($u_os eq "SunOS" && $u_osrel =~ /^4\./)
--                || ($u_os eq "OSF1" && $u_osrel =~ /^V[34]\./)))
-+                || ($u_os eq "OSF1" && $u_osrel =~ /^V[34]\./)
-+		|| ($u_os eq "FreeBSD")))
+                 || ($u_os eq "OSF1" && $u_osrel =~ /^V[34]\./)
++                || ($u_os eq "FreeBSD")
+ 	        || ($u_os eq "Linux")))
        {
          print STDERR <<MSG;
- $Myname:
-@@ -148,9 +149,8 @@
-   cvslines has been tested with cvs 1.9. The "cvs" command found via
-   your \$PATH provided the following version information:
- $cvs_versmsg
--  (press Return to continue with the install...)
+@@ -134,7 +135,7 @@
+ 
+   (press Return to continue with the install...)
  MSG
 -        $ans = <STDIN>;    
-+        # $ans = <STDIN>;    
++#        $ans = <STDIN>;    
+       }
+ 
+     $cvs_versmsg = `cvs -v`;
+@@ -151,7 +152,7 @@
+ $cvs_versmsg
+   (press Return to continue with the install...)
+ MSG
+-        $ans = <STDIN>;    
++#        $ans = <STDIN>;    
  
        }
    }

@@ -6,15 +6,15 @@
 #
 
 PORTNAME=		cvslines
-PORTVERSION=		1.6.7
+PORTVERSION=		1.6.8
 CATEGORIES=		devel
-MASTER_SITES=		${MASTER_SITE_LOCAL} \
-	http://www.netsw.org/softeng/versioncontrol/repository/cvs/cvslines/
-MASTER_SITE_SUBDIR=	jkoshy
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=		trevor@FreeBSD.org
 COMMENT=		Wrapper to ease merging of changes between CVS branches
 
+WRKSRC=			${WRKDIR}/${PORTNAME}
 PLIST=			${WRKDIR}/pkg-plist
 USE_PERL5=		yes
 NO_BUILD=		yes
@@ -22,7 +22,7 @@ NO_BUILD=		yes
 MAN1=	cvslines.1
 
 pre-patch:
-	${PERL} -pi -e "s:usr/local/bin/perl5:${PERL5}:g" ${WRKSRC}/cvslines
+	${PERL} -pi -e "s:usr/bin/perl5:${PERL5}:g" ${WRKSRC}/cvslines
 	${PERL} -pi -e "s:the the:the:g" ${WRKSRC}/cvslines.1
 
 pre-install:
