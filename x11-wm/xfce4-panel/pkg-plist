@@ -1,0 +1,187 @@
+bin/xfce4-panel
+etc/xfce4/xfce4rc
+include/xfce4/panel/controls.h
+include/xfce4/panel/global.h
+include/xfce4/panel/icons.h
+include/xfce4/panel/main.h
+include/xfce4/panel/panel.h
+include/xfce4/panel/item.h
+include/xfce4/panel/item_dialog.h
+include/xfce4/panel/plugins.h
+include/xfce4/panel/xfce_support.h
+include/xfce4/panel/xfce.h
+lib/xfce4/mcs-plugins/libxfce4settings.la
+lib/xfce4/mcs-plugins/libxfce4settings.so
+lib/xfce4/panel-plugins/libclock.la
+lib/xfce4/panel-plugins/libclock.so
+lib/xfce4/panel-plugins/libmailcheck.la
+lib/xfce4/panel-plugins/libmailcheck.so
+lib/xfce4/panel-plugins/libpager.la
+lib/xfce4/panel-plugins/libpager.so
+lib/xfce4/panel-plugins/libseparator.la
+lib/xfce4/panel-plugins/libseparator.so
+lib/xfce4/panel-plugins/libswitcher.la
+lib/xfce4/panel-plugins/libswitcher.so
+lib/xfce4/panel-plugins/libsystembuttons.la
+lib/xfce4/panel-plugins/libsystembuttons.so
+libdata/pkgconfig/xfce4-panel-1.0.pc
+share/xfce4/doc/C/images/clock-properties.png
+share/xfce4/doc/C/images/default_panel.png
+share/xfce4/doc/C/images/handle-popup.png
+share/xfce4/doc/C/images/item-popup.png
+share/xfce4/doc/C/images/launcher-properties.png
+share/xfce4/doc/C/images/mailcheck-properties.png
+share/xfce4/doc/C/images/menuitem-properties.png
+share/xfce4/doc/C/images/nooptions-properties.png
+share/xfce4/doc/C/images/panel-settings.png
+share/xfce4/doc/C/images/systembuttons-properties.png
+share/xfce4/doc/C/xfce4-panel.html
+share/xfce4/themes/Crystal/README
+share/xfce4/themes/Crystal/edit.png
+share/xfce4/themes/Crystal/file1.png
+share/xfce4/themes/Crystal/file2.png
+share/xfce4/themes/Crystal/games.png
+share/xfce4/themes/Crystal/man.png
+share/xfce4/themes/Crystal/miniinfo.png
+share/xfce4/themes/Crystal/minilock.png
+share/xfce4/themes/Crystal/minipalet.png
+share/xfce4/themes/Crystal/minipower.png
+share/xfce4/themes/Crystal/multimedia.png
+share/xfce4/themes/Crystal/network.png
+share/xfce4/themes/Crystal/newmail.png
+share/xfce4/themes/Crystal/nomail.png
+share/xfce4/themes/Crystal/oldmail.png
+share/xfce4/themes/Crystal/paint.png
+share/xfce4/themes/Crystal/print.png
+share/xfce4/themes/Crystal/schedule.png
+share/xfce4/themes/Crystal/sound.png
+share/xfce4/themes/Crystal/terminal.png
+share/xfce4/themes/Crystal/trash_empty.png
+share/xfce4/themes/Crystal/trash_full.png
+share/xfce4/themes/Crystal/unknown.png
+share/xfce4/themes/Curve/README
+share/xfce4/themes/Curve/edit.png
+share/xfce4/themes/Curve/file1.png
+share/xfce4/themes/Curve/file2.png
+share/xfce4/themes/Curve/games.png
+share/xfce4/themes/Curve/man.png
+share/xfce4/themes/Curve/miniinfo.png
+share/xfce4/themes/Curve/minilock.png
+share/xfce4/themes/Curve/minipalet.png
+share/xfce4/themes/Curve/minipower.png
+share/xfce4/themes/Curve/multimedia.png
+share/xfce4/themes/Curve/network.png
+share/xfce4/themes/Curve/newmail.png
+share/xfce4/themes/Curve/nomail.png
+share/xfce4/themes/Curve/oldmail.png
+share/xfce4/themes/Curve/paint.png
+share/xfce4/themes/Curve/print.png
+share/xfce4/themes/Curve/schedule.png
+share/xfce4/themes/Curve/sound.png
+share/xfce4/themes/Curve/terminal.png
+share/xfce4/themes/Curve/trash_empty.png
+share/xfce4/themes/Curve/trash_full.png
+share/xfce4/themes/Curve/unknown.png
+share/xfce4/themes/FreeIcons/README
+share/xfce4/themes/FreeIcons/edit.png
+share/xfce4/themes/FreeIcons/file1.png
+share/xfce4/themes/FreeIcons/file2.png
+share/xfce4/themes/FreeIcons/games.png
+share/xfce4/themes/FreeIcons/man.png
+share/xfce4/themes/FreeIcons/miniinfo.png
+share/xfce4/themes/FreeIcons/minilock.png
+share/xfce4/themes/FreeIcons/minipalet.png
+share/xfce4/themes/FreeIcons/minipower.png
+share/xfce4/themes/FreeIcons/multimedia.png
+share/xfce4/themes/FreeIcons/network.png
+share/xfce4/themes/FreeIcons/newmail.png
+share/xfce4/themes/FreeIcons/nomail.png
+share/xfce4/themes/FreeIcons/oldmail.png
+share/xfce4/themes/FreeIcons/paint.png
+share/xfce4/themes/FreeIcons/print.png
+share/xfce4/themes/FreeIcons/schedule.png
+share/xfce4/themes/FreeIcons/sound.png
+share/xfce4/themes/FreeIcons/terminal.png
+share/xfce4/themes/FreeIcons/unknown.png
+share/xfce4/themes/Gnome/edit.png
+share/xfce4/themes/Gnome/file1.png
+share/xfce4/themes/Gnome/file2.png
+share/xfce4/themes/Gnome/games.png
+share/xfce4/themes/Gnome/man.png
+share/xfce4/themes/Gnome/miniinfo.png
+share/xfce4/themes/Gnome/minilock.png
+share/xfce4/themes/Gnome/minipalet.png
+share/xfce4/themes/Gnome/minipower.png
+share/xfce4/themes/Gnome/multimedia.png
+share/xfce4/themes/Gnome/network.png
+share/xfce4/themes/Gnome/paint.png
+share/xfce4/themes/Gnome/print.png
+share/xfce4/themes/Gnome/schedule.png
+share/xfce4/themes/Gnome/sound.png
+share/xfce4/themes/Gnome/terminal.png
+share/xfce4/themes/Gnome/trash_empty.png
+share/xfce4/themes/Gnome/trash_full.png
+share/xfce4/themes/Gnome/unknown.png
+share/xfce4/themes/Noia/README
+share/xfce4/themes/Noia/edit.png
+share/xfce4/themes/Noia/file1.png
+share/xfce4/themes/Noia/file2.png
+share/xfce4/themes/Noia/games.png
+share/xfce4/themes/Noia/man.png
+share/xfce4/themes/Noia/miniinfo.png
+share/xfce4/themes/Noia/minilock.png
+share/xfce4/themes/Noia/minipalet.png
+share/xfce4/themes/Noia/minipower.png
+share/xfce4/themes/Noia/multimedia.png
+share/xfce4/themes/Noia/network.png
+share/xfce4/themes/Noia/newmail.png
+share/xfce4/themes/Noia/nomail.png
+share/xfce4/themes/Noia/oldmail.png
+share/xfce4/themes/Noia/paint.png
+share/xfce4/themes/Noia/print.png
+share/xfce4/themes/Noia/schedule.png
+share/xfce4/themes/Noia/sound.png
+share/xfce4/themes/Noia/terminal.png
+share/xfce4/themes/Noia/trash_empty.png
+share/xfce4/themes/Noia/trash_full.png
+share/xfce4/themes/Noia/unknown.png
+share/xfce4/themes/XFce/edit.xpm
+share/xfce4/themes/XFce/file1.xpm
+share/xfce4/themes/XFce/file2.xpm
+share/xfce4/themes/XFce/games.xpm
+share/xfce4/themes/XFce/man.xpm
+share/xfce4/themes/XFce/miniinfo.xpm
+share/xfce4/themes/XFce/minilock.xpm
+share/xfce4/themes/XFce/minipalet.xpm
+share/xfce4/themes/XFce/minipower.xpm
+share/xfce4/themes/XFce/multimedia.xpm
+share/xfce4/themes/XFce/network.xpm
+share/xfce4/themes/XFce/newmail.xpm
+share/xfce4/themes/XFce/nomail.xpm
+share/xfce4/themes/XFce/oldmail.xpm
+share/xfce4/themes/XFce/paint.xpm
+share/xfce4/themes/XFce/print.xpm
+share/xfce4/themes/XFce/schedule.xpm
+share/xfce4/themes/XFce/sound.xpm
+share/xfce4/themes/XFce/terminal.xpm
+share/xfce4/themes/XFce/trash_empty.xpm
+share/xfce4/themes/XFce/trash_full.xpm
+share/xfce4/themes/XFce/unknown.xpm
+@unexec rmdir %D/etc/xfce4 2>/dev/null || true
+@dirrm include/xfce4/panel
+@unexec rmdir %D/include/xfce4 2>/dev/null || true
+@unexec rmdir %D/lib/xfce4/mcs-plugins 2>/dev/null || true
+@unexec rmdir %D/lib/xfce4/panel-plugins 2>/dev/null || true
+@unexec rmdir %D/lib/xfce4 2>/dev/null || true
+@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc/C/images 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc/C 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc 2>/dev/null || true
+@dirrm share/xfce4/themes/Crystal
+@dirrm share/xfce4/themes/Curve
+@dirrm share/xfce4/themes/FreeIcons
+@dirrm share/xfce4/themes/Noia
+@dirrm share/xfce4/themes/Gnome
+@dirrm share/xfce4/themes/XFce
+@unexec rmdir %D/share/xfce4/themes 2>/dev/null || true
+@unexec rmdir %D/share/xfce4 2>/dev/null || true
