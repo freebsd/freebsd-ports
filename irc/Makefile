@@ -13,6 +13,7 @@
     SUBDIR += epic4
     SUBDIR += ezbounce
     SUBDIR += gruftistats
+    SUBDIR += iip
     SUBDIR += infobot
     SUBDIR += irc
     SUBDIR += ircII
