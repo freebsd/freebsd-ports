@@ -8,7 +8,7 @@
 
 PORTNAME=	ctrlproxy
 PORTVERSION=	2.6
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://jelmer.vernstok.nl/ctrlproxy/
 
@@ -31,8 +31,10 @@ MAKE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 MAN1=	ctrlproxy.1
 MAN5=	ctrlproxyrc.5
 MAN7=	admin.7ctrlproxy antiflood.7ctrlproxy auto-away.7ctrlproxy \
-	ctcp.7ctrlproxy log_custom.7ctrlproxy log_irssi.7ctrlproxy \
-	nickserv.7ctrlproxy noticelog.7ctrlproxy \
+	ctcp.7ctrlproxy linestack_file.7ctrlproxy linestack_memory.7ctrlproxy \
+	log_custom.7ctrlproxy log_irssi.7ctrlproxy motd-file.7ctrlproxy \
+	nickserv.7ctrlproxy noticelog.7ctrlproxy repl_command.7ctrlproxy \
+	repl_highlight.7ctrlproxy repl_none.7ctrlproxy repl_simple.7ctrlproxy \
 	socket.7ctrlproxy stats.7ctrlproxy strip.7ctrlproxy
 
 post-patch:
