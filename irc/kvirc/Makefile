@@ -34,7 +34,7 @@ CONFIGURE_ARGS=	--x-includes=$(X11BASE)/include \
 		--with-qt-library-dir=${X11BASE}/lib \
 		--without-kde-check \
 		--with-freebsd-pthread \
-		-with-qt-name=qt2
+		--with-qt-name=qt2
 
 CONFIGURE_ENV+=	SS_X_EXTRA_LIBS=-lxpg4
 
