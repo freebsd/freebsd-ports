@@ -13,7 +13,7 @@ CATEGORIES=	accessibility
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Accessibility Toolkit, Linux/i386 binary
 
-BUILD_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
+BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 
 BASEVERSION=	9
 ONLY_FOR_ARCHS=	i386
@@ -25,7 +25,7 @@ pre-install:
 	${RM} -rf ${WRKSRC}/tmp
 	${MKDIR} ${WRKSRC}/tmp
 	cd ${WRKSRC}/tmp; \
-		rpm2cpio.pl < ${DISTDIR}/${DIST_SUBDIR}/${RPM_SET} | cpio -id; \
+		rpm2cpio < ${DISTDIR}/${DIST_SUBDIR}/${RPM_SET} | cpio -id; \
 		${FIND} * -type f -o -type l > ${PLIST}
 	${ECHO_CMD} @dirrm usr/share/doc/atk-1.2.0 >> ${PLIST}
 

@@ -13,8 +13,6 @@ CATEGORIES=	textproc linux
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Linux/i386 binary port of Expat XML-parsing library
 
-BUILD_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
-
 BASEVERSION=	9
 ONLY_FOR_ARCHS=	i386
 PLIST=		${WRKDIR}/plist
@@ -24,7 +22,7 @@ pre-install:
 	${RM} -rf ${WRKSRC}/tmp
 	${MKDIR} ${WRKSRC}/tmp
 	cd ${WRKSRC}/tmp; \
-		rpm2cpio.pl < ${DISTDIR}/${DIST_SUBDIR}/${RPM_SET} | cpio -div; \
+		rpm2cpio < ${DISTDIR}/${DIST_SUBDIR}/${RPM_SET} | cpio -div; \
 		${FIND} * -type f -o -type l > ${PLIST}
 	${ECHO_CMD} @dirrm usr/share/doc/expat-1.95.5 >> ${PLIST}
 

@@ -12,8 +12,6 @@ CATEGORIES=		japanese x11-fonts linux
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Japanese Truetype fonts for use with Linux emulation
 
-BUILD_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
-
 BASEVERSION=	9
 MD5_FILE=	${MASTERDIR}/distinfo
 PLIST=		${WRKDIR}/plist
@@ -23,7 +21,7 @@ pre-install:
 	${RM} -rf ${WRKSRC}/tmp
 	${MKDIR} ${WRKSRC}/tmp
 	cd ${WRKSRC}/tmp; \
-		rpm2cpio.pl < ${DISTDIR}/${DIST_SUBDIR}/${RPM_SET} | cpio -id; \
+		rpm2cpio < ${DISTDIR}/${DIST_SUBDIR}/${RPM_SET} | cpio -id; \
 		${FIND} * -type f -o -type l > ${PLIST}; \
 		${FIND} -d * -type d | ${GREP} ja | ${SED} -e 's:^:@dirrm :' \
 		>> ${PLIST}
