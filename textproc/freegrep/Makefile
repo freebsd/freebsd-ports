@@ -6,11 +6,12 @@
 # $FreeBSD$
 #
 
-DISTNAME=	grep-0.11
-PKGNAME=	freegrep-0.11
+DISTNAME=	grep-0.12
+PKGNAME=	freegrep-0.12
 CATEGORIES=	textproc
-MASTER_SITES=	ftp://ftp.ofug.org/pub/grep/ \
-		http://www.freebsd.org/~des/software/
+MASTER_SITES=	ftp://ftp.wam.umd.edu/pub/howardjp/software/grep/ \
+		http://www.wam.umd.edu/~howardjp/software/grep/ \
+		ftp://dragon.ham.muohio.edu/pub/howardjp/software/grep/
 
 MAINTAINER=	howardjp@wam.umd.edu
 
