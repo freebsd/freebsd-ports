@@ -47,6 +47,7 @@ bin/gl-117
 %%DATADIR%%/models/tank2.3ds
 %%DATADIR%%/models/tent1.3ds
 %%DATADIR%%/models/tent4.3ds
+%%DATADIR%%/models/transp1.3ds
 %%DATADIR%%/models/transp2.3ds
 %%DATADIR%%/models/transp4.3ds
 %%DATADIR%%/models/trsam.3ds
@@ -104,9 +105,11 @@ bin/gl-117
 %%DATADIR%%/textures/gl-14d_c.tga
 %%DATADIR%%/textures/gl-14d_d.tga
 %%DATADIR%%/textures/gl-15_c2.tga
+%%DATADIR%%/textures/gl-15_ch.tga
 %%DATADIR%%/textures/gl-16_c2.tga
 %%DATADIR%%/textures/gl-16_ch.tga
 %%DATADIR%%/textures/gl-21_c2.tga
+%%DATADIR%%/textures/gl-21_ch.tga
 %%DATADIR%%/textures/gl-21b_c.tga
 %%DATADIR%%/textures/gl-21b_d.tga
 %%DATADIR%%/textures/gl-29_ch.tga
@@ -127,9 +130,9 @@ bin/gl-117
 %%DATADIR%%/textures/oilrig_c2.tga
 %%DATADIR%%/textures/panzer1_.tga
 %%DATADIR%%/textures/panzer2_.tga
+%%DATADIR%%/textures/patents.tga
 %%DATADIR%%/textures/radar1.tga
 %%DATADIR%%/textures/radar2.tga
-%%DATADIR%%/textures/ranks.psd
 %%DATADIR%%/textures/ranks.tga
 %%DATADIR%%/textures/redsand1.tga
 %%DATADIR%%/textures/redstone2.tga
