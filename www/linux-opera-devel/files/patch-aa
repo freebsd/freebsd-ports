@@ -1,6 +1,6 @@
---- install.sh.orig	Fri Nov 29 12:19:46 2002
-+++ install.sh	Sun Dec 15 09:33:47 2002
-@@ -762,6 +762,16 @@
+--- install.sh.orig	Wed Mar  5 19:07:59 2003
++++ install.sh	Tue Mar 11 18:37:28 2003
+@@ -765,6 +765,16 @@
  	    wrapper_sunjava_machine="sparc"
  	;;
  
@@ -17,7 +17,7 @@
  	mips*:Linux)
  	    wrapper_plugin_paths=''
  	;;
-@@ -887,7 +897,7 @@
+@@ -890,7 +900,7 @@
  
  # Acrobat Reader
  for BINDIR in \\
@@ -26,7 +26,7 @@
      /usr/lib/Acrobat[45]/bin \\
      /usr/X11R6/lib/Acrobat[45]/bin \\
      /opt/Acrobat[45]/bin \\
-@@ -1081,8 +1091,9 @@
+@@ -1100,8 +1110,9 @@
  	ln $lns $lnf libnpp.so.$plugin_version_major.$plugin_version_minor.$plugin_version_release $plugin_dir/libnpp.so
  
       # System wide configuration files
@@ -37,7 +37,7 @@
  	    echo
  	    echo "System wide configuration files:"
  	    echo "  $config_dir/opera6rc"
-@@ -1109,6 +1120,7 @@
+@@ -1128,6 +1139,7 @@
  			;;
  		esac
  	    done
@@ -45,7 +45,7 @@
  	else
  	    echo
  	    echo "User \"${USERNAME}\" does not have write access to $config_dir"
-@@ -1119,10 +1131,10 @@
+@@ -1138,10 +1150,10 @@
  	fi
  
       # Shorcuts and Icons

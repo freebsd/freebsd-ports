@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	opera
-PORTVERSION=	6.11.20021129
+PORTVERSION=	6.12.20030305
 CATEGORIES=	www linux
-MASTER_SITES=	http://opera.online.no/linux/611/final/en/i386/static/ \
-		ftp://ftp.opera.com/pub/opera/linux/611/final/en/i386/static/
+MASTER_SITES=	http://opera.online.no/linux/612/final/en/i386/static/ \
+		ftp://ftp.opera.com/pub/opera/linux/612/final/en/i386/static/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/11./11-/}.1-static-qt.i386
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/12./12-/}.1-static-qt.i386
 
 MAINTAINER=	des@FreeBSD.org
 COMMENT=	A blazingly fast, full-featured, standards-compliant browser
