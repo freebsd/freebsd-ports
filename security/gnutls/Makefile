@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnutls
-PORTVERSION=	0.8.10
-PORTREVISION=	1
+PORTVERSION=	1.0.8
 CATEGORIES=	security net
 MASTER_SITES=	${MASTER_SITE_GNUPG} \
 	http://www.mirrors.wiretapped.net/security/network-security/gnutls/ \
@@ -18,8 +17,17 @@ MASTER_SITE_SUBDIR=	alpha/gnutls
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	GNU Transport Layer Security library
 
-LIB_DEPENDS=	gcrypt.6:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	gcrypt.10:${PORTSDIR}/security/libgcrypt-devel \
+		gpg-error.1:${PORTSDIR}/security/libgpg-error \
+		opencdk.8:${PORTSDIR}/security/opencdk \
+		tasn1.2:${PORTSDIR}/security/libtasn1
 
+CONFLICTS=	gnutls-devel-*
+
+#USE_GPG?=	yes
+SIG_SUFFIX=	.sig.asc
+USE_ICONV=	yes
+USE_GETTEXT=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -28,18 +36,8 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-included-lzo
 
-.if defined(WITH_LIBTASN1) || exists(${LOCALBASE}/lib/libtasn1.so.2)
-LIB_DEPENDS+=		tasn1.2:${PORTSDIR}/security/libtasn1
-.else
-CONFIGURE_ARGS+=	--with-included-libtasn1
-.endif
-
-.if defined(WITH_OPENCDK) || exists(${LOCALBASE}/lib/libopencdk.so.6)
-LIB_DEPENDS+=		opencdk.6:${PORTSDIR}/security/opencdk
-.else
-CONFIGURE_ARGS+=	--disable-openpgp-authentication
-.endif
-
+MAN1=		certtool.1 gnutls-cli.1 gnutls-cli-debug.1 \
+       		gnutls-serv.1 gnutls-srpcrypt.1
 DOCS=		AUTHORS NEWS README THANKS doc/tex/*.ps
 EXAMPLES=	doc/examples/*.c
 
