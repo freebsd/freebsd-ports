@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	korean editors
+CATEGORIES=	korean
 
 LANG_PKGNAME=	ko
 LANG_EXT=	82

@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	chinese multimedia
+CATEGORIES=	chinese
 
 MASTERDIR=	${.CURDIR}/../../multimedia/xmms
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	BitchX
 PORTREVISION=	4
-CATEGORIES=	chinese irc
+CATEGORIES=	chinese
 
 MAINTAINER=	clive@FreeBSD.org
 COMMENT=	A zh-tw cursor movement friendly, wrapping clean BitchX

@@ -3,7 +3,7 @@
 # Whom:                Michael C. Wu
 # $FreeBSD$
 
-CATEGORIES=	chinese x11
+CATEGORIES=	chinese
 
 MASTERDIR=      ${.CURDIR}/../../x11/eterm
 
