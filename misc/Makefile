@@ -109,6 +109,7 @@
     SUBDIR += peq
     SUBDIR += pdmenu
     SUBDIR += pinfo
+    SUBDIR += pkg_tarup
     SUBDIR += porteasy
     SUBDIR += proxyper
     SUBDIR += py-distutils
