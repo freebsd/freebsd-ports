@@ -4,6 +4,7 @@ share/gauche/%%VERSION%%/lib/gtk.scm
 share/gauche/%%VERSION%%/lib/gtk/error-dialog.scm
 share/gauche/%%VERSION%%/lib/gtk/gdkkeysyms.scm
 share/gauche/%%VERSION%%/lib/gtk/gtkaux.scm
+share/gauche/%%VERSION%%/lib/.packages/Gauche-gtk.gpd
 %%GTKGLEXT%%share/gauche/%%VERSION%%/lib/gtk/gtkgl.scm
 share/gauche/%%VERSION%%/lib/gtk/listener.scm
 @dirrm share/gauche/%%VERSION%%/lib/gtk
