@@ -1,14 +1,14 @@
---- configure.orig	Wed Aug 19 18:31:34 1998
-+++ configure	Tue Sep  1 11:57:41 1998
-@@ -935,12 +935,12 @@
+--- configure.orig	Thu Sep 24 08:04:55 1998
++++ configure	Sat Sep 26 23:41:37 1998
+@@ -942,12 +942,12 @@
  
  
  	if test "$no_gnome_config" = "yes"; then
 -          echo $ac_n "checking for gnomeConf.sh file in $gnome_prefix""... $ac_c" 1>&6
--echo "configure:940: checking for gnomeConf.sh file in $gnome_prefix" >&5
+-echo "configure:947: checking for gnomeConf.sh file in $gnome_prefix" >&5
 -	  if test -f $gnome_prefix/gnomeConf.sh; then
 +          echo $ac_n "checking for gnomeConf.sh file in $prefix/share/gnome""... $ac_c" 1>&6
-+echo "configure:940: checking for gnomeConf.sh file in $prefix/share/gnome" >&5
++echo "configure:947: checking for gnomeConf.sh file in $prefix/share/gnome" >&5
 +	  if test -f $prefix/share/gnome/gnomeConf.sh; then
  	    echo "$ac_t""found" 1>&6
 -	    echo "loading gnome configuration from $gnome_prefix/gnomeConf.sh"
@@ -18,82 +18,3 @@
  	    
  	  else
  	    echo "$ac_t""not found" 1>&6
-@@ -2243,18 +2243,18 @@
-   if test x$gtk_config_exec_prefix != x ; then
-      gtk_config_args="$gtk_config_args --exec-prefix=$gtk_config_exec_prefix"
-      if test x${GTK_CONFIG+set} != xset ; then
--        GTK_CONFIG=$gtk_config_exec_prefix/bin/gtk-config
-+        GTK_CONFIG=$gtk_config_exec_prefix/bin/gtk11-config
-      fi
-   fi
-   if test x$gtk_config_prefix != x ; then
-      gtk_config_args="$gtk_config_args --prefix=$gtk_config_prefix"
-      if test x${GTK_CONFIG+set} != xset ; then
--        GTK_CONFIG=$gtk_config_prefix/bin/gtk-config
-+        GTK_CONFIG=$gtk_config_prefix/bin/gtk11-config
-      fi
-   fi
- 
--  # Extract the first word of "gtk-config", so it can be a program name with args.
--set dummy gtk-config; ac_word=$2
-+  # Extract the first word of "gtk11-config", so it can be a program name with args.
-+set dummy gtk11-config; ac_word=$2
- echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
- echo "configure:2260: checking for $ac_word" >&5
- if eval "test \"`echo '$''{'ac_cv_path_GTK_CONFIG'+set}'`\" = set"; then
-@@ -2336,16 +2336,16 @@
-       (gtk_minor_version != $gtk_config_minor_version) ||
-       (gtk_micro_version != $gtk_config_micro_version))
-     {
--      printf("\n*** 'gtk-config --version' returned %d.%d.%d, but GTK+ (%d.%d.%d)\n", 
-+      printf("\n*** 'gtk11-config --version' returned %d.%d.%d, but GTK+ (%d.%d.%d)\n", 
-              $gtk_config_major_version, $gtk_config_minor_version, $gtk_config_micro_version,
-              gtk_major_version, gtk_minor_version, gtk_micro_version);
--      printf ("*** was found! If gtk-config was correct, then it is best\n");
-+      printf ("*** was found! If gtk11-config was correct, then it is best\n");
-       printf ("*** to remove the old version of GTK+. You may also be able to fix the error\n");
-       printf("*** by modifying your LD_LIBRARY_PATH enviroment variable, or by editing\n");
-       printf("*** /etc/ld.so.conf. Make sure you have run ldconfig if that is\n");
-       printf("*** required on your system.\n");
--      printf("*** If gtk-config was wrong, set the environment variable GTK_CONFIG\n");
--      printf("*** to point to the correct copy of gtk-config, and remove the file config.cache\n");
-+      printf("*** If gtk11-config was wrong, set the environment variable GTK_CONFIG\n");
-+      printf("*** to point to the correct copy of gtk11-config, and remove the file config.cache\n");
-       printf("*** before re-running configure\n");
-     } 
-   else if ((gtk_major_version != GTK_MAJOR_VERSION) ||
-@@ -2374,10 +2374,10 @@
-         printf("*** GTK+ is always available from ftp://ftp.gtk.org.\n");
-         printf("***\n");
-         printf("*** If you have already installed a sufficiently new version, this error\n");
--        printf("*** probably means that the wrong copy of the gtk-config shell script is\n");
-+        printf("*** probably means that the wrong copy of the gtk11-config shell script is\n");
-         printf("*** being found. The easiest way to fix this is to remove the old version\n");
-         printf("*** of GTK+, but you can also set the GTK_CONFIG environment to point to the\n");
--        printf("*** correct copy of gtk-config. (In this case, you will have to\n");
-+        printf("*** correct copy of gtk11-config. (In this case, you will have to\n");
-         printf("*** modify your LD_LIBRARY_PATH enviroment variable, or edit /etc/ld.so.conf\n");
-         printf("*** so that the correct libraries are found at run-time))\n");
-       }
-@@ -2408,10 +2408,10 @@
-   else
-      echo "$ac_t""no" 1>&6
-      if test "$GTK_CONFIG" = "no" ; then
--       echo "*** The gtk-config script installed by GTK could not be found"
-+       echo "*** The gtk11-config script installed by GTK could not be found"
-        echo "*** If GTK was installed in PREFIX, make sure PREFIX/bin is in"
-        echo "*** your path, or set the GTK_CONFIG environment variable to the"
--       echo "*** full path to gtk-config."
-+       echo "*** full path to gtk11-config."
-      else
-        if test -f conf.gtktest ; then
-         :
-@@ -2453,7 +2453,7 @@
-    echo "*** The test program failed to compile or link. See the file config.log for the"
-           echo "*** exact error that occured. This usually means GTK was incorrectly installed"
-           echo "*** or that you have moved GTK since it was installed. In the latter case, you"
--          echo "*** may want to edit the gtk-config script: $GTK_CONFIG" 
-+          echo "*** may want to edit the gtk11-config script: $GTK_CONFIG" 
- fi
- rm -f conftest*
-           CFLAGS="$ac_save_CFLAGS"
