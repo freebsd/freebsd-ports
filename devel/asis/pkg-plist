@@ -292,8 +292,8 @@ lib/asis/urealp.ali
 lib/asis/widechar.adb
 lib/asis/widechar.ads
 lib/asis/widechar.ali
-lib/libasis-3.14p.so
-lib/libasis-3.14p.so.1
+lib/libasis-3.15p.so
+lib/libasis-3.15p.so.1
 lib/libasis.a
 %%PORTDOCS%%share/doc/asis/README.asistant
 %%PORTDOCS%%share/doc/asis/README.ds

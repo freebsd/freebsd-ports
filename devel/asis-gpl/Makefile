@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asis
-PORTVERSION=	3.14p
+PORTVERSION=	3.15p
 CATEGORIES=	devel
 MASTER_SITES=	\
 	ftp://ftp.lip6.fr/pub/gnat/${PORTVERSION}/asis/ \
@@ -23,8 +23,6 @@ USE_GMAKE=	yes
 MAKEFILE=	"${FILESDIR}/Makefile.bsd"
 MAKE_ARGS=	GMAKE=${GMAKE} PORTVERSION=${PORTVERSION} \
 		LN=${LN}
-
-BROKEN=         "Does not compile"
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/asis
