@@ -3,7 +3,7 @@
 # Date created:		Mar 29, 1998
 # Whom:			issei@jp.FreeBSD.ORG
 #
-# $Id: Makefile,v 1.4 1998/09/25 10:20:18 asami Exp $
+# $Id: Makefile,v 1.5 1998/10/19 15:49:06 vanilla Exp $
 
 DISTNAME=		SSLtelnet-0.13
 CATEGORIES=		net security
@@ -27,8 +27,8 @@ pre-configure:
 .endif
 .endif
 
-BUILD_DEPENDS=		ssleay:${PORTSDIR}/security/SSLeay
-RUN_DEPENDS=		ssleay:${PORTSDIR}/security/SSLeay
+BUILD_DEPENDS=		ssleay:${PORTSDIR}/security/openssl
+RUN_DEPENDS=		ssleay:${PORTSDIR}/security/openssl
 
 RESTRICTED=		"Cryptography"
 
@@ -39,4 +39,5 @@ INSTALL_TARGET=		install certificate
 post-install:
 	strip $(PREFIX)/bin/telnet
 	strip $(PREFIX)/libexec/telnetd
+
 .include <bsd.port.mk>
