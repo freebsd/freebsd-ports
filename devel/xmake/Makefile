@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmake
-PORTVERSION=	1.05
+PORTVERSION=	1.06
 CATEGORIES=	devel
 MASTER_SITES=	http://apollo.backplane.com/xmake/ \
 		ftp://atari.saturn5.com/pub/dlowe/
