@@ -231,6 +231,7 @@
     SUBDIR += rskkserv
     SUBDIR += ruby-kakasi
     SUBDIR += ruby-man
+    SUBDIR += ruby-slang
     SUBDIR += ruby-uconv
     SUBDIR += rubytk
     SUBDIR += rxvt

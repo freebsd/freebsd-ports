@@ -1,0 +1,9 @@
+slanglib (S-Lang extension module for ruby)
+
+This is an extension module for S-Lang screen management library by
+John E. Davis.  S-Lang is famous for the fact that jed(editor) and
+slrn(news reader) use it.  You can find useful information of S-Lang
+in: http://www.s-lang.org/.
+
+Author:	Kikutani, Makoto <kikutani@sprintmail.com>
+WWW:	http://home.sprintmail.com/~kikutani/slang.html
