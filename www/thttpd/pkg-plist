@@ -10,7 +10,7 @@ www/cgi-bin/phf
 www/cgi-bin/redirect
 www/cgi-bin/ssi
 %%PORTDOCS%%@dirrm share/doc/thttpd
-@dirrm www/cgi-bin
-@dirrm www/data
-@dirrm www/logs
-@dirrm www
+@unexec rmdir %D/www/cgi-bin 2> /dev/null || true
+@unexec rmdir %D/www/data 2> /dev/null || true
+@unexec rmdir %D/www/logs 2> /dev/null || true
+@unexec rmdir %D/www 2> /dev/null || true
