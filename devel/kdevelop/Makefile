@@ -22,7 +22,7 @@ MAINTAINER=	will@FreeBSD.org
 LIB_DEPENDS=	kdeui.3:${PORTSDIR}/x11/kdelibs11
 RUN_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 
-.if defined(USE_OPTIONAL_DEPENDS)
+.if defined(WITH_OPTIONAL_DEPENDS)
 RUN_DEPENDS+=	automake:${PORTSDIR}/devel/automake \
 		kdbg:${PORTSDIR}/devel/kdbg \
 		${LOCALBASE}/share/doc/HTML/en/kdelibs/kdecore/index.html:${PORTSDIR}/devel/kdelibdocs \
@@ -45,9 +45,9 @@ SOMAJOR=        1
 PLIST_SUB+=	LIBVER="${SOMAJOR}"
 
 pre-patch:
-.if !defined(USE_OPTIONAL_DEPENDS)
+.if !defined(WITH_OPTIONAL_DEPENDS)
 	@${ECHO}
-	@${ECHO} "You may define USE_OPTIONAL_DEPENDS (make USE_OPTIONAL_DEPENDS=YES)"
+	@${ECHO} "You may define WITH_OPTIONAL_DEPENDS (make WITH_OPTIONAL_DEPENDS=YES)"
 	@${ECHO} "to automatically build the suggested programs to compliment kdevelop."
 	@${ECHO}
 	@sleep 1

@@ -21,7 +21,7 @@ NO_WRKSUBDIR=	yes
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 .if defined(HAVE_MOTIF) && !defined(PACKAGE_BUILDING)
 MAKEFILE=       Makefile.XMotif
-.elif defined(WITH_X) && (${WITH_X} == NO || ${WITH_X} == no)
+.elif defined(WITHOUT_X11)
 MAKEFILE=	Makefile.NoX
 .else
 USE_XLIB=	yes

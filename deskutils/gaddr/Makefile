@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.cse.unl.edu/~cluening/gaddr/
 MAINTAINER=	jim@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
-.if defined(USE_GNOME)
+.if defined(WITH_GNOME)
 LIB_DEPENDS+=	gnome.3:${PORTSDIR}/x11/gnomelibs
 .endif
 
@@ -22,7 +22,7 @@ GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 
-.if defined(USE_GNOME)
+.if defined(WITH_GNOME)
 CONFIGURE_ARGS+= --enable-gnome
 .endif
 

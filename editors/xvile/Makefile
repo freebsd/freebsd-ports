@@ -18,25 +18,24 @@ MAINTAINER=	gj@freebsd.org
 USE_XLIB=	yes
 MAKEFILE=	makefile
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --with-screen=${SCREEN_TYPE} ${WITH_PERL}
 MAN1=		xvile.1
 
 pre-configure:
-.if ! defined(USE_MENUS)
-	@${ECHO_MSG} "To use xvile with menus, set the environment variable USE_MENUS"
+.if ! defined(WITH_MENUS)
+	@${ECHO_MSG} "To use xvile with menus, set the environment variable WITH_MENUS"
 .endif
-.if ! defined(USE_PERL)
-	@${ECHO_MSG} "To use xvile with PERL, set the environment variable USE_PERL"
+.if ! defined(WITH_PERL)
+	@${ECHO_MSG} "To use xvile with PERL, set the environment variable WITH_PERL"
 .endif
 
-.if defined(USE_MENUS)
-SCREEN_TYPE=	Xaw
+.if defined(WITH_MENUS)
+CONFIGURE_ARGS= --with-screen=Xaw
 .else
-SCREEN_TYPE=	x11
+CONFIGURE_ARGS= --with-screen=x11
 .endif
 
-.if defined(USE_PERL)
-WITH_PERL=	--with-perl
+.if defined(WITH_PERL)
+CONFIGURE_ARGS+= --with-perl
 PLIST=		${PKGDIR}/PLIST.perl
 USE_PERL5=	yes
 .endif
@@ -49,7 +48,7 @@ post-install:
 	@if ! [ -d ${PREFIX}/share/vile/macros ]; then ${MKDIR} ${PREFIX}/share/vile/macros; fi
 	${INSTALL_DATA} ${WRKSRC}/macros/*.rc ${PREFIX}/share/vile/macros
 	${INSTALL_SCRIPT} ${WRKSRC}/macros/vile-pager ${PREFIX}/share/vile/macros
-.if defined(USE_PERL)
+.if defined(WITH_PERL)
 	${INSTALL_DATA} ${WRKSRC}/*.doc ${PREFIX}/share/doc/vile
 .endif
 	@${ECHO_MSG} "Look in ${PREFIX}/share/doc/vile for documentation."

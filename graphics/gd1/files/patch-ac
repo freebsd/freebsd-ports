@@ -24,7 +24,7 @@
  #If you do have FreeType, libjpeg and/or Xpm fully installed, uncomment a
  #variation of this and comment out the line above. See also LIBS below.
 -#CFLAGS=-O -DHAVE_XPM -DHAVE_JPEG -DHAVE_LIBTTF
-+.if defined(WANT_X11)
++.if defined(WITH_X11)
 +CFLAGS+=-DHAVE_XPM -DHAVE_JPEG -DHAVE_LIBTTF
 +.else
 +CFLAGS+=-DHAVE_JPEG
@@ -39,7 +39,7 @@
  #variation of this and comment out the line above. Note that
  #Xpm requires X11. See also CFLAGS above.
 -#LIBS=-lm -lgd -lpng -lz -ljpeg -lttf -lXpm -lX11
-+.if defined(WANT_X11)
++.if defined(WITH_X11)
 +LIBS=-lm -lgd -lpng -lz -ljpeg -lttf -lXpm -lX11
 +.endif
  
@@ -47,7 +47,7 @@
  #If yours are somewhere else, change this. 
 -INCLUDEDIRS=-I/usr/local/include -I/usr/include/X11 -I/usr/X11R6/include/X11
 +CFLAGS+=-I$(LOCALBASE)/include
-+.if defined(WANT_X11)
++.if defined(WITH_X11)
 +CFLAGS+=-I$(LOCALBASE)/include/freetype -I$(X11BASE)/include -I$(X11BASE)/include/X11
 +.endif
  
@@ -59,7 +59,7 @@
  #on your system can't cause conflicts while building a new one.
 -LIBDIRS=-L. -L/usr/local/lib -L/usr/lib/X11 -L/usr/X11R6/lib
 +LIBDIRS=-L. -L$(LOCALBASE)/lib
-+.if defined(WANT_X11)
++.if defined(WITH_X11)
 +LIBDIRS+=-L$(X11BASE)/lib
 +.endif
  

@@ -22,7 +22,7 @@ NO_LATEST_LINK=	yes
 WRKSRC=		${WRKDIR}/emacs-19.34
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-.if !defined(NO_X11)
+.if !defined(WITHOUT_X11)
 CONFIGURE_ARGS=	--with-x-toolkit --sharedstatedir=/var/run
 USE_XLIB=	yes
 .else

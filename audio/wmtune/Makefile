@@ -26,12 +26,12 @@ PATCH_ARGS	=-p0 -d ${WRKDIR}
 
 .include <bsd.port.pre.mk>
 
-.if !defined(USE_RADIOTRACK)
+.if !defined(WITH_RADIOTRACK)
 WMTUNE_DIFF=	wmtune.diff.gz
 pre-fetch:
 	@${ECHO}
 	@${ECHO} "To enable support for RadioTrack radio cards,"
-	@${ECHO} "define USE_RADIOTRACK (make USE_RADIOTRACK=yes)."
+	@${ECHO} "define WITH_RADIOTRACK (make WITH_RADIOTRACK=yes)."
 	@${ECHO}
 	@sleep 3
 .else

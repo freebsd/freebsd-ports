@@ -13,7 +13,7 @@
  ##########################################################################
  ifeq ($(UNAME),FreeBSD)
  #  remove if you do not have GTK or do not want the GTK frame analyzer
-+ifndef NO_X11
++ifndef WITHOUT_X11
     GTK = -DHAVEGTK `gtk12-config --cflags`
     GTKLIBS = `gtk12-config --libs` 
 +endif

@@ -13,12 +13,12 @@ DISTNAME=	TiMidity++-${PORTVERSION}
 
 MAINTAINER=	yatt@msc.biglobe.ne.jp
 
-# If you don't have X11, type "make -DNO_X11" or uncomment this.
-#NO_X11=	yes
+# If you don't have X11, type "make -DWITHOUT_X11" or uncomment this.
+#WITHOUT_X11=	yes
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-.if !defined(NO_X11)
+.if !defined(WITHOUT_X11)
 USE_XLIB=	yes
 LIB_DEPENDS+=	png.3:${PORTSDIR}/graphics/png
 .endif
@@ -26,7 +26,7 @@ LIB_DEPENDS+=	png.3:${PORTSDIR}/graphics/png
 DIST_SUBDIR=	timidity
 INSTALL_TARGET=	install install.man
 
-.if !defined(NO_X11)
+.if !defined(WITHOUT_X11)
 CONFIGURE_ARGS=	--with-x --enable-ncurses --enable-vt100 \
 		--enable-dynamic --enable-server \
 		--enable-network --enable-spectrogram --enable-wrd
@@ -35,7 +35,7 @@ CONFIGURE_ARGS= --enable-ncurses --enable-vt100 \
 		--enable-network --disable-spectrogram --disable-wrd
 .endif
 
-.if defined(USE_ESOUND)
+.if defined(WITH_ESOUND)
 LIB_DEPENDS+=	esd.2:${PORTSDIR}/audio/esound
 CONFIGURE_ARGS+=	--enable-audio=oss,esd
 .else

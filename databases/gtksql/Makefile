@@ -14,34 +14,34 @@ MAINTAINER=	domi@saargate.de
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
-.if defined(PACKAGE_BUILDING) && !defined(USE_MYSQL) && !defined(USE_PGSQL)
-USE_MYSQL=	yes
+.if defined(PACKAGE_BUILDING) && !defined(WITH_MYSQL) && !defined(WITH_PGSQL)
+WITH_MYSQL=	yes
 .endif
 
-.if defined(USE_MYSQL)
+.if defined(WITH_MYSQL)
 LIB_DEPENDS +=	mysqlclient.6:${PORTSDIR}/databases/mysql322-client
 .endif
-.if defined(USE_PGSQL)
+.if defined(WITH_PGSQL)
 LIB_DEPENDS +=	pq.2:${PORTSDIR}/databases/postgresql
 .endif
 
 USE_X_PREFIX=	yes
 
 pre-patch:
-.if !defined(USE_MYSQL) && !defined(USE_PGSQL)
+.if !defined(WITH_MYSQL) && !defined(WITH_PGSQL)
 	@ ${ECHO} "You must specify which database to use, possible are:"
 	@ ${ECHO}
-	@ ${ECHO} "make USE_MYSQL=yes (for MySQL support)"
-	@ ${ECHO} "make USE_PGSQL=yes (for PostgreSQL support)"
-	@ ${ECHO} "make USE_MYSQL=yes USE_PGSQL=yes (for both MySQL and PostgreSQL support)"
+	@ ${ECHO} "make WITH_MYSQL=yes (for MySQL support)"
+	@ ${ECHO} "make WITH_PGSQL=yes (for PostgreSQL support)"
+	@ ${ECHO} "make WITH_MYSQL=yes WITH_PGSQL=yes (for both MySQL and PostgreSQL support)"
 	@ ${FALSE}
 .endif
 
 do-configure:
-.if defined(USE_MYSQL)
+.if defined(WITH_MYSQL)
 	@ ${PERL} -i -pe "s/^#MYSQL/MYSQL/g" ${WRKDIR}/${DISTNAME}/Makefile
 .endif
-.if defined(USE_PGSQL)
+.if defined(WITH_PGSQL)
 	@ ${PERL} -i -pe "s/^#PGSQL/PGSQL/g" ${WRKDIR}/${DISTNAME}/Makefile
 .endif
 

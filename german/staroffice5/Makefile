@@ -33,18 +33,18 @@ WRKSRC=		${WRKDIR}/so51inst
 
 .include <bsd.port.pre.mk>
 
-.if defined(USE_CDROM)
+.if defined(WITH_CDROM)
 .if !exists(${CD_MOUNTPT}/linux/office51/setup.zip)
 IGNORE= "Bitte mounten Sie die Sun StarOffice 5.1 CDROM and starten Sie make erneut."
 .endif
 .else	# FTP/web download
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}
 .if !exists(${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE="Bitte laden Sie ${DISTNAME}${EXTRACT_SUFX} manuell von http://www.sun.com/staroffice herunter. Kopieren Sie ${DISTNAME}${EXTRACT_SUFX} in das Verzeichnis ${_DISTDIR} und starten Sie make erneut.  Wenn Sie die StarOffice 5.1 CDROM besitzen, koennen Sie auch 'make USE_CDROM=yes' ausfuehren."
+IGNORE="Bitte laden Sie ${DISTNAME}${EXTRACT_SUFX} manuell von http://www.sun.com/staroffice herunter. Kopieren Sie ${DISTNAME}${EXTRACT_SUFX} in das Verzeichnis ${_DISTDIR} und starten Sie make erneut.  Wenn Sie die StarOffice 5.1 CDROM besitzen, koennen Sie auch 'make WITH_CDROM=yes' ausfuehren."
 .endif
 .endif
 
-.if defined(USE_CDROM)
+.if defined(WITH_CDROM)
 do-extract:
 	@${MKDIR} ${WRKSRC}/office51
 	@cd ${WRKSRC}/office51 && ${LN} -s ${CD_MOUNTPT}/linux/office51/* .

@@ -20,7 +20,7 @@ MAINTAINER=		ports@FreeBSD.org
 
 USE_AUTOCONF=		yes
 
-.if defined(NO_X11)
+.if defined(WIITHOUT_X11)
 CONFIGURE_ARGS=		--disable-gtk
 .else
 CONFIGURE_ARGS=		--with-xpm-includes=${X11BASE}/include --disable-gtk
@@ -29,7 +29,7 @@ LIB_DEPENDS=		Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_GMAKE=		yes
 
-.if defined(USE_SSL)
+.if defined(WITH_SSL)
 USE_OPENSSL=	RSA
 .else
 CONFIGURE_ARGS+=	--disable-ssl

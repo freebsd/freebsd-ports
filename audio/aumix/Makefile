@@ -17,7 +17,7 @@ MASTER_SITE_SUBDIR=	apps/sound/mixers
 MAINTAINER=	cpiazza@FreeBSD.org
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
-.if !defined(NO_X11)
+.if !defined(WITHOUT_X11)
 LIB_DEPENDS+=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
 GLIB_CONFIG=	${LOCALBASE}/bin/glib12-config
@@ -35,12 +35,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GLIB_CONFIG="${GLIB_CONFIG}" \
 		GTK_CONFIG="${GTK_CONFIG}" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-.if defined(NO_X11)
+.if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=	--without-gtk
 .else
 pre-fetch:
 	@${ECHO_MSG} -n "To build this port without X11 (and without the GUI),"
-	@${ECHO_MSG} " define \"NO_X11\"."
+	@${ECHO_MSG} " define \"WITHOUT_X11\"."
 .endif
 
 .include <bsd.port.mk>

@@ -27,37 +27,37 @@ MAN1=		xplanet.1 xplanetbg.1
 
 .include <bsd.port.pre.mk>
 
-.if (!defined(USE_TK80) && !defined(USE_TK81) && !defined(USE_TK82) && !defined(USE_TK83))
+.if (!defined(WITH_TK80) && !defined(WITH_TK81) && !defined(WITH_TK82) && !defined(WITH_TK83))
 .if exists(${LOCALBASE}/bin/wish8.3)
-USE_TK83=      yes
+WITH_TK83=      yes
 .elif exists(${LOCALBASE}/bin/wish8.2)
-USE_TK82=	yes
+WITH_TK82=	yes
 .elif exists(${LOCALBASE}/bin/wish8.1)
-USE_TK81=      yes
+WITH_TK81=      yes
 .else
-USE_TK80=	yes
+WITH_TK80=	yes
 .endif
 .endif
 
-.if defined(USE_TK80)
+.if defined(WITH_TK80)
 RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
 WISH=		${LOCALBASE}/bin/wish8.0
 TKVERMSG=	"Using Tk 8.0"
 .endif
 
-.if defined(USE_TK81)
+.if defined(WITH_TK81)
 RUN_DEPENDS=	wish8.1:${PORTSDIR}/x11-toolkits/tk81
 WISH=		${LOCALBASE}/bin/wish8.1
 TKVERMSG=	"Using Tk 8.1"
 .endif
 
-.if defined(USE_TK82)
+.if defined(WITH_TK82)
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 WISH=		${LOCALBASE}/bin/wish8.2
 TKVERMSG=	"Using Tk 8.2"
 .endif
 
-.if defined(USE_TK83)
+.if defined(WITH_TK83)
 RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 WISH=		${LOCALBASE}/bin/wish8.3
 TKVERMSG=	"Using Tk 8.3"
@@ -67,7 +67,7 @@ CONFIGURE_ENV+=	WISH=${WISH}
 
 pre-fetch:
 	@${ECHO} ${TKVERMSG}
-	@${ECHO} "Define USE_TK80, USE_TK81, USE_TK82, or USE_Tk83"
+	@${ECHO} "Define WITH_TK80, WITH_TK81, WITH_TK82, or WITH_TK83"
 	@${ECHO} "To use a different version of TK"
 
 pre-configure:

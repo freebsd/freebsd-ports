@@ -28,7 +28,6 @@ HAS_CONFIGURE=	yes
 XEMACS_ARCH=	${MACHINE_ARCH}--freebsd
 CONFIGURE_ARGS=	${XEMACS_ARCH} --prefix=${PREFIX} \
 		--with-mule \
-		${WITH_XIM} \
 		--with-xfs \
 		--with-clash-detection \
 		--lockdir=/var/run/emacs/lock \
@@ -36,20 +35,16 @@ CONFIGURE_ARGS=	${XEMACS_ARCH} --prefix=${PREFIX} \
 		--site-includes=${PREFIX}/include \
 		--site-libraries=${PREFIX}/lib \
 		--sitelispdir="${PREFIX}/lib/xemacs/site-lisp ${PREFIX}/share/emacs/site-lisp" \
-		--with-session=yes \
-		${WITH_MENUBARS} ${WITH_DIALOGS} \
-		${WITH_XFACE} ${WITH_OFFIX}
+		--with-session=yes
 MAN1=		ctags.1 etags.1 gnuattach.1 gnuclient.1 gnudoit.1 \
 		gnuserv.1 xemacs.1
 ALL_TARGET=	all dist
 PLIST_SUB=	XEMACS_VER=20.4 XEMACS_ARCH=${XEMACS_ARCH}
 
 .if defined(REAL_MOTIF)
-WITH_MENUBARS=	--with-menubars=lucid
-WITH_XIM=	--with-xim=motif
+CONFIGURE_ARGS+= --with-menubars=lucid --with-xim=motif
 .else
-WITH_MENUBARS=	--with-menubars=lucid
-WITH_XIM=	--with-xim=xlib
+CONFIGURE_ARGS+= --with-menubars=lucid --with-xim=xlib
 .endif
 
 # Have
@@ -69,14 +64,13 @@ pre-configure:
 
 # hack to avoid shipping binaries linked with Motif
 .if defined(MOTIF_STATIC)
-WITH_DIALOGS=	--with-dialogs=athena
+CONFIGURE_ARGS+= --with-dialogs=athena
 .endif
 
 # Drop faces (libcompface) and offix (libDnd) if building package,
 # autodetect otherwise
 .if defined(PACKAGE_BUILDING)
-WITH_XFACE?=	--with-xface=no
-WITH_OFFIX?=	--with-offix=no
+CONFIGURE_ARGS+= --with-xface=no --with-offix=no
 .endif
 
 post-install:

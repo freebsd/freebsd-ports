@@ -4,10 +4,6 @@
 #
 # $FreeBSD$
 #
-# If you don't want to use Joerg Schilling's SCSI library,
-# set DONT_USE_SCGLIB = yes
-# If you don't want to use pthreads, set DONT_USE_PTHREADS = yes
-# If you want the graphical X toc file editor, set XCDRDAO = yes
 
 PORTNAME=		cdrdao
 PORTVERSION=		1.1.3
@@ -45,18 +41,21 @@ PLIST=${PKGDIR}/PLIST.xcdrdao
 CONFIGURE_ARGS= 	--disable-gtkmmtest
 .endif
 
-.if defined(DONT_USE_SCGLIB) && ${OSVERSION} > 300000
+.if defined(WITHOUT_SCGLIB) && ${OSVERSION} > 300000
 CONFIGURE_ARGS+= 	--without-scglib
 .endif
 
-.if defined(DONT_USE_PTHREADS) && ${OSVERSION} > 320000
+.if defined(WITHOUT_PTHREADS) && ${OSVERSION} > 320000
 CONFIGURE_ARGS+=	--without-posix-threads
 .endif
 
 pre-fetch:
+	@${ECHO_MSG} "If you don't want to use Joerg Schilling's SCSI library,"
+	@${ECHO_MSG} "set WITHOUT_SCGLIB=yes."
+	@${ECHO_MSG} "If you don't want to use pthreads, set WITHOUT_PTHREADS=yes."
 .if !defined(XCDRDAO)
 	@${ECHO_MSG} "To build the graphical X toc file editor, xcdrdao, type:"
-	@${ECHO_MSG} "    make XCDRDAO=yes"
+	@${ECHO_MSG} "    make XCDRDAO=yes."
 .else
 	@${ECHO_MSG} "Building with xcdrdao"
 .endif
