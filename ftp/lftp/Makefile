@@ -1,12 +1,12 @@
 # New ports collection makefile for:	lftp
-# Version required:			2.1.5
+# Version required:			2.1.6
 # Date created:				11 September 1997
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=	lftp-2.1.5
+DISTNAME=	lftp-2.1.6
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/net/ftp/client/lftp/ \
 		${MASTER_SITE_SUNSITE}
