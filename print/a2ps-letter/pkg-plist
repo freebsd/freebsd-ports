@@ -246,7 +246,6 @@ info/regex.info
 info/regex.info-1
 info/regex.info-2
 info/regex.info-3
-info/a2ps.info
 @exec install-info --info-dir=%D/info %D/info/a2ps.info
 @exec install-info --info-dir=%D/info %D/info/ogonkify.info
 man/man1/a2ps.1.gz
