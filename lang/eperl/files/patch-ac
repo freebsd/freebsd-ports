@@ -1,0 +1,11 @@
+--- eperl_perl5.c.orig	Fri Sep  8 00:29:14 2000
++++ eperl_perl5.c	Fri Sep  8 00:29:27 2000
+@@ -33,6 +33,8 @@
+ **  eperl_perl5.c -- ePerl Perl5 related stuff
+ */
+ 
++#define PERL_POLLUTE
++
+ #include "eperl_config.h"
+ #include "eperl_global.h"
+ #include "eperl_perl5.h"
