@@ -7,7 +7,7 @@
 
 PORTNAME=	straw
 PORTVERSION=	0.25.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,6 +24,8 @@ USE_PYDISTUTILS=	yes
 PYDISTUTILS_INSTALLARGS=	-c -O1 --prefix=${PREFIX} \
 				--install-lib=${PREFIX}/share/gnome \
 				--with-desktop-file-dir=share/gnome/applications
+
+GCONF_SCHEMAS=	straw.schemas
 
 .include <bsd.port.pre.mk>
 
