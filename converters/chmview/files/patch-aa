@@ -1,0 +1,9 @@
+diff -r -u ../src/chmlib.h ./chmlib.h
+--- ../src/chmlib.h	Sun Dec  1 01:26:02 2002
++++ ./chmlib.h	Fri Mar 28 17:40:39 2003
+@@ -129,3 +129,5 @@
+ chmfile *chm_openfile(char *fname);
+ 
+ void chm_close(chmfile *l);
++
++#define MODE 0755

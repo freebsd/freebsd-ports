@@ -4,6 +4,7 @@
     SUBDIR += aish
     SUBDIR += base64
     SUBDIR += btoa
+    SUBDIR += chmview
     SUBDIR += cn2jp
     SUBDIR += dosunix
     SUBDIR += dumpasn1
