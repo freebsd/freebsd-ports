@@ -102,6 +102,7 @@ lib/tk%%TK_VER%%/demos/tcolor
 lib/tk%%TK_VER%%/demos/text.tcl
 lib/tk%%TK_VER%%/demos/timer
 lib/tk%%TK_VER%%/demos/twind.tcl
+lib/tk%%TK_VER%%/demos/unicodeout.tcl
 lib/tk%%TK_VER%%/demos/vscale.tcl
 lib/tk%%TK_VER%%/demos/widget
 lib/tk%%TK_VER%%/dialog.tcl

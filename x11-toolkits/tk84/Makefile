@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tk
-PORTVERSION=	8.4.1
+PORTVERSION=	8.4.2
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -16,8 +16,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION}-src
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Graphical toolkit for TCL
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/lang/tcl84:build
-LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${TCL84_PORT}:build
+LIB_DEPENDS=	tcl84.1:${PORTSDIR}/${TCL84_PORT}
 
 LATEST_LINK=	tk84
 USE_XLIB=	yes
@@ -33,6 +33,8 @@ PLIST_SUB=	TK_VER=${TK_VER} SHORT_TK_VER=${SHORT_TK_VER}
 PKGINSTALL=	${PKGDIR}/pkg-install.wish
 PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.wish
 NOPRECIOUSMAKEVARS=	yes # Otherwise 'make readmes' is broken
+TCL84_PORT?=	lang/tcl84
+USE_REINPLACE=	YES
 
 MANCOMPRESSED=	no
 
@@ -337,6 +339,10 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 	text.n tk_textCopy.n \
 	text.n tk_textCut.n \
 	text.n tk_textPaste.n
+
+post-configure:
+	${REINPLACE_CMD} -e 's=${WRKDIRPREFIX}=$${WRKDIRPREFIX}=' \
+		${WRKSRC}/tkConfig.sh
 
 .include <bsd.port.pre.mk>
 
