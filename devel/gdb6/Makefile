@@ -1,12 +1,12 @@
 # ex:ts=8
-# Ports collection makefile for:	GDB 5.1
+# Ports collection makefile for:	GDB 6
 # Date created:				30 March 2001
 # Whom:					David O'Brien <obrien@NUXI.com>
 #
 # $FreeBSD$
 #
 
-SNAPDATE=	2004-08-03
+SNAPDATE=	2004-08-10
 SNAPVER=	${SNAPDATE:S/-//g}
 
 PORTNAME=	gdb

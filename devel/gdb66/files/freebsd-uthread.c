@@ -664,14 +664,14 @@ freebsd_uthread_store_registers (int regno)
 	  /* Hang onto cached value */
 /*DEO:XXX*/
 	  memcpy(reg, deprecated_registers /*regcache_collect ()*/+ DEPRECATED_REGISTER_BYTE (regno),
-		 DEPRECATED_REGISTER_RAW_SIZE (regno));
+		 register_size (current_gdbarch, regno));
 
 	  /* And push out to inferior */
 	  off = (char *) reg - (char *) thread;
 	  write_memory (ptr + off, 
 /*DEO:XXX*/
 			deprecated_registers /*regcache_collect ()*/+ DEPRECATED_REGISTER_BYTE (regno),
-			DEPRECATED_REGISTER_RAW_SIZE (regno));
+			register_size (current_gdbarch, regno));
 	}
     }
 }
