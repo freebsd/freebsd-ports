@@ -40,6 +40,7 @@
     SUBDIR += jdom
     SUBDIR += jfc
     SUBDIR += jikes
+    SUBDIR += jikes-devel
     SUBDIR += jlex
     SUBDIR += jlint
     SUBDIR += jre
