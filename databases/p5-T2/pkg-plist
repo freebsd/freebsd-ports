@@ -1,0 +1,14 @@
+bin/t2-db-info.pl
+bin/t2-fsck-schema.pl
+bin/t2-migrate-db.pl
+bin/t2-write-js.pl
+lib/perl5/site_perl/5.8.2/T2.pm
+lib/perl5/site_perl/5.8.2/T2/Association.pm
+lib/perl5/site_perl/5.8.2/T2/Attribute.pm
+lib/perl5/site_perl/5.8.2/T2/Class.pm
+lib/perl5/site_perl/5.8.2/T2/Method.pm
+lib/perl5/site_perl/5.8.2/T2/Schema.pm
+lib/perl5/site_perl/5.8.2/T2/Storage.pm
+lib/perl5/site_perl/5.8.2/mach/auto/T2/.packlist
+@dirrm lib/perl5/site_perl/5.8.2/mach/auto/T2
+@dirrm lib/perl5/site_perl/5.8.2/T2

@@ -1,0 +1,22 @@
+The T2 module is a base for the refactoring of the now quite stable
+Tangram Object-Relational mapper.
+
+In a nutshell, it lets you store objects - which have to be described to a
+similar level that you would describe a database to store them - into any
+SQL store. Currently, this is tested on PostgreSQL, MySQL, Oracle and
+Sybase a lot, though in general database-specific extensions to SQL, such
+as triggers, stored procedures, etc are avoided. So, if DBI installs and
+tests successfully with your database, there is a good chance that T2 will
+work with it too.
+
+The only current requirement is that objects that have tables associated
+with them are implemented via hashes. You also have to be able to describe
+all of the fields for those root objects. Individual fields of stored
+objects may be arbitrarily complex.
+
+If you are familiar with DBI, it is somewhat similar to bless'ing the
+structures returned by $dbh->fetchrow_hashref, except that references and
+collections to other objects in the store are loaded `on demand' (aka
+Lazy-loading).
+
+WWW: http://search.cpan.org/dist/T2/
