@@ -10,7 +10,7 @@ PORTVERSION=	0.92
 CATEGORIES=	www
 MASTER_SITES=	http://www.blarg.net/~abowhill/
 
-MAINTAINER=	abowhill@blarg.net
+MAINTAINER=	allanb@u.washington.edu
 COMMENT=	CGI program to deliver hierarchy of web links
 
 HAS_CONFIGURE=	yes
