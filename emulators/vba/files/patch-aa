@@ -1,19 +1,11 @@
-*** src/SDL.cpp.orig	Sun Jan 11 22:20:00 2004
---- src/SDL.cpp	Sun Jan 11 22:17:23 2004
-***************
-*** 625,631 ****
-    }
-  #else
-  #define SDL_CALL_STRETCHER \
-!         asm volatile("call *%%eax"::"a" (stretcher),"S" (src),"D" (dest))
-  #endif
-  #else
-  #define SDL_CALL_STRETCHER \
---- 625,631 ----
-    }
-  #else
-  #define SDL_CALL_STRETCHER \
-! //        asm volatile("call *%%eax"::"a" (stretcher),"S" (src),"D" (dest))
-  #endif
-  #else
-  #define SDL_CALL_STRETCHER \
+--- src/SDL.cpp.orig	Sun Feb  8 14:45:01 2004
++++ src/SDL.cpp		Tue Feb 10 14:45:09 2004
+@@ -621,7 +621,7 @@
+   }
+ #else
+ #define SDL_CALL_STRETCHER \
+-        asm volatile("call *%%eax"::"a" (stretcher),"S" (src),"D" (dest))
++        asm volatile("call *%%eax" : "=a" (stretcher),"=S" (src),"=D" (dest))
+ #endif
+ #else
+ #define SDL_CALL_STRETCHER \
