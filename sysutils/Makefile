@@ -259,6 +259,7 @@
     SUBDIR += maint
     SUBDIR += makefs
     SUBDIR += manck
+    SUBDIR += mapchan
     SUBDIR += mcron
     SUBDIR += memdump
     SUBDIR += memfetch
