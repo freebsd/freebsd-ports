@@ -231,6 +231,7 @@
     SUBDIR += taucs
     SUBDIR += thx_1138
     SUBDIR += topaz
+    SUBDIR += triangle
     SUBDIR += tvmet
     SUBDIR += umatrix
     SUBDIR += umfpack
