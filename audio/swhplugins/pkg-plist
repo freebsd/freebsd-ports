@@ -95,4 +95,4 @@ share/ladspa/rdf/swh-scales.rdf
 %%NLS%%share/locale/en_GB/LC_MESSAGES/swh-plugins.mo
 @unexec rmdir %D/share/ladspa/rdf 2>/dev/null || true
 @unexec rmdir %D/share/ladspa 2>/dev/null || true
-@unexec rmdir %D/libladspa 2>/dev/null || true
+@unexec rmdir %D/lib/ladspa 2>/dev/null || true
