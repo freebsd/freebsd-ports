@@ -1,0 +1,20 @@
+--- README.orig	Fri Jun 28 07:45:03 2002
++++ README	Fri Jun 28 07:46:06 2002
+@@ -73,7 +73,7 @@
+                 [-P #] [-s] [-v] [-C dir [-H]] [-n]
+ 
+  -a     display a little rotating thingy to indicate that I am alive (tty only).
+- -c c   squid.conf location, default "/usr/local/squid/etc/squid.conf".
++ -c c   squid.conf location, default "/usr/local/etc/squid/squid.conf".
+  -C dir base directory for content extraction (copy-out mode).
+  -d l   debug level, an OR of different debug options.
+  -e re  single regular expression per -e instance (use quotes!).
+@@ -111,7 +111,7 @@
+ 	of Squid-2 cache_dir specifications, and will automatically try
+ 	to use the correct one.
+ 
+-	default: /usr/local/squid/etc/squid.conf
++	default: /usr/local/etc/squid/squid.conf
+ 
+ -C cd	if you want to rescue files from your cache, you need to specify
+ 	the directory into which the files will be copied. Please note

@@ -1,4 +1,4 @@
-# New ports collection makefile for:	squid-purge
+# New ports collection makefile for:	squidpurge
 # Date created:				Fri Oct 19 23:00:00 WST 2001
 # Whom:				Dean Hollister <dean@odyssey.apana.org.au>
 #
@@ -7,6 +7,7 @@
 
 PORTNAME=	squidpurge
 PORTVERSION=	1.17
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.cache.dfn.de/DFN-Cache/Development/Purge/ \
 		http://www.wa.apana.org.au/~dean/sources/ \
