@@ -207,12 +207,11 @@ pre-fetch:
 	@${ECHO}
 	@${ECHO} Openoffice needs a larger stack- and
 	@${ECHO} datasize to build. Check your limit
-	@${ECHO} settings and add this to your KERNEL
-	@${ECHO} configuration if necessary:
-	@${ECHO}
-	@${ECHO} options	MAXDSIZ=\"\(1024*1024*1024\)\"
-	@${ECHO} options	MAXSSIZ=\"\(256*1024*1024\)\"
-	@${ECHO}
+	@${ECHO} settings and and put this in /boot/loader.conf
+	@${ECHO} if neccessary:
+	@${ECHO} 
+	@${ECHO} kern.maxdsiz=\"1073741824\"
+	@${ECHO} kern.maxssiz=\"268435456\"
 .endif
 .if !exists(/usr/include/langinfo.h)
 	@${ECHO}
