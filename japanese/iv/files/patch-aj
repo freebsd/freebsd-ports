@@ -4,7 +4,7 @@
  #ifdef InObjectCodeDir
  
  LIB = Unidraw
-+.if ${PORTOBJFORMAT} == "elf"
++.if defined(PORTOBJFORMAT) && ($(PORTOBJFORMAT) == "elf")
 +VERSION = 3
 +.else
  VERSION = 3.1
