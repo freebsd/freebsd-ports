@@ -21,6 +21,7 @@
     SUBDIR += astrolog
     SUBDIR += bb
     SUBDIR += bbjd
+    SUBDIR += bestfit
     SUBDIR += biblereader
     SUBDIR += bidwatcher
     SUBDIR += birthday
