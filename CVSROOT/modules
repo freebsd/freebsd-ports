@@ -971,8 +971,7 @@ date		src/bin/date
 datedif		ports/misc/datedif
 db		ports/databases/db
 db3		ports/databases/db3
-db3-latest	ports/databases/db3-latest
-db4			ports/databases/db4
+db4		ports/databases/db4
 dbconnect	ports/databases/dbconnect
 dbf2mysql	ports/databases/dbf2mysql
 dbmetrix	ports/databases/dbmetrix
