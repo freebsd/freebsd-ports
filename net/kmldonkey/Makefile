@@ -6,27 +6,19 @@
 #
 
 PORTNAME=	kmldonkey
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	net kde
-MASTER_SITES=	http://www.gibreel.net/dump/
+MASTER_SITES=	http://savannah.nongnu.org/download/kmldonkey/unstable.pkg/%SUBDIR%/
+MASTER_SITE_SUBDIR=	${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	KDE integration for MLDonkey eDonkey P2P client
 
-RUN_DEPENDS=	 \
-	${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
-
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
-USE_PYTHON=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name=''
 INSTALLS_SHLIB=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -E -e \
-		's|/usr/bin/env python|${LOCALBASE}/bin/python|' \
-		${WRKSRC}/scripts/*.py
 
 .include <bsd.port.mk>

@@ -1,5 +1,4 @@
-bin/mldonkey_slurp.py
-bin/mldonkey_submit.py
+bin/kmldonkey_submit
 lib/kde3/kcm_kcmdonkey.la
 lib/kde3/kcm_kcmdonkey.so
 lib/kde3/mldonkeyapplet.la
