@@ -12,7 +12,7 @@ MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 
 RUN_DEPENDS=	${PREFIX}/System/Makefiles/GNUstep.sh:${PORTSDIR}/devel/gnustep-make \
 		${SYSLIBDIR}/libobjc.so:${PORTSDIR}/lang/gnustep-objc \

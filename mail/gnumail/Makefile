@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.collaboration-world.com/mirror/ \
 		http://extrovert.screwdriver.net/~extra/
 DISTNAME=	GNUMail-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 
 BUILD_DEPENDS=	${XGPSBUNDLEDIR}/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu/libgnustep-xgps:${PORTSDIR}/x11-toolkits/gnustep-xgps \
 		${LOCALLIBDIR}/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu/libPantomime.so:${PORTSDIR}/mail/pantomime

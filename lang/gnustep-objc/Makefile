@@ -10,7 +10,7 @@ PORTVERSION=	1.2.2
 CATEGORIES=	lang devel
 MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/libs/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 
 BUILD_DEPENDS=	${SYSTEMDIR}/Makefiles/GNUstep.sh:${PORTSDIR}/devel/gnustep-make \
 		${LOCALBASE}/lib/libcallback.a:${PORTSDIR}/devel/ffcall

@@ -10,10 +10,10 @@ PORTVERSION=	1.0.3
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/libs/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 
-BUILD_DEPENDS=	${SYSLIBDIR}/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base
-RUN_DEPENDS=	${SYSLIBDIR}/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base
+BUILD_DEPENDS=	${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base
+RUN_DEPENDS=	${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base
 LIB_DEPENDS=	guile.9:${PORTSDIR}/lang/guile
 
 .include <bsd.port.pre.mk>
@@ -40,7 +40,7 @@ GNU_ARCH=	${MACHINE_ARCH}
 .endif
 PLIST_SUB+=	GNU_ARCH=${GNU_ARCH} OPSYS=${OPSYS:L} VERSION=${PORTVERSION}
 
-SYSLIBDIR=	${PREFIX}/System/Libraries
+COMBOLIBDIR=	${PREFIX}/System/Libraries/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu
 
 do-configure:
 	@(cd ${WRKSRC}; . ${PREFIX}/System/Makefiles/GNUstep.sh; \

@@ -10,11 +10,11 @@ PORTVERSION=	1.3.2
 CATEGORIES=	lang devel
 MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/core/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 
-BUILD_DEPENDS=	${SYSLIBDIR}/${GNU_ARCH}/${OPSYS:L}/libobjc.so:${PORTSDIR}/lang/gnustep-objc
+BUILD_DEPENDS=	${SYSLIBDIR}/libobjc.so:${PORTSDIR}/lang/gnustep-objc
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
-RUN_DEPENDS=	${SYSLIBDIR}/${GNU_ARCH}/${OPSYS:L}/libobjc.so:${PORTSDIR}/lang/gnustep-objc
+RUN_DEPENDS=	${SYSLIBDIR}/libobjc.so:${PORTSDIR}/lang/gnustep-objc
 
 BREAKS_IF_PEDANTIC=	yes
 
@@ -44,8 +44,8 @@ GNU_ARCH=	${MACHINE_ARCH}
 PLIST_SUB+=	GNU_ARCH=${GNU_ARCH} OPSYS=${OPSYS:L} VERSION=${PORTVERSION} \
 		MAJORVERSION=${PORTVERSION:C/([0-9]).*/\1/1}
 ETCDIR=		${PREFIX}/../etc
-SYSTEMDIR=	${LOCALBASE}/GNUstep/System
-SYSLIBDIR=	${SYSTEMDIR}/Libraries
+SYSTEMDIR=	${PREFIX}/System
+SYSLIBDIR=	${SYSTEMDIR}/Libraries/${GNU_ARCH}/${OPSYS:L}
 
 do-configure:
 	@(cd ${WRKSRC}; . ${SYSTEMDIR}/Makefiles/GNUstep.sh; \

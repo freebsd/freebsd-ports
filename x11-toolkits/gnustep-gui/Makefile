@@ -12,11 +12,13 @@ MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/core/ \
 		http://ftp.codefactory.se/pub/gnu/gstep/ \
 		http://planetmirror.com/pub/gnustep/core/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 
-BUILD_DEPENDS=	${SYSLIBDIR}/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base
-RUN_DEPENDS=	${SYSLIBDIR}/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base
+BUILD_DEPENDS=	${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base
+RUN_DEPENDS=	${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
+
+BREAKS_IF_PEDANTIC=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -41,7 +43,7 @@ GNU_ARCH=	${MACHINE_ARCH}
 PLIST_SUB+=	GNU_ARCH=${GNU_ARCH} OPSYS=${OPSYS:L} VERSION=${PORTVERSION} \
 		MAJORVERSION=${PORTVERSION:C/([0-9]).*/\1/1}
 
-SYSLIBDIR=	${PREFIX}/System/Libraries
+COMBOLIBDIR=	${PREFIX}/System/Libraries/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu
 
 post-extract:
 .for file in config.guess config.sub install-sh

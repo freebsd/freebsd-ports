@@ -10,7 +10,7 @@ PORTVERSION=	1.3.2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/core/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 
 .include <bsd.port.pre.mk>
 
