@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	cal.rb
-PORTVERSION=	0.21
+PORTVERSION=	1.11
 CATEGORIES=	japanese deskutils
 MASTER_SITES=	http://aglaia.c.u-tokyo.ac.jp/~yamamoto/Script/Calendar/
 DISTFILES=	cal.rb Calendar.rb era_name
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	fuyuki@hadaly.org
+COMMENT=	Displays a Japanese calendar
 
 USE_RUBY=	yes
 RUBY_SHEBANG_FILES=	${WRKSRC}/cal.rb
