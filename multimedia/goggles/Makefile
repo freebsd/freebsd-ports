@@ -46,7 +46,7 @@ DEFAULT_DVD_DEVICE=/dev/acd0
 .endif
 .endif
 
-PLIST_BIN=	\
+PLIST_FILES=	\
 		bin/goggles \
 		bin/ogle_gui_goggles
 #
