@@ -46,6 +46,7 @@
     SUBDIR += docbookide.el
     SUBDIR += docproj
     SUBDIR += docproj-jadetex
+    SUBDIR += docproj-nojadetex
     SUBDIR += dsssl-docbook-cygnus
     SUBDIR += dsssl-docbook-modular
     SUBDIR += dtd-catalogs
