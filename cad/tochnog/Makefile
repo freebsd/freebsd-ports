@@ -76,7 +76,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/tochnog/gid/tochnog.gid/tochnog.ba*	\
 	  ${GID_PREFIX}/tochnog.gid
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${EXAMPLESDIR}/test
+	${MKDIR} ${EXAMPLESDIR}
 	@${RM} -f ${WRKDIR}/tochnog/test/*.orig
 	${INSTALL_DATA} ${WRKDIR}/tochnog/test/* ${EXAMPLESDIR}
 .endif
