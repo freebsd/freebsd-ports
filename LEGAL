@@ -84,8 +84,7 @@ djbdns			ports/net/djbdns	no license--see
 						http://cr.yp.to/softwarelaw.html
 djbfft			ports/math/djbfft	no license--see
 						http://cr.yp.to/softwarelaw.html
-dnews			ports/news/dnews	Same as dnews3.
-dnews3			ports/news/dnews	Only free for schools and
+dnews			ports/news/dnews	Only free for schools and
 						universities, but they have to
 						register as well. 4 weeks of
 						free trial for everybody.
