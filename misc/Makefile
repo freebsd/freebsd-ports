@@ -34,6 +34,7 @@
     SUBDIR += buffer
     SUBDIR += cassowary
     SUBDIR += cave
+    SUBDIR += cfe
     SUBDIR += cheatah
     SUBDIR += chord
     SUBDIR += cmatrix
