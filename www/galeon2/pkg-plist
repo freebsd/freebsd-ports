@@ -6,7 +6,6 @@ etc/gconf/gconf.xml.defaults/apps/galeon/Advanced/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/galeon/Advanced/Filtering/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/galeon/Advanced/Network/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/galeon/Advanced/Persistent/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/galeon/Advanced/Security/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/galeon/Browsing/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/galeon/Browsing/Bookmarks/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/galeon/Browsing/Bookmarks/Editor/%gconf.xml
@@ -31,7 +30,6 @@ etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Advanced/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Advanced/Filtering/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Advanced/Network/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Advanced/Persistent/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Advanced/Security/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Browsing/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Browsing/Bookmarks/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Browsing/Bookmarks/Editor/%gconf.xml
@@ -75,6 +73,8 @@ share/gnome/galeon/galeon-bookmark-alias-mark.png
 share/gnome/galeon/galeon-bookmark.png
 share/gnome/galeon/galeon-default-open.png
 share/gnome/galeon/galeon-default.png
+share/gnome/galeon/galeon-egg-ui-toolbar.xml
+share/gnome/galeon/galeon-egg-ui.xml
 share/gnome/galeon/galeon-folder-open.png
 share/gnome/galeon/galeon-folder.png
 share/gnome/galeon/galeon-fullscreen.png
@@ -94,6 +94,7 @@ share/gnome/galeon/galeon-send-link.png
 share/gnome/galeon/galeon-separator.png
 share/gnome/galeon/galeon-tab-loading.gif
 share/gnome/galeon/galeon-viewsource.png
+share/gnome/galeon/galeon-zoom.png
 share/gnome/galeon/galeon.glade
 share/gnome/galeon/galeon.png
 share/gnome/galeon/gnu.png
@@ -117,78 +118,45 @@ share/gnome/galeon/rpm.png
 share/gnome/galeon/slack.png
 share/gnome/galeon/smart-bm-fold.png
 share/gnome/galeon/smart-bm-unfold.png
-share/gnome/galeon/spinners/crashcut/001.png
-share/gnome/galeon/spinners/crashcut/002.png
-share/gnome/galeon/spinners/crashcut/003.png
-share/gnome/galeon/spinners/crashcut/004.png
-share/gnome/galeon/spinners/crashcut/005.png
-share/gnome/galeon/spinners/crashcut/006.png
-share/gnome/galeon/spinners/crashcut/007.png
-share/gnome/galeon/spinners/crashcut/008.png
-share/gnome/galeon/spinners/crashcut/009.png
-share/gnome/galeon/spinners/crashcut/010.png
-share/gnome/galeon/spinners/crashcut/011.png
-share/gnome/galeon/spinners/crashcut/012.png
-share/gnome/galeon/spinners/crashcut/rest.png
-share/gnome/galeon/spinners/galeon/001.png
-share/gnome/galeon/spinners/galeon/002.png
-share/gnome/galeon/spinners/galeon/003.png
-share/gnome/galeon/spinners/galeon/004.png
-share/gnome/galeon/spinners/galeon/005.png
-share/gnome/galeon/spinners/galeon/006.png
-share/gnome/galeon/spinners/galeon/007.png
-share/gnome/galeon/spinners/galeon/008.png
-share/gnome/galeon/spinners/galeon/009.png
-share/gnome/galeon/spinners/galeon/010.png
-share/gnome/galeon/spinners/galeon/011.png
-share/gnome/galeon/spinners/galeon/012.png
-share/gnome/galeon/spinners/galeon/013.png
-share/gnome/galeon/spinners/galeon/014.png
-share/gnome/galeon/spinners/galeon/015.png
-share/gnome/galeon/spinners/galeon/016.png
-share/gnome/galeon/spinners/galeon/017.png
-share/gnome/galeon/spinners/galeon/018.png
-share/gnome/galeon/spinners/galeon/019.png
-share/gnome/galeon/spinners/galeon/020.png
-share/gnome/galeon/spinners/galeon/021.png
-share/gnome/galeon/spinners/galeon/022.png
-share/gnome/galeon/spinners/galeon/023.png
-share/gnome/galeon/spinners/galeon/024.png
-share/gnome/galeon/spinners/galeon/025.png
-share/gnome/galeon/spinners/galeon/026.png
-share/gnome/galeon/spinners/galeon/027.png
-share/gnome/galeon/spinners/galeon/rest.png
-share/gnome/galeon/spinners/pipeon/001.png
-share/gnome/galeon/spinners/pipeon/002.png
-share/gnome/galeon/spinners/pipeon/003.png
-share/gnome/galeon/spinners/pipeon/004.png
-share/gnome/galeon/spinners/pipeon/005.png
-share/gnome/galeon/spinners/pipeon/006.png
-share/gnome/galeon/spinners/pipeon/007.png
-share/gnome/galeon/spinners/pipeon/008.png
-share/gnome/galeon/spinners/pipeon/009.png
-share/gnome/galeon/spinners/pipeon/010.png
-share/gnome/galeon/spinners/pipeon/011.png
-share/gnome/galeon/spinners/pipeon/012.png
-share/gnome/galeon/spinners/pipeon/013.png
-share/gnome/galeon/spinners/pipeon/014.png
-share/gnome/galeon/spinners/pipeon/rest.png
 share/gnome/galeon/stocks.png
 share/gnome/galeon/toolbar-editor.glade
 share/gnome/gnome-2.0/ui/galeon-bookmarks-editor-ui.xml
-share/gnome/gnome-2.0/ui/galeon-ui.xml
 share/gnome/help/galeon/C/apx-authors.xml
 share/gnome/help/galeon/C/apx-bugs.xml
 share/gnome/help/galeon/C/apx-command-line.xml
 share/gnome/help/galeon/C/apx-compiling.xml
+share/gnome/help/galeon/C/apx-keyboard-shortcuts.xml
+share/gnome/help/galeon/C/apx-mouse-gestures.xml
 share/gnome/help/galeon/C/apx-troubleshooting.xml
 share/gnome/help/galeon/C/bookmarks.xml
 share/gnome/help/galeon/C/browser-window.xml
 share/gnome/help/galeon/C/figures/bookmarks-editor.png
 share/gnome/help/galeon/C/figures/browser-window.png
 share/gnome/help/galeon/C/figures/find-dialog.png
+share/gnome/help/galeon/C/figures/gesture-back.png
+share/gnome/help/galeon/C/figures/gesture-clone-tab.png
+share/gnome/help/galeon/C/figures/gesture-clone-window.png
+share/gnome/help/galeon/C/figures/gesture-close-2.png
+share/gnome/help/galeon/C/figures/gesture-close.png
+share/gnome/help/galeon/C/figures/gesture-contents.png
+share/gnome/help/galeon/C/figures/gesture-forward.png
+share/gnome/help/galeon/C/figures/gesture-fullscreen.png
+share/gnome/help/galeon/C/figures/gesture-homepage.png
+share/gnome/help/galeon/C/figures/gesture-new-tab.png
+share/gnome/help/galeon/C/figures/gesture-new-window.png
+share/gnome/help/galeon/C/figures/gesture-next-link.png
+share/gnome/help/galeon/C/figures/gesture-next-tab.png
+share/gnome/help/galeon/C/figures/gesture-prev-link.png
+share/gnome/help/galeon/C/figures/gesture-prev-tab.png
+share/gnome/help/galeon/C/figures/gesture-reload-bypass.png
+share/gnome/help/galeon/C/figures/gesture-reload.png
+share/gnome/help/galeon/C/figures/gesture-stop.png
+share/gnome/help/galeon/C/figures/gesture-up.png
+share/gnome/help/galeon/C/figures/gesture-view-source.png
 share/gnome/help/galeon/C/figures/othertools-history.png
 share/gnome/help/galeon/C/figures/othertools-pdm.png
+share/gnome/help/galeon/C/figures/othertools-toolbar-editor.png
+share/gnome/help/galeon/C/figures/statusbar.png
 share/gnome/help/galeon/C/figures/tabbed-browsing.png
 share/gnome/help/galeon/C/figures/toolbars-bookmarks.png
 share/gnome/help/galeon/C/figures/toolbars-main.png
@@ -240,6 +208,7 @@ share/locale/ro/LC_MESSAGES/galeon-2.0.mo
 share/locale/ru/LC_MESSAGES/galeon-2.0.mo
 share/locale/sk/LC_MESSAGES/galeon-2.0.mo
 share/locale/sl/LC_MESSAGES/galeon-2.0.mo
+share/locale/sq/LC_MESSAGES/galeon-2.0.mo
 share/locale/sr/LC_MESSAGES/galeon-2.0.mo
 share/locale/sr@Latn/LC_MESSAGES/galeon-2.0.mo
 share/locale/sv/LC_MESSAGES/galeon-2.0.mo
@@ -255,10 +224,6 @@ share/locale/zh_TW/LC_MESSAGES/galeon-2.0.mo
 @dirrm share/gnome/help/galeon/C/figures
 @dirrm share/gnome/help/galeon/C
 @dirrm share/gnome/help/galeon
-@dirrm share/gnome/galeon/spinners/pipeon
-@dirrm share/gnome/galeon/spinners/galeon
-@dirrm share/gnome/galeon/spinners/crashcut
-@dirrm share/gnome/galeon/spinners
 @dirrm share/gnome/galeon
 @dirrm lib/galeon/components
 @dirrm lib/galeon
@@ -281,7 +246,6 @@ share/locale/zh_TW/LC_MESSAGES/galeon-2.0.mo
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Browsing/Bookmarks/Editor
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Browsing/Bookmarks
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Browsing
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Advanced/Security
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Advanced/Persistent
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Advanced/Network
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Advanced/Filtering
@@ -306,7 +270,6 @@ share/locale/zh_TW/LC_MESSAGES/galeon-2.0.mo
 @dirrm etc/gconf/gconf.xml.defaults/apps/galeon/Browsing/Bookmarks/Editor
 @dirrm etc/gconf/gconf.xml.defaults/apps/galeon/Browsing/Bookmarks
 @dirrm etc/gconf/gconf.xml.defaults/apps/galeon/Browsing
-@dirrm etc/gconf/gconf.xml.defaults/apps/galeon/Advanced/Security
 @dirrm etc/gconf/gconf.xml.defaults/apps/galeon/Advanced/Persistent
 @dirrm etc/gconf/gconf.xml.defaults/apps/galeon/Advanced/Network
 @dirrm etc/gconf/gconf.xml.defaults/apps/galeon/Advanced/Filtering
