@@ -1,0 +1,31 @@
+bin/kvidtune
+share/applnk/System/kvidtune.kdelnk
+share/apps/kvidtune/pics/kvidtune-down.xpm
+share/apps/kvidtune/pics/kvidtune-left.xpm
+share/apps/kvidtune/pics/kvidtune-narrower.xpm
+share/apps/kvidtune/pics/kvidtune-right.xpm
+share/apps/kvidtune/pics/kvidtune-shorter.xpm
+share/apps/kvidtune/pics/kvidtune-taller.xpm
+share/apps/kvidtune/pics/kvidtune-up.xpm
+share/apps/kvidtune/pics/kvidtune-wider.xpm
+share/apps/kvidtune/toolbar/kvidtune-info.xpm
+share/apps/kvidtune/toolbar/kvidtune-save.xpm
+share/apps/kvidtune/toolbar/kvidtune-videomodeinfo.xpm
+share/doc/HTML/en/kvidtune/index-1.html
+share/doc/HTML/en/kvidtune/index-2.html
+share/doc/HTML/en/kvidtune/index-3.html
+share/doc/HTML/en/kvidtune/index-4.html
+share/doc/HTML/en/kvidtune/index-5.html
+share/doc/HTML/en/kvidtune/index.html
+share/icons/kvidtune.xpm
+share/icons/mini/kvidtune.xpm
+share/locale/de/LC_MESSAGES/kvidtune.mo
+share/locale/es/LC_MESSAGES/kvidtune.mo
+share/locale/hr/LC_MESSAGES/kvidtune.mo
+share/locale/nl/LC_MESSAGES/kvidtune.mo
+share/locale/pt/LC_MESSAGES/kvidtune.mo
+share/locale/sk/LC_MESSAGES/kvidtune.mo
+@dirrm share/apps/kvidtune/pics
+@dirrm share/apps/kvidtune/toolbar
+@dirrm share/apps/kvidtune
+@dirrm share/doc/HTML/en/kvidtune
