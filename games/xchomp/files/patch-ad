@@ -1,0 +1,9 @@
+--- main.c.orig	Fri Mar 18 06:12:24 1994
++++ main.c	Thu Mar 16 15:45:54 2000
+@@ -167,5 +167,5 @@
+          switch (event.type) {
+             case KeyPress:
+-               XLookupString(&event, &c_buf, 1, &last_key, &status);
++               XLookupString((XKeyEvent *) &event, &c_buf, 1, &last_key, &status);
+                if (last_key == XK_space)
+                   if (!pause_seq())

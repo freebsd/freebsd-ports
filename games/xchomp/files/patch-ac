@@ -1,0 +1,9 @@
+--- demo.c.orig	Fri Mar 18 06:12:23 1994
++++ demo.c	Thu Mar 16 15:45:38 2000
+@@ -128,5 +128,5 @@
+       switch (event.type) {
+          case KeyPress:
+-	    XLookupString(&event, &c_buf, 1, &last_key, &status);
++	    XLookupString((XKeyEvent *) &event, &c_buf, 1, &last_key, &status);
+ 	    if ((last_key == XK_q) || (last_key == XK_Q))
+ 	       do_exit();
