@@ -6,73 +6,39 @@
 #
 
 PORTNAME=	pysol
-PORTVERSION=	4.41
+PORTVERSION=	4.60
 CATEGORIES=	games
-MASTER_SITES=	http://wildsau.idv.uni-linz.ac.at/mfx/download/pysol/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${CARDSETS_DISTFILE} \
-		${MUSIC_DISTFILE}
+MASTER_SITES=	http://wildsau.idv.uni-linz.ac.at/mfx/download/pysol/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	tg
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pysol.py.bz2
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	tg@FreeBSD.org
 
-RUN_DEPENDS=	${LOCALBASE}/lib/python1.5/site-packages/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
-		${SOUND_DEPENDS}
+BUILD_DEPENDS=	bunzip2:${PORTSDIR}/archivers/bzip2
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
-NO_BUILD=	yes
-PLIST=		${WRKDIR}/PLIST
-
-CARDSETS=	pysol-cardsets-4.20
-MUSIC=		pysol-music-4.30
-
-.if !defined(WITHOUT_CARDSETS)
-CARDSETS_DISTFILE=${CARDSETS}${EXTRACT_SUFX}
-PLISTS+=	${PKGDIR}/PLIST.cardsets
-.else
-CARDSETS_DISTFILE=
-.endif
-
-.if defined(WITH_SOUND)
-SOUND_DEPENDS=	${LOCALBASE}/lib/python1.5/site-packages/pysolsoundservermodule.so:${PORTSDIR}/audio/pysol-sound-server
-MUSIC_DISTFILE=	${MUSIC}${EXTRACT_SUFX}
-PLISTS+=	${PKGDIR}/PLIST.music
-.else
-SOUND_DEPENDS=
-MISIC_DISTFILE=
-.endif
-
-PLISTS+=	${PKGDIR}/PLIST
+USE_PYTHON=	yes
 
 MAN6=		pysol.6
 
-.if !defined(WITHOUT_CARDSETS)
-pre-fetch:
-	@${ECHO_MSG}
-	@${ECHO_MSG} "If you do not want to download/install optional cardsets (12MB) please use"
-	@${ECHO_MSG} "\"make -DWITHOUT_CARDSETS\" instead."
-	@${ECHO_MSG}
-.endif
-
-.if !defined(WITH_SOUND)
 post-extract:
-	@${ECHO_MSG}
-	@${ECHO_MSG} "If you want install sound support please use \"make -DWITH_SOUND\""
-	@${ECHO_MSG}
-.endif
+	${LOCALBASE}/bin/bunzip2 -c ${DISTDIR}/pysol.py.bz2 \
+		> ${WRKSRC}/pysol.py
+
+do-build:
+	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -l ${WRKSRC}
 
 do-install:
-	${SED} -e "s|@pkgdatadir@|${PREFIX}/share/pysol|" < ${WRKSRC}/pysol > ${PREFIX}/bin/pysol
+	${SED}	-e "s|@pkgdatadir@|${PREFIX}/share/pysol|" \
+		-e "s|^exec python|exec ${PYTHON_CMD}|" \
+		< ${WRKSRC}/pysol > ${PREFIX}/bin/pysol
 	${CHMOD} +x ${PREFIX}/bin/pysol
 	${INSTALL_DATA} ${WRKSRC}/pysol.6 ${PREFIX}/man/man6
 	@${MKDIR} ${PREFIX}/share/pysol
 	(cd ${WRKSRC}/data; tar cf - *) | \
 		(cd ${PREFIX}/share/pysol; tar xf -)
-.if !defined(WITHOUT_CARDSETS)
-	(cd ${WRKDIR}/${CARDSETS}/data; tar cf - *) | \
-		(cd ${PREFIX}/share/pysol; tar xf -)
-.endif
-.if defined(WITH_SOUND)
-	(cd ${WRKDIR}/${MUSIC}/data; tar cf - *) | \
-		(cd ${PREFIX}/share/pysol; tar xf -)
-.endif
-	@cat ${PLISTS} > ${PLIST}
+	${INSTALL_DATA} ${WRKSRC}/pysol.pyc ${PREFIX}/share/pysol
 
 .include <bsd.port.mk>
