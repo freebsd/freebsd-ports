@@ -1,0 +1,11 @@
+--- libs/alpha_header.h.orig	Sat Sep 18 17:57:24 1999
++++ libs/alpha_header.h	Sat Sep 18 17:58:58 1999
+@@ -12,6 +12,8 @@
+ extern size_t strlen (char *);
+ #endif
+ 
++#ifndef __FreeBSD__
+ extern void bzero (char *, int);
++#endif
+ extern int gethostname (char *, int);
+ /**************************************************************************/
