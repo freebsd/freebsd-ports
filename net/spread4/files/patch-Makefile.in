@@ -1,5 +1,5 @@
---- Makefile.in	Wed Jun 18 05:00:10 2003
-+++ Makefile.in	Tue Aug  5 21:26:23 2003
+--- Makefile.in	Thu Nov 13 08:42:54 2003
++++ Makefile.in	Thu Jul 15 21:42:27 2004
 @@ -26,7 +26,7 @@
  #Rules: major  -- inc for incompatible change
  #     : minor  -- inc for bugfix or forward compatible change
@@ -91,7 +91,7 @@
  	rm -f config.cache config.log docs/*.out core
  	rm -rf autom4te.cache
  
-@@ -247,11 +255,6 @@
+@@ -248,11 +256,6 @@
  	done
  	if [ ! -d $(DESTDIR)$(sysconfdir) ]; then \
  		$(buildtoolsdir)/mkinstalldirs $(DESTDIR)$(sysconfdir); \
