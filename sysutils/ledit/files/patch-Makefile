@@ -1,0 +1,28 @@
+--- Makefile.orig	Tue Feb  8 18:10:04 2005
++++ Makefile	Tue Feb  8 18:17:56 2005
+@@ -1,8 +1,10 @@
+ # $Id: Makefile,v 1.19 2001/10/03 09:36:34 ddr Exp $
+ 
+-BINDIR=/usr/local/bin
+-LIBDIR=/usr/local/lib
+-MANDIR=/usr/man/manl
++PREFIX?=/usr/local
++
++BINDIR=$(PREFIX)/bin
++LIBDIR=$(PREFIX)/lib
++MANDIR=$(PREFIX)/man/manl
+ COMP=ocamlc
+ COMPOPT=ocamlopt
+ PP=camlp4r
+@@ -33,6 +35,11 @@
+ install:
+ 	-$(MKDIR) $(BINDIR) $(MANDIR)
+ 	-cp ledit.out $(BINDIR)/ledit
++	-cp ledit.l $(MANDIR)/ledit.l
++
++install.opt: $(TARGET:.out=.opt)
++	-$(MKDIR) $(BINDIR) $(MANDIR)
++	-cp ledit.opt $(BINDIR)/ledit
+ 	-cp ledit.l $(MANDIR)/ledit.l
+ 
+ depend:

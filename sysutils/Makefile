@@ -223,6 +223,7 @@
     SUBDIR += lavaps
     SUBDIR += lcdproc
     SUBDIR += ldap-account-manager
+    SUBDIR += ledit
     SUBDIR += lfm
     SUBDIR += libcdio
     SUBDIR += libchk
