@@ -3,7 +3,7 @@
 # Date created:		18 Mar 1996
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.9 1996/11/12 02:18:37 obrien Exp $
+# $Id: Makefile,v 1.10 1996/12/30 23:28:13 jdp Exp $
 #
 
 DISTNAME=	modula-3-3.6
@@ -39,7 +39,8 @@ do-install:
 	@echo "Installing files in \"${PREFIX}\""
 	@cd ${temp_prefix}; \
 	    umask 022; \
-	    sed -e "/^@/d" -e "/m3build-/d" -e "s/\.gz$$//" ${PKGDIR}/PLIST | \
+	    sed -e "/^@/d" -e "/m3build-/d" -e "s/\.gz$$//" \
+		-e "/^share/d" ${PKGDIR}/PLIST | \
 		cpio -dump -R ${BINOWN}.${BINGRP} ${PREFIX}
 	@echo "Fixing absolute pathnames in installed files"
 	@/bin/sh ${SCRIPTDIR}/fix_pathnames ${temp_prefix} ${PREFIX}
@@ -67,6 +68,12 @@ do-install:
 	    rm -rf FreeBSD2; \
 	    m3build; \
 	    m3ship
+	@echo "Installing copyright notice"
+	@if [ ! -d ${PREFIX}/share/modula-3 ]; then \
+	    ${MKDIR} ${PREFIX}/share/modula-3; \
+	    chmod 755 ${PREFIX}/share/modula-3; \
+	fi
+	@${INSTALL_DATA} ${WRKSRC}/m3/src/COPYRIGHT ${PREFIX}/share/modula-3
 	@echo "Stripping executables"
 	@cd ${temp_prefix}; \
 	    find bin -type f ! -name recordheap | (cd ${PREFIX}; xargs strip)

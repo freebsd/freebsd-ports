@@ -37,4 +37,7 @@ from the DEC distribution, in:
 
     ftp://gatekeeper.dec.com/pub/DEC/Modula-3/release-3.6/m3.tar.gz
 
+Please see "${PREFIX}/share/modula-3/COPYRIGHT" for the DEC copyright
+notice.
+
 John Polstra <jdp@polstra.com>
