@@ -1,69 +1,171 @@
---- configure.orig	Tue Dec  8 23:17:30 1998
-+++ configure	Tue Dec  8 23:18:24 1998
-@@ -32,6 +32,8 @@
- ac_help="$ac_help
-   --enable-big5           enable big5 support"
- ac_help="$ac_help
-+  --enable-xcin           enable Chinese input support"
-+ac_help="$ac_help
-   --enable-greek          enable greek keyboard support"
- ac_help="$ac_help
-   --enable-ttygid         enable tty setting to group \"tty\" - use only if
-@@ -722,6 +724,18 @@
-   if test x$enableval = xyes; then
-     cat >> confdefs.h <<\EOF
- #define ZH 1
-+EOF
-+
-+  fi
-+fi
-+
-+
-+# Check whether --enable-xcin or --disable-xcin was given.
-+if test "${enable_xcin+set}" = set; then
-+  enableval="$enable_xcin"
-+  if test x$enableval = xyes; then
-+    cat >> confdefs.h <<\EOF
-+#define XCIN 1
- EOF
+--- src/main.c.orig	Fri Mar  5 12:26:41 1999
++++ src/main.c	Fri Mar  5 12:30:58 1999
+@@ -453,6 +453,16 @@
+ 			       GCForeground | GCBackground |
+ 			       GCFont | GCGraphicsExposures,
+ 			       &gcvalue);
++#ifdef FIX_ALIGNMENT
++	TermWin.ngc = TermWin.gc;
++#ifdef MULTICHAR_SET
++	gcvalue.font = TermWin.mfont->fid;
++	TermWin.mgc = XCreateGC(Xdisplay, TermWin.vt,
++			GCForeground | GCBackground |
++			GCFont | GCGraphicsExposures,
++			&gcvalue);
++#endif
++#endif
+     }
+ }
+ /* window resizing - assuming the parent window is the correct size */
+@@ -976,7 +986,11 @@
  
-   fi
---- autoconf/acconfig.h.orig	Tue Dec  8 21:26:28 1998
-+++ autoconf/acconfig.h	Tue Dec  8 21:27:20 1998
-@@ -34,6 +34,9 @@
- /* after compilation, rename executable as `crxvt' */
- #undef ZH
+ /* alter existing GC */
+     if (!init) {
++#ifdef FIX_ALIGNMENT
++	XSetFont(Xdisplay, TermWin.ngc, TermWin.font->fid);
++#else
+ 	XSetFont(Xdisplay, TermWin.gc, TermWin.font->fid);
++#endif
+ 	menubar_expose();
+     }
+ /* set the sizes */
+--- src/rxvt.h.orig	Fri Mar  5 12:31:15 1999
++++ src/rxvt.h	Fri Mar  5 12:42:25 1999
+@@ -8,6 +8,8 @@
+ #include "../config.h"
+ #include "feature.h"
  
-+/* Define if you want chinese input support */
-+#undef XCIN
++#define FIX_ALIGNMENT
 +
- /* Define if Xlocale support doesn't work */
- #undef NO_XLOCALE
+ /*
+  *****************************************************************************
+  * SYSTEM HACKS
+@@ -170,11 +172,18 @@
+ 		    vt;		/* vt100 window                             */
+     GC              gc;		/* GC for drawing text                      */
+     XFontStruct    *font;	/* main font structure                      */
++#ifdef FIX_ALIGNMENT
++    GC              ngc;
++    int             vascent;
++#endif
+ #ifndef NO_BOLDFONT
+     XFontStruct    *boldFont;	/* bold font                                */
+ #endif
+ #ifdef MULTICHAR_SET
+     XFontStruct    *mfont;	/* Multichar font structure                 */
++#endif
++#ifdef FIX_ALIGNMENT
++    GC              mgc;
+ #endif
+     XFontSet       fontset;
+ #ifdef XPM_BACKGROUND
+--- src/screen.c.orig	Fri Mar  5 12:32:53 1999
++++ src/screen.c	Fri Mar  5 12:40:43 1999
+@@ -2134,7 +2134,12 @@
+  * always go back to the base font - it's much safer
+  */
+     wbyte = 0;
++#ifdef FIX_ALIGNMENT
++    TermWin.gc = TermWin.ngc;
++    TermWin.vascent = TermWin.font->ascent;
++#else
+     XSetFont(Xdisplay, TermWin.gc, TermWin.font->fid);
++#endif
+     draw_string = XDrawString;
+     draw_image_string = XDrawImageString;
+     boldlast = 0;
+@@ -2318,7 +2323,11 @@
  
---- autoconf/config.h.in.orig	Tue Dec  8 21:27:34 1998
-+++ autoconf/config.h.in	Tue Dec  8 21:28:02 1998
-@@ -76,6 +76,9 @@
- /* after compilation, rename executable as `crxvt' */
- #undef ZH
+ 	    len = 0;
+ 	    buffer[len++] = stp[col];
++#ifdef FIX_ALIGNMENT
++	    ypixel = TermWin.vascent + Row2Pixel(row);
++#else
+ 	    ypixel = TermWin.font->ascent + Row2Pixel(row);
++#endif
+ 	    xpixel = Col2Pixel(col);
+ 	    wlen = 1;
  
-+/* Define if you want chinese input support */
-+#undef XCIN
-+
- /* Define if Xlocale support doesn't work */
- #undef NO_XLOCALE
- 
---- autoconf/configure.in.orig	Tue Dec  8 21:28:18 1998
-+++ autoconf/configure.in	Tue Dec  8 21:29:12 1998
-@@ -82,6 +82,12 @@
-     AC_DEFINE(ZH)
-   fi])
- 
-+AC_ARG_ENABLE(xcin,
-+  [  --enable-xcin           enable Chinese input support],
-+  [if test x$enableval = xyes; then
-+    AC_DEFINE(XCIN)
-+  fi])
-+
- AC_ARG_ENABLE(greek,
-   [  --enable-greek          enable greek keyboard support],
-   [if test x$enableval = xyes; then
+@@ -2332,7 +2341,13 @@
+ 		    && ((srp[col + 1]) & RS_multiMask) == RS_multi2) {
+ 		    if (!wbyte) {
+ 			wbyte = 1;
++#ifdef FIX_ALIGNMENT
++			TermWin.gc = TermWin.mgc;
++			ypixel += TermWin.mfont->ascent - TermWin.vascent;
++			TermWin.vascent = TermWin.mfont->ascent;
++#else
+ 			XSetFont(Xdisplay, TermWin.gc, TermWin.mfont->fid);
++#endif
+ 			draw_string = XDrawString16;
+ 			draw_image_string = XDrawImageString16;
+ 		    }
+@@ -2370,7 +2385,13 @@
+ 		    }
+ 		    if (wbyte) {
+ 			wbyte = 0;
++#ifdef FIX_ALIGNMENT
++			TermWin.gc = TermWin.ngc;
++			ypixel += TermWin.font->ascent - TermWin.vascent;
++			TermWin.vascent = TermWin.font->ascent;
++#else
+ 			XSetFont(Xdisplay, TermWin.gc, TermWin.font->fid);
++#endif
+ 			draw_string = XDrawString;
+ 			draw_image_string = XDrawImageString;
+ 		    }
+@@ -2466,7 +2487,11 @@
+ 		rend &= ~RS_Bold;	/* we've taken care of it */
+ 	    } else if (bfont) {
+ 		bfont = 0;
++#ifdef FIX_ALIGNMENT
++		XSetFont(Xdisplay, TermWin.ngc, TermWin.font->fid);
++#else
+ 		XSetFont(Xdisplay, TermWin.gc, TermWin.font->fid);
++#endif
+ 	    }
+ #endif
+ /*
+@@ -2478,12 +2503,20 @@
+ 		    gcmask |= (GCForeground | GCBackground);
+ 		    XChangeGC(Xdisplay, TermWin.gc, gcmask, &gcvalue);
+ 		    XFillRectangle(Xdisplay, drawBuffer, TermWin.gc,
++#ifdef FIX_ALIGNMENT
++				   xpixel, ypixel - TermWin.vascent,
++#else
+ 				   xpixel, ypixel - TermWin.font->ascent,
++#endif
+ 				   Width2Pixel(1), Height2Pixel(1));
+ 		    SWAP_IT(gcvalue.foreground, gcvalue.background, ltmp);
+ 		    XChangeGC(Xdisplay, TermWin.gc, gcmask, &gcvalue);
+ 		} else
++#ifdef FIX_ALIGNMENT
++		    CLEAR_CHARS(xpixel, ypixel - TermWin.vascent, 1);
++#else
+ 		    CLEAR_CHARS(xpixel, ypixel - TermWin.font->ascent, 1);
++#endif
+ 		DRAW_STRING(draw_string, xpixel, ypixel, buffer, 1);
+ #ifndef NO_BOLDOVERSTRIKE
+ 		if (MONO_BOLD(rend))
+@@ -2498,7 +2531,11 @@
+ #endif
+ #ifdef XPM_BACKGROUND
+ 	    if (TermWin.pixmap != None && back == Color_bg) {
++#ifdef FIX_ALIGNMENT
++		CLEAR_CHARS(xpixel, ypixel - TermWin.vascent, len);
++#else
+ 		CLEAR_CHARS(xpixel, ypixel - TermWin.font->ascent, len);
++#endif
+ 		DRAW_STRING(draw_string, xpixel, ypixel, buffer, wlen);
+ 	    } else
+ #endif
+@@ -2612,6 +2649,9 @@
+     end_row = TermWin.saveLines - TermWin.view_start;
+     if (selection.op && current_screen == selection.screen) {
+ 	i = selection.beg.row + TermWin.saveLines;
++#ifdef FIX_ALIGNMENT
++	TermWin.gc = TermWin.ngc;
++#endif
+ 	row = selection.end.row + TermWin.saveLines;
+ 	if (i >= end_row)
+ 	    col = selection.beg.col;
