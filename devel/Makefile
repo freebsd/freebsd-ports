@@ -229,6 +229,7 @@
     SUBDIR += gvd
     SUBDIR += happydoc
     SUBDIR += hp48cc
+    SUBDIR += hs-buddha
     SUBDIR += hs-c2hs
     SUBDIR += hs-drift
     SUBDIR += hs-green-card
