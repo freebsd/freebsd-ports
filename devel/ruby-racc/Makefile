@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	racc
-PORTVERSION=	1.3.12
+PORTVERSION=	1.4.1
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.loveruby.net/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -21,7 +21,6 @@ RUN_DEPENDS=	${RUBY_SITELIBDIR}/racc/parser.rb:${PORTSDIR}/devel/ruby-racc-runti
 .endif
 
 USE_RUBY=	yes
-USE_RUBY_AMSTD=	yes
 USE_RUBY_SETUP=	yes
 
 .if defined(RUNTIME)
