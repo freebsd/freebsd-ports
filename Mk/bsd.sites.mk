@@ -189,7 +189,7 @@ MASTER_SITE_RINGSERVER+=	\
 	http://www.dnsbalance.ring.gr.jp/archives/%SUBDIR%/
 
 MASTER_SITE_RUBY+= \
-	ftp://ftp.netlab.co.jp/pub/lang/ruby/%SUBDIR%/ \
+	ftp://ftp.ruby-lang.org/pub/ruby/%SUBDIR%/ \
 	ftp://ftp.fu-berlin.de/unix/languages/ruby/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/lang/ruby/%SUBDIR%/ \
 	ftp://ftp.TokyoNet.AD.JP/pub/misc/ruby/%SUBDIR%/ \
