@@ -7,7 +7,6 @@ etc/netsaint/resource.cfg
 etc/rc.d/netsaint.sh
 share/netsaint/docs/about.html
 share/netsaint/docs/addons.html
-share/netsaint/docs/bigtime.html
 share/netsaint/docs/cgiauth.html
 share/netsaint/docs/cgis.html
 share/netsaint/docs/checkscheduling.html
@@ -17,6 +16,7 @@ share/netsaint/docs/config.html
 share/netsaint/docs/configcgi.html
 share/netsaint/docs/confighost.html
 share/netsaint/docs/configmain.html
+share/netsaint/docs/dependencies.html
 share/netsaint/docs/developer/commentfile.html
 share/netsaint/docs/developer/images/xcdapi.gif
 share/netsaint/docs/developer/images/xedapi.gif
@@ -34,12 +34,15 @@ share/netsaint/docs/developer/xod.html
 share/netsaint/docs/developer/xrd.html
 share/netsaint/docs/developer/xsd.html
 share/netsaint/docs/distributed.html
+share/netsaint/docs/downtime.html
 share/netsaint/docs/escalations.html
 share/netsaint/docs/eventhandlers.html
 share/netsaint/docs/extcommands.html
 share/netsaint/docs/faqs.html
+share/netsaint/docs/flapping.html
 share/netsaint/docs/funstuff.html
 share/netsaint/docs/images/activepassive.gif
+share/netsaint/docs/images/avail_cgi.gif
 share/netsaint/docs/images/checktiming.gif
 share/netsaint/docs/images/cmd_cgi.gif
 share/netsaint/docs/images/config_cgi.gif
@@ -48,6 +51,7 @@ share/netsaint/docs/images/extinfo_cgi_a.gif
 share/netsaint/docs/images/extinfo_cgi_b.gif
 share/netsaint/docs/images/extinfo_cgi_c.gif
 share/netsaint/docs/images/extinfo_cgi_d.gif
+share/netsaint/docs/images/extinfo_cgi_e.gif
 share/netsaint/docs/images/history_cgi.gif
 share/netsaint/docs/images/indirecthostcheck.gif
 share/netsaint/docs/images/indirectsvccheck.gif
@@ -66,11 +70,16 @@ share/netsaint/docs/images/physical-network.gif
 share/netsaint/docs/images/plugintheory.gif
 share/netsaint/docs/images/redundancy-1.gif
 share/netsaint/docs/images/redundancy-2.gif
+share/netsaint/docs/images/service-dependencies.gif
 share/netsaint/docs/images/showlog_cgi.gif
+share/netsaint/docs/images/statetransitions.gif
+share/netsaint/docs/images/statetransitions2.gif
 share/netsaint/docs/images/status_cgi_a.gif
 share/netsaint/docs/images/status_cgi_b.gif
 share/netsaint/docs/images/statusmap_cgi.gif
+share/netsaint/docs/images/statuswml_cgi.gif
 share/netsaint/docs/images/statuswrl_cgi.gif
+share/netsaint/docs/images/tac_cgi.gif
 share/netsaint/docs/images/trends_cgi.gif
 share/netsaint/docs/index.html
 share/netsaint/docs/indirectchecks.html
@@ -84,6 +93,7 @@ share/netsaint/docs/notifications.html
 share/netsaint/docs/oldplugins.html
 share/netsaint/docs/parallelization.html
 share/netsaint/docs/passivechecks.html
+share/netsaint/docs/perfdata.html
 share/netsaint/docs/pluginhowto.html
 share/netsaint/docs/plugins.html
 share/netsaint/docs/plugintheory.html
@@ -97,38 +107,33 @@ share/netsaint/docs/statuslevels.html
 share/netsaint/docs/stoprestart.html
 share/netsaint/docs/theory.html
 share/netsaint/docs/timeperiods.html
+share/netsaint/docs/tuning.html
 share/netsaint/docs/verifyconfig.html
 share/netsaint/docs/volatileservices.html
 share/netsaint/docs/whatsnew.html
+share/netsaint/docs/xdata-db.html
 share/netsaint/images/ack.gif
 share/netsaint/images/active.gif
 share/netsaint/images/command.gif
-share/netsaint/images/commandsbar.gif
 share/netsaint/images/comment.gif
 share/netsaint/images/config.gif
 share/netsaint/images/contact.gif
 share/netsaint/images/contactgroup.gif
-share/netsaint/images/contactgroupsbar.gif
-share/netsaint/images/contactsbar.gif
 share/netsaint/images/critical.gif
 share/netsaint/images/delay.gif
 share/netsaint/images/delete.gif
 share/netsaint/images/disabled.gif
-share/netsaint/images/docbar.gif
 share/netsaint/images/down.gif
+share/netsaint/images/downtime.gif
 share/netsaint/images/enabled.gif
 share/netsaint/images/extinfo.gif
+share/netsaint/images/flapping.gif
 share/netsaint/images/greendot.gif
 share/netsaint/images/history.gif
-share/netsaint/images/historybar.gif
-share/netsaint/images/homebar.gif
 share/netsaint/images/host.gif
 share/netsaint/images/hostevent.gif
-share/netsaint/images/hostgroupsbar.gif
-share/netsaint/images/hostsbar.gif
 share/netsaint/images/info.gif
 share/netsaint/images/left.gif
-share/netsaint/images/logfilebar.gif
 share/netsaint/images/logofullsize.gif
 share/netsaint/images/logos/aix.gd2
 share/netsaint/images/logos/aix.gif
@@ -198,15 +203,11 @@ share/netsaint/images/logos/yellowdog.gif
 share/netsaint/images/logrotate.gif
 share/netsaint/images/logs.gif
 share/netsaint/images/ndisabled.gif
-share/netsaint/images/networkhealthbar.gif
-share/netsaint/images/networkoutagesbar.gif
 share/netsaint/images/noack.gif
 share/netsaint/images/notes.gif
-share/netsaint/images/notificationsbar.gif
 share/netsaint/images/notify.gif
 share/netsaint/images/orangedot.gif
 share/netsaint/images/parentup.gif
-share/netsaint/images/processinfobar.gif
 share/netsaint/images/recovery.gif
 share/netsaint/images/restart.gif
 share/netsaint/images/right.gif
@@ -215,39 +216,35 @@ share/netsaint/images/sbconfig.gif
 share/netsaint/images/sbgeneral.gif
 share/netsaint/images/sblogo.gif
 share/netsaint/images/sbmonitor.gif
-share/netsaint/images/scale.gif
 share/netsaint/images/serviceevent.gif
-share/netsaint/images/serviceproblemsbar.gif
-share/netsaint/images/servicesbar.gif
+share/netsaint/images/sideback.jpg
 share/netsaint/images/standby.gif
 share/netsaint/images/start.gif
 share/netsaint/images/status.gif
 share/netsaint/images/status2.gif
 share/netsaint/images/status3.gif
 share/netsaint/images/status4.gif
-share/netsaint/images/statusdetailbar.gif
-share/netsaint/images/statusmapbar.gif
-share/netsaint/images/statusoverviewbar.gif
-share/netsaint/images/statussummarybar.gif
-share/netsaint/images/statusworldbar.gif
 share/netsaint/images/stop.gif
+share/netsaint/images/tacdisabled.jpg
+share/netsaint/images/tacenabled.jpg
 share/netsaint/images/thermcrit.gif
 share/netsaint/images/thermok.gif
 share/netsaint/images/thermwarn.gif
-share/netsaint/images/timeperiodsbar.gif
 share/netsaint/images/trends.gif
-share/netsaint/images/trendsbar.gif
 share/netsaint/images/trendshost.png
 share/netsaint/images/trendssvc.png
 share/netsaint/images/unknown.gif
 share/netsaint/images/up.gif
 share/netsaint/images/warning.gif
+share/netsaint/images/zoom1.gif
+share/netsaint/images/zoom2.gif
 share/netsaint/index.html
 share/netsaint/main.html
 share/netsaint/media/critical.wav
 share/netsaint/media/hostdown.wav
 share/netsaint/media/warning.wav
 share/netsaint/robots.txt
+share/netsaint/sbin/avail.cgi
 share/netsaint/sbin/cmd.cgi
 share/netsaint/sbin/config.cgi
 share/netsaint/sbin/extinfo.cgi
@@ -257,9 +254,12 @@ share/netsaint/sbin/outages.cgi
 share/netsaint/sbin/showlog.cgi
 share/netsaint/sbin/status.cgi
 share/netsaint/sbin/statusmap.cgi
+share/netsaint/sbin/statuswml.cgi
 share/netsaint/sbin/statuswrl.cgi
+share/netsaint/sbin/tac.cgi
 share/netsaint/sbin/trends.cgi
 share/netsaint/side.html
+share/netsaint/stylesheets/avail.css
 share/netsaint/stylesheets/cmd.css
 share/netsaint/stylesheets/config.css
 share/netsaint/stylesheets/extinfo.css
@@ -269,6 +269,7 @@ share/netsaint/stylesheets/outages.css
 share/netsaint/stylesheets/showlog.css
 share/netsaint/stylesheets/status.css
 share/netsaint/stylesheets/statusmap.css
+share/netsaint/stylesheets/tac.css
 share/netsaint/stylesheets/trends.css
 @dirrm etc/netsaint
 @dirrm share/netsaint/docs/developer/images
@@ -280,3 +281,7 @@ share/netsaint/stylesheets/trends.css
 @dirrm share/netsaint/media
 @dirrm share/netsaint/sbin
 @dirrm share/netsaint/stylesheets
+@dirrm share/netsaint
+@dirrm var/netsaint/archives
+@dirrm var/netsaint
+@dirrm var
