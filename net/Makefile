@@ -221,6 +221,7 @@
     SUBDIR += idnkit
     SUBDIR += ifstat
     SUBDIR += imcom
+    SUBDIR += iog
     SUBDIR += ip6_int
     SUBDIR += ipcad
     SUBDIR += ipcalc
