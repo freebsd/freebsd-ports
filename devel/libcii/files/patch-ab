@@ -1,0 +1,23 @@
+--- src/swtch.s.orig	Wed Nov  5 15:03:00 1997
++++ src/swtch.s	Sat Jan  9 18:56:46 1999
+@@ -136,7 +136,7 @@
+ .end	_swtch
+ .globl	_ENDMONITOR
+ _ENDMONITOR:
+-#elif linux && i386
++#elif (linux || unix) && i386
+ .align	4
+ .globl	__swtch
+ .globl	_swtch
+@@ -165,7 +165,11 @@
+ 	pushl	%edi
+ 	call	*%esi
+ 	pushl	%eax
++#ifdef __ELF__
+ 	call	Thread_exit
++#else
++	call	_Thread_exit
++#endif
+ .globl	__ENDMONITOR
+ .globl	_ENDMONITOR
+ __ENDMONITOR:
