@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	xchat2
-PORTVERSION=	2.0.10
-PORTREVISION=	1
+PORTVERSION=	2.4.0
 CATEGORIES=	irc gnome ipv6
-MASTER_SITES=	http://xchat.org/files/source/2.0/
+MASTER_SITES=	http://xchat.org/files/source/2.4/
 DISTNAME=	xchat-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
