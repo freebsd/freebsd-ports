@@ -104,6 +104,7 @@
     SUBDIR += hex
     SUBDIR += hns
     SUBDIR += ical
+    SUBDIR += iiimf-le-canna
     SUBDIR += im-ja
     SUBDIR += ipa-ttfonts
     SUBDIR += ipadic
