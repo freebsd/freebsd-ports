@@ -1,16 +1,6 @@
 --- libavcodec/Makefile.orig	Sun Oct  6 12:26:38 2002
 +++ libavcodec/Makefile	Wed Oct  9 14:24:34 2002
-@@ -7,8 +7,7 @@
- VPATH=$(SRC_PATH)/libavcodec
- 
- # NOTE: -I.. is needed to include config.h
--CFLAGS= $(OPTFLAGS) -Wall -g -DHAVE_AV_CONFIG_H -I.. -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_GNU_SOURCE
--LDFLAGS= -g
-+CFLAGS= $(OPTFLAGS) -Wall -DHAVE_AV_CONFIG_H -I.. -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_GNU_SOURCE
- 
- OBJS= common.o utils.o mem.o allcodecs.o \
-       mpegvideo.o h263.o jrevdct.o jfdctfst.o jfdctint.o\
-@@ -167,8 +166,7 @@
+@@ -228,8 +228,7 @@
  install: all
  ifeq ($(BUILD_SHARED),yes)
  	install -d $(prefix)/lib
