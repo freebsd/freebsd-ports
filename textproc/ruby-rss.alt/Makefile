@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rss
-PORTVERSION=	0.0.6
+PORTVERSION=	0.0.7
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www.cozmixng.org/~kou/download/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -23,9 +23,10 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/uconv.so:${PORTSDIR}/japanese/ruby-uconv \
 # You can use REXML as an alternative to xmlscan, but 2.5.0 or later only:
 #		${RUBY_SITELIBDIR}/rexml/document.rb:${PORTSDIR}/textproc/ruby-rexml
 
+CONFLICTS=	ruby-rss-*
+
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
-RUBY_SETUP=	install.rb
 
 DOCS_EN=	README.en Tutorial.en
 DOCS_JA=	README.ja Tutorial.ja
