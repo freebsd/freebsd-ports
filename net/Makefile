@@ -148,6 +148,7 @@
     SUBDIR += forg
     SUBDIR += fping
     SUBDIR += freebsd-uucp
+    SUBDIR += freenet
     SUBDIR += freenet6
     SUBDIR += freeradius
     SUBDIR += freevrrpd
