@@ -15,14 +15,14 @@
  	fDataCondition (&fDataMutex),
 @@ -412,9 +412,9 @@
  {
- 	assert (fReadThread == NULL);
- 	assert (fWriteThread == NULL);
--	assert (fCommHandle == 0);
--	assert (fCommSignalPipeA == 0);
--	assert (fCommSignalPipeB == 0);
-+	assert (fCommHandle == -1);
-+	assert (fCommSignalPipeA == -1);
-+	assert (fCommSignalPipeB == -1);
+ 	EmAssert (fReadThread == NULL);
+ 	EmAssert (fWriteThread == NULL);
+-	EmAssert (fCommHandle == 0);
+-	EmAssert (fCommSignalPipeA == 0);
+-	EmAssert (fCommSignalPipeB == 0);
++	EmAssert (fCommHandle == -1);
++	EmAssert (fCommSignalPipeA == -1);
++	EmAssert (fCommSignalPipeB == -1);
  }
  
  
