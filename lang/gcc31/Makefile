@@ -49,6 +49,10 @@ NOMANCOMPRESS=	yes	# to hard to deal with differences on 5-cur and releng4
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		"Install fails on sparc64"
+.endif
+
 .if ${PORTOBJFORMAT} == "aout"
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsdaout${OSREL}
 .else
