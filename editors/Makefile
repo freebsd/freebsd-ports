@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.40 1997/07/09 07:08:15 tg Exp $
+# $Id: Makefile,v 1.41 1997/07/10 06:29:40 tg Exp $
 #
 
     SUBDIR += asedit
@@ -23,6 +23,7 @@
     SUBDIR += xcoral
     SUBDIR += xed
     SUBDIR += xemacs
+    SUBDIR += xemacs20
     SUBDIR += xvile
 
 .include <bsd.port.subdir.mk>
