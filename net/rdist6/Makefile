@@ -7,6 +7,7 @@
 
 PORTNAME=	rdist
 PORTVERSION=	6.1.5
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.magnicomp.com/download/rdist/ \
 		ftp://ftp.rge.com/pub/admin/rdist/ \

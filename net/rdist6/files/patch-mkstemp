@@ -1,0 +1,47 @@
+These patches replace mktemp with mkstemp in the client code entirely.
+
+In the server code more intrusive changes would be needed, so the hunk
+simply ensures, the file is not created between the mktemp() and the
+open() calls.
+
+	-mi
+
+--- src/message.c	Mon Nov  9 23:13:30 1998
++++ src/message.c	Tue Jan 18 15:23:32 2005
+@@ -463,6 +463,6 @@
+ 
+ 	if (!msgfac->mf_fptr) {
+-		register char *cp;
+-		char *getenv();
++		const char *cp;
++		int	fd;
+ 
+ 		/*
+@@ -476,6 +476,6 @@
+ 
+ 		msgfac->mf_filename = tempfile;
+-		(void) mktemp(msgfac->mf_filename);
+-		if ((msgfac->mf_fptr = fopen(msgfac->mf_filename, "w"))==NULL)
++		fd = mkstemp(tempfile);
++		if (fd == -1 || (msgfac->mf_fptr = fdopen(fd, "w"))==NULL)
+ 			fatalerr("Cannot open notify file for writing: %s: %s.",
+ 			      msgfac->mf_filename, SYSERR);
+@@ -514,5 +514,5 @@
+ static void _message(flags, msgbuf)
+ 	int flags;
+-	char *msgbuf;
++	const char *msgbuf;
+ {
+ 	register int i, x;
+--- src/server.c	Mon Nov  9 23:15:31 1998
++++ src/server.c	Tue Jan 18 16:34:26 2005
+@@ -768,7 +768,7 @@
+ 	 * Create temporary file
+ 	 */
+-	if ((f = creat(new, mode)) < 0) {
++	if ((f = open(new, O_CREAT|O_TRUNC|O_WRONLY|O_EXCL, mode)) < 0) {
+ 		if (errno != ENOENT || chkparent(new, opts) < 0 ||
+-		    (f = creat(new, mode)) < 0) {
++		    (f = open(new, O_CREAT|O_TRUNC|O_WRONLY|O_EXCL, mode)) < 0) {
+ 			error("%s: create failed: %s", new, SYSERR);
+ 			(void) unlink(new);
