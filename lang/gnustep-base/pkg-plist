@@ -72,12 +72,12 @@ System/Headers/Foundation/NSValue.h
 System/Headers/Foundation/NSZone.h
 System/Headers/Foundation/objc-load.h
 System/Headers/gnustep/base/DistributedObjects.h
+System/Headers/gnustep/base/GSFileHandle.h
 System/Headers/gnustep/base/GSIArray.h
 System/Headers/gnustep/base/GSIMap.h
 System/Headers/gnustep/base/GSLocale.h
 System/Headers/gnustep/base/GSUnion.h
 System/Headers/gnustep/base/Unicode.h
-System/Headers/gnustep/base/UnixFileHandle.h
 System/Headers/gnustep/base/behavior.h
 System/Headers/gnustep/base/numbers.h
 System/Headers/gnustep/base/objc-gnu2next.h
@@ -702,9 +702,11 @@ System/Makefiles/Additional/base.make
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gdomap
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/HTMLLinker
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/autogsdoc
+System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/cvtenc
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/defaults
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/gdnc
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/gsdoc
+System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/make_strings
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/pl2link
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/pldes
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/plmerge
