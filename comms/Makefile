@@ -3,7 +3,6 @@
 
     SUBDIR += acfax
     SUBDIR += asmodem
-    SUBDIR += bayonne
     SUBDIR += bforce
     SUBDIR += bforce-kst
     SUBDIR += birda
