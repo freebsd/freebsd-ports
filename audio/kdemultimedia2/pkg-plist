@@ -127,8 +127,8 @@ lib/libnoatunui.la
 lib/libnoatunui.so
 lib/libnoatunvoiceprint.la
 lib/libnoatunvoiceprint.so
-%%OGGVORBIS%%lib/liboggarts.la
-%%OGGVORBIS%%lib/liboggarts.so
+lib/liboggarts.la
+lib/liboggarts.so
 lib/libsplitplaylist.la
 lib/libsplitplaylist.so
 lib/libworkman.la
@@ -178,7 +178,7 @@ lib/mcop/Arts/Synth_XFADE.mcopclass
 lib/mcop/Arts/VBox.mcopclass
 lib/mcop/Arts/Widget.mcopclass
 lib/mcop/Arts/mpg123PlayObject.mcopclass
-%%OGGVORBIS%%lib/mcop/Arts/oggPlayObject.mcopclass
+lib/mcop/Arts/oggPlayObject.mcopclass
 lib/mcop/ExtraStereo.mcopclass
 lib/mcop/ExtraStereoGuiFactory.mcopclass
 lib/mcop/Noatun/Equalizer.mcopclass
@@ -208,8 +208,8 @@ lib/mcop/mpg123arts.mcopclass
 lib/mcop/mpg123arts.mcoptype
 lib/mcop/noatunarts.mcopclass
 lib/mcop/noatunarts.mcoptype
-%%OGGVORBIS%%lib/mcop/oggarts.mcopclass
-%%OGGVORBIS%%lib/mcop/oggarts.mcoptype
+lib/mcop/oggarts.mcopclass
+lib/mcop/oggarts.mcoptype
 share/applnk/Multimedia/aktion.desktop
 share/applnk/Multimedia/artsbuilder.desktop
 share/applnk/Multimedia/artscontrol.desktop
@@ -756,9 +756,6 @@ share/mimelnk/audio/x-karaoke.desktop
 share/mimelnk/text/xmcd.desktop
 share/services/kmixctrl_restore.desktop
 share/servicetypes/audiomidi.desktop
-@dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/22x22/apps
 @dirrm share/doc/HTML/en/noatun
 @dirrm share/doc/HTML/en/kscd
 @dirrm share/doc/HTML/en/kmix
@@ -823,8 +820,6 @@ share/servicetypes/audiomidi.desktop
 @dirrm share/apps/kmid/icons
 @dirrm share/apps/kmid/fm
 @dirrm share/apps/kmid
-@dirrm share/apps/kicker/applets
-@dirrm share/apps/kicker
 @dirrm share/apps/artscontrol
 @dirrm share/apps/artsbuilder/pics
 @dirrm share/apps/artsbuilder/examples/todo
@@ -833,8 +828,6 @@ share/servicetypes/audiomidi.desktop
 @dirrm share/apps/aktion/toolbar
 @dirrm share/apps/aktion
 @dirrm share/applnk/Settings/Sound
-@dirrm share/applnk/Settings
 @dirrm share/applnk/Multimedia
-@dirrm share/applnk
 @dirrm lib/mcop/Noatun
 @dirrm include/noatun
