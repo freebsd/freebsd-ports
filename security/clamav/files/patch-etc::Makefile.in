@@ -1,0 +1,13 @@
+--- etc/Makefile.in.orig	Thu Feb 19 14:17:02 2004
++++ etc/Makefile.in	Thu Feb 19 14:17:36 2004
+@@ -248,8 +248,8 @@
+ 
+ install:
+ 	$(mkinstalldirs) $(DESTDIR)$(CFGINST)
+-@INSTALL_CLAMAV_CONF_TRUE@	@$(INSTALL_DATA) clamav.conf $(DESTDIR)$(CFGINST)
+-@INSTALL_FRESHCLAM_CONF_TRUE@	@$(INSTALL_DATA) freshclam.conf $(DESTDIR)$(CFGINST)
++@INSTALL_CLAMAV_CONF_TRUE@	@$(INSTALL_DATA) clamav.conf $(DESTDIR)$(CFGINST)/clamav.conf.default
++@INSTALL_FRESHCLAM_CONF_TRUE@	@$(INSTALL_DATA) freshclam.conf $(DESTDIR)$(CFGINST)/freshclam.conf.default
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
