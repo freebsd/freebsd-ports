@@ -1,0 +1,13 @@
+This port allows you to operate TiMidity++ with X11AMP skins.
+Please prepare skins and set environment variable.
+
+Ex.
+% setenv timidity_skin ~/.x11amp/Skins/timidity/
+
+Formerly, the original version of this program was written by Tuuka
+Toivonen(until version 0.2i).
+Now, Masanao Izumo and many hackers are developing "TiMidity++".
+Official site is
+http://www.goice.co.jp/member/mo/timidity/
+
+Yoichi Asai <yatt@msc.biglobe.ne.jp>
