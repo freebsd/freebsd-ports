@@ -1,0 +1,29 @@
+--- Makefile.orig	Fri Jan 24 09:16:39 1997
++++ Makefile	Mon Feb 23 12:35:50 1998
+@@ -2,8 +2,8 @@
+ CC=gcc
+ CXX=g++
+ CFLAGS=
+-INCLUDES=-I$(QTDIR)/include
+-LDFLAGS=-L$(QTDIR)/lib -lqt
++INCLUDES=-I/usr/X11R6/include/X11/qt
++LDFLAGS=-L/usr/X11R6/lib -lqt
+ VERSION=1.0
+ 
+ # For systems that don't have install, use this
+@@ -24,12 +24,14 @@
+      user_input.o dollar_scroll_bar.o bet_option.o table_option.o \
+      insurance_window.o $(METAOBJS)
+ 
+-MOC=$(QTDIR)/bin/moc
++MOC=/usr/X11R6/bin/moc
+ 
+ .SUFFIXES: .cpp
+ 
+ .cpp.o:
+ 	$(CXX) -c $(CFLAGS) $(INCLUDES) $<
++
++all: blackjack
+ 
+ blackjack: main.o $(OBJS) 
+ 	$(CXX) -o $@ $(LDFLAGS) main.o $(OBJS) 
