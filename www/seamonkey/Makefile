@@ -33,7 +33,8 @@ MOZILLA?=	mozilla-devel
 WITHOUT_CHATZILLA=	"Contains a buffer overflow reported at http://online.securityfocus.com/archive/1/270249"
 
 .if defined(WITH_GTK2)
-LIB_DEPENDS+=	gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
+LIB_DEPENDS+=	gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20 \
+		ORBit-2.0:${PORTSDIR}/devel/ORBit2
 .else
 USE_GNOME=	gtk12
 .endif
@@ -61,8 +62,6 @@ EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude */CVS/* \
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
-USE_GNOME+=	orbit
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=					\
@@ -89,6 +88,11 @@ CONFIGURE_ARGS=					\
 		--with-system-mng=${LOCALBASE}	\
 		--with-system-png=${LOCALBASE}	\
 		--with-pthreads
+
+.if !defined(WITH_GTK2)
+USE_GNOMENG=	yes
+USE_GNOME+=	orbit
+.endif
 
 PLIST=	${WRKDIR}/pkg-plist
 # LDAP is only used by mail and news so disable both together
