@@ -4,7 +4,7 @@
 
 if [ ! "X"${BATCH} = "X" ] ; then
 
-PRINTER_JAPAN=' mjc180.dev mjc360.dev mjc720.dev mj500c.dev lips2p.dev lips3.dev lips4.dev lips4v.dev  bjc880j.dev epag.dev npdl.dev nx100f.dev nx100v.dev bj10v.dev bj10vh.dev dmprt.dev md2k.dev md5k.dev lp3000c lp8000c lp8200c lp8500c'
+PRINTER_JAPAN=' mjc180.dev mjc360.dev mjc720.dev mj500c.dev lips2p.dev lips3.dev lips4.dev lips4v.dev  bjc880j.dev epag.dev npdl.dev nx100f.dev nx100v.dev bj10v.dev bj10vh.dev dmprt.dev md2k.dev md5k.dev lp3000c lp8000c lp8200c lp8300c lp8500c lp8600f lp8400f lp8300f lp1900 lp1800'
 
 sed -e "s;DEVICE_DEVS15=pdfwrite.dev;DEVICE_DEVS15=pdfwrite.dev stcolor.dev st800.dev uniprint.dev bmp16m.dev ${PRINTER_JAPAN};" \
     < ${WRKSRC}/unix-gcc.mak > ${WRKSRC}/unix-gcc.mak.bak && \
@@ -96,7 +96,13 @@ Have fun with this new configuration style !     -andreas \n\n\
    "lp3000c"  "Epson LP-3000C color laser printer" ON \
    "lp8000c"  "Epson LP-8000C color laser printer" ON \
    "lp8200c"  "Epson LP-8200C color laser printer" ON \
+   "lp8300c"  "Epson LP-8300C color laser printer" ON \
    "lp8500c"  "Epson LP-8500C color laser printer" ON \
+   "lp8600f"  "Epson LP-8600FX(N) laser printer" ON \
+   "lp8400f"  "Epson LP-8400FX(N) laser printer" ON \
+   "lp8300f"  "Epson LP-8300F laser printer" ON \
+   "lp1900"   "Epson LP-1900 laser printer" ON \
+   "lp1800"   "Epson LP-1800 laser printer" ON \
    "ibmpro"   "IBM 9-pin Proprinter" OFF \
    "jetp3852" "IBM Jetprinter ink-jet color (Model #3852)" OFF \
    "imagen"   "Imagen ImPress printers" OFF \
