@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	rdesktop
-PORTVERSION=	1.1.0.p19.8.4
+PORTVERSION=	1.1.0.p19.8.5
 CATEGORIES=	net comms
 MASTER_SITES=	http://bibl4.oru.se/projects/rdesktop/dist/releases/
 DISTNAME=	rdesktop-1.1.0
 
 PATCH_SITES=	http://bibl4.oru.se/projects/rdesktop/ \
 		http://bibl4.oru.se/projects/rdesktop/patch19/
-PATCHFILES=	rdesktop-unified-patch19-8-4.bz2
+PATCHFILES=	rdesktop-unified-patch19-8-5.bz2
 PATCH_DIST_STRIP=	-p2
 
 MAINTAINER=	chris@aims.com.au
@@ -24,7 +24,7 @@ USE_GMAKE=	yes
 USE_OPENSSL=	yes
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-openssl
+CONFIGURE_ARGS=	--with-openssl --enable-final
 
 MAN1=		rdesktop.1
 
