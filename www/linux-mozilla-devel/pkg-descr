@@ -1,11 +1,10 @@
 This is the Mozilla suite (Web browser, HTML editor, mail user
-agent, news reader, address book, and IRC client) pre-compiled for
-Linux.  The Linux version is necessary for running plugins which
-are only available as Linux binaries.
+agent, news reader, and address book) pre-compiled for Linux.  The
+Linux version is necessary for running plugins which are only
+available as Linux binaries.
 
-The maintainer has observed that when linux_base-62 is installed,
-text sometimes cannot be typed into the dialogs for saving files,
-for searching within a document, or in ChatZilla.
+The Chatzilla IRC client is not installed by this port, due to a
+security bug.
 
 This port is compatible with the www/linuxflashplugin port and with
 the Flash and Java plugins from the www/linux-netscape6 port.
