@@ -1,13 +1,13 @@
 # New ports collection makefile for:	blt
-# Version required:	2.4f
-# Date created:		22 September 1998
+# Version required:	2.4m
+# Date created:		04 November 1999
 # Whom:			Kenjiro Cho <kjc@csl.sony.co.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	BLT2.4h
-PKGNAME=	blt-2.4h
+DISTNAME=	BLT2.4m
+PKGNAME=	blt-2.4m
 CATEGORIES=	x11-toolkits tk80
 MASTER_SITES=	ftp://ftp.tcltk.com/pub/blt/
 
@@ -15,12 +15,12 @@ MAINTAINER=	kjc@csl.sony.co.jp
 
 LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
 
-WRKSRC=		${WRKDIR}/blt2.4h
+WRKSRC=		${WRKDIR}/blt2.4m
 GNU_CONFIGURE=	yes
-MANN=		BLT.n barchart.n bgexec.n bitmap.n bltdebug.n busy.n \
-		dragdrop.n eps.n graph.n htext.n hierbox.n spline.n \
-		stripchart.n table.n tabset.n tile.n vector.n watch.n winop.n \
-		beep.n cutbuffer.n
+MANN=		BLT.n barchart.n beep.n bgexec.n bitmap.n \
+		bltdebug.n busy.n cutbuffer.n dragdrop.n eps.n \
+		graph.n hierbox.n htext.n spline.n stripchart.n \
+		table.n tabset.n tile.n vector.n watch.n winop.n
 
 .include <bsd.port.pre.mk>
 
