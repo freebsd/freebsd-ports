@@ -26,4 +26,10 @@ CONFIGURE_ENV=	OGG_PREFIX=${LOCALBASE}
 
 WRKSRC=		${WRKDIR}/icecast-${PORTVERSION}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-install:
+	@${INSTALL_SCRIPT} ${FILESDIR}/icecast2.sh ${PREFIX}/etc/rc.d/icecast2.sh
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.post.mk>
