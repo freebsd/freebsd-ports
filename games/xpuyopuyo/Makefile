@@ -18,6 +18,7 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_AUTOCONF=	yes
 USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 WANT_GNOME=	yes
 
 MAN6=		xpuyopuyo.6
@@ -30,11 +31,13 @@ LIB_DEPENDS+=	mikmod.2:${PORTSDIR}/audio/libmikmod
 CONFIGURE_ARGS+=--with-libmikmod-prefix=${LOCALBASE}
 .endif
 
-.if ${HAVE_GNOME:Mgtk12}!=""
-USE_GNOME+=	gtk12
-PKGNAMESUFFIX=	-gtk
+.if ${HAVE_GNOME:Mgnomelibs}!=""
+USE_GNOME+=	gnomelibs gnomehack
+PKGNAMESUFFIX=	-gnome
+PLIST_SUB+=	DATADIR="share/gnome"
 .else
-CONFIGURE_ARGS+=--without-gnome
+CONFIGURE_ARGS+=	--without-gnome
+PLIST_SUB+=	DATADIR="share"
 .endif
 
 .if defined(WITH_ROTATE_FIXED)
