@@ -1,10 +1,8 @@
 include/beecrypt/aes.h
 include/beecrypt/aesopt.h
+include/beecrypt/api.h
 include/beecrypt/base64.h
-include/beecrypt/beecrypt.api.h
-include/beecrypt/beecrypt.gnu.h
 include/beecrypt/beecrypt.h
-include/beecrypt/beecrypt.win.h
 include/beecrypt/blockmode.h
 include/beecrypt/blockpad.h
 include/beecrypt/blowfish.h
@@ -19,10 +17,13 @@ include/beecrypt/elgamal.h
 include/beecrypt/endianness.h
 include/beecrypt/entropy.h
 include/beecrypt/fips186.h
+include/beecrypt/gnu.h
 include/beecrypt/hmac.h
 include/beecrypt/hmacmd5.h
 include/beecrypt/hmacsha1.h
 include/beecrypt/hmacsha256.h
+include/beecrypt/hmacsha384.h
+include/beecrypt/hmacsha512.h
 include/beecrypt/md5.h
 include/beecrypt/memchunk.h
 include/beecrypt/mp.h
@@ -31,14 +32,19 @@ include/beecrypt/mpnumber.h
 include/beecrypt/mpopt.h
 include/beecrypt/mpprime.h
 include/beecrypt/mtprng.h
+include/beecrypt/pkcs1.h
+include/beecrypt/pkcs12.h
 include/beecrypt/rsa.h
 include/beecrypt/rsakp.h
 include/beecrypt/rsapk.h
 include/beecrypt/sha1.h
 include/beecrypt/sha1opt.h
 include/beecrypt/sha256.h
+include/beecrypt/sha384.h
+include/beecrypt/sha512.h
 include/beecrypt/timestamp.h
+include/beecrypt/win.h
 lib/libbeecrypt.a
 lib/libbeecrypt.so
-lib/libbeecrypt.so.8
+lib/libbeecrypt.so.10
 @dirrm include/beecrypt
