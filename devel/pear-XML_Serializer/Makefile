@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML_Serializer
-PORTVERSION=	0.11.1
+PORTVERSION=	0.12.0
 CATEGORIES=	devel www pear
 
 MAINTAINER=	ports@FreeBSD.org
