@@ -550,6 +550,7 @@
     SUBDIR += xpx
     SUBDIR += xrml
     SUBDIR += xsane
+    SUBDIR += xsvg
     SUBDIR += xtexcad
     SUBDIR += xv
     SUBDIR += xv-m17n
