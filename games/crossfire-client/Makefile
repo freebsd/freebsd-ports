@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	crossfire-client
-PORTVERSION=	1.6.0
-PORTREVISION=	2
+PORTVERSION=	1.7.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.ifi.uio.no/pub/crossfire/ \
@@ -17,7 +16,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-images-1.5.0${EXTRACT_SUFX} \
 		${PORTNAME}-sounds-1.4.0${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ports@mark.reidel.info
 COMMENT=	Multiplayer graphical arcade and adventure game made for X11
 
 USE_X_PREFIX=	yes
@@ -29,8 +28,9 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
-CONFIGURE_ARGS=	--with-sound-dir=${DATADIR}/sounds \
-		--disable-gnome # Gnome client currently broken
+CONFIGURE_ARGS=	--with-sound-dir=${DATADIR}/sounds
+
+OPTIONS=	SDL "Use SDL for images" on
 
 MAN1=		cfclient.1
 
