@@ -22,20 +22,14 @@ MAINDIR=	${.CURDIR}/../mozilla
 PORTVERSION!=	${PORTVERSION}
 PORTREVISION!=	${PORTREVISION}
 PORTEPOCH!=	${PORTEPOCH}
-RUN_DEPENDS!=	${RUN_DEPENDS}
-LIB_DEPENDS!=	${LIB_DEPENDS}
 WRKSRC=		${WRKDIRPREFIX}${MAINDIR}/work/mozilla
 USE_GMAKE=	yes
 ALL_TARGET=	export
 
-post-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} BUILD_MODULES=psm \
-		${ALL_TARGET}
-
 do-install:
 	${MKDIR} ${PREFIX}/include/mozilla
 	${CHMOD} 755 ${PREFIX}/include/mozilla
-	cd ${WRKSRC}/dist/include && ${TAR} -chf - . | \
-		${TAR} --unlink -xf - -C ${PREFIX}/include/mozilla
+	${TAR} -C ${WRKSRC}/dist/include -chf - . | \
+		${TAR} -C ${PREFIX}/include/mozilla --unlink -xf -
 
 .include <bsd.port.mk>
