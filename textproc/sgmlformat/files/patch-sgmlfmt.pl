@@ -1,10 +1,11 @@
---- sgmlfmt/sgmlfmt.pl.orig	Tue Sep 15 23:05:47 1998
-+++ sgmlfmt/sgmlfmt.pl	Thu Jun 14 15:37:50 2001
-@@ -151,19 +151,14 @@
+--- sgmlfmt/sgmlfmt.pl.orig	Tue Sep 15 21:05:47 1998
++++ sgmlfmt/sgmlfmt.pl	Tue Sep  4 15:27:32 2001
+@@ -151,19 +151,15 @@
      open (outfile, ">$fileroot.trf");
      &sgmlparse(infile, "roff");
      while (<infile>) {
 +	s,\\\(ru,_,g if /^\.GET[HP]N/;
++	s,tmac\.m,m\.tmac,g;
  	print outfile;
      }
      close(infile);
