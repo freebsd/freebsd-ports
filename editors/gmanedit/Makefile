@@ -12,7 +12,7 @@ MASTER_SITES=	http://gmanedit.sourceforge.net/files/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
