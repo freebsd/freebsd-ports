@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	octave-forge
-PORTVERSION=	2004.02.12
+PORTVERSION=	2004.11.16
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	octave
@@ -14,9 +14,10 @@ MASTER_SITE_SUBDIR=	octave
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Many additional features to math/octave
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2 \
-		${LOCALBASE}/bin/qhull:${PORTSDIR}/math/qhull \
-		${LOCALBASE}/bin/octave:${PORTSDIR}/math/octave
+BUILD_DEPENDS=	${LOCALBASE}/bin/qhull:${PORTSDIR}/math/qhull \
+		${LOCALBASE}/bin/gcsplit:${PORTSDIR}/sysutil/coreutils
+#		${LOCALBASE}/bin/octave:${PORTSDIR}/math/octave \
+
 RUN_DEPENDS=	${LOCALBASE}/bin/octave:${PORTSDIR}/math/octave \
 		${LOCALBASE}/bin/qhull:${PORTSDIR}/math/qhull
 
