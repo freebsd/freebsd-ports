@@ -1020,6 +1020,7 @@ db41-nocrypto	ports/databases/db41-nocrypto
 dbXML		ports/databases/dbXML
 dbconnect	ports/databases/dbconnect
 dbench		ports/benchmarks/dbench
+dbf		ports/databases/dbf
 dbf2mysql	ports/databases/dbf2mysql
 dbh		ports/databases/dbh
 dbmetrix	ports/databases/dbmetrix
