@@ -1,4 +1,4 @@
-@comment $Id: PLIST,v 1.23 1999/06/05 22:25:55 mharo Exp $
+@comment $Id: PLIST,v 1.24 1999/07/04 20:58:11 obrien Exp $
 bin/chill
 bin/eg++filt
 bin/eg++
@@ -114,7 +114,7 @@ lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/g++/std/slice_array.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/g++/std/std_valarray.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/g++/std/straits.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/g++/std/valarray_array.h
-lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/g++/std/valarray_array.toc
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/g++/std/valarray_array.tcc
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/g++/std/valarray_meta.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/g++/stdexcept
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/g++/stdiostream.h
@@ -186,6 +186,7 @@ info/g77.info-18
 info/g77.info-19
 info/g77.info-2
 info/g77.info-20
+info/g77.info-21
 info/g77.info-3
 info/g77.info-4
 info/g77.info-5
