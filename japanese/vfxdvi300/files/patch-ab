@@ -1,22 +1,23 @@
-*** gs-view.c.orig	Sat Jan 13 18:33:59 1996
---- gs-view.c	Sat Jan 13 18:34:19 1996
-***************
-*** 126,132 ****
-  
-  #ifdef	PS_LITERAL
-  	fflush(temp_ps_file);
-! 	lseek(fileno(temp_ps_file), 0L, SEEK_SET);
-  #endif	/* PS_LITERAL */
-  
-  	{
---- 126,132 ----
-  
-  #ifdef	PS_LITERAL
-  	fflush(temp_ps_file);
-! 	lseek(fileno(temp_ps_file), (off_t)0, SEEK_SET);
-  #endif	/* PS_LITERAL */
-  
-  	{
+--- gs-view.c.orig	Sat Jan 19 12:06:41 2002
++++ gs-view.c	Sat Jan 19 12:10:26 2002
+@@ -126,7 +126,7 @@
+ 
+ #ifdef	PS_LITERAL
+ 	fflush(temp_ps_file);
+-	lseek(fileno(temp_ps_file), 0L, SEEK_SET);
++	lseek(fileno(temp_ps_file), (off_t)0, SEEK_SET);
+ #endif	/* PS_LITERAL */
+ 
+ 	{
+@@ -208,7 +208,7 @@
+ 	    for (p = ps_headers; p != NULL; p = p->next)
+ 		argv[i++] = p->psheader;
+ #endif	/* PS_HEADER */
+-	    argv[i++] = "-";
++	    argv[i++] = "-sOutputFile=-";
+ 	    argv[i++] = gs->psfile;
+ 	    argv[i++] = "quit.ps";
+ 	    argv[i++] = NULL;
 *** font_open.c.orig	Sat Jan 13 18:29:22 1996
 --- font_open.c	Sat Jan 13 18:39:14 1996
 ***************
