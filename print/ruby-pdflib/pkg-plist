@@ -1,0 +1,19 @@
+%%RUBY_SITEARCHLIBDIR%%/pdflib.so
+%%PORTDOCS%%%%RUBY_DOCDIR%%/pdflib/ChangeLog
+%%PORTDOCS%%%%RUBY_DOCDIR%%/pdflib/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/pdflib/pdflib-api.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/pdflib/pdflib-api.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/pdflib/ja/ChangeLog.jp
+%%PORTDOCS%%%%RUBY_DOCDIR%%/pdflib/ja/README.jp
+%%PORTDOCS%%%%RUBY_DOCDIR%%/pdflib/ja/pdflib-api-jp.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/pdflib/ja/pdflib-api-jp.rd
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/pdflib/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/pdflib
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pdflib/hello.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pdflib/pdfclock.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pdflib/pdfgraph.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pdflib/pdfimage.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pdflib/text2pdf.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pdflib/ja/jtext2pdf.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/pdflib/ja
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/pdflib
