@@ -1,0 +1,92 @@
+bin/dfbg
+bin/directfb-config
+bin/directfb-csource
+include/directfb/dfb_types.h
+include/directfb/directfb.h
+include/directfb/directfb_keyboard.h
+include/directfb/directfb_keynames.h
+include/directfb-internal/directfb_internals.h
+include/directfb-internal/directfb_version.h
+include/directfb-internal/core/coretypes.h
+include/directfb-internal/core/core.h
+include/directfb-internal/core/core_system.h
+include/directfb-internal/core/coredefs.h
+include/directfb-internal/core/fonts.h
+include/directfb-internal/core/fusion/arena.h
+include/directfb-internal/core/fusion/fusion.h
+include/directfb-internal/core/fusion/list.h
+include/directfb-internal/core/fusion/lock.h
+include/directfb-internal/core/fusion/object.h
+include/directfb-internal/core/fusion/property.h
+include/directfb-internal/core/fusion/reactor.h
+include/directfb-internal/core/fusion/ref.h
+include/directfb-internal/core/fusion/shmalloc.h
+include/directfb-internal/core/fusion/fusion_types.h
+include/directfb-internal/core/gfxcard.h
+include/directfb-internal/core/graphics_driver.h
+include/directfb-internal/core/input.h
+include/directfb-internal/core/input_driver.h
+include/directfb-internal/core/layers.h
+include/directfb-internal/core/modules.h
+include/directfb-internal/core/palette.h
+include/directfb-internal/core/sig.h
+include/directfb-internal/core/state.h
+include/directfb-internal/core/surfaces.h
+include/directfb-internal/core/surfacemanager.h
+include/directfb-internal/core/system.h
+include/directfb-internal/core/thread.h
+include/directfb-internal/core/windows.h
+include/directfb-internal/display/idirectfbpalette.h
+include/directfb-internal/display/idirectfbsurface.h
+include/directfb-internal/display/idirectfbsurface_layer.h
+include/directfb-internal/display/idirectfbsurface_window.h
+include/directfb-internal/display/idirectfbdisplaylayer.h
+include/directfb-internal/gfx/clip.h
+include/directfb-internal/gfx/convert.h
+include/directfb-internal/gfx/util.h
+include/directfb-internal/idirectfb.h
+include/directfb-internal/input/idirectfbinputdevice.h
+include/directfb-internal/input/idirectfbinputbuffer.h
+include/directfb-internal/interface_implementation.h
+include/directfb-internal/media/idirectfbdatabuffer.h
+include/directfb-internal/media/idirectfbfont.h
+include/directfb-internal/media/idirectfbimageprovider.h
+include/directfb-internal/media/idirectfbvideoprovider.h
+include/directfb-internal/misc/conf.h
+include/directfb-internal/misc/cpu_accel.h
+include/directfb-internal/misc/gfx_util.h
+include/directfb-internal/misc/mem.h
+include/directfb-internal/misc/memcpy.h
+include/directfb-internal/misc/tree.h
+include/directfb-internal/misc/utf8.h
+include/directfb-internal/misc/util.h
+include/directfb-internal/windows/idirectfbwindow.h
+lib/libdirectfb-0.9.so.16
+lib/libdirectfb.a
+lib/libdirectfb.so
+lib/directfb-%%DIRECTFB_VERSION%%/interfaces/IDirectFBFont/libidirectfbfont_default.so
+%%WITH_FREETYPE2%%lib/directfb-%%DIRECTFB_VERSION%%/interfaces/IDirectFBFont/libidirectfbfont_ft2.so
+lib/directfb-%%DIRECTFB_VERSION%%/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_gif.so
+lib/directfb-%%DIRECTFB_VERSION%%/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_jpeg.so
+lib/directfb-%%DIRECTFB_VERSION%%/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_mpeg2.so
+lib/directfb-%%DIRECTFB_VERSION%%/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_png.so
+libdata/pkgconfig/directfb.pc
+libdata/pkgconfig/directfb-internal.pc
+share/directfb-%%DIRECTFB_VERSION%%/cursor.dat
+share/directfb-%%DIRECTFB_VERSION%%/font.data
+@dirrm share/directfb-%%DIRECTFB_VERSION%%
+@dirrm lib/directfb-%%DIRECTFB_VERSION%%/interfaces/IDirectFBVideoProvider
+@dirrm lib/directfb-%%DIRECTFB_VERSION%%/interfaces/IDirectFBImageProvider
+@dirrm lib/directfb-%%DIRECTFB_VERSION%%/interfaces/IDirectFBFont
+@dirrm lib/directfb-%%DIRECTFB_VERSION%%/interfaces
+@dirrm lib/directfb-%%DIRECTFB_VERSION%%
+@dirrm include/directfb-internal/windows
+@dirrm include/directfb-internal/misc
+@dirrm include/directfb-internal/media
+@dirrm include/directfb-internal/input
+@dirrm include/directfb-internal/gfx
+@dirrm include/directfb-internal/display
+@dirrm include/directfb-internal/core/fusion
+@dirrm include/directfb-internal/core
+@dirrm include/directfb-internal
+@dirrm include/directfb

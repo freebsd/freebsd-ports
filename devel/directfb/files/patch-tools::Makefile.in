@@ -1,0 +1,11 @@
+--- tools/Makefile.in.orig	Wed Jan 15 21:06:35 2003
++++ tools/Makefile.in	Sun Jan 19 19:17:52 2003
+@@ -157,7 +157,7 @@
+ @DIRECTFB_CSOURCE_TRUE@dfbg$(EXEEXT)
+ @DIRECTFB_CSOURCE_FALSE@bin_PROGRAMS =  dfbg$(EXEEXT)
+ noinst_PROGRAMS =  dfbdump$(EXEEXT) dfbsummon$(EXEEXT) \
+-fusion_bench$(EXEEXT) raw15toraw24$(EXEEXT) raw16toraw24$(EXEEXT) \
++raw15toraw24$(EXEEXT) raw16toraw24$(EXEEXT) \
+ raw32toraw24$(EXEEXT)
+ PROGRAMS =  $(bin_PROGRAMS) $(noinst_PROGRAMS)
+ 

@@ -1,0 +1,30 @@
+--- configure.orig	Mon Jan 13 23:25:30 2003
++++ configure	Sun Jan 19 22:10:41 2003
+@@ -5500,7 +5500,8 @@
+ 
+ 
+ # This can be used to rebuild libtool when needed
+-LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++LIBTOOL_DEPS="--disable-ltlibs /usr/local/share/libtool/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -6153,7 +6154,7 @@
+ 
+ 
+ 
+-THREADFLAGS="-D_REENTRANT"
++THREADFLAGS="-D_REENTRANT -pthread"
+ 
+ if test x$need_libc_r = xyes; then
+   echo $ac_n "checking for pthread_attr_init in -lc_r""... $ac_c" 1>&6
+@@ -6391,7 +6392,7 @@
+     DFB_INTERNAL_CFLAGS="$DFB_INTERNAL_CFLAGS -DDFB_DEBUG"
+     DFB_CFLAGS="$DFB_CFLAGS -O3 -g3 -fno-inline"
+ else
+-    DFB_CFLAGS="$DFB_CFLAGS -O3 -g"
++    DFB_CFLAGS="$DFB_CFLAGS -O"
+     if test "x$enable_profiling" = xno; then
+         DFB_CFLAGS_OMIT_FRAME_POINTER="-fomit-frame-pointer"
+     fi

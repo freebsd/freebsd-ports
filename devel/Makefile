@@ -140,6 +140,7 @@
     SUBDIR += devtodo
     SUBDIR += dia2code
     SUBDIR += diffconvert
+    SUBDIR += directfb
     SUBDIR += distcc
     SUBDIR += distel
     SUBDIR += dmake
