@@ -1,0 +1,47 @@
+# New ports collection makefile for:	magicfilter
+# Version required:     magicfilter-1.2
+# Date created:		24 Mar 1999
+# Whom:			CHOI Junho <cjh@kr.freebsd.org>
+#
+# $Id$
+#
+
+DISTNAME=	magicfilter-1.2
+CATEGORIES=	print
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR= system/printing
+
+MAINTAINER=	cjh@kr.freebsd.org
+
+# at least, gs must exist in many case
+BUILD_DEPENDS=	${PREFIX}/bin/gs:${PORTSDIR}/print/ghostscript55
+RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript55
+
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+MAN8=		magicfilter.8
+
+# install filters and examples
+post-install:
+	${MKDIR} ${PREFIX}/libexec/magicfilter
+.for FILTER in 	bj10e-filter bj200-filter cps300-filter cps400-filter \
+		cps600-filter cpsonly300-filter cpsonly400-filter \
+		cpsonly600-filter deskjet-filter dj500-filter \
+		dj500c-filter dj550c-filter epson9-filter epson9c-filter \
+		epsonlq-filter epsonlqc-filter ibmpro-filter jetp3852-filter \
+		la50-filter la75-filter laserjet-filter laserjetlo-filter \
+		lbp8-filter lj250-filter ljet2p-filter ljet2plo-filter \
+		ljet3-filter ljet4-filter ljet4l-filter ljet4m-filter \
+		ljet4ml-filter ljetplus-filter ljetpluslo-filter ln03-filter \
+		m8510-filter necp6-filter oki182-filter pj-filter pjxl-filter \
+		pjxl300-filter ps300-filter ps400-filter ps600-filter \
+		psonly300-filter psonly400-filter psonly600-filter \
+		r4081-filter tek4693-filter tek4696-filter
+	${INSTALL_SCRIPT} ${WRKSRC}/filters/${FILTER} \
+			   ${PREFIX}/libexec/magicfilter/
+	${MKDIR} ${PREFIX}/share/examples/magicfilter
+	${INSTALL_DATA} ${FILESDIR}/printcap.sample \
+			${PREFIX}/share/examples/magicfilter/
+.endfor
+
+.include <bsd.port.mk>

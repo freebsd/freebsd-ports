@@ -1,0 +1,10 @@
+                          MAGICFILTER v 1.2
+
+                      H. Peter Anvin <hpa@zytor.com>
+
+MAGICFILTER is a customizable, extensible automatic printer filter.
+Although written for Linux, it should work on any UNIX system which
+has an ANSI C compiler.
+
+--
+CHOI Junho <cjh@kr.freebsd.org>
