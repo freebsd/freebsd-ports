@@ -1182,6 +1182,7 @@ db2		ports/databases/db2
 db3		ports/databases/db3
 db4		ports/databases/db4
 db41		ports/databases/db41
+db41-nocrypto	ports/databases/db41-nocrypto
 dbXML		ports/databases/dbXML
 dbconnect	ports/databases/dbconnect
 dbench		ports/benchmarks/dbench
