@@ -93,6 +93,7 @@
     SUBDIR += licq
     SUBDIR += macipgw
     SUBDIR += mars_nwe
+    SUBDIR += merlinmon
     SUBDIR += micq
     SUBDIR += mopd
     SUBDIR += mpd
