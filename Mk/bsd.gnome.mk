@@ -28,7 +28,7 @@ _USE_GNOME_ALL=	gnomehack gnomeprefix gnomehier gnomeaudio esound libghttp \
 		glib12 gtk12 libxml gdkpixbuf imlib orbit gnomelibs \
 		gnomecanvas oaf gnomemimedata gconf gnomevfs libcapplet \
 		gnomeprint bonobo libgda gnomedb libglade gal glibwww gtkhtml \
-		libpanel gnometarget
+		gnometarget
 _USE_GNOME_ALL+=glib20 atk pango gtk20 linc libidl orbit2 libglade2 libxml2 \
 		libxslt bonoboactivation libbonobo gconf2 gnomevfs2 gail \
 		libgnomecanvas libartlgpl2 libgnomeprint libgnomeprintui \
@@ -202,11 +202,6 @@ glibwww_USE_GNOME_IMPL=	gnomelibs
 gtkhtml_LIB_DEPENDS=	gtkhtml-1.1.3:${PORTSDIR}/www/gtkhtml
 gtkhtml_DETECT=		${X11BASE}/etc/gtkhtmlConf.sh
 gtkhtml_USE_GNOME_IMPL=	glibwww gal libghttp libcapplet
-
-libpanel_LIB_DEPENDS=	panel_applet.5:${PORTSDIR}/x11/libpanel
-libpanel_DETECT=	${X11BASE}/etc/appletsConf.sh
-libpanel_USE_GNOME_IMPL=gnomelibs
-libpanel_GNOME_DESKTOP_VERSION=1
 
 glib20_LIB_DEPENDS=	glib-2.0.200:${PORTSDIR}/devel/glib20
 glib20_DETECT=		${LOCALBASE}/libdata/pkgconfig/glib-2.0.pc
@@ -417,8 +412,8 @@ libgsf_USE_GNOME_IMPL=		gnomevfs2 libbonobo
 # intelligent choice on the user's behalf.
 .if exists(${gnomepanel_DETECT})
 GNOME_DESKTOP_VERSION?=	2
-.elif exists(${libpanel_DETECT})
-GNOME_DESKTOP_VERSION?=	1
+#.elif exists(${libpanel_DETECT})
+#GNOME_DESKTOP_VERSION?=	1
 .endif
 
 # We also check each component to see if it has a desktop requirement.  If
@@ -478,7 +473,7 @@ USE_GNOME+=	gtk12
 # didn't do so themselves.  New ports should NOT set USE_GNOME=yes.
 . if ${USE_GNOME}=="yes"
 USE_GNOME:=	${USE_GNOME:S/yes//}
-USE_GNOME+=	gnomeprefix gnomehack gtkhtml libpanel
+USE_GNOME+=	gnomeprefix gnomehack gtkhtml
 . endif
 
 # First of all expand all USE_GNOME_IMPL recursively
