@@ -24,7 +24,7 @@ DISTNAME=	apache_${VERSION_APACHE}rusPL${RA_VERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		mod_ssl-${VERSION_MODSSL}-${VERSION_APACHE}${EXTRACT_SUFX}
 
-MAINTAINER=	demon@FreeBSD.org
+MAINTAINER=	lev@serebryakov.spb.ru
 
 FORBIDDEN=	"Vulnerable to denial-of-service.  See" \
 		"http://httpd.apache.org/info/security_bulletin_20020617.txt"
