@@ -1,0 +1,53 @@
+*** block.c	Mon Nov 20 19:02:24 1995
+--- /home/andy/tmp/wrk/block.c	Sat May 10 22:57:08 1997
+***************
+*** 31,37 ****
+  #define FF_HOME    4 
+  #define FF_OVEN    5
+  
+! #define DEFGAME "/usr/games/lib/default.block"    
+  
+  /* uncomment if you like lots of diagnostic garbage */
+  /* #define DEBUG 1                                  */
+--- 31,37 ----
+  #define FF_HOME    4 
+  #define FF_OVEN    5
+  
+! #define DEFGAME PREFIX "/share/block/default.block"    
+  
+  /* uncomment if you like lots of diagnostic garbage */
+  /* #define DEBUG 1                                  */
+***************
+*** 140,146 ****
+               break;
+      case 1 : 
+      case 2 : printf("Hmmm... trouble reading file %s\n",lname);
+!              sprintf(tmp,"/usr/games/lib/%s.block",lname);
+               if(loadnext(&cw,tmp)){
+                 printf("Could not read %s either\n",tmp); 
+                 if(loadnext(&cw,"default")){
+--- 140,146 ----
+               break;
+      case 1 : 
+      case 2 : printf("Hmmm... trouble reading file %s\n",lname);
+!              sprintf(tmp, PREFIX "/share/block/%s.block",lname);
+               if(loadnext(&cw,tmp)){
+                 printf("Could not read %s either\n",tmp); 
+                 if(loadnext(&cw,"default")){
+***************
+*** 495,501 ****
+    }
+                 /*Hope they come back again*/
+  
+!   sprintf(lname,"/usr/games/lib/%s.block",cw.fname);
+    /* yuck - a messy kludge - the fname stores the name of the next game*/
+    moves=0;
+    if(looper)looper=2;    
+--- 495,501 ----
+    }
+                 /*Hope they come back again*/
+  
+!   sprintf(lname,"/share/block/%s.block",cw.fname);
+    /* yuck - a messy kludge - the fname stores the name of the next game*/
+    moves=0;
+    if(looper)looper=2;    

@@ -1,0 +1,27 @@
+Blocks - a small tty based games using ncurses 
+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+
+ Written by marc welz (rather : kluged by marc welz) - Redistribution is
+ subject to the GNU public license.
+
+
+Notes
+-----
+
+ Good idea to restrict file names to 20 chars.
+
+ The editor tries to fill the entire screen - so if you write a level on
+ a big screen, you will not be able to play it on a small one.  And
+ remember to save the game you are editing before exiting.
+
+ Probably contains bugs - but if I knew what they were they would not be
+ there ...
+
+Thanks
+------
+  
+ A big THANK YOU goes to Joey Hess (jeh22@conell.edu) who contributed
+ the pyramid level, wrote the man pages for the game and pointed out a
+ couple of minor bugs.
+
+marc (marc@mbs.bch.uct.ac.za)
