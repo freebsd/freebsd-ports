@@ -19,6 +19,7 @@ MAINTAINER=	sada@FreeBSD.org
 RUN_DEPENDS=	${LOCALBASE}/bin/netscape:${PORTSDIR}/www/netscape3 \
 		${PKG_DBDIR}/ja-netscape-fonts-1.0:${PORTSDIR}/japanese/netscape-fonts
 
+IGNORE=		"is old and has some security bugs"
 DIST_SUBDIR=	netscape3
 NO_WRKSUBDIR=	YES
 NO_BUILD=	YES

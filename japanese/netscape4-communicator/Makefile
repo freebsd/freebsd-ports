@@ -19,7 +19,7 @@ RUN_DEPENDS?=	${PREFIX}/bin/${BROWSER_ARC}-${BROWSER_VERSION}:${PORTSDIR}/www/ne
 RUN_DEPENDS+=	${PKG_DBDIR}/ja-bdf-fonts-1.0_1:${PORTSDIR}/japanese/bdf-fonts
 
 .if (!defined(BROWSER_VERSION) || ${PORTVERSION} == "4.76")
-BROKEN=		"has a serious security hole, use 4.77 instead"
+IGNORE=		"has a serious security hole, use 4.77 instead"
 .endif
 
 MAN1=		ja-netscape.1
