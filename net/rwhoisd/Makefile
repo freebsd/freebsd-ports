@@ -25,16 +25,12 @@ MAN8=		rmkdbindex.8 rwhoisd.8
 
 .include <bsd.port.pre.mk>
 
-PLIST=		${WRKDIR}/PLIST
 .if ${OSVERSION} < 400011
-pre-install:
-	@${SED} -e "/libc.so.4/d" \
-		${PKGDIR}/PLIST > ${PLIST}
+LIBCVERSION=	3.1
 .else
-pre-install:
-	@${SED} -e "/libc.so.3/d" \
-		${PKGDIR}/PLIST > ${PLIST}
+LIBCVERSION=	4
 .endif
+PLIST_SUB=	LIBCVERSION=${LIBCVERSION}
 
 post-install:
 	${MKDIR} -p ${PREFIX}/share/doc/rwhois
