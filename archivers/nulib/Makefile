@@ -3,12 +3,12 @@
 # Date created:         Thu May  8 00:14:31 PDT 1997
 # Whom:                 Steven Wallace <swallace@freebsd.org>
 #
-# $Id: Makefile,v 1.9 1996/12/07 09:28:40 max Exp $
+# $Id: Makefile,v 1.1.1.1 1997/05/15 23:23:08 swallace Exp $
 #
 
 DISTNAME=       nulib-3.25
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://apple2.caltech.edu//Zocalo/pub/apple2/ARCHIVERS/
+MASTER_SITES=	ftp://apple2.caltech.edu/%2FZocalo/pub/apple2/ARCHIVERS/
 DISTFILES=	nulib325.tar.Z
 WRKSRC=		${WRKDIR}/nulib
 
