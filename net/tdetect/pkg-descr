@@ -5,4 +5,4 @@ or "traceroute host.your-network", you can try to use this simple program.
 The idea is simple - to detect UDP (Unix traceroute) or ICMP ECHO (Windows  
 traceroute) packets with TTL fields == 1.                                   
 
-See http://sb.123.org/ for more info
+WWW: http://sb.123.org/

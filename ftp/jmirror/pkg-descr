@@ -4,8 +4,7 @@ client that cannot download recursively.  This requires both
 PERL 5 (/usr/ports/lang/perl5/), and the CPAN module Net:FTP 
 (http://www.perl.org/CPAN/).
 
-
-http://jmirror.ruin.org/
+WWW: http://jmirror.ruin.org/
 
 - Justin Robinson
 jmrobins@jmirror.ruin.org

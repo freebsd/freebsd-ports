@@ -11,7 +11,7 @@ Version 0.9 status:
 * Working filesystem on OpenBSD, FreeBSD, NetBSD, Linux and Solaris
 * Some administration programs (fs, vos and pts)
 
-For more information see http://www.stacken.kth.se/projekt/arla/
+WWW: http://www.stacken.kth.se/projekt/arla/
 
 This port requires kerberos
 

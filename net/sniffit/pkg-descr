@@ -4,12 +4,10 @@ Sniffit produces very detailed technical details about the packets flowing
 through your network (SEQ, ACK, TTL, Window, ...) and also packet contence
 in different formats (hex or plain text, ...)
 
-See the Sniffit home page at
-http://reptile.rug.ac.be/~coder/sniffit/sniffit.html
-FAQ at 
-http://reptile.rug.ac.be/~coder/sniffit/sniffit-FAQ.html
-secondary page at
-http://reptile.rug.ac.be/~wvdputte/sniffit_addicts_anonymous/
+WWW: http://reptile.rug.ac.be/~coder/sniffit/sniffit.html
+FAQ: http://reptile.rug.ac.be/~coder/sniffit/sniffit-FAQ.html
+     or
+     http://reptile.rug.ac.be/~wvdputte/sniffit_addicts_anonymous/
 
 - Adam McDougall
 mcdouga9@egr.msu.edu 

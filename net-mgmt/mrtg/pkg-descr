@@ -2,7 +2,7 @@ The Multi Router Traffic Grapher (MRTG) is a tool to monitor the traffic
 load on network-links. MRTG generates HTML pages containing GIF images which
 provide a LIVE visual representation of this traffic. Check
 
-http://www.ee.ethz.ch/stats/mrtg/
+WWW: http://www.ee.ethz.ch/stats/mrtg/
 
 for an example. MRTG is based on Perl and C and works under UNIX and Windows
 NT.
