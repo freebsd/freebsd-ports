@@ -5,17 +5,17 @@
 # $FreeBSD$
 #
 
-PORTNAME=	cmftransforms
-PORTVERSION=	1.0.3
+PORTNAME=	portaltransforms
+PORTVERSION=	1.3.2
 CATEGORIES=	www zope
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	archetypes
 PKGNAMEPREFIX=	zope-
-DISTNAME=	PortalTransforms-${PORTVERSION}
+DISTNAME=	PortalTransforms-${PORTVERSION}-4
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	filippo@widestore.net
-COMMENT=	CMFTransforms product for Zope/CMF
+COMMENT=	PortalTransforms product for Zope/CMF
 
 RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFDefault/__init__.py:${PORTSDIR}/www/zope-cmf \
 		pdftohtml:${PORTSDIR}/textproc/pdftohtml \
@@ -27,8 +27,8 @@ USE_ZOPE=	yes
 DIST_SUBDIR=	zope
 
 ZOPEPRODUCTNAME=	PortalTransforms
-
-WRKSRC=		${WRKDIR}/${ZOPEPRODUCTNAME}-${PORTVERSION}/${ZOPEPRODUCTNAME}
+WRKSRC=		${WRKDIR}/${ZOPEPRODUCTNAME}
+PLIST=		${WRKDIR}/pkg-plist
 
 OPTIONS=	WV "Add wv support" off \
 		TIDY "Add tidy support" off \
@@ -55,6 +55,17 @@ RUN_DEPENDS+=	xlhtml:${PORTSDIR}/textproc/xlhtml
 
 do-build:
 	-@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/
+
+pre-install:
+	@${RM} -f ${PLIST}
+	@${TOUCH} ${PLIST}
+	@cd ${WRKDIR} && \
+	for f in `${FIND} ${ZOPEPRODUCTNAME} -type f`; do \
+		${ECHO_CMD} %%ZOPEPRODUCTDIR%%/$${f} >> ${PLIST}; \
+	done; \
+	for d in `${FIND} -d ${ZOPEPRODUCTNAME} -type d`; do \
+		${ECHO_CMD} @dirrm %%ZOPEPRODUCTDIR%%/$${d} >> ${PLIST}; \
+	done; \
 
 do-install:
 	@${MKDIR} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/

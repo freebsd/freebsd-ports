@@ -744,6 +744,7 @@
     SUBDIR += zope-parsedxml
     SUBDIR += zope-placelesstranslationservice
     SUBDIR += zope-plonelanguagetool
+    SUBDIR += zope-portaltransforms
     SUBDIR += zope-proxyindex
     SUBDIR += zope-silva
     SUBDIR += zope-silvaviews
