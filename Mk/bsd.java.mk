@@ -180,6 +180,7 @@ JAVA_HOME=	${_JAVA_HOME}
 .		if (${USE_JAVA} == "1.1+")
 .			if defined(HAVE_JAVA_FREEBSD_1_3)   || \
 			   defined(HAVE_JAVA_SUN_LINUX_1_3) || \
+			   defined(HAVE_JAVA_BLACKDOWN_LINUX_1_3) || \
 			   defined(HAVE_JAVA_IBM_LINUX_1_3)
 USE_JAVA=	1.3
 .			elif defined(HAVE_JAVA_FREEBSD_1_2) || \
