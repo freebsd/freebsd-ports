@@ -1,0 +1,46 @@
+--- dbf2mysql.c.orig	Fri Jul  7 04:55:02 2000
++++ dbf2mysql.c	Wed Feb  7 13:19:42 2001
+@@ -17,8 +17,13 @@
+ #include <string.h>
+ #include <ctype.h>
+ #include <mysql.h>
++#include <paths.h>
+ #include "dbf.h"
+ 
++#if !defined(_PATH_TMP)
++#define _PATH_TMP	"/tmp/"
++#endif
++
+ int	verbose=0, upper=0, lower=0, create=0, fieldlow=0, var_chars=1;
+ int	express=0;
+ int	null_fields=0, trim=0, quick=0;
+@@ -319,7 +324,7 @@
+ /* Patched by GLC to fix quick mode Numeric fields */
+ void do_inserts(MYSQL *SQLsock, char *table, dbhead *dbh)
+ {
+-    int		result, i, j, nc = 0, h;
++    int		result, i, j, nc = 0, h, fd;
+     field	*fields;
+     char	*query, *vpos, *pos;
+     char	str[257], *cvt = NULL, *s;
+@@ -395,9 +400,17 @@
+ 	    strcat(query, "NULL,NULL,");
+ 	else  /* if specified -q create file for 'LOAD DATA' */
+ 	{
+-	    datafile = tempnam ("/tmp", "d2my");
+-	    tempfile = fopen (datafile, "wt");
+-	    if (tempfile == NULL || datafile == NULL)
++	    if (asprintf(&datafile, "%s/d2myXXXXXXXX",
++	      getenv("TMPDIR") ? getenv("TMPDIR") : _PATH_TMP) == -1) {
++		fprintf (stderr, "asprintf() failed");
++		return;
++	    }
++	    if ((fd = mkstemp(datafile)) == -1) {
++		fprintf (stderr, "mkstemp() failed");
++		return;
++	    }
++	    tempfile = fdopen (fd, "w");
++	    if (tempfile == NULL)
+ 	    {
+ 		fprintf (stderr, "Cannot open file '%s' for writing\n", datafile);
+ 		return;
