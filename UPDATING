@@ -6,6 +6,19 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20040724:
+  AFFECTS: users for xorg and GNOME
+  AUTHOR: gnome@FreeBSD.org
+
+  After migrating from XFree86 to X.Org, you must rebuild
+  x11-toolkits/libwnck and x11/libxklavier for full GNOME functionality
+  to be restored.
+
+  If you receive an XKB initialization error when starting GNOME, edit
+  your XF86Config or xorg.conf, and remove the line:
+
+Option "XkbRules" "xfree86"
+
 20040723:
   AFFECTS: users of FreeBSD-current, users of xorg
   AUTHOR: anholt@FreeBSD.org
