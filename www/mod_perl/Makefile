@@ -55,6 +55,7 @@ post-install:
 	${MKDIR} ${PREFIX}/include/apache/modules/perl
 	${INSTALL_DATA} ${WRKSRC}/src/modules/perl/*.h \
 	    ${PREFIX}/include/apache/modules/perl
+	${INSTALL_PROGRAM} ${WRKSRC}/apaci/libperl.so ${PREFIX}/libexec/apache
 	${SH} ${PKGINSTALL}
 
 .include <bsd.port.post.mk>
