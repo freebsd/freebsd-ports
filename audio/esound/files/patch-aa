@@ -1,16 +1,18 @@
---- Makefile.in.orig	Tue Jul 18 11:35:17 2000
-+++ Makefile.in	Tue Aug  1 21:15:10 2000
-@@ -135,7 +135,7 @@
- 	genrand.h
+
+$FreeBSD$
+
+--- Makefile.in.orig	Sun Sep  9 23:11:09 2001
++++ Makefile.in	Mon Oct 22 18:57:47 2001
+@@ -114,14 +114,14 @@
+ libesd_la_SOURCES =  	esdlib.c		esdmgr.c		esdfile.c		esd_config.c		audio.c			genrand.c		genrand.h
  
  
 -libesd_la_LDFLAGS = -version-info @ESD_VERSION_INFO@
 +libesd_la_LDFLAGS = -version-info 2:0:0
  
- libesd_la_LIBADD = @AUDIOFILE_LIBS@ -lm
+ libesd_la_LIBADD = @AUDIOFILE_LIBS@ @SOUND_LIBS@ -lm
  
-@@ -143,7 +143,7 @@
- 	libesddsp.la
+ EXTRA_LTLIBRARIES =  	libesddsp.la
  
  
 -libesddsp_la_LDFLAGS = -rpath $(libdir) -version-info @ESD_VERSION_INFO@
@@ -18,3 +20,12 @@
  
  libesddsp_la_LIBADD = @DL_LIB@ -lm
  
+@@ -183,7 +183,7 @@
+ 
+ CLEANFILES = esound.spec esound.pc
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = esound.pc
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
