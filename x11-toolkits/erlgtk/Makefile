@@ -16,7 +16,7 @@ MAINTAINER=	chris_pressey@yahoo.ca
 COMMENT=	GTK+ 1.2 binding for Erlang/OTP
 
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
-RUN_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
+RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 

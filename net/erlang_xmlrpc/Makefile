@@ -18,6 +18,8 @@ COMMENT=	A library for XMLRPC support in Erlang
 
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang \
 		${LOCALBASE}/lib/erlang/lib/xmerl/inc/xmerl.hrl:${PORTSDIR}/textproc/xmerl
+RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang \
+		${LOCALBASE}/lib/erlang/lib/xmerl/inc/xmerl.hrl:${PORTSDIR}/textproc/xmerl
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes

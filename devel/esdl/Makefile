@@ -18,6 +18,7 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A library for accessing SDL and OpenGL through Erlang
 
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
+RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
