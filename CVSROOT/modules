@@ -7143,6 +7143,7 @@ visualos	ports/emulators/visualos
 viz		ports/misc/viz
 vlc		ports/graphics/vlc
 vlock		ports/security/vlock
+vlog		ports/security/vlog
 vm		ports/mail/vm
 vm-pop3d	ports/mail/vm-pop3d
 vmsbackup	ports/emulators/vmsbackup
