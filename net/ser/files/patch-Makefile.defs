@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- Makefile.defs.orig	Mon Sep  1 20:47:57 2003
-+++ Makefile.defs	Thu Sep 25 10:57:58 2003
-@@ -114,10 +114,11 @@
+--- Makefile.defs.orig	Thu Nov 20 12:57:22 2003
++++ Makefile.defs	Wed Feb  4 14:27:53 2004
+@@ -123,10 +123,11 @@
  INSTALL-TOUCH = touch          # used to create the file first (good to 
                                 #  make solaris install work)
  # INSTALL-CFG = $(INSTALL) -m 644
@@ -19,21 +19,21 @@ $FreeBSD$
  
  #set some vars from the environment (and not make builtins)
  CC   := $(shell echo "$${CC}")
-@@ -265,10 +266,10 @@
+@@ -275,10 +276,10 @@
+ 	 -DPKG_MALLOC \
  	 -DSHM_MEM  -DSHM_MMAP \
- 	 -DADAPTIVE_WAIT -DADAPTIVE_WAIT_LOOPS=1024 \
  	 -DDNS_IP_HACK \
 -	 -DUSE_IPV6 \
 -	 -DUSE_TCP \
  	 -DDISABLE_NAGLE \
 -	 -DF_MALLOC \
-+	 #-DUSE_IPV6 \
-+	 #-DUSE_TCP \
-+	 #-DF_MALLOC \
- 	 # -DDBG_QM_MALLOC \
- 	 #-DF_MALLOC \
- 	 #-DNO_DEBUG \
-@@ -374,8 +375,8 @@
++	# -DUSE_IPV6 \
++	# -DUSE_TCP \
++	# -DF_MALLOC \
+ 	# -DDBG_QM_MALLOC \
+ 	# -DDBG_QM_MALLOC \
+ 	# -DF_MALLOC \
+@@ -398,8 +399,8 @@
  	found_lock_method=yes
  endif
  
@@ -44,7 +44,7 @@ $FreeBSD$
  # setting CFLAGS
  ifeq ($(mode), release)
  	#if i386
-@@ -383,7 +384,7 @@
+@@ -407,7 +408,7 @@
  		# if gcc 
  ifeq		($(CC_NAME), gcc)
  				#common stuff
@@ -53,7 +53,7 @@ $FreeBSD$
  					-Wall   \
  			#if gcc 3.0
  ifeq			($(CC_SHORTVER), 3.0)
-@@ -409,7 +410,7 @@
+@@ -433,7 +434,7 @@
  
  else		# CC_NAME, gcc
  ifeq		($(CC_NAME), icc)
@@ -62,7 +62,7 @@ $FreeBSD$
  					 -tpp6 -xK  #-openmp  #optimize for PIII 
  				# -prefetch doesn't seem to work
  				#( ty to inline acroos files, unroll loops,prefetch,
-@@ -428,7 +429,7 @@
+@@ -452,7 +453,7 @@
  			#if gcc
  ifeq		($(CC_NAME), gcc)
  				#common stuff
@@ -71,7 +71,7 @@ $FreeBSD$
  					-Wall\
  					#-Wcast-align \
  					#-Wmissing-prototypes 
-@@ -486,7 +487,7 @@
+@@ -510,7 +511,7 @@
  		# if gcc 
  ifeq		($(CC_NAME), gcc)
  				#common stuff
@@ -80,16 +80,3 @@ $FreeBSD$
  					-Wall   \
  			#if gcc 3.0
  ifeq			($(CC_SHORTVER), 3.0)
-@@ -638,9 +639,11 @@
- 	ifneq ($(found_lock_method), yes)
- 		DEFS+= -DUSE_PTHREAD_MUTEX  # try pthread sems
- 		found_lock_method=yes
-+		LIBS= -pthread -lfl  #dlopen is in libc
-+	else
-+		LIBS= -lfl  #dlopen is in libc
- 	endif
- 	YACC=yacc
--	LIBS= -lfl  #dlopen is in libc
- endif
- 
- ifeq ($(OS), openbsd)
