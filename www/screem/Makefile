@@ -30,7 +30,7 @@ pre-patch:
 	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
-		's|\@GNOME_DATA_PREFIX\@/gnome|\@GNOME_DATA_PREFIX\@|g ; \
+		's|\@GNOME_DATA_PREFIX\@|\$$\(datadir\)|g ; \
 		 s|\$\(datadir\)/gnome|\$\(datadir\)|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
