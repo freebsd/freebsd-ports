@@ -12,8 +12,6 @@ MASTER_SITES=	ftp://ftp.kaist.ac.kr/pub/hangul/editor/HanEmacs/ \
 		ftp://ftp.kreonet.re.kr/pub/hangul/cair-archive/editor/HanEmacs/
 DISTNAME=	hanemacs-19.34b-1
 
-MAINTAINER=	junker@jazz.snu.ac.kr
-
 NOT_FOR_ARCHS=	alpha
 
 WRKSRC=		${WRKDIR}/hanemacs-19.34

@@ -19,8 +19,6 @@ DISTFILES=	pine3.96.tar.Z pine396k2.tar.gz
 PATCH_SITES=	ftp://jazz.snu.ac.kr/pub/unix/util/misc/
 PATCHFILES=	pico-3.96-hangul.patch
 
-MAINTAINER=	junker@jazz.snu.ac.kr
-
 MAKE_ENV=	FILESDIR=${FILESDIR}
 MAN1= 		pine.1 pico.1 pilot.1
 

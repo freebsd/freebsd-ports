@@ -19,8 +19,6 @@ MASTER_SITES=	ftp://jazz.snu.ac.kr/pub/unix/util/net/ztelnet/ \
 DISTFILES=	ztelnet-linux.tar.gz ztelnet-patch.tar.gz \
 		ztelnet-patch-cmascott.tar.gz
 
-MAINTAINER=	junker@jazz.snu.ac.kr
-
 NO_WRKSUBDIR=	yes
 PATCH_STRIP=	-p1
 MAN1=		ztelnet.1

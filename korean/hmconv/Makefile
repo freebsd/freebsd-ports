@@ -12,8 +12,6 @@ MASTER_SITES=	ftp://ftp.kaist.ac.kr/pub/hangul/code/hmconv/ \
 		ftp://sunsite.kren.nm.kr/pub/packages/hangul/code/hmconv/
 DISTNAME=	hmconv1.0pl3
 
-MAINTAINER=	junker@jazz.snu.ac.kr
-
 WRKSRC=		${WRKDIR}/hmconv
 
 pre-build:

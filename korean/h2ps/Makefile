@@ -12,8 +12,6 @@ PORTVERSION=	2.06
 CATEGORIES=	korean print
 MASTER_SITES=	ftp://cglab.snu.ac.kr/pub/hangul/n3f/tar/
 
-MAINTAINER=	junker@jazz.snu.ac.kr
-
 pre-build:
 	@(cd ${WRKSRC}; make clean)
 
