@@ -1,0 +1,11 @@
+--- ./source/apps/thermo/thermo.h.orig	Sat Sep 28 23:52:11 2002
++++ ./source/apps/thermo/thermo.h	Sat Sep 28 23:52:21 2002
+@@ -18,6 +18,8 @@
+ //
+ //  Version: 1.03
+ //
++
++#include <sys/types.h>
+ 
+ 
+ #ifndef THERMO_TYPES
