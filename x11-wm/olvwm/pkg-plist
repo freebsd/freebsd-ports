@@ -1,4 +1,3 @@
-@cwd /usr/X11R6
 bin/olvwm
 lib/help/olvwm.info
 man/man1/olvwm.1.gz
