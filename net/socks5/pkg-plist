@@ -1,3 +1,4 @@
+etc/rc.d/socks5.sh
 bin/socks5
 bin/runsocks
 bin/stopsocks
