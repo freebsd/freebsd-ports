@@ -1,5 +1,5 @@
---- src/device/k3bdevicemanager.cpp.orig	Sat Jul 17 11:50:08 2004
-+++ src/device/k3bdevicemanager.cpp	Sun Aug 22 15:28:36 2004
+--- src/device/k3bdevicemanager.cpp.orig	Sun Nov 28 13:27:24 2004
++++ src/device/k3bdevicemanager.cpp	Sun Jan  2 09:44:09 2005
 @@ -49,6 +49,12 @@
  #include <sys/stat.h>
  #include <sys/ioctl.h>
@@ -27,15 +27,15 @@
    QFile info("/proc/sys/dev/cdrom/info");
    QString line,devstring;
    info.open(IO_ReadOnly);
-@@ -286,6 +299,7 @@
- //       m_foundDevices++;
- //   }
+@@ -269,6 +282,7 @@
+   // FIXME: also scan /dev/scsi/hostX.... for devfs without symlinks
+ #endif
  
 +#endif
    scanFstab();
  
    return m_foundDevices;
-@@ -423,6 +437,7 @@
+@@ -412,6 +426,7 @@
  bool K3bCdDevice::DeviceManager::testForCdrom(const QString& devicename)
  {
    bool ret = false;
@@ -43,7 +43,7 @@
    int cdromfd = K3bCdDevice::openDevice( devicename.ascii() );
    if (cdromfd < 0) {
      kdDebug() << "could not open device " << devicename << " (" << strerror(errno) << ")" << endl;
-@@ -463,11 +478,36 @@
+@@ -452,11 +467,36 @@
    }
  
    ::close( cdromfd );
@@ -80,7 +80,7 @@
    K3bDevice* device = 0;
  
    // resolve all symlinks
-@@ -499,6 +539,7 @@
+@@ -488,6 +528,7 @@
      device->m_target = target;
      device->m_lun = lun;
    }
@@ -88,7 +88,7 @@
  
    if( !device->init() ) {
      kdDebug() << "Could not initialize device " << devicename << endl;
-@@ -574,9 +615,20 @@
+@@ -563,9 +604,20 @@
  
      if( K3bDevice* dev = findDevice( resolveSymLink(md) ) )
      {
@@ -109,7 +109,7 @@
          dev->setMountDevice( md );
  	dev->m_supermount = supermount;
        }
-@@ -585,6 +637,8 @@
+@@ -574,6 +626,8 @@
      {
        // compare bus, id, lun since the same device can for example be
        // determined as /dev/srX or /dev/scdX
@@ -118,7 +118,7 @@
        int bus = -1, id = -1, lun = -1;
        if( determineBusIdLun( mountInfo->fs_spec, bus, id, lun ) ) {
          if( K3bDevice* dev = findDevice( bus, id, lun ) ) {
-@@ -595,6 +649,17 @@
+@@ -584,6 +638,17 @@
            }
          }
        }
@@ -136,7 +136,7 @@
  
  
      }
-@@ -670,5 +735,131 @@
+@@ -659,5 +724,138 @@
    return QString::fromLatin1( resolved );
  }
  
@@ -152,7 +152,7 @@
 +	int need_close = 0;
 +	int skip_device = 0;
 +	int bus, target, lun;
-+	QString dev1, dev2;
++	QString dev1 = "", dev2 = "";
 +
 +	if ((fd = open(XPT_DEVICE, O_RDWR)) == -1) 
 +	{
@@ -205,15 +205,19 @@
 +#if __FreeBSD_version < 500100
 +					dev += "c";
 +#endif
-+
-+					K3bDevice* device = new K3bDevice(dev.latin1());
-+					device->m_bus = bus;
-+					device->m_target = target;
-+					device->m_lun = lun;
-+					device->m_passDevice = "/dev/" + pass;
-+					kdDebug() << "(bsd_scan_devices) add device " << dev << ":" << bus << ":" << target << ":" << lun << endl;
-+					addDevice(device);
++					if (dev1 != "" && dev2 != "")
++					{
++						K3bDevice* device = new K3bDevice(dev.latin1());
++						device->m_bus = bus;
++						device->m_target = target;
++						device->m_lun = lun;
++						device->m_passDevice = "/dev/" + pass;
++						kdDebug() << "(bsd_scan_devices) add device " << dev << ":" << bus << ":" << target << ":" << lun << endl;
++						addDevice(device);
++					}
 +					need_close = 0;
++					dev1="";
++					dev2="";
 +				}
 +				bus = dev_result->path_id;
 +				target = dev_result->target_id;
@@ -255,13 +259,16 @@
 +#if __FreeBSD_version < 500100
 +					dev += "c";
 +#endif
-+					K3bDevice* device = new K3bDevice(dev.latin1());
-+					device->m_bus = bus;
-+					device->m_target = target;
-+					device->m_lun = lun;
-+					device->m_passDevice = "/dev/" + pass;
-+					kdDebug() << "(bsd_scan_devices) add device " << dev << ":" << bus << ":" << target << ":" << lun << endl;
-+					addDevice(device);
++					if (dev1 != "" && dev2 != "")
++					{
++						K3bDevice* device = new K3bDevice(dev.latin1());
++						device->m_bus = bus;
++						device->m_target = target;
++						device->m_lun = lun;
++						device->m_passDevice = "/dev/" + pass;
++						kdDebug() << "(bsd_scan_devices) add device " << dev << ":" << bus << ":" << target << ":" << lun << endl;
++						addDevice(device);
++					}
 +	}
 +	close(fd);
 +}

@@ -1,6 +1,6 @@
---- src/device/k3bdevice.h.orig	Thu Jul 29 12:07:16 2004
-+++ src/device/k3bdevice.h	Sun Aug 22 15:28:36 2004
-@@ -677,6 +677,10 @@
+--- src/device/k3bdevice.h.orig	Sun Nov 28 13:27:24 2004
++++ src/device/k3bdevice.h	Sun Jan  2 09:30:08 2005
+@@ -690,6 +690,10 @@
  
      class Private;
      Private* d;

@@ -1,5 +1,5 @@
---- src/device/k3bscsicommand.cpp.orig	Wed Jan 21 11:20:11 2004
-+++ src/device/k3bscsicommand.cpp	Sun Aug 22 15:28:36 2004
+--- src/device/k3bscsicommand.cpp.orig	Sun Aug 15 11:58:23 2004
++++ src/device/k3bscsicommand.cpp	Sun Jan  2 09:30:08 2005
 @@ -58,13 +58,14 @@
  
  
@@ -21,7 +21,7 @@
  
  K3bCdDevice::ScsiCommand::ScsiCommand( const K3bCdDevice::CdDevice* dev )
    : m_device(dev)
-@@ -135,6 +136,155 @@
+@@ -141,6 +142,155 @@
      return 0;
  }
  

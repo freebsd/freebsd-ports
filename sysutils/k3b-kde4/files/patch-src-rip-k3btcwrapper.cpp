@@ -1,5 +1,5 @@
 --- src/rip/k3btcwrapper.cpp.orig	Wed Jan 21 11:20:20 2004
-+++ src/rip/k3btcwrapper.cpp	Sun Aug 22 15:28:36 2004
++++ src/rip/k3btcwrapper.cpp	Sun Jan  2 09:30:08 2005
 @@ -65,7 +65,12 @@
    //K3bProcess *p = new K3bProcess();
    emit tcprobeTitleParsed( m_currentTitle );
