@@ -1,0 +1,53 @@
+--- Makefile.orig	Sat Mar 20 13:36:17 1999
++++ Makefile	Sat Mar 20 13:36:17 1999
+@@ -1,8 +1,23 @@
++#
++# C compiler
++#
++CC?= gcc
++
++#
++# Local packages
++#
++LOCALBASE?= /usr/local
++
++#
++# Installation prefix
++#
++PREFIX?= $(LOCALBASE)
++
+ # Here, what you need for Pgsql
+-PGSQLIBS    = -L/usr/local/pgsql/lib -lpq
+-PGSQLCFLAGS = -I/usr/local/pgsql/include
++PGSQLIBS    = -L$(LOCALBASE)/pgsql/lib -lpq -lcrypt
++PGSQLCFLAGS = -I$(LOCALBASE)/pgsql/include
+ # Your favorite compilation options here :-)
+-MCFLAGS  = -Wall -O -g
++CFLAGS?= -Wall -O -g
+ 
+ # The database modules you want to be built
+ DBOBJS  = postgres.o
+@@ -12,19 +27,19 @@
+ MOBJS   = main.o queries.o dialogs.o tables.o common.o export.o status.o
+ 
+ OBJS    = $(MOBJS) $(DBOBJS)
+-CFLAGS  = $(MCFLAGS) $(DBFLAGS)
++CFLAGS+=  $(DBFLAGS)
+ 
+-GTKLIBS     = `gtk-config --libs`
+-GTKCFLAGS   = `gtk-config --cflags`
++GTKLIBS     = `gtk10-config --libs`
++GTKCFLAGS   = `gtk10-config --cflags`
+ 
+ all: $(OBJS)
+-	gcc -o gtksql $(OBJS) $(PGSQLIBS) $(GTKLIBS) $(CFLAGS)
++	$(CC) -o gtksql $(OBJS) $(PGSQLIBS) $(GTKLIBS) $(CFLAGS)
+ 
+ clean:
+ 	rm *.o gtksql
+ 
+ install: all
+-	cp gtksql $(DESTDIR)usr/bin/
++	cp gtksql $(PREFIX)/bin
+ 
+ .c.o: 
