@@ -1,6 +1,14 @@
 --- Makefile.in.orig	Fri Nov 27 01:03:29 1998
-+++ Makefile.in	Tue Aug 31 23:11:56 1999
-@@ -26,6 +26,7 @@
++++ Makefile.in	Tue Nov 23 02:51:05 1999
+@@ -19,13 +19,14 @@
+ exec_prefix     = @exec_prefix@
+ INSTALL_INCLUDE = @includedir@
+ INSTALL_LIBRARY = @libdir@
+-INSTALL         = @INSTALL@
++INSTALL_DATA    = @INSTALL_DATA@
+ 
+ # Other miscellaneous programs
+ AR            = @AR@
  ARFLAGS       = -ru
  RANLIB        = @RANLIB@
  
@@ -20,7 +28,7 @@
  LIBRARY       = libmpeg.a
 -SHLIB         = libmpeg.so
 +.if ${PORTOBJFORMAT} == elf
-+SHLIB	        = libmpeg.so.1
++SHLIB         = libmpeg.so.1
 +.else
 +SHLIB         = libmpeg.so.1.3
 +.endif
@@ -57,9 +65,9 @@
 +		ln -sf $(SHLIB) `echo $(SHLIB) | sed 's/\.so.*$$/\.so/'` 
 +
 +install:
-+		install -c -m 444 ${LIBRARY} ${SHLIB} ${PREFIX}/lib
-+		(cd ${PREFIX}/lib; ln -sf $(SHLIB) `echo $(SHLIB) | sed 's/\.so.*$$/\.so/'`)
-+		install -c -m 444 mpeg.h ${PREFIX}/include
++		$(INSTALL_DATA) $(LIBRARY) $(SHLIB) $(INSTALL_LIBRARY)
++		(cd $(INSTALL_LIBRARY); ln -sf $(SHLIB) `echo $(SHLIB) | sed 's/\.so.*$$/\.so/'`)
++		$(INSTALL_DATA) $(HEADER) $(INSTALL_INCLUDE)
  
  clean:
  		rm -f $(LIBRARY) $(EXTRAS) $(LIBOBJ) core
@@ -68,7 +76,7 @@
  		cd extras && $(MAKE) distclean
  
 +.c.so:
-+		${CC} ${CFLAGS} $(INCLUDE_DIRS) -fpic -DPIC -c $< -o $@
++		$(CC) $(CFLAGS) $(INCLUDE_DIRS) -fpic -DPIC -c $< -o $@
  
  # Executable targets (mpegtest, easympeg [GL platforms only])
  

@@ -1,6 +1,6 @@
+include/mpeg.h
 lib/libmpeg.a
-lib/libmpeg.so.1.3
 lib/libmpeg.so
+lib/libmpeg.so.1
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-include/mpeg.h
