@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tkcvs
-PORTVERSION=	7.2
+PORTVERSION=	7.2.2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.twobarleycorns.net/
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}
@@ -24,16 +24,10 @@ WISH=		wish8.4
 TCLSH=		tclsh8.4
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|wish|${WISH}|g' ${WRKSRC}/tkcvs/tkcvs.blank \
+	@${REINPLACE_CMD} -e 's|wish|${WISH}|g' ${WRKSRC}/tkcvs/tkcvs.tcl \
 		${WRKSRC}/tkdiff/tkdiff ${WRKSRC}/doinstall.tcl
 
 do-install:
 	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${TCLSH} doinstall.tcl -nox ${PREFIX}
-
-post-install:
-.if !defined{NOPORTDOCS}
-	${MKDIR} ${PREFIX}/share/doc/tkcvs
-	${INSTALL_DATA} ${WRKSRC}/README.tkcvs ${PREFIX}/share/doc/tkcvs/
-.endif
 
 .include <bsd.port.mk>

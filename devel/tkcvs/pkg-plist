@@ -74,6 +74,7 @@ lib/tkcvs/bitmaps/tick.xbm
 lib/tkcvs/bitmaps/ticklefish_med.gif
 lib/tkcvs/bitmaps/tkcvs-ghost.xbm
 lib/tkcvs/bitmaps/tkcvs-help.xbm
+lib/tkcvs/bitmaps/tkcvs16.xbm
 lib/tkcvs/bitmaps/tkcvs48.xbm
 lib/tkcvs/bitmaps/trace.xbm
 lib/tkcvs/bitmaps/unedit.gif
@@ -90,6 +91,7 @@ lib/tkcvs/filebrowse.tcl
 lib/tkcvs/gen_log.tcl
 lib/tkcvs/help.tcl
 lib/tkcvs/import.tcl
+lib/tkcvs/import2.tcl
 lib/tkcvs/joincanvas.tcl
 lib/tkcvs/logcanvas.tcl
 lib/tkcvs/merge.tcl
@@ -105,7 +107,5 @@ lib/tkcvs/tclIndex
 lib/tkcvs/tkcvs_def.tcl
 lib/tkcvs/tooltips.tcl
 lib/tkcvs/workdir.tcl
-%%PORTDOCS%%%%DOCSDIR%%/README.tkcvs
 @dirrm lib/tkcvs/bitmaps
 @dirrm lib/tkcvs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
