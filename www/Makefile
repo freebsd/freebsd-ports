@@ -239,6 +239,7 @@
     SUBDIR += p5-WWW-Search
     SUBDIR += p5-WWW-Search-Google
     SUBDIR += p5-libapreq
+    SUBDIR += p5-libservlet
     SUBDIR += p5-libwww
     SUBDIR += peacock
     SUBDIR += pgdriver

@@ -1,0 +1,15 @@
+The Servlet API for Perl (libservlet) is a formulation of the Java (TM)
+Servlet API in Perl.
+
+While the servlet concept originated with Java (TM), its component model is
+quite natural for Perl as well. By writing servlet applications and deploying
+them in a servlet container, application authors can spare themselves the
+effort of writing commonly needed web application infrastructure components
+for each new project. Furthermore, servlet applications are portable between
+deployment environments; they can be executed in any servlet container using
+any process model with only a few configuration changes and no application
+code changes. Servlet applications are insulated from changes in vendor or
+platform and are able to portably take advantage of standard web
+infrastructure services offered by any servlet container.
+
+WWW: http://libservlet.sourceforge.net/
