@@ -5,6 +5,8 @@
 #
 # $FreeBSD$
 #
+# PLEASE update print/ghostscript5 (there's a symlink that uses a hardwired
+# png version number) when updating this port.  Thank you.
 
 PORTNAME=	png
 PORTVERSION=    1.0.6
