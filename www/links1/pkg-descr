@@ -1,0 +1,23 @@
+Lynx-like text WWW browser with many features like displaying tables,
+menus, etc.
+
+Keys:   ESC      display menu
+        ^C       quit
+        ^P, ^N   scroll up, down
+        [, ]     scroll left, right
+        up, down select link
+        ->       follow link
+        <-       go back
+        g        go to url
+        /        search
+        ?        search back
+        n        find next
+        N        find previous
+        =        document info
+        \        document source
+        d        download
+
+WWW: http://artax.karlin.mff.cuni.cz/~mikulas/vyplody/links/
+
+- Michael Vasilenko
+acid@stu.cn.ua

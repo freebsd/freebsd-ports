@@ -125,6 +125,7 @@
     SUBDIR += libwww
     SUBDIR += libxpg4-ns
     SUBDIR += links
+    SUBDIR += links1
     SUBDIR += linux-flashplugin
     SUBDIR += linux-lesstif-ns
     SUBDIR += linux-mozilla
