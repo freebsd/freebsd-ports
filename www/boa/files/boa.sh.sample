@@ -7,7 +7,7 @@ fi
 
 case "$1" in
 start)
-	[ -x ${PREFIX}/sbin/boa ] && ${PREFIX}/sbin/boa & && echo -n ' boa'
+	[ -x ${PREFIX}/sbin/boa ] && ${PREFIX}/sbin/boa && echo -n ' boa'
 	;;
 stop)
 	killall boa && echo -n ' boa'
