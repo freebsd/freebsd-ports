@@ -21,7 +21,7 @@ USE_LIBTOOL=	yes
 USE_AUTOMAKE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-extract:
 .for i in zlib popt
