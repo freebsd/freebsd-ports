@@ -1,0 +1,11 @@
+--- sounds/Makefile.in.orig	Tue Feb 19 22:14:43 2002
++++ sounds/Makefile.in	Fri Mar 15 13:43:31 2002
+@@ -16,7 +16,7 @@
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
+ VPATH = @srcdir@
+-prefix = @prefix@
++prefix = ${PREFIX}
+ exec_prefix = @exec_prefix@
+ 
+ bindir = @bindir@

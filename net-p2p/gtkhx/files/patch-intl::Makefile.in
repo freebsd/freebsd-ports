@@ -1,0 +1,11 @@
+--- intl/Makefile.in.orig	Tue Feb 19 22:14:43 2002
++++ intl/Makefile.in	Fri Mar 15 13:43:30 2002
+@@ -26,7 +26,7 @@
+ top_builddir = ..
+ VPATH = @srcdir@
+ 
+-prefix = @prefix@
++prefix = ${PREFIX}
+ exec_prefix = @exec_prefix@
+ transform = @program_transform_name@
+ libdir = @libdir@
