@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	wmnetselect-0.4
+DISTNAME=	wmnetselect-0.8
 CATEGORIES=	www windowmaker
 MASTER_SITES=	http://home.att.net/~apathos/code/
 
