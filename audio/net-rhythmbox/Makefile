@@ -28,6 +28,8 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 CONFIGURE_ARGS=	--disable-lirc
 
 BROKEN=	"Needs update for gstreamer-0.8"
+DEPRECATED=	"use audio/rhythmbox instead as it has more features"
+EXPIRATION_DATE=	September 20, 2004
 
 .include <bsd.port.pre.mk>
 
