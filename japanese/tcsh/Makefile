@@ -3,17 +3,15 @@
 # Date created:		29 November 1997
 # Whom:			Issei Suzuki <issei@jp.FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.7 1998/10/10 03:57:25 steve Exp $
 #
 
-DISTNAME=	tcsh-6.08
-PKGNAME=	ja-tcsh-6.08.00
+DISTNAME=	tcsh-6.08.02
+PKGNAME=	ja-tcsh-6.08.02
 CATEGORIES=	japanese shells
-MASTER_SITES=	ftp://ftp.astron.com/pub/tcsh/
+MASTER_SITES=	ftp://ftp.astron.com/pri/
 
 MAINTAINER=	issei@jp.FreeBSD.ORG
-
-WRKSRC=		${WRKDIR}/tcsh-6.08.00
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=	all catalogs
