@@ -3,7 +3,7 @@
 # Date created:		14 May 1998
 # Whom:			Adrian Wontroba <aw1@stade.co.uk>
 #
-# $Id: Makefile,v 1.1.1.1 1998/06/16 19:16:16 mph Exp $
+# $Id: Makefile,v 1.2 1999/01/27 07:41:28 fenner Exp $
 #
 
 DISTNAME=	textutils-1.22
@@ -12,6 +12,8 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	textutils
 
 MAINTAINER=	aw1@stade.co.uk
+
+BROKEN=		makeinfo
 
 GNU_CONFIGURE= yes
 
