@@ -29,8 +29,10 @@ DIST_SUBDIR=	AbiWord
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/abi
 
+USE_AUTOMAKE=	yes
 USE_GMAKE=	yes
 USE_GTK=	yes
+AUTOMAKE=	${WRKSRC}/autogen.sh && ${FIXME}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lgiconv"
 MAKEFILE=	GNUmakefile
@@ -42,8 +44,6 @@ pre-configure:
 	@cd ${WRKSRC} && ${TOUCH} NEWS README AUTHORS ChangeLog
 	@cd ${WRKSRC}/ac-helpers && ${RM} -f install-sh mkinstalldirs missing
 	@${RM} -f ${WRKSRC}/configure.ac
-	@cd ${WRKSRC} ; ${WRKSRC}/autogen.sh
-	@cd ${WRKSRC} ; ${FIXME}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
