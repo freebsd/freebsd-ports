@@ -3,7 +3,7 @@
 # Date created:		5 Nov 1995
 # Whom:			Hideaki Ohmon <ohmon@sfc.keio.ac.jp>
 #
-# $Id: Makefile,v 1.5 1996/07/07 09:48:44 asami Exp $
+# $Id: Makefile,v 1.6 1996/09/17 15:07:47 max Exp $
 #
 
 DISTNAME=	platex2e
@@ -72,21 +72,21 @@ do-build:
 
 do-install:
 	@rm -rf ${PREFIX}/lib/texmf/tex/latex2e/base/*
-	@(if [ ! -d ${PREFIX}/lib/texmf/tex/latex2e ]; then ;\
+	@(if [ ! -d ${PREFIX}/lib/texmf/tex/latex2e ]; then \
 	mkdir ${PREFIX}/lib/texmf/tex/latex2e ;\
 	fi)
-	@(if [ ! -d ${PREFIX}/lib/texmf/tex/latex2e/base ]; then ; \
+	@(if [ ! -d ${PREFIX}/lib/texmf/tex/latex2e/base ]; then \
 	mkdir ${PREFIX}/lib/texmf/tex/latex2e/base; \
 	fi)
 	@(cd ${WRKDIR}/base ; cp -f *.cls *.clo *.sty *.fd *.def *.ltx \
 	${PREFIX}/lib/texmf/tex/latex2e/base ; \
-	mv latex.fmt ${PREFIX}/lib/texmf/ini)
+	cp latex.fmt ${PREFIX}/lib/texmf/ini)
 	@rm -f  ${PREFIX}/bin/latex
 	@ln -s ${PREFIX}/bin/virtex ${PREFIX}/bin/latex
-	@(if [ ! -d ${PREFIX}/lib/texmf/tex/platex2e ] ; then ; \
+	@(if [ ! -d ${PREFIX}/lib/texmf/tex/platex2e ] ; then \
 	mkdir ${PREFIX}/lib/texmf/tex/platex2e ;\
 	fi)
-	@(if [ ! -d ${PREFIX}/lib/texmf/tex/platex2e/base ]; then ;\
+	@(if [ ! -d ${PREFIX}/lib/texmf/tex/platex2e/base ]; then \
 	mkdir ${PREFIX}/lib/texmf/tex/platex2e/base ;\
 	fi)
 	@(cd ${WRKSRC} ; cp -f *.cls *.clo *.sty *.fd *.def *.ltx *.cfg \
