@@ -1,25 +1,12 @@
---- doc/sendmail/configure.orig	Tue Feb 18 18:03:06 2003
-+++ doc/sendmail/configure	Sat Jun  7 13:29:29 2003
-@@ -34,18 +34,6 @@
- FILTER_CFG_NOSTD="-- ERROR ---"
- FILTER_TIMEOUT="-- ERROR ---"
- 
--# Test bash version
--
--if [ "x$BASH_VERSION" = "x" ] ; then
--    echo "You should use bash (version 2.04 at least) as shell to use this script"
--    exit
--fi
--echo "You current shell - bash $BASH_VERSION"
--if [ ${BASH_VERSINFO[0]} -lt 2 -o ${BASH_VERSINFO[1]} -lt 4 ] ; then
--    echo "You should use version 2.04 at least to use this script"
--    exit
--fi
--
- # Test echo properties
- 
- (echo "12345\c" ; echo " ") > echotmp
-@@ -124,14 +112,14 @@
+--- doc/sendmail/configure.orig	Wed Jun  4 16:46:57 2003
++++ doc/sendmail/configure	Tue Jul  1 09:41:05 2003
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!%LOCALBASE%/bin/bash
+ #
+ # $Id: configure,v 1.25 2003/04/10 15:47:33 cvser Exp $
+ #
+@@ -134,7 +134,7 @@
  # Read transport
  
  POS=`$GREP -i PidFile $DAEMON_INI | $GREP -v ";"`
@@ -27,18 +14,8 @@
 +if [ "x" = "x" ] ; then
      echo
      echo -n "Daemon pidfile not defined in ini-file ..."
--    POS=`$GREP -i SocketMode $DAEMON_INI | $GREP -v ";" | $AWK '{ print match( $0, /[Tt][Cc][Pp]/ ) }'`
--    if [ $POS -eq 0 ] ; then
-+    POS=`$GREP -i "Socket[^a-z]" $DAEMON_INI | $GREP -v ";" | $AWK '{ print match( $0, /\// ) }'`
-+    if [ $POS -ne 0 ] ; then
-         echo " but defined UNIX sockets"
-         DAEMON_MODE="local"
--        DAEMON_SOCKET=`$GREP -i SocketFile $DAEMON_INI | $GREP -v ";" | $AWK '{ str = substr( $0, match( $0, /\/./ ) ); gsub( /["[:blank:]]/, "", str ); print str; }'`
-+	DAEMON_SOCKET=`$GREP -i "Socket[^a-z]" $DAEMON_INI | $GREP -v ";" | $AWK '{ str = substr( $0, match( $0, /\/./ ) ); gsub( /["[:blank:]]|[[:blank:]]+[0-7]+$/, "", str ); print str; }'`
-         DAEMON_IP=""
-         DAEMON_PORT=""
-         DAEMON_PID=""
-@@ -297,8 +285,13 @@
+     if [ $VER -eq 1 ] ; then
+@@ -377,8 +377,13 @@
              echo "Edit one of configuration files and try again."
              exit 1
          fi 

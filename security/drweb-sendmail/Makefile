@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	drweb_sendmail
-PORTVERSION=    4.29.10a
-PORTREVISION=   1
+PORTVERSION=    4.29.12d
 CATEGORIES=	security mail
 MASTER_SITES=   ftp://ftp.drweb.ru/pub/unix/
-DISTNAME=       drweb-clients-4.29.10-A-sources
+DISTNAME=       drweb-clients-4.29.12-D-sources
 
 MAINTAINER=	anton@chelcom.ru
 COMMENT=	Sendmail message filter for virus processing through DrWeb daemon
 
+BUILD_DEPENDS=  ${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2
 RUN_DEPENDS=    ${LOCALBASE}/etc/rc.d/drweb-0.sh:${PORTSDIR}/security/drwebd
 
 WRKSRC=         ${WRKDIR}/${DISTNAME}
@@ -40,10 +40,10 @@ RANDOM_NUMBER=!!!___EDIT_THIS___!!!
 RANDOM_NUMBER!=dd if=/dev/random count=1 2> /dev/null | /sbin/md5
 .endif
 
-LANGS=en-ru #en-es
+LANGS=en-ru en-pl
 CONFS=drweb_smf users viruses addresses
 TMPLS=error-admin error-sender archive-admin archive-sender skip-sender \
-      virus-admin virus-rcpts virus-sender
+      virus-admin virus-rcpts virus-sender rule-admin
 
 post-patch:
 	${SED} "s#%PREFIX%#${PREFIX}#g" < ${FILESDIR}/drweb-sendmail.sh \
@@ -51,6 +51,9 @@ post-patch:
 	cd ${WRKSRC} && \
 	${SED} "s#%PREFIX%#${PREFIX}#g" < dw_options.c > ndwo.c && \
 	    mv ndwo.c dw_options.c
+	cd ${WRKSRC}/doc/sendmail && \
+	${SED} "s#%LOCALBASE%#${LOCALBASE}#g" < configure > nconf && \
+	    mv nconf configure && chmod a+rx configure
 	cd ${WRKSRC}/etc && \
 	${SED} "s#%PREFIX%#${PREFIX}#g;\
 		s#%HOSTNAME%#${WITH_DRWEBSMF_HOSTNAME}#g;\
@@ -64,6 +67,7 @@ post-configure:
 		${ECHO_CMD} y; \
 		${ECHO_CMD} n; \
 		${ECHO_CMD} y; \
+		${ECHO_CMD} n; \
 		${ECHO_CMD} n; \
 		${ECHO_CMD} n; \
 		${ECHO_CMD} n; \
@@ -90,7 +94,7 @@ do-install:
 .for LANG in ${LANGS}
 .for TMPL in ${TMPLS}
 	cd ${WRKSRC}/etc/templates/${LANG}/sendmail && \
-	    ${INSTALL_DATA} ${TMPL}.msg \
+	    tr -d '\r' < ${TMPL}.msg > \
 		${PREFIX}/etc/drweb/templates/${LANG}/sendmail/${TMPL}.msg-dist
 	if [ ! -f ${PREFIX}/etc/drweb/templates/${LANG}/sendmail/${TMPL}.msg ]; then \
 		cd ${PREFIX}/etc/drweb/templates/${LANG}/sendmail && \
