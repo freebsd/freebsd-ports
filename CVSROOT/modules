@@ -1750,6 +1750,7 @@ gauche		ports/lang/gauche
 gauche-gdbm	ports/databases/gauche-gdbm
 gauche-gl	ports/graphics/gauche-gl
 gauche-gtk	ports/x11-toolkits/gauche-gtk
+gauche-sxml	ports/textproc/gauche-sxml
 gawk		ports/lang/gawk
 gbackground	ports/x11/gbackground
 gbase		ports/converters/gbase
