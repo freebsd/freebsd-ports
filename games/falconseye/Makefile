@@ -26,6 +26,12 @@ USE_XPM=	yes
 MAKE_ENV+=	CFLAGS="${CFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include -L${X11BASE}/lib -L${LOCALBASE}/lib -I${LOCALBASE}/include/SDL11" PREFIX="${PREFIX}" X11BASE="${X11BASE}"
 WRKSRC=		${WRKDIR}
 
+post-patch:
+	@${PERL} -pi -e "s@<malloc.h>@<stdlib.h>@g" \
+	${WRKSRC}/include/jtp_gen.h ${WRKSRC}/win/jtp/jtp_dirx.c \
+	${WRKSRC}/win/jtp/jtp_keys.c ${WRKSRC}/win/jtp/jtp_sdl.c \
+	${WRKSRC}/win/Qt/qt_win.cpp
+
 do-configure:
 	@cd ${WRKSRC}/sys/unix && ${SH} setup.sh symlinks
 
