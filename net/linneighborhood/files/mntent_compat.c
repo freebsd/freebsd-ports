@@ -1,107 +1,88 @@
 #include "mntent.h"
-#include <sys/types.h>
-#include <sys/wait.h>
+#include <sys/param.h>
+//#include <sys/ucred.h>
+#include <sys/mount.h>
+#include <fstab.h>
 
-char mntent_global_mnt_fsname[1024];
-char mntent_global_mnt_dir[1024];
-char mntent_global_mnt_type[1024];
-char mntent_global_mnt_opts[1024];
-
+struct statfs *getmntent_mntbufp;
+int getmntent_mntcount = 0;
+int getmntent_mntpos = 0;
+char mntent_global_opts[256];
 struct mntent mntent_global_mntent;
 
 FILE * setmntent(char * filep, char * type)
 {
-	char * tempFileName = tmpnam(0);
-	FILE * tempFile = 0;
-	char s[256];
-	int i;
+	getmntent_mntpos = 0;
+	getmntent_mntcount = getmntinfo(&getmntent_mntbufp, MNT_WAIT);
+	return (FILE *)1; // dummy
+}
 
-	sprintf(s, "mount -p > %s", tempFileName);
-	i = system(s);
-	if (i == 127 || i == -1 || !WIFEXITED(i) || WEXITSTATUS(i))
-	{
-		unlink(tempFileName);
-		return 0;
-	}
-	tempFile = fopen(tempFileName, type);
-	unlink(tempFileName);
-	return tempFile;
+void getmntent_addopt(char ** c, const char * s)
+{
+	int i = strlen(s);
+        *(*c)++ = ',';
+        strcpy(*c, s);
+        *c += i;
 }
 
 struct mntent *getmntent(FILE * filep)
 {
-	char *p, c, tmp[32];
-	int field = 0;
-	mntent_global_mntent.mnt_fsname = mntent_global_mnt_fsname;
-	mntent_global_mntent.mnt_dir = mntent_global_mnt_dir;
-	mntent_global_mntent.mnt_type = mntent_global_mnt_type;
-	mntent_global_mntent.mnt_opts = mntent_global_mnt_opts;
-	mntent_global_mntent.mnt_freq = 0;
-	mntent_global_mntent.mnt_passno = 0;
-	*mntent_global_mnt_fsname = 0;
-	*mntent_global_mnt_dir = 0;
-	*mntent_global_mnt_type = 0;
-	*mntent_global_mnt_opts = 0;
-	
-	if (feof(filep))
+	char *c = mntent_global_opts+2; 
+	struct fstab *fst;
+	if (getmntent_mntpos >= getmntent_mntcount)
 		return 0;
-	p = mntent_global_mnt_fsname;
-	while (!feof(filep))
-	{
-		c = fgetc(filep);
-		if (c == ' ' || c == '\t' || c == '\n')
-		{
-			*p = 0;
-			switch (field)
-			{
-				case 0:
-				case 2:
-				case 4:
-				case 6:
-					++field;
-					break;
-				case 8:
-					mntent_global_mntent.mnt_freq = atoi(tmp);
-					++field;
-					break;
-				case 10:
-					mntent_global_mntent.mnt_passno = atoi(tmp);
-					++field;
-					break;
-			}
-			p = 0;
-			if (c == '\n')
-				return & mntent_global_mntent;
-			continue;
-		}
-		if (!p)
-		{
-			switch (field)
-			{
-				case 1:
-					p = mntent_global_mnt_dir;
-					break;
-				case 3:
-					p = mntent_global_mnt_type;
-					break;
-				case 5:
-					p = mntent_global_mnt_opts;
-					break;
-				case 7:
-				case 9:
-					p = tmp;
-					break;
-			}
-			++field;
-		}
-		*p++ = c;
-	}
-	
-	return 0;
+	if (getmntent_mntbufp[getmntent_mntpos].f_flags & MNT_RDONLY) strcpy(mntent_global_opts, "ro");
+		else strcpy(mntent_global_opts, "rw");
+
+        if (getmntent_mntbufp[getmntent_mntpos].f_flags & MNT_SYNCHRONOUS)    getmntent_addopt(&c, "sync");
+        if (getmntent_mntbufp[getmntent_mntpos].f_flags & MNT_NOEXEC)         getmntent_addopt(&c, "noexec");
+        if (getmntent_mntbufp[getmntent_mntpos].f_flags & MNT_NOSUID)         getmntent_addopt(&c, "nosuid");
+        if (getmntent_mntbufp[getmntent_mntpos].f_flags & MNT_NODEV)          getmntent_addopt(&c, "nodev");
+        if (getmntent_mntbufp[getmntent_mntpos].f_flags & MNT_UNION)          getmntent_addopt(&c, "union");
+        if (getmntent_mntbufp[getmntent_mntpos].f_flags & MNT_ASYNC)          getmntent_addopt(&c, "async");
+        if (getmntent_mntbufp[getmntent_mntpos].f_flags & MNT_NOATIME)        getmntent_addopt(&c, "noatime");
+        if (getmntent_mntbufp[getmntent_mntpos].f_flags & MNT_NOCLUSTERR)     getmntent_addopt(&c, "noclusterr");
+        if (getmntent_mntbufp[getmntent_mntpos].f_flags & MNT_NOCLUSTERW)     getmntent_addopt(&c, "noclusterw");
+        if (getmntent_mntbufp[getmntent_mntpos].f_flags & MNT_NOSYMFOLLOW)    getmntent_addopt(&c, "nosymfollow");
+        if (getmntent_mntbufp[getmntent_mntpos].f_flags & MNT_SUIDDIR)        getmntent_addopt(&c, "suiddir");
+		
+	mntent_global_mntent.mnt_fsname = getmntent_mntbufp[getmntent_mntpos].f_mntfromname;
+	mntent_global_mntent.mnt_dir = getmntent_mntbufp[getmntent_mntpos].f_mntonname;
+	mntent_global_mntent.mnt_type = getmntent_mntbufp[getmntent_mntpos].f_fstypename;
+        mntent_global_mntent.mnt_opts = mntent_global_opts;
+	if ((fst = getfsspec(getmntent_mntbufp[getmntent_mntpos].f_mntfromname)))
+        {
+        	mntent_global_mntent.mnt_freq = fst->fs_freq;
+        	mntent_global_mntent.mnt_passno = fst->fs_passno;
+        }
+        else if ((fst = getfsfile(getmntent_mntbufp[getmntent_mntpos].f_mntonname)))
+        {
+        	mntent_global_mntent.mnt_freq = fst->fs_freq;
+        	mntent_global_mntent.mnt_passno = fst->fs_passno;
+        }
+        else if (strcmp(getmntent_mntbufp[getmntent_mntpos].f_fstypename, "ufs") == 0) 
+        {
+                if (strcmp(getmntent_mntbufp[getmntent_mntpos].f_mntonname, "/") == 0)
+                {
+	        	mntent_global_mntent.mnt_freq = 1;
+        		mntent_global_mntent.mnt_passno = 1;
+                }
+                else
+                {
+	        	mntent_global_mntent.mnt_freq = 2;
+        		mntent_global_mntent.mnt_passno = 2;
+                }
+        } 
+        else
+        {
+        	mntent_global_mntent.mnt_freq = 0;
+        	mntent_global_mntent.mnt_passno = 0;
+        }
+        ++getmntent_mntpos;
+	return & mntent_global_mntent;
 }
 
-//char * hasmntopt(struct mntent * mnt, char * opt);
 int endmntent(FILE * filep)
 {
-	return fclose(filep);
+	return 0;
 }
