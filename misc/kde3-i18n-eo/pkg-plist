@@ -5,10 +5,24 @@ share/locale/eo/LC_MESSAGES/ark.mo
 share/locale/eo/LC_MESSAGES/artsbuilder.mo
 share/locale/eo/LC_MESSAGES/artscontrol.mo
 share/locale/eo/LC_MESSAGES/babelfish.mo
+share/locale/eo/LC_MESSAGES/cervisia.mo
 share/locale/eo/LC_MESSAGES/childpanelextension.mo
 share/locale/eo/LC_MESSAGES/clockapplet.mo
 share/locale/eo/LC_MESSAGES/cupsdconf.mo
-share/locale/eo/LC_MESSAGES/desktop.mo
+share/locale/eo/LC_MESSAGES/desktop_kde-i18n.mo
+share/locale/eo/LC_MESSAGES/desktop_kdeaddons.mo
+share/locale/eo/LC_MESSAGES/desktop_kdeadmin.mo
+share/locale/eo/LC_MESSAGES/desktop_kdeartwork.mo
+share/locale/eo/LC_MESSAGES/desktop_kdebase.mo
+share/locale/eo/LC_MESSAGES/desktop_kdegames.mo
+share/locale/eo/LC_MESSAGES/desktop_kdegraphics.mo
+share/locale/eo/LC_MESSAGES/desktop_kdelibs.mo
+share/locale/eo/LC_MESSAGES/desktop_kdemultimedia.mo
+share/locale/eo/LC_MESSAGES/desktop_kdenetwork.mo
+share/locale/eo/LC_MESSAGES/desktop_kdepim.mo
+share/locale/eo/LC_MESSAGES/desktop_kdesdk.mo
+share/locale/eo/LC_MESSAGES/desktop_kdetoys.mo
+share/locale/eo/LC_MESSAGES/desktop_kdeutils.mo
 share/locale/eo/LC_MESSAGES/dirfilterplugin.mo
 share/locale/eo/LC_MESSAGES/domtreeviewer.mo
 share/locale/eo/LC_MESSAGES/drkonqi.mo
@@ -17,9 +31,10 @@ share/locale/eo/LC_MESSAGES/filetypes.mo
 share/locale/eo/LC_MESSAGES/fontinst.mo
 share/locale/eo/LC_MESSAGES/htmlsearch.mo
 share/locale/eo/LC_MESSAGES/imgalleryplugin.mo
-share/locale/eo/LC_MESSAGES/kab.mo
+share/locale/eo/LC_MESSAGES/kab3.mo
 share/locale/eo/LC_MESSAGES/kaccess.mo
 share/locale/eo/LC_MESSAGES/kaddressbook.mo
+share/locale/eo/LC_MESSAGES/kalzium.mo
 share/locale/eo/LC_MESSAGES/kappfinder.mo
 share/locale/eo/LC_MESSAGES/karm.mo
 share/locale/eo/LC_MESSAGES/kasbarextension.mo
@@ -27,6 +42,7 @@ share/locale/eo/LC_MESSAGES/kasteroids.mo
 share/locale/eo/LC_MESSAGES/kate.mo
 share/locale/eo/LC_MESSAGES/katepart.mo
 share/locale/eo/LC_MESSAGES/katomic.mo
+share/locale/eo/LC_MESSAGES/kbabel.mo
 share/locale/eo/LC_MESSAGES/kbackgammon.mo
 share/locale/eo/LC_MESSAGES/kbattleship.mo
 share/locale/eo/LC_MESSAGES/kblackbox.mo
@@ -111,12 +127,13 @@ share/locale/eo/LC_MESSAGES/kedit.mo
 share/locale/eo/LC_MESSAGES/kenolaba.mo
 share/locale/eo/LC_MESSAGES/kfax.mo
 share/locale/eo/LC_MESSAGES/kfifteenapplet.mo
-share/locale/eo/LC_MESSAGES/kfind.mo
+share/locale/eo/LC_MESSAGES/kfile_rfc822.mo
+share/locale/eo/LC_MESSAGES/kfile_rpm.mo
+share/locale/eo/LC_MESSAGES/kfile_vcf.mo
 share/locale/eo/LC_MESSAGES/kfindpart.mo
 share/locale/eo/LC_MESSAGES/kfloppy.mo
 share/locale/eo/LC_MESSAGES/kfmclient.mo
 share/locale/eo/LC_MESSAGES/kfmexec.mo
-share/locale/eo/LC_MESSAGES/kfract.mo
 share/locale/eo/LC_MESSAGES/kghostview.mo
 share/locale/eo/LC_MESSAGES/khelpcenter.mo
 share/locale/eo/LC_MESSAGES/khexedit.mo
@@ -147,7 +164,6 @@ share/locale/eo/LC_MESSAGES/klaptopdaemon.mo
 share/locale/eo/LC_MESSAGES/klegacyimport.mo
 share/locale/eo/LC_MESSAGES/klines.mo
 share/locale/eo/LC_MESSAGES/klipper.mo
-share/locale/eo/LC_MESSAGES/kljettool.mo
 share/locale/eo/LC_MESSAGES/klock.mo
 share/locale/eo/LC_MESSAGES/klpq.mo
 share/locale/eo/LC_MESSAGES/klprfax.mo
@@ -193,6 +209,7 @@ share/locale/eo/LC_MESSAGES/ksame.mo
 share/locale/eo/LC_MESSAGES/kscd.mo
 share/locale/eo/LC_MESSAGES/kscoreapplet.mo
 share/locale/eo/LC_MESSAGES/kshisen.mo
+share/locale/eo/LC_MESSAGES/ksim.mo
 share/locale/eo/LC_MESSAGES/ksirc.mo
 share/locale/eo/LC_MESSAGES/ksirtet.mo
 share/locale/eo/LC_MESSAGES/ksmiletris.mo
@@ -202,6 +219,7 @@ share/locale/eo/LC_MESSAGES/ksnapshot.mo
 share/locale/eo/LC_MESSAGES/ksokoban.mo
 share/locale/eo/LC_MESSAGES/kspaceduel.mo
 share/locale/eo/LC_MESSAGES/ksplash.mo
+share/locale/eo/LC_MESSAGES/kstars.mo
 share/locale/eo/LC_MESSAGES/kstart.mo
 share/locale/eo/LC_MESSAGES/ksysguard.mo
 share/locale/eo/LC_MESSAGES/ksystemtrayapplet.mo
@@ -231,6 +249,7 @@ share/locale/eo/LC_MESSAGES/kwuftpd.mo
 share/locale/eo/LC_MESSAGES/kxkb.mo
 share/locale/eo/LC_MESSAGES/kxmlrpcd.mo
 share/locale/eo/LC_MESSAGES/kxsconfig.mo
+share/locale/eo/LC_MESSAGES/libkcal.mo
 share/locale/eo/LC_MESSAGES/libkdegames.mo
 share/locale/eo/LC_MESSAGES/libkdehighscores.mo
 share/locale/eo/LC_MESSAGES/libkdenetwork.mo
@@ -251,10 +270,14 @@ share/locale/eo/LC_MESSAGES/passwords.mo
 share/locale/eo/LC_MESSAGES/ppdtranslations.mo
 share/locale/eo/LC_MESSAGES/quicklauncher.mo
 share/locale/eo/LC_MESSAGES/secpolicy.mo
+share/locale/eo/LC_MESSAGES/spy.mo
 share/locale/eo/LC_MESSAGES/taskbarextension.mo
+share/locale/eo/LC_MESSAGES/timezones.mo
 share/locale/eo/LC_MESSAGES/uachangerplugin.mo
 share/locale/eo/LC_MESSAGES/validatorsplugin.mo
 share/locale/eo/LC_MESSAGES/webarchiver.mo
 share/locale/eo/charset
 share/locale/eo/entry.desktop
 share/locale/eo/flag.png
+@dirrm share/locale/eo/LC_MESSAGES
+@dirrm share/locale/eo
