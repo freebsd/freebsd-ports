@@ -1,0 +1,8 @@
+--- scripts/gcin-utf8-setup.orig	Tue Sep 28 09:19:26 2004
++++ scripts/gcin-utf8-setup	Mon Jan 31 23:37:11 2005
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ cd
+ 
