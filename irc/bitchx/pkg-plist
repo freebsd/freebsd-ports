@@ -935,6 +935,7 @@ share/bx/help/out
 %%PLUGINS:%%share/bx/plugins/autocycle.so
 %%PLUGINS:%%share/bx/plugins/cavlink.so
 %%PLUGINS:%%share/bx/plugins/identd.so
+%%XMMS:%%share/bx/plugins/xmms.so
 share/bx/script/actplug.gmz
 share/bx/script/bxglobal
 share/bx/script/bxtcl.tcl

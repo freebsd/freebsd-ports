@@ -7,7 +7,7 @@
 
 PORTNAME=	BitchX
 PORTVERSION=	1.0c19
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES+=	irc gnome
 MASTER_SITES=	ftp://ftp.bitchx.com/pub/BitchX/source/ \
 		ftp://ftp.bitchx.org/pub/BitchX/source/ \
@@ -24,6 +24,9 @@ EXTRACT_ONLY=	ircii-pana-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER?=	freebsdports@arved.de
 
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
+.if defined(WITH_XMMS)
+LIB_DEPENDS+=	xmms.3:${PORTSDIR}/audio/xmms
+.endif
 
 WRKSRC=		${WRKDIR}/BitchX
 USE_AUTOCONF=	yes
@@ -70,11 +73,23 @@ CONFIGURE_ARGS+=	--with-socks5=${LOCALBASE}
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include"
 .endif
 .if defined(WITH_PLUGINS)
-CONFIGURE_ARGS+=--with-plugins
+PLUGINS=	abot,acro,aim,arcfour,autocycle,blowfish,cavlink,encrypt,fserv,hint,identd,nap,pkga,possum,qbx,qmail,scan,wavplay
 PLIST_SUB+=	PLUGINS:=""
 .else
 CONFIGURE_ARGS+=--without-plugins
 PLIST_SUB+=	PLUGINS:="@comment "
+.endif
+.if defined(WITH_XMMS)
+PLUGINS=	xmms
+PLIST_SUB+=	XMMS:=""
+.else
+PLIST_SUB+=	XMMS:="@comment "
+.endif
+.if (defined(WITH_XMMS) && defined(WITH_PLUGINS))
+PLUGINS=	abot,acro,aim,arcfour,autocycle,blowfish,cavlink,encrypt,fserv,hint,identd,nap,pkga,possum,qbx,qmail,scan,wavplay,xmms
+.endif
+.if (defined(WITH_PLUGINS) || defined(WITH_XMMS))
+CONFIGURE_ARGS+=--with-plugins=${PLUGINS}
 .endif
 
 pre-patch:
@@ -86,8 +101,11 @@ pre-patch:
 pre-extract:
 	@${ECHO_CMD} "Available switches:"
 	@${ECHO_CMD} "-------------------"
+.if !defined (WITH_XMMS)
+	@${ECHO_CMD} "WITH_XMMS - Building BitchX with XMMS-Plugin"
+.endif
 .if !defined(WITH_PLUGINS)
-	@${ECHO_CMD} "WITH_PLUGINS - Build the plugins"
+	@${ECHO_CMD} "WITH_PLUGINS - Building BitchX with some other plugins"
 .endif
 .if !defined(WITH_LATIN)
 	@${ECHO_CMD} "WITH_LATIN - Recommended if you are using an ISO-8859-1 display"
@@ -100,6 +118,7 @@ pre-extract:
 .endif
 .if !defined(WITH_IPV6)
 	@${ECHO_CMD} "WITH_IPV6 - Build BitchX with IPV6 support"
+	@${ECHO_CMD} "            (Please Note: /detach is not working with IPv6)"
 .endif
 .if !defined(WITH_GNOME)
 	@${ECHO_CMD} "WITH_GNOME - Build BitchX with Gtk-Frontend"
