@@ -3,18 +3,16 @@
 -lm
 
 
-
+@CC@
 
 @CFLAGS@
 
-n
-/usr/local/include
+@LOCALBASE@/include
+@LOCALBASE@/lib/librle.a
 
 
-
-
-
+@PREFIX@/bin
+/usr/bin/mkdep
 yacc
 
-
-
+y

@@ -1,53 +1,52 @@
-*** Configure.orig	Sun Feb  9 21:04:23 1992
---- Configure	Sat Feb 26 16:14:13 2000
-***************
-*** 28,37 ****
-  PATH=$PATH:'/bsd4.3/usr/bin:/usr/bsd'
-  export PATH || (echo "OOPS, this isn't sh.  Desperation time.  I will feed myself to sh."; sh $0; kill $$)
-  
-! if test ! -t 0; then
-!     echo "Say 'sh Configure', not 'sh <Configure'"
-!     exit 1
-! fi
-  
-  (alias) >/dev/null 2>&1 && \
-      echo "(I see you are using the Korn shell.  Some ksh's blow up on Configure," && \
---- 28,38 ----
-  PATH=$PATH:'/bsd4.3/usr/bin:/usr/bsd'
-  export PATH || (echo "OOPS, this isn't sh.  Desperation time.  I will feed myself to sh."; sh $0; kill $$)
-  
-! #FreeBSD's ports don't want to be interactive
-! #if test ! -t 0; then
-! #    echo "Say 'sh Configure', not 'sh <Configure'"
-! #    exit 1
-! #fi
-  
-  (alias) >/dev/null 2>&1 && \
-      echo "(I see you are using the Korn shell.  Some ksh's blow up on Configure," && \
-***************
-*** 660,665 ****
---- 661,667 ----
-      ;;
-  esac
-  set /usr/ccs/lib/libc.so
-+ test -f $1 || set /usr/lib/libc.a
-  test -f $1 || set /usr/lib/libc.so
-  test -f $1 || set /usr/lib/libc.so.[0-9]*
-  eval set \$$#
-***************
-*** 872,878 ****
-  : determine where manual pages are on this system
-  echo " "
-  case "$sysman" in
-! 	'') sysman=`loc . /usr/man/man1 /usr/man/man1 /usr/man/mann /usr/man/manl /usr/man/local/man1 /usr/man/u_man/man1 /usr/share/man/man1 /usr/catman/u_man/man1 /usr/man/l_man/man1 /usr/local/man/u_man/man1 /usr/local/man/l_man/man1 /usr/man/man.L`
-      ;;
-  esac
-  if test -d "$sysman"; then
---- 874,880 ----
-  : determine where manual pages are on this system
-  echo " "
-  case "$sysman" in
-! 	'') sysman=`loc . /usr/local/man/man1 /usr/man/man1 /usr/man/mann /usr/man/manl /usr/man/local/man1 /usr/man/u_man/man1 /usr/share/man/man1 /usr/catman/u_man/man1 /usr/man/l_man/man1 /usr/local/man/u_man/man1 /usr/local/man/l_man/man1 /usr/man/man.L`
-      ;;
-  esac
-  if test -d "$sysman"; then
+--- Configure.orig	Mon Feb 10 12:04:23 1992
++++ Configure	Tue Jul 29 14:18:04 2003
+@@ -28,10 +28,11 @@
+ PATH=$PATH:'/bsd4.3/usr/bin:/usr/bsd'
+ export PATH || (echo "OOPS, this isn't sh.  Desperation time.  I will feed myself to sh."; sh $0; kill $$)
+ 
+-if test ! -t 0; then
+-    echo "Say 'sh Configure', not 'sh <Configure'"
+-    exit 1
+-fi
++#FreeBSD's ports don't want to be interactive
++#if test ! -t 0; then
++#    echo "Say 'sh Configure', not 'sh <Configure'"
++#    exit 1
++#fi
+ 
+ (alias) >/dev/null 2>&1 && \
+     echo "(I see you are using the Korn shell.  Some ksh's blow up on Configure," && \
+@@ -660,6 +661,7 @@
+     ;;
+ esac
+ set /usr/ccs/lib/libc.so
++test -f $1 || set /usr/lib/libc.a
+ test -f $1 || set /usr/lib/libc.so
+ test -f $1 || set /usr/lib/libc.so.[0-9]*
+ eval set \$$#
+@@ -872,7 +874,7 @@
+ : determine where manual pages are on this system
+ echo " "
+ case "$sysman" in
+-	'') sysman=`loc . /usr/man/man1 /usr/man/man1 /usr/man/mann /usr/man/manl /usr/man/local/man1 /usr/man/u_man/man1 /usr/share/man/man1 /usr/catman/u_man/man1 /usr/man/l_man/man1 /usr/local/man/u_man/man1 /usr/local/man/l_man/man1 /usr/man/man.L`
++	'') sysman=`loc . /usr/local/man/man1 /usr/man/man1 /usr/man/mann /usr/man/manl /usr/man/local/man1 /usr/man/u_man/man1 /usr/share/man/man1 /usr/catman/u_man/man1 /usr/man/l_man/man1 /usr/local/man/u_man/man1 /usr/local/man/l_man/man1 /usr/man/man.L`
+     ;;
+ esac
+ if test -d "$sysman"; then
+@@ -1418,14 +1420,8 @@
+ 	if $contains '^strchr$' libc.list >/dev/null 2>&1 ; then
+ 		if $contains strchr "$strings" >/dev/null 2>&1 ; then
+ 			if $contains index "$strings" >/dev/null 2>&1 ; then
+-				echo "Your system has both index() and strchr().  Shall I use"
+-				rp="index() rather than strchr()? [$dflt]"
+-				$echo $n "$rp $c"
+-				. myread
+-				case "$ans" in
+-					n*) d_index="$define" ;;
+-					*)  d_index="$undef" ;;
+-				esac
++				echo "Your system has both index() and strchr(). I use index() instead."
++				d_index="$define"
+ 			else
+ 				d_index="$define"
+ 				echo "strchr() found."
