@@ -19,6 +19,7 @@ LIB_DEPENDS=	atlas.1:${PORTSDIR}/math/atlas	\
 		gsl.6:${PORTSDIR}/math/gsl	\
 		lapack.3:${PORTSDIR}/math/lapack
 BUILD_DEPENDS=	${LOCALBASE}/lib/libumfpack.a:${PORTSDIR}/math/umfpack	\
+		${LOCALBASE}/lib/libarpack.a:${PORTSDIR}/math/arpack	\
 		dvips:${PORTSDIR}/print/dvipsk-tetex			\
 		pdflatex:${PORTSDIR}/print/teTeX-base
 RUN_DEPENDS=	dvips:${PORTSDIR}/print/dvipsk-tetex			\
