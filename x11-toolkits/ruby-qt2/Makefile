@@ -15,7 +15,7 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-USE_QT2=	yes
+USE_QT_VER=	2
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
