@@ -1,0 +1,14 @@
+bin/gnome-iconedit
+share/gnome/apps/Graphics/gnome-iconedit.desktop
+share/gnome/help/gnome-iconedit/C/topic.dat
+share/gnome/pixmaps/gnome-iconedit/dropper.png
+share/gnome/pixmaps/gnome-iconedit/fill.png
+share/gnome/pixmaps/gnome-iconedit/gnome-iconedit.png
+share/gnome/pixmaps/gnome-iconedit/gnome-tasklist.png
+share/gnome/pixmaps/gnome-iconedit/paint.png
+share/gnome/pixmaps/gnome-iconedit/palette-edit.png
+share/gnome/pixmaps/gnome-iconedit/selector.png
+share/locale/en_GB/LC_MESSAGES/gnome-iconedit.mo
+@dirrm share/gnome/pixmaps/gnome-iconedit
+@dirrm share/gnome/help/gnome-iconedit/C
+@dirrm share/gnome/help/gnome-iconedit
