@@ -170,7 +170,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	0.92.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia audio ipv6
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -399,7 +399,7 @@ CONFIGURE_ARGS+=	--disable-libdv
 .endif
 
 .if defined(WITH_MAD)
-LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/mad
+LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad
 
 CONFIGURE_ARGS+=	--enable-mad \
 			--with-madlibdir=${LOCALBASE}/lib
