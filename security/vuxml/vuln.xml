@@ -32,6 +32,45 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="23fb5a04-722b-11d9-9e1e-c296ac722cb3">
+    <topic>squid -- buffer overflow in WCCP recvfrom() call</topic>
+    <affects>
+      <package>
+	<name>squid</name>
+	<range><lt>2.5.7_10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>According to the Squid Proxy Cache Security Update Advisory SQUID-2005:3,</p>
+	<blockquote cite="http://www.squid-cache.org/Advisories/SQUID-2005_3.txt">
+	  <p>The WCCP recvfrom() call accepts more data than will fit in
+	    the allocated buffer.  An attacker may send a larger-than-normal
+	    WCCP message to Squid and overflow this buffer.</p>
+	  <p>Severity:</p>
+	  <p>The bug is important because it allows remote attackers to crash
+	    Squid, causing a disription in service.  However, the bug is
+	    exploitable only if you have configured Squid to send WCCP messages
+	    to, and expect WCCP replies from, a router.</p>
+	  <p>Sites that do not use WCCP are not vulnerable.</p>
+	</blockquote>
+	<p>Note that while the default configuration of the FreeBSD squid port
+	  enables WCCP support in general, the default configuration
+	  supplied does not actually configure squid to send and receive WCCP
+	  messages.</p>
+      </body>
+    </description>
+    <references>
+        <url>http://www.squid-cache.org/Advisories/SQUID-2005_3.txt</url>
+	<url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-wccp_buffer_overflow</url>
+	<url>http://www.squid-cache.org/bugs/show_bug.cgi?id=1217</url>
+    </references>
+    <dates>
+      <discovery>2005-01-28</discovery>
+      <entry>2005-01-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f755545e-6fcd-11d9-abec-00061bd2d56f">
     <topic>xpdf -- makeFileKey2() buffer overflow vulnerability</topic>
     <affects>
