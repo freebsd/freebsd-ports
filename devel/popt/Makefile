@@ -6,23 +6,28 @@
 #
 
 PORTNAME=	popt
-PORTVERSION=	1.5.1
-PORTREVISION=	1
+PORTVERSION=	1.6.4
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/rpm-3.0.x/ \
-		ftp://ftp.mirror.ac.uk/sites/ftp.rpm.org/pub/rpm/dist/rpm-3.0.x/
+MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/rpm-4.0.x/ \
+		ftp://ftp.mirror.ac.uk/sites/ftp.rpm.org/pub/rpm/dist/rpm-4.0.x/
 
-MAINTAINER=	ycheng@sinica.edu.tw
+MAINTAINER=	lioux@FreeBSD.org
 
 LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-1.5
-
 USE_LIBTOOL=	yes
+USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
+CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
 MAN3=		popt.3
+
+post-patch:
+# avoid installing both charset.alias and locale.alias which conflict
+# with libiconv
+	@${REINPLACE_CMD} -E -e 's|(SUBDIRS[[:space:]]+=.*)intl|\1|' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
