@@ -7,7 +7,7 @@
 
 PORTNAME=	clients
 PORTVERSION=	4.3.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XFREE}
 MASTER_SITE_SUBDIR=	4.3.0
@@ -21,6 +21,7 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	XFree86-4 client programs and related files
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
+		expat.5:${PORTSDIR}/textproc/expat2 \
 		Xcursor.1:${PORTSDIR}/x11/XFree86-4-libraries \
 		png.5:${PORTSDIR}/graphics/png \
 		Xft.2:${PORTSDIR}/x11-fonts/libXft
