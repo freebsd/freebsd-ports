@@ -46,12 +46,16 @@ share/gnome/gtksourceview-1.0/language-specs/perl.lang
 share/gnome/gtksourceview-1.0/language-specs/po.lang
 share/gnome/gtksourceview-1.0/language-specs/python.lang
 share/gnome/gtksourceview-1.0/language-specs/xml.lang
+share/locale/be/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/cs/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/de/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/es/LC_MESSAGES/gtksourceview-1.0.mo
+share/locale/he/LC_MESSAGES/gtksourceview-1.0.mo
+share/locale/ja/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/pt/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/ru/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/sv/LC_MESSAGES/gtksourceview-1.0.mo
+share/locale/tr/LC_MESSAGES/gtksourceview-1.0.mo
 share/locale/zh_TW/LC_MESSAGES/gtksourceview-1.0.mo
 @dirrm share/gnome/gtksourceview-1.0/language-specs
 @dirrm share/gnome/gtksourceview-1.0
