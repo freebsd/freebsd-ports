@@ -8,8 +8,23 @@
 PORTNAME=	linux-netscape
 PORTVERSION=	6.0
 CATEGORIES=	www linux
-MASTER_SITES=	ftp://ftp.netscape.com/pub/netscape6/english/6.0/unix/linux22/sea/
+MASTER_SITES=	ftp://ftp.netscape.com/pub/netscape6/english/${PORTVERSION}/unix/linux22/sea/ \
+		ftp://ftp.cadvision.com/pub/linuxberg/files/ \
+		ftp://ftp.proxad.net/mirrors/ftp.linuxberg.com/files/ \
+		ftp://ftp.datacomm.ch/.3/linuxberg/files/ \
+		ftp://ftp.inter-i.uni-mainz.de/pub/Software/windows9x/Netz/Browser/Netscape_Communicator_6_linux22_english/ \
+		ftp://ftp.ptb.de/pub/WWW/Netscape/unix/ \
+		ftp://ftp.darenet.dk/mirrors/mirror.linuxberg.com/files/ \
+		ftp://ftp.info.univ-angers.fr/pub/linux/netscape6-english/ \
+		ftp://ftp.chemo.tuniv.szczecin.pl/dsk4/www.linuxberg.com/files/ \
+		ftp://ftp.uakom.sk/pub/linuxberg/files/ \
+		ftp://ftp.dei.uc.pt/.disk2/linuxberg/files/ \
+		ftp://ftp.is.co.za/packages/linuxberg/files/ \
+		ftp://ftp.matrix.com.br/pub/linuxberg/files/ \
+		ftp://ftp.duth.gr/pub/linuxberg/files/ \
+		ftp://ftp.rndavia.ru/pub/linux/
 DISTNAME=	netscape-i686-pc-linux-gnu-sea
+DIST_SUBDIR=	netscape6/english/${PORTVERSION}
 
 MAINTAINER=	trevor@FreeBSD.org
 
@@ -55,7 +70,6 @@ pre-install:
 	${ECHO} bin/${STARTUP_CMD} > ${PLIST}
 	cd ${WRKSRC}/bin; for i in `find * \! -type d | sort`; do \
 		${ECHO} lib/linux-netscape6/$${i} >> ${PLIST}; \
-		${ECHO} $${i}; \
 	done
 	cd ${WRKSRC}/bin; \
 	for i in `find -d * -type d`; do \
