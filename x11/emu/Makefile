@@ -15,11 +15,17 @@ MASTER_SITE_SUBDIR=	applications
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A terminal emulator for the X Window System
 
+.if defined(PACKAGE_BUILDING)
+BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT}
+.endif
+
+BROKEN=		Missing dependency
+
 USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/emu
 
-.if !defined(DISPLAY) || ${DISPLAY} == ""
-IGNORE=		Requires an active X session (and DISPLAY variable) to run xrdb.  Please compile this while running X.
+.if (!defined(DISPLAY) || ${DISPLAY} == "") && !defined(PACKAGE_BUILDING)
+IGNORE=		requires an active X session (and DISPLAY variable) to run xrdb.  Please compile this while running X
 .endif
 
 MAN1=		emu.1

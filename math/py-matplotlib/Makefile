@@ -23,6 +23,11 @@ BUILD_DEPENDS=	${PYNUMERIC} \
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	${PYNUMERIC} \
 		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
+.if defined(PACKAGE_BUILDING)
+BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT}
+.endif
+
+BROKEN=		Missing dependency
 
 USE_PYTHON=	2.2+
 USE_PYDISTUTILS=	yes
