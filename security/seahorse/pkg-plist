@@ -1,16 +1,18 @@
 bin/seahorse
+bin/seahorse-pgp-preferences
 etc/gconf/gconf.xml.defaults/apps/seahorse/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/seahorse/listing/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/seahorse/preferences/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/seahorse/recipients/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/seahorse/ui/%gconf.xml
+etc/gconf/gconf.xml.defaults/desktop/pgp/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/seahorse/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/seahorse/listing/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/seahorse/preferences/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/seahorse/recipients/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/seahorse/ui/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/desktop/pgp/%gconf.xml
 etc/gconf/schemas/seahorse.schemas
+lib/bonobo/libseahorse-pgp-file-listener.so
+libdata/bonobo/servers/Seahorse_PGP_File_Listener.server
 share/gnome/applications/seahorse.desktop
+share/gnome/control-center-2.0/capplets/seahorse-pgp-preferences.desktop
 share/gnome/help/seahorse/C/figures/export.png
 share/gnome/help/seahorse/C/figures/file-manager.png
 share/gnome/help/seahorse/C/figures/generate.png
@@ -24,30 +26,27 @@ share/gnome/help/seahorse/C/figures/signature.png
 share/gnome/help/seahorse/C/figures/text-editor.png
 share/gnome/help/seahorse/C/legal.xml
 share/gnome/help/seahorse/C/seahorse.xml
+share/gnome/mime-info/seahorse.keys
+share/gnome/mime-info/seahorse.mime
 share/gnome/omf/seahorse/seahorse-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/seahorse/seahorse-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/seahorse.png
-share/gnome/seahorse/glade/seahorse-add-subkey.glade2
-share/gnome/seahorse/glade/seahorse-add-uid.glade2
-share/gnome/seahorse/glade/seahorse-change-passphrase.glade2
-share/gnome/seahorse/glade/seahorse-decrypt-file.glade2
-share/gnome/seahorse/glade/seahorse-decrypt-verify-file.glade2
-share/gnome/seahorse/glade/seahorse-encrypt-file.glade2
-share/gnome/seahorse/glade/seahorse-encrypt-sign-file.glade2
-share/gnome/seahorse/glade/seahorse-export.glade2
-share/gnome/seahorse/glade/seahorse-generate.glade2
-share/gnome/seahorse/glade/seahorse-import.glade2
-share/gnome/seahorse/glade/seahorse-key-manager.glade2
-share/gnome/seahorse/glade/seahorse-key-properties.glade2
-share/gnome/seahorse/glade/seahorse-passphrase.glade2
-share/gnome/seahorse/glade/seahorse-preferences.glade2
-share/gnome/seahorse/glade/seahorse-recipients.glade2
-share/gnome/seahorse/glade/seahorse-revoke.glade2
-share/gnome/seahorse/glade/seahorse-sign-file.glade2
-share/gnome/seahorse/glade/seahorse-sign.glade2
-share/gnome/seahorse/glade/seahorse-signatures.glade2
-share/gnome/seahorse/glade/seahorse-text-editor.glade2
-share/gnome/seahorse/glade/seahorse-verify-file.glade2
+share/gnome/seahorse/glade/seahorse-add-subkey.glade
+share/gnome/seahorse/glade/seahorse-add-uid.glade
+share/gnome/seahorse/glade/seahorse-change-passphrase.glade
+share/gnome/seahorse/glade/seahorse-export.glade
+share/gnome/seahorse/glade/seahorse-generate.glade
+share/gnome/seahorse/glade/seahorse-import.glade
+share/gnome/seahorse/glade/seahorse-key-manager.glade
+share/gnome/seahorse/glade/seahorse-key-properties.glade
+share/gnome/seahorse/glade/seahorse-passphrase.glade
+share/gnome/seahorse/glade/seahorse-pgp-preferences.glade
+share/gnome/seahorse/glade/seahorse-preferences.glade
+share/gnome/seahorse/glade/seahorse-recipients.glade
+share/gnome/seahorse/glade/seahorse-revoke.glade
+share/gnome/seahorse/glade/seahorse-sign.glade
+share/gnome/seahorse/glade/seahorse-signatures.glade
+share/locale/ca/LC_MESSAGES/seahorse.mo
 share/locale/cs/LC_MESSAGES/seahorse.mo
 share/locale/da/LC_MESSAGES/seahorse.mo
 share/locale/de/LC_MESSAGES/seahorse.mo
@@ -56,6 +55,7 @@ share/locale/fi/LC_MESSAGES/seahorse.mo
 share/locale/fr/LC_MESSAGES/seahorse.mo
 share/locale/hu/LC_MESSAGES/seahorse.mo
 share/locale/ja/LC_MESSAGES/seahorse.mo
+share/locale/ms/LC_MESSAGES/seahorse.mo
 share/locale/nl/LC_MESSAGES/seahorse.mo
 share/locale/no/LC_MESSAGES/seahorse.mo
 share/locale/pt_BR/LC_MESSAGES/seahorse.mo
@@ -65,20 +65,18 @@ share/locale/sv/LC_MESSAGES/seahorse.mo
 share/locale/tr/LC_MESSAGES/seahorse.mo
 share/locale/uk/LC_MESSAGES/seahorse.mo
 share/locale/zh_CN/LC_MESSAGES/seahorse.mo
-@dirrm share/gnome/seahorse/glade
-@dirrm share/gnome/seahorse
-@dirrm share/gnome/omf/seahorse
 @dirrm share/gnome/help/seahorse/C/figures
 @dirrm share/gnome/help/seahorse/C
 @dirrm share/gnome/help/seahorse
+@dirrm share/gnome/omf/seahorse
+@dirrm share/gnome/seahorse/glade
+@dirrm share/gnome/seahorse
+@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/pgp
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/seahorse/ui
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/seahorse/recipients
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/seahorse/preferences
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/seahorse/listing
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/seahorse
+@dirrm etc/gconf/gconf.xml.defaults/desktop/pgp
 @dirrm etc/gconf/gconf.xml.defaults/apps/seahorse/ui
-@dirrm etc/gconf/gconf.xml.defaults/apps/seahorse/recipients
-@dirrm etc/gconf/gconf.xml.defaults/apps/seahorse/preferences
 @dirrm etc/gconf/gconf.xml.defaults/apps/seahorse/listing
 @dirrm etc/gconf/gconf.xml.defaults/apps/seahorse
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/seahorse/seahorse-C.omf 2>/dev/null || /usr/bin/true
