@@ -100,6 +100,7 @@ MAN3+=	gsasl_server_step.3
 MAN3+=	gsasl_server_step_base64.3
 MAN3+=	gsasl_server_suggest_mechanism.3
 MAN3+=	gsasl_server_support_p.3
+MAN3+=	gsasl_simple_getpass.3
 MAN3+=	gsasl_step.3
 MAN3+=	gsasl_step64.3
 MAN3+=	gsasl_strerror.3
