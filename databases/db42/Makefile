@@ -7,15 +7,22 @@
 
 PORTNAME=	db41
 PORTVERSION=	4.1.25
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sleepycat.com/update/snapshot/
-DISTNAME=	db-${PORTVERSION}
+PKGNAMESUFFIX?=
+DISTNAME?=	db-${PORTVERSION}
 DIST_SUBDIR=	bdb
-#PATCH_SITES=	${MASTER_SITES}
-#PATCHFILES=	patch.${PORTVERSION}.1 patch.${PORTVERSION}.2
-#PATCH_DIST_STRIP= -d ${WRKDIR}/${DISTNAME}
+
+PATCH_SITES=	http://www.sleepycat.com/update/${PORTVERSION}/
+PATCHFILES=	patch.${PORTVERSION}.1
+PATCH_DIST_STRIP= -d ${WRKDIR}/${DISTNAME}
 
 MAINTAINER=	matthias.andree@gmx.de
+
+.if ${PKGNAMESUFFIX} != "-nocrypto"
+RESTRICTED=	"Contains cryptography"
+.endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 
