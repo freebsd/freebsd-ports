@@ -1,10 +1,10 @@
---- readRC.c.orig	Tue Jun 25 17:50:39 1996
-+++ readRC.c	Fri Mar 17 01:27:49 2000
+--- readRC.c.orig	Sun Sep  3 07:07:09 2000
++++ readRC.c	Fri Mar  9 03:31:53 2001
 @@ -30,11 +30,13 @@
  #include <unistd.h>
  #endif
  
-+#if !defined(__FreeBSD__) && !defined(__OpenBSD__) && !defined(__NetBSD__)
++#ifndef HAVE_MKSTEMP
  #ifdef __STDC__
  extern char *mktemp(char *);
  #else
@@ -14,32 +14,34 @@
  
  #define RC_FILENAME	".XPaintrc"
  
-@@ -64,6 +66,9 @@
+@@ -64,19 +66,32 @@
  static FILE *
  openTemp(char **np)
  {
-+#if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
++#ifdef HAVE_MKSTEMP
 +    int	fd;
 +#endif
      char *n;
      char xx[256];
  
-@@ -72,11 +77,20 @@
+     if ((n = getenv("TMPDIR")) == NULL)
+ 	n = "/tmp";
  
++#ifdef HAVE_MKSTEMP
++    snprintf(xx, 256, "%s/%s", n, "/XPaintXXXXXXX");
++    fd = mkstemp(xx);
++    n = xx;
++#else
      strcpy(xx, n);
      strcat(xx, "/XPaintXXXXXXX");
-+#if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
-+    if ((fd = mkstemp(xx) < 0))
-+	return (FILE *) NULL;
-+    tempName[++tempIndex] = XtNewString(n);
-+    if (np != NULL)
-+	*np = tempName[tempIndex];
-+    return fdopen(fd, "w");
-+#else
      n = mktemp(xx);
++#endif
      tempName[++tempIndex] = XtNewString(n);
      if (np != NULL)
  	*np = tempName[tempIndex];
++#ifdef HAVE_MKSTEMP
++    return fdopen(fd, "w");
++#else
      return fopen(tempName[tempIndex], "w");
 +#endif
  }

@@ -7,6 +7,7 @@
 
 PORTNAME=	xpaint
 PORTVERSION=	2.6.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://home.worldonline.dk/~torsten/xpaint/ \
 		ftp://ftp.win.ne.jp/pub/graphics/
