@@ -238,6 +238,7 @@
     SUBDIR += xrobots
     SUBDIR += xrubik
     SUBDIR += xscavenger
+    SUBDIR += xscorch
     SUBDIR += xscrabble
     SUBDIR += xsheep
     SUBDIR += xshipwars-client
