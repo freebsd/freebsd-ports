@@ -1967,6 +1967,11 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/treeview/list/examplewindow.cc
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/treeview/list/examplewindow.h
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/treeview/list/main.cc
+%%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/treeview/popup/examplewindow.cc
+%%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/treeview/popup/examplewindow.h
+%%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/treeview/popup/main.cc
+%%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/treeview/popup/treeview_withpopup.cc
+%%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/treeview/popup/treeview_withpopup.h
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/treeview/tree/examplewindow.cc
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/treeview/tree/examplewindow.h
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/treeview/tree/main.cc
@@ -2018,6 +2023,7 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/cellrenderercustom
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/calendar
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book/treeview/tree
+%%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book/treeview/popup
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book/treeview/list
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book/treeview/editable_cells
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book/treeview/drag_and_drop
