@@ -10,7 +10,7 @@ CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/proff/ \
 		ftp://ftp.funet.fi/pub/NetBSD/misc/proff/
 
-MAINTAINER=	naddy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 
