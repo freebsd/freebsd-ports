@@ -1,0 +1,8 @@
+--- docs/app-docs.make.orig	Mon Apr 17 06:28:43 2000
++++ docs/app-docs.make	Fri Apr 21 12:15:52 2000
+@@ -1,4 +1,4 @@
+-helpdir = $(datadir)/gnome/help/$(app)/$(lang)
++helpdir = $(datadir)/help/$(app)/$(lang)
+ help_DATA = \
+ 	index.html	\
+ 	topic.dat	\
