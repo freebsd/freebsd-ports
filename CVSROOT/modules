@@ -7168,6 +7168,7 @@ p5-Parse-PerlConfig	ports/devel/p5-Parse-PerlConfig
 p5-Parse-RecDescent	ports/devel/p5-Parse-RecDescent
 p5-Parse-Syslog	ports/textproc/p5-Parse-Syslog
 p5-Parse-Yapp	ports/devel/p5-Parse-Yapp
+p5-ParseLex	ports/devel/p5-ParseLex
 p5-PatchReader	ports/devel/p5-PatchReader
 p5-Path-Class	ports/devel/p5-Path-Class
 p5-Penguin	ports/devel/p5-Penguin
