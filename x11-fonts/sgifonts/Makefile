@@ -34,23 +34,24 @@ do-extract:
 pre-install:
 	${RM} -f ${PLIST}
 	cd ${WRKSRC}; for ii in `${LS} *gz fonts.alias fonts.dir | sort`; do \
-		${ECHO_CMD} lib/X11/fonts/sgi/$${ii} >> ${PLIST}; \
+		${ECHO_CMD} lib/X11/fonts/local/sgi/$${ii} >> ${PLIST}; \
 	done
-	${ECHO_CMD} lib/X11/fonts/sgi/fonts.dir >> ${PLIST}
-	${ECHO_CMD} @dirrm lib/X11/fonts/sgi >> ${PLIST}
+	${ECHO_CMD} @dirrm lib/X11/fonts/local/sgi >> ${PLIST}
 	${ECHO_CMD} "******************************************" > ${PKGMESSAGE}
 	${ECHO_CMD} "Add a line" >> ${PKGMESSAGE}
-	${ECHO_CMD} "FontPath \"${PREFIX}/lib/X11/fonts/sgi\"" >> ${PKGMESSAGE}
+	${ECHO_CMD} "FontPath \"${PREFIX}/lib/X11/fonts/local/sgi\"" \
+		>> ${PKGMESSAGE}
 	${ECHO_CMD} \
-	"to your XF86Config and restart the X server or do \"xset fp rehash\"."\
+	"to your XF86Config." >> ${PKGMESSAGE}
+	${ECHO_CMD} "Then, restart the X server or do \"xset fp rehash\"."\
 		>> ${PKGMESSAGE}
 	${ECHO_CMD} "*****************************************" >> ${PKGMESSAGE}
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/X11/fonts/sgi
+	${MKDIR} ${PREFIX}/lib/X11/fonts/local/sgi
 	cd ${WRKSRC}; \
 		${INSTALL_DATA} *gz fonts.alias fonts.dir \
-		${PREFIX}/lib/X11/fonts/sgi
+		${PREFIX}/lib/X11/fonts/local/sgi
 	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
