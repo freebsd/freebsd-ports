@@ -1,0 +1,19 @@
+--- src/data/Makefile.in.orig	Fri Jul  2 17:43:12 2004
++++ src/data/Makefile.in	Thu Jul 15 15:28:35 2004
+@@ -65,7 +65,7 @@
+ SDL_LIBS = @SDL_LIBS@
+ VERSION = @VERSION@
+ 
+-pkgdata_DATA = bgm1.xm bgm2.xm efx1.wav efx2.wav efx3.wav efx4.wav efx5.wav efx6.wav efx7.wav efx8.wav gfx.bmp dd2.cfg game.act dd2-hiscore
++pkgdata_DATA = bgm1.xm bgm2.xm efx1.wav efx2.wav efx3.wav efx4.wav efx5.wav efx6.wav efx7.wav efx8.wav gfx.bmp game.act
+ 
+ EXTRA_DIST = bgm1.xm bgm2.xm efx1.wav efx2.wav efx3.wav efx4.wav efx5.wav efx6.wav efx7.wav efx8.wav gfx.bmp dd2.cfg game.act dd2-hiscore
+ 
+@@ -192,7 +192,6 @@
+ 
+ 
+ install-data-hook:
+-	chmod a+rw $(pkgdatadir)/dd2-hiscore
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

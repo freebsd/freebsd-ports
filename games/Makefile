@@ -95,6 +95,7 @@
     SUBDIR += defendguin
     SUBDIR += digger-vgl
     SUBDIR += dmjava
+    SUBDIR += dodgindiamond2
     SUBDIR += dontspace
     SUBDIR += doom
     SUBDIR += doomlegacy

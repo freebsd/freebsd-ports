@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Thu Jul 15 15:23:01 2004
++++ src/Makefile.in	Thu Jul 15 15:23:41 2004
+@@ -73,7 +73,7 @@
+ dd2_SOURCES = menu.c SDL_plus.c cfg.c engine.c control.c engine.h control.h cfg.h SDL_plus.h menu.h main.c main.h
+ EXTRA_DIST = menu.c SDL_plus.c cfg.c engine.c control.c engine.h control.h cfg.h SDL_plus.h menu.h main.c main.h
+ 
+-AM_CFLAGS = -DDD2_DATA=\"$(pkgdatadir)\" -Wall
++AM_CFLAGS = -DDD2_DATA=\"$(pkgdatadir)\" -DSYSCONFDIR=\"$(sysconfdir)\" -DLOCALSTATEDIR=\"$(localstatedir)\" -Wall
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_CLEAN_FILES = 
+ PROGRAMS =  $(bin_PROGRAMS)
