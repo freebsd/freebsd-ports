@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	String-Approx
-PORTVERSION=	3.19
+PORTVERSION=	3.20
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	String
@@ -17,7 +17,6 @@ COMMENT=	Perl extension for approximate matching (fuzzy matching)
 
 PERL_CONFIGURE=	YES
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		String::Approx.3
 
 .include <bsd.port.mk>
