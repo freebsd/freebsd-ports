@@ -197,7 +197,7 @@ CONFIGURE_ARGS+=	--without-libpdf --without-libpanda
 .endif
 
 .if defined(WITH_SVG2)
-LIB_DEPENDS+=	librsvg-2.2:${PORTSDIR}/graphics/librsvg2
+LIB_DEPENDS+=	rsvg-2.10:${PORTSDIR}/graphics/librsvg2
 CONFIGURE_ARGS+=	--with-svg
 .else
 CONFIGURE_ARGS+=	--without-svg
