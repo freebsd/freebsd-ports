@@ -12,14 +12,16 @@ MASTER_SITES=	http://www.ee.tut.fi/~heikki/xdms/
 DISTNAME=	xdms
 
 MAINTAINER=	markp@FreeBSD.org
+COMMENT=	An Amiga DMS archiver unpacker
 
 USE_ZIP=	yes
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/xdms/src
 ALL_TARGET=	xdms
 
-pre-build:
-	${REINPLACE_CMD} -e "s@gcc@${CC}@g; s@-O3 -Wall@${CFLAGS} -Wall@g" ${WRKSRC}/Makefile
+post-patch:
+	${REINPLACE_CMD} "s@gcc@${CC}@g; s@-O3 -Wall@${CFLAGS} -Wall@g" \
+		${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xdms ${PREFIX}/bin

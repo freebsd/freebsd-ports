@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://sammy.net/~sammy/hacks/
 
 MAINTAINER=	markp@FreeBSD.org
+COMMENT=	A tcp connection redirection utility
 
 MAN1=		redir.1
 

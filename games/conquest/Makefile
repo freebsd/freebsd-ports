@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.radscan.com/conquest/
 EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	markp@FreeBSD.org
+COMMENT=	A multi-player curses space warfare game similar to Netrek
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc/conquest \
@@ -22,10 +23,10 @@ BINGRP=		conquest
 SHAREGRP=	conquest
 
 post-patch:
-	${REINPLACE_CMD} -e "s|^.*@chgrp .(CONQGROUP) conq.*||g; \
+	${REINPLACE_CMD} "s|^.*@chgrp .(CONQGROUP) conq.*||g; \
 		s|^.*@chmod 2771 conq.*||g;" ${WRKSRC}/Makefile.in
-	${REINPLACE_CMD} -e "s/# include <termio.h>//g" ${WRKSRC}/c_defs.h
-	${REINPLACE_CMD} -e "s/-O2 -fPIC//g" ${WRKSRC}/configure
+	${REINPLACE_CMD} "s/# include <termio.h>//g" ${WRKSRC}/c_defs.h
+	${REINPLACE_CMD} "s/-O2 -fPIC//g" ${WRKSRC}/configure
 
 do-install:
 	@${SH} pkg-install ${PORTNAME} PRE-INSTALL

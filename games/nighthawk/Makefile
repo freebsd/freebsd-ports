@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	games/arcade
 EXTRACT_SUFX=	-1.tar.gz
 
 MAINTAINER=	markp@FreeBSD.org
+COMMENT=	An X11 shoot-'em up which requires some lateral thinking
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-scores=/var/games/nighthawk.scores --enable-sound

@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/arcade
 
 MAINTAINER=	markp@FreeBSD.org
+COMMENT=	A real-time word puzzle for text terminals
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.kill-9.org/mbrowse/
 
 MAINTAINER=	markp@FreeBSD.org
+COMMENT=	An SNMP MIB Browser for X
 
 .if defined(WITH_NET_SNMP4)
 LIB_DEPENDS=	snmp.4:${PORTSDIR}/net/net-snmp4

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	markp
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	markp@FreeBSD.org
+COMMENT=	An image classification utility
 
 USE_XLIB=	yes
 USE_GNOMENG=	yes

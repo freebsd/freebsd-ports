@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	utils/file
 DISTNAME=	ncat-${PORTVERSION}
 
 MAINTAINER=	markp@FreeBSD.org
+COMMENT=	Network aware cat
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
