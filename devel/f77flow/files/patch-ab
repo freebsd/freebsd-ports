@@ -1,0 +1,38 @@
+--- flow.c.orig	Wed Feb 19 08:45:20 1997
++++ flow.c	Sun Mar 31 15:47:22 2002
+@@ -66,7 +66,7 @@
+ 
+ FILE *CallFile=NULL;
+ FILE *SubFile=NULL;
+-FILE *OUTFILE=stdout;
++FILE *OUTFILE=NULL;
+ 
+ char S_OUT[]="FLOW.SUBS"; /* file name where to print subroutines */
+ char C_OUT[]="FLOW.CALL"; /* file name where to print call's */
+@@ -89,7 +89,7 @@
+ 
+ /* begin of main */
+ 
+-void main(int argc, char *argv[]) 
++int main(int argc, char *argv[]) 
+ 
+ {
+ int k,d,i;
+@@ -100,6 +100,8 @@
+ long int Count_Lines=0;
+ char PRG_Name[60];
+ 
++OUTFILE=stdout;
++
+ for (k=0; k<NO_SUB+1; k++) Subroutine[k].Call=0;
+ for (k=0; k<NO_CALL; k++) Call[k].Call=0;
+    Program.Call=0;
+@@ -303,6 +305,8 @@
+    if (No_Main==0) Output_Result();
+ 
+    if (O_OutFile) fclose(OUTFILE);
++
++   exit(0);
+  
+ }
+ 

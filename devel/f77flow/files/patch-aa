@@ -1,0 +1,19 @@
+--- Makefile.orig	Fri Mar  7 05:19:01 1997
++++ Makefile	Sun Mar 31 15:47:22 2002
+@@ -2,8 +2,8 @@
+ # simple Makefile to compile and install flow
+ #
+ 
+-CC	= gcc
+-CFLAGS	= -O2 -Wall
++CC	?= gcc
++CFLAGS	+= -Wall
+ MANPATH	= /usr/man
+ PREFIX	= /usr/bin
+ 
+@@ -17,4 +17,4 @@
+ 	cp flow $(PREFIX); cp flow.1 $(MANPATH)/man1
+ 
+ clean:
+-	rm flow flow.o
++	rm flow flow.o
