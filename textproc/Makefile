@@ -4,6 +4,7 @@
     SUBDIR += aft
     SUBDIR += agrep
     SUBDIR += align
+    SUBDIR += ant-xinclude-task
     SUBDIR += antiword
     SUBDIR += ascii2pdf
     SUBDIR += aspell

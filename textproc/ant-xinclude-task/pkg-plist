@@ -1,0 +1,23 @@
+doc/xinclude-task/org/znerd/xincludetask/class-use/XIncludeTask.html
+doc/xinclude-task/org/znerd/xincludetask/package-use.html
+doc/xinclude-task/org/znerd/xincludetask/package-summary.html
+doc/xinclude-task/org/znerd/xincludetask/package-tree.html
+doc/xinclude-task/org/znerd/xincludetask/package-frame.html
+doc/xinclude-task/org/znerd/xincludetask/XIncludeTask.html
+doc/xinclude-task/serialized-form.html
+doc/xinclude-task/packages.html
+doc/xinclude-task/package-list
+doc/xinclude-task/overview-tree.html
+doc/xinclude-task/index.html
+doc/xinclude-task/index-all.html
+doc/xinclude-task/help-doc.html
+doc/xinclude-task/deprecated-list.html
+doc/xinclude-task/stylesheet.css
+doc/xinclude-task/allclasses-frame.html
+share/java/classes/xinclude-task.jar
+@dirrm doc/xinclude-task/org/znerd/xincludetask/class-use
+@dirrm doc/xinclude-task/org/znerd/xincludetask
+@dirrm doc/xinclude-task/org/znerd
+@dirrm doc/xinclude-task/org
+@dirrm doc/xinclude-task
+@dirrm doc
