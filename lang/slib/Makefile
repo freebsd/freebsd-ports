@@ -3,7 +3,7 @@
 # Date created:        01 April 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/08/25 14:22:27 vanilla Exp $
 #
 
 DISTNAME=	slib2c0
@@ -21,7 +21,7 @@ ALL_TARGET=	slib48
 INSTALL_TARGET=	install48
 
 post-install:
-	${MKDIR} ${PREFIX}/share/guile/1.2/slib
-	${INSTALL_DATA} ${WRKSRC}/*.scm ${PREFIX}/share/guile/1.2/slib
+	${MKDIR} ${PREFIX}/share/slib
+	${INSTALL_DATA} ${WRKSRC}/*.scm ${PREFIX}/share/slib
 
 .include <bsd.port.mk>
