@@ -4,7 +4,7 @@
 # Date created:         Sat July 20, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.6 1997/07/13 18:49:29 max Exp $
+# $Id: Makefile,v 1.7 1997/09/22 16:54:25 max Exp $
 #
 
 DISTNAME=	vnterm3.3
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.media.mit.edu/pub/Vietnet/Viscii/Unix/  \
 		ftp://ftp.monash.edu.au/pub/vietnam/unix/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=     obrien@cs.ucdavis.edu
+MAINTAINER=     obrien@FreeBSD.org
 
 USE_IMAKE=	yes
 XMKMF=		xmkmf

@@ -4,7 +4,7 @@
 # Date created:         Mon Nov 18, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.4 1996/11/26 10:40:48 obrien Exp $
+# $Id: Makefile,v 1.5 1997/02/04 11:32:02 obrien Exp $
 #
 
 DISTNAME=	MaRS-2.1
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.cs.umd.edu/pub/sdag/MaRS/
 DISTFILES=	MaRS-2.1.tar.gz MaRS-2-doc.tar.gz
 .endif
 
-MAINTAINER=     obrien@cs.ucdavis.edu
+MAINTAINER=     obrien@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 EXTRACT_ONLY=	${DISTNAME}.tar.gz

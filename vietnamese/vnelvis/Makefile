@@ -3,7 +3,7 @@
 # Date created:         Tue Dec 3, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.2 1996/12/06 23:55:27 asami Exp $
+# $Id: Makefile,v 1.3 1997/09/22 16:54:18 max Exp $
 #
 
 DISTNAME=	vnelvis
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.media.mit.edu/pub/Vietnet/Viscii/Unix/  \
 		ftp://ftp.monash.edu.au/pub/vietnam/unix/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=     obrien@cs.ucdavis.edu
+MAINTAINER=     obrien@FreeBSD.org
 
 CFLAGS+=	-I../../include
 MAN1=		vnelvis.1 vnvi.1

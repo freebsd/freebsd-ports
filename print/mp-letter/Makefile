@@ -3,7 +3,7 @@
 # Date created:         11 July 1996
 # Whom:                 David O'Brien <obrien@cs.ucdavis.edu>
 #
-# $Id: Makefile,v 1.3 1996/11/18 11:38:45 asami Exp $
+# $Id: Makefile,v 1.4 1997/01/29 13:20:05 obrien Exp $
 #
 
 DISTNAME=	mp-3.0.1
@@ -12,7 +12,7 @@ CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.NUXI.com/pub/misc/ \
 		ftp://ftp.win.tue.nl/pub/mail/
 
-MAINTAINER=	obrien@cs.ucdavis.edu
+MAINTAINER=	obrien@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/mp
 USE_GMAKE=	yes

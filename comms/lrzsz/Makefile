@@ -4,13 +4,13 @@
 # Date created:         29 Sept 1996
 # Whom:                 David O'Brien <obrien@cs.ucdavis.edu>
 #
-# $Id: Makefile,v 1.3 1997/02/03 06:53:42 obrien Exp $
+# $Id: Makefile,v 1.4 1997/04/07 03:02:40 obrien Exp $
 
 DISTNAME=	lrzsz-0.12.16
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.ihg.uni-duisburg.de/uwe/
 
-MAINTAINER=	obrien@cs.ucdavis.edu
+MAINTAINER=	obrien@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

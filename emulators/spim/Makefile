@@ -4,7 +4,7 @@
 # Date created:         Mon Oct 28, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.3 1997/02/15 22:35:16 obrien Exp $
+# $Id: Makefile,v 1.4 1997/08/25 06:18:14 obrien Exp $
 #
 
 DISTNAME=	spim5.9
@@ -12,7 +12,7 @@ PKGNAME=	spim-5.9
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.cs.wisc.edu/pub/spim/Old_Versions/
 
-MAINTAINER=	obrien@cs.ucdavis.edu
+MAINTAINER=	obrien@FreeBSD.org
 
 PREFIX?=	${LOCALBASE}
 NO_WRKSUBDIR=	yes
