@@ -1,0 +1,23 @@
+--- Makefile.am.orig	Thu Dec 27 18:00:25 2001
++++ Makefile.am	Tue Jan  8 14:31:14 2002
+@@ -145,7 +145,7 @@
+ libntopreport_la_LIBADD       = $(MORELIBS)
+ libntopreport_la_LDFLAGS      = -version-info @NTOP_VERSION_INFO@ -release @NTOP_RELEASE@ -export-dynamic @DYN_FLAGS@
+ 
+-man_MANS = ntop.8 intop/intop.1
++man_MANS = ntop.8 ntop-rules.8
+ 
+ .PHONY: snapshot
+ 
+@@ -219,10 +219,10 @@
+ 	/bin/rm -f privkey.pem cert.pem
+ 
+ install-data-local:
+-	@cp -p ntop-cert.pem $(bindir)/ntop-cert.pem
+ 	@$(top_srcdir)/mkinstalldirs $(DESTDIR)/$(libdir)/plugins;
+ 	@$(top_srcdir)/mkinstalldirs $(DESTDIR)/$(datadir)/ntop;
+ 	@$(top_srcdir)/mkinstalldirs $(DESTDIR)/$(datadir)/ntop/html;
++	@cp -p ntop-cert.pem $(datadir)/ntop/ntop-cert.pem
+ 	@for file in $(NTOPHTML); do \
+           if test -d $$file; then \
+              $(top_srcdir)/mkinstalldirs $(DESTDIR)/$(datadir)/ntop/$$file; \
