@@ -319,7 +319,6 @@
     SUBDIR += mozilla
     SUBDIR += mozilla-bonobo
     SUBDIR += mozilla-devel
-    SUBDIR += mozilla-devel-gtk1
     SUBDIR += mozilla-gtk1
     SUBDIR += mplayer-plugin
     SUBDIR += nd
