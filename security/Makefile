@@ -8,7 +8,6 @@
     SUBDIR += checkpassword
     SUBDIR += cops
     SUBDIR += crack
-    SUBDIR += dante
     SUBDIR += donkey
     SUBDIR += fakebo
     SUBDIR += firewalk
