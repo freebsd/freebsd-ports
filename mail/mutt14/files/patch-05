@@ -1,5 +1,60 @@
---- curs_lib.c.bak	Thu Jan 14 14:29:17 1999
-+++ curs_lib.c	Sat Feb 13 20:14:02 1999
+--- protos.h.bak	Thu Feb 11 00:47:26 1999
++++ protos.h	Tue Feb 16 16:35:23 1999
+@@ -239,7 +239,7 @@
+ int mutt_is_list_recipient (int, ADDRESS *, ADDRESS *);
+ int mutt_is_text_type (int, char *);
+ int mutt_is_valid_mailbox (const char *);
+-int mutt_multi_choice (char *prompt, char *letters);
++int mutt_multi_choice (char *prompt, char *nletters, char *letters);
+ int mutt_needs_mailcap (BODY *);
+ int mutt_num_postponed (void);
+ int mutt_parse_bind (BUFFER *, BUFFER *, unsigned long, BUFFER *);
+--- browser.c.bak	Thu Jan  7 12:14:39 1999
++++ browser.c	Tue Feb 16 16:38:56 1999
+@@ -743,7 +743,7 @@
+ 	  switch (mutt_multi_choice ((reverse) ?
+ 	      _("Reverse sort by (d)ate, (a)lpha, si(z)e or do(n)'t sort? ") :
+ 	      _("Sort by (d)ate, (a)lpha, si(z)e or do(n)'t sort? "),
+-	      _("dazn")))
++	      _("dazn"), "dazn"))
+ 	  {
+ 	    case -1: /* abort */
+ 	      resort = 0;
+--- commands.c.bak	Tue Feb  9 23:53:38 1999
++++ commands.c	Tue Feb 16 16:38:56 1999
+@@ -333,7 +333,7 @@
+   switch (mutt_multi_choice (reverse ?
+ 			     _("Rev-Sort (d)ate/(f)rm/(r)ecv/(s)ubj/t(o)/(t)hread/(u)nsort/si(z)e/s(c)ore?: ") :
+ 			     _("Sort (d)ate/(f)rm/(r)ecv/(s)ubj/t(o)/(t)hread/(u)nsort/si(z)e/s(c)ore?: "),
+-			     _("dfrsotuzc")))
++			     _("dfrsotuzc"), "dfrsotuzc"))
+   {
+   case -1: /* abort - don't resort */
+     return -1;
+--- compose.c.bak	Tue Jan 26 11:40:36 1999
++++ compose.c	Tue Feb 16 16:38:57 1999
+@@ -130,7 +130,7 @@
+   struct pgp_vinfo *pgp = pgp_get_vinfo(PGP_SIGN);
+ 
+   switch (mutt_multi_choice (_("(e)ncrypt, (s)ign, sign (a)s, (b)oth, select (m)ic algorithm, or (f)orget it? "),
+-			     _("esabmf")))
++			     _("esabmf"), "esabmf"))
+   {
+   case 1: /* (e)ncrypt */
+     bits |= PGPENCRYPT;
+--- lib.c.bak	Thu Feb 11 00:54:01 1999
++++ lib.c	Tue Feb 16 16:38:57 1999
+@@ -795,7 +795,7 @@
+   if (*append == 0 && access (fname, F_OK) == 0)
+   {
+     switch (mutt_multi_choice
+-	    (_("File exists, (o)verwrite, (a)ppend, or (c)ancel?"), _("oac")))
++	    (_("File exists, (o)verwrite, (a)ppend, or (c)ancel?"), _("oac"), "oac"))
+     {
+       case -1: /* abort */
+       case 3:  /* cancel */
+--- curs_lib.c.orig	Thu Jan 14 14:29:17 1999
++++ curs_lib.c	Tue Feb 16 16:42:19 1999
 @@ -132,8 +132,8 @@
  int mutt_yesorno (const char *msg, int def)
  {
@@ -11,18 +66,42 @@
    
    CLEARLINE(LINES-1);
    printw("%s ([%c]/%c): ", msg, def ? *yes : *no,
-@@ -145,12 +145,12 @@
-     if (ch.ch == -1) return(-1);
-     if (CI_is_return (ch.ch))
-       break;
--    else if (tolower(ch.ch) == tolower(*yes))
-+    else if (tolower(ch.ch) == tolower(*yes) || tolower(ch.ch) == 'y')
-     {
-       def = 1;
-       break;
-     }
--    else if (tolower(ch.ch) == tolower(*no))
-+    else if (tolower(ch.ch) == tolower(*no) || tolower(ch.ch) == 'n')
-     {
+@@ -155,6 +155,16 @@
        def = 0;
        break;
+     }
++    else if (tolower(ch.ch) == 'y')
++    {
++      def = 1;
++      break;
++    }
++    else if (tolower(ch.ch) == 'n')
++    {
++      def = 0;
++      break;
++    }
+     else
+     {
+       BEEP();
+@@ -404,7 +414,7 @@
+ }
+ #endif
+ 
+-int mutt_multi_choice (char *prompt, char *letters)
++int mutt_multi_choice (char *prompt, char *nletters, char *letters)
+ {
+   event_t ch;
+   int choice;
+@@ -423,6 +433,12 @@
+     }
+     else
+     {
++      p = strchr (nletters, ch.ch);
++      if (p)
++      {
++	choice = p - nletters + 1;
++	break;
++      }
+       p = strchr (letters, ch.ch);
+       if (p)
+       {
