@@ -1,0 +1,433 @@
+diff -Nrc ../xmcd-2.3.orig/cda_d/Imakefile ./cda_d/Imakefile
+*** ../xmcd-2.3.orig/cda_d/Imakefile	Sat May 23 00:31:57 1998
+--- ./cda_d/Imakefile	Sun Jun 28 19:38:31 1998
+***************
+*** 93,98 ****
+--- 93,104 ----
+  #else
+  #if defined(FreeBSDArchitecture)
+  LOCAL_LIBRARIES=-lncurses -lmytinfo
++ /*
++  * Check for a CAM system.
++  */
++ .if exists(/usr/include/camlib.h)
++ LOCAL_LIBRARIES+= -lcam
++ .endif
+  #else
+  #if defined(NetBSDArchitecture) || defined(__bsdi__)
+  LOCAL_LIBRARIES=
+diff -Nrc ../xmcd-2.3.orig/libdi_d/Imakefile ./libdi_d/Imakefile
+*** ../xmcd-2.3.orig/libdi_d/Imakefile	Sat May 23 00:31:44 1998
+--- ./libdi_d/Imakefile	Sun Jun 28 18:50:28 1998
+***************
+*** 69,74 ****
+--- 69,80 ----
+  DEFINES=
+  #endif
+  
++ #if defined(FreeBSDArchitecture)
++ .if exists(/usr/include/camlib.h)
++ DEFINES+= -DFREEBSD_CAM
++ .endif
++ #endif
++ 
+  /*
+   * Add local include path
+   */
+***************
+*** 88,93 ****
+--- 94,100 ----
+  	os_bsdi.c \
+  	os_dec.c \
+  	os_dgux.c \
++ 	os_fbcam.c \
+  	os_fnbsd.c \
+  	os_hpux.c \
+  	os_irix.c \
+***************
+*** 121,126 ****
+--- 128,134 ----
+  	os_bsdi.o \
+  	os_dec.o \
+  	os_dgux.o \
++ 	os_fbcam.o \
+  	os_fnbsd.o \
+  	os_hpux.o \
+  	os_irix.o \
+diff -Nrc ../xmcd-2.3.orig/libdi_d/os_fbcam.c ./libdi_d/os_fbcam.c
+*** ../xmcd-2.3.orig/libdi_d/os_fbcam.c	Wed Dec 31 17:00:00 1969
+--- ./libdi_d/os_fbcam.c	Wed Sep 16 18:31:47 1998
+***************
+*** 0 ****
+--- 1,202 ----
++ /*
++  *   libdi - scsipt SCSI Device Interface Library
++  *
++  *   Copyright (C) 1993-1998  Ti Kan
++  *   E-mail: ti@amb.org
++  *
++  *   This library is free software; you can redistribute it and/or
++  *   modify it under the terms of the GNU Library General Public
++  *   License as published by the Free Software Foundation; either
++  *   version 2 of the License, or (at your option) any later version.
++  *
++  *   This library is distributed in the hope that it will be useful,
++  *   but WITHOUT ANY WARRANTY; without even the implied warranty of
++  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++  *   Library General Public License for more details.
++  *
++  *   You should have received a copy of the GNU Library General Public
++  *   License along with this library; if not, write to the Free
++  *   Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
++  */
++ 
++ /*
++  *   FreeBSD CAM support.
++  *
++  *   Author: Kenneth D. Merry
++  *   E-Mail: ken@kdm.org
++  *
++  *   This code provides an interface to the SCSI passthrough driver in
++  *   FreeBSD's CAM implementation.
++  */
++ #ifndef LINT
++ static char *_os_fbcam_c_ident_ = "@(#)";
++ #endif
++ 
++ #include "common_d/appenv.h"
++ #include "common_d/util.h"
++ #include "libdi_d/libdi.h"
++ #include "libdi_d/scsipt.h"
++ 
++ #if defined(__FreeBSD__) && defined(FREEBSD_CAM)
++ 
++ extern appdata_t	app_data;
++ extern bool_t		scsipt_notrom_error;
++ extern FILE		*errfp;
++ extern di_client_t	*di_clinfo;
++ 
++ struct cam_device *cam_dev;
++ 
++ /*
++  * pthru_send
++  *	Send SCSI command to the device.
++  *
++  * Args:
++  *	fd - Device file descriptor
++  *	cmdpt - Pointer to the SCSI command CDB
++  *	cmdlen - SCSI command size (6, 10 or 12 bytes)
++  *	datapt - Pointer to the data buffer
++  *	datalen - Data transfer size (bytes)
++  *	rw - Data transfer direction flag (OP_NODATA, OP_DATAIN or OP_DATAOUT)
++  *	tmout - Command timeout interval (seconds)
++  *	prnerr - Whether an error message should be displayed
++  *		 when a command fails
++  *
++  * Return:
++  *	TRUE - command completed successfully
++  *	FALSE - command failed
++  */
++ bool_t
++ pthru_send(
++ 	int		fd,
++ 	byte_t		*cmdpt,
++ 	int		cmdlen,
++ 	byte_t		*datapt,
++ 	int		datalen,
++ 	byte_t		rw,
++ 	int		tmout,
++ 	bool_t		prnerr
++ )
++ {
++ 	union ccb ccb;
++ 	char			*path,
++ 				title[FILE_PATH_SZ + 20];
++ 	
++ 	if (fd < 0 || scsipt_notrom_error)
++ 		return FALSE;
++ 
++ 	path = di_devgetpath(fd);
++ 
++ 	(void)memset(&ccb, 0, sizeof(ccb));
++ 
++ 	cam_fill_csio(&ccb.csio,
++ 		      /* retries */ 0,
++ 		      /* cbfcnp */ NULL,
++ 		      /* flags */ (rw == OP_DATAIN) ? CAM_DIR_IN :
++ 				  (rw == OP_DATAOUT) ? CAM_DIR_OUT :
++ 				  CAM_DIR_NONE,
++ 		      /* tag_action */ MSG_SIMPLE_Q_TAG,
++ 		      /* data_ptr */ (u_int8_t *)datapt,
++ 		      /* dxfer_len */ datalen,
++ 		      /* sense_len */ SSD_FULL_SIZE,
++ 		      /* cdb_len */ cmdlen,
++ 		      /* timeout */ (tmout ? tmout : DFLT_CMD_TIMEOUT) * 1000);
++ 
++ 	/* Disable freezing the device queue */
++ 	ccb.ccb_h.flags |= CAM_DEV_QFRZDIS;
++ 
++ 	(void)memcpy(ccb.csio.cdb_io.cdb_bytes, cmdpt, cmdlen);
++ 
++ 	if (app_data.debug) {
++ 		(void) sprintf(title, "SCSI CDB bytes (dev=%s rw=%d to=%d)",
++ 			       path, rw, tmout);
++ 		util_dbgdump(title, cmdpt, cmdlen);
++ 	}
++ 
++ 	/* Send the command down via the passthrough driver */
++ 	if (cam_send_ccb(cam_dev, &ccb) < 0) {
++ 		if (app_data.scsierr_msg && prnerr)
++ 			perror("CAMIOCOMMAND ioctl failed");
++ 		return FALSE;
++ 	}
++ 
++ 	if ((ccb.ccb_h.status & CAM_STATUS_MASK) != CAM_REQ_CMP) {
++ 		if (((ccb.ccb_h.status & CAM_STATUS_MASK) ==
++ 		     CAM_SCSI_STATUS_ERROR)
++ 		 && (app_data.scsierr_msg)
++ 		 && prnerr) {
++ 			char tmpstr[4096];
++ 			scsi_sense_string(cam_dev, &ccb.csio, tmpstr,
++ 					  sizeof(tmpstr));
++ 			(void)fprintf(errfp, "%s: %s\n", APPNAME, tmpstr);
++ 		} else if (app_data.scsierr_msg && prnerr) {
++ 			(void)fprintf(errfp, "%s: error %d returned from"
++ 				      " SCSI command\n", APPNAME,
++ 				      ccb.ccb_h.status);
++ 		}
++ 		return FALSE;
++ 	}
++ 
++ 	return TRUE;
++ }
++ 
++ 
++ /*
++  * pthru_open
++  *	Open SCSI pass-through device
++  *
++  * Args:
++  *	path - device path name string
++  *
++  * Return:
++  *	Device file descriptor, or -1 on failure.
++  */
++ int
++ pthru_open(char *path)
++ {
++ 
++ 	if ((cam_dev = cam_open_device(path, O_RDWR)) == NULL) {
++ 		DBGPRN(errfp, "%s", cam_errbuf);
++ 		return(-1);
++ 	}
++ 
++ 	(void) di_devreg(cam_dev->fd, path);
++ 	return (cam_dev->fd);
++ }
++ 
++ 
++ /*
++  * pthru_close
++  *	Close SCSI pass-through device
++  *
++  * Args:
++  *	fd - Device file descriptor
++  *
++  * Return:
++  *	Nothing.
++  */
++ void
++ pthru_close(int fd)
++ {
++ 	di_devunreg(fd);
++ 	cam_close_device(cam_dev);
++ }
++ 
++ 
++ /*
++  * pthru_vers
++  *	Return OS Interface Module version string
++  *
++  * Args:
++  *	Nothing.
++  *
++  * Return:
++  *	Module version text string.
++  */
++ char *
++ pthru_vers(void)
++ {
++ 	return ("OS Interface module for FreeBSD/CAM\n");
++ }
++ 
++ #endif	/* __FreeBSD__ FREEBSD_CAM */
++ 
+diff -Nrc ../xmcd-2.3.orig/libdi_d/os_fbcam.h ./libdi_d/os_fbcam.h
+*** ../xmcd-2.3.orig/libdi_d/os_fbcam.h	Wed Dec 31 17:00:00 1969
+--- ./libdi_d/os_fbcam.h	Sun Jun 28 18:49:17 1998
+***************
+*** 0 ****
+--- 1,60 ----
++ /*
++  *   libdi - scsipt SCSI Device Interface Library
++  *
++  *   Copyright (C) 1993-1998  Ti Kan
++  *   E-mail: ti@amb.org
++  *
++  *   This library is free software; you can redistribute it and/or
++  *   modify it under the terms of the GNU Library General Public
++  *   License as published by the Free Software Foundation; either
++  *   version 2 of the License, or (at your option) any later version.
++  *
++  *   This library is distributed in the hope that it will be useful,
++  *   but WITHOUT ANY WARRANTY; without even the implied warranty of
++  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++  *   Library General Public License for more details.
++  *
++  *   You should have received a copy of the GNU Library General Public
++  *   License along with this library; if not, write to the Free
++  *   Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
++  */
++ 
++ /*
++  *   FreeBSD CAM support
++  *
++  *   Author: Kenneth D. Merry
++  *   E-Mail: ken@kdm.org
++  *
++  *   This code provides an interface to the SCSI passthrough driver in
++  *   FreeBSD's CAM implementation.
++  */
++ #ifndef __OS_FBCAM_H__
++ #define __OS_FBCAM_H__
++ 
++ #if defined(__FreeBSD__) && defined(FREEBSD_CAM)
++ 
++ #ifndef LINT
++ static char *_os_fnbsd_h_ident_ = "@(#)os_fnbsd.h	6.14 98/01/02";
++ #endif
++ 
++ #include <cam/cam.h>
++ #include <cam/cam_ccb.h>
++ #include <cam/scsi/scsi_message.h>
++ #include <camlib.h>
++ 
++ 
++ #define OS_MODULE	/* Indicate that this is compiled on a supported OS */
++ #define SETUID_ROOT	/* Setuid root privilege is required */
++ 
++ 
++ /* Public function prototypes */
++ extern bool_t	pthru_send(int, byte_t *, int, byte_t *, int, byte_t,
++ 			   int, bool_t);
++ extern int	pthru_open(char *);
++ extern void	pthru_close(int);
++ extern char	*pthru_vers(void);
++ 
++ #endif	/* __FreeBSD__ FREEBSD_CAM*/
++ 
++ #endif	/* __OS_BCAM_H__ */
++ 
+diff -Nrc ../xmcd-2.3.orig/libdi_d/os_fnbsd.c ./libdi_d/os_fnbsd.c
+*** ../xmcd-2.3.orig/libdi_d/os_fnbsd.c	Sat May 23 00:31:45 1998
+--- ./libdi_d/os_fnbsd.c	Sun Jun 28 18:21:53 1998
+***************
+*** 44,50 ****
+  #include "libdi_d/scsipt.h"
+  
+  #if (defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)) && \
+!     defined(DI_SCSIPT) && !defined(DEMO_ONLY)
+  
+  extern appdata_t	app_data;
+  extern bool_t		scsipt_notrom_error;
+--- 44,50 ----
+  #include "libdi_d/scsipt.h"
+  
+  #if (defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)) && \
+!     defined(DI_SCSIPT) && !defined(DEMO_ONLY) && !defined(FREEBSD_CAM)
+  
+  extern appdata_t	app_data;
+  extern bool_t		scsipt_notrom_error;
+***************
+*** 232,236 ****
+  #endif	/* __FreeBSD__ */
+  }
+  
+! #endif	/* __FreeBSD__ __NetBSD__ __OpenBSD__ DI_SCSIPT DEMO_ONLY */
+  
+--- 232,236 ----
+  #endif	/* __FreeBSD__ */
+  }
+  
+! #endif	/* __FreeBSD__ __NetBSD__ __OpenBSD__ DI_SCSIPT DEMO_ONLY FREEBSD_CAM*/
+  
+diff -Nrc ../xmcd-2.3.orig/libdi_d/os_fnbsd.h ./libdi_d/os_fnbsd.h
+*** ../xmcd-2.3.orig/libdi_d/os_fnbsd.h	Sat May 23 00:31:45 1998
+--- ./libdi_d/os_fnbsd.h	Sun Jun 28 18:45:40 1998
+***************
+*** 34,40 ****
+  #define __OS_FNBSD_H__
+  
+  #if (defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)) && \
+!     defined(DI_SCSIPT) && !defined(DEMO_ONLY)
+  
+  #ifndef LINT
+  static char *_os_fnbsd_h_ident_ = "@(#)os_fnbsd.h	6.14 98/01/02";
+--- 34,40 ----
+  #define __OS_FNBSD_H__
+  
+  #if (defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)) && \
+!     defined(DI_SCSIPT) && !defined(DEMO_ONLY) && !defined(FREEBSD_CAM)
+  
+  #ifndef LINT
+  static char *_os_fnbsd_h_ident_ = "@(#)os_fnbsd.h	6.14 98/01/02";
+***************
+*** 54,60 ****
+  extern void	pthru_close(int);
+  extern char	*pthru_vers(void);
+  
+! #endif	/* __FreeBSD__ __NetBSD__ __OpenBSD__ DI_SCSIPT DEMO_ONLY */
+  
+  #endif	/* __OS_FNBSD_H__ */
+  
+--- 54,60 ----
+  extern void	pthru_close(int);
+  extern char	*pthru_vers(void);
+  
+! #endif	/* __FreeBSD__ __NetBSD__ __OpenBSD__ DI_SCSIPT DEMO_ONLY FREEBSD_CAM*/
+  
+  #endif	/* __OS_FNBSD_H__ */
+  
+diff -Nrc ../xmcd-2.3.orig/libdi_d/scsipt.h ./libdi_d/scsipt.h
+*** ../xmcd-2.3.orig/libdi_d/scsipt.h	Sat May 23 00:31:44 1998
+--- ./libdi_d/scsipt.h	Sun Jun 28 18:45:08 1998
+***************
+*** 587,592 ****
+--- 587,593 ----
+  #include "libdi_d/os_bsdi.h"		/* BSDI BSD/OS */
+  #include "libdi_d/os_dec.h"		/* Digital OSF/1 & Ultrix */
+  #include "libdi_d/os_dgux.h"		/* Data General DG/UX */
++ #include "libdi_d/os_fbcam.h"		/* FreeBSD CAM */
+  #include "libdi_d/os_fnbsd.h"		/* FreeBSD/NetBSD */
+  #include "libdi_d/os_hpux.h"		/* HP-UX */
+  #include "libdi_d/os_irix.h"		/* SGI IRIX */
+diff -Nrc ../xmcd-2.3.orig/xmcd_d/Imakefile ./xmcd_d/Imakefile
+*** ../xmcd-2.3.orig/xmcd_d/Imakefile	Sat May 23 00:31:49 1998
+--- ./xmcd_d/Imakefile	Sun Jun 28 19:39:51 1998
+***************
+*** 68,73 ****
+--- 68,81 ----
+  DEFINES=
+  #endif
+  
++ /*
++  * Check for a FreeBSD/CAM system.
++  */
++ #if defined(FreeBSDArchitecture)
++ .if exists(/usr/include/camlib.h)
++ LOCAL_LIBRARIES+= -lcam
++ .endif
++ #endif
+  
+  /*
+   * Add local include path
