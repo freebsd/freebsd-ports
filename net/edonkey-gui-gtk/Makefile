@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	edonkey
-PORTVERSION=	0.6.1
-PORTREVISION=	2
+PORTVERSION=	0.6.2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ed2k-gtk-gui
@@ -21,10 +20,13 @@ LIB_DEPENDS=	gnet-2.0:${PORTSDIR}/net/gnet2
 RUN_DEPENDS=	donkey:${PORTSDIR}/net/linux-edonkey-core
 
 USE_GNOME=	gtk20
+USE_GETTEXT=	yes
+USE_ICONV=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
-USE_SIZE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
+		--with-libintl-prefix=${LOCALBASE}
 
 DOCSDIR=	${PREFIX}/share/doc/ed2k_gui
 .ifndef(NOPORTDOCS)
@@ -36,6 +38,9 @@ post-patch:
 	@${REINPLACE_CMD} -E -e 's|^(SUBDIRS.*)docs|\1|' \
 		${WRKSRC}/Makefile.in
 .endif
+# fix build with GTK 2.4
+	@${REINPLACE_CMD} -e 's|-D.*_DISABLE_DEPRECATED||g' \
+		${WRKSRC}/ed2k_gui/Makefile.in
 
 post-install:
 	@${LN} -s ed2k_gui ${PREFIX}/bin/${PORTNAME}${PKGNAMESUFFIX}

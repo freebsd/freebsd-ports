@@ -34,6 +34,72 @@ share/applications/ed2k_gui.desktop
 %%PORTDOCS%%%%DOCSDIR%%/pl/index-6.html
 %%PORTDOCS%%%%DOCSDIR%%/pl/index.html
 %%PORTDOCS%%%%DOCSDIR%%/pl/index.sgml
+share/ed2k_gui/icons/bluecore/cancel.png
+share/ed2k_gui/icons/bluecore/dl-status-avail-full.png
+share/ed2k_gui/icons/bluecore/dl-status-avail-high.png
+share/ed2k_gui/icons/bluecore/dl-status-avail-low.png
+share/ed2k_gui/icons/bluecore/dl-status-blue.png
+share/ed2k_gui/icons/bluecore/dl-status-error.png
+share/ed2k_gui/icons/bluecore/dl-status-paused.png
+share/ed2k_gui/icons/bluecore/ed2k-gtk-gui.png
+share/ed2k_gui/icons/bluecore/ed2k-logo-mini.png
+share/ed2k_gui/icons/bluecore/filetype-audio.png
+share/ed2k_gui/icons/bluecore/filetype-cdimage.png
+share/ed2k_gui/icons/bluecore/filetype-document.png
+share/ed2k_gui/icons/bluecore/filetype-image.png
+share/ed2k_gui/icons/bluecore/filetype-package.png
+share/ed2k_gui/icons/bluecore/filetype-program.png
+share/ed2k_gui/icons/bluecore/filetype-subtitles.png
+share/ed2k_gui/icons/bluecore/filetype-video.png
+share/ed2k_gui/icons/bluecore/menu-blacklist.png
+share/ed2k_gui/icons/bluecore/menu-cancel.png
+share/ed2k_gui/icons/bluecore/menu-connect.png
+share/ed2k_gui/icons/bluecore/menu-disconnect.png
+share/ed2k_gui/icons/bluecore/menu-dl-cancel.png
+share/ed2k_gui/icons/bluecore/menu-download.png
+share/ed2k_gui/icons/bluecore/menu-extend.png
+share/ed2k_gui/icons/bluecore/menu-hide-column.png
+share/ed2k_gui/icons/bluecore/menu-homepage.png
+share/ed2k_gui/icons/bluecore/menu-options.png
+share/ed2k_gui/icons/bluecore/menu-pause.png
+share/ed2k_gui/icons/bluecore/menu-preview.png
+share/ed2k_gui/icons/bluecore/menu-prio-high.png
+share/ed2k_gui/icons/bluecore/menu-prio-low.png
+share/ed2k_gui/icons/bluecore/menu-prio-medium.png
+share/ed2k_gui/icons/bluecore/menu-quit.png
+share/ed2k_gui/icons/bluecore/menu-refresh.png
+share/ed2k_gui/icons/bluecore/menu-resume.png
+share/ed2k_gui/icons/bluecore/menu-search.png
+share/ed2k_gui/icons/bluecore/menu-status.png
+share/ed2k_gui/icons/bluecore/menu-thankyou.png
+share/ed2k_gui/icons/bluecore/menu-unhide-column.png
+share/ed2k_gui/icons/bluecore/menu-upload.png
+share/ed2k_gui/icons/bluecore/none.png
+share/ed2k_gui/icons/bluecore/nuke.png
+share/ed2k_gui/icons/bluecore/ok.png
+share/ed2k_gui/icons/bluecore/option-false.png
+share/ed2k_gui/icons/bluecore/option-true.png
+share/ed2k_gui/icons/bluecore/shutdown.png
+share/ed2k_gui/icons/bluecore/sys-gnome1.png
+share/ed2k_gui/icons/bluecore/sys-gnome2.png
+share/ed2k_gui/icons/bluecore/sys-kde.png
+share/ed2k_gui/icons/bluecore/sys-linux.png
+share/ed2k_gui/icons/bluecore/sys-windows.png
+share/ed2k_gui/icons/bluecore/tab-downloads.png
+share/ed2k_gui/icons/bluecore/tab-forget.png
+share/ed2k_gui/icons/bluecore/tab-options.png
+share/ed2k_gui/icons/bluecore/tab-search.png
+share/ed2k_gui/icons/bluecore/tab-servers.png
+share/ed2k_gui/icons/bluecore/tab-shared.png
+share/ed2k_gui/icons/bluecore/tab-stats.png
+share/ed2k_gui/icons/bluecore/tab-status.png
+share/ed2k_gui/icons/bluecore/tab-uploads.png
+share/ed2k_gui/icons/bluecore/toolbar-about.png
+share/ed2k_gui/icons/bluecore/toolbar-ed2k-logo.png
+share/ed2k_gui/icons/bluecore/toolbar-go.png
+share/ed2k_gui/icons/bluecore/toolbar-num-connections.png
+share/ed2k_gui/icons/bluecore/toolbar-overnet-logo.png
+share/ed2k_gui/icons/bluecore/toolbar-server.png
 share/ed2k_gui/icons/default/cancel.png
 share/ed2k_gui/icons/default/dl-status-avail-full.png
 share/ed2k_gui/icons/default/dl-status-avail-high.png
@@ -84,6 +150,7 @@ share/ed2k_gui/icons/default/sys-gnome1.png
 share/ed2k_gui/icons/default/sys-gnome2.png
 share/ed2k_gui/icons/default/sys-kde.png
 share/ed2k_gui/icons/default/sys-linux.png
+share/ed2k_gui/icons/default/sys-windows.png
 share/ed2k_gui/icons/default/tab-downloads.png
 share/ed2k_gui/icons/default/tab-forget.png
 share/ed2k_gui/icons/default/tab-options.png
@@ -149,6 +216,7 @@ share/ed2k_gui/icons/gnome2/sys-gnome1.png
 share/ed2k_gui/icons/gnome2/sys-gnome2.png
 share/ed2k_gui/icons/gnome2/sys-kde.png
 share/ed2k_gui/icons/gnome2/sys-linux.png
+share/ed2k_gui/icons/gnome2/sys-windows.png
 share/ed2k_gui/icons/gnome2/tab-downloads.png
 share/ed2k_gui/icons/gnome2/tab-forget.png
 share/ed2k_gui/icons/gnome2/tab-options.png
@@ -214,6 +282,7 @@ share/ed2k_gui/icons/h2o/sys-gnome1.png
 share/ed2k_gui/icons/h2o/sys-gnome2.png
 share/ed2k_gui/icons/h2o/sys-kde.png
 share/ed2k_gui/icons/h2o/sys-linux.png
+share/ed2k_gui/icons/h2o/sys-windows.png
 share/ed2k_gui/icons/h2o/tab-downloads.png
 share/ed2k_gui/icons/h2o/tab-forget.png
 share/ed2k_gui/icons/h2o/tab-options.png
@@ -280,6 +349,7 @@ share/ed2k_gui/icons/jara/sys-gnome1.png
 share/ed2k_gui/icons/jara/sys-gnome2.png
 share/ed2k_gui/icons/jara/sys-kde.png
 share/ed2k_gui/icons/jara/sys-linux.png
+share/ed2k_gui/icons/jara/sys-windows.png
 share/ed2k_gui/icons/jara/tab-downloads.png
 share/ed2k_gui/icons/jara/tab-forget.png
 share/ed2k_gui/icons/jara/tab-options.png
@@ -346,6 +416,7 @@ share/ed2k_gui/icons/orbit/sys-gnome1.png
 share/ed2k_gui/icons/orbit/sys-gnome2.png
 share/ed2k_gui/icons/orbit/sys-kde.png
 share/ed2k_gui/icons/orbit/sys-linux.png
+share/ed2k_gui/icons/orbit/sys-windows.png
 share/ed2k_gui/icons/orbit/tab-downloads.png
 share/ed2k_gui/icons/orbit/tab-forget.png
 share/ed2k_gui/icons/orbit/tab-options.png
@@ -385,9 +456,11 @@ share/locale/pl/LC_MESSAGES/ed2k_gui.mo
 @dirrm share/ed2k_gui/icons/h2o
 @dirrm share/ed2k_gui/icons/gnome2
 @dirrm share/ed2k_gui/icons/default
+@dirrm share/ed2k_gui/icons/bluecore
 @dirrm share/ed2k_gui/icons
 @dirrm share/ed2k_gui
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/pl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/espanol
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/deutsch
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm share/applications
