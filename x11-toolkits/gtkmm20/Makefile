@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	gtkmm
-PORTVERSION=	1.3.23
+PORTVERSION=	1.3.26
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtkmm
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	sigc-1.1.5:${PORTSDIR}/devel/libsigc++12 \
+LIB_DEPENDS=	sigc-1.2.5:${PORTSDIR}/devel/libsigc++12 \
 		gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
