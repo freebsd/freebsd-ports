@@ -12,6 +12,7 @@ sbin/exigrep
 sbin/eximstats
 sbin/exiqsumm
 etc/exim/configure.sample
+etc/rc.d/exim.sh
 @unexec install-info --delete %D/info/exim_overview.info %D/info/dir
 @unexec install-info --delete %D/info/exim.info %D/info/dir
 @unexec install-info --delete %D/info/exim_filter.info %D/info/dir
