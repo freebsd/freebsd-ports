@@ -308,6 +308,7 @@ share/groff/tmac/hyphen.us
 share/groff/tmac/man.local
 share/groff/tmac/tmac.X
 share/groff/tmac/tmac.Xps
+share/groff/tmac/tmac.a4
 share/groff/tmac/tmac.an
 share/groff/tmac/tmac.andoc
 share/groff/tmac/tmac.arkup
@@ -315,11 +316,17 @@ share/groff/tmac/tmac.doc
 share/groff/tmac/tmac.doc.old
 share/groff/tmac/tmac.dvi
 share/groff/tmac/tmac.e
-%%TMAC_GROFF_AN:%%share/groff/tmac/tmac.groff_an
 share/groff/tmac/tmac.html
 share/groff/tmac/tmac.latin1
+share/groff/tmac/tmac.lbp
 share/groff/tmac/tmac.lj4
 share/groff/tmac/tmac.m
+share/groff/tmac/tmac.man
+share/groff/tmac/tmac.mandoc
+share/groff/tmac/tmac.markup
+share/groff/tmac/tmac.mdoc
+share/groff/tmac/tmac.me
+share/groff/tmac/tmac.ms
 share/groff/tmac/tmac.mse
 share/groff/tmac/tmac.orig_me
 share/groff/tmac/tmac.pic
@@ -330,19 +337,21 @@ share/groff/tmac/tmac.psold
 share/groff/tmac/tmac.pspic
 share/groff/tmac/tmac.s
 share/groff/tmac/tmac.safer
+share/groff/tmac/tmac.trace
 share/groff/tmac/tmac.tty
 share/groff/tmac/tmac.tty-char
 share/groff/tmac/tmac.vgrind
 share/groff/tmac/troffrc
-%%PORTDOCDIR%%/ChangeLog.jp
-%%PORTDOCDIR%%/NEWS
-%%PORTDOCDIR%%/PROBLEMS
-%%PORTDOCDIR%%/README
-%%PORTDOCDIR%%/README.jp
-%%PORTDOCDIR%%/meintro.me
-%%PORTDOCDIR%%/meref.me
-%%PORTDOCDIR%%/pic.ms
-@dirrm %%PORTDOCDIR%%
+share/groff/tmac/troffrc-end
+%%PORTDOCS%%share/doc/jgroff/ChangeLog.jp
+%%PORTDOCS%%share/doc/jgroff/NEWS
+%%PORTDOCS%%share/doc/jgroff/PROBLEMS
+%%PORTDOCS%%share/doc/jgroff/README
+%%PORTDOCS%%share/doc/jgroff/README.jp
+%%PORTDOCS%%share/doc/jgroff/meintro.me
+%%PORTDOCS%%share/doc/jgroff/meref.me
+%%PORTDOCS%%share/doc/jgroff/pic.ms
+%%PORTDOCS%%@dirrm share/doc/jgroff
 @dirrm share/groff/font/devascii
 @dirrm share/groff/font/devdvi/generate
 @dirrm share/groff/font/devdvi
