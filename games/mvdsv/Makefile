@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	mvdsv
-PORTVERSION=	0.177
+PORTVERSION=	0.178
 PORTEPOCH=	1
 CATEGORIES?=	games
 MASTER_SITES=	http://quakeworld.ru/files/vvd/mvdsv/ \
