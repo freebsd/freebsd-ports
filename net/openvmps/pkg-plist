@@ -1,0 +1,4 @@
+etc/rc.d/vmpsd.sh
+@unexec if cmp -s %D/etc/vmps.db %D/etc/vmps.db.sample; then rm -f %D/etc/vmps.db; fi
+etc/vmps.db.sample
+sbin/vmpsd
