@@ -189,7 +189,6 @@
     SUBDIR += moinmoin
     SUBDIR += momspider
     SUBDIR += mozilla
-    SUBDIR += mozilla+ipv6
     SUBDIR += mozilla-embedded
     SUBDIR += mozilla-headers
     SUBDIR += neon
