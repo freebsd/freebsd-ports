@@ -3,7 +3,7 @@
 # Date created:        10 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.6 1997/11/14 10:20:25 tg Exp $
+# $Id: Makefile,v 1.7 1998/07/12 22:33:46 steve Exp $
 #
 
 DISTNAME=	guavac-1.2
@@ -14,8 +14,7 @@ MAINTAINER=	Nakai@technologist.com
 
 CC=		gcc28
 CXX=		g++28
-GNUOSREL!=	uname -r | sed -e 's/[-(].*//'
-LIB_DEPENDS=	${LOCALBASE}/i386-unknown-freebsd${GNUOSREL}/lib/libiberty.a:${PORTSDIR}/lang/glibstdc++28
+BUILD_DEPENDS=	${LOCALBASE}/i386-unknown-freebsd${OSREL}/lib/libiberty.a:${PORTSDIR}/lang/glibstdc++28
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
