@@ -1,0 +1,16 @@
+
+$FreeBSD$
+
+--- source/tools/linux/Makefile.in	2001/02/17 15:22:10	1.1
++++ source/tools/linux/Makefile.in	2001/02/17 15:22:33
+@@ -79,8 +79,8 @@
+ 
+ ascmount_SOURCES = mount.cpp basestrm.cpp misc.cpp ascstring.cpp
+ 
+-ascmount_LDADD = -lSDL -lpthread @LDADDLIBBZ2@
+-ascdemount_LDADD = -lSDL -lpthread @LDADDLIBBZ2@
++ascmount_LDADD = @LDADDLIBBZ2@
++ascdemount_LDADD = @LDADDLIBBZ2@
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../../config.h
+ CONFIG_CLEAN_FILES = 
