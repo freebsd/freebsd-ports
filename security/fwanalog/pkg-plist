@@ -1,10 +1,22 @@
 sbin/fwanalog
+@unexec if cmp -s %D/etc/fwanalog/fwanalog-dom.tab %D/etc/fwanalog/fwanalog-dom.tab-dist; then rm -f %D/etc/fwanalog/fwanalog-dom.tab; fi
 etc/fwanalog/fwanalog-dom.tab-dist
+@exec [ -f %B/fwanalog-dom.tab ] || cp %B/%f %B/fwanalog-dom.tab
+@unexec if cmp -s %D/etc/fwanalog/fwanalog.analog.conf %D/etc/fwanalog/fwanalog.analog.conf-dist; then rm -f %D/etc/fwanalog/fwanalog.analog.conf; fi
 etc/fwanalog/fwanalog.analog.conf-dist
+@exec [ -f %B/fwanalog.analog.conf ] || cp %B/%f %B/fwanalog.analog.conf
+@unexec if cmp -s %D/etc/fwanalog/fwanalog.analog.conf.local %D/etc/fwanalog/fwanalog.analog.conf.local-dist; then rm -f %D/etc/fwanalog/fwanalog.analog.conf.local; fi
 etc/fwanalog/fwanalog.analog.conf.local-dist
+@exec [ -f %B/fwanalog.analog.conf.local ] || cp %B/%f %B/fwanalog.analog.conf.local
+@unexec if cmp -s %D/etc/fwanalog/fwanalog.lng %D/etc/fwanalog/fwanalog.lng-dist; then rm -f %D/etc/fwanalog/fwanalog.lng; fi
 etc/fwanalog/fwanalog.lng-dist
+@exec [ -f %B/fwanalog.lng ] || cp %B/%f %B/fwanalog.lng
+@unexec if cmp -s %D/etc/fwanalog/fwanalog.opts %D/etc/fwanalog/fwanalog.opts-dist; then rm -f %D/etc/fwanalog/fwanalog.opts; fi
 etc/fwanalog/fwanalog.opts-dist
+@exec [ -f %B/fwanalog.opts ] || cp %B/%f %B/fwanalog.opts
+@unexec if cmp -s %D/etc/fwanalog/services.conf %D/etc/fwanalog/services.conf-dist; then rm -f %D/etc/fwanalog/services.conf; fi
 etc/fwanalog/services.conf-dist
+@exec [ -f %B/services.conf ] || cp %B/%f %B/services.conf
 %%PORTDOCS%%share/doc/fwanalog/README
 %%PORTDOCS%%@dirrm share/doc/fwanalog
-@unexec echo If permanently deleting this package, %%ETCDIR%%/fwanalog must be removed manually
+@unexec rmdir %D/etc/fwanalog 2> /dev/null || echo If permanently deleting this package, %%ETCDIR%%/fwanalog must be removed manually
