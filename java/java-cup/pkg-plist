@@ -1,0 +1,41 @@
+%%JAVASUBDIR%%/lib/java_cup/CUP$parser$actions.class
+%%JAVASUBDIR%%/lib/java_cup/Main.class
+%%JAVASUBDIR%%/lib/java_cup/action_part.class
+%%JAVASUBDIR%%/lib/java_cup/action_production.class
+%%JAVASUBDIR%%/lib/java_cup/assoc.class
+%%JAVASUBDIR%%/lib/java_cup/emit.class
+%%JAVASUBDIR%%/lib/java_cup/internal_error.class
+%%JAVASUBDIR%%/lib/java_cup/lalr_item.class
+%%JAVASUBDIR%%/lib/java_cup/lalr_item_set.class
+%%JAVASUBDIR%%/lib/java_cup/lalr_state.class
+%%JAVASUBDIR%%/lib/java_cup/lalr_transition.class
+%%JAVASUBDIR%%/lib/java_cup/lexer.class
+%%JAVASUBDIR%%/lib/java_cup/lr_item_core.class
+%%JAVASUBDIR%%/lib/java_cup/non_terminal.class
+%%JAVASUBDIR%%/lib/java_cup/nonassoc_action.class
+%%JAVASUBDIR%%/lib/java_cup/parse_action.class
+%%JAVASUBDIR%%/lib/java_cup/parse_action_row.class
+%%JAVASUBDIR%%/lib/java_cup/parse_action_table.class
+%%JAVASUBDIR%%/lib/java_cup/parse_reduce_row.class
+%%JAVASUBDIR%%/lib/java_cup/parse_reduce_table.class
+%%JAVASUBDIR%%/lib/java_cup/parser.class
+%%JAVASUBDIR%%/lib/java_cup/production.class
+%%JAVASUBDIR%%/lib/java_cup/production_part.class
+%%JAVASUBDIR%%/lib/java_cup/reduce_action.class
+%%JAVASUBDIR%%/lib/java_cup/shift_action.class
+%%JAVASUBDIR%%/lib/java_cup/sym.class
+%%JAVASUBDIR%%/lib/java_cup/symbol.class
+%%JAVASUBDIR%%/lib/java_cup/symbol_part.class
+%%JAVASUBDIR%%/lib/java_cup/symbol_set.class
+%%JAVASUBDIR%%/lib/java_cup/terminal.class
+%%JAVASUBDIR%%/lib/java_cup/terminal_set.class
+%%JAVASUBDIR%%/lib/java_cup/version.class
+%%JAVASUBDIR%%/lib/java_cup/runtime/Symbol.class
+%%JAVASUBDIR%%/lib/java_cup/runtime/lr_parser.class
+%%JAVASUBDIR%%/lib/java_cup/runtime/virtual_parse_stack.class
+@dirrm %%JAVASUBDIR%%/lib/java_cup/runtime
+@dirrm %%JAVASUBDIR%%/lib/java_cup
+%%JAVASUBDIR%%/cup/manual.html
+%%JAVASUBDIR%%/cup/README
+%%JAVASUBDIR%%/cup/LICENSE
+@dirrm %%JAVASUBDIR%%/cup
