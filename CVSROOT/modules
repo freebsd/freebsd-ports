@@ -7910,6 +7910,7 @@ postilion	ports/mail/postilion
 postmark	ports/benchmarks/postmark
 postnuke	ports/www/postnuke
 potrace		ports/graphics/potrace
+potracegui	ports/graphics/potracegui
 pound		ports/www/pound
 povchem		ports/biology/povchem
 povray		ports/graphics/povray
