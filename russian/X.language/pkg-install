@@ -37,7 +37,7 @@ if [ ! -f ${XLIB}/nls/nls.dir ] ; then
 	dl=`wc -l < ${FILESDIR}/nls_dir_list`;
 	echo $dl > ${XLIB}/nls/nls.dir;
 	cat ${FILESDIR}/nls_dir_list >> ${XLIB}/nls/nls.dir;
-	chown ${BINOWN}.${BINGRP} ${XLIB}/nls/nls.dir;
+	chown ${BINOWN}:${BINGRP} ${XLIB}/nls/nls.dir;
 	chmod 644 ${XLIB}/nls/nls.dir;
 else
 	grep -q KOI8-R ${XLIB}/nls/nls.dir || {
@@ -55,7 +55,7 @@ if [ ! -f ${XLIB}/nls/nls.alias ] ; then
 	al=`wc -l < ${FILESDIR}/nls_alias_list`;
 	echo $al > ${XLIB}/nls/nls.alias;
 	cat ${FILESDIR}/nls_alias_list >> ${XLIB}/nls/nls.alias;
-	chown ${BINOWN}.${BINGRP} ${XLIB}/nls/nls.alias;
+	chown ${BINOWN}:${BINGRP} ${XLIB}/nls/nls.alias;
 	chmod 644 ${XLIB}/nls/nls.alias;
 else
 	grep -q KOI8-R ${XLIB}/nls/nls.alias || {
