@@ -1,15 +1,14 @@
---- Makefile.in.orig	Sun Apr 13 01:41:17 2003
-+++ Makefile.in	Sun Apr 13 01:42:14 2003
-@@ -120,7 +120,7 @@
- 
- SUBDIRS = fontconfig fc-lang src fc-cache fc-list doc test
- 
--EXTRA_DIST =          fontconfig.pc.in         fonts.conf.in 	fonts.dtd 	local.conf         fontconfig.spec.in         fontconfig.spec 	fontconfig-zip.in
-+EXTRA_DIST =          fontconfig.pc.in         fonts.conf.in 	fonts.dtd 	fontconfig.spec.in         fontconfig.spec 	fontconfig-zip.in
- 
- 
- pkgconfigdir = $(prefix)/libdata/pkgconfig
-@@ -465,16 +465,7 @@
+--- Makefile.in.orig	Tue Mar 16 15:15:47 2004
++++ Makefile.in	Tue Mar 16 15:16:18 2004
+@@ -192,7 +192,6 @@
+         fontconfig.pc.in \
+         fonts.conf.in \
+ 	fonts.dtd \
+-	local.conf \
+         fontconfig.spec.in \
+         fontconfig.spec \
+ 	fontconfig-zip.in
+@@ -671,16 +670,7 @@
  
  
  install-data-local:
@@ -24,6 +23,6 @@
 -	fi; fi; fi
 -	if [ x$(DESTDIR) = x ]; then fc-cache/fc-cache -f -v; fi
 +#	if [ x$(DESTDIR) = x ]; then fc-cache/fc-cache -f -v; fi
- 
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
