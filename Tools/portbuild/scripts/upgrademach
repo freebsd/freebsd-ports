@@ -8,7 +8,7 @@ if [ $# != 1 ]; then
 fi
 
 unset DISPLAY
-script=/a/asami/portbuild/scripts/doupgrademach
+script=/var/portbuild/scripts/doupgrademach
 
 scp -q -p $script $1:$script
 ssh -n $1 $script

@@ -1,6 +1,11 @@
 #!/bin/sh
-home=/a/asami/portbuild/errorlogs
-scripts=/a/asami/portbuild/scripts
+
+pb=/var/portbuild
+
+. ${pb}/portbuild.conf
+
+home=${pb}/errorlogs
+scripts=${pb}/scripts
 
 lock=$home/lock
 

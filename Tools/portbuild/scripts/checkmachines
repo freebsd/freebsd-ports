@@ -1,6 +1,6 @@
 #!/bin/sh
 
-buildroot=/a/asami/portbuild
+buildroot=/var/portbuild
 mlist=${buildroot}/mlist
 stamp=${buildroot}/loads/.stamp
 

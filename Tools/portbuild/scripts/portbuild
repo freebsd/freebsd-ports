@@ -2,7 +2,12 @@
 
 # usage: $0 BRANCH [-noclean] [-norestr] [-noplistcheck] [-nodummy] PKGNAME.tgz DIRNAME [DEPENDENCY.tgz ...]
 
-master=bento
+# configurable variables
+pb=/var/portbuild
+
+. ${pb}/portbuild.conf
+
+buildroot=${pb}
 
 export BATCH=t
 export BATCH=t
@@ -20,6 +25,8 @@ export WRKDIRPREFIX=/tmp
 # don't pass -j, -k etc. to sub-makes
 unset MAKEFLAGS
 unset PORTSDIR
+# wait 1800 seconds before killing build with no output
+export TIMEOUT=1800
 # to prevent runaway processes -- 256 meg file size limit, one hour CPU limit
 ulimit -f 524288
 ulimit -t 3600
@@ -36,8 +43,6 @@ unset DISPLAY
 
 export PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin:/usr/X11R6/bin:.
 #export PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin:/usr/X11R6/bin:/usr/pkg/bin:.
-
-buildroot=/a/asami/portbuild
 
 branch=$1
 shift
@@ -131,6 +136,10 @@ if [ ${found} != 1 ]; then
   touch ${chroot}/used/${pkgname}
   tar -C ${chroot} -xf ${bindist}
 
+  # to be able to run ps and killall inside chroot area
+  cp -p /bin/ps ${chroot}/bin
+  cp -p /usr/bin/killall ${chroot}/usr/bin
+
 fi
 
 rm -rf ${chroot}/tmp/*
@@ -187,7 +196,7 @@ while [ $# -gt 0 ]; do
   shift
 done
 
-scp -p ${master}:${buildroot}/scripts/buildscript ${chroot}
+scp -p ${master}:${buildroot}/scripts/{buildscript,pnohang} ${chroot}
 
 #mount_procfs procfs ${chroot}/proc
 
@@ -203,9 +212,12 @@ if [ "${error}" = 0 ]; then
   ssh -a $master touch ${buildroot}/distfiles/.pbtmp/${pkgname}/.done
 
 # phase 2, make package
+  ln -sf ${pkgname}.log2 ${chroot}/tmp/make.log
   chroot ${chroot} /buildscript ${dirname} 2 > ${chroot}/tmp/${pkgname}.log2 2>&1
+  grep pnohang ${chroot}/tmp/${pkgname}.log2
   cat ${chroot}/tmp/${pkgname}.log2 >> ${chroot}/tmp/${pkgname}.log
   rm ${chroot}/tmp/${pkgname}.log2
+###  chroot ${chroot} /buildscript ${dirname} 2 2>&1 | tee -a ${chroot}/tmp/${pkgname}.log
   scp ${chroot}/tmp/${pkgname}.log ${master}:${buildroot}/${branch}/logs/${pkgname}.log
   error=$(cat ${chroot}/tmp/status)
 
