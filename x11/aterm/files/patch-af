@@ -1,0 +1,11 @@
+--- scripts/random_colors.orig	Tue May 16 03:10:57 2000
++++ scripts/random_colors	Mon Apr 16 11:27:07 2001
+@@ -6,7 +6,7 @@
+ # folks like it - so here it is
+ 
+ CLRCODE=`expr $RANDOM % 6`
+-ATRMPATH=$DESTDIR/usr/local/bin
++ATRMPATH=$DESTDIR/usr/X11R6/bin
+ 
+ { [ "$CLRCODE" -eq "0" ] && CLRNAME="-tint blue -fg yellow -bg black" } || 
+ { [ "$CLRCODE" -eq "1" ] && CLRNAME="-tint red -fg white -bg black" } || 

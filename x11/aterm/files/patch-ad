@@ -1,0 +1,12 @@
+--- autoconf/config.h.in.orig	Mon May 22 02:56:13 2000
++++ autoconf/config.h.in	Mon Apr 16 11:27:07 2001
+@@ -84,6 +84,9 @@
+ #undef NO_XLOCALE
+ 
+ /* Define is setlocale (defined to Xsetlocale) doesn't work */
++#undef NO_XSETLOCALE
++
++/* Define is plain setlocale doesn't work */
+ #undef NO_SETLOCALE
+ 
+ /* Define if you want Menubar support */

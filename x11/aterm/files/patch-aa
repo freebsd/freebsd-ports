@@ -1,6 +1,28 @@
---- src/command.c.orig	Tue Oct 17 13:10:04 2000
-+++ src/command.c	Tue Oct 17 13:10:26 2000
-@@ -528,7 +528,7 @@
+--- src/command.c.orig	Sun May 28 03:46:35 2000
++++ src/command.c	Mon Apr 16 11:34:38 2001
+@@ -67,12 +67,18 @@
+ #ifndef NO_XLOCALE
+ # if (XtSpecificationRelease < 6)
+ #  define NO_XLOCALE
+-# else
+-#  define X_LOCALE
+-#  include <X11/Xlocale.h>
+ # endif
+ #endif				/* NO_XLOCALE */
+ 
++#ifndef NO_XSETLOCALE
++# define X_LOCALE
++# include <X11/Xlocale.h>
++#else
++# ifndef NO_SETLOCALE
++#  include <locale.h>
++# endif
++#endif                          /* NO_XLOCALE */
++
+ #ifdef TTY_GID_SUPPORT
+ # include <grp.h>
+ #endif
+@@ -528,7 +534,7 @@
      ttydev = tty_name;
  
  # define PTYCHAR1	"pqrstuvwxyz"
@@ -9,3 +31,12 @@
      for (c1 = PTYCHAR1; *c1; c1++) {
  	ptydev[len - 2] = ttydev[len - 2] = *c1;
  	for (c2 = PTYCHAR2; *c2; c2++) {
+@@ -1206,7 +1212,7 @@
+ 
+     Input_Context = NULL;
+ 
+-# ifndef NO_SETLOCALE
++# if !defined(NO_SETLOCALE) || !defined(NO_XSETLOCALE)
+     setlocale(LC_CTYPE, "");	/* XXX: should we do this? */
+ # endif
+     if (rs_inputMethod == NULL || !*rs_inputMethod) {

@@ -1,0 +1,95 @@
+--- configure.orig	Mon May 29 04:58:49 2000
++++ configure	Mon Apr 16 11:27:07 2001
+@@ -4575,8 +4575,9 @@
+ 
+ SAVETHELIBS=$LIBS
+ LIBS="$LIBS $X_LIBS $X_PRE_LIBS $X_EXTRA_LIBS -lX11"
++CFLAGS="$CFLAGS $X_CFLAGS"
+ echo $ac_n "checking for working Xlocale""... $ac_c" 1>&6
+-echo "configure:4580: checking for working Xlocale" >&5
++echo "configure:4581: checking for working Xlocale" >&5
+ if eval "test \"`echo '$''{'rxvt_cv_func_xlocale'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+@@ -4584,7 +4585,7 @@
+     echo "configure: warning: Define/undefine NO_XLOCALE in config.h manually" 1>&2
+ else
+   cat > conftest.$ac_ext <<EOF
+-#line 4588 "configure"
++#line 4589 "configure"
+ #include "confdefs.h"
+ #define X_LOCALE 1
+ #include <X11/Xlocale.h>
+@@ -4596,7 +4597,7 @@
+ else
+ exit (1);}
+ EOF
+-if { (eval echo configure:4600: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
++if { (eval echo configure:4601: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
+ then
+     rxvt_cv_func_xlocale=yes
+ else
+@@ -4620,12 +4621,12 @@
+ LIBS=$SAVETHELIBS
+ 
+ echo $ac_n "checking for working setlocale""... $ac_c" 1>&6
+-echo "configure:4624: checking for working setlocale" >&5
++echo "configure:4625: checking for working setlocale" >&5
+ if eval "test \"`echo '$''{'rxvt_cv_func_xsetlocale'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   cat > conftest.$ac_ext <<EOF
+-#line 4629 "configure"
++#line 4630 "configure"
+ #include "confdefs.h"
+ #define X_LOCALE 1
+ #include <X11/Xlocale.h>
+@@ -4633,7 +4634,7 @@
+ setlocale(LC_CTYPE, "");
+ ; return 0; }
+ EOF
+-if { (eval echo configure:4637: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
++if { (eval echo configure:4638: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+   rm -rf conftest*
+   rxvt_cv_func_xsetlocale=yes
+ else
+@@ -4647,6 +4648,39 @@
+ 
+ echo "$ac_t""$rxvt_cv_func_xsetlocale" 1>&6
+ if test "${rxvt_cv_func_xsetlocale}" = no; then
++  cat >> confdefs.h <<\EOF
++#define NO_XSETLOCALE 1
++EOF
++
++fi
++
++echo $ac_n "checking for working plain setlocale""... $ac_c" 1>&6
++echo "configure:4659: checking for working plain setlocale" >&5
++if eval "test \"`echo '$''{'rxvt_cv_func_setlocale'+set}'`\" = set"; then
++  echo $ac_n "(cached) $ac_c" 1>&6
++else
++  cat > conftest.$ac_ext <<EOF
++#line 4664 "configure"
++#include "confdefs.h"
++#include <locale.h>
++int main() {
++setlocale(LC_CTYPE, "");
++; return 0; }
++EOF
++if { (eval echo configure:4671: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
++  rm -rf conftest*
++  rxvt_cv_func_setlocale=yes
++else
++  echo "configure: failed program was:" >&5
++  cat conftest.$ac_ext >&5
++  rm -rf conftest*
++  rxvt_cv_func_setlocale=no
++fi
++rm -f conftest*
++fi
++
++echo "$ac_t""$rxvt_cv_func_setlocale" 1>&6
++if test x${rxvt_cv_func_setlocale} = xno; then
+   cat >> confdefs.h <<\EOF
+ #define NO_SETLOCALE 1
+ EOF

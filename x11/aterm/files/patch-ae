@@ -1,0 +1,25 @@
+--- autoconf/configure.in.orig	Mon May 29 04:58:49 2000
++++ autoconf/configure.in	Mon Apr 16 11:27:07 2001
+@@ -632,6 +632,7 @@
+ dnl# this is a really hack test for some basic Xlocale stuff
+ SAVETHELIBS=$LIBS
+ LIBS="$LIBS $X_LIBS $X_PRE_LIBS $X_EXTRA_LIBS -lX11"
++CFLAGS="$CFLAGS $X_CFLAGS"
+ AC_CACHE_CHECK(for working Xlocale, rxvt_cv_func_xlocale,
+ [AC_TRY_RUN([#define X_LOCALE 1
+ #include <X11/Xlocale.h>
+@@ -655,6 +656,14 @@
+   [setlocale(LC_CTYPE, "");],
+   rxvt_cv_func_xsetlocale=yes, rxvt_cv_func_xsetlocale=no)])
+ if test "${rxvt_cv_func_xsetlocale}" = no; then
++  AC_DEFINE(NO_XSETLOCALE)
++fi
++
++AC_CACHE_CHECK(for working plain setlocale, rxvt_cv_func_setlocale,
++[AC_TRY_LINK([#include <locale.h>],
++  [setlocale(LC_CTYPE, "");],
++  rxvt_cv_func_setlocale=yes, rxvt_cv_func_setlocale=no)])
++if test x${rxvt_cv_func_setlocale} = xno; then
+   AC_DEFINE(NO_SETLOCALE)
+ fi
+ 
