@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+BROKEN=		"checksum mismatch"
+
 USE_BISON=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 ALL_TARGET=	# empty
