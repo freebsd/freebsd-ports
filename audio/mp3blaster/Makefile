@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	mp3blaster
-PORTVERSION=	3.1.1
+PORTVERSION=	3.1.3
 CATEGORIES=	audio
-MASTER_SITES=	ftp://mud.stack.nl/pub/mp3blaster/
+MASTER_SITES=	http://www.stack.nl/~brama/mp3blaster/src/
 
 MAINTAINER=	greid@FreeBSD.org
 
@@ -27,7 +27,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 .if !defined(WITHOUT_VORBIS)
 LIB_DEPENDS+=	vorbisfile.3:${PORTSDIR}/audio/libvorbis
 .else
-CONFIGURE_ARGS+= --without-oggvorbis
+CONFIGURE_ARGS+=	--without-oggvorbis
 .endif
 
 MAN1=		mp3blaster.1 nmixer.1 splay.1
