@@ -51,12 +51,12 @@ post-install:
 
 .if exists(${WX_CONFIG})
 # detect if wxgtk was linked against gtk1 or gtk2
-DECISION_GTK_1_OR_2!=	${WX_CONFIG} --static --libs | ${GREP} glib-2.0
+DECISION_GTK_1_OR_2!=	${WX_CONFIG} --static --libs
 .else
 DECISION_GTK_1_OR_2=	""
 .endif
 
-.if (${DECISION_GTK_1_OR_2} != "")
+.if ${DECISION_GTK_1_OR_2:M*glib-2.0} != ""
 USE_GNOME+=	gtk20
 CONFIGURE_ARGS+=	--enable-gtk2
 PYDISTUTILS_BUILDARGS+=	WXPORT=gtk2
