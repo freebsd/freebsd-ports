@@ -18,7 +18,7 @@ PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	flathill@FreeBSD.org
 
-LIB_DEPENDS=    glib12.2:${PORTSDIR}/devel/glib12
+LIB_DEPENDS=    glib12.3:${PORTSDIR}/devel/glib12
 
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 

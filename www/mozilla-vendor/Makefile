@@ -13,8 +13,7 @@ MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla/releases/m8/src/
 
 MAINTAINER=	reg@shale.csir.co.za
 
-LIB_DEPENDS=	glib12.2:${PORTSDIR}/devel/glib12 \
-		IDL.2:${PORTSDIR}/devel/ORBit \
+LIB_DEPENDS=	IDL.2:${PORTSDIR}/devel/ORBit \
 		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
