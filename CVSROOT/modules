@@ -1231,6 +1231,7 @@ ecartis		ports/mail/ecartis
 ecasound	ports/audio/ecasound
 ecawave	ports/audio/ecawave
 ecb		ports/devel/ecb
+ecb-emacs20	ports/devel/ecb-emacs20
 ecg2png		ports/graphics/ecg2png
 ecgi		ports/devel/ecgi
 echo		src/bin/echo
