@@ -1,5 +1,5 @@
---- work/heyu.dir/Makefile	Thu Jan  6 23:47:16 2000
-+++ Makefile	Sun Jan 23 00:35:45 2000
+--- Makefile.orig	Tue May 23 22:57:17 2000
++++ Makefile	Sat May 27 17:06:28 2000
 @@ -4,7 +4,7 @@
  MAN = /usr/local/man/man1
  MAN5 = /usr/local/man/man5
@@ -9,38 +9,41 @@
  
  
  #	set DFLAGS equal to:
-@@ -13,19 +13,19 @@
- #	   -DVOID	if compiler doesn't understand 'void'
- #	   -DMINIEXCH	if using the DEC mini-exchange
- 
--CFLAGS = -O $(DFLAGS) -Wall
-+#CFLAGS = -O $(DFLAGS) -Wall
+@@ -16,14 +16,14 @@
  #LDFLAGS = -z -i
  #LIBS = -lm -lc_s		# uncomment if using shared libraries
+ CC = gcc
+-CFLAGS = -g -O $(DFLAGS) -Wall
++#CFLAGS = -g -O $(DFLAGS) -Wall
  LIBS = -lm -lc
  
- ##  For LINUX, use the following defines in addition to what's above
--DFLAGS = -DSYSV -DPOSIX -DHAS_ITIMER -DLINUX 
-+#DFLAGS = -DSYSV -DPOSIX -DHAS_ITIMER -DLINUX 
+ ##  For LINUX, use the following
+ #DFLAGS = -DSYSV -DPOSIX -DHAS_ITIMER -DLINUX 
+ CC = gcc
+ CFLAGS = -g -O $(DFLAGS) -Wall
+-DFLAGS = -DSYSV -DPOSIX -DHAS_ITIMER -DLINUX -DHASSELECT
++#DFLAGS = -DSYSV -DPOSIX -DHAS_ITIMER -DLINUX -DHASSELECT
+ #LIBS = -lm -lc_s		# uncomment if using shared libraries
+ LIBS = -lm -lc			# uncoment if not using shared libraries
  
- ##  For solaris, use the following defines in addition to what's above
- # DFLAGS = -DSYSV -DPOSIX -DSOLARIS -DLOCKDIR=\"/var/spool/locks\" -DHASSELECT
- 
- ## if you're using freebsd, just set the flag for select.
+@@ -39,7 +39,7 @@
+ # CC = gcc
+ # CFLAGS = -g -O $(DFLAGS) -Wall
+ # LIBS = -lm -lc
 -# DFLAGS= -DHASSELECT
 +DFLAGS= -DHASSELECT -DLOCKDIR=\"/var/tmp\"
  
- ## If you aren't sure, try this
- #DFLAGS = -DSYSV -DPOSIX 
-@@ -54,9 +54,10 @@
+ ## for Alpha, OSF1 v4.0 , Use this
+ # GROUP = uucp
+@@ -80,9 +80,10 @@
  EVERYTHING = $(OTHERSRC) $(SRCS)
  
  heyu:	$(OBJS) version.h
--	cc $(LDFLAGS) -o heyu $(OBJS) $(LIBS)
+-	$(CC) $(LDFLAGS) -o heyu $(OBJS) $(LIBS)
 +	$(CC) $(CFLAGS) $(LDFLAGS) $(DFLAGS) -o heyu $(OBJS) $(LIBS)
  
  $(OBJS): x10.h
-+	cc $(CFLAGS) $(DFLAGS) -c $<
++	$(CC) $(CFLAGS) $(DFLAGS) -c $<
  
  eeprom.o:	eeprom.h
  

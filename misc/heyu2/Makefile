@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	heyu
-PORTVERSION=	1.28h
+PORTVERSION=	1.29
 CATEGORIES=	misc
 MASTER_SITES=	http://www.prado.com/~dbs/
 DISTNAME=	x10_heyu
