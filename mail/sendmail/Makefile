@@ -26,6 +26,7 @@ MAN5=		aliases.5
 MAN8=		sendmail.8 mailstats.8 makemap.8 praliases.8 smrsh.8 \
 		mail.local.8 rmail.8 editmap.8
 SENDMAIL=	${PREFIX}/sbin/sendmail
+BASEMAIL=	/usr/libexec/sendmail/sendmail
 PLIST_SUB+=	PREFIX=${PREFIX:S=${PREFIX}/==}
 LDAP_PORT?=	net/openldap20-client
 
@@ -84,6 +85,9 @@ SITE+=	${FILESDIR}/site.config.m4.ldap
 .if ! defined(SENDMAIL_WITHOUT_MILTER)
 SITE+=	${FILESDIR}/site.config.m4.milter
 .endif
+.if defined(SENDMAIL_WITH_TLS) || defined(WITH_TLS)
+USE_OPENSSL=	yes
+.endif
 
 # install directly if no mailwrapper support
 .if ! exists(${DESTDIR}/etc/mail/mailer.conf)
@@ -130,9 +134,9 @@ pre-install:
 	if ! pw usershow smmsp; then pw useradd smmsp -g smmsp -u 25 \
 		-h - -d /nonexistent -s /nonexistent -c "Sendmail Queue"; fi
 .if !defined(NOPORTDOCS)
-	@cd ${WRKSRC} && find cf -type f | \
+	@cd ${WRKSRC} && ${FIND} cf -type f | \
 	${AWK} '{print "share/sendmail/" $$1}' >>${PLIST}
-	@cd ${WRKSRC} && find -d cf -type d | \
+	@cd ${WRKSRC} && ${FIND} -d cf -type d | \
 	${AWK} '{print "@dirrm share/sendmail/" $$1}' >>${PLIST}
 	@${ECHO_CMD} "@dirrm share/sendmail" >>${PLIST}
 .for i in ${DOCS}
@@ -197,6 +201,18 @@ post-install:
 .if exists(${DESTDIR}/etc/mail/mailer.conf)
 	@${SED} s!%%PREFIX%%!${PREFIX}!g ${PKGMESSAGE}
 
+mailer.base:
+	@${SED} \
+	-e "s=^sendmail[ 	]*/.*$$=sendmail	${BASEMAIL}=" \
+	-e "s=^send-mail[ 	]*/.*$$=send-mail	${BASEMAIL}=" \
+	-e "s=^mailq[ 	]*/.*$$=mailq		${BASEMAIL}=" \
+	-e "s=^newaliases[ 	]*/.*$$=newaliases	${BASEMAIL}=" \
+	-e "s=^hoststat[ 	]*/.*$$=hoststat	${BASEMAIL}=" \
+	-e "s=^purgestat[ 	]*/.*$$=purgestat	${BASEMAIL}=" \
+	 ${DESTDIR}/etc/mail/mailer.conf > ${DESTDIR}/etc/mail/mailer.conf.new
+	${MV} ${DESTDIR}/etc/mail/mailer.conf.new \
+		${DESTDIR}/etc/mail/mailer.conf
+
 mailer.conf:
 	@${SED} \
 	-e "s=^sendmail[ 	]*/.*$$=sendmail	${SENDMAIL}=" \
@@ -225,7 +241,7 @@ ${DESTDIR}/etc/mail/submit.cf:	${DESTDIR}/etc/mail/submit.mc
 
 # create basics for smtp-auth
 #
-install-sasldb:
+howto-sasldb:
 	@${ECHO_CMD} "# Links:"
 	@${ECHO_CMD} "#"
 	@${ECHO_CMD} "# http://www.sendmail.org/~gshapiro/"
@@ -244,7 +260,6 @@ tls-install:
 .include <bsd.port.pre.mk>
 
 .if defined(SENDMAIL_WITH_TLS) || defined(WITH_TLS)
-.include "${PORTSDIR}/security/openssl/bsd.openssl.mk"
 .if ! defined(WITH_OPENSSL_BASE)
 SITE+=	${FILESDIR}/site.config.m4.ssl
 .endif
