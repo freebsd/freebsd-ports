@@ -22,6 +22,11 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	sheldonh@FreeBSD.org
 COMMENT=	High performance MTA for Unix systems on the Internet
 
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
+.if defined(WITH_EXIMON)
+RUN_DEPENDS=	${LOCALBASE}/sbin/eximon:${PORTSDIR}/mail/exim-monitor
+.endif
+
 .if defined(PKGNAMESUFFIX)
 CONFLICTS+=	${PKGNAMEPREFIX}${PORTNAME}-4*
 .endif
@@ -30,8 +35,6 @@ CONFLICTS+=	${PKGNAMEPREFIX}${PORTNAME}-4*
 CONFLICTS+=	${PKGNAMEPREFIX}${PORTNAME}${suffix}*
 .endif
 .endfor
-
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
@@ -162,10 +165,6 @@ WITH_DEFAULT_CHARSET?=	ISO-8859-1
 #WITH_WISHLIST=		yes
 
 # You should not need to fiddle with anything below this point.
-
-.if defined(WITH_EXIMON)
-RUN_DEPENDS=	${LOCALBASE}/sbin/eximon:${PORTSDIR}/mail/exim-monitor
-.endif
 
 .if defined(WITH_WISHLIST)
 EXTRA_PATCHES+=	`${FIND} ${PATCHDIR} -name 'wishlist-*.patch'`
