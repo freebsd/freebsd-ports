@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.src.tar.gz
 MAINTAINER=	kde@freebsd.org
 COMMENT=	A documentation system for C and C++
 
+BROKEN=		Broken pkg-plist
+
 ALL_TARGET=	all
 
 .if !defined(NOPORTDOCS)
