@@ -354,6 +354,7 @@
     SUBDIR += slrn
     SUBDIR += srd-fpw
     SUBDIR += srd-fpw-package
+    SUBDIR += t2ps
     SUBDIR += tcl76
     SUBDIR += tcl80
     SUBDIR += tcsh
