@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	autorespond
-PORTVERSION=	1.0.0
+PORTVERSION=	2.0.2
 CATEGORIES=	mail
-MASTER_SITES=	http://www.vpopmail.cx/
+MASTER_SITES=	http://www.inter7.com/devel/
 
-MAINTAINER=	nbm@FreeBSD.org
+MAINTAINER=	roam@FreeBSD.org
 
 do-build:
 	@cd ${WRKSRC} && ${MAKE} autorespond
