@@ -14,10 +14,10 @@ DISTNAME=	${PORTNAME:S/lib//}-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/share/automake/install-sh:${PORTSDIR}/devel/automake
 LIB_DEPENDS=	unicode.0:${PORTSDIR}/devel/libunicode
 
 USE_X_PREFIX=	yes
+USE_AUTOMAKE=	yes
 USE_GTK=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
