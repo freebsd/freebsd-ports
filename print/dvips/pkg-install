@@ -1,0 +1,54 @@
+#!/bin/sh
+
+prefix=/usr/local
+
+if [ "$2" = "POST-INSTALL" ]; then
+  exit 0
+fi
+
+if [ -f $prefix/bin/MakeTeXPK ]; then
+  echo "**WARNING** MakeTeXPK already exists in $prefix/bin"
+  echo "**WARNING** This file will be replaced during install."
+  echo
+  echo -n "do you want to continue ? [y] "
+  read answ; if [ "$answ" = "" ]; then answ=y; fi
+  case $answ in
+    y*|Y*) break;;
+    *) exit 1;;
+  esac
+fi
+
+cat << END
+
+This package has been compiled with some defaults:
+1 fonts will be created in $prefix/lib/texmf/fonts/pk and this
+  directory will be made world writable
+
+2 300 dpi fonts will be created with MODE=imagen
+  200 dpi fonts will be created with MODE=FAX
+  360 dpi fonts will be created with MODE=nextII
+  400 dpi fonts will be created with MODE=nexthi
+   72 dpi fonts will be created with MODE=nextscreen
+
+3 paper size is 8.5in x 11in (letter)
+
+4 printer resolution is 300dpi
+
+If you are not satisfied with 1, you need to recompile dvips
+If you are not satisfied with 2, you will need to edit $prefix/MakeTeXPK
+If you are not satisfied with 3 or 4, you will need to edit $prefix/lib/texmf/ps/config.ps
+
+END
+
+echo -n "do you want to install the package ? [y] "
+read answ; if [ "$answ" = "" ]; then answ=y; fi
+case $answ in
+  y*|Y*) break;;
+  *) exit 1;;
+esac
+
+mkdir -p $prefix/lib/texmf/fonts/pk; chmod 1777 $prefix/lib/texmf/fonts/pk
+
+exit 0
+
+
