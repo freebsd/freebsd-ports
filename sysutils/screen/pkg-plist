@@ -19,3 +19,4 @@ share/screen/utf8encodings/cc
 share/screen/utf8encodings/cd
 share/screen/utf8encodings/d6
 @dirrm share/screen/utf8encodings
+@dirrm share/screen
