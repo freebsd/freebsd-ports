@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.panchoproject.org/archives/pancho/
 DISTNAME=	pancho-v${PORTVERSION}
 
-MAINTAINER=	Nicolas.Jombart@hsc-labs.com
+MAINTAINER=	ecu@ipv42.net
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/SNMP.pm:${PORTSDIR}/net/p5-Net-SNMP \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Config/IniFiles.pm:${PORTSDIR}/devel/p5-Config-IniFiles \

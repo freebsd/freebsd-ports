@@ -10,7 +10,7 @@ PORTVERSION=	1.0.3
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.nessus.org/pub/nstreams/
 
-MAINTAINER=	Nicolas.Jombart@hsc-labs.com
+MAINTAINER=	ecu@ipv42.netm
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
