@@ -1,8 +1,9 @@
 # New ports collection makefile for:	snooper
+# Version required:	980813
 # Date created:		4 May 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.2 1997/05/25 18:34:39 max Exp $
+# $Id: Makefile,v 1.3 1998/08/13 09:20:41 itojun Exp $
 #
 
 DISTNAME=	snooper.980813
