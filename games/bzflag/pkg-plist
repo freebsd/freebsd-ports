@@ -1,6 +1,7 @@
 bin/bzadmin
 bin/bzflag
 bin/bzfs
+%%DATADIR%%/blade.png
 %%DATADIR%%/blue_basetop.png
 %%DATADIR%%/blue_basewall.png
 %%DATADIR%%/blue_bolt.png

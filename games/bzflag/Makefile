@@ -6,15 +6,11 @@
 #
 
 PORTNAME=	bzflag
-PORTVERSION=	2.0.0
-PORTREVISION=   1
+PORTVERSION=	2.0.2
 CATEGORIES=	games
-# SourceForge mirroring for BZFlag-2 is broken at the moment
-#MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-#MASTER_SITE_SUBDIR=	${PORTNAME}
-MASTER_SITES=	http://www.pkix.net/mirror/sf.net/ \
-		ftp://ftp.sucs.org/pub/linux/
-DISTNAME=	${PORTNAME}-${PORTVERSION}.20050117
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-${PORTVERSION}.20050318
 
 MAINTAINER=	chuck@pkix.net
 COMMENT=	A multiplayer 3D tank battle game
