@@ -1,0 +1,7 @@
+A very clean graphic library which can handle gif, pcx, targa,
+rgb, tiff, pix, ppm, pgm, pbm, raw, rayshade's heightfield, jpeg
+and do the following function: resampling, blur, sharpening, cut,
+paste, median filter, histogram equalization and so on...
+
+- George Reid
+greid@ukug.uk.freebsd.org

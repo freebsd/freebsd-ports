@@ -104,6 +104,7 @@
     SUBDIR += libflash
     SUBDIR += libggi
     SUBDIR += libimg
+    SUBDIR += liblug
     SUBDIR += libmng
     SUBDIR += libmorph
     SUBDIR += libungif
