@@ -17,3 +17,5 @@ etc/nut/upsd.conf.sample
 etc/nut/upsmon.conf.sample
 etc/nut/upsset.passwd.sample
 etc/rc.d/upsd.sh.sample
+@dirrm cgi-bin
+@dirrm etc/nut
