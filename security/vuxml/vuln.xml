@@ -32,6 +32,70 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   "http://www.vuxml.org/dtd/vuxml-1/vuxml-10.dtd">
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
 
+  <vuln vid="3ca8dd7a-6fb3-11d8-873f-0020ed76ef5a">
+    <topic>Adobe Acrobat Reader XFDF buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>acroread</name>
+	<range><ge>5.0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NGSSoftware Insight Security released a security advisory
+	  detailing a vulnerability in Adobe Acrobat Reader's XFDF
+	  handling.  During the parsing of an XFDF document, `sprintf'
+	  is used unsafely, resulting in a stack buffer overflow.</p>
+	<p>An attacker may create a specially formatted, malicious XFDF
+	  file that could cause remote code execution.  The attacker
+	  could cause the user into read the XFDF file in a number of
+	  ways, such as by sending it by email.</p>
+	<p><strong>NOTE:</strong> This has not yet been confirmed to
+	  affect Acrobat Reader versions prior to 5.1, or UNIX versions
+	  of Acrobat Reader, but it seems likely.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.ngssoftware.com/advisories/adobexfdf.txt</url>
+    </references>
+    <dates>
+      <discovery>2004-03-03</discovery>
+      <entry>2004-03-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8471bb85-6fb0-11d8-873f-0020ed76ef5a">
+    <topic>GNU Anubis buffer overflows and format string
+      vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>anubis</name>
+	<range><le>3.6.2_1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ulf Härnhammar discovered several vulnerabilities in GNU
+	  Anubis.</p>
+	<ul>
+	  <li>Unsafe uses of `sscanf'.  The `%s' format specifier is
+	    used, which allows a classical buffer overflow.  (auth.c)</li>
+	  <li>Format string bugs invoking `syslog'.  (log.c, errs.c,
+	    ssl.c)</li>
+	</ul>
+	<p>Ulf notes that these vulnerabilities can be exploited by a
+	  malicious IDENT server as a denial-of-service attack.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://lists.netsys.com/pipermail/full-disclosure/2004-March/018290.html</url>
+    </references>
+    <dates>
+      <discovery>2004-03-04</discovery>
+      <entry>2004-03-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3837f462-5d6b-11d8-80e3-0020ed76ef5a">
     <topic>Buffer overflows in XFree86 servers</topic>
     <affects>
@@ -144,7 +208,7 @@ misc.c:
       <entry>2004-03-05</entry>
     </dates>
   </vuln>
-  
+
   <vuln vid="a20082c3-6255-11d8-80e3-0020ed76ef5a">
     <topic>metamail format string bugs and buffer overflows</topic>
     <affects>
