@@ -11,8 +11,8 @@
 # you can generally build it cleanly from the source. - Doug
 
 PORTNAME=	bind84
-PORTVERSION=	8.4.1
-CATEGORIES?=	dns
+PORTVERSION=	8.4.3
+CATEGORIES?=	dns net
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	bind/src/${PORTVERSION}
 
