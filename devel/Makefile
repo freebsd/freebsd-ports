@@ -256,6 +256,7 @@
     SUBDIR += libglade2
     SUBDIR += libgnugetopt
     SUBDIR += libgtop
+    SUBDIR += libhash
     SUBDIR += libmalloc
     SUBDIR += libmcve
     SUBDIR += libol
