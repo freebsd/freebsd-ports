@@ -1,0 +1,15 @@
+#!/bin/sh
+
+cd $WRKSRC || exit 1;
+
+cp options.h.dist options.h || exit 1;
+
+cp Common.tmpl.dist Common.tmpl || exit 1;
+cat >>Common.tmpl<<EOF || exit 1;
+CBINDIR = $PREFIX/bin
+CUTILDIR = $PREFIX/lib/chimera
+CLIBDIR = $PREFIX/lib
+CMANDIR = $PREFIX/man/man1
+XAPPLOADDIR = $PREFIX/lib/chimera
+EOF
+exit 0;
