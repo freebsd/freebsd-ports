@@ -31,10 +31,6 @@ WRKSRC=		${WRKDIR}/pd-0.36-0/src
 pre-patch:
 	${CP} ${WRKSRC}/s_linux.c ${WRKSRC}/s_freebsd.c
 
-post-patch:
-	${FIND} ${WRKDIR} -type f -name '*.c' -exec ${PERL} -pi -e \
-		"s:malloc.h:stdlib.h:g" {} \;
-
 pre-configure:
 	${CHMOD} +x ${WRKSRC}/${CONFIGURE_SCRIPT}
 
