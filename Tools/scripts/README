@@ -1,6 +1,6 @@
 $FreeBSD$
 
-addport	- future replacement for easy-import
+addport	- replacement for easy-import
 
 consistency-check -  check whether all your ports are installed properly,
                      what files have changed, and what new files there are.
