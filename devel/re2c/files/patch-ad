@@ -1,0 +1,13 @@
+--- actions.cc.old	Fri Feb  4 15:23:32 2000
++++ actions.cc	Fri Feb  4 15:24:14 2000
+@@ -460,8 +460,9 @@
+ 
+ void genCode(ostream& o, RegExp *re){
+     CharSet cs;
++    uint j;
+     memset(&cs, 0, sizeof(cs));
+-    for(uint j = 0; j < nChars; ++j){
++    for(j = 0; j < nChars; ++j){
+ 	cs.rep[j] = &cs.ptn[0];
+ 	cs.ptn[j].nxt = &cs.ptn[j+1];
+     }

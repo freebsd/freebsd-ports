@@ -1,0 +1,47 @@
+--- editor/2x2_window.C.orig	Mon May  8 16:08:35 1995
++++ editor/2x2_window.C	Thu Feb  3 21:24:19 2000
+@@ -25,6 +25,8 @@
+ #include <iostream.h>
+ #include <stdlib.h>
+ 
++extern "C" int XShmGetEventBase(Display *); 
++
+ DblWindow::DblWindow(UI_Globals *parent, world_c x, world_c y, 
+ 			 unsigned int height, unsigned int width, void (*cb)(void) )
+ : YUV_Window(parent,x,y,height*2,width*2,this, ButtonPressMask | 
+@@ -139,7 +141,7 @@
+       
+       ximage = XCreateImage(DispPointer(),None,8,ZPixmap,0,&dummy,width*2,
+ 			    height*2,8,0);
+-      ximage->data = new byte[ximage->bytes_per_line*height*2];
++      ximage->data = (char *) new byte[ximage->bytes_per_line*height*2];
+       assert(ximage->data!=NULL);
+ 
+ #ifdef SH_MEM
+@@ -160,7 +162,7 @@
+   for(int j = 0; j < ncolors; j ++)
+     {
+       tmp_pixel = col_array[j];
+-      XFreeColors(DispPointer(), Colourmap, &tmp_pixel, 1, 0);
++      XFreeColors(DispPointer(), Colourmap, (long unsigned int *) &tmp_pixel, 1, 0);
+     }
+ 
+ #ifdef SH_MEM
+@@ -259,7 +261,7 @@
+ 	  for(int j = 0; j < i; j ++)
+ 	    {
+ 	      tmp_pixel = col_array[j];
+-	      XFreeColors(DispPointer(), Colourmap, &tmp_pixel, 1, 0);
++	      XFreeColors(DispPointer(), Colourmap, (long unsigned int *) &tmp_pixel, 1, 0);
+ 	    }
+ 	  cerr << "Unable to allocate the colours required to make the\n"
+ 	    << "colour window.  Please re-run with the option -private cols\n";
+@@ -363,7 +365,7 @@
+ {
+   assert(Frame.width()==ximage->width/2);
+   assert(Frame.height()==ximage->height/2);
+-  DitherImage(Frame.lum_ptr(),Frame.Cr_ptr(),Frame.Cb_ptr(),ximage->data,
++  DitherImage(Frame.lum_ptr(),Frame.Cr_ptr(),Frame.Cb_ptr(),(unsigned char *)ximage->data,
+ 	      Frame.width(),Frame.height());
+   if(nicely)
+     {

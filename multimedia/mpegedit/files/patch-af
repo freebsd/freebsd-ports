@@ -1,0 +1,31 @@
+--- MpegCodec/mpeg.H.orig	Sat May 20 19:11:43 1995
++++ MpegCodec/mpeg.H	Thu Feb  3 21:31:00 2000
+@@ -59,7 +59,7 @@
+   status Write(const frame &);      // Overwrites the current frame
+   status Undo(void);                // Undoes the last write to current frame
+   status Delete(void);              // Deletes current frame
+-  status Insert(int no_of_frames,const frame **);
++  status Insert(int no_of_frames, frame **);
+                                     // Inserts a number of frames
+   unsigned int Height(void) const;  // Returns the height of the frames
+   unsigned int Width(void) const;   // Returns the width of the frames
+@@ -128,14 +128,14 @@
+   long file_length;            // The length of the (virtual) file, in frames
+   long cache_size;             // Number of frames that cache will fit
+   static const int fps_table[16]; //The table of valid frames per second values
+-  const int min_frame_type=1;  // Min number for a valid frame type
+-  const int max_frame_type=4;  // Max number for a valid frame type
++  static const int min_frame_type=1;  // Min number for a valid frame type
++  static const int max_frame_type=4;  // Max number for a valid frame type
+   static const frame_type FrameTypes[max_frame_type+1];
+                                // The list of valid frame types
+-  const long gopSize=10;       // The number of frames between GOP headers
+-  const int pattern_size=8;    // The size of the IBBPBBI pattern
++  static const long gopSize=10;       // The number of frames between GOP headers
++  static const int pattern_size=8;    // The size of the IBBPBBI pattern
+   static const char pattern[pattern_size];  // The IBBPBBI pattern
+-  const int mpegcache_size=12; // The size of the mpeg frame cache
++  static const int mpegcache_size=12; // The size of the mpeg frame cache
+   mpg_cache MpegCache[mpegcache_size]; // The mpeg frame cache
+   int cache_curpos;            // Current position in the cache
+   void (*callback)(byte *,abs_addr);    // Stores the callback function
