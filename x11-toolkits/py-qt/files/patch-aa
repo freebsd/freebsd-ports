@@ -1,0 +1,11 @@
+--- qt/Makefile.in	2000/11/20 15:40:50	1.1
++++ qt/Makefile.in	2000/11/20 15:41:33
+@@ -103,7 +103,7 @@
+ 
+ lib_LTLIBRARIES = libqtcmodule.la
+ libqtcmodule_la_SOURCES = $(PYQT_SOURCES)
+-libqtcmodule_la_LDFLAGS = -release 2.2
++libqtcmodule_la_LDFLAGS = 
+ libqtcmodule_la_LIBADD = $(SIP_LDLIBDIRS) -lsip -lqt2 $(SIP_LDXFLAGS)
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
