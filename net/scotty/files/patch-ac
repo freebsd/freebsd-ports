@@ -1,5 +1,10 @@
---- Makefile.in.orig	Fri Mar 26 20:12:11 1999
+--- Makefile.in	Mon Sep  7 13:12:57 1998
 +++ Makefile.in	Fri Mar 26 20:20:58 1999
+@@ -59,3 +59,3 @@
+ # to -g, change the following line:
+-CFLAGS = -O
++# CFLAGS = -O
+ 
 @@ -509,7 +509,7 @@
  	@$(INSTALL_PROGRAM) scotty $(BIN_INSTALL_DIR)/scotty$(TNM_VERSION)
  	@$(INSTALL_DATA) tnm$(SHLIB_SUFFIX) $(LIB_RUNTIME_DIR)/tnm$(TNM_VERSION)$(SHLIB_SUFFIX)
