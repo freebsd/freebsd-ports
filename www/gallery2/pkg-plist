@@ -102,6 +102,9 @@
 %%GALLERYDIR%%/docs/g1package/gallery1-install.upgrade.html
 %%GALLERYDIR%%/docs/g1package/gallery1-install.windows-iis.html
 %%GALLERYDIR%%/docs/g1package/gallery1-install.windows.html
+%%GALLERYDIR%%/docs/g1package/gallery1-user.html
+%%GALLERYDIR%%/docs/g1package/gallery1-user.import.html
+%%GALLERYDIR%%/docs/g1package/gallery1-user.watermark.html
 %%GALLERYDIR%%/docs/g1package/html.css
 %%GALLERYDIR%%/docs/g1package/images/basic-auth.gif
 %%GALLERYDIR%%/docs/g1package/images/up-up.gif
@@ -132,6 +135,7 @@
 %%GALLERYDIR%%/docs/gallery1-install.html
 %%GALLERYDIR%%/docs/gallery1-install.language-packs.html
 %%GALLERYDIR%%/docs/gallery1-install.overview.html
+%%GALLERYDIR%%/docs/gallery1-install.remote-applets.html
 %%GALLERYDIR%%/docs/gallery1-install.required-programs.html
 %%GALLERYDIR%%/docs/gallery1-install.requirements.html
 %%GALLERYDIR%%/docs/gallery1-install.unix-ftp.html
@@ -139,6 +143,9 @@
 %%GALLERYDIR%%/docs/gallery1-install.upgrade.html
 %%GALLERYDIR%%/docs/gallery1-install.windows-iis.html
 %%GALLERYDIR%%/docs/gallery1-install.windows.html
+%%GALLERYDIR%%/docs/gallery1-user.html
+%%GALLERYDIR%%/docs/gallery1-user.import.html
+%%GALLERYDIR%%/docs/gallery1-user.watermark.html
 %%GALLERYDIR%%/docs/html.css
 %%GALLERYDIR%%/docs/images/basic-auth.gif
 %%GALLERYDIR%%/docs/images/diagnostics.gif
