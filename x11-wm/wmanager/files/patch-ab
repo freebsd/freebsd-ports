@@ -1,0 +1,11 @@
+--- src/WManager.cc	Wed Sep 29 13:23:17 1999
++++ src/WManager.cc.new	Fri Nov 19 23:07:25 1999
+@@ -9,6 +9,8 @@
+ #include <fstream>                                // file streams
+ #include <cstring>                                // only for 'strtok'
+ #include <pwd.h>                                  // for home directory
++#include <unistd.h>
++#include <sys/types.h>
+ 
+ 
+ // PROJECT INCLUDES ////////////////////////////////
