@@ -5,26 +5,16 @@
 # $FreeBSD$
 
 PORTNAME=	cvs2svn
-PORTVERSION=	0.0.938
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	perky
+MASTER_SITES=	http://cvs2svn.tigris.org/files/documents/1462/15996/
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	jihuang@gate.sinica.edu.tw
 COMMENT=	CVS to Subversion Repository Converter
 
 RUN_DEPENDS=	svn:${PORTSDIR}/devel/subversion
 
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
-USE_BZIP2=	yes
-
-post-patch:
-.for script in cvs2svn profile-cvs2svn verify-cvs2svn \
-		dump-db show-db
-	@${LN} ${WRKSRC}/${script}.py ${WRKSRC}/${script}
-.endfor
-	@${INSTALL_DATA} ${FILESDIR}/setup.py ${WRKSRC}/
 
 .include <bsd.port.mk>
