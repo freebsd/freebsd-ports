@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bioperl
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.1
 CATEGORIES=	biology perl5
 MASTER_SITES=	ftp://bioperl.org/pub/DIST/ \
 		http://bioperl.org/Core/Latest/ \
@@ -139,6 +139,12 @@ MAN3+=		Bio::CorbaServer::BioEnv.3 Bio::CorbaServer::AnonymousSeq.3 \
 MAN3+=		Bio::Tk::HitDisplay.3 Bio::Tk::SeqCanvas.3
 .endif
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+
+pre-fetch:
+.if !defined(BATCH) && (!defined(WITH_CORBA_CLIENT) || \
+    !defined(WITH_CORBA_SERVER) || !defined(WITH_GUI))
+	@ ${CAT} ${FILESDIR}/ext.msg
+.endif
 
 post-configure:
 	@ cd ${EXT_WRKSRC} && \

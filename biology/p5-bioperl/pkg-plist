@@ -146,7 +146,6 @@ lib/perl5/site_perl/%%PERL_VER%%/Bio/SeqIO/game/seqHandler.pm
 lib/perl5/site_perl/%%PERL_VER%%/Bio/SeqIO/gcg.pm
 lib/perl5/site_perl/%%PERL_VER%%/Bio/SeqIO/genbank.pm
 lib/perl5/site_perl/%%PERL_VER%%/Bio/SeqIO/largefasta.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/SeqIO/pir.pm
 lib/perl5/site_perl/%%PERL_VER%%/Bio/SeqIO/raw.pm
 lib/perl5/site_perl/%%PERL_VER%%/Bio/SeqIO/scf.pm
 lib/perl5/site_perl/%%PERL_VER%%/Bio/SeqIO/swiss.pm
