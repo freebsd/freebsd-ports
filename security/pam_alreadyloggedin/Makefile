@@ -19,6 +19,10 @@ MANCOMPRESSED=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on FreeBSD 4.x"
+.endif
+
 .if defined(NOPROFILE)
 PLIST_SUB+=	PROFILE="@comment "
 .else

@@ -114,6 +114,10 @@ OPTIONS=XFT "Enable Xft font anti-aliasing" on \
 BROKEN=		"Does not compile on ia64 or alpha"
 .endif
 
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on FreeBSD 4.x"
+.endif
+
 .if defined(WITH_CAIRO_RENDER)
 LIB_DEPENDS+=		svg-cairo.1:${PORTSDIR}/graphics/libsvg-cairo
 

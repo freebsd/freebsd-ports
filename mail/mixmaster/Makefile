@@ -38,6 +38,12 @@ WRKDIST=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MIXMASTER_FILES=	${WRKDIST}/conf/* ${WRKDIST}/README ${WRKDIR}/allpingers.txt
 MIXMASTER_SCRIPTS=	${WRKDIR}/mixmaster-update.pl
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on FreeBSD 4.x"
+.endif
+
 post-patch:
 	${CP} ${FILESDIR}/Makefile.in ${WRKSRC}/Makefile
 	@${RM} ${WRKSRC}/../conf/mix.cfg.orig
@@ -54,4 +60,4 @@ do-install:
 	${INSTALL_DATA} ${MIXMASTER_FILES} ${PREFIX}/share/examples/mixmaster
 	${INSTALL_MAN} ${WRKDIST}/mix.1 ${PREFIX}/man/man1/mixmaster.1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
