@@ -16,15 +16,13 @@ COMMENT=	A yet another little mind game
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack libgnome libgnomeui libgnomecanvas libxml2
+USE_GNOME=	gnomeprefix gnomehack intlhack libgnome libgnomeui libgnomecanvas libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 USE_REINPLACE=	yes
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "intltool-merge.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|mkdir $$lang or|mkdir $$lang, 0777 or| ; \
-		 s|^push @INC, "/.*|push @INC, "${LOCALBASE}/share/intltool";|'
+	@${REINPLACE_CMD} -e 's/games\.games/games:games/' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
