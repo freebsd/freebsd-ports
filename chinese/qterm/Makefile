@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qterm
-PORTVERSION=	0.1.4
+PORTVERSION=	0.1.5
 CATEGORIES=	chinese
 MASTER_SITES=	http://qterm.gnuchina.org/qterm-${PORTVERSION}/ \
 		ftp://freebsd.sinica.edu.tw/pub/statue/qterm/

@@ -1,35 +1,34 @@
 bin/qterm
-lib/qterm/cursor/end.xpm
-lib/qterm/cursor/exit.xpm
-lib/qterm/cursor/home.xpm
-lib/qterm/cursor/mask.xpm
-lib/qterm/cursor/next.xpm
-lib/qterm/cursor/pagedown.xpm
-lib/qterm/cursor/pageup.xpm
-lib/qterm/cursor/prev.xpm
-lib/qterm/pic/addr.bmp
-lib/qterm/pic/anti.bmp
-lib/qterm/pic/beep.bmp
-lib/qterm/pic/blink.bmp
-lib/qterm/pic/color.bmp
-lib/qterm/pic/colorcopy.bmp
-lib/qterm/pic/copy.bmp
-lib/qterm/pic/disconnect.bmp
-lib/qterm/pic/document.xpm
-lib/qterm/pic/down.bmp
-lib/qterm/pic/font.bmp
-lib/qterm/pic/message.bmp
-lib/qterm/pic/mouse.bmp
-lib/qterm/pic/paste.bmp
-lib/qterm/pic/quick.bmp
-lib/qterm/pic/quicklogin.bmp
-lib/qterm/pic/reconnect.bmp
-lib/qterm/pic/refresh.bmp
-lib/qterm/pic/reply.bmp
-lib/qterm/pic/retangle.bmp
-lib/qterm/pic/set.bmp
-lib/qterm/pic/tabpic.bmp
-lib/qterm/qterm.cfg
-@dirrm lib/qterm/cursor/
-@dirrm lib/qterm/pic/
-@dirrm lib/qterm/
+share/qterm/cursor/end.xpm
+share/qterm/cursor/exit.xpm
+share/qterm/cursor/home.xpm
+share/qterm/cursor/next.xpm
+share/qterm/cursor/pagedown.xpm
+share/qterm/cursor/pageup.xpm
+share/qterm/cursor/prev.xpm
+share/qterm/pic/addr.bmp
+share/qterm/pic/anti.bmp
+share/qterm/pic/beep.bmp
+share/qterm/pic/blink.bmp
+share/qterm/pic/color.bmp
+share/qterm/pic/colorcopy.bmp
+share/qterm/pic/copy.bmp
+share/qterm/pic/disconnect.bmp
+share/qterm/pic/document.xpm
+share/qterm/pic/down.bmp
+share/qterm/pic/font.bmp
+share/qterm/pic/message.bmp
+share/qterm/pic/mouse.bmp
+share/qterm/pic/paste.bmp
+share/qterm/pic/quick.bmp
+share/qterm/pic/quicklogin.bmp
+share/qterm/pic/reconnect.bmp
+share/qterm/pic/refresh.bmp
+share/qterm/pic/reply.bmp
+share/qterm/pic/retangle.bmp
+share/qterm/pic/set.bmp
+share/qterm/pic/tabpic.bmp
+share/qterm/qterm.cfg
+@dirrm share/qterm/cursor/
+@dirrm share/qterm/pic/
+@dirrm share/qterm/
