@@ -5,23 +5,23 @@
 # $FreeBSD$
 
 PORTNAME=	pam_smb
-PORTVERSION=	1.9.9
-PORTREVISION=	3
+PORTVERSION=	2.0.0.r5
 CATEGORIES=	security
-MASTER_SITES=   http://www.csn.ul.ie/~airlied/pam_smb/devel/
+MASTER_SITES=	http://samba.org/~airlied/ \
+		http://www.csn.ul.ie/~airlied/pam_smb/devel/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-rc/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NetBIOS domain logon PAM module
 
-USE_AUTOCONF_VER=213
+INSTALLS_SHLIB=	yes
+HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_REINPLACE=	yes
 STARTUP_SCRIPT=	pam_smbd.sh.sample
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
-.include <bsd.port.pre.mk>
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 post-patch:
 	@${REINPLACE_CMD} -e s,%%PREFIX%%,${PREFIX}, ${WRKSRC}/pamsmbd/pam_read_conf.c
@@ -29,12 +29,14 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pamsmbd/pamsmbd ${PREFIX}/sbin/
 	${INSTALL_DATA} ${WRKSRC}/pamsmbm/pam_smb_auth.so ${PREFIX}/lib/
-	${MKDIR} ${PREFIX}/share/doc/pam_smb/
-	${INSTALL_DATA} ${WRKSRC}/BUGS ${PREFIX}/share/doc/pam_smb/
-	${INSTALL_DATA} ${WRKSRC}/CHANGES ${PREFIX}/share/doc/pam_smb/
-	${INSTALL_DATA} ${WRKSRC}/INSTALL ${PREFIX}/share/doc/pam_smb/
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/pam_smb/
-	${INSTALL_DATA} ${WRKSRC}/TODO ${PREFIX}/share/doc/pam_smb/
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/BUGS ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/CHANGES ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/INSTALL ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/TODO ${DOCSDIR}
+.endif
 	${INSTALL_DATA} ${WRKSRC}/pam_smb.conf.example ${PREFIX}/etc/
 	${INSTALL_DATA} ${WRKSRC}/pam_smb.conf.example2 ${PREFIX}/etc/
 	${INSTALL_SCRIPT} ${FILESDIR}/${STARTUP_SCRIPT} ${PREFIX}/etc/rc.d/
@@ -44,4 +46,4 @@ do-install:
 post-install:
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
