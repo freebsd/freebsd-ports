@@ -1,10 +1,10 @@
-lib/perl5/site_perl/5.005/i386-freebsd/BerkeleyDB.pm
-lib/perl5/site_perl/5.005/i386-freebsd/BerkeleyDB.pod
-lib/perl5/site_perl/5.005/i386-freebsd/BerkeleyDB/Btree.pm
-lib/perl5/site_perl/5.005/i386-freebsd/BerkeleyDB/Hash.pm
-lib/perl5/site_perl/5.005/i386-freebsd/auto/BerkeleyDB/.packlist
-lib/perl5/site_perl/5.005/i386-freebsd/auto/BerkeleyDB/BerkeleyDB.bs
-lib/perl5/site_perl/5.005/i386-freebsd/auto/BerkeleyDB/BerkeleyDB.so
-lib/perl5/site_perl/5.005/i386-freebsd/auto/BerkeleyDB/autosplit.ix
-@dirrm lib/perl5/site_perl/5.005/i386-freebsd/BerkeleyDB
-@dirrm lib/perl5/site_perl/5.005/i386-freebsd/auto/BerkeleyDB
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/BerkeleyDB.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/BerkeleyDB.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/BerkeleyDB/Btree.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/BerkeleyDB/Hash.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BerkeleyDB/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BerkeleyDB/BerkeleyDB.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BerkeleyDB/BerkeleyDB.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BerkeleyDB/autosplit.ix
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/BerkeleyDB
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BerkeleyDB
