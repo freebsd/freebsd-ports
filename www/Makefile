@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.138 1999/07/14 08:47:38 obrien Exp $
+# $Id: Makefile,v 1.139 1999/07/27 04:15:49 foxfair Exp $
 #
 
     SUBDIR += Mosaic         # requires Motif
@@ -35,6 +35,7 @@
     SUBDIR += hotjava
     SUBDIR += htmlpp
     SUBDIR += http-analyze
+    SUBDIR += httperf
     SUBDIR += hypermail
     SUBDIR += ijb
     SUBDIR += libghttp
