@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	gkrellm
-PORTVERSION=	2.1.7a
-PORTREVISION=	1
+PORTVERSION=	2.1.8a
+#PORTREVISION=	0
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://web.wt.net/~billw/gkrellm/ \
 		${MASTER_SITE_LOCAL}
@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	ume
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	A GTK based system monitor
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-2.1.8
 
 .if defined(GKRELLM_SERVER_ONLY)
 BUILD_WRKSRC=	${WRKSRC}/server
@@ -74,7 +76,9 @@ post-install:
 	@${MKDIR} ${X11BASE}/libexec/gkrellm2/plugins
 	@${MKDIR} ${X11BASE}/share/gkrellm2/themes
 	@${GZIP_CMD} ${MAN1PREFIX}/man/man1/gkrellm.1
+	@${CHMOD} 2511 ${X11BASE}/bin/gkrellm
 .endif
+	@${CHMOD} 2511 ${PREFIX}/sbin/gkrellmd
 	@${SED} -e "s;%%PREFIX%%;${PREFIX};g" \
 		${FILESDIR}/gkrellmd.sh > ${PREFIX}/etc/rc.d/gkrellmd.sh.sample
 	@${CHMOD} ${BINMODE} ${PREFIX}/etc/rc.d/gkrellmd.sh.sample
