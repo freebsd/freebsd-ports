@@ -1,0 +1,44 @@
+bin/hsetroot
+bin/kahakai
+lib/kahakai/libkahakai_swig_python.a
+lib/kahakai/libkahakai_swig_python.la
+lib/kahakai/libkahakai_swig_python.so
+lib/kahakai/libkahakai_swig_python.so.0
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/README
+%%DOCSDIR%%/kastyleformat.txt
+%%DOCSDIR%%/userconfig-migration-0.5
+share/kahakai/cmd.gdb
+share/kahakai/config
+share/kahakai/home_autostart
+share/kahakai/home_config
+share/kahakai/home_userconfig.py
+share/kahakai/menu
+share/kahakai/scripts/actions.py
+share/kahakai/scripts/actions.pyc
+share/kahakai/scripts/actions.pyo
+share/kahakai/scripts/configparser.py
+share/kahakai/scripts/configparser.pyc
+share/kahakai/scripts/configparser.pyo
+share/kahakai/scripts/events.py
+share/kahakai/scripts/events.pyc
+share/kahakai/scripts/events.pyo
+share/kahakai/scripts/filelist.pl
+share/kahakai/scripts/kahakai.py
+share/kahakai/scripts/kahakai.pyc
+share/kahakai/scripts/kahakai.pyo
+share/kahakai/scripts/macros.py
+share/kahakai/scripts/macros.pyc
+share/kahakai/scripts/macros.pyo
+share/kahakai/scripts/procinfo.pl
+share/kahakai/scripts/styles.py
+share/kahakai/scripts/stylesdir.pl
+share/kahakai/styles/Default.kastyle
+share/kahakai/styles/Default.png
+@dirrm lib/kahakai
+@dirrm %%DOCSDIR%%
+@dirrm share/kahakai/scripts
+@dirrm share/kahakai/styles
+@dirrm share/kahakai
