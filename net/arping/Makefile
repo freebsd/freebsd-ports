@@ -8,8 +8,7 @@
 PORTNAME=	arping
 PORTVERSION=	1.07
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.habets.pp.se/pub/synscan/ \
-		ftp://ftp.cerias.purdue.edu/pub/tools/unix/netutils/arping/
+MASTER_SITES=	ftp://ftp.habets.pp.se/pub/synscan/
 
 MAINTAINER=	roman@xpert.com
 COMMENT=	ARP level "ping" utility
