@@ -12,6 +12,8 @@ include/glpimg.h
 include/glpipm.h
 include/glpk.h
 include/glplang.h
+include/glplib.h
+include/glpluf.h
 include/glplp.h
 include/glpmat.h
 include/glpmps.h
@@ -19,7 +21,7 @@ include/glppfi.h
 include/glpqmd.h
 include/glprfi.h
 include/glprsm.h
-include/glpset.h
+include/glpspx.h
 include/glpstr.h
 include/glptext.h
 lib/libglpk.a
