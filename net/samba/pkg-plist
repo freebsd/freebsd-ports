@@ -15,6 +15,8 @@ bin/smbtar
 bin/tdbbackup
 bin/testparm
 bin/testprns
+%%WITH_WINBIND_AUTH_CHALLENGE%%bin/wbinfo
+%%WITH_WINBIND%%sbin/winbindd
 etc/codepages/codepage.1125
 etc/codepages/unicode_map.1125
 etc/codepages/unicode_map.KOI8-U
