@@ -9,10 +9,10 @@
 # There are several knobs which are used to define additions to the core
 # mutt functionality. The two most important are:
 #
-# In general you can choose between using the SLANG port (which is really 
+# In general you can choose between using the SLANG port (which is really
 # recommended and is now the default) and ncurses (WITH_MUTT_NCURSES). If you
 # don't want to use SLANG define WITHOUT_MUTT_SLANG.
-# 
+#
 # If you want to install the mutt documentation in html format define:
 #  WITH_MUTT_HTML
 #
@@ -23,7 +23,7 @@
 #
 # If you want to read news with mutt define:
 #  WITH_MUTT_NNTP
-#    (note that this implies building of the inn-stable port to be able to 
+#    (note that this implies building of the inn-stable port to be able to
 #     post new articles)
 #
 # WITH_MUTT_SSL can be enabled if your IMAP/POP server is SSL capable.
@@ -40,11 +40,13 @@
 #
 # If you want to enable extended functions for the ru locale define:
 #  WITH_MUTT_RU_PATCH
- 
+#
+# If you want to enable the pgp_outlook_compat function for use with pgp define:
+#  MUTT_WITH_PGP_OUTLOOK_PATCH
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.3.27
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES+=	mail
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -54,10 +56,8 @@ MASTER_SITES=	ftp://ftp.demon.co.uk/pub/mirrors/mutt/ \
 		ftp://ftp.demon.co.uk/pub/mirrors/mutt/devel/ \
 		ftp://ftp.parodius.com/pub/mutt/devel/ \
 		ftp://ftp.mutt.org/pub/mutt/ \
-		ftp://ftp.mutt.org/pub/mutt/devel/ 
-
+		ftp://ftp.mutt.org/pub/mutt/devel/
 DISTNAME=	mutt-${PORTVERSION}i
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	udo.schweigert@siemens.com
 
@@ -114,15 +114,18 @@ USE_NCURSES=	yes
 .if !defined(USE_SLANG) && !defined(WITHOUT_MUTT_SLANG) && !defined(USE_NCURSES)
 USE_SLANG=	yes
 .endif
+.if defined(WITHOUT_MUTT_SGMLFORMAT)
+SGML_USED=	no
+.endif
+.if !defined(SGML_USED)
+SGML_USED=	no
+.endif
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext \
 		giconv.2:${PORTSDIR}/converters/libiconv
 
 .if defined(NOPORTDOCS)
-WITHOUT_MUTT_SGMLFORMAT=	yes
-.endif
-.if !defined(WITHOUT_MUTT_SGMLFORMAT)
-BUILD_DEPENDS+=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
+SGML_USED=	no
 .endif
 .if defined(USE_SLANG)
 LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
@@ -140,6 +143,13 @@ pre-configure::
 .endif
 .if defined(WITH_MUTT_CYRUS_SASL)
 LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
+.endif
+.if exists(${LOCALBASE}/bin/pgp)
+MUTT_WITH_PGP_OUTLOOK_PATCH=	yes
+.endif
+.if defined(MUTT_WITH_PGP_OUTLOOK_PATCH)
+pre-configure::
+	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-pgp-outlook
 .endif
 
 CONFIGURE_ARGS+=	--enable-pop --enable-imap
@@ -163,6 +173,9 @@ PATCH_DIST_STRIP=	-p1
 .if defined(WITH_MUTT_COMPRESSED_FOLDERS)
 PATCHFILES+=	patch-${PATCH_VERSION}.rr.compressed.gz
 CONFIGURE_ARGS+=	--enable-compressed
+.if !defined(WITHOUT_MUTT_SGMLFORMAT)
+SGML_USED=	yes
+.endif
 .endif
 .if defined(WITH_MUTT_NNTP)
 PATCHFILES+=	patch-${PATCH_VERSION}.vvv.nntp.gz
@@ -193,19 +206,15 @@ post-build:
 	printf ",s|\$${PREFIX}|%s|g\nw\nq\n" ${PREFIX} | \
 		ed -s ${WRKSRC}/doc/mutt.man
 .if defined(WITH_MUTT_NNTP)
+.if !defined(WITHOUT_MUTT_SGMLFORMAT)
+SGML_USED=	yes
+.endif
 PLIST_SUB+=	SUB_NNTP=""
 .else
 PLIST_SUB+=	SUB_NNTP="@comment "
 .endif
-.if defined(WITHOUT_MUTT_SGMLFORMAT)
 .if defined(WITH_MUTT_HTML)
-.error You can't say both: WITH_MUTT_HTML and WITHOUT_MUTT_SGMLFORMAT
-.endif
-PLIST_SUB+=	SUB_SGML="@comment "
-.else
-PLIST_SUB+=	SUB_SGML=""
-.endif
-.if defined(WITH_MUTT_HTML)
+SGML_USED=	yes
 PLIST_SUB+=	SUB_HTML=""
 .if defined(WITH_MUTT_COMPRESSED_FOLDERS) && defined(WITH_MUTT_NNTP) && \
 	defined(WITH_MUTT_RU_PATCH) && defined(WITH_MUTT_QUOTE_PATCH)
@@ -373,7 +382,6 @@ PLIST_SUB+=	SUB_ADD_G="@comment "
 .else 	# NOPORTDOCS
 PLIST_SUB+=	SUB_HTML="@comment "
 PLIST_SUB+=	SUB_NNTP="@comment "
-PLIST_SUB+=	SUB_SGML="@comment "
 PLIST_SUB+=	SUB_ADD_A="@comment "
 PLIST_SUB+=	SUB_ADD_B="@comment "
 PLIST_SUB+=	SUB_ADD_C="@comment "
@@ -382,8 +390,16 @@ PLIST_SUB+=	SUB_ADD_E="@comment "
 PLIST_SUB+=	SUB_ADD_F="@comment "
 PLIST_SUB+=	SUB_ADD_G="@comment "
 post-patch::
-	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-nodoc
 	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-nodoc-contrib
+.endif
+
+.if ${SGML_USED} == yes
+BUILD_DEPENDS+=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
+post-patch::
+	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-sgmlformat
+PLIST_SUB+=	SUB_SGML=""
+.else
+PLIST_SUB+=	SUB_SGML="@comment "
 .endif
 
 post-install:
@@ -395,7 +411,7 @@ post-install:
 	@cd ${WRKSRC}/doc ; ${INSTALL_MAN} manual.txt \
 		PGP-Notes.txt ../ABOUT-NLS ../contrib/language* \
 		${PREFIX}/share/doc/mutt
-.if !defined(WITHOUT_MUTT_SGMLFORMAT)
+.if ${SGML_USED} == yes
 	@cd ${WRKSRC}/doc ; ${INSTALL_MAN} manual.latin1 \
 		${PREFIX}/share/doc/mutt
 .endif
@@ -407,17 +423,16 @@ post-install:
 	@${MKDIR} ${PREFIX}/share/doc/mutt/html && \
 		${CHMOD} a+rx ${PREFIX}/share/doc/mutt/html
 	${INSTALL_MAN} ${WRKSRC}/doc/*.html ${PREFIX}/share/doc/mutt/html
-	${INSTALL_MAN} ${WRKSRC}/doc/*.latin1 ${PREFIX}/share/doc/mutt
 .endif
 .endif
 .if defined(WITH_MUTT_NNTP)
-	@${ECHO} 
+	@${ECHO}
 	@${ECHO} "------------------------------------------------"
 	@${ECHO} "Be sure to define NNTPSERVER in your environment"
 	@${ECHO} "and to be part of the group news in /etc/group"
 	@${ECHO} "if you want to post news with mutt"
 	@${ECHO} "------------------------------------------------"
-	@${ECHO} 
+	@${ECHO}
 .endif
 
 .include <bsd.port.post.mk>
