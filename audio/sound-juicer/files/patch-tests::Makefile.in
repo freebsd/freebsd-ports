@@ -1,11 +1,11 @@
---- tests/Makefile.in.orig	Tue Jan 20 22:30:02 2004
-+++ tests/Makefile.in	Tue Jan 20 22:30:28 2004
-@@ -173,7 +173,7 @@
- DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)/src
- CPPFLAGS = @CPPFLAGS@
- LDFLAGS = @LDFLAGS@
+--- tests/Makefile.in.orig	Sat Feb  7 03:15:59 2004
++++ tests/Makefile.in	Sat Feb  7 03:17:01 2004
+@@ -110,7 +110,7 @@
+ LIBGLADE_CFLAGS = @LIBGLADE_CFLAGS@
+ LIBGLADE_LIBS = @LIBGLADE_LIBS@
+ LIBOBJS = @LIBOBJS@
 -LIBS = @LIBS@
 +LIBS = @LIBS@ -lcam
- depcomp = $(SHELL) $(top_srcdir)/depcomp
- am__depfiles_maybe = depfiles
- @AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/cd-drive.Po \
+ LTLIBOBJS = @LTLIBOBJS@
+ MAINT = @MAINT@
+ MAINTAINER_MODE_FALSE = @MAINTAINER_MODE_FALSE@

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sound-juicer
-PORTVERSION=	0.5.9
-PORTREVISION=	2
+PORTVERSION=	0.5.10.1
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://www.burtonini.com/computing/
 DIST_SUBDIR=	gnome2
