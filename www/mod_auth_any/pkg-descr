@@ -1,0 +1,6 @@
+This module allows you to use any command line program such as
+WebNIS to authenticate a user. No more having to keep AuthUserFiles
+in sync, or maintain some nasty database. You can even have an
+expect script that does ssh authentication. 
+
+WWW: http://www.itlab.musc.edu/~nafees/mod_auth_any.html

@@ -109,6 +109,7 @@
     SUBDIR += mmosaic
     SUBDIR += mnoGoSearch-current
     SUBDIR += mod_access_referer
+    SUBDIR += mod_auth_any
     SUBDIR += mod_auth_mysql
     SUBDIR += mod_auth_pam
     SUBDIR += mod_auth_pgsql
