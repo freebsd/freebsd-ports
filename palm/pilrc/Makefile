@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	pilrc
-PORTVERSION=	2.8p5
+PORTVERSION=	2.9p9
 CATEGORIES=	palm
-MASTER_SITES=	http://www.hig.se/~ardiri/download/palm/
+MASTER_SITES=	http://www.ardiri.com/download/files/palm/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
