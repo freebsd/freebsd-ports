@@ -3,14 +3,14 @@
 # Date created:         15 March 1995
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.5 1996/11/18 11:25:44 asami Exp $
+# $Id: Makefile,v 1.6 1997/01/03 09:37:22 obrien Exp $
 #
 
 DISTNAME=       xlife
 PKGNAME=	xlife-3.0
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}  \
-		ftp://gatekeeper.dec.com/pub/X11/R5-contrib/
+MASTER_SITES=	ftp://ftp.cdrom.com/pub/X11/R5contrib/	\
+		ftp://ftp.iij.ad.jp/X/R5contrib/
 MASTER_SITE_SUBDIR=	../../R5contrib
 EXTRACT_SUFX=	.tar.Z
 
