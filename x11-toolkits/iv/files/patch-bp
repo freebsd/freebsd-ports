@@ -1,79 +1,16 @@
---- src/bin/doc/Document.c.orig	Tue Dec 28 22:53:19 1999
-+++ src/bin/doc/Document.c	Tue Dec 28 22:55:06 1999
-@@ -449,8 +449,8 @@
-     if (strlen(name) == 0) {
-         return nil;
-     } else {
--        long count = _families->count();
--        for (long i = 0; i < count; ++i) {
-+        long count = _families->count(), i;
-+        for (i = 0; i < count; ++i) {
-             FontFamilyInfo& info = _families->item_ref(0);
-             if (strcmp(info._name, name) == 0) {
-                 break;
-@@ -589,8 +589,8 @@
- 
- void Document::remove_float (Item* item) {
-     touch(true);
--    long count = _viewer->count();
--    for (long i = 0; i < count; ++i) {
-+    long count = _viewer->count(), i;
-+    for (i = 0; i < count; ++i) {
-         DocumentViewerInfo& info = _viewer->item_ref(i);
-         info._viewer->float_removed(item);
+--- src/lib/IV-X11/xdrag.c.org	Thu Jun 10 01:10:59 1993
++++ src/lib/IV-X11/xdrag.c	Sun Jan 23 18:52:17 2000
+@@ -229,11 +229,12 @@
+     XWindow *children;
+     unsigned int kids;
+     Status status;
++    int i;
+     status = XQueryTree(display, root, &root, &parent, &children, &kids);
+     if (status == 0) {
+ 	return None;
      }
-@@ -2276,8 +2276,8 @@
- }
- 
- long Document::find_macro (const char* name) {
--    long count = _macro->count();
--    for (long i = 0; i < count; ++i) {
-+    long count = _macro->count(), i;
-+    for (i = 0; i < count; ++i) {
-         MacroInfo& info = _macro->item_ref(i);
-         if (strcmp(info._name, name) == 0) {
-             break;
-@@ -2313,8 +2313,8 @@
- }
- 
- long Document::find_counter (const char* name) {
--    long count = _counter->count();
--    for (long i = 0; i < count; ++i) {
-+    long count = _counter->count(), i;
-+    for (i = 0; i < count; ++i) {
-         CounterInfo& info = _counter->item_ref(i);
-         if (strcmp(info._name, name) == 0) {
-             break;
-@@ -2364,8 +2364,8 @@
- }
- 
- long Document::find_parameter (const char* name) {
--    long count = _parameter->count();
--    for (long i = 0; i < count; ++i) {
-+    long count = _parameter->count(), i;
-+    for (i = 0; i < count; ++i) {
-         DocumentParameterInfo& info = _parameter->item_ref(i);
-         if (strcmp(info._name, name) == 0) {
-             break;
-@@ -2405,8 +2405,8 @@
- }
- 
- long Document::find_label (const char* name) {
--    long count = _label->count();
--    for (long i = 0; i < count; ++i) {
-+    long count = _label->count(), i;
-+    for (i = 0; i < count; ++i) {
-         LabelInfo& info = _label->item_ref(i);
-         if (strcmp(info._name, name) == 0) {
-             break;
-@@ -2446,8 +2446,8 @@
- }
- 
- long Document::find_float (Item* item) {
--    long count = _float->count();
--    for (long i = 0; i < count; ++i) {
-+    long count = _float->count(), i;
-+    for (i = 0; i < count; ++i) {
-         FloatInfo& info = _float->item_ref(i);
-         if (info._item == item) {
-             break;
+-    for (int i = kids - 1; i >= 0 && children[i] != under ; --i);
++    for (i = kids - 1; i >= 0 && children[i] != under ; --i);
+     for (--i; i >= 0; --i) {
+ 	XWindowAttributes attributes;
+ 	XGetWindowAttributes(display, children[i], &attributes);

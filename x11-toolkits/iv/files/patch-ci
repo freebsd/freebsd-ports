@@ -1,20 +1,28 @@
---- src/bin/ibuild/ibslider.c.orig	Wed Dec 29 00:06:31 1999
-+++ src/bin/ibuild/ibslider.c	Wed Dec 29 00:06:43 1999
-@@ -416,7 +416,7 @@
-                 strcpy(SliderClass, coreclass);
-                 strcat(SliderClass, "_Slider");
-                 
--                boolean export = icomp->GetMemberNameVar()->GetExport();
-+                boolean export_ = icomp->GetMemberNameVar()->GetExport();
-                 const char* classname = icomp->GetClassNameVar()->GetName();
+--- src/bin/ibuild/ibvars.c.org	Wed Sep  9 07:33:42 1992
++++ src/bin/ibuild/ibvars.c	Sun Jan 23 20:22:31 2000
+@@ -371,9 +371,9 @@
+ /*****************************************************************************/
  
- 		int w = icomp->GetCanvasVar()->Width();
-@@ -426,7 +426,7 @@
-                     BeginInstantiate(out);
-                     out << "(";
-                 } else {
--                    if (export && !_emitMain) {
-+                    if (export_ && !_emitMain) {
-                         out << "    " << mname << " = new " << SliderClass;
-                         out << "(";
-                     } else {
+ MemberSharedName::MemberSharedName (
+-    const char* name, boolean export, boolean machgen
++    const char* name, boolean exportval, boolean machgen
+ ) : SharedName(name, machgen) {
+-    _export = export;
++    _export = exportval;
+     _subclass = new SubclassNameVar("", false, false);
+     _subclass->ref();
+     _idVar = nil;
+@@ -471,11 +471,11 @@
+ 
+ /*****************************************************************************/
+ MemberNameVar::MemberNameVar (
+-    const char* name, boolean export, boolean machgen
++    const char* name, boolean exportval, boolean machgen
+ ) {
+     _msharedname = nil;
+     if (name != nil) {
+-        _msharedname = new MemberSharedName(name, export, machgen);
++        _msharedname = new MemberSharedName(name, exportval, machgen);
+         _msharedname->ref();
+     }
+ }

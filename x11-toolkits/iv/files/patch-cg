@@ -1,29 +1,18 @@
---- src/bin/ibuild/ibmenu.c.orig	Wed Dec 29 00:03:53 1999
-+++ src/bin/ibuild/ibmenu.c	Wed Dec 29 00:04:11 1999
-@@ -403,7 +403,7 @@
-             
-             const char* proc = menuItem->GetTrackNameVar()->GetName();
-             const char* text = menuItem->GetMenuItemGraphic()->GetText();
--            boolean export = icomp->GetMemberNameVar()->GetExport();
-+            boolean export_ = icomp->GetMemberNameVar()->GetExport();
-             Shape* shape = icomp->GetShapeVar()->GetShape();
-             
-             if (icomp->GetClassNameVar()->IsSubclass()) {
-@@ -411,7 +411,7 @@
-                 out << "(";
-                 
+--- src/bin/ibuild/ibpanelctrl.c.org	Wed Nov 11 03:16:39 1992
++++ src/bin/ibuild/ibpanelctrl.c	Sun Jan 23 20:19:37 2000
+@@ -871,13 +871,13 @@
+     } else if (_emitBSInits) {
+         ButtonStateVar* bsVar = pcComp->GetButtonStateVar();
+ 	const char* name = bsVar->GetName();
+-        boolean export = bsVar->GetExport();
++        boolean exportval = bsVar->GetExport();
+         const char* subclass = bsVar->GetSubclassName();
+ 
+ 	if (!_bsinitslist->Search(name)) {
+ 	    _bsinitslist->Append(name);
+ 
+-            if (export && !_emitMain) {
++            if (exportval && !_emitMain) {
+                 out << "    " << name;
+ 
              } else {
--                if (export && !_emitMain) {
-+                if (export_ && !_emitMain) {
-                     out << "    " << mname << " = ";
-                     out << "new " << MenuClass;
-                 } else {
-@@ -431,7 +431,7 @@
-             EndInstantiate(out);
-             
-             if (!_emitMain && proc != nil && *proc != '\0') {
--                if (!export || icomp->GetClassNameVar()->IsSubclass()) {
-+                if (!export_ || icomp->GetClassNameVar()->IsSubclass()) {
-                     out << "    " << mname << "->SetCoreClass(this);\n";
-                     out <<"    "<< mname <<"->SetCoreFunc("<< "&" << coreclass;
-                     out << "::" << proc << ");\n";

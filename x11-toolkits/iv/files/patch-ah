@@ -1,6 +1,6 @@
---- src/config/InterViews/local.def.orig	Wed Nov 25 05:08:51 1992
-+++ src/config/InterViews/local.def	Sun Jan 17 18:12:51 1999
-@@ -8,7 +8,14 @@
+--- src/config/InterViews/local.def.orig	Wed Aug 25 06:08:07 1993
++++ src/config/InterViews/local.def	Sun Sep  5 16:21:12 1999
+@@ -7,7 +7,14 @@
  /*
   * If you are using gcc/g++, then uncomment the include below.
   */
@@ -8,10 +8,10 @@
 +#include <InterViews/gcc.def>
 +
 +#if defined (FreeBSDArchitecture)
-+#undef HasSunOSSharedLibs
-+#define HasSunOSSharedLibs YES
-+#undef HasSunOSSharedLibraries
-+#define HasSunOSSharedLibraries YES
++#undef HasDynamicSharedLibs
++#define HasDynamicSharedLibs YES
++#undef HasDynamicSharedLibraries
++#define HasDynamicSharedLibraries YES
 +#endif
  
  /*

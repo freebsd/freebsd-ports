@@ -1,15 +1,12 @@
---- src/bin/dclock/segment.c.orig	Tue Dec 28 22:51:59 1999
-+++ src/bin/dclock/segment.c	Tue Dec 28 22:52:17 1999
-@@ -41,10 +41,10 @@
+--- src/lib/IV-2_6/matcheditor.c.org	Thu Jun 25 03:30:20 1992
++++ src/lib/IV-2_6/matcheditor.c	Sun Jan 23 18:50:03 2000
+@@ -53,7 +53,8 @@
+ }
  
- Pattern* Segment::MakePattern (int seed) {
-     Pattern* pat;
--    int dat[16];
-+    int dat[16], i;
-     unsigned int Row[4];
- 
--    for (int i = 0; i <= 3; i++) {
-+    for (i = 0; i <= 3; i++) {
- 	Row[i] = seed & 0xF;
- 	Row[i] |= Row[i]<<4;
- 	Row[i] |= Row[i]<<8;
+ void MatchEditor::Match (const char* p, boolean m) {
+-    for (char* pp = pattern; *p != '\0'; ++p, ++pp) {
++    char* pp;
++    for (pp = pattern; *p != '\0'; ++p, ++pp) {
+         *pp = *p;
+         if (*p == '%') {
+             ++p;

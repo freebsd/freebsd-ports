@@ -1,20 +1,12 @@
---- src/bin/ibuild/ibvars.h.orig	Tue Dec 28 23:49:31 1999
-+++ src/bin/ibuild/ibvars.h	Tue Dec 28 23:50:16 1999
-@@ -232,7 +232,7 @@
- 
- inline boolean MemberSharedName::GetExport() { return _export; }
- inline SubclassNameVar* MemberSharedName::GetSubclass () { return _subclass; }
--inline void MemberSharedName::SetExport(boolean export) { _export = export;}
-+inline void MemberSharedName::SetExport(boolean export_) { _export = export_;}
- inline int& MemberSharedName::GetSerial () { return _mSerial; }
- inline IDVar* MemberSharedName::GetIDVar () { return _idVar; }
- 
-@@ -326,7 +326,7 @@
- inline int ButtonSharedName::GetInitial() { return _initial; }
- inline void ButtonSharedName::SetInitial(int initial) { _initial = initial;}
- inline boolean ButtonSharedName::GetExport() { return _export; }
--inline void ButtonSharedName::SetExport(boolean export) { _export = export;}
-+inline void ButtonSharedName::SetExport(boolean export_) { _export = export_;}
- inline const char* ButtonSharedName::GetFuncName() { return _func; }
- inline int& ButtonSharedName::GetSerial() { return _bsSerial; }
- inline SubclassNameVar* ButtonSharedName::GetSubclass () { return _subclass; }
+--- src/bin/ibuild/ibcatalog.c.org	Wed Sep  9 07:36:27 1992
++++ src/bin/ibuild/ibcatalog.c	Sun Jan 23 20:03:11 2000
+@@ -614,7 +614,8 @@
+ 		graylevel = CalcGrayLevel(data[0]);
+ 	    }
+ 	} else if (graylevel == -1) {
+-	    for (int i = 0; in >> _buf && i < patternHeight; i++) {
++	    int i;
++	    for (i = 0; in >> _buf && i < patternHeight; i++) {
+ 		if (_buf[0] == '>' || sscanf(_buf, "%x", &data[i]) != 1) {
+ 		    break;
+ 		}

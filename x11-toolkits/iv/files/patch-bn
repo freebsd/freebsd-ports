@@ -1,11 +1,10 @@
---- src/lib/IV-2_6/control.c.orig	Tue Dec 28 22:48:52 1999
-+++ src/lib/IV-2_6/control.c	Tue Dec 28 22:49:19 1999
-@@ -154,10 +154,12 @@
+--- src/lib/IV-2_6/control.c.org	Wed Feb 12 05:48:58 1992
++++ src/lib/IV-2_6/control.c	Sun Jan 23 18:48:18 2000
+@@ -154,10 +154,11 @@
   */
  
  boolean Control::IsGrabbing(Interactor* i) {
 +    ControlState* c;
-+
      if (i == this) {
  	return true;
      }
