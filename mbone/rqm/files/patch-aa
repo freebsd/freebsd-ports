@@ -8,8 +8,8 @@
 -TCL_LIBS="../tk-8.0/unix/libtk8.0.a ../tcl-8.0/unix/libtcl8.0.a"
 -TCL_INCL="-I../tk-8.0/generic -I../tcl-8.0/generic"
 +GCCWFLAGS="-W -Wall -Wbad-function-cast -Wmissing-prototypes -Wno-implicit-int"
-+TCL_LIBS="-L${PREFIX}/lib -ltk82 -ltcl82"
-+TCL_INCL="-I${PREFIX}/include/tk8.2/generic -I${PREFIX}/include/tcl8.2/generic"
++TCL_LIBS="-L${PREFIX}/lib -ltk84 -ltcl84"
++TCL_INCL="-I${PREFIX}/include/tk8.4/generic -I${PREFIX}/include/tcl8.4/generic"
  DEFS=""
  
  AR="ar"
