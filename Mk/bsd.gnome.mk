@@ -190,7 +190,7 @@ pre-everything::
 # using USE_GNOMELIBS or USE_GNOMECTRL, unless they have a very good reason. 
 # Most GNOME ports require USE_GNOME for the correct remove of directories
 # in ${X11BASE}/share/gnome.  Ports using GNOME should also have
-# USE_X_PREFIX definied.
+# USE_X_PREFIX defined.
  
 .if defined(USE_GNOME)
 USE_GNOMECTRL=	yes
