@@ -7,6 +7,7 @@
 
 PORTNAME=	gdesklets
 PORTVERSION=	0.20
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.pycage.de/download/${PORTNAME}/
 DISTNAME=	gDesklets-${PORTVERSION}
@@ -27,6 +28,8 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget
 
 post-install:
+	@${MKDIR} ${PREFIX}/share/gnome/gdesklets/Sensors
+	@${MKDIR} ${PREFIX}/share/gnome/gdesklets/Displays
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
