@@ -677,7 +677,7 @@ MAKE_ARGS+=		OPENSSL_CFLAGS="${OPENSSL_CFLAGS}"
 .endif
 .endif
 .else
-LIB_DEPENDS+=	crypto.1:${PORTSDIR}/security/openssl
+LIB_DEPENDS+=	crypto.2:${PORTSDIR}/security/openssl
 OPENSSLBASE?=	${LOCALBASE}
 OPENSSLDIR?=	${OPENSSLBASE}/openssl
 .endif
