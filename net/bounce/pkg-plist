@@ -1,2 +1,2 @@
 @comment $FreeBSD$
-libexec/bounce
+sbin/bounce
