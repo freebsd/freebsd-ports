@@ -1,0 +1,13 @@
+--- doc/Makefile.in.orig	Mon Mar 11 16:43:00 2002
++++ doc/Makefile.in	Mon Mar 11 16:45:09 2002
+@@ -258,8 +258,9 @@
+ 
+ install-data-local: Xzx
+ 	$(mkinstalldirs) $(DESTDIR)$(pkglibdir)
++	$(mkinstalldirs) $(PREFIX)/share/doc/xzx-pro/
+ 	for f in $(DOC_FILES); do \
+-	  $(INSTALL_DATA) $$f $(DESTDIR)$(pkglibdir); \
++	  $(INSTALL_DATA) $$f $(PREFIX)/share/doc/xzx-pro/; \
+ 	done
+ 	-$(mkinstalldirs) $(DESTDIR)@XAPPLOADDIR@
+ 	-$(INSTALL_DATA) Xzx $(DESTDIR)@XAPPLOADDIR@/Xzx
