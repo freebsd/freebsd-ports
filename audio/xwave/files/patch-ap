@@ -1,6 +1,21 @@
---- FWF/Imakefile.orig	Mon Nov  9 08:22:54 1998
-+++ FWF/Imakefile	Fri Jun 30 19:53:17 2000
-@@ -9,6 +9,7 @@
+   The second (and more serious) problem arises during the build of
+   xwave's own libfwf.a. Randomly, at least one of the OBJS is not
+   'ar'ed into libfwf. Is this a problem of the parallelized make?
+   You can not repeat exactly the error; the next time, another of
+   FWF's OBJS might be missing in libfwf.a.
+
+   Maybe there is a problem related to the change in FWF/FWF.rules
+   in VERSION 3.65 (see FWF/README.NOTES: "Hacked FWF.rules to
+   make AddToLibrary try to build library only if objects are   
+   newer than library.").
+
+   Since I am not at all a compiler and linker specialist, I propose,
+   to do a final 'ar' of all OBJS after all of them are build. This
+   can be done by adding an auxiliary target in FWF/Imakefile.
+
+--- FWF/Imakefile.orig	Mon Nov  9 00:22:54 1998
++++ FWF/Imakefile	Mon Jan  1 15:47:50 2001
+@@ -9,14 +9,25 @@
  MakeDirectories(all,$(ALLDIRS))
  
  InitSubdirs($(SUBDIRS))
@@ -8,3 +23,23 @@
  MakeObjectsSubdirs($(SUBDIRS))
  MakeExecsSubdirs($(SUBDIRS))
  GatherDescriptionSubdirs($(SUBDIRS))
+ 
++MAINOBJS = src/Board/Board.o src/Button/Button.o src/Common/Common.o src/Frame/Frame.o src/Group/Group.o src/Label/Label.o src/RadioGroup/RadioGrp.o src/RowCol/RowCol.o src/Toggle/Toggle.o
++MISCOBJS = src/misc/VarArgs.o
++CONVOBJS = src/converters/long.o src/converters/icon.o src/converters/choosecol.o src/converters/StrToPmap.o src/converters/Pen.o src/converters/strarray.o
++STRGOBJS = src/tabstring/DrawImageString.o src/tabstring/DrawString.o src/tabstring/Tablist2Tabs.o src/tabstring/TextWidth.o src/tabstring/strnchr.o
++
++$(FWF_LIBDIR)/auxtarget: $(MAINOBJS) $(MISCOBJS) $(CONVOBJS) $(STRGOBJS)
++	ar -r $(FWF_LIBDIR)/$(FWF_LIBNAME) $(MAINOBJS) $(MISCOBJS) $(CONVOBJS) $(STRGOBJS)
++	ranlib $(FWF_LIBDIR)/$(FWF_LIBNAME)
++	echo "lib complete." > $(FWF_LIBDIR)/auxtarget
++
+ #ifdef BuildExecs
+-AllTarget(init objects execs $(FWF_MANDIR)/fwf.man)
++AllTarget(init objects execs $(FWF_LIBDIR)/auxtarget $(FWF_MANDIR)/fwf.man)
+ #else
+-AllTarget(init objects $(FWF_MANDIR)/fwf.man)
++AllTarget(init objects $(FWF_LIBDIR)/auxtarget $(FWF_MANDIR)/fwf.man)
+ #endif
+ 
+ ConstructIndex(init)
