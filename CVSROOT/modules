@@ -4056,6 +4056,7 @@ mailfmt		ports/mail/mailfmt
 mailfront	ports/mail/mailfront
 mailgraph	ports/mail/mailgraph
 mailman		ports/mail/mailman
+mailscanner	ports/mail/mailscanner
 mailsync	ports/mail/mailsync
 mailx		ports/mail/mailx
 maint		ports/sysutils/maint
