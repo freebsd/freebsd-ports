@@ -1,4 +1,4 @@
 This module augments XML::LibXML by providing a Perl
 interface to libxml2's xmlXPathContext structure.
 
-WWW: http://search.cpan.org/perldoc?XML::LibXML::XPathContext
+WWW: http://search.cpan.org/dist/XML-LibXML-XPathContext/
