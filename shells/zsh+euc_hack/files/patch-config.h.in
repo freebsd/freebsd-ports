@@ -1,0 +1,9 @@
+--- config.h.in.orig	Tue Oct 16 21:46:09 2001
++++ config.h.in	Thu May  9 06:49:30 2002
+@@ -756,3 +756,6 @@
+ 
+ /* Define if you have the socket library (-lsocket).  */
+ #undef HAVE_LIBSOCKET
++
++/* zsh euc completion */
++#define ZSH_EUC 1
