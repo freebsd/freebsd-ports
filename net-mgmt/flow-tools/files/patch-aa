@@ -1,0 +1,8 @@
+--- asn2c.orig	Fri May  1 19:35:11 1998
++++ asn2c	Mon Jul 17 19:32:58 2000
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/perl
+ 
+ #
+ # converts internic netinfo/asn.txt to C code
