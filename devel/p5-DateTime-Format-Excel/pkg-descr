@@ -1,0 +1,6 @@
+Excel uses a different system for its dates than most Unix programs. This
+module allows you to convert between a few of the Excel raw formats and
+DateTime objects, which can then be further converted via any of the other
+DateTime::Format::* modules, or just with DateTime's methods.
+
+WWW: http://datetime.perl.org/
