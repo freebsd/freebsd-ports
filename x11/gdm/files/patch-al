@@ -1,0 +1,8 @@
+--- config/gnomerc.in.orig	Sat Sep 16 10:20:11 2000
++++ config/gnomerc.in	Sat Sep 16 10:20:25 2000
+@@ -1 +1,4 @@
+-@bindir@/gnome-session
++#!/bin/csh
++
++unsetenv LC_CTYPE
++exec @bindir@/gnome-session
