@@ -27,6 +27,7 @@ share/gnome/genius/gel/combinatorics/factorial.gel
 share/gnome/genius/gel/combinatorics/loader.gel
 share/gnome/genius/gel/combinatorics/misc.gel
 share/gnome/genius/gel/combinatorics/recursive_sequences.gel
+share/gnome/genius/gel/equation_solving/diffeqs.gel
 share/gnome/genius/gel/equation_solving/find_root.gel
 share/gnome/genius/gel/equation_solving/loader.gel
 share/gnome/genius/gel/functions/complex_numbers.gel
@@ -56,11 +57,49 @@ share/gnome/genius/gel/sets/basic.gel
 share/gnome/genius/gel/sets/loader.gel
 share/gnome/genius/gel/statistics/basic.gel
 share/gnome/genius/gel/statistics/loader.gel
+share/gnome/genius/genius.txt
 share/gnome/genius/gtksourceview/genius.lang
-share/gnome/genius/manual.txt
 share/gnome/genius/plugins/test.plugin
+share/gnome/help/genius/C/about.xml
+share/gnome/help/genius/C/examples.xml
+share/gnome/help/genius/C/figures/genius_window.png
+share/gnome/help/genius/C/gel-absolute-value-modulus.xml
+share/gnome/help/genius/C/gel-comparison-operators.xml
+share/gnome/help/genius/C/gel-conditionals.xml
+share/gnome/help/genius/C/gel-error-handling.xml
+share/gnome/help/genius/C/gel-function-list.xml
+share/gnome/help/genius/C/gel-functions.xml
+share/gnome/help/genius/C/gel-loading-programs.xml
+share/gnome/help/genius/C/gel-loops.xml
+share/gnome/help/genius/C/gel-lvalues.xml
+share/gnome/help/genius/C/gel-matrix-support.xml
+share/gnome/help/genius/C/gel-matrix-transpose.xml
+share/gnome/help/genius/C/gel-modular-evaluation.xml
+share/gnome/help/genius/C/gel-operator-list.xml
+share/gnome/help/genius/C/gel-polynomials.xml
+share/gnome/help/genius/C/gel-previous-result.xml
+share/gnome/help/genius/C/gel-references.xml
+share/gnome/help/genius/C/gel-returning.xml
+share/gnome/help/genius/C/gel-separator.xml
+share/gnome/help/genius/C/gel-startup-procedure.xml
+share/gnome/help/genius/C/gel-sums-products.xml
+share/gnome/help/genius/C/gel-values.xml
+share/gnome/help/genius/C/gel-variables.xml
+share/gnome/help/genius/C/genius.xml
+share/gnome/help/genius/C/legal.xml
+share/gnome/help/genius/C/prefs-display.xml
+share/gnome/help/genius/C/prefs-precision.xml
+share/gnome/help/genius/C/prefs-terminal.xml
+share/gnome/help/genius/C/starting-to-start.xml
+share/gnome/help/genius/C/starting-when-start.xml
+share/gnome/help/genius/C/usage-create-program.xml
+share/gnome/help/genius/C/usage-open-program.xml
+share/gnome/help/genius/C/usage-workarea.xml
 share/gnome/mime-info/genius.keys
 share/gnome/mime-info/genius.mime
+share/gnome/omf/genius/genius-C.omf
+share/icons/hicolor/32x32/apps/gnome-genius.png
+share/icons/hicolor/48x48/apps/gnome-genius.png
 share/locale/az/LC_MESSAGES/genius.mo
 share/locale/ca/LC_MESSAGES/genius.mo
 share/locale/cs/LC_MESSAGES/genius.mo
@@ -74,9 +113,11 @@ share/locale/ga/LC_MESSAGES/genius.mo
 share/locale/hi/LC_MESSAGES/genius.mo
 share/locale/hr/LC_MESSAGES/genius.mo
 share/locale/it/LC_MESSAGES/genius.mo
+share/locale/ja/LC_MESSAGES/genius.mo
 share/locale/ko/LC_MESSAGES/genius.mo
 share/locale/nl/LC_MESSAGES/genius.mo
 share/locale/no/LC_MESSAGES/genius.mo
+share/locale/pa/LC_MESSAGES/genius.mo
 share/locale/pl/LC_MESSAGES/genius.mo
 share/locale/pt/LC_MESSAGES/genius.mo
 share/locale/pt_BR/LC_MESSAGES/genius.mo
@@ -85,6 +126,10 @@ share/locale/sr/LC_MESSAGES/genius.mo
 share/locale/sr@Latn/LC_MESSAGES/genius.mo
 share/locale/sv/LC_MESSAGES/genius.mo
 share/locale/zh_CN/LC_MESSAGES/genius.mo
+@dirrm share/gnome/omf/genius
+@dirrm share/gnome/help/genius/C/figures
+@dirrm share/gnome/help/genius/C
+@dirrm share/gnome/help/genius
 @dirrm share/gnome/genius/gtksourceview
 @dirrm share/gnome/genius/plugins
 @dirrm share/gnome/genius/gel/statistics
@@ -100,3 +145,9 @@ share/locale/zh_CN/LC_MESSAGES/genius.mo
 @dirrm share/gnome/genius
 @dirrm lib/genius
 @dirrm include/genius
+@unexec rmdir %D/share/icons/hicolor/48x48/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
