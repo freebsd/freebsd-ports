@@ -1,0 +1,7 @@
+This port is for XEmacs environment using XEmacs mule ports and 
+Mule SUMO package. Ports using on this port are editors/xemacs-packages,
+editors/xemacs-mule-packages, editors/xemacs-sumo, editors/xemacs-mule-sumo,
+editors/xemacs-mule-comon and japanese/xemacs*.
+
+--KIRIYAMA Mazuhiko
+<kiri@pis.toba-cmt.ac.jp>
