@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	bs
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 CATEGORIES=	games
 MASTER_SITES=	http://www.catb.org/~esr/bs/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Battleships solitaire game with a color interface
 
+MAKE_ARGS=	CC="${CC}"
 ALL_TARGET=	# empty
+
 MAN6=		bs.6
 
 do-install:
