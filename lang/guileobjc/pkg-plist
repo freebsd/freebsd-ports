@@ -1,0 +1,12 @@
+bin/goconfig
+include/goconfig.h
+include/guileobjc.h
+lib/libguileobjc.a
+lib/libguileobjc.la
+@exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
+share/aclocal/guileobjc.m4
+share/guile/1.2/languages/guileobjc/libgocore.so
+share/guile/1.2/languages/guileobjc.scm
+@dirrm share/guile/1.2/languages/guileobjc
+@dirrm share/guile/1.2/languages

@@ -1,0 +1,11 @@
+--- configure.orig	Tue Jun 30 19:54:00 1998
++++ configure	Tue Jun 30 19:54:19 1998
+@@ -62,6 +62,8 @@
+ # Initialize some other variables.
+ subdirs=
+ MFLAGS= MAKEFLAGS=
++CFLAGS=-I/usr/local/include
++LDFLAGS=-L/usr/local/lib
+ # Maximum number of lines to put in a shell here document.
+ ac_max_here_lines=12
+ 
