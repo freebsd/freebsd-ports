@@ -1,0 +1,26 @@
+include/gctpc/cproj.h
+include/gctpc/for_init.h
+include/gctpc/gctp.h
+include/gctpc/gctpc.h
+include/gctpc/inv_init.h
+include/gctpc/proj.h
+include/gctpc/report.h
+include/gctpc/sphdz.h
+include/gctpc/untfz.h
+lib/libgctpc.a
+lib/libgctpc.so
+lib/libgctpc.so.1
+share/doc/gctpc/README
+share/doc/gctpc/README.main
+share/doc/gctpc/appendixA.txt
+share/doc/gctpc/appendixB.txt
+share/doc/gctpc/appendixC.txt
+share/doc/gctpc/for_init.ps
+share/doc/gctpc/gctp.ps
+share/doc/gctpc/inv_init.ps
+share/doc/gctpc/overview.ps
+share/doc/gctpc/reference.txt
+share/doc/gctpc/xxxfor.ps
+share/doc/gctpc/xxxinv.ps
+@dirrm share/doc/gctpc
+@dirrm include/gctpc

@@ -1,0 +1,8 @@
+--- ORIG/cproj.c	Mon Nov 22 16:39:46 1993
++++ cproj.c	Thu Apr 26 18:40:10 2001
+@@ -408,4 +408,4 @@
+ 
+ /* Function to calculate UTM zone number--NOTE Longitude entered in DEGREES!!!
+   ---------------------------------------------------------------------------*/
+-calc_utm_zone(lon) double lon; { return((long)(((lon + 180.0) / 6.0) + 1.0)); }
++long calc_utm_zone(lon) double lon; { return((long)(((lon + 180.0) / 6.0) + 1.0)); }

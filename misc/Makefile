@@ -55,6 +55,7 @@
     SUBDIR += fortuneit
     SUBDIR += freedialog
     SUBDIR += ftree
+    SUBDIR += gctpc
     SUBDIR += geekcode
     SUBDIR += git
     SUBDIR += gman
