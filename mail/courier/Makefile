@@ -35,6 +35,7 @@ IMAGEURL?=	/webmail
 CACHEOWN?=	pop
 MAILDROPDEFAULT?=./Maildir
 # End of user-serviceable variables
+CONFLICTS=	postfix-1.* postfix-2.* sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
 MAILOWN=	courier
 MAILGRP=	courier
 MAILUID=	62

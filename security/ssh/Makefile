@@ -17,6 +17,7 @@ MASTER_SITES=	ftp://ftp.ssh.com/pub/ssh/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secure shell client and server (remote login program)
 
+CONFLICTS=	openssh-* openssh-portable-* openssh-gssapi-* ssh2-3.*
 USE_AUTOCONF=	YES
 GNU_CONFIGURE=	YES
 USE_PERL5=	YES
