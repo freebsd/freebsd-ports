@@ -24,7 +24,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --enable-cplusplus
 OPTIONS=	REDIRECT "Define malloc(3)-family replacements" off \
 		FULLDEBUG "full-debug support (see documentation)" off \
 		THREADING "POSIX thread support" off \
-		PARALLEL_MARK "Parallel-thread marking (faster for SMP)" on
+		PARALLEL_MARK "Parallel-thread marking (faster for SMP)" off
 
 .include <bsd.port.pre.mk>
 
