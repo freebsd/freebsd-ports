@@ -1,0 +1,6 @@
+sbin/apinger
+etc/apinger.conf
+share/doc/apinger/README
+share/doc/apinger/NEWS
+share/doc/apinger/AUTHORS
+@dirrm share/doc/apinger
