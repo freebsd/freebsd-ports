@@ -7814,6 +7814,7 @@ yawho		ports/sysutils/yawho
 yawm		ports/x11-wm/yawm
 yawmppp		ports/comms/yawmppp
 yaz		ports/net/yaz
+yencode		ports/news/yencode
 yes		src/usr.bin/yes
 ymessenger	ports/net/ymessenger
 yodl		ports/textproc/yodl
