@@ -6,21 +6,30 @@
 #
 
 PORTNAME=	nscache
-PORTVERSION=	0.2p2
+PORTVERSION= 	0.6
 CATEGORIES=	www
-MASTER_SITES=	http://www.idata.sk/~ondrej/sw/
-DISTNAME=	nscache-0.2pl2
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://www.idata.sk/~ondrej/sw/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	kris@FreeBSD.org
 
+USE_X_PREFIX=	yes
 USE_GTK=	yes
+WANT_GNOME=	yes
 USE_AUTOMAKE=	yes
-AUTOMAKE=	automake -a -i
-CONFIGURE_ENV=	CPPFALGS="-I${LOCALBASE}/include" \
+AUTOMAKE_ARGS=	--include-deps
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--with-gtk-config=${GTK_CONFIG}
+  
+.include <bsd.port.pre.mk>
+  
+.if defined(HAVE_GNOME)
+USE_GNOME=	yes
+.else
+CONFIGURE_ARGS+=	--disable-gnome
+.endif
 
-pre-configure:
-	@cd ${WRKSRC}; aclocal -I ${X11BASE}/share/aclocal
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
