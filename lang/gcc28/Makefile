@@ -4,7 +4,7 @@
 # Date created:				17 Jan 1998
 # Whom:					David O'Brien <obrien@NUXI.com>
 #
-# $Id: Makefile,v 1.2 1998/03/04 09:19:21 obrien Exp $
+# $Id: Makefile,v 1.3 1998/03/05 03:29:58 obrien Exp $
 #
 
 DISTNAME=	gcc-2.8.0
@@ -27,7 +27,7 @@ pre-fetch:
 	@${ECHO} "GCC 2.8 for ${OSNAME} ${GNUOSREL}"
 
 pre-install:
-	@${SED} -e 's:%GNUOSREL%:${GNUOSREL}:' ${PKGDIR}/PLIST \
+	@${SED} -e 's:%GNUHOST%:${GNUHOST}:' ${PKGDIR}/PLIST \
 		> ${PLIST
 
 post-install:
