@@ -7,6 +7,7 @@
 
 PORTNAME=	safecat
 PORTVERSION=	1.8
+PORTREVISION=	1
 CATEGORIES=	sysutils mail
 MASTER_SITES=	http://www.nb.net/~lbudney/linux/software/safecat/
 
