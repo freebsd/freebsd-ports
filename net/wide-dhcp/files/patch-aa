@@ -1,8 +1,13 @@
 --- client/Makefile.FreeBSD.orig	Wed Sep  9 17:08:15 1998
-+++ client/Makefile.FreeBSD	Sat Dec  5 02:52:18 1998
-@@ -5,12 +5,13 @@
- CFLAGS += -O -I. -I../server -DRETRY_FOREVER #-DMOBILE_IP -DDEBUG
- LDFLAGS = -lkvm
++++ client/Makefile.FreeBSD	Sat Dec  5 13:47:04 1998
+@@ -2,15 +2,16 @@
+ OBJ = dhcpc_subr.o flushroute.o getmac.o common_subr.o dhcpc.o
+ 
+ CC = cc
+-CFLAGS += -O -I. -I../server -DRETRY_FOREVER #-DMOBILE_IP -DDEBUG
+-LDFLAGS = -lkvm
++CFLAGS += -O2 -I. -I../server -DRETRY_FOREVER #-DMOBILE_IP -DDEBUG
++#LDFLAGS = -lkvm
  
 -SBIN = 		/usr/local/sbin
 -LIBEXEC =	/usr/local/libexec
