@@ -2,6 +2,9 @@
 # Version required:     2.4.4
 # Date created:         Nov 16 1997
 # Whom:                 frankch@waru.life.nthu.edu.tw
+#
+# $Id$
+#
 
 DISTNAME=       rxvt-2.4.4
 PKGNAME=        zh-rxvt-2.4.4
