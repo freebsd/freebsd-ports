@@ -17,4 +17,5 @@ lib/libesd.so.2
 lib/libesddsp.a
 lib/libesddsp.so
 lib/libesddsp.so.2
+libdata/pkgconfig/esound.pc
 share/aclocal/esd.m4
