@@ -437,6 +437,7 @@
     SUBDIR += quanta
     SUBDIR += quixote
     SUBDIR += reportmagic
+    SUBDIR += resin3
     SUBDIR += retawq
     SUBDIR += roundup
     SUBDIR += roxen
