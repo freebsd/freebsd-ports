@@ -22,5 +22,8 @@ etc/jabberd/sm.xml.dist
 etc/jabberd/templates/roster.xml.dist
 @unexec if cmp -s %D/etc/rc.d/jabberd.sh %D/etc/rc.d/jabberd.sh-dist; then rm -f %D/etc/rc.d/jabberd.sh; fi
 etc/rc.d/jabberd.sh-dist
+share/jabberd/db-setup.mysql
+share/jabberd/db-setup.pgsql
+@dirrm share/jabberd
 @dirrm etc/jabberd/templates
 @dirrm etc/jabberd

@@ -80,5 +80,8 @@ post-install:
 	@${CHOWN} -R jabber:jabber ${PREFIX}/etc/jabberd
 	@${FIND} ${PREFIX}/etc/jabberd -type d | ${XARGS} ${CHMOD} 750
 	@${FIND} ${PREFIX}/etc/jabberd -type f | ${XARGS} ${CHMOD} 660
+	@${MKDIR} ${PREFIX}/share/jabberd
+	@${INSTALL_DATA} ${WRKSRC}/tools/db-setup.mysql ${PREFIX}/share/jabberd
+	@${INSTALL_DATA} ${WRKSRC}/tools/db-setup.pgsql ${PREFIX}/share/jabberd
 
 .include <bsd.port.mk>
