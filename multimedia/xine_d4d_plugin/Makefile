@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	xine_d4d_plugin
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://worldzone.net/technology/captaincss/ \
 		http://debianlinux.net/
-DISTFILES=	d4d030.txt
+DISTFILES=	d4d031.txt
 
 MAINTAINER=	gibbon@cocoa.freemail.ne.jp
 
