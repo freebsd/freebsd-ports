@@ -1,2 +1,4 @@
-MD5 (w3m-0.2.1.tar.gz) = 906c2506f570b563807bcd1d23fecea5
-MD5 (w3m-0.2.1-img-1.10.patch) = 8cd810eb925fd5da17d04ffcb2b22b1a
+MD5 (w3m-0.2.1-inu-1.4.tar.gz) = 0524de2794aa2562f92e06ab1a631d5e
+MD5 (w3m-0.2.1-inu-1.4-img-1.11.patch) = 8440e8ec39e028e176054eb348584348
+MD5 (w3m-m17n-0.19.tar.gz) = 96243978524a7b8fba6cbb413026eeff
+MD5 (w3m-m17n-0.19-security-fix.diff) = 3d7bb72b8d12e6fc8ba485121b458148

@@ -1,12 +1,12 @@
 bin/w3m
 libexec/w3m/dirlist.cgi
+%%NO_M17N%%libexec/w3m/inflate
 libexec/w3m/w3mbookmark
 libexec/w3m/w3mhelperpanel
 %%INLINE_IMAGE_ONLY%%libexec/w3m/w3mimgdisplay
 %%INLINE_IMAGE_ONLY%%libexec/w3m/w3mimgsize
 %%PORTDOCS%%%%JAPANESE_ONLY%%share/doc/ja/w3m/FAQ.html
 %%PORTDOCS%%%%JAPANESE_ONLY%%share/doc/ja/w3m/HISTORY
-%%PORTDOCS%%%%JAPANESE_ONLY%%share/doc/ja/w3m/HISTORY.kokb
 %%PORTDOCS%%%%JAPANESE_ONLY%%share/doc/ja/w3m/MANUAL.html
 %%PORTDOCS%%%%JAPANESE_ONLY%%share/doc/ja/w3m/README
 %%PORTDOCS%%%%JAPANESE_ONLY%%share/doc/ja/w3m/README.SSL
@@ -31,6 +31,7 @@ share/doc/ja/w3m/w3mhelp-w3m_ja.html
 %%PORTDOCS%%share/doc/w3m/README.dict
 %%PORTDOCS%%share/doc/w3m/README.func
 %%PORTDOCS%%%%INLINE_IMAGE_ONLY%%share/doc/w3m/README.img
+%%PORTDOCS%%%%M17N_ONLY%%share/doc/w3m/README.m17n
 %%PORTDOCS%%share/doc/w3m/STORY.html
 %%PORTDOCS%%share/doc/w3m/keymap.default
 %%PORTDOCS%%share/doc/w3m/keymap.lynx
@@ -38,6 +39,7 @@ share/doc/ja/w3m/w3mhelp-w3m_ja.html
 %%PORTDOCS%%share/doc/w3m/menu.submenu
 share/doc/w3m/w3mhelp-lynx_en.html
 share/doc/w3m/w3mhelp-w3m_en.html
+share/doc/w3m/w3mhelp.html
 @dirrm libexec/w3m
 @dirrm share/doc/ja/w3m
 @dirrm share/doc/w3m
