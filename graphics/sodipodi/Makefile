@@ -19,9 +19,9 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack lthack libglade2 libartlgpl2
+USE_GNOME=	gnomeprefix gnomehack libglade2 libartlgpl2
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 CONFIGURE_ARGS=	--without-gnome-print \
 		--with-popt
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 -I${X11BASE}/include" \
