@@ -204,7 +204,7 @@ libexec/gimp/2.2/plug-ins/checkerboard
 %%PYTHON:%%libexec/gimp/2.2/plug-ins/clothify.py
 libexec/gimp/2.2/plug-ins/color_enhance
 libexec/gimp/2.2/plug-ins/colorify
-%%PYTHON:%%libexec/gimp/2.2/plug-ins/colorhtml.py
+%%PYTHON:%%libexec/gimp/2.2/plug-ins/colorxhtml.py
 libexec/gimp/2.2/plug-ins/colortoalpha
 libexec/gimp/2.2/plug-ins/compose
 libexec/gimp/2.2/plug-ins/compressor
