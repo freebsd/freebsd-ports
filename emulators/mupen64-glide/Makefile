@@ -46,11 +46,6 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
-.if defined(X_WINDOW_SYSTEM) && ${X_WINDOW_SYSTEM:L} == xorg
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-main.cpp \
-		${FILESDIR}/extra-patch-main.h
-.endif
-
 CFLAGS+=	-Iwrapper/ `${SDL_CONFIG} --cflags`
 CFLAGS+=	-DUSE_GTK `${GTK_CONFIG} --cflags` -fPIC
 CFLAGS+=	-O3 -fomit-frame-pointer -funroll-loops -ffast-math -Wall -pipe
