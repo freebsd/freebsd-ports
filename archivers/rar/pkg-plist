@@ -2,14 +2,11 @@ bin/rar
 bin/unrar
 lib/default.sfx
 etc/rarfiles.lst
-%%DOCSDIR%%/technote.txt
-%%DOCSDIR%%/rar_faq.txt
-%%DOCSDIR%%/rar_site.txt
-%%DOCSDIR%%/license.txt
-%%DOCSDIR%%/whatsnew.txt
-%%DOCSDIR%%/rereg.txt
-%%DOCSDIR%%/register.txt
-%%DOCSDIR%%/order.txt
-%%DOCSDIR%%/readme.txt
-%%DOCSDIR%%/file_id.diz
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/technote.txt
+%%PORTDOCS%%%%DOCSDIR%%/rar_faq.txt
+%%PORTDOCS%%%%DOCSDIR%%/license.txt
+%%PORTDOCS%%%%DOCSDIR%%/whatsnew.txt
+%%PORTDOCS%%%%DOCSDIR%%/order.htm
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%%%DOCSDIR%%/file_id.diz
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
