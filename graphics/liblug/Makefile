@@ -13,10 +13,10 @@ MASTER_SITE_SUBDIR=	libs/graphics
 
 MAINTAINER=		greid@ukug.uk.freebsd.org
 
+LIB_DEPENDS=		tiff.4:${PORTSDIR}/graphics/tiff
+
 WRKSRC=			${WRKDIR}/lug
-
 MAKEFILE=		Makefile.linux
-
 INSTALLS_SHLIB=		yes
 
 .include <bsd.port.mk>
