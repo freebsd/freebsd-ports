@@ -4062,6 +4062,7 @@ libnova		ports/astro/libnova
 libobjects	ports/lang/libobjects
 libodbc++	ports/databases/libodbc++
 liboe		ports/mail/liboe
+libofx		ports/finance/libofx
 libogg		ports/audio/libogg
 libol		ports/devel/libol
 libole2		ports/devel/libole2
