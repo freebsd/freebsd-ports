@@ -45,6 +45,7 @@
 %%PORTDOCS%%share/doc/exim/html/FAQ_25.html
 %%PORTDOCS%%share/doc/exim/html/FAQ_26.html
 %%PORTDOCS%%share/doc/exim/html/FAQ_27.html
+%%PORTDOCS%%share/doc/exim/html/FAQ_28.html
 %%PORTDOCS%%share/doc/exim/html/FAQ_3.html
 %%PORTDOCS%%share/doc/exim/html/FAQ_4.html
 %%PORTDOCS%%share/doc/exim/html/FAQ_5.html
@@ -79,6 +80,7 @@
 %%PORTDOCS%%share/doc/exim/html/filter_30.html
 %%PORTDOCS%%share/doc/exim/html/filter_31.html
 %%PORTDOCS%%share/doc/exim/html/filter_32.html
+%%PORTDOCS%%share/doc/exim/html/filter_33.html
 %%PORTDOCS%%share/doc/exim/html/filter_4.html
 %%PORTDOCS%%share/doc/exim/html/filter_5.html
 %%PORTDOCS%%share/doc/exim/html/filter_6.html
@@ -87,7 +89,7 @@
 %%PORTDOCS%%share/doc/exim/html/filter_9.html
 %%PORTDOCS%%share/doc/exim/html/filter_toc.html
 %%PORTDOCS%%share/doc/exim/html/index.html
-%%PORTDOCS%%share/doc/exim/html/pcre.html
+%%PORTDOCS%%share/doc/exim/html/pcrepattern.html
 %%PORTDOCS%%share/doc/exim/html/pcretest.html
 %%PORTDOCS%%share/doc/exim/html/relaying.gif
 %%PORTDOCS%%share/doc/exim/html/routing.gif
