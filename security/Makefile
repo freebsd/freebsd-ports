@@ -69,6 +69,7 @@
     SUBDIR += gringotts
     SUBDIR += gtk-knocker
     SUBDIR += gtkportscan
+    SUBDIR += hafiye
     SUBDIR += hashish
     SUBDIR += heimdal
     SUBDIR += hlfl
