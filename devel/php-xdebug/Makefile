@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	xdebug
-PORTVERSION=	1.2.0
-CATEGORIES=	devel x11
+PORTVERSION=	1.3.0
+CATEGORIES=	devel
 MASTER_SITES=	http://files.derickrethans.nl/
 PKGNAMEPREFIX=	php-
 EXTRACT_SUFX=	.tgz
