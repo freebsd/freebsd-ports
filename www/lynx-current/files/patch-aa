@@ -1,28 +1,18 @@
---- makefile.in.orig	Wed Jul 14 20:25:26 1999
-+++ makefile.in	Thu Aug  5 00:54:01 1999
-@@ -306,7 +306,7 @@
- 	@echo "Use $(MAKE) install-doc to install extra documentation files"
- 	@echo
- 
--install-full: install install-help install-doc
-+install-full: install install-doc install-help
- 	@echo Full installation complete.
- 
- install-bin: $(BINDIR)
-@@ -357,24 +357,25 @@
+--- makefile.in.orig	Thu Aug 26 15:31:19 1999
++++ makefile.in	Wed Sep  8 19:04:00 1999
+@@ -361,22 +361,19 @@
  		fi ; \
  		)'
  	-rm -f $(HELPDIR)/help_files.sed
 -	@echo Updating $(libdir)/lynx.cfg
 -	$(SHELL) -c 'if test -f $(LIBDIR)/lynx.cfg ; then \
 -		mv $(LIBDIR)/lynx.cfg $(LIBDIR)/lynx.tmp ; \
-+	@echo Updating $(libdir)/lynx.cfg.default
-+	$(SHELL) -c 'if test -f $(LIBDIR)/lynx.cfg.default ; then \
-+		mv $(LIBDIR)/lynx.cfg.default $(LIBDIR)/lynx.tmp ; \
- 	else \
- 		cp $(srcdir)/lynx.cfg $(LIBDIR)/lynx.tmp ; \
- 	fi'
+-	else \
+-		cp $(srcdir)/lynx.cfg $(LIBDIR)/lynx.tmp ; \
+-	fi'
 -	@echo Updating $(libdir)/lynx.cfg to point to installed help-files
++	@echo Updating $(libdir)/lynx.cfg.default
++	cp $(srcdir)/lynx.cfg $(LIBDIR)/lynx.tmp
 +	@echo Updating $(libdir)/lynx.cfg.default to point to installed help-files
  	@ECHO_CC@sed	-e '/^HELPFILE:http/s@^@#@' \
  		-e '/^#HELPFILE:file/s@#@@' \
@@ -36,13 +26,10 @@
 +	chmod 644 $(LIBDIR)/lynx.cfg.default
  	-rm -f $(LIBDIR)/lynx.tmp
 +	-[ ! -f $(LIBDIR)/lynx.cfg ] && $(INSTALL_DATA) $(LIBDIR)/lynx.cfg.default $(LIBDIR)/lynx.cfg
- 	$(SHELL) -c 'for name in COPYING COPYHEADER; do \
--		cd $(DOCDIR) && ( $(LN_S) $$name $(HELPDIR)/ || cp $$name $(HELPDIR)/ );\
-+		cd $(DOCDIR) && cp $$name $(HELPDIR)/;\
- 		done'
  
  LYHelp.h : LYHelp.hin
-@@ -406,8 +407,7 @@
+ 	@echo Constructing sed-script
+@@ -407,8 +404,7 @@
  	PATH=$(srcdir):$$PATH; export PATH; $(SHELL) -c '$(srcdir)/cfg_defs.sh'
  
  install-cfg : $(LIBDIR)
