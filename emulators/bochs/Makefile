@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.bochs.com/bochs/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	clefevre@redirect.to
+MAINTAINER=	clefevre@citeweb.net
 
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
