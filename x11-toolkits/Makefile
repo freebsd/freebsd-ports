@@ -101,6 +101,7 @@
     SUBDIR += libjtoolbar
     SUBDIR += libjtree
     SUBDIR += libwnck
+    SUBDIR += libxfce4gui
     SUBDIR += libzvt
     SUBDIR += linux-gtk
     SUBDIR += linux-openmotif

@@ -1,0 +1,38 @@
+include/xfce4/libxfcegui4/dialogs.h
+include/xfce4/libxfcegui4/gtk_style.h
+include/xfce4/libxfcegui4/gtktoxevent.h
+include/xfce4/libxfcegui4/icons.h
+include/xfce4/libxfcegui4/libnetk.h
+include/xfce4/libxfcegui4/libxfcegui4.h
+include/xfce4/libxfcegui4/netk-application.h
+include/xfce4/libxfcegui4/netk-enum-types.h
+include/xfce4/libxfcegui4/netk-marshal.h
+include/xfce4/libxfcegui4/netk-pager.h
+include/xfce4/libxfcegui4/netk-screen.h
+include/xfce4/libxfcegui4/netk-tasklist.h
+include/xfce4/libxfcegui4/netk-trayicon.h
+include/xfce4/libxfcegui4/netk-util.h
+include/xfce4/libxfcegui4/netk-window-menu.h
+include/xfce4/libxfcegui4/netk-window.h
+include/xfce4/libxfcegui4/netk-workspace.h
+include/xfce4/libxfcegui4/preview_filesel.h
+include/xfce4/libxfcegui4/session-client.h
+include/xfce4/libxfcegui4/xfce_clock.h
+include/xfce4/libxfcegui4/xfce_decorbutton.h
+include/xfce4/libxfcegui4/xfce_decortoggle.h
+include/xfce4/libxfcegui4/xfce_framebox.h
+include/xfce4/libxfcegui4/xfce_iconbutton.h
+include/xfce4/libxfcegui4/xfce_marshal.h
+include/xfce4/libxfcegui4/xfce_menubutton.h
+include/xfce4/libxfcegui4/xfce_movehandler.h
+include/xfce4/libxfcegui4/xfce_systemtray.h
+include/xfce4/libxfcegui4/xfce_togglebutton.h
+include/xfce4/libxfcegui4/xinerama.h
+lib/libxfcegui4.a
+lib/libxfcegui4.la
+lib/libxfcegui4.so
+lib/libxfcegui4.so.1
+libdata/pkgconfig/libxfcegui4-1.0.pc
+@dirrm include/xfce4/libxfcegui4
+@unexec rmdir %D/include/xfce4 2>/dev/null || true
+@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
