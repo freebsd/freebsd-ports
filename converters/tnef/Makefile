@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tnef
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 CATEGORIES=	converters mail
 MASTER_SITES=	http://world.std.com/~damned/
 
