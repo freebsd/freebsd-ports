@@ -1,6 +1,6 @@
---- login.c.orig	Wed Jul  8 17:40:36 1998
-+++ login.c	Mon May  3 23:52:39 1999
-@@ -287,12 +287,13 @@
+--- login.c.orig	Wed May 12 20:19:26 1999
++++ login.c	Sun Jun  6 01:51:33 1999
+@@ -301,12 +301,13 @@
    strncpy(u.ut_user, user, sizeof(u.ut_user));
  #endif /* HAVE_NAME_IN_UTMP */
  #ifdef HAVE_HOST_IN_UTMP

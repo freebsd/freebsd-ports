@@ -1,6 +1,6 @@
---- Makefile.in.orig	Wed Jul  8 09:40:39 1998
-+++ Makefile.in	Wed Oct  7 19:11:37 1998
-@@ -294,14 +294,19 @@
+--- Makefile.in.orig	Wed May 12 20:19:31 1999
++++ Makefile.in	Sun Jun  6 01:22:50 1999
+@@ -301,14 +301,19 @@
  SHELL = /bin/sh
  
  GMPDIR 		= gmp-2.0.2-ssh-2
@@ -25,7 +25,7 @@
  RSAREFSRCDIR 	= $(RSAREFDIR)/source
  
  X_CFLAGS	= @X_CFLAGS@
-@@ -404,7 +409,7 @@
+@@ -411,7 +416,7 @@
  	$(CC) -o rfc-pg rfc-pg.o
  
  .c.o:
@@ -34,7 +34,7 @@
  
  sshd: $(SSHD_OBJS) $(GMPDEP) $(RSAREFDEP) $(ZLIBDEP)
  	-rm -f sshd
-@@ -447,19 +452,19 @@
+@@ -454,19 +459,19 @@
  	sed "s#&PERL&#$(PERL)#" <$(srcdir)/make-ssh-known-hosts.pl >make-ssh-known-hosts
  	chmod +x make-ssh-known-hosts
  
@@ -67,7 +67,7 @@
  
  $(RSAREFSRCDIR)/librsaref.a:
  	-if test '!' -d $(RSAREFDIR); then \
-@@ -516,7 +521,7 @@
+@@ -523,7 +528,7 @@
  # (otherwise it can only log in as the user it runs as, and must be
  # bound to a non-privileged port).  Also, password authentication may
  # not be available if non-root and using shadow passwords.
@@ -76,7 +76,7 @@
  	-rm -f $(install_prefix)$(bindir)/ssh1.old
  	-chmod 755 $(install_prefix)$(bindir)/ssh1
  	-chmod 755 $(install_prefix)$(bindir)/ssh
-@@ -672,15 +677,15 @@
+@@ -679,15 +684,15 @@
  
  clean:
  	-rm -f *.o gmon.out *core $(PROGRAMS) rfc-pg
@@ -96,7 +96,7 @@
  
  dist: dist-free
  
-@@ -709,12 +714,12 @@
+@@ -716,12 +721,12 @@
  	-mkdir $(DISTNAME)
  	cp $(DISTFILES) $(DISTNAME)
  	for i in $(DISTSRCS); do cp $(srcdir)/$$i $(DISTNAME); done
@@ -113,7 +113,7 @@
  
  #ifdef F_SECURE_COMMERCIAL
  #
-@@ -742,7 +747,7 @@
+@@ -749,7 +754,7 @@
  	 (echo "s/\.$$old_version\"/.$$new_version\"/g"; echo w; echo q) | ed $(srcdir)/version.h >/dev/null
  
  depend:
