@@ -144,6 +144,7 @@ post-install:
 	    < ${INSTDB.INS}.orig > ${INSTDB.INS}
 
 install-user:
-	${PREFIX}/office52/program/setup
+	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" ${LINUXBASE}/bin/sh -c \
+		${PREFIX}/office52/program/setup
 
 .include <bsd.port.post.mk>
