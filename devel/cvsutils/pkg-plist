@@ -1,7 +1,15 @@
 bin/cvschroot
 bin/cvsco
 bin/cvsdiff
+bin/cvsdo
 bin/cvsdiscard
 bin/cvspurge
 bin/cvsrmadm
 bin/cvsu
+share/doc/cvsutils/AUTHORS
+share/doc/cvsutils/ChangeLog
+share/doc/cvsutils/FAQ
+share/doc/cvsutils/NEWS
+share/doc/cvsutils/README
+share/doc/cvsutils/TODO
+@dirrm share/doc/cvsutils

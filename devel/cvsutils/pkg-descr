@@ -6,6 +6,7 @@ the working directory of a developer using CVS.
 cvsu:       cvs update offline
 cvsco:      cruel checkout
 cvsdiscard: discard local changes
+cvsdo:      simulates some of the CVS commands
 cvspurge:   make maintainer-clean
 cvsdiff:    cvs diff offline
 cvschroot:  change CVS/Root recursively
