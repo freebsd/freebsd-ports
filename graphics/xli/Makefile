@@ -19,8 +19,7 @@ LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_IMAKE=	yes
-MANN=		xli.n xlito.n
-MANCOMPRESSED=	no
+MAN1=		xli.1 xlito.1
 
 post-patch:
 	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/Imakefile
