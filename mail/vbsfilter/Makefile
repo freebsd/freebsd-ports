@@ -15,16 +15,22 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	dinoex@FreeBSD.org
 
+.if !defined(SENDMAIL_MILTER_IN_BASE)
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/sendmail
+.endif
 
 CTARGETS+=	vbsfilter-${PORTVERSION}
-CFLAGS+=	-Wall -I$(LOCALBASE)/include ${PTHREAD_CFLAGS:S=""==}
-FLAGS+=		${PTHREAD_LIBS}
+LIBS+=		${PTHREAD_LIBS}
+CFLAGS+=	-Wall ${PTHREAD_CFLAGS:S=""==}
+.if !defined(SENDMAIL_MILTER_IN_BASE)
+CFLAGS+=	-I$(LOCALBASE)/include
 LDFLAGS+=	-L$(LOCALBASE)/lib
+.endif
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/include/libmilter/mfdef.h)
+.if exists(${LOCALBASE}/include/libmilter/mfdef.h) \
+|| defined(SENDMAIL_MILTER_IN_BASE)
 LIBS+=		-lmilter -lsm -lsmutil
 .else
 LIBS+=		-lmilter -lsmutil
