@@ -3,7 +3,7 @@
 # Date created:		13 June 1996
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.7 1998/08/26 20:44:12 asami Exp $
+# $Id: Makefile,v 1.8 1998/10/09 10:05:55 asami Exp $
 #
 
 DISTNAME=	virtualpaper-1.4
@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.research.digital.com:80/SRC/virtualpaper/cgi-bin/nph-do
 DISTFILES=	sources.tar.Z
 
 MAINTAINER=	jdp@FreeBSD.org
+
+BROKEN_ELF=	depends on modula-3
 
 BUILD_DEPENDS=	m3build-6:${PORTSDIR}/lang/modula-3
 LIB_DEPENDS=	m3.6:${PORTSDIR}/lang/modula-3-lib
