@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mysql-python
 DISTNAME=	MySQL-python-${PORTVERSION}
 
-MAINTAINER=	sheepkiller@cultdeadsheep.org
+MAINTAINER=	clement@FreeBSD.org
 COMMENT=	Access a MySQL database through Python
 
 USE_PYTHON=		yes
