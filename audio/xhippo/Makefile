@@ -10,7 +10,7 @@ DISTNAME=	xhippo-2.0
 CATEGORIES=	audio
 MASTER_SITES=	http://zenchaos.netpedia.net/software/
 
-MAINTAINER=	ron@zort.on.ca
+MAINTAINER=	rod@zort.on.ca
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
