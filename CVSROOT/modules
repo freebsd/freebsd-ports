@@ -8172,6 +8172,7 @@ xeji		ports/games/xeji
 xemacs-additional-packages	ports/editors/xemacs-additional-packages
 xemacs-basic-mule-packages	ports/editors/xemacs-basic-mule-packages
 xemacs-comm-packages	ports/editors/xemacs-comm-packages
+xemacs		ports/editors/xemacs
 xemacs-devel	ports/editors/xemacs-devel
 xemacs-devel-mule	ports/editors/xemacs-devel-mule
 xemacs-games-packages	ports/editors/xemacs-games-packages
