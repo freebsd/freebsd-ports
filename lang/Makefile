@@ -61,6 +61,7 @@
     SUBDIR += lua
     SUBDIR += m3gdb
     SUBDIR += mawk
+    SUBDIR += mdk
     SUBDIR += mit-scheme
     SUBDIR += mixal
     SUBDIR += mmix

@@ -1,0 +1,9 @@
+bin/mixasm
+bin/mixvm
+@unexec install-info --delete %D/info/mdk.info %D/info/dir
+info/mdk.info
+info/mdk.info-1
+info/mdk.info-2
+info/mdk.info-3
+@exec install-info %D/info/mdk.info %D/info/dir
+@dirrm share/mdk
