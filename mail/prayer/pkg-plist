@@ -98,6 +98,7 @@ prayer/etc/welcome.html
 prayer/sbin/prayer
 prayer/sbin/prayer-session
 prayer/sbin/prayer-ssl-prune
+prayer/sbin/prayer-sem-prune
 prayer/sbin/prayer-cyclog
 @dirrm prayer/help/CVS
 @dirrm prayer/help/compose/CVS
