@@ -28,7 +28,13 @@ USE_SIZE=	yes
 ALL_TARGET=	target
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 post-install:
 	@${LN} -sf ${PORTNAME}-${PORTVERSION} ${PREFIX}/lib/erlang/lib/${PORTNAME}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
