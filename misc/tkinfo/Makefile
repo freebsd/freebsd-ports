@@ -3,7 +3,7 @@
 # Date created:         16 Jan 1995
 # Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id: Makefile,v 1.6 1995/11/26 10:48:40 asami Exp $
+# $Id: Makefile,v 1.7 1996/06/05 09:08:22 tg Exp $
 #
 
 DISTNAME=	tkinfo-0.6
@@ -12,6 +12,6 @@ MASTER_SITES=	ftp://ptolemy.eecs.berkeley.edu/pub/misc/
 
 MAINTAINER=	tg@freebsd.org
 
-RUN_DEPENDS=	wish:${PORTSDIR}/x11/tk
+RUN_DEPENDS=	wish4.1:${PORTSDIR}/x11/tk41
 
 .include <bsd.port.mk>
