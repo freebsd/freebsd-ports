@@ -24,7 +24,7 @@ USE_REINPLACE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == i386
-BUILD_DEPENDS=	nasm:${PORTVERSION}/devel/nasm
+BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 .endif
 
 post-patch:
