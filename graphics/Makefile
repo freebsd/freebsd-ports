@@ -68,6 +68,7 @@
     SUBDIR += flasm
     SUBDIR += fli2gif
     SUBDIR += flip
+    SUBDIR += flphoto
     SUBDIR += fly
     SUBDIR += fnlib
     SUBDIR += fractorama
