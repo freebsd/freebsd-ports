@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	proftpd
-PORTVERSION=	1.2.4
-PORTREVISION=	1
+PORTVERSION=	1.2.5
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.net/distrib/source/ \
 		ftp://ftp.stikman.com/pub/proftpd/source/ \
 		ftp://ftp.dataguard.no/pub/proftpd/distrib/source/ \
 		ftp://ftp.club-internet.fr/pub/mirrors/ftp.proftpd.org/distrib/source/
+DISTNAME=	${PORTNAME}-1.2.5
 
 MAINTAINER=	mharo@FreeBSD.org
 
@@ -78,6 +78,10 @@ pre-configure:
 	@${ECHO_MSG} "==> Configuring with ${MODULES}"
 
 post-configure:
+	@${MV} ${WRKSRC}/Make.rules ${WRKSRC}/Make.rules.pre_sed
+	@${SED}	-e 's: -lnsl::' \
+		< ${WRKSRC}/Make.rules.pre_sed > ${WRKSRC}/Make.rules
+
 	@${MV} ${WRKSRC}/src/proftpd.8 ${WRKSRC}/src/proftpd.8.pre_sed
 	@${SED}	-e 's:/etc:${PREFIX}/etc:' \
 		-e 's:/usr/sbin/proftpd:${PREFIX}/libexec/proftpd:' \
@@ -114,7 +118,7 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/proftpd
 	@${INSTALL_DATA} ${WRKSRC}/doc/Configuration.html ${PREFIX}/share/doc/proftpd
-	@${INSTALL_DATA} ${WRKSRC}/doc/FAQ-config.html ${PREFIX}/share/doc/proftpd
+	@${INSTALL_DATA} ${WRKSRC}/doc/faq.html ${PREFIX}/share/doc/proftpd
 .endif
 
 .if !defined(WITHOUT_PAM)

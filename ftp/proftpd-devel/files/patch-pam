@@ -17,17 +17,17 @@
  
  Linux:
  To use PAM with ProFTPD, you must edit /etc/pam.d/ftp and add the
---- ./doc/Configuration.html.orig	Mon Jan 21 16:28:02 2002
-+++ ./doc/Configuration.html	Mon Jan 21 16:28:13 2002
-@@ -712,7 +712,7 @@
- <hr>
- <h2><a name="AuthPAMConfig">AuthPAMConfig</a></h2>
- <p><strong>Syntax:</strong> AuthPAMConfig <em>service</em><br>
--  <strong>Default:</strong> ftp<br>
-+  <strong>Default:</strong> ftpd<br>
-   <strong>Context:</strong> server config,&lt;VirtualHost&gt;, &lt;Global&gt;<br>
-   <STRONG>Module:</STRONG> mod_pam<BR>
-   <strong>Compatibility:</strong> 1.2.0rc1 and later</p>
+--- doc/Configuration.html.orig	Wed May 22 10:08:15 2002
++++ doc/Configuration.html	Sat Jun  1 10:30:54 2002
+@@ -3806,7 +3806,7 @@
+ ></DT
+ ><DD
+ ><P
+->ftp</P
++>ftpd</P
+ ></DD
+ ><DT
+ ><PRE
 --- ./modules/mod_pam.c.orig	Mon Jan 21 16:28:51 2002
 +++ ./modules/mod_pam.c	Mon Jan 21 16:29:03 2002
 @@ -48,7 +48,7 @@
