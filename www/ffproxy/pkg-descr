@@ -1,0 +1,9 @@
+ffproxy is a filtering HTTP proxy server. It is able to filter
+by host, URL, and header. Custom header entries can be filtered
+and added. It can even drop its privileges and optionally
+chroot() to some directory. Logging to syslog() is supported,
+as is using another auxiliary proxy server. Contacting IPv6
+servers is supported and allows transparent IPv6 over IPv4
+browsing.
+
+WWW: http://faith.eu.org/programs.html#ffproxy
