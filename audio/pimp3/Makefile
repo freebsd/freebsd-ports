@@ -12,10 +12,8 @@ MASTER_SITES=	http://unixpages.org/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 
-RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
-
-BROKEN=		Requires gdbm support which is not built\
-		by default by python
+RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
+		${PYTHON_SITELIBDIR}/gdbm.so:${PORTSDIR}/databases/py-gdbm
 
 WRKSRC=		${WRKDIR}/pimp3
 
