@@ -1,0 +1,19 @@
+--- apr-util-0.9.1/configure.in.orig	Tue Sep 10 06:10:50 2002
++++ apr-util-0.9.1/configure.in	Thu Dec 19 23:36:48 2002
+@@ -6,13 +6,13 @@
+ AC_INIT(export_vars.sh.in)
+ 
+ AC_CONFIG_HEADER(include/private/apu_config.h)
+-AC_CONFIG_AUX_DIR(../apr/build)
++AC_CONFIG_AUX_DIR(../apr-0.9.1/build)
+ 
+ sinclude(build/apu-conf.m4)
+ sinclude(build/apu-iconv.m4)
+ sinclude(build/apu-hints.m4)
+-sinclude(../apr/build/apr_common.m4)
+-sinclude(../apr/build/find_apr.m4)
++sinclude(../apr-0.9.1/build/apr_common.m4)
++sinclude(../apr-0.9.1/build/find_apr.m4)
+ 
+ dnl Generate ./config.nice for reproducing runs of configure
+ dnl 
