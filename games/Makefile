@@ -66,6 +66,7 @@
     SUBDIR += gnocatan
     SUBDIR += gnomechess
     SUBDIR += gnomegames
+    SUBDIR += gnomememoryblocks
     SUBDIR += gnuchess
     SUBDIR += gnugo
     SUBDIR += gnushogi
