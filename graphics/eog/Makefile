@@ -6,15 +6,12 @@
 #
 
 PORTNAME=	eog
-PORTVERSION=	0.5
-PORTREVISION=	1
+PORTVERSION=	0.6
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/eog
 
 MAINTAINER=	ade@FreeBSD.org
-
-BROKEN=		"Fails with new devel/bonobo"
 
 LIB_DEPENDS=	glade.4:${PORTSDIR}/devel/libglade \
 		bonobo.2:${PORTSDIR}/devel/bonobo \
