@@ -5,7 +5,7 @@
             (void*)0);
  # else
 -    select(pipe_id + 1, &readfds, &writefds, &exceptfds, (void*)0);
-+    select(pipe_id + 1, &readfds, &writefds, &exceptfds, (timeval*)0);
++    select(pipe_id + 1, &readfds, &writefds, &exceptfds, (struct timeval*)0);
  # endif
  
    if(FD_ISSET(0, &readfds))
