@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	tex-texmflocal
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	print
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -25,16 +25,17 @@ TEXMFLOCAL=	share/texmf-local
 TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 
-DIRS=	bibtex bibtex/bib bibtex/bst
-DIRS+=	dvipdfm dvips
-DIRS+=	fonts fonts/afm fonts/ofm fonts/ovp fonts/ovf
-DIRS+=	fonts/ocp fonts/pk fonts/tfm fonts/type1
-DIRS+=	fonts/source fonts/source/public fonts/vf
-DIRS+=	metafont metapost
-DIRS+=	jbibtex jbibtex/bib jbibtex/bst
-DIRS+=	tex tex/generic tex/jadetex tex/latex tex/plain
-DIRS+=	pdftex pdftex/latex pdftex/platex
-DIRS+=	ptex ptex/plain ptex/platex
+DIRS=	bibtex bibtex/bib bibtex/bst \
+	dvipdfm dvips \
+	fonts fonts/afm fonts/ofm fonts/ovp fonts/ovf \
+	fonts/ocp fonts/pk fonts/tfm fonts/type1 \
+	fonts/source fonts/source/public fonts/vf \
+	metafont metapost \
+	jbibtex jbibtex/bib jbibtex/bst \
+	tex tex/generic tex/jadetex tex/latex tex/plain \
+	pdftex pdftex/latex pdftex/platex \
+	ptex ptex/plain ptex/platex \
+	web2c
 
 do-install:
 	${MKDIR} ${DIRS:S,^,${PREFIX}/${TEXMFLOCAL}/,}
