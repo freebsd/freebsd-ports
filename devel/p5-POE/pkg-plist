@@ -20,6 +20,7 @@ lib/perl5/site_perl/%%PERL_VER%%/POE/Kernel/Gtk.pm
 lib/perl5/site_perl/%%PERL_VER%%/POE/Kernel/Select.pm
 lib/perl5/site_perl/%%PERL_VER%%/POE/Kernel/Tk.pm
 lib/perl5/site_perl/%%PERL_VER%%/POE/NFA.pm
+lib/perl5/site_perl/%%PERL_VER%%/POE/Pipe.pm
 lib/perl5/site_perl/%%PERL_VER%%/POE/Pipe/OneWay.pm
 lib/perl5/site_perl/%%PERL_VER%%/POE/Pipe/TwoWay.pm
 lib/perl5/site_perl/%%PERL_VER%%/POE/Preprocessor.pm
