@@ -568,6 +568,48 @@ do_fetch()
   done
 }
 
+###
+# do_list_sites lists {MASTER,PATCH}_SITES
+###
+
+do_list_sites()
+{
+  [ $# -eq 2 ] || return 1
+
+  local select
+
+  case "$1" in
+  MASTER)
+    files="$DISTFILES";;
+  PATCH)
+    files="$PATCHFILES";;
+  *)
+    return 1;;
+  esac
+
+  if [ -n "$2" ]; then
+    select="$2"
+  else
+    select=`echo "$files" | $TR -s ' \t' '\n' | $AWK '
+      /.+:/ {
+        sub(/.+:/, "")
+        g=split($0, a, /,/)
+        for (i in a)
+          group[a[i]]=1
+        next
+      }
+      { group["DEFAULT"]=1 }
+      END {
+        for (g in group)
+          print g
+      }'`
+  fi
+
+  SORTED_MASTER_SITES_TMP=`get_master_sites_sorted "$1" "$select"`
+  echo $_MASTER_SITE_OVERRIDE \
+      $SORTED_MASTER_SITES_TMP $_MASTER_SITE_BACKUP
+}
+
 ### missing size ###
 
 ###
@@ -991,6 +1033,8 @@ do_migratesum2()
 # main
 ###
 
+opt_list_master=false
+opt_list_patch=false
 opt_fetch_list=false
 opt_makesum=false
 opt_migratesum=false
@@ -999,8 +1043,12 @@ opt_fetch=false
 opt_fetch_all=false
 opt_missing_size=false
 
-while getopts "LmMNfFS" opt; do
+while getopts "LmMNfFSt:T:" opt; do
   case "$opt" in
+  t) list_master="${OPTARG}";
+    opt_list_master=true;;
+  T) list_patch="${OPTARG}";
+    opt_list_patch=true;;
   L) opt_fetch_list=true;;
   m) opt_makesum=true;;
   M) opt_migratesum=true;;
@@ -1013,6 +1061,12 @@ while getopts "LmMNfFS" opt; do
 done
 
 shift $(($OPTIND-1))
+
+$opt_list_master &&
+  { do_list_sites "MASTER" "$list-master" || exit 1; }
+
+$opt_list_patch &&
+  { do_list_sites "PATCH" "$list_patch" || exit 1; }
 
 $opt_fetch_list &&
   { do_fetch_list || exit 1; }
