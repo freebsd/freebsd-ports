@@ -1,0 +1,10 @@
+bin/ldapdiff
+etc/ldapdiff.conf.sample
+share/ldapdiff/plugins/ldapskeleton.c
+%%PORTDOCS%%share/doc/ldapdiff/CHANGES
+%%PORTDOCS%%share/doc/ldapdiff/ChangeLog
+%%PORTDOCS%%share/doc/ldapdiff/README
+%%PORTDOCS%%share/doc/ldapdiff/TODO
+%%PORTDOCS%%@dirrm share/doc/ldapdiff
+@dirrm share/ldapdiff/plugins
+@dirrm share/ldapdiff

@@ -222,6 +222,7 @@
     SUBDIR += kxicq2
     SUBDIR += lam
     SUBDIR += lambdamoo
+    SUBDIR += ldapdiff
     SUBDIR += ldapsdk
     SUBDIR += libdnet
     SUBDIR += libfreenet

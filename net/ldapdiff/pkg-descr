@@ -1,0 +1,14 @@
+ldapdiff combines "diff" and "patch" functionality in one application.
+The difference is that ldapdiff is not designed for use on flat ascii
+files, it is designed for "patching" ldap directories using ldif files.
+
+With ldapdiff it is possible to check every entry/attribute of an ldif
+file against a running ldap directory. ldapdiff is able to produce ldif
+delta files in ldap version 3 format, which can be fed, into tools like
+"ldapmodify", "ldapdelete" etc. ldapdiff is also able to modify, delete
+and add entries/attributes online.
+
+WWW: http://webtomware.rhoen.de/
+
+- Christian Brueffer
+chris@unixpages.org
