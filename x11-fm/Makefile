@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
 
+    SUBDIR += apotheke
     SUBDIR += asfiles
     SUBDIR += binder
     SUBDIR += cfm
