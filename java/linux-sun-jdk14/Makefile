@@ -7,7 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${INSTALL_JDK_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java devel
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-sun-
@@ -71,6 +71,11 @@ do-install:
 	    ${RM} -f ${APP_HOME}/`dirname $$i`/`basename $$i .jar`.pack; \
 	  fi \
 	done
+
+post-install:
 	${LOCALBASE}/bin/registervm "${APP_HOME}/bin/java # Linux-Sun-JDK${PORTVERSION}"
+	${SED} -e "s:%%JRE_HOME%%:${APP_HOME}/jre:g" \
+	  < ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
+	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>

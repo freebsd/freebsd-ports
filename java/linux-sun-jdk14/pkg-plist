@@ -883,6 +883,8 @@
 %%T%%/include/jvmpi.h
 %%T%%/include/linux/jawt_md.h
 %%T%%/include/linux/jni_md.h
+%%T%%/jre/.systemPrefs/.system.lock
+%%T%%/jre/.systemPrefs/.systemRootModFile
 %%T%%/jre/CHANGES
 %%T%%/jre/COPYRIGHT
 %%T%%/jre/ControlPanel.html
@@ -1589,6 +1591,7 @@
 @dirrm %%T%%/jre/javaws/resources
 @dirrm %%T%%/jre/javaws
 @dirrm %%T%%/jre/bin
+@dirrm %%T%%/jre/.systemPrefs
 @dirrm %%T%%/jre
 @dirrm %%T%%/include/linux
 @dirrm %%T%%/include
