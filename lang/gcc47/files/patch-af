@@ -1,15 +1,17 @@
 --- gcc/config/i386/freebsd.h.orig	Thu Jun 17 05:33:32 1999
-+++ gcc/config/i386/freebsd.h	Thu Jun 24 11:16:34 1999
-@@ -137,6 +137,8 @@
++++ gcc/config/i386/freebsd.h	Mon Jun 28 03:14:19 1999
+@@ -135,6 +135,10 @@
+  : ((n) >= FIRST_STACK_REG && (n) <= LAST_STACK_REG) ? (n)+3 \
+  : (-1))
  
- /* Tell final.c that we don't need a label passed to mcount.  */
- 
++/* Don't use EGCS's normal profiling code -- we have our own fine-grained
++   basic block profiling.  */
 +#define NO_PROFILE_DATA
 +
+ /* Tell final.c that we don't need a label passed to mcount.  */
+ 
  #undef FUNCTION_PROFILER
- #define FUNCTION_PROFILER(FILE, LABELNO)  \
- {									\
-@@ -162,10 +164,30 @@
+@@ -162,22 +166,36 @@
  #define WCHAR_TYPE_SIZE BITS_PER_WORD
      
  #undef CPP_PREDEFINES
@@ -36,13 +38,28 @@
 +#define CC1_SPEC "\
 +  %{gline:%{!g:%{!g0:%{!g1:%{!g2: -g1}}}}} \
 +  %{maout: %{!mno-underscores: %{!munderscores: -munderscores }}}"
-+
+ 
+-/* This defines which switch letters take arguments.  On FreeBSD, most of
+-   the normal cases (defined in gcc.c) apply, and we also have -h* and
+-   -z* options (for the linker) (comming from svr4).
+-   We also have -R (alias --rpath), no -z, --soname (-h), --assert etc. */
 +#undef  ASM_SPEC
 +#define ASM_SPEC	"%{v*: -v} %{maout: %{fpic:-k} %{fPIC:-k}}"
  
- /* This defines which switch letters take arguments.  On FreeBSD, most of
-    the normal cases (defined in gcc.c) apply, and we also have -h* and
-@@ -186,11 +208,11 @@
+ #undef SWITCH_TAKES_ARG
+-#define SWITCH_TAKES_ARG(CHAR) \
+-  (DEFAULT_SWITCH_TAKES_ARG (CHAR) \
+-   || (CHAR) == 'h' \
+-   || (CHAR) == 'z' \
+-   || (CHAR) == 'R')
++#define SWITCH_TAKES_ARG(CHAR) (FBSD_SWITCH_TAKES_ARG(CHAR))
++
++#undef WORD_SWITCH_TAKES_ARG
++#define WORD_SWITCH_TAKES_ARG(STR) (FBSD_WORD_SWITCH_TAKES_ARG(STR))
+ 
+ /* Provide a STARTFILE_SPEC appropriate for FreeBSD.  Here we add
+    the magical crtbegin.o file (see crtstuff.c) which provides part 
+@@ -186,11 +204,11 @@
     
  #undef	STARTFILE_SPEC
  #define STARTFILE_SPEC \
@@ -59,7 +76,7 @@
  
  /* Provide a ENDFILE_SPEC appropriate for FreeBSD.  Here we tack on
     the magical crtend.o file (see crtstuff.c) which provides part of 
-@@ -200,7 +222,7 @@
+@@ -200,7 +218,7 @@
  
  #undef	ENDFILE_SPEC
  #define ENDFILE_SPEC \
