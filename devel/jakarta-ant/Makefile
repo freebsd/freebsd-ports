@@ -7,7 +7,7 @@
 
 PORTNAME=	jakarta-ant
 PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel java
 MASTER_SITES=	http://jakarta.apache.org/builds/${PORTNAME}/release/v${PORTVERSION}/bin/ \
 		http://www.metaverse.nl/~ernst/
@@ -23,8 +23,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/java/classes/crimson.jar:${PORTSDIR}/textproc/cr
 USE_JAVA=	1.2+
 
 NO_BUILD=	YES
-ANT_SUBDIR=	${DISTNAME}
-PORTDESTDIR=	${PREFIX}/share/java/${ANT_SUBDIR}
+PORTDESTDIR=	${PREFIX}/share/java/${DISTNAME}
 PLIST_SUB+=	T=${PORTDESTDIR:S/^${PREFIX}\///}
 
 READMES=	LICENSE README WHATSNEW
@@ -76,8 +75,8 @@ do-install:
 
 	@${ECHO_CMD} -n ">> Installing additional JAR files..."
 	@${INSTALL_DATA} ${_DISTDIR}/${DISTNAME}-optional.jar ${PORTDESTDIR}/lib/optional.jar
-	@${LN} -sf ${LOCALBASE}/share/java/classes/jaxp.jar ${PORTDESTDIR}/lib
-	@${LN} -sf ${LOCALBASE}/share/java/classes/crimson.jar ${PORTDESTDIR}/lib
+	@${LN} -sf ../../classes/jaxp.jar ${PORTDESTDIR}/lib
+	@${LN} -sf ../../classes/crimson.jar ${PORTDESTDIR}/lib
 	@${ECHO_CMD} " [ DONE ]"
 
 .include <bsd.port.mk>
