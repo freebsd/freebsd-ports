@@ -1,6 +1,7 @@
-# $Id: Makefile,v 1.27 1997/06/02 19:55:11 jfitz Exp $
+# $Id: Makefile,v 1.28 1997/06/27 23:02:54 brian Exp $
 #
 
+    SUBDIR += aub
     SUBDIR += cnews
     SUBDIR += diablo
     SUBDIR += dnews
