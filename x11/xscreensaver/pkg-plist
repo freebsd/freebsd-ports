@@ -10,7 +10,6 @@ bin/fadeplot
 bin/flag
 bin/flame
 bin/forest
-bin/fract
 bin/galaxy
 bin/goop
 bin/grav
@@ -60,7 +59,6 @@ man/man1/drift.1.gz
 man/man1/flag.1.gz
 man/man1/flame.1.gz
 man/man1/forest.1.gz
-man/man1/fract.1.gz
 man/man1/galaxy.1.gz
 man/man1/goop.1.gz
 man/man1/grav.1.gz
