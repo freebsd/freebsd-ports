@@ -33,7 +33,7 @@ MAN3=	ResourcePool.3 \
 	ResourcePool::UML.3
 
 post-install:
-	@${CAT} pkg-message
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>
 
