@@ -10,7 +10,7 @@ PORTNAME=	af-aspell
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Aspell with Afrikaans dictionary
 
-MASTERDIR=	${PORTSDIR}/textproc/aspell
+MASTERDIR=	${.CURDIR}/../aspell
 
 ASPELL_AF=	ja
 
