@@ -1,5 +1,5 @@
 # ports collection makefile for:	MySQL-client
-# Date created:				Thu Jun 24 00:12:22 CEST 1999
+# Date created:				Sun Sep 24 21:21:20 CEST 2000
 # Whom:					Dirk Froemberg <dirk@FreeBSD.org>
 #
 # $FreeBSD$
@@ -7,7 +7,7 @@
 
 PORTNAME=	${MASTERPORTNAME:S/-server/-client/g}
 
-MASTERDIR=	${.CURDIR}/../mysql322-server
+MASTERDIR=	${.CURDIR}/../mysql323-server
 COMMENT=	${PKGDIR}/pkg-comment.client
 PKGINSTALL=	mustnotexist
 PLIST=		${PKGDIR}/pkg-plist.client

@@ -1,24 +1,25 @@
 # ports collection makefile for:	MySQL-server
-# Date created:				26 Jan 1998
-# Whom:					Josh Tiefenbach <josh@ican.net>
+# Date created:				Sun Sep 24 21:20:46 CEST 2000
+# Whom:					Dirk Froemberg <dirk@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME?=	${MASTERPORTNAME}
-PORTVERSION=	3.22.32
+PORTVERSION=	3.23.24
 CATEGORIES=	databases
-MASTER_SITES=	http://www.fh-wolfenbuettel.de/ftp/pub/database/mysql/Downloads/MySQL-3.22/ \
-		ftp://ftp.digex.net/pub/packages/database/mysql/Downloads/MySQL-3.22/ \
-		ftp://ftp.plig.net/pub/mysql/Downloads/MySQL-3.22/ \
-		ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/MySQL-3.22/
-DISTNAME=	mysql-${PORTVERSION}
+MASTER_SITES=	http://download.sourceforge.net/mysql/ \
+		http://www.fh-wolfenbuettel.de/ftp/pub/database/mysql/Downloads/MySQL-3.23/ \
+		ftp://ftp.digex.net/pub/packages/database/mysql/Downloads/MySQL-3.23/ \
+		ftp://ftp.plig.net/pub/mysql/Downloads/MySQL-3.23/ \
+		ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/MySQL-3.23/
+DISTNAME=	mysql-${PORTVERSION}-beta
 
 MAINTAINER=	dirk@FreeBSD.org
 
 Y2K=		http://www.mysql.com/documentation/mysql/bychapter/manual_Introduction.html#Year_2000_compliance
 
-SLAVEDIRS=	databases/mysql322-client
+SLAVEDIRS=	databases/mysql323-client
 MASTERPORTNAME=	mysql-server
 DB_DIR?=	/var/db/mysql
 USE_PERL5=	yes
@@ -27,7 +28,8 @@ CONFIGURE_ARGS=	--localstatedir=${DB_DIR} \
 		--without-perl \
 		--without-debug \
 		--without-readline \
-		--without-bench
+		--without-bench \
+		--with-mit-threads=no
 .if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS+=--enable-assembler
 .endif
@@ -38,62 +40,9 @@ CONFIGURE_ENV+=	PERL=${PERL} \
 
 # MySQL-Server part
 .if !defined(CLIENT_ONLY)
-RUN_DEPENDS=	mysql:${PORTSDIR}/databases/mysql322-client
+RUN_DEPENDS=	mysql:${PORTSDIR}/databases/mysql323-client
 
-PLIST_SUB=	MYSQL_VERSION=${PORTVERSION}
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 320000
-.if defined(MIT_PTHREADS)
-CONFIGURE_ARGS+=	--with-mit-threads=yes
-
-pre-fetch:
-	@${ECHO}
-	@${ECHO} "Using supplied mit-pthreads."
-	@${ECHO}
-.else
-CONFIGURE_ARGS+=	--with-mit-threads=no
-
-pre-fetch:
-	@${ECHO}
-	@${ECHO} "Using native FreeBSD threads (libc_r)."
-	@${ECHO}
-	@${ECHO} "You may set MIT_PTHREADS (make MIT_PTHREADS=yes)"
-	@${ECHO} "to compile mysql with the supplied mit-pthreads."
-	@${ECHO} "(You don't want to set this unless you have a good reason)."
-	@${ECHO}
-.endif
-.elif ${OSVERSION} >= 300000
-.if defined(NATIVE_THREADS)
-CONFIGURE_ARGS+=	--with-mit-threads=no
-
-pre-fetch:
-	@${ECHO}
-	@${ECHO} "Using native FreeBSD threads (libc_r)."
-	@${ECHO}
-.else
-CONFIGURE_ARGS+=	--with-mit-threads=yes
-
-pre-fetch:
-	@${ECHO}
-	@${ECHO} "Using supplied mit-pthreads."
-	@${ECHO}
-	@${ECHO} "You may set NATIVE_THREADS (make NATIVE_THREADS=yes)"
-	@${ECHO} "to compile mysql with the native FreeBSD threads (libc_r)."
-	@${ECHO} "Warning: There are some bugs in libc_r which prevent"
-	@${ECHO} "         'mysqladmin shutdown' from working properly and"
-	@${ECHO} "         killing mysqld might not work."
-	@${ECHO}
-.endif
-.else
-CONFIGURE_ARGS+=	--with-mit-threads=yes
-
-pre-fetch:
-	@${ECHO}
-	@${ECHO} "Using supplied mit-pthreads."
-	@${ECHO}
-.endif
+PLIST_SUB=	MYSQL_VERSION=${PORTVERSION}-beta
 
 post-patch:
 	${MV} ${WRKSRC}/strings/strings-x86.s ${WRKSRC}/strings/strings-x86.S
@@ -126,16 +75,14 @@ post-install:
 	@${CHMOD} 750 ${PREFIX}/etc/rc.d/mysql-server.sh
 
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/mysql/Img
+	${MKDIR} ${PREFIX}/share/doc/mysql/Flags
 .for doc in manual.html manual.ps manual_toc.html manual.txt manual.texi include.texi
 	${INSTALL_DATA} ${WRKSRC}/Docs/${doc} ${PREFIX}/share/doc/mysql
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/Docs/Img/*.gif ${PREFIX}/share/doc/mysql/Img
+	${INSTALL_DATA} ${WRKSRC}/Docs/Flags/*.gif ${PREFIX}/share/doc/mysql/Flags
 	${INSTALL_DATA} ${WRKSRC}/Docs/mysql.info ${PREFIX}/info
 	@install-info ${PREFIX}/info/mysql.info ${PREFIX}/info/dir
 .endif
-
-.include <bsd.port.post.mk>
 
 # MySQL-Client part
 .else
@@ -152,6 +99,6 @@ post-install:
 	@${ECHO} "" >> ${PREFIX}/etc/rc.d/mysql-client.sh
 	@${ECHO} "${LDCONFIG} -m ${PREFIX}/lib/mysql" >> ${PREFIX}/etc/rc.d/mysql-client.sh
 	@${CHMOD} 750 ${PREFIX}/etc/rc.d/mysql-client.sh
+.endif
 
 .include <bsd.port.mk>
-.endif
