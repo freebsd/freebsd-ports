@@ -7,9 +7,10 @@
 
 PORTNAME=	spin
 PORTVERSION=	4.0.7
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://spinroot.com/spin/Src/
-DISTFILES=	spin${PORTVERSION:S/.//g}.tar.gz html.tar.gz
+DISTFILES=	spin${PORTVERSION:S/.//g}.tar.gz
 
 MAINTAINER=	jhanna@shaw.ca
 COMMENT=	An on-the-fly verification system for asynchronous concurrent systems
@@ -51,11 +52,9 @@ do-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}/Doc
 	${MKDIR} ${DOCSDIR}/Examples
-	${MKDIR} ${DOCSDIR}/HTML
 	${MKDIR} ${DOCSDIR}/Test
 	${INSTALL_DATA} ${WRKDIR}/Doc/* ${DOCSDIR}/Doc
 	${INSTALL_DATA} ${WRKDIR}/Test/ex.* ${DOCSDIR}/Examples
-	${INSTALL_DATA} ${WRKDIR}/HTML/* ${DOCSDIR}/HTML
 .for i in README.tests abp eratosthenes hello leader leader.ltl leader2 \
 	loops mobile1 mobile1.ltl mobile2 mobile2.ltl pathfinder peterson petersonN pftp priorities snoopy sort wordcount
 	${INSTALL_DATA} ${WRKDIR}/Test/$i ${DOCSDIR}/Test
