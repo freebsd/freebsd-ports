@@ -32,11 +32,15 @@ do-install:
 	@for i in ${MAN1}; do \
 		${INSTALL_MAN} ${WRKSRC}/docs/$$i ${PREFIX}/man/man1; \
 	done
-	@${MKDIR} ${PREFIX}/share/examples/golded+
-	@(cd ${WRKSRC}/cfgs && ${TAR} cf - --exclude CVS * | \
-	  ${TAR} xf - -C ${PREFIX}/share/examples/golded+)
-	@${MKDIR} ${PREFIX}/share/doc/golded+
-	@${INSTALL_DATA} ${WRKSRC}/manuals/gold_ref.txt ${PREFIX}/share/doc/golded+
-	@${INSTALL_DATA} ${WRKSRC}/manuals/gold_usr.txt ${PREFIX}/share/doc/golded+
+	@${MKDIR} ${EXAMPLESDIR}
+	@for i in charset colorset config template; do \
+		${MKDIR} ${EXAMPLESDIR}/$$i; \
+		${FIND} ${WRKSRC}/cfgs/$$i -maxdepth 1 -type f | ${XARGS} -n 1 -J @ ${INSTALL_DATA} @ ${EXAMPLESDIR}/$$i; \
+	done
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/manuals/gold_ref.txt ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/manuals/gold_usr.txt ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
