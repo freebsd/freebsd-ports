@@ -3,7 +3,6 @@ bin/check-sources
 bin/dictionary
 bin/getaddrs
 bin/inverted_file
-bin/makedb
 bin/mkfmt
 bin/server_stats
 bin/stats.awk
@@ -26,8 +25,8 @@ include/freeWAIS-sf/wais.h
 lib/freeWAIS-sf/emacs/lisp/wais.el
 lib/freeWAIS-sf/libwais.a
 share/doc/SF/fwsf.ps
-@dirrm include/freeWAIS-sf
+@dirrm share/doc/SF
 @dirrm lib/freeWAIS-sf/emacs/lisp
 @dirrm lib/freeWAIS-sf/emacs
 @dirrm lib/freeWAIS-sf
-@dirrm share/doc/SF
+@dirrm include/freeWAIS-sf

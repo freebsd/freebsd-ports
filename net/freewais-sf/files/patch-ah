@@ -1,0 +1,29 @@
+--- lib/ir/grundform.c.orig    Sat Jul 22 06:56:48 2000
++++ lib/ir/grundform.c Sat Jul 22 07:44:53 2000
+@@ -9,7 +9,7 @@
+  * Update Count    : 50
+  * Status          : Unknown, Use with caution!
+  * 
+- * (C) Copyright 1996, Universität Dortmund, all rights reserved.
++ * (C) Copyright 1996, UniversitçÕ Dortmund, all rights reserved.
+  * 
+  */
+ #include "../config.h"
+@@ -169,7 +169,7 @@
+ {
+   if (!my_perl_inited)   init_perl(NULL);
+   if (!my_module_loaded) {
+-    require_pv("Text/German.pm");
++    perl_require_pv("Text/German.pm");
+     my_module_loaded = 1;
+   }
+   return(call_reduce("Text::German::cache_reduce", word));
+@@ -181,7 +181,7 @@
+ {
+   if (!my_perl_inited)   init_perl(NULL);
+   if (!my_module_loaded) {
+-    require_pv("Text/German.pm");
++    perl_require_pv("Text/German.pm");
+     my_module_loaded = 1;
+   }
+   return (call_reduce("Text::German::stem", word));

@@ -6,30 +6,26 @@
 #
 
 PORTNAME=	freewais-sf
-PORTVERSION=	2.2.13
+PORTVERSION=	2.2.14
 CATEGORIES=	net databases
 MASTER_SITES=	ftp://ls6-ftp.cs.uni-dortmund.de/pub/src/freeWAIS-sf/
-DISTNAME=	freeWAIS-sf-2.2.13
+DISTNAME=	freeWAIS-sf-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
-CONFIGURE_ARGS=	< ${WRKDIR}/configure.ans
+CONFIGURE_ENV=	PREFIX="${PREFIX}" CC="${CC}" CFLAGS="${CFLAGS}"
+CONFIGURE_ARGS=	-sde -Dprefix="${PREFIX}" \
+		-Darchname="${MACHINE_ARCH}-freebsd"
 INSTALL_TARGET=	install install.man
 
-MAN1=	catalog.1 dictionary.1 inverted_file.1 makedb.1 mkfmt.1 waisindex.1 \
+MAN1=	catalog.1 dictionary.1 inverted_file.1 mkfmt.1 waisindex.1 \
 	waisq.1 waissearch.1 waisserver.1 xwais.1 xwaisq.1
 MAN3=	ftw.3 regexp.3 scandir.3
 
-pre-configure:
-	@${SED} -e "s:%%CC%%:${CC}:g" \
-	        -e "s:%%CFLAGS%%:${CFLAGS}:g" \
-		${FILESDIR}/configure.ans.skel > ${WRKDIR}/configure.ans
-
-post-configure:
-	@find ${WRKSRC} -type f | \
-		xargs ${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g"
+post-extract:
+	${CP} ${FILESDIR}/freebsd.sh ${WRKSRC}/hints
 
 post-install:
 .if !defined(NOPORTDOCS)
