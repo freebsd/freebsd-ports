@@ -107,6 +107,7 @@
     SUBDIR += p5-DBIx-DataSource
     SUBDIR += p5-DBIx-Password
     SUBDIR += p5-DBIx-Recordset
+    SUBDIR += p5-DBIx-SQLEngine
     SUBDIR += p5-DBIx-SearchBuilder
     SUBDIR += p5-DBIx-Table
     SUBDIR += p5-DBIx-Tree

@@ -1,0 +1,7 @@
+The DBIx::SQLEngine class provides an extended interface for DBI
+database handles, adding methods that support ad-hoc SQL generation and
+query execution in a single call.
+
+WWW: http://search.cpan.org/search?dist=DBIx-SQLEngine
+
+Hansjoerg Pehofer <hansjoerg.pehofer@uibk.ac.at>
