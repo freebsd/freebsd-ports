@@ -3,6 +3,7 @@
 
     SUBDIR += abacus
     SUBDIR += aspostit
+    SUBDIR += bigyear
     SUBDIR += bitnotes
     SUBDIR += bulb
     SUBDIR += cal
