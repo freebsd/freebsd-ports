@@ -1,0 +1,41 @@
+#!/bin/sh
+
+installdir=${PREFIX}/JDE/Binder; export installdir
+
+case ${LANGUAGE} in
+    Japanese)
+	for f in bin/Binder.app bin/Processes.app misc/Mounter/Mounter.app; do
+	    ${PERL} -pi -e '
+		s/^(exec[ \t]+)wishstep[^ \t]*([ \t]+.*)$/$1wishstep$ENV{VERSION}jp$2/
+		' ${installdir}/${f}
+	done
+    ;;
+    *)
+    ;;
+esac
+for f in Binder Binder.app Processes.app Mounter.app shortcut; do
+    case ${f} in
+	Binder.app|Processes.app)
+	    target=${installdir}/bin/${f}
+	;;
+	Mounter.app)
+	    target=${installdir}/misc/Mounter/${f}
+	;;
+	Binder)
+	    target=${installdir}/defaults/${f}
+	;;
+	shortcut)
+	    target=${installdir}/lib/${f}
+	;;
+    esac
+    ${PERL} -pi -e '
+        s/^([ \t]*set[ \t]+ttblibPath[ \t]+)"[^"]*"$/$1"$ENV{installdir}"/;
+        s/^([ \t]*set[ \t]+ttblibPath[ \t]+)\{[^\}]*\}$/$1\{$ENV{installdir}\}/;
+        s@^([a-zA-Z.]+;)/usr/local/([a-zA-Z/.]+;[a-zA-Z]+)$@$1$ENV{PREFIX}/$2@;
+        ' ${target}
+done
+
+${LN} -sf ${installdir}/bin/Binder.app ${PREFIX}/bin
+${LN} -sf ${installdir}/bin/Processes.app ${PREFIX}/bin
+${LN} -sf ${installdir}/misc/Mounter/Mounter.app ${PREFIX}/bin
+${LN} -sf Mounter.FreeBSD ${installdir}/misc/Mounter/Mounter
