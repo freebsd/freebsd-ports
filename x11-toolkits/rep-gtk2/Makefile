@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rep-gtk
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,9 +15,10 @@ MAINTAINER=	nakai@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		rep.9:${PORTSDIR}/lang/librep
-.if !defined(NOGNOME)
+.if !defined(WITHOUT_GNOME)
 LIB_DEPENDS+=	glade.3:${PORTSDIR}/devel/libglade \
-		gnome.4:${PORTSDIR}/x11/gnomelibs
+		gnome.4:${PORTSDIR}/x11/gnomelibs \
+		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 .endif
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
@@ -27,11 +28,13 @@ PLIST_SUB=	GNUHOST=${ARCH}--freebsd${OSREL}
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-.if defined(NOGNOME)
-CONFIGURE_ARGS=	--without-libglade --without-gnome
+.if defined(WITHOUT_GNOME)
+CONFIGURE_ARGS=	--without-libglade --without-gnome --without-gdk-pixbuf \
+		--without-gnome-canvas-pixbuf
 PLIST_SUB+=	GNOME:="@comment "
 .else
-CONFIGURE_ARGS=	--with-gnome
+CONFIGURE_ARGS=	--with-gnome --with-libglade --with-gdk-pixbuf \
+		--with-gnome-canvas-pixbuf
 PLIST_SUB+=	GNOME:=""
 .endif
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

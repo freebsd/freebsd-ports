@@ -1,5 +1,9 @@
+%%GNOME:%%libexec/rep/%%GNUHOST%%/gdk-pixbuf.la
+%%GNOME:%%libexec/rep/%%GNUHOST%%/gdk-pixbuf.so
 %%GNOME:%%libexec/rep/%%GNUHOST%%/gnome-canvas.la
 %%GNOME:%%libexec/rep/%%GNUHOST%%/gnome-canvas.so
+%%GNOME:%%libexec/rep/%%GNUHOST%%/gnome-canvas-pixbuf.la
+%%GNOME:%%libexec/rep/%%GNUHOST%%/gnome-canvas-pixbuf.so
 %%GNOME:%%libexec/rep/%%GNUHOST%%/gnomelib.la
 %%GNOME:%%libexec/rep/%%GNUHOST%%/gnomelib.so
 %%GNOME:%%libexec/rep/%%GNUHOST%%/gnomeui.la
