@@ -6,4 +6,6 @@ snapshots of all windows on the current desktop and it'll let you pick a
 window using a mouse or a keyboard. Yes, this is also what expocity and Apple's
 Expose.
 
+Skippy currently works with a NETWM or GNOME WM Specs compliant window-manager.
+
 WWW:	http://thegraveyard.org/skippy.php
