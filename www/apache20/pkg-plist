@@ -1,10 +1,10 @@
 etc/rc.d/apache.sh
-@exec mkdir %D/etc/apache/logs %D/www/cgi-bin %D/www/data
+@exec mkdir %D/www/cgi-bin %D/www/data
 @unexec rm %D/etc/rc.d/apache.sh
-etc/apache/conf/httpd.conf
-etc/apache/conf/srm.conf
-etc/apache/conf/access.conf
-etc/apache/conf/mime.types
+etc/apache/httpd.conf
+etc/apache/srm.conf
+etc/apache/access.conf
+etc/apache/mime.types
 sbin/httpd
 www/icons/README
 www/icons/a.gif
