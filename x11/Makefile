@@ -72,6 +72,7 @@
     SUBDIR += grabc
     SUBDIR += gromit
     SUBDIR += gtk-theme-switch
+    SUBDIR += gtk-themepreview
     SUBDIR += gtk2-theme-switch
     SUBDIR += gtkchtheme
     SUBDIR += gtkterm2
