@@ -1,0 +1,82 @@
+--- src/thread/SDL_thread.c.orig	Fri Mar  3 01:24:35 2000
++++ src/thread/SDL_thread.c	Mon Apr 17 21:05:52 2000
+@@ -30,6 +30,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
++#include <unistd.h>
+ 
+ #include "SDL_error.h"
+ #include "SDL_mutex.h"
+@@ -175,7 +176,7 @@
+ 	int (*func)(void *);
+ 	void *data;
+ 	SDL_Thread *info;
+-	SDL_mutex *wait;
++	int wait;
+ } thread_args;
+ 
+ void SDL_RunThread(void *data)
+@@ -199,8 +200,8 @@
+ 	userdata = args->data;
+ 	statusloc = &args->info->status;
+ 
+	/* Wake up the parent thread */
+-	SDL_mutexV(args->wait);
++	args->wait = 1;
+ 
+ 	/* Run the function */
+ 	*statusloc = userfunc(userdata);
+@@ -213,16 +214,16 @@
+ 	int ret;
+ 
+ 	/* Allocate memory for the thread info structure */
+-	thread = (SDL_Thread *)malloc(sizeof(*thread));
++	thread = (SDL_Thread *)malloc(sizeof(thread));
+ 	if ( thread == NULL ) {
+ 		SDL_OutOfMemory();
+ 		return(NULL);
+ 	}
+-	memset(thread, 0, (sizeof *thread));
++	memset(thread, 0, (sizeof thread));
+ 	thread->status = -1;
+ 
+ 	/* Set up the arguments for the thread */
+-	args = (thread_args *)malloc(sizeof(*args));
++	args = (thread_args *)malloc(sizeof(args));
+ 	if ( args == NULL ) {
+ 		SDL_OutOfMemory();
+ 		free(thread);
+@@ -231,14 +232,7 @@
+ 	args->func = fn;
+ 	args->data = data;
+ 	args->info = thread;
+-	args->wait = SDL_CreateMutex();
+-	if ( args->wait == NULL ) {
+-		free(thread);
+-		free(args);
+-		SDL_OutOfMemory();
+-		return(NULL);
+-	}
+-	SDL_mutexP(args->wait);		/* We will block later */
++	args->wait = 0;
+ 
+ 	/* Add the thread to the list of available threads */
+ 	SDL_AddThread(thread);
+@@ -247,14 +241,14 @@
+ 	ret = SDL_SYS_CreateThread(thread, args);
+ 	if ( ret >= 0 ) {
+ 		/* Wait for the thread function to use arguments */
+-		SDL_mutexP(args->wait);
++		while (args->wait == 0)
++			usleep(20000);
+ 	} else {
+ 		/* Oops, failed.  Gotta free everything */
+ 		SDL_DelThread(thread);
+ 		free(thread);
+ 		thread = NULL;
+ 	}
+-	SDL_DestroyMutex(args->wait);
+ 	free(args);
+ 
+ 	/* Everything is running now */

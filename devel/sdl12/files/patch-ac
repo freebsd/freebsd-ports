@@ -17,7 +17,7 @@
      case "$target" in
          *-*-freebsd*)
 -            pthread_lib="-lc_r"
-+            pthread_lib="-L""$LOCALBASE""/lib -llthread -llgcc_r"
++            pthread_lib="-pthread"
              ;;
          *-*-openbsd*)
              pthread_lib="-lc_r"
@@ -26,7 +26,7 @@
          if test x$use_pthreads = xyes; then
              CFLAGS="$CFLAGS -D_REENTRANT -DSDL_USE_PTHREADS"
 -            SDL_CFLAGS="$SDL_CFLAGS -D_REENTRANT"
-+            SDL_CFLAGS="$SDL_CFLAGS -D_REENTRANT -D_THREAD_SAFE -I""$LOCALBASE""/include/pthread/linuxthreads"
++            SDL_CFLAGS="$SDL_CFLAGS -D_REENTRANT -D_THREAD_SAFE"
              SDL_LIBS="$SDL_LIBS $pthread_lib"
          fi
      fi

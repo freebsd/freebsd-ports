@@ -1,0 +1,45 @@
+--- src/thread/linux/SDL_mutex.c.orig	Tue Nov 23 20:01:41 1999
++++ src/thread/linux/SDL_mutex.c	Mon Apr 17 21:08:57 2000
+@@ -42,6 +42,7 @@
+ 
+ #ifdef SDL_USE_PTHREADS
+ 
++#include <errno.h>
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <pthread.h>
+@@ -60,14 +61,14 @@
+ 	SDL_mutex *mutex;
+ 
+ 	/* Allocate the structure */
+-	mutex = (SDL_mutex *)malloc(sizeof(*mutex));
++	mutex = (SDL_mutex *)malloc(sizeof(mutex));
+ 	if ( mutex == NULL ) {
+ 		SDL_OutOfMemory();
+ 		return(NULL);
+ 	}
+ 
+ 	if ( pthread_mutex_init(&mutex->id, NULL) != 0 ) {
+-		SDL_SetError("Couldn't create mutex");
++		SDL_SetError("Couldn't create mutex; reason: %d", errno);
+ 		free(mutex);
+ 		return(NULL);
+ 	}
+@@ -82,7 +83,7 @@
+ 		return(-1);
+ 	}
+ 	if ( pthread_mutex_lock(&mutex->id) != 0 ) {
+-		SDL_SetError("Couldn't lock mutex");
++		SDL_SetError("Couldn't lock mutex; reason: %d", errno);
+ 		return(-1);
+ 	}
+ 	return(0);
+@@ -96,7 +97,7 @@
+ 		return(-1);
+ 	}
+ 	if ( pthread_mutex_unlock(&mutex->id) != 0 ) {
+-		SDL_SetError("Couldn't unlock mutex");
++		SDL_SetError("Couldn't unlock mutex; reason: %d", errno);
+ 		return(-1);
+ 	}
+ 	return(0);
