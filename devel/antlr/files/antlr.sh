@@ -1,2 +1,5 @@
 #! /bin/sh
-%%JAVA%% -classpath %%JAVA_CLASSES%%/antlr.jar antlr.Tool "$@"
+#
+# $FreeBSD$
+
+"%%LOCALBASE%%/bin/java" -classpath "%%JAVAJARDIR%%/antlr.jar" antlr.Tool "$@"
