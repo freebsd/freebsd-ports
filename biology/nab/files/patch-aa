@@ -1,25 +1,32 @@
-*** src/Makefile.orig	Fri Jan  8 16:06:59 1999
---- src/Makefile	Thu Jan 14 16:15:53 1999
+*** Makefile.orig	Mon Oct 23 20:01:09 2000
+--- Makefile	Sun Jan 28 13:36:22 2001
+***************
+*** 1,5 ****
+--- 1,6 ----
+  #   top-level Makefile for the NAB suite of programs
+  
++ all: compiler test
+  compiler:
+  	-mkdir bin lib include
+  	(cd ucpp-0.7; make install )
 ***************
 *** 7,15 ****
-  	./nab  -c $(NABFLAGS) $<
-  	@rm -f $*.c
+  	(cd src; make install )
+  	(cd nss; make install )
+  	(cd tleap; make install )
+! 	@echo
+! 	@echo "completed installation of NAB version 4"
+! 	@echo
   
-- .c.o: $<
-- 	$(CC) -c $(CFLAGS) $<
-- 
-  NAB2COBJS=	\
-  	nab2c.o	\
-  	cgen.o	\
---- 7,12 ----
-***************
-*** 77,82 ****
---- 74,81 ----
-  	yammp.o
+  #   note:  "make test" needs to follow "make", since it is very hard to
+  #          tell if the compiler is completely "made" or not.
+--- 8,16 ----
+  	(cd src; make install )
+  	(cd nss; make install )
+  	(cd tleap; make install )
+! #	@echo
+! #	@echo "completed installation of NAB version 4"
+! #	@echo
   
-  #===========================================================================
-+ 
-+ all: system
-  
-  system:	nab	\
-  	nab2c	\
+  #   note:  "make test" needs to follow "make", since it is very hard to
+  #          tell if the compiler is completely "made" or not.

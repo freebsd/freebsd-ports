@@ -4,48 +4,64 @@
 # $FreeBSD$
 
 PORTNAME=	nab
-PORTVERSION=	4.2
+PORTVERSION=	4.3.2
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.scripps.edu/pub/case/
 
 MAINTAINER=	bdodson@scms.utmb.edu
 
-NO_WRKSUBDIR=	yes
-MAKE_ENV+=	WRKSRC=${WRKSRC} PREFIX=${PREFIX} \
-		NABHOME=${PREFIX}/share/nab ARCH= \
-		INSTALL_MAN="${INSTALL_MAN}"
+MAKE_ENV+=	NABHOME=${WRKSRC} ARCH= PATH=${WRKSRC}/bin:${PATH}
+
 MAN1=		nab.1
 MANCOMPRESSED=	yes
 
+BINARIES=	matextract      matmul          teLeap          tss_main \
+		matgen          nab             transform       tss_next \
+		matmerge        nab2c           tss_init        ucpp
+
+LIBRARIES=	cifparse.a      libnab.a        libsym.a
+
+INCS=	defreal.h       nab.h           nabcode.h       nabtypes.h
+
 post-extract:
-	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
-	@${CP} ${FILESDIR}/Makefile.doc ${WRKSRC}/doc/Makefile
 	@${CP} ${FILESDIR}/config.h ${WRKSRC}
 
 pre-install:
+	@cd ${WRKSRC}/src && \
+		${SETENV} PREFIX=${PREFIX} ${MAKE} beforerealinstall
+
+do-install:
 	@-mkdir -p ${PREFIX}/share/nab
-.if !defined(${NOPORTDOCS})
-	@cd ${WRKSRC} && (tar cf - examples test | \
+	@-mkdir -p ${PREFIX}/share/nab/bin
+	@-mkdir -p ${PREFIX}/share/nab/include
+	@-mkdir -p ${PREFIX}/share/nab/lib
+.if !defined(NOPORTDOCS)
+	@cd ${WRKSRC} && (tar cf - examples test peptide suppose | \
 		(cd ${PREFIX}/share/nab; tar xf -))
 	@-mkdir -p ${PREFIX}/share/doc/nab
 	${INSTALL_MAN} ${WRKSRC}/doc/NAB.pdf ${PREFIX}/share/doc/nab
 .endif
-	@cd ${WRKSRC} && (tar cf - dgdb reslib | \
+	@cd ${WRKSRC} && (tar cf - dgdb reslib fd_data | \
 		(cd ${PREFIX}/share/nab; tar xf -))
 	@(cd ${PREFIX}/share; ${CHOWN} -R ${SHAREOWN}.${SHAREGRP} nab; \
 		${CHMOD} -R ugo+rX-w nab)
-	@-(cd ${PREFIX}/share/nab; ${RM} -f coords && ${LN} -s ../NDB coords)
+	@-(cd ${PREFIX}/share/nab && ${LN} -sf ../NDB coords)
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/*     ${PREFIX}/bin
+	${INSTALL_DATA}    ${WRKSRC}/include/* ${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/lib/*     ${PREFIX}/lib
+	@-cd ${WRKSRC}/doc && ${GZIP_CMD} ${MAN1}
+	${INSTALL_MAN} ${WRKSRC}/doc/nab.1.gz ${PREFIX}/man/man1
+.for f in ${BINARIES}
+	@cd ${PREFIX}/share/nab/bin && ${LN} -sf ../../../bin/${f} .
+.endfor
+.for f in ${LIBRARIES}
+	@cd ${PREFIX}/share/nab/lib && ${LN} -sf ../../../lib/${f} .
+.endfor
+.for f in ${INCS}
+	@cd ${PREFIX}/share/nab/include && ${LN} -sf ../../../include/${f} .
+.endfor
 
 post-install:
-	@(cd ${PREFIX}/bin; \
-	${RM} -f nab && ${MV} ${PREFIX}/share/nab/bin/nab . ; \
-	${RM} -f nab2c && ${MV} ${PREFIX}/share/nab/bin/nab2c . ; \
-	${CHOWN} ${BINOWN}:${BINGRP} nab nab2c teLeap ; \
-	strip nab nab2c teLeap ; \
-	${RMDIR} ${PREFIX}/share/nab/bin)
 	@${CAT} ${PKGMESSAGE}
-
-test:	all
-	@cd ${WRKSRC}/src && make test
 
 .include <bsd.port.mk>
