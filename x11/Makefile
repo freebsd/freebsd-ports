@@ -51,6 +51,7 @@
     SUBDIR += gnomepanel
     SUBDIR += gnomesession
     SUBDIR += gnometerminal
+    SUBDIR += gnopernicus
     SUBDIR += gromit
     SUBDIR += gswitchit
     SUBDIR += gtk-theme-switch
