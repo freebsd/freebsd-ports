@@ -1,0 +1,11 @@
+diff -ru mbasecalc/Makefile mbasecalc.new/Makefile
+--- Makefile  Mon Jun  4 21:40:53 2001
++++ Makefile      Tue Jun 15 19:49:55 2004
+@@ -7,7 +7,7 @@
+ CXX=g++
+ DEFS= 
+ PROGNAME= mbasecalc
+-INCLUDES=  -I.
++INCLUDES+=  -I.
+ LIBS= -L/usr/X11R6/lib -lfltk -lX11
+
