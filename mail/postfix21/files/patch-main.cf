@@ -5,14 +5,14 @@
  # postXXX commands.
  #
 -command_directory = /usr/sbin
-+command_directory = /usr/local/sbin
++command_directory = !!PREFIX!!/sbin
  
  # The daemon_directory parameter specifies the location of all Postfix
  # daemon programs (i.e. programs listed in the master.cf file). This
  # directory must be owned by root.
  #
 -daemon_directory = /usr/libexec/postfix
-+daemon_directory = /usr/local/libexec/postfix
++daemon_directory = !!PREFIX!!/libexec/postfix
  
  # QUEUE AND PROCESS OWNERSHIP
  #
@@ -21,19 +21,19 @@
  # This is the Sendmail-compatible mail posting interface.
  # 
 -sendmail_path =
-+sendmail_path = /usr/local/sbin/sendmail
++sendmail_path = !!PREFIX!!/sbin/sendmail
  
  # newaliases_path: The full pathname of the Postfix newaliases command.
  # This is the Sendmail-compatible command to build alias databases.
  #
 -newaliases_path =
-+newaliases_path = /usr/local/bin/newaliases
++newaliases_path = !!PREFIX!!/bin/newaliases
  
  # mailq_path: The full pathname of the Postfix mailq command.  This
  # is the Sendmail-compatible mail queue listing command.
  # 
 -mailq_path =
-+mailq_path = /usr/local/bin/mailq
++mailq_path = !!PREFIX!!/bin/mailq
  
  # setgid_group: The group for mail submission and queue management
  # commands.  This must be a group name with a numerical group ID that
@@ -45,12 +45,12 @@
  # manpage_directory: The location of the Postfix on-line manual pages.
  #
 -manpage_directory =
-+manpage_directory = /usr/local/man
++manpage_directory = !!PREFIX!!/man
  
  # sample_directory: The location of the Postfix sample configuration files.
  #
 -sample_directory =
-+sample_directory = /usr/local/etc/postfix
++sample_directory = !!PREFIX!!/etc/postfix
  
  # readme_directory: The location of the Postfix README files.
  #
