@@ -1294,6 +1294,7 @@ dnrd		ports/net/dnrd
 dns_balance	ports/net/dns_balance
 dnsquery	src/usr.bin/dnsquery
 dnssecwalker	ports/net/dnssecwalker
+dnstop		ports/net/dnstop
 dnstracer	ports/net/dnstracer
 dnsutl		ports/net/dnsutl
 dnswalk		ports/net/dnswalk
