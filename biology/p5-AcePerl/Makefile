@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	AcePerl
-PORTVERSION=	1.70
+PORTVERSION=	1.75
 CATEGORIES=	biology databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=Ace
+MASTER_SITE_SUBDIR=	Ace
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bio@freebsd.net
@@ -18,10 +18,13 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Ace.3 Ace::Browser::AceSubs.3 Ace::Graphics::Fk.3 \
 		Ace::Graphics::Glyph.3 Ace::Graphics::Glyph::anchored_arrow.3 \
-		Ace::Graphics::Glyph::arrow.3 Ace::Graphics::Glyph::group.3 \
+		Ace::Graphics::Glyph::arrow.3 Ace::Graphics::Glyph::dot.3 \
+		Ace::Graphics::Glyph::ex.3 Ace::Graphics::Glyph::group.3 \
 		Ace::Graphics::Glyph::line.3 Ace::Graphics::Glyph::primers.3 \
-		Ace::Graphics::Glyph::segments.3 \
+		Ace::Graphics::Glyph::segments.3 Ace::Graphics::Glyph::span.3 \
+		Ace::Graphics::Glyph::toomany.3 \
 		Ace::Graphics::Glyph::transcript.3 \
+		Ace::Graphics::Glyph::triangle.3 \
 		Ace::Graphics::GlyphFactory.3 Ace::Graphics::Panel.3 \
 		Ace::Graphics::Track.3 Ace::Iterator.3 Ace::Local.3 \
 		Ace::Model.3 Ace::Object.3 Ace::Sequence.3 \

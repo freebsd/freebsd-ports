@@ -1,5 +1,6 @@
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Browser/AceSubs.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Browser/GeneSubs.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Browser/SearchSubs.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Browser/SiteDefs.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Browser/TreeSubs.pm
@@ -8,11 +9,17 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Fk.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/anchored_arrow.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/arrow.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/crossbox.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/dot.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/ex.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/group.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/line.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/primers.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/segments.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/span.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/toomany.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/transcript.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/triangle.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/GlyphFactory.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Panel.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Track.pm
@@ -78,7 +85,9 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/autosplit.ix
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/class_count.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/classes.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/count.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/date.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/date_style.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/datetime.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/fetch_many.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/find.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/freeprotect.al
