@@ -1,4 +1,11 @@
-bin/pymet2
+bin/weather.py
 %%PYTHON_SITELIBDIR%%/pymetar.py
 %%PYTHON_SITELIBDIR%%/pymetar.pyc
 %%PYTHON_SITELIBDIR%%/pymetar.pyo
+share/doc/pymetar-0.12/COPYING
+share/doc/pymetar-0.12/README
+share/doc/pymetar-0.12/THANKS
+share/doc/pymetar-0.12/TODO
+share/doc/pymetar-0.12/example.py
+share/doc/pymetar-0.12/librarydoc.txt
+@dirrm share/doc/pymetar-0.12
