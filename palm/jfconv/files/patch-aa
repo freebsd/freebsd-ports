@@ -18,3 +18,41 @@
  				break;
  		case 't':	strncpy(title, optarg, 32);
  				title[31] = 0;
+@@ -176,7 +176,7 @@
+ 	FILE*		input;
+ 	FILE*		output;
+ 	FILE*		info;
+-	tHeader		header;
++	tHeader		header = { 0 };
+ 	WORD		oddity = 0x008C;  
+ 	int 		numNonDeletedRecs;  	
+ 	JFileAppInfoType	appInfo;
+@@ -185,7 +185,7 @@
+ 	int		curDumpLoc;
+ 	char*	 	tempPopupPtr; 
+ 	int		usesInfoFile;
+-	int		fldLens[MAX_FIELDS];
++	int		fldLens[MAX_FIELDS] = { 0 };
+ 	unsigned char	holdChr[2];
+ 	char		endMsg[2048];
+ 	char		recNumStr[10];
+@@ -437,7 +437,7 @@
+ 	int		i,j;
+ 	char		dbName[200];
+ 	int		usesInfoFile;
+-	tHeader		header;
++	tHeader		header = { 0 };
+ 	char 		inputString[MAX_RECORD_LENGTH];  
+ 	int 		inputStringLoc, inputStringLen;  
+ 	JFileAppInfoType	appInfo;
+@@ -1165,10 +1165,6 @@
+ 	sprintf(recNumStr, "%d", currentRecord+1);
+ 	sprintf(endMsg, "Conversion of %s  records in %s to %s was successful!",
+ 			recNumStr, m_CSVPath, m_PDBPath);
+-
+-	if(!m_IsCommandLine)
+-		MessageBox( endMsg, NULL, MB_OK );
+-
+ }
+ 
+ int TypeIsString(int t)

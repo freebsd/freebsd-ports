@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jconv
-PORTVERSION=	2000.05.14
+PORTVERSION=	2000.05.17
 CATEGORIES=	palm databases
 MASTER_SITES=	http://www.land-j.com/files/ \
 		http://people.FreeBSD.org/~knu/ports/distfiles/
