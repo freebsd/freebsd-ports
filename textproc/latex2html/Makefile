@@ -21,8 +21,14 @@ COMMENT=	Convert LaTeX documents to HTML
 # Global variables
 #
 
+.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
+GSPORT?=	print/ghostscript-afpl
+.else
+GSPORT?=	print/ghostscript-gnu
+.endif
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/latex:${PORTSDIR}/print/teTeX \
-		${LOCALBASE}/bin/gs:${PORTSDIR}/print/ghostscript-gnu \
+		${LOCALBASE}/bin/gs:${PORTSDIR}/${GSPORT} \
 		${LOCALBASE}/bin/anytopnm:${PORTSDIR}/graphics/netpbm
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
@@ -41,6 +47,17 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 #
 
 DOC_FILES=	FAQ INSTALL LICENSE README
+
+# Inform message
+#
+
+pre-fetch:
+.if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
+	@${ECHO} ""
+	@${ECHO} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
+	@${ECHO} "      AFPL Postscript interpreter instead of GNU one"
+	@${ECHO} ""
+.endif
 
 # Port-patch
 #
