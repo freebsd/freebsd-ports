@@ -8,7 +8,7 @@
 
 DISTNAME=	asWedit-4.0-i386.linux
 PKGNAME=	asWedit-4.0.1
-CATEGORIES=	editors www
+CATEGORIES=	editors www linux
 MASTER_SITES=	http://www.advasoft.com/asWedit/ \
 		ftp://sunsite.doc.ic.ac.uk/packages/www/asWedit/ \
 		ftp://sunsite.auc.dk/pub/infosystems/www/asWedit/ \

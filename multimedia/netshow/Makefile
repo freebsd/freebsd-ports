@@ -8,7 +8,7 @@
 
 DISTNAME=	netshow_linux
 PKGNAME=	netshow-2.00.251
-CATEGORIES=	graphics net
+CATEGORIES=	graphics net linux
 MASTER_SITES=	http://microsoft.com/netshow/download/en/beta/
 EXTRACT_SUFX=	.gz
 

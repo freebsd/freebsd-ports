@@ -8,7 +8,7 @@
 
 DISTNAME=		linux_base
 PKGNAME=		linux_base-6.1
-CATEGORIES=		emulators
+CATEGORIES=		emulators linux
 MASTER_SITES=		${RPM_MIRRORS:S/__DIR__/${STDDIR}/g}
 DISTFILES=		${RPM_SET1} ${RPM_LDCONFIG} ${RPM_SET2} \
 			${RPM_RPM} ${RPM_SET3}

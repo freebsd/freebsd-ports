@@ -8,7 +8,7 @@
 
 DISTNAME=	so51a_lnx_49
 PKGNAME=	de-staroffice-5.1a
-CATEGORIES=	editors
+CATEGORIES=	editors linux
 MASTER_SITES=	ftp://ftp.hagenhomes.com/pub/  \
 		ftp://ftp.stat.duke.edu/pub/Users/sto/StarOffice51a/  \
 		ftp://ftp.stardivision.de/pub/support/so51a/nwspatch/unxlnxi/  \

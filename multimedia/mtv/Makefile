@@ -7,7 +7,7 @@
 #
 
 DISTNAME=	mtv-1.1.0.7
-CATEGORIES=	graphics
+CATEGORIES=	graphics linux
 MASTER_SITES=	ftp://ftp.mpegtv.com/pub/mpeg/mpegtv/player/x86-unknown-linux-glibc/packages/TGZ/
 DISTFILES=	mtv-1.1.0.7.tar.gz libforms.so.0.88.gz
 

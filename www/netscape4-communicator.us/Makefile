@@ -9,7 +9,7 @@
 
 DISTNAME=	communicator-v407-us.x86-unknown-linux2.0_libc5
 PKGNAME=	netscape-communicator-4.07.us
-CATEGORIES=	www
+CATEGORIES=	www linux
 
 MAINTAINER=	obrien@FreeBSD.org
 

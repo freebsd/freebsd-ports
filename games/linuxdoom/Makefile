@@ -1,4 +1,4 @@
-# New ports collection makefile for:    games
+# New ports collection makefile for:    linux doom
 # Version required:	1.8
 # Date created:         Mon Dec  9 09:42:37 CST 1996
 # Whom:                 erich@rrnet.com
@@ -8,7 +8,7 @@
 
 DISTNAME=	doom-1.8
 PKGNAME=	linuxdoom-1.8
-CATEGORIES=	games
+CATEGORIES=	games linux
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/doom
 DISTFILES=	linux-doom-1.8.tar.gz musserver.tgz smooth-joystick4doom.tgz

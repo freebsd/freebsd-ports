@@ -9,7 +9,7 @@
 
 DISTNAME=	Rollemup
 PKGNAME=	rollemup-1.0
-CATEGORIES=	games
+CATEGORIES=	games linux
 MASTER_SITES=	ftp://usa.lostboys.nl/pub/medialab/rollemup/Linux/
 
 MAINTAINER=	sanpei@jp.FreeBSD.org

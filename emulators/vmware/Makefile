@@ -9,7 +9,7 @@
 
 DISTNAME=       VMware-1.1.2-364
 PKGNAME=        vmware-1.1.2
-CATEGORIES=	emulators
+CATEGORIES=	emulators linux
 MASTER_SITES=	http://www4.vmware.com/software/ \
 		http://vmware-svca.www.conxion.com/software/ \
 		http://vmware-chil.www.conxion.com/software/ \
@@ -127,7 +127,6 @@ post-install:
 	@${ECHO} "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-" 
 .endif
 
-	
 pre-clean:
 	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc.linproc \
 		  ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc.net

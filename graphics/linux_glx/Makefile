@@ -7,7 +7,7 @@
 #
 
 DISTNAME=	linux_glx-991127
-CATEGORIES=	graphics
+CATEGORIES=	graphics linux
 MASTER_SITES=	http://people.FreeBSD.org/~3d/distfiles/glx/linux/
 
 MAINTAINER=	3d@freebsd.org

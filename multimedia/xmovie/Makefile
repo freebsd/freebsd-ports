@@ -8,7 +8,7 @@
 
 DISTNAME=	xmovie-i586-1.3.1
 PKGNAME=	xmovie-1.3.1
-CATEGORIES=	graphics
+CATEGORIES=	graphics linux
 MASTER_SITES=	http://people.FreeBSD.org/~imura/distfiles/
 # Distfile has no version info. The original site is below.
 # MASTER_SITES=	http://heroine.linuxbox.com/

@@ -8,7 +8,7 @@
 
 DISTNAME=	ar302lin
 PKGNAME=	acroread-3.02
-CATEGORIES=	print
+CATEGORIES=	print linux
 MASTER_SITES=	ftp://ftp.adobe.com/pub/adobe/acrobatreader/unix/3.x/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/acrobatreader/unix/3.x/
 EXTRACT_SUFX=	.tar.Z

@@ -8,7 +8,7 @@
 
 DISTNAME=       pklin251
 PKGNAME=        pkzip-2.5
-CATEGORIES=	archivers
+CATEGORIES=	archivers linux
 MASTER_SITES=   ftp://ftp.pkware.com/
 EXTRACT_SUFX=	.exe
 

@@ -8,7 +8,7 @@
 
 DISTNAME=	MAGE_4_2.LINUX
 PKGNAME=	kinemage-4.2
-CATEGORIES=     biology
+CATEGORIES=     biology linux
 MASTER_SITES=	ftp://kinemage.biochem.duke.edu/LINUXprograms/ \
 		ftp://ftp.ebi.ac.uk/pub/databases/pdb/pub/xternal_software/kinemage/LINUX/ \
 		ftp://ftp.pdb.bnl.gov/pub/xternal_software/kinemage/LINUX/

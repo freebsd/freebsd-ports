@@ -8,7 +8,7 @@
 
 DISTNAME=	adom-099g15-elf
 PKGNAME=	adom-0.99.g15
-CATEGORIES=	games
+CATEGORIES=	games linux
 MASTER_SITES=	http://www.adom.de/adom/download/linux/
 
 MAINTAINER=	rover@lglobus.ru

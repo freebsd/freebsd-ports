@@ -8,7 +8,7 @@
 
 DISTNAME?=	commfont # dummy
 PKGNAME=	${PKG_PRE}acroread-${DISTNAME}-1999.7.20
-CATEGORIES?=	japanese print
+CATEGORIES?=	japanese print linux
 MASTER_SITES=	ftp://ftp-pac.adobe.com/pub/adobe/acrobatreader/unix/4.x/
 
 MAINTAINER=	taoka@FreeBSD.org

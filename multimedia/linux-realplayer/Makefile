@@ -8,7 +8,7 @@
 
 DISTNAME=	rv50_linux20
 PKGNAME=	linux-realplayer-5.0
-CATEGORIES=	audio
+CATEGORIES=	audio linux
 MASTER_SITES=	
 
 MAINTAINER=	kris@FreeBSD.org
