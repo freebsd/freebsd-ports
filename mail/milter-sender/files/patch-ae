@@ -1,0 +1,20 @@
+--- milter-sender.mc.bak	Tue Mar  2 14:36:28 2004
++++ milter-sender.mc	Sat Mar  6 12:47:24 2004
+@@ -4,7 +4,7 @@
+ dnl Example configuration to be added to sendmail.mc.
+ dnl
+ 
+-define(`_FFR_MILTER', `1')dnl
++dnl define(`_FFR_MILTER', `1')dnl
+ dnl define(`_FFR_MILTER_421', `1`)dnl
+ 
+ dnl -------------------------------------------------------------------
+@@ -58,7 +58,7 @@
+ 
+ INPUT_MAIL_FILTER(
+ 	`milter-sender',
+-	`S=unix:/var/lib/milter-sender/socket, T=C:1m;S:30s;R:6m;E:1m'
++	`S=unix:/var/spool/milter-sender/socket, T=C:1m;S:30s;R:6m;E:1m'
+ )dnl
+ 
+ dnl define(

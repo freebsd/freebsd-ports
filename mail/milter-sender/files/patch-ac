@@ -1,6 +1,6 @@
---- milter-sender.sh.in.orig	Fri Jan 23 14:38:00 2004
-+++ milter-sender.sh.in	Fri Jan 30 15:25:06 2004
-@@ -68,34 +68,24 @@
+--- milter-sender.sh.in.orig	Tue Feb 24 20:18:59 2004
++++ milter-sender.sh.in	Sat Mar  6 12:33:09 2004
+@@ -69,34 +69,24 @@
  start()
  {
  	NAME=`basename "$PROGRAM"`
@@ -14,12 +14,13 @@
  	fi
  
  	# Make sure the old socket has been removed, especially for FreeBSD.
- 	rm -f ${REQUIRED_DIR}/socket
+ 	rm -f ${STATE_DIR}/socket
  	
 -	# Start the program in the background from a sub-shell
 -	# so that process will appear in the ps output immediately.
 -	sh -c "$PROGRAM $OPTIONS &"
--
++	$PROGRAM $OPTIONS &
+ 
 -	pid=`getpid "$PROGRAM"`
 -	if [ X"$pid" = X ]; then
 -		printf '\r\033[71C['${FG_RED}'FAILED'${FG_NORMAL}']\n'
@@ -27,8 +28,6 @@
 -	fi
 -
 -	printf '\r\033[71C['${FG_GREEN}'  OK  '${FG_NORMAL}']\n'
-+	$PROGRAM $OPTIONS &
-+  
 +	echo -n " milter-sender"
  }
  
@@ -39,16 +38,16 @@
  
  	pid=`getpid "$PROGRAM"`
  	if [ X"$pid" != X ]; then
-@@ -112,7 +102,7 @@
- 			kill -KILL $pid
+@@ -113,7 +103,7 @@
  			
+ 			pid=`getpid "$PROGRAM"`
  			if [ X"$pid" != X ]; then					
 -				printf '\r\033[71C['${FG_RED}'FAILED'${FG_NORMAL}']\n'
 +				echo " milter-sender:FAILED"
  				return
  			fi
  			
-@@ -131,7 +121,7 @@
+@@ -132,7 +122,7 @@
  		fi
  	fi
  
@@ -57,7 +56,7 @@
  }
  
  case "$1" in
-@@ -148,9 +138,9 @@
+@@ -163,9 +153,9 @@
  status)
  	pid=`getpid "$PROGRAM"`
  	if [ X"$pid" != X ]; then

@@ -1,19 +1,23 @@
---- install.sh.in.orig	Mon Feb  9 15:28:36 2004
-+++ install.sh.in	Fri Feb 13 00:05:50 2004
-@@ -17,19 +17,20 @@
+--- install.sh.in.orig	Mon Mar  1 12:59:54 2004
++++ install.sh.in	Sat Mar  6 12:21:24 2004
+@@ -17,21 +17,23 @@
  chown ${USER} ${STATEDIR}
  chgrp ${GROUP} ${STATEDIR}
  
 -cp -f ${MILTER} ${SBINDIR}
-+install -s ${MILTER} ${SBINDIR}
+-cp -f ${MILTER}.mc ${MAILDIR}/${MILTER}.mc.sample
++install -C -s ${MILTER} ${SBINDIR}
++install -C ${MILTER}.mc ${MAILDIR}/${MILTER}.mc.sample
++[ ! -f ${MAILDIR}/${MILTER}.mc ] && cp ${MAILDIR}/${MILTER}.mc.sample ${MAILDIR}/${MILTER}.mc
  
 -./milter-sender help=1 >${MILTER_CF}.sample
--chmod g+r ${MAILDIR} ${MAILDIR}/access.* ${MAILDIR}/aliases.* ${MILTER_CF}.sample*
--chgrp ${GROUP} ${MAILDIR} ${MAILDIR}/access.* ${MAILDIR}/aliases.* ${MILTER_CF}.sample*
 +./milter-sender help=1 | sed 's|^MilterSocket=.*|MilterSocket=unix:/var/spool/milter-sender/socket|' >${MILTER_CF}.sample
 +[ ! -f ${MILTER_CF} ] && cp ${MILTER_CF}.sample ${MILTER_CF}
-+chmod g+r ${MAILDIR} ${MAILDIR}/access.* ${MAILDIR}/aliases.* ${MILTER_CF}*
-+chgrp ${GROUP} ${MAILDIR}/access.* ${MAILDIR}/aliases.* ${MILTER_CF}*
+ 
+-chmod g+r ${MAILDIR} ${MAILDIR}/access.* ${MAILDIR}/aliases.* ${MILTER_CF}.sample*
+-chgrp ${GROUP} ${MAILDIR} ${MAILDIR}/access.* ${MAILDIR}/aliases.* ${MILTER_CF}.sample*
++chmod g+r ${MAILDIR}/access.* ${MAILDIR}/aliases.* ${MILTER_CF}.sample*
++chgrp ${GROUP} ${MAILDIR}/access.* ${MAILDIR}/aliases.* ${MILTER_CF}.sample*
  
  case `uname -s` in
  *BSD*)
