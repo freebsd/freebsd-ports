@@ -16,4 +16,6 @@ WRKSRC=		${WRKDIR}/CLHEP
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
+PLIST_SUB=	TARGET=${CONFIGURE_TARGET}
+
 .include <bsd.port.mk>
