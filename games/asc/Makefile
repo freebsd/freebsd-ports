@@ -12,12 +12,11 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	asc-hq
 DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	A turn based, multiplayer strategic game with very nice graphics
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		SDL_image.10:${PORTSDIR}/graphics/sdl_image \
-		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
 		SDLmm.8:${PORTSDIR}/devel/sdlmm \
 		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
 		paragui.3:${PORTSDIR}/x11-toolkits/paragui
@@ -32,9 +31,12 @@ SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
+USE_GETOPT_LONG=	yes
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
 		CPPFLAGS="`${SDL_CONFIG} --cflags`" \
 		LIBS="`${SDL_CONFIG} --libs` -lgnugetopt -lm"
+
+CONFIGURE_ARGS=	--disable-paraguitest
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
