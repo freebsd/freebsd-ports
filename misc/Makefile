@@ -60,6 +60,7 @@
     SUBDIR += edonkey-tool-list
     SUBDIR += edonkey-tool-recovermet
     SUBDIR += edonkey-tool-slist
+    SUBDIR += elscreen
     SUBDIR += emma
     SUBDIR += estic
     SUBDIR += ewipe
