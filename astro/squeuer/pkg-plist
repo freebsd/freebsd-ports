@@ -1,0 +1,5 @@
+sbin/squeuer
+etc/squeuer.conf.sample
+etc/rc.d/squeuer.sh.sample
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO

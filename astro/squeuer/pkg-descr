@@ -1,0 +1,18 @@
+SQueuer is a queueing proxy for Seti@Home with the following features:
+
+	* Keeps a configurable sized queue of work units so that
+	  the client will always be able to get a new work unit
+	  immediately upon finishing one.
+
+	* Queues results for uploading should the main Seti@Home
+	  site be overloaded or down. Results are never lost and the
+	  client is never delayed waiting to upload a result.
+
+	* Can handle multiple users running the Seti@Home client
+	  on multiple machines all connecting to SQueuer.
+
+	* Platform independent. SQueuer has been tested and found
+	  to work on different versions of Unix, MacOS and Windows.
+	  All it requires is a Perl 5 interpreter.
+
+WWW: http://www.eyesbeyond.com/squeuer/

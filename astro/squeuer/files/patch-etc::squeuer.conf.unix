@@ -1,0 +1,22 @@
+$FreeBSD$
+
+--- etc/squeuer.conf.unix.orig	Thu Aug  7 09:32:52 2003
++++ etc/squeuer.conf.unix	Thu Aug  7 11:26:29 2003
+@@ -12,7 +12,7 @@
+ # Location of the work unit spooling directory
+ # This must be writable by the SQueuer process
+ #
+-spool_path = /var/spool/squeuer
++spool_path = %%SPOOLDIR%%
+ 
+ #
+ # Do we write the pid out
+@@ -52,7 +52,7 @@
+ #  warning - security problems or invalid data found
+ #  alert   - user must do something or squeuer won't work
+ #
+-log_method = /var/spool/squeuer/squeuer.log
++log_method = %%LOGDIR%%/squeuer.log
+ log_level = info,notice,warning,alert
+ 
+ #
