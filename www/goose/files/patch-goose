@@ -1,0 +1,63 @@
+--- goose.orig	Sat May 17 11:04:45 2003
++++ goose	Tue Dec 30 12:12:13 2003
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl 
++#!/usr/bin/env perl
+ #
+ # This is free software; you can redistribute it and/or modify it
+ # under the terms of the GNU General Public License as published by
+@@ -38,8 +38,8 @@
+ 
+ my $cfgfile = AppConfig::File->new($state);
+ 
+-if (-f '/etc/goose.conf') {
+-    $cfgfile->parse('/etc/goose.conf');
++if (-f '%%LOCALBASE%%/etc/goose.conf') {
++    $cfgfile->parse('%%LOCALBASE%%/etc/goose.conf');
+ }
+ if (-f ($ENV{HOME} . '/.goose.conf')) {
+     $cfgfile->parse($ENV{HOME} . '/.goose.conf');
+@@ -54,7 +54,7 @@
+ 	  "and follow the instructions for creating a Google Account.\n" .
+ 	  "\n" . 
+ 	  "Once you have the key, add it to your configuration file,\n" .
+-	  "either the system-wide config file (/etc/goose.conf), or \n" .
++	  "either the system-wide config file (%%LOCALBASE%%/etc/goose.conf), or \n" .
+ 	  "in your user-specific config file, named .goose.conf in your \n" .
+ 	  "home directory.\n\n";
+     exit(-1);
+@@ -112,7 +112,7 @@
+ 
+ my $query = join(" ", @ARGV);
+ 
+-my $googleSearch = SOAP::Lite->service("file:/usr/lib/goose/GoogleSearch.wsdl");
++my $googleSearch = SOAP::Lite->service("file:%%DATADIR%%/GoogleSearch.wsdl");
+ 
+ #
+ # The MAINLOOP is the giant loop surrounding the bulk of the code. Each
+@@ -238,9 +238,9 @@
+ 	    endwin();
+ 
+ 	    if ($state->get("one_shot")) {
+-		exec("/etc/urlview/url_handler.sh '$element->{'URL'}'");
++		exec("%%LOCALBASE%%/bin/url_handler.sh '$element->{'URL'}'");
+ 	    } else {
+-		system("/etc/urlview/url_handler.sh '$element->{'URL'}'");
++		system("%%LOCALBASE%%/bin/url_handler.sh '$element->{'URL'}'");
+ 	    }
+ 	}
+ 
+@@ -440,11 +440,11 @@
+ 
+ Goose uses configuration files to store the Google web API key. They
+ both observe the same format. An example is provided in 
+-/usr/share/doc/goose/goose.conf.example.
++%%EXAMPLESDIR%%/goose.conf.example.
+ 
+ =over 8
+ 
+-=item B</etc/goose.conf>
++=item B<%%LOCALBASE%%/etc/goose.conf>
+ 
+ The system-wide configuration file.
+ 

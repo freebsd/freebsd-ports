@@ -1,0 +1,6 @@
+Goose (GOOge SEarch) allows you to search Google's index of the Internet from
+the command line. You run Goose, giving it your list of search terms, and it
+presents a list of search results using an easy to navigate Curses display in
+your terminal. You can then select a search result to open in your web browser.
+
+WWW: http://goose-search.sourceforge.net/
