@@ -1,0 +1,14 @@
+--- configure.h.orig	Tue Aug 13 21:39:02 1996
++++ configure.h	Tue Aug 13 21:40:51 1996
+@@ -42,7 +42,10 @@
+ /* #define DOMAIN_NAME "/your/file/here"  */
+ /* #define DOMAIN_NAME "your_domain_here" */
+ 
+-#define DOMAIN_HACK	1
++#define DOMAIN_HACK	0	/* if set to 1 and if you have a dialup 
++				   connection to internet and use the 
++				   resolver, then knews causes a dialup 
++				   on start */
+ 
+ 
+ 
