@@ -4030,6 +4030,7 @@ newkind		ports/games/newkind
 newlfs		src/sbin/newlfs
 newlib-m68k	ports/devel/newlib-m68k
 newmail		ports/mail/newmail
+newmat		ports/math/newmat
 newsfetch	ports/news/newsfetch
 newsfish	ports/news/newsfish
 newsgrab	ports/news/newsgrab
