@@ -7,7 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}p${JDK_PATCHSET_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	# http://www.sun.com/software/java2/download.html
 #		 http://www.eyesbeyond.com/freebsddom/java/jdk.html
@@ -38,6 +38,7 @@ JFC11DIR?=	${WRKDIRPREFIX}${.CURDIR}/../../java/jfc/work/swing-1.1.1fcs
 
 ONLY_FOR_ARCHS=	i386
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 RESTRICTED=	"Redistribution of pre-compiled binaries is not permitted"
 NO_CDROM=	"Redistribution of pre-compiled binaries is not permitted"
 MAKEFILE=	GNUmakefile
@@ -115,6 +116,10 @@ pre-patch:
 	 cd ../../ext		&& ${PATCH_CMD} ${WRKDIR}/ext.patches
 	@${MKDIR} ${WRKSRC}/1.1_libs
 	@${CP} ${JFC11DIR}/*.jar ${WRKSRC}/1.1_libs
+
+post-patch:
+	@${REINPLACE_CMD} -e "s:%%LOCALBASE%%:${LOCALBASE}:" \
+		${WRKSRC}/../../src/bsd/javavm/runtime/javai_md.c
 
 .if defined(WITH_LINUX_BOOTSTRAP) || !exists(${PREFIX}/jdk${JDK_VERSION}/bin/javac)
 # Some checks for bootstrapping with a Linux JDK
