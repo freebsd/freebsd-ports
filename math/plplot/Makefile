@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	plplot
-PORTVERSION=	5.3.0
+PORTVERSION=	5.3.1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -46,6 +46,14 @@ PLIST_SUB+=	X11=""
 CONFIGURE_ARGS+=	--with-pthreads
 .endif
 
+.if defined(WITH_SVGALIB)
+LIB_DEPENDS+=	vga:${PORTSDIR}/graphics/svgalib
+PLIST_SUB+=	SVGALIB=""
+.else
+CONFIGURE_ARGS+=	--disable-linuxvga
+PLIST_SUB+=	SVGALIB="@comment "
+.endif
+
 .if defined(WITH_PYTHON)
 USE_PYTHON=	yes
 PLIST_SUB+=	PYTHON=""
@@ -81,6 +89,7 @@ pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "	WITHOUT_X11=yes		Turns off X11 support"
 	@${ECHO_MSG} "	WITHOUT_PTHREAD=yes	Turns off pthread support"
+	@${ECHO_MSG} "	WITH_SVGALIB=yes	Turns on SVGAlib support"
 	@${ECHO_MSG} "	WITH_PYTHON=yes		Turns on Python support"
 	@${ECHO_MSG} "	WITH_TCLTK=yes		Turns on Tcl/Tk support"
 	@${ECHO_MSG} ""
