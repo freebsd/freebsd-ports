@@ -1,15 +1,15 @@
 # ports collection makefile for:	fkiss
-# Version required:	0.28
 # Date created:		31 Oct 1998
 # Whom:			Seiichirou Hiraoka
 #
 # $FreeBSD$
 #
 
-DISTNAME=	fkiss028
-PKGNAME=	fkiss-0.28
+PORTNAME=	fkiss
+PORTVERSION=	0.28
 CATEGORIES=	games
 MASTER_SITES=	http://www.oersted.co.jp/~yav/soft/fkiss/
+DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	flathill@FreeBSD.org
 

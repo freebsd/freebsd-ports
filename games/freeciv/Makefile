@@ -1,18 +1,18 @@
 # New ports collection makefile for:	freeciv
-# Version required:	1.10.0
 # Date created:		Jun 20 1997
 # Whom:			ada@bsd.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	freeciv-1.10.0
-.if defined(USE_GTK) && (${USE_GTK} == YES || ${USE_GTK} == yes)
-PKGNAME=	freeciv-gtk-1.10.0
-.endif
+PORTNAME=	freeciv
+PORTVERSION=	1.10.0
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.freeciv.org/pub/freeciv/stable_version/ \
 		ftp://ftp.pvv.ntnu.no/pub/freeciv/stable_version/
+.if defined(USE_GTK) && (${USE_GTK} == YES || ${USE_GTK} == yes)
+PKGNAMESUFFIX=	-gtk
+.endif
 
 MAINTAINER=	sheldonh@freebsd.org
 

@@ -1,15 +1,15 @@
 # New ports collection makefile for:	freesweep
-# Version required:			0.87
 # Date created:				25 July 1999
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=	freesweep
-PKGNAME=	freesweep-0.87
+PORTNAME=	freesweep
+PORTVERSION=	0.87
 CATEGORIES=	games
 MASTER_SITES=	http://www.upl.cs.wisc.edu/~hartmann/sweep/
+DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
