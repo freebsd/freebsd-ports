@@ -1,0 +1,52 @@
+--- configure.orig	Wed Dec 22 09:51:48 1999
++++ configure
+@@ -1360,8 +1360,10 @@
+ 	LDFLAGS="$LDFLAGS -L$PCAP_LIBPATH"
+ fi
+ 
++if false
++then
+ echo $ac_n "checking for local libnet library""... $ac_c" 1>&6
+ echo "configure:1365: checking for local libnet library" >&5
+     libnet=FAIL
+     lastdir=FAIL
+     places=`ls .. | sed -e 's,/$,,' -e 's,^,../,' | \
+@@ -1389,18 +1391,7 @@
+ then
+ 	LDFLAGS="$LDFLAGS -L$LIBNET_LIBPATH"
+ fi
+-
+-if test "x$ac_cv_c_bigendian" = "xyes"; then
+-       cat >> confdefs.h <<\EOF
+-#define LIBNET_BIG_ENDIAN 1
+-EOF
+-
+-else
+-       cat >> confdefs.h <<\EOF
+-#define LIBNET_LIL_ENDIAN 1
+-EOF
+-
+ fi
+-       
++
+ for ac_func in gethostbyname getservbyname
+ do
+@@ -1877,6 +1868,18 @@
+ fi
+ 
+ 
++if test "x$ac_cv_c_bigendian" = "xyes"; then
++       cat >> confdefs.h <<\EOF
++#define LIBNET_BIG_ENDIAN 1
++EOF
++
++else
++       cat >> confdefs.h <<\EOF
++#define LIBNET_LIL_ENDIAN 1
++EOF
++
++fi
++       
+ 
+ for ac_func in bzero bcopy bcmp strdup qsort snprintf usleep strerror strtol strtoul dlopen scandir
+ do
