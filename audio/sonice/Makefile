@@ -7,24 +7,22 @@
 #
 
 PORTNAME=	sonice
-PORTVERSION=	1.2
+PORTVERSION=	2.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.cyclooctane.com/sonice/release/
 
 MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	oggenc:${PORTSDIR}/audio/vorbis-tools \
-		flac:${PORTSDIR}/audio/flac
+		flac:${PORTSDIR}/audio/flac \
+		vorbisgain:${PORTSDIR}/audio/vorbisgain \
+		${PYTHON_SITELIBDIR}/yaml/__init__.py:${PORTSDIR}/devel/py-yaml
 
-USE_ZIP=	yes
 USE_PYTHON=	yes
-NO_WRKSUBDIR=	yes
-NO_BUILD=	yes
+USE_PYDISTUTILS=	yes
+WRKSRC=		${WRKDIR}/sonice
 
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/sonice.py ${PREFIX}/bin/sonice
-.for file in comatoys ogg
-	${INSTALL_SCRIPT} ${WRKSRC}/${file}.py ${PYTHON_SITELIBDIR}
-.endfor
+post-install:
+	@${MV} ${PREFIX}/bin/sonice.py ${PREFIX}/bin/sonice
 
 .include <bsd.port.mk>
