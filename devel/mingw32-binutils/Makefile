@@ -31,7 +31,6 @@ PATCHVERSION=	90.20040222.1
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 
 #USE_BZIP2=	yes
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=	13
 CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} \
@@ -62,9 +61,9 @@ post-install:
 	install-info ${PREFIX}/${INFO_PATH}/configure.info ${PREFIX}/${INFO_PATH}/dir
 	install-info ${PREFIX}/${INFO_PATH}/standards.info ${PREFIX}/${INFO_PATH}/dir
 # Add this after all quto-generated info etries
-	echo "@unexec rm %D/${PKGNAMEPREFIX:S/-$//}/info/dir" >> ${TMPPLIST}
-	echo "@unexec rmdir %D/${PKGNAMEPREFIX:S/-$//}/info 2> /dev/null || true" >> ${TMPPLIST}
-	echo "@unexec rmdir %D/${PKGNAMEPREFIX:S/-$//} 2> /dev/null || true" >> ${TMPPLIST}
+	${ECHO} "@unexec rm %D/${PKGNAMEPREFIX:S/-$//}/info/dir" >> ${TMPPLIST}
+	${ECHO} "@unexec rmdir %D/${PKGNAMEPREFIX:S/-$//}/info 2> /dev/null || true" >> ${TMPPLIST}
+	${ECHO} "@unexec rmdir %D/${PKGNAMEPREFIX:S/-$//} 2> /dev/null || true" >> ${TMPPLIST}
 .for F in ${BINARIES}
 	@${STRIP_CMD} ${PREFIX}/bin/${PKGNAMEPREFIX}$F
 	@${LN} -f ${PREFIX}/bin/${PKGNAMEPREFIX}$F \
