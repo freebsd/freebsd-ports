@@ -15,15 +15,20 @@ include/GL/svgamesa.h
 include/GL/wmesa.h
 include/GL/xmesa.h
 lib/libGL.a
-lib/libGL.so.14.0
+lib/libGL.so
+lib/libGL.so.14
 lib/libGLU.a
-lib/libGLU.so.14.0
+lib/libGLU.so
+lib/libGLU.so.14
 lib/libMesaGL.a
-lib/libMesaGL.so.14.0
+lib/libMesaGL.so
+lib/libMesaGL.so.14
 lib/libMesaGLU.a
-lib/libMesaGLU.so.14.0
+lib/libMesaGLU.so
+lib/libMesaGLU.so.14
 lib/libglut.a
+lib/libglut.so
 lib/libglut.so.3.7
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @dirrm include/GL

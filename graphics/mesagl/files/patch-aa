@@ -1,10 +1,33 @@
---- Make-config.orig	Fri Nov 21 20:05:40 1997
-+++ Make-config	Fri Nov 21 20:06:25 1997
-@@ -1,6 +1,6 @@
+--- Make-config.orig	Wed Jul  1 07:17:10 1998
++++ Make-config	Thu Sep 24 19:23:41 1998
+@@ -1,8 +1,12 @@
  # Make-config
  
 -MAJOR=3
 +MAJOR=14
  MINOR=0
- VERSION=$MAJOR.$MINOR
++.if ${PORTOBJFORMAT} == "elf"
++VERSION=$(MAJOR)
++.else
+ VERSION=$(MAJOR).$(MINOR)
++.endif
  
+ # Mesa 3-D graphics library
+ # Copyright (C) 1995-1998  Brian Paul
+@@ -237,6 +241,16 @@
+ 	"CFLAGS = -O2 -fPIC -pedantic -I/usr/X11R6/include -DSHM -DHZ=100" \
+ 	"MAKELIB = ../mklib.freebsd" \
+ 	"XLIBS = -L/usr/X11R6/lib -lXext -lXmu -lXi -lX11"
++
++freebsd-elf:
++	$(MAKE) $(MFLAGS) targets \
++	"GL_LIB = libMesaGL.a" \
++	"GLU_LIB = libMesaGLU.a" \
++	"GLUT_LIB = libglut.a" \
++	"CC = gcc" \
++	"CFLAGS = -O2 -fPIC -pedantic -I/usr/X11R6/include -DSHM -DHZ=100" \
++	"MAKELIB = ../mklib.freebsd" \
++	"XLIBS = -Wl,-rpath,${X11BASE}/lib -L${X11BASE}/lib -lXext -lXmu -lXi -lX11"
+ 
+ freebsd-386:
+ 	$(MAKE) $(MFLAGS) targets \
