@@ -24,6 +24,8 @@ BUILD_DEPENDS=	${SITE_PERL}/Spiffy.pm:${PORTSDIR}/devel/p5-Spiffy \
 		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Unfetchable
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Algorithm::Accounting.3
