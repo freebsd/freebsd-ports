@@ -1,0 +1,6 @@
+include/arpack.h	
+lib/libarpack.a
+share/doc/arpack/ex-complex.doc.gz
+share/doc/arpack/ex-nonsym.doc.gz
+share/doc/arpack/ex-sym.doc.gz
+@dirrm share/doc/arpack
