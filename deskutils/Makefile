@@ -42,6 +42,7 @@
     SUBDIR += gtodo
     SUBDIR += gucharmap
     SUBDIR += gworkspace
+    SUBDIR += howm
     SUBDIR += ical
     SUBDIR += ithought
     SUBDIR += jlj
