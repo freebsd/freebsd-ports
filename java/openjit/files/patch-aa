@@ -1,0 +1,27 @@
+--- Makefile.in.orig	Tue Sep 26 10:43:57 2000
++++ Makefile.in	Tue Sep 26 15:34:34 2000
+@@ -112,12 +112,12 @@
+ 
+ .PHONY: all optimized debug clean
+ 
+-all: debug optimized
++all: optimized
+ 
+ library: debug optimized
+ 
+-OpenJIT.jar:	org/OpenJIT/*.class
+-	jar cvf OpenJIT.jar org/OpenJIT/*.class
++OpenJIT.jar:	all
++	$(JAVA_HOME)/bin/jar cvf OpenJIT.jar org/OpenJIT/*.class
+ 
+ CC = @CC@
+ 
+@@ -131,7 +131,7 @@
+ OBJDIR          = obj$(SUFFIX)
+ 
+ CFLAGS_COMMON	= -Wall @CFLAGS@
+-CFLAGS_OPT	= -O2
++CFLAGS_OPT	= -Wall @CFLAGS@
+ CFLAGS_DBG	= -g
+ CFLAGS		= $(CFLAGS_$(VARIANT)) $(CFLAGS_COMMON) $(OTHER_CFLAGS)
+ INCLUDES	= -I@JDK_INCLUDE@ -I@JDK_INCLUDE@/$(PLATFORM) -I./CClassHeaders
