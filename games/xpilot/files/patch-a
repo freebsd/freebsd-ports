@@ -1,10 +1,10 @@
---- Local.config.orig	Tue Mar  5 18:09:01 2002
-+++ Local.config	Fri Mar  8 19:11:58 2002
+--- Local.config.orig	Thu Apr 18 17:45:52 2002
++++ Local.config	Thu Apr 18 17:46:18 2002
 @@ -36,12 +36,10 @@
  #define	LocalGuru xpilot@xpilot.org	/* The one to contact for problems */
  #endif /* LocalGuru */
  
--PREFIX = /usr/local/games
+-PREFIX = /usr/local
 -
  /* Manual pages for games usually go to section 6. */
  MANSUFFIX = 6
