@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bonobo
-PORTVERSION=	1.0.8
+PORTVERSION=	1.0.9
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/bonobo
@@ -33,5 +33,11 @@ pre-patch:
 	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
+
+post-install:
+	@if [ -L ${PREFIX}/include/bonobo ]; then \
+		${RM} -f ${PREFIX}/include/bonobo; \
+	fi
+	@${LN} -sf ${PREFIX}/include/gnome-1.0/bonobo ${PREFIX}/include/bonobo
 
 .include <bsd.port.mk>
