@@ -1,0 +1,11 @@
+--- main/Makefile.in.orig	Wed May  1 03:16:32 2002
++++ main/Makefile.in	Wed May  1 03:17:03 2002
+@@ -251,7 +251,7 @@
+ 	  p1=`echo $$p|sed 's/$(EXEEXT)$$//'`; \
+ 	  if test -f $$p \
+ 	  ; then \
+-	    f=`echo $$p1|sed '$(transform);s/$$/$(EXEEXT)/'`; \
++	    f=`echo $$p1|sed 's/$$/$(EXEEXT)/'`; \
+ 	   echo " $(INSTALL_PROGRAM_ENV) $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/$$f"; \
+ 	   $(INSTALL_PROGRAM_ENV) $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/$$f; \
+ 	  else :; fi; \
