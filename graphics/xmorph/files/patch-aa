@@ -1,11 +1,11 @@
---- Makefile.orig	Fri Sep 12 09:37:55 1997
-+++ Makefile	Tue Nov 11 10:08:40 1997
+--- Makefile.orig	Thu Sep 11 20:37:55 1997
++++ Makefile	Sat Oct  3 23:33:33 1998
 @@ -132,7 +132,7 @@
  #
  
  #INCLUDE=-I/usr/local/include -I/usr/openwin/include
 -INCLUDE=-I/usr/local/include
-+INCLUDE=-I/usr/local/include -I/usr/X11R6/include
++INCLUDE=-I/usr/local/include -I$(X11BASE)/include
  
  
  
@@ -27,16 +27,19 @@
  
  
  
-@@ -248,7 +248,7 @@
+@@ -248,7 +248,10 @@
  #   The cvt library is available in the goldengate.sw.goldengate package
  
  #XLIBS=-L/usr/openwin/lib -lXaw -lXmu -lXext -lXt -lX11
 -XLIBS=-L/usr/X11/lib -lXaw -lXmu -lXext -lXt -lX11
-+XLIBS=-L/usr/X11R6/lib -lXaw -lXmu -lXext -lXt -lX11
++XLIBS=-L$(X11BASE)/lib -lXaw -lXmu -lXext -lXt -lX11
++.if $(PORTOBJFORMAT) == "elf"
++XLIBS+=-Wl,-rpath,$(X11BASE)/lib
++.endif
  #XLIBS=              -lXaw -lXmu -lXext -lXt -lcvt -lX11
  
  
-@@ -289,7 +289,7 @@
+@@ -289,7 +292,7 @@
  
  #LIBS = -lm
  #LIBS = $(XLIBS) -lm
@@ -45,15 +48,15 @@
  #LIBS = $(XLIBS) -lm /usr/lib/debug/malloc.o
  #LIBS = $(XLIBS) -lm -lmalloc
  
-@@ -369,6 +369,11 @@
- 
+@@ -370,6 +373,11 @@
  #all: morph.$(SHLIB_EXT)
  all: xmorph xmorph.man
-+
+ 
 +install:
 +	install -cs xmorph ${PREFIX}/bin
 +	install -c -m 644 xmorph ${PREFIX}/man/man1/xmorph.1
 +	gzip -9nf ${PREFIX}/man/man1/xmorph.1
- 
++
  xmorph:   $(OBJS)
+ 	@echo ""
  	@echo ""
