@@ -14,14 +14,12 @@ MASTER_SITE_SUBDIR=	snowstorm
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	SDL port of an old DOS game called Gladiator
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
-
-SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
+LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_SDL=	yes
 
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
 		CPPFLAGS="-I${X11BASE}/include"
