@@ -1,12 +1,12 @@
 # New ports collection makefile for:   scwm
-# Version required:    0.99.5.1
+# Version required:    0.99.6
 # Date created:        26 December 1997
 # Whom:                Yukihiro Nakai <nacai@iname.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	scwm-0.99.5.1
+DISTNAME=	scwm-0.99.6
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://scwm.mit.edu/pub/scwm/
 
@@ -36,5 +36,8 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 
 MAN1=		scwm.1 scwmexec.1 scwmrepl.1
+
+post-install:
+		${RM} -rf ${PREFIX}/share/scwm/ViaVoice
 
 .include <bsd.port.mk>
