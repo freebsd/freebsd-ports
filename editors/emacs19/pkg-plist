@@ -15,6 +15,17 @@ bin/emacsclient
 man/man1/emacs.1.gz
 man/man1/etags.1.gz
 man/man1/ctags.1.gz
+@unexec install-info --delete %D/info/emacs %D/info/dir
+@unexec install-info --delete %D/info/vip %D/info/dir
+@unexec install-info --delete %D/info/viper %D/info/dir
+@unexec install-info --delete %D/info/forms %D/info/dir
+@unexec install-info --delete %D/info/gnus %D/info/dir
+@unexec install-info --delete %D/info/mh-e %D/info/dir
+@unexec install-info --delete %D/info/cl %D/info/dir
+@unexec install-info --delete %D/info/sc %D/info/dir
+@unexec install-info --delete %D/info/dired-x %D/info/dir
+@unexec install-info --delete %D/info/ediff %D/info/dir
+@unexec install-info --delete %D/info/ccmode %D/info/dir
 info/cl
 info/cl-1
 info/cl-2
@@ -26,7 +37,6 @@ info/dired-x
 info/ediff
 info/ediff-1
 info/ediff-2
-@unexec install-info --delete %D/info/emacs %D/info/dir
 info/emacs
 info/emacs-1
 info/emacs-10
@@ -86,6 +96,16 @@ info/viper-3
 info/viper-4
 @exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/emacs %D/info/dir
+@exec install-info %D/info/vip %D/info/dir
+@exec install-info %D/info/viper %D/info/dir
+@exec install-info %D/info/forms %D/info/dir
+@exec install-info %D/info/gnus %D/info/dir
+@exec install-info %D/info/mh-e %D/info/dir
+@exec install-info %D/info/cl %D/info/dir
+@exec install-info %D/info/sc %D/info/dir
+@exec install-info %D/info/dired-x %D/info/dir
+@exec install-info %D/info/ediff %D/info/dir
+@exec install-info %D/info/ccmode %D/info/dir
 libexec/emacs/19.34/i386--freebsd/cvtmail
 libexec/emacs/19.34/i386--freebsd/digest-doc
 libexec/emacs/19.34/i386--freebsd/emacsserver
