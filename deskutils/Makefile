@@ -47,6 +47,7 @@
     SUBDIR += plan
     SUBDIR += preferences.app
     SUBDIR += rox-memo
+    SUBDIR += rubrica
     SUBDIR += sliderule
     SUBDIR += teapot
     SUBDIR += tuxcards
