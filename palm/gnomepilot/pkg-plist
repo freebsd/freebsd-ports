@@ -2,10 +2,8 @@ bin/gnome-pilot-make-password
 bin/gpilot-applet
 bin/gpilot-install-file
 bin/gpilotd
-bin/gpilotd-client
 bin/gpilotd-control-applet
 bin/gpilotd-session-wrapper
-bin/gpilotdcm-client
 etc/CORBA/servers/gpilot-applet.gnorba
 etc/CORBA/servers/gpilotd.gnorba
 etc/gpilotConf.sh
@@ -25,10 +23,13 @@ lib/gnome-pilot/conduits/libbackup_conduit.so
 lib/gnome-pilot/conduits/libfile_conduit.so
 lib/gnome-pilot/conduits/libtest_conduit.so
 lib/libgpilotd.a
+lib/libgpilotd.so
 lib/libgpilotd.so.1
 lib/libgpilotdcm.a
+lib/libgpilotdcm.so
 lib/libgpilotdcm.so.1
 lib/libgpilotdconduit.a
+lib/libgpilotdconduit.so
 lib/libgpilotdconduit.so.1
 man/man1/gpilot-install-file.1
 share/gnome/applets/Utility/gpilot-applet.desktop
@@ -76,6 +77,7 @@ share/locale/sk/LC_MESSAGES/gnome-pilot.mo
 share/locale/sv/LC_MESSAGES/gnome-pilot.mo
 share/locale/tr/LC_MESSAGES/gnome-pilot.mo
 share/locale/uk/LC_MESSAGES/gnome-pilot.mo
+share/locale/zh_TW/LC_MESSAGES/gnome-pilot.mo
 @dirrm share/gnome/gnome-pilot/glade
 @dirrm share/gnome/gnome-pilot/conduits
 @dirrm share/gnome/gnome-pilot

@@ -1,6 +1,9 @@
---- configure.orig	Wed May 10 00:02:39 2000
-+++ configure	Tue Jun 13 16:40:13 2000
-@@ -1839,8 +1839,8 @@
+
+$FreeBSD$
+
+--- configure.orig	Fri Dec 14 10:40:32 2001
++++ configure	Fri Dec 14 10:42:15 2001
+@@ -1851,8 +1851,8 @@
    
  		gnome_cv_gnorba_found=no
  		if test x$gnome_cv_orbit_found = xyes; then
@@ -11,7 +14,7 @@
  			if test -n "$GNORBA_LIBS"; then
  				gnome_cv_gnorba_found=yes
  			fi
-@@ -1860,8 +1860,8 @@
+@@ -1872,8 +1872,8 @@
  fi
  	if test x$gnome_cv_orbit_found = xyes; then
  		
@@ -22,3 +25,14 @@
  		
  		
  	else
+@@ -5290,8 +5290,8 @@
+ fi
+ 
+ GPILOT_LIBDIR='-L${libdir}'
+-GPILOT_LIBS="-lgpilotd -lgpilotdcm -lgpilotdconduit `$GNOME_CONFIG --libs gnome` `glib-config --libs glib gmodule`"
+-GPILOT_INCLUDEDIR="-I${includedir} `$GNOME_CONFIG --cflags gnome` `glib-config --cflags glib gmodule`"
++GPILOT_LIBS="-lgpilotd -lgpilotdcm -lgpilotdconduit `$GNOME_CONFIG --libs gnome` `$GLIB_CONFIG --libs glib gmodule`"
++GPILOT_INCLUDEDIR="-I${includedir} `$GNOME_CONFIG --cflags gnome` `$GLIB_CONFIG --cflags glib gmodule`"
+ 
+ 
+ 
