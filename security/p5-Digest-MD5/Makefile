@@ -1,7 +1,9 @@
 # New ports collection makefile for:    p5-Digest-MD5
 # Version required:                     2.*
+# Date created:				1999/04/07
+# Whom:					ache
 #
-# $Id: Makefile,v 1.11 1998/09/15 21:31:52 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1999/04/07 20:20:33 ache Exp $
 #
 
 DISTNAME=       Digest-MD5-2.06
