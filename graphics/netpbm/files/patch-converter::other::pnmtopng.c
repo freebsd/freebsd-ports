@@ -1,6 +1,6 @@
---- pnm/pnmtopng.c.orig	Sun Jul 22 12:32:22 2001
-+++ pnm/pnmtopng.c	Sat Dec  8 00:00:00 2001
-@@ -1441,8 +1441,13 @@
+--- converter/other/pnmtopng.c.orig	Thu Apr 25 09:37:11 2002
++++ converter/other/pnmtopng.c	Tue Jun 18 00:00:00 2002
+@@ -1857,8 +1857,13 @@
        fprintf(stderr,"pnmtopng version %s.\n", VERSION);
        fprintf(stderr, "   Compiled with libpng %s; using libpng %s.\n",
          PNG_LIBPNG_VER_STRING, png_libpng_ver);

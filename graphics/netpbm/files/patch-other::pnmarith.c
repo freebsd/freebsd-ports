@@ -1,5 +1,5 @@
---- pnm/pnmarith.c.orig	Sun Aug 13 13:08:04 1995
-+++ pnm/pnmarith.c	Sat Oct 16 02:39:24 1999
+--- other/pnmarith.c.orig	Sun Aug 13 13:08:04 1995
++++ other/pnmarith.c	Tue Jun 18 00:00:00 2002
 @@ -147,9 +147,9 @@
  		    break;
  

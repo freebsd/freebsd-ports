@@ -1,0 +1,22 @@
+--- converter/other/pnmtopalm/Makefile.orig	Mon Jun 10 13:40:28 2002
++++ converter/other/pnmtopalm/Makefile	Tue Jun 18 00:00:00 2002
+@@ -35,15 +35,15 @@
+ 
+ install.bin: install.bin.local
+ .PHONY: install.bin.local
+-install.bin.local: $(PKGDIR)/misc $(DATAFILE:%=%_installdata)
++install.bin.local: $(PKGDIR)/share/netpbm $(DATAFILE:%=%_installdata)
+ 
+ install.merge: install.merge.local
+ .PHONY: install.merge.local
+-install.merge.local: $(PKGDIR)/misc $(DATAFILE:%=%_installdata)
++install.merge.local: $(PKGDIR)/share/netpbm $(DATAFILE:%=%_installdata)
+ 
+ %_installdata:
+-	$(INSTALL) -c -m $(INSTALL_PERM_DATA) \
+-	  $(SRCDIR)/$(SUBDIR)/$(@:%_installdata=%) $(PKGDIR)/misc;
++	${BSD_INSTALL_DATA} \
++	  $(SRCDIR)/$(SUBDIR)/$(@:%_installdata=%) $(PKGDIR)/share/netpbm;
+ 
+ 
+ clean: cleanspecial

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	netpbm
-PORTVERSION=	9.25
-PORTREVISION=	1
+PORTVERSION=	10.2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,16 +22,14 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 USE_GMAKE=	yes
 MAKE_ENV=	LN="${LN}" RANLIB="${RANLIB}"
 MAKEFILE=	GNUmakefile
+INSTALL_TARGET=	install.bin install.lib install-dev
 INSTALLS_SHLIB=	yes
 
-.include <bsd.port.pre.mk>
-
-.include "${FILESDIR}/manpages"
-
 post-patch:
-	@${PERL} -pi -e 's|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/pm_config.h
-	@${PERL} -pi -e 's|<shhopt.h>|<pm_shhopt.h>|g' ${WRKSRC}/pbm/pm.h
+	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/pm_config.h
+	@${REINPLACE_CMD} -e 's|<shhopt.h>|<pm_shhopt.h>|g' ${WRKSRC}/lib/pm.h
 	@${CP} ${FILESDIR}/Makefile.config.FreeBSD ${WRKSRC}/Makefile.config
-	@${LN} -sf ${WRKSRC}/shhopt/shhopt.h ${WRKSRC}/shhopt/pm_shhopt.h
+	@${LN} -sf ${WRKSRC}/lib/util/shhopt.h ${WRKSRC}/lib/util/pm_shhopt.h
+	@${LN} -sf ${WRKSRC}/lib/util/nstring.h ${WRKSRC}/lib/util/pm_nstring.h
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
