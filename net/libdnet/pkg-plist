@@ -9,6 +9,7 @@ include/dnet/fw.h
 include/dnet/icmp.h
 include/dnet/intf.h
 include/dnet/ip.h
+include/dnet/ip6.h
 include/dnet/os.h
 include/dnet/rand.h
 include/dnet/route.h

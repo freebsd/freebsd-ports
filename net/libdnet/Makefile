@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	libdnet
-PORTVERSION=	1.5
+PORTVERSION=	1.7
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	dominic.marks@btinternet.com
-COMMENT=	A simple interface to level networking routines
+COMMENT=	A simple interface to low level networking routines
 
 GNU_CONFIGURE=	yes
 
