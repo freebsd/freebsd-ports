@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	HTTP_Header
-PORTVERSION=	0.1.5
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 CATEGORIES=	www devel pear
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,8 +17,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	HTTP
 FILES=		Header.php Header/Cache.php
-EXAMPLES=	Header_Cache.php
-_EXAMPLESDIR=	docs
+TESTS=		README.txt cacheresponse.php header.php header_cache.php response.php
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
