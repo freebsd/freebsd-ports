@@ -320,6 +320,7 @@
     SUBDIR += ruby-mwdom
     SUBDIR += ruby-nqxml
     SUBDIR += ruby-qt2xml
+    SUBDIR += ruby-raspell
     SUBDIR += ruby-rd-mode.el
     SUBDIR += ruby-rdoc
     SUBDIR += ruby-rdtool

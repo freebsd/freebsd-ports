@@ -1,0 +1,34 @@
+# New ports collection makefile for:	rAspell
+# Date created:		10 November 2002
+# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	raspell
+PORTVERSION=	0.1
+CATEGORIES=	textproc ruby
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
+EXTRACT_SUFX=	.tgz
+DIST_SUBDIR=	ruby
+
+MAINTAINER=	knu@FreeBSD.org
+
+LIB_DEPENDS=	aspell.15:${PORTSDIR}/textproc/aspell
+
+USE_RUBY=	yes
+USE_RUBY_EXTCONF=	yes
+
+INSTALL_TARGET=	site-install
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${RUBY_MODEXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/example.rb ${RUBY_MODEXAMPLESDIR}/
+	${MKDIR} ${RUBY_MODDOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${RUBY_MODDOCDIR}/
+.endif
+
+.include <bsd.port.mk>
