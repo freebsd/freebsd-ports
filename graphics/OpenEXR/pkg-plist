@@ -1,3 +1,4 @@
+bin/exrheader
 %%WITH_FLTK%%bin/exrdisplay
 lib/libHalf.a
 lib/libHalf.la
@@ -83,5 +84,14 @@ include/OpenEXR/half.h
 include/OpenEXR/halfFunction.h
 include/OpenEXR/halfLimits.h
 libdata/pkgconfig/OpenEXR.pc
+share/aclocal/openexr.m4
+%%EXAMPLESDIR%%/drawImage.cpp
+%%EXAMPLESDIR%%/drawImage.h
+%%EXAMPLESDIR%%/generalInterfaceExamples.cpp
+%%EXAMPLESDIR%%/generalInterfaceExamples.h
+%%EXAMPLESDIR%%/main.cpp
+%%EXAMPLESDIR%%/rgbaInterfaceExamples.cpp
+%%EXAMPLESDIR%%/rgbaInterfaceExamples.h
 @unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
 @dirrm include/OpenEXR
+@dirrm %%EXAMPLESDIR%%

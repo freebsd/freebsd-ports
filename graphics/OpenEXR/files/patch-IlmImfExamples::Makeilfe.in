@@ -1,0 +1,11 @@
+--- IlmImfExamples/Makefile.in.orig	Sun Mar 23 20:08:09 2003
++++ IlmImfExamples/Makefile.in	Tue Mar 25 01:06:30 2003
+@@ -109,7 +109,7 @@
+ 		      rgbaInterfaceExamples.h generalInterfaceExamples.h
+ 
+ 
+-examplesdir = $(datadir)/doc/OpenEXR-@OPENEXR_VERSION@/examples
++examplesdir = $(datadir)/examples/OpenEXR-@OPENEXR_VERSION@
+ examples_DATA = $(imfexamples_SOURCES)
+ 
+ imfexamplesdir = $(examplesdir)
