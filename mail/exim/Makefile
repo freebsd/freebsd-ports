@@ -179,7 +179,6 @@ pre-install:
 	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/exim.sh ${PREFIX}/etc/rc.d
 	@${CAT} ${PKGMESSAGE}
 
 
