@@ -24,7 +24,7 @@ CONFIGURE_ARGS+=--with-qt-dir=${X11BASE} \
 		--with-qt-libraries=${X11BASE}/lib \
 		--with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ENV+= LIBQT="-lqt2" MOC="${MOC}" DO_NOT_COMPILE=mouse LIBQTFILE="libqt2" \
-		CPPFLAGS="-I${LOCALBASE}/include" \
+		CPPFLAGS="-I${LOCALBASE}/include -D_GETOPT_H" \
 		LIBS="-Wl,-export-dynamic -L${LOCALBASE}/lib -ljpeg -lgcc -lstdc++"
 USE_GMAKE=	yes
 

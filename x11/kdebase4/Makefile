@@ -32,7 +32,7 @@ CONFIGURE_ARGS+=--with-xdmdir=${X11BASE}/lib/X11/xdm \
 		--with-extra-libs=${LOCALBASE}/lib \
 		--disable-closure
 CONFIGURE_ENV+=	MOC="${MOC}" LIBQT="-lqt2" LIBQTFILE="libqt2" \
-		CPPFLAGS="-I${LOCALBASE}/include" \
+		CPPFLAGS="-I${LOCALBASE}/include -D_GETOPT_H" \
 		LIBS="-Wl,-export-dynamic -L${LOCALBASE}/lib -ljpeg -lstdc++ -lgcc"
 USE_GMAKE=	yes
 

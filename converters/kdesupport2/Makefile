@@ -27,7 +27,7 @@ CONFIGURE_ARGS+=--with-qt-includes=${X11BASE}/include/qt2 \
 		--with-extra-libs=${LOCALBASE}/lib \
 		--without-audiofile
 CONFIGURE_ENV+= LIBQT="-lqt2" MOC="${MOC}" LIBQTFILE="libqt2" \
-		CPPFLAGS="-I${LOCALBASE}/include" \
+		CPPFLAGS="-I${LOCALBASE}/include -D_GETOPT_H" \
 		LIBS="-Wl,-export-dynamic -L${LOCALBASE}/lib -ljpeg -lstdc++ -lgcc"
 USE_GMAKE=	yes
 
