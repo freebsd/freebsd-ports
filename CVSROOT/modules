@@ -561,6 +561,7 @@ bison		ports/devel/bison
 bison1875	ports/devel/bison1875
 bitchx		ports/irc/bitchx
 bitedit		ports/editors/bitedit
+bitlbee		ports/irc/bitlbee
 bitmap		ports/editors/bitmap
 bitmap-emacs20	ports/editors/bitmap-emacs20
 bitmap-fonts	ports/x11-fonts/bitmap-fonts
