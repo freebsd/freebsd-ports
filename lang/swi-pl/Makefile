@@ -25,8 +25,14 @@ PLIST_SUB=	DISTNAME=${DISTNAME} ARCH=${ARCH} OS=${OPSYS:L}
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		"Broken pkg-plist"
+.if (${ARCH} == "i386")
+PLIST_SUB+=	BITS=32
+.else
+PLIST_SUB+=	BITS=64
+.endif
+
+.if (${ARCH} == "alpha")
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-src-configure
 .endif
 
 post-install:

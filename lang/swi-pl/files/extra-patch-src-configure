@@ -1,0 +1,13 @@
+--- src/configure.orig	Sat Dec 20 00:49:33 2003
++++ src/configure	Sat Dec 20 00:50:26 2003
+@@ -2960,8 +2960,8 @@
+ fi
+ 
+ if test "$GCC" = "yes"; then
+-    COFLAGS="-O3 -fno-strict-aliasing"
+-    LDFLAGS="$LDFLAGS -O3"
++    COFLAGS="-O -fno-strict-aliasing"
++    LDFLAGS="$LDFLAGS -O"
+     if test "$ac_cv_header_stdc" = "yes" ; then
+         CWFLAGS=-Wall
+     else
