@@ -89,6 +89,7 @@
     SUBDIR += l0phtcrack
     SUBDIR += labrea
     SUBDIR += lcrzo
+    SUBDIR += lcrzoex
     SUBDIR += libident
     SUBDIR += libmcrypt
     SUBDIR += libparanoia
