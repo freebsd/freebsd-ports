@@ -1,11 +1,11 @@
 --- Makefile.orig	Sun Jul 26 16:11:40 1998
 +++ Makefile	Sun Jul 26 16:14:35 1998
-@@ -1,11 +1,12 @@
+@@ -1,11 +1,11 @@
  
  SRCS= include.c list.c main.c subs.c var.c wild.c
  OBJS= include.o list.o main.o subs.o var.o wild.o
 -CFLAGS= -g -O2 -Wall -Wstrict-prototypes
-+CFLAGS= -O2 -Wall
++CFLAGS+= -Wall
  LFLAGS=
  EXE= xmake
 -IBDIR= /usr/local/bin
@@ -13,7 +13,7 @@
 +PREFIX?= /usr/local
 +IBDIR= $(PREFIX)/bin
 +IMDIR= $(PREFIX)/man/man1
- CC= cc
+-CC= cc
  
  all: $(EXE)
 @@ -16,6 +17,6 @@
