@@ -9,10 +9,10 @@
 DISTNAME=	code2html.pl
 PKGNAME=	code2html-0.8.7c
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.giga.or.at/~weasel/pub/code2html/latest/
+MASTER_SITES=	http://www.cosy.sbg.ac.at/~ppalfrad/code2html/
 EXTRACT_SUFX=	.gz
 
-MAINTAINER=	jedgar@fxp.org
+MAINTAINER=	jedgar@FreeBSD.org
 
 RUN_DEPENDS=	bzip2:${PORTSDIR}/archivers/bzip2
 
