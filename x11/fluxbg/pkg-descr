@@ -1,0 +1,6 @@
+The Fluxbox Background Tool gives you a nice GUI to make background
+changing easier in fluxbox/blackbox. It lets you use pixmaps as well
+as solid colours. It includes a daemon to change the background
+automatically.
+
+WWW: http://fluxbg.sourceforge.net
