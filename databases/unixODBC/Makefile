@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	unixODBC
-PORTVERSION=	2.2.10
+PORTVERSION=	2.2.11
 CATEGORIES=	databases
 MASTER_SITES=	http://www.unixodbc.org/
 
