@@ -1,0 +1,34 @@
+# $FreeBSD$
+
+LIB=		jconv
+SHLIB_MAJOR?=	0
+SHLIB_MINOR?=	0
+CFLAGS+=	-Wall -I${LOCALBASE}/include -DLOCALBASE=${LOCALBASE}
+LDADD=		-liconv -L${LOCALBASE}/lib
+SRCS=		conv.c info.c compat.c
+INCS=		jconv.h
+NOMAN=		YES
+LIBDIR=		${LOCALBASE}/lib
+INCDIR=		${LOCALBASE}/include
+ETCDIR=		${LOCALBASE}/etc
+
+.include <bsd.lib.mk>
+
+# For FreeBSD 3.x or older
+.if !target(_includeinstall)
+_includeinstall:
+.if defined(INCS)
+.for header in ${INCS}
+        cd ${.CURDIR} && \
+        ${INSTALL} -C -o ${INCOWN} -g ${INCGRP} -m ${INCMODE} \
+                ${header} ${DESTDIR}${INCDIR}
+
+.endfor
+.endif
+
+beforeinstall: _includeinstall
+.endif
+
+afterinstall:
+	mkdir -p ${DESTDIR}/${ETCDIR}/libjconv
+	${INSTALL} -C default.conf ${DESTDIR}/${ETCDIR}/libjconv/

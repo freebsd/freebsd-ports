@@ -140,6 +140,7 @@
     SUBDIR += libicq
     SUBDIR += libimg
     SUBDIR += libjcode
+    SUBDIR += libjconv
     SUBDIR += libslang
     SUBDIR += linux-netscape47-communicator
     SUBDIR += linux-netscape47-navigator
