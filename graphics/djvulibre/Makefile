@@ -7,7 +7,8 @@
 
 PORTNAME=	djvulibre
 PORTVERSION=	3.5.8
-CATEGORIES=	graphics
+PORTREVISION=	1
+CATEGORIES=	graphics www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	djvu
 
@@ -29,10 +30,18 @@ CONFIGURE_ENV=	JPEG_CFLAGS=-I"${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--enable-threads=posix --enable-shared --prefix="${PREFIX}"
 
 .ifndef WITHOUT_X11
-CONFIGURE_ENV+=	CXX=${CXX} PTHREAD_CFLAGS=-pthread PTHREAD_LIBS=-pthread \
+CONFIGURE_ENV+=	CXX=${CXX} \
+		PTHREAD_CFLAGS=-pthread \
+		PTHREAD_LIBS=-pthread \
 		QTLIBS="-L${X11BASE}/lib -lqt-mt"
 .else
 CONFIGURE_ARGS+=--disable-djview
+.endif
+
+.if !defined(WITH_OPTIMIZED_CFLAGS)
+pre-everything:
+	@${ECHO_MSG} "You can enable additional compilation optimizations"
+	@${ECHO_MSG} "by defining WITH_OPTIMIZED_CFLAGS"
 .endif
 
 .if defined(LOCALBASE) && ${LOCALBASE} != "/usr/local"
@@ -41,10 +50,12 @@ pre-configure:
 		-type f -print0 | xargs -0 ${GREP} -Fl --mmap /usr/local`
 .endif
 
+.if !defined(WITH_OPTIMIZED_CFLAGS)
 post-configure:
 	${PERL} -pi -e 's,-O3,,;' -e 's,-mcpu=i386,,; ' \
 		-e 's,^(OPTS =.*),\1 ${CFLAGS},' \
 		${WRKSRC}/*/Makefile ${WRKSRC}/*/*/Makefile
+.endif
 
 MAN1=	bzz.1 c44.1 cjb2.1 cpaldjvu.1 csepdjvu.1 ddjvu.1 djvm.1 djvmcvt.1 djvu.1 \
 	djvudump.1 djvuextract.1 djvumake.1 djvups.1 djvused.1 djvuserve.1 djvutxt.1
