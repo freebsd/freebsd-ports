@@ -31,6 +31,12 @@ MYPORTDOCS=	AUTHORS ChangeLog FAQ NEWS README doc/color.txt \
 		doc/dccresum.txt doc/links.txt doc/nickcomp.txt \
 		doc/quedit.txt doc/rfc1459.txt doc/tdcc.txt
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/quirc
@@ -39,4 +45,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
