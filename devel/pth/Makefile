@@ -7,6 +7,7 @@
 
 PORTNAME=	pth
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.engelschall.com/sw/pth/
@@ -15,11 +16,14 @@ MASTER_SITE_SUBDIR=	pth
 MAINTAINER=	ports@FreeBSD.org
 
 INSTALLS_SHLIB=	yes
+LDCONFIG_DIRS=	%%PREFIX%%/lib/pth
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-pthread \
 		--enable-syscall-soft \
 		--enable-optimize \
-		--enable-batch
+		--enable-batch \
+		--includedir="${PREFIX}/include/pth" \
+		--libdir="${PREFIX}/lib/pth"
 
 MAN1=		pth-config.1 pthread-config.1
 MAN3=		pth.3 pthread.3
