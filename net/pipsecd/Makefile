@@ -1,5 +1,5 @@
 # New ports collection makefile for:	pipsecd
-# Version required:		19990831
+# Version required:		19991014
 # Date created:			16 Aug 1999
 # Whom:				Patrick Bihan-Faou <patrick@mindstep.com>
 #
@@ -22,7 +22,8 @@ ALL_TARGET=	pipsecd
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pipsecd ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/pipsecd.sh ${PREFIX}/etc/rc.d
+	${INSTALL_DATA} ${WRKSRC}/pipsecd.sh ${PREFIX}/etc/rc.d
+	${CHMOD} 755 ${PREFIX}/etc/rc.d/pipsecd.sh;
 	${MKDIR} ${PREFIX}/etc/ipsec
 	${INSTALL_DATA} ${WRKSRC}/pipsecd.conf.sample ${PREFIX}/etc/ipsec
 .if !defined(NOPORTDOCS)
