@@ -24,7 +24,7 @@ WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-hangul-keyboard=2 --datadir=${PREFIX}/${DATADIR} \
 		--with-libiconv-prefix=${LOCALBASE} \
-		--with-gdk-pixbuf-prefix=${LOCALBASE} \
+		--with-gdk-pixbuf-prefix=${X11BASE} \
 		--without-included-gettext
 DATADIR=	share
 
