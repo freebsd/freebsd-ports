@@ -1,5 +1,5 @@
---- configure.orig	Thu Nov 11 22:41:24 2004
-+++ configure	Thu Nov 11 22:44:20 2004
+--- configure.orig	Sun Nov  9 11:32:27 2003
++++ configure	Wed Nov 17 17:30:32 2004
 @@ -21948,15 +21948,34 @@
  
  
@@ -410,3 +410,11 @@
        if test -z "$LIBPTHREAD"; then
  
  echo "$as_me:$LINENO: checking whether $CXX supports -pthread" >&5
+@@ -22314,7 +22261,6 @@
+ fi
+ 
+       fi
+-    fi
+ 
+ 
+ 
