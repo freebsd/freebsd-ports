@@ -1,0 +1,11 @@
+lib/perl5/site_perl/Parse/ePerl.pm
+lib/perl5/site_perl/Apache/ePerl.pm
+lib/perl5/site_perl/auto/Parse/ePerl/autosplit.ix
+lib/perl5/site_perl/i386-freebsd/auto/Parse/ePerl/ePerl.so
+lib/perl5/site_perl/i386-freebsd/auto/Parse/ePerl/ePerl.bs
+lib/perl5/site_perl/i386-freebsd/auto/Parse/ePerl/.packlist
+lib/perl5/man/man3/Parse::ePerl.3.gz
+lib/perl5/man/man3/Apache::ePerl.3.gz
+@dirrm lib/perl5/site_perl/i386-freebsd/auto/Parse/ePerl
+@dirrm lib/perl5/site_perl/Parse
+@dirrm lib/perl5/site_perl/Apache
