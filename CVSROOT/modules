@@ -7953,6 +7953,7 @@ ruby18	ports/lang/ruby18
 ruby18_r	ports/lang/ruby18_r
 ruby18_static	ports/lang/ruby18_static
 rubyphoto	ports/graphics/rubyphoto
+rude		ports/net/rude
 rudiments	ports/devel/rudiments
 runit		ports/sysutils/runit
 runwhen		ports/sysutils/runwhen
