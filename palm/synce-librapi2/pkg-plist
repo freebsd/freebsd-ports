@@ -9,9 +9,11 @@ bin/pstatus
 bin/rapiconfig
 bin/synce-install-cab
 bin/synce-list-programs
+bin/synce-registry
 bin/synce-remove-program
 include/rapi.h
 lib/librapi.a
 lib/librapi.la
 lib/librapi.so
 lib/librapi.so.2
+share/aclocal/librapi2.m4
