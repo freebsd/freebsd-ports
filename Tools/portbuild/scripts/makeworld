@@ -1,0 +1,91 @@
+#!/bin/sh
+
+pb=/var/portbuild
+
+if [ $# -lt 2 ]; then
+        echo "usage: makeparallel arch branch [args]"
+        exit 1
+fi
+
+arch=$1
+branch=$2
+shift 2
+
+. ${pb}/${arch}/portbuild.conf
+. ${pb}/scripts/buildenv
+
+buildenv ${pb} ${arch} ${branch}
+
+# These confuse make world; remove them
+unset MACHINE_ARCH
+unset ARCH
+
+client=0
+nocvs=0
+
+# optional arguments
+while [ $# -gt 0 ]; do
+  case "x$1" in
+    x-client)
+      client=1
+      ;;
+    x-nocvs)
+      nocvs=1
+      ;;
+    *)
+      break
+      ;;
+  esac
+  shift
+done
+
+if [ "$client" = "1" ]; then
+	cd ${pb}/${arch}/src-client
+	shift 1
+else
+	cd ${pb}/${arch}/${branch}/src
+	export __MAKE_CONF=/dev/null
+fi
+
+if [ "$nocvs" = "0" ]; then
+	echo "==> Updating source tree"
+	cvs -Rq update -Pd 
+	error=$?
+	if [ "$error" != "0" ]; then
+		exit 1
+	fi
+fi
+
+env
+
+echo "==> Starting make buildworld"
+make buildworld $*
+error=$?
+if [ "$error" != "0" ]; then
+	exit $?
+fi
+
+echo "==> Cleaning up chroot" 
+rm -rf /var/chroot/
+chflags -R noschg /var/chroot/
+rm -rf /var/chroot/
+mkdir /var/chroot/
+
+echo "==> Starting make installworld"
+if [ "$client" = "0" ]; then
+	make installworld DESTDIR=/var/chroot
+	error=$?
+	if [ "$error" != "0" ]; then
+		exit $?
+	fi
+
+	echo "==> Starting make distribute"
+	cd etc
+	make distribute DISTRIBUTION=/var/chroot/
+	error=$?
+	if [ "$error" != "0" ]; then
+		exit $?
+	fi
+else
+	echo "==> Not doing installworld of client source tree"
+fi
