@@ -268,7 +268,6 @@
     SUBDIR += web2ldap
     SUBDIR += web500gw
     SUBDIR += webalizer
-    SUBDIR += webalizer-2
     SUBDIR += webcopy
     SUBDIR += webcrawl
     SUBDIR += webfs
