@@ -5,10 +5,10 @@ include/pth/pth.h
 include/pth/pthread.h
 lib/pth/libpth.a
 lib/pth/libpth.so
-lib/pth/libpth.so.14
+lib/pth/libpth.so.20
 lib/pth/libpthread.a
 lib/pth/libpthread.so
-lib/pth/libpthread.so.14
+lib/pth/libpthread.so.20
 share/aclocal/pth.m4
 @dirrm include/pth
 @dirrm lib/pth
