@@ -1,8 +1,5 @@
 bin/blog_applet.py
 bin/gnome-blog-poster
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gnomeblog.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/gnomeblog.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gnomeblog.schemas > /dev/null || /usr/bin/true
 %%PYTHON_SITELIBDIR%%/gnomeblog/MetaWeblog.py
 %%PYTHON_SITELIBDIR%%/gnomeblog/MetaWeblog.pyc
 %%PYTHON_SITELIBDIR%%/gnomeblog/MetaWeblog.pyo

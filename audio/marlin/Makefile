@@ -26,4 +26,6 @@ USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lcam"
 
+GCONF_SCHEMAS=	marlin.schemas
+
 .include <bsd.port.mk>

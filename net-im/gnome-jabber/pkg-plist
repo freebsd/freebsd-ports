@@ -1,7 +1,4 @@
 bin/gnome-jabber
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gnome-jabber.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/gnome-jabber.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gnome-jabber.schemas > /dev/null || /usr/bin/true
 share/gnome/applications/gnome-jabber.desktop
 share/gnome/gnome-jabber/contact.wav
 share/gnome/gnome-jabber/gj_emote_biggrin.png

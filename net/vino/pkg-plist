@@ -1,8 +1,5 @@
 bin/vino-preferences
 bin/vino-session
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/vino-server.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/vino-server.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/vino-server.schemas > /dev/null || /usr/bin/true
 libdata/bonobo/servers/GNOME_RemoteDesktop.server
 libexec/vino-server
 share/gnome/control-center-2.0/capplets/vino-preferences.desktop

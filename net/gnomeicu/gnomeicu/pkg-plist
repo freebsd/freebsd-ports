@@ -1,8 +1,5 @@
 bin/gnomeicu
 bin/gnomeicu-client
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gnomeicu.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/gnomeicu.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gnomeicu.schemas > /dev/null || /usr/bin/true
 etc/sound/events/GnomeICU.soundlist
 share/gnome/applications/GnomeICU.desktop
 share/gnome/gnomeicu/emoticons/AIM/angel.xpm

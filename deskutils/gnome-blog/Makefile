@@ -25,4 +25,6 @@ USE_GNOME=	gnomehack gnomeprefix pygnome2
 CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/libs"
 
+GCONF_SCHEMAS=	gnomeblog.schemas
+
 .include <bsd.port.mk>

@@ -26,6 +26,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN6=		gnome-mud.6
+GCONF_SCHEMAS=	gnome-mud.schemas
 
 post-patch:
 	@${REINPLACE_CMD} -e \

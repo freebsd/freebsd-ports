@@ -39,6 +39,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 PLIST_SUB=	VERSION=${PORTVERSION}-bonobo
 
 MAN1=		gnumeric.1 ssconvert.1
+GCONF_SCHEMAS=	gnumeric-dialogs.schemas gnumeric-general.schemas \
+		gnumeric-plugins.schemas
 
 post-patch:
 	@${FIND} ${WRKSRC}/plugins -name "plugin.xml.in" | ${XARGS} \
