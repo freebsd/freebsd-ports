@@ -12,10 +12,8 @@ CATEGORIES=	arabic
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	arabeyes
 
-MAINTAINER=	samy@kerneled.com
+MAINTAINER=	samy@kerneled.org
 COMMENT=	Light-weight, bidirectional editor for arabic texts
-
-BROKEN=		"Does not compile"
 
 MAN1=		katoob.1
 
