@@ -1,0 +1,24 @@
+--- Makefile	Tue May 23 04:17:09 2000
++++ Makefile.new	Fri Jun  2 11:03:55 2000
+@@ -1,8 +1,9 @@
+ # Makefile for mp3_check
+ 
+-CC = gcc
+-CFLAGS = -Wall -Werror
+-OPT_FLAGS = -O3 
++CC ?= gcc
++LOCALBASE ?= /usr/local
++CFLAGS += -Wall -Werror -I${LOCALBASE}/include
++OPT_FLAGS = -L${LOCALBASE}/lib -lgnugetopt
+ OBJS = 	mp3_check.o \
+ 	mp3_check_misc.o
+ 
+@@ -19,7 +20,7 @@
+ 	strip mp3_check
+ 
+ install: all
+-	install -m 755 -o root -g root mp3_check /usr/local/bin
++	install -m 755 -o root -g wheel mp3_check ${LOCALBASE}/bin
+ 
+ mp3_check.o:		mp3_check.c mp3_check.h
+ mp3_check_misc.o: 	mp3_check_misc.c mp3_check.h
