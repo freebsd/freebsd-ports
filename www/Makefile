@@ -507,6 +507,7 @@
     SUBDIR += rt3
     SUBDIR += rt3-elixus
     SUBDIR += ruboard
+    SUBDIR += ruby-amazon
     SUBDIR += ruby-asp
     SUBDIR += ruby-borges
     SUBDIR += ruby-div
