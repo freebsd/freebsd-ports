@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	iozone
-PORTVERSION=	3.53
+PORTVERSION=	3.67
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.iozone.org/src/current/
-DISTNAME=	iozone3_53
+DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/}
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	jmz@FreeBSD.org
