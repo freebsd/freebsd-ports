@@ -88,10 +88,10 @@ pre-patch:
 
 post-patch:
 .if ${OSVERSION} >= 500023
-	cat ${FILESDIR}/kse.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
+	${CAT} ${FILESDIR}/kse.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
 .endif
 .if ${OSVERSION} >= 500027
-	cat ${FILESDIR}/pmap.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
+	${CAT} ${FILESDIR}/pmap.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
 .endif
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}
 	${CP} ${FILESDIR}/Makefile.vmmon ${WRKSRC}/vmmon-only/Makefile
@@ -110,20 +110,20 @@ post-patch:
 		${WRKSRC}/vmmon-only/freebsd/*.c \
 		${WRKSRC}/vmware-distrib/vmmon-only/freebsd/*.c
 .endif
-	cat ${FILESDIR}/kmoddeps.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
+	${CAT} ${FILESDIR}/kmoddeps.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
 .if ${OSVERSION} >= 500038
-	cat ${FILESDIR}/fo_ioctl.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
+	${CAT} ${FILESDIR}/fo_ioctl.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
 .endif
 .if ${OSVERSION} >= 500100
-	cat ${FILESDIR}/filedesc.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
-	cat ${FILESDIR}/m_waitok.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
+	${CAT} ${FILESDIR}/filedesc.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
+	${CAT} ${FILESDIR}/m_waitok.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
 .endif
 .if ${OSVERSION} >= 500104
-	cat ${FILESDIR}/cdevsw.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
+	${CAT} ${FILESDIR}/cdevsw.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
 .endif
 .if ${OSVERSION} >= 500109
-	cat ${FILESDIR}/hostif_c.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
-	cat ${FILESDIR}/vm_types_h.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
+	${CAT} ${FILESDIR}/hostif_c.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
+	${CAT} ${FILESDIR}/vm_types_h.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
 .endif
 
 setoptions:
