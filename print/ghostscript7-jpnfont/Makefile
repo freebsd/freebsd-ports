@@ -6,7 +6,7 @@
 #
 
 MASTERDIR=	${.CURDIR}/../../print/ghostscript-gnu-commfont
-PORTREVISION=	1
+PORTREVISION=	2
 
 .undef		COMMFONT
 
