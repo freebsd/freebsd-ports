@@ -7,7 +7,7 @@
 
 PORTNAME=	jdom
 PORTVERSION=	1.0b8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java
 MASTER_SITES=	http://www.jdom.org/dist/source/ \
 		http://www.metaverse.nl/~ernst/ \
@@ -37,6 +37,10 @@ do-install:
 
 	@${ECHO} -n ">> Copying files..."
 	@${CP} -r ${WRKSRC}/* ${TARGET_DIR}
+	@${ECHO} " [ DONE ]"
+
+	@${ECHO} -n ">> Installing JAR..."
+	@${CP} ${WRKSRC}/build/jdom.jar ${PREFIX}/share/java/classes/
 	@${ECHO} " [ DONE ]"
 
 .include <bsd.port.mk>
