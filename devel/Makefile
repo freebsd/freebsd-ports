@@ -391,7 +391,6 @@
     SUBDIR += nana
     SUBDIR += nasm
     SUBDIR += ncurses
-    SUBDIR += ncurses-dialog
     SUBDIR += newt
     SUBDIR += ngpt
     SUBDIR += noweb
