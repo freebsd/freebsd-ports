@@ -1,129 +1,91 @@
-*** Makefile.in.orig	Sun Jan 12 14:03:54 1997
---- Makefile.in	Sat Mar 21 01:46:43 1998
-***************
-*** 14,20 ****
-  USE_SETGID=-DUSE_SETGID
-  
-  # group owner of games file
-! GROUP_GID=2
-  
-  ###########################################################################
-  # You don't need to read below if you have xmkmf or imake
---- 14,20 ----
-  USE_SETGID=-DUSE_SETGID
-  
-  # group owner of games file
-! GROUP_GID=13
-  
-  ###########################################################################
-  # You don't need to read below if you have xmkmf or imake
-***************
-*** 29,54 ****
-  # Directory who contain X Resource Database
-  # The default value if overrided by configure if xmkmf or imake exists.
-  #
-! RESOURCEDIR=/usr/lib/X11/app-defaults
-  @XAPPLOADDIR@
-  
-  # Directory where install binary
-  # The default value if overrided by configure if xmkmf or imake exists.
-  #
-! BINDIR=/usr/local/bin
-  @BINDIR@
-  
-  # Directory who contain score
-  # Put your HOME if you have a private use of the game
-  # The default value if overrided by configure if xmkmf or imake exists.
-  #
-! SCOREDIR=/usr/local/lib/xbl
-  @SCOREDIR@
-  
-  # Directory where put man pages.
-  # The default value if overrided by configure if xmkmf or imake exists.
-  #
-! MANPATH=/usr/local/man
-  @MANPATH@
-  
-  ###########################################################################
---- 29,54 ----
-  # Directory who contain X Resource Database
-  # The default value if overrided by configure if xmkmf or imake exists.
-  #
-! RESOURCEDIR=$(X11BASE)/lib/X11/app-defaults
-  @XAPPLOADDIR@
-  
-  # Directory where install binary
-  # The default value if overrided by configure if xmkmf or imake exists.
-  #
-! BINDIR=$(PREFIX)/bin
-  @BINDIR@
-  
-  # Directory who contain score
-  # Put your HOME if you have a private use of the game
-  # The default value if overrided by configure if xmkmf or imake exists.
-  #
-! SCOREDIR=$(PREFIX)/lib/xbl
-  @SCOREDIR@
-  
-  # Directory where put man pages.
-  # The default value if overrided by configure if xmkmf or imake exists.
-  #
-! MANPATH=$(PREFIX)/man
-  @MANPATH@
-  
-  ###########################################################################
-***************
-*** 82,88 ****
-  
-  # For linking (configure script will modify this line)
-  # xmkmf et imake informations are take into account.
-! LIBS = @LIBS@ -lm
-  
-  all:demo
-  
---- 82,88 ----
-  
-  # For linking (configure script will modify this line)
-  # xmkmf et imake informations are take into account.
-! LIBS = @LIBS@ -lm -lcompat
-  
-  all:demo
-  
-***************
-*** 127,146 ****
-  	@-if [ "" != "$(USE_SETGID)" ] ; then \
-  		echo "You use GID=$(GROUP_GID) protection" ; \
-  		fi
-! 	@echo "Type <Return> to continue installation"
-! 	@echo "Type NO       to stop installation"
-! 	@read LINE && test "" = "$$LINE"
-  	#
-  	# Remove old score file
-  	#
-  	@-if [ -d "$(SCOREDIR)" ] ; \
-  		then \
-! 		echo "The scoring method and speeds of Xbl had change" ; \
-! 		echo "If your version is older than 0.2e, destroy score." ; \
-! 		echo "Type <Return> to destroy old score files" ; \
-! 		echo "Type NO       to hold old score files" ; \
-! 		read LINE && test "" = "$$LINE" && rm $(SCOREDIR)/[1-9]* ; \
-! 		exit 0 ; \
-  		fi
-  	#
-  	# Install executable
---- 127,141 ----
-  	@-if [ "" != "$(USE_SETGID)" ] ; then \
-  		echo "You use GID=$(GROUP_GID) protection" ; \
-  		fi
-! #	@echo "Type <Return> to continue installation"
-! #	@echo "Type NO       to stop installation"
-! #	@read LINE && test "" = "$$LINE"
-  	#
-  	# Remove old score file
-  	#
-  	@-if [ -d "$(SCOREDIR)" ] ; \
-  		then \
-! 		rm $(SCOREDIR)/[1-9]* ; \
-  		fi
-  	#
-  	# Install executable
+--- Makefile.in.orig	Mon Aug 31 22:41:27 1998
++++ Makefile.in	Thu Sep 17 09:05:39 1998
+@@ -14,7 +14,7 @@
+ USE_SETGID=-DUSE_SETGID
+ 
+ # group owner of games file
+-GROUP_GID=2
++GROUP_GID=13
+ 
+ ###########################################################################
+ # You don't need to read below if you have xmkmf or imake
+@@ -29,26 +29,26 @@
+ # Directory who contain X Resource Database
+ # The default value if overrided by configure if xmkmf or imake exists.
+ #
+-RESOURCEDIR=/usr/lib/X11/app-defaults
++RESOURCEDIR=$(X11BASE)/lib/X11/app-defaults
+ @XAPPLOADDIR@
+ 
+ # Directory where install binary
+ # The default value if overrided by configure if xmkmf or imake exists.
+ #
+-BINDIR=/usr/local/bin
++BINDIR=$(PREFIX)/bin
+ @BINDIR@
+ 
+ # Directory who contain score
+ # Put your HOME if you have a private use of the game
+ # The default value if overrided by configure if xmkmf or imake exists.
+ #
+-SCOREDIR=/usr/local/lib/xbl
++SCOREDIR=$(PREFIX)/lib/xbl
+ @SCOREDIR@
+ 
+ # Directory where put man pages.
+ # The default value if overrided by configure if xmkmf or imake exists.
+ #
+-MANPATH=/usr/local/man
++MANPATH=$(PREFIX)/man
+ @MANPATH@
+ 
+ ###########################################################################
+@@ -82,7 +82,7 @@
+ 
+ # For linking (configure script will modify this line)
+ # xmkmf et imake informations are take into account.
+-LIBS = @LIBS@ -lm
++LIBS = @LIBS@ -lm -lcompat
+ 
+ all:demo
+ 
+@@ -93,7 +93,7 @@
+ 	 -DRESOURCEDIR=\"$(RESOURCEDIR)\" \
+ 	 -DXBLVERSION=\"$(XBLVERSION)\" \
+ 	 -DGROUP_GID=$(GROUP_GID) \
+-	  $(USE_SETGID) @DEFS@ -g
++	  $(USE_SETGID) @DEFS@
+ # For link edit options
+ LDOPTIONS=$(CFLAGS)
+ LDOPTIONS=@LDOPTIONS@
+@@ -127,25 +127,20 @@
+ 	@-if [ "" != "$(USE_SETGID)" ] ; then \
+ 		echo "You use GID=$(GROUP_GID) protection" ; \
+ 		fi
+-	@echo "Type <Return> to continue installation"
+-	@echo "Type NO       to stop installation"
+-	@read LINE && test "" = "$$LINE"
++#	@echo "Type <Return> to continue installation"
++#	@echo "Type NO       to stop installation"
++#	@read LINE && test "" = "$$LINE"
+ 	#
+ 	# Remove old score file
+ 	#
+ 	@-if [ -d "$(SCOREDIR)" ] ; \
+ 		then \
+-		echo "The scoring method and speeds of Xbl had change" ; \
+-		echo "If your version is older than 0.2e, destroy score." ; \
+-		echo "Type <Return> to destroy old score files" ; \
+-		echo "Type NO       to hold old score files" ; \
+-		read LINE && test "" = "$$LINE" && rm $(SCOREDIR)/[1-9]* ; \
+-		exit 0 ; \
++		rm $(SCOREDIR)/[1-9]* ; \
+ 		fi
+ 	#
+ 	# Install executable
+ 	#
+-	$(CP) bl $(BINDIR)/xbl	
++	$(BSD_INSTALL_PROGRAM) bl $(BINDIR)/xbl	
+ 	-if [ "" = "$(USE_SETGID)" ] ; then \
+ 	     chmod 755  $(BINDIR)/xbl ;\
+ 	   else \
