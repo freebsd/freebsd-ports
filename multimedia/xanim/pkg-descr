@@ -1,6 +1,6 @@
 XAnim  is a program that can display animations of various
 formats on systems running X11.  XAnim currently  supports
-several animation types. Read the man page for details.
+several animation and audio types. Read the man page for details.
 XAnim also provides various options that allow the user to
 alter  colormaps,  playback  speeds, looping modes and can
 provide on-the-fly scaling of animations with the mouse.

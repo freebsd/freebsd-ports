@@ -3,13 +3,13 @@
 # Date created:         Sat Nov 5 11:43:03 PST 1994
 # Whom:                 piero
 #
-# $Id: Makefile,v 1.2 1995/04/01 12:46:04 jkh Exp $
+# $Id: Makefile,v 1.3 1995/04/09 07:09:47 asami Exp $
 #
 
-DISTNAME=	xanim2683
-PKGNAME=	xanim-2.68.3
+DISTNAME=	xanim26978
+PKGNAME=	xanim-2.69.7.8
 CATEGORIES+=	graphics x11
-MASTER_SITES=	ftp://crl.dec.com/pub/X11/contrib/applications/
+MASTER_SITES=	ftp://ftp.portal.com/pub/podlipec/
 EXTRACT_SUFX=	.tar.Z
 
 USE_IMAKE=	is_set
