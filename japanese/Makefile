@@ -291,7 +291,6 @@
     SUBDIR += pgp.language
     SUBDIR += php_doc
     SUBDIR += phpgroupware
-    SUBDIR += pine
     SUBDIR += plain2
     SUBDIR += plan
     SUBDIR += platex209-euc
