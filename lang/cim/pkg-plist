@@ -13,4 +13,3 @@ include/cim.h
 info/cim.info
 @exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/cim.info %D/info/dir
-man/man1/cim.1.gz

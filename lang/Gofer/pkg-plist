@@ -1,6 +1,5 @@
 bin/gofer
 bin/goferc
-man/man1/gofer.1.gz
 lib/Gofer/cc.prelude
 lib/Gofer/min.prelude
 lib/Gofer/nofloat.prelude

@@ -28,17 +28,4 @@ lib/expect5.26/pkgIndex.tcl
 lib/expect5.26/libexpect526.a
 lib/libexpect526.a
 lib/libexpect526.so.1.2
-man/man1/autoexpect.1.gz
-man/man1/cryptdir.1.gz
-man/man1/decryptdir.1.gz
-man/man1/dislocate.1.gz
-man/man1/expect.1.gz
-man/man1/expectk.1.gz
-man/man1/kibitz.1.gz
-man/man1/mkpasswd.1.gz
-man/man1/passmass.1.gz
-man/man1/tknewsbiff.1.gz
-man/man1/unbuffer.1.gz
-man/man1/xkibitz.1.gz
-man/man3/libexpect.3.gz
 @dirrm lib/expect5.26

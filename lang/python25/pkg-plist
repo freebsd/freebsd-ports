@@ -900,7 +900,6 @@ lib/python1.5/xmllib.pyo
 lib/python1.5/zmod.py
 lib/python1.5/zmod.pyc
 lib/python1.5/zmod.pyo
-man/man1/python.1.gz
 @dirrm lib/python1.5/test/output
 @dirrm lib/python1.5/test
 @dirrm lib/python1.5/plat-freebsd2

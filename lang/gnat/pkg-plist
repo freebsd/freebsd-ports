@@ -902,4 +902,3 @@ lib/specs
 libexec/ada/cc1
 libexec/ada/cpp
 libexec/ada/gnat1
-man/man1/adagcc.1.gz

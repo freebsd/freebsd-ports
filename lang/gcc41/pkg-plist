@@ -1,4 +1,4 @@
-@comment $Id: PLIST,v 1.15 1998/07/26 23:43:40 obrien Exp $
+@comment $Id: PLIST,v 1.16 1998/08/11 08:22:46 obrien Exp $
 bin/g++filt
 bin/g++
 bin/eg++
@@ -248,10 +248,6 @@ lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.53/specs
 lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.53/libg2c.a
 lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.53/libiberty.a
 lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.53/libstdc++.a
-man/man1/cccp.1.gz
-man/man1/g++.1.gz
-man/man1/g77.1.gz
-man/man1/gcc.1.gz
 @dirrm i386-unknown-freebsd/include
 @dirrm i386-unknown-freebsd/lib
 @dirrm i386-unknown-freebsd

@@ -1519,17 +1519,3 @@ lib/TenDRA/machines/freebsd/%OSREL%/80x86/startup/system.h
 lib/TenDRA/machines/freebsd/%OSREL%/80x86/startup/unix95.h
 lib/TenDRA/machines/freebsd/%OSREL%/80x86/startup/xpg3.h
 lib/TenDRA/machines/freebsd/%OSREL%/80x86/startup/xpg4.h
-man/man1/calculus.1.gz
-man/man1/disp.1.gz
-man/man1/lexi.1.gz
-man/man1/pl.1.gz
-man/man1/sid.1.gz
-man/man1/tcc.1.gz
-man/man1/tchk.1.gz
-man/man1/tcpplus.1.gz
-man/man1/tdfc2.1.gz
-man/man1/tld.1.gz
-man/man1/tnc.1.gz
-man/man1/trans.1.gz
-man/man1/tspec.1.gz
-man/man5/tccenv.5.gz

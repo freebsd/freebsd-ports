@@ -106,7 +106,6 @@ lib/slib/psd/psd-slib.scm
 lib/slib/psd/read.scm
 lib/slib/psd/runtime.scm
 lib/slib/psd/version.scm
-man/man1/scm.1.gz
 @dirrm lib/scm
 @dirrm lib/slib/psd
 @dirrm lib/slib

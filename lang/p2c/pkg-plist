@@ -1,8 +1,6 @@
 bin/p2c
 bin/p2cc
 lib/libp2c.a
-man/man1/p2c.1.gz
-man/man1/p2cc.1.gz
 include/p2c/p2c.h
 lib/p2c/p2crc
 lib/p2c/loc.p2crc

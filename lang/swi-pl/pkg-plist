@@ -3,9 +3,6 @@ bin/pl-bite
 bin/chpl
 bin/plld
 include/SWI-Prolog.h
-man/man1/pl.1.gz
-man/man1/chpl.1.gz
-man/man1/plld.1.gz
 lib/pl-2.8.6/bin/i386-freebsd/pl
 lib/pl-2.8.6/bin/i386-freebsd/pl-bite
 lib/pl-2.8.6/bin/i386-freebsd/chpl

@@ -1,6 +1,5 @@
 bin/hugs
 bin/runhugs
-man/man1/hugs.1.gz
 share/hugs/lib/Array.hs
 share/hugs/lib/Ratio.hs
 share/hugs/lib/Random.hs
