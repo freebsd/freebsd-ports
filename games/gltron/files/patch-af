@@ -1,0 +1,15 @@
+--- system_sdl.c	2000/05/26 09:21:17	1.1
++++ system_sdl.c	2000/05/26 09:27:15
+@@ -17,7 +17,11 @@
+ }
+ 
+ void SystemInit(int *argc, char *argv[]) {
+-  if(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO) < 0 ){
++  Uint32 sflag = 0;
++#ifdef SOUND
++  sflag = SDL_INIT_AUDIO;
++#endif
++  if(SDL_Init(SDL_INIT_VIDEO | sflag) < 0 ){
+     fprintf(stderr, "Couldn't initialize SDL: %s\n", SDL_GetError());
+     exit(1);
+   }
