@@ -15,29 +15,34 @@ DISTNAME=	zh-chinput2-1.3.1
 MAINTAINER=	phj@cn.FreeBSD.org
 COMMENT=	Another Chinese GB2312 and Big5 X11 input server
 
-BUILD_DEPENDS=	mysql:${PORTSDIR}/databases/mysql323-client
-RUN_DEPENDS=	mysql:${PORTSDIR}/databases/mysql323-client
-
+USE_MYSQL=	yes
+USE_REINPLACE=	yes
 USE_XLIB=	yes
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not build"
-.endif
+PLIST_FILES=	bin/chinput2 bin/add_items etc/chinput2.conf share/${PORTNAME}/README
+PLIST_DIRS=	share/${PORTNAME}
 
 post-extract:
-	${FIND} ${WRKSRC} -name CVS | ${XARGS} ${RM} -rf
+	@${FIND} ${WRKSRC} -name CVS | ${XARGS} ${RM} -rf
+
+post-patch:
+	@${REINPLACE_CMD} -Ee 's,^((BIN|CONF|DOC_)(DIR|PATH)=)/usr/local,\1${PREFIX},g' \
+		${WRKSRC}/util/pydb/Makefile ${WRKSRC}/src/Makefile ${WRKSRC}/Makefile
+
+pre-build:
+	@${RM} -f ${WRKSRC}/src/.depend
+
+pre-install:
+	@${REINPLACE_CMD} -Ee 's,^((BIN|CONF|DOC_)(DIR|PATH)=)/usr/local,\1${PREFIX},g' \
+		${WRKSRC}/src/Makefile
 
 post-install:
-	@echo
-	@echo
-	@echo "Please refer to /usr/local/share/chinput2/README for "
-	@echo "how to use chinput2,thanks for using this software."
-	@echo
-	@echo "					-phj@cn.freebsd.org"
-	@echo
+	@${ECHO_MSG}
+	@${ECHO_MSG}
+	@${ECHO_MSG} "Please refer to ${PREFIX}/share/chinput2/README for "
+	@${ECHO_MSG} "how to use chinput2,thanks for using this software."
+	@${ECHO_MSG}
+	@${ECHO_MSG} "					-phj@cn.freebsd.org"
+	@${ECHO_MSG}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
