@@ -1,0 +1,16 @@
+
+$FreeBSD$
+
+--- po/ko.po	2002/09/25 07:02:37	1.1
++++ po/ko.po	2002/09/25 07:03:04
+@@ -662,10 +662,6 @@
+ msgid "All"
+ msgstr "모두"
+ 
+-#: print.c:173
+-msgid "From:"
+-msgstr "일부:"
+-
+ #: print.c:185 print.c:198
+ msgid "1"
+ msgstr "1"

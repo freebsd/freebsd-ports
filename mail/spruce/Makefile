@@ -14,17 +14,16 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	erich@tacni.net
 
-BUILD_DEPENDS=	msgfmt-old:${PORTSDIR}/devel/gettext-old
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib" \
-		MSGFMT="${LOCALBASE}/bin/msgfmt-old" \
-		XGETTEXT="${LOCALBASE}/bin/xgettext-old"
+		LIBS="-L${LOCALBASE}/lib"
+MAKE_ENV=	OLD_PO_FILE_INPUT=1
 
 MAN1=		spruce.1
 
