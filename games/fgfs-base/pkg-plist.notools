@@ -1,0 +1,168 @@
+bin/runfgfs
+FlightGear/bin/est-epsilon
+FlightGear/bin/fgfs
+FlightGear/bin/gl-info
+FlightGear/bin/test-mktime
+@dirrm FlightGear/bin
+FlightGear/AUTHORS
+FlightGear/ChangeLog
+FlightGear/COPYING
+FlightGear/NEWS
+FlightGear/README
+FlightGear/README.Linux
+FlightGear/README.MacOS
+FlightGear/README.Unix
+FlightGear/README.Win32
+FlightGear/README.anoncvs
+FlightGear/README.autoconf
+FlightGear/README.gpc
+FlightGear/README.running
+FlightGear/Thanks
+FlightGear/materials
+FlightGear/runfgfs.bat
+FlightGear/Airports/apt_simple.gz
+FlightGear/Airports/default.apt.gz
+FlightGear/Astro/planets.gz
+FlightGear/Astro/stars
+FlightGear/Engine/XLR99.dat
+FlightGear/Fonts/README
+FlightGear/Fonts/charter.txf
+FlightGear/Fonts/courier-bold.txf
+FlightGear/Fonts/courier_medium.txf
+FlightGear/Fonts/curlfont.txf
+FlightGear/Fonts/default.txf
+FlightGear/Fonts/haeberli.txf
+FlightGear/Fonts/helvetica_bold.txf
+FlightGear/Fonts/helvetica_medium.txf
+FlightGear/Fonts/lucida.txf
+FlightGear/Fonts/lucidabright_bold.txf
+FlightGear/Fonts/schoolbook_bold.txf
+FlightGear/Fonts/schoolbook_medium.txf
+FlightGear/Fonts/sorority.txf
+FlightGear/Fonts/symbol.txf
+FlightGear/Fonts/times_bold.txf
+FlightGear/Fonts/times_medium.txf
+FlightGear/Fonts/typewriter.txf
+FlightGear/Lighting/ambient
+FlightGear/Lighting/ambient.old
+FlightGear/Lighting/ambient.orig
+FlightGear/Lighting/diffuse
+FlightGear/Lighting/diffuse.orig
+FlightGear/Lighting/sky
+FlightGear/Lighting/sky.old
+FlightGear/Sounds/intro.mp3
+FlightGear/Sounds/thunder.wav
+FlightGear/Sounds/wasp.wav
+FlightGear/Textures/FG-Textures.txt
+FlightGear/Textures/Fullone.rgb
+FlightGear/Textures/Splash1.rgb.gz
+FlightGear/Textures/Splash2.rgb.gz
+FlightGear/Textures/Splash3.rgb.gz
+FlightGear/Textures/Splash4.rgb.gz
+FlightGear/Textures/asphalt.rgb.gz
+FlightGear/Textures/austral1.rgb.gz
+FlightGear/Textures/canyon-pink.rgb.gz
+FlightGear/Textures/canyon-sand.rgb.gz
+FlightGear/Textures/concrete.rgb.gz
+FlightGear/Textures/desert.rgb
+FlightGear/Textures/desert1.rgb
+FlightGear/Textures/forest1.rgb.gz
+FlightGear/Textures/forest2.rgb.gz
+FlightGear/Textures/gauges.rgb
+FlightGear/Textures/gauges2.rgb
+FlightGear/Textures/glacier.rgb.gz
+FlightGear/Textures/grass.rgb.gz
+FlightGear/Textures/grs-bv.rgb.gz
+FlightGear/Textures/hori.rgb
+FlightGear/Textures/ice-wint.rgb.gz
+FlightGear/Textures/marsh1.rgb.gz
+FlightGear/Textures/marsh2.rgb.gz
+FlightGear/Textures/moon.rgb
+FlightGear/Textures/panel_texture.rgb
+FlightGear/Textures/resgrid.rgb.gz
+FlightGear/Textures/rocks-desert.rgb.gz
+FlightGear/Textures/rocks-grass.rgb.gz
+FlightGear/Textures/unknown.rgb.gz
+FlightGear/Textures/urban.rgb.gz
+FlightGear/Textures/water.rgb.gz
+FlightGear/Aircraft/X15/Reset00
+FlightGear/Aircraft/X15/X15.dat
+FlightGear/Aircraft/X15/CDRAG/A
+FlightGear/Aircraft/X15/CDRAG/A0
+FlightGear/Aircraft/X15/CDRAG/DE
+FlightGear/Aircraft/X15/CDRAG/M
+FlightGear/Aircraft/X15/CLIFT/A
+FlightGear/Aircraft/X15/CLIFT/A0
+FlightGear/Aircraft/X15/CLIFT/ADT
+FlightGear/Aircraft/X15/CLIFT/M
+FlightGear/Aircraft/X15/CLIFT/de
+FlightGear/Aircraft/X15/CPITCH/A
+FlightGear/Aircraft/X15/CPITCH/A0
+FlightGear/Aircraft/X15/CPITCH/ADT
+FlightGear/Aircraft/X15/CPITCH/De
+FlightGear/Aircraft/X15/CPITCH/M
+FlightGear/Aircraft/X15/CPITCH/Q
+FlightGear/Aircraft/X15/CROLL/B
+FlightGear/Aircraft/X15/CROLL/DA
+FlightGear/Aircraft/X15/CROLL/DR
+FlightGear/Aircraft/X15/CROLL/P
+FlightGear/Aircraft/X15/CROLL/R
+FlightGear/Aircraft/X15/CSIDE/B
+FlightGear/Aircraft/X15/CSIDE/DA
+FlightGear/Aircraft/X15/CSIDE/DR
+FlightGear/Aircraft/X15/CSIDE/R
+FlightGear/Aircraft/X15/CYAW/A
+FlightGear/Aircraft/X15/CYAW/A0
+FlightGear/Aircraft/X15/CYAW/DE
+FlightGear/Aircraft/X15/CYAW/M
+FlightGear/Scenery/w120n30/w111n33/1138368.gz
+FlightGear/Scenery/w120n30/w111n33/1138369.gz
+FlightGear/Scenery/w120n30/w111n33/1138370.gz
+FlightGear/Scenery/w120n30/w111n33/1138371.gz
+FlightGear/Scenery/w120n30/w111n33/1138376.gz
+FlightGear/Scenery/w120n30/w111n33/1138377.gz
+FlightGear/Scenery/w120n30/w111n33/1138378.gz
+FlightGear/Scenery/w120n30/w111n33/1138379.gz
+FlightGear/Scenery/w120n30/w111n33/1138384.gz
+FlightGear/Scenery/w120n30/w111n33/1138385.gz
+FlightGear/Scenery/w120n30/w111n33/1138386.gz
+FlightGear/Scenery/w120n30/w111n33/1138387.gz
+FlightGear/Scenery/w120n30/w111n33/1138392.gz
+FlightGear/Scenery/w120n30/w111n33/1138393.gz
+FlightGear/Scenery/w120n30/w111n33/1138394.gz
+FlightGear/Scenery/w120n30/w111n33/1138395.gz
+FlightGear/Scenery/w120n30/w111n33/1138400.gz
+FlightGear/Scenery/w120n30/w111n33/1138401.gz
+FlightGear/Scenery/w120n30/w111n33/1138402.gz
+FlightGear/Scenery/w120n30/w111n33/1138403.gz
+FlightGear/Scenery/w120n30/w111n33/1138408.gz
+FlightGear/Scenery/w120n30/w111n33/1138409.gz
+FlightGear/Scenery/w120n30/w111n33/1138410.gz
+FlightGear/Scenery/w120n30/w111n33/1138411.gz
+FlightGear/Scenery/w120n30/w111n33/1138416.gz
+FlightGear/Scenery/w120n30/w111n33/1138417.gz
+FlightGear/Scenery/w120n30/w111n33/1138418.gz
+FlightGear/Scenery/w120n30/w111n33/1138419.gz
+FlightGear/Scenery/w120n30/w111n33/1138424.gz
+FlightGear/Scenery/w120n30/w111n33/1138425.gz
+FlightGear/Scenery/w120n30/w111n33/1138426.gz
+FlightGear/Scenery/w120n30/w111n33/1138427.gz
+@dirrm FlightGear/Aircraft/X15/CDRAG
+@dirrm FlightGear/Aircraft/X15/CLIFT
+@dirrm FlightGear/Aircraft/X15/CPITCH
+@dirrm FlightGear/Aircraft/X15/CROLL
+@dirrm FlightGear/Aircraft/X15/CSIDE
+@dirrm FlightGear/Aircraft/X15/CYAW
+@dirrm FlightGear/Aircraft/X15
+@dirrm FlightGear/Aircraft
+@dirrm FlightGear/Airports
+@dirrm FlightGear/Astro
+@dirrm FlightGear/Engine
+@dirrm FlightGear/Fonts
+@dirrm FlightGear/Lighting
+@dirrm FlightGear/Scenery/w120n30/w111n33
+@dirrm FlightGear/Scenery/w120n30
+@dirrm FlightGear/Scenery
+@dirrm FlightGear/Sounds
+@dirrm FlightGear/Textures
+@dirrm FlightGear

@@ -1,0 +1,27 @@
+--- Simulator/Main/Makefile.in.orig	Sun Jun 27 21:12:00 1999
++++ Simulator/Main/Makefile.in	Sun Jun 27 21:12:12 1999
+@@ -75,7 +75,7 @@
+ 
+ bin_PROGRAMS = fgfs
+ 
+-bin_SCRIPTS = runfgfs runfgfs.bat
++bin_SCRIPTS = runfgfs
+ 
+ fgfs_SOURCES = \
+ 	GLUTkey.cxx GLUTkey.hxx GLUTmain.cxx \
+--- Simulator/Main/runfgfs.in.orig	Tue Apr  6 16:39:22 1999
++++ Simulator/Main/runfgfs.in	Sun Jun 27 21:44:52 1999
+@@ -29,11 +29,11 @@
+ # print "-> $prefix\n";
+ 
+ # potential names of Flight Gear executable to try
+-@files = ( "fg", "fg.exe" );
++@files = ( "fgfs" );
+ 
+ # search for the executable
+ # potential paths where the executable may be found
+-@paths = ( ".", "Simulator/Main", $prefix );
++@paths = ( ".", "Simulator/Main", $prefix, "$prefix/FlightGear" );
+ 
+ $savepath = "";
+ $savefile = "";

@@ -1,0 +1,32 @@
+--- Tools/Construct/Parallel/client.cxx.orig	Fri May 21 13:18:06 1999
++++ Tools/Construct/Parallel/client.cxx	Sat Jun 26 22:32:01 1999
+@@ -20,6 +20,11 @@
+ 
+ #include <Bucket/newbucket.hxx>
+ 
++/* the next lines are to define BSD */
++/* see http://www.freebsd.org/handbook/porting.html for why we do this */
++#if (defined(__unix__) || defined(unix)) && !defined(USG)
++#include <sys/param.h>
++#endif
+ 
+ #define MAXBUF 1024
+ #define BUSY_WAIT_TIME 30
+@@ -45,6 +50,9 @@
+ 
+ // check if the host system is free of interactive users
+ int system_free() {
++
++#ifndef BSD
++
+     struct utmp *uptr;
+ 
+     setutent();
+@@ -61,6 +69,7 @@
+     }
+ 
+     endutent();
++#endif
+     return 1;
+ }
+ 
