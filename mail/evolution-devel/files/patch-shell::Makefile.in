@@ -1,14 +1,11 @@
-
-$FreeBSD$
-
---- shell/Makefile.in.orig	Thu Feb  7 14:38:27 2002
-+++ shell/Makefile.in	Thu Feb  7 14:39:37 2002
-@@ -195,7 +195,7 @@
+--- shell/Makefile.in.orig	Thu Sep 19 13:31:46 2002
++++ shell/Makefile.in	Thu Sep 19 13:38:39 2002
+@@ -217,7 +217,7 @@
  
  SUBDIRS = glade importer
  
--INCLUDES = -O									-I$(top_srcdir)/widgets							-I$(top_srcdir)/widgets/misc						-I$(top_srcdir)/libical/src/libical					-I$(top_srcdir)								$(BONOBO_GNOME_CFLAGS)							$(BONOBO_CONF_CFLAGS)							$(EXTRA_GNOME_CFLAGS)							$(GTKHTML_CFLAGS)							-DEVOLUTION_IMAGES=\""$(datadir)/images/evolution"\"			-DEVOLUTION_LOCALEDIR=\""$(localedir)"\"   				-DEVOLUTION_DATADIR=\""$(datadir)"\"            			-DEVOLUTION_GLADEDIR=\"$(datadir)/evolution/glade\"			-DEVOLUTION_ETSPECDIR=\""$(etspecdir)"\"				-DG_LOG_DOMAIN=\"evolution-shell\"
-+INCLUDES = -I$(top_srcdir)/widgets							-I$(top_srcdir)/widgets/misc						-I$(top_srcdir)/libical/src/libical					-I$(top_srcdir)								$(BONOBO_GNOME_CFLAGS)							$(BONOBO_CONF_CFLAGS)							$(EXTRA_GNOME_CFLAGS)							$(GTKHTML_CFLAGS)							-DEVOLUTION_IMAGES=\""$(datadir)/images/evolution"\"			-DEVOLUTION_LOCALEDIR=\""$(localedir)"\"   				-DEVOLUTION_DATADIR=\""$(datadir)"\"            			-DEVOLUTION_GLADEDIR=\"$(datadir)/evolution/glade\"			-DEVOLUTION_ETSPECDIR=\""$(etspecdir)"\"				-DG_LOG_DOMAIN=\"evolution-shell\"
+-INCLUDES = -O								-I$(top_srcdir)/widgets						-I$(top_srcdir)/widgets/misc					-I$(top_srcdir)/libical/src/libical				-I$(top_builddir)/libical/src/libical				-I$(top_srcdir)							-DEVOLUTION_IMAGES=\""$(datadir)/images/evolution"\"		-DEVOLUTION_LOCALEDIR=\""$(localedir)"\"   			-DEVOLUTION_DATADIR=\""$(datadir)"\"            		-DEVOLUTION_GLADEDIR=\"$(datadir)/evolution/glade\"		-DEVOLUTION_ETSPECDIR=\""$(etspecdir)"\"			-DPREFIX=\"$(prefix)\"						-DG_LOG_DOMAIN=\"evolution-shell\"				$(SHELL_CFLAGS)
++INCLUDES = 								-I$(top_srcdir)/widgets						-I$(top_srcdir)/widgets/misc					-I$(top_srcdir)/libical/src/libical				-I$(top_builddir)/libical/src/libical				-I$(top_srcdir)							-DEVOLUTION_IMAGES=\""$(datadir)/images/evolution"\"		-DEVOLUTION_LOCALEDIR=\""$(localedir)"\"   			-DEVOLUTION_DATADIR=\""$(datadir)"\"            		-DEVOLUTION_GLADEDIR=\"$(datadir)/evolution/glade\"		-DEVOLUTION_ETSPECDIR=\""$(etspecdir)"\"			-DPREFIX=\"$(prefix)\"						-DG_LOG_DOMAIN=\"evolution-shell\"				$(SHELL_CFLAGS)
  
  
- # CORBA stuff
+ # Shell CORBA stuff

@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Mon Nov 11 17:44:58 2002
++++ Makefile.in	Mon Nov 11 17:45:22 2002
+@@ -223,7 +223,7 @@
+ changelogs =  	ChangeLog
+ 
+ 
+-confexecdir = $(libdir)
++confexecdir = $(prefix)/etc
+ confexec_DATA =  	camelConf.sh				evolution_shellConf.sh			evolution_addressbookConf.sh		evolution_calendarConf.sh
+ 
+ 

@@ -1,14 +1,15 @@
---- configure.orig	Sat May 11 22:55:23 2002
-+++ configure	Sat May 11 22:56:01 2002
-@@ -6036,6 +6036,7 @@
+--- configure.orig	Fri Sep 13 15:38:11 2002
++++ configure	Fri Oct 11 00:11:31 2002
+@@ -7258,7 +7258,7 @@
+ fi
+ rm -f conftest*
  
- # This can be used to rebuild libtool when needed
- LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+$ac_aux_dir/ltconfig $LIBTOOL_DEPS
- 
- # Always use our own libtool.
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -9290,7 +9291,7 @@
+-ALL_LINGUAS="az bg ca cs da de el en_AU en_GB es et eu fi fr ga gl hu it ja ko lt lv nl nn no pl pt pt_BR ro ru sk sl sv tr uk vi zh_CN zh_TW"
++ALL_LINGUAS="az bg ca cs da de el en_AU en_GB es et eu fi fr ga gl hu it ja ko lt lv nl nn no pl pt pt_BR ro ru sk sl sv tr uk vi zh_CN"
+ # Extract the first word of "ranlib", so it can be a program name with args.
+ set dummy ranlib; ac_word=$2
+ echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
+@@ -9634,7 +9634,7 @@
  
  CPPFLAGS_save="$CPPFLAGS"
  CPPFLAGS="$DB3_CFLAGS $CPPFLAGS"
@@ -17,7 +18,7 @@
  do
  ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
  echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
-@@ -9364,7 +9365,7 @@
+@@ -9708,7 +9708,7 @@
    echo "configure: failed program was:" >&5
    cat conftest.$ac_ext >&5
    rm -rf conftest*
@@ -26,16 +27,7 @@
  fi
  rm -f conftest*
  
-@@ -9475,7 +9476,7 @@
- 
- echo "$ac_t""$ac_cv_db3_lib_version_match" 1>&6
- if test "$ac_cv_db3_lib_version_match" = no; then
--	{ echo "configure: error: db3 headers and library do not match... multiple copies installed?" 1>&2; exit 1; }
-+#	{ echo "configure: error: db3 headers and library do not match... multiple copies installed?" 1>&2; exit 1; }
- fi
- 
- CPPFLAGS="$CPPFLAGS_save"
-@@ -12799,10 +12800,10 @@
+@@ -13706,10 +13708,10 @@
        *) # Relative path.
          ac_sub_cache_file="$ac_dots$cache_file" ;;
        esac
