@@ -202,6 +202,13 @@ post-patch:
 			${WRKSRC}/config/autoconf.mk.in
 	@${FIND} ${WRKSRC}/other-licenses/libical -name "*.c" | ${XARGS} \
 		${REINPLACE_CMD} 's|<malloc.h>|<stdlib.h>|g'
+	@${REINPLACE_CMD} -e 's|-lc_r|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/nsprpub/config/FreeBSD.mk \
+		${WRKSRC}/security/coreconf/FreeBSD.mk \
+		${WRKSRC}/directory/c-sdk/config/FreeBSD.mk \
+		${WRKSRC}/js/src/Makefile.in
 .if defined(WITH_GTK2)
 	@for pcfile in ${PKGCONFIG_FILES}; do \
 	    ${REINPLACE_CMD} -e 's|mozilla-xpcom|mozilla-xpcom${MOZ_SUFX}|g ; \

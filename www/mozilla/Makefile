@@ -196,6 +196,13 @@ post-patch:
 			${WRKSRC}/config/autoconf.mk.in
 	@${FIND} ${WRKSRC}/other-licenses/libical -name "*.c" | ${XARGS} \
 		${REINPLACE_CMD} 's|<malloc.h>|<stdlib.h>|g'
+	@${REINPLACE_CMD} -e 's|-lc_r|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/nsprpub/config/FreeBSD.mk \
+		${WRKSRC}/security/coreconf/FreeBSD.mk \
+		${WRKSRC}/directory/c-sdk/config/FreeBSD.mk \
+		${WRKSRC}/js/src/Makefile.in
 
 post-build:
 	${SED} -e "s|%%PREFIX%%|${PREFIX}|g" -e "s|%%MOZILLA%%|${MOZILLA}|g" \
