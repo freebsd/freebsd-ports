@@ -1,0 +1,11 @@
+--- tests/Makefile.in.orig	Tue Jan 20 22:30:02 2004
++++ tests/Makefile.in	Tue Jan 20 22:30:28 2004
+@@ -173,7 +173,7 @@
+ DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)/src
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+-LIBS = @LIBS@
++LIBS = @LIBS@ -lcam
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+ @AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/cd-drive.Po \
