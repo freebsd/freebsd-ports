@@ -1,11 +1,23 @@
---- src/TCPTransmitter.cc.orig Sun May 12 16:02:43 2002
-+++ src/TCPTransmitter.cc      Sun May 12 16:03:01 2002
+
+$FreeBSD$
+
+--- src/TCPTransmitter.cc.orig	Mon Feb 18 00:29:51 2002
++++ src/TCPTransmitter.cc	Fri Jul 19 16:43:01 2002
 @@ -48,6 +48,8 @@
  #include <fcntl.h>
  #include <glib.h>
-
+ 
 +#define TRANSMITTER_DEBUG
 +
  using namespace std;
-
+ 
  #ifdef HAVE_GETHOSTBYNAME_R_GLIB_MUTEX
+@@ -1338,7 +1340,7 @@
+      }
+ }
+ 
+-void TCPTransmitter::setProxy(const string &ptype, const string &host, guint port, const string &user, const string &password, bool tryOther = true)
++void TCPTransmitter::setProxy(const string &ptype, const string &host, guint port, const string &user, const string &password, bool tryOther)
+ {
+      if (_state != Offline)
+      {
