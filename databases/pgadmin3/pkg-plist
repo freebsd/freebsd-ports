@@ -97,7 +97,6 @@ share/pgadmin3/docs/en_US/pg/charset.html
 share/pgadmin3/docs/en_US/pg/client-authentication-problems.html
 share/pgadmin3/docs/en_US/pg/client-authentication.html
 share/pgadmin3/docs/en_US/pg/client-interfaces.html
-share/pgadmin3/docs/en_US/pg/compiler.html
 share/pgadmin3/docs/en_US/pg/connect-estab.html
 share/pgadmin3/docs/en_US/pg/creating-cluster.html
 share/pgadmin3/docs/en_US/pg/cvs-tree.html
@@ -150,13 +149,16 @@ share/pgadmin3/docs/en_US/pg/ecpg-process.html
 share/pgadmin3/docs/en_US/pg/ecpg-set-connection.html
 share/pgadmin3/docs/en_US/pg/ecpg-variables.html
 share/pgadmin3/docs/en_US/pg/ecpg.html
+share/pgadmin3/docs/en_US/pg/errcodes-appendix.html
 share/pgadmin3/docs/en_US/pg/error-message-reporting.html
 share/pgadmin3/docs/en_US/pg/error-style-guide.html
+share/pgadmin3/docs/en_US/pg/examples.html
 share/pgadmin3/docs/en_US/pg/executor.html
 share/pgadmin3/docs/en_US/pg/explicit-joins.html
 share/pgadmin3/docs/en_US/pg/explicit-locking.html
 share/pgadmin3/docs/en_US/pg/extend-type-system.html
 share/pgadmin3/docs/en_US/pg/extend.html
+share/pgadmin3/docs/en_US/pg/extensibility.html
 share/pgadmin3/docs/en_US/pg/features.html
 share/pgadmin3/docs/en_US/pg/functions-aggregate.html
 share/pgadmin3/docs/en_US/pg/functions-array.html
@@ -182,6 +184,7 @@ share/pgadmin3/docs/en_US/pg/geqo.html
 share/pgadmin3/docs/en_US/pg/gist.html
 share/pgadmin3/docs/en_US/pg/groups.html
 share/pgadmin3/docs/en_US/pg/history.html
+share/pgadmin3/docs/en_US/pg/implementation.html
 share/pgadmin3/docs/en_US/pg/index.html
 share/pgadmin3/docs/en_US/pg/indexcost.html
 share/pgadmin3/docs/en_US/pg/indexes-examine.html
@@ -270,6 +273,7 @@ share/pgadmin3/docs/en_US/pg/libpq-pgpass.html
 share/pgadmin3/docs/en_US/pg/libpq-status.html
 share/pgadmin3/docs/en_US/pg/libpq-threading.html
 share/pgadmin3/docs/en_US/pg/libpq.html
+share/pgadmin3/docs/en_US/pg/limitations.html
 share/pgadmin3/docs/en_US/pg/lo-examplesect.html
 share/pgadmin3/docs/en_US/pg/lo-funcs.html
 share/pgadmin3/docs/en_US/pg/lo-implementation.html
@@ -320,6 +324,7 @@ share/pgadmin3/docs/en_US/pg/pgtcl-pgselect.html
 share/pgadmin3/docs/en_US/pg/pgtcl.html
 share/pgadmin3/docs/en_US/pg/planner-optimizer.html
 share/pgadmin3/docs/en_US/pg/planner-stats.html
+share/pgadmin3/docs/en_US/pg/plhandler.html
 share/pgadmin3/docs/en_US/pg/plperl-data.html
 share/pgadmin3/docs/en_US/pg/plperl-database.html
 share/pgadmin3/docs/en_US/pg/plperl-missing.html
@@ -562,7 +567,7 @@ share/pgadmin3/docs/en_US/pg/supported-platforms.html
 share/pgadmin3/docs/en_US/pg/transaction-iso.html
 share/pgadmin3/docs/en_US/pg/trigger-datachanges.html
 share/pgadmin3/docs/en_US/pg/trigger-example.html
-share/pgadmin3/docs/en_US/pg/trigger-manager.html
+share/pgadmin3/docs/en_US/pg/trigger-interface.html
 share/pgadmin3/docs/en_US/pg/triggers.html
 share/pgadmin3/docs/en_US/pg/tutorial-accessdb.html
 share/pgadmin3/docs/en_US/pg/tutorial-advanced.html
@@ -592,6 +597,15 @@ share/pgadmin3/docs/en_US/pg/typeconv.html
 share/pgadmin3/docs/en_US/pg/unsupported-features-sql99.html
 share/pgadmin3/docs/en_US/pg/user-attributes.html
 share/pgadmin3/docs/en_US/pg/user-manag.html
+share/pgadmin3/docs/en_US/pg/view-pg-indexes.html
+share/pgadmin3/docs/en_US/pg/view-pg-locks.html
+share/pgadmin3/docs/en_US/pg/view-pg-rules.html
+share/pgadmin3/docs/en_US/pg/view-pg-settings.html
+share/pgadmin3/docs/en_US/pg/view-pg-stats.html
+share/pgadmin3/docs/en_US/pg/view-pg-tables.html
+share/pgadmin3/docs/en_US/pg/view-pg-user.html
+share/pgadmin3/docs/en_US/pg/view-pg-views.html
+share/pgadmin3/docs/en_US/pg/views-overview.html
 share/pgadmin3/docs/en_US/pg/wal-benefits-later.html
 share/pgadmin3/docs/en_US/pg/wal-configuration.html
 share/pgadmin3/docs/en_US/pg/wal-internals.html
@@ -601,7 +615,6 @@ share/pgadmin3/docs/en_US/pg/xfunc-c.html
 share/pgadmin3/docs/en_US/pg/xfunc-internal.html
 share/pgadmin3/docs/en_US/pg/xfunc-overload.html
 share/pgadmin3/docs/en_US/pg/xfunc-pl.html
-share/pgadmin3/docs/en_US/pg/xfunc-plhandler.html
 share/pgadmin3/docs/en_US/pg/xfunc-sql.html
 share/pgadmin3/docs/en_US/pg/xfunc.html
 share/pgadmin3/docs/en_US/pg/xindex.html
