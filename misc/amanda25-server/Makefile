@@ -41,8 +41,12 @@ pre-fetch:
 	@${ECHO} "        The default is `uname -n`"
 	@${ECHO} "    AMANDA_TAPE=tape to specify the default tape device"
 	@${ECHO} "        The default is /dev/nrsa0"
-	@${ECHO} "    AMANDA_CONFIG=config to specify the default configuation"
+	@${ECHO} "    AMANDA_CONFIG=config to specify the default configuration"
 	@${ECHO} "        The default is user"
+	@${ECHO} "    AMANDA_USER=user to specify the default user"
+	@${ECHO} "        The default is operator"
+	@${ECHO} "    AMANDA_GROUP=group to specify the default group"
+	@${ECHO} "        The default is operator"
 	@${ECHO} ""
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/amrecover:${PORTSDIR}/misc/amanda-client
@@ -51,7 +55,6 @@ BUILD_DEPENDS=	${LOCALBASE}/sbin/amrecover:${PORTSDIR}/misc/amanda-client
 CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
 		--with-amandahosts --with-fqdn \
 		--with-dump-honor-nodump --with-buffered-dump \
-		--with-user=operator --with-group=operator \
 		--without-client --disable-libtool --prefix=${PREFIX}
 
 MAN8=		amadmin.8 amcheck.8 amcheckdb.8 amcleanup.8 amdd.8 \
@@ -98,6 +101,18 @@ CONFIGURE_ARGS+=	--with-tape-device=${AMANDA_TAPE}
 CONFIGURE_ARGS+=	--with-config=${AMANDA_CONFIG}
 .endif
 
+.if defined (AMANDA_USER)
+CONFIGURE_ARGS+=	--with-user=${AMANDA_USER}
+.else
+CONFIGURE_ARGS+=	--with-user=operator
+.endif
+
+.if defined (AMANDA_GROUP)
+CONFIGURE_ARGS+=	--with-group=${AMANDA_GROUP}
+.else
+CONFIGURE_ARGS+=	--with-group=operator
+.endif
+
 #
 # Before 4.0, pre-CAM scsiio.h existed
 .if ${OSVERSION} < 400000
@@ -122,12 +137,15 @@ pre-fetch:
 	@${ECHO} "    AMANDA_GNUTAR_LISTDIR=dir to specify the directory that"
 	@${ECHO} "        the gnutar index files should live in"
 	@${ECHO} "        The default is /var/amanda/gnutar-lists"
+	@${ECHO} "    AMANDA_USER=user to specify the default user"
+	@${ECHO} "        The default is operator"
+	@${ECHO} "    AMANDA_GROUP=group to specify the default group"
+	@${ECHO} "        The default is operator"
 	@${ECHO} ""
 
 CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
 		--with-amandahosts --with-fqdn \
 		--with-dump-honor-nodump --with-buffered-dump \
-		--with-user=operator --with-group=operator \
 		--without-server --disable-libtool --prefix=${PREFIX}
 
 MAN8=		amanda.8 amrecover.8 amrestore.8
@@ -157,6 +175,18 @@ CONFIGURE_ARGS+=	--with-config=${AMANDA_CONFIG}
 
 .if defined (AMANDA_GNUTAR_LISTDIR)
 CONFIGURE_ARGS+=	--with-gnutar-listdir=${AMANDA_GNUTAR_LISTDIR}
+.endif
+
+.if defined (AMANDA_USER)
+CONFIGURE_ARGS+=	--with-user=${AMANDA_USER}
+.else
+CONFIGURE_ARGS+=	--with-user=operator
+.endif
+
+.if defined (AMANDA_GROUP)
+CONFIGURE_ARGS+=	--with-group=${AMANDA_GROUP}
+.else
+CONFIGURE_ARGS+=	--with-group=operator
 .endif
 
 .endif
