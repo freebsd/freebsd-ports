@@ -1,43 +1,25 @@
---- ./libsprite/Imakefile.org	Mon May 15 17:52:06 1995
-+++ ./libsprite/Imakefile	Wed May 24 02:30:34 1995
-@@ -1,5 +1,5 @@
+--- Makefile.in.orig	Sun Apr 12 10:10:46 1998
++++ Makefile.in	Thu May 28 09:41:05 1998
+@@ -43,11 +43,12 @@
+ 	$(CC) $(LDFLAGS) -o $(SOUNDSRV) $(SOUNDOBJS) $(SOUNDLIBS)
  
--    XPMINCLUDE 		= -I/usr/include/X11
-+    XPMINCLUDE 		= -I$(INCROOT)/X11
+ install: all
+-	mkinstalldirs $(bindir)
++	./mkinstalldirs $(bindir)
++	./mkinstalldirs $(prefix)
+ 	$(INSTALL) $(TARGET) $(bindir)/$(TARGET)
+ 	$(INSTALL) $(SOUNDSRV) $(prefix)/$(SOUNDSRV)
+-	mkinstalldirs $(prefix)/sounds
+-	mkinstalldirs $(prefix)/levels
++	./mkinstalldirs $(prefix)/sounds
++	./mkinstalldirs $(prefix)/levels
+ 	for i in levels/*.xgl; do $(INSTALL) $$i $(prefix)/$$i ; done
+ 	for i in sounds/*.raw; do $(INSTALL) $$i $(prefix)/$$i ; done
  
-     EXTRA_INCLS = $(XPMINCLUDE) 
+@@ -75,4 +76,4 @@
+ 	cd libsprite;$(MAKE) distclean
  
---- Imakefile.orig	Sat Nov 30 01:02:20 1996
-+++ Imakefile	Sat Nov 30 01:04:33 1996
-@@ -9,7 +9,7 @@
- XCOMM your system.  If not doing "make install", set this to where the
- XCOMM files are now.
- 
--    XGALAGADIR = /usr/games/xgalaga
-+    XGALAGADIR = $(LIBDIR)/xgalaga
- 
-     SCOREFILE    	= $(XGALAGADIR)/.xgalscores
-     SOUNDDIR		= $(XGALAGADIR)/sounds
-@@ -18,8 +18,8 @@
- XCOMM with the standard X libs, you shouldn't need to change this.
- XCOMM otherwise make these point at wherever you put it.
- 
--    XPMLIB 		= -lXpm
--    XPMINCLUDE 		= -I/usr/include/X11
-+    XPMLIB 		= -L$(USRLIBDIR) -lXpm
-+    XPMINCLUDE 		= -I$(INCROOT)/X11
- 
-     XSPRITELIB          = -L./libsprite -lXsprite
- 
-@@ -141,9 +141,9 @@
- #endif
- 
- #ifdef PCSP_ONLY
--	PCSPDEF = -DPCSP_ONLY=1
-+    PCSPDEF = -DPCSP_ONLY=1
- #else
--	PCSPDEF = -DPCSP_ONLY=0
-+    PCSPDEF = -DPCSP_ONLY=0
- #endif
- 
- #ifndef SOUND
+ depend:
+-	makedepend $(CFLAGS) $(SRCS)
+\ No newline at end of file
++	makedepend $(CFLAGS) $(SRCS)
