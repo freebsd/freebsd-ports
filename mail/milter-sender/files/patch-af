@@ -1,0 +1,16 @@
+--- configure.bak	Tue Oct 21 21:04:13 2003
++++ configure	Tue Oct 21 21:10:29 2003
+@@ -1349,11 +1349,11 @@
+ 	localstatedir='/var'
+ fi
+ 
+-statedir="$localstatedir/lib/$PACKAGE_NAME"
++statedir="$localstatedir/$PACKAGE_NAME"
+ statedir=$statedir
+ 
+ cat >>confdefs.h <<_ACEOF
+-#define STATEDIR "$localstatedir/lib/$PACKAGE_NAME"
++#define STATEDIR "$localstatedir/$PACKAGE_NAME"
+ _ACEOF
+ 
+ 
