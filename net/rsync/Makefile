@@ -7,18 +7,13 @@
 #
 
 PORTNAME=	rsync
-PORTVERSION=	2.4.6
-PORTREVISION=	3
+PORTVERSION=	2.5.0
+PORTREVISION=	0
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://samba.anu.edu.au/pub/rsync/  \
 		ftp://sunsite.auc.dk/pub/unix/rsync/  \
 		ftp://ftp.sunet.se/pub/unix/admin/rsync/  \
 		ftp://ftp.fu-berlin.de/pub/unix/network/rsync/
-
-PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/ \
-		ftp://ftp.pasta.cs.uit.no/pub/IPv6/misc/
-PATCHFILES=	rsync-246-v6-20000907.diff.gz
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	obrien@FreeBSD.org
 
