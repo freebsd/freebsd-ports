@@ -12,7 +12,7 @@ dir1=$1
 dir2=$2
 fdir1=$here/$dir1
 fdir2=$here/$dir2
-ldir2=$(cd $fdir2; cd ../logs; pwd)
+ldir2=$(cd $fdir2; pwd | sed -e 's/errors/alllogs/')
 
 of=$here/$dir1-$dir2.html
 
