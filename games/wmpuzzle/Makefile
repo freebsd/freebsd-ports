@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	wmpuzzle
-PORTVERSION=	0.1.1
+PORTVERSION=	0.2.0
 CATEGORIES=	games windowmaker afterstep
-MASTER_SITES=	http://wwwtcs.inf.tu-dresden.de/~godisch/debian/wmpuzzle/ \
+MASTER_SITES=	http://www.godisch.de/debian/wmpuzzle/ \
 		${MASTER_SITE_LOCAL:S/$/:bsdpics/}
 MASTER_SITE_SUBDIR=	petef/:bsdpics
 DISTFILES=	wmpuzzle_${PORTVERSION}.orig${EXTRACT_SUFX} \
-		daemon.gif:bsdpics daemon.xpm:bsdpics
+		daemon.xpm:bsdpics
 DIST_SUBDIR=	wmpuzzle
 EXTRACT_ONLY=	wmpuzzle_${PORTVERSION}.orig${EXTRACT_SUFX}
 
@@ -20,6 +20,9 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib -lgnugetopt"
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 USE_X_PREFIX=	yes
@@ -27,11 +30,11 @@ USE_XPM=	yes
 
 MAN6=		wmpuzzle.6
 
-BSDIMAGES=	daemon.gif daemon.xpm
+BSDIMAGES=	daemon.xpm
 
 post-extract:
 .for i in ${BSDIMAGES}
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/$i ${WRKSRC}/xpm
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/$i ${WRKSRC}/
 .endfor
 
 do-install:
