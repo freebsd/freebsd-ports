@@ -1,5 +1,4 @@
 bin/insub
-share/irssi/scripts/insub.pl
 share/cows/2bear.cow
 share/cows/ahnold.cow
 share/cows/apple.cow
@@ -8,6 +7,7 @@ share/cows/baa.cow
 share/cows/bendover.cow
 share/cows/bigcow.cow
 share/cows/blam.cow
+share/cows/box.cow
 share/cows/box.cow
 share/cows/cack.cow
 share/cows/canada.cow
@@ -27,7 +27,9 @@ share/cows/heart.cow
 share/cows/invdragon.cow
 share/cows/jesus.cow
 share/cows/jkh.cow
+share/cows/jkh.cow
 share/cows/limp.cow
+share/cows/nascar.cow
 share/cows/peek.cow
 share/cows/peepees.cow
 share/cows/penis.cow
@@ -40,13 +42,20 @@ share/cows/retard.cow
 share/cows/santa.cow
 share/cows/saq.cow
 share/cows/satan.cow
+share/cows/shark.cow
 share/cows/spam.cow
 share/cows/stud1.cow
 share/cows/stud2.cow
 share/cows/tux-stab.cow
+share/cows/tux-stab.cow
+share/cows/urinal.cow
 share/cows/usa.cow
 share/cows/wang.cow
 share/cows/weed.cow
 share/cows/wtf-pony.cow
 share/cows/wtf.cow
+share/cows/wtf2.cow
 share/cows/zig.cow
+share/irssi
+share/irssi/scripts
+share/irssi/scripts/insub.pl
