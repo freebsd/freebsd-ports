@@ -1,6 +1,8 @@
 %%RUBY_SITEARCHLIBDIR%%/zlib.so
 %%PORTDOCS%%%%RUBY_DOCDIR%%/zlib/ChangeLog
 %%PORTDOCS%%%%RUBY_DOCDIR%%/zlib/zlib.en.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/zlib/zlib.rd.en
 %%PORTDOCS%%%%RUBY_DOCDIR%%/zlib/ja/zlib.ja.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/zlib/ja/zlib.rd.ja
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/zlib/ja
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/zlib
