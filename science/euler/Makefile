@@ -15,7 +15,8 @@ MASTER_SITE_SUBDIR=	euler
 MAINTAINER=	ports@FreeBSD.org
 
 USE_REINPLACE=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 WRKSRC=		${WRKDIR}/${DISTNAME:R}/source
 MAKEFILE=	makefile
 ALL_TARGET=	# empty
