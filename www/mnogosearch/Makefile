@@ -24,6 +24,8 @@ CONFIGURE_ARGS= --enable-shared \
 		--sysconfdir=${PREFIX}/etc/mnogosearch \
 		--localstatedir=/var/mnogosearch
 
+# To enable Cyrillic charset guesser, define this
+# Guesser mode ignores charsets comes from HTTP header or <META> tag
 .if defined(WITH_MNOGO_GUESSER)
 CONFIGURE_ARGS+= --enable-charset-guesser
 .endif
@@ -37,8 +39,6 @@ LIB_DEPENDS=            msql.1:${PORTSDIR}/databases/msql
 CONFIGURE_ARGS+=	--with-msql=${LOCALBASE}
 
 .elif defined(WITH_MNOGO_MYSQL)
-# default to mysql
-
 LIB_DEPENDS=		mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
 
