@@ -16,9 +16,11 @@ DISTNAME=	emacs-${EMACS_VER}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${XIM_PATCH}${EXTRACT_SUFX}
 
-PATCH_SITES=	ftp://ftp.m17n.org/pub/mule/dynamic-loading/ \
-		http://www.etl.go.jp/~tomo/comp/emacsen/
-PATCHFILES=	emacs-20.4-dl3.diff.gz
+PATCH_SITES=		ftp://ftp.m17n.org/pub/mule/dynamic-loading/ \
+			http://www.etl.go.jp/~tomo/comp/emacsen/ \
+			${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	. shige/emacs
+PATCHFILES=		emacs-20.4-dl3.diff.gz emacs-20.7-linespace-patch.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	shige@FreeBSD.org
@@ -38,6 +40,7 @@ USE_XLIB=	yes
 .else
 CONFIGURE_ARGS=	--with-x=no --with-pop
 .endif
+CONFIGURE_ARGS+=	--with-line-space
 
 # for XIM extension
 XIM_PATCH=	emacs20-xim-20000713
@@ -62,6 +65,8 @@ CONFIGURE_ARGS+=	--with-xpg4
 .endif
 .endif
 
+RECOMPILE_ELS=	dired.el startup.el
+
 pre-patch:
 	@(cd ${WRKSRC} ; \
 	  ${PATCH} ${PATCH_ARGS} -p1 < ../${XIM_PATCH}/${XIM_PATCH}.diff ;\
@@ -70,6 +75,18 @@ pre-patch:
 pre-build:
 	@${RM} -rf ${WRKSRC}/info/*
 	@${LN} -sf DOC ${WRKSRC}/etc/${DOC_FILE}
+
+post-build:
+# to rebuild emacs because startup.elc should be updated
+	@(cd ${WRKSRC}/lisp; \
+		${WRKSRC}/src/emacs -batch -q -no-init-file \
+			-f batch-byte-compile ${RECOMPILE_ELS} ; \
+	)
+	@${RM} -f ${WRKSRC}/src/emacs ${WRKSRC}/src/emacs-${EMACS_VER}*
+	@(cd ${BUILD_WRKSRC}; \
+		${SETENV} ${MAKE_ENV} \
+		${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET} ;\
+	)
 
 do-install:
 	@${INSTALL} -c -s -m 555 -o root -g wheel ${WRKSRC}/src/emacs ${PREFIX}/bin/emacs-dl-${EMACS_VER}
