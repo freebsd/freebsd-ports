@@ -170,6 +170,7 @@
     SUBDIR += phppdflib
     SUBDIR += pic2fig
     SUBDIR += pips-sc60s
+    SUBDIR += pips-sc65_66s
     SUBDIR += pips2200
     SUBDIR += pips3000
     SUBDIR += pips3300
