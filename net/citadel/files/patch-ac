@@ -1,0 +1,48 @@
+*** setup.c.orig	Tue Sep  5 14:35:25 2000
+--- setup.c	Tue Jun 12 19:24:13 2001
+***************
+*** 59,71 ****
+  {
+  
+  "0",
+! "Enter the full pathname of the directory in which the BBS you are",
+! "creating or updating resides.  If you specify a directory other than the",
+! "default, you will need to specify the -h flag to the server when you start",
+! "it up.",
+  
+  "1",
+! "Enter the name of the system administrator (which is probably you).",
+  "When an account is created with this name, it will automatically be",
+  "assigned the highest access level.",
+  
+--- 59,71 ----
+  {
+  
+  "0",
+! "Enter the full pathname to the directory which holds the configuration",
+! "files for the BBS that you are creating or upgrading resides.  If you",
+! "specify a directory other than the default, you will need to specify",
+! "the -h flag to the server when you start citserver.",
+  
+  "1",
+! "Enter the account name of the system administrator (which is probably you).",
+  "When an account is created with this name, it will automatically be",
+  "assigned the highest access level.",
+  
+***************
+*** 468,474 ****
+  	char entryname[3];
+  
+  	/* Determine the fully qualified path name of citserver */
+! 	sprintf(looking_for, "%s/citserver ", BBSDIR);
+  
+  	/* Pound through /etc/inittab line by line.  Set have_entry to 1 if
+  	 * an entry is found which we believe starts citserver.
+--- 468,474 ----
+  	char entryname[3];
+  
+  	/* Determine the fully qualified path name of citserver */
+! 	sprintf(looking_for, "%s/citserver ", BINDIR);
+  
+  	/* Pound through /etc/inittab line by line.  Set have_entry to 1 if
+  	 * an entry is found which we believe starts citserver.

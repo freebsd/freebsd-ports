@@ -1,0 +1,18 @@
+*** messages/goodbye.orig	Tue Sep  5 15:08:12 2000
+--- messages/goodbye	Wed Jun 13 10:44:19 2001
+***************
+*** 1,7 ****
+   
+!   < this logoff banner resides in ./messages/goodbye >
+!  
+!  Thanks for calling ^humannode - please call again soon!
+!  
+!  Also be sure to visit UNCENSORED! BBS at uncnsrd.mt-kisco.ny.us
+  
+--- 1,6 ----
++  Citadel/UX Communications Server - Powered by FreeBSD/i386 
+   
+!   < this logoff banner resides in PREFIX/share/citadel/messages/goodbye >
+! 
+!  Also be sure to visit UNCENSORED! BBS at uncensored.citadel.org
+  

@@ -1,0 +1,16 @@
+
+case $2 in
+	[Pp][Rr][Ee]-[Ii][Nn][Ss][Tt][Aa][Ll][Ll])
+	echo "- Installing Citadel/UX Communications Server..."
+	;;
+
+	[Pp][Oo][Ss][Tt]-[Ii][Nn][Ss][Tt][Aa][Ll][Ll])
+	echo "- Starting the Citadel/UX Setup and Configuration Program..."
+	${PKG_PREFIX}/bin/citsetup
+	echo "- Citadel/UX Communications Server"
+	echo "  Installed PREFIX: ${PKG_PREFIX}"
+	;;
+
+esac
+
+exit 0

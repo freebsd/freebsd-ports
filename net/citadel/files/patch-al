@@ -1,0 +1,11 @@
+--- ipc_c_tcp.c.orig	Mon Sep 10 10:45:23 2001
++++ ipc_c_tcp.c	Mon Sep 10 10:45:35 2001
+@@ -315,7 +315,7 @@
+ 
+ 	/* If we're using a unix domain socket we can do a bunch of stuff */
+ 	if (!strcmp(cithost, UDS)) {
+-		sprintf(sockpath, "citadel.socket");
++		sprintf(sockpath, "%s/citadel.socket", BBSDIR);
+ 		serv_sock = uds_connectsock(sockpath);
+ 		if (hostbuf != NULL) strcpy(hostbuf, cithost);
+ 		if (portbuf != NULL) strcpy(portbuf, sockpath);

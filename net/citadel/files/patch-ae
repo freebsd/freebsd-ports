@@ -1,0 +1,21 @@
+*** weekly.in.orig	Tue Jun 12 19:27:37 2001
+--- weekly.in	Tue Jun 12 19:27:06 2001
+***************
+*** 7,14 ****
+  # $Id: weekly.in,v 573.0 2000/09/05 18:35:25 ajc Exp $
+  # 
+  
+! [ x$BBSDIR = x ] && BBSDIR=@prefix@
+! [ x$EXECDIR = x ] && EXECDIR=$BBSDIR
+  
+  cd $BBSDIR || exit
+  
+--- 7,14 ----
+  # $Id: weekly.in,v 573.0 2000/09/05 18:35:25 ajc Exp $
+  # 
+  
+! [ x$BBSDIR = x ] && BBSDIR=@prefix@/share/citadel
+! [ x$EXECDIR = x ] && EXECDIR=@prefix@/bin
+  
+  cd $BBSDIR || exit
+  

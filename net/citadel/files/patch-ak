@@ -1,0 +1,12 @@
+*** messages/hello.orig	Fri May 21 09:45:16 1999
+--- messages/hello	Wed Jun 13 10:42:37 2001
+***************
+*** 1,3 ****
+    
+!  < this logon banner resides in ./messages/hello >
+!  
+--- 1,4 ----
+    
+!  < this logon banner resides in PREFIX/share/citadel/messages/hello >
+! 
+!  Citadel/UX Communications Server - Powered by FreeBSD/i386

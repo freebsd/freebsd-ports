@@ -1,0 +1,26 @@
+*** rc-startup-citadel.sh.orig	Wed Jun 13 08:53:57 2001
+--- rc-startup-citadel.sh	Wed Jun 13 08:56:43 2001
+***************
+*** 0 ****
+--- 1,21 ----
++ #!/bin/sh
++ 
++ PREFIX=/usr/local
++ LOGTO=/var/log/citadel.log
++ 
++ case $1 in
++ 	[Ss][Tt][Aa][Rr][Tt])
++ 		if [ -x "${PREFIX}/bin/citserver" ]; then
++ 			${PREFIX}/bin/citserver -t${LOGTO} -d
++ 			echo -n " Citadel/UX"
++ 		fi
++ 	;;
++ 
++ 	[Ss][Tt][Oo][Pp])
++ 		ps -auxwww | grep citserver | grep -v grep | awk '{print $2}' | xargs kill
++ 	;;
++ 
++ 	*)
++ 		echo "Usage:	$0 [start|stop]"
++ 	;;
++ esac

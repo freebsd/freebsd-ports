@@ -1,0 +1,102 @@
+--- Makefile.in.orig	Mon Jul  2 23:07:06 2001
++++ Makefile.in	Mon Sep 10 11:00:50 2001
+@@ -24,7 +24,7 @@
+ CX=@CX@
+ 
+ CLIENT_TARGETS=citadel$(EXEEXT) whobbs$(EXEEXT)
+-SERVER_TARGETS=citserver setup $(CHKPWD)
++SERVER_TARGETS=citserver citsetup $(CHKPWD)
+ SERV_MODULES=modules/serv_chat$(SO) modules/serv_vcard$(SO) \
+ 	modules/serv_upgrade$(SO) \
+ 	modules/serv_smtp$(SO) \
+@@ -224,8 +224,8 @@
+ mailinglist: mailinglist.o config.o internetmail.o
+ 	$(CC) mailinglist.o config.o internetmail.o $(LDFLAGS) -o mailinglist
+ 
+-setup: setup.o tools.o
+-	$(CC) setup.o tools.o $(CURSES) $(NETLIBS) $(LDFLAGS) -o setup
++citsetup: setup.o tools.o
++	$(CC) setup.o tools.o $(CURSES) $(NETLIBS) $(LDFLAGS) -o citsetup
+ 
+ chkpwd: chkpwd.o auth.o config.o
+ 	$(CC) chkpwd.o auth.o config.o $(LDFLAGS) -o chkpwd $(chkpwd_LIBS)
+@@ -269,45 +269,60 @@
+ install-data:
+ 	@for i in help messages network/spoolin network/spoolout \
+ 		 network/systems; do \
+-		$(srcdir)/mkinstalldirs $(root)$(prefix)/$$i; \
++		$(srcdir)/mkinstalldirs $(root)$(prefix)/share/citadel/$$i; \
+ 	done
+ 	@for i in citadel.rc public_clients \
+ 		 `find $(srcdir)/help $(srcdir)/messages $(srcdir)/network -type f | grep -v CVS`; do \
+-		echo $(INSTALL_DATA) $$i $(root)$(prefix)/$$i; \
+-		$(INSTALL_DATA) $$i $(root)$(prefix)/$$i; \
++		echo $(INSTALL_DATA) $$i $(root)$(prefix)/share/citadel/$$i; \
++		$(INSTALL_DATA) $$i $(root)$(prefix)/share/citadel/$$i; \
+ 	done
+ 	-@if test -d $(root)/etc/pam.d; then \
+-		echo $(INSTALL_DATA) $(srcdir)/citadel.pam $(root)/etc/pam.d/citadel; \
+-		$(INSTALL_DATA) $(srcdir)/citadel.pam $(root)/etc/pam.d/citadel; \
++		echo $(INSTALL_DATA) $(srcdir)/citadel.pam $(root)$(prefix)/etc/pam.d/citadel; \
++		$(INSTALL_DATA) $(srcdir)/citadel.pam $(root)$(prefix)/etc/pam.d/citadel; \
+ 	fi
+ 
+ install-doc:
+-	@$(srcdir)/mkinstalldirs $(root)$(prefix)/techdoc
++	@$(srcdir)/mkinstalldirs $(root)$(prefix)/share/doc/citadel/techdoc
+ 	@for i in `find $(srcdir)/techdoc -type f | grep -v CVS`; do \
+-		echo $(INSTALL_DATA) $$i $(root)$(prefix)/$$i; \
+-		$(INSTALL_DATA) $$i $(root)$(prefix)/$$i; \
++		echo $(INSTALL_DATA) $$i $(root)$(prefix)/share/doc/citadel/$$i; \
++		$(INSTALL_DATA) $$i $(root)$(prefix)/share/doc/citadel/$$i; \
++	done
++	@$(srcdir)/mkinstalldirs $(root)$(prefix)/share/doc/citadel/docs
++	@for i in `find $(srcdir)/docs -type f | grep -v CVS`; do \
++		echo $(INSTALL_DATA) $$i $(root)$(prefix)/share/doc/citadel/$$i; \
++		$(INSTALL_DATA) $$i $(root)$(prefix)/share/doc/citadel/$$i; \
+ 	done
+ 
+ install-exec: all weekly
+-	@for i in bio bitbucket files images info modules userpics; do \
+-		$(srcdir)/mkinstalldirs $(root)$(prefix)/$$i; \
++	@for i in bio bitbucket files images info modules userpics network/spoolin network/spoolout network/systems; do \
++		$(srcdir)/mkinstalldirs $(root)$(prefix)/share/citadel/$$i; \
++	done
++	@echo "This directory contains upload/download files." > $(root)$(prefix)/share/citadel/files/README
++	@for i in $(CLIENT_TARGETS) $(SERVER_TARGETS) $(UTIL_TARGETS) ; do \
++		if test -f $$i; then \
++			echo $(INSTALL) $$i $(root)$(prefix)/bin/$$i; \
++			$(INSTALL) $$i $(root)$(prefix)/bin/$$i; \
++		fi \
+ 	done
+-	@for i in $(CLIENT_TARGETS) $(SERVER_TARGETS) $(UTIL_TARGETS) \
+-		 $(SERV_MODULES) ; do \
++	@for i in $(SERV_MODULES) ; do \
+ 		if test -f $$i; then \
+-			echo $(INSTALL) $$i $(root)$(prefix)/$$i; \
+-			$(INSTALL) $$i $(root)$(prefix)/$$i; \
++			echo $(INSTALL) $$i $(root)$(prefix)/share/citadel/$$i; \
++			$(INSTALL) $$i $(root)$(prefix)/share/citadel/$$i; \
+ 		fi \
+ 	done
+ 	@for i in utilsmenu weekly dnetsetup; do \
+ 		if test -f $(srcdir)/$$i; then \
+-			echo $(INSTALL) $(srcdir)/$$i $(root)$(prefix)/$$i; \
+-			$(INSTALL) $(srcdir)/$$i $(root)$(prefix)/$$i; \
++			echo $(INSTALL) $(srcdir)/$$i $(root)$(prefix)/bin/$$i; \
++			$(INSTALL) $(srcdir)/$$i $(root)$(prefix)/bin/$$i; \
+ 		fi \
+ 	done
+-	@if test x`find $(root)$(prefix)/chkpwd -user root` = x$(root)$(prefix)/chkpwd; then \
+-		echo chmod u+s $(root)$(prefix)/chkpwd; \
+-		chmod u+s $(root)$(prefix)/chkpwd; \
++	echo $(srcdir)/mkinstalldirs $(root)$(prefix)/etc/rc.d
++	$(srcdir)/mkinstalldirs $(root)$(prefix)/etc/rc.d
++	echo $(INSTALL) $(srcdir)/rc-startup-citadel.sh $(root)$(prefix)/etc/rc.d/citadel.sh.example
++	$(INSTALL) $(srcdir)/rc-startup-citadel.sh $(root)$(prefix)/etc/rc.d/citadel.sh.example
++	@if test x`find $(root)$(prefix)/bin/chkpwd -user root` = x$(root)$(prefix)/bin/chkpwd; then \
++		echo chmod u+s $(root)$(prefix)/bin/chkpwd; \
++		chmod u+s $(root)$(prefix)/bin/chkpwd; \
+ 	fi
+ 
+ clean:

@@ -1,0 +1,31 @@
+*** configure.orig	Tue Jun 12 17:04:41 2001
+--- configure	Tue Jun 12 17:05:01 2001
+***************
+*** 536,547 ****
+  
+  if test "$prefix" = NONE; then
+  	cat >> confdefs.h <<EOF
+! #define BBSDIR "$ac_default_prefix"
+  EOF
+  
+  else
+  	cat >> confdefs.h <<EOF
+! #define BBSDIR "$prefix"
+  EOF
+  
+  fi
+--- 536,549 ----
+  
+  if test "$prefix" = NONE; then
+  	cat >> confdefs.h <<EOF
+! #define BBSDIR "$ac_default_prefix/share/citadel"
+! #define BINDIR "$ac_default_prefix/bin"
+  EOF
+  
+  else
+  	cat >> confdefs.h <<EOF
+! #define BBSDIR "$prefix/share/citadel"
+! #define BINDIR "$prefix/bin"
+  EOF
+  
+  fi

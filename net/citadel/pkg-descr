@@ -1,0 +1,24 @@
+Citadel/UX Communications Server
+Copyright (c) 1987-2001 by Art Cancro.
+Portions (c) 1998-2001 by Nathan Bryant, Brian Costello, and Ben Mehlman.
+Documentation (c) 2000 by Steve Williams.
+HP/UX compatibility layer (c) 2000 by Michael Bremen.
+base64 encoding/decoding for MIME parser, public domain by John Walker.
+'parsedate' function, public domain by Steven M. Bellovin, et. al.
+
+WWW: http://uncensored.citadel.org/citadel/
+Author: Arthur J. Cancro <ajc@uncensored.citadel.org>
+Revision: 5.80
+
+The Citadel/UX Communications Server provides your
+enterprise with a powerful alternative to products
+such as Microsoft Exchange.  Citadel/UX provides you
+with:
+  - Internet E-Mail (SMTP, POP3, IMAP servers built-in)
+  - Real-time Chatting
+  - Instant Messaging
+Refer to the link above for more information about the 
+Citadel/UX Project.
+
+--
+Maintainer: Brian Ledbetter <brian@shadowcom.net>

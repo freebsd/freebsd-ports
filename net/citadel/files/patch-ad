@@ -1,0 +1,21 @@
+*** user_ops.c.orig	Tue Jun 12 19:25:41 2001
+--- user_ops.c	Tue Jun 12 19:25:48 2001
+***************
+*** 434,441 ****
+  			}
+  		close(pipev[0]);
+  
+! 		execl(BBSDIR "/chkpwd", BBSDIR "/chkpwd", NULL);
+! 		perror(BBSDIR "/chkpwd");
+  		exit(1);
+  		}
+  
+--- 434,441 ----
+  			}
+  		close(pipev[0]);
+  
+! 		execl(BINDIR "/chkpwd", BINDIR "/chkpwd", NULL);
+! 		perror(BINDIR "/chkpwd");
+  		exit(1);
+  		}
+  
