@@ -17,7 +17,6 @@ lib/libgg2_core.a
 lib/libgg2_core.so
 lib/libgg2_core.so.2
 lib/pkgconfig/gg2_core.pc
-%%KDE:%%%%LOCALBASE%%share/applnk/Internet/gg2.desktop
 share/gg2/pixmaps/arrow.png
 share/gg2/pixmaps/away.png
 share/gg2/pixmaps/emoticon.gif
@@ -238,6 +237,15 @@ share/gg2/pixmaps/icons/tlen-3d/tlen-invisible.png
 share/gg2/pixmaps/icons/tlen-3d/tlen-occupied.png
 share/gg2/pixmaps/icons/tlen-3d/tlen-offline.png
 share/gg2/pixmaps/icons/tlen-3d/tlen-online.png
+share/gg2/pixmaps/icq-away.png
+share/gg2/pixmaps/icq-dnd.png
+share/gg2/pixmaps/icq-freechat.png
+share/gg2/pixmaps/icq-invisible.png
+share/gg2/pixmaps/icq-na.png
+share/gg2/pixmaps/icq-occupied.png
+share/gg2/pixmaps/icq-offline.png
+share/gg2/pixmaps/icq-online.png
+share/gg2/pixmaps/icq.png
 share/gg2/pixmaps/jabber-away.png
 share/gg2/pixmaps/jabber-dnd.png
 share/gg2/pixmaps/jabber-error.png
@@ -290,3 +298,5 @@ share/locale/pl/LC_MESSAGES/gg2.mo
 @dirrm share/gg2/pixmaps
 @dirrm share/gg2
 @dirrm lib/gg2
+%%KDE:%%@cwd %%LOCALBASE%%
+%%KDE:%%share/applnk/Internet/gg2.desktop
