@@ -134,37 +134,6 @@ share/texmf/doc/eplain/progdef.texi
 share/texmf/doc/eplain/userdef.texi
 share/texmf/doc/eplain/xeplain.tex
 share/texmf/doc/latex/companion.ctan
-share/texmf/dvips/base/8a.enc
-share/texmf/dvips/base/8r.enc
-share/texmf/dvips/base/EC.enc
-share/texmf/dvips/base/ad.enc
-share/texmf/dvips/base/asex.enc
-share/texmf/dvips/base/asexp.enc
-share/texmf/dvips/base/color.pro
-share/texmf/dvips/base/cork.enc
-share/texmf/dvips/base/crop.pro
-share/texmf/dvips/base/dc.enc
-share/texmf/dvips/base/dvips.enc
-share/texmf/dvips/base/extex.enc
-share/texmf/dvips/base/finclude.pro
-share/texmf/dvips/base/funky.enc
-share/texmf/dvips/base/hps.pro
-share/texmf/dvips/base/psfonts.map
-share/texmf/dvips/base/special.pro
-share/texmf/dvips/base/tex.pro
-share/texmf/dvips/base/texc.pro
-share/texmf/dvips/base/texmext.enc
-share/texmf/dvips/base/texmital.enc
-share/texmf/dvips/base/texmsym.enc
-share/texmf/dvips/base/texps.pro
-share/texmf/dvips/base/xl2.enc
-share/texmf/dvips/base/xt2.enc
-share/texmf/dvips/config/config.dvired
-share/texmf/dvips/config/config.ps
-share/texmf/dvips/config/dfaxhigh.cfg
-share/texmf/dvips/config/dfaxlo.cfg
-share/texmf/dvips/gsftopk/render.ps
-share/texmf/dvips/misc/resolution400.ps
 share/texmf/fontname/adobe.map
 share/texmf/fontname/apple.map
 share/texmf/fontname/bitstrea.map
@@ -1061,11 +1030,6 @@ share/texmf/web2c/texmf.cnf
 @dirrm share/texmf/fonts/source
 @dirrm share/texmf/fonts
 @dirrm share/texmf/fontname
-@dirrm share/texmf/dvips/misc
-@dirrm share/texmf/dvips/gsftopk
-@dirrm share/texmf/dvips/config
-@dirrm share/texmf/dvips/base
-@dirrm share/texmf/dvips
 @dirrm share/texmf/doc/latex
 @dirrm share/texmf/doc/eplain
 @dirrm share/texmf/doc/bibtex
