@@ -1,0 +1,7 @@
+The image/photo mosaic plug-in creates a image/photo mosaic (composition
+of multiple images) from an input image and an image archive.
+It also has the function to create the image archive.
+With GIMP menues, the plug-in is located at "Filters/Render/Image Mosaic".
+It's help-button should tell you how to use the plug-in.
+
+WWW: http://www.kirchgessner.net/photo-mosaic.html

@@ -1,0 +1,4 @@
+libexec/gimp/1.2/plug-ins/pmosaic
+share/locale/de/LC_MESSAGES/gimp-pmosaic.mo
+%%DOCSDIR%%/README.TXT
+@dirrm %%DOCSDIR%%
