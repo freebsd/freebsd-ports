@@ -1,0 +1,11 @@
+--- lib/specs.orig	Sun May 18 23:28:53 1997
++++ lib/specs	Sun May 18 23:29:19 1997
+@@ -25,7 +25,7 @@
+ 	%{!A:%{!nostartfiles:%{!nostdlib:%S}}} %{static:}\
+ 	%{L*} %D %{T*} %o -Tdjgpp.djl\
+ 	%{!nostdlib:-lgcc %L -lgcc %{!A:%E}}}}}}}
+-%{!c:%{!M:%{!MM:%{!E:%{!S:stubify %{v} %{o*:%*} %{!o*:a.out}}}}}} 
++%{!c:%{!M:%{!MM:%{!E:%{!S:i386-go32-stubify %{v} %{o*:%*} %{!o*:a.out}}}}}} 
+ 
+ *lib:
+ -lc

@@ -1,0 +1,13 @@
+*** lib/djgpp.djl	Wed Oct 23 18:06:22 1996
+--- lib/djgpp.djl2	Sun Sep  8 22:40:06 1996
+***************
+*** 1,4 ****
+! OUTPUT_FORMAT("coff-go32")
+  ENTRY(start)
+  SECTIONS
+  {
+--- 1,4 ----
+! OUTPUT_FORMAT("coff-i386")
+  ENTRY(start)
+  SECTIONS
+  {

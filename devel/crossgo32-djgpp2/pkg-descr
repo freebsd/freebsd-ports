@@ -1,0 +1,21 @@
+This ports installs the DJGPP Version 2 libraries and stub utilities
+into the crossgo32 cross compiler port. The original libraries built
+by the crossgo32 port are moved aside until you run pkg_delete to
+un-install this port. 
+
+The DJGPP libraries create larger binaries for smaller programs but
+this is less of an issue with larger programs.
+
+Two new utilities - i386-go32-stubify and i386-go32-stubedit - are
+also installed. It is no longer necessary to stubify the COFF binaries
+as a patch is included to do this automatically after
+compilation. Please refer to the DJGPP v2 FAQ for further information
+on this topic.
+
+Finally, this port also allows us to install a number of extra
+toolkits from the DJGPP collection.
+
+Share and enjoy,
+
+Joel...
+sutton@aardvark.apana.org.au

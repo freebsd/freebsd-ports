@@ -1,0 +1,29 @@
+*** src/stub/stubedit.c.orig	Sun Jun 22 16:51:08 1997
+--- src/stub/stubedit.c	Sun Jun 22 16:57:54 1997
+***************
+*** 1,5 ****
+--- 1,6 ----
+  /* Copyright (C) 1996 DJ Delorie, see COPYING.DJ for details */
+  /* Copyright (C) 1995 DJ Delorie, see COPYING.DJ for details */
++ /* Patched by Joel Sutton - Sun Jun 22 16:57:39 EST 1997 */
+  #include <stdio.h>
+  #include <stdlib.h>
+  #include <string.h>
+***************
+*** 70,76 ****
+    static char response[200];
+    printf("%s ? [%s] ", question, default_answer);
+    fflush(stdout);
+!   gets(response);
+    if (response[0] == '\0')
+      return 0;
+    return response;
+--- 71,78 ----
+    static char response[200];
+    printf("%s ? [%s] ", question, default_answer);
+    fflush(stdout);
+!   fgets(response, 200, stdin);
+!   response[strlen(response)-1]='\0';
+    if (response[0] == '\0')
+      return 0;
+    return response;
