@@ -1,11 +1,11 @@
---- src/Makefile.in.orig	Sun Jan 16 08:17:38 2000
-+++ src/Makefile.in	Sun Apr 16 08:40:34 2000
-@@ -70,7 +70,7 @@
+--- src/Makefile.in.orig	Sat Jun 30 13:01:06 2001
++++ src/Makefile.in	Thu Oct  4 15:15:13 2001
+@@ -80,7 +80,7 @@
  
  noinst_HEADERS = pxtypes.h pxconvert.h pxparse.h
  
 -CFLAGS = -g -Wall #-DDEBUG -DDEBUG_HEAD_COPY
-+CFLAGS = -g @CFLAGS@
++CFLAGS = @CFLAGS@ -g -Wall #-DDEBUG -DDEBUG_HEAD_COPY
+ subdir = src
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = ../config.h
- CONFIG_CLEAN_FILES = 
