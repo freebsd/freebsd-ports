@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	reportmagic
-PORTVERSION=	2.03
+PORTVERSION=	2.04
 CATEGORIES=	www
 MASTER_SITES=	http://www.reportmagic.com/
 DISTNAME=	rmagic-${PORTVERSION}
@@ -28,7 +28,7 @@ pre-fetch:
 	@${ECHO} "event that GD is already "
 	@${ECHO} -n "installed *without* FreeType, you won't be able to "
 	@${ECHO} "use it.  If you want"
-	@${ECHO} -n "FreeType support, go (re)make ${PORTSDIR}/graphics/gd "
+	@${ECHO} -n "FreeType support, please (re)make ${PORTSDIR}/graphics/gd "
 	@${ECHO} "with -DWITH_X11."
 	@${ECHO}
 
