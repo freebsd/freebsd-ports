@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	socat
-PORTVERSION=	1.3.2.2
+PORTVERSION=	1.4.0.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.dest-unreach.org/socat/download/
 
@@ -21,13 +21,20 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAKE_ARGS=	CCOPT="${CFLAGS}"
 
+.if defined(WITHOUT_SSL)
+CONFIGURE_ARGS+=	--disable-openssl
+.else
+USE_OPENSSL=	yes
+.endif
+
 MAN1=		socat.1
-DOCS=		EXAMPLES README SECURITY
+PORTDOCS=	EXAMPLES README SECURITY FAQ
+PLIST_FILES=	bin/filan bin/procan bin/socat
 
 .if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
