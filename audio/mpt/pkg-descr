@@ -1,0 +1,16 @@
+[ adapted from developer's website ]
+
+Mike's Playlist Thingie (working title)
+
+You know what is bad about playlists? You set them all up, and
+everything seems great, but then you go and get a couple hundred
+new mp3s. Now you have to go update all your playlists. If you've
+got 10 playlists and 100 new songs, that's 1000 decisions you have
+to make. Yuck.
+
+With MPT, playlists are no longer just static catalogs, pointing
+to songs on your hard drive. They're more like radio stations, where
+each one has a set of rules that define, in general, what kind of
+music should be played. Like procmail for music.
+
+WWW: http://sourceforge.net/projects/freetantrum/
