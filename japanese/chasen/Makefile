@@ -8,6 +8,7 @@
 
 PORTNAME=	chasen
 PORTVERSION=	2.02
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.aist-nara.ac.jp/pub/lab/nlp/tools/chasen/
 DISTNAME=	${PORTNAME}-sys${PORTVERSION}-ipadic2.1
@@ -19,9 +20,11 @@ USE_PERL5=	YES
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Text::ChaSen.3
 
-WRKSRC=		${WRKDIR}/chasen-2.02
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+INSTALLS_SHLIB=	yes
 
-do-configure:
+post-patch:
+	${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}/lib/Makefile
 
 post-build:
 	@${ECHO_MSG} "Making dictionaries"
@@ -33,5 +36,7 @@ post-build:
 
 post-install:
 	@cd ${WRKSRC}/perl; ${SETENV} ${MAKE_ENV} ${MAKE} install
+	${MKDIR} ${PREFIX}/include/chasen
+	@cd ${WRKSRC}/lib; ${SETENV} ${MAKE_ENV} ${MAKE} install
 
 .include <bsd.port.mk>

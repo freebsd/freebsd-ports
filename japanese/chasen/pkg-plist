@@ -1,5 +1,13 @@
 @comment $NetBSD: PLIST,v 1.2 1999/06/07 09:54:39 sakamoto Exp $
 bin/chasen
+include/chasen/chadic.h
+include/chasen/chalib.h
+include/chasen/pat.h
+include/chasen/sufary.h
+@dirrm include/chasen
+lib/libchasen.a
+lib/libchasen.so
+lib/libchasen.so.0
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Text/ChaSen.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/ChaSen/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/ChaSen/ChaSen.bs
