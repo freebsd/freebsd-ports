@@ -7,7 +7,7 @@
 
 PORTNAME=	cflowd
 PORTVERSION=	2-1-b1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.caida.org/pub/cflowd/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -36,5 +36,9 @@ pre-everything:
 	@${ECHO} "you can compile cflowd with patches for FlowScan by typing:"
 	@${ECHO} "make CFLOWD_FLOWSCAN_PATCH=yes"
 .endif
+
+post-install:
+	${INSTALL_SCRIPT} ${FILESDIR}/cflowd.sh \
+		${PREFIX}/etc/rc.d/cflowd.sh.sample
 
 .include <bsd.port.mk>
