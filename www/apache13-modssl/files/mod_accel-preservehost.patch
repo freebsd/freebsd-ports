@@ -1,0 +1,54 @@
+--- src/modules/accel/mod_accel.c.orig	Mon Mar 22 12:25:54 2004
++++ src/modules/accel/mod_accel.c	Mon Mar 22 12:26:30 2004
+@@ -282,6 +282,17 @@
+             a->pass->max_wait = a->pass->max_conn;
+ 
+         a->pass->sum = accel_sum(a->pass->sum_part, a->url, tag);
++
++        if (max = ap_table_get(r->notes, "rewrite_ph")) {
++	    char *prefix, *port;
++	    if (!(prefix = strstr(a->url, "://")))
++	      return "Invalid URL prefix";
++
++	    prefix += 3;
++
++	    a->pass->port = (port = strchr(prefix, ':')) ? atoi(port + 1) : 80;
++	    a->pass->preserve_host = 1;
++	}
+ #endif
+     }
+ 
+--- src/modules/standard/mod_rewrite.c.orig	Mon Mar 22 12:25:54 2004
++++ src/modules/standard/mod_rewrite.c	Mon Mar 22 12:26:01 2004
+@@ -947,6 +947,10 @@
+              || strcasecmp(key, "MP") == 0      ) {
+         cfg->max_part = ap_pstrdup(p, val);
+     }
++    else if (   strcasecmp(key, "preservehost") == 0
++             || strcasecmp(key, "PH") == 0      ) {
++        cfg->preserve_host = 1;
++    }
+ #endif
+     else if (   strcasecmp(key, "passthrough") == 0
+              || strcasecmp(key, "PT") == 0      ) {
+@@ -2128,6 +2132,9 @@
+                          ap_psprintf(r->pool, "%d", p->max_wait));
+         if (p->max_part)
+             ap_table_set(r->notes, "rewrite_mp", p->max_part);
++        if (p->preserve_host)
++            ap_table_set(r->notes, "rewrite_ph",
++                         ap_psprintf(r->pool, "%d", p->preserve_host));
+ #endif
+         return 1;
+     }
+
+--- src/modules/standard/mod_rewrite.h.orig	Mon Mar 22 12:25:54 2004
++++ src/modules/standard/mod_rewrite.h	Mon Mar 22 12:26:01 2004
+@@ -298,6 +298,7 @@
+     int      max_conn;
+     int      max_wait;
+     char    *max_part;
++    unsigned preserve_host:1;
+ #endif
+ } rewriterule_entry;
+ 
