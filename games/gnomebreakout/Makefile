@@ -28,5 +28,7 @@ post-patch:
 		's|-Werror||g' ${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e \
 		's|@GETTEXT_PACKAGE@|@PACKAGE@|g' ${WRKSRC}/po/Makefile.in.in
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
+		's|-DGNOME_DISABLE_DEPRECATED||g ; s|-DGTK_DISABLE_DEPRECATED||g'
 
 .include <bsd.port.mk>
