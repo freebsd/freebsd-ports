@@ -24,6 +24,9 @@ share/examples/ifmail/cnews/batchparms
 share/examples/ifmail/cnews/sys
 share/examples/ifmail/config
 share/examples/ifmail/contrib/README
+share/examples/ifmail/contrib/abbs2nf/AREAS.BBS
+share/examples/ifmail/contrib/abbs2nf/Areas
+share/examples/ifmail/contrib/abbs2nf/abbs2nf.pl
 share/examples/ifmail/contrib/a2dbm
 share/examples/ifmail/contrib/areafix-0.5.07/HISTORY
 share/examples/ifmail/contrib/areafix-0.5.07/README
@@ -34,8 +37,11 @@ share/examples/ifmail/contrib/areafix-0.5.07/help
 share/examples/ifmail/contrib/areafix-0.5.07/passwords
 share/examples/ifmail/contrib/areafix-0.5.07/restricted
 share/examples/ifmail/contrib/areafix-0.5.07/uplinks
+share/examples/ifmail/contrib/areafix-0.5.07-jv10/areafix.pl
+share/examples/ifmail/contrib/areafix-0.6.02/areafix
 share/examples/ifmail/contrib/cnews-msgids
 share/examples/ifmail/contrib/edalias
+share/examples/ifmail/contrib/edalias.cgi
 share/examples/ifmail/contrib/fdpass/NOTICE
 share/examples/ifmail/contrib/fdpass/fdpass.c
 share/examples/ifmail/contrib/fdpass/session.h
@@ -50,6 +56,7 @@ share/examples/ifmail/contrib/iftelnetd/README
 share/examples/ifmail/contrib/iftelnetd/iftelnetd.c
 share/examples/ifmail/contrib/iftelnetd/inetd.conf
 share/examples/ifmail/contrib/iftelnetd/services
+share/examples/ifmail/contrib/install.russian.koi8
 share/examples/ifmail/contrib/ldbm
 share/examples/ifmail/contrib/lmsgid
 share/examples/ifmail/contrib/mmdf/Makefile
@@ -111,6 +118,7 @@ share/examples/ifmail/contrib/u-tic/u-attach.pl
 share/examples/ifmail/contrib/u-tic/u-fix.pl
 share/examples/ifmail/contrib/u-tic/u-tic.pl
 share/examples/ifmail/contrib/u-tic/xfutil.pl
+share/examples/ifmail/exim/exim.template
 share/examples/ifmail/getnodelist
 share/examples/ifmail/ifmail.gif
 share/examples/ifmail/inn/newsfeeds
@@ -128,6 +136,9 @@ share/examples/ifmail/inouttabs/outkoi8alt
 share/examples/ifmail/sendmail/ifmail.m4-bosman
 share/examples/ifmail/sendmail/ifmail.m4-butler
 share/examples/ifmail/sendmail/ifmail.m4-selig
+share/examples/ifmail/sendmail/ifmail.m4-srtxg/README
+share/examples/ifmail/sendmail/ifmail.m4-srtxg/ifmail.mc
+share/examples/ifmail/sendmail/ifmail.m4-srtxg/fnet.m4
 share/examples/ifmail/sendmail/sendmail.cf-1
 share/examples/ifmail/sendmail/sendmail.cf-2
 share/examples/ifmail/smail/ftnpaths
@@ -138,12 +149,11 @@ share/examples/ifmail/tcp/services
 share/examples/ifmail/zmailer/routes
 share/examples/ifmail/zmailer/scheduler.conf
 share/examples/ifmail/zmailer/sm.conf
-@dirrm share/examples/ifmail/inn
-@dirrm share/examples/ifmail/tcp
-@dirrm share/examples/ifmail/smail
-@dirrm share/examples/ifmail/sendmail
-@dirrm share/examples/ifmail/zmailer
 @dirrm share/examples/ifmail/cnews
+@dirrm share/examples/ifmail/contrib/abbs2nf
+@dirrm share/examples/ifmail/contrib/areafix-0.5.07
+@dirrm share/examples/ifmail/contrib/areafix-0.5.07-jv10
+@dirrm share/examples/ifmail/contrib/areafix-0.6.02
 @dirrm share/examples/ifmail/contrib/mmdf
 @dirrm share/examples/ifmail/contrib/tic/config
 @dirrm share/examples/ifmail/contrib/tic
@@ -151,7 +161,13 @@ share/examples/ifmail/zmailer/sm.conf
 @dirrm share/examples/ifmail/contrib/news_via_mail
 @dirrm share/examples/ifmail/contrib/fdpass
 @dirrm share/examples/ifmail/contrib/iftelnetd
-@dirrm share/examples/ifmail/contrib/areafix-0.5.07
 @dirrm share/examples/ifmail/contrib
+@dirrm share/examples/ifmail/exim
+@dirrm share/examples/ifmail/inn
 @dirrm share/examples/ifmail/inouttabs
+@dirrm share/examples/ifmail/sendmail/ifmail.m4-srtxg
+@dirrm share/examples/ifmail/sendmail
+@dirrm share/examples/ifmail/smail
+@dirrm share/examples/ifmail/tcp
+@dirrm share/examples/ifmail/zmailer
 @dirrm share/examples/ifmail
