@@ -118,6 +118,9 @@ post-patch:
 	cat ${FILESDIR}/filedesc.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
 	cat ${FILESDIR}/m_waitok.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
 .endif
+.if ${OSVERSION} >= 500104
+	cat ${FILESDIR}/devfs.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
+.endif
 
 setoptions:
 	${SED} 	-e 's;@@PREFIX@@;${PREFIX};' \
