@@ -302,6 +302,7 @@ apsfilter	ports/print/apsfilter
 ar		src/usr.bin/ar
 arc		ports/archivers/arc
 arcboot		src/sys/boot/arc
+arch		ports/devel/arch
 archie		ports/net/archie
 archie.el	ports/net/archie.el
 arena		ports/www/arena
