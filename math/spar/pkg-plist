@@ -1,4 +1,5 @@
 bin/spar
+bin/test
 include/spar/sl.h
 include/spar/sl_btree.h
 include/spar/sl_chartype.h
