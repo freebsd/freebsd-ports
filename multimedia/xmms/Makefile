@@ -34,6 +34,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		VISUALIZATION_PLUGINS="${VISUALIZATION_PLUGINS}"
 MAN1=		gnomexmms.1 wmxmms.1 xmms.1
 
+CONFLICTS=	ru-xmms-*
+
 INPUT_PLUGINS=	cdaudio,mpg123,tonegen,wav
 OUTPUT_PLUGINS=	OSS,disk_writer
 VISUALIZATION_PLUGINS=	blur_scope,sanalyzer
