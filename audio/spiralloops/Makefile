@@ -33,12 +33,12 @@ post-patch:
 			s|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/Makefile.in
 
 pre-install:
-	${ECHO} bin/SpiralLoops > ${PLIST}
+	${ECHO_CMD} bin/SpiralLoops > ${PLIST}
 .if !defined(NOPORTDOCS)
 .for i in ${DOC_FILES}
-	${ECHO} ${DOCDIR}/`${BASENAME} ${i}` >> ${PLIST}
+	${ECHO_CMD} ${DOCDIR}/`${BASENAME} ${i}` >> ${PLIST}
 .endfor
-	${ECHO} @dirrm ${DOCDIR} >> ${PLIST}
+	${ECHO_CMD} @dirrm ${DOCDIR} >> ${PLIST}
 .endif
 
 do-install:

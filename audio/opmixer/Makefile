@@ -23,12 +23,12 @@ PLIST=		${WRKDIR}/pkg-plist
 WRKSRC=		${WRKDIR}/opmixer
 
 pre-install:
-	${ECHO} "bin/opmixer" > ${PLIST}
-	${ECHO} "bin/opmixer-load" >> ${PLIST}
-	${ECHO} "bin/volset" >> ${PLIST}
+	${ECHO_CMD} "bin/opmixer" > ${PLIST}
+	${ECHO_CMD} "bin/opmixer-load" >> ${PLIST}
+	${ECHO_CMD} "bin/volset" >> ${PLIST}
 .if !defined(NOPORTDOCS)
-	${ECHO} ${DOCDIR}/README >> ${PLIST}
-	${ECHO} @dirrm ${DOCDIR} >> ${PLIST}
+	${ECHO_CMD} ${DOCDIR}/README >> ${PLIST}
+	${ECHO_CMD} @dirrm ${DOCDIR} >> ${PLIST}
 .endif
 
 do-patch:

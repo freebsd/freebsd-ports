@@ -81,30 +81,30 @@ post-configure:
 	@${PERL} -pi -e "s: -ldl::g" ${WRKSRC}/makefile
 
 pre-install:
-	${ECHO} bin/snd > ${PLIST}
+	${ECHO_CMD} bin/snd > ${PLIST}
 .if !defined(WITHOUT_X11)
-	${ECHO} lib/X11/app-defaults/Snd.ad >> ${PLIST}
+	${ECHO_CMD} lib/X11/app-defaults/Snd.ad >> ${PLIST}
 .endif
 .for i in audinfo snd-info sndplay sndrecord sndsine
-	${ECHO} bin/${i} >> ${PLIST}
+	${ECHO_CMD} bin/${i} >> ${PLIST}
 .endfor
 .if !defined(NOPORTDOCS)
 .for i in COPYING HISTORY.Snd README.Snd TODO.Snd
-	${ECHO} share/doc/snd/${i} >> ${PLIST}
+	${ECHO_CMD} share/doc/snd/${i} >> ${PLIST}
 .endfor
 	${FIND} ${WRKDIR} -name '*.html' | \
 		${PERL} -pi -e "s:^${WRKSRC}/:share/doc/snd/:g" >> ${PLIST}
 	${FIND} ${WRKDIR} -name '*.png' | \
 		${PERL} -pi -e "s:^${WRKSRC}/:share/doc/snd/:g" >> ${PLIST}
-	${ECHO} "@dirrm share/doc/snd" >> ${PLIST}
+	${ECHO_CMD} "@dirrm share/doc/snd" >> ${PLIST}
 .endif
 .if !defined(WITHOUT_GUILE)
 	${FIND} ${WRKSRC} -name '*.scm' | \
 		${PERL} -pi -e "s:^${WRKSRC}/:share/snd/:g" >> ${PLIST}
-	${ECHO} "share/snd/contrib/dlp/README" >> ${PLIST}
-	${ECHO} "@dirrm share/snd/contrib/dlp" >> ${PLIST}
-	${ECHO} "@dirrm share/snd/contrib" >> ${PLIST}
-	${ECHO} "@dirrm share/snd" >> ${PLIST}
+	${ECHO_CMD} "share/snd/contrib/dlp/README" >> ${PLIST}
+	${ECHO_CMD} "@dirrm share/snd/contrib/dlp" >> ${PLIST}
+	${ECHO_CMD} "@dirrm share/snd/contrib" >> ${PLIST}
+	${ECHO_CMD} "@dirrm share/snd" >> ${PLIST}
 .endif
 
 do-install:

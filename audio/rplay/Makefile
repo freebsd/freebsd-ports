@@ -37,7 +37,7 @@ post-install:
 	@${INSTALL_SCRIPT} -m 751 ${FILESDIR}/rplayd.sh ${PREFIX}/etc/rc.d/rplayd.sh
 .endif
 .if !exists(${PREFIX}/etc/rplay.hosts)
-	@${ECHO} localhost > ${PREFIX}/etc/rplay.hosts
+	@${ECHO_CMD} localhost > ${PREFIX}/etc/rplay.hosts
 .endif
 
 .include <bsd.port.mk>

@@ -26,12 +26,12 @@ USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/musicbox-1.01
 
 pre-install:
-	${ECHO} bin/musicbox > ${PLIST}
+	${ECHO_CMD} bin/musicbox > ${PLIST}
 .if !defined(NOPORTDOCS)
 .for i in ${DOCS}
-	${ECHO} share/doc/musicbox/${i} >> ${PLIST}
+	${ECHO_CMD} share/doc/musicbox/${i} >> ${PLIST}
 .endfor
-	${ECHO} @dirrm share/doc/musicbox >> ${PLIST}
+	${ECHO_CMD} @dirrm share/doc/musicbox >> ${PLIST}
 .endif
 
 do-install:

@@ -25,7 +25,7 @@ do-extract:
 	${MKDIR} ${WRKDIR}
 
 pre-install:
-	${ECHO} "bin/mutemix" > ${PLIST}
+	${ECHO_CMD} "bin/mutemix" > ${PLIST}
 
 do-install:
 	${INSTALL_SCRIPT} ${_DISTDIR}/${DISTFILES} ${PREFIX}/bin/mutemix
