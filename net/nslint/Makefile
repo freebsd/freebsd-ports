@@ -1,12 +1,12 @@
 # New ports collection makefile for:	nslint
-# Version required:	2.0a5
+# Version required:	2.0a6
 # Date created:		27 October 1997
 # Whom:			dglo@ssec.wisc.edu
 #
-# $Id: Makefile,v 1.3 1998/03/01 22:04:36 obrien Exp $
+# $Id: Makefile,v 1.4 1998/04/19 03:41:50 itojun Exp $
 #
 
-DISTNAME=	nslint-2.0a5
+DISTNAME=	nslint-2.0a6
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/
 EXTRACT_SUFX=	.tar.Z
