@@ -53,11 +53,12 @@ MLINKS+=	vim.1 gvim.1  vim.1 gview.1  vim.1 rgvim.1  vim.1 rgview.1
 
 MAKE_ARGS+=	X_LIBS=-lxpg4 CONF_OPT_MAX="--enable-max-features"
 
-.if defined(HAVE_MOTIF)
+.if defined(WITH_ATHENA)
+MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=athena --enable-multibyte --enable-fontset --enable-multibyte --enable-xim"
+#MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=yes" ${I18N}
+.else
 USE_MOTIF=	yes
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=motif --with-motif-lib=\"${MOTIFLIB}\" --enable-multibyte --enable-fontset --enable-multibyte --enable-xim" MOTIFHOME=${X11BASE}
-.else
-MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=athena --enable-multibyte --enable-fontset --enable-multibyte --enable-xim"
 .endif
 
 .if defined(PACKAGE_BUILDING)
