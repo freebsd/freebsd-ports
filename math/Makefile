@@ -61,6 +61,7 @@
     SUBDIR += p5-Statistics-ChiSquare
     SUBDIR += p5-Statistics-Descriptive
     SUBDIR += p5-Statistics-Distributions
+    SUBDIR += p5-Statistics-LTU
     SUBDIR += pari
     SUBDIR += parmetis
     SUBDIR += physcalc
