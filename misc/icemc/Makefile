@@ -6,14 +6,9 @@
 #
 
 PORTNAME=	icemc
-PORTVERSION=	0.2.2
-PORTREVISION=	2
+PORTVERSION=	0.2.3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.algorithm.at/comp/icemc/
-
-PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	icemc-0.2.2.patch.tar.gz
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	adamw@FreeBSD.org
 
