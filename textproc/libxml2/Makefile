@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libxml2
-PORTVERSION=	2.4.22
-PORTREVISION=	1
+PORTVERSION=	2.4.23
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/libxml
@@ -23,6 +22,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-iconv=${LOCALBASE} \
 		--with-html-dir=${PREFIX}/share/doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -48,11 +48,11 @@ pre-extract:
 .endif
 
 pre-patch:
-	@find ${WRKSRC} -name Makefile.in | xargs ${PERL} -pi -e \
-		's|\$\(libdir\)/pkgconfig|\$\(prefix\)/libdata/pkgconfig|g'
+	@find ${WRKSRC} -name Makefile.in | xargs ${REINPLACE_CMD} -e \
+		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
 
 post-patch:
-	@${PERL} -pi -e 's|\%\%LOCALBASE\%\%|${LOCALBASE}|g' \
+	@${REINPLACE_CMD} -e 's|[%][%]LOCALBASE[%][%]|${LOCALBASE}|g' \
 		${WRKSRC}/catalog.c ${WRKSRC}/xmlcatalog.c
 
 .include <bsd.port.mk>
