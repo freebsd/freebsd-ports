@@ -3,7 +3,7 @@
 # Date created:		30 Dec 1995
 # Whom:			Bernd Rosauer <br@netland.sub.de>
 #
-# $Id: Makefile,v 1.2 1996/03/06 07:19:38 asami Exp $
+# $Id: Makefile,v 1.3 1996/03/10 09:12:07 asami Exp $
 #
 
 DISTNAME=	teTeX-src-0.3.3
@@ -12,7 +12,8 @@ CATEGORIES+=	print
 MASTER_SITES=	${TETEX_SITE}/distrib/sources/ ${TETEX_SITE}/updates/texmf/
 DISTFILES=	teTeX-src-0.3.3.tar.gz teTeX-lib-0.3.3.tar.gz \
 		koma-script-2.3d.sh mflogo-1.5b.sh mathppl.sh \
-		foiltex-2.0.1.sh dec-95pl1-update-u2.tar
+		foiltex-2.0.1.sh dec-95pl1-update-u2.tar \
+		apr-96-update.tar
 
 PATCH_SITES=	${TETEX_SITE}/distrib/sources/
 PATCHFILES=	teTeX-src-0.3.3-patch-001.gz teTeX-src-0.3.3-patch-002.gz \
