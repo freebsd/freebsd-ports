@@ -1,0 +1,6 @@
+Fcrackzip is a fast and featureful ZIP password cracker, written in
+portable C (and optional x86 assembly). It allows the user to recover
+forgotten ZIP archive passwords, using either a brute force or
+dictionary attack on the provided files.
+
+WWW:	http://www.goof.com/pcg/marc/fcrackzip.html
