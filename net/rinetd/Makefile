@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.boutell.com/pub/boutell/rinetd/
 DISTNAME=	rinetd
 
-MAINTAINER=	veers@disturbed.net
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/rinetd/
 
