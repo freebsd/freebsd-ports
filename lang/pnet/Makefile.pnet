@@ -4,7 +4,10 @@ PNET_PORTVER=   ${PNET_VERSION}.${PNET_REVISION}
 PNET_PORTREV=   0
 PNET_PORTEPOCH= 0
 
-PNET_MASTER_SITES=	http://www.southern-storm.com.au/download/
+PNET_MASTER_SITES=	${MASTER_SITE_GNU} \
+			http://www.southern-storm.com.au/download/
+PNET_MASTER_SITE_SUBDIR=	dotgnu/pnet/
+
 
 ILSTRIP_CMD=	${LOCALBASE}/bin/ilstrip
 
