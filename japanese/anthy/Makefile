@@ -7,6 +7,7 @@
 
 PORTNAME=	anthy
 PORTVERSION=	4700
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://downloads.sourceforge.jp/anthy/6621/:anthy
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:anthy
@@ -20,7 +21,8 @@ USE_LIBTOOL=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 
-ELISPDIR=	share/emacs/site-lisp
+DOCSDIR=	share/doc/ja/anthy
+ELISPDIR=	share/emacs/site-lisp/anthy
 PLIST_SUB=	ELISPDIR=${ELISPDIR}
 
 .if defined(WITH_2CHDIC)
@@ -40,6 +42,10 @@ post-patch:
 		's| install-lispLISP||g' ${WRKSRC}/src-util/Makefile.in
 
 post-install:
+	${MKDIR} ${PREFIX}/${ELISPDIR}
 	${INSTALL_DATA} ${WRKSRC}/src-util/*.el ${PREFIX}/${ELISPDIR}
+.if !defined(NOPORTDOCS)
+	${INSTALL_DATA} ${WRKSRC}/doc/ELISP ${PREFIX}/${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
