@@ -18,6 +18,7 @@ LIB_DEPENDS=	vga.1:${PORTSDIR}/graphics/svgalib
 
 ALL_TARGET=	acidwarp
 DOCFILES=	README TODO Thanks
+ONLY_FOR_ARCHS=	i386
 PLIST=		${WRKDIR}/pkg-plist
 REINPLACE_ARGS=	-i'' -E
 USE_REINPLACE=	yes

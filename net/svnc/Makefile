@@ -22,7 +22,7 @@ LIB_DEPENDS=	vga.1:${PORTSDIR}/graphics/svgalib
 
 DOCFILES=	README
 DOCDIR=		share/doc/${PORTNAME}/
-
+ONLY_FOR_ARCHS=	i386
 PLIST=		${WRKDIR}/pkg-plist
 WRKSRC=		${WRKDIR}/svncviewer
 

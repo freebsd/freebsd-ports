@@ -21,6 +21,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 DOCDIR=		share/doc/${PORTNAME}
 DOCS=		AUTHORS Changelog README
+ONLY_FOR_ARCHS=	i386
 PLIST=		${WRKDIR}/pkg-plist
 USE_REINPLACE=	yes
 
