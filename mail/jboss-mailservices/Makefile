@@ -14,14 +14,14 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-final
 MAINTAINER=	toha@toha.org.ua
 COMMENT=	JBoss Mail Services
 
-RUN_DEPENDS=	${LOCALBASE}/jboss4.0/server/default/conf/jboss-service.xml:${PORTSDIR}/java/jboss4
+RUN_DEPENDS=	${LOCALBASE}/jboss4/server/default/conf/jboss-service.xml:${PORTSDIR}/java/jboss4
 
 USE_JAVA=	YES
 JAVA_VERSION=	1.4+
 NO_BUILD=	YES
 USE_ZIP=	YES
 
-DEPLOY_PATH=	${LOCALBASE}/jboss4.0/server/default/deploy
+DEPLOY_PATH=	${LOCALBASE}/jboss4/server/default/deploy
 WRKSRC=		${WRKDIR}/deploy
 
 .include <bsd.port.pre.mk>
