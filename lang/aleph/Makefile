@@ -27,10 +27,16 @@ PLIST_SUB=	PORTVER=${PORTVERSION:R}
 
 MAN1=	aleph.1 axc.1 axl.1
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+BROKEN=		"Does not compile on amd64 or ia64 (missing -fPIC)"
+.endif
+
 do-configure:
 	@(cd ${WRKSRC}; ./cnf/bin/aleph-setup -o)
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/aleph
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

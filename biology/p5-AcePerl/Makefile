@@ -40,8 +40,14 @@ MAN3=		Ace.3 Ace::Browser::AceSubs.3 Ace::Browser::SearchSubs.3 \
 		Ace::Sequence::Homol.3 Ace::Sequence::Multi.3 \
 		Ace::Sequence::Transcript.3
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+BROKEN=		"Does not compile on amd64 or ia64 (missing -fPIC)"
+.endif
+
 post-patch:
 	@ ${SED} -e 's|XX__CC__XX|${CC}|' < ${FILESDIR}/FREEBSD_DEF \
 	  > ${WRKSRC}/ace/wmake/FREEBSD_DEF
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
