@@ -7,6 +7,7 @@
 
 PORTNAME=	wdm
 PORTVERSION=	1.26
+PORTREVISION=	1
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://voins.program.ru/wdm/ \
 		http://www.de.freebsd.org/de/gif/bsd/ \
@@ -88,6 +89,9 @@ post-patch:
 		's|<malloc\.h>|<stdlib.h>|g' ${WRKSRC}/src/TestLogin/TestLogin.c
 
 pre-install:
+.for lang in cs de en es ja ru
+	@${MKDIR} ${PREFIX}/share/locale/${lang}/LC_MESSAGES
+.endfor
 	@${MKDIR} ${WDMDIR}/pixmaps
 .if exists(${WDMDIR}/wdm-config)
 	${MV} ${WDMDIR}/wdm-config ${WDMDIR}/wdm-config.preserve
