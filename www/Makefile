@@ -205,6 +205,7 @@
     SUBDIR += linux-mozillafirebird-el
     SUBDIR += linux-nvu
     SUBDIR += linux-opera
+    SUBDIR += linux-sunbird
     SUBDIR += linuxpluginwrapper
     SUBDIR += ljdeps
     SUBDIR += ljsm
