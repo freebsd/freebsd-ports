@@ -1,0 +1,10 @@
+#!/bin/sh
+if [ "$2" = "PRE-INSTALL" ]; then
+  exit 0
+fi
+XPDFRC=${PKG_PREFIX}/etc/xpdfrc
+ADDRESOURCE=${PKG_PREFIX}/share/xpdf/japanese/dot.xpdfrc
+/usr/bin/grep -F -v --file=${ADDRESOURCE} ${XPDFRC} > ${XPDFRC}.nojapan
+/bin/rm -f ${XPDFRC}
+/bin/cat ${XPDFRC}.nojapan ${ADDRESOURCE} > ${XPDFRC}
+/bin/rm -f ${XPDFRC}.nojapan
