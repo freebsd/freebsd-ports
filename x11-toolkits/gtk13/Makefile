@@ -1,13 +1,13 @@
 # New ports collection makefile for:   gtk11-devel
-# Version required:		1.1.9
+# Version required:		1.1.11
 # Date Created:			28 Sep 1997
 # Whom:				Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.37 1998/12/28 13:57:36 vanilla Exp $
+# $Id: Makefile,v 1.38 1998/12/30 23:11:36 vanilla Exp $
 #
 
-DISTNAME=	gtk+-1.1.9
-PKGNAME=	gtk-1.1.9
+DISTNAME=	gtk+-1.1.11
+PKGNAME=	gtk-1.1.11
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.1/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.1/ \
