@@ -1,0 +1,25 @@
+*** jtex-1.52/lib/site.h.orig	Thu May 30 22:51:39 1996
+--- jtex-1.52/lib/site.h	Thu May 30 23:16:33 1996
+***************
+*** 37,46 ****
+  #define MFINPUTS ".:/usr/local/lib/mf/macros:/usr/local/src/TeX+MF/typefaces//"
+  #define MFPOOL     "/usr/local/lib/mf"			/* mf.pool */
+  #define PKFONTS    "/usr/local/lib/tex/fonts/pk"	/* PK font */
+! #define TEXFONTS   "/usr/local/lib/tex/fonts/tfm:/usr/local/lib/tex/jfonts/tfm"	/* TFM font */
+! #define TEXFORMATS "/usr/local/lib/tex/formats"		/* format file */
+! #define TEXINPUTS  ".:/usr/local/lib/tex/inputs"	/* TeX source */
+! #define TEXPOOL    "/usr/local/lib/tex"			/* tex.pool */
+  #define VFFONTS	   "/usr/local/lib/tex/fonts/vf"	/* VFM font */
+  
+  /* Metafont online output support: More than one may be defined, except
+--- 37,46 ----
+  #define MFINPUTS ".:/usr/local/lib/mf/macros:/usr/local/src/TeX+MF/typefaces//"
+  #define MFPOOL     "/usr/local/lib/mf"			/* mf.pool */
+  #define PKFONTS    "/usr/local/lib/tex/fonts/pk"	/* PK font */
+! #define TEXFONTS   "/usr/local/share/tex/fonts:/usr/local/share/tex/jfonts/mincho:/usr/local/share/tex/jfonts/gothic"	/* TFM font */
+! #define TEXFORMATS "/usr/local/share/tex/nformats"		/* format file */
+! #define TEXINPUTS  ".:/usr/local/share/tex/ninputs//:/usr/local/share/tex/inputs//"	/* TeX source */
+! #define TEXPOOL    "/usr/local/share/tex/npool"			/* tex.pool */
+  #define VFFONTS	   "/usr/local/lib/tex/fonts/vf"	/* VFM font */
+  
+  /* Metafont online output support: More than one may be defined, except

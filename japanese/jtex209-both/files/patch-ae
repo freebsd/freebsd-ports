@@ -1,0 +1,89 @@
+*** jtex1.7/jtex/BibTeX/Makefile.orig	Thu Jun  6 18:07:59 1996
+--- jtex1.7/jtex/BibTeX/Makefile	Thu Jun  6 21:28:29 1996
+***************
+*** 3,20 ****
+  #############################
+  
+  OPT=-O
+! SITEDIR=..
+  LDFLAGS=
+  CFLAGS=$(OPT) -I$(SITEDIR)
+  BINDIR=/usr/local/bin
+! BSTDIR=/usr/lib/tex/inputs
+  
+  RM=/bin/rm -f
+  
+  # for NTT jtex
+  #TANGLE=../texware/tangle
+  # for ASCII jtex
+! TANGLE=../jtangle/jtangle
+  
+  SRCKIT = readme readme.1st.unix Makefile sed.script bibext.c \
+  	 bibtex.ch bibtex.defines bibtex.h kanji.h
+--- 3,20 ----
+  #############################
+  
+  OPT=-O
+! SITEDIR=../../ptex/ptex
+  LDFLAGS=
+  CFLAGS=$(OPT) -I$(SITEDIR)
+  BINDIR=/usr/local/bin
+! BSTDIR=/usr/local/share/tex/inputs
+  
+  RM=/bin/rm -f
+  
+  # for NTT jtex
+  #TANGLE=../texware/tangle
+  # for ASCII jtex
+! TANGLE=../../ptex/ptex/jtangle/jtangle
+  
+  SRCKIT = readme readme.1st.unix Makefile sed.script bibext.c \
+  	 bibtex.ch bibtex.defines bibtex.h kanji.h
+***************
+*** 25,31 ****
+  SRC = bibtex0.c bibtex1.c bibtex2.c bibtex3.c bibtex4.c
+  OBJ = bibtex0.o bibtex1.o bibtex2.o bibtex3.o bibtex4.o
+  
+! all:		jbibtex bibstyle
+  
+  jbibtex:	$(OBJ) bibext.o
+  		$(CC) $(LDFLAGS) $(CFLAGS) -o jbibtex $(OBJ) bibext.o
+--- 25,37 ----
+  SRC = bibtex0.c bibtex1.c bibtex2.c bibtex3.c bibtex4.c
+  OBJ = bibtex0.o bibtex1.o bibtex2.o bibtex3.o bibtex4.o
+  
+! all:		web2c jtangle jbibtex bibstyle
+! 
+! jtangle: ../../ptex/ptex/jtangle
+! 	(cd ../../ptex/ptex/jtangle ; ${MAKE} all )
+! 
+! web2c:	../../ptex/ptex/web2cdir
+! 	(cd ../../ptex/ptex/web2cdir ; ${MAKE} all )
+  
+  jbibtex:	$(OBJ) bibext.o
+  		$(CC) $(LDFLAGS) $(CFLAGS) -o jbibtex $(OBJ) bibext.o
+***************
+*** 39,49 ****
+  
+  $(SRC):		bibtex.p bibtex.defines
+  		cat bibtex.defines bibtex.p \
+! 			| ../web2cdir/web2c -hbibtex.h \
+  			| sed -f sed.script \
+! 			| ../web2cdir/fixwrites   \
+  			| sed -e 's/putc(/Fputc(/g'  \
+! 			| ../web2cdir/splitup
+  		mv -f coerce.h xcoerce.h
+  		sed -e 's/(buftype)//g' -e 's/(pdstype)//g' < xcoerce.h > coerce.h
+  		$(RM) xcoerce.h stack.stack bibtex.pool
+--- 45,55 ----
+  
+  $(SRC):		bibtex.p bibtex.defines
+  		cat bibtex.defines bibtex.p \
+! 			| ../../ptex/ptex/web2cdir/web2c -hbibtex.h \
+  			| sed -f sed.script \
+! 			| ../../ptex/ptex/web2cdir/fixwrites   \
+  			| sed -e 's/putc(/Fputc(/g'  \
+! 			| ../../ptex/ptex/web2cdir/splitup
+  		mv -f coerce.h xcoerce.h
+  		sed -e 's/(buftype)//g' -e 's/(pdstype)//g' < xcoerce.h > coerce.h
+  		$(RM) xcoerce.h stack.stack bibtex.pool

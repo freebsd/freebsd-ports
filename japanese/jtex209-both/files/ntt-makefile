@@ -1,0 +1,36 @@
+# Makefile for compilation of NTT jTeX-1.52 only.
+
+all:
+	@(cd jtex-1.52; make all)
+	@(cd jtex1.7/jtex/BibTeX; make all)
+install:
+	@(cd jtex-1.52; make install)
+	@(cd jtex1.7/jtex/BibTeX; make install)
+	@rm -f /usr/local/bin/jlatex /usr/local/bin/jtex
+	@rm -f /usr/local/share/tex/nformats/jlatex.fmt /usr/local/share/tex/nformats/jtex.fmt
+	@ln -sf /usr/local/bin/njlatex /usr/local/bin/jlatex
+	@ln -sf /usr/local/bin/njtex /usr/local/bin/jtex
+	@ln -sf /usr/local/share/tex/nformats/njlatex.fmt /usr/local/share/tex/nformats/jlatex.fmt
+	@ln -sf /usr/local/share/tex/nformats/njtex.fmt /usr/local/share/tex/nformats/jtex.fmt
+	@touch /usr/local/share/tex/NTT
+
+reinstall:
+	@( \
+	cd jtex-1.52 ;\
+	cp JTeXfonts/dnpfonts/mincho/tfm/* /usr/local/share/tex/jfonts/mincho/ ;\
+	cp JTeXfonts/dnpfonts/gothic/tfm/* /usr/local/share/tex/jfonts/gothic/ ;\
+	cp JLaTeX/sty/* /usr/local/share/tex/ninputs/ \
+	)
+	@cp jtex1.7/macros/* /usr/local/share/tex/inputs	
+	@( \
+	  cd /usr/local/share/tex/  ; \
+	  tar xzf ${DISTDIR}/tfm-files.tar.Z ; \
+	  mv tfm-files/min*  jfonts/jfms/; \
+	  mv tfm-files/nmin*  jfonts/jfms/; \
+	  mv tfm-files/goth*  jfonts/jfms/; \
+	  mv tfm-files/ngoth*  jfonts/jfms/; \
+	  mv tfm-files/* fonts/ ; \
+	  rmdir tfm-files ; \
+	  cd fonts ; \
+	  tar xzf  ${FILESDIR}/tfm-add.tar.gz ; \
+	)

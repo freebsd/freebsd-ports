@@ -1,0 +1,11 @@
+*** JTeXplains/sitekcode.tex.orig	Thu May 30 23:40:20 1996
+--- JTeXplains/sitekcode.tex	Thu May 30 23:41:17 1996
+***************
+*** 1,3 ****
+  % Set up site-default \kanjiterminaltype and \kanjifiletype
+! \kanjiterminaltype=6
+! \kanjifiletype=6
+--- 1,3 ----
+  % Set up site-default \kanjiterminaltype and \kanjifiletype
+! \kanjiterminaltype=10
+! \kanjifiletype=10

@@ -1,0 +1,21 @@
+*** jtex1.7/jtex/BibTeX/bst/Makefile.orig	Thu Jun  6 22:21:52 1996
+--- jtex1.7/jtex/BibTeX/bst/Makefile	Thu Jun  6 22:22:05 1996
+***************
+*** 3,10 ****
+  
+  all:		bst
+  
+! bst:		generate.sh jbtxbst.doc
+! 		generate.sh
+  
+  clean:
+  		$(RM) $(BSTFILE)
+--- 3,10 ----
+  
+  all:		bst
+  
+! bst:		./generate.sh jbtxbst.doc
+! 		./generate.sh
+  
+  clean:
+  		$(RM) $(BSTFILE)

@@ -1,0 +1,91 @@
+*** pTeX-JIS-patch.orig	Wed Jun  5 09:26:06 1996
+--- pTeX-JIS-patch	Wed Jun  5 09:27:16 1996
+***************
+*** 10,23 ****
+  Organization: Tokyo Institute of Tech., Dept. of Computer Science, Japan
+  Lines: 201
+  
+! 籠谷です。
+  
+! ASCII 版の pTeX に JIS コードファイルをくわせるためのパッチです。
+!   % cd ptex/ptex; patch -p <このファイル
+! とし、必要に応じて site.h で #define JIS をして下さい。
+  --
+! 私に煙草の煙を吸わせないで下さい。私に煙草の臭いをつけないで下さい。
+!                                         籠谷裕人 (篭／籠の難しい方)
+                                          kagotani@cs.titech.ac.jp
+  
+  diff -rc ../ptex.orig/ctex/Makefile ./ctex/Makefile
+--- 10,23 ----
+  Organization: Tokyo Institute of Tech., Dept. of Computer Science, Japan
+  Lines: 201
+  
+! 籠谷です。
+  
+! ASCII 版の pTeX に JIS コードファイルをくわせるためのパッチです。
+!   % cd ptex/ptex; patch -p <このファイル
+! とし、必要に応じて site.h で #define JIS をして下さい。
+  --
+! 私に煙草の煙を吸わせないで下さい。私に煙草の臭いをつけないで下さい。
+!                                         籠谷裕人 (篭／籠の難しい方)
+                                          kagotani@cs.titech.ac.jp
+  
+  diff -rc ../ptex.orig/ctex/Makefile ./ctex/Makefile
+***************
+*** 179,213 ****
+  + # define	putc(c,fp)	putc2(c,fp)
+  + #endif
+  diff -rc ../ptex.orig/site.h ./site.h
+! *** ../ptex.orig/site.h	Wed Sep 19 18:28:29 1990
+! --- ./site.h	Tue Nov  6 15:04:21 1990
+  ***************
+! *** 40,50 ****
+!   
+!   /*
+!    * Our japanese character coding
+! !  *     SJIS or EUC or JIS
+!    */
+    #define	KANJI
+!   #define	SJIS
+!   #undef	EUC
+!   
+!   /* Define if we're running under System V */
+!   #undef	SYSV
+! --- 40,55 ----
+!   
+!   /*
+!    * Our japanese character coding
+! !  *     SJIS or EUC
+!    */
+!   #define	KANJI
+!   #define	SJIS
+!   #undef	EUC
+  + /*
+  +  * You can define JIS independently of SJIS or EUC. It allows you
+  +  * to feed JIS encoded text files and creates JIS encoded log files.
+  +  */
+  + #undef	JIS
+    
+    /* Define if we're running under System V */
+    #undef	SYSV
+--- 179,198 ----
+  + # define	putc(c,fp)	putc2(c,fp)
+  + #endif
+  diff -rc ../ptex.orig/site.h ./site.h
+! *** ../ptex.orig/site.h	Wed Jun  5 09:15:01 1996
+! --- ./site.h	Wed Jun  5 09:23:41 1996
+  ***************
+! *** 45,50 ****
+! --- 45,56 ----
+    #define	KANJI
+!   #undef	SJIS
+!   #define	EUC
+  + /*
+  +  * You can define JIS independently of SJIS or EUC. It allows you
+  +  * to feed JIS encoded text files and creates JIS encoded log files.
+  +  */
+  + #undef	JIS
++ + 
+    
+    /* Define if we're running under System V */
+    #undef	SYSV
