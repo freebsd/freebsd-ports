@@ -6,15 +6,15 @@
 # $FreeBSD$
 #
 
-DISTNAME=		deco382
-PKGNAME=		deco-3.8.2
+DISTNAME=		deco383
+PKGNAME=		deco-3.8.3
 CATEGORIES=		misc
 MASTER_SITES=		ftp://ftp.cronyx.ru/cronyx/deco/
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		dima@Chg.RU
 
-WRKSRC=			${WRKDIR}/deco
+WRKSRC=			${WRKDIR}/deco383
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--libdir=${PREFIX}/share
 CONFIGURE_ENV=		ac_cv_lib_ncurses_tgetent=no
