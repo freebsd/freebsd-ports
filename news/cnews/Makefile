@@ -10,7 +10,6 @@ PORTVERSION=	cr.g
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.cs.toronto.edu/pub/c-news/ \
 		ftp://ftp.funet.fi/pub/unix/news/cnews/ \
-		ftp://ftp.win.or.jp/pub/network/news/cnews/ \
 		ftp://ftp.redcom.ru/pub/unix/usenet/c-news/ \
 		ftp://ftp.dinoex.org/pub/c-news/
 DISTNAME=	c-news
