@@ -91,7 +91,7 @@ WITH_I18N=yes
 # gui
 .ifdef(WITH_GUI)
 RUN_DEPENDS+= \
-	${PBASE}/${PERL_ARCH}/Gnome.pm:x11-toolkits/p5-Gnome \
+	${PBASE}/${PERL_ARCH}/Gnome.pm:${PORTSDIR}/x11-toolkits/p5-Gnome \
 	${PBASE}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk \
 	${PBASE}/${PERL_ARCH}/Gtk/Gdk/ImlibImage.pm:${PORTSDIR}/x11-toolkits/p5-GdkImlib \
 	${PBASE}/${PERL_ARCH}/Gtk/GladeXML.pm:${PORTSDIR}/x11-toolkits/p5-Glade \
