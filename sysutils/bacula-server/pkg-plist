@@ -1,9 +1,8 @@
 %%SERVER%%share/bacula/query.sql
-%%SERVER%%etc/rc.d/bacula.sh.sample
+etc/rc.d/bacula.sh.sample
 %%SERVER%%sbin/chio-bacula
 %%SERVER%%sbin/bacula-dir
 sbin/bacula-fd
-etc/rc.d/fd.sh.sample
 %%SERVER%%sbin/bacula-sd
 %%SERVER%%sbin/bextract
 %%SERVER%%sbin/bls

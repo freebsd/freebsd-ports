@@ -7,7 +7,7 @@
 
 PORTNAME=	bacula
 PORTVERSION=	1.34.5
-PORTREVISION=   3
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bacula
@@ -38,7 +38,7 @@ CONFIGURE_ARGS=	--with-tcp-wrappers=/usr/lib \
 CONFIGURE_ENV+=	CPPFLAGS="-I/usr/include/readline -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
-OPTIONS=	CLIENT_ONLY "Build bacule file daemon only" off
+OPTIONS=	CLIENT_ONLY "Build bacula file daemon only" off
 OPTIONS+=	WXCONSOLE "Build with wxGTK based GUI console" off
 OPTIONS+=	GNOMECONSOLE "Build with GNOME based GUI console" off
 OPTIONS+=	MYSQL "Use MySQL database instead of SqLite" off
@@ -53,7 +53,7 @@ USE_GNOME=	libgnome
 
 .include <bsd.port.pre.mk>
 
-PLIST_SUB+=      BACULA_DIR=${BACULA_DIR}
+PLIST_SUB+=	BACULA_DIR=${BACULA_DIR}
 
 # Build gnome-console
 .if defined(WITH_GNOMECONSOLE)
@@ -139,8 +139,6 @@ post-install:
 	# Extend only /etc/services
 	@ ${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PORTNAME}
-	# don't know how to make it better
-	${RM} -f ${PREFIX}/etc/rc.d/bacula.sh.sample
 .else
 	# Extend /etc/services and install UID/GID
 	@ ${SETENV} PKG_PREFIX=${PREFIX} \
