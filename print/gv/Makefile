@@ -22,7 +22,7 @@ MAN1=		gv.1
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@(cd ${WRKSRC}; ${MAKE} install.doc)
+	@(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE} install.doc)
 .endif
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
