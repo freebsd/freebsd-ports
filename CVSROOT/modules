@@ -4625,6 +4625,7 @@ p5-Apache-AuthenCache	ports/www/p5-Apache-AuthenCache
 p5-Apache-AuthenURL	ports/www/p5-Apache-AuthenURL
 p5-Apache-AutoIndex	ports/www/p5-Apache-AutoIndex
 p5-Apache-DBI	ports/www/p5-Apache-DBI
+p5-Apache-DumpHeaders	ports/www/p5-Apache-DumpHeaders
 p5-Apache-Filter	ports/www/p5-Apache-Filter
 p5-Apache-Icon	ports/www/p5-Apache-Icon
 p5-Apache-Language	ports/www/p5-Apache-Language
