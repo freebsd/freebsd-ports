@@ -42,7 +42,7 @@ EXTRACT_ONLY=
 PATCH_SITES=		${RPM_MIRRORS:S/__DIR__/${UPDDIR}/g}
 PATCHFILES=		${UPDATES}
 
-MAINTAINER=		marcel@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 
 BUILD_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
 
