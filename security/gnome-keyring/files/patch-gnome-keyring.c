@@ -1,6 +1,14 @@
---- gnome-keyring.c.orig	Tue May 11 15:45:22 2004
-+++ gnome-keyring.c	Tue May 11 16:22:21 2004
-@@ -248,11 +248,37 @@
+--- gnome-keyring.c.orig	Mon Jan 12 04:37:31 2004
++++ gnome-keyring.c	Tue May 11 20:59:40 2004
+@@ -35,6 +35,7 @@
+ #include <stdio.h>
+ #include <sys/types.h>
+ #include <sys/socket.h>
++#include <sys/uio.h>
+ #include <sys/un.h>
+ #include <stdarg.h>
+ 
+@@ -248,11 +249,37 @@
  {
    char buf;
    int bytes_written;
@@ -39,7 +47,7 @@
  
    if (bytes_written < 0 && errno == EINTR)
      goto again;
-@@ -270,11 +296,37 @@
+@@ -270,11 +297,37 @@
  {
    char buf;
    int bytes_written;
