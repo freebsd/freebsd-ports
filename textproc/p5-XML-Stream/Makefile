@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-Stream
-PORTVERSION=	1.14
+PORTVERSION=	1.15
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -23,6 +23,6 @@ PERL_CONFIGURE=	yes
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		XML::Stream.3 XML::Stream::Hash.3 XML::Stream::Namespace.3 \
 		XML::Stream::Parser.3 XML::Stream::Parser::DTD.3 \
-		XML::Stream::Tree.3
+		XML::Stream::Tree.3 XML::Stream::Node.3
 
 .include <bsd.port.mk>
