@@ -1,0 +1,13 @@
+bin/ez-ipupdate
+etc/ez-ipupdate.conf.sample
+share/examples/ez-ipupdate/example-dhs.conf
+share/examples/ez-ipupdate/example-dyndns.conf
+share/examples/ez-ipupdate/example-dyns.conf
+share/examples/ez-ipupdate/example-easydns.conf
+share/examples/ez-ipupdate/example-gnudip.conf
+share/examples/ez-ipupdate/example-heipv6tb.conf
+share/examples/ez-ipupdate/example-justlinux.conf
+share/examples/ez-ipupdate/example-ods.conf
+share/examples/ez-ipupdate/example-pgpow.conf
+share/examples/ez-ipupdate/example-tzo.conf
+@dirrm share/examples/ez-ipupdate
