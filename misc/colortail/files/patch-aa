@@ -1,10 +1,18 @@
---- cfg.h.~1~	Wed Mar  3 04:35:14 1999
-+++ cfg.h	Tue Apr 27 14:00:26 1999
-@@ -19,6 +19,7 @@
- #define _cfg_
+--- Makefile.in.old	Wed Jun 21 13:11:39 2000
++++ Makefile.in	Wed Jun 21 13:12:43 2000
+@@ -79,13 +79,13 @@
+ PROGRAMS =  $(bin_PROGRAMS)
  
- #include <stdio.h>
-+#include <sys/types.h>
- #include <regex.h>
  
- #define MAX_LINE_LENGTH 200
+-DEFS = @DEFS@ -I. -I$(srcdir) -I.
++DEFS = @DEFS@ -I. -I$(srcdir) -I. -I$(LOCALBASE)/include
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+ colortail_OBJECTS =  CfgFileParser.o ColorTail.o Colorizer.o Info.o \
+ OptionsParser.o TailFile.o Usage.o main.o
+-colortail_LDADD = $(LDADD)
++colortail_LDADD = -L$(LOCALBASE)/lib -lgnugetopt $(LDADD)
+ colortail_DEPENDENCIES = 
+ colortail_LDFLAGS = 
+ CXXFLAGS = @CXXFLAGS@

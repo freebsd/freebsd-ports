@@ -1,0 +1,12 @@
+--- CfgFileParser.h.old	Wed Jun 21 12:55:57 2000
++++ CfgFileParser.h	Wed Jun 21 12:56:09 2000
+@@ -24,7 +24,9 @@
+ #include "config.h"
+ 
+ #include <sys/types.h>
++#if 0
+ #include <regex.h>
++#endif
+ #include <fstream.h>
+ 
+ #ifdef HAVE_GNUREGEX_H
