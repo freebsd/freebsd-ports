@@ -136,6 +136,7 @@ www/data/tasks/languages/italian.php
 www/data/tasks/languages/japanese.php
 www/data/tasks/languages/japanese.shift_JIS.php
 www/data/tasks/languages/korean.php
+www/data/tasks/languages/portuguese.php
 www/data/tasks/languages/russian.php
 www/data/tasks/languages/spanish.php
 www/data/tasks/languages/spanish2.php
@@ -172,6 +173,7 @@ www/data/tasks/phpicalendar/functions/list_months.php
 www/data/tasks/phpicalendar/functions/list_weeks.php
 www/data/tasks/phpicalendar/functions/list_years.php
 www/data/tasks/phpicalendar/functions/overlapping_events.php
+www/data/tasks/phpicalendar/functions/tasks_ical_login.php
 www/data/tasks/phpicalendar/functions/timezones.php
 www/data/tasks/phpicalendar/functions/todo.js
 www/data/tasks/phpicalendar/functions/upload_functions.php
@@ -338,6 +340,7 @@ www/data/tasks/search.php
 www/data/tasks/set_up.php
 www/data/tasks/tasks.css
 www/data/tasks/tasks.js
+www/data/tasks/tasks_icalendar.php
 www/data/tasks/test_language_files.php
 www/data/tasks/u_rail.php
 www/data/tasks/version.inc
