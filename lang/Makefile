@@ -103,7 +103,6 @@
     SUBDIR += sr
     SUBDIR += starlogo
     SUBDIR += swi-pl
-    SUBDIR += tcl76
     SUBDIR += tcl80
     SUBDIR += tcl81-thread
     SUBDIR += tcl82
