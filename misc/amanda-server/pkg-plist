@@ -38,3 +38,4 @@ sbin/amstatus
 sbin/amtape
 sbin/amtoc
 sbin/amverify
+sbin/amverifyrun
