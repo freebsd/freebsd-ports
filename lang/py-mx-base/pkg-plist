@@ -333,18 +333,13 @@ lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/mxTools/xmap.so
 lib/%%PYTHON_VERSION%%/site-packages/mx/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/mx/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/mx/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mx/stdlib/mx.h
+lib/%%PYTHON_VERSION%%/site-packages/mx/stdlib/mxh.h
+lib/%%PYTHON_VERSION%%/site-packages/mx/stdlib/mxpyapi.h
+lib/%%PYTHON_VERSION%%/site-packages/mx/stdlib/mxstdlib.h
 share/doc/py-mx/index.html
-@exec ln -sf mx/DateTime %D/lib/%%PYTHON_VERSION%%/site-packages/DateTime
-@exec ln -sf mx/Proxy %D/lib/%%PYTHON_VERSION%%/site-packages/Proxy
-@exec ln -sf mx/Stack %D/lib/%%PYTHON_VERSION%%/site-packages/Stack
-@exec ln -sf mx/TextTools %D/lib/%%PYTHON_VERSION%%/site-packages/TextTools
-@exec ln -sf mx/Tools %D/lib/%%PYTHON_VERSION%%/site-packages/Tools
-@unexec rm -f %D/lib/%%PYTHON_VERSION%%/site-packages/Tools
-@unexec rm -f %D/lib/%%PYTHON_VERSION%%/site-packages/TextTools
-@unexec rm -f %D/lib/%%PYTHON_VERSION%%/site-packages/Stack
-@unexec rm -f %D/lib/%%PYTHON_VERSION%%/site-packages/Proxy
-@unexec rm -f %D/lib/%%PYTHON_VERSION%%/site-packages/DateTime
 @dirrm share/doc/py-mx
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/stdlib
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/mxTools
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/Examples
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/mx/Tools/Doc
