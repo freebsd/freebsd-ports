@@ -11,8 +11,8 @@ PORTREVISION=	1
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-mysql
 
-PATCH_SITES+=	http://iain.cx/unix/qmail/download/
-PATCHFILES+=	qmail-mysql-${MYSQL_PATCH_VERSION}.patch
+PATCH_SITES+=	http://iain.cx/unix/qmail/download/:mysql
+PATCHFILES+=	qmail-mysql-${MYSQL_PATCH_VERSION}.patch:mysql,local
 
 MAINTAINER=	lioux@FreeBSD.org
 

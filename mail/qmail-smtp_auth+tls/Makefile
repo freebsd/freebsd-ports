@@ -10,8 +10,8 @@ PORTVERSION=	${QMAIL_VERSION}.${TLS_PATCH_DATE}
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-tls
 
-PATCH_SITES+=	http://www.esat.kuleuven.ac.be/~vermeule/qmail/
-PATCHFILES+=	tls.patch
+PATCH_SITES+=	http://www.esat.kuleuven.ac.be/~vermeule/qmail/:tls
+PATCHFILES+=	tls.patch:tls,local
 PATCH_DIST_STRIP+=	-p1
 
 MAINTAINER=	lioux@FreeBSD.org
