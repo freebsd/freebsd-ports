@@ -5518,6 +5518,7 @@ pkg_tarup	ports/misc/pkg_tarup
 pkg_tree	ports/sysutils/pkg_tree
 pkgconfig	ports/devel/pkgconfig
 pks		ports/security/pks
+pktrace		ports/print/pktrace
 pktsuckers	ports/security/pktsuckers
 pkzip		ports/archivers/pkzip
 pl-sms		ports/misc/pl-sms
