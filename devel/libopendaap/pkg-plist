@@ -1,6 +1,6 @@
 include/daap/client.h
 lib/libopendaap.a
 lib/libopendaap.so
-lib/libopendaap.so.%%SHLIB_VER%%
+lib/libopendaap.so.0
 libdata/pkgconfig/opendaap.pc
 @dirrm include/daap
