@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnunet
-PORTVERSION=	0.6.2b
+PORTVERSION=	0.6.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.ovmj.org/GNUnet/download/ \
 		${MASTER_SITE_GNU}
@@ -78,7 +78,7 @@ MAN1=		gnunet-chat.1 gnunet-check.1 gnunet-convert.1 \
 		gnunet-peer-info.1 gnunet-pseudonym.1 \
 		gnunet-search.1 gnunet-stats.1 gnunet-tbench.1 \
 		gnunet-testbed.1 gnunet-tracekit.1 gnunet-transport-check.1 \
-		gnunetd.1
+		gnunet-update.1 gnunetd.1
 MAN5=		gnunet.conf.5
 
 pre-everything::

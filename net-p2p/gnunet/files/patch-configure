@@ -1,12 +1,15 @@
---- configure.orig	Wed Aug 27 15:47:59 2003
-+++ configure	Wed Aug 27 15:55:40 2003
-@@ -13748,8 +13748,8 @@
+
+$FreeBSD$
+
+--- configure.orig	Mon Aug  2 20:01:59 2004
++++ configure	Mon Aug  2 20:02:55 2004
+@@ -15035,8 +15035,8 @@
  echo "${ECHO_T}\"$with_mysql\"" >&6
     if test "$with_mysql" != "no"
     then
--    LDFLAGS="-L$with_mysql/lib -L$with_mysql/lib/mysql $LDFLAGS"
+-    LDFLAGS="-L$with_mysql/lib -L$with_mysql/lib/mysql $LDFLAGS $ZLIBS"
 -    CPPFLAGS="-I$with_mysql/include $CPPFLAGS"
-+    LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/mysql $LDFLAGS"
++    LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/mysql $LDFLAGS $ZLIBS"
 +    CPPFLAGS="-I${LOCALBASE}/include $CPPFLAGS"
  
  for ac_header in mysql/mysql.h
