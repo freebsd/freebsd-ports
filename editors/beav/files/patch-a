@@ -1,46 +1,36 @@
-diff -c beav-140.orig/Makefile beav-140/Makefile
-*** beav-140.orig/Makefile	Wed Nov 30 19:19:47 1994
---- beav-140/Makefile	Sat Jul  1 18:07:14 1995
-***************
-*** 1,5 ****
-  # This is the makefile for BSD UNIX
-! CFLAGS=     -O2 -DUNIX -DNOPROTO
-  
-  OFILES=		basic.o ebcdic.o fileio.o region.o text.o wangpc.o \
-  	buffer.o echo.o language.o main.o search.o tty.o window.o \
---- 1,5 ----
-  # This is the makefile for BSD UNIX
-! CFLAGS+=     -DUNIX -DNOPROTO -DBSD
-  
-  OFILES=		basic.o ebcdic.o fileio.o region.o text.o wangpc.o \
-  	buffer.o echo.o language.o main.o search.o tty.o window.o \
-***************
-*** 14,20 ****
-  
-  HFILES=     def.h
-  
-! beav:     $(OFILES)
-  	$(CC) $(CFLAGS) $(OFILES) -s -ltermcap -lc -o beav
-  
-! (OFILES):  $(HFILES)
---- 14,27 ----
-  
-  HFILES=     def.h
-  
-! all beav:     $(OFILES)
-  	$(CC) $(CFLAGS) $(OFILES) -s -ltermcap -lc -o beav
-  
-! install: beav
-! 	install -c -s -m 755 -g bin -o bin beav $(PREFIX)/bin
-! 	mkdir -p $(PREFIX)/share/doc/beav
-! 	install -c -m 644 -g bin -o bin beav140.txt $(PREFIX)/share/doc/beav/beav.txt
-! 	install -c -m 644 -g bin -o bin beav.1 $(PREFIX)/man/man1
-! 	gzip -9nf $(PREFIX)/man/man1/beav.1
-! 
-! $(OFILES):  $(HFILES)
-diff -c beav-140.orig/termio.c beav-140/termio.c
+--- Makefile.orig	Sat Dec 13 09:34:59 1997
++++ Makefile	Mon Aug 10 10:45:21 1998
+@@ -1,6 +1,6 @@
+ # This is the makefile for BSD UNIX
+ #CFLAGS=     -g -DUNIX
+-CFLAGS=     -O2 -DUNIX
++CFLAGS+=     -DUNIX -DBSD
+ CC=gcc
+ 
+ OFILES=		basic.o ebcdic.o fileio.o region.o text.o wangpc.o \
+@@ -16,10 +16,17 @@
+ 
+ HFILES=     def.h prototyp.h
+ 
+-beav:     $(OFILES)
+-	$(CC) $(CFLAGS) $(OFILES) -lncurses -o beav
++all beav:     $(OFILES)
++	$(CC) $(CFLAGS) $(OFILES) -ltermcap -o beav
++
++install: beav
++	install -c -s -m 755 -g bin -o bin beav $(PREFIX)/bin
++	mkdir -p $(PREFIX)/share/doc/beav
++	install -c -m 644 -g bin -o bin beav140.txt $(PREFIX)/share/doc/beav/beav.txt
++	install -c -m 644 -g bin -o bin beav.1 $(PREFIX)/man/man1
++	gzip -9nf $(PREFIX)/man/man1/beav.1
+ 
+ clean:
+ 	rm -f *.o beav
+ 
+-(OFILES):  $(HFILES)
++$(OFILES):  $(HFILES)
 *** beav-140.orig/termio.c	Wed Nov 30 18:43:35 1994
---- beav-140/termio.c	Sat Jul  1 17:56:09 1995
+--- termio.c	Sat Jul  1 17:56:09 1995
 ***************
 *** 12,17 ****
 --- 12,20 ----
@@ -53,9 +43,8 @@ diff -c beav-140.orig/termio.c beav-140/termio.c
   #else
   #ifdef OS2
   #ifndef __EMX__
-diff -c beav-140.orig/tcap.c beav-140/tcap.c
 *** beav-140.orig/tcap.c	Sat Jul  1 18:32:02 1995
---- beav-140/tcap.c	Sat Jul  1 18:24:29 1995
+--- tcap.c	Sat Jul  1 18:24:29 1995
 ***************
 *** 38,44 ****
   
@@ -73,9 +62,8 @@ diff -c beav-140.orig/tcap.c beav-140/tcap.c
   #endif /* BSD */
   #ifdef ULTRIX
   struct winsize ttysize;
-diff -c beav-140.orig/beav.1 beav-140/beav.1
 *** beav-140.orig/beav.1	Sun Mar  3 03:13:16 1996
---- beav-140/beav.1	Sun Mar  3 03:14:31 1996
+--- beav.1	Sun Mar  3 03:14:31 1996
 ***************
 *** 59,63 ****
   If there is any data that has not been saved you will be warned.
