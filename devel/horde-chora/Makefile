@@ -7,14 +7,12 @@
 
 PORTNAME=	chora
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	devel www
-MASTER_SITES=	ftp://ftp.horde.org/pub/chora/tarballs/	\
-		ftp://ftp.uk.horde.org/mirrors/ftp.horde.org/pub/chora/tarballs/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-RC1
+MASTER_SITES=	ftp://ftp.horde.org/pub/chora/tarballs/%SUBDIR%/
+MASTER_SITE_SUBDIR=	. old
 
 MAINTAINER=	thierry@pompo.net
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 #-----------------------------------------------------------------------
 # You may define these options:
@@ -79,12 +77,20 @@ do-install:
 	@${CP} -p ${FILESDIR}/httpd.conf.chora ${HORDE_INC}
 	@${PERL} -pi -e "s:/home/httpd/html/horde/chora:${CHORADIR}:g" \
 		${HORDE_INC}/httpd.conf.chora
+	@${CP} -p ${HORDEDIR}/config/registry.php		\
+		${HORDEDIR}/config/registry.php.beforeChora
+	@${CP} -p ${HORDEDIR}/config/mime_drivers.php		\
+		${HORDEDIR}/config/mime_drivers.php.beforeChora
 	@${PERL} -pi -e "s://UNCOMMENTWHENINSTCHORA::" \
 		${HORDEDIR}/config/registry.php
 .if !defined(WITHOUT_ENSCRIPT)
 	@${PERL} -pi -e "s://UNCOMMENTWHENINSTCHORA::" \
 		${HORDEDIR}/config/mime_drivers.php
 .endif
+	@${CP} -p ${HORDEDIR}/config/registry.php		\
+		${HORDEDIR}/config/registry.php.afterChora
+	@${CP} -p ${HORDEDIR}/config/mime_drivers.php		\
+		${HORDEDIR}/config/mime_drivers.php.afterChora
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${DOCS}
