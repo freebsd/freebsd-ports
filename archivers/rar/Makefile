@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	rar
-PORTVERSION=    3.0b7
+PORTVERSION=    3.0
+PORTEPOCH=      1
 CATEGORIES=	archivers
 MASTER_SITES=   http://rarlab.com/rar/ \
 		ftp://pubftp.slovenska.sk/pub/rarsoft/rar/
-DISTNAME=       rarbsd-3.0.b7
+DISTNAME=       rarbsd-3.0
 
 MAINTAINER=	ache@FreeBSD.org
 
@@ -42,6 +43,5 @@ do-install:
 			${PREFIX}/etc && \
 		${INSTALL_DATA} default.sfx \
 			${PREFIX}/lib
-	@${CAT} ${PKGDIR}/pkg-message
 
 .include <bsd.port.post.mk>
