@@ -1,34 +1,20 @@
-*** Makefile.old	Wed Apr 15 02:57:58 1992
---- Makefile	Sat Dec 31 20:36:07 1994
-***************
-*** 32,45 ****
-  OPT = -O
-  # For MWC 3.0 on the Atari ST, use:
-  #CFLAGS = -VCOMPAC -VPEEP
-! CFLAGS = $(OPT) $(SYSTEM)
-  
-  # GNU's gcc is very nice, if you've got it. Otherwise just cc.
-  #CC = cgcc -mshort
-! CC = cc
-  
-  # tmclock is only needed on Unix systems...
-! TMCLOCK = tmclock.o
-  
-  # Files needed for System V 
-  #SYSVOBJ =	getwd.o rename.o scandir.o utimes.o
---- 32,46 ----
-  OPT = -O
-  # For MWC 3.0 on the Atari ST, use:
-  #CFLAGS = -VCOMPAC -VPEEP
-! #CFLAGS = $(OPT) $(SYSTEM)
-! CFLAGS+=$(SYSTEM)
-  
-  # GNU's gcc is very nice, if you've got it. Otherwise just cc.
-  #CC = cgcc -mshort
-! #CC = cc
-  
-  # tmclock is only needed on Unix systems...
-! TMCLOCK = #tmclock.o
-  
-  # Files needed for System V 
-  #SYSVOBJ =	getwd.o rename.o scandir.o utimes.o
+--- Makefile.orig	Fri Oct 31 05:32:51 2003
++++ Makefile	Wed Nov  5 13:53:51 2003
+@@ -38,14 +38,14 @@
+ OPT = -O
+ # For MWC 3.0 on the Atari ST, use:
+ #CFLAGS = -VCOMPAC -VPEEP
+-CFLAGS = $(OPT) $(SYSTEM)
++CFLAGS+=$(SYSTEM)
+ 
+ # GNU's gcc is very nice, if you've got it. Otherwise just cc.
+ #CC = cgcc -mshort -mbaserel
+-CC = cc
++#CC = cc
+ 
+ # tmclock is only needed on Unix systems...
+-TMCLOCK = tmclock.o
++TMCLOCK = #tmclock.o
+ 
+ # Integer-only stdio routines for Atari ST.
+ #LIBS=-liio16
