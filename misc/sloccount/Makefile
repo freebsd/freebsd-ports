@@ -7,11 +7,13 @@
 #
 
 PORTNAME=	sloccount
-PORTVERSION=	2.12
+PORTVERSION=	2.13
 CATEGORIES=	misc
 MASTER_SITES=	http://www.dwheeler.com/sloccount/
 
 MAINTAINER=	freaky@aagh.net
+
+USE_PERL5=	yes
 
 MAKEFILE=	makefile
 INSTALL_TARGET=	install_programs install_man
