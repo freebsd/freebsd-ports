@@ -335,6 +335,7 @@
     SUBDIR += p5-Search-Saryer
     SUBDIR += p5-Sort-ArbBiLex
     SUBDIR += p5-Sort-Fields
+    SUBDIR += p5-Sort-Naturally
     SUBDIR += p5-Sort-PolySort
     SUBDIR += p5-Spork
     SUBDIR += p5-Spreadsheet-ParseExcel
