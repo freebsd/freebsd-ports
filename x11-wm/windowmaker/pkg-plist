@@ -120,9 +120,11 @@ bin/getstyle
 bin/seticons
 bin/setstyle
 bin/wdwrite
+bin/wm-oldmenu2new
 bin/wmaker
 bin/wmaker.inst
 bin/wmsetbg
+bin/wsetfont
 bin/wxcopy
 bin/wxpaste
 include/WINGs.h
@@ -244,6 +246,7 @@ share/WindowMaker/Styles/Pastel
 share/WindowMaker/Styles/Pink
 share/WindowMaker/Styles/Pumpkin
 share/WindowMaker/Styles/Purple
+share/WindowMaker/Styles/Rainbow
 share/WindowMaker/Styles/Red
 share/WindowMaker/Styles/RednBlue
 share/WindowMaker/Styles/ShinyBrown
