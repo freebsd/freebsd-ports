@@ -1,0 +1,19 @@
+diff -ru /home/green/ssh/Makefile.inc ./Makefile.inc
+--- /home/green/ssh/Makefile.inc	Tue Oct 26 03:31:00 1999
++++ ./Makefile.inc	Mon Nov  8 00:12:19 1999
+@@ -1,11 +1,8 @@
+ CFLAGS+=	-I${.CURDIR}/..
+ 
+-.include <bsd.obj.mk>
+-
+-.if exists(${.CURDIR}/../lib/${__objdir})
+-LDADD+=         -L${.CURDIR}/../lib/${__objdir} -lssh
+-DPADD+=         ${.CURDIR}/../lib/${__objdir}/libssh.a
+-.else
++AFS?=		NO
++KERBEROS?=	NO
++SKEY?=		NO
++TCP_WRAPPERS?=	YES
+ LDADD+=         -L${.CURDIR}/../lib -lssh
+ DPADD+=         ${.CURDIR}/../lib/libssh.a
+-.endif

@@ -1,0 +1,14 @@
+diff -ru /home/green/ssh/scp/Makefile ./scp/Makefile
+--- /home/green/ssh/scp/Makefile	Tue Oct 26 03:31:00 1999
++++ ./scp/Makefile	Mon Nov  8 00:13:21 1999
+@@ -10,8 +10,8 @@
+ BINMODE?=555
+ .endif
+ 
+-BINDIR=	/usr/bin
+-MAN=	scp.1
++BINDIR=	/bin
++MAN1=	scp.1
+ 
+ SRCS=	scp.c
+ 

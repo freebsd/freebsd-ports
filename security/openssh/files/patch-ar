@@ -1,0 +1,19 @@
+diff -ru /home/green/ssh/ssh-agent/Makefile ./ssh-agent/Makefile
+--- /home/green/ssh/ssh-agent/Makefile	Thu Oct 28 03:32:00 1999
++++ ./ssh-agent/Makefile	Mon Nov  8 00:13:41 1999
+@@ -10,12 +10,12 @@
+ BINMODE?=555
+ .endif
+ 
+-BINDIR=	/usr/bin
+-MAN=	ssh-agent.1
++BINDIR=	/bin
++MAN1=	ssh-agent.1
+ 
+ SRCS=	ssh-agent.c log-client.c
+ 
+ .include <bsd.prog.mk>
+ 
+-LDADD+=	-lcrypto -lutil -lz
++LDADD+=	-lutil -lz ${CRYPTOLIBS}
+ DPADD+=	${LIBCRYPTO} ${LIBDES} ${LIBUTIL} ${LIBZ}

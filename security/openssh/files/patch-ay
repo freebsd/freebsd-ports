@@ -1,0 +1,8 @@
+--- OVERVIEW.orig	Mon Nov  8 00:53:18 1999
++++ OVERVIEW	Mon Nov  8 00:53:36 1999
+@@ -1,4 +1,4 @@
+-This document is inteded for those who wish to read the ssh source
++This document is intended for those who wish to read the ssh source
+ code.  This tries to give an overview of the structure of the code.
+       
+ Copyright (c) 1995 Tatu Ylonen <ylo@cs.hut.fi>

@@ -1,0 +1,10 @@
+--- Makefile.orig	Tue Oct 26 03:31:00 1999
++++ Makefile	Mon Nov  8 00:28:19 1999
+@@ -1,6 +1,7 @@
+ #	$OpenBSD: Makefile,v 1.5 1999/10/25 20:27:26 markus Exp $
+ 
+ .include <bsd.own.mk>
++.include "Makefile.inc"
+ 
+ SUBDIR=	lib ssh sshd ssh-add ssh-keygen ssh-agent scp
+ 

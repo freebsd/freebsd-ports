@@ -1,0 +1,21 @@
+diff -ru /home/green/ssh/includes.h ./includes.h
+--- /home/green/ssh/includes.h	Wed Nov  3 03:36:00 1999
++++ ./includes.h	Mon Nov  8 00:06:40 1999
+@@ -24,7 +24,6 @@
+ #include <sys/select.h>
+ #include <sys/param.h>
+ #include <sys/ioctl.h>
+-#include <sys/endian.h>
+ #include <sys/stat.h>
+ #include <sys/wait.h>
+ #include <sys/time.h>
+@@ -38,7 +37,8 @@
+ #include <arpa/inet.h>
+ #include <netdb.h>
+ 
+-#include <netgroup.h>
++#include <machine/endian.h>
++
+ #include <stdio.h>
+ #include <ctype.h>
+ #include <errno.h>

@@ -1,0 +1,11 @@
+diff -ru /home/green/ssh/lib/Makefile ./lib/Makefile
+--- /home/green/ssh/lib/Makefile	Wed Oct 27 03:33:00 1999
++++ ./lib/Makefile	Mon Nov  8 00:06:40 1999
+@@ -13,6 +13,7 @@
+ 	@echo -n
+ 
+ .include <bsd.own.mk>
++.include "../Makefile.inc"
+ 
+ .if (${KERBEROS} == "yes")
+ CFLAGS+= -DKRB4 -I/usr/include/kerberosIV

@@ -1,0 +1,8 @@
+Secure Shell is a set of programs for logging into a remote machine and for
+executing commands on a remote machine.  It is intended to replace rlogin,
+rsh, rcp, etc. and provide secure encrypted communications between two
+untrusted hosts over an insecure network.  X11 connections and arbitrary
+TCP/IP ports can also be forwarded over the secure channel.
+
+- Brian Feldman
+green@FreeBSD.org
