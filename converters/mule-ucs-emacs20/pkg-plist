@@ -58,6 +58,8 @@
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata/uiso8859-7.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata/uiso8859-8.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata/uiso8859-9.el
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata/uiso8859-14.el
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata/uiso8859-15.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata/ujisx0201.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata/ujisx0208.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/mule-ucs/reldata/ujisx0212.el

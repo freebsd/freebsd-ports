@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mule-ucs
-PORTVERSION=	0.82
+PORTVERSION=	0.83
 CATEGORIES=	converters elisp
 MASTER_SITES=	ftp://ftp.kddlabs.co.jp/Japan/m17n.org/mule/Mule-UCS/ \
 		ftp://ftp.etl.go.jp/pub/mule/Mule-UCS/ \
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.kddlabs.co.jp/Japan/m17n.org/mule/Mule-UCS/ \
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	Mule-UCS-${PORTVERSION}
 
-MAINTAINER=	okazaki@be.to
+MAINTAINER=	okazaki@FreeBSD.org
 
 EMACS_PORT_NAME=	emacs20
 
