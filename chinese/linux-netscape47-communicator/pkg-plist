@@ -1,0 +1,126 @@
+bin/%%REGION%%-%%BROWSER%%-%%VER%%
+@exec ln -sf %f %B/netscape.run
+@unexec rm -f %B/netscape.run
+%%NSUBDIR%%/java/classes/font.properties.zh_GB2312
+%%NSUBDIR%%/java/classes/font.properties.zh_TW_Big5
+%%NSUBDIR%%/%%LOCALE%%/BDP_LICENSE
+%%NSUBDIR%%/%%LOCALE%%/Netscape
+%%NSUBDIR%%/%%LOCALE%%/Netscape.WheelMouse
+%%NSUBDIR%%/%%LOCALE%%/nethelp/Back_dep.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/Back_dis.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/Back_sel.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/Back_up.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/Blank.htm
+%%NSUBDIR%%/%%LOCALE%%/nethelp/Button.js
+%%NSUBDIR%%/%%LOCALE%%/nethelp/CntData.js
+%%NSUBDIR%%/%%LOCALE%%/nethelp/CntTool.htm
+%%NSUBDIR%%/%%LOCALE%%/nethelp/CntTool.js
+%%NSUBDIR%%/%%LOCALE%%/nethelp/Exit_dep.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/Exit_sel.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/Exit_up.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/Forw_dep.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/Forw_dis.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/Forw_sel.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/Forw_up.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/Header.js
+%%NSUBDIR%%/%%LOCALE%%/nethelp/IdxData.js
+%%NSUBDIR%%/%%LOCALE%%/nethelp/IdxFill.htm
+%%NSUBDIR%%/%%LOCALE%%/nethelp/IdxKey.htm
+%%NSUBDIR%%/%%LOCALE%%/nethelp/IdxTool.htm
+%%NSUBDIR%%/%%LOCALE%%/nethelp/IdxTopic.htm
+%%NSUBDIR%%/%%LOCALE%%/nethelp/Local-1.js
+%%NSUBDIR%%/%%LOCALE%%/nethelp/NSHIfrm.htm
+%%NSUBDIR%%/%%LOCALE%%/nethelp/NavUI.htm
+%%NSUBDIR%%/%%LOCALE%%/nethelp/NoJSerr.htm
+%%NSUBDIR%%/%%LOCALE%%/nethelp/Prnt_dep.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/Prnt_sel.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/Prnt_up.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/Stack.js
+%%NSUBDIR%%/%%LOCALE%%/nethelp/Status.htm
+%%NSUBDIR%%/%%LOCALE%%/nethelp/System.htm
+%%NSUBDIR%%/%%LOCALE%%/nethelp/System.js
+%%NSUBDIR%%/%%LOCALE%%/nethelp/ToolUI.htm
+%%NSUBDIR%%/%%LOCALE%%/nethelp/Tool_dep.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/Tool_sel.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/Tool_up.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/Topic.js
+%%NSUBDIR%%/%%LOCALE%%/nethelp/Utility.js
+%%NSUBDIR%%/%%LOCALE%%/nethelp/Wait.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/collabra/coll.htm
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/collabra/collHdr.htm
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/collabra/collabra.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/collabra/discgrps.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/collabra/help.hpf
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/collabra/mailbox2.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/composer/comp.htm
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/composer/compHdr.htm
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/composer/composer.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/composer/comtlbr2.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/composer/fmtlbr3.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/composer/help.hpf
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/composer/tagicon2.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/home/help.hpf
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/home/home.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/home/home.htm
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/home/homeHdr.htm
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/messengr/abook.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/messengr/compbar.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/messengr/help.hpf
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/messengr/mailbox.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/messengr/mailbox2.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/messengr/mess.htm
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/messengr/messHdr.htm
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/messengr/messengr.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/messengr/mpctrl.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/messengr/newsgrp.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/messengr/tabs.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/navigatr/help.hpf
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/navigatr/nav.htm
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/navigatr/navHdr.htm
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/navigatr/navigatr.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/news/abook.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/news/collabra.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/news/compbar.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/news/discgrps.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/news/help.hpf
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/news/mailbox2.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/news/news.htm
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/news/newsgrp.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/shared/NetHelpm.css
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/shared/NetHelpu.css
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/shared/NetHelpw.css
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/shared/admnIcon.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/shared/calIcon.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/shared/collIcon.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/shared/commIcon.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/shared/compIcon.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/shared/confIcon.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/shared/ibmIcon.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/shared/messIcon.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/shared/navIcon.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/shared/netIcon.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/trouble/help.hpf
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/trouble/trouble.htm
+%%NSUBDIR%%/%%LOCALE%%/nethelp/netwatch.gif
+%%NSUBDIR%%/%%LOCALE%%/nethelp/picsfail.htm
+%%NSUBDIR%%/%%LOCALE%%/nethelp/picsfail.jar
+%%NSUBDIR%%/%%LOCALE%%/preferences.js
+@dirrm %%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/collabra
+@dirrm %%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/composer
+@dirrm %%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/home
+@dirrm %%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/messengr
+@dirrm %%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/navigatr
+@dirrm %%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/news
+@dirrm %%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/shared
+@dirrm %%NSUBDIR%%/%%LOCALE%%/nethelp/netscape/trouble
+@dirrm %%NSUBDIR%%/%%LOCALE%%/nethelp/netscape
+@dirrm %%NSUBDIR%%/%%LOCALE%%/nethelp
+@dirrm %%NSUBDIR%%/%%LOCALE%%
+@cwd %%X11BASE%%
+lib/X11/locale/zh_TW.Big5/XLC_LOCALE
+@cwd /compat/linux
+usr/X11R6/lib/X11/%%LOCALE%%/app-defaults/netscape.cfg
+usr/X11R6/lib/X11/%%LOCALE%%/app-defaults/netscape.jsc
+@unexec rmdir /compat/linux/usr/X11R6/lib/X11/%%LOCALE%%/app-defaults 2>/dev/null || true
+@unexec rmdir /compat/linux/usr/X11R6/lib/X11/%%LOCALE%% 2>/dev/null || true
+@unexec rmdir /compat/linux/usr/X11R6/lib/X11 2>/dev/null || true
