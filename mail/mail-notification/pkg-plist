@@ -12,6 +12,7 @@ share/gnome/help/mail-notification/C/mail-notification.xml
 share/gnome/help/mail-notification/C/software-license.xml
 share/gnome/mail-notification/ui/about-icon.png
 share/gnome/mail-notification/ui/dialog.glade
+share/gnome/mail-notification/ui/gmail.png
 share/gnome/mail-notification/ui/logo.png
 share/gnome/mail-notification/ui/mail-error.png
 share/gnome/mail-notification/ui/mail.png
@@ -27,6 +28,7 @@ share/gnome/omf/mail-notification/mail-notification-C.omf
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/mail-notification/mail-notification-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/mail-notification.png
 share/locale/fr/LC_MESSAGES/mail-notification.mo
+share/locale/ru/LC_MESSAGES/mail-notification.mo
 @dirrm share/gnome/help/mail-notification/C/figures
 @dirrm share/gnome/help/mail-notification/C
 @dirrm share/gnome/help/mail-notification

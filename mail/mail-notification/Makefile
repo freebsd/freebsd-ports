@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		mail-notification
-PORTVERSION=		0.4.0
+PORTVERSION=		0.5.0
 CATEGORIES=		mail
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	mailnotify
@@ -17,6 +17,7 @@ COMMENT=		A mail notification for freedesktop.org-compliant system trays
 USE_X_PREFIX=		yes
 USE_GNOME=		gnomeprefix gnomehack eel2
 GNU_CONFIGURE=		yes
+USE_GMAKE=		yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -24,7 +25,8 @@ OPTIONS=		MBOX "mbox support" on \
 			MH "MH support" on \
 			MAILDIR "Maildir support" on \
 			POP3 "POP3 support" on \
-			SYLPHEED "Sylpheed support" on
+			SYLPHEED "Sylpheed support" on \
+			GMAIL "Gmail support" on
 
 .include <bsd.port.pre.mk>
 
@@ -44,6 +46,11 @@ LIB_DEPENDS+=		gnet-2.0:${PORTSDIR}/net/gnet2
 .endif
 .if defined(WITHOUT_SYLPHEED)
 CONFIGURE_ARGS+=	--disable-sylpheed
+.endif
+.if defined(WITHOUT_GMAIL)
+CONFIGURE_ARGS+=	--disable-gmail
+.else
+LIB_DEPENDS+=		soup-2.0:${PORTSDIR}/devel/libsoup
 .endif
 
 .include <bsd.port.post.mk>
