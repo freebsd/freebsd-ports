@@ -61,6 +61,8 @@ share/doc/commoncpp/Slog.html
 share/doc/commoncpp/Socket.html
 share/doc/commoncpp/SocketPort.html
 share/doc/commoncpp/SocketService.html
+share/doc/commoncpp/StringTokenizer.html
+share/doc/commoncpp/StringTokenizer::NoSuchElementException.html
 share/doc/commoncpp/TCPSession.html
 share/doc/commoncpp/TCPSocket.html
 share/doc/commoncpp/TCPStream.html
@@ -130,6 +132,8 @@ share/doc/commoncpp/full-list-Slog.html
 share/doc/commoncpp/full-list-Socket.html
 share/doc/commoncpp/full-list-SocketPort.html
 share/doc/commoncpp/full-list-SocketService.html
+share/doc/commoncpp/full-list-StringTokenizer.html
+share/doc/commoncpp/full-list-StringTokenizer::NoSuchElementException.html
 share/doc/commoncpp/full-list-TCPSession.html
 share/doc/commoncpp/full-list-TCPSocket.html
 share/doc/commoncpp/full-list-TCPStream.html
