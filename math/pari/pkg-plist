@@ -1,0 +1,12 @@
+include/pari/genpari.h
+include/pari/gencom.h
+include/pari/genport.h
+include/pari/gen68k.h
+include/pari/erreurs.h
+include/pari/mpansi.h
+include/pari/mpdefs.h
+include/pari/mpin.h
+lib/libpari.a
+bin/gp
+man/man1/gp.1.gz
+@dirrm include/pari
