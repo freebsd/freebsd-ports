@@ -7,11 +7,10 @@
 #
 
 PORTNAME=	iverilog
-PORTVERSION=	0.7.20031202
-PORTREVISION=	1
+PORTVERSION=	0.7.20040220
 CATEGORIES=	cad
 MASTER_SITES=	ftp://icarus.com/pub/eda/verilog/snapshots/
-DISTNAME=	verilog-20031202
+DISTNAME=	verilog-20040220
 
 MAINTAINER=	watchman@ludd.luth.se
 COMMENT=	A Verilog simulation and synthesis tool
