@@ -1,16 +1,17 @@
---- prefs.py.orig	Tue Aug 29 14:59:10 2000
-+++ prefs.py	Wed Aug 30 10:32:52 2000
-@@ -90,9 +90,10 @@
+--- prefs.py.orig	Thu Sep 28 20:44:36 2000
++++ prefs.py	Mon Oct  2 09:28:45 2000
+@@ -93,10 +93,10 @@
          self.citechar = ">"    # Cite character
          self.prefix = "Re:"    # Subject reply prefix
  
 -	self.fld_font = '-*-helvetica-medium-r-normal--12-120-75-75-p-70-iso8859-1'
 -        self.sub_font = '-*-helvetica-medium-r-normal--12-120-75-75-p-70-iso8859-1'
 -	self.msg_font = '-*-helvetica-medium-r-normal--12-120-75-75-p-70-iso8859-1'
+-	self.compose_font = '-*-helvetica-medium-r-normal--12-120-75-75-p-70-iso8859-1'
 +	self.fld_font = '-*-helvetica-bold-r-normal--12-120-75-75-p-70-iso8859-1'
 +        self.sub_font = '-*-helvetica-bold-r-normal--12-120-75-75-p-70-iso8859-1'
 +	self.msg_font = '-*-helvetica-bold-r-normal--12-120-75-75-p-70-iso8859-1'
 +	self.compose_font = '-*-helvetica-bold-r-normal--12-120-75-75-p-70-iso8859-1'
-         # Pygmy version
-         self.version = "0.4.2"
- 
+        
+         # Size of application (win, foldertree, msg, listing)
+         self.size = ((560,560),(170,280),(520,280),(10, 100, 290, 10))

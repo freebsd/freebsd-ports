@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	pygmy
-PORTVERSION=	0.4.2
+PORTVERSION=	0.4.3
 CATEGORIES=	mail python gnome
-MASTER_SITES=	http://www.cs.uit.no/~kjetilja/Pygmy/
+MASTER_SITES=	http://pygmy.sourceforge.net/
 
 MAINTAINER=	sobomax@FreeBSD.org
 
