@@ -2365,6 +2365,7 @@ gtkextra--	ports/x11-toolkits/gtkextra--
 gtkfig		ports/graphics/gtkfig
 gtkfind		ports/misc/gtkfind
 gtkglarea	ports/x11-toolkits/gtkglarea
+gtkglarea2	ports/x11-toolkits/gtkglarea2
 gtkglareamm	ports/x11-toolkits/gtkglarea--
 gtkgraph	ports/graphics/gtkgraph
 gtkgrepmail	ports/mail/gtkgrepmail
@@ -6272,6 +6273,7 @@ py-graphviz	ports/graphics/py-graphviz
 py-grouch	ports/devel/py-grouch
 py-gsl		ports/math/py-gsl
 py-gtk		ports/x11-toolkits/py-gtk
+py-gtk2		ports/x11-toolkits/py-gtk2
 py-gtkscintilla	ports/x11-toolkits/py-gtkscintilla
 py-htmlkit	ports/devel/py-htmlkit
 py-iconv	ports/converters/py-iconv
