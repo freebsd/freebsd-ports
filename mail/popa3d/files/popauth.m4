@@ -41,7 +41,8 @@ SLocal_check_rcpt
 R$*		$: $(popauth `'$&{client_addr} $: <?> $)
 R<?>		$@ NoPopAuth
 ifdef(`POP_TO', `dnl
-R$+		$: $(arith - $@ $1 $@ $&t $)
+R$+		$: $(arith - $@ $&T $@ $1 $)
 R$+		$: $(arith l $@ $1 $@ POP_TO $)
+RFALSE		$@ NoPopAuth
 RTRUE		$# OK', `
 R$*<OK>		$# OK')
