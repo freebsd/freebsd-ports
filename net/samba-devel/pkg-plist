@@ -4,11 +4,11 @@ bin/smbstatus
 bin/smbpasswd
 bin/nmblookup
 bin/smbtar
-sbin/addtosmbpass
+bin/addtosmbpass
+bin/testparm
+bin/testprns
 sbin/smbd
 sbin/nmbd
-sbin/testparm
-sbin/testprns
 man/man1/smbstatus.1.gz
 man/man1/smbclient.1.gz
 man/man1/smbrun.1.gz
