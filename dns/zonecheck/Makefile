@@ -15,8 +15,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Perform consistency checks on DNS zone files
 
-BROKEN=		Broken dependency
-
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk.so:${PORTSDIR}/x11-toolkits/ruby-gtk
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -26,4 +24,10 @@ NO_BUILD=	yes
 RUBY_VER=	1.8
 MAN1=		zonecheck.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_DEFAULT_VER} != ${RUBY_VER}
+BROKEN=		Broken dependency. This might be only a package building issue. The problem is that the default Ruby version for i386 is ${RUBY_DEFAULT_VER}, while the default version for the other architectures is ${RUBY_VER}. This port requires Ruby ${RUBY_VER}. If you are using the right Ruby version, please remove the BROKEN line from the Makefile and try again.
+.endif
+
+.include <bsd.port.post.mk>
