@@ -3,7 +3,7 @@
 # Date created:         Feb 13 1995
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.6 1997/01/07 14:58:04 torstenb Exp $
+# $Id: Makefile,v 1.7 1998/01/25 20:44:10 torstenb Exp $
 #
 
 DISTNAME=       maplay1_2
@@ -19,5 +19,9 @@ PATCH_STRIP=	-p2
 
 pre-configure:
 	@(cd ${WRKSRC}; make pre-install)
+
+post-install:
+	@${MKDIR} ${PREFIX}/share/doc/maplay
+	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/maplay
 
 .include <bsd.port.mk>

@@ -1,1 +1,3 @@
 bin/maplay
+share/doc/maplay/README
+@dirrm share/doc/maplay
