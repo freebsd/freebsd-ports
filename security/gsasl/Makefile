@@ -8,7 +8,7 @@
 
 PORTNAME=	gsasl
 PORTVERSION=	0.0.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://josefsson.org/${PORTNAME}/releases/ \
 		${MASTER_SITE_GNU_ALPHA}
@@ -18,10 +18,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU SASL Library
 
 LIB_DEPENDS=	idn.13:${PORTSDIR}/devel/libidn \
-		gcrypt.6:${PORTSDIR}/security/libgcrypt \
+		gcrypt.10:${PORTSDIR}/security/libgcrypt-devel \
 		ntlm.0:${PORTSDIR}/security/libntlm
 
-USE_GETTEXT=	yes
 USE_PERL5_BUILD=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_GETOPT_LONG=	yes
@@ -31,6 +30,14 @@ CONFIGURE_ARGS=	--disable-gssapi --disable-kerberos_v5
 INSTALLS_SHLIB=	yes
 
 INFO=	gsasl
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
