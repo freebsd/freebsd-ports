@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	enscript
 DISTNAME=	enscript-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kline@thought.org
 COMMENT=	ASCII-to-PostScript filter
 
 GNU_CONFIGURE=	yes
