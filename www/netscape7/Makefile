@@ -68,6 +68,10 @@ DISTFILES=	browser.xpi \
 # langende.xpi langenfr.xpi langengb.xpi langenjp.xpi talkback.xpi jre.xpi AIM.xpi
 DIST_SUBDIR=	netscape6/english/${PORTVERSION}
 
+PATCH_SITES=	${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	trevor
+PATCHFILES=	linux-netscape6-${PORTVERSION}-generated-files.tar.gz
+
 MAINTAINER=	trevor@FreeBSD.org
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
@@ -81,7 +85,6 @@ NO_FILTER_SHLIBS=	yes
 ONLY_FOR_ARCHS=	i386
 USE_XLIB=	yes
 WRKSRC=	${WRKDIR}/netscape-installer/xpi
-
 INSTALL_DIR=	${PREFIX}/lib/linux-netscape6
 PLIST=		${WRKDIR}/pkg-plist
 STARTUP_CMD=	netscape6
@@ -98,11 +101,12 @@ do-extract:
 do-patch:
 	${TOUCH} ${TOUCH_FLAGS} ${WRKSRC}/bin/chrome/user-skins.rdf ${WRKSRC}/bin/chrome/user-locales.rdf
 	${CP} -p ${FILESDIR}/*rdf ${WRKSRC}/bin/chrome
+	${TAR} -C ${WRKSRC}/bin -xzf ${DISTDIR}/${DIST_SUBDIR}/${PATCHFILES}
 
 do-configure:
-	- kldload linux
-	${SETENV} $DISPLAY="NONE" ${WRKSRC}/bin/netscape file:///dev/null
-	@${ECHO} \"Factory not found\" and \"cannot open display\" errors here are normal.
+#	- kldload linux
+#	${SETENV} $DISPLAY="NONE" ${WRKSRC}/bin/netscape file:///dev/null
+#	@${ECHO} \"Factory not found\" and \"cannot open display\" errors here are normal.
 	${SED} -e "s;%%INSTALL_DIR%%;${INSTALL_DIR};g" \
 	${FILESDIR}/start.sh >${WRKDIR}/${STARTUP_CMD}
 
