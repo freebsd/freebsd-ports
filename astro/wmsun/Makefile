@@ -7,7 +7,7 @@
 PORTNAME=	wmsun
 PORTVERSION=	1.03
 CATEGORIES=	astro windowmaker
-MASTER_SITES=	http://nis-www.lanl.gov/~mgh/WindowMaker/
+MASTER_SITES=	http://dockapps.org/files/16/23/
 DISTNAME=	wmSun-1.03
 
 MAINTAINER=	ports@FreeBSD.org
