@@ -15,6 +15,8 @@ EXTRACT_ONLY=	# extracted directly in install target
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Digital content manager
 
+BROKEN=		Checksum mismatch
+
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386
