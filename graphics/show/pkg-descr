@@ -1,0 +1,13 @@
+Show is a fast, flexible, extensible, and bloat-free image viewer for X11 that
+can fade images in, display them, and fade them out according to user-specified
+values of fade speed, fade type, and delay. It features an extremely small
+executable footprint, support for well over a dozen image formats, variable
+scaling, magnification, window positioning, clockwise and counterclockwise
+image rotation, X/Y axis flipping, over 200 different color transition modes,
+wildcard support, and logging abilities. It can also be easilly incorporated
+into multimedia presentations, shell scripts, and other utilities.
+
+WWW: http://freshmeat.net/projects/show/
+
+- roop
+i6a2@ugrad.cs.ubc.ca

@@ -346,6 +346,7 @@
     SUBDIR += sdl_image
     SUBDIR += sdl_ttf
     SUBDIR += seejpeg
+    SUBDIR += show
     SUBDIR += showimg
     SUBDIR += simage
     SUBDIR += sketch
