@@ -3,13 +3,16 @@
 # Date created:		6 Mar 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/03/06 08:38:45 asami Exp $
 #
 
 # can't use PORTSDIR here, since we haven't included bsd.port.mk
+FILESDIR=	${.CURDIR}/../../editors/nvi/files
+PATCHDIR=	${.CURDIR}/../../editors/nvi/patches
+PKGDIR=		${.CURDIR}/../../editors/nvi/pkg
+COMMENT=	${.CURDIR}/pkg/COMMENT
+
 .include <${.CURDIR}/../../editors/nvi/Makefile>
-# bsd.port.mk has been included in the above statement, so we don't need to
-# include it again.
 
 PKGNAME=	jp-nvi-eucjp-1.79-970306
 CATEGORIES=	japanese editors
@@ -17,10 +20,5 @@ CATEGORIES=	japanese editors
 MAINTAINER=	itojun@itojun.org
 
 LIB_DEPENDS+=	canna\\.1\\.:${PORTSDIR}/japanese/Canna
-
-FILESDIR=	${PORTSDIR}/editors/nvi/files
-PATCHDIR=	${PORTSDIR}/editors/nvi/patches
-PKGDIR=		${PORTSDIR}/editors/nvi/pkg
-COMMENT=	${.CURDIR}/pkg/COMMENT
 
 CONFIGURE_ARGS=	--enable-multibyte=euc-jp --program-prefix=n --enable-canna
