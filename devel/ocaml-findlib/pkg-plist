@@ -1,5 +1,7 @@
 bin/ocamlfind
 etc/ocamlfind.conf
+lib/ocaml/findlib
+lib/ocaml/ocamlfind
 lib/ocaml/site-lib/bigarray/META
 lib/ocaml/site-lib/camlp4/META
 lib/ocaml/site-lib/dbm/META
@@ -23,8 +25,6 @@ lib/ocaml/site-lib/stdlib/META
 lib/ocaml/site-lib/str/META
 lib/ocaml/site-lib/threads/META
 lib/ocaml/site-lib/unix/META
-lib/ocaml/findlib
-lib/ocaml/ocamlfind
 lib/ocaml/topfind
 @dirrm lib/ocaml/site-lib/bigarray
 @dirrm lib/ocaml/site-lib/camlp4
