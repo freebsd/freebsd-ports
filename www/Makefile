@@ -234,6 +234,7 @@
     SUBDIR += mod_tsunami
     SUBDIR += mod_v2h
     SUBDIR += mod_watch
+    SUBDIR += mod_webapp
 #    SUBDIR += mod_webapp-apache2
     SUBDIR += mod_zap
     SUBDIR += moinmoin

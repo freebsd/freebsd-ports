@@ -1,0 +1,31 @@
+--- configure.in.orig	Tue Jun 10 12:18:27 2003
++++ configure.in	Tue Jun 10 12:18:57 2003
+@@ -207,17 +207,17 @@
+     dnl ----------------------------------------------------------------------
+     dnl Do a check on the C compiler to see if apxs reports the same one
+     dnl ----------------------------------------------------------------------
+-    WA_APXS_GET([tempval],[${APXS}],[CC])
+-    AC_MSG_CHECKING([for compiler coherency])
+-    if test "${tempval}" != "${CC}" ; then
+-      AC_MSG_RESULT([error])
+-      AC_MSG_RESULT([compiler discovered by apr: ${CC}])
+-      AC_MSG_RESULT([compiler used by apache apxs: ${tempval}])
+-      AC_MSG_ERROR([the apache apxs and apr compilers must be the same])
+-      exit 1
+-    fi
+-    AC_MSG_RESULT([ok (${CC})])
+-    unset tempval
++    dnl WA_APXS_GET([tempval],[${APXS}],[CC])
++    dnl AC_MSG_CHECKING([for compiler coherency])
++    dnl if test "${tempval}" != "${CC}" ; then
++    dnl   AC_MSG_RESULT([error])
++    dnl   AC_MSG_RESULT([compiler discovered by apr: ${CC}])
++    dnl   AC_MSG_RESULT([compiler used by apache apxs: ${tempval}])
++    dnl   AC_MSG_ERROR([the apache apxs and apr compilers must be the same])
++    dnl   exit 1
++    dnl fi
++    dnl AC_MSG_RESULT([ok (${CC})])
++    dnl unset tempval
+ 
+     dnl ----------------------------------------------------------------------
+     dnl Apache 1.3 configuration complete
