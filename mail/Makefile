@@ -43,7 +43,7 @@
     SUBDIR += mew-emacs20
     SUBDIR += mew-mule
     SUBDIR += mew-xemacs
-    SUBDIR += mew-xemacs-mule
+#    SUBDIR += mew-xemacs-mule
     SUBDIR += mew-xemacs20
     SUBDIR += mew-xemacs21
     SUBDIR += mew-xemacs21-mule
