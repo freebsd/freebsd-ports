@@ -50,8 +50,6 @@ my $hostname = `/bin/hostname`;
 die "Can't determine hostname!\n" if $? >> 8;
 chomp $hostname;
 if ($hostname =~ /^freefall\.freebsd\.org$/i) {
-	my $meister;
-
 	$MAILADDRS='cvs-committers@FreeBSD.org cvs-all@FreeBSD.org';
 	$MAILADDRS = 'cvs@FreeBSD.org' if $DEBUG;
 
