@@ -3,10 +3,10 @@ bin/pstoimg
 bin/texexpand
 lib/latex2html/cfgcache.pm
 lib/latex2html/l2hconf.pm
-share/doc/latex2html/FAQ
-share/doc/latex2html/INSTALL
-share/doc/latex2html/LICENSE
-share/doc/latex2html/README
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
 share/latex2html/IndicTeX-HTML/README
 share/latex2html/IndicTeX-HTML/bengali.perl
 share/latex2html/IndicTeX-HTML/bengali.sty
@@ -306,22 +306,22 @@ share/latex2html/versions/table.pl
 share/latex2html/versions/techexpl.pl
 share/latex2html/versions/unicode.pl
 share/latex2html/versions/utf8.pl
-share/texmf-var/tex/latex/html/floatflt.ins
-share/texmf-var/tex/latex/html/frames.sty
-share/texmf-var/tex/latex/html/heqn.sty
-share/texmf-var/tex/latex/html/hthtml.sty
-share/texmf-var/tex/latex/html/html.sty
-share/texmf-var/tex/latex/html/htmllist.sty
-share/texmf-var/tex/latex/html/justify.sty
-share/texmf-var/tex/latex/html/latin9.def
-share/texmf-var/tex/latex/html/ldump.sty
-share/texmf-var/tex/latex/html/techexplHTML.tex
-share/texmf-var/tex/latex/html/url.sty
-share/texmf-var/tex/latex/html/verbatimfiles.sty
-@exec /usr/local/bin/mktexlsr
-@unexec /usr/local/bin/mktexlsr
+%%TEXMFLOCAL%%/tex/latex/html/floatflt.ins
+%%TEXMFLOCAL%%/tex/latex/html/frames.sty
+%%TEXMFLOCAL%%/tex/latex/html/heqn.sty
+%%TEXMFLOCAL%%/tex/latex/html/hthtml.sty
+%%TEXMFLOCAL%%/tex/latex/html/html.sty
+%%TEXMFLOCAL%%/tex/latex/html/htmllist.sty
+%%TEXMFLOCAL%%/tex/latex/html/justify.sty
+%%TEXMFLOCAL%%/tex/latex/html/latin9.def
+%%TEXMFLOCAL%%/tex/latex/html/ldump.sty
+%%TEXMFLOCAL%%/tex/latex/html/techexplHTML.tex
+%%TEXMFLOCAL%%/tex/latex/html/url.sty
+%%TEXMFLOCAL%%/tex/latex/html/verbatimfiles.sty
+@exec %%MKTEXLSR%%
+@unexec %%MKTEXLSR%%
 @dirrm lib/latex2html
-@dirrm share/doc/latex2html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/latex2html/IndicTeX-HTML
 @dirrm share/latex2html/L2hos
 @dirrm share/latex2html/XyMTeX-HTML
@@ -338,4 +338,4 @@ share/texmf-var/tex/latex/html/verbatimfiles.sty
 @dirrm share/latex2html/texinputs
 @dirrm share/latex2html/versions
 @dirrm share/latex2html
-@dirrm share/texmf-var/tex/latex/html
+@dirrm %%TEXMFLOCAL%%/tex/latex/html
