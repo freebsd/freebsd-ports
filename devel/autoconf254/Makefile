@@ -10,19 +10,21 @@
 # upgraded as soon as possible. Thanks.
 
 PORTNAME=	autoconf
-PORTVERSION=	2.13
-PORTREVISION=	1
+PORTVERSION=	2.13.000227
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	autoconf
+MASTER_SITES=	${MASTER_SITE_SOURCEWARE} ${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	binutils autoconf
+DISTNAME=	autoconf-000227
 
 MAINTAINER=	portmgr@FreeBSD.org
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	M4=${PREFIX}/bin/gm4
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-install:
 	@install-info ${PREFIX}/info/autoconf.info ${PREFIX}/info/dir
