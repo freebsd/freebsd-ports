@@ -8,7 +8,7 @@
 PORTNAME=	ataidle
 PORTVERSION=	0.3
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.brucec.homeunix.org/pub/users/brucec/
+MASTER_SITES=	http://www.cran.org.uk/bruce/software/
 
 MAINTAINER=	bruce@cran.org.uk
 COMMENT=	Utility to set spindown timeout for ATA drives
