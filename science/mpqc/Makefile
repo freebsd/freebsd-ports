@@ -18,13 +18,12 @@ DISTFILES+= mpqc-man-${PORTVERSION}.tar.gz mpqc-html-${PORTVERSION}.tar.gz
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	The massively parallel quantum computing library and program
 
-BUILD_DEPENDS=	autoconf257:${PORTSDIR}/devel/autoconf257
-LIB_DEPENDS=	lapack:${PORTSDIR}/math/lapack \
-		atlas:${PORTSDIR}/math/atlas
+LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas
 
 USE_BISON=	yes
 GNU_CONFIGURE=	yes
-#USE_AUTOCONF_VER=	253 # 257 is required
+USE_AUTOCONF_VER=257
+
 CONFIGURE_ARGS=	--with-cc=${CC} \
 		--with-cxx=${CXX} \
 		--with-f77=${FC} \
@@ -44,17 +43,16 @@ MPQC_COMMAND=	${PREFIX}/bin/mpqc
 .include "${FILESDIR}/manpages"
 
 .if defined(WITH_OPTIMIZED_FLAGS)
-CFLAGS+=        -O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double
-CXXFLAGS+=      -O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double  -Wno-multichar
+CFLAGS+=        -O2 -ffast-math
+CXXFLAGS+=      -O2 -ffast-math
 .if (${MACHINE_ARCH} == "i386")
-CFLAGS+=        -mcpu=i686 -march=i686 -mfancy-math-387
-CXXFLAGS+=      -mcpu=i686 -march=i686 -mfancy-math-387
+CFLAGS+=        -mfancy-math-387
+CXXFLAGS+=      -mfancy-math-387
 .endif # i386
 .endif
 
 pre-configure:
 	@${ECHO} "You can optimize by setting WITH_OPTIMIZED_FLAGS=yes."
-	@cd ${WRKSRC} ; ${LOCALBASE}/bin/autoconf257
 
 do-install:
 	@cd ${WRKSRC} ; ${GMAKE} install
