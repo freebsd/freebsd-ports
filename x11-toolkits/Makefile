@@ -43,6 +43,8 @@
     SUBDIR += tk83
     SUBDIR += tkstep80
     SUBDIR += v
+    SUBDIR += vdk
+    SUBDIR += vdkbuilder
     SUBDIR += wxgtk
     SUBDIR += xbae
     SUBDIR += xforms
