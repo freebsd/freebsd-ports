@@ -2560,3 +2560,4 @@ share/tk8.3/xmfbox.tcl
 @dirrm share/tk8.3/images
 @dirrm share/tk8.3
 @dirrm share
+@dirrm sourcenav
