@@ -1,0 +1,25 @@
+lib/FileRunner/cmd.tcl
+lib/FileRunner/config.tcl
+lib/FileRunner/cross.bit
+lib/FileRunner/ext.so
+lib/FileRunner/font.tcl
+lib/FileRunner/fr
+lib/FileRunner/frcolor
+lib/FileRunner/frftp
+lib/FileRunner/frterm.bit
+lib/FileRunner/ftp.tcl
+lib/FileRunner/guide
+lib/FileRunner/larger.bit
+lib/FileRunner/left.bit
+lib/FileRunner/max.bit
+lib/FileRunner/pgdown.bit
+lib/FileRunner/pgup.bit
+lib/FileRunner/quickstart
+lib/FileRunner/right.bit
+lib/FileRunner/smaller.bit
+lib/FileRunner/tclIndex
+lib/FileRunner/up.bit
+lib/FileRunner/update.bit
+lib/FileRunner/xterm.bit
+bin/fr
+@dirrm lib/FileRunner
