@@ -1,0 +1,46 @@
+# New ports collection makefile for:	dctc qt gui
+# Date created:		Sun Jul 28 7:00:43 UTC 2002
+# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	dctc
+PORTVERSION=	0.0.3
+CATEGORIES=	net kde
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	dc-qt
+PKGNAMESUFFIX=	-gui-qt
+DISTNAME=	dc-qt-${PORTVERSION}
+
+MAINTAINER=	lioux@FreeBSD.org
+
+RUN_DEPENDS=	dctc:${PORTSDIR}/net/dctc
+
+USE_QT_VER=	3
+USE_REINPLACE=	yes
+MAKE_ENV=	QTDIR="${QTDIR}"
+
+QTDIR?=	${X11BASE}
+QMAKE?=	${X11BASE}/bin/qmake
+
+post-patch:
+	@${REINPLACE_CMD} -E -e 's|"hublist|"dc_hublist|' \
+		${WRKSRC}/dc_hub.cc
+
+do-configure:
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} dc_qt.pro
+
+post-configure:
+# uphold CC/CXX/CFLAGS
+# link against correct qt lib
+	@${REINPLACE_CMD} -E -e 's|^CC.+$$|CC=${CC}|; \
+		s|^CXX.+$$|CXX=${CXX}|; \
+		s|^(CFLAGS.+)$$|\1 ${PTHREAD_CFLAGS}|; \
+		s|-lqt |-lqt-mt ${PTHREAD_LIBS:S/"//g} |' \
+		${WRKSRC}/Makefile
+
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/dc_qt ${PREFIX}/bin
+
+.include <bsd.port.mk>

@@ -78,6 +78,7 @@
     SUBDIR += dclib
     SUBDIR += dctc
     SUBDIR += dctc-gui
+    SUBDIR += dctc-gui-qt
     SUBDIR += ddc
     SUBDIR += ddclient
     SUBDIR += ddup
