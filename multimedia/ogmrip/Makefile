@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ogmrip
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -33,6 +33,10 @@ GCONF_SCHEMAS=	ogmrip.schemas
 
 CONFIGURE_ARGS=	--sharedstatedir=${PREFIX}/libdata
 
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-maintainer-mode --enable-devel-mode
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/bin/mkvmerge)
@@ -41,6 +45,13 @@ RUN_DEPENDS+=	mkvmerge:${PORTSDIR}/multimedia/mkvtoolnix
 PLIST_SUB+=	MKV_SUPPORT=""
 .else
 PLIST_SUB+=	MKV_SUPPORT="@comment "
+.endif
+
+.if !defined(WITH_DEBUG)
+pre-extract:
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} " *** Define WITH_DEBUG to enable debug symbols ***"
+	@${ECHO_MSG} ""
 .endif
 
 post-patch:
@@ -54,6 +65,10 @@ pre-configure:
 	  ${ECHO_MSG} "" ; \
 	  ${FALSE} ; \
 	fi
+
+pre-install:
+	@${LOCALBASE}/bin/mencoder -ovc help 2> /dev/null | ${GREP} -q "^ *x264 *- .*$$" \
+	  && ${ECHO_CMD} "include/ogmrip/ogmrip-x264.h" >>${TMPPLIST} || ${TRUE}
 
 post-install:
 	@${ECHO_CMD} ""

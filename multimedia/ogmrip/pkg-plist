@@ -20,7 +20,6 @@ include/ogmrip/ogmrip-tools.h
 include/ogmrip/ogmrip-video.h
 include/ogmrip/ogmrip-vobsub.h
 include/ogmrip/ogmrip-vorbis.h
-include/ogmrip/ogmrip-theora.h
 include/ogmrip/ogmrip-wav.h
 include/ogmrip/ogmrip-xvid.h
 include/ogmrip/ogmrip.h
