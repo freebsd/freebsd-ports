@@ -30,7 +30,9 @@ CONFIGURE_ARGS= --sysconfdir=${PREFIX}/etc \
 		--with-long-otp-prompt \
 		--with-pam
 
-.ifdef(WITH_OPIE)
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_OPIE) || ${OSVERSION} > 500021
 CONFIGURE_ARGS+=--with-opie
 .else
 CONFIGURE_ARGS+=--with-skey
@@ -45,4 +47,4 @@ post-patch:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/sample.sudoers ${PREFIX}/etc/sudoers.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
