@@ -3,7 +3,7 @@
 # Date created:		26 Aug 1997
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.20 1998/05/10 23:50:31 steve Exp $
+# $Id: Makefile,v 1.21 1998/05/24 03:45:26 steve Exp $
 #
 
 DISTNAME=	ghostscript-5.10
@@ -27,7 +27,7 @@ DISTFILES=	${GS_SOURCES} ${GS_DRIVERS} ${GS_FONTS_STD} ${GS_FONTS_OTHER}
 
 MAINTAINER=	mita@jp.FreeBSD.org
 
-LIB_DEPENDS=	VFlib\\.2\\.:${PORTSDIR}/japanese/vflib
+LIB_DEPENDS=	VFlib2\\.23\\.:${PORTSDIR}/japanese/vflib
 
 EXTRACT_ONLY=	ghostscript-5.10.tar.gz jpegsrc.v6a.tar.gz libpng-0.96.tgz
 WRKSRC=		${WRKDIR}/gs5.10
