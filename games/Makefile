@@ -1,10 +1,11 @@
-# $Id: Makefile,v 1.107 1998/02/20 05:48:04 steve Exp $
+# $Id: Makefile,v 1.108 1998/02/20 09:33:55 tg Exp $
 #
 
     SUBDIR += acm
     SUBDIR += agm
     SUBDIR += an
     SUBDIR += angband
+    SUBDIR += blackjack
     SUBDIR += block
     SUBDIR += blue
     SUBDIR += bs
