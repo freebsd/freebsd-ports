@@ -15,6 +15,7 @@
 %%SITE_PERL%%/HTML/Mason/Devel.pod
 %%SITE_PERL%%/HTML/Mason/Escapes.pm
 %%SITE_PERL%%/HTML/Mason/Exceptions.pm
+%%SITE_PERL%%/HTML/Mason/FakeApache.pm
 %%SITE_PERL%%/HTML/Mason/Interp.pm
 %%SITE_PERL%%/HTML/Mason/Lexer.pm
 %%SITE_PERL%%/HTML/Mason/MethodMaker.pm
