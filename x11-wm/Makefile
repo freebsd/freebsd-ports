@@ -23,6 +23,7 @@
     SUBDIR += clementine
     SUBDIR += ctwm
     SUBDIR += e16utils
+    SUBDIR += ede
     SUBDIR += enlightenment
     SUBDIR += epiwm
     SUBDIR += epplets
