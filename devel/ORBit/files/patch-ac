@@ -13,7 +13,7 @@
  
  libIDL_la_SOURCES	= parser.c parser.h lexer.c \
  			  ns.c util.c util.h rename.h
--libIDL_la_LDFLAGS	= -version-info 5:7:5
+-libIDL_la_LDFLAGS	= -version-info 5:8:5
 +libIDL_la_LDFLAGS	= -version-info 0:4:0
  
  tstidl_SOURCES		= tstidl.c
