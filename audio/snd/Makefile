@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=		trevor@FreeBSD.org
 
-LIB_DEPENDS=		gsl.0:${PORTSDIR}/math/gsl \
+LIB_DEPENDS=		gsl.3:${PORTSDIR}/math/gsl \
 			intl.2:${PORTSDIR}/devel/gettext
 
 .if !defined(WITHOUT_ESD)
