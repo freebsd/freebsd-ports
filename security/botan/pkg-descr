@@ -12,4 +12,4 @@ C++ crypto library. It currently supports the following algorithms:
     Misc: Adler32, CRC24, CRC32, Randpool, X9.17 RNG
     Cipher Modes: CBC w/ Padding, CTS, CFB, OFB, Counter
 
-WWW: http://opencl.sourceforge.net/
+WWW: http://botan.randombit.net/
