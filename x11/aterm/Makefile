@@ -14,9 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	A color vt102 terminal emulator with transparency support
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png
-
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
@@ -24,6 +21,22 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	\
 			--enable-transparency --enable-background-image \
 			--enable-fading --enable-utmp --enable-wtmp
+
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+
+.if !defined(WITHOUT_PNG)
+CONFIGURE_ARGS+=	--with-png
+LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
+.else
+CONFIGURE_ARGS+=	--with-png=no
+.endif
+
+.if !defined(WITHOUT_JPEG)
+CONFIGURE_ARGS+=	--with-jpeg
+LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
+.else
+CONFIGURE_ARGS+=	--with-jpeg=no
+.endif
 
 .if !defined(WITH_BSDEL)
 CONFIGURE_ARGS+=	--disable-backspace-key --disable-delete-key
