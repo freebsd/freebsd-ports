@@ -2,6 +2,7 @@ bin/irb
 lib/ruby/%%RUBY_VER%%/irb/completion.rb
 lib/ruby/%%RUBY_VER%%/irb/frame.rb
 lib/ruby/%%RUBY_VER%%/irb/input-method.rb
+lib/ruby/%%RUBY_VER%%/irb/irb.rb
 lib/ruby/%%RUBY_VER%%/irb/loader.rb
 lib/ruby/%%RUBY_VER%%/irb/main.rb
 lib/ruby/%%RUBY_VER%%/irb/multi-irb.rb
