@@ -33,8 +33,8 @@ MOZILLA_PORT=	${PORTSDIR}/www/mozilla+ipv6
 .else
 MOZILLA_PORT=	${PORTSDIR}/www/mozilla
 .endif
-JLP_SRC=	${PORTNAME}${PORTVERSION}-langjajp-RC2.xpi \
-		${PORTNAME}${PORTVERSION}-regjp-RC2.xpi
+JLP_SRC=	${PORTNAME}${PORTVERSION:S/.r2$//}-langjajp-RC2.xpi \
+		${PORTNAME}${PORTVERSION:S/.r2$//}-regjp-RC2.xpi
 
 .include <bsd.port.pre.mk>
 
