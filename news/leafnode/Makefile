@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	leafnode
-PORTVERSION=	1.9.11
+PORTVERSION=	1.9.17
 CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.Awfulhak.org/leafnode/
