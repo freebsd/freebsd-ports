@@ -1,31 +1,12 @@
---- config/mime_drivers.php.dist.orig	Sat Jul 14 15:30:14 2001
-+++ config/mime_drivers.php.dist	Thu Nov 15 00:08:34 2001
-@@ -59,4 +59,47 @@
+--- config/mime_drivers.php.dist.orig	Mon Dec 24 04:51:49 2001
++++ config/mime_drivers.php.dist	Sun Feb 17 11:47:19 2002
+@@ -61,4 +61,28 @@
  $mime_drivers['imp']['html']['handles'] = array(
          'text/html', 'text/richtext' );
  
 +/**
 + * Misc utilities
 + */
-+
-+/* Spell checker */
-+/* BEGBSDASPELL$conf['utils']['spellchecker'] = '%%LOCALBASE%%/bin/aspell';ENDBSDASPELL */
-+
-+/* MS-Word viewer */
-+/* BEGBSDWV$conf['utils']['wordviewer'] = '%%LOCALBASE%%/bin/wvHtml';ENDBSDWV */
-+
-+/* MS-Excel viewer */
-+/* BEGBSDXL$conf['utils']['excelviewer'] = '%%LOCALBASE%%/bin/xlHtml';ENDBSDXL */
-+
-+/* MS-Powerpoint viewer */
-+/* BEGBSDXL$conf['utils']['powerpointviewer'] = '%%LOCALBASE%%/bin/pptHtml';ENDBSDXL */
-+
-+/* tar archive files
-+   Remark: you might prefer GNU tar, from the port archivers/gtar */
-+$conf['utils']['tar'] = '/usr/bin/tar';
-+
-+/* Zip file viewer */
-+/* BEGBSDZIP$conf['utils']['unzip'] = '%%LOCALBASE%%/bin/zipinfo';ENDBSDZIP */
 +
 +/**
 + ** PGP/GnuPG Configuration

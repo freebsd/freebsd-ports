@@ -7,7 +7,7 @@
 
 PORTNAME=	imp
 PORTVERSION=	3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.horde.org/pub/imp/tarballs/
 PKGNAMESUFFIX=	-devel
@@ -30,6 +30,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 #			  (or .ppt presentations);
 #
 # - WITHOUT_ZIP		: if not interested by zipinfo;
+#
+# - WITH_RAR		: if interested by rar (shareware archiver);
 #
 # - WITHOUT_ASPELL	: for spelling bees...
 #
@@ -109,6 +111,9 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/xlHtml:${PORTSDIR}/textproc/xlhtml
 .if !defined(WITHOUT_ZIP)
 RUN_DEPENDS+=	${LOCALBASE}/bin/zipinfo:${PORTSDIR}/archivers/unzip
 .endif
+.if defined(WITH_RAR)
+RUN_DEPENDS+=	${LOCALBASE}/bin/rar:${PORTSDIR}/archivers/rar
+.endif
 .if !defined(WITHOUT_ASPELL)
 RUN_DEPENDS+=	${LOCALBASE}/bin/aspell:${PORTSDIR}/textproc/aspell
 .endif
@@ -130,6 +135,7 @@ HORDEDIR=	${PREFIX}/${LHORDEDIR}
 IMPDIR=		${PREFIX}/${LIMPDIR}
 TURBADIR?=	${HORDEDIR}/turba
 CONFDIR=	${IMPDIR}/config
+HCONFDIR=	${HORDEDIR}/config
 
 HORDE_INC=	${LOCALBASE}/etc/horde
 
@@ -247,17 +253,15 @@ do-install:
 .endif
 .endif
 .if !defined(WITHOUT_ASPELL)
-	@${PERL} -pi -e "s:\/\* BEGBSDASPELL::;s:ENDBSDASPELL \*\/::" \
-			${CONFDIR}/mime_drivers.php
 	@${PERL} -pi -e "s:spellchecker'] = '':spellchecker'] = '${LOCALBASE}/bin/aspell':" \
 		${CONFDIR}/conf.php
 .endif
 .if !defined(WITHOUT_X11)
 .if !defined(WITHOUT_WV)
-	@${PERL} -pi -e "s:\/\* BEGBSDWV::;s:ENDBSDWV \*\/::" ${CONFDIR}/mime_drivers.php
+	@${PERL} -pi -e "s://UNCOMMENTIFWV ::" ${HCONFDIR}/mime_drivers.php
 .endif
 .if !defined(WITHOUT_XL)
-	@${PERL} -pi -e "s:\/\* BEGBSDXL::;s:ENDBSDXL \*\/::g" ${CONFDIR}/mime_drivers.php
+	@${PERL} -pi -e "s://UNCOMMENTIFXL ::" ${HCONFDIR}/mime_drivers.php
 .endif
 .endif
 #.if !defined(NOCRYPT)
@@ -270,14 +274,17 @@ do-install:
 #			${CONFDIR}/conf.php
 #.endif
 .if !defined(WITHOUT_ZIP)
-	@${PERL} -pi -e "s:\/\* BEGBSDZIP::;s:ENDBSDZIP \*\/::" ${CONFDIR}/mime_drivers.php
+	@${PERL} -pi -e "s://UNCOMMENTIFZIP ::" ${HCONFDIR}/mime_drivers.php
+.endif
+.if defined(WITH_RAR)
+	@${PERL} -pi -e "s://UNCOMMENTIFRAR ::" ${HCONFDIR}/mime_drivers.php
 .endif
 	@${CHOWN} -R www:www ${IMPDIR}
 	@${CHMOD} -R o-rwx ${CONFDIR}
 	@${CP} -p ${FILESDIR}/httpd.conf.imp ${HORDE_INC}/httpd.conf.imp
 	@${PERL} -pi -e "s:/home/httpd/html/horde/imp:${IMPDIR}:g" ${HORDE_INC}/httpd.conf.imp
 # Let's Horde use IMP for auth
-	@${PERL} -pi -e "s://UNCOMMENTWHENINSTIMP::" ${HORDEDIR}/config/registry.php
+	@${PERL} -pi -e "s://UNCOMMENTWHENINSTIMP::" ${HCONFDIR}/registry.php
 # Provide a link to IMP from Turba
 .if !defined(WITHOUT_TURBA)
 	@${PERL} -pi -e "s://UNCOMMENTWHENINSTIMP::" ${TURBADIR}/config/conf.php
@@ -285,7 +292,6 @@ do-install:
 		${CONFDIR}/conf.php
 .endif
 .if !defined(NOPORTDOCS)
-	@${PERL} -pi -e "s:/home/httpd/html/horde/imp:${IMPDIR}:g" ${WRKSRC}/docs/SECURITY
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
