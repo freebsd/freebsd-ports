@@ -7,6 +7,7 @@
 
 PORTNAME=	fortune-mod-futurama
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.netmeister.org/apps/
 
