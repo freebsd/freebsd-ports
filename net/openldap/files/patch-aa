@@ -1,0 +1,25 @@
+*** Make-common.orig	Fri Sep  4 13:28:19 1998
+--- Make-common	Mon Sep 21 14:35:10 1998
+***************
+*** 261,270 ****
+  # LDAP_ACLGROUP=-DACLGROUP
+  
+  # uncomment these lines to enable support for CRYPT passwords in LDBM.
+! # LDAP_CRYPT=-DLDAP_CRYPT
+  # LDAP_CRYPT_LIB?=
+  # and comment this line out
+! LDAP_CRYPT_LIB=
+  
+  # uncomment these lines to enable support fro tcp_wrappers in servers.
+  # Requires tcp_wrappers.
+--- 261,270 ----
+  # LDAP_ACLGROUP=-DACLGROUP
+  
+  # uncomment these lines to enable support for CRYPT passwords in LDBM.
+! LDAP_CRYPT=-DLDAP_CRYPT
+  # LDAP_CRYPT_LIB?=
+  # and comment this line out
+! # LDAP_CRYPT_LIB=
+  
+  # uncomment these lines to enable support fro tcp_wrappers in servers.
+  # Requires tcp_wrappers.
