@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	PostScript-Simple
-PORTVERSION=	0.05
+PORTVERSION=	0.06
 CATEGORIES=	print perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	PostScript
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	PostScript::Simple - Produce PostScript files from Perl
 
 PERL_CONFIGURE=	yes
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-MAN3=	PostScript::Simple.3
+MAN3=	PostScript::Simple.3 PostScript::Simple::EPS.3
 
 .include <bsd.port.mk>
