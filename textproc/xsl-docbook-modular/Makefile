@@ -11,6 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://nwalsh.com/docbook/xsl/
 DISTNAME=	dbx${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.zip
+BROKEN=		use docbook-xsl instead
 
 MAINTAINER=	kiri@FreeBSD.org
 
