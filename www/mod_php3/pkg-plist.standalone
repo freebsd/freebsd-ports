@@ -1,0 +1,3 @@
+bin/php3
+etc/php.standalone/php3.ini-dist
+@unexec rmdir %D/etc/php.standalone 2>/dev/null || true

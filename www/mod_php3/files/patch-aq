@@ -1,5 +1,5 @@
 --- configure.orig	Fri Oct 20 21:05:17 2000
-+++ configure	Wed Jan 31 01:00:13 2001
++++ configure	Mon Feb 26 13:09:58 2001
 @@ -1626,7 +1626,7 @@
    ;;
    *)
@@ -9,6 +9,15 @@
    for ac_dir in $ac_dummy; do 
      test -z "$ac_dir" && ac_dir=.
      if test -f $ac_dir/$ac_word; then
+@@ -4634,7 +4634,7 @@
+   
+ 	echo "$ac_t""no" 1>&6
+ 	BINNAME=php
+-	INSTALL_IT="cp $BINNAME \$(bindir)"
++	INSTALL_IT="cp $BINNAME \$(bindir)/php3"
+ 
+ fi
+ 
 @@ -5157,8 +5157,8 @@
      fi
  	if test "$withval" != "no" && test "$withval" != "yes"; then
