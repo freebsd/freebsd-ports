@@ -2,6 +2,9 @@ bin/makerom
 bin/mknbi-dos
 bin/mknbi-linux
 bin/mknbi-mgl
+@unexec if cmp -s %D/etc/netboot.config %D/etc/netboot.config-dist; then rm -f %D/etc/netboot.config; fi
+etc/netboot.config-dist
+@exec [ -f %B/netboot.config ] || cp %B/%f %B/netboot.config
 lib/netboot/netboot.drivers
 lib/netboot/binaries/floppy.bin
 lib/netboot/binaries/floppy86.bin

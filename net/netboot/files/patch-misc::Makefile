@@ -1,0 +1,11 @@
+--- misc/Makefile.orig	Wed Jan 19 15:24:01 2005
++++ misc/Makefile	Wed Jan 19 15:24:27 2005
+@@ -77,7 +77,7 @@
+ 	$(INSTALL) -d $(sysconfdir)
+ 	$(INSTALL) -d $(nblibdir)
+ 	$(INSTALL) -d $(mandir)/man$(MANEXT)
+-	$(INSTALL) -m 644 -o bin -g bin $(nbconfig) $(sysconfdir)/$(nbconfig)
++	$(INSTALL) -m 644 -o bin -g bin $(nbconfig) $(sysconfdir)/$(nbconfig)-dist
+ 	$(INSTALL) -m 644 -o bin -g bin $(drivers) $(nblibdir)/$(drivers)
+ 	$(INSTALL) -m 644 -o bin -g bin netboot.man $(mandir)/man$(MANEXT)/netboot.$(MANEXT)
+ 	$(INSTALL) -m 644 -o bin -g bin $(nbconfig).man $(mandir)/man$(MANEXT)/$(nbconfig).$(MANEXT)
