@@ -1,0 +1,21 @@
+--- config/Makefile.orig	Fri Nov  4 23:30:45 1994
++++ config/Makefile	Wed May 15 21:28:28 1996
+@@ -11,7 +11,7 @@
+ #
+ # RcsId: "$Header: /home/ncvs/ports/security/fwtk/patches/patch-aa,v 1.1.1.1 1996/06/15 06:55:51 gpalmer Exp $"
+ 
+ include	../Makefile.config
+ 
+ 
+ # these are no-ops
+@@ -19,7 +19,7 @@
+ clean:
+ 
+ install:
+-	if [ ! -f $(DEST)/netperm-table ]; then \
+-		$(CP) netperm-table $(DEST); \
+-		chmod 644 $(DEST)/netperm-table; \
++	if [ ! -f $(DEST)/../etc/netperm-table ]; then \
++		$(CP) netperm-table $(DEST)/../etc/; \
++		chmod 644 $(DEST)/../etc/netperm-table; \
+ 	fi
