@@ -8,7 +8,7 @@
 PORTNAME=	plex
 PORTVERSION=	1.1.4.1
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.cosc.canterbury.ac.nz/~greg/python/Plex/
+MASTER_SITES=	http://nz.cosc.canterbury.ac.nz/~greg/python/Plex/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Plex-${PORTVERSION}
 
