@@ -316,6 +316,7 @@ orion1.4.5/parser.jar
 orion1.4.5/orionconsole.jar
 orion1.4.5/orion.jar
 orion1.4.5/mail.jar
+@dirrm orion1.4.5/application-deployments
 @dirrm orion1.4.5/config/database-schemas
 @dirrm orion1.4.5/config
 @dirrm orion1.4.5/default-web-app/examples/cal

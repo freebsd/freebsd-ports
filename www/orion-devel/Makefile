@@ -7,13 +7,12 @@
 
 PORTNAME=	orion
 PORTVERSION=	1.4.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java www
 MASTER_SITES=	ftp://ftp.sunet.se/pub/database/utils/orionserver/ \
 		http://www.jollem.com/ \
 		http://www.sebster.com/~elvis/
 DISTNAME=	${PORTNAME}${PORTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ernst@jollem.com
 
@@ -24,7 +23,6 @@ NO_BUILD=	YES
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ORION_DESTDIR=	${PREFIX}/${DISTNAME}
-ORION_LINKDIR=	${PREFIX}/${PORTNAME}
 PORTTITLE=	Orion Server
 ORIONCTL_NAME=	orionctl
 ORIONCTL_DEST=	${PREFIX}/bin/${ORIONCTL_NAME}
@@ -43,6 +41,7 @@ do-install:
 	@${CP} ${FILESDIR}/${ORIONCTL_NAME}  ${ORIONCTL_DEST}
 	@${CHMOD} 755 ${ORIONCTL_DEST}
 	@${LN} -s ${ORIONCTL_DEST} ${RC_SCRIPT}
+	@${MKDIR} ${ORION_DESTDIR}/application-deployments
 
 post-install:
 	@echo "${PORTTITLE} ${PORTVERSION} has been installed in ${ORION_DESTDIR}."
