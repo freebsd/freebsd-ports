@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	gpaint
-PORTVERSION=	0.2
+PORTVERSION=	0.2.2
 CATEGORIES=	graphics gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	ftp://alpha.gnu.org/pub/gnu/gpaint/
 
 MAINTAINER=	sobomax@FreeBSD.org
 
