@@ -22,7 +22,7 @@ WRKSRC=	${WRKDIR}/${PORTNAME}-Tool-${PORTVERSION}-Source
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-DOCS=	HVSC_Update.txt PSID_v2NG.txt
+DOCS=	HVSC_Update.txt SID_file_format.txt
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/Update ${PREFIX}/bin/HVSC-Update
