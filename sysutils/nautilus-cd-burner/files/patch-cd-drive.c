@@ -1,5 +1,5 @@
 --- cd-drive.c.orig	Mon Sep  8 15:24:07 2003
-+++ cd-drive.c	Sun Dec 21 02:40:36 2003
++++ cd-drive.c	Tue Dec 30 12:46:59 2003
 @@ -693,28 +693,133 @@
  #endif /* __linux__ */
  
@@ -32,29 +32,6 @@
 +			  NULL,
 +			  NULL,
 +			  NULL)) {
-+		rd_speed = strstr (stdout_data, "Maximum read  speed:");
-+		if (rd_speed != NULL) {
-+		    	char *tok;
-+			rd_speed += strlen ("Maximum read  speed:");
-+			for (tok = strtok (rd_speed, " (),\t\n"); 
-+				tok && strcmp (tok, "CD"); 
-+				tok = strtok (NULL, " (),\t\n")) {}
-+			tok = strtok (NULL, " (),\t\n"); /* Get the CD speed. */
-+			*max_rd_speed = atol (tok);
-+		}
-+		else {
-+		    	rd_speed = strstr (stdout_data, "Maximum read  speed in kB/s:");
-+			if (rd_speed != NULL) {
-+			    	char *tok;
-+			    	rd_speed += strlen ("Maximum read  speed in kB/s:");
-+				for (tok = strtok (rd_speed, " (),\t\n");
-+					tok && strcmp (tok, "CD");
-+					tok = strtok (NULL, " (),\t\n")) {}
-+				tok = strtok (NULL, " (),\t\n"); /* Get the CD speed. */
-+				*max_rd_speed = atol (tok);
-+			}
-+		}
-+
 +		wr_speed = strstr (stdout_data, "Maximum write speed:");
 +		if (wr_speed != NULL) {
 +		    	char *tok;
@@ -75,6 +52,29 @@
 +					tok = strtok (NULL, " (),\t\n")) {}
 +				tok = strtok (NULL, " (),\t\n"); /* Get the CD speed. */
 +				*max_wr_speed = atol (tok);
++			}
++		}
++
++		rd_speed = strstr (stdout_data, "Maximum read  speed:");
++		if (rd_speed != NULL) {
++		    	char *tok;
++			rd_speed += strlen ("Maximum read  speed:");
++			for (tok = strtok (rd_speed, " (),\t\n"); 
++				tok && strcmp (tok, "CD"); 
++				tok = strtok (NULL, " (),\t\n")) {}
++			tok = strtok (NULL, " (),\t\n"); /* Get the CD speed. */
++			*max_rd_speed = atol (tok);
++		}
++		else {
++		    	rd_speed = strstr (stdout_data, "Maximum read  speed in kB/s:");
++			if (rd_speed != NULL) {
++			    	char *tok;
++			    	rd_speed += strlen ("Maximum read  speed in kB/s:");
++				for (tok = strtok (rd_speed, " (),\t\n");
++					tok && strcmp (tok, "CD");
++					tok = strtok (NULL, " (),\t\n")) {}
++				tok = strtok (NULL, " (),\t\n"); /* Get the CD speed. */
++				*max_rd_speed = atol (tok);
 +			}
 +		}
 +		drive_cap = strstr (stdout_data, "Does write DVD-RAM media");
