@@ -47,8 +47,12 @@ BROKEN=		Mozilla-devel and Xft2 render the mozilla-fonts \
 .endif
 .endif
 
+.if defined(WITH_CALENDAR) && (defined(WITHOUT_MAILNEWS) || \
+	defined(WITHOUT_COMPOSER))
+BROKEN=	Calendar requires Composer and Mailnews support.
+.endif
+
 .if defined(WITH_CALENDAR)
-DISTFILES+=	${PORTNAME}-calendar-${PORTVERSION}${EXTRACT_SUFX}:local
 LIB_DEPENDS+=	ical.0:${PORTSDIR}/devel/libical
 .endif
 
