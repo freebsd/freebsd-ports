@@ -1,0 +1,13 @@
+--- src/generator.c.orig	Mon May  1 02:01:59 2000
++++ src/generator.c	Wed Apr 18 22:32:44 2001
+@@ -109,8 +109,10 @@
+     ui_err("Failed to initialise cpuz80 module (%d)", retval);
+ 
+   /* initialise sound system */
++/*
+   if ((retval = sound_init()))
+     ui_err("Failed to initialise sound module (%d)", retval);
++*/
+ 
+   signal(SIGINT, gen_sighandler);
+ 

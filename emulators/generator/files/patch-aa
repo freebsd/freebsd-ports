@@ -1,0 +1,140 @@
+--- compile/configure.orig	Wed Apr 18 19:33:42 2001
++++ compile/configure	Wed Apr 18 21:09:12 2001
+@@ -2009,7 +2009,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-ltcl8.0  $LIBS"
++LIBS="-ltcl82  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 2015 "configure"
+ #include "confdefs.h"
+@@ -2037,7 +2037,7 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  LIBS="$LIBS -ltcl8.0"; lib=yes
++  LIBS="$LIBS -ltcl82"; lib=yes
+ else
+   echo "$ac_t""no" 1>&6
+ lib=no
+@@ -2051,7 +2051,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-ltcl  $LIBS"
++LIBS="-ltcl82  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 2057 "configure"
+ #include "confdefs.h"
+@@ -2079,7 +2079,7 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  LIBS="$LIBS -ltcl"; lib=yes
++  LIBS="$LIBS -ltcl82"; lib=yes
+ else
+   echo "$ac_t""no" 1>&6
+ lib=no
+@@ -2096,7 +2096,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-ltk8.0  $LIBS"
++LIBS="-ltk82  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 2102 "configure"
+ #include "confdefs.h"
+@@ -2124,7 +2124,7 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  LIBS="$LIBS -ltk8.0"; lib=yes
++  LIBS="$LIBS -ltk82"; lib=yes
+ else
+   echo "$ac_t""no" 1>&6
+ lib=no
+@@ -2138,7 +2138,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-ltk  $LIBS"
++LIBS="-ltk82  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 2144 "configure"
+ #include "confdefs.h"
+@@ -2166,7 +2166,7 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  LIBS="$LIBS -ltk"; lib=yes
++  LIBS="$LIBS -ltk82"; lib=yes
+ else
+   echo "$ac_t""no" 1>&6
+ lib=no
+@@ -2322,18 +2322,20 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lalleg  $LIBS"
++LIBS="-L/usr/local/lib -lalleg-3.9.34 -lalleg_unsharable $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 2328 "configure"
+ #include "confdefs.h"
+ /* Override any gcc2 internal prototype to avoid an error.  */
+ /* We use char because int might match the return type of a gcc2
+     builtin and then its argument prototype would still apply.  */
+-char allegro_exit();
++#include <allegro.h>
+ 
+ int main() {
+ allegro_exit()
+ ; return 0; }
++
++END_OF_MAIN();
+ EOF
+ if { (eval echo configure:2339: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+   rm -rf conftest*
+@@ -2350,7 +2352,7 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  LIBS="$LIBS -lalleg";lib=yes
++  LIBS="$LIBS -L/usr/local/lib -lalleg-3.9.34 -lalleg_unsharable";lib=yes
+ else
+   echo "$ac_t""no" 1>&6
+ lib=no
+@@ -2599,7 +2601,7 @@
+ #include "confdefs.h"
+ #include <$ac_hdr>
+ EOF
+-ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
++ac_try="$ac_cpp -I/usr/local/include/tk8.2/ -I/usr/local/include/tcl8.2/ conftest.$ac_ext >/dev/null 2>conftest.out"
+ { (eval echo configure:2604: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
+ ac_err=`grep -v '^ *+' conftest.out | grep -v "^conftest.${ac_ext}\$"`
+ if test -z "$ac_err"; then
+@@ -2686,7 +2688,7 @@
+ #include "confdefs.h"
+ #include <$ac_hdr>
+ EOF
+-ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
++ac_try="$ac_cpp -I/usr/local/include/tcl8.2 conftest.$ac_ext >/dev/null 2>conftest.out"
+ { (eval echo configure:2691: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
+ ac_err=`grep -v '^ *+' conftest.out | grep -v "^conftest.${ac_ext}\$"`
+ if test -z "$ac_err"; then
+@@ -2950,6 +2952,7 @@
+   fprintf(f, "%d\n", sizeof(unsigned char));
+   exit(0);
+ }
++
+ EOF
+ if { (eval echo configure:2955: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
+ then
+@@ -2982,6 +2985,7 @@
+ #line 2983 "configure"
+ #include "confdefs.h"
+ #include <stdio.h>
++
+ main()
+ {
+   FILE *f=fopen("conftestval", "w");

@@ -1,0 +1,6 @@
+SEGA Genesis emulator
+
+I ported to FreeBSD with all sound support off.
+If you want the sound support, you hack.
+
+WWW: http://www.squish.net/generator/
