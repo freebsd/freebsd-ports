@@ -1,2 +1,0 @@
-all install:
-	cd src; ${MAKE} -f Makefile.freebsd $@

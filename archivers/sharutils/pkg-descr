@@ -1,8 +1,0 @@
-This is the set of GNU shar utilities.
-
-`shar' makes so-called shell archives out of many files, preparing
-them for transmission by electronic mail services.  `unshar' helps
-unpacking shell archives after reception.  The core of both programs
-is initially derived from public domain.  Some modules and other
-code sections are freely borrowed from other GNU distributions,
-bringing `shar' under the terms of the GNU General Public License.
