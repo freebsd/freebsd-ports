@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.238 1998/11/18 20:03:34 billf Exp $
+# $Id: Makefile,v 1.239 1998/11/21 01:32:14 flathill Exp $
 #
 
     SUBDIR += XFree86
@@ -18,6 +18,20 @@
     SUBDIR += XttXF86srv-W32
     SUBDIR += XttXF86srv-common
     SUBDIR += XttXF86srv-xfs
+    SUBDIR += XttXF98srv-EGC
+    SUBDIR += XttXF98srv-GA968
+    SUBDIR += XttXF98srv-GANBWAP
+    SUBDIR += XttXF98srv-MGA
+    SUBDIR += XttXF98srv-NEC480
+    SUBDIR += XttXF98srv-NECS3
+    SUBDIR += XttXF98srv-NKVNEC
+    SUBDIR += XttXF98srv-PWLB
+    SUBDIR += XttXF98srv-PWSKB
+    SUBDIR += XttXF98srv-SVGA
+    SUBDIR += XttXF98srv-TGUI
+    SUBDIR += XttXF98srv-WABEP
+    SUBDIR += XttXF98srv-WABS
+    SUBDIR += XttXF98srv-WSNA
     SUBDIR += blast
     SUBDIR += bricons
     SUBDIR += camltk41
