@@ -1,7 +1,4 @@
-@cd /usr/X386
 @mode 755
-@exec mkdir lib/X11/fvwm
-@exec mkdir lib/X11/fvwm/pixmaps
 @owner bin
 @group bin
 bin/fvwm
@@ -16,41 +13,14 @@ lib/X11/fvwm/FvwmWinList
 lib/X11/fvwm/GoodStuff
 @mode 644
 lib/X11/fvwm/system.fvwmrc
-man/man1/fvwm.1x
-man/man1/FvwmWinList.1x
-man/man1/FvwmSave.1x
-man/man1/FvwmPager.1x
-man/man1/FvwmClean.1x
-man/man1/FvwmDebug.1x
-man/man1/FvwmIdent.1x
-man/man1/GoodStuff.1x
-man/man1/FvwmBanner.1x
-man/man1/xpmroot.1x
-lib/X11/fvwm/4Dwm.fvwmrc
-lib/X11/fvwm/README
-lib/X11/fvwm/mwm.fvwmrc
-lib/X11/fvwm/pixmaps/arrdown2.xpm
-lib/X11/fvwm/pixmaps/arrows2.xpm
-lib/X11/fvwm/pixmaps/arrup2.xpm
-lib/X11/fvwm/pixmaps/bomb.xpm
-lib/X11/fvwm/pixmaps/clamp.xpm
-lib/X11/fvwm/pixmaps/datebook.xpm
-lib/X11/fvwm/pixmaps/desk.xpm
-lib/X11/fvwm/pixmaps/fvwm.xpm
-lib/X11/fvwm/pixmaps/fvwm2.xpm
-lib/X11/fvwm/pixmaps/fvwm3.xpm
-lib/X11/fvwm/pixmaps/graphs.xpm
-lib/X11/fvwm/pixmaps/mag_glass.xpm
-lib/X11/fvwm/pixmaps/mail1.xpm
-lib/X11/fvwm/pixmaps/mail2.xpm
-lib/X11/fvwm/pixmaps/map.xpm
-lib/X11/fvwm/pixmaps/math4.xpm
-lib/X11/fvwm/pixmaps/rbomb.xpm
-lib/X11/fvwm/pixmaps/rcalc.xpm
-lib/X11/fvwm/pixmaps/rterm.xpm
-lib/X11/fvwm/pixmaps/term.xpm
-lib/X11/fvwm/pixmaps/toolbox.xpm
-lib/X11/fvwm/pixmaps/unknown1.xpm
-lib/X11/fvwm/pixmaps/xcalc.xpm
-lib/X11/fvwm/pixmaps/xman.xpm
-lib/X11/fvwm/pixmaps/xterm.xpm
+man/man1/fvwm.1.gz
+man/man1/FvwmWinList.1.gz
+man/man1/FvwmSave.1.gz
+man/man1/FvwmPager.1.gz
+man/man1/FvwmClean.1.gz
+man/man1/FvwmDebug.1.gz
+man/man1/FvwmIdent.1.gz
+man/man1/GoodStuff.1.gz
+man/man1/FvwmBanner.1.gz
+man/man1/xpmroot.1.gz
+lib/X11/fvwm/system.fvwmrc
