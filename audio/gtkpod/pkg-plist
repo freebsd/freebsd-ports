@@ -1,5 +1,5 @@
 bin/gtkpod
 share/locale/de/LC_MESSAGES/gtkpod.mo
 share/locale/ja/LC_MESSAGES/gtkpod.mo
-%%PORTDOCS%%/share/doc/gtkpod/README
+%%PORTDOCS%%share/doc/gtkpod/README
 %%PORTDOCS%%@dirrm share/doc/gtkpod
