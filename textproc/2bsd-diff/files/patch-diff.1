@@ -1,0 +1,146 @@
+--- ../../man/man1/diff.1.orig	Tue Oct 22 14:00:30 1996
++++ ../../man/man1/diff.1	Wed Mar 19 02:06:08 2003
+@@ -4,12 +4,12 @@
+ .\"
+ .\"	@(#)diff.1	6.4.1 (2.11BSD) 1996/10/21
+ .\"
+-.TH DIFF 1 "October 21, 1996"
++.TH 2DIFF 1 "October 21, 1996"
+ .UC 4
+ .SH NAME
+-diff \- differential file and directory comparator
++2diff \- 2.11BSD differential file and directory comparator
+ .SH SYNOPSIS
+-.B diff
++.B 2diff
+ [
+ .B \-l
+ ] [
+@@ -22,14 +22,14 @@
+ .B \-biwt
+ ] dir1 dir2
+ .br
+-.B diff
++.B 2diff
+ [
+ \fB\-cefhn
+ ] [
+ \fB\-biwt\fR
+ ] file1 file2
+ .br
+-.B diff
++.B 2diff
+ [
+ .BI \-D string
+ ] [
+@@ -38,10 +38,10 @@
+ file1 file2
+ .SH DESCRIPTION
+ If both arguments are directories,
+-.I diff
++.I 2diff
+ sorts the contents of the directories by name, and then runs the
+ regular file
+-.I diff
++.I 2diff
+ algorithm (described below)
+ on text files which are different.
+ Binary files which differ,
+@@ -51,7 +51,7 @@
+ .TP
+ .B \-l
+ long output format; each text file
+-.I diff
++.I 2diff
+ is piped through
+ .IR pr (1)
+ to paginate it,
+@@ -60,26 +60,26 @@
+ .TP
+ .B \-r
+ causes application of
+-.I diff
++.I 2diff
+ recursively to common subdirectories encountered.
+ .TP
+ .B \-s
+ causes 
+-.I diff
++.I 2diff
+ to report files which are the same, which are otherwise not mentioned.
+ .TP
+ .B \-Sname
+ starts a directory
+-.I diff
++.I 2diff
+ in the middle beginning with file
+ .I name.
+ .PP
+ When run on regular files, and when comparing text files which differ
+ during directory comparison,
+-.I diff
++.I 2diff
+ tells what lines must be changed in the files to bring them into agreement.
+ Except in rare circumstances,
+-.I diff
++.I 2diff
+ finds a smallest sufficient set of file differences.
+ If neither
+ .I file1
+@@ -163,7 +163,7 @@
+ version-to-version
+ .I ed
+ scripts ($2,$3,...) made by
+-.I diff
++.I 2diff
+ need be on hand.
+ A `latest version' appears on
+ the standard output.
+@@ -212,7 +212,7 @@
+ file to the other are marked in both files with with `! '.
+ 
+ Changes which lie within <context> lines of each other are grouped
+-together on output.  (This is a change from the previous ``diff -c''
++together on output.  (This is a change from the previous ``2diff -c''
+ but the resulting output is usually much easier to interpret.)
+ .TP 9
+ .B \-h
+@@ -223,7 +223,7 @@
+ .TP
+ .B \-Dstring
+ causes
+-.I diff
++.I 2diff
+ to create a merged version of
+ .I file1
+ and
+@@ -260,12 +260,12 @@
+ .SH FILES
+ /tmp/d?????
+ .br
+-/usr/libexec/diffh for 
++%%PREFIX%%/libexec/2diffh for 
+ .B \-h
+ .br
+-/bin/diff for directory diffs
++%%PREFIX%%/bin/2diff for directory diffs
+ .br
+-/bin/pr
++/usr/bin/pr
+ .SH "SEE ALSO"
+ cmp(1), cc(1), comm(1), ed(1), diff3(1)
+ .SH DIAGNOSTICS
+@@ -279,11 +279,11 @@
+ When comparing directories with the
+ \fB\-b, -w\fP or \fB-i\fP
+ options specified,
+-.I diff
++.I 2diff
+ first compares the files ala
+ .I cmp,
+ and then decides to run the
+-.I diff
++.I 2diff
+ algorithm if they are not equal.
+ This may cause a small amount of spurious output if the files
+ then turn out to be identical because the only differences are

@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
 
+    SUBDIR += 2bsd-diff
     SUBDIR += aft
     SUBDIR += agrep
     SUBDIR += align

@@ -1,0 +1,36 @@
+--- Makefile.orig	Tue Oct 22 13:29:46 1996
++++ Makefile	Wed Mar 19 01:29:12 2003
+@@ -1,9 +1,9 @@
+ #	@(#)Makefile	4.1.1	1996/10/21
+ #
+-DIFF=	/bin/diff
+-DIFFH=	/usr/libexec/diffh
+-PR=	/bin/pr
+-CFLAGS=	-O -DDIFF='"${DIFF}"' -DDIFFH='"${DIFFH}"' -DPR='"${PR}"'
++DIFF=	${PREFIX}/bin/2diff
++DIFFH=	${PREFIX}/libexec/2diffh
++PR=	/usr/bin/pr
++CFLAGS+=-DDIFF='"${DIFF}"' -DDIFFH='"${DIFFH}"' -DPR='"${PR}"'
+ SEPFLAG=-i
+ DESTDIR=
+ 
+@@ -14,14 +14,15 @@
+ all: diff diffh
+ 
+ diff: ${OBJS}
+-	cc ${CFLAGS} -o diff ${OBJS} ${SEPFLAG} ${LDFLAGS}
++	${CC} ${CFLAGS} -o diff ${OBJS} ${SEPFLAG} ${LDFLAGS}
+ 
+ diffh: diffh.o
+-	cc -o diffh diffh.o ${SEPFLAG} ${LDFLAGS}
++	${CC} ${CFLAGS} -o diffh diffh.o ${SEPFLAG} ${LDFLAGS}
+ 
+ clean:
+ 	rm -f diff diffh ${OBJS} diffh.o
+ 
+ install: all
+-	install -s diff ${DESTDIR}/bin/diff
+-	install -s diffh ${DESTDIR}/usr/libexec/diffh
++	${BSD_INSTALL_PROGRAM} diff  ${DIFF}
++	${BSD_INSTALL_PROGRAM} diffh ${DIFFH}
++	${BSD_INSTALL_MAN}     ../../man/man1/diff.1 ${MANPREFIX}/man/man1/2diff.1
