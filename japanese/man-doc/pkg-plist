@@ -195,6 +195,9 @@ share/man/ja/man1/nm.1.gz
 share/man/ja/man1/nohup.1.gz
 share/man/ja/man1/nroff.1.gz
 share/man/ja/man1/od.1.gz
+share/man/ja/man1/opieinfo.1.gz
+share/man/ja/man1/opiekey.1.gz
+share/man/ja/man1/opiepasswd.1.gz
 share/man/ja/man1/pagesize.1.gz
 share/man/ja/man1/passwd.1.gz
 share/man/ja/man1/paste.1.gz

@@ -5,7 +5,7 @@
 *        # pkg_add ja-man-1.1f.tgz                                    *
 *                                                                     *
 * (1) Then, see jman(1) with following command sequence:              *
-*        % setenv LC_ALL ja_JP.EUC                                    *
+*        % setenv LC_CTYPE ja_JP.EUC                                  *
 *        % setenv PAGER jless                                         *
 *        % jman jman                                                  *
 *                                                                     *
