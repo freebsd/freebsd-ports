@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	numarray
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	math python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	numpy
@@ -21,7 +21,7 @@ NO_BUILD=	yes # setup.py doesn't work as expected for 'build' target.
 PLIST_SUB=	DOCSDIR=${DOCSDIR:S,${PREFIX}/,,} \
 		EXAMPLESDIR=${EXAMPLESDIR:S,${PREFIX}/,,}
 
-post-extract:
+post-configure:
 	cd ${WRKSRC} && \
 	${PYTHON_CMD} Lib/codegenerator.py && \
 	${PYTHON_CMD} Include/numarray/genapis.py

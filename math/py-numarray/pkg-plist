@@ -33,10 +33,14 @@
 %%PYTHON_SITELIBDIR%%/numarray/_ufuncInt8.so
 %%PYTHON_SITELIBDIR%%/numarray/_ufuncUInt16.so
 %%PYTHON_SITELIBDIR%%/numarray/_ufuncUInt32.so
+%%PYTHON_SITELIBDIR%%/numarray/_ufuncUInt64.so
 %%PYTHON_SITELIBDIR%%/numarray/_ufuncUInt8.so
 %%PYTHON_SITELIBDIR%%/numarray/_ufuncall.py
 %%PYTHON_SITELIBDIR%%/numarray/_ufuncall.pyc
 %%PYTHON_SITELIBDIR%%/numarray/_ufuncall.pyo
+%%PYTHON_SITELIBDIR%%/numarray/array_persist.py
+%%PYTHON_SITELIBDIR%%/numarray/array_persist.pyc
+%%PYTHON_SITELIBDIR%%/numarray/array_persist.pyo
 %%PYTHON_SITELIBDIR%%/numarray/arrayprint.py
 %%PYTHON_SITELIBDIR%%/numarray/arrayprint.pyc
 %%PYTHON_SITELIBDIR%%/numarray/arrayprint.pyo
@@ -263,6 +267,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/manual/arraybasics.tex
 %%PORTDOCS%%%%DOCSDIR%%/manual/arrayfunctions.tex
 %%PORTDOCS%%%%DOCSDIR%%/manual/arraymethods.tex
+%%PORTDOCS%%%%DOCSDIR%%/manual/chararray.tex
 %%PORTDOCS%%%%DOCSDIR%%/manual/convolve.tex
 %%PORTDOCS%%%%DOCSDIR%%/manual/copyright.tex
 %%PORTDOCS%%%%DOCSDIR%%/manual/extending.tex
@@ -278,6 +283,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/manual/overview.tex
 %%PORTDOCS%%%%DOCSDIR%%/manual/pseudoindices.tex
 %%PORTDOCS%%%%DOCSDIR%%/manual/randomarray.tex
+%%PORTDOCS%%%%DOCSDIR%%/manual/recordarray.tex
 %%PORTDOCS%%%%DOCSDIR%%/manual/table.py
 %%PORTDOCS%%%%DOCSDIR%%/manual/ufuncs.tex
 %%PORTDOCS%%%%DOCSDIR%%/manual/webpage/update.py
@@ -300,10 +306,13 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/convolve/numpy_compatmodule.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/convolve/one_dimensionalmodule.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/convolve/testlite.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/f2py/f2py_numeric.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/f2py/f2py_tests.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/obench.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/pstats.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/sortperf.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/testthread.py
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/f2py
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/convolve
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual/webpage
