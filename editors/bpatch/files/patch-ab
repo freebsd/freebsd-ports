@@ -1,5 +1,5 @@
---- bpatch.c.orig	Sat Jul  4 12:12:02 1998
-+++ bpatch.c	Sat Jul  4 12:13:22 1998
+--- bpatch.c.orig	Wed Jan 17 08:33:33 1990
++++ bpatch.c	Sat Sep 18 18:08:04 1999
 @@ -90,10 +90,15 @@
  /*E*/
  /*S includes, globals, and defines */
@@ -56,11 +56,13 @@
  	int		c;		/* current screen column	*/
  	int		change = 0;	/* true if cmd line option toggled */
  	int		fid;		/* file descriptor 		*/
-@@ -235,7 +232,6 @@
+@@ -234,8 +231,7 @@
+ 	extern char *optarg;		/* getopt pointer to opt arg	*/
  
  	extern long getnum ();
- 	extern char *instr ();		/* get a string from the cmd line */
+-	extern char *instr ();		/* get a string from the cmd line */
 -	extern int reset ();		/* exit function - reset terminal */
++	extern char *myinstr ();	/* get a string from the cmd line */
  
  	/* ------------------------------------------------------------ */
  	/* set up signal handling					 */
@@ -105,6 +107,15 @@
  
  				if (pbrk) status = EOF;
  			}
+@@ -617,7 +623,7 @@
+ 
+ 			case	'\006':	/* new file (^F) */
+ 				close (fid);
+-				fid = ckfile (cp = instr (), &size);
++				fid = ckfile (cp = myinstr (), &size);
+ 				if (fid < 0)
+ 				{
+ 					fid = ckfile (filename, &size);
 @@ -832,7 +838,8 @@
  				touchwin (alphawin);
  				wrefresh (alphawin);
@@ -159,6 +170,30 @@
  }
  /*S arrow - determine if current character is a cursor control key */
  /*H arrow */
+@@ -1683,11 +1691,11 @@
+ 
+ 	return;
+ }
+-/*S instr - get a character string from the terminal */
+-/*H instr */
++/*S myinstr - get a character string from the terminal */
++/*H myinstr */
+ /*E*/
+ char *
+-instr ()
++myinstr ()
+ {
+ 	static char buf[512];
+ 
+@@ -1827,7 +1835,7 @@
+ 	register int matched = 0;
+ 	register int srch_len;
+ 
+-	register char *cp = instr ();
++	register char *cp = myinstr ();
+ 	register char *rp;
+ 
+ 	int row, col;
 @@ -1924,8 +1932,8 @@
  outstr (fmt)
  char *fmt;
