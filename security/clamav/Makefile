@@ -7,7 +7,6 @@
 
 PORTNAME=	clamav
 PORTVERSION=	${DISTVERSION:S/-rc//g:S/-/./g}
-PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	clamav
@@ -24,7 +23,7 @@ RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 		arc:${PORTSDIR}/archivers/arc \
 		unzip:${PORTSDIR}/archivers/unzip
 
-DISTVERSION=	0.71
+DISTVERSION=	0.72
 
 OPTIONS=	MILTER "Compile the milter interface" off
 USE_REINPLACE=	yes
@@ -51,7 +50,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib \
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 MAN1=		clamscan.1 freshclam.1 sigtool.1 clamdscan.1
-MAN5=		clamav.conf.5
+MAN5=		clamav.conf.5 freshclam.conf.5
 MAN8=		clamd.8 clamav-milter.8
 
 CONFLICTS=	clamav-devel-*
