@@ -13,7 +13,6 @@ MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/
 MAINTAINER=	markp@FreeBSD.org
 
 LIB_DEPENDS=	SDL_image.10:${PORTSDIR}/graphics/sdl_image
-RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2
 
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
@@ -26,7 +25,7 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${X11BASE}/include" \
 
 post-patch:
 	${REINPLACE_CMD} -e "s|sdl-config|${SDL_CONFIG}|g; \
-		s|/bin/sh|/usr/local/bin/bash|g" ${WRKSRC}/gengameng-config.in
+		s|^function ||g" ${WRKSRC}/gengameng-config.in
 	${REINPLACE_CMD} -e "s/sdl_image.m4//" ${WRKSRC}/macros/Makefile.in
 
 .include <bsd.port.mk>
