@@ -33,6 +33,7 @@
     SUBDIR += cannadic
     SUBDIR += canuum
     SUBDIR += cdrom2
+    SUBDIR += celrw
     SUBDIR += chasen
     SUBDIR += chasen-base
     SUBDIR += chimera
