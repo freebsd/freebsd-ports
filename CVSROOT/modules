@@ -9534,6 +9534,7 @@ zh-p5-Encode-HanConvert	ports/chinese/p5-Encode-HanConvert
 zh-p5-Lingua-ZH-Keywords	ports/chinese/p5-Lingua-ZH-Keywords
 zh-p5-Lingua-ZH-Numbers	ports/chinese/p5-Lingua-ZH-Numbers
 zh-p5-Lingua-ZH-TaBE	ports/chinese/p5-Lingua-ZH-TaBE
+zh-p5-Lingua-ZH-Toke	ports/chinese/p5-Lingua-ZH-Toke
 zh-pine4	ports/chinese/pine4
 zh-pyDict	ports/chinese/pyDict
 zh-qe		ports/chinese/qe
