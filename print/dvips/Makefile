@@ -3,7 +3,7 @@
 # Date created:         30 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.15 1997/02/10 02:08:24 jmz Exp $
+# $Id: Makefile,v 1.16 1997/08/25 01:29:40 jmz Exp $
 #
 
 DISTNAME=	dvips574
@@ -21,7 +21,7 @@ pre-install:
 	@${MKDIR} ${PREFIX}/share/texmf
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/texmf/fonts/vf  ${PREFIX}/share/texmf/tex/latex
+	@${MKDIR} ${PREFIX}/share/texmf/fonts/vf  ${PREFIX}/share/texmf/fonts/tfm  ${PREFIX}/share/texmf/tex/latex
 	@install -c  -m 644 ${WRKDIR}/dvips574/dvips/*.sty ${PREFIX}/share/texmf/tex/latex
 	@install -c  -m 644 ${WRKDIR}/dvips574/PSlatex/*.sty ${PREFIX}/share/texmf/tex/latex
 	@install -c  -m 644 ${WRKDIR}/dvips574/PStfms/*.tfm ${PREFIX}/share/texmf/fonts/tfm
