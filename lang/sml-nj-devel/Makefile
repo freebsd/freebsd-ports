@@ -32,7 +32,7 @@ DISTFILES+=	MLRISC.tgz cm.tgz compiler.tgz system.tgz
 .endif
 EXTRACT_ONLY=	config.tgz
 
-MAINTAINER=	jkoshy@freebsd.org
+MAINTAINER=	joemann@beefree.free.de
 
 .if (${MACHINE_ARCH} == "i386")
 MLARCH=		x86
