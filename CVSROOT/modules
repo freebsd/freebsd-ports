@@ -7006,6 +7006,7 @@ ruby-rexml	ports/textproc/ruby-rexml
 ruby-ri		ports/lang/ruby-ri
 ruby-rica	ports/irc/ruby-rica
 ruby-rice	ports/irc/ruby-rice
+ruby-rmagick	ports/graphics/ruby-rmagick
 ruby-rmail	ports/mail/ruby-rmail
 ruby-robjectteam	ports/devel/ruby-robjectteam
 ruby-romp	ports/net/ruby-romp
