@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+
+sitename=`hostname`
+echo -n "Site name? [$sitename] "
+read answer; if [ X$answer != X ]; then sitename=$answer; fi
+maintainer="mailto:webmaster@$sitename"
+echo -n "URL to default WWW admin? [$maintainer] "
+read answer; if [ X$answer != X ]; then maintainer=$answer; fi
+sed -e "/MAINTAINER/s/\".*\"/\"$maintainer\"/" \
+    ${WRKSRC}/config.h >${WRKSRC}/config.h.foo
+mv ${WRKSRC}/config.h.foo ${WRKSRC}/config.h
+sed -e "s/\$MAINTAINER/$maintainer/g" -e "s/\$SITENAME/$sitename/g" \
+				${FILESDIR}/index >${WRKDIR}/index
