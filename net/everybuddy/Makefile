@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	everybuddy
-PORTVERSION=	0.4.2
-PORTREVISION=	2
+PORTVERSION=	0.4.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.everybuddy.com/files/
 
@@ -44,9 +43,6 @@ pre-patch:
 		 s|-lpthreads|${PTHREAD_LIBS:S/"//g}|g; \
 		 s|-D_REENTRANT -Wall -g|-D_REENTRANT ${PTHREAD_CFLAGS}|g' \
 			${WRKSRC}/configure
-	@${REINPLACE_CMD} -e \
-		's|share/everybuddy/modules|/lib/everybuddy/modules|g' \
-			${WRKSRC}/src/config.sh.in
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|^Utilitiesdir|#Utilitiesdir|g; \
 		 s|^Utilities_DATA|#Utilities_DATA|g; \

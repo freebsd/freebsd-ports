@@ -5,6 +5,8 @@ lib/everybuddy/modules/aim-toc.la
 lib/everybuddy/modules/aim-toc.so
 lib/everybuddy/modules/autotrans.la
 lib/everybuddy/modules/autotrans.so
+lib/everybuddy/modules/giles_smiles.la
+lib/everybuddy/modules/giles_smiles.so
 lib/everybuddy/modules/icq.la
 lib/everybuddy/modules/icq.so
 lib/everybuddy/modules/import_gaim.la
@@ -21,6 +23,8 @@ lib/everybuddy/modules/jabber.la
 lib/everybuddy/modules/jabber.so
 lib/everybuddy/modules/middle.la
 lib/everybuddy/modules/middle.so
+lib/everybuddy/modules/msn_smileys.la
+lib/everybuddy/modules/msn_smileys.so
 lib/everybuddy/modules/msn2.la
 lib/everybuddy/modules/msn2.so
 lib/everybuddy/modules/notes.la
@@ -31,9 +35,16 @@ lib/everybuddy/modules/smileys2.la
 lib/everybuddy/modules/smileys2.so
 lib/everybuddy/modules/smileysc.la
 lib/everybuddy/modules/smileysc.so
+lib/everybuddy/modules/yahoo_smileys.la
+lib/everybuddy/modules/yahoo_smileys.so
 lib/everybuddy/modules/yahoo2.la
 lib/everybuddy/modules/yahoo2.so
 share/locale/fr/LC_MESSAGES/everybuddy.mo
+share/locale/de/LC_MESSAGES/everybuddy.mo
+share/locale/pt_PT/LC_MESSAGES/everybuddy.mo
+share/locale/tr/LC_MESSAGES/everybuddy.mo
+share/locale/es/LC_MESSAGES/everybuddy.mo
+share/locale/ja/LC_MESSAGES/everybuddy.mo
 share/sounds/everybuddy/BuddyArrive.au
 share/sounds/everybuddy/BuddyLeave.au
 share/sounds/everybuddy/Receive.au
