@@ -61,7 +61,7 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-config.h.in
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-src:input:input_cdda.c
 .endif
 
-.if ${XFREE86_VERSION} >= 4
+.if ${X_WINDOW_SYSTEM:L} != xfree86-3
 PLIST_SUB+=	WITH_LIBXV=""
 .else
 PLIST_SUB+=	WITH_LIBXV="@comment "
