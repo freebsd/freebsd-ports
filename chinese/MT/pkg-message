@@ -1,0 +1,5 @@
+.
+WARNING:
+This port (chinese/MT) patched some files of www/MT.
+Before you upgrade www/MT, please deinstall chinese/MT first.
+.
