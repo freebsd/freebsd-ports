@@ -1,19 +1,14 @@
---- Makefile	Sun Jul 26 14:10:26 1998
-+++ /home/andy/tmp/wrk/Makefile	Wed Aug  5 15:44:32 1998
-@@ -1,14 +1,14 @@
- PROJECT	= hexedit
- VERSION = 0.9.3
- 
--CC=gcc
-+#CC=gcc
- TARSOURCE = $(PROJECT)-$(VERSION).src.tgz
- DYNAMICBIN = $(PROJECT)-$(VERSION).bin.i386.dynamic.tgz
- HTMLSITE = $(PROJECT)-html-site.tar
- HTMLFILES = $(PROJECT).html
- TMPFILES = $(DYNAMICBIN) $(TARSOURCE) $(HTMLFILES)
- 
--CFLAGS = -Wall -O2
-+CFLAGS+= -I/usr/local/include/ncurses -I/usr/local/include -L/usr/local/lib -lncurses
- LOADLIBES = -lcurses
- 
- .PHONY: clean tgz docs
+--- hexedit.h.orig	Mon Aug 31 20:50:50 1998
++++ hexedit.h	Sun Dec  6 15:36:13 1998
+@@ -12,7 +12,11 @@
+ #if HAVE_UNISTD_H
+ #include <unistd.h>
+ #endif
++#if HAVE_NCURSES_H
++#include <ncurses.h>
++#else
+ #include <curses.h>
++#endif
+ #include <ctype.h>
+ #include <signal.h>
+ #if HAVE_SYS_WAIT_H
