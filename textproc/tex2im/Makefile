@@ -24,11 +24,9 @@ post-patch:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tex2im ${PREFIX}/bin
-
 .if !defined(NOPORTDOCS)
-post-patch:
-	@${MKDIR} ${EXAMPLESDIR}
-	${CP} -$ ${WRKSRC}/examples ${EXAMPLESDIR}
+	@${MKDIR} ${PREFIX}/share/examples/tex2im
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${PREFIX}/share/examples/tex2im
 .endif
 
 .include <bsd.port.mk>
