@@ -10,6 +10,7 @@ libexec/squid_redirect
 %%EXAMPLESDIR%%/ad.swf
 %%EXAMPLESDIR%%/adbg-clear.gif
 %%EXAMPLESDIR%%/adbg.gif
+%%EXAMPLESDIR%%/adzap.conf
 %%EXAMPLESDIR%%/closepopup-clear.html
 %%EXAMPLESDIR%%/closepopup.html
 %%EXAMPLESDIR%%/counter-clear.gif
@@ -22,6 +23,8 @@ libexec/squid_redirect
 %%EXAMPLESDIR%%/no-op-counter.js
 %%EXAMPLESDIR%%/no-op.html
 %%EXAMPLESDIR%%/no-op.js
+%%EXAMPLESDIR%%/proxy-home.pac
+%%EXAMPLESDIR%%/proxy-zip.pac
 %%EXAMPLESDIR%%/webbug-clear.gif
 %%EXAMPLESDIR%%/webbug-clear.js
 %%EXAMPLESDIR%%/webbug.gif
