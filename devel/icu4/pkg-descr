@@ -1,20 +1,9 @@
-The International Components for Unicode (ICU) is a C and C++ library that 
-provides robust and full-featured Unicode support on a wide variety of 
-platforms. The library provides:
+The International Components for Unicode (ICU) is a C and C++ library
+providing Unicode support (p.ex. character set conversions, locales,
+normalization, transliteration, etc.).
 
-  Calendar support
-  Character set conversions
-  Collation (language-sensitive)
-  Date & time formatting
-  Locales (140+ supported)
-  Message catalogs (resources) 
-  Message formatting 
-  Normalization 
-  Number & currency
-  formatting
-  Time zones
-  Transliteration
-  Word, line & sentence
-  breaks
+More information on ICU can be found on the homepage
+WWW: http://oss.software.ibm.com/icu/
 
-WWW: http://oss.software.ibm.com/developerworks/opensource/icu/project/index.html
+- Bjoern A. Zeeb
+bzeeb+freebsdports@zabbadoz.net
