@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	uvscan
-PORTVERSION=	4.14e
+PORTVERSION=	4.16e
 CATEGORIES=	security
-MASTER_SITES=	http://download.nai.com/products/evaluation/virusscan/english/unix/free_bsd/v4.14.0/
-DISTNAME=	vbsd414e
+MASTER_SITES=	http://download.nai.com/products/evaluation/virusscan/english/cmdline/bsd/version_4.16/
+DISTNAME=	vbsd416e
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	jeh@FreeBSD.org
@@ -29,12 +29,14 @@ do-configure:
 		-e 's:@@PREFIX@@:${PREFIX}:g'
 
 do-install:
+	${MKDIR} ${PREFIX}/libexec/uvscan
 	${INSTALL_SCRIPT} ${WRKSRC}/uvscan ${PREFIX}/libexec/uvscan
 	${INSTALL_SCRIPT} ${WRKSRC}/uvscan.sh ${PREFIX}/bin/uvscan
 	${INSTALL_PROGRAM} ${WRKSRC}/libbsdfv.so ${PREFIX}/lib/libbsdfv.so
 .for file in license.dat messages.dat
 	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/libexec/uvscan
 .endfor
+	${MKDIR} ${PREFIX}/share/doc/uvscan
 .for file in unxadmin.pdf license.txt
 	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/uvscan
 .endfor
