@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	replex
-PORTVERSION=	0.0.9
+PORTVERSION=	0.1.0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.metzlerbros.org/dvb/
 
