@@ -3,7 +3,7 @@
 # Date created:		5 December 1996
 # Whom:			Bernd Rosauer <br@schiele-ct.de>
 #
-# $Id: Makefile,v 1.11 1996/11/17 08:45:09 obrien Exp $
+# $Id: Makefile,v 1.12 1996/12/13 07:18:48 tg Exp $
 #
 
 DISTNAME=	teTeX-src-0.4
@@ -28,7 +28,7 @@ TETEX_LIB=	teTeX-lib-0.4pl3.tar.gz
 WRKLIB=		${WRKDIR}/teTeX
 
 post-extract:
-	@cd ${WRKDIR} && gzip -dc ${DISTDIR}/${TETEX_LIB} | tar xf - 
+	@cd ${WRKDIR} && gzip -dc ${DISTDIR}/${DIST_SUBDIR}/${TETEX_LIB} | tar xf - 
 
 pre-install:
 	@chown -R bin:bin ${WRKLIB}/info ${WRKLIB}/man
