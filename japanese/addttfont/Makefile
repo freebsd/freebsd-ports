@@ -16,7 +16,7 @@ COMMENT=	Automatically create a Japanese font environment by TrueType fonts
 
 RUN_DEPENDS=	mkres.pl:${PORTSDIR}/japanese/p5-mkres \
 		${X11BASE}/lib/X11/ja_JP.eucJP/app-defaults/Tgif:${PORTSDIR}/japanese/tgif \
-		${PREFIX}/share/ghostscript/7.06/lib/CIDFnmap.jp:${PORTSDIR}/japanese/ghostscript-gnu-jpnfont
+		${PREFIX}/share/ghostscript/7.07/lib/CIDFnmap.jp:${PORTSDIR}/japanese/ghostscript-gnu-jpnfont
 
 #		VTPSfont:${PORTSDIR}/japanese/VTPSfont \
 #		${PREFIX}/share/ghostscript/5.50vflib/Fontmap:${PORTSDIR}/japanese/vfghostscript55
