@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tk
-PORTVERSION= 	8.3.0
+PORTVERSION= 	8.3.1
 CATEGORIES=	x11-toolkits tk83
 MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/sorted/packages-8.0/devel/ \
 		http://www.neosoft.com/tcl/ftparchive/sorted/packages-8.0/devel/
@@ -29,15 +29,16 @@ PLIST_SUB=	TK_VER=8.3 SHORT_TK_VER=83
 MANCOMPRESSED=	no
 
 MAN1=	wish.1
-MAN3=	3DBorder.3 BindTable.3 CanvPsY.3 CanvTkwin.3 CanvTxtInfo.3 \
-	Clipboard.3 ClrSelect.3 ConfigWidg.3 ConfigWind.3 CoordToWin.3 \
-	CrtErrHdlr.3 CrtGenHdlr.3 CrtImgType.3 CrtItemType.3 CrtPhImgFmt.3 \
-	CrtSelHdlr.3 CrtWindow.3 DeleteImg.3 DrawFocHlt.3 EventHndlr.3 \
-	FindPhoto.3 FontId.3 FreeXId.3 GeomReq.3 GetAnchor.3 GetBitmap.3 \
-	GetCapStyl.3 GetClrmap.3 GetColor.3 GetCursor.3 GetDash.3 GetFont.3 \
-	GetGC.3 GetImage.3 GetJoinStl.3 GetJustify.3 GetOption.3 GetPixels.3 \
-	GetPixmap.3 GetRelief.3 GetRootCrd.3 GetScroll.3 GetSelect.3 GetUid.3 \
-	GetVRoot.3 GetVisual.3 HandleEvent.3 IdToWindow.3 ImgChanged.3 \
+MAN3=	3DBorder.3 AddOption.3 BindTable.3 CanvPsY.3 CanvTkwin.3 \
+	CanvTxtInfo.3 Clipboard.3 ClrSelect.3 ConfigWidg.3 ConfigWind.3 \
+	CoordToWin.3 CrtErrHdlr.3 CrtGenHdlr.3 CrtImgType.3 CrtItemType.3 \
+	CrtPhImgFmt.3 CrtSelHdlr.3 CrtWindow.3 DeleteImg.3 DrawFocHlt.3 \
+	EventHndlr.3 FindPhoto.3 FontId.3 FreeXId.3 GeomReq.3 GetAnchor.3 \
+	GetBitmap.3 GetCapStyl.3 GetClrmap.3 GetColor.3 GetCursor.3 GetDash.3 \
+	GetFont.3 GetGC.3 GetHINSTANCE.3 GetHWND.3 GetImage.3 GetJoinStl.3 \
+	GetJustify.3 GetOption.3 GetPixels.3 GetPixmap.3 GetRelief.3 \
+	GetRootCrd.3 GetScroll.3 GetSelect.3 GetUid.3 GetVRoot.3 GetVisual.3 \
+	Grab.3 HWNDToWindow.3 HandleEvent.3 IdToWindow.3 ImgChanged.3 \
 	InternAtom.3 MainLoop.3 MainWin.3 MaintGeom.3 ManageGeom.3 \
 	MapWindow.3 MeasureChar.3 MoveToplev.3 Name.3 NameOfImg.3 OwnSelect.3 \
 	ParseArgv.3 QWinEvent.3 Restack.3 RestrictEv.3 SetAppName.3 \
@@ -68,6 +69,7 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 	3DBorder.3 Tk_3DBorderGC.3 \
 	3DBorder.3 Tk_Free3DBorderFromObj.3 \
 	3DBorder.3 Tk_Free3DBorder.3 \
+	AddOption.3 Tk_AddOption.3 \
 	BindTable.3 Tk_CreateBindingTable.3 \
 	BindTable.3 Tk_DeleteBindingTable.3 \
 	BindTable.3 Tk_CreateBinding.3 \
@@ -185,6 +187,8 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 	GetFont.3 Tk_FreeFont.3 \
 	GetGC.3 Tk_GetGC.3 \
 	GetGC.3 Tk_FreeGC.3 \
+	GetHINSTANCE.3 Tk_GetHINSTANCE.3 \
+	GetHWND.3 Tk_GetHWND.3 \
 	GetImage.3 Tk_GetImage.3 \
 	GetImage.3 Tk_RedrawImage.3 \
 	GetImage.3 Tk_SizeOfImage.3 \
@@ -206,11 +210,15 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 	GetRelief.3 Tk_NameOfRelief.3 \
 	GetRootCrd.3 Tk_GetRootCoords.3 \
 	GetScroll.3 Tk_GetScrollInfo.3 \
+	GetScroll.3 Tk_GetScrollInfoObj.3 \
 	GetSelect.3 Tk_GetSelection.3 \
 	GetUid.3 Tk_GetUid.3 \
 	GetUid.3 Tk_Uid.3 \
 	GetVRoot.3 Tk_GetVRootGeometry.3 \
 	GetVisual.3 Tk_GetVisual.3 \
+	Grab.3 Tk_Grab.3 \
+	Grab.3 Tk_Ungrab.3 \
+	HWNDToWindow.3 Tk_HWNDToWindow.3 \
 	HandleEvent.3 Tk_HandleEvent.3 \
 	IdToWindow.3 Tk_IdToWindow.3 \
 	ImgChanged.3 Tk_ImageChanged.3 \
@@ -218,6 +226,7 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 	InternAtom.3 Tk_GetAtomName.3 \
 	MainLoop.3 Tk_MainLoop.3 \
 	MainWin.3 Tk_MainWindow.3 \
+	MainWin.3 Tk_GetNumMainWindows.3 \
 	MaintGeom.3 Tk_MaintainGeometry.3 \
 	MaintGeom.3 Tk_UnmaintainGeometry.3 \
 	ManageGeom.3 Tk_ManageGeometry.3 \
