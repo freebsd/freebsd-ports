@@ -150,6 +150,7 @@
     SUBDIR += p5-XML-Node
     SUBDIR += p5-XML-Parser
     SUBDIR += p5-XML-RSS
+    SUBDIR += p5-XML-SAX
     SUBDIR += p5-XML-Sablotron
     SUBDIR += p5-XML-Simple
     SUBDIR += p5-XML-SimpleObject
