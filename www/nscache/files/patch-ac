@@ -1,0 +1,10 @@
+--- src/re.h.orig	Sun Nov 12 23:09:38 2000
++++ src/re.h	Tue Jan 16 03:06:40 2001
+@@ -3,6 +3,7 @@
+ 
+ #ifdef HAVE_REGEX
+ #ifdef HAVE_REGEX_H
++#include <sys/types.h>
+ #include <regex.h>
+ #endif
+ 

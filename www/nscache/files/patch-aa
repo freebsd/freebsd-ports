@@ -1,22 +1,23 @@
---- configure.in.orig	Sun Jan 16 02:40:55 2000
-+++ configure.in	Sat Jul  1 19:10:54 2000
-@@ -41,17 +41,11 @@
+--- configure.in.orig	Sun Jan 14 20:49:31 2001
++++ configure.in	Tue Jan 16 03:06:10 2001
+@@ -195,13 +195,15 @@
+ fi
  
- AC_CHECK_LIB(c, gettext, CFLAGS="$CFLAGS -DHAVE_GETTEXT -DNLS_DIR=\"\\\"\$(prefix)/share/locale\\\"\"";MSUBDIRS="po", AC_CHECK_LIB(intl, gettext, LIBS="$LIBS -lintl";CFLAGS="$CFLAGS -DHAVE_GETTEXT -DNLS_DIR=\"\\\"\$(prefix)/share/locale\\\"\"";MSUBDIRS="po"))
- 
--AC_CHECK_LIB(db1, dbopen, CFLAGS="$CFLAGS -DHAVE_DBOPEN";LIBS="$LIBS -ldb1", AC_CHECK_LIB(db, dbopen, CFLAGS="$CFLAGS -DHAVE_DBOPEN";LIBS="$LIBS -ldb", AC_MSG_ERROR("NScache can\'t work withou clasical Berkeley DB libraries")))
-+AC_CHECK_LIB(db1, dbopen, CFLAGS="$CFLAGS -DHAVE_DBOPEN";LIBS="$LIBS -ldb1", AC_CHECK_LIB(c, dbopen, CFLAGS="$CFLAGS -DHAVE_DBOPEN", AC_MSG_ERROR("NScache can\'t work withou clasical Berkeley DB libraries")))
- 
- AC_CHECK_HEADER(db1/db.h, CFLAGS="$CFLAGS -DHAVE_DB1_H", AC_CHECK_HEADER(db.h, CFLAGS="$CFLAGS -DHAVE_DB_H"))
- 
--AC_CHECK_PROG(GTK_CONFIG, gtk-config, "yes", "no")
--if eval "test x$GTK_CONFIG = xyes"; then
--	CFLAGS="$CFLAGS `gtk-config --cflags`"
--	LIBS="$LIBS `gtk-config --libs`"
--else
--	AC_MSG_ERROR("Unable to find \"gtk-config\" program")
--fi
-+AM_PATH_GTK(1.2.0, , AC_MSG_ERROR(GTK+ is not installed or badly configured on your system...))
- 
- AC_SUBST(CFLAGS)
- AC_SUBST(LIBS)
+ if eval "test x$WITH_GNOME = xyes"; then
+-	AC_CHECK_PROG(GNOME_CONFIG, gnome-config, "yes", "no")
+-	if eval "test x$GNOME_CONFIG = xyes"; then
+-		GNOME_PREFIX=`gnome-config --prefix`
++	AC_PATH_PROG(GNOME_CONFIG, gnome-config, "no")
++	if eval "test x$GNOME_CONFIG = no"; then
++		GNOME_PREFIX=
++	else
++		GNOME_PREFIX=`$GNOME_CONFIG --prefix`
+ 		AC_WARN("Will install Gnome things to $GNOME_PREFIX")
+ 		if eval "test x$WITH_GNOME = xyes"; then
+-			GNOME_LIBS=`gnome-config --libs gnomeui`
+-			GNOME_CFLAGS=`gnome-config --cflags gnomeui`
++			GNOME_LIBS=`$GNOME_CONFIG --libs gnomeui`
++			GNOME_CFLAGS=`$GNOME_CONFIG --cflags gnomeui`
+ 			GNOME_CFLAGS="$GNOME_CFLAGS -DHAVE_GNOME"
+ 		fi
+ 	fi
