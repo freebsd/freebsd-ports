@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.euronet.nl/~rja/Xsnow/
 MAINTAINER=	jmz@FreeBSD.org
 
 USE_IMAKE=	yes
+USE_XPM=	yes
 MAN6=		xsnow.6
 
 pre-build:

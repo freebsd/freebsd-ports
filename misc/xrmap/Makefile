@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	petef@FreeBSD.org
 
 USE_IMAKE=	yes
+USE_XPM=	yes
 
 MAN1=	xrmap.1
 
