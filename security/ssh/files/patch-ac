@@ -1,24 +1,23 @@
-*** login.c.bak	Thu Jun  6 15:39:34 1996
---- login.c	Mon Jun 17 19:56:43 1996
+*** gmp-2.0.2/Makefile.in.bak	Mon Sep 30 02:29:39 1996
+--- gmp-2.0.2/Makefile.in	Wed Oct 16 07:33:48 1996
 ***************
-*** 236,241 ****
---- 236,254 ----
-    strncpy(u.ut_user, user, sizeof(u.ut_user));
-  #endif /* HAVE_NAME_IN_UTMP */
-  #ifdef HAVE_HOST_IN_UTMP
-+ #ifdef __FreeBSD__
-+   if (strlen(host) > UT_HOSTSIZE) {
-+ 	  struct hostent *hp = gethostbyname(host);
-+ 
-+ 	  if (hp != NULL) {
-+ 		  struct in_addr in;
-+ 
-+ 		  memmove(&in, hp->h_addr, sizeof(in));
-+ 		  host = inet_ntoa(in);
-+ 	  } else
-+ 		  host = "invalid hostname";
-+   }
-+ #endif
-    strncpy(u.ut_host, host, sizeof(u.ut_host));
-  #endif /* HAVE_HOST_IN_UTMP */
-  #ifdef HAVE_ADDR_IN_UTMP
+*** 27,35 ****
+  infodir = $(prefix)/info
+  includedir = $(prefix)/include
+  
+! CC = gcc
+  LOCAL_CC = $(CC)
+! CFLAGS = -g -O
+  XCFLAGS = 
+  AR = ar
+  AR_FLAGS = rc
+--- 27,35 ----
+  infodir = $(prefix)/info
+  includedir = $(prefix)/include
+  
+! #CC = gcc
+  LOCAL_CC = $(CC)
+! #CFLAGS = -g -O
+  XCFLAGS = 
+  AR = ar
+  AR_FLAGS = rc
