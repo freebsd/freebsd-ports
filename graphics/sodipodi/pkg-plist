@@ -45,6 +45,8 @@ share/gnome/sodipodi/desktop.c
 share/gnome/sodipodi/desktop.glade
 share/gnome/sodipodi/dimension_hor.xpm
 share/gnome/sodipodi/dimension_ver.xpm
+share/gnome/sodipodi/display.c
+share/gnome/sodipodi/display.glade
 share/gnome/sodipodi/div.xpm
 share/gnome/sodipodi/document.c
 share/gnome/sodipodi/document.glade
@@ -87,6 +89,9 @@ share/gnome/sodipodi/flip_ver.xpm
 share/gnome/sodipodi/font.xpm
 share/gnome/sodipodi/forward.xpm
 share/gnome/sodipodi/freehand.xpm
+share/gnome/sodipodi/guide_dialog.png
+share/gnome/sodipodi/item.c
+share/gnome/sodipodi/item.glade
 share/gnome/sodipodi/join.xpm
 share/gnome/sodipodi/join_bevel.xpm
 share/gnome/sodipodi/join_miter.xpm
@@ -188,6 +193,7 @@ share/locale/es/LC_MESSAGES/sodipodi.mo
 share/locale/et/LC_MESSAGES/sodipodi.mo
 share/locale/fr/LC_MESSAGES/sodipodi.mo
 share/locale/ga/LC_MESSAGES/sodipodi.mo
+share/locale/gl/LC_MESSAGES/sodipodi.mo
 share/locale/hu/LC_MESSAGES/sodipodi.mo
 share/locale/it/LC_MESSAGES/sodipodi.mo
 share/locale/ja/LC_MESSAGES/sodipodi.mo
