@@ -1681,6 +1681,7 @@ flim113-emacs19	ports/editors/flim113-emacs19
 flim113-emacs20	ports/editors/flim113-emacs20
 flim113-mule	ports/editors/flim113-mule
 flim113-xemacs21-mule	ports/editors/flim113-xemacs21-mule
+flink		ports/mail/flink
 flip		ports/graphics/flip
 floatator	ports/misc/floatator
 flog		ports/sysutils/flog
