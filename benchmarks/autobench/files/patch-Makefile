@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Nov  1 17:15:35 2003
-+++ Makefile	Sat Nov  1 17:16:01 2003
+--- Makefile.orig	Thu May 27 18:59:27 2004
++++ Makefile	Sun Jan 16 19:44:14 2005
 @@ -20,9 +20,9 @@
  endif
  
@@ -8,8 +8,17 @@
 -CFLAGS=-O2 -Wall
 -DEBUG_FLAGS=-Wall -g
 +CC?=gcc
-+CFLAGS?=-O2 -Wall
-+DEBUG_FLAGSi?=-Wall -g
++CFLAGS+= -Wall
++DEBUG_FLAGS?=-Wall -g
  
- all: crfile sesslog
+ #---------------------------------------------------------------------------
+ # Release related 
+@@ -55,7 +55,7 @@
+ 	perl -pi -e 's/my \$$MASTER_CONFIG =.*$$/my \$$MASTER_CONFIG = "$$ENV{AB_CFG}";/' autobench
+ 	cp crfile autobench autobenchd autobench_admin sesslog bench2graph $(BINDIR)
+ 	cp autobenchd.1 autobench_admin.1 crfile.1 autobench.1 sesslog.1 bench2graph.1 $(MANDIR)
+-	cp autobench.conf $(ETCDIR)
++	cp autobench.conf $(ETCDIR)/autobench.conf-dist
  
+ clean: 
+ 	rm -f crfile sesslog
