@@ -247,8 +247,8 @@ lib/libFnlib.a
 lib/libFnlib.la
 lib/libFnlib.so
 lib/libFnlib.so.0.3
-@exec /sbin/ldconfig -m %D/lib
-@unexec /sbin/ldconfig -R
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @dirrm include/X11/fonts/fnlib_fonts/e/17
 @dirrm include/X11/fonts/fnlib_fonts/e
 @dirrm include/X11/fonts/fnlib_fonts/rock/90
