@@ -12,4 +12,6 @@ CATEGORIES?=	german cad linux
 MAINTAINER=	riggs@rrr.de
 COMMENT=	An easy to use, yet powerful tool for designing printed circuit boards
 
+CONFLICTS=	linux-eagle-*
+
 .include "../../cad/linux-eagle/Makefile"
