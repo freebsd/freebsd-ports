@@ -1,14 +1,13 @@
---- setup.py.orig	Sun Mar 30 17:01:05 2003
-+++ setup.py	Sun Mar 30 17:01:20 2003
-@@ -18,9 +18,9 @@
-     
-     packages = ["BitTorrent"],
+--- setup.py.orig	Fri Dec 24 06:56:00 2004
++++ setup.py	Fri Dec 24 06:56:10 2004
+@@ -19,8 +19,8 @@
  
--    scripts = ["btdownloadgui.py", "btdownloadheadless.py", "btdownloadlibrary.py", 
-+    scripts = ["btdownloadheadless.py", "btdownloadlibrary.py", 
-         "bttrack.py", "btmakemetafile.py", "btlaunchmany.py", "btcompletedir.py",
--        "btdownloadcurses.py", "btcompletedirgui.py", "btlaunchmanycurses.py", 
-+        "btdownloadcurses.py", "btlaunchmanycurses.py", 
-         "btmakemetafile.py", "btreannounce.py", "btrename.py", "btshowmetainfo.py",
-         "bttest.py"]
-     )
+ import glob
+ 
+-scripts = ["btdownloadgui.py", "btdownloadcurses.py", "btdownloadheadless.py", 
+-           "btmaketorrentgui.py", "btmaketorrent.py",
++scripts = ["btdownloadcurses.py", "btdownloadheadless.py", 
++           "btmaketorrent.py",
+            "btlaunchmany.py", "btlaunchmanycurses.py", 
+            "bttrack.py", "btreannounce.py", "btrename.py", "btshowmetainfo.py",
+            "bttest.py"]
