@@ -52,6 +52,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
 CONFIGURE_ARGS=	--disable-nls \
+		--with-libiconv-prefix=${LOCALBASE} \
 		--with-gxx-include-dir=${TARGLIB}/include/c++/${GCC_REV}
 #CONFIGURE_ARGS+=	--program-suffix=34
 #	Java
@@ -77,6 +78,9 @@ MAN1=		cpp34.1 g++34.1 g77-34.1 gcc34.1 gcov34.1 \
 		rmic34.1 rmiregistry34.1
 MAN7=		fsf-funding.7 gfdl.7 gpl.7
 INFO=		cpp cppinternals g77 gcc gccinstall gccint gcj fastjar
+
+pre-everything::
+	@${ECHO_MSG} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL} ${PORTOBJFORMAT}	target ${CONFIGURE_TARGET}"
 
 .if defined(CVS_DATE)
 NO_CHECKSUM=	yes
