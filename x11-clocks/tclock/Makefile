@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.uni-potsdam.de/pub/X11/tools/clocks/		\
 		ftp://ftp.uni-bielefeld.de/pub/systems/FreeBSD/lkoeller/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	Lars.Koeller@Uni-Bielefeled.DE
+MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
