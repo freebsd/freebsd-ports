@@ -19,16 +19,10 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/skkserv:${PORTSDIR}/japanese/skk
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
-.endif
-
 MAN1=		skkfep.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/skkfep ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/skkfep.1 ${MANPREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
