@@ -1,20 +1,13 @@
---- Makefile.orig	Sat Jan 22 14:47:22 2000
-+++ Makefile	Sat Jan 22 14:47:33 2000
-@@ -4,7 +4,7 @@
+--- makefile--	Mon Oct  7 10:33:20 2002
++++ makefile	Mon Oct  7 10:33:26 2002
+@@ -20,8 +20,8 @@
  #
+ ########################################################################
  
- # Default C compiler: must be an ANSI C compiler
 -CC         = cc
+-CFLAGS     = -O
 +CC         ?= cc
- # File names for the main source files
- DRIV_SRC   = netpipe.c
- DRIV_OBJ   = netpipe.o
-@@ -13,7 +13,7 @@
- TARGETS    = NPtcp
- # If you have TCP, MPI and PVM
- #TARGETS    = NPtcp NPmpi NPpvm
--CFLAGS	   = -O
-+CFLAGS	   ?= -O
- # Adjust these for MPI (only used if you have MPI)
- MPI_HOME   = /home/mpich
- MPI_ARCH   = IRIX
++CFLAGS     ?= -O
+ SRC        = ./src
+ 
+ # For MPI, mpicc will set up the proper include and library paths
