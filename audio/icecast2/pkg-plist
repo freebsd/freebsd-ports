@@ -1,7 +1,8 @@
-sbin/icecast
 bin/iceplay
-bin/shout
 bin/listen
+bin/liveice
+bin/shout
+sbin/icecast
 share/doc/icecast/AUTHORS
 share/doc/icecast/BUGS
 share/doc/icecast/BUGS.iceplay
@@ -16,6 +17,7 @@ share/doc/icecast/README.iceplay
 share/doc/icecast/README.shout
 share/doc/icecast/TESTED
 share/doc/icecast/TODO.shout
+share/examples/icecast/liveice.cfg
 share/examples/icecast/playlist.example
 share/examples/icecast/radio.tcl.example
 share/examples/icecast/shoutrc.example
