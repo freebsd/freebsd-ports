@@ -3,4 +3,4 @@ designed as an analog to the GNU wget utility.  The fget package includes
 an FTP client library, so that others can make use of FTP from within
 their own C programs.
 
-WWW: http://www-dev.cso.uiuc.edu/fget/
+WWW: http://www.feep.net/fget/
