@@ -10,7 +10,7 @@ PORTVERSION=	0.9
 PORTREVISION=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	fsv
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D filesystem visualizer
@@ -20,15 +20,15 @@ LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_GNOME=	gtk12
+USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-GL-prefix=${X11BASE}/lib
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-.include <bsd.port.pre.mk>
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-.if ${ARCH} == "ia64" || ${ARCH} == "amd64"
-BROKEN=		"Does not compile on amd64 or ia64"
-.endif
+post-extract:
+	-@${RM} ${WRKSRC}/lib/getopt*
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
