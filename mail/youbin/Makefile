@@ -8,7 +8,7 @@
 
 DISTNAME=	youbin-2.13
 CATEGORIES=	mail
-MASTER_SITES=	ftp://nuis.nuie.nagoya-u.ac.jp/info/nagoya-u/ \
+MASTER_SITES=	ftp://ftp.nuie.nagoya-u.ac.jp/pub/nagoya-u/ \
 		ftp://ftp.kyoto.wide.ad.jp/pub/net/
 
 MAINTAINER=	max@FreeBSD.org
