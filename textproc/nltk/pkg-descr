@@ -1,0 +1,14 @@
+NLTK, the Natural Language Toolkit, is a suite of Python libraries and 
+programs for symbolic and statistical natural language processing. 
+NLTK includes graphical demonstrations and sample data. It is accompanied 
+by extensive documentation, including tutorials that explain the underlying 
+concepts behind the language processing tasks supported by the toolkit.
+
+NLTK is ideally suited to students who are learning NLP (natural language 
+processing) or conducting research in NLP or closely related areas, 
+including empirical linguistics, cognitive science, artificial intelligence, 
+information retrieval, and machine learning. NLTK has been used successfully 
+as a teaching tool, as an individual study tool, and as a platform for 
+prototyping and building research systems. 
+
+WWW: http://nltk.sourceforge.net/
