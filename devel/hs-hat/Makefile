@@ -7,6 +7,7 @@
 
 PORTNAME=	hat
 PORTVERSION=	2.00
+PORTCOMMENT=	A source-level tracer for Haskell 98
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.cs.york.ac.uk/pub/haskell/${PORTNAME}/
 PKGNAMEPREFIX=	hs-

@@ -8,6 +8,7 @@
 PORTNAME=	frantk
 PORTVERSION=	1.1
 PORTREVISION=	1
+PORTCOMMENT=	A GUI library for Haskell on top of Tcl-Tk
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.dcs.gla.ac.uk/~meurig/FranTk/
 DISTNAME=	FranTk${PORTVERSION:S/./_/}

@@ -9,6 +9,7 @@
 PORTNAME=	rsync
 PORTVERSION=	2.5.5
 PORTREVISION=	1
+PORTCOMMENT=	A network file distribution/synchronization utility
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://samba.anu.edu.au/pub/rsync/  \
 		ftp://sunsite.auc.dk/pub/unix/rsync/  \

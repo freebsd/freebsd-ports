@@ -7,6 +7,7 @@
 
 PORTNAME=	muttprint
 PORTVERSION=	0.63a
+PORTCOMMENT=	Utility to print mail for most any mail client
 CATEGORIES=	print mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	muttprint
