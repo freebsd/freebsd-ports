@@ -4,6 +4,7 @@
     SUBDIR += AbiWord
     SUBDIR += aee
     SUBDIR += apel
+    SUBDIR += apel-emacs19
     SUBDIR += apel-emacs20
     SUBDIR += apel-mule
     SUBDIR += apel-xemacs21-mule
