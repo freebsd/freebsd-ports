@@ -3,10 +3,10 @@
 # Date created:		9 July 1999
 # Whom:			Keith Jang <jtjang@gcn.net.tw>
 #
-# $Id: Makefile,v 1.3 1999/07/17 16:29:44 keith Exp $
+# $Id: Makefile,v 1.1.1.1 1999/07/18 00:57:33 foxfair Exp $
 #
 
-DISTNAME=	zh-truetypefonts-1.0
+DISTNAME=	zh-moettf-1.0
 CATEGORIES=	chinese x11-fonts
 MASTER_SITES=	ftp://ftp.cc.ntut.edu.tw/OS/Linux/packages/chinese/fonts/twmoefont/ttf/ \
 		ftp://ftp.ncu.edu.tw/Linux/Chinese/fonts/twmoefont/ttf/ \
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar
 LIB_DEPENDS=	font.1:${PORTSDIR}/x11-servers/XttXF86srv-common
 
 USE_X_PREFIX=	yes
-DIST_SUBDIR=	zh-truetypefonts
+DIST_SUBDIR=	zh-moettf
 
 NO_BUILD=	yes
 NO_CDROM=	"Contact Taiwan Ministry of Education for commercial use."
