@@ -451,8 +451,7 @@ check-makevers::
 # Only define JAVAC if NEED_JAVAC is defined
 .		undef JAVAC
 
-# The default value for NEED_JAVAC is temporarily (!) YES
-# This will change as soon as the affecting ports have NEED_JAVAC=YES
+# By default a port does not need the Java compiler
 .		if !defined(NEED_JAVAC)
 NEED_JAVAC=	NO
 .		endif
