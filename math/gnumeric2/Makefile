@@ -30,7 +30,8 @@ USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--without-guile --with-bonobo --with-gnome-db
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib -liconv ${PTHREAD_LIBS}" \
-		DEFS="-I${X11BASE}/include/gal-2.0"
+		DEFS="-I${X11BASE}/include/gal-2.0" \
+		python_prog=${PYTHON_VERSION}
 
 PLIST_SUB=	VERSION=${PORTVERSION}-bonobo
 
