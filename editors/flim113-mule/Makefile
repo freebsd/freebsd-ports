@@ -10,15 +10,9 @@ MAINTAINER=	shige@FreeBSD.org
 # This is a slave port.
 PORTCLASS=	slave
 
-MASTERDIR=	${.CURDIR}/../../editors/flim113-emacs
+MASTERDIR=	${.CURDIR}/../../editors/flim113
 
 # emacs port setup
 EMACS_PORT_NAME=	mule
-
-# whether emacs requires *-setupel.el
-REQUIRE_SETUPEL=	YES
-
-# use pkg-* files in ${.CURDIR}
-PKGDIR=		${.CURDIR}
 
 .include <${MASTERDIR}/Makefile>

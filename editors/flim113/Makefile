@@ -1,4 +1,4 @@
-# New ports collection makefile for:	flim-1.13.x for emacs
+# New ports collection makefile for:	flim-1.13.x for emacs21
 # Date created:		9 May 1999
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 #
@@ -29,15 +29,17 @@ FLIM_SETUPEL=	flim-setupel.el
 FLIMDOCDIR?=	share/doc/flim
 FLIM_COOKIE=	flim-${EMACS_PORT_NAME}-${FLIM_TRUNK}.FreeBSD-packages
 # flim lispdir
-FLIM_LISPDIR?=			${LOCALBASE}/${EMACS_SITE_LISPDIR}
+FLIM_LISPDIR?=			${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}
 FLIM_VERSION_SPECIFIC_LISPDIR?=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}
 
 .if (${PORTCLASS} == "master")
-# for emacs
-EMACS_PORT_NAME=	emacs
-# whether emacs requires *-setupel.el
-REQUIRE_SETUPEL= YES
+EMACS_PORT_NAME=	emacs21
+DEPPORT_SUFFIX=		
+.else
+DEPPORT_SUFFIX=		-${EMACS_PORT_NAME}
 .endif
+
+EMACS_MASTERDIR_PKGFILES=YES
 
 # target name for make build
 ALL_TARGET?=	elc
@@ -54,16 +56,12 @@ MAKE_ARGS+=	PREFIX="${LOCALBASE}" \
 .if defined(EMACS_PORT_NAME)
 # depends on apel (case of xemacs-21.x or later)
 .if defined(EMACS_PACKAGESDIR)
-BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_PACKAGESDIR}/lisp/apel/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT_NAME}
-RUN_DEPENDS+=	${LOCALBASE}/${EMACS_PACKAGESDIR}/lisp/apel/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT_NAME}
-.elif (${EMACS_PORT_NAME} == "xemacs") || (${EMACS_PORT_NAME} == "xemacs20")
-# depends on apel (case of xemacs-20.x or former)
-BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT_NAME}
-RUN_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT_NAME}
+BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_PACKAGESDIR}/lisp/apel/emu.el:${PORTSDIR}/editors/apel${DEPPORT_SUFFIX}
+RUN_DEPENDS+=	${LOCALBASE}/${EMACS_PACKAGESDIR}/lisp/apel/emu.el:${PORTSDIR}/editors/apel${DEPPORT_SUFFIX}
 .else
-# depends on apel (case of other emacsen etc...)
-BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT_NAME}
-RUN_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT_NAME}
+# depends on apel (case of gnu emacsen etc...)
+BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel${DEPPORT_SUFFIX}
+RUN_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel${DEPPORT_SUFFIX}
 .endif
 .else
 .BEGIN:
@@ -78,7 +76,7 @@ BUILD_DEPENDS+=	nkf:${PORTSDIR}/japanese/nkf
 .endif
 
 pre-configure:
-.if defined(REQUIRE_SETUPEL) && (${REQUIRE_SETUPEL} == "YES")
+.if defined(EMACS_NO_SUBDIRSEL) && (${EMACS_NO_SUBDIRSEL} == "YES")
 	@${CP} ${FILESDIR}/${FLIM_SETUPEL}.in ${WRKDIR}
 .endif
 
@@ -111,7 +109,7 @@ post-install:
 # install package-cookie
 	@${MKDIR} ${LOCALBASE}/share/flim
 	@${TOUCH} ${LOCALBASE}/share/flim/${FLIM_COOKIE}
-.if defined(REQUIRE_SETUPEL) && (${REQUIRE_SETUPEL} == "YES")
+.if defined(EMACS_NO_SUBDIRSEL) && (${EMACS_NO_SUBDIRSEL} == "YES")
 	@${MAKE} setupel-install
 .endif
 .if defined(EMACS_PACKAGESDIR) && defined(MANIFEST)
