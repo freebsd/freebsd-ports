@@ -15,6 +15,7 @@ cleanup()
   umount -f ${chroot}/a/ports
   umount -f ${chroot}/usr/opt/doc
   umount -f ${chroot}/usr/src
+  umount -f ${chroot}/dev
 
   if [ $noclean = 0 -o $error = 0 ]; then
     rm -rf ${chroot}/tmp/*
@@ -77,11 +78,11 @@ fi
 
 args="$*"
 
-pkgname=$(basename $1 .tgz)
+buildenv ${pb} ${branch}
+
+pkgname=$(basename $1 ${PKGSUFFIX})
 dirname=$2
 shift 2
-
-buildenv ${pb} ${branch}
 
 export WRKDIRPREFIX=/tmp
 export DISTDIR=/tmp/distfiles
@@ -134,7 +135,6 @@ for dir in ${chrootdir}/*; do
 done
 
 if [ ${found} != 1 ]; then
-
   chroot=${chrootdir}/$$
   while [ -d ${chroot} ]; do
     chroot=${chroot}-
@@ -173,6 +173,8 @@ mkdir -p ${chroot}/usr/src ${chroot}/usr/opt/doc
 mount -r ${master}:${pb}/${branch}/src ${chroot}/usr/src
 mount -r ${master}:${pb}/usr/opt/doc ${chroot}/usr/opt/doc
 
+mount -t devfs foo ${chroot}/dev
+
 # just in case...
 for dir in ${cleandirs}; do
   if ! rm -rf ${chroot}${dir} >/dev/null 2>&1; then
@@ -209,9 +211,12 @@ if [ ${arch} = "i386" ]; then
 fi
 
 # Install packages
-for i in ${chroot}/packages/*.tgz; do
+# XXX Fix once perl.tbz available
+for i in ${chroot}/packages/*.tbz ; do
 	chroot ${chroot} pkg_add /packages/`basename $i`
 done
+
+chroot ${chroot} /usr/local/bin/use.perl port
 
 # Don't record packages which will interfere with building versions of the
 # packages we just installed.
@@ -259,7 +264,7 @@ if [ "${error}" = 0 ]; then
   if [ "${error}" = 0 ]; then
     tar -C ${chroot}/tmp -cf - packages | \
       ssh -a -x $master tar --unlink -C ${pb}/${branch} -xvf -
-    ssh -a -x $master [ -f ${pb}/${branch}/packages/All/${pkgname}.tgz ] '&&' touch ${pb}/${branch}/packages/All/${pkgname}.tgz
+    ssh -a -x $master [ -f ${pb}/${branch}/packages/All/${pkgname}${PKGSUFFIX} ] '&&' touch ${pb}/${branch}/packages/All/${pkgname}${PKGSUFFIX}
     ssh $master rm -f ${pb}/${branch}/errors/${pkgname}.log
   else
     scp ${chroot}/tmp/${pkgname}.log ${master}:${pb}/${branch}/errors/${pkgname}.log
