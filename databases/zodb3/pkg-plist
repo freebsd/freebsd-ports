@@ -679,8 +679,17 @@ bin/zeopack.py
 @dirrm %%PYTHON_SITELIBDIR%%/ZEO/tests
 @dirrm %%PYTHON_SITELIBDIR%%/ZEO/auth
 @dirrm %%PYTHON_SITELIBDIR%%/ZEO
+@dirrm %%PYTHON_SITELIBDIR%%/ZConfig/tests/library/widget
+@dirrm %%PYTHON_SITELIBDIR%%/ZConfig/tests/library/thing/extras
+@dirrm %%PYTHON_SITELIBDIR%%/ZConfig/tests/library/thing
+@dirrm %%PYTHON_SITELIBDIR%%/ZConfig/tests/library
+@dirrm %%PYTHON_SITELIBDIR%%/ZConfig/tests/input
+@dirrm %%PYTHON_SITELIBDIR%%/ZConfig/tests
+@dirrm %%PYTHON_SITELIBDIR%%/ZConfig
 @dirrm %%PYTHON_SITELIBDIR%%/ThreadedAsync
 @dirrm %%PYTHON_SITELIBDIR%%/Persistence
 @dirrm %%PYTHON_SITELIBDIR%%/BTrees/tests
 @dirrm %%PYTHON_SITELIBDIR%%/BTrees
+@dirrm %%PYTHON_SITELIBDIR%%/BDBStorage/tests
+@dirrm %%PYTHON_SITELIBDIR%%/BDBStorage
 @dirrm %%PYTHON_INCLUDEDIR%%/ZODB3
