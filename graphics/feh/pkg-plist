@@ -1,7 +1,7 @@
 @comment $FreeBSD$
 bin/cam
-bin/gen_cam_menu.sh
 bin/feh
+bin/gen_cam_menu.sh
 %%PORTDOCS%%share/doc/feh/AUTHORS
 %%PORTDOCS%%share/doc/feh/ChangeLog
 %%PORTDOCS%%share/doc/feh/README
