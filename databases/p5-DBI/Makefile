@@ -1,13 +1,13 @@
 # New ports collection makefile for:	p5-DBI
-# Version required:			1.00
+# Version required:			1.02
 # Date created:				October 17th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.14 1998/08/18 02:51:15 vanilla Exp $
+# $Id: Makefile,v 1.15 1998/09/15 21:31:31 asami Exp $
 #
 
-DISTNAME=	DBI-1.00
-PKGNAME=	p5-DBI-1.00
+DISTNAME=	DBI-1.02
+PKGNAME=	p5-DBI-1.02
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBI
