@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	graphviz
-PORTVERSION=	1.7a
+PORTVERSION=	1.7b
 CATEGORIES=	graphics tk83
 MASTER_SITES=	http://www.research.att.com/sw/tools/graphviz/
-DISTNAME=	gviz17a
+DISTNAME=	gviz17b
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,13 +18,13 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.4:${PORTSDIR}/graphics/png \
 		tk83.1:${PORTSDIR}/x11-toolkits/tk83
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/gv${PORTVERSION}
 
 USE_FREETYPE=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
 USE_AUTOMAKE=	yes
-AUTOMAKE=	libtoolize --force && autoheader && automake --add-missing
+AUTOMAKE_ARGS=	--add-missing
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.3 -I${LOCALBASE}/include/tk8.3 -DHAVE_TERMIOS" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
@@ -38,6 +38,6 @@ MAN3=	agraph.3 cdt.3 graph.3 pathplan.3
 MANN=	gdtclft.n tcldgl.n tcldgr.n tcldot.n tkspline.n
 
 post-patch:
-	@cd ${WRKSRC} && aclocal
+	@cd ${WRKSRC} && aclocal && autoheader && libtoolize --force
 
 .include <bsd.port.mk>
