@@ -397,6 +397,7 @@
     SUBDIR += ttcp
     SUBDIR += ttt
     SUBDIR += tund
+    SUBDIR += tvark
     SUBDIR += unison
     SUBDIR += urlendec
     SUBDIR += vchat
