@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	rvm
-PORTVERSION=	0.80.a
+PORTVERSION=	0.80.2.a
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,8 +23,13 @@ USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-default-config-file=${PREFIX}/etc/rvm.conf
 
+MAN1=		rvm.1
 PLIST_FILES=	bin/rvm
 
-MAN1=	rvm.1
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${OSVERSION} > 500034
+CXXFLAGS+=	-O0
+.endif
+
+.include <bsd.port.post.mk>
