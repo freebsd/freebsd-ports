@@ -1,0 +1,11 @@
+--- makefile.orig	Fri Oct 25 16:04:05 2002
++++ makefile	Fri Oct 25 16:04:25 2002
+@@ -21,7 +21,7 @@
+ 
+ tosvcd: $(OBJ)
+ 	$(CC) -o tosvcd $(OBJ) -lpthread
+-	su -c "cp tosvcd /usr/bin"
++#	su -c "cp tosvcd /usr/bin"
+ 
+ t:
+ 	./tosvcd -o reeperbahn /video0/Auf_der_Reeperbahn_nachts_um_halb_eins/2002-03-09.15:21.50.50.rec
