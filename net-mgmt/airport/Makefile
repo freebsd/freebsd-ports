@@ -32,8 +32,10 @@ do-install:
 	@cd ${WRKSRC}; \
 		${MKDIR} ${PREFIX}/share/airport; \
 		${CP} -r ${WRKSRC}/* ${PREFIX}/share/airport; \
-		${SED} -e s,%%PREFIX%%,${PREFIX},g \
+		${SED} \
+			-e s,%%PREFIX%%,${PREFIX},g \
 			-e s/%%JFC_VERSION%%/${JFC_VERSION}/ \
+			-e s/%%JDK_VERSION%%/${JDK_VERSION}/ \
 			< ${FILESDIR}/airport > ${PREFIX}/bin/airport; \
 		${CHMOD} a+x ${PREFIX}/bin/airport
 
