@@ -7,6 +7,7 @@
 
 PORTNAME=	knightcap
 PORTVERSION=	3.6
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://samba.anu.edu.au/pub/KnightCap/ \
 		ftp://ftp.cadvision.com/pub/linuxberg/files/x11/entertain/
