@@ -1,6 +1,6 @@
---- Makefile.tmpl.orig	Tue Jan 11 22:47:41 2000
-+++ Makefile.tmpl	Mon Jan 24 19:50:42 2000
-@@ -123,6 +123,7 @@
+--- Makefile.tmpl.orig	Sun Oct  7 02:01:09 2001
++++ Makefile.tmpl	Sun Oct 14 11:14:32 2001
+@@ -127,6 +127,7 @@
  runtimedir      = @runtimedir@
  logfiledir      = @logfiledir@
  proxycachedir   = @proxycachedir@
@@ -8,19 +8,20 @@
  
  libexecdir_relative   = @libexecdir_relative@
  
-@@ -266,9 +267,9 @@
+@@ -270,10 +271,10 @@
  	$(MKDIR) $(root)$(mandir)/man1
  	$(MKDIR) $(root)$(mandir)/man8
  	$(MKDIR) $(root)$(sysconfdir)
 -	$(MKDIR) $(root)$(htdocsdir)
 +	$(MKDIR) $(root)$(doc_prefix)
+ 	$(MKDIR) $(root)$(manualdir)
  	$(MKDIR) $(root)$(iconsdir)
 -	$(MKDIR) $(root)$(cgidir)
 +	$(MKDIR) $(root)$(cgidir).default
  	$(MKDIR) $(root)$(includedir)
  	$(MKDIR) $(root)$(includedir)/xml
  	$(MKDIR) $(root)$(runtimedir)
-@@ -452,25 +453,33 @@
+@@ -457,33 +458,41 @@
  #   icons and distributed CGI scripts.
  install-data:
  	@echo "===> [data: Installing initial data files]"
@@ -32,25 +33,34 @@
 +#                echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(htdocsdir)/]"; \
 +#        else \
 +		echo "Copying tree $(TOP)/htdocs/ -> $(root)$(doc_prefix)/"; \
- 		(cd $(TOP)/htdocs/ && $(TAR) $(TAROPT) - *) |\
+ 		(cd $(TOP)/htdocs/ && $(TAR) $(TAROPT) - index* ra-powered.* apache_pb.* ) |\
 -		(cd $(root)$(htdocsdir)/ && $(TAR) -xf -); \
 -		find $(root)$(htdocsdir)/ -type d -exec chmod a+rx {} \; ; \
--		find $(root)$(htdocsdir)/ -type f -exec chmod a+r {} \; ; \
+-		find $(root)$(htdocsdir)/ -type f -print | xargs chmod a+r ; \
 -	fi
--	-@if [ -f $(root)$(cgidir)/printenv ]; then \
--		echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(cgidir)/]"; \
--	else \
+-	-@if [ -d $(TOP)/htdocs/manual ]; then \
 +		(cd $(root)$(doc_prefix)/ && $(TAR) -xf -); \
 +		find $(root)$(doc_prefix)/ -type d -exec chmod a+rx {} \; ; \
-+		find $(root)$(doc_prefix)/ -type f -exec chmod a+r {} \; ; \
++		find $(root)$(doc_prefix)/ -type f -print | xargs chmod a+r ; \
++#        fi
++#        -@if [ -d $(TOP)/htdocs/manual ]; then \
+ 		echo "Copying tree $(TOP)/htdocs/manual -> $(root)/$(manualdir)/"; \
+ 		(cd $(TOP)/htdocs/manual/ && $(TAR) $(TAROPT) - *) |\
+ 		(cd $(root)$(manualdir)/ && $(TAR) -xf -); \
+ 		find $(root)$(manualdir)/ -type d -exec chmod a+rx {} \; ; \
+ 		find $(root)$(manualdir)/ -type f -print | xargs chmod a+r ; \
+-	fi
+-	-@if [ -f $(root)$(cgidir)/printenv ]; then \
+-		echo "[PRESERVING EXISTING CGI SUBDIR: $(root)$(cgidir)/]"; \
+-	else \
 +#        fi
 +	if [ ! -d $(root)$(htdocsdir) ]; then \
 +		$(LN) -sf $(root)$(doc_prefix) $(root)$(htdocsdir); \
-+  	fi
++	fi
 +	$(RM) $(root)$(htdocsdir).default
 +	$(LN) -s $(root)$(doc_prefix) $(root)$(htdocsdir).default
 +#        -@if [ -f $(root)$(cgidir)/printenv ]; then \
-+#                echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(cgidir)/]"; \
++#                echo "[PRESERVING EXISTING CGI SUBDIR: $(root)$(cgidir)/]"; \
 +#        else \
  		for script in printenv test-cgi; do \
  			cat $(TOP)/cgi-bin/$${script} |\
@@ -61,13 +71,15 @@
 +			echo "$(INSTALL_DATA) $(TOP)/conf/$${script}[*] $(root)$(cgidir).default/$${script}"; \
 +			$(INSTALL_DATA) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(cgidir).default/$${script}; \
  		done; \
+-	fi
 +#        fi
 +	if [ ! -d $(root)$(cgidir) ]; then \
 +		$(LN) -sf $(root)$(cgidir).default $(root)$(cgidir); \
- 	fi
++  	fi
  	@echo "Copying tree $(TOP)/icons/ -> $(root)$(iconsdir)/"; \
  	(cd $(TOP)/icons/ && $(TAR) $(TAROPT) - *) |\
-@@ -509,9 +518,9 @@
+ 	(cd $(root)$(iconsdir)/ && $(TAR) -xf -); \
+@@ -522,10 +531,10 @@
  			-e 's;logs/accept\.lock;$(runtimedir)/$(TARGET).lock;' \
  			-e 's;logs/apache_runtime_status;$(runtimedir)/$(TARGET).scoreboard;' \
  			-e 's;logs/httpd\.pid;$(runtimedir)/$(TARGET).pid;' \
