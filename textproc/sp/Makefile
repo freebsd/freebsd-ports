@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.jclark.com/pub/sp/
 
 MAINTAINER=	chuckr@FreeBSD.org
 
+USE_SUBMAKE=	yes
 INSTALLS_SHLIB=	yes
 
 post-patch:
