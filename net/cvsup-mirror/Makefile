@@ -22,6 +22,7 @@ NO_PACKAGE=	too interactive
 SCRIPTS_ENV=	USA_RESIDENT=${USA_RESIDENT}
 
 base=${PREFIX}/etc/cvsup
+distrib=${base}/sup.client/distrib
 rc=${PREFIX}/etc/rc.d
 
 do-extract:
@@ -29,13 +30,14 @@ do-extract:
 
 do-install:
 	@${ECHO_MSG} "Installing files"
-	@test -d ${base} || ${MKDIR} ${base}
+	@test -d ${distrib} || ${MKDIR} ${distrib}
 	@test -d ${rc} || ${MKDIR} ${rc}
 	@${INSTALL_DATA} ${WRKSRC}/config.sh ${base}
 	@${INSTALL_SCRIPT} ${FILESDIR}/update.sh ${base}
 	@${INSTALL_DATA} ${FILESDIR}/supfile ${base}
 	@${INSTALL_DATA} ${FILESDIR}/supfile.crypto ${base}
 	@${INSTALL_DATA} ${FILESDIR}/supfile.non-crypto ${base}
+	@${INSTALL_DATA} ${FILESDIR}/refuse.self ${distrib}
 	@${INSTALL_SCRIPT} ${FILESDIR}/cvsupd.sh ${rc}
 	@${CP} /dev/null ${base}/.start_server
 
