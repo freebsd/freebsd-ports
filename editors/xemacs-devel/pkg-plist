@@ -18,6 +18,7 @@ lib/xemacs-%%XEMACS_VER%%/etc/COPYING.LIB
 lib/xemacs-%%XEMACS_VER%%/etc/ChangeLog
 lib/xemacs-%%XEMACS_VER%%/etc/DEBUG
 lib/xemacs-%%XEMACS_VER%%/etc/DISTRIB
+lib/xemacs-%%XEMACS_VER%%/etc/ETAGS.EBNF
 lib/xemacs-%%XEMACS_VER%%/etc/Emacs.ad
 lib/xemacs-%%XEMACS_VER%%/etc/FTP
 lib/xemacs-%%XEMACS_VER%%/etc/GNU
@@ -77,6 +78,7 @@ lib/xemacs-%%XEMACS_VER%%/etc/gnudoit.1
 lib/xemacs-%%XEMACS_VER%%/etc/gnuserv.1
 lib/xemacs-%%XEMACS_VER%%/etc/gnuserv.README
 lib/xemacs-%%XEMACS_VER%%/etc/gray1.xbm
+lib/xemacs-%%XEMACS_VER%%/etc/gtkrc
 lib/xemacs-%%XEMACS_VER%%/etc/ms-kermit
 lib/xemacs-%%XEMACS_VER%%/etc/ms-kermit-7bit
 lib/xemacs-%%XEMACS_VER%%/etc/package-index.LATEST.gpg
@@ -1297,6 +1299,7 @@ lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/device.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/device-impl.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/devslots.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/dragdrop.h
+lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/dump-data.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/dumper.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/elhash.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/emodules.h
@@ -1344,6 +1347,9 @@ lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/miscplay.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/mule-ccl.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/ndir.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/nt.h
+lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/number-gmp.h
+lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/number-mp.h
+lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/number.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/objects-gtk-impl.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/objects-gtk.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/objects-impl.h
@@ -1428,6 +1434,7 @@ lib/xemacs-%%XEMACS_VER%%/info/lispref.info-6
 lib/xemacs-%%XEMACS_VER%%/info/lispref.info-7
 lib/xemacs-%%XEMACS_VER%%/info/lispref.info-8
 lib/xemacs-%%XEMACS_VER%%/info/lispref.info-9
+lib/xemacs-%%XEMACS_VER%%/info/lispref.info-10
 lib/xemacs-%%XEMACS_VER%%/info/new-users-guide.info
 lib/xemacs-%%XEMACS_VER%%/info/standards.info
 lib/xemacs-%%XEMACS_VER%%/info/widget.info
