@@ -1,14 +1,24 @@
 # New ports collection makefile for:	tcsh
-# Version required:	6.05
+# Version required:     6.06
 # Date created:		22 August 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.7 1995/04/11 19:26:35 asami Exp $
+# $Id: Makefile,v 1.8 1995/05/06 15:19:43 ache Exp $
 #
 
-DISTNAME=	tcsh-6.05
+DISTNAME=       tcsh-6.06
 CATEGORIES+=	shells
 MASTER_SITES=	ftp://tesla.ee.cornell.edu/pub/tcsh/
+
+ALL_TARGET=     all catalogs
+INSTALL_TARGET= install install.man
+
+post-install:
+	chown bin.bin ${PREFIX}/bin/tcsh
+	chown bin.bin ${PREFIX}/man/man1/tcsh.1
+	cd ${WRKSRC}; install -c -o bin -g bin -m 444 tcsh.C.cat ${PREFIX}/share/nls/C/tcsh.cat
+	cd ${WRKSRC}; install -c -o bin -g bin -m 444 tcsh.french.cat ${PREFIX}/share/nls/fr_FR.ISO_8859-1/tcsh.cat
+	cd ${WRKSRC}; install -c -o bin -g bin -m 444 tcsh.german.cat ${PREFIX}/share/nls/de_DE.ISO_8859-1/tcsh.cat
 
 MAINTAINER=     ache@FreeBSD.ORG
 
