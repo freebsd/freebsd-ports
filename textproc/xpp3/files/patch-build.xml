@@ -1,0 +1,17 @@
+$FreeBSD$
+
+--- build.xml.orig	Thu Jan 27 00:34:33 2005
++++ build.xml	Wed Feb  9 22:34:12 2005
+@@ -496,8 +496,10 @@
+              use="true"
+              windowtitle="${name} ${version} Implementation API"
+              doctitle="Implementation ${name}"
+-             bottom="${copyright}"
+-    />
++             bottom="${copyright}">
++             <link offline="true" packagelistLoc="${jdk.api}" href="${jdk.api}"/>
++             <link offline="true" packagelistLoc="${xmlpull.api}" href="${xmlpull.api}"/>
++    </javadoc>
+   </target>
+ 
+ 
