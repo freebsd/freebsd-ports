@@ -1,9 +1,14 @@
 bin/couriertls
 bin/imapd
 bin/maildirmake
+bin/pop3d
 etc/imapd-ssl.config.dist
 etc/imapd.cnf.dist
 etc/imapd.config.dist
+etc/pop3d-ssl.config.dist
+etc/pop3d.cnf.dist
+etc/pop3d.config.dist
+libexec/courier-imap/authlib/authcustom
 libexec/courier-imap/authlib/authpwd
 libexec/courier-imap/authlib/authuserdb
 libexec/courier-imap/couriertcpd
@@ -12,15 +17,20 @@ libexec/courier-imap/imapd-ssl.rc
 libexec/courier-imap/imapd.rc
 libexec/courier-imap/logger
 libexec/courier-imap/makedatprog
+libexec/courier-imap/pop3d-ssl.rc
+libexec/courier-imap/pop3d.rc
 sbin/imaplogin
 sbin/makeuserdb
 sbin/mkimapdcert
+sbin/mkpop3dcert
+sbin/pop3login
 sbin/pw2userdb
 sbin/userdb
 sbin/userdbpw
 sbin/vchkpw2userdb
 share/courier-imap/makeuserdb
 share/courier-imap/mkimapdcert
+share/courier-imap/mkpop3dcert
 share/courier-imap/pw2userdb
 share/courier-imap/userdb
 share/courier-imap/vchkpw2userdb
@@ -28,7 +38,7 @@ share/doc/courier-imap/AUTHORS
 share/doc/courier-imap/ChangeLog
 share/doc/courier-imap/INSTALL
 share/doc/courier-imap/README
-@dirrm %D/libexec/courier-imap/authlib
-@dirrm %D/libexec/courier-imap
-@dirrm %D/share/courier-imap
-@dirrm %D/share/doc/courier-imap
+@dirrm share/doc/courier-imap
+@dirrm share/courier-imap
+@dirrm libexec/courier-imap/authlib
+@dirrm libexec/courier-imap
