@@ -2491,6 +2491,7 @@ horde2		ports/www/horde2
 hotjava		ports/www/hotjava
 hotkeys		ports/misc/hotkeys
 hotwayd		ports/mail/hotwayd
+howl		ports/net/howl
 hp2xx		ports/print/hp2xx
 hp48cc		ports/devel/hp48cc
 hpack.non-usa.only	ports/archivers/hpack.non-usa.only
