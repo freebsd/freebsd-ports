@@ -26,10 +26,12 @@ USE_REINPLACE=	yes
 
 PATCH_ARGS	=-p0 -d ${WRKDIR}
 
+ONLY_FOR_ARCHS=	i386 alpha
+
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386" && !(${ARCH} == "alpha" && ${OSVERSION} >= 500000)
-BROKEN=		"Does not compile on !i386 or alpha 4.x"
+.if ${ARCH} == "alpha" && ${OSVERSION} < 500000
+IGNORE=		"cannot be build on alpha 4.x, which does not have bktr hardware support"
 .endif
 
 .if !defined(WITH_RADIOTRACK)
