@@ -1,36 +1,41 @@
-include/python1.5/Numeric/arrayobject.h
-include/python1.5/Numeric/f2c.h
-include/python1.5/Numeric/fftpack.h
-include/python1.5/Numeric/ranlib.h
-include/python1.5/Numeric/ufuncobject.h
-lib/python1.5/site-packages/Numeric/_numpy.so
-lib/python1.5/site-packages/Numeric/ArrayPrinter.py
-lib/python1.5/site-packages/Numeric/ArrayPrinter.pyc
-lib/python1.5/site-packages/Numeric/FFT.py
-lib/python1.5/site-packages/Numeric/FFT.pyc
-lib/python1.5/site-packages/Numeric/LinearAlgebra.py
-lib/python1.5/site-packages/Numeric/LinearAlgebra.pyc
-lib/python1.5/site-packages/Numeric/MA.py
-lib/python1.5/site-packages/Numeric/MA.pyc
-lib/python1.5/site-packages/Numeric/MLab.py
-lib/python1.5/site-packages/Numeric/MLab.pyc
-lib/python1.5/site-packages/Numeric/Matrix.py
-lib/python1.5/site-packages/Numeric/Matrix.pyc
-lib/python1.5/site-packages/Numeric/Numeric.py
-lib/python1.5/site-packages/Numeric/Numeric.pyc
-lib/python1.5/site-packages/Numeric/Precision.py
-lib/python1.5/site-packages/Numeric/Precision.pyc
-lib/python1.5/site-packages/Numeric/RandomArray.py
-lib/python1.5/site-packages/Numeric/RandomArray.pyc
-lib/python1.5/site-packages/Numeric/UserArray.py
-lib/python1.5/site-packages/Numeric/UserArray.pyc
-lib/python1.5/site-packages/Numeric/arrayfns.so
-lib/python1.5/site-packages/Numeric/fftpack.so
-lib/python1.5/site-packages/Numeric/lapack_lite.so
-lib/python1.5/site-packages/Numeric/multiarray.so
-lib/python1.5/site-packages/Numeric/ranlib.so
-lib/python1.5/site-packages/Numeric/umath.so
-lib/python1.5/site-packages/Numeric.pth
+include/%%PYVERSION%%/Numeric/arrayobject.h
+include/%%PYVERSION%%/Numeric/ranlib.h
+include/%%PYVERSION%%/Numeric/ufuncobject.h
+lib/%%PYVERSION%%/site-packages/FFT/FFT.py
+lib/%%PYVERSION%%/site-packages/FFT/FFT.pyc
+lib/%%PYVERSION%%/site-packages/MA/MA.py
+lib/%%PYVERSION%%/site-packages/MA/MA.pyc
+lib/%%PYVERSION%%/site-packages/MA/__init__.py
+lib/%%PYVERSION%%/site-packages/MA/__init__.pyc
+lib/%%PYVERSION%%/site-packages/Numeric.pth
+lib/%%PYVERSION%%/site-packages/Numeric/ArrayPrinter.py
+lib/%%PYVERSION%%/site-packages/Numeric/ArrayPrinter.pyc
+lib/%%PYVERSION%%/site-packages/Numeric/LinearAlgebra.py
+lib/%%PYVERSION%%/site-packages/Numeric/LinearAlgebra.pyc
+lib/%%PYVERSION%%/site-packages/Numeric/MLab.py
+lib/%%PYVERSION%%/site-packages/Numeric/MLab.pyc
+lib/%%PYVERSION%%/site-packages/Numeric/Matrix.py
+lib/%%PYVERSION%%/site-packages/Numeric/Matrix.pyc
+lib/%%PYVERSION%%/site-packages/Numeric/Numeric.py
+lib/%%PYVERSION%%/site-packages/Numeric/Numeric.pyc
+lib/%%PYVERSION%%/site-packages/Numeric/Precision.py
+lib/%%PYVERSION%%/site-packages/Numeric/Precision.pyc
+lib/%%PYVERSION%%/site-packages/Numeric/RandomArray.py
+lib/%%PYVERSION%%/site-packages/Numeric/RandomArray.pyc
+lib/%%PYVERSION%%/site-packages/Numeric/UserArray.py
+lib/%%PYVERSION%%/site-packages/Numeric/UserArray.pyc
+lib/%%PYVERSION%%/site-packages/Numeric/_numpy.so
+lib/%%PYVERSION%%/site-packages/Numeric/arrayfns.so
+lib/%%PYVERSION%%/site-packages/Numeric/lapack_lite.so
+lib/%%PYVERSION%%/site-packages/Numeric/multiarray.so
+lib/%%PYVERSION%%/site-packages/Numeric/ranlib.so
+lib/%%PYVERSION%%/site-packages/Numeric/umath.so
+lib/%%PYVERSION%%/site-packages/RNG/RNG.so
+lib/%%PYVERSION%%/site-packages/RNG/Statistics.py
+lib/%%PYVERSION%%/site-packages/RNG/Statistics.pyc
+lib/%%PYVERSION%%/site-packages/RNG/__init__.py
+lib/%%PYVERSION%%/site-packages/RNG/__init__.pyc
+lib/%%PYVERSION%%/site-packages/fftpack.so
 @unexec rmdir %B 2>/dev/null || true
 @comment share/doc/py-numeric/numpy.pdf
 share/examples/py-numeric/NumTut/__init__.py
@@ -41,8 +46,11 @@ share/examples/py-numeric/NumTut/view.py
 share/examples/py-numeric/life.py
 share/examples/py-numeric/mandelbrot.py
 share/examples/py-numeric/sieve.py
-@dirrm lib/python1.5/site-packages/Numeric
 @dirrm share/examples/py-numeric/NumTut
 @dirrm share/examples/py-numeric
 @comment @dirrm share/doc/py-numeric
-@dirrm include/python1.5/Numeric
+@dirrm lib/%%PYVERSION%%/site-packages/RNG
+@dirrm lib/%%PYVERSION%%/site-packages/Numeric
+@dirrm lib/%%PYVERSION%%/site-packages/MA
+@dirrm lib/%%PYVERSION%%/site-packages/FFT
+@dirrm include/%%PYVERSION%%/Numeric

@@ -6,27 +6,37 @@
 #
 
 PORTNAME=	numeric
-PORTVERSION=	15.3
+PORTVERSION=	16.0
 CATEGORIES=	math python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	numpy
 PKGNAMEPREFIX=	py-
-DISTNAME=	Numerical-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
+DISTNAME=	Numeric-${PORTVERSION}
 
 MAINTAINER=	tg@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/python1.5/site-packages/distutils/core.py:${PORTSDIR}/misc/py-distutils
+BUILD_DEPENDS=	python:${PORTSDIR}/lang/python \
+		${PYDISTUTILS}
+LIB_DEPENDS=	lapack.3:${PORTSDIR}/math/lapack \
+		blas.2:${PORTSDIR}/math/lapack
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python
+
+MAKE_ENV=	BLASLIBDIR=${LOCALBASE}/lib LAPACKLIBDIR=${LOCALBASE}/lib
+PLIST_SUB=	PYVERSION="python${PYVERSION}"
 
 DOCDIR=		${PREFIX}/share/doc/py-numeric
 EXAMPLEDIR=	${PREFIX}/share/examples/py-numeric
+PYVERSION!=	python -c 'import string, sys; \
+			   print string.split(sys.version)[0][:3]' \
+			|| echo "1.5"
 
-do-build:
-	@(cd ${WRKSRC}; python setup.py build)
+.if ${PYVERSION} == "2.0"
+PYDISTUTILS=	${LOCALBASE}/lib/python${PYVERSION}/distutils/core.py:${PORTSDIR}/lang/python
+.else
+PYDISTUTILS=	${LOCALBASE}/lib/python${PYVERSION}/site-packages/distutils/core.py:${PORTSDIR}/misc/py-distutils
+.endif
 
-do-install:
-	@(cd ${WRKSRC}; python setup.py install)
+post-install:
 	@${MKDIR} ${EXAMPLEDIR}
 	${INSTALL_DATA} ${WRKSRC}/Demo/*.py ${EXAMPLEDIR}
 	@${MKDIR} ${EXAMPLEDIR}/NumTut
