@@ -1,0 +1,25 @@
+To Install and use postfixadmin:
+
+1. Create the MySQL Tables
+--------------------------
+In ${PREFIX}/www/postfixadmin/DATABASE.TXT you can find the table
+structure that you need in order to configure Postfix Admin and Postfix
+in general to work with Virtual Domains and Users
+
+2. Configure
+------------
+Check the ${PREFIX}/www/postfixadmin/config.inc.php file. There you
+can specify settings that are relevant to your setup.
+
+The default password for the admin part of Postfix Admin is admin/admin.
+This is specified in the .htpasswd file in the admin directory. Make sure
+that the location of the .htpasswd file matches your path.
+
+3. Configure Apache
+-------------------
+Add a line in your httpd.conf to allow the use of .htaccess file.
+
+<Directory "/usr/local/www/postfixadmin">
+	Options Indexes
+	AllowOverride AuthConfig
+</Directory>

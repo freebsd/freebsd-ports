@@ -7,6 +7,7 @@
 
 PORTNAME=	postfixadmin
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://high5.net/postfixadmin/download.php/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -20,6 +21,9 @@ RUN_DEPENDS+=	${LOCALBASE}/libexec/apache2/libphp4.so:${PORTSDIR}/www/mod_php4
 .else
 RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
 .endif
+
+WWW_USER?=	www
+WWW_GROUP?=	www
 
 NO_BUILD=	yes
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
@@ -48,5 +52,17 @@ do-install:
 		@${INSTALL_DATA} ${WRKSRC}/languages/* ${PREFIX}/www/postfixadmin/languages
 		@${INSTALL_DATA} ${WRKSRC}/templates/* ${PREFIX}/www/postfixadmin/templates
 		@${INSTALL_DATA} ${WRKSRC}/users/* ${PREFIX}/www/postfixadmin/users
+		@[ -f ${PREFIX}/www/postfixadmin/config.inc.php ] || \
+			${CP} ${PREFIX}/www/postfixadmin/config.inc.php.sample \
+				${PREFIX}/www/postfixadmin/config.inc.php
+
+
+post-install:
+		@${CHOWN} -R ${WWW_USER}:${WWW_GROUP} ${PREFIX}/www/postfixadmin
+		@${CHMOD} 640 ${PREFIX}/www/postfixadmin/*.php ${PREFIX}/www/postfixadmin/*.css
+		@${CHMOD} 640 ${PREFIX}/www/postfixadmin/admin/*.php
+		@${CHMOD} 640 ${PREFIX}/www/postfixadmin/users/*.php
+		@${CHMOD} 640 ${PREFIX}/www/postfixadmin/templates/*.tpl
+		@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
