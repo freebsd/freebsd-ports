@@ -1,0 +1,21 @@
+GOBLIN is a C++ class library focussed on graph optimization and network
+programming problems. It deals with all of the standard graph optimization
+problems discussed by textbooks and in courses on combinatorial optimization.
+
+Today, GOBLIN provides strongly polynomial algorithms for the following graph
+optimization problems:
+   - Shortest paths in graphs and digraphs with negative lengths.
+   - Negative cycles and minimum mean cycles.
+   - Strong and 2-connected components.
+   - Minimum spanning trees, arborescences and 1-trees.
+   - Maximum st-flows, feasible circulations and b-flows.
+   - Min-cost st-flows, b-flows and circulations.
+   - Assignment problems of any kind.
+   - 1-matchings, b-matchings, capacitated b-matchings, f-factors and
+     degree-constrained subgraphs.
+   - Directed and undirected Chinese postman problems, T-joins.
+
+The library also includes methods for NP-hard problems, namely TSP, ATSP,
+stable sets and graph colouring.
+
+WWW: http://www.math.uni-augsburg.de/opt/goblin.html

@@ -1,0 +1,40 @@
+--- Makefile.orig	Sat Feb 23 07:24:08 2002
++++ Makefile	Sun Mar  3 16:48:58 2002
+@@ -25,13 +25,13 @@
+ 
+ # GNU
+ 
+-cpp = g++ -c -g -Wall -pedantic -Iinclude $(vflags)
++cpp = g++ -c -Wall -pedantic -Iinclude $(vflags) %%CXXFLAGS%%
+ # To link with the static library libtcl.*.a
+-link = g++ -lm -lpthread
++link = g++ -lm -lpthread %%LIBS%%
+ # To link with the shared object libtcl.*.so
+ # link = g++ -lm -Wl,-brtl -lpthreads
+ # To link shared object
+-linkShared = g++ -lm -lpthread -Wl,-shared
++linkShared = g++ -lm -lpthread -Wl,-shared %%LIBS%%
+ 
+ # xlC
+ 
+@@ -46,15 +46,15 @@
+ 
+ # Tcl/Tk Release
+ 
+-libtcl = 8.3
+-libtk = 8.3
++libtcl = 83
++libtk = 83
+ 
+ 
+ # System Installation
+ 
+-goblin_include_path = /usr/include
+-goblin_lib_path     = /usr/lib
+-goblin_bin_path     = /usr/bin
++goblin_include_path = %%PREFIX%%/include
++goblin_lib_path     = %%PREFIX%%/lib
++goblin_bin_path     = %%PREFIX%%/bin
+ 
+ 
+ #------------------------------------------------------------------------
