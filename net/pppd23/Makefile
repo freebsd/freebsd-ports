@@ -20,8 +20,8 @@ MANCOMPRESSED=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not compile on amd64"
+.if ${OSVERSION} >= 500000
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-no-logf
 .endif
 
 .include <bsd.port.post.mk>
