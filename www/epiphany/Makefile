@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	epiphany
-PORTVERSION=	0.5.0
+PORTVERSION=	0.6.0
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.5
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.6
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -82,17 +82,14 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "*.cpp" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|malloc\.h|stdlib.h|g'
 
-pre-install:
-	@-${X11BASE}/bin/gconftool-2 --shutdown
-
-post-install:
-	@${RM} -f ${PREFIX}/bin/epiphany
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g ; \
+post-configure:
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \
 		s|%%LOCALBASE%%|${LOCALBASE}|g ; \
 		s|%%X11BASE%%|${X11BASE}|g ; \
 		s|%%MOZILLA%%|${MOZILLA}|g ; \
-		s|%%FLASHPLAYER%%|${FLASHPLAYER}|g' < ${FILESDIR}/epiphany \
-		> ${WRKSRC}/epiphany
-	@${INSTALL_SCRIPT} ${WRKSRC}/epiphany ${PREFIX}/bin/epiphany
+		s|%%FLASHPLAYER%%|${FLASHPLAYER}|g' ${WRKSRC}/src/epiphany
+
+pre-install:
+	@-${X11BASE}/bin/gconftool-2 --shutdown
 
 .include <bsd.port.post.mk>
