@@ -18,8 +18,10 @@ etc/postfix/sample-local.cf
 etc/postfix/sample-main.cf
 etc/postfix/sample-master.cf
 etc/postfix/sample-misc.cf
-%%SUB_PCRE%%etc/postfix/sample-pcre.cf
-%%SUB_PCRE%%etc/postfix/sample-pcre_table
+%%SUB_PCRE%%etc/postfix/sample-pcre-access.cf
+%%SUB_PCRE%%etc/postfix/sample-pcre-body.cf
+%%SUB_PCRE%%etc/postfix/sample-pcre-header.cf
+%%SUB_PCRE%%etc/postfix/pcre_table
 etc/postfix/sample-qmqpd.cf
 etc/postfix/sample-rate.cf
 etc/postfix/sample-regexp.cf

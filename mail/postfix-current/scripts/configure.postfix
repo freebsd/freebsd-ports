@@ -56,7 +56,7 @@ while [ "$1" ]; do
 	case $1 in
 		\"PCRE\")
 			echo "CONF1+=		pcre_table"
-			echo "CONF2+=		sample-pcre.cf"
+			echo "CONF2+=		sample-pcre-access.cf sample-pcre-body.cf sample-pcre-header.cf"
 			echo "MAN5+=		pcre_table.5"
 			echo "BUILD_DEPENDS+=	\${LOCALBASE}/lib/libpcre.a:\${PORTSDIR}/devel/pcre"
 			echo "POSTFIX_CCARGS+=	-DHAS_PCRE -I\${LOCALBASE}/include"
