@@ -254,6 +254,7 @@
     SUBDIR += ruby-dbi
     SUBDIR += ruby-gdbm
     SUBDIR += ruby-interbase
+    SUBDIR += ruby-libgda
     SUBDIR += ruby-msql
     SUBDIR += ruby-mysql
     SUBDIR += ruby-o_dbm
