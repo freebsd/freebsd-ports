@@ -18,3 +18,5 @@ XmBDFEditor is a Motif-based BDF font editor with the following features:
   o  Imports Linux console fonts (PSF, CP, and FNT).
   o  Imports Sun console fonts (vfont format).
   o  Imports fonts from the X server.
+
+WWW: http://crl.nmsu.edu/~mleisher/xmbdfed.html
