@@ -1,17 +1,18 @@
 lib/libtomcrypt.a
 include/ltc_tommath.h
-include/mycrypt_cfg.h
-include/mycrypt_misc.h
-include/mycrypt_prng.h
-include/mycrypt_cipher.h
-include/mycrypt_hash.h
-include/mycrypt_macros.h
-include/mycrypt_pk.h
-include/mycrypt.h
-include/mycrypt_argchk.h
-include/mycrypt_custom.h
-include/mycrypt_pkcs.h
+include/tomcrypt_cfg.h
+include/tomcrypt_misc.h
+include/tomcrypt_prng.h
+include/tomcrypt_cipher.h
+include/tomcrypt_hash.h
+include/tomcrypt_macros.h
+include/tomcrypt_pk.h
+include/tomcrypt.h
+include/tomcrypt_argchk.h
+include/tomcrypt_custom.h
+include/tomcrypt_pkcs.h
 include/tommath_class.h
 include/tommath_superclass.h
-%%PORTDOCS%%%%DOCSDIR%%/crypt.pdf
+%%PORTDOCS%%%%DOCSDIR%%/pdf/crypt.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pdf/
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

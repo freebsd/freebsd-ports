@@ -1,40 +1,29 @@
---- makefile.orig	Mon Aug  9 11:52:40 2004
-+++ makefile	Mon Aug  9 12:03:56 2004
-@@ -43,10 +43,10 @@
- #LIBPATH-The directory for libtomcrypt to be installed to.
+--- makefile.orig	Thu Dec 30 19:55:17 2004
++++ makefile	Tue Jan 11 12:10:05 2005
+@@ -50,13 +50,13 @@
  #INCPATH-The directory to install the header files for libtomcrypt.
  #DATAPATH-The directory to install the pdf docs.
--DESTDIR=
+ DESTDIR=
 -LIBPATH=/usr/lib
 -INCPATH=/usr/include
 -DATAPATH=/usr/share/doc/libtomcrypt/pdf
-+DESTDIR=$(PREFIX)
-+LIBPATH=/lib
-+INCPATH=/include
-+DATAPATH=/share/doc/libtomcrypt/pdf
++LIBPATH=$(PREFIX)/lib
++INCPATH=$(PREFIX)/include
++DATAPATH=$(PREFIX)/share/doc/libtomcrypt/pdf
+ 
+ #Who do we install as?
+ USER=root
+-GROUP=root
++GROUP=wheel
  
  #List of objects to compile.
  
-@@ -179,13 +179,15 @@
- #This rule installs the library and the header files. This must be run
- #as root in order to have a high enough permission to write to the correct
- #directories and to set the owner and group to root.
--install: library docs
--	install -d -g root -o root $(DESTDIR)$(LIBPATH)
--	install -d -g root -o root $(DESTDIR)$(INCPATH)
--	install -d -g root -o root $(DESTDIR)$(DATAPATH)
--	install -g root -o root $(LIBNAME) $(DESTDIR)$(LIBPATH)
--	install -g root -o root $(HEADERS) $(DESTDIR)$(INCPATH)
--	install -g root -o root doc/crypt.pdf $(DESTDIR)$(DATAPATH)
-+install: docs install-nodocs
-+	install -d -g wheel -o root $(DESTDIR)$(DATAPATH)
-+	install -g wheel -o root doc/crypt.pdf $(DESTDIR)$(DATAPATH)
-+
-+install-nodocs: library
-+	install -d -g wheel -o root $(DESTDIR)$(LIBPATH)
-+	install -d -g wheel -o root $(DESTDIR)$(INCPATH)
-+	install -g wheel -o root $(LIBNAME) $(DESTDIR)$(LIBPATH)
-+	install -g wheel -o root $(HEADERS) $(DESTDIR)$(INCPATH)
+@@ -251,7 +251,7 @@
+ 	latex crypt > /dev/null
+ 	makeindex crypt.idx > /dev/null
+ 	latex crypt > /dev/null
+-	dvipdf crypt
++	dvipdft crypt
+ 	mv -ivf crypt.pdf doc/crypt.pdf
+ 	rm -f $(LEFTOVERS)
  
- #This rule cleans the source tree of all compiled code, not including the pdf
- #documentation.
