@@ -86,6 +86,7 @@
     SUBDIR += sgmlformat
     SUBDIR += sgmls
     SUBDIR += sgmltools
+    SUBDIR += sgmltools-lite
     SUBDIR += sgrep
     SUBDIR += sp
     SUBDIR += texi2html
