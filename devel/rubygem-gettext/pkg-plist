@@ -1,0 +1,39 @@
+bin/rgettext
+%%RUBY_SITELIBDIR%%/gettext.rb
+%%RUBY_SITELIBDIR%%/mo.rb
+share/locale/ja/LC_MESSAGES/rgettext.mo
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/hello.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/hello2.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/hellogtk.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/locale/ja/LC_MESSAGES/hello.mo
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/locale/ja/LC_MESSAGES/hello2.mo
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/locale/ja/LC_MESSAGES/hellogtk.mo
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/po/hello.pot
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/po/hello2.pot
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/po/hellogtk.pot
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/po/ja/hello.po
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/po/ja/hello2.po
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/po/ja/hellogtk.po
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/po/makemo.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/gettext/po/ja
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/gettext/po
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/gettext/locale/ja/LC_MESSAGES
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/gettext/locale/ja
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/gettext/locale
+%%PORTDOCS%%%%RUBY_DOCDIR%%/gettext/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/gettext/config.rb
+%%PORTDOCS%%%%RUBY_DOCDIR%%/gettext/html/en/ruby-gettext.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/gettext/html/ja/ruby-gettext.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/gettext/html/style.css
+%%PORTDOCS%%%%RUBY_DOCDIR%%/gettext/rd/en/LANGUAGE
+%%PORTDOCS%%%%RUBY_DOCDIR%%/gettext/rd/en/ruby-gettext.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/gettext/rd/ja/LANGUAGE
+%%PORTDOCS%%%%RUBY_DOCDIR%%/gettext/rd/ja/ruby-gettext.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/gettext/yard2html.rb
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/gettext/rd/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/gettext/rd/en
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/gettext/rd
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/gettext/html/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/gettext/html/en
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/gettext/html
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/gettext
