@@ -44,6 +44,7 @@ share/locale/de/LC_MESSAGES/ude.mo
 share/locale/es/LC_MESSAGES/ude.mo
 share/locale/pt_BR/LC_MESSAGES/ude.mo
 share/locale/sk/LC_MESSAGES/ude.mo
+share/locale/sv/LC_MESSAGES/ude.mo
 share/locale/tr/LC_MESSAGES/ude.mo
 %%DATADIR%%/config/StartScript
 %%DATADIR%%/config/StopScript
