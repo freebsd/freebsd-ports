@@ -1,0 +1,5 @@
+This is a development version of msmtp. Most of the code was rewritten or 
+restructured, so it needs some testing. Some new features were also added: 
+SMTP pipelining, the --serverinfo option, and the --from option.
+
+WWW: http://msmtp.sourceforge.net/
