@@ -4,10 +4,10 @@
 # Date created:         Thur July 25, 1996
 # Whom:                 David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.43 1998/04/18 11:11:27 obrien Exp $
+# $Id: Makefile,v 1.44 1998/07/16 05:57:09 obrien Exp $
 
-DISTNAME=	mutt-0.93i
-PKGNAME=	mutt-0.93
+DISTNAME=	mutt-0.93.1i
+PKGNAME=	mutt-0.93.1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://riemann.iam.uni-bonn.de/pub/mutt/  \
 		ftp://ftp.gbnet.net/pub/mutt-international/  \
@@ -25,6 +25,7 @@ PATCHFILES=
 
 MAINTAINER=     obrien@FreeBSD.org
 
+LIB_DEPENDS=	ncurses\\.4\\.:${PORTSDIR}/devel/ncurses
 .if defined(BATCH)
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 .endif
@@ -35,7 +36,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --enable-dsn --enable-pop --enable-imap --enable-flock \
 		--disable-fcntl --enable-hidden-host \
 		--with-sharedir=${PREFIX}/share/misc \
-		--with-docdir=${PREFIX}/share/doc/mutt
+		--with-docdir=${PREFIX}/share/doc/mutt \
+		--with-curses=${PREFIX}
 MAN1=		mutt.1
 
 post-patch:
