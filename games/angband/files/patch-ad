@@ -1,22 +1,24 @@
---- src/Makefile.orig	Thu Dec  2 10:00:10 1999
-+++ src/Makefile	Thu Dec  2 10:12:47 1999
-@@ -94,7 +94,7 @@
+--- src/Makefile.orig	Sun Apr 16 01:12:37 2000
++++ src/Makefile	Sun Apr 16 01:13:32 2000
+@@ -91,7 +91,7 @@
  #
- # This is my compiler of choice, it seems to work most everywhere
+ # This is my compiler of choice, it seems to work most everywhere.
  #
 -CC = gcc
 +#CC = gcc
  
  
  #
-@@ -115,8 +115,8 @@
- # including "USE_GETCH" and "USE_CURS_SET".  Note that "config.h" will
- # attempt to "guess" at many of these flags based on your system.
- #
--CFLAGS = -Wall -O1 -pipe -g -D"USE_X11" -D"USE_GCU"
--LIBS = -lX11 -lcurses -ltermcap
-+#CFLAGS = -Wall -O1 -pipe -g -D"USE_X11" -D"USE_GCU"
-+LIBS = -L$(X11BASE)/lib -lX11 -lcurses -ltermcap
+@@ -156,9 +156,9 @@
+ ## Allows the use of Angband in the console using ncurses,
+ ## as well as under X11.
+ ##
+-CFLAGS = -I/usr/X11R6/include -I/usr/include/ncurses -Wall -O2 -m486 \
+-         -D"USE_X11" -D"USE_GCU" -D"USE_NCURSES"
+-LIBS = -L/usr/X11R6/lib -lXaw -lXext -lSM -lICE -lXmu -lXt -lX11 -lncurses
++#CFLAGS = -I/usr/X11R6/include -I/usr/include/ncurses -Wall -O2 -m486 \
++#         -D"USE_X11" -D"USE_GCU" -D"USE_NCURSES"
++LIBS = -L$(X11BASE)/lib -lXaw -lXext -lSM -lICE -lXmu -lXt -lX11 -lncurses
  
  
  ##
