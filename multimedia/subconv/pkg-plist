@@ -1,3 +1,0 @@
-bin/subconv
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
