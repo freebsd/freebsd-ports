@@ -8,8 +8,10 @@
 PORTNAME=	aggregate
 PORTVERSION=	1.6
 CATEGORIES=	net
-MASTER_SITES=	http://buffoon.automagic.org/dist/ \
-		http://maggie.automagic.org/dist/
+MASTER_SITES=	http://dist.automagic.org/ \
+		http://dist1.automagic.org/ \
+		http://dist2.automagic.org/ \
+		http://dist3.automagic.org/
 
 MAINTAINER=	jabley@automagic.org
 
