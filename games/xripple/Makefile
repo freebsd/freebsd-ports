@@ -3,13 +3,13 @@
 # Date created:				6 Oct 1996
 # Whom:					oly
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/11/09 00:01:31 obrien Exp $
 #
 
 DISTNAME=	xripple
 PKGNAME=	xripple-1.0
-MASTER_SITES=	ftp://www.cse.unsw.edu.au/pub/users/s2154962/
 CATEGORIES+=	games
+MASTER_SITES=	ftp://www.cse.unsw.edu.au/pub/users/s2154962/
 
 MAINTAINER=	oly@world.std.com
 
