@@ -1,15 +1,17 @@
-OpenOffice Build 641 Personal Install How-To
+OpenOffice.org Build 641 Personal Install How-To
 
 Written by:	Matthias Rauch <mrauch@netbsd.org>
 		Martin Blapp <mbr@freebsd.org>
 
-OpenOffice has now been installed in ${PREFIX}/OpenOffice.org1.0/
+OpenOffice.org will soon been installed in
+${PREFIX}/OpenOffice.org1.0/
 
-Once that is done exit X11 and run it again as the user
-that you usually use. Then run "make install-user" and do
-a standard workstation Thereafter, OpenOffice can be started using the
-${PREFIX}/bin/soffice command.
+Once this is done run "make install-user" as the user you like to
+use OpenOffice.org and choose a standard workstation installation.
+Thereafter, OpenOffice.org can be started with
+${PREFIX}/OpenOffice.org1.0/program/soffice.
 
-If OO asks you to choose the Java JDK during user-installation, you
-must choose the linux jdk1.3.1. Native FreeBSD jdk1.3.1 does
-not work yet with FreeBSD openoffice and OO does ignore it.
+If OpenOffice.org asks you to choose the Java JDK during
+"make install-user", you must choose the linux jdk1.3.1.
+Native FreeBSD jdk1.3.1 does not work yet with FreeBSD
+openoffice and OO does ignore it.
