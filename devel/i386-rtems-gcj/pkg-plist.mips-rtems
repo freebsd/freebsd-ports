@@ -1,0 +1,6 @@
+bin/mips-rtems-gcj
+bin/gcjh
+bin/jv-scan
+bin/jcf-dump
+lib/gcc-lib/mips-rtems/2.95.2/jc1
+lib/gcc-lib/mips-rtems/2.95.2/jvgenmain
