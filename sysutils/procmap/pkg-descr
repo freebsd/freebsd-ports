@@ -1,0 +1,2 @@
+The procmap utility reliably prints the contents of an entire procfs map
+file, whereas a utility like cat cannot reliably do so.
