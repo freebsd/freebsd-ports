@@ -1,3 +1,5 @@
+$FreeBSD$
+
 *** rundgd.old	Thu Jan 16 03:13:15 1997
 --- rundgd	Thu Jan 16 03:28:42 1997
 ***************
@@ -15,7 +17,7 @@
 --- 1,11 ----
   #!/bin/sh
 
-+ dgd=/usr/local/dgd
++ dgd=%%PREFIX%%/dgd
 + cd $dgd/lpmud-2.4.5
   passwd=HNAMEPASS
   while true
@@ -38,7 +40,7 @@
 --- 1,6 ----
   telnet_port	= 2000;			/* telnet port number */
   binary_port	= 1999;			/* binary port number */
-! directory	= "/usr/local/dgd/lpmud-2.4.5";/* base directory (MUST be absolute) */
+! directory	= "%%PREFIX%%/dgd/lpmud-2.4.5";/* base directory (MUST be absolute) */
   users		= 40;			/* max # of users */
   editors		= 41;			/* max # of editor sessions */
   ed_tmpfile	= "../tmp/ed";		/* proto editor tmpfile */
