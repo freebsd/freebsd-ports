@@ -11,4 +11,6 @@ EMACS_PORT_NAME=	xemacs21-mule
 
 RUN_DEPENDS=		${X11BASE}/lib/X11/fonts/local/mona12aB.pcf.gz:${PORTSDIR}/japanese/monafonts
 
+PLIST_SUB=	XEMACS=""
+
 .include <${MASTERDIR}/Makefile>
