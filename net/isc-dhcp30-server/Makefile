@@ -30,8 +30,6 @@ MAINTAINER=	clefevre@citeweb.net
 # Global variables
 #
 
-FETCH_BEFORE_ARGS+=	-p
-
 HAS_CONFIGURE=	yes
 
 PLIST_SUB=	DATA_DIR="${DATA_DIR}" RCD_SUBDIR="${RCD_SUBDIR}" \
