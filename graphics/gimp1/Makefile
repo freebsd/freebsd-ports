@@ -29,6 +29,8 @@ LIB_DEPENDS=	aa.1:${PORTSDIR}/graphics/aalib \
 
 DEPRECATED=	New stable release 2.0 can be installed via graphics/gimp port
 
+NO_LATEST_LINK=	yes
+
 CONFLICTS=	gimp-2.* gimp-gnome-2.*
 
 #SHLIBVER?=	${PORTVERSION:S/1.2.//g}
