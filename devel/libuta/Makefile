@@ -53,4 +53,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's|SDL/|SDL11/|' ${WRKSRC}/$i
 .endfor
 
+pre-configure:
+	${REINPLACE_CMD} -e 's|<freetype/freetype.h>|<freetype1/freetype/freetype.h>|g' ${WRKSRC}/configure
+
 .include <bsd.port.post.mk>
