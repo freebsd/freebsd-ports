@@ -28,7 +28,7 @@ if [ "X$2" = X"POST-INSTALL" ]; then
 	    break
 	fi
 	file=`${ECHO} ${infofiles} | ${CUT} -d : -f $count`
-	if [ X%%EMACS%% = Xxemacs ]; then
+	if [ X%%EMACS_NAME%% = Xxemacs ]; then
 	    file=${file}.info
 	fi
 	nodename=`${ECHO} ${infonodes} | ${CUT} -d : -f $count`
@@ -43,7 +43,7 @@ if [ "X$2" = X"POST-INSTALL" ]; then
 	fi
 	count=`${EXPR} $count + 1`
     done
-    if [ X%%EMACS%% != Xxemacs ]; then
+    if [ X%%EMACS_NAME%% != Xxemacs ]; then
 	${ECHO} "Adding entry for \"${pkgname}\" to ${infodir}/dir"
 	for file in `${ECHO}  ${infofiles} | ${SED} "s,:, ,g"`; do
 		install-info ${infodir}/${file} ${infodir}/dir

@@ -13,43 +13,46 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	taoka@FreeBSD.org
 
-.if defined(XEMACS-MULE)
-BUILD_DEPENDS=	xemacs:${PORTSDIR}/japanese/xemacs21-canna \
-		{LOCALBASE}/${EMACS_PACKAGESDIR}/../xemacs-packages/lisp/texinfo/texinfmt.el:${PORTSDIR}/editors/xemacs-packages \
-		nkf:${PORTSDIR}/japanese/nkf
-.endif
 PKGINSTALL=	${WRKDIR}/INSTALL
 PKGDEINSTALL=	${WRKDIR}/DEINSTALL
 PKGMESSAGE=	${WRKDIR}/MESSAGE
 VERSION=	1.67
 TARGETNAME=	YaTeX
 DIRSECTION=	The Emacs editor and associated tools
+EMACS_PORT_NAME?=emacs20
+.if (${EMACS_PORT_NAME} == xemacs21-mule)
+BUILD_DEPENDS=	xemacs:${PORTSDIR}/japanese/xemacs21-canna \
+		{LOCALBASE}/${EMACS_PACKAGESDIR}/../xemacs-packages/lisp/texinfo/texinfmt.el:${PORTSDIR}/editors/xemacs-packages \
+		nkf:${PORTSDIR}/japanese/nkf
+.endif
 
+EMACS_PACKAGESDIR=${EMACS_LIBDIR}/site-packages
 # Note that 'INFODIR' is defined in bsd.info.mk
-.if defined(XEMACS)
-EMACS=		xemacs
-EMACSDIR=	${PREFIX}/lib/xemacs/site-packages
-INFODIR=	${EMACSDIR}/info
+.if (${EMACS_PORT_NAME} == xemacs21)
+INFODIR=	${PREFIX}/${EMACS_PACKAGESDIR}/info
+ELISPDIR=	${PREFIX}/${EMACS_PACKAGESDIR}/lisp
+HELPDIR=	${PREFIX}/${EMACS_LIBDIR}/site-lisp
 PLIST=		${PKGDIR}/PLIST.xemacs
 MANIFEST=	MANIFEST.yatex
-.elif defined(XEMACS-MULE)
-EMACS=		xemacs
-EMACSDIR=	${PREFIX}/lib/xemacs/site-packages
-INFODIR=	${EMACSDIR}/info
+.elif (${EMACS_PORT_NAME} == xemacs21-mule)
+INFODIR=	${PREFIX}/${EMACS_PACKAGESDIR}/info
+ELISPDIR=	${PREFIX}/${EMACS_PACKAGESDIR}/lisp
+HELPDIR=	${PREFIX}/${EMACS_LIBDIR}/site-lisp
 PLIST=		${PKGDIR}/PLIST.xemacs-mule
 MANIFEST=	MANIFEST.yatex
-.elif defined(MULE)
-EMACS=		mule
-EMACSDIR=	${PREFIX}/share/mule
+.elif (${EMACS_PORT_NAME} == mule)
 INFODIR=	${PREFIX}/info
 PLIST=		${PKGDIR}/PLIST.mule
+ELISPDIR=	${PREFIX}/${EMACS_LIBDIR}/site-lisp
+HELPDIR=	${ELISPDIR}
 .else
-EMACS=		emacs
-EMACSDIR=	${PREFIX}/share/emacs
 INFODIR=	${PREFIX}/info
 PLIST=		${PKGDIR}/PLIST.emacs
+ELISPDIR=	${PREFIX}/${EMACS_LIBDIR}/site-lisp
+HELPDIR=	${ELISPDIR}
 .endif
-.if defined(XEMACS)
+PORTSDOCDIR=	${PREFIX}/share/doc/yatex
+.if (${EMACS_PORT_NAME} == xemacs21)
 NEW=
 HELP=		help/YATEXHLP.eng
 INFOFILES=	yatexe
@@ -70,14 +73,6 @@ INFONODEEXPS=	Yet Another tex-mode for Emacs. (Japanese):Yet Another tex-mode fo
 DOCSRC+=	docs/yatexe.tex \
 		docs/yatexref.eng \
 		docs/qanda.eng
-.if defined(XEMACS) || defined(XEMACS-MULE)
-ELISPDIR=	${EMACSDIR}/lisp
-HELPDIR=	${EMACSDIR}/../site-lisp
-.else
-ELISPDIR=	${EMACSDIR}/site-lisp
-HELPDIR=	${ELISPDIR}
-.endif
-PORTSDOCDIR=	${PREFIX}/share/doc/yatex
 EL_FILES=	comment.el yatex.el yatexadd.el yatexgen.el \
 		yatexenv.el yatexlib.el \
 		yatexmth.el yatexhks.el yatexhlp.el yatexprc.el \
@@ -104,17 +99,17 @@ do-build:
 		 -e 's,%%INFONODES%%,${INFONODES},g' \
 		 -e 's,%%INFONODEEXPS%%,${INFONODEEXPS},g' \
 		 -e 's,%%DIRSECTION%%,${DIRSECTION},g' \
-		 -e 's,%%EMACS%%,${EMACS},g' \
+		 -e 's,%%EMACS_NAME%%,${EMACS_NAME},g' \
 		< ${FILESDIR}/$${file}.tmpl > ${WRKDIR}/$${file}; \
 	done
 # For XEmacs-mule 20.4, yatexj.info (in Japanese) should be remade
 # after Kanji code of yatexj.tex is convert from shift jis (MS-Kanji)
 # to EUC.
-.if defined(XEMACS-MULE)
+.if (${EMACS_PORT_NAME} == xemacs21-mule)
 	(cd ${WRKSRC}/docs; \
 	${MV} yatexj.tex yatexj.tex.org; \
 	nkf -e yatexj.tex.org > yatexj.tex; \
-	${SETENV} LANG=ja_JP.EUC ${EMACS} -no-site-file -no-init-file \
+	${SETENV} LANG=ja_JP.EUC ${EMACS_CMD} -no-site-file -no-init-file \
 		-batch -l texinfmt -f batch-texinfo-format yatexj.tex; \
 	)
 .endif
@@ -126,7 +121,7 @@ do-install:
 	${INSTALL_DATA} ${EL_FILES} ${ELISPDIR}/yatex; \
 	${INSTALL_DATA} ${HELP} ${HELPDIR}; \
 	${MKDIR} ${INFODIR}
-.if defined(XEMACS) || defined(XEMACS-MULE)
+.if (${EMACS_PORT_NAME} == xemacs21) || (${EMACS_PORT_NAME} == xemacs21-mule)
 	cd ${WRKSRC}; \
 	for file in `${ECHO} ${INFOFILES} | ${SED} "s,:, ,g"`; do \
 		${INSTALL_DATA} ${WRKSRC}/docs/$${file} ${INFODIR}/$${file}.info; \
@@ -149,14 +144,13 @@ post-install:
 		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${INSTALL_DATA} ${WRKDIR}/yatex-startup.el ${ELISPDIR}
 	@${CAT} ${PKGMESSAGE}
-.if defined(XEMACS) || defined(XEMACS-MULE)
+.if (${EMACS_PORT_NAME} == xemacs21) || (${EMACS_PORT_NAME} == xemacs21-mule)
 	${RM} -f ${WRKDIR}/${MANIFEST}
-	emacsdir=`${ECHO} ${EMACSDIR} | ${SED} -e "s;^${PREFIX}/;;"`; \
-	${CAT} ${PLIST} | ${GREP} -e "^$${emacsdir}" | \
-		${SED} -e "s;^$${emacsdir}/;;" > ${WRKDIR}/${MANIFEST}
-	${MKDIR} ${EMACSDIR}/pkginfo
+	${CAT} ${PLIST} | ${GREP} -e "^${EMACS_LIBDIR}" | \
+		${SED} -e "s;^${EMACS_LIBDIR}/;;" > ${WRKDIR}/${MANIFEST}
+	${MKDIR} ${PREFIX}/${EMACS_LIBDIR}/site-packages/pkginfo
 	${INSTALL_DATA} ${WRKDIR}/${MANIFEST} \
-		${EMACSDIR}/pkginfo/
+		${PREFIX}/${EMACS_LIBDIR}/site-packages/pkginfo/
 .endif
 
 .include <bsd.port.mk>

@@ -7,9 +7,8 @@
 
 PKGNAMESUFFIX=	-mule
 
-MULE=		yes
-
 MASTERDIR=	${.CURDIR}/../yatex
 COMMENT=	${.CURDIR}/pkg/COMMENT
+EMACS_PORT_NAME=mule
 
 .include	"${MASTERDIR}/Makefile"
