@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gnome
-PORTVERSION=	2.0.3
+PORTVERSION=	2.6.0
 CATEGORIES=	x11-toolkits python gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-python/2.0
+MASTER_SITE_SUBDIR=	sources/gnome-python/2.6
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	gnome-python-${PORTVERSION}
 DIST_SUBDIR=	gnome2
@@ -24,7 +24,7 @@ LATEST_LINK=	py-gnome2
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
-USE_GNOME=	gnomehack libgnomeprintui libgtkhtml gnomepanel libzvt \
+USE_GNOME=	gnomehack libgnomeprintui libgtkhtml gnomepanel \
 		nautilus2 pygtk2
 USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
