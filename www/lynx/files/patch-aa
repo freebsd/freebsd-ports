@@ -1,0 +1,262 @@
+*** WWW/Library/Implementation/HTTCP.c.old	Fri May  6 04:58:38 1994
+--- WWW/Library/Implementation/HTTCP.c	Sat Nov  5 20:41:18 1994
+***************
+*** 73,80 ****
+--- 73,82 ----
+  #ifndef VMS
+  #ifndef NeXT
+  #ifndef THINK_C
++ #ifndef __FreeBSD__
+  extern char *sys_errlist[];		/* see man perror on cernvax */
+  extern int sys_nerr;
++ #endif  /* __FreeBSD__ */
+  #endif  /* think c */
+  #endif	/* NeXT */
+  #endif  /* VMS */
+***************
+*** 181,187 ****
+  #endif
+  #define ER_NO_TRANS_DONE
+  #endif
+! #ifdef NeXT
+  	    strerror(errno));
+  #define ER_NO_TRANS_DONE
+  #endif
+--- 183,189 ----
+  #endif
+  #define ER_NO_TRANS_DONE
+  #endif
+! #if defined(NeXT) || defined(__FreeBSD__)
+  	    strerror(errno));
+  #define ER_NO_TRANS_DONE
+  #endif
+*** WWW/Library/Implementation/CommonMakefile.old	Sun Apr 17 01:55:00 1994
+--- WWW/Library/Implementation/CommonMakefile	Sat Nov  5 19:51:27 1994
+***************
+*** 63,69 ****
+  # in which this makefile is, not the pwd.  This screws up the 
+  # recursive invocation
+  # include $(CMN)Version.make
+! include $(ABS)$(WWW)/Library/Implementation/Version.make
+  
+  # XMOsAIC hack is only for server to cope with xmosaic kludge for mmedia
+  #
+--- 63,69 ----
+  # in which this makefile is, not the pwd.  This screws up the 
+  # recursive invocation
+  # include $(CMN)Version.make
+! .include "$(ABS)$(WWW)/Library/Implementation/Version.make"
+  
+  # XMOsAIC hack is only for server to cope with xmosaic kludge for mmedia
+  #
+*** src/LYUtils.c.old	Sat Apr 16 03:41:44 1994
+--- src/LYUtils.c	Sun Nov  6 10:50:28 1994
+***************
+*** 16,22 ****
+--- 16,26 ----
+  #endif
+  
+  #ifndef UTMP_FILE
++ #ifdef _PATH_UTMP
++ #define UTMP_FILE _PATH_UTMP
++ #else
+  #define UTMP_FILE "/etc/utmp"
++ #endif
+  #endif
+  
+  /*
+*** src/LYCurses.c.old	Fri May  6 04:58:22 1994
+--- src/LYCurses.c	Sun Nov  6 10:47:16 1994
+***************
+*** 26,35 ****
+      if(first_time) {
+          initscr();	/* start curses */
+          first_time = FALSE;
+- #ifdef __FreeBSD__
+-         /* disable clear to EOL feature -- FreeBSD curses misuses it */
+-         CE = 0;
+- #endif
+      }
+  
+  #else
+--- 26,31 ----
+*** src/LYMain.c.old	Fri May 20 21:28:41 1994
+--- src/LYMain.c	Sun Nov  6 11:02:29 1994
+***************
+*** 13,19 ****
+  #include "LYrcFile.h"
+  #include "LYKeymap.h"
+  
+! #ifdef SUN
+  #include<locale.h>
+  #endif /* SUN */
+  
+--- 13,19 ----
+  #include "LYrcFile.h"
+  #include "LYKeymap.h"
+  
+! #if defined(SUN) || defined(__FreeBSD__)
+  #include<locale.h>
+  #endif /* SUN */
+  
+***************
+*** 116,122 ****
+      BOOLEAN restrictions_set=FALSE;
+      BOOLEAN stack_dump=FALSE;
+  
+! #ifdef SUN
+      /* SUN specific support for international characters. */
+      setlocale(LC_ALL, "");
+  #endif /* SUN */
+--- 116,122 ----
+      BOOLEAN restrictions_set=FALSE;
+      BOOLEAN stack_dump=FALSE;
+  
+! #if defined(SUN) || defined(__FreeBSD__)
+      /* SUN specific support for international characters. */
+      setlocale(LC_ALL, "");
+  #endif /* SUN */
+*** Makefile.old	Wed May 11 23:48:36 1994
+--- Makefile	Sun Nov  6 12:34:35 1994
+***************
+*** 11,25 ****
+  ##change the next line if you want the lynx man file installed somewhere
+  ##besides /usr/man/man1
+  
+! doc= /usr/man/man1
+  
+  ##change the next line if you want the lynx.cfg file installed somewhere
+  ##besides /usr/local/lib
+  
+  cfg= /usr/local/lib
+  
+! installbin= install -c -s -m 555
+! installdoc= install -c -m 444
+  
+  
+  #set the relative location of the WWW library Implementation directory, 
+--- 11,25 ----
+  ##change the next line if you want the lynx man file installed somewhere
+  ##besides /usr/man/man1
+  
+! doc= /usr/local/man/man1
+  
+  ##change the next line if you want the lynx.cfg file installed somewhere
+  ##besides /usr/local/lib
+  
+  cfg= /usr/local/lib
+  
+! installbin= install -c -s -m 555 -o bin -g bin
+! installdoc= install -c -m 444 -o bin -g bin
+  
+  
+  #set the relative location of the WWW library Implementation directory, 
+***************
+*** 42,48 ****
+  # If you are not, then you should edit the generic: entry below.
+  #
+  
+! all:  
+  	@echo
+  	@echo "Please run make with one of the following arguments"
+  	@echo "aix32      -- for RS/6000 running AIX 3.2"
+--- 42,50 ----
+  # If you are not, then you should edit the generic: entry below.
+  #
+  
+! all: freebsd
+! 
+! run:
+  	@echo
+  	@echo "Please run make with one of the following arguments"
+  	@echo "aix32      -- for RS/6000 running AIX 3.2"
+***************
+*** 130,139 ****
+  		WWWLIB="../WWW/Library/mips/libwww.a"
+  
+  freebsd:
+! 	cd WWW/Library/Implementation; make -f freebsd_Makefile LYFLAGS=""
+! 	cd src; make all CC="cc" MCFLAGS="-O -DUNIX -DNO_KEYPAD -I../$(WWWINC)"\
+! 		LIBS="-lcurses -ltermcap $(WAISLIB)" \
+! 		WWWLIB="../WWW/Library/svr4/libwww.a"
+  
+  # Tested on DN 3500 & 4500's running Domain O/S 10.4 BSD
+  # -Acpu,mathchip may have to be changed on other machines - see man cpuhep
+--- 132,143 ----
+  		WWWLIB="../WWW/Library/mips/libwww.a"
+  
+  freebsd:
+! 	cd WWW/Library/freebsd; make LYFLAGS="-DDIRED_SUPPORT"
+! 	cd src; make all CC="cc" MCFLAGS="-O -DNCURSES -DNO_TTYTYPE\
+! 		-DFANCY_CURSES -DNO_CUSERID -DUNIX -I../$(WWWINC)\
+! 		-DDIRED_SUPPORT -DOK_TAR -DOK_GZIP -DOK_OVERRIDE"\
+! 		LIBS="-lncurses -lmytinfo -ltermcap $(WAISLIB)" \
+! 		WWWLIB="../WWW/Library/freebsd/libwww.a"
+  
+  # Tested on DN 3500 & 4500's running Domain O/S 10.4 BSD
+  # -Acpu,mathchip may have to be changed on other machines - see man cpuhep
+*** userdefs.h.old	Wed Apr 13 18:50:12 1994
+--- userdefs.h	Sun Nov  6 11:47:13 1994
+***************
+*** 183,189 ****
+--- 183,193 ----
+  #ifdef MMDF
+  #define SYSTEM_MAIL "/usr/mmdf/bin/submit" 
+  #else
++ #ifdef __FreeBSD__
++ #define SYSTEM_MAIL "/usr/sbin/sendmail"
++ #else
+  #define SYSTEM_MAIL "/usr/lib/sendmail" 
++ #endif
+  #endif /* MMDF */
+  
+  /**************************
+***************
+*** 474,480 ****
+--- 478,488 ----
+  #define LYNX_NAME "Lynx"
+  #define LYNX_VERSION "2.3 BETA"
+  #ifndef MAXINT
++ #ifdef __FreeBSD__
++ #include <values.h>
++ #else
+  #define MAXINT 2147483647
++ #endif
+  #endif /*MAXINT*/
+  
+  /* text strings for certain actions */
+*** /dev/null	Sun Nov  6 12:49:42 1994
+--- WWW/Library/freebsd/Makefile	Sat Nov  5 19:48:43 1994
+***************
+*** 0 ****
+--- 1,30 ----
++ #  Make WWW under FreeBSD
++ #
++ 
++ # For W3 distribution, machine type for subdirectories
++ WWW_MACH = freebsd
++ 
++ # The ASIS repository's name for the machine we are on
++ ASIS_MACH = i386/FreeBSD
++ 
++ 
++ CFLAGS = -O -DDEBUG -DUSE_DIRENT
++ LFLAGS =
++ CC = cc
++ 
++ # Directory for installed binary:
++ BINDIR = /usr/local/bin
++ 
++ # Where is the W3 object library to be installed (not normally done)?
++ LIBDIR = $(WWW)/Library/Implementation/$(WWW_MACH)
++ 
++ #_________________ OK if normal W3 distribution
++ # Where is the WWW source root?
++ WWW = ../..
++ 
++ #  Where should temporary (object) files go?
++ WTMP = ../..
++ 
++ 
++ .include "$(WWW)/Library/Implementation/CommonMakefile"
++ 
