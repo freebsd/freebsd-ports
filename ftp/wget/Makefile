@@ -7,7 +7,7 @@
 
 PORTNAME=	wget
 PORTVERSION=	1.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp www
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.dl.ac.uk/ccp14/ftp-mirror/wget/pub/unix/util/wget/ \
@@ -25,7 +25,7 @@ USE_OPENSSL=	yes
 CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE}
 .endif
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOCONF=	yes
 CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
 		LIBS=-L${LOCALBASE}/lib
 
