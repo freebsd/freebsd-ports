@@ -2,6 +2,16 @@ share/gnome/gdesklets/Displays/Weather/README
 share/gnome/gdesklets/Displays/Weather/gfx/bg-left.png
 share/gnome/gdesklets/Displays/Weather/gfx/bg-right.png
 share/gnome/gdesklets/Displays/Weather/gfx/bg-weather.png
+share/gnome/gdesklets/Displays/Weather/gfx/e.png
+share/gnome/gdesklets/Displays/Weather/gfx/n.png
+share/gnome/gdesklets/Displays/Weather/gfx/ne.png
+share/gnome/gdesklets/Displays/Weather/gfx/nw.png
+share/gnome/gdesklets/Displays/Weather/gfx/s.png
+share/gnome/gdesklets/Displays/Weather/gfx/se.png
+share/gnome/gdesklets/Displays/Weather/gfx/sw.png
+share/gnome/gdesklets/Displays/Weather/gfx/tlo.png
+share/gnome/gdesklets/Displays/Weather/gfx/w.png
+share/gnome/gdesklets/Displays/Weather/weather-full.display
 share/gnome/gdesklets/Displays/Weather/weather.display
 share/gnome/gdesklets/Sensors/Weather/README
 share/gnome/gdesklets/Sensors/Weather/__init__.py
