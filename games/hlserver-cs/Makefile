@@ -7,7 +7,7 @@
 
 PORTNAME?=	cs
 PORTVERSION?=	1.3
-CATEGORIES=	games linux
+CATEGORIES?=	games linux
 MASTER_SITES?=	http://games.velocity.net/files/Counter-Strike/ \
 		ftp://extreme-players.de/pub/hl/mod/cs/ \
 		http://fileplanet.games-world.net/dl/ftp1.gamespy.com/action/half-life/modifications/cstrike/ \
