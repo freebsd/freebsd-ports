@@ -23,6 +23,7 @@
     SUBDIR += mscompress
     SUBDIR += nulib
     SUBDIR += p5-Archive-Tar
+    SUBDIR += p5-Archive-Zip
     SUBDIR += p5-Compress-Zlib
     SUBDIR += pkzip
     SUBDIR += ppunpack
