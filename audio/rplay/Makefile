@@ -3,7 +3,7 @@
 # Date created:		16 March 1995  
 # Whom:			rmallory@csusb.edu
 #
-# $Id: Makefile,v 1.8 1997/06/13 16:17:01 ache Exp $
+# $Id: Makefile,v 1.9 1998/01/21 20:02:07 fenner Exp $
 #
 
 DISTNAME=       rplay-3.2.0b6
@@ -12,7 +12,7 @@ MASTER_SITES=	http://rplay.doit.org/dist/
 
 MAINTAINER=	rmallory@csusb.edu
 
-LIB_DEPENDS=    gsm\\.1\\.0:${PORTSDIR}/audio/gsm
+LIB_DEPENDS=    gsm.1:${PORTSDIR}/audio/gsm
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
