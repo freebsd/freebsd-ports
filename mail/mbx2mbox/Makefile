@@ -6,24 +6,18 @@
 #
 
 PORTNAME=	mbx2mbox
-PORTVERSION=	0.33
+PORTVERSION=	0.34
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-NO_BUILD=	yes
-USE_PERL5=	yes
+BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
-post-patch:
-	@${PERL} -pi.in -e "s|/usr/bin/perl|${PERL}|g" ${WRKSRC}/mbx2mbox
+PERL_CONFIGURE=	yes
 
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/mbx2mbox ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/mbx2mbox
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/mbx2mbox
-.endif
+MAN1=	mbx2mbox.1
 
 .include <bsd.port.mk>
