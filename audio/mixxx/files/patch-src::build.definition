@@ -1,0 +1,41 @@
+--- src/build.definition.orig	Fri Jun 11 19:31:04 2004
++++ src/build.definition	Fri Jun 25 22:13:33 2004
+@@ -57,6 +57,38 @@
+ 
+ 
+ 
++#   SAMPLERATE --------------------------------------------------------
++OBJECT = libsamplerate.a
++TYPE = lib
++DESCRIPTION =
++TIP_MESSAGE =
++LINK_LIBS = -lsamplerate
++ADD_DEFINES =
++OPTIONS =   exit_on_failure   marked_static
++#----------------------------------------------------------------------
++# Check routines         (DON'T TOUCH!)
++include( check.qbas )
++#----------------------------------------------------------------------
++
++
++
++
++#   PORTAUDIO ---------------------------------------------------------
++OBJECT = libportaudio.a
++TYPE = lib
++DESCRIPTION =
++TIP_MESSAGE =
++LINK_LIBS = -lportaudio
++ADD_DEFINES =
++OPTIONS =   exit_on_failure   marked_static
++#----------------------------------------------------------------------
++# Check routines         (DON'T TOUCH!)
++include( check.qbas )
++#----------------------------------------------------------------------
++
++
++
++
+ #   MAD ---------------------------------------------------------------
+ OBJECT = libmad.a
+ TYPE = lib
