@@ -14,7 +14,7 @@
  #define VTE_INVALID_SOURCE		-1
  #define VTE_INVALID_BYTE		'?'
 -#define VTE_COALESCE_TIMEOUT		2
-+#define VTE_COALESCE_TIMEOUT		50
++#define VTE_COALESCE_TIMEOUT		15
  
  /* The structure we use to hold characters we're supposed to display -- this
   * includes any supported visible attributes. */
