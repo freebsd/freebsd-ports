@@ -1,27 +1,25 @@
---- Makefile.orig	Fri Mar 23 21:07:28 2001
-+++ Makefile	Thu May 10 02:43:39 2001
-@@ -3,11 +3,11 @@
+--- Makefile.orig	Sun Jun 17 22:05:12 2001
++++ Makefile	Mon Jun 18 01:22:27 2001
+@@ -15,8 +15,8 @@
+ #GZIP_CMD	= compress
+ #GZIP_SUFFIX	= Z
  
- SED	= sed
- PERL	= perl
--X11BIN	= /usr/X11R6/bin
--GZIP	= gzip
--AWK	= gawk
-+X11BIN	= ${PREFIX}/bin
-+GZIP_CMD?=	gzip
-+AWK	= awk
+-X11BINDIR	= /usr/X11R6/bin
+-X11FONTDIR	= /usr/X11R6/lib/X11/fonts/local
++X11BINDIR	= ${PREFIX}/bin
++X11FONTDIR	= ${PREFIX}/lib/X11/fonts/local
+ BDFTOPCF	= $(X11BINDIR)/bdftopcf
+ MKDIRHIER	= $(X11BINDIR)/mkdirhier
+ MKFONTDIR	= $(X11BINDIR)/mkfontdir
+@@ -36,7 +36,10 @@
+ 	mona8x16a mona8x16aB mona8x16aI mona8x16aBI \
+ 	monak12 monak12B monak12I monak12BI \
+ 	monak14 monak14B monak14I monak14BI \
+-	monak16 monak16B monak16I monak16BI
++	monak16 monak16B monak16I monak16BI \
++	mona6x12r mona6x12rB mona6x12rI mona6x12rBI \
++	mona7x14r mona7x14rB mona7x14rI mona7x14rBI \
++	mona8x16r mona8x16rB mona8x16rI mona8x16rBI
  
--FONTDIR = /usr/X11R6/lib/X11/fonts/misc
-+FONTDIR = ${PREFIX}/lib/X11/fonts/local
+ ## Dependencies
  
- BDFTOPCF= $(X11BIN)/bdftopcf
- MKFONTDIR=$(X11BIN)/mkfontdir
-@@ -86,7 +86,7 @@
- 
- install: fonts
- 	if [ ! -e $(FONTDIR) ] ; then mkdir -p $(FONTDIR); fi
--	for i in $(FONTS); do $(GZIP) -c $$i > $(FONTDIR)/$$i.gz; done
-+	for i in $(FONTS); do $(GZIP_CMD) -c $$i > $(FONTDIR)/$$i.gz; done
- 	$(MKFONTDIR) $(FONTDIR)
- 
- clean:

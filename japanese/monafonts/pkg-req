@@ -22,24 +22,42 @@ fi
 # font alias entry here!
 TMPFILE=/tmp/install-fonts-alias-$$
 cat << EOF > ${TMPFILE}
-mona12aR -mona-gothic-medium-r-normal--12-120-75-75-p-60-iso8859-1
-mona16aB -mona-gothic-bold-r-normal--16-150-75-75-p-80-iso8859-1
-mona16kR -mona-gothic-medium-r-normal--16-150-75-75-p-160-jisx0208.1990-0
-mona12kB -mona-gothic-bold-r-normal--12-120-75-75-p-120-jisx0208.1990-0
-mona16aI -mona-gothic-medium-i-normal--16-150-75-75-p-80-iso8859-1
-mona12kI -mona-gothic-medium-i-normal--12-120-75-75-p-120-jisx0208.1990-0
-mona16aR -mona-gothic-medium-r-normal--16-150-75-75-p-80-iso8859-1
-mona12aB -mona-gothic-bold-r-normal--12-120-75-75-p-60-iso8859-1
-mona12kR -mona-gothic-medium-r-normal--12-120-75-75-p-120-jisx0208.1990-0
-mona16kB -mona-gothic-bold-r-normal--16-150-75-75-p-160-jisx0208.1990-0
-mona12aI -mona-gothic-medium-i-normal--12-120-75-75-p-60-iso8859-1
-mona16kI -mona-gothic-medium-i-normal--16-150-75-75-p-160-jisx0208.1990-0
-mona12rR -mona-gothic-medium-r-normal--12-120-75-75-p-60-jisx0201.1976-0
-mona16rB -mona-gothic-bold-r-normal--16-150-75-75-p-80-jisx0201.1976-0
-mona16rI -mona-gothic-medium-i-normal--16-150-75-75-p-80-jisx0201.1976-0
-mona16rR -mona-gothic-medium-r-normal--16-150-75-75-p-80-jisx0201.1976-0
-mona12rB -mona-gothic-bold-r-normal--12-120-75-75-p-60-jisx0201.1976-0
-mona12rI -mona-gothic-medium-i-normal--12-120-75-75-p-60-jisx0201.1976-0
+mona6x12a -mona-gothic-medium-r-normal--12-110-75-75-p-60-iso8859-1
+mona6x12aB -mona-gothic-bold-r-normal--12-110-75-75-p-60-iso8859-1
+mona6x12aBI -mona-gothic-bold-i-normal--12-110-75-75-p-60-iso8859-1
+mona6x12aI -mona-gothic-medium-i-normal--12-110-75-75-p-60-iso8859-1
+mona6x12r -mona-gothic-medium-r-normal--12-110-75-75-p-60-jisx0201.1976-0
+mona6x12rB -mona-gothic-bold-r-normal--12-110-75-75-p-60-jisx0201.1976-0
+mona6x12rBI -mona-gothic-bold-i-normal--12-110-75-75-p-60-jisx0201.1976-0
+mona6x12rI -mona-gothic-medium-i-normal--12-110-75-75-p-60-jisx0201.1976-0
+mona7x14a -mona-gothic-medium-r-normal--14-130-75-75-p-70-iso8859-1
+mona7x14aB -mona-gothic-bold-r-normal--14-130-75-75-p-70-iso8859-1
+mona7x14aBI -mona-gothic-bold-i-normal--14-130-75-75-p-70-iso8859-1
+mona7x14aI -mona-gothic-medium-i-normal--14-130-75-75-p-70-iso8859-1
+mona7x14r -mona-gothic-medium-r-normal--14-130-75-75-p-70-jisx0201.1976-0
+mona7x14rB -mona-gothic-bold-r-normal--14-130-75-75-p-70-jisx0201.1976-0
+mona7x14rBI -mona-gothic-bold-i-normal--14-130-75-75-p-70-jisx0201.1976-0
+mona7x14rI -mona-gothic-medium-i-normal--14-130-75-75-p-70-jisx0201.1976-0
+mona8x16a -mona-gothic-medium-r-normal--16-150-75-75-p-80-iso8859-1
+mona8x16aB -mona-gothic-bold-r-normal--16-150-75-75-p-80-iso8859-1
+mona8x16aBI -mona-gothic-bold-i-normal--16-150-75-75-p-80-iso8859-1
+mona8x16aI -mona-gothic-medium-i-normal--16-150-75-75-p-80-iso8859-1
+mona8x16r -mona-gothic-medium-r-normal--16-150-75-75-p-80-jisx0201.1976-0
+mona8x16rB -mona-gothic-bold-r-normal--16-150-75-75-p-80-jisx0201.1976-0
+mona8x16rBI -mona-gothic-bold-i-normal--16-150-75-75-p-80-jisx0201.1976-0
+mona8x16rI -mona-gothic-medium-i-normal--16-150-75-75-p-80-jisx0201.1976-0
+monak12 -mona-gothic-medium-r-normal--12-110-75-75-p-120-jisx0208.1990-0
+monak12B -mona-gothic-bold-r-normal--12-110-75-75-p-120-jisx0208.1990-0
+monak12BI -mona-gothic-bold-i-normal--12-110-75-75-p-120-jisx0208.1990-0
+monak12I -mona-gothic-medium-i-normal--12-110-75-75-p-120-jisx0208.1990-0
+monak14 -mona-gothic-medium-r-normal--14-130-75-75-p-140-jisx0208.1990-0
+monak14B -mona-gothic-bold-r-normal--14-130-75-75-p-140-jisx0208.1990-0
+monak14BI -mona-gothic-bold-i-normal--14-130-75-75-p-140-jisx0208.1990-0
+monak14I -mona-gothic-medium-i-normal--14-130-75-75-p-140-jisx0208.1990-0
+monak16 -mona-gothic-medium-r-normal--16-150-75-75-p-160-jisx0208.1990-0
+monak16B -mona-gothic-bold-r-normal--16-150-75-75-p-160-jisx0208.1990-0
+monak16BI -mona-gothic-bold-i-normal--16-150-75-75-p-160-jisx0208.1990-0
+monak16I -mona-gothic-medium-i-normal--16-150-75-75-p-160-jisx0208.1990-0
 EOF
 
 echo "Updating ${FONTDIR}/fonts.alias"
