@@ -1,0 +1,7 @@
+Rsyncmanager is a daemon that run a large set of rsyncs
+and make sure that excess resource consumption does not
+cause the rsyncs to clobber one another. Useful for
+the crontab as a method of running rsync backup scripts.
+
+- Kelley Reynolds
+kelley@insidesystems.net
