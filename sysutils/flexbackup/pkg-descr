@@ -1,14 +1,14 @@
-Flexible backup script.
+A flexible backup tool
 
 Features:
    o Easy to configure
    o Uses dump, afio, GNU tar, cpio, star, pax, or zip archivers
    o Full and numbered levels of incremental backup (acts like "dump")
-   o Backup, list, compare, extract, extract list of files modes
    o Compression and buffering options for all backup types
-   o Keeps a table of contents so you know archives are on each tape
    o Does remote filesystems (over rsh/ssh; no special service)
-   o Works with tape drives or on-disk files
+   o Can backup only files not owned by rpm, or changed from rpm version
+   o Writes to tapes, on-disk archive files, or on-disk directory trees
+   o Keeps a table of contents so you know archives are on each tape
    o Nice log files
 
 WWW: http://flexbackup.sourceforge.net/
