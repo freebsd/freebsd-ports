@@ -7,6 +7,7 @@
 
 PORTNAME=	xterm
 PORTVERSION=	196
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	ftp://invisible-island.net/xterm/ \
 		http://voodoo.oberon.net/download/
@@ -22,7 +23,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LIBS="-L${X11BASE}/lib"
-CONFIGURE_ARGS+=	--enable-wide-chars
+CONFIGURE_ARGS+=	--enable-wide-chars --enable-luit
 
 MAN1=		resize.1 xterm.1
 
