@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	sources/libgtop
 MAINTAINER=	nakai@FreeBSD.org
 
 LIB_DEPENDS=	gnome.3:${PORTSDIR}/x11/gnomelibs \
-		guile.4:${PORTSDIR}/lang/guile
+		guile.6:${PORTSDIR}/lang/guile
 
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 

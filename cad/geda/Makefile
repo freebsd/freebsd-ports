@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.cc.gatech.edu/ac121/linux/X11/gtkbuffet/apps/geda/ \
 MAINTAINER=	vanilla@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
-		guile.4:${PORTSDIR}/lang/guile
+		guile.6:${PORTSDIR}/lang/guile
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
