@@ -38,7 +38,7 @@ NATIVEDIR=	${PORTNAME}-native-library-${PORTVERSION}
 CLASSESDIR=	${PORTNAME}-class-library-${PORTVERSION}
 
 # Conditionally compile the gnome-dependent stuff
-.if !defined(USE_GNOMELIBS) && !exists(${X11BASE}/libart_lgpl/art_misc.h)
+.if !defined(USE_GNOMELIBS) && !exists(${X11BASE}/include/gnome-1.0/libart_lgpl/art_misc.h)
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-aa ${PATCHDIR}/extra-patch-ab
 pre-fetch:
 	@${ECHO} ''
