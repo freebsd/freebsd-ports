@@ -1,0 +1,38 @@
+# ex:ts=8
+# Ports collection makefile for:	sitebar
+# Date created:			Jun 23, 2004
+# Whom:				ijliao
+#
+# $FreeBSD$
+#
+
+PORTNAME=	sitebar
+PORTVERSION=	3.2.5
+CATEGORIES=	www
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	SiteBar-${PORTVERSION}
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The Bookmark Server for Personal and Team Use
+
+USE_BZIP2=	yes
+USE_PHP=	yes
+WANT_PHP_WEB=	yes
+NO_BUILD=	yes
+DATADIR?=	${PREFIX}/www/${PORTNAME}
+
+pre-everything::
+	@${ECHO_CMD} "***************************************************************"
+	@${ECHO_CMD} "* Please installs PHP with MySQL extension before using this. *"
+	@${ECHO_CMD} "***************************************************************"
+
+do-install:
+	@${MKDIR} ${DATADIR}
+	${CP} -R ${WRKSRC}/* ${DATADIR}
+	@${FIND} ${DATADIR} ! -type d | \
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${DATADIR} -type d | ${SORT} -r | \
+		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+
+.include <bsd.port.mk>

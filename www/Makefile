@@ -571,6 +571,7 @@
     SUBDIR += scout
     SUBDIR += screem
     SUBDIR += sidplug
+    SUBDIR += sitebar
     SUBDIR += sitecopy
     SUBDIR += slash
     SUBDIR += smarty
