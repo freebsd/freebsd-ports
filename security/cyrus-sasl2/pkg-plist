@@ -27,9 +27,9 @@ lib/sasl2/libanonymous.so.2
 lib/sasl2/liblogin.a
 lib/sasl2/liblogin.so
 lib/sasl2/liblogin.so.2
-%%MYSQL%%lib/sasl2/libmysql.a
-%%MYSQL%%lib/sasl2/libmysql.so
-%%MYSQL%%lib/sasl2/libmysql.so.2
+%%SQL%%lib/sasl2/libsql.a
+%%SQL%%lib/sasl2/libsql.so
+%%SQL%%lib/sasl2/libsql.so.2
 %%NTLM%%lib/sasl2/libntlm.a
 %%NTLM%%lib/sasl2/libntlm.so
 %%NTLM%%lib/sasl2/libntlm.so.2
@@ -58,11 +58,11 @@ sbin/saslpasswd2
 %%PORTDOCS%%%%DOCSDIR%%/draft-ietf-sasl-anon-02.txt
 %%PORTDOCS%%%%DOCSDIR%%/draft-ietf-sasl-crammd5-00.txt
 %%PORTDOCS%%%%DOCSDIR%%/draft-ietf-sasl-plain-02.txt
-%%PORTDOCS%%%%DOCSDIR%%/draft-ietf-sasl-rfc2222bis-01.txt
+%%PORTDOCS%%%%DOCSDIR%%/draft-ietf-sasl-rfc2222bis-02.txt
 %%PORTDOCS%%%%DOCSDIR%%/draft-ietf-sasl-rfc2831bis-02.txt
 %%PORTDOCS%%%%DOCSDIR%%/draft-ietf-sasl-saslprep-03.txt
+%%PORTDOCS%%%%DOCSDIR%%/draft-murchison-sasl-login-00.txt
 %%PORTDOCS%%%%DOCSDIR%%/draft-newman-sasl-c-api-01.txt
-%%PORTDOCS%%%%DOCSDIR%%/draft-sasl-login.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc1321.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc1939.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc2104.txt

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cyrus-sasl
-PORTVERSION=	2.1.15
+PORTVERSION=	2.1.17
 #PORTREVISION=	0
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/%SUBDIR%/ \
@@ -81,9 +81,9 @@ WANT_MYSQL_VER=	323
 .endif
 .if defined(WITH_MYSQL)
 USE_MYSQL=	YES
-CONFIGURE_ARGS+=--with-mysql=${PREFIX}
+CONFIGURE_ARGS+=--enable-sql --with-mysql=${PREFIX}
 .else
-MYSQL=	"@comment "
+SQL=	"@comment "
 .endif
 
 .if defined(WITH_DEV_URANDOM)
@@ -161,11 +161,11 @@ DOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README
 DOC2=	ONEWS TODO draft-burdis-cat-srp-sasl-08.txt \
 	draft-ietf-cat-sasl-gssapi-05.txt draft-ietf-sasl-anon-02.txt \
 	draft-ietf-sasl-crammd5-00.txt draft-ietf-sasl-plain-02.txt \
-	draft-ietf-sasl-rfc2222bis-01.txt draft-ietf-sasl-rfc2831bis-02.txt \
-	draft-ietf-sasl-saslprep-03.txt draft-newman-sasl-c-api-01.txt \
-	draft-sasl-login.txt rfc1321.txt rfc1939.txt rfc2104.txt rfc2195.txt \
-	rfc2222.txt rfc2243.txt rfc2245.txt rfc2289.txt rfc2444.txt \
-	rfc2595.txt rfc2831.txt rfc2945.txt rfc3174.txt \
+	draft-ietf-sasl-rfc2222bis-02.txt draft-ietf-sasl-rfc2831bis-02.txt \
+	draft-ietf-sasl-saslprep-03.txt draft-murchison-sasl-login-00.txt \
+	draft-newman-sasl-c-api-01.txt rfc1321.txt rfc1939.txt rfc2104.txt \
+	rfc2195.txt rfc2222.txt rfc2243.txt rfc2245.txt rfc2289.txt \
+	rfc2444.txt rfc2595.txt rfc2831.txt rfc2945.txt rfc3174.txt \
 	server-plugin-flow.fig testing.txt
 
 HTDOCS=	advanced appconvert gssapi index install macosx mechanisms \
@@ -178,7 +178,7 @@ PLIST_SUB=	PREFIX=${PREFIX} \
 		NTLM=${NTLM} \
 		GSSAPI=${GSSAPI} \
 		EBONES=${EBONES} \
-		MYSQL=${MYSQL} \
+		SQL=${SQL} \
 		DOCSDIR=${DOCSDIR:S/^${PREFIX}\///}
 
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
