@@ -16,7 +16,7 @@ DISTFILES=	${BIN_FILES} ${SBIN_FILES}
 DIST_SUBDIR=	perforce/${VERSION}/${ARCH}
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Perforce client and server
 
 #
@@ -29,10 +29,10 @@ ARCH?= i386
 MD5_FILE=	${MASTERDIR}/distinfo.${ARCH}
 .if ${ARCH} == i386
 VERSION=	04.2
-REVISION=	7
+REVISION=	8
 PLATFORM=	freebsd4
-BIN_FILES=	p4 p4web
-SBIN_FILES=	p4d p4ftpd p4p
+BIN_FILES=	p4
+SBIN_FILES=	p4d p4ftpd p4p p4web
 REL_NOTES=	http://www.perforce.com/perforce/doc.042/user/relnotes.txt
 .elif ${ARCH} == alpha
 VERSION=	99.1
