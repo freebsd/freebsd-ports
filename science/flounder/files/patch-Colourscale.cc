@@ -1,13 +1,11 @@
---- src/Colourscale.cc.orig	Tue Oct 15 00:12:17 2002
-+++ src/Colourscale.cc	Tue Oct 15 00:15:30 2002
-@@ -18,7 +18,9 @@
+--- src/Colourscale.cc.orig	Thu Jan 16 02:38:50 2003
++++ src/Colourscale.cc	Thu Jan 16 02:39:10 2003
+@@ -18,6 +18,8 @@
  */
  #include "Colourscale.h"
  
--Colourscale :: Colourscale( int ts=64, CScale_t tcs=CS_BL_RAINBOW )
 +using namespace std;
 +
-+Colourscale :: Colourscale( int ts, CScale_t tcs )
+ Colourscale :: Colourscale( int ts, CScale_t tcs )
  {
  	n = 0;
- 	mindat = 0;
