@@ -3,7 +3,7 @@
 # Date created:		19 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.15 1996/09/14 23:22:04 torstenb Exp $
+# $Id: Makefile,v 1.16 1996/10/31 00:13:02 ache Exp $
 #
 
 DISTNAME=       pidentd-2.7.1
@@ -15,6 +15,17 @@ MAINTAINER=	torstenb@FreeBSD.ORG
 
 ALL_TARGET=     freebsd
 MAKE_ENV=	REALPREFIX=${PREFIX}
+
+# Uncomment to activate the use of verifiable "cookies".  The idea is to be
+# able to detect fake "logs" intended to get your innocent users in trouble.
+# Naturally, since it uses libdes, you must have the "secure" dist installed.
+#USE_DES=	true
+
+.if defined(USE_DES)
+ADD_GDEFS=	-DINCLUDE_CRYPT
+ADD_GLIBS=	-ldes
+MAKE_ENV+=	ADD_GDEFS="${ADD_GDEFS}" ADD_GLIBS="${ADD_GLIBS}"
+.endif
 
 .if !defined(NOMANCOMPRESS)
 post-install:
