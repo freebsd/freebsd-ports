@@ -16,10 +16,10 @@ CXXFLAGS+=-DPACKAGE=\"${PROG}\" -DDOCDIR=\"${DOCDIR}\" -DPIXDIR=\"${PIXDIR}\" -D
 CXXFLAGS+=-ftemplate-depth-30
 
 # Use the GTK's CFLAGS:
-CXXFLAGS+=`${GTK_CONFIG} --cflags` -I${OPENSSLINC}
+CXXFLAGS+=`${GTK_CONFIG} --cflags gthread` -I${OPENSSLINC}
 
 # Use the GTK's libraries:
-LDADD+=`${GTK_CONFIG} --libs` -L${OPENSSLLIB} -lssl -lcrypto
+LDADD+=`${GTK_CONFIG} --libs gthread` -L${OPENSSLLIB} -lssl -lcrypto
 
 # A hack to ensure C++ is called to do the final linking:
 CC:=	${CXX}
@@ -28,7 +28,7 @@ ${DOCDIR}/images ${PIXDIR}:
 	${MKDIR} $@
 
 beforeinstall: ${DOCDIR}/images ${PIXDIR}
-	${BSD_INSTALL_DATA} ${.CURDIR}/Documentation/*.* ${DOCDIR}
+	${BSD_INSTALL_DATA} ${.CURDIR}/Documentation/help.html ${DOCDIR}
 	${BSD_INSTALL_DATA} ${.CURDIR}/Documentation/images/*.* ${DOCDIR}/images
 	${BSD_INSTALL_DATA} ${.CURDIR}/pixmaps/*.* ${PIXDIR}
 	${BSD_INSTALL_DATA} ${.CURDIR}/althearc.example ${PREFIX}/etc/

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	althea
-PORTVERSION=	0.5.5
+PORTVERSION=	0.5.7
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,17 +15,14 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 
 USE_REINPLACE=	yes
-REINPLACE_ARGS=	-i ""
 USE_GTK=	yes
 USE_OPENSSL=	yes
 MAKE_ENV=	MKDIR="${MKDIR}"
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|/etc|${PREFIX}/etc|g" \
-		${WRKSRC}/Documentation/help.html \
-		${WRKSRC}/load_config.cpp \
-		${WRKSRC}/load_config.h \
-		${WRKSRC}/save_config.h
+.for file in Documentation/help.html load_config.h save_config.h
+	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' ${WRKSRC}/${file}
+.endfor
 
 .include <bsd.port.mk>
