@@ -7,6 +7,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -370,6 +371,7 @@ PLIST_SUB+=	HERMES=""
 CONFIGURE_ARGS+=	--disable-http
 PLIST_SUB+=	HTTP="@comment "
 .else
+USE_GNOME+=	libghttp
 PLIST_SUB+=	HTTP=""
 .endif
 
