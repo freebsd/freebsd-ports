@@ -197,6 +197,7 @@
     SUBDIR += uwatch
     SUBDIR += videogen
     SUBDIR += vobcopy
+    SUBDIR += wait_on
     SUBDIR += webmin
     SUBDIR += whowatch
     SUBDIR += wmapm
