@@ -23,8 +23,6 @@
     SUBDIR += p5-Business-OnlinePayment-TCLink
     SUBDIR += p5-Business-OnlinePayment-VirtualNet
     SUBDIR += p5-Business-OnlinePayment-eSec
-    SUBDIR += p5-Business-OnlinePayment-misc-finance.MOVED.diff
-    SUBDIR += p5-Business-OnlinePayment-misc-finance.diff
     SUBDIR += p5-Business-WorldPay-Junior
     SUBDIR += p5-Math-Financial
     SUBDIR += qhacc
