@@ -1,0 +1,22 @@
+--- geramik/gtk-2.0/Makefile.in.orig	Sun Jan  5 18:57:42 2003
++++ geramik/gtk-2.0/Makefile.in	Sun Jan  5 18:58:47 2003
+@@ -250,7 +250,7 @@
+ x_includes = @x_includes@
+ x_libraries = @x_libraries@
+ themedir = $(datadir)/themes/Geramik/gtk-2.0
+-theme_DATA = gtkrc-2.0
++theme_DATA = gtkrc
+ 
+ EXTRA_DIST = gtkrc-template $(png_pngs)
+ 
+@@ -458,8 +458,8 @@
+ 	uninstall-info-am uninstall-pngDATA uninstall-themeDATA
+ 
+ 
+-gtkrc-2.0: gtkrc-template
+-	cat gtkrc-template | sed s:DATA_DIR:$(datadir):g | sed s:ENGINE:qtpixmap2:g > gtkrc-2.0
++gtkrc: gtkrc-template
++	cat gtkrc-template | sed s:DATA_DIR:$(datadir):g | sed s:ENGINE:qtpixmap2:g > gtkrc
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
