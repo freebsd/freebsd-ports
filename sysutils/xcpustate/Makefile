@@ -3,16 +3,16 @@
 # Date created:		31-Dec-1995
 # Whom:                 David O'Brien <obrien@cs.ucdavis.edu>
 #
-# $Id: Makefile,v 1.5 1996/12/10 05:58:15 asami Exp $
+# $Id: Makefile,v 1.6 1997/03/27 05:07:57 obrien Exp $
 #
 
 DISTNAME=	xcpustate-2.4
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.cdf.toronto.edu/pub/xcpustate/  \
 		ftp://ftp.vector.co.za/pub/FAQS/FAQs/mirrors/ftp.cdf.toronto.edu/xcpustate/  \
-		ftp://ftp.csie.nctu.edu.tw/Vendors/sun/sun-faq/FAQs/mirrors/ftp.cdf.toronto.edu/xcpustate/  \
+		ftp://ftp.csie.nctu.edu.tw/pub/Vendors/sun/sun-faq/FAQs/mirrors/ftp.cdf.toronto.edu/xcpustate/  \
 		${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	utilities/xcpustate
+MASTER_SITE_SUBDIR=	utilities
 EXTRACT_SUFX=	.shar.gz
 
 MAINTAINER=     obrien@cs.ucdavis.edu
