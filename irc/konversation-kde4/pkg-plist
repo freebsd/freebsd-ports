@@ -1,6 +1,10 @@
 bin/konversation
+bin/konversationircprotocolhandler
 share/applications/kde/konversation.desktop
+share/apps/kconf_update/konversation-0.14-mainwindow.pl
+share/apps/kconf_update/konversation.upd
 share/apps/konversation/eventsrc
+share/apps/konversation/icons/crystalsvg/22x22/actions/konv_message.png
 share/apps/konversation/images/led_blue_off.png
 share/apps/konversation/images/led_blue_on.png
 share/apps/konversation/images/led_green_off.png
@@ -10,19 +14,126 @@ share/apps/konversation/images/led_red_on.png
 share/apps/konversation/images/led_yellow_off.png
 share/apps/konversation/images/led_yellow_on.png
 share/apps/konversation/konversationui.rc
-share/icons/hicolor/16x16/apps/konversation.png
-share/icons/hicolor/32x32/apps/konversation.png
+share/apps/konversation/scripts/amarok
+share/apps/konversation/scripts/bug
+share/apps/konversation/scripts/cmd
+share/apps/konversation/scripts/fortune
+share/apps/konversation/scripts/fortunes.dat
+share/apps/konversation/scripts/gauge
+share/apps/konversation/scripts/juk
+share/apps/konversation/scripts/kdeversion
+share/apps/konversation/scripts/noatun
+share/apps/konversation/scripts/sayclip
+share/apps/konversation/scripts/uptime
+share/doc/HTML/da/konversation/common
+share/doc/HTML/da/konversation/index.cache.bz2
+share/doc/HTML/da/konversation/index.docbook
+share/doc/HTML/en/konversation/channel_screen_co.png
+share/doc/HTML/en/konversation/channel_screen_tour_co.png
+share/doc/HTML/en/konversation/channellist_screen_co.png
+share/doc/HTML/en/konversation/colorchooser_screen.png
+share/doc/HTML/en/konversation/colorize.png
+share/doc/HTML/en/konversation/common
+share/doc/HTML/en/konversation/configure.png
+share/doc/HTML/en/konversation/dccstatus_screen_co.png
+share/doc/HTML/en/konversation/editserver_screen_co.png
+share/doc/HTML/en/konversation/index.cache.bz2
+share/doc/HTML/en/konversation/index.docbook
+share/doc/HTML/en/konversation/led_blue_off.png
+share/doc/HTML/en/konversation/led_blue_on.png
+share/doc/HTML/en/konversation/led_green_off.png
+share/doc/HTML/en/konversation/led_green_on.png
+share/doc/HTML/en/konversation/led_red_off.png
+share/doc/HTML/en/konversation/led_red_on.png
+share/doc/HTML/en/konversation/led_yellow_off.png
+share/doc/HTML/en/konversation/led_yellow_on.png
+share/doc/HTML/en/konversation/nicksonline_screen.png
+share/doc/HTML/en/konversation/notification_screen_co.png
+share/doc/HTML/en/konversation/notifylist_screen_co.png
+share/doc/HTML/en/konversation/osd_demo.png
+share/doc/HTML/en/konversation/osd_screen_co.png
+share/doc/HTML/en/konversation/prefs_identity_screen_co.png
+share/doc/HTML/en/konversation/quickbuttons_screen.png
+share/doc/HTML/en/konversation/quickconnect.png
+share/doc/HTML/en/konversation/quickconnect_screen.png
+share/doc/HTML/en/konversation/serverlist_screen_co.png
+share/doc/HTML/en/konversation/urlcatcher_screen_co.png
+share/doc/HTML/en/konversation/webbrowser_screen_co.png
+share/doc/HTML/et/konversation/common
+share/doc/HTML/et/konversation/index.cache.bz2
+share/doc/HTML/et/konversation/index.docbook
+share/doc/HTML/it/konversation/common
+share/doc/HTML/it/konversation/index.cache.bz2
+share/doc/HTML/it/konversation/index.docbook
+share/doc/HTML/sv/konversation/common
+share/doc/HTML/sv/konversation/index.cache.bz2
+share/doc/HTML/sv/konversation/index.docbook
+share/icons/crystalsvg/128x128/apps/konversation.png
+share/icons/crystalsvg/16x16/apps/konversation.png
+share/icons/crystalsvg/22x22/apps/konversation.png
+share/icons/crystalsvg/32x32/apps/konversation.png
+share/icons/crystalsvg/48x48/apps/konversation.png
+share/icons/crystalsvg/64x64/apps/konversation.png
+share/locale/ca/LC_MESSAGES/konversation.mo
+share/locale/da/LC_MESSAGES/konversation.mo
 share/locale/de/LC_MESSAGES/konversation.mo
+share/locale/en_GB/LC_MESSAGES/konversation.mo
+share/locale/es/LC_MESSAGES/konversation.mo
+share/locale/et/LC_MESSAGES/konversation.mo
+share/locale/fi/LC_MESSAGES/konversation.mo
+share/locale/is/LC_MESSAGES/konversation.mo
 share/locale/it/LC_MESSAGES/konversation.mo
+share/locale/ja/LC_MESSAGES/konversation.mo
 share/locale/ko/LC_MESSAGES/konversation.mo
+share/locale/nb/LC_MESSAGES/konversation.mo
+share/locale/nl/LC_MESSAGES/konversation.mo
+share/locale/pt/LC_MESSAGES/konversation.mo
+share/locale/pt_BR/LC_MESSAGES/konversation.mo
+share/locale/ro/LC_MESSAGES/konversation.mo
 share/locale/ru/LC_MESSAGES/konversation.mo
 share/locale/sl/LC_MESSAGES/konversation.mo
+share/locale/sr/LC_MESSAGES/konversation.mo
 share/locale/sv/LC_MESSAGES/konversation.mo
-@unexec rmdir %D/share/applications/kde 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
+share/locale/ta/LC_MESSAGES/konversation.mo
+share/locale/tr/LC_MESSAGES/konversation.mo
+share/locale/xx/LC_MESSAGES/konversation.mo
+share/locale/zh_CN/LC_MESSAGES/konversation.mo
+share/services/irc.protocol
+share/services/irc6.protocol
+@unexec rmdir %D/share/services 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/64x64/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/64x64 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/48x48/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/48x48 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/22x22/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/22x22 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/128x128/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/128x128 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
+@dirrm share/doc/HTML/sv/konversation
+@unexec rmdir %D/share/doc/HTML/sv 2>/dev/null || true
+@dirrm share/doc/HTML/it/konversation
+@unexec rmdir %D/share/doc/HTML/it 2>/dev/null || true
+@dirrm share/doc/HTML/et/konversation
+@unexec rmdir %D/share/doc/HTML/et 2>/dev/null || true
+@dirrm share/doc/HTML/en/konversation
+@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@dirrm share/doc/HTML/da/konversation
+@unexec rmdir %D/share/doc/HTML/da 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
+@dirrm share/apps/konversation/scripts
 @dirrm share/apps/konversation/images
+@dirrm share/apps/konversation/icons/crystalsvg/22x22/actions
+@dirrm share/apps/konversation/icons/crystalsvg/22x22
+@dirrm share/apps/konversation/icons/crystalsvg
+@dirrm share/apps/konversation/icons
 @dirrm share/apps/konversation
+@unexec rmdir %D/share/apps/kconf_update 2>/dev/null || true
+@unexec rmdir %D/share/apps 2>/dev/null || true
+@unexec rmdir %D/share/applications/kde 2>/dev/null || true
+@unexec rmdir %D/share/applications 2>/dev/null || true
