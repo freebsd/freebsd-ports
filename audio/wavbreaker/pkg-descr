@@ -1,0 +1,13 @@
+wavbreaker is a tool to take a wave file and break it up into
+multiple wave files. It makes a clean break at the correct
+position to burn the files to an audio CD without any dead
+space between the tracks. It will only read wave files, so use
+an appropriate tool to convert Ogg, MP3, etc. files and then
+break them up. The GUI displays a summary of the entire wave
+file being worked on at the top. There is also a command line
+tool to merge wave files together (wavmerge). This tool will
+only work on files that are alike. For example, 44100 khz
+sample rate, 16-bit sample size, etc. (use sox to convert files
+first if necessary).
+
+WWW: http://huli.org/wavbreaker

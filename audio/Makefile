@@ -296,6 +296,7 @@
     SUBDIR += vorbis-tools
     SUBDIR += vorbisgain
     SUBDIR += vsound
+    SUBDIR += wavbreaker
     SUBDIR += waveplay
     SUBDIR += wavplay
     SUBDIR += wmcdplay
