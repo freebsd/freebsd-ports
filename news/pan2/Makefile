@@ -17,8 +17,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Threaded GNOME 2 newsreader based on Agent for Windows
 
-LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2 \
-		gnet-2.0.0:${PORTSDIR}/net/gnet2
+LIB_DEPENDS=	gnet-2.0.0:${PORTSDIR}/net/gnet2
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -28,4 +27,14 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib -lgnuregex -lcompat"
 
-.include <bsd.port.mk>
+OPTIONS=	GTKSPELL "Enable spell checking support" on
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_GTKSPELL)
+CONFIGURE_ARGS+=	--disable-gtkspell
+.else
+LIB_DEPENDS+=		gtkspell.0:${PORTSDIR}/textproc/gtkspell2
+.endif
+
+.include <bsd.port.post.mk>
