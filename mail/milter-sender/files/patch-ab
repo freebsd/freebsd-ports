@@ -1,5 +1,5 @@
---- install.sh.orig	Wed Sep 17 01:38:25 2003
-+++ install.sh	Thu Sep 25 22:01:32 2003
+--- install.sh.orig	Mon Sep 29 12:05:54 2003
++++ install.sh	Fri Dec  5 02:27:25 2003
 @@ -17,20 +17,18 @@
  chown ${USER} ${STATEDIR}
  chgrp ${GROUP} ${STATEDIR}
@@ -11,8 +11,7 @@
 +#chown ${USER} ${BINDIR}/${MILTER}
 +#chgrp ${GROUP} ${BINDIR}/${MILTER}
  
--chgrp ${GROUP} ${MAILDIR} ${MAILDIR}/access.* ${MAILDIR}/aliases.*
-+#chgrp ${GROUP} ${MAILDIR} ${MAILDIR}/access.* ${MAILDIR}/aliases.*
+ chgrp ${GROUP} ${MAILDIR} ${MAILDIR}/access.* ${MAILDIR}/aliases.*
  
  
  case `uname -s` in

@@ -1,0 +1,12 @@
+--- milter-sender.c.bak	Sun Nov 30 15:21:53 2003
++++ milter-sender.c	Fri Dec  5 02:15:35 2003
+@@ -1282,7 +1282,8 @@
+ 	 * the checking of the EHLO/HELO argument corresponds  against the
+ 	 * connection IP address.
+ 	 */
+-	if (if_addr != (char *) 0 && strcmp(hostaddr, client_addr) != 0
++	if (if_addr != (char *) 0 && strcmp(if_addr, "127.0.0.1") != 0
++	&& strcmp(hostaddr, client_addr) != 0
+ 	&& (strcmp(hostaddr, helohost) == 0 || strcmp(hostname, helohost) == 0)) {
+ 		data->block = 1;
+ 		return setReply(data, 550, "5.7.1", "HELO %s claims to be us '%s' [%s], but the connection [%s] is not from us", helohost, hostname, hostaddr, client_addr);
