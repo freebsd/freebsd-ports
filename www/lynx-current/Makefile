@@ -4,7 +4,7 @@
 # Date created:         15 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.88 1998/06/07 03:57:49 ache Exp $
+# $Id: Makefile,v 1.89 1998/07/23 15:25:56 ache Exp $
 #
 
 DISTNAME=       lynx2.8.1dev.17
@@ -17,7 +17,8 @@ MAINTAINER=	ache@FreeBSD.ORG
 NO_LATEST_LINK=	YES
 WRKSRC=         ${WRKDIR}/lynx2-8-1
 GNU_CONFIGURE=  YES
-CONFIGURE_ARGS= --with-screen=ncurses --with-zlib --libdir="${PREFIX}/etc"
+CONFIGURE_ARGS= --with-screen=ncurses --with-zlib --libdir="${PREFIX}/etc" \
+		--enable-nsl-fork
 MAKEFILE=       makefile
 INSTALL_TARGET= install install-help
 MAN1=		lynx.1
