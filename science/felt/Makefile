@@ -1,28 +1,31 @@
 # New ports collection makefile for:	FElt
-# Version required:	 3.01
+# Version required:	3.02
 # Date created:		19 October 1996
-# Whom:			
+# Whom:			Pedro Giffuni
 #
-# $Id: Makefile,v 1.2 1997/01/18 23:55:39 asami Exp $
+# $Id: Makefile,v 1.3 1997/01/19 02:47:27 obrien Exp $
 #
 
-DISTNAME=	felt-3.01
+DISTNAME=	felt-3.02
 CATEGORIES=	cad
 MASTER_SITES=	http://www-cse.ucsd.edu/users/atkinson/FElt/Binaries/ \
-		ftp://lucy.ifi.unibas.ch/unix/general/
+		ftp://ftp.isd.uni-stuttgart.de/pub/src/FEM/FElt/
 EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	pgiffuni@FPS.biblos.unal.edu.co
 
-WRKSRC=		${WRKDIR}/FElt-3.00
+WRKSRC=         ${WRKDIR}/FElt-3.02
 GNU_CONFIGURE=	yes
 MAN1=		burlap.1 corduroy.1 felt.1 patchwork.1 velvet.1 yardstick.1
 MAN3=		Drawing.3
 MAN4=		corduroy.4 felt.4
-
-#DOCS= 		ftp://cs.ucsd.edu/pub/felt/felt-3.00.ps.gz
+#DOCS= 		ftp://cs.ucsd.edu/pub/felt/felt-3.02.ps.gz
 
 post-patch:
 	${RM} -f $(WRKSRC)/lib/Geompack/*.c
+
+post-install:
+	$(MKDIR) $(PREFIX)/share/examples/FElt
+	$(CP) $(WRKSRC)/examples/* $(PREFIX)/share/examples/FElt
 
 .include <bsd.port.mk>
