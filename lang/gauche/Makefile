@@ -7,6 +7,7 @@
 
 PORTNAME=	gauche
 PORTVERSION=	0.7.3	# Keep databases/gauche-gdbm in sync with this
+PORTREVISION=	1
 CATEGORIES=	lang scheme
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,6 +16,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	erik@smluc.org
 COMMENT=	Scheme script interpreter with multibyte character handling
+
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 # Choices are: "pthreads" and "no", but it seems that FreeBSD does not
 # yet fully support threads with Boehm GC.
@@ -32,7 +35,8 @@ MAN1=		gosh.1 \
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-threads=${GAUCHE_THREADS} \
 		--enable-multibyte=${GAUCHE_ENCODING} \
-		--with-slib=${PREFIX}/share/slib
+		--with-slib=${LOCALBASE}/share/slib \
+		--with-iconv=${LOCALBASE}
 PLIST_SUB=	VERSION="${PORTVERSION}" \
 		TARGET="${CONFIGURE_TARGET}" \
 		INFOSECTION="${INFOSECTION}"
