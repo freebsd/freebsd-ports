@@ -1,5 +1,7 @@
 %%EMACS_LIBDIR%%/site-lisp/skk/queue-m.el
 %%EMACS_LIBDIR%%/site-lisp/skk/queue-m.elc
+%%EMACS_LIBDIR%%/site-lisp/skk/skk-abbrev.el
+%%EMACS_LIBDIR%%/site-lisp/skk/skk-abbrev.elc
 %%EMACS_LIBDIR%%/site-lisp/skk/skk-auto.el
 %%EMACS_LIBDIR%%/site-lisp/skk/skk-auto.elc
 %%EMACS_LIBDIR%%/site-lisp/skk/skk-autoloads.el
@@ -22,12 +24,16 @@
 %%EMACS_LIBDIR%%/site-lisp/skk/skk-leim.elc
 %%EMACS_LIBDIR%%/site-lisp/skk/skk-look.el
 %%EMACS_LIBDIR%%/site-lisp/skk/skk-look.elc
+%%EMACS_LIBDIR%%/site-lisp/skk/skk-lookup.el
+%%EMACS_LIBDIR%%/site-lisp/skk/skk-lookup.elc
 %%EMACS_LIBDIR%%/site-lisp/skk/skk-num.el
 %%EMACS_LIBDIR%%/site-lisp/skk/skk-num.elc
 %%EMACS_LIBDIR%%/site-lisp/skk/skk-obsolete.el
 %%EMACS_LIBDIR%%/site-lisp/skk/skk-obsolete.elc
 %%EMACS_LIBDIR%%/site-lisp/skk/skk-server.el
 %%EMACS_LIBDIR%%/site-lisp/skk/skk-server.elc
+%%EMACS_LIBDIR%%/site-lisp/skk/skk-study.el
+%%EMACS_LIBDIR%%/site-lisp/skk/skk-study.elc
 %%EMACS_LIBDIR%%/site-lisp/skk/skk-tut.el
 %%EMACS_LIBDIR%%/site-lisp/skk/skk-tut.elc
 %%EMACS_LIBDIR%%/site-lisp/skk/skk-viper.el
