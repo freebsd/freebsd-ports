@@ -1,5 +1,5 @@
 sbin/apinger
-etc/apinger.conf
+etc/apinger.conf.sample
 %%PORTDOCS%%share/doc/apinger/README
 %%PORTDOCS%%share/doc/apinger/NEWS
 %%PORTDOCS%%share/doc/apinger/AUTHORS
