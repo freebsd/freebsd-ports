@@ -1543,6 +1543,7 @@ dnsflood	ports/dns/dnsflood
 dnshijacker	ports/dns/dnshijacker
 dnsjava		ports/dns/dnsjava
 dnsmasq		ports/dns/dnsmasq
+dnsmax-perl	ports/dns/dnsmax-perl
 dnsproxy	ports/dns/dnsproxy
 dnstop		ports/dns/dnstop
 dnstracer	ports/dns/dnstracer
