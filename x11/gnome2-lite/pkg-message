@@ -1,8 +1,21 @@
-**************************************************************************
-Congratulations!  GNOME 2 has been successfully installed on your system.
-For help on starting it up, as well as answers to common questions, and
-some known issues, please see the FreeBSD GNOME homepage at:
+************************************************************
 
-                       http://www.FreeBSD.org/gnome/
+The GNOME 2 desktop Lite edition has been successfully installed.
 
-**************************************************************************
+The Lite edition does not include all the components of the standard 
+GNOME 2 desktop as detailed at http://www.gnome.org.  If you wish to
+install the full desktop, you can remove this port, and install the
+x11/gnome2 port or package.  That can be best accomplished using
+the following commands:
+
+# pkg_delete gnome2-lite
+# cd /usr/ports/x11/gnome2
+# make install clean
+
+Alternatively, you can install additional GNOME components individually 
+using either their ports or packages.
+
+For more help on using GNOME on FreeBSD, please see the FreeBSD GNOME project
+site at http://www.FreeBSD.org/gnome.
+
+************************************************************
