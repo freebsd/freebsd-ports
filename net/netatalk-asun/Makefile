@@ -3,7 +3,7 @@
 # Date created:         07 Sep 1998
 # Whom:                 stb@freebsd.org
 #
-# $Id: Makefile,v 1.6 1999/04/20 22:54:02 stb Exp $
+# $Id: Makefile,v 1.7 1999/05/17 08:17:57 stb Exp $
 #
 
 DISTNAME=       netatalk-1.4b2+asun2.1.3
@@ -15,7 +15,9 @@ MASTER_SITES=   ftp://ftp.u.washington.edu/public/asun/ \
 
 MAINTAINER=	stb@freebsd.org
 
+.if !exists(/usr/include/tcpd.h)
 LIB_DEPENDS=	wrap.7:${PORTSDIR}/security/tcp_wrapper
+.endif
 
 MAKE_ARGS=	INSTALL="${INSTALL} ${COPY}"
 
