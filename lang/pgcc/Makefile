@@ -4,7 +4,7 @@
 # Date created:				10 Dec 1998
 # Whom:					David O'Brien <obrien@NUXI.com>
 #
-# $Id: Makefile,v 1.11 1998/12/13 09:40:43 obrien Exp $
+# $Id: Makefile,v 1.12 1998/12/14 10:28:21 obrien Exp $
 #
 
 DISTNAME=	egcs-1.1.1
@@ -33,7 +33,7 @@ BUILD_DEPENDS=  bzip2:${PORTSDIR}/archivers/bzip2  \
 EXTRACT_CMD=	bzip2
 EXTRACT_BEFORE_ARGS=	-dc
 EXTRACT_AFTER_ARGS=	| /usr/bin/tar -xf -
-EGCS_REV=	egcs-2.91.60
+EGCS_REV=	pgcc-2.91.60
 LIBSTDCPP_REV=	2.9.0
 
 .if ${PORTOBJFORMAT} == "elf"
