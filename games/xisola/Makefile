@@ -5,22 +5,22 @@
 # $FreeBSD$
 #
 
-PORTNAME=		xisola
-PORTVERSION=		1.0
-CATEGORIES=		games
-MASTER_SITES=		${MASTER_SITE_XCONTRIB}
+PORTNAME=	xisola
+PORTVERSION=	1.0
+CATEGORIES=	games
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
-WRKSRC=			${WRKDIR}/xisola
-USE_IMAKE=		yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
+USE_IMAKE=	yes
+NO_INSTALL_MANPAGES=	yes
 
-do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/xisola ${PREFIX}/bin
+post-install:
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/xisola
-	@ ${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/xisola
+	@${MKDIR} ${PREFIX}/share/doc/xisola
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/xisola
 .endif
 
 .include <bsd.port.mk>
