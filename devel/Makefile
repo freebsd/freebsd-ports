@@ -603,7 +603,6 @@
     SUBDIR += pcre
     SUBDIR += pcre++
     SUBDIR += pcsc-lite
-    SUBDIR += pear
     SUBDIR += pedisassem
     SUBDIR += perforce
     SUBDIR += perltidy
