@@ -6,28 +6,27 @@
 #
 
 PORTNAME=	vcdgear
-PORTVERSION=	1.5
+PORTVERSION=	1.6b
 CATEGORIES= 	graphics
 MASTER_SITES=	http://www.vcdgear.org/files/
 
 MAINTAINER=	cpiazza@FreeBSD.org
 
-USE_ZIP=	yes
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 300004
 BROKEN=	'Only an ELF binary is distributed'
 .endif
 
 .if ${ARCH} == i386
-DISTNAME=	${PORTNAME}15_FreeBSD4.0_Intel
+DISTNAME=	${PORTNAME}16b_i386_freebsd41
 .else if ${ARCH} == alpha
-DISTNAME=	${PORTNAME}15_FreeBSD4.0_Alpha
+DISTNAME=	${PORTNAME}16b_alpha_freebsd41
 .endif
 
 NO_BUILD=	true
-NO_WRKSUBDIR=	true
+WRKSRC=		${WRKDIR}/vcdgear16
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/vcdgear15_static ${PREFIX}/bin/vcdgear
+	${INSTALL_PROGRAM} ${WRKSRC}/vcdgear16_static ${PREFIX}/bin/vcdgear
 
 .include <bsd.port.post.mk>
