@@ -4,7 +4,7 @@
 # Date created:         26 June 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.46 1998/08/17 18:28:27 hoek Exp $
+# $Id: Makefile,v 1.47 1998/08/22 13:20:35 asami Exp $
 #
 
 DISTNAME=       elm-2.4ME+43
@@ -37,7 +37,7 @@ post-install:
 .if defined(NOMANCOMPRESS)
 	${LN} -f ${PREFIX}/man/man1/frm.1 ${PREFIX}/man/man1/nfrm.1
 .else
-	${LN} -f ${PREFIX}/man/man1/frm.1.gz ${PREFIX}/man/man1/nfrm.1.gz
+	${LN} -sf ${PREFIX}/man/man1/frm.1.gz ${PREFIX}/man/man1/nfrm.1.gz
 .endif
 
 .include <bsd.port.mk>
