@@ -1,17 +1,15 @@
-# New ports collection makefile for:	UML
+# New ports collection makefile for:	umbrello
 # Date created:				21 September 2001
 # Whom:					Dmitry Sivachenko <demon@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	uml
-PORTVERSION=	1.0.3
-DISTNAME=	uml-1.0.3-1
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+PORTNAME=	umbrello
+PORTVERSION=	1.1
 CATEGORIES=	devel kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITE_SUBDIR= uml
 
 MAINTAINER=	demon@FreeBSD.org
 
@@ -20,19 +18,9 @@ BUILD_DEPENDS=	autoconf213:${PORTSDIR}/devel/autoconf213 \
 
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
-QTCFGLIBS+=	-pthread
-CONFIGURE_ENV+=	LIBQT="-lqt-mt"
 USE_GMAKE=	yes
-
-pre-configure:
-	${MKDIR} ${WRKSRC}/auto-bin
-.for AC in autoconf autoheader
-	${LN} -sf ${LOCALBASE}/bin/${AC}213 ${WRKSRC}/auto-bin/${AC}
-.endfor
-.for AM in automake aclocal
-	${LN} -sf ${LOCALBASE}/bin/${AM}14 ${WRKSRC}/auto-bin/${AM}
-.endfor
-	cd ${WRKSRC} && env PATH=${WRKSRC}/auto-bin:$$PATH \
-		${GMAKE} -f Makefile.dist
+USE_BZIP2=	yes
+INSTALLS_SHLIB=	yes
+CONFIGURE_TARGET=
 
 .include <bsd.port.mk>
