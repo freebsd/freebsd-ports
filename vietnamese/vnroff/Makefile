@@ -7,10 +7,11 @@
 #
 
 PORTNAME=	vnroff
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	vietnamese print
 MASTER_SITES=	ftp://ftp.media.mit.edu/pub/Vietnet/Viscii/Troff/
 DISTFILES=	vnroff.c.Z vnroff.1.Z
+DISTNAME=	${PORTNAME}-2.0
 
 MAINTAINER=	obrien@FreeBSD.org
 
