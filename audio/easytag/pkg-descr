@@ -28,4 +28,3 @@ uppercase, downcase, ...),
   - French, German, Russian, Dutch, Hungarian, Swedish, Italian, 
 Japanese, Ukrainian, Czech and Spanish translation languages,
   - Written in C and uses GTK+ 1.2 for the GUI.
-

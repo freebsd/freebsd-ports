@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	d.marks@student.umist.ac.uk
 
-LIB_DEPENDS=	id3-3.7.13:${PORTSDIR}/audio/id3lib \
+LIB_DEPENDS=	id3-3.8.2:${PORTSDIR}/audio/id3lib \
 		vorbis.2:${PORTSDIR}/audio/libvorbis
 
 USE_GNOMENG=	yes
