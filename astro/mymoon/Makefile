@@ -8,7 +8,7 @@
 PORTNAME=	mymoon
 PORTVERSION=	1.0
 CATEGORIES=	astro
-MASTER_SITES=	http://makemebad.net/geek/codes/
+MASTER_SITES=	http://makemebad.net/geek/codes/${PORTNAME}/
 
 MAINTAINER=	ponomarew@oberon.net
 COMMENT=	Show latitude and longitude of the moon
