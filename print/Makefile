@@ -97,6 +97,7 @@
     SUBDIR += latex-keystroke
     SUBDIR += latex-mathabx
     SUBDIR += latex-pgf
+    SUBDIR += latex-subfig
     SUBDIR += latex-xcolor
     SUBDIR += latex2rtf
     SUBDIR += latex2slides
