@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	20011102.2
+PORTVERSION=	20011103
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.iDaemons.org/distfiles/
@@ -36,6 +36,7 @@ MAN1=		pkg_deinstall.1 \
 		portsdb.1 \
 		portupgrade.1 \
 		portversion.1
+MAN5=		pkgtools.conf.5
 MLINKS=		pkgdb.1 pkg_which.1 \
 		portupgrade.1 portinstall.1 \
 		portsdb.1 ports_glob.1
