@@ -10,6 +10,7 @@ CATEGORIES=	audio linux
 PORTVERSION=	0.2.22
 
 MAINTAINER=	taoka@FreeBSD.org
+COMMENT=	RPM of esound
 
 RPM_SET=	esound-${PORTVERSION}-1.${MACHINE_ARCH}.rpm
 

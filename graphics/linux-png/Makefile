@@ -8,8 +8,10 @@
 PORTNAME=	png
 PORTVERSION=	1.0.14
 CATEGORIES=	graphics linux
-
 MASTER_SITES=	${RPM_MIRRORS:S/__DIR__/${UPDDIR}/g}
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	RPM of the PNG lib
 
 RPM_SET=	libpng-${PORTVERSION}-0.7x.3.${MACHINE_ARCH}.rpm
 

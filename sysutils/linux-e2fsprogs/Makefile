@@ -8,6 +8,7 @@
 PORTNAME=	e2fsprogs
 CATEGORIES=	sysutils linux
 
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RPM of the a set of utilities and library to manipulate an ext2 filesystem
 
 .if ${MACHINE_ARCH} == "i386"

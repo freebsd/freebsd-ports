@@ -9,6 +9,7 @@ PORTREVISION=	0
 CATEGORIES=	graphics linux
 
 MAINTAINTER=	maho@FreeBSD.org
+COMMENT=	RPM of the ungif lib
 
 .if (${MACHINE_ARCH} == "i386")
 RPM_SET=	libungif-4.1.0-7.${MACHINE_ARCH}.rpm

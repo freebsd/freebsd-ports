@@ -10,6 +10,7 @@ PORTVERSION=	3.5.5
 CATEGORIES=	graphics linux
 
 MAINTAINER=	taoka@FreeBSD.org
+COMMENT=	RPM of tiff lib
 
 RPM_SET=	libtiff-${PORTVERSION}-10.${MACHINE_ARCH}.rpm
 

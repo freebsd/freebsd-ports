@@ -10,6 +10,7 @@ PORTVERSION=	0.1.11
 CATEGORIES=	audio linux
 
 MAINTAINER=	taoka@FreeBSD.org
+COMMENT=	RPM of audiofile
 
 RPM_SET=	audiofile-${PORTVERSION}-1.${MACHINE_ARCH}.rpm
 
