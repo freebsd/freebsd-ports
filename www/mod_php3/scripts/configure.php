@@ -156,7 +156,7 @@ while [ "$1" ]; do
 			echo "CONFIGURE_ARGS+=--with-ftp"
 			;;
 		\"gettext\")
-			echo "LIB_DEPENDS+=	intl.4:\${PORTSDIR}/devel/gettext"
+			echo "LIB_DEPENDS+=	intl.5:\${PORTSDIR}/devel/gettext"
 			echo "CONFIGURE_ARGS+=--with-gettext=\${PREFIX}"
 			;;
 		\"YP\")

@@ -80,7 +80,7 @@ while [ "$1" ]; do
 			;;
 
 		\"locale\")
-			echo "LIB_DEPENDS+=	intl.4:\${PORTSDIR}/devel/gettext"
+			echo "LIB_DEPENDS+=	intl.5:\${PORTSDIR}/devel/gettext"
 			echo "CONFIGURE_ARGS+=--with-localedir=\${LOCALBASE}/share/locale"
 			echo "CONFIGURE_ARGS+=--enable-i18n"
 			;;
