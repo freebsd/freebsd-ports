@@ -1,6 +1,6 @@
---- Makefile.orig	Wed May 19 14:06:49 2004
-+++ Makefile	Wed May 19 14:07:15 2004
-@@ -3,11 +3,11 @@
+--- Makefile.orig	Mon May 24 16:51:51 2004
++++ Makefile	Mon May 24 18:01:13 2004
+@@ -3,11 +3,12 @@
  # All Rights Reserved
  # Under the GPL license version 2
  
@@ -10,8 +10,9 @@
  RANLIB= /usr/bin/ranlib
 -CCOPT= -O2 -Wall -W
 -DEBUG= -g
-+CCOPT= ${CFLAGS}
++#CCOPT= -O2 -Wall -W
 +#DEBUG= -g
++CCOPT=	$(CFLAGS)
  
- OBJ = visitors.o aht.o antigetopt.o
+ OBJ = visitors.o aht.o antigetopt.o tail.o
  PRGNAME = visitors
