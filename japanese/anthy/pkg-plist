@@ -27,6 +27,7 @@ share/anthy/noun-variant.depword
 share/anthy/noun.depword
 share/anthy/typetab
 share/anthy/v.depword
+%%PORTDOCS%%%%DOCSDIR%%/ELISP
 %%ELISPDIR%%/anthy-conf.el
 %%ELISPDIR%%/anthy-dic.el
 %%ELISPDIR%%/anthy-isearch.el
@@ -34,3 +35,5 @@ share/anthy/v.depword
 %%ELISPDIR%%/leim-list.el
 @dirrm share/anthy
 @dirrm include/anthy
+@dirrm %%ELISPDIR%%
+@dirrm %%DOCSDIR%%
