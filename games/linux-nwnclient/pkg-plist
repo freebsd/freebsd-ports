@@ -1,3 +1,4 @@
+bin/nwn
 %%DATADIR%%/EULA.txt
 %%DATADIR%%/NWNv162.txt
 %%DATADIR%%/data/patch.bif
