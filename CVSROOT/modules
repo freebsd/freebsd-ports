@@ -137,7 +137,6 @@ XFree86-4-FontServer			ports/x11-servers/XFree86-4-FontServer
 XFree86-4-NestServer			ports/x11-servers/XFree86-4-NestServer
 XFree86-4-PrintServer			ports/x11-servers/XFree86-4-PrintServer
 XFree86-4-Server			ports/x11-servers/XFree86-4-Server
-XFree86-4-Server-snap			ports/x11-servers/XFree86-4-Server-snap
 XFree86-4-VirtualFramebufferServer	ports/x11-servers/XFree86-4-VirtualFramebufferServer
 XFree86-4-clients			ports/x11/XFree86-4-clients
 XFree86-4-documents			ports/x11/XFree86-4-documents
