@@ -1,16 +1,12 @@
 @exec %%LOCALBASE%%/bin/registervm "%D/%%T%%/bin/java"
 @unexec %%LOCALBASE%%/bin/unregistervm "%D/%%T%%/bin/java"
 %%T%%/bin/HtmlConverter
-%%T%%/bin/exe/jextract
-%%T%%/bin/exe/jextract_g
 %%T%%/bin/exe/jformat
 %%T%%/bin/exe/jformat_g
 %%T%%/bin/java
 %%T%%/bin/java_g
 %%T%%/bin/javaw
 %%T%%/bin/javaw_g
-%%T%%/bin/jextract
-%%T%%/bin/jextract_g
 %%T%%/bin/jformat
 %%T%%/bin/jformat_g
 %%T%%/bin/jvmtcf
@@ -257,6 +253,8 @@
 %%T%%/jre/bin/jvmtcf
 %%T%%/jre/bin/jvmdcf_g
 %%T%%/jre/bin/jvmdcf
+%%T%%/jre/bin/jextract_g
+%%T%%/jre/bin/jextract
 %%T%%/jre/bin/javaw_g
 %%T%%/jre/bin/javaw
 %%T%%/jre/bin/javaplugin_g.so
@@ -277,12 +275,16 @@
 %%T%%/jre/bin/exe/oldjava
 %%T%%/jre/bin/exe/keytool_g
 %%T%%/jre/bin/exe/keytool
+%%T%%/jre/bin/exe/jextract_g
+%%T%%/jre/bin/exe/jextract
 %%T%%/jre/bin/exe/javaw_g
 %%T%%/jre/bin/exe/javaw
 %%T%%/jre/bin/exe/java_g
 %%T%%/jre/bin/exe/java
 %%T%%/jre/bin/classic/libjvm_g.so
 %%T%%/jre/bin/classic/libjvm.so
+%%T%%/jre/bin/classic/libcore_g.so
+%%T%%/jre/bin/classic/libcore.so
 %%T%%/jre/bin/classic/Xusage.txt
 %%T%%/jre/bin/awt_robot_g
 %%T%%/jre/bin/awt_robot
