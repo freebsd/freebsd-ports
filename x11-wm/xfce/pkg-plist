@@ -25,6 +25,7 @@ bin/xfsound
 bin/xfterm
 bin/xftrash
 bin/xftree
+bin/xfumed
 bin/xfwm
 etc/xfce/Xclients
 etc/xfce/fvwm2rc
@@ -46,6 +47,7 @@ etc/xfce/xinitrc
 etc/xfce/xinitrc.mwm
 etc/xfce/xsession
 etc/xfce/xtree.reg
+lib/gtk/themes/engines/libxfce.la
 lib/gtk/themes/engines/libxfce.so
 share/locale/ca/LC_MESSAGES/xfce.mo
 share/locale/cs/LC_MESSAGES/xfce.mo
@@ -77,6 +79,7 @@ share/xfce/backdrops/Aurora.xpm
 share/xfce/backdrops/Blue.list
 share/xfce/backdrops/BlueSatin.xpm
 share/xfce/backdrops/BlueSea.xpm
+share/xfce/backdrops/BlueStripes.xpm
 share/xfce/backdrops/BlueStucco.xpm
 share/xfce/backdrops/Bluedrops.xpm
 share/xfce/backdrops/Bluefalls.xpm
@@ -103,6 +106,7 @@ share/xfce/backdrops/Gallets.xpm
 share/xfce/backdrops/Glasses.xpm
 share/xfce/backdrops/Gold.xpm
 share/xfce/backdrops/Gradient.xpm
+share/xfce/backdrops/GreenStripes.xpm
 share/xfce/backdrops/GreenStucco.xpm
 share/xfce/backdrops/Greenslate.xpm
 share/xfce/backdrops/Grey.xpm
@@ -124,6 +128,7 @@ share/xfce/backdrops/Pool.xpm
 share/xfce/backdrops/Psy.xpm
 share/xfce/backdrops/Psy2.xpm
 share/xfce/backdrops/Psy3.xpm
+share/xfce/backdrops/PurpleStripes.xpm
 share/xfce/backdrops/Rotin.xpm
 share/xfce/backdrops/Rough.xpm
 share/xfce/backdrops/Sandy-ridges.xpm
@@ -339,6 +344,7 @@ share/xfce/palettes/HiTech
 share/xfce/palettes/HiTech2
 share/xfce/palettes/Iceland
 share/xfce/palettes/Jazza
+share/xfce/palettes/Kdetheme
 share/xfce/palettes/Liquid
 share/xfce/palettes/Liquid2
 share/xfce/palettes/Mauve
@@ -346,6 +352,7 @@ share/xfce/palettes/Metal
 share/xfce/palettes/Military
 share/xfce/palettes/Modern
 share/xfce/palettes/Nature
+share/xfce/palettes/Nemo
 share/xfce/palettes/Netsy
 share/xfce/palettes/OldWood
 share/xfce/palettes/Pale
@@ -434,6 +441,7 @@ share/xfce/textures/BlueX2.xpm
 share/xfce/textures/Bronze2.xpm
 share/xfce/textures/Glass.xpm
 share/xfce/textures/GoldenBoy.xpm
+share/xfce/textures/Kdetheme.xpm
 share/xfce/textures/Liquid.xpm
 share/xfce/textures/Modern.xpm
 share/xfce/textures/Power.xpm

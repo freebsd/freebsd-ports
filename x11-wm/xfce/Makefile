@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfce
-PORTVERSION=	3.8.1
+PORTVERSION=	3.8.3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.xfce.org/archive/
 
@@ -33,5 +33,8 @@ pre-patch:
 		's|DATADIRNAME=lib|DATADIRNAME=share|g ; \
 		 s|USE_INCLUDED_LIBINTL=yes|#USE_INCLUDED_LIBINTL=yes|g ; \
 		 s|\$$\(top_builddir\)/intl/libintl.a|-lintl|g' ${WRKSRC}/configure
+
+pre-build:
+	${LN} -sf ${LOCALBASE}/bin/libtool ${WRKSRC}/libtool
 
 .include <bsd.port.mk>
