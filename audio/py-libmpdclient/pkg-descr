@@ -1,0 +1,9 @@
+Music Player Daemon (MPD) allows remote access for playing music
+(MP3's, Ogg's, and Flac's) and managing playlists.
+The design focus is on integrating a computer into a stereo system
+that provides control for music playback over a local network.
+
+py-libmpdclient is a library to aid in rapid client development for
+the Python programming language.
+
+WWW:    http://www.musicpd.org/?page=python_module
