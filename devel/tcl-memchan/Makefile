@@ -43,10 +43,6 @@ do-install:
 .ifndef(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/memchan
 	${CP} -pR ${WRKSRC}/../doc/html/* ${PREFIX}/share/doc/memchan/
-
-PLIST_SUB+=	DOC=''
-.else
-PLIST_SUB+=	DOC='@comment '
 .endif
 
 .include <bsd.port.mk>
