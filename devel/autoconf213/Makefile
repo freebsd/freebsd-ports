@@ -28,6 +28,8 @@ CONFIGURE_ARGS=	--program-suffix=213 --datadir=${PREFIX}/share/autoconf213
 WRKSRC=		${WRKDIR}/autoconf
 
 post-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/install-sh \
+		${PREFIX}/share/autoconf213/autoconf
 	@install-info ${PREFIX}/info/autoconf.info ${PREFIX}/info/dir
 	@install-info ${PREFIX}/info/standards.info ${PREFIX}/info/dir
 

@@ -23,4 +23,7 @@ MAN1=		autoconf.1 autoheader.1 autoreconf.1 \
 		autoscan.1 autoupdate.1 config.guess.1 \
 		config.sub.1 ifnames.1
 
+post-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/config/install-sh ${PREFIX}/share/autoconf
+
 .include <bsd.port.mk>

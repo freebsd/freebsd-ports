@@ -21,6 +21,7 @@ share/autoconf/actypes.m4
 share/autoconf/acversion.m4
 share/autoconf/autoconf.m4
 share/autoconf/autoconf.m4f
+share/autoconf/install-sh
 share/autoconf/m4sh.m4
 share/autoconf/m4sugar.m4
 @dirrm share/autoconf
