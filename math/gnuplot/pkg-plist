@@ -1,6 +1,6 @@
 bin/gnuplot
 bin/lasergnu
-%%X11:%%libexec/gnuplot_x11
+%%X11%%libexec/gnuplot_x11
 %%PORTDOCS%%%%EXAMPLESDIR%%/1.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/2.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/3.dat
@@ -27,6 +27,8 @@ bin/lasergnu
 %%PORTDOCS%%%%EXAMPLESDIR%%/clip14in.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/contours.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/controls.dem
+%%HISTOGRAMS%%%%PORTDOCS%%%%EXAMPLESDIR%%/ctg-y2.dat
+%%HISTOGRAMS%%%%PORTDOCS%%%%EXAMPLESDIR%%/datastrings.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/density.fnc
 %%PORTDOCS%%%%EXAMPLESDIR%%/discrete.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/electron.dem
@@ -41,7 +43,11 @@ bin/lasergnu
 %%PORTDOCS%%%%EXAMPLESDIR%%/hemisphr.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/hexa.fnc
 %%PORTDOCS%%%%EXAMPLESDIR%%/hidden.dem
+%%HISTOGRAMS%%%%PORTDOCS%%%%EXAMPLESDIR%%/histograms.dem
+%%HISTOGRAMS%%%%PORTDOCS%%%%EXAMPLESDIR%%/histograms2.dem
+%%HISTOGRAMS%%%%PORTDOCS%%%%EXAMPLESDIR%%/immigration.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/klein.dat
+%%HISTOGRAMS%%%%PORTDOCS%%%%EXAMPLESDIR%%/labelplot.pdb
 %%PORTDOCS%%%%EXAMPLESDIR%%/lcdemo.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/line.fnc
 %%PORTDOCS%%%%EXAMPLESDIR%%/mgr.dem
@@ -49,6 +55,7 @@ bin/lasergnu
 %%PORTDOCS%%%%EXAMPLESDIR%%/mousevariables.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/multimsh.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/multiplt.dem
+%%HISTOGRAMS%%%%PORTDOCS%%%%EXAMPLESDIR%%/nearmap.csv
 %%PORTDOCS%%%%EXAMPLESDIR%%/param.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/pm3d.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/pm3dcolors.dem
@@ -69,12 +76,14 @@ bin/lasergnu
 %%PORTDOCS%%%%EXAMPLESDIR%%/sound2.par
 %%PORTDOCS%%%%EXAMPLESDIR%%/soundvel.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/spline.dem
+%%HISTOGRAMS%%%%PORTDOCS%%%%EXAMPLESDIR%%/starmap.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/start.par
 %%PORTDOCS%%%%EXAMPLESDIR%%/stat.inc
 %%PORTDOCS%%%%EXAMPLESDIR%%/steps.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/steps.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/surface1.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/surface2.dem
+%%HISTOGRAMS%%%%PORTDOCS%%%%EXAMPLESDIR%%/table.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/textcolor.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/textrotate.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/timedat.dat
