@@ -1,0 +1,21 @@
+OpenGL hardware acceleration for RIVA based cards and Matrox G200.
+
+To bridge the time until the XFree86-4 release, this port will build a  
+Mesa 3.0 Graphics Library that makes use of the 3d hardware acceleration
+features of nvidia's RIVA 128/128ZX and RIVA TNT/TNT2/VANTAGE based 
+graphics cards and the Matrox G200/G400.
+
+WARNING:
+
+Please note that this build might need a considerable amount of time.
+(AMD K6/300MHz/196MB/SCSI: XFree86 3 hours, Mesa 1/2 hour, glx 10 min)
+
+See Jordan K Hubbard's article in the July '99 issue of
+
+    http://www.freebsdzine.org 
+
+for more information or visit
+
+WWW: http://www.freebsd.org/~3d
+
+Marc E E van Woerkom  <3d@freebsd.org>
