@@ -7230,6 +7230,7 @@ zh-cless	ports/chinese/cless
 zh-cmexfonts	ports/chinese/cmexfonts
 zh-cxterm	ports/chinese/cxterm
 zh-dia		ports/chinese/dia
+zh-dictd-database	ports/chinese/dictd-database
 zh-emacs20	ports/chinese/emacs20
 zh-enscript	ports/chinese/enscript
 zh-eterm	ports/chinese/eterm
