@@ -6858,6 +6858,7 @@ retawq		ports/www/retawq
 rev		src/usr.bin/rev
 revnetgroup	src/libexec/revnetgroup
 rexecd		src/libexec/rexecd
+rexima		ports/audio/rexima
 rexx-imc	ports/lang/rexx-imc
 rfbproxy	ports/net/rfbproxy
 rfc		ports/misc/rfc
