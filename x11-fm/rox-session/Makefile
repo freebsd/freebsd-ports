@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	rox-session
-PORTVERSION=	0.1.13
+PORTVERSION=	0.1.14
 CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	rox
@@ -14,30 +14,21 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	olgeni@FreeBSD.org
 
+BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
+LIB_DEPENDS=	gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20 \
+		xml2.5:${PORTSDIR}/textproc/libxml2
 RUN_DEPENDS=	${LOCALBASE}/share/Choices:${PORTSDIR}/x11-fm/rox-base \
 		${LOCALBASE}/bin/rox:${PORTSDIR}/x11-fm/rox-filer
 
-USE_GLIB=	yes
-USE_GTK=	yes
-
 WRKSRC=		${WRKDIR}/ROX-Session-${PORTVERSION}
-
-post-extract:
-	# Hopefully gtk-config and glib-config will become
-	# configurable, so don't bother to add patch-* files
-
-	@${PERL} -pi -e "s/gtk-config/gtk12-config/g" \
-		${WRKSRC}/src/Makefile.in
-	@${PERL} -pi -e "s/glib-config/glib12-config/g" \
-		${WRKSRC}/src/configure
 
 do-build:
 	# Run the custom build procedure
-	@cd ${WRKSRC} && GTK_CONFIG=${GTK_CONFIG} GLIB_CONFIG=${GLIB_CONFIG} ./AppRun --compile
+	@cd ${WRKSRC}/ROX-Session && GTK_CONFIG=${GTK_CONFIG} GLIB_CONFIG=${GLIB_CONFIG} ./AppRun --compile
 
 do-install:
 	@${MKDIR} ${PREFIX}/apps/ROX-Session
-	@cd ${WRKSRC} && ${CP} -r AppIcon.xpm AppInfo.xml AppRun FreeBSD-ix86 Help Login MakeDefault.sh Setup Styles WindowMans ${PREFIX}/apps/ROX-Session
+	@cd ${WRKSRC}/ROX-Session && ${CP} -r AppIcon.xpm AppInfo.xml AppRun FreeBSD-ix86 Help Login MakeDefault.sh Options.xml Setup Styles WindowMans ${PREFIX}/apps/ROX-Session
 	@${CAT} ${FILESDIR}/rox-session | ${SED} -e "s|%%PREFIX%%|${PREFIX}|" > ${PREFIX}/bin/rox-session
 	@${CHMOD} 775 ${PREFIX}/bin/rox-session
 
