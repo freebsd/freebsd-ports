@@ -1,0 +1,21 @@
+From README
+
+This module provides perl access to Glib and GLib's GObject libraries.
+GLib is a portability and utility library; GObject provides a generic
+type system with inheritance and a powerful signal system.  Together
+these libraries are used as the foundation for many of the libraries
+that make up the Gnome environment, and are used in many unrelated
+projects.
+
+This wrapper attempts to provide a perlish interface while remaining
+as true as possible to the underlying C API, so that any reference
+materials you can find on using GLib may still apply to using the
+libraries from perl.  Where GLib's functionality overlaps perl's,
+perl's is favored; for example, you will find perl lists and arrays in
+place of GSList or GList objects.  Some concepts have been eliminated;
+you need never worry about reference-counting on GObjects or GBoxed
+structures.  Other concepts have been converted to a perlish analogy;
+the GType id will never be seen in perl, as the package name serves
+that purpose.  [FIXME link to a document describing this stuff in detail.]
+
+WWW: http://gtk2-perl.sourceforge.net/
