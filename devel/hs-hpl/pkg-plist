@@ -1,11 +1,11 @@
 bin/ports-config
-lib/ports-0.3.3/ghcunknown/import/HPL.hi
-lib/ports-0.3.3/ghcunknown/import/Ports.hi
-lib/ports-0.3.3/ghcunknown/import/PortsConfig.hi
-lib/ports-0.3.3/ghcunknown/import/PortsVersion.hi
-lib/ports-0.3.3/ghcunknown/import/Processes.hi
-lib/ports-0.3.3/ghcunknown/import/SVars.hi
-lib/ports-0.3.3/ghcunknown/libportsHS.a
-@dirrm lib/ports-0.3.3/ghcunknown/import
-@dirrm lib/ports-0.3.3/ghcunknown
+lib/ports-0.3.3/ghc5/import/HPL.hi
+lib/ports-0.3.3/ghc5/import/Ports.hi
+lib/ports-0.3.3/ghc5/import/PortsConfig.hi
+lib/ports-0.3.3/ghc5/import/PortsVersion.hi
+lib/ports-0.3.3/ghc5/import/Processes.hi
+lib/ports-0.3.3/ghc5/import/SVars.hi
+lib/ports-0.3.3/ghc5/libportsHS.a
+@dirrm lib/ports-0.3.3/ghc5/import
+@dirrm lib/ports-0.3.3/ghc5
 @dirrm lib/ports-0.3.3
