@@ -1,12 +1,16 @@
-bin/suck
+bin/lmove
 bin/rpost
+bin/suck
 bin/testhost
-bin/put.news
-sbin/get.news.innxmit
-sbin/get.news.rnews
-etc/suckkillfile.sample
-etc/sucknewsrc.sample
-etc/suckothermsgs.sample
-man/man1/suck.1.gz
+man/man1/lmove.1.gz
+man/man1/lpost.1.gz
 man/man1/rpost.1.gz
+man/man1/suck.1.gz
 man/man1/testhost.1.gz
+share/examples/suck/get.news.innxmit
+share/examples/suck/get.news.rnews
+share/examples/suck/put.news
+share/examples/suck/suckkillfile.sample
+share/examples/suck/sucknewsrc.sample
+share/examples/suck/suckothermsgs.sample
+@dirrm share/examples/suck
