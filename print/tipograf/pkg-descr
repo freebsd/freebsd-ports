@@ -1,0 +1,8 @@
+Tipograf is a frontend for the powerful anything to PostScript converter a2ps.
+By principle, the command line is more powerful than any graphical user
+interface, but for the average user memorization of all the program specific
+options is too time consuming. I think that's the reason why some people prefer
+less functional GUI programs over sophisticated command line tools. Tipograf
+solves this problem in the case of a2ps.
+
+WWW: http://www.falk-henrich.de/

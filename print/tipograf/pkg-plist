@@ -1,0 +1,32 @@
+bin/tipograf
+%%DATADIR%%/trans/tipograf_de.qm
+@dirrm %%DATADIR%%/trans
+@dirrm %%DATADIR%%
+%%DOCSDIR%%/benutzerhandbuch.dvi
+%%DOCSDIR%%/benutzerhandbuch.ps
+%%DOCSDIR%%/html/de/benutzerhandbuch.css
+%%DOCSDIR%%/html/de/benutzerhandbuch.html
+%%DOCSDIR%%/html/de/index.html
+%%DOCSDIR%%/html/de/node1.html
+%%DOCSDIR%%/html/de/node2.html
+%%DOCSDIR%%/html/de/node3.html
+%%DOCSDIR%%/html/de/node4.html
+%%DOCSDIR%%/html/de/node5.html
+%%DOCSDIR%%/html/de/node6.html
+%%DOCSDIR%%/html/de/node7.html
+%%DOCSDIR%%/html/en/index.html
+%%DOCSDIR%%/html/en/node1.html
+%%DOCSDIR%%/html/en/node2.html
+%%DOCSDIR%%/html/en/node3.html
+%%DOCSDIR%%/html/en/node4.html
+%%DOCSDIR%%/html/en/node5.html
+%%DOCSDIR%%/html/en/node6.html
+%%DOCSDIR%%/html/en/node7.html
+%%DOCSDIR%%/html/en/userguide.css
+%%DOCSDIR%%/html/en/userguide.html
+%%DOCSDIR%%/userguide.dvi
+%%DOCSDIR%%/userguide.ps
+@dirrm %%DOCSDIR%%/html/de
+@dirrm %%DOCSDIR%%/html/en
+@dirrm %%DOCSDIR%%/html
+@dirrm %%DOCSDIR%%
