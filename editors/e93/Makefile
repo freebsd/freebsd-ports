@@ -3,7 +3,7 @@
 # Date created:		21 June 1995
 # Whom:			Satoshi Asami (asami)
 #
-# $Id: Makefile,v 1.9 1996/11/17 07:01:21 obrien Exp $
+# $Id: Makefile,v 1.10 1996/11/18 09:52:45 asami Exp $
 #
 
 DISTNAME=	e93-1.2r6X
@@ -16,10 +16,14 @@ MAINTAINER=	asami@FreeBSD.ORG
 
 MAKEFILE=	makefile
 USE_X11=	yes
+
+.if !defined(PACKAGE_BUILDING)
 IS_INTERACTIVE=	yes	# asks "ok?" about license
 
 pre-install:
-	@/usr/bin/env PKG_PREFIX=${PREFIX} /bin/sh ${PKGDIR}/REQ ${PKGNAME} INSTALL
+	@${SETENV} PKG_PREFIX=${PREFIX} /bin/sh ${PKGDIR}/REQ ${PKGNAME} INSTALL
+.endif
+
 do-install:
 	${MKDIR} ${PREFIX}/lib/e93 ${PREFIX}/share/doc/e93
 	(cd ${WRKSRC}; \
