@@ -14,7 +14,7 @@ DISTNAME=	make-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gettext.4:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
