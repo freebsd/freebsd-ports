@@ -1,0 +1,10 @@
+This program converts the menus between different Window Managers.
+Currently works with Window Maker, KDE, GNOME, BlackBox and IceWM.
+
+NOTE: for Window Maker you need to have the menu in plain (not
+      property list) format.
+
+WWW: http://v6web.litech.org/radvd/
+Author: Alex Agibalov <loki_bg@yahoo.com>
+
+- Patrick Li <pat@databits.net>
