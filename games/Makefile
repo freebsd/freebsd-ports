@@ -90,6 +90,7 @@
     SUBDIR += miscom
     SUBDIR += nethack
     SUBDIR += nethack-qt
+    SUBDIR += nethack3
     SUBDIR += netrek-BRMH-bin
     SUBDIR += netrek-COW3-bin
     SUBDIR += netris
