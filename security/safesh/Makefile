@@ -8,14 +8,12 @@
 #
 
 PORTNAME=	safesh
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	security
 MASTER_SITES=	# none
 DISTFILES=	# none
 
 MAINTAINER=	eivind@FreeBSD.org
-
-BROKEN="Incompatible upgrade coming shortly"
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
