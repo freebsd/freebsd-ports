@@ -1,0 +1,24 @@
+--- ./conserver/group.c	Sat Nov 22 20:11:49 1997
++++ ./conserver/group.c	Sat Aug 23 17:19:13 1997
+@@ -750,5 +750,5 @@
+ 				CSTROUT(pCLServing->fd, "- ");
+ 				if (-1 == tcsendbreak(pCEServing->fdtty, 9)) {
+-					CSTROUT(pCLServing->fd, "failed]\r\n");
++					CSTROUT(pCLServing->fd, "tcsendbreak failed]\r\n");
+ 					continue;
+ 				}
+@@ -1119,11 +1119,9 @@
+ 					}
+ #if !defined(XTABS)		/* XXX hack */
+-#define XTABS   TAB3
++#define XTABS   OXTABS
+ #endif
+-					if (XTABS == (TABDLY&sbuf.c_oflag)) {
+-						sbuf.c_oflag &= ~TABDLY;
+-						sbuf.c_oflag |= TAB0;
++					if (XTABS & sbuf.c_oflag) {
++						sbuf.c_oflag &= ~XTABS;
+ 					} else {
+-						sbuf.c_oflag &= ~TABDLY;
+ 						sbuf.c_oflag |= XTABS;
+ 					}

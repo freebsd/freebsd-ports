@@ -1,0 +1,11 @@
+This program provides a convenient way to manage many remote serial
+consoles for machines.  A server (conserver(8)) runs on each server
+machine and it connects to the specified serial port.  It can log,
+provide shared access to remote consoles, etc.  If there are multiple
+machines running conserver(8), a master conserver(8) can be run to
+connect to all the slave servers, providing a single point of access
+to the entire cluster.
+
+This is very handy for remote unattended FreeBSD servers. It can
+send serial break signals (if the driver supports it, cy does not!)
+which is useful for breaking into DDB on hung machines.
