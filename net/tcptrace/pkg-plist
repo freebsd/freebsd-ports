@@ -1,2 +1,5 @@
 bin/tcptrace
+share/doc/tcptrace/COPYRIGHT
 share/doc/tcptrace/README
+share/doc/tcptrace/README.tput_graphs
+@dirrm share/doc/tcptrace
