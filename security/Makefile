@@ -129,6 +129,7 @@
     SUBDIR += rid
     SUBDIR += rsaref
     SUBDIR += ruby-acl
+    SUBDIR += ruby-sha1
     SUBDIR += ruby-ssl
     SUBDIR += ruby-tcpwrap
     SUBDIR += saint
