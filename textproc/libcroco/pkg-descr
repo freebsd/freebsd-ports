@@ -5,3 +5,5 @@ and a css object model like api.
 This library is being written to bring the css support
 to the mlview xml editor project but it can be used
 for other applications as well.
+
+WWW: http://www.freespiders.org/projects/libcroco/
