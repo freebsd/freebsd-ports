@@ -1,3 +1,2 @@
-MD5 (postgresql/postgresql-7.1.1.tar.gz) = e7156d50776d306512a0329f15f37655
-MD5 (postgresql/jumbo-20010508.patch.gz) = d744a658e740a09e4ffe120757008cf6
-MD5 (postgresql/psqlj-7.1.1.diff.gz) = b8c1deda4a2440bc4b1443d210573bcf
+MD5 (postgresql/postgresql-7.1.2.tar.gz) = 8e2e4319828a8a38492c3ce06726237c
+MD5 (postgresql/psqlj-7.1.2.diff.gz) = f596edc4f16b9bc7ce5fb65e8ed2bbf3
