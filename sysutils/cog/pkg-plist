@@ -1,11 +1,8 @@
 bin/cog
 share/gnome/applications/cog.desktop
-share/gnome/cog/0.7.1/glade/cog.glade
-share/gnome/cog/pixmaps/cog-icon-2-48x48.png
-share/gnome/cog/pixmaps/cog-icon-48x48.png
-share/gnome/cog/pixmaps/cog-logo-1.png
+share/gnome/cog/%%VERSION%%/glade/cog.glade
 share/gnome/pixmaps/cog-icon-2-48x48.png
-@dirrm share/gnome/cog/pixmaps
-@dirrm share/gnome/cog/0.7.1/glade
-@dirrm share/gnome/cog/0.7.1
+share/locale/fr/LC_MESSAGES/cog.mo
+@dirrm share/gnome/cog/%%VERSION%%/glade
+@dirrm share/gnome/cog/%%VERSION%%
 @dirrm share/gnome/cog
