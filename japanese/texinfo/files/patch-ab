@@ -1,0 +1,29 @@
+--- util/texi2dvi.orig	Wed Aug 25 13:47:25 1999
++++ util/texi2dvi	Wed Aug 25 13:47:31 1999
+@@ -354,7 +354,7 @@
+     *)
+       # Assume a Texinfo file.  Texinfo files need makeinfo, texindex and tex.
+       bibtex=
+-      texindex=${TEXINDEX:-texindex}
++      texindex=${TEXINDEX:-jtexindex}
+       if test $oformat = dvi; then
+         tex=${TEX:-ptex}
+       else
+@@ -363,7 +363,7 @@
+       # Unless required by the user, makeinfo expansion is wanted only
+       # if texinfo.tex is too old.
+       if test "$expand" = t; then
+-        makeinfo=${MAKEINFO:-makeinfo}
++        makeinfo=${MAKEINFO:-jmakeinfo}
+       else
+         # Check if texinfo.tex performs macro expansion by looking for
+         # its version.  The version is a date of the form YEAR-MO-DA.
+@@ -380,7 +380,7 @@
+         if test "$txiprereq" -le "$txiversion" >/dev/null 2>&1; then
+           makeinfo=
+         else
+-          makeinfo=${MAKEINFO:-makeinfo}
++          makeinfo=${MAKEINFO:-jmakeinfo}
+         fi
+         # As long as we had to run TeX, offer the user this convenience
+         if test "$txiformat" = Texinfo; then
