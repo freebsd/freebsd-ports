@@ -6549,6 +6549,7 @@ py-docutils	ports/textproc/py-docutils
 py-dsv		ports/textproc/py-dsv
 py-exif		ports/graphics/py-exif
 py-expat	ports/textproc/py-expat
+py-eyed3	ports/audio/py-eyed3
 py-fam		ports/devel/py-fam
 py-fcgi		ports/www/py-fcgi
 py-fchksum	ports/security/py-fchksum
