@@ -612,6 +612,7 @@
     SUBDIR += webstone
     SUBDIR += webstone-ssl
     SUBDIR += wiliki
+    SUBDIR += winhelpcgi
     SUBDIR += wml
     SUBDIR += wmnetselect
     SUBDIR += wsmake
