@@ -19,7 +19,6 @@ COMMENT=	GNUStep-compliant NeXTStep window manager clone
 LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
-
 RUN_DEPENDS=	${X11BASE}/share/WindowMaker/Themes/Checker.themed/style:${PORTSDIR}/graphics/wmicons
 
 USE_BZIP2=	yes
@@ -41,6 +40,10 @@ CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 		--with-incs-from="-I${LOCALBASE}/include" \
 		--with-appspath="${PREFIX}/GNUstep/Apps" \
 		--disable-debug
+
+OPTIONS=	HERMES "Hermes library support" on \
+		XKB_STATUS "XKB STATUS" off \
+		KDE "Add hooks for KDE" off
 
 .include <bsd.port.pre.mk>
 
@@ -73,18 +76,6 @@ CONFIGURE_ARGS+=	--enable-gnome
 
 .if defined(WITH_KDE)
 CONFIGURE_ARGS+=	--enable-kde
-.endif
-
-pre-everything::
-.if !defined(WITHOUT_HERMES)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "You can disable the Hermes library by defining WITHOUT_HERMES"
-	@${ECHO_MSG}
-.endif
-.if !defined(WITH_KDE)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "You can add hooks for KDE by defining WITH_KDE"
-	@${ECHO_MSG}
 .endif
 
 post-patch:
