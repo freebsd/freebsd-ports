@@ -1,0 +1,9 @@
+bin/tuxcards
+%%PORTDOCS%%share/doc/tuxcards/index-1.html
+%%PORTDOCS%%share/doc/tuxcards/index-2.html
+%%PORTDOCS%%share/doc/tuxcards/index-3.html
+%%PORTDOCS%%share/doc/tuxcards/index-4.html
+%%PORTDOCS%%share/doc/tuxcards/index-5.html
+%%PORTDOCS%%share/doc/tuxcards/index-6.html
+%%PORTDOCS%%share/doc/tuxcards/index.html
+%%PORTDOCS%%@dirrm share/doc/tuxcards

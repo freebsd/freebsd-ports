@@ -207,6 +207,7 @@
     SUBDIR += tkregexp
     SUBDIR += tkrunit
     SUBDIR += ttyrec
+    SUBDIR += tuxcards
     SUBDIR += tvguide
     SUBDIR += txt2regex
     SUBDIR += uf-view
