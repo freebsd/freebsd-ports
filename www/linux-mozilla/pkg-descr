@@ -1,0 +1,9 @@
+This is a the Mozilla suite (Web browser, HTML editor, mail user
+agent, news reader, address book, and IRC client) pre-compiled for
+Linux.  The Linux version is necessary for running plugins which
+are only available as Linux binaries.
+
+In this port, text cannot be typed into the dialogs for saving
+files or for searching within a document.
+
+WWW:  http://mozilla.org/
