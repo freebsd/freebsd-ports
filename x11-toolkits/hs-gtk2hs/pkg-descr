@@ -1,0 +1,14 @@
+Gtk2Hs is a GTK2 binding for Haskell. It is a rewrite of gtk+hs with a couple
+of improvements:
+
+  * Automatic memory management.
+  * Nearly complete coverage of widget functions and their signals, including
+    the new text and list widgets.
+  * The convenience wrapper MoGuL (Monad Gui Library) makes it possible to
+    create and lookup named widgets in a type safe way.
+  * Unicode support.
+
+WWW: http://gtk2hs.sourceforge.net/
+
+-- Oliver Braun
+obraun@FreeBSD.org

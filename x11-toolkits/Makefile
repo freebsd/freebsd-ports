@@ -79,6 +79,7 @@
     SUBDIR += guile-gtk
     SUBDIR += hs-frantk
     SUBDIR += hs-gtk+hs
+    SUBDIR += hs-gtk2hs
     SUBDIR += icegradient
     SUBDIR += itk
     SUBDIR += iv
