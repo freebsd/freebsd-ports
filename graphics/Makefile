@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.78 1998/06/10 13:59:19 dburr Exp $
+# $Id: Makefile,v 1.79 1998/06/12 06:28:45 dburr Exp $
 #
 
     SUBDIR += EZWGL
@@ -53,6 +53,7 @@
     SUBDIR += photopc
     SUBDIR += pixmap
     SUBDIR += plotmtv
+    SUBDIR += plotutils
     SUBDIR += png
     SUBDIR += pnmtopng
     SUBDIR += povray
