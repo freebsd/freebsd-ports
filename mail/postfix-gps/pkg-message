@@ -1,12 +1,26 @@
 ========================================================================
 Configuration Instructions
 
-You need to create a database for greylisting manually, and a user for
-this, too.  Additionally, please copy the gps.conf-dist found in your
-local etc directory.
+You should now create a database for gps, and grant a dedicated database
+user appropriate privilege to access it.  Please copy gps.conf-dist found
+in your local etc directory to gps.conf and do some changes to reflect
+the database and user.  gps will automatically create the tables that
+is needed for greylisting.
 
 After you have all these done, modify the postfix master.cf and include
-gps as policy server.
+gps as policy server.  We recommend that you use Unix domain socket
+since this can be used even within a jail(8) environment.  An example
+entry is:
+
+policy	unix	-	n	n	-	-	spawn
+	user=nobody	argv=/usr/local/libexec/gps -v /usr/local/etc/gps.conf
+
+In order to make policy server effect on your postfix installation,
+you should add something like:
+
+	check_policy_service unix:private/policy
+
+Into your smtpd_sender_restrictions configuration in postfix's main.cf.
 
 Also, you may want to include the following line into your crontab so
 system will automatically do daily cleanup of the greylist table:
