@@ -18,7 +18,7 @@ PATCHFILES=	${PORTNAME}_${PORTVERSION}-5.diff.gz:DEFAULT,local
 PATCH_SITES=	${MASTER_SITES}
 PATCH_SITE_SUBDIR=	${MASTER_SITE_SUBDIR} mat/:local
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A pam module for authenticating with PostgreSQL
 
 LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
