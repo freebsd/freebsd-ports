@@ -35,6 +35,7 @@
     SUBDIR += p5-Unicode-Map8
     SUBDIR += p5-Unicode-String
     SUBDIR += recode
+    SUBDIR += ruby-dump.rb
     SUBDIR += ruby-iconv
     SUBDIR += siconv
     SUBDIR += tcs
