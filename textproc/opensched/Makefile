@@ -22,4 +22,10 @@ USE_GMAKE=	yes
 MAN1=		opensched.1
 PLIST_FILES=	bin/opensched
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha"
+BROKEN=		"Does not compile"
+.endif
+
+.include <bsd.port.post.mk>
