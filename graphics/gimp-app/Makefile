@@ -3,12 +3,12 @@
 # Date created:         Mon Nov 18 21:28:43 CST 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.24 1998/03/28 19:47:47 ache Exp $
+# $Id: Makefile,v 1.25 1998/04/15 22:17:53 jseger Exp $
 #
 
 MAJOR=	0
 MINOR=	99
-MICRO=	21
+MICRO=	26
 
 VERSION=		${MAJOR}.${MINOR}.${MICRO}
 MM_VERSION= ${MAJOR}.${MINOR}
