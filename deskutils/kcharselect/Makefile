@@ -23,6 +23,7 @@ KDE_BUILD_PLIST=yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
@@ -49,5 +50,12 @@ PLIST_APPEND+=	plist.kfloppy
 CONFIGURE_ENV+=	DO_NOT_COMPILE="${DO_NOT_COMPILE}"
 .endif # defined(DO_NOT_COMPILE)
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500107
+post-patch:
+	${REINPLACE_CMD} -e 's,selectdevs,devstat_selectdevs,' ${WRKSRC}/configure
+.endif
+
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
