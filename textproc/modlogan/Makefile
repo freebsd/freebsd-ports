@@ -49,6 +49,12 @@ MAN1=		modlogan.1
 DOC1=		faq.txt glosar manual.txt translations.txt \
 		using-plugins.txt writing-plugins.txt
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Broken pkg-plist"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's:\@config_path\@:${PREFIX}/etc/modlogan:g' ${WRKSRC}/doc/modlogan.conf-dist.in
 
@@ -72,4 +78,4 @@ post-install:
 	[ -f ${PREFIX}/etc/modlogan/modlogan.${i} ] || ${INSTALL_DATA} ${PREFIX}/etc/modlogan/modlogan.${i}-dist ${PREFIX}/etc/modlogan/modlogan.${i}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
