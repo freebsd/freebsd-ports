@@ -20,20 +20,22 @@ bin/gccbug40
 bin/gcj40
 bin/gcjh40
 bin/grepjar40
-%%LIBJAVA%%bin/gij40
 bin/jv-scan40
 bin/jcf-dump40
 %%LIBJAVA%%bin/addr2name.awk40
+%%LIBJAVA%%bin/gcj-dbtool40
+%%LIBJAVA%%bin/gij40
 %%LIBJAVA%%bin/grmic40
 %%LIBJAVA%%bin/grmiregistry40
 %%LIBJAVA%%bin/jv-convert40
 %%LIBJAVA%%include/ffi.h
-%%LIBJAVA%%include/mf-runtime.h
-%%LIBJAVA%%lib/lib-org-xml-sax.a
-%%LIBJAVA%%lib/lib-org-w3c-dom.a
-%%LIBJAVA%%lib/libffi.la
 %%LIBJAVA%%lib/libffi.a
+%%LIBJAVA%%lib/libffi.la
+%%LIBJAVA%%lib/libgij.a
+%%LIBJAVA%%lib/libgij.la
 %%LIBJAVA%%lib/logging.properties
+%%LIBJAVA%%lib/pkgconfig/libgcj.pc
+%%LIBJAVA%%@dirrm lib/pkgconfig
 %%LIBJAVA%%lib/security/classpath.security
 %%LIBJAVA%%lib/security/libgcj.security
 %%LIBJAVA%%@dirrm lib/security
