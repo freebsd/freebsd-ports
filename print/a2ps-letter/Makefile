@@ -3,7 +3,7 @@
 # Date created:         15 July 1998
 # Whom:                 Chuck Robey (chuckr@freebsd.org)
 #
-# $Id: Makefile,v 1.21 1998/10/30 08:35:22 asami Exp $
+# $Id: Makefile,v 1.22 1998/11/20 04:15:00 asami Exp $
 #
 
 DISTNAME=	a2ps-4.10.3
@@ -17,9 +17,9 @@ GNU_CONFIGURE=	yes
 MAN1=		a2ps.1 ogonkify.1 card.1 psmandup.1 fixps.1 pdiff.1
 
 PAPERSIZE?=	letter
-PS!=		echo ${PAPERSIZE} | tr l L | tr a A
+PAPERSIZECNF=	${PAPERSIZE:S/l/L/:S/a/A/}
 STRIP=
-CONFIGURE_ARGS=	--with-medium=${PS}
+CONFIGURE_ARGS=	--with-medium=${PAPERSIZECNF}
 
 .if ${PAPERSIZE} != a4 && ${PAPERSIZE} != letter && ${PAPERSIZE} != letterdj
 .BEGIN:
