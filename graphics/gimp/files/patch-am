@@ -1,0 +1,19 @@
+--- libgimp/gimp.c.orig	Sun Apr 12 22:40:51 1998
++++ libgimp/gimp.c	Sun May 17 11:00:26 1998
+@@ -19,6 +19,7 @@
+ #include "config.h"
+ 
+ #include <errno.h>
++#include <floatingpoint.h>
+ #include <signal.h>
+ #include <stdarg.h>
+ #include <stdio.h>
+@@ -84,6 +85,8 @@
+     }
+ 
+   progname = argv[0];
++
++  fpsetmask(0);
+ 
+   signal (SIGHUP, gimp_signal);
+   signal (SIGINT, gimp_signal);
