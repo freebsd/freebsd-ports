@@ -1,0 +1,11 @@
+--- ../unix/configure.orig	Sun Feb 23 12:46:00 2003
++++ ../unix/configure	Sun Feb 23 12:48:43 2003
+@@ -1526,7 +1526,7 @@
+   ;;
+   * )
+     TCL_INCLUDE_DIR="$with_tcl"
+-    TCL_LIB_DIR="$with_tcl/../lib"
++    TCL_LIB_DIR="$with_tcl/../../lib/tcl${V}"
+   ;;
+ esac
+ 
