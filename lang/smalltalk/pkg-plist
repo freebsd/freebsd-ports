@@ -57,6 +57,7 @@ share/smalltalk/compiler/STTok.st
 share/smalltalk/compiler/STToken.st
 share/smalltalk/compiler/STVisitor.st
 share/smalltalk/compiler/StartCompiler.st
+share/smalltalk/compiler/test.st
 share/smalltalk/examples/Application.st
 share/smalltalk/examples/Bench.st
 share/smalltalk/examples/Buffers.st
@@ -94,6 +95,7 @@ share/smalltalk/examples/shell
 share/smalltalk/examples/xml.sed
 share/smalltalk/gst.im
 share/smalltalk/i18n/Collation.st
+share/smalltalk/i18n/Expression.st
 share/smalltalk/i18n/GetText.st
 share/smalltalk/i18n/Load.st
 share/smalltalk/i18n/Locale.st
@@ -231,8 +233,6 @@ share/smalltalk/web/recent.jpg
 share/smalltalk/web/rename.jpg
 share/smalltalk/web/test.st
 share/smalltalk/web/top.jpg
-share/smalltalk/xml/Id-DOM.st
-share/smalltalk/xml/Id-XWalker.st
 share/smalltalk/xml/XML.st
 @dirrm share/smalltalk/xml
 @dirrm share/smalltalk/web
