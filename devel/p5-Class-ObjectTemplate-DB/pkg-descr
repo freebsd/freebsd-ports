@@ -1,0 +1,13 @@
+Class::ObjectTemplate::DB extends Class::ObjectTemplate in one
+simple way: the undefined() method.
+
+The author finds this useful when representing classes based on
+objects stored in databases (hence the name of the module).
+That way an object can be created, without triggering a DB lookup.
+Later if data is accessed and it is not currently present in the object,
+it can be retrieved on an as-need basis.
+
+WWW: http://search.cpan.org/search?dist=Class-ObjectTemplate-DB
+
+--
+Tony Maher <tonym@biolateral.com.au>
