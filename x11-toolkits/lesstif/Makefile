@@ -3,7 +3,7 @@
 # Date created:		December 10, 1996
 # Whom:			1wardd@airmail.net
 #
-# $Id: Makefile,v 1.22 1998/08/07 22:56:38 asami Exp $
+# $Id: Makefile,v 1.23 1998/08/14 13:41:37 tg Exp $
 #
 
 DISTNAME=	lesstif-0.86.0
@@ -20,7 +20,7 @@ GNU_CONFIGURE=  yes
 # comment this and remove the strip statement in post-install for debugging
 CONFIGURE_ARGS=	--disable-debug
 # I don't want to change the shared lib major version number right now.
-CONFIGURE_ARGS+=	--enable-back-compat
+CONFIGURE_ARGS+=	--enable-back-compat  --enable-static --enable-shared
 USE_X_PREFIX=	yes
 
 MAN1=	mwm.1 xmbind.1 lesstif.1
@@ -75,8 +75,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/clients/Motif-1.2/mwm/alt.map ${PREFIX}/lib/X11/mwm
 	${INSTALL_DATA} ${WRKSRC}/clients/Motif-1.2/mwm/Mwm \
 		${PREFIX}/lib/X11/app-defaults/Mwm
-	/usr/bin/strip ${PREFIX}/lib/libXm.so.1.2 ${PREFIX}/lib/libMrm.so.1.2
-	${LDCONFIG} -m ${PREFIX}/lib
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
 
