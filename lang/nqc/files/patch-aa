@@ -1,11 +1,11 @@
---- Makefile.orig	Sun Mar 24 14:34:39 2002
-+++ Makefile	Fri Jun  7 11:11:05 2002
+--- Makefile.orig	Sun Mar 24 23:34:39 2002
++++ Makefile	Tue Nov 19 13:35:48 2002
 @@ -28,20 +28,20 @@
  #
  # Pick your C++ compiler. 
  #
 -CC=g++
-+CC?=g++
++CXX?=${CXX}
  # CC=gcc
  
  #
@@ -72,3 +72,25 @@
  endif
  CFLAGS += -DDEFAULT_SERIAL_NAME='$(DEFAULT_SERIAL_NAME)'
  
+@@ -139,10 +137,10 @@
+ 	$(MKDIR) bin
+ 
+ bin/nqc : compiler/parse.cpp $(OBJ) bin
+-	$(CC) -o $@ $(OBJ) $(LIBS)
++	$(CXX) -o $@ $(OBJ) $(LIBS)
+ 
+ bin/mkdata : mkdata/mkdata.cpp nqc/SRecord.cpp bin
+-	$(CC) -o bin/mkdata -Inqc/ -Iplatform/ mkdata/mkdata.cpp nqc/SRecord.cpp
++	$(CXX) -o bin/mkdata -Inqc/ -Iplatform/ mkdata/mkdata.cpp nqc/SRecord.cpp
+ 
+ #
+ # clean up stuff
+@@ -202,7 +200,7 @@
+ # general rule for compiling
+ #
+ .cpp.o:
+-	$(CC) -c $(CFLAGS) $< -o $*.o 
++	$(CXX) -c $(CFLAGS) $< -o $*.o 
+ 
+ 
+ #
