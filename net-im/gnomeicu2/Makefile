@@ -15,7 +15,7 @@ DISTNAME=	gnomeicu-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS+=	glade-2.0.0:${PORTSDIR}/devel/libglade2 \
-		gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui \
+		panel-applet-2.0:${PORTSDIR}/x11/gnomepanel \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		gnet.1:${PORTSDIR}/net/gnet \
 		gdbm.2:${PORTSDIR}/databases/gdbm
