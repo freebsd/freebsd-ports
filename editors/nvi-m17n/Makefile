@@ -3,17 +3,18 @@
 # Date created:		6 Mar 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.9 1998/09/21 22:33:22 steve Exp $
+# $Id: Makefile,v 1.10 1998/11/19 04:46:44 itojun Exp $
 #
 
+
 DISTNAME=	nvi-1.79
-PKGNAME?=	nvi-m17n-1.79.19981119
+PKGNAME?=	nvi-m17n-1.79.19990331
 CATEGORIES=	editors
-MASTER_SITES=	ftp://ftp.bostic.com/pub/\
+MASTER_SITES=	ftp://sleepy.vwh.net/pub/\
 		ftp://ftp.foretune.co.jp/pub/tools/nvi-m17n/
 
 PATCH_SITES=	ftp://ftp.foretune.co.jp/pub/tools/nvi-m17n/
-PATCHFILES=	nvi-1.79.m17n-981119.diff.gz
+PATCHFILES=	nvi-1.79.m17n-19990331.diff.gz
 
 MAINTAINER=	itojun@itojun.org
 
