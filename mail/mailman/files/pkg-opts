@@ -2,7 +2,7 @@
 * MM_USERNAME [mailman]
   The username of the Mailman user
 
-* MM_USERID [92]
+* MM_USERID [91]
   The user ID of the Mailman user
 
     It is recommended that you do not change this option.
@@ -10,7 +10,7 @@
 * MM_GROUPNAME [mailman]
   The group to which the Mailman user will belong
 
-* MM_GROUPID [92]
+* MM_GROUPID [MM_USERID]
   The group ID for the Mailman user
 
     It is recommended that you do not change this option.
