@@ -1,0 +1,14 @@
+GHC: The Glasgow Haskell Compiler.
+
+The Glasgow Haskell Compiler is a robust, fully-featured, optimising
+compiler for the functional programming language Haskell 98
+(http://www.haskell.org). GHC compiles Haskell to either native code
+or C. It implements numerous experimental language extensions to
+Haskell, including concurrency, a foreign language interface, several
+type-system extensions, exceptions, and so on. GHC comes with a
+generational garbage collector, a space and time profiler, and a
+comprehensive set of libraries.
+
+Documentation can be found hanging off GHC's homepage, below.
+
+WWW: http://www.haskell.org/ghc/
