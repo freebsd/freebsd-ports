@@ -1,6 +1,5 @@
-diff -ur ../htdig-3.1.3.Dist/db/dist/configure ./db/dist/configure
---- ../htdig-3.1.3.Dist/db/dist/configure	Wed Sep 22 09:18:15 1999
-+++ ./db/dist/configure	Tue Oct 26 18:06:57 1999
+--- db/dist/configure.orig	Thu Feb 24 18:29:00 2000
++++ db/dist/configure	Sat Feb 26 13:25:13 2000
 @@ -3056,7 +3056,7 @@
  
  case "$host_os" in
@@ -10,9 +9,8 @@ diff -ur ../htdig-3.1.3.Dist/db/dist/configure ./db/dist/configure
  irix*)    CPPFLAGS="-D_SGI_MP_SOURCE $CPPFLAGS";;
  osf*)	  CPPFLAGS="-D_REENTRANT $CPPFLAGS";;
  solaris*) CPPFLAGS="-D_REENTRANT $CPPFLAGS"
-diff -ur ../htdig-3.1.3.Dist/db/dist/configure.in ./db/dist/configure.in
---- ../htdig-3.1.3.Dist/db/dist/configure.in	Wed Sep 22 09:18:15 1999
-+++ ./db/dist/configure.in	Tue Oct 26 18:06:46 1999
+--- db/dist/configure.in.orig	Thu Feb 24 18:29:00 2000
++++ db/dist/configure.in	Sat Feb 26 13:25:13 2000
 @@ -405,7 +405,7 @@
  dnl libraries for threaded applications
  case "$host_os" in
