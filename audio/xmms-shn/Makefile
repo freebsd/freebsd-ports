@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xmms-shn
-PORTVERSION=	2.2.8
-PORTREVISION=	1
+PORTVERSION=	2.4.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.etree.org/shnutils/xmms-shn/source/
 
@@ -19,12 +18,12 @@ RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
-USE_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=13
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif #NOPORTDOCS
+.endif
 
 .include <bsd.port.mk>
