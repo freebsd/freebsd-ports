@@ -33,21 +33,21 @@ USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 pre-build:
-	${ECHO} "bin/bomb" > ${PLIST}
-	for i in `find -s ${WRKSRC}/suck -type f`; do \
-		${ECHO} ${DATADIR}suck/`${BASENAME} $${i}` >> ${PLIST}; \
+	${ECHO_CMD} "bin/bomb" > ${PLIST}
+	for i in `${FIND} -s ${WRKSRC}/suck -type f`; do \
+		${ECHO_CMD} ${DATADIR}suck/`${BASENAME} $${i}` >> ${PLIST}; \
 	done
 .for i in cmap-data flame-data seq-data title.tif
-	${ECHO} ${DATADIR}/${i} >> ${PLIST}
+	${ECHO_CMD} ${DATADIR}/${i} >> ${PLIST}
 .endfor
 .if !defined(NOPORTDOCS)
 .for i in ${DOCS}
-	${ECHO} ${DOCDIR}${i} >> ${PLIST}
+	${ECHO_CMD} ${DOCDIR}${i} >> ${PLIST}
 .endfor
-	${ECHO} "@dirrm "${DOCDIR} >> ${PLIST}
+	${ECHO_CMD} "@dirrm "${DOCDIR} >> ${PLIST}
 .endif
-	${ECHO} "@dirrm "${DATADIR}/suck >> ${PLIST}
-	${ECHO} "@dirrm "${DATADIR} >> ${PLIST}
+	${ECHO_CMD} "@dirrm "${DATADIR}/suck >> ${PLIST}
+	${ECHO_CMD} "@dirrm "${DATADIR} >> ${PLIST}
 
 do-build:
 .for i in ${SRCS}

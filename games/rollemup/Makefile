@@ -52,7 +52,7 @@ do-install:
 	@(cd ${PREFIX}; \
 	  find ${GAMES_DIR}/Rollemup -type f >> ${PLIST_SRC}; \
 	  for DIR in `find ${GAMES_DIR}/Rollemup -type d | sort -r`; do \
-	    ${ECHO} "@dirrm $$DIR" >> ${PLIST_SRC}; \
+	    ${ECHO_CMD} "@dirrm $$DIR" >> ${PLIST_SRC}; \
 	  done)
 	@${CHOWN} root:games ${PREFIX}/bin/Rollemup
 	@${CHMOD} 2755 ${PREFIX}/bin/Rollemup

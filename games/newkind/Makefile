@@ -42,8 +42,8 @@ do-install:
 	  ${WRKSRC}/*.bmp ${WRKSRC}/*.wav ${SHAREDIR}
 	@ ${INSTALL_DATA} ${WRKSRC}/data/* ${SHAREDIR}/data
 	@ ${MKDIR} ${PREFIX}/bin
-	@ ${ECHO} "#!${SH}" > ${WRKSRC}/newkind
-	@ ${ECHO} "cd ${SHAREDIR} && exec \"./newkind.exe\" \"\$$@\"" \
+	@ ${ECHO_CMD} "#!${SH}" > ${WRKSRC}/newkind
+	@ ${ECHO_CMD} "cd ${SHAREDIR} && exec \"./newkind.exe\" \"\$$@\"" \
 	  >> ${WRKSRC}/newkind
 	@ ${INSTALL_SCRIPT} ${WRKSRC}/newkind ${PREFIX}/bin
 

@@ -24,7 +24,7 @@ do-extract:
 	${MKDIR} ${WRKDIR}
 
 pre-install:
-	${ECHO} "bin/senso" > ${PLIST}
+	${ECHO_CMD} "bin/senso" > ${PLIST}
 
 do-install:
 	${INSTALL_SCRIPT} ${_DISTDIR}/${DISTFILES} ${PREFIX}/bin/senso

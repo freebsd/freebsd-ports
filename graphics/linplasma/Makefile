@@ -26,14 +26,14 @@ post-patch:
 	@${PERL} -pi -e "s:PI:M_PI:g" ${WRKSRC}/linplasma.c
 
 pre-install:
-	${ECHO} "bin/linplasma" > ${PLIST}
+	${ECHO_CMD} "bin/linplasma" > ${PLIST}
 .if !defined(NOPORTDOCS)
 .for i in ${DOCFILES}
-	${ECHO} -n ${DOCDIR} >> ${PLIST}
-	${ECHO} ${i} >> ${PLIST}
+	${ECHO_CMD} -n ${DOCDIR} >> ${PLIST}
+	${ECHO_CMD} ${i} >> ${PLIST}
 .endfor
-	${ECHO} -n "@dirrm " >> ${PLIST}
-	${ECHO} ${DOCDIR} >> ${PLIST}
+	${ECHO_CMD} -n "@dirrm " >> ${PLIST}
+	${ECHO_CMD} ${DOCDIR} >> ${PLIST}
 .endif
 
 do-install:

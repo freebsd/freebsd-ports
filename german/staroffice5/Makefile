@@ -71,7 +71,7 @@ do-install:
 	@${LN} -fs /compat/linux/usr/local/Office51 ${PREFIX}/Office51
 .endif
 	@${CP} /compat/linux/etc/ld.so.conf ${WRKDIR}/tmp/ld.so.conf.temp
-	@${ECHO} "${WRKDIR}/tmp" >> ${WRKDIR}/tmp/ld.so.conf.temp
+	@${ECHO_CMD} "${WRKDIR}/tmp" >> ${WRKDIR}/tmp/ld.so.conf.temp
 	@PATH=${PATH}:${WRKDIR}/tmp
 	@LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${WRKDIR}/tmp:/usr/lib:/lib:/compat/linux/lib
 	@/compat/linux/sbin/ldconfig -f ${WRKDIR}/tmp/ld.so.conf.temp

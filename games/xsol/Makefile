@@ -17,6 +17,6 @@ USE_IMAKE=	yes
 MAN6=		xsol.6
 
 post-patch:
-	@${ECHO} "MANSUFFIX=6" >> ${WRKSRC}/Imakefile
+	@${ECHO_CMD} "MANSUFFIX=6" >> ${WRKSRC}/Imakefile
 
 .include <bsd.port.mk>

@@ -24,6 +24,6 @@ NO_CDROM=	"Including derivatives from CARDCAPTOR SAKURA. See http://www.clamp.f-
 RESTRICTED_FILES=	${PATCHFILES}
 
 pre-configure:
-	@${ECHO} "MANSUFFIX=6" >>${WRKSRC}/Imakefile
+	@${ECHO_CMD} "MANSUFFIX=6" >>${WRKSRC}/Imakefile
 
 .include <bsd.port.mk>

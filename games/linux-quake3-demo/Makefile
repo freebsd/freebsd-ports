@@ -54,11 +54,11 @@ do-extract:
 	@${SH} ${FILESDIR}/peel ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ${WRKSRC}
 
 do-configure:
-	@${ECHO} "#!/bin/sh" > ${WRKSRC}/q3demo
-	@${ECHO} "cd "${Q3ADIR} >> ${WRKSRC}/q3demo
-	@${ECHO} "quake=\"./q3demo\"" >> ${WRKSRC}/q3demo
-	@${ECHO} "\""$$"quake\" "$$"*" >> ${WRKSRC}/q3demo
-	@${ECHO} "exit "$$"?" >> ${WRKSRC}/q3demo
+	@${ECHO_CMD} "#!/bin/sh" > ${WRKSRC}/q3demo
+	@${ECHO_CMD} "cd "${Q3ADIR} >> ${WRKSRC}/q3demo
+	@${ECHO_CMD} "quake=\"./q3demo\"" >> ${WRKSRC}/q3demo
+	@${ECHO_CMD} "\""$$"quake\" "$$"*" >> ${WRKSRC}/q3demo
+	@${ECHO_CMD} "exit "$$"?" >> ${WRKSRC}/q3demo
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/q3demo ${PREFIX}/bin
