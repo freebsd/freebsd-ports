@@ -1,9 +1,9 @@
 # ports collection makefile for:	MySQL
-# Version required:			v3.22.13-beta
+# Version required:			v3.22.22
 # Date created:				26 Jan 1998
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
-# $Id: Makefile,v 1.49 1999/04/18 10:47:03 dirk Exp $
+# $Id: Makefile,v 1.50 1999/05/02 11:10:54 dirk Exp $
 #
 
 DISTNAME=	mysql-3.22.22
