@@ -24,10 +24,6 @@ CONFIGURE_ENV=		INSTALL="${INSTALL}"
 MAKE_ARGS=		INSTALL="${INSTALL}"
 KRB5_KRB4_COMPAT?=	YES
 
-.if defined(USA_RESIDENT) && ${USA_RESIDENT} == "NO"
-MASTER_SITES=          http://www.crypto-publish.org/dist/mit-kerberos5/
-.endif
-
 .if !defined(KRB5_KRB4_COMPAT) || ${KRB5_KRB4_COMPAT} == "NO"
 CONFIGURE_ARGS+=	--without-krb4
 .endif
@@ -60,7 +56,6 @@ HTML_DOCS=		admin.html install_foot.html user-guide.html          \
 			admin_toc.html krb425.html user-guide_toc.html        \
 			install.html krb425_toc.html
 
-.if !defined(USA_RESIDENT) || ${USA_RESIDENT} == "YES"
 do-fetch:
 	@if [ ! -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then        \
 	${ECHO} "";							\
@@ -75,7 +70,6 @@ do-fetch:
 	${ECHO} "   it in ${DISTDIR}.  Then run make again.";           \
 	${FALSE};							\
 	fi
-.endif
 
 post-extract:
 	@${TAR} -C ${WRKDIR} -xzf ${WRKDIR}/${DISTNAME}.tar.gz
