@@ -1,0 +1,11 @@
+--- SKK-MK.orig	Mon Oct 30 06:40:42 2000
++++ SKK-MK	Tue Oct 31 14:23:12 2000
+@@ -326,7 +326,7 @@
+       (setq x (expand-file-name (car targets) DOCDIR))
+       (find-file x)
+       (setq obuf (current-buffer))
+-      (texinfo-format-buffer)
++      (texinfo-format-buffer t)
+       (save-buffer)
+       (kill-buffer (current-buffer))	; info
+       (kill-buffer obuf)		; texi
