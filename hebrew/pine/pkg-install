@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ "$2" = "POST-INSTALL" -o -n "${PACKAGE_BUILDING}" ]; then
+  exit 0
+fi
+
+/usr/bin/dialog --yesno "SECURITY NOTE: The pine software has had several remote vulnerabilities discovered in the past, which allowed remote attackers to execute arbitrary code as you on your local system, by the action of sending a specially-prepared email. All such KNOWN problems have been fixed, but the pine code is written in a very insecure style and the FreeBSD Security Officer believes there are likely to be other undiscovered vulnerabilities. Do you wish to proceed with the installation of pine anyway?" 12 70 || /usr/bin/false
+
+
