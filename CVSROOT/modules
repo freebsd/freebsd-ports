@@ -5236,6 +5236,7 @@ openssh-askpass	ports/security/openssh-askpass
 openssh-portable	ports/security/openssh-portable
 openssl-beta	ports/security/openssl-beta
 openthreads	ports/devel/openthreads
+opentop		ports/devel/opentop
 openuniverse	ports/astro/openuniverse
 openverse	ports/net/openverse
 openvmps	ports/net/openvmps
