@@ -12,12 +12,11 @@ MASTER_SITES=	ftp://ftp.wwdsi.com/pub/saint/			\
 		http://www.wwdsi.com/saint/downloads/		\
 		ftp://ukug.uk.freebsd.org/pub/lord_cj/
 
-MAINTAINER=	calle.madestrand@norrgarden.se
+MAINTAINER=	cj@vallcom.net
 
 RUN_DEPENDS=	nmap:${PORTSDIR}/security/nmap
 
 USE_PERL5=	yes
-WRKSRC=		${WRKDIR}/saint-2.1
 MAKE_ENV=	XFLAGS="DAUTH_GID_T=int -DSYS_ERRLIST_DECLARED -DFDSETSIZE=2048"
 ALL_TARGET=	freebsd
 INSTALL_TARGET=	all
