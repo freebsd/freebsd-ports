@@ -8,6 +8,7 @@
 
 PORTNAME=	arts
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_KDE}
@@ -35,8 +36,4 @@ CFLAGS+=	-DHAVE_VASPRINTF
 CONFIGURE_ENV+=	DO_NOT_COMPILE="${DO_NOT_COMPILE}"
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
-
-post-install:
-	@${CHMOD} 4555 ${PREFIX}/bin/artswrapper
-
 .include <bsd.port.mk>
