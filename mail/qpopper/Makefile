@@ -67,6 +67,7 @@ pre-everything::
 	@${ECHO_MSG} "You may use the following build options:"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "WITH_APOP_ONLY=yes	builds with APOP authentication only"
+	@${ECHO_MSG} "WITH_DOCUMENTATION=yes	installs pdf documentation"
 	@${ECHO_MSG} "WITH_DRAC=yes		builds with Dynamic Relay Authorization"
 	@${ECHO_MSG} "				Control support"
 	@${ECHO_MSG} "WITHOUT_IPV6=yes          builds without IPv6 support"
@@ -93,6 +94,12 @@ pre-everything::
 # with APOP authentication only.
 .if defined(APOP_ONLY) || defined(WITH_APOP_ONLY)
 OS_DEFS+=	-DAPOP_ONLY
+.endif
+
+# Do not install documentation since it is in pdf format and normally
+# not used unless user wants it
+.if !defined(WITH_DOCUMENTATION)
+NOPORTDOCS=	yes
 .endif
 
 # If WITH_DRAC variable present in the environment, qpopper builds
@@ -173,6 +180,10 @@ do-install:
 .endif
 	@${INSTALL} -d -o ${POP_USER} -g ${POP_GROUP} -m ${POP_MODE_DIR} \
 		${PREFIX}/etc/${PORTNAME}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/GUIDE.pdf ${DOCSDIR}
+.endif
 
 post-install: install-conf-file
 	@${SED} -e "s:/usr/local:${PREFIX}:g" ${PKGMESSAGE}
