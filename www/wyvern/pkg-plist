@@ -2,48 +2,36 @@
 etc/rc.d/wyvern.sh
 sbin/wyvern
 sbin/wyvernctl
-wyvern/admin/menu.whtml
-wyvern/admin/config.whtml
-wyvern/admin/passwd.whtml
-wyvern/admin/module.whtml
-wyvern/admin/roaming.whtml
-wyvern/bin/plain2dbm
 wyvern/bin/wpasswd
 wyvern/cgi-bin/README.html
 wyvern/cgi-bin/dic-tools.cgi
 wyvern/cgi-bin/file-upload.cgi
+wyvern/cgi-bin/gateway.rb
 wyvern/cgi-bin/location.cgi
 wyvern/cgi-bin/printenv.cgi
-wyvern/cgi-bin/gateway.rb
 wyvern/cgi-bin/printenv.rb
-@unexec if cmp -s %D/wyvern/conf/mime.types %D/wyvern/conf/mime.types-dist; then rm -f %D/wyvern/conf/mime.types; fi
-wyvern/conf/mime.types-dist
+@unexec if cmp -s %D/wyvern/conf/mime.types %D/wyvern/conf/mime.types.sample; then rm -f %D/wyvern/conf/mime.types; fi
+wyvern/conf/mime.types.sample
 @exec [ ! -f %B/mime.types ] && cp %B/%f %B/mime.types
-@unexec if cmp -s %D/wyvern/conf/wyvern.conf %D/wyvern/conf/wyvern.conf-dist; then rm -f %D/wyvern/conf/wyvern.conf; fi
-wyvern/conf/wyvern.conf-dist
+@unexec if cmp -s %D/wyvern/conf/wyvern.conf %D/wyvern/conf/wyvern.conf.sample; then rm -f %D/wyvern/conf/wyvern.conf; fi
+wyvern/conf/wyvern.conf.sample
 @exec [ ! -f %B/wyvern.conf ] && cp %B/%f %B/wyvern.conf
-@unexec if cmp -s %D/wyvern/conf/wyvern.conf.ja %D/wyvern/conf/wyvern.conf.ja-dist; then rm -f %D/wyvern/conf/wyvern.conf.ja; fi
-wyvern/conf/wyvern.conf.ja-dist
+@unexec if cmp -s %D/wyvern/conf/wyvern.conf.ja %D/wyvern/conf/wyvern.conf.ja.sample; then rm -f %D/wyvern/conf/wyvern.conf.ja; fi
+wyvern/conf/wyvern.conf.ja.sample
 @exec [ ! -f %B/wyvern.conf.ja ] && cp %B/%f %B/wyvern.conf.ja
-@unexec if cmp -s %D/wyvern/conf/ssl.cnf %D/wyvern/conf/ssl.cnf-dist; then rm -f %D/wyvern/conf/ssl.cnf; fi
-wyvern/conf/ssl.cnf-dist
+@unexec if cmp -s %D/wyvern/conf/ssl.cnf %D/wyvern/conf/ssl.cnf.sample; then rm -f %D/wyvern/conf/ssl.cnf; fi
+wyvern/conf/ssl.cnf.sample
 @exec [ ! -f %B/ssl.cnf ] && cp %B/%f %B/ssl.cnf
 wyvern/docs/AUTHORS
-wyvern/docs/ChangeLog
 wyvern/docs/LICENSE
-wyvern/docs/LICENSE.en
+wyvern/docs/LICENSE.ja
 wyvern/docs/NEWS
 wyvern/docs/README
-wyvern/docs/README.en
+wyvern/docs/README.ja
 wyvern/docs/README.module
-wyvern/docs/README.module.en
-wyvern/docs/TODO
-@unexec if cmp -s %D/wyvern/etc/.admin_passwd %D/wyvern/etc/.admin_passwd-dist; then rm -f %D/wyvern/etc/.admin_passwd; fi
-wyvern/etc/.admin_passwd-dist
-@exec [ ! -f %B/.admin_passwd ] && cp %B/%f %B/.admin_passwd
-@unexec if cmp -s %D/wyvern/etc/.admin_passwd_md5 %D/wyvern/etc/.admin_passwd_md5-dist; then rm -f %D/wyvern/etc/.admin_passwd_md5; fi
-wyvern/etc/.admin_passwd_md5-dist
-@exec [ ! -f %B/.admin_passwd_md5 ] && cp %B/%f %B/.admin_passwd_md5
+wyvern/docs/README.module.ja
+wyvern/docs/SECURITY
+wyvern/docs/UPDATING
 @unexec if cmp -s %D/wyvern/htdocs/index.html %D/wyvern/htdocs/index.html-dist; then rm -f %D/wyvern/htdocs/index.html; fi
 wyvern/htdocs/index.html-dist
 @exec [ ! -f %B/index.html ] && cp %B/%f %B/index.html
@@ -99,56 +87,55 @@ wyvern/icons/text.gif
 wyvern/icons/transfer.gif
 wyvern/icons/unknown.gif
 wyvern/icons/uuencoded.gif
-wyvern/images/wyvern-logo.jpg
-wyvern/images/wyvern-logo2.jpg
-wyvern/images/wyvern-logo3.jpg
-wyvern/manual/Wyvern-Logo.jpg
-wyvern/manual/flame02.jpg
+wyvern/images/mwx-wyvern-banner.png
+wyvern/images/wyvern-banner.png
+wyvern/manual/access.html
+wyvern/manual/acknowledgement.html
+wyvern/manual/appendix-A.html
+wyvern/manual/authentication.html
+wyvern/manual/bibliography.html
+wyvern/manual/cgi.html
+wyvern/manual/commercial.html
+wyvern/manual/conclusion.html
+wyvern/manual/contents.html
+wyvern/manual/copyright.html
+wyvern/manual/dbm.html
+wyvern/manual/faq.html
+wyvern/manual/features.html
+wyvern/manual/howto.html
+wyvern/manual/index.html
+wyvern/manual/install.html
+wyvern/manual/introduction.html
+wyvern/manual/license.html
+wyvern/manual/logformat.html
+wyvern/manual/mwx-wyvern-banner.png
+wyvern/manual/setup.html
+wyvern/manual/ssi.html
+wyvern/manual/ssl.html
+wyvern/manual/syslog.html
+wyvern/manual/wyvern-manual.png
 wyvern/manual/wyvern.css
 wyvern/manual/wyvern.html
-wyvern/manual/contents.html
-wyvern/manual/introduction.html
-wyvern/manual/features.html
-wyvern/manual/install.html
-wyvern/manual/setup.html
-wyvern/manual/howto.html
-wyvern/manual/cgi.html
-wyvern/manual/ssi.html
-wyvern/manual/authentication.html
-wyvern/manual/access.html
-wyvern/manual/admin-tools.html
-wyvern/manual/ssl.html
-wyvern/manual/roaming.html
-wyvern/manual/logformat.html
-wyvern/manual/copyright.html
-wyvern/manual/license.html
-wyvern/manual/conclusion.html
-wyvern/manual/bibliography.html
-wyvern/manual/acknowledgement.html
-wyvern/manual/faq.html
-wyvern/manual/index.html
-wyvern/modules/log.mod
-wyvern/modules/cgi.mod
-wyvern/modules/ssi.mod
-wyvern/modules/auth.mod
 wyvern/modules/access.mod
+wyvern/modules/auth.mod
+wyvern/modules/cgi.mod
 wyvern/modules/dir.mod
+wyvern/modules/gzip.mod
 wyvern/modules/ident.mod
-wyvern/modules/roaming.mod
-wyvern/modules/admin.mod
-wyvern/modules/newlog.mod
+wyvern/modules/log.mod
 wyvern/modules/moredir.mod
 wyvern/modules/newdir.mod
+wyvern/modules/newlog.mod
+wyvern/modules/ssi.mod
 wyvern/samples/dot.waccess
 wyvern/samples/dot.wpasswd
 wyvern/samples/hosts.allow
-wyvern/samples/hosts.deny
+wyvern/samples/missing.html
 wyvern/style/default.css
-wyvern/style/wyvern.css
 wyvern/sbin/wyvern
 wyvern/sbin/wyvernctl
-@comment @dirrm wyvern/admin
 @comment @dirrm wyvern/bin
+@comment @dirrm wyvern/cache
 @comment @dirrm wyvern/cgi-bin
 @comment @dirrm wyvern/conf
 @comment @dirrm wyvern/docs
@@ -156,6 +143,8 @@ wyvern/sbin/wyvernctl
 @comment @dirrm wyvern/htdocs
 @comment @dirrm wyvern/icons
 @comment @dirrm wyvern/images
+@comment @dirrm wyvern/libexec
+@comment @dirrm wyvern/logs
 @comment @dirrm wyvern/manual
 @comment @dirrm wyvern/modules
 @comment @dirrm wyvern/samples

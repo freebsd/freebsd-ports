@@ -1,11 +1,11 @@
---- configure.in.orig	Mon Mar  5 18:37:33 2001
-+++ configure.in	Tue Apr 17 15:11:11 2001
-@@ -102,7 +102,7 @@
-     CFLAGS="-g -DDEBUG"
-   fi
- else
--  CFLAGS="-O2"
-+#  CFLAGS="-O2"
- fi
+--- htdocs/Makefile.in.org	Tue Oct  9 04:12:36 2001
++++ htdocs/Makefile.in	Sun Feb  3 00:16:00 2002
+@@ -14,7 +14,7 @@
+ INSTALL         = @INSTALL@
+ INSTALL_DATA    = @INSTALL_DATA@
  
- if test "x$mail_announce" = "xyes" ; then
+-install_htdocs	  = index.html
++install_htdocs	  = index.html-dist
+ 
+ 
+ ###############################################################################
