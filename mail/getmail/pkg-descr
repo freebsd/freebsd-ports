@@ -1,4 +1,18 @@
-POP3 mail retriever written in Python. getmail includes many features
-similiar to fetchmail and intends to be a complete replacement.
+A POP3 mail retriever with reliable Maildir and command delivery.
 
-WWW: http://www.qcc.sk.ca/~charlesc/software/getmail-2.0/
+Summary of features:
+- Retrieve mail from an unlimited number of POP3 mailboxes and servers. 
+- Support for multidrop or domain mailboxes. 
+- Safe and reliable delivery to qmail-style Maildirs, as well as program
+  (pipe) delivery for use with arbitrary external MDAs. Includes an MDA
+  for mbox files that supports mboxrd format and fcntl-type flock locking. 
+- Does not destroy information by rewriting mail headers. 
+- Does not cause mail loops by doing SMTP injection, and therefore does
+  not require that you run an MTA (like qmail or sendmail) on your host. 
+- Can remember which mail it has already retrieved, and can be set to
+  only download new messages. 
+- Written in Python, and therefore easy to extend or customize. 
+- Simple to install, configure, and use. 
+
+Author:	Charles Cazabon <getmail@discworld.dyndns.org>
+WWW:	http://www.qcc.sk.ca/~charlesc/software/getmail-3.0/
