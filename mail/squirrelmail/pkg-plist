@@ -20,6 +20,8 @@ etc/periodic/daily/111.clean-squirrelmail
 %%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/1.3/Notes-1.3.2.txt
 %%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/1.4/Notes-1.4.0.txt
 %%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/1.4/Notes-1.4.1.txt
+%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/1.4/Notes-1.4.2.txt
+%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes/1.4/Notes-1.4.3.txt
 %%PORTDOCS%%%%DOCSDIR%%/addressbook.txt
 %%PORTDOCS%%%%DOCSDIR%%/authentication.txt
 %%PORTDOCS%%%%DOCSDIR%%/compose.txt
@@ -95,12 +97,54 @@ etc/periodic/daily/111.clean-squirrelmail
 %%SQUIRRELDIR%%/functions/constants.php
 %%SQUIRRELDIR%%/functions/date.php
 %%SQUIRRELDIR%%/functions/db_prefs.php
+%%SQUIRRELDIR%%/functions/decode/big5.php
+%%SQUIRRELDIR%%/functions/decode/cp10000.php
+%%SQUIRRELDIR%%/functions/decode/cp10006.php
+%%SQUIRRELDIR%%/functions/decode/cp10007.php
+%%SQUIRRELDIR%%/functions/decode/cp10017.php
+%%SQUIRRELDIR%%/functions/decode/cp10029.php
+%%SQUIRRELDIR%%/functions/decode/cp10079.php
+%%SQUIRRELDIR%%/functions/decode/cp10081.php
+%%SQUIRRELDIR%%/functions/decode/cp1250.php
+%%SQUIRRELDIR%%/functions/decode/cp1251.php
+%%SQUIRRELDIR%%/functions/decode/cp1252.php
+%%SQUIRRELDIR%%/functions/decode/cp1253.php
+%%SQUIRRELDIR%%/functions/decode/cp1254.php
+%%SQUIRRELDIR%%/functions/decode/cp1255.php
+%%SQUIRRELDIR%%/functions/decode/cp1256.php
+%%SQUIRRELDIR%%/functions/decode/cp1257.php
+%%SQUIRRELDIR%%/functions/decode/cp1258.php
+%%SQUIRRELDIR%%/functions/decode/cp855.php
+%%SQUIRRELDIR%%/functions/decode/cp866.php
+%%SQUIRRELDIR%%/functions/decode/gb2312.php
+%%SQUIRRELDIR%%/functions/decode/iso-ir-111.php
+%%SQUIRRELDIR%%/functions/decode/iso8859-1.php
+%%SQUIRRELDIR%%/functions/decode/iso8859-10.php
+%%SQUIRRELDIR%%/functions/decode/iso8859-11.php
+%%SQUIRRELDIR%%/functions/decode/iso8859-13.php
+%%SQUIRRELDIR%%/functions/decode/iso8859-14.php
+%%SQUIRRELDIR%%/functions/decode/iso8859-15.php
+%%SQUIRRELDIR%%/functions/decode/iso8859-16.php
+%%SQUIRRELDIR%%/functions/decode/iso8859-2.php
+%%SQUIRRELDIR%%/functions/decode/iso8859-3.php
+%%SQUIRRELDIR%%/functions/decode/iso8859-4.php
+%%SQUIRRELDIR%%/functions/decode/iso8859-5.php
+%%SQUIRRELDIR%%/functions/decode/iso8859-6.php
+%%SQUIRRELDIR%%/functions/decode/iso8859-7.php
+%%SQUIRRELDIR%%/functions/decode/iso8859-8.php
+%%SQUIRRELDIR%%/functions/decode/iso8859-9.php
+%%SQUIRRELDIR%%/functions/decode/koi8-r.php
+%%SQUIRRELDIR%%/functions/decode/koi8-u.php
+%%SQUIRRELDIR%%/functions/decode/tis620.php
+%%SQUIRRELDIR%%/functions/decode/utf-8.php
 %%SQUIRRELDIR%%/functions/display_messages.php
 %%SQUIRRELDIR%%/functions/file_prefs.php
+%%SQUIRRELDIR%%/functions/forms.php
 %%SQUIRRELDIR%%/functions/gettext.php
 %%SQUIRRELDIR%%/functions/global.php
 %%SQUIRRELDIR%%/functions/html.php
 %%SQUIRRELDIR%%/functions/i18n.php
+%%SQUIRRELDIR%%/functions/identity.php
 %%SQUIRRELDIR%%/functions/imap.php
 %%SQUIRRELDIR%%/functions/imap_general.php
 %%SQUIRRELDIR%%/functions/imap_mailbox.php
@@ -162,6 +206,15 @@ etc/periodic/daily/111.clean-squirrelmail
 %%SQUIRRELDIR%%/help/de_DE/options.hlp
 %%SQUIRRELDIR%%/help/de_DE/read_mail.hlp
 %%SQUIRRELDIR%%/help/de_DE/search.hlp
+%%SQUIRRELDIR%%/help/en_GB/FAQ.hlp
+%%SQUIRRELDIR%%/help/en_GB/addresses.hlp
+%%SQUIRRELDIR%%/help/en_GB/basic.hlp
+%%SQUIRRELDIR%%/help/en_GB/compose.hlp
+%%SQUIRRELDIR%%/help/en_GB/folders.hlp
+%%SQUIRRELDIR%%/help/en_GB/main_folder.hlp
+%%SQUIRRELDIR%%/help/en_GB/options.hlp
+%%SQUIRRELDIR%%/help/en_GB/read_mail.hlp
+%%SQUIRRELDIR%%/help/en_GB/search.hlp
 %%SQUIRRELDIR%%/help/en_US/FAQ.hlp
 %%SQUIRRELDIR%%/help/en_US/addresses.hlp
 %%SQUIRRELDIR%%/help/en_US/basic.hlp
@@ -354,8 +407,6 @@ etc/periodic/daily/111.clean-squirrelmail
 %%SQUIRRELDIR%%/help/sk_SK/search.hlp
 %%SQUIRRELDIR%%/images/down_pointer.png
 %%SQUIRRELDIR%%/images/index.php
-%%SQUIRRELDIR%%/images/minus.gif
-%%SQUIRRELDIR%%/images/plus.gif
 %%SQUIRRELDIR%%/images/draft.png
 %%SQUIRRELDIR%%/images/folder.png
 %%SQUIRRELDIR%%/images/inbox.png
@@ -363,17 +414,27 @@ etc/periodic/daily/111.clean-squirrelmail
 %%SQUIRRELDIR%%/images/plus.png
 %%SQUIRRELDIR%%/images/senti.png
 %%SQUIRRELDIR%%/images/delitem.png
-%%SQUIRRELDIR%%/images/sec_remove_pt_PT.png
 %%SQUIRRELDIR%%/images/sec_remove_da_DK.png
+%%SQUIRRELDIR%%/images/sec_remove_de_DE.png
+%%SQUIRRELDIR%%/images/sec_remove_el_GR.png
 %%SQUIRRELDIR%%/images/sec_remove_eng.png
 %%SQUIRRELDIR%%/images/sec_remove_es_ES.png
 %%SQUIRRELDIR%%/images/sec_remove_fr_FR.png
+%%SQUIRRELDIR%%/images/sec_remove_hr_HR.png
+%%SQUIRRELDIR%%/images/sec_remove_hu_HU.png
 %%SQUIRRELDIR%%/images/sec_remove_id_ID.png
+%%SQUIRRELDIR%%/images/sec_remove_it_IT.png
 %%SQUIRRELDIR%%/images/sec_remove_ja_JP.png
 %%SQUIRRELDIR%%/images/sec_remove_ko_KR.png
 %%SQUIRRELDIR%%/images/sec_remove_lt_LT.png
-%%SQUIRRELDIR%%/images/sec_remove_ru.png
+%%SQUIRRELDIR%%/images/sec_remove_nb_NO.png
+%%SQUIRRELDIR%%/images/sec_remove_nl_NL.png
+%%SQUIRRELDIR%%/images/sec_remove_nn_NO.png
+%%SQUIRRELDIR%%/images/sec_remove_pt_PT.png
+%%SQUIRRELDIR%%/images/sec_remove_ru_RU.png
 %%SQUIRRELDIR%%/images/sec_remove_sl_SI.png
+%%SQUIRRELDIR%%/images/sec_remove_sv_SE.png
+%%SQUIRRELDIR%%/images/sec_remove_tr_TR.png
 %%SQUIRRELDIR%%/images/sec_remove_sr_YU.png
 %%SQUIRRELDIR%%/images/sm_logo.png
 %%SQUIRRELDIR%%/images/sort_none.png
@@ -400,6 +461,8 @@ etc/periodic/daily/111.clean-squirrelmail
 %%SQUIRRELDIR%%/locale/de_DE/LC_MESSAGES/squirrelmail.po
 %%SQUIRRELDIR%%/locale/el_GR/LC_MESSAGES/squirrelmail.mo
 %%SQUIRRELDIR%%/locale/el_GR/LC_MESSAGES/squirrelmail.po
+%%SQUIRRELDIR%%/locale/en_GB/LC_MESSAGES/squirrelmail.mo
+%%SQUIRRELDIR%%/locale/en_GB/LC_MESSAGES/squirrelmail.po
 %%SQUIRRELDIR%%/locale/es_ES/LC_MESSAGES/squirrelmail.mo
 %%SQUIRRELDIR%%/locale/es_ES/LC_MESSAGES/squirrelmail.po
 %%SQUIRRELDIR%%/locale/et_EE/LC_MESSAGES/squirrelmail.mo
@@ -427,12 +490,12 @@ etc/periodic/daily/111.clean-squirrelmail
 %%SQUIRRELDIR%%/locale/ko_KR/LC_MESSAGES/squirrelmail.po
 %%SQUIRRELDIR%%/locale/lt_LT/LC_MESSAGES/squirrelmail.mo
 %%SQUIRRELDIR%%/locale/lt_LT/LC_MESSAGES/squirrelmail.po
+%%SQUIRRELDIR%%/locale/nb_NO/LC_MESSAGES/squirrelmail.mo
+%%SQUIRRELDIR%%/locale/nb_NO/LC_MESSAGES/squirrelmail.po
 %%SQUIRRELDIR%%/locale/nl_NL/LC_MESSAGES/squirrelmail.mo
 %%SQUIRRELDIR%%/locale/nl_NL/LC_MESSAGES/squirrelmail.po
 %%SQUIRRELDIR%%/locale/nn_NO/LC_MESSAGES/squirrelmail.mo
 %%SQUIRRELDIR%%/locale/nn_NO/LC_MESSAGES/squirrelmail.po
-%%SQUIRRELDIR%%/locale/no_NO/LC_MESSAGES/squirrelmail.mo
-%%SQUIRRELDIR%%/locale/no_NO/LC_MESSAGES/squirrelmail.po
 %%SQUIRRELDIR%%/locale/pl_PL/LC_MESSAGES/squirrelmail.mo
 %%SQUIRRELDIR%%/locale/pl_PL/LC_MESSAGES/squirrelmail.po
 %%SQUIRRELDIR%%/locale/pt_BR/LC_MESSAGES/squirrelmail.mo
@@ -568,7 +631,7 @@ etc/periodic/daily/111.clean-squirrelmail
 %%SQUIRRELDIR%%/po/independent_strings.txt
 %%SQUIRRELDIR%%/po/index.php
 %%SQUIRRELDIR%%/po/mergepo
-%%SQUIRRELDIR%%/po/squirrelmail.po
+%%SQUIRRELDIR%%/po/squirrelmail.pot
 %%SQUIRRELDIR%%/po/xgetpo
 %%SQUIRRELDIR%%/src/addrbook_popup.php
 %%SQUIRRELDIR%%/src/addrbook_search.php
@@ -612,11 +675,17 @@ etc/periodic/daily/111.clean-squirrelmail
 %%SQUIRRELDIR%%/themes/bluesnews_theme.php
 %%SQUIRRELDIR%%/themes/bluesteel_theme.php
 %%SQUIRRELDIR%%/themes/christmas.php
+%%SQUIRRELDIR%%/themes/css/comic-sans-08.css
+%%SQUIRRELDIR%%/themes/css/comic-sans-10.css
+%%SQUIRRELDIR%%/themes/css/comic-sans-12.css
 %%SQUIRRELDIR%%/themes/css/sans-08.css
 %%SQUIRRELDIR%%/themes/css/sans-10.css
 %%SQUIRRELDIR%%/themes/css/sans-12.css
 %%SQUIRRELDIR%%/themes/css/serif-10.css
 %%SQUIRRELDIR%%/themes/css/serif-12.css
+%%SQUIRRELDIR%%/themes/css/verdana-08.css
+%%SQUIRRELDIR%%/themes/css/verdana-10.css
+%%SQUIRRELDIR%%/themes/css/verdana-12.css
 %%SQUIRRELDIR%%/themes/dark_green.php
 %%SQUIRRELDIR%%/themes/dark_grey_theme.php
 %%SQUIRRELDIR%%/themes/darkness.php
@@ -640,6 +709,7 @@ etc/periodic/daily/111.clean-squirrelmail
 %%SQUIRRELDIR%%/themes/plain_blue_theme.php
 %%SQUIRRELDIR%%/themes/purple_theme.php
 %%SQUIRRELDIR%%/themes/random.php
+%%SQUIRRELDIR%%/themes/redmond.php
 %%SQUIRRELDIR%%/themes/sandstorm_theme.php
 %%SQUIRRELDIR%%/themes/seaspray_theme.php
 %%SQUIRRELDIR%%/themes/servery_theme.php
@@ -726,12 +796,12 @@ etc/periodic/daily/111.clean-squirrelmail
 @dirrm %%SQUIRRELDIR%%/locale/pt_BR
 @dirrm %%SQUIRRELDIR%%/locale/pl_PL/LC_MESSAGES
 @dirrm %%SQUIRRELDIR%%/locale/pl_PL
-@dirrm %%SQUIRRELDIR%%/locale/no_NO/LC_MESSAGES
-@dirrm %%SQUIRRELDIR%%/locale/no_NO
 @dirrm %%SQUIRRELDIR%%/locale/nn_NO/LC_MESSAGES
 @dirrm %%SQUIRRELDIR%%/locale/nn_NO
 @dirrm %%SQUIRRELDIR%%/locale/nl_NL/LC_MESSAGES
 @dirrm %%SQUIRRELDIR%%/locale/nl_NL
+@dirrm %%SQUIRRELDIR%%/locale/nb_NO/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/locale/nb_NO
 @dirrm %%SQUIRRELDIR%%/locale/lt_LT/LC_MESSAGES
 @dirrm %%SQUIRRELDIR%%/locale/lt_LT
 @dirrm %%SQUIRRELDIR%%/locale/ko_KR/LC_MESSAGES
@@ -758,6 +828,8 @@ etc/periodic/daily/111.clean-squirrelmail
 @dirrm %%SQUIRRELDIR%%/locale/et_EE
 @dirrm %%SQUIRRELDIR%%/locale/es_ES/LC_MESSAGES
 @dirrm %%SQUIRRELDIR%%/locale/es_ES
+@dirrm %%SQUIRRELDIR%%/locale/en_GB/LC_MESSAGES
+@dirrm %%SQUIRRELDIR%%/locale/en_GB
 @dirrm %%SQUIRRELDIR%%/locale/el_GR/LC_MESSAGES
 @dirrm %%SQUIRRELDIR%%/locale/el_GR
 @dirrm %%SQUIRRELDIR%%/locale/de_DE/LC_MESSAGES
@@ -800,6 +872,7 @@ etc/periodic/daily/111.clean-squirrelmail
 @dirrm %%SQUIRRELDIR%%/help/fi_FI
 @dirrm %%SQUIRRELDIR%%/help/es_ES
 @dirrm %%SQUIRRELDIR%%/help/en_US
+@dirrm %%SQUIRRELDIR%%/help/en_GB
 @dirrm %%SQUIRRELDIR%%/help/de_DE
 @dirrm %%SQUIRRELDIR%%/help/da_DK
 @dirrm %%SQUIRRELDIR%%/help/cs_CZ
@@ -809,6 +882,7 @@ etc/periodic/daily/111.clean-squirrelmail
 @dirrm %%SQUIRRELDIR%%/help/cy_GB
 @dirrm %%SQUIRRELDIR%%/help/sk_SK
 @dirrm %%SQUIRRELDIR%%/help
+@dirrm %%SQUIRRELDIR%%/functions/decode
 @dirrm %%SQUIRRELDIR%%/functions
 @dirrm %%SQUIRRELDIR%%/data
 @dirrm %%SQUIRRELDIR%%/config

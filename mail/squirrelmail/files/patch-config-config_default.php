@@ -1,20 +1,20 @@
---- config/config_default.php.orig	Thu Aug 21 03:14:08 2003
-+++ config/config_default.php	Tue Jan 13 00:57:57 2004
-@@ -220,7 +220,7 @@
+--- config/config_default.php.orig	Wed Jun  2 10:49:41 2004
++++ config/config_default.php	Wed Jun  2 10:50:21 2004
+@@ -442,7 +442,7 @@
   *   $data_dir = SM_PATH . 'data/';
+  * @global string $data_dir
   */
- global $data_dir;
 -$data_dir = SM_PATH . 'data/';
 +$data_dir = '/var/spool/squirrelmail/pref/';
  
  /**
-  * Path to directory used for storing attachments while a mail is
-@@ -236,7 +236,7 @@
+  * Attachments directory
+@@ -460,7 +460,7 @@
   *    + It should probably be another directory than data_dir.
+  * @global string $attachment_dir
   */
- global $attachment_dir;
--$attachment_dir = "$data_dir";
+-$attachment_dir = $data_dir;
 +$attachment_dir = '/var/spool/squirrelmail/attach/';
  
- /* Hash level used for data directory. */
- global $dir_hash_level;
+ /**
+  * Hash level used for data directory.
