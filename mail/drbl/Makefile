@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	drbl
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.agk.nnov.ru/drbl/prog/
 
