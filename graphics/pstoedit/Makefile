@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pstoedit
-PORTVERSION=	3.32
-PORTREVISION=	1
+PORTVERSION=	3.33
 CATEGORIES=	graphics print
 MASTER_SITES=	http://home.t-online.de/home/helga.glunz/wglunz/pstoedit/
 
@@ -22,15 +21,15 @@ RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig \
 		gs:${PORTSDIR}/print/ghostscript-gnu
 
 USE_LIBTOOL=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 INSTALLS_SHLIB=	yes
 
 MAN1=	pstoedit.1
 
-CPPFLAGS=	-I${LOCALBASE}/include/ming -I${LOCALBASE}/include \
-		-I${X11BASE}/include -fpermissive
-LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include/ming -I${LOCALBASE}/include \
+		-I${X11BASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/pstoedit.1 ${MANPREFIX}/man/man1
