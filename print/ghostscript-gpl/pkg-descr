@@ -12,7 +12,7 @@ Official ghostscript homepage, see:
 This FreeBSD port includes two useful add-on packages:
 	o Support for HP DeskJet 670, 690, 850, 855, 870, 890, 1100 and 1600,
 	  see announcement on
-		 http://bonk.ethz.ch/hp850/hp850.html
+		 http://www.erdw.ethz.ch/~bonk/hp850/hp850.html
 	o Support for pdfencrypt, see description on
 	  	http://www.ozemail.com.au/~geoffk/pdfencrypt/
 		
