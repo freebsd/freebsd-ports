@@ -1,38 +1,46 @@
 bin/midc
 bin/mcmfmt
-lib/mc/FAQ
-lib/mc/mc.ext
-lib/mc/mc.hint
-lib/mc/mc.hlp
-lib/mc/mc.lib
-lib/mc/mc.menu
-lib/mc/bin/mcfn_install
-lib/mc/extfs/README
-lib/mc/extfs/a
-lib/mc/extfs/deb
-lib/mc/extfs/extfs.ini
-lib/mc/extfs/ftplist
-lib/mc/extfs/hp48
-lib/mc/extfs/lslR
-lib/mc/extfs/mailfs
-lib/mc/extfs/patchfs
-lib/mc/extfs/rpm
-lib/mc/extfs/sfs.ini
-lib/mc/extfs/uar
-lib/mc/extfs/ucpio
-lib/mc/extfs/ulha
-lib/mc/extfs/urar
-lib/mc/extfs/uzip
-lib/mc/extfs/uzoo
-lib/mc/term/README.xterm
-lib/mc/term/ansi.ti
-lib/mc/term/linux.ti
-lib/mc/term/vt100.ti
-lib/mc/term/xterm.ad
-lib/mc/term/xterm.tcap
-lib/mc/term/xterm.ti
 sbin/mcserv
-@dirrm lib/mc/bin
-@dirrm lib/mc/extfs
-@dirrm lib/mc/term
-@dirrm lib/mc
+share/locale/de/LC_MESSAGES/mc.mo
+share/locale/es/LC_MESSAGES/mc.mo
+share/locale/fr/LC_MESSAGES/mc.mo
+share/locale/it/LC_MESSAGES/mc.mo
+share/locale/ko/LC_MESSAGES/mc.mo
+share/locale/no/LC_MESSAGES/mc.mo
+share/locale/pl/LC_MESSAGES/mc.mo
+share/locale/ru/LC_MESSAGES/mc.mo
+share/mc/FAQ
+share/mc/bin/mcfn_install
+share/mc/extfs/README
+share/mc/extfs/a
+share/mc/extfs/deb
+share/mc/extfs/extfs.ini
+share/mc/extfs/ftplist
+share/mc/extfs/hp48
+share/mc/extfs/lslR
+share/mc/extfs/mailfs
+share/mc/extfs/patchfs
+share/mc/extfs/rpm
+share/mc/extfs/sfs.ini
+share/mc/extfs/uar
+share/mc/extfs/ucpio
+share/mc/extfs/ulha
+share/mc/extfs/urar
+share/mc/extfs/uzip
+share/mc/extfs/uzoo
+share/mc/mc.ext
+share/mc/mc.hint
+share/mc/mc.hlp
+share/mc/mc.lib
+share/mc/mc.menu
+share/mc/term/README.xterm
+share/mc/term/ansi.ti
+share/mc/term/linux.ti
+share/mc/term/vt100.ti
+share/mc/term/xterm.ad
+share/mc/term/xterm.tcap
+share/mc/term/xterm.ti
+@dirrm share/mc/bin
+@dirrm share/mc/extfs
+@dirrm share/mc/term
+@dirrm share/mc

@@ -1,6 +1,6 @@
---- vfs/Make-mc.in.orig	Sun Dec  6 11:59:31 1998
-+++ vfs/Make-mc.in	Sun Dec  6 12:26:32 1998
-@@ -172,20 +172,20 @@
+--- vfs/Make-mc.in.orig	Tue Jan 19 00:44:08 1999
++++ vfs/Make-mc.in	Tue Jan 26 19:26:43 1999
+@@ -180,20 +180,20 @@
  
  install: @mcserv@ install.extfs
  	-(if test x@mcserv@ != x; then \
