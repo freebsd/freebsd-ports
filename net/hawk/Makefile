@@ -19,7 +19,8 @@ RUN_DEPENDS=	php-config:${PORTSDIR}/www/mod_php4 \
 		${SITE_PERL}/Net/Netmask.pm:${PORTSDIR}/net/p5-Net-Netmask
 
 BROKEN=		"Inconsistent dependencies (mysql-client 3.x and 4.x)"
-DEPRECATED=	"This port will be removed on April 15 if still broken."
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-04-15
 
 do-patch:
 	@${SED} -e 's#dirname.*"/hawk#"${PREFIX}/etc/hawk/daemon#' \

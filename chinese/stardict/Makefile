@@ -25,7 +25,8 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 
 BROKEN=		"Incorrect distinfo"
-DEPRECATED=	"Will be removed after April 7 if still broken"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-04-07
 
 port-install:
 	strip	$(PREFIX)/bin/${PORTNAME}

@@ -29,7 +29,8 @@ DESCR=		${.CURDIR}/pkg-descr
 MD5_FILE=	${.CURDIR}/distinfo
 PLIST=		${WRKDIR}/pkg-plist
 BROKEN=		"not ported to Python-2.2.3 yet"
-DEPRECATED=	"Will be removed after April 7 if still broken"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-04-07
 
 #post-patch:
 #	@${FIND} ${WRKSRC} -name '*.orig' -exec ${RM} -f {} \;

@@ -24,7 +24,8 @@ COMMENT=	Collection of tools supporting C and C++ programming for Palm OS
 BUILD_DEPENDS=	${LOCALBASE}/bin/autoheader:${PORTSDIR}/devel/autoconf
 
 BROKEN=		"Patch fails"
-DEPRECATED=	"Will be removed after April 15 if still broken."
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-04-15
 
 # it is unknown whether it could actually be made to work elsewhere,
 # but right now it does not.

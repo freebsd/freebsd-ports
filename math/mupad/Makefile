@@ -25,7 +25,8 @@ RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXm.so.2:${PORTSDIR}/x11-toolkits/linu
 		${LINUXBASE}/usr/lib/libungif.so.4:${PORTSDIR}/graphics/linux-ungif
 
 BROKEN=		"Checksum mismatch"
-DEPRECATED=	"This port will be removed on April 16 if still broken at that time."
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-04-16
 NO_CDROM=	"unsure to sell for profit"
 
 USE_LINUX=		yes
