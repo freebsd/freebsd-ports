@@ -21,6 +21,7 @@
 
 PORTNAME=	php5
 PORTVERSION=	5.0.0.a3
+PORTREVISION=	1
 CATEGORIES?=	lang devel www
 MASTER_SITES=	http://www.php.net/distributions/:release \
 		http://it.php.net/distributions/:release \
@@ -564,7 +565,7 @@ CONFIGURE_ARGS+=--with-ncurses=${NCURSESBASE}
 .if exists(${LOCALBASE}/lib/libsnmp.so.4)
 LIB_DEPENDS+=	snmp.4:${PORTSDIR}/net/net-snmp4
 .else
-LIB_DEPENDS+=	netsnmp.5:${PORTSDIR}/net/net-snmp
+LIB_DEPENDS+=	netsnmp.6:${PORTSDIR}/net/net-snmp
 .endif
 CONFIGURE_ARGS+=--with-snmp=${LOCALBASE} --enable-ucd-snmp-hack
 .endif
