@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	krename
-PORTVERSION=	2.8.2
+PORTVERSION=	2.8.3
 CATEGORIES=	sysutils kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,7 +21,8 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
-pre-configure:
-	${REINPLACE_CMD} -e 's|-pedantic ||g' ${WRKSRC}/configure
+post-patch:
+	${REINPLACE_CMD} -e 's|-pedantic ||g ; \
+		s|klineedit|KLineEdit|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
