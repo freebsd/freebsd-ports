@@ -1,5 +1,5 @@
 --- doc/makefile.orig	Thu Oct  3 16:40:44 1996
-+++ doc/makefile	Tue Dec 31 05:40:21 1996
++++ doc/makefile	Mon Jan 13 01:29:09 1997
 @@ -1,10 +1,16 @@
 +fbsd: manual.latin1 manual.html
 +
