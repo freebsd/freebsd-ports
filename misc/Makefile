@@ -90,6 +90,7 @@
     SUBDIR += geekcode
     SUBDIR += getopt
     SUBDIR += git
+    SUBDIR += gkrellm-gamma
     SUBDIR += gkrellm-reminder
     SUBDIR += gkrellmaflag
     SUBDIR += gkrellmbgchg
