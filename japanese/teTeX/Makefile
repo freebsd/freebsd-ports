@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	teTeX
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	japanese print
 MASTER_SITES=	# empty
 PKGNAMEPREFIX=	ja-
@@ -16,7 +16,7 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A meta port for teTeX suite for Japanese (including pTeX and JTeX)
 
 RUN_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
-		${LOCALBASE}/share/texmf/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
+		${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
 		tex:${PORTSDIR}/print/teTeX-base \
 		ptex:${PORTSDIR}/japanese/ptex-tetex \
 		dvips:${PORTSDIR}/japanese/dvipsk \
@@ -26,6 +26,7 @@ RUN_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
 
 JTEXVF=		${LOCALBASE}/share/texmf-local/fonts/vf/n2a/dmjsy5.vf
 TEXMFLOCAL_LSR=	${LOCALBASE}/share/texmf-local/ls-R
+TEXMFDISTDIR=	share/texmf-dist
 
 # XXX: We always build in batch mode to disable OPTIONS
 #      in print/teTeX-base.
