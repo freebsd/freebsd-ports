@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Oct  8 18:03:19 2000
-+++ Makefile		Sun Oct  8 18:03:24 2000
+--- Makefile.orig	Thu Jan 14 01:19:14 1999
++++ Makefile	Wed Jun 16 17:23:34 2004
 @@ -1,24 +1,19 @@
  # vlock makefile
  
@@ -27,8 +27,8 @@
 -terminal.o: vlock.h
 -input.o: vlock.h
 +install:
-+	/usr/bin/install -c -s -o root -g wheel -m 4555 vlock /usr/local/bin/vlock
-+	/usr/bin/install -c -o root -g wheel -m 444 vlock.1 /usr/local/man/man1
++	/usr/bin/install -c -s -o root -g wheel -m 4555 vlock ${PREFIX}/bin
++	/usr/bin/install -c -o root -g wheel -m 444 vlock.1 ${MANPREFIX}/man/man1
  
  clean:
 -	rm -f $(OBJS) vlock core core.vlock
