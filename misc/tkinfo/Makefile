@@ -3,11 +3,11 @@
 # Date created:         16 Jan 1995
 # Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id$
+# $Id: Makefile,v 1.3 1995/04/12 20:31:37 asami Exp $
 #
 
 DISTNAME=	tkinfo-0.6
-CATEGORIES+=	x11
+CATEGORIES+=	utilities
 MASTER_SITES=	ftp://ptolemy.eecs.berkeley.edu/pub/misc/
 EXTRACT_SUFX=	.tar.Z
 
