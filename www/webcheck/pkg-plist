@@ -23,6 +23,8 @@ share/linbot/schemes/filelink.py
 share/linbot/schemes/ftplink.py
 share/linbot/schemes/httplink.py
 share/linbot/version.py
+%%PORTDOCS%%share/doc/linbot/USAGE
+%%PORTDOCS%%@dirrm share/doc/linbot/
 @dirrm share/linbot/plugins
 @dirrm share/linbot/schemes
 @dirrm share/linbot
