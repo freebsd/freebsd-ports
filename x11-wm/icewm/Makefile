@@ -17,7 +17,7 @@ BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 USE_X_PREFIX=	yes
-WANT_ESOUND=	yes
+USE_GNOMENG=	yes
 WANT_GNOME=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -33,9 +33,9 @@ CONFIGURE_ARGS=	--enable-i18n --enable-nls \
 
 .include <bsd.port.pre.mk>
 
-.if defined(HAVE_GNOME)
+.if ${HAVE_GNOME:Mgnomelibs}!=""
 .undef HAVE_ESOUND
-USE_GNOME=	yes
+USE_GNOME+=	gnomelibs
 CONFIGURE_ARGS+=	--with-imlib --without-xpm --with-gnome-menus \
 			--enable-guievents --with-icesound=esound
 INSTALL_TARGET=		install install-gnome
@@ -43,8 +43,8 @@ PLIST_SUB+=	ESOUND=""
 .else
 USE_XPM=	yes
 CONFIGURE_ARGS+=	--without-imlib --with-xpm --without-gnome-menus
-.if defined(HAVE_ESOUND)
-USE_ESOUND=	yes
+.if ${HAVE_GNOME:Mesound}!=""
+USE_GNOME+=	esound
 CONFIGURE_ARGS+=	--enable-guievents --with-icesound=esound
 PLIST_SUB+=	ESOUND=""
 .else

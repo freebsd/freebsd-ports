@@ -25,18 +25,20 @@ MAN1=		aewm.1
 PLIST=		${WRKDIR}/pkg-plist
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-WANT_GTK=	yes
+USE_GNOMENG=	yes
+WANT_GNOME=	yes
 
 .include <bsd.port.pre.mk>
-.if defined(HAVE_GTK)
-USE_GTK=yes
+.if ${HAVE_GNOME:Mgtk12}!=""
+USE_GNOME+=	gtk12
+PKGNAMESUFFIX=	-gtk
 .endif
 
 do-patch:
 	${PERL} -pi -e 's:/etc/X11/aewm/aewmrc:${PREFIX}/etc/aewmrc:g' \
 		${WRKSRC}/aewm.h
 	${PERL} -pi -e 's:\+make:\+gmake:g' ${WRKSRC}/Makefile
-.if defined(HAVE_GTK)
+.if ${HAVE_GNOME:Mgtk12}!=""
 	${PERL} -pi -e 's:gtk-config:${GTK_CONFIG}:g' \
 		${WRKSRC}/clients/Makefile
 	${PERL} -pi -e 's:/etc/X11/aewm/clientsrc:${PREFIX}/etc/clientsrc:g' \
@@ -44,7 +46,7 @@ do-patch:
 .endif
 
 post-build:
-.if defined(HAVE_GTK)
+.if ${HAVE_GNOME:Mgtk12}!=""
 	cd ${WRKSRC}/clients && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} \
 		${GTKCLIENTS} ${XAWCLIENTS}
 .else
@@ -57,7 +59,7 @@ pre-install:
 .for i in aewm aemenu aepanel ${XAWCLIENTS}
 	${ECHO_CMD} bin/${i} >> ${PLIST}
 .endfor
-.if defined(HAVE_GTK)
+.if ${HAVE_GNOME:Mgtk12}!=""
 .for i in ${GTKCLIENTS}
 	${ECHO_CMD} bin/${i} >> ${PLIST}
 .endfor
@@ -80,7 +82,7 @@ do-install:
 .for i in ${XAWCLIENTS}
 	${INSTALL_PROGRAM} ${WRKSRC}/clients/${i} ${PREFIX}/bin
 .endfor
-.if defined(HAVE_GTK)
+.if ${HAVE_GNOME:Mgtk12}!=""
 .for i in ${GTKCLIENTS}
 	${INSTALL_PROGRAM} ${WRKSRC}/clients/${i} ${PREFIX}/bin
 .endfor

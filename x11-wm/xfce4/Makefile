@@ -20,7 +20,8 @@ LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile \
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}

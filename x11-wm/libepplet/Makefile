@@ -10,7 +10,6 @@ PORTVERSION=	0.5
 CATEGORIES=	x11-wm devel
 MASTER_SITES=	ftp://kde.planetmirror.com/pub/enlightenment/epplets/ \
 		ftp://ftp.dti.ad.jp/pub/X/enlightenment/epplets/
-
 DISTNAME=	epplet-base-${PORTVERSION}
 
 MAINTAINER=	cmc@groupofnine.org
@@ -18,7 +17,8 @@ MAINTAINER=	cmc@groupofnine.org
 WRKSRC=		${WRKDIR}/Epplets-${PORTVERSION}
 
 USE_X_PREFIX=	yes
-USE_IMLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	imlib
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	EROOT=${X11BASE}/share/enlightenment \
 		EBIN=${X11BASE}/bin
