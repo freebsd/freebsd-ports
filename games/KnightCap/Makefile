@@ -9,7 +9,6 @@ PORTNAME=	knightcap
 PORTVERSION=	3.6
 CATEGORIES=	games
 MASTER_SITES=	ftp://samba.anu.edu.au/pub/KnightCap/ \
-		ftp://ftp.bmtmicro.com/pub/linux/tucows/files/x11/entertain/ \
 		ftp://ftp.cadvision.com/pub/linuxberg/files/x11/entertain/
 DISTNAME=	KnightCap-${PORTVERSION}
 

@@ -9,7 +9,7 @@
 PORTNAME=	libtre
 PORTVERSION=	0.3.2
 CATEGORIES=	textproc
-MASTER_SITES=	http://kouli.iki.fi/~vlaurika/libtre/
+MASTER_SITES=	http://kouli.iki.fi/~vlaurika/tre/
 
 MAINTAINER=	ports@FreeBSD.org
 
