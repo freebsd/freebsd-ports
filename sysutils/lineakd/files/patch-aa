@@ -1,0 +1,15 @@
+--- src/lineakd.h.orig	Wed Aug 28 04:43:19 2002
++++ src/lineakd.h	Tue May 13 10:56:23 2003
+@@ -127,6 +127,12 @@
+ #define VOLMUTE_VALUE 0
+ #define MAX_VOLUME 100
+ 
++/* we need this for freebsd */
++#if defined (__FreeBSD__)
++#define CDROMEJECT	CDIOCEJECT	/*_IO('c', 107)*/
++#define CDROMCLOSETRAY  CDIOCCLOSE
++#endif
++
+ /* we might need this .. oss emulation under BSD */
+ #if defined (__NetBSD__) || defined (__OpenBSD__)
+ #define SOUND_IOCTL(a,b,c)      _oss_ioctl(a,b,c)
