@@ -9,11 +9,13 @@ PORTNAME=	multisync-evolution
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Evolution synchronization plugin for Multisync
 
+BUILD_DEPENDS=	evolution:${PORTSDIR}/mail/evolution
 RUN_DEPENDS=	multisync:${PORTSDIR}/deskutils/multisync \
 		evolution:${PORTSDIR}/mail/evolution
 
 MD5_FILE=	${MASTERDIR}/distinfo
 PATCHDIR=	${.CURDIR}/files
+PLIST=		${.CURDIR}/pkg-plist
 
 WRKSRC=		${WRKDIR}/multisync-${PORTVERSION}/plugins/evolution_sync
 
