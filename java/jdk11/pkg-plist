@@ -1,3 +1,4 @@
+@unexec %%LOCALBASE%%/bin/unregistervm "%D/jdk%%JDK_VERSION%%/bin/java"
 jdk%%JDK_VERSION%%/include/freebsd/byteorder_md.h
 jdk%%JDK_VERSION%%/include/freebsd/timeval_md.h
 jdk%%JDK_VERSION%%/include/freebsd/sysmacros_md.h
@@ -519,7 +520,6 @@ jdk%%JDK_VERSION%%/index.html
 @exec mkdir -p %D/share/doc/java
 @unexec rmdir %D/share/doc/java 2>/dev/null || true
 @exec %%LOCALBASE%%/bin/registervm "%D/jdk%%JDK_VERSION%%/bin/java # JDK%%JDK_VERSION%%"
-@unexec %%LOCALBASE%%/bin/unregistervm "%D/jdk%%JDK_VERSION%%/bin/java"
 @dirrm jdk%%JDK_VERSION%%/lib/security
 @dirrm jdk%%JDK_VERSION%%/lib/locale/ja_JP.UTF-8/app-defaults
 @dirrm jdk%%JDK_VERSION%%/lib/locale/ja_JP.UTF-8
