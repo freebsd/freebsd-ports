@@ -6,5 +6,6 @@ share/gmpc/media-next.png
 share/gmpc/media-prev.png
 share/gmpc/gmpc-tray.png
 share/gmpc/media-stop.png
+share/gmpc/gmpc.png
 share/gmpc/gmpc.glade
 @dirrm share/gmpc
