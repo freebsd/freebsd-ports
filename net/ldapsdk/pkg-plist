@@ -14,6 +14,8 @@ mozilla/directory/lib/libldap.so.1
 mozilla/directory/lib/libldap.so
 mozilla/directory/lib/liblber.a
 mozilla/directory/lib/libldap.a
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/mozilla/directory/lib
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @dirrm mozilla/directory/lib
 @dirrm mozilla/directory
 @dirrm mozilla
