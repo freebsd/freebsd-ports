@@ -1,4 +1,4 @@
 share/dict/jedict.sdic
 share/dict/eedict.sdic
-share/doc/edict/edict.doc
+share/doc/edict/edict_doc.txt
 @dirrm share/doc/edict

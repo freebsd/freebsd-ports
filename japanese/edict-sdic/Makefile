@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	edict-sdic
-PORTVERSION=	19981007
+PORTVERSION=	20000622
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://pine.kuee.kyoto-u.ac.jp/pub/tsuchiya/sdic/ \
 		ftp://ftp.cc.monash.edu.au/pub/nihongo/ \
@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://pine.kuee.kyoto-u.ac.jp/pub/tsuchiya/sdic/ \
 DISTNAME=	sdic-2.1.2
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		edict.gz \
-		edict.doc
+		edict_doc.txt
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=    	taoka@FreeBSD.org
@@ -29,7 +29,7 @@ CONFIGURE_ARGS=	--with-emacs=mule \
 
 post-extract:
 	${CP} -f ${DISTDIR}/edict.gz ${WRKSRC}
-	${CP} -f ${DISTDIR}/edict.doc ${WRKSRC}
+	${CP} -f ${DISTDIR}/edict_doc.txt ${WRKSRC}
 	${GZIP_CMD} -d ${WRKSRC}/edict.gz
 
 do-install:
@@ -37,7 +37,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.sdic ${PREFIX}/share/dict
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/edict
-	${INSTALL_DATA} ${WRKSRC}/*.doc ${PREFIX}/share/doc/edict
+	${INSTALL_DATA} ${WRKSRC}/edict_doc.txt ${PREFIX}/share/doc/edict
 .endif
 
 .include <bsd.port.mk>
