@@ -1,0 +1,36 @@
+bin/convertall
+lib/convertall/convertall.py
+lib/convertall/convertall.pyc
+lib/convertall/convertdlg.py
+lib/convertall/convertdlg.pyc
+lib/convertall/finddlg.py
+lib/convertall/finddlg.pyc
+lib/convertall/helpview.py
+lib/convertall/helpview.pyc
+lib/convertall/numedit.py
+lib/convertall/numedit.pyc
+lib/convertall/numeval1.py
+lib/convertall/numeval1.pyc
+lib/convertall/numeval2.py
+lib/convertall/numeval2.pyc
+lib/convertall/option.py
+lib/convertall/option.pyc
+lib/convertall/optiondlg.py
+lib/convertall/optiondlg.pyc
+lib/convertall/tmpcontrol.py
+lib/convertall/tmpcontrol.pyc
+lib/convertall/unit.py
+lib/convertall/unit.pyc
+lib/convertall/unitdata.py
+lib/convertall/unitdata.pyc
+lib/convertall/unitedit.py
+lib/convertall/unitedit.pyc
+lib/convertall/unitgroup.py
+lib/convertall/unitgroup.pyc
+lib/convertall/unitlistview.py
+lib/convertall/unitlistview.pyc
+share/convertall/units.dat
+share/icons/convertall_lg.png
+share/icons/convertall_sm.png
+@dirrm share/convertall
+@dirrm lib/convertall

@@ -27,6 +27,7 @@
     SUBDIR += clarence
     SUBDIR += cln
     SUBDIR += concorde
+    SUBDIR += convertall
     SUBDIR += cxsc
     SUBDIR += dcdflib
     SUBDIR += diehard
