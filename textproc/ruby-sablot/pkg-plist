@@ -20,6 +20,7 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sablot/handler/sample.xsl
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sablot/handler/sample_err.xsl
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sablot/handler/sample_mh.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sablot/sample.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/sablot/basic
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/sablot/encoding
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/sablot/handler
@@ -27,4 +28,7 @@
 %%PORTDOCS%%%%RUBY_DOCDIR%%/sablot/README
 %%PORTDOCS%%%%RUBY_DOCDIR%%/sablot/sablot.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/sablot/sablot.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/sablot/ja/sablot.rd.ja
+%%PORTDOCS%%%%RUBY_DOCDIR%%/sablot/ja/sablot_ja.html
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/sablot/ja
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/sablot
