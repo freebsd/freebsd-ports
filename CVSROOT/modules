@@ -3201,6 +3201,7 @@ gtk20-apireference	ports/x11-toolkits/gtk20-apireference
 gtkabale	ports/games/gtkabale
 gtkada		ports/x11-toolkits/gtkada
 gtkam		ports/graphics/gtkam
+gtkatlantic	ports/games/gtkatlantic
 gtkballs	ports/games/gtkballs
 gtkbe		ports/x11-themes/gtkbe
 gtkcairo	ports/graphics/gtkcairo
