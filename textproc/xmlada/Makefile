@@ -18,6 +18,11 @@ COMMENT=	An XML parsing library for Ada 95
 
 BUILD_DEPENDS=	adagcc:${PORTSDIR}/lang/gnat
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500039
+WITHOUT_CPU_CFLAGS=	yes
+.endif
 WRKSRC=		${WRKDIR}/xmlada-0.7.1
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -35,4 +40,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/xml.info ${PREFIX}/${INFO_PATH}/xmlada.info
 	install-info ${PREFIX}/${INFO_PATH}/xmlada.info ${PREFIX}/${INFO_PATH}/dir
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

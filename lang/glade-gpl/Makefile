@@ -18,6 +18,11 @@ COMMENT=	GNU Ada distributed systems annex
 
 BUILD_DEPENDS=	adagcc:${PORTSDIR}/lang/gnat
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500039
+WITHOUT_CPU_CFLAGS=	yes
+.endif
 USE_AUTOMAKE_VER=14
 USE_AUTOCONF_VER=213
 CONFIGURE_ENV=	ADA=adagcc
@@ -31,4 +36,4 @@ pre-configure:
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/gnatdist
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
