@@ -1,13 +1,13 @@
-# New ports collection makefile for:	pygtk
-# Version required:			0.5.9
+# New ports collection makefile for:	py-gtk
+# Version required:			0.5.10
 # Date created:				12/26/1998
 # Whom:					nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.17 1999/01/07 00:29:39 nectar Exp $
+# $Id: Makefile,v 1.18 1999/01/17 17:34:21 nectar Exp $
 #
 
-DISTNAME=	pygtk-0.5.9
-PKGNAME=	py-gtk-0.5.9
+DISTNAME=	pygtk-0.5.10
+PKGNAME=	py-gtk-0.5.10
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	ftp://ftp.daa.com.au/pub/james/python/ \
 		ftp://ftp.gimp.org/pub/gtk/python/ \
@@ -25,13 +25,17 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	GTK_CONFIG=${X11BASE}/bin/gtk11d-config
 MAKE_FLAGS=	OPT="${CFLAGS}"
 
+# NOTE: for packaging to work properly, this port should be
+# built with PREFIX set the same as when the python port
+# was built.
+
 post-install:
-	@${MKDIR} ${PREFIX}/share/examples/pygtk
+	@${MKDIR} ${PREFIX}/share/examples/py-gtk
 	@(cd ${WRKSRC}/examples; tar cf - *) | \
-		(cd ${PREFIX}/share/examples/pygtk; tar xf -)
+		(cd ${PREFIX}/share/examples/py-gtk; tar xf -)
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/pygtk
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/pygtk
+	@${MKDIR} ${PREFIX}/share/doc/py-gtk
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/py-gtk
 .endif
 
 .include <bsd.port.mk>
