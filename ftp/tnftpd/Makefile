@@ -7,6 +7,7 @@
 
 PORTNAME=	tnftpd
 PORTVERSION=	2.0b3
+PORTREVISION=	1
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/tnftp/
 DISTNAME=	${PORTNAME}-2.0-beta3
