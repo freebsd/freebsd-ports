@@ -168,15 +168,19 @@
  #ifdef __alpha__
  #ifdef __linux__
    extern void ieee_set_fp_control(unsigned long);
-@@ -352,6 +365,11 @@
+@@ -352,6 +365,15 @@
      /*fcr &= ~(FPINEX | FPOVFL | FPUNFL | FPZDIV);*/
      setfcr (fcr);
    }
 +#endif
 +#ifdef BSD
 +  /* ignore all possible exceptions */
-+  (void) fpsetmask(~(FP_X_INV | FP_X_OFL | FP_X_UFL | FP_X_DZ | 
++  (void) fpsetmask(~(FP_X_INV | FP_X_OFL | FP_X_UFL | FP_X_DZ |
++#ifdef __alpha__
++		FP_X_IMP));
++#else
 +		FP_X_IMP | FP_X_DNML));
++#endif
  #endif
    new_ctxt = (fractal_context *) calloc (sizeof (fractal_context), 1);
    if (new_ctxt == NULL)
