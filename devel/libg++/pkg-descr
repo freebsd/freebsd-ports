@@ -1,0 +1,9 @@
+This is a libg++ add-on for EGCS releases and later GCC releases.
+It is needed only if your applications depend on
+libg++ and you cannot easily remove the dependency on libg++.
+
+Note that the stand-alone libg++ is no longer needed and this package is no
+longer being maintained.  Because libg++ is no longer being actively
+maintained you should not start new C++ projects using libg++.
+
+-- David O'Brien <obrien@NUXI.com>
