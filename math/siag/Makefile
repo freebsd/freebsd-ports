@@ -3,7 +3,7 @@
 # Date created:		27 Jan 1998
 # Whom:			ports@freebsd.org
 #
-# $Id: Makefile,v 1.9 1998/09/27 20:12:47 steve Exp $
+# $Id: Makefile,v 1.10 1998/10/01 06:12:15 steve Exp $
 #
 
 DISTNAME=	siag-2.80
@@ -13,7 +13,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} tsiag-2.80.tar.gz
 
 MAINTAINER=	ports@freebsd.org
 
-LIB_DEPENDS=	Xaw3d.6:${PORTSDIR}/x11-toolkits/Xaw3d
+LIB_DEPENDS=	Xaw3d.6:${PORTSDIR}/x11-toolkits/Xaw3d \
+		Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/siag
