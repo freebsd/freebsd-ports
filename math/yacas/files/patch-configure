@@ -1,19 +1,32 @@
 --- configure.orig	Fri May 24 06:40:55 2002
 +++ configure	Fri May 24 14:38:40 2002
-@@ -1787,13 +1787,14 @@
+@@ -1966,9 +1966,9 @@
+ fi
+ 
+ if test "$enable_gmp" = "yes" ; then
+-	echo $ac_n "checking for __gmpz_init in -lgmp""... $ac_c" 1>&6
+-echo "configure:1971: checking for __gmpz_init in -lgmp" >&5
+-ac_lib_var=`echo gmp'_'__gmpz_init | sed 'y%./+-%__p_%'`
++	echo $ac_n "checking for mpz_init in -lgmp""... $ac_c" 1>&6
++echo "configure:1971: checking for mpz_init in -lgmp" >&5
++ac_lib_var=`echo gmp'_'mpz_init | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+@@ -1977,13 +1977,14 @@
  cat > conftest.$ac_ext <<EOF
- #line 1789 "configure"
+ #line 1979 "configure"
  #include "confdefs.h"
 +#include <gmp.h>
  /* Override any gcc2 internal prototype to avoid an error.  */
  /* We use char because int might match the return type of a gcc2
      builtin and then its argument prototype would still apply.  */
--char mpz_init();
+-char __gmpz_init();
  
  int main() {
--mpz_init()
+-__gmpz_init()
 +mpz_t integ;
 +mpz_init(integ)
  ; return 0; }
  EOF
- if { (eval echo configure:1800: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+ if { (eval echo configure:1990: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
