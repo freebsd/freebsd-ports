@@ -1,14 +1,17 @@
 # New ports collection makefile for:	nntpcache
-# Version required:	1.0.1
+# Version required:	1.0.5
 # Date created:		6 January 1997
 # Whom:			proff@suburbia.net
 #
-# $Id: Makefile,v 1.2 1997/01/07 06:46:45 asami Exp $
+# $Id: Makefile,v 1.3 1997/02/17 01:47:57 obrien Exp $
 #
 
-DISTNAME=	nntpcache-1.0.1
+DISTNAME=	nntpcache-1.0.5
 CATEGORIES=	news
-MASTER_SITES=	ftp://nntpcache.org/pub/nntpcache/
+MASTER_SITES=	ftp://nntpcache.org/pub/nntpcache/ \
+		ftp://ftp.ntnu.no/pub/unix/news/ \
+		ftp://ftp.nethelp.no/pub/unix/news/ \
+		ftp://suburbia.net/pub/nntpcache/
 
 MAINTAINER=	nntpcache@nntpcache.org
 
@@ -22,6 +25,6 @@ post-configure:
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/nntpcached.sh ${PREFIX}/etc/rc.d
-	@${RM} ${PREFIX}/etc/nntpcache/*.bak
+	@-${RM} ${PREFIX}/etc/nntpcache/*.bak
 
 .include <bsd.port.mk>
