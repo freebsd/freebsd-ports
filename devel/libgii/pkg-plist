@@ -1,5 +1,7 @@
 bin/mhub
 bin/xsendbut
+etc/ggi/filter/keytrans
+etc/ggi/filter/mouse
 etc/ggi/libgii.conf
 include/ggi/errors.h
 include/ggi/events.h
@@ -13,10 +15,14 @@ include/ggi/internal/gii.h
 include/ggi/internal/gii_debug.h
 include/ggi/keyboard.h
 include/ggi/system.h
+lib/ggi/filter/keytrans.la
+lib/ggi/filter/keytrans.so
 lib/ggi/filter/mouse.la
 lib/ggi/filter/mouse.so
 lib/ggi/filter/save.la
 lib/ggi/filter/save.so
+lib/ggi/filter/tcp.la
+lib/ggi/filter/tcp.so
 lib/ggi/input/file.la
 lib/ggi/input/file.so
 lib/ggi/input/linux_mouse.la
@@ -29,6 +35,10 @@ lib/ggi/input/spaceorb.la
 lib/ggi/input/spaceorb.so
 lib/ggi/input/stdin.la
 lib/ggi/input/stdin.so
+lib/ggi/input/tcp.la
+lib/ggi/input/tcp.so
+lib/ggi/input/vgl.la
+lib/ggi/input/vgl.so
 lib/ggi/input/x.la
 lib/ggi/input/x.so
 lib/ggi/input/xwin.la
@@ -44,11 +54,11 @@ share/doc/libgii/NEWS
 share/doc/libgii/README
 share/doc/libgii/env.txt
 share/doc/libgii/inputs.txt
-share/doc/libgii/libgii-api.sgml
 share/examples/libgii/demo.c
 share/examples/libgii/filter.c
 share/examples/libgii/mhub.c
 share/examples/libgii/xsendbut.c
+@dirrm etc/ggi/filter
 @dirrm etc/ggi
 @dirrm include/ggi/input
 @dirrm include/ggi/internal
