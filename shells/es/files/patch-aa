@@ -37,19 +37,6 @@
   
   es	: ${OFILES} initial.o
   	${CC} -o es ${LDFLAGS} ${OFILES} initial.o ${LIBS}
-*** esdebug~	Mon Jul 31 13:54:29 1995
---- esdebug	Mon Jul 31 13:54:45 1995
-***************
-*** 1,4 ****
-! #! /bin/es -p
-  # esdebug: a debugger for es scripts ($Revision: 1.4 $)
-  
-  # TODO
---- 1,4 ----
-! #!/usr/local/bin/es -p
-  # esdebug: a debugger for es scripts ($Revision: 1.4 $)
-  
-  # TODO
 *** prim-sys.c~	Mon Jul 31 16:20:31 1995
 --- prim-sys.c	Mon Jul 31 16:21:25 1995
 ***************
