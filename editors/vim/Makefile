@@ -7,26 +7,27 @@
 #
 
 PORTNAME?=	vim
-PATCHLEVEL=	270
-PORTVERSION=	6.0.${PATCHLEVEL}
+PATCHLEVEL=	6
+PORTVERSION=	6.0.270.${PATCHLEVEL}
 PORTREVISION?=	0
 CATEGORIES?=	editors
-MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
-		ftp://ftp.nuxi.com/pub/vim/unix/ \
-		ftp://ftp.vim.org/pub/vim/unix/  \
-		ftp://ftp.is.co.za/applications/editors/vim/unix/  \
-		ftp://ftp.prz.tu-berlin.de/pub/unix/editors/vim/unix/  \
-		ftp://ftp.mirror.ac.uk/sites/ftp.vim.org/pub/vim/unix/ \
-		ftp://ftp.progsoc.uts.edu.au/pub/vim/unix/
-DISTNAME=	vim-${PORTVERSION:C/\.[0-9]*$//}
+MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unstable/unix/ \
+		ftp://relay.nuxi.com/pub/vim/unstable/unix/ \
+		ftp://ftp.vim.org/pub/vim/unstable/unix/  \
+		ftp://ftp.is.co.za/applications/editors/vim/unstable/unix/  \
+		ftp://ftp.prz.tu-berlin.de/pub/unix/editors/vim/unstable/unix/  \
+		ftp://ftp.mirror.ac.uk/sites/ftp.vim.org/pub/vim/unstable/unix/ \
+		ftp://ftp.progsoc.uts.edu.au/pub/vim/unstable/unix/
+#DISTNAME=	vim-${PORTVERSION:C/\.[0-9]*$//}
+DISTNAME=	vim-6.1a
 
 PATCH_SITES=	${MASTER_SITES:S/unix/patches/}
-PATCHFILES!=	jot -s " " -w ${PORTVERSION:C/\.[0-9]*$//}.%03d  \
+PATCHFILES!=    jot -s " " -w ${PORTVERSION:C/0\.270\.[0-9]*$//}1a.%03d  \
 			${PATCHLEVEL} 1 ${PATCHLEVEL}
 #	bits to remove
-BADPATCHES=	012 027 035 048 053 064 070 073 087 093 106 107 115 116 117 119 121 122 123 125 135 137 138 161 162 164 165 179 186 205 207 227 250 251 254 255 256 260 262 268
+BADPATCHES=	001 004 005
 .for p in ${BADPATCHES}
-PATCHFILES:=	${PATCHFILES:N6.0.${p}}
+PATCHFILES:=	${PATCHFILES:N6.1a.${p}}
 .endfor
 
 MAINTAINER?=	obrien@FreeBSD.org
@@ -42,8 +43,8 @@ WITH_CSCOPE=	yes
 
 USE_BZIP2=	yes
 DIST_SUBDIR=	vim
-WRKSRC=		${WRKDIR}/vim${PORTVERSION:C/\.[0-9]*$//:S/.//g}/src
-PATCH_DIST_ARGS=	-d ${WRKDIR}/${PORTNAME}${PORTVERSION:C/\.[0-9]*$//:S/.//g} --forward --quiet -E ${PATCH_DIST_STRIP}
+WRKSRC=		${WRKDIR}/vim${PORTVERSION:C/0\.270\.[0-9]*$//:S/.//g}1a/src
+PATCH_DIST_ARGS=	-d ${WRKSRC:S/src$//} --forward --quiet -E ${PATCH_DIST_STRIP}
 # consider
 #PATCH_DIST_ARGS=	-t
 MAKE_ARGS+=	CONF_ARGS="--prefix=${PREFIX} --with-tlib=termlib ${CSCOPE_ARG}"
