@@ -16,6 +16,7 @@
     SUBDIR += ircd-hybrid
     SUBDIR += iroffer
     SUBDIR += irssi
+    SUBDIR += liece-dcc
     SUBDIR += liece-emacs20
     SUBDIR += liece-xemacs21-mule
     SUBDIR += kvirc
