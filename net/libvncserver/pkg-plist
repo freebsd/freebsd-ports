@@ -1,0 +1,12 @@
+bin/libvncserver-config
+bin/x11vnc
+include/rfb/rfb.h
+include/rfb/rfbconfig.h
+include/rfb/rfbint.h
+include/rfb/rfbproto.h
+include/rfb/keysym.h
+include/rfb/rfbregion.h
+include/rfb/rfbclient.h
+@dirrm include/rfb
+lib/libvncclient.a
+lib/libvncserver.a
