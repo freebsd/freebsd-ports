@@ -32,7 +32,11 @@ lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/kvirc.pm
 lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/moobot.pm
 lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/mIRC6.pm
 lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/ircII.pm
+lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/blootbot.pm
+lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/dircproxy.pm
+lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/sirc.pm
 lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Logfile.pm
+share/pisg/layout/justgrey.css
 share/pisg/layout/darkgalaxy.css
 share/pisg/layout/softgreen.css
 share/pisg/layout/default.css
