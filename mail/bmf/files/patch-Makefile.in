@@ -1,0 +1,12 @@
+--- Makefile.in.orig	Sat Mar 15 13:35:31 2003
++++ Makefile.in	Sat Mar 15 13:36:05 2003
+@@ -1,7 +1,7 @@
+ # Makefile for bmf
+ 
+-BINDIR=/usr/bin
+-MANDIR=/usr/share/man
++BINDIR=${PREFIX}/bin
++MANDIR=${PREFIX}/man
+ 
+ VERSION=0.9.4
+ 
