@@ -496,6 +496,7 @@
     SUBDIR += php5-xsl
     SUBDIR += pocketreader
     SUBDIR += ppower4
+    SUBDIR += print-n-times
     SUBDIR += prosper
     SUBDIR += py-4suite
     SUBDIR += py-HyperText
