@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	psychostats
-PORTVERSION=	1.7
+PORTVERSION=	1.9.1
 CATEGORIES=	games www
-MASTER_SITES=	ftp://ftp.psychostats.com/psychostats/ \
-		http://www.madeagle.ru/apps/stats/psychostats/linux/1.7/ \
+MASTER_SITES=	ftp://ftp.thaiguy.net/ \
+		http://www.psychostats.com/dl/ \
 		http://www.realityslap.com/downloads/ \
-		http://www.freebooters.org/ps/ \
-		http://www.cool-squad.com/downloads/ \
-		http://www.green-goblin.de/psychostats/
+		http://fratello-server.com/downloads/serveur/ \
+		http://mirrors.voyager.net/games/halflife/stats/psychostats/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	martin@tradex.sk
@@ -22,7 +21,7 @@ COMMENT=	Popular player statistics generator for Half-Life (cs/dod)
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 # files which should be installed with executable perms
-EXECUTABLES=	stats install.pl
+EXECUTABLES=	stats.pl install.pl
 
 post-patch:
 .for files in ${EXECUTABLES}
