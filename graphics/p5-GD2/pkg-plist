@@ -4,6 +4,4 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GD/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GD/GD.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GD/GD.so
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GD/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/libgd/extralibs.ld
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/libgd
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GD
