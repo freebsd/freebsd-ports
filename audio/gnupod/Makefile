@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnupod
-PORTVERSION=	0.92
+PORTVERSION=	0.94
 CATEGORIES=	audio perl5
 MASTER_SITES=	http://blinkenlights.ch/gnupod-dist/stable/
 EXTRACT_SUFX=	.tgz
@@ -17,7 +17,8 @@ COMMENT=	Set of Perl scripts for using an Apple iPod
 BUILD_DEPENDS=	${SITE_PERL}/MP3/Info.pm:${PORTSDIR}/audio/p5-MP3-Info \
 		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
 		${SITE_PERL}/${PERL_ARCH}/Unicode/String.pm:${PORTSDIR}/converters/p5-Unicode-String  \
-		${SITE_PERL}/Getopt/Mixed.pm:${PORTSDIR}/devel/p5-Getopt-Mixed
+		${SITE_PERL}/Getopt/Mixed.pm:${PORTSDIR}/devel/p5-Getopt-Mixed \
+		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
 
 INFO=		gnupod
 
