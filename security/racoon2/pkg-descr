@@ -1,18 +1,21 @@
-racoon speaks IKE (ISAKMP/Oakley) key management protocol, to
-establish security association with other hosts.
+"racoon2" is a system to exchange and to install security parameters
+for the IPsec.
 
-Known issues:
-- Too many use of dynamic memory allocation, which leads to memory leak.
-- Non-threaded implementation.  Simultaneous key negotiation performance
-  should be improved.
-- Cannot negotiate keys for per-socket policy.
-- Cryptic configuration syntax - blame IPsec specification too...
-- Needs more documentation.
+Currently the system supports the following specification:
 
-Design choice, not a bug:
-- racoon negotiate IPsec keys only.  It does not negotiate policy.  Policy must
-  be configured into the kernel separately from racoon.  If you want to
-  support roaming clients, you may need to have a mechanism to put policy
-  for the roaming client after phase 1 finishes.
+	Internet Key Exchange (IKEv2) Protocol
+	draft-ietf-ipsec-ikev2-17.txt
+	(The IKE daemon is not included in the current release due to IPR issue)
+
+	Kerberized Internet Negotiation of Keys (KINK)
+	draft-ietf-kink-kink-06.txt
+
+	PF_KEY Key Management API, Version 2
+	RFC2367
+	
+The following protocols will be supported soon.
+
+	The Internet Key Exchange (IKE)
+	RFC2409
 
 WWW: http://www.kame.net/
