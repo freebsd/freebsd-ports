@@ -3,7 +3,7 @@
 # Date created:				11th Feb 1995
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.26 1998/06/16 00:50:42 hosokawa Exp $
+# $Id: Makefile,v 1.27 1998/08/28 02:07:45 hosokawa Exp $
 #
 
 DISTNAME=	samba-1.9.18p10
@@ -12,6 +12,8 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://samba.anu.edu.au/pub/samba/
 
 MAINTAINER=	hosokawa@jp.FreeBSD.ORG
+
+Y2K=		http://us1.samba.org/samba/docs/sambay2k.html
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
 MAN1=		smbstatus.1 smbclient.1 smbrun.1 smbtar.1 testparm.1 testprns.1 make_smbcodepage.1
