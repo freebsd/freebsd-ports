@@ -1,6 +1,6 @@
 lib/perl5/site_perl/%%PERL_VER%%/Expect.pod
 lib/perl5/site_perl/%%PERL_VER%%/Expect.pm
+lib/perl5/site_perl/%%PERL_VER%%/Expect_FAQ.pod
 lib/perl5/site_perl/%%PERL_VER%%/Expect_intro.pod
-lib/perl5/site_perl/%%PERL_VER%%/term-filter.pl
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Expect/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Expect
