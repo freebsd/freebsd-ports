@@ -85,7 +85,6 @@ include/v/vxdc.h
 include/v/vxutil.h
 include/v/vynreply.h
 lib/libV.a
-@exec ranlib lib/libV.a
 share/doc/v/Makefile
 share/doc/v/cxxstyle.tex
 share/doc/v/fig/boxlabel.eps
@@ -261,4 +260,3 @@ share/doc/v/wvtools.tex
 @dirrm share/doc/v/fig
 @dirrm share/doc/v/html
 @dirrm share/doc/v
-@exec ranlib lib/libV.a

@@ -1,5 +1,4 @@
 lib/cii/1/libcii.a
-@exec ranlib %D/%F
 lib/cii/1/include/ap.h
 lib/cii/1/include/arena.h
 lib/cii/1/include/arith.h
