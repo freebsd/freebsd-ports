@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	doxygen
-PORTVERSION=	1.2.11
+PORTVERSION=	1.2.12
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/
 EXTRACT_SUFX=	.src.tar.gz
@@ -15,13 +15,17 @@ MAINTAINER=	bsdport@ddm.wox.org
 
 .ifndef NOPORTDOCS
 BUILD_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
+.ifdef HAVE_LATEX
+BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX \
+		dvipdfm:${PORTSDIR}/print/dvipdfm
+.endif
 .endif
 
 USE_QT_VER=	2
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
-QT_NONSTANDARD=	yes	# non-standard configure arguements
+QT_NONSTANDARD=	yes	# non-standard configure arguments
 CONFIGURE_ARGS+=--prefix ${PREFIX} --perl ${PERL} --make ${GMAKE} \
 		--with-doxywizard
 
