@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnucash-docs
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.1
 CATEGORIES=	finance gnome
 MASTER_SITES=	http://www.gnucash.org/pub/gnucash/sources/stable/ \
 		ftp://ftp.gnucash.org/pub/gnucash/sources/stable/ \
