@@ -17,7 +17,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_MOTIF=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -fpermissive" \
 		MOTIFLIB="${MOTIFLIB}" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-libplotter --enable-libxmi --with-motif
