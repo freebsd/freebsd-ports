@@ -6,18 +6,24 @@
 # $FreeBSD$
 #
 
+SNAPDATE=	2002-03-15
+SNAPVER=	${SNAPDATE:S/-//g}
+
 PORTNAME=	gdb
-PORTVERSION=	5.1.1
+PORTVERSION=	5.2
+PORTREVISION=	${SNAPVER}
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
-MASTER_SITE_SUBDIR=	gdb/releases
+#MASTER_SITE_SUBDIR=	gdb/releases
+MASTER_SITE_SUBDIR=	gdb/snapshots/branch
+DISTNAME=	gdb+dejagnu-5.1.90_${SNAPVER}
 
 MAINTAINER=	obrien@FreeBSD.org
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--program-suffix=51
+CONFIGURE_ARGS=	--program-suffix=52
 
 pre-configure:
 	cd ${WRKSRC} ; ${RM} -rf dejagnu expect sim tcl texinfo
@@ -25,5 +31,10 @@ pre-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gdb/gdb \
 		${PREFIX}/bin/${PORTNAME}${PORTVERSION:S/.//g}
+
+cklatest:
+	ncftpls \
+	    ftp://mirrors.rcn.net/mirrors/sources.redhat.com/${MASTER_SITE_SUBDIR}/  \
+	    | grep gdb+dejagnu-
 
 .include <bsd.port.mk>
