@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pwman
-PORTVERSION=	0.2.1
+PORTVERSION=	0.3.0
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,8 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	anders@FreeBSD.org
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
-BUILD_DEPENDS=	gpgme-config:${PORTSDIR}/security/gpgme
-RUN_DEPENDS=	gpgme-config:${PORTSDIR}/security/gpgme
+RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 
 GNU_CONFIGURE=	yes
 
