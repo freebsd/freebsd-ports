@@ -58,6 +58,7 @@
     SUBDIR += rdate
     SUBDIR += rtty
     SUBDIR += roottail
+    SUBDIR += sarah
     SUBDIR += sdd
     SUBDIR += setquota
     SUBDIR += skill
