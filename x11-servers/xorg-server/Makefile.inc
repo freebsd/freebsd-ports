@@ -18,6 +18,7 @@ USE_X_PREFIX?=	no
 PREFIX?=	${X11BASE}
 MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
 MTREE_FILE=	${PORTSDIR}/x11-servers/xorg-server/files/BSD.x11-xorg.dist
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude */CVS/*
 
 USE_IMAKE=	YES
 .if defined(XMAN_DIRS)
