@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gsl
-PORTVERSION=	0.9
+PORTVERSION=	0.9.2
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,10 +20,11 @@ MAINTAINER=	ports@FreeBSD.org
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
-MAN1=		gsl-config.1
+MAN1=		gsl-config.1 gsl-randist.1 gsl-histogram.1
 MAN3=		gsl.3
 
 GSLREF=		gsl-ref.ps.gz
+IGNOREFILES=	${GSLREF}
 
 post-install:
 .if !defined(NOPORTDOCS)

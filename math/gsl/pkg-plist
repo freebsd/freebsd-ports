@@ -131,6 +131,7 @@ include/gsl/gsl_sf_gamma.h
 include/gsl/gsl_sf_gegenbauer.h
 include/gsl/gsl_sf_hyperg.h
 include/gsl/gsl_sf_laguerre.h
+include/gsl/gsl_sf_lambert.h
 include/gsl/gsl_sf_legendre.h
 include/gsl/gsl_sf_log.h
 include/gsl/gsl_sf_pow_int.h
@@ -222,6 +223,7 @@ info/gsl-ref.info-18
 info/gsl-ref.info-19
 info/gsl-ref.info-20
 info/gsl-ref.info-21
+info/gsl-ref.info-22
 @exec install-info %D/info/gsl-ref.info %D/info/dir
 lib/libgsl.a
 lib/libgsl.la
