@@ -1,0 +1,37 @@
+Index: gkrellmd.1
+diff -u gkrellmd.1.orig gkrellmd.1
+--- gkrellmd.1.orig	Mon Apr 12 12:01:47 2004
++++ gkrellmd.1	Tue Apr 13 17:14:02 2004
+@@ -1,4 +1,4 @@
+-.TH gkrellmd 1 "June 7, 2003" "GNU/Linux" "User's Manual"
++.TH gkrellmd 1 "June 7, 2003" "FreeBSD" "User's Manual"
+ 
+ .SH "NAME"
+ gkrellmd \- The GNU Krell Monitors Server
+@@ -242,7 +242,7 @@
+ 
+ .SH "FILES"
+ .TP
+-.I /etc/gkrellmd.conf
++.I /usr/local/etc/gkrellmd.conf
+ System server config which is read first.
+ The config file may contain lines similar to the command line args.
+ For example:
+@@ -281,16 +281,13 @@
+ 
+ .RE
+ .TP
+-.I /usr/local/etc/gkrellmd.conf
+-Local server config file which is read second.
+-.TP
+ .I ~/.gkrellmd.conf
+ User server config file which is read last.
+ .TP
+ .I ~/.gkrellm2/plugins-gkrellmd
+ User server plugin directory.
+ .TP
+-.I /usr/lib/gkrellm2/plugins-gkrellmd
++.I /usr/local/libexec/gkrellm2/plugins-gkrellmd
+ System wide server plugin directory.
+ .TP
+ .I /usr/local/lib/gkrellm2/plugins-gkrellmd
