@@ -1,0 +1,10 @@
+--- configure	Mon Jun 28 22:13:05 2004
++++ configure	Sat Jul 17 10:12:27 2004
+@@ -4554,7 +4554,6 @@
+ 	LIBS_LIBGADU="$LIBS_LIBGADU $OPENSSL_LIBS"
+ 	CFLAGS="$CFLAGS $OPENSSL_INCLUDES"
+ 	CFLAGS_LIBGADU="$CFLAGS_LIBGADU $OPENSSL_INCLUDES"
+-	PC_REQUIRES="$PC_REQUIRES openssl"
+ 
+ 	sed 's/#undef __GG_LIBGADU_HAVE_OPENSSL/#define __GG_LIBGADU_HAVE_OPENSSL/' < lib/libgadu-config.h > lib/libgadu-config.h-
+ 	mv -f lib/libgadu-config.h- lib/libgadu-config.h

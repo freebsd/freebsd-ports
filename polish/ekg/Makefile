@@ -6,6 +6,7 @@
 
 PORTNAME=		ekg
 PORTVERSION=		1.5
+PORTREVISION=		1
 PORTEPOCH=		1
 CATEGORIES=		polish net
 MASTER_SITES=		http://dev.null.pl/ekg/archive/
