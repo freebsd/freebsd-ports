@@ -1,0 +1,5 @@
+Represent XML data in a tree structure. Allows for the building
+of XML data structures using a tree representation, without the
+need for an extension like DOMXML.
+
+WWW: http://pear.php.net/package-info.php?package=XML_Tree
