@@ -1,0 +1,20 @@
+--- video.cc.orig	Sun Dec 26 17:14:12 1999
++++ video.cc	Sun Dec 26 17:21:33 1999
+@@ -99,7 +99,7 @@
+ modify [eax ebx ecx edx esi edi];
+ 
+ #else
+-#ifdef i386
++#if defined(i386) && !defined(__FreeBSD__)
+ 
+ inline void
+ comb1( uchar* c1, uchar* b1, uchar* c, uchar* b, int n )
+@@ -314,7 +314,7 @@
+   if( vidStartTime == -1 ) {
+     vidStartTime = sysTimer();
+   }
+-  static time = 0;
++  static int time = 0;
+   if( sysDebug && vidFrameCount%3 ) {
+     int frame_time = (sysTimer()-time);
+     int fps = frame_time ? 3*sysTimerRes / frame_time : 0;

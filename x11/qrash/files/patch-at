@@ -1,0 +1,11 @@
+--- dlines.cc.orig	Sun Dec 26 17:31:31 1999
++++ dlines.cc	Sun Dec 26 17:31:41 1999
+@@ -24,7 +24,7 @@
+ #include "smooth.h"
+ #include "image.h"
+ 
+-const MIN_LINE_LIFE = 2*sysTimerRes,
++const int MIN_LINE_LIFE = 2*sysTimerRes,
+       MAX_LINE_LIFE = 4*sysTimerRes,
+       MAX_LINES = 300;
+ 

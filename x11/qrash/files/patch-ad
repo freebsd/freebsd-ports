@@ -1,0 +1,10 @@
+--- mikmod/munitrk.c.orig	Thu Sep 11 13:24:30 1997
++++ mikmod/munitrk.c	Sun Oct 24 04:32:28 1999
+@@ -10,7 +10,6 @@
+ All systems - all compilers
+ 
+ */
+-#include <malloc.h>
+ #include <stdlib.h>
+ #include <string.h>
+ #include "mikmod.h"

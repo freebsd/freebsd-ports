@@ -34,6 +34,7 @@
     SUBDIR += offix-clipboard
     SUBDIR += offix-execute
     SUBDIR += props
+    SUBDIR += qrash
     SUBDIR += rxvt
     SUBDIR += sxpc
     SUBDIR += tkgoodstuff
