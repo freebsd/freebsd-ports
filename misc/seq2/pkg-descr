@@ -1,0 +1,5 @@
+seq2 is a clone of the unix program called "seq" with
+some additional options, such as specifying a delay after
+each number, or specifying your own text to prepend each
+number.  Features like for, while, and executing programs
+are in development.

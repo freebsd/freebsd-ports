@@ -317,6 +317,7 @@
     SUBDIR += salias
     SUBDIR += screen
     SUBDIR += seizedesktop
+    SUBDIR += seq2
     SUBDIR += sh-utils
     SUBDIR += shared-mime-info
     SUBDIR += shuffle
