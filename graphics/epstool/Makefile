@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	epstool
-PORTVERSION=	3.04
-PORTREVISION=	1
+PORTVERSION=	3.05
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/ghostgum/
 
@@ -20,10 +19,13 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKEFILE=	makefile
 MAKE_ARGS=	MAKE="${GMAKE}" CC="${CC}" CCAUX="${CC}" CDEBUG="${CFLAGS}" \
-		CLINK="${CC} ${LDFLAGS}" LINK="${CC} ${LDFLAGS}" EPSLIB=""
+		CLINK="${CC} ${LDFLAGS}" LINK="${CC} ${LDFLAGS}" EPSLIB="" \
+		GTKCFLAGS="" GTKLIBS="" LIBPNGCFLAGS="" LIBPNGLIBS=""
 ALL_TARGET=	${PORTNAME}
 
 MAN1=		epstool.1
+PORTDOCS=	epstool.htm gsview.css
+PLIST_FILES=	bin/epstool
 
 pre-everything::
 .if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
