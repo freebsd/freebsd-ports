@@ -1,0 +1,13 @@
+  RecDescent incrementally generates top-down recursive-descent text
+  parsers from simple yacc-like grammar specifications. It provides:
+
+        * Regular expressions or literal strings as terminals (tokens)
+        * Multiple (non-contiguous) productions for any rule
+        * Repeated, optional and alternate subrules within productions
+        * Late-bound (run-time dispatched) subrules
+        * Full access to Perl within actions specified as part of the grammar
+        * Simple automated error reporting during generation and parsing
+        * The ability to commit to, uncommit to, or reject particular
+          productions during a parse
+        * Incremental extension of the parsing grammar (even during a parse)
+        * The ability to retrieve the generated parsing code.
