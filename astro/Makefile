@@ -56,6 +56,7 @@
     SUBDIR += roadmap
     SUBDIR += saoimage
     SUBDIR += sattrack
+    SUBDIR += seti-applet
     SUBDIR += setiathome
     SUBDIR += sky2000
     SUBDIR += spacechart

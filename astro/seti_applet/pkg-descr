@@ -1,0 +1,9 @@
+This applet displays the progress of the seti@home client in a
+panel applet. Currently can display the percentage complete, the
+best spike, best gaussian, units completed and total CPU time spent
+running the seti@home client.
+
+Once installed, this applet should appear under Monitors->Seti Applet
+in the 'Add Applet' menu on the panel.
+
+WWW: http://seti-applet.sourceforge.net/

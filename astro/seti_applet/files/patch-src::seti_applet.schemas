@@ -1,0 +1,29 @@
+--- src/seti_applet.schemas.orig	Wed Mar  5 06:01:07 2003
++++ src/seti_applet.schemas	Wed Mar  3 13:16:47 2004
+@@ -5,7 +5,7 @@
+ 	<key>/schemas/apps/seti_applet/prefs/seti_run_dir</key>
+ 	<owner>seti-applet-2</owner>
+ 	<type>string</type>
+-	<default>/usr/local/seti</default>
++	<default>/var/db/setiathome</default>
+ 	<locale name="C">
+ 		<short>Directory in which the seti@home client is running.</short>
+ 		<long>The directory in which the seti@home client is running. This is not necessarily the same directory as the seti@home executable.</long>
+@@ -127,7 +127,7 @@
+ 	<key>/schemas/apps/seti_applet/prefs/separate_exe_dir</key>
+ 	<owner>seti-applet-2</owner>
+ 	<type>bool</type>
+-	<default>false</default>
++	<default>true</default>
+ 	<locale name="C">
+ 		<short>Whether or not the seti@home executable is in a different dir.</short>
+ 		<long>Whether or not the seti@home executable is in a different dir. You can use this if the the seti@home executable directory is not the same as the run directory.</long>
+@@ -147,7 +147,7 @@
+ 	<key>/schemas/apps/seti_applet/prefs/seti_exe_dir</key>
+ 	<owner>seti-applet-2</owner>
+ 	<type>string</type>
+-	<default></default>
++	<default>%%LOCALBASE%%/sbin</default>
+ 	<locale name="C">
+ 		<short>The directory where the seti@home executable is.</short>
+ 		<long>The directory where the seti@home executable is. You can use this if the the seti@home executable directory is not the same as the run directory.</long>
