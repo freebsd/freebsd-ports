@@ -24,6 +24,7 @@
     SUBDIR += bin86
     SUBDIR += binutils-m68k
     SUBDIR += bison
+    SUBDIR += boaconstructor
     SUBDIR += boehm-gc
     SUBDIR += bonobo
     SUBDIR += bugbuddy

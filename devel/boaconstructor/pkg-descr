@@ -1,0 +1,7 @@
+Boa Constructor is a cross platform RAD GUI Building IDE. It offers visual
+frame creation and manipulation, an object inspector, many views on the source
+like inheritance hierarchies, object methods and properties, html generated
+from documentation strings, a debugger and integrated help. It is written in
+Python and uses the wxPython toolkit which wraps wxWindows.
+
+WWW: http://boa-constructor.sourceforge.net/
