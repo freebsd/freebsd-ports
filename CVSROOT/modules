@@ -8280,6 +8280,7 @@ relay		ports/net/relay
 relay-ctrl	ports/mail/relay-ctrl
 relaydb		ports/mail/relaydb
 remarp		ports/net-mgmt/remarp
+remind		ports/deskutils/remind
 renamedlgplugins	ports/misc/renamedlgplugins
 renderext	ports/x11/renderext
 renderpark	ports/graphics/renderpark
