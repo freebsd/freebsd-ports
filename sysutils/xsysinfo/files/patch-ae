@@ -1,8 +1,26 @@
---- sysinfo.c.orig	Sat Oct 10 13:43:22 1998
-+++ sysinfo.c	Sat Oct 10 13:43:40 1998
-@@ -364,7 +364,7 @@
- #if (__FreeBSD_version >= 300003) /* ?? */
- 	mib[1] = MNT_EXPORTED;
+--- sysinfo.c.orig	Tue Oct  6 16:21:18 1998
++++ sysinfo.c	Tue Oct 13 09:47:49 1998
+@@ -238,6 +238,9 @@
+ 	int pkt_in_out;
+ 	int total_xfers=0;
+ 	int mib[3], size;
++#if (__FreeBSD_version >= 300004)
++    struct vfsconf vfc;
++#endif
+ 
+ 	/* NPROCS=0, CPU */
+   if (cpuflag) {
+@@ -361,10 +364,13 @@
+ #else
+ 	mib[0] = CTL_VFS;
+ #endif
+-#if (__FreeBSD_version >= 300003) /* ?? */
+-	mib[1] = MNT_EXPORTED;
++#if (__FreeBSD_version >= 300004)
++    if (getvfsbyname("nfs", &vfc) < 0)
++	/* no NFS in the kernel */
++	goto nfs_out;
++    mib[1] = vfc.vfc_typenum;
  #else
 -	mib[1] = MNT_NFS;
 +	mib[1] = MOUNT_NFS;
