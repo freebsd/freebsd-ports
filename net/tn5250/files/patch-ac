@@ -1,0 +1,30 @@
+--- configure.in.orig	Wed Nov  1 04:09:17 2000
++++ configure.in	Sat Dec 16 14:58:58 2000
+@@ -56,6 +56,7 @@
+ if test "$with_slang" != "no"
+ then
+ 	USE_SLANG=1
++	AC_DEFINE_UNQUOTED(USE_CURSES,1)
+ 	AC_DEFINE_UNQUOTED(USE_SLANG,1)
+ else
+ 	USE_CURSES=1
+@@ -65,7 +66,7 @@
+ USE_CURSES=1
+ AC_DEFINE_UNQUOTED(USE_CURSES,1)
+ ])
+-if test "$USE_CURSES" = "1"
++if test "$USE_CURSES" = "1" -o "$USE_SLANG" = "1"
+ then
+ 	AC_CHECK_LIB(ncurses, initscr)
+ 	if test "$ac_cv_lib_ncurses_initscr" != "yes"
+@@ -103,7 +104,9 @@
+ 		AC_DEFINE_UNQUOTED(attr_t,int)
+ 	fi
+ 	AC_MSG_RESULT($HAVE_ATTR_T)
+-else
++fi
++if test "$USE_SLANG" = "1"
++then
+ 	AC_CHECK_LIB(slang, SLang_init_tty)
+ 	if test "$ac_cv_lib_slang_SLang_init_tty" != "yes"
+ 	then
