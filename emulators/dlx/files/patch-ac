@@ -1,6 +1,12 @@
 --- dlxsim/tcl/Makefile.orig	Tue Dec 18 12:24:38 1990
-+++ dlxsim/tcl/Makefile	Sat Dec 26 13:11:18 1998
-@@ -13,9 +13,8 @@
++++ dlxsim/tcl/Makefile	Fri Mar  9 22:26:53 2001
+@@ -8,14 +8,13 @@
+ #LIBS = -lBSD
+ 
+ #CFLAGS = -I. -DTCL_VERSION=\"2.1\" -DSUN
+-CFLAGS = -I. -DTCL_VERSION=\"2.1\"
++CFLAGS += -I. -DTCL_VERSION=\"2.1\"
+ 
  OBJS = glob.o tclBasic.o tclCmdAH.o tclCmdIZ.o tclExpr.o \
  	tclGlob.o tclProc.o tclUtil.o
  
