@@ -3,7 +3,7 @@
 # Date created:		28 March 1997
 # Whom:			gena
 #
-# $Id: Makefile,v 1.17 1998/08/05 09:31:50 asami Exp $
+# $Id: Makefile,v 1.18 1998/08/07 22:56:48 asami Exp $
 #
 
 DISTNAME=	bxform-088
@@ -15,6 +15,8 @@ MASTER_SITES=	ftp://bragg.phys.uwm.edu/pub/xforms/freeBSD/ \
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gena@NetVision.net.il
+
+BROKEN_ELF=	a.out library only
 
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/xforms
