@@ -32,6 +32,30 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5c7bb4dd-6a56-11d9-97ec-000c6e8f12ef">
+    <topic>konversation  --  shell script command injection</topic>
+    <affects>
+      <package>
+	<name>konversation</name>
+	<range><lt>0.15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Konversation comes with Perl scripts that do not properly escape
+	  shell characters on executing a script. This makes it possible
+	  to attack Konversation with shell script command injection.</p>
+      </body>
+    </description>
+    <references>
+      <mlist msgid="200501191739.56585.wouter@coekaerts.be">http://marc.theaimsgroup.com/?l=full-disclosure&amp;m=110616016509114</mlist>
+    </references>
+    <dates>
+      <discovery>2005-01-19</discovery>
+      <entry>2005-01-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7a921e9e-68b1-11d9-9e1e-c296ac722cb3">
     <topic>squid -- no sanity check of usernames in squid_ldap_auth</topic>
     <affects>
