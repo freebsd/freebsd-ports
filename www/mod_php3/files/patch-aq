@@ -1,6 +1,17 @@
---- configure.orig	Fri Feb 25 21:49:48 2000
-+++ configure	Tue Feb 29 22:29:05 2000
-@@ -8961,7 +8945,7 @@
+--- configure.orig	Wed Oct 11 22:24:41 2000
++++ configure	Thu Oct 19 00:49:26 2000
+@@ -5157,8 +5157,8 @@
+     fi
+ 	if test "$withval" != "no" && test "$withval" != "yes"; then
+ 		IMAP_DIR=$withval
+-		if test -f $IMAP_DIR/include/imap/mail.h; then
+-			IMAP_INC_DIR=$IMAP_DIR/include/imap
++		if test -f $IMAP_DIR/include/c-client/mail.h; then
++			IMAP_INC_DIR=$IMAP_DIR/include/c-client
+ 		else
+ 			IMAP_INC_DIR=$withval/include
+ 		fi
+@@ -9231,7 +9231,7 @@
     	fi
      SYBASE_CT_INCLUDE=-I$SYBASE_CT_INCDIR
      SYBASE_CT_LFLAGS="-L$SYBASE_CT_LIBDIR"
@@ -9,7 +20,7 @@
      old_LDFLAGS=$LDFLAGS
      LDFLAGS="$LDFLAGS -L$SYBASE_CT_LIBDIR"
      echo $ac_n "checking for netg_errstr in -ltcl""... $ac_c" 1>&6
-@@ -9002,7 +8986,6 @@
+@@ -9272,7 +9272,6 @@
     SYBASE_CT_LIBS="$SYBASE_CT_LIBS -ltcl" 
  else
    echo "$ac_t""no" 1>&6
