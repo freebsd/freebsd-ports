@@ -24,7 +24,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sentinel ${PREFIX}/sbin
 	@${MKDIR} ${PREFIX}/var/sentinel
-	${CHOWN} smmsp.smmsp ${PREFIX}/var/sentinel
+	${CHOWN} smmsp:smmsp ${PREFIX}/var/sentinel
 	${INSTALL_SCRIPT} ${FILESDIR}/000.sentinel.sh ${PREFIX}/etc/rc.d
 	${INSTALL_DATA} ${WRKSRC}/sentinel.cf.SAMPLE ${PREFIX}/etc/sentinel.cf.dist
 
