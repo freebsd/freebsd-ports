@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pine
-PORTVERSION=	4.58
+PORTVERSION=	4.60
 PORTREVISION=	0
 CATEGORIES=	chinese mail news
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/
@@ -38,6 +38,7 @@ pre-fetch:
 
 post-patch:
 	for i in ${WRKSRC}/doc/pine.1 \
+		${WRKSRC}/pine/filter.c \
 		${WRKSRC}/pine/init.c \
 		${WRKSRC}/pine/pine.hlp \
 		${WRKSRC}/pine/mailcap.c \
