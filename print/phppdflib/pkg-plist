@@ -1,5 +1,3 @@
-www/data/phppdflib/COPYING
-www/data/phppdflib/chart.class.php
 www/data/phppdflib/doc/TARGET.html
 www/data/phppdflib/doc/banner.html
 www/data/phppdflib/doc/basics.html
@@ -15,6 +13,7 @@ www/data/phppdflib/doc/function.chart.clearchart.html
 www/data/phppdflib/doc/function.chart.place_chart.html
 www/data/phppdflib/doc/function.chart.setcolor.html
 www/data/phppdflib/doc/function.draw_circle.html
+www/data/phppdflib/doc/import.html
 www/data/phppdflib/doc/function.draw_line.html
 www/data/phppdflib/doc/function.draw_one_paragraph.html
 www/data/phppdflib/doc/function.draw_paragraph.html
@@ -28,6 +27,7 @@ www/data/phppdflib/doc/function.get_color.html
 www/data/phppdflib/doc/function.get_image_size.html
 www/data/phppdflib/doc/function.image_place.html
 www/data/phppdflib/doc/function.image_raw_embed.html
+www/data/phppdflib/doc/function.import.append.html
 www/data/phppdflib/doc/function.jfif_embed.html
 www/data/phppdflib/doc/function.move_page_before.html
 www/data/phppdflib/doc/function.new_page.html
@@ -41,15 +41,15 @@ www/data/phppdflib/doc/function.strlen.html
 www/data/phppdflib/doc/function.swap_pages.html
 www/data/phppdflib/doc/function.template.circle.html
 www/data/phppdflib/doc/function.template.create.html
+www/data/phppdflib/doc/function.template.line.html
+www/data/phppdflib/doc/function.template.size.html
 www/data/phppdflib/doc/function.template.field.html
 www/data/phppdflib/doc/function.template.ifield.html
 www/data/phppdflib/doc/function.template.image.html
-www/data/phppdflib/doc/function.template.line.html
 www/data/phppdflib/doc/function.template.paragraph.html
 www/data/phppdflib/doc/function.template.pfield.html
 www/data/phppdflib/doc/function.template.place.html
 www/data/phppdflib/doc/function.template.rectangle.html
-www/data/phppdflib/doc/function.template.size.html
 www/data/phppdflib/doc/function.template.text.html
 www/data/phppdflib/doc/function.word_wrap.html
 www/data/phppdflib/doc/function.wrap_line.html
@@ -62,7 +62,15 @@ www/data/phppdflib/doc/powerby.jpg
 www/data/phppdflib/doc/powerby.png
 www/data/phppdflib/doc/ptlogo.jpg
 www/data/phppdflib/doc/roadmap.html
+www/data/phppdflib/COPYING
+www/data/phppdflib/chart.class.php
+www/data/phppdflib/import.class.php
+www/data/phppdflib/packer.class.php
+www/data/phppdflib/phppdflib.class.php
+www/data/phppdflib/strlen.inc.php
+www/data/phppdflib/template.class.php
 www/data/phppdflib/examples/charts.php
+www/data/phppdflib/examples/example-import.php
 www/data/phppdflib/examples/example-packer.php
 www/data/phppdflib/examples/example-wrap.php
 www/data/phppdflib/examples/example.php
@@ -70,10 +78,6 @@ www/data/phppdflib/examples/extension.class.php
 www/data/phppdflib/examples/showoff.php
 www/data/phppdflib/examples/template.php
 www/data/phppdflib/examples/text.txt
-www/data/phppdflib/packer.class.php
-www/data/phppdflib/phppdflib.class.php
-www/data/phppdflib/strlen.inc.php
-www/data/phppdflib/template.class.php
 @dirrm www/data/phppdflib/examples
 @dirrm www/data/phppdflib/doc
 @dirrm www/data/phppdflib
