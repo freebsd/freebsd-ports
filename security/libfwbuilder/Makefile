@@ -14,7 +14,8 @@ MASTER_SITE_SUBDIR=	fwbuilder
 MAINTAINER=	devnull@uptsoft.com
 COMMENT=	Firewall Builder API
 
-BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
+BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf \
+		automake:${PORTSDIR}/devel/automake
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 		xslt.1:${PORTSDIR}/textproc/libxslt \
 		netsnmp.5:${PORTSDIR}/net/net-snmp \
