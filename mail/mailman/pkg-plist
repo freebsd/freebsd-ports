@@ -18,16 +18,26 @@ mailman/Mailman/Bouncers/Caiwireless.py
 mailman/Mailman/Bouncers/Caiwireless.pyc
 mailman/Mailman/Bouncers/Catchall.py
 mailman/Mailman/Bouncers/Catchall.pyc
+mailman/Mailman/Bouncers/Compuserve.py
+mailman/Mailman/Bouncers/Compuserve.pyc
 mailman/Mailman/Bouncers/DSN.py
 mailman/Mailman/Bouncers/DSN.pyc
 mailman/Mailman/Bouncers/Exim.py
 mailman/Mailman/Bouncers/Exim.pyc
+mailman/Mailman/Bouncers/GroupWise.py
+mailman/Mailman/Bouncers/GroupWise.pyc
+mailman/Mailman/Bouncers/Microsoft.py
+mailman/Mailman/Bouncers/Microsoft.pyc
 mailman/Mailman/Bouncers/Netscape.py
 mailman/Mailman/Bouncers/Netscape.pyc
 mailman/Mailman/Bouncers/Postfix.py
 mailman/Mailman/Bouncers/Postfix.pyc
 mailman/Mailman/Bouncers/Qmail.py
 mailman/Mailman/Bouncers/Qmail.pyc
+mailman/Mailman/Bouncers/SMTP32.py
+mailman/Mailman/Bouncers/SMTP32.pyc
+mailman/Mailman/Bouncers/SimpleMatch.py
+mailman/Mailman/Bouncers/SimpleMatch.pyc
 mailman/Mailman/Bouncers/Smail.py
 mailman/Mailman/Bouncers/Smail.pyc
 mailman/Mailman/Bouncers/Yahoo.py
@@ -66,6 +76,8 @@ mailman/Mailman/Deliverer.py
 mailman/Mailman/Deliverer.pyc
 mailman/Mailman/Digester.py
 mailman/Mailman/Digester.pyc
+mailman/Mailman/EncWord.py
+mailman/Mailman/EncWord.pyc
 mailman/Mailman/Errors.py
 mailman/Mailman/Errors.pyc
 mailman/Mailman/GatewayManager.py
@@ -208,6 +220,10 @@ mailman/cron/senddigests
 mailman/data/last_mailman_version
 mailman/data/pending_subscriptions.db
 mailman/filters/bowa-strip
+mailman/icons/PythonPowered.png
+mailman/icons/gnu-head-tiny.jpg
+mailman/icons/mailman-large.jpg
+mailman/icons/mailman.jpg
 mailman/mail/wrapper
 mailman/scripts/answer_majordomo_mail
 mailman/scripts/driver
@@ -225,6 +241,7 @@ mailman/templates/checkdbs.txt
 mailman/templates/convert.txt
 mailman/templates/cronpass.txt
 mailman/templates/handle_opts.html
+mailman/templates/headfoot.html
 mailman/templates/help.txt
 mailman/templates/listinfo.html
 mailman/templates/masthead.txt
@@ -257,6 +274,7 @@ mailman/templates/verify.txt
 @dirrm mailman/cron
 @dirrm mailman/data
 @dirrm mailman/filters
+@dirrm mailman/icons
 @dirrm mailman/lists
 @dirrm mailman/locks
 @dirrm mailman/logs

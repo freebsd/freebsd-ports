@@ -6,26 +6,25 @@
 #
 
 PORTNAME=	mailman
-PORTVERSION=	2.0b5
-PORTREVISION=	2
+PORTVERSION=	2.0b6
 CATEGORIES=	mail
 MASTER_SITES=   http://download.sourceforge.net/mailman/
-DISTNAME=       mailman-2.0beta5
+DISTNAME=       mailman-2.0beta6
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS+=	python:${PORTSDIR}/lang/python
-RUN_DEPENDS+=	$(LOCALBASE)/sbin/httpd:${PORTSDIR}/www/apache13\
+RUN_DEPENDS+=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13  \
 		python:${PORTSDIR}/lang/python
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --with-mail-gid=daemon --with-cgi-gid=nogroup
 
-UNAME=		mailman
-UID=		89
+UNAME?=		mailman
+UID?=		89
 
-MAILMANDIR=	${PREFIX}/mailman
+MAILMANDIR?=	${PREFIX}/mailman
 
 pre-configure:
 	# Add the username, uid, group amd gid
@@ -39,7 +38,7 @@ pre-configure:
 post-install:
 	@${CHOWN} -R :${UNAME} ${MAILMANDIR}
 	@echo All related binaries have been installed in ${MAILMANDIR}/bin
-	@echo See ${WRKDIR}/INSTALL for installation instructions \($$prefix == ${MAILMANDIR}\).
+	@echo See ${WRKDIR}/INSTALL for installation instructions \(prefix == ${MAILMANDIR}\).
 	@echo Sample entry for httpd.conf for Apache:
 	@echo "  ScriptAlias /mailman/ ${MAILMANDIR}/cgi-bin/"
 	@echo '  <Directory ${MAILMANDIR}/cgi-bin/>'
