@@ -7,7 +7,7 @@
 
 PORTNAME=	doc++
 PORTVERSION=	3.4.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	docpp
@@ -15,18 +15,18 @@ MASTER_SITE_SUBDIR=	docpp
 MAINTAINER=	Ruslan@Shevchenko.Kiev.UA
 COMMENT=	Javadoc style C++ documentatation system
 
-.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
-GSPORT?=	print/ghostscript-afpl
-.else
-GSPORT?=	print/ghostscript-gnu
-.endif
-
 RUN_DEPENDS=	tex:${PORTSDIR}/print/teTeX \
-		gs:${PORTSDIR}/${GSPORT} \
 		anytopnm:${PORTSDIR}/graphics/netpbm
+
+.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
+RUN_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript-afpl
+.else
+RUN_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript-afpl
+.endif
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+MAKE_ARGS=	CPPFLAGS=-D__GNU_LIBRARY__
 
 ADDITIONAL_DOCS=	ClassGraph.class \
 			ClassGraphPanel.class \
@@ -64,14 +64,10 @@ ADDITIONAL_DOCS=	ClassGraph.class \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502000
-BROKEN=			"Does not compile"
-.endif
-
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	for i in $(ADDITIONAL_DOCS); do \
+	for i in ${ADDITIONAL_DOCS}; do \
 		${INSTALL_MAN} ${WRKSRC}/doc/manual/html/$$i ${DOCSDIR} ;\
 	done
 .endif
