@@ -18,7 +18,11 @@ USE_KDELIBS_VER=	3
 USE_BZIP2=		yes
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
+USE_REINPLACE=		yes
 
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+
+post-extract:
+	@${REINPLACE_CMD} -e 's|-pedantic ||g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
