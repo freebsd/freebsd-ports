@@ -164,6 +164,7 @@
     SUBDIR += p5-Authen-TacacsPlus
     SUBDIR += p5-Authen-Ticket
     SUBDIR += p5-Crypt-Blowfish
+    SUBDIR += p5-Crypt-Blowfish_PP
     SUBDIR += p5-Crypt-CAST5_PP
     SUBDIR += p5-Crypt-CBC
     SUBDIR += p5-Crypt-CipherSaber
