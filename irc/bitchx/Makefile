@@ -11,7 +11,7 @@ CATEGORIES=	irc gnome
 MASTER_SITES=	ftp://ftp.bitchx.com/pub/BitchX/source/ \
 		ftp://ukug.uk.freebsd.org/pub/lord_cj/
 
-MAINTAINER=	calle.madestrand@norrgarden.se
+MAINTAINER=	cj@vallcom.net
 
 .if defined(WITH_GNOME)
 LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs
