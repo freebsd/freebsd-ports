@@ -3235,6 +3235,7 @@ lfs_cleanerd	src/libexec/lfs_cleanerd
 lftp		ports/ftp/lftp
 lfview		ports/graphics/lfview
 lha		ports/archivers/lha
+liamail		ports/mail/liamail
 lib		src/lib
 lib3ds		ports/graphics/lib3ds
 libF77		src/lib/libF77
