@@ -13,7 +13,8 @@ MASTER_SITES=	http://drivel.com/clamassassin/
 MAINTAINER=	ports@freebsd.org
 COMMENT=	A simple virus filter wrapper for ClamAV
 
-BUILD_DEPENDS=	sigtool:${PORTSDIR}/security/clamav
+BUILD_DEPENDS=	sigtool:${PORTSDIR}/security/clamav \
+		formail:${PORTSDIR}/mail/procmail
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PLIST_FILES=	bin/clamassassin
