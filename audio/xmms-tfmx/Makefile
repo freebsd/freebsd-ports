@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.nuug.no/pub/anders/distfiles/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	xmms.2:${PORTSDIR}/audio/xmms
+LIB_DEPENDS=	xmms.3:${PORTSDIR}/audio/xmms
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

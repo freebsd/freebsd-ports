@@ -12,7 +12,7 @@ MASTER_SITES=	http://gkrellm.luon.net/files/
 
 MAINTAINER=	ume@FreeBSD.org
 
-LIB_DEPENDS=	xmms.2:${PORTSDIR}/audio/xmms
+LIB_DEPENDS=	xmms.3:${PORTSDIR}/audio/xmms
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
 
