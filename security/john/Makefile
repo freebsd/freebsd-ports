@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.openwall.com/john/dl/ \
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
 		${PORTNAME}-1.6.tar.gz
 
-MAINTAINER=	dominic.marks@btinternet.com
+MAINTAINER=	dom@helenmarks.co.uk
 COMMENT=	Featureful Unix password cracker
 
 USE_REINPLACE=	yes
