@@ -17,19 +17,18 @@ MAINTAINER=	DougB@FreeBSD.org
 PERL_CONFIGURE=	yes
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+
 MAN3=		Net::DNS.3 Net::DNS::Header.3 Net::DNS::Packet.3 \
 		Net::DNS::Question.3 Net::DNS::RR.3 Net::DNS::RR::A.3 \
-		Net::DNS::RR::AFSDB.3 Net::DNS::RR::CNAME.3 Net::DNS::RR::HINFO.3 \
-		Net::DNS::RR::ISDN.3 Net::DNS::RR::MG.3 Net::DNS::RR::MINFO.3 \
-		Net::DNS::RR::MR.3 Net::DNS::RR::MX.3 Net::DNS::RR::NS.3 Net::DNS::RR::PTR.3 \
-		Net::DNS::RR::RP.3 Net::DNS::RR::RT.3 Net::DNS::RR::SOA.3 Net::DNS::RR::SRV.3 \
+		Net::DNS::RR::AFSDB.3 Net::DNS::RR::CNAME.3 \
+		Net::DNS::RR::HINFO.3 Net::DNS::RR::ISDN.3 Net::DNS::RR::MG.3 \
+		Net::DNS::RR::MINFO.3 Net::DNS::RR::MR.3 Net::DNS::RR::MX.3 \
+		Net::DNS::RR::NS.3 Net::DNS::RR::PTR.3 Net::DNS::RR::RP.3 \
+		Net::DNS::RR::RT.3 Net::DNS::RR::SOA.3 Net::DNS::RR::SRV.3 \
 		Net::DNS::RR::TXT.3 Net::DNS::RR::X25.3 Net::DNS::Resolver.3 \
 		Net::DNS::RR::AAAA.3 Net::DNS::RR::EID.3 Net::DNS::RR::LOC.3 \
-		Net::DNS::RR::MB.3 Net::DNS::RR::NAPTR.3 Net::DNS::RR::NIMLOC.3 \
-		Net::DNS::RR::NSAP.3 Net::DNS::RR::NULL.3 Net::DNS::RR::PX.3 \
-		Net::DNS::Update.3
-
-post-patch:
-		find ${WRKSRC} -name "*.orig" -exec ${RM} "{}" ";"
+		Net::DNS::RR::MB.3 Net::DNS::RR::NAPTR.3 \
+		Net::DNS::RR::NIMLOC.3 Net::DNS::RR::NSAP.3 \
+		Net::DNS::RR::NULL.3 Net::DNS::RR::PX.3 Net::DNS::Update.3
 
 .include <bsd.port.mk>
