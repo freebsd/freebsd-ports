@@ -5,14 +5,24 @@ if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/cvsupd\.sh\$"); then
     exit 1
 fi
 base=${PREFIX}/etc/cvsup
-out=/var/tmp/cvsupd.out
+rundir=/var/tmp
+out=${rundir}/cvsupd.out
 
 export PATH=/bin:/usr/bin:${PREFIX}/sbin
 umask 2
 
 test -x ${PREFIX}/sbin/cvsupd || exit 1
 echo -n " cvsupd"
-cd ${base} || exit
-. ./config.sh || exit
-su -m ${user} -c \
-    "cvsupd -e -C ${maxclients} -l @${facility} -s sup.client" >>${out} 2>&1
+cd ${rundir} || exit
+. ${base}/config.sh || exit
+
+arg=${1:-start}
+case $arg in
+start)
+    su -m ${user} -c \
+	"cvsupd -e -C 100 -l @${facility} -b ${base} -s sup.client" \
+	>>${out} 2>&1;;
+
+stop)
+    killall cvsupd;;
+esac

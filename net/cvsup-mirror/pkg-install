@@ -60,15 +60,53 @@ EOF
 	      fi
 	      test -d ${path} || mkdir -p ${path} || exit ) || exit
 	    if ! expr "${chmods_done}" : ".* ${path} " >/dev/null 2>&1; then
-		echo -n "  Making the ${path} tree world-readable ..."
-		( chdir ${prefixes} || exit
-		  chmod -R a+rX ${path} || exit ) || exit
+		echo -n "  Fixing ownerships and modes in ${path} ..."
+		( chdir ${prefixes} && \
+		  chown -R ${cuser}:${cgroup} ${path} && \
+		  chmod -R a+rX ${path} ) || exit
 		echo " done."
 		chmods_done="${chmods_done}${path} "
 	    fi
 	fi
 	shift 3
     done
+}
+
+make_account() {
+    local u g
+
+    u=$1
+    g=$2
+    if pw group show "${g}" >/dev/null 2>&1; then
+	echo "You already have a group \"${g}\", so I will use it."
+    else
+	echo "You need a group \"${g}\"."
+	if which -s pw && yesno "Would you like me to create it" y; then
+	    pw groupadd ${g} || exit
+	    echo "Done."
+	else
+	    echo "Please create it, and try again."
+	    if ! grep -q "^${u}:" /etc/passwd; then
+		echo "While you're at it, please create a user \"${u}\" too,"
+		echo "with a default group of \"${g}\"."
+	    fi
+	    exit 1
+	fi
+    fi
+    
+    if pw user show "${u}" >/dev/null 2>&1; then
+	echo "You already have a user \"${u}\", so I will use it."
+    else
+	echo "You need a user \"${u}\"."
+	if which -s pw && yesno "Would you like me to create it" y; then
+	    pw useradd ${u} -g ${g} -h - -d /nonexistent \
+		-s /nonexistent -c "CVSup Daemon" || exit
+	    echo "Done."
+	else
+	    echo "Please create it, and try again."
+	    exit 1
+	fi
+    fi
 }
 
 case $2 in
@@ -94,40 +132,15 @@ EOF
     fi
 
     echo ""
-    if pw group show "${group}" 2>/dev/null; then
-	echo "You already have a group \"${group}\", so I will use it."
-    else
-	echo "You need a group \"${group}\"."
-	if which -s pw && yesno "Would you like me to create it" y; then
-	    pw groupadd ${group} || exit
-	    echo "Done."
-	else
-	    echo "Please create it, and try again."
-	    if ! grep -q "^${user}:" /etc/passwd; then
-		echo "While you're at it, please create a user \"${user}\" too,"
-		echo "with a default group of \"${group}\"."
-	    fi
-	    exit 1
-	fi
-    fi
-    
-    if pw user show "${user}" 2>/dev/null; then
-	echo "You already have a user \"${user}\", so I will use it."
-    else
-	echo "You need a user \"${user}\"."
-	if which -s pw && yesno "Would you like me to create it" y; then
-	    pw useradd ${user} -g ${group} -h - -d /nonexistent \
-		-s /nonexistent -c "CVSup Daemon" || exit
-	    echo "Done."
-	else
-	    echo "Please create it, and try again."
-	    exit 1
-	fi
-    fi
+    make_account ${user} ${group}
+    make_account ${cuser} ${cgroup}
 
     echo "Fixing ownerships and modes in \"${base}\"."
-    chown -R root.${group} ${base}
-    chmod -R g=u,o=u-w ${base}
+    chown -R root:wheel ${base}
+    test -d ${base}/sup || mkdir -p ${base}/sup
+    test -d ${base}/sup.client || mkdir -p ${base}/sup.client
+    chown -R ${cuser}:${cgroup} ${base}/sup ${base}/sup.client
+    chmod -R go=u-w ${base}
 
     echo "Setting up links and directories for distributions."
     test -d ${prefixes} || mkdir ${prefixes} || exit
