@@ -7,6 +7,7 @@
 
 PORTNAME=	daemontools
 PORTVERSION=	0.76
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cr.yp.to/daemontools/ \
 		ftp://cr.yp.to/daemontools/
