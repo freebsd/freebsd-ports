@@ -16,14 +16,14 @@ DIST_SUBDIR=	KDE
 MAINTAINER?=	kde@FreeBSD.org
 COMMENT=	Powerful IDE for developing KDE/Qt-based apps
 
-RUN_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
+RUN_DEPENDS=	extractrc:${PORTSDIR}/devel/kdesdk3 \
+		gmake:${PORTSDIR}/devel/gmake
 .if defined(WITH_OPTIONAL_DEPENDS)
 RUN_DEPENDS+=	autoconf:${PORTSDIR}/devel/autoconf \
 		automake:${PORTSDIR}/devel/automake \
 		kiconedit:${PORTSDIR}/graphics/kdegraphics3 \
 		ark:${PORTSDIR}/misc/kdeutils3 \
 		glimpse:${PORTSDIR}/textproc/glimpse \
-		kbabel:${PORTSDIR}/devel/kdesdk3 \
 		a2ps:${PORTSDIR}/print/a2ps-letter
 .endif
 
@@ -47,6 +47,7 @@ pre-everything::
 .endif
 
 pre-configure:
+	${REINPLACE_CMD} -e 's@extractrc@@g' ${WRKSRC}/kdevelop/Makefile.in
 	${REINPLACE_CMD} -e 's@-pedantic @@g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>

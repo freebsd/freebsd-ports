@@ -5,11 +5,23 @@
 # $FreeBSD$
 #
 
-MASTERDIR=	${.CURDIR}/../../x11-toolkits/qt23
-COMMENT=	GUI C++ IDE based on QT
-
 PORTNAME=	qt-designer
 CATEGORIES=	devel
+
+MAINTAINER=	kde@freebsd.org
+COMMENT=	GUI C++ IDE based on QT
+
+LIB_DEPENDS+=	qt2.4:${PORTSDIR}/x11-toolkits/qt23
+
+MASTERDIR=	${.CURDIR}/../../x11-toolkits/qt23
+
+CONFLICTS=	qt-3.*
+
+WRKSRC=		${WRKDIR}/qt-${PORTVERSION}
+PATCH_WRKSRC=	${WRKSRC}
+PKGDIR=		${.CURDIR}
+MAKE_ENV=	QTDIR=${PREFIX} LD_LIBRARY_PATH=${PREFIX}/lib PREFIX=${PREFIX}
+ALL_TARGET=	sub-tools
 
 post-patch:
 	${PERL} -pi -e "s@-fno-exceptions@-fno-exceptions -I${X11BASE}/include/qt2@g" ${CONFIG}
@@ -29,14 +41,6 @@ qt-pre-configure:
 		${WRKSRC}/tools/designer/designer/newformimpl.cpp
 
 .include "${MASTERDIR}/Makefile"
-
-LIB_DEPENDS+=	qt2.4:${PORTSDIR}/x11-toolkits/qt23
-
-WRKSRC=		${WRKDIR}/qt-${PORTVERSION}
-PATCH_WRKSRC=	${WRKSRC}
-PKGDIR=		${.CURDIR}
-MAKE_ENV=	QTDIR=${PREFIX} LD_LIBRARY_PATH=${PREFIX}/lib PREFIX=${PREFIX}
-ALL_TARGET=	sub-tools
 
 do-install:
 	${MKDIR} ${PREFIX}/share/qt2/designer/templates \
