@@ -18,6 +18,8 @@ LIB_DEPENDS=	pspell.15:${PORTSDIR}/textproc/aspell \
 		iconv.3:${PORTSDIR}/converters/libiconv
 RUN_DEPENDS=	licq:${PORTSDIR}/net/licq
 
+BROKEN=		'does not support licq >= 1.2.0'
+
 # It breaks the build for some reason
 #USE_LIBTOOL=	yes
 USE_GMAKE=	yes
