@@ -1,0 +1,8 @@
+This modules causes any warnings produced by test scripts to be
+captured and stored. It automatically adds an extra test that will run
+when your script ends to check that there were no warnings. If there
+were any warings, the test will give a "not ok" and diagnostics of
+where, when and what the warning was, including a stack trace of what
+was going on when the it occurred.
+
+WWW: http://search.cpan.org/dist/Test-NoWarnings/
