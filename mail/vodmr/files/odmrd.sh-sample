@@ -1,0 +1,29 @@
+#!/bin/sh
+
+USER=vpopmail
+
+PREFIX=/usr/local
+
+UID=`id -u $USER`
+GID=`id -g $USER`
+
+if [ -z "$UID" -o -z "$GID" ]; then
+	exit 1
+fi
+
+case "$1" in
+start)
+	[ -x ${PREFIX}/sbin/odmrd -a -z ${PREFIX}/bin/tcpserver ] && \
+		${PREFIX}/bin/tcpserver -HPR -u$UID -g$GID 0 odmr \
+		${PREFIX}/sbin/odmrd > /dev/null && echo -n ' odmrd'
+	;;
+stop)
+	ps -auxwww | grep tcpserver | grep odmr | awk '{print $1}' | \
+		xargs kill > /dev/null && echo -n ' odmrd'
+	;;
+*)
+	echo "Usage: `basename $0` {start|stop}" >&2
+	;;
+esac
+
+exit 0

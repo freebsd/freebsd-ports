@@ -379,6 +379,7 @@
     SUBDIR += vm
     SUBDIR += vm-pop3d
     SUBDIR += vmailmgr
+    SUBDIR += vodmr
     SUBDIR += vpopmail
     SUBDIR += vpopmail-stable
     SUBDIR += vqadmin

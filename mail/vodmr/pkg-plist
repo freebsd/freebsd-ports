@@ -1,0 +1,2 @@
+sbin/odmrd
+etc/rc.d/odmrd.sh-sample
