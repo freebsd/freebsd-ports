@@ -748,9 +748,13 @@ MAKE_ENV+=		CC=${CC} CXX=${CXX}
 .endif
 
 .if defined(REQUIRES_MOTIF)
-LIB_DEPENDS+=		Xpm.4:${PORTSDIR}/graphics/xpm
+USE_XPM=			yes
 .if defined(PARALLEL_PACKAGE_BUILD)
+.if defined(MOTIF_OPEN)
+LIB_DEPENDS+=		Xm.2:${PORTSDIR}/x11-toolkits/open-motif
+.else
 BUILD_DEPENDS+=		${X11BASE}/lib/libXm.a:${PORTSDIR}/x11-toolkits/Motif-dummy
+.endif
 .endif
 .endif
 
@@ -770,10 +774,16 @@ LIB_DEPENDS+=			GL.14:${PORTSDIR}/graphics/Mesa3
 .if defined(USE_FREETYPE)
 LIB_DEPENDS+=			ttf.4:${PORTSDIR}/print/freetype
 .endif
-XAWVER=					7
+XAWVER=					6
 PKG_IGNORE_DEPENDS?=	'(XFree86-3\.3\.6|Motif-2\.1\.10)'
 .else
-XAWVER=					6
+.if defined(USE_IMAKE)
+BUILD_DEPENDS+=			imake:${PORTSDIR}/devel/imake-4
+.endif
+.if defined(USE_XPM) || defined(USE_DGS) || defined(USE_MESA) || defined(USE_FREETYPE)
+USE_XLIB=				yes
+.endif
+XAWVER=					7
 PKG_IGNORE_DEPENDS?=	'Motif-2\.1\.10'
 .endif
 PLIST_SUB+=				XAWVER=${XAWVER}
@@ -804,7 +814,7 @@ PLIST_SUB+=		PERL_VERSION=${PERL_VERSION} \
 .if exists(/usr/bin/perl5) && ${OSVERSION} >= 300000
 # 3.0-current after perl5 import
 .if !exists(/usr/bin/perl${PERL_VERSION}) && defined(USE_PERL5)
-.BEGIN:
+pre-everything::
 	@${ECHO} "Error: you don't have the right version of perl in /usr/bin."
 	@${FALSE}
 .endif
@@ -1008,7 +1018,7 @@ PKG_DBDIR?=		/var/db/pkg
 
 # shared/dynamic motif libs
 .if defined(HAVE_MOTIF)
-.if defined(MOTIF_STATIC)
+.if defined(MOTIF_STATIC) && !defined(MOTIF_OPEN)
 MOTIFLIB?=	${X11BASE}/lib/libXm.a -L${X11BASE}/lib -lXp
 .else
 MOTIFLIB?=	-L${X11BASE}/lib -lXm -lXp
@@ -1170,7 +1180,7 @@ VALID_CATEGORIES+=	afterstep archivers astro audio benchmarks biology \
 	editors elisp emulators ftp games german gnome graphics \
 	hebrew ipv6 irc japanese java kde korean lang linux \
 	mail math mbone misc net news \
-	offix palm perl5 plan9 print python russian \
+	offix palm perl5 plan9 print python ruby russian \
 	security shells sysutils \
 	tcl76 tcl80 tcl81 tcl82 tcl83 textproc \
 	tk42 tk80 tk82 tk83 tkstep80 \
@@ -1948,8 +1958,13 @@ _PORT_USE: .USE
 # call the necessary targets/scripts.
 ################################################################
 
+.if !target(pre-everything)
+pre-everything:
+	@${DO_NADA}
+.endif
+
 .if !target(fetch)
-fetch:
+fetch:	pre-everything
 	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} real-fetch
 .endif
 
