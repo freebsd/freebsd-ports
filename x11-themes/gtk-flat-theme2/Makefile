@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_THEMES}
 MASTER_SITE_SUBDIR=	gtk2flat
 DISTNAME=	gtk2flat-default
 
-MAINTAINER=	philip@paeps.cx
+MAINTAINER=	philip@FreeBSD.org
 COMMENT=	A port of the Flat GTK+ engine to GTK+ 2.0
 
 WRKSRC=		${WRKDIR}/gtk-flat-theme-2.0
