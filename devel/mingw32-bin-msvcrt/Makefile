@@ -18,8 +18,8 @@ DIST_SUBDIR=	mingw
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Headers and Libraries for Windows cross-development
 
-RUNTIMEVERSION=	2.2
-APIVERSION=	2.0
+RUNTIMEVERSION=	3.0
+APIVERSION=	2.3
 
 NO_MTREE=	yes
 NO_WRKSUBDIR=	yes
