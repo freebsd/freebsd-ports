@@ -1272,7 +1272,6 @@ dns/bind9-sdb-mysql||2004-10-17|No longer maintained
 www/phpnuke||2004-10-17|security vulnerabilities and no longer maintained
 misc/bookcase|misc/tellico|2004-10-17|renamed
 audio/net-rhythmbox|audio/rhythmbox|2004-10-20|broken and audio/rhythmbox has more features
-audio/ruby-musicbrainz||2004-10-22|distfile did not keep up with libmusicbrainz
 devel/ruby-gconf|devel/ruby-gconf2|2004-10-22|did not install
 devel/whups||2004-10-22|not compatible with latest version of Horde
 french/abispell-fr-FR||2004-10-22|did not work with AbiWord-2.0

@@ -333,6 +333,7 @@
     SUBDIR += ruby-freedb
     SUBDIR += ruby-mp3info
     SUBDIR += ruby-mp3tag
+    SUBDIR += ruby-musicbrainz
     SUBDIR += ruby-ogginfo
     SUBDIR += ruby-shout
     SUBDIR += ruby-smf
