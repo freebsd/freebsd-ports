@@ -1,52 +1,39 @@
 # New ports collection makefile for:	big5con
-# Version required:	0.1
+# Version required:	0.92b
 # Date created:		07 Jan 1997
 # Whom:			Hung-Chi Chu <hcchu@r350.ee.ntu.edu.tw>
 #
-# $Id: Makefile,v 1.5 1997/10/22 10:25:17 obrien Exp $
-#
-# This port is adapted from japanese/kon
+# $Id: Makefile,v 1.6 1998/09/27 00:00:24 steve Exp $
 #
 
-DISTNAME=	kon
-PKGNAME=	zh-big5con-0.1
+DISTNAME=	big5con-0.92b
+PKGNAME=	zh-big5con-0.92b
 CATEGORIES=	chinese
-# note kon is only in first directory and
-# fonts are only in the other two directories
-MASTER_SITES=	ftp://ftp.iij.ad.jp/pub/linux-j/JE-sources/JE/ \
-		ftp://nctuccca.edu.tw/Chinese/ifcss/software/fonts/misc/bdf/ \
-		ftp://nctuccca.edu.tw/Chinese/ifcss/software/fonts/big5/bdf/ \
-		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/fonts/misc/bdf/ \
-		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/fonts/big5/bdf/ \
-		ftp://ftp.edu.tw/Chinese/ifcss/software/fonts/misc/bdf/ \
-		ftp://ftp.edu.tw/Chinese/ifcss/software/fonts/big5/bdf/ \
-		ftp://ftp.mpi-sb.mpg.de/pub/chinese/mirror/ftp.ifcss.org/software/fonts/misc/bdf/ \
-		ftp://ftp.mpi-sb.mpg.de/pub/chinese/mirror/ftp.ifcss.org/software/fonts/big5/bdf/
+MASTER_SITES=	ftp://freebsd.ntu.edu.tw/freebsd/woju/source/ \
+		ftp://freebsd.ntu.edu.tw/freebsd/woju/binary/ \
+		ftp://ftp.hinet.net/OS/FreeBSD/taiwan/NTU/woju/source/ \
+		ftp://ftp.hinet.net/OS/FreeBSD/taiwan/NTU/woju/binary/ \
+		ftp://freebsd.csie.nctu.edu.tw/pub/taiwan/NTU/woju/source/ \
+		ftp://freebsd.csie.nctu.edu.tw/pub/taiwan/NTU/woju/binary/
+DISTFILES=	big5con-0.92b.tgz b5cbin.tgz
 
-DISTFILES=	kon-0.99.4e.tgz 8x16.bdf.gz taipei16.bdf.gz
-
-MAINTAINER=	hcchu@r350.ee.ntu.edu.tw
-
-BROKEN=		fetch
+MAINTAINER=	woju@freebsd.ee.ntu.edu.tw
 
 #from Hung-Chi Chu <hcchu@r350.ee.ntu.edu.tw>:  The font is transformed from
 #	a font with restrictive copyright, so I think you can't distribute
 #	it on the CDROM.
 RESTRICTED=	"The font 'taipei16.bdf' has restrictive copyrighted"
-EXTRACT_ONLY=	kon-0.99.4e.tgz
-USE_GMAKE=	yes
 
-post-configure:
-	${SED} -e 's%%CURDIR%%${.CURDIR}' \
-	  -e 's%%PREFIX%%${PREFIX}' \
-	  -e 's%%DISTDIR%%${DISTDIR}' \
-	  ${FILESDIR}/dotconfig > ${WRKSRC}/.config
+pre-install:
+	@if [ ! -f ${PREFIX}/lib/fonts/taipei16.bdf.gz ]; then \
+		tar xvfzp ${DISTDIR}/b5cbin.tgz -C ${PREFIX}; \
+	fi
 
 post-install:
 	@echo
 	@echo "---------------------------------------------------------------"
 	@echo "You need to add a line 'options SYSVSHM' to your kernel config."
-	@echo "Use 'big5con' to run the big5 console."
+	@echo "Use 'b5c' to run the big5 console."
 	@echo "---------------------------------------------------------------"
 	@echo
 
