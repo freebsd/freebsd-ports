@@ -1,20 +1,25 @@
---- src/Makefile.in.orig	Fri Mar 16 00:15:52 2001
-+++ src/Makefile.in	Mon Apr 23 23:38:09 2001
-@@ -167,13 +167,9 @@
+--- src/Makefile.in.orig	Wed Jan 16 23:42:30 2002
++++ src/Makefile.in	Wed Jan 16 23:43:22 2002
+@@ -165,14 +165,14 @@
  #YCFLAGS += -DMYLEXDEBUG
  #YCFLAGS += -DYYDEBUG=1 -DMYLEXDEBUG
- DEFINES := -DARCH=$(ARCH)
+ DEFINES := -DARCH=$(ARCH) @hashset@
 -CXXFLAGS := -g
 -CXXFLAGSOPT := -O2\ -s
++#CXXFLAGS := -g
++#CXXFLAGSOPT := -O2\ -s
+ CFLAGS := $(CXXFLAGS) -DHAVE_CONFIG_H -I.
  
  ifneq (,$(findstring ++,$(CXX)))
  # -ansi should be here but it's buggy (and should be called -iso anyway)
 -CXXFLAGS := -Wall -Wno-unused -Wno-uninitialized -g
 -CXXFLAGSOPT := $(CXXFLAGSOPT)\ -Os
++#CXXFLAGS := -Wall -Wno-unused -Wno-uninitialized -g
++#CXXFLAGSOPT := $(CXXFLAGSOPT)\ -Os
    ifeq "$(WARN)" "y"
      CXXFLAGS += -Wold-style-cast -Weffc++
    endif
-@@ -229,7 +225,7 @@
+@@ -228,7 +228,7 @@
  	touch tstamp.kc ; \
  	$(MAKE) -e -f $${olddir}/Makefile \
  		ROOT=$${olddir} \
