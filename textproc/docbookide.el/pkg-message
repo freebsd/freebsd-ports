@@ -1,6 +1,6 @@
-===
 To use docbook-mode, add the following lines to your ~/.emacs:
 
+;; Begin snippet
 ;; DocBook IDE mode
 (autoload 'docbook-mode "docbookide" "Major mode for DocBook documents." t)
 
@@ -14,8 +14,9 @@ To use docbook-mode, add the following lines to your ~/.emacs:
 (setq auto-mode-alist
       (append
        (list
-	'("\\.sgm" . docbook-mode))
-	'("\\.sgml" . docbook-mode))
-	'("\\.xml" . docbook-mode))
+	'("\\.sgm" . docbook-mode)
+	'("\\.sgml" . docbook-mode)
+	'("\\.xml" . docbook-mode)
        auto-mode-alist))
-===
+)
+;; End snippet
