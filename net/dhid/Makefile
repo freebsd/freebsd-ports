@@ -27,8 +27,8 @@ post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/dhid.sh ]; then \
 		${ECHO} "===>   Installing ${PREFIX}/etc/rc.d/dhid.sh startup file."; \
 		${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/dhid.sh; \
-		${ECHO} "[ -x \"${PREFIX}/sbin/dhid\" -a -f \"${PREFIX}/etc/dhid.conf\" ] && ${PREFIX}/sbin/dhid > /dev/null && echo -n ' dhid'" >> ${PREFIX}/etc/rc.d/dhid.sh; \
-		chmod 751 ${PREFIX}/etc/rc.d/dhid.sh; \
+		${ECHO} "[ -x \"${PREFIX}/sbin/dhid\" -a -f \"${PREFIX}/etc/dhid.conf\" ] && ${PREFIX}/sbin/dhid > /dev/null && ${ECHO} -n ' dhid'" >> ${PREFIX}/etc/rc.d/dhid.sh; \
+		${CHMOD} 751 ${PREFIX}/etc/rc.d/dhid.sh; \
 	fi;
 	@${ECHO} "--------------------------------------------------------------------------"
 	@${ECHO} "Before dhid can run, you will need to register with a DHIS provider."
