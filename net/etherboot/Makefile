@@ -18,9 +18,11 @@ MAINTAINER=	ambrisko@freebsd.org
 COMMENT=	Network boot of FreeBSD a.out/ELF kernels. Replaces/improves netboot.
 
 NO_PACKAGE=	lots of configuration necessary
-USE_BZIP2=1
-USE_GMAKE=1
+USE_BZIP2=	1
+USE_GMAKE=	1
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
+USE_PERL5_BUILD=yes
+ONLY_FOR_ARCHS=	i386
 
 do-install:
 	@${ECHO} Refer ${DESCR} and ${WRKDIR}/${PKGNAME}/doc for how to
