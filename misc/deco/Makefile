@@ -20,6 +20,7 @@ COMMENT=	Demos Commander, a free Norton Commander clone
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/share
 CONFIGURE_ENV=	ac_cv_lib_ncurses_tgetent=no
-MAN1=		deco.1 deco-r.1
+MAN1=		deco.1
+MANLANG=	"" ru.KOI8-R
 
 .include <bsd.port.mk>
