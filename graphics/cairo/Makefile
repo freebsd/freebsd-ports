@@ -26,6 +26,8 @@ CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CLFAGS}" \
 
 OPTIONS+=	GLITZ "Enable Glitz OpenGL Support" Off
 
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_GLITZ)
 LIB_DEPENDS+=	glitz-glx.1:${PORTSDIR}/graphics/glitz
 .endif
@@ -33,8 +35,6 @@ LIB_DEPENDS+=	glitz-glx.1:${PORTSDIR}/graphics/glitz
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
 .endif
-
-.include <bsd.port.pre.mk>
 
 post-patch:
 .if ${OSVERSION} < 500000
