@@ -7831,6 +7831,7 @@ p5-POE-Devel-Profiler	ports/devel/p5-POE-Devel-Profiler
 p5-POE-Exceptions	ports/devel/p5-POE-Exceptions
 p5-POE-Filter-XML	ports/textproc/p5-POE-Filter-XML
 p5-POE-Session-MultiDispatch	ports/devel/p5-POE-Session-MultiDispatch
+p5-PPI		ports/textproc/p5-PPI
 p5-PPerl	ports/devel/p5-PPerl
 p5-PV		ports/devel/p5-PV
 p5-Palm		ports/palm/p5-Palm
