@@ -1,0 +1,12 @@
+GIO is part of the HToolkit. The goal of the HToolkit project is to implement a
+portable Haskell library for writing graphical user interfaces (GUI's).
+
+The "Graphics.UI.GIO" library is a 'middle-ground' GUI library for Haskell.  It
+is build on the portable GUI library "Port". GIO stands for Graphical IO, and
+implements a middle-level, monadic interface for writing GUI's. The library
+only uses the IO monad and doesn't implement a design for structure and state.
+
+WWW: http://htoolkit.sourceforge.net/
+
+-- Oliver Braun
+obraun@FreeBSD.org
