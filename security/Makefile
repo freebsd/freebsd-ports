@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.42 1999/01/18 04:29:56 steve Exp $
+# $Id: Makefile,v 1.43 1999/01/26 22:19:07 billf Exp $
 #
 
     SUBDIR += SSLeay
@@ -28,6 +28,7 @@
     SUBDIR += pgp
     SUBDIR += pgp5
     SUBDIR += pidentd
+    SUBDIR += portmap_tcpd
     SUBDIR += portscanner
     SUBDIR += rsaref
     SUBDIR += sentry
