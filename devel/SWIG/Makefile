@@ -7,7 +7,7 @@
 
 PORTNAME=	swig
 PORTVERSION=	${VER}p5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel perl5 python tcl82
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.rge.com/pub/languages/swig/${VER}/ \
@@ -29,6 +29,7 @@ INSTALLS_SHLIB=	yes
 
 WRKSRC=		${WRKDIR}/SWIG${PORTVERSION}
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -fpic -DPIC"
 CONFIGURE_ARGS=	--with-tclincl=${PREFIX}/include/tcl8.2/ \
 		--with-tcllib=${PREFIX}/lib/tcl8.2/
 ALL_TARGET=	all runtime
