@@ -249,12 +249,14 @@ pre-fetch:
 	@${ECHO}
 	@${ECHO} "REQUIRED SYSTEM PATCHES:"
 	@${ECHO}
+.if ${OSVERSION} < 500000
 	@${ECHO} "OO.org can crash if you enter a non existing path"
 	@${ECHO} "or URL in the location bar. To fix these crashes"
 	@${ECHO} "you need a uncommitted system patch for rtld:"
 	@${ECHO}
 	@${ECHO} "http://people.freebsd.org/~mbr/ooo/rtld-symlookup.diff"
 	@${ECHO}
+.endif
 .if ${OSVERSION} < 460001
 	@${ECHO}
 	@${ECHO} "OO setup is broken on STABLE < 4.6"
