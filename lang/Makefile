@@ -210,6 +210,7 @@
     SUBDIR += sr
     SUBDIR += stackless_python
     SUBDIR += starlogo
+    SUBDIR += stklos
     SUBDIR += stldoc
     SUBDIR += swi-pl
     SUBDIR += sxm

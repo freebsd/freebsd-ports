@@ -1,0 +1,89 @@
+bin/stklos
+bin/stklos-compile
+bin/stklos-config
+bin/stklos-script
+include/stklos/extraconf.h
+include/stklos/stklos.h
+include/stklos/stklosconf.h
+@dirrm include/stklos
+@unexec install-info --delete --section="%%INFOSECTION%%" --entry="%%INFOENTRY%%" %D/info/stklos.info %D/info/dir
+info/stklos.info
+info/stklos.info-1
+info/stklos.info-2
+info/stklos.info-3
+info/stklos.info-4
+info/stklos.info-5
+info/stklos.info-6
+@exec install-info --section="%%INFOSECTION%%" --entry="%%INFOENTRY%%" %D/info/stklos.info %D/info/dir
+lib/stklos/%%VERSION%%/ldap.so
+@dirrm lib/stklos/%%VERSION%%
+@dirrm lib/stklos
+%%DATADIR%%/%%VERSION%%/DOCDB
+%%DATADIR%%/%%VERSION%%/Match/compiler.scm
+%%DATADIR%%/%%VERSION%%/Match/descr.scm
+%%DATADIR%%/%%VERSION%%/Match/mexpand.scm
+%%DATADIR%%/%%VERSION%%/Match/normalize.scm
+%%DATADIR%%/%%VERSION%%/Match/s2cfun.scm
+%%DATADIR%%/%%VERSION%%/STklos.init
+%%DATADIR%%/%%VERSION%%/assembler.stk
+%%DATADIR%%/%%VERSION%%/bb.stk
+%%DATADIR%%/%%VERSION%%/bigloo.stk
+%%DATADIR%%/%%VERSION%%/bonus.stk
+%%DATADIR%%/%%VERSION%%/boot.img
+%%DATADIR%%/%%VERSION%%/boot.stk
+%%DATADIR%%/%%VERSION%%/compfile.ostk
+%%DATADIR%%/%%VERSION%%/compfile.stk
+%%DATADIR%%/%%VERSION%%/compiler.stk
+%%DATADIR%%/%%VERSION%%/computils.stk
+%%DATADIR%%/%%VERSION%%/date.ostk
+%%DATADIR%%/%%VERSION%%/date.stk
+%%DATADIR%%/%%VERSION%%/describe.ostk
+%%DATADIR%%/%%VERSION%%/describe.stk
+%%DATADIR%%/%%VERSION%%/expand.pp
+%%DATADIR%%/%%VERSION%%/expand.ss
+%%DATADIR%%/%%VERSION%%/full-syntax.ostk
+%%DATADIR%%/%%VERSION%%/full-syntax.stk
+%%DATADIR%%/%%VERSION%%/getopt.ostk
+%%DATADIR%%/%%VERSION%%/getopt.stk
+%%DATADIR%%/%%VERSION%%/ldap.ostk
+%%DATADIR%%/%%VERSION%%/ldap.stk
+%%DATADIR%%/%%VERSION%%/load.stk
+%%DATADIR%%/%%VERSION%%/match.ostk
+%%DATADIR%%/%%VERSION%%/match.stk
+%%DATADIR%%/%%VERSION%%/mbe.stk
+%%DATADIR%%/%%VERSION%%/module.stk
+%%DATADIR%%/%%VERSION%%/object.stk
+%%DATADIR%%/%%VERSION%%/obsolete.stk
+%%DATADIR%%/%%VERSION%%/peephole.stk
+%%DATADIR%%/%%VERSION%%/pp.ostk
+%%DATADIR%%/%%VERSION%%/pp.stk
+%%DATADIR%%/%%VERSION%%/process.stk
+%%DATADIR%%/%%VERSION%%/r5rs.stk
+%%DATADIR%%/%%VERSION%%/regexp.stk
+%%DATADIR%%/%%VERSION%%/repl.stk
+%%DATADIR%%/%%VERSION%%/runtime.stk
+%%DATADIR%%/%%VERSION%%/slib.stk
+%%DATADIR%%/%%VERSION%%/srfi-0.stk
+%%DATADIR%%/%%VERSION%%/srfi-1.ostk
+%%DATADIR%%/%%VERSION%%/srfi-1.stk
+%%DATADIR%%/%%VERSION%%/srfi-11.ostk
+%%DATADIR%%/%%VERSION%%/srfi-11.stk
+%%DATADIR%%/%%VERSION%%/srfi-13.ostk
+%%DATADIR%%/%%VERSION%%/srfi-13.stk
+%%DATADIR%%/%%VERSION%%/srfi-14.ostk
+%%DATADIR%%/%%VERSION%%/srfi-14.stk
+%%DATADIR%%/%%VERSION%%/srfi-2.ostk
+%%DATADIR%%/%%VERSION%%/srfi-2.stk
+%%DATADIR%%/%%VERSION%%/srfi-31.ostk
+%%DATADIR%%/%%VERSION%%/srfi-31.stk
+%%DATADIR%%/%%VERSION%%/srfi-4.ostk
+%%DATADIR%%/%%VERSION%%/srfi-4.stk
+%%DATADIR%%/%%VERSION%%/srfi-7.ostk
+%%DATADIR%%/%%VERSION%%/srfi-7.stk
+%%DATADIR%%/%%VERSION%%/srfi-9.ostk
+%%DATADIR%%/%%VERSION%%/srfi-9.stk
+%%DATADIR%%/%%VERSION%%/trace.ostk
+%%DATADIR%%/%%VERSION%%/trace.stk
+@dirrm %%DATADIR%%/%%VERSION%%/Match
+@dirrm %%DATADIR%%/%%VERSION%%
+@dirrm %%DATADIR%%
