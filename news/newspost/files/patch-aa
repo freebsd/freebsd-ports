@@ -1,0 +1,10 @@
+--- base/socket.c.orig	Sun Jul 21 21:58:52 2002
++++ base/socket.c	Thu Feb  6 12:22:46 2003
+@@ -19,6 +19,7 @@
+  */
+ 
+ #include <signal.h>
++#include <sys/types.h>
+ #include <sys/socket.h>
+ #include <netdb.h>
+ #include <netinet/in.h>
