@@ -29,7 +29,7 @@ USE_ICONV=	yes
 PLIST_FILES=	bin/ncmpc \
 	%%EXAMPLESDIR%%/config \
 	%%EXAMPLESDIR%%/keys \
-	=%%EXAMPLESDIR%%/ncmpc.lirc
+	%%EXAMPLESDIR%%/ncmpc.lirc
 PLIST_DIRS=%%EXAMPLESDIR%%
 
 .ifdef(WITHOUT_NLS)
