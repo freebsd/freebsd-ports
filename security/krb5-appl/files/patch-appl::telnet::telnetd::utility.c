@@ -1,5 +1,5 @@
 --- appl/telnet/telnetd/utility.c.orig	Wed Feb 28 14:06:52 2001
-+++ appl/telnet/telnetd/utility.c	Thu Jul 19 19:58:05 2001
++++ appl/telnet/telnetd/utility.c	Mon Jul 23 17:16:27 2001
 @@ -58,8 +58,7 @@
  {
      void netflush();
@@ -47,7 +47,41 @@
  #ifdef	ENCRYPTION
  	if (encrypt_output) {
  		char *s = nclearto ? nclearto : nbackp;
-@@ -528,12 +523,11 @@
+@@ -314,33 +309,6 @@
+ 
+ 
+ /*
+- * writenet
+- *
+- * Just a handy little function to write a bit of raw data to the net.
+- * It will force a transmit of the buffer if necessary
+- *
+- * arguments
+- *    ptr - A pointer to a character string to write
+- *    len - How many bytes to write
+- */
+-	void
+-writenet(ptr, len)
+-	register unsigned char *ptr;
+-	register int len;
+-{
+-	/* flush buffer if no room for new data) */
+-	if ((&netobuf[BUFSIZ] - nfrontp) < len) {
+-		/* if this fails, don't worry, buffer is a little big */
+-		netflush();
+-	}
+-
+-	memcpy(nfrontp, ptr, len);
+-	nfrontp += len;
+-
+-}  /* end of writenet */
+-
+-
+-/*
+  * miscellaneous functions doing a variety of little jobs follow ...
+  */
+ 
+@@ -528,12 +496,11 @@
  	register int option;
  {
  	if (TELOPT_OK(option))
@@ -63,7 +97,7 @@
  	return;
  }
  
-@@ -550,9 +544,8 @@
+@@ -550,9 +517,8 @@
  		return;
  
  	if (direction) {
@@ -74,7 +108,7 @@
  	    if (length >= 3) {
  		register int j;
  
-@@ -560,232 +553,192 @@
+@@ -560,232 +526,192 @@
  		j = pointer[length-1];
  
  		if (i != IAC || j != SE) {
@@ -365,7 +399,7 @@
  		    break;
  		}
  		{
-@@ -796,24 +749,19 @@
+@@ -796,24 +722,19 @@
  			pointer[2]&MODE_SOFT_TAB ? "|SOFT_TAB" : "",
  			pointer[2]&MODE_LIT_ECHO ? "|LIT_ECHO" : "",
  			pointer[2]&MODE_ACK ? "|ACK" : "");
@@ -395,7 +429,7 @@
  		}
  	    }
  	    break;
-@@ -822,24 +770,20 @@
+@@ -822,24 +743,20 @@
  	    register char *cp;
  	    register int j, k;
  
@@ -425,7 +459,7 @@
  
  		for (i = 2; i < length; i++) {
  		    switch(pointer[i]) {
-@@ -850,18 +794,15 @@
+@@ -850,18 +767,15 @@
  		    common2:
  			i++;
  			if (TELOPT_OK(pointer[i]))
@@ -448,7 +482,7 @@
  			i++;
  			j = k = i;
  			while (j < length) {
-@@ -877,20 +818,17 @@
+@@ -877,20 +791,17 @@
  			}
  			printsub(0, &pointer[i], k - i);
  			if (i < length) {
@@ -472,7 +506,7 @@
  			break;
  		    }
  		}
-@@ -900,86 +838,77 @@
+@@ -900,86 +811,77 @@
  	  }
  
  	case TELOPT_XDISPLOC:
@@ -576,7 +610,7 @@
  		    break;
  		}
  	    }
-@@ -987,90 +916,69 @@
+@@ -987,90 +889,69 @@
  
  #if	defined(AUTHENTICATION)
  	case TELOPT_AUTHENTICATION:
@@ -684,7 +718,7 @@
  		    }
  		    break;
  	    }
-@@ -1079,86 +987,70 @@
+@@ -1079,86 +960,70 @@
  
  #ifdef	ENCRYPTION
  	case TELOPT_ENCRYPT:
@@ -789,7 +823,7 @@
  		}
  		break;
  	    }
-@@ -1167,18 +1059,15 @@
+@@ -1167,18 +1032,15 @@
  
  	default:
  	    if (TELOPT_OK(pointer[0]))
@@ -812,7 +846,7 @@
  }
  
  /*
-@@ -1200,26 +1089,22 @@
+@@ -1200,26 +1062,22 @@
  		}
  
  		/* add a line of output */
