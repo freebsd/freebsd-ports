@@ -1,33 +1,58 @@
 # New ports collection makefile for:	virtualpaper
-# Version required:	1.2
+# Version required:	1.4
 # Date created:		13 June 1996
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.6 1996/04/18 07:58:21 tg Exp $
+# $Id: Makefile,v 1.1.1.1 1996/06/14 08:00:14 jkh Exp $
 #
 
-DISTNAME=	virtualpaper-1.3
+DISTNAME=	virtualpaper-1.4
+DIST_SUBDIR=	virtualpaper-1.4
 CATEGORIES+=	print
-DISTFILES=	sources.tar.Z
 MASTER_SITES=	http://www.research.digital.com:80/SRC/virtualpaper/cgi-bin/nph-download.tcl/sources.tar.Z?object=Virtual+Paper/
-BUILD_DEPENDS=	m3build:${PORTSDIR}/lang/modula-3
-RUN_DEPENDS=	m3ship:${PORTSDIR}/lang/modula-3
+DISTFILES=	sources.tar.Z
+
+MAINTAINER=	jdp@FreeBSD.org
+
+BUILD_DEPENDS=	m3build-4:${PORTSDIR}/lang/modula-3
+LIB_DEPENDS=	m3\\.4\\.:${PORTSDIR}/lang/modula-3-lib
 
 do-build:
-	@(cd ${WRKSRC}/lecternclient ; m3build)
-	@(cd ${WRKSRC}/lecterndoc; m3build)
-	@(cd ${WRKSRC}/lectern; m3build)
-	@(cd ${WRKSRC}/ocr; m3build)
-	@(cd ${WRKSRC}/buildlectern; m3build)
-	@(cd ${WRKSRC}/editlectern; m3build)
+	@cd ${WRKSRC}/lecternclient; m3build
+	@cd ${WRKSRC}/lecterndoc; m3build
+	@cd ${WRKSRC}/lectern; m3build
+	@cd ${WRKSRC}/ocr; m3build
+	@cd ${WRKSRC}/buildlectern; m3build
+	@cd ${WRKSRC}/editlectern; m3build
 
 do-install:
-	@(cd ${WRKSRC}/lecternclient ; m3ship)
-	@(cd ${WRKSRC}/lecterndoc; m3ship)
-	@(cd ${WRKSRC}/lectern; m3ship)
-	@(cd ${WRKSRC}/ocr; m3ship)
-	@(cd ${WRKSRC}/buildlectern; m3ship)
-	@(cd ${WRKSRC}/editlectern; m3ship)
-	@/sbin/ldconfig -m ${PREFIX}/lib/m3/FreeBSD2
+	@echo "Installing files"
+	@cd ${WRKSRC}; \
+	    ${INSTALL_PROGRAM} \
+		lecternclient/FreeBSD2/LecternClient \
+		lectern/FreeBSD2/Lectern \
+		buildlectern/FreeBSD2/BuildLectern \
+		editlectern/FreeBSD2/EditLectern \
+		${PREFIX}/bin; \
+	    ${INSTALL_MAN} \
+		lecternclient/FreeBSD2/LecternClient.1 \
+		lectern/FreeBSD2/Lectern.1 \
+		buildlectern/FreeBSD2/BuildLectern.1 \
+		editlectern/FreeBSD2/EditLectern.1 \
+		${PREFIX}/man/man1; \
+	    ${INSTALL_MAN} \
+		lecternclient/FreeBSD2/LecternClient.1.html \
+		lectern/FreeBSD2/Lectern.1.html \
+		buildlectern/FreeBSD2/BuildLectern.1.html \
+		editlectern/FreeBSD2/EditLectern.1.html \
+		${PREFIX}/lib/m3/www
+	@echo "Stripping programs"
+	@cd ${PREFIX}/bin; \
+	    strip LecternClient Lectern BuildLectern EditLectern
+.if !defined(NOMANCOMPRESS)
+	@echo "Compressing manual pages"
+	@cd ${PREFIX}/man/man1; \
+	    gzip -9nf LecternClient.1 Lectern.1 BuildLectern.1 EditLectern.1
+.endif
 
 .include <bsd.port.mk>
