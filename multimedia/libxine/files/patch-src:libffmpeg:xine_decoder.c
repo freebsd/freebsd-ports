@@ -6,8 +6,8 @@
  
 -#include "libavcodec/avcodec.h"
 -#include "libavcodec/dsputil.h"
-+#include <libavcodec/avcodec.h>
-+#include <libavcodec/dsputil.h>
++#include <ffmpeg/avcodec.h>
++#include <ffmpeg/dsputil.h>
  
  /*
  #define LOG
