@@ -25,7 +25,8 @@ USE_INC_LIBTOOL_VER=13
 USE_GNOME=	gtk12
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
-PLIST_SUB=	LIB_VERSION="${LIB_VERSION}"
+PLIST_FILES=	lib/xmps/codecs/video/libopendivx.so \
+		lib/xmps/codecs/video/libopendivx.so.${LIB_VERSION}
 
 LIB_VERSION=	0
 
