@@ -78,8 +78,8 @@ while [ "$1" ]; do
 			echo "BIN1+=		tlsmgr"
 			echo "POSTFIX_CCARGS+=	-DHAS_SSL -I/usr/include/openssl"
 			echo "POSTFIX_AUXLIBS+=	-lssl -lcrypto"
-			echo "DISTFILES+=	\${DISTNAME}.tar.gz pfixtls-0.6.36-snap20010204-0.9.6.tar.gz"
-			echo "EXTRA_PATCHES+=	\${WRKDIR}/pfixtls-0.6.36-snap20010204-0.9.6/pfixtls.diff"
+			echo "DISTFILES+=	\${DISTNAME}.tar.gz pfixtls-0.6.38-snap20010225-0.9.6.tar.gz"
+			echo "EXTRA_PATCHES+=	\${WRKDIR}/pfixtls-0.6.38-snap20010225-0.9.6/pfixtls.diff"
 			echo "PATCH_STRIP=	-p1"
 			SUB_TLS=""
 			;;
@@ -105,9 +105,9 @@ while [ "$1" ]; do
 			SUB_TEST=""
 			;;
 		\"IPv6\")
-			echo "PATCH_SITES+=	ftp://ftp.kame.net/pub/kame/misc"
+			echo "PATCH_SITES+=	ftp://ftp.kame.net/pub/kame/misc/"
 			echo "PATCH_SITES+=	\${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/kame/misc/&,}"
-			echo "PATCHFILES+=	postfix-20010204snap-v6-20010205a.diff.gz"
+			echo "PATCHFILES+=	postfix-20010225snap-v6-20010228a.diff.gz"
 			echo ""
 			echo "pre-patch:"
 			echo "	cd \${WRKSRC} && ln -s . postfix"
