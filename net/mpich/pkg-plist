@@ -121,11 +121,9 @@ mpich/include/c++/status.h
 mpich/include/c++/status_inln.h
 mpich/include/c++/topology.h
 mpich/include/c++/topology_inln.h
-mpich/lib/libampi.a
 mpich/lib/libfmpich.a
 mpich/lib/liblmpi.a
 mpich/lib/libmpe.a
-mpich/lib/libmpe_nompi.a
 mpich/lib/libmpich++.a
 mpich/lib/libmpich.a
 mpich/lib/libmpichf.a
