@@ -17,7 +17,8 @@ PATCH_SITE_SUBDIR=	kuriyama
 PATCHFILES=	tamago-${PORTVERSION}-20011028.patch.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
+COMMENT?=	The Multilingual Input Method - Egg V4
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

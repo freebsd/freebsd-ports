@@ -11,6 +11,7 @@ CATEGORIES=	editors
 MASTER_SITES=	http://xcoral.free.fr/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A multiwindow mouse-based text editor for X
 
 USE_X_PREFIX=	yes
 

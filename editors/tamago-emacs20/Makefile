@@ -6,6 +6,7 @@
 #
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The Multilingual Input Method - Egg V4 for Emacs20
 
 MASTERDIR=		${.CURDIR}/../tamago
 EMACS_PORT_NAME=	emacs20

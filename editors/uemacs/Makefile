@@ -13,6 +13,7 @@ MASTER_SITES=	http://uemacs.tripod.com/ \
 DISTNAME=	ue400dev
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A full screen editor
 
 USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes

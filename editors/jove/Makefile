@@ -12,6 +12,7 @@ CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.cs.toronto.edu/pub/moraes/jove/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Jonathan's Own Version of Emacs
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAN1=		jove.1 teachjove.1

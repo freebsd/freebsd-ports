@@ -16,6 +16,7 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	IIIMECF-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Internet/Intranet Input Method Emacs Client Framework for GNU Emacs 20
 
 BUILD_DEPENDS=	${UN_DEFINE}:${PORTSDIR}/converters/mule-ucs-emacs20
 RUN_DEPENDS=	${UN_DEFINE}:${PORTSDIR}/converters/mule-ucs-emacs20

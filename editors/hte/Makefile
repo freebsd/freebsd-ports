@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	ht-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A file editor/viewer/analyzer for executables
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-lm"

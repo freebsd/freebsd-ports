@@ -12,6 +12,7 @@ CATEGORIES=	editors
 MASTER_SITES=	http://koti.mbnet.fi/jarmonik/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A mathematical design and publishing application
 
 USE_REINPLACE=	yes
 USE_QT_VER=	3
