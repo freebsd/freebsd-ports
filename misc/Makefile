@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.188 1999/03/08 09:07:20 asami Exp $
+# $Id: Makefile,v 1.189 1999/03/10 16:06:44 jfitz Exp $
 #
 
     SUBDIR += 221upgrade
@@ -78,6 +78,7 @@
     SUBDIR += unclutter
     SUBDIR += us-zipcodes
     SUBDIR += viz
+    SUBDIR += wmweather
     SUBDIR += xd
     SUBDIR += xdelta
     SUBDIR += xenmenu
