@@ -5113,6 +5113,7 @@ mcrypt		ports/security/mcrypt
 mctoolame-decoder	ports/audio/mctoolame-decoder
 mctoolame-encoder	ports/audio/mctoolame-encoder
 md5crk		ports/security/md5crk
+md5deep		ports/security/md5deep
 mdbconv		ports/palm/mdbconv
 mdbtools	ports/databases/mdbtools
 mdcrack		ports/security/mdcrack
