@@ -1,7 +1,6 @@
-diff -ru /tmp/lb/linbot-1.0/myUrlLib.py ./myUrlLib.py
---- myUrlLib.py	Sun Mar 14 13:24:20 1999
-+++ myUrlLib.py	Wed Jul 18 20:42:57 2001
-@@ -37,6 +37,7 @@
+--- myUrlLib.py	Sun Mar 14 14:24:20 1999
++++ myUrlLib.py	Wed Apr  3 10:52:19 2002
+@@ -37,6 +38,7 @@
  import htmlparse
  import debugio
  import sys
@@ -9,7 +8,16 @@ diff -ru /tmp/lb/linbot-1.0/myUrlLib.py ./myUrlLib.py
  
  
  def get_robots(location):
-@@ -105,7 +106,10 @@
+@@ -77,7 +79,7 @@
+ 	self.init()
+ 
+ 	debugio.write('\tparent = ' + str(parent),2)
+-	from urlparse import *
++	from urlparse import urlparse
+ 
+ 	parsed = urlparse(url)
+ 	self.scheme = parsed[0]
+@@ -105,7 +107,10 @@
  	
  	if (parent is None):
  	    Link.baseurl=self.URL
@@ -21,6 +29,15 @@ diff -ru /tmp/lb/linbot-1.0/myUrlLib.py ./myUrlLib.py
  	    if Link.base[-2:] == '//': Link.base = self.URL
  	    debugio.write('\tbase: %s' % Link.base)
  	    if self.scheme == 'http':
+@@ -257,7 +262,7 @@
+ 
+ def is_external(url):
+     """ returns true if url is an external link """
+-    from urlparse import *
++    from urlparse import urlparse
+     parsed = urlparse(url)
+     scheme = parsed[0]
+     location = parsed[1]
 --- robotparser.py	Sat Jan  9 19:01:45 1999
 +++ robotparser.py	Wed Jul 18 20:29:13 2001
 @@ -37,7 +37,7 @@
@@ -88,3 +105,19 @@ diff -ru /tmp/lb/linbot-1.0/myUrlLib.py ./myUrlLib.py
      
      return open(filename,'r').read()
      
+--- htmlparse.py	Wed Mar 10 23:51:25 1999
++++ htmlparse.py	Wed Apr  3 11:10:55 2002
+@@ -48,5 +48,5 @@
+     based on parent"""
+     
+-    from urlparse import *
++    from urlparse import urlparse
+     
+     method=urlparse(url)[0]
+@@ -125,5 +125,5 @@
+     the <BASE HREF=> tag."""
+     import htmllib
+-    from urlparse import *
++    from urlparse import urlparse
+     from formatter import NullFormatter
+ 
