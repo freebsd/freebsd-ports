@@ -621,6 +621,7 @@
     SUBDIR += sipsak
     SUBDIR += sixxs-heartbeatd
     SUBDIR += skype
+    SUBDIR += sl2tps
     SUBDIR += slirp
     SUBDIR += slurm
     SUBDIR += smbfs
