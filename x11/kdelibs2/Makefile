@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.19 1998/09/30 01:57:21 jseger Exp $
+# $Id: Makefile,v 1.20 1998/10/01 18:35:32 brian Exp $
 #
 
 DISTNAME=	kdelibs-1.0
@@ -25,5 +25,14 @@ CONFIGURE_ENV=	CXXFLAGS="$(CFLAGS)"
 
 post-install:
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+	if [ "${PORTOBJFORMAT}" = "aout" ]; then \
+		${LN} -sf libjscript.so.0.90  ${PREFIX}/lib/libjscript.so; \
+		${LN} -sf libkdecore.so.1.0   ${PREFIX}/lib/libkdecore.so; \
+		${LN} -sf libkdeui.so.1.0     ${PREFIX}/lib/libkdeui.so; \
+		${LN} -sf libkfile.so.1.0     ${PREFIX}/lib/libkfile.so; \
+		${LN} -sf libkfm.so.1.0       ${PREFIX}/lib/libkfm.so; \
+		${LN} -sf libkhtmlw.so.1.0    ${PREFIX}/lib/libkhtmlw.so; \
+		${LN} -sf libmediatool.so.1.0 ${PREFIX}/lib/libmediatool.so; \
+	fi
 
 .include <bsd.port.mk>
