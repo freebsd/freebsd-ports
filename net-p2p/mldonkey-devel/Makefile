@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mldonkey
-PORTVERSION=	2.5.28.k
+PORTVERSION=	2.5.28.l
 CATEGORIES+=	net
 MASTER_SITES=	http://download.berlios.de/pub/mldonkey/spiralvoice/cvs/
 PKGNAMESUFFIX=	-devel
@@ -32,7 +32,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	opt
 
-CONFIGURE_ARGS=	--enable-pthread --enable-ocamlver=3
+CONFIGURE_ARGS=	--disable-pthread --enable-ocamlver=3
 CONFIGURE_WRKSRC=	${WRKSRC}/config
 MAKE_ENV=	OCAMLRUNPARAM="l=256M"
 
