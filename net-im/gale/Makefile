@@ -8,7 +8,8 @@
 PORTNAME=	gale
 PORTVERSION=	0.99e
 CATEGORIES=	net
-MASTER_SITES=	http://download.ofb.net/gale/
+MASTER_SITES=	http://www.mit.edu/afs/sipb/project/gale/src/ \
+		# http://download.ofb.net/gale/ - original mastersite
 DISTNAME=	${PORTNAME}-${PORTVERSION}gg
 
 MAINTAINER=	peterh@sapros.com
