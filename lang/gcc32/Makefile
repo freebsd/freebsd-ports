@@ -25,7 +25,7 @@ DISTFILES=	gcc-core-${PORTVERSION}${EXTRACT_SUFX} \
 #PATCHFILES=	port_gcc32_${SNAPDATE}.diff
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	GNU Compiler Collection 3.2.1 (inprogress version)
+COMMENT=	GNU Compiler Collection 3.2.2
 
 LATEST_LINK=	gcc32
 
@@ -35,7 +35,7 @@ PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
 # do not require GCC 3.2 to compile -- or we have an infinate loop on RELENG_4.
 USE_GCC=	X
-NOMANCOMPRESS=	yes	# to hard to deal with differences on 5-cur and releng4
+NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 
 .include <bsd.port.pre.mk>
 
