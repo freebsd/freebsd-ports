@@ -1,16 +1,12 @@
-Base: http://home.woolridge.ca/mutt/patches/patch-1.5.3.dw.confirm-crypt-hook.1
-      http://home.woolridge.ca/mutt/patches/patch-1.5.3.dw.multiple-crypt-hook.1
-      http://home.woolridge.ca/mutt/patches/patch-1.5.3.dw.crypt-autoselectkey.1
-
---- PATCHES	Tue Dec 17 10:47:20 2002
-+++ PATCHES	Fri Jan 24 11:27:21 2003
+--- PATCHES	Wed Mar 19 22:33:37 2003
++++ PATCHES	Thu Mar 20 21:38:55 2003
 @@ -0,0 +1,3 @@
-+patch-1.5.3.dw.crypt-autoselectkey.1
-+patch-1.5.3.dw.confirm-crypt-hook.1
-+patch-1.5.3.dw.multiple-crypt-hook.1
---- doc/manual.sgml.head	Tue Dec 17 10:36:42 2002
-+++ doc/manual.sgml.head	Fri Jan 24 11:26:59 2003
-@@ -1423,7 +1423,9 @@
++patch-1.5.4.dw.confirm-crypt-hook.1
++patch-1.5.4.dw.multiple-crypt-hook.2
++patch-1.5.4.dw.crypt-autoselectkey.1
+--- doc/manual.sgml.head	Tue Mar  4 08:49:49 2003
++++ doc/manual.sgml.head	Thu Mar 20 21:38:47 2003
+@@ -1422,7 +1422,9 @@
  or because, for some reasons, you need to override the key Mutt would
  normally use.  The crypt-hook command provides a method by which you can
  specify the ID of the public key to be used when encrypting messages to
@@ -19,18 +15,25 @@ Base: http://home.woolridge.ca/mutt/patches/patch-1.5.3.dw.confirm-crypt-hook.1
 +pattern; multiple matching pgp-hook's result in the use of multiple
 +keyids for recipient.
  
- <sect1>Adding key sequences to the keyboard buffer<label id="push">
- <p>
---- doc/muttrc.man.head	Mon Sep  9 21:28:35 2002
-+++ doc/muttrc.man.head	Fri Jan 24 11:26:59 2003
-@@ -287 +287,3 @@
--to a certain recipient.
-+to a certain recipient.  You may use multiple \fBpgp-hook\fPs with the
-+same \fIpattern\fP; multiple matching \fBpgp-hook\fPs result in the use
-+of multiple \fIkey-id\fPs for recipient.
---- hook.c	Wed Dec 11 16:13:11 2002
-+++ hook.c	Fri Jan 24 11:26:59 2003
-@@ -118,7 +118,11 @@
+ The meaning of "key id" is to be taken broadly in this context:  You
+ can either put a numerical key ID here, an e-mail address, or even
+--- doc/muttrc.man.head	Sun Dec 22 20:50:22 2002
++++ doc/muttrc.man.head	Thu Mar 20 21:38:47 2003
+@@ -286,7 +286,10 @@
+ specify the ID of the public key to be used when encrypting messages
+ to a certain recipient.  The meaning of "key ID" is to be taken
+ broadly: This can be a different e-mail address, a numerical key ID,
+-or even just an arbitrary search string.
++or even just an arbitrary search string.  You may use multiple
++\fBpgp-hook\fPs with the same \fIpattern\fP; multiple matching
++\fBpgp-hook\fPs result in the use of multiple \fIkey-id\fPs for
++recipient.
+ .TP
+ \fBpush\fP \fIstring\fP
+ This command adds the named \fIstring\fP to the keyboard buffer.
+--- hook.c	Tue Jan 21 13:25:21 2003
++++ hook.c	Thu Mar 20 21:38:47 2003
+@@ -117,7 +117,11 @@
  	ptr->rx.not == not &&
  	!mutt_strcmp (pattern.data, ptr->rx.pattern))
      {
@@ -42,10 +45,10 @@ Base: http://home.woolridge.ca/mutt/patches/patch-1.5.3.dw.confirm-crypt-hook.1
        {
  	/* these hooks allow multiple commands with the same
  	 * pattern, so if we've already seen this pattern/command pair, just
-@@ -445,9 +449,25 @@
+@@ -443,9 +447,25 @@
+   return _mutt_string_hook (chs, M_ICONVHOOK);
  }
  
- #if defined(HAVE_PGP) || defined(HAVE_SMIME)
 -char *mutt_crypt_hook (ADDRESS *adr)
 +LIST *mutt_crypt_hook (ADDRESS *adr)
  {
@@ -68,16 +71,17 @@ Base: http://home.woolridge.ca/mutt/patches/patch-1.5.3.dw.confirm-crypt-hook.1
 +  }
 +  return (key_list);
  }
- #endif /* HAVE_PGP */
  
---- init.h	Mon Dec  9 19:09:21 2002
-+++ init.h	Fri Jan 24 11:27:21 2003
-@@ -1195,6 +1195,16 @@
- 
- #if defined(HAVE_PGP) || defined(HAVE_SMIME)
- # ifdef HAVE_PGP
+ #ifdef USE_SOCKET
+--- init.h	Tue Mar  4 10:28:12 2003
++++ init.h	Thu Mar 20 21:38:55 2003
+@@ -1192,6 +1192,16 @@
+   ** when you are at the end of a message and invoke the \fInext-page\fP
+   ** function.
+   */
++  
++
 +  { "pgp_autoselectkey",	DT_SYN,  R_NONE, UL "crypt_autoselectkey", 0 },
-+# endif
 +  { "crypt_autoselectkey",	DT_BOOL, R_NONE, OPTCRYPTAUTOSELECT, 0 },
 +  /*
 +  ** .pp
@@ -85,18 +89,15 @@ Base: http://home.woolridge.ca/mutt/patches/patch-1.5.3.dw.confirm-crypt-hook.1
 +  ** one matching key is available.  This may be useful in conjunction with
 +  ** the \fIcrypt-hook\fP command.
 +  */
-+# ifdef HAVE_PGP
    { "pgp_autosign", 	DT_SYN,  R_NONE, UL "crypt_autosign", 0 },
- # endif  
    { "crypt_autosign",	DT_BOOL, R_NONE, OPTCRYPTAUTOSIGN, 0 },
-@@ -1220,6 +1230,17 @@
-   ** requested as well.  IF ``$$smime_is_default'' is set, then
-   ** OpenSSL is used instead to create S/MIME messages and settings can
-   ** be overridden by use of the \fIsmime-menu\fP.
+   /*
+@@ -1216,6 +1226,15 @@
+   ** then OpenSSL is used instead to create S/MIME messages and
+   ** settings can be overridden by use of the \fIsmime-menu\fP.
+   ** (Crypto only)
 +  */
-+# ifdef HAVE_PGP
 +  { "pgp_confirmhook",		DT_SYN, R_NONE, UL "crypt_confirmhook", 1 },
-+# endif
 +  { "crypt_confirmhook",	DT_BOOL, R_NONE, OPTCRYPTCONFIRMHOOK, 1 },
 +  /*
 +  ** .pp
@@ -105,29 +106,29 @@ Base: http://home.woolridge.ca/mutt/patches/patch-1.5.3.dw.confirm-crypt-hook.1
 +  ** be presented.  This is generally considered unsafe, especially where
 +  ** typos are concerned.
    */
- #ifdef HAVE_PGP
    { "pgp_ignore_subkeys", DT_BOOL, R_NONE, OPTPGPIGNORESUB, 1},
---- mutt.h	Fri Dec  6 17:37:21 2002
-+++ mutt.h	Fri Jan 24 11:27:21 2003
-@@ -431,6 +431,7 @@
+   /*
+--- mutt.h	Tue Mar  4 08:49:48 2003
++++ mutt.h	Thu Mar 20 21:38:55 2003
+@@ -425,6 +425,7 @@
+ 
    /* PGP options */
    
- #if defined(HAVE_PGP) || defined(HAVE_SMIME)
 +  OPTCRYPTAUTOSELECT,
    OPTCRYPTAUTOSIGN,
    OPTCRYPTAUTOENCRYPT,
    OPTCRYPTREPLYENCRYPT,
-@@ -442,6 +443,7 @@
+@@ -434,6 +435,7 @@
+   OPTSMIMEISDEFAULT,
    OPTASKCERTLABEL,
    OPTSDEFAULTDECRYPTKEY,
- #endif
 +  OPTCRYPTCONFIRMHOOK,
- #ifdef HAVE_PGP
    OPTPGPIGNORESUB,
    OPTPGPLONGIDS,
---- pgp.c	Mon Dec 16 16:27:26 2002
-+++ pgp.c	Fri Jan 24 11:27:04 2003
-@@ -1051,6 +1051,8 @@
+   OPTPGPAUTOTRAD,
+--- pgp.c	Tue Feb 25 22:28:54 2003
++++ pgp.c	Thu Mar 20 21:40:39 2003
+@@ -1014,6 +1014,8 @@
    char *keyID, *keylist = NULL, *t;
    size_t keylist_size = 0;
    size_t keylist_used = 0;
@@ -136,7 +137,7 @@ Base: http://home.woolridge.ca/mutt/patches/patch-1.5.3.dw.confirm-crypt-hook.1
    ADDRESS *tmp = NULL, *addr = NULL;
    ADDRESS **last = &tmp;
    ADDRESS *p, *q;
-@@ -1084,70 +1086,97 @@
+@@ -1047,70 +1049,97 @@
      char buf[LONG_STRING];
  
      q = p;
@@ -163,7 +164,7 @@ Base: http://home.woolridge.ca/mutt/patches/patch-1.5.3.dw.confirm-crypt-hook.1
 -	if (is_numerical_keyid (keyID))
 +	keyID = (char *)hook->data;
 +	snprintf (buf, sizeof (buf), _("Use keyID = \"%s\" for %s?"), keyID, p->mailbox);
-+      if (!option(OPTCRYPTCONFIRMHOOK) || (r = mutt_yesorno (buf, M_YES)) == M_YES)
++	if (!option(OPTCRYPTCONFIRMHOOK) || (r = mutt_yesorno (buf, M_YES)) == M_YES)
  	{
 -	  if (strncmp (keyID, "0x", 2) == 0)
 -	    keyID += 2;
@@ -281,10 +282,9 @@ Base: http://home.woolridge.ca/mutt/patches/patch-1.5.3.dw.confirm-crypt-hook.1
  
    }
    rfc822_free_address (&tmp);
-diff -ru work.orig/mutt-1.5.3/pgpkey.c work/mutt-1.5.3/pgpkey.c
---- pgpkey.c	Wed Dec 11 12:20:05 2002
-+++ pgpkey.c	Fri Jan 24 11:27:21 2003
-@@ -435,6 +435,11 @@
+--- pgpkey.c	Tue Jan 21 13:25:21 2003
++++ pgpkey.c	Thu Mar 20 21:38:32 2003
+@@ -435,8 +435,13 @@
    return rv;
  }
  
@@ -293,9 +293,12 @@ diff -ru work.orig/mutt-1.5.3/pgpkey.c work/mutt-1.5.3/pgpkey.c
 +			     || (pgp_id_is_valid((uid)) \
 +				 && pgp_id_is_strong((uid))))
 +
- static pgp_key_t *pgp_select_key (pgp_key_t *keys,
- 				  ADDRESS * p, const char *s)
+ static pgp_key_t pgp_select_key (pgp_key_t keys,
+-                                 ADDRESS * p, const char *s)
++				  ADDRESS * p, const char *s)
  {
+   int keymax;
+   pgp_uid_t **KeyTable;
 @@ -450,6 +455,7 @@
    pgp_uid_t *a;
    int (*f) (const void *, const void *);
@@ -345,14 +348,14 @@ diff -ru work.orig/mutt-1.5.3/pgpkey.c work/mutt-1.5.3/pgpkey.c
        {
  	char *s = "";
  	char buff[LONG_STRING];
---- protos.h	Wed Dec 11 23:31:25 2002
-+++ protos.h	Fri Jan 24 11:26:59 2003
-@@ -130,7 +130,7 @@
- char *mutt_get_name (ADDRESS *);
+--- protos.h	Thu Mar  6 22:24:46 2003
++++ protos.h	Thu Mar 20 21:38:47 2003
+@@ -129,7 +129,7 @@
+ char *mutt_get_body_charset (char *, size_t, BODY *);
+ const char *mutt_get_name (ADDRESS *);
  char *mutt_get_parameter (const char *, PARAMETER *);
- #if defined(HAVE_PGP) || defined(HAVE_SMIME)
 -char *mutt_crypt_hook (ADDRESS *);
 +LIST *mutt_crypt_hook (ADDRESS *);
- #endif /* HAVE_PGP */
  char *mutt_make_date (char *, size_t);
  
+ const char *mutt_make_version (void);

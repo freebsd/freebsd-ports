@@ -1,11 +1,11 @@
---- commands.c.orig2	Fri May 31 10:14:06 2002
-+++ commands.c	Fri May 31 10:32:00 2002
-@@ -197,7 +197,7 @@
+--- commands.c.orig	Thu Mar 20 20:37:21 2003
++++ commands.c	Thu Mar 20 20:40:29 2003
+@@ -178,7 +178,7 @@
      {
        if (cur->security & GOODSIGN)
        {
--	if (!smime_verify_sender(cur))
-+	if (option(OPTSMIMENOSENDER) || !smime_verify_sender(cur))
+-	if (!crypt_smime_verify_sender(cur))
++	if (option(OPTSMIMENOSENDER) || !crypt_smime_verify_sender(cur))
  	  mutt_message ( _("S/MIME signature successfully verified."));
  	else
  	  mutt_error ( _("S/MIME certificate owner does not match sender."));

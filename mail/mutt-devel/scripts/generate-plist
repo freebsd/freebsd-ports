@@ -122,7 +122,7 @@ echo "share/doc/mutt/manual.ps" >> $tmp_first
 fi
 
 if [ "$MUTT_HTML" = "yes" ]; then
-  html=363
+  html=366
   if [ "$MUTT_COMPRESSED_FOLDERS" = "yes" ]; then
     html=$(($html + 5))
   fi

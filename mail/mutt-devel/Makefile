@@ -47,9 +47,6 @@
 # If you want to enable extended quoting functions define:
 #  WITH_MUTT_QUOTE_PATCH
 #
-# If you want to disable a outlook_compat function for use with smime define:
-#  WITHOUT_MUTT_SMIME_OUTLOOK_COMPAT
-#
 # If you want to use the rethreading functions define:
 #  WITH_MUTT_EDIT_THREADS
 #
@@ -67,7 +64,7 @@
 #  WITH_MUTT_IFDEF_PATCH
 
 PORTNAME=	mutt-devel
-PORTVERSION=	1.5.3
+PORTVERSION=	1.5.4
 #PORTREVISION?=	0
 CATEGORIES+=	mail
 .if defined(WITH_MUTT_NNTP)
@@ -100,8 +97,10 @@ SCRIPTS_ENV=	WRKDIR="${WRKDIR}"
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_MUTT_COMPRESSED_FOLDERS) || defined(WITH_MUTT_NNTP) || \
-		defined(WITH_MUTT_QUOTE_PATCH)
+.if defined(WITH_MUTT_COMPRESSED_FOLDERS)
+PATCH_SITES+=	http://www.spinnaker.de/mutt/compressed/:spinnaker
+.endif
+.if defined(WITH_MUTT_NNTP) || defined(WITH_MUTT_QUOTE_PATCH)
 PATCH_SITES+=	http://www.mutt.org.ua/download/mutt-${PATCH_VERSION}/:vvv \
 		http://www2.mutt.org.ua/download/mutt-${PATCH_VERSION}/:vvv \
 		ftp://ftp.mutt.org.ua/pub/mutt/mutt-${PATCH_VERSION}/:vvv \
@@ -112,7 +111,7 @@ PATCH_SITES+=	http://www.mutt.org.ua/download/mutt-${PATCH_VERSION}/:vvv \
 		defined(WITH_MUTT_IFDEF_PATCH)
 PATCH_SITES+=	http://cedricduval.free.fr/download/mutt/:cd
 .endif
-.if defined(WITH_MUTT_MBOX_HOOK_PATCH) 
+.if defined(WITH_MUTT_MBOX_HOOK_PATCH)
 PATCH_SITES+=	http://home.woolridge.ca/mutt/patches/:dw
 .endif
 
@@ -126,6 +125,7 @@ pre-build:
 			-e "s|^(AUTOHEADER = ).+|\1${AUTOHEADER}|" \
 		${BUILD_WRKSRC}/Makefile
 
+PATCH_VERSION=	1.5.3
 .if !defined(PATCH_VERSION)
 PATCH_VERSION=	${PORTVERSION}
 .endif
@@ -183,10 +183,6 @@ SGML_NEEDED=	yes
 pre-configure::
 	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-pgp-dw
 .endif
-.if defined(WITHOUT_MUTT_SMIME_OUTLOOK_COMPAT)
-pre-configure::
-	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-smime-no-outlook
-.endif
 
 .if defined(WITH_MUTT_LOCALES_FIX)
 CONFIGURE_ARGS+=	--enable-locales-fix
@@ -206,11 +202,12 @@ CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
 PATCH_DIST_STRIP=	-p1
 
 .if defined(WITH_MUTT_COMPRESSED_FOLDERS)
-PATCHFILES+=	patch-${PATCH_VERSION}.rr.compressed.gz:vvv
+PATCHFILES+=	patch-${PORTVERSION}.rr.compressed.1.gz:spinnaker
 CONFIGURE_ARGS+=	--enable-compressed
 SGML_NEEDED=	yes
 .endif
 .if defined(WITH_MUTT_NNTP)
+.error The WITH_MUTT_NNTP is not available at the moment.
 PATCHFILES+=	patch-${PATCH_VERSION}.vvv.nntp.gz:vvv
 CONFIGURE_ARGS+=	--enable-nntp
 SGML_NEEDED=	yes
@@ -226,6 +223,7 @@ CONFIGURE_ARGS+=	--enable-imap-edit-threads
 SGML_NEEDED=	yes
 .endif
 .if defined(WITH_MUTT_SIGNATURE_MENU)
+.error The WITH_MUTT_SIGNATURE_MENU is not available at the moment.
 PATCHFILES+=	patch-${PATCH_VERSION}.cd.signatures_menu.2.1:cd
 SGML_NEEDED=	yes
 .endif
@@ -244,7 +242,6 @@ MAN5=		muttrc.5 mbox.5
 post-patch::
 	@${REINPLACE_CMD} -e 's,/usr/bin/gpg,${LOCALBASE}/bin/gpg,g' \
 		${WRKSRC}/contrib/gpg.rc
-	@${CP} ${PATCHDIR}/smime.h ${WRKSRC}
 
 pre-configure::
 	@(cd ${WRKSRC}; ${SETENV} ${AUTOMAKE_ENV} ${ACLOCAL} -I m4)
