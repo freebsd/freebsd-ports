@@ -1,0 +1,8 @@
+SHA-2 is the collective name of one-way hash functions developed by the
+NIST.  SHA-256, SHA-384, and SHA-512 pertain to hashes whose outputs are
+256 bits, 384 bits and 512 bits, respectively.
+
+WWW: http://search.cpan.org/dist/Digest-SHA2/
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
