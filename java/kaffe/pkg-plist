@@ -1,15 +1,12 @@
-@name kaffe
-@owner bin
-@group bin
 bin/javac
 bin/javadoc
 bin/kaffe
 bin/kaffeh
+lib/libkaffe_native.so.0.5
+lib/libkaffe_vm.so.0.5
+lib/libkaffe_net.so.0.5
+@exec /sbin/ldconfig -m %B
+include/kaffe/jtypes.h
 include/kaffe/native.h
 include/kaffe/stubPreamble.h
-include/kaffe/jtypes.h
-lib/libkaffe_vm.so.0.4
-lib/libkaffe_native.so.0.4
-lib/libkaffe_net.so.0.4
 share/kaffe/license.terms
-@exec /sbin/ldconfig -m %B
