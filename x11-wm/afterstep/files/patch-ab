@@ -1,63 +1,59 @@
-*** sample.steprc.orig	Thu May 30 20:59:02 1996
---- sample.steprc	Wed Jul 17 12:44:02 1996
+*** sample.steprc.orig	Wed Aug 21 17:15:35 1996
+--- sample.steprc	Fri Aug 23 12:52:10 1996
 ***************
-*** 71,79 ****
+*** 78,86 ****
   ##########################################################################
   # Module path
   # ModulePath is a colon-separated list, just like regular unix PATH
-! ModulePath          /usr/X11R6/lib/X11/fvwm:/usr/X11R6/lib/X11/afterstep
+! ModulePath          /usr/lib/X11/afterstep:/usr/X11R6/lib/X11/afterstep
 ! PixmapPath          /usr/include/X11/pixmaps/
 ! IconPath            /usr/include/X11/bitmaps/
   NoBoundaryWidth 0
   BoundaryWidth 8
   Style "oclock" Sticky, NoTitle, StaysOnTop, WindowListSkip
---- 71,79 ----
+--- 78,86 ----
   ##########################################################################
   # Module path
   # ModulePath is a colon-separated list, just like regular unix PATH
-! ModulePath          /usr/X11R6/lib/X11/afterstep:/usr/X11R6/lib/X11/fvwm
-! PixmapPath          /usr/X11R6/include/X11/pixmaps/
-! IconPath            /usr/X11R6/include/X11/bitmaps/
+! ModulePath          @@PREFIX@@/lib/X11/afterstep:@@PREFIX@@/lib/X11/fvwm
+! PixmapPath          @@PREFIX@@/include/X11/pixmaps/
+! IconPath            @@PREFIX@@/include/X11/bitmaps/
   NoBoundaryWidth 0
   BoundaryWidth 8
   Style "oclock" Sticky, NoTitle, StaysOnTop, WindowListSkip
 ***************
-*** 94,109 ****
+*** 105,118 ****
   *Wharf xbiff   nil   Swallow "xbiff" xbiff -bg "#8e8a9e" -fg "#00003f" -geometry 45x45-1-1 &
   *Wharf xload  nil   Swallow "xload" xload -nolabel -hl black -bg "#8e8a9e" -geometry 45x45-1-1 &
-  *Wharf xterm monitor.xpm   Exec "-" xterm -e tcsh -l &
+  *Wharf xterm monitor.xpm   Exec "-" /xterm -geometry 80x25 -sl 256 -sb -ls -T 'xterm@afterstep.org' &
 ! *Wharf lyx text.xpm Exec "-" /home/frank/bin/lyx &>/dev/null &
 ! *Wharf gimp 3dpaint.xpm Exec "-" gimp -geometry +15+373 &
-  #*Wharf tkdate nil Swallow "tkdate" tkdate -geometry -1-1 &
   *Wharf pine writeletter.xpm Exec "-" xterm -T "pine" -e pine &
+  *Wharf - -  Swallow "xload" xload -nolabel -hl black -bg "#8e8a9e" -geometry 48x48-1-1 &
   *Wharf Netscape netscape3.xpm Exec "-" netscape -geometry 680x565+400+2 &
 ! *Wharf moxfm FilingCabinet.xpm Exec "-" moxfm >& /dev/null &
   *Wharf pager nil SwallowModule "FvwmPager" FvwmPager 0 0
 ! *Wharf config interface.xpm Exec "-" xterm -T "vi(.steprc)" -e vim -n ~/.steprc &
-! *Wharf Recycler  recycler.xpm  Restart " " afterstep
-! *Wharf Shutdown	 shutdown.xpm  Quit 
+  *Wharf Recycler  recycler.xpm  Restart " " afterstep
+  
   ##########################################################################
-  
-  
---- 94,109 ----
+--- 105,118 ----
   *Wharf xbiff   nil   Swallow "xbiff" xbiff -bg "#8e8a9e" -fg "#00003f" -geometry 45x45-1-1 &
   *Wharf xload  nil   Swallow "xload" xload -nolabel -hl black -bg "#8e8a9e" -geometry 45x45-1-1 &
-  *Wharf xterm monitor.xpm   Exec "-" xterm -e tcsh -l &
+  *Wharf xterm monitor.xpm   Exec "-" /xterm -geometry 80x25 -sl 256 -sb -ls -T 'xterm@afterstep.org' &
 ! #*Wharf lyx text.xpm Exec "-" /home/frank/bin/lyx &>/dev/null &
 ! #*Wharf gimp 3dpaint.xpm Exec "-" gimp -geometry +15+373 &
-  #*Wharf tkdate nil Swallow "tkdate" tkdate -geometry -1-1 &
   *Wharf pine writeletter.xpm Exec "-" xterm -T "pine" -e pine &
+  *Wharf - -  Swallow "xload" xload -nolabel -hl black -bg "#8e8a9e" -geometry 48x48-1-1 &
   *Wharf Netscape netscape3.xpm Exec "-" netscape -geometry 680x565+400+2 &
 ! #*Wharf moxfm FilingCabinet.xpm Exec "-" moxfm >& /dev/null &
   *Wharf pager nil SwallowModule "FvwmPager" FvwmPager 0 0
 ! #*Wharf config interface.xpm Exec "-" xterm -T "vi(.steprc)" -e vim -n ~/.steprc &
-! *Wharf Recycler recycler.xpm  Restart " " afterstep
-! *Wharf Shutdown	shutdown.xpm  Quit 
+  *Wharf Recycler  recycler.xpm  Restart " " afterstep
+  
   ##########################################################################
-  
-  
 ***************
-*** 218,225 ****
+*** 229,236 ****
   Popup "HotList"
   	Title 	"HotList"
           Exec    "Xterm"         exec xterm -e tcsh -l &
@@ -66,11 +62,11 @@
           Nop     ""
           Popup   "Applications"  Applications
           Nop     ""
---- 218,225 ----
+--- 229,236 ----
   Popup "HotList"
   	Title 	"HotList"
           Exec    "Xterm"         exec xterm -e tcsh -l &
-!         Exec    "Rxvt"                exec rxvt -fat&
+! 	Exec	"Rxvt"		exec rxvt -fat &
 !         Exec    "Netscape"  exec netscape -geometry 680x565 &
           Nop     ""
           Popup   "Applications"  Applications
