@@ -1,7 +1,8 @@
 bin/ftdump
 bin/ftlint
+bin/ftmemchk
 bin/ftmulti
 bin/ftstring
 bin/fttimer
 bin/ftview
-bin/ftmemchk
+bin/testnames
