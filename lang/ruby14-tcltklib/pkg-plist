@@ -1,0 +1,17 @@
+lib/ruby/%%RUBY_ARCH%%/tcltklib.so
+lib/ruby/%%RUBY_ARCH%%/tkutil.so
+lib/ruby/tcltk.rb
+lib/ruby/tk.rb
+lib/ruby/tkafter.rb
+lib/ruby/tkbgerror.rb
+lib/ruby/tkcanvas.rb
+lib/ruby/tkclass.rb
+lib/ruby/tkdialog.rb
+lib/ruby/tkentry.rb
+lib/ruby/tkfont.rb
+lib/ruby/tkmenubar.rb
+lib/ruby/tkmngfocus.rb
+lib/ruby/tkpalette.rb
+lib/ruby/tkscrollbox.rb
+lib/ruby/tktext.rb
+lib/ruby/tkvirtevent.rb
