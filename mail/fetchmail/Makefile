@@ -3,7 +3,7 @@
 # Date created:		26 Oct 1996
 # Whom:			Ville Eerola <ve@sci.fi>
 #
-# $Id: Makefile,v 1.3 1996/11/10 21:31:26 obrien Exp $
+# $Id: Makefile,v 1.4 1996/11/11 23:31:14 max Exp $
 #
 
 DISTNAME=	fetchmail-1.9
@@ -15,10 +15,6 @@ MAINTAINER=	ve@sci.fi
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	LDFLAGS="${CFLAGS}"
-
-post-install:
-.if !defined(NOMANCOMPRESS)
-	gzip -9nf ${PREFIX}/man/man1/fetchmail.1
-.endif
+MAN1=		fetchmail.1
 
 .include <bsd.port.mk>
