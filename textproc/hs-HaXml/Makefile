@@ -77,8 +77,6 @@ post-install:
 		${PREFIX}/lib/ghc-${GHC_VERSION}/imports/HaXml/
 	@${RM} -f ${PREFIX}/lib/ghc-${GHC_VERSION}/package.conf.old
 .endif
-	@(cd ${WRKSRC} && ${INSTALL_PROGRAM} \
-		Canonicalise DtdToHaskell MkOneOf Validate Xtract ${PREFIX}/bin)
 .if !defined(NOPORTDOCS)
 	@${RM} -rf ${WRKSRC}/docs/CVS
 	@${RM} -rf ${WRKSRC}/docs/HaXml/CVS
