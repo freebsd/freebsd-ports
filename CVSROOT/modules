@@ -1174,6 +1174,7 @@ dirtree		ports/misc/dirtree
 dis		ports/lang/dis
 disc-cover	ports/audio/disc-cover
 discid		ports/audio/discid
+disco		ports/net/disco
 diskcheckd	ports/sysutils/diskcheckd
 diskusage	ports/sysutils/diskusage
 display		ports/misc/display
