@@ -27,25 +27,26 @@ share/doc/NVIDIA/README
 share/doc/NVIDIA/README.Linux
 share/doc/NVIDIA/XF86Config.sample
 share/doc/NVIDIA/license.txt
-@cwd /modules
+%%FREEBSD4%%@cwd /modules
+%%FREEBSD5%%@cwd /boot/kernel
 nvidia.ko
-@cwd /dev
-MAKEDEV.nvidia
-@exec mknod /dev/nvidia0 c 180 0
-@exec chmod 0666 /dev/nvidia0
-@exec mknod /dev/nvidia1 c 180 1
-@exec chmod 0666 /dev/nvidia1
-@exec mknod /dev/nvidia2 c 180 2
-@exec chmod 0666 /dev/nvidia2
-@exec mknod /dev/nvidia3 c 180 3
-@exec chmod 0666 /dev/nvidia3
-@exec mknod /dev/nvidiactl c 180 255
-@exec chmod 0666 /dev/nvidiactl
-@unexec rm -f /dev/nvidia0
-@unexec rm -f /dev/nvidia1
-@unexec rm -f /dev/nvidia2
-@unexec rm -f /dev/nvidia3
-@unexec rm -f /dev/nvidiactl
+%%FREEBSD4%%@cwd /dev
+%%FREEBSD4%%MAKEDEV.nvidia
+%%FREEBSD4%%@exec mknod /dev/nvidia0 c 180 0
+%%FREEBSD4%%@exec chmod 0666 /dev/nvidia0
+%%FREEBSD4%%@exec mknod /dev/nvidia1 c 180 1
+%%FREEBSD4%%@exec chmod 0666 /dev/nvidia1
+%%FREEBSD4%%@exec mknod /dev/nvidia2 c 180 2
+%%FREEBSD4%%@exec chmod 0666 /dev/nvidia2
+%%FREEBSD4%%@exec mknod /dev/nvidia3 c 180 3
+%%FREEBSD4%%@exec chmod 0666 /dev/nvidia3
+%%FREEBSD4%%@exec mknod /dev/nvidiactl c 180 255
+%%FREEBSD4%%@exec chmod 0666 /dev/nvidiactl
+%%FREEBSD4%%@unexec rm -f /dev/nvidia0
+%%FREEBSD4%%@unexec rm -f /dev/nvidia1
+%%FREEBSD4%%@unexec rm -f /dev/nvidia2
+%%FREEBSD4%%@unexec rm -f /dev/nvidia3
+%%FREEBSD4%%@unexec rm -f /dev/nvidiactl
 @cwd %%LINUXBASE%%
 usr/lib/libGL.so.1.0.3203
 usr/lib/libGLcore.so.1.0.3203
