@@ -10,7 +10,7 @@ PORTVERSION=	2.5.6
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/rpm-2.5.x/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nakai@FreeBSD.org
 
 USE_GMAKE=	yes
 USE_AUTOCONF=	yes
