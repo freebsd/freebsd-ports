@@ -1,22 +1,22 @@
 bin/tgif
 bin/prtgif
-lib/X11/tgif/3.0J0.12-p13/tgif.Xdefaults
-lib/X11/tgif/3.0J0.12-p13/tgificon.eps
-lib/X11/tgif/3.0J0.12-p13/tgificon.obj
-lib/X11/tgif/3.0J0.12-p13/tgificon.xbm
-lib/X11/tgif/3.0J0.12-p13/tgificon.xpm
-lib/X11/tgif/3.0J0.12-p13/tangram.sym
-lib/X11/tgif/3.0J0.12-p13/keys.obj
-lib/X11/tgif/3.0J0.12-p13/keys_jpn.obj
-lib/X11/tgif/3.0J0.12-p13/SCALABLE.ms
-lib/X11/tgif/3.0J0.12-p13/SCALABLE
-lib/X11/tgif/3.0J0.12-p13/JAPANESE.ms
-lib/X11/tgif/3.0J0.12-p13/JAPANESE
-lib/X11/tgif/3.0J0.12-p13/TO_USERS.ms
-lib/X11/tgif/3.0J0.12-p13/TO_USERS
-lib/X11/tgif/3.0J0.12-p13/HISTORY.jp
-lib/X11/tgif/3.0J0.12-p13/HISTORY-3.0.jp
-lib/X11/tgif/3.0J0.12-p13/README.jp
-lib/X11/tgif/3.0J0.12-p13/README-3.0.jp
-@dirrm lib/X11/tgif/3.0J0.12-p13
+lib/X11/tgif/3.0.18/tgif.Xdefaults
+lib/X11/tgif/3.0.18/tgificon.eps
+lib/X11/tgif/3.0.18/tgificon.obj
+lib/X11/tgif/3.0.18/tgificon.xbm
+lib/X11/tgif/3.0.18/tgificon.xpm
+lib/X11/tgif/3.0.18/tangram.sym
+lib/X11/tgif/3.0.18/keys.obj
+lib/X11/tgif/3.0.18/keys_jpn.obj
+lib/X11/tgif/3.0.18/SCALABLE.ms
+lib/X11/tgif/3.0.18/SCALABLE
+lib/X11/tgif/3.0.18/JAPANESE.ms
+lib/X11/tgif/3.0.18/JAPANESE
+lib/X11/tgif/3.0.18/TO_USERS.ms
+lib/X11/tgif/3.0.18/TO_USERS
+lib/X11/tgif/3.0.18/HISTORY.jp
+lib/X11/tgif/3.0.18/HISTORY-3.0.jp
+lib/X11/tgif/3.0.18/README.jp
+lib/X11/tgif/3.0.18/README-3.0.jp
+@dirrm lib/X11/tgif/3.0.18
 @dirrm lib/X11/tgif
