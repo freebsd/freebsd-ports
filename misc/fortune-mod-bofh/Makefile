@@ -11,7 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.geocities.com/bofn1001/
 DISTNAME=	bofh-fortune-mod${PORTVERSION}
 
-MAINTAINER=	Yonatan@Xpert.com
+MAINTAINER=	onatan@gmail.com
 COMMENT=	Compilation of excuses from the "Bastard Operator From Hell"
 
 NO_BUILD=	yes
