@@ -1,6 +1,6 @@
---- configure.orig	Thu Sep 21 19:06:59 2000
-+++ configure	Thu Sep 21 19:10:00 2000
-@@ -4024,7 +4024,9 @@
+--- configure.orig	Wed Sep 20 00:30:29 2000
++++ configure	Wed Sep 27 12:22:43 2000
+@@ -4022,7 +4022,9 @@
    echo "$ac_t""no" 1>&6
  fi
  
@@ -11,7 +11,7 @@
  
  if test "x$have_esd" = xyes; then
    HAVE_ESD_TRUE=
-@@ -4305,7 +4307,9 @@
+@@ -4303,7 +4305,9 @@
    
    rm -f conf.mikmodtest
  
@@ -22,7 +22,7 @@
  
  if test "x$have_mikmod" = xyes; then
    HAVE_MIKMOD_TRUE=
-@@ -5551,7 +5555,7 @@
+@@ -5549,7 +5553,7 @@
    cat conftest.$ac_ext >&5
    rm -rf conftest*
    CATOBJEXT=.mo
@@ -31,7 +31,15 @@
  fi
  rm -f conftest*
  		INSTOBJEXT=.mo
-@@ -7205,7 +7209,7 @@
+@@ -7171,14 +7175,14 @@
+ 
+ if test -n "$GCC"
+ then
+-	CFLAGS="$CFLAGS -Wall -fomit-frame-pointer -funroll-all-loops -finline-functions -ffast-math"
++	CFLAGS="$CFLAGS -Wall -fomit-frame-pointer -finline-functions -ffast-math"
+ fi
+ 
+ arch_type=other
  ARCH_DEFINES=""
  case "$host" in 
  	i386-*-* | i486-*-* | i586-*-* | i686-*-* | i86pc-*-*)
