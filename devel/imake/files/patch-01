@@ -1,0 +1,11 @@
+--- cf/xfree86.cf.orig	Sun Dec 12 02:20:09 1999
++++ cf/xfree86.cf	Wed Mar  1 17:32:02 2000
+@@ -907,7 +907,7 @@
+ #endif
+ 
+ #ifndef XFree86ConsoleDefines
+-#ifdef i386BsdArchitecture
++#if defined(i386BsdArchitecture) || defined(AlphaBsdArchitecture)
+ #define XFree86ConsoleDefines	-DPCCONS_SUPPORT -DSYSCONS_SUPPORT -DPCVT_SUPPORT
+ #else
+ #define XFree86ConsoleDefines	/**/
