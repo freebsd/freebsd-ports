@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	formulator
-PORTVERSION=	1.6.1
-PORTREVISION=	1
+PORTVERSION=	1.6.2
 CATEGORIES=	www zope
 MASTER_SITES=	http://zope.org/Members/infrae/Formulator/Formulator-${PORTVERSION}/
 PKGNAMEPREFIX=	zope-
@@ -15,7 +14,7 @@ DISTNAME=	Formulator-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	x@Vex.Net
-COMMENT=	Formulator - HTML form generatation and validation system
+COMMENT=	HTML form generatation and validation system for Zope
 
 USE_PYTHON=		yes
 USE_ZOPE=		yes
@@ -26,17 +25,25 @@ CONFLICTS=	plone-*
 ZOPEPRODUCTNAME=	Formulator
 
 WRKSRC=		${WRKDIR}/${ZOPEPRODUCTNAME}
-CPIO=		cpio --quiet -pdum -R
 
 do-build:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 
+pre-install:
+	@${RM} -f ${PLIST}
+	@${TOUCH} ${PLIST}
+	@cd ${WRKDIR} && \
+	for f in `${FIND} ${ZOPEPRODUCTNAME} -type f`; do \
+		${ECHO_CMD} %%ZOPEPRODUCTDIR%%/$${f} >> ${PLIST}; \
+	done; \
+	for d in `${FIND} -d ${ZOPEPRODUCTNAME} -type d`; do \
+		${ECHO_CMD} @dirrm %%ZOPEPRODUCTDIR%%/$${d} >> ${PLIST}; \
+	done; \
+
 do-install:
-	@ ${CHMOD} -R og+rX ${WRKSRC}/
-	@ ${MKDIR} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/${ZOPEPRODUCTNAME}
-	@ cd ${WRKSRC} && ${FIND} . \
-	  | ${CPIO} ${BINOWN}:${BINGRP} \
-	  ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/${ZOPEPRODUCTNAME}
+	@${MKDIR} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/
+	@${CHMOD} -R og+rX ${WRKSRC}/
+	@${CP} -R ${WRKSRC} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/
 
 post-install:
 .if !defined(BATCH)
