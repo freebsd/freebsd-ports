@@ -6,7 +6,7 @@
 # $1   $2           $3    $4   ...
 
 case "$1" in
-  RELENG_*)
+  RELENG*)
     ;;
   *)
     exit 0	# not reserved, ok.
@@ -18,8 +18,9 @@ case "$USER" in
     exit 0	# ok
     ;;
   *)
-    echo "RELENG_* tag operations are reserved for release engineering!" 1>&2
+    echo "RELENG* tag operations are reserved for release engineering!" 1>&2
     echo "Use 'cvs add' or 'cvs rm' to add/remove files from branches!" 1>&2
-    exit 1	# shove off!
+    echo "$*" | /usr/bin/mail -s "NCVS TAG" cvs
+    exit 1
     ;;
 esac
