@@ -3,7 +3,7 @@
 # Date created:        30 August 1997
 # Whom:                Brion Moss <brion@queeg.com>
 #
-# $Id: Makefile,v 1.2 1997/11/29 00:58:08 asami Exp $
+# $Id: Makefile,v 1.3 1998/01/31 14:40:55 jseger Exp $
 #
 
 DISTNAME=	xtide-1.6.2
@@ -16,7 +16,7 @@ MAINTAINER=	brion@queeg.com
 # www.universe.digex.net is broken
 FETCH_BEFORE_ARGS=	-t
 
-EXTRACT_ONLY=	xtide-1.6.2.tgz
+EXTRACT_ONLY=	xtide-1.6.2.tar.gz
 USE_IMAKE=	yes
 NO_WRKSUBDIR=	yes
 MAN1=		xtide.1
