@@ -1,0 +1,7 @@
+include/%%PYTHON_VERSION%%/pyogg/pyogg.h
+lib/%%PYTHON_VERSION%%/site-packages/ogg/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/ogg/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/ogg/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/ogg/_oggmodule.so
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/ogg
+@dirrm include/%%PYTHON_VERSION%%/pyogg
