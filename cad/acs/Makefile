@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	acs
-PORTVERSION=	0.25
+PORTVERSION=	0.26
 CATEGORIES=	cad
 MASTER_SITES=	http://www.geda.seul.org/dist/ \
 		http://www.geda.coelacanth.com/dist/ \
