@@ -1,0 +1,28 @@
+# New ports collection makefile for:	gkrellmlaunch
+# Date Created:				Tue Nov  6 19:15:45 EST 2001
+# Whom:					Patrick Li <pat@databits.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gkrellmlaunch
+PORTVERSION=	0.2.2
+CATEGORIES=	misc
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=	pat@databits.net
+
+BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
+RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
+
+USE_X_PREFIX=	yes
+USE_GTK=	yes
+USE_IMLIB=	yes
+ALL_TARGET=	${PORTNAME}.so
+
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}.so \
+		${PREFIX}/libexec/gkrellm/plugins
+
+.include <bsd.port.mk>
