@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sun Nov  9 23:49:49 2003
++++ Makefile.in	Sun Nov  9 23:50:39 2003
+@@ -849,7 +849,7 @@
+ 	$(INSTALL) -m 755 -c ./rxqueue$(EXE) $(bindir)/rxqueue$(EXE)
+ 	$(INSTALL) -m 755 -c ./rxstack$(EXE) $(bindir)/rxstack$(EXE)
+ 	$(INSTALL) -m 755 -c ./regina-config $(bindir)/regina-config
+-	-$(INSTALL) -m 755 -c ./rxstack.init.d $(sysconfdir)/rc.d/init.d/rxstack
++#	-$(INSTALL) -m 755 -c ./rxstack.init.d $(sysconfdir)/rc.d/init.d/rxstack
+ 	@echo "The system startup/shutdown script; rxstack, may have been installed into $(sysconfdir)/rc.d/init.d"
+ 	@echo "You need to create the appropriate links to this script to start and stop rxstack automatically."
+ 	-$(INSTALL) -m 755 -c ./$(LIBPRE)$(LIBFILE)$(LIBPST) $(libdir)/$(LIBPRE)$(LIBFILE)$(LIBPST)
