@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	robocode
-PORTVERSION=	1.0
+PORTVERSION=	1.0.6
 CATEGORIES=	games java
 MASTER_SITES=	ftp://dragon.adtech.internet.ibm.com/pub/robocode/
 DISTNAME=	robocode-setup-${PORTVERSION}

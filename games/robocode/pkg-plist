@@ -29,6 +29,7 @@ share/java/robocode/javadoc/robocode/HitWallEvent.html
 share/java/robocode/javadoc/robocode/MessageEvent.html
 share/java/robocode/javadoc/robocode/MoveCompleteCondition.html
 share/java/robocode/javadoc/robocode/RadarTurnCompleteCondition.html
+share/java/robocode/javadoc/robocode/Robocode.html
 share/java/robocode/javadoc/robocode/RobocodeFileOutputStream.html
 share/java/robocode/javadoc/robocode/RobocodeFileWriter.html
 share/java/robocode/javadoc/robocode/Robot.html
