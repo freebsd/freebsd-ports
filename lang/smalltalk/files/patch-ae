@@ -1,0 +1,13 @@
+--- Makefile.rules.orig	Thu Jun 29 19:39:26 2000
++++ Makefile.rules	Mon Jul  3 22:05:39 2000
+@@ -112,8 +112,8 @@
+ 
+ install:: installdirs optimize
+ 	$(INSTALL_PROGRAM) gst$(EXE) $(bindir)/gst$(EXE)
+-	$(INSTALL_PROGRAM) gst-config $(bindir)/gst-config
+-	$(INSTALL_PROGRAM) gst-package $(bindir)/gst-package
++	$(INSTALL_SCRIPT) gst-config $(bindir)/gst-config
++	$(INSTALL_SCRIPT) gst-package $(bindir)/gst-package
+ 	$(INSTALL_DATA) lib/gst.h $(includedir)/gst.h
+ 	$(INSTALL_DATA) lib/gstpub.h $(includedir)/gstpub.h
+ 	$(INSTALL_DATA) gstconf.h $(includedir)/gstconf.h
