@@ -1,7 +1,7 @@
---- Makefile.config.orig	Sun Aug 17 09:16:13 2003
-+++ Makefile.config	Sun Aug 17 09:15:43 2003
-@@ -11,28 +11,28 @@
- #CAMLOPT = ocamlopt.opt
+--- Makefile.config.orig	Sun Feb 22 23:03:48 2004
++++ Makefile.config	Sun Feb 22 23:06:44 2004
+@@ -9,18 +9,18 @@
+ ##### Adjust these always
  
  # Where to put the lablgl script
 -BINDIR = /usr/local/bin
@@ -11,24 +11,23 @@
 -XINCLUDES = -I/usr/X11R6/include
 +XINCLUDES = -I${X11BASE}/include
  # X libs (for broken RTLD_GLOBAL: e.g. FreeBSD 4.0)
- #XLIBS = -L/usr/X11R6/lib -lXext -lXmu -lX11
+-XLIBS = -L/usr/X11R6/lib -lXext -lXmu -lX11
++XLIBS = -L${X11BASE}/lib -lXext -lXmu -lX11
  
  # Where to find Tcl/Tk headers
  # This must the same version as for LablTk
--TKINCLUDES = -I/usr/local/include
-+TKINCLUDES = -I${LOCALBASE}/include/tcl8.3 -I${LOCALBASE}/include/tk8.3
+-TKINCLUDES = -I/usr/local/include/tcl8.3 -I/usr/local/include/tk8.3
++TKINCLUDES = -I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/tk8.4
  # Tcl/Tk libs (for broken RTLD_GLOBAL: e.g. FreeBSD 4.0)
--#TKLIBS = -L/usr/local/lib -ltk83 -ltcl83
-+TKLIBS = -L${LOCALBASE}/lib -ltk83 -ltcl83
+-TKLIBS = -L/usr/local/lib -ltk83 -ltcl83
++TKLIBS = -L${LOCALBASE}/lib -ltk84 -ltcl84
  
  # Where to find OpenGL/Mesa headers and libraries
  GLINCLUDES =
--GLLIBS = -lGL -lGLU
-+GLLIBS = -L${X11BASE}/lib -R${X11BASE}/lib -lGL -lGLU -lXmu -lXext
+@@ -29,8 +29,8 @@
  # The following libraries may be required (try to add them one at a time)
- #GLLIBS = -lGL -lGLU -lXmu -lXext -lpthread
  
- # How to index a library after installing (ranlib required on MacOSX)
+ # How to index a library after installing (required on MacOSX)
 -RANLIB = :
 -#RANLIB = ranlib
 +#RANLIB = :
@@ -36,7 +35,7 @@
  
  ##### Uncomment these for windows
  #TKLIBS = tk83.lib tcl83.lib gdi32.lib user32.lib
-@@ -59,4 +59,4 @@
+@@ -57,4 +57,4 @@
  #TOGLDIR = Togl
  
  # C Compiler options
