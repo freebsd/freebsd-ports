@@ -16,6 +16,8 @@ COMMENT=	A TV viewing application and a few TV utilities
 
 BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv \
 		${X11BASE}/lib/X11/fonts/misc/led-iso8859-1.pcf.gz:${PORTSDIR}/x11-fonts/tv-fonts
+RUN_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv \
+		${X11BASE}/lib/X11/fonts/misc/led-iso8859-1.pcf.gz:${PORTSDIR}/x11-fonts/tv-fonts
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
