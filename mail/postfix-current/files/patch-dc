@@ -1,0 +1,20 @@
+*** ./proto/canonical.orig	Sun Apr  9 16:43:37 2000
+--- ./proto/canonical	Thu Jun  1 22:45:28 2000
+***************
+*** 6,8 ****
+  # SYNOPSIS
+! #	\fBpostmap /etc/postfix/canonical\fR
+  # DESCRIPTION
+--- 6,8 ----
+  # SYNOPSIS
+! #	\fBpostmap !!PREFIX!!/etc/postfix/canonical\fR
+  # DESCRIPTION
+***************
+*** 15,17 ****
+  #	is used for fast searching by the mail system. Execute the command
+! #	\fBpostmap /etc/postfix/canonical\fR in order to rebuild the indexed
+  #	file after changing the canonical table.
+--- 15,17 ----
+  #	is used for fast searching by the mail system. Execute the command
+! #	\fBpostmap !!PREFIX!!/etc/postfix/canonical\fR in order to rebuild the indexed
+  #	file after changing the canonical table.

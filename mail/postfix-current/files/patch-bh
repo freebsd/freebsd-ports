@@ -1,21 +1,11 @@
-*** man/man8/cleanup.8.orig	Mon Mar 29 22:37:59 1999
---- man/man8/cleanup.8	Mon Mar 29 22:38:13 1999
+*** ./html/goals.html.orig	Sun May  9 15:44:18 1999
+--- ./html/goals.html	Thu Jun  1 22:30:14 2000
 ***************
-*** 118,125 ****
-  .SH FILES
-  .na
-  .nf
-! /etc/postfix/canonical*, canonical mapping table
-! /etc/postfix/virtual*, virtual mapping table
-  .SH LICENSE
-  .na
-  .nf
---- 118,125 ----
-  .SH FILES
-  .na
-  .nf
-! !!PREFIX!!/etc/postfix/canonical*, canonical mapping table
-! !!PREFIX!!/etc/postfix/virtual*, virtual mapping table
-  .SH LICENSE
-  .na
-  .nf
+*** 45,47 ****
+  <li>Compatibility. Postfix is designed to be sendmail-compatible
+! to make migration easy.  Postfix supports <b>/var[/spool]/mail</b>,
+  <b>/etc/aliases</b>, <b>NIS</b>, and <b>~/.forward</b> files.
+--- 45,47 ----
+  <li>Compatibility. Postfix is designed to be sendmail-compatible
+! to make migration easy.  Postfix supports <b>/var/mail</b>,
+  <b>/etc/aliases</b>, <b>NIS</b>, and <b>~/.forward</b> files.

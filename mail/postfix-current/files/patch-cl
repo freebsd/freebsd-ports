@@ -1,0 +1,13 @@
+*** ./man/man8/master.8.orig	Tue Mar  7 10:48:19 2000
+--- ./man/man8/master.8	Thu Jun  1 22:43:02 2000
+***************
+*** 120,123 ****
+  .nf
+! /etc/postfix/main.cf: global configuration file.
+! /etc/postfix/master.cf: master process configuration file.
+  /var/spool/postfix/pid/master.pid: master lock file.
+--- 120,123 ----
+  .nf
+! !!PREFIX!!/etc/postfix/main.cf: global configuration file.
+! !!PREFIX!!/etc/postfix/master.cf: master process configuration file.
+  /var/spool/postfix/pid/master.pid: master lock file.

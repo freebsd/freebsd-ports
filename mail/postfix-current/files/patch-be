@@ -1,19 +1,715 @@
-*** man/man5/relocated.5.orig	Mon Mar 29 22:36:36 1999
---- man/man5/relocated.5	Mon Mar 29 22:36:47 1999
+*** ./html/faq.html.orig	Mon May  8 10:11:21 2000
+--- ./html/faq.html	Thu Jun  1 22:28:20 2000
 ***************
-*** 8,14 ****
-  .SH SYNOPSIS
-  .na
-  .nf
-! \fBpostmap /etc/postfix/relocated\fR
-  .SH DESCRIPTION
-  .ad
-  .fi
---- 8,14 ----
-  .SH SYNOPSIS
-  .na
-  .nf
-! \fBpostmap !!PREFIX!!/etc/postfix/relocated\fR
-  .SH DESCRIPTION
-  .ad
-  .fi
+*** 273,275 ****
+  <pre>
+!     /etc/postfix/main.cf:
+          myorigin = $mydomain
+--- 273,275 ----
+  <pre>
+!     !!PREFIX!!/etc/postfix/main.cf:
+          myorigin = $mydomain
+***************
+*** 281,283 ****
+  <pre>
+!     /etc/postfix/main.cf:
+          myorigin = $mydomain
+--- 281,283 ----
+  <pre>
+!     !!PREFIX!!/etc/postfix/main.cf:
+          myorigin = $mydomain
+***************
+*** 326,328 ****
+  <pre>
+!     /etc/postfix/main.cf:
+          myorigin = $mydomain
+--- 326,328 ----
+  <pre>
+!     !!PREFIX!!/etc/postfix/main.cf:
+          myorigin = $mydomain
+***************
+*** 330,332 ****
+  
+!     /etc/postfix/master.cf:
+          Comment out the SMTP server entry
+--- 330,332 ----
+  
+!     !!PREFIX!!/etc/postfix/master.cf:
+          Comment out the SMTP server entry
+***************
+*** 357,359 ****
+  <pre>
+!     /etc/postfix/main.cf:
+          myorigin = $mydomain
+--- 357,359 ----
+  <pre>
+!     !!PREFIX!!/etc/postfix/main.cf:
+          myorigin = $mydomain
+***************
+*** 369,371 ****
+  <pre>
+!     /etc/postfix/main.cf:
+          relayhost = $mydomain
+--- 369,371 ----
+  <pre>
+!     !!PREFIX!!/etc/postfix/main.cf:
+          relayhost = $mydomain
+***************
+*** 386,388 ****
+  <pre>
+!     /etc/postfix/main.cf:
+          relayhost = host.my.domain
+--- 386,388 ----
+  <pre>
+!     !!PREFIX!!/etc/postfix/main.cf:
+          relayhost = host.my.domain
+***************
+*** 398,400 ****
+  <pre>
+!     /etc/postfix/main.cf:
+          disable_dns_lookups = yes
+--- 398,400 ----
+  <pre>
+!     !!PREFIX!!/etc/postfix/main.cf:
+          disable_dns_lookups = yes
+***************
+*** 417,419 ****
+  <pre>
+!     /etc/postfix/transport:
+          my.domain               smtp:
+--- 417,419 ----
+  <pre>
+!     !!PREFIX!!/etc/postfix/transport:
+          my.domain               smtp:
+***************
+*** 423,426 ****
+  
+!     /etc/postfix/main.cf:
+!         transport_maps = hash:/etc/postfix/transport
+  </pre>
+--- 423,426 ----
+  
+!     !!PREFIX!!/etc/postfix/main.cf:
+!         transport_maps = hash:!!PREFIX!!/etc/postfix/transport
+  </pre>
+***************
+*** 434,436 ****
+  
+! Specify <b>dbm:/etc/postfix/transport</b> if your system uses
+  <b>dbm</b> files instead of <b>db</b>. To find out what map types
+--- 434,436 ----
+  
+! Specify <b>dbm:!!PREFIX!!/etc/postfix/transport</b> if your system uses
+  <b>dbm</b> files instead of <b>db</b>. To find out what map types
+***************
+*** 440,442 ****
+  
+! Execute the command <b>postmap /etc/postfix/transport</b> whenever
+  you edit the transport table.
+--- 440,442 ----
+  
+! Execute the command <b>postmap !!PREFIX!!/etc/postfix/transport</b> whenever
+  you edit the transport table.
+***************
+*** 478,485 ****
+  <pre>
+! /etc/postfix/main.cf:
+      mydestination = $myhostname, my.domain, localhost.my.domain
+      relay_domains =
+!     transport_maps = hash:/etc/postfix/transport
+  
+! /etc/postfix/transport:
+      my.domain   smtp:inside-gateway.my.domain   (forwards user@domain)
+--- 478,485 ----
+  <pre>
+! !!PREFIX!!/etc/postfix/main.cf:
+      mydestination = $myhostname, my.domain, localhost.my.domain
+      relay_domains =
+!     transport_maps = hash:!!PREFIX!!/etc/postfix/transport
+  
+! !!PREFIX!!/etc/postfix/transport:
+      my.domain   smtp:inside-gateway.my.domain   (forwards user@domain)
+***************
+*** 487,489 ****
+  
+! /etc/postfix/master.cf:
+      Comment out the local delivery agent
+--- 487,489 ----
+  
+! !!PREFIX!!/etc/postfix/master.cf:
+      Comment out the local delivery agent
+***************
+*** 493,495 ****
+  
+! Specify <b>dbm:/etc/postfix/transport</b> if your system uses
+  <b>dbm</b> files instead of <b>db</b>. To find out what map types
+--- 493,495 ----
+  
+! Specify <b>dbm:!!PREFIX!!/etc/postfix/transport</b> if your system uses
+  <b>dbm</b> files instead of <b>db</b>. To find out what map types
+***************
+*** 499,501 ****
+  
+! <li>Execute the command <b>postmap /etc/postfix/transport</b>
+  whenever you change the transport table.
+--- 499,501 ----
+  
+! <li>Execute the command <b>postmap !!PREFIX!!/etc/postfix/transport</b>
+  whenever you change the transport table.
+***************
+*** 539,541 ****
+  <pre>
+!     /etc/postfix/main.cf:
+          relayhost = smtprelay.someprovider.com
+--- 539,541 ----
+  <pre>
+!     !!PREFIX!!/etc/postfix/main.cf:
+          relayhost = smtprelay.someprovider.com
+***************
+*** 559,561 ****
+  <pre>
+!     /etc/postfix/main.cf:
+          defer_transports = smtp (Only for systems that use on-demand dialup IP)
+--- 559,561 ----
+  <pre>
+!     !!PREFIX!!/etc/postfix/main.cf:
+          defer_transports = smtp (Only for systems that use on-demand dialup IP)
+***************
+*** 578,580 ****
+  <pre>
+!     /etc/postfix/main.cf:
+          disable_dns_lookups = yes (Only for delivery across LANs that are disconnected most of the time)
+--- 578,580 ----
+  <pre>
+!     !!PREFIX!!/etc/postfix/main.cf:
+          disable_dns_lookups = yes (Only for delivery across LANs that are disconnected most of the time)
+***************
+*** 685,687 ****
+  <pre>
+!     /etc/postfix/main.cf:
+          delay_warning_time = 4
+--- 685,687 ----
+  <pre>
+!     !!PREFIX!!/etc/postfix/main.cf:
+          delay_warning_time = 4
+***************
+*** 959,966 ****
+  <pre>
+!     /etc/postfix/main.cf:
+          smtpd_recipient_restrictions = 
+!             regexp:/etc/postfix/regexp_access
+              ...other restrictions...
+  
+!     /etc/postfix/regexp_access:
+          /[%!@].*[%!@]/ 550 Sender specified routing is not supported here.
+--- 959,966 ----
+  <pre>
+!     !!PREFIX!!/etc/postfix/main.cf:
+          smtpd_recipient_restrictions = 
+!             regexp:!!PREFIX!!/etc/postfix/regexp_access
+              ...other restrictions...
+  
+!     !!PREFIX!!/etc/postfix/regexp_access:
+          /[%!@].*[%!@]/ 550 Sender specified routing is not supported here.
+***************
+*** 1002,1010 ****
+  <pre>
+!     /etc/postfix/main.cf:
+          smtpd_recipient_restrictions =
+              permit_mynetworks
+!             check_client_access hash:/etc/postfix/client_access
+              check_relay_domains
+  
+!     /etc/postfix/client_access:
+          4.3.2.1         OK
+--- 1002,1010 ----
+  <pre>
+!     !!PREFIX!!/etc/postfix/main.cf:
+          smtpd_recipient_restrictions =
+              permit_mynetworks
+!             check_client_access hash:!!PREFIX!!/etc/postfix/client_access
+              check_relay_domains
+  
+!     !!PREFIX!!/etc/postfix/client_access:
+          4.3.2.1         OK
+***************
+*** 1046,1055 ****
+  <pre>
+!     /etc/postfix/main.cf:
+          smtpd_recipient_restrictions =
+              permit_mynetworks
+!             check_client_access hash:/etc/postfix/client_access
+!             check_sender_access hash:/etc/postfix/sender_access
+              check_relay_domains
+  
+!     /etc/postfix/client_access:
+          11.22.33                OK
+--- 1046,1055 ----
+  <pre>
+!     !!PREFIX!!/etc/postfix/main.cf:
+          smtpd_recipient_restrictions =
+              permit_mynetworks
+!             check_client_access hash:!!PREFIX!!/etc/postfix/client_access
+!             check_sender_access hash:!!PREFIX!!/etc/postfix/sender_access
+              check_relay_domains
+  
+!     !!PREFIX!!/etc/postfix/client_access:
+          11.22.33                OK
+***************
+*** 1057,1059 ****
+  
+!     /etc/postfix/sender_access:
+          joe@my.domain           OK
+--- 1057,1059 ----
+  
+!     !!PREFIX!!/etc/postfix/sender_access:
+          joe@my.domain           OK
+***************
+*** 1108,1112 ****
+  <pre>
+!     /etc/postfix/main.cf:
+          smtpd_recipient_restrictions =
+!             hash:/etc/postfix/restricted_senders
+              ...other stuff...
+--- 1108,1112 ----
+  <pre>
+!     !!PREFIX!!/etc/postfix/main.cf:
+          smtpd_recipient_restrictions =
+!             hash:!!PREFIX!!/etc/postfix/restricted_senders
+              ...other stuff...
+***************
+*** 1114,1118 ****
+          smtpd_restriction_classes = local_only
+!         local_only = check_sender_access hash:/etc/postfix/local_domains, reject
+  
+!     /etc/postfix/restricted_senders:
+          foo@domain      local_only
+--- 1114,1118 ----
+          smtpd_restriction_classes = local_only
+!         local_only = check_sender_access hash:!!PREFIX!!/etc/postfix/local_domains, reject
+  
+!     !!PREFIX!!/etc/postfix/restricted_senders:
+          foo@domain      local_only
+***************
+*** 1120,1122 ****
+  
+!     /etc/postfix/local_domains:
+          this.domain     OK      (matches this.domain and subdomains)
+--- 1120,1122 ----
+  
+!     !!PREFIX!!/etc/postfix/local_domains:
+          this.domain     OK      (matches this.domain and subdomains)
+***************
+*** 1134,1136 ****
+  The <b>smtpd_restriction_classes</b> verbiage exists so that Postfix can
+! open <b>/etc/postfix/local_domains.db</b> before entering a chroot
+  jail, so it is only an artefact of implementation.
+--- 1134,1136 ----
+  The <b>smtpd_restriction_classes</b> verbiage exists so that Postfix can
+! open <b>!!PREFIX!!/etc/postfix/local_domains.db</b> before entering a chroot
+  jail, so it is only an artefact of implementation.
+***************
+*** 1168,1170 ****
+  
+!     /etc/postfix/main.cf:
+          relay_domains = the.backed-up.domain.name
+--- 1168,1170 ----
+  
+!     !!PREFIX!!/etc/postfix/main.cf:
+          relay_domains = the.backed-up.domain.name
+***************
+*** 1179,1184 ****
+  <pre>
+!     /etc/postfix/main.cf:
+!         transport_maps = hash:/etc/postfix/transport
+  
+!     /etc/postfix/transport:
+          the.backed-up.domain.name       smtp:[their.mail.host.name]
+--- 1179,1184 ----
+  <pre>
+!     !!PREFIX!!/etc/postfix/main.cf:
+!         transport_maps = hash:!!PREFIX!!/etc/postfix/transport
+  
+!     !!PREFIX!!/etc/postfix/transport:
+          the.backed-up.domain.name       smtp:[their.mail.host.name]
+***************
+*** 1309,1311 ****
+  <pre>
+!     /etc/postfix/main.cf:
+          smtp_skip_4xx_greeting = yes
+--- 1309,1311 ----
+  <pre>
+!     !!PREFIX!!/etc/postfix/main.cf:
+          smtp_skip_4xx_greeting = yes
+***************
+*** 1399,1401 ****
+  For example, if you use the default Postfix local delivery agent
+! in <b>/etc/postfix/master.cf</b>, specify:
+  
+--- 1399,1401 ----
+  For example, if you use the default Postfix local delivery agent
+! in <b>!!PREFIX!!/etc/postfix/master.cf</b>, specify:
+  
+***************
+*** 1404,1406 ****
+  <pre>
+!     /etc/postfix/main.cf:
+          local_recipient_maps = $alias_maps, unix:passwd.byname
+--- 1404,1406 ----
+  <pre>
+!     !!PREFIX!!/etc/postfix/main.cf:
+          local_recipient_maps = $alias_maps, unix:passwd.byname
+***************
+*** 1434,1436 ****
+  <pre>
+! /etc/postfix/main.cf:
+      myorigin = domain.name
+--- 1434,1436 ----
+  <pre>
+! !!PREFIX!!/etc/postfix/main.cf:
+      myorigin = domain.name
+***************
+*** 1447,1452 ****
+  <pre>
+! /etc/postfix/main.cf:
+!     virtual_maps = hash:/etc/postfix/virtual
+  
+! /etc/postfix/virtual:
+      root        root@localhost
+--- 1447,1452 ----
+  <pre>
+! !!PREFIX!!/etc/postfix/main.cf:
+!     virtual_maps = hash:!!PREFIX!!/etc/postfix/virtual
+  
+! !!PREFIX!!/etc/postfix/virtual:
+      root        root@localhost
+***************
+*** 1463,1465 ****
+  
+! <li>Execute the command <b>postmap /etc/postfix/virtual</b> whenever
+  you edit the the <b>virtual</b> table.
+--- 1463,1465 ----
+  
+! <li>Execute the command <b>postmap !!PREFIX!!/etc/postfix/virtual</b> whenever
+  you edit the the <b>virtual</b> table.
+***************
+*** 1485,1487 ****
+  <pre>
+!     /etc/postfix/main.cf:
+          home_mailbox = Maildir/
+--- 1485,1487 ----
+  <pre>
+!     !!PREFIX!!/etc/postfix/main.cf:
+          home_mailbox = Maildir/
+***************
+*** 1519,1524 ****
+  <pre>
+!     /etc/postfix/main.cf:
+          mailbox_command = /path/to/procmail
+  
+!     /etc/postfix/main.cf:
+          mailbox_command = /path/to/procmail -a $EXTENSION
+--- 1519,1524 ----
+  <pre>
+!     !!PREFIX!!/etc/postfix/main.cf:
+          mailbox_command = /path/to/procmail
+  
+!     !!PREFIX!!/etc/postfix/main.cf:
+          mailbox_command = /path/to/procmail -a $EXTENSION
+***************
+*** 1612,1620 ****
+  <pre>
+!     /etc/postfix/main.cf:
+          smtpd_recipient_restrictions = 
+!             ... regexp:/etc/postfix/access_regexp ...
+          smtpd_recipient_restrictions = 
+!             ... pcre:/etc/postfix/access_regexp ...
+  
+!     /etc/postfix/access_regexp:
+          /^(.*)-outgoing@(.*)/   554 Use $1@$2 instead
+--- 1612,1620 ----
+  <pre>
+!     !!PREFIX!!/etc/postfix/main.cf:
+          smtpd_recipient_restrictions = 
+!             ... regexp:!!PREFIX!!/etc/postfix/access_regexp ...
+          smtpd_recipient_restrictions = 
+!             ... pcre:!!PREFIX!!/etc/postfix/access_regexp ...
+  
+!     !!PREFIX!!/etc/postfix/access_regexp:
+          /^(.*)-outgoing@(.*)/   554 Use $1@$2 instead
+***************
+*** 1699,1706 ****
+  <pre>
+!     /etc/postfix/main.cf:
+          smtpd_sender_restrictions =
+!             regexp:/etc/postfix/envelope-regexp
+              reject_unknown_sender_domain
+          smtpd_recipient_restrictions =
+!             regexp:/etc/postfix/envelope-regexp
+              permit_mynetworks
+--- 1699,1706 ----
+  <pre>
+!     !!PREFIX!!/etc/postfix/main.cf:
+          smtpd_sender_restrictions =
+!             regexp:!!PREFIX!!/etc/postfix/envelope-regexp
+              reject_unknown_sender_domain
+          smtpd_recipient_restrictions =
+!             regexp:!!PREFIX!!/etc/postfix/envelope-regexp
+              permit_mynetworks
+***************
+*** 1708,1710 ****
+  
+!     /etc/postfix/envelope-regexp:
+          /[/|]/  REJECT
+--- 1708,1710 ----
+  
+!     !!PREFIX!!/etc/postfix/envelope-regexp:
+          /[/|]/  REJECT
+***************
+*** 1746,1753 ****
+  <pre>
+!     /etc/postfix/main.cf:
+          smtpd_recipient_restrictions =
+!             hash:/etc/postfix/access
+              ..the usual stuff...
+  
+!     /etc/postfix/access:
+          all     permit_mynetworks,reject
+--- 1746,1753 ----
+  <pre>
+!     !!PREFIX!!/etc/postfix/main.cf:
+          smtpd_recipient_restrictions =
+!             hash:!!PREFIX!!/etc/postfix/access
+              ..the usual stuff...
+  
+!     !!PREFIX!!/etc/postfix/access:
+          all     permit_mynetworks,reject
+***************
+*** 1783,1787 ****
+  <pre>
+!     /etc/postfix/main.cf:
+          smtpd_recipient_restrictions =
+!             hash:/etc/postfix/protected_destinations
+              ..the usual stuff...
+--- 1783,1787 ----
+  <pre>
+!     !!PREFIX!!/etc/postfix/main.cf:
+          smtpd_recipient_restrictions =
+!             hash:!!PREFIX!!/etc/postfix/protected_destinations
+              ..the usual stuff...
+***************
+*** 1789,1793 ****
+          smtpd_restriction_classes = insiders_only
+!         insiders_only = check_sender_access hash:/etc/postfix/insiders, reject
+  
+!     /etc/postfix/protected_destinations:
+          all@my.domain   insiders_only
+--- 1789,1793 ----
+          smtpd_restriction_classes = insiders_only
+!         insiders_only = check_sender_access hash:!!PREFIX!!/etc/postfix/insiders, reject
+  
+!     !!PREFIX!!/etc/postfix/protected_destinations:
+          all@my.domain   insiders_only
+***************
+*** 1795,1797 ****
+  
+!     /etc/postfix/insiders:
+          my.domain       OK
+--- 1795,1797 ----
+  
+!     !!PREFIX!!/etc/postfix/insiders:
+          my.domain       OK
+***************
+*** 1852,1854 ****
+  <pre>
+!     /etc/postfix/virtual:
+          virtual.domain whatever
+--- 1852,1854 ----
+  <pre>
+!     !!PREFIX!!/etc/postfix/virtual:
+          virtual.domain whatever
+***************
+*** 1924,1926 ****
+  <pre>
+!     /etc/postfix/virtual:
+          virtual.domain          whatever
+--- 1924,1926 ----
+  <pre>
+!     !!PREFIX!!/etc/postfix/virtual:
+          virtual.domain          whatever
+***************
+*** 1931,1933 ****
+  
+! <li>Execute the command <b>postmap /etc/postfix/virtual</b> whenever
+  you edit the virtual database.
+--- 1931,1933 ----
+  
+! <li>Execute the command <b>postmap !!PREFIX!!/etc/postfix/virtual</b> whenever
+  you edit the virtual database.
+***************
+*** 1977,1979 ****
+  <pre>
+!     /etc/postfix/main.cf:
+          recipient_delimiter = +
+--- 1977,1979 ----
+  <pre>
+!     !!PREFIX!!/etc/postfix/main.cf:
+          recipient_delimiter = +
+***************
+*** 1981,1985 ****
+              ...non-regexp virtual maps...
+!             regexp:/etc/postfix/virtual_regexp
+  
+!     /etc/postfix/virtual_regexp:
+          /^virtual\.domain$/             whatever
+--- 1981,1985 ----
+              ...non-regexp virtual maps...
+!             regexp:!!PREFIX!!/etc/postfix/virtual_regexp
+  
+!     !!PREFIX!!/etc/postfix/virtual_regexp:
+          /^virtual\.domain$/             whatever
+***************
+*** 2029,2031 ****
+  <pre>
+!     /etc/postfix/main.cf:
+          masquerade_domains = $mydomain
+--- 2029,2031 ----
+  <pre>
+!     !!PREFIX!!/etc/postfix/main.cf:
+          masquerade_domains = $mydomain
+***************
+*** 2056,2058 ****
+  <pre>
+!     /etc/postfix/main.cf:
+          masquerade_exceptions = root
+--- 2056,2058 ----
+  <pre>
+!     !!PREFIX!!/etc/postfix/main.cf:
+          masquerade_exceptions = root
+***************
+*** 2068,2070 ****
+  <pre>
+!     /etc/postfix/main.cf:
+          masquerade_domains = somehost.my.domain otherhost.my.domain $mydomain
+--- 2068,2070 ----
+  <pre>
+!     !!PREFIX!!/etc/postfix/main.cf:
+          masquerade_domains = somehost.my.domain otherhost.my.domain $mydomain
+***************
+*** 2114,2116 ****
+  <pre>
+!     /etc/postfix/main.cf:
+          mailbox_command = /some/program ...
+--- 2114,2116 ----
+  <pre>
+!     !!PREFIX!!/etc/postfix/main.cf:
+          mailbox_command = /some/program ...
+***************
+*** 2129,2131 ****
+  <pre>
+!     /etc/postfix/main.cf:
+          mailbox_transport = foo
+--- 2129,2131 ----
+  <pre>
+!     !!PREFIX!!/etc/postfix/main.cf:
+          mailbox_transport = foo
+***************
+*** 2136,2138 ****
+  This example delegates local mailbox delivery to the transport
+! <i>foo</i> as configured in <b>/etc/postfix/master.cf</b>. If you
+  follow this route you will build something around the pipe mailer.
+--- 2136,2138 ----
+  This example delegates local mailbox delivery to the transport
+! <i>foo</i> as configured in <b>!!PREFIX!!/etc/postfix/master.cf</b>. If you
+  follow this route you will build something around the pipe mailer.
+***************
+*** 2168,2170 ****
+  <pre>
+!     /etc/postfix/transport:
+          some.domain     uucp:uucp-host
+--- 2168,2170 ----
+  <pre>
+!     !!PREFIX!!/etc/postfix/transport:
+          some.domain     uucp:uucp-host
+***************
+*** 2180,2182 ****
+  
+! <li>Execute the command <b>postmap /etc/postfix/transport</b> whenever
+  you change the <b>transport</b> file.
+--- 2180,2182 ----
+  
+! <li>Execute the command <b>postmap !!PREFIX!!/etc/postfix/transport</b> whenever
+  you change the <b>transport</b> file.
+***************
+*** 2190,2193 ****
+  <pre>
+!     /etc/postfix/main.cf:
+!         transport_maps = hash:/etc/postfix/transport
+  </pre>
+--- 2190,2193 ----
+  <pre>
+!     !!PREFIX!!/etc/postfix/main.cf:
+!         transport_maps = hash:!!PREFIX!!/etc/postfix/transport
+  </pre>
+***************
+*** 2205,2207 ****
+  <pre>
+!     /etc/postfix/master.cf:
+          uucp      unix  -       n       n       -       -       pipe
+--- 2205,2207 ----
+  <pre>
+!     !!PREFIX!!/etc/postfix/master.cf:
+          uucp      unix  -       n       n       -       -       pipe
+***************
+*** 2225,2227 ****
+  <pre>
+!     /etc/postfix/main.cf:
+          relay_domains = some.domain $mydestination ...
+--- 2225,2227 ----
+  <pre>
+!     !!PREFIX!!/etc/postfix/main.cf:
+          relay_domains = some.domain $mydestination ...
+***************
+*** 2263,2265 ****
+  <pre>
+!     /etc/postfix/main.cf:
+          relayhost = uucp-gateway
+--- 2263,2265 ----
+  <pre>
+!     !!PREFIX!!/etc/postfix/main.cf:
+          relayhost = uucp-gateway
+***************
+*** 2275,2277 ****
+  <pre>
+!     /etc/postfix/master.cf:
+          uucp      unix  -       n       n       -       -       pipe
+--- 2275,2277 ----
+  <pre>
+!     !!PREFIX!!/etc/postfix/master.cf:
+          uucp      unix  -       n       n       -       -       pipe
+***************
+*** 2308,2310 ****
+  <pre>
+!     /etc/postfix/master.cf:
+          fax       unix  -       n       n       -       -       pipe
+--- 2308,2310 ----
+  <pre>
+!     !!PREFIX!!/etc/postfix/master.cf:
+          fax       unix  -       n       n       -       -       pipe
+***************
+*** 2312,2318 ****
+  
+!     /etc/postfix/transport:
+          fax.your.domain   fax:localhost
+  
+!     /etc/postfix/main.cf:
+!         transport_maps = hash:/etc/postfix/transport
+  	fax_destination_recipient_limit = 1
+--- 2312,2318 ----
+  
+!     !!PREFIX!!/etc/postfix/transport:
+          fax.your.domain   fax:localhost
+  
+!     !!PREFIX!!/etc/postfix/main.cf:
+!         transport_maps = hash:!!PREFIX!!/etc/postfix/transport
+  	fax_destination_recipient_limit = 1

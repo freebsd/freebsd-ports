@@ -1,0 +1,11 @@
+*** ./html/regexp_table.5.html.orig	Sat Apr 22 20:28:38 2000
+--- ./html/regexp_table.5.html	Thu Jun  1 22:32:44 2000
+***************
+*** 11,13 ****
+  <b>SYNOPSIS</b>
+!        regexp:/etc/postfix/filename
+  
+--- 11,13 ----
+  <b>SYNOPSIS</b>
+!        regexp:!!PREFIX!!/etc/postfix/filename
+  
