@@ -1,5 +1,5 @@
 --- Makefile.in.org	Sun Nov  6 16:45:13 1994
-+++ Makefile.in	Thu Sep 18 01:40:06 1997
++++ Makefile.in	Thu Apr 15 18:22:59 2004
 @@ -129,7 +129,7 @@
  check: wdiff
  	$(srcdir)/check_it
@@ -9,3 +9,26 @@
  	$(srcdir)/mkinstalldirs $(bindir) $(infodir)
  	for name in $(PROGRAMS); do \
  	  $(INSTALL_PROGRAM) $$name \
+@@ -194,17 +194,17 @@
+ 	CONFIG_FILES=$@ CONFIG_HEADERS= ./config.status
+ config.status: configure
+ 	./config.status --recheck
+-configure: configure.in aclocal.m4
+-	cd $(srcdir) && autoconf
++#configure: configure.in aclocal.m4
++#	cd $(srcdir) && autoconf
+ 
+ config.h: stamp-h
+ stamp-h: config.h.in config.status
+ 	CONFIG_FILES= CONFIG_HEADERS=config.h ./config.status
+ 	date > stamp-h
+ config.h.in: stamp-h.in
+-stamp-h.in: configure.in aclocal.m4 acconfig.h
+-	cd $(srcdir) && autoheader
+-	date > $(srcdir)/stamp-h.in
++#stamp-h.in: configure.in aclocal.m4 acconfig.h
++#	cd $(srcdir) && autoheader
++#	date > $(srcdir)/stamp-h.in
+ 
+ # Tell versions [3.59,3.63) of GNU make not to export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

@@ -7,7 +7,7 @@
 
 PORTNAME=	wdiff
 PORTVERSION=	0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	wdiff
@@ -20,6 +20,6 @@ GNU_CONFIGURE=	yes
 MAN1=		wdiff.1
 
 post-install:
-	@install-info ${PREFIX}/info/wdiff.info ${PREFIX}/info/dir
+	@install-info ${PREFIX}/${INFO_PATH}/wdiff.info ${PREFIX}/${INFO_PATH}/dir
 
 .include <bsd.port.mk>
