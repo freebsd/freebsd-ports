@@ -1,0 +1,37 @@
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto/EXIF.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto/EXIF.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto/Extensions/Install.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto/Extensions/Install.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto/Extensions/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto/Extensions/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto/Extensions/importPhotos.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto/Extensions/importPhotos.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto/Extensions/purgePhotoCache.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto/Extensions/purgePhotoCache.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto/HISTORY.txt
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto/LICENSE.GPL
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto/LICENSE.txt
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto/Photo.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto/Photo.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto/README.txt
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto/__pkginfo__.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto/__pkginfo__.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto/i18n/cmfphoto-da.po
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto/i18n/cmfphoto-de.po
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto/i18n/cmfphoto-es.po
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto/i18n/cmfphoto-nl.po
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto/i18n/cmfphoto-sv.po
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto/i18n/cmfphoto.pot
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto/i18n/plone-cmfphoto-sv.po
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto/refresh.txt
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto/skins/photo_content/photo_display_sizes.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto/skins/photo_content/photo_macros.pt
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto/skins/photo_content/photo_view.pt
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto/version.txt
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto/Extensions
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto/i18n
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto/skins/photo_content
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto/skins
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto
