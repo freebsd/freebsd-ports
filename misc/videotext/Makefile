@@ -14,7 +14,7 @@ MASTER_SITES=	http://elektra.e-technik.uni-ulm.de/~mbuck/download/
 MAINTAINER=	roger@FreeBSD.org
 COMMENT=	X11/Xview TV Videotext/Teletext page viewer (.vtx files)
 
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
+BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		xview.3:${PORTSDIR}/x11-toolkits/xview
 

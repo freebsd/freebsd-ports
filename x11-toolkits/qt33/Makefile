@@ -115,9 +115,9 @@ CONFIGURE_ARGS+=-system-nas-sound
 CONFIGURE_ARGS+=-no-nas-sound
 .endif
 
-.if ${XFREE86_VERSION} < 4
-BROKEN=	"The QT ${PORTVERSION} port does not support any XFree86 < 4.x"
-.endif # ${XFREE86_VERSION} < 4
+.if ${X_WINDOW_SYSTEM:L} == xfree86-3
+IGNORE=	"The QT ${PORTVERSION} port does not support any XFree86 < 4.x"
+.endif
 
 .if exists(${X11BASE}/include/qt2/qapp.h)
 BROKEN=	"You have QT2 headers installed!  Installing this port"

@@ -14,14 +14,10 @@ DISTNAME=	hanterm-font-${PORTVERSION}
 MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	Hangul fonts for X11(johab) used in many hangul-related programs
 
+BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
+RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
+
 USE_IMAKE=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${XFREE86_VERSION} == 4
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
-RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
-.endif
 
 NO_INSTALL_MANPAGES= yes
 WRKSRC=		${WRKDIR}/hanterm-font/10-6-6
@@ -29,4 +25,4 @@ WRKSRC=		${WRKDIR}/hanterm-font/10-6-6
 pre-install:
 	-${MKDIR} ${PREFIX}/lib/X11/fonts/local
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -15,15 +15,13 @@ DISTNAME=	mplus_bitmap_fonts-${PORTVERSION}
 MAINTAINER=	Ys@PixyGarden.net
 COMMENT=	12x13 dots X11 kanji fonts with simple and readable design
 
+BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
+RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
+
 NO_BUILD=	yes
 USE_X_PREFIX=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${XFREE86_VERSION} == 4
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
-RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
-.endif
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
 DOCS=		INSTALL_E LICENSE_E README_E \

@@ -59,5 +59,11 @@ post-install:
 
 .include "${.CURDIR}/../../x11-servers/xorg-server/Makefile.inc"
 .include <bsd.port.pre.mk>
+
+.if ${X_WINDOW_SYSTEM:L} != xorg
+IGNORE= is part of X.Org
+.endif
+
 .include "${FILESDIR}/manpages"
+
 .include <bsd.port.post.mk>

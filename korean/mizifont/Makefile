@@ -18,13 +18,9 @@ COMMENT=	Mizi Research's Korean X11 Font(ksc5601.1987-[01] encoding)
 
 EXTRACT_DEPENDS=rpm2cpio:${PORTSDIR}/archivers/rpm
 
+RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
+
 USE_X_PREFIX=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${XFREE86_VERSION} == 4
-RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
-.endif
 
 NO_WRKSUBDIR=	yes
 
@@ -57,4 +53,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

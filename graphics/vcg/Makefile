@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.r3.17.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Visualization Tool for compiler graphs
 
-BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
+BUILD_DEPENDS=	imake:${X_IMAKE_PORT}
 
 USE_X_PREFIX=	yes
 MANL=		pbmrot90.l pbmshift.l pbm2hp.l vcgdemomaker.l vcg.l xvcg.l

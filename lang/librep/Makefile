@@ -45,7 +45,7 @@ LIB_DEPENDS+=	gmp.6:${PORTSDIR}/math/libgmp4
 EXTRA_PATCHES+=	${FILESDIR}/stable-patch-src_numbers.c
 .endif
 
-.if ${XFREE86_VERSION} == 3
+.if ${X_WINDOW_SYSTEM:L} != xfree86-3
 MTREE_FILE=	/etc/mtree/BSD.x11.dist
 .else
 MTREE_FILE=	/etc/mtree/BSD.x11-4.dist

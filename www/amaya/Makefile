@@ -62,7 +62,7 @@ DISTFILES+=	${DICT:S/$/.tgz/g}
 BROKEN=		"Does not compile on alpha"
 .endif
 
-.if ${XFREE86_VERSION} >= 4 && defined(WITH_OPENGL)
+.if ${X_WINDOW_SYSTEM:L} != xfree86-3 && defined(WITH_OPENGL)
 LIB_DEPENDS+=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 USE_GL=		yes
 CONFIGURE_ARGS+=	--with-gl

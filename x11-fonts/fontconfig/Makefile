@@ -157,7 +157,7 @@ MAN5=		fonts-conf.5
 
 .include <bsd.port.pre.mk>
 
-.if ${XFREE86_VERSION} == 3
+.if ${X_WINDOW_SYSTEM:L} == xfree86-3
 MTREE_FILE=	/etc/mtree/BSD.x11.dist
 .else
 MTREE_FILE=	/etc/mtree/BSD.x11-4.dist

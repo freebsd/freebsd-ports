@@ -17,14 +17,12 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	mita@jp.FreeBSD.org
 COMMENT=	X11 12-dot kanji font
 
+BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
+RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
+
 USE_X_PREFIX=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${XFREE86_VERSION} == 4
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
-RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
-.endif
 
 WRKSRC=		${WRKDIR}/fonts
 EXTRACT_ONLY=	knm_new_linux.tar.gz

@@ -16,9 +16,12 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drawing editors derived from idraw
 
+BUILD_DEPENDS=	imake:${X_IMAKE_PORT}
+
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
+INSTALLS_SHLIB=	yes
 
 MANCOMPRESSED=	no
 MAN1=	idraw.1 iclass.1 drawtool.1 comterp.1 comdraw.1 flipbook.1 graphdraw.1
@@ -27,12 +30,6 @@ MAN1=	idraw.1 iclass.1 drawtool.1 comterp.1 comdraw.1 flipbook.1 graphdraw.1
 
 .if ${ARCH} != "i386"
 BROKEN=		"fails to configure on ${ARCH}"
-.endif
-
-.if ${XFREE86_VERSION} == 3
-BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
-.else
-BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
 .endif
 
 .include <bsd.port.post.mk>

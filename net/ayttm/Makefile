@@ -59,7 +59,7 @@ CONFIGURE_ARGS+=	--disable-arts
 PLIST_SUB+=	LIBARTS="@comment "
 .endif
 
-.if ${XFREE86_VERSION} >= 4 && !defined(WITHOUT_XFT)
+.if ${X_WINDOW_SYSTEM:L} != xfree86-3 && !defined(WITHOUT_XFT)
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 CONFIGURE_ARGS+=	--enable-xft
 CPPFLAGS+=	`freetype-config --cflags`

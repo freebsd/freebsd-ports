@@ -50,4 +50,8 @@ DEPENDS_TARGET="package"
 
 do-install:	# empty
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if ${X_WINDOW_SYSTEM:L} != xfree86-4
+IGNORE= is part of XFree86-4
+.endif
+.include <bsd.port.post.mk>

@@ -86,6 +86,10 @@ post-extract:
 
 .include <bsd.port.pre.mk>
 
+.if ${X_WINDOW_SYSTEM:L} != xfree86-3
+IGNORE= is part of XFree86-3
+.endif
+
 .if !defined(BUILD_XDIST) && !exists(${FILESDIR}/config)
 IS_INTERACTIVE=	yes	# configure script asks questions
 .endif

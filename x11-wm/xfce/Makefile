@@ -42,7 +42,7 @@ MAN1=		glob.1 xfbd.1 xfce.1 xfclock.1 xfglob.1 xfgnome.1 xfhelp.1 \
 
 .include <bsd.port.pre.mk>
 
-.if ${XFREE86_VERSION} == 4
+.if ${X_WINDOW_SYSTEM:L} != xfree86-3
 .if defined(WITH_XFT)
 LIB_DEPENDS+=		Xft.2:${PORTSDIR}/x11-fonts/libXft
 CONFIGURE_ARGS+=	--enable-xft

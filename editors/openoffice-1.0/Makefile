@@ -120,7 +120,7 @@ BUILD_DEPENDS+= zip:${PORTSDIR}/archivers/zip
 BUILD_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 BUILD_DEPENDS+=	${ANT}:${PORTSDIR}/devel/apache-ant
 .if !defined(DISPLAY)
-BUILD_DEPENDS+= Xvfb:${PORTSDIR}/x11-servers/XFree86-4-VirtualFramebufferServer
+BUILD_DEPENDS+= Xvfb:${X_VFBSERVER_PORT}
 .endif
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \

@@ -22,7 +22,6 @@ RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/encodings/encodings.dir:${PORTSDIR}/x11-fo
 
 CONFLICTS=	xorg-fonts-miscbitmaps-*
 
-XFREE86_VERSION=	4
 USE_IMAKE=		YES
 PROJECTROOT=		-DProjectRoot=${PREFIX}
 DIST_SUBDIR=		xc
@@ -52,4 +51,8 @@ pre-build:
 	(cd ${WRKDIR}/xc/fonts/encodings && \
 	 ${MAKE} all)
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if ${X_WINDOW_SYSTEM:L} != xfree86-4
+IGNORE= is part of XFree86-4
+.endif
+.include <bsd.port.post.mk>

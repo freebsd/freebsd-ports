@@ -65,7 +65,7 @@ CONFIGURE_ENV+=		XLOCKLIBS="${KRB5LIB} ${KRB4LIB} ${MESALIB}"
 CONFIGURE_ARGS+=	--disable-allow-root
 .endif
 
-.if ${XFREE86_VERSION} >= 4
+.if ${X_WINDOW_SYSTEM:L} != xfree86-3
 post-configure:
 	${REINPLACE_CMD} -e 's/-lXdpms//g' ${WRKSRC}/modes/Makefile
 .endif

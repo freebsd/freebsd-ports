@@ -16,17 +16,14 @@ DISTNAME=	monafont-${PORTVERSION}
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	X11 12,14,16-dot kanji fonts
 
+BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
+RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
+
 FONTSDIR=	lib/X11/fonts/local
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 ALL_TARGET=	bdf
 MAKE_ARGS=	PREFIX=${PREFIX}
-.include <bsd.port.pre.mk>
-
-.if ${XFREE86_VERSION} == 4
-BUILD_DEPENDS+=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
-RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
-.endif
 
 PLIST_SUB=	FONTSDIR=${FONTSDIR}
 
@@ -34,4 +31,4 @@ pre-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGREQ} ${PKGNAME} INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

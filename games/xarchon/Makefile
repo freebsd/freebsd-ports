@@ -19,6 +19,7 @@ COMMENT=	A chess-like strategy game with battle options
 USE_XLIB=	yes
 USE_GNOME=	esound gtk12
 USE_GMAKE=	yes
+USE_XPM=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
@@ -27,12 +28,5 @@ MAN6=	xarchon.6
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-	
 
-.include <bsd.port.pre.mk>
-
-.if ${XFREE86_VERSION} == 3
-LIB_DEPENDS+=	Xpm.4:${PORTSDIR}/graphics/xpm
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -32,7 +32,7 @@ MAN1=	mlterm.1 mlclient.1
 
 .include <bsd.port.pre.mk>
 
-.if ${XFREE86_VERSION} == 3
+.if ${X_WINDOW_SYSTEM:L} == xfree86-3
 PKGNAMESUFFIX=	-noaa
 .else
 CONFIGURE_ARGS+=	--enable-anti-alias

@@ -27,17 +27,14 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	kiri@FreeBSD.org
 COMMENT=	An xterm that speaks Japanese with 16 colors like on a VGA
 
-BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
+BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf \
+		mkfontdir:${X_CLIENTS_PORT}
+EXTRACT_DEPENDS=bdftopcf:${X_CLIENTS_PORT}
 
 USE_IMAKE=	yes
 USE_XPM=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${XFREE86_VERSION} == 4
-EXTRACT_DEPENDS+=bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
-BUILD_DEPENDS+=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
-.endif
 
 DOCDIR=		${PREFIX}/share/doc/kterm16c
 

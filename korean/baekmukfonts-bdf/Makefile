@@ -21,14 +21,10 @@ EXTRACT_ONLY=	baekmuk-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	cjh@freebsd.org
 COMMENT=	Free Hangul fonts for X11(baekmuk)
 
+BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
+RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
+
 USE_X_PREFIX=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${XFREE86_VERSION} == 4
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
-RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
-.endif
 
 FONTLIST=	batang10 batang10b batang12 batang12b batang14 batang14b \
 		batang16 batang16b batang18 batang18b batang20 batang20b \
@@ -71,4 +67,4 @@ do-install:
 .endfor
 	@(cd ${PREFIX}/${FONTSDIR} && mkfontdir .)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

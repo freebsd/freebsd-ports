@@ -21,7 +21,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_PYTHON=	2.2+
 
 .if !defined(DISPLAY)
-BUILD_DEPENDS+=	Xvfb:${PORTSDIR}/x11-servers/XFree86-4-VirtualFramebufferServer
+BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT}
 DISPLAYHACK=	localhost:1001
 .endif
 

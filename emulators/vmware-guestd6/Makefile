@@ -52,7 +52,7 @@ UMOUNT=		/sbin/umount
 
 .if defined(VMWARE_X_PORTS)
 
-.if ${XFREE86_VERSION} == 3
+.if ${X_WINDOW_SYSTEM:L} == xfree86-3
 PLIST_SUB+=	INSTALLXSERVER3:=""
 PLIST_SUB+=	INSTALLXSERVER4:="@comment "
 .else
@@ -121,7 +121,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/vmware-toolbox ${X11BASE}/bin
-.if ${XFREE86_VERSION} == 3
+.if ${X_WINDOW_SYSTEM:L} == xfree86-3
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/configurator/XFree86-3/XF86_VMware_4.5 ${X11BASE}/bin/XF86_VMware
 	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XFree86-3/XF86Config ${X11BASE}/etc/XF86Config_VMware
 	@${ECHO} ""

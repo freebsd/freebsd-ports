@@ -34,6 +34,10 @@ PORTDOCS=      AUTHORS COPYING COPYRIGHT ChangeLog NEWS README \
 
 .include <bsd.port.pre.mk>
 
+.if ${X_WINDOW_SYSTEM:L} == xfree86-3
+IGNORE=		"Requires Xv Extension"
+.endif
+
 # XXX - work around compiler bug
 # Optimizations -O{1,s,2,3} work
 # However, lack of -O{1,s,2,3} or -O0 BREAK the build
@@ -46,15 +50,6 @@ CONFIGURE_ARGS+= --enable-sdl
 .endif
 
 pre-everything::
-.if ${XFREE86_VERSION} < 4
-	@${ECHO_MSG} '===>'
-	@${ECHO_MSG} '===>           ATTENTION          <==='
-	@${ECHO_MSG} '===> YOU NEED XFREE86 Version 4.0 <==='
-	@${ECHO_MSG} '===> or above to run this         <==='
-	@${ECHO_MSG} '===> SINCE IT REQUIRES XV         <==='
-	@${ECHO_MSG} '===>'
-	@${FALSE}
-.endif
 .ifndef(WITHOUT_SDL)
 	@${ECHO_MSG} '===>'
 	@${ECHO_MSG} '===> Define WITHOUT_SDL to disable SDL support'

@@ -15,16 +15,12 @@ MASTER_SITE_SUBDIR=	xfonts
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Another font package for X
 
+BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
+
 NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${XFREE86_VERSION} == 4
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
-.endif
 
 post-install:
 	@${CAT} ${DESCR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -45,8 +45,8 @@ MLINKS=		vice.1 x64.1 \
 
 .include <bsd.port.pre.mk>
 
-.if ${XFREE86_VERSION} == 4
-BUILD_DEPENDS+=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
+.if ${X_WINDOW_SYSTEM:L} != xfree86-3
+BUILD_DEPENDS+=	bdftopcf:${X_CLIENTS_PORT}
 .endif
 
 .if ${ARCH} == "alpha" && ${OSVERSION} < 500000

@@ -57,6 +57,10 @@ post-install:
 
 .include "${.CURDIR}/../../x11-servers/xorg-server/Makefile.inc"
 .include <bsd.port.pre.mk>
+ 
+.if ${X_WINDOW_SYSTEM:L} != xorg
+IGNORE= is part of X.Org
+.endif
 
 # BuildXF86DRI is false for FreeBSD < 4.1
 .if ${OSVERSION} < 410000

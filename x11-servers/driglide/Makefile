@@ -17,7 +17,6 @@ COMMENT=	Libraries to support 3dfx Voodoo3/4/5/Banshee with the DRI
 
 USE_BZIP2=		yes
 USE_X_PREFIX=		yes
-XFREE86_VERSION=	4
 INSTALLS_SHLIB=		yes
 USE_INC_LIBTOOL_VER=	13
 USE_AUTOMAKE_VER=	14

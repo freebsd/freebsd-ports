@@ -16,22 +16,16 @@ DISTNAME=	ViewKlass-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ Framework for Motif
 
+BUILD_DEPENDS=	xmkmf:${X_IMAKE_PORT}
+
 USE_X_PREFIX=	yes
 USE_MOTIF=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${XFREE86_VERSION} == 3
-BUILD_DEPENDS+=	xmkmf:${PORTSDIR}/devel/imake
-.else
-BUILD_DEPENDS+=	xmkmf:${PORTSDIR}/devel/imake-4
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/^CFLAGS=/CFLAGS+=/g ; \
 		s/^CXXFLAGS=/CXXFLAGS+=/g ; \
 		s/-g -Wall//g' ${WRKSRC}/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -16,6 +16,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An IA-32 (x86) PC emulator that runs DOS, Win 95, and more
 
+BUILD_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
+RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
+
 USE_XLIB=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
@@ -35,13 +38,6 @@ CFLAGS+=	-fno-rtti -fno-exceptions -fomit-frame-pointer
 MANCOMPRESSED=	yes
 MAN1=		bochs.1 bochs-dlx.1 bxcommit.1 bximage.1
 MAN5=		bochsrc.5
-
-.include <bsd.port.pre.mk>
-
-.if ${XFREE86_VERSION} == 4
-BUILD_DEPENDS+=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
-RUN_DEPENDS+=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
-.endif
 
 .if defined(WITH_BOCHS_PROCESSORS)
 .if ${WITH_BOCHS_PROCESSORS} < 1 || ${WITH_BOCHS_PROCESSORS} > 15
@@ -145,4 +141,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

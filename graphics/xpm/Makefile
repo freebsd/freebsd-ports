@@ -25,7 +25,7 @@ MAN1=		cxpm.1 sxpm.1
 
 .include <bsd.port.pre.mk>
 
-.if ${XFREE86_VERSION} > 3
+.if ${X_WINDOW_SYSTEM:L} != xfree86-3
 IGNORE=		is included in XFree86 >3.x
 .endif
 

@@ -19,7 +19,7 @@ COMMENT=	Base set of libraries needed by KDE programs
 
 CONFLICTS=	kdebase-3.[0-1] kdebase-3.0.* kdebase-3.1.*
 
-BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
+BUILD_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
 LIB_DEPENDS=	art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl2 \
 		artsc.0:${PORTSDIR}/audio/arts \
 		cups.2:${PORTSDIR}/print/cups-base \
@@ -30,8 +30,8 @@ LIB_DEPENDS=	art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl2 \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		xslt.2:${PORTSDIR}/textproc/libxslt \
 		pcre.0:${PORTSDIR}/devel/pcre
-RUN_DEPENDS=	${FONTSCALE}:${PORTSDIR}/x11-fonts/XFree86-4-fontScalable \
-		${FONTENCOD}:${PORTSDIR}/x11-fonts/XFree86-4-fontEncodings
+RUN_DEPENDS=	${FONTSCALE}:${X_FONTS_TTF_PORT} \
+		${FONTENCOD}:${X_FONTS_ENCODINGS_PORT}
 
 USE_GETTEXT=	yes
 USE_QT_VER=	3

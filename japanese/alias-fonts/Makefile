@@ -20,16 +20,11 @@ RUN_DEPENDS=	\
 	${FONTSDIR}/kanji18.pcf.gz:${PORTSDIR}/japanese/kanji18 \
 	${FONTSDIR}/k20b.pcf.gz:${PORTSDIR}/japanese/kappa20 \
 	${FONTSDIR}/kanji26.pcf.gz:${PORTSDIR}/japanese/kanji26 \
-	${FONTSDIR}/K12-1.pcf.gz:${PORTSDIR}/japanese/jisx0213-fonts
+	${FONTSDIR}/K12-1.pcf.gz:${PORTSDIR}/japanese/jisx0213-fonts \
+	mkfontdir:${X_CLIENTS_PORT}
 
 NO_BUILD=	yes
 USE_X_PREFIX=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${XFREE86_VERSION} == 4
-RUN_DEPENDS+=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
-.endif
 
 FONTSDIR=	${X11BASE}/lib/X11/fonts/local
 
@@ -37,4 +32,4 @@ do-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 		${PERL} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

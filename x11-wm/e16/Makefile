@@ -40,7 +40,7 @@ MAN1=		enlightenment.1
 
 .include <bsd.port.pre.mk>
 
-.if (${MACHINE} == "alpha") && (${XFREE86_VERSION} == 3)
+.if (${MACHINE} == "alpha") && ${X_WINDOW_SYSTEM:L} == xfree86-3
 CONFIGURE_ARGS+=	--disable-zoom
 .endif
 

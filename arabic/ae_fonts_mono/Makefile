@@ -15,16 +15,10 @@ DISTNAME=		ae_fonts_mono
 MAINTAINER=	samy@kerneled.com
 COMMENT=	A collection of PCF fonts that include Arabic glyphs
 
+BUILD_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
+
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${XFREE86_VERSION} == 4
-BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
-.elif ${XFREE86_VERSION} == 3
-BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86
-.endif
 
 do-build:
 	@mkfontdir ${WRKSRC}
@@ -38,4 +32,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE} | ${SED} "s|X11BASE|${X11BASE}|g" \
 		| ${SED} "s|PORTNAME|${PORTNAME}|g"
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

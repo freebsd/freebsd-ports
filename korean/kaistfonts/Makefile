@@ -17,14 +17,10 @@ DISTFILES=	kaist-newmj18.bdf.gz ks_philgi16.bdf.gz \
 MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	X11 KAIST font(ksc5601.1987-0 encoding) collection
 
+BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
+RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
+
 USE_X_PREFIX=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${XFREE86_VERSION} == 4
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
-RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
-.endif
 
 USE_GMAKE=	yes
 NO_WRKSUBDIR=	yes
@@ -41,4 +37,4 @@ do-extract:
 post-install:
 	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

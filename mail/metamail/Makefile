@@ -18,14 +18,9 @@ COMMENT=	Implementation of MIME, the Multipurpose Internet Mail Extensions
 
 DEPRECATED=	"mastersite disappeared\; last distfile update was in 1994"
 
-RUN_DEPENDS=	xloadimage:${PORTSDIR}/x11/xloadimage
-
-.include <bsd.port.pre.mk>
-
-.if ${XFREE86_VERSION} == 4
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
-RUN_DEPENDS+=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
-.endif
+BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
+RUN_DEPENDS=	xloadimage:${PORTSDIR}/x11/xloadimage \
+		mkfontdir:${X_CLIENTS_PORT}
 
 USE_XLIB=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
@@ -40,4 +35,4 @@ MAN4=		mailcap.4
 post-patch:
 	@${RM} ${WRKSRC}/bin/*.orig
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

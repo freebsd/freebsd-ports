@@ -16,8 +16,9 @@ EXTRACT_SUFX=	.bdfs.tgz
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Cyrillic X11 bitmap fonts from CYR-RFX project
 
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients \
-		mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
+BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT} \
+		mkfontdir:${X_CLIENTS_PORT}
+
 USE_X_PREFIX=	yes
 
 # See WWW for other available encodings

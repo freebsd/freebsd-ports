@@ -57,13 +57,13 @@ CONFIGURE_ARGS+=	--with-icesound=esound
 CONFIGURE_ARGS+=	--with-icesound=oss
 .endif
 
-.if ${XFREE86_VERSION} < 4 || defined(WITHOUT_XFT)
+.if ${X_WINDOW_SYSTEM:L} == xfree86-3 || defined(WITHOUT_XFT)
 CONFIGURE_ARGS+=	--enable-corefonts --disable-xfreetype
 .else
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 .endif
 
-.if ${XFREE86_VERSION} < 4 || defined(WITHOUT_XINERAMA)
+.if ${X_WINDOW_SYSTEM:L} == xfree86-3 || defined(WITHOUT_XINERAMA)
 CONFIGURE_ARGS+=	--disable-xinerama
 .endif
 

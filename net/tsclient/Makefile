@@ -21,7 +21,7 @@ RUN_DEPENDS+=	tightvnc:${PORTSDIR}/net/tightvnc
 .endif
 
 .ifdef (WITH_XNEST)
-RUN_DEPENDS+=	Xnest:${PORTSDIR}/x11-servers/XFree86-4-NestServer
+RUN_DEPENDS+=	Xnest:${X_NESTSERVER_PORT}
 .endif
 
 USE_X_PREFIX=	yes

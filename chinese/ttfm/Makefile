@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/ttfm/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Big5/GB enhanced TrueType Font Manager
 
-RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
+RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 FONTSDIR=	${PREFIX}/share/fonts/TrueType/

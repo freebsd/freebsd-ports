@@ -15,14 +15,10 @@ EXTRACT_SUFX=	.tar.z
 MAINTAINER=	jmz@FreeBSD.org
 COMMENT=	X11 dropping jewels game
 
+BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
+RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
+
 USE_IMAKE=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${XFREE86_VERSION} == 4
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
-RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
-.endif
 
 MAN6=		xjewel.6
 
@@ -37,4 +33,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/bitmaps/seven_seg.pcf.gz ${PREFIX}/${FONTSDIR}
 	@(cd ${PREFIX}/${FONTSDIR} ; mkfontdir)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

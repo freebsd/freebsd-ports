@@ -21,6 +21,8 @@ DIST_SUBDIR=	openmotif
 MAINTAINER=	steve@FreeBSD.org
 COMMENT=	Motif X11 Toolkit (industry standard GUI (IEEE 1295))
 
+RUN_DEPENDS=	imake:${X_IMAKE_PORT}
+
 CONFLICTS=	lesstif-*
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
@@ -37,10 +39,6 @@ DEMOS_SRC=	${WRKSRC}/demos/programs
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${XFREE86_VERSION} >= 4
-RUN_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
-.endif
 
 # User config option: Build and install Motif demos
 .if defined(WITHOUT_OPENMOTIF_DEMOS)

@@ -15,17 +15,13 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	mita@jp.FreeBSD.org
 COMMENT=	X11 supplemental fonts
 
+BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
+RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
+
 EXTRACT_CMD=		${TAR}
 EXTRACT_BEFORE_ARGS=	-xf
 EXTRACT_AFTER_ARGS=	# empty
 USE_X_PREFIX=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${XFREE86_VERSION} == 4
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
-RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
-.endif
 
 post-extract:
 	@${GUNZIP_CMD} ${WRKSRC}/*.gz
@@ -33,4 +29,4 @@ post-extract:
 post-install:
 	@${SH} ${PKGREQ} ${PKGNAME} INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

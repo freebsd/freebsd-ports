@@ -14,17 +14,13 @@ MASTER_SITE_SUBDIR=	xfonts
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Fixed width fonts from the Linux Font Project
 
+BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
+
 WRKSRC=		${WRKDIR}/lfpfonts-fix
 
 NO_BUILD=	yes
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${XFREE86_VERSION} == 4
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
-.endif
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/X11/fonts/lfpfonts-fix
@@ -34,4 +30,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

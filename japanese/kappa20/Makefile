@@ -23,14 +23,11 @@ USE_BZIP2=	yes
 AYUDISTNAME=	ayu20gothic-1.4
 AYU_SUFFIX=	.tar.gz
 
-BUILD_DEPENDS=	mkitalic:${PORTSDIR}/x11-fonts/mkitalic
+BUILD_DEPENDS=	mkitalic:${PORTSDIR}/x11-fonts/mkitalic \
+		bdftopcf:${X_CLIENTS_PORT}
+RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
 
 .include <bsd.port.pre.mk>
-
-.if ${XFREE86_VERSION} == 4
-BUILD_DEPENDS+=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
-RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
-.endif
 
 FONTSDIR=	lib/X11/fonts/local
 MAKE_ENV=	INSTALL_DATA="${INSTALL_DATA}"
