@@ -24,6 +24,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|^CC|#CC| ; s|^CFLAGS|#CFLAGS| ; \
 		s|||" ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e "s|<malloc\.h>|<stdlib.h>|" ${WRKSRC}/malloc.c
+	${REINPLACE_CMD} -e 's/printf (op->\(.*\))/printf (op->\1 == NULL ? "" : op->\1)/' ${WRKSRC}/convert.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/unrtf ${PREFIX}/bin
