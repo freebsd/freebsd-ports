@@ -1,6 +1,7 @@
 lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Net/RawIP/RawIP.so
 lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Net/RawIP/RawIP.bs
 lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Net/RawIP.pm
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Net/RawIP/libpcap.pod
 lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Net/RawIP/autosplit.ix
 lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Net/RawIP/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Net/RawIP
