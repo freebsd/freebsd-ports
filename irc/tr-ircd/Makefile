@@ -41,6 +41,10 @@ CONFIGURE_ARGS+=--enable-small-nets
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=		"Broken pkg-plist"
+.endif
+
 .if ${OSVERSION} >= 400014 && !defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=--enable-ipv6
 .endif
