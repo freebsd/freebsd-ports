@@ -1,0 +1,20 @@
+bin/quirc
+bin/quirc.inst
+share/quirc/VERSION
+share/quirc/country.tcl
+share/quirc/dal.tcl
+share/quirc/default.tcl
+share/quirc/fun.tcl
+share/quirc/global.tcl
+share/quirc/killjpq.tcl
+share/quirc/mircservers.tcl
+share/quirc/newserver.tcl
+share/quirc/notify.tcl
+share/quirc/popups.tcl
+share/quirc/qwidgets.tcl
+share/quirc/servers
+share/quirc/style.tcl
+share/quirc/translate.tcl
+share/quirc/variables.tcl
+share/quirc/winpopup.tcl
+@dirrm share/quirc
