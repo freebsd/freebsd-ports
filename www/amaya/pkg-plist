@@ -49,6 +49,10 @@ Amaya/config/fr-amayadialogue
 Amaya/config/fr-amayamsg
 Amaya/config/fr-corrdialogue
 Amaya/config/fr-libdialogue
+Amaya/config/it-amayadialogue
+Amaya/config/it-amayamsg
+Amaya/config/it-corrdialogue
+Amaya/config/it-libdialogue
 Amaya/config/tr-amayadialogue
 Amaya/config/tr-amayamsg
 Amaya/config/tr-corrdialogue
@@ -142,7 +146,6 @@ Amaya/doc/amaya/Math.html
 Amaya/doc/amaya/Numbering.html
 Amaya/doc/amaya/Printing.html
 Amaya/doc/amaya/Publishing.html
-Amaya/doc/amaya/Put.html
 Amaya/doc/amaya/Registry.html
 Amaya/doc/amaya/Searching.html
 Amaya/doc/amaya/Selecting.html
