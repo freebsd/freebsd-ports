@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dclib
-PORTVERSION=	0.3.6
+PORTVERSION=	0.3.7
 CATEGORIES=	net
 MASTER_SITES=	http://download.berlios.de/dcgui/
 
