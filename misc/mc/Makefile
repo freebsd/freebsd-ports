@@ -3,7 +3,7 @@
 # Date created:		15 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.10 1997/05/25 21:24:32 torstenb Exp $
+# $Id: Makefile,v 1.11 1997/06/20 12:22:15 tg Exp $
 #
 
 DISTNAME=	mc-4.0
@@ -17,5 +17,8 @@ GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--with-ncurses --without-edit --without-subshell
 MAN1=		mc.1 mcedit.1
 MAN8=		mcserv.8
+
+post-install:
+	@ ${RMDIR} ${PREFIX}/lib/mc/icons
 
 .include <bsd.port.mk>

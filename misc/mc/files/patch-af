@@ -1,0 +1,19 @@
+*** Makefile.in.orig	Tue Jun 24 01:26:06 1997
+--- Makefile.in	Tue Jun 24 01:26:22 1997
+*************** config.h.in: configure.in acconfig.h
+*** 38,44 ****
+  install: installdirs @vcs@
+  	@for I in $(unixdirs); do cd $$I; $(MAKE) DESTDIR=$(DESTDIR) $@ || exit 1; cd ..; done
+  	$(INSTALL_DATA) $(srcdir)/FAQ $(DESTDIR)$(libdir)/FAQ
+! 	$(INSTALL_PROGRAM) mcfn_install $(DESTDIR)$(suppbindir)/mcfn_install
+  	chmod +x $(DESTDIR)$(suppbindir)/mcfn_install
+  	@echo "Please verify that the configuration values are correctly"
+  	@echo "set in the mc.ext file in $(libdir)"
+--- 38,44 ----
+  install: installdirs @vcs@
+  	@for I in $(unixdirs); do cd $$I; $(MAKE) DESTDIR=$(DESTDIR) $@ || exit 1; cd ..; done
+  	$(INSTALL_DATA) $(srcdir)/FAQ $(DESTDIR)$(libdir)/FAQ
+! 	$(INSTALL_DATA) mcfn_install $(DESTDIR)$(suppbindir)/mcfn_install
+  	chmod +x $(DESTDIR)$(suppbindir)/mcfn_install
+  	@echo "Please verify that the configuration values are correctly"
+  	@echo "set in the mc.ext file in $(libdir)"
