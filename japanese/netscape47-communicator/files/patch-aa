@@ -1,12 +1,5 @@
---- Netscape.ad-ja_euc.orig	Tue May 18 22:57:53 1999
-+++ Netscape.ad-ja_euc	Thu Jul  1 02:54:48 1999
-@@ -1,5 +1,5 @@
- ! Insert copyright and license here 1994
--! Netscape.ad --- app-defaults file for Netscape 4.6.
-+! Netscape.ad --- app-defaults file for Netscape 4.61.
- !
- ! Bugs and commentary to x_cbug@netscape.com.
- ! Created: Jamie Zawinski <use the bug address, please>, 23-Jun-94.
+--- Netscape.ad-ja_euc.orig	Fri Jul 23 19:14:48 1999
++++ Netscape.ad-ja_euc	Fri Jul 23 19:15:19 1999
 @@ -42,8 +42,11 @@
  ! complaints from people who think they understand this stuff better than
  ! I do.
@@ -16,7 +9,7 @@
 +
  ! Language localization:
 -*versionLocale: ja
-+*versionLocale:		ja_JP.EUC
++*versionLocale: @LANG@
  
  ! SGI only: Here's how you turn on SGI's Motif hacks:
  !!Netscape*sgiMode:		True
@@ -25,28 +18,20 @@
  ! as equal size. We don't do this for SGI, as they have solved
  ! the problem. See *useEnhancedFSB above.
 -*nsMotifFSBHacks: True
-+*nsMotifFSBHacks:		False
++*nsMotifFSBHacks: False
  
  ! This resource enables the CDE mode of the File Selection Box.
  ! You must be running a CDE enhanced Motif library for this
-@@ -68,7 +71,6 @@
- ! File Selection Box. If you specify nsMotifFSBHacks and
- ! nsMotifFSBCdeMode, some of the keyboard and filter enhancements
- ! of nsMotifFSBHacks will also be applied, the layout hacks will not.
--*nsMotifFSBCdeMode: False
- !*nsMotifFSBCdeMode: True
- 
- ! SCO Only: IXI Motif Form widget is broken, don't use it
-@@ -89,7 +91,7 @@
+@@ -89,7 +92,7 @@
  !Solaris[EUC]   *appDir location:     /usr/openwin/lib/locale/ja/netscape
  !Solaris[Sjis]  *appDir location:     /usr/openwin/lib/locale/ja_JP.PCK/netscape
  
 -*appDir:                        /usr/lib/X11/ja_JP/netscape
-+*appDir:	@NDIR@/@LANG@
++*appDir:                        @NDIR@/@LANG@
  
  ! This resource is the same as the -visual command line option, which selects
  ! an X visual on which the windows should be created.  Legal options are:
-@@ -177,8 +179,8 @@
+@@ -177,8 +180,8 @@
  ! If you find a need to let one or both of them continue on to the actual
  ! terminal of Netscape, you can do it by setting these resources to False.
  !
@@ -57,16 +42,7 @@
  
  ! For those MIME content-encodings which are not directly understood
  ! internally, it is possible to specify another Unix program to use as
-@@ -271,7 +273,7 @@
- ! Equivalent to using the '-irix-session-management'
- !                         '-no-irix-session-management' startup flags.
- !
--!*irixSessionManagement:			True
-+!*irixSessionManagement:		True
- 
- 
- ! Uncomment the following line to ignore the alwaysraised, alwayslowered,
-@@ -310,7 +312,7 @@
+@@ -310,7 +313,7 @@
  ! These resources control the foreground and background colors of normal text.
  !
  *defaultForeground:			#000000
@@ -75,16 +51,7 @@
  
  ! This resource may be used to specify a default background image.  It should
  ! be a file name or URL pointing to a GIF, JPEG, or XBM image.  If it is blank,
-@@ -450,7 +452,7 @@
- 	~Meta ~Alt ~Ctrl<Key>SunCopy:   xfeDoCommand(copy)			\n\
- 	~Meta ~Alt ~Ctrl<Key>SunPaste:  xfeDoCommand(paste)			\n\
- 	~Meta ~Alt ~Ctrl<Key>SunCut:    xfeDoCommand(cut)			\n\
--											\
-+										\
- 	~Meta ~Alt ~Ctrl ~Shift<Key>osfHelp:		xfeDoCommand(manual)	\n
- 
- ! These used to be up above.
-@@ -827,7 +829,15 @@
+@@ -827,7 +830,15 @@
  	<Btn2Motion>:			DisarmLinkIfMoved()		\n\
  	<Btn3Motion>:			DisarmLinkIfMoved()		\n\
  	<Motion>:			DescribeLink()			\n\
@@ -95,47 +62,44 @@
 +	Shift<Btn4Down>:		LineUp()			\n\
 +	Shift<Btn5Down>:		LineDown()			\n\
 +	None<Btn4Down>: LineUp()LineUp()LineUp()LineUp()LineUp()LineUp() \n\
-+	None<Btn5Down>: LineDown()LineDown()LineDown()LineDown()LineDown()LineDown()\n\
++	None<Btn5Down>: LineDown()LineDown()LineDown()LineDown()LineDown()LineDown() \n\
 +	Alt<Btn4Down>:			xfeDoCommand(forward)		\n\
 +	Alt<Btn5Down>:			xfeDoCommand(back)		\n
  
  *drawingArea*XmList.highlightThickness:	2
  
-@@ -1107,6 +1117,12 @@
+@@ -1107,6 +1118,12 @@
  ! in which case they ought to apply to the text in that text field instead.
  ! Doesn't all this crap just make you want to hurl?
  *globalNonTextTranslations:		#override			\n\
 +	Shift<Btn4Down>:		LineUp()			\n\
 +	Shift<Btn5Down>:		LineDown()			\n\
-+	None<Btn4Down>:LineUp()LineUp()LineUp()LineUp()LineUp()LineUp()	\n\
-+	None<Btn5Down>:LineDown()LineDown()LineDown()LineDown()LineDown()LineDown()\n\
++	None<Btn4Down>: LineUp()LineUp()LineUp()LineUp()LineUp()LineUp() \n\
++	None<Btn5Down>: LineDown()LineDown()LineDown()LineDown()LineDown()LineDown() \n\
 +	Alt<Btn4Down>:			xfeDoCommand(forward)		\n\
 +	Alt<Btn5Down>:			xfeDoCommand(back)		\n\
  	~Meta ~Alt ~Ctrl<Key>space:	xfeDoCommand(spacebar)		\n\
  									  \
  	~Meta ~Alt ~Ctrl<Key>Delete:	PageUp()			\n\
-@@ -4332,7 +4348,10 @@
- *msgViewAttachPopup*properties.mnemonic:	P
+@@ -2231,7 +2248,7 @@
+ *decreaseFont.documentationString:	\
+ このページの表示に使用するフォント サイズを小さくします。
  
- *attachmentProps.dialogTitle:			添付
--Netscape*attachmentProps*XmLabelGadget.fontList:	-dt-interface system-medium-*-*-S*-*-*-*-*-*-*-*-*:
-+Netscape*attachmentProps*XmLabelGadget.fontList:        \
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
- 
- *attachmentProps.okLabelString:	OK
- *attachmentProps*nameLabel.labelString:		名前:
-@@ -4488,7 +4507,7 @@
- ! changed at runtime; these resources won't override that.
- *title:					Netscape
- *iconName:				Netscape
--*Navigator.title:			Netscape Navigator 4.6
-+*Navigator.title:			Netscape Navigator 4.61
- *MailThread.title:			Netscape メール & ニュースグループ
- *MailThread.iconName:		メール & ニュースグループ
- 
-@@ -5047,6 +5066,8 @@
+-*reload.labelString:				再読み込み(R)
++*reload.labelString:				再読込(R)
+ *reload.mnemonic:					R
+ *reload.acceleratorText:			Alt+R
+ ! In mail and news reply to sender uses this accelerator
+@@ -4526,7 +4543,7 @@
+ !                                       ------------------------
+ ! back
+ ! forward
+-*reloadNonFrameCmdString:				再読み込み(R)
++*reloadNonFrameCmdString:				再読込(R)
+ *reloadWithFrameCmdString:				フレームの再読み込み(R)
+ *popup.frameReload.mnemonic:			 R
+ *popup.showImage.labelString:			画像の表示(G)
+@@ -5047,6 +5064,8 @@
  !*openURLDialog.width:				500
  *openURLDialog*openInEditor.labelString: Composer で開く
  *openURLDialog*openInBrowser.labelString: Navigator で開く
@@ -144,170 +108,7 @@
  
  *message_popup.title:			Netscape
  *message_popup*OK.labelString:	OK
-@@ -5238,7 +5259,10 @@
- *AddressBook*outline.Nick:			ニックネーム
- *AddressBook*outline.Secure:			Secure
- *AddressBook*outline.HTML:			HTML
--*AddressBook*mainform.fontList:			-dt-interface system-medium-*-*-S*-*-*-*-*-*-*-*-*:
-+*AddressBook*mainform.fontList:			\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
- 
- ! The mail compose window part of addr book
- *mc_queryLabel.labelString:	検索する名前を入力してください:
-@@ -5416,7 +5440,7 @@
- *drawingArea*XmScrolledWindow.spacing:			0
- 
- ! Do not under any circumstances change the following line:
--Netscape.version: 		4.6
-+Netscape.version: 		4.61
- 
- 
- ! ============================================================================
-@@ -5426,11 +5450,22 @@
- ! the document display area.
- ! ============================================================================
- !
--*fontList:			-dt-interface system-medium-*-*-S*-*-*-*-*-*-*-*-*:
--
--*XmTextField.fontList:		-dt-interface system-medium-*-*-S*-*-*-*-*-*-*-*-*:
--*XmText.fontList:		-dt-interface system-medium-*-*-S*-*-*-*-*-*-*-*-*:
--*XmList*fontList:		-dt-interface system-medium-*-*-S*-*-*-*-*-*-*-*-*:
-+*fontList:			\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
-+*XmTextField.fontList:		\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
-+*XmText.fontList: \
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
-+*XmList*fontList: \
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
- 
- ! SGI default:
- !*menuBar*fontList:		-*-helvetica-bold-o-*-*-*-120-*-*-*-*-iso8859-*
-@@ -5438,8 +5473,13 @@
- !*menuBar*fontList:		-*-lucida-medium-r-normal-*-*-120-*-*-*-*-iso8859-*
- 
- *menuBar*historyTruncated.fontList:\
--				-dt-interface system-medium-*-*-S*-*-*-*-*-*-*-*-*:
--*popup*fontList:		-dt-interface system-medium-*-*-S*-*-*-*-*-*-*-*-*:
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
-+*popup*fontList: \
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
- 
- !*topArea*fontList:		-*-helvetica-bold-r-*-*-*-120-*-*-*-*-iso8859-*
- !*topArea*XmTextField.fontList:	-*-courier-medium-r-*-*-*-120-*-*-*-*-iso8859-*
-@@ -5452,10 +5492,19 @@
- !*bookmark*XmTextField.fontList:	-*-courier-medium-r-*-*-*-120-*-*-*-*-iso8859-*
- !*bookmark*XmText.fontList:	-*-courier-medium-r-*-*-*-120-*-*-*-*-iso8859-*
- 
--*docinfoButton.fontList:      -dt-interface system-medium-*-*-S*-*-*-*-*-*-*-*-*:
--*mailto*urlLabel.fontList:    -dt-interface system-medium-*-*-S*-*-*-*-*-*-*-*-*:
--
--*licenseDialog*text.fontList:	-dt-interface system-medium-*-*-S*-*-*-*-*-*-*-*-*:
-+*docinfoButton.fontList:      \
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
-+*mailto*urlLabel.fontList: \
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
-+
-+*licenseDialog*text.fontList:	\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
- 
- ! These are the fonts used in the outline lists used in Mail, News, Bookmarks,
- ! and Address Book windows.  (Note that there can't be any whitespace after
-@@ -5473,7 +5522,10 @@
- ! -*-helvetica-bold-r-*-*-*-120-*-*-*-*-iso8859-*=BOLD,\
- ! -*-helvetica-medium-o-*-*-*-120-*-*-*-*-iso8859-*=ITALIC
- 
--Netscape*XmLGrid*fontList:	-dt-interface system-medium-*-*-S*-*-*-*-*-*-*-*-*:
-+Netscape*XmLGrid*fontList:	\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
- 
- ! Font for the Mail/News banner
- ! For non-SUN platforms, user can accept font size to be 10 pt to be default on the message list
-@@ -5487,21 +5539,41 @@
- !Netscape*banner*info.fontList:	-*-helvetica-medium-r-*-*-*-100-*-*-*-*-iso8859-*
- 
- ! For SUN platforms, user wants default font size to be 12 pt on the message list to be readable
--Netscape*banner*folderDropdown*XmLabel.fontList: -dt-interface system-medium-*-*-S*-*-*-*-*-*-*-*-*:
-+Netscape*banner*folderDropdown*XmLabel.fontList:\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
- Netscape*banner*folderDropdown*.fontList:\
---dt-interface system-medium-*-*-S*-*-*-*-*-*-*-*-*:
--
--Netscape*banner*title.fontList:		-dt-interface system-medium-*-*-S*-*-*-*-*-*-*-*-*:
--Netscape*banner*subtitle.fontList:	-dt-interface system-medium-*-*-S*-*-*-*-*-*-*-*-*:
--Netscape*banner*info.fontList:		-dt-interface system-medium-*-*-S*-*-*-*-*-*-*-*-*:
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
-+
-+Netscape*banner*title.fontList: \
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
-+Netscape*banner*subtitle.fontList: \
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
-+Netscape*banner*info.fontList: \
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
- 
- *banner*folderDropdown*shadowThickness: 1
- ! Font for the Thread window expando flippy label
--*arrowlabel.fontList:		-dt-interface system-medium-*-*-S*-*-*-*-*-*-*-*-*:
-+*arrowlabel.fontList:		\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
- 
- ! Font for the attachment panel icon label
- ! need class name to defeat *sgiMode
--Netscape*attachItemLabel*fontList:	-dt-interface system-medium-*-*-S*-*-*-*-*-*-*-*-*:
-+Netscape*attachItemLabel*fontList:	\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
- 
- ! This is the default charset for the View | Character Set menu.
- ! The following values have special meanings:
-@@ -5918,7 +5990,10 @@
- !
- ! Navigator mouse documentation.
- !
--*tipLabel.fontList:           -dt-interface system-medium-*-*-S*-*-*-*-*-*-*-*-*:
-+*tipLabel.fontList:           \
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
- Netscape*tipLabel.background:  #FFFFCC
- Netscape*tipLabel.foreground:  Black
- Netscape*tipShell.borderColor: Black
-@@ -6012,7 +6087,7 @@
+@@ -6012,7 +6031,7 @@
  
  
  *urlLocationLabel.netsiteLabelString:		Netsite:
@@ -316,61 +117,7 @@
  *urlLocationLabel.editedLabelString:		ジャンプ:
  
  ! this must be the longer of the two...
-@@ -6269,7 +6344,10 @@
- 
- ! Preferences dialog
- !
--*prefs*fontList:							-dt-interface system-medium-*-*-S*-*-*-*-*-*-*-*-*:
-+*prefs*fontList:							\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
- *prefs_popup.title:			Netscape: 設定
- *pref.category:                             カテゴリ
- 
-@@ -6283,9 +6361,14 @@
- 
- *prefs*pageTitle.alignment:					ALIGNMENT_BEGINNING
- *prefs*pageTitle.fontList:\
---dt-interface system-medium-*-*-S*-*-*-*-*-*-*-*-*:
--
--*prefs*categoryList*fontList:				-dt-interface system-medium-*-*-S*-*-*-*-*-*-*-*-*:
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
-+
-+*prefs*categoryList*fontList:				\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
- 
- *prefs*pageForm.topOffset:					4
- *prefs*XmFrame.marginWidth:					8
-@@ -6348,7 +6431,10 @@
- 
- ! Preferences dialog - Browser/Languages - Add
- 
--*prefsLang*fontList:					-dt-interface system-medium-*-*-S*-*-*-*-*-*-*-*-*:
-+*prefsLang*fontList:					\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
- *prefsLang_popup.title:					Netscape: 言語の追加
- *prefsLang*langLabel.labelString:		追加する言語を選択してください。\n\n言語:
- *prefsLang*langList.visibleItemCount:	15
-@@ -6405,7 +6491,10 @@
- 
- ! Preferences dialog - General - Applications - Edit
- 
--*prefsApplEdit*fontList:						-dt-interface system-medium-*-*-S*-*-*-*-*-*-*-*-*:
-+*prefsApplEdit*fontList:						\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
- *prefsApplEdit_popup.title:						Netscape: アプリケーション
- *prefsApplEdit*mimeTypesDescriptionLabel.labelString: 説明:
- *prefsApplEdit*mimeTypesLabel.labelString: 		MIME タイプ:
-@@ -6423,10 +6512,10 @@
+@@ -6423,10 +6442,10 @@
  
  *prefs*cache*cacheLabel.labelString:		\
  キャッシュは頻繁にアクセスされるドキュメントをコピーしておくことで、\n\
@@ -383,115 +130,16 @@
  ボタンをクリックします。
  *prefs*cache*cacheDirLabel.labelString:		キャッシュフォルダ:
  *prefs*cache*memoryLabel.labelString:		メモリ キャッシュ:
-@@ -6459,7 +6548,10 @@
+@@ -6455,7 +6474,7 @@
+ *prefs*proxies*auto.labelString:			自動プロキシ設定
+ *prefs*proxies*config.labelString:			設定ファイルの場所 (URL)
+ *prefs*proxies*view.labelString:			表示...
+-*prefs*proxies*reload.labelString:			再読み込み
++*prefs*proxies*reload.labelString:			再読込
  
  ! Preferences dialog - General - Proxies - View
  
--*prefsProxiesView*fontList:					-dt-interface system-medium-*-*-S*-*-*-*-*-*-*-*-*:
-+*prefsProxiesView*fontList:					\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
- *prefsProxiesView_popup.title:				Netscape: 手動プロキシ設定の表示
- *prefsProxiesView*proxyViewLabel1.labelString:	\
- Netscape のサポートするインターネット プロトコル毎にプロキシと\n\
-@@ -6823,7 +6915,10 @@
- *prefs*mailnewsAddress*sortLastToggle.labelString: 「姓, 名」を表示する
- ! Preferences dialog - Mail News/Directory - New/Edit
- 
--*prefsLdapProp*fontList:					-dt-interface system-medium-*-*-S*-*-*-*-*-*-*-*-*:
-+*prefsLdapProp*fontList:					\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
- *prefsLdapProp_popup.title:					Netscape: LDAP サーバの設定
- *prefsLdapProp*descLabel.labelString:		説明:
- *prefsLdapProp*serverLabel.labelString:		LDAP サーバ:
-@@ -7039,7 +7134,10 @@
- 
- ! Subscribe UI
- 
--*subscribeFolder*fontList: -dt-interface system-medium-*-*-S*-*-*-*-*-*-*-*-*:
-+*subscribeFolder*fontList: \
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
- *subscribeFolder*subscribe.labelString:	購読
- *subscribeFolder*unsubscribe.labelString:	購読を止める
- *subscribeFolder*setSubscribe.labelString:	購読
-@@ -7060,7 +7158,10 @@
- *subscribeFolder*subNewInfoLabel.alignment:	ALIGNMENT_BEGINNING
- 
- ! The Add server dialog
--*serverDialog*fontList:						-dt-interface system-medium-*-*-S*-*-*-*-*-*-*-*-*:
-+*serverDialog*fontList:						\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
- *serverDialogForm*serverLabel.labelString:	サーバ名:
- *serverDialogForm*portLabel.labelString:	サーバ ポート:
- *serverDialogForm*secureLabel.labelString:	保護付き:
-@@ -7182,7 +7283,10 @@
- *toolBar*armOffset:						1
- *toolBar*fillOnEnter:					false
- *toolBar*raiseForeground:				Blue
--*toolBar*fontList:						-dt-interface system-medium-*-*-S*-*-*-*-*-*-*-*-*:
-+*toolBar*fontList:						\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
- 
- *toolBar.spacing:						0
- *toolBar.shadowThickness:				0
-@@ -7245,7 +7349,10 @@
- *dashBoard*statusBar.shadowType:					shadow_in
- *dashBoard*statusBar.shadowThickness:				1
- *dashBoard*statusBar.truncateLabel:					false
--*dashBoard*statusBar.fontList:						-dt-interface system-medium-*-*-S*-*-*-*-*-*-*-*-*:
-+*dashBoard*statusBar.fontList:						\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
- *dashBoard*statusBar.labelAlignment:				alignment_beginning
- 
- ! initial value for the status bar
-@@ -7256,7 +7363,10 @@
- !!
- *dashBoard*progressBar.shadowType:					shadow_in
- *dashBoard*progressBar.shadowThickness:				1
--*dashBoard*progressBar.fontList:					-dt-interface system-medium-*-*-S*-*-*-*-*-*-*-*-*:
-+*dashBoard*progressBar.fontList:					\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
- *dashBoard*progressBar.width:						100
- 
- !! The color of the progress bar
-@@ -7278,7 +7388,10 @@
- *dockedTaskBar.shadowThickness:							1
- *dockedTaskBar.spacing:									0
- *dockedTaskBar.buttonLayout:							button_pixmap_only
--*dockedTaskBar*fontList:					-dt-interface system-medium-*-*-S*-*-*-*-*-*-*-*-*:
-+*dockedTaskBar*fontList:					\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
- 
- *dockedTaskBar*openOrBringUpBrowser.labelString:	Navigator
- *dockedTaskBar*openInboxAndGetNewMessages.labelString:	受信トレイ
-@@ -7306,7 +7419,10 @@
- *floatingTaskBar.shadowType:								shadow_out
- *floatingTaskBar.shadowThickness:							1
- *floatingTaskBar.spacing:									0
--*floatingTaskBar*fontList:					-dt-interface system-medium-*-*-S*-*-*-*-*-*-*-*-*:
-+*floatingTaskBar*fontList:					\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
- 
- *floatingTaskBar*openOrBringUpBrowser.labelString:	Navigator
- *floatingTaskBar*openInboxAndGetNewMessages.labelString:	Inbox	
-@@ -7410,7 +7526,7 @@
+@@ -7410,7 +7429,7 @@
  *print.tipString:                   このページを印刷
  *MailThread*print.tipString:        選択したメッセージを印刷
  *MailMsg*print.tipString:           選択したメッセージを印刷
@@ -500,7 +148,7 @@
  
  ! buttons specific to the compose frame.
  *toolBar*sendMessageNow.labelString:	送信
-@@ -7464,7 +7580,7 @@
+@@ -7464,7 +7483,7 @@
  *bccBtn.documentationString:          メッセージを作成してブラインドカーボン コピーを選択した項目宛に送信します
  !
  ! buttons used everywhere (it seems.)
@@ -509,243 +157,7 @@
  *toolBar*stopLoading.labelString:	停止
  
  *changeDocumentEncoding.documentationString: ドキュメントの文字コード セットを指定します。
-@@ -7484,7 +7600,10 @@
- Netscape*MessageDownload*label.alignment: ALIGNMENT_BEGINNING
- Netscape*MessageDownload*stopButtonForm*stopLoading.labelString: キャンセル
- 
--Netscape*NewsDownload*fontList:				-dt-interface system-medium-*-*-S*-*-*-*-*-*-*-*-*:
-+Netscape*NewsDownload*fontList:				\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
- Netscape*NewsDownload_popup.title:			Netscape: ヘッダーのダウンロード
- 
- Netscape*NewsDownload*allToggle.labelString: すべてのヘッダーをダウンロード
-@@ -7534,7 +7653,10 @@
- !
- Netscape*splashShell*background:	Black
- Netscape*splashShell*foreground:	White
--Netscape*splashShell*fontList:	-dt-interface system-medium-*-*-S*-*-*-*-*-*-*-*-*:
-+Netscape*splashShell*fontList:	\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
- 
- !
- ! Special for HTMLCompose
-@@ -7578,10 +7700,22 @@
- *spellDialog*msgCorrect.labelString:       [ 正しいスペル ]
- *spellDialog*msgNull.labelString:          [ ]
- 
--*spellDialog*text_label.fontList: -dt-interface system-medium-*-*-S*-*-*-*-*-*-*-*-*:
--*spellDialog*list_label.fontList: -dt-interface system-medium-*-*-S*-*-*-*-*-*-*-*-*:
--*spellDialog*right_rc*fontList:   -dt-interface system-medium-*-*-S*-*-*-*-*-*-*-*-*:
--*spellDialog*combo_frame*fontList:   -dt-interface system-medium-*-*-S*-*-*-*-*-*-*-*-*:
-+*spellDialog*text_label.fontList: \
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
-+*spellDialog*list_label.fontList: \
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
-+*spellDialog*right_rc*fontList: \
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
-+*spellDialog*combo_frame*fontList: \
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
- *spellDialog*langCzech.labelString:                チェコ語
- *spellDialog*langRussian.labelString:              ロシア語
- *spellDialog*langCatalan.labelString:              カタロニア語
-@@ -7828,7 +7962,9 @@
- 
- 
- Netscape*AddressOutlinerPopup*fontList:\
---dt-interface system-medium-*-*-S*-*-*-*-*-*-*-*-*:
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
-+-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
- 
- !Netscape*AddressOutlinerPopup*fontList:\
- -*-helvetica-medium-r-*-*-*-100-*-*-*-*-iso8859-*,\
-@@ -8434,7 +8570,7 @@
- 
- *strings.-1089:入力した証明書名が既に他の証明書で使用されています。
- 
--*strings.-1088:サーバ FORTEZZA チェーンに FORTEZZA 以外の証明書が含まれています｡ \nおそらく､このサイトには安全に接続できません｡
-+*strings.-1088:サーバ FORTEZZA チェーンに FORTEZZA 以外の証明書が含まれています。 \nおそらく、このサイトには安全に接続できません。
- 
- *strings.-1087:不明
- 
-@@ -8450,9 +8586,9 @@
- 
- *strings.-1081:読み込もうとしている CKL は現在の CKL と発行者が違います。\nまず、現在の CKL を削除して下さい。
- 
--*strings.-1080:このサイトの証明書のキー取り消しリストは､まだ有効ではありません｡\n新しいキー取り消しリストを読み込み直してください｡
-+*strings.-1080:このサイトの証明書のキー取り消しリストは、まだ有効ではありません。\n新しいキー取り消しリストを読み込み直してください。
- 
--*strings.-1079:このサイトの証明書の証明書取り消しリストは､まだ有効\nではありません｡新しい証明書取り消しリストを読み込み\n直してください｡
-+*strings.-1079:このサイトの証明書の証明書取り消しリストは、まだ有効\nではありません。新しい証明書取り消しリストを読み込み\n直してください。
- 
- *strings.23000:<head>%-styleinfo-%</head><body bgcolor="#bbbbbb"><div><form name=theform action=internal-dialog-handler method=post><input type="hidden" %-cont-%
- 
-@@ -8534,109 +8670,109 @@
- 
- *strings.23034:%0%%1%%2%
- 
--*strings.23035:%sec-banner-begin%%0%%sec-banner-end%<b><div><font size=4>%1% は転送される情報を保護するために､暗号化を使用しているサイトです｡ %-cont-%
-+*strings.23035:%sec-banner-begin%%0%%sec-banner-end%<b><div><font size=4>%1% は転送される情報を保護するために、暗号化を使用しているサイトです。 %-cont-%
- 
--*strings.23036:ですが､Netscape は､証明書に署名した発行人を認識できません｡</font></b></div><p><div>Netscape が証明書の署名者を認識できないので､ %-cont-%
-+*strings.23036:ですが、Netscape は、証明書に署名した発行人を認識できません。</font></b></div><p><div>Netscape が証明書の署名者を認識できないので、 %-cont-%
- 
--*strings.23037:このサイトに接続して情報を交換できるように､この証明書を受け付けるかどうかを決定して下さい｡<p>この %-cont-%
-+*strings.23037:このサイトに接続して情報を交換できるように、この証明書を受け付けるかどうかを決定して下さい。<p>この %-cont-%
- 
--*strings.23038:アシスタントを利用して証明を受け付けるかどうか､またどの程度受け付けるのかを決定して下さい｡%2%</div>
-+*strings.23038:アシスタントを利用して証明を受け付けるかどうか、またどの程度受け付けるのかを決定して下さい。%2%</div>
- 
--*strings.23044:%sec-banner-begin%%0%%sec-banner-end%<div>以下が､ 提出された証明書です:</div><hr><table><tr><td valign=top><font %-cont-%
-+*strings.23044:%sec-banner-begin%%0%%sec-banner-end%<div>以下が、 提出された証明書です:</div><hr><table><tr><td valign=top><font %-cont-%
- 
- *strings.23045:size=2>証明書: <br>署名者: <br>暗号化: </font></td><td valign=top><font size=2>%1%<br>%2%<br>%3% グレード (%4% with %5%-ビットの秘密鍵) %-cont-%
- 
- *strings.23046:key)</font></td><td valign=bottom><input type="submit" name="button" value="%moreinfo%"></td></tr></table><hr><div>証明書の %-cont-%
- 
--*strings.23047:署名者は､この証明書の所持者の身元を保証しています｡ 暗号化レベルは､このWeb サイトとの間で交換される %-cont-%
-+*strings.23047:署名者は、この証明書の所持者の身元を保証しています。 暗号化レベルは、このWeb サイトとの間で交換される %-cont-%
- 
--*strings.23048:あらゆる情報を第三者が盗聴することが､どの程度困難であるかを示しています｡%6%</div>
-+*strings.23048:あらゆる情報を第三者が盗聴することが、どの程度困難であるかを示しています。%6%</div>
- 
--*strings.23049:%sec-banner-begin%%0%%sec-banner-end%<div>この Web サイトから暗号化された情報を受け取るために､この証明書を受け付けますか？ %-cont-%
-+*strings.23049:%sec-banner-begin%%0%%sec-banner-end%<div>この Web サイトから暗号化された情報を受け取るために、この証明書を受け付けますか？ %-cont-%
- 
--*strings.23050:<p>受け付けた場合､このサイトが見えるようになりドキュメントを受け取ることができるようになります｡また､これらのドキュメントの %-cont-%
-+*strings.23050:<p>受け付けた場合、このサイトが見えるようになりドキュメントを受け取ることができるようになります。また、これらのドキュメントの %-cont-%
- 
--*strings.23051:すべてがサードパーティの監視下の元で､暗号化されて 保護されます｡<p><input type=radio name=accept value=session%1%>このセッションに対して %-cont-%
-+*strings.23051:すべてがサードパーティの監視下の元で、暗号化されて 保護されます。<p><input type=radio name=accept value=session%1%>このセッションに対して %-cont-%
- 
--*strings.23052:証明書を受け付ける<br><input type=radio name=accept value=cancel%2%>証明書を受け付けず､接続しない<br><input type=radio name=accept %-cont-%
-+*strings.23052:証明書を受け付ける<br><input type=radio name=accept value=cancel%2%>証明書を受け付けず、接続しない<br><input type=radio name=accept %-cont-%
- 
- *strings.23053:value=forever%3%>証明書を受け付ける (有効期限まで)</div><br>%4%
- 
--*strings.23064:%sec-banner-begin%%0%%sec-banner-end%<div>この証明書を受け付けると､このサイトとのすべての情報の交換が暗号化されることが %-cont-%
-+*strings.23064:%sec-banner-begin%%0%%sec-banner-end%<div>この証明書を受け付けると、このサイトとのすべての情報の交換が暗号化されることが %-cont-%
- 
--*strings.23065:保証されます｡しかし､暗号化は､詐欺を避けることはできません｡<p> 詐欺から守るためには､このサイトが完全に信用できない場合は､情報 %-cont-%
-+*strings.23065:保証されます。しかし、暗号化は、詐欺を避けることはできません。<p> 詐欺から守るためには、このサイトが完全に信用できない場合は、情報 %-cont-%
- 
--*strings.23066:(特に個人情報､クレジットカードﾞ番号､パスワードなど)を送信しないで下さい｡<p> 保護のために %-cont-%
-+*strings.23066:(特に個人情報、クレジットカード゛番号、パスワードなど)を送信しないで下さい。<p> 保護のために %-cont-%
- 
--*strings.23067:Netscape は､必要に応じてこのことをお知らせ します｡<p><center><input type=checkbox name=postwarn value=yes %1%>このサイト %-cont-%
-+*strings.23067:Netscape は、必要に応じてこのことをお知らせ します。<p><center><input type=checkbox name=postwarn value=yes %1%>このサイト %-cont-%
- 
- *strings.23068:に情報を送信する前に警告する</center><p></div>%2%
- 
- *strings.23069:%sec-banner-begin%%0%%sec-banner-end%<b><div>以下から提出された証明書の審査が終わりました:<br>%1%</b><p>この ID %-cont-%
- 
--*strings.23070:を拒絶することにしました｡もし今後､この決定を変更したい場合には､ もう一度このサイトを訪問して下さい｡再びアシスタントが表示されます｡ %-cont-%
-+*strings.23070:を拒絶することにしました。もし今後、この決定を変更したい場合には、 もう一度このサイトを訪問して下さい。再びアシスタントが表示されます。 %-cont-%
- 
--*strings.23071:<p>[終了]を押すと､このサイトに接続しようとする前に､ 表示していたドキュメントに戻ります｡</div>%2%
-+*strings.23071:<p>[終了]を押すと、このサイトに接続しようとする前に、 表示していたドキュメントに戻ります。</div>%2%
- 
--*strings.23072:%sec-banner-begin%%0%%sec-banner-end%<b><div>以下から 提出された証明書の審査が終わりました:<br>%1%</b></div><p><div>この証明書を受け付け､ %-cont-%
-+*strings.23072:%sec-banner-begin%%0%%sec-banner-end%<b><div>以下から 提出された証明書の審査が終わりました:<br>%1%</b></div><p><div>この証明書を受け付け、 %-cont-%
- 
--*strings.23073:このサイトに情報を送信する前に Netscape Communicator が警告することにしました｡<p>もし今後､ %-cont-%
-+*strings.23073:このサイトに情報を送信する前に Netscape Communicator が警告することにしました。<p>もし今後、 %-cont-%
- 
--*strings.23074:この決定を変更したい場合には､[Communicator]メニューから[セキュリティ情報]を開いてサイト証明書を編集して下さい｡<p>[完了]を押すと､ドキュメントの受信を開始します｡%2%
-+*strings.23074:この決定を変更したい場合には、[Communicator]メニューから[セキュリティ情報]を開いてサイト証明書を編集して下さい。<p>[完了]を押すと、ドキュメントの受信を開始します。%2%
- 
--*strings.23080:%sec-banner-begin%%0%%sec-banner-end%<b><div>以下から 提出された証明書の審査が終わりました:<br>%1%</div></b><p><div>この証明書を受け付け､ %-cont-%
-+*strings.23080:%sec-banner-begin%%0%%sec-banner-end%<b><div>以下から 提出された証明書の審査が終わりました:<br>%1%</div></b><p><div>この証明書を受け付け、 %-cont-%
- 
--*strings.23081:このサイトに情報を送信する前に Netscape Communicator が警告しないことにしました｡</div><p><div>もし今後､ %-cont-%
-+*strings.23081:このサイトに情報を送信する前に Netscape Communicator が警告しないことにしました。</div><p><div>もし今後、 %-cont-%
- 
--*strings.23082:この決定を変更したい場合には､[Communicator]メニューから[セキュリティ情報]を開いてサイト証明書を編集して下さい｡<p>[完了]を押すと､ %-cont-%
-+*strings.23082:この決定を変更したい場合には、[Communicator]メニューから[セキュリティ情報]を開いてサイト証明書を編集して下さい。<p>[完了]を押すと、 %-cont-%
- 
--*strings.23083:ドキュメントの受信を開始します｡</div>%2%
-+*strings.23083:ドキュメントの受信を開始します。</div>%2%
- 
--*strings.23084:%sec-banner-begin%%0%%sec-banner-end%<div>サイト '%1%' から提出された証明書には､正しいサイト名が含まれていません｡ %-cont-%
-+*strings.23084:%sec-banner-begin%%0%%sec-banner-end%<div>サイト '%1%' から提出された証明書には、正しいサイト名が含まれていません。 %-cont-%
- 
--*strings.23085:第三者がこのサイトとの通信を傍受しようとしている可能\性が わずかですがあります｡もしも､ %-cont-%
-+*strings.23085:第三者がこのサイトとの通信を傍受しようとしている可能\性が わずかですがあります。もしも、 %-cont-%
- 
--*strings.23086:下に表示される証明書が接続先のものでないという疑いのある場合は､ 接続をキャンセルして､サイト管理者に連絡して下さい｡ <p>%-cont-%
-+*strings.23086:下に表示される証明書が接続先のものでないという疑いのある場合は、 接続をキャンセルして、サイト管理者に連絡して下さい。 <p>%-cont-%
- 
--*strings.23087:以下が､提出された証明書です:</div><hr><table><tr><td valign=top><font size=2>証明書: <br>署名者: <br>暗号化: %-cont-%
-+*strings.23087:以下が、提出された証明書です:</div><hr><table><tr><td valign=top><font size=2>証明書: <br>署名者: <br>暗号化: %-cont-%
- 
- *strings.23088:</font></td><td valign=top><font size=2>%2%<br>%3%<br>%4% グレード (%5% with %6%-ビット秘密鍵)</font></td><td valign=bottom><input %-cont-%
- 
- *strings.23089:type="submit" name="button" value="%moreinfo%"></td></tr></table><hr>%7%
- 
--*strings.23100:%sec-banner-begin%%0%%sec-banner-end%新しいパスワード を入力して下さい｡最も安全なパスワードは、 %-cont-%
-+*strings.23100:%sec-banner-begin%%0%%sec-banner-end%新しいパスワード を入力して下さい。最も安全なパスワードは、 %-cont-%
- 
--*strings.23101:英文字と数字の組み合わせの最低でも８文字で､辞書の単語を含んでいないようなものです｡<p>パスワード: <input type=password name=password1><p>確認のため %-cont-%
-+*strings.23101:英文字と数字の組み合わせの最低でも８文字で、辞書の単語を含んでいないようなものです。<p>パスワード: <input type=password name=password1><p>確認のため %-cont-%
- 
- *strings.23102:もう一度パスワードを入力して下さい:<p>パスワードの再入力: <input type=password name=password2><p><b>パスワードを忘れないで下さい! %-cont-%
- 
--*strings.23103:パスワードは修復することができません｡忘れてしまうと､新しい証明書を入手しなければなりません｡</b>
-+*strings.23103:パスワードは修復することができません。忘れてしまうと、新しい証明書を入手しなければなりません。</b>
- 
--*strings.23109:%sec-banner-begin%%0%%sec-banner-end%パスワードを 間違えています｡もう一度入力して下さい:<p>パスワード: <input %-cont-%
-+*strings.23109:%sec-banner-begin%%0%%sec-banner-end%パスワードを 間違えています。もう一度入力して下さい:<p>パスワード: <input %-cont-%
- 
--*strings.23110:type=password name=password1><p>確認のため､もう一度パスワードを 入力して下さい:<p>パスワードの再入力: <input type=password name=password2><p>%-cont-%
-+*strings.23110:type=password name=password1><p>確認のため、もう一度パスワードを 入力して下さい:<p>パスワードの再入力: <input type=password name=password2><p>%-cont-%
- 
--*strings.23111:<b>パスワードを忘れないで下さい!  パスワードは修復することができません｡ 忘れてしまうと､新しい証明書を入手しなければなりません｡</b> 
-+*strings.23111:<b>パスワードを忘れないで下さい!  パスワードは修復することができません。 忘れてしまうと、新しい証明書を入手しなければなりません。</b> 
- 
--*strings.23112:%sec-banner-begin%%0%%sec-banner-end%秘密鍵を Communicator パスワードで保護することを強くお勧めします｡ %-cont-%
-+*strings.23112:%sec-banner-begin%%0%%sec-banner-end%秘密鍵を Communicator パスワードで保護することを強くお勧めします。 %-cont-%
- 
--*strings.23113:パスワードを使用しない場合は､パスワードのテキストボックスを空欄にして下さい｡<P>最も安全なパスワードは､英文字と数字の組み合わせの最低も８文字で､ <p>%-cont-%
-+*strings.23113:パスワードを使用しない場合は、パスワードのテキストボックスを空欄にして下さい。<P>最も安全なパスワードは、英文字と数字の組み合わせの最低も８文字で、 <p>%-cont-%
- 
--*strings.23114:辞書の単語を含んでいないようなものです｡<table><tr><td>パスワード:</td><td><input type=password name=password1></td>%-cont-%
-+*strings.23114:辞書の単語を含んでいないようなものです。<table><tr><td>パスワード:</td><td><input type=password name=password1></td>%-cont-%
- 
- *strings.23115:</td></tr><tr><td>確認のためもう一度パスワードを入力して下さい:</td><td><input type=password name=password2></td><td valign=bottom></td></tr></table><B>重要: %-cont-%
- 
--*strings.23116:パスワードは修復することができません｡忘れてしまうと､すべての証明書が失われます｡</B><P>パスワードやその他のセキュリティ設定を変更するには､ %-cont-%
-+*strings.23116:パスワードは修復することができません。忘れてしまうと、すべての証明書が失われます。</B><P>パスワードやその他のセキュリティ設定を変更するには、 %-cont-%
- 
--*strings.23117:[Communicator]メニューから[セキュリティ情報]を選択して下さい｡
-+*strings.23117:[Communicator]メニューから[セキュリティ情報]を選択して下さい。
- 
--*strings.23128:%sec-banner-begin%%0%%sec-banner-end%パスワードを使用せずに処理します｡<p>秘密鍵と証明書を保護するために､ %-cont-%
-+*strings.23128:%sec-banner-begin%%0%%sec-banner-end%パスワードを使用せずに処理します。<p>秘密鍵と証明書を保護するために、 %-cont-%
- 
--*strings.23129:パスワードを使用する時は､[セキュリティの設定]でパスワードを設定 して下さい｡
-+*strings.23129:パスワードを使用する時は、[セキュリティの設定]でパスワードを設定 して下さい。
- 
--*strings.23130:%sec-banner-begin%%0%%sec-banner-end% %1% のパスワード変更｡<p>古いパスワードを入力して下さい: <input %-cont-%
-+*strings.23130:%sec-banner-begin%%0%%sec-banner-end% %1% のパスワード変更。<p>古いパスワードを入力して下さい: <input %-cont-%
- 
--*strings.23131:type=password name=password value=%2%><P><P>新しいパスワードを入力して下さい｡ パスワードを使用しない場合は､空欄にして下さい｡<p><table><tr><td>%-cont-%
-+*strings.23131:type=password name=password value=%2%><P><P>新しいパスワードを入力して下さい。 パスワードを使用しない場合は、空欄にして下さい。<p><table><tr><td>%-cont-%
- 
- *strings.23132:新しいパスワード:</td><td><input type=password name=password1></td></tr><tr><td>確認のためもう一度パスワードを入力して下さい:</td><td><input type=password name=password2>%-cont-%
- 
-@@ -9000,7 +9136,7 @@
+@@ -9000,7 +9019,7 @@
  
  *strings.23715:新規/編集 ...
  
@@ -754,7 +166,7 @@
  
  *strings.23717:削除
  
-@@ -14545,3 +14681,7 @@
+@@ -14545,3 +14564,7 @@
  *textPropertiesDialog.ApplyLabelString:		フィルタ
  *tableCreateDialog.ApplyLabelString:		フィルタ
  *documentPropertiesDialog.ApplyLabelString:		フィルタ
