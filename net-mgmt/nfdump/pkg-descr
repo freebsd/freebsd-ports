@@ -1,0 +1,22 @@
+NFDUMP tools support netflow v5 and v7 capturing and processing.
+
+nfcapd - netflow capture daemon.
+Reads the netflow data from the network and stores the data into files.
+
+nfdump - netflow dump.
+Reads the netflow data from the files stored by nfcapd. It's syntax is similar
+to tcpdump. If you like tcpdump you will like nfdump. 
+
+nfprofile - netflow profiler.
+Reads the netflow data from the files stored by nfcapd. Filters the netflow 
+data according to the specified filter sets ( profiles ) and stores the
+filtered data into files for later use.
+
+nfreplay - netflow replay
+Reads the netflow data from the files stored by nfcapd and sends it over 
+the network to another host.
+
+
+WWW: http://nfdump.sourceforge.net
+
+Janos Mohacsi <janos.mohacsi@bsd.hu>
