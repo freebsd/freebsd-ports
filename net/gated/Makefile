@@ -16,6 +16,7 @@ MAINTAINER=	dec@FreeBSD.org
 WRKSRC=		${WRKDIR}/${PORTNAME}-public-3_6
 
 GNU_CONFIGURE=	yes
+RESTRICTED=	"license required for use"
 
 # use this option, if log_in_vain="YES"
 .if defined(WITHOUT_SMUX)
