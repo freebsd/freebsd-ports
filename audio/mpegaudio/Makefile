@@ -1,4 +1,5 @@
 # New ports collection makefile for:	mpegaudio
+# Version required:	3.9
 # Date created:		1 July 1996
 # Whom:			torstenb
 #

@@ -7,7 +7,9 @@ bin/rptp
 sbin/rplayd
 include/rplay.h
 lib/librplay.a
+@unexec install-info --delete
 info/librplay.info
 info/rplay.info
 info/RPLAY.info
 info/RPTP.info
+@exec install-info
