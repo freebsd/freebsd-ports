@@ -8,7 +8,8 @@
 PORTNAME=	edb
 PORTVERSION=	1.0.1
 CATEGORIES=	databases
-MASTER_SITES=	ftp://ftp.enlightenment.org/pub/enlightenment/e17/libs/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	enlightenment
 
 MAINTAINER=	bfoz@glue.umd.edu
 
