@@ -5,7 +5,7 @@
  # cleancif makefile
  
 -BINDIR=	../../bin
-+BINDIR=	%%PREFIX%%/bin
++BINDIR=	${PREFIX}/bin
  
  ##
  ##  (1) Choosing your compiler

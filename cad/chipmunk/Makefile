@@ -6,32 +6,25 @@
 #
 
 PORTNAME=	chipmunk
-PORTVERSION=	5.51
+PORTVERSION=	5.59
 CATEGORIES=	cad
 MASTER_SITES=	http://www.cs.berkeley.edu/~lazzaro/chipmunk/pickup/sources/
-DISTFILES=	psys-1.51.tar.gz log-5.51.tar.gz netcmpbeta.tar.gz \
-		mosisbeta.tar.gz wolbeta.tar.gz wolcompbeta.tar.gz \
-		untilbeta.tar.gz util1.1.tar.gz viewbeta.tar.gz \
+DISTFILES=	psys-1.56.tar.gz log-5.59.tar.gz netcmp-1.12.tar.gz \
+		mosis-1.12.tar.gz wol-1.12.tar.gz wolcomp-1.12.tar.gz \
+		until-1.12.tar.gz util1.1.tar.gz view-1.12.tar.gz \
 		Makefile
+EXTRACT_ONLY=	psys-1.56.tar.gz log-5.59.tar.gz netcmp-1.12.tar.gz \
+		mosis-1.12.tar.gz wol-1.12.tar.gz wolcomp-1.12.tar.gz \
+		until-1.12.tar.gz util1.1.tar.gz view-1.12.tar.gz
+DIST_SUBDIR=	chipmunk
 
 MAINTAINER=	ports@FreeBSD.org
 
-EXTRACT_ONLY=	psys-1.51.tar.gz log-5.51.tar.gz netcmpbeta.tar.gz \
-		mosisbeta.tar.gz wolbeta.tar.gz wolcompbeta.tar.gz \
-		untilbeta.tar.gz util1.1.tar.gz viewbeta.tar.gz
-
-USE_XLIB=	yes
-DIST_SUBDIR=	chipmunk
-USE_GMAKE=	yes
 NO_WRKSUBDIR=	yes
+USE_XLIB=	yes
+USE_GMAKE=	yes
 
 post-extract:
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/Makefile ${WRKSRC}/Makefile
-
-post-patch:
-	@find ${WRKSRC} -name Makefile -exec \
-	  ${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" \{} \;
-	@find ${WRKSRC} -name Makefile -exec \
-	  ${PERL} -pi -e "s|%%X11BASE%%|${X11BASE}|g" \{} \;
+	@${CP} -f ${DISTDIR}/${DIST_SUBDIR}/Makefile ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

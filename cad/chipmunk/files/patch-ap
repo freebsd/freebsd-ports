@@ -1,11 +1,11 @@
 --- util/sctomat/Makefile.orig	Wed Mar 12 02:47:26 1997
-+++ util/sctomat/Makefile	Tue Sep 21 03:37:35 1999
++++ util/sctomat/Makefile	Sat May 18 13:14:35 2002
 @@ -5,7 +5,7 @@
  #
  # sctomat makefile
  
 -BINDIR=	../../bin
-+BINDIR=	%%PREFIX%%/bin
++BINDIR=	${PREFIX}/bin
  
  ##
  ##  (1) Choosing your compiler
@@ -31,7 +31,7 @@
  
  install:  scope_to_mat  
 -	cp scope_to_mat $(BINDIR)  
-+	install -c -s scope_to_mat $(BINDIR)  
++	${BSD_INSTALL_PROGRAM} scope_to_mat $(BINDIR)  
  
  clean:
  	-rm -f *.o scope_to_mat

@@ -1,16 +1,24 @@
---- until/V1.2/Makefile.orig	Tue Sep 22 19:04:26 1998
-+++ until/V1.2/Makefile	Tue Feb 20 14:20:29 2001
-@@ -41,7 +41,8 @@
+--- until/V1.2/Makefile.orig	Sat May 18 12:02:28 2002
++++ until/V1.2/Makefile	Sat May 18 12:57:40 2002
+@@ -41,7 +41,7 @@
  ##
  
  
 -XINCLUDEDIR = .
-+XINCLUDEDIR = %%X11BASE%%/include
-+XLIBDIR = %%X11BASE%%/lib
++XINCLUDEDIR = ${X11BASE}/include
  
  ##
  ## If X isn't in the library path (the case for many MachTen and Linux 
-@@ -68,7 +69,7 @@
+@@ -57,7 +57,7 @@
+ ##
+ 
+ 
+-LIBX11 = -lX11
++LIBX11 = -lX11 -L${X11BASE}/lib
+ 
+ 
+ LIBP2C = ../../psys/src/libp2c.a
+@@ -68,7 +68,7 @@
  ##
  ## on some systems, -ldl must be added to the following line
  
@@ -19,7 +27,7 @@
  
  ##
  ##  (2) Choosing your compiler
-@@ -98,10 +99,10 @@
+@@ -98,10 +98,10 @@
    
  
  CHIPMUNKCC = gcc
@@ -28,39 +36,34 @@
  
 -BINDIR = ../../bin
 -LIBDIR = `pwd`/../../lib
-+BINDIR = %%PREFIX%%/bin
-+LIBDIR = %%PREFIX%%/share/chipmunk
++BINDIR = ${PREFIX}/bin
++LIBDIR = ${PREFIX}/share/chipmunk
  
  SYSRC =  $(LIBDIR)/system.untilrc
  SYSPS =  $(LIBDIR)/pensps.map
-@@ -161,11 +162,11 @@
- ##
+@@ -165,7 +165,7 @@
  
-   
--CFLAGS = -I$(LOCINC) -I$(XINCLUDEDIR) \
+ CHIPMUNKFLAGS =   
+ 
+-CFLAGS = $(CHIPMUNKFLAGS) -I$(LOCINC) -I$(XINCLUDEDIR) \
 +CFLAGS += -DBSD -I$(LOCINC) -I$(XINCLUDEDIR) \
  -DF_OK=0 -DUNTILRC=\"$(SYSRC)\" -DUNTILPSMAP=\"$(SYSPS)\" \
  -DUNTILHEADER=\"$(SYSHD)\"
  
--LDFLAGS = $(LIBP2C)  $(LIBX11) $(OTHERLIBS)
-+LDFLAGS += $(LIBP2C)  $(LIBX11) $(OTHERLIBS) -L$(XLIBDIR)
- 
- OBJS = bb_stuff.o cnf_stuff.o  crt_stuff.o data_types.o datawalk.o \
- dispmod.o ffman.o gr_stuff.o main.o mat_stuff.o menu.o menu_stuff.o \
-@@ -195,11 +196,15 @@
+@@ -199,11 +199,11 @@
  ## Until as its moved to bin; non ksh-users may wish to change it back.
  
  install: until
 -	cp until $(BINDIR)/Until
-+	install -c -s until $(BINDIR)/Until
- 	cp pensps.map $(LIBDIR)/pensps.map
-+	chmod 0444 $(LIBDIR)/pensps.map
- 	cp system.untilrc $(LIBDIR)/system.untilrc
-+	chmod 0444 $(LIBDIR)/system.untilrc
- 	cp until.pro  $(LIBDIR)/until.pro
-+	chmod 0444  $(LIBDIR)/until.pro
- 	cp until.ps  $(LIBDIR)/until.ps
-+	chmod 0444  $(LIBDIR)/until.ps
+-	cp pensps.map $(LIBDIR)/pensps.map
+-	cp system.untilrc $(LIBDIR)/system.untilrc
+-	cp until.pro  $(LIBDIR)/until.pro
+-	cp until.ps  $(LIBDIR)/until.ps
++	${BSD_INSTALL_PROGRAM} until $(BINDIR)/Until
++	${BSD_INSTALL_DATA} pensps.map $(LIBDIR)/pensps.map
++	${BSD_INSTALL_DATA} system.untilrc $(LIBDIR)/system.untilrc
++	${BSD_INSTALL_DATA} until.pro  $(LIBDIR)/until.pro
++	${BSD_INSTALL_DATA} until.ps  $(LIBDIR)/until.ps
  
  
  bb_stuff.o : bb_stuff.c bb_stuff.h 

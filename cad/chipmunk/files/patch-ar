@@ -1,11 +1,11 @@
 --- util/spc-tools/sf/Makefile.orig	Wed Mar 12 02:47:29 1997
-+++ util/spc-tools/sf/Makefile	Tue Sep 21 03:41:57 1999
++++ util/spc-tools/sf/Makefile	Sat May 18 13:15:35 2002
 @@ -18,7 +18,7 @@
  #
  # sf makefile
  
 -BINDIR=	../../../bin
-+BINDIR=	%%PREFIX%%/bin
++BINDIR=	${PREFIX}/bin
  
  ##
  ##  (1) Choosing your compiler
@@ -23,14 +23,14 @@
  ##
  
 -CFLAGS = 
-+CFLAGS = -DBSD -DF_OK=0
++CFLAGS += -DBSD -DF_OK=0
  
  sf:     sf.o hash.o spice.o
  	$(CC) sf.o hash.o spice.o  -o sf
  
  install:    sf
 -	cp sf $(BINDIR)  
-+	install -c -s sf $(BINDIR)  
++	${BSD_INSTALL_PROGRAM} sf $(BINDIR)  
  
  clean:
  	-rm -f *.o sf

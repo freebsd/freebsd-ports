@@ -15,7 +15,6 @@ bin/wol
 share/chipmunk/actel.gate
 share/chipmunk/actellog.cnf
 share/chipmunk/ana.gate
-share/chipmunk/ana.gsafe
 share/chipmunk/analog-man.ps
 share/chipmunk/analog-tr.ps
 share/chipmunk/analog.cnf
@@ -38,6 +37,7 @@ share/chipmunk/linkloged
 share/chipmunk/log.cnf
 share/chipmunk/log.doc
 share/chipmunk/log.gate
+share/chipmunk/log.text
 share/chipmunk/lognews.text
 share/chipmunk/logntk.cnf
 share/chipmunk/logspc.cnf

@@ -1,11 +1,11 @@
 --- util/boxify/Makefile.orig	Wed Mar 12 02:47:23 1997
-+++ util/boxify/Makefile	Tue Sep 21 21:29:44 1999
++++ util/boxify/Makefile	Sat May 18 13:12:54 2002
 @@ -21,7 +21,7 @@
  #
  # boxify makefile
  
 -BINDIR=	../../bin
-+BINDIR=	%%PREFIX%%/bin
++BINDIR=	${PREFIX}/bin
  
  ##
  ##  (1) Choosing your compiler
@@ -40,7 +40,7 @@
  
  install: boxify
 -	cp boxify $(BINDIR)  
-+	install -c -s boxify $(BINDIR)  
++	${BSD_INSTALL_PROGRAM} -c -s boxify $(BINDIR)  
  
  clean:
 -	(cd trapes; make clean)
