@@ -1,0 +1,9 @@
+%%SITE_PERL%%/Class/DBI/DATA/Schema.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/DATA/Schema/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/DATA/Schema
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/DATA 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Class/DBI/DATA 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Class/DBI 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Class 2>/dev/null || true
