@@ -1,0 +1,13 @@
+--- Makefile.in.old	Tue May 30 16:26:52 2000
++++ Makefile.in	Tue May 30 16:27:01 2000
+@@ -14,7 +14,7 @@
+ # Compiler and flags
+ # DEFS should include -Dacceptarg3_t=int (replace with the correct data type)
+ CXX = @CXX@
+-CXXFLAGS = @extracxxflags@ @DEFS@ -O2 -I@includedir@ -I$(XROOT)/include -I/usr/local/include -I/usr/contrib/include -c
++CXXFLAGS = @extracxxflags@ @DEFS@ -I@includedir@ -I$(XROOT)/include -I/usr/local/include -I/usr/contrib/include -c
+ LDFLAGS = @extraldflags@ -L@libdir@ -L$(XROOT)/lib -L/usr/local/lib -L/usr/contrib/lib -s -o
+ 
+ # Extra switches and libs determined by configure.in
+
+
