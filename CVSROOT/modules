@@ -8490,6 +8490,7 @@ rrdtool		ports/net/rrdtool
 rscheme		ports/lang/rscheme
 rshell		ports/net/rshell
 rsnapshot	ports/sysutils/rsnapshot
+rssh		ports/shell/rssh
 rsync		ports/net/rsync
 rsynth		ports/audio/rsynth
 rt2		ports/www/rt2
