@@ -6,13 +6,14 @@
 
 PKG_NAME=$1
 PKG_ACTION=$2
+MAILUSER=mailnull
 SPOOLDIR=/var/spool/MIMEDefang
 
 case "$PKG_ACTION" in
 POST-INSTALL)
 	if [ ! -d ${SPOOLDIR} ]; then
 		mkdir -p ${SPOOLDIR}
-		chown mailnull:mailnull ${SPOOLDIR}
+		chown ${MAILUSER}:${MAILUSER} ${SPOOLDIR}
 		chmod 700 ${SPOOLDIR}
 	fi
 	;;

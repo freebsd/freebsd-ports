@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mimedefang
-PORTVERSION=	2.28
+PORTVERSION=	2.30
 CATEGORIES=	mail
 MASTER_SITES=	http://www.roaringpenguin.com/mimedefang/
 
@@ -24,9 +24,16 @@ USE_PERL5=	yes
 USE_REINPLACE=	yes
 PERL_SITELIBDIR=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 GNU_CONFIGURE=	yes
+
+MAILUSER?=		mailnull
+SPOOLDIR?=		/var/spool/MIMEDefang
+QUARANTINEDIR?=	/var/spool/MIMEDefang
+
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/mimedefang \
-			--with-confsubdir= \
-			--with-user=mailnull
+					--with-confsubdir= \
+					--with-user=${MAILUSER} \
+					--with-spooldir=${SPOOLDIR} \
+					--with-quarantinedir=${QUARANTINEDIR}
 
 MAN5=	mimedefang-filter.5
 MAN7=	mimedefang-protocol.7
