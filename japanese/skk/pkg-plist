@@ -48,4 +48,5 @@ share/emacs/site-lisp/string.elc
 share/skk/SKK.tut
 share/skk/SKK.tut.E
 share/skk/SKK-JISYO.L
+etc/rc.d/skkserv.sh
 @dirrm share/skk
