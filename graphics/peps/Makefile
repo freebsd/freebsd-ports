@@ -1,0 +1,24 @@
+# New ports collection makefile for:	peps
+# Date created:				5 July 2001
+# Whom:					petef@databits.net
+#
+# $FreeBSD$
+#
+
+PORTNAME=	peps
+PORTVERSION=	1.0
+CATEGORIES=	graphics
+MASTER_SITES=	http://www.whizkidtech.net/peps/
+
+MAINTAINER=	petef@databits.net
+
+RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript6 \
+		pnmtopng:${PORTSDIR}/graphics/netpbm
+
+post-patch:
+	@${PERL} -pi -e 's!cc -O3!${CC} ${CFLAGS}!' ${WRKSRC}/Makefile
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/peps ${PREFIX}/bin
+
+.include <bsd.port.mk>
