@@ -1,0 +1,3 @@
+db allows manipulation of btree(3) and hash(3) (db(3)) databases.
+
+WWW: http://cvsweb.netbsd.org/bsdweb.cgi/src/usr.bin/db/
