@@ -113,6 +113,7 @@
     SUBDIR += xpbiff
     SUBDIR += xpbiff-youbin
     SUBDIR += youbin
+    SUBDIR += yuzu
     SUBDIR += zmailer
 
 .include <bsd.port.subdir.mk>
