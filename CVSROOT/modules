@@ -9146,6 +9146,7 @@ snes9x		ports/emulators/snes9x
 sng		ports/graphics/sng
 sniff		ports/security/sniff
 sniffit		ports/net/sniffit
+snmptt		ports/net-mgmt/snmptt
 snns		ports/math/snns
 snobol		ports/lang/snobol
 snooper		ports/comms/snooper
