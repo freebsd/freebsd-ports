@@ -310,6 +310,7 @@
     SUBDIR += mrt
     SUBDIR += mrtg
     SUBDIR += msend
+    SUBDIR += msntp
     SUBDIR += mtr
     SUBDIR += mudix
     SUBDIR += mutella

@@ -1,0 +1,4 @@
+bin/msntp
+%%DOCSDIR%%/Copyright
+%%DOCSDIR%%/README
+@dirrm %%DOCSDIR%%
