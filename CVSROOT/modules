@@ -905,7 +905,6 @@ crossgo32	ports/devel/crossgo32
 crossgo32-djgpp2	ports/devel/crossgo32-djgpp2
 crossgo32-djgpp2-pdcurses	ports/devel/crossgo32-djgpp2-pdcurses
 crossgo32-f77	ports/lang/crossgo32-f77
-crossm68k	ports/devel/crossm68k
 crosspad	ports/misc/crosspad
 crt0		-a csu
 crunch		src/usr.sbin/crunch
@@ -953,7 +952,6 @@ cvsmapfs	ports/devel/cvsmapfs
 cvspadm		ports/devel/cvspadm
 cvsstat		ports/devel/cvsstat
 cvsup		ports/net/cvsup
-cvsup-devel	ports/net/cvsup-devel
 cvsup-mirror	ports/net/cvsup-mirror
 cvsup-without-gui	ports/net/cvsup-without-gui
 cvsupit		ports/net/cvsupit
@@ -1877,7 +1875,6 @@ gnu_libexec	src/gnu/libexec
 gnu_pr		src/gnu/usr.bin/pr
 gnu_usr.bin	src/gnu/usr.bin
 gnu_usr.sbin	src/gnu/usr.sbin
-gnubile		ports/net/gnubile
 gnuboy		ports/emulators/gnuboy
 gnucash		ports/deskutils/gnucash
 gnuchess	ports/games/gnuchess
@@ -2294,7 +2291,6 @@ irsim		ports/cad/irsim
 irssi		ports/irc/irssi
 isakmpd		ports/security/isakmpd
 isc-dhcp	src/contrib/isc-dhcp
-isc-dhcp2	ports/net/isc-dhcp2
 isc-dhcp3	ports/net/isc-dhcp3
 isdn		src/gnu/usr.sbin/isdn
 isearch		ports/textproc/isearch
@@ -2350,7 +2346,6 @@ ja-bookview	ports/japanese/bookview
 ja-cannadic	ports/japanese/cannadic
 ja-canuum	ports/japanese/canuum
 ja-cdrom2	ports/japanese/cdrom2
-ja-celrw	ports/japanese/celrw
 ja-chasen	ports/japanese/chasen
 ja-chasen-base	ports/japanese/chasen-base
 ja-chimera	ports/japanese/chimera
@@ -2889,7 +2884,6 @@ kdeutils2	ports/misc/kdeutils2
 kdevelop	ports/devel/kdevelop
 kdirstat	ports/misc/kdirstat
 kdoc		ports/textproc/kdoc
-kdreamsite	ports/www/kdreamsite
 kdump		src/usr.bin/kdump
 kelp		ports/devel/kelp
 kenny		ports/misc/kenny
@@ -6524,7 +6518,6 @@ tcpshow		ports/net/tcpshow
 tcpstat		ports/net/tcpstat
 tcptrace	ports/net/tcptrace
 tcpview		ports/net/tcpview
-tcs		ports/converters/tcs
 tcsh		ports/shells/tcsh
 tdetect		ports/net/tdetect
 tdfx		src/sys/dev/tdfx
