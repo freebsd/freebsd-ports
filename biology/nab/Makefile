@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nab
-PORTVERSION=	4.5.2
+PORTVERSION=	4.5.3
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.scripps.edu/pub/case/ \
 		http://www.scripps.edu/case/ \
@@ -18,7 +18,7 @@ COMMENT=	\
 
 BUILD_DEPENDS=	ucpp:${PORTSDIR}/devel/ucpp
 
-ONLY_FOR_ARCHS= i386
+ONLY_FOR_ARCHS=	i386
 
 MAKE_ENV+=	NABHOME=${WRKSRC} ARCH= PATH=${WRKSRC}/bin:${PATH}
 
@@ -51,6 +51,7 @@ post-patch:
 	@${RM} -f ${WRKSRC}/test/*.exe
 	@${RM} -f ${WRKSRC}/tleap/utilMakeHelp.exe
 	@${RM} -f ${WRKSRC}/fd_data/abdna.dat.old
+	@${RM} -f ${WRKSRC}/reslib/conf.lib.orig
 	@${RM} -f ${WRKSRC}/reslib/leap/parm94.dat~
 	@(cd ${WRKSRC}/reslib/leap && \
 		${FIND} . -type f -print | ${GREP} -v '\./[a-zA-Z0-9]' | \
@@ -59,6 +60,7 @@ post-patch:
 pre-install:
 	@cd ${WRKSRC}/src && \
 		${SETENV} PREFIX=${PREFIX} ${MAKE} beforerealinstall
+	@${CP} ${WRKSRC}/config.h ${WRKSRC}/include/
 
 do-install:
 	@-${MKDIR} ${PREFIX}/share/nab
@@ -77,7 +79,7 @@ do-install:
 		${CHMOD} -R ugo+rX-w nab)
 	@-(cd ${PREFIX}/share/nab && ${LN} -sf ../NDB coords)
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/*     ${PREFIX}/bin
-	${INSTALL_DATA}    ${WRKSRC}/include/* ${PREFIX}/include
+	${INSTALL_DATA}    ${WRKSRC}/include/* ${PREFIX}/share/nab/include
 	${INSTALL_DATA} ${WRKSRC}/lib/*     ${PREFIX}/lib
 	@-cd ${WRKSRC}/doc && ${GZIP_CMD} ${MAN1}
 	${INSTALL_MAN} ${WRKSRC}/doc/nab.1.gz ${PREFIX}/man/man1
@@ -86,9 +88,6 @@ do-install:
 .endfor
 .for f in ${LIBRARIES}
 	@cd ${PREFIX}/share/nab/lib && ${LN} -sf ../../../lib/${f} .
-.endfor
-.for f in ${INCS}
-	@cd ${PREFIX}/share/nab/include && ${LN} -sf ../../../include/${f} .
 .endfor
 
 post-install:

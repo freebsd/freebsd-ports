@@ -1,8 +1,8 @@
-This is version 4.5.2 of nab (nucleic acid builder), a computer
-language that is intended for use in creating, describing and
-modifying macromolecules, especially nucleic acids. Programs
-written in nab are translated into C, which in turn is compiled
-into machine code.
+This is nab (nucleic acid builder), a computer language that
+is intended for use in creating, describing and modifying
+macromolecules, especially nucleic acids. Programs written in
+nab are translated into C, which in turn is compiled into machine
+code.
 
 Further general information can be obtained from our web page:
 
