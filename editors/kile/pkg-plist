@@ -1,4 +1,12 @@
+share/locale/zh_TW.Big5/LC_MESSAGES/kile.mo
+share/locale/sk/LC_MESSAGES/kile.mo
+share/locale/ru/LC_MESSAGES/kile.mo
+share/locale/pt_BR/LC_MESSAGES/kile.mo
+share/locale/ja/LC_MESSAGES/kile.mo
 share/locale/fr/LC_MESSAGES/kile.mo
+share/locale/es/LC_MESSAGES/kile.mo
+share/locale/el/LC_MESSAGES/kile.mo
+share/locale/de/LC_MESSAGES/kile.mo
 share/icons/hicolor/48x48/apps/kile.png
 share/icons/hicolor/32x32/apps/kile.png
 share/icons/hicolor/16x16/apps/kile.png
@@ -471,6 +479,18 @@ share/apps/kile/kileui.rc
 share/apps/kile/doc/usermanual.html
 share/apps/kile/doc/logo.png
 share/apps/kile/doc/latexhelp.html
+share/apps/kile/doc/doc9.png
+share/apps/kile/doc/doc8.png
+share/apps/kile/doc/doc7.png
+share/apps/kile/doc/doc6.png
+share/apps/kile/doc/doc5.png
+share/apps/kile/doc/doc4.png
+share/apps/kile/doc/doc3.png
+share/apps/kile/doc/doc2.png
+share/apps/kile/doc/doc12.png
+share/apps/kile/doc/doc11.png
+share/apps/kile/doc/doc10.png
+share/apps/kile/doc/doc1.png
 share/applnk/Applications/kile.desktop
 bin/kile
 @dirrm share/doc/HTML/en/kile

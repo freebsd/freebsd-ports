@@ -7,9 +7,9 @@
 
 PORTNAME=	kile
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	editors kde
 MASTER_SITES=	http://xm1.net.free.fr/kile/
-DISTNAME=	${PORTNAME}-${PORTVERSION}beta
 
 MAINTAINER=	stefan.jahn@nemesis-sektor.de
 
