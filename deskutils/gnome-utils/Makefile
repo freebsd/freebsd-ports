@@ -39,5 +39,8 @@ pre-patch:
 	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
+.for file in log_repaint.c logrtns.h
+	@${PERL} -pi -e "s/malloc.h/stdlib.h/g" ${WRKSRC}/logview/${file}
+.endfor
 
 .include <bsd.port.mk>
