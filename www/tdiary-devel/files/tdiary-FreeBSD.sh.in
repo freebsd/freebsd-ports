@@ -54,9 +54,6 @@ install)
 	HOMEOWN=`grep ^$USER: /etc/passwd | cut -f3 -d':'`
 	HOMEGRP=`grep ^$USER: /etc/passwd | cut -f4 -d':'`
 	HOMEDIR=`grep ^$USER: /etc/passwd | cut -f6 -d':'`	
-#	HOMEOWN=$USER
-#	HOMEGRP=$GROUP
-#	HOMEDIR=$HOME
 	echo "HOME Directory : " ${HOMEDIR}
 	USERNAME=$USER
 	;;
