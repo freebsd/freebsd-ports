@@ -46,7 +46,7 @@ InstallProgramWithFlags(yamsweeper,$(INSTALLDIR),$(INSTUIDFLAGS))
 InstallManPage(yamsweeper,$(MANDIR))
 
 install::
-	chown $(OWNER).$(GROUP) $(BINDIR)/yamsweeper
+	chown $(OWNER):$(GROUP) $(BINDIR)/yamsweeper
 	chmod 2755 $(BINDIR)/yamsweeper
 
 
