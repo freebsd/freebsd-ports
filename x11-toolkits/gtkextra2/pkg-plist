@@ -21,4 +21,5 @@ include/gtkextra/gtksheet.h
 lib/libgtkextra.a
 lib/libgtkextra.so
 lib/libgtkextra.so.10
+share/aclocal/gtk+extra.m4
 @dirrm include/gtkextra
