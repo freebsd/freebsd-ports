@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	eruby
-PORTVERSION=	${RELEASE_VER}.${SNAPSHOT_DATE}
+PORTVERSION=	0.0.9
 CATEGORIES=	textproc www ruby
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	knu
+MASTER_SITES=	http://www.ruby-lang.org/~shugo/eruby/
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
@@ -18,9 +17,6 @@ BUILD_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
 RUN_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-
-RELEASE_VER=	0.0.8
-SNAPSHOT_DATE=	2000.08.03
 
 RUBY?=		${LOCALBASE}/bin/ruby
 RUBY_VER?=	1.4
