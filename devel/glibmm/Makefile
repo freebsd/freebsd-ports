@@ -29,6 +29,12 @@ CONFIGURE_ARGS=	--enable-static
 
 PLIST_SUB=	VERSION="2.4" API_VERSION="2.4"
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha"
+BROKEN=		"Does not build on alpha"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS = /s/tests//' ${WRKSRC}/Makefile.in
 .if defined(NOPORTDOCS)
@@ -49,4 +55,4 @@ patch-autotools:
 		${RM} $$file.tmp; \
 	done);
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
