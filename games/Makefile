@@ -75,6 +75,7 @@
     SUBDIR += inform
     SUBDIR += ishido
     SUBDIR += jetpack
+    SUBDIR += kbubbles
     SUBDIR += jzip
     SUBDIR += kdegames11
     SUBDIR += kdegames11-i18n
