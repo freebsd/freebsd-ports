@@ -1,0 +1,4 @@
+byaccr is a parser generator for ruby based on 'Berkeley Yacc' and
+'Berkeley Yacc for Java'.
+
+Author:	Takaaki Tateishi <ttate@jaist.ac.jp>
