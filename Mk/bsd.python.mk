@@ -116,7 +116,7 @@ _PYTHON_PORTBRANCH=		2.3
 _PYTHON_ALLBRANCHES=	2.3 2.2 2.1 2.0 1.5 2.4 # preferred first
 
 .if defined(USE_ZOPE)
-PYTHON_VERSION=		python2.1
+PYTHON_VERSION=		python2.3
 .endif
 
 .if defined(PYTHON_VERSION)
@@ -332,7 +332,7 @@ BUILD_DEPENDS+=	${PYDISTUTILS}
 .endif		# ${PYTHON_NO_DEPENDS} == "NO"
 
 .if defined(USE_ZOPE)
-RUN_DEPENDS+=	${PYTHONBASE}/${SZOPEBASEDIR}/z2.py:${PORTSDIR}/www/zope
+RUN_DEPENDS+=	${ZOPEBASEDIR}/skel/bin/zopectl.in:${PORTSDIR}/www/zope
 .endif
 
 # set $PREFIX as Python's one
