@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zoinks
-PORTVERSION=	0.3.5
+PORTVERSION=	0.3.7
 CATEGORIES=	editors
 MASTER_SITES=	http://zoinks.mikelockwood.com/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -24,7 +24,7 @@ CONFIGURE_ARGS+=	--disable-imlib
 .endif
 
 USE_XPM=	yes
-GNU_CONFIGURE= yes
+GNU_CONFIGURE=	yes
 
 pre-everything::
 	@${ECHO_MSG} ""
