@@ -1,0 +1,8 @@
+Silva, SilvaDocument, and SilvaMetadata are now installed. 
+
+    - Restart Zope.  This may be done from the Zope Control Panel.
+
+    - Verify that the Silva and dependant product are loaded 
+      properly by examining them in Control_Panel/Products.
+
+    - Try adding a "Silva Root" via the Zope Management Interface.
