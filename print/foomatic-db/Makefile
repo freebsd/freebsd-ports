@@ -11,7 +11,7 @@ CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 NO_CHECKSUM=	${DISTFILES}
 
-MAINTAINER=	gasp@ridcully.dnsalias.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Foomatic database
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \

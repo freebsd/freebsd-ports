@@ -11,7 +11,7 @@ CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=utilities
 
-MAINTAINER=	gasp@ridcully.dnsalias.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very useful utility for configuring and testing XInput devices
 
 USE_IMAKE=	yes
