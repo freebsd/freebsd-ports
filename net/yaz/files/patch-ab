@@ -1,0 +1,12 @@
+--- odr/ber_int.c.orig	Sat Sep 16 14:19:39 2000
++++ odr/ber_int.c	Sat Sep 16 14:18:46 2000
+@@ -71,6 +71,9 @@
+ #ifdef WIN32
+ #include <winsock.h>
+ #else
++#include <sys/types.h>
++#include <sys/socket.h>
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ #endif
+ 
