@@ -3,3 +3,4 @@ lib/app-defaults/XEvil.iris
 lib/app-defaults/XEvil.mac
 lib/app-defaults/XEvil.sun3
 lib/app-defaults/XEvil.sun4_sparc
+@unexec rmdir %D/lib/app-defaults 2>/dev/null || true
