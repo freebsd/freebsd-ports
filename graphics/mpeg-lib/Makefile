@@ -8,15 +8,13 @@
 
 DISTNAME=	mpeg_lib-1.3.1
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.bic.mni.mcgill.ca/pub/mpeg/
+MASTER_SITES=	ftp://ftp.bic.mni.mcgill.ca/pub/mpeg/ \
+		http://starship.python.net/~gward/mpeglib/
 
 MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	OPTIMIZE="${CFLAGS}"
-
-pre-install:
-	@${MKDIR} ${PREFIX}/bin ${PREFIX}/lib ${PREFIX}/include
 
 post-install:
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
