@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Thu Oct  7 20:17:43 1999
++++ Makefile.in	Thu Oct  7 20:17:56 1999
+@@ -104,7 +104,7 @@
+ 	$(INSTALL) -c -m 0644 $(INCLUDE-M) $(DESTDIR)$(INC_PREFIX)$(LIBNET)
+ 	$(INSTALL) -c -m 0644 $(INCLUDE-A) $(DESTDIR)$(INC_PREFIX)$(LIBNET)
+ 	$(INSTALL) -c -m 0644 $(INCLUDE-O) $(DESTDIR)$(INC_PREFIX)$(LIBNET)
+-	$(INSTALL) -c -m 0644 $(MAN) $(DESTDIR)$(MAN_PREFIX)
++	$(INSTALL) -c -m 0644 $(MAN) $(DESTDIR)$(MAN_PREFIX)/man3
+ 	$(INSTALL) -c -m 0755 $(CONFIG) $(DESTDIR)$(BIN_PREFIX)
+ 
+ clean:
