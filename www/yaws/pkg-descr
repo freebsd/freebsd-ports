@@ -1,0 +1,4 @@
+Yaws is a webserver for dynamic content written in Erlang, which
+can be embedded in existing Erlang applications.
+
+WWW: http://yaws.hyber.org/

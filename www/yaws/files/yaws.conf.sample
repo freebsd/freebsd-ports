@@ -1,0 +1,16 @@
+# conf for yaws
+
+# first we have a set of globals
+
+logdir = /var/log/yaws
+ebin_dir = /usr/local/www/yaws/shopingcart
+include_dir = /usr/local/www/yaws
+
+#end then a set of servers
+
+# enter hostname and IP here
+<server localhost>
+	port = 80
+	listen = 127.0.0.1
+	docroot = /usr/local/www/yaws/
+</server>
