@@ -31,6 +31,7 @@
     SUBDIR += ispell
     SUBDIR += jade
     SUBDIR += java2html
+    SUBDIR += latte
     SUBDIR += latex2html
     SUBDIR += libxml
     SUBDIR += linuxdoc
