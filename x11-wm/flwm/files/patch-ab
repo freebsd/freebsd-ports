@@ -1,5 +1,17 @@
---- configure.orig	Wed Apr 14 18:54:10 1999
-+++ configure	Wed Apr 14 18:56:19 1999
+--- configure.orig	Wed Jan  5 05:14:02 2000
++++ configure	Tue Sep 19 20:43:39 2000
+@@ -681,9 +681,9 @@
+   if test "$ac_test_CFLAGS" = set; then
+     CFLAGS="$ac_save_CFLAGS"
+   elif test $ac_cv_prog_cc_g = yes; then
+-    CFLAGS="-g -O2"
++    CFLAGS="$CXXFLAGS"
+   else
+-    CFLAGS="-O2"
++    CFLAGS="$CXXFLAGS"
+   fi
+ else
+   GCC=
 @@ -813,9 +813,9 @@
    if test "$ac_test_CXXFLAGS" = set; then
      CXXFLAGS="$ac_save_CXXFLAGS"
@@ -16,11 +28,11 @@
  if test -n "$GXX"; then
      # GNU C compiler
      # -Wno-return-type is necessary for Xlib header files on many systems:
--    CFLAGS="-Wall -Wno-return-type -O2 $X_CFLAGS"
-+    CFLAGS="-Wall -Wno-return-type $CFLAGS $X_CFLAGS"
-     CFLAGS_D="-Wall -Wno-return-type -g -DDEBUG $X_CFLAGS"
--    CXXFLAGS="-Wall -Wno-return-type -O2 $X_CFLAGS"
-+    CXXFLAGS="-Wall -Wno-return-type $CXXFLAGS $X_CFLAGS"
-     CXXFLAGS_D="-Wall -Wno-return-type -g -DDEBUG $X_CFLAGS"
+-    CFLAGS="$CFLAGS -Wall -Wno-return-type -O2 $X_CFLAGS"
++    CFLAGS="$CFLAGS -Wall -Wno-return-type $CFLAGS $X_CFLAGS"
+     CFLAGS_D="$CFLAGS -Wall -Wno-return-type -g -DDEBUG $X_CFLAGS"
+-    CXXFLAGS="$CXXFLAGS -Wall -Wno-return-type -O2 $X_CFLAGS"
++    CXXFLAGS="$CXXFLAGS -Wall -Wno-return-type $CXXFLAGS $X_CFLAGS"
+     CXXFLAGS_D="$CXXFLAGS -Wall -Wno-return-type -g -DDEBUG $X_CFLAGS"
  else
  if test "`(uname) 2>/dev/null`" = IRIX; then
