@@ -15,6 +15,7 @@ MAINTAINER=	spcoltri@omcl.org
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomehack gnomeprefix gnomelibs
 
 .include <bsd.port.mk>
