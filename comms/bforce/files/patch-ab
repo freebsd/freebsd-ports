@@ -1,0 +1,88 @@
+--- bforce/prot_binkp.c.orig	Mon Mar 12 02:40:52 2001
++++ bforce/prot_binkp.c	Fri Aug 13 12:06:26 2004
+@@ -181,6 +181,7 @@
+ 
+ 		default:
+ 			/* Avoid warnings */
++			break;
+ 		}
+ 		
+ 		/*
+@@ -318,6 +319,7 @@
+ 
+ 		default:
+ 			/* Avoid warnings */
++			break;
+ 		}
+ 		
+ 		/*
+--- bforce/prot_yoohoo.c.orig	Mon Mar 12 02:40:53 2001
++++ bforce/prot_yoohoo.c	Fri Aug 13 12:09:34 2004
+@@ -514,7 +514,7 @@
+ 		case PROT_ZEDZAP: local_data->capabilities |= YOOHOO_ZEDZAP; break;
+ 		case PROT_JANUS:  local_data->capabilities |= YOOHOO_JANUS;  break;
+ 		case PROT_HYDRA:  local_data->capabilities |= YOOHOO_HYDRA;  break;
+-		default:          /* Avoid warnings */
++		default: break;          /* Avoid warnings */
+ 		}
+ 	}
+ 	
+--- bforce/prot_zmrecv.c.orig	Thu Feb  8 04:09:25 2001
++++ bforce/prot_zmrecv.c	Fri Aug 13 12:08:47 2004
+@@ -244,6 +244,7 @@
+ 			break;
+ 			
+ 		default: /* Ignore */
++			break;
+ 		} /* end of switch(rxstate) */
+ 		
+ 		
+@@ -266,7 +267,7 @@
+ 				switch(rxstate) {
+ 				case ZRX_INITACK: rxstate = ZRX_INIT;     break;
+ 				case ZRX_RPOSACK: rxstate = ZRX_SENDRPOS; break;
+-				default:
++				default: break;
+ 				}
+ 				break;
+ 				
+@@ -356,7 +357,7 @@
+ 				switch(rxstate) {
+ 				case ZRX_INITACK: rxstate = ZRX_INIT;      break;
+ 				case ZRX_RPOSACK: rxstate = ZRX_SENDRPOS;  break;
+-				default:
++				default: break;
+ 				}
+ 				break;
+ 				
+--- bforce/prot_zmsend.c.orig	Thu Feb  8 04:09:26 2001
++++ bforce/prot_zmsend.c	Fri Aug 13 12:09:13 2004
+@@ -414,7 +414,7 @@
+ 				case ZTX_CRCQACK:   txstate = ZTX_STARTDATA; break;
+ 				case ZTX_EOFACK:    txstate = ZTX_EOF;       break;
+ 				case ZTX_FINACK:    txstate = ZTX_FIN;       break;
+-				default:
++				default: break;
+ 				}
+ 				break;
+ 				
+@@ -634,7 +634,7 @@
+ 				case ZTX_FINFOACK:  txstate = ZTX_FINFO;  break;
+ 				case ZTX_EOFACK:    txstate = ZTX_EOF;    break;
+ 				case ZTX_FINACK:    txstate = ZTX_FIN;    break;
+-				default:
++				default: break;
+ 				}
+ 				break;
+ 				
+--- include/prot_zmodem.h.orig	Sun Apr 23 00:05:16 2000
++++ include/prot_zmodem.h	Fri Aug 13 12:07:18 2004
+@@ -201,7 +201,7 @@
+ extern char Z_Attn[ZATTNLEN+1];	/* Attention string rx sends to tx on err    */
+ extern int Z_Ctlesc;		/* Encode control characters                 */
+ extern int Z_Lastsent;		/* Character we sent last                    */
+-//extern int Z_Dirzap;		/* Direct ZedZap (don't escape XON/XOFF)     */
++/*extern int Z_Dirzap;*/	/* Direct ZedZap (don't escape XON/XOFF)     */
+ 
+ /* ------------------------------------------------------------------------- */
+ /* Z-Modem primitives (look p_zmmisc.c for them)                             */

@@ -7,7 +7,7 @@
 
 PORTNAME=	bforce
 PORTVERSION=	0.22.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms
 MASTER_SITES=	http://bforce.chbs.ru/
 
@@ -17,6 +17,7 @@ COMMENT=	Simple ifcico like Fidonet technology mailer
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -fno-builtin"
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
 
