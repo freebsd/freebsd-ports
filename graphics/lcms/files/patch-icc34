@@ -1,14 +1,13 @@
 Try to use the int32 and friends on all Unixes -- not just SGI's Irix.
---- icc34.h	Tue Feb 13 12:08:06 2001
-+++ icc34.h	Wed Sep  5 10:08:42 2001
-@@ -141,8 +141,10 @@
-  * etc into icXXX form. The rest of the header uses the icXXX
-  * typedefs. Signatures are 4 byte quantities.
+--- ../include/icc34.h	Tue Feb 13 12:08:06 2001
++++ ../include/icc34.h	Wed Sep  5 10:08:42 2001
+@@ -144,7 +144,9 @@
   */
+
 +#ifdef __unix__
  #ifdef __sgi
  #include "sgidefs.h"
 +#endif
  
- typedef __int32_t       icSignature;
+ typedef __int32_t	icSignature;
  

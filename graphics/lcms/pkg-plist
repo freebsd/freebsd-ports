@@ -5,7 +5,7 @@ lib/liblcms.so
 lib/liblcms.so.1.7
 %%PORTDOCS%%share/doc/lcms/LCMSAPI.TXT
 %%PORTDOCS%%share/doc/lcms/TUTORIAL.TXT
-%%PORTDOCS%%share/doc/lcms/neutral.c
+%%PORTDOCS%%share/doc/lcms/icctrans.c
 %%PORTDOCS%%share/doc/lcms/tifficc.c
 %%PORTDOCS%%share/doc/lcms/wtpt.c
 %%PORTDOCS%%@dirrm share/doc/lcms

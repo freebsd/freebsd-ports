@@ -1,127 +1,15 @@
 This  patch  fixes assumptions  made  in  different  parts of  the  code
 regarding the sizeof long and int. The original code appears to use them
 interchangeably, even though it expects them to be 32 bit wide.
---- cmsio1.c	Tue Feb 13 12:08:06 2001
-+++ cmsio1.c	Wed Sep  5 10:20:58 2001
-@@ -96,5 +96,5 @@
-                /* Dictionary */
- 
--               int             TagCount;
-+               icInt32Number   TagCount;
-                icTagSignature  TagNames[MAX_TABLE_TAG];
-                size_t          TagSizes[MAX_TABLE_TAG];
-@@ -194,5 +194,5 @@
-        icTag Tag;
-        icHeader Header;
--       long TagCount, i;
-+       icInt32Number TagCount, i;
- 
-        fread(&Header, sizeof(icHeader), 1, ICCfile);
-@@ -230,5 +230,5 @@
-        Icc -> stream = ICCfile;
- 
--       if (fread(&TagCount, sizeof(long), 1, ICCfile) != 1)
-+       if (fread(&TagCount, sizeof(TagCount), 1, ICCfile) != 1)
-                      goto ErrorCleanup;
- 
-@@ -276,7 +276,7 @@
- 
- static
--int SearchTag(LPICCPROFILE Profile, icTagSignature sig)
-+icInt32Number SearchTag(LPICCPROFILE Profile, icTagSignature sig)
- {
--       int i;
-+       icInt32Number i;
- 
-        for (i=0; i < Profile -> TagCount; i++)
-@@ -297,5 +297,5 @@
- {
-        LPVOID Ptr;
--       int i;
-+       icInt32Number i;
- 
-        i = SearchTag(Icc, sig);
-@@ -525,5 +525,5 @@
-        if (!file)
-        {
--              int i;
-+              icInt32Number i;
- 
-               for (i=0; i < icco -> TagCount; i++)
-@@ -1383,7 +1383,7 @@
- 
- static
--long TransportValue32(long Value)
-+icInt32Number TransportValue32(icInt32Number Value)
- {
--       long Temp = Value;
-+       icInt32Number Temp = Value;
- 
-        AdjustEndianess32((LPBYTE) &Temp);
-@@ -1520,5 +1520,5 @@
- BOOL SaveGamma(FILE *OutStream, LPGAMMATABLE Gamma)
- {
--    long  Count;
-+    icInt32Number  Count;
-     int   i;
- 
-@@ -1528,5 +1528,5 @@
-     Count = TransportValue32(Gamma->nEntries);
- 
--    if (!DoWrite(OutStream, sizeof(long), &Count)) return FALSE;
-+    if (!DoWrite(OutStream, sizeof(Count), &Count)) return FALSE;
- 
-     for (i=0; i < Gamma->nEntries; i++)
-@@ -1549,5 +1549,5 @@
- 
- 
--/* Save an ASCII Tag (long) */
-+/* Save an ASCII Tag (icInt32Number) */
- 
- static
-@@ -1644,9 +1644,9 @@
- BOOL SaveTagDirectory(FILE *OutStream, LPICCPROFILE Icc)
- {
--       int  i;
-+       icInt32Number  i;
-        icTag Tag;
--       long TagCount = TransportValue32(Icc -> TagCount);
-+       icInt32Number TagCount = TransportValue32(Icc -> TagCount);
- 
--       if (!DoWrite(OutStream, sizeof(long) , &TagCount)) return FALSE;
-+       if (!DoWrite(OutStream, sizeof(TagCount) , &TagCount)) return FALSE;
- 
-        for (i=0; i < Icc -> TagCount; i++) {
-@@ -1670,5 +1670,5 @@
- 
-     LPBYTE Data;
--    int i;
-+    icInt32Number i;
-     size_t Begin;
- 
 --- cmsmtrx.c	Tue Feb 13 12:08:06 2001
 +++ cmsmtrx.c	Wed Sep  5 10:28:02 2001
 @@ -705,6 +705,6 @@
  void VEC3scaleAndCut(LPWVEC3 r, LPVEC3 v, double d)
  {
--        r -> n[VX] = (long) floor(v -> n[VX] * d + .5);
--        r -> n[VY] = (long) floor(v -> n[VY] * d + .5);
--        r -> n[VZ] = (long) floor(v -> n[VZ] * d + .5);
+-        r -> n[VX] = (int) floor(v -> n[VX] * d + .5);
+-        r -> n[VY] = (int) floor(v -> n[VY] * d + .5);
+-        r -> n[VZ] = (int) floor(v -> n[VZ] * d + .5);
 +        r -> n[VX] = (icInt32Number) floor(v -> n[VX] * d + .5);
 +        r -> n[VY] = (icInt32Number) floor(v -> n[VY] * d + .5);
 +        r -> n[VZ] = (icInt32Number) floor(v -> n[VZ] * d + .5);
  }
---- lcms.h	Mon Feb 19 04:55:06 2001
-+++ lcms.h	Wed Sep  5 10:31:08 2001
-@@ -621,9 +621,9 @@
- /* Fixed point */
- 
--typedef long Fixed32;       /* Fixed 15.16 whith sign */
-+typedef icInt32Number Fixed32;       /* Fixed 15.16 whith sign */
- 
- 
- #define INT_TO_FIXED(x)         ((x)<<16)
--#define DOUBLE_TO_FIXED(x)      ((long)((x)*65536.0+.5))
-+#define DOUBLE_TO_FIXED(x)      ((icInt32Number)((x)*65536.0+.5))
- #define FIXED_TO_INT(x)         ((x)>>16)
- #define FIXED_REST_TO_INT(x)    ((x)&0xFFFFU)
