@@ -522,6 +522,18 @@
 %%NLS%%%%GALLERYDIR%%/locale/zh_CN/zh_CN-gallery_config.po
 %%NLS%%%%GALLERYDIR%%/locale/zh_CN/zh_CN-gallery_core.po
 %%NLS%%%%GALLERYDIR%%/locale/zh_CN/zh_CN-nls.php
+%%NLS%%%%GALLERYDIR%%/locale/zh_HK/LC_MESSAGES/zh_HK-gallery_config.mo
+%%NLS%%%%GALLERYDIR%%/locale/zh_HK/LC_MESSAGES/zh_HK-gallery_core.mo
+%%NLS%%%%GALLERYDIR%%/locale/zh_HK/flagimage/zh_HK.gif
+%%NLS%%%%GALLERYDIR%%/locale/zh_HK/zh_HK-gallery_config.po
+%%NLS%%%%GALLERYDIR%%/locale/zh_HK/zh_HK-gallery_core.po
+%%NLS%%%%GALLERYDIR%%/locale/zh_HK/zh_HK-nls.php
+%%NLS%%%%GALLERYDIR%%/locale/zh_HK.utf8/LC_MESSAGES/zh_HK.utf8-gallery_config.mo
+%%NLS%%%%GALLERYDIR%%/locale/zh_HK.utf8/LC_MESSAGES/zh_HK.utf8-gallery_core.mo
+%%NLS%%%%GALLERYDIR%%/locale/zh_HK.utf8/flagimage/zh_HK.gif
+%%NLS%%%%GALLERYDIR%%/locale/zh_HK.utf8/zh_HK.utf8-gallery_config.po
+%%NLS%%%%GALLERYDIR%%/locale/zh_HK.utf8/zh_HK.utf8-gallery_core.po
+%%NLS%%%%GALLERYDIR%%/locale/zh_HK.utf8/zh_HK.utf8-nls.php
 %%NLS%%%%GALLERYDIR%%/locale/zh_TW.utf8/LC_MESSAGES/zh_TW.utf8-gallery_config.mo
 %%NLS%%%%GALLERYDIR%%/locale/zh_TW.utf8/LC_MESSAGES/zh_TW.utf8-gallery_core.mo
 %%NLS%%%%GALLERYDIR%%/locale/zh_TW.utf8/flagimage/zh_TW.utf8.gif
@@ -863,6 +875,12 @@
 %%NLS%%@dirrm %%GALLERYDIR%%/locale/zh_TW.utf8/LC_MESSAGES
 %%NLS%%@dirrm %%GALLERYDIR%%/locale/zh_TW.utf8
 %%NLS%%@dirrm %%GALLERYDIR%%/locale/zh_TW
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/zh_HK.utf8/flagimage
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/zh_HK.utf8/LC_MESSAGES
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/zh_HK.utf8
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/zh_HK/flagimage
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/zh_HK/LC_MESSAGES
+%%NLS%%@dirrm %%GALLERYDIR%%/locale/zh_HK
 %%NLS%%@dirrm %%GALLERYDIR%%/locale/zh_CN/flagimage
 %%NLS%%@dirrm %%GALLERYDIR%%/locale/zh_CN/LC_MESSAGES
 %%NLS%%@dirrm %%GALLERYDIR%%/locale/zh_CN
