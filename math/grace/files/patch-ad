@@ -1,18 +1,11 @@
-*** doc/Makefile.orig	Mon May 22 20:00:24 2000
---- doc/Makefile	Mon May 22 20:00:51 2000
-***************
-*** 78,84 ****
-  	$(MKINSTALLDIRS) $(PREFIX)/man
-  	$(MKINSTALLDIRS) $(PREFIX)/man/man1
-  	cd $(PREFIX)/man/man1; \
-! 	for i in $? $(MANLINKS); do $(RM) $$i; $(LN_S) $(GRACE_HOME)/doc/$$i $$i; done
-
-  tests : dummy
-
---- 78,84 ----
-  	$(MKINSTALLDIRS) $(PREFIX)/man
-  	$(MKINSTALLDIRS) $(PREFIX)/man/man1
-  	cd $(PREFIX)/man/man1; \
-! 	for i in $? $(MANLINKS); do $(RM) $$i; $(INSTALL_DATA) $(GRACE_HOME)/doc/$$i $$i; done
-
-  tests : dummy
+--- doc/Makefile.orig	Sat Jun 22 12:40:21 2002
++++ doc/Makefile	Mon Aug 12 02:05:28 2002
+@@ -97,7 +97,7 @@
+ 	$(MKINSTALLDIRS) $(DESTDIR)$(PREFIX)/man
+ 	$(MKINSTALLDIRS) $(DESTDIR)$(PREFIX)/man/man1
+ 	cd $(DESTDIR)$(PREFIX)/man/man1; \
+-	for i in $(MANPAGES) $(MANLINKS); do $(RM) $$i; $(LN_S) $(GRACE_HOME)/doc/$$i $$i; done
++	for i in $(MANPAGES) $(MANLINKS); do $(RM) $$i; $(INSTALL_DATA) $(GRACE_HOME)/doc/$$i $$i; done
+ 
+ tests : dummy
+ 

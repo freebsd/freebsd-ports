@@ -1,0 +1,19 @@
+*** auxiliary/Makefile.orig	Sat Jun 22 13:40:21 2002
+--- auxiliary/Makefile	Mon Aug 26 10:07:23 2002
+***************
+*** 28,34 ****
+  	$(MKINSTALLDIRS) $(DESTDIR)$(GRACE_HOME)/auxiliary
+  	for i in $(AUXILIARIES); do $(INSTALL_DATA) $$i $(DESTDIR)$(GRACE_HOME)/auxiliary; done
+  	for i in $(PROGRAMS); do $(INSTALL_PROGRAM) -s $$i $(DESTDIR)$(GRACE_HOME)/bin; done
+! 	for i in $(SCRIPTS); do $(INSTALL_PROGRAM) $$i $(DESTDIR)$(GRACE_HOME)/bin; done
+  
+  tests : dummy
+  
+--- 28,34 ----
+  	$(MKINSTALLDIRS) $(DESTDIR)$(GRACE_HOME)/auxiliary
+  	for i in $(AUXILIARIES); do $(INSTALL_DATA) $$i $(DESTDIR)$(GRACE_HOME)/auxiliary; done
+  	for i in $(PROGRAMS); do $(INSTALL_PROGRAM) -s $$i $(DESTDIR)$(GRACE_HOME)/bin; done
+! 	for i in $(SCRIPTS); do $(INSTALL_SCRIPT) $$i $(DESTDIR)$(GRACE_HOME)/bin; done
+  
+  tests : dummy
+  

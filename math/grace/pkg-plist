@@ -6,6 +6,7 @@ lib/X11/grace/auxiliary/README
 lib/X11/grace/auxiliary/convcal.c
 lib/X11/grace/auxiliary/magic.grace
 lib/X11/grace/bin/convcal
+lib/X11/grace/bin/fdf2fit
 lib/X11/grace/bin/gracebat
 lib/X11/grace/bin/grconvert
 lib/X11/grace/bin/xmgrace
