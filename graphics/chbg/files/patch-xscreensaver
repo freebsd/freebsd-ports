@@ -1,0 +1,12 @@
+*** src/options.h.orig	Tue Aug 19 22:51:46 2003
+--- src/options.h	Tue Aug 19 22:46:51 2003
+*************** option_t chbg_opts[] = {
+*** 118,123 ****
+--- 118,124 ----
+  	{CHBG_OPT_PATTERN, "-pattern", "Pattern:", 1},
+  	{CHBG_OPT_INWINDOW, "-inwindow", "InWindow:", 0},
+  	{CHBG_OPT_WINDOWID, "-windowid", NULL, 1},
++ 	{CHBG_OPT_WINDOWID, "-window-id", NULL, 1},
+  	{CHBG_OPT_RUN, "-run", NULL, 0},
+  	{CHBG_OPT_MIN_PSIZE, "-min_psize", "MinPictureSize:", 1},
+  	{CHBG_OPT_DEFFECTS, "-deffects", "DisabledEffects:", 1},

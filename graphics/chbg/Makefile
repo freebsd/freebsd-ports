@@ -7,7 +7,7 @@
 
 PORTNAME=	chbg
 PORTVERSION=	1.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.idata.sk/~ondrej/sw/
@@ -17,7 +17,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	Change Background Picture with time period
 
-# GNOME parts aren't prefix safe, they install into "gnome-config --prefix"
 USE_X_PREFIX=	yes
 USE_GNOME=	gdkpixbuf
 USE_GMAKE=	yes
