@@ -110,6 +110,7 @@
     SUBDIR += w3
     SUBDIR += w3c-httpd
     SUBDIR += w3m
+    SUBDIR += w3m-ssl
     SUBDIR += w3mir
     SUBDIR += wcol
     SUBDIR += web500gw
