@@ -1,0 +1,18 @@
+The HTML::Summary module produces summaries from the textual content of
+web pages. It does so using the location heuristic, which determines the value
+of a given sentence based on its position and status within the document; for
+example, headings, section titles and opening paragraph sentences may be
+favoured over other textual content. A LENGTH option can be used to restrict
+the length of the summary produced.
+
+This distribution contains the HTML::Summary module, and some supporting
+modules. The full list of modules is:
+
+HTML::Summary
+Text::Sentence
+Lingua::JA::Jcode
+Lingua::JA::Jtruncate
+
+
+--Dima
+dima@Chg.RU
