@@ -1,6 +1,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-autogen.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-autogen.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-autoloads.el
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-common-browser.el
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-common-browser.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-compatibility.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-compatibility.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-compilation.el
@@ -250,7 +252,3 @@
 %%ICONS%%@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-images/methods
 %%ICONS%%@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-images
 @dirrm %%EMACS_VERSION_SITE_LISPDIR%%/ecb
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
