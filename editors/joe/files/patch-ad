@@ -1,5 +1,5 @@
---- b.c.orig	Fri Jan 20 13:38:25 1995
-+++ b.c	Fri Nov 24 00:24:52 2000
+--- b.c.orig	Fri Jan 20 00:38:25 1995
++++ b.c	Sun Dec  3 09:58:21 2000
 @@ -21,6 +21,9 @@
  #include <pwd.h>
  #endif
@@ -83,7 +83,7 @@
 - FILE *f=fopen("DEADJOE","a");
 + FILE *f;
 + struct stat sb;
-+ if ((lstat("DEADJOE", &sb) == 0) && (sb.st_mode & S_IFLNK) && (sb.st_uid != getuid())) 
++ if ((lstat("DEADJOE", &sb) == 0) && (((sb.st_mode & S_IFLNK) && (sb.st_uid != getuid())) || (sb.st_nlink > 1))) 
 +  {
 +  printf("*** JOE was aborted ");
 +  if (sig) printf("by signal %d, cannot save DEADJOE due to unsafe symlink\n",sig);
