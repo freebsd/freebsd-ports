@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	martel
-PORTVERSION=	0.35
+PORTVERSION=	0.3.5
+PORTEPOCH=	1
 CATEGORIES=	textproc biology python
 MASTER_SITES=	http://www.biopython.org/~dalke/Martel/
 PKGNAMEPREFIX=	py-
-DISTNAME=	Martel-${PORTVERSION}
+DISTNAME=	Martel-0.35
 
 MAINTAINER=	johann@egenetics.com
 
