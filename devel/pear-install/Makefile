@@ -18,6 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/php-config:${PORTSDIR}/www/mod_php4
 RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
 
 NO_BUILD=	yes
+EXAMPLESDIR=	${PREFIX}/share/examples/pear
 
 .include <bsd.port.pre.mk>
 
@@ -25,7 +26,7 @@ NO_BUILD=	yes
 PHP_VERSION!=	${LOCALBASE}/bin/php-config --version
 PHP_BASE!=	${LOCALBASE}/bin/php-config --prefix
 .else
-PHP_VERSION=	4.2.3
+PHP_VERSION=	4.3.0
 .endif
 LPHP_LIB=	lib/php
 
@@ -33,7 +34,12 @@ PEARDIR=	${PHP_BASE}/${LPHP_LIB}
 
 do-install:
 	@${ECHO_MSG} "===>  Backuping the original PEAR from mod_php4 into ${PEARDIR}.DIST_PHP ..."
-	@${MKDIR} ${PEARDIR}.DIST_PHP
-	@${CP} -Rp ${PEARDIR}/* ${PEARDIR}.DIST_PHP
+	@${CP} -Rp ${PEARDIR} ${PEARDIR}.DIST_PHP
+
+post-install:
+# To be used by other pear-* ports
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.post.mk>
