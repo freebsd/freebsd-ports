@@ -8,7 +8,7 @@
 PORTNAME=	atk
 PORTVERSION=	1.2.0
 PORTREVISION=	0
-CATEGORIES=	devel accessibility
+CATEGORIES=	accessibility
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Accessibility Toolkit, Linux/i386 binary
