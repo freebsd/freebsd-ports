@@ -608,6 +608,7 @@
     SUBDIR += stardict2
     SUBDIR += sv-aspell
     SUBDIR += sw-aspell
+    SUBDIR += syck
     SUBDIR += ta-aspell
     SUBDIR += tclExpat
     SUBDIR += tdtd.el
