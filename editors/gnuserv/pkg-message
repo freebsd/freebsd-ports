@@ -6,5 +6,7 @@ files:
     (autoload 'gnuserv-start "gnuserv-compat"
               "Allow this Emacs process to be a server for client processes."
 	      t)
+    (setq gnuserv-program "gnuserv-emacs")
+    (gnuserv-start)
 
 *****************************************************************************
