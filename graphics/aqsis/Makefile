@@ -14,8 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
-		argparse:${PORTSDIR}/devel/libargparse
+BUILD_DEPENDS=	${LOCALBASE}/lib/libargparse.a:${PORTSDIR}/devel/libargparse
+LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff
 
 USE_REINPLACE=	yes
 USE_MESA=	yes
