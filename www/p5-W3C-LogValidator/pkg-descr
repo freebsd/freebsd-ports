@@ -1,0 +1,11 @@
+Log Validator is a web server log analysis tool with focus on the quality
+of Web documents. Thanks to a modular, extensible design, the Log Validator
+can help Web authors find the most popular content on their web site that
+matches a particular criteria.
+
+The Log Validator was first written with Validation (HTML, etc.) in mind :
+it can thus help web content managers find and fix the most frequently
+accessed invalid documents on their Web site, acting as a comprehensive,
+step-by-step validation tool.
+
+WWW: http://www.w3.org/QA/Tools/LogValidator/

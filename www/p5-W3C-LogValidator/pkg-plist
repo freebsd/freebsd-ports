@@ -1,0 +1,18 @@
+bin/logprocess.pl
+%%SITE_PERL%%/W3C/LogValidator.pm
+%%SITE_PERL%%/W3C/LogValidator/Basic.pm
+%%SITE_PERL%%/W3C/LogValidator/CSSValidator.pm
+%%SITE_PERL%%/W3C/LogValidator/Config.pm
+%%SITE_PERL%%/W3C/LogValidator/HTMLValidator.pm
+%%SITE_PERL%%/W3C/LogValidator/Output/HTML.pm
+%%SITE_PERL%%/W3C/LogValidator/Output/Mail.pm
+%%SITE_PERL%%/W3C/LogValidator/Output/Raw.pm
+%%SITE_PERL%%/W3C/LogValidator/SurveyEngine.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/W3C/LogValidator/.packlist
+%%PORTDOCS%%%%EXAMPLESDIR%%/logprocess.conf
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/W3C/LogValidator
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/W3C 2>/dev/null || true
+@dirrm %%SITE_PERL%%/W3C/LogValidator/Output
+@dirrm %%SITE_PERL%%/W3C/LogValidator
+@unexec rmdir %D/%%SITE_PERL%%/W3C 2>/dev/null || true
