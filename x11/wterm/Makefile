@@ -8,10 +8,8 @@
 PORTNAME=	wterm
 PORTVERSION=	6.2.8a2
 CATEGORIES=	x11
-MASTER_SITES= 	http://wm.current.nu/files/ \
-		ftp://ftp.sunsite.auc.dk/disk1/linuxberg.com/files/x11/system/ \
-		ftp://ftp.vision.net.au/ftp7/linuxberg/files/x11/system/ \
-		ftp://ftp.cadvision.com/pub/linuxberg/files/x11/system/
+MASTER_SITES= 	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	markp
 
 MAINTAINER=	treif@mayn.de
 
