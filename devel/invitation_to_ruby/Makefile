@@ -18,6 +18,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	A talk given by Jim Weirich, a brief introduction to Ruby
 
+BROKEN=		"Broken pkg-plist"
+
 NO_BUILD=	yes
 NO_CDROM=	\
 "no commercial use--see \<URL:http://creativecommons.org/licenses/by-nc/1.0/\>"
