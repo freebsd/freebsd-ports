@@ -7,7 +7,7 @@
 
 PORTNAME=	teTeX-base
 PORTVERSION=	2.0.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	print
 MASTER_SITES=	ftp://sunsite.informatik.rwth-aachen.de/pub/comp/tex/teTeX/2.0/distrib/ \
 		${MASTER_SITE_TEX_CTAN}
@@ -50,7 +50,7 @@ CONFLICTS=	ja-ptex-base-[0-9]* latex2e-[0-9]* \
 
 MAN1=		MakeTeXPK.1 access.1 allcm.1 allneeded.1 \
 		amstex.1 bibtex.1 cont-de.1 cont-en.1 cont-nl.1 dmp.1 \
-		dvicopy.1 dvilj.1 dvired.1 dvitype.1 einitex.1 \
+		dvicopy.1 dvilj.1 dvired.1 dvitype.1 dvipdfm.1 einitex.1 \
 		elatex.1 eplain.1 etex.1 fontexport.1 fontimport.1 \
 		gftodvi.1 gftopk.1 gftype.1 gsftopk.1 inimf.1 inimpost.1 \
 		iniomega.1 initex.1 kpsepath.1 kpsestat.1 kpsewhich.1 \
