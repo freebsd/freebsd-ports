@@ -1,12 +1,12 @@
 # New ports collection makefile for:	gnumeric
-# Version required:			0.26
+# Version required:			0.31
 # Date created:				08 October 1998
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.11 1999/05/09 17:22:27 steve Exp $
+# $Id: Makefile,v 1.12 1999/05/30 03:50:25 steve Exp $
 #
 
-DISTNAME=	gnumeric-0.26
+DISTNAME=	gnumeric-0.31
 CATEGORIES=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnumeric
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore \
 		python:${PORTSDIR}/lang/python
 RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore \
 		python:${PORTSDIR}/lang/python
-LIB_DEPENDS=	xml.0:${PORTSDIR}/textproc/libxml
+LIB_DEPENDS=	glade.1:${PORTSDIR}/devel/libglade
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
