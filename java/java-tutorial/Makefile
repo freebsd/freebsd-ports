@@ -5,11 +5,12 @@
 # $FreeBSD$
 #
 
+#  Install size for version 2004.03.11 is ~22827 kB.
+
 PORTNAME=	jdk-tutorial
-PORTVERSION=	2003.05.30
+PORTVERSION=	2004.03.11
 CATEGORIES=	java
-MASTER_SITES=	ftp://ftp.javasoft.com/docs/ \
-		http://java.sun.com/docs/books/tutorial/download/
+MASTER_SITES=	http://java.sun.com/docs/books/tutorial/download/
 DISTNAME=	tutorial
 
 MAINTAINER=	parv@pair.com
@@ -18,6 +19,7 @@ COMMENT=	Official Java 2 SDK tutorial
 NO_WRKSUBDIR=	yes
 RESTRICTED=	"This software is under license and export control."
 NO_BUILD=	yes
+USE_ZIP=	yes
 TARGET_DIR=	${PREFIX}/share/doc/java-tutorial/
 PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
 
