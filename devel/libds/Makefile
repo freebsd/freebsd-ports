@@ -24,10 +24,6 @@ MAN3=	libds.3
 HTML=	avltree.html heap.html parray.html set.html hashtbl.html \
 	index.html queue.html stack.html
 
-.if ${ARCH} == "amd64"
-CFLAGS+=	-fPIC
-.endif
-
 # Copy header file and libraries.
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/ds.h ${PREFIX}/include
