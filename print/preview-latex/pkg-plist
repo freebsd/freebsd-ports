@@ -9,7 +9,6 @@
 %%TEXMFLOCAL%%/tex/latex/preview/prshowlabels.def
 %%TEXMFLOCAL%%/tex/latex/preview/prtightpage.def
 %%TEXMFLOCAL%%/tex/latex/preview/prtracingall.def
-@dirrm %%TEXMFLOCAL%%/tex/latex/preview
 %%TEXMFLOCAL%%/doc/latex/styles/preview.dvi
 @dirrm %%TEXMFLOCAL%%/doc/latex/styles
 @exec %%MKTEXLSR%%
