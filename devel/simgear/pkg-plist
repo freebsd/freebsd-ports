@@ -1,4 +1,30 @@
 include/simgear/bucket/newbucket.hxx
+include/simgear/compatibility/cassert
+include/simgear/compatibility/cctype
+include/simgear/compatibility/cerrno
+include/simgear/compatibility/cfloat
+include/simgear/compatibility/climits
+include/simgear/compatibility/clocale
+include/simgear/compatibility/cmath
+include/simgear/compatibility/csetjmp
+include/simgear/compatibility/csignal
+include/simgear/compatibility/cstdarg
+include/simgear/compatibility/cstddef
+include/simgear/compatibility/cstdio
+include/simgear/compatibility/cstdlib
+include/simgear/compatibility/cstring
+include/simgear/compatibility/ctime
+include/simgear/compatibility/cwchar
+include/simgear/compatibility/cwctype
+include/simgear/compatibility/fstream
+include/simgear/compatibility/iomanip
+include/simgear/compatibility/iostream
+include/simgear/compatibility/istream
+include/simgear/compatibility/iterator
+include/simgear/compatibility/new
+include/simgear/compatibility/sstream
+include/simgear/compatibility/streambuf
+include/simgear/compatibility/strstream
 include/simgear/compiler.h
 include/simgear/constants.h
 include/simgear/debug/debug_types.h
@@ -37,31 +63,47 @@ include/simgear/metar/MetarReport.h
 include/simgear/metar/MetarStation.h
 include/simgear/misc/commands.hxx
 include/simgear/misc/exception.hxx
-include/simgear/misc/props.hxx
-include/simgear/misc/props_io.hxx
 include/simgear/misc/sg_path.hxx
 include/simgear/misc/sgstream.hxx
 include/simgear/misc/stopwatch.hxx
 include/simgear/misc/strutils.hxx
+include/simgear/misc/tabbed_values.hxx
 include/simgear/misc/texcoord.hxx
 include/simgear/misc/zfstream.hxx
+include/simgear/props/condition.hxx
+include/simgear/props/props.hxx
+include/simgear/props/props_io.hxx
 include/simgear/route/route.hxx
 include/simgear/route/waypoint.hxx
+include/simgear/scene/material/mat.hxx
+include/simgear/scene/material/matlib.hxx
+include/simgear/scene/material/matmodel.hxx
+include/simgear/scene/model/animation.hxx
+include/simgear/scene/model/location.hxx
+include/simgear/scene/model/model.hxx
+include/simgear/scene/model/modellib.hxx
+include/simgear/scene/model/placement.hxx
+include/simgear/scene/sky/cloud.hxx
+include/simgear/scene/sky/dome.hxx
+include/simgear/scene/sky/moon.hxx
+include/simgear/scene/sky/oursun.hxx
+include/simgear/scene/sky/sky.hxx
+include/simgear/scene/sky/sphere.hxx
+include/simgear/scene/sky/stars.hxx
+include/simgear/scene/tgdb/apt_signs.hxx
+include/simgear/scene/tgdb/leaf.hxx
+include/simgear/scene/tgdb/obj.hxx
+include/simgear/scene/tgdb/pt_lights.hxx
+include/simgear/scene/tgdb/userdata.hxx
+include/simgear/screen/colors.hxx
 include/simgear/screen/screen-dump.hxx
+include/simgear/screen/texture.hxx
 include/simgear/screen/tr.h
 include/simgear/serial/serial.hxx
 include/simgear/sg_inlines.h
 include/simgear/sg_traits.hxx
-include/simgear/sg_zlib.h
-include/simgear/sky/cloud.hxx
-include/simgear/sky/clouds3d/SkySceneLoader.hpp
-include/simgear/sky/clouds3d/SkyUtil.hpp
-include/simgear/sky/dome.hxx
-include/simgear/sky/moon.hxx
-include/simgear/sky/oursun.hxx
-include/simgear/sky/sky.hxx
-include/simgear/sky/sphere.hxx
-include/simgear/sky/stars.hxx
+include/simgear/sound/sound.hxx
+include/simgear/sound/soundmgr.hxx
 include/simgear/threads/SGGuard.hxx
 include/simgear/threads/SGQueue.hxx
 include/simgear/threads/SGThread.hxx
@@ -74,18 +116,22 @@ include/simgear/version.h
 include/simgear/xgl/xgl.h
 include/simgear/xml/easyxml.hxx
 lib/libsgbucket.a
-lib/libsgclouds3d.a
 lib/libsgdebug.a
 lib/libsgephem.a
 lib/libsgio.a
 lib/libsgmagvar.a
+lib/libsgmaterial.a
 lib/libsgmath.a
 lib/libsgmetar.a
 lib/libsgmisc.a
+lib/libsgmodel.a
+lib/libsgprops.a
 lib/libsgroute.a
 lib/libsgscreen.a
 lib/libsgserial.a
 lib/libsgsky.a
+lib/libsgsound.a
+lib/libsgtgdb.a
 lib/libsgthreads.a
 lib/libsgtiming.a
 lib/libsgxgl.a
@@ -94,11 +140,16 @@ lib/libsgxml.a
 @dirrm include/simgear/xgl
 @dirrm include/simgear/timing
 @dirrm include/simgear/threads
-@dirrm include/simgear/sky/clouds3d
-@dirrm include/simgear/sky
+@dirrm include/simgear/sound
 @dirrm include/simgear/serial
 @dirrm include/simgear/screen
+@dirrm include/simgear/scene/tgdb
+@dirrm include/simgear/scene/sky
+@dirrm include/simgear/scene/model
+@dirrm include/simgear/scene/material
+@dirrm include/simgear/scene
 @dirrm include/simgear/route
+@dirrm include/simgear/props
 @dirrm include/simgear/misc
 @dirrm include/simgear/metar
 @dirrm include/simgear/math
@@ -106,5 +157,6 @@ lib/libsgxml.a
 @dirrm include/simgear/io
 @dirrm include/simgear/ephemeris
 @dirrm include/simgear/debug
+@dirrm include/simgear/compatibility
 @dirrm include/simgear/bucket
 @dirrm include/simgear
