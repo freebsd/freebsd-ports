@@ -7,7 +7,7 @@ programs.  With SANE, this number is reduced to seven: the three
 applications plus the four drivers. Of course, the savings get even
 bigger as more and more drivers and/or applications are added.
 
-sane-backends cotains documentation, several backends, scanimage
+sane-backends contains documentation, several backends, scanimage
 command line frontend, and networking support. For other/graphical
 frontends take a look at sane-frontends and/or xsane.
 
