@@ -1,0 +1,11 @@
+--- utils/Makefile.orig	Sun Sep 27 01:46:16 1998
++++ utils/Makefile	Sun Sep 27 01:46:39 1998
+@@ -100,7 +100,7 @@
+ utils.o: $(OBJS)
+ 	rm -f utils.o
+ 	rm -f LIBmain.o LIBtextio.o
+-	./:ld -r ${OBJS} -lm -o utils.o
++	./:ld -r ${OBJS} -L/usr/lib -lm -o utils.o
+ 
+ utils.po: ${POBJS}
+ 	rm -f utils.po
