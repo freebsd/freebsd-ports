@@ -1,5 +1,5 @@
---- Makefile.in.orig	Fri Dec 21 01:34:43 2001
-+++ Makefile.in	Fri Dec 21 01:37:48 2001
+--- Makefile.in.orig	Mon Jan 21 16:49:14 2002
++++ Makefile.in	Mon Jan 21 16:50:21 2002
 @@ -151,9 +151,9 @@
  
  AUTOMAKE_OPTIONS = 1.0 no-dependencies foreign

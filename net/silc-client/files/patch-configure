@@ -1,6 +1,6 @@
---- configure.orig	Fri Dec 21 01:38:03 2001
-+++ configure	Fri Dec 21 01:38:18 2001
-@@ -12572,7 +12572,7 @@
+--- configure.orig	Mon Jan 21 16:50:39 2002
++++ configure	Mon Jan 21 16:50:49 2002
+@@ -12567,7 +12567,7 @@
        fi
        ;;
      *-freebsd2.2*)
