@@ -15,12 +15,19 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	mike@mikelockwood.com
 COMMENT=	An X11 programmer's editor and development environment
 
-USE_GETTEXT=	yes
 .if defined(WITH_IMLIB)
 USE_GNOME=	imlib
 CONFIGURE_ARGS+=	--enable-imlib
 .else
 CONFIGURE_ARGS+=	--disable-imlib
+.endif
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 USE_XPM=	yes
