@@ -48,10 +48,6 @@ post-patch:
 		| ${XARGS} ${REINPLACE_CMD} -e "s@#!/usr/local/bin/perl@#!${PERL}@"
 	@${FIND} ${WRKSRC} -name "*.orig" -print | ${XARGS} ${RM}
 	@${FIND} ${WRKSRC} -name "*.bak" -print | ${XARGS} ${RM}
-# we may have 2 levels of empty directories which cause the plist generation
-# system to fail
-	@${FIND} ${WRKSRC} -type d -empty -print | ${XARGS} ${RMDIR}
-	@${FIND} ${WRKSRC} -type d -empty -print | ${XARGS} ${RMDIR}
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/usermin
@@ -65,6 +61,9 @@ do-install:
 post-install:
 	@cd ${WRKSRC} ; ${FIND} * -type f -o -type l | ${SORT} | ${AWK} \
 		'{ print "lib/usermin/" $$1 }' > ${WRKDIR}/PLIST.lib-usermin
+	@cd ${WRKSRC} ; ${FIND} * -type d -empty | ${SORT} -r | ${AWK} \
+		'{ print "lib/usermin/" $$1 }' | ${SED} -e 's#^#@exec mkdir -p %D/#g' \
+		>> ${WRKDIR}/PLIST.lib-usermin
 	@cd ${WRKSRC} ; ${FIND} * -type d | ${SORT} -r | ${AWK} \
 		'{ print "lib/usermin/" $$1 }' | ${SED} -e 's/^/@dirrm /g' \
 		>> ${WRKDIR}/PLIST.lib-usermin
