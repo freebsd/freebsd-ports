@@ -3,12 +3,13 @@
 # Date created:		16 November 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.1.1.1 1994/11/20 16:00:09 torstenb Exp $
+# $Id: Makefile,v 1.2 1995/04/01 12:45:52 jkh Exp $
 #
 
 DISTNAME=	mpeg_lib-1.1
-MASTER_SITES=	ftp://ftp.mni.mcgill.ca/pub/mpeg/
 CATEGORIES+=	graphics
+MASTER_SITES=	ftp://ftp.mni.mcgill.ca/pub/mpeg/
+
 WRKSRC=		${WRKDIR}/mpeg_lib
 
 pre-install:

@@ -3,16 +3,18 @@
 # Date created:		17 December 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.3 1995/03/24 11:09:05 asami Exp $
+# $Id: Makefile,v 1.4 1995/04/01 12:45:54 jkh Exp $
 #
 
 DISTNAME=	mpeg_play-2.0
-USE_IMAKE=	yes
-MASTER_SITES=	ftp://s2k-ftp.cs.berkeley.edu/pub/multimedia/mpeg/
 CATEGORIES+=	graphics
-MAINTAINER=	asami@FreeBSD.ORG
+MASTER_SITES=	ftp://s2k-ftp.cs.berkeley.edu/pub/multimedia/mpeg/
 EXTRACT_SUFX=	.tar.Z
+
+MAINTAINER=	asami@FreeBSD.ORG
+
 NO_WRKSUBDIR=	yes
+USE_IMAKE=	yes
 
 pre-patch:
 	cp ${WRKSRC}/Imakefile.proto ${WRKSRC}/Imakefile

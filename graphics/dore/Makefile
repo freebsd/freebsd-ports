@@ -3,19 +3,20 @@
 # Date created:		10 February 1995
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.1.1.1 1995/02/19 10:34:04 jkh Exp $
+# $Id: Makefile,v 1.2 1995/04/01 12:45:49 jkh Exp $
 #
 
 DISTNAME=	pdore-6.0
-MASTER_SITES=   ftp://freefall.cdrom.com/pub/FreeBSD/LOCAL_PORTS/
 CATEGORIES+=	graphics
-USE_GMAKE=	yes
-PREFIX=		${X11BASE}
+MASTER_SITES=   ftp://freefall.cdrom.com/pub/FreeBSD/LOCAL_PORTS/
 EXTRACT_SUFX=	.tar.Z
+
+USE_GMAKE=	yes
+USE_X11=	yes
 WRKDIR=		${.CURDIR}/work/dore
+NO_WRKSUBDIR=	yes
 MAKEFILE=	mk.stdx
 MAKE_FLAGS=	DORE_LOC=${WRKDIR}/.. CFLAGS=-O2 MAKEFLAGS=m -f
 ALL_TARGET=
-NO_WRKSUBDIR=	yes
 
 .include <bsd.port.mk>

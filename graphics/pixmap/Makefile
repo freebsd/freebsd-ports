@@ -3,14 +3,17 @@
 # Date created:		19 February 1995
 # Whom:			jmz
 #
-# $Id: Makefile,v 1.4 1995/02/28 05:06:26 asami Exp $
+# $Id: Makefile,v 1.5 1995/04/01 12:45:58 jkh Exp $
 #
 
-USE_IMAKE=	yes
 DISTNAME=	pixmap2.6
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
-MASTER_SITES=	ftp://crl.dec.com/pub/X11/contrib/applications/pixmap/
+PKGNAME=	pixmap-2.6
 CATEGORIES+=	graphics
+MASTER_SITES=	ftp://crl.dec.com/pub/X11/contrib/applications/pixmap/
+
+LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+
 WRKSRC=		${WRKDIR}/pixmap
+USE_IMAKE=	yes
 
 .include <bsd.port.mk>
