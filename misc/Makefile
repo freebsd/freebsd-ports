@@ -34,6 +34,7 @@
     SUBDIR += chef
     SUBDIR += chord
     SUBDIR += chord2html
+    SUBDIR += clex
     SUBDIR += cmatrix
     SUBDIR += colortail
     SUBDIR += compat22
