@@ -67,6 +67,16 @@ lib/vtcl/images/rel_sunken.gif
 lib/vtcl/images/relief.gif
 lib/vtcl/images/title.gif
 lib/vtcl/images/unknown.gif
+lib/vtcl/images/edit/copy.gif
+lib/vtcl/images/edit/cut.gif
+lib/vtcl/images/edit/icons.gif
+lib/vtcl/images/edit/new.gif
+lib/vtcl/images/edit/open.gif
+lib/vtcl/images/edit/paste.gif
+lib/vtcl/images/edit/save.gif
+lib/vtcl/images/edit/search.gif
+lib/vtcl/images/edit/srchbak.gif
+lib/vtcl/images/edit/srchfwd.gif
 lib/vtcl/lib/about.tcl
 lib/vtcl/lib/attrbar.tcl
 lib/vtcl/lib/balloon.tcl
@@ -107,6 +117,7 @@ lib/vtcl/lib/var.tcl
 lib/vtcl/lib/vtclib.tcl
 lib/vtcl/lib/widget.tcl
 share/doc/vtcl/tutorial.txt
+@dirrm lib/vtcl/images/edit
 @dirrm lib/vtcl/images
 @dirrm lib/vtcl/lib
 @dirrm lib/vtcl
