@@ -106,8 +106,12 @@
 # WITH_SVGALIB
 # default: autodetect
 #
+# WITH_AALIB
+# default: autodetect
+#
 # WITH_SDL
 # default: autodetect
+# (implies WITH_AALIB)
 #
 # WITH_ESOUND
 # default: autodetect
@@ -149,6 +153,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	0.90.0.110
+PORTREVISION=	1
 CATEGORIES=	multimedia audio ipv6
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -231,8 +236,13 @@ WITH_MAD=	yes
 WITH_SVGALIB=	yes
 .endif
 
+.if exists(${LOCALBASE}/lib/libaa.so.1)
+WITH_AALIB=	yes
+.endif
+
 .if exists(${LOCALBASE}/lib/libSDL-1.1.so.5)
 WITH_SDL=	yes
+WITH_AALIB=	yes
 .endif
 
 .if ${HAVE_GNOME:Mesound}!=""
@@ -346,6 +356,10 @@ CONFIGURE_ARGS+=	--disable-mad
 LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
 .endif
 
+.if defined(WITH_AALIB)
+LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib
+.endif
+
 .if defined(WITH_SDL)
 LIB_DEPENDS+=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 .endif
@@ -424,6 +438,9 @@ CONFIGURE_ARGS+=--disable-mmx2 --disable-sse
 .endif #WITHOUT_RUNTIME_CPUDETECTION
 .if !defined(WITH_SVGALIB)
 CONFIGURE_ARGS+=--disable-svga
+.endif
+.if !defined(WITH_AALIB)
+CONFIGURE_ARGS+=--disable-aa
 .endif
 .if !defined(WITH_SDL)
 CONFIGURE_ARGS+=--disable-sdl
