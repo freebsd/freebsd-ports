@@ -139,6 +139,7 @@
     SUBDIR += wmmail
     SUBDIR += wmpop3
     SUBDIR += xbuffy
+    SUBDIR += xc-mail
     SUBDIR += xfaces
     SUBDIR += xfmail
     SUBDIR += xlbiff

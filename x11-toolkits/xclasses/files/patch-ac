@@ -1,0 +1,53 @@
+--- build.orig	Thu Jun  8 00:13:13 2000
++++ build	Sun Oct  1 03:15:10 2000
+@@ -57,29 +57,25 @@
+   rm -f Rules
+   rm -f Rules.make
+ 
+-  INCLUDESDIR=${XCLASSESINCLUDE:-"/usr/local/include"}
+-  LIBSDIR=${XCLASSESLIB:-"/usr/local/lib"}
+-  CONFIGSDIR=${XCLASSESCONFIG:-"/usr/lib/X11/Xclasses"}
++  INCLUDESDIR=X11BASE/include/
++  LIBSDIR=X11BASE/lib/
++  CONFIGSDIR=X11BASE/share/Xclasses/
+   ROOTID=0
+ 
+   if [ "$2" != "quit" ]; then
+     echo -n "includes dir [$INCLUDESDIR] :"
+-    read R
+     if [ -n "$R" ]; then
+       INCLUDESDIR="$R"
+     fi
+     echo -n "libs dir [$LIBSDIR] :"
+-    read R
+     if [ -n "$R" ]; then
+       LIBSDIR="$R"
+     fi
+     echo -n "configs dir [$CONFIGSDIR] :"
+-    read R
+     if [ -n "$R" ]; then
+       CONFIGSDIR="$R"
+     fi   
+     echo -n "root id (Xclasses owner) [$ROOTID] :"
+-    read R
+     if [ -n "$R" ]; then
+       ROOTID="$R"
+     fi   
+@@ -100,7 +96,7 @@
+ 
+ # look for installed XPM lib
+   MAKEXPM="y"
+-  for N in /usr/include/X11 /usr/local/include/X11
++  for N in X11BASE/include/X11/
+   do
+     if [ -f "$N/xpm.h" ]; then
+      MAKEXPM="n"
+@@ -112,7 +108,7 @@
+   fi
+ 
+ # look for shapes
+-  if [ -f "/usr/include/X11/extensions/shape.h" ]; then
++  if [ -f "X11BASE/include/X11/extensions/shape.h" ]; then
+     USESHAPE="y"
+   else
+     USESHAPE="n"

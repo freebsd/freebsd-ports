@@ -1,0 +1,12 @@
+--- src/npop3get.cxx.orig	Fri Jun 23 10:42:27 2000
++++ src/npop3get.cxx	Sun Oct  1 05:08:18 2000
+@@ -12,8 +12,8 @@
+ #include <string.h>
+ #include <stdlib.h>
+ #include <errno.h>
+-#include <utime.h>
+ #include <sys/types.h>
++#include <utime.h>
+ #include <sys/stat.h>
+ #include <fcntl.h>
+ #include <ctype.h>

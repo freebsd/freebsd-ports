@@ -1,0 +1,21 @@
+This patch is from the XCmail FAQ.
+
+--- src/reader.cxx.orig	Sat Jun 10 22:44:38 2000
++++ src/reader.cxx	Mon Oct  2 00:15:12 2000
+@@ -2041,16 +2041,6 @@
+ 	{
+ 		mn.Recreate();
+ 	}
+-	else
+-	{
+-		static message msg;
+-		msg.Add(mn,new msgget_int(&mn,
+-			(int (callable::*)(void))&menu::Selection),
+-			NULL,NULL,NULL);
+-		msg.Add(status,NULL,NULL,new msgset_int(&status,
+-			(void (callable::*)(int))&bannertext::MenuHelpText),
+-			NULL);
+-	}
+ 
+ 	if (spooled>0)
+ 		mn.UnlockItem(5,2);

@@ -1,0 +1,14 @@
+from the README:
+
+Xclasses is a C++ layout library for the X Window System.  The
+sizes of all objects (gadgets) change with the size of the font
+and the size of the window.
+
+All gadgets have the same base class (class gadget) so they are
+all used the same way.  Gadgets are put together in groups which
+manage the sizes of the gadgets (or groups) inside.
+
+WWW:  http://www.fsai.fh-trier.de/~schmitzj/Xclasses/
+
+Trevor Johnson
+trevor@freebsd.org
