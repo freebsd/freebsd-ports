@@ -1,6 +1,6 @@
---- malloc-2.6.4.c.orig	Thu Nov 28 06:07:12 1996
-+++ malloc-2.6.4.c	Sun Apr 20 17:25:42 1997
-@@ -216,6 +216,8 @@
+--- malloc-2.6.5.c.orig	Thu Nov 28 06:07:12 1996
++++ malloc-2.6.5.c	Sun Apr 20 17:25:42 1997
+@@ -221,6 +221,8 @@
  
  /* Preliminaries */
  
