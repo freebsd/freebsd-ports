@@ -8,7 +8,7 @@
 PORTNAME=	enigma
 PORTVERSION=	0.50
 CATEGORIES=	games
-MASTER_SITES=	http://freesoftware.fsf.org/download/enigma/
+MASTER_SITES=	http://savannah.nongnu.org/download/enigma/
 
 MAINTAINER=	edwin@mavetju.org
 
