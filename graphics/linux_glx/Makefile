@@ -7,7 +7,7 @@
 #
 
 DISTNAME=	linux_glx-991127
-CATEGORIES=	games
+CATEGORIES=	graphics
 MASTER_SITES=	http://www.freebsd.org/~3d/distfiles/glx/linux/
 
 MAINTAINER=	3d@freebsd.org
@@ -18,7 +18,7 @@ NO_BUILD=	yes
 PREFIX=		/compat/linux
 
 WRKSRC=		${WRKDIR}/linux_glx
-# switch off stripping durin INSTALL_PROGRAM
+# switch off stripping during INSTALL_PROGRAM
 STRIP=
 
 # NEVER EVER use plain INSTALL_PROGRAM on Linux binaries,
