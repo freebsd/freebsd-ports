@@ -1,34 +1,47 @@
 Use the FSF m4 instead of the BSD m4, because the BSD m4 is reporting problems
 processing config.c.in.
 
---- Makefile.in	Mon Dec  2 14:45:56 1996
-+++ Makefile.in	Sun Feb 16 19:33:40 1997
-@@ -65,7 +65,7 @@
+--- Makefile.in	Mon Aug 18 14:52:43 1997
++++ Makefile.in	Tue Aug 26 14:14:44 1997
+@@ -68,7 +68,7 @@
+ HOST_PREFIX_1 = loser-
  
- # We don't specify -g -O because many compilers don't support -g -O,
- # and/or -O is broken in and of itself.
+ # These flag values are normally overridden by the configure script.
 -CFLAGS = -g
-+CFLAGS += -g
++CFLAGS+= -g
+ CXXFLAGS = -g -O2
+ 
  LIBCFLAGS = $(CFLAGS)
- CFLAGS_FOR_TARGET = $(CFLAGS)
- LIBCFLAGS_FOR_TARGET = $(CFLAGS_FOR_TARGET)
-@@ -104,7 +104,7 @@
+@@ -121,7 +121,7 @@
  
  M4 = `if [ -f $$r/m4/m4 ] ; \
  	then echo $$r/m4/m4 ; \
 -	else echo m4 ; fi`
 +	else echo gm4 ; fi`
  
- MAKEINFO = `if [ -f $$r/texinfo/makeinfo/makeinfo ] ; \
+ MAKEINFO = `if [ -f $$r/texinfo/makeinfo/Makefile ] ; \
  	then echo $$r/texinfo/makeinfo/makeinfo ; \
---- gnats/Makefile.in	Mon Dec  2 14:45:57 1996
-+++ gnats/Makefile.in	Sun Feb 16 19:32:25 1997
-@@ -126,7 +126,7 @@
- LIBS = @LIBS@
- KRBINCLUDE = @KRBINCLUDE@
+
+The top level Makefile overrides the use of BISON to just "bison" instead
+of bison -y, so use YACC, since that's what we're trying to define anyway.
+
+--- gnats/Makefile.in	Mon Aug 18 14:52:44 1997
++++ gnats/Makefile.in	Tue Aug 26 14:45:55 1997
+@@ -118,7 +118,7 @@
+ # Set RANLIB = echo if your system doesn't have or need ranlib.
+ RANLIB = @RANLIB@
  
--M4 = m4
-+M4 = gm4
- MAKEINFO = makeinfo
- TEXI2DVI = texi2dvi
+-BISON = @YACC@
++YACC = @YACC@
+ DIFFOPT = @DIFFOPT@
+ 
+ # These are set by autoconf.
+@@ -435,7 +435,7 @@
+ 
+ getdate.c: getdate.y
+ 	@echo expect 10 shift/reduce conflicts
+-	$(BISON) -d $(srcdir)/getdate.y
++	$(YACC) -d $(srcdir)/getdate.y
+ 	mv y.tab.c getdate.c
+ 	mv y.tab.h getdate.h
  
