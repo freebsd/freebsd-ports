@@ -5,6 +5,7 @@ rt3/bin/mason_handler.svc
 rt3/bin/rt
 rt3/bin/rt-crontool
 rt3/bin/rt-mailgate
+rt3/bin/standalone_httpd
 rt3/bin/webmux.pl
 rt3/etc/RT_Config.pm
 rt3/etc/RT_SiteConfig.pm
@@ -35,6 +36,7 @@ rt3/lib/RT/Action/NotifyAsComment.pm
 rt3/lib/RT/Action/Notify_Vendor.pm
 rt3/lib/RT/Action/ResolveMembers.pm
 rt3/lib/RT/Action/SendEmail.pm
+rt3/lib/RT/Action/SendEmail_Vendor.pm
 rt3/lib/RT/Action/SetPriority.pm
 rt3/lib/RT/Action/SetStatus.pm
 rt3/lib/RT/Action/StallDependent.pm
@@ -48,6 +50,7 @@ rt3/lib/RT/Attribute.pm
 rt3/lib/RT/Attribute_Overlay.pm
 rt3/lib/RT/Attributes.pm
 rt3/lib/RT/Attributes_Overlay.pm
+rt3/lib/RT/Atom.pm
 rt3/lib/RT/Base.pm
 rt3/lib/RT/CachedGroupMember.pm
 rt3/lib/RT/CachedGroupMember_Overlay.pm
@@ -112,6 +115,7 @@ rt3/lib/RT/Interface/Email/Auth/MailFrom.pm
 rt3/lib/RT/Interface/Email/Filter/SpamAssassin.pm
 rt3/lib/RT/Interface/REST.pm
 rt3/lib/RT/Interface/Web.pm
+rt3/lib/RT/Interface/Web/Handler.pm
 rt3/lib/RT/Link.pm
 rt3/lib/RT/Link_Overlay.pm
 rt3/lib/RT/Links.pm
@@ -179,7 +183,8 @@ rt3/lib/RT/User_Vendor.pm
 rt3/lib/RT/Users.pm
 rt3/lib/RT/Users_Overlay.pm
 rt3/lib/RT/Workflow.pm
-rt3/lib/RT/WorkflowEntry.pm
+rt3/lib/RT/Workflow/Entry.pm
+rt3/lib/RT/Workflow/Run.pm
 rt3/lib/t/00smoke.t
 rt3/lib/t/00smoke.t.in
 rt3/lib/t/01harness.t
@@ -207,6 +212,7 @@ rt3/lib/t/data/new-ticket-from-iso-8859-1
 rt3/lib/t/data/new-ticket-from-iso-8859-1-full
 rt3/lib/t/data/notes-uuencoded
 rt3/lib/t/data/russian-subject-no-content-type
+rt3/lib/t/data/rt-send-cc
 rt3/lib/t/data/text-html-in-russian
 rt3/lib/t/data/text-html-with-umlaut
 rt3/lib/t/regression/00placeholder
@@ -215,6 +221,7 @@ rt3/local/etc/batch_template.txt
 rt3/local/etc/create_topics.pl
 rt3/local/etc/schema.Pg
 rt3/local/etc/schema.mysql
+rt3/sbin/rt-dump-database
 rt3/sbin/rt-setup-database
 rt3/sbin/rt-test-dependencies
 rt3/share/doc/README
@@ -306,6 +313,7 @@ rt3/share/html/Callbacks/Todo/Elements/Tabs/Default
 rt3/share/html/Developer/CronTool.html
 rt3/share/html/Developer/Log/dhandler
 rt3/share/html/Developer/Perldoc.html
+rt3/share/html/Developer/Replace.html
 rt3/share/html/Developer/autohandler
 rt3/share/html/Edit/Elements/104Buttons
 rt3/share/html/Edit/Elements/104Header
@@ -317,10 +325,14 @@ rt3/share/html/Edit/Elements/Footer
 rt3/share/html/Edit/Elements/Index
 rt3/share/html/Edit/Elements/List
 rt3/share/html/Edit/Elements/ListButtons
+rt3/share/html/Edit/Elements/MetaHeaders
 rt3/share/html/Edit/Elements/MoreStyles
+rt3/share/html/Edit/Elements/MoveCustomField
+rt3/share/html/Edit/Elements/MoveCustomFieldValue
 rt3/share/html/Edit/Elements/NewWindow
 rt3/share/html/Edit/Elements/Page
 rt3/share/html/Edit/Elements/PickUser
+rt3/share/html/Edit/Elements/PickUserPopup
 rt3/share/html/Edit/Elements/PickUsers
 rt3/share/html/Edit/Elements/PopFooter
 rt3/share/html/Edit/Elements/PopHeader
@@ -335,6 +347,7 @@ rt3/share/html/Edit/Elements/SelectTemplate
 rt3/share/html/Edit/Elements/SelectUsers
 rt3/share/html/Edit/Elements/Tab
 rt3/share/html/Edit/Elements/Tabs
+rt3/share/html/Edit/Elements/UpdateCustomFieldValue
 rt3/share/html/Edit/Global/Basic/Top
 rt3/share/html/Edit/Global/Basic/index.html
 rt3/share/html/Edit/Global/CustomField/Info
@@ -490,7 +503,6 @@ rt3/share/html/NoAuth/images/space.gif
 rt3/share/html/NoAuth/images/spacer.gif
 rt3/share/html/NoAuth/images/squares_blue.gif
 rt3/share/html/NoAuth/webrt.css
-rt3/share/html/REST/0.0/NoAuth/has_member
 rt3/share/html/REST/0.0/NoAuth/stall_overdue_approvals
 rt3/share/html/REST/1.0/Forms/queue/default
 rt3/share/html/REST/1.0/Forms/queue/ns
@@ -584,6 +596,7 @@ rt3/share/html/Work/Approvals/Display.html
 rt3/share/html/Work/Approvals/Elements/Actions
 rt3/share/html/Work/Approvals/Elements/Approve
 rt3/share/html/Work/Approvals/Elements/ShowApproval
+rt3/share/html/Work/Approvals/GotoTicket
 rt3/share/html/Work/Approvals/Update.html
 rt3/share/html/Work/Approvals/index.html
 rt3/share/html/Work/Copyright.html
@@ -601,6 +614,7 @@ rt3/share/html/Work/Elements/Date
 rt3/share/html/Work/Elements/DoSearch
 rt3/share/html/Work/Elements/EditCustomFieldValues
 rt3/share/html/Work/Elements/EditCustomFields
+rt3/share/html/Work/Elements/GotoTicket
 rt3/share/html/Work/Elements/List
 rt3/share/html/Work/Elements/MessageBox
 rt3/share/html/Work/Elements/MyApprovals
@@ -626,6 +640,7 @@ rt3/share/html/Work/Queues/SelectReturn
 rt3/share/html/Work/Queues/index.html
 rt3/share/html/Work/Requests/Create.html
 rt3/share/html/Work/Requests/Display.html
+rt3/share/html/Work/Requests/GotoTicket
 rt3/share/html/Work/Requests/Update.html
 rt3/share/html/Work/Requests/index.html
 rt3/share/html/Work/Search/Bulk.html
@@ -673,13 +688,13 @@ rt3/share/html/Work/Tickets/Elements/ShowSubject
 rt3/share/html/Work/Tickets/Elements/ShowSummary
 rt3/share/html/Work/Tickets/Elements/ShowTransaction
 rt3/share/html/Work/Tickets/Elements/ValidateCustomFields
+rt3/share/html/Work/Tickets/GotoTicket
 rt3/share/html/Work/Tickets/ModifyPeople.html
 rt3/share/html/Work/Tickets/Update.html
 rt3/share/html/Work/Tickets/index.html
 rt3/share/html/Work/autohandler
 rt3/share/html/Work/index.html
 rt3/share/html/autohandler
-rt3/share/html/cgi-bin/initdb.cgi
 rt3/share/html/function/ClearDefault.js
 rt3/share/html/function/DynaTD.js
 rt3/share/html/function/MM_findObj.js
@@ -703,6 +718,7 @@ rt3/share/html/img/ArrowLevelGray.png
 rt3/share/html/img/ArrowLevelGreen.png
 rt3/share/html/img/ErrorFace.mng
 rt3/share/html/img/ErrorFace.png
+rt3/share/html/img/FillMark_red.png
 rt3/share/html/img/FlowEnd.png
 rt3/share/html/img/FlowStart.png
 rt3/share/html/img/Go.png
@@ -729,10 +745,14 @@ rt3/share/html/img/funcDelete.png
 rt3/share/html/img/funcDeleteDisabled.png
 rt3/share/html/img/funcDown.png
 rt3/share/html/img/funcDownDisabled.png
+rt3/share/html/img/funcDownMost.png
+rt3/share/html/img/funcDownMostDisabled.png
 rt3/share/html/img/funcSave.png
 rt3/share/html/img/funcSaveDisabled.png
 rt3/share/html/img/funcUp.png
 rt3/share/html/img/funcUpDisabled.png
+rt3/share/html/img/funcUpMost.png
+rt3/share/html/img/funcUpMostDisabled.png
 rt3/share/html/img/home.png
 rt3/share/html/img/pageDown.png
 rt3/share/html/img/pageDownDisabled.png
@@ -802,7 +822,6 @@ rt3/share/html/stylesheet/style.css
 @dirrm rt3/share/html/img
 @dirrm rt3/share/html/function/pix
 @dirrm rt3/share/html/function
-@dirrm rt3/share/html/cgi-bin
 @dirrm rt3/share/html/Work/Tickets/Elements
 @dirrm rt3/share/html/Work/Tickets/Attachment
 @dirrm rt3/share/html/Work/Tickets
@@ -901,6 +920,7 @@ rt3/share/html/stylesheet/style.css
 @dirrm rt3/share
 @dirrm rt3/sbin
 @dirrm rt3/local/po
+@dirrm rt3/local/lib
 @dirrm rt3/local/html
 @dirrm rt3/local/etc
 @dirrm rt3/local
@@ -910,9 +930,11 @@ rt3/share/html/stylesheet/style.css
 @dirrm rt3/lib/t
 @dirrm rt3/lib/RT/URI
 @dirrm rt3/lib/RT/Search
+@dirrm rt3/lib/RT/Workflow
 @dirrm rt3/lib/RT/Interface/Email/Filter
 @dirrm rt3/lib/RT/Interface/Email/Auth
 @dirrm rt3/lib/RT/Interface/Email
+@dirrm rt3/lib/RT/Interface/Web
 @dirrm rt3/lib/RT/Interface
 @dirrm rt3/lib/RT/I18N
 @dirrm rt3/lib/RT/Condition
