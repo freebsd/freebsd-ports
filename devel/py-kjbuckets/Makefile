@@ -6,27 +6,27 @@
 #
 
 PORTNAME=		kjbuckets
-PORTVERSION=		2.2
+PORTVERSION=		1.0.0
+PORTEPOCH=		1
 CATEGORIES=		devel python
-MASTER_SITES=		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	nectar
-# http://www.chordate.com/kjbuckets/ appears to be down.
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	gadfly
+PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
+DISTNAME=		gadfly-${PORTVERSION}
 
-PKGNAMEPREFIX=		py-
-DISTNAME=		kjb
-
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		tg@FreeBSD.org
 
 USE_PYTHON=		yes
-NO_WRKSUBDIR=		yes
-MAKE_ENV=		PYTHON_VERSION=${PYTHON_VERSION}
-MAKEFILE=		makefile
+USE_PYDISTUTILS=	yes
+WRKSRC=			${WRKDIR}/${DISTNAME}/kjbuckets
 
-do-install:
-	${MKDIR} ${PYTHON_SITELIBDIR}
-	${INSTALL_DATA} ${WRKSRC}/kjbucketsmodule.so ${PYTHON_SITELIBDIR}
+post-install:
 .if !defined(NOPORTDOCS)
-	${INSTALL_DATA} ${WRKSRC}/kjbuckets.html ${PREFIX}/share/doc/
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/../COPYRIGHT.txt ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/../doc/kjbuckets.txt ${DOCSDIR}
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/../doc/demo/kjbuckets/*.py ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
