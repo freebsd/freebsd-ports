@@ -1,4 +1,5 @@
-PC::ShareLite provides a simple interface to shared memory, allowing
-data to be efficiently communicated between processes.  Your operating
-system must support SysV IPC (shared memory and semaphores) in order to
-use this module.
+IPC::ShareLite provides a simple interface to shared memory, allowing data to
+be efficiently communicated between processes.  Your operating system must
+support SysV IPC (shared memory and semaphores) in order to use this module.
+
+WWW: http://search.cpan.org/dist/IPC-ShareLite

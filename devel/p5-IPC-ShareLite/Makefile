@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	IPC-ShareLite
-PORTVERSION=	0.08
+PORTVERSION=	0.09
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	IPC
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	m@absolight.net
 COMMENT=	A simple interface to access shared memory
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		IPC::ShareLite.3
 
 .include <bsd.port.mk>
