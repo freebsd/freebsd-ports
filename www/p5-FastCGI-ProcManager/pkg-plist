@@ -1,0 +1,5 @@
+%%SITE_PERL%%/FCGI/ProcManager.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/FCGI/ProcManager/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/FCGI/ProcManager
+@unexec rmdir %D/%%SITE_PERL%%/FCGI 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/FCGI 2>/dev/null || true

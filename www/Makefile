@@ -377,6 +377,7 @@
     SUBDIR += p5-CGI_Lite
     SUBDIR += p5-FAQ-OMatic
     SUBDIR += p5-FastCGI
+    SUBDIR += p5-FastCGI-ProcManager
     SUBDIR += p5-Flash-FLAP
     SUBDIR += p5-GtkHTML
     SUBDIR += p5-HTML
