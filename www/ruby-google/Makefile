@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	google
-PORTVERSION=	0.1.0
+PORTVERSION=	0.2.0
 CATEGORIES=	www databases ruby
 MASTER_SITES=	http://www.caliban.org/files/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
