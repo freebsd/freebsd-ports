@@ -39,4 +39,5 @@ lib/m3/pkg/ui/FreeBSD2/libm3ui.so.4.0
 lib/m3/pkg/vbtkit/FreeBSD2/libm3vbtkit.so.4.0
 lib/m3/pkg/videovbt/FreeBSD2/libvideovbt.so.4.0
 lib/m3/pkg/web/FreeBSD2/libweb.so.4.0
+share/modula-3-lib/COPYRIGHT
 @exec /sbin/ldconfig -m %D/lib/m3/FreeBSD2

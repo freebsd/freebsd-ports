@@ -3,7 +3,7 @@
 # Date created:		28 Oct 1996
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.4 1996/11/29 19:49:12 jdp Exp $
+# $Id: Makefile,v 1.5 1997/02/14 22:17:03 jdp Exp $
 #
 
 DISTNAME=	modula-3-lib-3.6
@@ -122,6 +122,13 @@ do-install:
 	    grep '^lib/m3/' ${PKGDIR}/PLIST | xargs chmod go=u-w; \
 	    find -X lib/m3 -type d | xargs chown ${BINOWN}.${BINGRP}; \
 	    find -X lib/m3 -type d | xargs chmod 755
+	@echo "Installing copyright notice"
+	@if [ ! -d ${PREFIX}/share/modula-3-lib ]; then \
+	    ${MKDIR} ${PREFIX}/share/modula-3-lib; \
+	    chmod 755 ${PREFIX}/share/modula-3-lib; \
+	fi
+	@${INSTALL_DATA} ${WRKSRC}/m3/src/COPYRIGHT \
+	    ${PREFIX}/share/modula-3-lib
 	@if [ ! -f ${startup_script} ]; then \
 	    echo "Installing ${startup_script} file"; \
 	    test -d ${startup_dir} || ${MKDIR} ${startup_dir}; \

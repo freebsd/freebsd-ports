@@ -3,4 +3,7 @@ libraries only.  People who don't wish to install the entire Modula-3
 system just so they can execute Modula-3 programs can install this
 package instead.
 
-jdp@freebsd.org
+Please read "${PREFIX}/share/modula-3-lib/COPYRIGHT" for the DEC
+copyright notice.
+
+John Polstra <jdp@FreeBSD.ORG>
