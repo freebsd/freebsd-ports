@@ -1,6 +1,6 @@
---- config.mk.orig	Wed Jan 19 14:19:04 2000
-+++ config.mk	Thu Dec 21 19:40:33 2000
-@@ -34,12 +34,12 @@
+--- config.mk.orig	Sun Mar 23 00:08:58 2003
++++ config.mk	Sun May 18 12:02:44 2003
+@@ -34,7 +34,7 @@
  # You can add -DNDEBUG to speed up a release build by removing the assert() 
  # calls.  But, on a really obscure Linux machine, this caused Xlib to blow up 
  # internally, so you do so at your own risk.
@@ -9,12 +9,6 @@
  
  LINK_OPT    =	
  
- # The string that will be used for making the packaged .tar.Z file.
--VERSION     =   2.01
-+VERSION     =   2.02
- 
- #SRC_DIR and WORK_DIR are only used for `make workdir`
- SRC_DIR		= 	/mit/hardts/src/X/xevil1.4.9
 @@ -83,7 +83,9 @@
  #### Attempt to guesss the host architecture using the HOSTYPE and hostype
  # variables.  Then call self with the architecture name.
