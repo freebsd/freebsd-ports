@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	Thu Oct 12 02:30:03 2000
-+++ src/Makefile.in	Thu Oct 12 02:30:16 2000
-@@ -59,7 +59,7 @@
+--- src/Makefile.in.orig	Sat Jan  6 17:24:43 2001
++++ src/Makefile.in	Sun Jan 14 23:11:28 2001
+@@ -57,7 +57,7 @@
  all: $(PROGRAMS)
  
  install: $(PROGRAMS)
