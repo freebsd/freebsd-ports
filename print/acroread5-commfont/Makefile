@@ -20,6 +20,10 @@ SLAVEDIRS=	chinese/acroread-chsfont chinese/acroread-chtfont
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_EXTRAFONT)
+FORBIDDEN=	Adobe license seems to disallow using fonts for 4.x on 5.x.
+.endif
+
 .if ${DISTNAME} == "commfont"
 ###### For this port #############################
 .if exists(${DISTDIR}/${DIST_SUBDIR}/jpnfont.tar.gz)
