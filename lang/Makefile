@@ -101,6 +101,7 @@
     SUBDIR += siod
     SUBDIR += slib
     SUBDIR += smalleiffel
+    SUBDIR += smalleiffel-devel
     SUBDIR += smalltalk
     SUBDIR += sml-mode.el
     SUBDIR += sml-nj
