@@ -29,11 +29,7 @@ DOCS_EN=	${RUBY_RD_FILES:M*.en.rd} \
 DOCS_JA=	${RUBY_RD_FILES:M*.ja.rd} \
 		${RUBY_RD_HTML_FILES:M*.ja.html}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
 BROKEN=		"Does not install (cannot open Makefile)"
-.endif
 
 post-install: doc-install
 
@@ -48,4 +44,4 @@ doc-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
