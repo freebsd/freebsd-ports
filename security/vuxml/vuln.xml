@@ -32,6 +32,32 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2328ADEF-157C-11D9-8402-000D93664D5C">
+    <topic>racoon -- improper certificate handling</topic>
+    <affects>
+      <package>
+	<name>racoon</name>
+	<range><lt>20040818a</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Thomas Walpuski noted when OpenSSL would detect an error
+	  condition for a peer certificate, racoon mistakenly ignored
+	  the error. This could allow five invalid certificate states
+	  to properly be used for authentication.</p>
+      </body>
+    </description>
+    <references>
+      <mlist msgid="20040614185623.GA10290@unproved.org">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108726102304507</mlist>
+      <url>http://www.kame.net/racoon/racoon-ml/msg00517.html</url>
+    </references>
+    <dates>
+      <discovery>2004-01-31</discovery>
+      <entry>2004-10-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e8d4800f-1547-11d9-90a3-00010327614a">
     <topic>distcc -- incorrect parsing of IP access control rules</topic>
     <affects>
