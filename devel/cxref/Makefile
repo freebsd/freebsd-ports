@@ -7,6 +7,7 @@
 
 PORTNAME=	cxref
 PORTVERSION=	1.5g
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.gedanken.demon.co.uk/download-cxref/
@@ -21,9 +22,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-MAN1=		cxref.1 cxref-query.1 cxref-cpp.1 cxref-cpp-configure.1
-PLIST_FILES=	bin/cxref bin/cxref-cc bin/cxref-query \
-		bin/cxref-cpp bin/cxref-cpp-configure %%DATADIR%%/cxref-cpp.defines
-PLIST_DIRS=	%%DATADIR%%
+MAN1=		cxref.1 cxref-query.1
+PLIST_FILES=	bin/cxref bin/cxref-cc bin/cxref-query
 
 .include <bsd.port.mk>
