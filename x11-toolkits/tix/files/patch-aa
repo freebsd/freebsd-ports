@@ -1,5 +1,5 @@
 --- configure.orig	Tue Sep 23 16:57:21 1997
-+++ configure	Wed Apr  7 03:53:11 1999
++++ configure	Sat Apr 24 14:13:14 1999
 @@ -1060,6 +1060,7 @@
  
  if test "$val" != ""; then
@@ -34,13 +34,20 @@
  
  #--------------------------------------------------------------------
  #	Find out the top level source directory of the Tix package.
-@@ -1200,12 +1202,14 @@
+@@ -1195,17 +1197,19 @@
+ # up the Tcl library.
+ 
+ if test "${TCL_LIB_VERSIONS_OK}" = "ok"; then
+-    TIX_BUILD_LIB_SPEC="-L`pwd` -ltix${VERSION}"
++    TIX_BUILD_LIB_SPEC="`pwd`/libtix${VERSION}.so.1"
+     TIX_BUILD_SAM_SPEC="-L`pwd` -ltixsam${VERSION}"
      TCL_BUILD_SAM_SPEC="-L`pwd` -ltclsam${TCL_VERSION}"
      TK_BUILD_SAM_SPEC="-L`pwd` -ltksam${TK_VERSION}"
      TIX_LIB_SPEC="-L${exec_prefix}/lib -ltix${VERSION}"
 +	LIB_VERSION="${VERSION}"
  else
-     TIX_BUILD_LIB_SPEC="-L`pwd` -ltix`echo ${VERSION} | tr -d .`"
+-    TIX_BUILD_LIB_SPEC="-L`pwd` -ltix`echo ${VERSION} | tr -d .`"
++    TIX_BUILD_LIB_SPEC="`pwd`/libtix`echo ${VERSION} | tr -d .`.so.1"
      TIX_BUILD_SAM_SPEC="-L`pwd` -ltixsam`echo ${VERSION} | tr -d .`"
      TCL_BUILD_SAM_SPEC="-L`pwd` -ltclsam`echo ${TCL_VERSION} | tr -d .`"
      TK_BUILD_SAM_SPEC="-L`pwd` -ltksam`echo ${TK_VERSION} | tr -d .`"
@@ -54,7 +61,7 @@
      # The main Tix library
      #
 -    eval "TIX_LIB_FILE=libtix${TCL_SHARED_LIB_SUFFIX}"
-+    eval "TIX_LIB_FILE=libtix${LIB_VERSION}"
++    eval "TIX_LIB_FILE=libtix${LIB_VERSION}.so.1"
      TIX_MAKE_LIB="\${SHLIB_LD} -o ${TIX_LIB_FILE} \${OBJS} ${SHLIB_LD_LIBS}"
  
      # The Tcl SAM library
