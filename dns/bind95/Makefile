@@ -12,21 +12,19 @@
 # release you can generally build it cleanly from the source - Doug
 
 PORTNAME=	bind9
-PORTVERSION=	9.3.0
-PORTREVISION=	1
+PORTVERSION=	9.3.1
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	bind9/${ISCVERSION}
 DISTNAME=	bind-${ISCVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc \
-		9.3.0-patch1 9.3.0-patch1.asc
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	DougB@FreeBSD.org
 COMMENT=	Completely new version of the BIND DNS suite with updated DNSSEC
 
 # ISC releases things like 9.3.0rc1, which our versioning doesn't like
-ISCVERSION=	9.3.0
+ISCVERSION=	9.3.1
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps --with-openssl \
@@ -34,15 +32,16 @@ CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps --with-openssl \
 
 USE_OPENSSL=	yes
 
-.include <bsd.port.pre.mk>
+OPTIONS=	BIND9_THREADS "Support in 9.3.x is much improved" on \
+		PORT_REPLACES_BASE_BIND9 "Completely replace system BIND" off
 
-.if ${OSVERSION} >= 503000
+.if defined(WITH_BIND9_THREADS) || defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS+=	--enable-threads
 .else
 CONFIGURE_ARGS+=	--disable-threads
 .endif
 
-.if defined(PORT_REPLACES_BASE_BIND9)
+.if defined(WITH_PORT_REPLACES_BASE_BIND9)
 PKGNAMESUFFIX=	-base
 PREFIX=		/usr
 BIND_DESTETC=	/etc/namedb
@@ -93,11 +92,17 @@ MAN5=	named.conf.5 rndc.conf.5
 MAN8=	dnssec-keygen.8 dnssec-signzone.8 lwresd.8 named-checkconf.8 \
 	named-checkzone.8 named.8 nsupdate.8 rndc-confgen.8 rndc.8
 
-pre-patch:
-	@${SED} -e 's#bind9/lib/dns/validator.c#lib/dns/validator.c#g' \
-		${DISTDIR}/9.3.0-patch1 > ${WRKDIR}/9.3.0-patch1
-
-EXTRA_PATCHES=	${WRKDIR}/9.3.0-patch1
+pre-fetch:
+.if defined(PORT_REPLACES_BASE_BIND9)
+	@${ECHO} ""
+	@${ECHO} "***************************************************"
+	@${ECHO} "Support for the old PORT_REPLACES_BASE_BIND9 option"
+	@${ECHO} "will be removed in future versions of the port."
+	@${ECHO} "***************************************************"
+	@${ECHO} ""
+	@/bin/sleep 5
+WITH_PORT_REPLACES_BASE_BIND9=	true
+.endif
 
 post-patch:
 .for FILE in check/named-checkconf.8 named/named.8 nsupdate/nsupdate.8 \
@@ -121,4 +126,4 @@ post-install:
 
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
