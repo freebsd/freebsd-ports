@@ -15,11 +15,11 @@ MAINTAINER=	roman@xpert.com
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
-INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+INSTALLS_SHLIB=	yes
 
+CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
 .if ${CC} == cc || ${CC} == gcc
@@ -40,8 +40,5 @@ CPPFLAGS+=	-I${LOCALBASE}/include/stlport
 
 post-extract:
 	@${RM} -rf ${WRKSRC}/zlib
-
-post-install:
-	@${RM} -f ${LOCALBASE}/lib/libid3.la
 
 .include <bsd.port.post.mk>
