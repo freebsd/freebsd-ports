@@ -15,6 +15,8 @@ DISTNAME=	VeePee-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A user orientated scripting environment for embedding in applications
 
+BROKEN=		"Does not configure"
+
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd2
 
 USE_GNOME=	gnomelibs
