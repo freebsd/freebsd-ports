@@ -1,0 +1,175 @@
+*** utils.c.old	Sun Aug 28 18:12:16 1994
+--- utils.c	Tue Nov 15 01:58:20 1994
+***************
+*** 21,26 ****
+--- 21,28 ----
+  #include <unistd.h>
+  #endif
+  
++ #include <sys/param.h>
++ 
+  void syserr();
+  
+  /*********************************************/
+***************
+*** 56,62 ****
+--- 58,66 ----
+       char *msg;
+  {
+    extern int errno, sys_nerr;
++ #if !defined(BSD) || (BSD < 199306)
+    extern char *sys_errlist[];
++ #endif
+  
+    fprintf(stderr,"ERROR: %s (%d",msg, errno);
+    if(errno>0 && errno<sys_nerr)
+*** parse.c.bak	Sun Aug 28 18:12:10 1994
+--- parse.c	Tue Nov 15 02:21:20 1994
+***************
+*** 670,679 ****
+    if(ses && !PSEUDO_PROMPT)
+      write_line_mud("", ses);
+    else if (!is_split)
+!     write(1,"> ", 3);
+    else {
+      sprintf(strng,"8> 7[%d;%df", input_row, input_col);
+!     write(1,strng, strlen(strng)+1);
+      display_col+=2;
+    } 
+  }
+--- 670,679 ----
+    if(ses && !PSEUDO_PROMPT)
+      write_line_mud("", ses);
+    else if (!is_split)
+!     write(1,"> ", 2);
+    else {
+      sprintf(strng,"8> 7[%d;%df", input_row, input_col);
+!     write(1,strng, strlen(strng));
+      display_col+=2;
+    } 
+  }
+*** misc.c.bak	Sun Aug 28 18:12:08 1994
+--- misc.c	Tue Nov 15 02:28:26 1994
+***************
+*** 106,112 ****
+    char temp[2];
+    temp[0]=7;
+    temp[1]=0;
+!   write(1, temp, 2);
+  }
+  
+  
+--- 106,112 ----
+    char temp[2];
+    temp[0]=7;
+    temp[1]=0;
+!   write(1, temp, 1);
+  }
+  
+  
+***************
+*** 172,178 ****
+        cleanup_session(sesptr);
+      ses=NULL;  
+      if (is_split) 
+!       write(1, "c", 3);
+      tintin_puts2("TINTIN suffers from bloodlack, and the lack of a beating heart...", ses);
+      tintin_puts2("TINTIN is dead! R.I.P.", ses);
+      tintin_puts2("Your blood freezes as you hear TINTIN's death cry.", ses);
+--- 172,178 ----
+        cleanup_session(sesptr);
+      ses=NULL;  
+      if (is_split) 
+!       write(1, "c", 2);
+      tintin_puts2("TINTIN suffers from bloodlack, and the lack of a beating heart...", ses);
+      tintin_puts2("TINTIN is dead! R.I.P.", ses);
+      tintin_puts2("Your blood freezes as you hear TINTIN's death cry.", ses);
+*** main.c.bak	Sun Aug 28 18:12:06 1994
+--- main.c	Tue Nov 15 02:33:37 1994
+***************
+*** 562,568 ****
+      if(ses->logfile) {
+        if (!OLD_LOG) {
+        count=0;
+!       for(n=0;n<=didget;n++) 
+           if (buffer[n]!='\r') { 
+              temp[count]=buffer[n]; 
+              count++;
+--- 562,568 ----
+      if(ses->logfile) {
+        if (!OLD_LOG) {
+        count=0;
+!       for(n=0;n<didget;n++)
+           if (buffer[n]!='\r') { 
+              temp[count]=buffer[n]; 
+              count++;
+***************
+*** 732,738 ****
+        sprintf(strng,"%c8%s\n\r%c7%c[%d;%df", E, cptr, E, E, input_row, input_col);
+      else
+        sprintf(strng,"%s\n\r", cptr);
+!     write(1,strng, strlen(strng)+1);
+      display_col=1;
+      if (redraw && term_echoing && !is_split)
+        write(1, k_input, strlen(k_input));
+--- 732,738 ----
+        sprintf(strng,"%c8%s\n\r%c7%c[%d;%df", E, cptr, E, E, input_row, input_col);
+      else
+        sprintf(strng,"%s\n\r", cptr);
+!     write(1,strng, strlen(strng));
+      display_col=1;
+      if (redraw && term_echoing && !is_split)
+        write(1, k_input, strlen(k_input));
+***************
+*** 764,770 ****
+        cptr++;
+        sprintf(strng,"%s\n\r", cptr);
+      }
+!     write(1,strng, strlen(strng)+1);
+      display_col=1;
+    } 
+    text_came=TRUE;  
+--- 764,770 ----
+        cptr++;
+        sprintf(strng,"%s\n\r", cptr);
+      }
+!     write(1,strng, strlen(strng));
+      display_col=1;
+    } 
+    text_came=TRUE;  
+***************
+*** 832,838 ****
+    input_col=1;  
+    sprintf(fn, "%c[2J%c[1;%dr%c[%d;1f", E, E, display_row, E, split_line);
+    write(1,fn, strlen(fn));
+!   write(1,"-------------------------------------------------------------------------------", 80);
+    sprintf(fn, "%c[%d;1f%c7", E, split_line-1, E);
+    write(1,fn,strlen(fn));
+    sprintf(fn, "%c[%d;1f", E, input_row);
+--- 832,838 ----
+    input_col=1;  
+    sprintf(fn, "%c[2J%c[1;%dr%c[%d;1f", E, E, display_row, E, split_line);
+    write(1,fn, strlen(fn));
+!   write(1,"--------------------------------------------------------------------------------", 80);
+    sprintf(fn, "%c[%d;1f%c7", E, split_line-1, E);
+    write(1,fn,strlen(fn));
+    sprintf(fn, "%c[%d;1f", E, input_row);
+*** net.c.bak	Sun Aug 28 18:12:10 1994
+--- net.c	Tue Nov 15 03:27:09 1994
+***************
+*** 80,86 ****
+  
+    tintin_puts("#Trying to connect..", ses);
+  
+!   alarm(15);			/* We'll allow connect to hang in 15seconds! NO MORE! */
+    ticker_interrupted=FALSE;
+    connectresult=connect(sock, (struct sockaddr *)&sockaddr, sizeof(sockaddr));
+  #if defined(DEBUG)
+--- 80,86 ----
+  
+    tintin_puts("#Trying to connect..", ses);
+  
+!   alarm(30);                    /* We'll allow connect to hang in 30seconds! NO MORE! */
+    ticker_interrupted=FALSE;
+    connectresult=connect(sock, (struct sockaddr *)&sockaddr, sizeof(sockaddr));
+  #if defined(DEBUG)
