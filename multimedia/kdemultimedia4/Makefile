@@ -33,6 +33,7 @@ MAKE_ENV=	${CONFIGURE_ENV}
 
 CONFIGURE_ARGS+=	--without-lame \
 			--with-vorbis=${LOCALBASE} \
+			--disable-cdparanoia \
 			--enable-audio=oss,esd
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
