@@ -1,0 +1,10 @@
+bin/hafiye
+share/hafiye/LII/IP
+share/hafiye/LIII/ICMP
+share/hafiye/LIII/TCP
+share/hafiye/LIII/UDP
+share/hafiye/LIV/DNS
+@dirrm share/hafiye/LII
+@dirrm share/hafiye/LIII
+@dirrm share/hafiye/LIV
+@dirrm share/hafiye

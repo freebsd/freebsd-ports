@@ -1,0 +1,18 @@
+When I looked at the source code for various famous sniffers, I've noticed
+that they all had all seperate .C files for interpreting various protocols.
+Why not have a sniffer that can understand user-supplied protocol details?
+Here it is.
+
+When fired, Hafiye first visits each sub-directory under its knowledge-base
+directory and opens to see whether it is a protocol knowledge-base file. If
+so, It loads the necessary information from that file and places it into its
+memory space. After constructing the supplied knowledge-base, Hafiye starts
+looping for receiving packets. When a packet arrives, it demultiplexes the
+layers according to its knowledge-base and prints protocol-based information.
+
+Features
+   - Multi Platform Support (Posix Compliant)
+   - Customizable Protocol Definitions (Layer II, III and IV)
+   - Customizable Packet Interpretation (Layer II, III and IV)
+
+WWW: http://www.enderunix.org/hafiye/
