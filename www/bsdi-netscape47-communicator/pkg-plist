@@ -1,14 +1,14 @@
-bin/communicator-%%BROWSER_VER%%
-@exec ln -sf %f %B/communicator-4
-@exec ln -sf communicator-4 %B/netscape
+bin/%%BROWSER%%-%%BROWSER_VER%%
+@exec ln -sf %f %B/%%BROWSER%%-4
+@exec ln -sf %%BROWSER%%-4 %B/netscape
 @unexec rm -f %B/netscape
-@unexec rm -f %B/communicator-4
+@unexec rm -f %B/%%BROWSER%%-4
 %%NSUBDIR%%/LICENSE
 %%NSUBDIR%%/Netscape.ad
 %%NSUBDIR%%/README
 %%NSUBDIR%%/XKeysymDB
 %%NSUBDIR%%/bookmark.htm
-%%NSUBDIR%%/communicator-%%BROWSER_VER%%.bin
+%%NSUBDIR%%/%%BROWSER%%-%%BROWSER_VER%%.bin
 %%NSUBDIR%%/java/classes/aix/font.properties
 %%NSUBDIR%%/java/classes/aix/font.properties.cs
 %%NSUBDIR%%/java/classes/aix/font.properties.hu
@@ -68,7 +68,7 @@ bin/communicator-%%BROWSER_VER%%
 %%NSUBDIR%%/java/classes/jio40.jar
 %%NSUBDIR%%/java/classes/joptio40.jar
 %%NSUBDIR%%/java/classes/jsd10.jar
-%%NSUBDIR%%/java/classes/ldap30.jar
+%%NSUBDIR%%/java/classes/ldap40.jar
 %%NSUBDIR%%/java/classes/resource.jar
 %%NSUBDIR%%/java/classes/scd10.jar
 %%NSUBDIR%%/libjsd.so.1.0
