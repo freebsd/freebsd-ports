@@ -7,6 +7,7 @@
 
 PORTNAME=	proxyper
 PORTVERSION=	341b
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.distributed.net/pub/dcti/proxyper/ \
 		http://http.distributed.net/pub/dcti/proxyper/
