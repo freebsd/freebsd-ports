@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tmda
-PORTVERSION=	0.20
+PORTVERSION=	0.22
 CATEGORIES=	mail python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tmda
@@ -21,7 +21,7 @@ do-build:
 
 do-install:
 	${MKDIR} ${PYTHON_SITELIBDIR}/TMDA
-	${INSTALL_SCRIPT} ${WRKSRC}/TMDA/*py* ${PYTHON_SITELIBDIR}/TMDA
+	${INSTALL_SCRIPT} ${WRKSRC}/TMDA/*.py* ${PYTHON_SITELIBDIR}/TMDA
 	${MKDIR} ${PREFIX}/share/tmda
 	${INSTALL_DATA} ${WRKSRC}/templates/*.txt ${PREFIX}/share/tmda
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/tmda-* ${PREFIX}/bin
@@ -32,10 +32,10 @@ post-install:
 .for f in ChangeLog COPYRIGHT CRYPTO FAQ INSTALL README THANKS TODO UPGRADE contrib/*.* doc/tmda*
 	@${INSTALL_DATA} ${WRKSRC}/$f ${PREFIX}/share/doc/tmda
 .endfor
-.endif
 	@${ECHO_MSG}
-	@${ECHO_MSG} All related binaries have been installed in ${PREFIX}/bin
 	@${ECHO_MSG} See ${PREFIX}/share/doc/tmda/INSTALL for configuration instructions
+.endif
+	@${ECHO_MSG} All related binaries have been installed in ${PREFIX}/bin
 	@${ECHO_MSG}
 
 .include <bsd.port.mk>
