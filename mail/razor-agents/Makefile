@@ -7,7 +7,7 @@
 
 PORTNAME=	razor-agents
 PORTVERSION=	2.36
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	razor
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	razor
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	A distributed, collaborative, spam detection and filtering network
 
-BUILD_DEPENDS=	${SITE_PERL}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
 		${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
 		${SITE_PERL}/${PERL_ARCH}/Digest/Nilsimsa.pm:${PORTSDIR}/security/p5-Digest-Nilsimsa \
 		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI
