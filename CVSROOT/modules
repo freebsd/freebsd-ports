@@ -5384,6 +5384,7 @@ p5-DateTime-Format-Pg	ports/devel/p5-DateTime-Format-Pg
 p5-DateTime-Format-Roman	ports/devel/p5-DateTime-Format-Roman
 p5-DateTime-Format-Strptime	ports/devel/p5-DateTime-Format-Strptime
 p5-DateTime-Format-W3CDTF	ports/devel/p5-DateTime-Format-W3CDTF
+p5-DateTime-HiRes	ports/devel/p5-DateTime-HiRes
 p5-DateTime-Locale	ports/devel/p5-DateTime-Locale
 p5-DateTime-Precise	ports/devel/p5-DateTime-Precise
 p5-DateTime-Set	ports/devel/p5-DateTime-Set
