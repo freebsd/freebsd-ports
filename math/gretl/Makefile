@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnu Regression, Econometrics and Time-series Library
 
 BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
-LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4 \
+LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
 USE_X_PREFIX=	yes
