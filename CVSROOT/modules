@@ -10229,6 +10229,7 @@ tuc		ports/converters/tuc
 tulip		ports/graphics/tulip
 tund		ports/net/tund
 tuneradio	ports/audio/tuneradio
+tunesbrowser	ports/audio/tunesbrowser
 turba		ports/mail/turba
 turck-mmcache	ports/www/turck-mmcache
 tux-aqfh	ports/games/tux-aqfh
