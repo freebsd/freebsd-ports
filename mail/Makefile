@@ -155,6 +155,7 @@
     SUBDIR += qmailadmin
     SUBDIR += qmailanalog
     SUBDIR += qpopper
+    SUBDIR += qtools
     SUBDIR += rblcheck
     SUBDIR += rftp
     SUBDIR += ripmime

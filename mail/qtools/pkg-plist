@@ -1,0 +1,16 @@
+bin/822addr
+bin/822body
+bin/822bodyfilter
+bin/822fields
+bin/822headerfilter
+bin/822headerok
+bin/822headers
+bin/checkaddr
+bin/checkdomain
+bin/condtomaildir
+bin/filterto
+bin/ifaddr
+bin/iftoccfrom
+bin/replier
+bin/replier-config
+bin/tomaildir

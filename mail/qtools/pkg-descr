@@ -1,0 +1,12 @@
+The qtools package comprises several utilities for use with qmail,
+typically as part of .qmail command processing.
+
+Included are tools to extract the message body, extract all or
+parts of the header, check an address list for a matching address
+or domain, message filtering and forwarding, write to a maildir,
+and automatically reply to certain messages.
+
+WWW: http://www.superscript.com/qtools/intro.html
+
+- Pete
+petef@databits.net
