@@ -5,23 +5,21 @@
 # $FreeBSD$
 #
 
-PORTNAME=		glew
-PORTVERSION=		1.1.4
-PORTREVISION=	1
-CATEGORIES=		graphics
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+PORTNAME=	glew
+PORTVERSION=	1.2.1
+CATEGORIES=	graphics
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-EXTRACT_SUFX=		-src.tgz
+EXTRACT_SUFX=	-src.tgz
 
 MAINTAINER=	tiamat@comset.net
 COMMENT=	The OpenGL Extension Wrangler Library
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GL=		yes
 INSTALLS_SHLIB=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/glewinfo ${PREFIX}/bin
@@ -31,7 +29,9 @@ do-install:
 	@${LN} -sf ${PREFIX}/lib/libGLEW.so.1 ${PREFIX}/lib/libGLEW.so
 	${INSTALL_DATA} ${WRKSRC}/lib/libGLEW.a ${PREFIX}/lib
 
-	${INSTALL_DATA} ${WRKSRC}/include/GL/*.h ${PREFIX}/include/GL
+.for i in glew glxew
+	${INSTALL_DATA} ${WRKSRC}/include/GL/${i}.h ${PREFIX}/include/GL
+.endfor
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
