@@ -34,7 +34,7 @@ SETUP_FILE=	Setup
 #
 # Support for Tk is compiled in by default only if X11 is installed.
 #
-.if exists(${X11_BASE})
+.if exists(${X11BASE})
 WITH_TK?=	yes
 .endif
 .if defined(WITH_TK) && $(WITH_TK) == yes
