@@ -14,7 +14,7 @@ DISTNAME=	phpGroupWare-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PATCHFILE}
 
-MAINTAINER=	utoh@openedu.org
+MAINTAINER=	mutoh@openedu.org
 COMMENT=	A web based GroupWare system
 
 RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
