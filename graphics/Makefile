@@ -100,6 +100,7 @@
     SUBDIR += linux_glide
     SUBDIR += linux_glx
     SUBDIR += linux_mesa
+    SUBDIR += linux_mesa3
     SUBDIR += mpeg
     SUBDIR += mpeg-lib
     SUBDIR += mpeg2codec
