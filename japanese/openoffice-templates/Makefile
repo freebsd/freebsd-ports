@@ -20,6 +20,8 @@ PLIST=		${WRKDIR}/pkg-plist
 
 RUN_DEPENDS=	${PREFIX}/${OPENOFFICE}/program/soffice:${PORTSDIR}/japanese/openoffice-1.1
 
+BROKEN=		Size mismatch
+
 OPENOFFICE=	OpenOffice.org${OPENOFFICE_VER}
 OPENOFFICE_VER=	1.1.2
 
