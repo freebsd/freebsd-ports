@@ -1,0 +1,9 @@
+--- libstdc++/config/freebsd.ml.orig	Thu Feb 18 11:44:11 1999
++++ libstdc++/config/freebsd.ml	Thu Feb 18 11:44:17 1999
+@@ -0,0 +1,6 @@
++# Elf with shared libm, so we can link it into the shared libstdc++.
++
++LIBS    = $(ARLIB) $(SHLIB) $(SHLINK) mshlink
++SHFLAGS = -Wl,-soname,$(MSHLINK)
++SHDEPS  = -lm
++DEPLIBS = ../$(SHLIB)

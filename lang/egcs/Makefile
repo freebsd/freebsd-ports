@@ -1,25 +1,25 @@
 # ex:ts=8
 # Ports collection makefile for:	egcs
+# Version required: 			1998-09-14
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	gcc
-PORTVERSION=	2.95.2
-CATEGORIES=	lang java
-MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/releases/${DISTNAME}/  \
-		ftp://ftp.ninemoons.com/pub/mirrors/egcs/releases/${DISTNAME}/ \
-		ftp://ftp.iij.ad.jp/pub/egcs/releases/${DISTNAME}/  \
-		ftp://ftp.yggdrasil.com/mirrors/site/egcs.cygnus.com/pub/egcs/releases/${DISTNAME}/  \
-		ftp://ftp.fu-berlin.de/unix/languages/egcs/releases/${DISTNAME}/
-MASTER_SITE_SUBDIR=	gcc
-DISTFILES=	gcc-core-${GCC_REV}${EXTRACT_SUFX} \
-		gcc-g++-${GCC_REV}${EXTRACT_SUFX} \
-		gcc-g77-${GCC_REV}${EXTRACT_SUFX} \
-		gcc-java-${GCC_REV}${EXTRACT_SUFX} \
-		gcc-objc-${GCC_REV}${EXTRACT_SUFX}
+PORTNAME=	egcs
+PORTVERSION=	1.1.2
+CATEGORIES=	lang
+MASTER_SITES=	ftp://go.cygnus.com/pub/ftp.cygnus.com/egcs/releases/egcs-1.1.2/ \
+		ftp://ftp.crc.ca/pub/packages/egcs/egcs-1.1.2/ \
+		ftp://ftp.funet.fi/mirrors/ftp.cygnus.com/pub/egcs/releases/egcs-1.1.2/ \
+		ftp://egcs.cygnus.com/pub/egcs/releases/egcs-1.1.2/ \
+		ftp://ftp.nluug.nl/pub/languages/egcs/releases/egcs-1.1.2/ \
+		ftp://ftp.iij.ad.jp/pub/egcs/releases/egcs-1.1.2/ \
+		ftp://ftp.fu-berlin.de/unix/languages/egcs/releases/egcs-1.1.2/ \
+		ftp://cambridge.cygnus.com/pub/egcs/releases/egcs-1.1.2/
+DISTFILES=	egcs-core-1.1.2${EXTRACT_SUFX} egcs-g++-1.1.2${EXTRACT_SUFX} \
+		egcs-g77-1.1.2${EXTRACT_SUFX} egcs-objc-1.1.2${EXTRACT_SUFX}
 
 MAINTAINER=	obrien@FreeBSD.org
 
@@ -27,54 +27,47 @@ USE_BZIP2=	yes
 
 .include <bsd.port.pre.mk>
 
-GCC_REV=	${DISTNAME:S/gcc-//g}
-LIBSTDCPP_REV=	4
-
-.if ${OSVERSION} < 400000
-PLIST_SUB+=     CURSES:="@comment "
-.else
-PLIST_SUB+=     CURSES:=""
-.endif
+EGCS_REV=	egcs-2.91.66
+LIBSTDCPP_REV=	2.9.0
 
 .if ${PORTOBJFORMAT} == "elf"
 .if ${MACHINE_ARCH} == "i386"
-PLIST_SUB+=	ELF:=""
-.else
-PLIST_SUB+=	ELF:="@comment "
+PLIST=		${WRKDIR}/PLIST
 .endif
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .else
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsdaout${OSREL}
 .endif
 
-PLIST_SUB+=	EGCS_REV=${GCC_REV} GNU_HOST=${CONFIGURE_TARGET}
+PLIST_SUB=	EGCS_REV=${EGCS_REV} GNU_HOST=${CONFIGURE_TARGET}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-gnu-as --with-gnu-ld \
-		--with-gxx-include-dir=${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/include/g++
+		--with-gxx-include-dir=${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/include/g++
 .if defined(WANT_SHAREDLIBS)
 CONFIGURE_ARGS+= --enable-shared
 .endif
-.if defined(WANT_THREADS)
-#	?is this an ObjC only thing?
-CONFIGURE_ARGS+= --enable-threads=posix
-.endif
 ALL_TARGET=	bootstrap
-MAN1=		cccp.1 g++295.1 g77.1 gcc295.1
+MAN1=		cccp.1 g++.1 g77.1 gcc.1
 
 pre-patch:
+	@${MV} ${WRKSRC}/gcc/config/i386/t-freebsd ${WRKSRC}/gcc/config/
 	@${MV} ${WRKSRC}/gcc/config/i386/freebsd.h ${WRKSRC}/gcc/config/i386/freebsd-aout.h
 	@${MV} ${WRKSRC}/gcc/config/i386/freebsd-elf.h ${WRKSRC}/gcc/config/i386/freebsd.h
+	@${CP} ${FILESDIR}/alpha-freebsd-elf.h ${WRKSRC}/gcc/config/alpha/freebsd-elf.h
+	@${CP} ${FILESDIR}/alpha-freebsd.h ${WRKSRC}/gcc/config/alpha/freebsd.h
 
 pre-configure:
-	@(MAJ=`sysctl -n kern.osreldate | ${SED} -e '/.....$$/s///'` ; \
-	${SED} -e "s:__FreeBSD__[0-9=]*:__FreeBSD__=$${MAJ}:" ${FILESDIR}/freebsd.h \
-		>${WRKSRC}/gcc/config/freebsd.h )
-	@${CP} ${FILESDIR}/alpha-freebsd.h ${WRKSRC}/gcc/config/alpha/freebsd.h
 	@# Keep from running `autoconf' and `autoheader' since we modified
 	@# configure.in by patching it.
 	@touch ${WRKSRC}/gcc/configure
 	@touch ${WRKSRC}/gcc/cstamp-h.in
+	@(MAJ=`sysctl -n kern.osreldate | ${SED} -e '/.....$$/s///'` ; \
+	${SED} -e "s:__FreeBSD__:__FreeBSD__=$${MAJ}:" ${FILESDIR}/freebsd.h \
+		>${WRKSRC}/gcc/config/freebsd.h )
+.if ${PORTOBJFORMAT} == "elf" && ${MACHINE_ARCH} == "i386"
+	@${SED} -e 's/^@comment ELF-only://' ${PKGDIR}/pkg-plist >${PLIST}
+.endif
 
 pre-install:
 	${MKDIR} ${PREFIX}/info
@@ -83,33 +76,26 @@ post-install:
 	@${RM} -f ${PREFIX}/bin/c++
 	@${MV} -f ${PREFIX}/bin/c++filt ${PREFIX}/bin/g++filt
 	@(for prog in ${PREFIX}/bin/gcc ${PREFIX}/bin/g++ \
-		${PREFIX}/bin/g++filt ${PREFIX}/bin/g77 ${PREFIX}/bin/gcov \
-		${PREFIX}/bin/protoize ${PREFIX}/bin/unprotoize \
-		${PREFIX}/bin/${CONFIGURE_TARGET}-gcc \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/cc1 \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/cc1obj \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/cc1plus \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/cpp \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/collect2 \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/f771 ; \
-	do \
-		strip $$prog ; \
-	done)
-	${MV} ${PREFIX}/bin/gcc ${PREFIX}/bin/gcc295
-	${MV} ${PREFIX}/bin/g++ ${PREFIX}/bin/g++295
-	${MV} ${PREFIX}/bin/g77 ${PREFIX}/bin/g77
-	${MV} ${PREFIX}/bin/g++filt ${PREFIX}/bin/g++filt295
-	${RM} -f ${PREFIX}/bin/cpp
+	${PREFIX}/bin/g++filt ${PREFIX}/bin/g77 ${PREFIX}/bin/gcov \
+	${PREFIX}/bin/protoize ${PREFIX}/bin/unprotoize \
+	${PREFIX}/bin/${CONFIGURE_TARGET}-gcc \
+	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/cc1 \
+	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/cc1obj \
+	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/cc1plus \
+	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/cpp \
+	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/collect2 \
+	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/f771 ; \
+		do strip $$prog ; \
+		done)
+	ln -f ${PREFIX}/bin/gcc ${PREFIX}/bin/egcc
+	ln -f ${PREFIX}/bin/g++ ${PREFIX}/bin/eg++
 	${MV} ${PREFIX}/lib/libiberty.a  \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}
-	${MV} -f ${PREFIX}/lib/libstdc++.a.${LIBSTDCPP_REV}  \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/libstdc++.a
-	${MV} ${PREFIX}/man/man1/gcc.1 ${PREFIX}/man/man1/gcc295.1
-	${MV} ${PREFIX}/man/man1/g++.1 ${PREFIX}/man/man1/g++295.1
-	${MV} ${PREFIX}/man/man1/g77.1 ${PREFIX}/man/man1/g77.1
+		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}
+	${MV} -f ${PREFIX}/lib/libstdc++.a  \
+		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/libstdc++.a
 .if defined(WANT_SHAREDLIBS)
 	${MV} -f ${PREFIX}/lib/libstdc++.so*  \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}
+		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}
 .endif
 .for info in cpp g77 gcc
 	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
