@@ -7,6 +7,7 @@
 
 PORTNAME=	twoftpd
 PORTVERSION=	1.17
+PORTREVISION=	2
 CATEGORIES=	ftp
 MASTER_SITES=	http://untroubled.org/twoftpd/
 
@@ -15,27 +16,21 @@ COMMENT=	A simple, secure, efficient FTP server
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libbg-unix.a:${PORTSDIR}/devel/bglibs
 
-USE_REINPLACE=	yes
-
+DOCS=		NEWS README TODO
 MAN1=		twoftpd-auth.1 twoftpd-xfer.1
 
-BIN=		twoftpd-anon twoftpd-anon-conf twoftpd-auth	\
-		twoftpd-bind-port twoftpd-conf twoftpd-xfer
-
 do-configure:
-	${ECHO_CMD} "${LOCALBASE}/include/bglibs"       \
-		> ${WRKSRC}/conf-bgincs
+	${ECHO_CMD} "${LOCALBASE}/include/bglibs" > ${WRKSRC}/conf-bgincs
 	${ECHO_CMD} "${LOCALBASE}/lib"		> ${WRKSRC}/conf-bglibs
-	${ECHO_CMD} "${PREFIX}/sbin"		> ${WRKSRC}/conf-bin
+	${ECHO_CMD} "${PREFIX}/bin"		> ${WRKSRC}/conf-bin
 	${ECHO_CMD} "${MANPREFIX}/man"		> ${WRKSRC}/conf-man
 	${ECHO_CMD} "${CC} ${CFLAGS}"		> ${WRKSRC}/conf-cc
 
 do-install:
-.for FILE in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/${FILE} ${MANPREFIX}/man/man1
-.endfor
-.for FILE in ${BIN}
-	${INSTALL_PROGRAM} ${WRKSRC}/${FILE} ${PREFIX}/sbin
-.endfor
+	cd ${WRKSRC} && ./installer
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>

@@ -1,6 +1,10 @@
-sbin/twoftpd-anon
-sbin/twoftpd-anon-conf
-sbin/twoftpd-auth
-sbin/twoftpd-bind-port
-sbin/twoftpd-conf
-sbin/twoftpd-xfer
+bin/twoftpd-anon
+bin/twoftpd-anon-conf
+bin/twoftpd-auth
+bin/twoftpd-bind-port
+bin/twoftpd-conf
+bin/twoftpd-xfer
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
