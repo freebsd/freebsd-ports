@@ -59,6 +59,14 @@ INSTALL_TARGET+=	install-doc
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/features/ruby18/file.so:${PORTSDIR}/lang/ruby16-shim-ruby18
 .endif
 
+pre-install:
+.if !defined(NOPORTDOCS)
+# Cope with a bug in CURRENT's bsd.*.mk infrastructure
+	${MKDIR} ${PREFIX}/share/examples/pkgtools/bash
+	${MKDIR} ${PREFIX}/share/examples/pkgtools/tcsh
+	${MKDIR} ${PREFIX}/share/zsh/site-functions
+.endif
+
 post-install:
 	if [ ! -f ${PREFIX}/etc/pkgtools.conf ]; then \
 		${CP} -p ${PREFIX}/etc/pkgtools.conf.sample ${PREFIX}/etc/pkgtools.conf; \
