@@ -52,7 +52,7 @@ if [ x"$2" = xPRE-INSTALL ]; then
         echo "You need a user \"${user}\"."
         if yesno "Would you like me to create it" y; then
             pw useradd ${user} -g ${group} -h - -d /nonexistent \
-                -s /nonexistent -c "Listar Listserver" || exit
+                -s /nonexistent -c "Ecartis Listserver" || exit
             echo "Done."
         else
             echo "Please create it, and try again."
