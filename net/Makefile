@@ -405,6 +405,7 @@
     SUBDIR += py-libnet
     SUBDIR += py-medusa
     SUBDIR += py-pcap
+    SUBDIR += py-rrdpipe
     SUBDIR += py-rrdtool
     SUBDIR += py-smb
     SUBDIR += py-snmp
