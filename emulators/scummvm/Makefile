@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}b
 
 MAINTAINER=	flynn@energyhq.homeip.net
 
-LIB_DEPENDS=	SDL-1.1.3:${PORTSDIR}/devel/sdl12
+LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12
 
 USE_ZIP=	yes
 USE_GMAKE=	yes

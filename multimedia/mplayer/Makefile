@@ -22,7 +22,7 @@ MAINTAINER=	riggs@rrr.de
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		iconv.3:${PORTSDIR}/converters/libiconv \
-		SDL-1.1.3:${PORTSDIR}/devel/sdl12
+		SDL-1.1.4:${PORTSDIR}/devel/sdl12
 RUN_DEPENDS=	${LOCALBASE}/share/mplayer/fonts:${PORTSDIR}/graphics/mplayer-fonts
 
 NO_PACKAGE=	yes

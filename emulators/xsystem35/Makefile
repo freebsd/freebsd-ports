@@ -58,7 +58,7 @@ CONFIGURE_ARGS+=	--enable-audio=oss --with-default-output=oss
 .endif
 
 .if defined(WITH_SDL)
-LIB_DEPENDS+=   	SDL-1.1.3:${PORTSDIR}/devel/sdl12
+LIB_DEPENDS+=   	SDL-1.1.4:${PORTSDIR}/devel/sdl12
 CONFIGURE_ARGS+=	--enable-sdl
 CONFIGURE_ENV+=		SDL_CONFIG="${SDL_CONFIG}"
 .else

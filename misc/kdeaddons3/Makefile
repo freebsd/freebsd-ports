@@ -17,7 +17,7 @@ MAINTAINER?=	ports@FreeBSD.org
 BUILD_DEPENDS=	autoconf213:${PORTSDIR}/devel/autoconf213 \
 		automake14:${PORTSDIR}/devel/automake14
 LIB_DEPENDS+=	noatun.0:${PORTSDIR}/audio/kdemultimedia2 \
-		SDL-1.1.3:${PORTSDIR}/devel/sdl12
+		SDL-1.1.4:${PORTSDIR}/devel/sdl12
 
 WITH_SDL=	yes
 USE_KDEBASE_VER=2
