@@ -1,0 +1,13 @@
+--- ./src/misc/Makefile.orig	Mon Oct  7 00:02:50 2002
++++ ./src/misc/Makefile	Mon Oct  7 00:03:00 2002
+@@ -1,8 +1,7 @@
+ SHELL	= /bin/sh
+-CC	= gcc
+-OPT	= -O
++CC	?= gcc
+ DEBUG	= -g
+-CFLAGS	= $(DEFS) $(OPT) $(DEBUG)
++CFLAGS	+= $(DEFS) $(OPT) $(DEBUG)
+ LIBOBJ	= mymalloc.o error.o strerror.o split_at.o 
+ LIB	= aux_lib.a
+ BIN_DIR	= 

@@ -1,0 +1,15 @@
+--- ./src/file/Makefile.orig	Mon Oct  7 00:01:09 2002
++++ ./src/file/Makefile	Mon Oct  7 00:01:51 2002
+@@ -22,10 +22,9 @@
+ # 4. This notice may not be removed or altered.
+ 
+ SHELL	= /bin/sh
+-CC	= gcc
+-OPT	= -O
++CC	?= gcc
+ DEBUG	= -g
+-CFLAGS	= $(OPT) $(DEBUG) $(DEFS) $(DEFS_LCL)
++CFLAGS	+= $(DEBUG) $(DEFS) $(DEFS_LCL)
+ 
+ # If TASK is used with Autopsy on a CD that can be used for live
+ # analysis, uncomment the line below and set the TASK directory

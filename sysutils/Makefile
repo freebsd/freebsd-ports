@@ -204,6 +204,7 @@
     SUBDIR += su2
     SUBDIR += symlinks
     SUBDIR += syslog-ng
+    SUBDIR += task
     SUBDIR += tcplist
     SUBDIR += tdir
     SUBDIR += thefish

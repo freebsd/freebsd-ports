@@ -1,0 +1,23 @@
+bin/mactime
+bin/dcalc
+bin/dcat
+bin/dls
+bin/dstat
+bin/ffind
+bin/icat
+bin/fls
+bin/fsstat
+bin/ifind
+bin/ils
+bin/istat
+%%PORTDOCS%%share/doc/task/README
+%%PORTDOCS%%share/doc/task/fat.README
+%%PORTDOCS%%share/doc/task/filesystem.README
+%%PORTDOCS%%share/doc/task/ntfs.README
+%%PORTDOCS%%share/doc/task/timeline.README
+%%PORTDOCS%%share/doc/task/README.FIRST
+%%PORTDOCS%%share/doc/task/additional-resources
+%%PORTDOCS%%share/doc/task/bibliography
+%%PORTDOCS%%share/doc/task/help-recovering-file
+%%PORTDOCS%%share/doc/task/help-when-broken-into
+%%PORTDOCS%%@dirrm share/doc/task
