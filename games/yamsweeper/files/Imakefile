@@ -53,18 +53,18 @@ install::
 #if cppLogUser
 install::
 	MakeDir($(YAMSDIR))
-	chown $(OWNER).$(GROUP) $(YAMSDIR)
+	chown $(OWNER):$(GROUP) $(YAMSDIR)
 	touch $(LOGFILE)
-	chown $(OWNER).$(GROUP) $(LOGFILE)
+	chown $(OWNER):$(GROUP) $(LOGFILE)
 	chmod 664 $(LOGFILE)
 #endif	/* cppLogUser */
 
 #if cppHighScore
 install::
 	MakeDir($(YAMSDIR))
-	chown $(OWNER).$(GROUP) $(YAMSDIR)
+	chown $(OWNER):$(GROUP) $(YAMSDIR)
 	touch $(SCRFILE)
-	chown $(OWNER).$(GROUP) $(SCRFILE)
+	chown $(OWNER):$(GROUP) $(SCRFILE)
 	chmod 664 $(SCRFILE)
 #endif
 
