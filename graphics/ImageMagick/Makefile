@@ -3,7 +3,7 @@
 # Date created:		15 November 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.21 1997/11/05 09:46:51 tg Exp $
+# $Id: Makefile,v 1.22 1997/11/29 01:35:38 jseger Exp $
 #
 
 DISTNAME=	ImageMagick-3.9.2
@@ -29,8 +29,7 @@ WRKSRC=		${WRKDIR}/ImageMagick
 USE_IMAKE=	YES
 
 post-patch:
-	@mv ${WRKSRC}/Magick.tmpl ${WRKSRC}/Magick.tmpl.tmp
-	@sed -e "s|!!LOCALBASE!!|${LOCALBASE}|g" <${WRKSRC}/Magick.tmpl.tmp >${WRKSRC}/Magick.tmpl
+	@perl -pi -e "s|!!LOCALBASE!!|${LOCALBASE}|g;" ${WRKSRC}/Magick.tmpl
 
 pre-build:
 	@(cd ${WRKSRC}/magick; make)
