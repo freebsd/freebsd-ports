@@ -1,0 +1,12 @@
+--- Makefile.in.orig	Mon Dec 13 12:15:08 1999
++++ Makefile.in	Sun Feb  6 19:52:22 2000
+@@ -19,7 +19,8 @@
+ # Flags
+ DEBUG  = -g
+ STRIP  = -s
+-CFLAGS = -I. @DEFS@ @GCC_FLAGS@ $(DEBUG)
++CFLAGS ?= -O2
++CFLAGS += -I. @DEFS@ @GCC_FLAGS@ $(DEBUG)
+ LIBS   = @LIBS@
+ 
+ # Directories and Paths
