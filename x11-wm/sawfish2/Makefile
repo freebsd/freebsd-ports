@@ -7,7 +7,7 @@
 
 PORTNAME=	sawfish2
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -17,8 +17,7 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	rep.12:${PORTSDIR}/lang/librep \
-		Xft2.2:${PORTSDIR}/x11-fonts/Xft
+LIB_DEPENDS=	rep.12:${PORTSDIR}/lang/librep
 BUILD_DEPENDS=	${X11BASE}/libexec/rep/${GNUHOST}/gui/gtk-2/gtk.so:${PORTSDIR}/x11-toolkits/rep-gtk2
 RUN_DEPENDS=	${X11BASE}/libexec/rep/${GNUHOST}/gui/gtk-2/gtk.so:${PORTSDIR}/x11-toolkits/rep-gtk2
 
