@@ -1,0 +1,11 @@
+--- compat/rmail/Makefile.in.orig	Sun Aug 29 18:26:53 1999
++++ compat/rmail/Makefile.in	Sun Aug 29 18:27:02 1999
+@@ -15,7 +15,7 @@
+ RMAIL_LIB=	@LIBRESOLV@ @LIBSOCKET@
+ INSTALL=	@INSTALL@
+ TOPDIR=		../..
+-RMAILPATH=	$(prefix)@RMAILPATH@
++RMAILPATH=	@RMAILPATH@
+ LN_S=		"@LN_S@"
+ MKDIR=		@MKDIR@
+ #

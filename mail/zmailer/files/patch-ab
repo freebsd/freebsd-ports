@@ -1,0 +1,11 @@
+--- configure	Mon Jul 19 15:59:43 1999
++++ configure	Mon Jul 19 15:59:57 1999
+@@ -4661,7 +4661,7 @@
+ done
+ 
+ if test "$ac_cv_header_security_pam_appl_h" = "yes"; then
+-    AUTHLIB="-lpam -ldl"
++    AUTHLIB="-lpam"
+ else
+     if test "$ac_cv_header_shadow_h" = "yes"; then
+ 	AUTHLIB="-lshadow"

@@ -1,0 +1,237 @@
+etc/rc.d/zmailer.sh.sample
+etc/zmailer/db/proto/aliases
+etc/zmailer/db/proto/fqdnaliases
+etc/zmailer/db/proto/routes
+etc/zmailer/db/proto/localnames
+etc/zmailer/db/proto/smtp-policy.src
+etc/zmailer/db/proto/smtp-policy.relay
+etc/zmailer/forms/proto/bitnetgw
+etc/zmailer/forms/proto/bounce
+etc/zmailer/forms/proto/database
+etc/zmailer/forms/proto/delivery
+etc/zmailer/forms/proto/envelope
+etc/zmailer/forms/proto/expansion
+etc/zmailer/forms/proto/header
+etc/zmailer/forms/proto/headerwarn
+etc/zmailer/forms/proto/ip-number
+etc/zmailer/forms/proto/localhost
+etc/zmailer/forms/proto/loopexceeded
+etc/zmailer/forms/proto/nonewsgroup
+etc/zmailer/forms/proto/norealname
+etc/zmailer/forms/proto/norecipients
+etc/zmailer/forms/proto/unresolvable
+etc/zmailer/forms/proto/vms-in-pros
+etc/zmailer/forms/proto/wrongname
+etc/zmailer/proto/scheduler.conf
+etc/zmailer/proto/sm.conf
+etc/zmailer/proto/smtpserver.conf
+etc/zmailer/proto/router.cf
+etc/zmailer/zmailer.conf
+etc/zmailer/mail.conf.sample
+etc/zmailer/cf/SMTP+UUCP.cf
+etc/zmailer/cf/standard.cf
+etc/zmailer/cf/server.cf
+etc/zmailer/cf/rrouter.cf
+etc/zmailer/cf/process.cf
+etc/zmailer/cf/p-uucp.cf
+etc/zmailer/cf/p-usenet.cf
+etc/zmailer/cf/p-smtp.cf
+etc/zmailer/cf/p-routes.cf
+etc/zmailer/cf/p-iproutes.cf
+etc/zmailer/cf/p-ean.cf
+etc/zmailer/cf/p-bitnet.cf
+etc/zmailer/cf/map.cf
+etc/zmailer/cf/i-uucp.cf
+etc/zmailer/cf/i-smtp.cf
+etc/zmailer/cf/i-routes.cf
+etc/zmailer/cf/i-iproutes.cf
+etc/zmailer/cf/i-bitnet.cf
+etc/zmailer/cf/fuzzy-aliases.cf
+etc/zmailer/cf/fqdnalias.cf
+etc/zmailer/cf/debug.cf
+etc/zmailer/cf/crossbar.cf
+etc/zmailer/cf/UTAI.cf
+etc/zmailer/cf/consist.cf
+etc/zmailer/cf/canon.cf
+etc/zmailer/cf/aliases2.cf
+etc/zmailer/cf/aliases.cf
+etc/zmailer/cf/aliases-with-listserv-support.cf
+etc/zmailer/cf/aliases-new.cf
+etc/zmailer/cf/UToronto.cf
+etc/zmailer/cf/UTdefault.cf
+etc/zmailer/cf/UTGPU.cf
+etc/zmailer/cf/TELE-FI.cf
+etc/zmailer/cf/SMTP.cf
+etc/zmailer/cf/trusted.cf
+etc/zmailer/vacation.msg
+lib/libzmailer.a
+sbin/autoanswer.pl
+sbin/bitbucket
+sbin/dblook
+sbin/mailq
+sbin/mailrm
+sbin/make-incore.sh
+sbin/makedb
+sbin/manual-expirer
+sbin/mboxpath
+sbin/mprobe
+sbin/newaliases
+sbin/newdb
+sbin/newfqdnaliases
+sbin/policy-builder.sh
+sbin/post-install
+sbin/rmail
+sbin/rotate-logs.sh
+sbin/router
+sbin/scheduler
+sbin/sendmail
+sbin/smtpserver
+sbin/vacation
+sbin/vacation.exe
+sbin/vacation.sh
+sbin/zmailer
+sbin/ta/bitbucket
+sbin/ta/errormail
+sbin/ta/expirer
+sbin/ta/hold
+sbin/ta/listexpand
+sbin/ta/mailbox
+sbin/ta/sm
+sbin/ta/smtp
+include/zmailer.h
+@exec mkdir -p %D/etc/zmailer/lists/
+@exec mkdir -p %D/etc/zmailer/fqlists/
+@exec mkdir -p %D/etc/zmailer/forms/bak/
+@exec mkdir -p %D/etc/zmailer/cf/fc/
+@exec mkdir -p %D/etc/zmailer/bak/
+@exec mkdir -p /var/spool/postoffice/deferred
+@exec mkdir -p /var/spool/postoffice/freezer
+@exec mkdir -p /var/spool/postoffice/postman
+@exec mkdir -p /var/spool/postoffice/public
+@exec mkdir -p /var/spool/postoffice/queue/A
+@exec mkdir -p /var/spool/postoffice/queue/B
+@exec mkdir -p /var/spool/postoffice/queue/C
+@exec mkdir -p /var/spool/postoffice/queue/D
+@exec mkdir -p /var/spool/postoffice/queue/E
+@exec mkdir -p /var/spool/postoffice/queue/F
+@exec mkdir -p /var/spool/postoffice/queue/G
+@exec mkdir -p /var/spool/postoffice/queue/H
+@exec mkdir -p /var/spool/postoffice/queue/I
+@exec mkdir -p /var/spool/postoffice/queue/J
+@exec mkdir -p /var/spool/postoffice/queue/K
+@exec mkdir -p /var/spool/postoffice/queue/L
+@exec mkdir -p /var/spool/postoffice/queue/M
+@exec mkdir -p /var/spool/postoffice/queue/N
+@exec mkdir -p /var/spool/postoffice/queue/O
+@exec mkdir -p /var/spool/postoffice/queue/P
+@exec mkdir -p /var/spool/postoffice/queue/Q
+@exec mkdir -p /var/spool/postoffice/queue/R
+@exec mkdir -p /var/spool/postoffice/queue/S
+@exec mkdir -p /var/spool/postoffice/queue/T
+@exec mkdir -p /var/spool/postoffice/queue/U
+@exec mkdir -p /var/spool/postoffice/queue/V
+@exec mkdir -p /var/spool/postoffice/queue/W
+@exec mkdir -p /var/spool/postoffice/queue/X
+@exec mkdir -p /var/spool/postoffice/queue/Y
+@exec mkdir -p /var/spool/postoffice/queue/Z
+@exec mkdir -p /var/spool/postoffice/router
+@exec mkdir -p /var/spool/postoffice/transport/A
+@exec mkdir -p /var/spool/postoffice/transport/B
+@exec mkdir -p /var/spool/postoffice/transport/C
+@exec mkdir -p /var/spool/postoffice/transport/D
+@exec mkdir -p /var/spool/postoffice/transport/E
+@exec mkdir -p /var/spool/postoffice/transport/F
+@exec mkdir -p /var/spool/postoffice/transport/G
+@exec mkdir -p /var/spool/postoffice/transport/H
+@exec mkdir -p /var/spool/postoffice/transport/I
+@exec mkdir -p /var/spool/postoffice/transport/J
+@exec mkdir -p /var/spool/postoffice/transport/K
+@exec mkdir -p /var/spool/postoffice/transport/L
+@exec mkdir -p /var/spool/postoffice/transport/M
+@exec mkdir -p /var/spool/postoffice/transport/N
+@exec mkdir -p /var/spool/postoffice/transport/O
+@exec mkdir -p /var/spool/postoffice/transport/P
+@exec mkdir -p /var/spool/postoffice/transport/Q
+@exec mkdir -p /var/spool/postoffice/transport/R
+@exec mkdir -p /var/spool/postoffice/transport/S
+@exec mkdir -p /var/spool/postoffice/transport/T
+@exec mkdir -p /var/spool/postoffice/transport/U
+@exec mkdir -p /var/spool/postoffice/transport/V
+@exec mkdir -p /var/spool/postoffice/transport/W
+@exec mkdir -p /var/spool/postoffice/transport/X
+@exec mkdir -p /var/spool/postoffice/transport/Y
+@exec mkdir -p /var/spool/postoffice/transport/Z
+@dirrm etc/zmailer/db/proto
+@dirrm etc/zmailer/db
+@dirrm etc/zmailer/lists
+@dirrm etc/zmailer/fqlists
+@dirrm etc/zmailer/forms/proto
+@dirrm etc/zmailer/forms/bak
+@dirrm etc/zmailer/forms
+@dirrm etc/zmailer/proto
+@dirrm etc/zmailer/bak
+@dirrm etc/zmailer/cf/fc
+@dirrm etc/zmailer/cf
+@dirrm etc/zmailer
+@dirrm sbin/ta
+@cwd /var/spool
+@dirrm postoffice/transport/Z
+@dirrm postoffice/transport/Y
+@dirrm postoffice/transport/X
+@dirrm postoffice/transport/W
+@dirrm postoffice/transport/V
+@dirrm postoffice/transport/U
+@dirrm postoffice/transport/T
+@dirrm postoffice/transport/S
+@dirrm postoffice/transport/R
+@dirrm postoffice/transport/Q
+@dirrm postoffice/transport/P
+@dirrm postoffice/transport/O
+@dirrm postoffice/transport/N
+@dirrm postoffice/transport/M
+@dirrm postoffice/transport/L
+@dirrm postoffice/transport/K
+@dirrm postoffice/transport/J
+@dirrm postoffice/transport/I
+@dirrm postoffice/transport/H
+@dirrm postoffice/transport/G
+@dirrm postoffice/transport/F
+@dirrm postoffice/transport/E
+@dirrm postoffice/transport/D
+@dirrm postoffice/transport/C
+@dirrm postoffice/transport/B
+@dirrm postoffice/transport/A
+@dirrm postoffice/transport
+@dirrm postoffice/router
+@dirrm postoffice/queue/Z
+@dirrm postoffice/queue/Y
+@dirrm postoffice/queue/X
+@dirrm postoffice/queue/W
+@dirrm postoffice/queue/V
+@dirrm postoffice/queue/U
+@dirrm postoffice/queue/T
+@dirrm postoffice/queue/S
+@dirrm postoffice/queue/R
+@dirrm postoffice/queue/Q
+@dirrm postoffice/queue/P
+@dirrm postoffice/queue/O
+@dirrm postoffice/queue/N
+@dirrm postoffice/queue/M
+@dirrm postoffice/queue/L
+@dirrm postoffice/queue/K
+@dirrm postoffice/queue/J
+@dirrm postoffice/queue/I
+@dirrm postoffice/queue/H
+@dirrm postoffice/queue/G
+@dirrm postoffice/queue/F
+@dirrm postoffice/queue/E
+@dirrm postoffice/queue/D
+@dirrm postoffice/queue/C
+@dirrm postoffice/queue/B
+@dirrm postoffice/queue/A
+@dirrm postoffice/queue
+@dirrm postoffice/public
+@dirrm postoffice/postman
+@dirrm postoffice/freezer
+@dirrm postoffice/deferred
+@dirrm postoffice

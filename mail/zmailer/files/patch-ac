@@ -1,0 +1,10 @@
+--- Makefile.in.orig	Mon Jul 19 16:32:01 1999
++++ Makefile.in	Mon Jul 19 16:32:27 1999
+@@ -107,6 +107,7 @@
+ 	@cd transports ; $(MAKE) $(MFLAGS) install
+ 	@cd libc  ;      $(MAKE) $(MFLAGS) install
+ 	@cd utils ;      $(MAKE) $(MFLAGS) install
++	@cd man ;	 $(MAKE) $(MFLAGS) install
+ 
+ router/router:
+ 	cd router ; $(MAKE) $(MFLAGS) router-a

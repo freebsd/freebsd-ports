@@ -1,0 +1,11 @@
+--- compat/sendmail/Makefile.in.orig	Sun Aug 29 18:26:10 1999
++++ compat/sendmail/Makefile.in	Sun Aug 29 18:26:19 1999
+@@ -21,7 +21,7 @@
+ LIB=            -L$(TOPDIR)/libs -lzm -lzc
+ LIBDEB=         $(TOPDIR)/libs/libtag
+ CFLAGS=         $(COPTS) $(CPPFLAGS) $(DEFS) $(INCL) $(SENDMAIL_INCL)
+-SENDMAILPATH=	$(prefix)@SENDMAILPATH@
++SENDMAILPATH=	@SENDMAILPATH@
+ 
+ SOURCE=		sendmail.c
+ 
