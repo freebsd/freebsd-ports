@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.76 1998/05/26 04:04:19 mph Exp $
+# $Id: Makefile,v 1.77 1998/06/07 06:07:52 vanilla Exp $
 #
 
     SUBDIR += EZWGL
@@ -22,6 +22,7 @@
     SUBDIR += giftool
     SUBDIR += giftrans
     SUBDIR += gimp-devel
+    SUBDIR += gimp-manual
     SUBDIR += gimp1
     SUBDIR += gplot
     SUBDIR += graphviz
