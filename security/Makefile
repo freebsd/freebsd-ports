@@ -205,6 +205,7 @@
     SUBDIR += p5-Digest-BubbleBabble
     SUBDIR += p5-Digest-HMAC
     SUBDIR += p5-Digest-MD2
+    SUBDIR += p5-Digest-MD4
     SUBDIR += p5-Digest-MD5
     SUBDIR += p5-Digest-Nilsimsa
     SUBDIR += p5-Digest-SHA1
