@@ -32,6 +32,7 @@ ALL_TARGET=
 NO_MTREE=	yes
 INSTALLS_SHLIB=	yes
 NOT_FOR_ARCHS=	ia64
+IGNORE=		"This port is obsolete with gnustep-1.5.2"
 
 .if ${MACHINE_ARCH} == "i386"
 GNU_ARCH=	ix86
