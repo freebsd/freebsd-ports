@@ -1,0 +1,33 @@
+--- postinstall.freebsd.sh.orig	Mon Jun 17 22:10:17 2002
++++ postinstall.freebsd.sh	Fri Mar  7 15:54:41 2003
+@@ -56,7 +56,7 @@
+     cp lpd.conf ${hold}/lpd.conf.sample
+     cp printcap ${hold}/printcap.sample
+     if [ "$INIT" != no ] ; then
+-        cp init.freebsd ${hold}/lprng.sh
++        cp init.freebsd ${hold}/rc.d/lprng.sh
+     fi
+ elif [ "X$MAKEINSTALL" = XYES ] ; then
+ 	# we have the port pre-install operation
+@@ -81,8 +81,8 @@
+ 		if [ -f /etc/rc.conf ] ; then
+ 			perl -spi.bak -e 's/^lpd_enable/#lpd_enable/;' ${DESTDIR}/etc/rc.conf 
+ 		fi
+-		cp init.freebsd ${hold}/lprng.sh
+-		init=${DESTDIR}/usr/local/etc/rc.d/lprng.sh
++		cp init.freebsd ${hold}/rc.d/lprng.sh
++		init=${DESTDIR}${PREFIX}/etc/rc.d/lprng.sh
+ 		echo "Setting up init script $init using init.freebsd"
+ 		if [ ! -d `dirname $init` ] ; then mkdir -p `dirname $init ` ; fi;
+ 		rm -f $init
+@@ -107,8 +107,8 @@
+         fix ${hold}/lpd.conf "${LPD_CONF_PATH}"
+         fix ${hold}/printcap "${PRINTCAP_PATH}"
+ 		if [ "$INIT" != no ] ; then
+-			init=/usr/local/etc/rc.d/lprng.sh
+-			cp ${hold}/lprng.sh $init;
++			init=${DESTDIR}${PREFIX}/etc/rc.d/lprng.sh
++			cp ${hold}/rc.d/lprng.sh $init;
+ 			chmod 755 $init;
+ 			if [ -f /etc/rc.conf ] ; then
+ 				perl -spi.bak -e 's/^lpd_enable/#lpd_enable/;' /etc/rc.conf 
