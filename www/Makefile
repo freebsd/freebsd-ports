@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.61 1995/11/09 07:41:00 asami Exp $
+# $Id: Makefile,v 1.1 1995/11/26 21:50:10 asami Exp $
 #
 
 RESTRICTED += Mosaic         # requires Motif
@@ -7,6 +7,7 @@ RESTRICTED += ashe           # requires Motif
     SUBDIR += cern_httpd
     SUBDIR += cern_linemode
     SUBDIR += chimera
+    SUBDIR += comline
     SUBDIR += gn
     SUBDIR += lynx
     SUBDIR += netscape
