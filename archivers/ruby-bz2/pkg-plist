@@ -36,9 +36,9 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BZ2/Reader.src/M000026.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BZ2/Reader.src/M000027.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BZ2/Reader.src/M000028.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BZ2/Reader.src/M000029.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BZ2/Reader.src/M000030.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BZ2/Writer.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BZ2/Writer.src/M000029.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BZ2/Writer.src/M000030.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BZ2/Writer.src/M000031.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BZ2/Writer.src/M000032.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BZ2/Writer.src/M000033.html
@@ -50,10 +50,6 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BZ2/Writer.src/M000039.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BZ2/Writer.src/M000040.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BZ2/Writer.src/M000041.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BZ2/Writer.src/M000042.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BZ2/Writer.src/M000043.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BZ2/Writer.src/M000044.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BZ2/Writer.src/M000045.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/created.rid
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/bz2_rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/fr_class_index.html
