@@ -1,23 +1,7 @@
---- Makefile.orig	Thu Feb 19 00:42:14 1998
-+++ Makefile	Fri Aug 11 11:40:08 2000
-@@ -1,17 +1,21 @@
- VERSION = 1.0.2
- VERSION_DEFINE = '-DPPTP_LINUX_VERSION="${VERSION}"'
- 
--CC	= gcc -Wall
--DEBUG	= -g
-+CC	= gcc
-+DEBUG	=
- INCLUDE =
--CFLAGS  = -O9 $(VERSION_DEFINE) $(DEBUG) $(INCLUDE)
-+CFLAGS  = -O $(VERSION_DEFINE) $(DEBUG) $(INCLUDE)
- LIBS	=
- LDFLAGS	=
-+RM	= rm -f
-+
-+# This is the directory where pptp gets installed:
-+PPTP_BINDIR	= ${PREFIX}/sbin
- 
+diff -ur dist/pptp-linux-1.0.3/Makefile work/pptp-linux-1.0.3/Makefile
+--- dist/pptp-linux-1.0.3/Makefile	Mon May  7 05:19:34 2001
++++ Makefile	Thu May 10 00:43:58 2001
+@@ -11,12 +11,12 @@
  #################################################################
  # CHANGE THIS LINE to point to the location of your pppd binary.
  
@@ -26,23 +10,10 @@
  #################################################################
  
  PPTP_BIN = pptp
-@@ -24,7 +28,7 @@
- CALLMGR_OBJS = pptp_callmgr.o pptp_ctrl.o dirutil.o util.o vector.o version.o
- CALLMGR_DEPS = pptp_callmgr.h pptp_ctrl.h dirutil.h pptp_msg.h vector.h
+-PPTP_OBJS = pptp.o pptp_gre.o ppp_fcs.o pty.o \
++PPTP_OBJS = pptp.o pptp_gre.o ppp_fcs.o \
+             pptp_ctrl.o dirutil.o vector.o \
+             inststr.o util.o version.o
+-PPTP_DEPS = pptp_callmgr.h pptp_gre.h ppp_fcs.h pty.h util.h
++PPTP_DEPS = pptp_callmgr.h pptp_gre.h ppp_fcs.h util.h
  
--all: $(PPTP_BIN) $(CALLMGR_BIN)
-+all: $(PPTP_BIN)
- 
- $(PPTP_BIN): $(PPTP_OBJS) $(PPTP_DEPS)
- 	$(CC) -o $(PPTP_BIN) $(PPTP_OBJS) $(LDFLAGS) $(LIBS)
-@@ -34,6 +38,10 @@
- 
- vector_test: vector_test.o vector.o
- 	$(CC) -o vector_test vector_test.o vector.o
-+
-+install: all
-+	test -d $(PPTP_BINDIR) || mkdir -p $(PPTP_BINDIR)
-+	install -c -s -o root -g wheel -m 755 $(PPTP_BIN) $(PPTP_BINDIR)
- 
- clean:
- 	$(RM) *.o *~
