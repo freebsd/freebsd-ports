@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liece
-PORTVERSION=	1.4.8
+PORTVERSION=	1.4.9
 CATEGORIES=	irc elisp
 MASTER_SITES=	http://www.unixuser.org/~ueno/liece/dist/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -48,7 +48,6 @@ DOCS=		AUTHORS lisp/ChangeLog
 
 post-build:
 	(cd ${WRKSRC}/etc/po ; msgfmt -o liece.mo ja.po)
-	(cd ${WRKSRC}/etc ; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} sample.dot.emacs)
 post-install:
 	(cd ${WRKSRC}/etc ; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install)
 	${MKDIR} ${PREFIX}/${LIECE_ETCDIR}/icons
@@ -56,7 +55,6 @@ post-install:
 	${LN} -sf ja ${PREFIX}/${LIECE_ETCDIR}/locale/ja_JP.EUC
 	${LN} -sf ja ${PREFIX}/${LIECE_ETCDIR}/locale/ja_JP.eucJP
 .if !defined(NOPORTDOCS)
-#	${INSTALL_DATA} ${WRKSRC}/etc/sample.dot.emacs ${PREFIX}/${LIECE_ETCDIR}/
 	${MKDIR} ${PREFIX}/${LIECE_ETCDIR}/doc
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/${LIECE_ETCDIR}/doc/

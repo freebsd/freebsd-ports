@@ -25,13 +25,13 @@
 %%LIECE_ETCDIR%%/styles/bottom
 %%LIECE_ETCDIR%%/styles/middle
 %%LIECE_ETCDIR%%/styles/top
+%%LIECE_ETCDIR%%/gnu-emacs-user-config
 %%PORTDOCS%%@unexec install-info --delete --section="%%DIRSECTION%%" --entry="%%INFOENTRY%%" %D/info/liece.info %D/info/dir
 %%PORTDOCS%%info/liece.info
 %%PORTDOCS%%@exec install-info --section="%%DIRSECTION%%" --entry="%%INFOENTRY%%" %D/info/liece.info %D/info/dir
 %%PORTDOCS%%%%LIECE_ETCDIR%%/doc/AUTHORS
 %%PORTDOCS%%%%LIECE_ETCDIR%%/doc/ChangeLog
 %%PORTDOCS%%@dirrm %%LIECE_ETCDIR%%/doc
-%%PORTDOCS%%%%LIECE_ETCDIR%%/sample.dot.emacs
 @dirrm %%LIECE_ETCDIR%%/icons
 @dirrm %%LIECE_ETCDIR%%/locale/ja/LC_MESSAGES
 @dirrm %%LIECE_ETCDIR%%/locale/ja
@@ -92,8 +92,6 @@
 %%LIECE_LISPDIR%%/liece-misc.elc
 %%LIECE_LISPDIR%%/liece-nick.el
 %%LIECE_LISPDIR%%/liece-nick.elc
-%%LIECE_LISPDIR%%/liece-q-ccl.el
-%%LIECE_LISPDIR%%/liece-q-ccl.elc
 %%LIECE_LISPDIR%%/liece-q-el.el
 %%LIECE_LISPDIR%%/liece-q-el.elc
 %%LIECE_LISPDIR%%/liece-setup.el
