@@ -1,0 +1,17 @@
+--- ../Drone/Settings	2000/12/14 09:12:17	1.1
++++ ../Drone/Settings	2000/12/14 09:12:54
+@@ -15,12 +15,12 @@
+ 
+   MessagePosition = "205, 280";
+   MessageJustification = Center;
+-  MessageFont = "-*-utopia-regular-*-*-*-18-*-*-*-*-*-*-*";
++  MessageFont = "-*-utopia-regular-*-*-*-19-*-*-*-*-*-*-*";
+   MessageColor = "grey20";
+ 
+   HostnamePosition = "203, 249";
+   HostnameJustification = center;
+-  HostnameFont = "-*-utopia-regular-*-*-*-18-*-*-*-*-*-*-*";
++  HostnameFont = "-*-utopia-regular-*-*-*-19-*-*-*-*-*-*-*";
+   HostnameColor = "grey30";
+ 
+   InputFont = "-*-helvetica-medium-r-*-*-18-*-*-*-*-*-*-*";

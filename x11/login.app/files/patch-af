@@ -12,7 +12,7 @@
 -  XServer = "/usr/X11R6/bin/X -nolisten tcp";
 -  Theme = "Linux";
 +  XServer = "%%X11BASE%%/bin/X -nolisten tcp";
-+  Theme = "GNUstep";
++  Theme = "Drone";
  
    DisableWelcomeMessage = Yes;
    DisableUserShutdown = No;
