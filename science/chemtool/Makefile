@@ -20,7 +20,7 @@ USE_GNOME=	gtk12
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libEMF" \
+CONFIGURE_ENV=	CFLAGS+="-I${LOCALBASE}/include -I${LOCALBASE}/include/libEMF" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS= --enable-emf=yes
 
