@@ -41,6 +41,20 @@ share/freeciv/engels/units.xpm
 share/freeciv/engels_shields.tilespec
 share/freeciv/freeciv.rc
 share/freeciv/helpdata.txt
+share/freeciv/hires.tilespec
+share/freeciv/hires/cities.spec
+share/freeciv/hires/cities.xpm
+share/freeciv/hires/icons.spec
+share/freeciv/hires/icons.xpm
+share/freeciv/hires/nuke.spec
+share/freeciv/hires/nuke.xpm
+share/freeciv/hires/terrain1.spec
+share/freeciv/hires/terrain1.xpm
+share/freeciv/hires/terrain2.spec
+share/freeciv/hires/terrain2.xpm
+share/freeciv/hires/tiles.spec
+share/freeciv/hires/units.spec
+share/freeciv/hires/units.xpm
 share/freeciv/misc/chiefs.spec
 share/freeciv/misc/chiefs.xpm
 share/freeciv/misc/intro.xpm
@@ -65,8 +79,11 @@ share/freeciv/nation/boer.ruleset
 share/freeciv/nation/brazilian.ruleset
 share/freeciv/nation/canadian.ruleset
 share/freeciv/nation/carthaginian.ruleset
+share/freeciv/nation/catalan.ruleset
+share/freeciv/nation/chilean.ruleset
 share/freeciv/nation/chinese.ruleset
 share/freeciv/nation/cornish.ruleset
+share/freeciv/nation/croatian.ruleset
 share/freeciv/nation/czech.ruleset
 share/freeciv/nation/danish.ruleset
 share/freeciv/nation/dunedain.ruleset
@@ -101,7 +118,11 @@ share/freeciv/nation/portuguese.ruleset
 share/freeciv/nation/roman.ruleset
 share/freeciv/nation/russian.ruleset
 share/freeciv/nation/scottish.ruleset
+share/freeciv/nation/serbian.ruleset
+share/freeciv/nation/silesian.ruleset
+share/freeciv/nation/singaporean.ruleset
 share/freeciv/nation/sioux.ruleset
+share/freeciv/nation/slovenian.ruleset
 share/freeciv/nation/spanish.ruleset
 share/freeciv/nation/swedish.ruleset
 share/freeciv/nation/thai.ruleset
@@ -111,6 +132,7 @@ share/freeciv/nation/vietnamese.ruleset
 share/freeciv/nation/viking.ruleset
 share/freeciv/nation/welsh.ruleset
 share/freeciv/nation/zulu.ruleset
+share/freeciv/scenario/british-isles-80x76-v2.51.sav
 share/freeciv/scenario/earth-160x90-v1.sav
 share/freeciv/scenario/earth-160x90-v2.sav
 share/freeciv/scenario/earth-80x50-v1.sav
@@ -144,13 +166,14 @@ share/locale/pl/LC_MESSAGES/freeciv.mo
 share/locale/pt/LC_MESSAGES/freeciv.mo
 share/locale/pt_BR/LC_MESSAGES/freeciv.mo
 share/locale/ru/LC_MESSAGES/freeciv.mo
-@dirrm share/freeciv/civ1
-@dirrm share/freeciv/civ2
-@dirrm share/freeciv/classic
-@dirrm share/freeciv/default
-@dirrm share/freeciv/engels
-@dirrm share/freeciv/misc
-@dirrm share/freeciv/nation
-@dirrm share/freeciv/scenario
 @dirrm share/freeciv/trident
+@dirrm share/freeciv/scenario
+@dirrm share/freeciv/nation
+@dirrm share/freeciv/misc
+@dirrm share/freeciv/hires
+@dirrm share/freeciv/engels
+@dirrm share/freeciv/default
+@dirrm share/freeciv/classic
+@dirrm share/freeciv/civ2
+@dirrm share/freeciv/civ1
 @dirrm share/freeciv
