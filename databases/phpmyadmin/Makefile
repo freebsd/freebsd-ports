@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	phpMyAdmin
-PORTVERSION=	2.5.7
+PORTVERSION=	2.5.7.1
 CATEGORIES=	databases www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phpmyadmin
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.)$/-pl\1/}
 
 MAINTAINER=	m.seaman@infracaninophile.co.uk
 COMMENT=	A set of PHP-scripts to administer MySQL over the web
