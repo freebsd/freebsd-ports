@@ -21,6 +21,6 @@ PERL_CONFIGURE=	YES
 MAN3=		Net::XWhois.3
 
 post-patch:
-	@${FIND} ${WRKSRC} -type f -name -a "*.orig" -delete
+	@${FIND} ${WRKSRC} -type f -name "*.orig" -delete
 
 .include <bsd.port.mk>
