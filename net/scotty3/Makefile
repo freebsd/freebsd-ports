@@ -3,7 +3,7 @@
 # Date created:		18 Februar 1995
 # Whom:			Gennady Sorokopud <gena@netvision.net.il>
 #
-# $Id: Makefile,v 1.5 1995/04/18 05:42:21 asami Exp $
+# $Id: Makefile,v 1.6 1995/04/24 08:26:50 asami Exp $
 #
 
 DISTNAME=	scotty-1.2.0
@@ -21,7 +21,7 @@ EXEC_DEPENDS=	wishx:${PORTSDIR}/lang/tclX
 HAS_CONFIGURE=  yes
 GNU_CONFIGURE=  yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS= --with-x --prefix=${PREFIX} --with-tcl-include=${PORTSDIR}/lang/tcl/work/tcl7.3 --with-tcl-library=${PORTSDIR}/lang/tcl/work/tcl7.3 --with-tk-include=${PORTSDIR}/x11/tk/work/tk3.6 --with-tk-library=${PORTSDIR}/x11/tk/work/tk3.6 --with-blt-library=${PORTSDIR}/lang/tclX/work/tclX7.3b/tclmaster/lib
+CONFIGURE_ARGS= --with-x --prefix=${PREFIX}
 
 pre-configure:
 	@find ${WRKSRC} -name Makefile.in -exec ${SCRIPTDIR}/untrue \{} \;
