@@ -1,0 +1,9 @@
+Data::TemporaryBag module provides a bag object class
+handling long size data.  The short size data are kept on
+memory.  When the data size becomes over $Threshold size,
+they are saved into a temporary file internally.
+
+WWW: http://search.cpan.org/search?dist=Data-TemporaryBag
+
+-- Sergey Skvortsov
+skv@protey.ru
