@@ -3,7 +3,7 @@
 # Date created:		17 July 96
 # Whom:			james@bdd.net
 #
-# $Id: Makefile,v 1.9 1996/09/03 17:31:01 jfitz Exp $
+# $Id: Makefile,v 1.10 1996/09/30 20:29:12 jfitz Exp $
 #
 
 DISTNAME=	as-b33
@@ -26,6 +26,7 @@ post-install:
 		${INSTALL_DATA} ${WRKSRC}/backgrounds/* ${PREFIX}/lib/X11/afterstep/backgrounds/
 		@ ${MKDIR} -p ${PREFIX}/lib/X11/afterstep/sounds/
 		${INSTALL_DATA} ${WRKSRC}/sounds/* ${PREFIX}/lib/X11/afterstep/sounds/
+		@ ${MKDIR} -p ${PREFIX}/include/X11/pixmaps/
 		${INSTALL_DATA} ${WRKSRC}/icons/*.xpm ${PREFIX}/include/X11/pixmaps/
 		${INSTALL_DATA} ${WRKSRC}/icons/8bit/*.xpm ${PREFIX}/include/X11/pixmaps/
 		@ ${MKDIR} -p ${PREFIX}/lib/X11/afterstep/doc/
