@@ -175,7 +175,6 @@
     SUBDIR += postgresql-pltcl
     SUBDIR += postgresql-tcltk
     SUBDIR += postgresql7
-    SUBDIR += postgresql7-client
     SUBDIR += postgresql72
     SUBDIR += postgresql73
     SUBDIR += postgresql_autodoc
