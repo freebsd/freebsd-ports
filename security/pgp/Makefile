@@ -5,7 +5,7 @@
 # Date created:         8 Jul 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.21 1998/09/25 10:20:21 asami Exp $
+# $Id: Makefile,v 1.22 1999/02/03 11:11:56 asami Exp $
 #
 
 # Pick an initial default, else it doesn't get set in the INDEX.
@@ -76,7 +76,7 @@ FILESDIR=       ${.CURDIR}/files.non_usa
 PATCHDIR=       ${.CURDIR}/patches.non_usa
 
 post-extract:
-	cd ${WRKDIR}; $(EXTRACT_CMD) -xf pgp263ii.tar; \
+	cd ${WRKDIR}; $(TAR) -xf pgp263ii.tar; \
 		rm -f pgp263ii.tar
 
 .endif
