@@ -45,7 +45,7 @@
  # For linking (configure script will modify this line)
  # xmkmf et imake informations are take into account.
 -LIBS = @LIBS@ -lm
-+LIBS = @LIBS@ -lm -lcompat
++LIBS = @LIBS@ -lX11 -lm -lcompat
  
  all:demo
  
