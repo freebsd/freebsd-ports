@@ -94,12 +94,21 @@ share/gnome/gnome-panel/glade/panel-test-applets.glade
 share/gnome/help/clock/C/clock.xml
 share/gnome/help/clock/C/figures/clock_applet.png
 share/gnome/help/clock/C/legal.xml
+share/gnome/help/clock/ja/clock.xml
+share/gnome/help/clock/ja/figures/clock_applet.png
+share/gnome/help/clock/ja/legal.xml
 share/gnome/help/fish-applet-2/C/figures/fish_applet.png
 share/gnome/help/fish-applet-2/C/fish-applet-2.xml
 share/gnome/help/fish-applet-2/C/legal.xml
+share/gnome/help/fish-applet-2/ja/figures/fish_applet.png
+share/gnome/help/fish-applet-2/ja/fish-applet-2.xml
+share/gnome/help/fish-applet-2/ja/legal.xml
 share/gnome/help/mailcheck/C/figures/mailcheck_applet.png
 share/gnome/help/mailcheck/C/legal.xml
 share/gnome/help/mailcheck/C/mailcheck.xml
+share/gnome/help/mailcheck/ja/figures/mailcheck_applet.png
+share/gnome/help/mailcheck/ja/legal.xml
+share/gnome/help/mailcheck/ja/mailcheck.xml
 share/gnome/help/notification-area/C/figures/notification-area.png
 share/gnome/help/notification-area/C/legal.xml
 share/gnome/help/notification-area/C/notification-area.xml
@@ -107,22 +116,39 @@ share/gnome/help/window-list/C/figures/window_list_applet.png
 share/gnome/help/window-list/C/figures/window_list_group_applet.png
 share/gnome/help/window-list/C/legal.xml
 share/gnome/help/window-list/C/window-list.xml
+share/gnome/help/window-list/ja/figures/window_list_applet.png
+share/gnome/help/window-list/ja/figures/window_list_group_applet.png
+share/gnome/help/window-list/ja/legal.xml
+share/gnome/help/window-list/ja/window-list.xml
 share/gnome/help/workspace-switcher/C/figures/workspace_switcher_applet.png
 share/gnome/help/workspace-switcher/C/legal.xml
 share/gnome/help/workspace-switcher/C/workspace-switcher.xml
+share/gnome/help/workspace-switcher/ja/figures/workspace_switcher_applet.png
+share/gnome/help/workspace-switcher/ja/legal.xml
+share/gnome/help/workspace-switcher/ja/workspace-switcher.xml
 share/gnome/idl/gnome-panel-2.0/GNOME_Panel.idl
 share/gnome/omf/gnome-panel/clock-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/clock-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/clock-ja.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/clock-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/fish-applet-2-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/fish-applet-2-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/fish-applet-2-ja.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/fish-applet-2-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/mailcheck-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/mailcheck-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/mailcheck-ja.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/mailcheck-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/notification-area-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/notification-area-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/window-list-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/window-list-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/window-list-ja.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/window-list-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/workspace-switcher-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/workspace-switcher-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-panel/workspace-switcher-ja.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/workspace-switcher-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/panel/gnome-panel-preferences.glade
 share/gnome/panel/gnome-panel-screenshot.glade
 share/gnome/pixmaps/fish/fishanim.png
@@ -148,9 +174,11 @@ share/locale/da/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/de/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/el/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/en_GB/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/eo/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/es/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/et/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/eu/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/fa/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/fi/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/fr/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ga/LC_MESSAGES/gnome-panel-2.0.mo
@@ -160,6 +188,7 @@ share/locale/hu/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/it/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ja/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ko/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/li/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/lt/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/lv/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/mk/LC_MESSAGES/gnome-panel-2.0.mo
@@ -188,21 +217,31 @@ share/locale/zh_CN/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-panel-2.0.mo
 @dirrm share/gnome/omf/gnome-panel
 @dirrm share/gnome/idl/gnome-panel-2.0
+@dirrm share/gnome/help/workspace-switcher/ja/figures
+@dirrm share/gnome/help/workspace-switcher/ja
 @dirrm share/gnome/help/workspace-switcher/C/figures
 @dirrm share/gnome/help/workspace-switcher/C
 @dirrm share/gnome/help/workspace-switcher
+@dirrm share/gnome/help/window-list/ja/figures
+@dirrm share/gnome/help/window-list/ja
 @dirrm share/gnome/help/window-list/C/figures
 @dirrm share/gnome/help/window-list/C
 @dirrm share/gnome/help/window-list
 @dirrm share/gnome/help/notification-area/C/figures
 @dirrm share/gnome/help/notification-area/C
 @dirrm share/gnome/help/notification-area
+@dirrm share/gnome/help/mailcheck/ja/figures
+@dirrm share/gnome/help/mailcheck/ja
 @dirrm share/gnome/help/mailcheck/C/figures
 @dirrm share/gnome/help/mailcheck/C
 @dirrm share/gnome/help/mailcheck
+@dirrm share/gnome/help/fish-applet-2/ja/figures
+@dirrm share/gnome/help/fish-applet-2/ja
 @dirrm share/gnome/help/fish-applet-2/C/figures
 @dirrm share/gnome/help/fish-applet-2/C
 @dirrm share/gnome/help/fish-applet-2
+@dirrm share/gnome/help/clock/ja/figures
+@dirrm share/gnome/help/clock/ja
 @dirrm share/gnome/help/clock/C/figures
 @dirrm share/gnome/help/clock/C
 @dirrm share/gnome/help/clock
@@ -253,8 +292,13 @@ share/locale/zh_TW/LC_MESSAGES/gnome-panel-2.0.mo
 @dirrm etc/gconf/gconf.xml.defaults/apps/panel
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnome_panel_screenshot
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/clock-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/clock-ja.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/fish-applet-2-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/fish-applet-2-ja.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/mailcheck-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/mailcheck-ja.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/notification-area-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/window-list-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/window-list-ja.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/workspace-switcher-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/workspace-switcher-ja.omf 2>/dev/null || /usr/bin/true
