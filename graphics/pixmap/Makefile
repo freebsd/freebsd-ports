@@ -14,11 +14,14 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	jmz@FreeBSD.org
 
-BROKEN=		"Does not build with XFree86-4"
+.include <bsd.port.pre.mk>
+.if ${XFREE86_VERSION} == 4 # requires rgb.txt
+BUILD_DEPENDS=	xrdb:${PORTSDIR}/x11/XFree86-4-clients
+.endif
 
 WRKSRC=		${WRKDIR}/pixmap
 USE_IMAKE=	yes
 USE_XPM=	yes
 MAN1=		pixmap.1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
