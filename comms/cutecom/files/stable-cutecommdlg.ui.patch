@@ -1,0 +1,24 @@
+--- cutecommdlg.ui.orig	Tue Jul 13 21:24:38 2004
++++ cutecommdlg.ui	Thu Jul 15 01:47:55 2004
+@@ -241,21 +241,6 @@
+                             <string>230400</string>
+                         </property>
+                     </item>
+-                    <item>
+-                        <property name="text">
+-                            <string>460800</string>
+-                        </property>
+-                    </item>
+-                    <item>
+-                        <property name="text">
+-                            <string>576000</string>
+-                        </property>
+-                    </item>
+-                    <item>
+-                        <property name="text">
+-                            <string>921600</string>
+-                        </property>
+-                    </item>
+                     <property name="name">
+                         <cstring>m_baudCb</cstring>
+                     </property>
