@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	moinmoin
-PORTVERSION=	0.9
+PORTVERSION=	0.10
 CATEGORIES=	www python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	moin
-DISTNAME=	${PORTNAME:S/m/M/g}-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
+DISTNAME=	moin-${PORTVERSION}
 
-MAINTAINER=	perky@python.or.kr
+MAINTAINER=	perky@fallin.lv
 
 USE_PYTHON=	yes
 PLIST_SUB+=	PYTHON_SITELIB=${PYTHON_SITELIBDIR:S|^${LOCALBASE}/||}
@@ -22,21 +21,19 @@ CGIUSER?=	moinmoin
 CGIUSERID?=	192
 SUID_WRAPPER=	moin
 
-WIKI_WRKSRC=	${WRKSRC}/wiki-moinmoin
-LIB_TARGET=	${PYTHON_SITELIBDIR}/MoinMoin
-LIB_DIRS=	action formatter i18n macro parser py15 support twisted webapi .
+WIKI_WRKSRC=	${WRKSRC}/MoinMoin/wiki-moinmoin
 CGI_TARGET=	${PREFIX}/www/cgi-bin/moin
 CGI_FILES=	${SUID_WRAPPER} moin.cgi moin_config.py data
 CONTENT_TARGET=	${PREFIX}/www/data/moin
 CONTENT_FILES=	PythonPowered.gif default.css img moinmoin.gif index.html
+SETUP_CMD=	cd ${WRKSRC} && ${PYTHON_CMD} setup.py
 
 do-configure:
 	@# Add the username, uid, group and gid
 	${SH} ${FILESDIR}/configure.sh ${CGIUSER} ${CGIUSERID}
 
 do-build:
-	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
-	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
+	${SETUP_CMD} build
 	@# Compile setuid wrapper
 	${CC} ${CFLAGS} -o ${WIKI_WRKSRC}/${SUID_WRAPPER} \
 		-DPYTHON_PATH='"${PYTHON_CMD}"' \
@@ -45,13 +42,10 @@ do-build:
 
 do-install:
 	@# Install MoinMoin library
-	${MKDIR} ${LIB_TARGET}
-.for dir in ${LIB_DIRS}
-	${MKDIR} ${LIB_TARGET}/${dir}
-	${INSTALL_DATA} ${WRKSRC}/${dir}/*.py* ${LIB_TARGET}/${dir}
-.endfor
+	${SETUP_CMD} install
+
 	@# Install CGI files and set permissions
-	${MKDIR} ${CGI_TARGET}
+	${MKDIR} ${CGI_TARGET}/data/backup
 	cd ${WIKI_WRKSRC} && ${CP} -Rp ${CGI_FILES} ${CGI_TARGET}/
 	${CHOWN} -R ${CGIUSER}:${CGIUSER} ${CGI_TARGET}/data \
 		${CGI_TARGET}/${SUID_WRAPPER}
