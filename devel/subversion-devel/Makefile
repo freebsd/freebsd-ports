@@ -5,40 +5,35 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	r727
+PORTVERSION=	r1302
 CATEGORIES=	devel
-MASTER_SITES=	# empty
-DISTFILES=	# empty
-EXTRACT_ONLY=	# empty
+MASTER_SITES=	http://www.tigris.org/files/15/48/
 
 MAINTAINER=	rooneg@electricjellyfish.net
 
-NO_BUILD=	nothing to build
-NO_INSTALL=	nothing to install
-NO_CDROM=	nothing to ship
-NO_PACKAGE=	nothing to package here yet
+LIB_DEPENDS=	db4:${PORTSDIR}/databases/db4 \
+		neon.18:${PORTSDIR}/www/neon
 
-RESTRICTED=	yes
+RUN_DEPENDS=	gdiff:${PORTSDIR}/textproc/diffutils \
+		gpatch:${PORTSDIR}/devel/patch
 
-do-extract:
-	@${MKDIR} ${WRKDIR}
-	@${ECHO} "*************************************************************"
-	@${ECHO}
-	@${ECHO} "The current release of the FreeBSD port of Subversion is"
-	@${ECHO} "available from http://electricjellyfish.net/subversion.tar.gz"
-	@${ECHO} "and from the main Subversion svn repository at"
-	@${ECHO} "http://svn.collab.net/repos/svn.  By request of its"
-	@${ECHO} "developers it is not being distributed with the ports tree"
-	@${ECHO} "until the project makes its first beta release."
-	@${ECHO}
-	@${ECHO} "THERE IS NOTHING TO BUILD HERE.  USE THIS:"
-	@${ECHO}
-	@${ECHO} "	http://electricjellyfish.net/subversion.tar.gz"
-	@${ECHO}
-	@${ECHO} "Check out Subversion's website too:"
-	@${ECHO}
-	@${ECHO} "	http://subversion.tigris.org/"
-	@${ECHO}
-	@${ECHO} "*************************************************************"
+BUILD_DEPENDS=	gdiff:${PORTSDIR}/textproc/diffutils \
+		gpatch:${PORTSDIR}/devel/patch \
+
+MAN1=		svn.1
+
+WRKSRC=	${WRKDIR}/subversion-r1302
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS= --disable-shared --with-ssl --with-neon=${LOCALBASE}
+
+post-extract:
+	@${PERL} -pi -e 's/ldb/ldb4/g' ${WRKSRC}/configure
+	@${PERL} -pi -e 's/external-install//g' ${WRKSRC}/Makefile.in
+	@${RM} -r ${WRKSRC}/neon
+
+post-configure:
+	@${PERL} -pi -e 's/install-swig-py-lib//g' ${WRKSRC}/Makefile
+	@${PERL} -pi -e 's/swig-py-lib//g' ${WRKSRC}/Makefile
+	@${PERL} -pi -e 's/cd expat-lite ;/#/g' ${WRKSRC}/build-outputs.mk
 
 .include <bsd.port.mk>
