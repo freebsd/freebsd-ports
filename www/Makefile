@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
 
+    SUBDIR += MT
     SUBDIR += Mosaic         # requires Motif
     SUBDIR += WebMagick
     SUBDIR += abcache

@@ -1,0 +1,367 @@
+%%CGIDIR%%/extlib/Apache/SOAP.pm
+%%CGIDIR%%/extlib/Apache/XMLRPC/Lite.pm
+%%CGIDIR%%/extlib/Bundle/LWP.pm
+%%CGIDIR%%/extlib/CGI.pm
+%%CGIDIR%%/extlib/CGI/Apache.pm
+%%CGIDIR%%/extlib/CGI/Carp.pm
+%%CGIDIR%%/extlib/CGI/Cookie.pm
+%%CGIDIR%%/extlib/CGI/Fast.pm
+%%CGIDIR%%/extlib/CGI/Pretty.pm
+%%CGIDIR%%/extlib/CGI/Push.pm
+%%CGIDIR%%/extlib/CGI/Switch.pm
+%%CGIDIR%%/extlib/CGI/Util.pm
+%%CGIDIR%%/extlib/File/Listing.pm
+%%CGIDIR%%/extlib/File/Spec.pm
+%%CGIDIR%%/extlib/File/Spec/Functions.pm
+%%CGIDIR%%/extlib/File/Spec/Mac.pm
+%%CGIDIR%%/extlib/File/Spec/OS2.pm
+%%CGIDIR%%/extlib/File/Spec/Unix.pm
+%%CGIDIR%%/extlib/File/Spec/VMS.pm
+%%CGIDIR%%/extlib/File/Spec/Win32.pm
+%%CGIDIR%%/extlib/File/Temp.pm
+%%CGIDIR%%/extlib/HTML/Form.pm
+%%CGIDIR%%/extlib/HTML/Template.pm
+%%CGIDIR%%/extlib/HTTP/Cookies.pm
+%%CGIDIR%%/extlib/HTTP/Daemon.pm
+%%CGIDIR%%/extlib/HTTP/Date.pm
+%%CGIDIR%%/extlib/HTTP/Headers.pm
+%%CGIDIR%%/extlib/HTTP/Headers/Auth.pm
+%%CGIDIR%%/extlib/HTTP/Headers/ETag.pm
+%%CGIDIR%%/extlib/HTTP/Headers/Util.pm
+%%CGIDIR%%/extlib/HTTP/Message.pm
+%%CGIDIR%%/extlib/HTTP/Negotiate.pm
+%%CGIDIR%%/extlib/HTTP/Request.pm
+%%CGIDIR%%/extlib/HTTP/Request/Common.pm
+%%CGIDIR%%/extlib/HTTP/Response.pm
+%%CGIDIR%%/extlib/HTTP/Status.pm
+%%CGIDIR%%/extlib/I18N/LangTags.pm
+%%CGIDIR%%/extlib/I18N/LangTags/List.pm
+%%CGIDIR%%/extlib/IO/SessionData.pm
+%%CGIDIR%%/extlib/IO/SessionSet.pm
+%%CGIDIR%%/extlib/Image/Size.pm
+%%CGIDIR%%/extlib/LWP.pm
+%%CGIDIR%%/extlib/LWP/Authen/Basic.pm
+%%CGIDIR%%/extlib/LWP/Authen/Digest.pm
+%%CGIDIR%%/extlib/LWP/ConnCache.pm
+%%CGIDIR%%/extlib/LWP/Debug.pm
+%%CGIDIR%%/extlib/LWP/MediaTypes.pm
+%%CGIDIR%%/extlib/LWP/MemberMixin.pm
+%%CGIDIR%%/extlib/LWP/Protocol.pm
+%%CGIDIR%%/extlib/LWP/Protocol/GHTTP.pm
+%%CGIDIR%%/extlib/LWP/Protocol/data.pm
+%%CGIDIR%%/extlib/LWP/Protocol/file.pm
+%%CGIDIR%%/extlib/LWP/Protocol/ftp.pm
+%%CGIDIR%%/extlib/LWP/Protocol/gopher.pm
+%%CGIDIR%%/extlib/LWP/Protocol/http.pm
+%%CGIDIR%%/extlib/LWP/Protocol/http10.pm
+%%CGIDIR%%/extlib/LWP/Protocol/https.pm
+%%CGIDIR%%/extlib/LWP/Protocol/https10.pm
+%%CGIDIR%%/extlib/LWP/Protocol/mailto.pm
+%%CGIDIR%%/extlib/LWP/Protocol/nntp.pm
+%%CGIDIR%%/extlib/LWP/Protocol/nogo.pm
+%%CGIDIR%%/extlib/LWP/RobotUA.pm
+%%CGIDIR%%/extlib/LWP/Simple.pm
+%%CGIDIR%%/extlib/LWP/UserAgent.pm
+%%CGIDIR%%/extlib/LWP/media.types
+%%CGIDIR%%/extlib/Locale/Maketext.pm
+%%CGIDIR%%/extlib/Locale/Maketext.pod
+%%CGIDIR%%/extlib/Locale/Maketext/TPJ13.pod
+%%CGIDIR%%/extlib/Net/HTTP.pm
+%%CGIDIR%%/extlib/Net/HTTP/Methods.pm
+%%CGIDIR%%/extlib/Net/HTTP/NB.pm
+%%CGIDIR%%/extlib/Net/HTTPS.pm
+%%CGIDIR%%/extlib/SOAP/Lite.pm
+%%CGIDIR%%/extlib/SOAP/Test.pm
+%%CGIDIR%%/extlib/SOAP/Transport/FTP.pm
+%%CGIDIR%%/extlib/SOAP/Transport/HTTP.pm
+%%CGIDIR%%/extlib/SOAP/Transport/IO.pm
+%%CGIDIR%%/extlib/SOAP/Transport/JABBER.pm
+%%CGIDIR%%/extlib/SOAP/Transport/LOCAL.pm
+%%CGIDIR%%/extlib/SOAP/Transport/MAILTO.pm
+%%CGIDIR%%/extlib/SOAP/Transport/MQ.pm
+%%CGIDIR%%/extlib/SOAP/Transport/POP3.pm
+%%CGIDIR%%/extlib/SOAP/Transport/TCP.pm
+%%CGIDIR%%/extlib/UDDI/Lite.pm
+%%CGIDIR%%/extlib/URI.pm
+%%CGIDIR%%/extlib/URI/Escape.pm
+%%CGIDIR%%/extlib/URI/Heuristic.pm
+%%CGIDIR%%/extlib/URI/URL.pm
+%%CGIDIR%%/extlib/URI/WithBase.pm
+%%CGIDIR%%/extlib/URI/_foreign.pm
+%%CGIDIR%%/extlib/URI/_generic.pm
+%%CGIDIR%%/extlib/URI/_login.pm
+%%CGIDIR%%/extlib/URI/_query.pm
+%%CGIDIR%%/extlib/URI/_segment.pm
+%%CGIDIR%%/extlib/URI/_server.pm
+%%CGIDIR%%/extlib/URI/_userpass.pm
+%%CGIDIR%%/extlib/URI/data.pm
+%%CGIDIR%%/extlib/URI/file.pm
+%%CGIDIR%%/extlib/URI/file/Base.pm
+%%CGIDIR%%/extlib/URI/file/FAT.pm
+%%CGIDIR%%/extlib/URI/file/Mac.pm
+%%CGIDIR%%/extlib/URI/file/OS2.pm
+%%CGIDIR%%/extlib/URI/file/QNX.pm
+%%CGIDIR%%/extlib/URI/file/Unix.pm
+%%CGIDIR%%/extlib/URI/file/Win32.pm
+%%CGIDIR%%/extlib/URI/ftp.pm
+%%CGIDIR%%/extlib/URI/gopher.pm
+%%CGIDIR%%/extlib/URI/http.pm
+%%CGIDIR%%/extlib/URI/https.pm
+%%CGIDIR%%/extlib/URI/ldap.pm
+%%CGIDIR%%/extlib/URI/mailto.pm
+%%CGIDIR%%/extlib/URI/news.pm
+%%CGIDIR%%/extlib/URI/nntp.pm
+%%CGIDIR%%/extlib/URI/pop.pm
+%%CGIDIR%%/extlib/URI/rlogin.pm
+%%CGIDIR%%/extlib/URI/rsync.pm
+%%CGIDIR%%/extlib/URI/snews.pm
+%%CGIDIR%%/extlib/URI/telnet.pm
+%%CGIDIR%%/extlib/WWW/RobotRules.pm
+%%CGIDIR%%/extlib/WWW/RobotRules/AnyDBM_File.pm
+%%CGIDIR%%/extlib/XML/Parser/Lite.pm
+%%CGIDIR%%/extlib/XMLRPC/Lite.pm
+%%CGIDIR%%/extlib/XMLRPC/Test.pm
+%%CGIDIR%%/extlib/XMLRPC/Transport/HTTP.pm
+%%CGIDIR%%/extlib/XMLRPC/Transport/POP3.pm
+%%CGIDIR%%/extlib/XMLRPC/Transport/TCP.pm
+%%CGIDIR%%/lib/MT.pm
+%%CGIDIR%%/lib/MT/App.pm
+%%CGIDIR%%/lib/MT/App/CMS.pm
+%%CGIDIR%%/lib/MT/App/Comments.pm
+%%CGIDIR%%/lib/MT/App/Search.pm
+%%CGIDIR%%/lib/MT/App/Trackback.pm
+%%CGIDIR%%/lib/MT/App/Viewer.pm
+%%CGIDIR%%/lib/MT/Author.pm
+%%CGIDIR%%/lib/MT/Blog.pm
+%%CGIDIR%%/lib/MT/Builder.pm
+%%CGIDIR%%/lib/MT/Category.pm
+%%CGIDIR%%/lib/MT/Comment.pm
+%%CGIDIR%%/lib/MT/ConfigMgr.pm
+%%CGIDIR%%/lib/MT/Entry.pm
+%%CGIDIR%%/lib/MT/ErrorHandler.pm
+%%CGIDIR%%/lib/MT/FileMgr.pm
+%%CGIDIR%%/lib/MT/FileMgr/Local.pm
+%%CGIDIR%%/lib/MT/GoogleSearch.wsdl
+%%CGIDIR%%/lib/MT/IPBanList.pm
+%%CGIDIR%%/lib/MT/Image.pm
+%%CGIDIR%%/lib/MT/L10N.pm
+%%CGIDIR%%/lib/MT/L10N/en_us.pm
+%%CGIDIR%%/lib/MT/Log.pm
+%%CGIDIR%%/lib/MT/Mail.pm
+%%CGIDIR%%/lib/MT/Notification.pm
+%%CGIDIR%%/lib/MT/Object.pm
+%%CGIDIR%%/lib/MT/ObjectDriver.pm
+%%CGIDIR%%/lib/MT/ObjectDriver/DBI.pm
+%%CGIDIR%%/lib/MT/ObjectDriver/DBI/mysql.pm
+%%CGIDIR%%/lib/MT/ObjectDriver/DBI/postgres.pm
+%%CGIDIR%%/lib/MT/ObjectDriver/DBI/sqlite.pm
+%%CGIDIR%%/lib/MT/ObjectDriver/DBM.pm
+%%CGIDIR%%/lib/MT/Permission.pm
+%%CGIDIR%%/lib/MT/Placement.pm
+%%CGIDIR%%/lib/MT/PluginData.pm
+%%CGIDIR%%/lib/MT/Request.pm
+%%CGIDIR%%/lib/MT/Sanitize.pm
+%%CGIDIR%%/lib/MT/Serialize.pm
+%%CGIDIR%%/lib/MT/TBPing.pm
+%%CGIDIR%%/lib/MT/Template.pm
+%%CGIDIR%%/lib/MT/Template/Context.pm
+%%CGIDIR%%/lib/MT/TemplateMap.pm
+%%CGIDIR%%/lib/MT/Trackback.pm
+%%CGIDIR%%/lib/MT/Util.pm
+%%CGIDIR%%/lib/MT/XMLRPC.pm
+%%CGIDIR%%/lib/MT/XMLRPCServer.pm
+%%CGIDIR%%/lib/MT/default-templates.pl
+%%CGIDIR%%/mt-add-notify.cgi
+%%CGIDIR%%/mt-check.cgi
+%%CGIDIR%%/mt-comments.cgi
+%%CGIDIR%%/mt-db-pass.cgi
+%%CGIDIR%%/mt-load.cgi
+%%CGIDIR%%/mt-search.cgi
+%%CGIDIR%%/mt-send-entry.cgi
+%%CGIDIR%%/mt-tb.cgi
+%%CGIDIR%%/mt-view.cgi
+%%CGIDIR%%/mt-xmlrpc.cgi
+%%CGIDIR%%/mt.cfg
+%%CGIDIR%%/mt.cgi
+%%CGIDIR%%/search_templates/comments.tmpl
+%%CGIDIR%%/search_templates/default.tmpl
+%%CGIDIR%%/tmpl/cms/bm_entry.tmpl
+%%CGIDIR%%/tmpl/cms/bm_posted.tmpl
+%%CGIDIR%%/tmpl/cms/bookmarklets.tmpl
+%%CGIDIR%%/tmpl/cms/category_add.tmpl
+%%CGIDIR%%/tmpl/cms/cc_return.tmpl
+%%CGIDIR%%/tmpl/cms/cfg_archives.tmpl
+%%CGIDIR%%/tmpl/cms/cfg_archives_add.tmpl
+%%CGIDIR%%/tmpl/cms/cfg_banlist.tmpl
+%%CGIDIR%%/tmpl/cms/cfg_prefs.tmpl
+%%CGIDIR%%/tmpl/cms/copyright.tmpl
+%%CGIDIR%%/tmpl/cms/delete_confirm.tmpl
+%%CGIDIR%%/tmpl/cms/edit_author.tmpl
+%%CGIDIR%%/tmpl/cms/edit_blog.tmpl
+%%CGIDIR%%/tmpl/cms/edit_categories.tmpl
+%%CGIDIR%%/tmpl/cms/edit_category.tmpl
+%%CGIDIR%%/tmpl/cms/edit_comment.tmpl
+%%CGIDIR%%/tmpl/cms/edit_entry.tmpl
+%%CGIDIR%%/tmpl/cms/edit_permissions.tmpl
+%%CGIDIR%%/tmpl/cms/edit_placements.tmpl
+%%CGIDIR%%/tmpl/cms/edit_template.tmpl
+%%CGIDIR%%/tmpl/cms/entry_prefs.tmpl
+%%CGIDIR%%/tmpl/cms/error.tmpl
+%%CGIDIR%%/tmpl/cms/import.tmpl
+%%CGIDIR%%/tmpl/cms/list_author.tmpl
+%%CGIDIR%%/tmpl/cms/list_blog.tmpl
+%%CGIDIR%%/tmpl/cms/list_entry.tmpl
+%%CGIDIR%%/tmpl/cms/list_notification.tmpl
+%%CGIDIR%%/tmpl/cms/list_template.tmpl
+%%CGIDIR%%/tmpl/cms/login.tmpl
+%%CGIDIR%%/tmpl/cms/logonav.tmpl
+%%CGIDIR%%/tmpl/cms/menu.tmpl
+%%CGIDIR%%/tmpl/cms/mininav.tmpl
+%%CGIDIR%%/tmpl/cms/pinged_urls.tmpl
+%%CGIDIR%%/tmpl/cms/pinging.tmpl
+%%CGIDIR%%/tmpl/cms/preview_entry.tmpl
+%%CGIDIR%%/tmpl/cms/rebuild_confirm.tmpl
+%%CGIDIR%%/tmpl/cms/rebuilding.tmpl
+%%CGIDIR%%/tmpl/cms/rebuilt.tmpl
+%%CGIDIR%%/tmpl/cms/recover.tmpl
+%%CGIDIR%%/tmpl/cms/reload_opener.tmpl
+%%CGIDIR%%/tmpl/cms/search_replace.tmpl
+%%CGIDIR%%/tmpl/cms/show_upload_html.tmpl
+%%CGIDIR%%/tmpl/cms/tb_cat_pings.tmpl
+%%CGIDIR%%/tmpl/cms/upload.tmpl
+%%CGIDIR%%/tmpl/cms/upload_complete.tmpl
+%%CGIDIR%%/tmpl/cms/upload_confirm.tmpl
+%%CGIDIR%%/tmpl/cms/view_log.tmpl
+%%CGIDIR%%/tmpl/error.tmpl
+%%DATADIR%%/LICENSE
+%%DATADIR%%/LICENSE-COMMERCIAL
+%%DATADIR%%/docs/755.gif
+%%DATADIR%%/docs/777.gif
+%%DATADIR%%/docs/box.gif
+%%DATADIR%%/docs/doc-styles.css
+%%DATADIR%%/docs/mt26.html
+%%DATADIR%%/docs/mtchanges.html
+%%DATADIR%%/docs/mtimport.html
+%%DATADIR%%/docs/mtinstall.html
+%%DATADIR%%/docs/mtmanual.html
+%%DATADIR%%/docs/mtmanual_about.html
+%%DATADIR%%/docs/mtmanual_alternate.html
+%%DATADIR%%/docs/mtmanual_archiving.html
+%%DATADIR%%/docs/mtmanual_authors.html
+%%DATADIR%%/docs/mtmanual_categories.html
+%%DATADIR%%/docs/mtmanual_comments.html
+%%DATADIR%%/docs/mtmanual_configuration.html
+%%DATADIR%%/docs/mtmanual_copyright.html
+%%DATADIR%%/docs/mtmanual_entries.html
+%%DATADIR%%/docs/mtmanual_importing.html
+%%DATADIR%%/docs/mtmanual_installation.html
+%%DATADIR%%/docs/mtmanual_mail.html
+%%DATADIR%%/docs/mtmanual_multilanguage.html
+%%DATADIR%%/docs/mtmanual_notifications.html
+%%DATADIR%%/docs/mtmanual_programmatic.html
+%%DATADIR%%/docs/mtmanual_public.html
+%%DATADIR%%/docs/mtmanual_rebuilding.html
+%%DATADIR%%/docs/mtmanual_sanitize.html
+%%DATADIR%%/docs/mtmanual_search.html
+%%DATADIR%%/docs/mtmanual_tags.html
+%%DATADIR%%/docs/mtmanual_templates.html
+%%DATADIR%%/docs/mtmanual_trackback.html
+%%DATADIR%%/docs/mtmanual_troubleshooting.html
+%%DATADIR%%/docs/mtmanual_uploading.html
+%%DATADIR%%/docs/mtmanual_weblog_config.html
+%%DATADIR%%/docs/mtmanual_weblogs.html
+%%DATADIR%%/docs/mttags.html
+%%DATADIR%%/docs/mtupgrade.html
+%%DATADIR%%/images/activity-icon.gif
+%%DATADIR%%/images/bar-back.gif
+%%DATADIR%%/images/bold-button.gif
+%%DATADIR%%/images/bookmarklet-icon.gif
+%%DATADIR%%/images/bullet.gif
+%%DATADIR%%/images/edit-author-icon.gif
+%%DATADIR%%/images/edit-profile-icon.gif
+%%DATADIR%%/images/italic-button.gif
+%%DATADIR%%/images/lang-en-us/assign_multiple.gif
+%%DATADIR%%/images/lang-en-us/nav-categories.gif
+%%DATADIR%%/images/lang-en-us/nav-config.gif
+%%DATADIR%%/images/lang-en-us/nav-entries.gif
+%%DATADIR%%/images/lang-en-us/nav-import.gif
+%%DATADIR%%/images/lang-en-us/nav-manage-label.gif
+%%DATADIR%%/images/lang-en-us/nav-new-entry.gif
+%%DATADIR%%/images/lang-en-us/nav-notifications.gif
+%%DATADIR%%/images/lang-en-us/nav-post-label.gif
+%%DATADIR%%/images/lang-en-us/nav-rebuild.gif
+%%DATADIR%%/images/lang-en-us/nav-search.gif
+%%DATADIR%%/images/lang-en-us/nav-templates.gif
+%%DATADIR%%/images/lang-en-us/nav-upload.gif
+%%DATADIR%%/images/lang-en-us/nav-utilities-label.gif
+%%DATADIR%%/images/lang-en-us/nav-view-site.gif
+%%DATADIR%%/images/lang-en-us/topnav-go-button.gif
+%%DATADIR%%/images/lang-en-us/topnav-help.gif
+%%DATADIR%%/images/lang-en-us/topnav-logout.gif
+%%DATADIR%%/images/lang-en-us/topnav-menu.gif
+%%DATADIR%%/images/lang-en-us/topnav-view-site.gif
+%%DATADIR%%/images/logo-small.gif
+%%DATADIR%%/images/mt-logo.gif
+%%DATADIR%%/images/new-blog-icon.gif
+%%DATADIR%%/images/powered.gif
+%%DATADIR%%/images/spacer.gif
+%%DATADIR%%/images/underline-button.gif
+%%DATADIR%%/images/url-button.gif
+%%DATADIR%%/index.html
+%%DATADIR%%/schemas/mysql.dump
+%%DATADIR%%/schemas/postgres.dump
+%%DATADIR%%/schemas/sqlite.dump
+%%DATADIR%%/styles.css
+@dirrm %%CGIDIR%%/extlib/Apache/XMLRPC
+@dirrm %%CGIDIR%%/extlib/Apache
+@dirrm %%CGIDIR%%/extlib/Bundle
+@dirrm %%CGIDIR%%/extlib/CGI
+@dirrm %%CGIDIR%%/extlib/File/Spec
+@dirrm %%CGIDIR%%/extlib/File
+@dirrm %%CGIDIR%%/extlib/HTML
+@dirrm %%CGIDIR%%/extlib/HTTP/Headers
+@dirrm %%CGIDIR%%/extlib/HTTP/Request
+@dirrm %%CGIDIR%%/extlib/HTTP
+@dirrm %%CGIDIR%%/extlib/I18N/LangTags
+@dirrm %%CGIDIR%%/extlib/I18N
+@dirrm %%CGIDIR%%/extlib/IO
+@dirrm %%CGIDIR%%/extlib/Image
+@dirrm %%CGIDIR%%/extlib/LWP/Authen
+@dirrm %%CGIDIR%%/extlib/LWP/Protocol
+@dirrm %%CGIDIR%%/extlib/LWP
+@dirrm %%CGIDIR%%/extlib/Locale/Maketext
+@dirrm %%CGIDIR%%/extlib/Locale
+@dirrm %%CGIDIR%%/extlib/MT/L10N
+@dirrm %%CGIDIR%%/extlib/MT
+@dirrm %%CGIDIR%%/extlib/Net/HTTP
+@dirrm %%CGIDIR%%/extlib/Net
+@dirrm %%CGIDIR%%/extlib/SOAP/Transport
+@dirrm %%CGIDIR%%/extlib/SOAP
+@dirrm %%CGIDIR%%/extlib/UDDI
+@dirrm %%CGIDIR%%/extlib/URI/file
+@dirrm %%CGIDIR%%/extlib/URI
+@dirrm %%CGIDIR%%/extlib/WWW/RobotRules
+@dirrm %%CGIDIR%%/extlib/WWW
+@dirrm %%CGIDIR%%/extlib/XML/Parser
+@dirrm %%CGIDIR%%/extlib/XML
+@dirrm %%CGIDIR%%/extlib/XMLRPC/Transport
+@dirrm %%CGIDIR%%/extlib/XMLRPC
+@dirrm %%CGIDIR%%/extlib
+@dirrm %%CGIDIR%%/lib/MT/App
+@dirrm %%CGIDIR%%/lib/MT/FileMgr
+@dirrm %%CGIDIR%%/lib/MT/L10N
+@dirrm %%CGIDIR%%/lib/MT/ObjectDriver/DBI
+@dirrm %%CGIDIR%%/lib/MT/ObjectDriver
+@dirrm %%CGIDIR%%/lib/MT/Template
+@dirrm %%CGIDIR%%/lib/MT
+@dirrm %%CGIDIR%%/lib
+@dirrm %%CGIDIR%%/search_templates
+@dirrm %%CGIDIR%%/tmpl/cms
+@dirrm %%CGIDIR%%/tmpl
+@dirrm %%DATADIR%%/docs
+@dirrm %%DATADIR%%/images/lang-en-us
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/schemas
+@unexec rmdir %D/%%CGIDIR%% 2>/dev/null || true
+@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
