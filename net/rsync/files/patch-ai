@@ -1,53 +1,63 @@
-*** rsyncd.conf.5.orig	Thu Jun 18 19:30:22 1998
---- rsyncd.conf.5	Sat Jun 27 15:42:17 1998
-***************
-*** 66,72 ****
-  config file\&.
-  .PP 
-  Note that you should not send the rsync server a HUP signal to force
-! it to reread the \f(CW/etc/rsyncd\&.conf\fP\&. The file is re-read on each client
-  connection\&. 
-  .PP 
-  .SH "GLOBAL OPTIONS" 
---- 66,72 ----
-  config file\&.
-  .PP 
-  Note that you should not send the rsync server a HUP signal to force
-! it to reread the \f(CW!!PREFIX!!/etc/rsyncd\&.conf\fP\&. The file is re-read on each client
-  connection\&. 
-  .PP 
-  .SH "GLOBAL OPTIONS" 
-***************
-*** 132,138 ****
-  The "path" option specifies the directory in the servers
-  filesystem to make available in this module\&. The rsync server will
-  chroot to this path before starting the file transfer with the
-! client\&. You must specify this option for each module in \f(CW/etc/rsyncd\&.conf\fP\&.
-  .IP 
-  .IP "\fBread only\fP" 
-  The "read only" option determines whether clients
---- 132,138 ----
-  The "path" option specifies the directory in the servers
-  filesystem to make available in this module\&. The rsync server will
-  chroot to this path before starting the file transfer with the
-! client\&. You must specify this option for each module in \f(CW!!PREFIX!!/etc/rsyncd\&.conf\fP\&.
-  .IP 
-  .IP "\fBread only\fP" 
-  The "read only" option determines whether clients
-***************
-*** 335,341 ****
-  .PP 
-  .SH "FILES" 
-  .PP 
-! /etc/rsyncd\&.conf
-  .PP 
-  .SH "SEE ALSO" 
-  .PP 
---- 335,341 ----
-  .PP 
-  .SH "FILES" 
-  .PP 
-! !!PREFIX!!/etc/rsyncd\&.conf
-  .PP 
-  .SH "SEE ALSO" 
-  .PP 
+--- rsyncd.conf.5.orig	Tue Nov  3 14:00:46 1998
++++ rsyncd.conf.5	Sun Nov  8 01:37:21 1998
+@@ -66,7 +66,7 @@
+ config file\&.
+ .PP 
+ Note that you should not send the rsync server a HUP signal to force
+-it to reread the \f(CW/etc/rsyncd\&.conf\fP\&. The file is re-read on each client
++it to reread the \f(CW!!PREFIX!!/etc/rsyncd\&.conf\fP\&. The file is re-read on each client
+ connection\&. 
+ .PP 
+ .SH "GLOBAL OPTIONS" 
+@@ -186,7 +186,7 @@
+ .IP "\fBpath\fP" 
+ The "path" option specifies the directory in the servers
+ filesystem to make available in this module\&.  You must specify this option
+-for each module in \f(CW/etc/rsyncd\&.conf\fP\&.
++for each module in \f(CW!!PREFIX!!/etc/rsyncd\&.conf\fP\&.
+ .IP 
+ .IP "\fBuse chroot\fP" 
+ If "use chroot" is true, the rsync server will chroot
+@@ -262,7 +262,7 @@
+ \fBYou should make sure that the secrets file is not readable by anyone
+ other than the system administrator\&.\fP There is no default for the
+ "secrets file" option, you must choose a name (such as
+-\f(CW/etc/rsyncd\&.secrets\fP)\&.
++\f(CW!!PREFIX!!/etc/rsyncd\&.secrets\fP)\&.
+ .IP 
+ .IP "\fBhosts allow\fP" 
+ The "hosts allow" option allows you to specify a
+@@ -361,7 +361,7 @@
+ .br 
+ syslog facility = local5 
+ .br 
+-pid file = /etc/rsyncd\&.pid
++pid file = /var/run/rsyncd\&.pid
+ .PP 
+ 
+ .DS 
+@@ -386,13 +386,13 @@
+         path = /data/cvs
+         comment = CVS repository (requires authentication)
+         auth users = tridge, susan
+-        secrets file = /etc/rsyncd\&.secrets
++        secrets file = !!PREFIX!!/etc/rsyncd\&.secrets
+ 
+ .DE 
+  
+ 
+ .PP 
+-The /etc/rsyncd\&.secrets file would look something like this:
++The !!PREFIX!!/etc/rsyncd\&.secrets file would look something like this:
+ .PP 
+ tridge:mypass 
+ .br 
+@@ -400,7 +400,7 @@
+ .PP 
+ .SH "FILES" 
+ .PP 
+-/etc/rsyncd\&.conf
++!!PREFIX!!/etc/rsyncd\&.conf
+ .PP 
+ .SH "SEE ALSO" 
+ .PP 
