@@ -1,0 +1,16 @@
+bin/scavenger
+lib/X11/scavenger/scavserver
+@mode 644
+lib/X11/scavenger/badguy.lbm
+lib/X11/scavenger/brownblue.lbm
+lib/X11/scavenger/death.raw
+lib/X11/scavenger/dig.raw
+lib/X11/scavenger/fall.raw
+lib/X11/scavenger/levels.scl
+lib/X11/scavenger/microman.lbm
+lib/X11/scavenger/pop.raw
+lib/X11/scavenger/redbrick.lbm
+lib/X11/scavenger/reddevil.lbm
+lib/X11/scavenger/regularguy.lbm
+lib/X11/scavenger/spiralthing.lbm
+lib/X11/scavenger/victory.raw
