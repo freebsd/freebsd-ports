@@ -6,7 +6,7 @@
 # To use this, make it executable, and set your editinfo DEFAULT line:
 # DEFAULT   /path/to/this/program
 #
-# $Id: cvsedit,v 1.7 1995/08/27 23:07:50 peter Exp $
+# $Id: cvsedit,v 1.8 1995/08/28 12:14:04 rgrimes Exp $
 #
 
 # same rules as CVS
@@ -79,17 +79,16 @@ while(<IN>) {
 close(IN);
 close(OUT);
 
-# sanity check...
-if (!$first) {
-	die("cvsedit: Empty log message not permitted!\n");
-}
-
 unlink($filename . "~");	# Nuke likely editor backups..
 unlink($filename . ".bak");	# Nuke likely editor backups..
 
-# Check to see if any differences. preserve stat() info if not.
+# Check to see if any differences.
 $different = system("cmp -s $tmpfile $filename");
-if (!$different) {
+
+# Make a clean exit if there are no changes, or there is no 'text'
+# - for example, a user quit the editor without saving.
+# preserve stat() info if appropriate.
+if (!$different || !$first) {
 	unlink($tmpfile);
 	exit(0);
 }
