@@ -6,4 +6,11 @@ sbin/pmacctd
 %%PORTDOCS%%%%DOCSDIR%%/EXAMPLES
 %%PORTDOCS%%%%DOCSDIR%%/INTERNALS
 %%PORTDOCS%%%%DOCSDIR%%/PLUGINS
+%%EXAMPLESDIR%%/mrtg.conf.hosts.example
+%%EXAMPLESDIR%%/mrtg.conf.ports.example
+%%EXAMPLESDIR%%/networks.example
+%%EXAMPLESDIR%%/pmacctd-imt.conf.example
+%%EXAMPLESDIR%%/pmacctd-names.conf.example
+%%EXAMPLESDIR%%/pmacctd-sql.conf.example
+@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -7,6 +7,7 @@
 
 PORTNAME=	pmacct
 PORTVERSION=	0.6.2
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.ba.cnr.it/~paolo/pmacct/
 
@@ -41,6 +42,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/configure
 
 post-install:
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for i in README EXAMPLES INTERNALS PLUGINS
