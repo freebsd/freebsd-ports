@@ -1,5 +1,14 @@
---- fig2dev/Imakefile.orig	Wed Jul  1 08:52:50 1998
-+++ fig2dev/Imakefile	Tue Jan 19 11:14:16 1999
+--- fig2dev/Imakefile.orig	Tue Jun 30 16:52:50 1998
++++ fig2dev/Imakefile	Fri Dec 24 10:44:17 1999
+@@ -31,7 +31,7 @@
+ XCOMM You should point XFIGLIBDIR to the same directory you did when you compiled
+ XCOMM and installed xfig.  This will be made automatic in the future.
+ 
+-XFIGLIBDIR =	/usr/local/lib/X11/xfig
++XFIGLIBDIR =	$(PREFIX)lib/X11/xfig
+ 
+ XCOMM If your system has the strerror() function (doesn't have sys_errlist) then
+ XCOMM comment out NEED_STRERROR with an XCOMM comment.
 @@ -42,7 +42,7 @@
  XCOMM inline functions. With the "INLINE" keyword, you should notice that
  XCOMM the display will be a bit faster in complex figures
