@@ -1,5 +1,5 @@
 --- ns-install.orig	Tue Nov  3 22:27:09 1998
-+++ ns-install	Sun Nov  8 17:33:36 1998
++++ ns-install	Sat Jan  9 15:15:11 1999
 @@ -120,6 +120,7 @@
  # Even though the user has already used gzip to extract the file (or
  # we wouldn't be here), make sure we can find it.
@@ -8,6 +8,19 @@
  GZIP="gzip"
  flag=1
  while test ${flag} -eq 1
+@@ -294,10 +295,10 @@
+ 	# avoid users having to set MOZILLA_JAVA_FONT_PROPERTY_PATH, or
+ 	# just assuming Java font-handling is broken.
+ 	#
+-	if test ! -z "`ls /bin/uname`"
++	if test ! -z "`ls /usr/bin/uname`"
+ 	then
+ 		MOVE_FONTS="TRUE"
+-		case `/bin/uname` in
++		case `/usr/bin/uname` in
+ 			AIX)
+ 				PLATFORM="aix"
+ 				;;
 @@ -324,14 +325,6 @@
  	# Is this a virgin install?  If so, create the .netscape dir
  	# and put the default bookmark file in it.
