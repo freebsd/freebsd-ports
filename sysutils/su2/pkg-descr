@@ -18,4 +18,3 @@ disable direct logins, root could put a set of usernames into
 ~www/.su2rc to enable these users to 'become' www and do Web
 adiministration.  [This feature can be disabled if you are worried
 about 'account sharing.']
-
