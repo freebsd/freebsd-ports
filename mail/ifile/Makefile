@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ifile
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	mail textproc
 MASTER_SITES=	http://savannah.nongnu.org/download/ifile/default.pkg/${PORTVERSION}/
 
