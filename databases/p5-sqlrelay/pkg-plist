@@ -3,15 +3,14 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/SQLRelay/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/SQLRelay
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD 2>/dev/null || true
-%%SITE_PERL%%/%%PERL_ARCH%%/Firstworks/SQLRConnection.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Firstworks/SQLRConnection/SQLRConnection.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Firstworks/SQLRConnection/SQLRConnection.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Firstworks/SQLRConnection/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Firstworks/SQLRConnection
-%%SITE_PERL%%/%%PERL_ARCH%%/Firstworks/SQLRCursor.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Firstworks/SQLRCursor/SQLRCursor.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Firstworks/SQLRCursor/SQLRCursor.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Firstworks/SQLRCursor/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Firstworks/SQLRCursor
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Firstworks 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Firstworks 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/SQLRelay/Connection.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SQLRelay/Cursor.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SQLRelay/Connection/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SQLRelay/Connection/Connection.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SQLRelay/Connection/Connection.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SQLRelay/Connection
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SQLRelay/Cursor/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SQLRelay/Cursor/Cursor.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SQLRelay/Cursor/Cursor.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SQLRelay/Cursor
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SQLRelay
