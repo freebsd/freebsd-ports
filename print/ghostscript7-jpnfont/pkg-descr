@@ -4,7 +4,7 @@ version of ghostscript.  This port simply adds necessary configuration
 as /usr/local/share/ghostscript/*/lib/CIDFnmap.jp
 
 To install more fancy fonts edit the CIDFnmap.jp file.
-To know how to edit, /usr/local/share/doc/ghostscript/CJK/README.jp
+To know how to edit, /usr/local/share/doc/ghostscript/*/CJK/README.jp
 is helpful.
 
 Internationalization information:
