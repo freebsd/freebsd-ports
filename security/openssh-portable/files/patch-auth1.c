@@ -1,5 +1,5 @@
---- auth1.c.orig	Fri Jun 21 08:21:11 2002
-+++ auth1.c	Fri Jun 28 06:57:42 2002
+--- auth1.c.orig	Tue Sep  2 23:32:46 2003
++++ auth1.c	Tue Sep 16 20:05:44 2003
 @@ -26,6 +26,7 @@
  #include "session.h"
  #include "uidswap.h"
@@ -8,9 +8,9 @@
  
  /* import */
  extern ServerOptions options;
-@@ -75,6 +76,18 @@
+@@ -71,6 +72,18 @@
  	u_int ulen;
- 	int type = 0;
+ 	int prev, type = 0;
  	struct passwd *pw = authctxt->pw;
 +#ifdef HAVE_LOGIN_CAP
 +	login_cap_t *lc;
@@ -21,14 +21,14 @@
 +#if defined(HAVE_LOGIN_CAP) || defined(LOGIN_ACCESS)
 +	const char *from_host, *from_ip;
 +
-+	from_host = get_canonical_hostname(options.verify_reverse_mapping);
++	from_host = get_canonical_hostname(options.use_dns);
 +	from_ip = get_remote_ipaddr();
 +#endif /* HAVE_LOGIN_CAP || LOGIN_ACCESS */
  
  	debug("Attempting authentication for %s%.100s.",
  	    authctxt->valid ? "" : "illegal user ", authctxt->user);
-@@ -282,6 +295,34 @@
- 			log("Unknown message during authentication: type %d", type);
+@@ -214,6 +227,34 @@
+ 			logit("Unknown message during authentication: type %d", type);
  			break;
  		}
 +
@@ -38,12 +38,12 @@
 +		  if (lc == NULL)
 +			lc = login_getclassbyname(NULL, pw);
 +		  if (!auth_hostok(lc, from_host, from_ip)) {
-+			log("Denied connection for %.200s from %.200s [%.200s].",
++			logit("Denied connection for %.200s from %.200s [%.200s].",
 +		      pw->pw_name, from_host, from_ip);
 +			packet_disconnect("Sorry, you are not allowed to connect.");
 +		  }
 +		  if (!auth_timeok(lc, time(NULL))) {
-+			log("LOGIN %.200s REFUSED (TIME) FROM %.200s",
++			logit("LOGIN %.200s REFUSED (TIME) FROM %.200s",
 +		      pw->pw_name, from_host);
 +			packet_disconnect("Logins not available right now.");
 +		  }
@@ -53,7 +53,7 @@
 +#endif  /* HAVE_LOGIN_CAP */
 +#ifdef LOGIN_ACCESS
 +		if (pw != NULL && !login_access(pw->pw_name, from_host)) {
-+		  log("Denied connection for %.200s from %.200s [%.200s].",
++		  logit("Denied connection for %.200s from %.200s [%.200s].",
 +		      pw->pw_name, from_host, from_ip);
 +		  packet_disconnect("Sorry, you are not allowed to connect.");
 +		}
