@@ -8,16 +8,40 @@ mailman/Mailman/Archiver/__init__.py
 mailman/Mailman/Archiver/__init__.pyc
 mailman/Mailman/Archiver/pipermail.py
 mailman/Mailman/Archiver/pipermail.pyc
+mailman/Mailman/Autoresponder.py
+mailman/Mailman/Autoresponder.pyc
 mailman/Mailman/Bouncer.py
 mailman/Mailman/Bouncer.pyc
+mailman/Mailman/Bouncers/BouncerAPI.py
+mailman/Mailman/Bouncers/BouncerAPI.pyc
+mailman/Mailman/Bouncers/Caiwireless.py
+mailman/Mailman/Bouncers/Caiwireless.pyc
+mailman/Mailman/Bouncers/Catchall.py
+mailman/Mailman/Bouncers/Catchall.pyc
+mailman/Mailman/Bouncers/DSN.py
+mailman/Mailman/Bouncers/DSN.pyc
+mailman/Mailman/Bouncers/Exim.py
+mailman/Mailman/Bouncers/Exim.pyc
+mailman/Mailman/Bouncers/Netscape.py
+mailman/Mailman/Bouncers/Netscape.pyc
+mailman/Mailman/Bouncers/Postfix.py
+mailman/Mailman/Bouncers/Postfix.pyc
+mailman/Mailman/Bouncers/Qmail.py
+mailman/Mailman/Bouncers/Qmail.pyc
+mailman/Mailman/Bouncers/Smail.py
+mailman/Mailman/Bouncers/Smail.pyc
+mailman/Mailman/Bouncers/Yahoo.py
+mailman/Mailman/Bouncers/Yahoo.pyc
+mailman/Mailman/Bouncers/__init__.py
+mailman/Mailman/Bouncers/__init__.pyc
+mailman/Mailman/Cgi/Auth.py
+mailman/Mailman/Cgi/Auth.pyc
 mailman/Mailman/Cgi/__init__.py
 mailman/Mailman/Cgi/__init__.pyc
 mailman/Mailman/Cgi/admin.py
 mailman/Mailman/Cgi/admin.pyc
 mailman/Mailman/Cgi/admindb.py
 mailman/Mailman/Cgi/admindb.pyc
-mailman/Mailman/Cgi/archives.py
-mailman/Mailman/Cgi/archives.pyc
 mailman/Mailman/Cgi/edithtml.py
 mailman/Mailman/Cgi/edithtml.pyc
 mailman/Mailman/Cgi/handle_opts.py
@@ -48,6 +72,40 @@ mailman/Mailman/GatewayManager.py
 mailman/Mailman/GatewayManager.pyc
 mailman/Mailman/HTMLFormatter.py
 mailman/Mailman/HTMLFormatter.pyc
+mailman/Mailman/Handlers/Acknowledge.py
+mailman/Mailman/Handlers/Acknowledge.pyc
+mailman/Mailman/Handlers/AfterDelivery.py
+mailman/Mailman/Handlers/AfterDelivery.pyc
+mailman/Mailman/Handlers/Approve.py
+mailman/Mailman/Handlers/Approve.pyc
+mailman/Mailman/Handlers/CalcRecips.py
+mailman/Mailman/Handlers/CalcRecips.pyc
+mailman/Mailman/Handlers/Cleanse.py
+mailman/Mailman/Handlers/Cleanse.pyc
+mailman/Mailman/Handlers/CookHeaders.py
+mailman/Mailman/Handlers/CookHeaders.pyc
+mailman/Mailman/Handlers/Decorate.py
+mailman/Mailman/Handlers/Decorate.pyc
+mailman/Mailman/Handlers/HandlerAPI.py
+mailman/Mailman/Handlers/HandlerAPI.pyc
+mailman/Mailman/Handlers/Hold.py
+mailman/Mailman/Handlers/Hold.pyc
+mailman/Mailman/Handlers/Replybot.py
+mailman/Mailman/Handlers/Replybot.pyc
+mailman/Mailman/Handlers/SMTPDirect.py
+mailman/Mailman/Handlers/SMTPDirect.pyc
+mailman/Mailman/Handlers/Sendmail.py
+mailman/Mailman/Handlers/Sendmail.pyc
+mailman/Mailman/Handlers/SpamDetect.py
+mailman/Mailman/Handlers/SpamDetect.pyc
+mailman/Mailman/Handlers/ToArchive.py
+mailman/Mailman/Handlers/ToArchive.pyc
+mailman/Mailman/Handlers/ToDigest.py
+mailman/Mailman/Handlers/ToDigest.pyc
+mailman/Mailman/Handlers/ToUsenet.py
+mailman/Mailman/Handlers/ToUsenet.pyc
+mailman/Mailman/Handlers/__init__.py
+mailman/Mailman/Handlers/__init__.pyc
 mailman/Mailman/ListAdmin.py
 mailman/Mailman/ListAdmin.pyc
 mailman/Mailman/LockFile.py
@@ -58,6 +116,8 @@ mailman/Mailman/Logging/MultiLogger.py
 mailman/Mailman/Logging/MultiLogger.pyc
 mailman/Mailman/Logging/StampedLogger.py
 mailman/Mailman/Logging/StampedLogger.pyc
+mailman/Mailman/Logging/Syslog.py
+mailman/Mailman/Logging/Syslog.pyc
 mailman/Mailman/Logging/Utils.py
 mailman/Mailman/Logging/Utils.pyc
 mailman/Mailman/Logging/__init__.py
@@ -70,14 +130,14 @@ mailman/Mailman/Mailbox.py
 mailman/Mailman/Mailbox.pyc
 mailman/Mailman/Message.py
 mailman/Mailman/Message.pyc
-mailman/Mailman/OutgoingQueue.py
-mailman/Mailman/OutgoingQueue.pyc
 mailman/Mailman/Pending.py
 mailman/Mailman/Pending.pyc
 mailman/Mailman/SecurityManager.py
 mailman/Mailman/SecurityManager.pyc
 mailman/Mailman/Utils.py
 mailman/Mailman/Utils.pyc
+mailman/Mailman/Version.py
+mailman/Mailman/Version.pyc
 mailman/Mailman/__init__.py
 mailman/Mailman/__init__.pyc
 mailman/Mailman/aliases.py
@@ -87,12 +147,16 @@ mailman/Mailman/htmlformat.pyc
 mailman/Mailman/mm_cfg.py
 mailman/Mailman/mm_cfg.py.dist
 mailman/Mailman/mm_cfg.pyc
+mailman/Mailman/pythonlib/StringIO.py
+mailman/Mailman/pythonlib/StringIO.pyc
 mailman/Mailman/pythonlib/__init__.py
 mailman/Mailman/pythonlib/__init__.pyc
 mailman/Mailman/pythonlib/cgi.py
 mailman/Mailman/pythonlib/cgi.pyc
 mailman/Mailman/pythonlib/getpass.py
 mailman/Mailman/pythonlib/getpass.pyc
+mailman/Mailman/pythonlib/nntplib.py
+mailman/Mailman/pythonlib/nntplib.pyc
 mailman/Mailman/pythonlib/rfc822.py
 mailman/Mailman/pythonlib/rfc822.pyc
 mailman/Mailman/pythonlib/smtplib.py
@@ -106,10 +170,14 @@ mailman/bin/arch
 mailman/bin/check_db
 mailman/bin/check_perms
 mailman/bin/clone_member
+mailman/bin/config_list
 mailman/bin/digest_arch
+mailman/bin/dumpdb
 mailman/bin/find_member
+mailman/bin/list_lists
 mailman/bin/list_members
 mailman/bin/mmsitepass
+mailman/bin/move_list
 mailman/bin/newlist
 mailman/bin/paths.py
 mailman/bin/paths.pyc
@@ -129,38 +197,29 @@ mailman/cgi-bin/options
 mailman/cgi-bin/private
 mailman/cgi-bin/roster
 mailman/cgi-bin/subscribe
-mailman/cron/archive
 mailman/cron/checkdbs
 mailman/cron/crontab.in
 mailman/cron/gate_news
 mailman/cron/mailpasswds
 mailman/cron/nightly_gzip
 mailman/cron/paths.py
-mailman/cron/paths.pyc
-mailman/cron/run_queue
+mailman/cron/qrunner
 mailman/cron/senddigests
-mailman/cron/upvolumes_monthly
-mailman/cron/upvolumes_yearly
+mailman/data/last_mailman_version
 mailman/data/pending_subscriptions.db
 mailman/filters/bowa-strip
-mailman/mail/paths.py
-mailman/mail/paths.pyc
 mailman/mail/wrapper
 mailman/scripts/answer_majordomo_mail
-mailman/scripts/contact_transport
-mailman/scripts/deliver
 mailman/scripts/driver
-mailman/scripts/dumb_deliver
 mailman/scripts/mailcmd
 mailman/scripts/mailowner
 mailman/scripts/paths.py
-mailman/scripts/paths.pyc
 mailman/scripts/post
+mailman/templates/admindbpreamble.html
 mailman/templates/adminsubscribeack.txt
 mailman/templates/adminunsubscribeack.txt
 mailman/templates/admlogin.txt
 mailman/templates/approve.txt
-mailman/templates/archives.html
 mailman/templates/bounce.txt
 mailman/templates/checkdbs.txt
 mailman/templates/convert.txt
@@ -184,7 +243,9 @@ mailman/templates/subscribeack.txt
 mailman/templates/userpass.txt
 mailman/templates/verify.txt
 @dirrm mailman/Mailman/Archiver
+@dirrm mailman/Mailman/Bouncers
 @dirrm mailman/Mailman/Cgi
+@dirrm mailman/Mailman/Handlers
 @dirrm mailman/Mailman/Logging
 @dirrm mailman/Mailman/pythonlib
 @dirrm mailman/Mailman
@@ -200,6 +261,8 @@ mailman/templates/verify.txt
 @dirrm mailman/locks
 @dirrm mailman/logs
 @dirrm mailman/mail
+@dirrm mailman/qfiles
 @dirrm mailman/scripts
+@dirrm mailman/spam
 @dirrm mailman/templates
 @dirrm mailman
