@@ -1,5 +1,4 @@
 @cwd /usr/local/
-@cwd /a/me
 bin/mmv
 bin/mad
 bin/mcp
