@@ -1,3 +1,4 @@
 sbin/dlint
 sbin/digparse
 share/doc/dlint/README
+@dirrm share/doc/dlint

@@ -1,2 +1,3 @@
 sbin/find_ddos
 share/doc/find_ddos/README
+@dirrm share/doc/find_ddos
