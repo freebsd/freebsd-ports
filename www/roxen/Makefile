@@ -15,7 +15,7 @@ WRKSRC=		${WRKDIR}/roxen-${PORTVERSION}-src
 MAINTAINER=	k@123.org
 HAS_CONFIGURE=	yes
 PKGMESSAGE=     ${WRKSRC}/MESSAGE
-STARTUP_SCRIPT= ${PREFIX}/etc/rc.d/roxen.sh
+STARTUP_SCRIPT= ${PREFIX}/etc/rc.d/roxen.sh.sample
 
 post-patch:
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|g" ${FILESDIR}/roxen.sh.in > \
