@@ -15,7 +15,11 @@
 LIBDIR=${PREFIX}/lib
 
 # for the shared lib stuff
+.if ${PORTOBJFORMAT} == "elf"
+VERSION=2
+.else
 VERSION=2.6
+.endif
 
 LIBMALLOC=libdlmalloc.a
 LIBSMALLOC=libdlmalloc.so.${VERSION}
@@ -45,7 +49,11 @@ $(LIBMALLOC): $(OBJS)
 
 $(LIBSMALLOC): $(SOBJS)
 	rm -f $(LIBSMALLOC) 
+.if ${PORTOBJFORMAT} == "elf"
+	ld -Bshareable -soname $(LIBSMALLOC) -o $(LIBSMALLOC) $(SOBJS) 
+.else
 	ld -Bshareable -o $(LIBSMALLOC) $(SOBJS) 
+.endif
 
 clean:
 	-rm -f *.o \#* *~ *.core a.out gmon.out mon.out onefile.c *.sL prof.out
@@ -54,6 +62,7 @@ install:
 	install -c -m 644 ${LIBMALLOC} $(LIBDIR)
 	-$(RANLIB) $(LIBDIR)/${LIBMALLOC}
 	install -c -m 555 ${LIBSMALLOC} $(LIBDIR)
+	ln -sf ${LIBSMALLOC} $(LIBDIR)/libdlmalloc.so
 
 $(OBJS): $(SRCS)
 $(SOBJS): $(SRCS)
