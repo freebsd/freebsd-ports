@@ -1,0 +1,20 @@
+From the README file:
+
+These modules are supposed to be used with the Apache server together with
+an embedded perl interpreter like mod_perl. They provide support for basic
+authentication and authorization as well as support for persistent database
+connections via Perl's Database Independent Interface (DBI).
+
+o AuthDBI.pm provides authentication and authorization:
+
+  - optional shared cache for passwords to minimize database load
+  - configurable cleanup-handler deletes outdated entries from the cache
+
+o DBI.pm provides persistent database connections:
+
+  - connections can be established during server-startup
+  - configurable rollback to ensure data integrity
+  - configurable verification of the connections to avoid time-outs.
+
+-- Igor
+igor@zynaps.ru
