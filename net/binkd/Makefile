@@ -1,19 +1,22 @@
 # New ports collection makefile for:	binkd
-# Version required:	0.9.2
+# Version required:	0.9.3
 # Date created:		19 August 1998
 # Whom:			Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=	binkd-0.9.2
+DISTNAME=	binkd093
+PKGNAME=	binkd-0.9.3
 CATEGORIES=	net
-MASTER_SITES=	http://www.corbina.net/~maloff/binkd/
+MASTER_SITES=	ftp://happy.kiev.ua/pub/fidosoft/mailer/binkd/
 
 MAINTAINER=	dsh@vlink.ru
 
+WRKSRC=		${WRKDIR}/${PKGNAME}
 USE_ZIP=	yes
 GNU_CONFIGURE=	yes
+
 MAN8=		binkd.8
 
 .if defined(WITH_AMIGA4D)
