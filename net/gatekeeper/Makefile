@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	gatekeeper
-PORTVERSION=	0.12
-PORTREVISION=	1
+PORTVERSION=	0.14a
 CATEGORIES=	net
 MASTER_SITES=	http://www.willamowius.de/download/
-DISTNAME=	gk012
+DISTNAME=	gk014a
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	roger@FreeBSD.org
 
 BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/net/openh323:build
 
-WRKSRC=		${WRKDIR}/gk
+WRKSRC=		${WRKDIR}/openh323gk
 
 NOCLEANDEPENDS=	yes
 
