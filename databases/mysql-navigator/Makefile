@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mysql-navigator
-PORTVERSION=	1.3.12
+PORTVERSION=	1.4.1
 CATEGORIES=	databases kde
 MASTER_SITES=	http://ftp.kde.com/Database/MySQL_Navigator/ \
 		http://sql.kldp.org/snapshots/ \
@@ -14,6 +14,7 @@ MASTER_SITES=	http://ftp.kde.com/Database/MySQL_Navigator/ \
 DISTNAME=	mysqlnavigator-${PORTVERSION}
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	MySQL database server administration package for KDE
 
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 
@@ -29,6 +30,7 @@ MAKE_ENV+=	MOC="${MOC}" QTDIR="${X11BASE}"
 
 post-patch:
 	@${REINPLACE_CMD} 's#-O2#$(CXXFLAGS)#g' ${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -name "*_moc.cpp" -exec rm -f {} \;
 
 pre-configure:
 	@${REINPLACE_CMD} "s#-lqt#-lqt-mt ${PTHREAD_LIBS}#g" \
