@@ -1,0 +1,13 @@
+--- Makefile	1994/11/25 15:09:23	1.1
++++ Makefile	1996/07/02 05:37:31
+@@ -32,3 +32,10 @@
+ 
+ clean:
+ 	rm -f *.o nntpbtr
++
++all:	nntpbtr
++
++install:
++	install -c -m555 nntpbtr ${PREFIX}/sbin
++	install -c -m555 nntpbtr.1 ${PREFIX}/man/man1
++
