@@ -3,7 +3,7 @@
 # Date created:		31 January 1995
 # Whom:			janek
 #
-# $Id: Makefile,v 1.8 1997/01/03 09:37:00 obrien Exp $
+# $Id: Makefile,v 1.9 1997/11/26 19:12:54 vanilla Exp $
 
 DISTNAME=	xboing2.4
 PKGNAME=	xboing-2.4
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	games
 
 MAINTAINER=	janek@gaja.ipan.lublin.pl
 
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm
 
 USE_IMAKE=	yes
 WRKSRC= ${WRKDIR}/xboing

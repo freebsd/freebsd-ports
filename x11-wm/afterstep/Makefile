@@ -3,7 +3,7 @@
 # Date created:		October 29th 1996
 # Whom:			jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.19 1998/08/05 09:31:40 asami Exp $
+# $Id: Makefile,v 1.20 1998/08/07 23:01:37 asami Exp $
 #
 
 DISTNAME=	AfterStep-1.0
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://afterstep.foo.net/pub/AfterStep/
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm
 
 USE_X_PREFIX=	yes
 INSTALL_TARGET=	install install.man

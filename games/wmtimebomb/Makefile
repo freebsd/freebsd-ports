@@ -3,7 +3,7 @@
 # Date created:		10 August 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/08/10 07:57:57 tg Exp $
 
 DISTNAME=	wmtimebomb.6
 PKGNAME=	wmtimebomb-0.1.6
@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.gpf.or.th/~mhz/wmtimebomb/
 
 MAINTAINER=	ports@FreeBSD.ORG
 
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm
 BUILD_DEPENDS=	${PREFIX}/lib/libWMaker.a:${PORTSDIR}/x11-wm/windowmaker
 
 WRKSRC=		${WRKDIR}/wmtimebomb

@@ -3,7 +3,7 @@
 # Date created:		Sa   1 Feb 1997 14:46:05 MET
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.18 1998/08/05 09:31:43 asami Exp $
+# $Id: Makefile,v 1.19 1998/08/07 23:01:39 asami Exp $
 #
 
 DISTNAME=	fvwm95-2.0.43a-Autoconf
@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	andreas@FreeBSD.ORG
 
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm
 BUILD_DEPENDS=	${LOCALBASE}/lib/librplay.a:${PORTSDIR}/audio/rplay
 RUN_DEPENDS=	${X11BASE}/icons/chuck.xpm:${PORTSDIR}/x11/fbsd-icons
 

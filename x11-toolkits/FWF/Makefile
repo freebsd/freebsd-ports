@@ -3,7 +3,7 @@
 # Date created:		14 July 1995
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.11 1998/04/26 12:50:24 jseger Exp $
+# $Id: Makefile,v 1.12 1998/08/07 22:56:37 asami Exp $
 #
 
 DISTNAME=	fwf-4.0
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=libs/X/fwf
 
 MAINTAINER=	jseger@FreeBSD.org
 
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm
 
 USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/FWF

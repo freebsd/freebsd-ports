@@ -3,7 +3,7 @@
 # Date created:		31 Jul 1996
 # Whom:			shanee@augusta.de
 #
-# $Id: Makefile,v 1.2 1997/04/29 10:54:43 asami Exp $
+# $Id: Makefile,v 1.3 1997/10/26 23:56:53 fenner Exp $
 #
 
 DISTNAME=	bricons
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	-athena-3.0.tar.gz
 
 MAINTAINER=     shanee@augusta.de
 
-LIB_DEPENDS=    Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=    Xpm.5:${PORTSDIR}/graphics/xpm
 
 USE_IMAKE=	yes
 

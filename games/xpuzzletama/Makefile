@@ -3,7 +3,7 @@
 # Date created:        18 January 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1997/03/05 12:27:38 asami Exp $
+# $Id: Makefile,v 1.2 1997/03/05 12:31:09 asami Exp $
 #
 
 DISTNAME=	xpuzzletama
@@ -14,7 +14,7 @@ DISTFILES=	PuzzleTama-ver1.5.tar.gz
 
 MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
 
-LIB_DEPENDS=    Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=    Xpm.5:${PORTSDIR}/graphics/xpm
 
 CONFIGURE_ENV=  X11BASE=${X11BASE}
 USE_IMAKE=      yes

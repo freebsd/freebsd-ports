@@ -3,7 +3,7 @@
 # Date created:				2 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.3 1998/08/05 09:30:51 asami Exp $
+# $Id: Makefile,v 1.4 1998/08/07 23:56:19 asami Exp $
 #
 
 DISTNAME=		3Dc-0.8.1
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	games/strategy
 
 MAINTAINER=		andy@icc.surw.chel.su
 
-LIB_DEPENDS=		Xpm\\.4\\.:${PORTSDIR}/graphics/xpm \
+LIB_DEPENDS=		Xpm.5:${PORTSDIR}/graphics/xpm \
 			Xaw3d\\.6\\.:${PORTSDIR}/x11-toolkits/Xaw3d
 
 USE_X_PREFIX=		yes

@@ -3,7 +3,7 @@
 # Date created:         		26th April 1995
 # Whom:                 		gpalmer
 #
-# $Id: Makefile,v 1.3 1997/12/13 13:08:14 vanilla Exp $
+# $Id: Makefile,v 1.4 1997/12/16 20:23:37 vanilla Exp $
 #
 
 DISTNAME=		xdtm-2.5.8
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=		gpalmer@FreeBSD.ORG
 
-LIB_DEPENDS=		Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=		Xpm.5:${PORTSDIR}/graphics/xpm
 
 USE_IMAKE=		yes
 WRKSRC=			${WRKDIR}/xdtm

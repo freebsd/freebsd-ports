@@ -3,7 +3,7 @@
 # Date created:				2 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.3 1998/07/27 23:25:09 asami Exp $
+# $Id: Makefile,v 1.4 1998/08/05 09:31:00 asami Exp $
 #
 
 DISTNAME=	xnibbles-1.0BETA3
@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.tjhsst.edu/xnibbles/
 
 MAINTAINER=	andy@icc.surw.chel.su
 
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm
 
 ALL_TARGET=	linux
 USE_GMAKE=	yes

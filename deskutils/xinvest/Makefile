@@ -3,7 +3,7 @@
 # Date created:		1 Ag 1997
 # Whom:			Pedro Giffuni (orig)
 #
-# $Id: Makefile,v 1.1.1.1 1997/11/17 10:11:29 tg Exp $
+# $Id: Makefile,v 1.2 1998/08/07 22:17:54 asami Exp $
 #
 
 DISTNAME=	xinvest-2.5.1
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR= applications
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm
 
 REQUIRES_MOTIF=	yes
 USE_IMAKE=	yes

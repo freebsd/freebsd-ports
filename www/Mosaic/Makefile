@@ -3,7 +3,7 @@
 # Date created:         7 August 1995
 # Whom:                 torstenb
 #
-# $Id: Makefile,v 1.15 1998/05/27 08:44:56 dburr Exp $
+# $Id: Makefile,v 1.16 1998/08/05 09:31:38 asami Exp $
 #
 
 DISTNAME=       Mosaic-src-2.7b5
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.ncsa.uiuc.edu/Web/Mosaic/Unix/source/
 
 LIB_DEPENDS=    jpeg\\.9\\.:${PORTSDIR}/graphics/jpeg \
 		png\\.2\\.:${PORTSDIR}/graphics/png \
-		Xpm\\.4\\.:${PORTSDIR}/graphics/xpm \
+		Xpm.5:${PORTSDIR}/graphics/xpm \
 
 REQUIRES_MOTIF=	yes
 WRKSRC=		${WRKDIR}/Mosaic-src

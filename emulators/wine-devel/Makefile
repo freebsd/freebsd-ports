@@ -3,7 +3,7 @@
 # Date created:         Sa   9 Nov 1996 00:52:22 MET
 # Whom:			se
 #
-# $Id: Makefile,v 1.58 1998/06/07 21:56:05 se Exp $
+# $Id: Makefile,v 1.59 1998/07/27 23:24:20 asami Exp $
 #
 
 DATE=		980517
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	ALPHA/wine/development
 
 MAINTAINER=	se@FreeBSD.ORG
 
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm
 
 WRKSRC=		${WRKDIR}/wine${DATE}
 GNU_CONFIGURE=	yes

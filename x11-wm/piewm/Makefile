@@ -3,7 +3,7 @@
 # Date created:		24 November 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.11 1997/12/25 22:29:50 asami Exp $
+# $Id: Makefile,v 1.12 1998/08/07 23:01:40 asami Exp $
 #
 
 DISTNAME=	piewm
@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.ORG
 
-LIB_DEPENDS=    Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=    Xpm.5:${PORTSDIR}/graphics/xpm
 
 USE_IMAKE=	yes
 

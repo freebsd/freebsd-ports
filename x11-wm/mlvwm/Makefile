@@ -3,7 +3,7 @@
 # Date created:        19 Januruary 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.8 1998/08/07 23:01:39 asami Exp $
+# $Id: Makefile,v 1.9 1998/08/25 00:44:33 asami Exp $
 #
 
 DISTNAME=	mlvwm-0.8.6
@@ -14,7 +14,7 @@ DISTFILES=	mlvwm-0.8.6.tar.gz mini-icons.tar.gz
 
 MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
 
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm
 
 WRKSRC=		${WRKDIR}/mlvwm086
 USE_IMAKE=	yes

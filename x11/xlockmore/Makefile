@@ -3,7 +3,7 @@
 # Date created:		9 November 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.36 1998/07/21 07:09:04 tg Exp $
+# $Id: Makefile,v 1.37 1998/08/05 09:31:50 asami Exp $
 #
 
 DISTNAME=       xlockmore-4.11
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=	tg@FreeBSD.ORG
 
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --without-gl --without-motif --without-sx \

@@ -3,7 +3,7 @@
 # Date created:               9 Oct 1996
 # Whom:                 Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.7 1997/11/20 02:10:57 fenner Exp $
+# $Id: Makefile,v 1.8 1998/08/05 09:31:02 asami Exp $
 #
 
 DISTNAME=       xshisen-1.36
@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.win.or.jp/pub/doc-sources/fj.sources/1996/feb/
 
 MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
 
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm
 
 # runs fine on ssh connection
 #IS_INTERACTIVE=	YES	# Has to create an app-defaults file
