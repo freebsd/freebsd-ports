@@ -13,7 +13,7 @@ CATEGORIES=	security net
 MASTER_SITES=	http://www.hping.org/
 DISTNAME=	hping2.0.0-rc2
 
-MAINTAINER=	Nicolas.Jombart@hsc-labs.com
+MAINTAINER=	ecu@ipv42.net
 
 WRKSRC=		${WRKDIR}/hping2-rc2
 GNU_CONFIGURE=	yes

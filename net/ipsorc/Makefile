@@ -11,7 +11,7 @@ CATEGORIES=	net security
 MASTER_SITES=	http://www.informony.com/ipsorc/
 #MASTER_SITE_SUBDIR=     ${PORTNAME}
 
-MAINTAINER=	Nicolas.Jombart@hsc-labs.com
+MAINTAINER=	ecu@ipv42.net
 
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12

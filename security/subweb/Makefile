@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	security www
 MASTER_SITES=	http://www.hsc.fr/ressources/outils/subweb/download/
 
-MAINTAINER=	Nicolas.Jombart@hsc-labs.com
+MAINTAINER=	ecu@ipv42.net
 
 NO_BUILD=	YES
 
