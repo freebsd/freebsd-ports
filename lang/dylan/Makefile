@@ -3,7 +3,7 @@
 # Date created:         23 Jan 1998
 # Whom:                 housel@acm.org
 #
-# $Id: Makefile,v 1.2 1998/07/14 16:15:13 jdp Exp $
+# $Id: Makefile,v 1.3 1998/07/15 07:43:38 hsu Exp $
 #
 
 DISTNAME=	gd20-source
@@ -16,6 +16,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER= 	housel@acm.org
 
 WRKSRC=		$(WRKDIR)/src
+
+BROKEN_ELF=	yes
 
 GNU_CONFIGURE=  yes
 CONFIGURE_ARGS= --prefix=$(PREFIX) --srcdir=$(WRKSRC)
