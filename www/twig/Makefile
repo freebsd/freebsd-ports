@@ -15,15 +15,10 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Web Based Email Client and Scheduler
 
 .if !defined(WITHOUT_PHP_DEPENDS)
-.if !defined(WITH_PHP3)
 USE_PHP=	ctype imap openssl pgsql pcre posix session tokenizer xml zlib
-.else
-RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp3.so:${PORTSDIR}/${PHP3_PORT}
-.endif
 .endif
 
 NO_BUILD=	YES
-PHP3_PORT?=	www/mod_php3
 TWIG?=		www/data-dist/twig
 PLIST_SUB+=	TWIG=${TWIG}
 ROOTFILES=	index.php test.php goto.php
