@@ -23,7 +23,7 @@ MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
 		ftp://ftp.vse.cz/pub/network/mail/pine/ \
 		ftp://sunsite.icm.edu.pl/pub/unix/mail/pine/ \
 		ftp://giswitch.sggw.waw.pl/pub/unix/pine/ \
-		ftp://ftp.ucr.ac.cr/pub/Unix/mail/pine \
+		ftp://ftp.ucr.ac.cr/pub/Unix/mail/pine/ \
 		ftp://ftp.ut.ee/pub/unix/mail/pine/
 DISTNAME=	pine${pineversion}
 
