@@ -15,6 +15,7 @@ DISTNAME=	ruby-${PORTNAME}-package-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A Ruby implementation of the gettext library
 
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext \
 		racc:${PORTSDIR}/devel/ruby-racc

@@ -15,6 +15,7 @@ DISTNAME=	${RUBY_GNOME_DISTNAME}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Ruby binding for GLib2
 
 LIB_DEPENDS=    glib-2.0.200:${PORTSDIR}/devel/glib20
 

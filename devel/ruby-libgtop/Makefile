@@ -16,6 +16,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A Ruby interface to libgtop
 
 LIB_DEPENDS=	gtop.1:${PORTSDIR}/devel/libgtop
 

@@ -16,6 +16,7 @@ DISTNAME=	${PORTNAME:R}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Common installer script for ruby packages
 
 USE_RUBY=	yes
 

@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-all-2
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	An LALR(1) parser generator for Ruby
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes

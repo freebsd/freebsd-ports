@@ -14,6 +14,7 @@ DISTNAME=	ruby${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Ruby extension library to use SDL library
 
 BUILD_DEPENDS=	${NONEXISTENT}:${RUBY_OPENGL_PORTDIR}:patch
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \

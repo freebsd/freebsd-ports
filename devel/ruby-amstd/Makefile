@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A collection of miscellaneous Ruby modules
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes

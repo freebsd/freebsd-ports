@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	An implementation of Red-Black Tree for Ruby
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

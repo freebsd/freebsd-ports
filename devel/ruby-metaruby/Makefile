@@ -14,6 +14,7 @@ DISTNAME=	MetaRuby-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A reimplementations of some Ruby parts in Ruby, Perl's tie equivalent
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

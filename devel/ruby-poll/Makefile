@@ -14,6 +14,7 @@ DISTNAME=	Ruby-Poll-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	An object-oriented interface to the poll(2) system call for Ruby
 
 USE_BZIP2=	yes
 

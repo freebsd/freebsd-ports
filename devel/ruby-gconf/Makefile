@@ -15,6 +15,7 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A Ruby interface to GConf (1.0.x)
 
 LIB_DEPENDS=	gconf-gtk-1.1:${PORTSDIR}/devel/gconf
 

@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Parser generator for ruby based on 'Berkeley Yacc' and 'Berkeley Yacc for Java'
 
 USE_RUBY=	yes
 RUBY_NO_BUILD_DEPENDS=	yes

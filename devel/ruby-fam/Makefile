@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	FAM bindings for Ruby
 
 LIB_DEPENDS=	fam.0:${PORTSDIR}/devel/fam
 
