@@ -17,7 +17,6 @@ reconfigure any config file.
 A SETUP script helps you to test various supported ghostscript drivers prior
 installation. SETUP finally makes the necessary entries in /etc/printcap,
 creates spool directories and apsfilter default config files as needed.
-A handbook in HTML is now available. Support only via apsfilter mailinglists,
-see homepage !
+A handbook in HTML is available. Support ONLY via mailinglists, see homepage !
 
 WWW:	http://www.apsfilter.org/
