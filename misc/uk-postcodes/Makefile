@@ -5,13 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=       postcodes
-PORTVERSION=	1.0
+PORTNAME=       uk-postcodes
+PORTVERSION=	2.0
 CATEGORIES=	misc
 MASTER_SITES=   ftp://ftp.Awfulhak.org/pub/uk-postcodes/ \
 		http://people.FreeBSD.org/~brian/uk-postcodes/
-PKGNAMEPREFIX=	uk-
-DISTFILES=	uk.postcodes.gz
+EXTRACT_SUFX=	.gz
 
 MAINTAINER=     brian@FreeBSD.org
 
