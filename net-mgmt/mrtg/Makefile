@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mrtg
-PORTVERSION=	2.10.5
-PORTREVISION=	1
+PORTVERSION=	2.10.13
 PORTEPOCH=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/mrtg/pub/ \
@@ -22,6 +21,7 @@ MAINTAINER=	demon@FreeBSD.org
 COMMENT=	The multi-router traffic grapher
 
 RUN_DEPENDS=	${SITE_PERL}/SNMP_Session.pm:${PORTSDIR}/net/p5-SNMP_Session \
+		${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-PodParser \
 		${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-INET6
 
 .if defined(WITH_GD1)
@@ -41,9 +41,10 @@ GNU_CONFIGURE=	YES
 
 CONFIGURE_ENV=	PERL=${PERL}
 
-MAN1=		cfgmaker.1 contrib.1 faq.1 forum.1 indexmaker.1 logfile.1 \
-		mibhelp.1 mrtg.1 mrtg-ipv6.1 mrtg-rrd.1 mrtglib.1 nt-guide.1 \
-		reference.1 squid.1 unix-guide.1 webserver.1
+MAN1=		cfgmaker.1 indexmaker.1 mrtg-contrib.1 mrtg-faq.1 mrtg-forum.1 \
+		mrtg-ipv6.1 mrtg-logfile.1 mrtg-mibhelp.1 mrtg-nt-guide.1 \
+		mrtg-reference.1 mrtg-rrd.1 mrtg-squid.1 mrtg-unix-guide.1 \
+		mrtg-webserver.1 mrtg.1 mrtglib.1
 
 post-patch:
 	${RM} ${WRKSRC}/lib/mrtg2/BER.pm ${WRKSRC}/lib/mrtg2/SNMP_*.pm
@@ -55,8 +56,6 @@ post-patch:
 
 do-install:
 		${MKDIR} -m 755 ${PREFIX}/etc/mrtg
-		${MKDIR} -m 755 ${PREFIX}/lib/perl5/site_perl/${PERL_VER}
-		${MKDIR} -m 755 ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Pod
 		${MKDIR} -m 755 ${DATADIR}
 .if !defined(NOPORTDOCS)
 		${MKDIR} -m 755 ${DOCSDIR}
@@ -68,8 +67,7 @@ do-install:
 		${INSTALL_DATA} ${WRKSRC}/contrib/mrtgmk/cfg/mrtg.cfg ${PREFIX}/etc/mrtg/mrtg.cfg.sample
 		${INSTALL_DATA} ${WRKSRC}/images/* ${DATADIR}
 		${INSTALL_DATA} ${WRKSRC}/doc/*.1 ${PREFIX}/man/man1
-		${INSTALL_DATA} ${WRKSRC}/lib/mrtg2/*.pm ${PREFIX}/lib/perl5/site_perl/${PERL_VER}
-		${INSTALL_DATA} ${WRKSRC}/lib/mrtg2/Pod/*.pm ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Pod
+		${INSTALL_DATA} ${WRKSRC}/lib/mrtg2/*.pm ${SITE_PERL}
 		${INSTALL_PROGRAM} ${WRKSRC}/bin/rateup ${PREFIX}/bin/
 		for file in mrtg cfgmaker indexmaker; do \
 			${INSTALL_SCRIPT} ${WRKSRC}/bin/$$file ${PREFIX}/bin/; \
@@ -79,7 +77,7 @@ post-install:
 .if !defined(BATCH)
 	@${ECHO} ""
 	@${ECHO} "############################################################################"
-	@${ECHO} "# Please create a MRTG config file in ${PREFIX}/etc/mrtg                   #"
+	@${ECHO} "# Please create a MRTG config file in ${PREFIX}/etc/mrtg                  #"
 	@${ECHO} "# A configuration file can be automatically generated with cfgmaker        #"
 	@${ECHO} "# A sample configuration file is installed as mrtg.cfg.sample              #"
 	@${ECHO} "############################################################################"
