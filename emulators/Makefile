@@ -30,7 +30,6 @@
     SUBDIR += linux-vmware-toolbox
     SUBDIR += linux_base
     SUBDIR += linux_base-6
-    SUBDIR += linux_base-7
     SUBDIR += mastergear
     SUBDIR += mtools
     SUBDIR += osf1_base
