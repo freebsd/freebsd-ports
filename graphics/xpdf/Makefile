@@ -14,12 +14,12 @@ MASTER_SITE_SUBDIR=	support/xpdf
 
 MAINTAINER=	DougB@FreeBSD.org
 
-LIB_DEPENDS=	t1.4:${PORTSDIR}/devel/t1lib
+LIB_DEPENDS=	t1.4:${PORTSDIR}/devel/t1lib \
+		ttf.4:${PORTSDIR}/print/freetype
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-USE_FREETYPE=	yes
 USE_AUTOCONF=	yes
 CONFIGURE_ARGS=	--with-gzip --enable-opi		\
 		--with-t1-library=${LOCALBASE}/lib	\
