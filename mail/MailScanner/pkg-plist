@@ -380,6 +380,7 @@ libexec/MailScanner/update_virus_scanners
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD.port
 %%PORTDOCS%%%%DOCSDIR%%/README.sql-logging
+%%PORTDOCS%%%%DOCSDIR%%/Sophos.install.freebsd
 %%PORTDOCS%%%%DOCSDIR%%/building.txt
 %%PORTDOCS%%%%DOCSDIR%%/donations.shtml
 %%PORTDOCS%%%%DOCSDIR%%/downloadgraphs.shtml
