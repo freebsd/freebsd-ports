@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	icc
-PORTVERSION=	7.1.031
-PORTREVISION=	1
+PORTVERSION=	7.1.032
+#PORTREVISION=	1
 CATEGORIES=	lang linux devel
 MASTER_SITES=
 DISTNAME=	l_cc_pc_${PORTVERSION}
@@ -70,10 +70,10 @@ post-extract:
 .endif
 .for i in \
 	intel-icc7-7.1-32.i386.rpm
-#	intel-iidb7-7.2.2-65.i386.rpm \
+#	intel-iidb7-7.2.2-68.i386.rpm \
 #	intel-isubh7-7.1-32.i386.rpm \
 #	intel-ecc7-7.1-32.ia64.rpm \
-#	intel-eidb7-7.2.2-65.ia64.rpm \
+#	intel-eidb7-7.2.2-68.ia64.rpm \
 #	intel-esubh7-7.1-32.ia64.rpm
 	@cd ${WRKSRC} && rpm2cpio 2>/dev/null ${i} | \
 		${CPIO} -idfuE ${WRKDIR}/cpio-exclude --quiet
@@ -111,7 +111,7 @@ post-patch:
 .for i in icc.cfg icpc.cfg
 	@${REINPLACE_CMD} -i "" -e 's:-Xlinker -rpath -Xlinker <INSTALLDIR>/${COMPILERDIR}/ia32/lib::g' \
 		${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/${i}
-	@${ECHO} -e "-Qlocation,ld,${PREFIX}/intel/${COMPILERDIR}/ia32/bin/ldwrapper\n\n-Ulinux\n-U__linux__\n-U__linux\n-U__gnu_linux__\n\n-D__FreeBSD__=${ICCCFGVAL}\n-D__ELF__=1\n" >>${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/${i}
+	@${ECHO} -e "-Qlocation,ld,${PREFIX}/intel/${COMPILERDIR}/ia32/bin/ldwrapper\n\n-Qwr1125\n-Qwe140\n\n-Ulinux\n-U__linux__\n-U__linux\n-U__gnu_linux__\n\n-D__FreeBSD__=${ICCCFGVAL}\n-D__ELF__=1\n" >>${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/${i}
 .if ${OSVERSION} >= 500039
 	@${ECHO} -e "-D__wchar_t=__ct_rune_t\n" >>${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/${i}
 .endif
