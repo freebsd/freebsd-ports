@@ -13,6 +13,9 @@ MASTER_SITES=	# none
 DISTFILES=	# none
 EXTRACT_ONLY=	# none
 
+MAINTAINER=	anholt@FreeBSD.org
+COMMENT=	X11/XFree86 core distribution (complete, using mini/meta-ports)
+
 LIB_DEPENDS=	X11.6:${PORTSDIR}/x11/XFree86-4-libraries
 RUN_DEPENDS=	xvinfo:${PORTSDIR}/x11/XFree86-4-clients \
 	${X11BASE}/lib/X11/doc/ddx.TXT:${PORTSDIR}/x11/XFree86-4-documents \
@@ -25,10 +28,6 @@ RUN_DEPENDS=	xvinfo:${PORTSDIR}/x11/XFree86-4-clients \
 	${X11BASE}/bin/xf86cfg:${PORTSDIR}/x11-servers/XFree86-4-Server \
 	${X11BASE}/bin/Xwrapper-4:${PORTSDIR}/x11/wrapper
 
-
-MAINTAINER=	anholt@FreeBSD.org
-COMMENT=	X11/XFree86 core distribution (complete, using mini/meta-ports)
-
 NO_BUILD=	yes
 LATEST_LINK=	XFree86
 FONT100DPI=	${X11BASE}/lib/X11/fonts/100dpi/UTBI__10-ISO8859-1.pcf.gz
@@ -37,7 +36,7 @@ FONTCYR=	${X11BASE}/lib/X11/fonts/cyrillic/crox1c.pcf.gz
 FONTDEFAULT=	${X11BASE}/lib/X11/fonts/misc/cursor.pcf.gz
 FONTSCALE=	${X11BASE}/lib/X11/fonts/TTF/luximb.ttf
 
-pre-everything:
+pre-everything::
 	@${ECHO_MSG} "This is a meta-port, meaning that it just depends on its subparts of the port."
 	@${ECHO_MSG} "It won't build and install all the parts until you have typed make install"
 	@${ECHO_MSG} "This port does not ensure things are upgraded; use portupgrade if you want to"
