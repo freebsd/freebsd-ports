@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bookcase
-PORTVERSION=	0.8.3
+PORTVERSION=	0.8.4
 CATEGORIES=	misc kde
 MASTER_SITES=	http://www.periapsis.org/bookcase/download/
 
@@ -19,13 +19,6 @@ USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
-	@${REINPLACE_CMD} -e 's|strings.h|bc_strings.h|g' \
-		${WRKSRC}/src/Makefile.in \
-		${WRKSRC}/src/filehandler.cpp \
-		${WRKSRC}/src/translators/bibtexmlimporter.cpp \
-		${WRKSRC}/src/translators/bookcaseimporter.cpp
-	@${MV} ${WRKSRC}/src/strings.h ${WRKSRC}/src/bc_strings.h
-	@${TOUCH} ${WRKSRC}/config.h.in
 
 .include <bsd.port.pre.mk>
 
