@@ -1,5 +1,5 @@
---- configure.orig	Sun Oct 22 09:26:22 2000
-+++ configure	Sun Oct 22 09:26:41 2000
+--- configure.orig	Sat Jun 16 23:06:15 2001
++++ configure	Sat Jun 16 23:07:23 2001
 @@ -1323,7 +1323,7 @@
  
  GNAPSTER_INCLUDES=""
@@ -9,3 +9,25 @@
  
  
  if test "$gnome" = yes; then
+@@ -1370,8 +1370,8 @@
+     echo "$ac_t""GNOME not found, building without it." 1>&6
+     GUI_LIBS="$GUI_LIBS $GTK_LIBS"
+     GUI_CFLAGS="$GUI_CFLAGS $GTK_CFLAGS"
+-    GNAPSTER_INCLUDES="`gtk-config --cflags`"
+-    GNAPSTER_LDADD="`gtk-config --libs`"
++    GNAPSTER_INCLUDES="`$GTK_CONFIG --cflags`"
++    GNAPSTER_LDADD="`$GTK_CONFIG --libs`"
+   else
+     echo "$ac_t""ok" 1>&6
+     
+@@ -1693,8 +1693,8 @@
+     GNAPSTER_LDADD="$GNOME_LIBDIR $GTK_LIBS $GNOMEGNORBA_LIBS $GNOME_APPLETS_LIBS"
+   fi
+ else   
+-  GNAPSTER_INCLUDES="`gtk-config --cflags`"
+-  GNAPSTER_LDADD="`gtk-config --libs`"
++  GNAPSTER_INCLUDES="`$GTK_CONFIG --cflags`"
++  GNAPSTER_LDADD="`$GTK_CONFIG --libs`"
+ fi
+ 
+ 
