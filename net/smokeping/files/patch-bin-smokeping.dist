@@ -1,24 +1,22 @@
---- bin/smokeping.dist.orig	Sun Jan 18 15:48:21 2004
-+++ bin/smokeping.dist	Sun Jan 18 15:52:40 2004
-@@ -1,14 +1,11 @@
--#!/usr/sepp/bin/perl -w
+--- bin/smokeping.dist.orig	Sun Jan 30 17:56:30 2005
++++ bin/smokeping.dist	Mon Feb  7 21:46:26 2005
+@@ -1,12 +1,11 @@
+-#!/usr/sepp/bin/perl-5.8.0 -w
 +#!%%PERL%% -w
  # -*-perl-*-
  
--use lib qw(/home/oetiker/data/projects/AABN-rrdtool/perl-shared/blib/lib);
--use lib qw(/home/oetiker/data/projects/AABN-rrdtool/perl-shared/blib/arch);
--use lib qw(/usr/pack/rrdtool-1.0.40-ds/lib/perl/5.8.0);
+-use lib qw(/usr/pack/rrdtool-1.0.47-to/lib);
 -use lib qw(/home/oetiker/data/projects/AADJ-smokeping/dist/lib);
 +use lib qw(%%PREFIX%%/smokeping/lib);
  
- use Smokeping 1.31;
+ use Smokeping 1.38;
  
 -Smokeping::main("etc/config.dist");
 +Smokeping::main("%%PREFIX%%/etc/smokeping/config");
  
  =head1 NAME
  
-@@ -86,22 +83,8 @@
+@@ -101,22 +100,8 @@
  
  =head1 SETUP
  

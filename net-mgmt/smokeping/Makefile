@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	smokeping
-PORTVERSION=	1.31
-PORTREVISION=	1
+PORTVERSION=	1.38
 CATEGORIES=	net www
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/smokeping/pub/
 
@@ -58,12 +57,12 @@ NO_BUILD=	yes
 USE_REINPLACE=	yes
 USE_PERL5=	yes
 
-MAN1=		CiscoRTTMonDNS.pm.1 CiscoRTTMonEchoICMP.pm.1 CiscoRTTMonTcpConnect.pm.1 \
-		Curl.pm.1 DNS.pm.1 EchoPing.pm.1 EchoPingChargen.pm.1 EchoPingDiscard.pm.1 \
-		EchoPingHttp.pm.1 EchoPingHttps.pm.1 EchoPingIcp.pm.1 EchoPingSmtp.pm.1 \
-		FPing.pm.1 FPing6.pm.1 IOSPing.pm.1 ParseConfig.pm.1 RemoteFPing.pm.1 \
-		Smokeping.pm.1 base.pm.1 basefork.pm.1 basevars.pm.1 smokeping.1 \
-		smokeping.cgi.1 smokeping_config.1 smokeping_install.1 telnetIOSPing.pm.1
+MAN1=		ParseConfig.pm.1 \
+		Smokeping.pm.1 \
+		smokeping.1 \
+		smokeping.cgi.1 \
+		smokeping_config.1 \
+		smokeping_install.1
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGINSTALL=	${WRKDIR}/pkg-install
@@ -82,19 +81,48 @@ FILES_SUB=	USER=${USER} GROUP=${GROUP} \
 		PERL=${PERL} PREFIX=${PREFIX}
 
 DOC1=		CHANGES CONTRIBUTORS COPYING COPYRIGHT README TODO
-DOC2=		CiscoRTTMonDNS.pm CiscoRTTMonEchoICMP.pm CiscoRTTMonTcpConnect.pm \
-		Curl.pm DNS.pm EchoPing.pm EchoPingChargen.pm EchoPingDiscard.pm \
-		EchoPingHttp.pm EchoPingHttps.pm EchoPingIcp.pm EchoPingSmtp.pm \
-		FPing.pm FPing6.pm IOSPing.pm ParseConfig.pm RemoteFPing.pm Smokeping.pm \
-		base.pm basefork.pm basevars.pm smokeping.cgi \
-		smokeping smokeping_config smokeping_install telnetIOSPing.pm
+DOC2=		ParseConfig.pm \
+		Smokeping.pm \
+		matchers/avgratio.pm \
+		matchers/base.pm \
+		matchers/median.pm \
+		probes/AnotherDNS.pm \
+		probes/AnotherSSH.pm \
+		probes/CiscoRTTMonDNS.pm \
+		probes/CiscoRTTMonEchoICMP.pm \
+		probes/CiscoRTTMonTcpConnect.pm \
+		probes/Curl.pm \
+		probes/DNS.pm \
+		probes/EchoPing.pm \
+		probes/EchoPingChargen.pm \
+		probes/EchoPingDiscard.pm \
+		probes/EchoPingHttp.pm \
+		probes/EchoPingHttps.pm \
+		probes/EchoPingIcp.pm \
+		probes/EchoPingSmtp.pm \
+		probes/FPing.pm \
+		probes/FPing6.pm \
+		probes/IOSPing.pm \
+		probes/LDAP.pm \
+		probes/Radius.pm \
+		probes/RemoteFPing.pm \
+		probes/SSH.pm \
+		probes/base.pm \
+		probes/basefork.pm \
+		probes/basevars.pm \
+		probes/passwordchecker.pm \
+		probes/telnetIOSPing.pm \
+		smokeping.cgi \
+		smokeping \
+		smokeping_config \
+		smokeping_install
 ETC1=		basepage.html config smokemail config-echoping
 
 # Things that shouldn't have been in the tarball in the first place
 post-extract:
 	@${RM} ${WRKSRC}/lib/BER.pm
 	@${RM} ${WRKSRC}/lib/SNMP_*.pm
-	@${RM} ${WRKSRC}/lib/probes/patch
+	@${RM} ${WRKSRC}/lib/ISG/.#ParseConfig.pm.1.26
 
 post-patch:
 	@${FIND} ${WRKSRC} -name \*.orig -delete
@@ -104,6 +132,7 @@ pre-configure:
 		${WRKSRC}/bin/smokeping.dist \
 		${WRKSRC}/htdocs/smokeping.cgi.dist \
 		${WRKSRC}/etc/config.dist \
+		${WRKSRC}/etc/config-echoping.dist \
 		${WRKSRC}/lib/probes/*.pm
 	@${FIND} ${WRKSRC} -name \*.bak -delete
 	@${SED} ${FILES_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
@@ -126,15 +155,17 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/bin/smokeping ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 .for FILE in ${MAN1}
-	@${INSTALL_MAN} ${WRKSRC}/doc/${FILE} ${PREFIX}/man/man1
+	@${INSTALL_MAN} ${WRKSRC}/doc/man/man1/${FILE} ${PREFIX}/man/man1
 .endfor
 	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/matchers
+	@${MKDIR} ${DOCSDIR}/probes
 .for FILE in ${DOC1}
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}/${FILE}
 .endfor
 .for FILE in ${DOC2}
-	@${INSTALL_DATA} ${WRKSRC}/doc/${FILE}.html ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/${FILE}.txt  ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${FILE}.html ${DOCSDIR}/${FILE}.html
+	${INSTALL_DATA} ${WRKSRC}/doc/${FILE}.txt  ${DOCSDIR}/${FILE}.txt
 .endfor
 .endif
 	@${MKDIR} ${PREFIX}/etc/smokeping

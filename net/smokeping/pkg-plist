@@ -18,48 +18,10 @@ etc/smokeping/config-echoping.dist
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/CiscoRTTMonDNS.pm.html
-%%PORTDOCS%%%%DOCSDIR%%/CiscoRTTMonDNS.pm.txt
-%%PORTDOCS%%%%DOCSDIR%%/CiscoRTTMonEchoICMP.pm.html
-%%PORTDOCS%%%%DOCSDIR%%/CiscoRTTMonEchoICMP.pm.txt
-%%PORTDOCS%%%%DOCSDIR%%/CiscoRTTMonTcpConnect.pm.html
-%%PORTDOCS%%%%DOCSDIR%%/CiscoRTTMonTcpConnect.pm.txt
-%%PORTDOCS%%%%DOCSDIR%%/Curl.pm.html
-%%PORTDOCS%%%%DOCSDIR%%/Curl.pm.txt
-%%PORTDOCS%%%%DOCSDIR%%/DNS.pm.html
-%%PORTDOCS%%%%DOCSDIR%%/DNS.pm.txt
-%%PORTDOCS%%%%DOCSDIR%%/EchoPing.pm.html
-%%PORTDOCS%%%%DOCSDIR%%/EchoPing.pm.txt
-%%PORTDOCS%%%%DOCSDIR%%/EchoPingChargen.pm.html
-%%PORTDOCS%%%%DOCSDIR%%/EchoPingChargen.pm.txt
-%%PORTDOCS%%%%DOCSDIR%%/EchoPingDiscard.pm.html
-%%PORTDOCS%%%%DOCSDIR%%/EchoPingDiscard.pm.txt
-%%PORTDOCS%%%%DOCSDIR%%/EchoPingHttp.pm.html
-%%PORTDOCS%%%%DOCSDIR%%/EchoPingHttp.pm.txt
-%%PORTDOCS%%%%DOCSDIR%%/EchoPingHttps.pm.html
-%%PORTDOCS%%%%DOCSDIR%%/EchoPingHttps.pm.txt
-%%PORTDOCS%%%%DOCSDIR%%/EchoPingIcp.pm.html
-%%PORTDOCS%%%%DOCSDIR%%/EchoPingIcp.pm.txt
-%%PORTDOCS%%%%DOCSDIR%%/EchoPingSmtp.pm.html
-%%PORTDOCS%%%%DOCSDIR%%/EchoPingSmtp.pm.txt
-%%PORTDOCS%%%%DOCSDIR%%/FPing.pm.html
-%%PORTDOCS%%%%DOCSDIR%%/FPing.pm.txt
-%%PORTDOCS%%%%DOCSDIR%%/FPing6.pm.html
-%%PORTDOCS%%%%DOCSDIR%%/FPing6.pm.txt
-%%PORTDOCS%%%%DOCSDIR%%/IOSPing.pm.html
-%%PORTDOCS%%%%DOCSDIR%%/IOSPing.pm.txt
 %%PORTDOCS%%%%DOCSDIR%%/ParseConfig.pm.html
 %%PORTDOCS%%%%DOCSDIR%%/ParseConfig.pm.txt
-%%PORTDOCS%%%%DOCSDIR%%/RemoteFPing.pm.html
-%%PORTDOCS%%%%DOCSDIR%%/RemoteFPing.pm.txt
 %%PORTDOCS%%%%DOCSDIR%%/Smokeping.pm.html
 %%PORTDOCS%%%%DOCSDIR%%/Smokeping.pm.txt
-%%PORTDOCS%%%%DOCSDIR%%/base.pm.html
-%%PORTDOCS%%%%DOCSDIR%%/base.pm.txt
-%%PORTDOCS%%%%DOCSDIR%%/basefork.pm.html
-%%PORTDOCS%%%%DOCSDIR%%/basefork.pm.txt
-%%PORTDOCS%%%%DOCSDIR%%/basevars.pm.html
-%%PORTDOCS%%%%DOCSDIR%%/basevars.pm.txt
 %%PORTDOCS%%%%DOCSDIR%%/smokeping.cgi.html
 %%PORTDOCS%%%%DOCSDIR%%/smokeping.cgi.txt
 %%PORTDOCS%%%%DOCSDIR%%/smokeping.html
@@ -68,12 +30,71 @@ etc/smokeping/config-echoping.dist
 %%PORTDOCS%%%%DOCSDIR%%/smokeping_config.txt
 %%PORTDOCS%%%%DOCSDIR%%/smokeping_install.html
 %%PORTDOCS%%%%DOCSDIR%%/smokeping_install.txt
-%%PORTDOCS%%%%DOCSDIR%%/telnetIOSPing.pm.html
-%%PORTDOCS%%%%DOCSDIR%%/telnetIOSPing.pm.txt
+%%PORTDOCS%%%%DOCSDIR%%/matchers/avgratio.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/matchers/avgratio.pm.txt
+%%PORTDOCS%%%%DOCSDIR%%/matchers/base.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/matchers/base.pm.txt
+%%PORTDOCS%%%%DOCSDIR%%/matchers/median.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/matchers/median.pm.txt
+%%PORTDOCS%%%%DOCSDIR%%/probes/AnotherDNS.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/probes/AnotherDNS.pm.txt
+%%PORTDOCS%%%%DOCSDIR%%/probes/AnotherSSH.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/probes/AnotherSSH.pm.txt
+%%PORTDOCS%%%%DOCSDIR%%/probes/CiscoRTTMonDNS.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/probes/CiscoRTTMonDNS.pm.txt
+%%PORTDOCS%%%%DOCSDIR%%/probes/CiscoRTTMonEchoICMP.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/probes/CiscoRTTMonEchoICMP.pm.txt
+%%PORTDOCS%%%%DOCSDIR%%/probes/CiscoRTTMonTcpConnect.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/probes/CiscoRTTMonTcpConnect.pm.txt
+%%PORTDOCS%%%%DOCSDIR%%/probes/Curl.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/probes/Curl.pm.txt
+%%PORTDOCS%%%%DOCSDIR%%/probes/DNS.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/probes/DNS.pm.txt
+%%PORTDOCS%%%%DOCSDIR%%/probes/EchoPing.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/probes/EchoPing.pm.txt
+%%PORTDOCS%%%%DOCSDIR%%/probes/EchoPingChargen.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/probes/EchoPingChargen.pm.txt
+%%PORTDOCS%%%%DOCSDIR%%/probes/EchoPingDiscard.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/probes/EchoPingDiscard.pm.txt
+%%PORTDOCS%%%%DOCSDIR%%/probes/EchoPingHttp.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/probes/EchoPingHttp.pm.txt
+%%PORTDOCS%%%%DOCSDIR%%/probes/EchoPingHttps.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/probes/EchoPingHttps.pm.txt
+%%PORTDOCS%%%%DOCSDIR%%/probes/EchoPingIcp.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/probes/EchoPingIcp.pm.txt
+%%PORTDOCS%%%%DOCSDIR%%/probes/EchoPingSmtp.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/probes/EchoPingSmtp.pm.txt
+%%PORTDOCS%%%%DOCSDIR%%/probes/FPing.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/probes/FPing.pm.txt
+%%PORTDOCS%%%%DOCSDIR%%/probes/FPing6.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/probes/FPing6.pm.txt
+%%PORTDOCS%%%%DOCSDIR%%/probes/IOSPing.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/probes/IOSPing.pm.txt
+%%PORTDOCS%%%%DOCSDIR%%/probes/LDAP.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/probes/LDAP.pm.txt
+%%PORTDOCS%%%%DOCSDIR%%/probes/Radius.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/probes/Radius.pm.txt
+%%PORTDOCS%%%%DOCSDIR%%/probes/RemoteFPing.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/probes/RemoteFPing.pm.txt
+%%PORTDOCS%%%%DOCSDIR%%/probes/SSH.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/probes/SSH.pm.txt
+%%PORTDOCS%%%%DOCSDIR%%/probes/base.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/probes/base.pm.txt
+%%PORTDOCS%%%%DOCSDIR%%/probes/basefork.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/probes/basefork.pm.txt
+%%PORTDOCS%%%%DOCSDIR%%/probes/basevars.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/probes/basevars.pm.txt
+%%PORTDOCS%%%%DOCSDIR%%/probes/passwordchecker.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/probes/passwordchecker.pm.txt
+%%PORTDOCS%%%%DOCSDIR%%/probes/telnetIOSPing.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/probes/telnetIOSPing.pm.txt
 smokeping/htdocs/smokeping.cgi
 smokeping/lib/ISG/ParseConfig.pm
 smokeping/lib/Smokeping.pm
 smokeping/lib/ciscoRttMonMIB.pm
+smokeping/lib/matchers/base.pm
+smokeping/lib/matchers/median.pm
+smokeping/lib/matchers/avgratio.pm
 smokeping/lib/probes/AnotherDNS.pm
 smokeping/lib/probes/AnotherSSH.pm
 smokeping/lib/probes/CiscoRTTMonDNS.pm
@@ -109,7 +130,10 @@ smokeping/lib/probes/telnetIOSPing.pm
 @unexec rmdir %D/var 2>/dev/null || true
 @dirrm smokeping/htdocs
 @dirrm smokeping/lib/probes
+@dirrm smokeping/lib/matchers
 @dirrm smokeping/lib/ISG
 @dirrm smokeping/lib
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/probes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/matchers
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec rmdir %D/smokeping 2>/dev/null || true
