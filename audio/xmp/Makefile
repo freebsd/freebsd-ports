@@ -22,16 +22,12 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_AUTOCONF_VER=	213
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" 
+		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-alsa
 
 CFLAGS+=	-fPIC
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 503000
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
 
 .if ${OSVERSION} > 500013 || ${MACHINE_ARCH} == "alpha"
 USE_GNOME+=	esound
