@@ -1,0 +1,10 @@
+--- clients/telnet/telnet.c.org	Fri Sep 24 23:18:34 1999
++++ clients/telnet/telnet.c	Fri Sep 24 23:18:58 1999
+@@ -596,6 +596,7 @@
+     else return(unknown);
+ }
+ 
++#undef HAVE_SETUPTERM		/* GROSS KLUDGE XXX -- imp */
+ #ifndef HAVE_SETUPTERM
+ extern int tgetent(char *, char *);
+ char termbuf[1024];
