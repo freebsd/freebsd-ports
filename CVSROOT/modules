@@ -8048,7 +8048,7 @@ tvision		ports/devel/tvision
 tvmet		ports/math/tvmet
 tvp		ports/games/tvp
 tvtwm		ports/x11-wm/tvtwm
-twhttpd		ports/mail/twhttpd
+twhttpd		ports/www/twhttpd
 twig		ports/www/twig
 twin		ports/emulators/twin
 twitch		ports/games/twitch
