@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openwebmail
-PORTVERSION=	2.30
+PORTVERSION=	2.32
 CATEGORIES=	mail
 MASTER_SITES=	http://openwebmail.com/openwebmail/download/ \
 		http://turtle.ee.ncku.edu.tw/openwebmail/download/
@@ -22,6 +22,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Text/Iconv.pm:${PORTSDIR}/converters/p5-T
 
 .if ${PERL_LEVEL} < 500802
 RUN_DEPENDS+=	${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
+		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net
 .endif
 
