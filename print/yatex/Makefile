@@ -15,7 +15,7 @@ MAINTAINER=	taoka@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/yatex${VERSION}
 .if defined(XEMACS-MULE)
-BUILD_DEPENDS=	xemacs:${PORTSDIR}/editors/xemacs-mule \
+BUILD_DEPENDS=	xemacs:${PORTSDIR}/japanese/xemacs \
 		${PREFIX}/lib/xemacs/xemacs-packages/pkginfo/MANIFEST.zenirc:${PORTSDIR}/editors/xemacs-sumo-packages \
 		nkf:${PORTSDIR}/japanese/nkf
 .endif
@@ -130,7 +130,7 @@ do-install:
 .if defined(XEMACS) || defined(XEMACS-MULE)
 	cd ${WRKSRC}; \
 	for file in `${ECHO} ${INFOFILES} | ${SED} "s,:, ,g"`; do \
-		${INSTALL_DATA} ${WRKSRC}/docs/$${file} ${INFODIR}.info; \
+		${INSTALL_DATA} ${WRKSRC}/docs/$${file} ${INFODIR}/$${file}.info; \
 	done
 .else
 	cd ${WRKSRC}; \
