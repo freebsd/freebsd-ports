@@ -11,8 +11,6 @@ CATEGORIES=	graphics
 MASTER_SITES=   http://www.boutell.com/gd/http/ \
 		ftp://ftp.boutell.com/pub/boutell/gd/
 
-MAINTAINER=     jeff@cetlink.net
-
 LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png
 
 FETCH_BEFORE_ARGS=	-b
