@@ -1,3 +1,5 @@
 @unexec if cmp -s %D/etc/bftpd.conf %D/etc/bftpd.conf.sample; then rm -f %D/etc/bftpd.conf; fi
 etc/bftpd.conf.sample
 sbin/bftpd
+%%PORTDOCS%%share/doc/bftpd/bftpddoc.txt
+%%PORTDOCS%%@dirrm share/doc/bftpd

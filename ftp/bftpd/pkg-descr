@@ -12,9 +12,12 @@ Features of bftpd include:
 	* Support for most RFC FTP commands
 	* tar.gz on-the-fly compression/archiving
 	* Security with chroot without special setup
-	* No need for filessh, ls...) in a chroot environment
+	* No need for files (sh, ls...) in a chroot environment
 	* Logging to wtmp and to a config file
-	* PAM and passwd/shadow support
+	* PAM support
 	* Support for SITE CHOWN/CHMOD
 
 WWW: http://www.bftpd.org/
+
+- Pete
+petef@databits.net
