@@ -1,0 +1,22 @@
+--- cf/install.in.orig	Tue Jun  6 20:13:09 1995
++++ cf/install.in	Fri Oct  3 15:41:49 1997
+@@ -27,15 +27,15 @@
+ 
+ install_lib:
+ 	-if test ! -d $(INCLUDE_DIR); then mkdir -p $(INCLUDE_DIR); fi
+-	-if test ! -d $(LIB_DIR); then mkdir -p $(LIB_DIR); fi
++	-if test ! -d $(LIB_DIR)/plplot; then mkdir -p $(LIB_DIR)/plplot; fi
+ 	-if test ! -d $(DOC_DIR); then mkdir -p $(DOC_DIR); fi
+ 	-if test ! -d $(BIN_DIR); then mkdir -p $(BIN_DIR); fi
+ 	-if test ! -d $(INFO_DIR); then mkdir -p $(INFO_DIR); fi
+-	-cd $(top_srcdir)/lib; cp *.fnt *.map $(LIB_DIR)
++	-cd $(top_srcdir)/lib; cp *.fnt *.map $(LIB_DIR)/plplot
+ 	-cp $(PLLIB_BASE)* $(LIB_DIR); \
+-	 for file in $(PLLIB_BASE)*; do $(RANLIB) $(LIB_DIR)/$$file; done
++	 for file in $(PLLIB_BASE)*.a; do $(RANLIB) $(LIB_DIR)/$$file; done
+ 	-cd $(top_srcdir); \
+-	 cp README NEWS CHANGES Copyright COPYING.LIB FAQ ToDo \
++	 cp README NEWS CHANGES FAQ ToDo \
+ 	    mklinks $(DOC_DIR)
+ 	-if test ! -f $(DOC_DIR)/README.local; then \
+ 	 cp $(top_srcdir)/doc/README.local $(DOC_DIR); fi

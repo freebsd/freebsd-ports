@@ -1,0 +1,54 @@
+--- configure.orig	Tue Jun  6 21:58:50 1995
++++ configure	Fri Oct  3 14:59:52 1997
+@@ -1472,13 +1472,13 @@
+ # ----------------------------------------------------------------------------
+ 
+ CC_FLAGS=\
+-"-c $DBL_FLAG_C $DEBUG_FLAG_C $SYS_FLAGS_C $PROF_FLAG_C $OPT_FLAG_C"
++"-c $CFLAGS $DBL_FLAG_C $DEBUG_FLAG_C $SYS_FLAGS_C $PROF_FLAG_C $OPT_FLAG_C"
+ 
+ CXX_FLAGS=\
+-"-c $DBL_FLAG_CXX $DEBUG_FLAG_CXX $SYS_FLAGS_CXX $PROF_FLAG_CXX $OPT_FLAG_CXX"
++"-c $CFLAGS $DBL_FLAG_CXX $DEBUG_FLAG_CXX $SYS_FLAGS_CXX $PROF_FLAG_CXX $OPT_FLAG_CXX"
+ 
+ F77_FLAGS=\
+-"-c $DBL_FLAG_F $DEBUG_FLAG_F $SYS_FLAGS_F $PROF_FLAG_F $OPT_FLAG_F"
++"-c $FFLAGS $DBL_FLAG_F $DEBUG_FLAG_F $SYS_FLAGS_F $PROF_FLAG_F $OPT_FLAG_F"
+ 
+ LDC_FLAGS=\
+ "$PROF_FLAG_LC $SYS_FLAGS_LC $DEBUG_FLAG_LC"
+@@ -3062,6 +3062,14 @@
+ 	# Hmm, would be good to replace that trailing .0 with the
+ 	# compilation number or some such.  Have to think about that.
+     ;;
++    FreeBSD*|NetBSD*|OpenBSD* )
++	SO='.so.$(MAJOR_VERSION).$(MINOR_VERSION)'
++	SHLIB_CCFLAGS="-fpic -DPIC"
++	SHLIB_CXXFLAGS="-fpic -DPIC"
++	SHLIB_BUILD="ld -Bshareable -o"
++	SOVERSION='$(MAJOR_VERSION).$(MINOR_VERSION)'
++	echo "$ac_t""okay" 1>&6
++    ;;
+     HP-UX-* )
+ 	SO=".sl"
+ 	SHLIB_F77FLAGS="+z"
+@@ -4192,16 +4200,16 @@
+     fi
+ fi
+ if test -z "$DOC_DIR"; then
+-    DOC_DIR=$prefix/doc
++    DOC_DIR=$prefix/share/doc/plplot
+ fi
+ if test -z "$INFO_DIR"; then
+     INFO_DIR=$prefix/info
+ fi
+ if test -z "$INCLUDE_DIR"; then
+-    INCLUDE_DIR=$prefix/include
++    INCLUDE_DIR=$prefix/include/plplot
+ fi
+ if test -z "$DEMOS_DIR"; then
+-    DEMOS_DIR=$prefix/examples
++    DEMOS_DIR=$prefix/share/examples/plplot
+ fi
+ 
+ cat >> confdefs.h <<EOF
