@@ -3,7 +3,7 @@
 # Date created:		3 August 1996
 # Whom:			lukin
 #
-# $Id: Makefile,v 1.7 1997/05/24 17:08:36 obrien Exp $
+# $Id: Makefile,v 1.8 1997/09/19 06:59:44 tg Exp $
 #
 
 DISTNAME=	FileRunner-2.4
@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	X11/desktop
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	lukin@okbmei.msk.su
+MAINTAINER=	vanilla@MinJe.com.TW
 
 LIB_DEPENDS=	tk80\\.1:${PORTSDIR}/x11/tk80
 
