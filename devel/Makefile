@@ -625,6 +625,7 @@
     SUBDIR += perforce
     SUBDIR += perltidy
     SUBDIR += pharmacy
+    SUBDIR += picasm
     SUBDIR += picprog
     SUBDIR += pinstall
     SUBDIR += pkgconfig
