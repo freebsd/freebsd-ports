@@ -1,0 +1,20 @@
+--- spel.c.orig	Mon Jul 17 23:14:49 2000
++++ spel.c	Mon Jul 17 23:15:57 2000
+@@ -9,7 +9,7 @@
+ typedef struct dirent dirent;
+ #define dnamlen(d) strlen(d->d_name)
+ #else
+-#include <sys/dir.h>
++#include <dirent.h>
+ typedef struct direct dirent;
+ #define dnamlen(d) (d->d_namlen)
+ #endif
+@@ -298,7 +298,7 @@
+ #ifdef DICT_DIR
+ char buf[BUFSIZE+1];
+ DIR *ispd;
+-dirent *de;
++struct dirent *de;
+ int n= 0;
+ int namlen;
+ 

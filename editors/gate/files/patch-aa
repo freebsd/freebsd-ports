@@ -1,0 +1,24 @@
+--- Makefile.orig	Wed Jul 24 02:23:43 1996
++++ Makefile	Fri Jul 21 17:57:55 2000
+@@ -150,17 +150,17 @@
+ #LIB=	-ltermcap
+ 
+ # my Linux box with international ispell - Debugging only
+-CFLAGS= -g \
++CFLAGS+= -g \
+ 	-DBSD \
+ 	-DYAPP \
+ 	-DNOVICE \
+ 	-DIISPELL \
+ 	-DPICO_BUG \
+-	-DSPELL_PATH='"/usr/local/bin/ispell"' \
+-	-DDICT_DIR='"/usr/local/lib"'  \
++	-DSPELL_PATH='"$(LOCALBASE)/bin/ispell"' \
++	-DDICT_DIR='"$(LOCALBASE)/share/ispell"'  \
+ 	-DLANG_DEFAULT='"english"'\
+ 	-DDEFAULT_EDITOR='"/usr/bin/vi"' \
+-	-DHELP_FILE='"/home/janc/src/gate/gate.help"'
++	-DHELP_FILE='"$(PREFIX)/share/gate/gate.help"'
+ LIB=	-ltermcap
+ 
+ OBJS=main.o line.o syst.o util.o cmd.o file.o opt.o subs.o term.o proc.o spel.o

@@ -1,0 +1,19 @@
+--- proc.c.orig	Mon Jul 17 23:13:54 2000
++++ proc.c	Mon Jul 17 23:14:26 2000
+@@ -57,13 +57,14 @@
+ char tmpname[20];
+ FILE *cfp;
+ long oldt;
++int fd;
+ 
+     /* We could use a call to make_copy() here, but this method survives
+      * interupts better
+      */
+     strcpy(tmpname, "/tmp/gateXXXXXX");
+-    mktemp(tmpname);
+-    if ((cfp= fopen(tmpname,"w+")) == NULL)
++    fd = mkstemp(tmpname);
++    if ((cfp= fdopen(fd,"w+")) == NULL)
+     {
+ 	printf("Cannot open file %s.\n",tmpname);
+ 	return(NULL);

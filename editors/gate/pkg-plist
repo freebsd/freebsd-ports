@@ -1,0 +1,3 @@
+bin/gate
+share/gate/gate.help
+@dirrm share/gate
