@@ -363,7 +363,7 @@
     SUBDIR += java-util-concurrent
     SUBDIR += jclassinfo
     SUBDIR += jrtplib
-    SUBDIR += jude_community
+    SUBDIR += jude-community
     SUBDIR += judy
     SUBDIR += kaptain
     SUBDIR += kcachegrind
