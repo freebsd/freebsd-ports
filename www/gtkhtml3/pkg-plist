@@ -93,7 +93,7 @@ include/gtkhtml/htmlvspace.h
 lib/bonobo/plugin/libstorage_http.so
 lib/libgtkhtml.a
 lib/libgtkhtml.so
-lib/libgtkhtml.so.16
+lib/libgtkhtml.so.17
 share/gnome/apps/Settings/Documents/gtkhtml-properties.desktop
 share/gnome/control-center/Documents/gtkhtml-properties.desktop
 share/gnome/control-center/capplets/gtkhtml-properties.desktop
