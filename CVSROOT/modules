@@ -3228,8 +3228,8 @@ hohlin		ports/games/hohlin
 holyshout	ports/audio/holyshout
 honeyd		ports/net/honeyd
 hope		ports/lang/hope
+horde		ports/www/horde
 horde-passwd	ports/www/horde-passwd
-horde2		ports/www/horde2
 hostapd		ports/security/hostapd
 hostsentry	ports/security/hostsentry
 hot-babe	ports/deskutils/hot-babe
@@ -3459,7 +3459,7 @@ imlib		ports/graphics/imlib
 imlib2		ports/graphics/imlib2
 imlib2_loaders	ports/graphics/imlib2_loaders
 imm		ports/mbone/imm
-imp3		ports/mail/imp3
+imp		ports/mail/imp
 impress		ports/editors/impress
 imwheel		ports/x11/imwheel
 indexme		ports/www/indexme
