@@ -17,7 +17,7 @@ MAINTAINER=	howardjp@wam.umd.edu
 
 MAN1=	grep.1 egrep.1 fgrep.1 zgrep.1
 
-BUILD_DEPENDS=  ${PREFIX}/lib/libiberty.so:${PORTSDIR}/devel/freelibiberty
+LIB_DEPENDS=	iberty.1:${PORTSDIR}/devel/freelibiberty
 
 post-extract:
 	@(cd ${WRKSRC}; rm -f .depend)
