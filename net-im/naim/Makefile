@@ -3,12 +3,13 @@
 # Date created:			02 March 1999
 # Whom:				mharo@area51.fremont.ca.us
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/04/10 19:41:37 jseger Exp $
 #
 
 DISTNAME=	naim-0.9.3
 CATEGORIES=	net
-MASTER_SITES=	http://naim.n.ml.org/release/
+MASTER_SITES=	http://naim.n.ml.org/release/ \
+		ftp://ftp.netmug.org/pub/FreeBSD/distfiles/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mharo@area51.fremont.ca.us
@@ -22,7 +23,7 @@ post-install:
 	${MKDIR} ${PREFIX}/share/examples/naim
 	${INSTALL_DATA} ${WRKSRC}/doc/faimrc_sample ${PREFIX}/share/examples/naim/
 	@${ECHO} "************************************************************"
-	@${CAT} ${MASTERDIR}/pkg/MESSAGE
+	@${CAT} ${PKGDIR}/MESSAGE
 	@${ECHO} "************************************************************"
 
 .include <bsd.port.mk>
