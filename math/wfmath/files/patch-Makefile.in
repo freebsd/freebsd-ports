@@ -1,0 +1,19 @@
+*** Makefile.in.orig	Thu Feb  3 10:13:51 2005
+--- Makefile.in	Thu Feb  3 10:16:12 2005
+***************
+*** 100,106 ****
+  WFMATH_VERSION_INFO = @WFMATH_VERSION_INFO@
+  WFMATH_VERSION_NO = @WFMATH_VERSION_NO@
+  
+! pkgconfigdir = $(libdir)/pkgconfig
+  pkgconfig_DATA = wfmath-0.3.pc
+  
+  EXTRA_DIST = TODO autogen.sh wfmath.pbproj/project.pbxproj wfmath.spec
+--- 100,106 ----
+  WFMATH_VERSION_INFO = @WFMATH_VERSION_INFO@
+  WFMATH_VERSION_NO = @WFMATH_VERSION_NO@
+  
+! pkgconfigdir = $(prefix)/libdata/pkgconfig
+  pkgconfig_DATA = wfmath-0.3.pc
+  
+  EXTRA_DIST = TODO autogen.sh wfmath.pbproj/project.pbxproj wfmath.spec

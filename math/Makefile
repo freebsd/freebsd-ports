@@ -254,6 +254,7 @@
     SUBDIR += vtk-java
     SUBDIR += vtk-python
     SUBDIR += vtk-tcl
+    SUBDIR += wfmath
     SUBDIR += wingz
     SUBDIR += wingz3
     SUBDIR += wmcalc

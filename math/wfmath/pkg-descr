@@ -1,0 +1,9 @@
+This is the Worldforge math library. The primary focus of WFMath is geometric
+objects. Thus, it includes several shapes (boxes, balls, lines), in addition
+to the basic math objects that are used to build these shapes (points,
+vectors, matricies).
+
+WWW: http://www.worldforge.org/
+
+- Janni
+jannisan@t-online.de
