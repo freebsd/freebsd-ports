@@ -1,33 +1,22 @@
-*** ./Makefile.org	Mon Jul 31 14:01:23 1995
---- ./Makefile	Mon Jul 31 14:40:51 1995
+*** makefile.unx.orig	Thu Jun 20 22:40:37 1996
+--- makefile.unx	Sun Jul 14 06:51:53 1996
 ***************
-*** 22,31 ****
-   charts0.o charts1.o charts2.o charts3.o intrpret.o\
-   xdata.o xgeneral.o xdevice.o xcharts0.o xcharts1.o xcharts2.o xscreen.o
-  # If you don't have X windows, delete the "-lX11" part from the line below:
-! LIBS = -lm -lX11
-! CFLAGS = -O
+*** 30,38 ****
   
-  astrolog:: $(OBJ)
-	cc -o $(NAME) $(OBJ) $(LIBS)
-  	strip $(NAME)
-  #
---- 22,39 ----
-   charts0.o charts1.o charts2.o charts3.o intrpret.o\
-   xdata.o xgeneral.o xdevice.o xcharts0.o xcharts1.o xcharts2.o xscreen.o
   # If you don't have X windows, delete the "-lX11" part from the line below:
-! LIBS = -lm -L/usr/X11R6/lib -lX11
-! CFLAGS += -I/usr/X11R6/include
   
-+ all:	astrolog
-+ 
-  astrolog:: $(OBJ)
-	cc -o $(NAME) -I/usr/X11R6/include $(OBJ) $(LIBS)
-  	strip $(NAME)
-+ 
-+ install:
-+ 	/usr/bin/install -c astrolog ${PREFIX}/bin
-+ 	-mkdir -p ${PREFIX}/share/astrolog
-+ 	/usr/bin/install -c Helpfile.500 ${PREFIX}/share/astrolog
-+ 	@echo "See the file ${PREFIX}/share/astrolog/Helpfile.500 for help.
-  #
+! LIBS = -lm -L/usr/X11R6/lib -lX11 -lm -L. -laaf
+! CFLAGS = -O3 -I. -DHAVE_LIBAAF -DHAVE_STRCHR -DHAVE_STRDUP
+! CC = gcc
+  
+  all: astrolog
+  
+--- 30,37 ----
+  
+  # If you don't have X windows, delete the "-lX11" part from the line below:
+  
+! LIBS = -L${X11BASE}/lib -lX11 -lm
+! CFLAGS += -I${X11BASE}/include -DDEFAULT_DIR=\"${PREFIX}/lib/astrolog\"
+  
+  all: astrolog
+  
