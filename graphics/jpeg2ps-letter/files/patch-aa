@@ -1,19 +1,12 @@
-*** Makefile.orig	Thu Aug  8 08:14:04 2002
---- Makefile	Thu Aug  8 08:17:47 2002
-***************
-*** 14,20 ****
-  # The following was reported to work for emx/gcc 0.9c fix04 under OS/2:
-  # make -f Makefile "CFLAGS=-c -DA4 -DDOS -O2" "LDFLAGS=-Zexe -s"
-  
-! CFLAGS=-c -DA4
-  LD=cc
-  LDFLAGS=
-  OBJ=o
---- 14,20 ----
-  # The following was reported to work for emx/gcc 0.9c fix04 under OS/2:
-  # make -f Makefile "CFLAGS=-c -DA4 -DDOS -O2" "LDFLAGS=-Zexe -s"
-  
-! CFLAGS=-O -c
-  LD=cc
-  LDFLAGS=
-  OBJ=o
+--- Makefile.orig	Mon Feb  4 03:39:21 2002
++++ Makefile	Sun Oct 19 02:44:27 2003
+@@ -14,7 +14,8 @@
+ # The following was reported to work for emx/gcc 0.9c fix04 under OS/2:
+ # make -f Makefile "CFLAGS=-c -DA4 -DDOS -O2" "LDFLAGS=-Zexe -s"
+ 
+-CFLAGS=-c -DA4
++CFLAGS?=-O -pipe
++CFLAGS+=-c
+ LD=cc
+ LDFLAGS=
+ OBJ=o
