@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	f-prot
-PORTVERSION=	4.4.2
+PORTVERSION=	4.4.3
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.i-scream.org/pub/ftp.f-prot.com/pub/bsd/ \
 		http://www.i-scream.org/pub/ftp.f-prot.com/pub/bsd/
