@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	exact
-PORTVERSION=	1.34
+PORTVERSION=	1.38
 CATEGORIES=	mail
 MASTER_SITES=	http://www.britishsteal.com/dist/exact/
 
