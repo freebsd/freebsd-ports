@@ -1,0 +1,14 @@
+%%SITE_PERL%%/Graph/Reader.pm
+%%SITE_PERL%%/Graph/Writer.pm
+%%SITE_PERL%%/Graph/Reader/HTK.pm
+%%SITE_PERL%%/Graph/Reader/XML.pm
+%%SITE_PERL%%/Graph/Reader/Dot.pm
+%%SITE_PERL%%/Graph/Writer/HTK.pm
+%%SITE_PERL%%/Graph/Writer/daVinci.pm
+%%SITE_PERL%%/Graph/Writer/XML.pm
+%%SITE_PERL%%/Graph/Writer/Dot.pm
+%%SITE_PERL%%/Graph/Writer/VCG.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Graph-ReadWrite/.packlist
+@dirrm %%SITE_PERL%%/Graph/Reader/
+@dirrm %%SITE_PERL%%/Graph/Writer/
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graph-ReadWrite
