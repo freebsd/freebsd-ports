@@ -7,6 +7,7 @@
 
 PORTNAME=	libast
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.eterm.org/download/
 
@@ -17,8 +18,8 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
 		Imlib2.2:${PORTSDIR}/graphics/imlib2
 
 USE_X_PREFIX=	yes
-USE_FREETYPE=	yes
-USE_INC_LIBTOOL_VER=	13
+USE_GNOME=	gnomehack
+USE_LIBTOOL_VER=	15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
