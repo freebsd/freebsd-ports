@@ -1,8 +1,7 @@
-This is a filter that converts text files to 
-PostScript and spools generated  PostScript  
-output  to  the  specified  printer or leaves 
-it to file.  If no input files are given,  
-enscript processes  standard  input.   enscript  
-can be extended to handle different output media  
-and it has many options which can be used to 
-customize printouts.
+This is a filter that converts text files to PostScript, RTF, or HTML
+and then spools generated output to a printer or dumps it to a file.
+Input files in a number of programming languages, including C, Perl,
+Tcl, and more, can optionally be pretty-printed instead of printed as
+plain-text.  Many printing options are available.
+
+WWW: http://people.ssh.fi/mtr/genscript/
