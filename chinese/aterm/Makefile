@@ -1,0 +1,25 @@
+# New ports collection Makefile for: aterm
+# Date created:         Oct 1 2001
+# Whom:                 gugod@gugod.org
+# $FreeBSD$
+#
+
+PORTNAME=       aterm
+PORTVERSION=    0.4.2
+CATEGORIES=     chinese x11
+MASTER_SITES=   http://download.sourceforge.net/aterm/
+DISTNAME=       aterm-${PORTVERSION}
+
+MAINTAINER=     gugod@gugod.org
+
+USE_XPM=        yes
+HAS_CONFIGURE=  yes
+PATCH_WRKSRC=   ${WRKSRC}/..
+CONFIGURE_ARGS= --enable-fading --enable-xim --enable-big5
+
+post-install:
+	@${CHMOD} 4711 ${PREFIX}/bin/aterm
+
+MAN1=           aterm.1
+
+.include <bsd.port.mk>
