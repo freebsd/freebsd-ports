@@ -1,0 +1,11 @@
+Big Sister does for you:
+    * monitor networked systems
+    * provide a simple view on the current network status
+    * notify you when your systems are becoming critical
+    * generate a history of status changes
+    * log and display a variety of system performance data
+
+WWW: http://bigsister.graeff.com/
+
+Bruce
+bms@FreeBSD.org
