@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_lib_fte_misccoms_c,v 1.1 2003/04/14 10:28:03 avsm Exp $
+--- src/lib/fte/misccoms.c.orig	Mon Apr 14 11:19:24 2003
++++ src/lib/fte/misccoms.c	Mon Apr 14 11:21:00 2003
+@@ -286,7 +286,7 @@ com_quit(wl)
+             fprintf(cp_out, 
+                 "\nAre you sure you want to quit (yes)? ");
+             (void) fflush(cp_out);
+-            if (!fgets(buf, BSIZE_SP, stdin)) {
++            if (!fgets(buf, sizeof buf, stdin)) {
+                 clearerr(stdin);
+                 *buf = 'y';
+             }
