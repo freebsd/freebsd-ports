@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	r1682+
+PORTVERSION=	r1868
 CATEGORIES=	devel
 MASTER_SITES=	http://www.tigris.org/files/15/48/
 
@@ -13,11 +13,10 @@ MAINTAINER=	rooneg@electricjellyfish.net
 
 LIB_DEPENDS=	db4:${PORTSDIR}/databases/db4 \
 		neon.19:${PORTSDIR}/www/neon \
-		expat:${PORTSDIR}/textproc/expat \
+		expat.2:${PORTSDIR}/textproc/expat2 \
 		apr:${PORTSDIR}/devel/apr-devel
 RUN_DEPENDS=	gdiff3:${PORTSDIR}/textproc/diffutils
-BUILD_DEPENDS=	gdiff3:${PORTSDIR}/textproc/diffutils \
-	 	python:${PORTSDIR}/lang/python
+BUILD_DEPENDS=	gdiff3:${PORTSDIR}/textproc/diffutils
 
 MAN1=		svn.1
 
@@ -39,10 +38,6 @@ post-extract:
 	@${RM} -r ${WRKSRC}/apr-util
 
 post-configure:
-	# regenerate build-outputs.mk so we can use our installed expat,
-	# rather than the expat-lite in svn's tree
-	(cd ${WRKSRC} && ./gen-make.py -s build.conf)
-
 	# make sure we don't install the swig stuff, even if it was found
 	@${PERL} -pi -e 's/install-swig-py-lib//g' ${WRKSRC}/Makefile
 	@${PERL} -pi -e 's/swig-py-lib//g' ${WRKSRC}/Makefile
