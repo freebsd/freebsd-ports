@@ -1,11 +1,11 @@
---- Makefile.in.orig	Fri Jan 16 13:17:47 2004
-+++ Makefile.in	Fri Jan 16 13:18:13 2004
-@@ -146,7 +146,7 @@
- am__quote = @am__quote@
- gnomelocaledir = @gnomelocaledir@
- install_sh = @install_sh@
--SUBDIRS = bonobo glade samples tests po doc
-+SUBDIRS = bonobo glade samples po doc
+--- Makefile.in.orig	Sun Feb  6 02:44:23 2005
++++ Makefile.in	Sun Feb  6 02:44:38 2005
+@@ -200,7 +200,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-SUBDIRS = bonobo glade samples tests tools po doc
++SUBDIRS = bonobo glade samples tools po doc
  
  libincludedir = $(includedir)/libbonoboui-2.0
  libinclude_HEADERS = \
