@@ -25,8 +25,14 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/graphthing bin/gt
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Configure fails on FreeBSD >= 5.x"
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e "s,\/usr\/include\/gtk-1.2\/gdk\/gdkkeysyms.h,," \
 		${WRKSRC}/src/depend.1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
