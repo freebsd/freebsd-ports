@@ -3,7 +3,7 @@
 # Date created:		9 Jan 1997
 # Whom:			pst
 #
-# $Id: Makefile,v 1.7 1997/06/03 07:05:23 pst Exp $
+# $Id: Makefile,v 1.8 1997/12/07 01:02:48 pst Exp $
 #
 
 DISTNAME=	imap-4.1.BETA
@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	pst@freebsd.org
 
+BROKEN=		patch
 IGNOREFILES=	${DISTFILES}
 ALL_TARGET=	bsf
 MAN8=		ipopd.8 imapd.8
