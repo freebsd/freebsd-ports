@@ -30,6 +30,12 @@ EMACS_VERSION=	19.34
 
 INSTALL_TARGET=	install-coco install-m2ps
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 # extract patches for mule2.3 based on emacs-19.34b
 post-extract:
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/mule-${MULE_VERSION}-${EMACS_VERSION}.patch-981002.tar.gz ${EXTRACT_AFTER_ARGS} -C ${WRKDIR}
@@ -44,4 +50,4 @@ pre-build:
 	${FIND} ${WRKSRC} \( -name \*.orig -o -name \*~ \) -exec ${RM} -f \{} \;
 	${RM} -f ${WRKSRC}/etc/DOC* ${WRKSRC}/src/emacs ${WRKSRC}/src/emacs-${EMACS_VERSION}.*
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
