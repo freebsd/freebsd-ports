@@ -2182,6 +2182,7 @@ ircII		ports/irc/ircII
 ircatlite	ports/irc/ircatlite
 ircd-hybrid	ports/irc/ircd-hybrid
 irchat-pj-emacs20	ports/irc/irchat-pj-emacs20
+irchat-pj-emacs21	ports/irc/irchat-pj-emacs21
 irchat-pj-xemacs21-mule	ports/irc/irchat-pj-xemacs21-mule
 ircii-epic	ports/irc/ircii-epic
 iroffer		ports/irc/iroffer
@@ -5068,6 +5069,7 @@ puf		ports/ftp/puf
 punkbuster	ports/net/punkbuster
 punkbuster-data	ports/net/punkbuster-data
 pure-emacs20	ports/irc/pure-emacs20
+pure-emacs21	ports/irc/pure-emacs21
 pure-ftpd	ports/ftp/pure-ftpd
 pure-xemacs21-mule	ports/irc/pure-xemacs21-mule
 pvm		ports/net/pvm
