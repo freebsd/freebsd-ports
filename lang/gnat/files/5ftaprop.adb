@@ -1,15 +1,14 @@
 ------------------------------------------------------------------------------
 --                                                                          --
---                 GNU ADA RUNTIME LIBRARY (GNARL) COMPONENTS               --
+--                GNU ADA RUN-TIME LIBRARY (GNARL) COMPONENTS               --
 --                                                                          --
 --     S Y S T E M . T A S K _ P R I M I T I V E S . O P E R A T I O N S    --
 --                                                                          --
 --                                  B o d y                                 --
---                         (Version for new GNARL)                          --
 --                                                                          --
---                             $Revision: 1.1 $                            --
+--                             $Revision: 1.5 $                             --
 --                                                                          --
---   Copyright (C) 1991,1992,1993,1994,1995,1996 Florida State University   --
+--               Copyright (C) 1997, Florida State University               --
 --                                                                          --
 -- GNARL is free software; you can  redistribute it  and/or modify it under --
 -- terms of the  GNU General Public License as published  by the Free Soft- --
@@ -36,14 +35,18 @@
 ------------------------------------------------------------------------------
 
 --  This is the FreeBSD PTHREADS version of this package.  Contributed
---  by Daniel M. Eischen (deischen@iworks.InterWorks.org).
+--  by Daniel M. Eischen (eischen@vigrid.com).
+
+pragma Polling (Off);
+--  Turn off polling, we do not want ATC polling to take place during
+--  tasking operations. It causes infinite loops and other problems.
+
+with System.Tasking.Debug;
+--  used for Known_Tasks
 
 with Interfaces.C;
 --  used for int
 --           size_t
-
-with System.Error_Reporting;
---  used for Shutdown
 
 with System.Interrupt_Management;
 --  used for Keep_Unmasked
@@ -65,18 +68,28 @@ with System.Tasking;
 --  used for Ada_Task_Control_Block
 --           Task_ID
 
+with System.Tasking.Initialization;
+--  used for Defer/Undefer_Abort
+
+with System.Task_Info;
+--  used for Task_Image_Type
+
+with System.OS_Primitives;
+--  used for Delay_Modes
+
 with Unchecked_Conversion;
 with Unchecked_Deallocation;
 
 package body System.Task_Primitives.Operations is
 
+   use System.Tasking.Debug;
    use System.Tasking;
    use Interfaces.C;
-   use System.Error_Reporting;
    use System.OS_Interface;
    use System.Parameters;
+   use System.OS_Primitives;
 
-   pragma Linker_Options ("-lc_r");
+   pragma Linker_Options ("-pthread");
 
    ------------------
    --  Local Data  --
@@ -85,11 +98,22 @@ package body System.Task_Primitives.Operations is
    --  The followings are logically constants, but need to be initialized
    --  at run time.
 
-   ATCB_Key : aliased pthread_key_t;
-   --  Key used to find the Ada Task_ID associated with a thread
+   All_Tasks_L : aliased System.Task_Primitives.RTS_Lock;
+   --  See comments on locking rules in System.Locking_Rules (spec).
+
+   Environment_Task_ID : Task_ID;
+   --  A variable to hold Task_ID for the environment task.
 
    Unblocked_Signal_Mask : aliased sigset_t;
    --  The set of signals that should unblocked in all tasks
+
+   Next_Serial_Number : Task_Serial_Number := 100;
+   --  We start at 100, to reserve some special values for
+   --  using in error checking.
+
+   Time_Slice_Val : Integer;
+   pragma Import (C, Time_Slice_Val, "__gl_time_slice_val");
+
 
    -----------------------
    -- Local Subprograms --
@@ -104,6 +128,30 @@ package body System.Task_Primitives.Operations is
 
    function To_Address is new Unchecked_Conversion (Task_ID, System.Address);
 
+
+   --------------------
+   -- Local Packages --
+   --------------------
+
+   package Specific is
+
+      procedure Initialize (Environment_Task : Task_ID);
+      pragma Inline (Initialize);
+      --  Initialize various data needed by this package.
+
+      procedure Set (Self_Id : Task_ID);
+      pragma Inline (Set);
+      --  Set the self id for the current task.
+
+      function Self return Task_ID;
+      pragma Inline (Self);
+      --  Return a pointer to the Ada Task Control Block of the calling task.
+
+   end Specific;
+
+   package body Specific is separate;
+   --  The body of this package is target specific.
+
    -------------------
    -- Abort_Handler --
    -------------------
@@ -113,7 +161,7 @@ package body System.Task_Primitives.Operations is
 
    --  The technical issues and alternatives here are essentially
    --  the same as for raising exceptions in response to other
-   --  signals (e.g. Storage_Error).  See code and comments in
+   --  signals (e.g. Storage_Error). See code and comments in
    --  the package body System.Interrupt_Management.
 
    --  Some implementations may not allow an exception to be propagated
@@ -124,7 +172,7 @@ package body System.Task_Primitives.Operations is
    --  GNAT exceptions are originally implemented using setjmp()/longjmp().
    --  On most UNIX systems, this will allow transfer out of a signal handler,
    --  which is usually the only mechanism available for implementing
-   --  asynchronous handlers of this kind.  However, some
+   --  asynchronous handlers of this kind. However, some
    --  systems do not restore the signal mask on longjmp(), leaving the
    --  abort signal masked.
 
@@ -135,12 +183,15 @@ package body System.Task_Primitives.Operations is
    --          Normal return from this handler will then raise
    --          the exception after the mask and other system state has
    --          been restored (see example below).
+
    --       2. Use siglongjmp()/sigsetjmp() to implement exceptions.
+
    --       3. Unmask the signal in the Abortion_Signal exception handler
    --          (in the RTS).
 
    --  The following procedure would be needed if we can't lonjmp out of
-   --  a signal handler.  (See below.)
+   --  a signal handler  (See below)
+
    --  procedure Raise_Abort_Signal is
    --  begin
    --     raise Standard'Abort_Signal;
@@ -151,7 +202,7 @@ package body System.Task_Primitives.Operations is
       code    : Interfaces.C.int;
       context : access struct_sigcontext) is
 
-      T : Task_ID := Self;
+      T       : Task_ID := Self;
       Result  : Interfaces.C.int;
       Old_Set : aliased sigset_t;
 
@@ -160,14 +211,17 @@ package body System.Task_Primitives.Operations is
       --  following code can be used:
 
       if T.Deferral_Level = 0
-        and then T.Pending_ATC_Level < T.ATC_Nesting_Level then
+        and then T.Pending_ATC_Level < T.ATC_Nesting_Level and then
+        not T.Aborting
+      then
+         T.Aborting := True;
 
          --  Make sure signals used for RTS internal purpose are unmasked
 
-         Result := pthread_sigmask
-           (SIG_UNBLOCK, Unblocked_Signal_Mask'Access, Old_Set'Access);
-         pragma Assert (Result = 0
-           or else Shutdown ("GNULLI failure---Enter_Task (pthread_sigmask)"));
+         Result := pthread_sigmask (SIG_UNBLOCK,
+           Unblocked_Signal_Mask'Unchecked_Access, Old_Set'Unchecked_Access);
+         pragma Assert (Result = 0);
+
          raise Standard'Abort_Signal;
       end if;
 
@@ -182,19 +236,39 @@ package body System.Task_Primitives.Operations is
 
    end Abort_Handler;
 
+   -------------------
+   --  Stack_Guard  --
+   -------------------
+
+   procedure Stack_Guard (T : ST.Task_ID; On : Boolean) is
+
+      Stack_Base : constant Address := Get_Stack_Base (T.LL.Thread);
+      Guard_Page_Address : Address;
+
+      Res : Interfaces.C.int;
+
+   begin
+      if Stack_Base_Available then
+         --  Compute the guard page address
+
+         Guard_Page_Address :=
+           Stack_Base - (Stack_Base mod Get_Page_Size) + Get_Page_Size;
+
+         if On then
+            Res := mprotect (Guard_Page_Address, Get_Page_Size, PROT_ON);
+         else
+            Res := mprotect (Guard_Page_Address, Get_Page_Size, PROT_OFF);
+         end if;
+
+         pragma Assert (Res = 0);
+      end if;
+   end Stack_Guard;
+
    ----------
    -- Self --
    ----------
 
-   function Self return Task_ID is
-      Result : System.Address;
-
-   begin
-      Result := pthread_getspecific (ATCB_Key);
-      pragma Assert (Result /= System.Null_Address
-        or else Shutdown ("GNULLI failure---pthread_getspecific"));
-      return To_Task_ID (Result);
-   end Self;
+   function Self return Task_ID renames Specific.Self;
 
    ---------------------
    -- Initialize_Lock --
@@ -215,8 +289,7 @@ package body System.Task_Primitives.Operations is
       Result : Interfaces.C.int;
    begin
       Result := pthread_mutexattr_init (Attributes'Access);
-      pragma Assert (Result = 0 or else Result = ENOMEM
-        or else Shutdown ("GNULLI failure---pthread_mutexattr_init"));
+      pragma Assert (Result = 0 or else Result = ENOMEM);
 
       if Result = ENOMEM then
          raise STORAGE_ERROR;
@@ -224,23 +297,23 @@ package body System.Task_Primitives.Operations is
 
       Result := pthread_mutex_init (L, Attributes'Access);
 
-      pragma Assert (Result = 0 or else Result = ENOMEM
-        or else Shutdown ("GNULLI failure---pthread_mutex_init"));
+      pragma Assert (Result = 0 or else Result = ENOMEM);
 
       if Result = ENOMEM then
          raise STORAGE_ERROR;
       end if;
 
+      Result := pthread_mutexattr_destroy (Attributes'Access);
+      pragma Assert (Result = 0);
    end Initialize_Lock;
 
-   procedure Initialize_Lock (L : access RTS_Lock) is
+   procedure Initialize_Lock (L : access RTS_Lock; Level : Lock_Level) is
       Attributes : aliased pthread_mutexattr_t;
       Result : Interfaces.C.int;
 
    begin
       Result := pthread_mutexattr_init (Attributes'Access);
-      pragma Assert (Result = 0 or else Result = ENOMEM
-        or else Shutdown ("GNULLI failure---pthread_mutexattr_init"));
+      pragma Assert (Result = 0 or else Result = ENOMEM);
 
       if Result = ENOMEM then
          raise STORAGE_ERROR;
@@ -248,13 +321,14 @@ package body System.Task_Primitives.Operations is
 
       Result := pthread_mutex_init (L, Attributes'Access);
 
-      pragma Assert (Result = 0 or else Result = ENOMEM
-        or else Shutdown ("GNULLI failure---pthread_mutex_init"));
+      pragma Assert (Result = 0 or else Result = ENOMEM);
 
       if Result = ENOMEM then
          raise STORAGE_ERROR;
       end if;
 
+      Result := pthread_mutexattr_destroy (Attributes'Access);
+      pragma Assert (Result = 0);
    end Initialize_Lock;
 
    -------------------
@@ -266,8 +340,7 @@ package body System.Task_Primitives.Operations is
 
    begin
       Result := pthread_mutex_destroy (L);
-      pragma Assert (Result = 0
-        or else Shutdown ("GNULLI failure---pthread_mutex_destroy"));
+      pragma Assert (Result = 0);
    end Finalize_Lock;
 
    procedure Finalize_Lock (L : access RTS_Lock) is
@@ -275,8 +348,7 @@ package body System.Task_Primitives.Operations is
 
    begin
       Result := pthread_mutex_destroy (L);
-      pragma Assert (Result = 0
-        or else Shutdown ("GNULLI failure---pthread_mutex_destroy"));
+      pragma Assert (Result = 0);
    end Finalize_Lock;
 
    ----------------
@@ -288,14 +360,11 @@ package body System.Task_Primitives.Operations is
 
    begin
       Result := pthread_mutex_lock (L);
-      if Result = 0 then
-         Ceiling_Violation := False;
-      else
-         Ceiling_Violation := Result = EINVAL;
-      end if;
-      --  assumes the cause of EINVAL is a priority ceiling violation
-      pragma Assert (Result = 0 or else Result = EINVAL
-          or else Shutdown ("GNULLI failure---pthread_mutex_lock"));
+
+      --  Assume that the cause of EINVAL is a priority ceiling violation
+
+      Ceiling_Violation := (Result = EINVAL);
+      pragma Assert (Result = 0 or else Result = EINVAL);
    end Write_Lock;
 
    procedure Write_Lock (L : access RTS_Lock) is
@@ -303,17 +372,14 @@ package body System.Task_Primitives.Operations is
 
    begin
       Result := pthread_mutex_lock (L);
-      pragma Assert (Result = 0
-          or else Shutdown ("GNULLI failure---pthread_mutex_lock"));
+      pragma Assert (Result = 0);
    end Write_Lock;
 
    procedure Write_Lock (T : Task_ID) is
-      Result : Interfaces.C.int;
-
+      Result  : Interfaces.C.int;
    begin
       Result := pthread_mutex_lock (T.LL.L'Access);
-      pragma Assert (Result = 0
-          or else Shutdown ("GNULLI failure---pthread_mutex_lock"));
+      pragma Assert (Result = 0);
    end Write_Lock;
 
    ---------------
@@ -334,8 +400,7 @@ package body System.Task_Primitives.Operations is
 
    begin
       Result := pthread_mutex_unlock (L);
-      pragma Assert (Result = 0
-        or else Shutdown ("GNULLI failure---pthread_mutex_unlock"));
+      pragma Assert (Result = 0);
    end Unlock;
 
    procedure Unlock (L : access RTS_Lock) is
@@ -343,158 +408,180 @@ package body System.Task_Primitives.Operations is
 
    begin
       Result := pthread_mutex_unlock (L);
-      pragma Assert (Result = 0
-        or else Shutdown ("GNULLI failure---pthread_mutex_unlock"));
+      pragma Assert (Result = 0);
    end Unlock;
 
    procedure Unlock (T : Task_ID) is
-      Result : Interfaces.C.int;
-
+      Result  : Interfaces.C.int;
    begin
       Result := pthread_mutex_unlock (T.LL.L'Access);
-      pragma Assert (Result = 0
-        or else Shutdown ("GNULLI failure---pthread_mutex_unlock"));
+      pragma Assert (Result = 0);
    end Unlock;
 
    -------------
    --  Sleep  --
    -------------
 
-   procedure Sleep (Self_ID : Task_ID) is
+   procedure Sleep (Self_ID : Task_ID;
+                    Reason  : System.Tasking.Task_States) is
+
       Result : Interfaces.C.int;
 
    begin
-      pragma Assert (Self_ID = Self
-        or else Shutdown ("GNULLI failure---Self in Sleep"));
+      pragma Assert (Self_ID = Self);
       Result := pthread_cond_wait (Self_ID.LL.CV'Access, Self_ID.LL.L'Access);
+
       --  EINTR is not considered a failure.
-      pragma Assert (Result = 0 or else Result = EINTR
-        or else Shutdown ("GNULLI failure---Sleep"));
+
+      pragma Assert (Result = 0 or else Result = EINTR);
+
    end Sleep;
 
-   ---------------
-   -- Sleep_For --
-   ---------------
-
-   procedure Sleep_For
-     (Self_ID  : Task_ID;
-      Rel_Time : Duration;
-      Timedout : out Boolean)
-   is
-   begin
-      Sleep_Until (Self_ID, Rel_Time + Clock, Timedout);
-   end Sleep_For;
-
    -----------------
-   -- Sleep_Until --
+   -- Timed_Sleep --
    -----------------
 
-   procedure Sleep_Until
+   --  This is for use within the run-time system, so abort is
+   --  assumed to be already deferred, and the caller should be
+   --  holding its own ATCB lock.
+
+   procedure Timed_Sleep
      (Self_ID  : Task_ID;
-      Abs_Time : Duration;
-      Timedout : out Boolean)
+      Time     : Duration;
+      Mode     : ST.Delay_Modes;
+      Reason   : System.Tasking.Task_States;
+      Timedout : out Boolean;
+      Yielded  : out Boolean)
    is
-      Request : aliased timespec;
-      Result  : Interfaces.C.int;
+
+      Check_Time   : constant Duration := Clock;
+      Abs_Time     : Duration;
+      Request      : aliased timespec;
+      Result       : Interfaces.C.int;
 
    begin
-      pragma Assert (Self_ID = Self
-        or else Shutdown ("GNULLI failure---Self in Sleep_Until"));
+      Timedout := True;
+      Yielded := False;
 
-      if Abs_Time <= Clock then
-         Timedout := True;
-         Result := sched_yield;
-         return;
+      if Mode = Relative then
+         Abs_Time := Time + Check_Time;
+      else
+         Abs_Time := Time;
       end if;
 
-      Request := To_Timespec (Abs_Time);
-
-      --  We loop until the requested delay is serviced. For early wakeups,
-      --  we check the Clock again and re-request delays until we sleep
-      --  at least for the specified amount.
-
-      loop
-         --  Perform delays until one of the following conditions is true:
-         --  1) cond_timedwait wakes up due to time expiration.
-         --  2) We were interrupted by an abort signal (abortion is pending).
-         --  3) We received a wakeup, via cond_signal to our CV.
-         --  4) An error has occurred in the OS-provided delay primitive.
-         --  Conditions (1), (2), and (3) are normal.
-         --  Condition (4) should never happen unless the OS is broken,
-         --  or there is an error in our own runtime system code.
-
+      if Abs_Time > Check_Time then
+         Request := To_Timespec (Abs_Time);
          loop
+            exit when Self_ID.Pending_ATC_Level < Self_ID.ATC_Nesting_Level
+              or else Self_ID.Pending_Priority_Change;
+
             Result := pthread_cond_timedwait
               (Self_ID.LL.CV'Access, Self_ID.LL.L'Access, Request'Access);
 
-            if Result = 0 or else
-              (Self_ID.Pending_Action and then
-                Self_ID.Pending_ATC_Level < Self_ID.ATC_Nesting_Level)
-            then
-               Timedout := False;
-               return;
-            else
-               --  As of 11/25/97, FreeBSD-3.0 returns the correct
-               --  (POSIX specified) code (ETIMEDOUT) for a timed-out
-               --  operation.  Previous versions of FreeBSD would
-               --  return -1, and set the thread-safe errno to EAGAIN.
-               if Result < 0 and then Errno = EAGAIN then
-                  Result := ETIMEDOUT;
-               end if;
-            end if;
+            exit when Abs_Time <= Clock;
 
-            if Result = ETIMEDOUT then
+            if Result = 0 or Result = EINTR then
+
+               --  Somebody may have called Wakeup for us
+
+               Timedout := False;
                exit;
             end if;
 
-            pragma Assert (Result /= EINVAL or else
-              Shutdown ("GNULLI failure---Sleep_Until (cond_timedwait)"));
+            pragma Assert (Result = ETIMEDOUT);
+         end loop;
+      end if;
+   end Timed_Sleep;
+
+   -----------------
+   -- Timed_Delay --
+   -----------------
+
+   --  This is for use in implementing delay statements, so
+   --  we assume the caller is abort-deferred but is holding
+   --  no locks.
+
+   procedure Timed_Delay
+     (Self_ID  : Task_ID;
+      Time     : Duration;
+      Mode     : ST.Delay_Modes)
+   is
+
+      Check_Time   : constant Duration := Clock;
+      Abs_Time     : Duration;
+      Request      : aliased timespec;
+      Result       : Interfaces.C.int;
+   begin
+
+      --  Only the little window between deferring abort and
+      --  locking Self_ID is the reason we need to
+      --  check for pending abort and priority change below! :(
+
+      Initialization.Defer_Abort_Nestable (Self_ID);
+      Write_Lock (Self_ID);
+
+      if Mode = Relative then
+         Abs_Time := Time + Check_Time;
+      else
+         Abs_Time := Time;
+      end if;
+
+      if Abs_Time > Check_Time then
+         Request := To_Timespec (Abs_Time);
+         Self_ID.State := Delay_Sleep;
+
+         loop
+            if Self_ID.Pending_Priority_Change then
+               Self_ID.Pending_Priority_Change := False;
+               Self_ID.Base_Priority := Self_ID.New_Base_Priority;
+               Set_Priority (Self_ID, Self_ID.Base_Priority);
+            end if;
+
+            exit when Self_ID.Pending_ATC_Level < Self_ID.ATC_Nesting_Level;
+
+            Result := pthread_cond_timedwait
+              (Self_ID.LL.CV'Access, Self_ID.LL.L'Access, Request'Access);
+            exit when Abs_Time <= Clock;
+
+            pragma Assert (Result = 0
+                             or else Result = ETIMEDOUT
+                             or else Result = EINTR);
          end loop;
 
-         --  Make sure we delayed long enough. If we did, give up the
-         --  CPU. Otherwise, request a delay again with unserviced amount
-         --  of time.
+         Self_ID.State := Runnable;
+      end if;
 
-         if (Abs_Time <= Clock) then
-            Timedout := True;
-            Result := sched_yield;
-            exit;
-         else
-            Request := To_Timespec (Abs_Time);
-         end if;
-      end loop;
-   end Sleep_Until;
+      Unlock (Self_ID);
+      Result := sched_yield;
+      Initialization.Undefer_Abort_Nestable (Self_ID);
+   end Timed_Delay;
 
    -----------
    -- Clock --
    -----------
 
    function Clock return Duration is
-      TS     : aliased timespec;
+      TV     : aliased struct_timeval;
       Result : Interfaces.C.int;
 
    begin
-      Result := clock_gettime (CLOCK_REALTIME, TS'Unchecked_Access);
-      pragma Assert (Result = 0
-        or else Shutdown ("GNULLI failure---clock_gettime"));
-      return To_Duration (TS);
-   exception
-      when others =>
-         pragma Assert (Shutdown ("exception in Clock"));
-         return 0.0;
+      --  We should use clock_gettime() for FreeBSD 3.x; FreeBSD 2.x
+      --  doesn't have clock_gettime.
+      Result := gettimeofday (TV'Unchecked_Access, System.Null_Address);
+      pragma Assert (Result = 0);
+      return To_Duration (TV);
    end Clock;
 
    ------------
    -- Wakeup --
    ------------
 
-   procedure Wakeup (T : Task_ID) is
+   procedure Wakeup (T : Task_ID; Reason : System.Tasking.Task_States) is
       Result : Interfaces.C.int;
 
    begin
       Result := pthread_cond_signal (T.LL.CV'Access);
-      pragma Assert (Result = 0
-        or else Shutdown ("GNULLI failure---Wakeup"));
+      pragma Assert (Result = 0);
    end Wakeup;
 
    -----------
@@ -503,6 +590,7 @@ package body System.Task_Primitives.Operations is
 
    procedure Yield is
       Result : Interfaces.C.int;
+
    begin
       Result := sched_yield;
    end Yield;
@@ -511,31 +599,27 @@ package body System.Task_Primitives.Operations is
    -- Set_Priority --
    ------------------
 
-   --  FreeBSD doesn't have the correct pthread_setschedparam routine
-   --  yet.  Instead, pthread_setschedparam is imported from pthread_setprio
-   --  which only takes a pthread_t and integer as arguments.
---   procedure Set_Priority (T : Task_ID; Prio : System.Any_Priority) is
---      Result     : Interfaces.C.int;
---      Param      : aliased struct_sched_param;
---   begin
---      T.LL.Current_Priority := Interfaces.C.int (Prio);
---      Param.prio := Interfaces.C.int (Prio);
---
---      Result := pthread_setschedparam (T.LL.Thread, SCHED_FIFO,
---                                       Param'Access);
---      pragma Assert (Result = 0
---        or else Shutdown ("GNULLI failure---Set_Priority"));
---
---   end Set_Priority;
    procedure Set_Priority (T : Task_ID; Prio : System.Any_Priority) is
       Result : Interfaces.C.int;
+      Param  : aliased struct_sched_param;
+
    begin
       T.LL.Current_Priority := Interfaces.C.int (Prio);
 
-      Result := pthread_setschedparam (T.LL.Thread, Interfaces.C.int (Prio));
-      pragma Assert (Result = 0
-        or else Shutdown ("GNULLI failure---Set_Priority"));
+      --  Convert the Ada priority to be based around the default
+      --  system priority.
+      Param.sched_priority := DEFAULT_PRIO + Interfaces.C.int (Prio) -
+        Interfaces.C.int (System.Default_Priority);
 
+      if Time_Slice_Supported and then Time_Slice_Val > 0 then
+         Result := pthread_setschedparam
+           (T.LL.Thread, SCHED_RR, Param'Access);
+      else
+         Result := pthread_setschedparam
+           (T.LL.Thread, SCHED_FIFO, Param'Access);
+      end if;
+
+      pragma Assert (Result = 0);
    end Set_Priority;
 
    ------------------
@@ -552,15 +636,22 @@ package body System.Task_Primitives.Operations is
    ----------------
 
    procedure Enter_Task (Self_ID : Task_ID) is
-      Result  : Interfaces.C.int;
-
    begin
-
       Self_ID.LL.Thread := pthread_self;
 
-      Result := pthread_setspecific (ATCB_Key, To_Address (Self_ID));
-      pragma Assert (Result = 0 or else
-        Shutdown ("GNULLI failure---Enter_Task (pthread_setspecific)"));
+      Specific.Set (Self_ID);
+
+      Lock_All_Tasks_List;
+
+      for I in Known_Tasks'Range loop
+         if Known_Tasks (I) = null then
+            Known_Tasks (I) := Self_ID;
+            Self_ID.Known_Tasks_Index := I;
+            exit;
+         end if;
+      end loop;
+
+      Unlock_All_Tasks_List;
    end Enter_Task;
 
    ----------------------
@@ -573,9 +664,14 @@ package body System.Task_Primitives.Operations is
       Cond_Attr : aliased pthread_condattr_t;
 
    begin
+      --  Give the task a unique serial number.
+
+      Self_ID.Serial_Number := Next_Serial_Number;
+      Next_Serial_Number := Next_Serial_Number + 1;
+      pragma Assert (Next_Serial_Number /= 0);
+
       Result := pthread_mutexattr_init (Mutex_Attr'Access);
-      pragma Assert (Result = 0 or else Result = ENOMEM
-        or else Shutdown ("GNULLI failure---pthread_mutexattr_init"));
+      pragma Assert (Result = 0 or else Result = ENOMEM);
 
       if Result /= 0 then
          Succeeded := False;
@@ -583,8 +679,7 @@ package body System.Task_Primitives.Operations is
       end if;
 
       Result := pthread_mutex_init (Self_ID.LL.L'Access, Mutex_Attr'Access);
-      pragma Assert (Result = 0 or else Result = ENOMEM
-        or else Shutdown ("GNULLI failure---pthread_mutex_init"));
+      pragma Assert (Result = 0 or else Result = ENOMEM);
 
       if Result /= 0 then
          Succeeded := False;
@@ -592,28 +687,29 @@ package body System.Task_Primitives.Operations is
       end if;
 
       Result := pthread_condattr_init (Cond_Attr'Access);
-      pragma Assert (Result = 0 or else Result = ENOMEM
-        or else Shutdown ("GNULLI failure---pthread_condattr_init"));
+      pragma Assert (Result = 0 or else Result = ENOMEM);
 
       if Result /= 0 then
          Result := pthread_mutex_destroy (Self_ID.LL.L'Access);
-         pragma Assert (Result = 0
-           or else Shutdown ("GNULLI failure---pthread_mutex_destory"));
+         pragma Assert (Result = 0);
          Succeeded := False;
          return;
       end if;
 
       Result := pthread_cond_init (Self_ID.LL.CV'Access, Cond_Attr'Access);
-      pragma Assert (Result = 0 or else Result = ENOMEM
-        or else Shutdown ("GNULLI failure---pthread_cond_init"));
+      pragma Assert (Result = 0 or else Result = ENOMEM);
 
       if Result /= 0 then
          Result := pthread_mutex_destroy (Self_ID.LL.L'Access);
-         pragma Assert (Result = 0
-           or else Shutdown ("GNULLI failure---pthread_mutex_destory"));
+         pragma Assert (Result = 0);
+         Result := pthread_mutexattr_destroy (Mutex_Attr'Access);
+         pragma Assert (Result = 0);
          Succeeded := False;
          return;
       end if;
+
+      Result := pthread_mutexattr_destroy (Mutex_Attr'Access);
+      pragma Assert (Result = 0);
 
       Succeeded := True;
 
@@ -630,6 +726,8 @@ package body System.Task_Primitives.Operations is
       Priority   : System.Any_Priority;
       Succeeded  : out Boolean)
    is
+      use type System.Task_Info.Task_Image_Type;
+
       Attributes          : aliased pthread_attr_t;
       Adjusted_Stack_Size : Interfaces.C.size_t;
       Result              : Interfaces.C.int;
@@ -638,62 +736,41 @@ package body System.Task_Primitives.Operations is
         Unchecked_Conversion (System.Address, Thread_Body);
 
    begin
-      if Stack_Size = System.Parameters.Unspecified_Size then
-         Adjusted_Stack_Size := Interfaces.C.size_t (2 * Default_Stack_Size);
-         --  Let's change the s-parame.adb to give a larger Stack_Size ?????
+      if Stack_Size = Unspecified_Size then
+         Adjusted_Stack_Size := Interfaces.C.size_t (Default_Stack_Size);
+
+      elsif Stack_Size < Minimum_Stack_Size then
+         Adjusted_Stack_Size := Interfaces.C.size_t (Minimum_Stack_Size);
       else
-         if Stack_Size < Size_Type (Minimum_Stack_Size) then
-            Adjusted_Stack_Size :=
-              Interfaces.C.size_t (Stack_Size + Minimum_Stack_Size);
-
-            --  sum, instead of max:  may be overkill, but should be safe
-            --  thr_min_stack is a function call.
-
-            --  Actually, we want to get the Default_Stack_Size and
-            --  Minimum_Stack_Size from the file System.Parameters.
-            --  Right now the package is not made target specific.
-            --  We use our own local definitions for now ???
-
-         else
-            Adjusted_Stack_Size := Interfaces.C.size_t (Stack_Size);
-         end if;
-
-         --  Ask for 4 extra bytes of stack space so that the ATCB
-         --  pointer can be stored below the stack limit, plus extra
-         --  space for the frame of Task_Wrapper.  This is so the user
-         --  gets the amount of stack requested exclusive of the needs
-         --  of the runtime.
-
+         Adjusted_Stack_Size := Interfaces.C.size_t (Stack_Size);
       end if;
 
-      Adjusted_Stack_Size := Adjusted_Stack_Size + 4;
+      if Stack_Base_Available then
+         --  If Stack Checking is supported then allocate 2 additional pages:
+         --
+         --  In the worst case, stack is allocated at something like
+         --  N * Get_Page_Size - epsilon, we need to add the size for 2 pages
+         --  to be sure the effective stack size is greater than what
+         --  has been asked.
 
-      --  Since the initial signal mask of a thread is inherited from the
-      --  creator, we need to set our local signal mask mask all signals
-      --  during the creation operation, to make sure the new thread is
-      --  not disturbed by signals before it has set its own Task_ID.
+         Adjusted_Stack_Size := Adjusted_Stack_Size + 2 * Get_Page_Size;
+      end if;
 
       Result := pthread_attr_init (Attributes'Access);
-      pragma Assert (Result = 0 or else Result = ENOMEM
-        or else Shutdown ("GNULLI failure---pthread_attr_init"));
+      pragma Assert (Result = 0 or else Result = ENOMEM);
 
       if Result /= 0 then
          Succeeded := False;
          return;
       end if;
 
-      --  Create threads detached following email to report@gnat.com
-      --  confirming this is correct (should be fixed for GNAT after 3.09).
-      --  (Peter Burwood)
       Result := pthread_attr_setdetachstate
         (Attributes'Access, PTHREAD_CREATE_DETACHED);
-      pragma Assert (Result = 0
-        or else Shutdown ("GNULLI failure---pthread_setdetachstate"));
+      pragma Assert (Result = 0);
 
       Result := pthread_attr_setstacksize
         (Attributes'Access, Interfaces.C.size_t (Adjusted_Stack_Size));
-      pragma Assert (Result = 0
-        or else Shutdown ("GNULLI failure---pthread_attr_setstacksize"));
+      pragma Assert (Result = 0);
 
       --  Since the initial signal mask of a thread is inherited from the
       --  creator, and the Environment task has all its signals masked, we
@@ -705,13 +782,20 @@ package body System.Task_Primitives.Operations is
          Attributes'Access,
          Thread_Body_Access (Wrapper),
          To_Address (T));
-      pragma Assert (Result = 0 or else Result = EAGAIN
-        or else Shutdown ("GNULLI failure---Create_Task (pthread_create)"));
+      pragma Assert (Result = 0 or else Result = EAGAIN);
 
       Succeeded := Result = 0;
 
-      Set_Priority (T, Priority);
+      if T.Task_Image /= null then
+         declare
+            Name : aliased string (1 .. T.Task_Image.all'Length + 1);
+         begin
+            Name := T.Task_Image.all & Ascii.Nul;
+            Result := pthread_set_name_np (T.LL.Thread, Name'Address);
+         end;
+      end if;
 
+      Set_Priority (T, Priority);
    end Create_Task;
 
    ------------------
@@ -722,21 +806,20 @@ package body System.Task_Primitives.Operations is
       Result : Interfaces.C.int;
       Tmp    : Task_ID := T;
 
-      procedure Free is new Unchecked_Deallocation
-       (Ada_Task_Control_Block, Task_ID);
+      procedure Free is new
+        Unchecked_Deallocation (Ada_Task_Control_Block, Task_ID);
 
    begin
       Result := pthread_mutex_destroy (T.LL.L'Access);
-      pragma Assert (Result = 0 or else
-        Shutdown ("GNULLI failure---Finalize_TCB (pthread_mutex_destroy)"));
-      Result := pthread_cond_destroy (T.LL.CV'Access);
-      pragma Assert (Result = 0 or else
-        Shutdown ("GNULLI failure---Finalize_TCB (pthread_cond_destroy)"));
+      pragma Assert (Result = 0);
 
-      --  Following report to report@gnat.com regarding ATCB memory leak
-      --  this Free is now called. The answer back from ACT didn't give
-      --  the source for a fix, but I calling this Free is sufficient.
-      --  (Peter Burwood)
+      Result := pthread_cond_destroy (T.LL.CV'Access);
+      pragma Assert (Result = 0);
+
+      if T.Known_Tasks_Index /= -1 then
+         Known_Tasks (T.Known_Tasks_Index) := null;
+      end if;
+
       Free (Tmp);
    end Finalize_TCB;
 
@@ -759,21 +842,76 @@ package body System.Task_Primitives.Operations is
    begin
       Result := pthread_kill (T.LL.Thread,
         Signal (System.Interrupt_Management.Abort_Task_Interrupt));
-      pragma Assert (Result = 0
-        or else Shutdown ("GNULLI failure---Abort_Task"));
+      pragma Assert (Result = 0);
    end Abort_Task;
+
+   ----------------
+   -- Check_Exit --
+   ----------------
+
+   --  Dummy versions. The only currently working versions is for solaris
+   --  (native).
+
+   function Check_Exit (Self_ID : ST.Task_ID) return Boolean is
+   begin
+      return True;
+   end Check_Exit;
+
+   --------------------
+   -- Check_No_Locks --
+   --------------------
+
+   function Check_No_Locks (Self_ID : ST.Task_ID) return Boolean is
+   begin
+      return True;
+   end Check_No_Locks;
+
+   ----------------------
+   -- Environment_Task --
+   ----------------------
+
+   function Environment_Task return Task_ID is
+   begin
+      return Environment_Task_ID;
+   end Environment_Task;
+
+   -------------------------
+   -- Lock_All_Tasks_List --
+   -------------------------
+
+   procedure Lock_All_Tasks_List is
+   begin
+      Write_Lock (All_Tasks_L'Access);
+   end Lock_All_Tasks_List;
+
+   ---------------------------
+   -- Unlock_All_Tasks_List --
+   ---------------------------
+
+   procedure Unlock_All_Tasks_List is
+   begin
+      Unlock (All_Tasks_L'Access);
+   end Unlock_All_Tasks_List;
 
    ----------------
    -- Initialize --
    ----------------
 
    procedure Initialize (Environment_Task : Task_ID) is
-      act       : aliased struct_sigaction;
-      old_act   : aliased struct_sigaction;
-      Tmp_Set   : aliased sigset_t;
-      Result    : Interfaces.C.int;
+      act     : aliased struct_sigaction;
+      old_act : aliased struct_sigaction;
+      Tmp_Set : aliased sigset_t;
+      Result  : Interfaces.C.int;
+      param   : aliased struct_sched_param;
 
    begin
+      Environment_Task_ID := Environment_Task;
+
+      --  Initialize the lock used to synchronize chain of all ATCBs.
+
+      Initialize_Lock (All_Tasks_L'Access, All_Tasks_Level);
+
+      Specific.Initialize (Environment_Task);
 
       Enter_Task (Environment_Task);
 
@@ -783,33 +921,31 @@ package body System.Task_Primitives.Operations is
       act.sa_handler := Abort_Handler'Address;
 
       Result := sigemptyset (Tmp_Set'Access);
-      pragma Assert (Result = 0
-        or else Shutdown ("GNULLI failure---Initialize (sigemptyset)"));
+      pragma Assert (Result = 0);
       act.sa_mask := Tmp_Set;
 
       Result :=
         sigaction (
           Signal (System.Interrupt_Management.Abort_Task_Interrupt),
-          act'Access,
+          act'Unchecked_Access,
           old_act'Unchecked_Access);
-      pragma Assert (Result = 0
-        or else Shutdown ("GNULLI failure---Initialize (sigaction)"));
+
+      pragma Assert (Result = 0);
+
+      if Time_Slice_Supported and then Time_Slice_Val > 0 then
+         if sched_getparam (Self_PID, param'Access) = 0 then
+            Result := sched_setscheduler (Self_PID, SCHED_RR, param'Access);
+            pragma Assert (Result = 0);
+         end if;
+      end if;
 
    end Initialize;
 
 begin
    declare
       Result : Interfaces.C.int;
-   begin
 
-      --  pthread_init;
-      --  This call is needed for MIT thread library. We wish
-      --  we could move this to s-osinte.adb and be executed during
-      --  the package elaboration. However, in doing so we get an
-      --  elaboration problem.
-      
-      --  It doesn't appear necessary to call it because pthread_init is
-      --  called before any Ada elaboration occurs.
+   begin
 
       --  Mask Environment task for all signals. The original mask of the
       --  Environment task will be recovered by Interrupt_Server task
@@ -821,20 +957,14 @@ begin
       --  Prepare the set of signals that should unblocked in all tasks
 
       Result := sigemptyset (Unblocked_Signal_Mask'Access);
-      pragma Assert (Result = 0
-        or else Shutdown ("GNULLI failure---Initialize (sigemptyset)"));
+      pragma Assert (Result = 0);
 
       for J in Interrupt_Management.Interrupt_ID loop
          if System.Interrupt_Management.Keep_Unmasked (J) then
             Result := sigaddset (Unblocked_Signal_Mask'Access, Signal (J));
-            pragma Assert (Result = 0
-              or else Shutdown ("GNULLI failure---Initialize (sigaddset)"));
+            pragma Assert (Result = 0);
          end if;
       end loop;
-
-      Result := pthread_key_create (ATCB_Key'Access, null);
-      pragma Assert (Result = 0
-        or else Shutdown ("GNULLI failure---Initialize (pthread_keycreate)"));
    end;
 
 end System.Task_Primitives.Operations;

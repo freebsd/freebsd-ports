@@ -1,32 +1,24 @@
-*** gcc-2.7.2.1/ada/Makefile.in.orig	Sun Nov 16 09:10:32 1997
---- gcc-2.7.2.1/ada/Makefile.in	Sun Nov 16 09:14:37 1997
+*** ./ada/Makefile.in.orig	Wed Jul 29 21:00:07 1998
+--- ./ada/Makefile.in	Mon Aug 31 09:16:59 1998
 ***************
-*** 815,820 ****
---- 815,821 ----
-  			fsu*   | FSU*)  letter=l;;\
-  			native |    *)  letter=i;;\
-  		  esac;;\
-+ 	        *86*-freebsd*)		letter=f ;;\
-  	        mips-sgi-irix*)		letter=g ;;\
-  		hppa*-hp-hpux*)		letter=h ;;\
-  		*-ibm-aix4*)		letter=c ;;\
-***************
-*** 865,870 ****
---- 866,872 ----
-  		*-*-rtems* | *-rtems*  |\
-  		*-go32-msdos | *-go32  |\
-  		*86*-linux*            |\
-+ 		*86*-freebsd*          |\
-  		mips-sni-*	       |\
-  		*) \
-  		\
-***************
-*** 920,925 ****
---- 922,928 ----
-  		*-*-rtems* | *-rtems*  |\
-  		*-go32-msdos | *-go32  |\
-                  *86*-linux*            |\
-+ 		*86*-freebsd*          |\
-  		mips-sni-*	       |\
-  		*-*-cygwin32*          |\
-  		*-*-mingw32*           |\
+*** 779,784 ****
+--- 779,797 ----
+    endif
+  endif
+  
++ ifeq ($(strip $(filter-out %86 freebsd%,$(arch) $(osys))),)
++   LIBGNAT_TARGET_PAIRS = \
++   a-intnam.ads<4fintnam.ads \
++   s-inmaop.adb<7sinmaop.adb \
++   s-intman.adb<5fintman.adb \
++   s-osinte.adb<5fosinte.adb \
++   s-osinte.ads<5fosinte.ads \
++   s-osprim.adb<7sosprim.adb \
++   s-taprop.adb<5ftaprop.adb \
++   s-taspri.ads<5ftaspri.ads \
++   s-tpopsp.adb<7stpopsp.adb
++ endif
++ 
+  ifeq ($(strip $(filter-out mips sgi irix%,$(targ))),)
+    LIBGNAT_TARGET_PAIRS = \
+    a-emstop.adb<4gemstop.adb \

@@ -1,19 +1,19 @@
-*** gcc-2.7.2.1/ada/gnatcmd.adb.orig	Thu Aug 14 00:02:49 1997
---- gcc-2.7.2.1/ada/gnatcmd.adb	Sun Nov 16 09:23:23 1997
+*** ./ada/gnatcmd.adb.orig	Wed Jul 29 21:01:07 1998
+--- ./ada/gnatcmd.adb	Tue Sep  1 00:25:06 1998
 ***************
-*** 987,993 ****
+*** 988,994 ****
   
         (Cname    => new S'("COMPILE"),
-         Usage    => new S'("GNAT COMPILE file file .. file /qualifiers"),
-!        Unixcmd  => new S'("gcc -c"),
+         Usage    => new S'("GNAT COMPILE filespec[,...] /qualifiers"),
+!        Unixcmd  => new S'("gcc -c -x ada"),
          Switches => GCC_Switches'Access,
-         Minfile  => 1,
-         Maxfile  => 0,
---- 987,993 ----
+         Params   => new Parameter_Array'(1 => FILES_OR_WILDCARD),
+         Defext   => "   "),
+--- 988,994 ----
   
         (Cname    => new S'("COMPILE"),
-         Usage    => new S'("GNAT COMPILE file file .. file /qualifiers"),
-!        Unixcmd  => new S'("adagcc -c"),
+         Usage    => new S'("GNAT COMPILE filespec[,...] /qualifiers"),
+!        Unixcmd  => new S'("adagcc -c -x ada"),
          Switches => GCC_Switches'Access,
-         Minfile  => 1,
-         Maxfile  => 0,
+         Params   => new Parameter_Array'(1 => FILES_OR_WILDCARD),
+         Defext   => "   "),
