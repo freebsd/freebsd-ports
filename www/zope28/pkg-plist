@@ -2311,7 +2311,6 @@ etc/rc.d/zope.sh
 @unexec rm -f %D/%%ZOPEBASEDIR%%/var/*.soc
 @unexec rm -f %D/%%ZOPEBASEDIR%%/var/*.tmp
 @unexec rm -f %D/%%ZOPEBASEDIR%%/var/*.lock
-@unexec rmdir %D/%%CGIBINDIR%% 2>/dev/null || true
 @unexec rmdir %D/%%ZOPEBASEDIR%%/var 2>/dev/null || true
 @dirrm %%ZOPEBASEDIR%%/utilities/ZODBTools/tests
 @dirrm %%ZOPEBASEDIR%%/utilities/ZODBTools

@@ -7,13 +7,13 @@
 
 PORTNAME=	zope
 PORTVERSION=	2.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python zope
 MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/
 DISTNAME=	Zope-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	nbm@FreeBSD.org
+MAINTAINER=	ports@geeksrus.net
 
 USE_PYTHON=	yes
 PYTHON_VERSION=	python2.1
@@ -29,7 +29,7 @@ do-build:	# empty, but needs to be there for the python dependency.
 # Change these, if you like, via the environment.
 WEBBASEDIR?=		www
 SZOPEBASEDIR?=		${WEBBASEDIR}/Zope
-SCGIBINDIR?=		${WEBBASEDIR}/cgi-bin.default
+SCGIBINDIR?=		${WEBBASEDIR}/cgi-bin
 SAPACHE_CONFDIR?=	etc/apache
 ZOPE_HTTP_PORT?=	8080
 ZOPE_FTP_PORT?=		8021
@@ -47,6 +47,22 @@ PLIST_SUB=	ZOPEBASEDIR=${SZOPEBASEDIR} \
 		APACHE_CONFDIR=${SAPACHE_CONFDIR} \
 		VERSION=${PORTVERSION} \
 		WEBBASEDIR=${WEBBASEDIR}
+
+# Force the cgi-bin dir or link to exist.
+pre-everything:
+	@if test ! -d ${CGIBINDIR}; then \
+	  ${ECHO_CMD} \
+	    "============================================================";\
+	  ${ECHO_CMD} \
+	    "===> ${CGIBINDIR} does not exist.";\
+	  ${ECHO_CMD} \
+	    "===> Please create it (it can be a link to an existing";\
+	  ${ECHO_CMD} \
+	    "===> directory) and run ${MAKE} again.";\
+	  ${ECHO_CMD} \
+	    "============================================================";\
+	  ${FALSE}; \
+	fi
 
 pre-install:
 	PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
@@ -81,7 +97,6 @@ do-install:
 	@(cd ${ZOPEBASEDIR}/pcgi/Test && ${RM} *.o)
 	@(cd ${ZOPEBASEDIR}/pcgi && ${RM} *.o)
 	@#
-	@${MKDIR} ${CGIBINDIR}
 	@(cd ${ZOPEBASEDIR} && \
 		${MV} Zope.cgi \
 			pcgi/pcgi-wrapper \
