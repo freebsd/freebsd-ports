@@ -1,0 +1,19 @@
+--- Makefile.orig	Wed Nov 20 02:20:49 2002
++++ Makefile	Thu Jun  5 13:30:53 2003
+@@ -4,13 +4,12 @@
+ #                                                                       #
+ #-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
+ 
+-# Change this PREFIX to where you want docker to be installed
+-PREFIX=/usr/local
+ # Change this XLIBPATH to point to your X11 development package's installation
+-XLIBPATH=/usr/X11R6/lib
++XLIBPATH=${PREFIX}/lib
++XINC=${PREFIX}/include
+ 
+ # Sets some flags for stricter compiling
+-CFLAGS=-pedantic -Wall -W -O
++CFLAGS=-Wall -W -I${XINC}
+ 
+ #-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
+ #                                                                 #
