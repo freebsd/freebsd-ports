@@ -1,5 +1,5 @@
---- ../domtools.orig/Makefile	Thu Mar 18 11:48:08 1999
-+++ Makefile	Sat Jun 12 22:31:17 1999
+--- Makefile.old	Wed Aug 16 23:22:00 2000
++++ Makefile	Wed Aug 16 23:23:05 2000
 @@ -35,12 +35,12 @@
  # This directory is created, below, if it doesn't exist.
  #	"bin" will put it in $LDEST/bin.
@@ -33,14 +33,21 @@
  #INSTALL=/usr/ucb/install
  #INSTALL=/usr/local/gnu/bin/install
  #INSTALL=/stor/gnu/aix/bin/install
-@@ -148,8 +148,8 @@
+@@ -148,7 +148,7 @@
  # Regardless of the name, it _must_ be a gnu-based awk.
  # If you don't have gawk, get it and install it; or hosttbl,networktbl,netmasktbl
  # tools won't work right.  Gawk is much better than awk or nawk anyway.
 -GAWKPROG=gawk			# many systems
--#GAWKPROG=awk			# BSDI, Linux
-+#GAWKPROG=gawk			# many systems
-+GAWKPROG=/usr/bin/awk			# BSDI, Linux
++GAWKPROG=/usr/bin/awk			# many systems
+ #GAWKPROG=awk			# BSDI, Linux
  #GAWKPROG=/usr/local/bin/awk
  
- #---------------------------------------------------------------------------------------
+@@ -233,7 +233,7 @@
+ 		# (Very important for BIND 8 users, because zone file format changed)
+ 		# No, we don't want the sticky (text) bit set on this directory.
+ 		-if test $(ZONECACHEWANTED) -eq 1; then \
+-			$(INSTALL) -m 777 $(CHOWNOPT) -g $(GROUP) -d $(PDEST)/$(ZONEDIR); \
++			$(INSTALL) -m 1777 $(CHOWNOPT) -g $(GROUP) -d $(PDEST)/$(ZONEDIR); \
+ 			rm -f $(PDEST)/$(ZONEDIR)/* > /dev/null 2>&1; \
+ 		fi
+ 		for i in $(LIBS); do \
