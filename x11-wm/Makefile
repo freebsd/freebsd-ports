@@ -1,6 +1,5 @@
 # $FreeBSD$
 #
-    SUBDIR += yawm
 
     SUBDIR += 9menu
     SUBDIR += 9wm
@@ -97,5 +96,6 @@
     SUBDIR += wmx
     SUBDIR += xfce
     SUBDIR += xwmm
+    SUBDIR += yawm
 
 .include <bsd.port.subdir.mk>

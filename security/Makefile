@@ -293,9 +293,8 @@
     SUBDIR += tinc
     SUBDIR += trinokiller
     SUBDIR += tripwire
-    SUBDIR += tripwire12
     SUBDIR += tripwire-131
-#   SUBDIR += tripwire12
+    SUBDIR += tripwire12
     SUBDIR += uvscan-dat
     SUBDIR += vlock
     SUBDIR += vlog

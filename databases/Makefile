@@ -75,7 +75,6 @@
     SUBDIR += p5-DBD-CSV
     SUBDIR += p5-DBD-Excel
     SUBDIR += p5-DBD-InterBase
-    SUBDIR += p5-DBD-mysql
     SUBDIR += p5-DBD-LDAP
     SUBDIR += p5-DBD-ODBC
     SUBDIR += p5-DBD-Oracle
@@ -83,6 +82,7 @@
     SUBDIR += p5-DBD-SQLite
     SUBDIR += p5-DBD-Sybase
     SUBDIR += p5-DBD-XBase
+    SUBDIR += p5-DBD-mysql
     SUBDIR += p5-DBI
     SUBDIR += p5-DBIWrapper
     SUBDIR += p5-DBIx-AnyDBD

@@ -113,8 +113,8 @@
     SUBDIR += cssc
     SUBDIR += ctags
     SUBDIR += cutils
-    SUBDIR += cvs2cl
     SUBDIR += cvs+ipv6
+    SUBDIR += cvs2cl
     SUBDIR += cvs2html
     SUBDIR += cvs2p4
     SUBDIR += cvsadmin
@@ -793,8 +793,8 @@
     SUBDIR += sparc-rtems-gcj
     SUBDIR += sparc-rtems-gdb
     SUBDIR += sparc-rtems-objc
-    SUBDIR += spirit
     SUBDIR += spin
+    SUBDIR += spirit
     SUBDIR += splint
     SUBDIR += st
     SUBDIR += stlport

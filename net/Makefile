@@ -2,8 +2,8 @@
 #
 
     SUBDIR += 44bsd-rdist
-    SUBDIR += 6tunnel
     SUBDIR += 6to4
+    SUBDIR += 6tunnel
     SUBDIR += DarwinStreamingServer
     SUBDIR += GeoIP
     SUBDIR += NeTraMet
@@ -300,8 +300,8 @@
     SUBDIR += nemesis
     SUBDIR += net-http
     SUBDIR += net-snmp
-    SUBDIR += net-snmp4
     SUBDIR += net-snmp-tkmib
+    SUBDIR += net-snmp4
     SUBDIR += netatalk
     SUBDIR += netcat
     SUBDIR += netdude
@@ -444,9 +444,9 @@
     SUBDIR += pipsecd
     SUBDIR += pmf
     SUBDIR += poptop
-    SUBDIR += pppoa
     SUBDIR += portfwd
     SUBDIR += pppload
+    SUBDIR += pppoa
     SUBDIR += ppptraf
     SUBDIR += pptpclient
     SUBDIR += ppxp
@@ -510,9 +510,9 @@
     SUBDIR += ruby-pcap
     SUBDIR += ruby-radius
     SUBDIR += ruby-romp
-    SUBDIR += ruby-spread
     SUBDIR += ruby-snmp
     SUBDIR += ruby-soap
+    SUBDIR += ruby-spread
     SUBDIR += ruby-tcpsocketpipe
     SUBDIR += ruby-tserver
     SUBDIR += ruby-xmlrpc

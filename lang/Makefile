@@ -1,6 +1,5 @@
 # $FreeBSD$
 #
-    SUBDIR += yorick-doc
 
     SUBDIR += ETHOberonV4
     SUBDIR += Gofer
@@ -225,5 +224,6 @@
     SUBDIR += yabasic
     SUBDIR += yap
     SUBDIR += yorick
+    SUBDIR += yorick-doc
 
 .include <bsd.port.subdir.mk>
