@@ -119,6 +119,7 @@
     SUBDIR += tk80
     SUBDIR += tk82
     SUBDIR += tk83
+    SUBDIR += tk84
     SUBDIR += tkstep80
     SUBDIR += v
     SUBDIR += vdk
