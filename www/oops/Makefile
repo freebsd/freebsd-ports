@@ -1,6 +1,6 @@
 # New ports collection makefile for:	oops
 # Date created:		15 August 2000
-# Whom:			Sergey Osokin aka oZZ <osa@FreeBSD.org.ru>
+# Whom:			Sergey Osokin aka oZZ <ports@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -15,7 +15,7 @@ PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	${PORTNAME}-${OOPSVERSION}-${OOPSDATE}.patch
 PATCH_DIST_STRIP= -d ${WRKDIR}/${DISTNAME}
 
-MAINTAINER=	osa@FreeBSD.org.ru
+MAINTAINER=	ports@FreeBSD.org
 
 OOPSVERSION=	1.5.22
 OOPSDATE=	20020519
