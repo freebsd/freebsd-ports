@@ -18,6 +18,9 @@ DISTNAME=	libtool-${PORTVERSION}
 MAINTAINER=	ade@FreeBSD.org
 COMMENT?=	Generic shared library support script (version 1.4)
 
+DEPRECATED=	Please use devel/libtool15 instead
+EXPIRATION_DATE=1st June 2004
+
 BUILD_VERSION=	14
 LATEST_LINK?=	libtool${BUILD_VERSION}
 PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}
