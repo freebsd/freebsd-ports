@@ -1,6 +1,6 @@
---- src/Makefile.orig	Fri Dec  5 00:20:58 2003
-+++ src/Makefile	Fri Dec  5 00:23:13 2003
-@@ -1,38 +1,8 @@
+--- src/Makefile.orig	Sun Dec 14 20:37:51 2003
++++ src/Makefile	Thu May  6 12:16:48 2004
+@@ -1,49 +1,8 @@
 -BIN = mathopd
 -CC = gcc
 -CFLAGS = -O -Wall
@@ -11,7 +11,7 @@
 -SBINDIR = $(PREFIX)/sbin
 +PROG=	mathopd
 +SRCS=	base64.c cgi.c config.c core.c dump.c imap.c log.c \
-+	main.c redirect.c request.c util.c
++	main.c redirect.c request.c util.c stub.c
 +BINDIR?=${PREFIX}/sbin
 +NOMAN=	yes
 +LDADD=	-lcrypt
@@ -24,7 +24,7 @@
 -# CPPFLAGS = -DHAVE_CRYPT_H
 -
 -OBJS = base64.o cgi.o config.o core.o dump.o imap.o log.o main.o \
--	redirect.o request.o util.o
+-	redirect.o request.o util.o stub.o
 -DEPENDS = mathopd.h Makefile
 -
 -# Uncomment the following if your system does not support the poll() function
@@ -33,6 +33,17 @@
 -
 -# Uncomment the following if your system does not have the socklen_t type
 -# CPPFLAGS += -DNEED_SOCKLEN_T
+-
+-# Unomment the following if your system has a working vfork() function
+-# CPPFLAGS += -DHAVE_VFORK
+-
+-# Currently, sendfile support is available in two flavours: Linux and FreeBSD
+-# Uncomment one of the following two to enable sendfile() support
+-# CPPFLAGS += -DLINUX_SENDFILE
+-# CPPFLAGS += -DFREEBSD_SENDFILE
+-# If you define any of the SENDFILE conditionals, make sure to uncomment
+-# the next line as well.
+-# OBJS += sendfile.o
 -
 -all: $(BIN)
 -install: $(BIN)
