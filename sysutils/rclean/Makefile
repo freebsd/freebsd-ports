@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rclean
-PORTVERSION=	1.12
+PORTVERSION=	1.14
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.lapo.it/rclean/
 
