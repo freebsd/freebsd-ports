@@ -11,7 +11,9 @@ libdata/pkgconfig/libidn.pc
 share/emacs/site-lisp/idna.el
 share/emacs/site-lisp/punycode.el
 %%NLS%%share/locale/da/LC_MESSAGES/libidn.mo
+%%NLS%%share/locale/de/LC_MESSAGES/libidn.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/libidn.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/libidn.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/libidn.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/libidn.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/libidn.mo
