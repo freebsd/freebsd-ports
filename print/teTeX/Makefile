@@ -29,8 +29,6 @@ PKGDEINSTALL=	${WRKDIR}/pkg-install.sh
 PKGINSTALL_SUB=	TETEX_MODESW=${TETEX_MODESW} \
 		MODE=${DEFAULT_MODE}
 
-CONFLICTS=	*-teTeX* *-dvips* *-xdvi*
-
 # XXX: We always build in batch mode to disable OPTIONS
 #      in print/teTeX-base.
 DEPENDS_ARGS+=	BATCH=yes
