@@ -1,19 +1,29 @@
---- autoconf/Make.common.in	Sat Mar 29 13:25:04 2003
-+++ autoconf/Make.common.in	Thu May  8 07:18:26 2003
-@@ -31,6 +31,7 @@
- sysconfdir = @sysconfdir@
- scriptdir = @scriptdir@
- mandir = @mandir@/man1
-+datadir = @datadir@
- manext = 1
- 
- # Tools & program stuff
-@@ -50,7 +51,7 @@
- RANLIB = @RANLIB@
- INSTALL = @INSTALL@
- # add the -s to the following in PRODUCTION mode
--INSTALL_PROGRAM = @INSTALL@ -m 754
-+INSTALL_PROGRAM = @INSTALL@ -s -m 754
- INSTALL_DATA = @INSTALL@ -m 644
- INSTALL_SCRIPT = @INSTALL@ -m 754
- INSTALL_CONFIG = @INSTALL@ -m 640
+*** autoconf/Make.common.in.orig	Thu May  8 14:40:44 2003
+--- autoconf/Make.common.in	Sat Oct 11 10:50:22 2003
+***************
+*** 24,29 ****
+--- 24,30 ----
+  sysconfdir = @sysconfdir@
+  scriptdir = @scriptdir@
+  mandir = @mandir@/man1
++ datadir = @datadir@
+  manext = 1
+  
+  # Tools & program stuff
+***************
+*** 43,49 ****
+  RANLIB = @RANLIB@
+  INSTALL = @INSTALL@
+  # add the -s to the following in PRODUCTION mode
+! INSTALL_PROGRAM = @INSTALL@ -m 754
+  INSTALL_DATA = @INSTALL@ -m 644
+  INSTALL_SCRIPT = @INSTALL@ -m 754
+  INSTALL_CONFIG = @INSTALL@ -m 640
+--- 44,50 ----
+  RANLIB = @RANLIB@
+  INSTALL = @INSTALL@
+  # add the -s to the following in PRODUCTION mode
+! INSTALL_PROGRAM = @INSTALL@ -s -m 754
+  INSTALL_DATA = @INSTALL@ -m 644
+  INSTALL_SCRIPT = @INSTALL@ -m 754
+  INSTALL_CONFIG = @INSTALL@ -m 640

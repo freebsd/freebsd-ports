@@ -1,13 +1,21 @@
---- scripts/fd.in.orig	Mon Feb 24 13:49:20 2003
-+++ scripts/fd.in	Mon Feb 24 13:49:59 2003
-@@ -135,8 +135,8 @@
- 		    return 1
- 	    fi
-     fi
--    # See if /var/lock/subsys/$1 exists
--    if [ -f /var/lock/subsys/$1 ]; then
-+    # See if @subsysdir@/$1 exists
-+    if [ -f @subsysdir@/$1 ]; then
- 	    echo "$1 dead but subsys locked"
- 	    return 2
-     fi
+*** scripts/fd.in.orig	Sun May 11 22:39:16 2003
+--- scripts/fd.in	Wed Oct  1 20:47:13 2003
+***************
+*** 139,146 ****
+  		    return 1
+  	    fi
+      fi
+!     # See if /var/lock/subsys/$1 exists
+!     if [ -f /var/lock/subsys/$1 ]; then
+  	    echo "$1 dead but subsys locked"
+  	    return 2
+      fi
+--- 139,146 ----
+  		    return 1
+  	    fi
+      fi
+!     # See if @subsysdir@/$1 exists
+!     if [ -f @subsysdir@/$1 ]; then
+  	    echo "$1 dead but subsys locked"
+  	    return 2
+      fi
