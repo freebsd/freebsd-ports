@@ -3,8 +3,6 @@ lib/kxicq/plugins/liblastOnline.so
 lib/kxicq/plugins/liblastOnline.so.0
 lib/kxicq/plugins/librussianConverter.so
 lib/kxicq/plugins/librussianConverter.so.0
-lib/kxicq/plugins/libesound.so
-lib/kxicq/plugins/libesound.so.0
 share/locale/nl/LC_MESSAGES/kxicq.mo
 share/locale/ja/LC_MESSAGES/kxicq.mo
 share/locale/de/LC_MESSAGES/kxicq.mo
