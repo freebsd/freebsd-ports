@@ -254,7 +254,6 @@
     SUBDIR += latex-mk
     SUBDIR += lc
     SUBDIR += less
-    SUBDIR += libelysium
     SUBDIR += libhome
     SUBDIR += libmcal
     SUBDIR += libutf

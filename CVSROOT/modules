@@ -4420,7 +4420,6 @@ libdvdread	ports/multimedia/libdvdread
 libebml		ports/textproc/libebml
 libecc		ports/security/libecc
 libelf		ports/devel/libelf
-libelysium	ports/misc/libelysium
 libemf		ports/graphics/libemf
 libepplet	ports/x11-wm/libepplet
 liberator	ports/net/liberator
@@ -8705,7 +8704,6 @@ ruby-poll	ports/devel/ruby-poll
 ruby-postgres	ports/databases/ruby-postgres
 ruby-programmingruby	ports/lang/ruby-programmingruby
 ruby-property	ports/devel/ruby-property
-ruby-python	ports/lang/ruby-python
 ruby-quixml	ports/textproc/ruby-quixml
 ruby-quota	ports/sysutils/ruby-quota
 ruby-racc	ports/devel/ruby-racc
@@ -9434,7 +9432,6 @@ tcl83		ports/lang/tcl83
 tcl84		ports/lang/tcl84
 tclExpat	ports/textproc/tclExpat
 tclX		ports/lang/tclX
-tclX80		ports/lang/tclX80
 tclcheck	ports/devel/tclcheck
 tclcl		ports/devel/tclcl
 tclgetopts	ports/devel/tclgetopts
@@ -11054,7 +11051,6 @@ zope-zpt	ports/www/zope-zpt
 zope-zwiki	ports/www/zope-zwiki
 zorro		ports/deskutils/zorro
 zphoto		ports/graphics/zphoto
-zpygresqlda	ports/databases/zpygresqlda
 zsh		ports/shells/zsh
 zsh+euc_hack	ports/shells/zsh+euc_hack
 zsh-devel	ports/shells/zsh-devel

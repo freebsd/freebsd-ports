@@ -217,7 +217,6 @@
     SUBDIR += ruby-mode.el
     SUBDIR += ruby-perl
     SUBDIR += ruby-programmingruby
-    SUBDIR += ruby-python
     SUBDIR += ruby-reference
     SUBDIR += ruby-ri
     SUBDIR += ruby-tcltklib
@@ -267,7 +266,6 @@
     SUBDIR += tcl83
     SUBDIR += tcl84
     SUBDIR += tclX
-    SUBDIR += tclX80
     SUBDIR += tcltutor
     SUBDIR += tensile
     SUBDIR += tinycobol
