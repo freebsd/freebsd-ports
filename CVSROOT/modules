@@ -3075,6 +3075,7 @@ ja-skk-tools	ports/japanese/skk-tools
 ja-skk10-elisp-emacs20	ports/japanese/skk10-elisp-emacs20
 ja-skkfep	ports/japanese/skkfep
 ja-skkinput	ports/japanese/skkinput
+ja-skkinput3	ports/japanese/skkinput3
 ja-skkserv	ports/japanese/skkserv
 ja-slirc	ports/japanese/slirc
 ja-slrn		ports/japanese/slrn
