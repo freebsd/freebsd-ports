@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.codemonkey.org.uk/x86info/ \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	erik@smluc.org
 
 ONLY_FOR_ARCHS=	i386
 USE_REINPLACE=	yes
