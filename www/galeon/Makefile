@@ -18,8 +18,6 @@ BUILD_DEPENDS=	${X11BASE}/include/mozilla/gtkembedmoz/gtkmozembed.h:${PORTSDIR}/
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
 
-#BROKEN=		"b0rken with Mozilla-0.9.9"
-
 WITH_FULL_MOZILLA=	"Problems with SSL, general performance, and usability"
 
 .if !defined(WITH_FULL_MOZILLA)
@@ -30,8 +28,10 @@ MOZILLA=	mozilla
 
 USE_X_PREFIX=	yes
 USE_NEWGCC=	yes
-USE_GNOME=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomeprefix gnomehack bonobo libglade gnomevfs
 USE_LIBTOOL=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-mozilla-includes="${X11BASE}/include/mozilla" \
 		--with-mozilla-libs="${X11BASE}/lib/${MOZILLA}" \
 		--enable-nautilus-view
@@ -58,21 +58,20 @@ post-extract:
 	@${ECHO_MSG}
 .endif
 
-pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
-		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g ; \
-		 s|-lpthread|${PTHREAD_LIBS}|g'
+	@find ${WRKSRC} -name "Makefile.in*" | xargs ${REINPLACE_CMD} -e \
+		 's|-lpthread|${PTHREAD_LIBS}|g'
 	@${MKDIR} ${WRKSRC}/src/libnautilus
 
 post-configure:
-	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g ; \
-			 s|%%LOCALBASE%%|${LOCALBASE}|g ; \
-			 s|%%X11BASE%%|${X11BASE}|g ; \
-			 s|%%MOZILLA%%|${MOZILLA}|g' ${WRKSRC}/src/galeon \
-						     ${WRKSRC}/src/nautstub.c
+	@${REINPLACE_CMD} -e 's|[%][%]PREFIX[%][%]|${PREFIX}|g ; \
+			 s|[%][%]LOCALBASE[%][%]|${LOCALBASE}|g ; \
+			 s|[%][%]X11BASE[%][%]|${X11BASE}|g ; \
+			 s|[%][%]MOZILLA[%][%]|${MOZILLA}|g' \
+			 			${WRKSRC}/src/galeon \
+						${WRKSRC}/src/nautstub.c
 
 pre-install:
 	@-${X11BASE}/bin/gconftool --shutdown
