@@ -1,7 +1,10 @@
---- src/dtmf.cpp.orig	Fri Feb 20 17:23:13 2004
-+++ src/dtmf.cpp	Fri Feb 20 17:23:19 2004
-@@ -30,6 +30,7 @@
- #include <stdint.h>
+--- src/dtmf.cpp.orig	Wed Jul 23 19:52:40 2003
++++ src/dtmf.cpp	Fri Mar 12 09:08:50 2004
+@@ -27,9 +27,9 @@
+ //
+ 
+ #include <math.h>
+-#include <stdint.h>
  #include <string.h>
  #include <stdio.h>
 +#include <stdlib.h>
