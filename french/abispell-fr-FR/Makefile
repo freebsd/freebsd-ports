@@ -15,7 +15,7 @@ DISTNAME=	abispell-fr-FR.i386
 MAINTAINER=     fab@gcu.info
 COMMENT=	French (France) ispell dictionary for AbiWord
 
-BUILD_DEPENDS=	AbiWord:${PORTSDIR}/editors/AbiWord
+BUILD_DEPENDS=	AbiWord-2.0:${PORTSDIR}/editors/AbiWord2
 
 PREFIX=         ${X11BASE}
 NO_BUILD=       yes

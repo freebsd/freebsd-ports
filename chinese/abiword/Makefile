@@ -20,7 +20,7 @@ GSPORT?=	print/ghostscript-afpl
 GSPORT?=	print/ghostscript-gnu
 .endif
 
-RUN_DEPENDS=	AbiWord:${PORTSDIR}/editors/AbiWord \
+RUN_DEPENDS=	AbiWord-2.0:${PORTSDIR}/editors/AbiWord2 \
 		ttfm.sh:${PORTSDIR}/chinese/ttfm \
 		${LOCALBASE}/share/fonts/TrueType/bkai00mp.ttf:${PORTSDIR}/chinese/arphicttf \
 		gs:${PORTSDIR}/${GSPORT}
