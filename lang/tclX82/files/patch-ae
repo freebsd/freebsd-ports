@@ -1,13 +1,13 @@
 --- configure.orig	Sun Feb  6 18:54:02 2000
 +++ configure	Thu Jul 13 14:29:54 2000
-@@ -2009,8 +2009,11 @@
+@@ -2088,8 +2088,11 @@
  	    ;;
  	FreeBSD-*)
  	    # FreeBSD 3.* and greater have ELF.
 +	    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so'
 +	    UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.a'
 +	    TCL_LIB_VERSIONS_OK=nodots
--	    SHLIB_CFLAGS="-fpic"
+-	    SHLIB_CFLAGS="-fPIC"
 +	    SHLIB_CFLAGS="-fPIC -DPIC"
 	    SHLIB_LD="ld -Bshareable -x"
  	    SHLIB_LD_LIBS=""
@@ -20,16 +20,16 @@
 -eval "TCLX_STLIB_NAME=libtclx${UNSHARED_LIB_SUFFIX}"
 -eval "TCLX_SHLIB_NAME=libtclx${SHARED_LIB_SUFFIX}"
 -eval "TCLX_SHLIB_NAME=${TCLX_SHLIB_NAME}"
-+TCLX_STLIB_NAME=libtclx82.a
-+TCLX_SHLIB_NAME=libtclx82.so.1
++TCLX_STLIB_NAME=libtclx83.a
++TCLX_SHLIB_NAME=libtclx83.so.1
  
  DBGX=${TKX_DBGX}
  VERSION=$TKX_VERSION
 -eval "TKX_STLIB_NAME=libtkx${UNSHARED_LIB_SUFFIX}"
 -eval "TKX_SHLIB_NAME=libtkx${SHARED_LIB_SUFFIX}"
 -eval "TKX_SHLIB_NAME=${TKX_SHLIB_NAME}"
-+TKX_STLIB_NAME=libtkx82.a
-+TKX_SHLIB_NAME=libtkx82.so.1
++TKX_STLIB_NAME=libtkx83.a
++TKX_SHLIB_NAME=libtkx83.so.1
  
  #
  # Determine suffix to use for the object files for the shared library.
