@@ -1,0 +1,15 @@
+This is a port of a multiplayer-only DOS game where the players are bunnies,
+and the goal is to jump on the other bunnies, destroying them in a bloody
+explosion. This game also has a screensaver mode, which is a parody of the
+classic xscreensaver pyro hack, except that bunnies explode instead of
+fireworks.
+
+Network support is currently broken, but the authors threaten to fix it
+in a future release.
+
+Hundreds of alternate levels are available on the website.
+
+WWW: http://www.jumpbump.mine.nu/
+
+- Gurkan
+gurkan@linuks.mine.nu

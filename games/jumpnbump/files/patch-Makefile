@@ -1,0 +1,26 @@
+--- Makefile.orig	Sun Sep 22 12:03:26 2002
++++ Makefile	Mon Nov  4 21:28:25 2002
+@@ -1,8 +1,8 @@
+-SDL_CFLAGS = `sdl-config --cflags`
+-SDL_LIBS = `sdl-config --libs`
+-CFLAGS = -Wall -O2 -ffast-math -funroll-loops -Dstricmp=strcasecmp \
+-	-Dstrnicmp=strncasecmp -DUSE_SDL -DNDEBUG -I. $(SDL_CFLAGS) -DUSE_NET
+-LIBS = -lm $(SDL_LIBS) -lSDL_mixer -lSDL_net
++SDL_CFLAGS = `sdl11-config --cflags`
++SDL_LIBS = `sdl11-config --libs`
++CFLAGS += -Wall -ffast-math -funroll-loops -Dstricmp=strcasecmp \
++	-Dstrnicmp=strncasecmp -DUSE_SDL -DNDEBUG -I. $(SDL_CFLAGS)
++LIBS += -lm $(SDL_LIBS) -lSDL_mixer
+ SDL_TARGET = sdl.a
+ MODIFY_TARGET = gobpack jnbpack jnbunpack
+ OBJS = fireworks.o main.o menu.o
+@@ -30,7 +30,8 @@
+ 	sed -e "s#%%PREFIX%%#$(PREFIX)#g" < globals.pre > globals.h
+ 
+ jnbmenu.tcl: jnbmenu.pre
+-	sed -e "s#%%PREFIX%%#$(PREFIX)#g" < jnbmenu.pre > jnbmenu.tcl
++	sed -e "s#%%PREFIX%%#$(PREFIX)#g; \
++		s#%%LOCALBASE%%#${LOCALBASE}#g" < jnbmenu.pre > jnbmenu.tcl
+ 
+ data: jnbpack
+ 	cd data && make

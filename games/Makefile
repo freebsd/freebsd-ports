@@ -165,6 +165,7 @@
     SUBDIR += ishido
     SUBDIR += jetpack
     SUBDIR += jfk
+    SUBDIR += jumpnbump
     SUBDIR += jzip
     SUBDIR += kdegames3
     SUBDIR += klondike
