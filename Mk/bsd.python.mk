@@ -180,6 +180,7 @@ PYTHON_VERSION?=	python${_PYTHON_VERSION}
 PYTHON_CMD?=		${_PYTHON_CMD}
 PYTHONBASE!=		(${PYTHON_CMD} -c 'import sys; print sys.prefix') \
 						2> /dev/null || echo ${LOCALBASE}
+DEPENDS_ARGS+=		PYTHON_VERSION=${PYTHON_VERSION}
 _PYTHON_PORTVERSION!=	(${PYTHON_CMD} -c 'import string, sys; \
 							print string.split(sys.version)[0]') 2> /dev/null || ${TRUE}
 .if !defined(PYTHON_NO_DEPENDS) && !empty(_PYTHON_PORTVERSION)
@@ -195,9 +196,9 @@ PYTHON_SUFFIX=		24
 
 # Python-2.3
 .elif ${PYTHON_VERSION} == "python2.3"
-PYTHON_PORTVERSION?=2.3.2
+PYTHON_PORTVERSION?=2.3.3
 PYTHON_PORTSDIR=	${PORTSDIR}/lang/python
-PYTHON_REL=			232
+PYTHON_REL=			233
 PYTHON_SUFFIX=		23
 
 # Python-2.2
