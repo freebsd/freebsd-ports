@@ -180,6 +180,7 @@
     SUBDIR += libcoro
     SUBDIR += libdlmalloc
     SUBDIR += libdsp
+    SUBDIR += libelf
     SUBDIR += libffi
     SUBDIR += libg++
     SUBDIR += libgetline
