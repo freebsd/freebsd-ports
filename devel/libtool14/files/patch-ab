@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	Fri Mar 20 17:01:52 1998
++++ doc/Makefile.in	Mon Apr 27 17:22:55 1998
+@@ -56,7 +56,7 @@
+ LD = @LD@
+ LIBTOOL = @LIBTOOL@
+ LN_S = @LN_S@
+-MAKEINFO = @MAKEINFO@
++MAKEINFO = @MAKEINFO@ --no-split
+ NM = @NM@
+ PACKAGE = @PACKAGE@
+ RANLIB = @RANLIB@
