@@ -18,8 +18,8 @@ COMMENT=	Java Date Chooser
 USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
-NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
+USE_ANT=	yes
+WRKSRC=		${WRKDIR}/src
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \
 		%%JAVAJARDIR%%/looks-${PORTVERSION}.jar
 
@@ -27,13 +27,18 @@ PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \
 PORTDOCS=	*
 .endif
 
+post-build:
+	cd ${WRKDIR}/build && \
+		${JAR} cmf ${WRKSRC}/${PORTNAME}.manifest \
+			${WRKDIR}/build/${PORTNAME}.jar *
+
 do-install:
-.for file in jcalendar.jar looks-${PORTVERSION}.jar
-	${INSTALL_DATA} ${WRKSRC}/lib/${file} ${JAVAJARDIR}
-.endfor
+	${INSTALL_DATA} ${WRKDIR}/build/${PORTNAME}.jar ${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKDIR}/lib/looks-${PORTVERSION}.jar ${JAVAJARDIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/doc/ ${DOCSDIR}
+	cd ${WRKDIR}/doc && ${FIND} . \
+		| ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
