@@ -20,6 +20,7 @@ COMMENT=	Client side of a group voice chat system
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg
 
+ONLY_FOR_ARCHS=	i386
 USE_BZIP2=	yes
 NO_BUILD=	yes
 USE_LINUX=	yes

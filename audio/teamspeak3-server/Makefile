@@ -18,6 +18,7 @@ MAINTAINER=	darius@dons.net.au
 COMMENT=	Server side of the TeamSpeak group voice chat system
 
 WRKSRC=		${WRKDIR}/tss2_rc2
+ONLY_FOR_ARCHS=	i386
 USE_BZIP2=	yes
 NO_BUILD=	yes
 USE_LINUX=	yes
