@@ -7,6 +7,7 @@
 
 PORTNAME=	raggle
 PORTVERSION=	0.2.3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.raggle.org/files/
 
