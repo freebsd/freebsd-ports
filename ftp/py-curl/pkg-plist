@@ -2,8 +2,8 @@
 %%PYTHON_SITELIBDIR%%/curl/__init__.pyc
 %%PYTHON_SITELIBDIR%%/curl/__init__.pyo
 %%PYTHON_SITELIBDIR%%/pycurl.so
-share/doc/py-curl/ChangeLog
 share/doc/py-curl/COPYING
+share/doc/py-curl/ChangeLog
 share/doc/py-curl/INSTALL
 share/doc/py-curl/README
 share/doc/py-curl/TODO
