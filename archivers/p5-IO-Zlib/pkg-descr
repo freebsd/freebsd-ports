@@ -1,0 +1,8 @@
+This is the IO::Zlib module package for perl5.
+
+This modules provides an IO:: style interface to the Compress::Zlib
+package. The main advantage is that you can use an IO::Zlib object
+in much the same way as an IO::File object so you can have common
+code that doesn't know which sort of file it is using.
+
+WWW: http://search.cpan.org/search?dist=IO-Zlib
