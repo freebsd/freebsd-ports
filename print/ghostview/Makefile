@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	ghostview
 
 MAINTAINER=	ports@FreeBSD.org
 
+FORBIDDEN=	"Security vulnerability, see bugtraq id 5808"
+
 USE_IMAKE=	yes
 MAN1=		ghostview.1
 

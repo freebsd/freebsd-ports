@@ -16,6 +16,8 @@ MAINTAINER=	gnome@FreeBSD.org
 
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
 
+FORBIDDEN=	"Security vulnerability, see bugtraq id 5808"
+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
