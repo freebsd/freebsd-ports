@@ -16,6 +16,8 @@ RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83 \
 		p4:${PORTSDIR}/devel/perforce
 
 NO_BUILD=	yes
+USE_REINPLACE=	yes
+REINPLACE_ARGS=	-i ""
 
 do-install:
 	${MKDIR} ${DATADIR}
@@ -28,9 +30,10 @@ do-install:
 .include <bsd.port.pre.mk>
 
 post-patch:
-	${PERL} -pi -e 's|wish|wish8.3|' ${WRKSRC}/tkp4
+	${REINPLACE_CMD} -e 's|wish|wish8.3|' ${WRKSRC}/tkp4
 .if defined(PREFIX) && ${PREFIX} != "/usr/local"
-	${PERL} -pi -e 's|/usr/local|${PREFIX}|g' `${GREP} -Fl /usr/local ${WRKSRC}/*`
+	${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' \
+		`${GREP} -Fl /usr/local ${WRKSRC}/*`
 .endif
 
 .include <bsd.port.post.mk>
