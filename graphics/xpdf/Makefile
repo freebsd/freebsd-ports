@@ -45,6 +45,11 @@ MAN1=		pdffonts.1 \
 		xpdf.1
 MAN5=		xpdfrc.5
 
+post-patch:
+	@${CP} ${WRKSRC}/configure ${WRKSRC}/configure.orig
+	@${SED} -e "s#freetype.h#ft2build.h#" ${WRKSRC}/configure.orig > \
+		${WRKSRC}/configure
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
