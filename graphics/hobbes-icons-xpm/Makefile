@@ -3,7 +3,7 @@
 # Date created:		19 October 1996
 # Whom:			pgs
 #
-# $Id: Makefile,v 1.3 1997/05/30 16:50:46 fenner Exp $
+# $Id: Makefile,v 1.4 1997/10/29 12:28:36 tg Exp $
 #
 
 DISTNAME=	hobbes-icons-xpm3
@@ -14,7 +14,7 @@ MASTER_SITES=   ftp://ftp.x.org/R5contrib/  \
 		ftp://ftp.sunet.se/pub/X11/R5contrib/  \
 		ftp://ftp.pacbell.com/X11/R5contrib/
 
-MAINTAINER=	pgiffuni@fps.biblos.unal.edu.co
+MAINTAINER=	giffunip@asme.org
 
 USE_X11=	yes
 NO_BUILD=	yes

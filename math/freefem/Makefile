@@ -1,16 +1,16 @@
 # New ports collection makefile for:   freefem
 # Version required:    3.4
 # Date created:        20 December 1996
-# Whom:                pgiffuni@FPS.biblos.unal.edu.co
+# Whom:                Pedro Giffuni
 #
-# $Id: Makefile,v 1.2 1997/04/17 12:23:45 max Exp $
+# $Id: Makefile,v 1.3 1997/07/08 08:29:13 tg Exp $
 #
 
 DISTNAME=	freefem-3.4
 CATEGORIES=	math cad
 MASTER_SITES=	http://www.asci.fr/~prudhomm/gfem-html/freefem/
 
-MAINTAINER=     pgiffuni@FPS.biblos.unal.edu.co
+MAINTAINER=     giffunip@asme.org
 
 USE_X11=	yes
 GNU_CONFIGURE=	yes

@@ -1,9 +1,9 @@
 # New ports collection makefile for:	FreeWAIS_sf-2.1.2
 # Version required:	 2.1.1
 # Date created:		19 November 1996
-# Whom:			Pedro Giffuni <pgiffuni@fps.biblos.unal.edu.co>
+# Whom:			Pedro Giffuni
 #
-# $Id: Makefile,v 1.3 1997/02/19 05:49:17 asami Exp $
+# $Id: Makefile,v 1.4 1997/12/24 01:21:15 alex Exp $
 #
 
 DISTNAME=	freeWAIS-sf-2.1.2
@@ -11,7 +11,7 @@ PKGNAME=	freewais-sf-2.1.2
 CATEGORIES=	net databases
 MASTER_SITES=   ftp://ftp.wsct.wsc.com/pub/freeWAIS-sf/freeWAIS-sf-2.1/
 
-MAINTAINER=	pgiffuni@fps.biblos.unal.edu.co
+MAINTAINER=	giffunip@asme.org
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= < ${FILESDIR}/configure.ans

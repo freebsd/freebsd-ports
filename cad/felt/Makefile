@@ -3,7 +3,7 @@
 # Date created:		19 October 1996
 # Whom:			Pedro Giffuni
 #
-# $Id: Makefile,v 1.4 1997/06/16 05:45:08 max Exp $
+# $Id: Makefile,v 1.5 1997/06/29 10:39:49 obrien Exp $
 #
 
 DISTNAME=	felt-3.02
@@ -12,7 +12,7 @@ MASTER_SITES=	http://www-cse.ucsd.edu/users/atkinson/FElt/Binaries/ \
 		ftp://ftp.isd.uni-stuttgart.de/pub/src/FEM/FElt/
 EXTRACT_SUFX=	.src.tar.gz
 
-MAINTAINER=	pgiffuni@FPS.biblos.unal.edu.co
+MAINTAINER=	giffunip@asme.org
 
 WRKSRC=         ${WRKDIR}/FElt-3.02
 GNU_CONFIGURE=	yes
