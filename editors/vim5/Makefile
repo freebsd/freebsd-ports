@@ -26,14 +26,13 @@ PATCHFILES+=	5.8.0${p}
 
 MAINTAINER?=	obrien@FreeBSD.org
 
-SLAVEDIRS=	editors/vim-lite
-
 .if defined(PACKAGE_BUILDING) && !defined(LITE)
 BUILD_DEPENDS=	tclsh8.0:${PORTSDIR}/lang/tcl80
 LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80
 USE_PERL5=	yes
 .endif
 
+LATEST_LINK?=	vim5
 DIST_SUBDIR=	vim
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 PATCH_DIST_ARGS=	-d ${WRKDIR}/${DISTNAME} --forward --quiet -E ${PATCH_DIST_STRIP}
