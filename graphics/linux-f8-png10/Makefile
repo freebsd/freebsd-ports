@@ -13,6 +13,10 @@ MASTER_SITES=	${RPM_MIRRORS:S/__DIR__/${UPDDIR}/g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RPM of the PNG lib
 
+.if (${MACHINE_ARCH} == "i386")
+RPM_SET=	libpng-${PORTVERSION}-0.7x.4.${MACHINE_ARCH}.rpm
+.elif (${MACHINE_ARCH} == "alpha")
 RPM_SET=	libpng-${PORTVERSION}-0.7x.3.${MACHINE_ARCH}.rpm
+.endif
 
 .include "../../x11-toolkits/linux-gtk/Makefile"
