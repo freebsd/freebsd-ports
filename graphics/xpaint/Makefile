@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xpaint
-PORTVERSION=	2.6.9
-PORTREVISION=	1
+PORTVERSION=	2.7.0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.ac-grenoble.fr/Office/
@@ -22,7 +21,7 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 USE_BZIP2=	yes
 USE_IMAKE=	yes
 USE_XPM=	yes
-ALL_TARGET=	xaw
+ALL_TARGET=	xaw95static
 
 MAN1=		xpaint.1
 
