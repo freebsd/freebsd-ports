@@ -1,0 +1,11 @@
+--- ./install/Makefile.in.orig	Fri May 24 04:23:44 2002
++++ ./install/Makefile.in	Fri May 24 04:24:22 2002
+@@ -21,7 +21,7 @@
+ CXXFLAGS = @CXXFLAGS@
+ CPPFLAGS = @CPPFLAGS@ @DEFS@ -DINSTALL_PROG="\"@INSTALL@\"" -DSHARE_DIR="\"@datadir@/@PACKAGE@\"" @X_CFLAGS@ @QT_INCLUDES@ @SOCKS_INCDIR@ -I$(srcdir) -I$(top_srcdir) -Wall
+ LDFLAGS  = @SOCKS_LIBDIR@ @X_LIBS@ @QT_LDFLAGS@
+-LDLIBS   = @SOCKS_LIBS@ -lqt @X_PRE_LIBS@ -lX11 -lXext @X_EXTRA_LIBS@
++LDLIBS   = @SOCKS_LIBS@ -lqt1 @X_PRE_LIBS@ -lX11 -lXext @X_EXTRA_LIBS@
+ MOC      = @QT_MOC@
+ 
+ OBJECTS = installDialog.o main.o installer.o ../src/file.o

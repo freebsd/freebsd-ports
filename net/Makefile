@@ -173,6 +173,7 @@
     SUBDIR += icmpquery
     SUBDIR += icqlib
     SUBDIR += icqlib0
+    SUBDIR += icqnix
     SUBDIR += icradius
     SUBDIR += icukrell
     SUBDIR += ip-tun
@@ -376,6 +377,7 @@
     SUBDIR += pmf
     SUBDIR += poptop
     SUBDIR += pppoa
+    SUBDIR += pppload
     SUBDIR += ppptraf
     SUBDIR += pptpclient
     SUBDIR += ppxp

@@ -1,0 +1,11 @@
+--- src/icqfunctions.h.orig	Sun Feb 27 15:34:39 2000
++++ src/icqfunctions.h	Sun Feb 27 15:36:57 2000
+@@ -46,7 +46,7 @@
+    virtual ~ICQFunctions(void);
+    void setup(ICQUser *s, int index, bool isAutoClose);
+    char *tabLabel[4];
+-   const int TAB_READ = 0, TAB_SEND = 1, TAB_USERINFO = 2, TAB_HISTORY = 3;
++   static const int TAB_READ = 0, TAB_SEND = 1, TAB_USERINFO = 2, TAB_HISTORY = 3;
+    int currentTab;
+    ICQUser *theUser;
+    ICQ *server;
