@@ -42,6 +42,7 @@
     SUBDIR += emacs20-dl-wnn6
     SUBDIR += epwutil
     SUBDIR += escpf
+    SUBDIR += esecanna-vje30
     SUBDIR += eterm
     SUBDIR += ewipe
     SUBDIR += exmh2
@@ -265,6 +266,8 @@
     SUBDIR += vfxdvi360
     SUBDIR += vfxdvi400
     SUBDIR += vfxdvi600
+    SUBDIR += vje30
+    SUBDIR += vje30-trial
     SUBDIR += w3
     SUBDIR += w3m
     SUBDIR += w3m-ssl
