@@ -11,10 +11,10 @@ editing of attribute values in a separate window with information about
 types and defaults, and structure based editing.
 
   PSGML is installed the following directory tree:
-	${PREFIX}/lib/xemacs-20.4/site-lisp/psgml/
+	${PREFIX}/lib/xemacs/site-lisp/psgml/
 
 To use psgml, put the following setup into your ~/.emacs:
 
-	(require 'psgml-setupel)
+	(require 'psgml-startup)
 
 --- Porting by shige <shige@FreeBSD.ORG> and kuriyama@FreeBSD.ORG

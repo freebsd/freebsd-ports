@@ -1,5 +1,5 @@
 # New ports collection makefile for:	psgml for mule
-# Version required:	1.1.6
+# Version required:	1.2.0
 # Date created:		23 January 1999
 # Whom:			shige
 #
@@ -19,8 +19,8 @@ EMACS_PORT=	mule
 EMACS_VER=	19.34
 EMACS_LIBDIR=	share/${EMACS_NAME}
 
-HAVE_COMMON_PORT=	YES
-REQUIRE_SETUPEL=	YES
+# whether emacs has a *-common port
+HAS_COMMON_PORT=	YES
 
 # pkg/* files are used in ${.CURDIR}
 PKGDIR=		${.CURDIR}/pkg

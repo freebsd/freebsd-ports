@@ -15,6 +15,6 @@ types and defaults, and structure based editing.
 
 To use psgml, put the following setup into your ~/.emacs:
 
-	(require 'psgml-setupel)
+	(require 'psgml-startup)
 
 --- Porting by shige <shige@FreeBSD.ORG>.
