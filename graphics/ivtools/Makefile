@@ -16,6 +16,13 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	johnston@vectaport.com
 COMMENT=	Drawing editors derived from idraw
 
+USE_XLIB=	yes
+GNU_CONFIGURE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
+
+MANCOMPRESSED=	no
+MAN1=	idraw.1 iclass.1 drawtool.1 comterp.1 comdraw.1 flipbook.1 graphdraw.1
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == alpha || ${ARCH} == sparc64
@@ -30,12 +37,5 @@ BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
 .else
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
 .endif
-
-USE_XLIB=	yes
-GNU_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
-
-MANCOMPRESSED=	no
-MAN1=	idraw.1 iclass.1 drawtool.1 comterp.1 comdraw.1 flipbook.1 graphdraw.1
 
 .include <bsd.port.post.mk>
