@@ -1,6 +1,6 @@
---- configure.orig	Tue Mar 28 10:17:16 2000
-+++ configure	Tue Mar 28 13:26:27 2000
-@@ -2504,7 +2504,7 @@
+--- configure.orig	Wed Apr 12 20:43:02 2000
++++ configure	Mon Apr 17 17:54:44 2000
+@@ -2507,7 +2507,7 @@
  fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
@@ -9,7 +9,7 @@
  else
    echo "$ac_t""no" 1>&6
  echo $ac_n "checking for pthread_create""... $ac_c" 1>&6
-@@ -5316,15 +5316,15 @@
+@@ -5319,15 +5319,15 @@
  fi
  
          
@@ -29,10 +29,10 @@
        fi
  
              if test "$XGETTEXT" != ":"; then
-@@ -5873,8 +5873,8 @@
+@@ -5876,8 +5876,8 @@
  
  echo $ac_n "checking for GTK >= 1.2.7""... $ac_c" 1>&6
- echo "configure:5876: checking for GTK >= 1.2.7" >&5
+ echo "configure:5879: checking for GTK >= 1.2.7" >&5
 -if gtk-config --version > /dev/null 2>&1; then 
 -        vers=`gtk-config --version | awk 'BEGIN { FS = "."; } { printf "%d", ($1 * 1000 + $2) * 1000 + $3;}'`
 +if $GTK_CONFIG --version > /dev/null 2>&1; then 
