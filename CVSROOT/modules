@@ -2266,6 +2266,7 @@ gnustep-objc	ports/lang/gnustep-objc
 gnustep-xgps	ports/x11-toolkits/gnustep-xgps
 gnut		ports/net/gnut
 gob		ports/x11-toolkits/gob
+gob2		ports/devel/gob2
 goblin		ports/misc/goblin
 gogo		ports/audio/gogo
 golddig		ports/games/golddig
