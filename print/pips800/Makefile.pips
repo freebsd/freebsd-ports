@@ -19,9 +19,8 @@ PIPS_LEVEL!=	printf "%02d%02d" ${PIPS_MAJOR} ${PIPS_MINOR}
 
 .if ${PIPS_LEVEL} < 0206
 DIST_TYPE=	lpr
-.else
-DIST_TYPE?=	lpr_and_caps
 .endif
+DIST_TYPE?=	lpr_and_caps
 
 PRTTYPE_PREFIX=	${PRTYPE:C|^([^0-9]+)[0-9]+.*$|\1|}
 .if ${PRTTYPE_PREFIX} == -sc
@@ -59,14 +58,14 @@ MASTER_SITE_SUBDIR=	pm${PRTYPE}clpr
 MAINTAINER=	ume@FreeBSD.org
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
-RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu \
-		pstops:${PORTSDIR}/print/psutils-${PAPERSIZE} \
+RUN_DEPENDS=	pstops:${PORTSDIR}/print/psutils-${PAPERSIZE} \
 		${LOCALBASE}/lib/pluginwrapper/pips.so:${PORTSDIR}/www/linuxpluginwrapper
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib12 gtk12
 USE_GETTEXT=	yes
+USE_GHOSTSCRIPT_RUN=yes
 
 ONLY_FOR_ARCHS= i386
 .if ${DIST_TYPE} == cups
@@ -192,52 +191,36 @@ CUPSOPT_FILE=	cupsopt_pm${PRTYPE}c.csv
 CUPSOPT_FILE=	cupsopt.csv
 .endif
 LIB_README=	${LIB_FILE:S/.so$//}.readme
+
 PAPERSIZE?=	a4
-.if ${PIPS_MAJOR} >= 2
+
+.if ${PIPS_MAJOR} == 1
+FILTER_SRC=	filter.org
+PLIST=		${MASTERDIR}/pkg-plist132
+.else
 FILTER_SRC=	filter.tmp
 .if ${PIPS_LEVEL} == 0201
-PIPS=		""
-CUPS=		"@comment "
-EKPNAVI=	""
-EKPNAVI_MO=	""
-EKPSTM_MO=	""
-DTRFILTER=	"@comment "
-GSCONFIG=	""
-PAPER_LIST=	"@comment "
-.else
-.if ${DIST_TYPE} == lpr
-PIPS=		""
-CUPS=		"@comment "
-EKPNAVI=	""
-EKPNAVI_MO=	""
-EKPSTM_MO=	""
-DTRFILTER=	""
+INCLIST=	PIPS EKPNAVI EKPNAVI_MO EKPSTM_MO GSCONFIG
+.elif ${DIST_TYPE} == lpr
+INCLIST=	PIPS EKPNAVI EKPNAVI_MO EKPSTM_MO DTRFILTER PAPER_LIST
 .elif ${DIST_TYPE} == cups
-PIPS=		"@comment "
-CUPS=		""
-EKPNAVI=	"@comment "
-EKPNAVI_MO=	"@comment "
-EKPSTM_MO=	""
-DTRFILTER=	"@comment "
+INCLIST=	CUPS EKPSTM_MO PAPER_LIST
 .else
-PIPS=		""
-CUPS=		""
-EKPNAVI=	""
-EKPNAVI_MO=	"@comment "
-EKPSTM_MO=	"@comment "
-DTRFILTER=	""
+INCLIST=	PIPS CUPS EKPNAVI DTRFILTER PAPER_LIST
 .endif
-GSCONFIG=	"@comment "
-PAPER_LIST=	""
+.for _P in PIPS CUPS EKPNAVI EKPNAVI_MO EKPSTM_MO DTRFILTER GSCONFIG PAPER_LIST
+.if ${INCLIST:M${_P}} == ${_P}
+${_P}=""
+.else
+${_P}="@comment "
 .endif
+.endfor
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
 		RC_SUBR=${RC_SUBR} \
 		PRT_MODEL=${PRT_MODEL}
 WITH_EKPD?=	yes
-.elif ${PIPS_MAJOR} == 1
-FILTER_SRC=	filter.org
-PLIST=		${MASTERDIR}/pkg-plist132
 .endif
+
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 DOCS=		COPYING COPYING.KOWA COPYING.KOWA.ja COPYING.LIB
