@@ -240,6 +240,7 @@
     SUBDIR += p5-Net-RawIP
     SUBDIR += p5-Net-SNMP
     SUBDIR += p5-Net-SSH
+    SUBDIR += p5-Net-Server
     SUBDIR += p5-Net-Telnet
     SUBDIR += p5-Net-Traceroute
     SUBDIR += p5-Net-Wake

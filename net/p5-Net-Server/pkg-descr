@@ -1,0 +1,11 @@
+Net::Server is an extensible, generic Perl server engine. Net::Server combines
+the good properties from Net::Daemon (0.34), NetServer::Generic (1.03), and
+Net::FTPServer (1.0), and also from various concepts in the Apache Webserver.
+Net::Server attempts to be a generic server as in Net::Daemon and
+NetServer::Generic. It includes with it the ability to run as an inetd process
+(Net::Server::INET), a single connection server (Net::Server or
+Net::Server::Single), a forking server (Net::Server::Fork), or as a preforking
+server (Net::Server::PreFork). In all but the inetd type, the server provides
+the ability to connect to one or to multiple server ports.  
+
+WWW: http://www.seamons.com/net_server.html

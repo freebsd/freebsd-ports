@@ -1,0 +1,11 @@
+lib/perl5/site_perl/%%PERL_VER%%/Net/Server.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/Server/Fork.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/Server/INET.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/Server/MultiType.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/Server/PreFork.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/Server/Single.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Server/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Server
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/Server
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Net 2>/dev/null || true
