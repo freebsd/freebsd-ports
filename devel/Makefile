@@ -981,6 +981,7 @@
     SUBDIR += powerpc-rtems-objc
     SUBDIR += ppl
     SUBDIR += prcs
+    SUBDIR += premake
     SUBDIR += privman
     SUBDIR += projectcenter.app
     SUBDIR += prototype
