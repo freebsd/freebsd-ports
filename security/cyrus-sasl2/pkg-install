@@ -88,6 +88,14 @@ create_sasldb() {
 	fi
 }
 
+# This should really be installed by Sendmail
+
+sendmail_conf() {
+	if [ ! -f ${PKG_PREFIX}/lib/sasl2/Sendmail.conf ]; then
+		echo "pwcheck_method: %%PWCHECK_METHOD%%" > ${PKG_PREFIX}/lib/sasl2/Sendmail.conf
+	fi
+}
+
 case $2 in
 	PRE-INSTALL)
 		create_user
@@ -95,6 +103,7 @@ case $2 in
 	POST-INSTALL)
 		if [ "${PKG_BATCH}" = "NO" ]; then
 			create_sasldb
+			sendmail_conf
 		fi
 		;;
 

@@ -8,3 +8,10 @@ or you can use sasldb2 for authentication, to add users use:
 
 	saslpasswd2 -c username
 
+If you want to enable SMTP AUTH with the system Sendmail, read Sendmail.README
+
+NOTE: This port has been compiled with a default pwcheck_method of
+      %%PWCHECK_METHOD%%. Set sasl_pwcheck_method to %%PWCHECK_METHOD%%,
+      after installing the Cyrus-IMAPd 2.1.7 port.  You should also check
+      the %%PREFIX%%/lib/sasl2/*.conf files for the correct pwcheck_method.
+

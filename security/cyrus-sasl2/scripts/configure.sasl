@@ -97,9 +97,11 @@ done
 
 if [ "$PWCHECK" ]; then
 	echo "PWCHECK_SUB+=	-e \"s;%%ENABLEPWCHECK%%;yes;g\""
+	echo "PWCHECK_METHOD=	saslauthd"
 else
 	echo "PWCHECK_SUB+=	-e \"s;%%PWCHECK%%;saslauthd;g\" \\"
 	echo "			-e \"s;%%ENABLEPWCHECK%%;no;g\""
+	echo "PWCHECK_METHOD=	auxprop"
 fi
 if [ ! "${DBLIB}" ]; then
 	echo "CONFIGURE_ARGS+=	--with-dblib=ndbm"
