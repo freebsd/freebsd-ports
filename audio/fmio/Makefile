@@ -7,6 +7,7 @@
 
 PORTNAME=	fmio
 PORTVERSION=	1.2.25
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.jumbo.narod.ru/src/fmio/
 
