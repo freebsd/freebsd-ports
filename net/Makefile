@@ -201,7 +201,6 @@
     SUBDIR += net-http
     SUBDIR += net-snmp
     SUBDIR += netatalk
-    SUBDIR += netatalk-asun
     SUBDIR += netcat
     SUBDIR += netmask
     SUBDIR += netpipes
