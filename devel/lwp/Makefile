@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lwp
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/lwp/src/
 
