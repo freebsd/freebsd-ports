@@ -17,7 +17,7 @@ MAINTAINER=	francisco@gomezmarin.com
 COMMENT=	Jetspeed is an Open Source Portal, written in Java and XML
 
 RUN_DEPENDS=	${LOCALBASE}/linux-sun-jdk1.4.1/bin/java:${PORTSDIR}/java/linux-sun-jdk14 \
-		${LOCALBASE}/bin/ant:${PORTSDIR}/devel/jakarta-ant \
+		${LOCALBASE}/bin/ant:${PORTSDIR}/devel/apache-ant \
 		${LOCALBASE}/bin/tomcat41ctl:${PORTSDIR}/www/jakarta-tomcat41
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-b4
