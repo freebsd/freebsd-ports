@@ -17,8 +17,6 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/psql.java
 %%PORTDOCS%%%%EXAMPLESDIR%%/threadsafe.java
 share/java/classes/postgresql.jar
-@unexec rmdir %D/share/java/classes 2>/dev/null || true
-@unexec rmdir %D/share/java 2>/dev/null || true
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/corba
 @unexec rmdir %D/%%EXAMPLESDIR%% 2>/dev/null || true
 share/postgresql/java/postgresql-examples.jar
