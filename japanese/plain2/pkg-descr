@@ -1,0 +1,17 @@
+plain2 r2.54 1994/04 by A.Uchida NEC Corporation
+
+usage: plain2 [options] [files ...]
+  ---- parser options ----		   ---- output options ----(default)
+-table=dd: table factor	 [0-100](def=50) -roff:	    troff output
+-exam=dd:  example factor[0-100](def=50) -ms/-mm:   troff macro	       (mm)
+-indsec:   sections can be indented      -tex:      tex output
+-ktable:enable JIS keisen table		 -tstyle=ss:tex style
+-ref:	   figure/picture reference	 -renum:    renumbering only
+ 					 -[no]listd:list decoration    (on)
+  ---- Others ----			 -[no]space:spacing            (on)
+-v:	   verbose output		 -[no]pre:  preamble block     (on)
+-dLevel:   debug level			 -[no]acursec: section numbers (off)
+  ----- experimental ----		 -raw:      quote special chars(off)
+-pt=Size:  font size			 -jis:      JIS code output
+ 					 -sjis:     Shift-JIS code input/output
+ 					 -f file:   output customization
