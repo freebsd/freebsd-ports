@@ -212,8 +212,10 @@ share/sip/qtext/qextscintillalexerhtml.sip
 share/sip/qtext/qextscintillalexeridl.sip
 share/sip/qtext/qextscintillalexerjava.sip
 share/sip/qtext/qextscintillalexerjavascript.sip
+share/sip/qtext/qextscintillalexerlua.sip
 share/sip/qtext/qextscintillalexerperl.sip
 share/sip/qtext/qextscintillalexerpython.sip
+share/sip/qtext/qextscintillalexerruby.sip
 share/sip/qtext/qextscintillalexersql.sip
 share/sip/qtext/qextscintillamacro.sip
 share/sip/qtext/qextscintillaprinter.sip

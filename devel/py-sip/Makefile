@@ -5,8 +5,8 @@
 # $FreeBSD$
 
 PORTNAME=	sip
-PORTVERSION=	4.1.1
-PORTREVISION=	2
+PORTVERSION=	4.2
+PORTREVISION=
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.river-bank.demon.co.uk/download/sip/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,15 +19,24 @@ BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 USE_PYTHON=	yes
 USE_QT_VER=	3
 
+DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
+
 .include <bsd.port.pre.mk>
 
 do-configure:
-	@(cd ${WRKSRC} && ${SETENV} QTDIR=${X11BASE} \
+	@( cd ${WRKSRC} && ${SETENV} QTDIR=${X11BASE} \
 		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++ \
-		${PYTHON_CMD} configure.py -b ${PREFIX}/bin \
-		-d ${PYTHONPREFIX_SITELIBDIR} -v ${PREFIX}/share/sip)
+		${PYTHON_CMD} configure.py \
+		-b ${PREFIX}/bin -d ${PYTHONPREFIX_SITELIBDIR} \
+		-e ${PYTHON_INCLUDEDIR} -v ${PREFIX}/share/sip )
 
 post-install:
+.if !defined(NOPORTDOCS)
+	@( ${MKDIR} ${DOCSDIR} && cd ${WRKSRC}/doc && \
+		${INSTALL_DATA} default.css sipref.html sipref.txt ${DOCSDIR} \
+		&& ${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} )
+.endif
+	@${PYTHON_CMD} -c "import sipconfig"
 	@${PYTHON_CMD} -O -c "import sipconfig"
 
 .include <bsd.port.post.mk>

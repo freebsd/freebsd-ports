@@ -6,15 +6,18 @@
 #
 
 PORTNAME=	kde
-PORTVERSION=	3.11.3
-PORTREVISION=	2
+PORTVERSION=	4.0.0
+PORTREVISION=
 CATEGORIES=	x11-toolkits kde python
-MASTER_SITES=	http://www.river-bank.demon.co.uk/download/PyKDE2/
+MASTER_SITES=	http://www.river-bank.demon.co.uk/download/snapshots/PyKDE/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=lofi
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	PyKDE-${PORTVERSION}
+# Tarball is pre-release snapshot ATM
+DISTNAME=	PyKDE-snapshot20050316
 
 MAINTAINER=	danny@ricin.com
-COMMENT=	Python Bindings for KDE3
+COMMENT=	Python bindings for KDE3
 
 BUILD_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt
 RUN_DEPENDS=	${BUILD_DEPENDS}
@@ -23,32 +26,24 @@ USE_PYTHON=	yes
 USE_KDELIBS_VER=3
 USE_REINPLACE=	yes
 
-PYQTVERSION=	3.13
+PYQTVERSION=	3.14
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGBASE}
 
 NO_FILTER_SHLIBS=	yes
 
-MODULES=	kdecore kdefx kdeui kio kfile kparts kspell kdeprint kmdi
-
 .include <bsd.port.pre.mk>
+
+CONFIGURE_ARGS=	-k ${LOCALBASE} -v ${PREFIX}/share/sip -d ${PYTHONPREFIX_SITELIBDIR}
+
+.if ${ARCH} != "i386"
+CONFIGURE_ARGS+=	-j 2
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#/usr/bin/python#${PYTHON_CMD}#' ${WRKSRC}/postproc
-	@( cd ${WRKSRC} && \
-		ver=`${ECHO} ${KDE_VERSION} | ${SED} -e 's/\.//g'` && \
-		if [ "$${ver}" -gt "330" ]; then \
-			( ${MV} extra/kde330 extra/kde$${ver} && \
-			for i in ${MODULES}; do \
-				${MV} sip/$${i}/$${i}-kde330.diff \
-					sip/$${i}/$${i}-kde$${ver}.diff; \
-			done ) \
-		fi )
 
 do-configure:
-	@( cd ${WRKSRC} && ${PYTHON_CMD} configure.py -c \
-		-k ${LOCALBASE} \
-		-v ${PREFIX}/share/sip \
-		-d ${PYTHONPREFIX_SITELIBDIR} )
+	@( cd ${WRKSRC} && ${PYTHON_CMD} configure.py ${CONFIGURE_ARGS} )
 
 pre-install:
 	@${REINPLACE_CMD} -e "s,${SETENV} python,${PYTHON_CMD}," \
@@ -56,11 +51,12 @@ pre-install:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${EXAMPLESDIR} ${EXAMPLESDIR}/templates
 	@( cd ${WRKSRC}/examples && ${TAR} -cf - . ) | \
 		( cd ${EXAMPLESDIR} && ${TAR} -xf - )
+	@( cd ${WRKSRC}/templates && ${TAR} -cf - . ) | \
+		( cd ${EXAMPLESDIR}/templates && ${TAR} -xf - )
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${EXAMPLESDIR}
-	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${EXAMPLESDIR}
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 .endif
 	@${INSTALL_SCRIPT} ${WRKSRC}/contrib/kdepyuic ${PREFIX}/bin
