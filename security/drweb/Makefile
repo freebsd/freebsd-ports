@@ -7,7 +7,7 @@
 
 PORTNAME=	drweb
 PORTVERSION=    4.26
-PORTREVISION=   3
+PORTREVISION=   4
 CATEGORIES=	security
 MASTER_SITES=	http://www.drweb.ru/ftp/web_pub/
 DISTNAME=	${PORTNAME}d-${PORTVERSION}-freebsd4
@@ -25,9 +25,14 @@ DRWEB_PREFIX=	${PREFIX}/${PORTNAME}
 do-install:
 	-@${MKDIR} -v ${DRWEB_PREFIX}
 	@cd ${DRWEB_PREFIX}; ${RM} -f drw*.txt drw*.vdb drweb drwebd
-	${TAR} -xzf ${WRKSRC}/${DISTNAME}.tar.gz -C ${DRWEB_PREFIX} --exclude *.ini
+	${TAR} -xzf ${WRKSRC}/${DISTNAME}.tar.gz -C ${DRWEB_PREFIX} \
+		--exclude *.ini --exclude *.key
 	${TAR} -xzOf ${WRKSRC}/${DISTNAME}.tar.gz drweb32.ini \
 		> ${DRWEB_PREFIX}/drweb32.ini-tmpl
+	${TAR} -xzOf ${WRKSRC}/${DISTNAME}.tar.gz drweb.key \
+		> ${DRWEB_PREFIX}/drweb.key-dist
+	${TAR} -xzOf ${WRKSRC}/${DISTNAME}.tar.gz drwebd.key \
+		> ${DRWEB_PREFIX}/drwebd.key-dist
 	cd ${DRWEB_PREFIX}; \
 		${PATCH} -s < ${FILESDIR}/ini-patch && \
 		${RM} drweb32.ini-tmpl.orig
@@ -38,6 +43,14 @@ do-install:
 	if [ ! -f ${DRWEB_PREFIX}/drweb32.ini ] ; then \
 		${CP} ${DRWEB_PREFIX}/drweb32.ini-dist \
 		      ${DRWEB_PREFIX}/drweb32.ini; \
+	fi
+	if [ ! -f ${DRWEB_PREFIX}/drweb.key ] ; then \
+		${CP} ${DRWEB_PREFIX}/drweb.key-dist \
+		      ${DRWEB_PREFIX}/drweb.key; \
+	fi
+	if [ ! -f ${DRWEB_PREFIX}/drwebd.key ] ; then \
+		${CP} ${DRWEB_PREFIX}/drwebd.key-dist \
+		      ${DRWEB_PREFIX}/drwebd.key; \
 	fi
 	cd ${DRWEB_PREFIX}/update; \
 		${PATCH} -s < ${FILESDIR}/update-patch && ${RM} update.pl.orig

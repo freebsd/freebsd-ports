@@ -81,14 +81,18 @@ drweb/doc/drweb-ini.rus
 drweb/doc/drwebd-api
 drweb/doc/drwebd-api.rus
 drweb/drweb
-drweb/drweb.key
+@unexec if [ -f %D/drweb/drweb.key ] && cmp -s %D/drweb/drweb.key %D/drweb/drweb.key-dist; then rm -f %D/drweb/drweb.key; fi
+drweb/drweb.key-dist
+@exec if [ ! -f %D/drweb/drweb.key ] ; then cp -p %D/%F %B/drweb.key; fi
 drweb/drweb32.dll
 @unexec if [ -f %D/drweb/drweb32.ini ] && cmp -s %D/drweb/drweb32.ini %D/drweb/drweb32.ini-dist; then rm -f %D/drweb/drweb32.ini; fi
 drweb/drweb32.ini-dist
 @exec if [ ! -f %D/drweb/drweb32.ini ] ; then cp -p %D/%F %B/drweb32.ini; fi
 drweb/drwebase.vdb
 drweb/drwebd
-drweb/drwebd.key
+@unexec if [ -f %D/drweb/drwebd.key ] && cmp -s %D/drweb/drwebd.key %D/drweb/drwebd.key-dist; then rm -f %D/drweb/drwebd.key; fi
+drweb/drwebd.key-dist
+@exec if [ ! -f %D/drweb/drwebd.key ] ; then cp -p %D/%F %B/drwebd.key; fi
 drweb/russian.dwl
 drweb/update/readme.update
 drweb/update/readme.update.rus
