@@ -6,15 +6,23 @@
 #
 
 PORTNAME=	dancer-ircd
-PORTVERSION=	1.0.31m8
-PORTREVISION=	1
-CATEGORIES=	irc
-MASTER_SITES=	http://www.doc.ic.ac.uk/~aps100/dancer/%SUBDIR%/
+PORTVERSION=	1.0.32
+CATEGORIES=	irc ipv6
+MASTER_SITES=	http://freenode.net/ \
+		http://source.freenode.net/~asuffield/dancer/dancer-oper-guide/:doc1 \
+		http://source.freenode.net/~asuffield/dancer/dancer-user-guide/:doc2
 MASTER_SITE_SUBDIR=	${PORTNAME}/stable/releases
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/m/+maint/}
+DISTNAME=	${PORTNAME}-${PORTVERSION}+6p4
+DISTFIELS=	${DISTNAME}${EXTRACT_SUFX}${EXTRACT_SUFX} \
+		dancer-oper-guide.txt:doc1 \
+		dancer-user-guide.txt:doc2
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	An irc daemon based on hybrid ircd
+
+IGNOREFILES=	dancer-oper-guide.txt \
+		dancer-user-guide.txt
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
@@ -25,7 +33,7 @@ IS_INTERACTIVE=	yes
 .endif
 
 post-patch:
-	${REINPLACE_CMD} 's:@@prefix@@:${PREFIX}:g' ${WRKSRC}/include/config.h
+	${REINPLACE_CMD} 's:@@prefix@@:${PREFIX}:g' ${WRKSRC}/src/paths.c
 
 pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
@@ -55,7 +63,10 @@ post-install:
 	${SED} -e "s,/usr/local/,${PREFIX}/,g" ${PKGMESSAGE}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/doc/* ${DOCSDIR}/
+	${INSTALL_DATA} \
+		 ${DISTDIR}/${DIST_SUBDIR}/dancer-oper-guide.txt \
+		 ${DISTDIR}/${DIST_SUBDIR}/dancer-user-guide.txt \
+		 ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
