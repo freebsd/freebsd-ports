@@ -1,0 +1,91 @@
+--- amavis/amavisd.in.orig	Sun Aug 25 23:45:58 2002
++++ amavis/amavisd.in	Sun Aug 25 23:50:56 2002
+@@ -123,7 +123,7 @@
+ #
+ # Client/server/daemon related
+ 
+-my ($socketname, $parentpid, $tmppid) = ("@sockname@", 0, 0);
++my ($socketname, $parentpid, $diedpid, $tmppid) = ("@sockname@", 0, 0, 0);
+ 
+ # flag to indicate compressing file format
+ my $some_compression = 0;
+@@ -172,15 +172,19 @@
+ #
+ # SIGCHLD handler
+ sub deadbabe {
+-    for (;;) {
+-	my $childpid = wait;
+-	last if $childpid < 0;
+-	$child_status{$childpid} = $?;
+-	$child_etime{$childpid} = time;
+-    }
++    do {
++      $tmppid = waitpid(-1, &WNOHANG);
++    } while ($tmppid > 0);
++    $diedpid = 1;
+     $SIG{CHLD} = \&deadbabe;
++# stupid sys5 resets the signal when called - but only -after- the wait...
+ }
+-$SIG{CHLD} = \&deadbabe;
++# Catch any dead child process
++
++# If IGNORE leaves zombies behind on your system,
++# switch the comments between the two lines below
++# $SIG{CHLD} = \&deadbabe;
++$SIG{CHLD} = 'IGNORE';
+ 
+ # may need to do more - eg. if logging changes, close/reopen syslog/log file
+ # rethink - handler should be simple
+@@ -240,15 +244,16 @@
+ sub main_loop() {
+     my ($inbuff, $mpid, $a);
+ 
+-    for (;;) {
+-	$a = accept(Client,Server);
++    while (($a = accept(Client,Server)) || $diedpid) {
+ 
+ 	do_log(3,"enter accept loop");
+-	report_children();
+-
+-	# if the accept returned purely because of a caught
+-	# sigchld, then continue
+-	    next unless $a;
++        # now we start the repeating loop...
++        if ($diedpid) {
++            $diedpid = 0;
++            # if the accept returned purely because of a caught sigchld
++            # then continue
++            next unless (defined($a));
++        }
+ 
+ 	if (!defined($mpid = fork)) {
+ 	    shutdown Server, 2;
+@@ -257,12 +262,12 @@
+ 	}
+ 
+ 	# if we're the parent, just go back to the accept loop
+-	if ($mpid) {   # we are the parent
+-	    $child_stime{$mpid} = time;
+-	    next;  # just go back to the accept loop
+-	}
+-	$SIG{CHLD} = undef;
+-	do_log(3,"forked off -- child [$$] running...");
++        next if ($mpid);
++  
++        do_log(3,"forked off -- child running...");
++  
++        $SIG{CHLD} = 'DEFAULT';
++        # reset sigchild - we don't want to mess up $? for the virus scanner
+ 
+ 	#
+ 	# Receive TEMPDIR/SENDER/RCPTS/LDA/LDAARGS from client
+@@ -1326,9 +1331,6 @@
+ 	do_log(3,"removed pid file");
+ 	unlink("$socketname");
+ 	do_log(3,"removed socket");
+-	while (wait>=0) {};  # must wait for children (if still alive)
+-			     # to get their status by the $SIG{CHLD} handler
+-	report_children();
+     }
+ 
+     ($DO_SYSLOG eq "yes") ? closelog() : $log->close();
