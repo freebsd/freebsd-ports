@@ -23,9 +23,15 @@ System/Library/ColorPickers/WheelPicker.bundle/Resources/Info-gnustep.plist
 System/Library/ColorPickers/WheelPicker.bundle/WheelPicker
 System/Library/ColorPickers/WheelPicker.bundle/stamp.make
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/.cvsignore
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/ClassesTOC.gsdoc
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/ClassesTOC.html
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/ConstantsTOC.gsdoc
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/ConstantsTOC.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/Functions.gsdoc
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/Functions.html
-%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/GNUmakefile
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/FunctionsTOC.gsdoc
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/FunctionsTOC.html
+%%GNUSTEP_STABLE%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/GNUmakefile
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/GSDisplayServer.gsdoc
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/GSDisplayServer.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/GSHbox.gsdoc
@@ -37,17 +43,43 @@ System/Library/ColorPickers/WheelPicker.bundle/stamp.make
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/GuiAdditions.gsdoc
 %%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/GuiAdditions.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/GuiAdditions.igsdoc
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/MainIndex.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/TypesAndConstants.gsdoc
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/TypesAndConstants.html
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/TypesTOC.gsdoc
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/TypesTOC.html
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/VariablesTOC.gsdoc
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/VariablesTOC.html
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/index.html
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/General/General.igsdoc
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/General/OpenStepCompliance.html
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/General/dependencies
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/GuiUser/.cvsignore
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/GuiUser/GuiUser/DefaultsSummary.html
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/GuiUser/GuiUser/GuiUser.igsdoc
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/GuiUser/GuiUser/KeyboardSetup.html
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/GuiUser/GuiUser/LanguageSetup.html
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/GuiUser/GuiUser/dependencies
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/GuiUser/DefaultsSummary.gsdoc
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/GuiUser/GNUmakefile
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/GuiUser/KeyboardSetup.gsdoc
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/GuiUser/LanguageSetup.gsdoc
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/.cvsignore
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/ClassesTOC.gsdoc
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/ClassesTOC.html
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/ConstantsTOC.gsdoc
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/ConstantsTOC.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/Functions.gsdoc
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/Functions.html
-%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/GNUmakefile
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/FunctionsTOC.gsdoc
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/FunctionsTOC.html
+%%GNUSTEP_STABLE%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/GNUmakefile
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/Gui.gsdoc
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/Gui.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/Gui.igsdoc
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/Introduction.gsdoc
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/Introduction.html
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/MainIndex.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSActionCell.gsdoc
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSActionCell.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSAffineTransform.gsdoc
@@ -64,8 +96,8 @@ System/Library/ColorPickers/WheelPicker.bundle/stamp.make
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSBrowser.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSBrowserCell.gsdoc
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSBrowserCell.html
-%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSBundleAdditions.gsdoc
-%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSBundleAdditions.html
+%%GNUSTEP_STABLE%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSBundleAdditions.gsdoc
+%%GNUSTEP_STABLE%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSBundleAdditions.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSButton.gsdoc
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSButton.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSButtonCell.gsdoc
@@ -76,8 +108,8 @@ System/Library/ColorPickers/WheelPicker.bundle/stamp.make
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSCell.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSClipView.gsdoc
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSClipView.html
-%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSCoderAdditions.gsdoc
-%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSCoderAdditions.html
+%%GNUSTEP_STABLE%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSCoderAdditions.gsdoc
+%%GNUSTEP_STABLE%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSCoderAdditions.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSColor.gsdoc
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSColor.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSColorList.gsdoc
@@ -158,6 +190,12 @@ System/Library/ColorPickers/WheelPicker.bundle/stamp.make
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSMenuView.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSMutableAttributedStringAdditions.gsdoc
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSMutableAttributedStringAdditions.html
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSNib.gsdoc
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSNib.html
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSOpenGL.gsdoc
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSOpenGL.html
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSOpenGLView.gsdoc
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSOpenGLView.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSOpenPanel.gsdoc
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSOpenPanel.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSOutlineView.gsdoc
@@ -218,8 +256,8 @@ System/Library/ColorPickers/WheelPicker.bundle/stamp.make
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSStepper.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSStepperCell.gsdoc
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSStepperCell.html
-%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSStringAdditions.gsdoc
-%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSStringAdditions.html
+%%GNUSTEP_STABLE%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSStringAdditions.gsdoc
+%%GNUSTEP_STABLE%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSStringAdditions.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSStringDrawing.gsdoc
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSStringDrawing.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSTabView.gsdoc
@@ -262,21 +300,33 @@ System/Library/ColorPickers/WheelPicker.bundle/stamp.make
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSWorkspace.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/TypesAndConstants.gsdoc
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/TypesAndConstants.html
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/TypesTOC.gsdoc
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/TypesTOC.html
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/VariablesTOC.gsdoc
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/VariablesTOC.html
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/index.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/ReleaseNotes/%%VERSION%%/ANNOUNCE
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/ReleaseNotes/%%VERSION%%/BUGS
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/ReleaseNotes/%%VERSION%%/INSTALL
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/ReleaseNotes/%%VERSION%%/NEWS
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/ReleaseNotes/%%VERSION%%/README
-%%PORTDOCS%%System/Library/Documentation/User/Gui/.cvsignore
-%%PORTDOCS%%System/Library/Documentation/User/Gui/DefaultsSummary.gsdoc
-%%PORTDOCS%%System/Library/Documentation/User/Gui/DefaultsSummary.html
-%%PORTDOCS%%System/Library/Documentation/User/Gui/GuiUser.igsdoc
-%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/User/Gui/KeyboardSetup.gsdoc
-%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/User/Gui/KeyboardSetup.html
-%%PORTDOCS%%System/Library/Documentation/User/Gui/LanguageSetup.gsdoc
-%%PORTDOCS%%System/Library/Documentation/User/Gui/LanguageSetup.html
+%%PORTDOCS%%System/Library/Documentation/Developer/Gui/ReleaseNotes/ReleaseNotes.html
+%%PORTDOCS%%System/Library/Documentation/Developer/Gui/ReleaseNotes/ReleaseNotes.igsdoc
+%%PORTDOCS%%System/Library/Documentation/Developer/Gui/ReleaseNotes/dependencies
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/User/Gui/GuiUser/DefaultsSummary.html
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/User/Gui/GuiUser/GuiUser.igsdoc
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/User/Gui/GuiUser/KeyboardSetup.html
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/User/Gui/GuiUser/LanguageSetup.html
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/User/Gui/GuiUser/dependencies
+%%GNUSTEP_STABLE%%%%PORTDOCS%%System/Library/Documentation/User/Gui/.cvsignore
+%%GNUSTEP_STABLE%%%%PORTDOCS%%System/Library/Documentation/User/Gui/DefaultsSummary.gsdoc
+%%GNUSTEP_STABLE%%%%PORTDOCS%%System/Library/Documentation/User/Gui/DefaultsSummary.html
+%%GNUSTEP_STABLE%%%%PORTDOCS%%System/Library/Documentation/User/Gui/GuiUser.igsdoc
+%%GNUSTEP_STABLE%%%%PORTDOCS%%System/Library/Documentation/User/Gui/LanguageSetup.gsdoc
+%%GNUSTEP_STABLE%%%%PORTDOCS%%System/Library/Documentation/User/Gui/LanguageSetup.html
 %%PORTDOCS%%System/Library/Documentation/man/man1/gopen.1.gz
 %%PORTDOCS%%System/Library/Documentation/man/man1/make_services.1.gz
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/info/gnustep-gui.info
 System/Library/Headers/AppKit/AppKit.h
 System/Library/Headers/AppKit/AppKitDefines.h
 System/Library/Headers/AppKit/AppKitExceptions.h
@@ -302,6 +352,7 @@ System/Library/Headers/AppKit/GSServicesManager.h
 System/Library/Headers/AppKit/GSTable.h
 System/Library/Headers/AppKit/GSTextConverter.h
 %%GNUSTEP_DEVEL%%System/Library/Headers/AppKit/GSTitleView.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/AppKit/GSToolbar.h
 System/Library/Headers/AppKit/GSToolbarView.h
 System/Library/Headers/AppKit/GSTrackingRect.h
 System/Library/Headers/AppKit/GSTypesetter.h
@@ -368,6 +419,7 @@ System/Library/Headers/AppKit/NSMenu.h
 System/Library/Headers/AppKit/NSMenuItem.h
 System/Library/Headers/AppKit/NSMenuItemCell.h
 System/Library/Headers/AppKit/NSMenuView.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/AppKit/NSNib.h
 System/Library/Headers/AppKit/NSNibConnector.h
 System/Library/Headers/AppKit/NSNibDeclarations.h
 System/Library/Headers/AppKit/NSNibLoading.h
@@ -423,6 +475,7 @@ System/Library/Headers/AppKit/NSToolbarItem.h
 System/Library/Headers/AppKit/NSUserInterfaceValidation.h
 System/Library/Headers/AppKit/NSView.h
 System/Library/Headers/AppKit/NSWindow.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/AppKit/NSWindow+Toolbar.h
 System/Library/Headers/AppKit/NSWindowController.h
 System/Library/Headers/AppKit/NSWorkspace.h
 System/Library/Headers/AppKit/PSOperators.h
@@ -447,6 +500,7 @@ System/Library/Headers/GNUstepGUI/GSServicesManager.h
 System/Library/Headers/GNUstepGUI/GSTable.h
 System/Library/Headers/GNUstepGUI/GSTextConverter.h
 %%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepGUI/GSTitleView.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepGUI/GSToolbar.h
 System/Library/Headers/GNUstepGUI/GSToolbarView.h
 System/Library/Headers/GNUstepGUI/GSTrackingRect.h
 System/Library/Headers/GNUstepGUI/GSTypesetter.h
@@ -476,6 +530,7 @@ System/Library/Headers/gnustep/gui/GSServicesManager.h
 System/Library/Headers/gnustep/gui/GSTable.h
 System/Library/Headers/gnustep/gui/GSTextConverter.h
 %%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/gui/GSTitleView.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/gui/GSToolbar.h
 System/Library/Headers/gnustep/gui/GSToolbarView.h
 System/Library/Headers/gnustep/gui/GSTrackingRect.h
 System/Library/Headers/gnustep/gui/GSTypesetter.h
@@ -503,6 +558,7 @@ System/Library/Images/common_CloseBroken.tiff
 %%GNUSTEP_DEVEL%%System/Library/Images/common_CloseBrokenH.tiff
 System/Library/Images/common_CloseH.tiff
 System/Library/Images/common_ColorSwatch.tiff
+%%GNUSTEP_DEVEL%%System/Library/Images/common_ComboBoxEllipsis.tiff
 System/Library/Images/common_DecimalTabStop.tiff
 System/Library/Images/common_Diamond.tiff
 System/Library/Images/common_Dimple.tiff
@@ -568,6 +624,8 @@ System/Library/Images/common_outlineUnexpandable.tiff
 System/Library/Images/common_ret.tiff
 System/Library/Images/common_retH.tiff
 System/Library/Images/nsmapping.strings
+%%GNUSTEP_DEVEL%%System/Library/Images/page_landscape.tiff
+%%GNUSTEP_DEVEL%%System/Library/Images/page_portrait.tiff
 System/Library/KeyBindings/DefaultKeyBindings.dict
 System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSDataLinkPanel.gorm/data.classes
 System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSDataLinkPanel.gorm/objects.gorm
@@ -924,10 +982,15 @@ System/Tools/set_show_service
 @dirrm System/Library/Headers/gnustep/gui
 @dirrm System/Library/Headers/GNUstepGUI
 @dirrm System/Library/Headers/AppKit
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%@dirrm System/Library/Documentation/User/Gui/GuiUser
 %%PORTDOCS%%@dirrm System/Library/Documentation/User/Gui
 %%PORTDOCS%%@dirrm System/Library/Documentation/Developer/Gui/ReleaseNotes/%%VERSION%%
 %%PORTDOCS%%@dirrm System/Library/Documentation/Developer/Gui/ReleaseNotes
 %%PORTDOCS%%@dirrm System/Library/Documentation/Developer/Gui/Reference
+%%PORTDOCS%%@dirrm System/Library/Documentation/Developer/Gui/Manual
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%@dirrm System/Library/Documentation/Developer/Gui/GuiUser/GuiUser
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%@dirrm System/Library/Documentation/Developer/Gui/GuiUser
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%@dirrm System/Library/Documentation/Developer/Gui/General
 %%PORTDOCS%%@dirrm System/Library/Documentation/Developer/Gui/Additions
 %%PORTDOCS%%@dirrm System/Library/Documentation/Developer/Gui
 @dirrm System/Library/ColorPickers/WheelPicker.bundle/Resources
@@ -944,3 +1007,4 @@ System/Tools/set_show_service
 @dirrm System/Library/Bundles/TextConverters/RTFConverter.bundle/Resources
 @dirrm System/Library/Bundles/TextConverters/RTFConverter.bundle
 @dirrm System/Library/Bundles/TextConverters
+%%PORTDOCS%%@exec mkdir -p %D/System/Library/Documentation/Developer/Gui/Manual

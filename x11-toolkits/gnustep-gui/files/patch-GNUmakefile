@@ -1,0 +1,10 @@
+--- Documentation/GNUmakefile.orig	Fri Jun 11 20:58:40 2004
++++ Documentation/GNUmakefile	Sun Jun 13 09:42:28 2004
+@@ -77,6 +77,7 @@
+ DOCUMENT_NAME += Gui GuiAdditions
+ Gui_DOC_INSTALL_DIR = Developer/Gui/Reference
+ GuiAdditions_DOC_INSTALL_DIR = Developer/Gui/Additions
++GuiUser_DOC_INSTALL_DIR = Developer/Gui/GuiUser
+ 
+ -include GNUmakefile.preamble
+ 
