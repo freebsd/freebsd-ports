@@ -103,6 +103,7 @@ freefonts		ports/x11-fonts/freefonts	Some of the fonts are
 						tempoita.license say "placed
 						into the public domain and may
 						[not be] sold").
+forte			ports/java/forte	Restrictive copyright.
 ftree			ports/misc/ftree	Can't distribute commercially.
 fwtk-*			ports/security/fwtk	No redistribution allowed
 Frisk-*			ports/games/xfrisk	Copyright/trademark violation?
@@ -117,7 +118,8 @@ jce-aba-*		ports/java/jce-aba	Crypto; export-controlled
 john-*			ports/security/john	crypt(); export-controlled
 JDK-*			ports/java/jdk		Put copyright on packaging!
 jdk*-doc		ports/java/jdk-doc	under license and export control
-jdk*-src.tar.gz		ports/java/jdk12-beta	Redistribution of sources and pre-compiled binaries is prohibited.
+jdk*-src.tar.gz		ports/java/jdk12-beta	Redistribution of sources and
+			ports/java/jdk13	pre-compiled binaries is prohibited.
 jdk-tutorial-*		ports/java/jdk-tutorial	This software is under license and export control.
 JRE-*			ports/java/jre		Put copyright on packaging!
 kaffe-*			ports/java/kaffe	Restrictive copyright
