@@ -5,8 +5,10 @@
 # Skip dot files.
 ^(.*/)?\.
 
-# Skip all CVSROOT files except for CVSROOT/modules.
-^CVSROOT/.*(?<!/modules)$
+# A number of files in CVSROOT don't need to be checked.
+^CVSROOT/cvsignore
+^CVSROOT/options
+^CVSROOT/rcstemplate
 
 ^distrib/
 ^src/etc/
