@@ -36,6 +36,7 @@
     SUBDIR += dotfile
     SUBDIR += estic
     SUBDIR += ewipe
+    SUBDIR += ezload
     SUBDIR += fd
     SUBDIR += fep
     SUBDIR += figlet
