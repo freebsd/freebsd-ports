@@ -21,7 +21,7 @@
     SUBDIR += ald
     SUBDIR += allegro
     SUBDIR += anjuta
-    SUBDIR += apr-devel
+    SUBDIR += apr
     SUBDIR += arch
     SUBDIR += arm-aout-binutils
     SUBDIR += arm-aout-gcc295
