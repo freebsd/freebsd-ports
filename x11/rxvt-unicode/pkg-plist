@@ -4,7 +4,7 @@ bin/urxvtd
 include/rxvtlib.h
 lib/librxvt.a
 lib/librxvt.so
-lib/librxvt.so.4
+lib/librxvt.so.5
 %%PORTDOCS%%%%EXAMPLESDIR%%/example.menu
 %%PORTDOCS%%%%EXAMPLESDIR%%/jedmenu.sl
 %%PORTDOCS%%%%EXAMPLESDIR%%/menu
