@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jmeter
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	www benchmarks java
 MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-jmeter/release/v${PORTVERSION}/ \
 		http://www.metaverse.nl/~ernst/ \
@@ -17,20 +17,13 @@ DISTNAME=	ApacheJMeter_${PORTVERSION}
 
 MAINTAINER=	znerd@FreeBSD.org
 
-BUILD_DEPENDS=	${DOS2UNIX}:${PORTSDIR}/converters/unix2dos
-
 USE_JAVA=	1.2+
 NO_BUILD=	yes
 APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}${PORTVERSION}
 PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///}
 WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/work
 WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}
-DOS2UNIX=	${LOCALBASE}/bin/dos2unix
-REPLACE_FILES=	${WRKSRC}/bin/jmeter \
-		${WRKSRC}/bin/jmeter-cl \
-		${WRKSRC}/bin/jmeter-client \
-		${WRKSRC}/bin/jmeter-server \
-		${WRKSRC}/bin/nongui.sh
+REPLACE_FILES=	${WRKSRC}/bin/jmeter
 
 post-patch:
 	@${ECHO_CMD} -n ">> Removing unneeded files..."
@@ -41,9 +34,7 @@ post-patch:
 	@${ECHO_CMD} -n ">> Customizing `basename $f`..."
 	@${SED} \
 	-e "/%%JAVA%%/s//${JAVA:S/\//\\\//g}/g" \
-	-e "/%%APP_HOME%%/s//${APP_HOME:S/\//\\\//g}/g" \
 	$f > ${WRKDIR}/`basename $f`
-	@${DOS2UNIX} ${WRKDIR}/`basename $f`
 	@${ECHO_CMD} " [ DONE ]"
 .endfor
 
@@ -57,11 +48,6 @@ do-install:
 .for f in ${REPLACE_FILES}
 	@${CP} ${WRKDIR}/`basename $f` ${APP_HOME}/bin
 .endfor
-	@${ECHO_CMD} " [ DONE ]"
-
-	@${ECHO_CMD} -n ">> Fixing permissions..."
-	@${CHMOD} 755 `find ${APP_HOME} -type d`
-	@${CHMOD} 755 ${APP_HOME}/bin/ ${APP_HOME}/bin/jmeter ${APP_HOME}/bin/jmeter-cl ${APP_HOME}/bin/jmeter-client ${APP_HOME}/bin/jmeter-server
 	@${ECHO_CMD} " [ DONE ]"
 
 	@${ECHO_CMD} -n ">> Creating symlink ${PREFIX}/bin/jmeter..."

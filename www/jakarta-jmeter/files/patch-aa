@@ -1,29 +1,7 @@
---- bin/jmeter.orig	Sat Jul 28 02:14:04 2001
-+++ bin/jmeter	Fri Aug 16 09:16:07 2002
-@@ -2,7 +2,7 @@
- USAGE=$0" [-h proxyHost] [-p proxyPort] [-f property-file]"
- LOG4JCONFIG=log4j.configuration=log4j.conf
+--- bin/jmeter.old	Wed Nov 13 11:03:46 2002
++++ bin/jmeter	Wed Nov 13 11:04:14 2002
+@@ -1,3 +1,3 @@
+ #! /bin/sh
  
--PROPERTIES=`dirname $0`/jmeter.properties
-+PROPERTIES=%%APP_HOME%%/bin/jmeter.properties
- 
- while getopts h:p:f: x; do
- 	 case $x in
-@@ -13,14 +13,14 @@
- 	 esac;
- done
- 
--for i in `dirname $0`/../lib/*.jar
-+for i in %%APP_HOME%%/lib/*.jar
- do
-     CLASSPATH=${CLASSPATH}:$i
- done
- 
--for i in `dirname $0`/../ext/*.jar
-+for i in %%APP_HOME%%/*.jar
- do
-     CLASSPATH=${CLASSPATH}:$i
- done
- 
--java -classpath $CLASSPATH:`dirname $0`/ApacheJMeter.jar $JAVA_PROPS -D$LOG4JCONFIG org.apache.jmeter.NewDriver $PROPERTIES
-+%%JAVA%% -classpath $CLASSPATH:%%APP_HOME%%/bin/ApacheJMeter.jar $JAVA_PROPS -D$LOG4JCONFIG org.apache.jmeter.NewDriver $PROPERTIES
+-java -Xincgc -jar `dirname $0`/ApacheJMeter.jar "$@"
++%%JAVA%% -jar `dirname $0`/ApacheJMeter.jar "$@"
