@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomeutils
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	misc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-utils
