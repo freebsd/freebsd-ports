@@ -28,16 +28,8 @@ HAS_CONFIGURE=	yes
 USE_PERL5_BUILD=	yes
 MASTER_SITES_MODSSL=	http://www.modssl.org/source/ \
 		ftp://ftp.modssl.org/source/ \
-		ftp://ftp.pca.dfn.de/pub/tools/net/mod_ssl/ \
-		ftp://ftp.ecrc.net/pub/security/mod_ssl/ \
-		ftp://ftp.nvg.ntnu.no/pub/unix/mod_ssl/ \
-		ftp://ftp.ulpgc.es/pub/mod_ssl/ \
-		ftp://glock.missouri.edu/pub/mod_ssl/ \
-		ftp://ftp.infoscience.co.jp/pub/Crypto/SSL/mod_ssl/ \
-		ftp://ftp.uni-trier.de/pub/unix/security/mod_ssl/ \
 		ftp://ftp.blatzheim.com/pub/mod_ssl/ \
 		ftp://ftp.fu-berlin.de/unix/security/mod_ssl/ \
-		ftp://ftp.ntrl.net/pub/mirror/ralfsw/mod_ssl/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/mod_ssl/source,}
 
 .include <bsd.port.pre.mk>

@@ -66,22 +66,9 @@ CONFIGURE_ENV+=	EXTRA_SSL_LIBS="-L${OPENSSLLIB} -L${LOCALBASE}/lib"
 
 MASTER_SITES_APACHE_SSL= \
 		ftp://ftp.ox.ac.uk/pub/crypto/SSL/Apache-SSL/ \
-		ftp://ftp.MASTER.pgp.net/pub/crypto/SSL/Apache-SSL/ \
-		ftp://ftp.replay.com/pub/crypto/apache/Apache-SSL/ \
-		ftp://ftp.win.ne.jp/pub/network/security/apache-ssl/ \
-		ftp://ftp.sage-au.org.au/pub/network/security/apache-ssl/Apache-SSL/ \
-		ftp://ftp.vwv.com/pub/crypto/SSL/Apache-SSL/ \
-		ftp://mirror.aarnet.edu.au/www/servers/apache-ssl/ \
 		ftp://ftp.it.net.au/mirrors/crypto/SSL/Apache-SSL/ \
-		ftp://ftp.infoscience.co.jp/pub/Crypto/SSL/Apache-SSL/Apache-SSL/ \
-		ftp://ftp.funet.fi/pub/crypt/mirrors/ftp.ox.ac.uk/SSL/Apache-SSL/ \
-		ftp://apache-ssl.raver.net/pub/ftp.apache-ssl.org/Apache-SSL/ \
-		ftp://ftp.pca.dfn.de/pub/tools/net/sslapache/Apache-SSL/ \
 		ftp://ftp.sekure.net/pub/apache-ssl/ \
-		ftp://ftp.clinet.fi/mirrors/ftp.apache-ssl.org/pub/ \
-		ftp://opensores.thebunker.net/pub/mirrors/apache-ssl/ \
-		ftp://ftp.gin.cz/pub/MIRRORS/ftp.ox.ac.uk/pub/crypto/SSL/Apache-SSL/ \
-		ftp://ftp.cordef.com.pl/pub/apache-ssl/Apache-SSL/
+		ftp://opensores.thebunker.net/pub/mirrors/apache-ssl/ 
 
 .include <bsd.port.pre.mk>
 
