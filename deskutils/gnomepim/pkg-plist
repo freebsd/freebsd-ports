@@ -9,6 +9,7 @@ share/gnome/help/cal/C/index.html
 share/gnome/help/cal/C/topic.dat
 share/gnome/idl/gnome-pim.idl
 share/gnome/mime-info/gnome-pim.keys
+share/gnome/pixmaps/gnome-card.xpm
 share/locale/cs/LC_MESSAGES/gnome-pim.mo
 share/locale/de/LC_MESSAGES/gnome-pim.mo
 share/locale/es/LC_MESSAGES/gnome-pim.mo
