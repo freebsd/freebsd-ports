@@ -22,7 +22,7 @@ DISTFILES+=	Aruniupd.exe
 .endif
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	kkonstan@daemon.gr
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	ttmkfdir:${PORTSDIR}/x11-fonts/ttmkfdir \
 		cabextract:${PORTSDIR}/archivers/cabextract
