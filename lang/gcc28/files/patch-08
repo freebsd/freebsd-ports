@@ -1,0 +1,17 @@
+--- cp/lex.c.orig	Wed Nov 26 12:13:20 1997
++++ cp/lex.c	Tue Aug 11 13:37:17 1998
+@@ -3329,6 +3329,14 @@
+ 		  token_buffer[0] = '^';
+ 		  token_buffer[1] = 0;
+ 		}
++	      else if (ptr->token == NAMESPACE)
++		{
++		  static int warned;
++		  if (! warned)
++		    warning ("namespaces are mostly broken in this version of g++");
++
++		  warned = 1;
++		}
+ 
+ 	      value = (int) ptr->token;
+ 	    }

@@ -1,0 +1,23 @@
+--- toplev.c.orig	Wed Feb 25 18:04:46 1998
++++ toplev.c	Tue Aug 11 14:40:22 1998
+@@ -463,6 +463,20 @@
+ 
+ int flag_unroll_all_loops;
+ 
++/* Nonzero forces all invariant computations in loops to be moved
++   outside the loop. */
++
++int flag_move_all_movables = 0;
++
++/* Nonzero forces all general induction variables in loops to be
++   strength reduced. */
++
++int flag_reduce_all_givs = 0;
++
++/* Nonzero gets another run of loop_optimize performed. */
++
++int flag_rerun_loop_opt = 0;
++
+ /* Nonzero for -fwritable-strings:
+    store string constants in data segment and don't uniquize them.  */
+ 

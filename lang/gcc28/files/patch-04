@@ -1,0 +1,20 @@
+--- choose-temp.c.orig	Thu Dec  4 06:17:56 1997
++++ choose-temp.c	Tue Aug 11 04:05:05 1998
+@@ -107,12 +107,17 @@
+   base = try (getenv ("TMP"), base);
+   base = try (getenv ("TEMP"), base);
+ 
++#ifdef COMMENT_OUT	/* XXX - P_tmpdir is not /tmp in 4.4BSD */
+ #ifdef P_tmpdir
+   base = try (P_tmpdir, base);
+ #endif
++#endif  /* XXX */
+ 
+   /* Try /usr/tmp, then /tmp.  */
++#ifdef COMMENT_OUT	/* XXX - want /tmp used, peroid.  Sometimes pkg_add can
++					 create a /usr/tmp, so beware. */
+   base = try (usrtmp, base);
++#endif  /* XXX */
+   base = try (tmp, base);
+  
+   /* If all else fails, use the current directory!  */

@@ -1,6 +1,6 @@
 --- config/i386/freebsd.h.orig	Sun Oct 19 09:31:05 1997
-+++ config/i386/freebsd.h	Sun Jul 19 14:31:18 1998
-@@ -35,10 +35,15 @@
++++ config/i386/freebsd.h	Tue Aug 11 14:28:56 1998
+@@ -35,10 +35,21 @@
  #include "i386/perform.h"
  
  #undef CPP_PREDEFINES
@@ -11,6 +11,12 @@
 +   Thus, need the equivalent of "-fsjlj-exceptions" (use setjmp/longjmp
 +   for exceptions).  */
 +#define DWARF2_UNWIND_INFO 0
++
++/* Provide a CPP_SPEC appropriate for OpenBSD.  Current we just deal with
++   the GCC option `-posix'.  */
++
++#undef CPP_SPEC
++#define CPP_SPEC "%{posix:-D_POSIX_SOURCE}"
  
  /* Like the default, except no -lg.  */
 -#define LIB_SPEC "%{!p:%{!pg:-lc}}%{p:-lc_p}%{pg:-lc_p}"
@@ -18,7 +24,21 @@
  
  #undef SIZE_TYPE
  #define SIZE_TYPE "unsigned int"
-@@ -114,6 +119,7 @@
+@@ -54,8 +65,13 @@
+ #undef WCHAR_TYPE_SIZE
+ #define WCHAR_TYPE_SIZE 16
+ 
++/* We have atexit(3). */
+ #define HAVE_ATEXIT
+ 
++/* We want gcc.c to call mktemp() for each file it generates. We would
++   prefer mkstemp(), but we will take what we get. XXX busted */
++/* #undef MKTEMP_EACH_FILE */
++
+ #undef ASM_APP_ON
+ #define ASM_APP_ON "#APP\n"
+ 
+@@ -114,6 +130,7 @@
  
  #define TYPE_ASM_OP	".type"
  #define SIZE_ASM_OP	".size"
@@ -26,11 +46,15 @@
  
  /* The following macro defines the format used to output the second
     operand of the .type assembler directive.  Different svr4 assemblers
-@@ -123,6 +129,12 @@
+@@ -123,6 +140,16 @@
  
  #define TYPE_OPERAND_FMT	"@%s"
  
++/* Handle #pragma weak and #pragma pack. */
++
 +#define HANDLE_SYSV_PRAGMA	1
++
++/* This is how we tell the assembler that a symbol is weak. */
 +
 +#define ASM_WEAKEN_LABEL(FILE,NAME) \
 +  do { fputs ("\t.weak\t", FILE); assemble_name (FILE, NAME); \
@@ -39,9 +63,33 @@
  /* Write the extra assembler code needed to declare a function's result.
     Most svr4 assemblers don't require any special declaration of the
     result value, but there are exceptions.  */
-@@ -215,7 +227,17 @@
+@@ -131,9 +158,9 @@
+ #define ASM_DECLARE_RESULT(FILE, RESULT)
+ #endif
  
+-/* These macros generate the special .type and .size directives which
++/* these macros generate the special .type and .size directives which
+    are used to set the corresponding fields of the linker symbol table
+-   entries in an ELF object file under SVR4.  These macros also output
++   entries in an elf object file under svr4.  these macros also output
+    the starting labels for the relevant functions/objects.  */
+ 
+ /* Write the extra assembler code needed to declare a function properly.
+@@ -185,6 +212,7 @@
+          && DECL_INITIAL (DECL) == error_mark_node                      \
+          && !size_directive_output)                                     \
+        {                                                                \
++         size_directive_output = 1;                                     \
+          fprintf (FILE, "\t%s\t ", SIZE_ASM_OP);                        \
+ 	 assemble_name (FILE, name);                                    \
+ 	 fprintf (FILE, ",%d\n",  int_size_in_bytes (TREE_TYPE (DECL)));\
+@@ -213,33 +241,57 @@
+       }									\
+   } while (0)
+ 
++/* XXX - should ASM_SPEC be " %| %{fpic:-k} %{fPIC:-k -K}" ??? */
  #define ASM_SPEC   " %| %{fpic:-k} %{fPIC:-k}"
++
  #define LINK_SPEC \
 -  "%{!nostdlib:%{!r*:%{!e*:-e start}}} -dc -dp %{static:-Bstatic} %{assert*}"
 +  "%{p:%e`-p' not supported; use `-pg' and gprof(1)} \
@@ -50,12 +98,61 @@
 +  %{pg:-Bstatic} %{Z}} \
 +  %{assert*} %{R*}"
 +
++#ifdef FROM_OPENBSD
++/* This defines which switch letters take arguments.  
++   make -R /path/to/lib work the same as -R/path/to/lib */
++#undef SWITCH_TAKES_ARG
++#define SWITCH_TAKES_ARG(CHAR) \
++  (DEFAULT_SWITCH_TAKES_ARG(CHAR) \
++   || (CHAR) == 'R')
++#endif
++
 +#define STARTFILE_SPEC  \
 +  "%{shared:c++rt0.o%s} \
 +  %{!shared:%{pg:gcrt0.o%s}%{!pg:%{static:scrt0.o%s}%{!static:crt0.o%s}}}"
-+
-+#define MD_STARTFILE_PREFIX "/usr/lib/aout/"
  
- /* This is defined when gcc is compiled in the BSD-directory-tree, and must
-  * make up for the gap to all the stuff done in the GNU-makefiles.
-
+-/* This is defined when gcc is compiled in the BSD-directory-tree, and must
+- * make up for the gap to all the stuff done in the GNU-makefiles.
++#define MD_STARTFILE_PREFIX "/usr/lib/aout/"
++
++/* FREEBSD_NATIVE is defined when gcc is compiled in the BSD-directory-tree, 
++ * and must make up for the gap to all the stuff done in the GNU-makefiles.
+  */
+ 
+ #ifdef FREEBSD_NATIVE
+ 
+-#define INCLUDE_DEFAULTS { \
+-	{ "/usr/include", 0, 0, 0 }, \
+-	{ "/usr/include/g++", "G++", 1, 1 }, \
+-	{ 0, 0, 0, 0} \
+-	}
++#undef GCC_INCLUDE_DIR
++#define GCC_INCLUDE_DIR "/usr/include"
++
++#undef GPLUSPLUS_INCLUDE_DIR
++#define GPLUSPLUS_INCLUDE_DIR "/usr/include/g++"
++
++/* Look for the include files in the system-defined places.  */
++
++#undef INCLUDE_DEFAULTS
++#define INCLUDE_DEFAULTS			\
++  {						\
++    { GPLUSPLUS_INCLUDE_DIR, "G++", 1, 1 },	\
++    { GCC_INCLUDE_DIR, 0, 0, 0 },		\
++    { 0, 0, 0, 0 }				\
++  }
+ 
+ #undef MD_EXEC_PREFIX
+ #define MD_EXEC_PREFIX "/usr/libexec/"
+ 
+ #undef STANDARD_STARTFILE_PREFIX
+ #define STANDARD_STARTFILE_PREFIX "/usr/lib"
+-
+-#if 0 /* This is very wrong!!! */
+-#define DEFAULT_TARGET_MACHINE "i386-unknown-freebsd_1.0"
+-#define GPLUSPLUS_INCLUDE_DIR "/usr/local/lib/gcc-lib/i386-unknown-freebsd_1.0/2.5.8/include"
+-#define TOOL_INCLUDE_DIR "/usr/local/i386-unknown-freebsd_1.0/include"
+-#define GCC_INCLUDE_DIR "/usr/local/lib/gcc-lib/i386-unknown-freebsd_1.0/2.5.8/include"
+-#endif
+ 
+ #endif /* FREEBSD_NATIVE */

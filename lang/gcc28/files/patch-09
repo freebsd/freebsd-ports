@@ -1,0 +1,11 @@
+--- gcc.1.orig	Tue Feb 17 10:44:00 1998
++++ gcc.1	Tue Aug 11 13:30:01 1998
+@@ -182,7 +182,7 @@
+ \-Waggregate\-return
+ \-Wcast\-align
+ \-Wcast\-qual
+-\-Wchar\-subscript
++\-Wchar\-subscripts
+ \-Wcomment
+ \-Wconversion
+ \-Wenum\-clash
