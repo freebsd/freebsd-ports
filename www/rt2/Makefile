@@ -41,11 +41,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl \
 		${SITE_PERL}/CGI/Cookie.pm:${PORTSDIR}/www/p5-CGI.pm \
 		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
 BROKEN=         "Does not build"
-.endif
 
 WRKSRC=		${WRKDIR}/rt-${RT_VERSION}
 RT_VERSION=	${PORTVERSION:C/\./-/g}
@@ -155,6 +151,8 @@ do-install:
 
 post-install:
 	@${SED} s!%%PREFIX%%!${PREFIX}!g ${PKGMESSAGE}
+
+.include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500601
 BUILD_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
