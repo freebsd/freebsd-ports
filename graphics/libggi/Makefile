@@ -7,6 +7,7 @@
 
 PORTNAME=	libggi
 PORTVERSION=	2.0.3
+PORTEPOCH=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	ftp://ftp.ggi-project.org/pub/ggi/ggi/v2.0/ \
 		${MASTER_SITE_SOURCEFORGE}
