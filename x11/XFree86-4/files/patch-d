@@ -1,25 +1,17 @@
---- config/cf/FreeBSD.cf.orig	Sat Jun 24 21:15:53 2000
-+++ config/cf/FreeBSD.cf	Tue Aug  1 15:19:44 2000
-@@ -135,6 +135,18 @@
- #endif
- #endif
+--- config/cf/FreeBSD.cf.orig	Tue Dec  5 01:45:27 2000
++++ config/cf/FreeBSD.cf	Tue Dec 19 23:08:57 2000
+@@ -210,8 +210,10 @@
  
-+#ifndef HasAgpGart
-+#  ifdef i386Architecture
-+#    if OSMajorVersion >= 5 || (OSMajorVersion == 4 && OSMinorVersion >= 1)
-+#      define HasAgpGart	YES
-+#    else
-+#      define HasAgpGart	NO
-+#    endif
-+#  else
-+#    define HasAgpGart		NO
-+#  endif
+ /* PAM appeared in FreeBSD 3.1 */
+ #if (OSMajorVersion > 3) || (OSMajorVersion == 3 && OSMinorVersion >=1 )
++#ifndef HasPam
+ #define HasPam		YES
+ #endif
 +#endif
-+
- /* 
-  * This doesn't work the way it does on every other system. On FreeBSD it's
-  * only a "hint, not a demand", whatever that means. Note that this is not 
-@@ -356,14 +368,14 @@
+ 
+ /*
+  * For FreeBSD 2.2.5 and later don't make any assumptions about the version
+@@ -371,14 +373,14 @@
  /* The GCC strength-reduce bug is fixed for FreeBSD 2.1.5 and later */
  #ifndef DefaultGcc2i386Opt
  #if OSMajorVersion > 2 || (OSMajorVersion == 2 && OSMinorVersion > 1) || (OSMajorVersion == 2 && OSMinorVersion == 1 && OSTeenyVersion >= 5)

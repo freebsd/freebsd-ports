@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	XFree86
-PORTVERSION= 	4.0.1
-PORTREVISION=	10
+PORTVERSION= 	4.0.2
+PORTREVISION=	0
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XFREE}
 MASTER_SITE_SUBDIR=	${PORTVERSION}
-DISTFILES=	X401src-1.tgz X401src-2.tgz
+DISTFILES=	X402src-1.tgz X402src-2.tgz
 
 MAINTAINER=	jmz@FreeBSD.org
 
@@ -60,7 +60,7 @@ pre-fetch:
 MASTER_SITES+=	ftp://psych.psy.uq.oz.au/pub/X11R5/ \
 		ftp://ftp.internat.freebsd.org/pub/FreeBSD/X11-Crypto/ \
 		ftp://ftp3.za.freebsd.org/pub/FreeBSD/X11-Crypto/
-EXTRACT_ONLY=	X401src-1.tgz X401src-2.tgz
+EXTRACT_ONLY=	X402src-1.tgz X402src-2.tgz
 DISTFILES+=	Wraphelp.c
 IGNOREFILES=	Wraphelp.c
 .endif
