@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	courier
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Courier SMTP IMAP POP3 HTTP mail server suite
 
+BROKEN=		Uses unregistered uid/gid, already in use by pf
+
 RUN_DEPENDS=	${LOCALBASE}/share/sysconftool/sysconftool:${PORTSDIR}/devel/sysconftool \
 		${SITE_PERL}/Net/CIDR.pm:${PORTSDIR}/net/p5-Net-CIDR
 
