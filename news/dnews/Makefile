@@ -3,14 +3,14 @@
 # Date created:		Thu May 29 17:16:36 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.6 1997/10/04 14:53:02 andreas Exp $
+# $Id: Makefile,v 1.7 1998/01/31 15:52:32 andreas Exp $
 #
 
 DISTNAME=	dnews
-PKGNAME=	dnews-4.5i
+PKGNAME=	dnews-4.6n
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.netwinsite.com/pub/netwinsite/dnews/
-DISTFILES=	dnews45i_freebsd2.tar.Z
+DISTFILES=	dnews46n_freebsd.tar.Z
 
 MAINTAINER=	andreas@FreeBSD.ORG
 

@@ -4,17 +4,24 @@ dnews/access.conf
 dnews/control.conf
 dnews/dis.sh
 dnews/distrib.sh
+dnews/dmgr/access.htm
+dnews/dmgr/adv.htm
+dnews/dmgr/config.htm
+dnews/dmgr/dir.htm
+dnews/dmgr/dmgrcgi.cgi
+dnews/dmgr/feed.htm
+dnews/dmgr/feeds.htm
+dnews/dmgr/help.htm
+dnews/dmgr/log.htm
+dnews/dmgr/menu.htm
+dnews/dmgr/sucks.htm
+dnews/dmgr/tellnews.htm
+dnews/dmgr/users.htm
+dnews/dmgrsvc
 dnews/dmulti
 dnews/dmulti_start.sh
 dnews/dnews
 dnews/dnews.conf
-dnews/dnews.in
-dnews/dnews.lock
-dnews/dnews.log
-dnews/dnews.out
-dnews/dnews2.log
-dnews/dnews3.log
-dnews/dnews4.log
 dnews/dnews_start
 dnews/dnews_start.sh
 dnews/dnewsweb
@@ -72,3 +79,5 @@ dnews/web/xresult2.tpl
 dnews/web/xresults.tpl
 dnews/web/xsearch.tpl
 dnews/xmit
+@dirrm dnews/dmgr
+@dirrm dnews/web
