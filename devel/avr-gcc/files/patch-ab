@@ -1,11 +1,97 @@
---- Makefile.in.orig	Sun Aug 12 16:44:46 2001
-+++ Makefile.in	Sun Aug 12 16:45:18 2001
-@@ -169,7 +169,7 @@
+--- Makefile.in.orig	Fri Jun 28 09:56:30 2002
++++ Makefile.in	Fri Jun 28 10:53:22 2002
+@@ -186,7 +186,7 @@
  
  # This is set by the configure script to the list of directories which
  # should be built using the target tools.
--TARGET_CONFIGDIRS = libiberty libgloss $(SPECIAL_LIBS) newlib librx winsup opcodes bsp libstub cygmon libf2c libchill libobjc
-+TARGET_CONFIGDIRS = libgloss $(SPECIAL_LIBS) newlib librx winsup opcodes bsp libstub cygmon libf2c libchill libobjc
+-TARGET_CONFIGDIRS = libiberty libgloss $(SPECIAL_LIBS) newlib winsup opcodes bsp libstub cygmon libf2c libobjc
++TARGET_CONFIGDIRS = libgloss $(SPECIAL_LIBS) newlib winsup opcodes bsp libstub cygmon
  
  # Target libraries are put under this directory:
  # Changed by configure to $(target_alias) if cross.
+@@ -781,81 +781,19 @@
+ 
+ # This is a list of the targets for all of the modules which are compiled
+ # using $(TARGET_FLAGS_TO_PASS).
+-ALL_TARGET_MODULES = \
+-	all-target-libstdc++-v3 \
+-	all-target-newlib \
+-	all-target-libf2c \
+-	all-target-libobjc \
+-	all-target-libtermcap \
+-	all-target-winsup \
+-	all-target-libgloss \
+-	all-target-libiberty \
+-	all-target-gperf \
+-	all-target-examples \
+-	all-target-libstub \
+-	all-target-libffi \
+-	all-target-libjava \
+-	all-target-zlib \
+-	all-target-boehm-gc \
+-	all-target-qthreads \
+-	all-target-bsp \
+-	all-target-cygmon
++ALL_TARGET_MODULES =
+ 
+ # This is a list of the configure targets for all of the modules which
+ # are compiled using the target tools.
+-CONFIGURE_TARGET_MODULES = \
+-	configure-target-libstdc++-v3 \
+-	configure-target-newlib \
+-	configure-target-libf2c \
+-	configure-target-libobjc \
+-	configure-target-libtermcap \
+-	configure-target-winsup \
+-	configure-target-libgloss \
+-	configure-target-libiberty \
+-	configure-target-gperf \
+-	configure-target-examples \
+-	configure-target-libstub \
+-	configure-target-libffi \
+-	configure-target-libjava \
+-	configure-target-zlib \
+-	configure-target-boehm-gc \
+-	configure-target-qthreads \
+-	configure-target-bsp \
+-	configure-target-cygmon
++CONFIGURE_TARGET_MODULES =
+ 
+ # This is a list of the check targets for all of the modules which are
+ # compiled using $(TARGET_FLAGS_TO_PASS).
+-CHECK_TARGET_MODULES = \
+-	check-target-libstdc++-v3 \
+-	check-target-newlib \
+-	check-target-libf2c \
+-	check-target-libobjc \
+-	check-target-winsup \
+-	check-target-libiberty \
+-	check-target-libffi \
+-	check-target-libjava \
+-	check-target-zlib \
+-	check-target-boehm-gc \
+-	check-target-qthreads \
+-	check-target-gperf
++CHECK_TARGET_MODULES =
+ 
+ # This is a list of the install targets for all of the modules which are
+ # compiled using $(TARGET_FLAGS_TO_PASS).
+-INSTALL_TARGET_MODULES = \
+-	install-target-libstdc++-v3 \
+-	install-target-newlib \
+-	install-target-libf2c \
+-	install-target-libobjc \
+-	install-target-libtermcap \
+-	install-target-winsup \
+-	install-target-libgloss \
+-	install-target-libiberty \
+-	install-target-bsp \
+-	install-target-libjava \
+-	install-target-zlib \
+-	install-target-boehm-gc \
+-	install-target-qthreads \
+-	install-target-gperf
++INSTALL_TARGET_MODULES =
+ 
+ # This is a list of the targets for which we can do a clean-{target}.
+ CLEAN_MODULES = \

@@ -1,7 +1,7 @@
---- libiberty/Makefile.in.orig	Sat Dec  9 00:16:27 2000
-+++ libiberty/Makefile.in	Thu Apr 19 22:27:57 2001
-@@ -152,7 +152,8 @@
- 	$(RANLIB) $(TARGETLIB)
+--- libiberty/Makefile.in.orig	Tue Jan 22 21:03:29 2002
++++ libiberty/Makefile.in	Tue Jun  4 18:19:26 2002
+@@ -234,7 +234,8 @@
+ @MAINT@	echo stamp > stamp-functions
  
  INSTALL_DEST = @INSTALL_DEST@
 -install: install_to_$(INSTALL_DEST) install-subdir
