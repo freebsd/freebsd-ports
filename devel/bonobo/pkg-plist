@@ -60,21 +60,20 @@ include/bonobo/bonobo-view.h
 include/bonobo/bonobo-widget.h
 include/bonobo/bonobo-wrapper.h
 include/efs.h
-lib/libbonobo.a
-lib/libbonobo.so.1
-lib/libbonobo.so
 lib/libbonobo-xml.a
-lib/libbonobo-xml.so.0
 lib/libbonobo-xml.so
+lib/libbonobo-xml.so.0
+lib/libbonobo.a
+lib/libbonobo.so
+lib/libbonobo.so.1
 lib/libefs.a
-lib/libefs.so.0
 lib/libefs.so
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+lib/libefs.so.0
 lib/libstorage_efs.so
 lib/libstorage_fs.so
-share/gnome/apps/Games/gnomine.desktop
-share/gnome/idl/bonobo.idl
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+share/gnome/apps/Games/gnomine-bonobo.desktop
 share/gnome/idl/Bonobo.idl
 share/gnome/idl/bonobo-advise.idl
 share/gnome/idl/bonobo-canvas.idl
@@ -89,6 +88,7 @@ share/gnome/idl/bonobo-property.idl
 share/gnome/idl/bonobo-storage.idl
 share/gnome/idl/bonobo-ui-handler.idl
 share/gnome/idl/bonobo-unknown.idl
+share/gnome/idl/bonobo.idl
 share/gnome/mime-info/bonobo.keys
 share/locale/da/LC_MESSAGES/bonobo.mo
 share/locale/de/LC_MESSAGES/bonobo.mo

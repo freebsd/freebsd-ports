@@ -1,25 +1,5 @@
 --- configure.orig	Wed Jan 26 08:41:19 2000
 +++ configure	Fri Jan 28 12:09:41 2000
-@@ -2291,8 +2291,8 @@
- LD="$LD" LDFLAGS="$LDFLAGS" LIBS="$LIBS" \
- LN_S="$LN_S" NM="$NM" RANLIB="$RANLIB" \
- DLLTOOL="$DLLTOOL" AS="$AS" OBJDUMP="$OBJDUMP" \
--${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig --no-reexec \
--$libtool_flags --no-verify $ac_aux_dir/ltmain.sh $host \
-+${CONFIG_SHELL-/bin/sh} /usr/local/share/libtool/ltconfig --no-reexec \
-+$libtool_flags --no-verify --disable-ltlibs /usr/local/share/libtool/ltmain.sh $host \
- || { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
- 
- # Reload cache, that may have been modified by ltconfig
-@@ -2306,7 +2306,7 @@
- 
- 
- # This can be used to rebuild libtool when needed
--LIBTOOL_DEPS="$ac_aux_dir/ltconfig $ac_aux_dir/ltmain.sh"
-+LIBTOOL_DEPS="/usr/local/share/libtool/ltconfig --disable-ltlibs /usr/local/share/libtool/ltmain.sh"
- 
- # Always use our own libtool.
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
 @@ -4538,6 +4538,8 @@
  if eval "test \"`echo '$''{'ac_cv_header_$ac_safe'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6

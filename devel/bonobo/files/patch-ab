@@ -23,6 +23,22 @@
  
  
  #bin_PROGRAMS = gnomine bonobo-application-x-mines
+@@ -154,12 +154,14 @@
+ EXTRA_DIST = flag.xpm mine.xpm face-cool.xpm face-sad.xpm 	face-smile.xpm face-win.xpm face-worried.xpm 	gnomine.desktop README AUTHORS $(gnorba_DATA)
+ 
+ 
+-Games_DATA = gnomine.desktop
++Games_DATA = gnomine-bonobo.desktop
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../config.h
+ CONFIG_CLEAN_FILES = 
+ PROGRAMS =  $(bin_PROGRAMS)
+ 
++gnomine-bonobo.desktop: gnomine.desktop
++	cp gnomine.desktop gnomine-bonobo.desktop
+ 
+ DEFS = @DEFS@ -I. -I$(srcdir) -I../..
+ LIBS = @LIBS@
 --- components/audio-ulaw/Makefile.in.orig	Wed Jan 26 08:49:38 2000
 +++ components/audio-ulaw/Makefile.in	Fri Jan 28 11:00:35 2000
 @@ -130,7 +130,7 @@
