@@ -2856,6 +2856,7 @@ kaskade		ports/cad/kaskade
 kb2mb2		ports/x11/kb2mb2
 kbdcontrol	src/usr.sbin/kbdcontrol
 kbdmap		src/usr.sbin/kbdmap
+kbedic		ports/textproc/kbedic
 kbiff		ports/mail/kbiff
 kbubbles	ports/games/kbubbles
 kcd		ports/misc/kcd
