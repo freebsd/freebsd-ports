@@ -11,7 +11,7 @@ CATEGORIES+=	www ipv6
 MASTER_SITES=	http://mi.med.tohoku.ac.jp/~satodai/w3m/inusrc/200109/
 DISTNAME=	${PORTNAME}-${W3M_VERSION}-inu-${INU_VERSION}
 
-MAINTAINER?=	nobutaka@nobutaka.com
+MAINTAINER?=	nobutaka@FreeBSD.org
 
 LIB_DEPENDS=	gc.1:${PORTSDIR}/devel/boehm-gc
 

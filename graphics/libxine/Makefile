@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	lib
 DISTFILES=	${PORTNAME}-lib-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	nobutaka@nobutaka.com
+MAINTAINER=	nobutaka@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libavcodec.a:${PORTSDIR}/graphics/ffmpeg
 LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52 \

@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.gohome.org/wl/stable/ \
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	wl-${PORTVERSION}
 
-MAINTAINER=	nobutaka@nobutaka.com
+MAINTAINER=	nobutaka@FreeBSD.org
 
 MIMEUI_PRODUCT?=	semi
 MIMEUI_VERSION?=	1.13.7
