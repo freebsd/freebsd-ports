@@ -1,0 +1,16 @@
+--- Makefile.orig	Sat Apr 20 14:54:37 2002
++++ Makefile	Sat Apr 20 14:55:38 2002
+@@ -2,11 +2,11 @@
+ 
+ # $Id: Makefile,v 1.10 2000/12/27 21:42:37 mike Exp $
+ 
+-BASEDIR=/usr
++BASEDIR=/usr/local
+ #DEFSFILE=${HOME}/Work/lgrind/lgrindef
+ DEFSFILE=$(BASEDIR)/share/texmf/tex/latex/lgrind/lgrindef
+ TEXFILEDIR=$(BASEDIR)/share/texmf/tex/latex/lgrind
+-DOCDIR=$(BASEDIR)/doc/lgrind
++DOCDIR=$(BASEDIR)/share/texmf/doc/latex/lgrind
+ 
+ INSTALL=install
+ SOURCES=lgrind.c lgutil.c regexp.c regexp.h lgrindef.c lgrindef.h retest.c v2lg.c
