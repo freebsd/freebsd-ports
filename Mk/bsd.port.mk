@@ -1,7 +1,7 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
 #
-#	$Id: bsd.port.mk,v 1.304 1999/02/03 11:06:19 asami Exp $
+#	$Id: bsd.port.mk,v 1.305 1999/02/14 06:49:55 asami Exp $
 #	$NetBSD: $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
@@ -305,12 +305,13 @@ OpenBSD_MAINTAINER=	imp@OpenBSD.ORG
 #
 # For fetch:
 #
-# FETCH_CMD		  - Full path to ftp/http fetch command if not in $PATH
-#				  (default: /usr/bin/fetch).
+# FETCH_CMD		- Full path to ftp/http fetch command if not in $PATH
+#				  (default: "/usr/bin/fetch -A").
 # FETCH_BEFORE_ARGS -
 #				  Arguments to ${FETCH_CMD} before filename (default: none).
 # FETCH_AFTER_ARGS -
 #				  Arguments to ${FETCH_CMD} following filename (default: none).
+# FETCH_ENV		- Environment to pass to ${FETCH_CMD} (default: none).
 #
 # For extract:
 #
@@ -330,7 +331,11 @@ OpenBSD_MAINTAINER=	imp@OpenBSD.ORG
 # GNU_CONFIGURE	- Set if you are using GNU configure (optional).  Implies
 #				  HAS_CONFIGURE.
 # CONFIGURE_SCRIPT - Name of configure script (defaults: configure).
-# CONFIGURE_ARGS - Pass these args to configure if ${HAS_CONFIGURE} is set.
+# CONFIGURE_TARGET - The name of target to call when GNU_CONFIGURE is
+#				  defined (default: ${MACHINE_ARCH}--freebsd).
+# CONFIGURE_ARGS - Pass these args to configure if ${HAS_CONFIGURE} is set
+#				  (default: "--prefix=${PREFIX} ${CONFIGURE_TARGET}" if
+#				  GNU_CONFIGURE is set, empty otherwise).
 # CONFIGURE_ENV - Pass these env (shell-like) to configure if
 #				  ${HAS_CONFIGURE} is set.
 #
@@ -402,6 +407,9 @@ OpenBSD_MAINTAINER=	imp@OpenBSD.ORG
 .if !defined(ARCH)
 ARCH!=	/usr/bin/uname -m
 .endif
+
+# Kludge for pre-3.0 systems
+MACHINE_ARCH?=	i386
 
 # Get the operating system type
 .if !defined(OPSYS)
@@ -645,7 +653,7 @@ MAKEFILE?=		Makefile
 MAKE_ENV+=		PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} MOTIFLIB="${MOTIFLIB}" CFLAGS="${CFLAGS}" LIBDIR="${LIBDIR}"
 
 .if exists(/usr/bin/fetch)
-FETCH_CMD?=		/usr/bin/fetch
+FETCH_CMD?=		/usr/bin/fetch -A
 #FETCH_BEFORE_ARGS+=	$${CKSIZE:+-S $$CKSIZE}
 .else
 FETCH_CMD?=		/usr/bin/ftp
@@ -852,10 +860,10 @@ MASTER_SITE_COMP_SOURCES+=	\
 	ftp://rtfm.mit.edu/pub/usenet/comp.sources.%SUBDIR%/
 
 MASTER_SITE_GNOME+=	\
-	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/%SUBDIR%/ \
-	ftp://ftp.geo.net/pub/gnome/sources/%SUBDIR%/ \
-	ftp://gnomeftp.wgn.net/pub/gnome/sources/%SUBDIR%/ \
-	ftp://ftp.gnome.org/pub/GNOME/sources/%SUBDIR%/
+	ftp://ftp.jimpick.com/pub/mirrors/gnome/%SUBDIR%/ \
+	ftp://ftp.geo.net/pub/gnome/%SUBDIR%/ \
+	ftp://gnomeftp.wgn.net/pub/gnome/%SUBDIR%/ \
+	ftp://ftp.gnome.org/pub/GNOME/%SUBDIR%/
 
 MASTER_SITE_AFTERSTEP+=	\
 	ftp://ftp.afterstep.org/%SUBDIR%/ \
@@ -877,27 +885,38 @@ MASTER_SITE_WINDOWMAKER+= \
 	ftp://ftp.cybertrails.com/pub/windowmaker/%SUBDIR%/ \
 	ftp://ftp.ameth.org/pub/mirrors/ftp.windowmaker.org/%SUBDIR%/
 
+MASTER_SITE_PORTS_JP+=	\
+	ftp://ports.jp.freebsd.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/%SUBDIR%/ \
+	ftp://ftp4.jp.freebsd.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/%SUBDIR%/ \
+	ftp://ftp.ics.es.osaka-u.ac.jp/pub/mirrors/FreeBSD-jp/ports-jp/LOCAL_PORTS/%SUBDIR%/ \
+	ftp://ftp.t-cnet.or.jp/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/%SUBDIR%/
+
 # Empty declaration to avoid "variable MASTER_SITES recursive" error
 MASTER_SITES?=
 PATCH_SITES?=
 
-# Default
-MASTER_SITE_SUBDIR?=	.
-PATCH_SITE_SUBDIR?=	.
-
 # Substitute subdirectory names
+.if defined(MASTER_SITE_SUBDIR)
 .for dir in ${MASTER_SITE_SUBDIR}
 MASTER_SITES_TMP+=	${MASTER_SITES:S^%SUBDIR%^${dir}^}
 .endfor
+.else
+MASTER_SITES_TMP=	${MASTER_SITES:S^%SUBDIR%/^^}
+.endif
 MASTER_SITES:=	${MASTER_SITES_TMP}
+.if defined(PATCH_SITE_SUBDIR)
 .for dir in ${PATCH_SITE_SUBDIR}
 PATCH_SITES_TMP+=	${PATCH_SITES:S^%SUBDIR%^${dir}^}
 .endfor
+.else
+PATCH_SITES_TMP=	${PATCH_SITES:S^%SUBDIR%/^^}
+.endif
 PATCH_SITES:=	${PATCH_SITES_TMP}
 
 # The primary backup site.
 MASTER_SITE_BACKUP?=	\
 	ftp://ftp.freebsd.org/pub/FreeBSD/ports/distfiles/${DIST_SUBDIR}/
+MASTER_SITE_BACKUP:=	${MASTER_SITE_BACKUP:S^\${DIST_SUBDIR}/^^}
 
 # Where to put distfiles that don't have any other master site
 MASTER_SITE_LOCAL?= \
@@ -994,9 +1013,10 @@ PKGBASE!=	${ECHO} ${PKGNAME} | ${SED} -e 's/-[^-]*$$//'
 PKGLATESTFILE?=		${PKGLATESTREPOSITORY}/${PKGBASE}${PKG_SUFX}
 
 CONFIGURE_SCRIPT?=	configure
+CONFIGURE_TARGET?=	${MACHINE_ARCH}--freebsd${OSREL}
 
 .if defined(GNU_CONFIGURE)
-CONFIGURE_ARGS+=	--prefix=${PREFIX}
+CONFIGURE_ARGS+=	--prefix=${PREFIX} ${CONFIGURE_TARGET}
 HAS_CONFIGURE=		yes
 .endif
 
@@ -1335,7 +1355,7 @@ do-fetch:
 			    ${ECHO_MSG} ">> Attempting to fetch from $${site}."; \
 				DIR=${DIST_SUBDIR}; \
 				CKSIZE=`${GREP} "^SIZE ($${DIR:+$$DIR/}$$file)" ${MD5_FILE} | ${AWK} '{print $$4}'`; \
-				if ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${site}$${file} ${FETCH_AFTER_ARGS}; then \
+				if ${SETENV} ${FETCH_ENV} ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${site}$${file} ${FETCH_AFTER_ARGS}; then \
 					continue 2; \
 				fi \
 			done; \
@@ -1359,7 +1379,7 @@ do-fetch:
 			    ${ECHO_MSG} ">> Attempting to fetch from $${site}."; \
 				DIR=${DIST_SUBDIR}; \
 				CKSIZE=`${GREP} "^SIZE ($${DIR:+$$DIR/}$$file)" ${MD5_FILE} | ${AWK} '{print $$4}'`; \
-				if ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${site}$${file} ${FETCH_AFTER_ARGS}; then \
+				if ${SETENV} ${FETCH_ENV} ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${site}$${file} ${FETCH_AFTER_ARGS}; then \
 					continue 2; \
 				fi \
 			done; \
@@ -1799,7 +1819,7 @@ fetch-list:
 			for site in ${MASTER_SITES}; do \
 				DIR=${DIST_SUBDIR}; \
 				CKSIZE=`${GREP} "^SIZE ($${DIR:+$$DIR/}$$file)" ${MD5_FILE} | ${AWK} '{print $$4}'`; \
-				${ECHO} -n ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${site}$${file} "${FETCH_AFTER_ARGS}" '||' ; \
+				${ECHO} -n ${SETENV} ${FETCH_ENV} ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${site}$${file} "${FETCH_AFTER_ARGS}" '||' ; \
 					break; \
 			done; \
 			${ECHO} "echo $${file} not fetched" ; \
@@ -1812,7 +1832,7 @@ fetch-list:
 			for site in ${PATCH_SITES}; do \
 				DIR=${DIST_SUBDIR}; \
 				CKSIZE=`${GREP} "^SIZE ($${DIR:+$$DIR/}$$file)" ${MD5_FILE} | ${AWK} '{print $$4}'`; \
-				${ECHO} -n ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${site}$${file} "${FETCH_AFTER_ARGS}" '||' ; \
+				${ECHO} -n ${SETENV} ${FETCH_ENV} ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${site}$${file} "${FETCH_AFTER_ARGS}" '||' ; \
 					break; \
 			done; \
 			${ECHO} "echo $${file} not fetched" ; \
