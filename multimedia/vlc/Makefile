@@ -435,12 +435,12 @@ CONFIGURE_ARGS+=--enable-fribidi
 
 .if defined(WITH_AALIB) && !defined(WITHOUT_AALIB)
 LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib
-CONFIGUR_ARGSE+=	--enable-aa
+CONFIGURE_ARGS+=--enable-aa
 .endif
 
 .if !defined(WITHOUT_H264)
 CONFIGURE_ARGS+=--enable-x264
-BUILD_DEPENDS+=	x264:${PORTSDIR}/multimedia/x264
+LIB_DEPENDS+=	x264.0:${PORTSDIR}/multimedia/x264
 .else
 CONFIGURE_ARGS+=--disable-x264
 .endif
