@@ -4,21 +4,22 @@
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.36 1998/11/13 07:32:21 obrien Exp $
+# $Id: Makefile,v 1.35 1998/10/01 21:40:03 obrien Exp $
 #
 
-DISTNAME=	egcs-19980914
-PKGNAME=	egcs-19980914
+DISTNAME=	egcs-1.1.1-prerelease-3
+PKGNAME=	egcs-1.1.1b3
 CATEGORIES=	lang
-MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/snapshots/1998-09-14/ \
-		ftp://cambridge.cygnus.com/pub/egcs/snapshots/1998-09-14/ \
-		ftp://ftp.fu-berlin.de/unix/languages/egcs/snapshots/1998-09-14/
+MASTER_SITES=	ftp://go.cygnus.com/pub/ftp.cygnus.com/egcs/snapshots/1.1.1-prerelease/ \
+		ftp://egcs.cygnus.com/pub/egcs/snapshots/1.1.1-prerelease/ \
+		ftp://ftp.fu-berlin.de/unix/languages/egcs/snapshots/1.1.1-prerelease/ \
+		ftp://cambridge.cygnus.com/pub/egcs/snapshots/1.1.1-prerelease/
 
 MAINTAINER=	obrien@FreeBSD.org
 
 .include <bsd.port.pre.mk>
 
-EGCS_REV=	egcs-2.92.07
+EGCS_REV=	egcs-2.91.59
 LIBSTDCPP_REV=	2.9.0
 
 .if ${PORTOBJFORMAT} == "elf"
@@ -66,7 +67,7 @@ post-install:
 	ln -f ${PREFIX}/bin/g++ ${PREFIX}/bin/eg++
 	${MV} ${PREFIX}/lib/libiberty.a  \
 		${PREFIX}/lib/gcc-lib/${GNUHOST}/${EGCS_REV}
-	${MV} -f ${PREFIX}/lib/libstdc++.a.${LIBSTDCPP_REV}  \
+	${MV} -f ${PREFIX}/lib/libstdc++.a  \
 		${PREFIX}/lib/gcc-lib/${GNUHOST}/${EGCS_REV}/libstdc++.a
 	if [ ! -f ${PREFIX}/info/dir ]; then \
 	    ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
