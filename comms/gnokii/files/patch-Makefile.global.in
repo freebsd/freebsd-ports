@@ -1,12 +1,12 @@
---- Makefile.global.in.orig	Fri Sep 28 02:07:58 2001
-+++ Makefile.global.in	Sun Oct 14 23:57:52 2001
+--- Makefile.global.in.orig	Fri May 10 00:31:47 2002
++++ Makefile.global.in	Wed May 22 02:22:26 2002
 @@ -22,13 +22,13 @@
  
  bindir         = @bindir@
  sbindir        = @sbindir@
 -xbindir        = ${prefix}/X11R6/bin/
 +xbindir        = ${prefix}/bin/
- libdir         = @libdir@/${PACKAGE}
+ libdir         = @libdir@
  xgnokii_libdir = @XGNOKIIDIR@/@XPACKAGE@
  man1dir        = @mandir@/man1/
  man8dir        = @mandir@/man8/

@@ -1,6 +1,6 @@
---- Docs/sample/gnokiirc.orig	Thu May  3 00:55:27 2001
-+++ Docs/sample/gnokiirc	Thu May  3 00:55:36 2001
-@@ -5,7 +5,7 @@
+--- Docs/sample/gnokiirc.orig	Fri May 10 00:31:47 2002
++++ Docs/sample/gnokiirc	Thu May 23 02:07:50 2002
+@@ -5,10 +5,10 @@
  [global]
  
  # Set port to the physical serial port used to connect to your phone
@@ -8,4 +8,26 @@
 +port = /dev/cuaa0
  
  # Set model to the model number of your phone
- model = 6110
+-model = 6110
++model = 6210
+ 
+ # Initlength controls the number of characters sent to the
+ # phone during initialisation.  You can either set it to
+@@ -38,7 +38,7 @@
+ # port software (eg. minicom). If you have wrong permissions for the
+ # directory, a warning will be generated. If you don't want a lockfile, set
+ # it to 'no'.
+-use_locking = yes
++use_locking = no
+ 
+ # Baudrate to use on serial port connections.
+ # Currently used only by models AT and BIP/CIMD. Defaults to 19200.
+@@ -58,7 +58,7 @@
+ 
+ # If defined (not commented out by '#') it will quit Gnokii anytime
+ # when DCD line will drop.
+-require_dcd = 1
++#require_dcd = 1
+ 
+ # Run the specified script(s) right after opening and initializing the device
+ # and before any communucation (right before closing for disconnect_script).
