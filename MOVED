@@ -277,7 +277,6 @@ graphics/gimp-manual-ps||2003-04-29|new versions of the manual not available as 
 archivers/pkzip||2003-05-05|port contained a security vulnerability with no sign of a fix
 audio/mxv||2003-05-05|port was broken with no sign of a fix
 audio/openag||2003-05-05|port was broken with no sign of a fix
-databases/libodbc++||2003-05-05|port was broken with no sign of a fix
 databases/p5-Msql||2003-05-05|port was broken with no sign of a fix
 databases/sixpack||2003-05-05|port was broken with no sign of a fix
 devel/arm-aout-gcc295||2003-05-05|port was broken with no sign of a fix
