@@ -7,7 +7,7 @@
 
 PORTNAME=	testdisk
 PORTVERSION=	5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cgsecurity.org/
 
@@ -16,13 +16,21 @@ COMMENT=	Tool to check and undelete partitions
 
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib"
+
 MAN1=		testdisk.1
 
-CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include" \
-		LDFLAGS="-L${PREFIX}/lib"
-
 .if defined(WITH_E2FSPROGS)
-BUILD_DEPENDS+=	ext2fs.2:${PORTSDIR}/sysutils/e2fsprogs
+LIB_DEPENDS+=	ext2fs.2:${PORTSDIR}/sysutils/e2fsprogs
+.endif
+
+.if defined(WITH_NTFSPROGS)
+LIB_DEPENDS+=	ntfs.5:${PORTSDIR}/sysutils/ntfsprogs
+.endif
+
+.if defined(WITH_PROGSREISERFS)
+LIB_DEPENDS+=	reiserfs-0.3.0:${PORTSDIR}/sysutils/progsreiserfs
 .endif
 
 .include <bsd.port.pre.mk>
@@ -31,20 +39,24 @@ BUILD_DEPENDS+=	ext2fs.2:${PORTSDIR}/sysutils/e2fsprogs
 IGNORE=		"Requires FreeBSD 5.x, some defines are missing in sys/disk.h before __FreeBSD_version 500040"
 .endif
 
-.if !defined(WITH_E2FSPROGS)
+.if !defined(WITH_E2FSPROGS) || !defined(WITH_NTFSPROGS) || !defined(WITH_PROGSREISERFS)
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You can define the following for additional features:"
 	@${ECHO_MSG} ""
 .if !defined(WITH_E2FSPROGS)
-	@${ECHO_MSG} "WITH_E2FSPROGS  - Use ext2fs extensions.
+	@${ECHO_MSG} "WITH_E2FSPROGS		- Use ext2fs extensions.
+.endif
+.if !defined(WITH_NTFSPROGS)
+	@${ECHO_MSG} "WITH_NTFSPROGS		- Use ntfs extensions.
+.endif
+.if !defined(WITH_PROGSREISERFS)
+	@${ECHO_MSG} "WITH_PROGSREISERFS	- Use reiserfs extensions.
 .endif
 	@${ECHO_MSG} ""
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's|^transform.*||' ${WRKSRC}/Makefile.in \
-					       ${WRKSRC}/src/Makefile.in
 	${REINPLACE_CMD} -e 's|/doc/.(PACKAGE)-.(VERSION)|/doc/${PORTNAME}|' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>
