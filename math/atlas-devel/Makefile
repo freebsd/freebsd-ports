@@ -23,6 +23,7 @@ WRKSRC=		${WRKDIR}/ATLAS
 INSTALLS_SHLIB= yes
 USE_REINPLACE=  yes
 PKGNAMESUFFIX=  -devel
+NO_PACKAGE=	runtime performance heavily depends on building environment
 
 .include <bsd.port.pre.mk>
 
