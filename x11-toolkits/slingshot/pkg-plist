@@ -9,7 +9,6 @@ include/sspkg/patchlevel.h
 include/sspkg/rectobj.h
 include/sspkg/tree.h
 lib/libsspkg.a
-lib/libsspkg.sa.1
 lib/libsspkg.so
 lib/libsspkg.so.1
 %%PORTDOCS%%share/doc/SlingShot/README
