@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ogmtools
-PORTVERSION=	1.4.1
+PORTVERSION=	1.5
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/ogmtools/
 
