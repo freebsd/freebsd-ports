@@ -10,11 +10,13 @@ PORTNAME=	centericq
 PORTVERSION=	4.11.0
 PORTREVISION=	0
 CATEGORIES=	net
-MASTER_SITES=	http://centericq.de/archive/source/releases/
+MASTER_SITES=	http://centericq.de/archive/source/releases/ \
+		http://thekonst.net/download/
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A text mode menu- and window-driven IM interface
 
+USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
@@ -36,7 +38,13 @@ OPTIONS=	NLS		"Native Language Support" on \
 		LJ		"Support for LiveJournal" off \
 		GG		"Support for Gadu-Gadu Protocol" off
 
-.if !defined(WITH_NLS)
+MAN1=	cicqconv.1 cicqsync.1
+
+PORTDOCS=	FAQ README
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .else
@@ -86,12 +94,6 @@ CONFIGURE_ARGS+=	--disable-lj
 .if !defined(WITH_GG)
 CONFIGURE_ARGS+=	--disable-gg
 .endif
-
-MAN1=	cicqconv.1 cicqsync.1
-
-PORTDOCS=	FAQ README
-
-.include <bsd.port.pre.mk>
 
 post-patch:
 .if ${OSVERSION} >= 502124
