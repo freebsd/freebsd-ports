@@ -31,6 +31,7 @@
 #
 
 # Convenient aliases
+workrave	ports/x11/workrave
 world		-a .
 
 # CVSROOT support
