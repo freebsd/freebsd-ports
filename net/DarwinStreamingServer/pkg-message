@@ -1,0 +1,63 @@
+===============================================================================
+
+		* IMPORTANT SETUP NOTICE * IMPORTANT SETUP NOTICE *
+
+o Set up DSS Administrator Username/Password.
+
+    $Username$ is an account for DSS Administration, e.g. admin, root, etc...
+
+    # qtpasswd -c $Username$
+    # echo admin: $Username$ > %%PREFIX%%/etc/streaming/qtgroups
+
+    NOTICE: qtpasswd will create new file with -c option.  Please
+            see also `qtpasswd -h'(mostly same as htpasswd).
+
+    NOTICE: qtgroups file will contain user(s) separated by white space
+            of group(s).
+
+o Set up SSL for DSS Administration Tool  (If you need)
+
+    Install your SSL Keys to %%PREFIX%%/etc/streaming/
+	streamingadminserver.key: SSL Private key
+	streamingadminserver.pem: SSL Public key
+
+o Boot DSS Administration Tool
+
+    # echo 'streamingadminserver_enable="YES"' >> /etc/rc.conf
+    # cd /; env - %%PREFIX%%/etc/rc.d/streamingadminserver.sh start
+
+o Set up DSS Administration Tool with MSIE(Microsoft Internet Explorer)
+
+    Mozilla, Netscape4/7 are not useful.  DSS Administration Tool requires
+    MSIE(perhaps 5.0 or later) J-Script feature.
+
+	http://YOUR.STREAMING.SERVER:1220/
+
+    If you need SSL, select 'Secure Administration (SSL)' in setup.
+    After setup, you can access to
+
+	https://YOUR.STREAMING.SERVER:1240/
+
+===============================================================================
+
+Related directories
+
+  %%PREFIX%%/etc/streaming			- DSS Configuration Directory
+  %%PREFIX%%/share/DarwinStreamingServer/movies	- *Default* Movies Directory
+  /var/log/streaming				- DSS Streaming Log Directory
+  /var/spool/streaming.playlists		- DSS Playlists Directory
+
+===============================================================================
+
+  If you want to invoke Darwin Streaming Server from start-up, put following
+  lines into /etc/rc.conf.
+
+    darwin_streaming_server_enable="YES"
+    darwin_streaming_server_flags=""
+
+  If you want to invoke DSS Administration Tool from start-up, do too.
+
+    streamingadminserver_enable="YES"
+    streamingadminserver_flags=""
+
+===============================================================================

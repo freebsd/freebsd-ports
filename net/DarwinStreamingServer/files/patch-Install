@@ -1,0 +1,252 @@
+--- Install.orig	Sat Jul  6 09:20:05 2002
++++ Install	Tue Sep 24 02:30:09 2002
+@@ -15,6 +15,7 @@
+ 
+ if [ $USERID = 0 ]; then
+ 
++    if false; then
+ 	echo Checking for and Killing currently running Darwin Streaming Server
+ 	if [ `uname` = "FreeBSD" ]; then
+ 		ps -ax | awk '/DarwinStreamingServer/ {print $1}' | xargs kill -9  
+@@ -110,14 +111,15 @@
+ 	fi
+ 
+ 	echo
++    fi
+ 
+ ## CHANGE PERL PATH IN streamingadminserver.pl AND parse_xml.cgi ##
+ 
+ # Look for perl in the default locations
+ if [ -x /usr/bin/perl ]; then
+ 	perldef=/usr/bin/perl
+-elif [ -x /usr/local/bin/perl ]; then
+-	perldef=/usr/local/bin/perl
++elif [ -x ${LOCALBASE}/bin/perl ]; then
++	perldef=${LOCALBASE}/bin/perl
+ else
+ 	perldef=""
+ fi
+@@ -184,127 +186,130 @@
+ fi
+ 
+ ## INSTALL NEW VERSION ##
+-        if [ ! -d /usr/local/sbin ]; then
+-                echo creating "/usr/local/sbin" directory
+-                mkdir -p /usr/local/sbin
++        if [ ! -d ${PREFIX}/sbin ]; then
++                echo creating "${PREFIX}/sbin" directory
++                mkdir -p ${PREFIX}/sbin
+         fi              
+-        if [ ! -d /usr/local/bin ]; then
+-                echo creating "/usr/local/bin" directory
+-                mkdir -p /usr/local/bin
++        if [ ! -d ${PREFIX}/bin ]; then
++                echo creating "${PREFIX}/bin" directory
++                mkdir -p ${PREFIX}/bin
+         fi              
+ 
+-	echo copying "DarwinStreamingServer" to "/usr/local/sbin/DarwinStreamingServer"
+-	cp -f DarwinStreamingServer /usr/local/sbin/
++	echo copying "DarwinStreamingServer" to "${PREFIX}/sbin/DarwinStreamingServer"
++	${BSD_INSTALL_PROGRAM} DarwinStreamingServer ${PREFIX}/sbin/
+ 	
+ 	
+-	echo copying "PlaylistBroadcaster" to "/usr/local/bin/PlaylistBroadcaster"
+-	cp -f PlaylistBroadcaster /usr/local/bin/
++	echo copying "PlaylistBroadcaster" to "${PREFIX}/bin/PlaylistBroadcaster"
++	${BSD_INSTALL_PROGRAM} PlaylistBroadcaster ${PREFIX}/bin/
+ 	
+-	echo copying "MP3Broadcaster" to "/usr/local/bin/MP3Broadcaster"
+-	cp -f MP3Broadcaster /usr/local/bin/
++	echo copying "MP3Broadcaster" to "${PREFIX}/bin/MP3Broadcaster"
++	${BSD_INSTALL_PROGRAM} MP3Broadcaster ${PREFIX}/bin/
+ 	
+-	echo copying "qtpasswd" to "/usr/local/bin/qtpasswd"
+-	cp -f qtpasswd /usr/local/bin/
++	echo copying "qtpasswd" to "${PREFIX}/bin/qtpasswd"
++	${BSD_INSTALL_PROGRAM} qtpasswd ${PREFIX}/bin/
+ 
+ 	# For now, do not copy modules as there are no supported dynamic modules
+-	# echo copying modules to "/usr/local/sbin/StreamingServerModules"
+-	if [ ! -d /usr/local/sbin/StreamingServerModules ]; then
+-		echo creating "/usr/local/sbin/StreamingServerModules" directory
+-		mkdir /usr/local/sbin/StreamingServerModules
+-	fi
+-	# cp -f StreamingServerModules/* /usr/local/sbin/StreamingServerModules/
+-	
+-	if [ ! -d /etc/streaming ]; then
+-		echo creating "/etc/streaming" directory
+-		mkdir -p /etc/streaming
+-	fi
+-	
+-	echo copying "streamingserver.xml" to "/etc/streaming/streamingserver.xml-sample"
+-	cp -f streamingserver.xml /etc/streaming/streamingserver.xml-sample
+-	
+-	echo;echo copying "streamingserver.xml" to "/etc/streaming/streamingserver.xml"
+-	cp -f streamingserver.xml /etc/streaming/streamingserver.xml
+-	chmod 600 /etc/streaming/streamingserver.xml
+-
+-	echo;echo copying "relayconfig.xml-Sample" to "/etc/streaming/relayconfig.xml-Sample"
+-	cp -f relayconfig.xml-Sample /etc/streaming/relayconfig.xml-Sample
+-	chmod 600 /etc/streaming/relayconfig.xml-Sample
++	# echo copying modules to "${PREFIX}/sbin/StreamingServerModules"
++	if [ ! -d ${PREFIX}/libexec/StreamingServerModules ]; then
++		echo creating "${PREFIX}/libexec/StreamingServerModules" directory
++		mkdir ${PREFIX}/libexec/StreamingServerModules
++	fi
++	# ${BSD_INSTALL_PROGRAM} StreamingServerModules/* ${PREFIX}/libexec/StreamingServerModules/
++	
++	if [ ! -d ${PREFIX}/etc/streaming ]; then
++		echo creating "${PREFIX}/etc/streaming" directory
++		mkdir -p ${PREFIX}/etc/streaming
++	fi
++	
++	echo copying "streamingserver.xml" to "${PREFIX}/etc/streaming/streamingserver.xml-sample"
++	${BSD_INSTALL_DATA} streamingserver.xml ${PREFIX}/etc/streaming/streamingserver.xml-sample
++	
++	[ -f ${PREFIX}/etc/streaming/streamingserver.xml ] || (
++	echo;echo copying "streamingserver.xml" to "${PREFIX}/etc/streaming/streamingserver.xml"
++	${BSD_INSTALL_DATA} streamingserver.xml ${PREFIX}/etc/streaming/streamingserver.xml
++	)
++	chmod 600 ${PREFIX}/etc/streaming/streamingserver.xml
++
++	echo;echo copying "relayconfig.xml-Sample" to "${PREFIX}/etc/streaming/relayconfig.xml-Sample"
++	${BSD_INSTALL_DATA} relayconfig.xml-Sample ${PREFIX}/etc/streaming/relayconfig.xml-Sample
++	chmod 600 ${PREFIX}/etc/streaming/relayconfig.xml-Sample
+ 		
+-	echo;echo copying "qtusers" to "/etc/streaming/qtusers"
+-	cp -f qtusers /etc/streaming/qtusers
+-	chmod 600 /etc/streaming/qtusers
++	echo;echo copying "qtusers" to "${PREFIX}/etc/streaming/qtusers-dist"
++	${BSD_INSTALL_DATA} qtusers ${PREFIX}/etc/streaming/qtusers-dist
++	chmod 600 ${PREFIX}/etc/streaming/qtusers-dist
+ 
+-	echo;echo copying "qtgroups" to "/etc/streaming/qtgroups"
+-	cp -f qtgroups /etc/streaming/qtgroups
+-	chmod 600 /etc/streaming/qtgroups
++	echo;echo copying "qtgroups" to "${PREFIX}/etc/streaming/qtgroups-dist"
++	${BSD_INSTALL_DATA} qtgroups ${PREFIX}/etc/streaming/qtgroups-dist
++	chmod 600 ${PREFIX}/etc/streaming/qtgroups-dist
+ 
+-	#echo;echo copying "streamingadminserver.pem" to "/etc/streaming/streamingadminserver.pem"
+-	#cp -f streamingadminserver.pem /etc/streaming/streamingadminserver.pem
+-	#chmod 400 /etc/streaming/streamingadminserver.pem
++	#echo;echo copying "streamingadminserver.pem" to "${PREFIX}/etc/streaming/streamingadminserver.pem"
++	#${BSD_INSTALL_DATA} streamingadminserver.pem ${PREFIX}/etc/streaming/streamingadminserver.pem
++	#chmod 400 ${PREFIX}/etc/streaming/streamingadminserver.pem
+ 
+-	if [ ! -d /var/streaming ]; then
+-		echo creating "/var/streaming" directory
+-		mkdir -p /var/streaming
++	if [ ! -d ${DATADIR} ]; then
++		echo creating "${DATADIR}" directory
++		mkdir -p ${DATADIR}
+ 	fi
+ 	
+-	echo copying "readme.pdf" to "/var/streaming/readme.pdf"
+-	cp -f readme.pdf /var/streaming/readme.pdf
++	echo copying "readme.pdf" to "${DATADIR}/readme.pdf"
++	${BSD_INSTALL_DATA} readme.pdf ${DATADIR}/readme.pdf
+ 	
+-	echo copying "3rdPartyAcknowledgements.rtf" to "/var/streaming/3rdPartyAcknowledgements.rtf"
+-	cp -f 3rdPartyAcknowledgements.rtf /var/streaming/3rdPartyAcknowledgements.rtf
++	echo copying "3rdPartyAcknowledgements.rtf" to "${DATADIR}/3rdPartyAcknowledgements.rtf"
++	${BSD_INSTALL_DATA} 3rdPartyAcknowledgements.rtf ${DATADIR}/3rdPartyAcknowledgements.rtf
+ 	
+-	if [ ! -d /var/streaming/logs ]; then
+-		echo creating "/var/streaming/logs" directory
+-		mkdir -p /var/streaming/logs
++	if [ ! -d /var/log/streaming ]; then
++		echo creating "/var/log/streaming" directory
++		mkdir -p /var/log/streaming
+ 	fi
+ 	
+-	if [ ! -d /usr/local/movies ]; then
+-		echo creating "/usr/local/movies" directory
+-		mkdir -p /usr/local/movies
++	if [ ! -d ${DATADIR}/movies ]; then
++		echo creating "${DATADIR}/movies" directory
++		mkdir -p ${DATADIR}/movies
+ 	fi
+ 	
+-	if [ ! -d /var/streaming/playlists ]; then
+-		echo creating "/var/streaming/playlists" directory
+-		mkdir -p /var/streaming/playlists
+-		chmod 777 /var/streaming/playlists
++	if [ ! -d /var/spool/streaming.playlists ]; then
++		echo creating "/var/spool/streaming.playlists" directory
++		mkdir -p /var/spool/streaming.playlists
++		chmod 777 /var/spool/streaming.playlists
+ 	fi
+ 		
+-        echo copying "sample_100kbit.mov" into "/usr/local/movies/sample_100kbit.mov"
+-        cp -f sample_100kbit.mov /usr/local/movies/
++        echo copying "sample_100kbit.mov" into "${DATADIR}/movies/sample_100kbit.mov"
++        ${BSD_INSTALL_DATA} sample_100kbit.mov ${DATADIR}/movies/
+ 
+-        echo copying "sample_300kbit.mov" into "/usr/local/movies/sample_300kbit.mov"
+-        cp -f sample_300kbit.mov /usr/local/movies/
++        echo copying "sample_300kbit.mov" into "${DATADIR}/movies/sample_300kbit.mov"
++        ${BSD_INSTALL_DATA} sample_300kbit.mov ${DATADIR}/movies/
+ 
+-        echo copying "sample_100kbit.mp4" into "/usr/local/movies/sample_100kbit.mp4"
+-        cp -f sample_100kbit.mp4 /usr/local/movies/
++        echo copying "sample_100kbit.mp4" into "${DATADIR}/movies/sample_100kbit.mp4"
++        ${BSD_INSTALL_DATA} sample_100kbit.mp4 ${DATADIR}/movies/
+ 
+-        echo copying "sample_300kbit.mp4" into "/usr/local/movies/sample_300kbit.mp4"
+-        cp -f sample_300kbit.mp4 /usr/local/movies/
++        echo copying "sample_300kbit.mp4" into "${DATADIR}/movies/sample_300kbit.mp4"
++        ${BSD_INSTALL_DATA} sample_300kbit.mp4 ${DATADIR}/movies/
+ 
+-        echo copying "sample.mp3" into "/usr/local/movies/sample.mp3"
+-        cp -f sample.mp3 /usr/local/movies/
++        echo copying "sample.mp3" into "${DATADIR}/movies/sample.mp3"
++        ${BSD_INSTALL_DATA} sample.mp3 ${DATADIR}/movies/
+ 
+-	echo copying "StreamingLoadTool" to "/usr/local/bin/StreamingLoadTool"
+-	cp -f StreamingLoadTool /usr/local/bin/
++#WHERE?	echo copying "StreamingLoadTool" to "${PREFIX}/bin/StreamingLoadTool"
++#WHERE?	${BSD_INSTALL_PROGRAM} StreamingLoadTool ${PREFIX}/bin/
+ 	
+-	echo copying "streamingloadtool.conf" to "/etc/streaming/streamingloadtool.conf"
+-	cp -f streamingloadtool.conf /etc/streaming/
++#WHERE?	echo copying "streamingloadtool.conf" to "${PREFIXX}/etc/streaming/streamingloadtool.conf"
++#WHERE?	${BSD_INSTALL_DATA} streamingloadtool.conf ${PREFIXX}/etc/streaming/
+ 	
+ 	#WebAdmin install
+-	echo copying "streamingadminserver.pl" into "/usr/local/sbin/streamingadminserver.pl"
+-	cp -f streamingadminserver.pl /usr/local/sbin/streamingadminserver.pl
++	echo copying "streamingadminserver.pl" into "${PREFIX}/sbin/streamingadminserver.pl"
++	${BSD_INSTALL_SCRIPT} streamingadminserver.pl ${PREFIX}/sbin/streamingadminserver.pl
+ 	
+-	if [ -d /var/streaming/AdminHtml/ ]; then
+-	    echo removing old version of html from "/var/streaming/AdminHtml"
+-	    rm -r -f /var/streaming/AdminHtml/*
++	if [ -d ${DATADIR}/AdminHtml/ ]; then
++	    echo removing old version of html from "${DATADIR}/AdminHtml"
++	    rm -r -f ${DATADIR}/AdminHtml/*
+ 	fi    
+-	if [ ! -d /var/streaming/ ]; then
+-		echo creating "/var/streaming/AdminHtml" directory
++	if [ ! -d ${DATADIR} ]; then
++		echo creating "${DATADIR}/AdminHtml" directory
+ 		mkdir -p /var/streaming/AdminHtml
+ 	fi
+-	echo copying Admin HTML to "/var/streaming/AdminHtml" directory
+-	cp -f -r AdminHtml /var/streaming/
++	echo copying Admin HTML to "${DATADIR}/AdminHtml" directory
++	tar -cf - AdminHtml | tar -xf - -C ${DATADIR}
+ 	
++    if false; then
+ 	echo;echo "Launching streamingadminserver.pl"
+ 	/usr/local/sbin/streamingadminserver.pl
+ 	
+@@ -368,6 +373,7 @@
+ 	/usr/local/bin/qtpasswd -F -d 'aGFja21l' > /dev/null
+ 		
+ 	echo Setup Complete!
++    fi
+ 	
+ else
+ 

@@ -1,0 +1,11 @@
+--- DSS_MakeRoot.orig	Fri Jul 12 03:58:59 2002
++++ DSS_MakeRoot	Mon Sep 23 23:37:12 2002
+@@ -95,7 +95,7 @@
+         echo copying "sample.mp3" into "$INSTALLROOT/usr/local/movies"
+         cp sample.mp3 $INSTALLROOT/usr/local/movies/
+ 
+-    if [-d SpamPro.tproj ]; then
++    if [ -d SpamPro.tproj ]; then
+ 	echo copying "StreamingLoadTool" to "$INSTALLROOT/usr/local/bin/StreamingLoadTool"
+ 	cp SpamPro.tproj/StreamingLoadTool $INSTALLROOT/usr/local/bin/
+ 	
