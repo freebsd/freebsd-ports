@@ -1,0 +1,3 @@
+bin/gBackGround_applet
+etc/CORBA/servers/gBackGround_applet.gnorba
+share/gnome/applets/Amusements/gBackGround_applet.desktop
