@@ -1,0 +1,10 @@
+@cwd /usr/local
+bin/zsh
+man/man1/zsh.1
+info/zsh.info
+info/zsh.info-1
+info/zsh.info-2
+info/zsh.info-3
+info/zsh.info-4
+info/zsh.info-5
+info/zsh.info-6
