@@ -22,76 +22,6 @@ pgsql/bin/postgres
 pgsql/bin/postmaster
 pgsql/bin/psql
 pgsql/bin/vacuumdb
-pgsql/data/PG_VERSION
-pgsql/data/base/template1/PG_VERSION
-pgsql/data/base/template1/pg_aggregate
-pgsql/data/base/template1/pg_aggregate_name_type_index
-pgsql/data/base/template1/pg_am
-pgsql/data/base/template1/pg_am_name_index
-pgsql/data/base/template1/pg_amop
-pgsql/data/base/template1/pg_amop_opid_index
-pgsql/data/base/template1/pg_amop_strategy_index
-pgsql/data/base/template1/pg_amproc
-pgsql/data/base/template1/pg_attrdef
-pgsql/data/base/template1/pg_attrdef_adrelid_index
-pgsql/data/base/template1/pg_attribute
-pgsql/data/base/template1/pg_attribute_relid_attnam_index
-pgsql/data/base/template1/pg_attribute_relid_attnum_index
-pgsql/data/base/template1/pg_class
-pgsql/data/base/template1/pg_class_oid_index
-pgsql/data/base/template1/pg_class_relname_index
-pgsql/data/base/template1/pg_description
-pgsql/data/base/template1/pg_description_objoid_index
-pgsql/data/base/template1/pg_index
-pgsql/data/base/template1/pg_index_indexrelid_index
-pgsql/data/base/template1/pg_indexes
-pgsql/data/base/template1/pg_inheritproc
-pgsql/data/base/template1/pg_inherits
-pgsql/data/base/template1/pg_inherits_relid_seqno_index
-pgsql/data/base/template1/pg_ipl
-pgsql/data/base/template1/pg_language
-pgsql/data/base/template1/pg_language_name_index
-pgsql/data/base/template1/pg_language_oid_index
-pgsql/data/base/template1/pg_listener
-pgsql/data/base/template1/pg_listener_relname_pid_index
-pgsql/data/base/template1/pg_opclass
-pgsql/data/base/template1/pg_opclass_deftype_index
-pgsql/data/base/template1/pg_opclass_name_index
-pgsql/data/base/template1/pg_operator
-pgsql/data/base/template1/pg_operator_oid_index
-pgsql/data/base/template1/pg_operator_oprname_l_r_k_index
-pgsql/data/base/template1/pg_proc
-pgsql/data/base/template1/pg_proc_oid_index
-pgsql/data/base/template1/pg_proc_proname_narg_type_index
-pgsql/data/base/template1/pg_relcheck
-pgsql/data/base/template1/pg_relcheck_rcrelid_index
-pgsql/data/base/template1/pg_rewrite
-pgsql/data/base/template1/pg_rewrite_oid_index
-pgsql/data/base/template1/pg_rewrite_rulename_index
-pgsql/data/base/template1/pg_rules
-pgsql/data/base/template1/pg_statistic
-pgsql/data/base/template1/pg_statistic_relid_att_index
-pgsql/data/base/template1/pg_tables
-pgsql/data/base/template1/pg_trigger
-pgsql/data/base/template1/pg_trigger_tgconstrname_index
-pgsql/data/base/template1/pg_trigger_tgconstrrelid_index
-pgsql/data/base/template1/pg_trigger_tgrelid_index
-pgsql/data/base/template1/pg_type
-pgsql/data/base/template1/pg_type_oid_index
-pgsql/data/base/template1/pg_type_typname_index
-pgsql/data/base/template1/pg_user
-pgsql/data/base/template1/pg_views
-pgsql/data/pg_control
-pgsql/data/pg_database
-pgsql/data/pg_geqo.sample
-pgsql/data/pg_group
-pgsql/data/pg_group_name_index
-pgsql/data/pg_group_sysid_index
-pgsql/data/pg_hba.conf
-pgsql/data/pg_log
-pgsql/data/pg_shadow
-pgsql/data/pg_variable
-pgsql/data/postmaster.opts.default
 pgsql/include/access/attnum.h
 pgsql/include/c.h
 pgsql/include/commands/trigger.h
@@ -123,6 +53,7 @@ pgsql/include/utils/elog.h
 pgsql/include/utils/geo_decls.h
 pgsql/include/utils/mcxt.h
 pgsql/include/utils/palloc.h
+@exec chown root:wheel %D/pgsql/lib
 pgsql/lib/global1.bki.source
 pgsql/lib/global1.description
 pgsql/lib/libecpg.a
@@ -147,22 +78,16 @@ pgsql/lib/plpgsql.so
 pgsql/lib/postmaster.opts.default.sample
 pgsql/post-install-notes
 @dirrm pgsql/bin
-@dirrm pgsql/data/base/template1
-@dirrm pgsql/data/base
-@dirrm pgsql/data/pg_xlog
-@dirrm pgsql/data
 @dirrm pgsql/include/access
 @dirrm pgsql/include/commands
 @dirrm pgsql/include/executor
 @dirrm pgsql/include/lib
 @dirrm pgsql/include/libpq
 @dirrm pgsql/include/libpq++
-@dirrm pgsql/include/port/freebsd
-@dirrm pgsql/include/port
 @dirrm pgsql/include/utils
 @dirrm pgsql/include
 @dirrm pgsql/lib
 @dirrm pgsql/man/man1
 @dirrm pgsql/man/manl
 @dirrm pgsql/man
-@dirrm pgsql
+@unexec rmdir %D/pgsql 2>/dev/null || true
