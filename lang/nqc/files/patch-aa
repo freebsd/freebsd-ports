@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Jan 28 06:24:21 2003
-+++ Makefile	Thu Jan 30 20:19:25 2003
+--- Makefile.orig	Sun Nov  9 06:14:20 2003
++++ Makefile	Tue Nov 25 19:51:54 2003
 @@ -28,20 +28,20 @@
  #
  # Pick your C++ compiler. 
@@ -25,7 +25,7 @@
  
  # Link in any necessary C++ libraries
  #
-@@ -50,21 +50,22 @@
+@@ -50,19 +50,20 @@
  
  
  # installation information
@@ -51,22 +51,25 @@
 -CFLAGS = -pipe -Iplatform -Ircxlib -Inqc -Icompiler -Wall -Wstrict-prototypes -Wmissing-prototypes
 +CFLAGS += -Iplatform -Ircxlib -Inqc -Icompiler
  
--USBOBJ = rcxlib/RCX_USBTowerPipe_none.o
-+USBOBJ = rcxlib/RCX_USBTowerPipe_fbsd.o
+ USBOBJ = rcxlib/RCX_USBTowerPipe_none.o
  
- #
- # Platform specific tweaks
-@@ -78,9 +79,6 @@
- ifeq ($TARGET),solaris)
+@@ -87,18 +88,23 @@
    # Solaris
    CFLAGS += -DSOLARIS
--else
--  # default - works for Linux
--  CFLAGS += -O6
+ else
++ifneq (,$(strip $(findstring $(OSTYPE), FreeBSD)))
++  # FreeBSD
++  USBOBJ = rcxlib/RCX_USBTowerPipe_fbsd.o
++else
+   # default Unix build without USB support
+   CFLAGS += -O6
  endif
  endif
+ endif
++endif
  
-@@ -88,7 +86,7 @@
+ 
+ # this must happen after the platform tweaks just in case the platform
  # wants to redefine the default serial name
  #
  ifndef DEFAULT_SERIAL_NAME
@@ -75,7 +78,7 @@
  endif
  CFLAGS += -DDEFAULT_SERIAL_NAME='$(DEFAULT_SERIAL_NAME)'
  
-@@ -140,10 +138,10 @@
+@@ -150,10 +156,10 @@
  	$(MKDIR) bin
  
  bin/nqc : compiler/parse.cpp $(OBJ)
@@ -88,7 +91,7 @@
  
  #
  # clean up stuff
-@@ -203,7 +201,7 @@
+@@ -213,7 +219,7 @@
  # general rule for compiling
  #
  .cpp.o:
