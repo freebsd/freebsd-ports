@@ -1,5 +1,5 @@
 *** mmv.c.old	Wed Mar  1 05:23:56 1995
---- mmv.c	Thu Mar  2 05:43:37 1995
+--- mmv.c	Thu Jun 13 13:34:25 2002
 ***************
 *** 88,94 ****
   #endif
@@ -58,6 +58,33 @@
   static int rename(/* char *from, char *to */);
 --- 386,391 ----
 ***************
+*** 410,416 ****
+  static SLICER slicer[2] = {{NULL, NULL, 0}, {NULL, NULL, 0}};
+  
+  static int badreps = 0, paterr = 0, direrr, failed = 0, gotsig = 0, repbad;
+! static FILE *outfile = stdout;
+  
+  static char IDF[] = "$$mmvdid.";
+  static char TEMP[] = "$$mmvtmp.";
+--- 406,412 ----
+  static SLICER slicer[2] = {{NULL, NULL, 0}, {NULL, NULL, 0}};
+  
+  static int badreps = 0, paterr = 0, direrr, failed = 0, gotsig = 0, repbad;
+! static FILE *outfile;
+  
+  static char IDF[] = "$$mmvdid.";
+  static char TEMP[] = "$$mmvtmp.";
+***************
+*** 471,476 ****
+--- 467,473 ----
+  {
+  	char *frompat, *topat;
+  
++ 	outfile = stdout;
+  	init();
+  	procargs(argc, argv, &frompat, &topat);
+  	domatch(frompat, topat);
+***************
 *** 2550,2559 ****
   }
   
@@ -69,7 +96,7 @@
   }
   
   
---- 2546,2554 ----
+--- 2547,2555 ----
   }
   
   
@@ -88,7 +115,7 @@
   static void memmove(to, from, k)
   	char *to, *from;
   	unsigned k;
---- 2827,2833 ----
+--- 2828,2834 ----
   }
   
   
