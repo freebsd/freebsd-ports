@@ -12,6 +12,8 @@ MASTER_SITES=	ftp://www.kitel.co.kr/pub/
 
 MAINTAINER=	swjeong@kitel.co.kr
 
+FORBIDDEN=	"Buffer overflow yielding setgid kmem"
+
 MAN8=		brouted.8
 MANCOMPRESSED=	yes
 
