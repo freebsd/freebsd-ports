@@ -7,7 +7,7 @@
 
 PORTNAME=	gdbint
 PORTVERSION=	1.0.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/FreeBSD/ \
 		http://planetmirror.com/pub/fpc/dist/FreeBSD/ \
@@ -26,13 +26,11 @@ COMMENT=	Free Pascal unit providing interface to gdb
 
 .include <bsd.port.pre.mk>
 
-BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc
-RUN_DEPENDS=	${BUILD_DEPENDS}
-.if ${OSVERSION} >= 500000
-LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
-.endif
+BUILD_DEPENDS+=	ppc386:${PORTSDIR}/lang/fpc \
+		gdbfpc:${PORTSDIR}/devel/fpc-gdb
+RUN_DEPENDS+=	${BUILD_DEPENDS}
 .if ${OSVERSION} < 470000
-EXTRACT_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar
+EXTRACT_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
 TAR=			${LOCALBASE}/bin/gtar
 .endif
 USE_GMAKE=	yes
@@ -46,6 +44,7 @@ MAKE_ENV+=	PATH=${LOCALBASE}/bin:$$PATH \
 		INSTALL_BASEDIR=${PREFIX}/lib/fpc/${PORTVERSION} \
 		INSTALL_BINDIR=${PREFIX}/bin \
 		GCCLIBDIR=/usr/lib \
+		GDBLIBDIR=${LOCALBASE}/lib/fpc/${PORTVERSION}/units/freebsd/gdbint/libgdb \
 		RELEASE=1
 
 do-extract:
@@ -67,11 +66,13 @@ post-patch:
 		"Makefile*" | ${XARGS} ${REINPLACE_CMD} 's|-OG2p3|-OG2p1|g'
 
 do-build:
-	cd ${WRKSRC}/share/src/fpc-${PORTVERSION}/packages/base/gdbint && \
-		${GMAKE} ${MAKE_ENV} all
+	@${SETENV} ${MAKE_ENV} ${GMAKE} -C \
+		${WRKSRC}/share/src/fpc-${PORTVERSION}/packages/base/gdbint \
+		all
 
 do-install:
-	cd ${WRKSRC}/share/src/fpc-${PORTVERSION}/packages/base/gdbint && \
-		${GMAKE} ${MAKE_ENV} install
+	@${SETENV} ${MAKE_ENV} ${GMAKE} -C \
+		${WRKSRC}/share/src/fpc-${PORTVERSION}/packages/base/gdbint \
+		install
 
 .include <bsd.port.post.mk>
