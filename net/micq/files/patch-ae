@@ -1,6 +1,14 @@
---- icq_response.c.orig	Tue Jan 23 11:49:05 2001
-+++ icq_response.c	Wed Jan 24 22:07:40 2001
-@@ -871,19 +871,12 @@
+--- icq_response.c.orig	Tue Jan 23 16:49:05 2001
++++ icq_response.c	Sun Mar 25 23:54:20 2001
+@@ -740,6 +740,7 @@
+          return;
+       }
+       *tmp = 0;
++      char_conv ("wc",data); //By Kunia User's nick was not transcoded...;(
+       M_print( CONTACTCOL "\n%s" NOCOL " has added you to their contact list.\n", data );
+       tmp++;
+       data = tmp;
+@@ -871,19 +872,12 @@
        }
        *tmp = 0;
        char_conv ("wc",data);
