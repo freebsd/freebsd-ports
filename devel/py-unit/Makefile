@@ -15,6 +15,9 @@ DISTNAME=	pyunit-${PORTVERSION}
 
 MAINTAINER=	shell@shellhung.org
 
+BUILD_DEPENDS=	${PYDISTUTILS}
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
+
 USE_PYTHON=	yes
 
 SETUP_CMD=	cd ${WRKSRC} && ${SETENV} \
@@ -24,6 +27,6 @@ do-build:
 	@${SETUP_CMD} build
 
 do-install:
-	@${SETUP_CMD} install
+	@${SETUP_CMD} install -c -O1 --prefix=${PREFIX}
 
 .include <bsd.port.mk>
