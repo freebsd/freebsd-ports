@@ -1,6 +1,6 @@
---- ../../foo/bwbasic-2.20/Makefile.in	Sun Nov 26 09:02:18 1995
-+++ Makefile.in	Thu Jan 16 10:41:01 1997
-@@ -16,9 +16,9 @@
+--- Makefile.in.orig	Sat Nov 25 14:32:18 1995
++++ Makefile.in	Sun Feb  6 16:12:49 2000
+@@ -16,9 +16,10 @@
  
  DEFS = @DEFS@
  
@@ -8,7 +8,8 @@
 -#CFLAGS = -O
 -CFLAGS = -g -ansi
 +# Re-revised by MJS
-+CFLAGS = -O -ansi
++CFLAGS ?= -O
++CFLAGS += -ansi
 +#CFLAGS = -g -ansi
  
  # Revised by JBV
