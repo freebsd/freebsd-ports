@@ -6,23 +6,23 @@
 # $FreeBSD$
 #
 
-DISTNAME=	CodeCrusader-2.1.3
-PKGNAME=	code_crusader-2.1.3
+DISTNAME=	code_crusader_source-2.1.4
+PKGNAME=	code_crusader-2.1.4
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.its.caltech.edu/pub/jafl/programs/jcc/source/ \
-		ftp://ftp.its.caltech.edu/pub/jafl/jx/source-1.5.2/
-DISTFILES=	code_crusader_source-2.1.3.tar.gz \
-		JTree_source-1.1.5.tar.gz \
-		JX_source-1.5.2.tar.gz \
-		JToolBar_source-0.5.3.tar.gz
+		ftp://ftp.its.caltech.edu/pub/jafl/jx/source-1.5.3/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		JTree_source-1.1.7.tar.gz \
+		JX_source-1.5.3.tar.gz \
+		JToolBar_source-0.5.4.tar.gz
 
 MAINTAINER=	davec@unforgettable.com
 
-BROKEN=		'installs files during build'
+#BROKEN=		'installs files during build'
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
-WRKSRC=		${WRKDIR}/JX-1.5.2
+WRKSRC=		${WRKDIR}/JX-1.5.3
 
 USE_XLIB=	yes
 PLIST_SUB+=	"LIBACE=${LIBACE}" \
@@ -48,7 +48,7 @@ pre-fetch:
 		@ ${ECHO_MSG}
 MASTER_SITES+=	ftp://ftp.cco.caltech.edu/pub/glenn/Medic/source/ \
 		ftp://ftp.cco.caltech.edu/pub/glenn/Arrow/source/
-DISTFILES+=	Code_Medic_source-1.0.3.tar.gz \
+DISTFILES+=	Code_Medic_source-1.0.5.tar.gz \
 		JSearch_source-0.5.6.tar.gz
 .endif
 
