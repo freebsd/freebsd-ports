@@ -1,0 +1,11 @@
+--- spam/Makefile.in.orig	Sat Oct 25 21:11:02 2003
++++ spam/Makefile.in	Sat Oct 25 21:11:13 2003
+@@ -138,7 +138,7 @@
+ 	MarkupEventHandler.$(OBJEXT) spam_inst.$(OBJEXT)
+ ospam_OBJECTS = $(am_ospam_OBJECTS)
+ ospam_DEPENDENCIES = $(top_builddir)/lib/libosp.la
+-ospam_LDFLAGS =
++ospam_LDFLAGS = -lintl
+ 
+ DEFS = @DEFS@
+ DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)

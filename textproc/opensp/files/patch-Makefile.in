@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Fri Oct 31 10:13:26 2003
++++ Makefile.in	Fri Oct 31 10:13:32 2003
+@@ -107,7 +107,7 @@
+ 
+ AUTOMAKE_OPTIONS = check-news
+ 
+-SUBDIRS = pubtext unicode doc \
++SUBDIRS = pubtext unicode \
+ 	include generic \
+ 	lib nsgmls spent spam sgmlnorm sx spcat \
+ 	intl po

@@ -1,0 +1,11 @@
+--- spcat/Makefile.in.orig	Sat Oct 25 22:06:38 2003
++++ spcat/Makefile.in	Sat Oct 25 22:06:54 2003
+@@ -134,7 +134,7 @@
+ am_ospcat_OBJECTS = spcat.$(OBJEXT) spcat_inst.$(OBJEXT)
+ ospcat_OBJECTS = $(am_ospcat_OBJECTS)
+ ospcat_DEPENDENCIES = $(top_builddir)/lib/libosp.la
+-ospcat_LDFLAGS =
++ospcat_LDFLAGS = -lintl
+ 
+ DEFS = @DEFS@
+ DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)

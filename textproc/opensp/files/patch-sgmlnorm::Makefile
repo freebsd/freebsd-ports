@@ -1,0 +1,11 @@
+--- sgmlnorm/Makefile.in.orig	Sat Oct 25 21:24:54 2003
++++ sgmlnorm/Makefile.in	Sat Oct 25 21:25:06 2003
+@@ -136,7 +136,7 @@
+ am_osgmlnorm_OBJECTS = sgmlnorm.$(OBJEXT) SGMLGenerator.$(OBJEXT)
+ osgmlnorm_OBJECTS = $(am_osgmlnorm_OBJECTS)
+ osgmlnorm_DEPENDENCIES = $(top_builddir)/lib/libosp.la
+-osgmlnorm_LDFLAGS =
++osgmlnorm_LDFLAGS = -lintl
+ 
+ DEFS = @DEFS@
+ DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)

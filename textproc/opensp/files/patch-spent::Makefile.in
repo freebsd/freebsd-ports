@@ -1,0 +1,11 @@
+--- spent/Makefile.in.orig	Sat Oct 25 21:09:41 2003
++++ spent/Makefile.in	Sat Oct 25 21:09:57 2003
+@@ -134,7 +134,7 @@
+ am_ospent_OBJECTS = spent.$(OBJEXT)
+ ospent_OBJECTS = $(am_ospent_OBJECTS)
+ ospent_DEPENDENCIES = $(top_builddir)/lib/libosp.la
+-ospent_LDFLAGS =
++ospent_LDFLAGS = -lintl
+ 
+ DEFS = @DEFS@
+ DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
