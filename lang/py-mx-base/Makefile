@@ -8,7 +8,7 @@
 PORTNAME=	mx-base
 PORTVERSION=	2.0.1
 CATEGORIES=	lang python
-MASTER_SITES=	http://www.lemburg.com/python/ \
+MASTER_SITES=	http://www.lemburg.com/files/python/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	tg
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
