@@ -12,4 +12,5 @@ Shim between 1.6 and 1.8 includes:
 	fileutils	File & directory manipulation
 	optparse	Advanced command line option parser
 	pp		Pretty printer (prettier version of `p')
+	set		Set class
 	tsort		Topological sorter
