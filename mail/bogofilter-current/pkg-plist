@@ -6,13 +6,18 @@ etc/bogofilter.cf.example
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES-0.10
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES-0.11
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES-0.12
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES-0.13
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/METHODS
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.Robinson
+%%PORTDOCS%%%%DOCSDIR%%/bogofilter-tuning.HOWTO
 %%PORTDOCS%%%%DOCSDIR%%/README.cvs
+%%PORTDOCS%%%%DOCSDIR%%/RELEASE.NOTES-0.11
+%%PORTDOCS%%%%DOCSDIR%%/RELEASE.NOTES-0.12
+%%PORTDOCS%%%%DOCSDIR%%/RELEASE.NOTES-0.13
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADE
 %%PORTDOCS%%%%DOCSDIR%%/bogofilter-SA-2002-01
@@ -21,6 +26,7 @@ etc/bogofilter.cf.example
 %%PORTDOCS%%%%DOCSDIR%%/contrib/bogofilter-qfe
 %%PORTDOCS%%%%DOCSDIR%%/contrib/bogogrep
 %%PORTDOCS%%%%DOCSDIR%%/contrib/dot-qmail-bogofilter-default
+%%PORTDOCS%%%%DOCSDIR%%/contrib/mime.get.rfc822
 %%PORTDOCS%%%%DOCSDIR%%/contrib/printmaildir.pl
 %%PORTDOCS%%%%DOCSDIR%%/contrib/randomtrain
 %%PORTDOCS%%%%DOCSDIR%%/contrib/scramble
@@ -29,15 +35,25 @@ etc/bogofilter.cf.example
 %%PORTDOCS%%%%DOCSDIR%%/html/bogolexer.html
 %%PORTDOCS%%%%DOCSDIR%%/html/bogoupgrade.html
 %%PORTDOCS%%%%DOCSDIR%%/html/bogoutil.html
+%%PORTDOCS%%%%DOCSDIR%%/integrating-with-postfix
 %%PORTDOCS%%%%DOCSDIR%%/integrating-with-qmail
 %%PORTDOCS%%%%DOCSDIR%%/programmer/README.dcdflib
 %%PORTDOCS%%%%DOCSDIR%%/programmer/README.freebsd
 %%PORTDOCS%%%%DOCSDIR%%/programmer/README.hp-ux
+%%PORTDOCS%%%%DOCSDIR%%/tuning/README
+%%PORTDOCS%%%%DOCSDIR%%/tuning/bogolex.sh
+%%PORTDOCS%%%%DOCSDIR%%/tuning/distrib
+%%PORTDOCS%%%%DOCSDIR%%/tuning/mkdb
+%%PORTDOCS%%%%DOCSDIR%%/tuning/setR
+%%PORTDOCS%%%%DOCSDIR%%/tuning/sizes
+%%PORTDOCS%%%%DOCSDIR%%/tuning/smindev.R
+%%PORTDOCS%%%%DOCSDIR%%/tuning/smindev.sh
 %%PORTDOCS%%%%DOCSDIR%%/xml/bogofilter.xml
 %%PORTDOCS%%%%DOCSDIR%%/xml/bogolexer.xml
 %%PORTDOCS%%%%DOCSDIR%%/xml/bogoupgrade.xml
 %%PORTDOCS%%%%DOCSDIR%%/xml/bogoutil.xml
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/xml
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tuning
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/programmer
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib

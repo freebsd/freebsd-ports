@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bogofilter
-PORTVERSION=	0.11.2
+PORTVERSION=	0.13.0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,8 +19,8 @@ LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4
 USE_PERL5_RUN=	yes
 GNU_CONFIGURE=	yes
 PATCH_STRIP=	-p1
-CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include/db4" \
-		LDFLAGS="-L${PREFIX}/lib" LIBS="-ldb4"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/db4" \
+		LDFLAGS="-L${LOCALBASE}/lib" LIBS="-ldb4"
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAN1=		bogofilter.1 bogoutil.1 bogoupgrade.1 bogolexer.1
@@ -37,16 +37,25 @@ post-install::
 	@${MKDIR} ${DOCSDIR}/contrib
 	@${MKDIR} ${DOCSDIR}/html
 	@${MKDIR} ${DOCSDIR}/programmer
+	@${MKDIR} ${DOCSDIR}/tuning
 	@${MKDIR} ${DOCSDIR}/xml
-.for i in AUTHORS CHANGES-0.10 COPYING INSTALL NEWS README README.cvs \
-	TODO UPGRADE CHANGES-0.11 \
-	doc/integrating-with-qmail \
-	doc/README.Robinson doc/bogofilter-SA-2002-01 METHODS
+.for i in AUTHORS COPYING INSTALL NEWS README README.cvs \
+	TODO UPGRADE \
+	CHANGES-0.10 CHANGES-0.11 CHANGES-0.12 CHANGES-0.13 \
+	RELEASE.NOTES-0.11 RELEASE.NOTES-0.12 RELEASE.NOTES-0.13 \
+	doc/integrating-with-postfix doc/integrating-with-qmail \
+	doc/bogofilter-tuning.HOWTO doc/bogofilter-SA-2002-01 METHODS
 	  ${INSTALL_MAN} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.for i in README setR smindev.R
+	${INSTALL_MAN} ${WRKSRC}/tuning/${i} ${DOCSDIR}/tuning/
+.endfor
+.for i in bogolex.sh distrib mkdb sizes smindev.sh
+	${INSTALL_SCRIPT} ${WRKSRC}/tuning/${i} ${DOCSDIR}/tuning/
 .endfor
 .for i in contrib/bogo.R contrib/bogofilter-qfe \
 		contrib/randomtrain contrib/scramble \
-		contrib/printmaildir.pl
+		contrib/mime.get.rfc822 contrib/printmaildir.pl
 	  ${INSTALL_SCRIPT} ${WRKSRC}/${i} ${DOCSDIR}/contrib
 .endfor
 .for i in contrib/README.randomtrain contrib/dot-qmail-bogofilter-default
