@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.168 1998/12/13 19:29:23 sada Exp $
+# $Id: Makefile,v 1.169 1998/12/15 22:06:25 kuriyama Exp $
 #
 
     SUBDIR += Canna
@@ -25,6 +25,7 @@
     SUBDIR += elisa8x8
     SUBDIR += elvis
     SUBDIR += escpf
+    SUBDIR += eterm
     SUBDIR += ewipe
     SUBDIR += expect
     SUBDIR += gawk
