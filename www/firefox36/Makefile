@@ -100,6 +100,10 @@ EXTRA_SCRIPTS=		${PORTNAME}.rb
 IGNORE=	"core dumps on alpha during post-build"
 .endif
 
+.if ${OSVERSION} < 500000
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-config_make-jars.pl
+.endif
+
 pre-extract::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Extracting source (this takes a while) ..."
