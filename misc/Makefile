@@ -93,6 +93,7 @@
     SUBDIR += gkrellweather
     SUBDIR += gkx86info
     SUBDIR += gman
+    SUBDIR += gnome-icon-theme
     SUBDIR += gnomehier
     SUBDIR += gnomemimedata
     SUBDIR += gnomepm
