@@ -3,7 +3,7 @@
 # Date created:         7 December 1994
 # Whom:                 asami
 #
-# $Id:$
+# $Id: Makefile,v 1.1.1.1 1994/12/08 10:20:16 asami Exp $
 #
 
 DISTNAME=	xfed
@@ -12,7 +12,6 @@ SOURCEFILES=	Epistle,README,Imakefile,xfed.man \
 		icon.bit,next.bit,prev.bit,quit.bit,save.bit \
 		defs.h,main.c,output.c,parse.y,scan.l
 USE_IMAKE=	yes
-INSTALL_MANPAGES=	yes
 #MASTER_SITES=	ftp://me10.lbl.gov/pub/hp_X11R3_tape/source/app/
 SOURCESITE=	ftp://ftp.cs.orst.edu/pub/src/X11R4/contrib/clients/xfed/
 #EXTRACT_SUFX=	.tar.Z

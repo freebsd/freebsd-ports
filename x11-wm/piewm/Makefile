@@ -8,7 +8,6 @@
 
 DISTNAME=	piewm
 USE_IMAKE=	yes
-INSTALL_MANPAGES=	yes
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 EXTRACT_SUFX=	.tar.Z
 PKG_CMD=	pkg_create -N
