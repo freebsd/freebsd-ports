@@ -5,19 +5,18 @@
 # $FreeBSD$
 #
 
-PORTNAME=	p5-Authen-SASL
+PORTNAME=	Authen-SASL
 PORTVERSION=	2.04
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Authen
-DISTNAME=	Authen-SASL-${PORTVERSION}
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 module for SASL authentication
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-MAN3=		Authen::SASL.3
+MAN3=		Authen::SASL.3 Authen::SASL::Perl::DIGEST_MD5.3
 
 .include <bsd.port.mk>

@@ -1,16 +1,17 @@
-%%SITE_PERL%%/Authen/SASL/Perl/CRAM_MD5.pm
-%%SITE_PERL%%/Authen/SASL/Perl/LOGIN.pm
-%%SITE_PERL%%/Authen/SASL/Perl/ANONYMOUS.pm
-%%SITE_PERL%%/Authen/SASL/Perl/EXTERNAL.pm
-%%SITE_PERL%%/Authen/SASL/Perl/PLAIN.pm
-%%SITE_PERL%%/Authen/SASL/EXTERNAL.pm
-%%SITE_PERL%%/Authen/SASL/Perl.pm
-%%SITE_PERL%%/Authen/SASL/CRAM_MD5.pm
 %%SITE_PERL%%/Authen/SASL.pm
 %%SITE_PERL%%/Authen/SASL.pod
+%%SITE_PERL%%/Authen/SASL/CRAM_MD5.pm
+%%SITE_PERL%%/Authen/SASL/EXTERNAL.pm
+%%SITE_PERL%%/Authen/SASL/Perl.pm
+%%SITE_PERL%%/Authen/SASL/Perl/ANONYMOUS.pm
+%%SITE_PERL%%/Authen/SASL/Perl/CRAM_MD5.pm
+%%SITE_PERL%%/Authen/SASL/Perl/DIGEST_MD5.pm
+%%SITE_PERL%%/Authen/SASL/Perl/EXTERNAL.pm
+%%SITE_PERL%%/Authen/SASL/Perl/LOGIN.pm
+%%SITE_PERL%%/Authen/SASL/Perl/PLAIN.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/SASL/.packlist
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/SASL 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/SASL
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Authen/SASL/Perl 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Authen/SASL 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Authen/SASL/Perl
+@dirrm %%SITE_PERL%%/Authen/SASL
 @unexec rmdir %D/%%SITE_PERL%%/Authen 2>/dev/null || true
