@@ -53,11 +53,11 @@ post-patch:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/examples/suck
-	${INSTALL_SCRIPT} ${WRKSRC}/sample/get.news.inn ${PREFIX}/share/examples/suck
-	${INSTALL_SCRIPT} ${WRKSRC}/sample/get.news.generic ${PREFIX}/share/examples/suck
-	${INSTALL_SCRIPT} ${WRKSRC}/sample/put.news ${PREFIX}/share/examples/suck
-	${INSTALL_DATA} ${WRKSRC}/sample/*.sample ${PREFIX}/share/examples/suck
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/sample/get.news.inn ${EXAMPLESDIR}/
+	${INSTALL_SCRIPT} ${WRKSRC}/sample/get.news.generic ${EXAMPLESDIR}/
+	${INSTALL_SCRIPT} ${WRKSRC}/sample/put.news ${EXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/sample/*.sample ${EXAMPLESDIR}/
 .endif
 
 .include <bsd.port.post.mk>

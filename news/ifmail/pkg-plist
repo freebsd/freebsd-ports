@@ -1,3 +1,7 @@
+@exec if ! pw usershow ifmail 2>/dev/null; then pw useradd ifmail -g uucp -u 70 -h - -d /nonexistent -s /nonexistent -c "Ifmail Server"; fi
+@unexec if pw usershow ifmail | grep -q 70:70; then pw userdel ifmail; fi
+@owner ifmail
+@group uucp
 libexec/ifmail/ifcico
 libexec/ifmail/ifindex
 libexec/ifmail/ifmail
@@ -8,6 +12,8 @@ libexec/ifmail/ifstat
 libexec/ifmail/iftoss
 libexec/ifmail/ifunpack
 libexec/ifmail/nlpatch
+@owner
+@group
 @dirrm libexec/ifmail
 %%PORTDOCS%%share/doc/ifmail/README
 %%PORTDOCS%%share/doc/ifmail/README.ifcico

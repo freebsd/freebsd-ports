@@ -120,8 +120,8 @@ post-install:
 .endfor
 .endif
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/openssl
-	@${INSTALL_DATA} ${WRKSRC}/doc/openssl.txt ${PREFIX}/share/doc/openssl
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/openssl.txt ${DOCSDIR}/
 .endif
 	@${SED} -e 's#/usr/local#${PREFIX}#g' ${PKGMESSAGE}
 

@@ -24,9 +24,7 @@ CONFIGURE_ARGS+=	--enable-compile-warnings=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CFLAGS+=	-g
-PLIST_SUB=	DOCDIR=${DOCDIR}
-
-DOCDIR=		share/doc/${PORTNAME}
+PLIST_SUB=	DOCDIR=share/doc/${PORTNAME}
 
 pre-patch:
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
@@ -35,10 +33,10 @@ pre-patch:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/${DOCDIR}
+	${MKDIR} ${DOCSDIR}
 .for file in AUTHORS COPYING ChangeLog HACKING INSTALL NEWS \
 		README README.BINARY TODO
-	${INSTALL_MAN} ${WRKSRC}/${file} ${PREFIX}/${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}/
 .endfor
 .endif
 

@@ -148,21 +148,16 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/*/${i} ${MANPREFIX}/man/man1
 .endfor
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/sendmail ${PREFIX}/share/doc/sendmail
-	@cd ${WRKSRC}; ${TAR} cf - cf |\
-		(cd ${PREFIX}/share/sendmail; ${TAR} xf -)
-	@cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/sendmail/
-	${INSTALL_DATA} ${WRKSRC}/devtools/README \
-		${PREFIX}/share/doc/sendmail/DEVTOOLS
-	${INSTALL_DATA} ${WRKSRC}/sendmail/README \
-		${PREFIX}/share/doc/sendmail/SENDMAIL
-	${INSTALL_DATA} ${WRKSRC}/mail.local/README \
-		${PREFIX}/share/doc/sendmail/MAIL.LOCAL
-	${INSTALL_DATA} ${WRKSRC}/smrsh/README \
-		${PREFIX}/share/doc/sendmail/SMRSH
+	${MKDIR} ${PREFIX}/share/sendmail ${DOCSDIR}
+	@${TAR} -C ${WRKSRC} -cf - cf | \
+		${TAR} -C ${PREFIX}/share/sendmail -xf -
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/devtools/README ${DOCSDIR}/DEVTOOLS
+	${INSTALL_DATA} ${WRKSRC}/sendmail/README ${DOCSDIR}/SENDMAIL
+	${INSTALL_DATA} ${WRKSRC}/mail.local/README ${DOCSDIR}/MAIL.LOCAL
+	${INSTALL_DATA} ${WRKSRC}/smrsh/README ${DOCSDIR}/SMRSH
 .if defined(SENDMAIL_WITH_MILTER)
-	${INSTALL_DATA} ${WRKSRC}/libmilter/README \
-		${PREFIX}/share/doc/sendmail/MILTER
+	${INSTALL_DATA} ${WRKSRC}/libmilter/README ${DOCSDIR}/MILTER
 .endif
 .endif
 .if exists(${DESTDIR}/etc/mail/mailer.conf)

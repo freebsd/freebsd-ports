@@ -19,9 +19,9 @@ DOCS=		agenda-flashing-overview.txt troubleshooting.txt \
 do-install:
 	${INSTALL_PROGRAM} -m 755 ${WRKSRC}/vrflash ${PREFIX}/bin/
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
+	${MKDIR} ${DOCSDIR}
 .for i in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${PREFIX}/share/doc/${PORTNAME}/
+	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}/
 .endfor
 .endif
 

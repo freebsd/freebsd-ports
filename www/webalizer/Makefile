@@ -20,6 +20,8 @@ LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+DOCSDIR?=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+EXAMPLESDIR?=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 
 .if defined(BATCH)
 # no cosmetique spaces allowed
@@ -73,15 +75,13 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/webalizer.1 ${PREFIX}/man/man1/${i}
 .endfor
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/${PKGNAMEPREFIX}webalizer
+	${MKDIR} ${DOCSDIR}
 .for i in ${DOC1}
-	@${INSTALL_DATA} ${WRKSRC}/${i} \
-		${PREFIX}/share/doc/${PKGNAMEPREFIX}webalizer/${i}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/${i}
 .endfor
-	${MKDIR} ${PREFIX}/share/examples/${PKGNAMEPREFIX}webalizer
+	${MKDIR} ${EXAMPLESDIR}
 .for i in msfree.png sample.conf webalizer.png
-	@${INSTALL_DATA} ${WRKSRC}/${i} \
-		${PREFIX}/share/examples/${PKGNAMEPREFIX}webalizer/${i}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${EXAMPLESDIR}/${i}
 .endfor
 .endif
 
