@@ -1,200 +1,1696 @@
-bin/%%BROWSER%%-%%BROWSER_VER%%
-@exec ln -sf %f %B/%%BROWSER%%-4
-@exec ln -sf %%BROWSER%%-4 %B/netscape
-@unexec rm -f %B/netscape
-@unexec rm -f %B/%%BROWSER%%-4
-%%NSUBDIR%%/java/classes/ifc11.jar
-%%NSUBDIR%%/java/classes/iiop10.jar
-%%NSUBDIR%%/java/classes/jae40.jar
-%%NSUBDIR%%/java/classes/java40.jar
-%%NSUBDIR%%/java/classes/joptio40.jar
-%%NSUBDIR%%/java/classes/jio40.jar
-%%NSUBDIR%%/java/classes/jsd10.jar
-%%NSUBDIR%%/java/classes/ldap40.jar
-%%NSUBDIR%%/java/classes/resource.jar
-%%NSUBDIR%%/java/classes/scd10.jar
-%%NSUBDIR%%/java/classes/awt.properties
-%%NSUBDIR%%/java/classes/font.properties
-%%NSUBDIR%%/java/classes/font.properties.cs
-%%NSUBDIR%%/java/classes/font.properties.el
-%%NSUBDIR%%/java/classes/font.properties.hu
-%%NSUBDIR%%/java/classes/font.properties.ja
-%%NSUBDIR%%/java/classes/font.properties.ko
-%%NSUBDIR%%/java/classes/font.properties.lt
-%%NSUBDIR%%/java/classes/font.properties.lv
-%%NSUBDIR%%/java/classes/font.properties.pl
-%%NSUBDIR%%/java/classes/font.properties.ru
-%%NSUBDIR%%/java/classes/font.properties.tr
-%%NSUBDIR%%/java/classes/font.properties.zh
-%%NSUBDIR%%/java/classes/font.properties.zh_GB2312
-%%NSUBDIR%%/java/classes/font.properties.zh_TW
-%%NSUBDIR%%/java/classes/font.properties.zh_TW_Big5
-%%NSUBDIR%%/java/classes/font.properties.zh_TW_CNS11643
-%%NSUBDIR%%/java/classes/aix/font.properties
-%%NSUBDIR%%/java/classes/aix/font.properties.cs
-%%NSUBDIR%%/java/classes/aix/font.properties.hu
-%%NSUBDIR%%/java/classes/aix/font.properties.ja
-%%NSUBDIR%%/java/classes/aix/font.properties.ko
-%%NSUBDIR%%/java/classes/aix/font.properties.pl
-%%NSUBDIR%%/java/classes/aix/font.properties.ru
-%%NSUBDIR%%/java/classes/aix/font.properties.zh
-%%NSUBDIR%%/java/classes/aix/font.properties.zh_TW
-%%NSUBDIR%%/java/classes/hpux/font.properties
-%%NSUBDIR%%/java/classes/hpux/font.properties.bg
-%%NSUBDIR%%/java/classes/hpux/font.properties.cs
-%%NSUBDIR%%/java/classes/hpux/font.properties.el
-%%NSUBDIR%%/java/classes/hpux/font.properties.hr
-%%NSUBDIR%%/java/classes/hpux/font.properties.hu
-%%NSUBDIR%%/java/classes/hpux/font.properties.ja
-%%NSUBDIR%%/java/classes/hpux/font.properties.ko
-%%NSUBDIR%%/java/classes/hpux/font.properties.pl
-%%NSUBDIR%%/java/classes/hpux/font.properties.ro
-%%NSUBDIR%%/java/classes/hpux/font.properties.ru
-%%NSUBDIR%%/java/classes/hpux/font.properties.sk
-%%NSUBDIR%%/java/classes/hpux/font.properties.sl
-%%NSUBDIR%%/java/classes/hpux/font.properties.tr
-%%NSUBDIR%%/java/classes/hpux/font.properties.zh_GB2312
-%%NSUBDIR%%/java/classes/hpux/font.properties.zh_TW_Big5
-%%NSUBDIR%%/java/classes/hpux/font.properties.zh_TW_CNS11643
-%%NSUBDIR%%/java/classes/irix/font.properties
-%%NSUBDIR%%/java/classes/irix/font.properties.cs
-%%NSUBDIR%%/java/classes/irix/font.properties.el
-%%NSUBDIR%%/java/classes/irix/font.properties.hu
-%%NSUBDIR%%/java/classes/irix/font.properties.ja
-%%NSUBDIR%%/java/classes/irix/font.properties.ko
-%%NSUBDIR%%/java/classes/irix/font.properties.zh_GB2312
-%%NSUBDIR%%/java/classes/irix/font.properties.zh_TW_Big5
-%%NSUBDIR%%/java/classes/irix/font.properties.zh_TW_CNS11643
-%%NSUBDIR%%/nethelp/CntData.js
-%%NSUBDIR%%/nethelp/IdxData.js
-%%NSUBDIR%%/nethelp/Back_dep.gif
-%%NSUBDIR%%/nethelp/Back_dis.gif
-%%NSUBDIR%%/nethelp/Back_sel.gif
-%%NSUBDIR%%/nethelp/Back_up.gif
-%%NSUBDIR%%/nethelp/Exit_dep.gif
-%%NSUBDIR%%/nethelp/Exit_sel.gif
-%%NSUBDIR%%/nethelp/Exit_up.gif
-%%NSUBDIR%%/nethelp/Forw_dep.gif
-%%NSUBDIR%%/nethelp/Forw_dis.gif
-%%NSUBDIR%%/nethelp/Forw_sel.gif
-%%NSUBDIR%%/nethelp/Forw_up.gif
-%%NSUBDIR%%/nethelp/Prnt_dep.gif
-%%NSUBDIR%%/nethelp/Prnt_sel.gif
-%%NSUBDIR%%/nethelp/Prnt_up.gif
-%%NSUBDIR%%/nethelp/Tool_dep.gif
-%%NSUBDIR%%/nethelp/Tool_sel.gif
-%%NSUBDIR%%/nethelp/Tool_up.gif
-%%NSUBDIR%%/nethelp/Wait.gif
-%%NSUBDIR%%/nethelp/netwatch.gif
-%%NSUBDIR%%/nethelp/Blank.htm
-%%NSUBDIR%%/nethelp/CntTool.htm
-%%NSUBDIR%%/nethelp/IdxFill.htm
-%%NSUBDIR%%/nethelp/IdxKey.htm
-%%NSUBDIR%%/nethelp/IdxTool.htm
-%%NSUBDIR%%/nethelp/IdxTopic.htm
-%%NSUBDIR%%/nethelp/NavUI.htm
-%%NSUBDIR%%/nethelp/NoJSerr.htm
-%%NSUBDIR%%/nethelp/Status.htm
-%%NSUBDIR%%/nethelp/System.htm
-%%NSUBDIR%%/nethelp/ToolUI.htm
-%%NSUBDIR%%/nethelp/System.js
-%%NSUBDIR%%/nethelp/picsfail.htm
-%%NSUBDIR%%/nethelp/picsfail.jar
-%%NSUBDIR%%/nethelp/Button.js
-%%NSUBDIR%%/nethelp/CntTool.js
-%%NSUBDIR%%/nethelp/Header.js
-%%NSUBDIR%%/nethelp/Local-1.js
-%%NSUBDIR%%/nethelp/Stack.js
-%%NSUBDIR%%/nethelp/Topic.js
-%%NSUBDIR%%/nethelp/Utility.js
-%%NSUBDIR%%/nethelp/netscape/composer/composer.gif
-%%NSUBDIR%%/nethelp/netscape/composer/comtlbr2.gif
-%%NSUBDIR%%/nethelp/netscape/composer/fmtlbr3.gif
-%%NSUBDIR%%/nethelp/netscape/composer/tagicon2.gif
-%%NSUBDIR%%/nethelp/netscape/composer/comp.htm
-%%NSUBDIR%%/nethelp/netscape/composer/compHdr.htm
-%%NSUBDIR%%/nethelp/netscape/composer/help.hpf
-%%NSUBDIR%%/nethelp/netscape/home/home.gif
-%%NSUBDIR%%/nethelp/netscape/home/home.htm
-%%NSUBDIR%%/nethelp/netscape/home/homeHdr.htm
-%%NSUBDIR%%/nethelp/netscape/home/help.hpf
-%%NSUBDIR%%/nethelp/netscape/messengr/abook.gif
-%%NSUBDIR%%/nethelp/netscape/messengr/compbar.gif
-%%NSUBDIR%%/nethelp/netscape/messengr/mailbox.gif
-%%NSUBDIR%%/nethelp/netscape/messengr/mailbox2.gif
-%%NSUBDIR%%/nethelp/netscape/messengr/messengr.gif
-%%NSUBDIR%%/nethelp/netscape/messengr/mpctrl.gif
-%%NSUBDIR%%/nethelp/netscape/messengr/newsgrp.gif
-%%NSUBDIR%%/nethelp/netscape/messengr/tabs.gif
-%%NSUBDIR%%/nethelp/netscape/messengr/mess.htm
-%%NSUBDIR%%/nethelp/netscape/messengr/messHdr.htm
-%%NSUBDIR%%/nethelp/netscape/messengr/help.hpf
-%%NSUBDIR%%/nethelp/netscape/navigatr/navigatr.gif
-%%NSUBDIR%%/nethelp/netscape/navigatr/nav.htm
-%%NSUBDIR%%/nethelp/netscape/navigatr/navHdr.htm
-%%NSUBDIR%%/nethelp/netscape/navigatr/help.hpf
-%%NSUBDIR%%/nethelp/netscape/news/abook.gif
-%%NSUBDIR%%/nethelp/netscape/news/collabra.gif
-%%NSUBDIR%%/nethelp/netscape/news/compbar.gif
-%%NSUBDIR%%/nethelp/netscape/news/discgrps.gif
-%%NSUBDIR%%/nethelp/netscape/news/mailbox2.gif
-%%NSUBDIR%%/nethelp/netscape/news/newsgrp.gif
-%%NSUBDIR%%/nethelp/netscape/news/news.htm
-%%NSUBDIR%%/nethelp/netscape/news/help.hpf
-%%NSUBDIR%%/nethelp/netscape/shared/admnIcon.gif
-%%NSUBDIR%%/nethelp/netscape/shared/calIcon.gif
-%%NSUBDIR%%/nethelp/netscape/shared/collIcon.gif
-%%NSUBDIR%%/nethelp/netscape/shared/commIcon.gif
-%%NSUBDIR%%/nethelp/netscape/shared/compIcon.gif
-%%NSUBDIR%%/nethelp/netscape/shared/confIcon.gif
-%%NSUBDIR%%/nethelp/netscape/shared/ibmIcon.gif
-%%NSUBDIR%%/nethelp/netscape/shared/messIcon.gif
-%%NSUBDIR%%/nethelp/netscape/shared/navIcon.gif
-%%NSUBDIR%%/nethelp/netscape/shared/netIcon.gif
-%%NSUBDIR%%/nethelp/netscape/shared/NetHelpm.css
-%%NSUBDIR%%/nethelp/netscape/shared/NetHelpu.css
-%%NSUBDIR%%/nethelp/netscape/shared/NetHelpw.css
-%%NSUBDIR%%/nethelp/netscape/trouble/trouble.htm
-%%NSUBDIR%%/nethelp/netscape/trouble/help.hpf
-%%NSUBDIR%%/nethelp/netscape/collabra/collabra.gif
-%%NSUBDIR%%/nethelp/netscape/collabra/discgrps.gif
-%%NSUBDIR%%/nethelp/netscape/collabra/mailbox2.gif
-%%NSUBDIR%%/nethelp/netscape/collabra/coll.htm
-%%NSUBDIR%%/nethelp/netscape/collabra/collHdr.htm
-%%NSUBDIR%%/nethelp/netscape/collabra/help.hpf
-%%NSUBDIR%%/nethelp/NSHIfrm.htm
-%%NSUBDIR%%/vreg
-%%NSUBDIR%%/README
-%%NSUBDIR%%/LICENSE
-%%NSUBDIR%%/Netscape.ad
-%%NSUBDIR%%/XKeysymDB
-%%NSUBDIR%%/movemail
-%%NSUBDIR%%/netscape-dynMotif
-%%NSUBDIR%%/plugins/libnullplugin.so
-%%NSUBDIR%%/plugins/cpPack1.jar
-%%NSUBDIR%%/libnullplugin-dynMotif.so
-%%NSUBDIR%%/libjsd.so
-%%NSUBDIR%%/bookmark.htm
-%%NSUBDIR%%/spell/netscape.dic
-%%NSUBDIR%%/spell/pen4s324.dat
-%%NSUBDIR%%/registry
-%%NSUBDIR%%/%%BROWSER%%-%%BROWSER_VER%%.bin
-%%NSUBDIR%%/mailcap
-@dirrm %%NSUBDIR%%/java/classes/aix
-@dirrm %%NSUBDIR%%/java/classes/hpux
-@dirrm %%NSUBDIR%%/java/classes/irix
-@dirrm %%NSUBDIR%%/java/classes
-@dirrm %%NSUBDIR%%/java
-@dirrm %%NSUBDIR%%/nethelp/netscape/composer
-@dirrm %%NSUBDIR%%/nethelp/netscape/home
-@dirrm %%NSUBDIR%%/nethelp/netscape/messengr
-@dirrm %%NSUBDIR%%/nethelp/netscape/navigatr
-@dirrm %%NSUBDIR%%/nethelp/netscape/news
-@dirrm %%NSUBDIR%%/nethelp/netscape/shared
-@dirrm %%NSUBDIR%%/nethelp/netscape/trouble
-@dirrm %%NSUBDIR%%/nethelp/netscape/collabra
-@dirrm %%NSUBDIR%%/nethelp/netscape
-@dirrm %%NSUBDIR%%/nethelp
-@dirrm %%NSUBDIR%%/plugins
-@dirrm %%NSUBDIR%%/spell
-@dirrm %%NSUBDIR%%
+bin/%%STARTUP_CMD%%
+lib/linux-netscape6/Cool/libCoolBos.so
+lib/linux-netscape6/Cool/libCoolBos.so.1
+lib/linux-netscape6/Cool/libCoolBucky.so
+lib/linux-netscape6/Cool/libCoolBucky.so.1
+lib/linux-netscape6/Cool/libCoolSocket.so
+lib/linux-netscape6/Cool/libCoolSocket.so.1
+lib/linux-netscape6/Cool/libCoolSos.so
+lib/linux-netscape6/Cool/libCoolSos.so.1
+lib/linux-netscape6/Cool/libCoolUtils.so
+lib/linux-netscape6/Cool/libCoolUtils.so.1
+lib/linux-netscape6/bloaturls.txt
+lib/linux-netscape6/chrome/addressbook/content/default/AimABTab.js
+lib/linux-netscape6/chrome/addressbook/content/default/AimABTab.xul
+lib/linux-netscape6/chrome/addressbook/content/default/AimABTabOfflineOverlay.xul
+lib/linux-netscape6/chrome/addressbook/content/default/AimABTabOnlineOverlay.xul
+lib/linux-netscape6/chrome/addressbook/content/default/abAddressBookNameDialog.js
+lib/linux-netscape6/chrome/addressbook/content/default/abAddressBookNameDialog.xul
+lib/linux-netscape6/chrome/addressbook/content/default/abCardOverlay.js
+lib/linux-netscape6/chrome/addressbook/content/default/abCardOverlay.xul
+lib/linux-netscape6/chrome/addressbook/content/default/abCardViewOverlay.js
+lib/linux-netscape6/chrome/addressbook/content/default/abCardViewOverlay.xul
+lib/linux-netscape6/chrome/addressbook/content/default/abCommon.js
+lib/linux-netscape6/chrome/addressbook/content/default/abDirTreeOverlay.xul
+lib/linux-netscape6/chrome/addressbook/content/default/abEditCardDialog.xul
+lib/linux-netscape6/chrome/addressbook/content/default/abNewCardDialog.xul
+lib/linux-netscape6/chrome/addressbook/content/default/abResultsTreeOverlay.xul
+lib/linux-netscape6/chrome/addressbook/content/default/abSelectAddressesDialog.js
+lib/linux-netscape6/chrome/addressbook/content/default/abSelectAddressesDialog.xul
+lib/linux-netscape6/chrome/addressbook/content/default/addressbook.js
+lib/linux-netscape6/chrome/addressbook/content/default/addressbook.xul
+lib/linux-netscape6/chrome/addressbook/content/default/pref-addressing.xul
+lib/linux-netscape6/chrome/addressbook/content/overlays.rdf
+lib/linux-netscape6/chrome/addressbook/locale/en-US/AimABTab.dtd
+lib/linux-netscape6/chrome/addressbook/locale/en-US/abAddressBookNameDialog.dtd
+lib/linux-netscape6/chrome/addressbook/locale/en-US/abCardOverlay.dtd
+lib/linux-netscape6/chrome/addressbook/locale/en-US/abCardViewOverlay.dtd
+lib/linux-netscape6/chrome/addressbook/locale/en-US/abDirTreeOverlay.dtd
+lib/linux-netscape6/chrome/addressbook/locale/en-US/abMainWindow.dtd
+lib/linux-netscape6/chrome/addressbook/locale/en-US/abNewCardDialog.dtd
+lib/linux-netscape6/chrome/addressbook/locale/en-US/abResultsTreeOverlay.dtd
+lib/linux-netscape6/chrome/addressbook/locale/en-US/abSelectAddressesDialog.dtd
+lib/linux-netscape6/chrome/addressbook/locale/en-US/pref-addressing.dtd
+lib/linux-netscape6/chrome/addressbook/skin/default/AimABTab.css
+lib/linux-netscape6/chrome/addressbook/skin/default/abnewmsg.gif
+lib/linux-netscape6/chrome/addressbook/skin/default/addressbook.css
+lib/linux-netscape6/chrome/addressbook/skin/default/edit.gif
+lib/linux-netscape6/chrome/addressbook/skin/default/list.gif
+lib/linux-netscape6/chrome/addressbook/skin/default/myaddrbk.gif
+lib/linux-netscape6/chrome/addressbook/skin/default/newcard.gif
+lib/linux-netscape6/chrome/addressbook/skin/default/newlist.gif
+lib/linux-netscape6/chrome/addressbook/skin/default/newmsgab.gif
+lib/linux-netscape6/chrome/addressbook/skin/default/person.gif
+lib/linux-netscape6/chrome/addressbook/skin/default/property.gif
+lib/linux-netscape6/chrome/aim/content/default/Aim.js
+lib/linux-netscape6/chrome/aim/content/default/AimAddBuddy.js
+lib/linux-netscape6/chrome/aim/content/default/AimAutoComplete.js
+lib/linux-netscape6/chrome/aim/content/default/AimBuddy.js
+lib/linux-netscape6/chrome/aim/content/default/AimIM.js
+lib/linux-netscape6/chrome/aim/content/default/AimSession.js
+lib/linux-netscape6/chrome/aim/content/default/App.js
+lib/linux-netscape6/chrome/aim/content/default/App.xul
+lib/linux-netscape6/chrome/aim/content/default/AppPanel.xul
+lib/linux-netscape6/chrome/aim/content/default/AppSidebar.rdf
+lib/linux-netscape6/chrome/aim/content/default/AppSidebar.xul
+lib/linux-netscape6/chrome/aim/content/default/BuddyAddBuddy.js
+lib/linux-netscape6/chrome/aim/content/default/BuddyAddBuddy.xul
+lib/linux-netscape6/chrome/aim/content/default/BuddyAddBuddyOverlay.xul
+lib/linux-netscape6/chrome/aim/content/default/BuddyAddGroup.xul
+lib/linux-netscape6/chrome/aim/content/default/IM.js
+lib/linux-netscape6/chrome/aim/content/default/IM.xul
+lib/linux-netscape6/chrome/aim/content/default/IMAddBuddy.js
+lib/linux-netscape6/chrome/aim/content/default/IMAddBuddy.xul
+lib/linux-netscape6/chrome/aim/content/default/IMSidebar.rdf
+lib/linux-netscape6/chrome/aim/content/default/IMSidebar.xul
+lib/linux-netscape6/chrome/aim/content/default/RegTest.xul
+lib/linux-netscape6/chrome/aim/content/default/SPBuddyOrgOverlay.xul
+lib/linux-netscape6/chrome/aim/content/default/SPConnectingOrgOverlay.xul
+lib/linux-netscape6/chrome/aim/content/default/SPRegisterOrgOverlay.xul
+lib/linux-netscape6/chrome/aim/content/default/SPSetupOrgOverlay.xul
+lib/linux-netscape6/chrome/aim/content/default/SPSignOnOrgOverlay.xul
+lib/linux-netscape6/chrome/aim/content/default/SendIMasEmail.js
+lib/linux-netscape6/chrome/aim/content/default/SendIMasEmail.xul
+lib/linux-netscape6/chrome/aim/content/default/SidebarPanel.js
+lib/linux-netscape6/chrome/aim/content/default/SidebarPanel.xul
+lib/linux-netscape6/chrome/aim/content/default/TabSetup.js
+lib/linux-netscape6/chrome/aim/content/default/blank.html
+lib/linux-netscape6/chrome/aim/content/default/contextMenu.js
+lib/linux-netscape6/chrome/aim/content/default/contextMenu.xul
+lib/linux-netscape6/chrome/aim/content/default/findAFriend1_0.js
+lib/linux-netscape6/chrome/aim/content/default/findAFriend1_0.xul
+lib/linux-netscape6/chrome/aim/content/default/findAFriend1_02.xul
+lib/linux-netscape6/chrome/aim/content/default/findAFriend1_1.js
+lib/linux-netscape6/chrome/aim/content/default/findAFriend1_1.xul
+lib/linux-netscape6/chrome/aim/content/default/findAFriend1_1_0.js
+lib/linux-netscape6/chrome/aim/content/default/findAFriend1_1_0.xul
+lib/linux-netscape6/chrome/aim/content/default/findAFriend1_1_1.js
+lib/linux-netscape6/chrome/aim/content/default/findAFriend1_1_1.xul
+lib/linux-netscape6/chrome/aim/content/default/findAFriend1_1_3.js
+lib/linux-netscape6/chrome/aim/content/default/findAFriend1_1_3.xul
+lib/linux-netscape6/chrome/aim/content/default/findAFriend1_2.js
+lib/linux-netscape6/chrome/aim/content/default/findAFriend1_2.xul
+lib/linux-netscape6/chrome/aim/content/default/findAFriend1_3.xul
+lib/linux-netscape6/chrome/aim/content/default/findAFriend2_1.js
+lib/linux-netscape6/chrome/aim/content/default/findAFriend2_1.xul
+lib/linux-netscape6/chrome/aim/content/default/findAFriend2_2.js
+lib/linux-netscape6/chrome/aim/content/default/findAFriend2_2.xul
+lib/linux-netscape6/chrome/aim/content/default/findAFriend2_2_1.js
+lib/linux-netscape6/chrome/aim/content/default/findAFriend2_2_1.xul
+lib/linux-netscape6/chrome/aim/content/default/findAFriend2_2_2.js
+lib/linux-netscape6/chrome/aim/content/default/findAFriend2_2_2.xul
+lib/linux-netscape6/chrome/aim/content/default/findAFriend2_2_3.js
+lib/linux-netscape6/chrome/aim/content/default/findAFriend2_2_3.xul
+lib/linux-netscape6/chrome/aim/content/default/findAFriend3_1.js
+lib/linux-netscape6/chrome/aim/content/default/findAFriend3_1.xul
+lib/linux-netscape6/chrome/aim/content/default/findAFriend3_1_0.js
+lib/linux-netscape6/chrome/aim/content/default/findAFriend3_1_0.xul
+lib/linux-netscape6/chrome/aim/content/default/findAFriend3_1_1.js
+lib/linux-netscape6/chrome/aim/content/default/findAFriend3_1_1.xul
+lib/linux-netscape6/chrome/aim/content/default/findAFriend3_1_2.js
+lib/linux-netscape6/chrome/aim/content/default/findAFriend3_1_2.xul
+lib/linux-netscape6/chrome/aim/content/default/findAFriendWizard.js
+lib/linux-netscape6/chrome/aim/content/default/findAFriendWizard.xul
+lib/linux-netscape6/chrome/aim/content/default/migWiz0_0_0.js
+lib/linux-netscape6/chrome/aim/content/default/migWiz0_0_0.xul
+lib/linux-netscape6/chrome/aim/content/default/migWiz0_0_1.js
+lib/linux-netscape6/chrome/aim/content/default/migWiz0_0_1.xul
+lib/linux-netscape6/chrome/aim/content/default/migWiz1_0_0.js
+lib/linux-netscape6/chrome/aim/content/default/migWiz1_0_0.xul
+lib/linux-netscape6/chrome/aim/content/default/migWiz1_1_0.js
+lib/linux-netscape6/chrome/aim/content/default/migWiz1_1_0.xul
+lib/linux-netscape6/chrome/aim/content/default/migWiz2_0_0.js
+lib/linux-netscape6/chrome/aim/content/default/migWiz2_0_0.xul
+lib/linux-netscape6/chrome/aim/content/default/migWiz2_1_0.js
+lib/linux-netscape6/chrome/aim/content/default/migWiz2_1_0.xul
+lib/linux-netscape6/chrome/aim/content/default/migWiz2_1_1.js
+lib/linux-netscape6/chrome/aim/content/default/migWiz2_1_1.xul
+lib/linux-netscape6/chrome/aim/content/default/migWiz3_0_0.js
+lib/linux-netscape6/chrome/aim/content/default/migWiz3_0_0.xul
+lib/linux-netscape6/chrome/aim/content/default/migrationWizard.js
+lib/linux-netscape6/chrome/aim/content/default/migrationWizard.xul
+lib/linux-netscape6/chrome/aim/content/default/tstdisplay.js
+lib/linux-netscape6/chrome/aim/content/default/tstsignoff.js
+lib/linux-netscape6/chrome/aim/content/default/tstsignon.js
+lib/linux-netscape6/chrome/aim/content/default/tstsnd.js
+lib/linux-netscape6/chrome/aim/locale/en-US/App.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/AppSidebar-rdf.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/AppSidebar.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/BuddyAddBuddy.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/BuddyAddBuddyOverlay.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/BuddyAddGroup.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/IM.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/IMAddBuddy.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/IMSidebar-rdf.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/IMSidebar.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/SPBuddyOrgOverlay.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/SPConnectingOrgOverlay.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/SPRegisterOrgOverlay.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/SPSignOnOrgOverlay.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/SendIMasEmail.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/SidebarPanel.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/aim.properties
+lib/linux-netscape6/chrome/aim/locale/en-US/chatRoom.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/chatUpperRightFrame.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/contextMenu.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/findAFriend1_0.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/findAFriend1_1.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/findAFriend1_1_0.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/findAFriend1_1_1.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/findAFriend1_1_3.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/findAFriend1_2.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/findAFriend1_3.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/findAFriend2_1.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/findAFriend2_2.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/findAFriend2_2_1.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/findAFriend2_2_2.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/findAFriend2_2_3.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/findAFriend3_1.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/findAFriend3_1_0.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/findAFriend3_1_1.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/findAFriend3_1_2.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/findAFriendWizard.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/migWiz0_0_0.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/migWiz0_0_1.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/migWiz1_0_0.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/migWiz1_1_0.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/migWiz2_0_0.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/migWiz2_1_0.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/migWiz2_1_1.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/migWiz3_0_0.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/migrationWizard.dtd
+lib/linux-netscape6/chrome/aim/locale/en-US/tasksExtension.dtd
+lib/linux-netscape6/chrome/aim/skin/default/App.css
+lib/linux-netscape6/chrome/aim/skin/default/BuddySignoff
+lib/linux-netscape6/chrome/aim/skin/default/BuddySignon
+lib/linux-netscape6/chrome/aim/skin/default/FirstIncomingIM
+lib/linux-netscape6/chrome/aim/skin/default/IM.css
+lib/linux-netscape6/chrome/aim/skin/default/IncomingChat
+lib/linux-netscape6/chrome/aim/skin/default/IncomingIM
+lib/linux-netscape6/chrome/aim/skin/default/NAIM_logo.gif
+lib/linux-netscape6/chrome/aim/skin/default/OutgoingChat
+lib/linux-netscape6/chrome/aim/skin/default/OutgoingIM
+lib/linux-netscape6/chrome/aim/skin/default/SPBuddyOrgOverlay.css
+lib/linux-netscape6/chrome/aim/skin/default/SPConnectingOrgOverlay.css
+lib/linux-netscape6/chrome/aim/skin/default/SPRegisterOrgOverlay.css
+lib/linux-netscape6/chrome/aim/skin/default/SPSignOnOrgOverlay.css
+lib/linux-netscape6/chrome/aim/skin/default/SidebarPanel.css
+lib/linux-netscape6/chrome/aim/skin/default/addbuddy.gif
+lib/linux-netscape6/chrome/aim/skin/default/addgroup.gif
+lib/linux-netscape6/chrome/aim/skin/default/address.gif
+lib/linux-netscape6/chrome/aim/skin/default/biActive.gif
+lib/linux-netscape6/chrome/aim/skin/default/biAway.gif
+lib/linux-netscape6/chrome/aim/skin/default/biGoingOffline.gif
+lib/linux-netscape6/chrome/aim/skin/default/biGoingOnline.gif
+lib/linux-netscape6/chrome/aim/skin/default/biIdle.gif
+lib/linux-netscape6/chrome/aim/skin/default/biNotInList.gif
+lib/linux-netscape6/chrome/aim/skin/default/biOffline.gif
+lib/linux-netscape6/chrome/aim/skin/default/block.gif
+lib/linux-netscape6/chrome/aim/skin/default/btnSend.gif
+lib/linux-netscape6/chrome/aim/skin/default/btnSignOn.gif
+lib/linux-netscape6/chrome/aim/skin/default/chat.gif
+lib/linux-netscape6/chrome/aim/skin/default/decline.gif
+lib/linux-netscape6/chrome/aim/skin/default/delete.gif
+lib/linux-netscape6/chrome/aim/skin/default/findAFriend1_2.css
+lib/linux-netscape6/chrome/aim/skin/default/findAFriendWizard.css
+lib/linux-netscape6/chrome/aim/skin/default/findbuddy.gif
+lib/linux-netscape6/chrome/aim/skin/default/gochat.gif
+lib/linux-netscape6/chrome/aim/skin/default/help.gif
+lib/linux-netscape6/chrome/aim/skin/default/ignore.gif
+lib/linux-netscape6/chrome/aim/skin/default/im.gif
+lib/linux-netscape6/chrome/aim/skin/default/migWiz0_0_0.css
+lib/linux-netscape6/chrome/aim/skin/default/migWiz0_0_1.css
+lib/linux-netscape6/chrome/aim/skin/default/migWiz1_0_0.css
+lib/linux-netscape6/chrome/aim/skin/default/migWiz1_1_0.css
+lib/linux-netscape6/chrome/aim/skin/default/migWiz2_0_0.css
+lib/linux-netscape6/chrome/aim/skin/default/migWiz2_1_0.css
+lib/linux-netscape6/chrome/aim/skin/default/migWiz2_1_1.css
+lib/linux-netscape6/chrome/aim/skin/default/migWiz3_0_0.css
+lib/linux-netscape6/chrome/aim/skin/default/migrationWizard.css
+lib/linux-netscape6/chrome/aim/skin/default/print.gif
+lib/linux-netscape6/chrome/aim/skin/default/pwiz_panels.css
+lib/linux-netscape6/chrome/aim/skin/default/roominfo.gif
+lib/linux-netscape6/chrome/aim/skin/default/savechat.gif
+lib/linux-netscape6/chrome/aim/skin/default/send.gif
+lib/linux-netscape6/chrome/aim/skin/default/sendim.gif
+lib/linux-netscape6/chrome/aim/skin/default/setup.gif
+lib/linux-netscape6/chrome/aim/skin/default/tbAddBuddy.gif
+lib/linux-netscape6/chrome/aim/skin/default/tbAddGroup.gif
+lib/linux-netscape6/chrome/aim/skin/default/tbAddressBook.gif
+lib/linux-netscape6/chrome/aim/skin/default/tbBlock.gif
+lib/linux-netscape6/chrome/aim/skin/default/tbChat.gif
+lib/linux-netscape6/chrome/aim/skin/default/tbDelete.gif
+lib/linux-netscape6/chrome/aim/skin/default/tbFAB.gif
+lib/linux-netscape6/chrome/aim/skin/default/tbHelp.gif
+lib/linux-netscape6/chrome/aim/skin/default/tbIM.gif
+lib/linux-netscape6/chrome/aim/skin/default/tbIgnore.gif
+lib/linux-netscape6/chrome/aim/skin/default/tbSetup.gif
+lib/linux-netscape6/chrome/aim/skin/default/tbWarn.gif
+lib/linux-netscape6/chrome/aim/skin/default/warn.gif
+lib/linux-netscape6/chrome/bookmarks/content/default/bm-panel.js
+lib/linux-netscape6/chrome/bookmarks/content/default/bm-panel.xul
+lib/linux-netscape6/chrome/bookmarks/content/default/bm-props.js
+lib/linux-netscape6/chrome/bookmarks/content/default/bm-props.xul
+lib/linux-netscape6/chrome/bookmarks/content/default/bookmarks.js
+lib/linux-netscape6/chrome/bookmarks/content/default/bookmarks.xul
+lib/linux-netscape6/chrome/bookmarks/content/default/bookmarksDD.js
+lib/linux-netscape6/chrome/bookmarks/locale/en-US/bm-props.dtd
+lib/linux-netscape6/chrome/bookmarks/locale/en-US/bookmark.properties
+lib/linux-netscape6/chrome/bookmarks/locale/en-US/bookmarks.dtd
+lib/linux-netscape6/chrome/bookmarks/skin/default/bm-panel.css
+lib/linux-netscape6/chrome/bookmarks/skin/default/bookmark-folder-closed.gif
+lib/linux-netscape6/chrome/bookmarks/skin/default/bookmark-folder-open.gif
+lib/linux-netscape6/chrome/bookmarks/skin/default/bookmark-item.gif
+lib/linux-netscape6/chrome/bookmarks/skin/default/bookmarks.css
+lib/linux-netscape6/chrome/bookmarks/skin/default/iefavorite.gif
+lib/linux-netscape6/chrome/bookmarks/skin/default/manage-bookmarks.css
+lib/linux-netscape6/chrome/bookmarks/skin/default/personal-folder-closed.gif
+lib/linux-netscape6/chrome/bookmarks/skin/default/personal-folder-open.gif
+lib/linux-netscape6/chrome/chatzilla/content/default/chatzilla.xul
+lib/linux-netscape6/chrome/chatzilla/content/default/chatzillaOverlay.js
+lib/linux-netscape6/chrome/chatzilla/content/default/chatzillaOverlay.xul
+lib/linux-netscape6/chrome/chatzilla/content/default/commands.js
+lib/linux-netscape6/chrome/chatzilla/content/default/handlers.js
+lib/linux-netscape6/chrome/chatzilla/content/default/lib/js/command-manager.js
+lib/linux-netscape6/chrome/chatzilla/content/default/lib/js/connection-xpcom.js
+lib/linux-netscape6/chrome/chatzilla/content/default/lib/js/events.js
+lib/linux-netscape6/chrome/chatzilla/content/default/lib/js/irc-debug.js
+lib/linux-netscape6/chrome/chatzilla/content/default/lib/js/irc.js
+lib/linux-netscape6/chrome/chatzilla/content/default/lib/js/utils.js
+lib/linux-netscape6/chrome/chatzilla/content/default/lib/xul/EntryHistory.js
+lib/linux-netscape6/chrome/chatzilla/content/default/lib/xul/listbox.js
+lib/linux-netscape6/chrome/chatzilla/content/default/lib/xul/munger.js
+lib/linux-netscape6/chrome/chatzilla/content/default/readprefs.js
+lib/linux-netscape6/chrome/chatzilla/content/default/static.js
+lib/linux-netscape6/chrome/chatzilla/locale/en-US/chatzillaOverlay.dtd
+lib/linux-netscape6/chrome/chatzilla/skin/default/chatzilla.css
+lib/linux-netscape6/chrome/chatzilla/skin/default/images/blue_rock.gif
+lib/linux-netscape6/chrome/chatzilla/skin/default/images/face-angry.gif
+lib/linux-netscape6/chrome/chatzilla/skin/default/images/face-cry.gif
+lib/linux-netscape6/chrome/chatzilla/skin/default/images/face-dunno.gif
+lib/linux-netscape6/chrome/chatzilla/skin/default/images/face-frown.gif
+lib/linux-netscape6/chrome/chatzilla/skin/default/images/face-screw.gif
+lib/linux-netscape6/chrome/chatzilla/skin/default/images/face-smile.gif
+lib/linux-netscape6/chrome/chatzilla/skin/default/images/face-surprise.gif
+lib/linux-netscape6/chrome/chatzilla/skin/default/images/face-tongue.gif
+lib/linux-netscape6/chrome/chatzilla/skin/default/images/face-wink.gif
+lib/linux-netscape6/chrome/chatzilla/skin/default/images/is-op.gif
+lib/linux-netscape6/chrome/chatzilla/skin/default/images/is-voice.gif
+lib/linux-netscape6/chrome/chatzilla/skin/default/images/isnt-op.gif
+lib/linux-netscape6/chrome/chatzilla/skin/default/images/isnt-voice.gif
+lib/linux-netscape6/chrome/chatzilla/skin/default/images/view-activity.gif
+lib/linux-netscape6/chrome/chatzilla/skin/default/images/view-current.gif
+lib/linux-netscape6/chrome/chatzilla/skin/default/images/view-normal.gif
+lib/linux-netscape6/chrome/chatzilla/skin/default/images/xtal.jpg
+lib/linux-netscape6/chrome/chatzilla/skin/default/output-default.css
+lib/linux-netscape6/chrome/chatzilla/skin/default/output-loud.css
+lib/linux-netscape6/chrome/chatzilla/skin/default/output-marble.css
+lib/linux-netscape6/chrome/directory/content/default/directory.js
+lib/linux-netscape6/chrome/directory/content/default/directory.xul
+lib/linux-netscape6/chrome/directory/locale/en-US/directory.dtd
+lib/linux-netscape6/chrome/directory/skin/default/directory.css
+lib/linux-netscape6/chrome/editor/content/default/EdAECSSAttributes.js
+lib/linux-netscape6/chrome/editor/content/default/EdAEHTMLAttributes.js
+lib/linux-netscape6/chrome/editor/content/default/EdAEJSEAttributes.js
+lib/linux-netscape6/chrome/editor/content/default/EdAdvancedEdit.js
+lib/linux-netscape6/chrome/editor/content/default/EdAdvancedEdit.xul
+lib/linux-netscape6/chrome/editor/content/default/EdColorProps.js
+lib/linux-netscape6/chrome/editor/content/default/EdColorProps.xul
+lib/linux-netscape6/chrome/editor/content/default/EdDialogCommon.js
+lib/linux-netscape6/chrome/editor/content/default/EdDialogOverlay.xul
+lib/linux-netscape6/chrome/editor/content/default/EdDictionary.js
+lib/linux-netscape6/chrome/editor/content/default/EdDictionary.xul
+lib/linux-netscape6/chrome/editor/content/default/EdHLineProps.js
+lib/linux-netscape6/chrome/editor/content/default/EdHLineProps.xul
+lib/linux-netscape6/chrome/editor/content/default/EdImageProps.js
+lib/linux-netscape6/chrome/editor/content/default/EdImageProps.xul
+lib/linux-netscape6/chrome/editor/content/default/EdInsSrc.js
+lib/linux-netscape6/chrome/editor/content/default/EdInsSrc.xul
+lib/linux-netscape6/chrome/editor/content/default/EdInsertTable.js
+lib/linux-netscape6/chrome/editor/content/default/EdInsertTable.xul
+lib/linux-netscape6/chrome/editor/content/default/EdLinkProps.js
+lib/linux-netscape6/chrome/editor/content/default/EdLinkProps.xul
+lib/linux-netscape6/chrome/editor/content/default/EdListProps.js
+lib/linux-netscape6/chrome/editor/content/default/EdListProps.xul
+lib/linux-netscape6/chrome/editor/content/default/EdMessage.js
+lib/linux-netscape6/chrome/editor/content/default/EdMessage.xul
+lib/linux-netscape6/chrome/editor/content/default/EdNamedAnchorProps.js
+lib/linux-netscape6/chrome/editor/content/default/EdNamedAnchorProps.xul
+lib/linux-netscape6/chrome/editor/content/default/EdPageProps.js
+lib/linux-netscape6/chrome/editor/content/default/EdPageProps.xul
+lib/linux-netscape6/chrome/editor/content/default/EdSpellCheck.js
+lib/linux-netscape6/chrome/editor/content/default/EdSpellCheck.xul
+lib/linux-netscape6/chrome/editor/content/default/EdTableProps.js
+lib/linux-netscape6/chrome/editor/content/default/EdTableProps.xul
+lib/linux-netscape6/chrome/editor/content/default/EditorCommands.js
+lib/linux-netscape6/chrome/editor/content/default/EditorCommandsDebug.js
+lib/linux-netscape6/chrome/editor/content/default/EditorContent.css
+lib/linux-netscape6/chrome/editor/content/default/EditorInitPage.html
+lib/linux-netscape6/chrome/editor/content/default/EditorInitPagePlain.html
+lib/linux-netscape6/chrome/editor/content/default/EditorOverride.css
+lib/linux-netscape6/chrome/editor/content/default/EditorStyles1.css
+lib/linux-netscape6/chrome/editor/content/default/TextEditorAppShell.xul
+lib/linux-netscape6/chrome/editor/content/default/editor.xul
+lib/linux-netscape6/chrome/editor/content/default/editorOverlay.js
+lib/linux-netscape6/chrome/editor/content/default/editorOverlay.xul
+lib/linux-netscape6/chrome/editor/content/default/sb-FileWidgetFileHandler.js
+lib/linux-netscape6/chrome/editor/content/default/sb-bookmarks-panel.xul
+lib/linux-netscape6/chrome/editor/content/default/sb-bookmarks.js
+lib/linux-netscape6/chrome/editor/content/default/sb-file-contextMenu.js
+lib/linux-netscape6/chrome/editor/content/default/sb-file-panel.js
+lib/linux-netscape6/chrome/editor/content/default/sb-file-panel.xul
+lib/linux-netscape6/chrome/editor/content/default/sidebar-editor.rdf
+lib/linux-netscape6/chrome/editor/content/default/sidebar-editor.xul
+lib/linux-netscape6/chrome/editor/content/default/viewsource.js
+lib/linux-netscape6/chrome/editor/content/default/viewsource.xul
+lib/linux-netscape6/chrome/editor/locale/en-US/EdAdvancedEdit.dtd
+lib/linux-netscape6/chrome/editor/locale/en-US/EdDialogOverlay.dtd
+lib/linux-netscape6/chrome/editor/locale/en-US/EdNamedAnchorProperties.dtd
+lib/linux-netscape6/chrome/editor/locale/en-US/EditorColorProperties.dtd
+lib/linux-netscape6/chrome/editor/locale/en-US/EditorHLineProperties.dtd
+lib/linux-netscape6/chrome/editor/locale/en-US/EditorImageProperties.dtd
+lib/linux-netscape6/chrome/editor/locale/en-US/EditorInsertSource.dtd
+lib/linux-netscape6/chrome/editor/locale/en-US/EditorInsertTable.dtd
+lib/linux-netscape6/chrome/editor/locale/en-US/EditorLinkProperties.dtd
+lib/linux-netscape6/chrome/editor/locale/en-US/EditorListProperties.dtd
+lib/linux-netscape6/chrome/editor/locale/en-US/EditorPageProperties.dtd
+lib/linux-netscape6/chrome/editor/locale/en-US/EditorPersonalDictionary.dtd
+lib/linux-netscape6/chrome/editor/locale/en-US/EditorSpellCheck.dtd
+lib/linux-netscape6/chrome/editor/locale/en-US/EditorTableProperties.dtd
+lib/linux-netscape6/chrome/editor/locale/en-US/editor.dtd
+lib/linux-netscape6/chrome/editor/locale/en-US/editor.properties
+lib/linux-netscape6/chrome/editor/locale/en-US/editorOverlay.dtd
+lib/linux-netscape6/chrome/editor/locale/en-US/sidebar-editor-rdf.dtd
+lib/linux-netscape6/chrome/editor/locale/en-US/sidebar-editor.dtd
+lib/linux-netscape6/chrome/editor/locale/en-US/viewSource.dtd
+lib/linux-netscape6/chrome/editor/skin/default/EdImageMap.css
+lib/linux-netscape6/chrome/editor/skin/default/EditorDialog.css
+lib/linux-netscape6/chrome/editor/skin/default/editor.css
+lib/linux-netscape6/chrome/editor/skin/default/images/Map_checker.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/align.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/anchor-in-doc.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/anchor-white.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/anchor.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/bold.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/bullets.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/center.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/color.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/dec-font-size.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/div.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/find.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/hline-white.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/hline.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/hover-teal.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/image-white.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/image.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/img-align-bottom.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/img-align-left.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/img-align-middle.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/img-align-right.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/img-align-top.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/inc-font-size.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/indent.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/italic.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/justify.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/left.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/link-white.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/link.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/newfile.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/numbers.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/object-popup.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/openfile.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/outdent.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/preview.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/print.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/publish.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/right.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/savefile.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/savemod.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/span.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/spell.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/table-white.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/table.gif
+lib/linux-netscape6/chrome/editor/skin/default/images/underline.gif
+lib/linux-netscape6/chrome/global/content/default/AimGlobalOverlay.xul
+lib/linux-netscape6/chrome/global/content/default/AimTaskMenu.xul
+lib/linux-netscape6/chrome/global/content/default/CalendarOverlay.xul
+lib/linux-netscape6/chrome/global/content/default/PSMTaskMenu.xul
+lib/linux-netscape6/chrome/global/content/default/about.html
+lib/linux-netscape6/chrome/global/content/default/about.xul
+lib/linux-netscape6/chrome/global/content/default/browserBindings.xul
+lib/linux-netscape6/chrome/global/content/default/charsetDetectorsOverlay.js
+lib/linux-netscape6/chrome/global/content/default/charsetDetectorsOverlay.xul
+lib/linux-netscape6/chrome/global/content/default/charsetOverlay.js
+lib/linux-netscape6/chrome/global/content/default/charsetOverlay.xul
+lib/linux-netscape6/chrome/global/content/default/commonDialog.js
+lib/linux-netscape6/chrome/global/content/default/commonDialog.xul
+lib/linux-netscape6/chrome/global/content/default/credits.html
+lib/linux-netscape6/chrome/global/content/default/dialogOverlay.js
+lib/linux-netscape6/chrome/global/content/default/dialogOverlay.xul
+lib/linux-netscape6/chrome/global/content/default/downloadProgress.js
+lib/linux-netscape6/chrome/global/content/default/downloadProgress.xul
+lib/linux-netscape6/chrome/global/content/default/editorBindings.xul
+lib/linux-netscape6/chrome/global/content/default/finddialog.js
+lib/linux-netscape6/chrome/global/content/default/finddialog.xul
+lib/linux-netscape6/chrome/global/content/default/fullcirclelogo.gif
+lib/linux-netscape6/chrome/global/content/default/globalOverlay.js
+lib/linux-netscape6/chrome/global/content/default/globalOverlay.xul
+lib/linux-netscape6/chrome/global/content/default/helpMenu.xul
+lib/linux-netscape6/chrome/global/content/default/hiddenWindow.xul
+lib/linux-netscape6/chrome/global/content/default/inputBindings.xul
+lib/linux-netscape6/chrome/global/content/default/javalogo.gif
+lib/linux-netscape6/chrome/global/content/default/lhlogo.gif
+lib/linux-netscape6/chrome/global/content/default/license.txt
+lib/linux-netscape6/chrome/global/content/default/logo.gif
+lib/linux-netscape6/chrome/global/content/default/macromedialogo.gif
+lib/linux-netscape6/chrome/global/content/default/mozilla.html
+lib/linux-netscape6/chrome/global/content/default/net2phonelogo.gif
+lib/linux-netscape6/chrome/global/content/default/platformBrowserBindings.xul
+lib/linux-netscape6/chrome/global/content/default/platformDialogOverlay.xul
+lib/linux-netscape6/chrome/global/content/default/platformEditorBindings.xul
+lib/linux-netscape6/chrome/global/content/default/platformGlobalOverlay.xul
+lib/linux-netscape6/chrome/global/content/default/platformInputBindings.xul
+lib/linux-netscape6/chrome/global/content/default/platformTextAreaBindings.xul
+lib/linux-netscape6/chrome/global/content/default/rsalogo.gif
+lib/linux-netscape6/chrome/global/content/default/searchMenu.xul
+lib/linux-netscape6/chrome/global/content/default/selectDialog.js
+lib/linux-netscape6/chrome/global/content/default/selectDialog.xul
+lib/linux-netscape6/chrome/global/content/default/strres.js
+lib/linux-netscape6/chrome/global/content/default/taskbarOverlay.xul
+lib/linux-netscape6/chrome/global/content/default/tasksOverlay.js
+lib/linux-netscape6/chrome/global/content/default/tasksOverlay.xul
+lib/linux-netscape6/chrome/global/content/default/textAreaBindings.xul
+lib/linux-netscape6/chrome/global/content/default/treePopups.js
+lib/linux-netscape6/chrome/global/content/default/unknownContent.js
+lib/linux-netscape6/chrome/global/content/default/unknownContent.xul
+lib/linux-netscape6/chrome/global/content/default/widgetStateManager.js
+lib/linux-netscape6/chrome/global/content/default/wizardHandlerSet.js
+lib/linux-netscape6/chrome/global/content/default/wizardManager.js
+lib/linux-netscape6/chrome/global/content/default/wizardOverlay.js
+lib/linux-netscape6/chrome/global/content/default/wizardOverlay.xul
+lib/linux-netscape6/chrome/global/content/nav_overlays.rdf
+lib/linux-netscape6/chrome/global/content/overlays.rdf
+lib/linux-netscape6/chrome/global/locale/en-US/AimGlobalOverlay.dtd
+lib/linux-netscape6/chrome/global/locale/en-US/AimTaskMenu.dtd
+lib/linux-netscape6/chrome/global/locale/en-US/CalendarOverlay.dtd
+lib/linux-netscape6/chrome/global/locale/en-US/PSMTaskMenu.dtd
+lib/linux-netscape6/chrome/global/locale/en-US/about.dtd
+lib/linux-netscape6/chrome/global/locale/en-US/appstrings.properties
+lib/linux-netscape6/chrome/global/locale/en-US/brand.properties
+lib/linux-netscape6/chrome/global/locale/en-US/charsetDetectorsOverlay.dtd
+lib/linux-netscape6/chrome/global/locale/en-US/charsetOverlay.dtd
+lib/linux-netscape6/chrome/global/locale/en-US/commonDialog.dtd
+lib/linux-netscape6/chrome/global/locale/en-US/dialogOverlay.dtd
+lib/linux-netscape6/chrome/global/locale/en-US/downloadProgress.dtd
+lib/linux-netscape6/chrome/global/locale/en-US/downloadProgress.properties
+lib/linux-netscape6/chrome/global/locale/en-US/finddialog.dtd
+lib/linux-netscape6/chrome/global/locale/en-US/globalOverlay.dtd
+lib/linux-netscape6/chrome/global/locale/en-US/helpMenu.dtd
+lib/linux-netscape6/chrome/global/locale/en-US/platformDialogOverlay.dtd
+lib/linux-netscape6/chrome/global/locale/en-US/platformGlobalOverlay.dtd
+lib/linux-netscape6/chrome/global/locale/en-US/searchMenu.dtd
+lib/linux-netscape6/chrome/global/locale/en-US/taskbarOverlay.dtd
+lib/linux-netscape6/chrome/global/locale/en-US/tasksOverlay.dtd
+lib/linux-netscape6/chrome/global/locale/en-US/unknownContent.dtd
+lib/linux-netscape6/chrome/global/locale/en-US/unknownContent.properties
+lib/linux-netscape6/chrome/global/locale/en-US/wizardManager.properties
+lib/linux-netscape6/chrome/global/locale/en-US/wizardOverlay.dtd
+lib/linux-netscape6/chrome/global/skin/default/AimGlobalOverlay.css
+lib/linux-netscape6/chrome/global/skin/default/AimTaskMenu.css
+lib/linux-netscape6/chrome/global/skin/default/CalendarOverlay.css
+lib/linux-netscape6/chrome/global/skin/default/alert-icon.gif
+lib/linux-netscape6/chrome/global/skin/default/animthrob.gif
+lib/linux-netscape6/chrome/global/skin/default/animthrob_single.gif
+lib/linux-netscape6/chrome/global/skin/default/button28-bg-active.gif
+lib/linux-netscape6/chrome/global/skin/default/button28-bg-disabled.gif
+lib/linux-netscape6/chrome/global/skin/default/button28-bg-hover.gif
+lib/linux-netscape6/chrome/global/skin/default/button28-bg.gif
+lib/linux-netscape6/chrome/global/skin/default/button32-bg-active.gif
+lib/linux-netscape6/chrome/global/skin/default/button32-bg-disabled.gif
+lib/linux-netscape6/chrome/global/skin/default/button32-bg-hover.gif
+lib/linux-netscape6/chrome/global/skin/default/button32-bg.gif
+lib/linux-netscape6/chrome/global/skin/default/closedtwisty.gif
+lib/linux-netscape6/chrome/global/skin/default/commonDialog.css
+lib/linux-netscape6/chrome/global/skin/default/error-icon.gif
+lib/linux-netscape6/chrome/global/skin/default/global.css
+lib/linux-netscape6/chrome/global/skin/default/globalBindings.xml
+lib/linux-netscape6/chrome/global/skin/default/gray-bottomleft.gif
+lib/linux-netscape6/chrome/global/skin/default/gray-bottomright.gif
+lib/linux-netscape6/chrome/global/skin/default/gray-topright.gif
+lib/linux-netscape6/chrome/global/skin/default/grippy-horizontal-after.gif
+lib/linux-netscape6/chrome/global/skin/default/grippy-horizontal-before.gif
+lib/linux-netscape6/chrome/global/skin/default/grippy-vertical-after.gif
+lib/linux-netscape6/chrome/global/skin/default/grippy-vertical-before.gif
+lib/linux-netscape6/chrome/global/skin/default/lessCOls_dis.gif
+lib/linux-netscape6/chrome/global/skin/default/lessCols.gif
+lib/linux-netscape6/chrome/global/skin/default/lessCols_mo.gif
+lib/linux-netscape6/chrome/global/skin/default/menu-arrow-disabled.gif
+lib/linux-netscape6/chrome/global/skin/default/menu-arrow-hover.gif
+lib/linux-netscape6/chrome/global/skin/default/menu-arrow.gif
+lib/linux-netscape6/chrome/global/skin/default/menu-check-disabled.gif
+lib/linux-netscape6/chrome/global/skin/default/menu-check-hover.gif
+lib/linux-netscape6/chrome/global/skin/default/menu-check.gif
+lib/linux-netscape6/chrome/global/skin/default/message-icon.gif
+lib/linux-netscape6/chrome/global/skin/default/moreCols.gif
+lib/linux-netscape6/chrome/global/skin/default/moreCols_dis.gif
+lib/linux-netscape6/chrome/global/skin/default/moreCols_mo.gif
+lib/linux-netscape6/chrome/global/skin/default/n-box-navbar.gif
+lib/linux-netscape6/chrome/global/skin/default/n-box.gif
+lib/linux-netscape6/chrome/global/skin/default/navbar-bg-begincap.gif
+lib/linux-netscape6/chrome/global/skin/default/navbar-bg.gif
+lib/linux-netscape6/chrome/global/skin/default/navbar-endcap.gif
+lib/linux-netscape6/chrome/global/skin/default/opentwisty.gif
+lib/linux-netscape6/chrome/global/skin/default/otherbutton28-bg-active.gif
+lib/linux-netscape6/chrome/global/skin/default/otherbutton28-bg-hover.gif
+lib/linux-netscape6/chrome/global/skin/default/print.gif
+lib/linux-netscape6/chrome/global/skin/default/progressmeter-busy.gif
+lib/linux-netscape6/chrome/global/skin/default/question-icon.gif
+lib/linux-netscape6/chrome/global/skin/default/return.gif
+lib/linux-netscape6/chrome/global/skin/default/scroll-down-disabled.gif
+lib/linux-netscape6/chrome/global/skin/default/scroll-down-hover.gif
+lib/linux-netscape6/chrome/global/skin/default/scroll-down.gif
+lib/linux-netscape6/chrome/global/skin/default/scroll-left-disabled.gif
+lib/linux-netscape6/chrome/global/skin/default/scroll-left-hover.gif
+lib/linux-netscape6/chrome/global/skin/default/scroll-left.gif
+lib/linux-netscape6/chrome/global/skin/default/scroll-right-disabled.gif
+lib/linux-netscape6/chrome/global/skin/default/scroll-right-hover.gif
+lib/linux-netscape6/chrome/global/skin/default/scroll-right.gif
+lib/linux-netscape6/chrome/global/skin/default/scroll-thumb-horiz-disabled.gif
+lib/linux-netscape6/chrome/global/skin/default/scroll-thumb-horiz-hover.gif
+lib/linux-netscape6/chrome/global/skin/default/scroll-thumb-horiz.gif
+lib/linux-netscape6/chrome/global/skin/default/scroll-thumb-vert-disabled.gif
+lib/linux-netscape6/chrome/global/skin/default/scroll-thumb-vert-hover.gif
+lib/linux-netscape6/chrome/global/skin/default/scroll-thumb-vert.gif
+lib/linux-netscape6/chrome/global/skin/default/scroll-up-disabled.gif
+lib/linux-netscape6/chrome/global/skin/default/scroll-up-hover.gif
+lib/linux-netscape6/chrome/global/skin/default/scroll-up.gif
+lib/linux-netscape6/chrome/global/skin/default/search.gif
+lib/linux-netscape6/chrome/global/skin/default/seltab-leftedge.gif
+lib/linux-netscape6/chrome/global/skin/default/seltab-rightedge.gif
+lib/linux-netscape6/chrome/global/skin/default/stop.gif
+lib/linux-netscape6/chrome/global/skin/default/tab-leftedge.gif
+lib/linux-netscape6/chrome/global/skin/default/tab-rightedge.gif
+lib/linux-netscape6/chrome/global/skin/default/taskbar-addressbook.gif
+lib/linux-netscape6/chrome/global/skin/default/taskbar-aim-away.gif
+lib/linux-netscape6/chrome/global/skin/default/taskbar-aim-offline.gif
+lib/linux-netscape6/chrome/global/skin/default/taskbar-aim-online.gif
+lib/linux-netscape6/chrome/global/skin/default/taskbar-calendar.gif
+lib/linux-netscape6/chrome/global/skin/default/taskbar-composer.gif
+lib/linux-netscape6/chrome/global/skin/default/taskbar-mail.gif
+lib/linux-netscape6/chrome/global/skin/default/taskbar-navigator.gif
+lib/linux-netscape6/chrome/global/skin/default/taskbar-popup-arrow.gif
+lib/linux-netscape6/chrome/global/skin/default/taskbar-tab-hover.gif
+lib/linux-netscape6/chrome/global/skin/default/taskbar-tab-minimized.gif
+lib/linux-netscape6/chrome/global/skin/default/taskbar-tab.gif
+lib/linux-netscape6/chrome/global/skin/default/tasksOverlay.css
+lib/linux-netscape6/chrome/global/skin/default/toolbar-begincap.gif
+lib/linux-netscape6/chrome/global/skin/default/toolbar-dropdown-hover.gif
+lib/linux-netscape6/chrome/global/skin/default/toolbar-dropdown.gif
+lib/linux-netscape6/chrome/global/skin/default/toolbar-endcap.gif
+lib/linux-netscape6/chrome/global/skin/default/toolbar-menu-arrow-disabled.gif
+lib/linux-netscape6/chrome/global/skin/default/toolbar-menu-arrow-hover.gif
+lib/linux-netscape6/chrome/global/skin/default/toolbar-menu-arrow.gif
+lib/linux-netscape6/chrome/global/skin/default/wizardOverlay.css
+lib/linux-netscape6/chrome/history/content/default/history-test.js
+lib/linux-netscape6/chrome/history/content/default/history-test.xul
+lib/linux-netscape6/chrome/history/content/default/history.js
+lib/linux-netscape6/chrome/history/content/default/history.xul
+lib/linux-netscape6/chrome/history/locale/en-US/history.dtd
+lib/linux-netscape6/chrome/history/skin/default/history.css
+lib/linux-netscape6/chrome/htmlBindings.xml
+lib/linux-netscape6/chrome/layout/locale/en-US/HtmlForm.properties
+lib/linux-netscape6/chrome/messenger/content/default/AccountManager.js
+lib/linux-netscape6/chrome/messenger/content/default/AccountManager.xul
+lib/linux-netscape6/chrome/messenger/content/default/AccountWizard.js
+lib/linux-netscape6/chrome/messenger/content/default/AccountWizard.xul
+lib/linux-netscape6/chrome/messenger/content/default/FilterEditor.js
+lib/linux-netscape6/chrome/messenger/content/default/FilterEditor.xul
+lib/linux-netscape6/chrome/messenger/content/default/FilterListDialog.js
+lib/linux-netscape6/chrome/messenger/content/default/FilterListDialog.xul
+lib/linux-netscape6/chrome/messenger/content/default/SearchDialog.js
+lib/linux-netscape6/chrome/messenger/content/default/SearchDialog.xul
+lib/linux-netscape6/chrome/messenger/content/default/SearchOptions.xul
+lib/linux-netscape6/chrome/messenger/content/default/accountUtils.js
+lib/linux-netscape6/chrome/messenger/content/default/aimHdrViewOverlay.js
+lib/linux-netscape6/chrome/messenger/content/default/aimHdrViewOverlay.xul
+lib/linux-netscape6/chrome/messenger/content/default/am-advanced.xul
+lib/linux-netscape6/chrome/messenger/content/default/am-copies.js
+lib/linux-netscape6/chrome/messenger/content/default/am-copies.xul
+lib/linux-netscape6/chrome/messenger/content/default/am-imap-advanced.js
+lib/linux-netscape6/chrome/messenger/content/default/am-imap-advanced.xul
+lib/linux-netscape6/chrome/messenger/content/default/am-main.xul
+lib/linux-netscape6/chrome/messenger/content/default/am-server-top.xul
+lib/linux-netscape6/chrome/messenger/content/default/am-server.js
+lib/linux-netscape6/chrome/messenger/content/default/am-server.xul
+lib/linux-netscape6/chrome/messenger/content/default/am-serverwithnoidentities.js
+lib/linux-netscape6/chrome/messenger/content/default/am-serverwithnoidentities.xul
+lib/linux-netscape6/chrome/messenger/content/default/am-smtp.xul
+lib/linux-netscape6/chrome/messenger/content/default/attach.js
+lib/linux-netscape6/chrome/messenger/content/default/aw-accname.js
+lib/linux-netscape6/chrome/messenger/content/default/aw-accname.xul
+lib/linux-netscape6/chrome/messenger/content/default/aw-accounttype.js
+lib/linux-netscape6/chrome/messenger/content/default/aw-accounttype.xul
+lib/linux-netscape6/chrome/messenger/content/default/aw-done.js
+lib/linux-netscape6/chrome/messenger/content/default/aw-done.xul
+lib/linux-netscape6/chrome/messenger/content/default/aw-identity.js
+lib/linux-netscape6/chrome/messenger/content/default/aw-identity.xul
+lib/linux-netscape6/chrome/messenger/content/default/aw-login.js
+lib/linux-netscape6/chrome/messenger/content/default/aw-login.xul
+lib/linux-netscape6/chrome/messenger/content/default/aw-newsserver.xul
+lib/linux-netscape6/chrome/messenger/content/default/aw-overlay.xul
+lib/linux-netscape6/chrome/messenger/content/default/aw-server.js
+lib/linux-netscape6/chrome/messenger/content/default/aw-server.xul
+lib/linux-netscape6/chrome/messenger/content/default/commandglue.js
+lib/linux-netscape6/chrome/messenger/content/default/custreceipt.xul
+lib/linux-netscape6/chrome/messenger/content/default/downloadheaders.js
+lib/linux-netscape6/chrome/messenger/content/default/downloadheaders.xul
+lib/linux-netscape6/chrome/messenger/content/default/fieldMapExport.js
+lib/linux-netscape6/chrome/messenger/content/default/fieldMapExport.xul
+lib/linux-netscape6/chrome/messenger/content/default/fieldMapImport.js
+lib/linux-netscape6/chrome/messenger/content/default/fieldMapImport.xul
+lib/linux-netscape6/chrome/messenger/content/default/folderPane.xul
+lib/linux-netscape6/chrome/messenger/content/default/importDialog.js
+lib/linux-netscape6/chrome/messenger/content/default/importDialog.xul
+lib/linux-netscape6/chrome/messenger/content/default/importProgress.js
+lib/linux-netscape6/chrome/messenger/content/default/importProgress.xul
+lib/linux-netscape6/chrome/messenger/content/default/ispUtils.js
+lib/linux-netscape6/chrome/messenger/content/default/mailContextMenus.js
+lib/linux-netscape6/chrome/messenger/content/default/messenger.xul
+lib/linux-netscape6/chrome/messenger/content/default/messengerdnd.js
+lib/linux-netscape6/chrome/messenger/content/default/mime.js
+lib/linux-netscape6/chrome/messenger/content/default/msgFolderPickerOverlay.js
+lib/linux-netscape6/chrome/messenger/content/default/msgFolderPickerOverlay.xul
+lib/linux-netscape6/chrome/messenger/content/default/msgHdrViewAddresses.js
+lib/linux-netscape6/chrome/messenger/content/default/msgHdrViewOverlay.js
+lib/linux-netscape6/chrome/messenger/content/default/msgHdrViewOverlay.xul
+lib/linux-netscape6/chrome/messenger/content/default/msgMail3PaneWindow.js
+lib/linux-netscape6/chrome/messenger/content/default/msgPrintEngine.js
+lib/linux-netscape6/chrome/messenger/content/default/msgPrintEngine.xul
+lib/linux-netscape6/chrome/messenger/content/default/msgViewNavigation.js
+lib/linux-netscape6/chrome/messenger/content/default/newFolderNameDialog.js
+lib/linux-netscape6/chrome/messenger/content/default/newFolderNameDialog.xul
+lib/linux-netscape6/chrome/messenger/content/default/pref-diskspace.xul
+lib/linux-netscape6/chrome/messenger/content/default/pref-mailnews.js
+lib/linux-netscape6/chrome/messenger/content/default/pref-mailnews.xul
+lib/linux-netscape6/chrome/messenger/content/default/pref-receipts.xul
+lib/linux-netscape6/chrome/messenger/content/default/pref-winsetting.xul
+lib/linux-netscape6/chrome/messenger/content/default/renameFolderNameDialog.xul
+lib/linux-netscape6/chrome/messenger/content/default/shareglue.js
+lib/linux-netscape6/chrome/messenger/content/default/sidebar-messenger.rdf
+lib/linux-netscape6/chrome/messenger/content/default/sidebar-messenger.xul
+lib/linux-netscape6/chrome/messenger/content/default/subscribeDialog.xul
+lib/linux-netscape6/chrome/messenger/content/default/threadPane.xul
+lib/linux-netscape6/chrome/messenger/content/default/widgetglue.js
+lib/linux-netscape6/chrome/messenger/content/overlays.rdf
+lib/linux-netscape6/chrome/messenger/locale/en-US/AccountManager.dtd
+lib/linux-netscape6/chrome/messenger/locale/en-US/AccountWizard.dtd
+lib/linux-netscape6/chrome/messenger/locale/en-US/FilterEditor.dtd
+lib/linux-netscape6/chrome/messenger/locale/en-US/FilterListDialog.dtd
+lib/linux-netscape6/chrome/messenger/locale/en-US/SearchDialog.dtd
+lib/linux-netscape6/chrome/messenger/locale/en-US/SearchOptions.dtd
+lib/linux-netscape6/chrome/messenger/locale/en-US/aimHdrViewOverlay.dtd
+lib/linux-netscape6/chrome/messenger/locale/en-US/am-advanced.dtd
+lib/linux-netscape6/chrome/messenger/locale/en-US/am-copies.dtd
+lib/linux-netscape6/chrome/messenger/locale/en-US/am-imap-advanced.dtd
+lib/linux-netscape6/chrome/messenger/locale/en-US/am-main.dtd
+lib/linux-netscape6/chrome/messenger/locale/en-US/am-server-top.dtd
+lib/linux-netscape6/chrome/messenger/locale/en-US/am-serverwithnoidentities.dtd
+lib/linux-netscape6/chrome/messenger/locale/en-US/aw-accname.dtd
+lib/linux-netscape6/chrome/messenger/locale/en-US/aw-accounttype.dtd
+lib/linux-netscape6/chrome/messenger/locale/en-US/aw-done.dtd
+lib/linux-netscape6/chrome/messenger/locale/en-US/aw-email.dtd
+lib/linux-netscape6/chrome/messenger/locale/en-US/aw-fullname.dtd
+lib/linux-netscape6/chrome/messenger/locale/en-US/aw-identity.dtd
+lib/linux-netscape6/chrome/messenger/locale/en-US/aw-login.dtd
+lib/linux-netscape6/chrome/messenger/locale/en-US/aw-mailtype.dtd
+lib/linux-netscape6/chrome/messenger/locale/en-US/aw-server.dtd
+lib/linux-netscape6/chrome/messenger/locale/en-US/custreceipt.dtd
+lib/linux-netscape6/chrome/messenger/locale/en-US/downloadheaders.dtd
+lib/linux-netscape6/chrome/messenger/locale/en-US/fieldMapImport.dtd
+lib/linux-netscape6/chrome/messenger/locale/en-US/folderpane.dtd
+lib/linux-netscape6/chrome/messenger/locale/en-US/imapMsgs.properties
+lib/linux-netscape6/chrome/messenger/locale/en-US/importDialog.dtd
+lib/linux-netscape6/chrome/messenger/locale/en-US/importMsgs.properties
+lib/linux-netscape6/chrome/messenger/locale/en-US/localMsgs.properties
+lib/linux-netscape6/chrome/messenger/locale/en-US/messenger.dtd
+lib/linux-netscape6/chrome/messenger/locale/en-US/messenger.properties
+lib/linux-netscape6/chrome/messenger/locale/en-US/mime.properties
+lib/linux-netscape6/chrome/messenger/locale/en-US/mimeheader.properties
+lib/linux-netscape6/chrome/messenger/locale/en-US/msgFolderPickerOverlay.dtd
+lib/linux-netscape6/chrome/messenger/locale/en-US/msgHdrViewOverlay.dtd
+lib/linux-netscape6/chrome/messenger/locale/en-US/newFolderNameDialog.dtd
+lib/linux-netscape6/chrome/messenger/locale/en-US/news.properties
+lib/linux-netscape6/chrome/messenger/locale/en-US/pref-diskspace.dtd
+lib/linux-netscape6/chrome/messenger/locale/en-US/pref-mailnews.dtd
+lib/linux-netscape6/chrome/messenger/locale/en-US/pref-receipts.dtd
+lib/linux-netscape6/chrome/messenger/locale/en-US/pref-winsetting.dtd
+lib/linux-netscape6/chrome/messenger/locale/en-US/prefs.properties
+lib/linux-netscape6/chrome/messenger/locale/en-US/sidebar-messenger-rdf.dtd
+lib/linux-netscape6/chrome/messenger/locale/en-US/sidebar-messenger.dtd
+lib/linux-netscape6/chrome/messenger/locale/en-US/subscribeDialog.dtd
+lib/linux-netscape6/chrome/messenger/locale/en-US/textImportMsgs.properties
+lib/linux-netscape6/chrome/messenger/locale/en-US/threadpane.dtd
+lib/linux-netscape6/chrome/messenger/locale/en-US/vcard.properties
+lib/linux-netscape6/chrome/messenger/skin/default/AccountManager.css
+lib/linux-netscape6/chrome/messenger/skin/default/Folder.gif
+lib/linux-netscape6/chrome/messenger/skin/default/addcard.gif
+lib/linux-netscape6/chrome/messenger/skin/default/aim-active.gif
+lib/linux-netscape6/chrome/messenger/skin/default/aim-enter.gif
+lib/linux-netscape6/chrome/messenger/skin/default/aim-exit.gif
+lib/linux-netscape6/chrome/messenger/skin/default/aimHdrViewOverlay.css
+lib/linux-netscape6/chrome/messenger/skin/default/attach.gif
+lib/linux-netscape6/chrome/messenger/skin/default/check.gif
+lib/linux-netscape6/chrome/messenger/skin/default/dot.gif
+lib/linux-netscape6/chrome/messenger/skin/default/fieldMapImport.css
+lib/linux-netscape6/chrome/messenger/skin/default/flagcol.gif
+lib/linux-netscape6/chrome/messenger/skin/default/flaggedmail.gif
+lib/linux-netscape6/chrome/messenger/skin/default/folder-draft-open.gif
+lib/linux-netscape6/chrome/messenger/skin/default/folder-draft-share-open.gif
+lib/linux-netscape6/chrome/messenger/skin/default/folder-draft-share.gif
+lib/linux-netscape6/chrome/messenger/skin/default/folder-draft.gif
+lib/linux-netscape6/chrome/messenger/skin/default/folder-filed-open.gif
+lib/linux-netscape6/chrome/messenger/skin/default/folder-filed.gif
+lib/linux-netscape6/chrome/messenger/skin/default/folder-hasmail.gif
+lib/linux-netscape6/chrome/messenger/skin/default/folder-inbox-new.gif
+lib/linux-netscape6/chrome/messenger/skin/default/folder-inbox-open.gif
+lib/linux-netscape6/chrome/messenger/skin/default/folder-inbox-share-open.gif
+lib/linux-netscape6/chrome/messenger/skin/default/folder-inbox-share.gif
+lib/linux-netscape6/chrome/messenger/skin/default/folder-inbox.gif
+lib/linux-netscape6/chrome/messenger/skin/default/folder-mailserver.gif
+lib/linux-netscape6/chrome/messenger/skin/default/folder-new-open.gif
+lib/linux-netscape6/chrome/messenger/skin/default/folder-new.gif
+lib/linux-netscape6/chrome/messenger/skin/default/folder-newsgroup-new.gif
+lib/linux-netscape6/chrome/messenger/skin/default/folder-newsgroup.gif
+lib/linux-netscape6/chrome/messenger/skin/default/folder-open.gif
+lib/linux-netscape6/chrome/messenger/skin/default/folder-outbox-open.gif
+lib/linux-netscape6/chrome/messenger/skin/default/folder-outbox.gif
+lib/linux-netscape6/chrome/messenger/skin/default/folder-sent-open.gif
+lib/linux-netscape6/chrome/messenger/skin/default/folder-sent-share-open.gif
+lib/linux-netscape6/chrome/messenger/skin/default/folder-sent-share.gif
+lib/linux-netscape6/chrome/messenger/skin/default/folder-sent.gif
+lib/linux-netscape6/chrome/messenger/skin/default/folder-server-open.gif
+lib/linux-netscape6/chrome/messenger/skin/default/folder-server.gif
+lib/linux-netscape6/chrome/messenger/skin/default/folder-share-open.gif
+lib/linux-netscape6/chrome/messenger/skin/default/folder-share.gif
+lib/linux-netscape6/chrome/messenger/skin/default/folder-template-open.gif
+lib/linux-netscape6/chrome/messenger/skin/default/folder-template-share-open.gif
+lib/linux-netscape6/chrome/messenger/skin/default/folder-template-share.gif
+lib/linux-netscape6/chrome/messenger/skin/default/folder-template.gif
+lib/linux-netscape6/chrome/messenger/skin/default/folder-trash-open.gif
+lib/linux-netscape6/chrome/messenger/skin/default/folder-trash-share-open.gif
+lib/linux-netscape6/chrome/messenger/skin/default/folder-trash-share.gif
+lib/linux-netscape6/chrome/messenger/skin/default/folder-trash.gif
+lib/linux-netscape6/chrome/messenger/skin/default/folderPane.css
+lib/linux-netscape6/chrome/messenger/skin/default/forward.gif
+lib/linux-netscape6/chrome/messenger/skin/default/frown.gif
+lib/linux-netscape6/chrome/messenger/skin/default/getmsg.gif
+lib/linux-netscape6/chrome/messenger/skin/default/inbox.gif
+lib/linux-netscape6/chrome/messenger/skin/default/less.gif
+lib/linux-netscape6/chrome/messenger/skin/default/local-mailhost.gif
+lib/linux-netscape6/chrome/messenger/skin/default/mail-message.gif
+lib/linux-netscape6/chrome/messenger/skin/default/mailfolder.gif
+lib/linux-netscape6/chrome/messenger/skin/default/mailheader.css
+lib/linux-netscape6/chrome/messenger/skin/default/messenger.css
+lib/linux-netscape6/chrome/messenger/skin/default/more.gif
+lib/linux-netscape6/chrome/messenger/skin/default/msgHdrViewOverlay.css
+lib/linux-netscape6/chrome/messenger/skin/default/newmsg.gif
+lib/linux-netscape6/chrome/messenger/skin/default/newshost.gif
+lib/linux-netscape6/chrome/messenger/skin/default/next.gif
+lib/linux-netscape6/chrome/messenger/skin/default/open-mailfolder.gif
+lib/linux-netscape6/chrome/messenger/skin/default/outbox.gif
+lib/linux-netscape6/chrome/messenger/skin/default/readcol.gif
+lib/linux-netscape6/chrome/messenger/skin/default/readmail.gif
+lib/linux-netscape6/chrome/messenger/skin/default/reply.gif
+lib/linux-netscape6/chrome/messenger/skin/default/replyall.gif
+lib/linux-netscape6/chrome/messenger/skin/default/server-news-lock.gif
+lib/linux-netscape6/chrome/messenger/skin/default/server-news.gif
+lib/linux-netscape6/chrome/messenger/skin/default/server-remote-lock.gif
+lib/linux-netscape6/chrome/messenger/skin/default/server-remote.gif
+lib/linux-netscape6/chrome/messenger/skin/default/server.gif
+lib/linux-netscape6/chrome/messenger/skin/default/sick.gif
+lib/linux-netscape6/chrome/messenger/skin/default/smile.gif
+lib/linux-netscape6/chrome/messenger/skin/default/subscribe.css
+lib/linux-netscape6/chrome/messenger/skin/default/threadPane.css
+lib/linux-netscape6/chrome/messenger/skin/default/threadcol.gif
+lib/linux-netscape6/chrome/messenger/skin/default/trash.gif
+lib/linux-netscape6/chrome/messenger/skin/default/unreadmail.gif
+lib/linux-netscape6/chrome/messenger/skin/default/unthreadcol.gif
+lib/linux-netscape6/chrome/messenger/skin/default/winclassic.gif
+lib/linux-netscape6/chrome/messenger/skin/default/wink.gif
+lib/linux-netscape6/chrome/messenger/skin/default/winwide.gif
+lib/linux-netscape6/chrome/messenger/skin/default/wizard.css
+lib/linux-netscape6/chrome/messengercompose/content/default/MsgAttachPage.js
+lib/linux-netscape6/chrome/messengercompose/content/default/MsgAttachPage.xul
+lib/linux-netscape6/chrome/messengercompose/content/default/MsgComposeCommands.js
+lib/linux-netscape6/chrome/messengercompose/content/default/addressAutoComplete.js
+lib/linux-netscape6/chrome/messengercompose/content/default/addressingWidgetOverlay.js
+lib/linux-netscape6/chrome/messengercompose/content/default/addressingWidgetOverlay.xul
+lib/linux-netscape6/chrome/messengercompose/content/default/askSendFormat.js
+lib/linux-netscape6/chrome/messengercompose/content/default/askSendFormat.xul
+lib/linux-netscape6/chrome/messengercompose/content/default/messengercompose.xul
+lib/linux-netscape6/chrome/messengercompose/content/default/pref-formatting.xul
+lib/linux-netscape6/chrome/messengercompose/content/default/pref-messages.xul
+lib/linux-netscape6/chrome/messengercompose/locale/en-US/MsgAttachPage.dtd
+lib/linux-netscape6/chrome/messengercompose/locale/en-US/addressingWidgetOverlay.dtd
+lib/linux-netscape6/chrome/messengercompose/locale/en-US/askSendFormat.dtd
+lib/linux-netscape6/chrome/messengercompose/locale/en-US/composeMsgs.properties
+lib/linux-netscape6/chrome/messengercompose/locale/en-US/messengercompose.dtd
+lib/linux-netscape6/chrome/messengercompose/locale/en-US/pref-formatting.dtd
+lib/linux-netscape6/chrome/messengercompose/locale/en-US/pref-messages.dtd
+lib/linux-netscape6/chrome/messengercompose/skin/default/address.gif
+lib/linux-netscape6/chrome/messengercompose/skin/default/attach.gif
+lib/linux-netscape6/chrome/messengercompose/skin/default/messengercompose.css
+lib/linux-netscape6/chrome/messengercompose/skin/default/quote.gif
+lib/linux-netscape6/chrome/messengercompose/skin/default/save.gif
+lib/linux-netscape6/chrome/messengercompose/skin/default/send.gif
+lib/linux-netscape6/chrome/messengercompose/skin/default/spelling.gif
+lib/linux-netscape6/chrome/messengercompose/skin/default/stop.gif
+lib/linux-netscape6/chrome/navigator/content/default/NavSecurityOverlay.xul
+lib/linux-netscape6/chrome/navigator/content/default/NavSecurityUI.js
+lib/linux-netscape6/chrome/navigator/content/default/NetSupportConfirmCheckYN.xul
+lib/linux-netscape6/chrome/navigator/content/default/NetSupportConfirmYN.xul
+lib/linux-netscape6/chrome/navigator/content/default/navigator.js
+lib/linux-netscape6/chrome/navigator/content/default/navigator.xul
+lib/linux-netscape6/chrome/navigator/content/default/navigatorDD.js
+lib/linux-netscape6/chrome/navigator/content/default/navigatorOverlay.xul
+lib/linux-netscape6/chrome/navigator/content/default/netscape.xul
+lib/linux-netscape6/chrome/navigator/content/default/nsContextMenu.js
+lib/linux-netscape6/chrome/navigator/content/default/openLocation.js
+lib/linux-netscape6/chrome/navigator/content/default/openLocation.xul
+lib/linux-netscape6/chrome/navigator/content/default/tooltip.js
+lib/linux-netscape6/chrome/navigator/content/default/viewSource.xul
+lib/linux-netscape6/chrome/navigator/content/default/viewsource.js
+lib/linux-netscape6/chrome/navigator/content/overlays.rdf
+lib/linux-netscape6/chrome/navigator/locale/en-US/NetSupportConfirmCheckYN.dtd
+lib/linux-netscape6/chrome/navigator/locale/en-US/navigator.dtd
+lib/linux-netscape6/chrome/navigator/locale/en-US/navigator.properties
+lib/linux-netscape6/chrome/navigator/locale/en-US/netscape.dtd
+lib/linux-netscape6/chrome/navigator/locale/en-US/openLocation.dtd
+lib/linux-netscape6/chrome/navigator/locale/en-US/viewSource.dtd
+lib/linux-netscape6/chrome/navigator/skin/default/NavSecurityOverlay.css
+lib/linux-netscape6/chrome/navigator/skin/default/alertl.gif
+lib/linux-netscape6/chrome/navigator/skin/default/back.gif
+lib/linux-netscape6/chrome/navigator/skin/default/broken.gif
+lib/linux-netscape6/chrome/navigator/skin/default/errorl.gif
+lib/linux-netscape6/chrome/navigator/skin/default/forward.gif
+lib/linux-netscape6/chrome/navigator/skin/default/home.gif
+lib/linux-netscape6/chrome/navigator/skin/default/location-hover.gif
+lib/linux-netscape6/chrome/navigator/skin/default/location.gif
+lib/linux-netscape6/chrome/navigator/skin/default/lock.gif
+lib/linux-netscape6/chrome/navigator/skin/default/messagel.gif
+lib/linux-netscape6/chrome/navigator/skin/default/mynetscape.gif
+lib/linux-netscape6/chrome/navigator/skin/default/n-box-persbar.gif
+lib/linux-netscape6/chrome/navigator/skin/default/navigator.css
+lib/linux-netscape6/chrome/navigator/skin/default/print.gif
+lib/linux-netscape6/chrome/navigator/skin/default/questionl.gif
+lib/linux-netscape6/chrome/navigator/skin/default/reload.gif
+lib/linux-netscape6/chrome/navigator/skin/default/search.gif
+lib/linux-netscape6/chrome/navigator/skin/default/stop.gif
+lib/linux-netscape6/chrome/navigator/skin/default/unlock.gif
+lib/linux-netscape6/chrome/netwerk/content/default/https/psm.js
+lib/linux-netscape6/chrome/platformHTMLBindings.xml
+lib/linux-netscape6/chrome/pref/content/default/PrefsWindow.js
+lib/linux-netscape6/chrome/pref/content/default/fontScalingOverlay.xul
+lib/linux-netscape6/chrome/pref/content/default/pref-IM-appearance_overlay.xul
+lib/linux-netscape6/chrome/pref/content/default/pref-IM_away.xul
+lib/linux-netscape6/chrome/pref/content/default/pref-IM_buddylist.xul
+lib/linux-netscape6/chrome/pref/content/default/pref-IM_connection.xul
+lib/linux-netscape6/chrome/pref/content/default/pref-IM_getuser.xul
+lib/linux-netscape6/chrome/pref/content/default/pref-IM_instantmessage.xul
+lib/linux-netscape6/chrome/pref/content/default/pref-IM_notification.xul
+lib/linux-netscape6/chrome/pref/content/default/pref-IM_overlay.xul
+lib/linux-netscape6/chrome/pref/content/default/pref-IM_privacy.xul
+lib/linux-netscape6/chrome/pref/content/default/pref-advanced.xul
+lib/linux-netscape6/chrome/pref/content/default/pref-appearance.xul
+lib/linux-netscape6/chrome/pref/content/default/pref-applications.xul
+lib/linux-netscape6/chrome/pref/content/default/pref-cache.js
+lib/linux-netscape6/chrome/pref/content/default/pref-cache.xul
+lib/linux-netscape6/chrome/pref/content/default/pref-charset.js
+lib/linux-netscape6/chrome/pref/content/default/pref-charset.xul
+lib/linux-netscape6/chrome/pref/content/default/pref-colors.js
+lib/linux-netscape6/chrome/pref/content/default/pref-colors.xul
+lib/linux-netscape6/chrome/pref/content/default/pref-composer.js
+lib/linux-netscape6/chrome/pref/content/default/pref-composer.xul
+lib/linux-netscape6/chrome/pref/content/default/pref-cookies.xul
+lib/linux-netscape6/chrome/pref/content/default/pref-debug.xul
+lib/linux-netscape6/chrome/pref/content/default/pref-download.xul
+lib/linux-netscape6/chrome/pref/content/default/pref-editing.xul
+lib/linux-netscape6/chrome/pref/content/default/pref-fonts.js
+lib/linux-netscape6/chrome/pref/content/default/pref-fonts.xul
+lib/linux-netscape6/chrome/pref/content/default/pref-irc.xul
+lib/linux-netscape6/chrome/pref/content/default/pref-languages.xul
+lib/linux-netscape6/chrome/pref/content/default/pref-mousewheel.js
+lib/linux-netscape6/chrome/pref/content/default/pref-mousewheel.xul
+lib/linux-netscape6/chrome/pref/content/default/pref-navigator.js
+lib/linux-netscape6/chrome/pref/content/default/pref-navigator.xul
+lib/linux-netscape6/chrome/pref/content/default/pref-offline.xul
+lib/linux-netscape6/chrome/pref/content/default/pref-proxies.js
+lib/linux-netscape6/chrome/pref/content/default/pref-proxies.xul
+lib/linux-netscape6/chrome/pref/content/default/pref-proxy-manual.xul
+lib/linux-netscape6/chrome/pref/content/default/pref-publish.xul
+lib/linux-netscape6/chrome/pref/content/default/pref-search.js
+lib/linux-netscape6/chrome/pref/content/default/pref-search.xul
+lib/linux-netscape6/chrome/pref/content/default/pref-smart_browsing.xul
+lib/linux-netscape6/chrome/pref/content/default/pref-smartupdate.xul
+lib/linux-netscape6/chrome/pref/content/default/pref-themes.xul
+lib/linux-netscape6/chrome/pref/content/default/pref-wallet.xul
+lib/linux-netscape6/chrome/pref/content/default/pref.js
+lib/linux-netscape6/chrome/pref/content/default/pref.xul
+lib/linux-netscape6/chrome/pref/content/default/prefIM.js
+lib/linux-netscape6/chrome/pref/content/default/preftree.xul
+lib/linux-netscape6/chrome/pref/content/default/prefutilities.js
+lib/linux-netscape6/chrome/pref/content/overlays.rdf
+lib/linux-netscape6/chrome/pref/locale/en-US/PrefsWindow.dtd
+lib/linux-netscape6/chrome/pref/locale/en-US/pref-IM-appearance_overlay.dtd
+lib/linux-netscape6/chrome/pref/locale/en-US/pref-IM_away.dtd
+lib/linux-netscape6/chrome/pref/locale/en-US/pref-IM_buddylist.dtd
+lib/linux-netscape6/chrome/pref/locale/en-US/pref-IM_connection.dtd
+lib/linux-netscape6/chrome/pref/locale/en-US/pref-IM_getuser.dtd
+lib/linux-netscape6/chrome/pref/locale/en-US/pref-IM_instantmessage.dtd
+lib/linux-netscape6/chrome/pref/locale/en-US/pref-IM_notification.dtd
+lib/linux-netscape6/chrome/pref/locale/en-US/pref-IM_overlay.dtd
+lib/linux-netscape6/chrome/pref/locale/en-US/pref-IM_privacy.dtd
+lib/linux-netscape6/chrome/pref/locale/en-US/pref-advanced.dtd
+lib/linux-netscape6/chrome/pref/locale/en-US/pref-appearance.dtd
+lib/linux-netscape6/chrome/pref/locale/en-US/pref-applications.dtd
+lib/linux-netscape6/chrome/pref/locale/en-US/pref-cache.dtd
+lib/linux-netscape6/chrome/pref/locale/en-US/pref-charset.dtd
+lib/linux-netscape6/chrome/pref/locale/en-US/pref-colors.dtd
+lib/linux-netscape6/chrome/pref/locale/en-US/pref-composer.dtd
+lib/linux-netscape6/chrome/pref/locale/en-US/pref-cookies.dtd
+lib/linux-netscape6/chrome/pref/locale/en-US/pref-debug.dtd
+lib/linux-netscape6/chrome/pref/locale/en-US/pref-download.dtd
+lib/linux-netscape6/chrome/pref/locale/en-US/pref-fonts.dtd
+lib/linux-netscape6/chrome/pref/locale/en-US/pref-irc.dtd
+lib/linux-netscape6/chrome/pref/locale/en-US/pref-languages.dtd
+lib/linux-netscape6/chrome/pref/locale/en-US/pref-mousewheel.dtd
+lib/linux-netscape6/chrome/pref/locale/en-US/pref-navigator.dtd
+lib/linux-netscape6/chrome/pref/locale/en-US/pref-offline.dtd
+lib/linux-netscape6/chrome/pref/locale/en-US/pref-proxies.dtd
+lib/linux-netscape6/chrome/pref/locale/en-US/pref-proxy-manual.dtd
+lib/linux-netscape6/chrome/pref/locale/en-US/pref-publish.dtd
+lib/linux-netscape6/chrome/pref/locale/en-US/pref-search.dtd
+lib/linux-netscape6/chrome/pref/locale/en-US/pref-smart_browsing.dtd
+lib/linux-netscape6/chrome/pref/locale/en-US/pref-smartupdate.dtd
+lib/linux-netscape6/chrome/pref/locale/en-US/pref-themes.dtd
+lib/linux-netscape6/chrome/pref/locale/en-US/pref-wallet.dtd
+lib/linux-netscape6/chrome/pref/locale/en-US/pref.dtd
+lib/linux-netscape6/chrome/pref/locale/en-US/preftree.dtd
+lib/linux-netscape6/chrome/pref/locale/en-US/prefutilities.properties
+lib/linux-netscape6/chrome/pref/skin/default/pref-IM.css
+lib/linux-netscape6/chrome/pref/skin/default/pref-IM_away.css
+lib/linux-netscape6/chrome/pref/skin/default/pref-IM_buddylist.css
+lib/linux-netscape6/chrome/pref/skin/default/pref-IM_connection.css
+lib/linux-netscape6/chrome/pref/skin/default/pref-IM_instantmessage.css
+lib/linux-netscape6/chrome/pref/skin/default/pref-IM_notification.css
+lib/linux-netscape6/chrome/pref/skin/default/pref-IM_privacy.css
+lib/linux-netscape6/chrome/pref/skin/default/pref.css
+lib/linux-netscape6/chrome/pref/skin/default/preftree.css
+lib/linux-netscape6/chrome/pref/skin/default/speaker.gif
+lib/linux-netscape6/chrome/profile/content/default/activation.xul
+lib/linux-netscape6/chrome/profile/content/default/activationFrame.xul
+lib/linux-netscape6/chrome/profile/content/default/confirmMigration.js
+lib/linux-netscape6/chrome/profile/content/default/confirmMigration.xul
+lib/linux-netscape6/chrome/profile/content/default/createProfileWizard.js
+lib/linux-netscape6/chrome/profile/content/default/createProfileWizard.xul
+lib/linux-netscape6/chrome/profile/content/default/deleteProfile.js
+lib/linux-netscape6/chrome/profile/content/default/deleteProfile.xul
+lib/linux-netscape6/chrome/profile/content/default/migrateAllProfile.xul
+lib/linux-netscape6/chrome/profile/content/default/newProfile1_1.js
+lib/linux-netscape6/chrome/profile/content/default/newProfile1_1.xul
+lib/linux-netscape6/chrome/profile/content/default/newProfile1_2.js
+lib/linux-netscape6/chrome/profile/content/default/newProfile1_2.xul
+lib/linux-netscape6/chrome/profile/content/default/profileManager.js
+lib/linux-netscape6/chrome/profile/content/default/profileMigrationProgress.js
+lib/linux-netscape6/chrome/profile/content/default/profileMigrationProgress.xul
+lib/linux-netscape6/chrome/profile/content/default/profileSelection.js
+lib/linux-netscape6/chrome/profile/content/default/profileSelection.xul
+lib/linux-netscape6/chrome/profile/locale/en-US/activation.dtd
+lib/linux-netscape6/chrome/profile/locale/en-US/confirmMigration.dtd
+lib/linux-netscape6/chrome/profile/locale/en-US/createProfileWizard.dtd
+lib/linux-netscape6/chrome/profile/locale/en-US/createProfileWizard.properties
+lib/linux-netscape6/chrome/profile/locale/en-US/migration.properties
+lib/linux-netscape6/chrome/profile/locale/en-US/newProfile1_1.dtd
+lib/linux-netscape6/chrome/profile/locale/en-US/newProfile1_2.dtd
+lib/linux-netscape6/chrome/profile/locale/en-US/newProfile1_2.properties
+lib/linux-netscape6/chrome/profile/locale/en-US/profileManager.properties
+lib/linux-netscape6/chrome/profile/locale/en-US/profileManagerDelete.dtd
+lib/linux-netscape6/chrome/profile/locale/en-US/profileManagerMigrateAll.dtd
+lib/linux-netscape6/chrome/profile/locale/en-US/profileMigrationProgress.dtd
+lib/linux-netscape6/chrome/profile/locale/en-US/profileSelection.dtd
+lib/linux-netscape6/chrome/profile/skin/default/migrate.gif
+lib/linux-netscape6/chrome/profile/skin/default/newProfile1_2.css
+lib/linux-netscape6/chrome/profile/skin/default/profile.css
+lib/linux-netscape6/chrome/profile/skin/default/profileManager.css
+lib/linux-netscape6/chrome/profile/skin/default/profileicon-large.gif
+lib/linux-netscape6/chrome/regviewer/content/default/regviewer.js
+lib/linux-netscape6/chrome/regviewer/content/default/regviewer.xul
+lib/linux-netscape6/chrome/regviewer/locale/en-US/regviewer.dtd
+lib/linux-netscape6/chrome/regviewer/skin/default/regviewer.css
+lib/linux-netscape6/chrome/related/content/default/related-panel.js
+lib/linux-netscape6/chrome/related/content/default/related-panel.xul
+lib/linux-netscape6/chrome/related/locale/en-US/related-panel.dtd
+lib/linux-netscape6/chrome/related/skin/default/related.css
+lib/linux-netscape6/chrome/related/skin/default/sitemap.gif
+lib/linux-netscape6/chrome/search/content/default/default.htm
+lib/linux-netscape6/chrome/search/content/default/find.js
+lib/linux-netscape6/chrome/search/content/default/find.xul
+lib/linux-netscape6/chrome/search/content/default/findresults.xul
+lib/linux-netscape6/chrome/search/content/default/internet.js
+lib/linux-netscape6/chrome/search/content/default/internet.xul
+lib/linux-netscape6/chrome/search/content/default/internetresults.js
+lib/linux-netscape6/chrome/search/content/default/internetresults.xul
+lib/linux-netscape6/chrome/search/content/default/search-panel.js
+lib/linux-netscape6/chrome/search/content/default/search-panel.xul
+lib/linux-netscape6/chrome/search/content/default/search.js
+lib/linux-netscape6/chrome/search/content/default/search.xul
+lib/linux-netscape6/chrome/search/content/default/shared.js
+lib/linux-netscape6/chrome/search/locale/en-US/find.dtd
+lib/linux-netscape6/chrome/search/locale/en-US/findresults.dtd
+lib/linux-netscape6/chrome/search/locale/en-US/internet.dtd
+lib/linux-netscape6/chrome/search/locale/en-US/internetresults.dtd
+lib/linux-netscape6/chrome/search/locale/en-US/search-panel.dtd
+lib/linux-netscape6/chrome/search/locale/en-US/search-panel.properties
+lib/linux-netscape6/chrome/search/locale/en-US/search.dtd
+lib/linux-netscape6/chrome/search/skin/default/findresults.css
+lib/linux-netscape6/chrome/search/skin/default/icons.css
+lib/linux-netscape6/chrome/search/skin/default/internet.css
+lib/linux-netscape6/chrome/search/skin/default/internetresults.css
+lib/linux-netscape6/chrome/search/skin/default/search.css
+lib/linux-netscape6/chrome/security/locale/en-US/security.properties
+lib/linux-netscape6/chrome/sidebar/content/default/customize-panel.js
+lib/linux-netscape6/chrome/sidebar/content/default/customize-panel.xul
+lib/linux-netscape6/chrome/sidebar/content/default/customize.js
+lib/linux-netscape6/chrome/sidebar/content/default/customize.xul
+lib/linux-netscape6/chrome/sidebar/content/default/local-panels.rdf
+lib/linux-netscape6/chrome/sidebar/content/default/preview.js
+lib/linux-netscape6/chrome/sidebar/content/default/preview.xul
+lib/linux-netscape6/chrome/sidebar/content/default/remote-panels.rdf
+lib/linux-netscape6/chrome/sidebar/content/default/sidebarOverlay.js
+lib/linux-netscape6/chrome/sidebar/content/default/sidebarOverlay.xul
+lib/linux-netscape6/chrome/sidebar/locale/en-US/customize-panel.dtd
+lib/linux-netscape6/chrome/sidebar/locale/en-US/customize.dtd
+lib/linux-netscape6/chrome/sidebar/locale/en-US/preview.dtd
+lib/linux-netscape6/chrome/sidebar/locale/en-US/sidebar-rdf.dtd
+lib/linux-netscape6/chrome/sidebar/locale/en-US/sidebar-registry-rdf.dtd
+lib/linux-netscape6/chrome/sidebar/locale/en-US/sidebarOverlay.dtd
+lib/linux-netscape6/chrome/sidebar/skin/default/customize-panel.css
+lib/linux-netscape6/chrome/sidebar/skin/default/customize.css
+lib/linux-netscape6/chrome/sidebar/skin/default/list-down-dis.gif
+lib/linux-netscape6/chrome/sidebar/skin/default/list-down.gif
+lib/linux-netscape6/chrome/sidebar/skin/default/list-up-dis.gif
+lib/linux-netscape6/chrome/sidebar/skin/default/list-up.gif
+lib/linux-netscape6/chrome/sidebar/skin/default/preview.css
+lib/linux-netscape6/chrome/sidebar/skin/default/sidebar-bottomright-cap.gif
+lib/linux-netscape6/chrome/sidebar/skin/default/sidebar-topright-cap.gif
+lib/linux-netscape6/chrome/sidebar/skin/default/sidebar.css
+lib/linux-netscape6/chrome/sidebar/skin/default/sidebarOverlay.css
+lib/linux-netscape6/chrome/timebomb/content/default/expireText.xul
+lib/linux-netscape6/chrome/timebomb/content/default/warn.xul
+lib/linux-netscape6/chrome/timebomb/locale/en-US/timebomb.dtd
+lib/linux-netscape6/chrome/wallet/content/default/CookieViewer.js
+lib/linux-netscape6/chrome/wallet/content/default/CookieViewer.xul
+lib/linux-netscape6/chrome/wallet/content/default/SignonViewer.js
+lib/linux-netscape6/chrome/wallet/content/default/SignonViewer.xul
+lib/linux-netscape6/chrome/wallet/content/default/WalletEditor.js
+lib/linux-netscape6/chrome/wallet/content/default/WalletEditor.xul
+lib/linux-netscape6/chrome/wallet/content/default/WalletPreview.js
+lib/linux-netscape6/chrome/wallet/content/default/WalletPreview.xul
+lib/linux-netscape6/chrome/wallet/locale/en-US/CookieViewer.dtd
+lib/linux-netscape6/chrome/wallet/locale/en-US/CookieViewer.properties
+lib/linux-netscape6/chrome/wallet/locale/en-US/SignonViewer.dtd
+lib/linux-netscape6/chrome/wallet/locale/en-US/SignonViewer.properties
+lib/linux-netscape6/chrome/wallet/locale/en-US/WalletEditor.dtd
+lib/linux-netscape6/chrome/wallet/locale/en-US/WalletEditor.properties
+lib/linux-netscape6/chrome/wallet/locale/en-US/WalletPreview.properties
+lib/linux-netscape6/chrome/wallet/locale/en-US/cookie.properties
+lib/linux-netscape6/chrome/wallet/locale/en-US/wallet.properties
+lib/linux-netscape6/chrome/wallet/skin/default/CookieViewer.css
+lib/linux-netscape6/chrome/wallet/skin/default/SignonViewer.css
+lib/linux-netscape6/chrome/wallet/skin/default/WalletEditor.css
+lib/linux-netscape6/chrome/wallet/skin/default/wallet.css
+lib/linux-netscape6/chrome/xpinstall/content/default/institems.js
+lib/linux-netscape6/chrome/xpinstall/content/default/institems.xul
+lib/linux-netscape6/chrome/xpinstall/content/default/xpistatus.js
+lib/linux-netscape6/chrome/xpinstall/content/default/xpistatus.xul
+lib/linux-netscape6/chrome/xpinstall/locale/en-US/institems.dtd
+lib/linux-netscape6/chrome/xpinstall/locale/en-US/progress.dtd
+lib/linux-netscape6/chrome/xpinstall/locale/en-US/xpinstall.properties
+lib/linux-netscape6/chrome/xpinstall/locale/en-US/xpistatus.dtd
+lib/linux-netscape6/chrome/xpinstall/skin/default/xpinstall.css
+lib/linux-netscape6/chrome/xul.css
+lib/linux-netscape6/chrome/xulBindings.xml
+lib/linux-netscape6/component.reg
+lib/linux-netscape6/components/AIMGlue.xpt
+lib/linux-netscape6/components/addrbook.xpt
+lib/linux-netscape6/components/appshell.xpt
+lib/linux-netscape6/components/bookmarks.xpt
+lib/linux-netscape6/components/caps.xpt
+lib/linux-netscape6/components/chrome.xpt
+lib/linux-netscape6/components/cookieviewer.xpt
+lib/linux-netscape6/components/directory.xpt
+lib/linux-netscape6/components/docshell.xpt
+lib/linux-netscape6/components/dom.xpt
+lib/linux-netscape6/components/editor.xpt
+lib/linux-netscape6/components/gfx.xpt
+lib/linux-netscape6/components/history.xpt
+lib/linux-netscape6/components/import.xpt
+lib/linux-netscape6/components/intl.xpt
+lib/linux-netscape6/components/jar.xpt
+lib/linux-netscape6/components/jsurl.xpt
+lib/linux-netscape6/components/layout.xpt
+lib/linux-netscape6/components/libIMGlue.so
+lib/linux-netscape6/components/libaddrbook.so
+lib/linux-netscape6/components/libaimstat.so
+lib/linux-netscape6/components/libbookmarks.so
+lib/linux-netscape6/components/libcaps.so
+lib/linux-netscape6/components/libchardet.so
+lib/linux-netscape6/components/libchrome.so
+lib/linux-netscape6/components/libconverters.so
+lib/linux-netscape6/components/libcookie.so
+lib/linux-netscape6/components/libdirectory.so
+lib/linux-netscape6/components/libender.so
+lib/linux-netscape6/components/libgfxps.so
+lib/linux-netscape6/components/libhistory.so
+lib/linux-netscape6/components/libimpText.so
+lib/linux-netscape6/components/libimport.so
+lib/linux-netscape6/components/libjar50.so
+lib/linux-netscape6/components/libjsloader.so
+lib/linux-netscape6/components/libjsurl.so
+lib/linux-netscape6/components/liblocalmail.so
+lib/linux-netscape6/components/liblwbrk.so
+lib/linux-netscape6/components/libmailnews.so
+lib/linux-netscape6/components/libmime.so
+lib/linux-netscape6/components/libmimeemitter.so
+lib/linux-netscape6/components/libmimetype.so
+lib/linux-netscape6/components/libmork.so
+lib/linux-netscape6/components/libmozbrwsr.so
+lib/linux-netscape6/components/libmozfind.so
+lib/linux-netscape6/components/libmozucth.so
+lib/linux-netscape6/components/libmozxfer.so
+lib/linux-netscape6/components/libmsgcompose.so
+lib/linux-netscape6/components/libmsgdb.so
+lib/linux-netscape6/components/libmsgimap.so
+lib/linux-netscape6/components/libmsgnews.so
+lib/linux-netscape6/components/libnecko.so
+lib/linux-netscape6/components/libnecko_about.so
+lib/linux-netscape6/components/libnecko_cache.so
+lib/linux-netscape6/components/libnecko_data.so
+lib/linux-netscape6/components/libnecko_datetime.so
+lib/linux-netscape6/components/libnecko_file.so
+lib/linux-netscape6/components/libnecko_finger.so
+lib/linux-netscape6/components/libnecko_ftp.so
+lib/linux-netscape6/components/libnecko_http.so
+lib/linux-netscape6/components/libnecko_jar.so
+lib/linux-netscape6/components/libnecko_res.so
+lib/linux-netscape6/components/libnecko_resource.so
+lib/linux-netscape6/components/libnkhttps.so
+lib/linux-netscape6/components/libnkkyword.so
+lib/linux-netscape6/components/libnkssl.so
+lib/linux-netscape6/components/libnsappshell.so
+lib/linux-netscape6/components/libnsgif.so
+lib/linux-netscape6/components/libnsjpg.so
+lib/linux-netscape6/components/libnslocale.so
+lib/linux-netscape6/components/libnspng.so
+lib/linux-netscape6/components/libnsprefm.so
+lib/linux-netscape6/components/liboji.so
+lib/linux-netscape6/components/libpref.so
+lib/linux-netscape6/components/libprofile.so
+lib/linux-netscape6/components/libpsmcomp.so
+lib/linux-netscape6/components/libqfaservices.so
+lib/linux-netscape6/components/libraptorhtml.so
+lib/linux-netscape6/components/libraptorhtmlpars.so
+lib/linux-netscape6/components/libraptorview.so
+lib/linux-netscape6/components/librdf.so
+lib/linux-netscape6/components/libregviewer.so
+lib/linux-netscape6/components/librelated.so
+lib/linux-netscape6/components/libsample.so
+lib/linux-netscape6/components/libsearch.so
+lib/linux-netscape6/components/libsecureui.so
+lib/linux-netscape6/components/libshistory.so
+lib/linux-netscape6/components/libsigned.so
+lib/linux-netscape6/components/libsmime.so
+lib/linux-netscape6/components/libstreamconv.so
+lib/linux-netscape6/components/libstrres.so
+lib/linux-netscape6/components/libtbmb.so
+lib/linux-netscape6/components/libtimer_gtk.so
+lib/linux-netscape6/components/libtoolkit_service.so
+lib/linux-netscape6/components/libtxmgr.so
+lib/linux-netscape6/components/libtxtsvc.so
+lib/linux-netscape6/components/libuconv.so
+lib/linux-netscape6/components/libucvcn.so
+lib/linux-netscape6/components/libucvibm.so
+lib/linux-netscape6/components/libucvja.so
+lib/linux-netscape6/components/libucvko.so
+lib/linux-netscape6/components/libucvlatin.so
+lib/linux-netscape6/components/libucvtw.so
+lib/linux-netscape6/components/libucvtw2.so
+lib/linux-netscape6/components/libunicharutil.so
+lib/linux-netscape6/components/liburiloader.so
+lib/linux-netscape6/components/libvcard.so
+lib/linux-netscape6/components/libwallet.so
+lib/linux-netscape6/components/libwalletviewers.so
+lib/linux-netscape6/components/libxpconnect.so
+lib/linux-netscape6/components/libxpiflash.so
+lib/linux-netscape6/components/libxpinstall.so
+lib/linux-netscape6/components/locale.xpt
+lib/linux-netscape6/components/mailnews.xpt
+lib/linux-netscape6/components/mime.xpt
+lib/linux-netscape6/components/mimetype.xpt
+lib/linux-netscape6/components/mozbrwsr.xpt
+lib/linux-netscape6/components/mozcomps.xpt
+lib/linux-netscape6/components/mozfind.xpt
+lib/linux-netscape6/components/mozucth.xpt
+lib/linux-netscape6/components/mozxfer.xpt
+lib/linux-netscape6/components/msgbase.xpt
+lib/linux-netscape6/components/msgcompose.xpt
+lib/linux-netscape6/components/msgdb.xpt
+lib/linux-netscape6/components/msgimap.xpt
+lib/linux-netscape6/components/msglocal.xpt
+lib/linux-netscape6/components/msgnews.xpt
+lib/linux-netscape6/components/msgsearch.xpt
+lib/linux-netscape6/components/necko_about.xpt
+lib/linux-netscape6/components/necko_base.xpt
+lib/linux-netscape6/components/necko_data.xpt
+lib/linux-netscape6/components/necko_dns.xpt
+lib/linux-netscape6/components/necko_ftp.xpt
+lib/linux-netscape6/components/necko_http.xpt
+lib/linux-netscape6/components/necko_jar.xpt
+lib/linux-netscape6/components/necko_res.xpt
+lib/linux-netscape6/components/necko_socket.xpt
+lib/linux-netscape6/components/necko_stream_converter.xpt
+lib/linux-netscape6/components/nkcache.xpt
+lib/linux-netscape6/components/nsJSAimKeywords.js
+lib/linux-netscape6/components/nsJSAimOdirEntry.js
+lib/linux-netscape6/components/nsSample.js
+lib/linux-netscape6/components/nsSidebar.js
+lib/linux-netscape6/components/oji.xpt
+lib/linux-netscape6/components/pref.xpt
+lib/linux-netscape6/components/prefmigr.xpt
+lib/linux-netscape6/components/profile.xpt
+lib/linux-netscape6/components/proxyObjInst.xpt
+lib/linux-netscape6/components/psmcomp.xpt
+lib/linux-netscape6/components/qfaservices.xpt
+lib/linux-netscape6/components/rdf.xpt
+lib/linux-netscape6/components/regviewer.xpt
+lib/linux-netscape6/components/related.xpt
+lib/linux-netscape6/components/remote.xpt
+lib/linux-netscape6/components/remoteControl.js
+lib/linux-netscape6/components/sample.xpt
+lib/linux-netscape6/components/search.xpt
+lib/linux-netscape6/components/secureui.xpt
+lib/linux-netscape6/components/shistory.xpt
+lib/linux-netscape6/components/sidebar.xpt
+lib/linux-netscape6/components/signonviewer.xpt
+lib/linux-netscape6/components/spellchecker/libspellchk.so
+lib/linux-netscape6/components/spellchecker/netscape.dic
+lib/linux-netscape6/components/spellchecker/pen4s324.dat
+lib/linux-netscape6/components/talkback/XTalkback.ad
+lib/linux-netscape6/components/talkback/master.ini
+lib/linux-netscape6/components/talkback/talkback
+lib/linux-netscape6/components/talkback/talkback.so
+lib/linux-netscape6/components/tbmb.xpt
+lib/linux-netscape6/components/txmgr.xpt
+lib/linux-netscape6/components/uconv.xpt
+lib/linux-netscape6/components/unicharutil.xpt
+lib/linux-netscape6/components/uriloader.xpt
+lib/linux-netscape6/components/util.xpt
+lib/linux-netscape6/components/wallet.xpt
+lib/linux-netscape6/components/walleteditor.xpt
+lib/linux-netscape6/components/walletpreview.xpt
+lib/linux-netscape6/components/webBrowser_core.xpt
+lib/linux-netscape6/components/webBrowser_setup.xpt
+lib/linux-netscape6/components/widget.xpt
+lib/linux-netscape6/components/xpcom_base.xpt
+lib/linux-netscape6/components/xpcom_components.xpt
+lib/linux-netscape6/components/xpcom_ds.xpt
+lib/linux-netscape6/components/xpcom_io.xpt
+lib/linux-netscape6/components/xpcom_threads.xpt
+lib/linux-netscape6/components/xpconnect.xpt
+lib/linux-netscape6/components/xpinstall.xpt
+lib/linux-netscape6/defaults/isp/aol.rdf
+lib/linux-netscape6/defaults/pref/aim.js
+lib/linux-netscape6/defaults/pref/all-ns.js
+lib/linux-netscape6/defaults/pref/all.js
+lib/linux-netscape6/defaults/pref/config-ns.js
+lib/linux-netscape6/defaults/pref/config.js
+lib/linux-netscape6/defaults/pref/editor-ns.js
+lib/linux-netscape6/defaults/pref/editor.js
+lib/linux-netscape6/defaults/pref/initpref.js
+lib/linux-netscape6/defaults/pref/mailnews-ns.js
+lib/linux-netscape6/defaults/pref/mailnews.js
+lib/linux-netscape6/defaults/pref/unix.js
+lib/linux-netscape6/defaults/pref/xpinstall.js
+lib/linux-netscape6/defaults/profile/bookmarks.html
+lib/linux-netscape6/defaults/profile/panels.rdf
+lib/linux-netscape6/helpbrowser
+lib/linux-netscape6/icons/mozicon16.xpm
+lib/linux-netscape6/icons/mozicon50.xpm
+@exec mkdir %D/lib/linux-netscape6/plugins 2>/dev/null || true
+lib/linux-netscape6/libIMGlue.so
+lib/linux-netscape6/libXpcs.so
+lib/linux-netscape6/libXpcs.so.1
+lib/linux-netscape6/libXprt.so
+lib/linux-netscape6/libXprt.so.1
+lib/linux-netscape6/libXptl.so
+lib/linux-netscape6/libXptl.so.1
+lib/linux-netscape6/libdocshell.so
+lib/linux-netscape6/libgfx_gtk.so
+lib/linux-netscape6/libgtksuperwin.so
+lib/linux-netscape6/libjsdom.so
+lib/linux-netscape6/libjsj.so
+lib/linux-netscape6/libmozjs.so
+lib/linux-netscape6/libmsgbaseutil.so
+lib/linux-netscape6/libnspr4.so
+lib/linux-netscape6/libplc4.so
+lib/linux-netscape6/libplds4.so
+lib/linux-netscape6/libraptorgfx.so
+lib/linux-netscape6/libraptorplugin.so
+lib/linux-netscape6/libraptorwebwidget.so
+lib/linux-netscape6/libspellchk.so
+lib/linux-netscape6/libwebbrwsr.so
+lib/linux-netscape6/libwidget_gtk.so
+lib/linux-netscape6/libxpcom.so
+lib/linux-netscape6/libxpistub.so
+lib/linux-netscape6/libzlib.so
+lib/linux-netscape6/mozilla-bin
+lib/linux-netscape6/mozilla-config
+lib/linux-netscape6/netscape
+lib/linux-netscape6/netscape.cfg
+lib/linux-netscape6/psm/doc/04digsgn.gif
+lib/linux-netscape6/psm/doc/06pcrypt.gif
+lib/linux-netscape6/psm/doc/bannerrn.gif
+lib/linux-netscape6/psm/doc/cartbanner.gif
+lib/linux-netscape6/psm/doc/cmcjavascriptapi.html
+lib/linux-netscape6/psm/doc/contents.htm
+lib/linux-netscape6/psm/doc/glossary.htm
+lib/linux-netscape6/psm/doc/help.htm
+lib/linux-netscape6/psm/doc/license.html
+lib/linux-netscape6/psm/doc/next.gif
+lib/linux-netscape6/psm/doc/prev.gif
+lib/linux-netscape6/psm/doc/psmtest.html
+lib/linux-netscape6/psm/doc/release_notes.html
+lib/linux-netscape6/psm/libnsbrk31.so
+lib/linux-netscape6/psm/libnscnv31.so
+lib/linux-netscape6/psm/libnscol31.so
+lib/linux-netscape6/psm/libnsfmt31.so
+lib/linux-netscape6/psm/libnspr3.so
+lib/linux-netscape6/psm/libnsres31.so
+lib/linux-netscape6/psm/libnsuni31.so
+lib/linux-netscape6/psm/libplc3.so
+lib/linux-netscape6/psm/libplds3.so
+lib/linux-netscape6/psm/psm
+lib/linux-netscape6/psm/start-psm
+lib/linux-netscape6/psm/ui/psm_bin.properties
+lib/linux-netscape6/psm/ui/psm_doc.properties
+lib/linux-netscape6/psm/ui/psm_text.properties
+lib/linux-netscape6/psm/ui/psm_ui.properties
+lib/linux-netscape6/regExport
+lib/linux-netscape6/regxpcom
+lib/linux-netscape6/res/DistinguishedSchema.tbl
+lib/linux-netscape6/res/FieldSchema.tbl
+lib/linux-netscape6/res/SchemaConcat.tbl
+lib/linux-netscape6/res/URLFieldSchema.tbl
+lib/linux-netscape6/res/aim/devIndex.xul
+lib/linux-netscape6/res/arrow.gif
+lib/linux-netscape6/res/charsetData.properties
+lib/linux-netscape6/res/charsetTitles.properties
+lib/linux-netscape6/res/charsetalias.properties
+lib/linux-netscape6/res/entityTables/html40Latin1.properties
+lib/linux-netscape6/res/entityTables/html40Special.properties
+lib/linux-netscape6/res/entityTables/html40Symbols.properties
+lib/linux-netscape6/res/entityTables/htmlEntityVersions.properties
+lib/linux-netscape6/res/entityTables/transliterate.properties
+lib/linux-netscape6/res/html.css
+lib/linux-netscape6/res/html/broken-image.gif
+lib/linux-netscape6/res/html/gopher-audio.gif
+lib/linux-netscape6/res/html/gopher-binary.gif
+lib/linux-netscape6/res/html/gopher-find.gif
+lib/linux-netscape6/res/html/gopher-image.gif
+lib/linux-netscape6/res/html/gopher-menu.gif
+lib/linux-netscape6/res/html/gopher-movie.gif
+lib/linux-netscape6/res/html/gopher-telnet.gif
+lib/linux-netscape6/res/html/gopher-text.gif
+lib/linux-netscape6/res/html/gopher-unknown.gif
+lib/linux-netscape6/res/rdf/article.gif
+lib/linux-netscape6/res/rdf/datasets/AOLSearch.gif
+lib/linux-netscape6/res/rdf/datasets/AOLSearch.src
+lib/linux-netscape6/res/rdf/datasets/CompuServe.jpg
+lib/linux-netscape6/res/rdf/datasets/CompuServe.src
+lib/linux-netscape6/res/rdf/datasets/ICQ.gif
+lib/linux-netscape6/res/rdf/datasets/ICQ.src
+lib/linux-netscape6/res/rdf/datasets/Jobs.gif
+lib/linux-netscape6/res/rdf/datasets/Jobs.src
+lib/linux-netscape6/res/rdf/datasets/Music_Artist.gif
+lib/linux-netscape6/res/rdf/datasets/Music_Artist.src
+lib/linux-netscape6/res/rdf/datasets/NetscapeSearch.gif
+lib/linux-netscape6/res/rdf/datasets/NetscapeSearch.src
+lib/linux-netscape6/res/rdf/datasets/NetscapeSearchMain.gif
+lib/linux-netscape6/res/rdf/datasets/NetscapeSearchMain.src
+lib/linux-netscape6/res/rdf/datasets/Shareware.gif
+lib/linux-netscape6/res/rdf/datasets/Shareware.src
+lib/linux-netscape6/res/rdf/datasets/Tech_News.gif
+lib/linux-netscape6/res/rdf/datasets/Tech_News.src
+lib/linux-netscape6/res/rdf/datasets/category.rdf
+lib/linux-netscape6/res/rdf/document.gif
+lib/linux-netscape6/res/rdf/dom-test-1.xul
+lib/linux-netscape6/res/rdf/dom-test-2.xul
+lib/linux-netscape6/res/rdf/dom-test-3.xul
+lib/linux-netscape6/res/rdf/dom-test-4.css
+lib/linux-netscape6/res/rdf/dom-test-4.xul
+lib/linux-netscape6/res/rdf/dom-test-5.xul
+lib/linux-netscape6/res/rdf/dom-test-6.xul
+lib/linux-netscape6/res/rdf/dom-test-7.xul
+lib/linux-netscape6/res/rdf/dom-test-8.xul
+lib/linux-netscape6/res/rdf/folder-closed.gif
+lib/linux-netscape6/res/rdf/folder-open.gif
+lib/linux-netscape6/res/rdf/ignore-test.xul
+lib/linux-netscape6/res/rdf/loading.gif
+lib/linux-netscape6/res/rdf/xpidl-test-1.xul
+lib/linux-netscape6/res/samples/colorpicker.xul
+lib/linux-netscape6/res/samples/dexanimdialog.xul
+lib/linux-netscape6/res/samples/dexanimmaster.xul
+lib/linux-netscape6/res/samples/dexopenchrome.xul
+lib/linux-netscape6/res/samples/dexparamdialog.html
+lib/linux-netscape6/res/samples/dexparamdialog.xul
+lib/linux-netscape6/res/samples/dexparammaster.xul
+lib/linux-netscape6/res/samples/dexsimpledialog.xul
+lib/linux-netscape6/res/samples/dexsimplemaster.xul
+lib/linux-netscape6/res/samples/hidetoolicon.css
+lib/linux-netscape6/res/samples/hidetoolicon.xul
+lib/linux-netscape6/res/samples/sampleimages/bongo.gif
+lib/linux-netscape6/res/samples/sampleimages/down.gif
+lib/linux-netscape6/res/samples/sampleimages/left.gif
+lib/linux-netscape6/res/samples/sampleimages/right.gif
+lib/linux-netscape6/res/samples/sampleimages/up.gif
+lib/linux-netscape6/res/samples/tab.xul
+lib/linux-netscape6/res/samples/xpconnect-sample.html
+lib/linux-netscape6/res/samples/xpmenu.xul
+lib/linux-netscape6/res/ua.css
+lib/linux-netscape6/res/unixcharset.properties
+lib/linux-netscape6/res/xpinstall/SoftwareUpdate-Source-1.rdf
+lib/linux-netscape6/res/xpinstall/SoftwareUpdates.rdf
+lib/linux-netscape6/res/xpinstall/notification.gif
+lib/linux-netscape6/res/xpinstall/progress.css
+lib/linux-netscape6/res/xpinstall/progress.html
+lib/linux-netscape6/res/xpinstall/progress.xul
+lib/linux-netscape6/run-mozilla.sh
+lib/linux-netscape6/simplebrowser
+lib/linux-netscape6/splash.xpm
+lib/linux-netscape6/talkback/XTalkback.ad
+lib/linux-netscape6/talkback/master.ini
+lib/linux-netscape6/talkback/talkback
+lib/linux-netscape6/talkback/talkback.so
+lib/linux-netscape6/timebombgen
+lib/linux-netscape6/vreg
+lib/linux-netscape6/xpidl
+lib/linux-netscape6/xpt_dump
+lib/linux-netscape6/xpt_link
+@dirrm lib/linux-netscape6/talkback
+@dirrm lib/linux-netscape6/res/xpinstall
+@dirrm lib/linux-netscape6/res/samples/sampleimages
+@dirrm lib/linux-netscape6/res/samples
+@dirrm lib/linux-netscape6/res/rdf/datasets
+@dirrm lib/linux-netscape6/res/rdf
+@dirrm lib/linux-netscape6/res/html
+@dirrm lib/linux-netscape6/res/entityTables
+@dirrm lib/linux-netscape6/res/aim
+@dirrm lib/linux-netscape6/res
+@dirrm lib/linux-netscape6/psm/ui
+@dirrm lib/linux-netscape6/psm/doc
+@dirrm lib/linux-netscape6/psm
+@dirrm lib/linux-netscape6/plugins
+@dirrm lib/linux-netscape6/icons
+@dirrm lib/linux-netscape6/defaults/profile
+@dirrm lib/linux-netscape6/defaults/pref
+@dirrm lib/linux-netscape6/defaults/isp
+@dirrm lib/linux-netscape6/defaults
+@dirrm lib/linux-netscape6/components/talkback
+@dirrm lib/linux-netscape6/components/spellchecker
+@dirrm lib/linux-netscape6/components
+@dirrm lib/linux-netscape6/chrome/xpinstall/skin/default
+@dirrm lib/linux-netscape6/chrome/xpinstall/skin
+@dirrm lib/linux-netscape6/chrome/xpinstall/locale/en-US
+@dirrm lib/linux-netscape6/chrome/xpinstall/locale
+@dirrm lib/linux-netscape6/chrome/xpinstall/content/default
+@dirrm lib/linux-netscape6/chrome/xpinstall/content
+@dirrm lib/linux-netscape6/chrome/xpinstall
+@dirrm lib/linux-netscape6/chrome/wallet/skin/default
+@dirrm lib/linux-netscape6/chrome/wallet/skin
+@dirrm lib/linux-netscape6/chrome/wallet/locale/en-US
+@dirrm lib/linux-netscape6/chrome/wallet/locale
+@dirrm lib/linux-netscape6/chrome/wallet/content/default
+@dirrm lib/linux-netscape6/chrome/wallet/content
+@dirrm lib/linux-netscape6/chrome/wallet
+@dirrm lib/linux-netscape6/chrome/timebomb/locale/en-US
+@dirrm lib/linux-netscape6/chrome/timebomb/locale
+@dirrm lib/linux-netscape6/chrome/timebomb/content/default
+@dirrm lib/linux-netscape6/chrome/timebomb/content
+@dirrm lib/linux-netscape6/chrome/timebomb
+@dirrm lib/linux-netscape6/chrome/sidebar/skin/default
+@dirrm lib/linux-netscape6/chrome/sidebar/skin
+@dirrm lib/linux-netscape6/chrome/sidebar/locale/en-US
+@dirrm lib/linux-netscape6/chrome/sidebar/locale
+@dirrm lib/linux-netscape6/chrome/sidebar/content/default
+@dirrm lib/linux-netscape6/chrome/sidebar/content
+@dirrm lib/linux-netscape6/chrome/sidebar
+@dirrm lib/linux-netscape6/chrome/security/locale/en-US
+@dirrm lib/linux-netscape6/chrome/security/locale
+@dirrm lib/linux-netscape6/chrome/security
+@dirrm lib/linux-netscape6/chrome/search/skin/default
+@dirrm lib/linux-netscape6/chrome/search/skin
+@dirrm lib/linux-netscape6/chrome/search/locale/en-US
+@dirrm lib/linux-netscape6/chrome/search/locale
+@dirrm lib/linux-netscape6/chrome/search/content/default
+@dirrm lib/linux-netscape6/chrome/search/content
+@dirrm lib/linux-netscape6/chrome/search
+@dirrm lib/linux-netscape6/chrome/related/skin/default
+@dirrm lib/linux-netscape6/chrome/related/skin
+@dirrm lib/linux-netscape6/chrome/related/locale/en-US
+@dirrm lib/linux-netscape6/chrome/related/locale
+@dirrm lib/linux-netscape6/chrome/related/content/default
+@dirrm lib/linux-netscape6/chrome/related/content
+@dirrm lib/linux-netscape6/chrome/related
+@dirrm lib/linux-netscape6/chrome/regviewer/skin/default
+@dirrm lib/linux-netscape6/chrome/regviewer/skin
+@dirrm lib/linux-netscape6/chrome/regviewer/locale/en-US
+@dirrm lib/linux-netscape6/chrome/regviewer/locale
+@dirrm lib/linux-netscape6/chrome/regviewer/content/default
+@dirrm lib/linux-netscape6/chrome/regviewer/content
+@dirrm lib/linux-netscape6/chrome/regviewer
+@dirrm lib/linux-netscape6/chrome/profile/skin/default
+@dirrm lib/linux-netscape6/chrome/profile/skin
+@dirrm lib/linux-netscape6/chrome/profile/locale/en-US
+@dirrm lib/linux-netscape6/chrome/profile/locale
+@dirrm lib/linux-netscape6/chrome/profile/content/default
+@dirrm lib/linux-netscape6/chrome/profile/content
+@dirrm lib/linux-netscape6/chrome/profile
+@dirrm lib/linux-netscape6/chrome/pref/skin/default
+@dirrm lib/linux-netscape6/chrome/pref/skin
+@dirrm lib/linux-netscape6/chrome/pref/locale/en-US
+@dirrm lib/linux-netscape6/chrome/pref/locale
+@dirrm lib/linux-netscape6/chrome/pref/content/default
+@dirrm lib/linux-netscape6/chrome/pref/content
+@dirrm lib/linux-netscape6/chrome/pref
+@dirrm lib/linux-netscape6/chrome/netwerk/content/default/https
+@dirrm lib/linux-netscape6/chrome/netwerk/content/default
+@dirrm lib/linux-netscape6/chrome/netwerk/content
+@dirrm lib/linux-netscape6/chrome/netwerk
+@dirrm lib/linux-netscape6/chrome/navigator/skin/default
+@dirrm lib/linux-netscape6/chrome/navigator/skin
+@dirrm lib/linux-netscape6/chrome/navigator/locale/en-US
+@dirrm lib/linux-netscape6/chrome/navigator/locale
+@dirrm lib/linux-netscape6/chrome/navigator/content/default
+@dirrm lib/linux-netscape6/chrome/navigator/content
+@dirrm lib/linux-netscape6/chrome/navigator
+@dirrm lib/linux-netscape6/chrome/messengercompose/skin/default
+@dirrm lib/linux-netscape6/chrome/messengercompose/skin
+@dirrm lib/linux-netscape6/chrome/messengercompose/locale/en-US
+@dirrm lib/linux-netscape6/chrome/messengercompose/locale
+@dirrm lib/linux-netscape6/chrome/messengercompose/content/default
+@dirrm lib/linux-netscape6/chrome/messengercompose/content
+@dirrm lib/linux-netscape6/chrome/messengercompose
+@dirrm lib/linux-netscape6/chrome/messenger/skin/default
+@dirrm lib/linux-netscape6/chrome/messenger/skin
+@dirrm lib/linux-netscape6/chrome/messenger/locale/en-US
+@dirrm lib/linux-netscape6/chrome/messenger/locale
+@dirrm lib/linux-netscape6/chrome/messenger/content/default
+@dirrm lib/linux-netscape6/chrome/messenger/content
+@dirrm lib/linux-netscape6/chrome/messenger
+@dirrm lib/linux-netscape6/chrome/layout/locale/en-US
+@dirrm lib/linux-netscape6/chrome/layout/locale
+@dirrm lib/linux-netscape6/chrome/layout
+@dirrm lib/linux-netscape6/chrome/history/skin/default
+@dirrm lib/linux-netscape6/chrome/history/skin
+@dirrm lib/linux-netscape6/chrome/history/locale/en-US
+@dirrm lib/linux-netscape6/chrome/history/locale
+@dirrm lib/linux-netscape6/chrome/history/content/default
+@dirrm lib/linux-netscape6/chrome/history/content
+@dirrm lib/linux-netscape6/chrome/history
+@dirrm lib/linux-netscape6/chrome/global/skin/default
+@dirrm lib/linux-netscape6/chrome/global/skin
+@dirrm lib/linux-netscape6/chrome/global/locale/en-US
+@dirrm lib/linux-netscape6/chrome/global/locale
+@dirrm lib/linux-netscape6/chrome/global/content/default
+@dirrm lib/linux-netscape6/chrome/global/content
+@dirrm lib/linux-netscape6/chrome/global
+@dirrm lib/linux-netscape6/chrome/editor/skin/default/images
+@dirrm lib/linux-netscape6/chrome/editor/skin/default
+@dirrm lib/linux-netscape6/chrome/editor/skin
+@dirrm lib/linux-netscape6/chrome/editor/locale/en-US
+@dirrm lib/linux-netscape6/chrome/editor/locale
+@dirrm lib/linux-netscape6/chrome/editor/content/default
+@dirrm lib/linux-netscape6/chrome/editor/content
+@dirrm lib/linux-netscape6/chrome/editor
+@dirrm lib/linux-netscape6/chrome/directory/skin/default
+@dirrm lib/linux-netscape6/chrome/directory/skin
+@dirrm lib/linux-netscape6/chrome/directory/locale/en-US
+@dirrm lib/linux-netscape6/chrome/directory/locale
+@dirrm lib/linux-netscape6/chrome/directory/content/default
+@dirrm lib/linux-netscape6/chrome/directory/content
+@dirrm lib/linux-netscape6/chrome/directory
+@dirrm lib/linux-netscape6/chrome/chatzilla/skin/default/images
+@dirrm lib/linux-netscape6/chrome/chatzilla/skin/default
+@dirrm lib/linux-netscape6/chrome/chatzilla/skin
+@dirrm lib/linux-netscape6/chrome/chatzilla/locale/en-US
+@dirrm lib/linux-netscape6/chrome/chatzilla/locale
+@dirrm lib/linux-netscape6/chrome/chatzilla/content/default/lib/xul
+@dirrm lib/linux-netscape6/chrome/chatzilla/content/default/lib/js
+@dirrm lib/linux-netscape6/chrome/chatzilla/content/default/lib
+@dirrm lib/linux-netscape6/chrome/chatzilla/content/default
+@dirrm lib/linux-netscape6/chrome/chatzilla/content
+@dirrm lib/linux-netscape6/chrome/chatzilla
+@dirrm lib/linux-netscape6/chrome/bookmarks/skin/default
+@dirrm lib/linux-netscape6/chrome/bookmarks/skin
+@dirrm lib/linux-netscape6/chrome/bookmarks/locale/en-US
+@dirrm lib/linux-netscape6/chrome/bookmarks/locale
+@dirrm lib/linux-netscape6/chrome/bookmarks/content/default
+@dirrm lib/linux-netscape6/chrome/bookmarks/content
+@dirrm lib/linux-netscape6/chrome/bookmarks
+@dirrm lib/linux-netscape6/chrome/aim/skin/default
+@dirrm lib/linux-netscape6/chrome/aim/skin
+@dirrm lib/linux-netscape6/chrome/aim/locale/en-US
+@dirrm lib/linux-netscape6/chrome/aim/locale
+@dirrm lib/linux-netscape6/chrome/aim/content/default
+@dirrm lib/linux-netscape6/chrome/aim/content
+@dirrm lib/linux-netscape6/chrome/aim
+@dirrm lib/linux-netscape6/chrome/addressbook/skin/default
+@dirrm lib/linux-netscape6/chrome/addressbook/skin
+@dirrm lib/linux-netscape6/chrome/addressbook/locale/en-US
+@dirrm lib/linux-netscape6/chrome/addressbook/locale
+@dirrm lib/linux-netscape6/chrome/addressbook/content/default
+@dirrm lib/linux-netscape6/chrome/addressbook/content
+@dirrm lib/linux-netscape6/chrome/addressbook
+@dirrm lib/linux-netscape6/chrome
+@dirrm lib/linux-netscape6/Cool
+@dirrm lib/linux-netscape6
