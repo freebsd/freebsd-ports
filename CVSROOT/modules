@@ -5595,6 +5595,7 @@ py-xml		ports/textproc/py-xml
 py-xmlrpc	ports/net/py-xmlrpc
 py-xmlrpclib	ports/net/py-xmlrpclib
 py-xmltools	ports/textproc/py-xmltools
+py-xmms		ports/audio/py-xmms
 py-xoltar-toolkit	ports/devel/py-xoltar-toolkit
 py-zsi		ports/net/py-zsi
 py2html		ports/textproc/py2html
