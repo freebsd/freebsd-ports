@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kmess
-PORTVERSION=	0.9.8
+PORTVERSION=	1.1
 CATEGORIES=	net kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,7 +21,7 @@ USE_GMAKE=	yes
 
 .include <bsd.port.pre.mk>
 pre-patch:
-	${REINPLACE_CMD} -e '22s/^.*$$/#include <unistd.h>/' \
+	${REINPLACE_CMD} -e '23s/^.*$$/#include <unistd.h>/' \
 		${WRKSRC}/kmess/kmessview.cpp
 
 .include "${PORTSDIR}/x11/kde3/Makefile.kde"
