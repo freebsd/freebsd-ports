@@ -5,5 +5,3 @@ library, a stream or a network file (Internet socket, NFS file or Unix domain
 socket).
 
 See also fstat(1) in the base system.
-
-WWW: http://www-rcd.cc.purdue.edu/~abe/
