@@ -17,6 +17,8 @@ COMMENT=	A multithreaded poller for Cacti written in C
 
 LIB_DEPENDS=	netsnmp.7:${PORTSDIR}/net-mgmt/net-snmp
 
+BROKEN=		Incomplete pkg-plist
+
 GNU_CONFIGURE=	YES
 USE_MYSQL=	YES
 USE_OPENSSL=	YES
