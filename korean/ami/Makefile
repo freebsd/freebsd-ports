@@ -17,11 +17,9 @@ EXTRACT_ONLY=	${DISTNAME}.tar.gz
 MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	Well-known Korean X11 Input Method
 
-LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
-
 USE_X_PREFIX=	yes
-USE_GTK=	yes
 USE_GMAKE=	yes
+USE_GNOME=	gtk12 gdkpixbuf
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-hangul-keyboard=2 --datadir=${PREFIX}/${DATADIR} \
@@ -33,16 +31,15 @@ DATADIR=	share
 .include <bsd.port.pre.mk>
 
 # gnome support
-.if defined(HAVE_GNOME)
-USE_GNOME=	yes
-USE_GNOMECTRL=	yes
+.if ${HAVE_GNOME:Mlibpanel}!=""
+USE_GNOME+=	gnomeprefix gnomehack libpanel
 CONFIGURE_ARGS+=--enable-gnome-applet
 DATADIR=	share/gnome
 CATEGORIES+=	gnome
 .endif
 
 pre-everything::
-.if !defined(HAVE_GNOME)
+.if ${HAVE_GNOME:Mlibpanel}==""
 	@${ECHO} Define WITH_GNOME=yes if you want to enable GNOME applet support.
 .else
 	@${ECHO} Define WITHOUT_GNOME=yes if you want to build without GNOME
