@@ -8,7 +8,8 @@
 PORTNAME=	mrt
 PORTVERSION=	2.1.2a
 CATEGORIES=	net ipv6
-MASTER_SITES=	ftp://ftp.merit.edu/net-research/mrt/
+MASTER_SITES=	ftp://ftp.merit.edu/net-research/mrt/ \
+		ftp://ftp.merit.edu/net-research/mrt/old_versions/
 DISTNAME=	mrt-${PORTVERSION}-src
 
 MAINTAINER=	ports@freebsd.org
