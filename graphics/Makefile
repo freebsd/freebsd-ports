@@ -384,7 +384,6 @@
     SUBDIR += showimg
     SUBDIR += simage
     SUBDIR += skencil
-    SUBDIR += sketch
     SUBDIR += sng
     SUBDIR += sodipodi
     SUBDIR += springgraph
