@@ -1,20 +1,31 @@
 bin/svnweb-install
 %%SITE_PERL%%/SVN/Web.pm
 %%SITE_PERL%%/SVN/Web/Branch.pm
+%%SITE_PERL%%/SVN/Web/Branch/YAML.pm
 %%SITE_PERL%%/SVN/Web/Browse.pm
 %%SITE_PERL%%/SVN/Web/Checkout.pm
 %%SITE_PERL%%/SVN/Web/Diff.pm
+%%SITE_PERL%%/SVN/Web/I18N/en.po
+%%SITE_PERL%%/SVN/Web/I18N/zh_cn.po
+%%SITE_PERL%%/SVN/Web/I18N/zh_tw.po
 %%SITE_PERL%%/SVN/Web/List.pm
 %%SITE_PERL%%/SVN/Web/Log.pm
 %%SITE_PERL%%/SVN/Web/RSS.pm
 %%SITE_PERL%%/SVN/Web/Revision.pm
-%%SITE_PERL%%/SVN/Web/Template.pm
-%%SITE_PERL%%/SVN/Web/I18N/en.po
-%%SITE_PERL%%/SVN/Web/I18N/zh_cn.po
-%%SITE_PERL%%/SVN/Web/I18N/zh_tw.po
+%%SITE_PERL%%/SVN/Web/Style/common.css
+%%SITE_PERL%%/SVN/Web/Style/styles-hlb.css
+%%SITE_PERL%%/SVN/Web/Template/browse
+%%SITE_PERL%%/SVN/Web/Template/footer
+%%SITE_PERL%%/SVN/Web/Template/header
+%%SITE_PERL%%/SVN/Web/Template/list
+%%SITE_PERL%%/SVN/Web/Template/log
+%%SITE_PERL%%/SVN/Web/Template/revision
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Web/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Web
+@dirrm %%SITE_PERL%%/SVN/Web/Branch
 @dirrm %%SITE_PERL%%/SVN/Web/I18N
+@dirrm %%SITE_PERL%%/SVN/Web/Style
+@dirrm %%SITE_PERL%%/SVN/Web/Template
 @dirrm %%SITE_PERL%%/SVN/Web
 @unexec rmdir %D/%%SITE_PERL%%/SVN 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN 2>/dev/null || true
