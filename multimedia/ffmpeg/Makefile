@@ -137,7 +137,7 @@ CONFIGURE_ARGS+=	--extra-cflags="-fPIC -DPIC -I${LOCALBASE}/include \
 .else
 CONFIGURE_ARGS+=	--extra-cflags="-fPIC -DPIC -I${LOCALBASE}/include \
 			-I${X11BASE}/include" \
-			--disable-opts" \
+			--disable-opts \
 			--extra-ldflags="-L${LOCALBASE}/lib -L${X11BASE}/lib -lm "
 .endif
 
