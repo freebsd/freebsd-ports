@@ -1,6 +1,6 @@
 bin/bochs
 lib/bochs/bios/VGABIOS-elpin-2.00A
-lib/bochs/bios/BIOS-bochs-980124a
+lib/bochs/bios/BIOS-bochs-980331a
 lib/bochs/bochsrc.sample
 share/doc/bochs/3rdparty.license.html
 share/doc/bochs/Bochs.html

@@ -6,7 +6,7 @@
   #floppya: 1_2=../1.2
   #floppyb: 1_44=../1.680
 ! vgaromimage: bios/VGABIOS-elpin-2.00A
-! romimage: bios/BIOS-bochs-980124a
+! romimage: bios/BIOS-bochs-980331a
   #romimage: bios/rombios.bin
 ! #log: /dev/null
 ! log: ./bochs.out
@@ -18,7 +18,7 @@
   #floppya: 1_2=../1.2
   #floppyb: 1_44=../1.680
 ! vgaromimage: /usr/local/lib/bochs/bios/VGABIOS-elpin-2.00A
-! romimage: /usr/local/lib/bochs/bios/BIOS-bochs-980124a
+! romimage: /usr/local/lib/bochs/bios/BIOS-bochs-980331a
   #romimage: bios/rombios.bin
 ! log: /dev/null
 ! #log: ./bochs.out
