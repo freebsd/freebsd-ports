@@ -20,4 +20,10 @@ DIST_SUBDIR=	python
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} >= 220
+IGNORE=		is part of the Python base distribution since python 2.2
+.endif
+
+.include <bsd.port.post.mk>
