@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libebml
-PORTVERSION=	0.4.2
+PORTVERSION=	0.4.3
 CATEGORIES=	textproc
 MASTER_SITES=	http://matroska.sourceforge.net/downloads/
 
@@ -32,4 +32,11 @@ do-configure:
 			s,^(INSTALL_OPTS_LIB|INSTALL_OPTS)[[:space:]]*=.*$$,\1=${INSTALL_DATA},' \
 		${WRKSRC}/make/linux/Makefile
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+# this is gcc 2.x
+CFLAGS+=	-DNO_WSTRING
+.endif
+
+.include <bsd.port.post.mk>

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libmatroska
-PORTVERSION=	0.4.2
+PORTVERSION=	0.4.3
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://matroska.sourceforge.net/downloads/
 
@@ -16,7 +16,6 @@ COMMENT=	Extensible Multimedia Container Format
 BUILD_DEPENDS=	${LOCALBASE}/lib/libebml.a:${PORTSDIR}/textproc/libebml
 
 USE_BZIP2=	yes
-USE_GCC=	3.1
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 BUILD_WRKSRC=	${WRKSRC}/make/linux
@@ -44,4 +43,24 @@ do-configure:
 			s,^(INSTALL_OPTS_LIB|INSTALL_OPTS)[[:space:]]*=.*$$,\1=${INSTALL_DATA},' \
 		${WRKSRC}/make/linux/Makefile
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+# this is gcc 2.x
+CFLAGS+= -DNO_WSTRING
+.endif
+
+.if exists(${LOCALBASE}/bin/gcc32)
+WITH_GCC_32=	yes
+.else if exists(${LOCALBASE}/bin/gcc31)
+WITH_GCC_31=	yes
+.endif
+
+# prefer 3.2 over 3.1
+.if defined (WITH_GCC_31)
+USE_GCC=3.1
+.else
+USE_GCC=3.2
+.endif
+
+.include <bsd.port.post.mk>
