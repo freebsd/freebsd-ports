@@ -1,0 +1,25 @@
+%%EMACS_LIBDIR%%/site-lisp/psgml/psgml-api.el
+%%EMACS_LIBDIR%%/site-lisp/psgml/psgml-api.elc
+%%EMACS_LIBDIR%%/site-lisp/psgml/psgml-charent.el
+%%EMACS_LIBDIR%%/site-lisp/psgml/psgml-charent.elc
+%%EMACS_LIBDIR%%/site-lisp/psgml/psgml-dtd.el
+%%EMACS_LIBDIR%%/site-lisp/psgml/psgml-dtd.elc
+%%EMACS_LIBDIR%%/site-lisp/psgml/psgml-edit.el
+%%EMACS_LIBDIR%%/site-lisp/psgml/psgml-edit.elc
+%%EMACS_LIBDIR%%/site-lisp/psgml/psgml-info.el
+%%EMACS_LIBDIR%%/site-lisp/psgml/psgml-info.elc
+%%EMACS_LIBDIR%%/site-lisp/psgml/psgml-lucid.el
+%%EMACS_LIBDIR%%/site-lisp/psgml/psgml-other.el
+%%EMACS_LIBDIR%%/site-lisp/psgml/psgml-other.elc
+%%EMACS_LIBDIR%%/site-lisp/psgml/psgml-parse.el
+%%EMACS_LIBDIR%%/site-lisp/psgml/psgml-parse.elc
+%%EMACS_LIBDIR%%/site-lisp/psgml/psgml.el
+%%EMACS_LIBDIR%%/site-lisp/psgml/psgml.elc
+@dirrm %%EMACS_LIBDIR%%/site-lisp/psgml
+@unexec install-info --delete %D/info/psgml.info %D/info/dir
+@unexec install-info --delete %D/info/psgml-api.info %D/info/dir
+info/psgml.info
+info/psgml-api.info
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/psgml.info %D/info/dir
+@exec install-info %D/info/psgml-api.info %D/info/dir
