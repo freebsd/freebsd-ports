@@ -1,0 +1,9 @@
+share/gnome/themes/Indubstrial/metacity-1/metacity-theme-1.xml
+share/themes/Indubstrial/gtk-2.0/gtkrc
+share/themes/Indubstrial/gtk/gtkrc
+share/themes/Indubstrial/index.theme
+@dirrm share/themes/Indubstrial/gtk
+@dirrm share/themes/Indubstrial/gtk-2.0
+@dirrm share/themes/Indubstrial
+@dirrm share/gnome/themes/Indubstrial/metacity-1
+@dirrm share/gnome/themes/Indubstrial
