@@ -1,5 +1,5 @@
 --- configure.orig	Mon Aug 19 14:05:07 2002
-+++ configure	Mon Aug 19 16:55:27 2002
++++ configure	Tue Sep  3 13:17:10 2002
 @@ -5951,6 +5951,7 @@
  
  # This can be used to rebuild libtool when needed
@@ -8,6 +8,37 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -6881,24 +6882,24 @@
+ 	
+ 
+ 
+-echo $ac_n "checking for new_pspell_manager in -lpspell""... $ac_c" 1>&6
+-echo "configure:6886: checking for new_pspell_manager in -lpspell" >&5
+-ac_lib_var=`echo pspell'_'new_pspell_manager | sed 'y%./+-%__p_%'`
++echo $ac_n "checking for new_aspell_speller in -lpspell""... $ac_c" 1>&6
++echo "configure:6886: checking for new_aspell_speller in -lpspell" >&5
++ac_lib_var=`echo pspell'_'new_aspell_speller | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lpspell -lstdc++ -lpspell-modules $LIBS"
++LIBS="-lpspell -lstdc++ $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 6894 "configure"
+ #include "confdefs.h"
+ /* Override any gcc2 internal prototype to avoid an error.  */
+ /* We use char because int might match the return type of a gcc2
+     builtin and then its argument prototype would still apply.  */
+-char new_pspell_manager();
++char new_aspell_speller();
+ 
+ int main() {
+-new_pspell_manager()
++new_aspell_speller()
+ ; return 0; }
+ EOF
+ if { (eval echo configure:6905: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
 @@ -8920,7 +8921,7 @@
  extern int *_nl_domain_bindings;
  int main() {
