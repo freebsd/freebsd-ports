@@ -1,0 +1,17 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Jcode.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Jcode/Constants.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Jcode/H2Z.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Jcode/Tr.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Jcode/Unicode.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Jcode/Unicode/Constants.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Jcode/Unicode/NoXS.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Jcode/_test.pl
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Jcode/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Jcode/Unicode/Unicode.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Jcode/Unicode/Unicode.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/mac_install.pl
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/win_install.pl
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Jcode/Unicode
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Jcode/
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Jcode/Unicode
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Jcode
