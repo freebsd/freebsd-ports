@@ -7,7 +7,7 @@
 
 DISTNAME=	dnswalk-2.0.2
 CATEGORIES=	net
-MASTER_SITES=	http://www.cis.ohio-state.edu/~barr/dnswalk/
+MASTER_SITES=	http://www.visi.com/~barr/dnswalk/
 
 MAINTAINER=	mph@freebsd.org
 
