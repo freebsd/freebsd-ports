@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.191 1999/03/30 01:41:31 steve Exp $
+# $Id: Makefile,v 1.192 1999/03/30 14:36:31 taoka Exp $
 #
 
     SUBDIR += 3dc
@@ -72,7 +72,6 @@
     SUBDIR += netris
     SUBDIR += oneko
     SUBDIR += oonsoo
-    SUBDIR += pente
     SUBDIR += pp
     SUBDIR += pysol
     SUBDIR += qcc
