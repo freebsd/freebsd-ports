@@ -1,4 +1,4 @@
-Here are two patches for FreeBSD's kernel that are necessary for wine
+Here are some patches for FreeBSD's kernel that are necessary for wine
 (well not strictly _necessary_ but without them parts of it won't work.)
 They unfortunately didn't make it into the base distribution in time
 for the 3.3 release code freeze...
@@ -14,27 +14,52 @@ causing problems for wine's internal debugger.  (it would still
 correctly show a crash backtrace but all commands that use single-
 stepping failed.)
 
+patch-3.3-sys-fsgs:
+always set/use the sc_fs and sc_gs entries in the sigcontext struct,
+making -stable behave the same as -current there.  this should finally
+allow signal handling of a wine that was built on -stable to correctly
+run on -current too.  The corresponding wine change is in the port in
+patches/patch-af, it is also in wine's CVS tree now, so that file will
+disappear when the port is updated after the next wine release.
+(this one was MFC'd Nov 15 1999, so you only need it if you're running a
+system from the -stable branch older than that, like a 3.3-RELEASE.  If you
+happen to try to apply it when its already there patch(1) should complain
+`Reversed (or previously applied) patch detected!  Assume -R? [y]',
+just hit ^C then...)
+
 Apply as follows:
 
 	(cd /usr/src/sys && patch ) <patch-3.3-sys-ldtshare
 	(cd /usr/src/sys && patch ) <patch-3.3-sys-sigtrap
 
+And if you don't already have it:
+
+	(cd /usr/src/sys && patch ) <patch-3.3-sys-fsgs
+
 then build a new kernel. (don't forget to include the options USER_LDT,
 SYSVSHM, SYSVSEM, and SYSVMSG, wine needs these.)
 
--current users:
-someone of you :) needs to implement a runtime check in wine for the
-FreeBSD version and based on that use/set the sc_gs and sc_fs values
-in the sigcontext struct in signal handlers for versions >= 4.0.
-(see the `wine signal handlers lose %fs on FreeBSD' thread on the
-wine-devel list for details, can be read at
-http://www.integrita.com/cgi-local/lwgate.pl/WINE-DEVEL/archives/1999-09/Subject/article-15.html
-at least i ended up there when i searched it today.  yes you could also
-simply define FS_sig and GS_sig in wine's include/sig_context.h and be
-done with it but the resulting wine would only work on 4.0 and
-Alexandre (wine maintainer) didn't like that idea...)
+A note about local patches and ctm, cvsup and friends...
+(if you don't know what those are good for see for example
+http://www.freebsd.org/handbook/stable.html)
+ctm cannot deal with local patches (unless you use it to mirror
+the cvs tree of course, instead of the sources directly), with
+cvsup i'm not sure but in any case the workaround is simple:  use
+patch -R to un-apply any local patches before the update (feeding
+it the patches again as above on stdin), then when the update is
+finished apply them again.  Should they fail on the updated sources
+(and you cannot fix it yourself), look for new versions of the
+patches at the place where you got them, or in this case you
+can also look in my current wine port tree at
+http://www.jelal.kn-bremen.de/freebsd/ports/emulators/wine/files/
 
-A LDT patch for -current is at http://www.freebsd.org/~luoqi
-(not included since i don't know if it still applies), the sigtrap
-patch looks like it could also apply to -current but i haven't tried.
-(and if not, i guess a similar fix will be committed soon anyway.)
+-current users:
+A LDT patch for -current is at http://www.freebsd.org/~luoqi/
+(well in a recent posting on the -current list,
+http://www.freebsd.org/cgi/mid.cgi?db=&id=199911150745.CAA27884@lor.watermarkgroup.com
+he said that version is outdated, seems you have to mail him to
+get a current one), the sigtrap patch looks like it could also
+apply to -current but i haven't tried.  And the fs/gs patch of course
+already is in -current.
+Late note: the LDT sharing fix just seems to have been committed now...
+(to -current that is.)

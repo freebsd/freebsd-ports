@@ -2,3 +2,18 @@ In order to use wine you need to build and install a new kernel with
 options USER_LDT, SYSVSHM, SYSVSEM, and SYSVMSG.  Before you do that,
 you may want to apply the patches in %%PREFIX%%/lib/wine to your
 kernel sources, see the README.patch there.
+
+(Note: if you already installed the patches from the 991031 version of
+this port and you're not tracking -stable or your -stable is older than
+Nov 15 1999:  there is a new patch you need, patch-3.3-sys-fsgs)
+
+And the port now also installs some of wine's doc files which
+describe additional things that are not in the manual pages, see
+%%PREFIX%%/lib/wine/documentation.  There are more in the source tree
+but the others are only useful in conjunction with the rest of the
+source tree, and then you can as well look at them there.  (If you
+just installed this as a package and don't know how to use the ports
+system to have it fetch and extract the source for you have a look at
+http://www.freebsd.org/handbook/ports.html .  In short:
+cd /usr/ports/emulators/wine && make configure )
+
