@@ -3,12 +3,12 @@
 # Date created:		02 May 1996
 # Whom:			Masafumi
 #
-# $Id: Makefile,v 1.7 1996/12/03 13:08:09 obrien Exp $
+# $Id: Makefile,v 1.8 1997/09/14 21:34:41 max Exp $
 #
 
 DISTNAME=	ircii-2.8.2
 PKGNAME=	ja-ircii-2.8.2
-CATEGORIES=	japanese net
+CATEGORIES=	japanese irc
 MASTER_SITES=	ftp://cs-ftp.bu.edu/irc/clients/ \
 		ftp://ftp.kyoto.wide.ad.jp/IRC/ircII/
 DISTFILES=	ircii-2.8.2.tar.gz ircii-2.8help.tar.gz
