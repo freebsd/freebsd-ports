@@ -1,0 +1,10 @@
+Dancer is an IRC bot. A bot is an automated client for Internet Relay Chat
+networks, which stays online after its owner leaves. It was designed to
+protect and serve. Your faithful, strong (but humble) servant. Yes,
+ladies. This is one bot who will not cheat on you. 
+
+Dancer was developed in C, and is mostly POSIX compliant. It runs on
+most of the UNIX flavors you have used, and a few you haven't heard of.
+It also runs on Win32 and AmigaOS. 
+
+WWW: http://dancer.sourceforge.net/

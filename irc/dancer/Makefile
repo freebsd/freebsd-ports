@@ -1,0 +1,27 @@
+# New ports collection makefile for:	dancer
+# Date created:		02/01/2003
+# Whom:			Dominic Marks <dom@cus.org.uk>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	dancer
+PORTVERSION=	4.16
+CATEGORIES=	irc
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=	d.marks@student.umist.ac.uk
+COMMENT=	An IRC bot written in C for UNIX, Windows, and AmigaOS
+
+do-install:
+	@${MKDIR} ${PREFIX}/share/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
+	${INSTALL_DATA} \
+		${WRKSRC}/example/dancer.config \
+		${WRKSRC}/example/dancer.users \
+		${WRKSRC}/example/dancer.funcs \
+		${WRKSRC}/example/dancer.explain \
+			${PREFIX}/share/${PORTNAME}/
+
+.include <bsd.port.mk>
