@@ -36,7 +36,7 @@ CONFIGURE_ARGS+= -DSMP_SUPPORT
 
 pre-fetch:
 .if !defined(SMP_SUPPORT) && ${OSVERSION} < 500000
-	@${ECHO_MSG} "NOTE: SMP suppport can be enabled by adding "
+	@${ECHO_MSG} "NOTE: SMP support can be enabled by adding "
 	@${ECHO_MSG} "\"SMP_SUPPORT=yes\" to argument of make."
 .endif
 
