@@ -1,0 +1,12 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/bnlib/Makefile.in skipsrc-1.0/bnlib/Makefile.in
+--- skipsrc-1.0.orig/bnlib/Makefile.in	Fri Oct 25 13:11:20 1996
++++ skipsrc-1.0/bnlib/Makefile.in	Sun Nov 22 21:46:35 1998
+@@ -61,7 +61,7 @@
+ # code compiled with another cc, which doesn't know about -lgcc.
+ 
+ lbn%.o: $(srcdir)/lbn%.c $(HDRS) config.h
+-	$(CC) $(CPPFLAGS) $(CFLAGS) -I. -I$(srcdir) -o $@ @GCCMAGIC1@ $< @GCCMAGIC2@
++	$(CC) $(CPPFLAGS) $(CFLAGS) -I. -I$(srcdir) -o $@ -c $<
+ 
+ # Saying that every .o file depends on every header is overkill, but
+ # it will suffice.

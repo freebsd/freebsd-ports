@@ -1,0 +1,12 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/libdb/hash/hash.h skipsrc-1.0/libdb/hash/hash.h
+--- skipsrc-1.0.orig/libdb/hash/hash.h	Fri Oct 25 13:12:21 1996
++++ skipsrc-1.0/libdb/hash/hash.h	Sun Nov 22 21:20:56 1998
+@@ -103,7 +103,7 @@
+ 	BUFHEAD 	*cpage;		/* Current page */
+ 	int		cbucket;	/* Current bucket */
+ 	int		cndx;		/* Index of next item on cpage */
+-	int		errno;		/* Error Number -- for DBM 
++	int		errnum;		/* Error Number -- for DBM 
+ 					 * compatability */
+ 	int		new_file;	/* Indicates if fd is backing store 
+ 					 * or no */

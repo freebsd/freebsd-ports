@@ -1,0 +1,21 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/libdb/hash/ndbm.c skipsrc-1.0/libdb/hash/ndbm.c
+--- skipsrc-1.0.orig/libdb/hash/ndbm.c	Fri Oct 25 13:12:22 1996
++++ skipsrc-1.0/libdb/hash/ndbm.c	Sun Nov 22 21:32:01 1998
+@@ -180,7 +180,7 @@
+ 	HTAB *hp;
+ 
+ 	hp = (HTAB *)db->internal;
+-	return (hp->errno);
++	return (hp->errnum);
+ }
+ 
+ extern int
+@@ -190,7 +190,7 @@
+ 	HTAB *hp;
+ 
+ 	hp = (HTAB *)db->internal;
+-	hp->errno = 0;
++	hp->errnum = 0;
+ 	return (0);
+ }
+ 
