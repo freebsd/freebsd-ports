@@ -13,5 +13,6 @@ MASTER_SITES=	http://yukon.genie.uottawa.ca/~lavoie/software/nurbs/
 MAINTAINER= 	ports@FreeBSD.org
 
 USE_LIBTOOL=	yes
+INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>
