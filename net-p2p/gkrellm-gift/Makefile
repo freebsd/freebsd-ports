@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gift
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.3
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.code-monkey.de/pub/gkrellm-gift/ \
 		http://depot.fsck.ch/mirror/distfiles/
@@ -23,6 +23,7 @@ BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrell
 USE_LIBTOOL_VER=13
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
+PLIST_FILES=	libexec/gkrellm2/plugins/gift.so libexec/gkrellm2/plugins/gift.la
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/libexec/gkrellm2/plugins/${PORTNAME}.so
