@@ -5,7 +5,8 @@
 # $FreeBSD$
 
 PORTNAME=	latex-ucs
-PORTVERSION=	20040307
+PORTVERSION=	20041017
+PORTREVISION=	0
 CATEGORIES=	print
 MASTER_SITES=	http://www.unruh.de/DniQ/latex/unicode/
 DISTNAME=	unicode
@@ -36,7 +37,7 @@ MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 CLASSDIR=	${TEXMFLOCAL}/tex/latex/${PORTNAME:S/^latex-//}
 WRKSRC=		${WRKDIR}/${PORTNAME:S/^latex-//}
 
-CLASS_FILES=	ucs.sty utf8.def ucsencs.def
+CLASS_FILES=	ucs.sty utf8x.def ucsencs.def ucsutils.sty ucshyper.sty
 CJK_FILES=	c00enc.def c10enc.def c40enc.def c42enc.def c61enc.def
 PLSCRIPTS=	discovermacro.pl latexout.pl makeunidef.pl
 PORTDOCS=	FAQ INSTALL LICENSE README VERSION
