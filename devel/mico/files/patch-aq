@@ -1,0 +1,10 @@
+--- Makefile.orig	Fri Dec  3 14:35:16 1999
++++ Makefile	Fri Dec  3 14:36:14 1999
+@@ -62,7 +62,6 @@
+ 		$(IDIRCMD) $(SHARED_INSTDIR)/doc/mico; \
+ 		$(IMANCMD) doc/doc.ps $(SHARED_INSTDIR)/doc/mico/manual.ps; \
+ 	fi
+-	-ldconfig
+ 
+ install-cd:
+ 	for i in $(INSTALLDIRS); do $(MAKE) -C $$i install-cd || exit 1; done

@@ -1,6 +1,7 @@
---- configure.in.orig	Wed Oct 21 15:29:16 1998
-+++ configure.in	Wed May 12 16:48:24 1999
-@@ -102,7 +102,7 @@
+diff -ruN work/mico/configure.in mico/configure.in
+--- work/mico/configure.in	Sun Aug  8 06:00:49 1999
++++ configure.in	Sun Sep 26 04:44:44 1999
+@@ -170,7 +170,7 @@
  # extra dirs
  #
  
@@ -9,13 +10,13 @@
  
  #
  # misc
-@@ -234,7 +234,12 @@
+@@ -314,7 +314,12 @@
      CONF_OBJ_SIZE_LIMIT=yes
      ;;
    *bsd*)
 -    CONF_SOEXT=so.1.0
 +    if test "X$PORTOBJFORMAT" = "Xelf"; then
-+      CONF_SHARED_CC="$CXX -shared -Wl,-soname,\$@"
++      CONF_SHARED_CC="$CXX -shared -Wl,-x "
 +      CONF_SOEXT=so.1
 +    else
 +      CONF_SOEXT=so.1.0
