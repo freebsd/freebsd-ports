@@ -8,6 +8,7 @@
 
 PORTNAME=	asedit
 PORTVERSION=	1.3.2
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	editors
@@ -18,5 +19,7 @@ MAINTAINER=	shanee@augusta.de
 USE_MOTIF=	yes
 USE_IMAKE=	yes
 XMKMF=		xmkmf
+
+MAN1=		asedit.1
 
 .include <bsd.port.mk>
