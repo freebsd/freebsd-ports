@@ -1,5 +1,4 @@
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cache/Cache/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/Cache/Backend.pm
 lib/perl5/site_perl/%%PERL_VER%%/Cache/BaseCache.pm
 lib/perl5/site_perl/%%PERL_VER%%/Cache/BaseCacheTester.pm
 lib/perl5/site_perl/%%PERL_VER%%/Cache/Cache.pm
