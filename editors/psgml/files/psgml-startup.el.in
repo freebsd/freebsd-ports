@@ -28,12 +28,21 @@
      "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">")
     ("HTML 4.0 Frameset"
      "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Frameset//EN\">")
+    ("HTML 4.01" "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\">")
+    ("HTML 4.01 Transitional"
+     "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">")
+    ("HTML 4.01 Frameset"
+     "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Frameset//EN\">")
     ("DocBook V2.4.1"
      "<!DOCTYPE DOCBOOK PUBLIC \"-//Davenport//DTD DocBook V2.4.1//EN\">")
     ("DocBook V3.0"
      "<!DOCTYPE DOCBOOK PUBLIC \"-//Davenport//DTD DocBook V3.0//EN\">")
     ("DocBook V3.1"
      "<!DOCTYPE DOCBOOK PUBLIC \"-//OASIS//DTD DocBook V3.1//EN\">")
+    ("DocBook V4.0"
+     "<!DOCTYPE DOCBOOK PUBLIC \"-//OASIS//DTD DocBook V4.0//EN\">")
+    ("DocBook V4.1"
+     "<!DOCTYPE DOCBOOK PUBLIC \"-//OASIS//DTD DocBook V4.1//EN\">")
     ("LINUXDOC"
      "<!DOCTYPE LINUXDOC PUBLIC \"-//FreeBSD//DTD linuxdoc//EN\">")
     ("LINUXDOC 1.0"
