@@ -3,7 +3,7 @@
 # Date created:         So  17 Nov 1996 16:59:23 MET
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.1.1.1 1996/11/17 20:02:09 andreas Exp $
+# $Id: Makefile,v 1.2 1996/11/18 05:35:30 asami Exp $
 #
 
 DISTNAME=	bb
@@ -15,13 +15,13 @@ EXTRACT_SUFX=   -src.tgz
 MAINTAINER=	andreas@klemm.gtn.com
 
 BUILD_DEPENDS=	${PREFIX}/sbin/httpd:${PORTSDIR}/www/apache
-RUN_DEPENDS=	${PREFIX}/bin/lyx:${PORTSDIR}/www/lyx
+RUN_DEPENDS=	lyx:${PORTSDIR}/print/lyx
 
 post-configure:
 	( cd ${WRKSRC}/doc; /bin/sh bbconfig freebsd )
 	@cp ${FILESDIR}/Makefile ${WRKSRC}
 
-install:
+do-install:
 	@${MKDIR} ${PREFIX}/${DISTNAME}/bin
 	@${MKDIR} ${PREFIX}/${DISTNAME}/doc
 	@${MKDIR} ${PREFIX}/${DISTNAME}/etc
