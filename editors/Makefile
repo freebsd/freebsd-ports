@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.83 1999/08/09 00:40:17 asami Exp $
+# $Id: Makefile,v 1.84 1999/08/18 01:02:50 cpiazza Exp $
 #
 
     SUBDIR += AbiWord
@@ -11,6 +11,8 @@
     SUBDIR += asedit
     SUBDIR += axe
     SUBDIR += beav
+    SUBDIR += bitmap-emacs20
+    SUBDIR += bitmap-mule
     SUBDIR += bpatch
     SUBDIR += cooledit
     SUBDIR += custom-emacs
