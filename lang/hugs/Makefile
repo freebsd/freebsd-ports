@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	hugs98
-PORTVERSION=	200311
-PORTREVISION=	1
+PORTVERSION=	200503
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://cvs.haskell.org/Hugs/downloads/${HUGS_DATE}/
 DISTNAME=	${PORTNAME}-${HUGS_DATE}
@@ -15,24 +14,24 @@ DISTNAME=	${PORTNAME}-${HUGS_DATE}
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	An interpreter for the functional programming language Haskell 98
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 OPTIONS=	HUGS_OPENGL "OpenGL/GLUT support" off
-HUGS_DATE=	Nov2003
+HUGS_DATE=	Mar2005
 USE_REINPLACE=	yes
 USE_BISON=	yes
+USE_GMAKE=	yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --enable-ffi
 CONFIGURE_ENV+=	CC="${CC}" CFLAGS="${CFLAGS}"
-ALL_TARGET=	default ffihugs
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_HUGS_OPENGL)
-CONFIGURE_ARGS+=	--enable-hopengl --enable-mesa
+CONFIGURE_ARGS+=	--enable-hopengl
 USE_GL=	yes
 .endif
 
-MAN1=		hugs.1 hugs-package.1
+MAN1=		hugs.1
 
 .if ${MACHINE_ARCH:L} == "amd64"
 CFLAGS+=	"-fPIC"
@@ -41,19 +40,6 @@ CFLAGS+=	"-fPIC"
 post-patch:
 	@${REINPLACE_CMD} -e '/^install		:: install_notes/d ; \
 		/^install		:: install_guide/d' \
-		${WRKSRC}/MkInstal.in
-
-do-configure:
-	@(cd ${WRKSRC}/unix && ${CONFIGURE_ENV} ./configure ${CONFIGURE_ARGS})
-
-.if !defined(NOPORTDOCS)
-post-install:
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/../docs/*.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/../docs/server* ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/../Credits ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/../License ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/../Readme ${DOCSDIR}
-.endif
+		${WRKSRC}/src/MkInstal.in
 
 .include <bsd.port.post.mk>
