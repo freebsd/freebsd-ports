@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	doscan
-PORTVERSION=	0.2.6
+PORTVERSION=	0.2.9
 CATEGORIES=	security net
 MASTER_SITES=	http://static.enyo.de/fw/releases/doscan/
 
-MAINTAINER=	Janos.Mohacsi@bsd.hu
+MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Tool to quickly scan your network for machines listening on a TCP port
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
@@ -18,8 +18,11 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GCC=	3.4
-DOC_FILES=	README
+PORTDOCS=	README
 MAN1=		doscan.1
+NOT_FOR_ARCHS=	sparc64
+
+PLIST_FILES=	bin/doscan
 
 .include <bsd.port.pre.mk>
 
@@ -30,7 +33,7 @@ EXTRA_PATCHES=	${PATCHDIR}/freebsd4.diff
 post-install:
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOC_FILES}
+.for file in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
