@@ -6,7 +6,6 @@ info/gtypist.info-2
 @exec install-info %D/info/gtypist.info %D/info/dir
 bin/gtypist
 bin/typefortune
-share/gtypist/cs.typ
 share/gtypist/d.typ
 share/gtypist/demo.typ
 share/gtypist/esp.typ
@@ -23,7 +22,6 @@ share/gtypist/q.typ
 share/gtypist/r.typ
 share/gtypist/s.typ
 share/gtypist/t.typ
-share/gtypist/tinydemo.typ
 share/gtypist/ttde.typ
 share/gtypist/u.typ
 share/gtypist/v.typ
