@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openam
-PORTVERSION=	1.1.12
+PORTVERSION=	1.1.16
 CATEGORIES=	net
 MASTER_SITES=	http://www.openh323.org/bin/ \
 		http://www.de.openh323.org/bin/ \
