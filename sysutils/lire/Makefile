@@ -27,16 +27,19 @@ BUILD_DEPENDS=	\
 	${LOCALBASE}/share/sgml/docbook/4.1/docbook.dtd:${PORTSDIR}/textproc/docbook-410 \
 	${LOCALBASE}/share/sgml/docbook/dsssl/modular/catalog:${PORTSDIR}/textproc/dsssl-docbook-modular \
 	${LOCALBASE}/share/xsl/docbook/fo/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl \
-	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
-	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Spreadsheet/WriteExcel.pm:${PORTSDIR}/textproc/p5-Spreadsheet-WriteExcel \
-	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Time/Timezone.pm:${PORTSDIR}/devel/p5-Time \
-	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/MIME/Entity.pm:${PORTSDIR}/mail/p5-MIME-Tools \
-	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph
+	${ARCH_PERL}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
+	${SITE_PERL}/Spreadsheet/WriteExcel.pm:${PORTSDIR}/textproc/p5-Spreadsheet-WriteExcel \
+	${SITE_PERL}/Time/Timezone.pm:${PORTSDIR}/devel/p5-Time \
+	${SITE_PERL}/MIME/Entity.pm:${PORTSDIR}/mail/p5-MIME-Tools \
+	${SITE_PERL}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+
+SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+ARCH_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}
 
 MAN1=		\
 		lr_archive_log.1 lr_check_errlines.1	\
