@@ -1,3 +1,4 @@
+bin/mminfo
 %%PYTHON_SITELIBDIR%%/mmpython/__init__.py
 %%PYTHON_SITELIBDIR%%/mmpython/__init__.pyc
 %%PYTHON_SITELIBDIR%%/mmpython/__init__.pyo
@@ -65,6 +66,9 @@
 %%PYTHON_SITELIBDIR%%/mmpython/disc/dvdinfo.py
 %%PYTHON_SITELIBDIR%%/mmpython/disc/dvdinfo.pyc
 %%PYTHON_SITELIBDIR%%/mmpython/disc/dvdinfo.pyo
+%%PYTHON_SITELIBDIR%%/mmpython/disc/lsdvd.py
+%%PYTHON_SITELIBDIR%%/mmpython/disc/lsdvd.pyc
+%%PYTHON_SITELIBDIR%%/mmpython/disc/lsdvd.pyo
 %%PYTHON_SITELIBDIR%%/mmpython/disc/vcdinfo.py
 %%PYTHON_SITELIBDIR%%/mmpython/disc/vcdinfo.pyc
 %%PYTHON_SITELIBDIR%%/mmpython/disc/vcdinfo.pyo
@@ -77,6 +81,9 @@
 %%PYTHON_SITELIBDIR%%/mmpython/image/IPTC.py
 %%PYTHON_SITELIBDIR%%/mmpython/image/IPTC.pyc
 %%PYTHON_SITELIBDIR%%/mmpython/image/IPTC.pyo
+%%PYTHON_SITELIBDIR%%/mmpython/image/ImageInfo.py
+%%PYTHON_SITELIBDIR%%/mmpython/image/ImageInfo.pyc
+%%PYTHON_SITELIBDIR%%/mmpython/image/ImageInfo.pyo
 %%PYTHON_SITELIBDIR%%/mmpython/image/__init__.py
 %%PYTHON_SITELIBDIR%%/mmpython/image/__init__.pyc
 %%PYTHON_SITELIBDIR%%/mmpython/image/__init__.pyo
@@ -95,9 +102,12 @@
 %%PYTHON_SITELIBDIR%%/mmpython/mediainfo.py
 %%PYTHON_SITELIBDIR%%/mmpython/mediainfo.pyc
 %%PYTHON_SITELIBDIR%%/mmpython/mediainfo.pyo
-%%PYTHON_SITELIBDIR%%/mmpython/mediatest.py
-%%PYTHON_SITELIBDIR%%/mmpython/mediatest.pyc
-%%PYTHON_SITELIBDIR%%/mmpython/mediatest.pyo
+%%PYTHON_SITELIBDIR%%/mmpython/misc/__init__.py
+%%PYTHON_SITELIBDIR%%/mmpython/misc/__init__.pyc
+%%PYTHON_SITELIBDIR%%/mmpython/misc/__init__.pyo
+%%PYTHON_SITELIBDIR%%/mmpython/misc/xmlinfo.py
+%%PYTHON_SITELIBDIR%%/mmpython/misc/xmlinfo.pyc
+%%PYTHON_SITELIBDIR%%/mmpython/misc/xmlinfo.pyo
 %%PYTHON_SITELIBDIR%%/mmpython/synchronizedobject.py
 %%PYTHON_SITELIBDIR%%/mmpython/synchronizedobject.pyc
 %%PYTHON_SITELIBDIR%%/mmpython/synchronizedobject.pyo
@@ -141,6 +151,7 @@
 %%PYTHON_SITELIBDIR%%/mmpython/video/vcdinfo.pyc
 %%PYTHON_SITELIBDIR%%/mmpython/video/vcdinfo.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/mmpython/video
+@dirrm %%PYTHON_SITELIBDIR%%/mmpython/misc
 @dirrm %%PYTHON_SITELIBDIR%%/mmpython/image
 @dirrm %%PYTHON_SITELIBDIR%%/mmpython/disc
 @dirrm %%PYTHON_SITELIBDIR%%/mmpython/audio/eyeD3
