@@ -3,18 +3,27 @@
 # Date created:		5 March 1995
 # Whom:			joerg
 #
-# $Id: Makefile,v 1.5 1995/04/02 13:14:09 joerg Exp $
+# $Id: Makefile,v 1.6 1995/04/11 00:20:05 asami Exp $
 #
 
-DISTNAME=	acm
-PKGNAME=	acm-2.0
+DISTNAME=	acm-4.7
 CATEGORIES+=	games
-MASTER_SITES=	ftp://ftp.informatik.tu-muenchen.de/pub/comp/usenet/comp.sources.x/acm/ \
-		ftp://ftp.physik.tu-muenchen.de/pub/comp/usenet/comp.sources.x/acm/
+MASTER_SITES=	ftp://ftp.warwick.ac.uk/pub/x11/
 
 MAINTAINER=	joerg@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/acm
-USE_IMAKE=	yes
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS= --prefix=${PREFIX}
+STRIP=
 
 .include <bsd.port.mk>
+
+# Following stuff must be after <bsd.port.mk> to expand exists() properly
+
+# Include sound support (Use network audio server (nas))
+.if defined(USE_SOUND) && ${USE_SOUND} == YES || \
+    exists(${PREFIX}/lib/libaudio.a) && \
+    (!defined(USE_SOUND) || ${USE_SOUND} != NO)
+LIB_DEPENDS+=   audio\\.7\\.:${PORTSDIR}/audio/nas
+.endif
+
