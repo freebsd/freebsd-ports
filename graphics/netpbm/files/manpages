@@ -61,7 +61,6 @@ MAN1+=	pbmtopgm.1
 MAN1+=	pbmtopi3.1
 MAN1+=	pbmtopk.1
 MAN1+=	pbmtoplot.1
-MAN1+=	pbmtoppa.1
 MAN1+=	pbmtoptx.1
 MAN1+=	pbmtowbmp.1
 MAN1+=	pbmtox10bm.1

@@ -1,12 +1,13 @@
---- ppm/Makefile.orig	Sun Dec  3 07:41:51 2000
-+++ ppm/Makefile	Sat Jan 13 00:00:00 2001
+--- ppm/Makefile.orig	Thu Jan 25 13:38:27 2001
++++ ppm/Makefile	Sat Feb 24 00:00:00 2001
 @@ -22,26 +22,31 @@
  NETPBMLIBS = $(LIBPPM) $(PBMDIR)/$(LIBPBM) $(PGMDIR)/$(LIBPGM)
  LIBLIBS = $(PBMDIR)/$(LIBPBM) $(PGMDIR)/$(LIBPGM)
  
+-PORTBINARIES =	bmptoppm eyuvtoppm gouldtoppm ilbmtoppm imgtoppm \
 +SOVER = 1
 +
- PORTBINARIES =	bmptoppm eyuvtoppm gouldtoppm ilbmtoppm imgtoppm \
++PORTBINARIES =	eyuvtoppm gouldtoppm ilbmtoppm imgtoppm \
  		leaftoppm mtvtoppm pcxtoppm pgmtoppm pi1toppm picttoppm \
  		pjtoppm \
 -		ppm3d ppmbrighten ppmchange ppmcolormask \
@@ -26,8 +27,8 @@
 -		sputoppm tgatoppm winicontoppm ximtoppm xpmtoppm xvminitoppm \
 +		sputoppm winicontoppm xpmtoppm xvminitoppm \
  		yuvtoppm yuvsplittoppm
-+SHHOPTBINARIES =	ppmchange ppmcolormask ppmhist ppmtobmp ppmtogif \
-+		tgatoppm ximtoppm 
++SHHOPTBINARIES =	bmptoppm ppmchange ppmcolormask ppmhist ppmtobmp \
++		ppmtogif tgatoppm ximtoppm 
  
  # We don't build vidtoppm by default, because it requires special libraries
  # and there is no known requirement for vidtoppm.
@@ -83,12 +84,12 @@
  
  # And libraries.
  $(PBMDIR)/$(LIBPBM): FORCE
-@@ -106,6 +121,9 @@
- 	$(MAKE) -C hpcdtoppm install.man
+@@ -108,6 +123,9 @@
+ HEADERLINKS = pbmplus.h pbm.h libpbm.h pbmfont.h pgm.h libpgm.h
  
  include $(SRCDIR)/Makefile.common
 +
-+$(SRCDIR)/shhopt/libshhopt.a:
++$(BUILDDIR)/shhopt/libshhopt.a:
 +	cd ../shhopt; $(MAKE) libshhopt.a
  
  .PHONY: clean

@@ -1,6 +1,6 @@
---- pgm/Makefile.orig	Sat Sep  2 13:00:08 2000
-+++ pgm/Makefile	Fri Dec  8 00:00:00 2000
-@@ -16,18 +16,27 @@
+--- pgm/Makefile.orig	Thu Jan 18 12:39:28 2001
++++ pgm/Makefile	Sat Feb 24 00:00:00 2001
+@@ -15,18 +15,27 @@
  NETPBMLIBS = $(LIBPGM) $(PBMDIR)/$(LIBPBM)
  LIBLIBS = $(PBMDIR)/$(LIBPBM)
  
@@ -31,7 +31,7 @@
  
  MANUALS1 =	$(BINARIES)
  MANUALS3 =	libpgm
-@@ -40,7 +49,11 @@
+@@ -39,7 +48,11 @@
  .PHONY: all
  all:		$(BINARIES)
  .PHONY: merge
@@ -44,12 +44,12 @@
  
  # LIBRARIES
  
-@@ -60,6 +73,9 @@
- install.man: install.man.common
+@@ -61,6 +74,9 @@
+ HEADERLINKS = pbmplus.h pbm.h libpbm.h
  
  include $(SRCDIR)/Makefile.common
 +
-+$(SRCDIR)/shhopt/libshhopt.a:
++$(BUILDDIR)/shhopt/libshhopt.a:
 +	cd ../shhopt; $(MAKE) libshhopt.a
  
  .PHONY: clean

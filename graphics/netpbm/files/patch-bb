@@ -1,12 +1,29 @@
---- Makefile.common.orig	Thu Jan 11 07:20:19 2001
-+++ Makefile.common	Sat Jan 13 00:00:00 2001
-@@ -117,24 +117,20 @@
+--- Makefile.common.orig	Wed Feb 21 13:04:34 2001
++++ Makefile.common	Sat Feb 24 00:00:00 2001
+@@ -135,14 +135,14 @@
  
- $(LIBOBJECTS): %.o: $(SRCSUBDIR)/%.c
+ # MERGE STUFF
+ 
+-$(MERGE_OBJECTS): %.o2: $(SRCSUBDIR)/%.c
++$(MERGE_OBJECTS): %.o2: $(SRCSUBDIR)/%.c $(HEADERLINKS)
+ # Note that the user may have configured -I options into CFLAGS.
+ 	$(CC) -c $(INCLUDE) $(CFLAGS) "-Dmain=$*_main" -o $@ $<
+ 
+ merge.h: 
+ 	$(SRCDIR)/make_merge.sh $(MERGEBINARIES)
+ 
+-$(MERGENAME).o: $(SRCSUBDIR)/$(MERGENAME).c merge.h
++$(MERGENAME).o: $(SRCSUBDIR)/$(MERGENAME).c merge.h $(HEADERLINKS)
+ 	$(CC) $(CFLAGS) -Wno-implicit $(INCLUDE) -c -o $@ $<
+ 
+ $(MERGENAME): $(MERGENAME).o $(MERGE_OBJECTS) $(NETPBMLIBS) $(LIBOPT)
+@@ -155,24 +155,20 @@
+ 
+ $(LIBOBJECTS): %.o: $(SRCSUBDIR)/%.c $(HEADERLINKS)
  # Note that the user may have configured -I options into CFLAGS.
 +	$(CC) -c $(INCLUDE) $(CFLAGS) -o $@ $<
 +
-+$(SHLIBOBJECTS): %.lo: %.c
++$(SHLIBOBJECTS): %.lo: $(SRCSUBDIR)/%.c $(HEADERLINKS)
  	$(CC) -c $(INCLUDE) $(CFLAGS) $(CFLAGS_SHLIB) -o $@ $<
  
 -SONAME = lib$(LIBROOT).so.$(MAJ)
@@ -32,7 +49,7 @@
  
  # Static library.  Unused by default, but with a small change to make files...
  lib$(LIBROOT).a: $(LIBOBJECTS) $(LIBOBJECTS_X)
-@@ -164,7 +160,7 @@
+@@ -202,7 +198,7 @@
  install.merge.common: $(MERGENAME) $(NOMERGEBINARIES) install.script
  	cd $(INSTALLBINARIES) ; rm -f $(BINARIES) $(MERGE_ALIASES)
  ifneq ($(MERGENAME)x,x)
@@ -41,7 +58,7 @@
              $(MERGENAME) $(INSTALLBINARIES)
  	cd $(INSTALLBINARIES) ; \
  	   for i in $(MERGEBINARIES) $(MERGE_ALIASES) ; \
-@@ -174,7 +170,7 @@
+@@ -212,7 +208,7 @@
  ifneq ($(NOMERGEBINARIES)x,x)
  	for x in $(NOMERGEBINARIES); \
          do \
@@ -50,7 +67,7 @@
                 $$x $(INSTALLBINARIES); \
  	done
  endif
-@@ -185,7 +181,7 @@
+@@ -223,7 +219,7 @@
  # Make and Install know that pbmmake.exe counts as pbmmake.
  	for x in $(BINARIES); \
  	do \
@@ -59,7 +76,7 @@
                 $$x $(INSTALLBINARIES); \
  	done
  
-@@ -194,7 +190,7 @@
+@@ -232,7 +228,7 @@
  ifneq ($(SCRIPTS)x,x)
  	for x in $(SCRIPTS); \
  	do \
@@ -68,7 +85,7 @@
                 $(INSTALLSCRIPTS); \
  	done
  endif
-@@ -231,7 +227,7 @@
+@@ -269,7 +265,7 @@
  # directory when you compile your programs.
  	for x in $(INTERFACE_HEADERS); \
  	do \
@@ -77,8 +94,8 @@
                 $(INSTALLHDRS); \
  	done
  
-@@ -245,15 +241,14 @@
- # here causes the static library to be built at that time.
+@@ -277,15 +273,14 @@
+ #
  .PHONY: install.staticlib
  install.staticlib: lib$(LIBROOT).a
 -	$(INSTALL) -c -m $(INSTALL_PERM_LIBS) $< $(INSTALLLIBS)/$<
