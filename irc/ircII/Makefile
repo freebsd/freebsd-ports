@@ -10,7 +10,7 @@ PORTVERSION=	4.4U
 CATEGORIES=	irc ipv6
 MASTER_SITES=	ftp://ircftp.au.eterna.com.au/pub/ircII/
 
-MAINTAINER=	anders@sanyusan.se
+MAINTAINER=	anders@codefactory.se
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	IRCLIB=${PREFIX}/share/irc
