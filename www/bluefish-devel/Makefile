@@ -7,6 +7,7 @@
 
 PORTNAME=	bluefish
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	www editors
 MASTER_SITES=	http://pkedu.fbt.eitn.wau.nl/~olivier/${DOWNLOAD}/ \
 		ftp://bluefish.advancecreations.com/pub/bluefish/${DOWNLOAD}/ \
@@ -26,6 +27,8 @@ DOWNLOAD=	downloads
 NO_LATEST_LINK=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomehier
 USE_PERL5_BUILD=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
