@@ -1,9 +1,15 @@
---- Makefile.orig	Thu Jan 16 16:27:25 2003
-+++ Makefile	Thu Jan 16 16:27:36 2003
-@@ -1,5 +1,5 @@
- CC =            gcc -Wall
--BINDIR =        /usr/local/bin
-+BINDIR =        ${PREFIX}/bin
+
+$FreeBSD$
+
+--- Makefile.orig	Sun Feb 23 13:11:59 2003
++++ Makefile	Wed Oct  8 22:37:15 2003
+@@ -1,8 +1,7 @@
+-CC =            gcc -Wall
+ BINDIR =        /usr/local/bin
  all:    server
  server:         
- 	$(CC) -O3 -pthread -o xbms server.c
+-	$(CC) -O3 -pthread -o xbms server.c
++	$(CC) $(CFLAGS) -pthread -o xbms server.c
+ install:        all
+ 	rm -f $(BINDIR)/xbms
+ 	cp xbms $(BINDIR)

@@ -1,2 +1,4 @@
+@comment $FreeBSD$
 bin/xbms
 etc/xbms.conf.sample
+etc/rc.d/xbms.sh.sample
