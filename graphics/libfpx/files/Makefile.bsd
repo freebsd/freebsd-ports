@@ -17,8 +17,8 @@ CPPS	!=	find ${.CURDIR} -name \*.cpp -print
 # Some of the .cxx files are #include-ed into others, so can't use `find' here:
 OLESS	:=	ascii.cxx cdocfile.cxx chinst.cxx dffuncs.cxx dfiter.cxx \
 		dfstream.cxx difat.cxx dir.cxx dirp.cxx docfile.cxx entry.cxx \
-		expdf.cxx expiter expst.cxx fat.cxx funcs.cxx header.cxx \
-		iter.cxx mem.cxx msf msfiter.cxx mstream.cxx page.cxx \
+		expdf.cxx expiter.cxx expst.cxx fat.cxx funcs.cxx header.cxx \
+		iter.cxx mem.cxx msf.cxx msfiter.cxx mstream.cxx page.cxx \
 		refilb.cxx rexpdf.cxx sstream.cxx storage.cxx time.cxx \
 		vect.cxx wchar.c
 JPGS	!=	find ${.CURDIR}/jpeg -name \*.c
