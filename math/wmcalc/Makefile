@@ -8,7 +8,8 @@
 PORTNAME=	wmcalc
 PORTVERSION=	0.3
 CATEGORIES=	math windowmaker
-MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITES=	http://members.cox.net/ehf_dockapps/wmcalc/ \
+		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR= jedgar
 
 MAINTAINER=	jedgar@FreeBSD.org
