@@ -1,20 +1,19 @@
 # New ports collection makefile for:    xfractint
-# Version required:     3.00
+# Version required:     3.04
 # Date created:         7 Sept 1995
 # Whom:                 cacho@mexicano.gdl.iteso.mx
 #
-# $Id: Makefile,v 1.1.1.1 1995/09/09 04:21:56 asami Exp $
+# $Id: Makefile,v 1.2 1996/11/18 11:29:38 asami Exp $
 #
 
-DISTNAME=       xfract300
-PKGNAME=	xfractint-3.00
+DISTNAME=       xfrac304
+PKGNAME=	xfractint-3.04
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.cs.berkeley.edu/ucb/sprite/
-EXTRACT_SUFX=	.shar.Z
+MASTER_SITES=	ftp://ftp.phoenix.net/pub/USERS/twegner/
+EXTRACT_SUFX=	.tgz
 
-EXTRACT_CMD=	zcat
-EXTRACT_BEFORE_ARGS=
-EXTRACT_AFTER_ARGS=	|sh
+MAINTAINER=	ports@FreeBSD.ORG
+
 NO_WRKSUBDIR=	yes
 MAN1=		xfractint.1
 
