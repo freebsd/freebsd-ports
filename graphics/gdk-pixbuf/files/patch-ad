@@ -1,9 +1,12 @@
---- gdk-pixbuf-config.in.orig	Mon Apr 10 20:56:56 2000
-+++ gdk-pixbuf-config.in	Thu Apr 13 11:40:34 2000
-@@ -42,11 +42,11 @@
-       if test @includedir@ != /usr/include ; then
-         includes=-I@includedir@
-       fi
+
+$FreeBSD$
+
+--- gdk-pixbuf-config.in.orig	Tue Oct 23 20:44:44 2001
++++ gdk-pixbuf-config.in	Fri Oct 26 11:06:32 2001
+@@ -40,11 +40,11 @@
+       ;;
+     --cflags)
+       includes=-I@includedir@/gdk-pixbuf-1.0
 -      echo $includes `gtk-config --cflags`
 +      echo $includes `@GTK_CONFIG@ --cflags`
        ;;

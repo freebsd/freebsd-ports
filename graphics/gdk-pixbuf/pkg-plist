@@ -1,11 +1,11 @@
 bin/gdk-pixbuf-config
 etc/gdk_pixbufConf.sh
 etc/gdk_pixbuf_xlibConf.sh
-include/gdk-pixbuf/gdk-pixbuf-features.h
-include/gdk-pixbuf/gdk-pixbuf-loader.h
-include/gdk-pixbuf/gdk-pixbuf-xlib.h
-include/gdk-pixbuf/gdk-pixbuf-xlibrgb.h
-include/gdk-pixbuf/gdk-pixbuf.h
+include/gdk-pixbuf-1.0/gdk-pixbuf/gdk-pixbuf-features.h
+include/gdk-pixbuf-1.0/gdk-pixbuf/gdk-pixbuf-loader.h
+include/gdk-pixbuf-1.0/gdk-pixbuf/gdk-pixbuf-xlib.h
+include/gdk-pixbuf-1.0/gdk-pixbuf/gdk-pixbuf-xlibrgb.h
+include/gdk-pixbuf-1.0/gdk-pixbuf/gdk-pixbuf.h
 lib/gdk-pixbuf/loaders/libpixbufloader-bmp.so
 lib/gdk-pixbuf/loaders/libpixbufloader-gif.so
 lib/gdk-pixbuf/loaders/libpixbufloader-ico.so
@@ -23,12 +23,7 @@ lib/libgdk_pixbuf_xlib.a
 lib/libgdk_pixbuf_xlib.so
 lib/libgdk_pixbuf_xlib.so.2
 share/aclocal/gdk-pixbuf.m4
-share/doc/gdk-pixbuf/a2605.html
-share/doc/gdk-pixbuf/a3640.html
-share/doc/gdk-pixbuf/a3652.html
-share/doc/gdk-pixbuf/a3694.html
-share/doc/gdk-pixbuf/a3716.html
-share/doc/gdk-pixbuf/book1.html
+share/doc/gdk-pixbuf/a3657.html
 share/doc/gdk-pixbuf/compiling.html
 share/doc/gdk-pixbuf/extra-configuration-options.html
 share/doc/gdk-pixbuf/gdk-pixbuf-animation.html
@@ -47,21 +42,12 @@ share/doc/gdk-pixbuf/gdk-pixbuf-util.html
 share/doc/gdk-pixbuf/gdkpixbufloader.html
 share/doc/gdk-pixbuf/gnomecanvaspixbuf.html
 share/doc/gdk-pixbuf/index.html
-share/doc/gdk-pixbuf/index.sgml
 share/doc/gdk-pixbuf/license.html
-share/doc/gdk-pixbuf/r15.html
 share/doc/gdk-pixbuf/r27.html
-share/doc/gdk-pixbuf/x2624.html
-share/doc/gdk-pixbuf/x2676.html
-share/doc/gdk-pixbuf/x3659.html
-share/doc/gdk-pixbuf/x3671.html
-share/doc/gdk-pixbuf/x3711.html
-share/doc/gdk-pixbuf/x3713.html
-share/doc/gdk-pixbuf/x3723.html
-share/doc/gdk-pixbuf/x3735.html
-share/doc/gdk-pixbuf/x3765.html
-share/doc/gdk-pixbuf/x3787.html
+share/doc/gdk-pixbuf/x3676.html
+share/doc/gdk-pixbuf/x3728.html
 @dirrm share/doc/gdk-pixbuf
 @dirrm lib/gdk-pixbuf/loaders
 @dirrm lib/gdk-pixbuf
-@dirrm include/gdk-pixbuf
+@dirrm include/gdk-pixbuf-1.0/gdk-pixbuf
+@dirrm include/gdk-pixbuf-1.0

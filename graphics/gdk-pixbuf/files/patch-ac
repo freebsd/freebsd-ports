@@ -1,88 +1,110 @@
---- gdk-pixbuf/Makefile.in.orig	Thu Mar  1 18:19:34 2001
-+++ gdk-pixbuf/Makefile.in	Wed Mar  7 18:34:01 2001
-@@ -123,4 +123,4 @@
+
+$FreeBSD$
+
+--- gdk-pixbuf/Makefile.in.orig	Fri Oct 26 11:01:20 2001
++++ gdk-pixbuf/Makefile.in	Fri Oct 26 11:04:15 2001
+@@ -125,70 +125,70 @@
+ # The PNG plugin.
+ #
  libpixbufloader_png_la_SOURCES = io-png.c
 -libpixbufloader_png_la_LDFLAGS = -version-info 1:0:0 -module
 -libpixbufloader_png_la_LIBADD = $(LIBPNG)
 +libpixbufloader_png_la_LDFLAGS = -avoid-version -module
 +libpixbufloader_png_la_LIBADD = $(LIBPNG) libgdk_pixbuf.la $(GLIB_LIBS) $(GTK_LIBS) $(STATIC_LIB_DEPS)
  
-@@ -130,4 +130,4 @@
+ #
+ # The JPEG loader
+ #
  libpixbufloader_jpeg_la_SOURCES = io-jpeg.c
 -libpixbufloader_jpeg_la_LDFLAGS = -version-info 1:0:0 -module
 -libpixbufloader_jpeg_la_LIBADD = $(LIBJPEG)
 +libpixbufloader_jpeg_la_LDFLAGS = -avoid-version -module
 +libpixbufloader_jpeg_la_LIBADD = $(LIBJPEG) libgdk_pixbuf.la $(GLIB_LIBS) $(GTK_LIBS) $(STATIC_LIB_DEPS)
  
-@@ -137,4 +137,4 @@
+ #
+ # The XPM loader
+ #
  libpixbufloader_xpm_la_SOURCES = io-xpm.c
 -libpixbufloader_xpm_la_LDFLAGS = -version-info 1:0:0 -module
 -libpixbufloader_xpm_la_LIBADD = 
 +libpixbufloader_xpm_la_LDFLAGS = -avoid-version -module
 +libpixbufloader_xpm_la_LIBADD = libgdk_pixbuf.la $(GLIB_LIBS) $(GTK_LIBS) $(STATIC_LIB_DEPS)
  
-@@ -144,4 +144,4 @@
+ #
+ # The GIF loader
+ #
  libpixbufloader_gif_la_SOURCES = io-gif.c
 -libpixbufloader_gif_la_LDFLAGS = -version-info 1:0:0 -module
 -libpixbufloader_gif_la_LIBADD = 
 +libpixbufloader_gif_la_LDFLAGS = -avoid-version -module
 +libpixbufloader_gif_la_LIBADD = libgdk_pixbuf.la $(GLIB_LIBS) $(GTK_LIBS) $(STATIC_LIB_DEPS)
  
-@@ -151,4 +151,4 @@
+ #
+ # The ICO loader
+ #
  libpixbufloader_ico_la_SOURCES = io-ico.c
 -libpixbufloader_ico_la_LDFLAGS = -version-info 1:0:0 -module
 -libpixbufloader_ico_la_LIBADD = 
 +libpixbufloader_ico_la_LDFLAGS = -avoid-version -module
 +libpixbufloader_ico_la_LIBADD = libgdk_pixbuf.la $(GLIB_LIBS) $(GTK_LIBS) $(STATIC_LIB_DEPS)
  
-@@ -158,4 +158,4 @@
+ #
+ # The RAS loader
+ #
  libpixbufloader_ras_la_SOURCES = io-ras.c
 -libpixbufloader_ras_la_LDFLAGS = -version-info 1:0:0 -module
 -libpixbufloader_ras_la_LIBADD = 
 +libpixbufloader_ras_la_LDFLAGS = -avoid-version -module
 +libpixbufloader_ras_la_LIBADD = libgdk_pixbuf.la $(GLIB_LIBS) $(GTK_LIBS) $(STATIC_LIB_DEPS)
  
-@@ -165,4 +165,4 @@
+ #
+ # The TIFF loader
+ #
  libpixbufloader_tiff_la_SOURCES = io-tiff.c
 -libpixbufloader_tiff_la_LDFLAGS = -version-info 1:0:0 -module
 -libpixbufloader_tiff_la_LIBADD = $(LIBTIFF)
 +libpixbufloader_tiff_la_LDFLAGS = -avoid-version -module
 +libpixbufloader_tiff_la_LIBADD = $(LIBTIFF) libgdk_pixbuf.la $(GLIB_LIBS) $(GTK_LIBS) $(STATIC_LIB_DEPS)
  
-@@ -172,4 +172,4 @@
+ #
+ # The PNM loader
+ #
  libpixbufloader_pnm_la_SOURCES = io-pnm.c
 -libpixbufloader_pnm_la_LDFLAGS = -version-info 1:0:0 -module
 -libpixbufloader_pnm_la_LIBADD = 
 +libpixbufloader_pnm_la_LDFLAGS = -avoid-version -module
 +libpixbufloader_pnm_la_LIBADD = libgdk_pixbuf.la $(GLIB_LIBS) $(GTK_LIBS) $(STATIC_LIB_DEPS)
  
-@@ -179,4 +179,4 @@
+ #
+ # The BMP loader
+ #
  libpixbufloader_bmp_la_SOURCES = io-bmp.c
 -libpixbufloader_bmp_la_LDFLAGS = -version-info 1:0:0 -module
 -libpixbufloader_bmp_la_LIBADD = 
 +libpixbufloader_bmp_la_LDFLAGS = -avoid-version -module
 +libpixbufloader_bmp_la_LIBADD = libgdk_pixbuf.la $(GLIB_LIBS) $(GTK_LIBS) $(STATIC_LIB_DEPS)
  
-@@ -186,3 +186,3 @@
+ #
+ # The XBM loader
+ #
  libpixbufloader_xbm_la_SOURCES = io-xbm.c
 -libpixbufloader_xbm_la_LDFLAGS = -version-info 1:0:0 -module
 +libpixbufloader_xbm_la_LDFLAGS = -avoid-version -module
  libpixbufloader_xbm_la_LIBADD = 
-@@ -227,6 +227,6 @@
+ 
+ @HAVE_PNG_TRUE@PNG_LIB = libpixbufloader-png.la
+@@ -230,11 +230,11 @@
+ 
  LDADDS = libgdk_pixbuf.la $(GLIB_LIBS) $(GTK_LIBS) $(STATIC_LIB_DEPS)
--@INSIDE_GNOME_LIBS_TRUE@test_gdk_pixbuf_LDADD = $(LDADDS) -lgmodule
--@INSIDE_GNOME_LIBS_FALSE@test_gdk_pixbuf_LDADD = $(LDADDS) $(GNOME_LIBS) -lgmodule
--@INSIDE_GNOME_LIBS_TRUE@testpixbuf_LDADD = $(LDADDS) -lgmodule
--@INSIDE_GNOME_LIBS_FALSE@testpixbuf_LDADD = $(LDADDS) $(GNOME_LIBS) -lgmodule
-+@INSIDE_GNOME_LIBS_TRUE@test_gdk_pixbuf_LDADD = $(LDADDS) `$(GLIB_CONFIG) --libs gmodule`
-+@INSIDE_GNOME_LIBS_FALSE@test_gdk_pixbuf_LDADD = $(LDADDS) $(GNOME_LIBS) `$(GLIB_CONFIG) --libs gmodule`
-+@INSIDE_GNOME_LIBS_TRUE@testpixbuf_LDADD = $(LDADDS) `$(GLIB_CONFIG) --libs gmodule`
-+@INSIDE_GNOME_LIBS_FALSE@testpixbuf_LDADD = $(LDADDS) $(GNOME_LIBS) `$(GLIB_CONFIG) --libs gmodule`
- @INSIDE_GNOME_LIBS_TRUE@testpixbuf_drawable_LDADD = $(LDADDS)
-@@ -235,4 +235,4 @@
- @INSIDE_GNOME_LIBS_FALSE@testpixbuf_scale_LDADD = $(LDADDS) $(GNOME_LIBS)
--@INSIDE_GNOME_LIBS_TRUE@testanimation_LDADD = $(LDADDS) -lgmodule
--@INSIDE_GNOME_LIBS_FALSE@testanimation_LDADD = $(LDADDS) $(GNOME_LIBS) -lgmodule
-+@INSIDE_GNOME_LIBS_TRUE@testanimation_LDADD = $(LDADDS) `$(GLIB_CONFIG) --libs gmodule`
-+@INSIDE_GNOME_LIBS_FALSE@testanimation_LDADD = $(LDADDS) $(GNOME_LIBS) `$(GLIB_CONFIG) --libs gmodule`
+ 
+-test_gdk_pixbuf_LDADD = $(LDADDS) $(GNOME_LIBS) -lgmodule
+-testpixbuf_LDADD = $(LDADDS) $(GNOME_LIBS) -lgmodule
++test_gdk_pixbuf_LDADD = $(LDADDS) $(GNOME_LIBS) `$(GLIB_CONFIG) --libs gmodule`
++testpixbuf_LDADD = $(LDADDS) $(GNOME_LIBS) `$(GLIB_CONFIG) --libs gmodule`
+ testpixbuf_drawable_LDADD = $(LDADDS) $(GNOME_LIBS)
+ testpixbuf_scale_LDADD = $(LDADDS) $(GNOME_LIBS)
+-testanimation_LDADD = $(LDADDS) $(GNOME_LIBS) -lgmodule
++testanimation_LDADD = $(LDADDS) $(GNOME_LIBS) `$(GLIB_CONFIG) --libs gmodule`
+ 
+ GDK_PIXBUF_LIBS = $(GLIB_LIBS) $(GTK_LIBS)
  
