@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	liveMedia
-PORTVERSION=	2004.04.09
+PORTVERSION=	2004.04.27
 PORTEPOCH=	1
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.LIVE.COM/liveMedia/public/
-MASTER_SITES+=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	nork
+#MASTER_SITES+=	${MASTER_SITE_LOCAL}
+#MASTER_SITE_SUBDIR=	nork
 DISTNAME=	live.${PORTVERSION}
 
 MAINTAINER=	nork@FreeBSD.org
@@ -68,6 +68,7 @@ liveMedia=		\
 		liveMedia/include/AMRAudioSource.hh \
 		liveMedia/include/AudioInputDevice.hh \
 		liveMedia/include/AudioRTPSink.hh \
+		liveMedia/include/BasicUDPSink.hh \
 		liveMedia/include/BasicUDPSource.hh \
 		liveMedia/include/ByteStreamFileSource.hh \
 		liveMedia/include/ByteStreamMultiFileSource.hh \
@@ -106,6 +107,8 @@ liveMedia=		\
 		liveMedia/include/MPEG1or2VideoRTPSink.hh \
 		liveMedia/include/MPEG1or2VideoRTPSource.hh \
 		liveMedia/include/MPEG1or2VideoStreamFramer.hh \
+		liveMedia/include/MPEG2TransportStreamFramer.hh \
+		liveMedia/include/MPEG2TransportStreamFromPESSource.hh \
 		liveMedia/include/MPEG4ESVideoRTPSink.hh \
 		liveMedia/include/MPEG4ESVideoRTPSource.hh \
 		liveMedia/include/MPEG4GenericRTPSink.hh \
