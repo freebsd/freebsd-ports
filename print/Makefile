@@ -163,6 +163,7 @@
     SUBDIR += passivetex
     SUBDIR += pcal
     SUBDIR += pclprint
+    SUBDIR += pdfjam
     SUBDIR += pdflib
     SUBDIR += pdflib-perl
     SUBDIR += pdfmerge

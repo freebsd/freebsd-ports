@@ -1,0 +1,14 @@
+PDFjam, by David Firth, is a small collection of shell scripts which provide a
+simple interface to some of the functionality of the excellent pdfpages package
+(by Andreas Matthias) for pdfLaTeX. At present the utilities available are:
+
+ * pdfnup, which allows PDF files to be "n-upped" in roughly the way that psnup
+   does for PostScript files.
+ * pdfjoin, which concatenates the pages of multiple PDF files together into a
+   single file
+ * pdf90, which rotates the pages of one or more PDF files through 90 degrees
+   (anti-clockwise).
+
+- Paul Chvostek <paul+ports@it.ca>
+
+WWW: http://www.warwick.ac.uk/go/pdfjam
