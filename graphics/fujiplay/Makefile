@@ -9,7 +9,7 @@ PORTNAME=	fujiplay
 PORTVERSION=	1.33
 CATEGORIES=	graphics
 MASTER_SITES=	http://topo.math.u-psud.fr/~bousch/
-DISTNAME=	${PORTVERSION}
+DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	kiri@pis.toba-cmt.ac.jp
