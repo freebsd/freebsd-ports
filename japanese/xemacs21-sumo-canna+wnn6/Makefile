@@ -6,9 +6,7 @@
 # $FreeBSD$
 #
 
-.include	<bsd.port.pre.mk>
-
-XEMACS_MAJOR_VER=	${.CURDIR:S!^${PORTSDIR}/japanese/xemacs!!:S!-sumo-canna+wnn6$!!}
+XEMACS_MAJOR_VER=	21
 LANGPREFIX=		ja-
 NAMEEXT=		-canna+wnn6
 
