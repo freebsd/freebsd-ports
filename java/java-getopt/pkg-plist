@@ -1,0 +1,2 @@
+share/java/classes/getopt.jar
+@unexec rmdir %D/share/java/classes 2>/dev/null || true

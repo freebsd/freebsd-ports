@@ -27,6 +27,7 @@
     SUBDIR += janosvm
     SUBDIR += java-checkstyle
     SUBDIR += java-cup
+    SUBDIR += java-getopt
     SUBDIR += java-tutorial
     SUBDIR += javamail
     SUBDIR += javavmwrapper
