@@ -1,0 +1,17 @@
+#!/bin/sh
+
+if [ $# -ne 1 ]; then
+	echo "usage: <branch>"
+	exit 1
+fi
+
+branch=$1
+
+for i in i386 alpha sparc64 ia64; do
+	if [ -d /var/portbuild/$i/${branch}/packages/All ]; then
+		cd /var/portbuild/$i/${branch}/packages/All
+		count=$(find . -name \*.tbz -o -name \*.tgz |wc -l)
+		echo -n "$i: ${count}  "
+	fi
+done
+echo
