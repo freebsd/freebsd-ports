@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	snmp
-PORTVERSION=	5.2
-PORTREVISION=	1
+PORTVERSION=	5.2.1
+PORTREVISION=	0
 PKGNAMEPREFIX=	net-
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -33,6 +33,7 @@ USE_REINPLACE=	yes
 USE_AUTOCONF_VER=259
 USE_LIBTOOL_VER=15
 USE_RC_SUBR=	yes
+USE_OPENSSL=	yes
 INSTALLS_SHLIB=	yes
 LIBTOOLFLAGS=	#empty
 .if !defined(WITHOUT_PERL)
@@ -71,6 +72,11 @@ PLIST_SUB+=	WITH_PERL=""
 PLIST_SUB+=	WITH_TKMIB=""
 .else
 PLIST_SUB+=	WITH_TKMIB="@comment "
+.endif
+
+.if defined(WITH_DMALLOC)
+LIB_DEPEND+=	dmalloc:${PORTSDIR}/devel/dmalloc
+CONFIGURE_ARGS+=--with-dmalloc=${LOCALBASE}
 .endif
 
 .if ${OSVERSION} >= 400014 && !defined(WITHOUT_IPV6)
@@ -268,6 +274,6 @@ display-message:
 
 # Maintainer's note:
 #   Don't forget to bump library version in these ports.
-#   lang/php4,lang/php5,net-mgmt/braa,net-mgmt/docsis,net/ethereal,net-mgmt/mbrowse,net/quagga,net/tethereal,net-mgmt/zabbix,security/libfwbuilder,net-mgmt/p5-SNMP-Info,net-mgmt/nagios-snmp-plugins,french/plgrenouille
+#   lang/php4,lang/php5,net-mgmt/braa,net-mgmt/docsis,net/ethereal,net-mgmt/mbrowse,net/quagga,net/tethereal,net-mgmt/zabbix,security/libfwbuilder,net-mgmt/p5-SNMP-Info,net-mgmt/nagios-snmp-plugins,french/plgrenouille,mail/cyrus-imapd22,net/ifstat,sysutils/jailadmin
 
 .include <bsd.port.post.mk>
