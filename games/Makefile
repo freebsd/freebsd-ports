@@ -137,6 +137,7 @@
     SUBDIR += xabacus
     SUBDIR += xasteroids
     SUBDIR += xataxx
+    SUBDIR += xbaby
     SUBDIR += xbat
     SUBDIR += xbattle
     SUBDIR += xbill
