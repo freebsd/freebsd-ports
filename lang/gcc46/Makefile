@@ -4,7 +4,7 @@
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.60 1999/05/26 10:26:19 obrien Exp $
+# $Id: Makefile,v 1.61 1999/06/05 22:30:28 mharo Exp $
 #
 
 SNAPDATE=	1999-05-24
@@ -36,7 +36,9 @@ EGCS_REV=	gcc-2.95
 LIBSTDCPP_REV=	4
 
 .if ${PORTOBJFORMAT} == "elf"
+.if ${MACHINE_ARCH} == "i386"
 PLIST=		${WRKDIR}/PLIST
+.endif
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .else
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsdaout${OSREL}

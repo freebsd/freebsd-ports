@@ -38,6 +38,7 @@ the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.  */
 /* This is the char to use for continuation (in case we need to turn
    continuation back on). */
 
+#undef DBX_CONTIN_CHAR
 #define DBX_CONTIN_CHAR '?'
 
 #undef ASM_FINAL_SPEC
@@ -46,19 +47,35 @@ the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.  */
    XXX FreeBSD, by convention, shouldn't do __alpha, but lots of applications
    expect it because that's what OSF/1 does. */
 
+#undef TARGET_VERSION
+#define TARGET_VERSION fprintf (stderr, " (FreeBSD/alpha ELF)");
+
+/* defined in freebsd.h
+#undef SWITCH_TAKES_ARG
+#define SWITCH_TAKES_ARG(CHAR) (FBSD_SWITCH_TAKES_ARG(CHAR))
+
+#undef WORD_SWITCH_TAKES_ARG
+#define WORD_SWITCH_TAKES_ARG(STR) (FBSD_WORD_SWITCH_TAKES_ARG(STR))
+*/
+
 #undef TARGET_DEFAULT
 #define TARGET_DEFAULT (MASK_FP | MASK_FPREGS | MASK_GAS)
 
 #undef CPP_PREDEFINES
-#define CPP_PREDEFINES "\
--D__alpha__ -D__alpha -Acpu(alpha) -Amachine(alpha) " \
-CPP_FBSD_PREDEFINES \
-SUB_CPP_PREDEFINES
+#define CPP_PREDEFINES \
+  "-D__alpha__ -D__alpha -D__ELF__ -Acpu(alpha) -Amachine(alpha)"  \
+  CPP_FBSD_PREDEFINES
+
+#undef CPP_SPEC
+#define CPP_SPEC "%{posix:-D_POSIX_SOURCE}"
 
 /* Make gcc agree with <machine/ansi.h> */
 
 #undef WCHAR_TYPE
 #define WCHAR_TYPE "int"
+
+#undef WCHAR_UNSIGNED
+#define WCHAR_UNSIGNED 0
 
 #undef WCHAR_TYPE_SIZE
 #define WCHAR_TYPE_SIZE 32
@@ -94,6 +111,7 @@ SUB_CPP_PREDEFINES
   fprintf (FILE, "\t.set noat\n");				\
 }
 
+#undef ASM_OUTPUT_SOURCE_LINE
 #define ASM_OUTPUT_SOURCE_LINE(STREAM, LINE)				\
   alpha_output_lineno (STREAM, LINE)
 extern void alpha_output_lineno ();
@@ -105,14 +123,18 @@ extern void output_file_directive ();
    .ident string is patterned after the ones produced by native svr4
    C compilers.  */
 
+#undef IDENT_ASM_OP
 #define IDENT_ASM_OP ".ident"
 
 #ifdef IDENTIFY_WITH_IDENT
+#undef ASM_IDENTIFY_GCC
 #define ASM_IDENTIFY_GCC(FILE) /* nothing */
+#undef ASM_IDENTIFY_LANGUAGE
 #define ASM_IDENTIFY_LANGUAGE(FILE)			\
  fprintf(FILE, "\t%s \"GCC (%s) %s\"\n", IDENT_ASM_OP,	\
 	 lang_identify(), version_string)
 #else
+#undef ASM_FILE_END
 #define ASM_FILE_END(FILE)					\
 do {				 				\
      fprintf ((FILE), "\t%s\t\"GCC: (GNU) %s\"\n",		\
@@ -126,12 +148,14 @@ do {				 				\
 
 /* Output #ident as a .ident.  */
 
+#undef ASM_OUTPUT_IDENT
 #define ASM_OUTPUT_IDENT(FILE, NAME) \
   fprintf (FILE, "\t%s\t\"%s\"\n", IDENT_ASM_OP, NAME);
 
 /* This is how to allocate empty space in some section.  The .zero
    pseudo-op is used for this on most svr4 assemblers.  */
 
+#undef SKIP_ASM_OP
 #define SKIP_ASM_OP	".zero"
 
 #undef ASM_OUTPUT_SKIP
@@ -146,6 +170,7 @@ do {				 				\
    make sure that the location counter for the .rodata section gets pro-
    perly re-aligned prior to the actual beginning of the jump table.  */
 
+#undef ALIGN_ASM_OP
 #define ALIGN_ASM_OP ".align"
 
 #ifndef ASM_OUTPUT_BEFORE_CASE_LABEL
@@ -164,6 +189,7 @@ do {				 				\
    library routines (e.g. .udiv) be explicitly declared as .globl
    in each assembly file where they are referenced.  */
 
+#undef ASM_OUTPUT_EXTERNAL_LIBCALL
 #define ASM_OUTPUT_EXTERNAL_LIBCALL(FILE, FUN)				\
   ASM_GLOBALIZE_LABEL (FILE, XSTR (FUN, 0))
 
@@ -172,6 +198,7 @@ do {				 				\
    the linker seems to want the alignment of data objects
    to depend on their types.  We do exactly that here.  */
 
+#undef COMMON_ASM_OP
 #define COMMON_ASM_OP	".comm"
 
 #undef ASM_OUTPUT_ALIGNED_COMMON
@@ -187,6 +214,7 @@ do {									\
    the linker seems to want the alignment of data objects
    to depend on their types.  We do exactly that here.  */
 
+#undef LOCAL_ASM_OP
 #define LOCAL_ASM_OP	".local"
 
 #undef ASM_OUTPUT_ALIGNED_LOCAL
@@ -201,6 +229,7 @@ do {									\
 /* This is the pseudo-op used to generate a 64-bit word of data with a
    specific value in some section.  */
 
+#undef INT_ASM_OP
 #define INT_ASM_OP		".quad"
 
 /* This is the pseudo-op used to generate a contiguous sequence of byte
@@ -218,8 +247,10 @@ do {									\
    EXTRA_SECTIONS, EXTRA_SECTION_FUNCTIONS, SELECT_SECTION, and
    SELECT_RTX_SECTION.  We do both here just to be on the safe side.  */
 
+#undef USE_CONST_SECTION
 #define USE_CONST_SECTION	1
 
+#undef CONST_SECTION_ASM_OP
 #define CONST_SECTION_ASM_OP	".section\t.rodata"
 
 /* Define the pseudo-ops used to switch to the .ctors and .dtors sections.
@@ -237,7 +268,9 @@ do {									\
    errors unless the .ctors and .dtors sections are marked as writable
    via the SHF_WRITE attribute.)  */
 
+#undef CTORS_SECTION_ASM_OP
 #define CTORS_SECTION_ASM_OP	".section\t.ctors,\"aw\""
+#undef DTORS_SECTION_ASM_OP
 #define DTORS_SECTION_ASM_OP	".section\t.dtors,\"aw\""
 
 /* On svr4, we *do* have support for the .init and .fini sections, and we
@@ -246,7 +279,9 @@ do {									\
    The definitions say how to change sections to the .init and .fini
    sections.  This is the same for all known svr4 assemblers.  */
 
+#undef INIT_SECTION_ASM_OP
 #define INIT_SECTION_ASM_OP	".section\t.init"
+#undef FINI_SECTION_ASM_OP
 #define FINI_SECTION_ASM_OP	".section\t.fini"
 
 /* A default list of other sections which we might be "in" at any given
@@ -272,6 +307,7 @@ do {									\
 
 extern void text_section ();
 
+#undef CONST_SECTION_FUNCTION
 #define CONST_SECTION_FUNCTION						\
 void									\
 const_section ()							\
@@ -285,6 +321,7 @@ const_section ()							\
     }									\
 }
 
+#undef CTORS_SECTION_FUNCTION
 #define CTORS_SECTION_FUNCTION						\
 void									\
 ctors_section ()							\
@@ -296,6 +333,7 @@ ctors_section ()							\
     }									\
 }
 
+#undef DTORS_SECTION_FUNCTION
 #define DTORS_SECTION_FUNCTION						\
 void									\
 dtors_section ()							\
@@ -312,6 +350,7 @@ dtors_section ()							\
 
    We make the section read-only and executable for a function decl,
    read-only for a const data decl, and writable for a non-const data decl.  */
+#undef ASM_OUTPUT_SECTION_NAME
 #define ASM_OUTPUT_SECTION_NAME(FILE, DECL, NAME, RELOC) \
   fprintf (FILE, ".section\t%s,\"%s\",@progbits\n", NAME, \
 	   (DECL) && TREE_CODE (DECL) == FUNCTION_DECL ? "ax" : \
@@ -320,6 +359,7 @@ dtors_section ()							\
 
 /* A C statement (sans semicolon) to output an element in the table of
    global constructors.  */
+#undef ASM_OUTPUT_CONSTRUCTOR
 #define ASM_OUTPUT_CONSTRUCTOR(FILE,NAME)				\
   do {									\
     ctors_section ();							\
@@ -330,6 +370,7 @@ dtors_section ()							\
 
 /* A C statement (sans semicolon) to output an element in the table of
    global destructors.  */
+#undef ASM_OUTPUT_DESTRUCTOR
 #define ASM_OUTPUT_DESTRUCTOR(FILE,NAME)       				\
   do {									\
     dtors_section ();                   				\
@@ -343,6 +384,7 @@ dtors_section ()							\
    or a constant of some sort.  RELOC indicates whether forming
    the initial value of DECL requires link-time relocations.  */
 
+#undef SELECT_SECTION
 #define SELECT_SECTION(DECL,RELOC)					\
 {									\
   if (TREE_CODE (DECL) == STRING_CST)					\
@@ -376,17 +418,20 @@ dtors_section ()							\
 #undef SELECT_RTX_SECTION
 #define SELECT_RTX_SECTION(MODE,RTX) const_section()
 
-/* Define the strings used for the special svr4 .type and .size directives.
+/* Define the strings used for the .type, .size and .set directives.
    These strings generally do not vary from one system running svr4 to
    another, but if a given system (e.g. m88k running svr) needs to use
    different pseudo-op names for these, they may be overridden in the
    file which includes this one.  */
 
+#undef TYPE_ASM_OP
 #define TYPE_ASM_OP	".type"
+#undef SIZE_ASM_OP
 #define SIZE_ASM_OP	".size"
 
 /* This is how we tell the assembler that two symbols have the same value.  */
 
+#undef ASM_OUTPUT_DEF
 #define ASM_OUTPUT_DEF(FILE,NAME1,NAME2) \
   do { assemble_name(FILE, NAME1); 	 \
        fputs(" = ", FILE);		 \
@@ -407,6 +452,7 @@ dtors_section ()							\
    the i386) don't know about that.  Also, we don't use \v
    since some versions of gas, such as 2.2 did not accept it.  */
 
+#undef ESCAPES
 #define ESCAPES \
 "\1\1\1\1\1\1\1\1btn\1fr\1\1\1\1\1\1\1\1\1\1\1\1\1\1\1\1\1\1\
 \0\0\"\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\
@@ -429,15 +475,83 @@ dtors_section ()							\
    should define this to zero.
 */
 
+#undef STRING_LIMIT
 #define STRING_LIMIT	((unsigned) 256)
 
+#undef STRING_ASM_OP
 #define STRING_ASM_OP	".string"
 
 /*
  * We always use gas here, so we don't worry about ECOFF assembler problems.
  */
 #undef TARGET_GAS
-#define TARGET_GAS	(1)
+#define TARGET_GAS	1
 
 #undef PREFERRED_DEBUGGING_TYPE
 #define PREFERRED_DEBUGGING_TYPE DBX_DEBUG
+
+#undef LINK_SPEC
+#define LINK_SPEC "-m elf64alpha 				\
+  %{p:%e`-p' not supported; use `-pg' and gprof(1)}		\
+  %{Wl,*:%*}							\
+  %{assert*} %{R*} %{rpath*} %{defsym*}				\
+  %{shared:-Bshareable %{h*} %{soname*}}			\
+  %{symbolic:-Bsymbolic}					\
+  %{!shared:							\
+    %{!static:							\
+      %{rdynamic:-export-dynamic}				\
+      %{!dynamic-linker:-dynamic-linker /usr/libexec/ld-elf.so.1}} \
+    %{static:-Bstatic}}"
+
+#undef	STARTFILE_SPEC
+#define STARTFILE_SPEC \
+  "%{!shared: %{pg:gcrt1.o%s} %{!pg:%{p:gcrt1.o%s} %{!p:crt1.o%s}}} \
+     %{!shared:crtbegin.o%s} %{shared:crtbeginS.o%s}"
+
+/* Provide a ENDFILE_SPEC appropriate for ELF.  Here we tack on the
+   magical crtend.o file which provides part of the support for
+   getting C++ file-scope static object constructed before entering
+   `main', followed by a normal ELF "finalizer" file, `crtn.o'.  */
+
+#undef	ENDFILE_SPEC
+#define ENDFILE_SPEC \
+  "%{!shared:crtend.o%s} %{shared:crtendS.o%s}"
+
+/* Implicit library calls should use memcpy, not bcopy, etc.  */
+
+#define TARGET_MEM_FUNCTIONS
+
+/* Handle #pragma weak and #pragma pack.  */
+
+#define HANDLE_SYSV_PRAGMA
+
+/*
+ * Some imports from svr4.h in support of shared libraries.
+ * Currently, we need the DECLARE_OBJECT_SIZE stuff.
+ */
+
+/* This is how we tell the assembler that a symbol is weak.  */
+
+#undef ASM_WEAKEN_LABEL
+#define ASM_WEAKEN_LABEL(FILE,NAME) \
+  do { fputs ("\t.globl\t", FILE); assemble_name (FILE, NAME); \
+       fputc ('\n', FILE); \
+       fputs ("\t.weak\t", FILE); assemble_name (FILE, NAME); \
+       fputc ('\n', FILE); } while (0)
+
+/* The following macro defines the format used to output the second
+   operand of the .type assembler directive.  Different svr4 assemblers
+   expect various different forms for this operand.  The one given here
+   is just a default.  You may need to override it in your machine-
+   specific tm.h file (depending upon the particulars of your assembler).  */
+
+#undef TYPE_OPERAND_FMT
+#define TYPE_OPERAND_FMT	"@%s"
+
+/* Write the extra assembler code needed to declare a function's result.
+   Most svr4 assemblers don't require any special declaration of the
+   result value, but there are exceptions.  */
+
+#ifndef ASM_DECLARE_RESULT
+#define ASM_DECLARE_RESULT(FILE, RESULT)
+#endif
