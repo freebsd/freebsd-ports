@@ -7,7 +7,7 @@
 
 PORTNAME=       BitchX
 PORTVERSION=	1.0c18
-CATEGORIES=	irc gnome
+CATEGORIES+=	irc gnome
 MASTER_SITES=	ftp://ftp.bitchx.com/pub/BitchX/source/ \
 		ftp://ftp.bitchx.org/pub/BitchX/source/
 DISTNAME=	ircii-pana-1.0c18
