@@ -915,6 +915,7 @@
     SUBDIR += pear-HTML_Template_PHPLIB
     SUBDIR += pear-I18N
     SUBDIR += pear-PEAR
+    SUBDIR += pear-PHPUnit
     SUBDIR += pear-XML_Parser
     SUBDIR += pear-XML_RPC
     SUBDIR += pear-XML_RSS
