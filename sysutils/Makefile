@@ -14,6 +14,7 @@
     SUBDIR += cdrecord
     SUBDIR += cfengine
     SUBDIR += comconsole
+    SUBDIR += consolehm 
     SUBDIR += contool
     SUBDIR += copytape
     SUBDIR += cpbk
