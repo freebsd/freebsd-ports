@@ -7,6 +7,7 @@
 
 PORTNAME=	dbus
 PORTVERSION=	0.21
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://freedesktop.org/Software/dbus/releases/
 
@@ -26,7 +27,7 @@ CONFIGURE_ARGS=	--enable-gtk \
 		--disable-gcj \
 		--disable-mono \
 		--with-system-pid-file=/var/run/dbus.pid \
-		--with-system-socket=/var/run \
+		--with-system-socket=/var/run/dbus \
 		--with-session-socket-dir=/var/tmp \
 		--disable-doxygen-docs \
 		--disable-xml-docs
@@ -56,6 +57,9 @@ post-patch:
 		${FILESDIR}/dbus.sh > ${WRKSRC}/dbus.sh
 
 post-install:
+.if !defined(PACKAGE_BUILDING)
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+.endif
 	${INSTALL_SCRIPT} ${WRKSRC}/dbus.sh ${PREFIX}/etc/rc.d
 
 .include <bsd.port.post.mk>

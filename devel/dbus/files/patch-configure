@@ -1,0 +1,20 @@
+--- configure.orig	Thu Jul 22 01:12:36 2004
++++ configure	Thu Jul 22 01:13:22 2004
+@@ -24198,14 +24198,14 @@
+ echo "${ECHO_T}not found" >&6
+ fi
+ 
+-if (! kde-config >& /dev/null); then
++if (! kde-config > /dev/null 2>&1); then
+     have_qt=no
+ else
+     kdelibs=`kde-config --install lib --expandvars 2>/dev/null`
+-    if test -z $kdelibs -o ! -f $kdelibs/libkdecore.la; then
++    if test -z $kdelibs -o ! -f $kdelibs/libkdecore.so; then
+         have_qt=no
+     else
+-        DBUS_QT_LIBS="$kdelibs/libkdecore.la"
++        DBUS_QT_LIBS="$kdelibs/libkdecore.so"
+     fi
+ fi
+ 
