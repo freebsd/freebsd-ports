@@ -12,8 +12,8 @@ if [ "$BATCH" != "yes" ]; then
 /usr/bin/dialog --title "mplayer skins" --clear \
 	--checklist "\n\
 This configuration dialog allows you to choose \n\
-only the skins you really want. \n\n\
-  Select the skins you want to install:" -1 -1 13 \
+only the skins you really want.\n\
+Select the skins you want to install:" -1 -1 13 \
   "ALL"	"Install ALL skins"		OFF \
   "Default"	"The default MPlayer skin"			ON \
   "AlienMind"	"AlienMind by Nucleo (XMMS/WinAMP skin)"	OFF \
