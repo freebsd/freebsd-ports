@@ -8,7 +8,8 @@
 PORTNAME=	dlmalloc
 PORTVERSION=	2.6.5
 CATEGORIES=	devel
-MASTER_SITES=	ftp://gee.cs.oswego.edu/pub/misc/
+MASTER_SITES=	ftp://gee.cs.oswego.edu/pub/misc/  \
+		ftp://ftp.netsw.org/netsw/System/Libs/Memory/Optimize/
 DISTFILES=	malloc-2.6.5.c
 
 MAINTAINER=	roberto@FreeBSD.org
