@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	CGI-Session
-PORTVERSION=	3.11
-PORTREVISION=	1
+PORTVERSION=	3.92
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	CGI
@@ -21,8 +20,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		CGI::Session::DB_File.3 \
+		CGI::Session::Example.3 \
 		CGI::Session::MySQL.3 \
 		CGI::Session::File.3 \
 		CGI::Session.3 \
@@ -34,7 +33,6 @@ MAN3=		CGI::Session::DB_File.3 \
 		CGI::Session::PostgreSQL.3 \
 		CGI::Session::Tutorial.3 \
 		CGI::Session::CookBook.3 \
-		CGI::Session::ID::Static.3 \
 		CGI::Session::Serialize::Storable.3
 
 .include <bsd.port.mk>
