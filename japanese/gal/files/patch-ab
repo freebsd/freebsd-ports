@@ -1,0 +1,14 @@
+--- gal/e-table/e-table-header-item.c.orig	Thu Oct 19 04:23:01 2000
++++ gal/e-table/e-table-header-item.c	Mon Oct 30 22:40:09 2000
+@@ -189,9 +189,9 @@
+ {
+ 	GdkFont *font;
+ 
+-	font = gdk_fontset_load (fontname);
++	font = gdk_fontset_load ("-misc-fixed-medium-r-normal--14-*-*-*-*-*-*-*");
+ 	if (font == NULL)
+-		font = gdk_font_load ("-adobe-helvetica-medium-r-normal--*-120-*-*-*-*-iso8859-1");
++		font = gdk_fontset_load("-misc-fixed-medium-r-normal--14-*-*-*-*-*-*-*");
+ 	
+ 	ethi_font_set (ethi, font);
+ }

@@ -56,6 +56,7 @@
     SUBDIR += exmh2
     SUBDIR += expect
     SUBDIR += freepwing
+    SUBDIR += gal
     SUBDIR += gawk
     SUBDIR += gd
     SUBDIR += gicq
