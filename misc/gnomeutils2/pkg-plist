@@ -6,12 +6,14 @@ bin/gdict
 bin/gdiskfree
 bin/gfontsel
 bin/gless
+bin/gnome-exe-handler
 bin/gsearchtool
 bin/gshutdown
 bin/gtt
 bin/guname
 bin/gw
 bin/logview
+bin/meat-grinder
 bin/splac
 bin/splash
 bin/stripchart
@@ -19,6 +21,7 @@ bin/stripchart-applet
 etc/CORBA/servers/gdict.gnorba
 share/gnome/applets/Monitors/stripchart-applet.desktop
 share/gnome/applets/Utility/gdict.desktop
+share/gnome/application-registry/gnome-exe.applications
 share/gnome/apps/Applications/gtt.desktop
 share/gnome/apps/System/gdiskfree.desktop
 share/gnome/apps/System/gshutdown.desktop
@@ -32,25 +35,17 @@ share/gnome/apps/Utilities/gcolorsel.desktop
 share/gnome/apps/Utilities/gfontsel.desktop
 share/gnome/apps/Utilities/gless.desktop
 share/gnome/apps/Utilities/gsearchtool.desktop
+share/gnome/apps/Utilities/meat-grinder.desktop
 share/gnome/apps/Utilities/stripchart.desktop
 share/gnome/gcolorsel/glade/dialog-new-doc.glade
-share/gnome/gcolorsel/glade/dialog-new-doc.glade.h
 share/gnome/gcolorsel/glade/dialog-new-view.glade
-share/gnome/gcolorsel/glade/dialog-new-view.glade.h
 share/gnome/gcolorsel/glade/dialog-prefs.glade
-share/gnome/gcolorsel/glade/dialog-prefs.glade.h
 share/gnome/gcolorsel/glade/mdi-color-file-properties.glade
-share/gnome/gcolorsel/glade/mdi-color-file-properties.glade.h
 share/gnome/gcolorsel/glade/mdi-color-generic-properties.glade
-share/gnome/gcolorsel/glade/mdi-color-generic-properties.glade.h
 share/gnome/gcolorsel/glade/view-color-edit.glade
-share/gnome/gcolorsel/glade/view-color-edit.glade.h
 share/gnome/gcolorsel/glade/view-color-generic-properties.glade
-share/gnome/gcolorsel/glade/view-color-generic-properties.glade.h
 share/gnome/gcolorsel/glade/view-color-grid-properties.glade
-share/gnome/gcolorsel/glade/view-color-grid-properties.glade.h
 share/gnome/gcolorsel/glade/view-color-list-properties.glade
-share/gnome/gcolorsel/glade/view-color-list-properties.glade.h
 share/gnome/help/gcalc/C/authors.html
 share/gnome/help/gcalc/C/bugs.html
 share/gnome/help/gcalc/C/docbook.css
@@ -73,6 +68,50 @@ share/gnome/help/gcalc/C/stylesheet-images/up.gif
 share/gnome/help/gcalc/C/stylesheet-images/warning.gif
 share/gnome/help/gcalc/C/topic.dat
 share/gnome/help/gcalc/C/usage.html
+share/gnome/help/gcalc/de/authors.html
+share/gnome/help/gcalc/de/book1.html
+share/gnome/help/gcalc/de/bugs.html
+share/gnome/help/gcalc/de/docbook.css
+share/gnome/help/gcalc/de/figures/gcalc-main.png
+share/gnome/help/gcalc/de/gcalc.sgml
+share/gnome/help/gcalc/de/index.html
+share/gnome/help/gcalc/de/license.html
+share/gnome/help/gcalc/de/ln11.html
+share/gnome/help/gcalc/de/stylesheet-images/caution.gif
+share/gnome/help/gcalc/de/stylesheet-images/home.gif
+share/gnome/help/gcalc/de/stylesheet-images/important.gif
+share/gnome/help/gcalc/de/stylesheet-images/next.gif
+share/gnome/help/gcalc/de/stylesheet-images/note.gif
+share/gnome/help/gcalc/de/stylesheet-images/prev.gif
+share/gnome/help/gcalc/de/stylesheet-images/tip.gif
+share/gnome/help/gcalc/de/stylesheet-images/toc-blank.gif
+share/gnome/help/gcalc/de/stylesheet-images/toc-minus.gif
+share/gnome/help/gcalc/de/stylesheet-images/toc-plus.gif
+share/gnome/help/gcalc/de/stylesheet-images/up.gif
+share/gnome/help/gcalc/de/stylesheet-images/warning.gif
+share/gnome/help/gcalc/de/topic.dat
+share/gnome/help/gcalc/de/usage.html
+share/gnome/help/gcalc/es/authors.html
+share/gnome/help/gcalc/es/bugs.html
+share/gnome/help/gcalc/es/docbook.css
+share/gnome/help/gcalc/es/figures/gcalc-main.png
+share/gnome/help/gcalc/es/gcalc.sgml
+share/gnome/help/gcalc/es/index.html
+share/gnome/help/gcalc/es/license.html
+share/gnome/help/gcalc/es/ln10.html
+share/gnome/help/gcalc/es/stylesheet-images/caution.gif
+share/gnome/help/gcalc/es/stylesheet-images/home.gif
+share/gnome/help/gcalc/es/stylesheet-images/important.gif
+share/gnome/help/gcalc/es/stylesheet-images/next.gif
+share/gnome/help/gcalc/es/stylesheet-images/note.gif
+share/gnome/help/gcalc/es/stylesheet-images/prev.gif
+share/gnome/help/gcalc/es/stylesheet-images/tip.gif
+share/gnome/help/gcalc/es/stylesheet-images/toc-blank.gif
+share/gnome/help/gcalc/es/stylesheet-images/toc-minus.gif
+share/gnome/help/gcalc/es/stylesheet-images/toc-plus.gif
+share/gnome/help/gcalc/es/stylesheet-images/up.gif
+share/gnome/help/gcalc/es/stylesheet-images/warning.gif
+share/gnome/help/gcalc/es/usage.html
 share/gnome/help/gcalc/it/authors.html
 share/gnome/help/gcalc/it/bugs.html
 share/gnome/help/gcalc/it/docbook.css
@@ -308,6 +347,24 @@ share/gnome/help/gless/C/stylesheet-images/up.gif
 share/gnome/help/gless/C/stylesheet-images/warning.gif
 share/gnome/help/gless/C/topic.dat
 share/gnome/help/gless/C/usage.html
+share/gnome/help/gnome-exe-handler/C/authors.html
+share/gnome/help/gnome-exe-handler/C/docbook.css
+share/gnome/help/gnome-exe-handler/C/gnome-exe-handler.sgml
+share/gnome/help/gnome-exe-handler/C/index.html
+share/gnome/help/gnome-exe-handler/C/license.html
+share/gnome/help/gnome-exe-handler/C/ln7.html
+share/gnome/help/gnome-exe-handler/C/stylesheet-images/caution.gif
+share/gnome/help/gnome-exe-handler/C/stylesheet-images/home.gif
+share/gnome/help/gnome-exe-handler/C/stylesheet-images/important.gif
+share/gnome/help/gnome-exe-handler/C/stylesheet-images/next.gif
+share/gnome/help/gnome-exe-handler/C/stylesheet-images/note.gif
+share/gnome/help/gnome-exe-handler/C/stylesheet-images/prev.gif
+share/gnome/help/gnome-exe-handler/C/stylesheet-images/tip.gif
+share/gnome/help/gnome-exe-handler/C/stylesheet-images/toc-blank.gif
+share/gnome/help/gnome-exe-handler/C/stylesheet-images/toc-minus.gif
+share/gnome/help/gnome-exe-handler/C/stylesheet-images/toc-plus.gif
+share/gnome/help/gnome-exe-handler/C/stylesheet-images/up.gif
+share/gnome/help/gnome-exe-handler/C/stylesheet-images/warning.gif
 share/gnome/help/gsearchtool/C/authors.html
 share/gnome/help/gsearchtool/C/criteria.html
 share/gnome/help/gsearchtool/C/docbook.css
@@ -408,6 +465,28 @@ share/gnome/help/gshutdown/C/stylesheet-images/up.gif
 share/gnome/help/gshutdown/C/stylesheet-images/warning.gif
 share/gnome/help/gshutdown/C/topic.dat
 share/gnome/help/gshutdown/C/usage.html
+share/gnome/help/gshutdown/es/authors.html
+share/gnome/help/gshutdown/es/docbook.css
+share/gnome/help/gshutdown/es/figures/gshutdown-advanced.png
+share/gnome/help/gshutdown/es/figures/gshutdown-preferences.png
+share/gnome/help/gshutdown/es/figures/gshutdown.png
+share/gnome/help/gshutdown/es/gshutdown.sgml
+share/gnome/help/gshutdown/es/index.html
+share/gnome/help/gshutdown/es/ln10.html
+share/gnome/help/gshutdown/es/stylesheet-images/caution.gif
+share/gnome/help/gshutdown/es/stylesheet-images/home.gif
+share/gnome/help/gshutdown/es/stylesheet-images/important.gif
+share/gnome/help/gshutdown/es/stylesheet-images/next.gif
+share/gnome/help/gshutdown/es/stylesheet-images/note.gif
+share/gnome/help/gshutdown/es/stylesheet-images/prev.gif
+share/gnome/help/gshutdown/es/stylesheet-images/tip.gif
+share/gnome/help/gshutdown/es/stylesheet-images/toc-blank.gif
+share/gnome/help/gshutdown/es/stylesheet-images/toc-minus.gif
+share/gnome/help/gshutdown/es/stylesheet-images/toc-plus.gif
+share/gnome/help/gshutdown/es/stylesheet-images/up.gif
+share/gnome/help/gshutdown/es/stylesheet-images/warning.gif
+share/gnome/help/gshutdown/es/topic.dat
+share/gnome/help/gshutdown/es/usage.html
 share/gnome/help/gtt/C/authors.html
 share/gnome/help/gtt/C/bugs.html
 share/gnome/help/gtt/C/dialogs.html
@@ -433,6 +512,31 @@ share/gnome/help/gtt/C/stylesheet-images/up.gif
 share/gnome/help/gtt/C/stylesheet-images/warning.gif
 share/gnome/help/gtt/C/topic.dat
 share/gnome/help/gtt/C/usage.html
+share/gnome/help/gtt/es/authors.html
+share/gnome/help/gtt/es/bugs.html
+share/gnome/help/gtt/es/dialogs.html
+share/gnome/help/gtt/es/docbook.css
+share/gnome/help/gtt/es/figures/gtt_mainwin.png
+share/gnome/help/gtt/es/figures/gtt_prefswin.png
+share/gnome/help/gtt/es/gtt.sgml
+share/gnome/help/gtt/es/index.html
+share/gnome/help/gtt/es/license.html
+share/gnome/help/gtt/es/ln10.html
+share/gnome/help/gtt/es/preferences.html
+share/gnome/help/gtt/es/stylesheet-images/caution.gif
+share/gnome/help/gtt/es/stylesheet-images/home.gif
+share/gnome/help/gtt/es/stylesheet-images/important.gif
+share/gnome/help/gtt/es/stylesheet-images/next.gif
+share/gnome/help/gtt/es/stylesheet-images/note.gif
+share/gnome/help/gtt/es/stylesheet-images/prev.gif
+share/gnome/help/gtt/es/stylesheet-images/tip.gif
+share/gnome/help/gtt/es/stylesheet-images/toc-blank.gif
+share/gnome/help/gtt/es/stylesheet-images/toc-minus.gif
+share/gnome/help/gtt/es/stylesheet-images/toc-plus.gif
+share/gnome/help/gtt/es/stylesheet-images/up.gif
+share/gnome/help/gtt/es/stylesheet-images/warning.gif
+share/gnome/help/gtt/es/topic.dat
+share/gnome/help/gtt/es/usage.html
 share/gnome/help/guname/C/authors.html
 share/gnome/help/guname/C/docbook.css
 share/gnome/help/guname/C/figures/guname-cpuinfo.png
@@ -458,7 +562,6 @@ share/gnome/help/guname/C/stylesheet-images/warning.gif
 share/gnome/help/guname/C/topic.dat
 share/gnome/help/guname/C/usage.html
 share/gnome/help/gw/C/authors.html
-share/gnome/help/gw/C/bugs.html
 share/gnome/help/gw/C/docbook.css
 share/gnome/help/gw/C/figures/gw-main.png
 share/gnome/help/gw/C/figures/gw-menuitems.png
@@ -481,6 +584,28 @@ share/gnome/help/gw/C/stylesheet-images/up.gif
 share/gnome/help/gw/C/stylesheet-images/warning.gif
 share/gnome/help/gw/C/topic.dat
 share/gnome/help/gw/C/usage.html
+share/gnome/help/meat-grinder/C/authors.html
+share/gnome/help/meat-grinder/C/docbook.css
+share/gnome/help/meat-grinder/C/figures/meat-grinder-main-full.png
+share/gnome/help/meat-grinder/C/figures/meat-grinder-main.png
+share/gnome/help/meat-grinder/C/index.html
+share/gnome/help/meat-grinder/C/license.html
+share/gnome/help/meat-grinder/C/ln7.html
+share/gnome/help/meat-grinder/C/meat-grinder.sgml
+share/gnome/help/meat-grinder/C/stylesheet-images/caution.gif
+share/gnome/help/meat-grinder/C/stylesheet-images/home.gif
+share/gnome/help/meat-grinder/C/stylesheet-images/important.gif
+share/gnome/help/meat-grinder/C/stylesheet-images/next.gif
+share/gnome/help/meat-grinder/C/stylesheet-images/note.gif
+share/gnome/help/meat-grinder/C/stylesheet-images/prev.gif
+share/gnome/help/meat-grinder/C/stylesheet-images/tip.gif
+share/gnome/help/meat-grinder/C/stylesheet-images/toc-blank.gif
+share/gnome/help/meat-grinder/C/stylesheet-images/toc-minus.gif
+share/gnome/help/meat-grinder/C/stylesheet-images/toc-plus.gif
+share/gnome/help/meat-grinder/C/stylesheet-images/up.gif
+share/gnome/help/meat-grinder/C/stylesheet-images/warning.gif
+share/gnome/help/meat-grinder/C/topic.dat
+share/gnome/help/meat-grinder/C/usage.html
 share/gnome/help/stripchart/C/authors.html
 share/gnome/help/stripchart/C/bugs.html
 share/gnome/help/stripchart/C/docbook.css
@@ -512,11 +637,45 @@ share/gnome/help/stripchart/C/stylesheet-images/up.gif
 share/gnome/help/stripchart/C/stylesheet-images/warning.gif
 share/gnome/help/stripchart/C/topic.dat
 share/gnome/help/stripchart/C/usage.html
+share/gnome/help/stripchart/es/authors.html
+share/gnome/help/stripchart/es/bugs.html
+share/gnome/help/stripchart/es/docbook.css
+share/gnome/help/stripchart/es/figures/applet.png
+share/gnome/help/stripchart/es/figures/main.png
+share/gnome/help/stripchart/es/figures/menu.png
+share/gnome/help/stripchart/es/figures/param.png
+share/gnome/help/stripchart/es/figures/prefs.png
+share/gnome/help/stripchart/es/figures/text.png
+share/gnome/help/stripchart/es/files.html
+share/gnome/help/stripchart/es/index.html
+share/gnome/help/stripchart/es/license.html
+share/gnome/help/stripchart/es/ln10.html
+share/gnome/help/stripchart/es/options.html
+share/gnome/help/stripchart/es/parameters.html
+share/gnome/help/stripchart/es/preferences.html
+share/gnome/help/stripchart/es/stripchart.sgml
+share/gnome/help/stripchart/es/stylesheet-images/caution.gif
+share/gnome/help/stripchart/es/stylesheet-images/home.gif
+share/gnome/help/stripchart/es/stylesheet-images/important.gif
+share/gnome/help/stripchart/es/stylesheet-images/next.gif
+share/gnome/help/stripchart/es/stylesheet-images/note.gif
+share/gnome/help/stripchart/es/stylesheet-images/prev.gif
+share/gnome/help/stripchart/es/stylesheet-images/tip.gif
+share/gnome/help/stripchart/es/stylesheet-images/toc-blank.gif
+share/gnome/help/stripchart/es/stylesheet-images/toc-minus.gif
+share/gnome/help/stripchart/es/stylesheet-images/toc-plus.gif
+share/gnome/help/stripchart/es/stylesheet-images/up.gif
+share/gnome/help/stripchart/es/stylesheet-images/warning.gif
+share/gnome/help/stripchart/es/topic.dat
+share/gnome/help/stripchart/es/usage.html
 share/gnome/idl/gsu.idl
 share/gnome/logview/logview-actions.db
 share/gnome/logview/logview-descript.db
 share/gnome/logview/logview-regexp.db
+share/gnome/mime-info/gnome-exe.keys
 share/gnome/omf/gnome-utils/gcalc-C.omf
+share/gnome/omf/gnome-utils/gcalc-de.omf
+share/gnome/omf/gnome-utils/gcalc-es.omf
 share/gnome/omf/gnome-utils/gcalc-it.omf
 share/gnome/omf/gnome-utils/gcharmap-C.omf
 share/gnome/omf/gnome-utils/gcolorsel-C.omf
@@ -527,6 +686,7 @@ share/gnome/omf/gnome-utils/gdiskfree-it.omf
 share/gnome/omf/gnome-utils/gfontsel-C.omf
 share/gnome/omf/gnome-utils/gfontsel-es.omf
 share/gnome/omf/gnome-utils/gless-C.omf
+share/gnome/omf/gnome-utils/gnome-exe-handler-C.omf
 share/gnome/omf/gnome-utils/gsearchtool-C.omf
 share/gnome/omf/gnome-utils/gsearchtool-es.omf
 share/gnome/omf/gnome-utils/gsearchtool-it.omf
@@ -534,7 +694,9 @@ share/gnome/omf/gnome-utils/gshutdown-C.omf
 share/gnome/omf/gnome-utils/gtt-C.omf
 share/gnome/omf/gnome-utils/guname-C.omf
 share/gnome/omf/gnome-utils/gw-C.omf
+share/gnome/omf/gnome-utils/meat-grinder-C.omf
 share/gnome/omf/gnome-utils/stripchart-C.omf
+share/gnome/omf/gnome-utils/stripchart-es.omf
 share/gnome/pixmaps/gcharmap-logo.png
 share/gnome/pixmaps/gcharmap-map-16.xpm
 share/gnome/pixmaps/gcharmap-map-big.xpm
@@ -565,6 +727,7 @@ share/locale/it/LC_MESSAGES/gnome-utils.mo
 share/locale/ja/LC_MESSAGES/gnome-utils.mo
 share/locale/ko/LC_MESSAGES/gnome-utils.mo
 share/locale/lt/LC_MESSAGES/gnome-utils.mo
+share/locale/lv/LC_MESSAGES/gnome-utils.mo
 share/locale/nl/LC_MESSAGES/gnome-utils.mo
 share/locale/no/LC_MESSAGES/gnome-utils.mo
 share/locale/pl/LC_MESSAGES/gnome-utils.mo
@@ -584,10 +747,17 @@ share/locale/zh_TW.Big5/LC_MESSAGES/gnome-utils.mo
 @dirrm share/gnome/pixmaps/logview
 @dirrm share/gnome/omf/gnome-utils
 @dirrm share/gnome/logview
+@dirrm share/gnome/help/stripchart/es/stylesheet-images
+@dirrm share/gnome/help/stripchart/es/figures
+@dirrm share/gnome/help/stripchart/es
 @dirrm share/gnome/help/stripchart/C/stylesheet-images
 @dirrm share/gnome/help/stripchart/C/figures
 @dirrm share/gnome/help/stripchart/C
 @dirrm share/gnome/help/stripchart
+@dirrm share/gnome/help/meat-grinder/C/stylesheet-images
+@dirrm share/gnome/help/meat-grinder/C/figures
+@dirrm share/gnome/help/meat-grinder/C
+@dirrm share/gnome/help/meat-grinder
 @dirrm share/gnome/help/gw/C/stylesheet-images
 @dirrm share/gnome/help/gw/C/figures
 @dirrm share/gnome/help/gw/C
@@ -596,10 +766,16 @@ share/locale/zh_TW.Big5/LC_MESSAGES/gnome-utils.mo
 @dirrm share/gnome/help/guname/C/figures
 @dirrm share/gnome/help/guname/C
 @dirrm share/gnome/help/guname
+@dirrm share/gnome/help/gtt/es/stylesheet-images
+@dirrm share/gnome/help/gtt/es/figures
+@dirrm share/gnome/help/gtt/es
 @dirrm share/gnome/help/gtt/C/stylesheet-images
 @dirrm share/gnome/help/gtt/C/figures
 @dirrm share/gnome/help/gtt/C
 @dirrm share/gnome/help/gtt
+@dirrm share/gnome/help/gshutdown/es/stylesheet-images
+@dirrm share/gnome/help/gshutdown/es/figures
+@dirrm share/gnome/help/gshutdown/es
 @dirrm share/gnome/help/gshutdown/C/stylesheet-images
 @dirrm share/gnome/help/gshutdown/C/figures
 @dirrm share/gnome/help/gshutdown/C
@@ -614,6 +790,10 @@ share/locale/zh_TW.Big5/LC_MESSAGES/gnome-utils.mo
 @dirrm share/gnome/help/gsearchtool/C/figures
 @dirrm share/gnome/help/gsearchtool/C
 @dirrm share/gnome/help/gsearchtool
+@dirrm share/gnome/help/gnome-exe-handler/C/stylesheet-images
+@dirrm share/gnome/help/gnome-exe-handler/C/figures
+@dirrm share/gnome/help/gnome-exe-handler/C
+@dirrm share/gnome/help/gnome-exe-handler
 @dirrm share/gnome/help/gless/C/stylesheet-images
 @dirrm share/gnome/help/gless/C/figures
 @dirrm share/gnome/help/gless/C
@@ -650,6 +830,12 @@ share/locale/zh_TW.Big5/LC_MESSAGES/gnome-utils.mo
 @dirrm share/gnome/help/gcalc/it/stylesheet-images
 @dirrm share/gnome/help/gcalc/it/figures
 @dirrm share/gnome/help/gcalc/it
+@dirrm share/gnome/help/gcalc/es/stylesheet-images
+@dirrm share/gnome/help/gcalc/es/figures
+@dirrm share/gnome/help/gcalc/es
+@dirrm share/gnome/help/gcalc/de/stylesheet-images
+@dirrm share/gnome/help/gcalc/de/figures
+@dirrm share/gnome/help/gcalc/de
 @dirrm share/gnome/help/gcalc/C/stylesheet-images
 @dirrm share/gnome/help/gcalc/C/figures
 @dirrm share/gnome/help/gcalc/C

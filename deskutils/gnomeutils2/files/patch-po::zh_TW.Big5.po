@@ -1,0 +1,34 @@
+
+$FreeBSD$
+
+--- po/zh_TW.Big5.po	2001/07/03 16:16:17	1.1
++++ po/zh_TW.Big5.po	2001/07/03 16:19:48
+@@ -1154,8 +1154,8 @@
+ "This will overwrite your current set of projects.\n"
+ "Do you really want to reload the configuration file?"
+ msgstr ""
+-"將要覆蓋現存計劃的設定。\n"
+-"是否真的要重新載入設定檔？"
++"This will overwrite your current set of projects.\n"
++"Do you really want to reload the configuration file?"
+ 
+ # gtt/menus.c:27
+ #: gtt/menus.c:27
+@@ -2903,7 +2903,7 @@
+ # mini-utils/gless/gless.c:130
+ #: mini-utils/gless/gless.c:130
+ msgid "Where to put the window, and its size"
+-msgstr "視窗擺放的位置與大小"
++msgstr "Where to put the window, and its size"
+ 
+ # mini-utils/gless/gless.c:131
+ #: mini-utils/gless/gless.c:131
+@@ -4082,7 +4082,7 @@
+ # gfloppy/src/progress.c:117
+ #: gfloppy/src/progress.c:117
+ msgid "Floppy formatted successfully."
+-msgstr "軟碟片格式化成功。"
++msgstr "Floppy formatted successfully."
+ 
+ # gfloppy/src/progress.c:121
+ #: gfloppy/src/progress.c:121

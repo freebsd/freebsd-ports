@@ -1,6 +1,11 @@
---- app-docs.make.orig	Fri Feb  9 23:12:23 2001
-+++ app-docs.make	Tue Feb 27 16:18:16 2001
-@@ -1,2 +1,2 @@
--helpdir = $(datadir)/gnome/help/$(app)/$(lang)
-+helpdir = $(datadir)/help/$(app)/$(lang)
- help_DATA = \
+--- sgmldocs.make	2001/07/03 13:56:19	1.1
++++ sgmldocs.make	2001/07/03 13:56:34
+@@ -32,7 +32,7 @@
+ #   dist-hook: app-dist-hook
+ #
+ 
+-docdir = $(datadir)/gnome/help/$(docname)/$(lang)
++docdir = $(datadir)/help/$(docname)/$(lang)
+ 
+ doc_DATA = index.html
+ 
