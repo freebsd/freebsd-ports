@@ -19,6 +19,7 @@ MAINTAINER=	billf@FreeBSD.org
 USE_AUTOCONF=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
+LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 
 CONFIGURE_ARGS+= --enable-shared --with-mib-modules="host" --with-gnu-ld
 .if defined(BATCH)
@@ -43,7 +44,7 @@ MAN3=		add_mibdir.3 add_module_replacement.3 default_store.3 \
 		snmp_sess_open.3 snmp_sess_read.3 snmp_sess_select_info.3 \
 		snmp_sess_send.3 snmp_sess_session.3 snmp_sess_timeout.3 \
 		snmp_set_mib_warnings.3 snmp_set_save_descriptions.3 \
-		snmp_timeout.3
+		snmp_timeout.3 snmp_trap_api.3
 MAN5=		snmp.conf.5 snmp_config.5 snmpd.conf.5 \
 		snmptrapd.conf.5 variables.5
 MAN8=		snmptrapd.8
@@ -70,12 +71,6 @@ post-install:
 	@( cd ${PREFIX}/sbin && strip ${SBIN} )
 	@( cd ${PREFIX}/include/ucd-snmp && ${CHMOD} 644 * )
 	@( cd ${PREFIX}/share/snmp/mibs && ${CHMOD} 644 * )
-	@${INSTALL_SCRIPT} ${WRKSRC}/libsnmp.so.${SHLIB_VERSION} ${PREFIX}/lib
-	@${INSTALL_SCRIPT} ${WRKSRC}/libucdmibs.so.${SHLIB_VERSION} ${PREFIX}/lib
-	@${INSTALL_SCRIPT} ${WRKSRC}/libucdagent.so.${SHLIB_VERSION} ${PREFIX}/lib
-	@( cd ${PREFIX}/lib && ${LN} -f libsnmp.so.${SHLIB_VERSION} libsnmp.so )
-	@( cd ${PREFIX}/lib && ${LN} -f libucdmibs.so.${SHLIB_VERSION} libucdmibs.so )
-	@( cd ${PREFIX}/lib && ${LN} -f libucdagent.so.${SHLIB_VERSION} libucdagent.so )
 	@${MKDIR} ${PREFIX}/share/examples/ucd-snmp
 	@for F in ${WRKSRC}/EXAMPLE.conf  ${WRKSRC}/agent/mibgroup/examples/ucdDemoPublic.conf; do \
 		${INSTALL_DATA} $$F ${PREFIX}/share/examples/ucd-snmp ; done
