@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ImageMagick
-PORTVERSION=	5.4.6.2
+PORTVERSION=	5.4.7.1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://imagemagick.sourceforge.net/http/ \
 		ftp://ftp.yggdrasil.com/mirrors/site/ftp.simplesystems.org/pub/%SUBDIR%/ \
@@ -119,8 +119,8 @@ INSTALL_TARGET=	install install-data-html
 .endif
 
 post-patch:
-#	@${REINPLACE_CMD} -e 's|-lpthread|-lc_r|g ; \
-	@${REINPLACE_CMD} -e 's|-lpthread|`${ECHO_CMD} ${PTHREAD_LIBS}`|g ; \
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS:S/"//g}|g; \
+		s|^tagnames=|#tagnames=|g ; \
 		s|LIBLTDL=.*$$|LIBLTDL="-lltdl"|g ; \
 		s|INCLTDL=.*$$|INCLTDL=|g ; \
 		s|lcms/lcms.h|lcms.h|g ; \
@@ -134,7 +134,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|timestamp: %ld|timestamp: %d|g' \
 		${WRKSRC}/magick/xwindow.c
 	@${REINPLACE_CMD}-e 's|^tagnames.*\$$|#&|' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT} \
-		${WRKSRC}/ltdl/configure
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.mk>
