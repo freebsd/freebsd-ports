@@ -1,3 +1,0 @@
-Dialog is a utility to create nice user interfaces 
-to shell scripts.  It is non-graphical (it uses curses) 
-so it can be run in the console or an xterm.
