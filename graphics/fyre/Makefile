@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	fyre
-PORTVERSION=	0.7
+PORTVERSION=	1.0.0
 CATEGORIES=	graphics
-MASTER_SITES=	http://navi.cx/releases/
+MASTER_SITES=	http://flapjack.navi.cx/releases/fyre/
 
 MAINTAINER=	samy@kerneled.org
 COMMENT=	Chaos map rendering system with GTK+-2 interface
@@ -39,6 +39,9 @@ pre-everything::
 	@${ECHO_CMD} ""
 .endif
 .endif
+
+# check for update-desktop-database should go here
+PLIST_SUB+=	WITH_FDO="@comment "
 
 post-install:
 .if !defined(NOPORTDOCS)
