@@ -5345,6 +5345,7 @@ p5-URI-Find	ports/textproc/p5-URI-Find
 p5-URI-Sequin	ports/www/p5-URI-Sequin
 p5-Unicode-Map	ports/converters/p5-Unicode-Map
 p5-Unicode-Map8	ports/converters/p5-Unicode-Map8
+p5-Unicode-MapUTF8	ports/converters/p5-Unicode-MapUTF8
 p5-Unicode-String	ports/converters/p5-Unicode-String
 p5-Unix-ConfigFile	ports/sysutils/p5-Unix-ConfigFile
 p5-Unix-Syslog	ports/sysutils/p5-Unix-Syslog
