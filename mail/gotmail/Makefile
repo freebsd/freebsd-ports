@@ -6,32 +6,36 @@
 #
 
 PORTNAME=	gotmail
-PORTVERSION=	0.6.6
-PORTREVISION=	1
+PORTVERSION=	0.7.1
 CATEGORIES=	mail perl5
-MASTER_SITES=	http://www.hawkins.emu.id.au/gotmail/
+MASTER_SITES=	http://ssl.usu.edu/paul/gotmail/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@geeksrus.net
 
 RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/URI.pm:${PORTSDIR}/net/p5-URI
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/URI.pm:${PORTSDIR}/net/p5-URI \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/libnet.cfg:${PORTSDIR}/net/p5-Net
 
-USE_PERL5=	yes
+MAN1=		${PORTNAME}.1
 NO_BUILD=	yes
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
+USE_PERL5=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 pre-patch:
-	${PERL} -pi -e 's|\r$$||' ${WRKSRC}/${PORTNAME}.pl
+	${PERL} -pi -e 's|\r$$||' ${WRKSRC}/${PORTNAME}
+	${PERL} -pi -e 's|/usr/bin/perl|${PERL}|' ${WRKSRC}/${PORTNAME}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${PREFIX}/bin/${PORTNAME}
+.for i in ${MAN1}
+	${INSTALL_MAN} ${WRKSRC}/${i} ${MANPREFIX}/man/man1
+.endfor
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
-.for i in COPYING ChangeLog README TODO sample.gotmailrc
+.for i in ChangeLog README sample.gotmailrc
 	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/${PORTNAME}
 .endfor
 .endif
