@@ -298,7 +298,7 @@ if [ `sysctl -n kern.osreldate` -ge 300004 -a  X`objformat` = Xelf ]; then
 cat <<'END'
 
  Some programs still require a.out X libraries.  Most noteable amongst
- these is Nestcape, but it is reported to work best with older X libraries. 
+ these is Netscape, but it is reported to work best with older X libraries. 
  You can build a.out libraries here, using the lastest sources and
  compiler, or you can use the XFree86-aoutlibs port, which installs older
  a.out compatibility libraries.
