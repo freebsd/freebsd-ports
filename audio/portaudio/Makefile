@@ -31,7 +31,9 @@ post-patch:
 		| ${XARGS} -x -n 10 \
 			${REINPLACE_CMD} -E \
 				-e 's|||' \
-				-e 's|malloc.h|stdlib.h|'
+				-e 's|malloc.h|stdlib.h|' \
+				-e 's|machine\/soundcard.h|sys\/soundcard.h|'
+
 # C{C,FLAGS} and PREFIX safeness
 	@${REINPLACE_CMD} -E \
 		-e 's|gcc|${CC} ${CFLAGS}|' \
