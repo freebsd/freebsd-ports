@@ -7685,6 +7685,7 @@ pydbdesigner	ports/databases/pydbdesigner
 pyfind		ports/sysutils/pyfind
 pygmy		ports/mail/pygmy
 pygopherd	ports/net/pygopherd
+pykawari	ports/games/pykawari
 pymol		ports/biology/pymol
 pymsgauth	ports/mail/pymsgauth
 pyne		ports/news/pyne
