@@ -1,0 +1,9 @@
+XOM is a new XML object model. It is an open source (LGPL), tree-based API for
+processing XML with Java that strives for correctness and simplicity.
+
+XOM is designed to be easy to learn and easy to use. It works very
+straight-forwardly, and has a very shallow learning curve. Assuming you're
+already familiar with XML, you should be able to get up and running with XOM
+very quickly.
+
+WWW:	http://www.cafeconleche.org/XOM/
