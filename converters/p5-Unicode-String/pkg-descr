@@ -1,0 +1,16 @@
+These are experimental modules to handle various Unicode issues.  They 
+were made before perl included native UTF8 support.                    
+                                                              
+The current set of modules are:                                        
+                                                       
+  Unicode::String   - represent strings of Unicode chars        
+  Unicode::CharName - look up character names                        
+  Unicode::Map8     - mapping tables towards 8-bit char sets         
+                                                  
+(the Unicode::Map8 module is distributed separately)
+
+COPYRIGHT 1997-2000 Gisle Aas. All rights reserved.                                                    
+This library is free software; you can redistribute it and/or modify    
+it under the same terms as Perl itself. 
+
+WWW: http://www.unicode.org/
