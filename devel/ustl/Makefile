@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	ustl
-PORTVERSION=	0.4.1
-PORTREVISION=	1
+PORTVERSION=	0.4.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -27,5 +26,6 @@ ALL_TARGET=	# empty
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|SIZE_MAX|UINT_MAX|" ${WRKSRC}/memblock.h
+	@${REINPLACE_CMD} -e "s|-Werror||" ${WRKSRC}/Common.mk.in
 
 .include <bsd.port.mk>
