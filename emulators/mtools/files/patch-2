@@ -1,6 +1,6 @@
---- mtools.conf.orig	Sun Jan  4 10:29:32 1998
-+++ mtools.conf	Mon Apr  9 01:14:50 2001
-@@ -1,6 +1,84 @@
+--- mtools.conf.orig	Sun May 20 20:18:12 2001
++++ mtools.conf	Thu Oct  7 22:14:36 2004
+@@ -1,6 +1,67 @@
  # Example mtools.conf files.  Uncomment the lines which correspond to
  # your architecture and comment out the "SAMPLE FILE" line below
 -SAMPLE FILE
@@ -22,7 +22,7 @@
 +# Floppy disks.  Here, A: and B: use automatic size detection.
 +#
 +# Example: To prepare drive A: for use as a 1.44M floppy on FreeBSD:
-+#   [1] low level format with ......... fdformat /dev/fd0.1440
++#   [1] low level format with ......... fdformat -f 1440 /dev/fd0
 +#   [2] write a file system with ...... newfs_msdos -f 1440 /dev/fd0
 +#   [3] then use mcopy/mdir etc. in the usual way.
 +#
@@ -33,28 +33,11 @@
 +drive a: file="/dev/fd0"
 +drive b: file="/dev/fd1"
 +
-+# Drive T: is a 1.72M floppy format with 82 cylinders, double sided (2 heads),
-+#          and 21 sectors of size 512 bytes per track.  It uses the same
-+#          floppy disk drive (fd0) as drive A: above.
++# FreeBSD automatically detects a number of common floppy densities, like
++# 720 KB and 1440 KB MS-DOS formatted media.
 +#
-+# Example: To prepare and use a 1.72M floppy on FreeBSD:
-+#   [1] low level format with ......... fdformat /dev/fd0.1720
-+#   [2] write a file system with ...... mformat -t 82 -h 2 -n 21 t:
-+#   [3] then use mcopy/mdir etc. in the usual way.
-+#
-+# The above note on access permissions applies to /dev/fd0.1720 as well.
-+drive t: file="/dev/fd0.1720"
-+
-+# Drive S: is a 720K floppy format with 80 cylinders, double sided (2 heads),
-+#          and 43 sectors of size 256 bytes per track.  It uses the same
-+#          floppy disk drive (fd0) as drive A: above.
-+#
-+# Example: To prepare and use a 720K floppy on FreeBSD:
-+#   [1] low level format with ......... fdformat /dev/fd0.720
-+#   [2] write a file system with ...... newfs_msdos -f 720 /dev/fd0
-+#   [3] then use mcopy/mdir etc. in the usual way.
-+#
-+drive s: file="/dev/fd0.720"
++# To change the density of FreeBSD floppy devices to something unusual,
++# use fdcontrol(8).
 +
 +# LS120 (ATAPI) floppy disk               (extra parameters allow easy mformat)
 +#
@@ -86,9 +69,26 @@
  
  # # Linux floppy drives
  # drive a: file="/dev/fd0" exclusive
-@@ -61,4 +139,4 @@
+@@ -61,4 +122,4 @@
  
  # # uncomment the following line to display all file names in lower
  # # case by default
 -# mtools_lower_case=1
 +mtools_lower_case=1
+--- devices.c.orig	Thu Oct  7 22:12:00 2004
++++ devices.c	Thu Oct  7 22:16:46 2004
+@@ -790,10 +790,10 @@
+ #ifdef OS_freebsd
+ #define predefined_devices
+ struct device devices[] = {
+-	{"/dev/fd0.1440", 'A', FHD312},
+-	{"/dev/fd0.720",  'A', FDD312},
+-	{"/dev/fd1.1200", 'B', MHD514},
+-	{"/dev/sd0s1",     'C', GENHD},
++	{"/dev/fd0",   'A', FHD312},
++	{"/dev/fd0",   'A', FDD312},
++	{"/dev/fd1",   'B', MHD514},
++	{"/dev/da0s1", 'C', GENHD},
+ 	REMOTE
+ };
+ #endif /* __FreeBSD__ */
