@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	dima@Chg.RU
 
 LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs
+RUN_DEPENDS=	gnomecc:${PORTSDIR}/sysutils/gnomecontrolcenter
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
