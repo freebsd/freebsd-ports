@@ -157,10 +157,10 @@ do-install:
 		${ECHO_CMD} "# Horde's include directory" >> ${APACHE_CONF} ; \
 		${ECHO_CMD} "Include ${HORDE_INC}" >> ${APACHE_CONF} ; \
 	fi)
-#	@${CHOWN} -R www:www ${HORDEDIR}
+	@${CHOWN} -R www:www ${HORDEDIR}
 	@${CHMOD} -R o-rwx ${CONFDIR}
-#	@${TOUCH} ${LOG_FILE}
-#	@${CHOWN} www:www ${LOG_FILE}
+	@${TOUCH} ${LOG_FILE}
+	@${CHOWN} www:www ${LOG_FILE}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${DOCS}
