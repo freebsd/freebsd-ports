@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ircd-hybrid
-PORTVERSION=	5.3p7
+PORTVERSION=	5.3p8
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.blackened.com/pub/irc/hybrid/
 
