@@ -30,10 +30,8 @@ CONFIGURE_ARGS=	--without-pam --with-gl --with-gle --with-xpm --with-xml \
 .if defined(HAVE_GNOME)
 USE_GNOME=	yes
 CONFIGURE_ARGS+=	--with-gnome
-PLIST_SUB+=	CONFIGDIR="share/gnome/control-center/screensavers"
 .else
 CONFIGURE_ARGS+=	--without-gnome
-PLIST_SUB+=	CONFIGDIR="share/xscreensaver/config"
 .endif
 
 CONFIGURE_ENV=	X_CFLAGS=-I${LOCALBASE}/include/gnome-xml
