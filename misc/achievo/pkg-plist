@@ -15,8 +15,8 @@ www/data.default/achievo/atk/attributes/class.atkdatetimeattribute.inc
 www/data.default/achievo/atk/attributes/class.atkdummyattribute.inc
 www/data.default/achievo/atk/attributes/class.atkdurationattribute.inc
 www/data.default/achievo/atk/attributes/class.atkemailattribute.inc
+www/data.default/achievo/atk/attributes/class.atkfileattribute.inc
 www/data.default/achievo/atk/attributes/class.atklistattribute.inc
-www/data.default/achievo/atk/attributes/class.atkmultiselectattribute.inc
 www/data.default/achievo/atk/attributes/class.atknumberattribute.inc
 www/data.default/achievo/atk/attributes/class.atkparserattribute.inc
 www/data.default/achievo/atk/attributes/class.atkpasswordattribute.inc
@@ -25,7 +25,6 @@ www/data.default/achievo/atk/attributes/class.atkradioattribute.inc
 www/data.default/achievo/atk/attributes/class.atktextattribute.inc
 www/data.default/achievo/atk/attributes/class.atktimeattribute.inc
 www/data.default/achievo/atk/attributes/class.atkupdatestampattribute.inc
-www/data.default/achievo/atk/class.atkfileeditor.inc
 www/data.default/achievo/atk/class.atknode.inc
 www/data.default/achievo/atk/class.layout.inc
 www/data.default/achievo/atk/db/class.atkdb.inc
@@ -40,13 +39,10 @@ www/data.default/achievo/atk/defaultconfig.inc.php
 www/data.default/achievo/atk/images/dummy.gif
 www/data.default/achievo/atk/javascript/class.atkdateattribute.js.php
 www/data.default/achievo/atk/javascript/class.atkprofileattribute.js.php
-www/data.default/achievo/atk/javascript/class.atkvisualhtmlattribute.js
 www/data.default/achievo/atk/javascript/colorpicker.js
-www/data.default/achievo/atk/javascript/crossbrowser.js
 www/data.default/achievo/atk/javascript/formfocus.js
 www/data.default/achievo/atk/javascript/formsubmit.js
 www/data.default/achievo/atk/javascript/newwindow.js
-www/data.default/achievo/atk/javascript/outlook.js
 www/data.default/achievo/atk/languages/brazilian_portuguese.lng
 www/data.default/achievo/atk/languages/czech.lng
 www/data.default/achievo/atk/languages/deutsch.lng
@@ -58,9 +54,6 @@ www/data.default/achievo/atk/languages/italian.lng
 www/data.default/achievo/atk/languages/nederlands.lng
 www/data.default/achievo/atk/languages/norwegian.lng
 www/data.default/achievo/atk/languages/spanish.lng
-www/data.default/achievo/atk/menu/default.inc
-www/data.default/achievo/atk/menu/general.inc
-www/data.default/achievo/atk/menu/outlook.inc
 www/data.default/achievo/atk/modules/atkmoduletools.inc
 www/data.default/achievo/atk/modules/class.atkmodule.inc
 www/data.default/achievo/atk/popups/colorpicker.php
@@ -260,8 +253,20 @@ www/data.default/achievo/manual.php
 www/data.default/achievo/manual/guide.html
 www/data.default/achievo/menu.php
 www/data.default/achievo/modules/config.modules.inc
+www/data.default/achievo/modules/finance/billaddon.php
+www/data.default/achievo/modules/finance/class.bill.inc
+www/data.default/achievo/modules/finance/class.bill_line.inc
+www/data.default/achievo/modules/finance/class.currency.inc
+www/data.default/achievo/modules/finance/class.finance_customer.inc
+www/data.default/achievo/modules/finance/class.finance_project.inc
+www/data.default/achievo/modules/finance/class.rates.inc
+www/data.default/achievo/modules/finance/createbill.php
+www/data.default/achievo/modules/finance/generate_bill.php
+www/data.default/achievo/modules/finance/languages/english.lng
+www/data.default/achievo/modules/finance/languages/nederlands.lng
+www/data.default/achievo/modules/finance/module.inc
+www/data.default/achievo/modules/finance/skel/mysql.update
 www/data.default/achievo/nondays.inc
-www/data.default/achievo/popup.php
 www/data.default/achievo/projectbilling.inc
 www/data.default/achievo/projectplanning.inc
 www/data.default/achievo/projectstats.inc
@@ -287,6 +292,9 @@ www/data.default/achievo/upgrade/convert-0.6-to-0.8.sql
 @dirrm www/data.default/achievo/themes/achievo
 @dirrm www/data.default/achievo/themes
 @dirrm www/data.default/achievo/scheduler
+@dirrm www/data.default/achievo/modules/finance/skel
+@dirrm www/data.default/achievo/modules/finance/languages
+@dirrm www/data.default/achievo/modules/finance
 @dirrm www/data.default/achievo/modules
 @dirrm www/data.default/achievo/manual
 @dirrm www/data.default/achievo/languages/unmaintained
@@ -326,7 +334,6 @@ www/data.default/achievo/upgrade/convert-0.6-to-0.8.sql
 @dirrm www/data.default/achievo/atk/relations
 @dirrm www/data.default/achievo/atk/popups
 @dirrm www/data.default/achievo/atk/modules
-@dirrm www/data.default/achievo/atk/menu
 @dirrm www/data.default/achievo/atk/languages
 @dirrm www/data.default/achievo/atk/javascript
 @dirrm www/data.default/achievo/atk/images
