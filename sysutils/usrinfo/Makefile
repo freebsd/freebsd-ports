@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	usrinfo
-PORTVERSION=	.07
+PORTVERSION=	.08
 CATEGORIES=	sysutils
 MASTER_SITES=	http://osdn.dl.sourceforge.net/sourceforge/${PORTNAME}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -18,5 +18,12 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 
 PLIST_FILES=	bin/usrinfo
+
+MANCOMPRESSED=	no
+MAN1=		usrinfo.1
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/usrinfo ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/usrinfo.1 ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
