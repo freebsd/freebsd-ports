@@ -15,12 +15,14 @@ MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Hierarchical Data Format library (from NCSA)
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/libtool15:${PORTSDIR}/devel/libtool15
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		sz.2:${PORTSDIR}/science/szip
 
 CONFLICTS=	netcdf-*
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-jpeg="${LOCALBASE}"
+CONFIGURE_ARGS+=--with-jpeg="${LOCALBASE}" \
+		--with-szlib="${LOCALBASE}"
 USE_REINPLACE=	yes
 
 MAN1=		hdf.1 hdfunpac.1 ncdump.1 ncgen.1
