@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	osiris
-PORTVERSION=	2.4.5
+PORTVERSION=	4.0.3
 CATEGORIES=	security
 MASTER_SITES=	http://osiris.shmoo.com/data/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-stable
 
 MAINTAINER=	lx@redundancy.redundancy.org
 COMMENT=	The Shmoo client/server host integrity checker
@@ -44,8 +43,8 @@ post-build:
 do-install:
 	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	@${MKDIR} ${PREFIX}/osiris/configs
-.for os in bsdos darwin freebsd irix linux openbsd sunos unix-generic \
-	windows2000 windowsnt windowsxp
+.for os in aix bsdos darwin freebsd irix linux openbsd sunos unix-generic \
+	windows2000 windowsnt windowsserver2003 windowsxp
 	${INSTALL_DATA} ${WRKSRC}/src/configs/default.${os} \
 		${PREFIX}/osiris/configs
 .endfor
