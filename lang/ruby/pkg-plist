@@ -34,6 +34,7 @@ lib/ruby/%%RUBY_VER%%/English.rb
 lib/ruby/%%RUBY_VER%%/Env.rb
 lib/ruby/%%RUBY_VER%%/base64.rb
 lib/ruby/%%RUBY_VER%%/cgi-lib.rb
+lib/ruby/%%RUBY_VER%%/cgi.rb
 lib/ruby/%%RUBY_VER%%/complex.rb
 lib/ruby/%%RUBY_VER%%/date.rb
 lib/ruby/%%RUBY_VER%%/date2.rb
@@ -78,12 +79,34 @@ lib/ruby/%%RUBY_VER%%/thwait.rb
 lib/ruby/%%RUBY_VER%%/timeout.rb
 lib/ruby/%%RUBY_VER%%/tracer.rb
 lib/ruby/%%RUBY_VER%%/weakref.rb
+lib/ruby/%%RUBY_VER%%/net/pop.rb
+lib/ruby/%%RUBY_VER%%/net/session.rb
+lib/ruby/%%RUBY_VER%%/net/smtp.rb
 @exec /bin/mkdir -p %D/lib/ruby/%%RUBY_VER%%/site_ruby/%%RUBY_ARCH%%
 @dirrm lib/ruby/%%RUBY_VER%%/site_ruby/%%RUBY_ARCH%%
 @dirrm lib/ruby/%%RUBY_VER%%/site_ruby
 @dirrm lib/ruby/%%RUBY_VER%%/%%RUBY_ARCH%%
+@dirrm lib/ruby/%%RUBY_VER%%/net
 @dirrm lib/ruby/%%RUBY_VER%%
 @dirrm lib/ruby
+share/doc/ruby/README
+share/doc/ruby/README.EXT
+share/doc/ruby/README.EXT.jp
+share/doc/ruby/README.jp
+share/doc/ruby/etc/etc.txt
+share/doc/ruby/etc/etc.txt.jp
+share/doc/ruby/md5/md5.txt
+share/doc/ruby/md5/md5.txt.jp
+share/doc/ruby/pty/README
+share/doc/ruby/pty/README.expect
+share/doc/ruby/pty/README.expect.jp
+share/doc/ruby/pty/README.jp
+share/doc/ruby/readline/README
+@dirrm share/doc/ruby/etc
+@dirrm share/doc/ruby/md5
+@dirrm share/doc/ruby/pty
+@dirrm share/doc/ruby/readline
+@dirrm share/doc/ruby
 share/examples/ruby/README
 share/examples/ruby/biorhythm.rb
 share/examples/ruby/cal.rb
@@ -121,7 +144,6 @@ share/examples/ruby/occur.rb
 share/examples/ruby/occur2.rb
 share/examples/ruby/philos.rb
 share/examples/ruby/pi.rb
-share/examples/ruby/rbc.rb
 share/examples/ruby/rcs.awk
 share/examples/ruby/rcs.dat
 share/examples/ruby/rcs.rb
@@ -140,5 +162,13 @@ share/examples/ruby/misc/inf-ruby.el
 share/examples/ruby/misc/ruby-mode.el
 share/examples/ruby/misc/rubydb2x.el
 share/examples/ruby/misc/rubydb3x.el
+share/examples/ruby/curses/hello.rb
+share/examples/ruby/curses/rain.rb
+share/examples/ruby/curses/view.rb
+share/examples/ruby/pty/expect_sample.rb
+share/examples/ruby/pty/script.rb
+share/examples/ruby/pty/shl.rb
 @dirrm share/examples/ruby/misc
+@dirrm share/examples/ruby/curses
+@dirrm share/examples/ruby/pty
 @dirrm share/examples/ruby
