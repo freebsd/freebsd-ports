@@ -7,7 +7,6 @@
 
 PORTNAME=	nvidia-driver
 PORTVERSION=	1.0.${NVVERSION}
-PORTREVISION?=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://download.nvidia.com/freebsd/1.0-${NVVERSION}/ \
 		ftp://download.nvidia.com/freebsd/1.0-${NVVERSION}/ \
@@ -22,7 +21,7 @@ USE_X_PREFIX=	yes
 NO_PACKAGE=	should be recompiled for a particular FreeBSD kernel
 INSTALLS_SHLIB=	yes
 
-NVVERSION=	4365
+NVVERSION=	6113
 
 .include <bsd.port.pre.mk>
 
@@ -36,10 +35,13 @@ PLIST_SUB=	XSERVVERSION=${XSERVVERSION} XLIBVERSION=${XLIBVERSION} \
 
 .if !defined(WITHOUT_LINUX)
 USE_LINUX=	yes
+PLIST_SUB+=	LINUX=""
+.else
+PLIST_SUB+=	LINUX="@comment "
 .endif
 
-.if ${OSVERSION} < 470000
-IGNORE=		"requires FreeBSD -STABLE, version 4.7-RELEASE or later"
+.if ${OSVERSION} < 490000 || (${OSVERSION} >= 500000 && ${OSVERSION} < 502001)
+IGNORE=		"supports FreeBSD -STABLE (4.9 or later), or FreeBSD -CURRENT (5.2.1 or later)"
 .endif
 
 .if ${OSVERSION} < 500000
@@ -52,53 +54,46 @@ pre-everything::
 .if !defined(WITH_FREEBSD_AGP)
 	@${ECHO_MSG} "Define WITH_FREEBSD_AGP to use FreeBSD AGP GART driver"
 .endif
-.if !defined(FORCE_AGP_RATE)
-	@${ECHO_MSG} "Define FORCE_AGP_RATE to limit the driver to lower speeds"
+.if !defined(WITH_VM86_INT10CALL)
+	@${ECHO_MSG} "Define WITH_VM86_INT10CALL to use VM86 interface for INT10 calls (video BIOS)"
 .endif
-.if !defined(WITH_NVIDIA_HACKS)
-	@${ECHO_MSG} "Define WITH_NVIDIA_HACKS to enable work-arounds to override basic AGP setup"
+.if !defined(WITH_ACPI)
+	@${ECHO_MSG} "Define WITH_ACPI to enable support for ACPI Power Management (5.X only!)"
+.endif
+.if !defined(WITHOUT_LINUX)
+	@${ECHO_MSG} "Define WITHOUT_LINUX to build without support for Linux compatibility"
 .endif
 
-.if defined(WITH_FREEBSD_AGP) || defined(FORCE_AGP_RATE) || defined(WITH_NVIDIA_HACKS) || ${OSVERSION} > 501106
+.if defined(WITH_FREEBSD_AGP) || defined(WITH_VM86_INT10CALL) || defined(WITH_ACPI) || defined(WITHOUT_LINUX)
 USE_REINPLACE=	yes
 
 post-patch:
 . if defined(WITH_FREEBSD_AGP)
-	@${REINPLACE_CMD} 's/undef USE_OS_AGP_GART/define USE_OS_AGP_GART/' \
+	@${REINPLACE_CMD} 's/undef NV_SUPPORT_OS_AGP/define NV_SUPPORT_OS_AGP/' \
 		${WRKSRC}/src/nv-freebsd.h
 . endif
-. if defined(FORCE_AGP_RATE)
-	@${REINPLACE_CMD} 's/NVreg_ReqAGPRate,[[:blank:]]*0/NVreg_ReqAGPRate, 1/' \
-		${WRKSRC}/src/nvidia_os_registry.c
+. if defined(WITH_VM86_INT10CALL)
+	@${REINPLACE_CMD} 's/undef NV_USE_OS_VM86_INT10CALL/define NV_USE_OS_VM86_INT10CALL/' \
+		${WRKSRC}/src/nv-freebsd.h
 . endif
-. if defined(WITH_NVIDIA_HACKS)
-	@${REINPLACE_CMD} 's/NVreg_UpdateKernelAGP,[[:blank:]]*1/NVreg_UpdateKernelAGP, 0/' \
-		${WRKSRC}/src/nvidia_os_registry.c
+. if defined(WITH_ACPI)
+	@${REINPLACE_CMD} 's/undef NV_SUPPORT_ACPI_PM/define NV_SUPPORT_ACPI_PM/' \
+		${WRKSRC}/src/nv-freebsd.h
 . endif
-. if ${OSVERSION} > 501106
-	@${REINPLACE_CMD} 's/PCIR_HEADERTYPE/PCIR_HDRTYPE/' ${WRKSRC}/src/nvidia_sysctl.c
-. endif
-. if ${OSVERSION} > 502115 
-.  for f in nv-freebsd.h nvidia_ctl.c nvidia_dev.c nvidia_subr.c
-	@${REINPLACE_CMD} 's/dev_t/struct cdev \*/g' ${WRKSRC}/src/${f}
-.  endfor
+. if defined(WITHOUT_LINUX)
+	@${REINPLACE_CMD} 's/define NV_SUPPORT_LINUX_COMPAT/undef NV_SUPPORT_LINUX_COMPAT/' \
+		${WRKSRC}/src/nv-freebsd.h
 . endif
 .endif
-
-pre-install:
-.if defined(WITHOUT_LINUX)
-	@${MKDIR} ${LINUXBASE}/usr/lib
-.endif
-	-@(kldstat -n linux || kldload linux)
 
 post-install:
 .if ${OSVERSION} < 500000
 .for dev in 0 1 2 3
-	@rm -f /dev/nvidia${dev}
+	@${RM} -f /dev/nvidia${dev}
 	@mknod /dev/nvidia${dev} c 180 ${dev}
 	@${CHMOD} 0666 /dev/nvidia${dev}
 .endfor
-	@rm -f /dev/nvidiactl
+	@${RM} -f /dev/nvidiactl
 	@mknod /dev/nvidiactl c 180 255
 	@${CHMOD} 0666 /dev/nvidiactl
 .endif

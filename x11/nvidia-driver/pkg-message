@@ -1,16 +1,26 @@
+
 To use these drivers, make sure that you have loaded the nvidia kernel
 module, by doing
 
 	# kldload nvidia
 
-If you compile this package with WITH_FREEBSD_AGP=yes, you must load
-the agp.ko kernel module *at boot time* by putting the following
-line into your /boot/loader.conf:
+or adding
 
-	agp_load="YES"
+	nvidia_load="YES"
 
-or have your kernel compiled with "device agp".
+to your /boot/loader.conf (normally done automatically when installing
+the port).
 
-Otherwise the nvidia kernel module will not load.
+If you build this port with WITH_FREEBSD_AGP=yes, make sure you have
+agp.ko kernel module compiled and installed, since nvidia.ko will
+depend on it, or have your kernel compiled with "device agp".  Other-
+wise the nvidia kernel module will not load.  Also, care to specify
+correct ``Option "NvAGP"'' in ``Device'' section of your X11 configu-
+ration file.
 
-See ${PREFIX}/share/doc/NVIDIA/README for more information.
+When building with Linux compatibility (WITH_LINUX=yes), make sure
+linux.ko is available as well (or have it compiled in kernel).
+
+Note that this driver does not support PAE-enabled kernels.
+
+See ${PREFIX}/share/doc/NVIDIA_GLX-1.0/README for more information.
