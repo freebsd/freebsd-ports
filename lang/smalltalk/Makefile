@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smalltalk
-PORTVERSION=	1.95.3
+PORTVERSION=	1.95.4
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -29,8 +29,7 @@ pre-patch:
 		 s|\$$\OPT_CFLAGS||g' ${WRKSRC}/configure
 
 	@find ${WRKSRC} -name 'Makefile.in' | xargs ${PERL} -pi -e \
-		's|examples lib-src|lib-src examples|g ; \
-		 s|make mostlyclean|\$$\(MAKE\) mostlyclean|g ; \
+		's|make mostlyclean|\$$\(MAKE\) mostlyclean|g ; \
 		 s|\@MAKEINFO\@|\@MAKEINFO\@ --no-split|g'
 
 post-install:
