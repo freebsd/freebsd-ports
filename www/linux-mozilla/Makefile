@@ -65,6 +65,8 @@ do-extract:
 	${MKDIR} ${WRKSRC}
 .for i in ${DISTFILES}
 	unzip -qo ${DISTDIR}/${DIST_SUBDIR}/${i} -d ${WRKSRC}
+	${CHMOD} -R a-w ${WRKDIR}
+	${CHOWN} -R 0:0 ${WRKDIR}
 .endfor
 
 do-configure:
