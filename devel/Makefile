@@ -452,6 +452,7 @@
     SUBDIR += re2c
     SUBDIR += regexx
     SUBDIR += rinfo
+    SUBDIR += rlwrap
     SUBDIR += robodoc
     SUBDIR += rpc2
     SUBDIR += rtems-gcc
