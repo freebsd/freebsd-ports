@@ -19,4 +19,10 @@ USE_GMAKE=		yes
 WRKSRC=			${WRKDIR}
 ALL_TARGET=
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+IGNORE=		Requires FreeBSD 5.x or higher for wide character support
+.endif
+
+.include <bsd.port.post.mk>
