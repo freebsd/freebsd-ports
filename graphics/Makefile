@@ -100,7 +100,6 @@
     SUBDIR += giram
     SUBDIR += gkrellkam
     SUBDIR += gkrellkam2
-    SUBDIR += glass
     SUBDIR += gle
     SUBDIR += glide3
     SUBDIR += gliv
