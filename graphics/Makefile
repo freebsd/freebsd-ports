@@ -90,6 +90,7 @@
     SUBDIR += jgraph
     SUBDIR += jgv
     SUBDIR += jpeg
+    SUBDIR += jpeg2ps-a4
     SUBDIR += jpeg2ps-letter
     SUBDIR += jslice
     SUBDIR += juno-2
