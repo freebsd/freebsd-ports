@@ -27,6 +27,7 @@
     SUBDIR += openoffice-1.1
     SUBDIR += phone
     SUBDIR += php_doc
+    SUBDIR += selfhtml
     SUBDIR += staroffice5
     SUBDIR += staroffice52
     SUBDIR += staroffice70
