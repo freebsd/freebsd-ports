@@ -7,7 +7,7 @@
 
 PORTNAME=	tgif2tex
 PORTVERSION=	1.46
-CATEGORIES=	print
+CATEGORIES+=	print
 MASTER_SITES=	http://camphor.elcom.nitech.ac.jp/~nakano/tgif2tex/
 DISTNAME=	${PORTNAME}
 

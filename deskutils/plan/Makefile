@@ -8,7 +8,7 @@
 
 PORTNAME=	plan
 PORTVERSION=	1.8.2
-CATEGORIES=	deskutils
+CATEGORIES+=	deskutils
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}  \
 		ftp://ftp.fu-berlin.de/pub/unix/graphics/plan/
 MASTER_SITE_SUBDIR=	applications

@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	japanese print
+CATEGORIES=	japanese
 
 LANGUAGE=	Japanese
 

@@ -5,6 +5,8 @@
 # $FreeBSD$
 #
 
+CATEGORIES=	japanese
+
 MASTERDIR=	${.CURDIR}/../../net/ppxp
 
 MAINTAINER=	sada@FreeBSD.org

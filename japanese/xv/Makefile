@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	japanese graphics
+CATEGORIES=	japanese
 
 MAINTAINER=	shige@FreeBSD.org
 

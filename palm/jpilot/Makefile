@@ -8,7 +8,7 @@
 
 PORTNAME=	jpilot
 PORTVERSION=	0.98.1
-CATEGORIES?=	palm comms
+CATEGORIES+=	palm comms
 MASTER_SITES=	http://jpilot.linuxave.net/
 
 MAINTAINER?=	varju@webct.com
