@@ -443,6 +443,7 @@
     SUBDIR += php4-xml
     SUBDIR += php4-xslt
     SUBDIR += php5-ctype
+    SUBDIR += php5-dom
     SUBDIR += php5-xml
     SUBDIR += pocketreader
     SUBDIR += ppower4
