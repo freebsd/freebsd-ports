@@ -1,0 +1,19 @@
+*** samples/XBanner.ad.orig	Tue May 13 00:55:58 1997
+--- samples/XBanner.ad	Sat Dec 18 01:50:18 1999
+***************
+*** 96,102 ****
+  XBanner.BarSize:	12
+  
+  ! Name of the pixmap file to tile over the root window
+! !XBanner.BgPixFile:	/usr/include/X11/pixmaps/xdm_bg.xpm
+  
+  ! The number of ripples for the Ripples BG style
+  XBanner.Ripples:	3
+--- 96,102 ----
+  XBanner.BarSize:	12
+  
+  ! Name of the pixmap file to tile over the root window
+! !XBanner.BgPixFile:	%%X11BASE%%/include/X11/pixmaps/xdm_bg.xpm
+  
+  ! The number of ripples for the Ripples BG style
+  XBanner.Ripples:	3
