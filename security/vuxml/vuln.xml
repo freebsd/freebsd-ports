@@ -32,6 +32,59 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="831a6a66-79fa-11d9-a9e7-0001020eed82">
+    <topic>ethereal -- multiple protocol dissectors vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>ethereal</name>
+	<name>ethereal-lite</name>
+	<name>tethereal</name>
+	<name>tethereal-lite</name>
+	<range><ge>0.8.10</ge><lt>0.10.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>An Ethreal Security Advisories reports:</p>
+	<blockquote cite="http://www.ethereal.com/appnotes/enpa-sa-00017.html">
+	  <p>Issues have been discovered in the following protocol dissectors:</p>
+	  <ul>
+	    <li>The COPS dissector could go into an infinite
+	      loop. CVE: CAN-2005-0006</li>
+	    <li>The DLSw dissector could cause an assertion. CVE:
+	      CAN-2005-0007</li>
+	    <li>The DNP dissector could cause memory corruption. CVE:
+	      CAN-2005-0008</li>
+	    <li>The Gnutella dissector could cuase an assertion. CVE:
+	      CAN-2005-0009</li>
+	    <li>The MMSE dissector could free statically-allocated
+	      memory. CVE: CAN-2005-0010</li>
+	    <li>The X11 dissector is vulnerable to a string buffer
+	      overflow. CVE: CAN-2005-0084</li>
+	  </ul>
+	  <p>Impact: It may be possible to make Ethereal crash or run
+	    arbitrary code by injecting a purposefully malformed
+	    packet onto the wire or by convincing someone to read a
+	    malformed packet trace file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0006</cvename>
+      <cvename>CAN-2005-0007</cvename>
+      <cvename>CAN-2005-0008</cvename>
+      <cvename>CAN-2005-0009</cvename>
+      <cvename>CAN-2005-0010</cvename>
+      <cvename>CAN-2005-0084</cvename>
+      <bid>12326</bid>
+      <url>http://www.ethereal.com/appnotes/enpa-sa-00017.html</url>
+    </references>
+    <dates>
+      <discovery>2005-01-18</discovery>
+      <entry>2005-02-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bfda39de-7467-11d9-9e1e-c296ac722cb3">
     <topic>squid -- correct handling of oversized HTTP reply headers</topic>
     <affects>
