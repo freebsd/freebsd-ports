@@ -6,29 +6,22 @@
 #
 
 PORTNAME=	wmnd
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.hydra.ubiest.com/wmnd/releases/
 
 MAINTAINER=	flag@gufi.org
 
-BUILD_DEPENDS=	automake14:${PORTSDIR}/devel/automake14
-
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--datadir=${EXAMPLESDIR}
+CONFIGURE_ARGS=	--datadir=${EXAMPLESDIR} --with-drivers="freebsd_sysctl" \
+		--program-transform-name=""
 
 MAN1=		wmnd.1
 
-pre-patch:
-.for m in Makefile.in doc/Makefile.in examples/Makefile.in src/Makefile.in
-	@${PERL} -pi -e 's|\@program_transform_name\@||' ${WRKSRC}/${m}
-.endfor
-.for files in install-sh config.sub mkinstalldirs
-	@${LN} -sf ${LOCALBASE}/share/automake14/automake/${files} \
-		${WRKSRC}/${files}
-.endfor
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
