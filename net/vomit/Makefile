@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	vomit
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	net security
-MASTER_SITES=	http://www.monkey.org/~provos/
+MASTER_SITES=	http://vomit.xtdnet.nl/
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent \
 
 GNU_CONFIGURE=	yes
 
-WRKSRC=		${WRKDIR}/vomit
+WRKSRC=		${WRKDIR}/vomit-lite
 
 MAN1=		vomit.1
 
