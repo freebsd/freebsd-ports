@@ -8,7 +8,7 @@
 
 PORTNAME=	vmware2
 PORTVERSION=	2.0.3.799
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://www4.vmware.com/software/ \
 		${FREEBSD_MODULE_SITES} \
@@ -98,10 +98,6 @@ post-patch:
 		${WRKSRC}/vmmon-only/freebsd/*.c
 .endif
 	cd ${WRKSRC}/vmmon-only/freebsd && ${TOUCH} bus_if.h device_if.h
-.if ${OSVERSION} >= 500018
-	${PERL} -i -pe 's,<sys/lock\.h>,<sys/mutex.h>,' \
-		${WRKSRC}/vmmon-only/freebsd/*.c
-.endif
 .if ${OSVERSION} >= 500019
 	${PERL} -i -pe 's,<machine/ioctl_fd\.h>,<sys/fdcio.h>,' \
 		${WRKSRC}/vmmon-only/freebsd/*.c \
