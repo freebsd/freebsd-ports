@@ -17,7 +17,8 @@ WRKSRC=		${WRKDIR}/mktool
 USE_GMAKE=	yes
 
 post-extract:
-	@${PERL} -pi -e 's,^OPT=.*,OPT=${CFLAGS},; \
+	@${REINPLACE_CMD} -e ' \
+		s,^OPT=.*,OPT=${CFLAGS},; \
 		s,=gcc,?=gcc,; \
 		s,^bindir=.*,bindir=${PREFIX}/bin,; \
 		s,cp -a,install -m ${BINMODE},' ${WRKSRC}/Makefile
