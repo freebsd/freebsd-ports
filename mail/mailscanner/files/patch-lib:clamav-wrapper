@@ -1,11 +1,12 @@
---- ../MailScanner-4.26.8.orig/lib/clamav-wrapper	Fri Feb 13 09:31:30 2004
-+++ lib/clamav-wrapper	Fri Feb 13 09:40:30 2004
-@@ -35,6 +35,8 @@
- #
- #
- 
-+PATH=$PATH:/usr/local/bin
-+export PATH
+--- ../MailScanner-4.27.7.orig/lib/clamav-wrapper	Mon Mar  1 15:28:58 2004
++++ lib/clamav-wrapper	Mon Mar  1 15:30:00 2004
+@@ -51,6 +51,9 @@
  
  # You may want to check this script for bash-isms
  
++PATH=$PATH:/usr/local/bin
++export PATH
++
+ TempDir="/tmp/clamav.$$"
+ ClamUser="clamav"
+ ClamGroup="clamav"
