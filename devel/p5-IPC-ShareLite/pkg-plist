@@ -1,0 +1,6 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IPC/ShareLite.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPC/ShareLite/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPC/ShareLite/ShareLite.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPC/ShareLite/ShareLite.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPC/ShareLite/autosplit.ix
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPC/ShareLite
