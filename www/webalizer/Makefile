@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/ \
 DISTNAME=	${PORTNAME}-2.01-10-src
 
 MAINTAINER?=	dinoex@FreeBSD.org
+COMMENT=	A web server log file analysis program
 
 .if !defined(LIB_DEPENDS)
 .if defined(WEBALIZER_WITH_GD2)

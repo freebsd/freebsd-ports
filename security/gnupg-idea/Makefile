@@ -18,6 +18,7 @@ DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	# none
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	IDEA extension module for gnupg (and RSA for demonstration)
 
 RUN_DEPENDS=	${LOCALBASE}/bin/gpg:${PORTSDIR}/security/gnupg
 
