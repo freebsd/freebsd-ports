@@ -1997,6 +1997,7 @@ gkrellmqst	ports/net/gkrellmqst
 gkrellmseti	ports/astro/gkrellmseti
 gkrellmss	ports/audio/gkrellmss
 gkrellmvolume	ports/audio/gkrellmvolume
+gkrellmwho	ports/sysutils/gkrellmwho
 gkrellmwireless	ports/net/gkrellmwireless
 gkrellscore	ports/misc/gkrellscore
 gkrellshoot	ports/misc/gkrellshoot
