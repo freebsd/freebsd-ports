@@ -32,4 +32,10 @@ post-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/graphics/* ${DOCSDIR}/graphics
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha"
+BROKEN=		"Does not compile"
+.endif
+
+.include <bsd.port.post.mk>
