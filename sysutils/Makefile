@@ -220,6 +220,7 @@
     SUBDIR += unquote
     SUBDIR += upsd
     SUBDIR += upsmon
+    SUBDIR += uptimed
     SUBDIR += userlist
     SUBDIR += uwatch
     SUBDIR += videogen
