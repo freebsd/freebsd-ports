@@ -1,0 +1,11 @@
+--- xmcd_d/XMcd.ad.in.orig	Sun Dec  6 06:08:50 1998
++++ xmcd_d/XMcd.ad.in	Sun Dec  6 06:09:33 1998
+@@ -42,7 +42,7 @@
+ !* This resource _must_ be set correctly in your environment
+ !* in order for xmcd to function correctly.
+ !*
+-XMcd.libdir:			/usr/lib/X11/xmcd
++XMcd.libdir:			@PREFIX@/lib/X11/xmcd
+ 
+ !*
+ !* CD Database archive contribution
