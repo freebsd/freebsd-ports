@@ -36,6 +36,8 @@ do-extract:
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
 	${WRKSRC}/povchem.cfg
+	${MV} ${WRKSRC}/povchem.c ${WRKSRC}/povchem.c.patched
+	strings -1 ${WRKSRC}/povchem.c.patched > ${WRKSRC}/povchem.c
 
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} ${DEFS} -o povchem povchem.c -lm
