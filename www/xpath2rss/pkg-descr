@@ -1,0 +1,4 @@
+xpath2rss is Yet Another HTML->RSS scraper. This one's different in that
+instead of using regular expressions, as most do, it uses XPath.
+
+WWW: http://www.mnot.net/xpath2rss/

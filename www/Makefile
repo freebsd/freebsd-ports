@@ -392,6 +392,7 @@
     SUBDIR += wyvern
     SUBDIR += xist
     SUBDIR += xitami
+    SUBDIR += xpath2rss
     SUBDIR += xswallow
     SUBDIR += znavigator
     SUBDIR += zope
