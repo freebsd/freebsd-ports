@@ -32,6 +32,30 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a268ef4a-0b35-11d9-8a8a-000c41e2cdad">
+    <topic>sudo --- sudoedit information disclosure</topic>
+    <affects>
+      <package>
+	<name>sudo</name>
+	<range><eq>1.6.8</eq></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>A new feature of sudo 1.6.8 called "sudoedit" (a safe
+          editing facility) may allow users to read files to which
+          they normally have no access.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.sudo.ws/sudo/alerts/sudoedit.html</url>
+    </references>
+    <dates>
+      <discovery>2004-09-18</discovery>
+      <entry>2004-09-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ca6c8f35-0a5f-11d9-ad6f-00061bc2ad93">
     <topic>apache13 -- heap overflow in mod_proxy</topic>
     <affects>
