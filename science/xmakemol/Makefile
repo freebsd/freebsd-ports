@@ -5,10 +5,10 @@
 #
 
 PORTNAME=	xmakemol
-PORTVERSION=	4.40
-PORTREVISION=	1
+PORTVERSION=	5.12
 CATEGORIES=	science
-MASTER_SITES=	http://vegemite.chem.nottingham.ac.uk/~xmakemol/dists/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	chizhang@uchicago.edu
 COMMENT=	Molecule Viewer Program Based on Motif Widget
@@ -18,10 +18,12 @@ USE_MOTIF=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
+MAN1=		xmakemol.1
+
 pre-configure:
 	cd ${WRKSRC}; ${CHMOD} 755 config.guess config.sub configure install-sh missing mkinstalldirs
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/xmakemol
-.include <bsd.port.post.mk>
+
+.include <bsd.port.mk>

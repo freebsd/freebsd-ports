@@ -18,7 +18,7 @@ XMakemol can also produce a series of xpm files which can be translated into an
 gmake_anim.pl). The one above is an animation of the "viagra" molecule 
 (sidenafil).
 
-WWW: http://vegemite.chem.nottingham.ac.uk/~xmakemol/
+WWW: http://www.nongnu.org/xmakemol/
 
 Chi Zhang
 chizhang@uchicago.edu
