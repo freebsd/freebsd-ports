@@ -122,8 +122,8 @@ LIB_DEPENDS+=	vorbis.2:${PORTSDIR}/audio/libvorbis
 .if defined(WITH_REALPLAYER)
 CONFIGURE_ARGS+=	--enable-real \
 			--with-reallibdir=${LOCALBASE}/lib/RealPlayer8/Codecs
-RUN_DEPENDS+=		realplay:${PORTSDIR}/audio/linux-realplayer
-BUILD_DEPENDS+=		realplay:${PORTSDIR}/audio/linux-realplayer
+RUN_DEPENDS+=		realplay:${PORTSDIR}/multimedia/linux-realplayer
+BUILD_DEPENDS+=		realplay:${PORTSDIR}/multimedia/linux-realplayer
 .endif
 
 .if defined(WITH_LIVEMEDIA)
