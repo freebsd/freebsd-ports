@@ -6,31 +6,39 @@
 #
 
 PORTNAME=	Server
-PORTVERSION=	4.3.0
-PORTREVISION=	8
+PORTVERSION=	4.3.99.12
 CATEGORIES=	x11-servers
-MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
+MASTER_SITES=	${MASTER_SITE_XFREE:S|source/||:S/$/:x/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
-MASTER_SITE_SUBDIR=	${PORTVERSION}/:x \
+MASTER_SITE_SUBDIR=	develsnaps/:x \
 			anholt/:local
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	X430src-1.tgz:x \
-		X430src-2.tgz:x \
-		X430src-3.tgz:x \
+DISTFILES=	XFree86-${PORTVERSION}${EXTRACT_SUFX}:x \
 		Wraphelp2.gz:local
-EXTRACT_ONLY=	X430src-1.tgz \
-		X430src-2.tgz \
-		X430src-3.tgz
+EXTRACT_ONLY=	XFree86-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	anholt@freebsd.org
 COMMENT=	XFree86-4 X server and related programs
 
-.for pf in patch-savage-pci-id patch-alpha_video.c patch-Pci.h patch-radeondri \
-	patch-r128_driver.c patch-mga_driver.c patch-xkbInit.c patch-radeon_dri.c \
-	patch-mga_dri.c patch-nv_driver.c patch-nv_setup.c patch-int10-generic.c \
-	patch-radeon_cursor.c patch-radeon_reg.h patch-smi
-EXTRA_PATCHES+=		${FILESDIR}/${pf}
+# Override default from XFree86-4-libraries/Makefile.inc
+PATCHDIR=		${MASTERDIR}/files
+
+.for pf in patch-Imake.cf patch-Imake.rules \
+			patch-Imake.tmpl patch-X11.tmpl patch-Xcursor-Imakefile \
+			patch-c2 patch-dps patch-dri-Imakefile \
+			patch-f patch-imake.c \
+			patch-texteroids patch-xditview-Imakefile patch-xdm \
+			patch-xdm_session.c patch-xf86.tmpl patch-xfree86.cf \
+			patch-xterm-Imakefile patch-z04 patch-z05 patch-z14 \
+			patch-z15 patch-z30 patch-z32 patch-z34 patch-z35 \
+			patch-z41 patch-z44 patch-z45
+# patch-startx
+
+EXTRA_PATCHES+=		${.CURDIR}/../../x11/XFree86-4-libraries/files/${pf}
 .endfor
+
+NO_LATEST_LINK=		yes
+USE_BZIP2=		yes
 SCRIPTS_ENV=		OSVERSION=${OSVERSION} \
 			BuildXF86DRI=${BuildXF86DRI} \
 			WITH_DEBUG="${WITH_DEBUG}"
@@ -139,6 +147,7 @@ MAN4+=		apm.4 \
 		trident.4 \
 		tseng.4 \
 		vesa.4 \
+		via.4 \
 		vmware.4
 .else
 PLIST_SUB+=	I386="@comment "

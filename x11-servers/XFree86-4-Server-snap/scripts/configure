@@ -81,7 +81,7 @@ cat >> $LOCALDEF <<END
 #if defined(i386Architecture)
 # define XF86CardDrivers	mga glint nv tga s3 s3virge sis rendition \
 				neomagic i740 tdfx savage \
-				cirrus vmware tseng trident chips apm \
+				cirrus vmware tseng trident via chips apm \
 				i128 nsc ati i810 ark cyrix siliconmotion \
 				vesa vga
 #elif defined(ia64Architecture)
