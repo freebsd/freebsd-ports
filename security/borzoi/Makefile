@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	borzoi
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.5
 CATEGORIES=	security
 MASTER_SITES=	http://dragongate-technologies.com/borzoi/
 DISTNAME=	borZoi-${PORTVERSION}
