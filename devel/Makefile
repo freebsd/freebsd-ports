@@ -239,6 +239,7 @@
     SUBDIR += newt
     SUBDIR += noweb
     SUBDIR += oaf
+    SUBDIR += ocamlweb
     SUBDIR += omniORB
     SUBDIR += p5-Agent
     SUBDIR += p5-Algorithm-Diff
