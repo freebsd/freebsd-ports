@@ -1,0 +1,21 @@
+# New ports collection makefile for:   lc
+# Version required:    1.0
+# Date created:        13 November 1999
+# Whom:                jsellens
+#
+# $FreeBSD$
+#
+
+DISTNAME=	lc-1.0
+CATEGORIES=	misc
+MASTER_SITES=	http://www.generalconcepts.com/resources/software/
+
+MAINTAINER=	jsellens@generalconcepts.com
+
+MAN1=		lc.1
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKDIR}/${DISTNAME}/lc ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/lc.1 ${MAN1PREFIX}/man/man1
+
+.include <bsd.port.mk>
