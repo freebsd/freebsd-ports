@@ -58,7 +58,7 @@ CONFIGURE_ARGS+=	--without-threads
 .if defined(LDFLAGS)
 CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}"
 .endif # defined(LDFLAGS)
-.endif # defined(WITH_THREADS)
+.endif # !defined(WITHOUT_THREADS)
 
 .if !defined(WITHOUT_UCS4) && !defined(WITH_UCS2)
 CONFIGURE_ARGS+=	--enable-unicode=ucs4
