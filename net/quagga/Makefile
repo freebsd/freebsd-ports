@@ -7,7 +7,7 @@
 
 PORTNAME=	quagga
 PORTVERSION=	0.96.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://quagga.net/download/
 
@@ -30,7 +30,7 @@ MAN1=		vtysh.1
 MAN8=		bgpd.8 ospf6d.8 ospfd.8 ripd.8 ripngd.8 zebra.8
 
 CONFIGURE_ARGS+=--includedir=${PREFIX}/include/quagga
-SCRIPTS_ENV=	WRKDIRPREFIX=${WRKDIRPREFIX}
+SCRIPTS_ENV=	WRKDIRPREFIX=${WRKDIRPREFIX} WITH_SNMP_4=${WITH_SNMP_4}
 
 pre-fetch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.quagga
@@ -78,6 +78,7 @@ pre-everything::
 	@${ECHO}
 	@${ECHO} "You can build ${PORTNAME} with the following options:"
 	@${ECHO}
+	@${ECHO} "WITH_SNMP_4       Force net-snmp 4.x to be used"
 	@${ECHO} "ENABLE_USER       Specify user to run Quagga suite as"
 	@${ECHO} "ENABLE_GROUP      Specify group to run Quagga suite as"
 	@${ECHO} "ENABLE_VTY_GROUP  Specify group for vty socket ownership"

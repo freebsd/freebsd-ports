@@ -3,7 +3,7 @@
 # configure - quagga compile time option configurator
 # by Bruce M Simpson <bms@FreeBSD.org>
 #
-# $FreeBSD: /tmp/pcvs/ports/net/quagga/scripts/Attic/configure.quagga,v 1.1 2003-11-05 15:19:55 bms Exp $
+# $FreeBSD: /tmp/pcvs/ports/net/quagga/scripts/Attic/configure.quagga,v 1.2 2003-11-14 21:39:55 bms Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -69,8 +69,12 @@ while [ "$1" ]; do
 		echo 'CONFIGURE_ARGS+=	--enable-rtadv'
 		;;
 	SNMP)
-		echo 'LIB_DEPENDS+=	snmp.4:${PORTSDIR}/net/net-snmp:install'
 		echo 'CONFIGURE_ARGS+=	--enable-snmp'
+		if [ "x${WITH_SNMP_4}" != "x" ]; then
+			echo 'LIB_DEPENDS+=snmp.4:${PORTSDIR}/net/net-snmp4:install'
+		else
+			echo 'LIB_DEPENDS+=netsnmp.5:${PORTSDIR}/net/net-snmp:install'
+		fi
 		;;
 	TCPSOCKETS)
 		echo 'CONFIGURE_ARGS+=	--enable-tcp-zebra'
