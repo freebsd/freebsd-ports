@@ -14,8 +14,8 @@ EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		nectar@freebsd.org
 
-BUILD_DEPENDS=		python:${PORTSDIR}/lang/python
-RUN_DEPENDS=		${PREFIX}/lib/python1.5/site-packages/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
+USE_PYTHON=		yes
+RUN_DEPENDS=		${PYTHON_LIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
 WRKSRC=			${WRKDIR}/${PKGNAME}
 
