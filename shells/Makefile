@@ -7,6 +7,7 @@
     SUBDIR += es
     SUBDIR += esh
     SUBDIR += flash
+    SUBDIR += hmmah
     SUBDIR += ksh93
     SUBDIR += mudsh
     SUBDIR += osh

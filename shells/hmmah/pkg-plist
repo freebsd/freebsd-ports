@@ -1,0 +1,5 @@
+share/doc/hmmah/dot.ksh_prompt
+share/doc/hmmah/dot.bash_prompt
+share/doc/hmmah/dot.zsh_prompt
+share/doc/hmmah/dot.tcsh_prompt
+@dirrm share/doc/hmmah
