@@ -1,0 +1,14 @@
+--- doc/mydns.texi.orig	Fri Aug  2 10:30:21 2002
++++ doc/mydns.texi	Mon Aug  5 23:59:29 2002
+@@ -11,6 +11,11 @@
+ @paragraphindent 0
+ @c %**end of header
+ 
++@dircategory Miscellaneous
++@direntry
++* mydns: (mydns).               The MySQL based DNS-server.
++@end direntry
++
+ @ifinfo
+ This is the manual for MyDNS (version @value{PKGVERSION}, @value{PKGDATE}), a MySQL-based DNS server package.
+ @value{PKGCOPYRIGHT}

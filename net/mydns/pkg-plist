@@ -1,0 +1,50 @@
+etc/mydns.conf.sample
+etc/rc.d/mydns.sh.sample
+@unexec install-info --delete %D/info/mydns.info %D/info/dir
+info/mydns.info
+@exec install-info %D/info/mydns.info %D/info/dir
+sbin/mydns
+%%PORTDOCS%%share/doc/mydns/AUTHORS
+%%PORTDOCS%%share/doc/mydns/COPYING
+%%PORTDOCS%%share/doc/mydns/ChangeLog
+%%PORTDOCS%%share/doc/mydns/NEWS
+%%PORTDOCS%%share/doc/mydns/QUICKSTART
+%%PORTDOCS%%share/doc/mydns/README
+%%PORTDOCS%%share/doc/mydns/TODO
+%%PORTDOCS%%share/doc/mydns/extras/README
+%%PORTDOCS%%share/doc/mydns/extras/admin.php
+%%PORTDOCS%%share/doc/mydns/html/mydns.html
+%%PORTDOCS%%share/doc/mydns/html/mydns_1.html
+%%PORTDOCS%%share/doc/mydns/html/mydns_10.html
+%%PORTDOCS%%share/doc/mydns/html/mydns_11.html
+%%PORTDOCS%%share/doc/mydns/html/mydns_12.html
+%%PORTDOCS%%share/doc/mydns/html/mydns_13.html
+%%PORTDOCS%%share/doc/mydns/html/mydns_14.html
+%%PORTDOCS%%share/doc/mydns/html/mydns_15.html
+%%PORTDOCS%%share/doc/mydns/html/mydns_16.html
+%%PORTDOCS%%share/doc/mydns/html/mydns_17.html
+%%PORTDOCS%%share/doc/mydns/html/mydns_18.html
+%%PORTDOCS%%share/doc/mydns/html/mydns_19.html
+%%PORTDOCS%%share/doc/mydns/html/mydns_2.html
+%%PORTDOCS%%share/doc/mydns/html/mydns_20.html
+%%PORTDOCS%%share/doc/mydns/html/mydns_21.html
+%%PORTDOCS%%share/doc/mydns/html/mydns_22.html
+%%PORTDOCS%%share/doc/mydns/html/mydns_23.html
+%%PORTDOCS%%share/doc/mydns/html/mydns_24.html
+%%PORTDOCS%%share/doc/mydns/html/mydns_25.html
+%%PORTDOCS%%share/doc/mydns/html/mydns_26.html
+%%PORTDOCS%%share/doc/mydns/html/mydns_27.html
+%%PORTDOCS%%share/doc/mydns/html/mydns_28.html
+%%PORTDOCS%%share/doc/mydns/html/mydns_3.html
+%%PORTDOCS%%share/doc/mydns/html/mydns_4.html
+%%PORTDOCS%%share/doc/mydns/html/mydns_5.html
+%%PORTDOCS%%share/doc/mydns/html/mydns_6.html
+%%PORTDOCS%%share/doc/mydns/html/mydns_7.html
+%%PORTDOCS%%share/doc/mydns/html/mydns_8.html
+%%PORTDOCS%%share/doc/mydns/html/mydns_9.html
+%%PORTDOCS%%share/doc/mydns/html/mydns_abt.html
+%%PORTDOCS%%share/doc/mydns/html/mydns_ovr.html
+%%PORTDOCS%%share/doc/mydns/html/mydns_toc.html
+%%PORTDOCS%%@dirrm share/doc/mydns/html
+%%PORTDOCS%%@dirrm share/doc/mydns/extras
+%%PORTDOCS%%@dirrm share/doc/mydns

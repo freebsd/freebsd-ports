@@ -277,6 +277,7 @@
     SUBDIR += mtr
     SUBDIR += mudix
     SUBDIR += mutella
+    SUBDIR += mydns
     SUBDIR += nagios
     SUBDIR += nagios-plugins
     SUBDIR += naim
