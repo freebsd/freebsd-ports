@@ -3,10 +3,10 @@
 # Date created:				26 June 1996
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.7 1996/12/07 11:26:43 max Exp $
+# $Id: Makefile,v 1.8 1996/12/08 01:45:06 max Exp $
 #
 
-DISTNAME=	ucd-snmp-3.1
+DISTNAME=	ucd-snmp-3.1.3
 CATEGORIES=	net
 MASTER_SITES= 	ftp://ftp.ece.ucdavis.edu/pub/snmp/
 
