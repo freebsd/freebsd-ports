@@ -997,6 +997,7 @@ cmt		ports/audio/cmt
 cmucl		ports/lang/cmucl
 cmucl-extra	ports/lang/cmucl-extra
 cn2jp		ports/converters/cn2jp
+cnd		ports/net/cnd
 cnet		ports/net/cnet
 cnews		ports/news/cnews
 cnslock		ports/x11/cnslock
