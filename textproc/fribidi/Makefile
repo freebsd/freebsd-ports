@@ -12,9 +12,9 @@ MASTER_SITES=	http://imagic.weizmann.ac.il/~dov/freesw/FriBidi/
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	glib12.3:${PORTSDIR}/devel/glib12
+LIB_DEPENDS=	glib-1.3.1:${PORTSDIR}/devel/glib13
 
-GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
+GLIB_CONFIG?=	${LOCALBASE}/bin/glib-config-2.0
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
