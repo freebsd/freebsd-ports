@@ -1,3 +1,3 @@
-gschem is a tool to capture/draw electronic circuits schematics.
+gnetlist is a tool create netlist from a gschem electronic circuits schematic.
 
-WWW: http://www.geda.seul.org/
+WWW: http://www.geda.seul.org

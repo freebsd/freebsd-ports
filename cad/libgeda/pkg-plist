@@ -8,7 +8,22 @@ include/libgeda/pcb_struct.h
 include/libgeda/prototype.h
 include/libgeda/struct.h
 include/libgeda/libgeda.h
-lib/libgeda.so.12
+@dirrm include/libgeda
+@unexec install-info --delete %D/info/libgedadoc.info %D/info/dir
+info/libgedadoc.info
+info/libgedadoc.info-1
+info/libgedadoc.info-2
+info/libgedadoc.info-3
+info/libgedadoc.info-4
+info/libgedadoc.info-5
+info/libgedadoc.info-6
+info/libgedadoc.info-7
+info/libgedadoc.info-8
+info/libgedadoc.info-9
+info/libgedadoc.info-10
+info/libgedadoc.info-11
+info/libgedadoc.info-12
+info/libgedadoc.info-13
+lib/libgeda.so.15
 lib/libgeda.so
 lib/libgeda.a
-@dirrm include/libgeda
