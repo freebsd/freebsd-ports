@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	guilib
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTVERSION=	1.1.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libsdl.org/projects/GUIlib/src/
 DISTNAME=	GUIlib-${PORTVERSION}
@@ -15,21 +14,10 @@ DISTNAME=	GUIlib-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A very simple GUI framework for use with SDL
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
-
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
-
-USE_LIBTOOL=	yes
+USE_SDL=	yes
 USE_GMAKE=	yes
+USE_LIBTOOL=	yes
+LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 INSTALLS_SHLIB=	yes
-CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
-
-post-extract:
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
-		's|-release \$$\(LT_RELEASE\)||g'
-
-post-configure:
-	@${PERL} -pi -e 's|^deplibs_check_method=.*|deplibs_check_method=pass_all|' \
-		${WRKSRC}/libtool
 
 .include <bsd.port.mk>
