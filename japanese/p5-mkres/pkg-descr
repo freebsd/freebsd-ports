@@ -1,0 +1,19 @@
+mkres.pl creates X resources and configuration files for Japanese
+(jisx0208.1983-0) TrueType fonts from outputs of mkttfdir.pl (using
+FreeType library).
+
+If you run `mkres.pl -f format /some/directory`, it outputs resource
+about some "format" to a standard output. Now, the following ones as
+the format are available:
+
+  tgif       X resource for Japanized tgif on X-TrueType server(*1),
+  idraw      one for Japanized idraw (including "iv") on the server,
+  xfig       one for internationalized xfig on the server,
+  vfontcap   configuration file for VFlib (Japanese vector font library),
+  kconfig    configuration file, kconfig.ps, for ghostscript with VFlib.
+
+Run 'mkres.pl -h', and you get more information.
+
+- S. Taoka
+-----
+(*1) See "http://cclub.cc.tut.ac.jp/%7Ego/unix/xtt.html".
