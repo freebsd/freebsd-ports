@@ -4,7 +4,7 @@
 # Date created:				03 Mar 1998
 # Whom:					David O'Brien <obrien@NUXI.com>
 #
-# $Id: Makefile,v 1.9 1998/08/17 06:40:16 hoek Exp $
+# $Id: Makefile,v 1.10 1998/08/17 17:03:31 obrien Exp $
 #
 
 DISTNAME=	libstdc++-2.8.1.1
@@ -25,6 +25,8 @@ GCC28DIR=	lib/gcc-lib/i386-unknown-freebsd${OSREL}/2.8.1
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 PLIST_SUB=	GCC28SUBDIR=${GCC28DIR}
+
+BROKEN_ELF=	depends on gcc28
 
 pre-install:
 	@# allow a boched ``make install'' to be re-tried
