@@ -180,8 +180,8 @@
     SUBDIR += p5-GD-TextUtil
     SUBDIR += p5-Gimp
     SUBDIR += p5-Graphics-ColorNames
-    SUBDIR += p5-Image-Info
     SUBDIR += p5-Image-Grab
+    SUBDIR += p5-Image-Info
     SUBDIR += p5-Image-Size
     SUBDIR += p5-Imager
     SUBDIR += p5-Imlib2
