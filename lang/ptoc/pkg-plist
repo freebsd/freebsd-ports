@@ -9,11 +9,7 @@ include/ptoc/ptoc.h
 include/ptoc/set.h
 lib/libptoc.a
 lib/libXbgi.a
-share/doc/ptoc/README
-share/doc/ptoc/paslib.doc
-share/ptoc/ptoc.pas
-share/ptoc/tptoc.pas
-share/ptoc/graph.pas
+share/doc/ptoc/Readme.htm
 share/examples/ptoc/Makefile
 share/examples/ptoc/bgidemo.pas
 share/examples/ptoc/coord.txt
@@ -33,7 +29,11 @@ share/examples/ptoc/vibrkinp.pas
 share/examples/ptoc/vibrkinp.txt
 share/examples/ptoc/vibrtabl.pas
 share/examples/ptoc/war2.pas
+share/examples/ptoc/war2.txt
 share/examples/ptoc/xy2orig.txt
+share/ptoc/ptoc.pas
+share/ptoc/tptoc.pas
+share/ptoc/graph.pas
 @dirrm include/ptoc
 @dirrm share/doc/ptoc
 @dirrm share/examples/ptoc
