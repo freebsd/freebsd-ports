@@ -8,7 +8,8 @@
 
 DISTNAME=	licq-0.75.3a
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.wibble.net/pub/licq/srcs/ \
+MASTER_SITES=	http://download.sourceforge.net/licq/ \
+		ftp://ftp.wibble.net/pub/licq/srcs/ \
 		ftp://licq.darkorb.net/srcs/ \
 		ftp://ftp.fanfic.org/pub/licq/srcs/ \
 		ftp://ftp.inter-i.uni-mainz.de/pub/licq/srcs/
