@@ -1,0 +1,24 @@
+File Roller is an archive manager for the GNOME environment. Archive manager
+means that you can create and modify archives, view the content of an archive,
+view a file contained in the archive, and extract files from the archive.
+
+File Roller is only a front-end (a graphical interface) to archiving programs
+like tar and zip. The supported file types are :
+
+* Tar archives uncompressed (.tar) or compressed with gzip (.tar.gz , .tgz),
+bzip (.tar.bz , .tbz), bzip2 (.tar.bz2 , .tbz2), compress (.tar.Z , .taz),
+lzop (.tar.lzo , .tzo)
+* Zip archives (.zip)
+* Jar archives (.jar , .ear , .war)
+* Lha archives (.lzh)
+* Rar archives (.rar)
+* Single files compressed with gzip, bzip, bzip2, compress, lzop
+ 
+File Roller also has a document viewer based on bonobo that lets you view files
+of any type you have a viewer for.
+
+Former WinZip users may find this program useful. It serves the same purpose.
+
+WWW: http://fileroller.sourceforge.net/
+
+- Anders Nordby <anders@FreeBSD.org>

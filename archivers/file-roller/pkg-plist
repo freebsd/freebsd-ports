@@ -1,0 +1,47 @@
+bin/file-roller
+bin/fr-document-viewer
+share/gnome/application-registry/file-roller.applications
+share/gnome/file-roller/glade/file_roller.glade
+share/gnome/file-roller/glade/file_roller_prop.glade
+share/gnome/file-roller/icons/add.xpm
+share/gnome/file-roller/icons/down.xpm
+share/gnome/file-roller/icons/extract.xpm
+share/gnome/file-roller/icons/file.xpm
+share/gnome/file-roller/icons/folder.xpm
+share/gnome/file-roller/icons/up.xpm
+share/gnome/file-roller/icons/view.xpm
+share/gnome/file-roller/scripts/Add_to_archive
+share/gnome/file-roller/scripts/Extract_here
+share/gnome/file-roller/scripts/Extract_in_a_subfolder
+share/gnome/file-roller/scripts/Extract_to
+share/gnome/file-roller/scripts/README
+share/gnome/gnome/apps/Utilities/file-roller.desktop
+share/gnome/locale/de/LC_MESSAGES/file-roller.mo
+share/gnome/locale/es/LC_MESSAGES/file-roller.mo
+share/gnome/locale/fr_FR/LC_MESSAGES/file-roller.mo
+share/gnome/locale/it/LC_MESSAGES/file-roller.mo
+share/gnome/locale/ja/LC_MESSAGES/file-roller.mo
+share/gnome/locale/ko/LC_MESSAGES/file-roller.mo
+share/gnome/locale/nl/LC_MESSAGES/file-roller.mo
+share/gnome/locale/no/LC_MESSAGES/file-roller.mo
+share/gnome/locale/pl/LC_MESSAGES/file-roller.mo
+share/gnome/locale/pt_BR/LC_MESSAGES/file-roller.mo
+share/gnome/locale/ru/LC_MESSAGES/file-roller.mo
+share/gnome/locale/sv/LC_MESSAGES/file-roller.mo
+share/gnome/mime-info/file-roller.keys
+share/gnome/mime-info/file-roller.mime
+share/gnome/pixmaps/file-roller.png
+@dirrm share/gnome/file-roller/glade
+@dirrm share/gnome/file-roller/icons
+@dirrm share/gnome/file-roller/scripts
+@dirrm share/gnome/file-roller
+@unexec rmdir %D/share/gnome/application-registry 2>/dev/null || true
+@unexec rmdir %D/share/locale/*/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/* 2>/dev/null || true
+@unexec rmdir %D/share/locale 2>/dev/null || true
+%%PORTDOCS%%share/doc/fileroller/AUTHORS
+%%PORTDOCS%%share/doc/fileroller/COPYING
+%%PORTDOCS%%share/doc/fileroller/NEWS
+%%PORTDOCS%%share/doc/fileroller/README
+%%PORTDOCS%%share/doc/fileroller/TODO
+%%PORTDOCS%%@dirrm share/doc/fileroller
