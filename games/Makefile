@@ -121,6 +121,7 @@
     SUBDIR += rocksndiamonds
     SUBDIR += rollemup
     SUBDIR += rubix
+    SUBDIR += sdlquake
     SUBDIR += seabattle
     SUBDIR += seahaven
     SUBDIR += sl
