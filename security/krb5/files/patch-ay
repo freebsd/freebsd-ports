@@ -1,0 +1,50 @@
+--- util/pty/getpty.c.orig	Fri Feb  6 19:46:42 1998
++++ util/pty/getpty.c	Mon Apr  5 14:00:07 1999
+@@ -21,13 +21,26 @@
+ #include "libpty.h"
+ #include "pty-int.h"
+ 
++#ifdef __FreeBSD__
++#define PTYCHARS1	"pqrsPQRS"
++#define PTYCHARS2	"0123456789abcdefghijklmnopqrstuv"
++#endif
++
++#ifndef PTYCHARS1
++#define PTYCHARS1	"pqrstuvwxyzPQRST"
++#endif
++
++#ifndef PTYCHARS2
++#define PTYCHARS2	"0123456789abcdef"
++#endif
++
+ long pty_getpty (fd, slave, slavelength)
+     int slavelength;
+     int *fd; char *slave;
+ {
+-    char *cp;
++    char *cp1, *cp2;
+     char *p;
+-    int i,ptynum;
++    int ptynum;
+     struct stat stb;
+     char slavebuf[1024];
+ #ifdef HAVE__GETPTY
+@@ -109,14 +122,14 @@
+ 	strncpy(slave, slavebuf, slavelength);
+ 	return 0;
+     } else {
+-    	for (cp = "pqrstuvwxyzPQRST";*cp; cp++) {
++    	for (cp1 = PTYCHARS1; *cp1 != '\0'; cp1++) {
+ 	    sprintf(slavebuf,"/dev/ptyXX");
+-	    slavebuf[sizeof("/dev/pty") - 1] = *cp;
++	    slavebuf[sizeof("/dev/pty") - 1] = *cp1;
+ 	    slavebuf[sizeof("/dev/ptyp") - 1] = '0';
+ 	    if (stat(slavebuf, &stb) < 0)
+ 		break;
+-	    for (i = 0; i < 16; i++) {
+-		slavebuf[sizeof("/dev/ptyp") - 1] = "0123456789abcdef"[i];
++	    for (cp2 = PTYCHARS2; *cp2 != '\0'; cp2++) {
++		slavebuf[sizeof("/dev/ptyp") - 1] = *cp2;
+ 		*fd = open(slavebuf, O_RDWR);
+ 		if (*fd < 0) continue;
+ 
