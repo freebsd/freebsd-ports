@@ -91,6 +91,17 @@
 # WITH_DVD
 # default: autodetect
 #
+# WITH_DVD_DEVICE
+# default 5.x: /dev/acd0
+# default 4.x: /dev/acd0c
+# change the default dvd device
+#
+# WITH_CDROM_DEVICE
+# default 5.x: /dev/acd0
+# default 4.x: /dev/acd0c
+# change the default cdrom device
+# useful for VCD's
+#
 # WITH_LIBDVDREAD
 # default: disabled
 # define this if you prefer the use of libdvdread instead of the
@@ -518,6 +529,26 @@ CONFIGURE_ARGS+=--enable-xanim --with-xanimlibdir=${X11BASE}/lib/X11/xanim
 CONFIGURE_ARGS+=--disable-xanim
 .endif
 
+.if defined(WITH_DVD_DEVICE)
+DEFAULT_DVD_DEVICE=${WITH_DVD_DEVICE}
+.else
+.if ${OSVERSION} < 500000
+DEFAULT_DVD_DEVICE=/dev/acd0c
+.else
+DEFAULT_DVD_DEVICE=/dev/acd0
+.endif
+.endif
+
+.if defined(WITH_CDROM_DEVICE)
+DEFAULT_CDROM_DEVICE=${WITH_CDROM_DEVICE}
+.else
+.if ${OSVERSION} < 500000
+DEFAULT_CDROM_DEVICE=/dev/acd0c
+.else
+DEFAULT_CDROM_DEVICE=/dev/acd0
+.endif
+.endif
+
 # "enable" build for other archs
 .if ${ARCH} == "i386"
 .if !defined(WITHOUT_RUNTIME_CPUDETECTION)
@@ -582,6 +613,9 @@ post-patch:
 		's|libxmms.so.1|libxmms.so|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -Ee 's#-pthread|-lc_r#${PTHREAD_LIBS}#g' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|; \
+		s|/dev/cdrom|${DEFAULT_CDROM_DEVICE}|' \
 		${WRKSRC}/configure
 .if defined(WITH_RTC)
 	@${REINPLACE_CMD} -e \
