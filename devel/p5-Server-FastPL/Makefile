@@ -18,6 +18,7 @@ COMMENT=	Perl module to eliminate the compile-time of big scripts
 PERL_CONFIGURE=	yes
 
 DEPRECATED=	"no longer on CPAN"
+EXPIRATION_DATE=	2005-03-21
 MAN3=		Server::FastPL.3 Server::FastPL::Client.3 \
 		Server::FastPL::Server.3
 
