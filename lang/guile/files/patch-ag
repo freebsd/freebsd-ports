@@ -1,0 +1,11 @@
+--- qt/Makefile.in.orig	Mon Apr 24 14:53:57 2000
++++ qt/Makefile.in	Mon Apr 24 14:54:33 2000
+@@ -407,7 +407,7 @@
+ 
+ 
+ .s.lo:
+-	$(LIBTOOL) --mode=compile $(COMPILE) $(qthread_asflags) -c $<
++	$(LIBTOOL) --mode=compile $(CC) $(qthread_asflags) -c $<
+ qtmds.s:
+ 	${LN_S} ${srcdir}/${qtmds_s} qtmds.s
+ qtmdc.c:
