@@ -239,6 +239,7 @@
     SUBDIR += xcd
     SUBDIR += xcdplayer
     SUBDIR += xhippo
+    SUBDIR += ximp3
     SUBDIR += xmcd
     SUBDIR += xmix
     SUBDIR += xmixer
