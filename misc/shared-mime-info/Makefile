@@ -6,7 +6,7 @@
 
 PORTNAME=	shared-mime-info
 PORTVERSION=	0.14
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc gnome
 MASTER_SITES=	http://www.freedesktop.org/software/shared-mime-info/
 DISTNAME=	shared-mime-info-${PORTVERSION}
@@ -21,7 +21,8 @@ USE_GNOME=	glib20 libxml2 intltool gnomehack
 MAN1=		update-mime-database.1
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g ; \
+		s|%%X11BASE%%|${X11BASE}|g' \
 		${WRKSRC}/update-mime-database.c
 
 .include <bsd.port.mk>

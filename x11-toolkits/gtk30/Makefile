@@ -7,6 +7,7 @@
 
 PORTNAME=	gtk
 PORTVERSION=	2.4.3
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/gtk+/2.4,} \
 		ftp://ftp.gtk.org/pub/gtk/v2.3/ \
@@ -66,7 +67,8 @@ post-patch:
 		${XARGS} ${REINPLACE_CMD} -e 's|-lgmodule|@GMODULE_LIBS@|g'
 	@${REINPLACE_CMD} -e 's|[{]libdir[}]/locale|{datadir}/locale|g' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g ; \
+		s|%%X11BASE%%|${X11BASE}|g' \
 		${WRKSRC}/gtk/xdgmime/xdgmime.c
 
 pre-build:
