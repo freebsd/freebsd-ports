@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	latex-pgf
-PORTVERSION=	0.62
+PORTVERSION=	0.64
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	latex-beamer
@@ -37,6 +37,7 @@ DOC_FILES=	AUTHORS ChangeLog FILES INSTALL README TODO \
 		pgf-tu-logo.25.eps pgf-tu-logo.25.jpg \
 		pgf-tu-logo.eps pgf-tu-logo.jpg \
 		pgf-tu-logo.mask.jpg \
+		pgfuserguide.pdf pgfuserguide.tex
 
 do-install:
 	${MKDIR} ${PREFIX}/${CLASSDIR}
