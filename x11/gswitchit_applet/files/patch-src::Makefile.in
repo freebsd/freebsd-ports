@@ -1,0 +1,13 @@
+
+$FreeBSD$
+
+--- src/Makefile.in	2002/05/31 11:13:42	1.1
++++ src/Makefile.in	2002/05/31 11:14:13
+@@ -176,6 +176,7 @@
+ 			 $(GDK_PIXBUF_LIBS) \
+ 			 $(GCONF_LIBS) \
+ 			 -lxklavier \
++			 -lxkbfile \
+                          -lgconf-gtk-1 
+ 
+ gswitchit_applet_MANS = ../man/gswitchit_applet.1
