@@ -8464,6 +8464,7 @@ pipsv700	ports/print/pipsv700
 pipsv700-cups	ports/print/pipsv700-cups
 pircbot		ports/irc/pircbot
 pisg		ports/irc/pisg
+pitivi		ports/multimedia/pitivi
 pixelize	ports/graphics/pixelize
 pixie		ports/graphics/pixie
 pixieplus	ports/graphics/pixieplus
