@@ -18,7 +18,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/snort:${PORTSDIR}/security/snort \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_PHP=	yes
-WANT_PHP_WEB=	yes
 NO_BUILD=	yes
 
 do-install:
