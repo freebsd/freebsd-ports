@@ -3,7 +3,7 @@
 # Date created:			Fri Apr  8 00:18:29 MET DST 1999
 # Whom:				domi@saargate.de
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/05/09 22:38:22 dirk Exp $
 #
 
 DISTNAME=	xsane-0.22
@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.wolfsburg.de/~rauch/sane/ \
 MAINTAINER=	domi@saargate.de
 
 LIB_DEPENDS=	gtk12.1:${PORTSDIR}/x11-toolkits/gtk12 \
+		sane.1:${PORTSDIR}/graphics/sane \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff34 \
 		png.3:${PORTSDIR}/graphics/png
