@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	teapot
-PORTVERSION=	1.04
+PORTVERSION=	1.05
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.moria.de/~michael/teapot/
 
