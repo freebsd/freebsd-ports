@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	wmconfig
-PORTVERSION=	1.0
+PORTVERSION=	1.1.8
 CATEGORIES=	x11-wm
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	pav
+MASTER_SITES=	http://www.arrishq.net/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Menu generation tool for X window managers
@@ -20,21 +19,23 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--prefix=${LOCALBASE} --sysconfdir=${LOCALBASE}/etc --mandir=${LOCALBASE}/man
 
+PORTDOCS=	AUTHORS COPYING NEWS README README.de TODO
+
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/wmconfig.1x ${PREFIX}/man/man1
-	@${MKDIR} ${PREFIX}/etc/wmconfig
-	@${INSTALL_DATA} ${WRKSRC}/samples/xterm ${PREFIX}/etc/wmconfig
-	@${INSTALL_DATA} ${WRKSRC}/samples/xmms ${PREFIX}/etc/wmconfig
-	@${INSTALL_DATA} ${WRKSRC}/samples/xearth ${PREFIX}/etc/wmconfig
-	@${INSTALL_DATA} ${WRKSRC}/samples/vim ${PREFIX}/etc/wmconfig
-	@${INSTALL_DATA} ${WRKSRC}/samples/sylpheed ${PREFIX}/etc/wmconfig
-	@${INSTALL_DATA} ${WRKSRC}/samples/rxvt ${PREFIX}/etc/wmconfig
-	@${INSTALL_DATA} ${WRKSRC}/samples/pine ${PREFIX}/etc/wmconfig
-	@${INSTALL_DATA} ${WRKSRC}/samples/mozilla ${PREFIX}/etc/wmconfig
-	@${INSTALL_DATA} ${WRKSRC}/samples/lynx ${PREFIX}/etc/wmconfig
-	@${INSTALL_DATA} ${WRKSRC}/samples/gv ${PREFIX}/etc/wmconfig
-	@${INSTALL_DATA} ${WRKSRC}/samples/gimp ${PREFIX}/etc/wmconfig
-	@${INSTALL_DATA} ${WRKSRC}/samples/eterm ${PREFIX}/etc/wmconfig
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/wmconfig.1x ${PREFIX}/man/man1
+	${MKDIR} ${PREFIX}/etc/wmconfig
+	${RM} -r ${WRKSRC}/samples/wmconfig/CVS
+	for i in `cd ${WRKSRC}/samples/wmconfig; ${ECHO_CMD} *`; do \
+		${INSTALL_DATA} ${WRKSRC}/samples/wmconfig/$$i ${PREFIX}/etc/wmconfig; \
+	done
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
