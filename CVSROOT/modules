@@ -638,6 +638,7 @@ bozohttpd	ports/www/bozohttpd
 bpatch		ports/editors/bpatch
 bpl+		ports/comms/bpl+
 br-aspell	ports/textproc/br-aspell
+braincurses	ports/games/braincurses
 brandelf	src/usr.bin/brandelf
 bricons		ports/x11/bricons
 british-ispell	ports/textproc/british-ispell
