@@ -19,7 +19,6 @@ DISTFILES=	\
 
 PATCH_SITES+=	http://www.nedprod.com/TnFOX/patches/
 PATCHFILES+=	GCC3.4.0VisibilityPatch2.diff
-PATCH_STRIP=	-p1
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER?=	openoffice@FreeBSD.org
