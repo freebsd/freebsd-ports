@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	suphp
-PORTVERSION=	0.2.2
-PORTREVISION=	1
+PORTVERSION=	0.2.3
 CATEGORIES=	www
 MASTER_SITES=	http://www.suphp.org/download/
 
@@ -15,10 +14,9 @@ MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	suPHP is a combination which provides a wrapper for PHP
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
-RUN_DEPENDS=	${LOCALBASE}/bin/php:${PORTSDIR}/lang/php4
+RUN_DEPENDS=	${LOCALBASE}/bin/php:${PORTSDIR}/lang/php4-cli
 
 USE_REINPLACE=	yes
-HAS_CONFIGURE=	no
 
 MAKE_ARGS+=	APXS="${APXS}"
 APXS?=		${LOCALBASE}/sbin/apxs
@@ -27,11 +25,15 @@ WWW_GROUP?=	www
 LOG_PATH?=	/var/log
 PHP_PATH?=	${LOCALBASE}/bin/php
 
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/libexec/apache/libphp4.so)
+IGNORE="suPHP conflicts with mod_php4. It works only with php4-cli"
+.endif
+
 pre-configure:
 	@${ECHO}
 	@${ECHO} "*-------------------------------------------------------------*"
-	@${ECHO} " suPHP conflicts with mod_php4. It works only with php command"
-	@${ECHO} " line binairy."
 	@${ECHO} " Options :"
 	@${ECHO} "     - WWW_USER = Apache's User (default www)"
 	@${ECHO} "     - Define CHECK_PATH, to enable suExec-like path checking"
@@ -62,10 +64,11 @@ do-configure:
 	@${ECHO} "Setting suphp path in mod_suphp"
 	@${REINPLACE_CMD} -e "s,/usr/sbin/suphp,${PREFIX}/sbin/suphp," ${WRKSRC}/apache/mod_suphp.c
 
-pre-install:
-	${APXS} -i -a -c -n suphp ${WRKSRC}/apache/mod_suphp.c
+post-build:
+	@(cd ${WRKSRC}/apache && ${APXS} -c mod_suphp.c) 
 
 post-install:
+	@(cd ${WRKSRC}/apache && ${APXS} -i -a -n suphp ${WRKSRC}/apache/mod_suphp.so)
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR} ${DOCSDIR}/apache ${DOCSDIR}/de-doc ${DOCSDIR}/de-doc/apache
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
@@ -82,7 +85,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/de-doc/apache/INSTALL.de ${DOCSDIR}/de-doc/apache
 	${INSTALL_DATA} ${WRKSRC}/de-doc/apache/CONFIG.de ${DOCSDIR}/de-doc/apache
 .endif
-	@${RM} mod_suphp.o
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
