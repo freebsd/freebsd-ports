@@ -42,6 +42,7 @@
 %%SITE_PERL%%/POE/Resource/SIDs.pm
 %%SITE_PERL%%/POE/Resource/Sessions.pm
 %%SITE_PERL%%/POE/Resource/Signals.pm
+%%SITE_PERL%%/POE/Resource/Statistics.pm
 %%SITE_PERL%%/POE/Resources.pm
 %%SITE_PERL%%/POE/Session.pm
 %%SITE_PERL%%/POE/Wheel.pm
@@ -52,13 +53,13 @@
 %%SITE_PERL%%/POE/Wheel/ReadWrite.pm
 %%SITE_PERL%%/POE/Wheel/Run.pm
 %%SITE_PERL%%/POE/Wheel/SocketFactory.pm
-@dirrm %%SITE_PERL%%/POE/API
+@unexec rmdir %D/%%SITE_PERL%%/POE/API 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/POE/Component/Client 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/POE/Component/Server 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/POE/Component 2>/dev/null || true
 @dirrm %%SITE_PERL%%/POE/Driver
 @unexec rmdir %D/%%SITE_PERL%%/POE/Filter 2>/dev/null || true
-@dirrm %%SITE_PERL%%/POE/Loop
+@unexec rmdir %D/%%SITE_PERL%%/POE/Loop 2>/dev/null || true
 @dirrm %%SITE_PERL%%/POE/Macro
 @dirrm %%SITE_PERL%%/POE/Pipe
 @dirrm %%SITE_PERL%%/POE/Queue
