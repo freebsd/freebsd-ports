@@ -3,7 +3,7 @@
 # Date created:		Do  19 Nov 1998 21:13:55 CET
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.4 1999/01/07 19:44:18 andreas Exp $
+# $Id: Makefile,v 1.5 1999/04/12 18:53:30 andreas Exp $
 #
 
 DISTNAME=	webmin-0.71
@@ -18,18 +18,18 @@ USE_PERL5=	yes
 
 pre-extract:
 	@if [ -x ${PREFIX}/sbin/httpd ]; then \
-	echo Good ! You seem to have apache webserver installed ...; \
+	${ECHO_MSG} Good ! You seem to have apache webserver installed ...; \
 	else \
-	echo You need to install one of the different apache webservers; \
-	echo Best would be apache13-modssl or apache13-php3 that can be; \
-	echo configured to use modssl for better security as well; \
+	${ECHO_MSG} You need to install one of the different apache webservers; \
+	${ECHO_MSG} Best would be apache13-modssl or apache13-php3 that can be; \
+	${ECHO_MSG} configured to use modssl for better security as well; \
 	exit 1; \
 	fi
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/webmin
 	${CP} -r ${WRKSRC}/* ${PREFIX}/lib/webmin
-	@cd ${PREFIX}/lib/webmin && find . -name "*.orig" -print | xargs rm
+	@cd ${PREFIX}/lib/webmin && find . -name "*.orig" -print | xargs ${RM}
 	@cd ${PREFIX}/lib/webmin && ./setup.sh
 
 .include <bsd.port.mk>
