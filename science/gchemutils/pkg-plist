@@ -11,7 +11,6 @@ include/gcu/crystalviewer/gtkcrystalviewer.h
 include/gcu/crystalviewer/crystalview.h
 include/gcu/crystalviewer/crystaldoc.h
 include/gcu/crystalviewer/crystalatom.h
-include/gcu/crystalviewer/crystalbond.h
 include/gcu/crystalviewer/crystalline.h
 include/gcu/crystalviewer/crystalcleavage.h
 include/gcu/gtkperiodic/gtkperiodic.h
@@ -19,14 +18,14 @@ lib/libgcu.a
 lib/libgcu.so
 lib/libgtkchem3dviewer.a
 lib/libgtkchem3dviewer.so
-lib/libgtkchem3dviewer.so.1
-lib/libgcu.so.1
+lib/libgtkchem3dviewer.so.2
+lib/libgcu.so.2
 lib/libgtkcrystalviewer.a
 lib/libgtkcrystalviewer.so
-lib/libgtkcrystalviewer.so.1
+lib/libgtkcrystalviewer.so.2
 lib/libgtkperiodic.a
 lib/libgtkperiodic.so
-lib/libgtkperiodic.so.1
+lib/libgtkperiodic.so.2
 libdata/bonobo/servers/gchem3d.server
 libdata/pkgconfig/gcu.pc
 share/gnome/doc/gchemutils/reference/html/annotated.html
@@ -43,9 +42,6 @@ share/gnome/doc/gchemutils/reference/html/classgcu_1_1CrystalAtomList.html
 share/gnome/doc/gchemutils/reference/html/classgcu_1_1CrystalAtom.html
 share/gnome/doc/gchemutils/reference/html/classgcu_1_1CrystalAtom.png
 share/gnome/doc/gchemutils/reference/html/classgcu_1_1CrystalAtom-members.html
-share/gnome/doc/gchemutils/reference/html/classgcu_1_1CrystalBond.html
-share/gnome/doc/gchemutils/reference/html/classgcu_1_1CrystalBond.png
-share/gnome/doc/gchemutils/reference/html/classgcu_1_1CrystalBond-members.html
 share/gnome/doc/gchemutils/reference/html/classgcu_1_1CrystalCleavage.html
 share/gnome/doc/gchemutils/reference/html/classgcu_1_1CrystalCleavage-members.html
 share/gnome/doc/gchemutils/reference/html/classgcu_1_1CrystalClevageList.html
@@ -64,7 +60,6 @@ share/gnome/doc/gchemutils/reference/html/classgcu_1_1Object.html
 share/gnome/doc/gchemutils/reference/html/classgcu_1_1Object.png
 share/gnome/doc/gchemutils/reference/html/classgcu_1_1Object-members.html
 share/gnome/doc/gchemutils/reference/html/crystalatom_8h-source.html
-share/gnome/doc/gchemutils/reference/html/crystalbond_8h-source.html
 share/gnome/doc/gchemutils/reference/html/crystalcleavage_8h-source.html
 share/gnome/doc/gchemutils/reference/html/crystaldoc_8h-source.html
 share/gnome/doc/gchemutils/reference/html/crystalline_8h-source.html
