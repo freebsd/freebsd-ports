@@ -7,11 +7,13 @@
 
 PORTNAME=	gtkglarea
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.student.oulu.fi/~jlof/gtkglarea/download/
 
 MAINTAINER=	jaeger16@yahoo.com
 
+USE_X_PREFIX=	yes
 USE_MESA=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12
