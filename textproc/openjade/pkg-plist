@@ -1,9 +1,4 @@
-bin/onsgmls
 bin/openjade
-bin/osgmlnorm
-bin/ospam
-bin/ospent
-bin/osx
 lib/libogrove.so
 lib/libogrove.so.0
 lib/libospgrove.so
