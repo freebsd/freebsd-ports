@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	bogofilter
-PORTVERSION=	0.92.0
-PORTREVISION=	1
+PORTVERSION=	0.92.1
+PORTREVISION=	0
 CATEGORIES?=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +17,7 @@ COMMENT=	"Fast, teachable, learning spam detector"
 
 LIB_DEPENDS?=	db-4.2:${PORTSDIR}/databases/db42
 .if !defined(WITHOUT_GSL)
-LIB_DEPENDS+=	gsl.5:${PORTSDIR}/math/gsl
+LIB_DEPENDS+=	gsl.6:${PORTSDIR}/math/gsl
 .endif
 .if !defined(WITHOUT_BASH)
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
