@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	sdl_image
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_image/release/
 DISTNAME=	SDL_image-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	SDL-1.1.3:${PORTSDIR}/devel/sdl12 \
+LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
