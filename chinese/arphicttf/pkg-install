@@ -13,7 +13,7 @@ FONTS="bkai00mp.ttf bsmi00lp.ttf gbsn00lp.ttf gkai00mp.ttf"
 DEFAULTMING="bsmi00lp.ttf gbsn00lp.ttf"
 DEFAULTKAI="bkai00mp.ttf gkai00mp.ttf"
 
-[ "X$XTT" = "X" ] && XTT=YES
+[ "X$WANT_X" = "X" ] && WANT_X=YES
 
 if [ ! -x $TTFM ]; then
     echo "$TTFM not found!"
@@ -22,11 +22,11 @@ fi
 
 rm -f $FONTDIR/$PKGNAME
 
-if [ "$CJK" = "YES" -o "$CJK" = "yes" ]; then
+if [ "$WANT_CJK" = "YES" -o "$WANT_CJK" = "yes" ]; then
     # There's no CJK module now.
 fi
 
-if [ "$GS6" = "YES" -o "$GS6" = "yes" ]; then
+if [ "$WANT_GS6" = "YES" -o "$WANT_GS6" = "yes" ]; then
     for f in $FONTS; do
         $TTFM --add ghostscript6 $FONTDIR/$f
     done
@@ -39,7 +39,7 @@ if [ "$GS6" = "YES" -o "$GS6" = "yes" ]; then
     echo "ghostscript6" >> $FONTDIR/$PKGNAME
 fi
 
-if [ "$XTT" = "YES" -o "$XTT" = "yes" ]; then
+if [ "$WANT_X" = "YES" -o "$WANT_X" = "yes" ]; then
     for f in $FONTS; do
         $TTFM --add xttfm $FONTDIR/$f
     done
