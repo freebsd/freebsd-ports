@@ -9,10 +9,7 @@ PORTNAME=	staroffice
 PORTVERSION=	5.1a
 CATEGORIES=	editors linux
 MASTER_SITES=	http://afug.hypermart.net/files/ \
-		http://www.hagenhomes.com/freebsd/files/  \
-		ftp://ftp.stat.duke.edu/pub/Users/sto/StarOffice51a/  \
-		ftp://ftp.stardivision.de/pub/support/so51a/nwspatch/unxlnxi/  \
-		ftp://ftp.stardivision.de/pub/support/so51a/db/unxlnxi/
+		ftp://ftp.stat.duke.edu/pub/Users/sto/StarOffice51a/
 DISTNAME=	so51a_lnx_01
 EXTRACT_SUFX=	.tar
 DISTFILES=	applicat.rdb.gz libofa517li.so libsdb517li.so
