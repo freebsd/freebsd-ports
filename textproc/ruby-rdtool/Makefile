@@ -79,5 +79,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/ruby/rd/ja/
 .endfor
 .endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
