@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	treeline
-PORTVERSION=	0.10.2
+PORTVERSION=	0.11.0
 CATEGORIES=	deskutils python
 MASTER_SITES=	http://www.bellz.org/treeline/ \
 		http://depot.fsck.ch/mirror/distfiles/
@@ -33,7 +33,7 @@ LIB_DEPENDS+=	expat.5:${PORTSDIR}/textproc/expat2
 
 WRKSRC=		${WRKDIR}/TreeLine
 USE_QT_VER=	3
-USE_PYTHON=	yes
+USE_PYTHON=	2.3+
 NO_BUILD=	yes
 
 pre-everything::
@@ -47,10 +47,12 @@ pre-everything::
 	@${ECHO_MSG} ""
 
 do-install:
-	@cd ${WRKSRC} && ${PYTHON_CMD} install.py -p ${PREFIX} -x
+	@cd ${WRKSRC} && ${PYTHON_CMD} install.py \
+	-p ${PREFIX} -d ${DOCSDIR} -i ${DATADIR}/icons -x
 
 post-install:
 	${RM} ${DOCSDIR}/INSTALL ${DOCSDIR}/LICENSE
+	${RM} ${PREFIX}/lib/${PORTNAME}/uninstall.py*
 .if defined(NOPORTDOCS)
 	${RM} ${DOCSDIR}/*
 	${RMDIR} ${DOCSDIR}

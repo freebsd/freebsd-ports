@@ -1,12 +1,8 @@
 bin/treeline
 lib/treeline/cmdline.py
 lib/treeline/cmdline.pyc
-lib/treeline/docparam.py
-lib/treeline/docparam.pyc
 lib/treeline/fieldformat.py
 lib/treeline/fieldformat.pyc
-lib/treeline/formatlist.py
-lib/treeline/formatlist.pyc
 lib/treeline/genboolean.py
 lib/treeline/genboolean.pyc
 lib/treeline/gendate.py
@@ -15,12 +11,20 @@ lib/treeline/gennumber.py
 lib/treeline/gennumber.pyc
 lib/treeline/gentime.py
 lib/treeline/gentime.pyc
+lib/treeline/globalref.py
+lib/treeline/globalref.pyc
 lib/treeline/helpview.py
 lib/treeline/helpview.pyc
+lib/treeline/icondict.py
+lib/treeline/icondict.pyc
+lib/treeline/nodeformat.py
+lib/treeline/nodeformat.pyc
 lib/treeline/numbering.py
 lib/treeline/numbering.pyc
 lib/treeline/option.py
 lib/treeline/option.pyc
+lib/treeline/optiondefaults.py
+lib/treeline/optiondefaults.pyc
 lib/treeline/optiondlg.py
 lib/treeline/optiondlg.pyc
 lib/treeline/output.py
@@ -45,8 +49,8 @@ lib/treeline/treedialogs.py
 lib/treeline/treedialogs.pyc
 lib/treeline/treedoc.py
 lib/treeline/treedoc.pyc
-lib/treeline/treeformat.py
-lib/treeline/treeformat.pyc
+lib/treeline/treeformats.py
+lib/treeline/treeformats.pyc
 lib/treeline/treeitem.py
 lib/treeline/treeitem.pyc
 lib/treeline/treeline.py
@@ -55,16 +59,20 @@ lib/treeline/treemainwin.py
 lib/treeline/treemainwin.pyc
 lib/treeline/treerightviews.py
 lib/treeline/treerightviews.pyc
+lib/treeline/treeselection.py
+lib/treeline/treeselection.pyc
 lib/treeline/treestates.py
 lib/treeline/treestates.pyc
 lib/treeline/treeview.py
 lib/treeline/treeview.pyc
+lib/treeline/treexmlparse.py
+lib/treeline/treexmlparse.pyc
 lib/treeline/undo.py
 lib/treeline/undo.pyc
-lib/treeline/uninstall.py
-lib/treeline/uninstall.pyc
 lib/treeline/xpm.py
 lib/treeline/xpm.pyc
+%%DATADIR%%/icons/treeline_lg.png
+%%DATADIR%%/icons/treeline_sm.png
 %%PORTDOCS%%%%DOCSDIR%%/README.html
 %%PORTDOCS%%%%DOCSDIR%%/readme.trl
 %%PORTDOCS%%%%DOCSDIR%%/sample_basic.trl
@@ -75,4 +83,6 @@ lib/treeline/xpm.pyc
 %%PORTDOCS%%%%DOCSDIR%%/sample_table.trl
 @dirrm lib/treeline/plugins
 @dirrm lib/treeline
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
