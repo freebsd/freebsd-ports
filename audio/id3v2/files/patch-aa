@@ -1,18 +1,21 @@
---- Makefile.orig	Thu Apr  6 17:23:27 2000
-+++ Makefile	Wed Oct 10 16:59:49 2001
-@@ -1,7 +1,12 @@
-+PREFIX = /usr/local
-+CXXFLAGS += -I${PREFIX}/include
-+LDFLAGS += -L${PREFIX}/lib
-+
- all: id3v2
+--- Makefile.orig	Tue Apr 16 04:35:31 2002
++++ Makefile	Sun Dec 22 03:51:30 2002
+@@ -1,10 +1,9 @@
+-all: id3v2
++CC=	c++
++PROG=	id3v2
++SRCS=	id3v2.cpp list.cpp convert.cpp
++CXXFLAGS+=	-I${DESTDIR}${PREFIX}/include
++LDADD+=	-L${DESTDIR}${PREFIX}/lib -lid3 -lz -lgnugetopt
++DPADD+=	${LIBZ}
++DPADD+=	${DESTDIR}${PREFIX}/lib/libid3.a
  
 -id3v2: Makefile convert.cpp list.cpp id3v2.cpp convert.cpp
--	g++ -lid3 -g -o id3v2 id3v2.cpp list.cpp convert.cpp
-+id3v2: convert.o list.o id3v2.o
-+	g++ ${LDFLAGS} -lid3 -lz -lgnugetopt -o $@ convert.o list.o id3v2.o
- 
- install: all
+-	g++ -lz -lid3 -g -o id3v2 id3v2.cpp list.cpp convert.cpp
+-
+-install: all
 -	cp id3v2 /usr/local/bin/
-+	install -c -s id3v2 ${PREFIX}/bin/id3v2
-+	nroff -man id3v2.1 > ${PREFIX}/man/man1/id3v2.1
+-
+-clean:
+-	rm -f id3v2 core
++.include <bsd.prog.mk>

@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	id3v2
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.7
 CATEGORIES=	audio
-MASTER_SITES=	http://download.sourceforge.net/id3v2/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	id3v2
 
 MAINTAINER=	djm@pix.net
 
-LIB_DEPENDS=	id3:${PORTSDIR}/audio/id3lib gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+LIB_DEPENDS=	id3-3.8.2:${PORTSDIR}/audio/id3lib \
+		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 MAN1=		id3v2.1
 

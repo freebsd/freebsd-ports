@@ -1,0 +1,13 @@
+--- Makefile.in.orig	Fri Dec  6 10:37:42 2002
++++ Makefile.in	Fri Dec  6 10:38:10 2002
+@@ -132,8 +132,8 @@
+ @ID3_NEEDZLIB_TRUE@zlib_subdir = zlib
+ @ID3_NEEDZLIB_FALSE@zlib_subdir = 
+ 
+-SUBDIRS = . m4 $(zlib_subdir) doc include id3com src examples
+-DIST_SUBDIRS = . m4 zlib doc include id3com src examples prj libprj
++SUBDIRS = . m4 doc include id3com src examples
++DIST_SUBDIRS = . m4 doc include id3com src examples prj libprj
+ 
+ INCLUDES = @ID3LIB_DEBUG_FLAGS@
+ 
