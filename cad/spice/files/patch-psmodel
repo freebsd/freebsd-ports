@@ -1,0 +1,2749 @@
+#  spice3f4/3f5 patch to add level 2 JFET model
+#  June 22, 1994
+#  Anthony Parker (tonyp@mpce.mq.edu.au)
+#  Macquarie University, Sydney Australia 2109 
+#
+diff -ruN ../work.orig/conf/defaults ./conf/defaults
+--- ../work.orig/conf/defaults	Thu Jul 29 16:33:56 1993
++++ ./conf/defaults	Sun May 18 13:46:47 2003
+@@ -246,6 +246,7 @@
+ #		ind:	inductor
+ #		isrc:	current source
+ #		jfet:	Junction FET
++#		jfet2:	PS Model Junction FET/MESFET
+ #		mes:	MES FET (GaAs)
+ #		mos1:	MOS, simplest analytic model
+ #		mos2:	MOS, simplest
+@@ -260,7 +261,7 @@
+ #		vsrc:	voltage source
+ 
+ DEVICES		= asrc bjt bsim1 bsim2 cap cccs ccvs csw dio ind isrc \
+-		  jfet ltra mes mos1 mos2 mos3 mos6 res sw tra urc \
++		  jfet jfet2 ltra mes mos1 mos2 mos3 mos6 res sw tra urc \
+ 		  vccs vcvs vsrc
+ 
+ #	ANALYSES list the analysis types that you want to have available in
+diff -ruN ../work.orig/src/bin/config.c ./src/bin/config.c
+--- ../work.orig/src/bin/config.c	Thu Jul 29 16:36:49 1993
++++ ./src/bin/config.c	Sun May 18 13:46:47 2003
+@@ -71,6 +71,7 @@
+ #include "mos2itf.h"
+ #include "mos3itf.h"
+ #include "jfetitf.h"
++#include "jfet2itf.h"
+ #include "mesitf.h"
+ #include "ltraitf.h"
+ #include "traitf.h"
+@@ -103,6 +104,7 @@
+ #include "mos2/mos2itf.h"
+ #include "mos3/mos3itf.h"
+ #include "jfet/jfetitf.h"
++#include "jfet2/jfet2itf.h"
+ #include "mes/mesitf.h"
+ #include "ltra/ltraitf.h"
+ #include "tra/traitf.h"
+@@ -207,6 +209,9 @@
+ #endif
+ #ifdef DEV_jfet
+         &JFETinfo,
++#endif
++#ifdef DEV_jfet2
++        &JFET2info,
+ #endif
+ #ifdef DEV_ltra
+         &LTRAinfo,
+diff -ruN ../work.orig/src/lib/dev/jfet2/jfet2.c ./src/lib/dev/jfet2/jfet2.c
+--- ../work.orig/src/lib/dev/jfet2/jfet2.c	Wed Dec 31 19:00:00 1969
++++ ./src/lib/dev/jfet2/jfet2.c	Tue Jun 21 14:34:34 1994
+@@ -0,0 +1,76 @@
++/**********
++Based on jfet.c 
++Copyright 1990 Regents of the University of California.  All rights reserved.
++Author: 1985 Thomas L. Quarles
++
++Modified to add PS model and new parameter definitions ( Anthony E. Parker )
++   Copyright 1994  Macquarie University, Sydney Australia.
++   10 Feb 1994:  Parameter definitions called from jfetparm.h
++                 Extra state vectors added to JFET2pTable
++**********/
++
++#include "spice.h"
++#include <stdio.h>
++#include "ifsim.h"
++#include "devdefs.h"
++#include "jfet2defs.h"
++#include "suffix.h"
++
++IFparm JFET2pTable[] = { /* device parameters */ 
++ IOPU("off",         JFET2_OFF,            IF_FLAG,   "Device initially off"),
++ IOPAU("ic",         JFET2_IC,             IF_REALVEC,"Initial VDS,VGS vector"),
++ IOPU("area",        JFET2_AREA,           IF_REAL,   "Area factor"),
++ IOPAU("ic-vds",     JFET2_IC_VDS,         IF_REAL,   "Initial D-S voltage"),
++ IOPAU("ic-vgs",     JFET2_IC_VGS,         IF_REAL,   "Initial G-S volrage"),
++ IOPU("temp",        JFET2_TEMP,           IF_REAL,   "Instance temperature"),
++ OPU("drain-node",   JFET2_DRAINNODE,      IF_INTEGER,"Number of drain node"),
++ OPU("gate-node",    JFET2_GATENODE,       IF_INTEGER,"Number of gate node"),
++ OPU("source-node",  JFET2_SOURCENODE,     IF_INTEGER,"Number of source node"),
++ OPU("drain-prime-node", JFET2_DRAINPRIMENODE, IF_INTEGER,"Internal drain node"),
++ OPU("source-prime-node",JFET2_SOURCEPRIMENODE,IF_INTEGER,"Internal source node"),
++ OP("vgs",   JFET2_VGS,  IF_REAL, "Voltage G-S"),
++ OP("vgd",   JFET2_VGD,  IF_REAL, "Voltage G-D"),
++ OP("ig",    JFET2_CG,   IF_REAL, "Current at gate node"),
++ OP("id",    JFET2_CD,   IF_REAL, "Current at drain node"),
++ OP("is",    JFET2_CS,   IF_REAL, "Source current"),
++ OP("igd",   JFET2_CGD,  IF_REAL, "Current G-D"),
++ OP("gm",    JFET2_GM,   IF_REAL, "Transconductance"),
++ OP("gds",   JFET2_GDS,  IF_REAL, "Conductance D-S"),
++ OP("ggs",   JFET2_GGS,  IF_REAL, "Conductance G-S"),
++ OP("ggd",   JFET2_GGD,  IF_REAL, "Conductance G-D"),
++ OPU("qgs",  JFET2_QGS,  IF_REAL, "Charge storage G-S junction"),
++ OPU("qgd",  JFET2_QGD,  IF_REAL, "Charge storage G-D junction"),
++ OPU("cqgs", JFET2_CQGS, IF_REAL, "Capacitance due to charge storage G-S junction"),
++ OPU("cqgd", JFET2_CQGD, IF_REAL, "Capacitance due to charge storage G-D junction"),
++ OPU("p",    JFET2_POWER,IF_REAL, "Power dissipated by the JFET2"),
++ OPU("vtrap",JFET2_VTRAP,IF_REAL, "Quiescent drain feedback potential"),
++ OPU("vpave",JFET2_PAVE, IF_REAL, "Quiescent power dissipation"),
++};
++
++IFparm JFET2mPTable[] = { /* model parameters */
++ OP("type",     JFET2_MOD_TYPE,    IF_STRING, "N-type or P-type JFET2 model"),
++ IOP("njf",     JFET2_MOD_NJF,     IF_FLAG,"N type JFET2 model"),
++ IOP("pjf",     JFET2_MOD_PJF,     IF_FLAG,"P type JFET2 model"),
++ IOPR("vt0",    JFET2_MOD_VTO,     IF_REAL,"Threshold voltage"),
++ IOPR("vbi",    JFET2_MOD_PB,      IF_REAL,"Gate junction potential"),
++#define  PARAM(code,id,flag,ref,default,descrip) IOP(code,id,IF_REAL,descrip),
++#define PARAMA(code,id,flag,ref,default,descrip) IOPA(code,id,IF_REAL,descrip),
++#include "jfet2parm.h"
++
++ OPU("gd", JFET2_MOD_DRAINCONDUCT, IF_REAL,"Drain conductance"),
++ OPU("gs", JFET2_MOD_SOURCECONDUCT,IF_REAL,"Source conductance"),
++ IOPU("tnom",   JFET2_MOD_TNOM,    IF_REAL,"parameter measurement temperature"),
++};
++
++
++char *JFET2names[] = {
++    "Drain",
++    "Gate",
++    "Source"
++};
++
++int	JFET2nSize = NUMELEMS(JFET2names);
++int	JFET2pTSize = NUMELEMS(JFET2pTable);
++int	JFET2mPTSize = NUMELEMS(JFET2mPTable);
++int	JFET2iSize = sizeof(JFET2instance);
++int	JFET2mSize = sizeof(JFET2model);
+diff -ruN ../work.orig/src/lib/dev/jfet2/jfet2acld.c ./src/lib/dev/jfet2/jfet2acld.c
+--- ../work.orig/src/lib/dev/jfet2/jfet2acld.c	Wed Dec 31 19:00:00 1969
++++ ./src/lib/dev/jfet2/jfet2acld.c	Tue Jun 28 08:47:42 1994
+@@ -0,0 +1,91 @@
++/**********
++Based on jfetacld.c
++Copyright 1990 Regents of the University of California.  All rights reserved.
++Author: 1985 Thomas L. Quarles
++
++Modified to add PS model and new parameter definitions ( Anthony E. Parker )
++   Copyright 1994  Macquarie University, Sydney Australia.
++   10 Feb 1994:  New call to PSacload() with matrix loading
++**********/
++
++#include "spice.h"
++#include <stdio.h>
++#include "util.h"
++#include "cktdefs.h"
++#include "jfet2defs.h"
++#include "sperror.h"
++#include "psmodel.h"
++#include "suffix.h"
++
++int
++JFET2acLoad(inModel,ckt)
++    GENmodel *inModel;
++    register CKTcircuit *ckt;
++{
++    register JFET2model *model = (JFET2model*)inModel;
++    register JFET2instance *here;
++    double gdpr;
++    double gspr;
++    double gm;
++    double gds;
++    double ggs;
++    double xgs;
++    double ggd;
++    double xgd;
++    double xgm, xgds, vgd, vgs, cd;
++
++    for( ; model != NULL; model = model->JFET2nextModel ) {
++        
++        for( here = model->JFET2instances; here != NULL; 
++                here = here->JFET2nextInstance) {
++
++
++            gdpr=model->JFET2drainConduct * here->JFET2area;
++            gspr=model->JFET2sourceConduct * here->JFET2area;
++            gm= *(ckt->CKTstate0 + here->JFET2gm) ;
++            gds= *(ckt->CKTstate0 + here->JFET2gds) ;
++            ggs= *(ckt->CKTstate0 + here->JFET2ggs) ;
++            xgs= *(ckt->CKTstate0 + here->JFET2qgs) * ckt->CKTomega ;
++            ggd= *(ckt->CKTstate0 + here->JFET2ggd) ;
++            xgd= *(ckt->CKTstate0 + here->JFET2qgd) * ckt->CKTomega ;
++
++            vgs = *(ckt->CKTstate0 + here->JFET2vgs);
++            vgd = *(ckt->CKTstate0 + here->JFET2vgd);
++            cd = *(ckt->CKTstate0 + here->JFET2cd);
++            PSacload(ckt,model, here, vgs, vgd, cd, ckt->CKTomega,
++                                      &gm, &xgm, &gds, &xgds);
++            xgds += *(ckt->CKTstate0 + here->JFET2qds) * ckt->CKTomega ;
++            *(here->JFET2drainPrimeDrainPrimePtr +1)   += xgds;
++            *(here->JFET2sourcePrimeSourcePrimePtr +1) += xgds+xgm;
++            *(here->JFET2drainPrimeGatePtr +1)         +=      xgm;
++            *(here->JFET2drainPrimeSourcePrimePtr +1)  -= xgds+xgm;
++            *(here->JFET2sourcePrimeGatePtr +1)        -=      xgm;
++            *(here->JFET2sourcePrimeDrainPrimePtr +1)  -= xgds;
++
++            *(here->JFET2drainDrainPtr ) += gdpr;
++            *(here->JFET2gateGatePtr ) += ggd+ggs;
++            *(here->JFET2gateGatePtr +1) += xgd+xgs;
++            *(here->JFET2sourceSourcePtr ) += gspr;
++            *(here->JFET2drainPrimeDrainPrimePtr ) += gdpr+gds+ggd;
++            *(here->JFET2drainPrimeDrainPrimePtr +1) += xgd;
++            *(here->JFET2sourcePrimeSourcePrimePtr ) += gspr+gds+gm+ggs;
++            *(here->JFET2sourcePrimeSourcePrimePtr +1) += xgs;
++            *(here->JFET2drainDrainPrimePtr ) -= gdpr;
++            *(here->JFET2gateDrainPrimePtr ) -= ggd;
++            *(here->JFET2gateDrainPrimePtr +1) -= xgd;
++            *(here->JFET2gateSourcePrimePtr ) -= ggs;
++            *(here->JFET2gateSourcePrimePtr +1) -= xgs;
++            *(here->JFET2sourceSourcePrimePtr ) -= gspr;
++            *(here->JFET2drainPrimeDrainPtr ) -= gdpr;
++            *(here->JFET2drainPrimeGatePtr ) += (-ggd+gm);
++            *(here->JFET2drainPrimeGatePtr +1) -= xgd;
++            *(here->JFET2drainPrimeSourcePrimePtr ) += (-gds-gm);
++            *(here->JFET2sourcePrimeGatePtr ) += (-ggs-gm);
++            *(here->JFET2sourcePrimeGatePtr +1) -= xgs;
++            *(here->JFET2sourcePrimeSourcePtr ) -= gspr;
++            *(here->JFET2sourcePrimeDrainPrimePtr ) -= gds;
++
++        }
++    }
++    return(OK);
++}
+diff -ruN ../work.orig/src/lib/dev/jfet2/jfet2ask.c ./src/lib/dev/jfet2/jfet2ask.c
+--- ../work.orig/src/lib/dev/jfet2/jfet2ask.c	Wed Dec 31 19:00:00 1969
++++ ./src/lib/dev/jfet2/jfet2ask.c	Tue Jun 21 14:34:41 1994
+@@ -0,0 +1,142 @@
++/**********
++Based on jfetask.c
++Copyright 1990 Regents of the University of California.  All rights reserved.
++Author: 1987 Mathew Lew and Thomas L. Quarles
++
++Modified to add PS model and new parameter definitions ( Anthony E. Parker )
++   Copyright 1994  Macquarie University, Sydney Australia.
++   10 Feb 1994:   JFET2vtrap and JFET2pave added
++**********/
++
++#include "spice.h"
++#include <stdio.h>
++#include "const.h"
++#include "ifsim.h"
++#include "cktdefs.h"
++#include "devdefs.h"
++#include "jfet2defs.h"
++#include "sperror.h"
++#include "util.h"
++#include "suffix.h"
++
++
++/*ARGSUSED*/
++int
++JFET2ask(ckt,inst,which,value,select)
++    CKTcircuit *ckt;
++    GENinstance *inst;
++    int which;
++    IFvalue *value;
++    IFvalue *select;
++{
++    JFET2instance *here = (JFET2instance*)inst;
++    static char *msg = "Current and power not available for ac analysis";
++    switch(which) {
++        case JFET2_TEMP:
++            value->rValue = here->JFET2temp-CONSTCtoK;
++            return(OK);
++        case JFET2_AREA:
++            value->rValue = here->JFET2area;
++            return(OK);
++        case JFET2_IC_VDS:
++            value->rValue = here->JFET2icVDS;
++            return(OK);
++        case JFET2_IC_VGS:
++            value->rValue = here->JFET2icVGS;
++            return(OK);
++        case JFET2_OFF:
++            value->iValue = here->JFET2off;
++            return(OK);
++        case JFET2_DRAINNODE:
++            value->iValue = here->JFET2drainNode;
++            return(OK);
++        case JFET2_GATENODE:
++            value->iValue = here->JFET2gateNode;
++            return(OK);
++        case JFET2_SOURCENODE:
++            value->iValue = here->JFET2sourceNode;
++            return(OK);
++        case JFET2_DRAINPRIMENODE:
++            value->iValue = here->JFET2drainPrimeNode;
++            return(OK);
++        case JFET2_SOURCEPRIMENODE:
++            value->iValue = here->JFET2sourcePrimeNode;
++            return(OK);
++        case JFET2_VGS:
++            value->rValue = *(ckt->CKTstate0 + here->JFET2vgs);
++            return(OK);
++        case JFET2_VGD:
++            value->rValue = *(ckt->CKTstate0 + here->JFET2vgd);
++            return(OK);
++        case JFET2_CG:
++            value->rValue = *(ckt->CKTstate0 + here->JFET2cg);
++            return(OK);
++        case JFET2_CD:
++            value->rValue = *(ckt->CKTstate0 + here->JFET2cd);
++            return(OK);
++        case JFET2_CGD:
++            value->rValue = *(ckt->CKTstate0 + here->JFET2cgd);
++            return(OK);
++        case JFET2_GM:
++            value->rValue = *(ckt->CKTstate0 + here->JFET2gm);
++            return(OK);
++        case JFET2_GDS:
++            value->rValue = *(ckt->CKTstate0 + here->JFET2gds);
++            return(OK);
++        case JFET2_GGS:
++            value->rValue = *(ckt->CKTstate0 + here->JFET2ggs);
++            return(OK);
++        case JFET2_GGD:
++            value->rValue = *(ckt->CKTstate0 + here->JFET2ggd);
++            return(OK);
++        case JFET2_QGS:
++            value->rValue = *(ckt->CKTstate0 + here->JFET2qgs);
++            return(OK);
++        case JFET2_CQGS:
++            value->rValue = *(ckt->CKTstate0 + here->JFET2cqgs);
++            return(OK);
++        case JFET2_QGD:
++            value->rValue = *(ckt->CKTstate0 + here->JFET2qgd);
++            return(OK);
++        case JFET2_CQGD:
++            value->rValue = *(ckt->CKTstate0 + here->JFET2cqgd);
++            return(OK);
++        case JFET2_VTRAP:
++            value->rValue = *(ckt->CKTstate0 + here->JFET2vtrap);
++            return(OK);
++        case JFET2_PAVE:
++            value->rValue = *(ckt->CKTstate0 + here->JFET2pave);
++            return(OK);
++        case JFET2_CS :
++            if (ckt->CKTcurrentAnalysis & DOING_AC) {
++                errMsg = MALLOC(strlen(msg)+1);
++                errRtn = "JFET2ask";
++                strcpy(errMsg,msg);
++                return(E_ASKCURRENT);
++            } else {
++                value->rValue = -*(ckt->CKTstate0 + here->JFET2cd);
++                value->rValue -= *(ckt->CKTstate0 + here->JFET2cg);
++            }
++            return(OK);
++        case JFET2_POWER :
++            if (ckt->CKTcurrentAnalysis & DOING_AC) {
++                errMsg = MALLOC(strlen(msg)+1);
++                errRtn = "JFET2ask";
++                strcpy(errMsg,msg);
++                return(E_ASKPOWER);
++            } else {
++                value->rValue = *(ckt->CKTstate0 + here->JFET2cd) *
++                        *(ckt->CKTrhsOld + here->JFET2drainNode);
++                value->rValue += *(ckt->CKTstate0 + here->JFET2cg) * 
++                        *(ckt->CKTrhsOld + here->JFET2gateNode);
++                value->rValue -= (*(ckt->CKTstate0 + here->JFET2cd) +
++                        *(ckt->CKTstate0 + here->JFET2cg)) *
++                *(ckt->CKTrhsOld + here->JFET2sourceNode);
++            }
++            return(OK);
++        default:
++            return(E_BADPARM);
++    }
++    /* NOTREACHED */
++}
++
+diff -ruN ../work.orig/src/lib/dev/jfet2/jfet2defs.h ./src/lib/dev/jfet2/jfet2defs.h
+--- ../work.orig/src/lib/dev/jfet2/jfet2defs.h	Wed Dec 31 19:00:00 1969
++++ ./src/lib/dev/jfet2/jfet2defs.h	Tue Jun 28 08:25:40 1994
+@@ -0,0 +1,253 @@
++/**********
++Based on jfetdefs.h
++Copyright 1990 Regents of the University of California.  All rights reserved.
++Author: 1985 Thomas L. Quarles
++
++Modified to add PS model and new parameter definitions ( Anthony E. Parker )
++   Copyright 1994  Macquarie University, Sydney Australia.
++   10 Feb 1994: Added xiwoo, d3 and alpha to JFET2instance
++                JFET2pave, JFET2vtrap ad JFET2_STATE_COUNT
++                Changed model to call jfetparm.h, added JFET2za to model struct
++                Defined JFET2_VTRAP and JFET2_PAVE
++**********/
++
++#ifndef JFET2
++#define JFET2
++
++#include "ifsim.h"
++#include "gendefs.h"
++#include "cktdefs.h"
++#include "complex.h"
++#include "noisedef.h"
++
++    /* structures used to describe Junction Field Effect Transistors */
++
++
++/* information used to describe a single instance */
++
++typedef struct sJFET2instance {
++    struct sJFET2model *JFET2modPtr;  /* backpointer to model */
++    struct sJFET2instance *JFET2nextInstance; /* pointer to next instance of 
++                                             * current model*/
++    IFuid JFET2name; /* pointer to character string naming this instance */
++    int JFET2state; /* pointer to start of state vector for jfet */
++    int JFET2drainNode;  /* number of drain node of jfet */
++    int JFET2gateNode;   /* number of gate node of jfet */
++    int JFET2sourceNode; /* number of source node of jfet */
++    int JFET2drainPrimeNode; /* number of internal drain node of jfet */
++    int JFET2sourcePrimeNode;    /* number of internal source node of jfet */
++
++    double *JFET2drainDrainPrimePtr; /* pointer to sparse matrix at 
++                                     * (drain,drain prime) */
++    double *JFET2gateDrainPrimePtr;  /* pointer to sparse matrix at 
++                                     * (gate,drain prime) */
++    double *JFET2gateSourcePrimePtr; /* pointer to sparse matrix at 
++                                     * (gate,source prime) */
++    double *JFET2sourceSourcePrimePtr;   /* pointer to sparse matrix at 
++                                         * (source,source prime) */
++    double *JFET2drainPrimeDrainPtr; /* pointer to sparse matrix at 
++                                     * (drain prime,drain) */
++    double *JFET2drainPrimeGatePtr;  /* pointer to sparse matrix at 
++                                     * (drain prime,gate) */
++    double *JFET2drainPrimeSourcePrimePtr;   /* pointer to sparse matrix
++                                             * (drain prime,source prime) */
++    double *JFET2sourcePrimeGatePtr; /* pointer to sparse matrix at 
++                                     * (source prime,gate) */
++    double *JFET2sourcePrimeSourcePtr;   /* pointer to sparse matrix at 
++                                         * (source prime,source) */
++    double *JFET2sourcePrimeDrainPrimePtr;   /* pointer to sparse matrix
++                                             * (source prime,drain prime) */
++    double *JFET2drainDrainPtr;  /* pointer to sparse matrix at 
++                                 * (drain,drain) */
++    double *JFET2gateGatePtr;    /* pointer to sparse matrix at 
++                                 * (gate,gate) */
++    double *JFET2sourceSourcePtr;    /* pointer to sparse matrix at 
++                                     * (source,source) */
++    double *JFET2drainPrimeDrainPrimePtr;    /* pointer to sparse matrix
++                                             * (drain prime,drain prime) */
++    double *JFET2sourcePrimeSourcePrimePtr;  /* pointer to sparse matrix
++                                             * (source prime,source prime) */
++
++	int JFET2mode;
++	/* distortion analysis Taylor coeffs. */
++
++/*
++ * naming convention:
++ * x = vgs
++ * y = vds
++ * cdr = cdrain
++ */
++
++#define JFET2NDCOEFFS	21
++
++#ifndef NODISTO
++	double JFET2dCoeffs[JFET2NDCOEFFS];
++#else /* NODISTO */
++	double *JFET2dCoeffs;
++#endif /* NODISTO */
++
++#ifndef CONFIG
++
++#define	cdr_x		JFET2dCoeffs[0]
++#define	cdr_y		JFET2dCoeffs[1]
++#define	cdr_x2		JFET2dCoeffs[2]
++#define	cdr_y2		JFET2dCoeffs[3]
++#define	cdr_xy		JFET2dCoeffs[4]
++#define	cdr_x3		JFET2dCoeffs[5]
++#define	cdr_y3		JFET2dCoeffs[6]
++#define	cdr_x2y		JFET2dCoeffs[7]
++#define	cdr_xy2		JFET2dCoeffs[8]
++
++#define	ggs1		JFET2dCoeffs[9]
++#define	ggd1		JFET2dCoeffs[10]
++#define	ggs2		JFET2dCoeffs[11]
++#define	ggd2		JFET2dCoeffs[12]
++#define	ggs3		JFET2dCoeffs[13]
++#define	ggd3		JFET2dCoeffs[14]
++#define	capgs1		JFET2dCoeffs[15]
++#define	capgd1		JFET2dCoeffs[16]
++#define	capgs2		JFET2dCoeffs[17]
++#define	capgd2		JFET2dCoeffs[18]
++#define	capgs3		JFET2dCoeffs[19]
++#define	capgd3		JFET2dCoeffs[20]
++
++#endif
++
++/* indices to an array of JFET2 noise sources */
++
++#define JFET2RDNOIZ       0
++#define JFET2RSNOIZ       1
++#define JFET2IDNOIZ       2
++#define JFET2FLNOIZ 3
++#define JFET2TOTNOIZ    4
++
++#define JFET2NSRCS     5
++
++#ifndef NONOISE
++    double JFET2nVar[NSTATVARS][JFET2NSRCS];
++#else /* NONOISE */
++	double **JFET2nVar;
++#endif /* NONOISE */
++
++    unsigned JFET2off :1;            /* 'off' flag for jfet */
++    unsigned JFET2areaGiven  : 1;    /* flag to indicate area was specified */
++    unsigned JFET2icVDSGiven : 1;    /* initial condition given flag for V D-S*/
++    unsigned JFET2icVGSGiven : 1;    /* initial condition given flag for V G-S*/
++    unsigned JFET2tempGiven  : 1;    /* flag to indicate instance temp given */
++
++
++    double JFET2area;    /* area factor for the jfet */
++    double JFET2icVDS;   /* initial condition voltage D-S*/
++    double JFET2icVGS;   /* initial condition voltage G-S*/
++    double JFET2temp;    /* operating temperature */
++    double JFET2tSatCur; /* temperature adjusted saturation current */
++    double JFET2tGatePot;    /* temperature adjusted gate potential */
++    double JFET2tCGS;    /* temperature corrected G-S capacitance */
++    double JFET2tCGD;    /* temperature corrected G-D capacitance */
++    double JFET2corDepCap;   /* joining point of the fwd bias dep. cap eq.s */
++    double JFET2vcrit;   /* critical voltage for the instance */
++    double JFET2f1;      /* coefficient of capacitance polynomial exp */
++    double JFET2xiwoo;       /* velocity saturation potential */
++    double JFET2d3;          /* Dual Power-law parameter */
++    double JFET2alpha;       /* capacitance model transition parameter */
++
++} JFET2instance ;
++
++#define JFET2vgs      JFET2state 
++#define JFET2vgd      JFET2state+1 
++#define JFET2cg       JFET2state+2 
++#define JFET2cd       JFET2state+3 
++#define JFET2cgd      JFET2state+4 
++#define JFET2gm       JFET2state+5 
++#define JFET2gds      JFET2state+6 
++#define JFET2ggs      JFET2state+7 
++#define JFET2ggd      JFET2state+8 
++#define JFET2qgs      JFET2state+9 
++#define JFET2cqgs     JFET2state+10 
++#define JFET2qgd      JFET2state+11 
++#define JFET2cqgd     JFET2state+12 
++#define JFET2qds      JFET2state+13
++#define JFET2cqds     JFET2state+14
++#define JFET2pave     JFET2state+15
++#define JFET2vtrap    JFET2state+16
++#define JFET2vgstrap  JFET2state+17
++#define JFET2_STATE_COUNT    18
++
++/* per model data */
++
++typedef struct sJFET2model {       /* model structure for a jfet */
++    int JFET2modType;    /* type index of this device type */
++    struct sJFET2model *JFET2nextModel;   /* pointer to next possible model in 
++                                         * linked list */
++    JFET2instance * JFET2instances; /* pointer to list of instances 
++                                   * that have this model */
++    IFuid JFET2modName; /* pointer to character string naming this model */
++    int JFET2type;
++
++#define  PARAM(code,id,flag,ref,default,descrip) double ref;
++#include "jfet2parm.h"
++
++    double JFET2drainConduct;
++    double JFET2sourceConduct;
++    double JFET2f2;
++    double JFET2f3;
++    double JFET2za;      /* saturation index parameter */
++    double JFET2tnom;    /* temperature at which parameters were measured */
++
++#define  PARAM(code,id,flag,ref,default,descrip) unsigned flag : 1;
++#include "jfet2parm.h"
++    unsigned JFET2tnomGiven : 1; /* user specified Tnom for model */
++
++} JFET2model;
++
++#ifndef NJF
++
++#define NJF 1
++#define PJF -1
++
++#endif /*NJF*/
++
++/* device parameters */
++#define JFET2_AREA 1
++#define JFET2_IC_VDS 2
++#define JFET2_IC_VGS 3
++#define JFET2_IC 4
++#define JFET2_OFF 5
++#define JFET2_TEMP 6
++
++/* device questions */
++#define JFET2_DRAINNODE        301
++#define JFET2_GATENODE         302
++#define JFET2_SOURCENODE       303
++#define JFET2_DRAINPRIMENODE   304
++#define JFET2_SOURCEPRIMENODE  305
++#define JFET2_VGS              306
++#define JFET2_VGD              307
++#define JFET2_CG               308
++#define JFET2_CD               309
++#define JFET2_CGD              310
++#define JFET2_GM               311
++#define JFET2_GDS              312
++#define JFET2_GGS              313
++#define JFET2_GGD              314
++#define JFET2_QGS              315
++#define JFET2_CQGS             316
++#define JFET2_QGD              317
++#define JFET2_CQGD             318
++#define JFET2_CS               319
++#define JFET2_POWER            320
++#define JFET2_VTRAP            321
++#define JFET2_PAVE             322
++
++/* model questions */
++#define JFET2_MOD_DRAINCONDUCT   301
++#define JFET2_MOD_SOURCECONDUCT  302
++#define JFET2_MOD_DEPLETIONCAP   303
++#define JFET2_MOD_VCRIT          304
++#define JFET2_MOD_TYPE           305
++
++/* function definitions */
++
++#include "jfet2ext.h"
++
++#endif /*JFET2*/
+diff -ruN ../work.orig/src/lib/dev/jfet2/jfet2del.c ./src/lib/dev/jfet2/jfet2del.c
+--- ../work.orig/src/lib/dev/jfet2/jfet2del.c	Wed Dec 31 19:00:00 1969
++++ ./src/lib/dev/jfet2/jfet2del.c	Tue Jun 21 14:34:48 1994
+@@ -0,0 +1,41 @@
++/**********
++Based on jfetdel.c
++Copyright 1990 Regents of the University of California.  All rights reserved.
++Author: 1985 Thomas L. Quarles
++
++Modified to jfet2 for PS model definition ( Anthony E. Parker )
++   Copyright 1994  Macquarie University, Sydney Australia.
++**********/
++
++#include "spice.h"
++#include <stdio.h>
++#include "util.h"
++#include "jfet2defs.h"
++#include "sperror.h"
++#include "suffix.h"
++
++
++int
++JFET2delete(inModel,name,inst)
++    GENmodel *inModel;
++    IFuid name;
++    GENinstance **inst;
++{
++    JFET2model *model = (JFET2model*)inModel;
++    JFET2instance **fast = (JFET2instance**)inst;
++    JFET2instance **prev = NULL;
++    JFET2instance *here;
++
++    for( ; model ; model = model->JFET2nextModel) {
++        prev = &(model->JFET2instances);
++        for(here = *prev; here ; here = *prev) {
++            if(here->JFET2name == name || (fast && here==*fast) ) {
++                *prev= here->JFET2nextInstance;
++                FREE(here);
++                return(OK);
++            }
++            prev = &(here->JFET2nextInstance);
++        }
++    }
++    return(E_NODEV);
++}
+diff -ruN ../work.orig/src/lib/dev/jfet2/jfet2dest.c ./src/lib/dev/jfet2/jfet2dest.c
+--- ../work.orig/src/lib/dev/jfet2/jfet2dest.c	Wed Dec 31 19:00:00 1969
++++ ./src/lib/dev/jfet2/jfet2dest.c	Tue Jun 21 14:34:51 1994
+@@ -0,0 +1,41 @@
++/**********
++Based on jfetdest.c
++Copyright 1990 Regents of the University of California.  All rights reserved.
++Author: 1985 Thomas L. Quarles
++
++Modified to jfet2 for PS model definition ( Anthony E. Parker )
++   Copyright 1994  Macquarie University, Sydney Australia.
++**********/
++/*
++ */
++
++#include "spice.h"
++#include <stdio.h>
++#include "util.h"
++#include "jfet2defs.h"
++#include "suffix.h"
++
++
++void
++JFET2destroy(inModel)
++    GENmodel **inModel;
++{
++    JFET2model **model = (JFET2model**)inModel;
++    JFET2instance *here;
++    JFET2instance *prev = NULL;
++    JFET2model *mod = *model;
++    JFET2model *oldmod = NULL;
++
++    for( ; mod ; mod = mod->JFET2nextModel) {
++        if(oldmod) FREE(oldmod);
++        oldmod = mod;
++        prev = (JFET2instance *)NULL;
++        for(here = mod->JFET2instances ; here ; here = here->JFET2nextInstance) {
++            if(prev) FREE(prev);
++            prev = here;
++        }
++        if(prev) FREE(prev);
++    }
++    if(oldmod) FREE(oldmod);
++    *model = NULL;
++}
+diff -ruN ../work.orig/src/lib/dev/jfet2/jfet2ext.h ./src/lib/dev/jfet2/jfet2ext.h
+--- ../work.orig/src/lib/dev/jfet2/jfet2ext.h	Wed Dec 31 19:00:00 1969
++++ ./src/lib/dev/jfet2/jfet2ext.h	Tue Jun 21 14:34:54 1994
+@@ -0,0 +1,43 @@
++/**********
++Based on jfetext.h
++Copyright 1990 Regents of the University of California.  All rights reserved.
++Author: 1985 Thomas L. Quarles
++
++Modified to add PS model and new parameter definitions ( Anthony E. Parker )
++   Copyright 1994  Macquarie University, Sydney Australia.
++**********/
++
++#ifdef __STDC__
++extern int JFET2acLoad(GENmodel*,CKTcircuit*);
++extern int JFET2ask(CKTcircuit*,GENinstance*,int,IFvalue*,IFvalue*);
++extern int JFET2delete(GENmodel*,IFuid,GENinstance**);
++extern void JFET2destroy(GENmodel**);
++extern int JFET2getic(GENmodel*,CKTcircuit*);
++extern int JFET2load(GENmodel*,CKTcircuit*);
++extern int JFET2mAsk(CKTcircuit*,GENmodel*,int,IFvalue*);
++extern int JFET2mDelete(GENmodel**,IFuid,GENmodel*);
++extern int JFET2mParam(int,IFvalue*,GENmodel*);
++extern int JFET2param(int,IFvalue*,GENinstance*,IFvalue*);
++extern int JFET2setup(SMPmatrix*,GENmodel*,CKTcircuit*,int*);
++extern int JFET2unsetup(GENmodel*,CKTcircuit*);
++extern int JFET2temp(GENmodel*,CKTcircuit*);
++extern int JFET2trunc(GENmodel*,CKTcircuit*,double*);
++extern int JFET2noise(int,int,GENmodel*,CKTcircuit*,Ndata*,double*);
++
++#else /* stdc */
++extern int JFET2acLoad();
++extern int JFET2ask();
++extern int JFET2delete();
++extern void JFET2destroy();
++extern int JFET2getic();
++extern int JFET2load();
++extern int JFET2mAsk();
++extern int JFET2mDelete();
++extern int JFET2mParam();
++extern int JFET2param();
++extern int JFET2setup();
++extern int JFET2unsetup();
++extern int JFET2temp();
++extern int JFET2trunc();
++extern int JFET2noise();
++#endif /* stdc */
+diff -ruN ../work.orig/src/lib/dev/jfet2/jfet2ic.c ./src/lib/dev/jfet2/jfet2ic.c
+--- ../work.orig/src/lib/dev/jfet2/jfet2ic.c	Wed Dec 31 19:00:00 1969
++++ ./src/lib/dev/jfet2/jfet2ic.c	Tue Jun 21 14:34:57 1994
+@@ -0,0 +1,47 @@
++/**********
++Based on jfetic.c
++Copyright 1990 Regents of the University of California.  All rights reserved.
++Author: 1985 Thomas L. Quarles
++
++Modified to jfet2 for PS model definition ( Anthony E. Parker )
++   Copyright 1994  Macquarie University, Sydney Australia.
++**********/
++/*
++ */
++
++#include "spice.h"
++#include <stdio.h>
++#include "cktdefs.h"
++#include "jfet2defs.h"
++#include "sperror.h"
++#include "suffix.h"
++
++
++int
++JFET2getic(inModel,ckt)
++    GENmodel *inModel;
++    CKTcircuit *ckt;
++{
++    JFET2model *model = (JFET2model*)inModel;
++    JFET2instance *here;
++    /*
++     * grab initial conditions out of rhs array.   User specified, so use
++     * external nodes to get values
++     */
++
++    for( ; model ; model = model->JFET2nextModel) {
++        for(here = model->JFET2instances; here ; here = here->JFET2nextInstance) {
++            if(!here->JFET2icVDSGiven) {
++                here->JFET2icVDS = 
++                        *(ckt->CKTrhs + here->JFET2drainNode) - 
++                        *(ckt->CKTrhs + here->JFET2sourceNode);
++            }
++            if(!here->JFET2icVGSGiven) {
++                here->JFET2icVGS = 
++                        *(ckt->CKTrhs + here->JFET2gateNode) - 
++                        *(ckt->CKTrhs + here->JFET2sourceNode);
++            }
++        }
++    }
++    return(OK);
++}
+diff -ruN ../work.orig/src/lib/dev/jfet2/jfet2itf.h ./src/lib/dev/jfet2/jfet2itf.h
+--- ../work.orig/src/lib/dev/jfet2/jfet2itf.h	Wed Dec 31 19:00:00 1969
++++ ./src/lib/dev/jfet2/jfet2itf.h	Tue Jun 21 14:35:01 1994
+@@ -0,0 +1,85 @@
++/**********
++Based on jfetitf.h
++Copyright 1990 Regents of the University of California.  All rights reserved.
++
++Modified to add PS model and new parameter definitions ( Anthony E. Parker )
++   Copyright 1994  Macquarie University, Sydney Australia.
++   pz and disto not supported
++**********/
++#ifdef DEV_jfet2
++
++#ifndef DEV_JFET2
++#define DEV_JFET2
++
++#include "jfet2ext.h"
++extern IFparm JFET2pTable[ ];
++extern IFparm JFET2mPTable[ ];
++extern char *JFET2names[ ];
++extern int JFET2pTSize;
++extern int JFET2mPTSize;
++extern int JFET2nSize;
++extern int JFET2iSize;
++extern int JFET2mSize;
++
++SPICEdev JFET2info = {
++    {
++        "JFET2",
++        "Short channel field effect transistor",
++
++        &JFET2nSize,
++        &JFET2nSize,
++        JFET2names,
++
++        &JFET2pTSize,
++        JFET2pTable,
++
++        &JFET2mPTSize,
++        JFET2mPTable,
++	DEV_DEFAULT
++    },
++
++    JFET2param,
++    JFET2mParam,
++    JFET2load,
++    JFET2setup,
++    JFET2unsetup,
++    JFET2setup,
++    JFET2temp,
++    JFET2trunc,
++    NULL,
++    JFET2acLoad,
++    NULL,
++    JFET2destroy,
++#ifdef DELETES
++    JFET2mDelete,
++    JFET2delete,
++#else /* DELETES */
++    NULL,
++    NULL,
++#endif /* DELETES */
++    JFET2getic,
++    JFET2ask,
++    JFET2mAsk,
++    NULL, /* AN_pz */
++    NULL,
++    NULL,
++    NULL,
++    NULL,
++    NULL,
++    NULL,
++    NULL,
++    NULL, /* AN_disto */
++#ifdef AN_noise
++    JFET2noise,
++#else	/* AN_noise */
++    NULL,
++#endif	/* AN_noise */
++
++    &JFET2iSize,
++    &JFET2mSize
++
++};
++
++
++#endif
++#endif
+diff -ruN ../work.orig/src/lib/dev/jfet2/jfet2load.c ./src/lib/dev/jfet2/jfet2load.c
+--- ../work.orig/src/lib/dev/jfet2/jfet2load.c	Wed Dec 31 19:00:00 1969
++++ ./src/lib/dev/jfet2/jfet2load.c	Tue Jun 28 09:10:44 1994
+@@ -0,0 +1,337 @@
++/**********
++Based on jfetload.c
++Copyright 1990 Regents of the University of California.  All rights reserved.
++Author: 1985 Thomas L. Quarles
++
++Modified to add PS model and new parameter definitions ( Anthony E. Parker )
++   Copyright 1994  Macquarie University, Sydney Australia.
++   10 Feb 1994:  New code added to call psmodel.c routines
++**********/
++
++#include "spice.h"
++#include <stdio.h>
++#include "util.h"
++#include "cktdefs.h"
++#include "jfet2defs.h"
++#include "const.h"
++#include "trandefs.h"
++#include "sperror.h"
++#include "devdefs.h"
++#include "psmodel.h"
++#include "suffix.h"
++
++int
++JFET2load(inModel,ckt)
++    GENmodel *inModel;
++    CKTcircuit *ckt;
++        /* actually load the current resistance value into the 
++         * sparse matrix previously provided 
++         */
++{
++    register JFET2model *model = (JFET2model*)inModel;
++    register JFET2instance *here;
++    double capgd;
++    double capgs;
++    double cd;
++    double cdhat;
++    double cdreq;
++    double ceq;
++    double ceqgd;
++    double ceqgs;
++    double cg;
++    double cgd;
++    double cghat;
++    double czgd;
++    double czgdf2;
++    double czgs;
++    double czgsf2;
++    double delvds;
++    double delvgd;
++    double delvgs;
++    double fcpb2;
++    double gdpr;
++    double gds;
++    double geq;
++    double ggd;
++    double ggs;
++    double gm;
++    double gspr;
++    double sarg;
++    double twop;
++    double vds;
++    double vgd;
++    double vgs;
++    double xfact;
++    int icheck;
++    int ichk1;
++    int error;
++
++    /*  loop through all the models */
++    for( ; model != NULL; model = model->JFET2nextModel ) {
++
++        /* loop through all the instances of the model */
++        for (here = model->JFET2instances; here != NULL ;
++                here=here->JFET2nextInstance) {
++
++            /*
++             *  dc model parameters 
++             */
++            gdpr=model->JFET2drainConduct*here->JFET2area;
++            gspr=model->JFET2sourceConduct*here->JFET2area;
++            /*
++             *    initialization
++             */
++            icheck=1;
++            if( ckt->CKTmode & MODEINITSMSIG) {
++                vgs= *(ckt->CKTstate0 + here->JFET2vgs);
++                vgd= *(ckt->CKTstate0 + here->JFET2vgd);
++            } else if (ckt->CKTmode & MODEINITTRAN) {
++                vgs= *(ckt->CKTstate1 + here->JFET2vgs);
++                vgd= *(ckt->CKTstate1 + here->JFET2vgd);
++            } else if ( (ckt->CKTmode & MODEINITJCT) &&
++                    (ckt->CKTmode & MODETRANOP) &&
++                    (ckt->CKTmode & MODEUIC) ) {
++                vds=model->JFET2type*here->JFET2icVDS;
++                vgs=model->JFET2type*here->JFET2icVGS;
++                vgd=vgs-vds;
++            } else if ( (ckt->CKTmode & MODEINITJCT) &&
++                    (here->JFET2off == 0)  ) {
++                vgs = -1;
++                vgd = -1;
++            } else if( (ckt->CKTmode & MODEINITJCT) ||
++                    ((ckt->CKTmode & MODEINITFIX) && (here->JFET2off))) {
++                vgs = 0;
++                vgd = 0;
++            } else {
++#ifndef PREDICTOR
++                if(ckt->CKTmode & MODEINITPRED) {
++                    xfact=ckt->CKTdelta/ckt->CKTdeltaOld[1];
++                    *(ckt->CKTstate0 + here->JFET2vgs)= 
++                            *(ckt->CKTstate1 + here->JFET2vgs);
++                    vgs=(1+xfact)* *(ckt->CKTstate1 + here->JFET2vgs)-xfact*
++                            *(ckt->CKTstate2 + here->JFET2vgs);
++                    *(ckt->CKTstate0 + here->JFET2vgd)= 
++                            *(ckt->CKTstate1 + here->JFET2vgd);
++                    vgd=(1+xfact)* *(ckt->CKTstate1 + here->JFET2vgd)-xfact*
++                            *(ckt->CKTstate2 + here->JFET2vgd);
++                    *(ckt->CKTstate0 + here->JFET2cg)= 
++                            *(ckt->CKTstate1 + here->JFET2cg);
++                    *(ckt->CKTstate0 + here->JFET2cd)= 
++                            *(ckt->CKTstate1 + here->JFET2cd);
++                    *(ckt->CKTstate0 + here->JFET2cgd)=
++                            *(ckt->CKTstate1 + here->JFET2cgd);
++                    *(ckt->CKTstate0 + here->JFET2gm)=
++                            *(ckt->CKTstate1 + here->JFET2gm);
++                    *(ckt->CKTstate0 + here->JFET2gds)=
++                            *(ckt->CKTstate1 + here->JFET2gds);
++                    *(ckt->CKTstate0 + here->JFET2ggs)=
++                            *(ckt->CKTstate1 + here->JFET2ggs);
++                    *(ckt->CKTstate0 + here->JFET2ggd)=
++                            *(ckt->CKTstate1 + here->JFET2ggd);
++                } else {
++#endif /*PREDICTOR*/
++                    /*
++                     *  compute new nonlinear branch voltages 
++                     */
++                    vgs=model->JFET2type*
++                        (*(ckt->CKTrhsOld+ here->JFET2gateNode)-
++                        *(ckt->CKTrhsOld+ 
++                        here->JFET2sourcePrimeNode));
++                    vgd=model->JFET2type*
++                        (*(ckt->CKTrhsOld+here->JFET2gateNode)-
++                        *(ckt->CKTrhsOld+
++                        here->JFET2drainPrimeNode));
++#ifndef PREDICTOR
++                }
++#endif /*PREDICTOR*/
++                delvgs=vgs- *(ckt->CKTstate0 + here->JFET2vgs);
++                delvgd=vgd- *(ckt->CKTstate0 + here->JFET2vgd);
++                delvds=delvgs-delvgd;
++                cghat= *(ckt->CKTstate0 + here->JFET2cg)+ 
++                        *(ckt->CKTstate0 + here->JFET2ggd)*delvgd+
++                        *(ckt->CKTstate0 + here->JFET2ggs)*delvgs;
++                cdhat= *(ckt->CKTstate0 + here->JFET2cd)+
++                        *(ckt->CKTstate0 + here->JFET2gm)*delvgs+
++                        *(ckt->CKTstate0 + here->JFET2gds)*delvds-
++                        *(ckt->CKTstate0 + here->JFET2ggd)*delvgd;
++                /*
++                 *   bypass if solution has not changed 
++                 */
++                if((ckt->CKTbypass) &&
++                    (!(ckt->CKTmode & MODEINITPRED)) &&
++                    (FABS(delvgs) < ckt->CKTreltol*MAX(FABS(vgs),
++                        FABS(*(ckt->CKTstate0 + here->JFET2vgs)))+
++                        ckt->CKTvoltTol) )
++        if ( (FABS(delvgd) < ckt->CKTreltol*MAX(FABS(vgd),
++                        FABS(*(ckt->CKTstate0 + here->JFET2vgd)))+
++                        ckt->CKTvoltTol))
++        if ( (FABS(cghat-*(ckt->CKTstate0 + here->JFET2cg)) 
++                        < ckt->CKTreltol*MAX(FABS(cghat),
++                        FABS(*(ckt->CKTstate0 + here->JFET2cg)))+
++                        ckt->CKTabstol) ) if ( /* hack - expression too big */
++                    (FABS(cdhat-*(ckt->CKTstate0 + here->JFET2cd))
++                        < ckt->CKTreltol*MAX(FABS(cdhat),
++                        FABS(*(ckt->CKTstate0 + here->JFET2cd)))+
++                        ckt->CKTabstol) ) {
++
++                    /* we can do a bypass */
++                    vgs= *(ckt->CKTstate0 + here->JFET2vgs);
++                    vgd= *(ckt->CKTstate0 + here->JFET2vgd);
++                    vds= vgs-vgd;
++                    cg= *(ckt->CKTstate0 + here->JFET2cg);
++                    cd= *(ckt->CKTstate0 + here->JFET2cd);
++                    cgd= *(ckt->CKTstate0 + here->JFET2cgd);
++                    gm= *(ckt->CKTstate0 + here->JFET2gm);
++                    gds= *(ckt->CKTstate0 + here->JFET2gds);
++                    ggs= *(ckt->CKTstate0 + here->JFET2ggs);
++                    ggd= *(ckt->CKTstate0 + here->JFET2ggd);
++                    goto load;
++                }
++                /*
++                 *  limit nonlinear branch voltages 
++                 */
++                ichk1=1;
++                vgs = DEVpnjlim(vgs,*(ckt->CKTstate0 + here->JFET2vgs),
++                        (here->JFET2temp*CONSTKoverQ), here->JFET2vcrit, &icheck);
++                vgd = DEVpnjlim(vgd,*(ckt->CKTstate0 + here->JFET2vgd),
++                        (here->JFET2temp*CONSTKoverQ), here->JFET2vcrit,&ichk1);
++                if (ichk1 == 1) {
++                    icheck=1;
++                }
++                vgs = DEVfetlim(vgs,*(ckt->CKTstate0 + here->JFET2vgs),
++                        model->JFET2vto);
++                vgd = DEVfetlim(vgd,*(ckt->CKTstate0 + here->JFET2vgd),
++                        model->JFET2vto);
++            }
++            /*
++             *   determine dc current and derivatives 
++             */
++            vds=vgs-vgd;
++            if (vds < 0.0) {
++               cd = -PSids(ckt, model, here, vgd, vgs,
++                            &cgd, &cg, &ggd, &ggs, &gm, &gds);
++               gds += gm;
++               gm  = -gm;
++            } else {
++               cd =  PSids(ckt, model, here, vgs, vgd, 
++                            &cg, &cgd, &ggs, &ggd, &gm, &gds);
++            }
++            cg = cg + cgd;
++            cd = cd - cgd;
++
++            if ( (ckt->CKTmode & (MODETRAN | MODEAC | MODEINITSMSIG) ) ||
++                    ((ckt->CKTmode & MODETRANOP) && (ckt->CKTmode & MODEUIC)) ){
++                /* 
++                 *    charge storage elements 
++                 */
++                double capds = model->JFET2capds*here->JFET2area;
++
++                PScharge(ckt, model, here, vgs, vgd, &capgs, &capgd);
++
++                *(ckt->CKTstate0 + here->JFET2qds) = capds * vds;
++            
++                /*
++                 *   store small-signal parameters 
++                 */
++                if( (!(ckt->CKTmode & MODETRANOP)) || 
++                        (!(ckt->CKTmode & MODEUIC)) ) {
++                    if(ckt->CKTmode & MODEINITSMSIG) {
++                        *(ckt->CKTstate0 + here->JFET2qgs) = capgs;
++                        *(ckt->CKTstate0 + here->JFET2qgd) = capgd;
++                        *(ckt->CKTstate0 + here->JFET2qds) = capds;
++                        continue; /*go to 1000*/
++                    }
++                    /*
++                     *   transient analysis 
++                     */
++                    if(ckt->CKTmode & MODEINITTRAN) {
++                        *(ckt->CKTstate1 + here->JFET2qgs) =
++                                *(ckt->CKTstate0 + here->JFET2qgs);
++                        *(ckt->CKTstate1 + here->JFET2qgd) =
++                                *(ckt->CKTstate0 + here->JFET2qgd);
++                        *(ckt->CKTstate1 + here->JFET2qds) =
++                                *(ckt->CKTstate0 + here->JFET2qds);
++                    }
++                    error = NIintegrate(ckt,&geq,&ceq,capgs,here->JFET2qgs);
++                    if(error) return(error);
++                    ggs = ggs + geq;
++                    cg = cg + *(ckt->CKTstate0 + here->JFET2cqgs);
++                    error = NIintegrate(ckt,&geq,&ceq,capgd,here->JFET2qgd);
++                    if(error) return(error);
++                    ggd = ggd + geq;
++                    cg = cg + *(ckt->CKTstate0 + here->JFET2cqgd);
++                    cd = cd - *(ckt->CKTstate0 + here->JFET2cqgd);
++                    cgd = cgd + *(ckt->CKTstate0 + here->JFET2cqgd);
++                    error = NIintegrate(ckt,&geq,&ceq,capds,here->JFET2qds);
++                    cd = cd + *(ckt->CKTstate0 + here->JFET2cqds);
++                    if(error) return(error);
++                    if (ckt->CKTmode & MODEINITTRAN) {
++                        *(ckt->CKTstate1 + here->JFET2cqgs) =
++                                *(ckt->CKTstate0 + here->JFET2cqgs);
++                        *(ckt->CKTstate1 + here->JFET2cqgd) =
++                                *(ckt->CKTstate0 + here->JFET2cqgd);
++                        *(ckt->CKTstate1 + here->JFET2cqds) =
++                                *(ckt->CKTstate0 + here->JFET2cqds);
++                    }
++                }
++            }
++            /*
++             *  check convergence 
++             */
++            if( (!(ckt->CKTmode & MODEINITFIX)) | (!(ckt->CKTmode & MODEUIC))) {
++                if( (icheck == 1)
++#ifndef NEWCONV
++/* XXX */
++#endif /*NEWCONV*/
++                        || (FABS(cghat-cg) >= ckt->CKTreltol*
++                            MAX(FABS(cghat),FABS(cg))+ckt->CKTabstol) ||
++                        (FABS(cdhat-cd) > ckt->CKTreltol*
++                            MAX(FABS(cdhat),FABS(cd))+ckt->CKTabstol) 
++                        ) {
++                    ckt->CKTnoncon++;
++		    ckt->CKTtroubleElt = (GENinstance *) here;
++                }
++            }
++            *(ckt->CKTstate0 + here->JFET2vgs) = vgs;
++            *(ckt->CKTstate0 + here->JFET2vgd) = vgd;
++            *(ckt->CKTstate0 + here->JFET2cg) = cg;
++            *(ckt->CKTstate0 + here->JFET2cd) = cd;
++            *(ckt->CKTstate0 + here->JFET2cgd) = cgd;
++            *(ckt->CKTstate0 + here->JFET2gm) = gm;
++            *(ckt->CKTstate0 + here->JFET2gds) = gds;
++            *(ckt->CKTstate0 + here->JFET2ggs) = ggs;
++            *(ckt->CKTstate0 + here->JFET2ggd) = ggd;
++            /*
++             *    load current vector
++             */
++load:
++            ceqgd=model->JFET2type*(cgd-ggd*vgd);
++            ceqgs=model->JFET2type*((cg-cgd)-ggs*vgs);
++            cdreq=model->JFET2type*((cd+cgd)-gds*vds-gm*vgs);
++            *(ckt->CKTrhs + here->JFET2gateNode) += (-ceqgs-ceqgd);
++            *(ckt->CKTrhs + here->JFET2drainPrimeNode) +=
++                    (-cdreq+ceqgd);
++            *(ckt->CKTrhs + here->JFET2sourcePrimeNode) +=
++                    (cdreq+ceqgs);
++            /*
++             *    load y matrix 
++             */
++            *(here->JFET2drainDrainPrimePtr) += (-gdpr);
++            *(here->JFET2gateDrainPrimePtr) += (-ggd);
++            *(here->JFET2gateSourcePrimePtr) += (-ggs);
++            *(here->JFET2sourceSourcePrimePtr) += (-gspr);
++            *(here->JFET2drainPrimeDrainPtr) += (-gdpr);
++            *(here->JFET2drainPrimeGatePtr) += (gm-ggd);
++            *(here->JFET2drainPrimeSourcePrimePtr) += (-gds-gm);
++            *(here->JFET2sourcePrimeGatePtr) += (-ggs-gm);
++            *(here->JFET2sourcePrimeSourcePtr) += (-gspr);
++            *(here->JFET2sourcePrimeDrainPrimePtr) += (-gds);
++            *(here->JFET2drainDrainPtr) += (gdpr);
++            *(here->JFET2gateGatePtr) += (ggd+ggs);
++            *(here->JFET2sourceSourcePtr) += (gspr);
++            *(here->JFET2drainPrimeDrainPrimePtr) += (gdpr+gds+ggd);
++            *(here->JFET2sourcePrimeSourcePrimePtr) += (gspr+gds+gm+ggs);
++        }
++    }
++    return(OK);
++}
+diff -ruN ../work.orig/src/lib/dev/jfet2/jfet2mask.c ./src/lib/dev/jfet2/jfet2mask.c
+--- ../work.orig/src/lib/dev/jfet2/jfet2mask.c	Wed Dec 31 19:00:00 1969
++++ ./src/lib/dev/jfet2/jfet2mask.c	Tue Jun 21 14:35:07 1994
+@@ -0,0 +1,59 @@
++/**********
++Based on jfetmask.c
++Copyright 1990 Regents of the University of California.  All rights reserved.
++Author: 1987 Mathew Lew and Thomas L. Quarles
++
++Modified to add PS model and new parameter definitions ( Anthony E. Parker )
++   Copyright 1994  Macquarie University, Sydney Australia.
++   10 Feb 1994: Added call to jfetparm.h
++**********/
++/*
++ */
++
++#include "spice.h"
++#include <stdio.h>
++#include "const.h"
++#include "ifsim.h"
++#include "cktdefs.h"
++#include "devdefs.h"
++#include "jfet2defs.h"
++#include "sperror.h"
++#include "suffix.h"
++
++
++/*ARGSUSED*/
++int
++JFET2mAsk(ckt,inModel,which,value)
++    CKTcircuit *ckt;
++    GENmodel *inModel;
++    int which;
++    IFvalue *value;
++{
++    JFET2model *model = (JFET2model*)inModel;
++    switch(which) {
++        case JFET2_MOD_TNOM:
++            value->rValue = model->JFET2tnom-CONSTCtoK;
++            return(OK);
++ 
++#define PARAM(code,id,flag,ref,default,descrip) case id: \
++                                   value->rValue = model->ref; return(OK);
++#include "jfet2parm.h"
++ 
++        case JFET2_MOD_DRAINCONDUCT:
++            value->rValue = model->JFET2drainConduct;
++            return(OK);
++        case JFET2_MOD_SOURCECONDUCT:
++            value->rValue = model->JFET2sourceConduct;
++            return(OK);
++        case JFET2_MOD_TYPE:
++	    if (model->JFET2type == NJF)
++                value->sValue = "njf";
++	    else
++                value->sValue = "pjf";
++            return(OK);
++        default:
++            return(E_BADPARM);
++    }
++    /* NOTREACHED */
++}
++
+diff -ruN ../work.orig/src/lib/dev/jfet2/jfet2mdel.c ./src/lib/dev/jfet2/jfet2mdel.c
+--- ../work.orig/src/lib/dev/jfet2/jfet2mdel.c	Wed Dec 31 19:00:00 1969
++++ ./src/lib/dev/jfet2/jfet2mdel.c	Tue Jun 21 14:35:11 1994
+@@ -0,0 +1,49 @@
++/**********
++based on jfetmdel.c
++Copyright 1990 Regents of the University of California.  All rights reserved.
++Author: 1985 Thomas L. Quarles
++
++Modified to jfet2 for PS model definition ( Anthony E. Parker )
++   Copyright 1994  Macquarie University, Sydney Australia.
++**********/
++/*
++ */
++
++#include "spice.h"
++#include <stdio.h>
++#include "util.h"
++#include "jfet2defs.h"
++#include "sperror.h"
++#include "suffix.h"
++
++
++int
++JFET2mDelete(inModel,modname,kill)
++    GENmodel **inModel;
++    IFuid modname;
++    GENmodel *kill;
++{
++    JFET2model **model = (JFET2model**)inModel;
++    JFET2model *modfast = (JFET2model*)kill;
++    JFET2instance *here;
++    JFET2instance *prev = NULL;
++    JFET2model **oldmod;
++    oldmod = model;
++    for( ; *model ; model = &((*model)->JFET2nextModel)) {
++        if( (*model)->JFET2modName == modname || 
++                (modfast && *model == modfast) ) goto delgot;
++        oldmod = model;
++    }
++    return(E_NOMOD);
++
++delgot:
++    *oldmod = (*model)->JFET2nextModel; /* cut deleted device out of list */
++    for(here = (*model)->JFET2instances ; here ; here = here->JFET2nextInstance) {
++        if(prev) FREE(prev);
++        prev = here;
++    }
++    if(prev) FREE(prev);
++    FREE(*model);
++    return(OK);
++
++}
+diff -ruN ../work.orig/src/lib/dev/jfet2/jfet2mpar.c ./src/lib/dev/jfet2/jfet2mpar.c
+--- ../work.orig/src/lib/dev/jfet2/jfet2mpar.c	Wed Dec 31 19:00:00 1969
++++ ./src/lib/dev/jfet2/jfet2mpar.c	Tue Jun 21 14:35:14 1994
+@@ -0,0 +1,50 @@
++/**********
++Based on jfetmpar.c
++Copyright 1990 Regents of the University of California.  All rights reserved.
++Author: 1985 Thomas L. Quarles
++
++Modified to add PS model and new parameter definitions ( Anthony E. Parker )
++   Copyright 1994  Macquarie University, Sydney Australia.
++   10 Feb 1994: Added call to jfetparm.h
++**********/
++
++#include "spice.h"
++#include <stdio.h>
++#include "const.h"
++#include "ifsim.h"
++#include "util.h"
++#include "jfet2defs.h"
++#include "sperror.h"
++#include "suffix.h"
++
++
++int
++JFET2mParam(param,value,inModels)
++    int param;
++    IFvalue *value;
++    GENmodel *inModels;
++{
++    JFET2model *model = (JFET2model*)inModels;
++    switch(param) {
++        case JFET2_MOD_TNOM:
++            model->JFET2tnomGiven = TRUE;
++            model->JFET2tnom = value->rValue+CONSTCtoK;
++            break;
++#define PARAM(code,id,flag,ref,default,descrip) case id: \
++                      model->flag = TRUE; model->ref = value->rValue; break;
++#include "jfet2parm.h"
++        case JFET2_MOD_NJF:
++            if(value->iValue) {
++                model->JFET2type = NJF;
++            }
++            break;
++        case JFET2_MOD_PJF:
++            if(value->iValue) {
++                model->JFET2type = PJF;
++            }
++            break;
++        default:
++            return(E_BADPARM);
++    }
++    return(OK);
++}
+diff -ruN ../work.orig/src/lib/dev/jfet2/jfet2noi.c ./src/lib/dev/jfet2/jfet2noi.c
+--- ../work.orig/src/lib/dev/jfet2/jfet2noi.c	Wed Dec 31 19:00:00 1969
++++ ./src/lib/dev/jfet2/jfet2noi.c	Tue Jun 21 14:35:18 1994
+@@ -0,0 +1,221 @@
++/**********
++based on jfetnoi.c
++Copyright 1990 Regents of the University of California.  All rights reserved.
++Author: 1987 Gary W. Ng
++
++Modified to jfet2 for PS model definition ( Anthony E. Parker )
++   Copyright 1994  Macquarie University, Sydney Australia.
++**********/
++
++#include "spice.h"
++#include <stdio.h>
++#include "jfet2defs.h"
++#include "cktdefs.h"
++#include "fteconst.h"
++#include "iferrmsg.h"
++#include "noisedef.h"
++#include "util.h"
++#include "suffix.h"
++
++/*
++ * JFET2noise (mode, operation, firstModel, ckt, data, OnDens)
++ *    This routine names and evaluates all of the noise sources
++ *    associated with JFET2's.  It starts with the model *firstModel and
++ *    traverses all of its insts.  It then proceeds to any other models
++ *    on the linked list.  The total output noise density generated by
++ *    all of the JFET2's is summed with the variable "OnDens".
++ */
++
++extern void   NevalSrc();
++extern double Nintegrate();
++
++int
++JFET2noise (mode, operation, genmodel, ckt, data, OnDens)
++    int mode;
++    int operation;
++    GENmodel *genmodel;
++    CKTcircuit *ckt;
++    register Ndata *data;
++    double *OnDens;
++{
++    JFET2model *firstModel = (JFET2model *) genmodel;
++    register JFET2model *model;
++    register JFET2instance *inst;
++    char name[N_MXVLNTH];
++    double tempOnoise;
++    double tempInoise;
++    double noizDens[JFET2NSRCS];
++    double lnNdens[JFET2NSRCS];
++    int error;
++    int i;
++
++    /* define the names of the noise sources */
++
++    static char *JFET2nNames[JFET2NSRCS] = {       /* Note that we have to keep the order */
++	"_rd",              /* noise due to rd */        /* consistent with the index definitions */
++	"_rs",              /* noise due to rs */        /* in JFET2defs.h */
++	"_id",              /* noise due to id */
++	"_1overf",          /* flicker (1/f) noise */
++	""                  /* total transistor noise */
++    };
++
++    for (model=firstModel; model != NULL; model=model->JFET2nextModel) {
++	for (inst=model->JFET2instances; inst != NULL; inst=inst->JFET2nextInstance) {
++	    switch (operation) {
++
++	    case N_OPEN:
++
++		/* see if we have to to produce a summary report */
++		/* if so, name all the noise generators */
++
++		if (((NOISEAN*)ckt->CKTcurJob)->NStpsSm != 0) {
++		    switch (mode) {
++
++		    case N_DENS:
++			for (i=0; i < JFET2NSRCS; i++) {
++			    (void)sprintf(name,"onoise_%s%s",inst->JFET2name,JFET2nNames[i]);
++
++
++data->namelist = (IFuid *)trealloc((char *)data->namelist,(data->numPlots + 1)*sizeof(IFuid));
++if (!data->namelist) return(E_NOMEM);
++		(*(SPfrontEnd->IFnewUid))(ckt,
++			&(data->namelist[data->numPlots++]),
++			(IFuid)NULL,name,UID_OTHER,(GENERIC **)NULL);
++				/* we've added one more plot */
++
++
++			}
++			break;
++
++		    case INT_NOIZ:
++			for (i=0; i < JFET2NSRCS; i++) {
++			    (void)sprintf(name,"onoise_total_%s%s",inst->JFET2name,JFET2nNames[i]);
++
++
++data->namelist = (IFuid *)trealloc((char *)data->namelist,(data->numPlots + 1)*sizeof(IFuid));
++if (!data->namelist) return(E_NOMEM);
++		(*(SPfrontEnd->IFnewUid))(ckt,
++			&(data->namelist[data->numPlots++]),
++			(IFuid)NULL,name,UID_OTHER,(GENERIC **)NULL);
++				/* we've added one more plot */
++
++
++			    (void)sprintf(name,"inoise_total_%s%s",inst->JFET2name,JFET2nNames[i]);
++
++
++data->namelist = (IFuid *)trealloc((char *)data->namelist,(data->numPlots + 1)*sizeof(IFuid));
++if (!data->namelist) return(E_NOMEM);
++		(*(SPfrontEnd->IFnewUid))(ckt,
++			&(data->namelist[data->numPlots++]),
++			(IFuid)NULL,name,UID_OTHER,(GENERIC **)NULL);
++				/* we've added one more plot */
++
++			}
++			break;
++		    }
++		}
++		break;
++
++	    case N_CALC:
++		switch (mode) {
++
++		case N_DENS:
++		    NevalSrc(&noizDens[JFET2RDNOIZ],&lnNdens[JFET2RDNOIZ],
++				 ckt,THERMNOISE,inst->JFET2drainPrimeNode,inst->JFET2drainNode,
++				 model->JFET2drainConduct * inst->JFET2area);
++
++		    NevalSrc(&noizDens[JFET2RSNOIZ],&lnNdens[JFET2RSNOIZ],
++				 ckt,THERMNOISE,inst->JFET2sourcePrimeNode,
++				 inst->JFET2sourceNode,model->JFET2sourceConduct*inst->JFET2area);
++
++		    NevalSrc(&noizDens[JFET2IDNOIZ],&lnNdens[JFET2IDNOIZ],
++				 ckt,THERMNOISE,inst->JFET2drainPrimeNode,
++				 inst->JFET2sourcePrimeNode,
++				 (2.0/3.0 * FABS(*(ckt->CKTstate0 + inst->JFET2gm))));
++
++		    NevalSrc(&noizDens[JFET2FLNOIZ],(double*)NULL,ckt,
++				 N_GAIN,inst->JFET2drainPrimeNode,
++				 inst->JFET2sourcePrimeNode, (double)0.0);
++		    noizDens[JFET2FLNOIZ] *= model->JFET2fNcoef * 
++				 exp(model->JFET2fNexp *
++				 log(MAX(FABS(*(ckt->CKTstate0 + inst->JFET2cd)),N_MINLOG))) /
++				 data->freq;
++		    lnNdens[JFET2FLNOIZ] = 
++				 log(MAX(noizDens[JFET2FLNOIZ],N_MINLOG));
++
++		    noizDens[JFET2TOTNOIZ] = noizDens[JFET2RDNOIZ] +
++						     noizDens[JFET2RSNOIZ] +
++						     noizDens[JFET2IDNOIZ] +
++						     noizDens[JFET2FLNOIZ];
++		    lnNdens[JFET2TOTNOIZ] = 
++				 log(MAX(noizDens[JFET2TOTNOIZ], N_MINLOG));
++
++		    *OnDens += noizDens[JFET2TOTNOIZ];
++
++		    if (data->delFreq == 0.0) { 
++
++			/* if we haven't done any previous integration, we need to */
++			/* initialize our "history" variables                      */
++
++			for (i=0; i < JFET2NSRCS; i++) {
++			    inst->JFET2nVar[LNLSTDENS][i] = lnNdens[i];
++			}
++
++			/* clear out our integration variables if it's the first pass */
++
++			if (data->freq == ((NOISEAN*)ckt->CKTcurJob)->NstartFreq) {
++			    for (i=0; i < JFET2NSRCS; i++) {
++				inst->JFET2nVar[OUTNOIZ][i] = 0.0;
++				inst->JFET2nVar[INNOIZ][i] = 0.0;
++			    }
++			}
++		    } else {   /* data->delFreq != 0.0 (we have to integrate) */
++			for (i=0; i < JFET2NSRCS; i++) {
++			    if (i != JFET2TOTNOIZ) {
++				tempOnoise = Nintegrate(noizDens[i], lnNdens[i],
++				      inst->JFET2nVar[LNLSTDENS][i], data);
++				tempInoise = Nintegrate(noizDens[i] * data->GainSqInv ,
++				      lnNdens[i] + data->lnGainInv,
++				      inst->JFET2nVar[LNLSTDENS][i] + data->lnGainInv,
++				      data);
++				inst->JFET2nVar[LNLSTDENS][i] = lnNdens[i];
++				data->outNoiz += tempOnoise;
++				data->inNoise += tempInoise;
++				if (((NOISEAN*)ckt->CKTcurJob)->NStpsSm != 0) {
++				    inst->JFET2nVar[OUTNOIZ][i] += tempOnoise;
++				    inst->JFET2nVar[OUTNOIZ][JFET2TOTNOIZ] += tempOnoise;
++				    inst->JFET2nVar[INNOIZ][i] += tempInoise;
++				    inst->JFET2nVar[INNOIZ][JFET2TOTNOIZ] += tempInoise;
++                                }
++			    }
++			}
++		    }
++		    if (data->prtSummary) {
++			for (i=0; i < JFET2NSRCS; i++) {     /* print a summary report */
++			    data->outpVector[data->outNumber++] = noizDens[i];
++			}
++		    }
++		    break;
++
++		case INT_NOIZ:        /* already calculated, just output */
++		    if (((NOISEAN*)ckt->CKTcurJob)->NStpsSm != 0) {
++			for (i=0; i < JFET2NSRCS; i++) {
++			    data->outpVector[data->outNumber++] = inst->JFET2nVar[OUTNOIZ][i];
++			    data->outpVector[data->outNumber++] = inst->JFET2nVar[INNOIZ][i];
++			}
++		    }    /* if */
++		    break;
++		}    /* switch (mode) */
++		break;
++
++	    case N_CLOSE:
++		return (OK);         /* do nothing, the main calling routine will close */
++		break;               /* the plots */
++	    }    /* switch (operation) */
++	}    /* for inst */
++    }    /* for model */
++
++return(OK);
++}
++            
++
+diff -ruN ../work.orig/src/lib/dev/jfet2/jfet2par.c ./src/lib/dev/jfet2/jfet2par.c
+--- ../work.orig/src/lib/dev/jfet2/jfet2par.c	Wed Dec 31 19:00:00 1969
++++ ./src/lib/dev/jfet2/jfet2par.c	Tue Jun 21 14:35:21 1994
+@@ -0,0 +1,68 @@
++/**********
++based on jfetpar.c
++Copyright 1990 Regents of the University of California.  All rights reserved.
++Author: 1985 Thomas L. Quarles
++
++Modified to jfet2 for PS model definition ( Anthony E. Parker )
++   Copyright 1994  Macquarie University, Sydney Australia.
++**********/
++/*
++ */
++
++#include "spice.h"
++#include <stdio.h>
++#include "const.h"
++#include "ifsim.h"
++#include "util.h"
++#include "jfet2defs.h"
++#include "sperror.h"
++#include "suffix.h"
++
++
++/* ARGSUSED */
++int
++JFET2param(param,value,inst,select)
++    int param;
++    IFvalue *value;
++    GENinstance *inst;
++    IFvalue *select;
++{
++    JFET2instance *here = (JFET2instance *)inst;
++    switch(param) {
++        case JFET2_TEMP:
++            here->JFET2temp = value->rValue+CONSTCtoK;
++            here->JFET2tempGiven = TRUE;
++            break;
++        case JFET2_AREA:
++            here->JFET2area = value->rValue;
++            here->JFET2areaGiven = TRUE;
++            break;
++        case JFET2_IC_VDS:
++            here->JFET2icVDS = value->rValue;
++            here->JFET2icVDSGiven = TRUE;
++            break;
++        case JFET2_IC_VGS:
++            here->JFET2icVGS = value->rValue;
++            here->JFET2icVGSGiven = TRUE;
++            break;
++        case JFET2_OFF:
++            here->JFET2off = value->iValue;
++            break;
++        case JFET2_IC:
++            switch(value->v.numValue) {
++                case 2:
++                    here->JFET2icVGS = *(value->v.vec.rVec+1);
++                    here->JFET2icVGSGiven = TRUE;
++                case 1:
++                    here->JFET2icVDS = *(value->v.vec.rVec);
++                    here->JFET2icVDSGiven = TRUE;
++                    break;
++                default:
++                    return(E_BADPARM);
++            }
++            break;
++        default:
++            return(E_BADPARM);
++    }
++    return(OK);
++}
+diff -ruN ../work.orig/src/lib/dev/jfet2/jfet2parm.h ./src/lib/dev/jfet2/jfet2parm.h
+--- ../work.orig/src/lib/dev/jfet2/jfet2parm.h	Wed Dec 31 19:00:00 1969
++++ ./src/lib/dev/jfet2/jfet2parm.h	Tue Jun 28 08:21:29 1994
+@@ -0,0 +1,52 @@
++
++#ifndef PARAMA
++#define PARAMA(code,id,flag,ref,default,descrip) PARAM(code,id,flag,ref,default,descrip)
++#endif
++#ifndef JFET2_MOD_VTO
++#define JFET2_MOD_VTO 141
++#define JFET2_MOD_NJF 102
++#define JFET2_MOD_PJF 103
++#define JFET2_MOD_TNOM 104
++#define JFET2_MOD_PB 131
++#endif
++    PARAM("acgam", 107,         JFET2acgamGiven, JFET2acgam,    0, "")
++    PARAM("af",    108,         JFET2fNexpGiven, JFET2fNexp,    1, "Flicker Noise Exponent")
++    PARAM("beta",  109,          JFET2betaGiven, JFET2beta,  1e-4, "Transconductance parameter")
++   PARAMA("cds",   146,         JFET2capDSGiven, JFET2capds,    0, "D-S junction capacitance")
++   PARAMA("cgd",   110,         JFET2capGDGiven, JFET2capgd,    0, "G-D junction capacitance")
++   PARAMA("cgs",   111,         JFET2capGSGiven, JFET2capgs,    0, "G-S junction capacitance")
++    PARAM("delta", 113,         JFET2deltaGiven, JFET2delta,    0, "coef of thermal current reduction")
++    PARAM("hfeta", 114,         JFET2hfetaGiven, JFET2hfeta,    0, "drain feedback modulation")
++    PARAM("hfe1",  115,          JFET2hfe1Given, JFET2hfe1,     0, "")
++    PARAM("hfe2",  116,          JFET2hfe2Given, JFET2hfe2,     0, "")
++    PARAM("hfg1",  117,          JFET2hfg1Given, JFET2hfg1,     0, "")
++    PARAM("hfg2",  118,          JFET2hfg2Given, JFET2hfg2,     0, "")
++    PARAM("mvst",  119,          JFET2mvstGiven, JFET2mvst,     0, "modulation index for subtreshold current")
++    PARAM("mxi",   120,           JFET2mxiGiven, JFET2mxi,      0, "saturation potential modulation parameter")
++    PARAM("fc",    121,            JFET2fcGiven, JFET2fc,     0.5, "Forward bias junction fit parm.")
++    PARAM("ibd",   122,           JFET2ibdGiven, JFET2ibd,      0, "Breakdown current of diode jnc")
++    PARAM("is",    123,            JFET2isGiven, JFET2is,   1e-14, "Gate junction saturation current")
++    PARAM("kf",    124,            JFET2kfGiven, JFET2fNcoef,   0, "Flicker Noise Coefficient")
++    PARAM("lambda",125,           JFET2lamGiven, JFET2lambda,   0, "Channel length modulation param.")
++    PARAM("lfgam", 126,         JFET2lfgamGiven, JFET2lfgam,    0, "drain feedback parameter")
++    PARAM("lfg1",  127,          JFET2lfg1Given, JFET2lfg1,     0, "")
++    PARAM("lfg2",  128,          JFET2lfg2Given, JFET2lfg2,     0, "")
++    PARAM("n",     129,             JFET2nGiven, JFET2n,        1, "gate junction ideality factor")
++    PARAM("p",     130,             JFET2pGiven, JFET2p,        2, "Power law (triode region)")
++    PARAM("pb",    JFET2_MOD_PB,   JFET2phiGiven, JFET2phi,      1, "Gate junction potential")
++    PARAM("q",     132,             JFET2qGiven, JFET2q,        2, "Power Law (Saturated region)")
++    PARAM("rd",    133,            JFET2rdGiven, JFET2rd,       0, "Drain ohmic resistance")
++    PARAM("rs",    134,            JFET2rsGiven, JFET2rs,       0, "Source ohmic resistance")
++    PARAM("taud",  135,          JFET2taudGiven, JFET2taud,     0, "Thermal relaxation time")
++    PARAM("taug",  136,          JFET2taugGiven, JFET2taug,     0, "Drain feedback relaxation time")
++    PARAM("vbd",   137,           JFET2vbdGiven, JFET2vbd,      1, "Breakdown potential of diode jnc")
++    PARAM("ver",   139,           JFET2verGiven, JFET2ver,      0, "version number of PS model")
++    PARAM("vst",   140,           JFET2vstGiven, JFET2vst,      0, "Crit Poten subthreshold conductn")
++    PARAM("vto",   JFET2_MOD_VTO,  JFET2vtoGiven, JFET2vto,     -2, "Threshold voltage")
++    PARAM("xc",    142,            JFET2xcGiven, JFET2xc,       0, "amount of cap. red at pinch-off")
++    PARAM("xi",    143,            JFET2xiGiven, JFET2xi,    1000, "velocity saturation index")
++    PARAM("z",     144,             JFET2zGiven, JFET2z,        1, "rate of velocity saturation")
++    PARAM("hfgam", 145,           JFET2hfgGiven, JFET2hfgam, model->JFET2lfgam, "high freq drain feedback parm")
++#undef   PARAM
++#undef  PARAMA
++
+diff -ruN ../work.orig/src/lib/dev/jfet2/jfet2set.c ./src/lib/dev/jfet2/jfet2set.c
+--- ../work.orig/src/lib/dev/jfet2/jfet2set.c	Wed Dec 31 19:00:00 1969
++++ ./src/lib/dev/jfet2/jfet2set.c	Tue Jun 21 14:35:28 1994
+@@ -0,0 +1,134 @@
++/**********
++Based on jfetset.c
++Copyright 1990 Regents of the University of California.  All rights reserved.
++Author: 1985 Thomas L. Quarles
++
++Modified to add PS model and new parameter definitions ( Anthony E. Parker )
++   Copyright 1994  Macquarie University, Sydney Australia.
++   10 Feb 1994: Added call to jfetparm.h, used JFET_STATE_COUNT
++**********/
++
++#include "spice.h"
++#include <stdio.h>
++#include "util.h"
++#include "smpdefs.h"
++#include "cktdefs.h"
++#include "jfet2defs.h"
++#include "const.h"
++#include "sperror.h"
++#include "suffix.h"
++
++int
++JFET2setup(matrix,inModel,ckt,states)
++    register SMPmatrix *matrix;
++    GENmodel *inModel;
++    CKTcircuit *ckt;
++    int *states;
++        /* load the diode structure with those pointers needed later 
++         * for fast matrix loading 
++         */
++{
++    register JFET2model *model = (JFET2model*)inModel;
++    register JFET2instance *here;
++    int error;
++    CKTnode *tmp;
++
++    /*  loop through all the diode models */
++    for( ; model != NULL; model = model->JFET2nextModel ) {
++
++        if( (model->JFET2type != NJF) && (model->JFET2type != PJF) ) {
++            model->JFET2type = NJF;
++        }
++#define  PARAM(code,id,flag,ref,default,descrip) \
++              if(!model->flag) {model->ref = default;}
++#include "jfet2parm.h"
++
++        /* loop through all the instances of the model */
++        for (here = model->JFET2instances; here != NULL ;
++                here=here->JFET2nextInstance) {
++            
++            if(!here->JFET2areaGiven) {
++                here->JFET2area = 1;
++            }
++            here->JFET2state = *states;
++            *states += JFET2_STATE_COUNT + 1;
++
++            if(model->JFET2rs != 0 && here->JFET2sourcePrimeNode==0) {
++                error = CKTmkVolt(ckt,&tmp,here->JFET2name,"source");
++                if(error) return(error);
++                here->JFET2sourcePrimeNode = tmp->number;
++            } else {
++                here->JFET2sourcePrimeNode = here->JFET2sourceNode;
++            }
++            if(model->JFET2rd != 0 && here->JFET2drainPrimeNode==0) {
++                error = CKTmkVolt(ckt,&tmp,here->JFET2name,"drain");
++                if(error) return(error);
++                here->JFET2drainPrimeNode = tmp->number;
++            } else {
++                here->JFET2drainPrimeNode = here->JFET2drainNode;
++            }
++
++/* macro to make elements with built in test for out of memory */
++#define TSTALLOC(ptr,first,second) \
++if((here->ptr = SMPmakeElt(matrix,here->first,here->second))==(double *)NULL){\
++    return(E_NOMEM);\
++}
++
++            TSTALLOC(JFET2drainDrainPrimePtr,JFET2drainNode,JFET2drainPrimeNode)
++            TSTALLOC(JFET2gateDrainPrimePtr,JFET2gateNode,JFET2drainPrimeNode)
++            TSTALLOC(JFET2gateSourcePrimePtr,JFET2gateNode,JFET2sourcePrimeNode)
++            TSTALLOC(JFET2sourceSourcePrimePtr,JFET2sourceNode,
++                    JFET2sourcePrimeNode)
++            TSTALLOC(JFET2drainPrimeDrainPtr,JFET2drainPrimeNode,JFET2drainNode)
++            TSTALLOC(JFET2drainPrimeGatePtr,JFET2drainPrimeNode,JFET2gateNode)
++            TSTALLOC(JFET2drainPrimeSourcePrimePtr,JFET2drainPrimeNode,
++                    JFET2sourcePrimeNode)
++            TSTALLOC(JFET2sourcePrimeGatePtr,JFET2sourcePrimeNode,JFET2gateNode)
++            TSTALLOC(JFET2sourcePrimeSourcePtr,JFET2sourcePrimeNode,
++                    JFET2sourceNode)
++            TSTALLOC(JFET2sourcePrimeDrainPrimePtr,JFET2sourcePrimeNode,
++                    JFET2drainPrimeNode)
++            TSTALLOC(JFET2drainDrainPtr,JFET2drainNode,JFET2drainNode)
++            TSTALLOC(JFET2gateGatePtr,JFET2gateNode,JFET2gateNode)
++            TSTALLOC(JFET2sourceSourcePtr,JFET2sourceNode,JFET2sourceNode)
++            TSTALLOC(JFET2drainPrimeDrainPrimePtr,JFET2drainPrimeNode,
++                    JFET2drainPrimeNode)
++            TSTALLOC(JFET2sourcePrimeSourcePrimePtr,JFET2sourcePrimeNode,
++                    JFET2sourcePrimeNode)
++        }
++    }
++    return(OK);
++}
++
++int
++JFET2unsetup(inModel,ckt)
++    GENmodel *inModel;
++    CKTcircuit *ckt;
++{
++#ifndef HAS_BATCHSIM
++    JFET2model *model;
++    JFET2instance *here;
++
++    for (model = (JFET2model *)inModel; model != NULL;
++	    model = model->JFET2nextModel)
++    {
++        for (here = model->JFET2instances; here != NULL;
++                here=here->JFET2nextInstance)
++	{
++	    if (here->JFET2sourcePrimeNode
++		    && here->JFET2sourcePrimeNode != here->JFET2sourceNode)
++	    {
++		CKTdltNNum(ckt, here->JFET2sourcePrimeNode);
++		here->JFET2sourcePrimeNode = 0;
++	    }
++	    if (here->JFET2drainPrimeNode
++		    && here->JFET2drainPrimeNode != here->JFET2drainNode)
++	    {
++		CKTdltNNum(ckt, here->JFET2drainPrimeNode);
++		here->JFET2drainPrimeNode = 0;
++	    }
++	}
++    }
++#endif
++    return OK;
++}
+diff -ruN ../work.orig/src/lib/dev/jfet2/jfet2temp.c ./src/lib/dev/jfet2/jfet2temp.c
+--- ../work.orig/src/lib/dev/jfet2/jfet2temp.c	Wed Dec 31 19:00:00 1969
++++ ./src/lib/dev/jfet2/jfet2temp.c	Tue Jun 21 14:35:31 1994
+@@ -0,0 +1,116 @@
++/**********
++Base on jfettemp.c
++Copyright 1990 Regents of the University of California.  All rights reserved.
++Author: 1985 Thomas L. Quarles
++
++Modified to add PS model and new parameter definitions ( Anthony E. Parker )
++   Copyright 1994  Macquarie University, Sydney Australia.
++   10 Feb 1994: Call to PSinstanceinit() added
++                Change gatePotential to phi and used rs and rd for 
++                sourceResist and drainResist, and fc for depletionCapCoef
++**********/
++
++#include "spice.h"
++#include <stdio.h>
++#include "util.h"
++#include "smpdefs.h"
++#include "cktdefs.h"
++#include "jfet2defs.h"
++#include "const.h"
++#include "sperror.h"
++#include "psmodel.h"
++#include "suffix.h"
++
++int
++JFET2temp(inModel,ckt)
++    GENmodel *inModel;
++    CKTcircuit *ckt;
++        /* Pre-process the model parameters after a possible change
++         */
++{
++    register JFET2model *model = (JFET2model*)inModel;
++    register JFET2instance *here;
++    double xfc;
++    double vt;
++    double vtnom;
++    double kt,kt1;
++    double arg,arg1;
++    double fact1,fact2;
++    double egfet,egfet1;
++    double pbfact,pbfact1;
++    double gmanew,gmaold;
++    double ratio1;
++    double pbo;
++    double cjfact,cjfact1;
++
++    /*  loop through all the diode models */
++    for( ; model != NULL; model = model->JFET2nextModel ) {
++
++        if(!(model->JFET2tnomGiven)) {
++            model->JFET2tnom = ckt->CKTnomTemp;
++        }
++        vtnom = CONSTKoverQ * model->JFET2tnom;
++        fact1 = model->JFET2tnom/REFTEMP;
++        kt1 = CONSTboltz * model->JFET2tnom;
++        egfet1 = 1.16-(7.02e-4*model->JFET2tnom*model->JFET2tnom)/
++                (model->JFET2tnom+1108);
++        arg1 = -egfet1/(kt1+kt1)+1.1150877/(CONSTboltz*(REFTEMP+REFTEMP));
++        pbfact1 = -2*vtnom * (1.5*log(fact1)+CHARGE*arg1);
++        pbo = (model->JFET2phi-pbfact1)/fact1;
++        gmaold = (model->JFET2phi-pbo)/pbo;
++        cjfact = 1/(1+.5*(4e-4*(model->JFET2tnom-REFTEMP)-gmaold));
++
++        if(model->JFET2rd != 0) {
++            model->JFET2drainConduct = 1/model->JFET2rd;
++        } else {
++            model->JFET2drainConduct = 0;
++        }
++        if(model->JFET2rs != 0) {
++            model->JFET2sourceConduct = 1/model->JFET2rs;
++        } else {
++            model->JFET2sourceConduct = 0;
++        }
++        if(model->JFET2fc >.95) {
++            (*(SPfrontEnd->IFerror))(ERR_WARNING,
++                    "%s: Depletion cap. coefficient too large, limited to .95",
++                    &(model->JFET2modName));
++            model->JFET2fc = .95;
++        }
++
++        xfc = log(1 - model->JFET2fc);
++        model->JFET2f2 = exp((1+.5)*xfc);
++        model->JFET2f3 = 1 - model->JFET2fc * (1 + .5);
++
++        /* loop through all the instances of the model */
++        for (here = model->JFET2instances; here != NULL ;
++                here=here->JFET2nextInstance) {
++            if(!(here->JFET2tempGiven)) {
++                here->JFET2temp = ckt->CKTtemp;
++            }
++            vt = here->JFET2temp * CONSTKoverQ;
++            fact2 = here->JFET2temp/REFTEMP;
++            ratio1 = here->JFET2temp/model->JFET2tnom -1;
++            here->JFET2tSatCur = model->JFET2is * exp(ratio1*1.11/vt);
++            here->JFET2tCGS = model->JFET2capgs * cjfact;
++            here->JFET2tCGD = model->JFET2capgd * cjfact;
++            kt = CONSTboltz*here->JFET2temp;
++            egfet = 1.16-(7.02e-4*here->JFET2temp*here->JFET2temp)/
++                    (here->JFET2temp+1108);
++            arg = -egfet/(kt+kt) + 1.1150877/(CONSTboltz*(REFTEMP+REFTEMP));
++            pbfact = -2 * vt * (1.5*log(fact2)+CHARGE*arg);
++            here->JFET2tGatePot = fact2 * pbo + pbfact;
++            gmanew = (here->JFET2tGatePot-pbo)/pbo;
++            cjfact1 = 1+.5*(4e-4*(here->JFET2temp-REFTEMP)-gmanew);
++            here->JFET2tCGS *= cjfact1;
++            here->JFET2tCGD *= cjfact1;
++
++            here->JFET2corDepCap = model->JFET2fc * here->JFET2tGatePot;
++            here->JFET2f1 = here->JFET2tGatePot * (1 - exp((1-.5)*xfc))/(1-.5);
++            here->JFET2vcrit = vt * log(vt/(CONSTroot2 * here->JFET2tSatCur));
++
++            PSinstanceinit(model, here);
++            
++        }
++    }
++    return(OK);
++}
+diff -ruN ../work.orig/src/lib/dev/jfet2/jfet2trun.c ./src/lib/dev/jfet2/jfet2trun.c
+--- ../work.orig/src/lib/dev/jfet2/jfet2trun.c	Wed Dec 31 19:00:00 1969
++++ ./src/lib/dev/jfet2/jfet2trun.c	Tue Jun 21 14:35:34 1994
+@@ -0,0 +1,36 @@
++/**********
++Based on jfettrunc.c
++Copyright 1990 Regents of the University of California.  All rights reserved.
++Author: 1985 Thomas L. Quarles
++
++Modified to jfet2 for PS model definition ( Anthony E. Parker )
++   Copyright 1994  Macquarie University, Sydney Australia.
++**********/
++/*
++ */
++
++#include "spice.h"
++#include <stdio.h>
++#include "cktdefs.h"
++#include "jfet2defs.h"
++#include "sperror.h"
++#include "suffix.h"
++
++
++int
++JFET2trunc(inModel,ckt,timeStep)
++    GENmodel *inModel;
++    register CKTcircuit *ckt;
++    double *timeStep;
++{
++    register JFET2model *model = (JFET2model*)inModel;
++    register JFET2instance *here;
++
++    for( ; model != NULL; model = model->JFET2nextModel) {
++        for(here=model->JFET2instances;here!=NULL;here = here->JFET2nextInstance){
++            CKTterr(here->JFET2qgs,ckt,timeStep);
++            CKTterr(here->JFET2qgd,ckt,timeStep);
++        }
++    }
++    return(OK);
++}
+diff -ruN ../work.orig/src/lib/dev/jfet2/makedefs ./src/lib/dev/jfet2/makedefs
+--- ../work.orig/src/lib/dev/jfet2/makedefs	Wed Dec 31 19:00:00 1969
++++ ./src/lib/dev/jfet2/makedefs	Mon Jun 27 11:05:42 1994
+@@ -0,0 +1,37 @@
++###########
++# Copyright 1991 Regents of the University of California.  All rights reserved.
++# Modified 1994 for jfet2 and psmodel
++###########
++
++CFILES		= jfet2.c jfet2acld.c jfet2ask.c jfet2del.c jfet2dest.c \
++		  jfet2ic.c jfet2load.c jfet2mask.c jfet2mdel.c \
++		  jfet2mpar.c jfet2noi.c jfet2par.c jfet2set.c \
++		  jfet2temp.c jfet2trun.c psmodel.c
++
++COBJS		= jfet2.o jfet2acld.o jfet2ask.o jfet2del.o jfet2dest.o \
++		  jfet2ic.o jfet2load.o jfet2mask.o jfet2mdel.o \
++		  jfet2mpar.o jfet2noi.o jfet2par.o jfet2set.o \
++		  jfet2temp.o jfet2trun.o psmodel.o
++
++MODULE		= jfet2
++LIBRARY		= dev
++MODULE_TARGET	= $(OBJLIB_DIR)/$(MODULE)
++
++NUMBER		= 3
++
++jfet2.o: jfet2.c jfet2parm.h
++jfet2acld.o: jfet2acld.c jfet2parm.h psmodel.h
++jfet2ask.o: jfet2ask.c jfet2parm.h
++jfet2del.o: jfet2del.c jfet2parm.h
++jfet2dest.o: jfet2dest.c jfet2parm.h
++jfet2ic.o: jfet2ic.c jfet2parm.h
++jfet2load.o: jfet2load.c jfet2parm.h psmodel.h
++jfet2mask.o: jfet2mask.c jfet2parm.h
++jfet2mdel.o: jfet2mdel.c jfet2parm.h
++jfet2mpar.o: jfet2mpar.c jfet2parm.h
++jfet2noi.o: jfet2noi.c jfet2parm.h
++jfet2par.o: jfet2par.c jfet2parm.h
++jfet2set.o: jfet2set.c jfet2parm.h
++jfet2temp.o: jfet2temp.c jfet2parm.h psmodel.h
++jfet2trun.o: jfet2trun.c jfet2parm.h
++psmodel.o: psmodel.c psmodel.h jfet2parm.h
+diff -ruN ../work.orig/src/lib/dev/jfet2/msc51.bat ./src/lib/dev/jfet2/msc51.bat
+--- ../work.orig/src/lib/dev/jfet2/msc51.bat	Wed Dec 31 19:00:00 1969
++++ ./src/lib/dev/jfet2/msc51.bat	Mon Jun 27 11:06:10 1994
+@@ -0,0 +1,17 @@
++cl /I..\..\..\include /c jfet2.c >> ..\..\..\msc.out
++cl /I..\..\..\include /c jfet2acld.c >> ..\..\..\msc.out
++cl /I..\..\..\include /c jfet2ask.c >> ..\..\..\msc.out
++cl /I..\..\..\include /c jfet2del.c >> ..\..\..\msc.out
++cl /I..\..\..\include /c jfet2dest.c >> ..\..\..\msc.out
++cl /I..\..\..\include /c jfet2ic.c >> ..\..\..\msc.out
++cl /I..\..\..\include /c jfet2load.c >> ..\..\..\msc.out
++cl /I..\..\..\include /c jfet2mask.c >> ..\..\..\msc.out
++cl /I..\..\..\include /c jfet2mdel.c >> ..\..\..\msc.out
++cl /I..\..\..\include /c jfet2mpar.c >> ..\..\..\msc.out
++cl /I..\..\..\include /c jfet2noi.c >> ..\..\..\msc.out
++cl /I..\..\..\include /c jfet2par.c >> ..\..\..\msc.out
++cl /I..\..\..\include /c jfet2set.c >> ..\..\..\msc.out
++cl /I..\..\..\include /c jfet2temp.c >> ..\..\..\msc.out
++cl /I..\..\..\include /c jfet2trun.c >> ..\..\..\msc.out
++cl /I..\..\..\include /c psmodel.c >> ..\..\..\msc.out
++lib ..\..\dev3.lib @response.lib >> ..\..\..\msc.out
+diff -ruN ../work.orig/src/lib/dev/jfet2/psmodel.c ./src/lib/dev/jfet2/psmodel.c
+--- ../work.orig/src/lib/dev/jfet2/psmodel.c	Wed Dec 31 19:00:00 1969
++++ ./src/lib/dev/jfet2/psmodel.c	Sat Jul  6 01:42:09 1996
+@@ -0,0 +1,359 @@
++/*
++ 	Parker-Skellern MESFET model
++ 	
++	Copyright (C) 1994, 1995, 1996  Macquarie University                    
++	All Rights Reserved 
++	Author: Anthony Parker
++	Date:	2  Feb 1994  created
++	        9  Feb 1994  correct NaN problem in strong cut-off region
++	        20 MAR 1994  corrected capacitance initialization  
++	        24 MAR 1994  added parameter MVST  
++	        28 MAR 1994  reorganized declaration scopes 
++            19 APR 1994  added new parameters: PS_HFETA, PS_HFE1, PS_HFE2,
++                             PS_HFG1, and PS_HFG2
++            18 May 1994  corrected 1/0 error when PS_VSUB=0
++            15 Jul 1994  corrected errors in acload routine
++            10 Aug 1995  added PS_VSUB to gds += gm*PS_VSUB*mvst*(vgt-vgst*(a..
++			12 Sep 1995  changed _XXX to PS_XXX to aid portability
++            13 Sep 1995  change to give arg=1-1/subfac; 
++			                           if(vst!=0) gds+=gm*PS_VSUB..;
++                                        gm *= arg;
++			10 Feb 1996  change to names to match MicroSim code.
++			5  Jul 1996  corrected diode eq (change Gmin*vgs to Gmin*vgd).
++ 
++*****************************************************************************/
++
++/*-----------
++| functions defined in this file are:
++    PSids()          returns dc drain source current and assigns other
++                     current and branch conductances
++    qgg()            static function that returns gate charge
++    PScharge()       returns gate-source and gate-drain charge and capacitance
++    PSacload()       returns small-signal conductance elements
++    PSinstanceinit() initializes model parameters
++ */
++
++#define PSMODEL_C      /* activate local definitions in psmesfet.h */
++#include "psmodel.h"
++
++/*-----------
++| dc current and conductance calculation */
++double
++PSids(ckt, model, here, vgs, vgd, igs, igd, ggs, ggd, Gm, Gds)
++cref *ckt;
++modl *model;
++inst *here;
++double vgs;
++double vgd;
++double *igs;
++double *igd;
++double *ggs;
++double *ggd;
++double *Gm;
++double *Gds;
++{
++#define FX  -10.0 /* not too small else fatal rounding error in (rpt-a_rpt) */
++#define MX  40.0  /* maximum exponential argument */
++#define EMX 2.353852668370199842e17  /* exp(MX) */
++
++   double idrain, arg;
++   double area = AREA;
++
++   { /* gate junction diodes */
++      double zz;
++      { /* gate-junction forward conduction */
++         double Gmin   = GMIN;
++         double Vt     = NVT;
++         double isat   = IS   * area;
++         if ((arg=vgs/Vt) > FX) {
++            if(arg < MX) {
++               *ggs=(zz=isat*exp(arg))/Vt+Gmin; *igs= zz -isat +Gmin*vgs;
++            } else {
++               *ggs=(zz=isat*EMX)/Vt+Gmin;     *igs=zz*(arg-MX+1)-isat+Gmin*vgs;
++            }
++         } else {
++            *ggs = Gmin;                       *igs = -isat + Gmin * vgs;
++         }
++         if ((arg=vgd/Vt) > FX) {
++            if(arg < MX) {
++               *ggd=(zz=isat*exp(arg))/Vt+Gmin; *igd= zz -isat +Gmin*vgd;
++            } else {
++               *ggd=(zz=isat*EMX)/Vt+Gmin;     *igd=zz*(arg-MX+1)-isat+Gmin*vgd;
++            }
++         } else {
++            *ggd = Gmin;                       *igd = -isat + Gmin * vgd;
++         }
++      }
++      { /* gate-junction reverse 'breakdown' conduction */
++         double Vbd    = VBD;
++         double ibd    = IBD  * area;
++         if ((arg=-vgs/Vbd) > FX) {
++            if(arg < MX) {
++               *ggs += (zz=ibd*exp(arg))/Vbd;  *igs -= zz-ibd;
++            } else {
++               *ggs += (zz=ibd*EMX)/Vbd;       *igs -= zz*((arg-MX)+1) - ibd;
++            }
++         } else                                *igs += ibd;
++         if ((arg=-vgd/Vbd) > FX) {
++            if(arg < MX) {
++               *ggd += (zz=ibd*exp(arg))/Vbd;  *igd -= zz-ibd;
++            } else {
++               *ggd += (zz=ibd*EMX)/Vbd;       *igd -= zz*((arg-MX)+1) - ibd;
++            }
++         } else                                *igd += ibd;
++      }
++   }
++    
++   { /*  compute drain current and derivitives */
++      double gm, gds;
++      double vdst = vgs - vgd;
++      double stepofour = STEP * FOURTH;
++      { /* Include rate dependent threshold modulation */
++         double vgst, dvgd, dvgs, h, vgdtrap, vgstrap, eta, gam;
++         double vto = VTO;
++         double LFg = LFGAM,   LFg1 = LFG1,  LFg2 = LFG2;
++         double HFg = HFGAM,   HFg1 = HFG1,  HFg2 = HFG2;
++         double HFe = HFETA,   HFe1 = HFE1,  HFe2 = HFE2;
++         if(TRAN_ANAL) {
++            double taug = TAUG;
++            h = taug/(taug + stepofour);  h*=h; h*=h; /*4th power*/
++            VGDTRAP_NOW = vgdtrap = h*VGDTRAP_BEFORE + (1-h) * vgd;
++            VGSTRAP_NOW = vgstrap = h*VGSTRAP_BEFORE + (1-h) * vgs;
++         } else {
++            h = 0;
++            VGDTRAP_NOW = vgdtrap = vgd;
++            VGSTRAP_NOW = vgstrap = vgs;
++         }
++         vgst = vgs - vto;
++         vgst -= (      LFg - LFg1*vgstrap + LFg2*vgdtrap)*vgdtrap;
++         vgst += (eta = HFe - HFe1*vgdtrap + HFe2*vgstrap)*(dvgs = vgstrap-vgs);
++         vgst += (gam = HFg - HFg1*vgstrap + HFg2*vgdtrap)*(dvgd = vgdtrap-vgd);
++         { /* Exponential Subthreshold effect ids(vgst,vdst) */
++            double vgt, subfac;
++            double mvst = MVST;
++            double vst = VSUB * (1 + mvst*vdst);
++            if (vgst > FX*vst) {
++               if (vgst > (arg=MX*vst)) { /* numerically large */
++                  vgt = (EMX/(subfac = EMX+1))*(vgst-arg) + arg;
++               } else  /* limit gate bias exponentially */
++                  vgt = vst * log( subfac=(1 + exp(vgst/vst)) );
++               { /* Dual Power-law ids(vgt,vdst) */
++                  double mQ  = Q;
++                  double PmQ = P - mQ;
++                  double dvpd_dvdst=(double)D3*pow(vgt,PmQ);
++                  double vdp = vdst*dvpd_dvdst; /*D3=P/Q/((VBI-vto)^PmQ)*/
++                  { /* Early saturation effect ids(vgt,vdp) */
++                     double za  = (double)ZA; /* sqrt(1 + Z)/2 */
++                     double mxi = MXI;
++                     double vsatFac = vgt/(mxi*vgt  + (double)XI_WOO);
++                     double vsat=vgt/(1 + vsatFac);
++                     double  aa = za*vdp+vsat/2.0;
++                     double a_aa = aa-vsat;
++                     double  rpt = sqrt( aa * aa + (arg=vsat*vsat*Z/4.0));
++                     double a_rpt = sqrt(a_aa * a_aa + arg);
++                     double vdt = (rpt - a_rpt);
++                     double dvdt_dvdp = za * (aa/rpt - a_aa/a_rpt);
++                     double dvdt_dvgt = (vdt - vdp*dvdt_dvdp)
++                           *(1 + mxi*vsatFac*vsatFac)/(1 + vsatFac)/vgt;
++                     { /* Intrinsic Q-law FET equation ids(vgt,vdt) */
++                        gds=pow(vgt-vdt,mQ-1);
++                        idrain = vdt*gds + vgt*(gm=pow(vgt,mQ-1)-gds);
++                        gds *= mQ;
++                        gm *= mQ;
++                     }
++                     gm += gds*dvdt_dvgt;
++                     gds *= dvdt_dvdp;
++                  }
++                  gm += gds*PmQ*vdp/vgt;
++                  gds *= dvpd_dvdst;
++               }
++               arg = 1 - 1/subfac;
++               if(vst != 0) gds += gm*VSUB*mvst*(vgt-vgst*arg)/vst;
++               gm *= arg;
++            } else { /* in extreme cut-off (numerically) */
++               idrain = gm = gds = 0.0e0;
++            }
++         }
++         gds += gm*(arg = h*gam +
++                   (1-h)*(HFe1*dvgs-HFg2*dvgd+2*LFg2*vgdtrap-LFg1*vgstrap+LFg));
++         gm *= 1 - h*eta + (1-h)*(HFe2*dvgs -HFg1*dvgd + LFg1*vgdtrap) - arg;
++      }
++      { /* apply channel length modulation and beta scaling */
++         double lambda = LAM;
++         double beta   = BETA  * area;
++         gm *= (arg = beta*(1 + lambda*vdst));
++         gds = beta*lambda*idrain + gds*arg;
++         idrain *= arg;
++      }
++        
++      { /* apply thermal reduction of drain current */
++        double h, pfac, pAverage;
++        double delta = DELT / area;
++        if(TRAN_ANAL) {
++           double taud = TAUD;
++           h = taud/(taud + stepofour);    h*=h; h*=h;
++           POWR_NOW = pAverage = h*POWR_BEFORE + (1-h)*vdst*idrain;
++        } else {
++           POWR_NOW = POWR_BEFORE = pAverage = vdst*idrain;  h = 0;
++        }
++        idrain /= (pfac = 1+pAverage*delta);
++        *Gm  = gm * (arg = (h*delta*POWR_BEFORE + 1)/pfac/pfac);
++        *Gds = gds * arg - (1-h) * delta*idrain*idrain;
++      }
++   }
++   return(idrain);
++}
++
++/*-----------
++| code based on Statz et. al. capacitance model,  IEEE Tran ED Feb 87 */
++static double
++qgg(vgs, vgd, gamma, pb, alpha, vto, vmax, xc, cgso, cgdo, cgs, cgd)
++double vgs, vgd, gamma, pb, alpha, vto, vmax, xc, cgso, cgdo, *cgs, *cgd;
++{
++   double qrt, ext, Cgso, cpm, cplus, cminus;
++   double vds   = vgs-vgd;
++   double d1_xc = 1-xc;
++   double vert  = sqrt( vds * vds + alpha );
++   double veff  = 0.5*(vgs + vgd + vert) + gamma*vds;
++   double vnr   = d1_xc*(veff-vto);
++   double vnrt  = sqrt( vnr*vnr + 0.04 );
++   double vnew  = veff + 0.5*(vnrt - vnr);
++   if ( vnew < vmax ) {
++      ext  = 0;
++      qrt  = sqrt(1 - vnew/pb);
++      Cgso = 0.5*cgso/qrt*(1+xc + d1_xc*vnr/vnrt);
++   } else {
++      double vx  = 0.5*(vnew-vmax);
++      double par = 1+vx/(pb-vmax);
++      qrt  = sqrt(1 - vmax/pb);
++      ext  = vx*(1 + par)/qrt;
++      Cgso = 0.5*cgso/qrt*(1+xc + d1_xc*vnr/vnrt) * par;
++   }
++   cplus = 0.5*(1 + (cpm = vds/vert)); cminus = cplus - cpm;
++   *cgs = Cgso*(cplus +gamma) + cgdo*(cminus+gamma);
++   *cgd = Cgso*(cminus-gamma) + cgdo*(cplus -gamma);
++   return(cgso*((pb+pb)*(1-qrt) + ext) + cgdo*(veff - vert));
++}
++
++/*-----------
++| call during ac analysis initialisation or during transient analysis */
++void
++PScharge(ckt, model, here, vgs, vgd, capgs, capgd)
++cref *ckt;
++modl *model;
++inst *here;
++double vgs;
++double vgd;
++double *capgs;
++double *capgd;
++{
++#define QGG(a,b,c,d) qgg(a,b,gac,phib,alpha,vto,vmax,xc,czgs,czgd,c,d)
++/*  double qgg(); */
++      
++   double czgs = CGS * AREA;
++   double czgd = CGD * AREA;
++   double vto   = VTO;
++   double alpha = (double)ALPHA;  /* (XI*woo/(XI+1)/2)^2 */
++   double xc    = XC;
++   double vmax  = VMAX;
++   double phib  = VBI;
++   double gac   = ACGAM;
++   
++   if(/*TRAN_INIT ||*/ !TRAN_ANAL)
++       QGS_NOW = QGD_NOW = QGS_BEFORE = QGD_BEFORE
++          = QGG(vgs,vgd,capgs,capgd);
++   else {
++      double cgsna,cgsnc;
++      double cgdna,cgdnb, a_cap;
++      double vgs1  = VGS1;
++      double vgd1  = VGD1;
++      double qgga=QGG(vgs ,vgd ,&cgsna,&cgdna);
++      double qggb=QGG(vgs1,vgd ,&a_cap,&cgdnb);
++      double qggc=QGG(vgs ,vgd1,&cgsnc,&a_cap);
++      double qggd=QGG(vgs1,vgd1,&a_cap,&a_cap);
++      QGS_NOW = QGS_BEFORE + 0.5 * (qgga-qggb + qggc-qggd);
++      QGD_NOW = QGD_BEFORE + 0.5 * (qgga-qggc + qggb-qggd);
++      *capgs = 0.5 * (cgsna + cgsnc);
++      *capgd = 0.5 * (cgdna + cgdnb);
++   }
++}
++
++
++/*-----------
++| call for each frequency in ac analysis */
++void
++PSacload(ckt, model, here, vgs, vgd, ids, omega, Gm, xGm, Gds, xGds)
++cref *ckt;
++modl *model;
++inst *here;
++double vgs;
++double vgd;
++double ids;
++double omega;
++double *Gm;
++double *xGm;
++double *Gds;
++double *xGds;
++{
++    double arg;
++    double vds = vgs - vgd;
++    double LFgam = LFGAM;
++    double LFg1 = LFG1;
++    double LFg2 = LFG2*vgd;
++    double HFg1 = HFG1;
++    double HFg2 = HFG2*vgd;
++    double HFeta  = HFETA;
++    double HFe1 = HFE1;
++    double HFe2 = HFE2*vgs;
++    double hfgam= HFGAM - HFg1*vgs + HFg2;
++    double eta  = HFeta - HFe1*vgd + HFe2;
++    double lfga = LFgam - LFg1*vgs + LFg2 + LFg2;
++    double gmo  = *Gm/(1 - lfga + LFg1*vgd);
++    
++    double wtg = TAUG * omega;
++    double wtgdet = 1 + wtg*wtg;
++    double gwtgdet = gmo/wtgdet;
++
++    double gdsi = (arg=hfgam - lfga)*gwtgdet;
++    double gdsr = arg*gmo - gdsi;
++    double gmi  = (eta + LFg1*vgd)*gwtgdet + gdsi;
++ 
++    double xgds = wtg*gdsi;
++    double  gds = *Gds + gdsr;
++    double  xgm = -wtg*gmi;
++    double   gm = gmi + gmo*(1 -eta - hfgam);
++                
++    double delta = DELT / AREA;
++    double wtd = TAUD * omega ;
++    double wtddet = 1 + wtd * wtd;
++    double fac = delta * ids;
++    double del = 1/(1 - fac * vds);
++    double dd = (del-1) / wtddet;
++    double dr = del - dd;
++    double di = wtd * dd;
++                
++    double cdsqr = fac * ids * del * wtd/wtddet;
++
++    *Gm   = dr*gm  - di*xgm;
++    *xGm  = di*gm  + dr*xgm;
++ 
++    *Gds  = dr*gds - di*xgds + cdsqr*wtd;
++    *xGds = di*gds + dr*xgds + cdsqr;
++}
++
++
++void    /* call when temperature changes */
++PSinstanceinit(model, here)
++modl *model;
++inst *here;
++{
++#ifndef PARAM_CAST     /* allow casting to parameter type */
++#define PARAM_CAST     /* if not specified then don't cast */
++#endif
++    
++    double woo = (VBI - VTO);
++    XI_WOO = PARAM_CAST (XI * woo);
++    ZA     = PARAM_CAST (sqrt(1 + Z)/2);
++    ALPHA  = PARAM_CAST (XI_WOO*XI_WOO/(XI+1)/(XI+1)/ 4);
++    D3     = PARAM_CAST (P/Q/pow(woo,(P - Q)));
++}
+diff -ruN ../work.orig/src/lib/dev/jfet2/psmodel.h ./src/lib/dev/jfet2/psmodel.h
+--- ../work.orig/src/lib/dev/jfet2/psmodel.h	Wed Dec 31 19:00:00 1969
++++ ./src/lib/dev/jfet2/psmodel.h	Sat Jul  6 01:42:09 1996
+@@ -0,0 +1,121 @@
++/*
++ 	Parker-Skellern MESFET model, UCB Spice Glue Header
++ 	
++	Copyright (C) 1994, 1995, 1996  Macquarie University                    
++	All Rights Reserved 
++	Author: Anthony Parker
++	Creation Date:	2 Feb 1994 
++	Modified: 24 Mar 1994:   Parameters MVST and ETA added. 
++          18 Apr 1994:   Added new parameters and comments
++	  12 Sep 1995:   Changed _XXX to PS_XXX to aid portability
++ */
++
++
++#ifdef PSMODEL_C  /* PSMODEL_C defined when included from "psmodel.c" */
++#include "spice.h"
++#include "jfet2defs.h"
++#include "const.h"
++#endif
++
++/* Glue definitions for cref modl and inst */
++typedef  CKTcircuit    cref; /* circuit specific variables */
++typedef  JFET2model     modl; /* model parameters for this type of device */
++typedef  JFET2instance  inst; /* parameters specific to this device instance */
++
++#ifdef __STDC__
++extern	void	PSinstanceinit(modl *,inst *);
++extern	double	PSids(cref *,modl *,inst *,double,double,
++		        double *,double *,double *,double *,double *,double *);
++extern	void	PScharge(cref *,modl *,inst *,double,double,double *,double *);
++extern  void    PSacload(cref *,modl *,inst *,double,double,double,double,
++                                          double *,double *,double *,double *);
++#else
++extern	void	PSinstanceinit();
++extern  double	PSids();
++extern  void	PScharge();
++extern  void	PSacload();
++#endif
++
++#ifdef PSMODEL_C /* PSMODEL_C defined when included from "psmodel.c" */
++/* The following glue definitions need to be changed to suit the specific
++   simulator.  */
++/* simulator mode flags 
++    TRAN_ANAL should be true during transient analysis iteration.
++              (ie. false for other analysis functions and tran operating point.)
++    TRAN_INIT should be true only during the first calculation of the initial 
++              transient analysis time point. It should be false for remaining
++              iterations at that time point and the rest of the transient analysis.
++ */
++#define TRAN_ANAL          (ckt->CKTmode & MODETRAN) 
++#define TRAN_INIT          (ckt->CKTmode & MODEINITTRAN)
++
++/* state variables */
++/* initialized when TRAN_ANAL is false */
++#define VGSTRAP_BEFORE     (*(ckt->CKTstate1 + here->JFET2vgstrap))
++#define VGSTRAP_NOW        (*(ckt->CKTstate0 + here->JFET2vgstrap))
++#define VGDTRAP_BEFORE     (*(ckt->CKTstate1 + here->JFET2vtrap))
++#define VGDTRAP_NOW        (*(ckt->CKTstate0 + here->JFET2vtrap))
++#define POWR_BEFORE        (*(ckt->CKTstate1 + here->JFET2pave))
++#define POWR_NOW           (*(ckt->CKTstate0 + here->JFET2pave))
++
++/* initialized when TRAN_INIT is true or TRAN_ANAL is false */
++#define QGS_BEFORE         (*(ckt->CKTstate1 + here->JFET2qgs))
++#define QGS_NOW            (*(ckt->CKTstate0 + here->JFET2qgs))
++#define QGD_BEFORE         (*(ckt->CKTstate1 + here->JFET2qgd))
++#define QGD_NOW            (*(ckt->CKTstate0 + here->JFET2qgd))
++
++/* past terminal potentials used if TRAN_INIT is false and TRAN_ANAL is true */
++#define VGS1               (*(ckt->CKTstate1 + here->JFET2vgs))
++#define VGD1               (*(ckt->CKTstate1 + here->JFET2vgd))
++
++/* simulator specific parameters */
++#define GMIN    ckt->CKTgmin                       /* SPICE gmin (1E12 ohms) */
++#define NVT     here->JFET2temp*CONSTKoverQ*model->JFET2n             /* nkT/q */
++#define STEP    ckt->CKTdelta        /* time step of this transient solution */
++#define FOURTH  0.25           /* eldo requires 2.5e-10 for units conversion */
++
++/* model parameters */
++/* dc model */
++#define BETA    model->JFET2beta      /* transconductance scaling */
++#define DELT    model->JFET2delta     /* thermal current reduction */
++#define IBD     model->JFET2ibd       /* breakdown current */
++#define IS      here->JFET2tSatCur    /* gate reverse saturation current */
++#define LAM     model->JFET2lambda    /* channel length modulation */
++#define LFGAM   model->JFET2lfgam     /* dc drain feedback */
++#define LFG1    model->JFET2lfg1      /* dc drain feedback vgs modulation */
++#define LFG2    model->JFET2lfg2      /* dc drain feedback vgd modulation */
++#define MVST    model->JFET2mvst      /* subthreshold vds modulation */
++#define MXI     model->JFET2mxi       /* saturation index vgs modulation */
++#define P       model->JFET2p         /* power law in controlled resistance */
++#define Q       model->JFET2q         /* power law in controlled current */
++#define VBD     model->JFET2vbd       /* breakdown exponential coef */
++#define VBI     here->JFET2tGatePot   /* junction built-in potential */
++#define VSUB    model->JFET2vst       /* subthreshold exponential coef */
++#define VTO     model->JFET2vto       /* pinch-off potential */
++#define XI      model->JFET2xi        /* saturation index */
++#define Z       model->JFET2z         /* saturation knee curvature */
++
++/* ac model */
++#define ACGAM   model->JFET2acgam     /* capacitance vds modulation */
++#define CGS     here->JFET2tCGS       /* zero bias cgs */
++#define CGD     here->JFET2tCGD       /* zero bias cgd */
++#define HFETA   model->JFET2hfeta     /* ac source feedback */
++#define HFE1    model->JFET2hfe1      /* ac source feedback vgd modulation */
++#define HFE2    model->JFET2hfe2      /* ac source feedback vgs modulation */
++#define HFGAM   model->JFET2hfgam     /* ac drain feedback */
++#define HFG1    model->JFET2hfg1      /* ac drain feedback vgs modulation */
++#define HFG2    model->JFET2hfg2      /* ac drain feedback vgd modulation */
++#define TAUD    model->JFET2taud      /* thermal time constant */
++#define TAUG    model->JFET2taug      /* dc ac feedback time constant */
++#define XC      model->JFET2xc        /* cgs reduction at pinch-off */
++
++/* device instance */
++#define AREA       here->JFET2area       /* area factor of fet */
++
++/* internally derived model parameters */
++#define ALPHA   here->JFET2alpha      /* cgs cgd reversal interval */
++#define D3      here->JFET2d3         /* dual power-law parameter */
++#define VMAX    here->JFET2corDepCap  /* forward capacitance potential */
++#define XI_WOO  here->JFET2xiwoo      /* saturation potential */
++#define ZA      model->JFET2za        /* saturation knee parameter */
++#endif
+diff -ruN ../work.orig/src/lib/dev/jfet2/response.lib ./src/lib/dev/jfet2/response.lib
+--- ../work.orig/src/lib/dev/jfet2/response.lib	Wed Dec 31 19:00:00 1969
++++ ./src/lib/dev/jfet2/response.lib	Mon Jun 27 11:05:54 1994
+@@ -0,0 +1,16 @@
+++jfet2.obj&
+++jfet2acld.obj&
+++jfet2ask.obj&
+++jfet2del.obj&
+++jfet2dset.obj&
+++jfet2ic.obj&
+++jfet2load.obj&
+++jfet2mask.obj&
+++jfet2mdel.obj&
+++jfet2mpar.obj&
+++jfet2noi.obj&
+++jfet2par.obj&
+++jfet2set.obj&
+++jfet2temp.obj&
+++jfet2trun.obj&
+++psmodel.obj;
+diff -ruN ../work.orig/src/lib/inp/inp2j.c ./src/lib/inp/inp2j.c
+--- ../work.orig/src/lib/inp/inp2j.c	Mon Apr  1 17:24:17 1991
++++ ./src/lib/inp/inp2j.c	Sun May 18 13:46:47 2003
+@@ -41,11 +41,6 @@
+ GENERIC *mdfast;    /* pointer to the actual model */
+ IFuid uid;      /* uid of default model */
+ 
+-    mytype = INPtypelook("JFET");
+-    if(mytype < 0 ) {
+-        LITERR("Device type Diode not supported by this binary\n")
+-        return;
+-    }
+     line = current->line;
+     INPgetTok(&line,&name,1);
+     INPinsert(&name,tab);
+@@ -57,16 +52,24 @@
+     INPtermInsert(ckt,&nname3,tab,&node3);
+     INPgetTok(&line,&model,1);
+     INPinsert(&model,tab);
++    thismodel = (INPmodel *)NULL;
+     current->error = INPgetMod(ckt,model,&thismodel,tab);
+     if(thismodel != NULL) {
+-        if(mytype != thismodel->INPmodType) {
++        if (thismodel->INPmodType != INPtypelook("JFET")
++                && thismodel->INPmodType != INPtypelook("JFET2")
++		)
++        {
+             LITERR("incorrect model type")
+             return;
+         }
+-        type = mytype;
++        type = thismodel->INPmodType;
+         mdfast = (thismodel->INPmodfast);
+     } else {
+-        type = mytype;
++        type = INPtypelook("JFET");
++        if(type < 0 ) {
++           LITERR("Device type JFET not supported by this binary\n")
++           return;
++        }
+         if(!tab->defJmod) {
+             /* create default J model */
+             IFnewUid(ckt,&uid,(IFuid)NULL,"J",UID_MODEL,(GENERIC**)NULL);
+diff -ruN ../work.orig/src/lib/inp/inpdomod.c ./src/lib/inp/inpdomod.c
+--- ../work.orig/src/lib/inp/inpdomod.c	Tue Jul 20 17:55:14 1993
++++ ./src/lib/inp/inpdomod.c	Sun May 18 13:46:47 2003
+@@ -44,9 +44,27 @@
+         }
+         INPmakeMod(modname,type,image);
+     } else if( (strcmp(typename,"njf") == 0) || (strcmp(typename,"pjf") == 0)){
+-        type = INPtypelook("JFET");
+-        if(type < 0) {
+-            err = INPmkTemp("Device type JFET not available in this binary\n");
++        err = INPfindLev(line,&lev);
++        switch(lev) {
++            case 0:
++            case 1:
++                type = INPtypelook("JFET");
++                if(type < 0) {
++                    err = INPmkTemp(
++                            "Device type JFET not available in this binary\n");
++                }
++                break;
++            case 2:
++                type = INPtypelook("JFET2");
++                if(type < 0) {
++                    err = INPmkTemp(
++                            "Device type JFET2 not available in this binary\n");
++                }
++                break;
++            default: /* placeholder; use level 3 for the next model */
++		err = INPmkTemp(
++		  "Only JFET device levels 1-2 are supported in this binary\n");
++                break;
+         }
+         INPmakeMod(modname,type,image);
+     } else if( (strcmp(typename,"nmf") == 0) || (strcmp(typename,"pmf")==0) ) {
+diff -ruN ../work.orig/util/delall.bat ./util/delall.bat
+--- ../work.orig/util/delall.bat	Fri Jul 30 04:27:41 1993
++++ ./util/delall.bat	Sun May 18 13:46:47 2003
+@@ -37,6 +37,7 @@
+ del src\lib\dev\mos1\*.*
+ del src\lib\dev\mes\*.*
+ del src\lib\dev\jfet\*.*
++del src\lib\dev\jfet2\*.*
+ del src\lib\dev\disto\*.*
+ del src\lib\dev\dio\*.*
+ del src\lib\dev\csw\*.*
+@@ -93,6 +94,7 @@
+ rmdir src\lib\dev\mos1
+ rmdir src\lib\dev\mes
+ rmdir src\lib\dev\jfet
++rmdir src\lib\dev\jfet2
+ rmdir src\lib\dev\disto
+ rmdir src\lib\dev\dio
+ rmdir src\lib\dev\csw
+diff -ruN ../work.orig/util/skeleton/make_def.bd ./util/skeleton/make_def.bd
+--- ../work.orig/util/skeleton/make_def.bd	Thu Jul 29 16:35:18 1993
++++ ./util/skeleton/make_def.bd	Sun May 18 13:46:47 2003
+@@ -115,7 +115,7 @@
+ DEV_SUBDIRS	= $(DEVICES)
+ 
+ ALL_DEVICES	= asrc bjt bsim1 bsim2 cap cccs ccvs csw dio ind isrc \
+-		  jfet ltra mes mos1 mos2 mos3 mos6 res sw tra urc \
++		  jfet jfet2 ltra mes mos1 mos2 mos3 mos6 res sw tra urc \
+ 		  vccs vcvs vsrc
+ 
+ ASM_HACK	=

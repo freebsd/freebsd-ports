@@ -6,19 +6,16 @@
 #
 
 PORTNAME=	spice
-PORTVERSION=	3f5.1
-PORTREVISION=	2
+PORTVERSION=	3f5.2
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ic.eecs.berkeley.edu/pub/Spice3/
 DISTNAME=	sp3f4.kit
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	maho@FreeBSD.org
 COMMENT=	A general-purpose circuit simulation program
 
 # documentation in ftp://ic.eecs.berkeley.edu/pub/Spice3/um.3f3.ps/
-#PATCH_SITES=	http://www.elec.mq.edu.au//cnerf/spice/
-#PATCHFILES=	patches.tar.Z
 
 USE_XLIB=	yes
 NO_WRKSUBDIR=	yes

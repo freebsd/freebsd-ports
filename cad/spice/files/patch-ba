@@ -1,4 +1,8 @@
-Fix to mos6 model
+#  spice3f4/3f5 patch level 1
+#  June 22, 1994
+#  Anthony Parker (tonyp@mpce.mq.edu.au)
+#  Macquarie University, Sydney Australia 2109 
+#
 *** spice3f4/src/lib/dev/mos6/mos6itf.h	Mon Sep 28 03:25:22 1992
 --- src/lib/dev/mos6/mos6itf.h	Fri Jun 17 12:59:58 1994
 ***************
@@ -31,4 +35,4 @@ Fix to mos6 model
 *** 1 ****
 ! #define PATCHLEVEL	0
 --- 1 ----
-! #define PATCHLEVEL	1
+! #define PATCHLEVEL	2
