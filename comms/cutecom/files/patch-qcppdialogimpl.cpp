@@ -1,16 +1,6 @@
---- qcppdialogimpl.cpp.orig	Tue Jul 13 21:30:51 2004
-+++ qcppdialogimpl.cpp	Thu Jul 15 01:45:55 2004
-@@ -44,6 +44,9 @@
- #include <ctype.h>
- #include <sys/ioctl.h>
- #include <sys/termios.h>
-+#ifdef __FreeBSD__
-+#include <sys/time.h>
-+#endif
- #include <fcntl.h>
- 
- QCPPDialogImpl::QCPPDialogImpl(QWidget* parent)
-@@ -147,11 +150,19 @@
+--- qcppdialogimpl.cpp.orig	Thu Jul 29 22:24:43 2004
++++ qcppdialogimpl.cpp	Fri Jul 30 10:22:04 2004
+@@ -167,11 +167,19 @@
     bool entryFound=false;
     QStringList devices=settings.readListEntry("/cutecom/AllDevices", &entryFound);
     if (!entryFound)
@@ -27,10 +17,10 @@
 +#else
     m_deviceCb->setCurrentText(settings.readEntry("/cutecom/CurrentDevice", "/dev/ttyS0"));
 +#endif
- }
  
- void QCPPDialogImpl::showAboutMsg()
-@@ -610,15 +621,21 @@
+    QStringList history=settings.readListEntry("/cutecom/History");
+    m_oldCmdsLb->insertStringList(history);
+@@ -659,15 +667,21 @@
     case 230400:
        _baud=B230400;
        break;
