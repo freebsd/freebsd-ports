@@ -1,24 +1,18 @@
---- Makefile.orig	Fri Mar 22 17:00:23 2002
-+++ Makefile	Sat Mar 23 02:46:59 2002
-@@ -4,26 +4,28 @@
- #since we're using c++, we use CXXFLAGS since that's standard.
- #If you only set CFLAGS, you should also look into setting CXXFLAGS
+--- Makefile.orig	Tue Mar 26 14:15:51 2002
++++ Makefile	Tue Mar 26 14:20:29 2002
+@@ -6,24 +6,26 @@
  
--TBUILDFLAGS	   = -Wall -lvorbis -lvorbisfile -lm $(CXXFLAGS)
-+TBUILDFLAGS	   = -L${LOCALBASE}/lib -lvorbis -lvorbisfile -lm $(CXXFLAGS)
+ BFLAGS		   = $(CXXFLAGS)
  
--BUILDFLAGS         = -Wall -lvorbis -lvorbisfile `glib-config --cflags` `gtk-config --cflags` `gtk-config --libs` `glib-config --libs` -lm $(CXXFLAGS)
-+BUILDFLAGS         = -L${LOCALBASE}/lib -lvorbis -lvorbisfile `${GTK_CONFIG} --cflags` `${GTK_CONFIG} --libs` -lm $(CXXFLAGS)
- #comment out below and comment above to enable experimental gtk2 ui
- #BUILDFLAGS         = -Wall -lvorbis -lvorbisfile `pkg-config --cflags gtk+-2.0` `pkg-config --libs gtk+-2.0` -lm $(CXXFLAGS)
+-BUILDFLAGS         = -Wall -lvorbis -lvorbisfile -logg `glib-config --cflags` `gtk-config --cflags` `gtk-config --libs` `glib-config --libs` -lm $(BFLAGS)
++BUILDFLAGS         = -L${LOCALBASE}/lib -lvorbis -lvorbisfile -logg `${GTK_CONFIG} --cflags` `${GTK_CONFIG} --libs` -lm $(BFLAGS)
+ #comment out below to enable experimental gtk2 ui
+ #BUILDFLAGS         = -Wall -lvorbis -lvorbisfile -logg `pkg-config --cflags gtk+-2.0` `pkg-config --libs gtk+-2.0` -lm $(BFLAGS)
  
--TBUILD2FLAGS	 = -Wall -lm $(CXXFLAGS)
-+TBUILD2FLAGS	 = -lm $(CXXFLAGS)
- 
--BUILD2FLAGS	 = -Wall `glib-config --cflags` `gtk-config --cflags` `gtk-config --libs` `glib-config --libs` -lm $(CXXFLAGS)
-+BUILD2FLAGS	 = `${GTK_CONFIG} --cflags` `${GTK_CONFIG} --libs` -lm $(CXXFLAGS)
- #comment out below and comment above to enable experimental gtk2 ui
- #BUILD2FLAGS        = -Wall `pkg-config --cflags gtk+-2.0` `pkg-config --libs gtk+-2.0` -lm $(CXXFLAGS)
+-BUILD2FLAGS	   = -Wall `glib-config --cflags` `gtk-config --cflags` `gtk-config --libs` `glib-config --libs` -lm $(BFLAGS)
++BUILD2FLAGS	   = `${GTK_CONFIG} --cflags` `${GTK_CONFIG} --libs` -lm $(BFLAGS)
+ #comment out below to enable experimental gtk2 ui
+ #BUILD2FLAGS        = -Wall `pkg-config --cflags gtk+-2.0` `pkg-config --libs gtk+-2.0` -lm $(BFLAGS)
  
  #To disable Vorbis support, comment out next line
 -VORBIS		 = -DVORBIS
@@ -29,7 +23,18 @@
  #To compile text only utility, comment out next line
  GTK		 = -DGTK
  
- CPPFLAGS         = -Wall -DVERSION=\"$(VER)\" $(VORBIS)
+ 
+ #Text ui for win32 and *nix  (only built when GTK is commented out)
+-TBUILDFLAGS	   = -Wall -lvorbis -lvorbisfile -lm $(BFLAGS)
+-TBUILD2FLAGS	   = -Wall -lm $(BFLAGS)
++TBUILDFLAGS	   = -L${LOCALBASE}/lib -lvorbis -lvorbisfile -lm $(BFLAGS)
++TBUILD2FLAGS	   = -lm $(BFLAGS)
+ 
+ #Win32 gtk build flags.  Uncomment these when building in win32  (only tested with gtk2)
+ #prebuilt vorbis and ogg libs found at xiph.org do not seem to work when used with cygwin
+@@ -38,6 +40,6 @@
+ 
+ CPPFLAGS         = -Wall -DVERSION=\"$(VER)\" $(VORBIS) $(WIN32)
  
 -CXX              = g++
 +#CXX              = g++

@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mp3stat
-PORTVERSION=	2.5.5
+PORTVERSION=	2.5.6
 CATEGORIES=	audio
 MASTER_SITES=	http://safemode.homeip.net/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
