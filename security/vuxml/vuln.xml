@@ -32,6 +32,37 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d371b627-6ed5-11d9-bd18-000a95bc6fae">
+    <topic>zhcon -- unauthorized file access</topic>
+    <affects>
+      <package>
+	<name>zhcon</name>
+	<name>zh-zhcon</name>
+	<range><lt>0.2.3_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Martin <q>Joey</q> Schulze reports:</p>
+	<blockquote>
+	  <p>Erik Sjöund discovered that zhcon, a fast console CJK
+	    system using the Linux framebuffer, accesses a
+	    user-controlled configuration file with elevated
+	    privileges. Thus, it is possible to read arbitrary files.</p>
+	</blockquote>
+	<p>When installed from the FreeBSD Ports Collection, zhcon is
+	  installed set-user-ID root.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0072</cvename>
+    </references>
+    <dates>
+      <discovery>2005-01-25</discovery>
+      <entry>2005-01-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b8943e61-6e68-11d9-a9e7-0001020eed82">
     <topic>evolution -- arbitrary code execution vulnerability</topic>
     <affects>
