@@ -6406,6 +6406,7 @@ p5-Net-SSH	ports/net/p5-Net-SSH
 p5-Net-SSH-Perl	ports/net/p5-Net-SSH-Perl
 p5-Net-SSLeay	ports/security/p5-Net-SSLeay
 p5-Net-Server	ports/net/p5-Net-Server
+p5-Net-Server-Mail	ports/mail/p5-Net-Server-Mail
 p5-Net-Services	ports/net/p5-Net-Services
 p5-Net-TCLink	ports/net/p5-Net-TCLink
 p5-Net-Telnet	ports/net/p5-Net-Telnet
