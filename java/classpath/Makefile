@@ -21,6 +21,7 @@ USE_GNOME=	gtk20 libartlgpl2 pkgconfig
 USE_JAVA=	yes
 USE_JIKES=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-jni --with-jikes
 USE_GMAKE=	yes
 
 INFO=		hacking vmintegration
