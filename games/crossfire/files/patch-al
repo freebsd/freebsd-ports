@@ -1,0 +1,36 @@
+Date: Wed, 6 Nov 96 04:19:33 EST
+From: "Brian Thomas" <thomas@astro.psu.edu>
+Message-Id: <9611060919.AA25706@zaphod.astro.psu.edu>
+To: crossfire@ifi.uio.no
+Subject: CF: Berserker weapon patch
+
+        Ok, I found the problem.. the artifact code
+        assigns a level value to artifacts with kind
+        "Berserkergang". The specialweapon/apply code,
+	when it finds a weapon with a "level" 
+	immediately compares the title field to the
+	weilder's name. If they dont match, it can't be used.
+
+	I created a patch to remove the level designation
+	from the artifact code since other named weaopns
+	(cf "glamdri") dont have a level assigned.
+
+					-b.t.
+
+*** lib/artifacts.orig	Wed Nov  6 04:15:22 1996
+--- lib/artifacts	Wed Nov  6 04:15:32 1996
+***************
+*** 548,558 ****
+  Con 7
+  Int -10
+  Wis -10
+  Cha -15
+  protected 2
+- level 20
+  material 256
+  weight 50
+  exp 3
+  hp 2
+  msg
+--- 548,557 ----
+

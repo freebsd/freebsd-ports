@@ -1,0 +1,42 @@
+To: Mark Wedel <mwedel@pyramid.com>
+cc: crossfire@ifi.uio.no
+Subject: CF: Bug in inventory-code
+Date: Wed, 06 Nov 1996 13:29:14 +0100
+From: Klaus Elsbernd <elsbernd@dfki.uni-kl.de>
+
+Hello.
+In version 0.92.8 is a bug in the inventory-unlock-code, which prevents
+unlocking.
+The following patch will fix the problem:
+
+*** server/c_object.c.dist      Tue Oct 29 11:57:45 1996
+--- server/c_object.c   Wed Nov  6 13:24:18 1996
+***************
+*** 1063,1069 ****
+  
+      op->contr->freeze_inv=1;
+      op->contr->freeze_look=1;
+!     if (!params) lock_inv(op,find_first_inventory_item(op));
+      else {
+        if (op->type==PLAYER) show_what=op->contr->show_what;
+        for (tmp=op->inv; tmp; tmp=tmp->below) {
+--- 1063,1069 ----
+  
+      op->contr->freeze_inv=1;
+      op->contr->freeze_look=1;
+!     if (!params) unlock_inv(op,find_first_inventory_item(op));
+      else {
+        if (op->type==PLAYER) show_what=op->contr->show_what;
+        for (tmp=op->inv; tmp; tmp=tmp->below) {
+
+MfG
+Klaus
+
+-- 
+._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._.
+| Klaus Elsbernd, DFKI/Universit"at Kaiserslautern  | elsbernd@dfki.uni-kl.de |
+| System Administrator                              | BOFH                    |
+| 67657 Kaiserslautern; Germany                     | Tel: (+49) 0631/205-3486|
+|_._._._._._._._._._._._._._._._._._._._._._._._._._|_._._._._._._._._._._._._|
+
+
