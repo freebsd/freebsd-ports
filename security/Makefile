@@ -115,6 +115,7 @@
     SUBDIR += libfwbuilder
     SUBDIR += libgcrypt
     SUBDIR += libgringotts
+    SUBDIR += libidea
     SUBDIR += libident
     SUBDIR += libksba
     SUBDIR += libmcrypt

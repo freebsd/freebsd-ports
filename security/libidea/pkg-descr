@@ -1,0 +1,10 @@
+IDEA is a block cipher invented by Xuejia Lai and James Massey in
+1991.  A block cipher is an encryption algorithm that encrypts the
+data in blocks.  IDEA has a block size of 64 bits, and a keylength of
+128 bits. IDEA is a symmetrical algorithm, which means that the same
+key is used both for encryption and for decryption.
+
+WWW: http://www.mediacrypt.com/engl/Community/index.asp
+
+ -- Jim Geovedi
+    jim@corebsd.or.id
