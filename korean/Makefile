@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.27 1999/04/01 02:40:15 taoka Exp $
+# $Id: Makefile,v 1.28 1999/05/25 22:12:39 kuriyama Exp $
 #
 
     SUBDIR += Wnn
@@ -10,6 +10,7 @@
     SUBDIR += gtk10
     SUBDIR += h2ps
     SUBDIR += han
+    SUBDIR += hanIM
     SUBDIR += hanemacs
     SUBDIR += hanmutt
     SUBDIR += hanterm
