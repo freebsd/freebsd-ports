@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	zipcodes
-PORTVERSION=	20040209
+PORTVERSION=	20040430
 CATEGORIES=	japanese misc
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	kuriyama
-DISTFILES=	ken_all-${PORTVERSION}.lzh jigyosyo-${PORTVERSION}.lzh
+MASTER_SITES=	http://dist.bsdlab.org/
+DISTFILES=	ken_all-${PORTVERSION}.lzh jigyosyo-20040506.lzh
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Japanese zipcode tables. includes both 3/5 and 7 digits form
@@ -32,6 +31,7 @@ post-extract:
 fetch1:
 	fetch http://post.ah-tech.co.jp/zipcode/dl/kogaki/lzh/ken_all.lzh
 	fetch http://post.ah-tech.co.jp/zipcode/dl/jigyosyo/lzh/jigyosyo.lzh
+	chmod og+r *.lzh
 
 fetch2:
 	m=`stat -f %m ken_all.lzh`; \
