@@ -6,11 +6,12 @@
 # Each entry consists of a single line containing the following four
 # fields in the order named, separated with the pipe (`|') character:
 #
-#     Port:	a port that was moved (category/portname)
-#     Moved to:	where the port was moved to (category/portname),
-#		or blank when deleted
-#     Date:	when the moving or the removal was done (YYYY-MM-DD)
-#     Why:	the reason why the port was moved or removed
+#     Port:	A port that was moved (category/portname).
+#     Moved to:	Where the port was moved to, or which port users
+#		can and should migrate to (category/portname).
+#		Blank indicates that the port was deleted.
+#     Date:	When the moving or the removal was done (YYYY-MM-DD).
+#     Why:	The reason why the port was moved or removed.
 #
 # Keep this list sorted in the chronological order.  New entries must
 # be added at the tail.
@@ -25,10 +26,10 @@ japanese/linux-netscape47-communicator||2002-11-17|security vulnerability
 japanese/linux-netscape47-navigator||2002-11-17|security vulnerability
 japanese/netscape-fonts||2002-11-17|obsoleted by alias-fonts
 japanese/netscape3.language||2002-11-17|security vulnerability
-japanese/netscape4-communicator||2002-11-17|security vulnerability
-japanese/netscape4-navigator||2002-11-17|security vulnerability
-japanese/netscape47-communicator||2002-11-17|security vulnerability
-japanese/netscape47-navigator||2002-11-17|security vulnerability
+japanese/netscape4-communicator|japanese/netscape48-communicator|2002-11-17|security vulnerability
+japanese/netscape4-navigator|japanese/netscape48-navigator|2002-11-17|security vulnerability
+japanese/netscape47-communicator|japanese/netscape48-communicator|2002-11-17|security vulnerability
+japanese/netscape47-navigator|japanese/netscape48-navigator|2002-11-17|security vulnerability
 korean/linux-netscape47-communicator||2002-11-17|security vulnerability
 korean/linux-netscape47-navigator||2002-11-17|security vulnerability
 korean/netscape3||2002-11-17|security vulnerability
@@ -37,16 +38,16 @@ korean/netscape4-navigator||2002-11-17|security vulnerability
 korean/netscape47-communicator||2002-11-17|security vulnerability
 korean/netscape47-navigator||2002-11-17|security vulnerability
 russian/netscape4.language||2002-11-17|security vulnerability
-www/linux-netscape4||2002-11-17|security vulnerability
-www/linux-netscape47-communicator||2002-11-17|security vulnerability
-www/linux-netscape47-navigator||2002-11-17|security vulnerability
+www/linux-netscape4|www/netscape48-navigator|2002-11-17|security vulnerability
+www/linux-netscape47-communicator|www/netscape48-communicator|2002-11-17|security vulnerability
+www/linux-netscape47-navigator|www/netscape48-navigator|2002-11-17|security vulnerability
 www/netscape3||2002-11-17|security vulnerability
 www/netscape3-gold||2002-11-17|security vulnerability
-www/netscape4-communicator||2002-11-17|security vulnerability
-www/netscape4-communicator.us||2002-11-17|security vulnerability
-www/netscape4-navigator||2002-11-17|security vulnerability
-www/netscape47-communicator||2002-11-17|security vulnerability
-www/netscape47-navigator||2002-11-17|security vulnerability
-japanese/mhonarc||2002-11-17|current www/mhonarc could use Japanese
+www/netscape4-communicator|www/netscape48-navigator|2002-11-17|security vulnerability
+www/netscape4-communicator.us|www/netscape48-communicator|2002-11-17|security vulnerability
+www/netscape4-navigator|www/netscape48-navigator|2002-11-17|security vulnerability
+www/netscape47-communicator|www/netscape48-communicator|2002-11-17|security vulnerability
+www/netscape47-navigator|www/netscape48-navigator|2002-11-17|security vulnerability
+japanese/mhonarc|www/mhonarc|2002-11-17|current www/mhonarc could use Japanese
 graphics/linux_mesa||2002-11-17|Port was broken and out of date
 audio/cdrdao|sysutils/cdrdao|2002-11-18|misfiled, burns data CDs too
