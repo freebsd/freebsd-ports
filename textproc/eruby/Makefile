@@ -11,6 +11,10 @@ CATEGORIES=	textproc www ruby
 MASTER_SITES=	http://www.modruby.net/archive/
 DIST_SUBDIR=	ruby
 
+PATCH_SITES=	http://www.ruby-lang.org/~knu/
+PATCHFILES=	${DISTNAME}-2001.05.24.patch.gz
+PATCH_DIST_STRIP=	-p1
+
 MAINTAINER=	knu@FreeBSD.org
 
 USE_RUBY=	yes
@@ -26,7 +30,7 @@ DOCS_EN=	ChangeLog README.en
 DOCS_JA=	README.ja
 
 do-configure:
-	@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${RUBY} Makefile.RB ${CONFIGURE_ARGS}
+	@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${RUBY} configure.rb ${CONFIGURE_ARGS}
 
 post-install:
 .if !defined(NOPORTDOCS)
