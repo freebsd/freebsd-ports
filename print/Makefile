@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.55 1998/02/14 18:15:46 andreas Exp $
+# $Id: Makefile,v 1.56 1998/02/20 04:38:52 steve Exp $
 #
 
 # the reversed ordering of a2ps43 and a2ps is intentional -- this
@@ -33,6 +33,7 @@
     SUBDIR += lprps
     SUBDIR += lyx
     SUBDIR += makeindex
+    SUBDIR += mgv
     SUBDIR += mp
     SUBDIR += mpage
     SUBDIR += musixtex
