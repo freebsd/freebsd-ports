@@ -2464,6 +2464,7 @@ ja-dvipsk-vflib	ports/japanese/dvipsk-vflib
 ja-e2ps		ports/japanese/e2ps
 ja-easypr	ports/japanese/easypr
 ja-eb		ports/japanese/eb
+ja-eb2		ports/japanese/eb2
 ja-ebd-fpw	ports/japanese/ebd-fpw
 ja-eblook	ports/japanese/eblook
 ja-ebw3		ports/japanese/ebw3
