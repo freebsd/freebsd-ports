@@ -7,6 +7,7 @@
 
 PORTNAME?=	qt
 PORTVERSION?=	3.0.5
+PORTREVISION?=  1
 CATEGORIES?=	x11-toolkits
 MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/ \
 		ftp://ftp.chg.ru/pub/X11/qt/source/
@@ -33,7 +34,6 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 USE_X_PREFIX=	yes
-USE_NEWGCC=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	-prefix ${QT_PREFIX} \
 		-shared -qt-gif -system-zlib \
@@ -54,7 +54,7 @@ PLIST_SUB+=	OPENGL=""
 PKGNAMESUFFIX=	-opengl
 BROKEN=	"Using WITH_OPENGL causes DRI to fail in mysterious ways"
 .else
-PKGMESSAGE=${NONEXISTENT}
+PKGMESSAGE=	pkg-message-upgrade
 PLIST_SUB+=	OPENGL="@comment "
 CONFIGURE_ARGS+=-disable-opengl
 .endif
@@ -73,14 +73,10 @@ CFLAGS+=	-O0
 BROKEN=		"The QT 3.x port does not support any XFree86 < 4.x"
 .endif
 
-.if defined(WITH_OPENGL)
-# Display WITH_OPENGL advisory.
+SLEEP=/bin/sleep
 pre-everything:
-	@${ECHO_MSG} '===> **************************************************'
-	@${ECHO_MSG} '===> NOTE: Use of WITH_OPENGL is not recommended with'
-	@${ECHO_MSG} '===> versions of XFree86 < 4.2.0.'
-	@${ECHO_MSG} '===> **************************************************'
-.endif
+	@${CAT} ${PKGMESSAGE}
+	@${SLEEP} 10
 
 pre-fetch:
 .if exists(${X11BASE}/include/qt2/qapp.h)
@@ -110,8 +106,9 @@ pre-install:
 
 .if exists(${PKGMESSAGE})
 # Display another GL advisory. This one goes in the package, too.
-post-install:
-	@cat ${PKGMESSAGE}
+post-install::
+	@${CAT} ${PKGMESSAGE}
+	@${SLEEP} 10
 .endif
 
 .include <bsd.port.post.mk>

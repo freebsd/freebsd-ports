@@ -1,4 +1,15 @@
 ===> *****************************************************************
-===> This version of QT has been built with OpenGL graphics support.
+===> WARNING!!!
+===> This version of QT will be/has been built with OpenGL graphics 
+===> support.
 ===> It may not function correctly with versions of XFree86 < 4.2.0.
 ===> *****************************************************************
+
+===> *****************************************************************
+===> WARNING!!!
+===> If you are upgrading from Qt version 3.0 - 3.0.4, you MUST
+===> rebuild and reinstall kdelibs after installing the new Qt version, 
+===> at the least, and all of KDE (starting with kdelibs, then kdebase) 
+===> to be sure of correct function.
+===> *****************************************************************
+
