@@ -8,7 +8,7 @@
 PORTNAME=	vsftpd
 PORTVERSION=	1.2.1
 PORTREVISION=	3
-CATEGORIES=	ftp
+CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://vsftpd.beasts.org/users/cevans/
 
 MAINTAINER=	dinoex@FreeBSD.org
