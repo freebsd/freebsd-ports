@@ -1,22 +1,10 @@
 *** Makefile.orig	Fri Mar  3 16:16:46 1995
 --- Makefile	Sun Mar  5 17:47:06 1995
 ***************
-*** 11,17 ****
-  #  hpalib, hplow, hp3, dec, solaris, sparc, linux, freebsd, sgi, 
-  #  soundblaster, aix, next.
-  # gmake needed to handle this file in FreeBSD and NeXTStep
+*** 14,14 ****
 ! MACHINE = sparc
-  VERSION = 4.22
-  
-  # The name of your C compiler. For most machines this will be
---- 11,17 ----
-  #  hpalib, hplow, hp3, dec, solaris, sparc, linux, freebsd, sgi, 
-  #  soundblaster, aix, next.
-  # gmake needed to handle this file in FreeBSD and NeXTStep
+--- 14,14 ----
 ! MACHINE = freebsd
-  VERSION = 4.22
-  
-  # The name of your C compiler. For most machines this will be
 ***************
 *** 23,29 ****
   # User interface type. Right now, this is Unix as there are no alternatives.
