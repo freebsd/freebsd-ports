@@ -1,0 +1,13 @@
+sbin/0W-httpd
+etc/0W-httpd/countries.sample
+etc/0W-httpd/crontab.sample
+etc/0W-httpd/httpd.conf.sample
+etc/0W-httpd/httpd.txt.sample
+etc/0W-httpd/ip2country.sample
+etc/rc.d/0W-httpd.sh
+@dirrm etc/0W-httpd/
+@dirrm 0W-httpd/data/pids
+@dirrm 0W-httpd/data/httpd
+@dirrm 0W-httpd/data
+@unexec rm -fr %D/0W-httpd/logs/
+@dirrm 0W-httpd/
