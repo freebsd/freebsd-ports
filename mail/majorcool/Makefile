@@ -1,13 +1,13 @@
 # New ports collection makefile for:	majorcool
-# Version required:		1.1.0
+# Version required:		1.2.0
 # Date created:			Wed Aug 13 18:34:14 CEST 1997
 # Whom:				Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.3 1997/10/13 20:55:31 andreas Exp $
+# $Id: Makefile,v 1.4 1997/11/30 13:16:19 andreas Exp $
 #
 
-DISTNAME=	majorcool
-PKGNAME=	majorcool-1.1.2
+DISTNAME=	majorcool-1.20
+PKGNAME=	majorcool-1.2.0
 CATEGORIES=	mail
 MASTER_SITES=	http://ncrinfo.ncr.com/pub/contrib/unix/MajorCool/
 
