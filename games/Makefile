@@ -68,6 +68,7 @@
     SUBDIR += golddig
     SUBDIR += gracer
     SUBDIR += gru
+    SUBDIR += gtetrinet
     SUBDIR += gtkabale
     SUBDIR += gtkballs
     SUBDIR += hex
