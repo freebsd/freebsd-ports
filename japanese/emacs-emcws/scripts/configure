@@ -1,0 +1,14 @@
+#! /bin/sh
+
+for f in site-init.el; do
+	${SED} -e "s,%%DOC_FILE%%,${DOC_FILE},g" \
+		< ${FILESDIR}/${f}.tmpl > ${WRKSRC}/lisp/${f}
+done
+
+cd ${WRKSRC}
+
+if [ -f /usr/lib/aout/crt0.o -a ! -f /usr/lib/crt0.o ]; then
+    ${SED} -e "s|/usr/lib/crt0\.o|/usr/lib/aout/crt0.o|g" \
+	src/s/freebsd.h > src/s/freebsd.h.new || exit
+    ${MV} -f src/s/freebsd.h.new src/s/freebsd.h
+fi

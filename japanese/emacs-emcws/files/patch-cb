@@ -1,0 +1,34 @@
+--- src/s/freebsd.h.orig	Tue Apr 13 03:22:12 1999
++++ src/s/freebsd.h	Sat Jul 24 01:30:10 1999
+@@ -45,6 +45,13 @@
+ #define LIBS_SYSTEM -lutil
+ #define LIBS_TERMCAP -ltermcap
+ 
++/* Use XPG4 Library for FreeBSD */
++#if __FreeBSD_version >= 220000
++#ifdef USE_XPG
++#define LIBS_XPG -lxpg4
++#endif
++#endif
++
+ #define SYSV_SYSTEM_DIR
+ 
+ /* freebsd has POSIX-style pgrp behavior. */
+@@ -54,9 +61,16 @@
+ #ifdef __ELF__
+ 
+ #define LD_SWITCH_SYSTEM
++
++#ifdef __alpha__
++#define START_FILES pre-crt0.o /usr/lib/crt1.o /usr/lib/crtbegin.o
++#define LIB_STANDARD -lgcc -lc -lgcc /usr/lib/crtend.o
++#else
+ #define START_FILES pre-crt0.o /usr/lib/crt1.o /usr/lib/crti.o /usr/lib/crtbegin.o
+-#define UNEXEC unexelf.o
+ #define LIB_STANDARD -lgcc -lc -lgcc /usr/lib/crtend.o /usr/lib/crtn.o
++#endif
++
++#define UNEXEC unexelf.o
+ #undef LIB_GCC
+ #define LIB_GCC
+ 

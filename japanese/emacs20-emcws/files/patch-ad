@@ -1,0 +1,14 @@
+--- man/dired-x.texi.orig	Sun May 17 03:52:28 1998
++++ man/dired-x.texi	Sat Jul 24 01:19:47 1999
+@@ -19,9 +19,9 @@
+ @c dired-x.el REVISION NUMBER
+ @settitle Dired Extra Version 2 User's Manual
+ 
+-@dircategory Editors
++@dircategory The Emacs editor and associated tools
+ @direntry
+-* Dired-X: (dired-x).   Dired Extra Features.
++* Dired-X: (dired-x).		Dired Extra Features.
+ @end direntry
+ 
+ @iftex

@@ -1,0 +1,5 @@
+Emcws stands for Emacs + Canna + Wnn + Sj3,
+which is interim solutions to input 2 bytes chars by communicating with
+Kana Kanji conversion server. 
+
+WWW: ftp://ftp.ki.nu/pub/emcws/README.html

@@ -1,0 +1,13 @@
+--- man/info.texi.orig	Fri Apr 17 10:12:19 1998
++++ man/info.texi	Wed Feb 10 00:18:56 1999
+@@ -2,6 +2,10 @@
+ @comment %**start of header 
+ @setfilename ../info/info
+ @settitle Info 1.0
++@dircategory The Emacs editor and associated tools
++@direntry
++* Info: (info).			GNU on-line hyper document system.
++@end direntry
+ @comment %**end of header 
+ 
+ @iftex
