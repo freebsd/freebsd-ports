@@ -185,6 +185,10 @@ post-install:
 		${WRKSRC}/example/chg-scsi.conf \
 		${WRKSRC}/example/disklist \
 		${PREFIX}/share/examples/amanda
+	${MKDIR} ${PREFIX}/var/amanda/gnutar-lists
+	${CHOWN} operator:operator ${PREFIX}/var/amanda/gnutar-lists
+	${MKDIR} /etc/amandates
+	${CHOWN} operator:operator /etc/amandates
 
 .if defined (AMANDA_SERVER)
 CONFIGURE_ARGS+=	--with-index-server=${AMANDA_SERVER}
