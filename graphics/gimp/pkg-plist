@@ -1021,6 +1021,7 @@ share/gimp/help/images/selection_to_path.png
 share/gimp/help/images/stroke_path.png
 share/gimp/help/images/tip.png
 share/gimp/help/images/warning.png
+share/gimp/help/images/wilber.png
 share/gimp/palettes/Bears
 share/gimp/palettes/Bgold
 share/gimp/palettes/Blues
@@ -1286,10 +1287,18 @@ share/locale/ko/LC_MESSAGES/gimp-libgimp.mo
 share/locale/ko/LC_MESSAGES/gimp-script-fu.mo
 share/locale/ko/LC_MESSAGES/gimp-std-plugins.mo
 share/locale/ko/LC_MESSAGES/gimp.mo
+share/locale/lt/LC_MESSAGES/gimp-libgimp.mo
+share/locale/lt/LC_MESSAGES/gimp-script-fu.mo
+share/locale/lt/LC_MESSAGES/gimp-std-plugins.mo
+share/locale/lt/LC_MESSAGES/gimp.mo
 share/locale/nl/LC_MESSAGES/gimp-libgimp.mo
 share/locale/nl/LC_MESSAGES/gimp-script-fu.mo
 share/locale/nl/LC_MESSAGES/gimp-std-plugins.mo
 share/locale/nl/LC_MESSAGES/gimp.mo
+share/locale/nn/LC_MESSAGES/gimp-libgimp.mo
+share/locale/nn/LC_MESSAGES/gimp-script-fu.mo
+share/locale/nn/LC_MESSAGES/gimp-std-plugins.mo
+share/locale/nn/LC_MESSAGES/gimp.mo
 share/locale/no/LC_MESSAGES/gimp-libgimp.mo
 share/locale/no/LC_MESSAGES/gimp-script-fu.mo
 share/locale/no/LC_MESSAGES/gimp-std-plugins.mo
@@ -1314,10 +1323,18 @@ share/locale/sv/LC_MESSAGES/gimp-libgimp.mo
 share/locale/sv/LC_MESSAGES/gimp-script-fu.mo
 share/locale/sv/LC_MESSAGES/gimp-std-plugins.mo
 share/locale/sv/LC_MESSAGES/gimp.mo
+share/locale/tr/LC_MESSAGES/gimp-libgimp.mo
+share/locale/tr/LC_MESSAGES/gimp-script-fu.mo
+share/locale/tr/LC_MESSAGES/gimp-std-plugins.mo
+share/locale/tr/LC_MESSAGES/gimp.mo
 share/locale/uk/LC_MESSAGES/gimp-libgimp.mo
 share/locale/uk/LC_MESSAGES/gimp-script-fu.mo
 share/locale/uk/LC_MESSAGES/gimp-std-plugins.mo
 share/locale/uk/LC_MESSAGES/gimp.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/gimp-libgimp.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/gimp-script-fu.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/gimp-std-plugins.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/gimp.mo
 @dirrm etc/gimp/1.2
 @dirrm etc/gimp
 @dirrm include/gck
