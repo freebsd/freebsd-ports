@@ -1,0 +1,5 @@
+This module parses the Apache httpd.conf, or any compatible
+config file, and provides methods for you to access the
+values from the config file.
+
+WWW: http://search.cpan.org/dist/Apache-ConfigFile/
