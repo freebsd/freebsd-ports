@@ -15,7 +15,10 @@ COMMENT=	KDE HEX clone
 
 USE_KDELIBS_VER=	3
 GNU_CONFIGURE=		yes
+USE_REINPLACE=		yes
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/x11/kde3/Makefile.kde"
-.include <bsd.port.post.mk>
+post-patch:
+	${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS}," ${WRKSRC}/configure
+
+
+.include <bsd.port.mk>
