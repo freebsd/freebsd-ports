@@ -10,7 +10,7 @@ PORTVERSION=	1.2
 CATEGORIES=	news
 MASTER_SITES=	http://fly.cc.fer.hr/~dave/slrnface/
 
-MAINTAINER=	obraun@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	compface:${PORTSDIR}/mail/faces
 

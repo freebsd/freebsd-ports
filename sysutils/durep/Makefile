@@ -10,7 +10,7 @@ PORTVERSION=   0.8
 CATEGORIES=    sysutils
 MASTER_SITES=  http://www.hibernaculum.net/download/
 
-MAINTAINER=    obraun@FreeBSD.org
+MAINTAINER=    ports@FreeBSD.org
 
 MAN1=          durep.1
 
