@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2002-05-27
+SNAPDATE=	2002-06-17
 SNAPVER=	${SNAPDATE:S/-//g}
 
 PORTNAME=	gcc
@@ -14,7 +14,7 @@ PORTVERSION=	3.1.1
 PORTREVISION=	${SNAPVER}
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}  \
-		ftp://egcs.cygnus.com/pub/egcs/snapshots/${SNAPDATE}/
+		ftp://egcs.cygnus.com/pub/gcc/snapshots/${SNAPDATE}/
 MASTER_SITE_SUBDIR=	gcc/snapshots/${SNAPDATE}
 DISTFILES=	\
 		gcc-core-${SNAPVER}${EXTRACT_SUFX} \
@@ -161,8 +161,8 @@ post-install:
 	cd ${WRKDIR} ; ex < ex.script
 
 cklatest:
-	ncftpls \
-	    ftp://mirrors.rcn.net/mirrors/sources.redhat.com/gcc/snapshots/  \
-	    | grep LATEST
+.for SITE in ftp://mirrors.rcn.net/mirrors/sources.redhat.com/gcc/snapshots/	ftp://egcs.cygnus.com/pub/gcc/snapshots/
+	@-ncftpls ${SITE} | grep LATEST
+.endfor
 
 .include <bsd.port.post.mk>
