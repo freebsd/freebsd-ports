@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	fileroller
-PORTVERSION=	2.1.2
+PORTVERSION=	2.0.4
+PORTEPOCH=	1
 CATEGORIES=	archivers gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,6 +22,7 @@ RUN_DEPENDS=	bzip:${PORTSDIR}/archivers/bzip \
 		lzop:${PORTSDIR}/archivers/lzop
 
 USE_X_PREFIX=	yes
+USE_GMAKE=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack
 GNU_CONFIGURE=	yes
