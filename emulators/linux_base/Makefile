@@ -9,9 +9,11 @@ PORTNAME=		linux_base
 PORTVERSION=		7.1
 PORTREVISION=		5
 CATEGORIES=		emulators linux
-MASTER_SITES=		${MASTER_SITE_REDHAT_LINUX}
-MASTER_SITE_SUBDIR=	${PORTVERSION}/${LANG}/os/${MACHINE_ARCH}/RedHat/RPMS
-DISTFILES=		redhat-release-7.1-1.noarch.rpm \
+MASTER_SITES=		${MASTER_SITE_REDHAT_LINUX} \
+			${MASTER_SITE_REDHAT_LINUX:S/$/:i386/}
+MASTER_SITE_SUBDIR=	${PORTVERSION}/${LANG}/os/${MACHINE_ARCH}/RedHat/RPMS \
+			${PORTVERSION}/${LANG}/os/i386/RedHat/RPMS/:i386
+DISTFILES=		redhat-release-7.1-1.noarch.rpm:i386 \
 			${RPM_SETUP} \
 			filesystem-2.0.7-1.noarch.rpm \
 			basesystem-7.0-2.noarch.rpm \
@@ -143,9 +145,9 @@ do-install:
 	@${ECHO_MSG} "outside the jail, then press enter:"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "mkdir -m 0755 -p <Jail root dir>/dev"
-	@${ECHO_MSG} "rm -f <Jail root dir>/${LINUXBASE}/dev/null"
-	@${ECHO_MSG} "mknod <Jail root dir>/${LINUXBASE}/dev/null c 2 2"
-	@${ECHO_MSG} "chmod 666 <Jail root dir>/${LINUXBASE}/dev/null"
+	@${ECHO_MSG} "rm -f <Jail root dir>${LINUXBASE}/dev/null"
+	@${ECHO_MSG} "mknod <Jail root dir>${LINUXBASE}/dev/null c 2 2"
+	@${ECHO_MSG} "chmod 666 <Jail root dir>${LINUXBASE}/dev/null"
 	@${ECHO_MSG} ""
 	@${SH} -c "read line"
 .endif
