@@ -3,4 +3,4 @@ The API takes advantage of the server's opaque flag support and sets its
 scalar. In that case, the Storable module is used to freeze and thaw the
 value automatically going in and out of the memcached.
 
-WWW:	http://www.danga.com/memcached/apis.bml
+WWW: http://www.danga.com/memcached/apis.bml
