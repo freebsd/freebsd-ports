@@ -1,9 +1,9 @@
 #!/bin/sh
 #
 
-touch ${WRKSRC}/src/config/freebsd.cf
 find ${WRKSRC} -name Makefile -print | xargs rm
-xpath=`/usr/bin/which imake 2>/dev/null`
+
+xpath=/usr/X11R6
 if [ -n $xpath ]; then
 	xpath=`echo $xpath | sed 's;/bin/imake$;;'`
 	sed "s;/usr/X386;$xpath;" ${WRKSRC}/makefile >${WRKSRC}/makefile.foo
