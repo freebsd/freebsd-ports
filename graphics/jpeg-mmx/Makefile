@@ -24,6 +24,11 @@ CONFIGURE_ARGS=	--enable-shared --enable-static
 
 ADDITIONAL_HEADER=	jinclude.h jpegint.h
 
+# define J_MAXMEM like "make J_MAXMEM=32" to limit max processing memory to 32Mb
+.if defined(J_MAXMEM)
+CONFIGURE_ARGS+=	--enable-maxmem=$(J_MAXMEM)
+.endif
+
 MAN1=		cjpeg.1 djpeg.1 jpegtran.1 rdjpgcom.1 wrjpgcom.1
 
 post-install:
