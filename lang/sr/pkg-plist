@@ -26,6 +26,7 @@ lib/sr/srlatex.sty
 lib/sr/srlib.a
 lib/sr/srmap
 lib/sr/srmulti.h
+lib/sr/srwin.o
 lib/sr/srx
 %%PORTDOCS%%%%DOCSDIR%%/notes/Memory
 %%PORTDOCS%%%%DOCSDIR%%/notes/Questions

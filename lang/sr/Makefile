@@ -8,7 +8,9 @@
 PORTNAME=	sr
 PORTVERSION=	2.3.1
 CATEGORIES=	lang parallel
-MASTER_SITES=	ftp://ftp.cs.arizona.edu/sr/
+MASTER_SITES=	ftp://ftp.uu.net/.vol/1/languages/sr/ \
+		http://www.it.uc3m.es/~ptb/clases/sr/inst/src/ \
+		ftp://ftp.cs.arizona.edu/sr/
 DISTNAME=	sr231
 EXTRACT_SUFX=	.tar.Z
 
@@ -17,6 +19,7 @@ COMMENT=	A parallel language "Synchronization Resources"
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	prefix
+CONFIGURE_ENV=	PREFIX="${PREFIX}"
 NO_WRKSUBDIR=	yes
 MAN1 =		sr.1 srl.1 srm.1 srprof.1 srtex.1 srlatex.1 srgrind.1 \
 		ccr2sr.1 m2sr.1 csp2sr.1
@@ -25,12 +28,6 @@ MAN5 =		srmap.5 srtrace.5
 
 .include	<bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		"fails to package due to missing lib/sr/srwin.o"
-.endif
-.if ${OSVERSION} >= 500000
-BROKEN=		"fails to build; bad C++ code"
-.endif
 pre-install:
 	@${MKDIR} ${PREFIX}/lib/sr
 
