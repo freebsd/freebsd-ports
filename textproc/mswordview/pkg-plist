@@ -644,6 +644,12 @@ lib/mswordview/patterns/footnotebegin.gif
 lib/mswordview/patterns/footnoteend.gif
 lib/mswordview/patterns/pagebreak.gif
 lib/mswordview/patterns/wmf.jpg
+lib/mswordview/patterns/columnbreak.gif
+lib/mswordview/patterns/sectionendcolumn.gif
+lib/mswordview/patterns/sectionendcontinous.gif
+lib/mswordview/patterns/sectionendeven.gif
+lib/mswordview/patterns/sectionendnewpage.gif
+lib/mswordview/patterns/sectionendodd.gif
 @dirrm lib/mswordview/symbolfont
 @dirrm lib/mswordview/wingdingfont
 @dirrm lib/mswordview/patterns
