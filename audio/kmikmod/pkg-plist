@@ -1,0 +1,18 @@
+bin/kmikmod
+share/applnk/Multimedia/kmikmod.kdelnk
+share/apps/kmikmod/pics/km_configure.xpm
+share/apps/kmikmod/pics/km_eject.xpm
+share/apps/kmikmod/pics/km_fb.xpm
+share/apps/kmikmod/pics/km_ff.xpm
+share/apps/kmikmod/pics/km_logo.xpm
+share/apps/kmikmod/pics/km_next.xpm
+share/apps/kmikmod/pics/km_playpause.xpm
+share/apps/kmikmod/pics/km_prev.xpm
+share/apps/kmikmod/pics/km_quit.xpm
+share/apps/kmikmod/pics/km_stop.xpm
+share/icons/kmikmod.xpm
+share/icons/mini/kmikmod.xpm
+share/locale/fi/LC_MESSAGES/kmikmod.mo
+share/locale/fr/LC_MESSAGES/kmikmod.mo
+@dirrm share/apps/kmikmod/pics
+@dirrm share/apps/kmikmod
