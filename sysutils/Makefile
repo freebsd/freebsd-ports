@@ -123,6 +123,7 @@
     SUBDIR += kcpuload
     SUBDIR += kdeadmin3
     SUBDIR += kdirstat
+    SUBDIR += knutclient
     SUBDIR += lavaps
     SUBDIR += lcdproc
     SUBDIR += lfm
