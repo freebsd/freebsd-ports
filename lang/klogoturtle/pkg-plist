@@ -1,0 +1,10 @@
+bin/klogoturtle
+share/applnk/Utilities/klogoturtle.desktop
+share/apps/klogoturtle/klogoturtleui.rc
+share/icons/locolor/16x16/apps/klogoturtle.png
+share/icons/locolor/32x32/apps/klogoturtle.png
+share/locale/pt_BR/LC_MESSAGES/klogoturtle.mo
+share/doc/HTML/en/klogoturtle/index.docbook
+share/doc/HTML/en/klogoturtle/common
+@dirrm share/doc/HTML/en/klogoturtle
+@dirrm share/apps/klogoturtle/

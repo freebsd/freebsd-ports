@@ -97,6 +97,7 @@
     SUBDIR += jruby
     SUBDIR += jython
     SUBDIR += kawa
+    SUBDIR += klogoturtle
     SUBDIR += klone
     SUBDIR += lafontaine
     SUBDIR += librep
