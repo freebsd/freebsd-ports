@@ -20,8 +20,8 @@ INSTALL_RWDATA=	${INSTALL} ${COPY} -o ${SHAREOWN} -g ${SHAREGRP} -m 666
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500000
-LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
+.if ${OSVERSION} >= 400000
+LIB_DEPENDS+=	c.3:${PORTSDIR}/misc/compat3x
 .endif
 
 do-install:
