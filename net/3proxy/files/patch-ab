@@ -1,5 +1,5 @@
---- 3proxy.cfg.sample.orig	Mon Jul 28 14:50:42 2003
-+++ 3proxy.cfg.sample	Mon Jul 28 14:51:55 2003
+--- 3proxy.cfg.sample.orig	Wed Oct  8 19:35:48 2003
++++ 3proxy.cfg.sample	Wed Oct  8 20:56:52 2003
 @@ -332,12 +332,12 @@
  # this example shows you how to include passwd file. For included files
  # <CR> and <LF> are treated as field separators.
@@ -15,12 +15,12 @@
  # log allows to specify log file location and rotation, D means logfile
  # is created daily
  
-@@ -421,7 +421,7 @@
- # like multimedia streams or online games.
+@@ -455,7 +455,7 @@
+ #setuid 65535
+ # now we needn't any root rights. We can chroot and setgid/setuid.
  
- auth strong
--fflush
-+flush
- allow 3APA3A,test
- socks
- # for socks we will use password authentication and different access control -
+-#daemon
++daemon
+ # now we will not depend on any console (daemonize).
+ 
+ 
