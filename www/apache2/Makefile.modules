@@ -42,7 +42,7 @@ PLIST_SUB+=	PREFORK="@comment " WORKER="@comment "
 # xDBM section
 #
 .if !defined(WITH_DBM) && defined(WITH_BERKELEYDB)
-WITH_DBM=db
+WITH_DBM=bdb
 .endif
 .if defined(WITH_DBM) && !defined(WITH_BERKELEYDB)
 WITH_BERKELEYDB=	FreeBSD
@@ -54,7 +54,7 @@ CONFIGURE_ARGS+=	--with-dbm=sdbm
 .   elif ${WITH_DBM:L} == "gdbm"
 LIB_DEPENDS+=		gdbm.3:${PORTSDIR}/databases/gdbm
 CONFIGURE_ARGS+=	--with-gdbm=${LOCALBASE}
-.   elif ${WITH_DBM:L} == "db"
+.   elif ${WITH_DBM:L} == "db" || ${WITH_DBM:L} == "bdb"
 .       if ${WITH_BERKELEYDB} == "FreeBSD"
 CONFIGURE_ARGS+=	--with-dbm=db185 \
 			--with-berkeley-db=/usr
@@ -182,6 +182,9 @@ _APACHE_MODULES+=	${WITH_CUSTOM_THREADS}
 _APACHE_MODULES+=	${SSL_MODULE}
 CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
 RC_SUB+=		-e 's,@@SSL@@,ssl,g'
+.    if ${OPENSSLBASE} == /usr && ${OSVERSION} < 500000
+CFLAGS+=	-DSSL_EXPERIMENTAL_ENGINE
+.    endif
 .else
 RC_SUB+=		-e 's,@@SSL@@,,g'
 .endif
