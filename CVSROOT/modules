@@ -1152,6 +1152,7 @@ denemo		ports/audio/denemo
 deskmenu	ports/x11/deskmenu
 despoof		ports/net/despoof
 detach		ports/sysutils/detach
+detachtty	ports/misc/detachtty
 detex		ports/print/detex
 devel-replay	ports/devel/replay
 devhelp		ports/devel/devhelp
