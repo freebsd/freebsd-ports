@@ -7,6 +7,7 @@
 
 PORTNAME=	atr3d
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.avoidtheroid.com/pub/${PORTNAME}/
 DISTNAME=	${PORTNAME}_source_${PORTVERSION}

@@ -37,3 +37,4 @@ share/atr3d/textures/explosion.rgb
 @dirrm share/atr3d/models
 @dirrm share/atr3d/sounds
 @dirrm share/atr3d/textures
+@dirrm share/atr3d
