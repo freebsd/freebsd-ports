@@ -1,2 +1,11 @@
-bin/siggen
-bin/tripwire
+sbin/tripwire
+sbin/twadmin
+sbin/twprint
+sbin/siggen
+share/doc/tripwire/README
+share/doc/tripwire/Release_Notes
+share/doc/tripwire/COPYING
+share/doc/tripwire/TRADEMARK
+share/doc/tripwire/policyguide.txt
+@dirrm share/doc/tripwire
+@unexec echo If permanently deleting this package, /usr/local/etc/tripwire and /var/db/tripwire must be removed manually
