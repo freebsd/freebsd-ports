@@ -18,7 +18,7 @@ LIB_DEPENDS=	gcrypt.6:${PORTSDIR}/security/libgcrypt \
 		iconv.3:${PORTSDIR}/converters/libiconv \
 		intl.4:${PORTSDIR}/devel/gettext \
 		ksba.7:${PORTSDIR}/security/libksba \
-		pth.14:${PORTSDIR}/devel/pth
+		pth.20:${PORTSDIR}/devel/pth
 RUN_DEPENDS=	pinentry-curses:${PORTSDIR}/security/pinentry
 
 USE_LIBTOOL=	yes
