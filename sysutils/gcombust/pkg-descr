@@ -5,9 +5,6 @@ would probably be wise to test it with the -dummy option at first to check that
 I haven't made any stupid errors. Also, it prints the command it's executing to
 stdout so you can look at it and maybe spot errors.
 
-There's no save option yet, but it respects cdrecord's CDR_SPEED, CDR_DEVICE
-and CDR_FIFOSIZE environment variables, so for now use them.
-
 
 I love to recieve feedback/comments/ideas/bugreports at:
 	jmunsin@iki.fi (jmunsin@abo.fi)
@@ -19,4 +16,4 @@ NOTE: If you decide to do a NLS translation of gcombust, it might be a good
 Flames to:
 	/dev/null
 
-WWW: http://www.iki.fi/jmunsin/gcombust
+WWW: http://www.abo.fi/~jmunsin/gcombust/
