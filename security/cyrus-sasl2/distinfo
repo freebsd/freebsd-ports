@@ -1,4 +1,1 @@
-MD5 (cyrus-sasl-1.5.27.tar.gz) = 76ea426e2e2da3b8d2e3a43af5488f3b
-MD5 (sasl-1.5.27-ldap-ssl-filter-mysql-patch4.tgz) = 3e2b5cf7c5f8f0e8551f28a8d83391bb
-MD5 (sasl_apop_patch.gz) = 6bf7a34b73d1c8d139d2269069d1ba4c
-MD5 (cyrus-sasl-1.5.27-ipv6-20020106.diff.gz) = b2956a084954a46ba2d751f56a80a275
+MD5 (cyrus-sasl-2.1.6.tar.gz) = 3b60cf1f0d1a3230fbc1bb7490f5ae42
