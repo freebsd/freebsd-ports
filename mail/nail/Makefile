@@ -13,15 +13,16 @@ MASTER_SITES=	http://nail.berlios.de/archive/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BSD mail utility with MIME extensions
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
-
 USE_BZIP2=	yes
+USE_ICONV=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-openssl --with-rcfile="${PREFIX}/etc/nail.rc"
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-liconv"
-LDFLAGS=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		nail.1
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib -liconv
 
 .include <bsd.port.mk>
