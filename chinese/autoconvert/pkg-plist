@@ -5,17 +5,19 @@ include/zhstatis.h
 lib/libhz.a
 lib/libhz.so
 lib/libhz.so.0
-share/autoconvert/ChangeLog
-share/autoconvert/LICENSE
-share/autoconvert/Readme
-share/autoconvert/TODO
-share/autoconvert/Thanks
-share/autoconvert/Version
-share/autoconvert/hz.txt
-share/autoconvert/procmailrc.example
-share/autoconvert/shed.big5
-share/autoconvert/shed.gb
-share/autoconvert/shed.uni
-share/autoconvert/shed.utf7
-share/autoconvert/shed.utf8
-@dirrm share/autoconvert
+share/zh-autoconvert/ChangeLog
+share/zh-autoconvert/LICENSE
+share/zh-autoconvert/Readme
+share/zh-autoconvert/TODO
+share/zh-autoconvert/Thanks
+share/zh-autoconvert/Version
+share/zh-autoconvert/hz.txt
+share/zh-autoconvert/procmailrc.example
+share/zh-autoconvert/shed.big5
+share/zh-autoconvert/shed.gb
+share/zh-autoconvert/shed.uni
+share/zh-autoconvert/shed.utf7
+share/zh-autoconvert/shed.utf8
+share/zh-autoconvert/xchat-autob5.so
+share/zh-autoconvert/xchat-autogb.so
+@dirrm share/zh-autoconvert
