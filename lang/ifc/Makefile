@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	ifc
-PORTVERSION=	6.0.159
-PORTREVISION=	2
+PORTVERSION=	6.0.1.304
 CATEGORIES=	lang devel emulators linux
 MASTER_SITES=#
-DISTNAME=	l_fc_pu_6.0.159
+DISTNAME=	l_fc_p_6.0.1.304
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	chat95@mbox.kyoto-inet.or.jp
@@ -25,9 +24,13 @@ NO_CDROM=	${RESTRICTED}
 ONLY_FOR_ARCHS=	i386
 
 USE_LINUX=		yes
+USE_REINPLACE=          yes
 NO_WRKSUBDIR=		yes
 NO_BUILD=		yes
 NO_FILTER_SHLIBS=	yes
+
+MAN1=   ifc.1
+MANPREFIX=      ${PREFIX}/intel/compiler60/
 
 IFC_SITE=	http://www.intel.com/software/products/compilers/
 
@@ -39,10 +42,10 @@ IGNORE=	"Please manually download ${DISTFILES} from ${IFC_SITE}, e.g. from ${IFC
 
 post-extract:
 .for i in \
-	intel-ifc6-6.0-159.i386.rpm \
-#	intel-ildb6-6.0-229.i386.rpm \
-#	intel-efc6-6.0-159.ia64.rpm \
-#	intel-eldb6-6.0-229.ia64.rpm
+	intel-ifc6-6.0.1-304.i386.rpm \
+#	intel-ildb6-6.0.1-310.i386.rpm \
+#	intel-efc6-6.0.1-304.ia64.rpm \
+#	intel-eldb6-6.0.1-310.ia64.rpm
 	@cd ${WRKSRC}; rpm2cpio ${i} | cpio -idu --quiet
 .endfor
 
@@ -64,12 +67,8 @@ post-patch:
 # Correct some paths and patch some files
 	@${RM} ${WRKSRC}/opt/intel/compiler60/ia32/bin/ifc.orig
 .for i in ia32/bin/ifcvars.csh ia32/bin/ifcvars.sh \
-	ia32/bin/ifc docs/fsupport
-	@${SED} 's+\<INSTALLDIR\>+${PREFIX}/intel+g; s+man -w+manpath+g; s+@LINUXBASE@+${LINUXBASE}+g; s+/bin/sh+${LINUXBASE}/bin/bash+g; s+\<INSTALLTIMECOMBOPACKAGEID\>+${DISTNAME}+g' \
-		${WRKSRC}/opt/intel/compiler60/${i} \
-		>${WRKSRC}/opt/intel/compiler60/${i}.seded
-	@${MV} -f ${WRKSRC}/opt/intel/compiler60/${i}.seded \
-		${WRKSRC}/opt/intel/compiler60/${i}
+	ia32/bin/ifc ia32/bin/ifc.cfg docs/fsupport
+	 @${REINPLACE_CMD} -i "" -e's+\<INSTALLDIR\>+${PREFIX}/intel+g; s+man -w+manpath+g; s+@LINUXBASE@+${LINUXBASE}+g; s+/bin/sh+${LINUXBASE}/bin/bash+g; s+\<INSTALLTIMECOMBOPACKAGEID\>+${DISTNAME}+g' ${WRKSRC}/opt/intel/compiler60/${i}
 	@${CHMOD} 755 ${WRKSRC}/opt/intel/compiler60/${i}
 .endfor
 .if defined(NOPORTDOCS)
