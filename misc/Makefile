@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.198 1999/04/06 12:28:20 markm Exp $
+# $Id: Makefile,v 1.199 1999/04/08 17:47:17 steve Exp $
 #
 
     SUBDIR += 221upgrade
@@ -7,6 +7,7 @@
     SUBDIR += 227upgrade
     SUBDIR += 30upgrade
     SUBDIR += 31upgrade
+    SUBDIR += Howto
     SUBDIR += acron
     SUBDIR += amanda
     SUBDIR += amanda24
@@ -38,7 +39,6 @@
     SUBDIR += gone
     SUBDIR += gtkfind
     SUBDIR += gyvescm
-    SUBDIR += Howto
     SUBDIR += iselect
     SUBDIR += jargon
     SUBDIR += jive
