@@ -1,0 +1,16 @@
+--- Imakefile.orig	Sat Oct 23 19:49:37 1999
++++ Imakefile	Wed Nov  1 09:24:28 2000
+@@ -36,9 +36,9 @@
+ all::
+ 	@test -e ./ReleaseNotes && cat ReleaseNotes || true
+ 
+-install::
+-	$(INSTALL) -m 0644 wmpinboard.1 $(DESTDIR)/man/man1
++#install::
++#	$(INSTALL) -m 0644 wmpinboard.1 $(DESTDIR)/man/man1
+ 
+-DESTDIR = /usr/local
+-BINDIR  = /bin
++#DESTDIR = /usr/local
++#BINDIR  = /bin
+ 
