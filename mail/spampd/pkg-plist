@@ -1,0 +1,2 @@
+sbin/spampd
+etc/rc.d/spampd.sh.sample

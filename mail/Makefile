@@ -368,6 +368,7 @@
     SUBDIR += spamd
     SUBDIR += spamguard
     SUBDIR += spamoracle
+    SUBDIR += spampd
     SUBDIR += spamprobe
     SUBDIR += spamstats
     SUBDIR += spruce
