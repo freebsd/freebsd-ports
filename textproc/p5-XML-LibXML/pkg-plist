@@ -1,7 +1,7 @@
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/LibXML/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/LibXML.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/LibXML/Attr.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/LibXML/Booleam.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/LibXML/Boolean.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/LibXML/CDATASection.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/LibXML/Comment.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/LibXML/Document.pod
