@@ -1,15 +1,6 @@
---- configure.in.orig	Tue Jan  1 20:43:00 2002
-+++ configure.in	Thu Jun 26 08:04:43 2003
-@@ -18,7 +18,7 @@
- AC_HEADER_STDC
- GNOME_COMPILE_WARNINGS
- GNOME_X_CHECKS
--GNOME_PTHREAD_CHECK
-+AM_PATH_GTK(1.2.0,,AC_MSG_ERROR(GTK not installed, or gtk-config not in path),gthread)
- 
- 
- dnl***********************************************
-@@ -124,8 +124,8 @@
+--- configure.in.orig	Wed Oct 15 21:59:20 2003
++++ configure.in	Thu Dec 11 21:08:12 2003
+@@ -123,8 +123,8 @@
  dnl*************************************************
  dnl Libraries
  dnl*************************************************
@@ -19,4 +10,19 @@
 +LIBS="$LIBS $GL_LIBS $Z_LIBS $GTKGL_LDOPTS"
  AC_SUBST(CFLAGS)
  AC_SUBST(LIBS)
+ 
+@@ -142,11 +142,11 @@
+ fi
+ 
+ dnl Set PACKAGE DATA & DOC DIR
+-packagedatadir=share/${PACKAGE}
+-packagedocdir=doc/${PACKAGE}
++packagedatadir=share/gnome/${PACKAGE}
++packagedocdir=share/doc/${PACKAGE}
+ 
+ dnl Set PACKAGE DIRs in config.h.
+-packagepixmapsdir=share/pixmaps/${PACKAGE}
++packagepixmapsdir=share/gnome/pixmaps/${PACKAGE}
+ packagehelpdir=share/gnome/help/${PACKAGE}
+ packagemenudir=share/gnome/apps
  
