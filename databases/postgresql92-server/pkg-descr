@@ -1,20 +1,28 @@
-PostgreSQL is an enhancement of the POSTGRES database management system, a
-next-generation DBMS research prototype.  While PostgreSQL retains the
-powerful data model and rich data types of POSTGRES, it replaces the
-PostQuel query language with an extended subset of SQL.  PostgreSQL is free
-and the complete source is available.
 
-PostgreSQL development is being performed by a team of Internet developers
-who all subscribe to the PostgreSQL development mailing list.  The current
-coordinator is Marc G. Fournier (scrappy@postgresql.org).  This team is now
-responsible for all current and future development of PostgreSQL.
 
-The authors of Postgres95 1.01 were Andrew Yu and Jolly Chen. Many others
-have contributed to the porting, testing, debugging and enhancement of the
-code.  The original Postgres code, from which PostgreSQL is derived, was the
-effort of many graduate students, undergraduate students, and staff
-programmers working under the direction of Professor Michael Stonebraker at
-the University of California, Berkeley.
+PostgreSQL is a robust, next-generation, Object-Relational DBMS (ORDBMS), 
+derived from the Berkeley Postgres database management system.  While 
+PostgreSQL retains the powerful object-relational data model, rich data types 
+and easy extensibility of Postgres, it replaces the PostQuel query language 
+with an extended subset of SQL.
 
-More information and documentation can be found at the PostgreSQL website,
-at http://www.PostgreSQL.org
+The original Postgres code was the effort of many graduate students, 
+undergraduate students, and staff programmers working under the direction of 
+Professor Michael Stonebraker at the University of California, Berkeley. In 
+1995, Andrew Yu and Jolly Chen took on the task of converting the DBMS query 
+language to SQL and created a new database system which came to known as 
+Postgres95. Many others contributed to the porting, testing, debugging and 
+enhancement of the Postgres95 code. As the code improved, and 1995 faded into 
+memory, PostgreSQL was born.
+
+PostgreSQL development is presently being performed by a team of Internet 
+developers who are now responsible for all current and future development. The 
+development team coordinator is Marc G. Fournier (scrappy@PostgreSQL.Org). 
+Support is available from the PostgreSQL developer/user community through the 
+support mailing list (questions@PostgreSQL.Org).
+
+PostgreSQL is free and the complete source is available.
+
+More information and documentation can be found on the PostgreSQL website,
+at: http://www.PostgreSQL.Org
+
