@@ -1,0 +1,11 @@
+--- clfmerge.cpp.orig	Tue Jan  8 17:15:37 2002
++++ clfmerge.cpp	Tue Jan  8 17:14:06 2002
+@@ -201,7 +201,7 @@
+   unsigned int map_items = 0;
+   bool set_map_items = false, domain_mangling = false;
+   int int_c;
+-  optind = 0;
++  optind = 1;
+   while(-1 != (int_c = getopt(argc, argv, "b:hd")) )
+   {
+     switch(char(int_c))

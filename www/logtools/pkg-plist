@@ -1,0 +1,6 @@
+bin/clfmerge
+bin/clfsplit
+bin/clfdomainsplit
+bin/logprn
+bin/funnel
+etc/clfdomainsplit.cfg
