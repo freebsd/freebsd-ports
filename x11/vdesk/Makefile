@@ -14,7 +14,13 @@ MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Command-line utility for setting up and using virtual desktops
 
 DOCS=		AUTHORS COPYING ChangeLog INSTALL NEWS README
-PLIST=		${WRKDIR}/pkg-plist
+PLIST_DIRS=	share/doc/vdesk
+PLIST_FILES=	bin/vdesk
+.if !defined(NOPORTDOCS)
+.for ii in ${DOCS}
+PLIST_FILES+=	share/doc/vdesk/${ii}
+.endfor
+.endif
 USE_AUTOCONF=		yes
 USE_X_PREFIX=		yes
 WANT_AUTOCONF_VER=	257
@@ -22,15 +28,6 @@ WANT_AUTOCONF_VER=	257
 post-extract:
 # Avoid having to read this lengthy file.
 	${RM} ${WRKSRC}/configure
-
-pre-install:
-	${ECHO_CMD} bin/vdesk > ${PLIST}
-.if !defined(NOPORTDOCS)
-.for ii in ${DOCS}
-	${ECHO_CMD} share/doc/vdesk/${ii} >> ${PLIST}
-.endfor
-	${ECHO_CMD} @dirrm share/doc/vdesk >> ${PLIST}
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vdesk ${PREFIX}/bin
