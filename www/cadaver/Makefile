@@ -12,7 +12,8 @@ MASTER_SITES=	http://www.webdav.org/cadaver/
 
 MAINTAINER=	tarkhil@over.ru
 
-LIB_DEPENDS=	neon.15:${PORTSDIR}/www/neon
+LIB_DEPENDS=	neon.15:${PORTSDIR}/www/neon \
+		intl.1:${PORTSDIR}/devel/gettext
 
 .ifndef NO_OPENSSL
 USE_OPENSSL=	yes
