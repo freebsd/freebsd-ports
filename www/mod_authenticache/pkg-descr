@@ -1,0 +1,10 @@
+As HTTP is a relatively stateless protocol, each request generates an 
+authentication attempt. While this is cheap when authenticating against dbm or 
+htpasswd files, it can get very expensive when running against a Windows 
+domain controller, ACE server, or other networked database, particularly on 
+image-rich pages and FancyIndexes from mod_autoindex.
+
+mod_authenticache provides a secure method of caching credentials in order to 
+more efficiently serve in these situations.
+
+WWW: http://killa.net/infosec/mod_authenticache/
