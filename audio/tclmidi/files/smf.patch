@@ -1,0 +1,12 @@
+--- smf/Makefile.in.orig	Thu Oct 10 05:32:53 1996
++++ smf/Makefile.in	Mon Mar 15 16:30:42 2004
+@@ -14,7 +14,8 @@
+ VPATH = @srcdir@
+ 
+ CFLAGS = @CFLAGS@ @DEFS@
+-CC_SWITCHES = @CFLAGS@ @DEFS@ -I${TCL_GENERIC_DIR} ${SHLIB_CFLAGS}
++CC_SWITCHES = @CFLAGS@ @DEFS@ -I${TCL_GENERIC_DIR} ${SHLIB_CFLAGS} \
++    -I$(srcdir)/../smf -I$(srcdir)/../song -I$(srcdir)/.. -I$(srcdir)
+ 
+ SMFFILES = SMFUtils.o SMFHead.o SMFTrack.o
+ SMFFILES_SRC = SMFUtils.cxx SMFHead.cxx SMFTrack.cxx
