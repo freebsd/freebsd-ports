@@ -32,7 +32,7 @@
  # Names of any auxiliary libraries your system may require (e.g., -lsocket)
  # If you want to link against a resolver library, specify it here.
 -AUXLIB=
-+AUXLIB= -lcrypt -lskey
++AUXLIB= -lcrypt -lskey -lmd
  #AUXLIB= -lsocket
  #AUXLIB= -lresolv
  # For Solaris:
