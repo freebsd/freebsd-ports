@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	galaxis
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	games
 MASTER_SITES=	ftp://locke.ccil.org/pub/esr/
 
