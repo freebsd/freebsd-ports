@@ -4162,6 +4162,7 @@ linux-acu	ports/sysutils/linux-acu
 linux-afaapps	ports/sysutils/linux-afaapps
 linux-agsatellite	ports/net/linux-agsatellite
 linux-arts	ports/audio/linux-arts
+linux-atk	ports/devel/linux-atk
 linux-beonex	ports/www/linux-beonex
 linux-blackdown-jdk12	ports/java/linux-blackdown-jdk12
 linux-blackdown-jdk13	ports/java/linux-blackdown-jdk13
