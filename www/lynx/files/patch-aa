@@ -1,67 +1,65 @@
-*** Makefile.orig	Fri Jun 28 01:06:34 1996
---- Makefile	Fri Jul  5 15:02:51 1996
+*** Makefile.orig	Thu Jul 18 18:18:08 1996
+--- Makefile	Sun Jul 21 08:36:58 1996
 ***************
-*** 10,29 ****
+*** 11,28 ****
+  
   ##change the next line if you want lynx installed somewhere
   ##besides /usr/local/bin
-  
 ! exec= /usr/local/bin
   
   ##change the next line if you want the lynx man file installed somewhere
   ##besides /usr/local/man/man1
-  
 ! doc= /usr/local/man/man1
   
   ##change the next line if you want the lynx.cfg file installed somewhere
   ##besides /usr/local/lib
-  
 ! cfg= /usr/local/lib
   
 ! installbin= install -c -s -m 555
 ! installdoc= install -c -m 444
   
+  ##set the relative location of the WWW library Implementation directory,
+  ##from this directory
+--- 11,28 ----
   
-  #set the relative location of the WWW library Implementation directory,
---- 10,29 ----
   ##change the next line if you want lynx installed somewhere
   ##besides /usr/local/bin
-  
 ! exec= ${PREFIX}/bin
   
   ##change the next line if you want the lynx man file installed somewhere
   ##besides /usr/local/man/man1
-  
 ! doc= ${PREFIX}/man/man1
   
   ##change the next line if you want the lynx.cfg file installed somewhere
   ##besides /usr/local/lib
-  
 ! cfg= ${PREFIX}/etc
   
 ! installbin= ${INSTALL} -c -s -m ${BINMODE} -o ${BINOWN} -g ${BINGRP}
 ! installdoc= ${INSTALL} -c -m 444 -o ${BINOWN} -g ${BINGRP}
   
-  
-  #set the relative location of the WWW library Implementation directory,
+  ##set the relative location of the WWW library Implementation directory,
+  ##from this directory
 ***************
-*** 394,400 ****
+*** 394,401 ****
+  # FreeBSD doesn't have or need ranlib. (ignore the error message about that :)
   freebsd-ncurses:
-  	cd WWW/Library/freebsd; make LYFLAGS="$(SITE_LYDEFS)"
-  	cd src; make all MCFLAGS="$(CFLAGS) -DFANCY_CURSES -DNCURSES -DUNIX \
+  	cd WWW/Library/freebsd; $(MAKE) LYFLAGS="$(SITE_LYDEFS)"
+! 	cd src; $(MAKE) all MCFLAGS="$(CFLAGS) -DFANCY_CURSES -DNCURSES -DUNIX \
 ! 		-DNO_TTYTYPE -DNO_CUSERID -DLOCALE \
   		-I../$(WWWINC) $(SITE_DEFS)" \
   		LIBS="-lncurses -lmytinfo \
   		$(WAISLIB) $(SOCKSLIB) $(SITE_LIBS)" \
---- 394,400 ----
+--- 394,401 ----
+  # FreeBSD doesn't have or need ranlib. (ignore the error message about that :)
   freebsd-ncurses:
-  	cd WWW/Library/freebsd; make LYFLAGS="$(SITE_LYDEFS)"
-  	cd src; make all MCFLAGS="$(CFLAGS) -DFANCY_CURSES -DNCURSES -DUNIX \
+  	cd WWW/Library/freebsd; $(MAKE) LYFLAGS="$(SITE_LYDEFS)"
+! 	cd src; $(MAKE) all MCFLAGS="$(CFLAGS) -DFANCY_CURSES -DNCURSES -DNCURSESHEADER -DUNIX \
 ! 		-DLYNX_CFG_FILE='\"${PREFIX}/etc/lynx.cfg\"' -DNO_TTYTYPE -DNO_CUSERID -DLOCALE \
   		-I../$(WWWINC) $(SITE_DEFS)" \
   		LIBS="-lncurses -lmytinfo \
   		$(WAISLIB) $(SOCKSLIB) $(SITE_LIBS)" \
 ***************
-*** 857,863 ****
+*** 902,908 ****
   
   install:
   	-mv -f $(exec)/lynx $(exec)/lynx.old
@@ -69,7 +67,7 @@
   	$(installbin) lynx $(exec)/lynx
   	$(installdoc) lynx.man $(doc)/lynx.1
 ! 	$(installdoc) lynx.cfg $(cfg)/lynx.cfg
---- 857,866 ----
+--- 902,911 ----
   
   install:
   	-mv -f $(exec)/lynx $(exec)/lynx.old
