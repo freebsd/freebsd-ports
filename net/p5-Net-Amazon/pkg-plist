@@ -12,6 +12,7 @@
 %%SITE_PERL%%/Net/Amazon/Response/Similar.pm
 %%SITE_PERL%%/Net/Amazon/Response/Wishlist.pm
 %%SITE_PERL%%/Net/Amazon/Response/Manufacturer.pm
+%%SITE_PERL%%/Net/Amazon/Response/TextStream.pm
 %%SITE_PERL%%/Net/Amazon/Request/Artist.pm
 %%SITE_PERL%%/Net/Amazon/Request/Blended.pm
 %%SITE_PERL%%/Net/Amazon/Request/Keyword.pm
@@ -22,6 +23,8 @@
 %%SITE_PERL%%/Net/Amazon/Request/ASIN.pm
 %%SITE_PERL%%/Net/Amazon/Request/Power.pm
 %%SITE_PERL%%/Net/Amazon/Request/Manufacturer.pm
+%%SITE_PERL%%/Net/Amazon/Request/Sort.pm
+%%SITE_PERL%%/Net/Amazon/Request/TextStream.pm
 %%SITE_PERL%%/Net/Amazon/Attribute/Review.pm
 %%SITE_PERL%%/Net/Amazon/Attribute/ReviewSet.pm
 %%SITE_PERL%%/Net/Amazon/Property/DVD.pm
