@@ -1,0 +1,25 @@
+--- src/Makefile.orig	Wed Mar  5 20:00:00 2003
++++ src/Makefile	Wed Mar  5 20:00:43 2003
+@@ -34,15 +34,19 @@
+ # ensure that the whole collection of files is recompiled with the correct
+ # settings.
+ 
+-CC		= gcc
++#CC		= gcc
+ 
+ # Choose your operating system
+ # If you don't have Tk, delete the stuff mentioning tcl, tk and X11,
+ # and set O_TK to 0 in prelude.h.
+ 
+ # Solaris
+-CFLAGS		= -g -I/usr/X11/include -I/usr/pd/tcl/8.0/include
+-LDFLAGS    	= -lm -lX11 -lsocket -lreadline -ltermcap -lnsl -R/usr/X11/lib -R/usr/pd/tcl/8.0/lib -L/usr/pd/tcl/8.0/lib -ltk8.0 -ltcl8.0 -ltix4.1.8.0
++#CFLAGS		= -g -I/usr/X11/include -I/usr/pd/tcl/8.0/include
++#LDFLAGS    	= -lm -lX11 -lsocket -lreadline -ltermcap -lnsl -R/usr/X11/lib -R/usr/pd/tcl/8.0/lib -L/usr/pd/tcl/8.0/lib -ltk8.0 -ltcl8.0 -ltix4.1.8.0
++
++LDFLAGS+=	-lm -lreadline -ltermcap
++#CFLAGS+=
++#LDFLAGS+=
+ 
+ # NetBSD
+ #CFLAGS		= -g -I/usr/X11/include -I/usr/pkg/include/tk8.0  -I/usr/pkg/include -I/usr/pkg/include/tcl8.0
