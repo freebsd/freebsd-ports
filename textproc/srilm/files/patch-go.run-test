@@ -1,12 +1,21 @@
---- test/go.run-test.orig	Thu Jan  1 12:15:21 2004
-+++ test/go.run-test	Thu Jan  1 12:16:10 2004
+--- test/go.run-test.orig	Tue Mar  4 12:51:40 2003
++++ test/go.run-test	Sat Apr  3 16:46:12 2004
 @@ -6,6 +6,9 @@
- # $Header: /home/srilm/devel/test/RCS/go.run-test,v 1.10 2003/02/27 23:42:35 stolcke Exp $
+ # $Header: /home/srilm/devel/test/RCS/go.run-test,v 1.11 2003/03/04 04:51:27 stolcke Exp $
  #
  
-+PATH=$PATH:$WRKSRC/bin:$WRKSRC/bin/i386
++PATH=$PATH:$WRKSRC/bin:$WRKSRC/bin/freebsd
 +export PATH
 +
  dir=$1
  
  if [ -z "$MACHINE_TYPE" ]; then
+@@ -16,7 +19,7 @@
+ 
+ #diff=cmp
+ # ignore different whitespace and EOL conventions
+-diff="gawk -f compare-outputs 2>/dev/null"
++diff="awk -f compare-outputs 2>/dev/null"
+ 
+ test -d output || mkdir output
+ 
