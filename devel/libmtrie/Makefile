@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libmtrie
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	devel
 MASTER_SITES=	http://people.freebsd.org/~alfred/sources/$(PORTNAME)/
 DISTNAME=	$(PORTNAME)-${PORTVERSION}
