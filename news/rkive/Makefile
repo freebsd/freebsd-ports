@@ -3,10 +3,11 @@
 # Date created:		03 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.2 1996/06/14 07:51:47 asami Exp $
+# $Id: Makefile,v 1.3 1996/12/07 09:28:46 max Exp $
 #
 
 DISTNAME=	rkive3.1
+PKGNAME=	rkive-3.1
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.sterling.com/rkive/
 EXTRACT_SUFX=	.tar.Z
