@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phex
-PORTVERSION=	0.7.3
+PORTVERSION=	0.8.0.34
 CATEGORIES=	net java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}_j2se1.3
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A Java multi platform and spyware free gnutella client
 
-USE_JAVA=	1.3+
+USE_JAVA=	1.3
 USE_ZIP=	yes
 NO_BUILD=	yes
 NO_BUILD_DEPENDS_JAVA=	yes
@@ -26,15 +26,13 @@ JAVAVM=		${LOCALBASE}/bin/javavm
 JAR_DIR=	share/java/jar/${PORTNAME}/
 JAR_MANIFEST=	${FILESDIR}/manifest
 
-DOC_FILES=      COPYING License-RI.html License-W3C.html changelog.txt \
-		contributors.txt readme-Furi.txt readme-developers.txt \
-		GPL.txt \
-		readme.txt
-JAR_FILES=	crimson.jar jaxp.jar phex.jar xalan.jar
+DOC_FILES=	Phex_other.htm Phex_win.htm
+JAR_FILES=	crimson-rt.jar jaxb-api.jar jaxb-libs-rt.jar \
+		jaxb-ri-rt.jar jaxp.jar phex.jar
 
 post-patch:
 # remove trailing ^M
-	@${PERL} -pi -ne 's!\r\n!\n!' ${WRKSRC}/readme/*
+	@${PERL} -pi -ne 's!\r\n!\n!' ${WRKSRC}/docs/readme/*
 	@${SED} -e "s|%%JAR_DIR%%|${JAR_DIR}|;s|%%JAR_FILE%%|${JAR_FILE}|; \
 		s|%%JAVAVM%%|${JAVAVM}|;s|%%PREFIX%%|${PREFIX}|" \
 		${FILESDIR}/wrapper.sh > ${WRKDIR}/wrapper.sh
@@ -48,7 +46,7 @@ do-install:
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for doc in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/readme/${doc} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/docs/readme/${doc} ${DOCSDIR}
 .endfor
 .endif
 
