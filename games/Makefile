@@ -329,6 +329,7 @@
     SUBDIR += race
     SUBDIR += rfksay
     SUBDIR += robocode
+    SUBDIR += robotfindskitten
     SUBDIR += rockdodger
     SUBDIR += rocksndiamonds
     SUBDIR += rt2-demo
