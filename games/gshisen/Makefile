@@ -20,7 +20,6 @@ WRKSRC=		${WRKDIR}/GShisen
 USE_GMAKE=	yes
 MAKEFILE=
 MAKE_FLAGS=	GUI_BACKEND_LIB=back
-ALL_TARGET=
 
 .include <bsd.port.pre.mk>
 

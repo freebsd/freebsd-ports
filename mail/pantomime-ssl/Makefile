@@ -25,7 +25,6 @@ NO_MTREE=	yes
 WRKSRC=		${WRKDIR}/Pantomime/Bundles/SSL
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
-ALL_TARGET=
 
 .include <bsd.port.pre.mk>
 

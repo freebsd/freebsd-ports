@@ -22,7 +22,6 @@ WRKSRC=		${WRKDIR}/ImageViewer
 GUN_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
-ALL_TARGET=
 
 .include <bsd.port.pre.mk>
 
