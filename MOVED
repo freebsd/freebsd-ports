@@ -1293,3 +1293,4 @@ audio/streamtuner-live365|audio/streamtuner|2004-10-28|plugins rolled into main 
 audio/streamtuner-local|audio/streamtuner|2004-10-28|plugins rolled into main port
 audio/streamtuner-python|audio/streamtuner|2004-10-28|plugins rolled into main port
 audio/streamtuner-xiph|audio/streamtuner|2004-10-28|plugins rolled into main port
+www/p5-HTTPD-Tools|www/p5-HTTPD-User-Manage|2004-10-29|module was renamed

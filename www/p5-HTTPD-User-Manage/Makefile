@@ -1,23 +1,23 @@
-# New ports collection makefile for:	p5-HTTPD-Tools
+# New ports collection makefile for:	p5-HTTPD-User-Manage
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	HTTPD-Tools
-PORTVERSION=	0.55
+PORTNAME=	HTTPD-User-Manage
+PORTVERSION=	1.62
 CATEGORIES=	www perl5
-# no longer carried on CPAN
-MASTER_SITES=	# ${MASTER_SITE_PERL_CPAN}
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTTPD
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Perl5 module for a HTTP server authentication class
+MAINTAINER=	skv@FreeBSD.org
+COMMENT=	Perl modules for managing access control with the web server
 
 PERL_CONFIGURE=	yes
 
-MAN3=		HTTPD::Authen.3 HTTPD::UserAdmin.3 HTTPD::GroupAdmin.3
+MAN3=		HTTPD::Authen.3 HTTPD::GroupAdmin.3 HTTPD::Realm.3 \
+		HTTPD::RealmManager.3 HTTPD::UserAdmin.3
 
 .include <bsd.port.mk>

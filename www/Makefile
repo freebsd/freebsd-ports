@@ -485,7 +485,7 @@
     SUBDIR += p5-HTTP-Recorder
     SUBDIR += p5-HTTP-WebTest
     SUBDIR += p5-HTTPD-Log-Filter
-    SUBDIR += p5-HTTPD-Tools
+    SUBDIR += p5-HTTPD-User-Manage
     SUBDIR += p5-IMDB-Movie
     SUBDIR += p5-Kwiki
     SUBDIR += p5-Kwiki-Archive-Rcs
