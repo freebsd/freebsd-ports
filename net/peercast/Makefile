@@ -5,18 +5,20 @@
 # $FreeBSD$
 #
 
-PORTNAME=		peercast
-PORTVERSION=		0.1211
-CATEGORIES=		net multimedia
-MASTER_SITES=		http://www.peercast.org/
-DISTNAME=		peercast-linux
-EXTRACT_SUFX=		.tgz
+PORTNAME=	peercast
+PORTVERSION=	0.1211
+CATEGORIES=	net multimedia
+MASTER_SITES=	http://www.peercast.org/
+DISTNAME=	peercast-linux
+EXTRACT_SUFX=	.tgz
 
-MAINTAINER=		jylefort@brutele.be
-COMMENT=		A peer-to-peer network for broadcasting and listening to streams
+MAINTAINER=	jylefort@brutele.be
+COMMENT=	A peer-to-peer network for broadcasting and listening to streams
 
-USE_LINUX=		yes
-NO_WRKSUBDIR=		yes
+RUN_DEPENDS=	${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base-8
+
+USE_LINUX=	yes
+NO_WRKSUBDIR=	yes
 
 do-build:
 	${SED} -e 's|@PREFIX@|${PREFIX}|g; s|@DATADIR@|${DATADIR}|g' \
