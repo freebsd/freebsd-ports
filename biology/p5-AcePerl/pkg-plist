@@ -1,15 +1,34 @@
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Browser/AceSubs.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Browser/SearchSubs.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Browser/SiteDefs.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Browser/TreeSubs.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Freesubs.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Fk.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/anchored_arrow.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/arrow.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/group.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/line.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/primers.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/segments.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/transcript.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/GlyphFactory.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Panel.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Track.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Iterator.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Local.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Model.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Object.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Object/Wormbase.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/RPC.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Sequence.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Sequence/Feature.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Sequence/FeatureList.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Sequence/GappedAlignment.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Sequence/Homol.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Sequence/Multi.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Sequence/Transcript.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/SocketServer.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/GFF/Filehandle.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/.packlist
@@ -83,4 +102,8 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/timestamps.al
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/GFF
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Sequence
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Object
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Browser
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace
