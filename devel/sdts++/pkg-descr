@@ -1,4 +1,7 @@
-sdts++ is a C++ library to help with the development
-of SDTS applications.
-SDTS is the format used in many of the USGS digital map
-products
+SDTS++ is a C++ toolkit that programmers can use to write
+applications that can read or write SDTS datasets. Application
+developers can use SDTS++ library classes to work with the
+logical structure of these datasets without having to worry
+about the physical details of each dataset.
+
+WWW: http://mcmcweb.er.usgs.gov/sdts/sdtsxx/
