@@ -14,7 +14,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	olgeni@FreeBSD.org
 
-LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml
+LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml \
+		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 RUN_DEPENDS=	${LOCALBASE}/share/Choices:${PORTSDIR}/x11-fm/rox-base
 
 USE_GLIB=	yes
