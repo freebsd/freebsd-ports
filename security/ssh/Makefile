@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.71 1998/10/30 06:15:18 obrien Exp $
+# $Id: Makefile,v 1.72 1999/01/02 00:12:20 asami Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -11,15 +11,15 @@
 
 DISTNAME=       ssh-1.2.26
 CATEGORIES=	security net
-MASTER_SITES=   ftp://ftp.funet.fi/pub/unix/security/login/ssh/
+MASTER_SITES=	ftp://ftp.funet.fi/pub/unix/security/login/ssh/
 
 MAINTAINER=	torstenb@FreeBSD.ORG
 
 # You can set USA_RESIDENT appropriately in /etc/make.conf if this bugs you..
 
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
-MASTER_SITES=	\
-	ftp://ftp.funet.fi/pub/unix/security/login/ssh/ \
+MASTER_SITES+=	\
+	ftp://ftp.replay.com/pub/replay/crypto/SSH/ \
 	ftp://nic.funet.fi/pub/crypt/mirrors/ftp.dsi.unimi.it/applied-crypto/ \
 	ftp://rzsun2.informatik.uni-hamburg.de/pub/virus/crypt/ripem/ \
 	ftp://idea.sec.dsi.unimi.it/pub/security/crypt/math/ \
@@ -30,17 +30,6 @@ CONFIGURE_ARGS+= --with-rsaref
 LIB_DEPENDS+=	rsaref.2:${PORTSDIR}/security/rsaref
 BUILD_DEPENDS+= /nonexistent:${PORTSDIR}/security/rsaref:extract
 .endif
-
-#
-# Use Phil Karn's asm patches to speed up DES on intel.
-# Download by hand from http://www.cryptography.org/cgi-bin/crypto.cgi/ssh/  
-# and put in distfiles directory.
-#
-# Disabled for now, since there's not such a patchkit for 1.2.25 version.
-#.if defined(FAST_DES_PATCHKIT) && ${FAST_DES_PATCHKIT} == YES
-#PATCHFILES=ssh-1.2.22-patchkit
-#PATCH_DIST_STRIP=-p1
-#.endif
 
 RESTRICTED=	"Crypto; export-controlled"
 IS_INTERACTIVE=	YES
@@ -83,49 +72,48 @@ MAN1=		scp1.1 ssh-add1.1 ssh-agent1.1 ssh-keygen1.1 ssh1.1 \
 		make-ssh-known-hosts1.1
 MAN8=		sshd1.8
 
-
 pre-patch:
 	@${MV} -f ${WRKSRC}/make-ssh-known-hosts.pl \
 	    ${WRKSRC}/make-ssh-known-hosts.pl.in
 
 fetch-depends:
 .if !defined(USA_RESIDENT) || ${USA_RESIDENT} != YES && ${USA_RESIDENT} != NO
-	@echo
-	@echo You must set the variable USA_RESIDENT to YES if you are a
-	@echo United States resident, otherwise NO.
-	@echo If you are a US resident then this port must also fetch
-	@echo the RSAREF2 library from sources abroad \(RSA Inc. holds a
-	@echo patent on RSA and public key crypto in general in the United
-	@echo States so using RSA implementations other than RSAREF there
-	@echo may violate US patent law\).
-	@false
+	@ ${ECHO}
+	@ ${ECHO} You must set the variable USA_RESIDENT to YES if you are a
+	@ ${ECHO} United States resident, otherwise NO.
+	@ ${ECHO} If you are a US resident then this port must also fetch
+	@ ${ECHO} the RSAREF2 library from sources abroad \(RSA Inc. holds a
+	@ ${ECHO} patent on RSA and public key crypto in general in the United
+	@ ${ECHO} States so using RSA implementations other than RSAREF there
+	@ ${ECHO} may violate US patent law\).
+	@ ${FALSE}
 .endif
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/ssh_host_key ]; then \
-		echo "Generating a secret host key..."; \
+		${ECHO} "Generating a secret host key..."; \
 		${PREFIX}/bin/ssh-keygen -f ${PREFIX}/etc/ssh_host_key -N ""; \
 	fi
 .if !defined(NOMANCOMPRESS)
 	for file in make-ssh-known-hosts scp ssh-add ssh-agent \
 	    ssh-keygen ssh; do \
-		rm -f ${PREFIX}/man/man1/$${file}.1; \
-		ln -sf $${file}1.1.gz ${PREFIX}/man/man1/$${file}.1.gz; \
+		${RM} -f ${PREFIX}/man/man1/$${file}.1; \
+		${LN} -sf $${file}1.1.gz ${PREFIX}/man/man1/$${file}.1.gz; \
 	done
-	rm -f ${PREFIX}/man/man1/slogin.1
-	rm -f ${PREFIX}/man/man1/slogin1.1
-	rm -f ${PREFIX}/man/man8/sshd.8
-	ln -sf ssh.1.gz ${PREFIX}/man/man1/slogin.1.gz
-	ln -sf ssh1.1.gz ${PREFIX}/man/man1/slogin1.1.gz
-	ln -sf sshd1.8.gz ${PREFIX}/man/man8/sshd.8.gz
+	${RM} -f ${PREFIX}/man/man1/slogin.1
+	${RM} -f ${PREFIX}/man/man1/slogin1.1
+	${RM} -f ${PREFIX}/man/man8/sshd.8
+	${LN} -sf ssh.1.gz ${PREFIX}/man/man1/slogin.1.gz
+	${LN} -sf ssh1.1.gz ${PREFIX}/man/man1/slogin1.1.gz
+	${LN} -sf sshd1.8.gz ${PREFIX}/man/man8/sshd.8.gz
 .else
 	${ECHO} Warning---some manpages not installed.  See port Makefile
 .endif
 	@if [ ! -f ${PREFIX}/etc/rc.d/sshd.sh ]; then \
-		echo "Installing ${PREFIX}/etc/rc.d/sshd.sh startup file."; \
-		echo "#!/bin/sh" > ${PREFIX}/etc/rc.d/sshd.sh; \
-		echo "[ -x ${PREFIX}/sbin/sshd ] && ${PREFIX}/sbin/sshd && echo -n ' sshd'" >> ${PREFIX}/etc/rc.d/sshd.sh; \
-		chmod 751 ${PREFIX}/etc/rc.d/sshd.sh; \
+		${ECHO} "Installing ${PREFIX}/etc/rc.d/sshd.sh startup file."; \
+		${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/sshd.sh; \
+		${ECHO} "[ -x ${PREFIX}/sbin/sshd ] && ${PREFIX}/sbin/sshd && ${ECHO} -n ' sshd'" >> ${PREFIX}/etc/rc.d/sshd.sh; \
+		/bin/chmod 751 ${PREFIX}/etc/rc.d/sshd.sh; \
 	fi
 
 .include <bsd.port.pre.mk>
