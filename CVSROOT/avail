@@ -8,6 +8,6 @@ unavail
 avail||CVSROOT
 avail||distrib
 avail||doc
-avail|asami,cpiazza,mharo,knu|ports
+avail|asami,cpiazza,mharo,knu,obrien|ports
 avail||src
 avail||www
