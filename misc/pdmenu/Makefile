@@ -7,6 +7,8 @@
 PORTNAME=	pdmenu
 PORTVERSION=	1.2.65
 CATEGORIES=	misc
+# http://kitenet.net is unreachable for a long time now, asked the
+# author and maintaier for a known replacement - edwin 20021227
 MASTER_SITES=	http://kitenet.net/programs/code/pdmenu/
 DISTNAME=	pdmenu_${PORTVERSION}
 
