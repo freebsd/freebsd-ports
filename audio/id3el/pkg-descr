@@ -1,0 +1,8 @@
+This is an add-on to enable editing ID3 tag by typing `E' in
+mpg123-mode's (ports/audio/mpg123.el) buffer on Emacsen.
+
+Put the expression below into your ~/.emacs.
+
+(load "id3.el")
+
+WWW: http://www.gentei.org/~yuuji/software/mpg123el/
