@@ -17,10 +17,10 @@ MAINTAINER=	ade@FreeBSD.org
 COMMENT=	GNU version of 'make' utility
 
 .if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
 .endif
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=--program-prefix=g
