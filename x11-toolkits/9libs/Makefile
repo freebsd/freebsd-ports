@@ -26,4 +26,7 @@ MAN6=	bitmap.6 regexp.6
 BROKEN=		"Does not compile on alpha or amd64"
 .endif
 
+post-install:
+	@${SED} -e 's,%%PREFIX%%,${PREFIX},' ${PKGMESSAGE}
+
 .include <bsd.port.post.mk>

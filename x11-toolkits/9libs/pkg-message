@@ -1,0 +1,8 @@
+The following headers files have been installed to:
+
+%%PREFIX%%/9libs
+
+frame.h libc.h libg.h regexp.h u.h
+
+Don't forget to include (-I%%PREFIX%%/9libs) when you
+compile with this toolkit.

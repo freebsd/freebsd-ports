@@ -1,0 +1,17 @@
+--- include/Makefile.in.orig	Thu Apr  8 15:29:00 1999
++++ include/Makefile.in	Thu Apr  8 00:20:24 2004
+@@ -152,11 +152,11 @@
+ 
+ install-includeHEADERS: $(include_HEADERS)
+ 	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(DESTDIR)$(includedir)
++	$(mkinstalldirs) $(DESTDIR)$(includedir)/9libs
+ 	@list='$(include_HEADERS)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d= ; else d="$(srcdir)/"; fi; \
+-	  echo " $(INSTALL_DATA) $$d$$p $(DESTDIR)$(includedir)/$$p"; \
+-	  $(INSTALL_DATA) $$d$$p $(DESTDIR)$(includedir)/$$p; \
++	  echo " $(INSTALL_DATA) $$d$$p $(DESTDIR)$(includedir)/9libs/$$p"; \
++	  $(INSTALL_DATA) $$d$$p $(DESTDIR)$(includedir)/9libs/$$p; \
+ 	done
+ 
+ uninstall-includeHEADERS:
