@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20041221
+  AFFECTS: users of security/gpgme03
+  AUTHOR: clement@FreeBSD.org
+
+  security/gpgme03 has been modified to not conflicts with gpgme 1.x
+  After upgrade, you need to rebuild all ports that depend on it.
+  You should upgrade security/gpgme (if installed) to avoid nasty
+  compile time failures, due to original location of gpgme.h.
+
 20041219:
   AFFECTS: users of textproc/jdictionary
   AUTHOR: hq@FreeBSD.org
