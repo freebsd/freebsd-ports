@@ -8,9 +8,9 @@
 PORTNAME=	wmtime
 PORTVERSION= 	1.0b2
 CATEGORIES=	x11-clocks windowmaker
-MASTER_SITES=	ftp://ftp.mezaway.org/pub/DockApps/
+MASTER_SITES=	ftp://ftp.enteract.com/users/rneswold/
 
-MAINTAINER=	rneswold@mcs.net
+MAINTAINER=	rneswold@enteract.com
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
