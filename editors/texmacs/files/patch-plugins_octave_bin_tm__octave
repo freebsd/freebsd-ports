@@ -1,0 +1,8 @@
+--- ./plugins/octave/bin/tm_octave.orig	Sun Oct  3 13:26:27 2004
++++ ./plugins/octave/bin/tm_octave	Sat Oct 23 17:39:48 2004
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ echo -ne "\002verbatim:"
+ octave -v
+ cd $TEXMACS_PATH/plugins/octave/octave; exec octave -qi tm-start.oct

@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- src/Window/display.hpp.orig	Fri Jun 27 17:46:00 2003
-+++ src/Window/display.hpp	Wed Aug 27 10:47:48 2003
+--- ./src/Window/display.hpp.orig	Sun Oct  3 13:26:38 2004
++++ ./src/Window/display.hpp	Sat Oct 23 17:39:48 2004
 @@ -12,12 +12,17 @@
  
  #ifndef DISPLAY_H
@@ -20,4 +17,4 @@ $FreeBSD$
 +#endif
  #endif
  
- class font;
+ struct font;

@@ -1,0 +1,8 @@
+--- ./plugins/lush/bin/tm_lush.orig	Sun Oct  3 13:26:27 2004
++++ ./plugins/lush/bin/tm_lush	Sat Oct 23 17:39:48 2004
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ cd $TEXMACS_PATH/plugins/lush
+ echo -ne "\002verbatim:"
+ cat << EOF

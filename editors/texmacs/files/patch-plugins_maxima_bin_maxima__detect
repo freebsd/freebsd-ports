@@ -1,0 +1,10 @@
+--- ./plugins/maxima/bin/maxima_detect.orig	Sun Oct  3 13:26:27 2004
++++ ./plugins/maxima/bin/maxima_detect	Sat Oct 23 17:50:48 2004
+@@ -1,5 +1,5 @@
+-#!/bin/bash
+-MAXIMA=`type -p maxima 2>/dev/null`
++#!/bin/sh
++MAXIMA=`which maxima 2>/dev/null`
+ if [ $? -eq 0 ]
+ then
+   if grep -F list-avail $MAXIMA >/dev/null

@@ -1,0 +1,8 @@
+--- ./plugins/lisp/bin/tm_lisp.orig	Sun Oct  3 13:26:27 2004
++++ ./plugins/lisp/bin/tm_lisp	Sat Oct 23 17:39:48 2004
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ export TEXMACS_LISP_PATH=$TEXMACS_PATH/plugins/lisp
+ cd $TEXMACS_LISP_PATH
