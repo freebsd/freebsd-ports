@@ -30,9 +30,20 @@ lib/libxslt.so.1
 lib/libxsltbreakpoint.a
 lib/libxsltbreakpoint.so
 lib/libxsltbreakpoint.so.1
+%%PYTHON:%%lib/%%PYTHON_VERSION%%/site-packages/libxslt.py
+%%PYTHON:%%lib/%%PYTHON_VERSION%%/site-packages/libxsltmod.so
 libdata/pkgconfig/libxslt.pc
+%%PYTHON:%%share/doc/libxslt-python/TODO
+%%PYTHON:%%share/doc/libxslt-python/libxsltclass.txt
+%%PYTHON:%%share/doc/libxslt-python/examples/basic.py
+%%PYTHON:%%share/doc/libxslt-python/examples/extfunc.py
+%%PYTHON:%%share/doc/libxslt-python/examples/pyxsltproc.py
+%%PYTHON:%%share/doc/libxslt-python/examples/test.xml
+%%PYTHON:%%share/doc/libxslt-python/examples/test.xsl
 share/doc/libxslt/html/book1.html
+share/doc/libxslt/html/index.sgml
 share/doc/libxslt/html/libxslt-attributes.html
+share/doc/libxslt/html/libxslt-extensions.html
 share/doc/libxslt/html/libxslt-functions.html
 share/doc/libxslt/html/libxslt-imports.html
 share/doc/libxslt/html/libxslt-keys.html
@@ -52,6 +63,8 @@ share/doc/libxslt/html/tutorial/libxslttutorial.html
 share/doc/libxslt/html/tutorial/libxslttutorial.xml
 @dirrm share/doc/libxslt/html/tutorial
 @dirrm share/doc/libxslt/html
+%%PYTHON:%%@dirrm share/doc/libxslt-python/examples
+%%PYTHON:%%@dirrm share/doc/libxslt-python
 @dirrm share/doc/libxslt
 @dirrm include/libxslt
 @dirrm include/libexslt

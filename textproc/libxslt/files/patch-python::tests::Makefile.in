@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- python/tests/Makefile.in	2002/02/26 18:23:19	1.1
++++ python/tests/Makefile.in	2002/02/26 18:23:47
+@@ -117,7 +117,7 @@
+ XSLT_LIBDIR = @XSLT_LIBDIR@
+ XSLT_LIBS = @XSLT_LIBS@
+ 
+-EXAMPLE_DIR = $(prefix)/share/doc/libxslt-python-$(LIBXSLT_VERSION)/examples
++EXAMPLE_DIR = $(prefix)/share/doc/libxslt-python/examples
+ 
+ TESTSPY = \
+     basic.py	\

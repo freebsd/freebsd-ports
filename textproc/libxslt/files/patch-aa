@@ -1,27 +1,30 @@
 
 $FreeBSD$
 
---- Makefile.in.orig	Mon Jan 14 20:19:35 2002
-+++ Makefile.in	Tue Jan 29 11:49:57 2002
-@@ -115,16 +115,14 @@
- @WITH_DEBUGGER_TRUE@  	libxslt \
+--- Makefile.in.orig	Mon Feb 11 20:57:11 2002
++++ Makefile.in	Tue Feb 26 20:53:28 2002
+@@ -122,17 +122,15 @@
  @WITH_DEBUGGER_TRUE@  	libexslt \
  @WITH_DEBUGGER_TRUE@  	xsltproc \
--@WITH_DEBUGGER_TRUE@  	tests \
- @WITH_DEBUGGER_TRUE@  	doc
+ @WITH_DEBUGGER_TRUE@  	doc \
+-@WITH_DEBUGGER_TRUE@	python \
+-@WITH_DEBUGGER_TRUE@  	tests
++@WITH_DEBUGGER_TRUE@	@WITH_PYTHON_TRUE@ python
  @WITH_DEBUGGER_FALSE@SUBDIRS = @WITH_DEBUGGER_FALSE@\
  @WITH_DEBUGGER_FALSE@	libxslt \
  @WITH_DEBUGGER_FALSE@	libexslt \
  @WITH_DEBUGGER_FALSE@	xsltproc \
--@WITH_DEBUGGER_FALSE@	tests \
- @WITH_DEBUGGER_FALSE@	doc
+ @WITH_DEBUGGER_FALSE@	doc \
+-@WITH_DEBUGGER_FALSE@	python \
+-@WITH_DEBUGGER_FALSE@	tests
++@WITH_DEBUGGER_FALSE@	@WITH_PYTHON_TRUE@ python
  
 -confexecdir = $(libdir)
 +confexecdir = $(sysconfdir)
  confexec_DATA = xsltConf.sh
  
  bin_SCRIPTS = xslt-config
-@@ -135,7 +133,7 @@
+@@ -143,7 +141,7 @@
  	     win32/libxslt/libxslt_so.dsp win32/libxslt/xsltproc.dsp
  
  

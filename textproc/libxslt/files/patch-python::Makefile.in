@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- python/Makefile.in	2002/02/26 18:23:19	1.1
++++ python/Makefile.in	2002/02/26 18:23:37
+@@ -129,7 +129,7 @@
+ 	-I$(top_srcdir)
+ 
+ 
+-DOCS_DIR = $(prefix)/share/doc/libxslt-python-$(LIBXML_VERSION)
++DOCS_DIR = $(prefix)/share/doc/libxslt-python
+ DOCS = TODO libxsltclass.txt
+ 
+ EXTRA_DIST = \
