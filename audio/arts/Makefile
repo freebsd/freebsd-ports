@@ -38,7 +38,8 @@ _NO_KDE_FINAL=	yes
 CFLAGS+=	-DHAVE_VASPRINTF
 CONFIGURE_ENV+=	DO_NOT_COMPILE="${DO_NOT_COMPILE}"
 CONFIGURE_TARGET= # empty
-CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
+		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 
 OPTIONS=	ESD "Enable esound support" off \
 		NAS "Enable NAS support" off

@@ -62,7 +62,8 @@ CONFIGURE_ENV+= PTHREAD_LIBS="${PTHREAD_LIBS}"
 ##  XXX - This really belongs into bsd.port.mk
 .if !defined(_NO_KDE_CONFTARGET_HACK)
 CONFIGURE_TARGET=
-CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
+		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 .endif
 
 .if ${USE_KDELIBS_VER} == CVS
