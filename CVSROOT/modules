@@ -1475,6 +1475,7 @@ eperl		ports/lang/eperl
 epfe		src/tools/tools/epfe
 ephem		ports/astro/ephem
 epic4		ports/irc/epic4
+epix		ports/graphics/epix
 epplets		ports/x11-wm/epplets
 eps2png		ports/graphics/eps2png
 epstool		ports/graphics/epstool
