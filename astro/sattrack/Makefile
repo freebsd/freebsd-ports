@@ -3,12 +3,12 @@
 # Date created:                      6 Apr 1996
 # Whom:                              Brent J. Nordquist <bjn@visi.com>
 #
-# $Id: Makefile,v 1.6 1997/01/28 08:11:05 asami Exp $
+# $Id: Makefile,v 1.7 1997/03/02 11:54:20 asami Exp $
 #
 
 DISTNAME=          sattrack-3.1.6
 CATEGORIES=        astro
-MASTER_SITES=      http://ssl.berkeley.edu/isi_www/
+MASTER_SITES=      ${MASTER_SITE_LOCAL}
 
 MAINTAINER=        bjn@visi.com
 
