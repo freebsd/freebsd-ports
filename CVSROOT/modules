@@ -7245,6 +7245,7 @@ pancho		ports/net-mgmt/pancho
 panda		ports/print/panda
 pango		ports/x11-toolkits/pango
 panorama	ports/graphics/panorama
+panoramixext	ports/x11/panoramixext
 pantomime	ports/mail/pantomime
 pantomime-ssl	ports/mail/pantomime-ssl
 papercut	ports/news/papercut
