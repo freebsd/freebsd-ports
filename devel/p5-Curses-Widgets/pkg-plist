@@ -3,3 +3,4 @@ lib/perl5/site_perl/%%PERL_VER%%/Curses/Widgets.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Curses/Widgets/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Curses/Widgets
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Curses 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Curses 2>/dev/null || true
