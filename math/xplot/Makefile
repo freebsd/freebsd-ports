@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xplot
-# Version required:	0.89
+# Version required:	0.90
 # Date created:		3 March 1997
 # Whom:			fenner
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/03/06 01:23:08 asami Exp $
 #
 
-DISTNAME=	xplot-0.89
+DISTNAME=	xplot-0.90
 CATEGORIES=	math graphics net
 MASTER_SITES=	ftp://mercury.lcs.mit.edu/pub/shep/
 
