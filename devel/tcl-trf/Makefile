@@ -22,7 +22,7 @@ BUILD_DEPENDS=	tclsh${TCL_VER}:${PORTSDIR}/lang/tcl${TCL_VER:S/.//} \
 USE_BZIP2=	yes
 
 ALL_TARGET=	all test
-MAKE_ARGS+=	-j2
+#MAKE_ARGS+=	-j2
 
 TCL_VER?=	8.4
 DDIR=		${PREFIX}/lib/tcl${TCL_VER}/Trf
@@ -63,10 +63,6 @@ post-install:
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=		"Does not install on FreeBSD ${OSVERSION}"
-.endif
 
 SHLIB_NAME=	libTrf2.so.1
 SHLIB_LINK=	${SHLIB_NAME:C/\.so\..*/.so/}
