@@ -1,4 +1,4 @@
 bin/vcp
 etc/vcp.sample
-%%PORTDOCS%%share/doc/vcp/README
-%%PORTDOCS%%@dirrm /share/doc/vcp
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
