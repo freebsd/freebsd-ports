@@ -21,14 +21,14 @@ case "x$1" in
   x3)
     branch=3
     export PORTOBJFORMAT=elf
-    # export OSREL=3.1
-    # export OSVERSION=310002
+    # export OSREL=3.3
+    # export OSVERSION=330000
     ;;
   x4)
     branch=4
     export PORTOBJFORMAT=elf
     export OSREL=4.0
-    export OSVERSION=400002
+    export OSVERSION=400009
     ;;
   *)
     usage
