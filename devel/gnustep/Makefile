@@ -19,10 +19,10 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Objective-C libraries based on the OpenStep standard
 
-RUN_DEPENDS+=	${SYSMAKEDIR}/GNUstep.sh:${PORTSDIR}/devel/gnustep-make
-RUN_DEPENDS+=	${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base
-RUN_DEPENDS+=	${COMBOLIBDIR}/libgnustep-gui.so:${PORTSDIR}/x11-toolkits/gnustep-gui
-RUN_DEPENDS+=	${BACKBUNDLEDIR}/libgnustep-back:${PORTSDIR}/x11-toolkits/gnustep-back
+RUN_DEPENDS+=	${SYSMAKEDIR}/GNUstep.sh:${PORTSDIR}/${GNUSTEP_MAKE_PORT}
+RUN_DEPENDS+=	${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/${GNUSTEP_BASE_PORT}
+RUN_DEPENDS+=	${COMBOLIBDIR}/libgnustep-gui.so:${PORTSDIR}/${GNUSTEP_GUI_PORT}
+RUN_DEPENDS+=	${BACKBUNDLEDIR}/libgnustep-back:${PORTSDIR}/${GNUSTEP_BACK_PORT}
 
 PREFIX=		${LOCALBASE}/GNUstep
 NO_MTREE=	yes
@@ -31,6 +31,10 @@ SYSTEMDIR=	${PREFIX}/System
 SYSMAKEDIR=	${SYSTEMDIR}/Makefiles
 COMBOLIBDIR=	${SYSLIBDIR}/gnu-gnu-gnu
 BUNDLEDIR=	${SYSTEMDIR}/Library/Bundles
+GNUSTEP_MAKE_PORT?=	devel/gnustep-make
+GNUSTEP_BASE_PORT?=	lang/gnustep-base
+GNUSTEP_GUI_PORT?=	x11-toolkits/gnustep-gui
+GNUSTEP_BACK_PORT?=	x11-toolkits/gnustep-back
 
 .include <bsd.port.pre.mk>
 
