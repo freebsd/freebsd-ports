@@ -12,7 +12,7 @@ CATEGORIES=	vietnamese print
 MASTER_SITES=	http://www.fi.muni.cz/~thanh/download/
 DISTNAME=	vntex
 
-MAINTAINER=     obrien@FreeBSD.org
+MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	teTeX Vietnamese language + font support
 
 #	actually just need to make sure ${PREFIX}/share/texmf/tex/ exists
