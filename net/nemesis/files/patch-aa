@@ -1,0 +1,52 @@
+--- Makefile.in.orig	Sun Dec 31 10:49:50 2000
++++ Makefile.in	Thu Jan 25 20:31:53 2001
+@@ -34,6 +34,8 @@
+ UDP_MAN  = nemesis-udp.1
+ 
+ INSTALL = @INSTALL@
++INSTALL_PROGRAM = @INSTALL_PROGRAM@
++INSTALL_DATA = @INSTALL_DATA@
+ 
+ # Compiler 
+ #
+@@ -84,23 +86,23 @@
+ 	strip $(TCP_TARGET)
+ 	strip $(UDP_TARGET)
+ 
+-install: nemesis strip
+-	$(INSTALL) -c -m 0755 $(ARP_TARGET) $(DESTDIR)$(prefix)/sbin
+-	$(INSTALL) -c -m 0755 $(DNS_TARGET) $(DESTDIR)$(prefix)/sbin
+-	$(INSTALL) -c -m 0755 $(ICMP_TARGET) $(DESTDIR)$(prefix)/sbin
+-	$(INSTALL) -c -m 0755 $(IGMP_TARGET) $(DESTDIR)$(prefix)/sbin
+-	$(INSTALL) -c -m 0755 $(OSPF_TARGET) $(DESTDIR)$(prefix)/sbin
+-	$(INSTALL) -c -m 0755 $(RIP_TARGET) $(DESTDIR)$(prefix)/sbin
+-	$(INSTALL) -c -m 0755 $(TCP_TARGET) $(DESTDIR)$(prefix)/sbin
+-	$(INSTALL) -c -m 0755 $(UDP_TARGET) $(DESTDIR)$(prefix)/sbin
+-	$(INSTALL) -c -m 0644 $(ARP_MAN) $(DESTDIR)$(prefix)/man/man1
+-	$(INSTALL) -c -m 0644 $(DNS_MAN) $(DESTDIR)$(prefix)/man/man1
+-	$(INSTALL) -c -m 0644 $(ICMP_MAN) $(DESTDIR)$(prefix)/man/man1
+-	$(INSTALL) -c -m 0644 $(IGMP_MAN) $(DESTDIR)$(prefix)/man/man1
+-	$(INSTALL) -c -m 0644 $(OSPF_MAN) $(DESTDIR)$(prefix)/man/man1
+-	$(INSTALL) -c -m 0644 $(RIP_MAN) $(DESTDIR)$(prefix)/man/man1
+-	$(INSTALL) -c -m 0644 $(TCP_MAN) $(DESTDIR)$(prefix)/man/man1
+-	$(INSTALL) -c -m 0644 $(UDP_MAN) $(DESTDIR)$(prefix)/man/man1
++install: all
++	$(INSTALL_PROGRAM) $(ARP_TARGET) $(DESTDIR)$(prefix)/sbin
++	$(INSTALL_PROGRAM) $(DNS_TARGET) $(DESTDIR)$(prefix)/sbin
++	$(INSTALL_PROGRAM) $(ICMP_TARGET) $(DESTDIR)$(prefix)/sbin
++	$(INSTALL_PROGRAM) $(IGMP_TARGET) $(DESTDIR)$(prefix)/sbin
++	$(INSTALL_PROGRAM) $(OSPF_TARGET) $(DESTDIR)$(prefix)/sbin
++	$(INSTALL_PROGRAM) $(RIP_TARGET) $(DESTDIR)$(prefix)/sbin
++	$(INSTALL_PROGRAM) $(TCP_TARGET) $(DESTDIR)$(prefix)/sbin
++	$(INSTALL_PROGRAM) $(UDP_TARGET) $(DESTDIR)$(prefix)/sbin
++	$(INSTALL_DATA) $(ARP_MAN) $(DESTDIR)$(prefix)/man/man1
++	$(INSTALL_DATA) $(DNS_MAN) $(DESTDIR)$(prefix)/man/man1
++	$(INSTALL_DATA) $(ICMP_MAN) $(DESTDIR)$(prefix)/man/man1
++	$(INSTALL_DATA) $(IGMP_MAN) $(DESTDIR)$(prefix)/man/man1
++	$(INSTALL_DATA) $(OSPF_MAN) $(DESTDIR)$(prefix)/man/man1
++	$(INSTALL_DATA) $(RIP_MAN) $(DESTDIR)$(prefix)/man/man1
++	$(INSTALL_DATA) $(TCP_MAN) $(DESTDIR)$(prefix)/man/man1
++	$(INSTALL_DATA) $(UDP_MAN) $(DESTDIR)$(prefix)/man/man1
+ 
+ clean:
+ 	rm -f core *.core *.o $(ARP_TARGET) $(DNS_TARGET) \
