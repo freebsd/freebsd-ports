@@ -47,10 +47,8 @@ AUTOMAKE_ARGS=	--add-missing
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS+=	--with-apxs=${APXS}
 
-pre-patch:	build-depends
-
-post-patch:
-	cd ${WRKSRC}; ${ACLOCAL}; ${LIBTOOLIZE}
+run-autotools:
+	@cd ${WRKSRC}; ${ACLOCAL}; ${LIBTOOLIZE}
 
 do-install:
 	${APXS} -i -A -n jk ${WRKSRC}/apache-${APACHE_VER}/mod_jk.so
