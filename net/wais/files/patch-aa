@@ -1,0 +1,42 @@
+*** Makefile	Tue Mar 15 19:30:00 1994
+--- Makefile	Fri Sep 16 21:56:22 1994
+***************
+*** 118,124 ****
+  # Use this version of CFLAGS for Linux with gcc
+  # CFLAGS = -O2 -ansi -m486 -fwritable-strings -I$(SUPDIR) -DTELL_USER -DUSG -DSECURE_SERVER -DRELEVANCE_FEEDBACK -DBOOLEANS -DPARTIALWORD -DLITERAL -DSOUND -DBIBDB -DLINUX
+  
+! CFLAGS = -ansi -I$(SUPDIR) -DTELL_USER -DUSG -DSECURE_SERVER -DRELEVANCE_FEEDBACK -DBOOLEANS -DPARTIALWORD -DLITERAL -DSOUND -DBIBDB
+  
+  # Solaris should use
+  #LIB = -ltcpip -lsocket -lnsl
+--- 118,124 ----
+  # Use this version of CFLAGS for Linux with gcc
+  # CFLAGS = -O2 -ansi -m486 -fwritable-strings -I$(SUPDIR) -DTELL_USER -DUSG -DSECURE_SERVER -DRELEVANCE_FEEDBACK -DBOOLEANS -DPARTIALWORD -DLITERAL -DSOUND -DBIBDB -DLINUX
+  
+! CFLAGS = -ansi -I$(SUPDIR) -DTELL_USER -DUSG -DSECURE_SERVER -DRELEVANCE_FEEDBACK -DBOOLEANS -DPARTIALWORD -DLITERAL -DSOUND -DBIBDB -D__bsdi__
+  
+  # Solaris should use
+  #LIB = -ltcpip -lsocket -lnsl
+***************
+*** 135,140 ****
+--- 135,142 ----
+  
+  MAKE = make $(MFLAGS) 
+  
++ all: default
++ 
+  #default: config.h lib ir ui bin doc x tags
+  default: config.h lib ir ui bin x check
+  	@echo "Welcome to WAIS"
+*** ir/irtfiles.c	Wed Jan 19 16:10:32 1994
+--- ir/irtfiles.c	Fri Sep 16 23:14:03 1994
+***************
+*** 75,80 ****
+--- 75,81 ----
+  
+  #include <ctype.h>
+  #include <string.h>
++ #include <sys/types.h>
+  #include "panic.h"  
+  #include "irdirent.h"
+  #include "irhash.h"
