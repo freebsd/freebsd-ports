@@ -8,7 +8,8 @@
 PORTNAME=	apache+mod_ssl
 PORTVERSION=	${VERSION_APACHE}.${VERSION_RA}.${VERSION_MODSSL}
 CATEGORIES=	russian www security
-MASTER_SITES=	http://www.apache.org/dist/httpd/ \
+MASTER_SITES=	http://nagoya.apache.org/dist/httpd/ \
+		http://www.apache.org/dist/httpd/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/httpd/ \
 		ftp://ftp.rge.com/pub/infosystems/apache/dist/httpd/ \
 		ftp://apache.compuex.com/pub/apache/dist/httpd/ \
@@ -39,7 +40,6 @@ MASTER_SITES_MODSSL=	http://www.modssl.org/source/ \
 MASTER_SITES_RA=	ftp://ftp.lexa.ru/pub/apache-rus/ \
 			ftp://ftp.lexa.ru/pub/apache-rus/old-versions/
 
-
 DISTNAME=	apache_${VERSION_APACHE}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		mod_ssl-${VERSION_MODSSL}-${VERSION_APACHE}${EXTRACT_SUFX}:modssl \
@@ -55,7 +55,7 @@ USE_PERL5=	yes
 LIB_DEPENDS=	mm.12:${PORTSDIR}/devel/mm
 
 VERSION_APACHE=	1.3.27
-VERSION_MODSSL=	2.8.11
+VERSION_MODSSL=	2.8.12
 VERSION_RA=	30.16
 
 #
@@ -72,15 +72,16 @@ DEFAULT_PATH?=/bin:/usr/bin:${PREFIX}/bin
 .if defined(WITH_APACHE_SUEXEC)
 
 APACHE_SUEXEC_DOCROOT?=${DOCUMENT_ROOT}
+APACHE_SUEXEC_LOG?=/var/log/httpd-suexec.log
 APACHE_SUEXEC_USERDIR?=public_html
 
-SUEXEC_CONF= \
+SUEXEC_CONF=\
 	 --enable-suexec \
 	 --suexec-docroot=${APACHE_SUEXEC_DOCROOT} \
 	 --suexec-caller=www \
 	 --suexec-uidmin=1000 \
 	 --suexec-gidmin=1000 \
-	 --suexec-logfile=/var/log/httpd-suexec.log \
+	 --suexec-logfile=${APACHE_SUEXEC_LOG} \
 	 --suexec-userdir=${APACHE_SUEXEC_USERDIR} \
 	 --suexec-safepath=${DEFAULT_PATH}
 
@@ -119,7 +120,7 @@ OPTIM=		-DHARD_SERVER_LIMIT=512 \
 		-DACCEPT_FILTER_NAME=\\"httpready\\"
 
 .if defined(WITH_DSO_MODULES)
-CONFIGURE_ARGS+= \
+CONFIGURE_ARGS+=\
 		 --enable-shared=max \
 		 --disable-shared=so \
 		 --disable-shared=charset \
@@ -132,7 +133,7 @@ CONFIGURE_ARGS+= \
 
 PLIST_SUB+=	 DSO_MOD=""
 .else
-CONFIGURE_ARGS+= \
+CONFIGURE_ARGS+=\
 		 --enable-shared=remain \
 		 --enable-module=most \
 		 --enable-module=auth_db \
@@ -150,7 +151,7 @@ PLIST_SUB+=	 DSO_MOD="@comment "
 OPTIM=		 -DDOCUMENT_LOCATION=\\"${DOCUMENT_ROOT}\\" \
 		 -DDEFAULT_PATH=\\"${DEFAULT_PATH}\\"
 
-.if defined(APACHE_HARD_SERVER_LIMIT)                                                                                   
+.if defined(APACHE_HARD_SERVER_LIMIT)
 OPTIM+=		 -DHARD_SERVER_LIMIT=${APACHE_HARD_SERVER_LIMIT}
 .else
 OPTIM+=		 -DHARD_SERVER_LIMIT=512
@@ -200,7 +201,8 @@ pre-fetch:
 	@${ECHO_MSG} "   suexec docroot:  ${APACHE_SUEXEC_DOCROOT}"
 	@${ECHO_MSG} "   suexec userdir:  ${APACHE_SUEXEC_USERDIR}"
 	@${ECHO_MSG} "   suexec safepath: ${DEFAULT_PATH}"
-	@${ECHO_MSG} "   These values could be defined as APACHE_SUEXEC_DOCROOT, APACHE_SUEXEC_USERDIR and DEFAULT_PATH."
+	@${ECHO_MSG} "   suexec log:      ${APACHE_SUEXEC_LOG}"
+	@${ECHO_MSG} "   These values could be defined as APACHE_SUEXEC_DOCROOT, APACHE_SUEXEC_USERDIR, DEFAULT_PATH and APACHE_SUEXEC_LOG."
 .else
 	@${ECHO_MSG} "You could define WITH_APACHE_SUEXEC to build suexec support."
 .endif
