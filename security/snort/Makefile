@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	snort
-PORTVERSION=	1.8.3
+PORTVERSION=	1.8.6
 CATEGORIES=	security
-MASTER_SITES=	http://snort.sourcefire.com/releases/
+MASTER_SITES=	http://www.snort.org/dl/
 
 MAINTAINER=	kris@FreeBSD.org
 
