@@ -1,3 +1,4 @@
+bin/platex
 share/texmf/tex/platex/base/Changes.txt
 share/texmf/tex/platex/base/Files
 share/texmf/tex/platex/base/README.txt
@@ -59,7 +60,6 @@ share/texmf/tex/platex/base/tbk12.clo
 share/texmf/tex/platex/base/tbook.cls
 share/texmf/tex/platex/base/tbook.sty
 share/texmf/tex/platex/base/texsys.aux
-share/texmf/tex/platex/base/texsys.cfg
 share/texmf/tex/platex/base/treport.cls
 share/texmf/tex/platex/base/treport.sty
 share/texmf/tex/platex/base/tsize10.clo
