@@ -1,0 +1,4 @@
+OpenCOBOL is an open-source COBOL compiler, which translates COBOL programs
+o C code and compiles it using GCC.
+
+WWW: http://open-cobol.sourceforge.net/
