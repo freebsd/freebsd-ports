@@ -1,0 +1,11 @@
+--- ddd/Makefile.in.orig	Wed Oct 22 15:29:49 2003
++++ ddd/Makefile.in	Fri Feb 27 13:33:02 2004
+@@ -2170,7 +2170,7 @@
+ 	  && $(MAKEINFO) $(AM_MAKEINFOFLAGS) $(MAKEINFOFLAGS) \
+ 	       `echo $< | sed 's,.*/,,'`
+ 
+-MAKEINFO = @MAKEINFO@
++MAKEINFO = @MAKEINFO@ --no-split
+ TEXI2DVI = texi2dvi
+ 
+ uninstall-info-am:

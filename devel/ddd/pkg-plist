@@ -34,12 +34,19 @@ share/ddd-%%VERSION%%/vsllib/verbose.vsl
 share/ddd-%%VERSION%%/vsllib/vsl.vsl
 share/ddd-%%VERSION%%/vsllib/vsldef.vsl
 share/ddd-%%VERSION%%/vsllib/vsllib.vsl
-share/doc/ddd/PROBLEMS
-share/doc/ddd/README
-share/doc/ddd/ddd-paper.ps.gz
-share/doc/ddd/ddd.ps.gz
-share/doc/ddd/sample.dddinit
-@dirrm share/doc/ddd
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/PROBLEMS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TIPS
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/ddd-paper.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/ddd-themes.pdf
+%%PORTDOCS%%%%DOCSDIR%%/ddd-themes.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/ddd.html
+%%PORTDOCS%%%%DOCSDIR%%/ddd.pdf
+%%PORTDOCS%%%%DOCSDIR%%/ddd.ps.gz
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/ddd-%%VERSION%%/vsllib
 @dirrm share/ddd-%%VERSION%%/themes
 @dirrm share/ddd-%%VERSION%%/ddd

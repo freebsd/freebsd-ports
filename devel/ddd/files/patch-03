@@ -1,5 +1,0 @@
---- ddd/Makefile.in.orig	Fri Feb  2 07:47:11 2001
-+++ ddd/Makefile.in	Thu Mar  8 04:48:10 2001
-@@ -134 +134 @@
--MAKEINFO = @MAKEINFO@
-+MAKEINFO = @MAKEINFO@ --no-split
