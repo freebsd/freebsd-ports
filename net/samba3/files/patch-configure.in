@@ -1,6 +1,6 @@
---- configure.in.orig	Thu Apr 29 09:34:48 2004
-+++ configure.in	Thu May 20 14:16:15 2004
-@@ -803,6 +803,13 @@
+--- configure.in.orig	Fri Aug  6 23:38:21 2004
++++ configure.in	Wed Sep  1 03:03:48 2004
+@@ -810,6 +810,13 @@
     AC_DEFINE(HAVE_SIG_ATOMIC_T_TYPE,1,[Whether we have the atomic_t variable type])
  fi
  
@@ -14,3 +14,21 @@
  # stupid headers have the functions but no declaration. grrrr.
  AC_HAVE_DECL(errno, [#include <errno.h>])
  AC_HAVE_DECL(setresuid, [#include <unistd.h>])
+@@ -3870,7 +3877,7 @@
+ 		AC_DEFINE(HAVE_TRU64_ACLS,1,[Whether Tru64 ACLs are available])
+ 		ACL_LIBS="$ACL_LIBS -lpacl"
+ 		;;
+-	*freebsd5*)
++	*freebsd[[5-9]]*)
+ 		AC_MSG_RESULT(Using FreeBSD posix ACLs)
+ 		AC_DEFINE(HAVE_POSIX_ACLS,1,[Whether FreeBSD POSIX ACLs are available])
+ 		AC_DEFINE(HAVE_ACL_GET_PERM_NP,1,[Whether acl_get_perm_np() is available])
+@@ -4189,7 +4196,7 @@
+ 	*linux*)
+ 		WINBIND_NSS_EXTRA_OBJS="nsswitch/winbind_nss_linux.o"
+ 		;;
+-	*freebsd5*)
++	*freebsd[[5-9]]*)
+ 		# FreeBSD winbind client is implemented as a wrapper around
+ 		# the Linux version.
+ 		WINBIND_NSS_EXTRA_OBJS="nsswitch/winbind_nss_freebsd.o \

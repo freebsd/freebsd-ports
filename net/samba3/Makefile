@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		samba
-PORTVERSION=		3.0.5
+PORTVERSION=		3.0.6
 PORTREVISION?=		0
 PORTEPOCH?=		1
 CATEGORIES?=		net
@@ -20,7 +20,7 @@ COMMENT?=		A free SMB and CIFS client and server for UNIX
 CONFLICTS?=		ja-samba-2.* samba-2.* sharity-light-1.*
 
 USE_ICONV=		yes
-USE_AUTOCONF_VER=	253
+USE_AUTOCONF_VER=	259
 
 LATEST_LINK?=		${PKGNAMEPREFIX}${PORTNAME}3${PKGNAMESUFFIX}
 EXAMPLESDIR=		${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
@@ -182,7 +182,7 @@ PLIST_SUB+=		SMBPASS="@comment "
 
 .if defined(WITH_ACL_SUPPORT)
 .if ${OSVERSION} < 500018
-BROKEN=			"Requires FreeBSD 5.x at least after 20010326"
+BROKEN=			"ACL support requires FreeBSD 5.x at least after 20010326"
 .else
 CONFIGURE_ARGS+=	--with-acl-support
 .endif
@@ -233,7 +233,7 @@ MAN1=		findsmb.1 nmblookup.1 log2pcap.1 rpcclient.1 \
 		smbget.1 smbcacls.1 smbclient.1 smbcontrol.1 smbsh.1 \
 		smbstatus.1 smbtar.1 testparm.1 testprns.1 vfstest.1 \
 		ntlm_auth.1 profiles.1 smbcquotas.1 smbtree.1
-MAN5=		lmhosts.5 smb.conf.5 smbpasswd.5
+MAN5=		lmhosts.5 smb.conf.5 smbgetrc.5 smbpasswd.5
 MAN7=		samba.7
 MAN8=		nmbd.8 smbd.8 net.8 pdbedit.8 smbpasswd.8 smbspool.8 \
 		swat.8 tdbdump.8 tdbbackup.8
@@ -249,10 +249,11 @@ WINBIND_FILTER=		${GREP} -v '^%%WINBIND%%'
 .endif
 
 .if defined(WITH_I18N)
+IGNORE=			"I18N patch not ported yet!"
 # Based on patch from miraclelinux.com.
 # http://www.miraclelinux.com/english/technet/samba30/index.html
-PATCH_SITES=	http://dist.bsdlab.org/
-PATCHFILES=	samba-3.0.4-i18n-20040521.bz2
+PATCH_SITES=		http://dist.bsdlab.org/
+PATCHFILES=		samba-3.0.4-i18n-20040521.bz2
 PATCH_DIST_STRIP=	-p1
 PLIST_SUB+=		I18N=""
 .else
@@ -281,6 +282,7 @@ pre-fetch:
 post-patch:
 	@${FIND} ${WRKSRC} -name CVS -o -name .cvsignore | ${XARGS} ${RM}
 	@${RM} -rf ${WRKDIR}/${DISTNAME}/examples/libsmbclient
+	@${CP} -pf ${FILESDIR}/samba.schema ${WRKDIR}/${DISTNAME}/examples/LDAP
 
 post-install:
 .for sect in 1 5 7 8
@@ -348,8 +350,8 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${CP} -Rp ${WRKDIR}/${DISTNAME}/docs/registry ${DOCSDIR}
-.for d in devel guide howto
-	@${CP} -Rp ${WRKDIR}/${DISTNAME}/docs/htmldocs/${d} ${DOCSDIR}
+.for f in Samba-Developers-Guide.pdf Samba-Guide.pdf Samba-HOWTO-Collection.pdf
+	@${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/docs/${f} ${DOCSDIR}
 .endfor
 	@${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${DOCSDIR}
 .for f in README COPYING Manifest Read-Manifest-Now Roadmap \
