@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	xcb
-PORTVERSION=	2.3
+PORTVERSION=	2.3i
 CATEGORIES=	x11
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	utilities
+MASTER_SITES=	http://www.goof.com/pcg/marc/data/
 
 MAINTAINER=	ports@FreeBSD.org
 
