@@ -63,6 +63,7 @@ bin/leo
 %%PYTHON_SITELIBDIR%%/leo/plugins/outline_export.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/override_commands.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/plugins_menu.py
+%%PYTHON_SITELIBDIR%%/leo/plugins/quit_leo.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/read_only_nodes.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/redefine_put.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/redirect_to_log.py
