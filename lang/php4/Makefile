@@ -264,7 +264,7 @@ CONFIGURE_ARGS+=--with-dom=${LOCALBASE}
 .endif
 
 .if defined(WITH_DOMXSLT)
-LIB_DEPENDS+=	xslt.1:${PORTSDIR}/textproc/libxslt
+LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
 CONFIGURE_ARGS+=--with-dom-xslt=${LOCALBASE} --with-dom-exslt=${LOCALBASE}
 .endif
 

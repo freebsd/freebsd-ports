@@ -7,6 +7,7 @@
 
 PORTNAME=	libxslt
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www.rubynet.org/modules/xml/libxslt/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -20,7 +21,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/xml2-config:${PORTSDIR}/textproc/libxml2 \
 		${LOCALBASE}/bin/xslt-config:${PORTSDIR}/textproc/libxslt \
 		${NONEXISTENT}:${PORTSDIR}/${RUBY_LIBXML_PORT}:patch
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
-		xslt.1:${PORTSDIR}/textproc/libxslt
+		xslt.2:${PORTSDIR}/textproc/libxslt
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/xml/libxml.so:${PORTSDIR}/textproc/ruby-libxml
 
 USE_BZIP2=	yes

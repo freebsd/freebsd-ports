@@ -484,7 +484,7 @@ CONFIGURE_ARGS+=--with-xmlrpc --with-expat-dir=${LOCALBASE}
 .endif
 
 .if defined(WITH_XSL)
-LIB_DEPENDS+=	xslt.1:${PORTSDIR}/textproc/libxslt
+LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
 CONFIGURE_ARGS+=--with-xsl=${LOCALBASE}
 .endif
 

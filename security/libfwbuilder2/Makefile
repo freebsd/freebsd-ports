@@ -6,7 +6,7 @@
 
 PORTNAME=	libfwbuilder
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fwbuilder
@@ -17,7 +17,7 @@ COMMENT=	Firewall Builder API
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf \
 		aclocal:${PORTSDIR}/devel/automake
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
-		xslt.1:${PORTSDIR}/textproc/libxslt \
+		xslt.2:${PORTSDIR}/textproc/libxslt \
 		netsnmp.5:${PORTSDIR}/net/net-snmp \
 		crypto.3:${PORTSDIR}/security/openssl
 

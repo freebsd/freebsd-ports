@@ -7,6 +7,7 @@
 
 PORTNAME=	icecast2
 PORTVERSION=	2.0.a.2.20030811
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	audio net ipv6
 MASTER_SITES=	http://tigress.com/lofi/\
@@ -20,7 +21,7 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		ogg.4:${PORTSDIR}/audio/libogg \
 		shout.3:${PORTSDIR}/audio/libshout2 \
 		vorbis.2:${PORTSDIR}/audio/libvorbis \
-		xslt.1:${PORTSDIR}/textproc/libxslt
+		xslt.2:${PORTSDIR}/textproc/libxslt
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk-doc
 PORTVERSION=	1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.gtk.org/pub/gtk-doc/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	XML-LibXSLT
 PORTVERSION=	1.53
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -18,7 +19,7 @@ COMMENT=	Perl interface to the GNOME XSLT library
 BUILD_DEPENDS=	${PERL_ABASE}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML
 RUN_DEPENDS=	${PERL_ABASE}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
-		xslt.1:${PORTSDIR}/textproc/libxslt
+		xslt.2:${PORTSDIR}/textproc/libxslt
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	INC='-I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2'
