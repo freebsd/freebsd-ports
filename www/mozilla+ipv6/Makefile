@@ -54,10 +54,10 @@ post-build:
 		${FILESDIR}/mozilla.sh >${WRKSRC}/mozilla
 	@${CHMOD} 555 ${WRKSRC}/mozilla
 	@(cd ${WRKSRC}/dist/bin; \
-	  ${ENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regxpcom; \
+	  ${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regxpcom; \
 	  ${ECHO} skin,install,select,classic/1.0 >> chrome/installed-chrome.txt; \
 	  ${ECHO} locale,install,select,en-US >> chrome/installed-chrome.txt; \
-	  ${ENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regchrome)
+	  ${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regchrome)
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/mozilla
