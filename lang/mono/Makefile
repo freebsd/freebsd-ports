@@ -7,6 +7,7 @@
 
 PORTNAME=	mono
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://mono.ximian.com/archive/${PORTVERSION}/
 

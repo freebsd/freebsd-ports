@@ -22,7 +22,7 @@
 -LIBC="libc.so.6"
 -INTL="libc.so.6"
 +LIBC="libc.so"
-+INTL="libc.so"
++INTL="libintl.so"
  
  jit_wanted=false
  case "$host" in

@@ -6,8 +6,8 @@
 -  <dllmap dll="libgobject-2.0-0.dll" target="libgobject-2.0@LIB_PREFIX@.0@LIB_SUFFIX@"/>
 -  <dllmap dll="libatk-1.0-0.dll" target="libatk-1.0@LIB_PREFIX@.0@LIB_SUFFIX@"/>
 -  <dllmap dll="libgtk-win32-2.0-0.dll" target="libgtk-x11-2.0@LIB_PREFIX@.0@LIB_SUFFIX@"/>
-+  <dllmap dll="libglib-2.0-0.dll" target="libglib-2.0@LIB_PREFIX@.400@LIB_SUFFIX@"/>
-+  <dllmap dll="libgobject-2.0-0.dll" target="libgobject-2.0@LIB_PREFIX@.400@LIB_SUFFIX@"/>
-+  <dllmap dll="libatk-1.0-0.dll" target="libatk-1.0@LIB_PREFIX@.600@LIB_SUFFIX@"/>
-+  <dllmap dll="libgtk-win32-2.0-0.dll" target="libgtk-x11-2.0@LIB_PREFIX@.400@LIB_SUFFIX@"/>
++  <dllmap dll="libglib-2.0-0.dll" target="libglib-2.0@LIB_PREFIX@@LIB_SUFFIX@"/>
++  <dllmap dll="libgobject-2.0-0.dll" target="libgobject-2.0@LIB_PREFIX@@LIB_SUFFIX@"/>
++  <dllmap dll="libatk-1.0-0.dll" target="libatk-1.0@LIB_PREFIX@@LIB_SUFFIX@"/>
++  <dllmap dll="libgtk-win32-2.0-0.dll" target="libgtk-x11-2.0@LIB_PREFIX@@LIB_SUFFIX@"/>
  </configuration>

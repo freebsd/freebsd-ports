@@ -6,8 +6,8 @@
 -  <dllmap dll="libgobject-2.0-0.dll" target="libgobject-2.0@LIB_PREFIX@.0@LIB_SUFFIX@"/>
 -  <dllmap dll="libgdk-win32-2.0-0.dll" target="libgdk-x11-2.0@LIB_PREFIX@.0@LIB_SUFFIX@"/>
 -  <dllmap dll="libgdk_pixbuf-2.0-0.dll" target="libgdk_pixbuf-2.0@LIB_PREFIX@.0@LIB_SUFFIX@"/>
-+  <dllmap dll="libglib-2.0-0.dll" target="libglib-2.0@LIB_PREFIX@.400@LIB_SUFFIX@"/>
-+  <dllmap dll="libgobject-2.0-0.dll" target="libgobject-2.0@LIB_PREFIX@.400@LIB_SUFFIX@"/>
-+  <dllmap dll="libgdk-win32-2.0-0.dll" target="libgdk-x11-2.0@LIB_PREFIX@.400@LIB_SUFFIX@"/>
-+  <dllmap dll="libgdk_pixbuf-2.0-0.dll" target="libgdk_pixbuf-2.0@LIB_PREFIX@.400@LIB_SUFFIX@"/>
++  <dllmap dll="libglib-2.0-0.dll" target="libglib-2.0@LIB_PREFIX@@LIB_SUFFIX@"/>
++  <dllmap dll="libgobject-2.0-0.dll" target="libgobject-2.0@LIB_PREFIX@@LIB_SUFFIX@"/>
++  <dllmap dll="libgdk-win32-2.0-0.dll" target="libgdk-x11-2.0@LIB_PREFIX@@LIB_SUFFIX@"/>
++  <dllmap dll="libgdk_pixbuf-2.0-0.dll" target="libgdk_pixbuf-2.0@LIB_PREFIX@@LIB_SUFFIX@"/>
  </configuration>
