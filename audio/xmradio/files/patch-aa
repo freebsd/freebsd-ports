@@ -1,0 +1,14 @@
+--- Imakefile.orig      Wed Feb  3 00:03:59 1999
++++ Imakefile   Wed Feb  3 00:04:27 1999
+@@ -1,9 +1,9 @@
+ #include "Motif.tmpl"
+ 
+ #ifdef NetBSDArchitecture
+-LOCAL_LIBRARIES = XmClientLibs ${XMULIB} -lXpm -lossaudio -lm
++LOCAL_LIBRARIES = ${MOTIFLIB} ${XTOOLLIB} $(XPLIB) ${XLIB} ${XMULIB} -lXpm -lossaudio -lm
+ #else
+-LOCAL_LIBRARIES = XmClientLibs ${XMULIB} -lXpm -lm
++LOCAL_LIBRARIES = ${MOTIFLIB} ${XTOOLLIB} $(XPLIB) ${XLIB} ${XMULIB} -lXpm -lm
+ #endif
+ 
+ EXTRA_INCLUDES= -I.
