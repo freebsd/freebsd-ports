@@ -3,12 +3,12 @@
 # Date created:        19 February 1998
 # Whom:                Josh Gilliam <josh@quick.net>
 #
-# $Id: Makefile,v 1.3 1998/10/10 04:15:51 steve Exp $
+# $Id: Makefile,v 1.4 1998/12/23 19:33:25 obrien Exp $
 #
 
 DISTNAME=	dictd-1.4.9
 PKGNAME=	dict-1.4.9
-CATEGORIES=	net textproc
+CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.cs.unc.edu/pub/users/faith/dict/ \
 		ftp://ftp.dict.org/pub/dict/
 
