@@ -1,0 +1,10 @@
+VFlib is a vector font library.  TrueType, Zeit, JG, BDF fonts
+are supported.  It also supports FreeType library, which uses
+hinting information in TrueType, so clearer output is possible.
+
+See /usr/local/lib/VFlib/doc/man.ps (in Japanese) or the following
+URL for more details.
+
+http://TypeHack.aial.hiroshima-u.ac.jp/VFlib/
+
+This port can use Chinese BIG5 and GB encoded fonts.

@@ -1,0 +1,15 @@
+--- tools/Imakefile.in.orig	Tue Oct 27 17:02:45 1998
++++ tools/Imakefile.in	Wed Dec 16 23:41:05 1998
+@@ -19,7 +19,11 @@
+  * copies. 
+  */
+ 
+-       LIBTOOL = ../libtool
++  PREFIX         ?= /usr/local
++  FREETYPELIBDIR ?= ${PREFIX}/lib
++  FREETYPEINCDIR ?= ${PREFIX}/include
++
++  LIBTOOL = ../libtool
+   VFLIB_INCDIR = ../src
+   VFLIB_LIBDIR = ../src
+ 

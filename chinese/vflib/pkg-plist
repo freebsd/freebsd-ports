@@ -1,0 +1,29 @@
+bin/VFlib2-config
+bin/bdfindex
+bin/disol
+bin/fmtest
+bin/fwindex
+bin/kban
+bin/ktest
+bin/ttindex
+bin/vfperf
+bin/vftest
+include/VF.h
+lib/libVFlib2.so.24.1
+@exec /bin/ln -fs %D/%F %D/lib/libVFlib2.so
+@unexec /bin/rm -f %D/lib/libVFlib2.so
+lib/libVFlib2.la
+share/VFlib/%%VFLIB_VERSION%%/README.txt.JP_EUC
+share/VFlib/%%VFLIB_VERSION%%/COPYING.LIB
+share/VFlib/%%VFLIB_VERSION%%/COPYING
+share/VFlib/%%VFLIB_VERSION%%/vfontcap.mgp
+share/VFlib/%%VFLIB_VERSION%%/vfontcap.comp2
+share/VFlib/%%VFLIB_VERSION%%/vfontcap.bdf
+share/VFlib/%%VFLIB_VERSION%%/vfontcap.ORG
+share/VFlib/%%VFLIB_VERSION%%/vfontcap
+share/VFlib/%%VFLIB_VERSION%%/QA.txt
+share/VFlib/%%VFLIB_VERSION%%/QA-english.tex
+share/VFlib/%%VFLIB_VERSION%%/man.ps
+share/VFlib/%%VFLIB_VERSION%%/man.dvi
+@dirrm share/VFlib/%%VFLIB_VERSION%%
+@dirrm share/VFlib
