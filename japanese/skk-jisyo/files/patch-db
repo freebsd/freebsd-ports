@@ -1,0 +1,11 @@
+--- lisp/skk-auto.el.orig	Sat Oct 31 18:38:32 1998
++++ lisp/skk-auto.el	Sat Oct 31 18:37:55 1998
+@@ -151,7 +151,7 @@
+         ;; key3 の長いもの順にソートして返す。
+         (mapcar (function
+                  (lambda (x) (cdr x)) )
+-                (sort key-cand-alist
++                (sort (nreverse key-cand-alist)
+                       (function (lambda (x y)
+                                   (string< (car y) (car x)) ))))))))
+ 
