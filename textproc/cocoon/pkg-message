@@ -1,22 +1,10 @@
-To activate Cocoon:
+Cocoon is now installed in %%APP_HOME%%
 
-(1) Add following line into jserv.conf.
+You may want to start it by issuing `%%PREFIX%%/etc/rc.d/%%APP_NAME%%.sh start'
+and then point your web browser to the default home page at http://localhost:%%PORT%%/ to read
+the documentation and test the samples.
 
-	"ApJServAction .xml /servlets/org.apache.cocoon.Cocoon"
+If you wish to start Cocoon automatically at boot time, add the following line
+to /etc/rc.conf:
 
-(2) Add following lines into jserv.properties.
-
-	"wrapper.classpath=/usr/local/share/java/classes/cocoon.jar"
-	"wrapper.classpath=/usr/local/share/java/classes/xerces_1_2.jar"
-	"wrapper.classpath=/usr/local/share/java/classes/xalan_1_2_D02.jar"
-	"wrapper.classpath=/usr/local/share/java/classes/fop_0_15_0.jar"
-	"wrapper.classpath=/usr/local/share/java/classes/turbine-pool.jar"
-
-(3) Add following line into zone.properties.
-
-	"repositories=/usr/local/share/java/classes/cocoon.jar"
-	"servlet.org.apache.cocoon.Cocoon.initArgs=properties=/usr/local/etc/apache/cocoon/cocoon.properties"
-
-(4) Make directory "/var/tmp/cocoon-repository".
-
-(5) Restart Apache and check http://localhost/Cocoon.xml.
+%%APP_NAME%%_enable="YES"

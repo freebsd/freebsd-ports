@@ -6,29 +6,76 @@
 #
 
 PORTNAME=	cocoon
-PORTVERSION=	1.8.2
-PORTREVISION=	3
+PORTVERSION=	2.1.5
 CATEGORIES=	textproc www java
-MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD:S,httpd/%SUBDIR%,%SUBDIR%,}
-MASTER_SITE_SUBDIR=	cocoon/OLD
+MASTER_SITES=	${MASTER_SITE_APACHE:S,%SUBDIR%,${PORTNAME},}
+DISTNAME=	${PDISTNAME}-src
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	100% pure Java publishing framework servlet
+MAINTAINER=	jb.quenot@caraldi.com
+COMMENT=	XML Web Development Framework
 
-USE_JAVA=	1.1+
-MAKE_ENV=	JAVA_HOME=${JAVA_HOME} CLASSPATH=${CLASSPATH}
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+USE_JAVA=	yes
+JAVA_VERSION=	1.3+
+USE_PYTHON=	1.6+
+MAKE_ENV=	JAVA_HOME=${JAVA_HOME}
+WRKSRC=	${WRKDIR}/${PDISTNAME}
+APP_VERSION=	${PORTVERSION:C/\..*$//}
+APP_NAME?=	${PORTNAME}
+APP_HOME?=	${PREFIX}/${APP_NAME}
+LATEST_LINK=	${APP_NAME}
+PLIST=		${WRKDIR}/pkg-plist
+PKGMESSAGE=	${WRKDIR}/pkg-message
+PDISTNAME=	${PORTNAME}-${PORTVERSION}
+PKGINSTALL=	${WRKDIR}/pkg-install
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
-CLASSPATH=	${JAVA_CLASSES}
-LIBS=		fop_0_15_0.jar xalan_1_2_D02.jar xerces_1_2.jar turbine-pool.jar
-JDIR=		${PREFIX}/share/java/classes
-CDIR=		${PREFIX}/etc/apache/cocoon
-SDIR=		${PREFIX}/share/java/cocoon
+COCOON_LIB=	${JAVASHAREDIR}/${APP_NAME}
+PLIST_SUB+=	"COCOON_LIB=${COCOON_LIB}"
+
+COPYDIRS=	tools/jetty tools/loader legal
+
+PORT?=		8888
+PID_FILE?=	/var/run/${APP_NAME}.pid
+RUNASUSER?=	www
+RUNASUID?=	80
+GROUP?=		www
+GID?=		80
+LOGFILE?=	/var/log/${APP_NAME}.log
+
+SUBSTITUTIONS=	\
+	-e "s|%%APP_HOME%%|${APP_HOME}|g" \
+	-e "s|%%APP_NAME%%|${APP_NAME}|g" \
+	-e "s|%%PREFIX%%|${PREFIX}|g" \
+	-e "s|%%PORT%%|${PORT}|g" \
+	-e "s|%%COCOON_LIB%%|${COCOON_LIB}|g" \
+	-e "s|%%JAVA_HOME%%|${JAVA_HOME}|g" \
+	-e "s|%%PID_FILE%%|${PID_FILE}|g" \
+	-e "s|%%RUNASUSER%%|${RUNASUSER}|g" \
+	-e "s|%%RUNASUID%%|${RUNASUID}|g" \
+	-e "s|%%GROUP%%|${GROUP}|g" \
+	-e "s|%%GID%%|${GID}|g" \
+	-e "s|%%LOGFILE%%|${LOGFILE}|g" \
+	-e "s|%%PYTHON_CMD%%|${PYTHON_CMD}|g"
+
+# Load options (before including bsd.port.pre.mk)
+.include "${.CURDIR}/Makefile.options"
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502112
-BROKEN=		"Does not compile on 5.x"
+# Test for options
+.include "${MASTERDIR}/Makefile.test-options"
+
+.for BLOCK in ${BLOCKS}
+BLOCKSEXP+=	-e 's/^include.block.${BLOCK}/\#include.block.${BLOCK}/'
+.endfor
+
+post-patch:
+	@${ECHO_MSG} "===> Configuring blocks: ${BLOCKS}"
+	${SED} -e 's/^#include.block/include.block/' < ${WRKSRC}/blocks.properties | \
+	${SED} ${BLOCKSEXP} > ${WRKSRC}/local.blocks.properties
+.if (! defined(WITH_DOCS))
+	${SED} -e 's/^#exclude/exclude/' < ${WRKSRC}/build.properties \
+	> ${WRKSRC}/local.build.properties
 .endif
 
 pre-build:
@@ -37,33 +84,48 @@ pre-build:
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./build.sh
 
-pre-install:
-	@${MKDIR} ${JDIR} ${CDIR} ${SDIR}
+post-build:
+	@${ECHO_MSG} "===> Building packing list"
+	@> ${PLIST}
+
+	@cd ${WRKSRC}/build && ${FIND} webapp -type f \
+	| ${SED} -e "s|^|${APP_NAME}/|" >> ${PLIST}
+
+	@cd ${WRKSRC}/build && ${FIND} -d webapp -type d \
+	| ${SED} -e "s|^|@dirrm ${APP_NAME}/|" >> ${PLIST}
+
+	@${CAT} ${MASTERDIR}/pkg-plist >> ${PLIST}
+
+	@${SED} ${SUBSTITUTIONS} ${FILESDIR}/pkg-install > ${PKGINSTALL}
+	@${SED} ${SUBSTITUTIONS} ${FILESDIR}/pkg-deinstall > ${PKGDEINSTALL}
 
 do-install:
-	@(cd ${WRKSRC}/build && \
-	  ${INSTALL_DATA} cocoon.jar ${JDIR})
-	@(cd ${WRKSRC}/lib; \
-	  for i in ${LIBS}; do \
-		${INSTALL_DATA} $${i} ${JDIR} ; \
-	  done)
-	@(cd ${WRKSRC}/conf; \
-	  ${INSTALL_DATA} cocoon.properties \
-		${CDIR}/cocoon.properties.default)
-	@if [ ! -f ${CDIR}/cocoon.properties ]; then \
-		${CP} ${CDIR}/cocoon.properties.default \
-			${CDIR}/cocoon.properties; \
-	 fi
-.if !defined(NOPORTDOCS)
-	@(cd ${WRKSRC} ; \
-	  ${INSTALL_DATA} LICENSE ${SDIR} ;\
-	  ${INSTALL_DATA} README ${SDIR} ;\
-	  ${CP} -r docs ${SDIR} ;\
-	  ${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${SDIR} ;\
-	)
-.endif
+	@${ECHO_MSG} "===> Installing ${COPYDIRS}"
+	@${MKDIR} ${APP_HOME}
+	@cd ${WRKSRC} && ${FIND} ${COPYDIRS} \
+	| ${XARGS} ${TAR} -C ${WRKSRC} -cf- | ${TAR} -C ${APP_HOME} -xpf-
+
+	@${ECHO_MSG} "===> Installing webapp"
+	@cd ${WRKSRC}/build && ${FIND} webapp \
+	| ${XARGS} ${TAR} -C ${WRKSRC}/build -cf- | ${TAR} -C ${APP_HOME} -xpf-
+
+	@${ECHO_MSG} "===> Installing into ${PREFIX}/sbin"
+	@${SED} ${SUBSTITUTIONS} ${WRKSRC}/cocoon.sh > ${WRKDIR}/${APP_NAME}.sh
+	@${INSTALL} ${WRKDIR}/${APP_NAME}.sh ${PREFIX}/sbin
+	@${SED} ${SUBSTITUTIONS} ${FILESDIR}/${APP_NAME}ctl > ${WRKDIR}/${APP_NAME}ctl
+	@${INSTALL} ${WRKDIR}/${APP_NAME}ctl ${PREFIX}/sbin
+
+	@${ECHO_MSG} "===> Installing ${PREFIX}/etc/rc.d/${APP_NAME}.sh"
+	@${SED} ${SUBSTITUTIONS} ${FILESDIR}/${APP_NAME}.sh > ${WRKDIR}/${APP_NAME}.sh
+	@${INSTALL} ${WRKDIR}/${APP_NAME}.sh ${PREFIX}/etc/rc.d
 
 post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${SED} ${SUBSTITUTIONS} ${MASTERDIR}/pkg-message > ${PKGMESSAGE}
+	@${ECHO_CMD}
+	@${ECHO_CMD} "********************************************************************************"
+	@${CAT} ${PKGMESSAGE} | fmt -w 80
+	@${ECHO_CMD} "********************************************************************************"
+	@${ECHO_CMD}
 
 .include <bsd.port.post.mk>
