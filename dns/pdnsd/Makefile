@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pdnsd
-PORTVERSION=	1.1.0b2
+PORTVERSION=	1.1.0
 CATEGORIES=	net
 MASTER_SITES=	http://home.t-online.de/home/Moestl/
 
