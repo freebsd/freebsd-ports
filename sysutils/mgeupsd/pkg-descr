@@ -1,0 +1,8 @@
+mgeupsd is a daemon process that sits in the background and check
+state of the UPS every 10 (by default) seconds.  As soon as mgeupsd
+senses that the power is failing it notifies init(8) and init will
+execute the powerwait and powerfail entries. If mgeupsd senses that
+the power has been restored, it notifies init again and init will exe-
+cute the powerokwait entries. If mgeupsd senses that the UPS batteries
+has less than 20% of its energy it notifies init again and init will
+execute the powerfailnow entries.

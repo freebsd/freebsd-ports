@@ -1,0 +1,21 @@
+*** Makefile.orig	Fri Dec 25 10:10:57 1998
+--- Makefile	Tue Aug 10 23:36:12 1999
+***************
+*** 8,15 ****
+  	$(CC) $(LDFLAGS) -o $@ $<
+  
+  install:	mgeupsd
+! 	install mgeupsd /sbin
+! 	install mgeupsd.8 /usr/man/man8
+  
+  clean:
+  	rm -f *.o mgeupsd
+--- 8,15 ----
+  	$(CC) $(LDFLAGS) -o $@ $<
+  
+  install:	mgeupsd
+! 	install -c mgeupsd ${PREFIX}/sbin
+! 	install -c mgeupsd.8 ${PREFIX}/man/man8
+  
+  clean:
+  	rm -f *.o mgeupsd

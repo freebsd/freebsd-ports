@@ -69,6 +69,7 @@
     SUBDIR += medusa
     SUBDIR += mei
     SUBDIR += memtest
+    SUBDIR += mgeupsd
     SUBDIR += mkisofs
     SUBDIR += mksunbootcd
     SUBDIR += monitord

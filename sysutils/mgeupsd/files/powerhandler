@@ -1,0 +1,36 @@
+#!/bin/sh
+
+PATH=${PATH}:/sbin:/usr/sbin:/usr/local/sbin;export PATH
+
+STATUS=`cat ${1}`
+L="logger -i -t powerhandler"
+
+${L} "Status message received: ${STATUS}"
+
+if [ "X${STATUS}" = "XFAIL" ]
+then
+	${L} "Power loss detected, initiating shutdown"
+	# we are shutting down... give users some warning
+	shutdown -h +5 "POWER FAILURE DETECTED... initiating emergency shutdown... SAVE YOUR WORK NOW AND LOGOFF!!!"
+elif [ "X${STATUS}" = "XLOWBATT" ]
+then
+	${L} "Battery is critical, initiating IMMEDIATE shutdown"
+	# battery is low.. shut down NOW!
+	# first nix any shutdown processes
+	killall shutdown
+	shutdown -h now "BATTERY IS LOW... SHUTTING DOWN **IMMEDIATELY**..."
+elif [ "X${STATUS}" = "XOK" ]
+then
+	${L} "Power has been restored, canceling shutdown"
+	# everything's ok... cancel the shutdown
+	killall shutdown
+	rm -f /var/run/nologin
+	wall << _EOF_
+System power has been restored.
+The shutdown procedure has been canceled.
+_EOF_
+else
+	# unknown state... help!
+	${L} "this shouldn't be happening!"
+	exit 1
+fi
