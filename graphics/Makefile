@@ -62,6 +62,7 @@
     SUBDIR += gltk
     SUBDIR += gnofract4d
     SUBDIR += gnomeiconedit
+    SUBDIR += gom
     SUBDIR += gpaint
     SUBDIR += gphoto
     SUBDIR += gplot
