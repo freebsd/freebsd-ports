@@ -26,6 +26,14 @@
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/mcs-xm.elc
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/pccl.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/pccl.elc
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/pces.el
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/pces.elc
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/pces-20.el
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/pces-20.elc
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/pces-e20.el
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/pces-e20.elc
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/pces-e20_2.el
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/pces-e20_2.elc
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/pcustom.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/pcustom.elc
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/poe-xemacs.el
@@ -34,8 +42,6 @@
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/poe.elc
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/poem.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/poem.elc
-%%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/poem-20.el
-%%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/poem-20.elc
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/poem-xm.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/poem-xm.elc
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/richtext.el
