@@ -1,0 +1,20 @@
+bin/perl2html
+bin/pod2html
+bin/pods2html
+%%SITE_PERL%%/Pod/Tree.pm
+%%SITE_PERL%%/Pod/Tree/HTML.pm
+%%SITE_PERL%%/Pod/Tree/Node.pm
+%%SITE_PERL%%/Pod/Tree/PerlBin.pm
+%%SITE_PERL%%/Pod/Tree/PerlDist.pm
+%%SITE_PERL%%/Pod/Tree/PerlFunc.pm
+%%SITE_PERL%%/Pod/Tree/PerlLib.pm
+%%SITE_PERL%%/Pod/Tree/PerlMap.pm
+%%SITE_PERL%%/Pod/Tree/PerlPod.pm
+%%SITE_PERL%%/Pod/Tree/PerlTop.pm
+%%SITE_PERL%%/Pod/Tree/PerlUtil.pm
+%%SITE_PERL%%/Pod/Tree/Pod.pm
+@dirrm %%SITE_PERL%%/Pod/Tree
+@unexec rmdir %D/%%SITE_PERL%%/Pod 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Tree/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Tree
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod 2>/dev/null || true
