@@ -3,7 +3,7 @@
 # Date created:		1998/05/28
 # Whom:			cjohnson
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/08/09 01:10:30 steve Exp $
 #
 
 DISTNAME=	tinymux-1.4p13
@@ -23,45 +23,31 @@ USE_AUTOCONF=	YES
 do-install:
 	${MKDIR} ${PREFIX}/games/tinymux
 	${INSTALL_SCRIPT} ${WRKDIR}/game/Startmux ${PREFIX}/games/tinymux
-	${INSTALL_DATA} ${WRKDIR}/game/alias.conf ${PREFIX}/games/tinymux
-	${INSTALL_DATA} ${WRKDIR}/game/compat.conf ${PREFIX}/games/tinymux
-	${INSTALL_DATA} ${WRKDIR}/game/mtrace.awk ${PREFIX}/games/tinymux
-	${INSTALL_DATA} ${WRKDIR}/game/mux.config ${PREFIX}/games/tinymux
-	${INSTALL_DATA} ${WRKDIR}/game/netmux.conf ${PREFIX}/games/tinymux
+.for file in alias.conf compat.conf mtrace.awk mux.config netmux.conf
+	${INSTALL_DATA} ${WRKDIR}/game/${file} ${PREFIX}/games/tinymux
+.endfor
 	${MKDIR} ${PREFIX}/games/tinymux/data
-	${INSTALL_SCRIPT} ${WRKDIR}/game/data/db_check ${PREFIX}/games/tinymux/data
-	${INSTALL_SCRIPT} ${WRKDIR}/game/data/db_load ${PREFIX}/games/tinymux/data
-	${INSTALL_SCRIPT} ${WRKDIR}/game/data/db_unload ${PREFIX}/games/tinymux/data
+.for file in db_check db_load db_unload
+	${INSTALL_SCRIPT} ${WRKDIR}/game/data/${file} \
+		${PREFIX}/games/tinymux/data
+.endfor
 	${MKDIR} ${PREFIX}/games/tinymux/text
-	${INSTALL_DATA} ${WRKDIR}/game/text/badsite.txt ${PREFIX}/games/tinymux/text
-	${INSTALL_DATA} ${WRKDIR}/game/text/connect.txt ${PREFIX}/games/tinymux/text
-	${INSTALL_DATA} ${WRKDIR}/game/text/create_reg.txt ${PREFIX}/games/tinymux/text
-	${INSTALL_DATA} ${WRKDIR}/game/text/down.txt ${PREFIX}/games/tinymux/text
-	${INSTALL_DATA} ${WRKDIR}/game/text/full.txt ${PREFIX}/games/tinymux/text
-	${INSTALL_DATA} ${WRKDIR}/game/text/guest.txt ${PREFIX}/games/tinymux/text
-	${INSTALL_DATA} ${WRKDIR}/game/text/help.txt ${PREFIX}/games/tinymux/text
-	${INSTALL_DATA} ${WRKDIR}/game/text/motd.txt ${PREFIX}/games/tinymux/text
-	${INSTALL_DATA} ${WRKDIR}/game/text/news.txt ${PREFIX}/games/tinymux/text
-	${INSTALL_DATA} ${WRKDIR}/game/text/newuser.txt ${PREFIX}/games/tinymux/text
-	${INSTALL_DATA} ${WRKDIR}/game/text/plushelp.txt ${PREFIX}/games/tinymux/text
-	${INSTALL_DATA} ${WRKDIR}/game/text/quit.txt ${PREFIX}/games/tinymux/text
-	${INSTALL_DATA} ${WRKDIR}/game/text/register.txt ${PREFIX}/games/tinymux/text
-	${INSTALL_DATA} ${WRKDIR}/game/text/wizhelp.txt ${PREFIX}/games/tinymux/text
-	${INSTALL_DATA} ${WRKDIR}/game/text/wizmotd.txt ${PREFIX}/games/tinymux/text
-	${INSTALL_DATA} ${WRKDIR}/game/text/wiznews.txt ${PREFIX}/games/tinymux/text
+.for file in badsite connect create_reg down full guest help motd \
+	news newuser plushelp quit register wizhelp wizmotd wiznews
+	${INSTALL_DATA} ${WRKDIR}/game/text/${file}.txt \
+		${PREFIX}/games/tinymux/text
+.endfor
 	${MKDIR} ${PREFIX}/games/tinymux/bin
 #	${INSTALL_PROGRAM} ${WRKSRC}/conc ${PREFIX}/games/tinymux/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/dbconvert ${PREFIX}/games/tinymux/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/mkindx ${PREFIX}/games/tinymux/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/netmux ${PREFIX}/games/tinymux/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/slave ${PREFIX}/games/tinymux/bin
+.for file in dbconvert mkindx netmux slave
+	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/games/tinymux/bin
+.endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/tinymux
-	${INSTALL_DATA} ${WRKDIR}/README ${PREFIX}/share/doc/tinymux
-	${INSTALL_DATA} ${WRKDIR}/README.COMPRESSION ${PREFIX}/share/doc/tinymux
-	${INSTALL_DATA} ${WRKDIR}/README.GUESTS ${PREFIX}/share/doc/tinymux
-	${INSTALL_DATA} ${WRKDIR}/README.MEMORY ${PREFIX}/share/doc/tinymux
-	${INSTALL_DATA} ${WRKDIR}/README.TOOLS ${PREFIX}/share/doc/tinymux
+.for file in README README.COMPRESSION README.GUESTS README.MEMORY \
+	README.TOOLS
+	${INSTALL_DATA} ${WRKDIR}/${file} ${PREFIX}/share/doc/tinymux
+.endfor
 .endif
 
 .include <bsd.port.mk>
