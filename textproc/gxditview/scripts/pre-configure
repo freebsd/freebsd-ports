@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# Set up the Imakefile correctly for gxditview.
+#
+# $Id$
+#
+
+cd $WRKSRC
+sed    -e 's|^GROFF_LIBDIR.*|GROFF_LIBDIR=/usr/share|' \
+       -e 's|^GROFF_FONTDIR.*|GROFF_FONTDIR=/usr/share/groff_font|' \
+       -e 's|^GROFF_FONTPATH.*|GROFF_FONTPATH=.:$(GROFF_FONTDIR)|' \
+       Imakefile > Imakefile.new
+mv Imakefile.new Imakefile

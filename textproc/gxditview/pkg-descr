@@ -1,0 +1,9 @@
+Gxditview is a version of xditview that supports groff.  It can be
+used by adding a -X option to your groff command line.  It creates a
+page preview of what will be printed.
+
+Note: to install this as a port, you need to have installed the
+contrib source code.
+
+-Dom
+dom@myrddin.demon.co.uk
