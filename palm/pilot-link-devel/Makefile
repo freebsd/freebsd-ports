@@ -3,7 +3,7 @@
 # Date created:         November, 1997
 # Whom:                 Paul Traina <pst@freebsd.org>
 #
-# $Id: Makefile,v 1.12 1998/01/15 17:47:34 jkh Exp $
+# $Id: Makefile,v 1.13 1998/01/30 22:59:31 jkh Exp $
 
 DISTNAME=	pilot-link.0.8.9
 PKGNAME=	pilot-link-0.8.9
@@ -22,8 +22,5 @@ CONFIGURE_ARGS=	--with-perl5=${LOCALBASE}/bin/perl5
 MAN1=		dlpsh.1 ietf2datebook.1 install-datebook.1 \
 		install-memo.1 install-user.1 pilot-xfer.1 \
 		read-ical.1
-
-pre-install:
-	-test -d ${PREFIX} || mkdir ${PREFIX}
 
 .include <bsd.port.mk>

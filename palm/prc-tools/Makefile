@@ -3,7 +3,7 @@
 # Date created:         November, 1997
 # Whom:                 Paul Traina <pst@freebsd.org>
 #
-# $Id: Makefile,v 1.5 1997/11/25 09:18:12 pst Exp $
+# $Id: Makefile,v 1.6 1998/01/01 17:29:06 asami Exp $
 #
 # *WARNING* write access to ${PREFIX} is required DURING build because the
 # make "all" target actually installs the gnu tools before building the
@@ -23,9 +23,6 @@ MAINTAINER=     ports@freebsd.org
 # install things in ${LOCALBASE}/pilot to avoid conflicts
 PREFIX=		${LOCALBASE}/pilot
 WRKSRC=		${WRKDIR}/${PKGNAME}
-
-# argh... mtree happens before we can mkdir ${PREFIX} ! :-(
-NO_MTREE=	yes
 
 USE_PERL5=	yes
 ALL_TARGET=	gnutools all
@@ -67,9 +64,6 @@ STRIP=		build-prc \
 # after we apply freebsd patches, apply prc-tool's patches to gcc/gdb/...
 post-patch:
 		(cd ${WRKSRC} ; make patch)
-
-pre-install:
-		-test -d ${PREFIX} || mkdir ${PREFIX}
 
 # the info files are redundant
 post-install:
