@@ -3,7 +3,7 @@
 # Date created:				26 Jan 1998
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
-# $Id: Makefile,v 1.26 1998/09/06 19:58:25 andreas Exp $
+# $Id: Makefile,v 1.27 1998/09/15 21:31:31 asami Exp $
 #
 
 DISTNAME=	mysql-3.22.6-alpha
@@ -14,6 +14,8 @@ MASTER_SITES=	http://mysql.polaris.ca/Downloads/MySQL-3.22/ \
 		http://www.tcx.se/Downloads/MySQL-3.22/
 
 MAINTAINER=	ibex@physik.TU-Berlin.DE
+
+BROKEN_ELF=	build
 
 NO_LATEST_LINK=	yes
 MAN1=		mysql.1
