@@ -15,9 +15,9 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The "meta-port" for the GNOME "Fifth-Toe" extra package set
-#gabber:${PORTSDIR}/net/gabber \
 
-RUN_DEPENDS=			galeon:${PORTSDIR}/www/galeon \
+RUN_DEPENDS=	gabber:${PORTSDIR}/net/gabber \
+		galeon:${PORTSDIR}/www/galeon \
 		pan:${PORTSDIR}/news/pan \
 		gnumeric:${PORTSDIR}/math/gnumeric \
 		atomix:${PORTSDIR}/games/atomix \
