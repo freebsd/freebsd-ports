@@ -3,7 +3,7 @@
 # Date created:				October 17th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.19 1999/01/21 17:50:56 vanilla Exp $
+# $Id: Makefile,v 1.20 1999/01/30 16:09:32 vanilla Exp $
 #
 
 DISTNAME=	DBI-1.06
@@ -21,7 +21,8 @@ CONFIGURE_ARGS=	PREFIX=${PREFIX}
 
 MAN1=		dbiproxy.1 \
 		dbish.1
-MAN3=		DBD::Proxy.3 \
+MAN3=		Bundle::DBI.3 \
+		DBD::Proxy.3 \
 		DBI.3 \
 		DBI::DBD.3 \
 		DBI::FAQ.3 \
