@@ -1,26 +1,41 @@
-bin/orbitcpp-config
-include/ORBitservices/CosNaming.hh
-include/orb/orbitcpp.hh
-include/orb/orbitcpp_any.hh
-include/orb/orbitcpp_exception.hh
-include/orb/orbitcpp_exceptionlist.hh
-include/orb/orbitcpp_object.hh
-include/orb/orbitcpp_orb.hh
-include/orb/orbitcpp_poa.hh
-include/orb/orbitcpp_sequence.hh
-include/orb/orbitcpp_smartptr.hh
-include/orb/orbitcpp_tools.hh
-include/orb/orbitcpp_typecode.hh
-include/orb/orbitcpp_types.hh
-include/orb/orbitcpp_var_smartptr.hh
-lib/liborbitcpp.a
-lib/liborbitcpp.so
-lib/liborbitcpp.so.31
-lib/liborbitcppCosNaming.a
-lib/liborbitcppCosNaming.so
-lib/liborbitcppCosNaming.so.30
-lib/orbit-idl/liborbit-idl-c++-backend.so
-share/aclocal/orbitcpp.m4
-@dirrm lib/orbit-idl
-@dirrm include/orb
-@dirrm include/ORBitservices
+include/orbitcpp-2.0/orbitcpp/orb-cpp/orbitcpp.h
+include/orbitcpp-2.0/orbitcpp/orb-cpp/orbitcpp_any.h
+include/orbitcpp-2.0/orbitcpp/orb-cpp/orbitcpp_compound_seq.h
+include/orbitcpp-2.0/orbitcpp/orb-cpp/orbitcpp_config.h
+include/orbitcpp-2.0/orbitcpp/orb-cpp/orbitcpp_constants.h
+include/orbitcpp-2.0/orbitcpp/orb-cpp/orbitcpp_exception.h
+include/orbitcpp-2.0/orbitcpp/orb-cpp/orbitcpp_exceptionlist.h
+include/orbitcpp-2.0/orbitcpp/orb-cpp/orbitcpp_object.h
+include/orbitcpp-2.0/orbitcpp/orb-cpp/orbitcpp_orb.h
+include/orbitcpp-2.0/orbitcpp/orb-cpp/orbitcpp_poa.h
+include/orbitcpp-2.0/orbitcpp/orb-cpp/orbitcpp_sequence.h
+include/orbitcpp-2.0/orbitcpp/orb-cpp/orbitcpp_simple_seq.h
+include/orbitcpp-2.0/orbitcpp/orb-cpp/orbitcpp_smartptr.h
+include/orbitcpp-2.0/orbitcpp/orb-cpp/orbitcpp_string_seq.h
+include/orbitcpp-2.0/orbitcpp/orb-cpp/orbitcpp_tools.h
+include/orbitcpp-2.0/orbitcpp/orb-cpp/orbitcpp_typecode.h
+include/orbitcpp-2.0/orbitcpp/orb-cpp/orbitcpp_types.h
+include/orbitcpp-2.0/orbitcpp/orb-cpp/orbitcpp_var_smartptr.h
+include/orbitcpp-2.0/orbitcpp/orb-cpp/smartpointers/arrayfixed_forany.h
+include/orbitcpp-2.0/orbitcpp/orb-cpp/smartpointers/arrayfixed_var.h
+include/orbitcpp-2.0/orbitcpp/orb-cpp/smartpointers/arrayvariable_forany.h
+include/orbitcpp-2.0/orbitcpp/orb-cpp/smartpointers/arrayvariable_out.h
+include/orbitcpp-2.0/orbitcpp/orb-cpp/smartpointers/arrayvariable_var.h
+include/orbitcpp-2.0/orbitcpp/orb-cpp/smartpointers/data_out.h
+include/orbitcpp-2.0/orbitcpp/orb-cpp/smartpointers/data_var.h
+include/orbitcpp-2.0/orbitcpp/orb-cpp/smartpointers/datavar_out.h
+include/orbitcpp-2.0/orbitcpp/orb-cpp/smartpointers/datavar_var.h
+include/orbitcpp-2.0/orbitcpp/orb-cpp/smartpointers/objectptr_out.h
+include/orbitcpp-2.0/orbitcpp/orb-cpp/smartpointers/objectptr_var.h
+include/orbitcpp-2.0/orbitcpp/orb-cpp/smartpointers/sequence_out.h
+include/orbitcpp-2.0/orbitcpp/orb-cpp/smartpointers/sequence_var.h
+include/orbitcpp-2.0/orbitcpp/orb-cpp/smartpointers/string_out.h
+include/orbitcpp-2.0/orbitcpp/orb-cpp/smartpointers/string_var.h
+lib/libORBit-2-cpp.a
+lib/libORBit-2-cpp.so
+lib/libORBit-2-cpp.so.5
+libdata/pkgconfig/ORBit-2.0-cpp.pc
+@dirrm include/orbitcpp-2.0/orbitcpp/orb-cpp/smartpointers
+@dirrm include/orbitcpp-2.0/orbitcpp/orb-cpp
+@dirrm include/orbitcpp-2.0/orbitcpp
+@dirrm include/orbitcpp-2.0

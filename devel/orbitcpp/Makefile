@@ -6,26 +6,21 @@
 #
 
 PORTNAME=	orbitcpp
-PORTVERSION=	0.30.4
+PORTVERSION=	1.3.5
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ bindings for ORBit, a CORBA 2.2-compliant ORB
 
-LIB_DEPENDS=	ORBit.2:${PORTSDIR}/devel/ORBit
+LIB_DEPENDS=	ORBit-2.0:${PORTSDIR}/devel/ORBit2
 
-USE_GNOME=	glib12
-USE_GMAKE=	yes
-USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
+USE_BZIP2=	yes
+USE_X_PREFIX=	yes
+USE_GNOME=	gnomehack
+USE_LIBTOOL=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
-
-INSTALL_CMD=	/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}
-
-post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|@INSTALL@|${INSTALL_CMD}|g'
 
 .include <bsd.port.mk>
