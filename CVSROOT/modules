@@ -211,6 +211,7 @@ acroread	ports/print/acroread
 acroread5	ports/print/acroread5
 acroread5-commfont	ports/print/acroread5-commfont
 act		ports/biology/act
+activitymail	ports/devel/activitymail
 actx		ports/games/actx
 adabindx	ports/devel/adabindx
 adabooch	ports/devel/adabooch
