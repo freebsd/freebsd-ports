@@ -1,5 +1,5 @@
---- Makefile.in	Wed Apr 26 16:35:29 2000
-+++ Makefile.in	Thu Jun 14 17:02:56 2001
+--- Makefile.in	Mon Aug 11 12:46:57 2003
++++ Makefile.in	Fri Dec 17 21:08:34 2004
 @@ -124,3 +124,3 @@
  SERVER_ROOT = @SERVER_ROOT@
 -htdocsdir = $(SERVER_ROOT)/htdocs
@@ -23,6 +23,14 @@
 @@ -330,1 +330,1 @@
 -	$(INSTALL_DATA) $(srcdir)/doc/httpd.1 $(mandir)/man1/httpd.1
 +	$(INSTALL_DATA) $(srcdir)/doc/httpd.1 $(mandir)/man1/tclhttpd.1
+@@ -335,7 +335,4 @@
+ 
+ install-doc: install-htdocs
+-	@echo "Installing man page"
+-	$(mkinstalldirs) $(DESTDIR)$(mandir)/man1
+-	$(INSTALL_DATA) $(srcdir)/doc/httpd.1 $(DESTDIR)$(mandir)/man1/httpd.1
+ 	@echo "Installing README"
+ 	$(INSTALL_DATA) $(srcdir)/README $(DESTDIR)$(SERVER_ROOT)
 @@ -343,5 +343,5 @@
  
  installdirs:
