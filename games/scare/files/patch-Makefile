@@ -1,0 +1,47 @@
+--- Makefile.orig	Sun Feb  6 21:18:36 2005
++++ Makefile	Sun Feb  6 21:22:41 2005
+@@ -26,16 +26,17 @@
+ #
+ 
+ # GCC compiler and linker flags.
+-CC	= gcc
+-DEBUG	=
+-CEXTRA	=
+-CFLAGS	= -O3 -D__NO_STRING_INLINES -fPIC -ansi -D_STRICT_ANSI_ -Wall -W   \
++CC	?= gcc
++DEBUG	?=
++CEXTRA	?=
++CFLAGS	?= -O3 -D__NO_STRING_INLINES -fPIC -ansi -D_STRICT_ANSI_ -Wall -W   \
+ 	  -pedantic -Wshadow -Wpointer-arith -Wstrict-prototypes	   \
+ 	  -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls	   \
+-	  $(DEBUG) $(CEXTRA)
+-LDLIBS	=
+-LDEXTRA	=
+-LDFLAGS	= $(DEBUG) $(LDEXTRA)
++	  $(DEBUG)
++CFLAGS+=	${CEXTRA}
++LDLIBS	?=
++LDEXTRA	?=
++LDFLAGS	?= $(DEBUG) $(LDEXTRA)
+ 
+ # Generic compiler and linker flags.
+ #CC	= cc
+@@ -77,12 +78,12 @@
+ SHELL	= /bin/sh
+ 
+ # Miscellaneous tools, overridable by the command line.
+-ZIP	= zip
+-UNZIP	= unzip
+-RM	= rm
+-LN	= ln
+-TAR	= tar
+-TEST	= test
++ZIP	?= zip
++UNZIP	?= unzip
++RM	?= rm
++LN	?= ln
++TAR	?= tar
++TEST	?= test
+ 
+ # SCARE objects and headers.
+ OBJECTS	= sctafpar.o sctaffil.o scprops.o scvars.o scexpr.o scprintf.o	\
