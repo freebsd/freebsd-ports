@@ -8145,6 +8145,7 @@ p65		ports/devel/p65
 p7zip		ports/archivers/p7zip
 packit		ports/net-mgmt/packit
 pad		ports/security/pad
+pads		ports/net-mgmt/pads
 pager		ports/x11-wm/pager
 paicc		ports/sysutils/paicc
 paintlib	ports/graphics/paintlib
