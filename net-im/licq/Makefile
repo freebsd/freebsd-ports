@@ -7,7 +7,7 @@
 
 PORTNAME=	base
 PORTVERSION=	${LICQ_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 PKGNAMESUFFIX=	${SOCKS_SUFFIX}${PKGNAMESUFFIX2}
 
@@ -61,6 +61,7 @@ pre-configure:
 		${WRKSRC}/configure
 
 post-install:
+	@${MKDIR} ${PREFIX}/lib/licq
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>

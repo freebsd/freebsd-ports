@@ -457,4 +457,3 @@ share/licq/qt-gui/locale/uk.qm
 @dirrm share/licq/qt-gui/dock.flower
 @dirrm share/licq/qt-gui/dock.console
 @dirrm share/licq/qt-gui
-@dirrm lib/licq

@@ -110,6 +110,7 @@ share/licq/utilities/vnc.utility
 share/licq/utilities/xtraceroute.utility
 %%NLS%%share/locale/de/LC_MESSAGES/licq.mo
 @dirrm include/licq
+@exec mkdir -p %D/lib/licq
 @dirrm lib/licq
 @dirrm share/licq/sounds/fun
 @dirrm share/licq/sounds/icq
