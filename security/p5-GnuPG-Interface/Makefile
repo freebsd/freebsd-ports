@@ -6,9 +6,12 @@
 #
 
 PORTNAME=	GnuPG-Interface
-PORTVERSION=    0.09
+PORTVERSION=    0.10
 CATEGORIES=	security perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITES=	http://download.sourceforge.net/${PORTNAME}/ \
+		ftp://download.sourceforge.net/pub/sourceforge/${PORTNAME}/ \
+		ftp://ftp.kddlabs.co.jp/sourceforge/${PORTNAME}/ \
+		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	GnuPG
 PKGNAMEPREFIX=	p5-
 
