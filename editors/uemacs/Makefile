@@ -9,22 +9,18 @@
 DISTNAME=	uemacs
 PKGNAME=	uemacs-3.12
 CATEGORIES+=	editors
-MASTER_SITES=	ftp://midas.mgmt.purdue.edu/pub/ue312/
+MASTER_SITES=	ftp://midas.mgmt.purdue.edu/dist/uemacs312/
 DISTFILES=	ue312dev.zip
+
+MAINTAINER=	ports@freebsd.org
 
 EXEC_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 NO_WRKSUBDIR=	yes
 PATCH_STRIP=	-p1
-
-# one weakness of the ports scheme: it doesn't allow arguments
-# to ${EXTRACT_CMD} after the filename, which is required for unzip.
-
-# Satoshi: it does now, so please update it when you see this.... :)
-
-do-extract:
-	@rm -rf ${WRKDIR}
-	@mkdir -p ${WRKDIR}
-	@unzip -Laq ${DISTDIR}/${DISTFILES} -d ${WRKDIR}
+EXTRACT_CMD=		unzip
+EXTRACT_BEFORE_ARGS=	-Laq
+EXTRACT_AFTER_ARGS=	-d ${WRKDIR}
+NCFTPFLAGS=		-N -P
 
 .include <bsd.port.mk>

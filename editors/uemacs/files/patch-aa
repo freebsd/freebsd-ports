@@ -12,10 +12,10 @@ diff -crN --exclude=*freebsd* ue312.orig/Makefile ue312/Makefile
 + 	(cd freebsd; make emacs)
 + 
 + install:	all
-+ 	install -c -s freebsd/emacs /usr/local/bin/uemacs
-+ 	mkdir -p /usr/local/lib/uemacs
-+ 	install -c -m 644 -o bin -g bin cmd/* /usr/local/lib/uemacs
-+ 	mv /usr/local/lib/uemacs/emacs.rc /usr/local/lib/uemacs/.emacsrc
++ 	install -c -s freebsd/emacs ${PREFIX}/bin/uemacs
++ 	mkdir -p ${PREFIX}/lib/uemacs
++ 	install -c -m 644 -o bin -g bin cmd/* ${PREFIX}/lib/uemacs
++ 	mv ${PREFIX}/lib/uemacs/emacs.rc ${PREFIX}/lib/uemacs/.emacsrc
 diff -crN --exclude=*freebsd* ue312.orig/h/epath.h ue312/h/epath.h
 *** ue312.orig/h/epath.h	Tue Mar 16 15:13:46 1993
 --- ue312/h/epath.h	Sat Jan 14 11:26:35 1995
@@ -230,7 +230,7 @@ diff -crN --exclude=*freebsd* ue312.orig/src/unix.c ue312/src/unix.c
 ! 	{ "ku", SPEC|'P' },		/* Up arrow key			*/
 !         { "K1", SPEC|'<' },		/* Keypad 7 -> Home		*/
 !         { "K2", SPEC|'V' },		/* Keypad 9 -> Page Up		*/
-!         { "K3", '' },		     	/* Keypad 5 -> not bound	*/
+!         { "K3", ' ' },		/* Keypad 5 			*/
 !         { "K4", SPEC|'>' },		/* Keypad 1 -> End		*/
 !         { "K5", CTRL|'V' }		/* Keypad 3 -> Page Down	*/
   };
