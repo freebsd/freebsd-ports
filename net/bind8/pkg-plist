@@ -1,0 +1,40 @@
+bin/addr
+bin/dig
+bin/dnsquery
+bin/host
+bin/named-bootconf.pl
+bin/nslookup
+bin/nsupdate
+include/bind/arpa/inet.h
+include/bind/arpa/nameser.h
+include/bind/arpa/nameser_compat.h
+include/bind/isc/eventlib.h
+include/bind/isc/heap.h
+include/bind/isc/logging.h
+include/bind/isc/misc.h
+include/bind/isc/tree.h
+include/bind/netdb.h
+include/bind/resolv.h
+include/bind/sys/bitypes.h
+lib/libbind.a
+libexec/named-xfer
+man/man1/dig.1.gz
+man/man1/dnsquery.1.gz
+man/man1/host.1.gz
+man/man3/gethostbyname.3.gz
+man/man3/getnetent.3.gz
+man/man3/resolver.3.gz
+man/man5/resolver.5.gz
+man/man7/hostname.7.gz
+man/man7/mailaddr.7.gz
+man/man8/named-xfer.8.gz
+man/man8/named.8.gz
+man/man8/ndc.8.gz
+man/man8/nslookup.8.gz
+sbin/named
+sbin/ndc
+share/misc/nslookup.help
+@dirrm include/bind/arpa
+@dirrm include/bind/isc
+@dirrm include/bind/sys
+@dirrm include/bind
