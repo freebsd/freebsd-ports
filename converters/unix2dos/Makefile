@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	unix2dos
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	converters
 MASTER_SITES=	http://www.fisicc-ufm.edu/~obonilla/files/ \
 		ftp://ftp.guug.org/pub/
