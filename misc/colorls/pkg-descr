@@ -4,8 +4,11 @@ similar to the -F flag).  Take a look at the man page for details.
 
 The program is called "colorls" and installs itself in /usr/local/bin.
 The file patches/patch-aa is the diffs with the 2.0-Release /usr/src/bin/ls
-directory.  Stock xterm doesn't know about colors, so you should use
-color_xterm or kterm (available from ports).
+directory.
+
+Standard xterm prior to XFree86 3.1.2B doesn't know about colors, so
+you should use color_xterm or kterm (available from the ports
+collection) if you are using older versions of XFree86.
 
 Satoshi Asami
 asami@cs.berkeley.edu
