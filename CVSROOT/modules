@@ -2840,6 +2840,7 @@ hs-hdoc		ports/devel/hs-hdoc
 hs-hgl		ports/graphics/hs-hgl
 hs-hmake		ports/devel/hs-hmake
 hs-hpl		ports/devel/hs-hpl
+hs-hsql		ports/databases/hs-hsql
 hs-idoc		ports/devel/hs-idoc
 hs-popenhs	ports/devel/hs-popenhs
 hs-tclhaskell-ghc	ports/devel/hs-tclhaskell-ghc
