@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	mod_security
-PORTVERSION=	1.7.3
+PORTVERSION=	1.7.4
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/_/-/}
-DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	sysadmin@alexdupre.com
 COMMENT=	An intrusion detection and prevention engine
@@ -33,8 +32,8 @@ PLIST_SUB=	APACHE=apache
 SO=		so
 .endif
 
-DOCS=		CHANGES INSTALL LICENSE README modsecurity-manual-1.7.pdf
-PLIST_SUB+=	VER=1.7
+DOCS=		CHANGES INSTALL LICENSE README modsecurity-manual-${PORTVERSION}.pdf
+PLIST_SUB+=	VER=${PORTVERSION}
 
 do-build:
 	@cd ${APWRKSRC} && ${APXS} -c mod_security.c
