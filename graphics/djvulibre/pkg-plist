@@ -42,10 +42,6 @@ share/djvu/osi/zh/messages.xml
 share/djvu/pubtext/DjVuMessages.dtd
 share/djvu/pubtext/DjVuOCR.dtd
 share/djvu/pubtext/DjVuXML-s.dtd
-%%PORTDOCS%%%%DOCSDIR%%/djvu2spec.djvu
-%%PORTDOCS%%%%DOCSDIR%%/djvu3changes.txt
-%%PORTDOCS%%%%DOCSDIR%%/lizard2002.djvu
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/djvu/pubtext
 @dirrm share/djvu/osi/zh
 @dirrm share/djvu/osi/ja
@@ -54,4 +50,8 @@ share/djvu/pubtext/DjVuXML-s.dtd
 @dirrm share/djvu/osi/de
 @dirrm share/djvu/osi
 @dirrm share/djvu
-
+@unexec rmdir %D/man/fr/man1 2>/dev/null || true
+@unexec rmdir %D/man/fr 2>/dev/null || true
+@unexec rmdir %D/man/de/man1 2>/dev/null || true
+@unexec rmdir %D/man/de 2>/dev/null || true
+@unexec rmdir %D/lib/browser_plugins 2>/dev/null || true
