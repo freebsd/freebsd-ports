@@ -10,7 +10,7 @@ PORTVERSION=		5.2
 CATEGORIES=		dns
 MASTER_SITES=		ftp://ftp.dhis.org/pub/dhis/
 
-MAINTAINER=		oryx@ungulate.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DHIS client for updating dynamic DNS entries in dhisd DNS tables
 
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
