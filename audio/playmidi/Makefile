@@ -15,8 +15,8 @@ COMMENT=	MIDI player
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 500014
-BROKEN=		"Does not compile"
+.if ${OSVERSION} >= 500014
+EXTRA_PATCHES=	${FILESDIR}/extra-*
 .endif
 
 ONLY_FOR_ARCHS=	i386
