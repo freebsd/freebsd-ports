@@ -4581,6 +4581,7 @@ p5-Lingua-RU-Charset	ports/russian/p5-Lingua-RU-Charset
 p5-Locale-Codes	ports/misc/p5-Locale-Codes
 p5-Locale-Maketext	ports/devel/p5-Locale-Maketext
 p5-Locale-PGetText	ports/devel/p5-Locale-PGetText
+p5-Locale-SubCountry	ports/misc/p5-Locale-SubCountry
 p5-Locale-gettext	ports/devel/p5-Locale-gettext
 p5-LockFile-Simple	ports/devel/p5-LockFile-Simple
 p5-Log-Agent	ports/devel/p5-Log-Agent
