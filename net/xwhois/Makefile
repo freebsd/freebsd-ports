@@ -1,12 +1,12 @@
 # New ports collection makefile for:   xwhois
-# Version required:    0.3.4
+# Version required:    0.3.5
 # Date created:        31 December 1998
 # Whom:                Kris Kennaway <kkennawa@physics.adelaide.edu.au>
 #
-# $Id: Makefile,v 1.3 1999/03/01 10:51:39 kris Exp $
+# $Id: Makefile,v 1.4 1999/04/24 14:13:34 kris Exp $
 #
 
-DISTNAME=	xwhois-0.3.4
+DISTNAME=	xwhois-0.3.5
 CATEGORIES=	net
 MASTER_SITES=	http://c64.org/~nr/ \
 		http://www.goatnet.ml.org/ \
