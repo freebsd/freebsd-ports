@@ -25,6 +25,8 @@
     SUBDIR += kcfonts
     SUBDIR += libtabe
     SUBDIR += linux-gtk
+    SUBDIR += linux-netscape47-communicator
+    SUBDIR += linux-netscape47-navigator
     SUBDIR += lunar
     SUBDIR += moefonts-cid
     SUBDIR += moettf
