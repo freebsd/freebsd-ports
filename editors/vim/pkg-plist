@@ -23,7 +23,6 @@ share/vim/doc/editing.txt
 share/vim/doc/errors.txt
 share/vim/doc/eval.txt
 share/vim/doc/gui.txt
-share/vim/doc/gui_w32.txt
 share/vim/doc/gui_x11.txt
 share/vim/doc/help.txt
 share/vim/doc/howto.txt
@@ -35,16 +34,7 @@ share/vim/doc/intro.txt
 share/vim/doc/map.txt
 share/vim/doc/motion.txt
 share/vim/doc/options.txt
-share/vim/doc/os_amiga.txt
-share/vim/doc/os_archi.txt
-share/vim/doc/os_beos.txt
-share/vim/doc/os_dos.txt
-share/vim/doc/os_mac.txt
-share/vim/doc/os_mint.txt
-share/vim/doc/os_msdos.txt
-share/vim/doc/os_os2.txt
 share/vim/doc/os_unix.txt
-share/vim/doc/os_win32.txt
 share/vim/doc/pattern.txt
 share/vim/doc/quickfix.txt
 share/vim/doc/recover.txt
@@ -65,6 +55,7 @@ share/vim/doc/vi_diff.txt
 share/vim/doc/visual.txt
 share/vim/doc/windows.txt
 share/vim/doc/tags
+share/vim/syntax/2html.vim
 share/vim/syntax/ada.vim
 share/vim/syntax/amiga.vim
 share/vim/syntax/asm.vim
@@ -81,6 +72,7 @@ share/vim/syntax/diff.vim
 share/vim/syntax/dosbatch.vim
 share/vim/syntax/dosini.vim
 share/vim/syntax/dracula.vim
+share/vim/syntax/elmfilt.vim
 share/vim/syntax/expect.vim
 share/vim/syntax/esqlc.vim
 share/vim/syntax/fortran.vim
@@ -100,12 +92,14 @@ share/vim/syntax/maple.vim
 share/vim/syntax/matlab.vim
 share/vim/syntax/model.vim
 share/vim/syntax/modula2.vim
+share/vim/syntax/muttrc.vim
 share/vim/syntax/nosyntax.vim
 share/vim/syntax/objc.vim
 share/vim/syntax/pascal.vim
 share/vim/syntax/perl.vim
 share/vim/syntax/pod.vim
 share/vim/syntax/postscr.vim
+share/vim/syntax/pov.vim
 share/vim/syntax/procmail.vim
 share/vim/syntax/prolog.vim
 share/vim/syntax/python.vim
@@ -114,6 +108,7 @@ share/vim/syntax/scripts.vim
 share/vim/syntax/sh.vim
 share/vim/syntax/sm.vim
 share/vim/syntax/sql.vim
+share/vim/syntax/st.vim
 share/vim/syntax/syntax.vim
 share/vim/syntax/tcl.vim
 share/vim/syntax/tex.vim
