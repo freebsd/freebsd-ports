@@ -8,7 +8,7 @@
 PORTNAME=	vmware-guestd
 PORTVERSION=	${VMWARE_VER}.${BUILD_VER}
 CATEGORIES=	emulators
-MASTER_SITES=	# none
+MASTER_SITES=	# bundled with VMware itself
 DISTNAME=	vmware-freebsd-tools
 
 MAINTAINER=	matusita@FreeBSD.org
