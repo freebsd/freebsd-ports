@@ -128,6 +128,7 @@ OpenBSD_MAINTAINER=	imp@OpenBSD.ORG
 # LIBTOOL		- Set to path of libtool (default: libtool).
 # LIBTOOLFILES	- Files to patch for libtool (defaults: "aclocal.m4" if
 #				  USE_AUTOCONF is set, "configure" otherwise).
+# LIBTOOLFLAGS	- Additional flags to pass to ltconfig.
 # USE_PERL5		- Says that the port uses perl5 for building and running.
 # PERL5			- Set to full path of perl5, either in the system or
 #				  installed from a port.
@@ -604,6 +605,7 @@ LIBTOOLFILES?=		aclocal.m4
 .else
 LIBTOOLFILES?=		configure
 .endif
+LIBTOOLFLAGS?=		--disable-ltlibs
 .endif
 .if defined(USE_NEWGCC) && ${OSVERSION} < 400004
 CC=				gcc295
@@ -685,7 +687,7 @@ DO_NADA?=		/usr/bin/true
 # Miscellaneous overridable commands:
 GMAKE?=			gmake
 AUTOCONF?=		autoconf
-LIBTOOL?=		${LOCALBASE}/bin/libtool
+LIBTOOL?=		libtool
 XMKMF?=			xmkmf -a
 .if exists(/sbin/md5)
 MD5?=			/sbin/md5
@@ -879,7 +881,7 @@ MASTER_SITE_XCONTRIB+=	\
 	ftp://uiarchive.uiuc.edu/pub/X11/contrib/%SUBDIR%/ \
 	ftp://ftp.duke.edu/pub/X11/contrib/%SUBDIR%/ \
 	ftp://ftp.sunet.se/pub/X11/contrib/%SUBDIR%/ \
-	ftp://sunsite.sut.ac.jp/pub/archives/X11/%SUBDIR%/
+	ftp://sunsite.sut.ac.jp/pub/archives/X11/contrib/%SUBDIR%/
 
 MASTER_SITE_GNU+=	\
 	ftp://ftp.gnu.org/gnu/%SUBDIR%/ \
@@ -923,7 +925,6 @@ MASTER_SITE_COMP_SOURCES+=	\
 	ftp://rtfm.mit.edu/pub/usenet/comp.sources.%SUBDIR%/
 
 MASTER_SITE_GNOME+=	\
-	ftp://ftp.geo.net/pub/gnome/%SUBDIR%/ \
 	ftp://gnomeftp.wgn.net/pub/gnome/%SUBDIR%/ \
 	ftp://server.ph.ucla.edu/pub/mirror/ftp.gnome.org/%SUBDIR%/ \
 	ftp://ftp.snoopy.net/pub/mirrors/GNOME/%SUBDIR%/ \
@@ -931,7 +932,7 @@ MASTER_SITE_GNOME+=	\
 
 MASTER_SITE_AFTERSTEP+=	\
 	ftp://ftp.afterstep.org/%SUBDIR%/ \
-	ftp://ftp.digex.net/pub/X11/window-managerrs/afterstep/%SUBDIR%/ \
+	ftp://ftp.digex.net/pub/X11/window-managers/afterstep/%SUBDIR%/ \
 	ftp://ftp.alpha1.net/pub/mirrors/ftp.afterstep.org/%SUBDIR%/ \
 	ftp://ftp.math.uni-bonn.de/pub/mirror/ftp.afterstep.org/pub/%SUBDIR%/ \
 	ftp://ftp.dti.ad.jp/pub/X/AfterStep/%SUBDIR%/ \
@@ -1893,16 +1894,41 @@ post-${name}:
 
 # Patch-libtool
 #
-# Special target to automagically make libtool using ports use the
+# Special target to automatically make libtool using ports use the
 # libtool port.  See above for default values of LIBTOOLFILES.
+#
+# This target works by first checking the version of the installed
+# libtool shell script, which is not actually used.  Rather it's path
+# is determined, and used to find the path to ltconfig and ltmain.sh
+# (which is ../share/libtool/).  Then the configure script is copied
+# and the default paths for ltconfig and ltmain.sh (normally ./) is
+# replaced.  The port's configure script therefore uses the files
+# installed by the libtool port in place of it's own.
+#
+# Also passed to ltconfig are ${LIBTOOLFLAGS}, which can be used to
+# customise the behaviour of the port.  Besides the normal flags the
+# freebsd port of libtool supports three special flags:
+#  --disable-ltlibs		Don't install the .la files. (on by default)
+#  --release-ignore		Ignore any -release flags. (off by default)
+#  --release-suffix		Add the -release to all libraries, not just
+#						the shared library. (off by default)
+#
 
 .if !target(patch-libtool)
 patch-libtool:
-	@(cd ${WRKSRC}; \
+	@(if ${LIBTOOL} --version | grep -vq "1\.3\.3-freebsd-ports"; then \
+		(echo "Your libtool installation is out of date. Please remove"; \
+		 echo "and reinstall ${PORTSDIR}/devel/libtool."; \
+		 exit 1); \
+	  fi; \
+	 LIBTOOLDIR=`which ${LIBTOOL} | sed -e 's^/bin/libtool^/share/libtool^'` || ${LOCALBASE}/share/libtool; \
+	 cd ${WRKSRC}; \
 	 for file in ${LIBTOOLFILES}; do \
 		${CP} $$file $$file.tmp; \
-		${SED} -e s^\$$\(top_builddir\)/libtool^${LIBTOOL}^g \
-			$$file.tmp > $$file; \
+		${SED} -e "s^\$$ac_aux_dir/ltconfig^$${LIBTOOLDIR}/ltconfig^g" \
+			$$file.tmp | \
+		${SED} -e "s^\$$ac_aux_dir/ltmain.sh^${LIBTOOLFLAGS} $${LIBTOOLDIR}/ltmain.sh^g" \
+			> $$file; \
 	 done);
 .endif
 
@@ -1922,7 +1948,7 @@ checkpatch:
 .if !target(reinstall)
 reinstall:
 	@${RM} -f ${INSTALL_COOKIE} ${PACKAGE_COOKIE}
-	@DEPENDS_TARGET=${DEPENDS_TARGET} ${MAKE} install
+	@DEPENDS_TARGET="${DEPENDS_TARGET}" ${MAKE} install
 .endif
 
 # Deinstall
