@@ -8,8 +8,8 @@ This patch makes three changes to the exim_install script:
    administrator needs to rename this file to "activate" exim.
 
 *) Changes the invocation of make-info to be less prone to fail on
-   silly errors.  XXX Check that this is still necessary from time
-   to time.
+   silly errors and fixes the info(1) titles so that, for example
+   ``info exim'' actually enters the exim.info file.
 
 --- scripts/exim_install.orig	Mon Aug  2 17:43:03 1999
 +++ scripts/exim_install	Tue Aug  3 14:31:20 1999
