@@ -95,14 +95,21 @@ else
     if [ "x${mtreefile}" != "x" ]; then
       mtree -f ${mtreefile} -p ${prefix} > /tmp/list3
       if [ -s /tmp/list3 ]; then
+        if [ "x${NOPLISTCHECK}" = "x" ]; then
+	  for path in $(awk '/^extra:/ {print $2}' /tmp/list3); do
+	    if [ ! -d ${prefix}/${path} ]; then
+              echo "1" > /tmp/status
+	    fi
+	  done
+	fi
         echo "================================================================"
         echo "list of extra files and directories in ${prefix}"
         cat /tmp/list3
         echo "list of all files and directories in ${prefix}"
 	cd ${prefix}
 	find . -exec echo -n 'path: ' \; -exec ls -1d \{} \; | sort
-        echo "ls -lR ${prefix}"
-        ls -lR ${prefix}
+        echo "ls -alR ${prefix}"
+        ls -alR ${prefix}
       fi
     fi
   else
