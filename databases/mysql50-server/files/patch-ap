@@ -1,0 +1,11 @@
+--- strings/Makefile.in.orig	Thu Sep  9 10:52:02 1999
++++ strings/Makefile.in	Sun Sep 12 23:56:25 1999
+@@ -143,7 +143,7 @@
+ pkglib_LIBRARIES = libmystrings.a
+ # These file MUST all be on the same line!! Otherwise automake
+ # generats a very broken makefile
+-@ASSEMBLER_TRUE@ESRCS = strings.s longlong2str-x86.s
++@ASSEMBLER_TRUE@ESRCS = strings.S longlong2str-x86.S
+ @ASSEMBLER_FALSE@ESRCS = strxmov.c bmove_upp.c strappend.c strcont.c strend.c strfill.c strcend.c is_prefix.c strstr.c strinstr.c strmake.c strnmov.c strmov.c longlong2str.c
+ 
+ libmystrings_a_SOURCES = bfill.c bmove.c bmove512.c bchange.c 			 strxnmov.c int2str.c str2int.c r_strinstr.c 			 ct_init.c atof.c ptr_cmp.c bcmp.c 			 strtol.c strtoul.c strtoll.c strtoull.c 			 @CHARSET_SRCS@ $(ESRCS)

@@ -2,6 +2,7 @@ bin/comp_err
 bin/isamchk
 bin/isamlog
 bin/msql2mysql
+bin/mysql_find_rows
 bin/mysql_fix_privilege_tables
 bin/mysql_install_db
 bin/mysql_setpermission
@@ -28,6 +29,7 @@ share/doc/mysql/Img/austria.gif
 share/doc/mysql/Img/bulgaria.gif
 share/doc/mysql/Img/canada.gif
 share/doc/mysql/Img/chile.gif
+share/doc/mysql/Img/china.gif
 share/doc/mysql/Img/croatia.gif
 share/doc/mysql/Img/czech-republic.gif
 share/doc/mysql/Img/denmark.gif
@@ -37,6 +39,7 @@ share/doc/mysql/Img/france.gif
 share/doc/mysql/Img/germany.gif
 share/doc/mysql/Img/great-britain.gif
 share/doc/mysql/Img/greece.gif
+share/doc/mysql/Img/html-fs.gif
 share/doc/mysql/Img/hungary.gif
 share/doc/mysql/Img/israel.gif
 share/doc/mysql/Img/italy.gif
@@ -67,14 +70,20 @@ share/doc/mysql/manual_toc.html
 share/mysql/binary-configure
 share/mysql/czech/errmsg.sys
 share/mysql/czech/errmsg.txt
+share/mysql/danish/errmsg.sys
+share/mysql/danish/errmsg.txt
 share/mysql/dutch/errmsg.sys
 share/mysql/dutch/errmsg.txt
 share/mysql/english/errmsg.sys
 share/mysql/english/errmsg.txt
+share/mysql/estonia/errmsg.sys
+share/mysql/estonia/errmsg.txt
 share/mysql/french/errmsg.sys
 share/mysql/french/errmsg.txt
 share/mysql/german/errmsg.sys
 share/mysql/german/errmsg.txt
+share/mysql/greek/errmsg.sys
+share/mysql/greek/errmsg.txt
 share/mysql/hungarian/errmsg.sys
 share/mysql/hungarian/errmsg.txt
 share/mysql/italian/errmsg.sys
@@ -85,7 +94,7 @@ share/mysql/korean/errmsg.sys
 share/mysql/korean/errmsg.txt
 share/mysql/make_binary_distribution
 share/mysql/my-example.cnf
-share/mysql/mysql-3.22.25.spec
+share/mysql/mysql-3.22.26a.spec
 share/mysql/mysql-log-rotate
 share/mysql/mysql.server
 share/mysql/norwegian-ny/errmsg.sys
