@@ -1,5 +1,5 @@
---- libguile/gc_os_dep.c.orig	Mon Oct 20 01:22:19 2003
-+++ libguile/gc_os_dep.c	Mon Oct 20 01:22:03 2003
+--- libguile/gc_os_dep.c.orig	Wed Apr 16 16:16:21 2003
++++ libguile/gc_os_dep.c	Sun Nov 23 13:09:53 2003
 @@ -93,6 +93,14 @@
  #    define OPENBSD
  #    define mach_type_known
@@ -15,7 +15,7 @@
  # if defined(__NetBSD__) && defined(__powerpc__)
  #    define POWERPC
  #    define NETBSD
-@@ -225,7 +233,16 @@
+@@ -225,7 +233,21 @@
  #    define ARM32
  #    define mach_type_known
  # endif
@@ -23,6 +23,11 @@
 +# if defined(__FreeBSD__) && defined(__ia64__)
 +#    define FREEBSD
 +#    define IA64
++#    define mach_type_known
++# endif
++# if defined(__FreeBSD__) && defined(__amd64__)
++#    define FREEBSD
++#    define AMD64
 +#    define mach_type_known
 +# endif
 +# if defined(__FreeBSD__) && defined(__alpha__)
@@ -33,7 +38,21 @@
  #   define ALPHA
  #   if !defined(LINUX)
  #     define OSF1	/* a.k.a Digital Unix */
-@@ -1468,7 +1485,7 @@
+@@ -1125,6 +1147,13 @@
+ #   endif
+ # endif
+ 
++# ifdef AMD64
++#   define MACH_TYPE "AMD64"
++#   define ALIGN_DOUBLE
++#   define ALIGNMENT 8
++#   define USE_GENERIC_PUSH_REGS
++# endif
++
+ # ifdef IA64
+ #   define MACH_TYPE "IA64"
+ #   define ALIGN_DOUBLE
+@@ -1468,7 +1497,7 @@
  #   include <setjmp.h>
  #endif
  

@@ -22,7 +22,6 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnometarget
-CONFIGURE_ARGS=	--with-threads
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -38,6 +37,13 @@ INFO=		goops guile-tut guile r5rs
 
 .if ${ARCH} == "ia64"
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-ia64
+.endif
+
+.if ${ARCH} != "ia64" && ${ARCH} != "amd64"
+CONFIGURE_ARGS+=--with-threads
+PLIST_SUB+=	THREADS:=""
+.else
+PLIST_SUB+=	THREADS:="@comment "
 .endif
 
 post-extract:
