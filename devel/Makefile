@@ -306,6 +306,7 @@
     SUBDIR += hs-alex
     SUBDIR += hs-buddha
     SUBDIR += hs-c2hs
+    SUBDIR += hs-cpphs
     SUBDIR += hs-crypto
     SUBDIR += hs-drift
     SUBDIR += hs-green-card
