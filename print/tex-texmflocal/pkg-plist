@@ -33,6 +33,7 @@
 @dirrm %%TEXMFLOCAL%%/ptex/plain
 @dirrm %%TEXMFLOCAL%%/ptex/platex
 @dirrm %%TEXMFLOCAL%%/ptex
+@dirrm %%TEXMFLOCAL%%/web2c
 @dirrm %%TEXMFLOCAL%%
 @exec %%MKTEXLSR%%
 @unexec %%MKTEXLSR%%
