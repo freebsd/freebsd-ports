@@ -1,0 +1,11 @@
+--- tseries/sany.c.orig	Wed Mar  7 16:20:33 2001
++++ tseries/sany.c	Wed Mar  7 16:20:40 2001
+@@ -5,7 +5,7 @@
+  *  public license (LGPL). ( See the lgpl.license file for details.)
+  * ------------------------------------------------------------------------
+  */
+-#include "ccmath.h"
++#include "../ccmath.h"
+ int sany(double *x,int n,double *pm,double *cd,double *ci,
+        int nd,int ms,int lag)
+ { struct complex *pc,*p,**qc,**q;

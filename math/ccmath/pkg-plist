@@ -1,0 +1,19 @@
+include/ccmath.h
+lib/libccm.a
+lib/libccm.so
+%%PORTDOCS%%share/doc/ccmath/C00-intro
+%%PORTDOCS%%share/doc/ccmath/C01-matrix
+%%PORTDOCS%%share/doc/ccmath/C02-intg
+%%PORTDOCS%%share/doc/ccmath/C03-geom
+%%PORTDOCS%%share/doc/ccmath/C04-cfit
+%%PORTDOCS%%share/doc/ccmath/C05-roots
+%%PORTDOCS%%share/doc/ccmath/C06-fft
+%%PORTDOCS%%share/doc/ccmath/C07-simu
+%%PORTDOCS%%share/doc/ccmath/C08-statf
+%%PORTDOCS%%share/doc/ccmath/C09-sfunc
+%%PORTDOCS%%share/doc/ccmath/C10-sort
+%%PORTDOCS%%share/doc/ccmath/C11-tseries
+%%PORTDOCS%%share/doc/ccmath/C12-complex
+%%PORTDOCS%%share/doc/ccmath/C13-xarm
+%%PORTDOCS%%share/doc/ccmath/C14-util
+%%PORTDOCS%%@dirrm share/doc/ccmath

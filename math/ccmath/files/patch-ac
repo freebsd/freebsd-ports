@@ -1,0 +1,30 @@
+--- makelibs.sh.orig	Wed Mar  7 16:18:01 2001
++++ makelibs.sh	Wed Mar  7 16:18:36 2001
+@@ -9,23 +9,19 @@
+ LST="cfit complex fft geom intg matrix roots sfunc simu sort statf tseries util xarm"
+ MDR=`pwd`
+ LSOD=$MDR/tmp
+-echo "Intel platform ? (y/n)"
+-read F
+ for dr in $LST
+   do
+     cd $MDR/$dr
+     echo `pwd`
+-    cc -c -O3 *.c
++    cc -c $CFLAGS *.c
+     mv *.o $LSOD
+   done
+-if [ $F = "y" ]
+-  then cd $MDR/matrix
+-    cc -c -O3 solv.s
++    cd $MDR/matrix
++    cc -c $CFLAGS solv.s
+     mv *.o $LSOD
+     cd $MDR/simu
+-    cc -c -O3 *.s
++    cc -c $CFLAGS *.s
+     mv *.o $LSOD
+-fi
+ cd $LSOD
+ ar r libccm.a *.o
+ ld -shared -o libccm.so *.o
