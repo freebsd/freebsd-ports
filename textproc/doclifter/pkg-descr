@@ -1,0 +1,11 @@
+The doclifter program translates documents written in troff macros to DocBook.
+
+Lifting documents from presentation level to semantic level is hard, and
+a really good job requires human polishing.  This tool aims to do everything
+that can be mechanized, and to preserve any troff-level information that might
+have structural implications in XML comments.
+
+This tool does some of the hard parts, but not all.  TBL tables are translated
+into DocBook table markup, but EQN and PIC are not translated (yet).
+
+WWW: http://www.catb.org/~esr/doclifter/

@@ -53,6 +53,7 @@
     SUBDIR += docbook-xml
     SUBDIR += docbook-xsl
     SUBDIR += docbookide.el
+    SUBDIR += doclifter
     SUBDIR += docproj
     SUBDIR += docproj-jadetex
     SUBDIR += docproj-nojadetex
