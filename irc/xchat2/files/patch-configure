@@ -1,6 +1,6 @@
---- configure.orig	Sun Nov 24 20:59:19 2002
-+++ configure	Sun Dec  8 18:13:53 2002
-@@ -7358,6 +7358,7 @@
+--- configure.orig	Mon Apr 21 19:10:14 2003
++++ configure	Wed Apr 23 09:39:19 2003
+@@ -7793,6 +7793,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -8,16 +8,13 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -10381,7 +10382,7 @@
- #include "confdefs.h"
+@@ -10816,12 +10817,12 @@
+ /* end confdefs.h.  */
  #include <libintl.h>
  extern int _nl_msg_cat_cntr;
 -extern int *_nl_domain_bindings;
 +extern int *libintl_nl_domain_bindings;
- #ifdef F77_DUMMY_MAIN
- #  ifdef __cplusplus
-      extern "C"
-@@ -10392,7 +10393,7 @@
+ int
  main ()
  {
  bindtextdomain ("", "");
