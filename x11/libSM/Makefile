@@ -30,4 +30,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-6.0.1
 
 INSTALLS_SHLIB=	yes
 
+BROKEN=		"Missing dependencies"
+
 .include <bsd.port.mk>
