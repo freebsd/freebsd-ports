@@ -32,6 +32,39 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b4af3ede-36e9-11d9-a9e7-0001020eed82">
+    <topic>twiki -- arbitrary shell command execution</topic>
+    <affects>
+      <package>
+	<name>twiki</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Hans Ulrich Niedermann reports:</p>
+	<blockquote cite="http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110037207516456">
+	  <p>The TWiki search function uses a user supplied search
+	    string to compose a command line executed by the Perl
+	    backtick (``) operator.</p>
+	  <p>The search string is not checked properly for shell
+	    metacharacters and is thus vulnerable to search string
+	    containing quotes and shell commands.</p>
+	  <p>IMPACT: An attacker is able to execute arbitrary shell
+	    commands with the privileges of the TWiki process.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <mlist msgid="86zn1mhchx.fsf@n-dimensional.de">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110037207516456</mlist>
+      <url>http://twiki.org/cgi-bin/view/Codev/SecurityAlertExecuteCommandsWithSearch</url>
+    </references>
+    <dates>
+      <discovery>2004-11-12</discovery>
+      <entry>2004-11-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="50744596-368f-11d9-a9e7-0001020eed82">
     <topic>proxytunnel -- format string vulnerability</topic>
     <affects>
