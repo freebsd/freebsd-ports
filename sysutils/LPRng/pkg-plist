@@ -15,7 +15,7 @@ libexec/removeoneline
 libexec/authenticate_pgp
 libexec/setupauth
 lib/liblpr.a
-lib/liblpr.so.3.21
+lib/liblpr.so.3.33
 man/man1/cancel.1.gz
 man/man1/lp.1.gz
 man/man1/lpbanner.1.gz
