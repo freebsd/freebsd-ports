@@ -1,0 +1,11 @@
+--- ripOLE/Makefile.orig	Sat May 22 00:16:01 2004
++++ ripOLE/Makefile	Sat Jul 24 01:05:45 2004
+@@ -1,7 +1,7 @@
+ 
+ OBJS= ole.o olestream-unwrap.o bytedecoders.o logger.o pldstr.o
+ #CFLAGS ?= -Wall -Werror -g -O2
+-CFLAGS=-Wall -Werror -g -O2
++#CFLAGS=-Wall -Werror -g -O2
+ #DEFINES ?= 
+ #DEFINES=-DDEBUG_TIMETEST
+ 

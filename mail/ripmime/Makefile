@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ripmime
-PORTVERSION=	1.3.2.0
+PORTVERSION=	1.3.2.2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.pldaniels.com/ripmime/
 
@@ -24,7 +24,7 @@ pre-build:
 
 do_install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ripmime ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/ripmime.1 ${MANPREFIX}/man/man1/ 
+	${INSTALL_MAN} ${WRKSRC}/ripmime.1 ${MANPREFIX}/man/man1/
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
