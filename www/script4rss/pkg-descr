@@ -1,0 +1,15 @@
+Script4rss takes a plain text file which holds a description for how the
+particular site should be converted and creates a perl script which is able to
+do that in the most fast and efficient way (well, someday). Users don't have to
+know how to program but they need to know regular expressions (although there
+probably aren't a lot of these people).
+
+At the moment, script4rss is in its early development, which translates to "it
+can be used but you have to figure out how yourself" and "if you screw up, the
+script does so as well". Options include:
+  * Detect multiple catagories within an HTML page.
+  * Extract information over multiple lines.
+  * Pre-and append text in output.
+  * Attempt to circumvent "variable" HTML.
+
+WWW: http://script4rss.sourceforge.net/

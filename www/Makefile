@@ -606,6 +606,7 @@
     SUBDIR += sarg
     SUBDIR += scout
     SUBDIR += screem
+    SUBDIR += script4rss
     SUBDIR += sidplug
     SUBDIR += simplog
     SUBDIR += sitebar

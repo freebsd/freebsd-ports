@@ -1,0 +1,4 @@
+bin/script4rss
+%%PORTDOCS%%%%EXAMPLESDIR%%/plosbiology2rss.s4r
+%%PORTDOCS%%%%EXAMPLESDIR%%/sciencenow2rss.s4r
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
