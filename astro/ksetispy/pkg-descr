@@ -1,0 +1,6 @@
+KSetiSpy is a KDE 2 utility that monitors the progress of the
+SETI@home client, and displays all kinds of information about the
+work unit(s) being processed. It uses the same interface as SETI
+Spy, a Windows program written by Roelof Engelbrecht.
+
+WWW: http://ksetispy.sourceforge.net/
