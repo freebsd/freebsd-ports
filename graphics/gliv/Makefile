@@ -22,7 +22,7 @@ USE_MESA=	yes
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lgnugetopt" \
-		CFLAGS="-I${LOCALBASE}/include"
+		CPPFLAGS="-I${LOCALBASE}/include"
 
 MAN1=		GLiv.1
 
