@@ -107,6 +107,7 @@ bin/xscreensaver-hacks/maze
 bin/xscreensaver-hacks/menger
 bin/xscreensaver-hacks/metaballs
 bin/xscreensaver-hacks/mirrorblob
+bin/xscreensaver-hacks/mismunch
 bin/xscreensaver-hacks/moebius
 bin/xscreensaver-hacks/moire
 bin/xscreensaver-hacks/moire2
@@ -115,7 +116,9 @@ bin/xscreensaver-hacks/morph3d
 bin/xscreensaver-hacks/mountain
 bin/xscreensaver-hacks/munch
 bin/xscreensaver-hacks/nerverot
+bin/xscreensaver-hacks/noof
 bin/xscreensaver-hacks/noseguy
+bin/xscreensaver-hacks/pacman
 bin/xscreensaver-hacks/pedal
 bin/xscreensaver-hacks/penetrate
 bin/xscreensaver-hacks/penrose
@@ -172,6 +175,7 @@ bin/xscreensaver-hacks/webcollage
 bin/xscreensaver-hacks/whirlwindwarp
 bin/xscreensaver-hacks/whirlygig
 bin/xscreensaver-hacks/worm
+bin/xscreensaver-hacks/wormhole
 bin/xscreensaver-hacks/xanalogtv
 bin/xscreensaver-hacks/xflame
 bin/xscreensaver-hacks/xjack
@@ -297,6 +301,7 @@ share/xscreensaver/config/maze.xml
 share/xscreensaver/config/menger.xml
 share/xscreensaver/config/metaballs.xml
 share/xscreensaver/config/mirrorblob.xml
+share/xscreensaver/config/mismunch.xml
 share/xscreensaver/config/moebius.xml
 share/xscreensaver/config/moire.xml
 share/xscreensaver/config/moire2.xml
@@ -305,7 +310,9 @@ share/xscreensaver/config/morph3d.xml
 share/xscreensaver/config/mountain.xml
 share/xscreensaver/config/munch.xml
 share/xscreensaver/config/nerverot.xml
+share/xscreensaver/config/noof.xml
 share/xscreensaver/config/noseguy.xml
+share/xscreensaver/config/pacman.xml
 share/xscreensaver/config/pedal.xml
 share/xscreensaver/config/penetrate.xml
 share/xscreensaver/config/penrose.xml
@@ -364,6 +371,7 @@ share/xscreensaver/config/webcollage.xml
 share/xscreensaver/config/whirlwindwarp.xml
 share/xscreensaver/config/whirlygig.xml
 share/xscreensaver/config/worm.xml
+share/xscreensaver/config/wormhole.xml
 share/xscreensaver/config/xanalogtv.xml
 share/xscreensaver/config/xaos.xml
 share/xscreensaver/config/xdaliclock.xml
@@ -374,6 +382,7 @@ share/xscreensaver/config/xjack.xml
 share/xscreensaver/config/xlyap.xml
 share/xscreensaver/config/xmatrix.xml
 share/xscreensaver/config/xmountains.xml
+share/xscreensaver/config/xplanet.xml
 share/xscreensaver/config/xrayswarm.xml
 share/xscreensaver/config/xsnow.xml
 share/xscreensaver/config/xspirograph.xml
