@@ -1,5 +1,14 @@
---- xkobo.C.orig	Fri Jun 14 19:27:27 1996
-+++ xkobo.C	Tue May 25 11:59:03 1999
+--- xkobo.C.orig	Sat Jun 15 03:27:27 1996
++++ xkobo.C	Thu Nov  7 22:32:08 2002
+@@ -51,7 +51,7 @@
+ 
+ static int      signal_delivered = 1;
+ 
+-static void sig_handle(...)
++static void sig_handle(int)
+ {
+     signal_delivered = 1;
+ }
 @@ -202,6 +202,7 @@
      
      wbase.title("xkobo");
