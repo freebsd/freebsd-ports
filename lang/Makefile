@@ -97,6 +97,7 @@
     SUBDIR += gnustep-guile
     SUBDIR += gnustep-objc
     SUBDIR += gprolog
+    SUBDIR += groovy
     SUBDIR += guile
     SUBDIR += harbour
     SUBDIR += haskell-mode.el
