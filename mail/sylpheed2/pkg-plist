@@ -6,10 +6,13 @@ share/doc/sylpheed/INSTALL.jp
 share/doc/sylpheed/README
 share/doc/sylpheed/README.jp
 share/doc/sylpheed/TODO.jp
+share/locale/cs/LC_MESSAGES/sylpheed.mo
 share/locale/de/LC_MESSAGES/sylpheed.mo
 share/locale/es/LC_MESSAGES/sylpheed.mo
 share/locale/fr/LC_MESSAGES/sylpheed.mo
 share/locale/ja/LC_MESSAGES/sylpheed.mo
+share/locale/pt_BR/LC_MESSAGES/sylpheed.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/sylpheed.mo
 share/sylpheed/manual/ja/sylpheed-1.html
 share/sylpheed/manual/ja/sylpheed-10.html
 share/sylpheed/manual/ja/sylpheed-11.html
