@@ -3126,11 +3126,7 @@ hlserver-ns	ports/games/hlserver-ns
 hlserver-opera	ports/games/hlserver-opera
 hlserver-opfor	ports/games/hlserver-opfor
 hlserver-psychostats	ports/games/hlserver-psychostats
-hlserver-pvk	ports/games/hlserver-pvk
 hlserver-si	ports/games/hlserver-si
-hlserver-snow	ports/games/hlserver-snow
-hlserver-svencoop	ports/games/hlserver-svencoop
-hlserver-trainhunters	ports/games/hlserver-trainhunters
 hlserver-ts	ports/games/hlserver-ts
 hlserver-tsc	ports/games/hlserver-tsc
 hlserver-vs	ports/games/hlserver-vs
