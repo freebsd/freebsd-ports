@@ -9,7 +9,9 @@ PORTNAME=	upclient
 PORTVERSION=	5.0.b8
 PORTREVISION=	2
 CATEGORIES=	misc
-MASTER_SITES=	http://uptimes.wonko.com/files/
+MASTER_SITES=	http://uptimes.hostingwired.com/files/ \
+		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	cyrille.lefevre@laposte.net
@@ -20,6 +22,7 @@ COMMENT=	The Uptimes project client
 
 USE_GETTEXT=	yes
 USE_REINPLACE=	yes
+USE_RC_SUBR=	yes
 ALL_TARGET=	bsd
 BUILD_WRKSRC=	${WRKSRC}/src
 
@@ -30,6 +33,10 @@ MAN8=		upclient.8
 
 # Local variables
 #
+
+REINPLACE_SUB=	PREFIX=${PREFIX} LOCALBASE=${LOCALBASE}
+RCSCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
+PKGMESSAGE_SUB=	PREFIX=${PREFIX}
 
 DOC_FILES=	AUTHORS COPYING FAQ HISTORY INSTALL README TODO
 DOC_FILES+=	doc/UptimesProtocol5
@@ -48,16 +55,20 @@ rename-doc:
 # Post-patch
 #
 
-post-patch: patch-prefix patch-pkgmessage
+post-patch: patch-inplace patch-startup patch-pkgmessage
 
-patch-prefix:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
-		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+patch-inplace:
+	@${REINPLACE_CMD} ${REINPLACE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${WRKSRC}/scripts/upchk ${WRKSRC}/scripts/clientchk \
 		${WRKSRC}/src/Makefile
 
+patch-startup:
+	@${SED} ${RCSCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/upclient.sh > ${WRKDIR}/upclient.sh
+
 patch-pkgmessage:
-	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${MSG_FILE} > ${PKGMESSAGE}
+	@${SED} ${PKGMESSAGE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${MSG_FILE} > ${PKGMESSAGE}
 
 # Install
 #
@@ -96,7 +107,7 @@ install-conf:
 .endif
 
 install-startup:
-	@${INSTALL_SCRIPT} ${FILESDIR}/upclient.sh \
+	@${INSTALL_SCRIPT} ${WRKDIR}/upclient.sh \
 		${PREFIX}/etc/rc.d/upclient.sh
 
 install-doc:

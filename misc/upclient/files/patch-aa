@@ -1,6 +1,12 @@
---- src/Makefile.orig	Wed Dec 18 01:01:16 2002
-+++ src/Makefile	Mon Feb  3 20:18:03 2003
-@@ -46,7 +46,7 @@
+--- src/Makefile.orig	Tue May 27 09:13:02 2003
++++ src/Makefile	Wed Mar  3 00:41:50 2004
+@@ -41,12 +41,12 @@
+ binname = upclient
+ 
+ # Uptimes Server
+-uptimes_server = uptimes.wonko.com
++uptimes_server = uptimes.hostingwired.com
+ 
  OPTIMIZATION_CFLAGS=-O3
  
  # System directories
