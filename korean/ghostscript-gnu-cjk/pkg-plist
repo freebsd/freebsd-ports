@@ -1,0 +1,12 @@
+share/ghostscript/Resource/CIDFont/Munhwa-Bold
+share/ghostscript/Resource/CIDFont/Munhwa-Regular
+share/ghostscript/Resource/CIDFont/MunhwaGothic-Bold
+share/ghostscript/Resource/CIDFont/MunhwaGothic-Regular
+share/ghostscript/%%GS_VERSION%%/lib/CIDFnmap.ko
+@exec /bin/mv %D/share/ghostscript/%%GS_VERSION%%/lib/CIDFnmap  %D/share/ghostscript/%%GS_VERSION%%/lib/CIDFnmap.orig.ko
+@exec /usr/bin/grep -v -e 'CIDFnmap.ko' %D/share/ghostscript/%%GS_VERSION%%/lib/CIDFnmap.orig.ko > %D/share/ghostscript/%%GS_VERSION%%/lib/CIDFnmap
+@exec echo '(CIDFnmap.ko) .runlibfile' >> %D/share/ghostscript/%%GS_VERSION%%/lib/CIDFnmap
+@exec /bin/rm %D/share/ghostscript/%%GS_VERSION%%/lib/CIDFnmap.orig.ko
+@unexec /bin/mv %D/share/ghostscript/%%GS_VERSION%%/lib/CIDFnmap  %D/share/ghostscript/%%GS_VERSION%%/lib/CIDFnmap.orig.ko
+@unexec /usr/bin/grep -v -e 'CIDFnmap.ko' %D/share/ghostscript/%%GS_VERSION%%/lib/CIDFnmap.orig.ko > %D/share/ghostscript/%%GS_VERSION%%/lib/CIDFnmap
+@unexec /bin/rm %D/share/ghostscript/%%GS_VERSION%%/lib/CIDFnmap.orig.ko

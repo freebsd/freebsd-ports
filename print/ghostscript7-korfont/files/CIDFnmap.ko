@@ -1,0 +1,8 @@
+/Adobe-Korea1	/Munhwa-Regular ;
+
+%
+% Convenient aliases for PS files on Korean PostScript printer
+%
+/HYGoThic-Medium	/MunhwaGothic-Regular	;
+/HYSMyeongJo-Medium	/Munhwa-Regular		;
+/HYRGoThic-Medium	/MunhwaGothic-Bold		;
