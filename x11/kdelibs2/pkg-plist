@@ -4,13 +4,12 @@ lib/libkdeui.so.0.10
 lib/libkdeui.la
 lib/libjscript.so.0.1
 lib/libjscript.la
-lib/libkhtmlw.so.0.11
+lib/libkhtmlw.so.0.12
 lib/libkhtmlw.la
 lib/libkfm.so.0.1
 lib/libkfm.la
-lib/libmediatool.so.0.6
+lib/libmediatool.so.0.7
 lib/libmediatool.la
-@exec /sbin/ldconfig -m %B
 include/kconfig.h
 include/kconfigdata.h
 include/ksimpleconfig.h
@@ -62,9 +61,9 @@ include/kcolorbtn.h
 include/kwmmapp.h
 include/kiconloaderdialog.h
 include/kbuttonbox.h
-include/kconfigmodule.h
 include/ktablistbox.h
 include/knewpanner.h
+include/kcontrol.h
 include/bison2cpp.h
 include/jstree.h
 include/jsexec.h
@@ -80,6 +79,7 @@ include/htmltoken.h
 include/htmlframe.h
 include/htmlview.h
 include/htmlclue.h
+include/htmldata.h
 include/kfm.h
 include/kfmclient_ipc.h
 include/kfmipc.h
@@ -89,6 +89,7 @@ share/apps/kde/pics/error.xpm
 share/apps/kde/pics/exclamation.xpm
 share/apps/kde/pics/info.xpm
 share/apps/kde/pics/stopsign.xpm
+share/apps/kde/pics/question.xpm
 share/apps/khtmlw/pics/khtmlw_dnd.xpm
 share/locale/de/LC_MESSAGES/kde.mo
 share/locale/fr/LC_MESSAGES/kde.mo
@@ -106,3 +107,46 @@ share/locale/pl/LC_MESSAGES/kde.mo
 share/locale/el/LC_MESSAGES/kde.mo
 share/locale/fi/LC_MESSAGES/kde.mo
 share/doc/HTML/en/kdelibs/kdebug.html
+share/doc/HTML/default
+@exec /sbin/ldconfig -m %B
+@dirrm share/locale/sv/LC_MESSAGES
+@dirrm share/locale/sv
+@dirrm share/locale/ru/LC_MESSAGES
+@dirrm share/locale/ru
+@dirrm share/locale/pt/LC_MESSAGES
+@dirrm share/locale/pt
+@dirrm share/locale/pl/LC_MESSAGES
+@dirrm share/locale/pl
+@dirrm share/locale/no/LC_MESSAGES
+@dirrm share/locale/no
+@dirrm share/locale/nl/LC_MESSAGES
+@dirrm share/locale/nl
+@dirrm share/locale/it/LC_MESSAGES
+@dirrm share/locale/it
+@dirrm share/locale/hu/LC_MESSAGES
+@dirrm share/locale/hu
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/fr
+@dirrm share/locale/fi/LC_MESSAGES
+@dirrm share/locale/fi
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/es
+@dirrm share/locale/el/LC_MESSAGES
+@dirrm share/locale/el
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/de
+@dirrm share/locale/da/LC_MESSAGES
+@dirrm share/locale/da
+@dirrm share/locale/cs/LC_MESSAGES
+@dirrm share/locale/cs
+@dirrm share/locale
+@dirrm share/doc/HTML/en/kdelibs
+@dirrm share/doc/HTML/en
+@dirrm share/doc/HTML
+@dirrm share/doc
+@dirrm share/apps/khtmlw/pics
+@dirrm share/apps/khtmlw
+@dirrm share/apps/kde/pics
+@dirrm share/apps/kde
+@dirrm share/apps
+@unexec /sbin/ldconfig -R

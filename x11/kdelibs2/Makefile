@@ -3,15 +3,15 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.3 1997/11/05 04:20:23 asami Exp $
+# $Id: Makefile,v 1.4 1997/11/05 21:31:52 asami Exp $
 #
 
-DISTNAME=	kdelibs-Beta1-2
-PKGNAME=	kdelibs-1.2b
+DISTNAME=	kdelibs-Beta2-1
+PKGNAME=	kdelibs-2.1b
 CATEGORIES=	x11 kde
-MASTER_SITES=	ftp://ftp.net.lut.ac.uk/kde/stable/Beta1/distribution/tgz/source/ \
- 		ftp://ftp.uni-erlangen.de/pub/Linux/MIRROR.KDE/stable/Beta1/distribution/tgz/source/ \
- 		ftp://ftp.caldera.com/pub/mirrors/kde/stable/Beta1/distribution/tgz/source/
+MASTER_SITES=	ftp://ftp.net.lut.ac.uk/kde/stable/Beta2/distribution/tgz/source/ \
+ 		ftp://ftp.uni-erlangen.de/pub/Linux/MIRROR.KDE/stable/Beta2/distribution/tgz/source/ \
+ 		ftp://ftp.caldera.com/pub/mirrors/kde/stable/Beta2/distribution/tgz/source/
 EXTRACT_SUFX=	.src.tgz
 
 MAINTAINER=	se@freebsd.org
@@ -26,6 +26,7 @@ CONFIGURE_ARGS=	"--prefix=$(PREFIX)" \
 		"--x-inc=$(X11BASE)/include -I$(PREFIX)/include -I$(PREFIX)/include/giflib" \
 		"--x-lib=$(X11BASE)/lib -L$(PREFIX)/lib" \
 		"--datadir=$(PREFIX)/share/kde"
+CONFIGURE_ENV=	CXXFLAGS="$(CFLAGS)"
 
 WRKSRC=		${WRKDIR}/kdelibs
 
