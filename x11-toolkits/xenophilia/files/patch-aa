@@ -1,0 +1,58 @@
+--- Makefile.orig	Fri Mar 10 20:37:18 2000
++++ Makefile	Thu Jun  1 10:48:07 2000
+@@ -4,12 +4,12 @@
+ # Edit the entries below for your system:
+ # In most cases you don't have to
+ 
+-PREFIX		= `gtk-config --prefix`
+-FONTDIR		= /usr/lib/X11/fonts/misc
++#PREFIX		= `gtk-config --prefix`
++FONTDIR		= ${X11BASE}/lib/X11/fonts/misc
+ 
+-CC		= gcc
+-CFLAGS		= `gtk-config --cflags`
+-LIBS		= `gtk-config --libs`
++CC		?= gcc
++CFLAGS		+= `gtk12-config --cflags` -fPIC -DPIC
++LIBS		+= `gtk12-config --libs`
+ 
+ #Use these for FreeBSD:
+ #PREFIX		= `gtk12-config --prefix`
+@@ -27,8 +27,8 @@
+ DATA_PATH	= $(PREFIX)/share/themes
+ 
+ OBJECTS		= xeno_theme_draw.o xeno_theme_main.o xeno_theme_patches.o xeno_theme_color.o
+-SONAME		= libxeno.so.0.4
+-SHORTNAME	= libxeno.so.0
++SONAME		= libxeno.so
++SHORTNAME	= libxeno.so
+ TINYNAME	= libxeno.so
+ OLDNAME		= libxeno.so.0.3
+ 
+@@ -37,14 +37,20 @@
+ 		$(LINK) $(GTKLIBS) $(OBJECTS) -shared -Wl,-soname,$(SHORTNAME) -o $(SONAME)
+ 
+ install-libs:	$(SONAME)
+-		chmod 755 $(SONAME)
+-		cp $(SONAME) $(LIB_PATH)
+-		ln -fs $(SONAME) $(LIB_PATH)/$(SHORTNAME)
+-		ln -fs $(SONAME) $(LIB_PATH)/$(TINYNAME)
++#		chmod 755 $(SONAME)
++#		cp $(SONAME) $(LIB_PATH)
++#		ln -fs $(SONAME) $(LIB_PATH)/$(SHORTNAME)
++#		ln -fs $(SONAME) $(LIB_PATH)/$(TINYNAME)
++		$(BSD_INSTALL_PROGRAM) $(SONAME) $(LIB_PATH)/$(SONAME)
+ 
+ install-data:
+-		cp -fR Xenophilia $(DATA_PATH)
+-		cp -fR XenoThin $(DATA_PATH)
++		mkdir -p $(DATA_PATH)/Xenophilia/gtk
++		mkdir -p $(DATA_PATH)/XenoThin/gtk
++		cd Xenophilia && \
++		$(BSD_INSTALL_DATA) README.html arrows.png buds.png buttons.png \
++		dimple.png holes.png lines.png xeno.css $(DATA_PATH)/Xenophilia/ && \
++		$(BSD_INSTALL_DATA) gtk/gtkrc $(DATA_PATH)/Xenophilia/gtk/
++		$(BSD_INSTALL_DATA) XenoThin/gtk/gtkrc $(DATA_PATH)/XenoThin/gtk/
+ 		ln -fs ../Xenophilia/README.html $(DATA_PATH)/XenoThin/README.html
+ 
+ install-fonts:

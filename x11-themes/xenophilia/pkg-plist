@@ -1,0 +1,16 @@
+lib/gtk/themes/engines/libxeno.so
+share/themes/XenoThin/README.html
+share/themes/XenoThin/gtk/gtkrc
+share/themes/Xenophilia/README.html
+share/themes/Xenophilia/arrows.png
+share/themes/Xenophilia/buds.png
+share/themes/Xenophilia/buttons.png
+share/themes/Xenophilia/dimple.png
+share/themes/Xenophilia/gtk/gtkrc
+share/themes/Xenophilia/holes.png
+share/themes/Xenophilia/lines.png
+share/themes/Xenophilia/xeno.css
+@dirrm share/themes/Xenophilia/gtk
+@dirrm share/themes/Xenophilia
+@dirrm share/themes/XenoThin/gtk
+@dirrm share/themes/XenoThin
