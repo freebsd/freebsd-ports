@@ -6,6 +6,7 @@
 
 PORTNAME=	liteamp
 PORTVERSION=	0.2.2
+PORTREVISION=	1
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://download.kldp.net/liteamp/
 
@@ -18,9 +19,7 @@ LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao \
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gtk20 libgnomeui libbonoboui libxml2 \
-		libgnomecanvas libartlgpl2 pango \
-		atk gnomevfs2 gconf2 libbonobo
+USE_GNOME=	libgnomeui gnomeprefix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include"
 
