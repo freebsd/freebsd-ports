@@ -1,0 +1,7 @@
+Ftpmap scans remote FTP servers to indentify what software and what versions
+they are running. It uses program-specific fingerprints to discover the name
+of the software even when banners have been changed or removed, or when some
+features have been disabled. IPv6 is fully supported.
+
+Author:	Frank DENIS <j@4u.net>
+WWW:	http://www.jedi.claranet.fr/
