@@ -2608,6 +2608,7 @@ grappa		ports/biology/grappa
 grass		ports/databases/grass
 grc		ports/misc/grc
 grdb		ports/misc/grdb
+grdesktop	ports/net/grdesktop
 greed		ports/ftp/greed
 greed_game	ports/games/greed
 grepmail	ports/mail/grepmail
