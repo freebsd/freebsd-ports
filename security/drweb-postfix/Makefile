@@ -16,7 +16,7 @@ DISTNAME=	drweb-clients-4.29.12-F-sources
 MAINTAINER=	zaa@ulstu.ru
 COMMENT=	Postfix message filter for virus processing through DrWeb daemon
 
-RUN_DEPENDS=	${LOCALBASE}/drweb/drwebd:${PORTSDIR}/security/drwebd
+RUN_DEPENDS=	${LOCALBASE}/drweb/drwebd:${PORTSDIR}/security/drweb
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
