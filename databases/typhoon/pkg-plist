@@ -7,5 +7,6 @@ include/typhoon.h
 lib/libtyphoon.a
 lib/libtyphoon.so
 lib/libtyphoon.so.1
+lib/libtyphoon_p.a
 share/typhoon/manual.asc
 @dirrm share/typhoon
