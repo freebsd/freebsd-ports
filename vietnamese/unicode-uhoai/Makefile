@@ -17,6 +17,7 @@ MAINTAINER=	obrien@FreeBSD.org
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes
+NO_BUILD=	taken care of in do-install target
 
 .include <bsd.port.pre.mk>
 
