@@ -13,12 +13,3 @@
  !XLock.program: /usr/games/fortune
  !XLock.program: finger
  !XLock.messagesfile: fortune.dat
-@@ -75,7 +75,7 @@
- ! For modes with images
- !XLock.*.bitmap: bitmaps/m-xlock.xbm
- !XLock.*.bitmap: pixmaps/m-xlock.xpm
--XLock.*.bitmap: /usr/share/pixmaps/redhat/redhat-292.xbm
-+!XLock.*.bitmap: /usr/share/pixmaps/redhat/redhat-292.xbm
- 
- ! For mailbox check application
- !XLock.mailCmd: /usr/ucb/mail -e
