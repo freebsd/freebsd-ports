@@ -1,0 +1,7 @@
+This is a set of tools that allow access to HFS+ formatted
+volumes. HFS+ is a modernized version of Apple Computers HFS
+Filesystem. In addition in contains the library "libhfsp" which you
+may use for your own experiments, all the tools are based on this
+library. (A bit of understanding is still needed however).
+
+Author:	Klaus Halfmann <klaus.halfmann@t-online.de>

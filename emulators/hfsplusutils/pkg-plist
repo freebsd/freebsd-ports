@@ -1,0 +1,24 @@
+@comment $FreeBSD$
+bin/hpcd
+bin/hpcopy
+bin/hpfsck
+bin/hpls
+bin/hpmkdir
+bin/hpmount
+bin/hppwd
+bin/hprm
+bin/hpumount
+lib/libhfsp.a
+lib/libhfsp.la
+lib/libhfsp.so
+lib/libhfsp.so.0
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/bugs.html
+%%PORTDOCS%%%%DOCSDIR%%/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/hfsp.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/libhfsp.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
