@@ -1,0 +1,7 @@
+Russian language module for PGP
+Currently, two charsets handled by PGP, it is koi8-r and alternate codes.
+Internal representation of text files is koi8-r with CR/LF.
+If you transfer text file out of your local system, don't
+forget to add -t (text) option to 'pgp' call.
+Without it, your text can't be read if local and remote system
+charsets are different, f.e. Unix<-->MSDOS transfer.
