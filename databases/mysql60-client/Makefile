@@ -1,16 +1,17 @@
 # ports collection makefile for:	mySQL
-# Version required:			v3.21.25-gamma
+# Version required:			v3.21.26-gamma
 # Date created:				26 Jan 1998
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
 # $Id: Makefile,v 1.16 1998/02/23 02:55:16 steve Exp $
 #
 
-DISTNAME=	mysql-3.21.25-gamma
-PKGNAME=	mysql-3.21.25g
+DISTNAME=	mysql-3.21.26-gamma
+PKGNAME=	mysql-3.21.26g
 CATEGORIES=	databases
 MASTER_SITES=	http://www.buoy.com/mysql/Downloads/MySQL-3.21/ \
 		http://mysql.polaris.ca/Downloads/MySQL-3.21/ \
+		http://www.fh-wolfenbuettel.de/ftp/pub/database/mysql/Downloads/MySQL-3.21/ \
 		http://www.tcx.se/Downloads/MySQL-3.21/
 
 MAINTAINER=	josh@ican.net
@@ -24,7 +25,8 @@ CONFIGURE_ARGS=	--localstatedir=/var/db/mysql \
 		--with-MAKE=gmake \
 		--without-perl \
 		--without-debug \
-		--without-readline
+		--without-readline \
+		--without-bench
 CONFIGURE_ENV+=	PERL=${PREFIX}/bin/perl INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 
 pre-install:
