@@ -1,0 +1,18 @@
+--- configure.in.orig	Fri May  7 11:34:58 2004
++++ configure.in	Thu Jun 24 14:56:30 2004
+@@ -12,11 +12,14 @@
+ 
+ AM_INIT_AUTOMAKE(proxychains,2.1)
+ 
+-AC_PREFIX_DEFAULT(/usr)
++AC_PREFIX_DEFAULT(/usr/local)
+ if test "x$prefix" = "xNONE"; then
+   prefix=$ac_default_prefix
+   ac_configure_args="$ac_configure_args --prefix $prefix"
++else
++  prefix=$prefix
+ fi
++AC_DEFINE_UNQUOTED(PREFIX_DIR, "${prefix}")
+ 
+ dnl without this order in this file, automake will be confused!
+ dnl 

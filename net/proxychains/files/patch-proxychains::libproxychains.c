@@ -1,22 +1,11 @@
---- proxychains/libproxychains.c.orig	Wed Jun  4 11:11:03 2003
-+++ proxychains/libproxychains.c	Sat Jun 14 15:17:55 2003
-@@ -14,6 +14,10 @@
-  *   (at your option) any later version.                                   *
-  *                                                                         *
-  ***************************************************************************/
-+#ifdef HAVE_CONFIG_H
-+#include <config.h>
-+#endif
-+
- #include <stdio.h>
- #include <unistd.h>
- #include <stdlib.h>
-@@ -72,7 +76,7 @@
+--- proxychains/libproxychains.c.orig	Fri May  7 11:34:59 2004
++++ proxychains/libproxychains.c	Thu Jun 24 10:54:27 2004
+@@ -73,7 +73,7 @@
  
     if(!(file=fopen("./proxychains.conf","r")))
          if(!(file=fopen(buff,"r")))
 -                if(!(file=fopen("/etc/proxychains.conf","r")))
-+                if(!(file=fopen(PREFIX "/etc/proxychains.conf","r")))
++                if(!(file=fopen(PREFIX_DIR "/etc/proxychains.conf","r")))
                  {
-                         perror("1");
+                         perror("Can't locate proxychains.conf");
                          exit(1);
