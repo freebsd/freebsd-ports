@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	psycopg
-PORTVERSION=	1.1.14
+PORTVERSION=	1.1.15
 CATEGORIES=	databases python
 MASTER_SITES=	http://initd.org/pub/software/psycopg/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,8 +14,6 @@ DISTNAME=	psycopg-${PORTVERSION}
 
 MAINTAINER=	simuran@shaw.ca
 COMMENT=	The high performance Python adapter for PostgreSQL
-
-BROKEN=		Unfetchable
 
 RUN_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
 BUILD_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
