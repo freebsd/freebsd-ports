@@ -20,7 +20,8 @@ RUN_DEPENDS=	${X11BASE}/lib/mozilla-embedded/libgtkembedmoz.so:${PORTSDIR}/www/m
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-mozilla-includes=${X11BASE}/include/mozilla --with-mozilla-libs=${X11BASE}/lib/mozilla-embedded
 
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes

@@ -82,7 +82,8 @@ MAKE_FLAGS+=	DEFS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 .endif
 
 .if defined(INLINE_IMAGE)
-USE_IMLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	imlib
 
 DOCS+=		README.img
 DOCS_JP+=	README.img

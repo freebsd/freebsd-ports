@@ -14,14 +14,16 @@ MAINTAINER=	erwin@lansing.dk
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/a//}/src
 
-WANT_GTK=	yes
+USE_GNOMENG=	yes
+WANT_GNOME=	yes
 MAKE_ENV=	FLAGS="${CFLAGS}"
 USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if defined(HAVE_GTK)
-USE_GTK=	yes
+.if ${HAVE_GNOME:Mgtk12}!=""
+USE_GNOME+=	gtk12
+PKGNAMESUFFIX=	-gtk
 ALL_TARGET=	default gui
 PLIST_SUB+=	WANT_GTK=""
 .else

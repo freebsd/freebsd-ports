@@ -21,13 +21,15 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 
-WANT_GTK=	yes
+USE_GNOMENG=	yes
+WANT_GNOME=	yes
 
 .include <bsd.port.pre.mk>
 
-.if defined(HAVE_GTK)
+.if ${HAVE_GNOME:Mgtk12}!=""
 PLIST_SUB=	WITH_GTK=""
-USE_GTK=	yes
+USE_GNOME+=	gtk12
+PKGNAMESUFFIX=	-gtk
 .else
 PLIST_SUB=	WITH_GTK="@comment "
 .endif
