@@ -19,6 +19,9 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	sanpei@FreeBSD.org
 
+# Warning: we cannot use USE_IMAKE.
+BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
+
 USE_XLIB=	yes
 DIST_SUBDIR=	iv
 WRKSRC=		${WRKDIR}/iv
