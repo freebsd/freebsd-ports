@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	Set-Infinite
-PORTVERSION=	0.53
+PORTVERSION=	0.53.05
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Set
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(..)$/\1/}
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Set::Infinite - Sets of intervals
@@ -20,6 +21,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Set::Infinite.3 Set::Infinite::Basic.3 Set::Infinite::Date.3
+MAN3=		Set::Infinite.3 Set::Infinite::Basic.3
 
 .include <bsd.port.mk>
