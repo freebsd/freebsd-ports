@@ -3,11 +3,11 @@
 # Date created:				03/14/1999
 # Whom:					nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.21 1999/02/28 18:48:50 nectar Exp $
+# $Id: Makefile,v 1.24 1999/03/16 19:42:34 nectar Exp $
 #
 
-DISTNAME=	gnome-python-1.0.1
-PKGNAME=	py-gnome-1.0.1
+DISTNAME=	gnome-python-1.0.3
+PKGNAME=	py-gnome-1.0.3
 CATEGORIES=	x11-toolkits python gnome
 MASTER_SITES=	ftp://ftp.daa.com.au/pub/james/python/ \
 		ftp://ftp.gimp.org/pub/gtk/python/ \
