@@ -41,10 +41,6 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
-.endif
-
 #
 # Ports build/install stuff stops here.  Tarball creation stuff begins here.
 #
