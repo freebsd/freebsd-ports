@@ -33,6 +33,7 @@
     SUBDIR += gri
     SUBDIR += grpn
     SUBDIR += gsl
+    SUBDIR += guppi
     SUBDIR += hexcalc
     SUBDIR += lapack
     SUBDIR += libneural
