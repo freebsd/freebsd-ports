@@ -30,6 +30,11 @@ DOWNLOAD_URL?=	http://www.netbeans.org/download/dev/daily/build200306020100/plat
 IGNORE=	You must manually fetch the source distribution (${DISTFILES}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
 .endif
 
+.if ${OSVERSION} >= 500000
+post-patch:
+		@${CAT} ${FILESDIR}/bin_runide.sh.diff | ${PATCH} ${WRKSRC}/bin/runide.sh
+.endif
+
 do-install:
 		@${MKDIR} ${PREFIX}/netbeans
 		@${CP} -r ${WRKSRC}/* ${PREFIX}/netbeans
