@@ -31,7 +31,7 @@ PLIST_SUB=	EUCJP=${EUCJP} SJIS=${SJIS}
 
 # XMLPARSER_EUCJP=	x-euc-jp-(jisx0221|unicode)
 # XMLPARSER_SJIS=	x-sjis-(cp932|jdk117|jisx0221|unicode)
-CONV_ENC=	perl -e '$$e=shift @ARGV; undef $$/; $$_=<>; substr($$_,4,40)=pack("a40","$$e"); print'
+CONV_ENC=	${PERL} -e '$$e=shift @ARGV; undef $$/; $$_=<>; substr($$_,4,40)=pack("a40","$$e"); print'
 .if !defined(XMLPARSER_EUCJP)
 EUCJP=		"@comment "
 .endif

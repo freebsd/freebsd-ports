@@ -3,7 +3,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Parser/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/Parser/Encodings/Japanese_Encodings.msg
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/Parser/Encodings/README
-%%SJIS%%%%SITE_PERL%%/%%PERL_ARCH%%/XML/Parser/Encodings/Shift_JIS.enc
+%%SJIS%%%%SITE_PERL%%/%%PERL_ARCH%%/XML/Parser/Encodings/shift_jis.enc
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/Parser/Encodings/big5.enc
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/Parser/Encodings/euc-kr.enc
 %%EUCJP%%%%SITE_PERL%%/%%PERL_ARCH%%/XML/Parser/Encodings/euc-jp.enc
@@ -32,7 +32,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/Parser/LWPExternEnt.pl
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Parser/Expat
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Parser
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/XML/Parser/Encodings
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/XML/Parser/Style
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/XML/Parser
