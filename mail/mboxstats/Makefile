@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mboxstats
-PORTVERSION=	2.3
+PORTVERSION=	2.4
 CATEGORIES=	mail
 MASTER_SITES=	http://vanheusden.com/mboxstats/
 EXTRACT_SUFX=	.tgz
@@ -17,6 +17,7 @@ COMMENT=	Creates top-10 lists of the messages in a mailbox
 
 PLIST_FILES=	bin/mboxstats
 USE_REINPLACE=	yes
+ONLY_FOR_ARCHS=	i386 alpha
 
 .include <bsd.port.pre.mk>
 
