@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	uconv
-PORTVERSION=	0.4.4
+PORTVERSION=	0.4.5
 CATEGORIES=	japanese converters ruby
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://www.bekkoame.ne.jp/~yoshidam/
-MASTER_SITE_SUBDIR=	knu
+MASTER_SITES=	http://www.yoshidam.net/
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
