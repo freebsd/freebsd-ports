@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	aster
-PORTVERSION=	7.3.0
-CATEGORIES=	french cad python tk84
+PORTVERSION=	7.4.0
+CATEGORIES=	french cad python
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
-DISTNAME=	${PORTNAME}-src-${PORTVERSION}-8
+DISTNAME=	${PORTNAME}-full-src-${PORTVERSION}-3
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	ports@FreeBSD.org
@@ -22,9 +22,9 @@ COMMENT=	Analyse des structures et thermo-mécanique
 # - FFLAGS: fortan compiler's flags (-O2 by default);
 # - WITH_ZSH or WITH_BASH or WITH_KSH: select a shell among
 #			zsh (default), bash or ksh;
+# - WITH_ED: select an editor accepting '-display' (e.g. gvim, nedit);
 # - WITH_BLAS: don't link with atlas, but with blas;
 #			(blas is slower, but lighter)
-# - WITHOUT_ASTK: don't use the GUI;
 # - WITHOUT_ASTK_CLI: won't use the GUI from this machine;
 # - WITHOUT_EFICAS: don't install ASter Command FIle Editor;
 # - WITHOUT_GMSH: don't install GMSH (a mesh generator);
@@ -34,30 +34,27 @@ COMMENT=	Analyse des structures et thermo-mécanique
 #
 #-----------------------------------------------------------------------
 
-PATCH_DEPENDS=	tclsh${TCL_VER}:${PORTSDIR}/lang/tcl${SHORT_TCL_VER}		\
-		wish${TK_VER}:${PORTSDIR}/x11-toolkits/tk${SHORT_TK_VER}
-BUILD_DEPENDS=	${opt_hdf}:${PORTSDIR}/science/hdf5				\
-		${opt_med}:${PORTSDIR}/french/med				\
+BUILD_DEPENDS+=	${LOCALBASE}/aster/ASTK/ASTK_SERV:${PORTSDIR}/cad/astk-serveur	\
 		${SHELL_INSTALL_ASTER}:${PORTSDIR}/shells/${SHIADEP}		\
 		${PYNUMERIC}
-LIB_DEPENDS=	tcl${SHORT_TCL_VER}:${PORTSDIR}/lang/tcl${SHORT_TCL_VER}	\
-		tk${SHORT_TK_VER}:${PORTSDIR}/x11-toolkits/tk${SHORT_TK_VER}
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Gnuplot:${PORTSDIR}/math/py-gnuplot	\
-		${LOCALBASE}/bin/onmetis.exe:${PORTSDIR}/math/metis-edf
+LIB_DEPENDS+=	tcl${SHORT_TCL_VER}:${PORTSDIR}/lang/tcl${SHORT_TCL_VER}	\
+		tk${SHORT_TK_VER}:${PORTSDIR}/x11-toolkits/tk${SHORT_TK_VER}	\
+		hdf5.0:${PORTSDIR}/science/hdf5					\
+		med.1:${PORTSDIR}/french/med
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Gnuplot:${PORTSDIR}/math/py-gnuplot	\
+		${LOCALBASE}/bin/onmetis.exe:${PORTSDIR}/math/metis-edf		\
+		${LOCALBASE}/aster/ASTK/ASTK_SERV:${PORTSDIR}/cad/astk-serveur
 
-EXTRACT_CMD=	${TAR}
-EXTRACT_BEFORE_ARGS=	-xf
-EXTRACT_AFTER_ARGS=	# empty
-USE_GCC=	3.2
+#USE_GCC=	3.4	# Helps on 4.x, but not sufficient.
 USE_PYTHON=	yes
+HAS_CONFIGURE=	yes
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 
-EXTDIR=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}
-WRKSRC=		${EXTDIR}/${vaster}
-PLIST_SUB=	ASTERDIR=${PORTNAME}/${vaster}
+WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}
+PLIST_SUB=	ASTERDIR=${PORTNAME}/${vaster} TOOLDIR=${PORTNAME}/outils
 PKGMESSAGE=	${WRKDIR}/pkg-message
-.if defined(WITHOUT_ASTK) || defined(WITHOUT_ASTK_CLI)
+.if defined(WITHOUT_ASTK_CLI)
 PKGMESSIN=	pkg-message.sans-astk.in
 .else
 PKGMESSIN=	pkg-message.in
@@ -65,8 +62,8 @@ PKGMESSIN=	pkg-message.in
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not install on amd64"
+.if ${OSVERSION} < 500000
+BROKEN=	"Does not compile on FreeBSD-4.x, and cannot be patched easily."
 .endif
 
 .if defined(WITH_BLAS)
@@ -74,14 +71,11 @@ LIB_DEPENDS+=	blas.1:${PORTSDIR}/math/blas
 .else
 LIB_DEPENDS+=	f77blas.1:${PORTSDIR}/math/atlas
 .endif
-.if !defined(WITHOUT_ASTK)
-RUN_DEPENDS+=	${LOCALBASE}/ASTK/ASTK_SERV:${PORTSDIR}/cad/astk-serveur
 .if !defined(WITHOUT_ASTK_CLI)
-RUN_DEPENDS+=	${LOCALBASE}/ASTK/ASTK_CLIENT:${PORTSDIR}/cad/astk-client
+RUN_DEPENDS+=	${ASTKDIR}:${PORTSDIR}/cad/astk-client
 PLIST_SUB+=	ASTK_CLIENT=""  ASTKDIR=${ASTKDIR}
 .else
 PLIST_SUB+=	ASTK_CLIENT="@comment " ASTKDIR=""
-.endif
 .endif
 .if !defined(WITHOUT_EFICAS)
 RUN_DEPENDS+=	${LOCALBASE}/apps/eficas:${PORTSDIR}/french/eficas
@@ -112,11 +106,9 @@ FFLAGS?=	-O2
 
 TK_VER?=	8.4
 SHORT_TK_VER=	${TK_VER:S/.//}
-TKCONFIG=	${LOCALBASE}/lib/tk${TK_VER}/tkConfig.sh
 
 TCL_VER?=	${TK_VER}
 SHORT_TCL_VER=	${TCL_VER:S/.//}
-TCLCONFIG=	${LOCALBASE}/lib/tcl${TK_VER}/tclConfig.sh
 
 .if defined(WITH_ZSH)
 SHIA=		zsh
@@ -139,109 +131,122 @@ SHIADEP=	bash2
 SHIADEP=	${SHIA}
 .endif
 
+.if !defined(WITH_ED)
+. if exists(${X11BASE}/bin/nedit)
+WITH_ED=	nedit
+RUN_DEPENDS+=	${X11BASE}/bin/nedit:${PORTSDIR}/editors/nedit
+. elif exists(${LOCALBASE}/bin/gvim)
+WITH_ED=	gvim
+RUN_DEPENDS+=	${LOCALBASE}/bin/gvim:${PORTSDIR}/editors/vim
+. elif exists(${LOCALBASE}/bin/emacs)
+WITH_ED=	emacs
+RUN_DEPENDS+=	${LOCALBASE}/bin/emacs:${PORTSDIR}/editors/emacs
+. elif exists(${LOCALBASE}/bin/xemacs)
+WITH_ED=	xemacs
+RUN_DEPENDS+=	${LOCALBASE}/bin/xemacs:${PORTSDIR}/editors/xemacs
+. else
+WITH_ED=	xedit
+RUN_DEPENDS+=	${X11BASE}/bin/xedit:${X_CLIENTS_PORT}
+. endif
+.endif
+
 vaster=		STA${PORTVERSION:S/.0//}
-MK_FILES=	make_aster make_cata make_etude make_exec make_lib make_test
-INST_DAT=	astest bibpyt cata_ele.pickled catalo catapy commande	\
-		config.txt elements etude materiau tcl
-python_path=	${PYTHON_LIBDIR}:${PYTHON_LIBDIR}/lib-dynload:${PYTHON_SITELIBDIR}:${PYTHON_SITELIBDIR}/Numeric
+INST_DAT=	GPL.txt LICENSE.TERMS astest cata_ele.pickled catalo catapy	\
+		elements etude materiau
+INST_PY=	bibpyt commande
+DAT2FIX=	astout.export config.txt forma01a.export
 inst_dir=	${PREFIX}/${PORTNAME}/${vaster}
-tools_dir=	${inst_dir}/outils
-unames!=	${UNAME} -s
-v_ifdef=	${unames:U}
+tools_dir=	${PREFIX}/${PORTNAME}/outils
+v_ifdef=	${OPSYS:U}
 SHELL_INSTALL_ASTER=	${LOCALBASE}/bin/${SHIA}
 tcl_dir=	${LOCALBASE}
-tcl_bin=	tclsh${TK_VER}
-python_dir=	${PYTHONBASE}/bin
 hdf_dir=	${LOCALBASE}
-opt_hdf=	${hdf_dir}/lib/libhdf5.a
-opt_med=	${LOCALBASE}/lib/libmed.a
 .if defined(WITH_BLAS)
 lib_blas=	-lblas
 .else
 lib_blas=	-lf77blas -latlas
 .endif
-home_ar!=	${DIRNAME} `${WHICH} ${AR}`
-gzip!=		${DIRNAME} `${WHICH} ${GZIP_CMD}`
-LASTKDIR?=	ASTK/ASTK_CLIENT
+LASTKDIR?=	${PORTNAME}/ASTK/ASTK_CLIENT
 ASTKDIR=	${LOCALBASE}/${LASTKDIR}
 
-post-extract:
-	@(cd ${EXTDIR} && \
-	${TAR} xfz ${EXTDIR}/${PORTNAME}.tar.gz)
+pre-configure:
+	@${REINPLACE_CMD} -e 's|/opt/aster|${WRKSRC}/instdir|'		\
+		-e 's|/usr/bin/gcc|${CC}|;s|/usr/bin/g77|${F77}|'	\
+		${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "_install_hdf5 = False"			>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "_install_med = False"			>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "_install_tcl = False"			>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "_install_tk  = False"			>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "_install_Pmw = False"			>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "_install_Numeric = False"			>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "_install_gmsh = False"			>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "_install_homard = False"			>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "_install_eficas = False"			>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "_install_astk = False"			>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "_install_metis = False"			>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "_install_crpcrs = False"			>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "HOME_HDF='${hdf_dir}'"			>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "HOME_MED='${LOCALBASE}'"			>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "HOME_TCL_TK='${tcl_dir}'"			>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "BLASLIB='${lib_blas}'"			>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "GZIP='/usr/bin/gzip'"			>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "SHELL_EXECUTION='${SHELL_INSTALL_ASTER}'"	>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "EDITOR='${WITH_ED}'"			>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "LDFLAGS='-v ${LDFLAGS}'"			>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "FFLAGS='-c ${FFLAGS} -DP_LINUX'"		>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "FFLAGS_DBG='-c -g -O -DP_LINUX'"		>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "CFLAGS='-c ${CFLAGS} ${PTHREAD_CFLAGS} -DP_LINUX'"	\
+		>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "CFLAGS_DBG='-c -g -O -pipe ${PTHREAD_CFLAGS} -DP_LINUX'"	\
+		>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "SYSLIBS='-Xlinker -export-dynamic ${PTHREAD_LIBS} -lutil -lm -lz -lg2c'"	\
+		>> ${WRKSRC}/setup.cfg
 
-post-patch:
-.for mk_file in ${MK_FILES}
-	@${REINPLACE_CMD} -e "s#HOME_CODE_ASTER#${WRKSRC}#g"			\
-	-e "s#IFDEF#${v_ifdef}#"						\
-	-e "s#HOME_XTERM#${X11BASE}/bin#"					\
-	-e "s#REP_TOOLS#${tools_dir}#" ${WRKSRC}/tcl/${mk_file}
-.endfor
-	@${REINPLACE_CMD} -e "s#HOME_CODE_ASTER#${WRKSRC}#g"			\
-	-e "s#HOME_TCL_TK#${tcl_dir}#g"						\
-	-e "s#TCL_BIN#${tcl_bin}#g"						\
-	-e "s#TCL_TK_VERSION#${TK_VER}#g"					\
-	-e "s#HOME_PYTHON#${python_dir}#g"					\
-	-e "s#/bin/sh#${SHELL_INSTALL_ASTER}#g"					\
-	-e "s#%%PYTHONPATH%%#${python_path}#"					\
-	${WRKSRC}/tcl/run_aster
-	@${CHMOD} 755 ${WRKSRC}/tcl/run_aster
-.if !exists(${WRKSRC}/tcl/conf/${v_ifdef}/config.txt)
-	@${MKDIR} ${WRKSRC}/tcl/conf/${v_ifdef}
-	@${CP} ${FILESDIR}/config.txt ${WRKSRC}/tcl/conf/${v_ifdef}
-.endif
-	@${GREP} TCL_LIB_SPEC ${TCLCONFIG} |					\
-		${SED} -e "s#TCL_LIB_SPEC='##;s#\$${TCL_DBGX}'##"		\
-		> ${WRKDIR}/tcl_lib_spec
-	@${GREP} TK_LIB_SPEC ${TKCONFIG} |					\
-		${SED} -e "s#TK_LIB_SPEC='##;s#'##" > ${WRKDIR}/tk_lib_spec
-	@${REINPLACE_CMD} -e "s#OPT_HDF#${opt_hdf}#"				\
-	-e "s#HDF_DIR#${hdf_dir}#"						\
-	-e "s#OPT_MED#${opt_med}#"						\
-	-e "s#OPT_TCL#`${CAT} ${WRKDIR}/tcl_lib_spec`#"				\
-	-e "s#OPT_TK#`${CAT} ${WRKDIR}/tk_lib_spec`#"				\
-	-e "s#OPT_X11#-L${X11BASE}/lib -lX11#"					\
-	-e "s#OPT_BLAS#${lib_blas}#"						\
-	-e "s#HOME_AR#${home_ar}#"						\
-	-e "s#%%F77%%#${F77}#"							\
-	-e "s#%%CC%%#${CC}#"							\
-	-e "s#CFLAGS#${CFLAGS} ${PTHREAD_CFLAGS}#"				\
-	-e "s#FFLAGS#${FFLAGS}#"						\
-	-e "s#HOME_GZIP#${gzip}#"						\
-	-e "s#HOME_PYTHON#${PYTHONBASE}#"					\
-	-e "s#PYTHON_BIN#${PYTHON_VERSION}#"					\
-	-e "s#PYTHON_VERSION#${_PYTHON_VERSION}#g"				\
-	-e "s#PTHREAD#${PTHREAD_LIBS}#"						\
-		${WRKSRC}/tcl/conf/${v_ifdef}/config.txt
-	@${MV} ${WRKSRC}/tcl/conf/${v_ifdef}/config.txt ${WRKSRC}
-	@${RM} ${WRKSRC}/tcl/run_aster.orig
-	@${RM} -rf ${WRKSRC}/tcl/conf
-	@${RM} -rf ${WRKSRC}/bibpyt/Utilitai
-	@${REINPLACE_CMD} -e "s#\$$(HOME)#${LOCALBASE}/apps#"			\
-		${WRKSRC}/bibpyt/Execution/E_SUPERV.py
-	@${REINPLACE_CMD} -e "s#%%inst_dir%%#${inst_dir}#"			\
-		${WRKSRC}/bibc/utilitai/asterm.c
+do-configure:
+	(cd ${CONFIGURE_WRKSRC} && ${PYTHON_CMD} setup.py test		\
+		| tee ${CONFIGURE_LOG})
+
+pre-build:
+	${MKDIR} ${WRKSRC}/instdir/ASTK/ASTK_SERV/conf
+	${SED} -e 's|${LOCALBASE}/aster|${WRKSRC}/instdir|'	\
+		< ${LOCALBASE}/aster/ASTK/ASTK_SERV/conf/config		\
+		> ${WRKSRC}/instdir/ASTK/ASTK_SERV/conf/config
+	${LN} -sf ${LOCALBASE}/aster/ASTK/ASTK_SERV/bin			\
+		${WRKSRC}/instdir/ASTK/ASTK_SERV
+	${LN} -sf ${LOCALBASE}/aster/ASTK/ASTK_SERV/lib			\
+		${WRKSRC}/instdir/ASTK/ASTK_SERV
 
 do-build:
-	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/bibpyt
-	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/bibpyt
-	(cd ${WRKSRC}/tcl&& ${SETENV} PYTHONPATH=${python_path} \
-		./run_aster make_aster)
+	(cd ${BUILD_WRKSRC} && ${PYTHON_CMD} setup.py install		\
+		| tee ${BUILD_WRKSRC}/build.log)
+
+pre-install:
+	${CHMOD} go-x ${WRKSRC}/instdir/${vaster}/materiau/A42_REF_A.NOMI
 
 do-install:
-.for mk_file in ${MK_FILES} run_aster ../config.txt
-	${REINPLACE_CMD} -e "s#${WRKSRC}#${inst_dir}#g" ${WRKSRC}/tcl/${mk_file}
+	${MKDIR} ${tools_dir} ${inst_dir}
+	${INSTALL_PROGRAM} ${WRKSRC}/instdir/${vaster}/asteru.exe ${inst_dir}
+	${INSTALL_SCRIPT} ${WRKSRC}/instdir/${vaster}/asterd.exe ${inst_dir} # Don't strip!
+.for FILE in ${DAT2FIX}
+	${SED} -e 's|${WRKSRC}/instdir/${vaster}|${inst_dir}|g'		\
+		-e 's|${WRKSRC}/instdir/outils|${tools_dir}|g'		\
+	< ${WRKSRC}/instdir/${vaster}/${FILE} > ${inst_dir}/${FILE}
 .endfor
-	${MKDIR} ${tools_dir}
-.for FILE in ${INST_DAT}
-	${CP} -R ${WRKSRC}/${FILE} ${inst_dir}
+.for FILE in ${INST_DAT} ${INST_PY}
+	${CP} -R ${WRKSRC}/instdir/${vaster}/${FILE} ${inst_dir}
 .endfor
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${inst_dir}
-	${INSTALL_PROGRAM} ${WRKSRC}/asteru.exe ${inst_dir}
-	${INSTALL_SCRIPT} ${WRKSRC}/tcl/run_aster ${inst_dir}/tcl
+	${REINPLACE_CMD} -e 's|cat ./fort.15 ./ficode|cat ./ficode|'	\
+		${inst_dir}/bibpyt/Execution/E_SUPERV.py
+.for FILE in ${INST_PY}
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${inst_dir}/${FILE}
+	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${inst_dir}/${FILE}
+.endfor
 
 post-install:
 	@${TOUCH} ${inst_dir}/etude/forma01a.17
+	${LN} -fs ${LOCALBASE}/bin/kmetis ${tools_dir}/
 	${LN} -fs ${LOCALBASE}/bin/onmetis ${tools_dir}/
+	${LN} -fs ${LOCALBASE}/bin/pmetis ${tools_dir}/
 	${LN} -fs ${LOCALBASE}/bin/gnuplot ${tools_dir}/
 .if !defined(WITHOUT_ASTK) && !defined(WITHOUT_ASTK_CLI)
 	${LN} -fs ${ASTKDIR}/bin/astk ${tools_dir}/
@@ -254,20 +259,22 @@ post-install:
 	${LN} -fs ${LOCALBASE}/bin/gmsh ${tools_dir}/
 .endif
 .if !defined(WITHOUT_GRACE)
+	${LN} -fs ${X11BASE}/bin/gracebat ${tools_dir}/
 	${LN} -fs ${X11BASE}/bin/xmgrace ${tools_dir}/
 .endif
 	@${ECHO_MSG}
-	@${SED} -e "s#%%inst_dir%%#${inst_dir}#"	\
+	@${SED} -e "s#%%tools_dir%%#${tools_dir}#"	\
 		${FILESDIR}/${PKGMESSIN} > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 
 .if defined(MAINTAINER_MODE)
 test:	install
-	(cd ${inst_dir}/tcl;	\
-	./run_aster make_etude)
-	(cd ${inst_dir}/tcl;	\
-	./run_aster make_test)
+	(cd ${inst_dir};	\
+	${LOCALBASE}/aster/ASTK/ASTK_SERV/bin/as_run forma01a.export)
+	@${ECHO_CMD} Note: homard must be installed to run some steps succesfully.
+	(cd ${inst_dir};	\
+	${LOCALBASE}/aster/ASTK/ASTK_SERV/bin/as_run astout.export)
 .endif
 
 .include <bsd.port.post.mk>
