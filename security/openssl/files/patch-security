@@ -1,0 +1,77 @@
+Index: crypto/rsa/rsa_eay.c
+===================================================================
+RCS file: /e/openssl/cvs/openssl/crypto/rsa/rsa_eay.c,v
+retrieving revision 1.28.2.3
+diff -u -r1.28.2.3 rsa_eay.c
+--- crypto/rsa/rsa_eay.c	30 Jan 2003 17:37:46 -0000	1.28.2.3
++++ crypto/rsa/rsa_eay.c	16 Mar 2003 10:34:13 -0000
+@@ -195,6 +195,25 @@
+ 	return(r);
+ 	}
+ 
++static int rsa_eay_blinding(RSA *rsa, BN_CTX *ctx)
++	{
++	int ret = 1;
++	CRYPTO_w_lock(CRYPTO_LOCK_RSA);
++	/* Check again inside the lock - the macro's check is racey */
++	if(rsa->blinding == NULL)
++		ret = RSA_blinding_on(rsa, ctx);
++	CRYPTO_w_unlock(CRYPTO_LOCK_RSA);
++	return ret;
++	}
++
++#define BLINDING_HELPER(rsa, ctx, err_instr) \
++	do { \
++		if(((rsa)->flags & RSA_FLAG_BLINDING) && \
++				((rsa)->blinding == NULL) && \
++				!rsa_eay_blinding(rsa, ctx)) \
++			err_instr \
++	} while(0)
++
+ /* signing */
+ static int RSA_eay_private_encrypt(int flen, const unsigned char *from,
+ 	     unsigned char *to, RSA *rsa, int padding)
+@@ -239,8 +258,8 @@
+ 		goto err;
+ 		}
+ 
+-	if ((rsa->flags & RSA_FLAG_BLINDING) && (rsa->blinding == NULL))
+-		RSA_blinding_on(rsa,ctx);
++	BLINDING_HELPER(rsa, ctx, goto err;);
++
+ 	if (rsa->flags & RSA_FLAG_BLINDING)
+ 		if (!BN_BLINDING_convert(&f,rsa->blinding,ctx)) goto err;
+ 
+@@ -318,8 +337,8 @@
+ 		goto err;
+ 		}
+ 
+-	if ((rsa->flags & RSA_FLAG_BLINDING) && (rsa->blinding == NULL))
+-		RSA_blinding_on(rsa,ctx);
++	BLINDING_HELPER(rsa, ctx, goto err;);
++
+ 	if (rsa->flags & RSA_FLAG_BLINDING)
+ 		if (!BN_BLINDING_convert(&f,rsa->blinding,ctx)) goto err;
+ 
+Index: crypto/rsa/rsa_lib.c
+===================================================================
+RCS file: /e/openssl/cvs/openssl/crypto/rsa/rsa_lib.c,v
+retrieving revision 1.30.2.2
+diff -u -r1.30.2.2 rsa_lib.c
+--- crypto/rsa/rsa_lib.c	30 Jan 2003 17:37:46 -0000	1.30.2.2
++++ crypto/rsa/rsa_lib.c	16 Mar 2003 10:34:13 -0000
+@@ -72,7 +72,13 @@
+ 
+ RSA *RSA_new(void)
+ 	{
+-	return(RSA_new_method(NULL));
++	RSA *r=RSA_new_method(NULL);
++
++#ifndef OPENSSL_NO_FORCE_RSA_BLINDING
++	r->flags|=RSA_FLAG_BLINDING;
++#endif
++
++	return r;
+ 	}
+ 
+ void RSA_set_default_method(const RSA_METHOD *meth)

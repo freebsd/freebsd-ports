@@ -10,6 +10,7 @@ PORTNAME=	openssl
 PORTREVISION!=	date -v-1d +%Y%m%d
 .else
 PORTVERSION=	0.9.7a
+PORTREVISION=	1
 .endif
 CATEGORIES=	security devel
 .ifdef OPENSSL_SNAPSHOT
@@ -37,6 +38,7 @@ COMMENT=	SSL and crypto library
 
 NOPRECIOUSMAKEVARS=	Too many _MLINKS for fetch
 NO_LATEST_LINK=	yes
+USE_PERL5_BUILD=	yes
 
 MAN1=	CA.pl.1 asn1parse.1 ca.1 ciphers.1 crl.1 crl2pkcs7.1 dgst.1 dhparam.1 \
 	dsa.1 dsaparam.1 enc.1 gendsa.1 genrsa.1 nseq.1 ocsp.1 openssl.1 \
@@ -836,7 +838,6 @@ MAKE_ARGS+=	WHOLE_ARCHIVE_FLAG=-Bforcearchive
 MAKE_ARGS+=	WHOLE_ARCHIVE_FLAG=--whole-archive
 .endif
 
-USE_PERL5=	yes
 .if defined(NOSHARED)
 PLIST_SUB+=	SHARED="@comment "
 .else
