@@ -3,7 +3,7 @@
 # Date created:		2 November 1996
 # Whom:			fenner
 #
-# $Id: Makefile,v 1.6 1998/08/05 09:31:32 asami Exp $
+# $Id: Makefile,v 1.7 1998/08/07 23:56:38 asami Exp $
 #
 
 DISTNAME=	vat-4.0b2
@@ -20,8 +20,8 @@ GSM_WORK=	${GSM_DIR}/work/gsm-1.0-pl10
 # we can use this first BUILD_DEPENDS and save some work.
 #BUILD_DEPENDS=	${GSM_WORK}/inc/private.h:${GSM_DIR}:patch
 BUILD_DEPENDS=	${GSM_WORK}/lib/libgsm.a:${GSM_DIR}:build
-LIB_DEPENDS=	tk80:${PORTSDIR}/x11-toolkits/tk80 \
-		gsm:${GSM_DIR}
+LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80 \
+		gsm.1:${GSM_DIR}
 
 USE_X_PREFIX=	yes
 USE_AUTOCONF=	yes

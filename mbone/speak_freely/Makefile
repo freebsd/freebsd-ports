@@ -4,7 +4,7 @@
 # Date created:         18 Apr 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.3 1996/11/18 11:33:26 asami Exp $
+# $Id: Makefile,v 1.4 1997/09/23 23:30:32 ache Exp $
 #
 
 DISTNAME=       speak_freely-6.1c
@@ -13,7 +13,7 @@ MASTER_SITES=   http://www.fourmilab.ch/speakfree/unix/
 
 MAINTAINER=     ache@FreeBSD.ORG
 
-LIB_DEPENDS=    gsm\\.1\\.0:${PORTSDIR}/audio/gsm
+LIB_DEPENDS=    gsm.1:${PORTSDIR}/audio/gsm
 
 UTILS=   sfspeaker sfmike sflwl
 DEMNS=   sfecho sflwld
