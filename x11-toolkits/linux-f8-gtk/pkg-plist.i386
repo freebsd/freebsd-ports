@@ -6,6 +6,8 @@ usr/doc/gtk+-1.2.5/README
 usr/doc/gtk+-1.2.5/TODO
 usr/lib/libgdk-1.2.so.0.5.0
 usr/lib/libgdk-1.2.so.0
+usr/lib/libgtk-1.2.so.0.5.0
+usr/lib/libgtk-1.2.so.0
 usr/share/locale/ca/LC_MESSAGES/gtk+.mo
 usr/share/locale/cs/LC_MESSAGES/gtk+.mo
 usr/share/locale/da/LC_MESSAGES/gtk+.mo
