@@ -1,0 +1,57 @@
+PROG=	mup
+LDADD+=	-lm
+NOMAN=
+
+SRCS=	abshorz.c \
+	absvert.c \
+	assign.c \
+	beaming.c \
+	beamstem.c \
+	brac.c \
+	charinfo.c \
+	check.c \
+	debug.c \
+	errors.c \
+	extchtbl.c \
+	font.c \
+	fontdata.c \
+	globals.c \
+	grpsyl.c \
+	lex.c \
+	locvar.c \
+	lyrics.c \
+	macros.c \
+	main.c \
+	mainlist.c \
+	map.c \
+	midi.c \
+	midiutil.c \
+	mkchords.c \
+	muschtbl.c \
+	nxtstrch.c \
+	parstuff.c \
+	phrase.c \
+	plutils.c \
+	print.c \
+	prntdata.c \
+	prntmisc.c \
+	prnttab.c \
+	prolog.c \
+	range.c \
+	rational.c \
+	relvert.c \
+	restsyl.c \
+	roll.c \
+	setgrps.c \
+	setnotes.c \
+	ssv.c \
+	stuff.c \
+	symtbl.c \
+	tie.c \
+	trantab.c \
+	trnspose.c \
+	undrscre.c \
+	utils.c \
+	ytab.c
+
+.include <bsd.prog.mk>

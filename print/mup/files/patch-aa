@@ -1,0 +1,22 @@
+--- mupdisp/mupdisp.c.orig	Wed Nov 27 20:49:30 2002
++++ mupdisp/mupdisp.c	Wed Nov 27 23:03:09 2002
+@@ -45,6 +45,10 @@
+  *	chmod 4755 mupdisp
+  */
+ 
++#include <stdio.h>
++#include <stdlib.h>
++#include <unistd.h>
++#include <sys/signal.h>
+ 
+ #include "mupdisp.h"
+ #ifdef __WATCOMC__
+@@ -112,7 +116,7 @@
+ 	/* arrange to clean up temp files. Note that the user interface
+ 	 * will probably have its own cleanup */
+ 	for (n = 0; n < NSIG; n++) {
+-		if (n != SIGKILL && n != SIGCLD && n != SIGWINCH) {
++		if (n != SIGKILL && n != SIGCHLD && n != SIGWINCH) {
+ 			signal(n, generalcleanup);
+ 		}
+ 	}

@@ -1,0 +1,8 @@
+The music publisher program called Mup takes a text file describing
+music as input, and generates PostScript output for printing that music.
+The input file can be created using your favorite text editor, or generated
+from any other source, such as another program. The input must be written
+in a special language designed especially for describing music. The majority
+of the Mup User's Guide is the explanation of this language and how to use it.
+
+WWW: http://www.arkkra.com/
