@@ -1,5 +1,6 @@
-FreeBSD port of MIT Scheme
+MIT Scheme is a complete programming environment that runs on many
+unix platforms, as well as Microsoft Windows and IBM OS/2. It features
+a rich runtime library, a powerful source-level debugger, a
+native-code compiler, and an integrated Emacs-like editor.
 
 WWW: http://www.swiss.ai.mit.edu/projects/scheme/
-
-Maintainer: jmacd@uclink.berkeley.edu
