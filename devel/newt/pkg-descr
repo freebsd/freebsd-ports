@@ -4,8 +4,6 @@ stackable windows, push buttons, check boxes, radio buttons, lists,
 entry fields, labels, and displayable text. Scrollbars are supported,
 and forms may be nested to provide extra functionality.
 
-WWW: http://www.msg.com.mx/Newt/
-
 Besides the newt library, this port provides whiptail, which may
 be used from shell scripts similarly to Savio Lam's "dialog". Newt
 provides the textual interface for the Red Hat and Debian boot
