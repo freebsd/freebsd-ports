@@ -6,6 +6,7 @@ bin/intltoolize
 bin/xml-i18n-toolize
 share/aclocal/intltool.m4
 share/aclocal/xml-i18n-tools.m4
+share/intltool/XML/Parser/Style/OrigTree.pm
 share/intltool/intltool-extract.in
 share/intltool/intltool-merge.in
 share/intltool/intltool-po-Makefile.in.in-patch-1
@@ -15,6 +16,7 @@ share/intltool/intltool-po-Makefile.in.in-patch-4
 share/intltool/intltool-po-Makefile.in.in-patch-5
 share/intltool/intltool-po-Makefile.in.in-patch-6
 share/intltool/intltool-po-Makefile.in.in-patch-7
+share/intltool/intltool-po-Makefile.in.in-patch-8
 share/intltool/intltool-update.in
 share/intltool/xml-i18n-po-Makefile.in.in-patch-1
 share/intltool/xml-i18n-po-Makefile.in.in-patch-2
