@@ -1,0 +1,14 @@
+--- gets.c.orig	Wed Dec 30 17:05:40 1998
++++ gets.c	Fri Mar 22 23:29:05 2002
+@@ -68,8 +68,10 @@
+ 	}
+ 	for (s = buf; (c = getchar()) != '\n';)
+ 		if (c == EOF)
+-			if (s == buf)
++			if (s == buf) {
++				exit_violation();
+ 				return (NULL);
++			}
+ 			else
+ 				break;
+ 		else

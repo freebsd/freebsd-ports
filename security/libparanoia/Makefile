@@ -6,6 +6,7 @@
 
 PORTNAME=	libparanoia
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.lexa.ru/pub/domestic/snar/
 
