@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/gnome-pilot-conduits
 DISTNAME=	gnome-pilot-conduits-${PORTVERSION}
 
-MAINTAINER=	ade@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	pisock.3:${PORTSDIR}/palm/pilot-link \
 		gpilotd.0:${PORTSDIR}/palm/gnomepilot

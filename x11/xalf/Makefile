@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.lysator.liu.se/~astrand/projects/xalf/ \
 		http://www.lysator.liu.se/~astrand/projects/xalf/old/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ade@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

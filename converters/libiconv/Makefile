@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.ilog.fr/pub/Users/haible/gnu/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 
 USE_LIBTOOL=	yes
 LIBTOOLFILES=	configure libcharset/configure

@@ -10,7 +10,7 @@ PORTVERSION=	0.4.3
 CATEGORIES=	games gnome
 MASTER_SITES=	http://www.informatik.uni-oldenburg.de/~pearl/download/
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 
 USE_X_PREFIX=	yes
 USE_GNOME=	yes

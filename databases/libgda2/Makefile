@@ -11,7 +11,7 @@ CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/libgda
 
-MAINTAINER=	ade@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 
 USE_GNOME=	yes
 USE_GMAKE=	yes

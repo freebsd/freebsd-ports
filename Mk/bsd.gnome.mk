@@ -10,7 +10,7 @@
 
 # Please make sure all changes to this file are past through the maintainer. 
 # Do not commit them yourself (unless of course you're the Port's Wraith ;).
-Gnome_Include_MAINTAINER=	reg@FreeBSD.org
+Gnome_Include_MAINTAINER=	gnome@FreeBSD.org
 
 # This section keeps tests for optional software.  These work off four
 # types of of variables.  WANT_, WITH_, HAVE_ and USE_.  The logic of

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/gnome-guile
 DISTNAME=	gnome-guile-${PORTVERSION}
 
-MAINTAINER=	ade@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	ghttp.1:${PORTSDIR}/www/libghttp \
 		guilegtk-1.2.0:${PORTSDIR}/x11-toolkits/guile-gtk

@@ -11,7 +11,7 @@ PORTVERSION=	0.9.12
 CATEGORIES=	devel
 MASTER_SITES=	http://www.gnucash.org/pub/g-wrap/source/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	guile.9:${PORTSDIR}/lang/guile
 

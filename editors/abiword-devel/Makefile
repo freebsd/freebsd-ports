@@ -20,7 +20,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} expat-${PORTVERSION}.tar.gz \
 		abidistfiles-${PORTVERSION}.tar.gz \
 		psiconv-${PORTVERSION}.tar.gz libiconv-${PORTVERSION}.tar.gz
 
-MAINTAINER=	wolman@cs.washington.edu
+MAINTAINER=	gnome@FreeBSD.org
 
 # unzip is needed during the installation process
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip

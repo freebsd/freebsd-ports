@@ -11,7 +11,7 @@ CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/gtkhtml
 
-MAINTAINER=	ade@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	glibwww.1:${PORTSDIR}/www/glibwww \
 		pspell.4:${PORTSDIR}/textproc/pspell \

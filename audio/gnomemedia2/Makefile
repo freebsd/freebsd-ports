@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-media
 DISTNAME=	gnome-media-${PORTVERSION}
 
-MAINTAINER=	reg@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 
 RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox
 

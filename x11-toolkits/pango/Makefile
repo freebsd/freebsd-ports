@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.gtk.org/pub/gtk/v1.3/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.3/ \
 		http://www.ameth.org/gimp/gtk/v1.3/
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig \
 		freetype-config:${PORTSDIR}/print/freetype2	# XXX

@@ -12,7 +12,7 @@ CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/dia
 
-MAINTAINER=	saper@system.pl
+MAINTAINER=	gnome@FreeBSD.org
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

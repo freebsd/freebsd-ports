@@ -12,7 +12,7 @@ MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	ade@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 
 RUN_DEPENDS=	mozilla:${PORTSDIR}/www/mozilla \
 		galeon:${PORTSDIR}/www/galeon \

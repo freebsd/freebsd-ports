@@ -12,7 +12,7 @@ CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/evolution
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	gtkhtml.10:${PORTSDIR}/www/gtkhtml \
 		ldap.1:${PORTSDIR}/net/openldap

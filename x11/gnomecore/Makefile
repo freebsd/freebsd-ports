@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-core
 DISTNAME=	gnome-core-${PORTVERSION}
 
-MAINTAINER?=	ade@FreeBSD.org
+MAINTAINER?=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	glade.4:${PORTSDIR}/devel/libglade
 RUN_DEPENDS=	${X11BASE}/share/gnome/sounds/login.wav:${PORTSDIR}/audio/gnomeaudio
