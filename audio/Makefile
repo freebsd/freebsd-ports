@@ -200,6 +200,7 @@
     SUBDIR += midimountain
     SUBDIR += mikmod
     SUBDIR += mixer.app
+    SUBDIR += mixmos
     SUBDIR += mixxx
     SUBDIR += modplugplay
     SUBDIR += mp32ogg
