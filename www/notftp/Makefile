@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	notftp
-PORTVERSION=	1.2.2
+PORTVERSION=	1.3
 CATEGORIES=	www
 MASTER_SITES=	http://wonko.com/notftp/files/
 
@@ -29,8 +29,5 @@ do-install:
 		| cpio -pdm -R ${WEBOWN}:${WEBGRP} ${INSTALLDIR}
 	${CHMOD} -R ${BINMODE} ${INSTALLDIR}
 	${FIND} ${INSTALLDIR} ! -type d | ${XARGS} ${CHMOD} ${NOBINMODE}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

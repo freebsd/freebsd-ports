@@ -1,10 +1,18 @@
 %%INSTALLDIR%%/config.php
 %%INSTALLDIR%%/ftp.php
 %%INSTALLDIR%%/functions.php
+%%INSTALLDIR%%/HISTORY
 %%INSTALLDIR%%/index.php
 %%INSTALLDIR%%/LICENSE
 %%INSTALLDIR%%/README
 %%INSTALLDIR%%/lib/footer.php
 %%INSTALLDIR%%/lib/header.php
+%%INSTALLDIR%%/lib/lang/en.php
+%%INSTALLDIR%%/lib/lang/es.php
+%%INSTALLDIR%%/styles/beveled.css
+%%INSTALLDIR%%/styles/simple.css
+%%INSTALLDIR%%/styles/tooblue.css
+@dirrm %%INSTALLDIR%%/styles
+@dirrm %%INSTALLDIR%%/lib/lang
 @dirrm %%INSTALLDIR%%/lib
 @dirrm %%INSTALLDIR%%
