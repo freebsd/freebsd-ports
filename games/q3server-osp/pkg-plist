@@ -1,6 +1,18 @@
 %%Q3DIR%%1v1.cfg
+%%PORTDOCS%%%%Q3DIR%%Docs/CHN/README-CHN.txt
+%%PORTDOCS%%%%Q3DIR%%Docs/CHN/osp-q3-ClientReadme-CHN.txt
+%%PORTDOCS%%%%Q3DIR%%Docs/CHN/osp-q3-Commands-CHN.txt
+%%PORTDOCS%%%%Q3DIR%%Docs/CHN/osp-q3-Decal-Editing-CHN.txt
+%%PORTDOCS%%%%Q3DIR%%Docs/CHN/osp-q3-Server-gfx-CHN.txt
+%%PORTDOCS%%%%Q3DIR%%Docs/CHN/osp-q3-Variables-CHN.txt
 %%PORTDOCS%%%%Q3DIR%%Docs/CPM-info.txt
+%%PORTDOCS%%%%Q3DIR%%Docs/ESP/README-ESP.txt
+%%PORTDOCS%%%%Q3DIR%%Docs/ESP/osp-q3-ClientReadme-ESP.txt
+%%PORTDOCS%%%%Q3DIR%%Docs/ESP/osp-q3-Commands-ESP.txt
+%%PORTDOCS%%%%Q3DIR%%Docs/ESP/osp-q3-Variables-ESP.txt
 %%PORTDOCS%%%%Q3DIR%%Docs/Logging-OSP.txt
+%%PORTDOCS%%%%Q3DIR%%Docs/RUS/INSTALL-RUS.txt
+%%PORTDOCS%%%%Q3DIR%%Docs/RUS/OSP Match Quick Start-RUS.txt
 %%PORTDOCS%%%%Q3DIR%%Docs/RUS/osp-q3-ClientReadme-RUS.txt
 %%PORTDOCS%%%%Q3DIR%%Docs/RUS/osp-q3-Commands-RUS.txt
 %%PORTDOCS%%%%Q3DIR%%Docs/RUS/osp-q3-README-RUS.txt
@@ -53,7 +65,12 @@
 %%Q3DIR%%cfg-reference/ctf.cfg
 %%Q3DIR%%cfg-reference/ffa.cfg
 %%Q3DIR%%cfg-reference/team.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-bal3dm4.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-cpm1.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-cpm1a.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-hub3tourney1.cfg
 %%Q3DIR%%cfg-viewcam/viewcam-japanctf.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-mrcq3t6_osp.cfg
 %%Q3DIR%%cfg-viewcam/viewcam-overkill.cfg
 %%Q3DIR%%cfg-viewcam/viewcam-pro-q3dm13.cfg
 %%Q3DIR%%cfg-viewcam/viewcam-pro-q3dm6.cfg
@@ -82,12 +99,21 @@
 %%Q3DIR%%cfg-viewcam/viewcam-q3dm8.cfg
 %%Q3DIR%%cfg-viewcam/viewcam-q3dm9.cfg
 %%Q3DIR%%cfg-viewcam/viewcam-q3jdm8a.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-q3ospdm1.cfg
 %%Q3DIR%%cfg-viewcam/viewcam-q3tourney1.cfg
 %%Q3DIR%%cfg-viewcam/viewcam-q3tourney2.cfg
 %%Q3DIR%%cfg-viewcam/viewcam-q3tourney3.cfg
 %%Q3DIR%%cfg-viewcam/viewcam-q3tourney4-broken.cfg
 %%Q3DIR%%cfg-viewcam/viewcam-q3tourney4.cfg
 %%Q3DIR%%cfg-viewcam/viewcam-q3tourney5.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-q3wcp1.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-q3wcp2.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-q3wcp3.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-q3wcp4.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-q3wcp5.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-q3wcp6.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-q3wcp7.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-q3wcp8.cfg
 %%Q3DIR%%cfg-viewcam/viewcam-q3wctf1.cfg
 %%Q3DIR%%cfg-viewcam/viewcam-q3wctf2.cfg
 %%Q3DIR%%cfg-viewcam/viewcam-q3wctf3.cfg
@@ -101,12 +127,12 @@
 %%Q3DIR%%instagib.cfg
 %%Q3DIR%%locs/pro-q3dm6.cfg
 %%Q3DIR%%locs/q3dm6.cfg
-%%Q3DIR%%paks/z-osp-game099v3.pk3
+%%Q3DIR%%paks/z-osp-game099w.pk3
 %%Q3DIR%%spectool.cfg
 %%Q3DIR%%team.cfg
 %%Q3DIR%%vm/qagame.qvm
-%%Q3DIR%%z-osp-cgame099v3.pk3
-%%Q3DIR%%z-osp-extra099u.pk3
+%%Q3DIR%%z-osp-cgame099w.pk3
+%%Q3DIR%%z-osp-extra099w.pk3
 %%Q3DIR%%z-osp-players-099u.pk3
 @dirrm %%Q3DIR%%vm
 @dirrm %%Q3DIR%%paks
@@ -120,5 +146,7 @@
 @dirrm %%Q3DIR%%cfg-SinglePlayer
 @dirrm %%Q3DIR%%altmodes
 %%PORTDOCS%%@dirrm %%Q3DIR%%Docs/RUS
+%%PORTDOCS%%@dirrm %%Q3DIR%%Docs/ESP
+%%PORTDOCS%%@dirrm %%Q3DIR%%Docs/CHN
 %%PORTDOCS%%@dirrm %%Q3DIR%%Docs
 @unexec rmdir %D/%%Q3DIR%% 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -Rf ${PKG_PREFIX}/%%Q3DIR%%`` to remove any configuration files left" | fmt

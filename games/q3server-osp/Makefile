@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	osp
-PORTVERSION=	0.99v3
+PORTVERSION=	0.99w
 MASTER_SITES=	http://www.orangesmoothie.org/downloads/beta/
 DISTNAME=	${PORTNAME}-quake3-${PORTVERSION}
 
