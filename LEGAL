@@ -22,6 +22,9 @@ adom-*			ports/games/adom	Copy of CD must be sent to
 aswedit-*		ports/www/aswedit	Commercial software.
 atari800-*		ports/emulators/atari800 xf25 contains copyright ROMs
 						and cannot be distributed.
+avifile			ports/graphics/avifile	The program is under GPL but
+						legality of the codecs is
+						unknown. 
 bb-*			ports/net/bb		FreeBSD has permission from
 						author to put bb onto CDROM.
 bro-*			ports/security/bro	No distribution due to
