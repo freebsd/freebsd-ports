@@ -91,8 +91,7 @@ PLIST_SUB+=	ETCPORT=""
 post-extract:
 	@${SED} -e "s=%%PREFIX%%=${PREFIX}=" ${FILESDIR}/sm-client.sh \
 		> ${WRKSRC}/sm-client.sh
-	NSTALL
-@${SED} -e "s=%%PREFIX%%=${PREFIX}=" ${FILESDIR}/sendmail.sh \
+	@${SED} -e "s=%%PREFIX%%=${PREFIX}=" ${FILESDIR}/sendmail.sh \
 		> ${WRKSRC}/sendmail.sh
 
 do-configure:
