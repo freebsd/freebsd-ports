@@ -2,7 +2,6 @@ etc/rc.d/diablo.sh
 news/adm/biweekly.atrim
 news/adm/crontab.sample
 news/adm/daily.atrim
-news/adm/daily.dclean
 news/adm/daily.reader
 news/adm/hourly.expire
 news/adm/quadhr.expire
@@ -10,10 +9,12 @@ news/adm/rc.news
 news/adm/rot
 news/adm/weekly.reader
 news/dactive.kp
+news/dbin/.cvsignore
 news/dbin/.empty
-news/dbin/dclean
+news/dbin/dclient
 news/dbin/dexpire
 news/dbin/dexpireover
+news/dbin/dfeedinfo
 news/dbin/dgrpctl
 news/dbin/diablo
 news/dbin/dicmd
@@ -24,6 +25,7 @@ news/dbin/diload
 news/dbin/diloadfromspool
 news/dbin/dilookup
 news/dbin/dkp
+news/dbin/dlockhistory
 news/dbin/dnewslink
 news/dbin/doutq
 news/dbin/dpath
@@ -35,6 +37,7 @@ news/dbin/dreadover
 news/dbin/drequeue
 news/dbin/dspaminfo
 news/dbin/dspoolout
+news/dbin/dstart
 news/dbin/dsyncgroups
 news/dbin/pgpverify
 news/dbin/plock
@@ -48,12 +51,33 @@ news/dnewsfeeds
 news/dnntpspool.ctl
 news/dreader.access
 news/dserver.hosts
+news/dspool.ctl
+news/feeder+reader/dactive.kp
+news/feeder+reader/dcontrol.ctl
+news/feeder+reader/dexpire.ctl
+news/feeder+reader/diablo.config
+news/feeder+reader/distrib.pats
+news/feeder+reader/dnewsfeeds
+news/feeder+reader/dreader.access
+news/feeder+reader/dserver.hosts
+news/feeder+reader/dspool.ctl
+news/feeder+reader/moderators
+news/feeder/diablo.config
+news/feeder/dnewsfeeds
+news/feeder/dspool.ctl
 news/moderators
 news/pgp-sample
+news/reader/dactive.kp
+news/reader/dcontrol.ctl
+news/reader/dexpire.ctl
+news/reader/diablo.config
+news/reader/distrib.pats
+news/reader/dreader.access
+news/reader/dserver.hosts
+news/reader/moderators
 news/samples/adm/biweekly.atrim
 news/samples/adm/crontab.sample
 news/samples/adm/daily.atrim
-news/samples/adm/daily.dclean
 news/samples/adm/daily.reader
 news/samples/adm/hourly.expire
 news/samples/adm/quadhr.expire
@@ -70,8 +94,30 @@ news/samples/dnewsfeeds
 news/samples/dnntpspool.ctl
 news/samples/dreader.access
 news/samples/dserver.hosts
+news/samples/dspool.ctl
+news/samples/feeder+reader/dactive.kp
+news/samples/feeder+reader/dcontrol.ctl
+news/samples/feeder+reader/dexpire.ctl
+news/samples/feeder+reader/diablo.config
+news/samples/feeder+reader/distrib.pats
+news/samples/feeder+reader/dnewsfeeds
+news/samples/feeder+reader/dreader.access
+news/samples/feeder+reader/dserver.hosts
+news/samples/feeder+reader/dspool.ctl
+news/samples/feeder+reader/moderators
+news/samples/feeder/diablo.config
+news/samples/feeder/dnewsfeeds
+news/samples/feeder/dspool.ctl
 news/samples/moderators
 news/samples/pgp-sample
+news/samples/reader/dactive.kp
+news/samples/reader/dcontrol.ctl
+news/samples/reader/dexpire.ctl
+news/samples/reader/diablo.config
+news/samples/reader/distrib.pats
+news/samples/reader/dreader.access
+news/samples/reader/dserver.hosts
+news/samples/reader/moderators
 share/doc/diablo/COPYRIGHT
 share/doc/diablo/INSTALL
 share/doc/diablo/README.READER
@@ -83,8 +129,14 @@ share/doc/diablo/RELEASE_NOTES
 @dirrm news/spool/group
 @dirrm news/spool/cache
 @dirrm news/spool
+@dirrm news/samples/reader
+@dirrm news/samples/feeder+reader
+@dirrm news/samples/feeder
 @dirrm news/samples/adm
 @dirrm news/samples
+@dirrm news/reader
+@dirrm news/feeder+reader
+@dirrm news/feeder
 @dirrm news/dqueue
 @dirrm news/dbin
 @dirrm news/adm

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	diablo
-PORTVERSION=	2.3
+PORTVERSION=	3.0
 CATEGORIES=	news
 MASTER_SITES=	http://www.openusenet.org/diablo/download/
 DISTNAME=	${PKGNAME}-REL
@@ -17,7 +17,7 @@ MAINTAINER=	des@FreeBSD.org
 BUILD_DEPENDS=	xmake:${PORTSDIR}/devel/xmake
 
 MAN5=		diablo-kp.5 diablo-files.5
-MAN8=		dicmd.8 didump.8 dexpireover.8 dgrpctl.8 dclean.8 \
+MAN8=		dicmd.8 didump.8 dexpireover.8 dfeedinfo.8 dgrpctl.8 \
 		dilookup.8 diloadfromspool.8 doutq.8 dreadart.8 \
 		dreaderd.8 dpath.8 drcmd.8 dsyncgroups.8 dreadover.8 \
 		dkp.8 diablo.8 dexpire.8 dspoolout.8 dnewslink.8
@@ -28,8 +28,11 @@ post-extract:
 	${CP} ${SCRIPTDIR}/diablo.sh ${WRKDIR}
 
 do-configure:
-	${SETENV} ${MAKE_ENV} ${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g' \
+	${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKDIR}/diablo.sh ${WRKSRC}/XMakefile.inc
+.ifndef WITH_DES
+	${PERL} -pi -e 's| -ldes||g' ${WRKSRC}/XMakefile.inc
+.endif
 
 do-build:
 	cd ${WRKSRC} && xmake all
@@ -47,5 +50,6 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${RM} -rf ${PREFIX}/news/man
 
 .include <bsd.port.mk>
