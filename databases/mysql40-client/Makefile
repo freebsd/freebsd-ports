@@ -3,11 +3,11 @@
 # Date created:				26 Jan 1998
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
-# $Id: Makefile,v 1.38 1998/12/24 01:14:12 dirk Exp $
+# $Id: Makefile,v 1.39 1999/01/05 23:43:27 dirk Exp $
 #
 
-DISTNAME=	mysql-3.22.14b-gamma
-PKGNAME=	mysql-3.22.14g
+DISTNAME=	mysql-3.22.15-gamma
+PKGNAME=	mysql-3.22.15g
 CATEGORIES=	databases
 MASTER_SITES=	http://www.fh-wolfenbuettel.de/ftp/pub/database/mysql/Downloads/MySQL-3.22/ \
 		ftp://ftp.digex.net/pub/database/mysql/Downloads/MySQL-3.22/ \
