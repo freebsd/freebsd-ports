@@ -5207,6 +5207,7 @@ py-anygui	ports/x11-toolkits/py-anygui
 py-asv		ports/textproc/py-asv
 py-biopython	ports/biology/py-biopython
 py-bsddb3	ports/databases/py-bsddb3
+py-cdb	ports/databases/py-cdb
 py-compiler	ports/lang/py-compiler
 py-coro		ports/devel/py-coro
 py-csv		ports/textproc/py-csv
