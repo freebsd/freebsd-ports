@@ -1,16 +1,19 @@
 --- telnet/sys_bsd.c.orig	Sat Aug  2 14:18:09 1997
-+++ telnet/sys_bsd.c	Wed Sep  2 12:53:22 1998
-@@ -580,7 +580,7 @@
++++ telnet/sys_bsd.c	Fri Oct 16 20:43:32 1998
+@@ -580,10 +580,7 @@
  	else
  		lmode &= ~LPASS8;
  #else
 -	if (f & MODE_INBIN)
-+	if (1)
- 		tmp_tc.c_iflag &= ~ISTRIP;
- 	else
- 		tmp_tc.c_iflag |= ISTRIP;
+-		tmp_tc.c_iflag &= ~ISTRIP;
+-	else
+-		tmp_tc.c_iflag |= ISTRIP;
++	tmp_tc.c_iflag &= ~ISTRIP;
+ 	if (f & MODE_OUTBIN) {
+ 		tmp_tc.c_cflag &= ~(CSIZE|PARENB);
+ 		tmp_tc.c_cflag |= CS8;
 --- telnet/Makefile.orig	Sat Aug  2 13:30:16 1997
-+++ telnet/Makefile	Wed Sep  2 13:20:26 1998
++++ telnet/Makefile	Fri Oct 16 20:42:09 1998
 @@ -6,14 +6,12 @@
  PROG=	telnet
  
