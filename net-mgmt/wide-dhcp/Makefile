@@ -3,7 +3,7 @@
 # Date created:         21 November 1995
 # Whom:                 Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
 #
-# $Id: Makefile,v 1.4 1996/11/18 11:37:02 asami Exp $
+# $Id: Makefile,v 1.5 1996/12/01 01:23:19 obrien Exp $
 #
 
 DISTNAME=       dhcp-1.3beta
@@ -27,12 +27,12 @@ post-install:
 	@if [ ! -d ${PREFIX}/share/dhcp ]; then \
 		${MKDIR} ${PREFIX}/share/dhcp; \
 	fi
-	@{CP} ${WRKSRC}/README ${PREFIX}/share/dhcp/
-	@{CP} ${WRKSRC}/README.jis ${PREFIX}/share/dhcp/
-	@{CP} ${WRKSRC}/db_sample/dhcpdb.pool ${PREFIX}/share/dhcp/dhcpdb.pool.sample
-	@{CP} ${WRKSRC}/db_sample/dhcpdb.relay ${PREFIX}/share/dhcp/dhcpdb.relay.sample
-	@{CP} ${WRKSRC}/db_sample/dhcpdb.server ${PREFIX}/share/dhcp/dhcpdb.server.sample
-	@{CP} ${WRKSRC}/db_sample/intro.dhcp ${PREFIX}/share/dhcp/
+	@${CP} ${WRKSRC}/README ${PREFIX}/share/dhcp/
+	@${CP} ${WRKSRC}/README.jis ${PREFIX}/share/dhcp/
+	@${CP} ${WRKSRC}/db_sample/dhcpdb.pool ${PREFIX}/share/dhcp/dhcpdb.pool.sample
+	@${CP} ${WRKSRC}/db_sample/dhcpdb.relay ${PREFIX}/share/dhcp/dhcpdb.relay.sample
+	@${CP} ${WRKSRC}/db_sample/dhcpdb.server ${PREFIX}/share/dhcp/dhcpdb.server.sample
+	@${CP} ${WRKSRC}/db_sample/intro.dhcp ${PREFIX}/share/dhcp/
 	@if [ ! -c /dev/bpf1 ]; then \
 	    echo "**********************************************************";\
 	    echo "*                      W a r n i n g                     *";\
