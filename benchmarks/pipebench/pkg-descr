@@ -5,4 +5,4 @@ cat bigfile | pipebench | md5sum.
 WWW: http://www.habets.pp.se/synscan/programs.php?prog=pipebench
 
 	- Michael L. Hostbaek
-	mich@freebsdcluster.org
+	mich@FreeBSD.org

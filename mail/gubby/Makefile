@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	mich@freebsdcluster.org
+MAINTAINER=	mich@FreeBSD.org
 COMMENT=	A program showing where new mail has been placed
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

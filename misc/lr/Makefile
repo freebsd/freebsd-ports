@@ -12,7 +12,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.seekrut.com/rk/
 DISTNAME=	lazyread-${PORTVERSION}
 
-MAINTAINER=	mich@freebsdcluster.org
+MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Lazyread can auto-scroll files on your screen in movie credit fashion
 
 .include <bsd.port.pre.mk>

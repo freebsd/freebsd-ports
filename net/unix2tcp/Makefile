@@ -11,7 +11,7 @@ PORTVERSION=	0.7.2
 CATEGORIES=	net
 MASTER_SITES=	http://ahriman.bucharest.roedu.net/unix2tcp/
 
-MAINTAINER=	mich@freebsdcluster.org
+MAINTAINER=	mich@FreeBSD.org
 COMMENT=	A connection forwarder that converts Unix sockets into TCP sockets
 
 do-build:

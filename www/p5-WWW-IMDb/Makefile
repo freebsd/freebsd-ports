@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.rhapsodyk.net/pub/devel/perl/
 PKGNAMEPREFIX=	p5-WWW-
 DISTNAME=	IMDb-current
 
-MAINTAINER=	mich@freebsdcluster.org
+MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Perl interface to query the Internet Movie Database(IMDb)
 
 RUN_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \

@@ -11,7 +11,7 @@ PORTVERSION=	0.2
 CATEGORIES=	games
 MASTER_SITES=	http://uhaweb.hartford.edu/hyland/derr/
 
-MAINTAINER=	mich@freebsdcluster.org
+MAINTAINER=	mich@FreeBSD.org
 COMMENT=	A clone of the Mastermind game
 
 LDFLAGS+=	-lncurses

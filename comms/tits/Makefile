@@ -10,7 +10,7 @@ PORTVERSION=	1.0.3
 CATEGORIES=	comms
 MASTER_SITES=	http://www.mctavish.co.uk/tits/
 
-MAINTAINER=	mich@freebsdcluster.org
+MAINTAINER=	mich@FreeBSD.org
 COMMENT=	A server which provides telnet(1) access to one or more tty ports
 
 USE_REINPLACE=	yes

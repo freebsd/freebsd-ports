@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://members.optusnet.com.au/~dbbryan/vcp/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	mich@freebsdcluster.org
+MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Copy files in curses interface
 
 MAN1=		${PORTNAME}.1

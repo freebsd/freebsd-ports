@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://freebsdcluster.org/~mich/software/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	mich@freebsdcluster.org
+MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Nibbles is a simple ncurses-based console game
 
 LDFLAGS+=	-L${LOCALBASE}/lib -lncurses

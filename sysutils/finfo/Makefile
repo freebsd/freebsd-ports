@@ -11,7 +11,7 @@ PORTVERSION=	0.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://freebsdcluster.org/~mich/software/
 
-MAINTAINER=	mich@freebsdcluster.org
+MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Finfo displays potentially useful information about a file
 
 do-build:

@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.redhotlunix.com/
 DISTNAME=	rfksay
 
-MAINTAINER=	mich@freebsdcluster.org
+MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Generates a kitten finding robot with a text bubble
 
 USE_PERL5=	yes

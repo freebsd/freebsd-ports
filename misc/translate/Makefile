@@ -11,7 +11,7 @@ PORTVERSION=	1.10
 CATEGORIES=	misc
 MASTER_SITES=	http://www.freebsdcluster.org/~mich/software/
 
-MAINTAINER=	mich@freebsdcluster.org
+MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Translates string using Babelfish
 
 RUN_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
