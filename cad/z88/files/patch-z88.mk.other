@@ -1,0 +1,23 @@
+--- z88.mk.other.linux.orig	Tue Dec 28 22:01:09 2004
++++ z88.mk.other.linux	Tue Dec 28 22:03:12 2004
+@@ -17,15 +17,14 @@
+ # 14.4.2004 Rieg
+ #############################################################################
+ 
+-CC = gcc
+-CFLAGS = -mcpu=i486 -I. -I/usr/X11R6/include -DFR_UNIX -DFR_XDOUB -DFR_XLONG -O3\
+- -fomit-frame-pointer
++CC = %%CC%%
++CFLAGS =%%CFLAGS%% -I. -I%%X11BASE%%/include -DFR_UNIX -DFR_XDOUB -DFR_XLONG
+ 
+ LDLIBSOM = -lc 
+ LDLIBSOX = -lm -lc 
+-LDLIBSNX = -L/usr/X11R6/lib -lXm -lXpm -lXt -lSM -lXp -lICE -lXext -lX11 -lc
+-LDLIBSMX = -L/usr/X11R6/lib -lXm -lXpm -lXt -lSM -lXp -lICE -lXext -lX11 -lm -lc
+-LDLIBSMO = -L/usr/X11R6/lib -lGLw -lGL -lXm -lXpm -lXt -lSM -lXp -lICE -lXext -lX11 -lm -lc
++LDLIBSNX = -L%%X11BASE%%/lib -lXm -lXpm -lXt -lSM -lXp -lICE -lXext -lX11 -lc
++LDLIBSMX = -L%%X11BASE%%/lib -lXm -lXpm -lXt -lSM -lXp -lICE -lXext -lX11 -lm -lc
++LDLIBSMO = -L%%X11BASE%%/lib -lGLw -lGL -lXm -lXpm -lXt -lSM -lXp -lICE -lXext -lX11 -lm -lc
+ 
+ OBJECTSE = z88e.o ale88e.o dyn88e.o clr88.o m1.o m2.o stop88e.o cshe88.o\
+  hexa88.o lqua88.o qshe88.o isod88.o tetr88.o spur88.o spla88.o hpla88.o\

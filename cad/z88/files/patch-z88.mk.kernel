@@ -1,0 +1,13 @@
+--- z88.mk.kernel.linux.orig	Tue Dec 28 21:35:53 2004
++++ z88.mk.kernel.linux	Tue Dec 28 21:39:26 2004
+@@ -21,8 +21,8 @@
+ # 3.2.2004 Rieg
+ #############################################################################
+ 
+-CC = gcc
+-CFLAGS = -mcpu=i486 -I. -DFR_UNIX -DFR_XDOUB -DFR_XLONG -O3 -fomit-frame-pointer
++CC = %%CC%%
++CFLAGS = %%CFLAGS%% -I. -DFR_UNIX -DFR_XDOUB -DFR_XLONG
+ 
+ LDLIBSOX = -lm -lc 
+ 
