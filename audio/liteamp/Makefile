@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	liteamp
-PORTVERSION=	0.2.3.1
+PORTVERSION=	0.2.3.2
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://download.kldp.net/liteamp/
 
@@ -20,9 +20,14 @@ LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao \
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libgnomeui gnomeprefix
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include"
 
 MAN1=		liteamp.1
+
+post-patch:
+	${REINPLACE_CMD} -e '15s,^,#include <pthread.h>,' \
+		${WRKSRC}/src/decoder.c
 
 .include <bsd.port.mk>
