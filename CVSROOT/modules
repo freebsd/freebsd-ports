@@ -212,6 +212,7 @@ adjkerntz	src/sbin/adjkerntz
 adns		ports/net/adns
 adodb		ports/databases/adodb
 adom		ports/games/adom
+adpcm		ports/audio/adpcm
 adventure	src/games/adventure
 adzap		ports/www/adzap
 adzapper	ports/www/adzapper
