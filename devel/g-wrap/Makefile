@@ -16,7 +16,7 @@ MASTER_SITES=	http://www.gnucash.org/pub/g-wrap/source/ \
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A tool for exporting C libraries into Scheme interpreters
 
-BUILD_DEPENDS=	${LOCALBASE}/share/guile/slib/slibcat:${PORTSDIR}/devel/slib-guile
+BUILD_DEPENDS=	${LOCALBASE}/share/guile/slib/slibcat:${PORTSDIR}/lang/slib-guile
 LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile \
 		guilegtk-1.2.0:${PORTSDIR}/x11-toolkits/guile-gtk
 RUN_DEPENDS=	${LOCALBASE}/share/slib/require.scm:${PORTSDIR}/lang/slib
