@@ -60,7 +60,13 @@ share/aclocal/libxslt.m4
 %%DOCSDIR%%/html/APIfiles.html
 %%DOCSDIR%%/html/APIfunctions.html
 %%DOCSDIR%%/html/APIsymbols.html
+%%DOCSDIR%%/html/EXSLT/bugs.html
+%%DOCSDIR%%/html/EXSLT/docs.html
+%%DOCSDIR%%/html/EXSLT/downloads.html
 %%DOCSDIR%%/html/EXSLT/exslt.html
+%%DOCSDIR%%/html/EXSLT/help.html
+%%DOCSDIR%%/html/EXSLT/index.html
+%%DOCSDIR%%/html/EXSLT/intro.html
 %%DOCSDIR%%/html/FAQ.html
 %%DOCSDIR%%/html/Libxslt-Logo-180x168.gif
 %%DOCSDIR%%/html/Libxslt-Logo-90x34.gif
