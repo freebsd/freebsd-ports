@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
 
 USE_OPENSSL=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
-INCDIR?=	${.CURDIR}
+LICQ_PORT?=	${.CURDIR}
 
 # workaround for installed autoconf/automake
 CONFIGURE_ARGS+=--program-transform-name=s,y,y,
@@ -40,5 +40,5 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>
-.include "${INCDIR}/Makefile.inc"
+.include "${LICQ_PORT}/Makefile.inc"
 .include <bsd.port.post.mk>

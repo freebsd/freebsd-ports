@@ -13,7 +13,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \
 		LIBS="${PTHREAD_LIBS}"
-INCDIR=		${PORTSDIR}/net
+LICQ_PORT?=	${PORTSDIR}/net/licq
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 PLIST_SUB+=	GUI_NAME=jons-gtk
@@ -24,5 +24,5 @@ post-patch:
 	${SED} -e "s=gtk-config=gtk12-config=" ${EXTRA_FIX}.sed > ${EXTRA_FIX}
 
 .include <bsd.port.pre.mk>
-.include "${INCDIR}/licq/Makefile.inc"
+.include "${LICQ_PORT}/Makefile.inc"
 .include <bsd.port.post.mk>

@@ -7,7 +7,6 @@ QT_LICQ_VER=		1.2.4
 RMS_LICQ_VER=		0.33
 CONSOLE_LICQ_VER=	1.2.4
 JONS_GTK_LICQ_VER=	0.20.2
-LICQ_PORT?=		${PORTSDIR}/net/licq
 .if ${PORTNAME} != "base"
 RUN_DEPENDS+=		licq:${LICQ_PORT}
 .endif
