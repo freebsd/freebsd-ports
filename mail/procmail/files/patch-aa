@@ -19,13 +19,13 @@
   	@for a in $(MANS1S); \
   	  do $(INSTALL) new/$$a.1 $(MAN1DIR)/$$a.$(MAN1SUFFIX); \
   	     if test "X$(MANCOMPRESS)" != "X"; \
-! 	     then "$(MANCOMPRESS)" <new/$$a.1 >$(MAN1DIR)/$$a.$(MAN1SUFFIX)$(COMPSUFFIX); \
+! 	     then "$(MANCOMPRESS)" <new/$$a.1 >$(MAN1DIR)/$$a.$(MAN1SUFFIX); \
   	     else :; fi; \
   	  done
   	@for a in $(MANS5S); \
   	  do $(INSTALL) new/$$a.5 $(MAN5DIR)/$$a.$(MAN5SUFFIX); \
   	     if test "X$(MANCOMPRESS)" != "X"; \
-! 	     then "$(MANCOMPRESS)" <new/$$a.5 >$(MAN5DIR)/$$a.$(MAN5SUFFIX)$(COMPSUFFIX); \
+! 	     then "$(MANCOMPRESS)" <new/$$a.5 >$(MAN5DIR)/$$a.$(MAN5SUFFIX); \
   	     else :; fi; \
   	  done
   	echo Housekeeping file >install.man
