@@ -11,7 +11,7 @@ PORTVERSION=	0.9
 CATEGORIES=	security
 MASTER_SITES=	http://www.kybs.de/boris/sw/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jim@corebsd.or.id
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
