@@ -14,7 +14,7 @@ DISTNAME=	BasiliskII_src_31052001
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	lthread.2:${PORTSDIR}/devel/linuxthreads
+LIB_DEPENDS=	lthread.3:${PORTSDIR}/devel/linuxthreads
 
 WRKSRC=		${WRKDIR}/BasiliskII-${PORTVERSION}/src/Unix
 
