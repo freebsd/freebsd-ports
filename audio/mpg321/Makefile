@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mpg321
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.linuxberg.com/files/ \
 		http://gemini.woot.net/~hosehead/packages/
