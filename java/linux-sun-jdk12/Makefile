@@ -48,6 +48,7 @@ do-install:
 
 	@${ECHO_CMD} -n ">> Copying files..."
 	@${CP} -R ${WRKSRC}/* ${APP_HOME}
+	@${CHOWN} -h -R ${LIBOWN}:${LIBGRP} ${APP_HOME}
 	@${ECHO_CMD} " [ DONE ]"
 
 	@${ECHO_CMD} -n ">> Registering with javavm..."

@@ -30,6 +30,7 @@ do-install:
 
 	@${ECHO} -n ">> Copying files..."
 	@${CP} -R ${WRKSRC}/* ${TARGET_DIR}
+	@${CHOWN} -h -R ${DOCOWN}:${DOCGRP} ${TARGET_DIR}
 	@${ECHO} " [ DONE ]"
 
 .include <bsd.port.post.mk>
