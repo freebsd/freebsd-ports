@@ -9,7 +9,10 @@
 DISTNAME=	openh323_1.1alpha1
 PKGNAME=	openh323-1.1.a1
 CATEGORIES=	net
-MASTER_SITES=	http://www.openh323.org/bin/
+MASTER_SITES=	http://www.openh323.org/bin/ \
+		http://www.de.openh323.org/bin/ \
+		http://www.ru.openh323.org/bin/
+
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		pwlib_min_1.14.tar.gz
 
