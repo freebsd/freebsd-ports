@@ -18,6 +18,12 @@ MAINTAINER=	jmz@FreeBSD.org
 MANUAL_PACKAGE_BUILD=	has to be built with latex port
 EXTRACT_ONLY=	web2c-7.2b.tar.gz web-7.2a.tar.gz tex_base.tar.gz cm_tfm.tar.gz \
 		mf_lib.tar.gz cm_mf.tar.gz
+MAN1=		access.1 amstex.1 bibtex.1 dmp.1 dvicopy.1 dvitype.1 eplain.1 \
+		etex.1 gftodvi.1 gftopk.1 gftype.1 kpsestat.1 kpsewhich.1 \
+		latex.1 makempx.1 mf.1 mft.1 mktexlsr.1 mktexmf.1 mktexpk.1 \
+		mktextfm.1 mpost.1 mpto.1 newer.1 omega.1 patgen.1 pdftex.1 \
+		pktogf.1 pktype.1 pltotf.1 pooltype.1 readlink.1 tangle.1 \
+		tex.1 tftopl.1 tie.1 vftovp.1 vptovf.1 weave.1
 
 USE_GMAKE=	yes
 
