@@ -228,7 +228,7 @@ sub get_revision_number {
 	my $rcsfile = "";
 	my $revision = "";
 
-	open(RCS, "-|") || exec 'cvs', '-Qn', 'status', $file;
+	open(RCS, "-|") || exec $cfg::PROG_CVS, '-Qn', 'status', $file;
 	while (<RCS>) {
 		if (/^[ \t]*Repository revision/) {
 			chomp;
@@ -253,7 +253,8 @@ sub count_lines_in_revision {
 	my $rev = shift;	# Revision number.
 
 	my $lines = 0;
-	open(RCS, "-|") || exec 'cvs', '-Qn', 'update', '-p', "-r$rev", $file;
+	open(RCS, "-|") ||
+	    exec $cfg::PROG_CVS, '-Qn', 'update', '-p', "-r$rev", $file;
 	while (<RCS>) {
 		++$lines;
 	}
@@ -277,7 +278,8 @@ sub change_summary_changed {
 		my ($rev, $rcsfile) = get_revision_number($file);
 
 		if ($rev and $rcsfile) {
-			open(RCS, "-|") || exec 'cvs', '-Qn', 'log', "-r$rev", $file;
+			open(RCS, "-|") ||
+			    exec $cfg::PROG_CVS, '-Qn', 'log', "-r$rev", $file;
 			while (<RCS>) {
 				if (/^date:.*lines:\s(.*)$/) {
 					$delta = $1;

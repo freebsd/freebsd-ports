@@ -227,7 +227,7 @@ sub fix_up_file {
 	close F;
 
 	# overwrite the original file......
-	system("/bin/mv", "$filename.tmp", $filename);
+	system($cfg::PROG_MV, "$filename.tmp", $filename);
 	die "Can't recreate $filename!\n" if $? >> 8;
 }
 

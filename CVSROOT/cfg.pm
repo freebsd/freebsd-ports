@@ -16,8 +16,8 @@ use strict;
 use vars qw(
 	$ADD_TO_LINE $CHECK_HEADERS $DEBUG $FILE_PREFIX $IDHEADER
 	$LAST_FILE $MAILADDRS $MAILBANNER $MAILCMD $MAIL_BRANCH_HDR
-	$MAIL_ON_DIR_CREATION $MAIL_TRANSFORM $PID $TMPDIR $UNEXPAND_RCSID
-	%TEMPLATE_HEADERS @COMMIT_HOSTS
+	$MAIL_ON_DIR_CREATION $MAIL_TRANSFORM $PID $PROG_CVS $PROG_MV
+	$TMPDIR $UNEXPAND_RCSID %TEMPLATE_HEADERS @COMMIT_HOSTS
 );
 
 
@@ -42,6 +42,10 @@ $FILE_PREFIX = "#cvs.files.$PID";
 # The file used to store the name of the last directory examined
 # when processing a multi-directory commit.
 $LAST_FILE = "$TMPDIR/$FILE_PREFIX.lastdir";                                         
+# System tools.
+$PROG_CVS =	'/usr/bin/cvs';		# cvs(1)
+$PROG_MV =	'/bin/mv';		# mv(1)
+
 
 ###################
 ### commitcheck ###
