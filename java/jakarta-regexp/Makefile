@@ -7,7 +7,7 @@
 PORTNAME=	jakarta-regexp
 PORTVERSION=	1.2
 CATEGORIES=	java
-MASTER_SITES=	http://jakarta.apache.org/builds/${PORTNAME}/release/v${PORTVERSION}/
+MASTER_SITES=	http://www.apache.org/dist/jakarta/regexp/
 
 MAINTAINER=	dglo@ssec.wisc.edu
 
