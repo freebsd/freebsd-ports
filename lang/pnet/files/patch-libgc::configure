@@ -1,0 +1,19 @@
+--- libgc/configure.orig	Sun Dec 30 23:15:13 2001
++++ libgc/configure	Sun Dec 30 23:21:19 2001
+@@ -410,16 +410,6 @@
+   -*) { echo "configure: error: $ac_option: invalid option; use --help to show usage" 1>&2; exit 1; }
+     ;;
+ 
+-  *)
+-    if test -n "`echo $ac_option| sed 's/[-a-z0-9.]//g'`"; then
+-      echo "configure: warning: $ac_option: invalid host type" 1>&2
+-    fi
+-    if test "x$nonopt" != xNONE; then
+-      { echo "configure: error: can only configure for one host and one target at a time" 1>&2; exit 1; }
+-    fi
+-    nonopt="$ac_option"
+-    ;;
+-
+   esac
+ done
+ 
