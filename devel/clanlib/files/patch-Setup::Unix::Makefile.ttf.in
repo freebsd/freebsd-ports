@@ -1,0 +1,11 @@
+--- Setup/Unix/Makefile.ttf.in.orig	Thu Jan 22 08:54:07 2004
++++ Setup/Unix/Makefile.ttf.in	Thu Jan 22 08:54:25 2004
+@@ -22,7 +22,7 @@
+ 
+ Libs/libclanTTF.so: Libs/libclanCore.so $(OBJF_LIB_TTF)
+ 	@echo "Building Libs/libclanTTF.so"
+-	@$(LINK_COMMAND) -Wl,-soname=libclanTTF.so.$(D_VERSION_MAJOR) -o Libs/libclanTTF.so.$(D_VERSION_MINOR) $(OBJF_LIB_TTF) -L Libs -lclanCore -lfreetype
++	@$(LINK_COMMAND) -Wl,-soname=libclanTTF.so.$(D_VERSION_MAJOR) -o Libs/libclanTTF.so.$(D_VERSION_MINOR) $(OBJF_LIB_TTF) @LDFLAGS@ -L Libs -lclanCore -lfreetype
+ 	@ln -s -f libclanTTF.so.$(D_VERSION_MINOR) Libs/libclanTTF.so.$(D_VERSION_MAJOR)
+ 	@ln -s -f libclanTTF.so.$(D_VERSION_MAJOR) Libs/libclanTTF.so
+ 

@@ -1,0 +1,14 @@
+--- Setup/Unix/clanlib-config.in.orig	Fri Jan 23 15:32:52 2004
++++ Setup/Unix/clanlib-config.in	Fri Jan 23 15:33:42 2004
+@@ -16,9 +16,9 @@
+     ;;
+   --cflags)
+     includes=-I${includedir} 
+-    echo ${includes} @comp_mode@
++    echo ${includes} %%PTHREAD_CFLAGS%%
+     ;;     
+   --libs)
+-    echo -L${libdir} -lclanCore -lclanApp
++    echo -L${libdir} -lclanCore -lclanApp %%PTHREAD_LIBS%%
+     ;;
+ esac

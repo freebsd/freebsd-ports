@@ -1,0 +1,8 @@
+--- Documentation/Reference/pce2.orig	Thu Jan 22 15:38:17 2004
++++ Documentation/Reference/pce2	Thu Jan 22 15:38:24 2004
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#! %%PERL%%
+ 
+ #  PCE2 - Perl C++ Extractor version 2
+ #  Copyright 2000-1999, Karl Nelson  <kenelson@users.sourceforge.net>

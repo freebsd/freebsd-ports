@@ -1,0 +1,11 @@
+--- Setup/Unix/Makefile.png.in.orig	Thu Jan 22 08:28:36 2004
++++ Setup/Unix/Makefile.png.in	Thu Jan 22 08:28:47 2004
+@@ -20,7 +20,7 @@
+ 
+ Libs/libclanPNG.so: Libs/libclanCore.so $(OBJF_LIB_PNG)
+ 	@echo "Building Libs/libclanPNG.so"
+-	@$(LINK_COMMAND) -Wl,-soname=libclanPNG.so.$(D_VERSION_MAJOR) -o Libs/libclanPNG.so.$(D_VERSION_MINOR) $(OBJF_LIB_PNG) -L Libs -lclanCore -lpng
++	@$(LINK_COMMAND) -Wl,-soname=libclanPNG.so.$(D_VERSION_MAJOR) -o Libs/libclanPNG.so.$(D_VERSION_MINOR) $(OBJF_LIB_PNG) @LDFLAGS@ -L Libs -lclanCore -lpng
+ 	@ln -s -f libclanPNG.so.$(D_VERSION_MINOR) Libs/libclanPNG.so.$(D_VERSION_MAJOR)
+ 	@ln -s -f libclanPNG.so.$(D_VERSION_MAJOR) Libs/libclanPNG.so
+ 

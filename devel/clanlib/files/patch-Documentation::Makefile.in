@@ -1,0 +1,28 @@
+--- Documentation/Makefile.in.orig	Thu Jan 22 15:34:28 2004
++++ Documentation/Makefile.in	Thu Jan 22 15:51:08 2004
+@@ -1,6 +1,4 @@
+-prefix=@prefix@/share/
+-
+-HTML_PREFIX = $(prefix)/doc/ClanLib-docs-@version_minor@/Documentation
++HTML_PREFIX = @prefix@/share/doc/clanlib
+ 
+ all: faq
+ 	Utilities/webbuilder.pl documentation.theme index.xml
+@@ -10,14 +8,15 @@
+ #	cd Tutorial; make
+ 
+ faq:
+-	perl FAQ.theme
++	chmod +x FAQ.theme
++	./FAQ.theme
+ 
+ install:
+ 	@install -d $(HTML_PREFIX)
+ 	@install -d $(HTML_PREFIX)/Images
+ 	@install -m 0644 Images/*.gif $(HTML_PREFIX)/Images
+ 	@install -m 0644 *.html $(HTML_PREFIX)
+-	
++
+ #	cd Reference; make man_install
+ 	cd Reference; make html_install
+ 	cd Overview; make install
