@@ -1,12 +1,12 @@
 # New ports collection makefile for:	GNU emacs
-# Version required:	20.4
+# Version required:	20.5a
 # Date created:		29 October 1994
 # Whom:			jkh
 #
 # $FreeBSD$
 #
 
-DISTNAME=	emacs-20.4
+DISTNAME=	emacs-20.5a
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	emacs
@@ -27,7 +27,8 @@ CONFIGURE_ARGS=	--with-x=no --with-pop
 
 MAKE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 MAN1=		emacs.1 etags.1 ctags.1
-PLIST_SUB=	EMACS_VER=20.4 EMACS_ARCH=${CONFIGURE_TARGET}
+PLIST_SUB=	EMACS_VER=20.5 EMACS_ARCH=${CONFIGURE_TARGET}
+WRKSRC=		${WRKDIR}/emacs-20.5
 
 .if defined(USE_XPG4)
 .if (${USE_XPG4} == "YES" || ${USE_XPG4} == "yes")
