@@ -36,35 +36,13 @@ do-install:
 	done
 	${INSTALL_SCRIPT} ${WRKSRC}/gdeskcal \
 		${PREFIX}/share/gnome/gdeskcal
-# XXX Gack! This is ugly, but somewhat necessary.
+
 	${INSTALL_DATA} ${WRKSRC}/locale/ar_AE/LC_MESSAGES/gdeskcal.mo \
 		${PREFIX}/share/locale/ar/LC_MESSAGES
-	${INSTALL_DATA} ${WRKSRC}/locale/cs/LC_MESSAGES/gdeskcal.mo \
-		${PREFIX}/share/locale/cs/LC_MESSAGES
-	${INSTALL_DATA} ${WRKSRC}/locale/de/LC_MESSAGES/gdeskcal.mo \
-		${PREFIX}/share/locale/de/LC_MESSAGES
-	${INSTALL_DATA} ${WRKSRC}/locale/el/LC_MESSAGES/gdeskcal.mo \
-		${PREFIX}/share/locale/el/LC_MESSAGES
-	${INSTALL_DATA} ${WRKSRC}/locale/es/LC_MESSAGES/gdeskcal.mo \
-		${PREFIX}/share/locale/es/LC_MESSAGES
-	${INSTALL_DATA} ${WRKSRC}/locale/fr/LC_MESSAGES/gdeskcal.mo \
-		${PREFIX}/share/locale/fr/LC_MESSAGES
-	${INSTALL_DATA} ${WRKSRC}/locale/he/LC_MESSAGES/gdeskcal.mo \
-		${PREFIX}/share/locale/he/LC_MESSAGES
-	${INSTALL_DATA} ${WRKSRC}/locale/hu/LC_MESSAGES/gdeskcal.mo \
-		${PREFIX}/share/locale/hu/LC_MESSAGES
-	${INSTALL_DATA} ${WRKSRC}/locale/it/LC_MESSAGES/gdeskcal.mo \
-		${PREFIX}/share/locale/it/LC_MESSAGES
-	${INSTALL_DATA} ${WRKSRC}/locale/ja/LC_MESSAGES/gdeskcal.mo \
-		${PREFIX}/share/locale/ja/LC_MESSAGES
-	${INSTALL_DATA} ${WRKSRC}/locale/nl/LC_MESSAGES/gdeskcal.mo \
-		${PREFIX}/share/locale/nl/LC_MESSAGES
-	${INSTALL_DATA} ${WRKSRC}/locale/ru/LC_MESSAGES/gdeskcal.mo \
-		${PREFIX}/share/locale/ru/LC_MESSAGES
-	${INSTALL_DATA} ${WRKSRC}/locale/tr/LC_MESSAGES/gdeskcal.mo \
-		${PREFIX}/share/locale/tr/LC_MESSAGES
-	${INSTALL_DATA} ${WRKSRC}/locale/zh_CN/LC_MESSAGES/gdeskcal.mo \
-		${PREFIX}/share/locale/zh_CN/LC_MESSAGES
+.for i in cs de el es fr he hu it ja nl ru tr zh_CN
+	${INSTALL_DATA} ${WRKSRC}/locale/${i}/LC_MESSAGES/gdeskcal.mo \
+		${PREFIX}/share/locale/${i}/LC_MESSAGES
+.endfor
 	${LN} -sf ${PREFIX}/share/gnome/gdeskcal/gdeskcal ${PREFIX}/bin/gdeskcal
 
 .include <bsd.port.mk>
