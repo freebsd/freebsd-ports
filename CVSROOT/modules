@@ -4492,6 +4492,7 @@ p5-LEGO-RCX	ports/misc/p5-LEGO-RCX
 p5-LJ-Cache	ports/sysutils/p5-LJ-Cache
 p5-LJ-SpellCheck	ports/textproc/p5-LJ-SpellCheck
 p5-LJ-TextMessage	ports/sysutils/p5-LJ-TextMessage
+p5-Lingua-EN-Gender	ports/textproc/p5-Lingua-EN-Gender
 p5-Lingua-Ispell	ports/textproc/p5-Lingua-Ispell
 p5-Lingua-RU-Charset	ports/russian/p5-Lingua-RU-Charset
 p5-Locale-Codes	ports/misc/p5-Locale-Codes
