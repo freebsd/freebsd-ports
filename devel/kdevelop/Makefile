@@ -30,7 +30,7 @@ RUN_DEPENDS+=	autoconf:${PORTSDIR}/devel/autoconf \
 		linguist:${PORTSDIR}/devel/linguist \
 		kdbg:${PORTSDIR}/devel/kdbg \
 		kbabel:${PORTSDIR}/devel/kdesdk \
-		a2ps:${PORTSDIR}/print/a2ps43-letter
+		a2ps:${PORTSDIR}/print/a2ps-letter
 .endif
 
 USE_KDELIBS_VER=2
