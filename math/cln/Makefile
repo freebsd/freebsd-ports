@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cln
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	math devel
 MASTER_SITES=	ftp://ftp.ilog.fr/pub/Users/haible/gnu/ \
 		ftp://ftp.santafe.edu/pub/gnu/ \
@@ -20,9 +20,11 @@ CONFIGURE_ARGS=	--datadir=${PREFIX}/share/cln --infodir=${PREFIX}/info \
 		--mandir=${PREFIX}/man
 
 USE_GMAKE=	yes
-
 INSTALLS_SHLIB=	yes
 
 MAN1=		cln-config.1
+
+pre-build:
+	@(cd ${WRKSRC} ; ${LN} -s ${LOCALBASE}/bin/libtool .)
 
 .include <bsd.port.mk>
