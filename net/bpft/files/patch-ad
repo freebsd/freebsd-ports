@@ -1,0 +1,10 @@
+--- trafshow/show.c.orig	Sun Sep 19 18:27:49 1999
++++ trafshow/show.c	Sun Sep 19 18:28:03 1999
+@@ -15,6 +15,7 @@
+ 
+ static char copyright[] = "* Copyright (c) 1993-1996 CAD lab, Institute of Telecommunication, Novosibirsk *";
+ 
++#include <sys/types.h>
+ #include <curses.h>
+ #include <stdlib.h>
+ #include <string.h>
