@@ -10,7 +10,8 @@ PORTNAME=	ksmp3play
 PORTVERSION=	0.5.1
 PORTREVISION=	2
 CATEGORIES=	audio
-MASTER_SITES=	http://www.xanadunet.net/ksmp3play/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=ksmp3play
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An curses-based MP3 player
