@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	musicpd
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -43,6 +43,18 @@ CONFIGURE_ARGS+=--disable-ogg
 LIB_DEPENDS+=	vorbis.2:${PORTSDIR}/audio/libvorbis
 .endif
 
+.ifdef(WITHOUT_WAV)
+CONFIGURE_ARGS+=--disable-audiofile
+.else
+LIB_DEPENDS+=	ao.3:${PORTSDIR}/audio/libaudiofile
+.endif
+
+.ifdef(WITHOUT_ICONV)
+CONFIGURE_ARGS+=--disable-iconv
+.else
+LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
+.endif
+
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -65,6 +77,8 @@ pre-everything::
 	@${ECHO_CMD}
 	@${ECHO_CMD} "WITHOUT_OGG             Disable OGG-Vorbis-support"
 	@${ECHO_CMD} "WITHOUT_FLAC            Disable FLAC-support"
+	@${ECHO_CMD} "WITHOUT_WAV             Disable libao-support"
+	@${ECHO_CMD} "WITHOUT_ICONV           Disable international-chars-support"
 	@${ECHO_CMD}
 
 post-build:
