@@ -43,7 +43,7 @@
    This specifies the file to store the pid of the process in.
    -->
 -  <pidfile>./jabber.pid</pidfile>
-+  <pidfile>/var/tmp/jabber.pid</pidfile>
++  <pidfile>/var/spool/jabber/jabber.pid</pidfile>
  
  
  </jabber>
