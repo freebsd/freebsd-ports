@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.seul.org/pub/yawmppp/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GTK=	yes
@@ -32,5 +33,7 @@ pre-configure:
 pre-patch:
 	@${PERL} -pi -e "s|\@prefix\@/doc/|\@prefix\@/share/doc/|g" \
 		${WRKSRC}/Makefile.in
+	@${PERL} -pi -e 's!\/usr\/local!${PREFIX}!; \
+		s!/usr/bin!${PREFIX}/bin!' ${WRKSRC}/src/ycommon.c
 
 .include <bsd.port.mk>
