@@ -1,0 +1,18 @@
+This module prints per-component profiling information to STDERR (usually
+    directed to the Apache error log). Its output looks like this:
+
+    =Mason= 127.0.0.1 - /NoAuth/webrt.css BEGINS {{{
+    =Mason= 127.0.0.1 -     /NoAuth/webrt.css {{{
+    =Mason= 127.0.0.1 -         /Elements/Callback {{{
+    =Mason= 127.0.0.1 -         /Elements/Callback }}} 0.0008
+    =Mason= 127.0.0.1 -     /NoAuth/webrt.css }}} 0.0072
+    =Mason= 127.0.0.1 - /NoAuth/webrt.css }}} ENDS
+
+Each row contains five whitespace-separated fields: =Mason=, remote IP address,
+-, indented component name, and how many seconds did it take to process that
+component, including all subcomponents called by it.
+
+The beginning and end of the initial request is represented by the special time
+fields BEGINS and ENDS.
+
+WWW: http://search.cpan.org/dist/MasonX-Profiler/
