@@ -7,7 +7,7 @@
 
 PORTNAME=	mdbtools
 PORTVERSION=	0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,8 +26,19 @@ INSTALLS_SHLIB=	yes
 DOCS=		AUTHORS ChangeLog HACKING NEWS README TODO
 MAN1=		mdb-ver.1 mdb-tables.1 mdb-schema.1 mdb-sql.1 mdb-export.1
 
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_GNOME) || exists(${X11BASE}/libdata/pkgconfig/libgnomeui-2.0.pc)
+USE_X_PREFIX=	yes
+USE_GNOME+=	gnomeprefix gnomehack libgnomeui
+PLIST_SUB+=	GNOME:=""
+PKGNAMESUFFIX=	-gnome
+.else
+PLIST_SUB+=	GNOME:="@comment "
+.endif
+
 post-patch:
-	${REINPLACE_CMD} -e 's|$$(srcdir)/$$<|$$(srcdir)/$$>|g' ${WRKSRC}/doc/Makefile.in
+	@${REINPLACE_CMD} -e 's|$$(srcdir)/$$<|$$(srcdir)/$$>|g' ${WRKSRC}/doc/Makefile.in
 
 .if !defined(NOPORTDOCS)
 post-install:
@@ -37,4 +48,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
