@@ -1,6 +1,7 @@
 bin/allegro-config
 %%FULL%%bin/colormap
 %%FULL%%bin/dat
+%%FULL%%bin/dat2c
 %%FULL%%bin/dat2s
 %%FULL%%bin/exedat
 %%FULL%%bin/grabber
@@ -28,6 +29,7 @@ include/allegro/fixed.h
 include/allegro/fli.h
 include/allegro/fmaths.h
 include/allegro/gfx.h
+include/allegro/graphics.h
 include/allegro/gui.h
 include/allegro/inline/3dmaths.inl
 include/allegro/inline/asm.inl
@@ -37,7 +39,6 @@ include/allegro/inline/file.inl
 include/allegro/inline/fix.inl
 include/allegro/inline/fmaths.inl
 include/allegro/inline/gfx.inl
-include/allegro/inline/gui.inl
 include/allegro/inline/matrix.inl
 include/allegro/inline/rle.inl
 include/allegro/inline/system.inl
@@ -91,9 +92,9 @@ include/xalleg.h
 @unexec install-info --delete %D/info/allegro.info %D/info/dir
 info/allegro.info
 @exec install-info --delete %D/info/allegro.info %D/info/dir
-%%ESOUND%%lib/allegro/4.0/alleg-esddigi.so
-lib/allegro/4.0/alleg-dga2.so
-lib/allegro/4.0/modules.lst
+%%ESOUND%%lib/allegro/%%SHLIB_VER%%/alleg-esddigi.so
+lib/allegro/%%SHLIB_VER%%/alleg-dga2.so
+lib/allegro/%%SHLIB_VER%%/modules.lst
 lib/liballeg_unsharable.a
 lib/liballeg.so
 lib/liballeg.so.%%SHLIB_VER%%
@@ -142,14 +143,26 @@ lib/liballeg.so.%%SHLIB_VER%%
 %%PORTDOCS%%share/doc/allegro/alleg040.html
 %%PORTDOCS%%share/doc/allegro/alleg041.html
 %%PORTDOCS%%share/doc/allegro/alleg042.html
+%%PORTDOCS%%share/doc/allegro/alleg043.html
+%%PORTDOCS%%share/doc/allegro/allegro.css
 %%PORTDOCS%%share/doc/allegro/allegro.html
+%%PORTDOCS%%share/doc/allegro/api.html
 %%PORTDOCS%%share/doc/allegro/changes.html
 %%PORTDOCS%%share/doc/allegro/const.html
 %%PORTDOCS%%share/doc/allegro/faq.html
 %%PORTDOCS%%share/doc/allegro/help.html
+%%PORTDOCS%%share/doc/allegro/packfile.html
+%%PORTDOCS%%share/doc/allegro/readme.html
 %%PORTDOCS%%share/doc/allegro/thanks.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/demo
+%%PORTDOCS%%%%EXAMPLESDIR%%/demo.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/demo.dat
+%%PORTDOCS%%%%EXAMPLESDIR%%/demo.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/music.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/readme.txt
 %%PORTDOCS%%@dirrm share/doc/allegro
-@dirrm lib/allegro/4.0
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+@dirrm lib/allegro/%%SHLIB_VER%%
 @dirrm lib/allegro
 @dirrm include/allegro/platform
 @dirrm include/allegro/internal
