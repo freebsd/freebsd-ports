@@ -7,13 +7,16 @@
 
 PORTNAME=	Log
 PORTVERSION=	1.8.5
+PORTREVISION=	1
 CATEGORIES=	sysutils www pear
 
 MAINTAINER=	antonio@php.net
 COMMENT=	PEAR logging utilities
 
-BUILD_DEPENDS=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
 RUN_DEPENDS=	${BUILD_DEPENDS}
+
+USE_PHP=	yes
 
 FILES=		Log.php Log/composite.php Log/console.php Log/display.php	\
 		Log/error_log.php Log/file.php Log/mail.php Log/mcal.php	\
@@ -28,6 +31,34 @@ TESTS=		composite.phpt console.phpt display.phpt error_log.phpt		\
 		singleton.phpt sqlite.phpt sql_ident.phpt
 _EXAMPLESDIR=	docs/examples
 
+LATEST_LINK=	pear-Log
+OPTIONS=	PEAR_DB "PEAR::DB support" off
+
+_LOCALBASE=	/usr/local
+
+.if exists(${_LOCALBASE}/etc/php.conf)
+.include "${_LOCALBASE}/etc/php.conf"
+.endif
+
+PHP_VERS=	${PHP_VERSION:S/.//g}
+
+.if defined(PHP_VERS) && ${PHP_VERS} < 430
+BROKEN=		"You need PHP 4.3.0 or later to install PEAR::Log"
+.endif
+
+.if defined(PHP_VER) && ${PHP_VER} == 5
+OPTIONS+=	PHP_SQLITE "PHP sqlite support" off
+.endif
+
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_PEAR_DB)
+BUILD_DEPENDS+=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
+.endif
+
+.if defined(WITH_PHP_SQLITE)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/${extension}.so:${PORTSDIR}/databases/php5-sqlite
+.endif
+
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
 .include <bsd.port.post.mk>
