@@ -1,0 +1,11 @@
+--- ltmain.sh.orig	Thu Jun 29 23:41:49 2000
++++ ltmain.sh	Thu Jun 29 23:45:36 2000
+@@ -3227,7 +3227,7 @@
+ 	  outputname=
+ 	  if test "$fast_install" = no && test -n "$relink_command"; then
+ 	    if test "$finalize" = yes; then
+-	      outputname="/tmp/$$-$file"
++	      outputname=$(mktemp "${TMPDIR:-/tmp}/$file.XXXXXX") || exit $?
+ 	      # Replace the output file specification.
+ 	      relink_command=`$echo "X$relink_command" | $Xsed -e 's%@OUTPUT@%'"$outputname"'%g'`
+ 
