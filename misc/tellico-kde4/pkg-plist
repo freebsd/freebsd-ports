@@ -22,7 +22,9 @@ share/locale/de/LC_MESSAGES/bookcase.mo
 share/locale/es/LC_MESSAGES/bookcase.mo
 share/locale/hu/LC_MESSAGES/bookcase.mo
 share/locale/it/LC_MESSAGES/bookcase.mo
+share/locale/ja/LC_MESSAGES/bookcase.mo
 share/locale/nb/LC_MESSAGES/bookcase.mo
+share/locale/nl/LC_MESSAGES/bookcase.mo
 share/locale/ro/LC_MESSAGES/bookcase.mo
 share/mimelnk/application/x-bookcase.desktop
 @unexec rmdir %D/share/mimelnk/application 2>/dev/null || true
