@@ -1,5 +1,5 @@
 --- kdm/kfrontend/genkdmconf.c.orig	Mon Nov  5 21:40:03 2001
-+++ kdm/kfrontend/genkdmconf.c	Sat Jan  5 23:49:40 2002
++++ kdm/kfrontend/genkdmconf.c	Fri Feb 22 19:34:28 2002
 @@ -212,7 +212,7 @@
   */
  
@@ -31,7 +31,17 @@
  "-x " KDMCONF "/Xservers "
  #endif
  "$USER\n"
-@@ -1781,7 +1781,7 @@
+@@ -1658,7 +1658,8 @@
+ "	exec xterm -geometry 80x24-0-0 $*\n"
+ "	;;\n"
+ "    \"\"|default)\n"
+-"	exec $HOME/.xsession $*\n"
++"	test -x $HOME/.xsession && exec $HOME/.xsession $*\n"
++"	sess=kde\n"
+ "	;;\n"
+ "esac\n"
+ "\n"
+@@ -1781,7 +1782,7 @@
      }
      addKdePath ("UserPath", DEF_USER_PATH);
      addKdePath ("SystemPath", DEF_SYSTEM_PATH);
