@@ -63,10 +63,10 @@ PLIST_SUB+=	TOKEN="@comment "
 
 INSTALLS_SHLIB=	yes
 
-MAN1=		radclient.1 radlast.1 radtest.1 raduse.1 radwho.1 radzap.1
+MAN1=		radclient.1 radlast.1 radtest.1 radwho.1 radzap.1
 MAN5=		acct_users.5 clients.5 dictionary.5 naslist.5 radiusd.conf.5 \
 		users.5
-MAN8=		builddbm.8 radiusd.8 radrelay.8 radwatch.8
+MAN8=		radiusd.8 radrelay.8 radwatch.8
 
 DICTS=		dictionary.acc dictionary.alcatel dictionary.alteon \
 	       	dictionary.altiga dictionary.aptis dictionary.ascend \
