@@ -26,6 +26,7 @@ lib/X11/wdm/wdm-config
 lib/X11/wdm/wdm-config.in
 lib/X11/wdm/wdmReconfig
 @dirrm lib/X11/wdm/pixmaps
+@exec mkdir -p %D/lib/X11/wdm/authdir
 @unexec rmdir %D/lib/X11/wdm/authdir/authfiles 2>/dev/null || true
 @dirrm lib/X11/wdm/authdir
 @dirrm lib/X11/wdm
