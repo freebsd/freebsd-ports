@@ -1,6 +1,19 @@
 --- server/batch.c.orig	Fri Dec  9 03:52:44 1994
-+++ server/batch.c	Mon Nov  4 05:45:49 2002
-@@ -31,7 +31,9 @@
++++ server/batch.c	Mon Sep  6 12:25:18 2004
+@@ -20,18 +20,22 @@
+ */
+ #include "common.h"
+ #include <signal.h>
++#ifndef __FreeBSD__
+ #ifdef sparc
+ #ifndef SVR4
+ #include <vfork.h>
+ #endif
+ #endif
++#endif
+ #ifdef BATCHED_INPUT
+ #define YES 1
+ #define NO 0
  
  /* imports */
  extern time_t time();
