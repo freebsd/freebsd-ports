@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.reduz.com.ar/cheesetracker/
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/share/automake14/automake/install-sh:${PORTSDIR}/devel/automake14
+BUILD_DEPENDS=	${LOCALBASE}/share/automake14/install-sh:${PORTSDIR}/devel/automake14A
 LIB_DEPENDS=	sigc:${PORTSDIR}/devel/libsigc++ \
 		gtkmm:${PORTSDIR}/x11-toolkits/gtk--
 
