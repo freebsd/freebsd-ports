@@ -33,7 +33,7 @@ use strict;
 use Fcntl;
 use Getopt::Long;
 
-my $VERSION	= "2.6";
+my $VERSION	= "2.6.1";
 my $COPYRIGHT	= "Copyright (c) 2000 Dag-Erling Smørgrav. All rights reserved.";
 
 # Constants
@@ -470,7 +470,7 @@ sub find_master($) {
     open(FILE, "$portsdir/$port/Makefile")
 	or bsd::err(1, "unable to read Makefile for $port");
     while (<FILE>) {
-	if (/^MASTERDIR\s*=\s*(\S+)\s*$/) {
+	if (/^(?:MAIN|MASTER)DIR\s*=\s*(\S+)\s*$/) {
 	    $master = $1;
 	} elsif (/^\.?include \"([^\"]+)\/Makefile\"\s*$/) {
 	    $master = $1;
