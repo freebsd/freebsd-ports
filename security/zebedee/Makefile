@@ -15,7 +15,7 @@ MAINTAINER=	greg@hewgill.com
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libbz2.a:${PORTSDIR}/archivers/bzip2
 
-USE_OPENSSL=	NORSA
+USE_OPENSSL=	YES
 USE_PERL5=	yes
 
 MAN1=		zebedee.1 ftpgw.tcl.1

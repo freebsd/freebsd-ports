@@ -50,7 +50,7 @@ LIB_DEPENDS+=	ncurses.4:${PORTSDIR}/devel/ncurses
 CFLAGS+=	-I${PREFIX}/include/ncurses
 .endif
 .if defined(WITH_SSL)
-USE_OPENSSL=    RSA
+USE_OPENSSL=    YES
 .endif
 .if defined(WITH_DOCS)
 BUILD_DEPENDS+=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat

@@ -13,7 +13,6 @@ DISTNAME=	hpack79src
 
 MAINTAINER=	ache@FreeBSD.org
 
-RESTRICTED=	"Using this code inside USA will violate RSA patents"
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	freebsd

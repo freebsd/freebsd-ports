@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.chg.ru/pub/networking/freebsd/
 
 MAINTAINER=	ks@itp.ac.ru
 
-USE_OPENSSL=   RSA
+USE_OPENSSL=	YES
 
 MAN8=		tund.8
 MANCOMPRESSED=	yes

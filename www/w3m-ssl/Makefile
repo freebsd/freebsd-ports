@@ -11,6 +11,6 @@ MASTERDIR=     ${.CURDIR}/../../www/w3m
 PKGDIR=        ${.CURDIR}/pkg
 PLIST=         ${MASTERDIR}/pkg/PLIST
 
-USE_OPENSSL=	RSA
+USE_OPENSSL=	YES
 
 .include "${MASTERDIR}/Makefile"

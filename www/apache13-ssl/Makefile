@@ -44,7 +44,7 @@ Y2K=		http://www.apache-ssl.org/#Y2K
 APACHE_VERSION=		1.3.12
 APACHE_SSL_VERSION=	1.40
 
-USE_OPENSSL=	RSA
+USE_OPENSSL=	YES
 
 .include <bsd.port.pre.mk>
 
@@ -52,14 +52,7 @@ USE_OPENSSL=	RSA
 # Set APACHE_PERF_TUNING env. variable to YES to get maximum performance
 #
 
-.if !defined(OPENSSLINC)
-OPENSSLINC=	${PREFIX}/ssl/include
-.endif
 CFLAGS+=	-I${OPENSSLINC}/openssl
-
-.if !defined(OPENSSLLIB)
-OPENSSLLIB=	${PREFIX}/ssl/lib
-.endif
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	\
@@ -90,11 +83,7 @@ CFLAGS+=	-O6 -fomit-frame-pointer
 .endif
 
 CONFIGURE_ENV=	OPTIM='${OPTIM}'
-.if defined(OPENSSL_RSAREF)
-CONFIGURE_ENV+=	EXTRA_SSL_LIBS="-L${OPENSSLLIB} -lRSAglue -L${LOCALBASE}/lib -lrsaref"
-.else
 CONFIGURE_ENV+=	EXTRA_SSL_LIBS="-L${OPENSSLLIB} -L${LOCALBASE}/lib"
-.endif
 
 MAN1=		dbmmanage.1 htdigest.1 htpasswd.1
 MAN8=		ab.8 httpsdctl.8 apxs.8 httpsd.8 logresolve.8 rotatelogs.8

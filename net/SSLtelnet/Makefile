@@ -11,7 +11,7 @@ MASTER_SITES=		ftp://ftp.psy.uq.oz.au/pub/Crypto/SSLapps/
 
 MAINTAINER=		issei@jp.FreeBSD.org
 
-USE_OPENSSL=   RSA
+USE_OPENSSL=		YES
 
 .if !defined(BATCH)
 INSTALL_TARGET=		install certificate

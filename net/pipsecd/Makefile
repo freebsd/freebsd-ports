@@ -14,7 +14,7 @@ DISTNAME=	pipsec-19991014
 
 MAINTAINER=	patrick@mindstep.com
 
-USE_OPENSSL=	RSA
+USE_OPENSSL=	YES
 
 ALL_TARGET=	pipsecd
 

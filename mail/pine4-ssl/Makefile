@@ -33,19 +33,12 @@ FILESDIR=	${.CURDIR}/files
 
 EXTRA_PATCHES=	${FILESDIR}/extrapatch-*
 
-USE_OPENSSL=	RSA
-
-.include <bsd.port.pre.mk>
+USE_OPENSSL=	YES
 
 post-extract:
 	( cd ${WRKSRC} ; tar xfz ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} )
 
 do-build:
-.if defined(OPENSSL_RSAREF)
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ./build bsf EXTRAAUTHENTICATORS=ssl RSAREF=yes)
-.else
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ./build bsf EXTRAAUTHENTICATORS=ssl)
-.endif
 
-PRE_MK_INCLUDED=	yes
 .include "${MASTERDIR}/Makefile"

@@ -13,7 +13,7 @@ DISTNAME=	sslproxy.2000_Jan_29
 
 MAINTAINER=	alexlh@funk.org
 
-USE_OPENSSL=	RSA
+USE_OPENSSL=	YES
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sslproxy ${PREFIX}/bin/sslproxy
