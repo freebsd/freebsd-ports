@@ -3,7 +3,7 @@
 # Date created:         18 July 1995
 # Whom:                 jmacd
 #
-# $Id: Makefile,v 1.16 1999/06/21 11:07:04 sheldonh Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       xpilot-4.1.0

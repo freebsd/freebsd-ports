@@ -3,7 +3,7 @@
 # Date created:		27 Apr 1996
 # Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
-# $Id: Makefile,v 1.10 1998/12/22 16:07:01 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xskat-3.1

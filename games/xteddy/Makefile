@@ -3,7 +3,7 @@
 # Date created:        3 June 1998
 # Whom:                Eckart "Isegrim" Hofmann
 #
-# $Id: Makefile,v 1.4 1998/09/17 00:32:40 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xteddy-1.0

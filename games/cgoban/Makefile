@@ -3,7 +3,7 @@
 # Date created:        28 October 1996
 # Whom:                simonm@dcs.gla.ac.uk
 #
-# $Id: Makefile,v 1.8 1998/08/05 09:30:52 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	cgoban-1.9.5

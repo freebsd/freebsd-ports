@@ -3,7 +3,7 @@
 # Date created:        16 November 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.7 1999/01/12 16:51:30 vanilla Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xsokoban-3.3c

@@ -3,7 +3,7 @@
 # Date created:         15 Mar 1999
 # Whom:                 Donald Burr <dburr@FreeBSD.ORG>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	BRMH-2.2p2.freebsd.bin

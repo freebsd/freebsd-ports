@@ -3,7 +3,7 @@
 # Date created:         20 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.8 1998/11/28 00:44:33 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	golddig2

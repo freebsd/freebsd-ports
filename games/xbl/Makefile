@@ -3,7 +3,7 @@
 # Date created:		May 25 1997
 # Whom:			pgs (original)
 #
-# $Id: Makefile,v 1.5 1998/09/21 07:35:03 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xbl-1.0j

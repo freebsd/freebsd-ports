@@ -3,7 +3,7 @@
 # Date created:				7 May 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=		starlanes-1.2.2

@@ -3,7 +3,7 @@
 # Date created:		19 Feb 1998
 # Whom:			eivind
 #
-# $Id: Makefile,v 1.10 1998/11/29 12:33:04 eivind Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xscavenger-135

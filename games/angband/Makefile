@@ -3,7 +3,7 @@
 # Date created:        21 Feb 1997
 # Whom:                Matthew Hunt <mph@pobox.com>
 #
-# $Id: Makefile,v 1.6 1998/04/17 23:26:22 mph Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	angband-283

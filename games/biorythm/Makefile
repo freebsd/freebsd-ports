@@ -3,7 +3,7 @@
 # Date created:				4 May 1999
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=		biorythm-1.1.1

@@ -3,7 +3,7 @@
 # Date created:				18 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.2 1998/08/05 09:30:52 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		bogged-1.0.0

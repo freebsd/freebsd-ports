@@ -3,7 +3,7 @@
 # Date created:				28 June 1998
 # Whom:					Matthew Hunt <mph@FreeBSD.org>
 #
-# $Id: Makefile,v 1.7 1998/08/26 18:32:47 mph Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		xzip181

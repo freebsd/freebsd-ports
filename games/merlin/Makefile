@@ -3,7 +3,7 @@
 # Date created:				12 August 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	merlin

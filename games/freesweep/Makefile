@@ -3,7 +3,7 @@
 # Date created:				25 July 1999
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	freesweep-0.86

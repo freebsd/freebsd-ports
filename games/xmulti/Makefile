@@ -3,7 +3,7 @@
 # Date created:        4 Jun 1998
 # Whom:                Toru YANO <toru@s-fine.co.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1998/11/24 09:14:07 flathill Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xmul200b4

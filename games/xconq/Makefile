@@ -3,7 +3,7 @@
 # Date created:         2 Jun 1998
 # Whom:                 Don Croyle <croyle@gelemna.ft-wayne.in.us>
 #
-# $Id: Makefile,v 1.8 1999/06/05 22:29:33 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xconq-7.2.2

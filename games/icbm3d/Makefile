@@ -3,7 +3,7 @@
 # Date created:				20 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.3 1998/08/05 09:30:55 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	icbm3d.0.4

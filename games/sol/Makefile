@@ -3,7 +3,7 @@
 # Date created:				12 April 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/01 02:02:40 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	sol-1.0.6

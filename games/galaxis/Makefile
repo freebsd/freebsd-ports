@@ -3,7 +3,7 @@
 # Date created:				30 June 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=		galaxis-1.1

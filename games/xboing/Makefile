@@ -3,7 +3,7 @@
 # Date created:		31 January 1995
 # Whom:			janek
 #
-# $Id: Makefile,v 1.11 1998/09/17 00:32:35 asami Exp $
+# $FreeBSD$
 
 DISTNAME=	xboing2.4
 PKGNAME=	xboing-2.4

@@ -3,7 +3,7 @@
 # Date created:         11 September 1998
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.14 1999/06/04 09:06:31 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       pysol-2.14

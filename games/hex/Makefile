@@ -3,7 +3,7 @@
 # Date created:		9 Aug 1999
 # Whom:			Will Andrews <andrews@technologist.com>
 #
-# $Id: Makefile,v 1.1.1.1 1999/08/14 03:52:27 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	hex-0.0.2

@@ -3,7 +3,7 @@
 # Date created:        3 December 1998
 # Whom:                Sugimoto Sadahiro <ixtl@utmc.or.jp>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	mindfocus-0.86.1

@@ -3,7 +3,7 @@
 # Date created:		31 Januar 1995
 # Whom:			janek
 #
-# $Id: Makefile,v 1.9 1998/09/28 02:25:16 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xminesweep3.0

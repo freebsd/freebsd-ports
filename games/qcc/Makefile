@@ -3,7 +3,7 @@
 # Date created:					October 25th 1996
 # Whom:						jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.3 1997/01/03 09:36:48 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	qcc

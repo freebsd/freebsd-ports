@@ -3,7 +3,7 @@
 # Date created:		22 July 1999
 # Whom:			Oleg V. Volkov <rover@lglobus.ru>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=       adom-099g14-elf

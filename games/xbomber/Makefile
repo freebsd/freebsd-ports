@@ -3,7 +3,7 @@
 # Date created:        28 June 1998
 # Whom:                marcus
 #
-# $Id: Makefile,v 1.2 1999/04/20 20:26:15 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       xbomber.0.8

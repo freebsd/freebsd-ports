@@ -3,7 +3,7 @@
 # Date created:         15 Mar 1999
 # Whom:                 Donald Burr <dburr@FreeBSD.ORG>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	COW.3.00pl0.FreeBSD

@@ -3,7 +3,7 @@
 # Date created:         21 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.14 1997/06/12 05:10:18 asami Exp $
+# $FreeBSD$
 
 DISTNAME=	xmris.4.04
 PKGNAME=	xmris-4.04

@@ -3,7 +3,7 @@
 # Date created:		29 May 1999
 # Whom:			Chris Piazza <cpiazza@FreeBSD.org>
 #
-# $Id: Makefile,v 1.1.1.1 1999/06/06 17:07:35 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	blockade-1_00-linux

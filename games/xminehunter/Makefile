@@ -3,7 +3,7 @@
 # Date created:		09 January 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.8 1998/10/13 14:47:14 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xminehunter-0.4

@@ -3,7 +3,7 @@
 # Date created:         15 March 1995
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.10 1998/10/03 13:39:46 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       xlife

@@ -3,7 +3,7 @@
 # Date created:		27 August 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.10 1998/09/17 00:32:37 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xgalaga-2.0

@@ -3,7 +3,7 @@
 # Date created:				20 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=		xhexagons-5.4.4

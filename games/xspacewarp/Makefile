@@ -3,7 +3,7 @@
 # Date created:				16 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/19 06:34:29 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		xspacewarp-1.2

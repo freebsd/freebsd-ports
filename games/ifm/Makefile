@@ -3,7 +3,7 @@
 # Date created:				Mon Oct 12 12:32:07 EDT 1998
 # Whom:					Dave Chapeskie <dchapes@ddm.on.ca>
 #
-# $Id: Makefile,v 1.1.1.1 1998/10/19 17:00:15 mph Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ifm41

@@ -3,7 +3,7 @@
 # Date created:		10 August 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1999/01/18 06:42:59 asami Exp $
+# $FreeBSD$
 
 DISTNAME=	wmtimebomb.20
 PKGNAME=	wmtimebomb-0.2.0

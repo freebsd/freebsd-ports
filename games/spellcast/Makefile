@@ -3,7 +3,7 @@
 # Date created:				28 June 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.2 1998/08/05 09:30:57 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		spellcast-1.1

@@ -3,7 +3,7 @@
 # Date created:				13 May 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=		empire

@@ -3,7 +3,7 @@
 # Date created:         22 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.13 1998/09/28 02:20:01 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xjewel-1.6

@@ -3,7 +3,7 @@
 # Date created:		22 December 1995
 # Whom:			markm
 #
-# $Id: Makefile,v 1.8 1998/08/05 09:31:01 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xroach

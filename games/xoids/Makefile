@@ -3,7 +3,7 @@
 # Date created:				16 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.4 1998/09/15 11:13:17 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		xoids-1.5

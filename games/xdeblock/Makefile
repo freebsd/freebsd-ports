@@ -3,7 +3,7 @@
 # Date created:        28 December 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.4 1999/01/12 16:51:18 vanilla Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xdeblo_v1.0

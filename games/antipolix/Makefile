@@ -3,7 +3,7 @@
 # Date created:			2 December 1998
 # Whom:				Andrey Zakhvatov
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=		AntipoliX_2.1

@@ -3,7 +3,7 @@
 # Date created:				13 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.6 1998/09/17 00:32:33 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		Maelstrom-1.4.3-L2.0.6-src

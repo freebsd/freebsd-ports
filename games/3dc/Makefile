@@ -3,7 +3,7 @@
 # Date created:				2 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.7 1998/09/21 01:35:30 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		3Dc-0.8.1

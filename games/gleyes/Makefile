@@ -3,7 +3,7 @@
 # Date created:		2 December 1998
 # Whom:			Malte Lance <malte.lance@gmx.net>
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/17 14:34:50 flathill Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gleyes-0.2

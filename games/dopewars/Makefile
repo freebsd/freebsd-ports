@@ -3,7 +3,7 @@
 # Date created:			16 May 1999
 # Whom:				Jim Mock <jim@FreeBSD.org>
 #
-# $Id: Makefile,v 1.2 1999/06/26 08:37:27 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	dopewars-1.4.3

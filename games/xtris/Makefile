@@ -3,7 +3,7 @@
 # Date created:         24. Sep 97
 # Whom:                 sec@42.org
 #
-# $Id: Makefile,v 1.1.1.1 1998/01/25 22:29:34 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       xtris-1.15

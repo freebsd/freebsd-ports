@@ -3,7 +3,7 @@
 # Date created:				2 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.2 1998/07/27 23:24:31 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		affenspiel-1.0

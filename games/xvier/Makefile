@@ -3,7 +3,7 @@
 # Date created:				17 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/03/27 14:07:07 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		xvier

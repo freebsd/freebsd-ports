@@ -3,7 +3,7 @@
 # Date created:				6 Oct 1996
 # Whom:					oly
 #
-# $Id: Makefile,v 1.6 1999/03/08 21:14:53 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xripple

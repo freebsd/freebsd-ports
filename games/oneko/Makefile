@@ -3,7 +3,7 @@
 # Date created:		5 December 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.12 1998/11/12 23:07:17 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	oneko-1.2

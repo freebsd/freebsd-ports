@@ -3,7 +3,7 @@
 # Date created:		26 June 1999
 # Whom:			Brian Buchanan <brian@CSUA.Berkeley.EDU>
 #
-# $Id: Makefile,v 1.4 1999/08/17 19:36:54 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		FlightGear-${FLIGHTGEAR_VERSION}

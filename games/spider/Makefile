@@ -3,7 +3,7 @@
 # Date created:         2 Oct 1995
 # Whom:                 se
 #
-# $Id: Makefile,v 1.5 1998/09/28 02:13:23 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	spider

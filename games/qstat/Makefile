@@ -3,7 +3,7 @@
 # Date created:        28 May 1998
 # Whom:                Daniel O'Connor <darius@dons.net.au>
 #
-# $Id: Makefile,v 1.3 1999/05/09 16:48:14 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	qstat23d

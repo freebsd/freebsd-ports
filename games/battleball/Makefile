@@ -3,7 +3,7 @@
 # Date created:				18 December 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	battleball.20.src

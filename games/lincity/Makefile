@@ -3,7 +3,7 @@
 # Date created:         13 Feb 1997
 # Whom:                 Julian Assange
 #
-# $Id: Makefile,v 1.3 1998/09/28 02:10:29 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       lincity109

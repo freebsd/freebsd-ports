@@ -3,7 +3,7 @@
 # Date created:        30 January 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.3 1997/07/01 09:03:49 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xev111

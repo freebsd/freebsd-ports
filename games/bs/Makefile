@@ -3,7 +3,7 @@
 # Date created:				11 May 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=		bs-2.1

@@ -3,7 +3,7 @@
 # Date created:         27. April 1996
 # Whom:                 Ronald Kuehn <kuehn@rz.tu-clausthal.de>
 #
-# $Id: Makefile,v 1.14 1999/05/04 23:18:09 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       imaze

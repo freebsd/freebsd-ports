@@ -3,7 +3,7 @@
 # Date created:				10 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.5 1998/09/27 16:06:52 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	KnightCap-3.5

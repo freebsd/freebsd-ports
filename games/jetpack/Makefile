@@ -3,7 +3,7 @@
 # Date created:         21 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.17 1998/09/28 02:07:55 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	jetpack

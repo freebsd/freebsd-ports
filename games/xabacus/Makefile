@@ -3,7 +3,7 @@
 # Date created:				3 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.2 1998/07/27 23:24:48 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		xabacus-5.4.4

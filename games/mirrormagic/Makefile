@@ -3,7 +3,7 @@
 # Date created:				1 April 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1999/02/04 00:40:47 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		mirrormagic-1.3

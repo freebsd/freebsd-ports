@@ -3,7 +3,7 @@
 # Date created:				1 June 1998
 # Whom:					Stefan Eggers <seggers@semyam.dinoco.de>
 #
-# $Id: Makefile,v 1.1.1.1 1998/06/04 02:37:37 mph Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	crafty-open-large-19960910

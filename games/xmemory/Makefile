@@ -3,7 +3,7 @@
 # Date Created:		Sat Feb  7 21:37:09 EST 1998
 # Whom:			Dave Chapeskie <dchapes@ddm.on.ca>
 #
-# $Id: Makefile,v 1.1.1.1 1998/02/12 08:11:09 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xmemory-3.7

@@ -3,7 +3,7 @@
 # Date created:		28 Feb 1997
 # Whom:			proff
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	an-0.93

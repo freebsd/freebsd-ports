@@ -3,7 +3,7 @@
 # Date created:        17 February 1999
 # Whom:                Seiichirou Hiraoka
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	xosmulti_1.00_tar

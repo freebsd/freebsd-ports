@@ -3,7 +3,7 @@
 # Date created:				19 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/12 23:48:32 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		xmlink-5.4.4

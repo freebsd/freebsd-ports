@@ -3,7 +3,7 @@
 # Date created:				12 April 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.6 1998/11/28 09:05:01 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		shhcards-1.0.4

@@ -3,7 +3,7 @@
 # Date created:		24 April 1999
 # Whom:			Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
 #
-# $Id: Makefile,v 1.7 1999/08/12 00:27:08 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	bnetd-0.4.16

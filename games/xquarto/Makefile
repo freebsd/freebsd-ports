@@ -3,7 +3,7 @@
 # Date created:				9 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.4 1998/09/17 00:32:38 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xquarto-1.0

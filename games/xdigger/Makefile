@@ -3,7 +3,7 @@
 # Date created:				29 June 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.4 1999/06/22 17:36:15 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		xdigger-1.0.9

@@ -3,7 +3,7 @@
 # Date created:				18 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.2 1998/07/05 11:41:43 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xworm102

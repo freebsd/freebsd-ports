@@ -3,7 +3,7 @@
 # Date created:		1998/05/28
 # Whom:			cjohnson
 #
-# $Id: Makefile,v 1.1.1.1 1998/08/09 01:10:30 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tinymux-1.4p13

@@ -3,7 +3,7 @@
 # Date created:		5 March 1995
 # Whom:			joerg
 #
-# $Id: Makefile,v 1.16 1999/02/03 10:37:11 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	acm-5.0

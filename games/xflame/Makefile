@@ -3,7 +3,7 @@
 # Date created:        2 January 1999
 # Whom:                Kris Kennaway <kkennawa@physics.adelaide.edu.au>
 #
-# $Id: Makefile,v 1.1.1.1 1999/01/28 18:58:34 sada Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xflame-1.1.1

@@ -3,7 +3,7 @@
 # Date created:				13 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.3 1998/08/05 09:30:58 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xchain_1.0-2

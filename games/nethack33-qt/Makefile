@@ -3,7 +3,7 @@
 # Date created:		So   6 Apr 1997 04:25:57 MET DST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.22 1999/05/29 10:57:29 andreas Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	nethack-3.2.2

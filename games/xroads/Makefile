@@ -3,7 +3,7 @@
 # Date created:				21 June 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.3 1998/08/05 09:31:02 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xroads-v0.3

@@ -3,7 +3,7 @@
 # Date created:         22 June 1995
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.4 1998/09/28 02:25:32 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       xtic1.12

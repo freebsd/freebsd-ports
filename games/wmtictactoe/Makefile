@@ -3,7 +3,7 @@
 # Date created:			28 Apr 1999
 # Whom:				Jim Mock <jim@FreeBSD.org>
 #
-# $Id: Makefile,v 1.2 1999/06/27 01:04:21 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	wmtictactoe-1.0

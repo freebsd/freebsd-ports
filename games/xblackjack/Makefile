@@ -3,7 +3,7 @@
 # Date created:         
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.6 1998/10/13 14:18:50 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xblackjack-2.2

@@ -3,7 +3,7 @@
 # Date created:  7 December 1997
 # Whom:  Don Croyle <croyle@gelemna.ft-wayne.in.us>
 #
-# $Id: Makefile,v 1.2 1998/09/28 02:05:15 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	bugsx108

@@ -3,7 +3,7 @@
 # Date created:		5 March 1997
 # Whom:			Matthew Hunt <mph@pobox.com>
 #
-# $Id: Makefile,v 1.8 1999/06/07 20:23:31 mph Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xpat2-1.06

@@ -3,7 +3,7 @@
 # Date created:         23 Dec 1998
 # Whom:                 imp
 #
-# $Id: Makefile,v 1.4 1999/01/28 04:25:47 imp Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	seahaven-1.41

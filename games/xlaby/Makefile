@@ -3,7 +3,7 @@
 # Date created:				3 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.2 1998/07/27 23:25:01 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		xlaby-2.0.1

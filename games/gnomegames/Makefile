@@ -3,7 +3,7 @@
 # Date created:				03 July 1998
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.16 1999/05/09 17:06:20 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gnome-games-1.0.2

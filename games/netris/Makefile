@@ -3,7 +3,7 @@
 # Date created:	1 August 1996
 # Whom:	desmo
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=		netris-0.4

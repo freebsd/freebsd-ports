@@ -3,7 +3,7 @@
 # Date created:				25 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.4 1998/07/27 23:25:24 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		xskewb-5.4.4

@@ -3,7 +3,7 @@
 # Date created:		16 Aug 1996
 # Whom:			joerg@freebsd.org
 #
-# $Id: Makefile,v 1.5 1998/10/03 13:39:46 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xmahjongg

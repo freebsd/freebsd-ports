@@ -3,7 +3,7 @@
 # Date created:         26-Apr-97
 # Whom:                 johnh@isi.edu
 #
-# $Id: Makefile,v 1.5 1998/08/07 23:56:20 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       dontspace-1.2

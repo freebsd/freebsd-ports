@@ -3,7 +3,7 @@
 # Date created:		21 August 1998
 # Whom:			issei <issei@jp.FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1999/02/20 00:48:21 flathill Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xchada01

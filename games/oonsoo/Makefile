@@ -3,7 +3,7 @@
 # Date created:		23rd June, 1997
 # Whom:			Joel Sutton <sutton@aardvark.apana.org.au>
 #
-# $Id: Makefile,v 1.3 1998/09/28 02:12:05 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	oonsoo-1.1

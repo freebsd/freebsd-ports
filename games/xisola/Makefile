@@ -3,7 +3,7 @@
 # Date created:				9 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/18 09:10:51 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		xisola-1.0

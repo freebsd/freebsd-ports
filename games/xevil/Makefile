@@ -3,7 +3,7 @@
 # Date created:         6 May 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.6 1998/08/23 07:34:41 hoek Exp $
+# $FreeBSD$
 #
 
 PKGNAME=	xevil-1.5

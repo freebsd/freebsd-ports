@@ -3,7 +3,7 @@
 # Date created:				23 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.7 1999/01/07 08:19:33 simokawa Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		xmastermind-0.1
