@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libofx
-PORTVERSION=	0.6.6
+PORTVERSION=	0.7.0
 CATEGORIES=	finance
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,6 +16,7 @@ COMMENT=	OpenSource implementation of the OFX (Open Financial eXchange)
 
 LIB_DEPENDS=	osp.3:${PORTSDIR}/textproc/opensp
 
+USE_GMAKE=	yes
 USE_GNOME=	gnometarget lthack
 USE_INC_LIBTOOL_VER=	13
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
