@@ -23,9 +23,10 @@ VIM_PATH=	${PREFIX}/share/vim/vim62
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 do-install:
-	${CP} -rf ${WRKSRC}/doc ${WRKSRC}/doc.zh_CN
+	@${MKDIR} ${WRKSRC}/doc.zh_CN
+	${CP} -rf ${WRKSRC}/doc/ ${WRKSRC}/doc.zh_CN/
 	(cd ${WRKSRC}; ${TAR} -cf - doc.zh_CN) | \
-	${TAR} -xf - -C ${VIM_PATH}/
+	${TAR} --exclude CVS -xf - -C ${VIM_PATH}/
 
 post-install:
 	@${SED} "s|%%PREFIX%%|${PREFIX}|g" \
