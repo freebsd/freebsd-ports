@@ -3,7 +3,7 @@
 # Date created:		5 January 1995
 # Whom:			pst
 #
-# $Id: Makefile,v 1.11 1998/08/17 20:21:39 hoek Exp $
+# $Id: Makefile,v 1.12 1998/09/19 00:37:28 hoek Exp $
 #
 
 DISTNAME=       gsm-1.0.10
@@ -18,6 +18,6 @@ MAN3=		gsm.3 gsm_explode.3 gsm_option.3 gsm_print.3
 MLINKS=		toast.1 untoast.1	toast.1 tcat.1
 
 post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
