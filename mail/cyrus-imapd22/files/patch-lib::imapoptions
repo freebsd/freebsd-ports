@@ -1,0 +1,22 @@
+Index: lib/imapoptions
+diff -u lib/imapoptions.orig lib/imapoptions
+--- lib/imapoptions.orig	Thu Mar 20 04:00:39 2003
++++ lib/imapoptions	Fri Mar 21 15:27:44 2003
+@@ -454,7 +454,7 @@
+ /* The mechanism used by the server to verify plaintext passwords. 
+    Possible values include "auxprop", "saslauthd", and "pwcheck". */
+ 
+-{ "sendmail", "/usr/lib/sendmail", STRING }
++{ "sendmail", "/usr/sbin/sendmail", STRING }
+ /* The pathname of the sendmail executable.  Sieve invokes sendmail
+    for sending rejections, redirects and vacation responses. */
+ 
+@@ -475,7 +475,7 @@
+ /* Maximum number of sieve scripts any user may have, enforced at
+    submission by timsieved(8). */
+    
+-{ "sievedir", "/usr/sieve", STRING }
++{ "sievedir", "/var/imap/sieve", STRING }
+ /* If sieveusehomedir is false, this directory is searched for Sieve
+    scripts. */
+ 

@@ -3,6 +3,7 @@ bin/imtest
 bin/installsieve
 bin/lmtptest
 bin/mupdatetest
+bin/nntptest
 bin/pop3test
 bin/sieveshell
 bin/sivtest
@@ -15,24 +16,28 @@ cyrus/bin/cvt_cyrusdb
 cyrus/bin/cyrdump
 cyrus/bin/cyrquota
 cyrus/bin/deliver
+%%NNTP%%cyrus/bin/expirenews
 cyrus/bin/feedcyrus
+%%NNTP%%cyrus/bin/fetchnews
 cyrus/bin/fud
 cyrus/bin/imapd
 cyrus/bin/ipurge
 cyrus/bin/lmtpd
+%%MURDER%%cyrus/bin/lmtpproxyd
+cyrus/bin/masssievec
 cyrus/bin/master
 cyrus/bin/mbpath
 cyrus/bin/mkimap
+%%MURDER%%cyrus/bin/mupdate
+%%NNTP%%cyrus/bin/nntpd
 cyrus/bin/notifyd
 cyrus/bin/pop3d
+%%MURDER%%cyrus/bin/proxyd
 cyrus/bin/reconstruct
+cyrus/bin/sievec
 cyrus/bin/squatter
 cyrus/bin/timsieved
 cyrus/bin/tls_prune
-%%MURDER%%cyrus/bin/lmtpproxyd
-%%MURDER%%cyrus/bin/mupdate
-%%MURDER%%cyrus/bin/pop3proxyd
-%%MURDER%%cyrus/bin/proxyd
 @unexec if cmp -s %D/etc/cyrus.conf %D/etc/cyrus.conf.dist; then rm -f %D/etc/cyrus.conf; fi
 etc/cyrus.conf.dist
 @exec [ -f %B/cyrus.conf ] || cp %B/%f %B/cyrus.conf
@@ -40,7 +45,6 @@ etc/cyrus.conf.dist
 etc/imapd.conf.dist
 @exec [ -f %B/imapd.conf ] || cp %B/%f %B/imapd.conf
 etc/rc.d/imapd.sh.sample
-include/cyrus/acap.h
 include/cyrus/acl.h
 include/cyrus/assert.h
 include/cyrus/auth.h
@@ -50,10 +54,13 @@ include/cyrus/cyrusdb.h
 include/cyrus/glob.h
 include/cyrus/gmtoff.h
 include/cyrus/hash.h
+include/cyrus/imapopts.h
 include/cyrus/imapurl.h
 include/cyrus/imclient.h
 include/cyrus/imparse.h
 include/cyrus/iptostring.h
+include/cyrus/libconfig.h
+include/cyrus/libcyr_cfg.h
 include/cyrus/lock.h
 include/cyrus/lsort.h
 include/cyrus/map.h
@@ -64,11 +71,13 @@ include/cyrus/parseaddr.h
 include/cyrus/prot.h
 include/cyrus/retry.h
 include/cyrus/rfc822date.h
+include/cyrus/strhash.h
+include/cyrus/strhash.o
 include/cyrus/stristr.h
 include/cyrus/sysexits.h
 include/cyrus/util.h
 include/cyrus/xmalloc.h
-lib/libacap.a
+lib/libcyrus_min.a
 lib/libcyrus.a
 lib/perl5/%%PERL_VERSION%%/man/man3/Cyrus::IMAP.3
 lib/perl5/%%PERL_VERSION%%/man/man3/Cyrus::IMAP::Admin.3
