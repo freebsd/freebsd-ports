@@ -1,5 +1,5 @@
---- src/uuid/uuid.c.orig	Sun Apr  6 02:30:20 2003
-+++ src/uuid/uuid.c	Sun Apr  6 02:30:41 2003
+--- upnp/src/uuid/uuid.c.orig	Sun Apr  6 02:30:20 2003
++++ upnp/src/uuid/uuid.c	Sun Apr  6 02:30:41 2003
 @@ -21,6 +21,7 @@
  #include <stdio.h>
  #include <stdlib.h>
