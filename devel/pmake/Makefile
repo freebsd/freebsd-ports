@@ -8,7 +8,9 @@
 PORTNAME=	pmake
 PORTVERSION=	2.1.33
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.icsi.berkeley.edu/pub/ai/stolcke/software/
+MASTER_SITES=	ftp://ftp.icsi.berkeley.edu/pub/ai/stolcke/software/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	steve
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	steve@freebsd.org
