@@ -282,6 +282,7 @@
     SUBDIR += ttraffic
     SUBDIR += tux-aqfh
     SUBDIR += tuxkart
+    SUBDIR += tuxpuck
     SUBDIR += tuxracer
     SUBDIR += tuxtype
     SUBDIR += tvp

@@ -1,0 +1,7 @@
+Anyone remember "Shufflepuck Cafe" for the Amiga/AtariST?
+
+TuxPuck is a shufflepuck game written in C using SDL.  The
+player  moves a pad around a board and tries to shoot down
+the puck through the opponents defense.
+
+WWW: http://www.efd.lth.se/~d00jkr/tuxpuck/
