@@ -1,0 +1,79 @@
+
+$FreeBSD$
+
+--- Makefile.orig
++++ Makefile
+@@ -322,50 +322,50 @@
+   # overridden by system-specific things.
+   #
+   $(BIN_DIR)/ftlint$E: $(OBJ_DIR)/ftlint.$(SO) $(FTLIB) $(COMMON_OBJ)
+-	  $(COMMON_LINK)
++	  $(COMMON_LINK) $(MATH)
+ 
+   $(BIN_DIR)/ftbench$E: $(OBJ_DIR)/ftbench.$(SO) $(FTLIB) $(COMMON_OBJ)
+-	  $(COMMON_LINK)
++	  $(COMMON_LINK) $(MATH)
+ 
+   $(BIN_DIR)/ftchkwd$E: $(OBJ_DIR)/ftchkwd.$(SO) $(FTLIB) $(COMMON_OBJ)
+-	  $(COMMON_LINK)
++	  $(COMMON_LINK) $(MATH)
+ 
+   $(BIN_DIR)/ftmemchk$E: $(OBJ_DIR)/ftmemchk.$(SO) $(FTLIB) $(COMMON_OBJ)
+-	  $(COMMON_LINK)
++	  $(COMMON_LINK) $(MATH)
+ 
+   $(BIN_DIR)/compos$E: $(OBJ_DIR)/compos.$(SO) $(FTLIB) $(COMMON_OBJ)
+-	  $(COMMON_LINK)
++	  $(COMMON_LINK) $(MATH)
+ 
+   $(BIN_DIR)/ftdump$E: $(OBJ_DIR)/ftdump.$(SO) $(FTLIB)
+-	  $(COMMON_LINK)
++	  $(COMMON_LINK) $(MATH)
+ 
+   $(BIN_DIR)/fttry$E: $(OBJ_DIR)/fttry.$(SO) $(FTLIB)
+-	  $(LINK)
++	  $(LINK) $(MATH)
+ 
+   $(BIN_DIR)/ftsbit$E: $(OBJ_DIR)/ftsbit.$(SO) $(FTLIB)
+-	  $(LINK)
++	  $(LINK) $(MATH)
+ 
+   $(BIN_DIR)/t1dump$E: $(OBJ_DIR)/t1dump.$(SO) $(FTLIB)
+-	  $(LINK)
++	  $(LINK) $(MATH)
+ 
+   $(BIN_DIR)/ttdebug$E: $(OBJ_DIR)/ttdebug.$(SO) $(FTLIB)
+-	  $(LINK)
++	  $(LINK) $(MATH)
+ 
+   $(BIN_DIR)/testname$E: $(OBJ_DIR)/testname.$(SO) $(FTLIB)
+-	  $(LINK)
++	  $(LINK) $(MATH)
+ 
+ 
+   $(BIN_DIR)/ftview$E: $(OBJ_DIR)/ftview.$(SO) $(FTLIB) \
+                        $(GRAPH_LIB) $(COMMON_OBJ)
+-	  $(GRAPH_LINK)
++	  $(GRAPH_LINK) $(MATH)
+ 
+   $(BIN_DIR)/ftgamma$E: $(OBJ_DIR)/ftgamma.$(SO) $(FTLIB) \
+                        $(GRAPH_LIB) $(COMMON_OBJ)
+-	  $(GRAPH_LINK)
++	  $(GRAPH_LINK) $(MATH)
+ 
+   $(BIN_DIR)/ftmulti$E: $(OBJ_DIR)/ftmulti.$(SO) $(FTLIB) \
+                         $(GRAPH_LIB) $(COMMON_OBJ)
+-	  $(GRAPH_LINK)
++	  $(GRAPH_LINK) $(MATH)
+ 
+   $(BIN_DIR)/ftstring$E: $(OBJ_DIR)/ftstring.$(SO) $(FTLIB) \
+                          $(GRAPH_LIB) $(COMMON_OBJ)
+@@ -373,7 +373,7 @@
+ 
+   $(BIN_DIR)/fttimer$E: $(OBJ_DIR)/fttimer.$(SO) $(FTLIB) \
+                         $(GRAPH_LIB) $(COMMON_OBJ)
+-	  $(GRAPH_LINK)
++	  $(GRAPH_LINK) $(MATH)
+ 
+ 
+ endif
