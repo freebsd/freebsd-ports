@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	FileHandle-Unget
-PORTVERSION=	0.13
+PORTVERSION=	0.15
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	FileHandle
@@ -21,6 +21,10 @@ MAN3=		FileHandle::Unget.3
 
 .include <bsd.port.pre.mk>
 
+.if ${PERL_LEVEL} < 500805
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
+RUN_DEPENDS=	${BUILD_DEPENDS}
+.endif
 .if ${PERL_LEVEL} < 500601
 IGNORE=		This port requires perl 5.6.x or later. Install lang/perl5 then try again
 .endif
