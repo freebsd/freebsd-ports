@@ -1,0 +1,6 @@
+This is the RIPE whois client version 3 (whois3), a feature-rich
+whois client with IPv6 support. This whois client is customized
+for taking advantage of all the extended capabilities of the
+RIPE whois db.
+
+WWW: http://www.ripe.net/db/

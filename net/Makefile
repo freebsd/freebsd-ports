@@ -534,6 +534,7 @@
     SUBDIR += rexx-sock
     SUBDIR += rfbproxy
     SUBDIR += rinetd
+    SUBDIR += ripe-whois
     SUBDIR += ripetools
     SUBDIR += rmsg
     SUBDIR += rrdtool
