@@ -1,13 +1,13 @@
 # ex:ts=8
 # New ports collection makefile for:   	wtf
 # Date created:                        	29 December 2001
-# Whom:                                 Maxime Henrion <mux@sneakerz.org>
+# Whom:                                 Maxime Henrion <mux@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	wtf
-PORTVERSION=	20020210
+PORTVERSION=	20021005
 CATEGORIES=	games
 MASTER_SITES=	http://www.mu.org/~mux/wtf/ \
 		${MASTER_SITE_LOCAL}
