@@ -5,10 +5,8 @@ include/apreq2/apreq_env.h
 include/apreq2/apreq_params.h
 include/apreq2/apreq_version.h
 lib/libapreq2.a
-lib/libapreq2.la
 lib/libapreq2.so
 lib/libapreq2.so.2
-libexec/apache2/mod_apreq.a
 libexec/apache2/mod_apreq.so
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/Cookie.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/Cookie.pod

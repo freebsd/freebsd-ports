@@ -16,13 +16,16 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/r/_/}-dev
 MAINTAINER=	autrijus@autrijus.org
 COMMENT=	Generic Apache2 Request Library
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache2/ModPerl/Config.pm:${PORTSDIR}/www/mod_perl2 \
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache2.pm:${PORTSDIR}/www/mod_perl2 \
 		${SITE_PERL}/ExtUtils/XSBuilder:${PORTSDIR}/devel/p5-ExtUtils-XSBuilder \
 		${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache2/ModPerl/Config.pm:${PORTSDIR}/www/mod_perl2
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
-CONFLICTS=	p5-libapreq
+CONFLICTS=	p5-libapreq-[0-9]*
 
+WITH_APACHE2=	yes
+INSTALLS_SHLIB=	yes
+USE_LIBTOOL_VER=15
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-perl-glue --with-apache2-apxs=${APXS}
