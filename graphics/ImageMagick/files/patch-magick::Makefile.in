@@ -6,7 +6,7 @@
  libMagick_la_LDFLAGS = -no-undefined \
 -	-release $(MAJOR_VERSION).$(MINOR_VERSION).$(MICRO_VERSION)-Q$(QuantumDepth) \
 -	-version-info 0:0:0
-+	-version-info $(MAJOR_VERSION):$(MINOR_VERSION):$(MICRO_VERSION)
++	-version-info $(MAJOR_VERSION):$(MINOR_VERSION):0
  
  
  #AM_CFLAGS = @LIBRARY_EXTRA_CPPFLAGS@
