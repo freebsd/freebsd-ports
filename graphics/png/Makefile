@@ -41,8 +41,8 @@ post-extract:
 #
 .if !defined(WITHOUT_PNG_MMX) && (${ARCH} == "i386")
 	@${ECHO_MSG}
-	@${ECHO_MSG} " If you don't have a CPU with MMX instruction set (Pentium/P55C and higher) you"
-	@${ECHO_MSG} " can add \"WITH_PNG_MMX=YES\" to /etc/make.conf to build libpng without"
+	@${ECHO_MSG} " If you have a CPU without MMX instruction set (anything below Pentium/P55C) you"
+	@${ECHO_MSG} " can add \"WITHOUT_PNG_MMX=YES\" to /etc/make.conf to build libpng without"
 	@${ECHO_MSG} " MMX-optimized assembler routines."
 	@${ECHO_MSG}
 .endif
