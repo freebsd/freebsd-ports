@@ -1,0 +1,11 @@
+Demeter is a cross-platform C++ library that renders 3D terrains using OpenGL.
+Demeter is designed for fast performance and good visual quality and makes use
+of advanced techniques such as dynamic tessellation (adaptive mesh) to render
+vast landscapes in real-time, without the need for high-end hardware. It is
+written as a stand-alone component that can be easily integrated into any kind
+of application.
+
+WWW:	http://www.terrainengine.com/
+
+- Igor Pokrovsky
+ip@doom.homeunix.org
