@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	commons-pool
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1
 CATEGORIES=	java
 MASTER_SITES=	http://www.apache.org/dist/jakarta/commons/pool/source/
 PKGNAMEPREFIX=	jakarta-
-DISTNAME=	pool-${PORTVERSION}-src
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 DIST_SUBDIR=	jakarta
 
 MAINTAINER=	toha@toha.org.ua
@@ -20,13 +20,13 @@ BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant
 
 USE_JAVA=	1.2+
 
-WRKSRC=		${WRKDIR}/commons-${DISTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
 ANT?=		${LOCALBASE}/bin/ant
 .if defined(NOPORTDOCS)
-ANT_TARGET=	dist-jar
+ANT_TARGET=	build-jar
 .else
-ANT_TARGET=	dist-jar doc
+ANT_TARGET=	build-jar javadoc
 .endif
 JAVASHAREDIR=	${PREFIX}/share/java
 JARDIR=		${JAVASHAREDIR}/classes

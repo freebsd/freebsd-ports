@@ -1,48 +1,54 @@
-share/doc/commons-dbcp/allclasses-frame.html
-share/doc/commons-dbcp/allclasses-noframe.html
-share/doc/commons-dbcp/constant-values.html
-share/doc/commons-dbcp/index-all.html
-share/doc/commons-dbcp/index.html
-share/doc/commons-dbcp/org/apache/commons/dbcp/AbandonedConfig.html
-share/doc/commons-dbcp/org/apache/commons/dbcp/AbandonedObjectPool.html
-share/doc/commons-dbcp/org/apache/commons/dbcp/AbandonedTrace.html
-share/doc/commons-dbcp/org/apache/commons/dbcp/BasicDataSource.html
-share/doc/commons-dbcp/org/apache/commons/dbcp/BasicDataSourceFactory.html
-share/doc/commons-dbcp/org/apache/commons/dbcp/ConnectionFactory.html
-share/doc/commons-dbcp/org/apache/commons/dbcp/DataSourceConnectionFactory.html
-share/doc/commons-dbcp/org/apache/commons/dbcp/DbcpException.html
-share/doc/commons-dbcp/org/apache/commons/dbcp/DelegatingCallableStatement.html
-share/doc/commons-dbcp/org/apache/commons/dbcp/DelegatingConnection.html
-share/doc/commons-dbcp/org/apache/commons/dbcp/DelegatingPreparedStatement.html
-share/doc/commons-dbcp/org/apache/commons/dbcp/DelegatingResultSet.html
-share/doc/commons-dbcp/org/apache/commons/dbcp/DelegatingStatement.html
-share/doc/commons-dbcp/org/apache/commons/dbcp/DriverConnectionFactory.html
-share/doc/commons-dbcp/org/apache/commons/dbcp/DriverManagerConnectionFactory.html
-share/doc/commons-dbcp/org/apache/commons/dbcp/PoolableConnection.html
-share/doc/commons-dbcp/org/apache/commons/dbcp/PoolableConnectionFactory.html
-share/doc/commons-dbcp/org/apache/commons/dbcp/PoolablePreparedStatement.html
-share/doc/commons-dbcp/org/apache/commons/dbcp/PoolingConnection.html
-share/doc/commons-dbcp/org/apache/commons/dbcp/PoolingDataSource.html
-share/doc/commons-dbcp/org/apache/commons/dbcp/PoolingDriver.html
-share/doc/commons-dbcp/org/apache/commons/dbcp/cpdsadapter/DriverAdapterCPDS.html
-share/doc/commons-dbcp/org/apache/commons/dbcp/cpdsadapter/package-frame.html
-share/doc/commons-dbcp/org/apache/commons/dbcp/cpdsadapter/package-summary.html
-share/doc/commons-dbcp/org/apache/commons/dbcp/package-frame.html
-share/doc/commons-dbcp/org/apache/commons/dbcp/package-summary.html
-share/doc/commons-dbcp/org/apache/commons/jocl/ConstructorUtil.html
-share/doc/commons-dbcp/org/apache/commons/jocl/JOCLContentHandler.html
-share/doc/commons-dbcp/org/apache/commons/jocl/package-frame.html
-share/doc/commons-dbcp/org/apache/commons/jocl/package-summary.html
-share/doc/commons-dbcp/overview-frame.html
-share/doc/commons-dbcp/overview-summary.html
-share/doc/commons-dbcp/package-list
-share/doc/commons-dbcp/packages.html
-share/doc/commons-dbcp/serialized-form.html
-share/doc/commons-dbcp/stylesheet.css
-@dirrm share/doc/commons-dbcp/org/apache/commons/dbcp/cpdsadapter
-@dirrm share/doc/commons-dbcp/org/apache/commons/dbcp
-@dirrm share/doc/commons-dbcp/org/apache/commons/jocl
-@dirrm share/doc/commons-dbcp/org/apache/commons
-@dirrm share/doc/commons-dbcp/org/apache
-@dirrm share/doc/commons-dbcp/org
-@dirrm share/doc/commons-dbcp
+share/java/classes/commons-dbcp.jar
+%%PORTDOCS%%%%DOCSDIR%%/org/apache/commons/dbcp/cpdsadapter/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/org/apache/commons/dbcp/cpdsadapter/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/org/apache/commons/dbcp/cpdsadapter/DriverAdapterCPDS.html
+%%PORTDOCS%%%%DOCSDIR%%/org/apache/commons/dbcp/datasources/PerUserPoolDataSource.html
+%%PORTDOCS%%%%DOCSDIR%%/org/apache/commons/dbcp/datasources/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/org/apache/commons/dbcp/datasources/InstanceKeyDataSource.html
+%%PORTDOCS%%%%DOCSDIR%%/org/apache/commons/dbcp/datasources/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/org/apache/commons/dbcp/datasources/PerUserPoolDataSourceFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/org/apache/commons/dbcp/datasources/SharedPoolDataSource.html
+%%PORTDOCS%%%%DOCSDIR%%/org/apache/commons/dbcp/datasources/SharedPoolDataSourceFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/org/apache/commons/dbcp/ConnectionFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/org/apache/commons/dbcp/BasicDataSource.html
+%%PORTDOCS%%%%DOCSDIR%%/org/apache/commons/dbcp/BasicDataSourceFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/org/apache/commons/dbcp/DataSourceConnectionFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/org/apache/commons/dbcp/DelegatingCallableStatement.html
+%%PORTDOCS%%%%DOCSDIR%%/org/apache/commons/dbcp/DelegatingConnection.html
+%%PORTDOCS%%%%DOCSDIR%%/org/apache/commons/dbcp/DelegatingPreparedStatement.html
+%%PORTDOCS%%%%DOCSDIR%%/org/apache/commons/dbcp/DelegatingResultSet.html
+%%PORTDOCS%%%%DOCSDIR%%/org/apache/commons/dbcp/DelegatingStatement.html
+%%PORTDOCS%%%%DOCSDIR%%/org/apache/commons/dbcp/DriverConnectionFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/org/apache/commons/dbcp/DriverManagerConnectionFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/org/apache/commons/dbcp/PoolableConnection.html
+%%PORTDOCS%%%%DOCSDIR%%/org/apache/commons/dbcp/PoolableConnectionFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/org/apache/commons/dbcp/PoolablePreparedStatement.html
+%%PORTDOCS%%%%DOCSDIR%%/org/apache/commons/dbcp/PoolingConnection.html
+%%PORTDOCS%%%%DOCSDIR%%/org/apache/commons/dbcp/PoolingDataSource.html
+%%PORTDOCS%%%%DOCSDIR%%/org/apache/commons/dbcp/PoolingDriver.html
+%%PORTDOCS%%%%DOCSDIR%%/org/apache/commons/dbcp/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/org/apache/commons/dbcp/SQLNestedException.html
+%%PORTDOCS%%%%DOCSDIR%%/org/apache/commons/dbcp/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/org/apache/commons/jocl/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/org/apache/commons/jocl/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/org/apache/commons/jocl/ConstructorUtil.html
+%%PORTDOCS%%%%DOCSDIR%%/org/apache/commons/jocl/JOCLContentHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/serialized-form.html
+%%PORTDOCS%%%%DOCSDIR%%/packages.html
+%%PORTDOCS%%%%DOCSDIR%%/package-list
+%%PORTDOCS%%%%DOCSDIR%%/overview-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/overview-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/index-all.html
+%%PORTDOCS%%%%DOCSDIR%%/constant-values.html
+%%PORTDOCS%%%%DOCSDIR%%/allclasses-noframe.html
+%%PORTDOCS%%%%DOCSDIR%%/stylesheet.css
+%%PORTDOCS%%%%DOCSDIR%%/allclasses-frame.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/org/apache/commons/dbcp/cpdsadapter
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/org/apache/commons/dbcp/datasources
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/org/apache/commons/dbcp
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/org/apache/commons/jocl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/org/apache/commons
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/org/apache
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/org
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	commons-dbcp
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	java
 MASTER_SITES=	http://www.apache.org/dist/jakarta/commons/dbcp/source/
 PKGNAMEPREFIX=	jakarta-
@@ -21,13 +21,13 @@ BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant \
 
 USE_JAVA=	1.2+
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
 ANT?=		${LOCALBASE}/bin/ant
 .if defined(NOPORTDOCS)
-ANT_TARGET=	dist-jar
+ANT_TARGET=	build-jar
 .else
-ANT_TARGET=	dist-jar doc
+ANT_TARGET=	build-jar javadoc
 .endif
 JAVASHAREDIR=	${PREFIX}/share/java
 JARDIR=		${JAVASHAREDIR}/classes
