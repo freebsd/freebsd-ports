@@ -1,0 +1,15 @@
+#!/bin/sh
+# linux-epsxe - linux-ePSXe wrapper
+#
+# (c) 2002 Jean-Yves Lefort.
+# All rights reserved.
+
+USERDIR=$HOME/.linux-ePSXe
+
+if [ ! -x $USERDIR/epsxe ]; then
+    echo "$USERDIR/epsxe not found or not executable."
+    echo "You should run linux-epsxe_install."
+    exit 1
+fi
+
+cd $USERDIR && exec ./epsxe "$@"

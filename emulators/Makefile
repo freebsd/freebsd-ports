@@ -30,6 +30,7 @@
     SUBDIR += ia64sim
     SUBDIR += ines
     SUBDIR += libvm68k
+    SUBDIR += linux-ePSXe
     SUBDIR += linux-peops-softgpu
     SUBDIR += linux-peops-spu
     SUBDIR += linux-vmware-toolbox
