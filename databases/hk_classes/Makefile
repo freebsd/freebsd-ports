@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	hk_classes
-PORTVERSION=	0.7
+PORTVERSION=	0.7.1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	hk-classes
@@ -30,7 +30,8 @@ LDCONFIG_DIRS+=	${PREFIX}/lib/hk_classes/
 
 OPTIONS=	MYSQL "Build MySQL driver" on \
 		POSTGRESQL "Build PostrgreSQL driver" off \
-		ODBC "Build unixODBC driver" off
+		ODBC "Build unixODBC driver" off \
+		SQLITE "Build with sqlite2 driver" off
 
 MAN1=		hk_report.1man hk_actionquery.1man hk_exportxml.1man \
 		hk_exporthtml.1man hk_exportcsv.1man hk_importcsv.1man
@@ -71,5 +72,20 @@ PLIST_SUB+=	ODBC=""
 CONFIGURE_ARGS+=	--without-odbc
 PLIST_SUB+=	ODBC="@comment "
 .endif
+
+.if defined(WITH_SQLITE)
+LIB_DEPENDS+=		sqlite.2:${PORTSDIR}/databases/sqlite2
+CONFIGURE_ARGS+=	--with-sqlite-incdir=${LOCALBASE}/include/\
+			--with-sqlite-libdir=${LOCALBASE}/lib
+PLIST_SUB+=	SQLITE=""
+.else
+CONFIGURE_ARGS+=	--without-sqlite
+PLIST_SUB+=	SQLITE="@comment "
+.endif
+
+post-install:
+	@${SED} -e 's#%%PREFIX%%#${PREFIX}#' ${FILESDIR}/hk_classes.sh > \
+		${PREFIX}/etc/rc.d/hk_classes.sh; \
+	 ${CHMOD} a+x ${PREFIX}/etc/rc.d/hk_classes.sh
 
 .include <bsd.port.post.mk>
