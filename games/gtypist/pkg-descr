@@ -1,0 +1,8 @@
+GNU typist is a typing tutor package built using curses(3).  The
+package contains a number of tutorials, drills and practise sessions
+to help with mastering touch typing on the standard computer keyboard.
+The accent is on the US keyboard layout, but the lessons may also
+be useful with other layouts.  A Dvorak and a Spanish lesson set
+are included.
+
+WWW: http://www.gnu.org/software/gtypist/
