@@ -20,6 +20,12 @@ USE_XLIB=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile with FreeBSD >= 5.x"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 	${WRKSRC}/configure
@@ -39,4 +45,4 @@ post-install:
 	fi
 	@${INSTALL} ${WRKSRC}/data/bbsmount.bb ${PREFIX}/share/bbtools/bbsmount.bb-sample
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

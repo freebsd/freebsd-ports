@@ -26,6 +26,12 @@ PORTDOCS=		README
 PLIST_FILES=		bin/bb share/bb/bb.s3m share/bb/bb2.s3m share/bb/bb3.s3m
 PLIST_DIRS=		share/bb
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=			"Does not compile on FreeBSD >= 5.x"
+.endif
+
 pre-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -E -e "s@#include +<malloc.h>@#include <stdlib.h>@g"
 
@@ -35,4 +41,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
