@@ -17,7 +17,8 @@ COMMENT=	Interactive shell used to administer ldap directories
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
 		${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap \
-		${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip
+		${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
+		${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PERL5=	yes
