@@ -10,8 +10,8 @@ PORTVERSION=	2.6.2
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.6
-DIST_SUBDIR=	gnome2
 DISTNAME=	eel-${PORTVERSION}
+DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Generally useful classes and extensions to GNOME

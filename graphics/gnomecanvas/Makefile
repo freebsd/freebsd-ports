@@ -8,9 +8,9 @@
 PORTNAME=	gnomecanvas
 CATEGORIES=	graphics gnome
 
-MASTERDIR=	${.CURDIR}/../gdk-pixbuf
-
 COMMENT=	A graphics library for GNOME
+
+MASTERDIR=	${.CURDIR}/../gdk-pixbuf
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 

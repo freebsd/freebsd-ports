@@ -10,8 +10,8 @@ PORTVERSION=	2.6.3
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.6
-DIST_SUBDIR=	gnome2
 DISTNAME=	nautilus-${PORTVERSION}
+DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME file manager and graphical shell developed by Eazel
