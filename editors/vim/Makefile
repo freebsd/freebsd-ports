@@ -99,6 +99,8 @@ post-install:
 	test -e ${PREFIX}/bin/rgview || (cd ${PREFIX}/bin ; ${LN} -s vim rgview)
 	test -e ${PREFIX}/bin/evim   || (cd ${PREFIX}/bin ; ${LN} -s vim evim) 
 	test -e ${PREFIX}/bin/eview  || (cd ${PREFIX}/bin ; ${LN} -s vim eview)
+	test -e ${PREFIX}/bin/gvimdiff  \
+		|| (cd ${PREFIX}/bin ; ${LN} -s vim gvimdiff)
 	cd ${PREFIX} ;\
 	    find share/vim/${DISTNAME:S/-//:S/.//}/ -type f -o -type l	\
 	    	| sort \
