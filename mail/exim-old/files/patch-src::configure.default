@@ -4,7 +4,7 @@
  # normal user. This isn't usually a problem, as most sites have an alias for
  # root that redirects such mail to a human administrator.
  
-+exim_user = sendmail
++exim_user = exim
 +exim_group = mail
  never_users = root
  
@@ -34,7 +34,7 @@
    file = /etc/aliases
    search_type = lsearch
 -# user = exim
-+  user = sendmail
++  user = exim
 +  group = mail
    file_transport = address_file
    pipe_transport = address_pipe

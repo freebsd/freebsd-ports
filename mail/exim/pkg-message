@@ -18,6 +18,6 @@ To run Exim instead of sendmail on startup:
 You may also want to configure newsyslog(8) to rotate Exim log files:
 
 # Only HUP Exim once when rejectlog and mainlog are rotated.
-/var/log/exim/mainlog	sendmail:mail 640 7 * @T00 Z /var/run/exim.pid
-/var/log/exim/rejectlog sendmail:mail 640 7 * @T00 Z
+/var/log/exim/mainlog	exim:mail 640 7 * @T00 Z /var/run/exim.pid
+/var/log/exim/rejectlog	exim:mail 640 7 * @T00 Z
 
