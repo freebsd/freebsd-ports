@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mharo@FreeBSD.org
 
+BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Text/Format.pm:${PORTSDIR}/textproc/p5-Text-Format
+
 PERL_CONFIGURE=	yes
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
