@@ -1,0 +1,7 @@
+bin/uuid
+bin/uuid-config
+include/uuid.h
+lib/libuuid.a
+lib/libuuid.la
+lib/libuuid.so
+lib/libuuid.so.1
