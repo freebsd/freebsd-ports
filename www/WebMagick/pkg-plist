@@ -1,3 +1,4 @@
+@unexec if [ -f %D/etc/webmagickrc ] && cmp -s %D/etc/webmagickrc %D/etc/webmagickrc.dist; then rm -f %D/etc/webmagickrc; fi
 etc/webmagickrc.dist
 @exec [ ! -f %B/webmagickrc ] && cp %B/%f %B/webmagickrc
 bin/webmagick
