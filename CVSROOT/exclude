@@ -25,6 +25,7 @@
 ^src/etc/minfree
 ^src/etc/motd
 ^src/lib/libc_r/test/.*\.exp
+^src/lib/libz/.*(?<!/Makefile)$
 ^src/release/sysinstall/help/.*\.hlp
 ^src/share/examples/cvsup/refuse
 ^src/share/examples/etc/bsd-style-copyright
