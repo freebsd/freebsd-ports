@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	mod_security
-PORTVERSION=	1.7.4
+PORTVERSION=	1.7.5
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	http://www.modsecurity.org/download/ \
+		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/_/-/}
 
 MAINTAINER=	ale@FreeBSD.org
@@ -18,8 +19,8 @@ USE_APACHE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/include/apache2/apr.h)
-WITH_APACHE2=   yes
+.if exists(${LOCALBASE}/include/apache2/httpd.h)
+WITH_APACHE2=	yes
 .endif
 
 .if defined(WITH_APACHE2)
@@ -32,7 +33,7 @@ PLIST_SUB=	APACHE=apache
 SO=		so
 .endif
 
-DOCS=		CHANGES INSTALL LICENSE README modsecurity-manual-${PORTVERSION}.pdf
+DOCS=		CHANGES INSTALL LICENSE README mod_security-manual-${PORTVERSION}.pdf
 PLIST_SUB+=	VER=${PORTVERSION}
 
 do-build:
