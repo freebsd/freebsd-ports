@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	esecanna-module-wnn6
-PORTVERSION=	0.14.4
+PORTVERSION=	0.14.5
 CATEGORIES=	japanese
 MASTER_SITES=	http://esecanna.netfort.gr.jp/ \
 		${MASTER_SITE_LOCAL}
