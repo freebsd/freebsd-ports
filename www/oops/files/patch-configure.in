@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- configure.in.orig	Wed Dec 19 13:18:40 2001
-+++ configure.in	Thu Jul 25 19:54:48 2002
+--- configure.in.orig	Wed Dec 19 15:18:40 2001
++++ configure.in	Sat Oct  5 18:27:46 2002
 @@ -49,7 +49,7 @@
  AC_ARG_WITH(zlib,--with-zlib=[[PATH]]         Which zlib library/object file to use,
    with_zlib="$withval", with_zlib="")
@@ -12,7 +9,17 @@ $FreeBSD$
  AC_CHECK_HEADERS(netinet/ip_fil.h, AC_DEFINE(HAVE_IPF))
  AC_CHECK_HEADERS(netinet/ip6.h, AC_DEFINE(HAVE_IP6_H))
  
-@@ -524,10 +524,10 @@
+@@ -66,6 +66,9 @@
+     LIBDB_PATH="/usr/local/BerkeleyDB.3.0"
+ elif test -r "$pwd/libdb.a"; then
+     LIBDB_PATH="$pwd"
++elif test -r "/usr/local/lib/libdb4.a"; then
++    LIBDB_PATH="/usr/local"
++    LIBDB_NAME=-ldb4
+ elif test -r "/usr/local/lib/libdb.a"; then
+     LIBDB_PATH="/usr/local"
+ elif test -r "/usr/lib/libdb2.a"; then                                         
+@@ -524,10 +527,10 @@
  esac
  
  if test "X$MYSQL_PATH" != "X" ; then

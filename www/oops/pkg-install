@@ -37,7 +37,13 @@ if [ x"$2" = xPRE-INSTALL ]; then
         echo "You already have a user \"${user}\", so I will use it."
     else
         echo "You need a user \"${user}\"."
-        if yesno "Would you like me to create it" y; then
+	doadduser=1
+	if [ "$BATCH" = "yes" ]; then
+		doadduser=0
+	else
+		yesno "Would you like me to create it" y && doadduser=0
+	fi
+	if [ $doadduser = 0 ]; then
             /usr/sbin/pw useradd ${user} -g ${group} -h - -d /nonexistent \
                 -s /nonexistent -c "Oops Cache System" || exit
             echo "Done."
