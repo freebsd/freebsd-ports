@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tvi
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.kt.rim.or.jp/~motomu/tvi/Arc/
 
@@ -15,5 +15,8 @@ MAINTAINER=	sugimura@jp.FreeBSD.org
 RUN_DEPENDS=	wish4.2jp:${PORTSDIR}/japanese/tk42
 
 NO_BUILD=	yes
+
+MAKE_ARGS=	PREFIX="${PREFIX}" \
+		TVILIBDIR="${PREFIX}/lib/${PORTNAME}"
 
 .include <bsd.port.mk>
