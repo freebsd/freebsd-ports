@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	svk
-PORTVERSION=	0.29
+PORTVERSION=	0.30
 PORTREVISION=	0
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -20,6 +20,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/subversio
 		${SITE_PERL}/SVN/Mirror.pm:${PORTSDIR}/devel/p5-SVN-Mirror \
 		${SITE_PERL}/Algorithm/Annotate.pm:${PORTSDIR}/devel/p5-Algorithm-Annotate \
 		${SITE_PERL}/Algorithm/Diff.pm:${PORTSDIR}/devel/p5-Algorithm-Diff \
+		${SITE_PERL}/Class/Autouse.pm:${PORTSDIR}/devel/p5-Class-Autouse \
 		${SITE_PERL}/${PERL_ARCH}/Clone.pm:${PORTSDIR}/devel/p5-Clone \
 		${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		${SITE_PERL}/Data/Hierarchy.pm:${PORTSDIR}/devel/p5-Data-Hierarchy \
@@ -95,6 +96,7 @@ MAN3=		SVK.3 \
 		SVK::Editor::Translate.3 \
 		SVK::Editor::XD.3 \
 		SVK::Help::Index.3 \
+		SVK::Help::Intro.3 \
 		SVK::Help::zh_cn::Index.3 \
 		SVK::Help::zh_tw::Index.3 \
 		SVK::Merge.3 \
@@ -104,6 +106,7 @@ MAN3=		SVK.3 \
 		SVK::Target.3 \
 		SVK::Target::Universal.3 \
 		SVK::Util.3 \
+		SVK::Version.3 \
 		SVK::XD.3
 
 .include <bsd.port.pre.mk>
@@ -122,8 +125,7 @@ PPERL=		${LOCALBASE}/bin/pperl
 pre-everything::
 	@${ECHO} ""
 	@${ECHO} "If you see some missing dependency, please update your"
-	@${ECHO} "ports tree and upgrade all dependencies by 'portupgrade -R svk'."
-	@${ECHO} "Then try again."
+	@${ECHO} "ports tree and upgrade it by 'portupgrade -R svk'."
 	@${ECHO} ""
 
 post-patch:
