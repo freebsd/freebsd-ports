@@ -13,5 +13,8 @@ sbin/dovecot
 %%PORTDOCS%%share/doc/dovecot/multiaccess.txt
 %%PORTDOCS%%share/doc/dovecot/configuration.txt
 %%PORTDOCS%%share/doc/dovecot/mail-storages.txt
+%%PORTDOCS%%share/doc/dovecot/dovecot-ldap.conf
+%%PORTDOCS%%share/doc/dovecot/dovecot-openssl.cnf
+%%PORTDOCS%%share/doc/dovecot/mkcert.sh
 %%PORTDOCS%%@dirrm share/doc/dovecot
 @dirrm lib/dovecot
