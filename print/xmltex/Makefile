@@ -7,9 +7,10 @@
 
 PORTNAME=		xmltex
 PORTVERSION=		1.9
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		print
-MASTER_SITES=		${MASTER_SITE_TEX_CTAN}
+MASTER_SITES=		ftp://ftp.ctan.org/tex-archive/%SUBDIR%/ \
+			${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	macros/xmltex/base
 DISTFILES=		${DOC_FILES} ${CLASS_FILES}
 DIST_SUBDIR=		${PORTNAME}
@@ -17,38 +18,37 @@ DIST_SUBDIR=		${PORTNAME}
 MAINTAINER=		hrs@FreeBSD.org
 COMMENT=		A non-validating XML parser, written in TeX
 
-BUILD_DEPENDS=		latex:${PORTSDIR}/print/teTeX
+BUILD_DEPENDS=		latex:${PORTSDIR}/print/teTeX \
+			${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
 LIB_DEPENDS=		png.5:${PORTSDIR}/graphics/png
-RUN_DEPENDS=		tex:${PORTSDIR}/print/teTeX
+RUN_DEPENDS=		tex:${PORTSDIR}/print/teTeX \
+			${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
 
 .include <bsd.port.pre.mk>
 
 PLIST_SUB=	MKTEXLSR=${MKTEXLSR} CLASSDIR=${CLASSDIR} WEB2CDIR=${WEB2CDIR}
 
 WRKSRC=		${WRKDIR}/base
-MAKE_ENV=	TEXMFCNF=${FILESDIR}:${PREFIX}/${WEB2CDIR}
+MAKE_ENV=	TEXMFCNF=${FILESDIR}:${LOCALBASE}/${TEXMFWEB2C}
 
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
-.if exists(${LOCALBASE}/bin/kpsewhich)
-TEXMFDIR!=	${LOCALBASE}/bin/kpsewhich -expand-var '$$TEXMFMAIN'
-.else
-TEXMFDIR=	# empty
-.endif
-CLASSDIR=	${TEXMFDIR:S,^${PREFIX},,:S,^/,,}/tex/xmltex
-WEB2CDIR=	${TEXMFDIR:S,^${PREFIX},,:S,^/,,}/web2c
+TEXMFLOCAL=	share/texmf-local
+TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
+TEXMFWEB2C=	share/texmf/web2c
 
-DOC_FILES=	manual.html manual.tex manual.xml manual.xsl
-DOC_FILES+=	readme.txt
+DOC_FILES=	manual.html manual.tex manual.xml manual.xsl readme.txt
 
-CLASS_FILES=	testascii.cfg testascii.tex testascii.xml
-CLASS_FILES+=	testsec.tex testsec.xml
-CLASS_FILES+=	xmltex.cfg xmltex.ini xmltex.tex pdfxmltex.ini
-CLASS_FILES+=	iso-8859-1.xmt iso-8859-2.xmt koi8-r.xmt
-CLASS_FILES+=	sec.xmt tei.xmt utf-16.xmt windows-1250.xmt
-CLASS_FILES+=	langtest.tex langtest.xml langtest.xmt mathml2.xmt
-CLASS_FILES+=	russiankoi8.xml russianutf8.xml portugeselatin1.xml
-CLASS_FILES+=	englishutf16.xml englishutf8.xml
+CLASSDIR=	${TEXMFLOCAL}/tex/xmltex
+CLASS_FILES=	testascii.cfg testascii.tex testascii.xml \
+		testsec.tex testsec.xml \
+		xmltex.cfg xmltex.ini xmltex.tex pdfxmltex.ini \
+		iso-8859-1.xmt iso-8859-2.xmt koi8-r.xmt \
+		sec.xmt tei.xmt utf-16.xmt windows-1250.xmt \
+		langtest.tex langtest.xml langtest.xmt mathml2.xmt \
+		russiankoi8.xml russianutf8.xml portugeselatin1.xml \
+		englishutf16.xml englishutf8.xml
 
+WEB2CDIR=	${TEXMFLOCAL}/web2c
 WEB2C_FILES=	xmltex.fmt pdfxmltex.fmt
 
 do-extract:
