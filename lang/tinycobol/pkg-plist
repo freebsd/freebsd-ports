@@ -4,8 +4,6 @@ lib/libhtcobol2.a
 share/htcobol/cobopt
 share/htcobol/htcobolpp
 share/htcobol/copybooks/CMDLine.cpy
-share/htcobol/copybooks/CMDLine1.cpy
-share/htcobol/copybooks/ENVAR1.cpy
 @dirrm share/htcobol/copybooks
 @dirrm share/htcobol
 share/doc/tinycobol/Comments.old.txt
