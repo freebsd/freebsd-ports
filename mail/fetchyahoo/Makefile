@@ -20,8 +20,8 @@ RUN_DEPENDS=	\
 	${SITE_PERL}/Mail/Address.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 	${SITE_PERL}/Net/Cmd.pm:${PORTSDIR}/net/p5-Net \
 	${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
-	${SITE_PERL}/mach/Crypt/SSLeay.pm:${PORTSDIR}/security/p5-Crypt-SSLeay \
-	${SITE_PERL}/mach/HTML/Filter.pm:${PORTSDIR}/www/p5-HTML-Parser \
+${SITE_PERL}/${PERL_ARCH}/Crypt/SSLeay.pm:${PORTSDIR}/security/p5-Crypt-SSLeay \
+	${SITE_PERL}/${PERL_ARCH}/HTML/Filter.pm:${PORTSDIR}/www/p5-HTML-Parser\
 	${SITE_PERL}/HTTP/Request/Common.pm:${PORTSDIR}/www/p5-libwww
 
 DOCS=		COPYING ChangeLog Credits INSTALL TODO index.html
