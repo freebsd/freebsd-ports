@@ -2304,6 +2304,7 @@ freegrep	ports/textproc/freegrep
 freeipmi	ports/sysutils/freeipmi
 freelibiberty	ports/devel/freelibiberty
 freemat		ports/math/freemat
+freemat-mpi	ports/math/freemat-mpi
 freemind	ports/deskutils/freemind
 freenet		ports/net/freenet
 freenet6	ports/net/freenet6
