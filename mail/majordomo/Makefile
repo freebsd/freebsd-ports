@@ -1,15 +1,15 @@
 # New ports collection makefile for:	majordomo
-# Version required:	1.94.2
+# Version required:	1.94.3
 # Date created:		23 October 1996
 # Whom:			jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.8 1996/12/27 06:24:57 jfitz Exp $
+# $Id: Makefile,v 1.9 1997/04/28 00:53:11 jfitz Exp $
 #
 
-DISTNAME=	majordomo-1.94.2
+DISTNAME=	majordomo-1.94.3
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.greatcircle.com/pub/majordomo/1.94.2/ \
-		ftp://ftp.sgi.com/other/majordomo/1.94.2/ \
+MASTER_SITES=	ftp://ftp.greatcircle.com/pub/majordomo/1.94.3/ \
+		ftp://ftp.sgi.com/other/majordomo/1.94.3/ \
 		ftp://ftp-europe.sgi.com/other/majordomo/
 EXTRACT_SUFX=   .tar.Z
 
@@ -26,7 +26,6 @@ MAN8=		majordomo.8
 pre-configure:
 		@ ${SETENV} ${MAKE_ENV} /usr/bin/perl ${SCRIPTDIR}/createuser
 		@ ${CP} ${FILESDIR}/aliases.majordomo ${WRKSRC}
-		@ ${RM} ${WRKSRC}/wrapper
 
 pre-install:
 		@ ${CP} ${WRKSRC}/sample.cf ${WRKSRC}/majordomo.cf
