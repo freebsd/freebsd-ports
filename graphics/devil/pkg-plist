@@ -1,0 +1,17 @@
+lib/libIL.a
+lib/libIL.so
+lib/libIL.so.1
+lib/libILU.a
+lib/libILU.so
+lib/libILU.so.1
+lib/libILUT.a
+lib/libILUT.so
+lib/libILUT.so.1
+include/IL/il.h
+include/IL/ilu.h
+include/IL/ilut.h
+include/IL/il_wrap.h
+include/IL/config.h
+include/IL/devil_internal_exports.h
+include/IL/ilu_region.h
+@dirrm include/IL

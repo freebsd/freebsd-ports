@@ -53,6 +53,7 @@
     SUBDIR += dcraw
     SUBDIR += deep_zoom
     SUBDIR += demeter
+    SUBDIR += devil
     SUBDIR += dia
     SUBDIR += diacanvas
     SUBDIR += diacanvas2
