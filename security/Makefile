@@ -1,7 +1,8 @@
-# $Id: Makefile,v 1.16 1997/04/24 08:03:31 obrien Exp $
+# $Id: Makefile,v 1.17 1997/05/03 00:22:42 jfitz Exp $
 #
 
     SUBDIR += SSLeay
+    SUBDIR += cfs
     SUBDIR += cops
     SUBDIR += crack
     SUBDIR += donkey
