@@ -36,8 +36,7 @@ diff -u sbr/concat.c.orig sbr/concat.c
  
      dp = sp = malloc (len);
      if (dp == NULL)
--	adios (NULLCP, "unable to allocate string storage");
-+	err ("unable to allocate string storage");
+ 	adios (NULLCP, "unable to allocate string storage");
  
 -    va_start (list); 
 -    while (cp = va_arg (list, char *))
