@@ -1,12 +1,12 @@
 # ports collection makefile for:	Berkeley DB
-# Version required:			v2.3.12
-# Date created:				11 Nov 1997
+# Version required:			v2.3.16
+# Date created:				26 Jan 1998
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
-# $Id: Makefile,v 1.5 1997/11/22 00:47:18 asami Exp $
+# $Id: Makefile,v 1.6 1997/11/22 00:51:36 asami Exp $
 #
 
-DISTNAME=	db-2.3.12
+DISTNAME=	db-2.3.16
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sleepycat.com/db/packages/
 
@@ -30,7 +30,7 @@ MAN3=	db_appinit.3 db_cursor.3 db_dbm.3 db_hsearch.3 db_intro.3 db_lock.3 \
 post-install:
 	${MKDIR} ${PREFIX}/share/doc/db
 .for doc in hash.usenix.ps libtp.usenix.ps
-	${INSTALL_DATA} ${WRKSRC}/../docs/${doc} ${PREFIX}/share/doc/db
+	${INSTALL_DATA} ${WRKSRC}/../documents/${doc} ${PREFIX}/share/doc/db
 	gzip -9 ${PREFIX}/share/doc/db/${doc}
 .endfor
 	${MKDIR} ${PREFIX}/share/examples/db
@@ -40,5 +40,14 @@ post-install:
 .for example in AccessExample.cpp AppinitExample.cpp LockExample.cpp MpoolExample.cpp TpcbExample.cpp
 	${INSTALL_DATA} ${WRKSRC}/../examples_cxx/${example} ${PREFIX}/share/examples/db
 .endfor
+	@echo ""
+	@echo "Java support for ${PKGNAME} is *not* built by default, and requires that you"
+	@echo "have a working copy of the JDK (v1.1) installed."
+	@echo ""
+	@echo "To build java support, please read:"
+	@echo ""
+	@echo "${WRKDIR}/${DISTNAME}/java/README"
+	@echo ""
+	@echo "and follow the directions therein."
 
 .include <bsd.port.mk>
