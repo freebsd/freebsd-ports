@@ -19,7 +19,6 @@ PATCH_SITES=	http://www.mutt.org.ua/download/mutt-${PORTVERSION}/:vvv \
 		http://www2.mutt.org.ua/download/mutt-${PORTVERSION}/:vvv \
 		http://www3.mutt.org.ua/download/mutt-${PORTVERSION}/:vvv \
 		ftp://ftp.mutt.org.ua/pub/mutt/mutt-${PORTVERSION}/:vvv \
-		ftp://ftp2.mutt.org.ua/pub/mutt/mutt-${PORTVERSION}/:vvv \
 		ftp://ftp3.mutt.org.ua/pub/mutt/mutt-${PORTVERSION}/:vvv
 PATCHFILES=	patch-${PORTVERSION}.rr.compressed.gz:vvv \
 		patch-${PORTVERSION}.vvv.initials.gz:vvv
