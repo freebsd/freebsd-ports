@@ -1,0 +1,4 @@
+Net::Finger is a simple, straightforward implementation of a finger
+client in Perl.
+
+WWW: http://search.cpan.org/search?dist=Net-Finger
