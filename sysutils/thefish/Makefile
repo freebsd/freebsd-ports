@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	thefish
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://energyhq.homeip.net/files/
+MASTER_SITES=	http://www.energyhq.es.eu.org/files/
 
-MAINTAINER=	flynn@energyhq.homeip.net
+MAINTAINER=	flynn@energyhq.es.eu.org
 COMMENT=	Gtk+/ncurses rc.conf editor/management tool
 
 .if defined(WITHOUT_X11) || defined(NO_GUI)
