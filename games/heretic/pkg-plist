@@ -1,4 +1,5 @@
 bin/heretic
+bin/sndserver
 %%PORTDOCS%%share/doc/heretic/AUTHORS
 %%PORTDOCS%%share/doc/heretic/Changelog
 %%PORTDOCS%%share/doc/heretic/End User License Heretic Source Code.txt

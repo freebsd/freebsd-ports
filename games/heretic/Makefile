@@ -16,17 +16,24 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} heretic_share.wad.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 .endif
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lehmann@ans-netz.de
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
+MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS}
 
-.if defined(WANT_FASTX11)
-ALL_TARGET=	fastx11
-BINARY=		xaheretic
-.else
 ALL_TARGET=	x11
 BINARY=		xheretic
+
+.if defined(WITH_FASTX11)
+ALL_TARGET=	fastx11
+BINARY=		xaheretic
+.endif
+
+.if defined(WITH_SDL)
+ALL_TARGET=	sdl
+BINARY=		sdlheretic
+LIB_DEPENDS=	SDL-1.0.2:${PORTSDIR}/devel/sdl10
 .endif
 
 .if defined(WITHOUT_WAD)
@@ -34,6 +41,15 @@ PLIST_SUB=	WAD:="@comment "
 .else
 PLIST_SUB=	WAD:=""
 .endif
+
+pre-everything:
+	@${ECHO} ""
+	@${ECHO} "You may use the following build options:"
+	@${ECHO} ""
+	@${ECHO} "      WITH_FASTX11=yes  Use FastX11 support"
+	@${ECHO} "      WITH_SDL=yes      Use SDL."
+	@${ECHO} "      WITHOUT_WAD=yes   Don't install the wad file."
+	@${ECHO} ""
 
 post-extract:
 .if !defined(WITHOUT_WAD)
@@ -43,6 +59,7 @@ post-extract:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${BINARY} ${PREFIX}/bin/heretic
+	${INSTALL_PROGRAM} ${WRKSRC}/sndserver ${PREFIX}/bin/sndserver
 .if !defined(WITHOUT_WAD)
 	@${MKDIR} ${PREFIX}/share/heretic
 	${INSTALL_DATA} ${WRKSRC}/heretic_share.wad ${PREFIX}/share/heretic
