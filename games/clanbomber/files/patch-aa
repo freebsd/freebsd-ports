@@ -1,0 +1,11 @@
+--- configure.orig	Fri May 19 12:12:53 2000
++++ configure	Fri May 19 12:13:21 2000
+@@ -779,7 +779,7 @@
+ 
+ 
+ 
+-CXXFLAGS="-O6"
++#CXXFLAGS="-O6"
+ 
+ for ac_prog in $CCC c++ g++ gcc CC cxx cc++ cl
+ do
