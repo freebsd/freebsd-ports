@@ -1,0 +1,11 @@
+--- povchem.cfg.orig	Sun Mar 15 14:14:16 1998
++++ povchem.cfg	Sun Mar 15 14:15:13 1998
+@@ -331,7 +331,7 @@
+ # the type of image POV-Ray generates - usually TGA (also called TARGA).
+ #
+ #Viewer = c:\util\dvpeg.exe
+-Viewer = /usr/local/bin/xv
++Viewer = /usr/X11R6/bin/xv
+ 
+ # If ColorSplit is Proportional, 'Power' determines the power of the vdW radii
+ # to which the point of color change is proportional. See the manual for
