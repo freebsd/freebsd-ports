@@ -5,6 +5,7 @@ bin/monitest
 etc/ggi/libggi.conf.dist
 @exec [ -f %B/libggi.conf ] || cp %B/%f %B/libggi.conf
 include/ggi/display/aa.h
+include/ggi/display/auto.h
 include/ggi/display/directx.h
 include/ggi/display/fbdev.h
 include/ggi/display/file.h
@@ -20,6 +21,7 @@ include/ggi/display/modelist.h
 include/ggi/display/monotext.h
 include/ggi/display/multi.h
 include/ggi/display/palemu.h
+include/ggi/display/quartz.h
 include/ggi/display/sub.h
 include/ggi/display/svgalib.h
 include/ggi/display/tele.h
@@ -32,6 +34,7 @@ include/ggi/display/xcommon.h
 include/ggi/display/xevi.h
 include/ggi/display/xf86dga.h
 include/ggi/display/xlib.h
+include/ggi/ggi-defs.h
 include/ggi/ggi-unix.h
 include/ggi/ggi.h
 include/ggi/ggi_ext.h
@@ -43,6 +46,8 @@ include/ggi/internal/ggilibinit.h
 include/ggi/internal/internal.h
 include/ggi/internal/plat.h
 include/ggi/internal/structs.h
+include/ggi/internal/triple-int.h
+include/ggi/internal/unit.h
 include/ggi/ll.h
 include/ggi/types.h
 lib/ggi/default/color.la
@@ -71,6 +76,8 @@ lib/ggi/default/linear_8.la
 lib/ggi/default/linear_8.so
 lib/ggi/default/planar.la
 lib/ggi/default/planar.so
+lib/ggi/default/pseudo_stubs.la
+lib/ggi/default/pseudo_stubs.so
 lib/ggi/default/stubs.la
 lib/ggi/default/stubs.so
 lib/ggi/default/text_16.la
@@ -81,6 +88,8 @@ lib/ggi/display/X.la
 lib/ggi/display/X.so
 %%WITH_AALIB%%lib/ggi/display/aa.la
 %%WITH_AALIB%%lib/ggi/display/aa.so
+lib/ggi/display/auto.la
+lib/ggi/display/auto.so
 lib/ggi/display/file.la
 lib/ggi/display/file.so
 lib/ggi/display/ipc.la
