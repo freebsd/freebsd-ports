@@ -1,1 +1,5 @@
 bin/openam
+share/doc/openh323/openam/ReadMe.txt
+share/doc/openh323/openam/sample_message.wav
+share/doc/openh323/openam/sample_message_g7231.wav
+@unexec rmdir %D/share/doc/openh323/openam 2>/dev/null || true
