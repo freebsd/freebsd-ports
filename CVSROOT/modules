@@ -6130,6 +6130,7 @@ prom-mew	ports/mail/prom-mew
 prom-wl		ports/mail/prom-wl
 pronto		ports/mail/pronto
 props		ports/x11/props
+prosper		ports/textproc/prosper
 prototype	ports/devel/prototype
 proxy-suite	ports/net/proxy-suite
 proxyper	ports/misc/proxyper
