@@ -82,7 +82,7 @@ CFLAGS+=       -O3 -ffast-math -fomit-frame-pointer
 WITH_GUI=	yes
 PLIST_SUB+=	GMPLAYER=""
 .else
-PLIST_SUB+=	GMPLAYER="@comment"
+PLIST_SUB+=	GMPLAYER="@comment "
 .endif
 
 .if defined(WITH_GUI)
