@@ -33,12 +33,7 @@ PLIST_SUB+=	HAVE_LATEX="@comment "
 .endif # !defined(HAVE_LATEX)
 
 .if defined(WITH_QT2)
-USE_QT_VER=	2
-QT_INC=		${X11BASE}/include/qt2
-QT_NAME=	qt
-QT_OPENGL=	-lqtgl
-THREADLIBS=
-PKGNAMESUFFIX=	-qt2
+BROKEN=	"QT2 support has been removed"
 .else # not QT2
 USE_QT_VER=	3
 QT_INC=		${X11BASE}/include
