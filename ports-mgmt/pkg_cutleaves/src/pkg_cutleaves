@@ -1,0 +1,186 @@
+#!/usr/bin/perl
+#
+# Copyright (c) 2003 Stefan Walter <sw@gegenunendlich.de>
+#
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+#
+# THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+# SUCH DAMAGE.
+#
+# $FreeBSD$
+
+# Interactive script for deinstalling "leaf" packages;
+# requires the portupgrade tools
+#
+# Syntax: pkg_cutleaves [-l] [-x] [-R]
+# Options:
+#   -l: List leaf packages only, don't ask if they should be deinstalled
+#   -x: Honor exclude list in $excludefile
+#   -R: Run 'pkg_deinstall -R' instead of plain 'pkg_deinstall'
+
+use strict;
+
+my $dbdir = "/var/db/pkg";
+my $excludefile = "/usr/local/etc/pkg_leaves.exclude";
+my $pkgdeinstall = "/usr/local/sbin/pkg_deinstall";
+my ($opt_listonly, $opt_excludelist, $opt_recursive);
+my $exclpattern;
+
+# Read the exclude list if the file exists
+sub get_excl_pattern {
+	my $excl_file = $_[0];
+	my $excl_pattern;
+	# Does the exclude file exist?
+	if (($excl_file) && (-f $excl_file) && (-T $excl_file)) {
+		# Read the patterns to be excluded
+		my @excludes;
+		open(EXCLFILE, $excl_file)
+			or die "Couldn't open $excl_file!";
+		while(my $exclude = <EXCLFILE>) {
+			chomp($exclude);
+			# Ignore comments and empty lines, add others as regular expressions
+			unless (($exclude =~ m/(^ *#)|(^ *$)/)) {
+				$exclude = "^" . $exclude . ".*";
+				@excludes = (@excludes, $exclude);
+			}
+		}
+		close(EXCLFILE);
+		$excl_pattern = join("|", @excludes);
+	} else {
+		# Dummy exclusion pattern -> doesn't exclude anything
+		$excl_pattern = " ";
+	}
+	return $excl_pattern;
+}
+
+# Get a list of all leaves
+sub get_leaves {
+	my $db_dir = $_[0];
+	my $excl_pattern = $_[1];
+	my @pkgdirs;
+	opendir(DBDIR, $db_dir)
+		or die "Can't open package db directory $db_dir!";
+	while(defined(my $file = readdir(DBDIR))) {
+		my $path = $db_dir . '/' . $file;
+		my $reqlist = $path . '/+REQUIRED_BY';
+		# Exclude non-directories, "." and ".."
+		if (($file ne ".") && ($file ne "..") && (-d $path) && (!-s $reqlist)) {
+			# Exclude packages matching exclude pattern, if requested
+			unless ($file =~ m/$excl_pattern/) {
+				@pkgdirs = (@pkgdirs, $file);
+			}
+		}
+	}
+	closedir(DBDIR);
+	return @pkgdirs;
+}
+
+# Examine command line arguments
+while(@ARGV) {
+	my $arg = shift(@ARGV);
+	if ($arg eq "-x") {
+		$opt_excludelist = 1;
+	}
+	elsif ($arg eq "-l") {
+		$opt_listonly = 1;
+	}
+	elsif ($arg eq "-R") {
+		$opt_recursive = 1;
+	}
+}
+
+# Exclusion requested?
+if ($opt_excludelist) {
+	# Get exclusion pattern
+	$exclpattern = get_excl_pattern($excludefile);
+} else {
+	# Spaces don't appear in package names -> this doesn't exclude anything
+	$exclpattern = " ";
+}
+
+if ($opt_listonly) {
+	# Just print out the list of leaves, one per line
+	my @leaveslist = get_leaves($dbdir, $exclpattern);
+	foreach my $leaf (sort @leaveslist) {
+		print "$leaf\n";
+	}
+} else {
+	my %leavestokeep;
+	my %leavestocut;
+	my @cutleaves;
+	# Loop while the user wants to
+	my $again = "y";
+	ROUND: while($again eq "y") {
+		# Get list of packages and put them into an array
+		my @leaves = get_leaves($dbdir, $exclpattern);
+		LEAVESLOOP: foreach my $leaf (sort @leaves) {
+			if (!$leavestokeep{$leaf}) {
+				print "$leaf - [keep]/(d)elete/(f)lush marked pkgs/(a)bort? ";
+				my $answer = substr(lc(<STDIN>), 0, 1);
+
+				if ($answer eq "d") {
+					print "** Marking $leaf for removal.\n\n";
+					$leavestocut{$leaf} = 1;
+				}
+				elsif ($answer eq "f") {
+					print "\n";
+					last LEAVESLOOP;
+				}
+				elsif ($answer eq "a") {
+					print "\n";
+					last ROUND;
+				}
+				else {
+					print "** Keeping $leaf.\n\n";
+					$leavestokeep{$leaf} = 1;
+				}
+			}
+		} # LEAVESLOOP
+		
+		# loop through packages marked for removal and pkg_deinstall them
+		foreach my $leaf (sort keys %leavestocut) {
+			print "Deleting $leaf.\n";
+			my @deinstall_args;
+			if ($opt_recursive) {
+				@deinstall_args = ($pkgdeinstall, '-R', $leaf);
+			} else {
+				@deinstall_args = ($pkgdeinstall, $leaf);
+			}
+			if ((my $status = system(@deinstall_args) >> 8) != 0) {
+				print "\nError: pkg_deinstall returned $status - exiting, fix this first.\n\n";
+				last ROUND;
+			}
+			@cutleaves = (@cutleaves, $leaf);
+			delete $leavestocut{$leaf};
+		}
+		
+		print "Once more ((y)es/[no])? ";
+		$again = substr(lc(<STDIN>), 0, 1);
+		print "\n";
+	} # ROUND
+
+	# print list of removed packages
+	print "** Deinstalled packages:\n";
+	foreach my $cutleaf (@cutleaves) {
+		print "$cutleaf\n";
+	}
+}
+

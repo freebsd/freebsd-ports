@@ -223,6 +223,7 @@
     SUBDIR += personality
     SUBDIR += pftop
     SUBDIR += pib
+    SUBDIR += pkg_cutleaves
     SUBDIR += pkg_install
     SUBDIR += pkg_remove
     SUBDIR += pkg_tree

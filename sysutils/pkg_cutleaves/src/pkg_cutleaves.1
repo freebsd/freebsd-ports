@@ -1,0 +1,40 @@
+.TH PKG_CUTLEAVES 1 "Jul 2003" FreeBSD
+.SH NAME
+pkg_cutleaves \- deinstall 'leaf' packages
+.SH SYNOPSIS
+.B pkg_cutleaves [-l] [-x] [-R]
+.SH DESCRIPTION
+.B pkg_cutleaves
+finds installed 'leaf' packages, i.e. packages that are not referenced
+by any other installed package, and lets you decide for each one if you
+want to keep or deinstall it (via pkg_deinstall(1)).
+Once the packages marked for removal have been flushed/deinstalled,
+you'll be asked if you want to do another run (to see packages that have
+become 'leaves' now because you've deinstalled the package(s) that
+depended on them). In every run you will be shown only packages that you
+haven't marked for keeping, yet.
+
+Note that your package registry database should be up to date for this
+to work properly, so it might be a good idea to run pkgdb(1) before
+running pkg_cutleaves.
+.SH OPTIONS
+.IP -l
+List leaf packages only, one per line, and don't ask for anything to be
+deinstalled.
+.IP -x
+Exclude packages matching expressions given in the exclude file.
+.IP -R
+Run 'pkg_deinstall -R' instead of plain 'pkg_deinstall', so packages the
+removed leaf packages depend(ed) on will be deinstalled, too.
+.SH FILES
+.I /usr/local/etc/pkg_leaves.exclude
+.RS
+An optional list for excluding packages when the '-x' option is given.
+If the beginning of a package's name matches any line (except comment or
+empty lines) in this file, the package will not be listed/offered for
+removal (e.g., a line saying just 'XFree86' (without the 's) will
+exclude all packages with names starting with 'XFree86').
+.SH AUTHOR
+Stefan Walter <sw@gegenunendlich.de>
+.SH SEE ALSO
+pkg_deinstall(1), portsclean(1)
