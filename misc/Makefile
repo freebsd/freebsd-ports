@@ -90,6 +90,7 @@
     SUBDIR += gnomepm
     SUBDIR += gnomeuserdocs
     SUBDIR += gnomeutils
+    SUBDIR += gnomeutils2
     SUBDIR += gnuls
     SUBDIR += goblin
     SUBDIR += goldstr
