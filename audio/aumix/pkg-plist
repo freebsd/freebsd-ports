@@ -1,11 +1,14 @@
 bin/aumix
+bin/xaumix
+share/aumix/ansi
+share/aumix/aumix-mini.xpm
+share/aumix/aumix.xpm
+share/aumix/vt100
+share/aumix/xterm
 share/locale/de/LC_MESSAGES/aumix.mo
 share/locale/es/LC_MESSAGES/aumix.mo
 share/locale/pl/LC_MESSAGES/aumix.mo
 share/locale/pt_BR/LC_MESSAGES/aumix.mo
 share/locale/ru/LC_MESSAGES/aumix.mo
 share/locale/ua/LC_MESSAGES/aumix.mo
-share/aumix/ansi
-share/aumix/vt100
-share/aumix/xterm
 @dirrm share/aumix
