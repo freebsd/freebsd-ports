@@ -7,6 +7,7 @@
 
 PORTNAME=	gnomepim
 PORTVERSION=	1.4.9
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.jroger.in-berlin.de/gnome-pim/ \
 		${MASTER_SITE_GNOME}
@@ -16,14 +17,6 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome pim package
-
-.if !defined(WITHOUT_PILOT)
-BUILD_DEPENDS=	${X11BASE}/lib/gnome-pilot/conduits/libemail_conduit.so:${PORTSDIR}/palm/gnomepilot-conduits
-RUN_DEPENDS=	${X11BASE}/lib/gnome-pilot/conduits/libemail_conduit.so:${PORTSDIR}/palm/gnomepilot-conduits
-PLIST_SUB=	GNOME_PILOT=""
-.else
-PLIST_SUB=	GNOME_PILOT="@comment "
-.endif
 
 USE_X_PREFIX=	yes
 USE_BISON=	yes

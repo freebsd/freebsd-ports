@@ -2,10 +2,6 @@ bin/gnomecal
 bin/gnomecard
 etc/CORBA/servers/gnomecal.gnorba
 etc/CORBA/servers/gnomecard.gnorba
-%%GNOME_PILOT%%lib/gnome-pilot/conduits/libaddress_conduit.so
-%%GNOME_PILOT%%lib/gnome-pilot/conduits/libcalendar_conduit.so
-%%GNOME_PILOT%%share/gnome/gnome-pilot/conduits/gnomecal.conduit
-%%GNOME_PILOT%%share/gnome/gnome-pilot/conduits/gnomecard.conduit
 share/gnome/apps/Applications/gncal.desktop
 share/gnome/apps/Applications/gnomecard.desktop
 share/gnome/help/gnomecal/C/c26.html
