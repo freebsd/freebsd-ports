@@ -1,0 +1,33 @@
+--- Makefile.in.orig	Wed Oct  4 04:51:25 2000
++++ Makefile.in	Sat Apr 14 08:24:02 2001
+@@ -16,7 +16,7 @@
+ GS=@GS@
+ 
+ # Choose a compiler + linker
+-CXXFLAGS=@CXXFLAGS@
++CXXFLAGS=@CXXFLAGS@ @CPPFLAGS@
+ CCC=@CXX@ @SPECIAL_CXXFLAGS@
+ LDLIBS=$(LOCALLIBS) @LDLIBS@ -lm @LDL@
+ LINK=@LINK@
+@@ -54,9 +54,9 @@
+ # without shared libs use LDFLAGS=-lm 
+ #LDLIBS= $(LOCALLIBS) -lm @LDL@
+ 
+-INSTALL_PROGRAM=$(INSTALL) 
+-INSTALL_DATA=$(INSTALL) -m 644
+-INSTALL_DIR=$(INSTALL) -d -m755     # or: mkdir -p
++INSTALL_PROGRAM=@INSTALL_PROGRAM@ 
++INSTALL_DATA=@INSTALL_DATA@
++INSTALL_DIR=mkdir -p
+ OBJEXT=o
+ EXEEXT=
+ OUTPUT=-o pstoedit
+@@ -68,7 +68,7 @@
+ #LOCALDEFINES=-DHAVE_LIBPLOTTER -I/path/to/plotter.h
+ # add -DOLD_LIBPLOTTER for libplot older than 2.3
+ LOCALDEFINES=@PLOTCOMPILEFLAGS@ @PNGCOMPILEFLAGS@
+-LOCALLIBS=-L/path/to/libplot @LPLOTTER@ @PNGLINKFLAGS@
++LOCALLIBS=@LIBS@ @LPLOTTER@ @PNGLINKFLAGS@
+ #############################################################
+ 
+ ## IRIX 5.3
