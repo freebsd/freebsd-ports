@@ -244,6 +244,7 @@
     SUBDIR += p5-IMAP-Sieve
     SUBDIR += p5-Log-Procmail
     SUBDIR += p5-MIME-Lite
+    SUBDIR += p5-MIME-Lite-HTML
     SUBDIR += p5-MIME-Tools
     SUBDIR += p5-MIME-Types
     SUBDIR += p5-Mail-Address-MobileJp

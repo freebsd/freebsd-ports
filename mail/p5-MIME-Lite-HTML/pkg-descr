@@ -1,0 +1,19 @@
+This module is a Perl mail client interface for sending message that support
+HTML format and build them for you.. This module provide routine to transform a
+HTML page in MIME::Lite mail.
+
+The job done is:
+
+    * Get the file (LWP) if needed
+    * Parse page to find include images (gif, jpg, flash)
+    * Attach them to mail with adequat header if asked (default)
+    * Include external CSS,Javascript file
+    * Replace relative url with absolute one
+    * Build the final MIME-Lite object with each part found
+
+Did you already see link like "Send this page to a friend" ?. With this module,
+you can do script that to this in 3 lines.  It can be used too in a HTML
+newsletter. You make a classic HTML page, and give just url to
+MIME::Lite::HTML.
+
+WWW: http://search.cpan.org/dist/MIME-Lite-HTML/

@@ -1,0 +1,7 @@
+%%SITE_PERL%%/MIME/Lite/HTML.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Lite/HTML/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Lite/HTML
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Lite 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/MIME/Lite 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/MIME 2>/dev/null || true
