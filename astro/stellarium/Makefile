@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		stellarium
-PORTVERSION=		0.5.2
-PORTREVISION=	2
+PORTVERSION=		0.6.0
 CATEGORIES=		astro
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=		jylefort@brutele.be
 COMMENT=		A 3D photo-realistic sky renderer
 
+USE_GCC=		3.3
 USE_GL=			yes
 USE_SDL=		sdl
 USE_X_PREFIX=		yes
@@ -22,6 +22,8 @@ GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
 CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib"
+
+MAN1=			stellarium.1
 
 .if !defined(NOPORTDOCS)
 post-install:
