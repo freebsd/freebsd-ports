@@ -1,11 +1,22 @@
---- lib/freebsd-g++/tmake.conf	Wed Aug 23 18:03:32 2000
-+++ lib/freebsd-g++/tmake.conf.new	Fri Sep  1 17:09:54 2000
+--- lib/freebsd-g++/tmake.conf.orig	Wed Aug 23 18:03:32 2000
++++ lib/freebsd-g++/tmake.conf	Sun Oct 29 10:03:53 2000
 @@ -31,7 +31,7 @@
  TMAKE_LIBDIR		= /usr/local/lib
  TMAKE_INCDIR_X11	= /usr/X11R6/include
  TMAKE_LIBDIR_X11	= /usr/X11R6/lib
 -TMAKE_INCDIR_QT		= $(QTDIR)/include
-+TMAKE_INCDIR_QT		= $(QTDIR)/include/qt
++TMAKE_INCDIR_QT		= $(QTDIR)/include/qt2
  TMAKE_LIBDIR_QT		= $(QTDIR)/lib
  TMAKE_INCDIR_OPENGL	= /usr/X11R6/include
  TMAKE_LIBDIR_OPENGL	= /usr/X11R6/lib
+@@ -51,8 +51,8 @@
+ TMAKE_LIBS		=
+ TMAKE_LIBS_X11		= -lXext -lX11 -lm
+ TMAKE_LIBS_X11SM	= -lICE -lSM
+-TMAKE_LIBS_QT		= -lqt
+-TMAKE_LIBS_QT_THREAD	= -lqt-mt
++TMAKE_LIBS_QT		= -lqt2
++TMAKE_LIBS_QT_THREAD	= -lqt2-mt
+ TMAKE_LIBS_OPENGL	= -lGLU -lGL -lXmu
+ TMAKE_LIBS_THREAD	= 
+ 
