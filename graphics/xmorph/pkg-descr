@@ -1,0 +1,20 @@
+From the README:
+   xmorph: Digital Image Warp ("morph") graphical user interface
+
+   Written and Copyright (C) 1994, 1995, 1996 by Michael J. Gourlay
+
+   NO WARRANTEES, EXPRESS OR IMPLIED.
+
+   Xmorph is a digital image warping program, also known as a "morphing"
+   program.  It runs under the X Window System, using the X library, X
+   toolkit, X miscellaneous utilities, and the Athena widgets, all of
+   which are publically available from MIT, and part of the typical X
+   installation.  It is written in ANSI C.
+
+   Xmorph loads, saves, warps, and dissolves images, and loads, saves,
+   creates, and manipulates control meshes which determine the warping.
+   Xmorph has help pages built into it, so no external documentation is
+   necessary.
+
+eric.
+erich@FreeBSD.org
