@@ -1,0 +1,13 @@
+cfm is the "Canine File Manager", with a mutt-like interface.
+
+Some cool CFM features:
+ - Color Listings
+ - Mouseless Operation
+ - Context Menus based on file extension
+ - Limit listing by regular expression
+ - Create a selection based by regular expressio
+
+WWW: http://www.rpi.edu/~mullr/cfm/
+
+- Pete
+petef@databits.net

@@ -3,6 +3,7 @@
 
     SUBDIR += asfiles
     SUBDIR += binder
+    SUBDIR += cfm
     SUBDIR += dfm
     SUBDIR += endeavour
     SUBDIR += ezfm
