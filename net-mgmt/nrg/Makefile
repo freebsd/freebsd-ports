@@ -7,6 +7,7 @@
 
 PORTNAME=	nrg
 PORTVERSION=	0.99.22
+PORTREVISION=	1
 CATEGORIES=	net-mgmt sysutils
 MASTER_SITES=	ftp://nrg.hep.wisc.edu/pub/src/nrg/ \
 		http://www.ranner.jawa.at/stuff/
@@ -63,6 +64,11 @@ post-patch:
 		${WRKSRC}/roverpingd/write_stats.c
 	@${REINPLACE_CMD} -e "s,-D__FreeBSD__,,g" \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s,@bindir@/rrdtool,${PREFIX}/bin/rrdtool,g" \
+		${WRKSRC}/etc/run-star-head.pl.in
+	@${REINPLACE_CMD} -e "s,@prefix@,${PREFIX},g" \
+		-e "s,NOW \"%a %b %d %H:%M %Z %Y\",NOW '%a %b %d %H:%M %Z %Y',g" \
+		${WRKSRC}/templates/*.in
 
 pre-install:
 	@${SED} 's|%%PREFIX%%|${PREFIX}|g' <${.CURDIR}/pkg-message >${PKGMESSAGE}
