@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	XML_Serializer
-PORTVERSION=	0.13.0
+PORTVERSION=	0.13.1
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	antonio@php.net
 COMMENT=	PEAR Swiss-army knive for reading and writing XML files
 
 BUILD_DEPENDS=	${PEARDIR}/XML/Parser.php:${PORTSDIR}/devel/pear-XML_Parser \
@@ -18,11 +18,11 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	XML
 FILES=		Serializer.php Unserializer.php
-EXAMPLES=	example.xml serializeArrayWithObjects.php serializeEmptyArray.php	\
-		serializeIndexedArray.php serializeObject.php serializeRDF.php		\
-		serializeWithAttributes.php serializeWithAttributes2.php		\
-		serializeWithDtd.php serializeWithIndentedAttributes.php		\
-		serializeWithTagMap.php unserializeAnyXML.php unserializeEnum.php	\
+EXAMPLES=	example.xml serializeArrayWithObjects.php serializeEmptyArray.php \
+		serializeIndexedArray.php serializeObject.php serializeRDF.php \
+		serializeWithAttributes.php serializeWithAttributes2.php \
+		serializeWithDtd.php serializeWithIndentedAttributes.php \
+		serializeWithTagMap.php unserializeAnyXML.php unserializeEnum.php \
 		unserializeObject.php unserializeRDF.php unserializeWithAttributes.php
 DOCS=		todo.txt
 _DOCSDIR=	doc
