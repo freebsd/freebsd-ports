@@ -333,6 +333,7 @@
     SUBDIR += xcdroast
     SUBDIR += xcpustate
     SUBDIR += xdu
+    SUBDIR += xfce4-mcs-manager
     SUBDIR += xfsm
     SUBDIR += xin
     SUBDIR += xloadface
