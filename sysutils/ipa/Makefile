@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipa
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.simon.org.ua/ipa/ \
 		http://www.outloud.org/ipa/
