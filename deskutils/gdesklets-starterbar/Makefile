@@ -35,8 +35,6 @@ RUN_DEPENDS+=	uuid:${PORTSDIR}/misc/ossp-uuid
 
 do-build:
 	@${WRKSRC}/Install_${NAME}_Sensor.bin --nomsg ${WRKSRC}
-	@${PATCH} ${WRKSRC}/${NAME}/Icon.py < ${FILESDIR}/${NAME}::Icon.py
-	@${PATCH} ${WRKSRC}/${NAME}/__init__.py < ${FILESDIR}/${NAME}::__init__.py
 .if ${OSVERSION} < 500000
 	@${REINPLACE_CMD} -e 's|uuidgen|uuid|g' \
 		${WRKSRC}/${NAME}/IconSet.py
