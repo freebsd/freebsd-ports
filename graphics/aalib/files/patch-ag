@@ -1,0 +1,39 @@
+--- aafire.c.orig	Fri Mar  2 16:30:27 2001
++++ aafire.c	Fri Mar  2 16:31:17 2001
+@@ -51,6 +51,7 @@
+ static void initialize()
+ {
+     int i;
++    srandomdev();
+     context = aa_autoinit(&aa_defparams);
+     if (context == NULL) {
+ 	printf("Failed to initialize aalib\n");
+@@ -107,21 +108,21 @@
+     height++;
+     loop--;
+     if (loop < 0)
+-	loop = rand() % 3, sloop++;;
++	loop = random() % 3, sloop++;;
+     i1 = 1;
+     i2 = 4 * XSIZ + 1;
+     for (p = (char *) bitmap + XSIZ * (YSIZ + 0); p < ((unsigned char *) bitmap + XSIZ * (YSIZ + 1)); p++, i1 += 4, i2 -= 4) {
+-	last1 = rand() % min(i1, min(i2, height));
+-	i = rand() % 6;
++	last1 = random() % min(i1, min(i2, height));
++	i = random() % 6;
+ 	for (; p < (unsigned char *) bitmap + XSIZ * (YSIZ + 1) && i != 0; p++, i--, i1 += 4, i2 -= 4)
+-	    *p = last1, last1 += rand() % 6 - 2,
+-		*(p + XSIZ) = last1, last1 += rand() % 6 - 2;
+-	*(p + 2 * XSIZ) = last1, last1 += rand() % 6 - 2;
++	    *p = last1, last1 += random() % 6 - 2,
++		*(p + XSIZ) = last1, last1 += random() % 6 - 2;
++	*(p + 2 * XSIZ) = last1, last1 += random() % 6 - 2;
+     }
+     /*
+        for(p=bitmap+XSIZ*YSIZ;p<bitmap+(YSIZ+2)*XSIZ;p++)
+        {
+-       *p=rand();
++       *p=random();
+        } */
+     i = 0;
+     firemain();
