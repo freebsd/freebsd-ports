@@ -287,6 +287,7 @@
     SUBDIR += libnss-mysql
     SUBDIR += libosip
     SUBDIR += libosip2
+    SUBDIR += libpcap
     SUBDIR += librsync
     SUBDIR += libsmi
     SUBDIR += libsocket++

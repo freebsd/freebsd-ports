@@ -1,0 +1,9 @@
+libpcap is a ubiquitous network traffic capture library used by a wide
+variety of BSD, Linux and UN*X applications.
+
+Whilst FreeBSD has a vendor branch import of libpcap in its source tree,
+the purpose of the port is to provide a means of offering additional,
+bleeding-edge features which might not make it into the tree.
+
+Bruce
+bms@FreeBSD.org
