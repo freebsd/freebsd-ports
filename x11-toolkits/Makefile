@@ -165,7 +165,6 @@
     SUBDIR += qt32
     SUBDIR += qtpixmap
     SUBDIR += qwt
-    SUBDIR += render
     SUBDIR += rep-gtk
     SUBDIR += rep-gtk2
     SUBDIR += ruby-fox
