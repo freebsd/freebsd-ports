@@ -7,6 +7,7 @@
 
 PORTNAME=	pf_freebsd
 PORTVERSION=	1.66
+PORTREVISION=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://pf4freebsd.love2party.net/
 .if defined(WITH_ALTQ) && (${WITH_ALTQ} == "yes")
