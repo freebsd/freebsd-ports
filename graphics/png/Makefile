@@ -3,7 +3,7 @@
 # Date created:         5 Dec 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.14 1998/09/14 19:43:12 markm Exp $
+# $Id: Makefile,v 1.15 1998/09/17 00:50:48 asami Exp $
 #
 
 DISTNAME=       libpng-1.0.2
@@ -13,7 +13,7 @@ MASTER_SITES=   ftp://ftp.uu.net/graphics/png/src/
 
 MAINTAINER=     ache@FreeBSD.org
 
-MAN3=           libpng.2 libpngpf.3
+MAN3=           libpng.3 libpngpf.3
 MAN5=           png.5
 
 do-configure:
