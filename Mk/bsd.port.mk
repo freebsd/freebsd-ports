@@ -1269,7 +1269,7 @@ PKG_ARGS+=		-o ${PKGORIGIN}
 .if defined(PKG_NOCOMPRESS)
 PKG_SUFX?=		.tar
 .else
-PKG_SUFX?=		.tgz
+PKG_SUFX?=		.tbz
 .endif
 # where pkg_add records its dirty deeds.
 PKG_DBDIR?=		/var/db/pkg
