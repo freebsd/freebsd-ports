@@ -3,7 +3,7 @@
 # Date created:		1999/08/08
 # Whom:			Jose Marques
 #
-# $Id:$
+# $FreeBSD$
 #
 
 DISTNAME=	ib12
