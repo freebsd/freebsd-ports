@@ -4,13 +4,14 @@
 #
 # $FreeBSD$
 
-PORTNAME=	inn-stable
-PORTVERSION=	v22
+PORTNAME=	inn
+PORTVERSION=	2.2.${STABLE}
+STABLE=		20000709
 CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		ftp://ftp.isc.org/isc/inn/snapshots/
 MASTER_SITE_SUBDIR=	andreas
-DISTNAME=	inn-STABLE-20000709
+DISTNAME=	inn-STABLE-${STABLE}
 
 MAINTAINER=	andreas@FreeBSD.org
 
