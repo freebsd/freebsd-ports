@@ -7,14 +7,14 @@
 
 PORTNAME=	kakasi
 PORTVERSION=	000124
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese ruby
 MASTER_SITES=	http://www.notwork.org/~gotoken/ruby/p/kakasi/
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-LIB_DEPENDS=	kakasi.2:${PORTSDIR}/japanese/kakasi
+LIB_DEPENDS=	kakasi.3:${PORTSDIR}/japanese/kakasi
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
