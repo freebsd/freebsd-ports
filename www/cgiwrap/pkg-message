@@ -8,4 +8,8 @@ recommended to try the Apache web server package.
 The cgiwrap scripts have been installed in:
     ${PREFIX}/www/cgi-bin
 ...the default location for Apache's cgi-bin directory.
+
+Access control enabled, you must create either
+${PREFIX}/etc/cgiwrap.allow or ${PREFIX}/etc/cgiwrap.deny before
+cgiwrap will function.
 -----------------------------------------------------------------
