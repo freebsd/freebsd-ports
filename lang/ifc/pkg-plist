@@ -600,6 +600,7 @@ intel/compiler60/ia32/bin/f90com
 intel/compiler60/ia32/bin/fpp
 intel/compiler60/ia32/bin/icid
 intel/compiler60/ia32/bin/ifc
+intel/compiler60/ia32/bin/ifc.cfg
 intel/compiler60/ia32/bin/ifcbin
 intel/compiler60/ia32/bin/ifccem
 intel/compiler60/ia32/bin/ifcvars.csh
@@ -658,7 +659,6 @@ intel/compiler60/ia32/lib/libsvml.a
 intel/compiler60/ia32/lib/libunwind.a
 intel/compiler60/ia32/lib/libunwind.so
 intel/compiler60/ia32/lib/libunwind.so.1
-intel/compiler60/man/man1/ifc.1
 @dirrm %%PORTDOCS%%intel/licenses
 @dirrm %%PORTDOCS%%intel/compiler60/man/man1
 @dirrm %%PORTDOCS%%intel/compiler60/man
