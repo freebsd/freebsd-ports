@@ -181,6 +181,7 @@
     SUBDIR += libvorbis
     SUBDIR += libvorbis-aotuv
     SUBDIR += libworkman
+    SUBDIR += lindele
     SUBDIR += linux-arts
     SUBDIR += linux-esound
     SUBDIR += linux-libaudiofile

@@ -1,0 +1,12 @@
+bin/lindele
+share/gnome/applications/lindele.desktop
+share/gnome/lindele/lindele.glade
+share/gnome/lindele/lindele.png
+share/gnome/lindele/load.png
+share/gnome/lindele/next.png
+share/gnome/lindele/pause.png
+share/gnome/lindele/play.png
+share/gnome/lindele/playing.png
+share/gnome/lindele/prev.png
+share/gnome/lindele/stop.png
+@dirrm share/gnome/lindele
