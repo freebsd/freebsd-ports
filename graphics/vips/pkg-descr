@@ -1,0 +1,9 @@
+VIPS's a free image processing system. It aims to be about half way between
+Excel and Photoshop. It's obviously much smaller than these two, but it's
+not a toy either (about 200k lines of code). It's very bad at photo
+retouching, but it's great (much better than programs like Photoshop, I
+think) at all the other things you use photoshop for. It's particularly
+good with large images (ie. images larger than the amount of RAM in your
+machine), and for working with colour.
+
+WWW: http://www.vips.ecs.soton.ac.uk/

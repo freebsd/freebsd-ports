@@ -458,5 +458,6 @@
     SUBDIR += yafray
     SUBDIR += zimg
     SUBDIR += zphoto
+    SUBDIR += vips
 
 .include <bsd.port.subdir.mk>
