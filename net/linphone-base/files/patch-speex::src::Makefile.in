@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- speex/src/Makefile.in.orig	Mon Dec 30 11:29:55 2002
-+++ speex/src/Makefile.in	Mon Dec 30 11:54:38 2002
+--- speex/src/Makefile.in.orig	Fri Jun 13 15:22:55 2003
++++ speex/src/Makefile.in	Fri Jun 13 15:22:56 2003
 @@ -70,7 +70,7 @@
  OBJEXT = @OBJEXT@
  PATH_SEPARATOR = @PATH_SEPARATOR@
@@ -12,12 +12,3 @@ $FreeBSD$
  AMTAR = @AMTAR@
  AS = @AS@
  AWK = @AWK@
-@@ -102,7 +102,7 @@
- ogg_libraries = @ogg_libraries@
- src = @src@
- 
--INCLUDES = -I$(top_srcdir)/libspeex
-+INCLUDES = -I$(top_srcdir)/libspeex @OGG_INCLUDES@
- man_MANS = speexenc.1 speexdec.1
- 
- EXTRA_DIST = $(man_MANS) getopt_win.h getopt.c getopt1.c wave_out.c wave_out.h

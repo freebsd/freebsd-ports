@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	linphone
-PORTVERSION=	0.10.0
+PORTVERSION=	0.11.0
 CATEGORIES=	net
-MASTER_SITES=	http://savannah.gnu.org/download/linphone/${PORTVERSION}/sources/
+MASTER_SITES=	http://simon.morlat.free.fr/download/${PORTVERSION}/source/
 
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	A web phone that supports SIP protocol
 
-LIB_DEPENDS=	osip.0:${PORTSDIR}/net/libosip \
+LIB_DEPENDS=	osip.9:${PORTSDIR}/net/libosip \
 		panel-applet-2.0:${PORTSDIR}/x11/gnomepanel \
 		gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui
 
