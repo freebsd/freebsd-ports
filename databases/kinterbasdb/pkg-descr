@@ -1,0 +1,7 @@
+KinterbasDB Python module is a client part for the Interbase
+(Firebird) SQL Server. It enables you to store, retrieve and handle
+relational data in Interbase within Python program. It provides the
+functionality to execute SQL statements, control transactions, to use
+special data types and supports Python DB API 2.0 specifications.
+
+WWW: http://sourceforge.net/projects/kinterbasdb/
