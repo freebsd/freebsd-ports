@@ -1,0 +1,11 @@
+[ excerpt from developer's web site ]
+
+Konverter is a KDE MEncoder frontend for easy video conversions,
+scaling and cropping. Just select any common input format and select
+your favourite output format, codec and size (cropped or scaled).
+It also features videosplitting, videomerging and a preview mode.
+Just simple and powerful :-)
+
+WWW: http://www.kraus.tk/projects/konverter/
+
+-- lioux@FreeBSD.org
