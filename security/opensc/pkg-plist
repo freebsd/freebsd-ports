@@ -12,46 +12,30 @@
 @dirrm %%DATADIR%%
 libdata/pkgconfig/libopensc.pc
 lib/security/pam_opensc.so
-lib/security/pam_opensc.la
-lib/security/pam_opensc.a
 @unexec rmdir %D/lib/security 2>/dev/null || true
 lib/pkcs11/pkcs11-spy.so
-lib/pkcs11/pkcs11-spy.la
-lib/pkcs11/pkcs11-spy.a
 lib/pkcs11/opensc-pkcs11.so
-lib/pkcs11/opensc-pkcs11.la
-lib/pkcs11/opensc-pkcs11.a
 lib/pkcs11/libpkcs11.so.1
 lib/pkcs11/libpkcs11.so
-lib/pkcs11/libpkcs11.la
 lib/pkcs11/libpkcs11.a
 @dirrm lib/pkcs11
 lib/opensc/engine_pkcs11.so
-lib/opensc/engine_pkcs11.la
-lib/opensc/engine_pkcs11.a
 lib/opensc/engine_opensc.so
-lib/opensc/engine_opensc.la
-lib/opensc/engine_opensc.a
 @dirrm lib/opensc
 %%LDAP%%lib/libscldap.so.1
 %%LDAP%%lib/libscldap.so
-%%LDAP%%lib/libscldap.la
 %%LDAP%%lib/libscldap.a
 lib/libscconf.so.1
 lib/libscconf.so
-lib/libscconf.la
 lib/libscconf.a
 lib/libscam.so.1
 lib/libscam.so
-lib/libscam.la
 lib/libscam.a
 lib/libpkcs15init.so.1
 lib/libpkcs15init.so
-lib/libpkcs15init.la
 lib/libpkcs15init.a
 lib/libopensc.so.1
 lib/libopensc.so
-lib/libopensc.la
 lib/libopensc.a
 include/opensc/ui.h
 include/opensc/types.h
