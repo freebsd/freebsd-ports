@@ -1,0 +1,27 @@
+--- configure.in.orig	Sun May 12 20:06:12 2002
++++ configure.in	Fri Mar 19 19:26:43 2004
+@@ -12,12 +12,12 @@
+ AM_ACLOCAL_INCLUDE(macros)
+ 
+ AC_PROG_CC
+-AC_LIBLTDL_CONVENIENCE
++AC_LIBLTDL_INSTALLABLE
+ AC_LIBTOOL_DLOPEN
+-AM_PROG_LIBTOOL
++AC_PROG_LIBTOOL
+ AC_SUBST(LIBLTDL)
++AC_SUBST(INCLTDL)
+ 
+-AC_CONFIG_SUBDIRS(libltdl)
+ 
+ AC_CHECK_LIB(m,sqrt)
+ AC_CHECK_LIB(jpeg,jpeg_start_compress)
+@@ -55,7 +55,7 @@
+ if test "$GDKPIXBUF_CONFIG"x != "x"; then
+ 	GDKPIXBUF_VERSION=`$GDKPIXBUF_CONFIG --version`
+ 	case "$GDKPIXBUF_VERSION" in
+-	    0.14.*) have_gdkpixbuf=yes
++	    0.22.*) have_gdkpixbuf=yes
+ 		 GDKPIXBUF_CFLAGS=`$GDKPIXBUF_CONFIG --cflags`
+ 		 GDKPIXBUF_LIBS=`$GDKPIXBUF_CONFIG --libs`
+ 		 CFLAGS="$CFLAGS $GDKPIXBUF_CFLAGS"
