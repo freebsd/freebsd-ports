@@ -12,6 +12,7 @@
     SUBDIR += alloywm
     SUBDIR += amaterus
     SUBDIR += amiwm
+    SUBDIR += aquaosk
     SUBDIR += badwm
     SUBDIR += bbconf
     SUBDIR += bbkeys
