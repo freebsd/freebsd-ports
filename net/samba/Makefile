@@ -70,7 +70,7 @@ post-install:
 	fi
 	${CHMOD} 700 ${SAMBA_PRIVATE}
 	if [ ! -f ${SAMBA_PRIVATE}/smbpasswd ] ; then			\
-		${CAT} /etc/passwd | ${PREFIX}/bin/make_smbpasswd > ${SAMBA_PRIVATE}/smbpasswd ; \
+		${CAT} /etc/passwd | ${GREP} -v "^#" | ${PREFIX}/bin/make_smbpasswd > ${SAMBA_PRIVATE}/smbpasswd ; \
 		${CHMOD} 600 ${SAMBA_PRIVATE}/smbpasswd ;			\
 	fi
 	${CHMOD} 500 ${SAMBA_PRIVATE}
