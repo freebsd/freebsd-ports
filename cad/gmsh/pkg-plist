@@ -1,5 +1,6 @@
-bin/gmsh
 bin/dxf2geo
+bin/gmsh
+bin/mshsort
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/bgmesh.pos
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/t1.geo

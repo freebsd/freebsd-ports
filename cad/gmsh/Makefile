@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gmsh
-PORTVERSION=	1.55.5
+PORTVERSION=	1.56.0
 CATEGORIES=	cad
 MASTER_SITES=	http://www.geuz.org/gmsh/src/	\
 		http://cm.bell-labs.com/netlib/voronoi/:triangle
@@ -32,7 +32,7 @@ CONFIGURE_ARGS=	--with-fltk-prefix=${X11BASE} \
 		--with-gsl-prefix=${LOCALBASE} \
 		--with-jpeg-prefix=${LOCALBASE} \
 		--with-png-prefix=${LOCALBASE}
-ALL_TARGET=	all converters
+ALL_TARGET=	all utils
 
 MAN1=		gmsh.1
 
@@ -61,9 +61,11 @@ post-patch:
 		${WRKSRC}/demos/${demo}
 .endfor
 
-post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/gmsh
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/dxf2geo ${PREFIX}/bin
+do-install:
+.for file in dxf2geo gmsh mshsort
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${file} ${PREFIX}/bin
+.endfor
+	${INSTALL_MAN} ${WRKSRC}/doc/gmsh.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/FAQ ${DOCSDIR}
