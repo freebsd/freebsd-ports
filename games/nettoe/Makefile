@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	nettoe
-PORTVERSION=	1.0.6
+PORTVERSION=	1.1.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	nettoe
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	rbg@gayteenresource.org
 
@@ -20,9 +20,9 @@ GNU_CONFIGURE=	yes
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/nettoe
+	${MKDIR} ${DOCSDIR}
 .for I in AUTHORS BUGS COPYING ChangeLog INSTALL NEWS README TO-DO
-	${INSTALL_DATA} ${WRKSRC}/$I ${PREFIX}/share/doc/nettoe
+	${INSTALL_DATA} ${WRKSRC}/$I ${DOCSDIR}
 .endfor
 .endif
 
