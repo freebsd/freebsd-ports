@@ -47,3 +47,4 @@ lib/libfleditor.so.1
 %%PORTDOCS%%share/doc/fl_editor/Fl_StatusPanel.html
 %%PORTDOCS%%share/doc/fl_editor/Fl_StatusPanel.jpg
 %%PORTDOCS%%share/doc/fl_editor/index.html
+%%PORTDOCS%%@dirrm share/doc/fl_editor

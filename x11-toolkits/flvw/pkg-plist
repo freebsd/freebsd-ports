@@ -40,3 +40,4 @@ lib/libflvw.so.1
 %%PORTDOCS%%share/doc/flvw/scroll_bar.html
 %%PORTDOCS%%share/doc/flvw/stylebasics.html
 %%PORTDOCS%%share/doc/flvw/widget_features.html
+%%PORTDOCS%%@dirrm share/doc/flvw
