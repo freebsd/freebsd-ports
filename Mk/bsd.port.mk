@@ -139,9 +139,15 @@ FreeBSD_MAINTAINER=	asami@FreeBSD.org
 # USE_AUTOMAKE	- Says that the port uses automake.  Implies USE_AUTOCONF.
 # AUTOMAKE		- Set to path of GNU automake if not in $PATH (default:
 #				  automake).
+# AUTOMAKE_ARGS - Pass these args to automake if ${USE_AUTOMAKE} is set.
+# AUTOMAKE_ENV	- Pass these env (shell-like) to automake if
+#				  ${USE_AUTOMAKE} is set.
 # USE_AUTOCONF	- Says that the port uses autoconf.  Implies GNU_CONFIGURE.
 # AUTOCONF		- Set to path of GNU autoconf if not in $PATH (default:
 #				  autoconf).
+# AUTOCONF_ARGS - Pass these args to autoconf if ${USE_AUTOCONF} is set.
+# AUTOCONF_ENV	- Pass these env (shell-like) to autoconf if
+#				  ${USE_AUTOCONF} is set.
 # USE_LIBTOOL	- Says that the port uses Libtool.  Implies GNU_CONFIGURE.
 # LIBTOOL		- Set to path of libtool (default: libtool).
 # LIBTOOLFILES	- Files to patch for libtool (defaults: "aclocal.m4" if
@@ -1755,10 +1761,12 @@ do-patch:
 .if !target(do-configure)
 do-configure:
 .if defined(USE_AUTOMAKE)
-	@(cd ${CONFIGURE_WRKSRC} && ${AUTOMAKE})
+	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOMAKE_ENV} ${AUTOMAKE} \
+		${AUTOMAKE_ARGS})
 .endif
 .if defined(USE_AUTOCONF)
-	@(cd ${CONFIGURE_WRKSRC} && ${AUTOCONF})
+	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF} \
+		${AUTOCONF_ARGS})
 .endif
 	@if [ -f ${SCRIPTDIR}/configure ]; then \
 		cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} \

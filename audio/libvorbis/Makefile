@@ -24,7 +24,8 @@ WRKSRC=		${WRKDIR}/vorbis
 ACLOCAL?=	${LOCALBASE}/bin/aclocal
 AUTOHEADER?=	${LOCALBASE}/bin/autoheader
 CFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ARGS+=	--with-ogg=${LOCALBASE}
+CONFIGURE_ARGS=	--with-ogg=${LOCALBASE}
+AUTOMAKE_ARGS=	--add-missing
 
 post-patch:
 	cd ${WRKSRC} && ${ACLOCAL}

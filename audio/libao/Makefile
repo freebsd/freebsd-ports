@@ -21,6 +21,7 @@ WRKSRC=		${WRKDIR}/ao
 
 ACLOCAL?=	${LOCALBASE}/bin/aclocal
 AUTOHEADER?=	${LOCALBASE}/bin/autoheader
+AUTOMAKE_ARGS=	--add-missing
 
 post-patch:
 	cd ${WRKSRC} && ${ACLOCAL}

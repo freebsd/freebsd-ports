@@ -25,8 +25,9 @@ WRKSRC=		${WRKDIR}/vorbis-tools
 ACLOCAL?=	${LOCALBASE}/bin/aclocal
 AUTOHEADER?=	${LOCALBASE}/bin/autoheader
 CFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ARGS+=	--with-ogg=${LOCALBASE} \
-			--with-ao=${LOCALBASE}
+CONFIGURE_ARGS=	--with-ogg=${LOCALBASE} \
+		--with-ao=${LOCALBASE}
+AUTOMAKE_ARGS=	--add-missing
 
 MAN1=		ogg123.1
 
