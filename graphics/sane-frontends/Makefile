@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sane-frontends
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.mostang.com/pub/sane/%SUBDIR%/ \
 		ftp://ftp.de.mostang.com/pub/sane/%SUBDIR%/ \
@@ -23,7 +23,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
-MAN1=		xcam.1 xscanimage.1
+MAN1=		scanadf.1 xcam.1 xscanimage.1
 
 .if defined(WITH_GIMP)
 LIB_DEPENDS+=	gimp:${PORTSDIR}/graphics/gimp1
