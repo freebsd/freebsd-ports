@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	osiris
-PORTVERSION=	4.1.2
+PORTVERSION=	4.1.3
 CATEGORIES=	security
-MASTER_SITES=	http://osiris.shmoo.com/data/
+MASTER_SITES=	http://osiris.shmoo.com/data/ \
+		http://darkambient.net/
 
 MAINTAINER=	lx@redundancy.redundancy.org
 COMMENT=	The Shmoo client/server host integrity checker
@@ -18,8 +19,10 @@ OPTIONS=	OSIRISMD "Enable to build the management daemon" off \
 		CLI "Enable to build the management CLI" off
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
+			--enable-fancy-cli
 USE_LIBTOOL_VER=	15
+USE_RC_SUBR=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -46,17 +49,19 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/cli/osiris ${PREFIX}/sbin
 .endif
 .if !defined(WITHOUT_OSIRISD)
-	${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
+	${SED} -e 's|@INSTALLDIR@|${PREFIX}/sbin|g' \
+		-e 's|@OSIRISDIR@|${PREFIX}/osiris|g' \
 		${WRKSRC}/src/install/freebsd/osirisd.in > \
-		${WRKSRC}/src/install/freebsd/osirisd.sh.sample
+		${WRKSRC}/src/install/freebsd/osirisd.sh
 	${INSTALL_PROGRAM} ${WRKSRC}/src/osirisd/osirisd ${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKSRC}/src/install/freebsd/osirisd.sh.sample \
+	${INSTALL_SCRIPT} ${WRKSRC}/src/install/freebsd/osirisd.sh \
 		${PREFIX}/etc/rc.d
 .endif
 .if defined(WITH_OSIRISMD)
-	${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
+	${SED} -e 's|@INSTALLDIR@|${PREFIX}/sbin|g' \
+		-e 's|@OSIRISDIR@|${PREFIX}/osiris|g' \
 		${WRKSRC}/src/install/freebsd/osirismd.in > \
-		${WRKSRC}/src/install/freebsd/osirismd.sh.sample
+		${WRKSRC}/src/install/freebsd/osirismd.sh
 	@${MKDIR} ${PREFIX}/osiris/configs
 .for os in aix bsdos darwin freebsd irix linux netbsd openbsd sunos \
 	unix-generic windows2000 windowsnt windowsserver2003 windowsxp \
@@ -66,9 +71,12 @@ do-install:
 .endfor
 	${INSTALL_PROGRAM} -m 4755 -o osiris -g osiris \
 		${WRKSRC}/src/osirismd/osirismd ${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKSRC}/src/install/freebsd/osirismd.sh.sample \
+	${INSTALL_SCRIPT} ${WRKSRC}/src/install/freebsd/osirismd.sh \
 		${PREFIX}/etc/rc.d
 .endif
 	${CHOWN} -R osiris:osiris ${PREFIX}/osiris
+
+post-install:
+	@${CAT} pkg-message
 
 .include <bsd.port.post.mk>

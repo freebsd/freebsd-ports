@@ -1,0 +1,8 @@
+--- src/install/freebsd/osirismd.in.orig	Fri Mar 11 15:05:42 2005
++++ src/install/freebsd/osirismd.in	Fri Mar 11 15:06:03 2005
+@@ -25,4 +25,5 @@
+ rcvar=`set_rcvar`
+ command=@INSTALLDIR@/osirismd
+ 
++load_rc_config $name
+ run_rc_command "$1"
