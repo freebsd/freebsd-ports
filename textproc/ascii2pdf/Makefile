@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}-0.9.1
 
 MAINTAINER=     petef@databits.net
 
-RUN_DEPENDS=    ${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/PDF/Create.pm:${PORTSDIR}/textproc/p5-PDF-Create
+RUN_DEPENDS=    ${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/PDF/Create.pm:${PORTSDIR}/textproc/p5-PDF-Create
 
 NO_BUILD=	yes
 
