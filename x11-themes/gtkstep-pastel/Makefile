@@ -6,18 +6,16 @@
 #
 
 PORTNAME=	gtkstep-pastel
-PORTVERSION= 	0.9.0
+PORTVERSION= 	200007290343
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://www.geocities.com/SiliconValley/Lab/8325/
-DISTNAME=	${PORTNAME}-${DISTVERSION}
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	ftp://ftp.themes.org/pub/themes/gtk/
+DISTNAME=	${PORTNAME}-1.2.x-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
-DISTVERSION=	0_9_0
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.10.1
 
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
