@@ -1,10 +1,10 @@
---- util/faxrcvd.sh.in.orig	Sun Sep 28 15:54:52 2003
-+++ util/faxrcvd.sh.in	Sun Sep 28 15:56:06 2003
+--- util/faxrcvd.sh.in.orig	Sun May 23 15:47:38 2004
++++ util/faxrcvd.sh.in	Sun May 23 15:48:12 2004
 @@ -51,6 +51,7 @@
  }
  . etc/setup.cache
  
-+export PATH=$PATH:%%LOCALBASE%%/bin
++export PATH=$PATH:$BIN
  INFO=$SBIN/faxinfo
  FAX2PS=$TIFFBIN/fax2ps
  MIMENCODE=mimencode

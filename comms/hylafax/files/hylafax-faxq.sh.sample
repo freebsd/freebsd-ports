@@ -1,0 +1,23 @@
+#! /bin/sh
+# hylafax faxq startup example.
+# be sure to initialize the followings:
+#   server: /usr/local/sbin/faxsetup
+#   modems: /usr/local/sbin/faxaddmodem
+#   incoming calls: /etc/ttys
+
+case "$1" in
+start)
+        if [ -x /usr/local/sbin/faxq ]; then
+                /usr/local/sbin/faxq && echo -n ' hylafax-faxq'
+        fi
+        ;;
+stop)
+        killall faxq && echo -n ' hylafax-faxq'
+        ;;
+*)
+        echo "Usage: `basename $0` {start|stop}" >&2
+        exit 64
+        ;;
+esac
+
+exit 0

@@ -1,0 +1,27 @@
+#! /bin/sh
+# hylafax hfaxd startup example.
+# be sure to initialize the followings:
+#   server........: /usr/local/sbin/faxsetup
+#   modems........: /usr/local/sbin/faxaddmodem
+#   incoming calls: /etc/ttys
+#
+# add switch to use old protocol (not recommended): -o [port]
+# add switch to use paging protocol (SNPP)........: -s [port]
+# read more about these options in 'man hfaxd'.
+
+case "$1" in
+start)
+        if [ -x /usr/local/sbin/hfaxd ]; then
+                /usr/local/sbin/hfaxd && echo -n ' hylafax-hfaxd'
+        fi
+        ;;
+stop)
+        killall hfaxd && echo -n ' hylafax-hfaxd'
+        ;;
+*)
+        echo "Usage: `basename $0` {start|stop}" >&2
+        exit 64
+        ;;
+esac
+
+exit 0
