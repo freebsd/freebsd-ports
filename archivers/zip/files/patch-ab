@@ -1,0 +1,11 @@
+--- unix/Makefile.orig	Fri Oct 24 11:38:04 1997
++++ unix/Makefile	Sat Jan 22 16:56:34 2000
+@@ -16,7 +16,7 @@
+ LN = ln -s
+ 
+ # (to use the Gnu compiler, change cc to gcc in CC)
+-CC = cc
++CC ?= cc
+ BIND = $(CC)
+ AS = $(CC) -c
+ E =
