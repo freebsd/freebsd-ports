@@ -8,7 +8,8 @@
 PORTNAME=	abcde
 PORTVERSION=	2.1.15
 CATEGORIES=	audio
-MASTER_SITES=	http://www.hispalinux.es/~data/files/
+MASTER_SITES=	http://www.hispalinux.es/~data/files/ \
+		http://www.soulwax.net/freebsd/
 DISTNAME=	abcde_${PORTVERSION}.orig
 
 MAINTAINER=	chopra@soulwax.net
