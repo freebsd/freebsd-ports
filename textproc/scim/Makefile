@@ -7,6 +7,7 @@
 
 PORTNAME=	scim
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=scim
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=scim
 MAINTAINER=	gaoj@cpsc.ucalgary.ca
 COMMENT=	Smart Common Input Method platform
 
-USE_GNOME=	gtk20 gconf2 lthack
+USE_GNOME=	gconf2 gnomehier gtk20 intlhack
 
 USE_X_PREFIX=	yes
 USE_ICONV=	yes
@@ -24,6 +25,8 @@ INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=	15
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
+
+GCONF_SCHEMAS=	scim.schemas
 
 .include <bsd.port.pre.mk>
 
@@ -40,13 +43,18 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -D__STDC_ISO_10646__" \
 PLIST_SUB=	NOSTABLE=""
 .endif
 
-post-configure:
+post-patch:
 	${REINPLACE_CMD} '/^pkgconfigdir/s|$$(libdir)|$${exec_prefix}/libdata|' \
-		${WRKSRC}/Makefile
-	${REINPLACE_CMD} '/^scim_setup_LDFLAGS/s|=|= ${PTHREAD_LIBS}|g' \
-		${WRKSRC}/extras/setup/Makefile
+			${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} 's|$$(datadir)/pixmaps|$$(prefix)/share/gnome/pixmaps|' \
+			${WRKSRC}/data/pixmaps/Makefile.in
+	${REINPLACE_CMD} -e 's|$$(datadir)/app|$$(prefix)/share/gnome/app| ; \
+		 s|$$(datadir)/control|$$(prefix)/share/gnome/control| ; \
+		 /^scim_setup_LDFLAGS/s|=|= ${PTHREAD_LIBS}|' \
+			${WRKSRC}/extras/setup/Makefile.in
 
 post-install:
+	@gtk-query-immodules-2.0 > ${PREFIX}/etc/gtk-2.0/gtk.immodules
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO} To display this message again, type pkg_info -D ${PKGNAME}
 
