@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	tif22pnm
-PORTVERSION=	0.06
+PORTVERSION=	0.10
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.inf.bme.hu/~pts/
 
