@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	mpqc
-PORTVERSION=	2.2.1
-PORTREVISION=	1
+PORTVERSION=	2.2.2
 CATEGORIES=	science parallel
-MASTER_SITES=	http://aros.ca.sandia.gov/~cljanss/mpqc/distrib/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	mpqc
 DISTFILES=	mpqc-${PORTVERSION}.tar.gz mpqc-val-2.2.0.tar.gz
 .if !defined(NOPORTDOCS)
 DISTFILES+=	mpqc-man-${PORTVERSION}.tar.gz mpqc-html-${PORTVERSION}.tar.gz
