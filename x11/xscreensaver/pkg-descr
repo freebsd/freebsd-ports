@@ -10,7 +10,7 @@ extension, so it is disabled in config.h.  It makes very little
 difference anyway as the saver still watches the keyboard and mouse
 activity.
 
-http://www.jwz.org/xscreensaver/
+WWW: http://www.jwz.org/xscreensaver/
 
 -Satoshi
 asami@cs.berkeley.edu
