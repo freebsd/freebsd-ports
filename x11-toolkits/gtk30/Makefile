@@ -55,8 +55,9 @@ pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "If you want to compile with experimental menu dropshadow patch,"
 	@${ECHO_MSG} "hit Ctrl-C right now and use make \"WITH_DROPSHADOW=yes\""
-	@${ECHO_MSG} "NOTE: This option is not supported by FreeBSD GNOME Team."
-	@${ECHO_MSG} "Please, don't bug us if it doesn't work or build broken."
+	@${ECHO_MSG} "NOTE: This option is not supported by the FreeBSD GNOME Team."
+	@${ECHO_MSG} "If the patch does not work or causes the build to fail, just"
+	@${ECHO_MSG} "stop using the patch; we will not further debug it."
 	@${ECHO_MSG}
 .endif
 
