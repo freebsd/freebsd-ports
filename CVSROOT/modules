@@ -6591,6 +6591,7 @@ secure_usrbin	src/secure/usr.bin
 secure_usrsbin	src/secure/usr.sbin
 securelib	src/secure/lib
 sed		src/usr.bin/sed
+sed_inplace	ports/textproc/sed_inplace
 seejpeg		ports/graphics/seejpeg
 seizedesktop	ports/misc/seizedesktop
 semantic	ports/devel/semantic
