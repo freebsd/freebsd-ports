@@ -973,3 +973,4 @@ devel/pear||2004-03-06|removed, obsolete
 graphics/filmgimp|graphics/cinepaint|2004-03-06|renamed
 x11-toolkits/qt32|x11-toolkits/qt33|2004-03-09|qt32 replaced by qt33
 mail/ksig|misc/ksig|2004-03-09|ksig is now a part of the kdeaddons ports
+mail/exim-old||2004-03-09|No security maintenance from author, successor is exim
