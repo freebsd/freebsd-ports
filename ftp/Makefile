@@ -24,6 +24,7 @@
     SUBDIR += ftpcube
     SUBDIR += ftpd-tls
     SUBDIR += ftpfind
+    SUBDIR += ftplib
     SUBDIR += ftplocate
     SUBDIR += ftpmirror
     SUBDIR += ftpproxy
