@@ -6,23 +6,16 @@
 #
 
 PORTNAME=	py2html
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	textproc www python
-MASTER_SITES=	http://dist.freebsd-kr.org/pub/FreeBSD/ports/distfiles/ \
-		ftp://ftp2.python.or.kr/pub/FreeBSD/ports/distfiles/
+MASTER_SITES=	http://www3.kr.freebsd.org/~perky/distfiles/ \
+		http://cvsup3.kr.freebsd.org/~perky/distfiles/
+PKGNAMESUFFIX=	-${PYTHON_PKGNAMEPREFIX:S/-//}
 
 MAINTAINER=	perky@fallin.lv
 
 USE_PYTHON=	yes
-PLIST_SUB+=	PYTHON_LIBPATH=${PYTHON_LIBPATH:S/^${LOCALBASE}//g}lib \
-		PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S/^${LOCALBASE}\///g}
-
-do-build:
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
-
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/PyFontify.py* ${PYTHON_SITELIBDIR}/
-	${INSTALL_SCRIPT} ${WRKSRC}/py2html.py ${LOCALBASE}/bin/py2html
-	${INSTALL_SCRIPT} ${WRKSRC}/py2html.pyc ${LOCALBASE}/bin/
+PLIST_SUB+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S,^${LOCALBASE}/,,g}
+MAKE_ENV=	PORTSDIR=${PORTSDIR}
 
 .include <bsd.port.mk>
