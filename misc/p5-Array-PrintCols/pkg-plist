@@ -1,5 +1,4 @@
 lib/perl5/man/man3/Array::PrintCols.3.gz
 lib/perl5/site_perl/Array/PrintCols.pm
-lib/perl5/site_perl/Array/tester.pl
 lib/perl5/site_perl/i386-freebsd/auto/Array/PrintCols/.packlist
 @dirrm lib/perl5/site_perl/i386-freebsd/auto/Array/PrintCols
