@@ -1,11 +1,13 @@
---- src/prefs.c.orig	Mon Jan 18 02:34:19 1999
-+++ src/prefs.c	Mon Jan 18 02:34:26 1999
-@@ -2,7 +2,7 @@
+--- src/prefs.c.orig	Fri May 21 09:40:40 1999
++++ src/prefs.c	Sat Apr  8 14:06:59 2000
+@@ -9,8 +9,8 @@
  #include "gtksamba.h"
  #include <unistd.h>
  
 -#define DEF_SMB_CONF  "/etc/smb.conf"
-+#define DEF_SMB_CONF  "/usr/local/etc/smb.conf"
- #define DEF_RESTART  "/etc/rc.d/init.d/smb restart"
+-#define DEF_RESTART  "/etc/rc.d/init.d/smb restart"
++#define DEF_SMB_CONF  "%%LOCALBASE%%/etc/smb.conf"
++#define DEF_RESTART  ""
  
  static GtkWidget *pbox=NULL;
+ static GtkWidget *conf_entry=NULL;
