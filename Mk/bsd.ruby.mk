@@ -47,7 +47,8 @@ Ruby_Include_MAINTAINER=	knu@FreeBSD.org
 # RUBY_ARCH		- Directory name of architecture dependent libraries.
 # RUBY_SUFFIX		- Suffix for ruby binaries and directories.
 # _RUBY_SUFFIX		- String to be used as RUBY_SUFFIX.  Always ${RUBY_VER:S/.//}.
-# RUBY_WITH_SUFFIX	- Always ${LOCALBASE}/bin/ruby${_RUBY_SUFFIX}.
+# RUBY_WITHOUT_SUFFIX	- Always ${LOCALBASE}/bin/ruby.
+# RUBY_WITH_SUFFIX	- Always ${RUBY_WITHOUT_SUFFIX}${_RUBY_SUFFIX}.
 # RUBY_NAME		- Ruby's name with trailing suffix.
 #
 # RUBY_RD		- Set to full path of rd.
@@ -133,7 +134,8 @@ RUBY_VERSION_CODE?=	${RUBY_VERSION:S/.//g}
 RUBY_VER=		${RUBY_VERSION:R}
 _RUBY_SUFFIX=		${RUBY_VER:S/.//}
 
-RUBY_WITH_SUFFIX?=	${LOCALBASE}/bin/ruby${_RUBY_SUFFIX}
+RUBY_WITHOUT_SUFFIX?=	${LOCALBASE}/bin/ruby
+RUBY_WITH_SUFFIX?=	${RUBY_WITHOUT_SUFFIX}${_RUBY_SUFFIX}
 
 RUBY_PKGNAMEPREFIX?=	ruby${RUBY_SUFFIX}-	# could be rb${RUBY_SUFFIX}-
 RUBY_SHLIBVER?=		${_RUBY_SUFFIX}
