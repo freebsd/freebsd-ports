@@ -24,7 +24,7 @@ $FreeBSD$
 +SCINTILLA_LIB = -lscintilla
 +SCINTILLA_IFACE = scintilla/include/Scintilla.iface
 +LEXERS = -lscintilla_lexers
-+CFLAGS += $(shell $(GTK_CONFIG) --cflags) -Wall -DGTK -DSCI_LEXER
++CFLAGS += $(shell $(GTK_CONFIG) --cflags) -Wall -DGTK -DSCI_LEXER -fPIC
 +LDFLAGS_PRE = $(shell $(GTK_CONFIG) --libs) -DGTK 
 +LDFLAGS_POST =  $(LEXERS)  $(SCINTILLA_LIB)
  
