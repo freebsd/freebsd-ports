@@ -3,8 +3,11 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Shout/Shout.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Shout/Shout.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Shout/autosplit.ix
-%%PORTDOCS%%share/examples/p5-Shout/example.pl
-%%PORTDOCS%%share/examples/p5-Shout/example2.pl
-%%PORTDOCS%%@dirrm share/examples/p5-Shout
+%%SITE_PERL%%/%%PERL_ARCH%%/example.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/example2.pl
+%%PORTDOCS%%%%DOCSDIR%%/example.pl
+%%PORTDOCS%%%%DOCSDIR%%/example2.pl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Shout
-@unexec rmdir %D/%%SITE_PERL%%/%%PER_ARCH%%/auto/Shout 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/mach 2>/dev/null || true
