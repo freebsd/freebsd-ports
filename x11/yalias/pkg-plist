@@ -1,5 +1,5 @@
 bin/yalias
-share/yalias/system.yaliasrc
-@dirrm share/yalias
+%%DATADIR%%/system.yaliasrc
+@dirrm %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
