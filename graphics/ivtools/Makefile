@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	ivtools
-PORTVERSION=	1.0.6
-PORTREVISION=	1
+PORTVERSION=	1.2.1
+PORTREVISION=	0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -27,9 +27,6 @@ MAN1=	idraw.1 iclass.1 drawtool.1 comterp.1 comdraw.1 flipbook.1 graphdraw.1
 
 .if ${ARCH} != "i386"
 BROKEN=		"fails to configure on ${ARCH}"
-.endif
-.if ${ARCH} == i386 && ${OSVERSION} > 500000
-BROKEN=		"fails to configure on ${ARCH} with FreeBSD version ${OSVERSION}"
 .endif
 
 .if ${XFREE86_VERSION} == 3
