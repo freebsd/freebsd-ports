@@ -775,6 +775,7 @@ c-nocem		ports/news/c-nocem
 c2html		ports/textproc/c2html
 c2lib		ports/devel/c2lib
 c2man		ports/devel/c2man
+c2mdoc		ports/devel/c2mdoc
 c2ps-a4		ports/print/c2ps-a4
 c2ps-letter	ports/print/c2ps-letter
 c4		ports/devel/c4
