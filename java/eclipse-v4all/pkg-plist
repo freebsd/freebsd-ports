@@ -1,0 +1,15 @@
+eclipse/features/org.eclipse.v4all.feature_2.1.1.9/cpl-v10.html
+eclipse/features/org.eclipse.v4all.feature_2.1.1.9/feature.properties
+eclipse/features/org.eclipse.v4all.feature_2.1.1.9/feature.xml
+eclipse/features/org.eclipse.v4all.feature_2.1.1.9/license.html
+eclipse/features/org.eclipse.v4all.feature_2.1.1.9/Thumbs.db
+eclipse/features/org.eclipse.v4all.feature_2.1.1.9/V4ALL_update_120.gif
+eclipse/plugins/org.eclipse.v4all_2.1.1.9/icons/Thumbs.db
+eclipse/plugins/org.eclipse.v4all_2.1.1.9/icons/v4all.gif
+eclipse/plugins/org.eclipse.v4all_2.1.1.9/plugin.properties
+eclipse/plugins/org.eclipse.v4all_2.1.1.9/plugin.xml
+eclipse/plugins/org.eclipse.v4all_2.1.1.9/v4all.jar
+@dirrm eclipse/features/org.eclipse.v4all.feature_2.1.1.9/
+@dirrm eclipse/plugins/org.eclipse.v4all_2.1.1.9/icons/
+@dirrm eclipse/plugins/org.eclipse.v4all_2.1.1.9/temp/
+@dirrm eclipse/plugins/org.eclipse.v4all_2.1.1.9/
