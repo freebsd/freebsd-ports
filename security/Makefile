@@ -76,6 +76,7 @@
     SUBDIR += gpasman
     SUBDIR += gpgme
     SUBDIR += gringotts
+    SUBDIR += gsfv
     SUBDIR += gtk-knocker
     SUBDIR += gtkportscan
     SUBDIR += hackbot
