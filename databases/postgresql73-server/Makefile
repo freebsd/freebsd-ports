@@ -20,6 +20,7 @@ COMMENT?=	The most advanced open-source database available anywhere
 WRKSRC=		${WRKDIR}/postgresql-${PORTVERSION}
 DIST_SUBDIR=	postgresql
 
+LATEST_LINK=	postgresql73
 USE_BZIP2=	YES
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
