@@ -72,6 +72,7 @@
     SUBDIR += drwebd
     SUBDIR += dsniff
     SUBDIR += f-prot
+    SUBDIR += f-prot-sig
     SUBDIR += fakebo
     SUBDIR += fakeident
     SUBDIR += find-zlib
