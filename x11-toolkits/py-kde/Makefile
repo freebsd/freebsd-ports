@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	kde
-PORTVERSION=	3.3.2
-PORTREVISION=	2
+PORTVERSION=	3.11.r1
 CATEGORIES=	x11-toolkits kde python
 MASTER_SITES=	http://www.river-bank.demon.co.uk/download/PyKDE2/ \
 		http://www.river-bank.demon.co.uk/download/PyQt/:qt
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	PyKDE-${PORTVERSION}-3
+DISTNAME=	PyKDE-3.11rc1
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} PyQt-x11-gpl-${PYQTVERSION}${EXTRACT_SUFX}:qt
 
 MAINTAINER=	ports@FreeBSD.org
@@ -20,49 +19,43 @@ COMMENT=	Python Bindings for KDE
 
 BUILD_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt
 
-BROKEN=		"Checksum mismatch; will be removed after Feb 2"
-
-WRKSRC=		${WRKDIR}/PyKDE-${PORTVERSION}
-
 USE_PYTHON=	yes
 USE_KDELIBS_VER=3
 USE_REINPLACE=	yes
 
-PYQTVERSION=	3.4
-
-ALL_TARGET=	all install
-
-MODULES=	dcop kdecore kdesu kdefx kdeui kio kfile kparts khtml kjs kspell kdeprint
-
-PLIST_SUB+=	PKGBASE=${PKGBASE}
+PYQTVERSION=	3.11
+EXAMPLESDIR=	${PREFIX}/share/examples/${PKGBASE}
 
 NO_FILTER_SHLIBS=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on 4.x"
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#/usr/bin/python#${PYTHON_CMD}#' ${WRKSRC}/postproc
 
 do-configure:
-	@${MKDIR} ${WRKDIR}/modules
-	@( cd ${WRKSRC} && env KDEDIR=${PREFIX} ${PYTHON_CMD} build.py -c \
-		-e ${PREFIX}/include/sip -q ${X11BASE} \
-		-v ${WRKDIR}/PyQt-x11-gpl-3.4/sip -d ${WRKDIR}/modules )
-	@${REINPLACE_CMD} -e 's#LIBS *= $$(SUBLIBS)#LIBS = $$(SUBLIBS) -L${WRKDIR}/modules -Wl,-rpath,${PYTHONPREFIX_SITELIBDIR}#' ${WRKSRC}/*/Makefile
-	@${REINPLACE_CMD} -e 's#atoll (s)#strtoll (s, NULL, 10)#' ${WRKSRC}/kio/kiohuge.cpp
-
-pre-build:
-.for module in ${MODULES}
-	( cd ${WRKSRC}/${module} && ${MAKE} ${ALL_TARGET} )
-.endfor
+	@( cd ${WRKSRC} && ${PYTHON_CMD} configure.py -c \
+		-k ${LOCALBASE} \
+		-v ${PREFIX}/share/sip \
+		-d ${PYTHONPREFIX_SITELIBDIR} )
 
 pre-install:
-	@(${ECHO} "#!${PYTHON_CMD}"; ${CAT} ${WRKSRC}/kdepyuic.py) > ${WRKSRC}/kdepyuic
+	@${REINPLACE_CMD} -e "s,/usr/bin/env python,${PYTHON_CMD}," \
+		${WRKSRC}/contrib/kdepyuic
 
-do-install:
-	@( cd ${WRKDIR}/modules/ && ${TAR} -cf - . ) | \
-		( cd ${PYTHONPREFIX_SITELIBDIR} && ${TAR} xf - )
-	@${MKDIR} ${PREFIX}/share/examples/${PKGBASE}
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${EXAMPLESDIR}
 	@( cd ${WRKSRC}/examples && ${TAR} -cf - . ) | \
-		( cd ${PREFIX}/share/examples/${PKGBASE} && ${TAR} -xf - )
-	@${INSTALL_SCRIPT} ${WRKSRC}/kdepyuic ${PREFIX}/bin
+		( cd ${EXAMPLESDIR} && ${TAR} -xf - )
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${EXAMPLESDIR}
+	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${EXAMPLESDIR}
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
+.endif
+	@${INSTALL_SCRIPT} ${WRKSRC}/contrib/kdepyuic ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
