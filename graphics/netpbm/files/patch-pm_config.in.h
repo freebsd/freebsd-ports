@@ -1,8 +1,8 @@
---- pm_config.h.orig	Sat Aug 10 01:19:45 2002
-+++ pm_config.h	Sat Oct  5 00:00:00 2002
-@@ -35,6 +35,10 @@
- typedef unsigned int uint32n;
- typedef signed int int32n;
+--- pm_config.in.h.orig	Sat Jul 24 04:40:06 2004
++++ pm_config.in.h	Tue Aug 17 16:53:30 2004
+@@ -15,6 +15,10 @@
+ 
+ **************************************************************************/
  
 +#if (defined(__unix__) || defined(unix)) && !defined(USG)
 +#include <sys/param.h>
@@ -11,16 +11,7 @@
  #if defined(USG) || defined(SVR4) || defined(VMS) || defined(__SVR4)
  #define SYSV
  #endif
-@@ -44,7 +48,7 @@
- ** and if you run on an Amiga, set AMIGA. If your compiler is ANSI C, you're
- ** probably better off setting SYSV - all it affects is string handling.
- */
--#define BSD
-+/* #define BSD */
- /* #define SYSV */
- /* #define MSDOS */
- /* #define AMIGA */
-@@ -118,9 +122,9 @@
+@@ -99,9 +103,9 @@
  #define RGB_DB2 "PBMplus_Dir:RGB.TXT"
  #define RGB_DB3 "PBMplus_Dir:RGB.TXT"
  #else
