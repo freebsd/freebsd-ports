@@ -316,6 +316,7 @@
     SUBDIR += pchar
     SUBDIR += pcnfsd
     SUBDIR += pdnsd
+    SUBDIR += pen
     SUBDIR += perldap
     SUBDIR += pfinger
     SUBDIR += pim6dd
