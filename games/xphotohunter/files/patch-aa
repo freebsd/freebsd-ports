@@ -1,25 +1,43 @@
---- Makefile.orig	Sat Sep 25 00:57:55 1999
-+++ Makefile	Fri Oct  8 03:09:28 1999
-@@ -5,19 +5,19 @@
+--- Makefile.orig	Sat Sep 25 01:57:55 1999
++++ Makefile	Sun Feb 20 21:41:12 2000
+@@ -1,29 +1,29 @@
+ # XPhotoHunter v1.4
+ 
+ # If you want to install data in another directory, edit the following line. 
+-DATADIR=/usr/local/share/xphotohunter
++DATADIR=${PREFIX}/share/xphotohunter
  # If you want to install executive files in another directory, edit the following line. 
- BINDIR=/usr/local/bin
+-BINDIR=/usr/local/bin
++BINDIR=${PREFIX}/bin
  # Where your locale dir is
 -LOCALEDIR=/usr/share/locale
-+LOCALEDIR=/usr/local/share/locale
++LOCALEDIR=${PREFIX}/share/locale
  
  SHELL=sh
- CC=gcc 
+-CC=gcc 
++CC?=gcc 
  DEFS=-DDATA_DIR=\"$(DATADIR)\"
  #INCLUDES=-I./ -I/usr/include -I/usr/lib/glib/include -I/usr/X11R6/include -I/usr/local/include
  #INCLUDES=-I./ -I/usr/include -I/usr/X11R6/include -I/usr/local/include `gtk-config --cflags`  
 -INCLUDES=`gtk-config --cflags`
-+INCLUDES=`gtk12-config --cflags`
++INCLUDES=`imlib-config --cflags-gdk`
  # The sequence of the "-l" is important when you compile staticly. 
  #LIBS=-L/usr/lib -L/usr/X11R6/lib -L/usr/local/lib -lgtk -lgdk_imlib -lgdk -lglib -ljpeg -ltiff -lpng \
  #           -lz -lgif  -lXi -lXext -lX11 -lm
  #LIBS=-L/usr/lib -L/usr/X11R6/lib -L/usr/local/lib `gtk-config --libs`
 -LIBS=-lgdk_imlib -ljpeg -ltiff -lpng -lz -lgif  `gtk-config --libs` -lXi -lXext -lX11 -lm
-+LIBS=-lgdk_imlib -ljpeg -ltiff -lpng -lz -lungif  `gtk12-config --libs` -lXi -lXext -lX11 -lm
- CFLAGS= -g -O2 -Wall 
+-CFLAGS= -g -O2 -Wall 
++LIBS=`imlib-config --libs-gdk`
++CFLAGS?= -g -O2 -Wall 
  
- INSTALL = /usr/bin/install -c
+-INSTALL = /usr/bin/install -c
+-INSTALL_DIR= $(INSTALL) -d -m 755
+-INSTALL_BIN = $(INSTALL) -m 755
+-INSTALL_DATA = $(INSTALL) -m 644
++INSTALL ?= /usr/bin/install -c
++INSTALL_DIR= mkdir -p
++INSTALL_BIN = ${BSD_INSTALL_PROGRAM}
++INSTALL_DATA = ${BSD_INSTALL_DATA}
+ RM=rm -fr
+ 
+ SRCS=main.c handler.c

@@ -1,0 +1,7 @@
+=========================================================
+Notice: to see Chinese fonts correctly, you must set 2
+environment variables :
+LC_CTYPE=zh_TW.Big5
+LC_MESSAGES=zh_TW.Big5
+
+=========================================================
