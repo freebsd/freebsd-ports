@@ -1,0 +1,11 @@
+**********************************************************
+* Before using xine_d4d_plugin, you must create symbolic *
+* links to specify the device nodes of your DVD drive.   *
+*                                                        *
+* example:                                               *
+*   ln -s /dev/acd0c /dev/dvd                            *
+*   ln -s /dev/racd0c /dev/rdvd  (on -stable)            *
+*                                                        *
+*   ln -s /dev/acd0c /dev/dvd                            *
+*   ln -s /dev/acd0c /dev/rdvd   (on -current)           *
+**********************************************************

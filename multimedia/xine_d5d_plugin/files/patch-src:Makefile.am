@@ -1,0 +1,11 @@
+--- src/Makefile.am.orig	Thu Jan 24 15:24:42 2002
++++ src/Makefile.am	Thu Jan 24 15:25:09 2002
+@@ -15,7 +15,7 @@
+ 
+ xineplug_inp_d5d_la_SOURCES = input_dvd.c 
+ xineplug_inp_d5d_la_LDFLAGS = -avoid-version -module
+-xineplug_inp_d5d_la_LIBADD  = dvdread/libdvdread.la libogle/libogle.la libdvdnav/libdvdnav.la
++xineplug_inp_d5d_la_LIBADD  = -ldvdread libogle/libogle.la libdvdnav/libdvdnav.la
+ 
+ 
+ 

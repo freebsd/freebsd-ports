@@ -1,0 +1,17 @@
+--- src/dvdread/Makefile.am.orig	Thu Jan 24 15:27:55 2002
++++ src/dvdread/Makefile.am	Thu Jan 24 15:29:03 2002
+@@ -1,14 +1,3 @@
+ 
+ CFLAGS = @CFLAGS@ -I.. -O3 -g -D_FILE_OFFSET_BITS=64 -Wall
+ 
+-noinst_LTLIBRARIES = libdvdread.la
+-
+-libdvdread_la_SOURCES = dvd_reader.c dvd_udf.c ifo_read.c ifo_print.c \
+-	nav_read.c nav_print.c bswap.h dvd_udf.h \
+-	css_auth.c css.c css_dvd.c css_descramble.c
+-
+-noinst_HEADERS = dvd_reader.h ifo_types.h ifo_read.h \
+-	css.h css_auth.h css_keys.h \
+-	css_tbl.h css_dvd.h bswap.h \
+-	ifo_print.h nav_types.h nav_read.h nav_print.h
+-
