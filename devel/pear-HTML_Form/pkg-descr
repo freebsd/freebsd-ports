@@ -1,6 +1,7 @@
-This is a simple HTML form generator. It supports all the HTML form element
-types including file uploads, may return or print the form, just individual
-form elements or the full form in "table mode" with a fixed layout.
+This is a simple HTML form generator. It supports all the
+HTML form element types including file uploads, may return
+or print the form, just individual form elements or the full
+form in "table mode" with a fixed layout.
 
 This package has been superceded by HTML_QuickForm.
 
