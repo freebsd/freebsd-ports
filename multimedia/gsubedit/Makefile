@@ -8,6 +8,7 @@
 
 PORTNAME=	gsubedit
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,14 +16,28 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 
 USE_X_PREFIX=	yes
-USE_BISON=	yes
+USE_GMAKE=	yes
 USE_GNOME=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-gnome
-USE_GMAKE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
-	@${PERL} -pi -e "s,Bison ,Bison,g" ${WRKSRC}/configure
-	@${PERL} -pi -e "s,doc/,share/doc/,g" ${WRKSRC}/Makefile.in
+	@${PERL} -pi -e 's|Bison |Bison|g ; \
+		 s|-lpthread|${PTHREAD_LIBS}|g ; \
+		 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
+		 s|share/pixmaps|share/gnome/pixmaps|g' ${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${PERL} -pi -e \
+		's|^gsubeditdoc|#gsubeditdoc|g ; \
+		 s|-g -O2|| ; \
+		 s|\$$\(datadir\)/locale|\$$\(prefix\)/share/locale|'
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in AUTHORS ChangeLog INSTALL README TODO
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
