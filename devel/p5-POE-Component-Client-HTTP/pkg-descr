@@ -1,8 +1,11 @@
-POE::Component::Client::HTTP is an HTTP user-agent for POE.  It lets
-other sessions run while HTTP transactions are being processed, and it
-lets several HTTP transactions be processed in parallel.
+POE::Component::Client::HTTP is an asynchronous, event driven HTTP user
+agent.  It accepts events containing HTTP::Request objects, and it
+returns events carrying HTTP::Response objects.  It supports https and
+simultaneous HTTP transactions.  It lets other sessions run while HTTP
+transactions are being processed, and it lets several HTTP transactions
+be processed in parallel.
 
 WWW: http://search.cpan.org/search?dist=POE-Component-Client-HTTP
 
 -- Sergey Skvortsov
-skv@protey.ru
+skv@FreeBSD.org
