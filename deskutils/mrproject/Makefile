@@ -10,7 +10,7 @@ PORTVERSION=	0.5.1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	ftp://ftp.codefactory.se/pub/software/mrproject/source/
 
-MAINTAINER=	demon@FreeBSD.org
+MAINTAINER=	sobomax@FreeBSD.org
 
 BUILD_DEPENDS=	evolution:${PORTSDIR}/mail/evolution
 RUN_DEPENDS=	evolution:${PORTSDIR}/mail/evolution
