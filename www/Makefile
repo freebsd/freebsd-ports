@@ -634,6 +634,7 @@
     SUBDIR += py-scgi
     SUBDIR += py-websvcs
     SUBDIR += py-webware
+    SUBDIR += pyphany
     SUBDIR += pyweblib
     SUBDIR += qdecoder
     SUBDIR += quixote
