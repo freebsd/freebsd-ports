@@ -28,11 +28,15 @@ GNUstep/Apps/WPrefs.app/tiff/miscprefs2.tiff
 GNUstep/Apps/WPrefs.app/tiff/moreanim.tiff
 GNUstep/Apps/WPrefs.app/tiff/mousesettings.tiff
 GNUstep/Apps/WPrefs.app/tiff/mousespeed.tiff
+GNUstep/Apps/WPrefs.app/tiff/msty1.tiff
+GNUstep/Apps/WPrefs.app/tiff/msty2.tiff
+GNUstep/Apps/WPrefs.app/tiff/msty3.tiff
 GNUstep/Apps/WPrefs.app/tiff/newstyle.tiff
 GNUstep/Apps/WPrefs.app/tiff/nonopaque.tiff
 GNUstep/Apps/WPrefs.app/tiff/oldstyle.tiff
 GNUstep/Apps/WPrefs.app/tiff/opaque.tiff
 GNUstep/Apps/WPrefs.app/tiff/paths.tiff
+GNUstep/Apps/WPrefs.app/tiff/smooth.tiff
 GNUstep/Apps/WPrefs.app/tiff/sound.tiff
 GNUstep/Apps/WPrefs.app/tiff/speed0.tiff
 GNUstep/Apps/WPrefs.app/tiff/speed0s.tiff
@@ -93,11 +97,15 @@ GNUstep/Apps/WPrefs.app/xpm/miscprefs2.xpm
 GNUstep/Apps/WPrefs.app/xpm/moreanim.xpm
 GNUstep/Apps/WPrefs.app/xpm/mousesettings.xpm
 GNUstep/Apps/WPrefs.app/xpm/mousespeed.xpm
+GNUstep/Apps/WPrefs.app/xpm/msty1.xpm
+GNUstep/Apps/WPrefs.app/xpm/msty2.xpm
+GNUstep/Apps/WPrefs.app/xpm/msty3.xpm
 GNUstep/Apps/WPrefs.app/xpm/newstyle.xpm
 GNUstep/Apps/WPrefs.app/xpm/nonopaque.xpm
 GNUstep/Apps/WPrefs.app/xpm/oldstyle.xpm
 GNUstep/Apps/WPrefs.app/xpm/opaque.xpm
 GNUstep/Apps/WPrefs.app/xpm/paths.xpm
+GNUstep/Apps/WPrefs.app/xpm/smooth.xpm
 GNUstep/Apps/WPrefs.app/xpm/sound.xpm
 GNUstep/Apps/WPrefs.app/xpm/speed0.xpm
 GNUstep/Apps/WPrefs.app/xpm/speed0s.xpm
@@ -109,7 +117,10 @@ GNUstep/Apps/WPrefs.app/xpm/speed3.xpm
 GNUstep/Apps/WPrefs.app/xpm/speed3s.xpm
 GNUstep/Apps/WPrefs.app/xpm/speed4.xpm
 GNUstep/Apps/WPrefs.app/xpm/speed4s.xpm
+GNUstep/Apps/WPrefs.app/xpm/tdel.xpm
+GNUstep/Apps/WPrefs.app/xpm/tedit.xpm
 GNUstep/Apps/WPrefs.app/xpm/temp.xpm
+GNUstep/Apps/WPrefs.app/xpm/textr.xpm
 GNUstep/Apps/WPrefs.app/xpm/theme.xpm
 GNUstep/Apps/WPrefs.app/xpm/timer0.xpm
 GNUstep/Apps/WPrefs.app/xpm/timer0s.xpm
@@ -123,6 +134,7 @@ GNUstep/Apps/WPrefs.app/xpm/timer4.xpm
 GNUstep/Apps/WPrefs.app/xpm/timer4s.xpm
 GNUstep/Apps/WPrefs.app/xpm/timer5.xpm
 GNUstep/Apps/WPrefs.app/xpm/timer5s.xpm
+GNUstep/Apps/WPrefs.app/xpm/tnew.xpm
 GNUstep/Apps/WPrefs.app/xpm/whandling.xpm
 GNUstep/Apps/WPrefs.app/xpm/windowfocus.xpm
 GNUstep/Apps/WPrefs.app/xpm/workspace.xpm
@@ -154,7 +166,10 @@ include/wraster.h
 lib/libWINGs.a
 lib/libWMaker.a
 lib/libwraster.a
-lib/libwraster.la
+lib/libwraster.so
+lib/libwraster.so.3
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/WINGs/Images.tiff
 share/WINGs/Images.xpm
 share/WINGs/defaultIcon.tiff
@@ -273,9 +288,10 @@ share/WindowMaker/menu.tr
 share/WindowMaker/menu.zh_CN
 share/WindowMaker/menu.zh_TW.Big5
 share/WindowMaker/plmenu
-share/WindowMaker/plmenu.dk
+share/WindowMaker/plmenu.da
 share/WindowMaker/plmenu.fr
 share/WindowMaker/plmenu.hr
+share/WindowMaker/plmenu.it
 share/WindowMaker/plmenu.zh_CN
 share/WindowMaker/wmmacros
 share/WindowMaker/xtree.dat
@@ -283,11 +299,13 @@ share/WindowMaker/xtree.dat
 share/locale/de/LC_MESSAGES/WindowMaker.mo
 share/locale/es/LC_MESSAGES/WPrefs.mo
 share/locale/es/LC_MESSAGES/WindowMaker.mo
+share/locale/fi/LC_MESSAGES/WPrefs.mo
 share/locale/fi/LC_MESSAGES/WindowMaker.mo
 share/locale/fr/LC_MESSAGES/WPrefs.mo
 share/locale/fr/LC_MESSAGES/WindowMaker.mo
 share/locale/hr/LC_MESSAGES/WPrefs.mo
 share/locale/hr/LC_MESSAGES/WindowMaker.mo
+share/locale/it/LC_MESSAGES/WPrefs.mo
 share/locale/it/LC_MESSAGES/WindowMaker.mo
 share/locale/ja_JP.EUC/LC_MESSAGES/WPrefs.mo
 share/locale/ja_JP.EUC/LC_MESSAGES/WindowMaker.mo
@@ -298,6 +316,7 @@ share/locale/no/LC_MESSAGES/WindowMaker.mo
 share/locale/pl/LC_MESSAGES/WindowMaker.mo
 share/locale/pt/LC_MESSAGES/WPrefs.mo
 share/locale/pt/LC_MESSAGES/WindowMaker.mo
+share/locale/ru/LC_MESSAGES/WPrefs.mo
 share/locale/ru/LC_MESSAGES/WindowMaker.mo
 @dirrm share/WindowMaker/Styles
 @dirrm share/WindowMaker/Sounds
