@@ -14,6 +14,8 @@ DISTNAME=	abcMIDI-${PORTVERSION:S/./-/g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert abc music files to MIDI and PostScript
 
+BROKEN=		Size mismatch
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 EXTRACT_BEFORE_ARGS=	-aqo
