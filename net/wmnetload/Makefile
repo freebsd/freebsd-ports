@@ -7,13 +7,14 @@
 
 PORTNAME=	wmnetload
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	net windowmaker afterstep
 MASTER_SITES=	ftp://truffula.com/pub/
 
 MAINTAINER=	hendrik@scholz.net
 COMMENT=	Network load monitor dockapp
 
-BUILD_DEPENDS=	${X11BASE}/include/dockapp.h:${PORTSDIR}/x11-wm/libdockapp
+LIB_DEPENDS=	dockapp.1:${PORTSDIR}/x11-wm/libdockapp
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
