@@ -8115,6 +8115,7 @@ zope-zwiki	ports/www/zope-zwiki
 zorro		ports/deskutils/zorro
 zpygresqlda	ports/databases/zpygresqlda
 zsh		ports/shells/zsh
+zsh+euc_hack	ports/shells/zsh+euc_hack
 zsh-devel	ports/shells/zsh-devel
 zsnes		ports/emulators/zsnes
 zssh		ports/comms/zssh
