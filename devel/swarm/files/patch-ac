@@ -1,0 +1,13 @@
+--- Makefile.in.orig	Wed Jan 27 22:34:30 1999
++++ Makefile.in	Wed Jan 27 22:49:33 1999
+@@ -370,8 +370,8 @@
+ install-data-local:
+ 	$(INSTALL_DATA) swarmconfig.h $(includedir)
+ 	$(mkinstalldirs) $(bindir) $(datadir)/swarm
+-	$(INSTALL_PROGRAM) $(top_builddir)/libtool $(bindir)/libtool-swarm
+-	if test $(SWARM_INSTALL) = install-sh; then $(INSTALL_PROGRAM) $(srcdir)/install-sh $(bindir); fi
++	$(INSTALL_SCRIPT) $(top_builddir)/libtool $(bindir)/libtool-swarm
++	if test $(SWARM_INSTALL) = install-sh; then $(INSTALL_SCRIPT) $(srcdir)/install-sh $(bindir); fi
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

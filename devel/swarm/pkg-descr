@@ -1,0 +1,9 @@
+Swarm is a software package for multi-agent simulation of complex
+systems being developed at The Santa Fe Institute. Swarm is intended
+to be a useful tool for researchers in a variety of disciplines,
+especially artificial life. The basic architecture of Swarm is the
+simulation of collections of concurrently interacting agents: with
+this architecture, we can implement a large variety of agent based
+models. Our initial target is Unix machines running GNU Objective C
+and X windows: the source code is freely available under GNU Licensing
+terms.
