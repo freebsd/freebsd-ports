@@ -1,0 +1,8 @@
+jabber.py is a Python module for the jabber instant messaging protocol.
+jabber.py deals with the xml parsing and socket code, leaving the programmer
+to concentrate on developing quality jabber based applications with Python.
+
+The eventual aim is to produce a fully featured easy to use library for
+creating both jabber clients and servers.
+
+WWW: http://jabberpy.sourceforge.net/
