@@ -5,7 +5,7 @@
  pkgincludedir=${includedir}/@PACKAGE@
  MODULE_VERSION=@PACKAGE@-@VERSION@
 -module_dirs="$libdir"
-+module_dirs="$sysconfdir:/usr/local/etc"
++module_dirs="$sysconfdir:%%LOCALBASE%%/etc"
  
  # stolen from autoconf
  if (echo "testing\c"; echo 1,2,3) | grep c >/dev/null; then
@@ -28,7 +28,7 @@
      
 -    ${libdir}/<LIBRARY>Conf.sh
 +    ${sysconfdir}/<LIBRARY>Conf.sh
-+and /usr/local/etc/<LIBRARY>Conf.sh
++and %%LOCALBASE%%/etc/<LIBRARY>Conf.sh
  
 -is looked in for the necessary information.  Those currently installed 
 +are looked in for the necessary information.  Those currently installed 

@@ -7,7 +7,7 @@
 
 PORTNAME=	gnomelibs
 PORTVERSION= 	1.2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-libs
@@ -46,5 +46,9 @@ pre-patch:
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
+
+post-patch:
+	@${PERL} -pi -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${WRKSRC}/gnome-config.in ${WRKSRC}/libgnome/gnome-util.c
 
 .include <bsd.port.mk>
