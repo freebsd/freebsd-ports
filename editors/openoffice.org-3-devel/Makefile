@@ -128,6 +128,9 @@ pre-everything::
 .endif
 
 post-extract:
+.if defined(WITH_TTF_BYTECODE_ENABLED)
+	@cd ${WRKSRC} ; ${PATCH} < ${FILESDIR}/optpatch-freetype
+.endif
 	@cd ${WRKDIR} ; ${CAT} ${DISTDIR}/${DIST_SUBDIR}/gpc231.tar.Z | ${TAR} xfz -
 	@${CP} ${WRKDIR}/gpc231/gpc.c ${WRKSRC}/external/gpc/
 	@${CP} ${WRKDIR}/gpc231/gpc.h ${WRKSRC}/external/gpc/
