@@ -13,7 +13,6 @@ MASTER_SITES=	http://www.dwave.net/~jking/bbrun/
 MAINTAINER=	adam@vectors.cx
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-RUN_DEPENDS=	blackbox:${PORTSDIR}/x11-wm/blackbox
 
 USE_X_PREFIX=	yes
 USE_GTK=	yes
