@@ -3,7 +3,7 @@
 # Date created:		28 Oct 1997
 # Whom:	      		Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.5 1998/05/07 16:14:12 vanilla Exp $
+# $Id: Makefile,v 1.6 1998/05/14 07:51:13 vanilla Exp $
 #
 
 DISTNAME=	Gtk-0.2.1
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	Gtk
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 
-LIB_DEPENDS=	gtk\\.1\\.1:${PORTSDIR}/x11/gtk
+LIB_DEPENDS=	gtk\\.1\\.:${PORTSDIR}/x11/gtk
 
 USE_PERL5=	YES
 
