@@ -1,5 +1,5 @@
---- filterdiff.c.orig	Fri Mar 15 17:51:27 2002
-+++ filterdiff.c	Fri Mar 15 17:52:32 2002
+--- src/filterdiff.c.orig	Thu May  9 01:50:58 2002
++++ src/filterdiff.c	Thu May  9 22:03:24 2002
 @@ -24,12 +24,12 @@
  #include "config.h"
  #endif
