@@ -19,8 +19,7 @@ USE_LINUX=	yes
 USE_X_PREFIX=	yes
 ONLY_FOR_ARCHS=	i386
 
-NO_CDROM=	"Redistribution not allowed"
-NO_PACKAGE=	"Redistribution not allowed"
+RESTRICTED=	"Redistribution not allowed"
 NO_BUILD=	yes
 
 MAN1=		edith.1
