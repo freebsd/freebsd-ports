@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	fontconfig
-PORTVERSION=	2.2.90
-PORTREVISION=	5
+PORTVERSION=	2.2.2
+PORTEPOCH=	1
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://pdx.freedesktop.org/software/fontconfig/releases/
+MASTER_SITES=	http://pdx.freedesktop.org/~fontconfig/release/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An XML-based font configuration API for X Windows
@@ -21,7 +21,7 @@ USE_GMAKE=	yes
 PREFIX?=	${X11BASE}
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=13
-USE_GNOME=	gnomehack pkgconfig
+USE_GNOME=	gnomehack gnometarget pkgconfig
 CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc/fonts \
 		--with-expat-includes=${LOCALBASE}/include \
 		--with-expat-lib=${LOCALBASE}/lib \
@@ -29,7 +29,7 @@ CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc/fonts \
 MAKE_ENV=	LC_ALL=C
 PKGINSTALL=	${WRKDIR}/pkg-install
 
-MAN1=		fc-cache.1 fc-list.1 fc-match.1
+MAN1=		fc-cache.1 fc-list.1
 MAN3=		FcAtomicCreate.3  \
 		FcAtomicDeleteNew.3  \
 		FcAtomicDestroy.3  \
