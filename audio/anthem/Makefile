@@ -7,7 +7,8 @@
 PORTNAME=	anthem
 PORTVERSION=	0.0.17
 CATEGORIES=	audio
-MASTER_SITES=	http://people.freebsd.org/~lofi/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=lofi
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A KDE midi sequencer
