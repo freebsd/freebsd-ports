@@ -22,8 +22,8 @@ include/jasper/jasper.h
 lib/libjasper.a
 lib/libjasper.so
 lib/libjasper.so.4
-share/doc/jasper/README
-share/doc/jasper/jasper.pdf
-share/doc/jasper/jpeg2000.pdf
-@dirrm share/doc/jasper
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/jasper.pdf
+%%PORTDOCS%%%%DOCSDIR%%/jpeg2000.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/jasper

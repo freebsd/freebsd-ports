@@ -17,16 +17,18 @@ COMMENT=	An implementation of the codec specified in the JPEG-2000 standard
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
-MASTER_SITE_IMAGEMAGICK=	ftp://ftp.imagemagick.org/pub/%SUBDIR%/ \
-				${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/&,}
 USE_ZIP=	yes
+USE_GNOME=	lthack gnometarget
 USE_LIBTOOL=	yes
-INSTALLS_SHLIB=	yes
 LIBTOOLFLAGS=  --disable-ltlibs --release-ignore
-CONFIGURE_ARGS=	--enable-shared --enable-static \
-		--program-transform-name=q	# Tells sed(1) to quit
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--enable-shared --enable-static
+INSTALLS_SHLIB=	yes
+
+MASTER_SITE_IMAGEMAGICK=	\
+	ftp://ftp.imagemagick.org/pub/%SUBDIR%/ \
+	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/&,}
 
 post-install:
 .if !defined(NOPORTDOCS)
