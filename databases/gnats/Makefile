@@ -10,7 +10,7 @@ PORTVERSION=	3.113.1
 PORTREVISION=	6
 CATEGORIES=	databases elisp
 MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR= gnats
+MASTER_SITE_SUBDIR=	gnats
 
 MAINTAINER=	des@FreeBSD.org
 
@@ -46,11 +46,11 @@ pre-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-	(cd ${DATADIR} && mv gnats-db gnats-db.dist)
+	(cd ${DATADIR} && ${MV} gnats-db gnats-db.dist)
 .if defined(WANT_FREEFALL_CFG)
-	(cd ${DATADIR} && ln -s /home/gnats gnats-db)
+	(cd ${DATADIR} && ${LN} -s /home/gnats gnats-db)
 .else
-	(cd ${DATADIR} && ln -s gnats-db.dist gnats-db)
+	(cd ${DATADIR} && ${LN} -s gnats-db.dist gnats-db)
 .endif
 	(cd ${WRKSRC}/gnats;   ${MAKE} install-info)
 	(cd ${WRKSRC}/send-pr; ${MAKE} install-info)
