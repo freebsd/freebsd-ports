@@ -20,19 +20,16 @@ PREFIX=		${LOCALBASE}/GNUstep
 NO_MTREE=	yes
 WRKSRC=		${WRKDIR}/ProjectCenter
 USE_GMAKE=	yes
+USE_GNUSTEP=	yes
+USE_GNUSTEP_BACK=	yes
+USE_GNUSTEP_BUILD=	yes
+USE_GNUSTEP_INSTALL=	yes
 MAKEFILE=	GNUmakefile
 MAKE_ENV+=	ADDITIONAL_INCLUDE_DIRS="-I${WRKSRC}"
 MAKE_ENV+=	ADDITIONAL_LIB_DIRS="-L${WRKSRC}/PCLib/shared_obj/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu"
 
 FIXME=		GNUmakefile.bundles GNUmakefile.preamble \
 		PCLib/GNUmakefile.preamble
-
-.include <bsd.port.pre.mk>
-
-USE_GNUSTEP_BACK=	yes
-USE_GNUSTEP_BUILD=	yes
-USE_GNUSTEP_INSTALL=	yes
-.include "${PORTSDIR}/devel/gnustep/bsd.gnustep.mk"
 
 # Quick workaround until I find out how to set the real path in the code
 post-patch:
@@ -47,4 +44,4 @@ post-patch:
 		${WRKSRC}/${file}.sed > ${WRKSRC}/${file}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

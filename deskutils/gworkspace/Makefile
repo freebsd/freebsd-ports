@@ -19,6 +19,11 @@ NO_MTREE=	yes
 WRKSRC=		${WRKDIR}/GWorkspace-${PORTVERSION}
 GUN_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_GNUSTEP=	yes
+USE_GNUSTEP_BACK=	yes
+USE_GNUSTEP_CONFIGURE=	yes
+USE_GNUSTEP_BUILD=	yes
+USE_GNUSTEP_INSTALL=	yes
 MAKEFILE=	GNUmakefile
 
 .ifdef WITHOUT_GHOSTSCRIPT
@@ -34,12 +39,4 @@ RUN_DEPENDS+=	gs:${PORTSDIR}/${GSPORT}
 PLIST_SUB+=	PDFVIEW=""
 .endif
 
-.include <bsd.port.pre.mk>
-
-USE_GNUSTEP_BACK=	yes
-USE_GNUSTEP_CONFIGURE=	yes
-USE_GNUSTEP_BUILD=	yes
-USE_GNUSTEP_INSTALL=	yes
-.include "${PORTSDIR}/devel/gnustep/bsd.gnustep.mk"
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

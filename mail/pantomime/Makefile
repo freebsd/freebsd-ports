@@ -20,15 +20,12 @@ PREFIX=		${LOCALBASE}/GNUstep
 NO_MTREE=	yes
 WRKSRC=		${WRKDIR}/Pantomime
 USE_GMAKE=	yes
+USE_GNUSTEP=	yes
+USE_GNUSTEP_BACK=	yes
+USE_GNUSTEP_BUILD=	yes
+USE_GNUSTEP_INSTALL=	yes
 MAKEFILE=	GNUmakefile
 LDCONFIG_DIRS=	${LOCALLIBDIR}
 INSTALLS_SHLIB=	yes
 
-.include <bsd.port.pre.mk>
-
-USE_GNUSTEP_BACK=	yes
-USE_GNUSTEP_BUILD=	yes
-USE_GNUSTEP_INSTALL=	yes
-.include "${PORTSDIR}/devel/gnustep/bsd.gnustep.mk"
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -18,6 +18,11 @@ PREFIX=		${LOCALBASE}/GNUstep
 NO_MTREE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
+USE_GNUSTEP=	yes
+USE_GNUSTEP_BASE=	yes
+USE_GNUSTEP_CONFIGURE=	yes
+USE_GNUSTEP_BUILD=	yes
+USE_GNUSTEP_INSTALL=	yes
 GNU_CONFIGURE=	yes
 LDCONFIG_DIRS=	${LOCALLIBDIR}
 INSTALLS_SHLIB=	yes
@@ -34,12 +39,4 @@ post-patch:
 		> ${CONFIGURE_WRKSRC}/configure
 	${CHMOD} +x ${CONFIGURE_WRKSRC}/configure
 
-.include <bsd.port.pre.mk>
-
-USE_GNUSTEP_BASE=	yes
-USE_GNUSTEP_CONFIGURE=	yes
-USE_GNUSTEP_BUILD=	yes
-USE_GNUSTEP_INSTALL=	yes
-.include "${PORTSDIR}/devel/gnustep/bsd.gnustep.mk"
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

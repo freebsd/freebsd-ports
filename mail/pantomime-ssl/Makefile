@@ -23,17 +23,15 @@ RUN_DEPENDS+=	${LOCALLIBDIR}/libPantomime.so:${PORTSDIR}/${PANTOMIME_PORT}
 PREFIX=		${LOCALBASE}/GNUstep
 NO_MTREE=	yes
 WRKSRC=		${WRKDIR}/Pantomime/Bundles/SSL
+USE_OPENSSL=	yes
 USE_GMAKE=	yes
-MAKEFILE=	GNUmakefile
-
-.include <bsd.port.pre.mk>
-
-.include "${PORTSDIR}/security/openssl/bsd.openssl.mk"
-
+USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-.include "${PORTSDIR}/devel/gnustep/bsd.gnustep.mk"
+MAKEFILE=	GNUmakefile
+
+.include <bsd.port.pre.mk>
 
 PANTOMIME_PORT?=	mail/pantomime
 
