@@ -14,6 +14,7 @@ MAINTAINER=	torstenb@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	IRCLIB=${PREFIX}/share/irc
+FORBIDDEN=	buffer overflow
 
 WRKSRC=		${WRKDIR}/${PKGNAME}
 MAN1=		ircII.1 ircbug.1
