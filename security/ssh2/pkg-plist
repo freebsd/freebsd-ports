@@ -6,7 +6,7 @@ bin/ssh-keygen2
 bin/ssh-add2
 bin/ssh-signer2
 bin/ssh-probe2
-bin/ssh-askpass2
+%%WITH_X11:%%bin/ssh-askpass2
 bin/ssh-pam-client
 bin/sftp-server2
 bin/ssh-dummy-shell
