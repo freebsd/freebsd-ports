@@ -19,6 +19,8 @@ LIB_DEPENDS=	glibmm-2.4.1:${PORTSDIR}/devel/glibmm
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		${X11BASE}/lib/libgtkmm-2.4.so.1:${PORTSDIR}/x11-toolkits/gtkmm24
 
+LATEST_LINK=	gconfmm26
+
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

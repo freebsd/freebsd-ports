@@ -18,6 +18,8 @@ COMMENT=	C++ wrapper for libgnomecanvas library
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
+LATEST_LINK=	libgnomecanvasmm26
+
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
