@@ -9,8 +9,7 @@
 PORTNAME=	hafiye
 PORTVERSION=	1.0
 CATEGORIES=	security
-MASTER_SITES=	http://www.enderunix.org/hafiye/ \
-		http://www.acikkod.org/hafiye/
+MASTER_SITES=	http://www.enderunix.org/hafiye/
 
 MAINTAINER=	ports@FreeBSD.org
 
