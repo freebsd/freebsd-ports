@@ -18,11 +18,20 @@
  VERSION = 0.6.1
  VERSION_DATE = 1999
 -DESTDIR = /usr/local
-+DESTDIR?= /usr/X11R6
++DESTDIR?= ${PREFIX}
  BIN_PATH = $(DESTDIR)/bin
  MAN_PATH = $(DESTDIR)/man
  SHARE_PATH = $(DESTDIR)/share/$(PROGNAME)
-@@ -50,14 +51,14 @@
+@@ -16,6 +17,8 @@
+ RPM_BUILDPATH = /usr/src/redhat
+ CODE_LINES = `cat *.c *.h | grep -ch -e "[[:alpha:]|[:punct:]]"` 
+ 
++all: $(PROGNAME)
++
+ $(PROGNAME): main.o GTKmisc.o menu.o toolbar.o connectbar.o statusbar.o\
+ 	dirlist.o ftplist.o queue.o log.o console.o dialog.o chmod.o\
+ 	version.o custom.o string.o pixmaps.o color.o cursor.o\
+@@ -50,14 +53,14 @@
  	@if ! test -e $(SHARE_PATH)/app_ass; then \
  	echo "Making $(SHARE_PATH)/app_ass directory ..."; mkdir -m 0755 $(SHARE_PATH)/app_ass; \
  	else :; fi;
@@ -45,7 +54,7 @@
  
  
  
-@@ -111,7 +112,7 @@
+@@ -111,7 +114,7 @@
  	@echo "#define COMPILE_TIME \"`date +%T`\"" >> version.h
  	@echo "#define COMPILE_BY \"`whoami`\"" >> version.h
  	@echo "#define COMPILE_HOST \"`hostname`\"" >> version.h

@@ -1,0 +1,23 @@
+--- src/Makefile.in.orig	Tue Sep  7 00:01:12 1999
++++ src/Makefile.in	Tue Sep  7 00:06:29 1999
+@@ -115,14 +115,14 @@
+ EXTRA_DIST =  	GtkICQ.desktop			GtkICQ.gnorba			gnome-gtkicq.xpm		applet.c
+ 
+ 
+-Utilitiesdir = $(datadir)/applets/Network
+-Utilities_DATA = GtkICQ.desktop
++@INSIDE_GNOME_COMMON_TRUE@Utilitiesdir = $(datadir)/applets/Network
++@INSIDE_GNOME_COMMON_TRUE@Utilities_DATA = GtkICQ.desktop
+ 
+-Iconsdir = $(datadir)/pixmaps
+-Icons_DATA = gnome-gtkicq.xpm
++@INSIDE_GNOME_COMMON_TRUE@Iconsdir = $(datadir)/pixmaps
++@INSIDE_GNOME_COMMON_TRUE@Icons_DATA = gnome-gtkicq.xpm
+ 
+-gnorbadir = $(sysconfdir)/CORBA/servers
+-gnorba_DATA = GtkICQ.gnorba
++@INSIDE_GNOME_COMMON_TRUE@gnorbadir = $(sysconfdir)/CORBA/servers
++@INSIDE_GNOME_COMMON_TRUE@gnorba_DATA = GtkICQ.gnorba
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+ CONFIG_CLEAN_FILES = 

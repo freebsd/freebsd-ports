@@ -12,11 +12,8 @@ MASTER_SITES=	http://magnet.fsu.edu/~feiguin/gtk/src/
 
 MAINTAINER=	ijliao@csie.nctu.edu.tw
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
-
 USE_X_PREFIX=	yes
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-MAKE_ENV+=	GTK_CONFIG=${GTK_CONFIG}
+USE_GTK=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/libgtksheet.a ${PREFIX}/lib

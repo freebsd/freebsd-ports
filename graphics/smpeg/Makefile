@@ -16,16 +16,15 @@ MASTER_SITES=	ftp://ftp.lokigames.com/pub/open-source/smpeg/ \
 
 MAINTAINER=	cpiazza@FreeBSD.org
 
-LIB_DEPENDS=  	SDL-1.1.2:${PORTSDIR}/devel/sdl-devel \
-		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+LIB_DEPENDS=  	SDL-1.1.2:${PORTSDIR}/devel/sdl-devel
 
-GTK_CONFIG=	${X11BASE}/bin/gtk12-config
 SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
-GNU_CONFIGURE=	yes
+
 USE_GMAKE=	yes
+USE_GTK=	yes
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}" \
-		SDL_CONFIG="${SDL_CONFIG}" \
+CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
 		GLBASE="${X11BASE}" \
 		CPPFLAGS="-I${X11BASE}/include"
 

@@ -1,13 +1,18 @@
 bin/IglooFTP
-share/IglooFTP/gtkrc
 share/IglooFTP/app_ass/app_ass.GNOME
 share/IglooFTP/app_ass/app_ass.KDE
 share/IglooFTP/app_ass/app_ass.default
 share/IglooFTP/bookmarks/default.bmk
+share/IglooFTP/docs/AUTHORS
+share/IglooFTP/docs/BUGS
+share/IglooFTP/docs/COPYRIGHT
 share/IglooFTP/docs/ChangeLog
 share/IglooFTP/docs/LICENSE
 share/IglooFTP/docs/README
+share/IglooFTP/docs/THANKS
+share/IglooFTP/docs/TODO
 share/IglooFTP/docs/welcome.msg
+share/IglooFTP/gtkrc
 share/IglooFTP/html/default.html
 share/IglooFTP/html/images/amazon_mini.gif
 share/IglooFTP/html/images/banner.gif
@@ -44,11 +49,6 @@ share/IglooFTP/html/images/softwares.jpg
 share/IglooFTP/html/images/viglooftp.gif
 share/IglooFTP/xpm/iglooftp.xpm
 share/IglooFTP/xpm/little_igloo.xpm
-share/doc/IglooFTP/AUTHORS
-share/doc/IglooFTP/BUGS
-share/doc/IglooFTP/COPYRIGHT
-share/doc/IglooFTP/THANKS
-share/doc/IglooFTP/TODO
 @dirrm share/IglooFTP/app_ass
 @dirrm share/IglooFTP/bookmarks
 @dirrm share/IglooFTP/docs
@@ -56,4 +56,3 @@ share/doc/IglooFTP/TODO
 @dirrm share/IglooFTP/html
 @dirrm share/IglooFTP/xpm
 @dirrm share/IglooFTP
-@dirrm share/doc/IglooFTP

@@ -13,9 +13,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	kris@FreeBSD.org
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
-
 USE_X_PREFIX=	yes
+USE_GTK=	yes
 
 ALL_TARGET=	# empty
 
@@ -45,4 +44,5 @@ do-install:
 .for i in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/docs/$i ${X11BASE}/share/doc/mindguard
 .endfor
+
 .include <bsd.port.mk>

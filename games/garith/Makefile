@@ -12,13 +12,9 @@ MASTER_SITES=	http://www.cnm-vra.com/micah/garith/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
-
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-
 ALL_TARGET=	# empty
 USE_X_PREFIX=	yes
-MAKE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
+USE_GTK=	yes
 WRKSRC=		${WRKDIR}/garith
 
 do-install:

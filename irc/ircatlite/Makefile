@@ -13,21 +13,14 @@ DISTNAME=	IRcatLite-r20000308
 
 MAINTAINER=	goto@snowy.to
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
-
+USE_GTK=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-gtk-config=gtk12-config
-
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 USE_X_PREFIX=	yes
-MAKE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
 
 DOCS=		LICENSE INSTALL INSTALL.jp README README.jp
 
 WRKSRC=		${WRKDIR}/IRcatLite
-
-.include <bsd.port.pre.mk>
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/ircat ${PREFIX}/bin/ircat
@@ -38,4 +31,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

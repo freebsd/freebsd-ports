@@ -9,7 +9,7 @@
  
  mindguard: mindguard.c 
 -	$(CC) `gtk-config --cflags`  mindguard.c -o mindguard `gtk-config --libs`
-+	$(CC) -DX11BASE=\"${X11BASE}\" `${X11BASE}/bin/gtk12-config --cflags`  ${CFLAGS} mindguard.c -o mindguard `${X11BASE}/bin/gtk12-config --libs`
++	$(CC) -DX11BASE=\"${X11BASE}\" `${GTK_CONFIG} --cflags`  ${CFLAGS} mindguard.c -o mindguard `${GTK_CONFIG} --libs`
  
  clean:
  	rm -f mindguard

@@ -16,18 +16,14 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	stanaka@bb.mbn.or.jp
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
-BUILD_DEPENDS=	${LOCALBASE}/lib/libjcode.a:${PORTSDIR}/japanese/libjcode \
-		${LOCALBASE}/include/jlib.h:${PORTSDIR}/japanese/libjcode
-
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+BUILD_DEPENDS=	${LOCALBASE}/lib/libjcode.a:${PORTSDIR}/japanese/libjcode
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
+USE_GTK=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-gnome
+CONFIGURE_ARGS=	--without-gnome --datadir=${PREFIX}/share/gtkicq
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		GTK_CONFIG="${GTK_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

@@ -12,14 +12,11 @@ MASTER_SITES=	http://www.radix.net/~cknudsen/gtimer/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_GTK=	yes
+GNU_CONFIGURE=	yes
 
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-
-GNU_CONFIGURE=	YES
-CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
-USE_GMAKE=	YES
-USE_BZIP2=	YES
 MAN1=		gtimer.1
 
 post-install:

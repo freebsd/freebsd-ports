@@ -7,7 +7,7 @@
 -LIBDIRS = $(shell gtk-config --libs)
 -CFLAGS = -Wall $(shell gtk-config --cflags)
 +LIBDIRS = `$(GTK_CONFIG) --libs`
-+CFLAGS = -Wall `$(GTK_CONFIG) --cflags`
++CFLAGS += -Wall `$(GTK_CONFIG) --cflags`
  
  all:    demo libGtkSheet.a 
  

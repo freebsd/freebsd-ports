@@ -13,12 +13,9 @@ MASTER_SITE_SUBDIR=	cpiazza
 
 MAINTAINER=	cpiazza@FreeBSD.org
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
-
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-
-MAKE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
 ALL_TARGET=	gmixer
+
+USE_GTK=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gmixer ${PREFIX}/bin

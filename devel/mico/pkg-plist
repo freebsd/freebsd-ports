@@ -211,6 +211,7 @@ lib/libmico%%MICOVER%%.so.1
 lib/libmicoaux.%%MICOVER%%.so
 lib/libmicoaux%%MICOVER%%.a
 lib/libmicoaux%%MICOVER%%.so.1
+lib/libmicocoss.%%MICOVER%%.so
 lib/libmicocoss%%MICOVER%%.a
 lib/libmicocoss%%MICOVER%%.so.1
 lib/libmicogtk.%%MICOVER%%.so
@@ -610,4 +611,3 @@ share/doc/mico/manual.ps
 @dirrm share/doc/mico
 @dirrm include/ministl
 @dirrm include/mico
-

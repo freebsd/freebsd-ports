@@ -12,15 +12,11 @@ MASTER_SITES=	http://diamant-atm.vsb.cs.uni-frankfurt.de/~mico/
 
 MAINTAINER=	scrappy@freebsd.org
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
-		tcl82.1:${PORTSDIR}/lang/tcl82
+LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82
+
+WRKSRC=		${WRKDIR}/mico
 
 MICOVER=	`${ECHO} ${DISTNAME} | ${SED} 's/mico-//'`
-
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-
-INSTALLS_SHLIB=	yes
-USE_NEWGCC=	yes
 
 .if defined(QT2)
 USE_QT2=	yes
@@ -34,14 +30,13 @@ MAKE_ENV=	QT_INCLUDES="${X11BASE}/include/X11/qt" \
 CONFIGURE_ENV=	QTVER=""
 .endif
 
-USE_AUTOCONF=	yes
+INSTALLS_SHLIB=	yes
+USE_NEWGCC=	yes
 USE_GMAKE=	yes
-
-WRKSRC=		${WRKDIR}/mico
-
+USE_GTK=	yes
+USE_AUTOCONF=	yes
 CONFIGURE_ARGS=	--with-qt --with-gtk --with-tcl --disable-mini-stl \
 		--enable-static --enable-shared
-CONFIGURE_ENV+=	GTK_CONFIG="${GTK_CONFIG}"
 
 PLIST_SUB=	MICOVER="${MICOVER}"
 
@@ -52,6 +47,7 @@ MAN8=		ird.8 micod.8 nsd.8
 post-install:
 	${LN} -sf ${PREFIX}/lib/libmico${MICOVER}.so.1 ${PREFIX}/lib/libmico.${MICOVER}.so
 	${LN} -sf ${PREFIX}/lib/libmicoaux${MICOVER}.so.1 ${PREFIX}/lib/libmicoaux.${MICOVER}.so
+	${LN} -sf ${PREFIX}/lib/libmicocoss${MICOVER}.so.1 ${PREFIX}/lib/libmicocoss.${MICOVER}.so
 	${LN} -sf ${PREFIX}/lib/libmicogtk${MICOVER}.so.1 ${PREFIX}/lib/libmicogtk.${MICOVER}.so
 	${LN} -sf ${PREFIX}/lib/libmicoqt${MICOVER}.so.1 ${PREFIX}/lib/libmicoqt.${MICOVER}.so
 	${LN} -sf ${PREFIX}/lib/libmicotcl${MICOVER}.so.1 ${PREFIX}/lib/libmicotcl.${MICOVER}.so

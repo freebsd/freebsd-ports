@@ -14,18 +14,14 @@ MASTER_SITE_SUBDIR=	apps/graphics/capture
 
 MAINTAINER= 	ports@FreeBSD.org
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
-		jpeg.9:${PORTSDIR}/graphics/jpeg
-
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		GTK_CONFIG="${GTK_CONFIG}" \
-		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--disable-gtktest
+USE_GTK=	yes
 INSTALLS_SHLIB=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
 
 MAN1=	saned.1 scanimage.1 xcam.1 xscanimage.1
 MAN5=	sane-abaton.5 sane-agfafocus.5 sane-apple.5 sane-artec.5 \
