@@ -102,6 +102,8 @@ setoptions:
 	${SED} 	-e 's;@@PREFIX@@;${PREFIX};' \
 		-e 's;@@LINUXBASE@@;${LINUXBASE};' \
 		-e 's;@@NETWORKING@@;${VMNET_NETWORKING};' \
+		-e 's;@@BRIDGED@@;${VMNET_BRIDGED};' \
+		-e 's;@@BRIDGE_INTF@@;${VMNET_BRIDGED_INTERFACE};' \
 		${FILESDIR}/vmware.sh > ${WRKDIR}/vmware.sh
 
 	${SED} 	-e 's;@@PREFIX@@;${PREFIX};' \

@@ -24,6 +24,8 @@ vmware_config() {
 vmware=`vmware_config vmware.fullpath`
 vmware_libdir=`vmware_config libdir`
 networking=@@NETWORKING@@
+bridged=@@BRIDGED@@
+bridge_interface=@@BRIDGE_INTF@@
 host_ip=`vmware_config vmnet1.HostOnlyAddress`
 netmask=`vmware_config vmnet1.HostOnlyNetMask`
 dev_vmnet1=@@LINUXBASE@@/dev/vmnet1
@@ -45,7 +47,6 @@ case $1 in
 start)
     kldload ${vmware_libdir}/modules/vmmon_${suffix}.ko
     if [ $networking -eq 1 ]; then
-	sysctl net.link.ether.bridge_refresh && bridge="_bridge"
 	kldload if_tap.ko
 	if [ ! -e $dev_vmnet1 ]; then
 		echo "$dev_vmnet1 does not exist!" >&2
@@ -54,12 +55,21 @@ start)
 	fi
 	echo -n > $dev_vmnet1
 	ifconfig vmnet1 $host_ip netmask $netmask
-	if [ _$bridge != _ ]; then
-	    sysctl -w net.link.ether.bridge_refresh=1
-	    sysctl -w net.link.ether.bridge=1
+	if [ X$bridged = XYES ]; then
+	    kldload netgraph.ko
+	    kldload ng_ether.ko
+	    kldload ng_bridge.ko
+	    ngctl mkpeer vmnet1: bridge lower link0
+	    ngctl name vmnet1:lower vmnet_bridge
+	    ngctl connect vmnet_bridge: ${bridge_interface}: link1 lower
+	    ngctl connect vmnet_bridge: ${bridge_interface}: link2 upper
+	    ngctl msg ${bridge_interface}: setautosrc 0
+	    ngctl msg ${bridge_interface}: setpromisc 1
+	    ngctl msg vmnet1: setautosrc 0
+	    ngctl msg vmnet1: setpromisc 1
 	fi
     fi
-    echo -n " VMware${bridge}" >&2
+    echo -n " VMware" >&2
     ;;
 
 stop)
@@ -67,8 +77,11 @@ stop)
     if [ $networking -eq 1 ]; then
 	ifconfig vmnet1 down
 	ifconfig vmnet1 delete $host_ip
-	sysctl net.link.ether.bridge_refresh && bridge="_bridge"
-	[ _$bridge != _ ] && sysctl -w net.link.ether.bridge_refresh=1
+	if [ X$bridged = XYES ]; then
+	    ngctl shutdown vmnet_bridge:
+	    ngctl msg ${bridge_interface}: setautosrc 1
+	    ngctl msg ${bridge_interface}: setpromisc 0
+	fi
     fi
     ;;
 
