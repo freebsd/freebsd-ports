@@ -1,0 +1,11 @@
+--- Hands.cpp	Fri Jan 31 22:47:58 1997
++++ /home/andy/tmp/wrk/Hands.cpp	Sat Jul  4 18:54:30 1998
+@@ -46,7 +46,7 @@
+ 		_next = 0;
+ }
+ 
+-Hand Hands::HandValue() const
++enum Hands::Hand Hands::HandValue() const
+ {
+ 	return _hand;
+ }
