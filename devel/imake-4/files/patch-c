@@ -1,6 +1,6 @@
---- cf/Imake.tmpl~	Tue Feb 22 02:42:26 2000
-+++ cf/Imake.tmpl	Tue Feb 22 03:11:21 2000
-@@ -1282,7 +1282,7 @@
+--- cf/Imake.tmpl.orig	Tue Jun 27 09:55:44 2000
++++ cf/Imake.tmpl	Sun Jul 16 18:19:54 2000
+@@ -1385,7 +1385,7 @@
         CXXOPTIONS = CplusplusOptions
        CXXINCLUDES = $(INCLUDES) $(TOP_INCLUDES) $(CXXEXTRA_INCLUDES) 
         CXXDEFINES = $(CXXINCLUDES) $(CXXSTD_DEFINES) $(THREADS_CXXDEFINES) $(CXXEXTRA_DEFINES) $(DEFINES)
@@ -9,7 +9,7 @@
  #endif
           COMPRESS = CompressCmd
            GZIPCMD = GzipCmd
-@@ -1469,7 +1469,7 @@
+@@ -1574,7 +1574,7 @@
   */
        ALLINCLUDES = $(INCLUDES) $(EXTRA_INCLUDES) $(TOP_INCLUDES) $(STD_INCLUDES)
         ALLDEFINES = $(ALLINCLUDES) $(STD_DEFINES) $(EXTRA_DEFINES) $(PROTO_DEFINES) $(THREADS_DEFINES) $(MODULE_DEFINES) $(DEFINES)

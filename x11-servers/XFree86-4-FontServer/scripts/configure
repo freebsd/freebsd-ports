@@ -26,6 +26,13 @@ configure () {
 	InstallFSConfig=YES
     fi
 
+    # It's good for FreeBSD ports/packages system.
+    echo "#define NothingOutsideProjectRoot YES" >> $LOCALDEF
+
+    # I want to set this line.
+    # but the probrem is too deep. not yet done.
+    # echo "#define InstallXserverSetUID NO" >> $LOCALDEF
+
     # disable some configs: there are not used this ports
     for i in BuildFonts \
 	Build75DpiFonts \

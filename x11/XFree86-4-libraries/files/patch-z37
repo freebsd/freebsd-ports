@@ -1,0 +1,24 @@
+--- programs/Xserver/hw/xfree86/xf86cfg/Imakefile.orig	Thu Jun 15 04:42:20 2000
++++ programs/Xserver/hw/xfree86/xf86cfg/Imakefile	Sat Aug 19 18:09:24 2000
+@@ -2,6 +2,10 @@
+ 
+ XCOMM CDEBUGFLAGS=-g -Wall -ansi -pedantic
+ 
++#if defined(FreeBSDBuildXbin) && FreeBSDBuildXbin
++INCLUDES = -I../parser
++#endif
++
+ SRCS	=\
+ 	accessx.c\
+ 	card-cfg.c\
+@@ -67,8 +71,10 @@
+ 
+ NormalProgramTarget($(PROG),$(OBJS),,$(LOCAL_LIBRARIES),)
+ InstallProgramWithFlags($(PROG),$(BINDIR),NullParameter)
++#if !defined(LibHeaders) || LibHeaders
+ InstallMultipleFlags($(XBMPICS),$(INCDIR)/X11/bitmaps,$(INSTINCFLAGS))
+ InstallMultipleFlags($(XPMPICS),$(INCDIR)/X11/pixmaps,$(INSTINCFLAGS))
++#endif
+ InstallAppDefaults(XF86Cfg)
+ InstallManPage(xf86cfg,$(MANDIR))
+ 

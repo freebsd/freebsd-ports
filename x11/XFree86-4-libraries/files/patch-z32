@@ -1,0 +1,12 @@
+--- lib/GL/mesa/src/OSmesa/Imakefile.orig	Thu Jul 27 16:09:32 2000
++++ lib/GL/mesa/src/OSmesa/Imakefile	Thu Jul 27 16:10:11 2000
+@@ -243,7 +243,8 @@
+ /*InstallLibrary($(LIBNAME),$(USRLIBDIR))*/
+ 
+ SharedDepLibraryTarget($(LIBNAME),$(SOREV), $(DONES), $(OBJS), ., .)
++#if !defined(LibInstall) || LibInstall
+ InstallSharedLibrary($(LIBNAME),$(SOREV),$(SHLIBDIR))
+-
++#endif
+ 
+ DependTarget()

@@ -34,4 +34,3 @@ lib/X11/doc/xc-misc.TXT
 lib/X11/doc/xtest.TXT
 lib/X11/doc/xtestlib.TXT
 lib/X11/doc/xv-protocol-v2.TXT
-@dirrm lib/X11/doc/PostScript

@@ -36,8 +36,15 @@ configure () {
 	BuildAoutLibraries=NO
     fi
 
+    echo "#define NothingOutsideProjectRoot YES" >> $LOCALDEF
+
+    # I want to set this line.
+    # but the probrem is too deep. not yet done.
+    # echo "#define InstallXserverSetUID NO" >> $LOCALDEF
+
     # disable some configs: there are not used this ports
-    for i in InstallFSConfig \
+    for i in \
+	InstallFSConfig \
 	BuildServer \
 	BuildFontServer \
 	BuildFonts \
@@ -49,10 +56,13 @@ configure () {
 	BuildCyrillicFonts \
 	BuildLatin2Fonts \
 	LibHeaders \
-	ForceNormalLib
+        LibInstall \
+	ForceNormalLib \
+	ModuleInstall
     do \
 	echo "#define $i NO" >> $LOCALDEF
     done
+    echo "#define LibInstallBuild  YES" >> $LOCALDEF
     echo "#define FreeBSDBuildXlib NO" >> $LOCALDEF
     echo "#define FreeBSDBuildXbin YES" >> $LOCALDEF
     echo "#define InstallXdmConfig $InstallXdmConfig" >> $LOCALDEF

@@ -1,13 +1,11 @@
---- programs/Xserver/xkb/xkbInit.c.orig	Mon Oct  5 05:02:55 1998
-+++ programs/Xserver/xkb/xkbInit.c	Tue May 23 16:52:19 2000
-@@ -910,7 +910,8 @@
- 	return 1;
-     }
-     else if (strncmp(argv[i], "-xkbmap", 7) == 0) {
--	if(++i < argc) {
-+	i++;
-+	if ((i < argc) && (strlen(argv[i]) < PATH_MAX)) {
- 	    XkbInitialMap= argv[i];
- 	    return 2;
- 	}
-
+--- config/cf/xfree86.cf.orig	Fri Jul 28 11:35:18 2000
++++ config/cf/xfree86.cf	Fri Jul 28 11:35:50 2000
+@@ -555,7 +555,7 @@
+  */
+ #if !defined(i386MachArchitecture) && !defined(OS2Architecture)
+ # ifndef InstallXserverSetUID
+-#  define InstallXserverSetUID	YES
++#  define InstallXserverSetUID	NO
+ # endif
+ #endif
+ 

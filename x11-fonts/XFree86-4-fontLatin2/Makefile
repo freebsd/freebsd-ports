@@ -1,4 +1,4 @@
-# New ports collection makefile for:	XFree86XfontLatin2-4.0
+# New ports collection makefile for:	XFree86-4-fontLatin2
 # Date created:		10 Oct 1999
 # Whom:			taguchi@tohoku.iij.ad.jp
 #
@@ -6,27 +6,27 @@
 #
 
 PORTNAME=	fontLatin2
-PORTVERSION=	4.0
+PORTVERSION=	4.0.1
 CATEGORIES=	x11-fonts
-MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/4.0/source/ \
-		ftp://ftp.freesoftware.com/pub/XFree86/4.0/source/ \
-		ftp://ftp.lip6.fr/pub/X11/XFree86/XFree86-4.0/source/ \
-		ftp://ftp.cs.tu-berlin.de/pub/X/XFree86/4.0/source/ \
-		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/4.0/source/
+MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/${PORTVERSION}/source/ \
+		ftp://ftp.freesoftware.com/pub/XFree86/${PORTVERSION}/source/ \
+		ftp://ftp.lip6.fr/pub/X11/XFree86/XFree86-${PORTVERSION}/source/ \
+		ftp://ftp.cs.tu-berlin.de/pub/X/XFree86/${PORTVERSION}/source/ \
+		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/${PORTVERSION}/source/
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	X400src-2.tgz
+DISTFILES=	X401src-2.tgz
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
-BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake-4 \
-		mkfontdir:${PORTSDIR}/x11/XFree86-4-libraries
+BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/encodings/encodings.dir:${PORTSDIR}/x11-fonts/XFree86-4-fontEncodings
 
-PREFIX?=	${X11BASE}
-PROJECTROOT=	-DProjectRoot=${PREFIX}
-MTREE_FILE=	/etc/mtree/BSD.x11.dist
-DIST_SUBDIR=	xc
-WRKSRC=		${WRKDIR}/xc/fonts/bdf/latin2
+XFREE86_VERSION=	4
+USE_IMAKE=		YES
+PROJECTROOT=		-DProjectRoot=${PREFIX}
+DIST_SUBDIR=		xc
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf - xc/fonts
+WRKSRC=			${WRKDIR}/xc/fonts/bdf/latin2
 # User Config:
 # If you want to disable 100dpi font, set following variable to "NO"
 Build100DpiFonts?=	YES

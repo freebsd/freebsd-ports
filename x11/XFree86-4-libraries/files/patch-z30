@@ -1,0 +1,13 @@
+--- lib/GL/mesa/src/drv/Imakefile~	Sat Jul  1 08:35:56 2000
++++ lib/GL/mesa/src/drv/Imakefile	Tue Jul 18 16:52:39 2000
+@@ -59,6 +59,10 @@
+ #endif
+ #endif
+ 
++#if (defined(FreeBSDBuildXlib) && FreeBSDBuildXlib) || (defined(ModuleInstall) && !ModuleInstall)
++SUBDIRS = common
++#endif
++
+ MakeSubdirs($(SUBDIRS))
+ DependSubdirs($(SUBDIRS))
+ 

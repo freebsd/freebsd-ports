@@ -1,6 +1,6 @@
---- Imakefile.orig	Tue Oct  6 20:26:47 1998
-+++ Imakefile	Wed May 31 14:11:50 2000
-@@ -18,8 +18,27 @@
+--- Imakefile.orig	Thu Jun 15 04:36:13 2000
++++ Imakefile	Fri Aug 18 14:40:02 2000
+@@ -18,8 +18,26 @@
  #endif
  #endif
  
@@ -8,13 +8,12 @@
 +        SUBDIRS = include config lib $(NLSSUBDIR) \
 +		programs/Xserver/include \
 +		programs/Xserver/hw/xfree86/parser \
-+		programs/mkfontdir \
-+		programs/bdftopcf
++		programs/proxymngr programs/xrx
 +#else
 +#if defined(FreeBSDBuildXbin) && FreeBSDBuildXbin
 +        SUBDIRS = include config lib $(NLSSUBDIR) \
-+		programs/Xserver/include \
-+		programs
++		programs/Xserver/include programs/Xserver/hw/xfree86/parser \
++		programs programs/Xserver/hw/xfree86/xf86cfg
 +#else
 +#if defined(FreeBSDBuildXfs) && FreeBSDBuildXfs
 +        SUBDIRS = include config lib $(NLSSUBDIR) \
@@ -28,21 +27,21 @@
    LNINSTALLDIRS = lib
  
  #if HasParallelMake
-@@ -202,3 +221,73 @@
+@@ -206,3 +224,97 @@
  #undef BootstrapCleanSubdirs
  #define BootstrapCleanSubdirs BOOTSTRAPSUBDIRS="$(BOOTSTRAPSUBDIRS)"
  BOOTSTRAPSUBDIRS = imake makedepend
 +
 +#if defined(FreeBSDBuildXlib) && FreeBSDBuildXlib
-+FreeBSDPortsInstallDir = include lib programs/Xserver/include \
-+			programs/Xserver/hw/xfree86/parser \
-+			programs/bdftopcf programs/mkfontdir
++FreeBSDPortsInstallDir = include lib nls programs/Xserver/include \
++			programs/xrx/plugin \
++			programs/Xserver/hw/xfree86/parser
 +#else
 +#if defined(FreeBSDBuildXbin) && FreeBSDBuildXbin
-+FreeBSDPortsInstallDir = lib nls programs
++FreeBSDPortsInstallDir = lib programs programs programs/Xserver/hw/xfree86/xf86cfg
 +#else
 +#if defined(FreeBSDBuildXxserv) && FreeBSDBuildXxserv
-+FreeBSDPortsInstallDir = programs
++FreeBSDPortsInstallDir = programs lib/font lib/GL/mesa/src/drv
 +#else
 +#if defined(FreeBSDBuildXfs) && FreeBSDBuildXfs
 +FreeBSDPortsInstallDir = programs/xfs
@@ -72,10 +71,34 @@
 +	   (cd $$dir && $(MAKE) $(MFLAGS) $(PARALLELMFLAGS) install.man); \
 +	done
 +
++# followings are in XBMPICS and XPMPICS at programs/Xserver/hw/xfree86/xf86cfg
++XLIBADDFILES1= \
++	card.xbm\
++	keyboard.xbm\
++	monitor.xbm\
++	mouse.xbm\
++	left.xbm\
++	right.xbm\
++	up.xbm\
++	down.xbm\
++	wider.xbm\
++	narrower.xbm\
++	shorter.xbm\
++	taller.xbm
++XLIBADDFILES2= \
++	card.xpm\
++	computer.xpm\
++	keyboard.xpm\
++	monitor.xpm\
++	mouse.xpm
++
 +installXlib::
 +	(cd programs/proxymngr && \
 +	  $(INSTALL) -c $(INSTINCFLAGS) PM.h $(INCROOT)/X11/PM && \
 +	  $(INSTALL) -c $(INSTINCFLAGS) PMproto.h $(INCROOT)/X11/PM)
++	(cd programs/Xserver/hw/xfree86/xf86cfg && \
++	  $(INSTALL) -c $(INSTINCFLAGS) $(XLIBADDFILES1) $(INCROOT)/X11/bitmaps && \
++	  $(INSTALL) -c $(INSTINCFLAGS) $(XLIBADDFILES2) $(INCROOT)/X11/pixmaps)
 +
 +installXnest::
 +	(cd programs/Xserver && \

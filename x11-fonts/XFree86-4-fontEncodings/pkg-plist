@@ -31,5 +31,3 @@ lib/X11/fonts/encodings/mulearabic-2.enc
 lib/X11/fonts/encodings/mulelao-1.enc
 lib/X11/fonts/encodings/tcvn-0.enc
 lib/X11/fonts/encodings/viscii1.1-1.enc.gz
-@dirrm lib/X11/fonts/encodings/large
-@dirrm lib/X11/fonts/encodings
