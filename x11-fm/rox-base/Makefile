@@ -17,14 +17,14 @@ MAINTAINER=	olgeni@FreeBSD.org
 NO_BUILD= 	yes
 
 post-extract:
-	find ${WRKSRC} -type d -name CVS | xargs rm -rf
+	 ${FIND} ${WRKSRC} -type d -name CVS | ${XARGS} ${RM} -rf
 
 do-install:
 	${MKDIR} ${PREFIX}/share/Choices
 	${CP} -r ${WRKSRC}/Choices ${PREFIX}/share
-	@find ${PREFIX}/share/Choices -type f -exec ${CHMOD} 664 {} \;
-	@find ${PREFIX}/share/Choices/MIME-types -type f \
+	@${FIND} ${PREFIX}/share/Choices -type f -exec ${CHMOD} 664 {} \;
+	@${FIND} ${PREFIX}/share/Choices/MIME-types -type f \
 		-exec ${CHMOD} 775 {} \;
-	@find ${PREFIX}/share/Choices -type d -exec ${CHMOD} 775 {} \;
+	@${FIND} ${PREFIX}/share/Choices -type d -exec ${CHMOD} 775 {} \;
 
 .include <bsd.port.mk>
