@@ -60,10 +60,10 @@ share/sane/sane-xsane.jpg
 share/sane/store.jpg
 share/sane/threshold.jpg
 share/sane/xsane/xsane-calibration.pnm
+share/sane/xsane/xsane-logo.xpm
 share/sane/xsane/xsane-startimage.pnm
 share/sane/xsane/xsane-style.rc
 share/sane/xsane-logo.jpg
-share/sane/xsane-logo.xpm
 share/sane/xsane-logo2.jpg
 @dirrm share/sane/xsane
 @dirrm share/sane
