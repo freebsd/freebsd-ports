@@ -53,6 +53,7 @@
     SUBDIR += xcoloredit
     SUBDIR += xcolors
     SUBDIR += xcolorsel
+    SUBDIR += xcut
     SUBDIR += xdtm
     SUBDIR += xfedor
     SUBDIR += xfishtank
@@ -66,6 +67,7 @@
     SUBDIR += xmascot
     SUBDIR += xmold
     SUBDIR += xmove
+    SUBDIR += xmsg
     SUBDIR += xmx
     SUBDIR += xprompt
     SUBDIR += xscreensaver
