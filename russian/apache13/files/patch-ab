@@ -67,7 +67,7 @@
  	fi
  	@echo "Copying tree $(TOP)/icons/ -> $(root)$(iconsdir)/"; \
  	(cd $(TOP)/icons/ && $(TAR) $(TAROPT) - *) |\
-@@ -509,10 +518,10 @@
+@@ -509,9 +518,9 @@
  			-e 's;logs/accept\.lock;$(runtimedir)/$(TARGET).lock;' \
  			-e 's;logs/apache_runtime_status;$(runtimedir)/$(TARGET).scoreboard;' \
  			-e 's;logs/httpd\.pid;$(runtimedir)/$(TARGET).pid;' \
@@ -79,8 +79,6 @@
 +			-e "s;logs/error_log;$(logfiledir)/$${target_prefix}httpd-error.log;" \
 +			-e "s;logs/referer_log;$(logfiledir)/$${target_prefix}httpd-referer.log;" \
 +			-e "s;logs/agent_log;$(logfiledir)/$${target_prefix}httpd-agent.log;" \
--			-e 's;conf/tables/;$(sysconfdir)/tables/;' \
-+			-e 's;conf/tables/;$(sysconfdir)/tables/;g' \
  			-e 's;conf/magic;$(sysconfdir)/magic;' \
  			-e 's;conf/mime\.types;$(sysconfdir)/mime.types;' \
  			-e 's;User nobody;User $(conf_user);' \
