@@ -1,0 +1,4 @@
+GLeyes is a GLUT version of Xeyes. It will be of some use for those who
+have hardware-accelerated GL or can afford this terrible waste of CPU cycles
+(or for those who think that the utter coolness of having a floating eyeball
+in their desktops is worth the extra system load).
