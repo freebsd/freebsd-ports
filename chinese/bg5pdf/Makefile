@@ -9,7 +9,7 @@ PORTNAME=	bg5pdf
 PORTVERSION=	1.0.0
 CATEGORIES=	chinese print
 MASTER_SITES=	http://students.washington.edu/cschin/bg5ps/bg5pdf/ \
-		http://freebsd.sinica.edu.tw/~statue/
+		ftp://freebsd.sinica.edu.tw/pub/statue/bg5pdf/
 
 MAINTAINER=	statue@freebsd.sinica.edu.tw
 
