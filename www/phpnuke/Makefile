@@ -28,7 +28,7 @@ DOCS=		ADDONS-MODULES BLOCKS CHANGES README TODO
 pre-everything:
 .if !defined(WITH_PHP4)
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Press CTRL-C and define WITH_PHP4 if you want to use PHP Nuke with PHP4.
+	@${ECHO_MSG} "Press CTRL-C and define WITH_PHP4 if you want to use PHP Nuke with PHP4."
 	@${ECHO_MSG} ""
 .endif
 
