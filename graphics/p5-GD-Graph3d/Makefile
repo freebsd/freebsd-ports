@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	GD-Graph3d
-PORTVERSION=	0.55
+PORTVERSION=	0.59
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	GD
 PKGNAMEPREFIX=	p5-
-DISTNAME=	GDGraph3d-${PORTVERSION}
 
-MAINTAINER=	demon@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph
 
@@ -21,5 +20,9 @@ PERL_CONFIGURE=	yes
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		GD::Graph3d.3
+
+post-patch:
+# pod2man doesn't work without this
+	${PERL} -pi -e 's/\r//' ${WRKSRC}/lib/GD/Graph3d.pm
 
 .include <bsd.port.mk>
