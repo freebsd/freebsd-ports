@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rfc
-PORTVERSION=	2.22
+PORTVERSION=	3.0
 CATEGORIES=	misc
 MASTER_SITES=	http://www.dewn.com/rfc/
 DISTNAME=	${PORTNAME}
