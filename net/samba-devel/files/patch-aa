@@ -1,6 +1,6 @@
---- Makefile.in.orig	Fri Mar 23 16:38:06 2001
-+++ Makefile.in	Fri Mar 23 18:12:53 2001
-@@ -43,11 +43,11 @@
+--- Makefile.in.orig	Sat Oct 13 22:09:06 2001
++++ Makefile.in	Tue Oct 16 17:15:15 2001
+@@ -46,11 +46,11 @@
  # set these to where to find various files
  # These can be overridden by command line switches (see smbd(8))
  # or in smb.conf (see smb.conf(5))
@@ -14,16 +14,16 @@
  # This is where smbpasswd et al go
  PRIVATEDIR = @privatedir@
  
-@@ -60,6 +60,9 @@
+@@ -63,6 +63,9 @@
  # the directory where lock files go
  LOCKDIR = @lockdir@
  
 +# the directory where pid files go
 +PIDFILEDIR = $(VARDIR)/run
 +
- # The directory where code page definition files go
- CODEPAGEDIR = @codepagedir@
- 
+ # libsmbclient support here
+ BLDSHARED = @BLDSHARED@
+ LIBSMBCLIENT_MAJOR=0
 @@ -78,7 +81,7 @@
  PASSWD_FLAGS = -DPASSWD_PROGRAM=\"$(PASSWD_PROGRAM)\" -DSMB_PASSWD_FILE=\"$(SMB_PASSWD_FILE)\" -DTDB_PASSWD_FILE=\"$(TDB_PASSWD_FILE)\"
  FLAGS1 = $(CFLAGS) -Iinclude -I$(srcdir)/include -I$(srcdir)/ubiqx -I$(srcdir)/smbwrapper $(CPPFLAGS) -DLOGFILEBASE=\"$(LOGFILEBASE)\"

@@ -1,6 +1,6 @@
---- include/local.h.orig	Thu Nov 11 03:36:00 1999
-+++ include/local.h	Fri Feb  4 11:33:01 2000
-@@ -171,9 +171,9 @@
+--- include/local.h.orig	Fri Jul  6 03:01:26 2001
++++ include/local.h	Tue Oct 16 17:20:36 2001
+@@ -176,10 +176,10 @@
   * Default passwd chat script.
   */
  
@@ -11,4 +11,5 @@
 -#define MINPASSWDLENGTH 5
 +#define MINPASSWDLENGTH 6
  
- #endif
+ /* maximum ID number used for session control. This cannot be larger
+    than 62*62 for the current code */

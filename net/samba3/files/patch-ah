@@ -1,5 +1,5 @@
---- lib/util_sock.c.orig	Fri Feb  2 12:09:17 2001
-+++ lib/util_sock.c	Fri Feb  2 12:09:36 2001
+--- lib/util_sock.c.orig	Sat Oct 13 22:09:26 2001
++++ lib/util_sock.c	Tue Oct 16 17:19:38 2001
 @@ -28,6 +28,9 @@
  extern int  sslFd;
  #endif  /* WITH_SSL */
