@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	ghc6-doc
-PORTVERSION=	6.2.2
+PORTVERSION=	6.4
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/docs/${PORTVERSION}/ \
 		http://www.haskell.org/ghc/docs/${PORTVERSION}/html/
-DISTFILES=	building.ps.gz building.html.tar.gz hslibs.html.tar.gz \
+DISTFILES=	Cabal.ps.gz Cabal.html.tar.gz building.ps.gz \
+		building.html.tar.gz hslibs.html.tar.gz \
 		hslibs.ps.gz libraries.html.tar.gz users_guide.html.tar.gz \
 		users_guide.ps.gz index.html
 DIST_SUBDIR=	ghc-${PORTVERSION}
@@ -23,11 +24,11 @@ NO_BUILD=	yes
 
 do-install:
 	@${MKDIR} ${LOCALBASE}/share/doc/ghc6
-.for FILE in building.ps.gz hslibs.ps.gz users_guide.ps.gz index.html
+.for FILE in Cabal.ps.gz building.ps.gz hslibs.ps.gz users_guide.ps.gz index.html
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${FILE} \
 		${LOCALBASE}/share/doc/ghc6
 .endfor
-.for FILE in building.html.tar.gz hslibs.html.tar.gz \
+.for FILE in Cabal.html.tar.gz building.html.tar.gz hslibs.html.tar.gz \
 	libraries.html.tar.gz users_guide.html.tar.gz
 	@${TAR} xfz ${DISTDIR}/${DIST_SUBDIR}/${FILE} \
 		-C ${LOCALBASE}/share/doc/ghc6
