@@ -3,7 +3,7 @@
 # Date created:         Thur Sept 25, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.2 1996/11/14 01:13:57 ache Exp $
+# $Id: Makefile,v 1.3 1996/11/17 07:58:08 obrien Exp $
 #
 
 DISTNAME=	vfrb101e
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.taz
 MAINTAINER=     obrien@cs.ucdavis.edu
 
 NO_WRKSUBDIR=	yes
-RESTRICTED=	"Commercial software."
+RESTRICTED=	"Commercial software"
 
 LIBDIR=	${PREFIX}/lib/mcafee
 MAN1=	uvscan.1

@@ -3,7 +3,7 @@
 # Date created:         4 Jan 1995
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.7 1996/06/14 03:21:40 asami Exp $
+# $Id: Makefile,v 1.8 1996/11/18 11:26:53 asami Exp $
 #
 
 DISTNAME=       xrisk-2.13
@@ -12,6 +12,6 @@ MASTER_SITES=   ftp://geocub.greco-prog.fr/pub/Games/
 EXTRACT_SUFX=   .tar.Z
 
 USE_X11=	yes
-RESTRICTED=	"Possible trademark infringement."
+RESTRICTED=	"Possible trademark infringement"
 
 .include <bsd.port.mk>

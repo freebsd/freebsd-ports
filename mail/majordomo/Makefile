@@ -3,7 +3,7 @@
 # Date created:		23 October 1996
 # Whom:			jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.4 1996/11/17 07:42:33 obrien Exp $
+# $Id: Makefile,v 1.5 1996/12/07 11:26:41 max Exp $
 #
 
 DISTNAME=	majordomo-1.94
@@ -17,7 +17,7 @@ MAINTAINER=	jfitz@FreeBSD.ORG
 
 # Needs to create a user and group
 IS_INTERACTIVE= yes
-NO_PACKAGE=	"User and group need to be created."
+NO_PACKAGE=	"User and group need to be created"
 ALL_TARGET=	wrapper
 INSTALL_TARGET=	install install-wrapper
 MAN1=		approve.1 bounce-remind.1 digest.1

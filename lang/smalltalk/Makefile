@@ -3,7 +3,7 @@
 # Date created:		09 Feb 1995
 # Whom:			gpalmer
 #
-# $Id: Makefile,v 1.11 1996/11/18 10:24:38 asami Exp $
+# $Id: Makefile,v 1.12 1996/12/07 17:58:22 max Exp $
 #
 
 DISTNAME=	smalltalk-1.1.1
@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MAINTAINER=	jraynard@FreeBSD.ORG
 
 IS_INTERACTIVE=	yes
-NO_PACKAGE=	"Installation requires interaction."
+NO_PACKAGE=	"Installation requires interaction"
 
 pre-configure:
 	@${CP} ${FILESDIR}/m-fbsd-2.h ${WRKSRC}/config/m-fbsd-2.h

@@ -4,7 +4,7 @@
 # Whom:			pst
 # Changed:		ats, Nov 16, 1994
 #
-# $Id: Makefile,v 1.9 1996/11/17 03:00:48 obrien Exp $
+# $Id: Makefile,v 1.10 1996/12/07 11:12:21 max Exp $
 #
 
 DISTNAME=	cku190
@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://kermit.columbia.edu/kermit/archives/ \
 
 MAINTAINER=	pst@FreeBSD.org
 
-RESTRICTED=	"'No redistribution' copyright."
+RESTRICTED=	"'No redistribution' copyright"
 NO_WRKSUBDIR=	yes
 
 post-install:

@@ -3,7 +3,7 @@
 # Date created:			23 Sep 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1996/11/10 21:31:33 obrien Exp $
+# $Id: Makefile,v 1.4 1996/11/17 07:42:30 obrien Exp $
 #
 
 DISTNAME=	mailagent-3.0pl44
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	perl5.003:${PORTSDIR}/lang/perl5
 
 WRKSRC=		${WRKDIR}/mailagent-3.0
 
-NO_PACKAGE=	"Correct FQDN needs to be hardcoded."
+NO_PACKAGE=	"Correct FQDN needs to be hardcoded"
 IS_INTERACTIVE=		yes
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	Configure
