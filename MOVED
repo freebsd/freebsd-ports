@@ -1378,7 +1378,6 @@ databases/mysql-gui||2005-02-18|port was broken or obsolete
 databases/ruby-sqlrelay||2005-02-18|port was broken or obsolete
 databases/ruby-dbd_sqlrelay||2005-02-18|port depended on removed port
 deskutils/multisync-evolution||2005-02-18|port was broken or obsolete
-deskutils/taskjuggler||2005-02-18|port was broken or obsolete
 devel/arm-aout-binutils||2005-02-18|port was broken or obsolete
 devel/cl-port-cmucl||2005-02-18|port was broken or obsolete
 devel/gdb52||2005-02-18|port was broken or obsolete
