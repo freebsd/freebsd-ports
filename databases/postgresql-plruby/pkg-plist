@@ -5,6 +5,7 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/plruby/plp/test.expected.65
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/plruby/plp/test.expected.70
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/plruby/plp/test.expected.71
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/plruby/plp/test.expected.72
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/plruby/plp/test.out
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/plruby/plp/test_mklang.sql
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/plruby/plp/test_queries.sql
@@ -14,6 +15,7 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/plruby/plt/test.expected.65
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/plruby/plt/test.expected.70
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/plruby/plt/test.expected.71
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/plruby/plt/test.expected.72
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/plruby/plt/test.out
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/plruby/plt/test_mklang.sql
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/plruby/plt/test_queries.sql
