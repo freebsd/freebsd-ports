@@ -1,0 +1,12 @@
+--- correct.c.orig	Wed Jul 25 23:51:47 2001
++++ correct.c	Thu Feb 21 21:15:51 2002
+@@ -1600,7 +1600,9 @@
+ 		ch = getc (stdin);
+ 		if (ch == EOF)
+ 		    break;
++		contextbufs[0][bufsize] = (char) ch;
+ 		filteredbuf[bufsize++] = (char) ch;
++		contextbufs[0][bufsize] = '\0';
+ 		filteredbuf[bufsize] = '\0';
+ 		}
+ 	    }
