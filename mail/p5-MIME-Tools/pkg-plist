@@ -23,3 +23,4 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MIME-tools/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/MIME/Field
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/MIME/Decoder
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/MIME/Parser
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/MIME 2>/dev/null || true
