@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	devel-logger
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	sysutils ruby
-MASTER_SITES=	http://www.jin.gr.jp/~nahi/Ruby/Devel__Logger/
+MASTER_SITES=	 http://www.ruby-lang.org/~nahi/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
 DIST_SUBDIR=	ruby
