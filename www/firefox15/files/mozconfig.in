@@ -9,17 +9,19 @@ ac_add_options --disable-tests
 ac_add_options --disable-debug
 ac_add_options --disable-mailnews
 ac_add_options --disable-composer
-#ac_add_options --enable-optimize=-O2
 ######################################################################
 # FBSD specific
-export CFLAGS=@CFLAGS@
-export LIBS=@LIBS@
-export PERL=@LOCALBASE@/bin/perl5.8.0
+export CFLAGS="@CFLAGS@"
+export LIBS="@LIBS@"
+test -x /usr/bin/PERL && export PERL=/usr/bin/perl \
+    || export PERL=/usr/local/bin/perl
 mk_add_options PERL=$PERL
 export GTK_CONFIG=@X11BASE@/bin/gtk12-config
 mk_add_options GTK_CONFIG=$GTK_CONFIG
 export GLIB_CONFIG=@LOCALBASE@/bin/glib12-config
 mk_add_options GLIB_CONFIG=$GLIB_CONFIG
+# Configure options for installation
+ac_add_options --prefix=@PREFIX@
 ######################################################################
 # Use ports for these libraries
 ac_add_options --with-system-jpeg=@LOCALBASE@
@@ -29,7 +31,7 @@ ac_add_options --with-system-mng=@LOCALBASE@
 ######################################################################
 # enable features
 ac_add_options --with-pthreads
-# ac_add_options --enable-xft
+ac_add_options --enable-xft
 ac_add_options --enable-crypto
 ac_add_options --enable-xinerama
 ac_add_options --enable-reorder
