@@ -1,0 +1,16 @@
+--- configure.orig	Sat May 22 13:20:23 1993
++++ configure	Fri Dec  3 21:49:27 1999
+@@ -808,11 +808,13 @@
+ s%@AWK@%$AWK%g
+ s%@CC@%$CC%g
+ s%@CPP@%$CPP%g
++s%@CFLAGS@%$CFLAGS%g
+ s%@INSTALL@%$INSTALL%g
+ s%@INSTALL_PROGRAM@%$INSTALL_PROGRAM%g
+ s%@INSTALL_DATA@%$INSTALL_DATA%g
+ s%@ALLOCA@%$ALLOCA%g
+ s%@LIBS@%$LIBS%g
++s%@prefix@%$prefix%g
+ s%@srcdir@%$srcdir%g
+ s%@DEFS@%$DEFS%
+ " $top_srcdir/${file}.in >> $file
