@@ -32,6 +32,7 @@
     SUBDIR += asterisk
     SUBDIR += atmsupport
     SUBDIR += ayttm
+    SUBDIR += azureus
     SUBDIR += b2bua
     SUBDIR += balance
     SUBDIR += bbsnet
