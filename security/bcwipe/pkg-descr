@@ -1,0 +1,5 @@
+bcwipe Repeatedly overwrites special patterns to the files
+to be destroyed.  In normal mode, 34 patterns are used (of
+which 8 are random).
+
+WWW: http://www.jetico.com/

@@ -1,0 +1,27 @@
+# New ports collection makefile for:   bcwipe
+# Date created:                                Mar 4, 2001
+# Whom:                                        crow
+#
+# $FreeBSD$
+#
+
+PORTNAME=	bcwipe
+PORTVERSION=	0.2.3
+CATEGORIES=	security
+MASTER_SITES=	http://www.jetico.com/linux/
+DISTNAME=	BCWipe-0.2-3
+
+MAINTAINER=	crow@nektor.hu
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.2-3
+
+MAN1=	bcwipe.1
+
+post-patch:
+	@${PERL} -pi -e "s,^CFLAGS,#CFLAGS,g" ${WRKSRC}/Makefile
+
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/bcwipe ${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/bcwipe.1 ${MAN1PREFIX}/man/man1
+
+.include <bsd.port.mk>
