@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	giconedit
 DISTNAME=	gnome-iconedit-${PORTVERSION}
 
-MAINTAINER=	j.el-rayes@muthaland.at
+MAINTAINER=	j.el-rayes@daemon.li
 COMMENT=	A small GNOME Icon Editor
 
 USE_REINPLACE=	yes
