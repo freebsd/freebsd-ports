@@ -8,14 +8,14 @@
 
 PORTNAME=	wordperfect
 PORTVERSION=	8.0
-CATEGORIES=     editors linux
-MASTER_SITES=	
+CATEGORIES=	editors linux
+MASTER_SITES=	# must fetch manually
 DISTNAME=	GUILG00
 EXTRACT_SUFX=	.GZ
 
 MAINTAINER=	msmith@freebsd.org
 
-RUN_DEPENDS=    /compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
+RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
 
 ONLY_FOR_ARCHS=	i386
 NO_CDROM=	"LIC: redistribution not allowed"
