@@ -1,0 +1,668 @@
+diff -ubwr old/audio-voxware.cc audio-voxware.cc
+--- old/audio-voxware.cc	Fri Apr 26 12:22:37 1996
++++ audio-voxware.cc	Mon Apr 13 15:45:39 1998
+@@ -1,4 +1,6 @@
+ /*
++ * Modifications (C) 1997-1998 by Luigi Rizzo and others.
++ *
+  * Copyright (c) 1991-1993 Regents of the University of California.
+  * All rights reserved.
+  *
+@@ -30,34 +32,40 @@
+  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+  * SUCH DAMAGE.
+  */
+-static const char rcsid[] =
+-    "@(#) $Header: audio-voxware.cc,v 1.10 96/04/26 05:22:05 van Exp $ (LBL)";
+ 
+-#include <string.h>
+-#include <sys/fcntl.h>
+-#include <errno.h>
+-#if defined(sco) || defined(__bsdi__)
+-#include <sys/socket.h>
+-#endif
+-#if defined(__FreeBSD__)
+-#include <sys/types.h>
+-#include <sys/uio.h>
+-#include <unistd.h>
++
++/*
++ * Full Duplex audio module for the new sound driver and full duplex
++ * cards. Luigi Rizzo, from original sources supplied by Amancio Hasty.
++ *
++ * This includes some enhancements:
++ * - the audio device to use can be in the AUDIODEV env. variable.
++ *   It can be either a unit number or a full pathname;
++ * - use whatever format is available from the card (included split
++ *   format e.g. for the sb16);
++ * - limit the maximum size of the playout queue to approx 4 frames;
++ *   this is necessary if the write channel is slower than expected;
++ *   the fix is based on two new ioctls, AIOGCAP and AIONWRITE,
++ *   but the code should compile with the old driver as well.
++ */
++
++#include <osfcn.h>
+ #include <machine/soundcard.h>
+-#else
+-#include <sys/soundcard.h>
+-#endif
+ #include "audio.h"
++#include "mulaw.h"
+ #include "Tcl.h"
+ 
+ #define ULAW_ZERO 0x7f
++
++/* for use in the Voxware driver */
+ #define ABUFLOG2 8
+-#define ABUFLEN (1 << ABUFLOG2)
+ #define NFRAG 5
+ 
+-class VoxWareAudio : public Audio {
++extern const u_char lintomulawX[];
++
++class VoxWare : public Audio {
+     public:
+-	VoxWareAudio();
++	VoxWare();
+ 	virtual int FrameReady();
+ 	virtual u_char* Read();
+ 	virtual	void Write(u_char *);
+@@ -66,163 +74,400 @@
+ 	virtual void OutputPort(int);
+ 	virtual void InputPort(int);
+ 	virtual void Obtain();
++	virtual void Release();
+ 	virtual void RMute();
+ 	virtual void RUnmute();
+ 	virtual int HalfDuplex() const;
+     protected:
++	int ext_fd; /* source for external file */
+ 
+-	u_char* readptr;
+-	u_char* readbufend;
+ 	u_char* readbuf;
++	u_short *s16_buf;
++
++	int play_fmt ;
++	int is_half_duplex ;
++
++	// new sound driver
++	int rec_fmt ; /* the sb16 has split format... */
++	snd_capabilities soundcaps;
+ 
+-	u_char* ubufptr;
+-	u_char* ubufend;
+-	u_char* ubuf;
+-
+-	u_char* writeptr;
+-	u_char* writebufend;
+-	u_char* writebuf;
+ };
+ 
+-static class VoxWareAudioMatcher : public Matcher {
++static class VoxWareMatcher : public Matcher {
+     public:
+-	VoxWareAudioMatcher() : Matcher("audio") {}
++    VoxWareMatcher() : Matcher("audio") {}
+ 	TclObject* match(const char* fmt) {
+ 		if (strcmp(fmt, "voxware") == 0)
+-			return (new VoxWareAudio);
+-		else
++	    return (new VoxWare);
+ 			return (0);
+ 	}
+-} voxware_audio_matcher;
++} linux_audio_matcher;
+ 
+-VoxWareAudio::VoxWareAudio()
++VoxWare::VoxWare()
+ {
+-	readbuf = new u_char[ABUFLEN];
+-	readptr = readbufend = readbuf + ABUFLEN;
++    readbuf = new u_char[blksize];
++    s16_buf = new u_short[blksize];
+ 
+-	writeptr = writebuf = new u_char[ABUFLEN];
+-	writebufend = writebuf + ABUFLEN;
++    memset(readbuf, ULAW_ZERO, blksize);
+ 
+-	ubufptr = ubuf = new u_char[blksize];
+-	ubufend = ubuf + blksize;
+-	memset(ubuf, ULAW_ZERO, blksize);
++    ext_fd = -1 ; /* no external audio */
++    iports = 4; /* number of input ports */
+ }
+ 
+-int VoxWareAudio::HalfDuplex() const
++void
++VoxWare::Obtain()
+ {
+-	/*XXX change this if full duplex audio device available*/
+-	return 1;
+-}
++    char *thedev;
++    char buf[64];
++    int d = -1;
+ 
+-void VoxWareAudio::Obtain()
+-{
+ 	if (HaveAudio())
+ 		abort();
+-
+-	fd = open("/dev/audio", O_RDWR|O_NDELAY);
++    is_half_duplex = 0 ;
++    /*
++     * variable AUDIODEV has the name of the audio device.
++     * With the new audio driver, the main device can also control
++     * the mixer, so there is no need to carry two descriptors around.
++     */
++    thedev=getenv("AUDIODEV");
++    if (thedev==NULL)
++	thedev="/dev/audio";
++    else if ( thedev[0] >= '0' && thedev[0] <= '9' ) {
++	d = atoi(thedev);
++	sprintf(buf,"/dev/audio%d", d);
++	thedev = buf ;
++    }
++    fd = open(thedev, O_RDWR );
+ 	if (fd >= 0) {
+-		int on = 1;
+-		ioctl(fd, FIONBIO, &on);
+-
+-		int frag = (NFRAG << 16) | ABUFLOG2;
+-		ioctl(fd, SNDCTL_DSP_SETFRAGMENT, &frag);
+-#ifdef fullduplex
++	int i = -1 ;
++	u_long fmt = 0 ;
++	int rate = 8000 ;
++
++	snd_chan_param pa;
++	struct snd_size sz;
++	i = ioctl(fd, AIOGCAP, &soundcaps);
++	fmt = soundcaps.formats ; /* can be invalid, check later */
++
++	play_fmt = AFMT_MU_LAW ;
++	rec_fmt = AFMT_MU_LAW ;
++
++	if (i == -1 ) { /* setup code for old voxware driver */
++	    i = ioctl(fd, SNDCTL_DSP_GETFMTS, &fmt);
++	    fmt &= AFMT_MU_LAW ; /* only use mu-law */
++	    fmt |= AFMT_FULLDUPLEX ;
++	    if ( i < 0 ) { /* even voxware driver failed, try with pcaudio */
++		fmt = AFMT_MU_LAW | AFMT_WEIRD ;
++	    }
++	}
++	switch (soundcaps.formats & (AFMT_FULLDUPLEX | AFMT_WEIRD)) {
++	case AFMT_FULLDUPLEX :
++	    /*
++	     * this entry for cards with decent full duplex. Use s16
++	     * preferably (some are broken in ulaw) or ulaw or u8 otherwise.
++	     */
++	    if (fmt & AFMT_S16_LE)
++		play_fmt = rec_fmt = AFMT_S16_LE ;
++	    else if (soundcaps.formats & AFMT_MU_LAW)
++		play_fmt = rec_fmt = AFMT_MU_LAW ;
++	    else if (soundcaps.formats & AFMT_U8)
++		play_fmt = rec_fmt = AFMT_U8 ;
++	    else {
++		printf("sorry, no supported formats\n");
++		close(fd);
++		fd = -1 ;
++		return;
++	    }
++	    break ;
++	case AFMT_FULLDUPLEX | AFMT_WEIRD :
++	    /* this is the sb16... */
++	    if (fmt & AFMT_S16_LE) {
++		play_fmt = AFMT_U8 ;
++		rec_fmt = AFMT_S16_LE;
++	    } else {
++		printf("sorry, no supported formats\n");
++		close(fd);
++		fd = -1 ;
++		return;
++	    }
++	    break ;
++	default :
++	    printf("sorry don't know how to deal with this card\n");
++	    close (fd);
++	    fd = -1;
++	    return;
++	}
++
++        pa.play_format = play_fmt ;
++        pa.rec_format = rec_fmt ;
++        pa.play_rate = pa.rec_rate = rate ;
++        ioctl(fd, AIOSFMT, &pa); /* if this fails, also AIOSSIZE will.. */
++	sz.play_size = (play_fmt == AFMT_S16_LE) ? 2*blksize : blksize; 
++	sz.rec_size = (rec_fmt == AFMT_S16_LE) ? 2*blksize : blksize; 
++	i = ioctl(fd, AIOSSIZE, &sz);
++
++	/*
++	 * Set the line input level to 0 to avoid loopback if the mic
++	 * is connected to the line-in port (e.g. through an echo
++	 * canceller).
++	 */
++	int v = 0;
++	(void)ioctl(fd, MIXER_WRITE(SOUND_MIXER_LINE), &v);
++	// restore hardware settings in case some other vat changed them
++	InputPort(iport);
++	SetRGain(rgain);
++	SetPGain(pgain);
++
++	if ( i < 0 ) { // if AIOSSIZE fails, maybe this is a Voxware driver
++            ioctl(fd, SNDCTL_DSP_SPEED, &rate);
++            ioctl(fd, SNDCTL_DSP_SETFMT, &play_fmt); // same for play/rec
++            d = (play_fmt == AFMT_S16_LE) ? 2*blksize : blksize;
++            ioctl(fd, SNDCTL_DSP_SETBLKSIZE, &d);
++	    read(fd, &i, 1); /* dummy read to start read engine */
++	}
+ 		Audio::Obtain();
+-#else
+-		notify();
+-#endif
++    } else {
++	fprintf(stderr, "failed to open rw...\n");
++	fd = open(thedev, O_WRONLY );
++	fprintf(stderr, "open wronly returns %d\n", fd);
++	is_half_duplex = 1 ;
++	play_fmt = rec_fmt = AFMT_MU_LAW ;
++	notify(); /* XXX */
+ 	}
+ }
+ 
+-void VoxWareAudio::Write(u_char *cp)
++/*
++ * note: HalfDuplex() uses a modified function of the new driver,
++ * which will return AFMT_FULLDUPLEX set in SNDCTL_DSP_GETFMTS
++ * for full-duplex devices. In the old driver this was 0 so
++ * the default is to use half-duplex for them. Note also that I have
++ * not tested half-duplex operation.
++ */
++int
++VoxWare::HalfDuplex() const
+ {
+-	if (HaveAudio() && (rmute & 1) != 0) {
+-		register u_char *cpend = cp + blksize;
+-		register u_char *wbuf = writeptr;
+-		register u_char *wend = writebufend;
+-		for ( ; cp < cpend; cp += 4) {
+-			wbuf[0] = cp[0];
+-			wbuf[1] = cp[1];
+-			wbuf[2] = cp[2];
+-			wbuf[3] = cp[3];
+-			wbuf += 4;
+-			if (wbuf >= wend) {
+-				wbuf = writebuf;
+-				if (write(fd, (char*)wbuf, ABUFLEN) != ABUFLEN)
+-					perror("aud write");
+-			}
+-		}
+-		writeptr = wbuf;
++    int i;
++    if (is_half_duplex) {
++	fprintf(stderr, "HalfDuplex returns 1\n");
++	return 1 ;
+ 	}
++    ioctl(fd, SNDCTL_DSP_GETFMTS, &i);
++    return (i & AFMT_FULLDUPLEX) ? 0 : 1 ;
+ }
+ 
+-int VoxWareAudio::FrameReady()
+-{
+-	if ((rmute & 1) == 0) {
+-		register u_char* cp = ubufptr;
+-		register u_char* cpend = ubufend;
+-		register u_char* rbuf = readptr;
+-		register u_char* rend = readbufend;
+-
+-		for ( ; cp < cpend; cp += 4) {
+-			if (rbuf >= rend) {
+-				rbuf = readbuf;
+-				int cc = read(fd, (char*)rbuf, ABUFLEN);
+-				if (cc <= 0) {
+-					ubufptr = cp;
+-					readbufend = rbuf;
+-					if (cc == -1 && errno != EAGAIN) {
+-						Release();
+-						Obtain();
+-					}
+-					return (0);
++void VoxWare::Release()
++{
++    if (HaveAudio()) {
++	Audio::Release();
+ 				}
+-				readbufend = rend = rbuf + cc;
+ 			}
+-			cp[0] = rbuf[0];
+-			cp[1] = rbuf[1];
+-			cp[2] = rbuf[2];
+-			cp[3] = rbuf[3];
+-			rbuf += 4;
++
++void VoxWare::Write(u_char *cp)
++{
++    int i = blksize, l;
++    if (play_fmt == AFMT_S16_LE) {
++	for (i=0; i< blksize; i++)
++	    s16_buf[i] = mulawtolin[cp[i]] ;
++	cp = (u_char *)s16_buf;
++        i = 2 *blksize ;
++    } else if (play_fmt == AFMT_S8) {
++	for (i=0; i< blksize; i++) {
++	    int x = mulawtolin[cp[i]] ;
++	    x =  (x >> 8 ) & 0xff;
++	    cp[i] = (u_char)x ;
++	}
++	i = blksize ;
++    } else if (play_fmt == AFMT_U8) {
++	for (i=0; i< blksize; i++) {
++	    int x = mulawtolin[cp[i]] ;
++	    /*
++	     * when translating to 8-bit formats, it would be useful to
++	     * implement AGC to avoid loss of resolution in the conversion.
++	     * This code is still incomplete...
++	     */
++#if 0 /* AGC -- still not complete... */
++	    static int peak = 0;
++	    if (x < 0) x = -x ;
++	    if (x > peak) peak =  ( peak*16 + x - peak ) / 16 ;
++	    else peak =  ( peak*8192 + x - peak ) / 8192 ;
++	    if (peak < 128) peak = 128 ;
++	    /* at this point peak is in the range 128..32k
++	     * samples can be scaled and clipped consequently.
++	     */
++	    x = x * 32768/peak ;
++	    if (x > 32767) x = 32767;
++	    else if (x < -32768) x = -32768;
++#endif
++	    x =  (x >> 8 ) & 0xff;
++	    x = (x ^ 0x80) & 0xff ;
++	    cp[i] = (u_char)x ;
++	}
++	i = blksize ;
++    }
++#if 0
++    // this code is meant to keep the queue short.
++    int r, queued;
++    r = ioctl(fd, AIONWRITE, &queued);
++    queued = soundcaps.bufsize - queued ;
++    if (play_fmt == AFMT_S16_LE) {
++	if (queued > 8*blksize)
++	    i -= 8 ;
++    } else {
++	if (queued > 4*blksize)
++	    i -= 4 ;
+ 		}
+-		readptr = rbuf;
++#endif
++    for ( ; i > 0 ; i -= l) {
++	l = write(fd, cp, i); 
++	cp += l;
+ 	}
+-	return (1);
+ }
+ 
+-u_char* VoxWareAudio::Read()
++u_char* VoxWare::Read()
+ {
+-	u_char* cp = ubuf;
+-	ubufptr = cp;
+-	return (cp);
++    u_char* cp;
++    int l=0, l0 = blksize,  i = blksize;
++
++    cp = readbuf; 
++
++    if (rec_fmt == AFMT_S16_LE) {
++	cp = (u_char *)s16_buf;
++        l0 = i = 2 *blksize ;
++    }
++    for ( ; i > 0 ; i -= l ) {
++	l = read(fd, cp, i);
++	if (l<0) break;
++        cp += l ;
++    }
++    if (rec_fmt == AFMT_S16_LE) {
++	for (i=0; i< blksize; i++) {
++#if 1 /* remove DC component... */
++	    static int smean = 0 ; /* smoothed mean to remove DC */
++	    int dif = ((short) s16_buf[i]) - (smean >> 13) ;
++	    smean += dif ;
++	    readbuf[i] = lintomulawX[ dif & 0x1ffff ] ;
++#else
++	    readbuf[i] = lintomulaw[ s16_buf[i] ] ;
++#endif
++	}
++    }
++    else if (rec_fmt == AFMT_S8) {
++	for (i=0; i< blksize; i++)
++	    readbuf[i] = lintomulaw[ readbuf[i]<<8 ] ;
++    }
++    else if (rec_fmt == AFMT_U8) {
++	for (i=0; i< blksize; i++)
++	    readbuf[i] = lintomulaw[ (readbuf[i]<<8) ^ 0x8000 ] ;
++    }
++    if (iport == 3) {
++	l = read(ext_fd, readbuf, blksize);
++	if (l < blksize) {
++	    lseek(ext_fd, (off_t) 0, 0);
++	    read(ext_fd, readbuf+l, blksize - l);
++	}
++    }
++    return readbuf;
+ }
+ 
+-void VoxWareAudio::SetRGain(int level)
++/*
++ * should check that I HaveAudio() before trying to set gain.
++ *
++ * In most mixer devices, there is only a master volume control on
++ * the capture channel, so the following code does not really work
++ * as expected. The only (partial) exception is the MIC line, where
++ * there is generally a 20dB boost which can be enabled or not
++ * depending on the type of device.
++ */
++void VoxWare::SetRGain(int level)
+ {
++    double x = level;
++    level = (int) (x/2.56);
++    int foo = (level<<8) | level;
++    if (!HaveAudio())
++	Obtain();
++    switch (iport) {
++    case 2:
++    case 1:
++	break;
++    case 0:
++	if (ioctl(fd, MIXER_WRITE(SOUND_MIXER_MIC), &foo) == -1)
++	    printf("failed to set mic volume \n");
++	break;
++    }
++    if (ioctl(fd, MIXER_WRITE(SOUND_MIXER_IGAIN), &foo) == -1)
++       printf("failed set input line volume \n");
+ 	rgain = level;
+ }
+ 
+-void VoxWareAudio::SetPGain(int level)
++void VoxWare::SetPGain(int level)
+ {
++    float x = level;
++    level = (int) (x/2.56);
++    int foo = (level<<8) | level;
++    if (ioctl(fd, MIXER_WRITE(SOUND_MIXER_PCM), &foo) == -1) {
++	printf("failed to output level %d \n", level);
++    }
+ 	pgain = level;
+ }
+ 
+-void VoxWareAudio::OutputPort(int p)
++void VoxWare::OutputPort(int p)
+ {
+ 	oport = p;
+ }
+ 
+-void VoxWareAudio::InputPort(int p)
++void VoxWare::InputPort(int p)
+ {
++    int   src = 0;
++
++    if (ext_fd >= 0 && p != 3) {
++	close(ext_fd);
++	ext_fd = -1 ;
++    }
++	
++    switch(p) {
++    case 3:
++	if (ext_fd == -1)
++	    ext_fd = open(ext_fname, 0);
++	if (ext_fd != -1)
++	    lseek(ext_fd, (off_t) 0, 0);
++	break; 
++    case 2:
++	src = 1 << SOUND_MIXER_LINE;
++	break;
++    case 1: /* cd ... */
++	src = 1 << SOUND_MIXER_CD;
++	break;
++    case 0 :
++	src = 1 << SOUND_MIXER_MIC;
++	break;
++    }
++    if ( ioctl(fd, SOUND_MIXER_WRITE_RECSRC, &src) == -1 ) {
++	printf("failed to select input \n");
++        p = 0;
++    }
+ 	iport = p;
+ }
+ 
+-void VoxWareAudio::RMute()
++void VoxWare::RMute()
+ {
+ 	rmute |= 1;
+ }
+ 
+-void VoxWareAudio::RUnmute()
++void VoxWare::RUnmute()
+ {
+ 	rmute &=~ 1;
+ }
++
++/*
++ * FrameReady must return 0 every so often, or the system will keep
++ * processing mike data and not other events.
++ */
++int VoxWare::FrameReady()
++{
++    int i, l = 0;
++    int lim = blksize;
++
++    i = ioctl(fd, FIONREAD, &l );
++    if (rec_fmt == AFMT_S16_LE) lim = 2*blksize;
++    return (l >= lim) ? 1 : 0 ;
++}
++/*** end of file ***/
+diff -ubwr old/audio.cc audio.cc
+--- old/audio.cc	Fri May  3 13:27:20 1996
++++ audio.cc	Thu Apr 16 21:36:33 1998
+@@ -70,6 +70,7 @@
+ 	filter(new Filter(this)),
+ 	handler_(0)
+ {
++	ext_fname[0]='\0';
+ 	for (u_int i = 0; i < sizeof(omode)/sizeof(omode[0]); ++i)
+ 		omode[i] = mode_mikemutesnet;
+ }
+@@ -479,6 +480,10 @@
+ 				*cp++ = '\0';
+ 				return (TCL_OK);
+ 			}
++		} else if (strcmp(argv[1], "filename") == 0) {
++			strncpy(ext_fname, argv[2], sizeof(ext_fname));
++			InputPort(input_line3);
++			return (TCL_OK);
+ 		}
+ 	} else if (argc == 4) {
+ 		if (strcmp(argv[1], "input") == 0) {
+diff -ubwr old/audio.h audio.h
+--- old/audio.h	Fri Apr 26 12:00:44 1996
++++ audio.h	Fri Feb 20 13:44:01 1998
+@@ -158,6 +158,7 @@
+ 	int rgain, pgain;
+ 	Filter *filter;
+ 	AudioHandler* handler_;
++	char ext_fname[256];
+ };
+ 
+ #endif
+diff -ubwr old/bitmaps/linein3.xbm bitmaps/linein3.xbm
+--- old/bitmaps/linein3.xbm	Fri May  3 12:18:11 1996
++++ bitmaps/linein3.xbm	Wed Oct 29 11:07:34 1997
+@@ -1,11 +1,11 @@
+ #define linein3_width 30
+ #define linein3_height 24
+-static char linein3_bits[] = {
+-   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x3e, 0x00,
+-   0x00, 0x80, 0xff, 0x00, 0x00, 0xe0, 0xc1, 0x03, 0x00, 0x70, 0x04, 0x07,
+-   0x00, 0x30, 0x0c, 0x06, 0x00, 0x18, 0x18, 0x0c, 0x00, 0x18, 0x30, 0x0c,
+-   0x00, 0x0c, 0x60, 0x18, 0xe0, 0xff, 0xff, 0x18, 0xe0, 0xff, 0xff, 0x19,
+-   0xe0, 0xff, 0xff, 0x18, 0x00, 0x0c, 0x60, 0x18, 0x00, 0x18, 0x30, 0x0c,
+-   0x18, 0x18, 0x18, 0x0c, 0x24, 0x30, 0x0c, 0x06, 0x20, 0x70, 0x04, 0x07,
+-   0x18, 0xe0, 0xc1, 0x03, 0x10, 0x80, 0xff, 0x00, 0x20, 0x00, 0x3e, 0x00,
+-   0x24, 0x00, 0x00, 0x00, 0x18, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
++static unsigned char linein3_bits[] = {
++   0x00, 0x00, 0x00, 0x00, 0x7c, 0x1b, 0x3e, 0x00, 0x0c, 0x1b, 0x06, 0x00,
++   0x0c, 0x1b, 0x06, 0x00, 0x3c, 0x1b, 0x1e, 0x00, 0x0c, 0x1b, 0x06, 0x00,
++   0x0c, 0x1b, 0x06, 0x00, 0x0c, 0xfb, 0x3e, 0x00, 0x00, 0x00, 0x00, 0x00,
++   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
++   0x00, 0x00, 0x00, 0x00, 0x00, 0x07, 0x70, 0x00, 0x80, 0x0f, 0xf8, 0x00,
++   0xc0, 0x18, 0x8c, 0x01, 0x60, 0x30, 0x06, 0x03, 0x60, 0x30, 0x06, 0x03,
++   0x60, 0x30, 0x06, 0x03, 0xc0, 0x18, 0x8c, 0x01, 0x80, 0xff, 0xff, 0x00,
++   0x00, 0xff, 0x7f, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
+diff -ubwr old/ui-main.tcl ui-main.tcl
+--- old/ui-main.tcl	Fri May  3 13:27:22 1996
++++ ui-main.tcl	Sat Feb 21 06:02:59 1998
+@@ -373,9 +373,9 @@
+ 	}
+ 	mk.obuttons $w.frame.buttons
+ 	frame $w.frame.ssthresh
+-	# mk.ssthresh $w.frame.ssthresh
+-	#pack $w.frame.radios $w.frame.buttons $w.frame.ssthresh \
+-	#	-anchor c -pady 4
++	mk.ssthresh $w.frame.ssthresh
++	pack $w.frame.radios $w.frame.buttons $w.frame.ssthresh \
++		-anchor c -pady 4
+ 	pack $w.frame.radios $w.frame.buttons \
+ 		-anchor c -pady 4
+ 	pack $w.label $w.frame -expand 1 -fill x
+@@ -515,6 +515,12 @@
+ 	return 0
+ }
+ 
++proc update_filename { w s } {
++	set s [string trim $s]
++	audio filename $s
++	return 0
++}
++
+ proc mk.entries { w } {
+ 	global sessionKey confName
+ 	set sessionKey [option get . sessionKey Vat]
+@@ -913,6 +919,16 @@
+ 	set a .m.right
+ 	frame $a.ab
+ 	mk.ab $a.ab
++
++### XXX
++	set f [ctrlfont]
++	frame .m.file
++	label .m.file.label -text "AU File: " -font $f
++	mk.entry .m.file update_filename ""
++	.m.file.entry configure -width 30
++	pack .m.file.label -side left
++	pack .m.file.entry -side left -expand 1 -fill x -pady 2
++	pack .m.file -fill x
+ 
+ 	bind . c purge_sources
+ 	bind . C purge_sources
