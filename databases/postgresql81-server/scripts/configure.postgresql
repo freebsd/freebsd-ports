@@ -88,7 +88,8 @@ while [ "$1" ]; do
 				fi
 			fi
 			cat <<-EOF
-				BUILD_DEPENDS+=	ant:\${PORTSDIR}/devel/jakarta-ant
+				BUILD_DEPENDS+=	\${LOCALBASE}/bin/ant:\${PORTSDIR}/devel/jakarta-ant
+				CONFIGURE_ENV+= ANT=\${LOCALBASE}/bin/ant
 				WITH_JDBC=YES
 				MAKE_ENV+=	JAVA_HOME=\${JAVA_HOME}
 				SCRIPTS_ENV+=	JAVA_HOME=\${JAVA_HOME}
