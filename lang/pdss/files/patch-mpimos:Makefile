@@ -1,0 +1,26 @@
+Index: mpimos/Makefile
+===================================================================
+RCS file: /ext/cvs/PDSS/mpimos/Makefile,v
+retrieving revision 1.1.1.1
+retrieving revision 1.1.1.1.2.2
+diff -u -r1.1.1.1 -r1.1.1.1.2.2
+--- mpimos/Makefile	11 Jun 2002 16:11:11 -0000	1.1.1.1
++++ mpimos/Makefile	5 Sep 2002 08:26:56 -0000	1.1.1.1.2.2
+@@ -1,3 +1,6 @@
++MPIMOSDIR = ${PDSSROOT}/mpimos
++MPIMOSSRCDIR= ${PDSSSHARE}/mpimos
++
+ PDSSCMP = ../pdsscmp +s
+ PDSSASM = ../emulator/pdssasm
+ PARA	=
+@@ -17,6 +20,10 @@
+ all: $(PARA)	$(MPIMOS)
+ 
+ install:
++	${BSD_INSTALL_DIR} ${MPIMOSDIR}
++	${BSD_INSTALL_SCRIPT} ${MPIMOS} ${MPIMOSDIR}
++	${BSD_INSTALL_DIR} ${MPIMOSSRCDIR}
++	${BSD_INSTALL_DATA} *.kl1 ${MPIMOSSRCDIR}
+ 
+ clean:
+ 

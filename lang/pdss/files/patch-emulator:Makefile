@@ -1,0 +1,65 @@
+Index: emulator/Makefile
+===================================================================
+RCS file: /ext/cvs/PDSS/emulator/Makefile,v
+retrieving revision 1.1.1.1
+retrieving revision 1.1.1.1.2.2
+diff -u -r1.1.1.1 -r1.1.1.1.2.2
+--- emulator/Makefile	11 Jun 2002 16:11:11 -0000	1.1.1.1
++++ emulator/Makefile	5 Sep 2002 08:26:56 -0000	1.1.1.1.2.2
+@@ -5,11 +5,12 @@
+ #  ALL RIGHTS RESERVED.							 #
+ ##########################################################################
+ 
+-BINDIR	= /usr/local/bin
++BINDIR	?= ${PREFIX}/bin
++EMULATORDIR = ${PDSSROOT}/emulator
+ 
+ #CFLAGS	= -g -DDEBUG
+ #CFLAGS	= -g -DDEBUG -J
+-CFLAGS	= -O
++CFLAGS	?= -O
+ #CFLAGS	= -p
+ 
+ PARA	=
+@@ -29,21 +30,23 @@
+ INV	=	pdssinv.o memory.o atom.o module.o instr.o\
+ 		invassm.o saveload.o float.o ctype.o
+ MERGE	=	pdssmerge.o
++PROG	=	pdssasm pdssmerge
++DATA	=	KL1CMP RUNTIME STARTUP
+ 
+-all:	pdss pdssasm pdssmerge
++all:	pdss ${PROG}
+ 
+ pdss:	$(PARA)	$(KL1)
+-	$(CC) $(CFLAGS) -o pdss.x -D"MAKEDATE=\"`date`\"" version.c $(KL1) -lm
++	${SETENV} LC_ALL=C $(CC) $(CFLAGS) -o pdss.x -D"MAKEDATE=\"`date`\"" version.c $(KL1) -lcompat -lm
+ 	mv -f pdss.x pdss
+ 	rm -f version.o
+ 
+ pdssasm: $(PARA) $(ASM)
+-	$(CC) $(CFLAGS) -o pdssasm.x -D"MAKEDATE=\"`date`\"" version.c $(ASM) -lm
++	${SETENV} LC_ALL=C $(CC) $(CFLAGS) -o pdssasm.x -D"MAKEDATE=\"`date`\"" version.c $(ASM) -lm
+ 	mv -f pdssasm.x pdssasm
+ 	rm -f version.o
+ 
+ pdssinv: $(PARA) $(INV)
+-	$(CC) $(CFLAGS) -o pdssinv.x -D"MAKEDATE=\"`date`\"" version.c $(INV) -lm
++	${SETENV} LC_ALL=C $(CC) $(CFLAGS) -o pdssinv.x -D"MAKEDATE=\"`date`\"" version.c $(INV) -lm
+ 	mv -f pdssinv.x pdssinv
+ 	rm -f version.o
+ 
+@@ -52,9 +55,10 @@
+ 	mv -f pdssmerge.x pdssmerge
+ 
+ install:
+-	cp pdss $(BINDIR)/pdss.x
+-	strip $(BINDIR)/pdss.x
+-	mv -f $(BINDIR)/pdss.x $(BINDIR)/pdss
++	${BSD_INSTALL_PROGRAM} pdss ${BINDIR}
++	${BSD_INSTALL_DIR} ${EMULATORDIR}
++	${BSD_INSTALL_PROGRAM} ${PROG} ${EMULATORDIR}
++	${BSD_INSTALL_DATA} ${DATA} ${EMULATORDIR}
+ 
+ clean:
+ 	rm -f $(KL1) $(ASM) $(INV) $(MERGE)

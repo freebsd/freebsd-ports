@@ -1,0 +1,26 @@
+Index: pimos_utl/Makefile
+===================================================================
+RCS file: /ext/cvs/PDSS/pimos_utl/Makefile,v
+retrieving revision 1.1.1.1
+retrieving revision 1.1.1.1.2.2
+diff -u -r1.1.1.1 -r1.1.1.1.2.2
+--- pimos_utl/Makefile	11 Jun 2002 16:11:13 -0000	1.1.1.1
++++ pimos_utl/Makefile	5 Sep 2002 08:26:56 -0000	1.1.1.1.2.2
+@@ -1,3 +1,6 @@
++PUTILDIR = ${PDSSROOT}/pimos_utl
++PUTILSRCDIR = ${PDSSSHARE}/pimos_utl
++
+ PDSSCMP	= ../pdsscmp
+ PDSSASM	= ../emulator/pdssasm
+ PARA	=
+@@ -9,6 +12,10 @@
+ all: $(PARA)	$(PUTIL)
+ 
+ install:
++	${BSD_INSTALL_DIR} ${PUTILDIR}
++	${BSD_INSTALL_SCRIPT} ${PUTIL} ${PUTILDIR}
++	${BSD_INSTALL_DIR} ${PUTILSRCDIR}
++	${BSD_INSTALL_DATA} *.kl1 ${PUTILSRCDIR}
+ 
+ clean:
+ 

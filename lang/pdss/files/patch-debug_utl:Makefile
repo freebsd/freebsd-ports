@@ -1,0 +1,27 @@
+Index: debug_utl/Makefile
+===================================================================
+RCS file: /ext/cvs/PDSS/debug_utl/Makefile,v
+retrieving revision 1.1.1.1
+retrieving revision 1.1.1.1.2.2
+diff -u -r1.1.1.1 -r1.1.1.1.2.2
+--- debug_utl/Makefile	11 Jun 2002 16:11:12 -0000	1.1.1.1
++++ debug_utl/Makefile	5 Sep 2002 08:26:56 -0000	1.1.1.1.2.2
+@@ -1,3 +1,6 @@
++DUTLDIR = ${PDSSROOT}/debug_utl
++DUTLSRCDIR = ${PDSSSHARE}/debug_utl
++
+ PDSSCMP	= ../pdsscmp
+ PDSSASM	= ../emulator/pdssasm
+ PARA	=
+@@ -8,7 +11,10 @@
+ all: $(PARA)	$(DUTIL)
+ 
+ install:
+-
++	${BSD_INSTALL_DIR} ${DUTLDIR}
++	${BSD_INSTALL_SCRIPT} ${DUTIL} ${DUTLDIR}
++	${BSD_INSTALL_DIR} ${DUTLSRCDIR}
++	${BSD_INSTALL_DATA} *.kl1 ${DUTLSRCDIR}
+ clean:
+ 
+ reassm:
