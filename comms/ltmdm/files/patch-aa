@@ -1,5 +1,5 @@
---- sys/dev/ltmdm/ltmdmsio.c.orig	Tue Mar 12 12:17:31 2002
-+++ sys/dev/ltmdm/ltmdmsio.c	Thu Mar  6 10:31:42 2003
+--- sys/dev/ltmdm/ltmdmsio.c.orig	Mon Mar 11 20:47:31 2002
++++ sys/dev/ltmdm/ltmdmsio.c	Wed Sep 17 16:34:20 2003
 @@ -60,7 +60,9 @@
  #include <sys/proc.h>
  #include <sys/module.h>
@@ -10,7 +10,7 @@
  #include <sys/fcntl.h>
  #include <sys/interrupt.h>
  #include <sys/kernel.h>
-@@ -69,9 +71,13 @@
+@@ -69,12 +71,21 @@
  #include <machine/bus.h>
  #include <sys/rman.h>
  #if __FreeBSD_version >= 500000
@@ -22,9 +22,28 @@
  #include <sys/timepps.h>
 +#endif
  
++#if __FreeBSD_version >= 500000
++#include <dev/pci/pcireg.h>
++#include <dev/pci/pcivar.h>
++#else
  #include <pci/pcireg.h>
  #include <pci/pcivar.h>
-@@ -124,9 +130,11 @@
++#endif
+ 
+ #include <machine/clock.h>
+ 
+@@ -88,7 +99,9 @@
+ 
+ #include <machine/resource.h>
+ 
+-#if __FreeBSD_version >= 500027  /* >= 20011022 */
++#if __FreeBSD_version >= 501107  /* >= 20030917 */
++#include <dev/ic/ns16550.h>
++#elif __FreeBSD_version >= 500027  /* >= 20011022 */
+ #include <dev/sio/sioreg.h>
+ #else
+ #include <isa/sioreg.h>
+@@ -124,9 +137,11 @@
  #endif
  
  #if __FreeBSD_version >= 500023 /* >= 20010912 */
@@ -37,7 +56,7 @@
  
  
  #define LOTS_OF_EVENTS  64  /* helps separate urgent events from input */
-@@ -256,7 +264,9 @@
+@@ -256,7 +271,9 @@
      bool_t  do_dcd_timestamp;
      struct timeval  timestamp;
      struct timeval  dcd_timestamp;
@@ -47,7 +66,7 @@
  
      u_long  bytes_in;       /* statistics */
      u_long  bytes_out;
-@@ -352,6 +362,7 @@
+@@ -352,6 +369,7 @@
  #endif
  
  static struct cdevsw sio_cdevsw = {
@@ -55,7 +74,7 @@
      /* open */  sioopen,
      /* close */ sioclose,
      /* read */  sioread,
-@@ -361,7 +372,11 @@
+@@ -361,7 +379,11 @@
      /* mmap */  nommap,
      /* strategy */  nostrategy,
      /* name */  driver_name,
@@ -67,7 +86,7 @@
      /* dump */  nodump,
      /* psize */ nopsize,
  #if __FreeBSD_version < 430000
-@@ -373,10 +388,25 @@
+@@ -373,10 +395,25 @@
      /* bmaj */  -1,
      /* kqfilter */  ttykqfilter,
  #else /* __FreeBSD_version >= 500000 */
@@ -94,7 +113,7 @@
  };
  
  static  u_int   com_events; /* input chars + weighted output completions */
-@@ -1295,8 +1325,11 @@
+@@ -1295,8 +1332,11 @@
      DPRINTF(1,("  x_chip_version    = %d\n", x_chip_version));
  
      com->flags = flags;
@@ -106,7 +125,7 @@
  
      /*
       * initialize the device registers as follows:
-@@ -1685,7 +1718,9 @@
+@@ -1685,7 +1725,9 @@
      s = splfunc();
      com->do_timestamp = FALSE;
      com->do_dcd_timestamp = FALSE;
@@ -116,7 +135,7 @@
      write_vuart_port(UART_CFCR, com->cfcr_image &= ~CFCR_SBREAK);
      {
          write_vuart_port(UART_IER, 0);
-@@ -1894,23 +1929,34 @@
+@@ -1894,23 +1936,34 @@
      u_char  recv_data;
      u_char  int_ctl;
      u_char  int_ctl_new;
@@ -151,7 +170,7 @@
          line_status = read_vuart_port(UART_LSR);
  
          /* input event? (check first to help avoid overruns) */
-@@ -2195,7 +2241,9 @@
+@@ -2195,7 +2248,9 @@
          break;
      default:
          splx(s);
@@ -161,7 +180,7 @@
          if (error == ENODEV)
              error = ENOTTY;
          return (error);
-@@ -2796,7 +2844,7 @@
+@@ -2796,7 +2851,7 @@
  #endif
  
  DRIVER_MODULE(ltmdm, pci, ltmdm_pci_driver, ltmdm_devclass, ltmdm_event, 0);
