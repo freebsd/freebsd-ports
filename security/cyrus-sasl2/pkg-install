@@ -3,7 +3,7 @@
 #	$FreeBSD$
 #
 # Created by: stb@FreeBSD.org for the cyrus imap server
-# Added to the cyrus-sasl port by hetzel@westbend.net
+# Added to the cyrus-sasl port by hetzels@westbend.net
 
 #set -vx
 
