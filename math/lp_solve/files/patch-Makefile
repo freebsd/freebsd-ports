@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Jun  7 14:05:47 2003
-+++ Makefile	Sat Jun  7 14:37:17 2003
+--- Makefile.orig	Thu Jan  9 16:56:51 2003
++++ Makefile	Wed Jul 23 10:11:37 2003
 @@ -1,4 +1,4 @@
 -CC= gcc
 +CC= %%CC%%

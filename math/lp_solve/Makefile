@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linear Programming Solver
 
+USE_BISON=	yes
+
 MAN1=		lp_solve.1
 
 USE_REINPLACE=  yes
