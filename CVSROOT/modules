@@ -3519,6 +3519,7 @@ logname		src/usr.bin/logname
 logrotate	ports/sysutils/logrotate
 logsurfer	ports/misc/logsurfer
 logtool		ports/sysutils/logtool
+logtools	ports/www/logtools
 look		src/usr.bin/look
 lopster		ports/audio/lopster
 lorder		src/usr.bin/lorder
