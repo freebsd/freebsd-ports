@@ -10,7 +10,7 @@ PORTREVISION=	2
 CATEGORIES=	games kde
 MASTER_SITES=	http://www.heni-online.de/files/
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Tic-tac-toe like boardgame
 
 LIB_DEPENDS=	kdegames.3:${PORTSDIR}/games/kdegames3
