@@ -3,7 +3,7 @@
 # Date created:			15 Apr 1999
 # Whom:				Jim Mock <jim@FreeBSD.org>
 #
-# $Id: Makefile,v 1.2 1999/08/14 08:37:18 jim Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	pclock-0.12a

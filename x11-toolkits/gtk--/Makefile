@@ -3,7 +3,7 @@
 # Date created:        11 May 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.13 1999/08/17 19:36:56 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Gtk---1.0.0

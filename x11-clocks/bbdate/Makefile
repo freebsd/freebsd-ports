@@ -3,7 +3,7 @@
 # Date created:		May 3 1999
 # Whom:			Chris Piazza <cpiazza@FreeBSD.org>
 #
-# $Id: Makefile,v 1.5 1999/06/19 08:26:13 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	bbdate-0.2.1

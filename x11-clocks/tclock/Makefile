@@ -3,7 +3,7 @@
 # Date created:		So   7 Feb 1999 20:50:43 MET
 # Whom:			Lars Koeller <lkoeller@cc.fh-lippe.de>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	tclock-1.0.1

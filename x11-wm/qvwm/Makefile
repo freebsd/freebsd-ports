@@ -3,7 +3,7 @@
 # Date created:        2 January 1997
 # Whom:                Yukihiro Nakai<Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.20 1998/10/23 14:27:40 vanilla Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	qvwm-1.0b12

@@ -3,7 +3,7 @@
 # Date created:		11 May 1998
 # Whom:			Brett Taylor
 #
-# $Id: Makefile,v 1.3 1998/08/07 23:56:50 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tkfont-1.1

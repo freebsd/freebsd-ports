@@ -3,7 +3,7 @@
 # Date created:		16 January 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.11 1999/06/22 17:03:43 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	neXtaw-0.5.1

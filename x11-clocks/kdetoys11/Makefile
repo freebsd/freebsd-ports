@@ -3,7 +3,7 @@
 # Date created:		18 may 1999
 # Whom:			imura@cs.titech.ac.jp
 #
-# $Id: Makefile,v 1.3 1999/08/17 19:37:07 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	kdetoys-1.1.1

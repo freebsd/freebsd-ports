@@ -3,7 +3,7 @@
 # Date created:         16 December 1995
 # Whom:                 Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
 #
-# $Id: Makefile,v 1.6 1998/09/22 22:32:10 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	swisswatch-0.06

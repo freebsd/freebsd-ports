@@ -3,7 +3,7 @@
 # Date created:		5 December 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.2 1999/02/13 01:40:35 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Motif-2.1.10

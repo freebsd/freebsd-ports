@@ -3,7 +3,7 @@
 # Date created:				11 February 1999
 # Whom:                			Dima Sivachenko <dima@Chg.RU>
 #
-# $Id: Makefile,v 1.8 1999/05/09 16:24:48 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	fltk-1.0.3-source

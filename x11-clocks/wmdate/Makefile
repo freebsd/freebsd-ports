@@ -3,7 +3,7 @@
 # Date created:		1 February 1999
 # Whom:			Jim Mock <jim@FreeBSD.org>
 #
-# $Id: Makefile,v 1.4 1999/07/18 21:02:33 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	wmdate-0.7

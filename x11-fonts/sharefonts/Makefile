@@ -3,7 +3,7 @@
 # Date created:         Thu Mar 26 04:50:00 PST 1998
 # Whom:                 dburr@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.4 1999/08/22 19:01:00 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	sharefonts-0.10

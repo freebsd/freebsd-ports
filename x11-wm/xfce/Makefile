@@ -3,7 +3,7 @@
 # Date created:		30 June 1997
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.16 1999/05/31 05:03:11 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xfce-3.0.3

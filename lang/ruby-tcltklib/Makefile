@@ -3,7 +3,7 @@
 # Date created:         15 March 1999
 # Whom:                 Yasuhiro Fukuma <yasuf@big.or.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/27 12:39:46 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ruby-${VERSION}

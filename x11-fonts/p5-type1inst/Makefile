@@ -3,7 +3,7 @@
 # Date created:		7 Jan 1998
 # Whom:			giffunip@asme.org
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/13 13:52:58 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       type1inst-0.6.1

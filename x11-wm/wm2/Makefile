@@ -3,7 +3,7 @@
 # Date created:		16 February 1997
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.3 1998/08/07 23:01:41 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	wm2-3

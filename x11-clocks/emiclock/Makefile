@@ -3,7 +3,7 @@
 # Date created:		15 March 1995
 # Whom:			Nobuhiro Yasutomi
 #
-# $Id: Makefile,v 1.13 1998/12/01 23:37:52 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	emiclock-1.0.4

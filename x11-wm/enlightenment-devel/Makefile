@@ -3,7 +3,7 @@
 # Date created:			10 June 1997
 # Whom:				Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.37 1999/08/25 22:44:33 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	enlightenment-0.15.5

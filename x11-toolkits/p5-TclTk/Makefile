@@ -3,7 +3,7 @@
 # Date created:				June 15th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.10 1998/09/26 23:11:03 steve Exp $
+# $FreeBSD$
 
 DISTNAME=	TclTk-b2
 PKGNAME=	p5-Tcl-Tk-b2

@@ -3,7 +3,7 @@
 # Date created:		December 10, 1996
 # Whom:			1wardd@airmail.net
 #
-# $Id: Makefile,v 1.35 1999/07/14 04:43:58 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	lesstif-0.88.9

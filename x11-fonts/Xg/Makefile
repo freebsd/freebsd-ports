@@ -3,7 +3,7 @@
 # Date created:         Sun Aug 13 12:36:14 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.6 1998/11/21 17:18:16 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	libXg.utf.fonts

@@ -3,7 +3,7 @@
 # Date created:				7 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.10 1998/10/04 02:17:24 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	workplace-1.0.a3

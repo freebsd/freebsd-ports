@@ -3,7 +3,7 @@
 # Date created:		18 Feb 1999
 # Whom:			Peter Hawkins <thepish@freebsd.org>
 #
-# $Id: Makefile,v 1.5 1999/05/02 08:32:58 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	XmHTML-1.1.0

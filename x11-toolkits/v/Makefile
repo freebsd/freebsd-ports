@@ -3,7 +3,7 @@
 # Date created:         8 Feb 1998
 # Whom:                 Donald Burr <dburr@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.11 1999/08/22 19:01:01 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	v-1.19

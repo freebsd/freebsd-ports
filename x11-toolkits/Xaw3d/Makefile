@@ -3,7 +3,7 @@
 # Date created:		18 November 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.22 1999/07/04 20:46:16 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Xaw3d-1.5

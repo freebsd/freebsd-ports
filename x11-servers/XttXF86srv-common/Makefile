@@ -3,7 +3,7 @@
 # Date created:		15 April 1998
 # Whom:			Taguchi Takeshi <taguchi@tohoku.iij.ad.jp>
 #
-# $Id: Makefile,v 1.19 1999/06/28 02:23:53 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xc

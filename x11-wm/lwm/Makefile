@@ -3,7 +3,7 @@
 # Date created:		17 March 1998
 # Whom:			J Han <hjh@photino.com>
 #
-# $Id: Makefile,v 1.4 1998/08/07 23:01:39 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	lwm

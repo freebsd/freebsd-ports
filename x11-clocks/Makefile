@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.13 1999/05/09 17:27:09 steve Exp $
+# $FreeBSD$
 #
 
     SUBDIR += asclock

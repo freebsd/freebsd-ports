@@ -3,7 +3,7 @@
 # Date created:		Sa   1 Feb 1997 14:46:05 MET
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.20 1998/09/15 11:13:35 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	fvwm95-2.0.43a-Autoconf

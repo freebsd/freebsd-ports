@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.18 1999/08/19 07:09:42 cpiazza Exp $
+# $FreeBSD$
 #
 
     SUBDIR += 9menu

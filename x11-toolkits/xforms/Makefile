@@ -3,7 +3,7 @@
 # Date created:		28 March 1997
 # Whom:			gena
 #
-# $Id: Makefile,v 1.24 1999/05/30 02:44:11 steve Exp $
+# $FreeBSD$
 #
 
 USE_X_PREFIX=	yes

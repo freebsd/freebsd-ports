@@ -3,7 +3,7 @@
 # Date created:		23 October 1998
 # Whom:			issei@jp.FreeBSD.ORG
 #
-# $Id: Makefile,v 1.7 1999/08/28 02:17:33 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	AfterStep-1.0

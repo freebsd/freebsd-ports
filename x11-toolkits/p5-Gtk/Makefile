@@ -3,7 +3,7 @@
 # Date created:		28 Oct 1997
 # Whom:	      		Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.22 1999/03/15 18:30:06 nectar Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Gtk-Perl-0.5121

@@ -3,7 +3,7 @@
 # Date created:		26 January 1999
 # Whom:			Jeremy Lea <reg@shale.csir.co.za>
 #
-# $Id: Makefile,v 1.6 1999/05/30 03:57:33 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mc-4.5.37

@@ -3,7 +3,7 @@
 # Date created:		June 20, 1997
 # Whom:			jfieber
 #
-# $Id: Makefile,v 1.9 1999/01/16 23:25:56 jfieber Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xmbdfed-3.9

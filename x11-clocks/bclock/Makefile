@@ -3,7 +3,7 @@
 # Date created:		13 May 1997
 # Whom:			Brian Handy <handy@physics.montana.edu>
 #
-# $Id: Makefile,v 1.4 1998/09/22 22:32:06 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	bclock-1.0

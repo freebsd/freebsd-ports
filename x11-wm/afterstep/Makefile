@@ -3,7 +3,7 @@
 # Date created:		October 29th 1996
 # Whom:			jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.28 1999/02/21 21:51:00 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	AfterStep-1.0

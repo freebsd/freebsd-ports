@@ -5,7 +5,7 @@
 # With some
 # modifications from:	Andreas Klemm <andreas@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.5 1998/09/21 21:36:27 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Xbae-4.6.2

@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.34 1999/08/29 09:21:21 cpiazza Exp $
+# $FreeBSD$
 #
 
     SUBDIR += FWF

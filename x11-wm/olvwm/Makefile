@@ -3,7 +3,7 @@
 # Date created:		21 October 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.19 1999/05/04 23:07:17 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	olvwm4

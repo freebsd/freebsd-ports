@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.4 1999/01/09 03:19:28 asami Exp $
+# $FreeBSD$
 #
 
     SUBDIR += Xg

@@ -3,7 +3,7 @@
 # Date created:		June 15, 1998
 # Whom:			Brian Handy <handy@physics.montana.edu>
 #
-# $Id: Makefile,v 1.25 1999/08/20 06:00:11 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	blackbox-0.51.1

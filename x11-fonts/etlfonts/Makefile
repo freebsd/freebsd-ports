@@ -3,7 +3,7 @@
 # Date created:		3 Nov 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.5 1998/08/07 22:43:08 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	non-cjk
