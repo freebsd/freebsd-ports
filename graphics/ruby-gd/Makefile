@@ -69,7 +69,7 @@ post-install:
 .for f in ${EXAMPLES_EN}
 	${INSTALL_DATA} ${WRKSRC}/sample/${f} ${RUBY_EXAMPLESDIR}/gd/
 .endfor
-	${MKDIR} ${RUBY_DOCDIR}/gd/ja/imgs
+	${MKDIR} ${RUBY_DOCDIR}/gd/ja
 .for f in ${DOCS_EN}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/gd/
 .endfor
