@@ -16,6 +16,8 @@ PKGNAMEPREFIX=	hs-
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Intelligent compilation management tool for Haskell programs
 
+BROKEN=		Size mismatch
+
 .include <bsd.port.pre.mk>
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
