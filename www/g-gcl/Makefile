@@ -11,7 +11,7 @@ CATEGORIES=	www graphics
 MASTER_SITES=	http://www.whizkidtech.redprince.net/gcl/ \
 		ftp://ftp.whizkidtech.redprince.net/cgi/gcl/
 
-MAINTAINER=	adam@redprince.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sample counter scripts for Graphic Counter Language
 
 RUN_DEPENDS=	gracula:${PORTSDIR}/graphics/gracula

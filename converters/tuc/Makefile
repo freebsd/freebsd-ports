@@ -10,7 +10,7 @@ PORTVERSION=	1.10
 CATEGORIES=	converters
 MASTER_SITES=	http://www.whizkidtech.redprince.net/fports/
 
-MAINTAINER=	adam@redprince.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text to Unix Conversion
 
 MAN1=		tuc.1

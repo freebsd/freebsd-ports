@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.whizkidtech.redprince.net/fports/
 
-MAINTAINER=	adam@redprince.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast CRC routines
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm

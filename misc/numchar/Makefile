@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	misc
 MASTER_SITES=	ftp://www.whizkidtech.redprince.net/unix/
 
-MAINTAINER=	adam@redprince.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts phone numbers between digits and characters
 
 do-install:

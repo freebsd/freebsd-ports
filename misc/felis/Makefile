@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	misc
 MASTER_SITES=	http://www.whizkidtech.redprince.net/fports/
 
-MAINTAINER=	adam@redprince.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool which displays one or more files as a single line of text
 
 MAN1=		felis.1

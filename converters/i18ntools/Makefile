@@ -11,7 +11,7 @@ CATEGORIES=	converters
 MASTER_SITES=	ftp://ftp.whizkidtech.redprince.net/unix/ \
 		http://www.whizkidtech.redprince.net/fports/
 
-MAINTAINER=	adam@redprince.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for the conversion to and from UTF-8 Unicode encoding
 
 LIB_DEPENDS=	utf-8:${PORTSDIR}/converters/libutf-8
