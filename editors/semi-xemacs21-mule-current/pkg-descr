@@ -1,4 +1,4 @@
-SEMI, Library of MIME feature for GNU Emacs for xemacs-mule.
+SEMI, Library of MIME feature for GNU Emacs for xemacs21-mule.
 
   SEMI is a library to provide MIME feature for GNU Emacs.  MIME is a
   proposed internet standard for including content and headers other

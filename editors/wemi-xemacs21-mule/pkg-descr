@@ -1,4 +1,4 @@
-WEMI, Library of MIME feature for GNU Emacs for xemacs.
+WEMI, Library of MIME feature for GNU Emacs for xemacs21-mule.
 
   WEMI is a branch of SEMI kernel package using widget.  It is a
   library to provide MIME feature for GNU Emacs based on SEMI API.

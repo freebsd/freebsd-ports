@@ -3,6 +3,7 @@
 %%EMACS_PACKAGESDIR%%/lisp/flim/README.en
 %%EMACS_PACKAGESDIR%%/lisp/flim/README.ja
 %%EMACS_PACKAGESDIR%%/lisp/flim/VERSION
+%%EMACS_PACKAGESDIR%%/lisp/flim/_pkg.el
 %%EMACS_PACKAGESDIR%%/lisp/flim/auto-autoloads.el
 %%EMACS_PACKAGESDIR%%/lisp/flim/auto-autoloads.elc
 %%EMACS_PACKAGESDIR%%/lisp/flim/custom-load.el
@@ -52,4 +53,4 @@
 %%EMACS_PACKAGESDIR%%/man/flim/mime-ja.texi
 @dirrm %%EMACS_PACKAGESDIR%%/man/flim
 share/flim/%%FLIM_COOKIE%%
-@unexec /bin/rmdir %D/share/flim || true
+@unexec /bin/rmdir %D/share/flim||(echo "===>  Please ignore above error.";true)
