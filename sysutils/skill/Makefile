@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	skill
-PORTVERSION=	4.1
+PORTVERSION=	4.1.1
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://fast.cs.utah.edu/pub/skill/
+MASTER_SITES=	ftp://ftp.flux.utah.edu/pub/skill/	\
+		ftp://fast.cs.utah.edu/pub/skill/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jonny@jonny.eng.br
