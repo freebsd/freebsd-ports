@@ -12,7 +12,7 @@ CATEGORIES=	print x11
 MASTER_SITES=	ftp://ftp.rz.uni-duesseldorf.de/pub/graphics/ \
 		ftp://ftp.uni-bielefeld.de/pub/systems/FreeBSD/lkoeller/
 
-MAINTAINER=	Lars.Koeller@Uni-Bielefeled.DE
+MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 
 LIB_DEPENDS=    png.3:${PORTSDIR}/graphics/png
 
