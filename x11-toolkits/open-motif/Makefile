@@ -3,7 +3,7 @@
 # Date created:		5 December 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.1 1998/12/28 13:00:56 asami Exp $
+# $Id: Makefile,v 1.2 1999/02/13 01:40:35 asami Exp $
 #
 
 DISTNAME=	Motif-2.1.10
@@ -14,5 +14,8 @@ USE_X_PREFIX=	yes
 NO_BUILD=	yes
 NO_INSTALL=	yes
 IS_INTERACTIVE=	yes
+.if !defined(PACKAGE_BUILDING)
+FORBIDDEN=	this is a dummy package for installing Motif dependencies
+.endif
 
 .include <bsd.port.mk>
