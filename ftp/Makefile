@@ -46,6 +46,7 @@
     SUBDIR += oftpd
     SUBDIR += omi
     SUBDIR += p5-Net-FTPServer
+    SUBDIR += p5-POE-Component-Client-FTP
     SUBDIR += paraget
     SUBDIR += pavuk
     SUBDIR += pftpd
