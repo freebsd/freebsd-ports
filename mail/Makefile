@@ -88,6 +88,7 @@
     SUBDIR += fetchyahoo
     SUBDIR += filtermail
     SUBDIR += firemime
+    SUBDIR += firepay
     SUBDIR += ftrack
     SUBDIR += gbuffy
     SUBDIR += gdesklets-imapmail

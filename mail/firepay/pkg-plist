@@ -1,0 +1,8 @@
+bin/checkpayment
+bin/firepay
+bin/multiwrap
+bin/processmail
+bin/sendmailpay
+bin/strippayment
+bin/takepayment
+etc/sendmailpay.conf.sample

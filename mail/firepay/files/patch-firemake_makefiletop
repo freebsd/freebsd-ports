@@ -1,0 +1,11 @@
+--- firemake/makefiletop.orig	Sun May 30 10:08:57 2004
++++ firemake/makefiletop	Sun May 30 10:09:09 2004
+@@ -3,7 +3,7 @@
+ #require make
+ #phase makefile
+ dispn "Writing Makefile top entries..."
+-if test "$MAKE_CONDSET" = "y"; then
++if test "$MAKE_CONDSET" = "never"; then
+ 	$ECHO "PREFIX ?= $FM_PREFIX"
+ 
+ 	if test "$FM_MANDIRSTRICT" = "y"; then
