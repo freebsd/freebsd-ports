@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.197 1999/06/28 06:40:35 cpiazza Exp $
+# $Id: Makefile,v 1.198 1999/06/29 05:32:54 cpiazza Exp $
 #
 
     SUBDIR += ElectricFence
@@ -93,7 +93,6 @@
     SUBDIR += nasm
     SUBDIR += ncurses
     SUBDIR += noweb
-    SUBDIR += nps
     SUBDIR += omniORB
     SUBDIR += p5-BSD-Resource
     SUBDIR += p5-C-Scan
@@ -139,6 +138,7 @@
     SUBDIR += portcheckout
     SUBDIR += portlint
     SUBDIR += prcs
+    SUBDIR += pth
     SUBDIR += py-kjbuckets
     SUBDIR += py-mxDateTime
     SUBDIR += py-mxStack
