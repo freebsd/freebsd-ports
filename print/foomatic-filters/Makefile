@@ -7,21 +7,26 @@
 
 PORTNAME=	foomatic-filters
 PORTVERSION=	3.0.2
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://www.linuxprinting.org/download/foomatic/
 
 MAINTAINER=	lofi@FreeBSD.org
 COMMENT=	Foomatic wrapper scripts
 
-BUILD_DEPENDS=	a2ps:${PORTSDIR}/print/a2ps-letter \
-		cups-config:${PORTSDIR}/print/cups-base \
-		enscript:${PORTSDIR}/print/enscript-letter \
-		mpage:${PORTSDIR}/print/mpage
-
 USE_PERL=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	ac_cv_path_PPR=${LOCALBASE}/lib/ppr \
+CONFIGURE_ENV=	ac_cv_path_A2PS=${LOCALBASE}/bin/a2ps \
+		ac_cv_path_CUPS=${LOCALBASE}/libexec/cups \
+		ac_cv_path_CUPS_FILTERS=${LOCALBASE}/libexec/cups/filter \
+		ac_cv_path_ENSCRIPT=${LOCALBASE}/bin/enscript \
+		ac_cv_path_MPAGE=${LOCALBASE}/bin/mpage \
+		ac_cv_path_PPR=${LOCALBASE}/lib/ppr \
 		ac_cv_path_PPR_INTERFACES=${LOCALBASE}/lib/ppr/interfaces \
-		ac_cv_path_PPR_LIB=${LOCALBASE}/lib/ppr/lib
+		ac_cv_path_PPR_LIB=${LOCALBASE}/lib/ppr/lib \
+		ac_cv_path_TEXTTOPS=${LOCALBASE}/libexec/cups/filter/texttops
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
