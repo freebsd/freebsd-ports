@@ -8,12 +8,14 @@
 PORTNAME=	tkabber
 PORTVERSION=	0.9.7
 CATEGORIES=	net
-MASTER_SITES=	http://www.jabberstudio.org/files/tkabber/
+MASTER_SITES=	http://www.jabber.ru/files/tkabber/
 
-MAINTAINER=	gonzo@univ.kiev.ua
+MAINTAINER=	alexander.timoshenko@gmail.com
 COMMENT=	Tcl/Tk based jabber client
 
-TCLLIBVER!=	${MAKE} -C ${.CURDIR}/../../devel/tcllib -V PORTVERSION
+TCLLIBVER!=	${MAKE} -C ${.CURDIR}/../../devel/tcllib -V PORTVERSION 2>/dev/null \
+		|| (cd ${.CURDIR}/../../devel/tcllib; ${MAKE} -V PORTVERSION)
+
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
 		${LOCALBASE}/lib/tcllib${TCLLIBVER}/pkgIndex.tcl:${PORTSDIR}/devel/tcllib \
 		${LOCALBASE}/lib/tls/pkgIndex.tcl:${PORTSDIR}/devel/tcltls \
