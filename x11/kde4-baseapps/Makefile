@@ -67,7 +67,7 @@ post-configure:
 		${WRKSRC}/kdesktop/init/Templates/Makefile
 
 post-build:
-	@${CAT} ${FILESDIR}/pkg-message | ${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
+	@${CAT} ${PKGDIR}/pkg-message | ${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
 		| ${SED} -e 's,%%X11BASE%%,${X11BASE},g' > ${PKGMESSAGE}
 
 post-install:
