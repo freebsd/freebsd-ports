@@ -1,0 +1,11 @@
+--- kgpg/kgpg/Makefile.in.orig	Tue Jun 22 20:51:40 2004
++++ kgpg/kgpg/Makefile.in	Tue Jun 22 20:52:00 2004
+@@ -249,7 +249,7 @@
+ #>- kgpg_SOURCES = kgpgoptions.cpp listkeys.cpp popuppublic.cpp kgpgview.cpp kgpg.cpp main.cpp popupname.cpp kgpgfast.cpp keygener.cpp kgpgoption.ui kgpginterface.cpp keyservers.cpp keyserver.ui searchres.ui popupimport.cpp kgpgeditor.cpp detailedconsole.cpp kgpglibrary.cpp
+ #>+ 1
+ kgpg_SOURCES=kgpgoptions.cpp listkeys.cpp popuppublic.cpp kgpgview.cpp kgpg.cpp main.cpp popupname.cpp kgpgfast.cpp keygener.cpp  kgpginterface.cpp keyservers.cpp   popupimport.cpp kgpgeditor.cpp detailedconsole.cpp kgpglibrary.cpp kgpgoption.cpp keyserver.cpp searchres.cpp
+-kgpg_LDADD = $(LIB_KIO)
++kgpg_LDADD = $(LIB_KIO) $(LIBPTHREAD)
+ 
+ KDE_ICON = kgpg
+ 

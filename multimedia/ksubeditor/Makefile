@@ -29,8 +29,7 @@ post-extract:
 	@${TOUCH} ${WRKSRC}/stamp-h.in
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/-O2//g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's/-O2//g' -e "s,-lpthread,${PTHREAD_LIBS},g" \
+		${WRKSRC}/${CONFIGURE_SCRIPT}
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/x11/kde3/Makefile.kde"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

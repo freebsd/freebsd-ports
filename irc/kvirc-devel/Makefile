@@ -25,10 +25,11 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 CONFIGURE_TARGET=
-CONFIGURE_ARGS+=	--with-freebsd-pthread
+#CONFIGURE_ARGS+=	--with-freebsd-pthread
 
 MAN1=	kvirc.1
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/x11/kde3/Makefile.kde"
-.include <bsd.port.post.mk>
+post-patch:
+	${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
+
+.include <bsd.port.mk>
