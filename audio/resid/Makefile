@@ -7,6 +7,7 @@
 
 PORTNAME=	resid
 PORTVERSION=	0.13
+PORTREVISION=	1
 CATEGORIES=	audio emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sidplay2
@@ -18,8 +19,8 @@ MAINTAINER=	ports@FreeBSD.org
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_LIBTOOL=	yes
-GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--enable-shared
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS+=	--enable-shared
 
 .include <bsd.port.mk>
