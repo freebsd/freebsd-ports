@@ -186,12 +186,35 @@ audit_file()
 			close(cmd)
 		}
 		END {
-			print vul " problem(s) in found."
+			print vul " problem(s) found."
 			if (vul > 0) {
 				exit(1)
 			}
 		}
 	'
+}
+
+audit_args()
+{
+	VULCNT=0
+	while [ $# -gt 0 ]; do
+		if VLIST=`extract_auditfile | /usr/bin/grep -v '^#' | ${PKG_VERSION} -T "${1}" -`; then
+			VULCNT=$((${VULCNT}+1))
+			echo "${VLIST}" | /usr/bin/awk -F\| '{
+				print "Affected package: '${1}' (matched by " $1 ")"
+				print "Type of problem: " $3 "."
+				split($2, ref, / /)
+				for (r in ref)
+					print "Reference: <" ref[r] ">"
+				print ""
+			}'
+		fi
+		shift
+	done
+	echo "${VULCNT} problem(s) found."
+	if [ ${VULCNT} -gt 0 ]; then
+		return 1
+	fi
 }
 
 audit_cwd()
