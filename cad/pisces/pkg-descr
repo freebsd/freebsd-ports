@@ -1,0 +1,13 @@
+PISCES is a two-dimensional device simulator which includes
+models for surface mobility, impact ionization and photo-generation.
+Quasi-three-dimensional simulation of cylindrically-symmetric devices is
+also supported.
+
+	From the PISCES IIB description in
+	WWW: http://www-tcad.stanford.edu/tcad/programs/piscesIIb.html
+
+! before running make a copy of ${PREFIX}/share/misc/pisc.key !
+! in your working directory                                   !
+
+Gianlorenzo Masini
+masini@uniroma3.it

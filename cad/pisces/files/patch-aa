@@ -1,0 +1,74 @@
+*** utils/imakesrc/site.def.orig	Tue May 28 22:42:01 1991
+--- utils/imakesrc/site.def	Fri Apr 21 17:59:42 2000
+***************
+*** 20,27 ****
+  
+  /* Gnu's ksh-like line editing around? */
+  #define EDLINE
+! #define TheTop "/tmp/release"
+! #define RunDir "/tmp/icl"
+  
+  #ifdef SUN3
+  #ifndef NO_GCC
+--- 20,27 ----
+  
+  /* Gnu's ksh-like line editing around? */
+  #define EDLINE
+! #define TheTop ${PREFIX}
+! #define RunDir ${PREFIX}
+  
+  #ifdef SUN3
+  #ifndef NO_GCC
+***************
+*** 51,57 ****
+  /* Set any of the following to override the values in Imake.tmpl */
+  /*#define DestDir	*/
+  
+! /*#define Pisces2Dir	*/
+  /*#define Suprem3Dir	*/
+  /*#define Suprem35Dir	*/
+  /*#define Suprem4Dir	*/
+--- 51,58 ----
+  /* Set any of the following to override the values in Imake.tmpl */
+  /*#define DestDir	*/
+  
+! #define Pisces2Dir ${PREFIX}
+! 
+  /*#define Suprem3Dir	*/
+  /*#define Suprem35Dir	*/
+  /*#define Suprem4Dir	*/
+***************
+*** 65,70 ****
+--- 66,74 ----
+  /*#define ManExt	*/
+  
+  /*#define Genii3Lib	*/
++ 
++ #define PlotcapDir	${PREFIX}/share/misc
++ 
+  /*#define PlotcapLibs	*/
+  /*#define PLOTCAP_INSTALLED */
+  
+***************
+*** 74,83 ****
+  /*#define FFpaFlag	*/
+  
+  /* Directory where the Imake rules are kept: */
+! #define ImakeRules /tmp/release/utils/imakesrc
+  /* Location of the Imake program: */
+  /*#define ImakeProgram /usr/local/bin/imake*/
+! #define ImakeProgram /tmp/bin/imake
+  
+  
+  /* END-OF-SITE.H */
+--- 78,87 ----
+  /*#define FFpaFlag	*/
+  
+  /* Directory where the Imake rules are kept: */
+! #define ImakeRules ${WRKDIR}/utils/imakesrc
+  /* Location of the Imake program: */
+  /*#define ImakeProgram /usr/local/bin/imake*/
+! #define ImakeProgram ${X11BASE}/bin/imake  
+  
+  
+  /* END-OF-SITE.H */

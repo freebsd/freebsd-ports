@@ -1,0 +1,55 @@
+/* FreeBSD config exception file  */
+
+
+          SHELL = /bin/sh
+             CC = cc
+            F77 = ${WRKDIR}/bin/fc1
+           VF77 = $(F77)
+            VCC = $(CC)
+         RATFOR = ratfor
+       CMINUS_C = -c
+       FMINUS_C = -c
+      VCMINUS_C = -c
+      VFMINUS_C = -c
+            CPP = /usr/bin/cpp
+        INSTALL = install -c -m
+             RM = rm -f
+          RMDIR = rm -rf
+          MKDIR = mkdir
+          CHMOD = chmod
+             MV = mv
+             CP = cp
+             LN = ln -s
+         RANLIB = ranlib
+RANLIBINSTFLAGS = -t
+             AR = ar clq
+           LINT = lint
+       LINTOPTS = -axz
+           MAKE = make
+          NROFF = nroff
+       MANFLAGS = -man
+     NROFF_FILT = | colcrt -
+
+/* the following have been adapted from spice 3f5 port */
+/*
+MAKE            = /usr/bin/make
+INTERFACE_OPTS  = -DWANT_X11
+CC              = gcc
+CC_OPT          = -O2 -pipe
+CC_OPT_SAFE     = -O2 -fno-strength-reduce -pipe
+LDFLAGS         = -L$(X11BASE)/lib -lm -ltermcap
+ASM_HACK        = < /dev/null
+SYS_CFLAGS      = -Dbsd
+*/
+#define MathLib -lm
+#define FpaFlag 
+#define ManDir ${PREFIX}/man/manl
+#define SysIncludes -I${X11BASE}/include
+
+#ifdef DEBUG
+# define F_O()                                                          @@\
+.F.OBJ_EXT:                                                             @@\
+        $(F77) -F -Qoption cpp -P $(FFLAGS) $*.F                        @@\
+        $(F77) $(FMINUS_C) $(FFLAGS) $*.f
+#endif
+

@@ -1,0 +1,26 @@
+#!/bin/sh
+
+cp ${FILESDIR}/FreeBSD.def ${WRKSRC}/utils/imakesrc/FreeBSD.def
+cp ${FILESDIR}/systype ${WRKSRC}/utils/imakesrc/systype
+cp ${FILESDIR}/xdate_fbsd.c ${WRKSRC}/library/sysf77lib/9009
+cp ${FILESDIR}/xtimer_fbsd.c ${WRKSRC}/library/sysf77lib/9009 
+
+#mkdir ${WRKSRC}/icl
+#mkdir ${WRKSRC}/icl/bin
+#mkdir ${WRKSRC}/icl/lib
+#mkdir ${WRKSRC}/icl/include
+#mkdir ${WRKSRC}/icl/pisces
+#mkdir ${WRKSRC}/icl/pisces/9009
+
+mkdir ${WRKSRC}/bin
+
+cp ${FILESDIR}/fc1 ${WRKSRC}/bin 
+chmod 755 ${WRKSRC}/bin/fc1
+
+cp ${WRKSRC}/utils/imakesrc/aelimake  ${WRKSRC}/bin/aelimake
+chmod 755  ${WRKSRC}/bin/aelimake  
+
+cd ${WRKSRC}
+${WRKSRC}/bin/aelimake
+make Makefile
+make Makefiles

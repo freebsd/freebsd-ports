@@ -11,6 +11,7 @@
     SUBDIR += magic
     SUBDIR += mars
     SUBDIR += pcb
+    SUBDIR += pisces
     SUBDIR += qcad
     SUBDIR += sis
     SUBDIR += spice

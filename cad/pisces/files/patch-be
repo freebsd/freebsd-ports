@@ -1,0 +1,17 @@
+*** pisces/9009/src/version.f.orig	Fri Oct 29 10:38:31 1999
+--- pisces/9009/src/version.f	Fri Oct 29 10:57:24 1999
+***************
+*** 4,9 ****
+        character*(*) ver
+        character*(*) rel
+        ver    = '9009'
+!       rel    = 'S.0523 SunOS 4.1'
+        return
+        end
+--- 4,9 ----
+        character*(*) ver
+        character*(*) rel
+        ver    = '9009'
+!       rel    = 'FreeBSD 1.0'
+        return
+        end
