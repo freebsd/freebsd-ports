@@ -1,12 +1,7 @@
-Local/Library/Pantomime/TCPSSLConnection.bundle/Contents/Info.plist
 Local/Library/Pantomime/TCPSSLConnection.bundle/Resources/Info-gnustep.plist
-Local/Library/Pantomime/TCPSSLConnection.bundle/Resources/Info.plist
 Local/Library/Pantomime/TCPSSLConnection.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/TCPSSLConnection
-@exec ln -sf ../Resources %D/Local/Library/Pantomime/TCPSSLConnection.bundle/Contents/Resources
-@unexec rm -f %D/Local/Library/Pantomime/TCPSSLConnection.bundle/Contents/Resources
 @dirrm Local/Library/Pantomime/TCPSSLConnection.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm Local/Library/Pantomime/TCPSSLConnection.bundle/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm Local/Library/Pantomime/TCPSSLConnection.bundle/%%GNU_ARCH%%
-@dirrm Local/Library/Pantomime/TCPSSLConnection.bundle/Contents
 @dirrm Local/Library/Pantomime/TCPSSLConnection.bundle/Resources
 @dirrm Local/Library/Pantomime/TCPSSLConnection.bundle

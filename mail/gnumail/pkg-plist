@@ -82,122 +82,77 @@ Local/Applications/GNUMail.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/library_paths.
 Local/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libGNUMail.so
 Local/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libGNUMail.so.1
 Local/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libGNUMail.so.1.0.0
-Local/Library/GNUMail/Compose.prefs/Contents/Info.plist
-@exec ln -sf ../Resources %D/Local/Library/GNUMail/Compose.prefs/Contents/Resources
-@unexec rm -f %D/Local/Library/GNUMail/Compose.prefs/Contents/Resources
 Local/Library/GNUMail/Compose.prefs/Resources/Info-gnustep.plist
-Local/Library/GNUMail/Compose.prefs/Resources/Info.plist
 Local/Library/GNUMail/Compose.prefs/Resources/MailIcon_create.tiff
 Local/Library/GNUMail/Compose.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/Compose
-Local/Library/GNUMail/Filtering.prefs/Contents/Info.plist
-@exec ln -sf ../Resources %D/Local/Library/GNUMail/Filtering.prefs/Contents/Resources
-@unexec rm -f %D/Local/Library/GNUMail/Filtering.prefs/Contents/Resources
 Local/Library/GNUMail/Filtering.prefs/Resources/Filtering.tiff
 Local/Library/GNUMail/Filtering.prefs/Resources/Info-gnustep.plist
-Local/Library/GNUMail/Filtering.prefs/Resources/Info.plist
 Local/Library/GNUMail/Filtering.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/Filtering
-Local/Library/GNUMail/Fonts.prefs/Contents/Info.plist
-@exec ln -sf ../Resources %D/Local/Library/GNUMail/Fonts.prefs/Contents/Resources
-@unexec rm -f %D/Local/Library/GNUMail/Fonts.prefs/Contents/Resources
 Local/Library/GNUMail/Fonts.prefs/Resources/Info-gnustep.plist
-Local/Library/GNUMail/Fonts.prefs/Resources/Info.plist
 Local/Library/GNUMail/Fonts.prefs/Resources/fonts.tiff
 Local/Library/GNUMail/Fonts.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/Fonts
-Local/Library/GNUMail/Mailboxes.prefs/Contents/Info.plist
-@exec ln -sf ../Resources %D/Local/Library/GNUMail/Mailboxes.prefs/Contents/Resources
-@unexec rm -f %D/Local/Library/GNUMail/Mailboxes.prefs/Contents/Resources
 Local/Library/GNUMail/Mailboxes.prefs/Resources/Info-gnustep.plist
-Local/Library/GNUMail/Mailboxes.prefs/Resources/Info.plist
 Local/Library/GNUMail/Mailboxes.prefs/Resources/MailIcon_mailboxes.tiff
 Local/Library/GNUMail/Mailboxes.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/Mailboxes
-Local/Library/GNUMail/MIME.prefs/Contents/Info.plist
-@exec ln -sf ../Resources %D/Local/Library/GNUMail/MIME.prefs/Contents/Resources
-@unexec rm -f %D/Local/Library/GNUMail/MIME.prefs/Contents/Resources
 Local/Library/GNUMail/MIME.prefs/Resources/Info-gnustep.plist
-Local/Library/GNUMail/MIME.prefs/Resources/Info.plist
 Local/Library/GNUMail/MIME.prefs/Resources/mime.tiff
 Local/Library/GNUMail/MIME.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/MIME
-Local/Library/GNUMail/Personal.prefs/Contents/Info.plist
-@exec ln -sf ../Resources %D/Local/Library/GNUMail/Personal.prefs/Contents/Resources
-@unexec rm -f %D/Local/Library/GNUMail/Personal.prefs/Contents/Resources
 Local/Library/GNUMail/Personal.prefs/Resources/Info-gnustep.plist
-Local/Library/GNUMail/Personal.prefs/Resources/Info.plist
 Local/Library/GNUMail/Personal.prefs/Resources/personal.tiff
 Local/Library/GNUMail/Personal.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/Personal
-Local/Library/GNUMail/Receiving.prefs/Contents/Info.plist
-@exec ln -sf ../Resources %D/Local/Library/GNUMail/Receiving.prefs/Contents/Resources
-@unexec rm -f %D/Local/Library/GNUMail/Receiving.prefs/Contents/Resources
 Local/Library/GNUMail/Receiving.prefs/Resources/Info-gnustep.plist
-Local/Library/GNUMail/Receiving.prefs/Resources/Info.plist
 Local/Library/GNUMail/Receiving.prefs/Resources/MailIcon_retrieve.tiff
 Local/Library/GNUMail/Receiving.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/Receiving
-Local/Library/GNUMail/Sending.prefs/Contents/Info.plist
-@exec ln -sf ../Resources %D/Local/Library/GNUMail/Sending.prefs/Contents/Resources
-@unexec rm -f %D/Local/Library/GNUMail/Sending.prefs/Contents/Resources
 Local/Library/GNUMail/Sending.prefs/Resources/Info-gnustep.plist
-Local/Library/GNUMail/Sending.prefs/Resources/Info.plist
 Local/Library/GNUMail/Sending.prefs/Resources/MailIcon_send.tiff
 Local/Library/GNUMail/Sending.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/Sending
-Local/Library/GNUMail/Viewing.prefs/Contents/Info.plist
-@exec ln -sf ../Resources %D/Local/Library/GNUMail/Viewing.prefs/Contents/Resources
-@unexec rm -f %D/Local/Library/GNUMail/Viewing.prefs/Contents/Resources
 Local/Library/GNUMail/Viewing.prefs/Resources/Info-gnustep.plist
-Local/Library/GNUMail/Viewing.prefs/Resources/Info.plist
 Local/Library/GNUMail/Viewing.prefs/Resources/viewing.tiff
 Local/Library/GNUMail/Viewing.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/Viewing
 @dirrm Local/Library/GNUMail/Viewing.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm Local/Library/GNUMail/Viewing.prefs/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm Local/Library/GNUMail/Viewing.prefs/%%GNU_ARCH%%
 @dirrm Local/Library/GNUMail/Viewing.prefs/Resources
-@dirrm Local/Library/GNUMail/Viewing.prefs/Contents
 @dirrm Local/Library/GNUMail/Viewing.prefs
 @dirrm Local/Library/GNUMail/Sending.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm Local/Library/GNUMail/Sending.prefs/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm Local/Library/GNUMail/Sending.prefs/%%GNU_ARCH%%
 @dirrm Local/Library/GNUMail/Sending.prefs/Resources
-@dirrm Local/Library/GNUMail/Sending.prefs/Contents
 @dirrm Local/Library/GNUMail/Sending.prefs
 @dirrm Local/Library/GNUMail/Receiving.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm Local/Library/GNUMail/Receiving.prefs/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm Local/Library/GNUMail/Receiving.prefs/%%GNU_ARCH%%
 @dirrm Local/Library/GNUMail/Receiving.prefs/Resources
-@dirrm Local/Library/GNUMail/Receiving.prefs/Contents
 @dirrm Local/Library/GNUMail/Receiving.prefs
 @dirrm Local/Library/GNUMail/Personal.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm Local/Library/GNUMail/Personal.prefs/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm Local/Library/GNUMail/Personal.prefs/%%GNU_ARCH%%
 @dirrm Local/Library/GNUMail/Personal.prefs/Resources
-@dirrm Local/Library/GNUMail/Personal.prefs/Contents
 @dirrm Local/Library/GNUMail/Personal.prefs
 @dirrm Local/Library/GNUMail/Mailboxes.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm Local/Library/GNUMail/Mailboxes.prefs/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm Local/Library/GNUMail/Mailboxes.prefs/%%GNU_ARCH%%/
 @dirrm Local/Library/GNUMail/Mailboxes.prefs/Resources
-@dirrm Local/Library/GNUMail/Mailboxes.prefs/Contents
 @dirrm Local/Library/GNUMail/Mailboxes.prefs
 @dirrm Local/Library/GNUMail/MIME.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm Local/Library/GNUMail/MIME.prefs/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm Local/Library/GNUMail/MIME.prefs/%%GNU_ARCH%%
 @dirrm Local/Library/GNUMail/MIME.prefs/Resources
-@dirrm Local/Library/GNUMail/MIME.prefs/Contents
 @dirrm Local/Library/GNUMail/MIME.prefs
 @dirrm Local/Library/GNUMail/Fonts.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm Local/Library/GNUMail/Fonts.prefs/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm Local/Library/GNUMail/Fonts.prefs/%%GNU_ARCH%%
 @dirrm Local/Library/GNUMail/Fonts.prefs/Resources
-@dirrm Local/Library/GNUMail/Fonts.prefs/Contents
 @dirrm Local/Library/GNUMail/Fonts.prefs
 @dirrm Local/Library/GNUMail/Filtering.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm Local/Library/GNUMail/Filtering.prefs/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm Local/Library/GNUMail/Filtering.prefs/%%GNU_ARCH%%
 @dirrm Local/Library/GNUMail/Filtering.prefs/Resources
-@dirrm Local/Library/GNUMail/Filtering.prefs/Contents
 @dirrm Local/Library/GNUMail/Filtering.prefs
 @dirrm Local/Library/GNUMail/Compose.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm Local/Library/GNUMail/Compose.prefs/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm Local/Library/GNUMail/Compose.prefs/%%GNU_ARCH%%
 @dirrm Local/Library/GNUMail/Compose.prefs/Resources
-@dirrm Local/Library/GNUMail/Compose.prefs/Contents
 @dirrm Local/Library/GNUMail/Compose.prefs
 @dirrm Local/Library/GNUMail
 @dirrm Local/Applications/GNUMail.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
