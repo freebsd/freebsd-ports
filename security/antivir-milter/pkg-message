@@ -5,7 +5,7 @@ your SENDMAIL_MC:
 
 INPUT_MAIL_FILTER(
 	`antivir-milter',
-	`S=unix:%%PREFIX%%/AntiVir/avmilter.sock, F=T, T=S:10m;R:10m;E:5m'
+	`S=unix:/var/spool/avmilter/avmilter.sock, F=T, T=S:10m;R:10m;E:10m'
 )dnl
 
 Don't forget to rebuild sendmail.cf and to restart Sendmail afterwards.
@@ -18,7 +18,7 @@ For full functionality of AntiVir Milter you need to obtain a license
 key from H+BEDV Datentechnik GmbH. To install it, execute the following
 commands:
 cp hbedv.key %%PREFIX%%/AntiVir/
-chown daemon:daemon %%PREFIX%%/AntiVir/hbedv.key
+chown root:smmsp %%PREFIX%%/AntiVir/hbedv.key
 chmod 440 %%PREFIX%%/AntiVir/hbedv.key
 
 A license key for private (individual, non-commercial) use can be applied

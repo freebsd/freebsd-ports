@@ -1,4 +1,3 @@
-@exec install -d -o daemon -g daemon -m 755 %D/AntiVir
 @unexec if cmp -s %D/AntiVir/antivir-dist_avfbmlt %D/AntiVir/antivir; then rm -f %D/AntiVir/antivir; fi
 AntiVir/antivir-dist_avfbmlt
 @exec [ -f %B/antivir ] || cp -p %B/%f %B/antivir
@@ -15,14 +14,17 @@ etc/avmilter.conf.sample
 @exec [ -f %B/avmilter.conf ] || cp %B/%f %B/avmilter.conf
 etc/rc.d/antivir-milter.sh
 sbin/avmilter
-@exec install -d -o daemon -g daemon -m 700 /var/spool/avmilter
-@exec install -d -o daemon -g daemon -m 700 /var/spool/avmilter/incoming
-@exec install -d -o daemon -g daemon -m 700 /var/spool/avmilter/outgoing
-@exec install -d -o daemon -g daemon -m 700 /var/spool/avmilter/rejected
+@exec install -d -o smmsp -g smmsp -m 700 /var/spool/avmilter
+@exec install -d -o smmsp -g smmsp -m 700 /var/spool/avmilter/incoming
+@exec install -d -o smmsp -g smmsp -m 700 /var/spool/avmilter/outgoing
+@exec install -d -o smmsp -g smmsp -m 700 /var/spool/avmilter/rejected
 @unexec rmdir /var/spool/avmilter/incoming 2> /dev/null || true
 @unexec rmdir /var/spool/avmilter/outgoing 2> /dev/null || true
 @unexec rmdir /var/spool/avmilter/rejected 2> /dev/null || true
 @unexec rmdir /var/spool/avmilter 2> /dev/null || echo "If permanently deleting this package, /var/spool/avmilter and its contents must be removed manually."
+%%EXAMPLESDIR%%/avmilter.ignore
+%%EXAMPLESDIR%%/avmilter.scan
+%%EXAMPLESDIR%%/avmilter.warn
 %%EXAMPLESDIR%%/templates/de/patho-administrator
 %%EXAMPLESDIR%%/templates/de/patho-recipient
 %%EXAMPLESDIR%%/templates/de/patho-sender
@@ -70,6 +72,7 @@ sbin/avmilter
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.DE
+%%PORTDOCS%%%%DOCSDIR%%/MANUAL
 %%PORTDOCS%%%%DOCSDIR%%/avmilter_de.pdf
 %%PORTDOCS%%%%DOCSDIR%%/avmilter_en.pdf
 %%PORTDOCS%%%%DOCSDIR%%/antivir.gpg
