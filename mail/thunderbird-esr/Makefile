@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	thunderbird
-PORTVERSION=	0.4
-PORTREVISION=	1
+PORTVERSION=	0.5
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	thunderbird/releases/${PORTVERSION}
-PKGNAMEPREFIX=	mozilla-
-DISTNAME=	${PORTNAME}-source-${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_LOCAL}	# ${MASTER_SITE_MOZILLA}
+MASTER_SITE_SUBDIR=	ale		# thunderbird/releases/${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Mozilla Thunderbird is standalone mail and news that stands above
@@ -21,7 +19,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		mng.1:${PORTSDIR}/graphics/libmng \
 		freetype.9:${PORTSDIR}/print/freetype2 \
-		iconv.3:${PORTSDIR}/converters/libiconv \
 		nspr4.1:${PORTSDIR}/devel/nspr
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		freetype-config:${PORTSDIR}/print/freetype2
@@ -30,18 +27,19 @@ USE_X_PREFIX=	yes
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_ICONV=	yes
 USE_PERL5=	yes
 USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 ALL_TARGET=	default
 USE_GNOME=	gtk20 libidl
+CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 
 NO_MTREE=		yes
 WRKSRC=			${WRKDIR}/mozilla
 LOCAL_SUBDIR=		lib/${PORTNAME}
 LOCAL_PREFIX=		${PREFIX}/${LOCAL_SUBDIR}
-
-NOT_FOR_ARCHS=		amd64 ia64
+ESD_LIB=		libesd.so.2
 
 .include <bsd.port.pre.mk>
 
@@ -96,7 +94,8 @@ post-extract::
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/build/unix/run-mozilla.sh
-	@${REINPLACE_CMD} -e 's|-lc_r|${PTHREAD_LIBS}|g' \
+	@${REINPLACE_CMD} -e 's|-lc_r|${PTHREAD_LIBS}|g ; \
+		s|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/configure \
 		${WRKSRC}/nsprpub/configure
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' \
@@ -104,6 +103,17 @@ post-patch:
 		${WRKSRC}/security/coreconf/FreeBSD.mk \
 		${WRKSRC}/directory/c-sdk/config/FreeBSD.mk \
 		${WRKSRC}/js/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|libesd\.so\.0|${ESD_LIB}|g' \
+		${WRKSRC}/widget/src/gtk2/nsSound.cpp
+	@${REINPLACE_CMD} -e '/accessibility.typeaheadfind.enablesound/s/true/false/' \
+		${WRKSRC}/modules/libpref/src/init/all.js \
+		${WRKSRC}/mail/app/profile/all.js \
+		${WRKSRC}/extensions/sroaming/resources/content/prefs/all.js \
+		${WRKSRC}/calendar/sunbird/app/profile/all.js
+	@${REINPLACE_CMD} -e 's|<iconv.h>|\"${LOCALBASE}/include/iconv.h\"|g' \
+		${WRKSRC}/configure \
+		${WRKSRC}/intl/uconv/native/nsNativeUConvService.cpp \
+		${WRKSRC}/xpcom/io/nsNativeCharsetUtils.cpp
 
 pre-install:
 	${RM} -fr ${LOCAL_PREFIX}
@@ -117,6 +127,11 @@ post-install:
 		${PREFIX}/bin/thunderbird-config
 	${RM} -fr ${LOCAL_PREFIX}/share/idl
 	${RM} -fr ${LOCAL_PREFIX}/include
+.for ii in mac win
+.for jj in / .jar
+	${RM} -fr ${LOCAL_PREFIX}/lib/mozilla-1.6/chrome/en-${ii}${jj}
+.endfor
+.endfor
 
 cons-plist:
 	-${RM} -f ${PLIST}
@@ -131,10 +146,9 @@ cons-plist:
 	${FIND} ${LOCAL_SUBDIR} -type d -empty | ${SORT} \
 	  | ${SED} -e "s:^:@exec ${MKDIR} %D/:" -e "s:$$: || true:" \
 	  >> ${PLIST}; \
-	${FIND} ${LOCAL_SUBDIR} -type d -empty | ${SORT} -r \
-	  | ${SED} -e "s:^:@unexec ${RMDIR} %D/:" -e "s:$$: || true:" \
-	  >> ${PLIST}; \
+	${FIND} ${LOCAL_SUBDIR} -type d -empty | ${SORT} -r | ${SED} -e \
+		"s:^:@unexec ${RMDIR} %D/:" -e "s:$$: || true:" >> ${PLIST}; \
 	${FIND} ${LOCAL_SUBDIR} -type d ! -empty | ${SORT} -r \
-		| ${SED} -e "s:^:@dirrm :" >> ${PLIST}
+		| ${SED} -e "s:^:@dirrm :" | ${GREP} / >> ${PLIST}
 
 .include <bsd.port.post.mk>
