@@ -5,9 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	scim-chinese
-PORTVERSION=	0.4.2
-PORTREVISION=	1
+PORTNAME=	scim-pinyin
+PORTVERSION=	0.5.0
 CATEGORIES=	chinese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=scim
@@ -18,7 +17,7 @@ COMMENT=	SCIM Chinese Smart Pinyin input method
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_GNOME=	lthack
+USE_GNOME=	gnomehack lthack
 USE_X_PREFIX=	yes
 USE_ICONV=	yes
 USE_GMAKE=	yes
@@ -34,7 +33,6 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
 RUN_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/stlport" \
 		LDFLAGS="-L${LOCALBASE}/lib -lstlport_gcc -lintl ${PTHREAD_LIBS}"
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-4-stable
 .else
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -D__STDC_ISO_10646__" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
