@@ -1,10 +1,61 @@
 @comment $FreeBSD$
-share/texmf/tex/passivetex/dummyels.sty
-share/texmf/tex/passivetex/fotex.xmt
-share/texmf/tex/passivetex/fotex.sty
-share/texmf/tex/passivetex/mlnames.sty
-share/texmf/tex/passivetex/ucharacters.sty
-share/texmf/tex/passivetex/unicode.sty
-@dirrm share/texmf/tex/passivetex
-@exec %D/bin/mktexlsr
-@unexec %D/bin/mktexlsr
+%%PORTDOCS%%%%DOCSDIR%%/test/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/test/chap01.xml
+%%PORTDOCS%%%%DOCSDIR%%/test/chap02.xml
+%%PORTDOCS%%%%DOCSDIR%%/test/chap03.xml
+%%PORTDOCS%%%%DOCSDIR%%/test/chap04.xml
+%%PORTDOCS%%%%DOCSDIR%%/test/check.xsl
+%%PORTDOCS%%%%DOCSDIR%%/test/darkness.fo
+%%PORTDOCS%%%%DOCSDIR%%/test/darkness.pdf
+%%PORTDOCS%%%%DOCSDIR%%/test/darkness.xml
+%%PORTDOCS%%%%DOCSDIR%%/test/darkness.xsl
+%%PORTDOCS%%%%DOCSDIR%%/test/exercise-print.xsl
+%%PORTDOCS%%%%DOCSDIR%%/test/exercise.fo
+%%PORTDOCS%%%%DOCSDIR%%/test/exercise.pdf
+%%PORTDOCS%%%%DOCSDIR%%/test/exercise.xml
+%%PORTDOCS%%%%DOCSDIR%%/test/fezziPic.png
+%%PORTDOCS%%%%DOCSDIR%%/test/fotex.cfg.eg
+%%PORTDOCS%%%%DOCSDIR%%/test/hyperref.cfg
+%%PORTDOCS%%%%DOCSDIR%%/test/mathex.xml
+%%PORTDOCS%%%%DOCSDIR%%/test/mathex.xsl
+%%PORTDOCS%%%%DOCSDIR%%/test/mathml.xsl
+%%PORTDOCS%%%%DOCSDIR%%/test/mathtei.dtd
+%%PORTDOCS%%%%DOCSDIR%%/test/novel.dtd
+%%PORTDOCS%%%%DOCSDIR%%/test/phys332-1.jpg
+%%PORTDOCS%%%%DOCSDIR%%/test/phys332-2.jpg
+%%PORTDOCS%%%%DOCSDIR%%/test/rmsd.xml
+%%PORTDOCS%%%%DOCSDIR%%/test/tei-oucs.dtd
+%%PORTDOCS%%%%DOCSDIR%%/test/tei.sty
+%%PORTDOCS%%%%DOCSDIR%%/test/teimath-print.xsl
+%%PORTDOCS%%%%DOCSDIR%%/test/teimath.aux
+%%PORTDOCS%%%%DOCSDIR%%/test/teimath.fo
+%%PORTDOCS%%%%DOCSDIR%%/test/teimath.log
+%%PORTDOCS%%%%DOCSDIR%%/test/teimath.out
+%%PORTDOCS%%%%DOCSDIR%%/test/teimath.pdf
+%%PORTDOCS%%%%DOCSDIR%%/test/teimath.xml
+%%PORTDOCS%%%%DOCSDIR%%/test/teimath.xsl
+%%PORTDOCS%%%%DOCSDIR%%/test/teimath2.xml
+%%PORTDOCS%%%%DOCSDIR%%/test/teiu5-print.xsl
+%%PORTDOCS%%%%DOCSDIR%%/test/teiu5.fo
+%%PORTDOCS%%%%DOCSDIR%%/test/teiu5.pdf
+%%PORTDOCS%%%%DOCSDIR%%/test/teiu5.xml
+%%PORTDOCS%%%%DOCSDIR%%/test/teixlite.dtd
+%%PORTDOCS%%%%DOCSDIR%%/test/teixml.cfg
+%%PORTDOCS%%%%DOCSDIR%%/test/test1.fot
+%%PORTDOCS%%%%DOCSDIR%%/test/test2.fot
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/test
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README.passivetex
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/index.xml
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%CLASSDIR%%/dummyels.sty
+%%CLASSDIR%%/fotex.xmt
+%%CLASSDIR%%/fotex.sty
+%%CLASSDIR%%/mlnames.sty
+%%CLASSDIR%%/ucharacters.sty
+%%CLASSDIR%%/unicode.sty
+%%CLASSDIR%%/nomulticol.sty
+@dirrm %%CLASSDIR%%
+@exec %%MKTEXLSR%%
+@unexec %%MKTEXLSR%%
