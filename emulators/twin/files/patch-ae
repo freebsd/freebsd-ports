@@ -2,4 +2,4 @@
 +++ configure	Sat Feb 12 18:13:09 2000
 @@ -2684 +2684 @@
 -   i*86-unknown-freebsd* )
-+   i*86-*-freebsd* )
++   *-*-freebsd* )
