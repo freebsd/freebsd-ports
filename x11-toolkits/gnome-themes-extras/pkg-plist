@@ -406,95 +406,6 @@ share/icons/Wasp/scalable/stock/stock_lockscreen.svg
 share/icons/Wasp/scalable/stock/stock_multimedia.svg
 share/icons/Wasp/scalable/stock/stock_searchtool.svg
 share/icons/Wasp/index.theme
-share/gnome/themes/BlueSphere/gtk-2.0/gtkrc
-share/gnome/themes/BlueSphere/gtk-2.0/iconrc
-share/gnome/themes/BlueSphere/gtk-2.0/arrow_down_clicked.svg
-share/gnome/themes/BlueSphere/gtk-2.0/arrow_down_normal.svg
-share/gnome/themes/BlueSphere/gtk-2.0/arrow_left_normal.svg
-share/gnome/themes/BlueSphere/gtk-2.0/arrow_left_clicked.svg
-share/gnome/themes/BlueSphere/gtk-2.0/arrow_right_clicked.svg
-share/gnome/themes/BlueSphere/gtk-2.0/arrow_right_normal.svg
-share/gnome/themes/BlueSphere/gtk-2.0/arrow_up_clicked.svg
-share/gnome/themes/BlueSphere/gtk-2.0/arrow_up_normal.svg
-share/gnome/themes/BlueSphere/gtk-2.0/background.png
-share/gnome/themes/BlueSphere/gtk-2.0/blank.png
-share/gnome/themes/BlueSphere/gtk-2.0/box_gap_bottom_end.png
-share/gnome/themes/BlueSphere/gtk-2.0/box_gap_bottom_focus.png
-share/gnome/themes/BlueSphere/gtk-2.0/box_gap_bottom.png
-share/gnome/themes/BlueSphere/gtk-2.0/box_gap_bottom_start.png
-share/gnome/themes/BlueSphere/gtk-2.0/box_gap_left.png
-share/gnome/themes/BlueSphere/gtk-2.0/box_gap_left_end.png
-share/gnome/themes/BlueSphere/gtk-2.0/box_gap_left_focus.png
-share/gnome/themes/BlueSphere/gtk-2.0/box_gap_left_start.png
-share/gnome/themes/BlueSphere/gtk-2.0/box_gap_right_end.png
-share/gnome/themes/BlueSphere/gtk-2.0/box_gap_right_focus.png
-share/gnome/themes/BlueSphere/gtk-2.0/box_gap_right.png
-share/gnome/themes/BlueSphere/gtk-2.0/box_gap_right_start.png
-share/gnome/themes/BlueSphere/gtk-2.0/box_gap_top_end.png
-share/gnome/themes/BlueSphere/gtk-2.0/box_gap_top_focus.png
-share/gnome/themes/BlueSphere/gtk-2.0/box_gap_top.png
-share/gnome/themes/BlueSphere/gtk-2.0/box_gap_top_start.png
-share/gnome/themes/BlueSphere/gtk-2.0/button_active_in.png
-share/gnome/themes/BlueSphere/gtk-2.0/button_insensitive_in.png
-share/gnome/themes/BlueSphere/gtk-2.0/button_insensitive_out.png
-share/gnome/themes/BlueSphere/gtk-2.0/button_normal_in.png
-share/gnome/themes/BlueSphere/gtk-2.0/button_normal_out.png
-share/gnome/themes/BlueSphere/gtk-2.0/button_prelight_out.png
-share/gnome/themes/BlueSphere/gtk-2.0/button_selected_in.png
-share/gnome/themes/BlueSphere/gtk-2.0/check_in.png
-share/gnome/themes/BlueSphere/gtk-2.0/check_out.png
-share/gnome/themes/BlueSphere/gtk-2.0/clear.png
-share/gnome/themes/BlueSphere/gtk-2.0/curve_background.png
-share/gnome/themes/BlueSphere/gtk-2.0/entry_bg.png
-share/gnome/themes/BlueSphere/gtk-2.0/etched.png
-share/gnome/themes/BlueSphere/gtk-2.0/extension_active_left.png
-share/gnome/themes/BlueSphere/gtk-2.0/extension_active_right.png
-share/gnome/themes/BlueSphere/gtk-2.0/extension_left.png
-share/gnome/themes/BlueSphere/gtk-2.0/extension_right.png
-share/gnome/themes/BlueSphere/gtk-2.0/extraA_box.png
-share/gnome/themes/BlueSphere/gtk-2.0/extraB_box.png
-share/gnome/themes/BlueSphere/gtk-2.0/frame_gap.png
-share/gnome/themes/BlueSphere/gtk-2.0/frame_gap_top_end.png
-share/gnome/themes/BlueSphere/gtk-2.0/frame_gap_top_start.png
-share/gnome/themes/BlueSphere/gtk-2.0/handle_bar.png
-share/gnome/themes/BlueSphere/gtk-2.0/handlebox.png
-share/gnome/themes/BlueSphere/gtk-2.0/handle_vert_thumb.png
-share/gnome/themes/BlueSphere/gtk-2.0/horizontal_line.png
-share/gnome/themes/BlueSphere/gtk-2.0/horizontal_trough.png
-share/gnome/themes/BlueSphere/gtk-2.0/horzontal_ruler.png
-share/gnome/themes/BlueSphere/gtk-2.0/item_insensitive.png
-share/gnome/themes/BlueSphere/gtk-2.0/item.png
-share/gnome/themes/BlueSphere/gtk-2.0/menu_background.png
-share/gnome/themes/BlueSphere/gtk-2.0/menubar_background.png
-share/gnome/themes/BlueSphere/gtk-2.0/menubar_option.png
-share/gnome/themes/BlueSphere/gtk-2.0/menu_hi-light.png
-share/gnome/themes/BlueSphere/gtk-2.0/menu_shadow.png
-share/gnome/themes/BlueSphere/gtk-2.0/notebook_active_bottom.png
-share/gnome/themes/BlueSphere/gtk-2.0/notebook_active_top.png
-share/gnome/themes/BlueSphere/gtk-2.0/notebook_bottom.png
-share/gnome/themes/BlueSphere/gtk-2.0/notebook_top.png
-share/gnome/themes/BlueSphere/gtk-2.0/notebook_unattached.png
-share/gnome/themes/BlueSphere/gtk-2.0/paned.png
-share/gnome/themes/BlueSphere/gtk-2.0/option_in.png
-share/gnome/themes/BlueSphere/gtk-2.0/option_out.png
-share/gnome/themes/BlueSphere/gtk-2.0/progressbar.png
-share/gnome/themes/BlueSphere/gtk-2.0/scrollbar_horizontal.svg
-share/gnome/themes/BlueSphere/gtk-2.0/scrollbar_prelight_horizontal.svg
-share/gnome/themes/BlueSphere/gtk-2.0/scrollbar_prelight_vertical.svg
-share/gnome/themes/BlueSphere/gtk-2.0/scrollbar_vertical.svg
-share/gnome/themes/BlueSphere/gtk-2.0/shadow_in.png
-share/gnome/themes/BlueSphere/gtk-2.0/shadow_out.png
-share/gnome/themes/BlueSphere/gtk-2.0/text_insensitive.png
-share/gnome/themes/BlueSphere/gtk-2.0/text_selected_insensitive.png
-share/gnome/themes/BlueSphere/gtk-2.0/text_selected.png
-share/gnome/themes/BlueSphere/gtk-2.0/toggle_clicked.png
-share/gnome/themes/BlueSphere/gtk-2.0/toggle_default.png
-share/gnome/themes/BlueSphere/gtk-2.0/tooltip.png
-share/gnome/themes/BlueSphere/gtk-2.0/trough.png
-share/gnome/themes/BlueSphere/gtk-2.0/vertical_line.png
-share/gnome/themes/BlueSphere/gtk-2.0/vertical_ruler.png
-share/gnome/themes/BlueSphere/gtk-2.0/vertical_trough.png
-share/gnome/themes/BlueSphere/gtk-2.0/window_background.png
 share/gnome/themes/BlueSphere/metacity-1/metacity-theme-1.xml
 share/gnome/themes/BlueSphere/metacity-1/bg-bottom-rail.png
 share/gnome/themes/BlueSphere/metacity-1/bg-left-rail.png
@@ -518,12 +429,7 @@ share/gnome/themes/BlueSphere/metacity-1/titlebar-left-iconbg.png
 share/gnome/themes/BlueSphere/metacity-1/titlebar-left-iconbg-shaded.png
 share/gnome/themes/BlueSphere/metacity-1/titlebar-left-title.png
 share/gnome/themes/BlueSphere/metacity-1/titlebar-right-bumper.png
-share/gnome/themes/Lush/gtk-2.0/gtkrc
-share/gnome/themes/Lush/gtk-2.0/iconrc
 share/gnome/themes/Lush/metacity-1/metacity-theme-1.xml
-share/gnome/themes/Lush/index.theme
-share/gnome/themes/Nuvola/gtk-2.0/gtkrc
-share/gnome/themes/Nuvola/gtk-2.0/iconrc
 share/gnome/themes/Nuvola/metacity-1/metacity-theme-1.xml
 share/gnome/themes/Nuvola/metacity-1/wm-inac.png
 share/gnome/themes/Nuvola/metacity-1/wm-min.png
@@ -531,9 +437,6 @@ share/gnome/themes/Nuvola/metacity-1/wm-max.png
 share/gnome/themes/Nuvola/metacity-1/wm-restore.png
 share/gnome/themes/Nuvola/metacity-1/wm-close.png
 share/gnome/themes/Nuvola/metacity-1/wm-menu.png
-share/gnome/themes/Nuvola/index.theme
-share/gnome/themes/Wasp/gtk-2.0/gtkrc
-share/gnome/themes/Wasp/gtk-2.0/iconrc
 share/gnome/themes/Wasp/metacity-1/metacity-theme-1.xml
 share/gnome/themes/Wasp/metacity-1/close-active.png
 share/gnome/themes/Wasp/metacity-1/close-inactive.png
@@ -544,18 +447,111 @@ share/gnome/themes/Wasp/metacity-1/minimize-active.png
 share/gnome/themes/Wasp/metacity-1/minimize-inactive.png
 share/gnome/themes/Wasp/metacity-1/restore-active.png
 share/gnome/themes/Wasp/metacity-1/restore-inactive.png
-share/gnome/themes/Wasp/index.theme
+share/themes/BlueSphere/gtk-2.0/gtkrc
+share/themes/BlueSphere/gtk-2.0/iconrc
+share/themes/BlueSphere/gtk-2.0/arrow_down_clicked.svg
+share/themes/BlueSphere/gtk-2.0/arrow_down_normal.svg
+share/themes/BlueSphere/gtk-2.0/arrow_left_normal.svg
+share/themes/BlueSphere/gtk-2.0/arrow_left_clicked.svg
+share/themes/BlueSphere/gtk-2.0/arrow_right_clicked.svg
+share/themes/BlueSphere/gtk-2.0/arrow_right_normal.svg
+share/themes/BlueSphere/gtk-2.0/arrow_up_clicked.svg
+share/themes/BlueSphere/gtk-2.0/arrow_up_normal.svg
+share/themes/BlueSphere/gtk-2.0/background.png
+share/themes/BlueSphere/gtk-2.0/blank.png
+share/themes/BlueSphere/gtk-2.0/box_gap_bottom_end.png
+share/themes/BlueSphere/gtk-2.0/box_gap_bottom_focus.png
+share/themes/BlueSphere/gtk-2.0/box_gap_bottom.png
+share/themes/BlueSphere/gtk-2.0/box_gap_bottom_start.png
+share/themes/BlueSphere/gtk-2.0/box_gap_left.png
+share/themes/BlueSphere/gtk-2.0/box_gap_left_end.png
+share/themes/BlueSphere/gtk-2.0/box_gap_left_focus.png
+share/themes/BlueSphere/gtk-2.0/box_gap_left_start.png
+share/themes/BlueSphere/gtk-2.0/box_gap_right_end.png
+share/themes/BlueSphere/gtk-2.0/box_gap_right_focus.png
+share/themes/BlueSphere/gtk-2.0/box_gap_right.png
+share/themes/BlueSphere/gtk-2.0/box_gap_right_start.png
+share/themes/BlueSphere/gtk-2.0/box_gap_top_end.png
+share/themes/BlueSphere/gtk-2.0/box_gap_top_focus.png
+share/themes/BlueSphere/gtk-2.0/box_gap_top.png
+share/themes/BlueSphere/gtk-2.0/box_gap_top_start.png
+share/themes/BlueSphere/gtk-2.0/button_active_in.png
+share/themes/BlueSphere/gtk-2.0/button_insensitive_in.png
+share/themes/BlueSphere/gtk-2.0/button_insensitive_out.png
+share/themes/BlueSphere/gtk-2.0/button_normal_in.png
+share/themes/BlueSphere/gtk-2.0/button_normal_out.png
+share/themes/BlueSphere/gtk-2.0/button_prelight_out.png
+share/themes/BlueSphere/gtk-2.0/button_selected_in.png
+share/themes/BlueSphere/gtk-2.0/check_in.png
+share/themes/BlueSphere/gtk-2.0/check_out.png
+share/themes/BlueSphere/gtk-2.0/clear.png
+share/themes/BlueSphere/gtk-2.0/curve_background.png
+share/themes/BlueSphere/gtk-2.0/entry_bg.png
+share/themes/BlueSphere/gtk-2.0/etched.png
+share/themes/BlueSphere/gtk-2.0/extension_active_left.png
+share/themes/BlueSphere/gtk-2.0/extension_active_right.png
+share/themes/BlueSphere/gtk-2.0/extension_left.png
+share/themes/BlueSphere/gtk-2.0/extension_right.png
+share/themes/BlueSphere/gtk-2.0/extraA_box.png
+share/themes/BlueSphere/gtk-2.0/extraB_box.png
+share/themes/BlueSphere/gtk-2.0/frame_gap.png
+share/themes/BlueSphere/gtk-2.0/frame_gap_top_end.png
+share/themes/BlueSphere/gtk-2.0/frame_gap_top_start.png
+share/themes/BlueSphere/gtk-2.0/handle_bar.png
+share/themes/BlueSphere/gtk-2.0/handlebox.png
+share/themes/BlueSphere/gtk-2.0/handle_vert_thumb.png
+share/themes/BlueSphere/gtk-2.0/horizontal_line.png
+share/themes/BlueSphere/gtk-2.0/horizontal_trough.png
+share/themes/BlueSphere/gtk-2.0/horzontal_ruler.png
+share/themes/BlueSphere/gtk-2.0/item_insensitive.png
+share/themes/BlueSphere/gtk-2.0/item.png
+share/themes/BlueSphere/gtk-2.0/menu_background.png
+share/themes/BlueSphere/gtk-2.0/menubar_background.png
+share/themes/BlueSphere/gtk-2.0/menubar_option.png
+share/themes/BlueSphere/gtk-2.0/menu_hi-light.png
+share/themes/BlueSphere/gtk-2.0/menu_shadow.png
+share/themes/BlueSphere/gtk-2.0/notebook_active_bottom.png
+share/themes/BlueSphere/gtk-2.0/notebook_active_top.png
+share/themes/BlueSphere/gtk-2.0/notebook_bottom.png
+share/themes/BlueSphere/gtk-2.0/notebook_top.png
+share/themes/BlueSphere/gtk-2.0/notebook_unattached.png
+share/themes/BlueSphere/gtk-2.0/paned.png
+share/themes/BlueSphere/gtk-2.0/option_in.png
+share/themes/BlueSphere/gtk-2.0/option_out.png
+share/themes/BlueSphere/gtk-2.0/progressbar.png
+share/themes/BlueSphere/gtk-2.0/scrollbar_horizontal.svg
+share/themes/BlueSphere/gtk-2.0/scrollbar_prelight_horizontal.svg
+share/themes/BlueSphere/gtk-2.0/scrollbar_prelight_vertical.svg
+share/themes/BlueSphere/gtk-2.0/scrollbar_vertical.svg
+share/themes/BlueSphere/gtk-2.0/shadow_in.png
+share/themes/BlueSphere/gtk-2.0/shadow_out.png
+share/themes/BlueSphere/gtk-2.0/text_insensitive.png
+share/themes/BlueSphere/gtk-2.0/text_selected_insensitive.png
+share/themes/BlueSphere/gtk-2.0/text_selected.png
+share/themes/BlueSphere/gtk-2.0/toggle_clicked.png
+share/themes/BlueSphere/gtk-2.0/toggle_default.png
+share/themes/BlueSphere/gtk-2.0/tooltip.png
+share/themes/BlueSphere/gtk-2.0/trough.png
+share/themes/BlueSphere/gtk-2.0/vertical_line.png
+share/themes/BlueSphere/gtk-2.0/vertical_ruler.png
+share/themes/BlueSphere/gtk-2.0/vertical_trough.png
+share/themes/BlueSphere/gtk-2.0/window_background.png
+share/themes/Lush/gtk-2.0/gtkrc
+share/themes/Lush/gtk-2.0/iconrc
+share/themes/Lush/index.theme
+share/themes/Nuvola/gtk-2.0/gtkrc
+share/themes/Nuvola/gtk-2.0/iconrc
+share/themes/Nuvola/index.theme
+share/themes/Wasp/gtk-2.0/gtkrc
+share/themes/Wasp/gtk-2.0/iconrc
+share/themes/Wasp/index.theme
 @dirrm share/gnome/themes/Wasp/metacity-1
-@dirrm share/gnome/themes/Wasp/gtk-2.0
 @dirrm share/gnome/themes/Wasp
 @dirrm share/gnome/themes/Nuvola/metacity-1
-@dirrm share/gnome/themes/Nuvola/gtk-2.0
 @dirrm share/gnome/themes/Nuvola
 @dirrm share/gnome/themes/Lush/metacity-1
-@dirrm share/gnome/themes/Lush/gtk-2.0
 @dirrm share/gnome/themes/Lush
 @dirrm share/gnome/themes/BlueSphere/metacity-1
-@dirrm share/gnome/themes/BlueSphere/gtk-2.0
 @dirrm share/gnome/themes/BlueSphere
 @dirrm share/icons/Wasp/scalable/stock
 @dirrm share/icons/Wasp/scalable/mimetypes
@@ -583,3 +579,11 @@ share/gnome/themes/Wasp/index.theme
 @dirrm share/icons/BlueSphere/scalable/stock
 @dirrm share/icons/BlueSphere/scalable
 @dirrm share/icons/BlueSphere
+@dirrm share/themes/Wasp/gtk-2.0
+@dirrm share/themes/Wasp
+@dirrm share/themes/Nuvola/gtk-2.0
+@dirrm share/themes/Nuvola
+@dirrm share/themes/Lush/gtk-2.0
+@dirrm share/themes/Lush
+@dirrm share/themes/BlueSphere/gtk-2.0
+@dirrm share/themes/BlueSphere
