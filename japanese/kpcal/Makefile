@@ -12,11 +12,11 @@ CATEGORIES=	japanese
 MASTER_SITES=	http://www.eken.phys.nagoya-u.ac.jp/~yoichi/FreeBSD/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-PATCH_SITES=	http://www.tamaru.kuee.kyoto-u.ac.jp/~tsuchiya/misc/
+PATCH_SITES=	http://www.tamaru.kuee.kyoto-u.ac.jp/~tsuchiya/misc/kpcal/
 PATCHFILES=	${PORTNAME}-${PORTVERSION}-HappyMonday2003.patch
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	yoichi@eken.phys.nagoya-u.ac.jp
+MAINTAINER=	yoichi@FreeBSD.org
 
 ALL_TARGET=	kpcal
 
