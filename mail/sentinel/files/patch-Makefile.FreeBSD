@@ -1,0 +1,19 @@
+--- Makefile.FreeBSD.orig	Tue May 14 16:05:07 2002
++++ Makefile.FreeBSD	Tue May 14 16:05:38 2002
+@@ -2,12 +2,12 @@
+ 
+ CFLAGS = -O -I../../include
+ 
+-LDFLAGS =  -L../libmilter -L../libsmutil -L../libsm -pthread
++LDFLAGS =  -L../libmilter -pthread
+ 
+-LIBS = -lmilter -lsmutil -lsm
++LIBS = -lmilter
+ 
+ OBJS = sentinel.o
+ 
+-sentinel:       $(OBJS)
+-                $(CC) $(LDFLAGS) -o $@ $(OBJS) $(LIBS)
++sentinel: $(OBJS)
++	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LIBS)
+ 

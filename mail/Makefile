@@ -225,6 +225,7 @@
     SUBDIR += sendmail-ldap
     SUBDIR += sendmail-old
     SUBDIR += sendmail-sasl
+    SUBDIR += sentinel
     SUBDIR += serialmail
     SUBDIR += sigit
     SUBDIR += sigrot
