@@ -12,6 +12,7 @@
     SUBDIR += aumix
     SUBDIR += aureal-kmod
     SUBDIR += autozen
+    SUBDIR += baudline
     SUBDIR += bladeenc
     SUBDIR += bonk
     SUBDIR += btc
