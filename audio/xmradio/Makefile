@@ -9,7 +9,7 @@
 
 DISTNAME=	xmradio-0.8
 CATEGORIES=	audio
-MASTER_SITES=	http://www.rostock.zgdv.de/~runge/radio/
+MASTER_SITES=	http://www.egd.igd.fhg.de/~runge/radio/
 
 MAINTAINER=	runge@rostock.zgdv.de
 
