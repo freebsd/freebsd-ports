@@ -31,6 +31,9 @@ DEPRECATED=	"This port is no longer in use by anything in the ports collection a
 .if ${OSVERSION} >= 500113
 BROKEN=		"Does not compile (bad C++ code)"
 .endif
+.if ${OSVERSION} >= 500039
+WITHOUT_CPU_CFLAGS=	yes
+.endif
 
 CC=		gcc28
 CXX=		g++28
