@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/editors/openoffice-3/files/openoffice-wrapper,v 1.3 2003-03-05 23:24:05 mbr Exp $
+# $FreeBSD: /tmp/pcvs/ports/editors/openoffice-3/files/openoffice-wrapper,v 1.4 2003-03-28 09:00:55 mbr Exp $
 
 oopath=%%PREFIX%%/OpenOffice.org-%%BUILD_NR%%/program/
 program=`echo $0 | sed -e 's|.*-||'`
@@ -9,11 +9,15 @@ if [ ! $LANG ]; then
 	export LANG=%%LANG%%
 fi
 
+if [ ! -e $HOME/OpenOffice.org1.1Beta/user/config/soffice.cfg ]; then
+	touch $HOME/OpenOffice.org1.1Beta/user/config/soffice.cfg
+fi
+
 case $program in
 $0)
-	exec $oopath/soffice "$@"
+	cd $oopath && ./soffice "$@"
 	;;
 	*)
-	exec $oopath/$program "$@"
+	cd $oopath && exec $program "$@"
 	;;
 esac
