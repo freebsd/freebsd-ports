@@ -30,5 +30,6 @@
     SUBDIR += uudx
     SUBDIR += uulib
     SUBDIR += xdeview
+    SUBDIR += xunicode
 
 .include <bsd.port.subdir.mk>
