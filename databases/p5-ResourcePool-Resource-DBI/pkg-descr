@@ -1,0 +1,6 @@
+This class is used by the ResourcePool internally to create DBI
+connections. Its called by the corresponding ResourcePool::Factory::DBI
+object which passes the parameters needed to establish the DBI
+connection.
+
+WWW: http://search.cpan.org/dist/ResourcePool-Resource-DBI/
