@@ -1,0 +1,12 @@
+--- configure.in.orig	Sun Aug 12 18:18:37 2001
++++ configure.in	Sun Aug 12 18:18:13 2001
+@@ -665,6 +665,9 @@
+ 	   target_configdirs="${target_configdirs} target-bsp target-cygmon"
+     fi
+     ;;
++  avr-*-*)
++    noconfigdirs="$noconfigdirs ${libstdcxx_version} target-libglosstarget-libiberty"
++    ;;
+   arm-*-oabi*)
+     noconfigdirs="$noconfigdirs target-libgloss ${libgcj}"
+     ;;

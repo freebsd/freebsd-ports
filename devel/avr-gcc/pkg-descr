@@ -1,4 +1,7 @@
-FSF gcc-2.95.2 for Atmel AVR cross-development
+FSF gcc-3.0 for Atmel AVR cross-development
 
 This brings the gcc compiler to the Atmel AVR 8-bit RISC family of
 microcontrollers.
+
+Now including the basic C++ compiler, although this is only of limited
+use without a libstdc++, and it is little tested.
