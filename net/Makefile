@@ -76,8 +76,8 @@
     SUBDIR += gicq
     SUBDIR += gnet
     SUBDIR += gnomba
-    SUBDIR += gnome-icu
     SUBDIR += gnome-vnc
+    SUBDIR += gnomeicu
     SUBDIR += gnometelnet
     SUBDIR += gnosamba
     SUBDIR += gnu-finger
