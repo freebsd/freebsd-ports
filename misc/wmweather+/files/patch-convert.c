@@ -1,6 +1,16 @@
 --- convert.c.orig	Sun Sep 22 22:00:53 2002
-+++ convert.c	Fri Apr 11 02:07:44 2003
-@@ -52,7 +52,7 @@
++++ convert.c	Thu Jul 22 19:04:18 2004
+@@ -18,6 +18,9 @@
+ */
+ 
+ #include <math.h>
++#ifndef NAN
++#define NAN (0.0/0.0)
++#endif
+ #if TM_IN_SYS_TIME
+ # if TIME_WITH_SYS_TIME
+ #  include <sys/time.h>
+@@ -52,7 +55,7 @@
      if(temp_C==999 || dewpt_C==999) return 999;
  
      f=1782.75*(dewpt_C-temp_C)/((237.7+dewpt_C)*(237.7+temp_C));
@@ -9,7 +19,7 @@
  }
  
  int rh_F(int temp_F, int dewpt_F){
-@@ -61,7 +61,7 @@
+@@ -61,7 +64,7 @@
      if(temp_F==999 || dewpt_F==999) return 999;
  
      f=3208.95*(dewpt_F-temp_F)/((395.86+dewpt_F)*(395.86+temp_F));
@@ -18,7 +28,7 @@
  }
  
  int heatindex_C(int temp_C, int rh){
-@@ -75,7 +75,7 @@
+@@ -75,7 +78,7 @@
  
      temp2=temp_C*temp_C;
      rh2=rh*rh;
@@ -27,7 +37,7 @@
  #endif
  }
  
-@@ -88,9 +88,9 @@
+@@ -88,9 +91,9 @@
      temp3=temp2*temp_F;
      rh2=rh*rh;
      rh3=rh2*rh;
@@ -39,7 +49,7 @@
  #endif
  }
  
-@@ -106,14 +106,14 @@
+@@ -106,14 +109,14 @@
  
      ret=35.74 + 0.6215*temp_F + (-35.75 + 0.4275*temp_F)*pow(windspeed*50292/57875.0, 0.16);
      if(ret>temp_F) return temp_F;
@@ -56,7 +66,7 @@
  }
  
  float m2mi(int meters){
-@@ -125,27 +125,27 @@
+@@ -125,27 +128,27 @@
  
  int knots2mph(int knots){
      if(knots<0) return knots;
@@ -89,7 +99,7 @@
  }
  
  int knots2beaufort(int knots){
-@@ -170,12 +170,12 @@
+@@ -170,12 +173,12 @@
  
  int temp_C2F(int temp_C){
      if(temp_C==999) return 999;

@@ -1,5 +1,5 @@
---- moon.c.orig	Sun Sep 22 22:00:53 2002
-+++ moon.c	Fri Apr 11 02:07:44 2003
+--- moon.c.old	Fri May 14 04:55:39 2004
++++ moon.c	Thu Jul 22 17:26:25 2004
 @@ -44,7 +44,7 @@
  #include "wmgeneral/wmgeneral-x11.h"
  
