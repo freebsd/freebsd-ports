@@ -15,8 +15,12 @@ MASTER_SITE_SUBDIR=nagios
 MAINTAINER=	blaz@si.FreeBSD.org
 COMMENT=	Extremely powerful network monitoring system
 
-LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd \
-		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+.if defined(WITH_GD2)
+LIB_DEPENDS=    gd.4:${PORTSDIR}/graphics/gd2
+.else
+LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
+.endif
+LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net/nagios-plugins
 
 GNU_CONFIGURE=	yes
