@@ -11,8 +11,8 @@
   	if (State->HeaderSize>State->BytesInHeaderBuf) {
  		guchar *tmp=realloc(State->HeaderBuf,State->HeaderSize);
  		if (!tmp)
---- io-xpm.c.orig	Thu Mar  1 15:16:28 2001
-+++ io-xpm.c	Sun Oct 17 17:05:38 2004
+--- gdk-pixbuf/io-xpm.c.orig	Thu Mar  1 15:16:28 2001
++++ gdk-pixbuf/io-xpm.c	Sun Oct 17 17:05:38 2004
 @@ -352,16 +352,21 @@
  		return NULL;
  	}
