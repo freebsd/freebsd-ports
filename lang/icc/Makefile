@@ -7,7 +7,7 @@
 
 PORTNAME=	icc
 PORTVERSION=	7.1.027
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	lang linux devel
 MASTER_SITES=
 DISTNAME=	l_cc_pc_${PORTVERSION}
@@ -130,7 +130,8 @@ do-build:
 	@${CC} ${CFLAGS} -c -o ${WRKSRC}/stderr.o ${FILESDIR}/stderr.c
 .else
 .for i in libcxa.a libimf.a libirc.a libircmt.a libunwind.a
-	@${OBJCOPY} --redefine-sym stdin=__stdinp \
+	@${OBJCOPY} --redefine-sym __sigsetjmp=sigsetjmp \
+		--redefine-sym stdin=__stdinp \
 		--redefine-sym stdout=__stdoutp \
 		--redefine-sym stderr=__stderrp \
 		${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/lib/${i}
