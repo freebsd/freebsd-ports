@@ -110,6 +110,7 @@
     SUBDIR += lc
     SUBDIR += less
     SUBDIR += libh
+    SUBDIR += libmcal
     SUBDIR += lifelines
     SUBDIR += lile
     SUBDIR += logsurfer
