@@ -1,0 +1,27 @@
+bin/libgnutls-config
+bin/libgnutls-extra-config
+bin/gnutls-serv
+bin/gnutls-cli
+bin/gnutls-srpcrypt
+bin/gnutls-cli-debug
+include/gnutls/extra.h
+include/gnutls/openssl.h
+include/gnutls/gnutls.h
+@dirrm include/gnutls
+lib/libgnutls.so.6
+lib/libgnutls.so
+lib/libgnutls.la
+lib/libgnutls.a
+lib/libgnutls-extra.so.6
+lib/libgnutls-extra.so
+lib/libgnutls-extra.la
+lib/libgnutls-extra.a
+share/aclocal/libgnutls.m4
+share/aclocal/libgnutls-extra.m4
+%%PORTDOCS%%share/doc/gnutls/AUTHORS
+%%PORTDOCS%%share/doc/gnutls/NEWS
+%%PORTDOCS%%share/doc/gnutls/README
+%%PORTDOCS%%share/doc/gnutls/THANKS
+%%PORTDOCS%%share/doc/gnutls/gnutls-logo.ps
+%%PORTDOCS%%share/doc/gnutls/gnutls.ps
+%%PORTDOCS%%@dirrm share/doc/gnutls
