@@ -9,8 +9,8 @@ PORTNAME=	emacs-dl
 PORTVERSION=	${EMACS_VER}
 PORTREVISION=	1
 CATEGORIES=	editors ipv6
-MASTER_SITES=	${MASTER_SITE_GNU} \
-		http://www.ainet.or.jp/~inoue/software/emacs-xim/
+MASTER_SITES=	http://www.ainet.or.jp/~inoue/software/emacs-xim/ \
+		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	emacs
 DISTNAME=	emacs-${EMACS_VER}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
