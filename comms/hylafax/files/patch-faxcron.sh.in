@@ -1,0 +1,11 @@
+--- util/faxcron.sh.in.ORIG	Sun Apr 15 05:38:55 2001
++++ util/faxcron.sh.in	Fri Dec 28 22:41:41 2001
+@@ -41,7 +41,7 @@
+ AGELOG=30			# keep log info for last 30 days
+ AGERCV=7			# purge received facsimile after 7 days
+ AGETMP=1			# purge orphaned temp files after 1 day
+-FAXUSER=fax			# owner of log files
++FAXUSER=@FAXUID@			# owner of log files
+ LOGMODE=0644			# mode for log files
+ XFERLOG=etc/xferfaxlog		# HylaFAX xferfaxlog file location
+ LAST=etc/lastrun		# file where time+date of last run recorded
