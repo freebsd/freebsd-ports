@@ -8,7 +8,7 @@
 
 DISTNAME=	jbigkit-1.1
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.informatik.uni-erlangen.de/pub/doc/ISO/JBIG/
+MASTER_SITES=	ftp://ftp.informatik.uni-erlangen.de/local/cip/mskuhn/ISO/JBIG/
 
 MAINTAINER=	mi@aldan.algebra.com
 
