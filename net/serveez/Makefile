@@ -24,6 +24,7 @@ LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 
 GUILE_CONFIG?=	${LOCALBASE}/bin/guile-config
 
+USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
@@ -34,11 +35,5 @@ MAN1=	serveez.1
 
 CPPFLAGS=	`${GUILE_CONFIG} compile`
 LDFLAGS=	`${GUILE_CONFIG} link`
-
-.if !exists(/usr/include/getopt.h)
-LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lgnugetopt
-.endif
 
 .include <bsd.port.mk>
