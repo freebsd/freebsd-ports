@@ -1,4 +1,4 @@
-# New ports collection makefile for:	flim-1.14.x for emacs20
+# New ports collection makefile for:	flim-1.14.x for emacs21
 # Date created:		9 May 1999
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 #
@@ -30,9 +30,13 @@ FLIM_LISPDIR=			${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}
 FLIM_VERSION_SPECIFIC_LISPDIR=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}
 
 .if (${PORTCLASS} == "master")
-# for emacs20
-EMACS_PORT_NAME=	emacs20
+EMACS_PORT_NAME=	emacs21
+DEPPORT_SUFFIX=	
+.else
+DEPPORT_SUFFIX=		-${EMACS_PORT_NAME}
 .endif
+
+EMACS_MASTERDIR_PKGFILES=YES
 
 # target name for make build
 ALL_TARGET?=	elc
@@ -47,16 +51,12 @@ MAKE_ARGS+=	PREFIX="${LOCALBASE}" \
 .if defined(EMACS_PORT_NAME)
 # depends on apel (case of xemacs-21.x or later)
 .if defined(EMACS_PACKAGESDIR)
-BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_PACKAGESDIR}/lisp/apel/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT_NAME}
-RUN_DEPENDS+=	${LOCALBASE}/${EMACS_PACKAGESDIR}/lisp/apel/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT_NAME}
-.elif (${EMACS_PORT_NAME} == "xemacs") || (${EMACS_PORT_NAME} == "xemacs20")
-# depends on apel (case of xemacs-20.x or former)
-BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT_NAME}
-RUN_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT_NAME}
+BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_PACKAGESDIR}/lisp/apel/emu.el:${PORTSDIR}/editors/apel${DEPPORT_SUFFIX}
+RUN_DEPENDS+=	${LOCALBASE}/${EMACS_PACKAGESDIR}/lisp/apel/emu.el:${PORTSDIR}/editors/apel${DEPPORT_SUFFIX}
 .else
-# depends on apel (case of other emacsen etc...)
-BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT_NAME}
-RUN_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT_NAME}
+# depends on apel (case of gnu emacsen etc...)
+BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/emu/emu.el:${PORTSDIR}/editors/apel${DEPPORT_SUFFIX}
+RUN_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/emu/emu.el:${PORTSDIR}/editors/apel${DEPPORT_SUFFIX}
 .endif
 .else
 .BEGIN:
