@@ -316,6 +316,7 @@
     SUBDIR += p5-Cdk
     SUBDIR += p5-Class-Contract
     SUBDIR += p5-Class-Date
+    SUBDIR += p5-Class-Delegation
     SUBDIR += p5-Class-Loader
     SUBDIR += p5-Class-MethodMaker
     SUBDIR += p5-Class-Singleton

@@ -1,0 +1,13 @@
+The Class::Delegation module simplifies the creation of delegation-based
+class hierarchies, allowing a method to be redispatched:
+	* to a single nominated attribute,
+	* to a collection of nominated attributes in parallel, or
+	* to any attribute that can handle the message.
+
+These three delegation mechanisms can be specified for:
+	* a single method
+	* a set of nominated methods collectively
+	* any as-yet-undelegated methods
+	* all methods, delegated or not.
+
+WWW: http://search.cpan.org/search?dist=Class-Delegation
