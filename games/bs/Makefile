@@ -8,7 +8,7 @@
 PORTNAME=	bs
 PORTVERSION=	2.2
 CATEGORIES=	games
-MASTER_SITES=	http://www.tuxedo.org/~esr/
+MASTER_SITES=	http://www.tuxedo.org/~esr/bs/
 
 MAINTAINER=	ports@FreeBSD.org
 
