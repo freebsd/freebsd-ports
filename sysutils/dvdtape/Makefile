@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dvdtape
-PORTVERSION=	1.5
-PORTREVISION=	1
+PORTVERSION=	1.6
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.Awfulhak.org/pub/dvdtape/ \
 		http://people.FreeBSD.org/~brian/dvdtape/ \
