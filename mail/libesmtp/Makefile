@@ -6,27 +6,34 @@
 
 PORTNAME=	libesmtp
 PORTVERSION=	0.8.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.stafford.uklinux.net/libesmtp/ \
-		http://www.theochem.kth.se/~pawsa/balsa/ \
-		http://www.tobez.org/download/port-mirrors/mail/libesmtp/
+		http://www.tobez.org/download/port-mirrors/mail/libesmtp/ \
+		http://www.borgsdemons.com/distfiles/
 
 MAINTAINER=	jmcoopr@webmail.bmi.net
-
-LIB_DEPENDS=	ltdl.1:${PORTSDIR}/devel/libtool
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 USE_AUTOCONF=	yes
+USE_LIBTOOL=	yes
+LIBTOOLFILES=	${WRKSRC}/aclocal.m4 ${WRKSRC}/libltdl/aclocal.m4
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
+		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
-# require-all-recipients is required for Balsa-1.1.7
-CONFIGURE_ARGS=	--enable-require-all-recipients --enable-starttls
+# require-all-recipients is required for Balsa-1.2.x
+CONFIGURE_ARGS=	--enable-require-all-recipients \
+		--enable-etrn \
+		--disable-ltdl-install
+
+pre-patch:
+	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure.in
+
+pre-build:
+	@${CP} ${WRKSRC}/libltdl/libtool ${WRKSRC}/libtool
 
 post-install:
 .ifndef(NOPORTDOCS)
