@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- abstractTable.cpp.orig	Fri Feb 21 03:09:19 2003
-+++ abstractTable.cpp	Fri Feb 21 03:09:34 2003
-@@ -18,15 +18,15 @@
+--- abstractTable.cpp.orig	Wed Oct 10 05:24:26 2001
++++ abstractTable.cpp	Sat Aug 16 16:13:04 2003
+@@ -18,15 +18,16 @@
   * Boston, MA 02111-1307, USA.
   *
   */
@@ -13,6 +10,7 @@ $FreeBSD$
  #include "abstractTable.h"
  #include "safe_ostrstream.h"
  #include "util.h"
++#include <cassert>
  #include <stdio.h>
  
  //#define DEBUG 1
