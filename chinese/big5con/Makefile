@@ -3,7 +3,7 @@
 # Date created:		07 Jan 1997
 # Whom:			Hung-Chi Chu <hcchu@r350.ee.ntu.edu.tw>
 #
-# $Id: Makefile,v 1.3 1997/07/21 19:21:01 max Exp $
+# $Id: Makefile,v 1.4 1997/09/22 17:48:21 max Exp $
 #
 # This port is adapted from japanese/kon
 #
@@ -15,7 +15,14 @@ CATEGORIES=	chinese
 # fonts are only in the other two directories
 MASTER_SITES=	ftp://ftp.iij.ad.jp/pub/linux-j/JE-sources/JE/ \
 		ftp://nctuccca.edu.tw/Chinese/ifcss/software/fonts/misc/bdf/ \
-		ftp://nctuccca.edu.tw/Chinese/ifcss/software/fonts/big5/bdf/
+		ftp://nctuccca.edu.tw/Chinese/ifcss/software/fonts/big5/bdf/ \
+		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/fonts/misc/bdf/ \
+		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/fonts/big5/bdf/ \
+		ftp://ftp.edu.tw/Chinese/ifcss/software/fonts/misc/bdf/ \
+		ftp://ftp.edu.tw/Chinese/ifcss/software/fonts/big5/bdf/ \
+		ftp://ftp.mpi-sb.mpg.de/pub/chinese/mirror/ftp.ifcss.org/software/fonts/misc/bdf/ \
+		ftp://ftp.mpi-sb.mpg.de/pub/chinese/mirror/ftp.ifcss.org/software/fonts/big5/bdf/
+
 DISTFILES=	kon-0.99.4e.tgz 8x16.bdf.gz taipei16.bdf.gz
 
 MAINTAINER=	hcchu@r350.ee.ntu.edu.tw
