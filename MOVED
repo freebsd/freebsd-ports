@@ -357,3 +357,4 @@ x11-servers/XttXF98srv-WABS||2003-05-23|obsoleted by x11-servers/XFree86-4-Serve
 x11-servers/XttXF98srv-WSNA||2003-05-23|obsoleted by x11-servers/XFree86-4-Server
 www/phoenix|www/mozilla-firebird|2003-06-02|project changed names
 x11/gswitchit_applet||2003-06-02|replaced by GNOME 2 version in x11/gswitchit
+audio/agsatellite|net/linux-agsatellite|2003-06-02|accurate category and name
