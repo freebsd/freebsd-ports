@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xbms
-PORTVERSION=	0.30.5
+PORTVERSION=	0.30.6
 CATEGORIES=	net
 MASTER_SITES=	http://wipux2.wifo.uni-mannheim.de/~ck/
 DISTNAME=       ${PORTNAME}_${PORTVERSION}
