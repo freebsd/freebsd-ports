@@ -11,7 +11,7 @@ PORTVERSION=	1.4.1
 CATEGORIES=	x11
 MASTER_SITES=	http://hocwp.free.fr/xbindkeys/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	obraun@informatik.unibw-muenchen.de
 
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
