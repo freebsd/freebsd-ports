@@ -1,7 +1,8 @@
-# $Id: Makefile,v 1.1.1.1 1998/08/07 22:08:20 asami Exp $
+# $Id: Makefile,v 1.2 1998/09/06 07:47:53 vanilla Exp $
 #
 
     SUBDIR += asclock
+    SUBDIR += astime
     SUBDIR += bclock
     SUBDIR += dclock
     SUBDIR += emiclock
