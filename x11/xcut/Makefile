@@ -10,7 +10,7 @@ PORTVERSION=	0.2
 CATEGORIES=	x11
 MASTER_SITES=	http://acsys.anu.edu.au/~tpot/xcut/
 
-MAINTAINER=	Cy.Schubert@uumail.gov.bc.ca
+MAINTAINER=	cy@FreeBSD.org
 
 USE_IMAKE=	YES
 MAN1=		xcut.1
