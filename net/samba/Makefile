@@ -3,11 +3,11 @@
 # Date created:				11th Feb 1995
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.37 1999/06/29 05:44:21 cpiazza Exp $
+# $Id: Makefile,v 1.38 1999/07/12 08:44:04 hosokawa Exp $
 #
 
-DISTNAME=	samba-2.0.4b
-PKGNAME=	samba-2.0.4
+DISTNAME=	samba-2.0.5a
+PKGNAME=	samba-2.0.5
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.samba.org/pub/samba/ \
 		ftp://ring.asahi-net.or.jp/pub/net/samba/ \
