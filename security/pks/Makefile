@@ -17,7 +17,7 @@ PATCHFILES=	pks094-patch2 \
 		x509patch
 PATCH_DIST_STRIP=-p1
 
-MAINTAINER=	kris@FreeBSD.org
+MAINTAINER=	jharris@widomaker.com
 
 LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db
 
