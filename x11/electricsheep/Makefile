@@ -1,0 +1,40 @@
+# New ports collection makefile for:	electricsheep
+# Date created:				11 Feb 2002
+# Whom:					David Yeske <dyeske@yahoo.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	electricsheep
+PORTVERSION=	2.1
+CATEGORIES=	x11
+MASTER_SITES=	http://www-2.cs.cmu.edu/~spot/cache/
+
+MAINTAINER=	dyeske@yahoo.com
+
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
+RUN_DEPENDS=	xloadimage:${PORTSDIR}/x11/xloadimage \
+		xsetbg:${PORTSDIR}/graphics/xli \
+		curl:${PORTSDIR}/ftp/curl
+
+USE_X_PREFIX=	yes
+GNU_CONFIGURE=	yes
+
+pre-patch:
+	@${PERL} -pi -e 's|/usr/include/X11|${X11BASE}/include|g; \
+		s|/usr/lib/libjpeg.so.62|${LOCALBASE}/lib/libjpeg.so|g;' \
+		${WRKSRC}/video_out/Makefile
+
+post-patch:
+	@${PERL} -pi -e 's|/usr/local/share|${PREFIX}/share/electricsheep|g;' \
+		${WRKSRC}/electricsheep.c
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/electricsheep ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/flame/anim-flame ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/flame/pick-flame ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/video_out/mpeg_play ${PREFIX}/bin/mpeg-loop
+	${INSTALL} -d -m 0755 ${PREFIX}/share/electricsheep
+	${INSTALL_DATA} ${WRKSRC}/*.tif ${PREFIX}/share/electricsheep
+
+.include <bsd.port.mk>
