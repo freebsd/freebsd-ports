@@ -3,20 +3,20 @@
 # Date created:		22 Jun 1998
 # Whom:                 sada
 #
-# $Id: Makefile,v 1.1.1.1 1998/10/09 04:09:45 asami Exp $
+# $Id: Makefile,v 1.2 1998/11/16 20:10:30 sada Exp $
 #
 
 DISTNAME=	ja-netscape-fonts-1.0
 CATEGORIES=	japanese www x11-fonts
 DISTFILES=	# empty
 
-MAINTAINER=	sada@e-mail.ne.jp
+MAINTAINER=	sada@freebsd.org
 
 RUN_DEPENDS= \
-	${PREFIX}/lib/X11/fonts/local/jpnhn4-iso.pcf.gz:${PORTSDIR}/japanese/elisa8x8 \
-	${PREFIX}/lib/X11/fonts/local/5x10B.pcf.Z:${PORTSDIR}/japanese/k10 \
+	${PREFIX}/lib/X11/fonts/misc/jpnhn4-iso.pcf.gz:${PORTSDIR}/japanese/elisa8x8 \
+	${PREFIX}/lib/X11/fonts/misc/5x10B.pcf.Z:${PORTSDIR}/japanese/k10 \
 	${PREFIX}/lib/X11/k12:${PORTSDIR}/japanese/k12 \
-	${PREFIX}/lib/X11/fonts/local/k20b.pcf.Z:${PORTSDIR}/japanese/kappa20
+	${PREFIX}/lib/X11/fonts/misc/k20b.pcf.Z:${PORTSDIR}/japanese/kappa20
 
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
