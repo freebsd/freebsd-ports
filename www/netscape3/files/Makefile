@@ -4,7 +4,7 @@ LIBDIR=		/usr/local/lib/netscape
 BINDIR=		${PREFIX}/bin
 NLSDIR=		${X11BASE}/lib/X11/nls
 
-FILES=          LICENSE README Netscape.ad java_301 movemail
+FILES=          LICENSE README Netscape.ad java_301
 
 all:
 	@true
@@ -15,7 +15,7 @@ install:
 	install -c -m ${BINMODE} -o ${BINOWN} -g ${BINGRP} \
 		netscape ${BINDIR}
 	install -c -m ${BINMODE} -o ${BINOWN} -g ${BINGRP} \
-		netscape.bin ${LIBDIR}
+		movemail netscape.bin ${LIBDIR}
 	install -c -m 644 -o ${BINOWN} -g ${BINGRP} \
 		${FILES} ${LIBDIR}
 	if [ ! -f ${LIBDIR}/mailcap ] ; then \
