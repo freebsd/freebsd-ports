@@ -3,7 +3,7 @@
 # Date created:		22 November 1994
 # Whom:			Satoshi Asami (asami)
 #
-# $Id: Makefile,v 1.22 1995/08/08 10:04:43 asami Exp $
+# $Id: Makefile,v 1.23 1996/08/16 09:43:51 asami Exp $
 #
 
 DISTNAME=	mule-2.3
@@ -22,7 +22,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=        i386--freebsd --with-x-toolkit \
 		--canna --canna-libraries=/usr/local/lib \
-		--canna-includes=/usr/local/canna/include --terminal-face \
+		--canna-includes=/usr/local/include --terminal-face \
 		--locallisppath=${PREFIX}/lib/mule/site-lisp:${PREFIX}/share/emacs/site-lisp
 STRIP=
 
