@@ -3,7 +3,7 @@
 # Date created:		Sa  12 Okt 1996 19:20:51 MET DST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.26 1999/02/05 14:55:31 dirk Exp $
+# $Id: Makefile,v 1.27 1999/03/15 09:27:25 dirk Exp $
 #
 
 DISTNAME=	lyx-1.0.1
@@ -35,7 +35,7 @@ MAN1=		lyx.1 reLyX.1
 
 pre-fetch:
 .if !defined(WITH_ISPELL)
-	@${ECHO_MSG} "if you want this port build with spell checker type"
+	@${ECHO_MSG} "If you want this port built with spell checker support, use"
 	@${ECHO_MSG} "make WITH_ISPELL=yes"
 .endif
 
