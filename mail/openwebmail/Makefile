@@ -45,7 +45,7 @@ _CUSTOMIZED=	yes
 .endif
 
 .if defined(WITH_ZLIB)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Compress/ZLIB.pm:${PORTSDIR}/archivers/p5-Compress-ZLIB
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib
 _CUSTOMIZED=	yes
 .endif
 
