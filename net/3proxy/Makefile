@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	3proxy
-PORTVERSION=	0.4.3b
+PORTVERSION=	0.4.5b
 CATEGORIES=	net
 MASTER_SITES=	http://www.security.nnov.ru/soft/3proxy/${PORTVERSION}/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	tim@relay.nnn.tstu.ru
+MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Proxy servers set (support HTTP(S), FTP, SOCKS, POP3, TCP & UDP)
 
 NO_WRKSUBDIR=	yes
