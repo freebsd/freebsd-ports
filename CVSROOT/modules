@@ -4246,6 +4246,7 @@ ksh93		ports/shells/ksh93
 kshowmail	ports/mail/kshowmail
 ksig		ports/misc/ksig
 kslide		ports/games/kslide
+ksmoothdock	ports/deskutils/ksmoothdock
 ksmp3play	ports/audio/ksmp3play
 kssh		ports/security/kssh
 kst		ports/science/kst
