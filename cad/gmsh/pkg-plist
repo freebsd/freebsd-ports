@@ -21,6 +21,8 @@ bin/mshsort
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/anim-seq.script
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/antenna.geo
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/antenna.i1
+%%PORTDOCS%%%%EXAMPLESDIR%%/demos/cube.geo
+%%PORTDOCS%%%%EXAMPLESDIR%%/demos/sphere.geo
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/filter.geo
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/isosurf.scp
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/lowmem-anim.geo
