@@ -1,0 +1,22 @@
+DRVDIR=./drivers
+
+LIBS=-L/usr/X11R6/lib -lX11 -lm
+XINCL=-I/usr/X11R6/include
+
+CFLAGS+= $(XINCL) -DPGDISP 
+.PATH: . ./pgdispd
+
+PGDISP_ROUTINES= cleanup.o pgdisp.o figcurs.o getdata.o getvisuals.o handlexevent.o proccom.o resdb.o exposelgwin.o getcolors.o initlgluts.o initlgwin.o initlock.o initwmattr.o mainloop.o resizelgwin.o returnbuf.o waitevent.o updatelgtitle.o
+
+
+all: grfont.dat pgxwin_server pgdisp
+
+grfont.dat: fonts/grfont.txt fonts/pgpack.f
+	f77 -o pgpack fonts/pgpack.f
+	./pgpack <fonts/grfont.txt
+
+pgxwin_server: $(DRVDIR)/pgxwin_server.c
+	$(CC) $(CFLAGS) -o pgxwin_server $(DRVDIR)/pgxwin_server.c $(LIBS)
+
+pgdisp: $(PGDISP_ROUTINES)
+	$(CC) $(CFLAGS) -o pgdisp $(PGDISP_ROUTINES) $(LIBS)
