@@ -7,27 +7,26 @@
 #
 
 PORTNAME=	R
-PORTVERSION=	1.9.1
+PORTVERSION=	2.0.0
 CATEGORIES=	math lang
-MASTER_SITES=	http://cran.r-project.org/src/base/ \
-		ftp://cran.r-project.org/pub/R/src/base/ \
-		http://cran.at.r-project.org/src/base/ \
-		http://cran.au.r-project.org/src/base/ \
-		http://cran.br.r-project.org/src/base/ \
-		http://cran.ch.r-project.org/src/base/ \
-		http://cran.es.r-project.org/src/base/ \
-		http://cran.dk.r-project.org/src/base/ \
-		http://cran.hu.r-project.org/src/base/ \
-		http://cran.uk.r-project.org/src/base/ \
-		http://cran.us.r-project.org/src/base/ \
-		http://cran.za.r-project.org/src/base/ \
-		ftp://ftp.u-aizu.ac.jp/pub/lang/R/CRAN/src/base/ \
-		http://lib.stat.cmu.edu/R/CRAN/src/base/ \
-		http://cran.stat.ucla.edu/src/base/ \
-		http://probability.ca/cran/src/base/ \
-		http://www.ibiblio.org/pub/languages/R/CRAN/src/base/ \
-		http://www.bioconductor.org/CRAN/src/base/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
+		ftp://cran.r-project.org/pub/R/src/base/R-2/ \
+		http://cran.at.r-project.org/src/base/R-2/ \
+		http://cran.au.r-project.org/src/base/R-2/ \
+		http://cran.br.r-project.org/src/base/R-2/ \
+		http://cran.ch.r-project.org/src/base/R-2/ \
+		http://cran.es.r-project.org/src/base/R-2/ \
+		http://cran.dk.r-project.org/src/base/R-2/ \
+		http://cran.hu.r-project.org/src/base/R-2/ \
+		http://cran.uk.r-project.org/src/base/R-2/ \
+		http://cran.us.r-project.org/src/base/R-2/ \
+		http://cran.za.r-project.org/src/base/R-2/ \
+		ftp://ftp.u-aizu.ac.jp/pub/lang/R/CRAN/src/base/R-2/ \
+		http://lib.stat.cmu.edu/R/CRAN/src/base/R-2/ \
+		http://cran.stat.ucla.edu/src/base/R-2/ \
+		http://probability.ca/cran/src/base/R-2/ \
+		http://www.ibiblio.org/pub/languages/R/CRAN/src/base/R-2/ \
+		http://www.bioconductor.org/CRAN/src/base/R-2/
 
 MAINTAINER=	vangyzen@stat.duke.edu
 COMMENT=	A language for statistical computing and graphics
@@ -55,12 +54,6 @@ CONFIGURE_ENV=	FFLAGS="${FFLAGS}" \
 		INSTALL_DATA="${INSTALL} ${COPY} ${_SHROWNGRP} -m 644"
 CONFIGURE_ARGS+=--enable-R-shlib --with-bzlib --with-pcre --with-zlib
 
-# NB: R requires zlib 1.2.1, but the system zlib is currently
-# only 1.1.4.  Thus, R compiles its own bundled version of zlib
-# despite configuring with --with-zlib.
-
-.include <bsd.port.pre.mk>
-
 pre-fetch:
 .if !defined(PAPERSIZE)
 	@${ECHO}
@@ -75,15 +68,9 @@ pre-fetch:
 CONFIGURE_ENV+=	R_PAPERSIZE=${PAPERSIZE}
 .endif
 
-# Build the four documentation formats sequentially (instead of simultaneously)
-# to prevent perl 5.8 from using too much memory (> 512 MB) and being killed.
-.if ${PERL_LEVEL} >= 500800
-ALL_TARGET=	Makefile Makeconf R help html latex examples docs stamp-recommended
-.endif
-
 test check: build
 	@(cd ${WRKSRC}; ${MAKE} check)
 check-all: build
 	@(cd ${WRKSRC}; ${MAKE} check-all)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
