@@ -15,14 +15,11 @@ MASTER_SITE_SUBDIR=	tilp
 MAINTAINER=	tijl@ulyssis.org
 COMMENT=	TI calculator library
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	ticables.10:${PORTSDIR}/comms/libticables \
 		tifiles.5:${PORTSDIR}/devel/libtifiles
 
 USE_GETTEXT=	yes
-USE_GNOME=	glib20
-USE_AUTOMAKE_VER=	15
+USE_GNOME=	glib20 pkgconfig
 GNU_CONFIGURE=	yes
 USE_LIBTOOL_VER=	13
 USE_GMAKE=	yes
