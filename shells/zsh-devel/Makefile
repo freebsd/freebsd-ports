@@ -5,6 +5,9 @@
 # $FreeBSD$
 #
 
+DEPRECATED=	"Zsh development version is deprecated."
+IGNORE=		"Zsh development version is deprecated."
+
 # The following compile-time options are available:
 # NOSHARED=yes		compile a static version of zsh
 #			(default: use dynamically loadable modules)
