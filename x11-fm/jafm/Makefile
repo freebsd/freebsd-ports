@@ -3,16 +3,16 @@
 # Date created:                31 August 1998
 # Whom:                        brett@peloton.physics.montana.edu
 #
-# $Id: Makefile,v 1.2 1998/08/15 08:06:09 asami Exp $
+# $Id: Makefile,v 1.3 1998/08/15 08:11:17 asami Exp $
 #
 
 DISTNAME=	jafm-0.5
 CATEGORIES=	x11-fm
-MASTER_SITES=	http://www-personal.usyd.edu.au:/~rlittlew/jafm/
+MASTER_SITES=	http://www-personal.usyd.edu.au:/~rlittlew/jafm/ \
+		${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	X11/desktop
 
 MAINTAINER=	brett@peloton.physics.montana.edu
-
-BROKEN=		fetch
 
 USE_QT=		yes
 USE_GMAKE=	yes
