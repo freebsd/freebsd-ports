@@ -9,5 +9,7 @@ such as the "Creative Puzzle Ball", "Meffert's Challenge", and Disney's
 By building from the source and editing its Imakefile before the
 ``build'' phase, you may be able to use Motif or LessTif with this port.
 
+WWW: http://www.tux.org/~bagleyd/puzzles.html
+
 - Andrey Zakhvatov
 andy@icc.surw.chel.su
