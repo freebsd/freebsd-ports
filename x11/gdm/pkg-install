@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if [ "$2" = "POST-INSTALL" -o -n "${PACKAGE_BUILDING}" ]; then
+  exit 0
+fi
+
+/usr/bin/dialog --yesno "GDM may contain vulnerabilities leading local root compromise, and it is reported widely with various serurity sites and groups. It is not recommended that this port be installed in public enviroment. Do you wish to accept the serurity risk and build GDM anyway?" 10 60 || /usr/bin/false
