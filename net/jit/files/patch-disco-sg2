@@ -1,0 +1,243 @@
+diff -ru jabber.orig/lib/lib.h jabberd/lib/lib.h
+--- jabber.orig/lib/lib.h	2003-05-30 16:10:24.000000000 +0400
++++ jabberd/lib/lib.h	2003-12-11 22:48:04.000000000 +0300
+@@ -654,6 +654,9 @@
+ #define NS_XDBGINSERT "jabber:xdb:ginsert"
+ #define NS_XDBNSLIST  "jabber:xdb:nslist"
+ 
++#define NS_DISCO_INFO  "http://jabber.org/protocol/disco#info"
++#define NS_DISCO_ITEMS "http://jabber.org/protocol/disco#items"
++
+ 
+ /* --------------------------------------------------------- */
+ /*                                                           */
+diff -ru jit.orig/jit/icqtransport.h jit/jit/icqtransport.h
+--- jit.orig/jit/icqtransport.h	2003-06-02 14:06:51.000000000 +0400
++++ jit/jit/icqtransport.h	2003-12-12 13:14:40.000000000 +0300
+@@ -20,7 +20,7 @@
+ #include "utils/english.h"
+ #endif
+ 
+-#define MOD_VERSION "1.1.6"
++#define MOD_VERSION "1.1.6-sg2"
+ #define DEFAULT_CHARSET "iso-8859-1"
+ 
+ typedef unsigned long UIN_t;
+@@ -290,6 +290,10 @@
+ void it_iq_gateway_set(session s, jpacket jp);
+ void it_iq_browse_server(iti ti, jpacket jp);
+ void it_iq_browse_user(session s, jpacket jp);
++void it_iq_disco_info_server(iti ti, jpacket jp);
++void it_iq_disco_info_user(session s, jpacket jp);
++void it_iq_disco_items_server(iti ti, jpacket jp);
++void it_iq_disco_items_user(session s, jpacket jp);
+ 
+ 
+ void it_save_contacts(session s);
+diff -ru jit.orig/jit/iq.c jit/jit/iq.c
+--- jit.orig/jit/iq.c	2003-04-29 15:03:53.000000000 +0400
++++ jit/jit/iq.c	2003-12-11 22:48:04.000000000 +0300
+@@ -29,6 +29,10 @@
+ void it_iq_gateway_set(session s, jpacket jp);
+ void it_iq_browse_server(iti ti, jpacket jp);
+ void it_iq_browse_user(session s, jpacket jp);
++void it_iq_disco_info_server(iti ti, jpacket jp);
++void it_iq_disco_info_user(session s, jpacket jp);
++void it_iq_disco_items_server(iti ti, jpacket jp);
++void it_iq_disco_items_user(session s, jpacket jp);
+ 
+ void SendSearchUINRequest(session s,UIN_t uin);
+ void SendSearchUsersRequest(session s, 
+@@ -73,6 +77,10 @@
+           it_iq_gateway_get(s,jp);
+         else if (j_strcmp(ns,NS_BROWSE) == 0)
+           jp->to->user ? it_iq_browse_user(s,jp) : it_iq_browse_server(s->ti,jp);    
++        else if (j_strcmp(ns,NS_DISCO_INFO) == 0)
++          jp->to->user ? it_iq_disco_info_user(s,jp) : it_iq_disco_info_server(s->ti,jp);    
++        else if (j_strcmp(ns,NS_DISCO_ITEMS) == 0)
++          jp->to->user ? it_iq_disco_items_user(s,jp) : it_iq_disco_items_server(s->ti,jp);    
+         else if (j_strcmp(ns,NS_VCARD) == 0)
+           jp->to->user ? it_iq_vcard(s,jp) : it_iq_vcard_server(s->ti,jp);
+         else if (j_strcmp(ns,NS_LAST) == 0)
+@@ -503,6 +511,8 @@
+     xmlnode_insert_cdata(xmlnode_insert_tag(q,"ns"),NS_REGISTER,-1);
+     xmlnode_insert_cdata(xmlnode_insert_tag(q,"ns"),NS_SEARCH,-1);
+     xmlnode_insert_cdata(xmlnode_insert_tag(q,"ns"),NS_GATEWAY,-1);
++    xmlnode_insert_cdata(xmlnode_insert_tag(q,"ns"),NS_DISCO_INFO,-1);
++    xmlnode_insert_cdata(xmlnode_insert_tag(q,"ns"),NS_DISCO_ITEMS,-1);
+ 
+     it_deliver(ti,jp->x);
+ }
+@@ -538,6 +548,131 @@
+     it_deliver(s->ti,jp->x);
+ }
+ 
++/** Service Discovery support (JEP-0030) */
++/** Info */
++
++void it_iq_disco_info_server(iti ti, jpacket jp)
++{
++    xmlnode q, x;
++
++    if(xmlnode_get_attrib(xmlnode_get_tag(jp->x, "query"),"node") != NULL)
++    {
++	jutil_error(jp->x,TERROR_NOTALLOWED);
++	it_deliver(ti,jp->x);
++	return;
++    }
++
++    q = xmlnode_insert_tag(jutil_iqresult(jp->x),"query");
++    xmlnode_put_attrib(q,"xmlns",NS_DISCO_INFO);
++
++    x = xmlnode_insert_tag(q,"identity");
++    xmlnode_put_attrib(x,"category","gateway");
++    xmlnode_put_attrib(x,"type","icq");
++    xmlnode_put_attrib(x,"name",xmlnode_get_tag_data(ti->vcard,"FN"));
++
++    xmlnode_put_attrib(xmlnode_insert_tag(q,"feature"),"var",NS_REGISTER);
++    xmlnode_put_attrib(xmlnode_insert_tag(q,"feature"),"var",NS_SEARCH);
++    xmlnode_put_attrib(xmlnode_insert_tag(q,"feature"),"var",NS_VERSION);
++    xmlnode_put_attrib(xmlnode_insert_tag(q,"feature"),"var",NS_TIME);
++    xmlnode_put_attrib(xmlnode_insert_tag(q,"feature"),"var",NS_LAST);
++
++    it_deliver(ti,jp->x);
++}
++
++void it_iq_disco_info_user(session s, jpacket jp)
++{
++    xmlnode q, x;
++
++    if (s->type == stype_register)
++    {
++      queue_elem queue;
++
++      queue = pmalloco(jp->p,sizeof(_queue_elem));
++      queue->elem = (void *)jp;
++      
++      QUEUE_PUT(s->queue,s->queue_last,queue);
++      return;
++    }
++
++    if (it_jid2uin(jp->from) == 0)
++    {
++        jutil_error(jp->x,TERROR_BAD);
++        it_deliver(s->ti,jp->x);
++        return;
++    }
++
++    if(xmlnode_get_attrib(xmlnode_get_tag(jp->x, "query"),"node") != NULL)
++    {
++        jutil_error(jp->x,TERROR_NOTALLOWED);
++        it_deliver(s->ti,jp->x);
++        return;
++    }
++
++    q = xmlnode_insert_tag(jutil_iqresult(jp->x),"query");
++    xmlnode_put_attrib(q,"xmlns",NS_DISCO_INFO);
++    x = xmlnode_insert_tag(q,"identity");
++    xmlnode_put_attrib(x,"category","user");
++    xmlnode_put_attrib(x,"type","client");
++    xmlnode_put_attrib(x,"name", jp->to->user);
++
++    it_deliver(s->ti,jp->x);
++}
++
++/** Service Discovery support (JEP-0030) */
++/** Items */
++
++void it_iq_disco_items_server(iti ti, jpacket jp)
++{
++    xmlnode q;
++
++    if(xmlnode_get_attrib(xmlnode_get_tag(jp->x, "query"),"node") != NULL)
++    {
++	jutil_error(jp->x,TERROR_NOTALLOWED);
++	it_deliver(ti,jp->x);
++	return;
++    }
++
++    q = xmlnode_insert_tag(jutil_iqresult(jp->x),"query");
++    xmlnode_put_attrib(q,"xmlns",NS_DISCO_ITEMS);
++
++    it_deliver(ti,jp->x);
++}
++
++void it_iq_disco_items_user(session s, jpacket jp)
++{
++    xmlnode q;
++
++    if (s->type == stype_register)
++    {
++      queue_elem queue;
++
++      queue = pmalloco(jp->p,sizeof(_queue_elem));
++      queue->elem = (void *)jp;
++      
++      QUEUE_PUT(s->queue,s->queue_last,queue);
++      return;
++    }
++
++    if (it_jid2uin(jp->from) == 0)
++    {
++        jutil_error(jp->x,TERROR_BAD);
++        it_deliver(s->ti,jp->x);
++        return;
++    }
++
++    if(xmlnode_get_attrib(xmlnode_get_tag(jp->x, "query"),"node") != NULL)
++    {
++        jutil_error(jp->x,TERROR_NOTALLOWED);
++        it_deliver(s->ti,jp->x);
++        return;
++    }
++
++    q = xmlnode_insert_tag(jutil_iqresult(jp->x),"query");
++    xmlnode_put_attrib(q,"xmlns",NS_DISCO_ITEMS);
++
++    it_deliver(s->ti,jp->x);
++}
++
+ /** Send reply to a version inquiry to Jabber */
+ void it_iq_version(iti ti, jpacket jp)
+ {
+diff -ru jit.orig/jit/session.c jit/jit/session.c
+--- jit.orig/jit/session.c	2003-05-12 15:07:53.000000000 +0400
++++ jit/jit/session.c	2003-12-12 12:59:30.000000000 +0300
+@@ -429,6 +429,11 @@
+          time(NULL)-s->start_time);
+     }
+     
++    if ((s->ti->own_roster)&&(s->roster_changed)) {
++	it_save_contacts(s);
++	s->roster_changed = 0;
++    }
++
+     /* remove from hash */
+ 	SEM_LOCK(s->ti->sessions_sem);
+     wpxhash_zap(s->ti->sessions,jid_full(s->id));
+@@ -468,6 +473,11 @@
+   else 
+     it_session_regerr(s,e);
+ 
++    if ((s->ti->own_roster)&&(s->roster_changed)) {
++	it_save_contacts(s);
++	s->roster_changed = 0;
++    }
++
+   /* remove from hash */
+   SEM_LOCK(s->ti->sessions_sem);
+   wpxhash_zap(s->ti->sessions,jid_full(s->id));
+diff -ru jit.orig/jit/unknown.c jit/jit/unknown.c
+--- jit.orig/jit/unknown.c	2003-04-29 14:19:42.000000000 +0400
++++ jit/jit/unknown.c	2003-12-11 22:48:04.000000000 +0300
+@@ -84,6 +84,10 @@
+ 		}
+ 		else if (j_strcmp(ns,NS_BROWSE) == 0)
+             it_iq_browse_server(ti,jp);
++	else if (j_strcmp(ns,NS_DISCO_INFO) == 0)
++            it_iq_disco_info_server(ti,jp);
++	else if (j_strcmp(ns,NS_DISCO_ITEMS) == 0)
++            it_iq_disco_items_server(ti,jp);
+         else if (j_strcmp(ns,NS_VERSION) == 0)
+             it_iq_version(ti,jp);
+         else if (j_strcmp(ns,NS_TIME) == 0)

@@ -245,6 +245,7 @@
     SUBDIR += java-beepcore
     SUBDIR += javadc
     SUBDIR += jffnms
+    SUBDIR += jit
     SUBDIR += jumpgate
     SUBDIR += jwhois
     SUBDIR += kdenetwork3

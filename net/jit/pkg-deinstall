@@ -1,0 +1,19 @@
+#!/bin/sh
+
+if [ "$2" != "POST-DEINSTALL" ]; then
+    exit 0
+fi
+
+USER=jabber
+
+if pw usershow "${USER}" 2>/dev/null 1>&2; then
+	echo "To delete Jabber user permanently, use 'pw userdel ${USER}'"
+fi
+
+if pw groupshow "${USER}" 2>/dev/null 1>&2; then
+	echo "To delete Jabber group permanently, use 'pw groupdel ${USER}'"
+fi
+
+echo "If you wish to delete jit data files, remove '/var/spool/jit' directory."
+
+exit 0
