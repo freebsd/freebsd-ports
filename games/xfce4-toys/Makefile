@@ -18,7 +18,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Toys for the XFce 4 panel
 
 BUILD_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
-LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
+LIB_DEPENDS=	xfcegui4.1:${PORTSDIR}/x11-toolkits/libxfce4gui \
+		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 
 USE_GNOME=	gtk20
