@@ -1,1 +1,4 @@
 bin/stegdetect
+bin/stegbreak
+share/stegbreak/rules.ini
+@dirrm share/stegbreak
