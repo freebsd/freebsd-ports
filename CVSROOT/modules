@@ -6957,7 +6957,7 @@ p5-Filesys-Statvfs_Df	ports/devel/p5-Filesys-Statvfs_Df
 p5-Filesys-Virtual	ports/devel/p5-Filesys-Virtual
 p5-Filesys-Virtual-DAAP	ports/audio/p5-Filesys-Virtual-DAAP
 p5-Filter	ports/devel/p5-Filter
-p5-Filter-CBC	ports/devel/p5-Filter-CBC
+p5-Filter-CBC	ports/security/p5-Filter-CBC
 p5-Filter-Crypto	ports/security/p5-Filter-Crypto
 p5-Filter-Simple	ports/textproc/p5-Filter-Simple
 p5-Finance-Currency-Convert	ports/finance/p5-Finance-Currency-Convert
@@ -7409,12 +7409,12 @@ p5-POE-API-Peek	ports/devel/p5-POE-API-Peek
 p5-POE-Component-Child	ports/devel/p5-POE-Component-Child
 p5-POE-Component-Client-DNS	ports/dns/p5-POE-Component-Client-DNS
 p5-POE-Component-Client-FTP	ports/ftp/p5-POE-Component-Client-FTP
-p5-POE-Component-Client-HTTP	ports/devel/p5-POE-Component-Client-HTTP
+p5-POE-Component-Client-HTTP	ports/www/p5-POE-Component-Client-HTTP
 p5-POE-Component-Client-NNTP	ports/news/p5-POE-Component-Client-NNTP
-p5-POE-Component-Client-POP3	ports/devel/p5-POE-Component-Client-POP3
-p5-POE-Component-Client-Ping	ports/devel/p5-POE-Component-Client-Ping
-p5-POE-Component-Client-UserAgent	ports/devel/p5-POE-Component-Client-UserAgent
-p5-POE-Component-DBIAgent	ports/devel/p5-POE-Component-DBIAgent
+p5-POE-Component-Client-POP3	ports/mail/p5-POE-Component-Client-POP3
+p5-POE-Component-Client-Ping	ports/net/p5-POE-Component-Client-Ping
+p5-POE-Component-Client-UserAgent	ports/www/p5-POE-Component-Client-UserAgent
+p5-POE-Component-DBIAgent	ports/databases/p5-POE-Component-DBIAgent
 p5-POE-Component-DebugShell	ports/devel/p5-POE-Component-DebugShell
 p5-POE-Component-DirWatch	ports/devel/p5-POE-Component-DirWatch
 p5-POE-Component-EasyDBI	ports/devel/p5-POE-Component-EasyDBI
@@ -7425,7 +7425,7 @@ p5-POE-Component-Jabber	ports/net/p5-POE-Component-Jabber
 p5-POE-Component-JobQueue	ports/devel/p5-POE-Component-JobQueue
 p5-POE-Component-LaDBI	ports/databases/p5-POE-Component-LaDBI
 p5-POE-Component-Logger	ports/devel/p5-POE-Component-Logger
-p5-POE-Component-Pcap	ports/devel/p5-POE-Component-Pcap
+p5-POE-Component-Pcap	ports/net/p5-POE-Component-Pcap
 p5-POE-Component-RRDTool	ports/net/p5-POE-Component-RRDTool
 p5-POE-Component-RSS	ports/devel/p5-POE-Component-RSS
 p5-POE-Component-SMTP	ports/mail/p5-POE-Component-SMTP
