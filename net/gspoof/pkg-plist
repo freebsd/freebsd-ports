@@ -1,1 +1,3 @@
 bin/gspoof
+%%PORTDOCS%%share/doc/gspoof/README
+%%PORTDOCS%%@dirrm share/doc/gspoof

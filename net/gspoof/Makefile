@@ -8,6 +8,7 @@
 
 PORTNAME=	gspoof
 PORTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,16 +18,22 @@ COMMENT=	Console/GTK+ TCP/IP Packets Forger
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet-devel
 
-USE_REINPLACE=	yes
-USE_GNOME=	gtk12
 WRKSRC=		${WRKDIR}/${PORTNAME}
+
+USE_GETOPT_LONG=	yes
+USE_GNOME=	gtk12
+USE_REINPLACE=	yes
+MAKE_ARGS=	CC="${CC} ${CFLAGS} ${CPPFLAGS} ${LDFLAGS}"
 ALL_TARGET=	gtk
-CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|gtk-config|${GTK_CONFIG}|g" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s|gtk-config|\$${GTK_CONFIG}|g" ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gspoof ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
