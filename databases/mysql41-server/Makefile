@@ -7,7 +7,7 @@
 
 PORTNAME?=	mysql
 PORTVERSION=	4.1.1
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	databases
 MASTER_SITES=	ftp://planetmirror.com/pub/mysql/Downloads/MySQL-4.1/ \
 		http://www.softagency.co.jp/MySQL/Downloads/MySQL-4.1/ \
@@ -102,16 +102,18 @@ CXXFLAGS+=	-fno-exceptions
 .endif
 
 # MySQL-Server part
-.if !defined(CLIENT_ONLY)
-USE_PERL5_RUN=	yes
-
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql41
+.if !defined(CLIENT_ONLY) && !defined(SCRIPTS_ONLY)
+USE_MYSQL=	yes
+WANT_MYSQL_VER=	41
 
 LATEST_LINK=	mysql41-server
 
 CONFLICTS=	mysql-server-3.* mysql-server-4.[02-9].* mysql-server-5.*
 
 PLIST_SUB=	DB_DIR=${DB_DIR}
+
+MAN1=		isamchk.1 isamlog.1 mysqld.1 \
+		mysqld_safe.1 perror.1 replace.1
 
 DOCS=		manual.html manual.txt manual_toc.html
 
@@ -139,7 +141,10 @@ pre-fetch:
 	@${ECHO} ""
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = include @sql_server_dirs@ scripts support-files|g" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = include @sql_server_dirs@ scripts man support-files|g" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "s|bin_SCRIPTS =|bin_SCRIPTS = @server_scripts@|g" ${WRKSRC}/scripts/Makefile.in
+	@${REINPLACE_CMD} -e "s|install-exec-am install-data-am|install-exec-am|g" ${WRKSRC}/scripts/Makefile.in
+	@${REINPLACE_CMD} -e "s|man_MANS =|man_MANS = ${MAN1}|g" ${WRKSRC}/man/Makefile.in
 	@${REINPLACE_CMD} -e "s|install: install-am|install:|g" ${WRKSRC}/include/Makefile.in
 
 post-build:
@@ -177,15 +182,14 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/Docs/mysql.info ${PREFIX}/info
 	@install-info ${PREFIX}/info/mysql.info ${PREFIX}/info/dir
 
-# MySQL-Client part
 .else
+# MySQL-Client part
+.if defined(CLIENT_ONLY)
 LATEST_LINK=	mysql41-client
 
 CONFLICTS=	mysql-client-3.* mysql-client-4.[02-9].* mysql-client-5.*
 
-MAN1=		isamchk.1 isamlog.1 mysql.1 mysql_zap.1 mysqlaccess.1  \
-		mysqladmin.1 mysqld.1 mysqld_multi.1 mysqld_safe.1 mysqldump.1 \
-		mysql_fix_privilege_tables.1 mysqlshow.1 perror.1 replace.1
+MAN1=		mysql.1 mysqladmin.1 mysqldump.1 mysqlshow.1
 
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/mysql
@@ -193,11 +197,40 @@ LDCONFIG_DIRS=	%%PREFIX%%/lib/mysql
 CONFIGURE_ARGS+=--without-server
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = include @sql_client_dirs@ tests man|g" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = include @sql_client_dirs@ tests scripts man|g" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "s|bin_SCRIPTS =|bin_SCRIPTS = mysql_config mysql_fix_privilege_tables mysqlbug|g" ${WRKSRC}/scripts/Makefile.in
+	@${REINPLACE_CMD} -e "s|man_MANS =|man_MANS = ${MAN1}|g" ${WRKSRC}/man/Makefile.in
 
 post-install:
 	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/mysql-client.sh > ${PREFIX}/etc/rc.d/000.mysql-client.sh
 	@${CHMOD} 750 ${PREFIX}/etc/rc.d/000.mysql-client.sh
+
+.else
+# MySQL-Scripts part
+USE_MYSQL=	yes
+WANT_MYSQL_VER=	41
+USE_PERL5=	yes
+
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql41
+
+LATEST_LINK=	mysql41-scripts
+
+CONFLICTS=	mysql-scripts-3.* mysql-scripts-4.[02-9].* mysql-scripts-5.*
+
+MAN1=		mysql_zap.1 mysqlaccess.1 mysqld_multi.1 mysql_fix_privilege_tables.1
+
+SCRIPTS=	msql2mysql mysql_fix_extensions mysql_setpermission \
+		mysql_secure_installation mysql_zap mysqlaccess \
+		mysql_convert_table_format mysql_find_rows mysqlhotcopy \
+		mysqldumpslow mysql_explain_log mysql_tableinfo mysqld_multi \
+		mysql_create_system_tables
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = scripts man|g" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "s|bin_SCRIPTS =|bin_SCRIPTS = ${SCRIPTS}|g" ${WRKSRC}/scripts/Makefile.in
+	@${REINPLACE_CMD} -e "s|install-exec-am install-data-am|install-exec-am|g" ${WRKSRC}/scripts/Makefile.in
+	@${REINPLACE_CMD} -e "s|man_MANS =|man_MANS = ${MAN1}|g" ${WRKSRC}/man/Makefile.in
+.endif
 .endif
 
 .include <bsd.port.post.mk>
