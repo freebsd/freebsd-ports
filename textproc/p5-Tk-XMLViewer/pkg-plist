@@ -1,7 +1,7 @@
 bin/tkxmlview
-lib/perl5/site_perl/%%PERL_VER%%/Tk/autoinstall.pl
-lib/perl5/site_perl/%%PERL_VER%%/Tk/XMLViewer.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/XMLViewer/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk/XMLViewer
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tk 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Tk 2>/dev/null || true
+%%SITE_PERL%%/Tk/prereqinst.pl
+%%SITE_PERL%%/Tk/XMLViewer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/XMLViewer/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/XMLViewer
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Tk 2>/dev/null || true
