@@ -2503,6 +2503,7 @@ gzip		src/gnu/usr.bin/gzip
 h2n		ports/net/h2n
 ha		ports/archivers/ha
 hack		src/games/hack
+hackbot		ports/security/hackbot
 hackedbox	ports/x11-wm/hackedbox
 hafiye		ports/security/hafiye
 hagelslag	ports/net/hagelslag
