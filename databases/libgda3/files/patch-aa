@@ -1,11 +1,10 @@
---- Makefile.in.orig	Thu Feb  6 23:01:24 2003
-+++ Makefile.in	Thu Feb  6 23:01:54 2003
-@@ -164,7 +164,7 @@
- YACC = @YACC@
- cxxflags_set = @cxxflags_set@
+--- Makefile.in.orig	Fri Jan 16 23:06:50 2004
++++ Makefile.in	Fri Jan 16 23:07:18 2004
+@@ -276,7 +276,6 @@
+ 	providers \
+ 	report \
+ 	tools \
+-	testing \
+ 	data \
+ 	doc
  
--SUBDIRS =  	po 	libsql 	libgda 	providers 	report 	tools 	testing 	data 	doc
-+SUBDIRS =  	po 	libsql 	libgda 	providers 	report 	tools 	data 	doc
- 
- 
- EXTRA_DIST =  	COPYING 	libgda.spec 	intltool-extract.in 	intltool-merge.in 	intltool-update.in

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libgda2
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/1.0
@@ -26,6 +26,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomehier glib20 libxslt
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lintl"
 
@@ -33,6 +34,10 @@ MAN1=		gda-config-tool.1
 MAN5=		gda-config.5
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/2$//}
+
+post-patch:
+	@${REINPLACE_CMD} -e "/^SUBDIRS =/s/testing//" \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.pre.mk>
 
