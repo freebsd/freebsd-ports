@@ -18,12 +18,9 @@ include/mycrypt_custom.h
 %%EXAMPLESDIR%%/ch2-01.c
 %%EXAMPLESDIR%%/encrypt.c
 %%EXAMPLESDIR%%/small.c
-%%EXAMPLESDIR%%/timer.asm
-%%EXAMPLESDIR%%/timer.h
 %%EXAMPLESDIR%%/x86_prof.c
 %%EXAMPLESDIR%%/hashsum.c
 %%EXAMPLESDIR%%/test.c
-%%EXAMPLESDIR%%/timer.c
 %%EXAMPLESDIR%%/tv_gen.c
 %%PORTDOCS%%%%DOCSDIR%%/crypt.pdf
 %%PORTDOCS%%%%DOCSDIR%%/cipher_tv.txt
