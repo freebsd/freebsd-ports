@@ -16,10 +16,10 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	seanc@FreeBSD.org
 COMMENT=	A Ruby extension that wraps around libGeoIP
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
-		GeoIP.3:${PORTSDIR}/net/GeoIP
+LIB_DEPENDS=	GeoIP.3:${PORTSDIR}/net/GeoIP
 
 USE_BZIP2=      yes
+USE_ICONV=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 INSTALL_TARGET=	site-install

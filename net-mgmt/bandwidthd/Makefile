@@ -19,10 +19,10 @@ COMMENT=	Tracks bandwidth usage by IP address
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd\
-		iconv.3:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
 
 USE_GMAKE=	YES
+USE_ICONV=	YES
 USE_REINPLACE=	YES
 
 post-install:

@@ -15,10 +15,9 @@ MASTER_SITES=	ftp://ftp.deepspace6.net/pub/ds6/sources/nc6/ \
 MAINTAINER=	filippo@widestore.net
 COMMENT=	Netcat clone with IPv6 support
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
-
 MAN1=	nc6.1
 USE_GETTEXT=	yes
+USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

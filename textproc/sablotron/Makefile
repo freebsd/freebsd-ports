@@ -14,8 +14,7 @@ MASTER_SITES=	http://download-2.gingerall.cz/download/sablot/
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	XML toolkit implementing XSLT 1.0, XPath 1.0 and DOM Level2
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
-		expat.5:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 
 # If WITH_DISABLE_META is defined sablot will not output the META html tag
 #WITH_DISABLE_META=	yes
@@ -32,6 +31,7 @@ PLIST_SUB+=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LIBTOOL=${LIBTOOL} \
 		LDFLAGS="-L${LOCALBASE}/lib -lstdc++"
 USE_GMAKE=	yes
+USE_ICONV=	yes
 USE_LIBTOOL_VER=13
 USE_PERL5_BUILD=	yes
 

@@ -15,9 +15,9 @@ MASTER_SITE_SUBDIR=	distfiles
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PalmPilot communications utilities (backup/restore/install/debug/...)
 
-LIB_DEPENDS=	tk83:${PORTSDIR}/x11-toolkits/tk83 \
-		iconv.3:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=	tk83:${PORTSDIR}/x11-toolkits/tk83
 
+USE_ICONV=	yes
 USE_GETOPT_LONG=yes
 USE_BZIP2=	yes
 USE_LIBTOOL_VER=13

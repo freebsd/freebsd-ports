@@ -14,7 +14,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	dom@happygiraffe.net
 COMMENT=	XML Delivery Toolkit for Apache/Perl
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 BUILD_DEPENDS=	\
 		${SITE_PERL}/${PERL_ARCH}/Apache/libapreq.pm:${PORTSDIR}/www/p5-libapreq \
 		${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
@@ -56,6 +55,7 @@ MAN3=		\
 		Apache::AxKit::StyleChooser::UserAgent.3 \
 		AxKit.3
 
+USE_ICONV=	yes
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	INC='-I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2' \
 		LIBS='-L${LOCALBASE}/lib' \

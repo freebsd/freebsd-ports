@@ -19,13 +19,13 @@ MAINTAINER?=	fjoe@FreeBSD.org
 COMMENT?=	The wxWindows GUI toolkit with GTK+ bindings
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		iconv.3:${PORTSDIR}/converters/libiconv
+		tiff.4:${PORTSDIR}/graphics/tiff
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
+USE_ICONV=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes

@@ -24,11 +24,11 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	SLang-based newsreader
 
-LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang \
-		iconv.3:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_ICONV=	yes
 USE_REINPLACE=	yes
 
 .if defined(WITHOUT_NLS)

@@ -14,14 +14,13 @@ MASTER_SITES=	http://webdav.todo.gr.jp/download/
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Apache module for non-ascii filename interoperability
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
-
 # This port will work with the following version of Apache and anything newer.
 # Mostly because of the dependency of mod_dav.
 APACHE_VERSION=	1.3.6
 
 PLIST_FILES=	libexec/apache/mod_encoding.so
 USE_APACHE=	yes
+USE_ICONV=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \

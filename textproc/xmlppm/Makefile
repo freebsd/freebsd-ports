@@ -18,12 +18,12 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML-Conscious PPM Compression
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
-		expat.5:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 USE_GMAKE=	yes
+USE_ICONV=	yes
 MAKE_ARGS=	CC="${CXX}" OPT_FLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lexpat -liconv"
 

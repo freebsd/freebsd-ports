@@ -18,13 +18,13 @@ COMMENT=	An OpenGL-based volumetric visualization program for scientific dataset
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmix.a:${PORTSDIR}/graphics/qslim \
 		convert:${PORTSDIR}/graphics/ImageMagick
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
-		netcdf.1:${PORTSDIR}/math/netcdf \
+LIB_DEPENDS=	netcdf.1:${PORTSDIR}/math/netcdf \
 		gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 
 USE_GL=		yes
 USE_GNOME=	gnometarget gtk12
+USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-gtk --enable-threads --with-netcdf \

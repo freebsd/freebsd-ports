@@ -16,14 +16,13 @@ DISTFILES=	${DISTNAME}.${IIIMF_VER:S/-/./}${EXTRACT_SUFX}
 MAINTAINER=	kcwu@csie.org
 COMMENT=	Internet/Intranet Input Method Framework language engine unit
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
-
 IIIMF_VER=	r11_4-1467
 WRKSRC=		${WRKDIR}/${DISTNAME}-${IIIMF_VER}/leif
 BUILD_WRKSRC=	${WRKSRC}/unit
 INSTALL_WRKSRC=	${WRKSRC}/unit
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_ICONV=	yes
 USE_XLIB=	yes
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes

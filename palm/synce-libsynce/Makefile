@@ -13,10 +13,9 @@ MASTER_SITE_SUBDIR=	synce
 MAINTAINER=	boris@brooknet.com.au
 COMMENT=	Library to support communication with WinCE devices
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
-
 MAN1=		synce.1
 
+USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 USE_LIBTOOL_VER=13
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

@@ -15,10 +15,9 @@ MASTER_SITE_SUBDIR=	openjade
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	This package is a collection of SGML/XML tools called OpenSP
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
-
 USE_GETTEXT=	yes
 USE_GMAKE=	YES
+USE_ICONV=	yes
 USE_REINPLACE=	YES
 USE_LIBTOOL_VER=13
 USE_PERL5=	yes

@@ -14,11 +14,10 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	filippo@widestore.net
 COMMENT=	Marco d'Itri whois client
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
-
 MAN1=	whois.1
 
 USE_GETTEXT=	yes
+USE_ICONV=	yes
 USE_PERL5_BUILD=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

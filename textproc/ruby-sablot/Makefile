@@ -17,9 +17,9 @@ MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Ruby interface to the Sablotron XSLT processor
 
 LIB_DEPENDS=	sablot.70:${PORTSDIR}/textproc/sablotron \
-		iconv.3:${PORTSDIR}/converters/libiconv \
 		expat.5:${PORTSDIR}/textproc/expat2
 
+USE_ICONV=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 

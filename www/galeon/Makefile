@@ -16,7 +16,6 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A GNOME Web browser based on gecko (the Mozilla rendering engine)
 
 BUILD_DEPENDS=	${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
 
 MOZ_CONFIGURE_ARGS=--with-mozilla-snapshot="trunk"
@@ -38,6 +37,7 @@ HEADERS_SUFX=
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack bonobo libglade gnomevfs gnometarget
 USE_GMAKE=	yes
+USE_ICONV=	yes
 USE_LIBTOOL_VER=13
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-mozilla-includes="${X11BASE}/include/mozilla${HEADERS_SUFX}" \

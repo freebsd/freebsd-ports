@@ -15,10 +15,9 @@ DIST_SUBDIR=	jabber
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Online presence and instant messaging server
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
-
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
+USE_ICONV=	yes
 CONFIGURE_ARGS= --localstatedir=/var \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--with-openssl=${OPENSSLBASE} \
