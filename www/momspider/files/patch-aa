@@ -1,0 +1,11 @@
+--- momconfig.pl	1997/10/10 22:35:11	1.1
++++ momconfig.pl	1997/10/10 22:35:29
+@@ -78,7 +78,7 @@
+ # which messages should be mailed, and accepts other headers and message
+ # text from stdin.
+ 
+-$sendmailCommand = "/usr/lib/sendmail";
++$sendmailCommand = "/usr/sbin/sendmail";
+ 
+ 
+ # ==========================================================================
