@@ -11,7 +11,7 @@ CATEGORIES=	archivers java
 MASTER_SITES=	http://download.sourceforge.net/fastjar/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	knu@idaemons.org
+MAINTAINER=	knu@FreeBSD.org
 
 GNU_CONFIGURE=	YES
 

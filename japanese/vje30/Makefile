@@ -12,7 +12,7 @@ MASTER_SITES=	file:${MOUNT_PT}/freebsd/
 EXTRACT_SUFX=	.tgz
 DISTNAME=	${PORTNAME}-delta-${PORTVERSION}-${DISTOBJFORMAT}
 
-MAINTAINER=	knu@idaemons.org
+MAINTAINER=	knu@FreeBSD.org
 
 #RUN_DEPENDS=	${LOCALBASE}/share/java/classes/jfc-1.1.1/swing.jar:${PORTSDIR}/java/jfc
 

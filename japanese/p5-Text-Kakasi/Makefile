@@ -10,7 +10,7 @@ PORTVERSION=	1.04
 CATEGORIES=	japanese perl5
 MASTER_SITES=	http://www.daionet.gr.jp/~knok/kakasi/
 
-MAINTAINER=	knu@idaemons.org
+MAINTAINER=	knu@FreeBSD.org
 
 LIB_DEPENDS=	kakasi.2:${PORTSDIR}/japanese/kakasi
 
