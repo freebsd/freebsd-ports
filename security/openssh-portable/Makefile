@@ -76,8 +76,9 @@ post-extract:
 .endfor
 
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
+BROKEN=		patch conflicts with 3.5p1
 PKGNAMESUFFIX=	-gssapi
-GSSAPI_PATCH=	${PORTNAME}-${PORTVERSION}-gssapi-20020627.diff
+GSSAPI_PATCH=	${PORTNAME}-3.4p1-gssapi-20020627.diff
 GSSAPI_SITE=	http://www.sxw.org.uk/computing/patches/
 MASTER_SITES+=	${GSSAPI_SITE}
 DISTFILES=	${EXTRACT_ONLY} ${GSSAPI_PATCH}
