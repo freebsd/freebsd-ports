@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	buddha
-PORTVERSION=	0.9
+PORTVERSION=	1.0.r1
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.cs.mu.oz.au/~bjpop/buddha/download/
 PKGNAMEPREFIX=	hs-
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-rc/}
 
 MAINTAINER=	obraun@FreeBSD.org
 COMMENT=	A declarative debugger for Haskell 98
@@ -21,7 +22,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 USE_GMAKE=	yes
 
-PLIST_SUB+=	BUDDHA_VERSION=${PORTVERSION}
+PLIST_SUB+=	BUDDHA_VERSION=${PORTVERSION:S/.r/-rc/}
 
 pre-everything::
 	@${ECHO_CMD} ""

@@ -17,8 +17,10 @@ lib/buddha-%%BUDDHA_VERSION%%/Directory_B.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/EDT.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/GhcInternals.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/Hash.h
+lib/buddha-%%BUDDHA_VERSION%%/Help.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/IO.i
 lib/buddha-%%BUDDHA_VERSION%%/IOPrims_B.p_hi
+lib/buddha-%%BUDDHA_VERSION%%/IOUtils.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/IO_B.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/Internals.h
 lib/buddha-%%BUDDHA_VERSION%%/IsException.p_hi
@@ -39,13 +41,14 @@ lib/buddha-%%BUDDHA_VERSION%%/Monad.i
 lib/buddha-%%BUDDHA_VERSION%%/Monad_B.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/Numeric.i
 lib/buddha-%%BUDDHA_VERSION%%/Numeric_B.p_hi
-lib/buddha-%%BUDDHA_VERSION%%/Partial.p_hi
+lib/buddha-%%BUDDHA_VERSION%%/Options.p_hi
+lib/buddha-%%BUDDHA_VERSION%%/Oracle.p_hi
+lib/buddha-%%BUDDHA_VERSION%%/PartialByName.p_hi
+lib/buddha-%%BUDDHA_VERSION%%/PartialByVal.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/Prelude.i
 lib/buddha-%%BUDDHA_VERSION%%/Prelude_B.p_hi
+lib/buddha-%%BUDDHA_VERSION%%/PrettyGraph.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/Prims_B.p_hi
-lib/buddha-%%BUDDHA_VERSION%%/PrintLargeInteger.p_hi
-lib/buddha-%%BUDDHA_VERSION%%/PrintLargeInteger_stub.h
-lib/buddha-%%BUDDHA_VERSION%%/PrintMetaC.h
 lib/buddha-%%BUDDHA_VERSION%%/PrintMetaHs.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/Queue.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/Random.i
@@ -54,6 +57,7 @@ lib/buddha-%%BUDDHA_VERSION%%/Random_B.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/Ratio.i
 lib/buddha-%%BUDDHA_VERSION%%/RatioPrims_B.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/Ratio_B.p_hi
+lib/buddha-%%BUDDHA_VERSION%%/ReifyHs.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/System.i
 lib/buddha-%%BUDDHA_VERSION%%/SystemPrims_B.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/System_B.p_hi
