@@ -19,4 +19,10 @@ PERL_CONFIGURE=	YES
 
 MAN3=		Include.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Does not install correctly"
+.endif
+
+.include <bsd.port.post.mk>
