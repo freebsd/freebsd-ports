@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	xhippo
 
-MAINTAINER=	rod@zort.on.ca
+MAINTAINER=	ports@freebsd.org
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
