@@ -2,6 +2,7 @@ System/Applications/Gorm.app/Gorm
 System/Applications/Gorm.app/Resources/0Menus.palette/0Menus
 System/Applications/Gorm.app/Resources/0Menus.palette/Resources/GormMenuAttributesInspector.gorm/data.classes
 System/Applications/Gorm.app/Resources/0Menus.palette/Resources/GormMenuAttributesInspector.gorm/objects.gorm
+System/Applications/Gorm.app/Resources/0Menus.palette/Resources/GormMenuDrag.tiff
 System/Applications/Gorm.app/Resources/0Menus.palette/Resources/GormMenuItemAttributesInspector.gorm/data.classes
 System/Applications/Gorm.app/Resources/0Menus.palette/Resources/GormMenuItemAttributesInspector.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/0Menus.palette/Resources/Info-gnustep.plist
@@ -108,6 +109,8 @@ System/Applications/Gorm.app/Resources/GormNSSplitViewInspector.gorm/objects.gor
 System/Applications/Gorm.app/Resources/GormObject.tiff
 System/Applications/Gorm.app/Resources/GormOutlet.tiff
 System/Applications/Gorm.app/Resources/GormOutletSelected.tiff
+System/Applications/Gorm.app/Resources/GormPrefColors.gorm/data.classes
+System/Applications/Gorm.app/Resources/GormPrefColors.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/GormPrefGeneral.gorm/data.classes
 System/Applications/Gorm.app/Resources/GormPrefGeneral.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/GormPrefHeaders.gorm/data.classes
@@ -119,9 +122,17 @@ System/Applications/Gorm.app/Resources/GormScrollViewAttributesInspector.gorm/ob
 System/Applications/Gorm.app/Resources/GormSetName.gorm/data.classes
 System/Applications/Gorm.app/Resources/GormSetName.gorm/Gorm.tiff
 System/Applications/Gorm.app/Resources/GormSetName.gorm/objects.gorm
+System/Applications/Gorm.app/Resources/GormShelfPref.gorm/data.classes
+System/Applications/Gorm.app/Resources/GormShelfPref.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/GormSound.tiff
 System/Applications/Gorm.app/Resources/GormSoundInspector.gorm/data.classes
+System/Applications/Gorm.app/Resources/GormSoundInspector.gorm/ff.tiff
+System/Applications/Gorm.app/Resources/GormSoundInspector.gorm/rec.tiff
+System/Applications/Gorm.app/Resources/GormSoundInspector.gorm/rw.tiff
 System/Applications/Gorm.app/Resources/GormSoundInspector.gorm/objects.gorm
+System/Applications/Gorm.app/Resources/GormSoundInspector.gorm/pause.tiff
+System/Applications/Gorm.app/Resources/GormSoundInspector.gorm/play.tiff
+System/Applications/Gorm.app/Resources/GormSoundInspector.gorm/stop.tiff
 System/Applications/Gorm.app/Resources/GormSourceTag.tiff
 System/Applications/Gorm.app/Resources/GormTargetTag.tiff
 System/Applications/Gorm.app/Resources/GormUnknown.tiff
@@ -130,6 +141,8 @@ System/Applications/Gorm.app/Resources/GormViewSizeInspector.gorm/data.classes
 System/Applications/Gorm.app/Resources/GormViewSizeInspector.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/GormWindow.tiff
 System/Applications/Gorm.app/Resources/Info-gnustep.plist
+System/Applications/Gorm.app/Resources/LeftArr.tiff
+System/Applications/Gorm.app/Resources/RightArr.tiff
 System/Applications/Gorm.app/Resources/Sunday_seurat.tiff
 System/Applications/Gorm.app/Resources/bezel_nib.tiff
 System/Applications/Gorm.app/Resources/button_nib.tiff
@@ -191,11 +204,13 @@ System/Library/Libraries/libGorm.so.1.0.0
 @dirrm System/Applications/GormTest.app
 @dirrm System/Applications/Gorm.app/Resources/GormViewSizeInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/GormSoundInspector.gorm
+@dirrm System/Applications/Gorm.app/Resources/GormShelfPref.gorm
 @dirrm System/Applications/Gorm.app/Resources/GormSetName.gorm
 @dirrm System/Applications/Gorm.app/Resources/GormScrollViewAttributesInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/GormPreferences.gorm
 @dirrm System/Applications/Gorm.app/Resources/GormPrefHeaders.gorm
 @dirrm System/Applications/Gorm.app/Resources/GormPrefGeneral.gorm
+@dirrm System/Applications/Gorm.app/Resources/GormPrefColors.gorm
 @dirrm System/Applications/Gorm.app/Resources/GormNSSplitViewInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/GormImageInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/GormFontView.gorm
