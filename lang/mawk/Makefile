@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.whidbey.net/pub/brennan/
 
 MAINTAINER=	obrien@FreeBSD.org
 
-WRKSRC=		$(WRKDIR)/$(PKGNAME)
+WRKSRC=		${WRKDIR}/${PKGNAME}
 GNU_CONFIGURE=	yes
 ALL_TARGET=
 
