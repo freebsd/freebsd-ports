@@ -1,5 +1,5 @@
-*** /dev/null	Fri Nov  8 21:17:53 1996
---- lib/fontdesc	Fri Nov  8 21:18:34 1996
+*** /dev/null	Tue Nov 12 22:50:07 1996
+--- lib/fontdesc	Tue Nov 12 22:51:33 1996
 ***************
 *** 0 ****
 --- 1,32 ----
@@ -8,8 +8,9 @@
 + #  Print out Japanese by printer font and English by pk font.
 + #				Nov. 9 1996 MITA Yoshio <mita@jp.FreeBSD.org>
 + 
-+ # change resolution below according to your site.
++ # change resolution according to your site.
 + define	RESOLUTION	300
++ resolution		300
 + 
 + define	f		/usr/local/lib/fonts
 + define	af		/usr/local/share/tex/jfonts/jfms
@@ -17,7 +18,6 @@
 + define	nsf		/usr/local/share/tex/jfonts/
 + 
 + include		dvi2.ps
-+ resolution	$RESOLUTION
 + 
 + # English font with pk fonts
 + font	pk	* 3	$f/pk$RESOLUTION/%f.%mpk
