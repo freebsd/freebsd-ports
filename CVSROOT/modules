@@ -373,6 +373,7 @@ ashe		ports/www/ashe
 asir2000	ports/math/asir2000
 asis		ports/devel/asis
 asl		ports/devel/asl
+aslookup	ports/net/aslookup
 asmail		ports/mail/asmail
 asmem		ports/sysutils/asmem
 asmodem		ports/comms/asmodem
