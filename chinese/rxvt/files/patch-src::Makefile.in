@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Mon Feb  5 22:41:53 2001
++++ src/Makefile.in	Mon Feb  5 22:42:41 2001
+@@ -115,7 +115,7 @@
+ 
+ install: allbin alldoc
+ 	@$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) librxvt.la $(libdir)
+-	@$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) rxvt $(DESTDIR)$(bindir)/`$(ECHO) $$p|$(SED) 's/$(EXEEXT)$$//'|$(SED) '$(transform)'|$(SED) 's/$$/$(EXEEXT)/'`;
++	@$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) rxvt $(PREFIX)/bin/crxvt
+ 
+ uninstall:
+ 	@$(LIBTOOL) --mode=uninstall $(RMF) $(DESTDIR)$(bindir)/`$(ECHO) rxvt|$(SED) 's/$(EXEEXT)$$//'|$(SED) '$(transform)'|$(SED) 's/$$/$(EXEEXT)/'`
