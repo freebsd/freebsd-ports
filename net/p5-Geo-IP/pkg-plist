@@ -1,8 +1,11 @@
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Geo/IP.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Geo/Mirror.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Geo/IP/Record.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Geo/IP/Record.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Geo/IP/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Geo/IP/IP.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Geo/IP/IP.so
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Geo/IP
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Geo
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Geo/IP
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Geo
