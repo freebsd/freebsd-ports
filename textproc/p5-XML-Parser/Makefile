@@ -16,7 +16,7 @@ DISTFILES=	${PORTNAME}.${PORTVERSION}.tar.gz
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
-LIB_DEPENDS=	expat.0:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.2:${PORTSDIR}/textproc/expat2
 
 USE_PERL5=	yes
 
