@@ -44,7 +44,7 @@ ONLY_FOR_ARCHS=	alpha amd64 ia64 i386 sparc64
 PLIST=		${WRKDIR}/pkg-plist
 PREFIX=		${LINUXBASE}
 RESTRICTED=	"binaries licensed under GNU GPL without accompanying source"
-CONFLICTS=	linux_base-*
+CONFLICTS=cle_base-* linux_base-6* linux_base-7* linux_base-8* linux_base-debia*
 
 pre-install:
 	${ECHO_CMD} etc/resolv.conf > ${PLIST}
