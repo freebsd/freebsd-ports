@@ -1,4 +1,7 @@
 #!/bin/sh
+#
+# Under a BSDL license. Copyright by Mario S F Ferreira <lioux@FreeBSD.org>
+# $FreeBSD$
 
 PREFIX="%%PREFIX%%"
 # java
