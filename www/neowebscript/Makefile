@@ -27,7 +27,7 @@ SUBDIRS=	modules neowebscript htdocs # tools
 EXTRACT_AFTER_ARGS:=| ${TAR} -xf - ${SUBDIRS:%=${PORTNAME}-${PORTVERSION}/%}
 
 post-patch:
-	# Replacing writePNG with writePNG
+	# Replacing writeGIF with writePNG
 	${PERL} -pi -e 's/writeGIF/writePNG/g' \
 		`find ${WRKSRC}/.. -type f | xargs fgrep -l --mmap writeGIF`
 
