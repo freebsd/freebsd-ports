@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.54 1998/12/20 03:57:10 jseger Exp $
+# $Id: Makefile,v 1.55 1998/12/20 21:15:22 jseger Exp $
 #
 
     SUBDIR += LPRng
@@ -9,6 +9,7 @@
     SUBDIR += cd-write
     SUBDIR += cdrecord
     SUBDIR += cfengine
+    SUBDIR += comconsole
     SUBDIR += contool
     SUBDIR += copytape
     SUBDIR += daemontools
