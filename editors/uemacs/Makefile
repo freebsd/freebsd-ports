@@ -3,7 +3,7 @@
 # Date created:         16 Jan 1995
 # Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id: Makefile,v 1.6 1995/10/04 10:18:56 asami Exp $
+# $Id: Makefile,v 1.7 1996/06/26 22:02:08 gpalmer Exp $
 #
 
 DISTNAME=	uemacs
@@ -21,6 +21,6 @@ PATCH_STRIP=	-p1
 EXTRACT_CMD=		unzip
 EXTRACT_BEFORE_ARGS=	-Laq
 EXTRACT_AFTER_ARGS=	-d ${WRKDIR}
-FETCH_BEFORE_ARGS=	-P
+FETCH_BEFORE_ARGS=	-NP
 
 .include <bsd.port.mk>
