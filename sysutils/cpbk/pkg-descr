@@ -1,0 +1,17 @@
+   Backup Copy is basically a smart copy program that allows a user
+to copy mass files from one place to another.  When coping over a
+previous copy, the key features will allow coping only of new or
+non existing files in the backup.  This results in saving time and
+less load on the drive.  Built into the same feature of copying
+new files only, is a file removal procedure.  If a file is removed
+from the source path, the same file will be removed when the next
+backup is performed.  This provides a backup that is exactly the same
+as the source without filling up the drive.  As an added option, all
+files that will be overwritten or deleted when doing a copy over a
+previous backup, have the opportunity to be stored in a trash bin.
+You can leave this trash bin to grow and grow just in case you need a
+backup of your backup.  When you start running out of disk space you
+will need to remove or clean up the trash bin.
+
+Autor: Kevin Lindsay <klindsay@mkintraweb.com>
+Ported: Osokin Sergey aka oZZ <ozz@FreeBSD.org.ru>

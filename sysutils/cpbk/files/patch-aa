@@ -1,0 +1,63 @@
+--- Makefile.orig	Tue Nov 17 10:15:33 1998
++++ Makefile	Mon Apr 12 23:23:28 1999
+@@ -21,47 +21,10 @@
+ OS = $(shell uname -s)
+ OS_RELEASE = $(shell uname -r)
+ 
+-ifeq ($(OS),OSF1)
+-	CC	  = gcc
+-	SYS_LIBS  =
+-	SYS_FLAGS = -g -O2 
+-	SYS_DEFS  = -DOSF_CPBK 
+-endif
+-
+-ifeq ($(OS),SunOS)
+-	CC	  = gcc
+-	SYS_LIBS  = 
+-	SYS_FLAGS = -g -O2
+-	SYS_DEFS  = -DSOL26_CPBK -D__STDC__
+-endif
+-
+-ifeq ($(OS),AIX)
+-	CC	  = gcc
+-	SYS_LIBS  =
+-	SYS_FLAGS = -g -O2
+-	SYS_DEFS  = -DAIX_CPBK
+-endif
+-
+-ifeq ($(OS),HP-UX)
+-	CC	  = gcc
+-	SYS_LIBS  =
+-	SYS_FLAGS = -g -O2
+-	SYS_DEFS  = -DHPUX_CPBK -D__STDC__
+-endif
+-
+-ifeq ($(OS),Linux)
+-	CC	  = gcc
+-	SYS_LIBS  =
+-	SYS_FLAGS = -g -O2
+-	SYS_DEFS  = -DLINUX_CPBK
+-endif
+-
+-ifeq ($(OS),IRIX)
+-        CC        = gcc
+-        SYS_LIBS  =
+-        SYS_FLAGS = -O2 -g
+-        SYS_DEFS  = -DIRIX_CPBK
+-endif
++CC	  = gcc
++SYS_LIBS  = 
++SYS_FLAGS = -O2
++SYS_DEFS  = -DFBSD_CPBK
+ 
+ 
+ CFLAGS = $(NDFLAGS) $(SYS_FLAGS) $(SYS_DEFS)
+@@ -75,7 +38,7 @@
+ 	make $(prog)
+ 
+ $(prog): $(OBJS)
+-	$(CC) $(PG) $(LDFLAGS) -o $(prog) $(OBJS) 
++	$(CC) -I. -I/usr/include $(PG) $(LDFLAGS) -o $(prog) $(OBJS) 
+ 
+ clean:
+ 	$(RM) $(CLEAN_FLAGS) $(prog) $(OBJS)
