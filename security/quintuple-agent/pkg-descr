@@ -1,0 +1,7 @@
+Quintuple Agent is a program that stores secrets for you.
+
+   An example usage of Quintuple Agent would be for the storage of a
+passphrase.  This way you will have to enter the passphrase only once
+in a while, not everytime it is needed.
+
+WWW: http://www.vibe.at/tools/q-agent/

@@ -1,0 +1,5 @@
+
+You might want to consider making at least q-agent setuid root
+so that it can successfully use mlock() to protect your secrets
+in memory.
+
