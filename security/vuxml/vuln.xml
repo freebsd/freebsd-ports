@@ -45,17 +45,20 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>D. J. Bernstein reports that Bartlomiej Sieka has
 	  discovered several security vulnerabilities in lppasswd,
-	  which is part of CUPS:</p>
+	  which is part of CUPS.  In the following excerpt from
+	  Bernstein's email, CVE names have been added for each issue:</p>
 	<blockquote cite="http://tigger.uic.edu/~jlongs2/holes/cups2.txt">
 	  <p>First, lppasswd blithely ignores write errors in
 	    fputs(line,outfile) at lines 311 and 315 of lppasswd.c,
 	    and in fprintf(...) at line 346. An attacker who fills up
 	    the disk at the right moment can arrange for
-	    /usr/local/etc/cups/passwd to be truncated.</p>
+	    /usr/local/etc/cups/passwd to be truncated.
+	    <em>(CAN-2004-1268)</em></p>
 	  <p>Second, if lppasswd bumps into a file-size resource limit
 	    while writing passwd.new, it leaves passwd.new in place,
 	    disabling all subsequent invocations of lppasswd. Any
-	    local user can thus disable lppasswd...</p>
+	    local user can thus disable lppasswd...
+	    <em>(CAN-2004-1269)</em></p>
 	  <p>Third, line 306 of lppasswd.c prints an error message to
 	    stderr but does not exit. This is not a problem on systems
 	    that ensure that file descriptors 0, 1, and 2 are open for
@@ -63,8 +66,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	    lppasswd does not check that passwd.new is different from
 	    stderr, so it ends up writing a user-controlled error
 	    message to passwd if the user closes file descriptor
-	    2.</p>
+	    2. <em>(CAN-2004-1270)</em></p>
 	</blockquote>
+	<p><strong>Note:</strong> The third issue, CAN-2004-1270, does
+	  not affect FreeBSD 4.6-RELEASE or later systems, as these
+	  systems ensure that the file descriptors 0, 1, and 2 are
+	  always open for set-user-ID and set-group-ID programs.</p>
       </body>
     </description>
     <references>
