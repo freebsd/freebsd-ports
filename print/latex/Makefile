@@ -6,6 +6,7 @@ FTPGET=		${FILESDIR}/ftpget
 WRKDIR=		${.CURDIR}/work
 CATEGORIES+=	printing
 BUILD_COOKIE=	${WRKDIR}/.build_done
+MAINTAINER=	jmz@FreeBSD.org
 
 #other equivalent sites: ftp.shsu.edu ftp.dante.de
 CTAN=		ftp.tex.ac.uk

@@ -3,7 +3,7 @@
 # Date created:         21 September 1994
 # Whom:                 jmz
 #
-# $Id$
+# $Id: Makefile,v 1.9 1995/04/11 00:20:15 asami Exp $
 #
 
 DISTNAME=	jetpack
@@ -11,6 +11,7 @@ PKGNAME=	jetpack-1.0
 CATEGORIES+=	games
 MASTER_SITES=	ftp://qiclab.scn.rain.com/pub/games/
 DISTFILES=	jetpack.tar.Z
+MAINTAINER=	jmz@FreeBSD.org
 
 USE_IMAKE=	yes
 MAKE_FLAGS=	PREFIX=${PREFIX} -f

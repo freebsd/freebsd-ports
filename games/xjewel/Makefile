@@ -3,13 +3,14 @@
 # Date created:         22 November 1994
 # Whom:                 jmz
 #
-# $Id$
+# $Id: Makefile,v 1.3 1995/04/11 00:20:36 asami Exp $
 #
 
 DISTNAME=	xjewel-1.6
 CATEGORIES+=	games
 MASTER_SITES=	ftp://ftp.warwick.ac.uk/pub/x11/
 DISTFILES=	xjewel-1.6.tar.z
+MAINTAINER=	jmz@FreeBSD.org
 
 USE_IMAKE=	yes
 

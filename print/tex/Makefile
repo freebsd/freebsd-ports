@@ -1,5 +1,6 @@
 PKGNAME=	tex
 CATEGORIES+=	printing
+MAINTAINER=	jmz@FreeBSD.org
 DISTFILES=	web2c.tar.gz web.tar.gz tex_base.tar.gz cm_tfm.tar.gz \
 		mf_lib.tar.gz cm_mf.tar.gz      modes.mf 
 

@@ -3,6 +3,7 @@ DISTFILES=	xsnow-1.39.tar.Z
 USE_IMAKE=	yes
 MASTER_SITES=	ftp://ftp.x.org/contrib/games/
 CATEGORIES+=	x11
+MAINTAINER=	jmz@FreeBSD.org
 
 pre-install:
 	@mkdir -p ${PREFIX}/bin

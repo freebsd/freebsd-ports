@@ -3,6 +3,7 @@ DISTNAME=	makeindex
 
 MASTER_SITES=	ftp://achilles.doc.ic.ac.uk/tex/contrib/Schrod/
 CATEGORIES+=	printing
+MAINTAINER=	jmz@FreeBSD.org
 
 build: configure pre-build
 	@echo "===>  Building for ${DISTNAME}"

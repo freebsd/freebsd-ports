@@ -5,6 +5,7 @@ CATEGORIES+=	comms
 MAKE_FLAGS=	CC=cc spool=/var/spool LDFLAGS=-lutil prefix=${PREFIX} -f
 USE_GMAKE=	yes
 IS_INTERACTIVE= yes
+MAINTAINER=	jmz@FreeBSD.org
 
 pre-install:
 	@mkdir -p ${PREFIX}/bin
