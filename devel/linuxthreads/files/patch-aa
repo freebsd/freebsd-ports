@@ -332,9 +332,11 @@ diff -ru ../../work/linuxthreads-2.2.3/cancel.c ./cancel.c
 diff -ru ../../work/linuxthreads-2.2.3/errno.c ./errno.c
 --- ../../work/linuxthreads-2.2.3/errno.c	Sat Dec  4 20:31:49 1999
 +++ ./errno.c	Thu Jun  7 22:59:29 2001
-@@ -19,13 +19,13 @@
+@@ -18,14 +18,17 @@
+ #include <netdb.h>
  #include "pthread.h"
  #include "internals.h"
++#include <osreldate.h>
  
 -int * __errno_location()
 +int * __error()
@@ -344,10 +346,18 @@ diff -ru ../../work/linuxthreads-2.2.3/errno.c ./errno.c
  }
  
 -int * __h_errno_location()
++#if __FreeBSD_version < 502104
++
 +int * __h_error()
  {
    pthread_descr self = thread_self();
    return THREAD_GETMEM (self, p_h_errnop);
+@@ -37,3 +40,5 @@
+   pthread_descr self = thread_self();
+   return THREAD_GETMEM (self, p_resp);
+ }
++
++#endif /* #if __FreeBSD_version < 502104 */
 diff -ru ../../work/linuxthreads-2.2.3/internals.h ./internals.h
 --- ../../work/linuxthreads-2.2.3/internals.h	Wed Apr 25 21:50:59 2001
 +++ ./internals.h	Thu Jun  7 22:59:29 2001

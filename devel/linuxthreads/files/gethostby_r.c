@@ -7,6 +7,8 @@
 #define NEED_ALIGNED_ACCESS
 #endif
 
+#if __FreeBSD_version < 502104
+
 static pthread_mutex_t gethostby_mutex = PTHREAD_MUTEX_INITIALIZER;
 
 static int
@@ -166,3 +168,5 @@ gethostent_r (struct hostent *result, char *buffer, int buflen,
   pthread_mutex_unlock (&gethostby_mutex);
   return result;
 }
+
+#endif /* #if __FreeBSD_version < 502104 */

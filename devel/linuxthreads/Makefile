@@ -7,7 +7,7 @@
 
 PORTNAME=	linuxthreads
 PORTVERSION=	2.2.3
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	glibc
@@ -177,6 +177,7 @@ pre-build:
 .endif
 
 pre-install:
+	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 0755 ${PREFIX}/lib
 	@cd ${WRKSRC}/libgcc_r ; \
 		${SETENV} ${MAKE_ENV} ${MAKE} install
 .if defined(USING_GCC3)
