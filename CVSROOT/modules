@@ -4229,7 +4229,6 @@ lmd		ports/net/lmd
 lmmon		ports/sysutils/lmmon
 lmtp2nntp	ports/mail/lmtp2nntp
 lmtpd		ports/mail/lmtpd
-lmule		ports/net/lmule
 loadd		ports/net/loadd
 lodju		ports/graphics/lodju
 log4c		ports/devel/log4c
