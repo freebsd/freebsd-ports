@@ -1,0 +1,11 @@
+--- gnome/gtools.c.orig	Tue Feb  2 16:10:31 1999
++++ gnome/gtools.c	Tue Feb  2 16:10:41 1999
+@@ -4,7 +4,7 @@
+  * Written by Miguel de Icaza
+  */
+ #include <config.h>
+-#include "myslang.h"
++#include "tty.h"
+ #include <gnome.h>
+ #include <gdk/gdkkeysyms.h>
+ #include <string.h>
