@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eboard
-PORTVERSION=	0.2.5
+PORTVERSION=	0.3.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,7 +20,13 @@ USE_GTK=	yes
 USE_IMLIB=	yes
 USE_X_PREFIX=	yes
 
+INSTALL_TARGET=	install install-man
+
+MAN1=	eboard-config.1 eboard-addtheme.1
 MAN6=	eboard.6
+
+post-patch:
+	@${PERL} -pi -e 's!CXXFLAGS=-O6\n!!' ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
