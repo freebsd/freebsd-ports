@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	glchess
-PORTVERSION=	0.4.4
+PORTVERSION=	0.4.5
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	pat@FreeBSD.org
 
-RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty \
-		gnuchess:${PORTSDIR}/games/gnuchess
 LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 BUILD_DEPENDS=	automake14:${PORTSDIR}/devel/automake14 \
 		autoconf213:${PORTSDIR}/devel/autoconf213
