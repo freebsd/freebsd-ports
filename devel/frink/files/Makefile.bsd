@@ -1,0 +1,7 @@
+PROG=	frink
+SRCS=	frink.c output.c token.c tcl.c config.c
+
+BINDIR=	${PREFIX}/bin
+MANDIR=	${PREFIX}/man/man
+
+.include <bsd.prog.mk>

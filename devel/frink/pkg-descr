@@ -1,0 +1,8 @@
+Frink is a tcl formatting and  static check program by Lindsay Marshall.
+It can prettify  your program, minimise, obfuscate or  just sanity check
+it. It can also do some rewriting.
+
+You pass  it filenames  (or the  stdin) and the  output is  generated to
+stdout.
+
+WWW: http://catless.ncl.ac.uk/Programs/Frink/

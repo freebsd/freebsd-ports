@@ -113,6 +113,7 @@
     SUBDIR += fpp
     SUBDIR += freelibiberty
     SUBDIR += freescope
+    SUBDIR += frink
     SUBDIR += ftnchek
     SUBDIR += funnelweb
     SUBDIR += g-wrap
