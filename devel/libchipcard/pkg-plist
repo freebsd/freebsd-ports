@@ -43,7 +43,7 @@ include/chipcard/rsacard.h
 include/ctversion.h
 lib/libchipcard.la
 lib/libchipcard.so
-lib/libchipcard.so.16
+lib/libchipcard.so.17
 sbin/chipcardd
 sbin/kvkd
 share/aclocal/libchipcard.m4
@@ -54,5 +54,11 @@ share/libchipcard/commands/ctmemorycard.cmd
 share/libchipcard/commands/ctprocessorcard.cmd
 share/libchipcard/commands/hbcicard.cmd
 share/libchipcard/commands/rsacard.cmd
+share/libchipcard/drivers/README
+share/libchipcard/drivers/ctapi-fake.dsc
+share/libchipcard/drivers/cyberjack.dsc
+share/libchipcard/drivers/kobil.dsc
+share/libchipcard/drivers/towitoko.dsc
+@dirrm share/libchipcard/drivers
 @dirrm share/libchipcard/commands
 @dirrm share/libchipcard

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libchipcard
-PORTVERSION=	0.7.5
+PORTVERSION=	0.8
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	libchipcard
@@ -21,7 +21,8 @@ USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=
-CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
+		--with-distri=freebsd
 
 MAN1=		ctfstool.1 chipcardd.1 geldkarte.1 hbcicard.1
 MAN5=		libchipcard.conf.5 chipcardc.conf.5 chipcardd.conf.5
