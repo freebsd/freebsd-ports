@@ -28,6 +28,12 @@ MAKE_ENV=	REAL_PREFIX=${PREFIX}
 BOOTSTRAP_DIR=	${WRKDIR}/${DISTNAME}
 BOOTSTRAP_TARGET=	stage1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Coredump during build"
+.endif
+
 post-extract:
 	@${MKDIR} ${WRKSRC} ${WRKDIR}/build
 
@@ -44,4 +50,4 @@ do-install:
 	(cd ${WRKDIR}/build && ${TAR} -c -f - resource) \
 		| (cd ${DATADIR} && ${TAR} --unlink -x -f -)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
