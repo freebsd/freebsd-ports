@@ -24,7 +24,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAN1=		recode.1
 
-post-extract: remove-info-files
+post-extract: copy-po-files remove-info-files
+
+copy-po-files:
+	@${CP} ${FILESDIR}/ru.po ${WRKSRC}/i18n
 
 remove-info-files:
 	@${RM} -f ${WRKSRC}/doc/${PORTNAME}.info*
