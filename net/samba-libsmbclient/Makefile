@@ -29,8 +29,7 @@ COMMENT=	The shared lib from the samba packages
 
 USE_BZIP2=		yes
 USE_SIZE=		yes
-USE_AUTOCONF=		yes
-WANT_AUTOCONF_VER=	253
+GNU_CONFIGURE=		yes
 INSTALLS_SHLIB=		yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
