@@ -18,6 +18,8 @@ DISTNAME=	ircd-hybrid-ru-7.1rc2
 MAINTAINER=	aquatique-ports@rambler.ru
 COMMENT=	Russian version of well known hybrid IRC server
 
+BROKEN=		"Uses unregistered, out-of-range uid"
+
 CONFLICTS=	ircd*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}
