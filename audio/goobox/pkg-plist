@@ -1,5 +1,4 @@
 bin/goobox
-etc/gconf/schemas/goobox.schemas
 libdata/bonobo/servers/GNOME_Goobox.server
 share/gnome/application-registry/goobox.applications
 share/gnome/applications/goobox.desktop
