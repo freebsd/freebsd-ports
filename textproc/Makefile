@@ -45,6 +45,7 @@
     SUBDIR += cl-ppcre-clisp
     SUBDIR += cl-ppcre-cmucl
     SUBDIR += cl-ppcre-sbcl
+    SUBDIR += clit
     SUBDIR += coco
     SUBDIR += code2html
     SUBDIR += cole
