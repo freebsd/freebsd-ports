@@ -1,4 +1,4 @@
-A Portable Emacs Library for xemacs21-mule.
+A Portable Emacs Library.
 
 --- Emacs Library Porting
 
@@ -30,4 +30,4 @@ APEL is programed by MORIOKA Tomohiko <tomo@m17n.org>.
 
 WWW: http://cvs.m17n.org/elisp/APEL/index.en.html
 
---- Porting by shige <shige@FreeBSD.ORG>.
+Ported by shige@FreeBSD.ORG.
