@@ -6,6 +6,7 @@
 
 PORTNAME=	subversion
 PORTVERSION=	0.23.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/files/documents/15/4218/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -18,8 +19,6 @@ LIB_DEPENDS=	db4:${PORTSDIR}/databases/db4 \
 		neon.23:${PORTSDIR}/www/neon \
 		expat.4:${PORTSDIR}/textproc/expat2 \
 		apr-0.9:${PORTSDIR}/devel/apr
-RUN_DEPENDS=	gdiff3:${PORTSDIR}/textproc/diffutils
-BUILD_DEPENDS=	gdiff3:${PORTSDIR}/textproc/diffutils
 
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
@@ -37,6 +36,26 @@ CONFIGURE_ARGS=	--with-ssl \
 MAN1=	svn.1 svnadmin.1
 MANCOMPRESSED=	no
 
+.if defined(WITH_MOD_DAV_SVN)
+APXS=${LOCALBASE}/sbin/apxs
+BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/www/apache2
+RUN_DEPENDS+=	${APXS}:${PORTSDIR}/www/apache2
+CONFIGURE_ARGS+= \
+		--with-apxs=${APXS}
+PLIST_SUB+=	MOD_DAV_SVN=""
+.else
+PLIST_SUB+=	MOD_DAV_SVN="@comment "
+PKGDEINSTALL=	NONEXISTENT
+.endif
+
+pre-extract:
+.if !defined(WITH_MOD_DAV_SVN)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "You can enable the mod_dav_svn module for Apache 2.X by defining"
+	@${ECHO_MSG} "WITH_MOD_DAV_SVN."
+	@${ECHO_MSG}
+.endif
+
 post-extract:
 	@${REINPLACE_CMD} 's/ldb/ldb4/g' ${WRKSRC}/configure
 
@@ -48,12 +67,22 @@ post-configure:
 	@${REINPLACE_CMD} 's/install-swig-py-lib//g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} 's/swig-py-lib//g' ${WRKSRC}/Makefile
 
+.if defined(WITH_MOD_DAV_SVN)
+pre-install:
+	${APXS} -e -S LIBEXECDIR=${PREFIX}/libexec/apache2 -a -n dav libexec/apache2/mod_dav.so
+.endif
+
 post-install:
 	install-info ${PREFIX}/info/svn-design.info ${PREFIX}/info/dir
 .if !defined(NOPORTDOCS)
 	cd ${WRKSRC}/doc/book; \
 	${MAKE} INSTALL_DIR=${DOCSDIR} \
 		install-book-html install-book-pdf install-book-ps
+.endif
+
+post-deinstall:
+.if defined(WITH_MOD_DAV_SVN)
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGDEINSTALL} ${PKGNAME} POST-DEINSTALL
 .endif
 
 .include <bsd.port.mk>
