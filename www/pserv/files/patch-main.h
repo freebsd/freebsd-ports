@@ -1,6 +1,6 @@
---- main.h.orig	Fri Sep 19 00:36:03 2003
-+++ main.h	Thu Oct 16 13:52:18 2003
-@@ -24,11 +24,12 @@
+--- main.h.orig	Sun Oct 19 17:22:03 2003
++++ main.h	Tue Oct 21 00:19:57 2003
+@@ -27,11 +27,12 @@
  
  
  /* --- CPP parsing options --- */
@@ -14,11 +14,11 @@
  
  /* --- Configure options --- */
  #define CONFIG_FILE_NAME "pserv.conf"
-@@ -39,19 +40,19 @@
+@@ -42,19 +43,19 @@
  #define MIME_TYPE_DEFAULT "application/octet-stream"
  
  /* configuration file location */
--#define DEFAULT_CONFIG_LOCATION "/export/home/multix/pserv/"
+-#define DEFAULT_CONFIG_LOCATION "/home/multix/pserv/"
 -//#define DEFAULT_CONFIG_LOCATION "/Users/multix/Documents/code/pserv/"
 +#define DEFAULT_CONFIG_LOCATION "/usr/local/etc/"
  
@@ -26,7 +26,7 @@
 -#define DEFAULT_PORT 2000
 +#define DEFAULT_PORT 80
  #define DEFAULT_MAX_CHILDREN 5
--#define DEFAULT_DOCS_LOCATION "/export/home/multix/public_html"
+-#define DEFAULT_DOCS_LOCATION "/home/multix/public_html"
 +#define DEFAULT_DOCS_LOCATION "/usr/local/www/data"
  #define DEFAULT_FILE_NAME "index.html"
  #define DEFAULT_SEC_TO 1
@@ -41,19 +41,18 @@
  #define DEFAULT_SERVER_NAME "localhost"
  
  /* amount of connections queued in listening */
-@@ -120,9 +121,11 @@
+@@ -123,8 +124,10 @@
  #define ADDRESS_LEN 16
  #define METHOD_LEN 16
  #define PROTOCOL_LEN 16
 +#define CONTENT_TYPE_LEN 256
  #define USER_AGENT_LEN 256
  #define MAX_QUERY_STRING_LEN 1024
- #define MAX_PATH_LEN 1024
 +#define MAX_COOKIE_LEN 4096
  
- struct request
- {
-@@ -133,7 +136,9 @@
+ /* the maximum path name of your system should be available in MAXNAMLEN 
+    defined in dirent.h. If not, set a reasonable value like 1024 */
+@@ -139,7 +142,9 @@
      char protocolVersion[PROTOCOL_LEN+1];
      int keepAlive;
      char userAgent[USER_AGENT_LEN+1];
