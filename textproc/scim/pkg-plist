@@ -1,0 +1,99 @@
+bin/scim
+bin/scim-config-agent
+bin/scim-make-table
+bin/scim-setup
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/scim.schemas >/dev/null || /usr/bin/true
+etc/gconf/schemas/scim.schemas
+etc/scim/config
+etc/scim/global
+include/scim-1.0/gtk/scimkeyselection.h
+include/scim-1.0/gtk/scimstringview.h
+include/scim-1.0/gtk/scimtrayicon.h
+include/scim-1.0/scim.h
+include/scim-1.0/scim_attribute.h
+include/scim-1.0/scim_backend.h
+include/scim-1.0/scim_bind.h
+include/scim-1.0/scim_config_base.h
+include/scim-1.0/scim_config_module.h
+include/scim-1.0/scim_config_path.h
+include/scim-1.0/scim_connection.h
+include/scim-1.0/scim_debug.h
+include/scim-1.0/scim_event.h
+include/scim-1.0/scim_exception.h
+include/scim-1.0/scim_frontend.h
+include/scim-1.0/scim_frontend_module.h
+include/scim-1.0/scim_global_config.h
+include/scim-1.0/scim_iconv.h
+include/scim-1.0/scim_imengine.h
+include/scim-1.0/scim_imengine_module.h
+include/scim-1.0/scim_lookup_table.h
+include/scim-1.0/scim_module.h
+include/scim-1.0/scim_object.h
+include/scim-1.0/scim_panel.h
+include/scim-1.0/scim_pointer.h
+include/scim-1.0/scim_property.h
+include/scim-1.0/scim_signals.h
+include/scim-1.0/scim_slot.h
+include/scim-1.0/scim_socket.h
+include/scim-1.0/scim_socket_transaction.h
+include/scim-1.0/scim_types.h
+include/scim-1.0/scim_utility.h
+lib/libscim-1.0.a
+lib/libscim-1.0.so
+lib/libscim-1.0.so.1
+lib/libscim-gtkutils-1.0.a
+lib/libscim-gtkutils-1.0.so
+lib/libscim-gtkutils-1.0.so.1
+lib/gtk-2.0/immodules/im-scim.so
+lib/scim-1.0/1.0.0/Config/gconf.so
+lib/scim-1.0/1.0.0/Config/simple.so
+lib/scim-1.0/1.0.0/Config/socket.so
+lib/scim-1.0/1.0.0/FrontEnd/socket.so
+lib/scim-1.0/1.0.0/FrontEnd/x11.so
+lib/scim-1.0/1.0.0/IMEngine/rawcode.so
+lib/scim-1.0/1.0.0/IMEngine/socket.so
+lib/scim-1.0/1.0.0/IMEngine/table.so
+lib/scim-1.0/1.0.0/SetupUI/panel-gtk-setup.so
+lib/scim-1.0/1.0.0/SetupUI/table-imengine-setup.so
+lib/scim-1.0/1.0.0/SetupUI/x11-frontend-setup.so
+libdata/pkgconfig/scim-gtkutils.pc
+libdata/pkgconfig/scim.pc
+libexec/scim-launcher
+libexec/scim-panel-gtk
+share/applications/scim-setup.desktop
+share/control-center-2.0/capplets/scim-setup.desktop
+share/locale/zh_CN/LC_MESSAGES/scim.mo
+share/locale/zh_TW/LC_MESSAGES/scim.mo
+share/pixmaps/scim-setup.png
+share/scim/icons/down.png
+share/scim/icons/full-letter.png
+share/scim/icons/full-punct.png
+share/scim/icons/half-letter.png
+share/scim/icons/half-punct.png
+share/scim/icons/help.png
+share/scim/icons/keyboard.png
+share/scim/icons/left.png
+share/scim/icons/pin-down.png
+share/scim/icons/pin-up.png
+share/scim/icons/rawcode.png
+share/scim/icons/right.png
+share/scim/icons/setup.png
+share/scim/icons/table.png
+share/scim/icons/trademark.png
+share/scim/icons/up.png
+@dirrm etc/scim
+@dirrm include/scim-1.0/gtk
+@dirrm include/scim-1.0
+@dirrm lib/gtk-2.0/immodules
+@dirrm lib/scim-1.0/1.0.0/Config
+@dirrm lib/scim-1.0/1.0.0/FrontEnd
+@dirrm lib/scim-1.0/1.0.0/IMEngine
+@dirrm lib/scim-1.0/1.0.0/SetupUI
+@dirrm lib/scim-1.0/1.0.0
+@dirrm lib/scim-1.0
+@dirrm share/control-center-2.0/capplets
+@dirrm share/control-center-2.0
+@dirrm share/pixmaps
+@dirrm share/scim/icons
+@dirrm share/scim
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/scim.schemas >/dev/null || /usr/bin/true
