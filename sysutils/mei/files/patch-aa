@@ -1,0 +1,11 @@
+--- freebsd.mak.orig	Sun Sep 14 22:10:43 1997
++++ freebsd.mak	Sun Sep 14 22:10:51 1997
+@@ -16,7 +16,7 @@
+ MANEXT = 1
+ RM = rm -f
+ CP = cp -f
+-INSTALL = cp -f
++#INSTALL = cp -f
+ KCC = nkf
+ 
+ SWITCHES = -DUSE_SCSI_WRITE -DNLS -USECURE

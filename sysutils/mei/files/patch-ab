@@ -1,0 +1,67 @@
+--- unix.mak.orig	Sun Nov 24 01:39:24 1996
++++ unix.mak	Sun Sep 14 22:17:10 1997
+@@ -42,48 +42,48 @@
+ 	sed -f msg.sed _en/moe.msg > m_moe.h
+ 
+ install:	all
+-	$(INSTALL) mei $(BINDIR)/mei
+-	$(INSTALL) moe $(BINDIR)/moe
+-	strip $(BINDIR)/mei
+-	strip $(BINDIR)/moe
++	$(INSTALL_PROGRAM) mei $(BINDIR)/mei
++	$(INSTALL_PROGRAM) moe $(BINDIR)/moe
++#	strip $(BINDIR)/mei
++#	strip $(BINDIR)/moe
+ 
+ install.man:	$(MAN_TARGETS)
+ 
+ install.en:	$(LN_EN)/mei.$(MANEXT) $(LN_EN)/moe.$(MANEXT)
+-	$(RM) $(MANDIR)/cat$(MANEXT)/mei.$(MANEXT)
+-	$(RM) $(MANDIR)/cat$(MANEXT)/moe.$(MANEXT)
+-	$(INSTALL) $(LN_EN)/mei.$(MANEXT) $(MANDIR)/man$(MANEXT)
+-	$(INSTALL) $(LN_EN)/moe.$(MANEXT) $(MANDIR)/man$(MANEXT)
++#	$(RM) $(MANDIR)/cat$(MANEXT)/mei.$(MANEXT)
++#	$(RM) $(MANDIR)/cat$(MANEXT)/moe.$(MANEXT)
++	$(INSTALL_MAN) $(LN_EN)/mei.$(MANEXT) $(MANDIR)/man$(MANEXT)
++	$(INSTALL_MAN) $(LN_EN)/moe.$(MANEXT) $(MANDIR)/man$(MANEXT)
+ 
+ install.ja:	$(LN_EUCJP)/mei.$(MANEXT) $(LN_EUCJP)/moe.$(MANEXT)
+-	$(RM) $(MANDIR)/$(LN_EUCJP)/cat$(MANEXT)/mei.$(MANEXT)
+-	$(RM) $(MANDIR)/$(LN_EUCJP)/cat$(MANEXT)/moe.$(MANEXT)
+-	$(INSTALL) $(LN_EUCJP)/mei.$(MANEXT) $(MANDIR)/$(LN_EUCJP)/man$(MANEXT)
+-	$(INSTALL) $(LN_EUCJP)/moe.$(MANEXT) $(MANDIR)/$(LN_EUCJP)/man$(MANEXT)
++#	$(RM) $(MANDIR)/$(LN_EUCJP)/cat$(MANEXT)/mei.$(MANEXT)
++#	$(RM) $(MANDIR)/$(LN_EUCJP)/cat$(MANEXT)/moe.$(MANEXT)
++	$(INSTALL_MAN) $(LN_EUCJP)/mei.$(MANEXT) $(MANDIR)/$(LN_EUCJP)/man$(MANEXT)
++	$(INSTALL_MAN) $(LN_EUCJP)/moe.$(MANEXT) $(MANDIR)/$(LN_EUCJP)/man$(MANEXT)
+ 
+ $(LN_EN)/mei.$(MANEXT):	_en/mei.src
+-	-mkdir $(LN_EN)
++	[ -d $(LN_EN) ] || mkdir $(LN_EN)
+ 	LANG=$(LN_EN); export LANG;\
+ 	cat _en/mei.src |\
+ 	$(CPP) $(MEI_MAN_DEFINES) -DDATE="`date +%x`" |\
+ 	egrep -v '^$$' > $(LN_EN)/mei.$(MANEXT)
+ 
+ $(LN_EUCJP)/mei.$(MANEXT):	_ja/mei.src
+-	-mkdir $(LN_EUCJP)
++	[ -d $(LN_EUCJP) ] || mkdir $(LN_EUCJP)
+ 	LANG=$(LN_EUCJP); export LANG;\
+ 	$(KCC) -e _ja/mei.src |\
+ 	$(CPP) $(MEI_MAN_DEFINES) -DDATE="`date +%x`" |\
+ 	egrep -v '^$$' > $(LN_EUCJP)/mei.$(MANEXT)
+ 
+ $(LN_EN)/moe.$(MANEXT):	_en/moe.src
+-	-mkdir $(LN_EN)
++	[ -d $(LN_EN) ] || mkdir $(LN_EN)
+ 	LANG=$(LN_EN); export LANG;\
+ 	cat _en/moe.src |\
+ 	$(CPP) $(MOE_MAN_DEFINES) -DDATE="`date +%x`" |\
+ 	egrep -v '^$$' > $(LN_EN)/moe.$(MANEXT)
+ 
+ $(LN_EUCJP)/moe.$(MANEXT):	_ja/moe.src
+-	-mkdir $(LN_EUCJP)
++	[ -d $(LN_EUCJP) ] || mkdir $(LN_EUCJP)
+ 	LANG=$(LN_EUCJP); export LANG;\
+ 	$(KCC) -e _ja/moe.src |\
+ 	$(CPP) $(MOE_MAN_DEFINES) -DDATE="`date +%x`" |\
