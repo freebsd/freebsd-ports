@@ -9,8 +9,7 @@
 PORTNAME=	zip
 PORTVERSION=	2.3
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://ftp.freesoftware.com/pub/infozip/src/ \
-		${MASTER_SITE_TEX_CTAN:S,%SUBDIR%,tools/zip/info-zip/src/,}
+MASTER_SITES=	${MASTER_SITE_TEX_CTAN:S,%SUBDIR%,tools/zip/info-zip/src/,}
 ZCRYPT_SRC=	zcrypt29-exportable.zip
 DISTFILES=	zip23${EXTRACT_SUFX} ${ZCRYPT_SRC}
 
