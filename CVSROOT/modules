@@ -7664,6 +7664,7 @@ rmoldmail	ports/mail/rmoldmail
 rmonitor	ports/sysutils/rmonitor
 rmsg		ports/net/rmsg
 rname		ports/misc/rname
+rnews		ports/www/rnews
 rng_82802	ports/security/rng_82802
 ro-aspell	ports/textproc/ro-aspell
 roadmap		ports/astro/roadmap
