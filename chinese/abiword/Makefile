@@ -16,7 +16,7 @@ MAINTAINER=	keith@FreeBSD.org
 RUN_DEPENDS=	AbiWord:${PORTSDIR}/editors/AbiWord \
 		ttfm.sh:${PORTSDIR}/chinese/ttfm \
 		${LOCALBASE}/share/fonts/TrueType/bkai00mp.ttf:${PORTSDIR}/chinese/arphicttf \
-		${LOCALBASE}/share/ghostscript/CJK/CMap/ac13/CMap/Adobe-CNS1-0:${PORTSDIR}/chinese/ghostscript6
+		gs:${PORTSDIR}/print/ghostscript-gnu
 
 NO_BUILD=	yes
 

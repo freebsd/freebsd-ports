@@ -13,7 +13,7 @@ MASTERDIR=	${.CURDIR}/../../print/enscript-letter
 MAINTAINER=	keith@FreeBSD.org
 
 RUN_DEPENDS=	ttfm.sh:${PORTSDIR}/chinese/ttfm \
-		${LOCALBASE}/share/ghostscript/CJK/CMap/ac13/cid2code.txt:${PORTSDIR}/chinese/ghostscript6
+		gs:${PORTSDIR}/print/ghostscript-gnu
 
 EXTRA_PATCHES=	${.CURDIR}/files/patch-*
 PLIST=		${WRKDIR}/pkg-plist
