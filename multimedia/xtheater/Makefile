@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	SDL-1.1:${PORTSDIR}/devel/sdl12 \
 		smpeg:${PORTSDIR}/graphics/smpeg \
-		aviplay:${PORTSDIR}/graphics/avifile
+		aviplay-0.7:${PORTSDIR}/graphics/avifile
 
 USE_BZIP2=	yes
 USE_XLIB=	yes

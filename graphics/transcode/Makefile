@@ -38,7 +38,7 @@ WITH_IMAGEMAGICK=	yes
 WITH_NASM=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libaviplay.so)
+.if exists(${LOCALBASE}/lib/libaviplay-0.7.so)
 WITH_AVIFILE=	yes
 .endif
 
@@ -101,7 +101,7 @@ ONLY_FOR_ARCHS=	i386
 .endif
 
 .if defined(WITH_AVIFILE)
-LIB_DEPENDS+=	aviplay.6:${PORTSDIR}/graphics/avifile
+LIB_DEPENDS+=	aviplay-0.7.0:${PORTSDIR}/graphics/avifile
 PLIST_SUB+=	WITH_AVIFILE=""
 .else
 CONFIGURE_ARGS+=	--with-avifile-mods=no \
