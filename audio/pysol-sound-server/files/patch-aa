@@ -12,7 +12,7 @@
  
  SMPEG_CFLAGS=""
 -SMPEG_LIBS="-lsmpeg"
-+SMPEG_LIBS="-lsmpeg -lgcc_r"
++SMPEG_LIBS="-lsmpeg"
  
  sed -e "s|@SDL_VERSION@|$SDL_VERSION|g" -e "s|@SDL_CFLAGS@|$SDL_CFLAGS|g" -e "s|@SDL_LIBS@|$SDL_LIBS|g" -e "s|@SMPEG_CFLAGS@|$SMPEG_CFLAGS|g" -e "s|@SMPEG_LIBS@|$SMPEG_LIBS|g" < Setup.pre.in > Setup.in
  

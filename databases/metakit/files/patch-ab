@@ -35,7 +35,7 @@
  
  Mk4py.so: $(PYOBJS) libmk4.a
 -	$(CXX) -o $@ $(CXX_SWITCHES) -shared $(SPYOBJS) $(SHLOBJS)
-+	$(CXX) -o $@ $(CXX_SWITCHES) -shared $(SPYOBJS) $(SHLOBJS) -lgcc_r
++	$(CXX) -o $@ $(CXX_SWITCHES) -shared $(SPYOBJS) $(SHLOBJS)
  
  demo: ../demos/demo.cpp libmk4.a
  	$(LIBTOOL) --mode=link $(CXX) $(CXX_SWITCHES) -o $@ \

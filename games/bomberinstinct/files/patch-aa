@@ -26,7 +26,7 @@
  	 -D$(CIBLE) -DDIR=\"$(DATADIR)\" -DVERSION=\"$(VERSION)\"
 -	LIBS := $(shell sdl-config --libs) -lSDL_mixer -lm #-lSDL_image --static 
 +	CFLAGS += $(CFLAGS_)
-+	LIBS := $(shell $(SDL_CONFIG) --libs) -lSDL_mixer -lsmpeg -lgcc_r -lm #-lSDL_image --static 
++	LIBS := $(shell $(SDL_CONFIG) --libs) -lSDL_mixer -lsmpeg -lm #-lSDL_image --static 
  endif
  OBJS = sprites.o niveaux.o pouvoirs.o evenements.o options.o son.o intro.o SFont/font.o
  ifeq ($(DEBUG),1)
