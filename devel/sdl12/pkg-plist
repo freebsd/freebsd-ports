@@ -30,7 +30,6 @@ include/SDL11/SDL_video.h
 include/SDL11/begin_code.h
 include/SDL11/close_code.h
 lib/libSDL-1.1.a
-lib/libSDL-1.1.la
 lib/libSDL-1.1.so
 lib/libSDL-1.1.so.7
 lib/libSDLmain-1.1.a
@@ -63,6 +62,7 @@ share/aclocal/sdl11.m4
 %%EXAMPLESDIR%%/testcdrom.c
 %%EXAMPLESDIR%%/testcpuinfo.c
 %%EXAMPLESDIR%%/testdyngl.c
+%%EXAMPLESDIR%%/testendian.c
 %%EXAMPLESDIR%%/testerror.c
 %%EXAMPLESDIR%%/testgamma.c
 %%EXAMPLESDIR%%/testgl.c
