@@ -118,16 +118,16 @@ do-install:
 .for i in ${MAN8}
 	${INSTALL_MAN} ${WRKSRC}/man/${i} ${PREFIX}/man/man8
 .endfor
-	@${ECHO} ""
-	@${ECHO} "!!!!!!!!"
-	@${ECHO} "you MUST change the configuration of this news setup:"
-	@${ECHO} "	cd to ${NEWSCTL} and change the following files..."
-	@${ECHO} "mailname, whoami, organization, mailpaths, sys, readnews.ctl, postdefltgroup"
-	@${ECHO} "	to suit your local system and news topology."
-	@${ECHO} "check that you have vaild aliases in report.ctl,"
-	@${ECHO} "	so any problem can be reported."
-	@${ECHO} "!!!!!!!!"
-	@${ECHO} ""
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "!!!!!!!!"
+	@${ECHO_MSG} "you MUST change the configuration of this news setup:"
+	@${ECHO_MSG} "	cd to ${NEWSCTL} and change the following files..."
+	@${ECHO_MSG} "mailname, whoami, organization, mailpaths, sys, readnews.ctl, postdefltgroup"
+	@${ECHO_MSG} "	to suit your local system and news topology."
+	@${ECHO_MSG} "check that you have vaild aliases in report.ctl,"
+	@${ECHO_MSG} "	so any problem can be reported."
+	@${ECHO_MSG} "!!!!!!!!"
+	@${ECHO_MSG} ""
 
 test:
 	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \

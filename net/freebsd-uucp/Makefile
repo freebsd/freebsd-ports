@@ -73,12 +73,12 @@ post-install:
 	${ECHO_CMD} "suucp           4031/tcp   #UUCP over SSL"; \
 	${ECHO_CMD} "suucp           4031/udp   #UUCP over SSL" ) \
 		> ${DESTDIR}/etc/services
-	@${ECHO} "Use the 'make upgrade' command to copy your old configuration"
-	@${ECHO} "files from /etc/uucp to the new location in ${PREFIX}/etc/uucp"
-	@${ECHO}
+	@${ECHO_MSG} "Use the 'make upgrade' command to copy your old configuration"
+	@${ECHO_MSG} "files from /etc/uucp to the new location in ${PREFIX}/etc/uucp"
+	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 .if defined(WITH_PAM)
-	@${ECHO} "Add this lines to your pam.conf:"
+	@${ECHO_MSG} "Add this lines to your pam.conf:"
 	@${CAT} ${FILESDIR}/uucp-pam.conf
 .endif
 .if exists(/usr/sbin/uuchk)
@@ -86,7 +86,7 @@ post-install:
 .endif
 
 upgrade:
-	@${ECHO} "Copying old configuration files from /etc/uucp to ${PREFIX}/etc/uucp"
+	@${ECHO_MSG} "Copying old configuration files from /etc/uucp to ${PREFIX}/etc/uucp"
 	@${CP} -rp /etc/uucp ${PREFIX}/etc/uucp
 
 base-package:
