@@ -11,8 +11,6 @@ CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.cert.org/pub/tools/cops/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
-MAINTAINER=	oly@world.std.com
-
 WRKSRC=		${WRKDIR}/cops_104
 EXECUTABLE=	home.chk user.chk is_writable crc crc_check \
 		addto clearfiles filewriters members tilde is_able
