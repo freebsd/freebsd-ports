@@ -8,4 +8,6 @@
 PAPERSIZE=	a4
 MASTERDIR=	${.CURDIR}/../R-letter
 
+CONFLICTS=	R-letter-*
+
 .include "${MASTERDIR}/Makefile"
