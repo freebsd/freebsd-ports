@@ -9709,6 +9709,7 @@ tome		ports/games/tome
 toolame		ports/audio/toolame
 topaz		ports/math/topaz
 toppler		ports/games/toppler
+tor		ports/security/tor
 tora		ports/databases/tora
 torcs		ports/games/torcs
 tornado		ports/games/tornado
