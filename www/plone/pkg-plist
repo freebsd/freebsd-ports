@@ -4,12 +4,19 @@
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/CustomizationPolicy.py
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/CustomizationPolicy.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/Extensions/Upgrade.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/Extensions/Upgrade.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/Extensions/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/Extensions/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/Extensions/migration.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/Extensions/migration.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/Extensions/nonmigrationFixes.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/Extensions/nonmigrationFixes.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/Extensions/package_plone.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/Extensions/package_plone.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/Extensions/tidy_up.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/Extensions/tidy_up.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/Extensions/view_source.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/Extensions/view_source.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/FactoryTool.py
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/FactoryTool.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/FolderWorkflow.py
@@ -278,9 +285,11 @@
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/check_id.py
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/createObject.py
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/deleteDiscussion.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/deleteDiscussion.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/errorMessages.py
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/external_edit.py
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/filterCookie.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/filterCookie.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/filterTypes.py
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/folder_copy.py
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/folder_cut.py
@@ -342,6 +351,7 @@
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/navigationRemoteResources.py
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/navigatorExpand.py
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/plone_debug.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/plone_debug.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/portal_form_url.py
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/prepare_slots.py
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/queryCatalog.py
@@ -349,8 +359,10 @@
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/rejectAnonymous.py
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/reverseList.py
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/save_xml.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/save_xml.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/selectedTabs.py
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/setAuthCookie.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/setAuthCookie.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/setup_talkback_tree.py
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/showEditableBorder.py
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/show_id.py
@@ -467,9 +479,13 @@
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_wysiwyg/wysiwyg_popup.pt
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_wysiwyg/wysiwyg_support.pt
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/tests/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/tests/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/tests/test_Portal.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/tests/test_Portal.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/tests/test_all.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/tests/test_all.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/tests/test_join.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/tests/test_join.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/tool.gif
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/version.txt
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/www/addPropertySheet.zpt
@@ -477,25 +493,42 @@
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/www/migrationTool.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/CHANGES.txt
 %%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/ContainerTab.py
+%%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/ContainerTab.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/DCWorkflow.py
+%%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/DCWorkflow.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/Default.py
+%%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/Default.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/Expression.py
+%%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/Expression.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/Guard.py
+%%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/Guard.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/README.txt
 %%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/Scripts.py
+%%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/Scripts.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/States.py
+%%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/States.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/Transitions.py
+%%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/Transitions.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/Variables.py
+%%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/Variables.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/WorkflowUIMixin.py
+%%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/WorkflowUIMixin.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/Worklists.py
+%%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/Worklists.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/doc/actbox.stx
 %%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/doc/basics.stx
 %%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/doc/examples/staging/checkin.py
+%%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/doc/examples/staging/checkin.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/doc/examples/staging/checkout.py
+%%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/doc/examples/staging/checkout.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/doc/examples/staging/retractStages.py
+%%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/doc/examples/staging/retractStages.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/doc/examples/staging/updateProductionStage.py
+%%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/doc/examples/staging/updateProductionStage.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/doc/examples/staging/updateReviewStage.py
+%%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/doc/examples/staging/updateReviewStage.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/doc/expressions.stx
 %%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/doc/howto.stx
 %%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/doc/worklists.stx
@@ -530,33 +563,54 @@
 %%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/images/workflow.gif
 %%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/images/worklist.gif
 %%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/tests/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/tests/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/tests/test_all.py
+%%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/tests/test_all.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/utils.py
+%%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/utils.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/version.txt
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/CREDITS.txt
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/DummyField.py
+%%ZOPEBASEDIR%%/lib/python/Products/Formulator/DummyField.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/Errors.py
+%%ZOPEBASEDIR%%/lib/python/Products/Formulator/Errors.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/FSForm.py
+%%ZOPEBASEDIR%%/lib/python/Products/Formulator/FSForm.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/Field.py
+%%ZOPEBASEDIR%%/lib/python/Products/Formulator/Field.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/FieldHelpTopic.py
+%%ZOPEBASEDIR%%/lib/python/Products/Formulator/FieldHelpTopic.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/FieldRegistry.py
+%%ZOPEBASEDIR%%/lib/python/Products/Formulator/FieldRegistry.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/Form.py
+%%ZOPEBASEDIR%%/lib/python/Products/Formulator/Form.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/HISTORY.txt
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/HelperFields.py
+%%ZOPEBASEDIR%%/lib/python/Products/Formulator/HelperFields.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/INSTALL.txt
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/LICENSE.txt
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/ListTextAreaField.py
+%%ZOPEBASEDIR%%/lib/python/Products/Formulator/ListTextAreaField.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/MethodField.py
+%%ZOPEBASEDIR%%/lib/python/Products/Formulator/MethodField.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/PatternChecker.py
+%%ZOPEBASEDIR%%/lib/python/Products/Formulator/PatternChecker.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/README.txt
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/StandardFields.py
+%%ZOPEBASEDIR%%/lib/python/Products/Formulator/StandardFields.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/TALESField.py
+%%ZOPEBASEDIR%%/lib/python/Products/Formulator/TALESField.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/TODO.txt
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/Validator.py
+%%ZOPEBASEDIR%%/lib/python/Products/Formulator/Validator.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/Widget.py
+%%ZOPEBASEDIR%%/lib/python/Products/Formulator/Widget.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/XMLObjects.py
+%%ZOPEBASEDIR%%/lib/python/Products/Formulator/XMLObjects.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/XMLSerialize.py
+%%ZOPEBASEDIR%%/lib/python/Products/Formulator/XMLSerialize.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/Formulator/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/dtml/FieldHelpTopic.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/dtml/fieldAdd.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/dtml/fieldEdit.dtml
@@ -570,9 +624,13 @@
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/dtml/formSettings.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/dtml/formTest.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/help/BasicForm.py
+%%ZOPEBASEDIR%%/lib/python/Products/Formulator/help/BasicForm.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/help/Field.py
+%%ZOPEBASEDIR%%/lib/python/Products/Formulator/help/Field.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/help/Form.py
+%%ZOPEBASEDIR%%/lib/python/Products/Formulator/help/Form.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/help/ZMIForm.py
+%%ZOPEBASEDIR%%/lib/python/Products/Formulator/help/ZMIForm.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/help/dogfood.txt
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/help/fieldEdit.txt
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/help/fieldMessages.txt
@@ -587,7 +645,9 @@
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/help/formulator_motto.txt
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/tests/README.txt
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/tests/test_serialize.py
+%%ZOPEBASEDIR%%/lib/python/Products/Formulator/tests/test_serialize.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/tests/test_validators.py
+%%ZOPEBASEDIR%%/lib/python/Products/Formulator/tests/test_validators.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/version.txt
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/www/BasicField.gif
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/www/CheckBoxField.gif
@@ -652,9 +712,8 @@
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_ecmascript
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_forms
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_images
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/form_scripts
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/autumn
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/core
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/core_inverted
@@ -665,8 +724,9 @@
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/mozilla_new
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/prime
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/zed
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_templates
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_templates/ui_slots
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_templates
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_wysiwyg
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins
