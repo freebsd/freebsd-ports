@@ -55,13 +55,11 @@
     SUBDIR += autobook
     SUBDIR += autoconf
     SUBDIR += autoconf213
-    SUBDIR += autoconf253
     SUBDIR += autoconf257
     SUBDIR += autodia
     SUBDIR += autogen
     SUBDIR += automake
     SUBDIR += automake14
-    SUBDIR += automake15
     SUBDIR += automake17
     SUBDIR += avarice
     SUBDIR += avltree
