@@ -3,12 +3,12 @@
 # Date created:		31 July 1995
 # Whom:			nils@guru.ims.uni-stuttgart.de
 #
-# $Id: Makefile,v 1.9 1995/06/18 13:11:25 ache Exp $
+# $Id: Makefile,v 1.1.1.1 1995/08/08 10:24:10 asami Exp $
 #
 
 DISTNAME=       dmake40
 PKGNAME=	dmake-4.0
-CATEGORIES=     development programming
+CATEGORIES=     devel
 MASTER_SITES=   ftp://plg.uwaterloo.ca/pub/dmake/
 
 MAINTAINER=	nils@guru.ims.uni-stuttgart.de

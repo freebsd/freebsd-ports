@@ -3,12 +3,12 @@
 # Date created:		11 September 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.8 1995/04/09 10:05:08 asami Exp $
+# $Id: Makefile,v 1.9 1995/06/18 13:11:25 ache Exp $
 #
 
 DISTNAME=       make-3.74
 PKGNAME=        gmake-3.74
-CATEGORIES+=	development programming
+CATEGORIES+=	devel
 MASTER_SITES=   ftp://prep.ai.mit.edu/pub/gnu/ \
 		ftp://ftp.uu.net/systems/gnu/
 

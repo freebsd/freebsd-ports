@@ -3,12 +3,12 @@
 # Date created:		3 June 1995
 # Whom:			roberto
 #
-# $Id: Makefile,v 1.1.1.1 1995/06/04 05:29:57 asami Exp $
+# $Id: Makefile,v 1.2 1995/06/24 11:37:11 asami Exp $
 #
 
 DISTNAME=	dlmalloc
 PKGNAME=	dlmalloc-2.5.3b
-CATEGORIES+=	development programming libraries
+CATEGORIES+=	devel
 MASTER_SITES=	ftp://gee.cs.oswego.edu/pub/misc/
 DISTFILES=	malloc-2.5.3b.c
 
