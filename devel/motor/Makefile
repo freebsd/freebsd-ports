@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://konst.org.ua/download/
 
-MAINTAINER=	sysadmin@alexdupre.com
+MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A powerful text mode based programming IDE
 
 LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext

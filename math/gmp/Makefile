@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gmp
 DISTNAME=	gmp-${PORTVERSION}
 
-MAINTAINER=	sysadmin@alexdupre.com
+MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A free library for arbitrary precision arithmetic
 
 CONFLICTS=	libgmp-2*

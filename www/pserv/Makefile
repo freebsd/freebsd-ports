@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-08-Jan-04
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	sysadmin@alexdupre.com
+MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A portable and small webserver written in C
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

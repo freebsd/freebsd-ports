@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://afterburner.bware.it/download/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sysadmin@alexdupre.com
+MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A tool to cache applications written in PHP
 
 WRKSRC=		${WRKDIR}/bware_cache-${PORTVERSION}

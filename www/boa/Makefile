@@ -12,7 +12,7 @@ CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.boa.org/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
-MAINTAINER=	sysadmin@alexdupre.com
+MAINTAINER=	ale@FreeBSD.org
 COMMENT=	High performance single-tasking web server
 
 USE_BZIP2=	yes

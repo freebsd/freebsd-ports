@@ -3,5 +3,7 @@ It is based solely on free algorithms provided by zlib and can
 transparently access files being either real files or zipped files
 with the same filepath argument.
 
-- George Reid
-greid@ukug.uk.freebsd.org
+WWW: http://zziplib.sourceforge.net/
+
+- Alex Dupre
+ale@FreeBSD.org

@@ -11,7 +11,7 @@ CATEGORIES=	print
 MASTER_SITES=	http://www.pdflib.com/products/pdflib/download/
 DISTNAME=	PDFlib-Lite-${PORTVERSION}-Unix-src
 
-MAINTAINER=	sysadmin@alexdupre.com
+MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A C library for dynamically generating PDF
 
 RESTRICTED=	"many odd restrictions on usage and distribution"
