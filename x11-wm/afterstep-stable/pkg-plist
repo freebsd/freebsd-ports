@@ -1,0 +1,18 @@
+bin/afterstep
+lib/X11/afterstep/Audio
+lib/X11/afterstep/Auto
+lib/X11/afterstep/Banner
+lib/X11/afterstep/Wharf
+lib/X11/afterstep/system.steprc
+include/X11/pixmaps/3dpaint.xpm
+include/X11/pixmaps/monitor.xpm
+include/X11/pixmaps/netscape3.xpm
+include/X11/pixmaps/FileFolders.xpm
+include/X11/pixmaps/recycler.xpm
+include/X11/pixmaps/YellowBlueRedGeometry.xpm
+include/X11/pixmaps/shutdown.xpm
+include/X11/pixmaps/interface.xpm
+include/X11/pixmaps/text.xpm
+include/X11/pixmaps/monalisa.xpm
+include/X11/pixmaps/writeletter.xpm
+@dirrm lib/X11/afterstep

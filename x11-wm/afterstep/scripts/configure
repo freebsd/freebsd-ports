@@ -1,0 +1,9 @@
+#!/bin/sh
+
+cd $WRKSRC || exit 1
+
+cp configure.h configure.h.orig
+cp sample.steprc sample.steprc.orig
+sed -e "s:@@PREFIX@@:$PREFIX:g" < configure.h.orig > configure.h
+sed -e "s:@@PREFIX@@:$PREFIX:g" < sample.steprc.orig > sample.steprc
+chmod u+x Installme
