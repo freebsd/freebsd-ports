@@ -1,8 +1,6 @@
-$FreeBSD$
-
---- gdb/freebsd-uthread.c.orig	Sat May 25 13:05:56 2002
-+++ gdb/freebsd-uthread.c	Sat May 25 13:09:09 2002
-@@ -0,0 +1,915 @@
+--- gdb/freebsd-uthread.c	Wed Dec 31 16:00:00 1969
++++ gdb/freebsd-uthread.c	Sun Oct 13 13:10:51 2002
+@@ -0,0 +1,934 @@
 +/* $FreeBSD$ */
 +/* Low level interface for debugging FreeBSD user threads for GDB, the GNU debugger.
 +   Copyright 1996, 1999 Free Software Foundation, Inc.
@@ -42,6 +40,7 @@ $FreeBSD$
 +#include <sys/queue.h>
 +#include <signal.h>
 +#include <setjmp.h>
++#include <string.h>
 +#include "gdbthread.h"
 +#include "target.h"
 +#include "inferior.h"
@@ -50,6 +49,7 @@ $FreeBSD$
 +#include <unistd.h>
 +#include <sys/stat.h>
 +#include "gdbcore.h"
++#include "regcache.h"
 +
 +extern int child_suppress_run;
 +extern struct target_ops child_ops; /* target vector for inftarg.c */
@@ -163,7 +163,7 @@ $FreeBSD$
 +
 +  LIST_FOREACH(im, &map_hash[h], link)
 +    if (im->uniqueid == uniqueid)
-+    return MERGEPID(PIDGET(inferior_ptid), im->tid);
++      return MERGEPID(PIDGET(inferior_ptid), im->tid);
 +
 +  im = xmalloc(sizeof(struct idmap));
 +  im->uniqueid = uniqueid;
@@ -413,9 +413,12 @@ $FreeBSD$
 +  return rtnval;
 +}
 +
++/* XXX: this needs to be selected by target, not [build] host */
 +#ifdef __i386__
 +
-+static char sigmap[MAX_NUM_REGS] = /* map reg to sigcontext  */
++#include "i386-tdep.h"
++
++static char sigmap[I386_SSE_NUM_REGS] = /* map reg to sigcontext  */
 +{
 +  12,				/* eax */
 +  11,				/* ecx */
@@ -439,7 +442,7 @@ $FreeBSD$
 +  -1,				/* mxcsr */
 +};
 +
-+static char jmpmap[MAX_NUM_REGS] = /* map reg to jmp_buf */
++static char jmpmap[I386_SSE_NUM_REGS] = /* map reg to jmp_buf */
 +{
 +  6,				/* eax */
 +  -1,				/* ecx */
@@ -467,7 +470,9 @@ $FreeBSD$
 +
 +#ifdef __alpha__
 +
-+static char sigmap[NUM_REGS] =	/* map reg to sigcontext  */
++#include "alpha-tdep.h"
++
++static char sigmap[ALPHA_NUM_REGS] =	/* map reg to sigcontext  */
 +{
 +  1,  2,  3,  4,  5,  6,  7,  8,  /* v0 - t6 */
 +  9,  10, 11, 12, 13, 14, 15, 16, /* t7 - fp */
@@ -479,7 +484,7 @@ $FreeBSD$
 +  62, 63, 64, 65, 66, 67, 68, 69, /* f24 - f31 */
 +  33, -1			  /* pc, vfp */
 +};
-+static char jmpmap[NUM_REGS] = {
++static char jmpmap[ALPHA_NUM_REGS] = {
 +  4,  5,  6,  7,  8,  9,  10, 11, /* v0 - t6 */
 +  12, 13, 14, 15, 16, 17, 18, 19, /* t7 - fp */
 +  20, 21, 22, 23, 24, 25, 26, 27, /* a0 - t9 */
@@ -489,6 +494,18 @@ $FreeBSD$
 +  53, 54, 55, 56, 57, 58, 59, 60, /* f16 - f23 */
 +  61, 62, 63, 64, 65, 66, 67, 68, /* f24 - f31 */
 +  2,  -1,			  /* pc, vfp */
++};
++
++#endif
++
++#ifdef __sparc64__
++
++static char sigmap[125] =	/* map reg to sigcontext  */
++{
++  -1
++};
++static char jmpmap[125] = {
++  -1
 +};
 +
 +#endif
@@ -918,4 +935,3 @@ $FreeBSD$
 +
 +  child_suppress_run = 1;
 +}
-
