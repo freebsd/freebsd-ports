@@ -24,8 +24,10 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	max@FreeBSD.org
 
+.include <bsd.port.pre.mk>
+
 .if ${XFREE86_VERSION} == 3
-BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake
+#BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake
 .endif
 
 USE_IMAKE=	yes
@@ -68,4 +70,4 @@ post-install:
 	fi
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
