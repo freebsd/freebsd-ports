@@ -8,15 +8,15 @@
 PORTNAME=	binutils
 PORTVERSION=	2.10.91
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.agendacomputing.com/pub/dev/snow/snap-02212000/src/
-MASTER_SITE_SUBDIR=	binutils
+MASTER_SITES=	http://lev.serebryakov.spb.ru/dpwnload/agenda
 PKGNAMEPREFIX=	mipsel-linux-
-DISTNAME=	binutils-CVS
+DISTNAME=	${PORTNAME}-${PORTVERSION}-cvs
 
 MAINTAINER=	lev@serebryakov.spb.ru
 
 WRKSRC=		${WRKDIR}/binutils-CVS/src
 
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//}
 USE_LIBTOOL=	yes
