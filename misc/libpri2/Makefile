@@ -17,7 +17,13 @@ COMMENT=	A C implementation of the Primary Rate ISDN specification
 USE_GMAKE=	yes
 INSTALLS_SHLIB= yes
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha"
+BROKEN=		"Does not compile on alpha"
+.endif
+
 post-patch:
 	@${FIND} ${WRKSRC} -name \*.orig -or -name \*.bak -delete
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
