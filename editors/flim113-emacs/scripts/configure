@@ -1,7 +1,5 @@
 #!/bin/sh
 
-TARGETS='flim-setup.el'
-
 for i in ${TARGETS}
 do
 	if [ -f ${WRKDIR}/${i}.in ]; then
