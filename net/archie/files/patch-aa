@@ -1,63 +1,48 @@
-*** Makefile.orig	Fri Oct 21 00:25:31 1994
---- Makefile	Fri Oct 21 00:26:55 1994
-***************
-*** 2,15 ****
-  # Makefile for the minimal build for an archie Prospero client.
-  #
-  # Your C compiler:
-! #CC=cc
-  
-  # For most systems, these OPTIONS will suffice.  Exceptions:
-  #
-  #	* If you're on a Stardent, add  -43
-  #	* If you're running EP/IX, you may need to add  -systype bsd43
-  #	  but try it without it first.
-! OPTIONS= -O -I. -I/usr/netinclude -I/usr/ucbinclude
-  
-  # For this, DEFINES is usually ok as-is.  Try it without any of these
-  # first; if some stuff fails or shows up undefined, then come back and
---- 2,15 ----
-  # Makefile for the minimal build for an archie Prospero client.
-  #
-  # Your C compiler:
-! CC=cc
-  
-  # For most systems, these OPTIONS will suffice.  Exceptions:
-  #
-  #	* If you're on a Stardent, add  -43
-  #	* If you're running EP/IX, you may need to add  -systype bsd43
-  #	  but try it without it first.
-! OPTIONS= -O -I.
-  
-  # For this, DEFINES is usually ok as-is.  Try it without any of these
-  # first; if some stuff fails or shows up undefined, then come back and
-***************
-*** 30,36 ****
-  #     * if your system is lacking strspn(), add               -DSTRSPN
-  #     * if you're using the unbundled SparcCompiler on a
-  #	Solaris 2 system, add				      -DSOLARIS2
-! DEFINES= -DDEBUG
-  
-  # The default Archie server; choose one of:
-  #    archie.ans.net		(USA [NY])
---- 30,36 ----
-  #     * if your system is lacking strspn(), add               -DSTRSPN
-  #     * if you're using the unbundled SparcCompiler on a
-  #	Solaris 2 system, add				      -DSOLARIS2
-! DEFINES= -DDEBUG -DNOREGEX
-  
-  # The default Archie server; choose one of:
-  #    archie.ans.net		(USA [NY])
-***************
-*** 84,89 ****
---- 84,93 ----
-  	vlalloc.o vl_comp.o
-  
-  all: archie
-+ 
-+ install:
-+ 	install -c -s archie  ${PREFIX}/bin/archie
-+ 	install -c archie.man ${PREFIX}/man/man1/archie.1
-  
-  archie: $(OBJS)
-  	$(CC) $(CFLAGS) -o $@ $(OBJS) $(LDFLAGS)
+--- Makefile.orig	Mon Oct 26 15:11:04 1992
++++ Makefile	Tue Jul 28 09:44:38 1998
+@@ -2,14 +2,14 @@
+ # Makefile for the minimal build for an archie Prospero client.
+ #
+ # Your C compiler:
+-#CC=cc
++CC=cc
+ 
+ # For most systems, these OPTIONS will suffice.  Exceptions:
+ #
+ #	* If you're on a Stardent, add  -43
+ #	* If you're running EP/IX, you may need to add  -systype bsd43
+ #	  but try it without it first.
+-OPTIONS= -O -I. -I/usr/netinclude -I/usr/ucbinclude
++OPTIONS= -O -I.
+ 
+ # For this, DEFINES is usually ok as-is.  Try it without any of these
+ # first; if some stuff fails or shows up undefined, then come back and
+@@ -30,7 +30,7 @@
+ #     * if your system is lacking strspn(), add               -DSTRSPN
+ #     * if you're using the unbundled SparcCompiler on a
+ #	Solaris 2 system, add				      -DSOLARIS2
+-DEFINES= -DDEBUG
++DEFINES= -DDEBUG -DNOREGEX
+ 
+ # The default Archie server; choose one of:
+ #    archie.ans.net		(USA [NY])
+@@ -46,7 +46,7 @@
+ #
+ # Note this only applies to the command-line client; to change the
+ # default for the Emacs lisp version, set the archie-server variable.
+-ARCHIE= archie.sura.net
++ARCHIE= archie.rutgers.edu
+ 
+ #	Usually LDFLAGS is empty; if, after you build this, archie
+ #	 complains that it can't resolve ARCHIE.ANS.NET (or whatever
+@@ -84,6 +84,10 @@
+ 	vlalloc.o vl_comp.o
+ 
+ all: archie
++
++install:
++	install -c -s archie  ${PREFIX}/bin/archie
++	install -c archie.man ${PREFIX}/man/man1/archie.1
+ 
+ archie: $(OBJS)
+ 	$(CC) $(CFLAGS) -o $@ $(OBJS) $(LDFLAGS)
