@@ -8,7 +8,8 @@
 PORTNAME=	uuid
 PORTVERSION=	1.0.1
 CATEGORIES=	misc devel
-MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/${PORTNAME}/
+MASTER_SITES=	${MASTER_SITE_OSSP}
+MASTER_SITE_SUBDIR=	lib/${PORTNAME}
 PKGNAMEPREFIX=	ossp-
 
 MAINTAINER=	fuyuki@hadaly.org

@@ -8,7 +8,8 @@
 PORTNAME=	mm
 PORTVERSION=	1.3.0
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/mm/
+MASTER_SITES=	${MASTER_SITE_OSSP}
+MASTER_SITE_SUBDIR=	lib/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shared memory allocation library for pre-forked process models

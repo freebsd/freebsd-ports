@@ -8,7 +8,8 @@
 PORTNAME=	shtool
 PORTVERSION=	2.0.1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.ossp.org/pkg/tool/shtool/
+MASTER_SITES=	${MASTER_SITE_OSSP}
+MASTER_SITE_SUBDIR=	tool/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GNU Portable Shell Tool

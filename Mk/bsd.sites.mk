@@ -516,6 +516,11 @@ MASTER_SITE_NETSCAPE+= \
 	ftp://ftp.uni-bremen.de/pub/mirrors/ftp.netscape.com/pub/%SUBDIR%/ \
 	ftp://ftp.informatik.rwth-aachen.de/pub/mirror/ftp.netscape.com/pub/%SUBDIR%/
 
+MASTER_SITE_OSSP+= \
+	ftp://ftp.ossp.org/pkg/%SUBDIR%/ \
+	http://public.planetmirror.com/pub/ossp/pkg/%SUBDIR%/ \
+	ftp://ftp.ntua.gr/pub/utils/ossp/%SUBDIR%/
+
 MASTER_SITE_PACKETSTORM+= \
 	http://packetstormsecurity.nl/%SUBDIR%/ \
 	http://packetstorm.troop218.org/%SUBDIR%/ \
