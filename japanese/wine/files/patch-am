@@ -1,134 +1,94 @@
-diff -ur wine971130-jp.orig/configure wine971130-jp/configure
---- wine971130-jp.orig/configure	Sun Jan 11 08:21:04 1998
-+++ wine971130-jp/configure	Sun Jan 11 07:39:27 1998
-@@ -2479,6 +2479,8 @@
+diff -urN wine-990131/configure fbsd-wine-990131/configure
+--- wine-990131/configure	Fri Feb 12 23:40:37 1999
++++ fbsd-wine-990131/configure	Fri Feb 12 23:42:18 1999
+@@ -3021,7 +3021,7 @@
+ if (ac_test) return 1
+ ; return 0; }
+ EOF
+-if { (eval echo configure:3025: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
++if { (eval echo configure:3025: \"$ac_link\") 1>&5; (eval $ac_link) </dev/null  2>&5; } && test -s conftest; then
+   rm -rf conftest*
+   ac_cv_c_extern_prefix="yes"
+ else
+@@ -3062,7 +3062,7 @@
  
- trap 'rm -f $CONFIG_STATUS conftest*; exit 1' 1 2 15
+ ; return 0; }
+ EOF
+-if { (eval echo configure:3066: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
++if { (eval echo configure:3066: \"$ac_link\") 1>&5; (eval $ac_link) </dev/null  2>&5; } && test -s conftest; then
+   rm -rf conftest*
+   ac_cv_c_asm_string="yes"
+ else
+diff -urN wine-990131/debugger/stabs.c fbsd-wine-990131/debugger/stabs.c
+--- wine-990131/debugger/stabs.c	Wed Jan 20 23:18:55 1999
++++ fbsd-wine-990131/debugger/stabs.c	Fri Feb 12 23:11:42 1999
+@@ -4,6 +4,7 @@
+  * Copyright (C) 1996, Eric Youngdale.
+  */
  
-+LDLIBS="$LDLIBS -lxpg4"
-+
- DEFS=-DHAVE_CONFIG_H
++#include <sys/types.h>
+ #include "config.h"
  
- # Without the "./", some shells look in PATH for config.status.
-diff -ur wine971130-jp.orig/debugger/memory.c wine971130-jp/debugger/memory.c
---- wine971130-jp.orig/debugger/memory.c	Mon Feb  3 03:57:44 1997
-+++ wine971130-jp/debugger/memory.c	Sun Jan 11 07:38:04 1998
-@@ -19,7 +19,7 @@
-  *     write (rwflag == 0)
-  ************************************************************/
+ #include <sys/types.h>
+diff -urN wine-990131/include/ldt.h fbsd-wine-990131/include/ldt.h
+--- wine-990131/include/ldt.h	Mon Dec  7 19:48:09 1998
++++ fbsd-wine-990131/include/ldt.h	Fri Feb 12 23:11:42 1999
+@@ -85,6 +85,14 @@
  
--#ifdef linux
-+#if defined(linux) || defined(__FreeBSD__)
- BOOL32 DEBUG_checkmap_bad( const char *addr, size_t size, int rwflag)
- {
-   FILE *fp;
-@@ -28,6 +28,7 @@
-   char *start, *end;
-   int ret = TRUE;
- 
-+#ifdef linux
-   /* 
-      The entries in /proc/self/maps are of the form:
-      08000000-08002000 r-xp 00000000 03:41 2361
-@@ -41,12 +42,34 @@
- 
-      Only permissions start and end are used here
-      */
-+#else
-+/*
-+    % cat /proc/curproc/map
-+    start      end         resident   private perm    type
-+    0x1000     0xe000            12         0 r-x COW vnode
-+    0xe000     0x10000            2         2 rwx COW vnode
-+    0x10000    0x27000            4         4 rwx     default
-+    0x800e000  0x800f000          1         1 rw-     default
-+    0xefbde000 0xefbfe000         1         1 rwx     default
-+    
-+    COW = "copy on write"
-+*/
-+#endif
-+
-   
-+#ifdef linux
-   if (!(fp = fopen("/proc/self/maps", "r")))
-+#else
-+  if (!(fp = fopen("/proc/curproc/map", "r")))
-+#endif
-     return FALSE; 
- 
-   while (fgets( buf, 79, fp)) {
-+#ifdef linux
-     sscanf(buf, "%x-%x %3s", (int *) &start, (int *) &end, prot);
-+#else
-+    sscanf(buf, "%x %x %*d %*d %3s", (int *) &start, (int *) &end, prot);
-+#endif
-     if ( end < addr)
-       continue;
-     if (start <= addr && addr+size < end) {
-diff -ur wine971130-jp.orig/memory/selector.c wine971130-jp/memory/selector.c
---- wine971130-jp.orig/memory/selector.c	Sun Jan 11 08:18:57 1998
-+++ wine971130-jp/memory/selector.c	Sun Jan 11 07:30:51 1998
-@@ -14,7 +14,16 @@
- #include "debug.h"
- 
+ #define FIRST_LDT_ENTRY_TO_ALLOC  17
  
 +#ifdef __FreeBSD__
 +#include <osreldate.h>
 +#if __FreeBSD_version < 220000
- #define FIRST_LDT_ENTRY_TO_ALLOC  17
-+#else
-+#define FIRST_LDT_ENTRY_TO_ALLOC  17
-+#endif
-+#else
++#undef  FIRST_LDT_ENTRY_TO_ALLOC
 +#define FIRST_LDT_ENTRY_TO_ALLOC  6
 +#endif
- 
- 
- /***********************************************************************
-diff -ur wine971130-jp.orig/memory/virtual.c wine971130-jp/memory/virtual.c
---- wine971130-jp.orig/memory/virtual.c	Sun Jan 11 08:20:07 1998
-+++ wine971130-jp/memory/virtual.c	Sun Jan 11 09:10:28 1998
++#endif
++
+ /* Determine if sel is a system selector (i.e. not managed by Wine) */
+ #define IS_SELECTOR_SYSTEM(sel) \
+    (!((sel) & 4) || (SELECTOR_TO_ENTRY(sel) < FIRST_LDT_ENTRY_TO_ALLOC))
+diff -urN wine-990131/memory/virtual.c fbsd-wine-990131/memory/virtual.c
+--- wine-990131/memory/virtual.c	Fri Jan 29 02:35:36 1999
++++ fbsd-wine-990131/memory/virtual.c	Fri Feb 12 23:11:42 1999
 @@ -1097,6 +1097,9 @@
-         return FALSE;
-     }
-     if (!cbFlush) cbFlush = view->size;
+         }
+         K32OBJ_DecCount( obj );
+         return handle;
 +#ifndef MS_SYNC
 +#define MS_SYNC 0
 +#endif MS_SYNC
-     if (!msync( addr, cbFlush, MS_SYNC )) return TRUE;
-     SetLastError( ERROR_INVALID_PARAMETER );
-     return FALSE;
-diff -ur wine971130-jp.orig/multimedia/midi.c wine971130-jp/multimedia/midi.c
---- wine971130-jp.orig/multimedia/midi.c	Sun Jan 11 08:17:54 1998
-+++ wine971130-jp/multimedia/midi.c	Sun Jan 11 07:29:49 1998
-@@ -11,6 +11,10 @@
+     }
+ 
+     /* Check parameters */
+diff -urN wine-990131/ole/variant.c fbsd-wine-990131/ole/variant.c
+--- wine-990131/ole/variant.c	Mon Jan 18 01:34:32 1999
++++ fbsd-wine-990131/ole/variant.c	Fri Feb 12 23:11:42 1999
+@@ -30,6 +30,7 @@
+ 
  #include <string.h>
- #include <unistd.h>
- #include <fcntl.h>
-+#ifdef __FreeBSD__
-+#include <string.h>
-+#include <sys/errno.h>
-+#endif
- #include <sys/ioctl.h>
- #include "windows.h"
- #include "ldt.h"
-diff -ur wine971130-jp.orig/windows/dialog.c wine971130-jp/windows/dialog.c
---- wine971130-jp.orig/windows/dialog.c	Sun Jan 11 08:21:30 1998
-+++ wine971130-jp/windows/dialog.c	Sun Jan 11 07:28:52 1998
-@@ -10,6 +10,9 @@
  #include <stdlib.h>
- #include <stdio.h>
++#include <float.h>
+ #include <math.h>
+ #include <time.h>
+ 
+diff -urN wine-990131/windows/dialog.c fbsd-wine-990131/windows/dialog.c
+--- wine-990131/windows/dialog.c	Fri Feb 12 23:30:15 1999
++++ fbsd-wine-990131/windows/dialog.c	Fri Feb 12 23:11:42 1999
+@@ -9,6 +9,9 @@
+ #include <limits.h>
+ #include <stdlib.h>
  #include <string.h>
 +#ifdef __FreeBSD__
 +#include <sys/errno.h>
 +#endif
- #include <errno.h>
  #include "windows.h"
  #include "dialog.h"
-diff -ur wine971130-jp.orig/wine.ini wine971130-jp/wine.ini
---- wine971130-jp.orig/wine.ini	Mon Aug 25 00:49:15 1997
-+++ wine971130-jp/wine.ini	Sun Jan 11 07:27:07 1998
-@@ -42,7 +42,7 @@
+ #include "drive.h"
+diff -urN wine-990131/wine.ini fbsd-wine-990131/wine.ini
+--- wine-990131/wine.ini	Thu Oct 22 01:03:16 1998
++++ fbsd-wine-990131/wine.ini	Fri Feb 12 23:11:41 1999
+@@ -44,7 +44,7 @@
  System=c:\windows\system
  Temp=e:\
  Path=c:\windows;c:\windows\system;e:\;e:\test;f:\
@@ -137,7 +97,7 @@ diff -ur wine971130-jp.orig/wine.ini wine971130-jp/wine.ini
  
  [options]
  AllocSystemColors=100
-@@ -53,13 +53,13 @@
+@@ -55,13 +55,13 @@
  Default = -adobe-times-
  
  [serialports]
@@ -154,3 +114,9 @@ diff -ur wine971130-jp.orig/wine.ini wine971130-jp/wine.ini
  
  [spooler]
  LPT1:=|lpr
+@@ -81,4 +81,4 @@
+ 
+ [programs]
+ Default=
+-Startup=
++Startup=

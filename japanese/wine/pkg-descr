@@ -11,3 +11,5 @@ Wine relies on the configuration file /usr/local/etc/wine.conf to
 contain valid assignments of Unix directories to DOS drive letters,
 and for certain other options (see "man wine" for details).
 You will most probably have to to edit it, after the install ...
+
+See /usr/local/share/doc/ja/wine/README.jis for more info.
