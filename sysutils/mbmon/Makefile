@@ -7,6 +7,7 @@
 
 PORTNAME=	xmbmon
 PORTVERSION=	203
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.nt.phys.kyushu-u.ac.jp/shimizu/download/
 .if defined(WITHOUT_X11)
@@ -15,7 +16,7 @@ PKGNAMESUFFIX=	-nox11
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	kaz@kobe1995.net
-COMMENT=	X/tty motherboard monitor for LM78/79, W8378x, AS99127F and VT82C686
+COMMENT=	X/tty motherboard monitor for LM78/79, W8378x, AS99127F, VT82C686 and ADM9240
 
 GNU_CONFIGURE=	yes
 .if defined(WITHOUT_X11)
