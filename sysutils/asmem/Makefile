@@ -16,17 +16,12 @@ COMMENT=	An AfterStep look-n-feel memory utilization monitor
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
+
 MAN1=		asmem.1
 PLIST_FILES=	bin/asmem
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 600000
-BROKEN=		"Does not compile on FreeBSD >= 6.x"
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} -g kmem -m 2755 ${WRKSRC}/asmem ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/asmem.man ${PREFIX}/man/man1/asmem.1
+	${INSTALL_MAN} ${WRKSRC}/asmem.man ${MANPREFIX}/man/man1/asmem.1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
