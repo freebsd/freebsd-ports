@@ -1,0 +1,16 @@
+Courier-IMAP is a server that provides IMAP access to Maildir mailboxes.
+This IMAP server does NOT handle traditional mailbox files
+(/var/spool/mail, and derivatives), it was written for the specific
+purpose of providing IMAP access to Maildirs.
+
+Courier-IMAP implements some extensions to the basic Maildir mail
+storage format in order to support some additional features, such as
+folders and "soft" quotas. This is done in a way that's backwards
+compatible with the standard Maildir users (although, of course, they
+will ignore the additional features). Other software that understands
+and uses the same Maildir extensions is SqWebMail, and maildrop.
+
+Features:
+     * Extremely small footprint.
+     * Abstract authentication modules.
+     * Virtual mailbox support.

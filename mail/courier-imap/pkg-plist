@@ -1,0 +1,16 @@
+bin/imapd
+libexec/makedatprog
+libexec/couriertcpd
+libexec/deliverquota
+libexec/logger
+libexec/imapd.rc
+libexec/authlib/authuserdb
+libexec/authlib/authpam
+@unexec rmdir %D/libexec/authlib
+sbin/imaplogin
+sbin/vchkpw2userdb
+sbin/makeuserdb
+sbin/userdbpw
+sbin/pw2userdb
+sbin/userdb
+etc/imapd.config
