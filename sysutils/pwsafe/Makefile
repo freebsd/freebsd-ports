@@ -15,14 +15,9 @@ COMMENT=	Cmdline program that manages encrypted password databases
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_GCC=	2.95
 
 MAN1=		pwsafe.1
 PLIST_FILES=	bin/pwsafe
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
