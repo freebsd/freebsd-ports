@@ -6,23 +6,27 @@
 #
 
 PORTNAME=	an
-PORTVERSION=	0.93
-PORTREVISION=	1
+PORTVERSION=	0.95
 CATEGORIES=	games
-MASTER_SITES=	http://www.gtoal.com/wordgames/anagrams/${DISTNAME}/
+MASTER_SITES=	${MASTER_SITE_DEBIAN}
+MASTER_SITE_SUBDIR=	pool/main/a/an
+DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Fast anagram generator
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_REINPLACE=	yes
-MAKE_ENV+=	DEFS=-DDEFDICT=\\\"/usr/share/dict/words\\\"
 ALL_TARGET=	with-getopt
 MAN6=		an.6
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|^CC=|CC?=|g ; \
-		 s|^CFLAGS=-O|CFLAGS+=|g ; \
+		 s|^CFLAGS=-O2|CFLAGS+=|g ; \
 		 s| make| \$$\(MAKE\)|g'
+	@${REINPLACE_CMD} -e 's|^\#OBJS|OBJS|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e '/<stdint.h>/d' ${WRKSRC}/an.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/an ${PREFIX}/bin
