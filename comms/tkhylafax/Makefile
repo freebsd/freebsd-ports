@@ -14,9 +14,15 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/b/beta/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tcl/tk interface to Sam Leffler's fax package
 
+.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
+GSPORT?=	print/ghostscript-afpl
+.else
+GSPORT?=	print/ghostscript-gnu
+.endif
+
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82 \
 		sendfax:${PORTSDIR}/comms/hylafax \
-		gs:${PORTSDIR}/print/ghostscript-gnu \
+		gs:${PORTSDIR}/${GSPORT} \
 		gv:${PORTSDIR}/print/gv
 
 WRKSRC=		${WRKDIR}/tkhylafax
