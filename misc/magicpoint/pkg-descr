@@ -11,4 +11,4 @@ Sample files are located in /usr/X11R6/share/doc/mgp/sample.
 It's a good idea to preview a sample file before installation.
 	% ./mgp tutorial.mgp
 
-see http://www.mew.org/mgp/ for upcoming information.
+WWW: http://www.mew.org/mgp/

@@ -2,6 +2,6 @@ This is the Red Hat Package Manager.
 
 There is also a rpm2cpio converter written in perl. You still need GNU
 cpio and gzip, but at least you don't have to install the whole RPM
-manager to get the files in an RPM. See
-http://www.eleves.ens.fr:8080/home/espel/hacks.html
+manager to get the files in an RPM.
 
+WWW: http://www.eleves.ens.fr:8080/home/espel/hacks.html

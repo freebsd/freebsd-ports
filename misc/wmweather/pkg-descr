@@ -1,5 +1,6 @@
 This is a windowmaker dockapp which displays meteorological data
 (temperature, dew point, barometric pressure, humidity, windspeed) for a
 city, retrieved from the net. You will need to look up the METAR code for
-your city (a standard code used in aviation) - see
-http://www.nws.noaa.gov/oso/siteloc.shtml
+your city (a standard code used in aviation)
+
+WWW: http://www.nws.noaa.gov/oso/siteloc.shtml
