@@ -1,15 +1,16 @@
-DeFT is a density functional moleculat orbital 
-calculation program. 
+DeFT is a density functional moleculat orbital calculation program, 
+which was made by Alain St-Amant at Univ. Ottawa. 
+If you are interested in DeFT, please try to contact him.
 
-Basis sets are prepared for H to Xe. 
+URL:http://www.chem.uottawa.ca/st-amant/st-amant_en.html
 
-WWW: http://www.chem.uottawa.ca/DeFT.html
+DeFT_2.2 may be run with MPI, but I did not try it.
+
 
 Potring to 4.0-CURRENT (__FreeBSD_version == 400005) and later versions 
 have been assisted greatly by Glenn Johnson <gjohnson@nola.srrc.usda.gov>, 
 thanks a lot !
 He found a couple of troublesome in optimization using g77 at FreeBSD 4,
 then it is recommended to use f2c/cc.
-
 --
 rmiya
