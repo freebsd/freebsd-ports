@@ -7,6 +7,7 @@
 
 PORTNAME=	cdbakeoven
 PORTVERSION=	1.8.9
+PORTREVISION=	1
 CATEGORIES=	sysutils kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,6 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	michaelnottebrock@gmx.net
 
 RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools \
+		mkisofs:${PORTSDIR}/sysutils/mkisofs \
 		mpg123:${PORTSDIR}/audio/mpg123 \
 		ogg123:${PORTSDIR}/audio/vorbis-tools
 
@@ -27,5 +29,8 @@ INSTALLS_SHLIB=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
