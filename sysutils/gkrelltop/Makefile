@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gkrelltop
-PORTVERSION=	2.2
+PORTVERSION=	2.2.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://psychology.rutgers.edu/~zaimi/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
@@ -17,6 +17,10 @@ COMMENT=	Plugin for gkrellm 2.x shows top three processes, requires procfs
 
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
+
+post-extract:
+	@${CHMOD} u+rwx ${WRKSRC}
+	@${RM} ${WRKSRC}/*.o ${WRKSRC}/*.so
 
 MAKE_ARGS=	INSTALLDIR2=${PREFIX}/libexec/gkrellm2/plugins
 INSTALL_TARGET=	install2
