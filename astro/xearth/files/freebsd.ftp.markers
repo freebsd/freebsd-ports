@@ -21,8 +21,8 @@
 #              "ftp.uk.freebsd.org"            # UK (Imperial College)
 56.1,	10.2, "ftp.dk.freebsd.org"	      # ??, Denmark
 60.2,   25.0, "nic.funet.fi"                  # Helsinki?, Finland
-48.9,    2.4, "ftp.fr.freebd.org"              # Paris, France
-#              "sunsite.mff.cuni.cz"           # Czech Republic
+48.9,    2.4, "ftp.fr.freebsd.org"             # Paris, France
+50.1,   14.4, "ftp.cz.freebsd.org"             # Czech Republic
 #              "ftp.luth.se"                   # Sweden
 #              "ftp.ua.pt"                     # Portugal
 #              "ftp.kiae.su"                   # Russia
