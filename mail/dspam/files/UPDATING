@@ -1,0 +1,99 @@
+This file documents some of the problems you may encounter when
+upgrading dspam port.  I will try our best to minimize these disruptions,
+but sometimes they are unavoidable.
+
+You should get into the habit of checking this file for changes each
+time before attempting any port upgrade.
+
+This file concetrate on the FreeBSD / port specific changes and one should read
+also the UPGRADING enclosed in the dspam distribution. You can see it by doing
+in the port directory:
+make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
+
+
+#############################################################################
+#  dspam-3.2.2.20041117.1515:
+#
+
+- dspam configuration is now done via dspam.conf
+
+- please remove any OPTION
+
+- the following OPTIONS should be set now in dspam.conf
+OPTION                  .conf name                      def. value
+-------------------------------------------------------------------------------
+DSPAM_HOME              Home                            /var/dspam
+WITH_*_LDA              TrustedDeliveryAgent            mail.local
+                        UntrustedDeliveryAgent          /usr/libexec/mail.local d %u
+QUARANTINE_AGENT        QuarantineAgent                 #
+
+WITH_SPAM_SUBJ          Preference "spamAction=tag"     #
+                        Preference "spamSubject=SPAM"   #
+USER_LOGGING            UserLog                         on
+SYSTEM_LOGGING          SystemLog                       on
+WEBMAIL                 TrainPristine                   off
+WITH_OPT_IN             Opt                             out
+SAT                     TrackSources spam ham           #
+PARSE_TO_HEADERS        ParseToHeaders                  on
+BROKEN_MTA              Broken lineStripping            #
+BROKEN_ERR_CODES        Broken returnCodes              #
+SIGNATURE_HEADERS       Preference "signatureLocation=  message" # headers
+
+- the following OPTIONS should does not exist anymore:
+SIGNATURE_ATACH WITH_HOMEDIR_DOT
+
+- the following OPTIONS have their name changed to follow vedor names
+TRAD_BAYES              GRAHAM_BAYES
+ALT_BAYES               BURTON_BAYES
+WITH_SIGNATURE_LIFE     SIGNATURE_LIFE
+
+- new OPTIONS
+OPTION                       port default
+----------------------------------------------
+LOG_DIR                         /var/log/dspam
+WITH_USER_HOMEDIR             
+DSPAM_HOME_OWNER
+DSPAM_HOME_GROUP
+DSPAM_HOME_MODE
+DSPAM_MODE
+DSPAM_OWNER
+DSPAM_GROUP
+
+To upgrade you should:
+
+0. Read docs enclosed with teh dpsam distribution, beginnig with UPGRADING and
+README
+
+1. Adjust your OPTIONs
+( make rmconfig config in dspam port dir, command line, pkg_tools.conf )
+
+2. make VARs.......
+in dspam port dir with appropiate OPTIONS and VARs (see changes above)
+
+3. stop you MTA or deactivate dspam from it
+
+5. make VARs........ install
+
+4.a) If using MySQL 4.0.xx or PostgreSQL:
+- back-up the database
+- use the appropiate migration scripts from files dir of dspam port dir
+( for MySQL you should use 2x_to_3x_db.sql then 310_to_320.my.sql)
+(if using MySQL 4.1.x or 3.xx you're on your own for now; the same for 
+PostgreSQL, but take a look in the UPDATING and 310_to_320.pg.sql)
+
+5. Back-up and them move the files from the old DSPAM_HOME 
+(defaulted: /usr/loca/etc/dspam) to the new DSPAM_HOME (default /var/db/dspam) 
+or where ever you defined DSPAM_HOME in 2 above.
+
+6. Adjust you new dspam.conf according with your setup OPTIONS and VARs defined
+on make / mak install step.
+
+7. Remove the old setup files (you have them in the back-up, right ?)
+
+8. Enable dspam in the MTA setup, but only locally or something and start testing.
+
+If something ain't working is one of:
+- permissions problems (hint: with what UID 
+is dspam called from your MTA vs. DSPAM_HOME and DSPAM_LOG_DIR)
+- something wrong in dspam.conf (hint: you didn't remove old config files 
+and they are still used ?)
