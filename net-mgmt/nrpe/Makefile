@@ -17,9 +17,8 @@ COMMENT=	Nagios Remote Plugin Executor
 
 RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
 
-BROKEN=		"Install fails"
-
 GNU_CONFIGURE=	yes
+USE_PERL5=	yes
 
 CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/nagios --sysconfdir=${PREFIX}/etc \
 		--sbindir=${PREFIX}/sbin --bindir=${PREFIX}/sbin
