@@ -1,0 +1,21 @@
+--- xinetd/xgetloadavg.c.orig	Sun Mar 26 12:17:16 2000
++++ xinetd/xgetloadavg.c	Sun Mar 26 12:19:37 2000
+@@ -79,3 +79,18 @@
+ }
+ #endif /* HAVE_KSTAT */
+ #endif /* solaris */
++#ifdef __FreeBSD__
++
++#include <stdio.h>
++#include <sys/param.h>
++#include <sys/fcntl.h>
++
++double xgetloadavg ()
++{
++	double ret[3];
++
++	getloadavg (ret, sizeof (ret) / sizeof (ret[0]));
++
++	return ret[0];
++}
++#endif /* __FreeBSD__ */
