@@ -3,11 +3,11 @@
 # Date created:				18 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.3 1998/07/11 00:28:05 steve Exp $
+# $Id: Makefile,v 1.4 1998/07/20 10:13:51 asami Exp $
 #
 
 DISTNAME=	glbiff-0.2
-CATEGORIES=	mail x11
+CATEGORIES=	mail
 MASTER_SITES=	http://www.eecg.utoronto.ca/~mac/projects/
 EXTRACT_SUFX=	.tgz
 
