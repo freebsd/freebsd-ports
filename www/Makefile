@@ -113,7 +113,6 @@
     SUBDIR += junkbuster
     SUBDIR += kannel
     SUBDIR += knowledgekit
-    SUBDIR += kwebsearch
     SUBDIR += kwebwatch
     SUBDIR += libghttp
     SUBDIR += libwww
