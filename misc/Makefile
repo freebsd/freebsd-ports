@@ -160,6 +160,7 @@
     SUBDIR += p5-I18N-LangTags
     SUBDIR += p5-LEGO-RCX
     SUBDIR += p5-Locale-Codes
+    SUBDIR += p5-Locale-SubCountry
     SUBDIR += patanjali
     SUBDIR += patchutils
     SUBDIR += pbs

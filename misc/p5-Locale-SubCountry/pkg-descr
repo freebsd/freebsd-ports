@@ -1,0 +1,15 @@
+This module allows you to convert the full name for a countries
+administrative region to the code commonly used for postal addressing.
+The reverse lookup can also be done. Sub country codes are defined
+in "ISO 3166-2:1998, Codes for the representation of names of
+countries and their subdivisions".
+
+Sub countries are termed as states in the US and Australia, provinces
+in Canada and counties in the UK and Ireland.
+
+Additionally, names and codes for all sub countries in a country
+can be returned as either a hash or an array.
+
+WWW: http://search.cpan.org/search?dist=Locale-SubCountry
+
+Seamus Venasse <svenasse@polaris.ca>
