@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vobcopy
-PORTVERSION=	0.5.8
+PORTVERSION=	0.5.11
 CATEGORIES=	sysutils
 MASTER_SITES=	http://lpn.rnbhq.org/download/
 
@@ -26,8 +26,8 @@ ALL_TARGET=	${PORTNAME}
 
 MAN1=	vobcopy.1
 
-DOC_FILES=      COPYING Changelog README Release-Notes \
-		TODO \
+PLIST_FILES=	bin/vobcopy
+PORTDOCS=	COPYING Changelog README Release-Notes TODO \
 		alternative_programs.txt
 
 .include <bsd.port.pre.mk>
@@ -38,11 +38,16 @@ post-patch:
 	@${REINPLACE_CMD} -E -e 's|declare -i i=0||' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 # -CURRENT after 500041 has getopt_long
-# do not use libgnugetopt 
+# do not use libgnugetopt
 .if ${OSVERSION} >= 500041
 	@${REINPLACE_CMD} -E \
 		-e 's|-lgnugetopt||' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+.endif
+
+.if ${OSVERSION} < 500000
+	@${REINPLACE_CMD} -e 's|#include <stdint.h>||' \
+		${WRKSRC}/vobcopy.c
 .endif
 
 post-configure:
@@ -53,9 +58,9 @@ post-configure:
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/vobcopy ${PREFIX}/bin/vobcopy
 	@${INSTALL_MAN} ${WRKSRC}/vobcopy.1 ${MANPREFIX}/man/man1/vobcopy.1
-.ifndef(PORTDOCS)
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOC_FILES}
+.for file in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
