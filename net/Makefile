@@ -110,6 +110,7 @@
     SUBDIR += p5-Net-Telnet
     SUBDIR += p5-Net-Whois
     SUBDIR += p5-SNMP
+    SUBDIR += p5-SNMP-Util
     SUBDIR += p5-SNMP_Session
     SUBDIR += p5-Socks
     SUBDIR += p5-URI
