@@ -69,6 +69,12 @@ CONFIGURE_ARGS+=	--with-odbc=-liodbc
 MAN1=	q.1
 INFO=	qdoc
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not build on amd64 (shared libraries must be compiled with -fPIC)"
+.endif
+
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/*info*
 
@@ -80,4 +86,4 @@ post-patch:
 		${GREP} -l "<malloc\.h>" | ${XARGS} ${REINPLACE_CMD} \
 		-e "s,<malloc\.h>,<stdlib.h>,"
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
