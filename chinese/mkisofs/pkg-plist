@@ -1,0 +1,4 @@
+bin/mkisofs
+bin/isodump
+bin/isoinfo
+bin/isovfy

@@ -1,0 +1,7 @@
+mkisofs is effectively a pre-mastering program to generate the iso9660
+filesystem - it takes a snapshot of a given directory tree, and generates
+a binary image which will correspond to an iso9660 filesystem when written
+to a block device.
+
+This port can also generate Big5 filenames on Joliet filesystems.  Use
+the -J option to activate it.
