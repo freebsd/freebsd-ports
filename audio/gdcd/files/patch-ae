@@ -1,0 +1,35 @@
+--- configure.in.orig	Sat Jan  8 14:40:07 2000
++++ configure.in	Wed Jun 28 05:28:19 2000
+@@ -16,20 +16,12 @@
+ AC_PROG_MAKE_SET
+ AC_CANONICAL_HOST
+ 
+-AC_CHECK_LIB(pthread, pthread_create, PTHREAD_LIBS="-lpthread", AC_MSG_ERROR(Couldn't locate a POSIX threads library))
+-
+ CDAUDIO_LIBS="-lcdaudio"
+ 
+ AM_PATH_GLIB(1.2.0,,,)
+-AM_PATH_GTK(1.2.0)
+-
+-AC_PATH_PROG(GTK_CONFIG,gtk-config,no)
+-if test x$GTK_CONFIG != xno; then
+-        GTK_LIBS=`$GTK_CONFIG --libs`
+-        GTK_CFLAGS=`$GTK_CONFIG --cflags`
+-else
+-	AC_MSG_ERROR(Couldn't locate gtk-config)
+-fi
++AM_PATH_GTK(1.2.0,,
++	AC_MSG_ERROR(Couldn't locate gtk-config),
++	gthread)
+ 
+ AC_PATH_PROG(LIBART_CONFIG,libart-config,no)
+ if test x$LIBART_CONFIG != xno; then
+@@ -67,7 +59,7 @@
+ AC_SUBST(GDKPIXBUF_LIBS)
+ AC_SUBST(IMLIB_LIBS)
+ 
+-IMAGE_PATH='${prefix}/share/gdcd'
++IMAGE_PATH='${datadir}/pixmaps/gdcd'
+ AC_SUBST(IMAGE_PATH)
+ 
+ case "$host_os" in

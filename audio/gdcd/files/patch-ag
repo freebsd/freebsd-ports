@@ -1,0 +1,15 @@
+--- source/cddb.c.orig	Sat Jan  8 14:50:27 2000
++++ source/cddb.c	Thu Jun 29 01:11:30 2000
+@@ -200,7 +200,12 @@
+          return -1;
+       }
+ 
++#ifdef HAVE_STRERROR_R
+       strerror_r(rc, message, 64);
++#else
++      strncpy (message, strerror (rc), 64);
++      message[63]='\0';
++#endif
+       fputs("Error invoking pthread_create: ", stderr);
+       fputs(message, stderr);
+       fputc('\n', stderr);

@@ -6,28 +6,28 @@
 #
 
 PORTNAME=	gdcd
-PORTVERSION=	0.0.2
+PORTVERSION=	0.2.1
 CATEGORIES=	audio
 MASTER_SITES=	http://cdcd.undergrid.net/gdcd/source_archive/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
-		cdaudio.1:${PORTSDIR}/audio/libcdaudio \
-		Imlib.5:${PORTSDIR}/graphics/imlib
+LIB_DEPENDS=	cdaudio.1:${PORTSDIR}/audio/libcdaudio \
+		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 
+GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+
 USE_X_PREFIX=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" GTK_CONFIG="${GTK_CONFIG}"
+USE_AUTOMAKE=	yes
+AUTOMAKE=	automake -a -i
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		GLIB_CONFIG="${GTK_CONFIG}" \
+		GTK_CONFIG="${GTK_CONFIG}" \
+		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--disable-glibtest --disable-gtktest
 
-# for libcdaudio
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-Wl,-R${LOCALBASE}/lib -L${LOCALBASE}/lib
-
-post-install:
-	@${ECHO}
-	@${ECHO} "Don't forget to make a symlink from your CDROM device to /dev/cdrom!"
-	@${ECHO}
+pre-configure:
+	@cd ${WRKSRC}; aclocal -I ${X11BASE}/share/aclocal
 
 .include <bsd.port.mk>
