@@ -7,16 +7,12 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	1.1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
 MASTER_SITE_SUBDIR= Attic/old/1.1.2/distribution/tar/generic/source/bz2
 DISTNAME=	kdelibs-1.1.2
 DIST_SUBDIR=	KDE
-
-PATCH_SITES=	ftp://ftp.kde.gr.jp/pub/kde/stable/latest/distribution/tar/generic/jp-patch/
-PATCHFILES=	kdelibs-ja.19990903.diff.gz
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	kde@FreeBSD.org
 
