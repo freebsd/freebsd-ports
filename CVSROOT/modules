@@ -7812,6 +7812,7 @@ p5-String-ShellQuote	ports/textproc/p5-String-ShellQuote
 p5-String-ShowDiff	ports/textproc/p5-String-ShowDiff
 p5-String-Similarity	ports/devel/p5-String-Similarity
 p5-String-Strip	ports/textproc/p5-String-Strip
+p5-Sub-Override	ports/devel/p5-Sub-Override
 p5-Sub-Uplevel	ports/devel/p5-Sub-Uplevel
 p5-Switch	ports/lang/p5-Switch
 p5-Sys-CpuLoad	ports/sysutils/p5-Sys-CpuLoad
