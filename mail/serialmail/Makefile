@@ -8,7 +8,7 @@
 
 DISTNAME=	serialmail-0.75
 CATEGORIES=	mail
-MASTER_SITES=	ftp://koobera.math.uic.edu/www/software/ \
+MASTER_SITES=	http://cr.yp.to/software/ \
 		ftp://ftp.qmail.org/pub/koobera.math.uic.edu/pub/software/ \
 		http://people.FreeBSD.org/~tom/distfiles/
 
