@@ -29,7 +29,7 @@ ARCH?= i386
 MD5_FILE=	${MASTERDIR}/distinfo.${ARCH}
 .if ${ARCH} == i386
 VERSION=	04.2
-REVISION=	4
+REVISION=	5
 PLATFORM=	freebsd4
 BIN_FILES=	p4 p4web
 SBIN_FILES=	p4d p4ftpd p4p
