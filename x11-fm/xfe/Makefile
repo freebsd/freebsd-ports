@@ -12,7 +12,7 @@ CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ptiJo@noos.fr
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast MS-Explorer like filemanager for X
 
 LIB_DEPENDS=	FOX-1.2:${PORTSDIR}/x11-toolkits/fox-devel \
