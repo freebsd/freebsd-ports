@@ -27,7 +27,7 @@ PATCHFILES=	net-10.dgd-1.1.gz \
 		1.1p5.gz \
 		1.1p6.gz
 
-MAINTAINER=	adam@veda.is
+MAINTAINER=	ports@FreeBSD.org
 
 NO_CDROM=	"no distribution to corporate environment"
 RESTRICTED=	"license required for commercial use"

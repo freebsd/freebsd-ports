@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_LOCAL}	# ftp://ftp.acns.nwu.edu/pub/wn/
 MASTER_SITE_SUBDIR=	trevor
 
-MAINTAINER=	adam@veda.is
+MAINTAINER=	ports@FreeBSD.org
 
 IS_INTERACTIVE=
 NO_PACKAGE=	"Hostname compiled in"

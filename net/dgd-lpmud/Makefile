@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/lpmud/drivers/dgd/lpc/ \
 		ftp://ftp.dreamlabs.com/pub/mud/dgd/mudlibs/
 DISTFILES=	2.4.5-for-1.1.tgz
 
-MAINTAINER=	adam@veda.is
+MAINTAINER=	ports@FreeBSD.org
 
 NO_PACKAGE=	"depends on DGD, which is NO_CDROM"
 RESTRICTED=	"no monetary gain, tarball OK for CDROM"
