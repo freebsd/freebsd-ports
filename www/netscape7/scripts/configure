@@ -14,16 +14,16 @@ if [ -z "${BATCH}" ]; then
 
 /usr/bin/dialog --title "Netscape 7 component selection" --clear \
 	--checklist "\n\
-Choose components of Netscape 7 to download and install. \n\
+Choose components of Netscape 7 to install. \n\
 Press the space bar to toggle selections." -1 -1 12 \
-"browser"	"Web browser (8208 kB)"				ON \
+"browser"	"Web browser (8448 kB)"				ON \
 "deflenus"	"American English profile defaults (26 kB)"	ON \
 "flash"		"Flash plugin (576 kB)"				ON \
-"jre"		"Java plugin (28592 kB) DOES NOT WORK"		OFF \
+"jre"		"Java plugin (28592 kB) needs linux_base-6"	OFF \
 "langenus"	"American English language pack (800 kB)"	ON \
-"mail"		"e-mail and news (2176 kB)"			ON \
+"mail"		"e-mail and news (2064 kB)"			ON \
 "regca"		"regional settings for Canada (58 kB)"		ON \
-"regus"		"regional settings for the USA (58 kB)"		ON \
+"regus"		"regional settings for the USA (60 kB)"		ON \
 "spellchecker"	"spell-checker (544 kB)"			ON \
 "talkback"	"sends bug reports to Netscape staff (832 kB)"	ON \
 2> /tmp/checklist.tmp.$$

@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-PORTVERSION=	0.7.1
+PORTVERSION=	7.0
 CATEGORIES=	www linux
 DISTFILES?=	browser.xpi \
 		deflenus.xpi \
@@ -22,7 +22,9 @@ DISTFILES?=	browser.xpi \
 		xpcom.xpi
 
 FILESDIR=	${PORTSDIR}/www/linux-netscape6/files
-MAJ?=	netscape7
-VER=	7.0_PR1
+FTPDIR=		${DIST_SUBDIR}/unix/linux22/ewc9e
+MAJ?=		netscape7
+UNFORBIDDEN=	GOGOGO
+VER=		7.0
 
 .include "../linux-netscape6/Makefile"

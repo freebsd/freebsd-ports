@@ -49,7 +49,7 @@ ftp://ftp.informatik.rwth-aachen.de/pub/mirror/ftp.netscape.com/pub/${FTPDIR}/ \
 ftp://ftp.cyf-kr.edu.pl/pub/mirror/netscape/${FTPDIR}/ \
 ftp://ftp.rz.uni-karlsruhe.de/pub/mirror/ftp.netscape.com/pub/${FTPDIR}/
 DIST_SUBDIR=	${MAJ}/${NETSCAPE6_LANG}/${VER}
-FTPDIR=		${DIST_SUBDIR}/unix/linux22/xpi
+FTPDIR?=		${DIST_SUBDIR}/unix/linux22/xpi
 
 PATCH_SITES=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	trevor
@@ -57,10 +57,9 @@ PATCHFILES=	linux-${MAJ}-${VER}-generated-files.tar.gz
 
 MAINTAINER?=	trevor@FreeBSD.org
 
-FORBIDDEN=	"see http://bugzilla.mozilla.org/show_bug.cgi?id=150339"
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0.9.0:${PORTSDIR}/x11-toolkits/linux-gtk \
+RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk \
 		${LINUXBASE}/usr/lib/libjpeg.so.62.0.0:${PORTSDIR}/graphics/linux-jpeg
 
 LATEST_LINK=	linux-${MAJ}
@@ -84,6 +83,10 @@ IS_INTERACTIVE=	yes
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if !defined(UNFORBIDDEN)
+FORBIDDEN=	"see <URL:ftp://ftp.FreeBSD.org/pub/FreeBSD/CERT/advisories/FreeBSD-SN-02:05.asc>"
+.endif
 
 pre-everything::
 	${MKDIR} ${WRKSRC}/bin/plugins ${WRKSRC}/bin/chrome \
