@@ -5,15 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=		squash
-PORTVERSION=		1.0.p1
-PORTREVISION=		4
+PORTVERSION=		1.0
 CATEGORIES=		audio
-MASTER_SITES=		${MASTER_SITE_SAVANNAH} \
-       			${MASTER_SITE_LOCAL:S/$/:local/}
-MASTER_SITE_SUBDIR=	${PORTNAME} \
-			pav/:local
-DISTNAME=		squash-1.0pre1
-DISTFILES=		${DISTNAME}${EXTRACT_SUFX}:DEFAULT,local
+MASTER_SITES=		${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	matthias.andree@gmx.de
 COMMENT=	Learning console-based MP3/OGG player
@@ -26,23 +21,24 @@ LIB_DEPENDS+=	FLAC.5:${PORTSDIR}/audio/flac \
 		ao.3:${PORTSDIR}/audio/libao
 RUN_DEPENDS=	id3v2:${PORTSDIR}/audio/id3v2
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_RUBY=	yes
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
 
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|--std=gnu99|${CFLAGS} ${PTHREAD_CFLAGS}|; \
+	@${REINPLACE_CMD} -e "s|--std=gnu99|--std=gnu99 ${CFLAGS} ${PTHREAD_CFLAGS}|; \
 		s|-Iinclude|-Iinclude -I${LOCALBASE}/include|; \
 		s|-lpthread|${PTHREAD_LIBS}|; s|-ldl|-L${LOCALBASE}/lib|" ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e "s,/usr/bin/ruby,${RUBY}," \
 		${WRKSRC}/extra/*.rb
 	@${REINPLACE_CMD} -e "s,/etc/squash.conf,${PREFIX}/etc/squash.conf," \
 		${WRKSRC}/src/global.c
-	@${SED} "s,%%DD%%,${DOCSDIR}," ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 
 do-install:
 	${MKDIR} ${PREFIX}/bin
@@ -51,16 +47,13 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/extra/${FILE}.rb ${PREFIX}/bin
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/extra/musicdb_lib.rb ${RUBY_SITELIBDIR}
-	${INSTALL_DATA} ${WRKSRC}/extra/squash.conf ${PREFIX}/etc
+	${INSTALL_DATA} ${WRKSRC}/extra/squash.conf ${PREFIX}/etc/squash.conf.dist
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for i in README doc/FEATURES doc/LOCKS doc/INSTALL doc/USERS_GUIDE
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .if ${OSVERSION} < 501100
 

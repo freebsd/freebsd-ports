@@ -5,11 +5,5 @@ bin/import_music.rb
 bin/joystick.rb
 bin/squash
 bin/uncollect_info.rb
-etc/squash.conf
+etc/squash.conf.dist
 %%RUBY_SITELIBDIR%%/musicdb_lib.rb
-%%DOCSDIR%%/FEATURES
-%%DOCSDIR%%/INSTALL
-%%DOCSDIR%%/LOCKS
-%%DOCSDIR%%/README
-%%DOCSDIR%%/USERS_GUIDE
-@dirrm %%DOCSDIR%%
