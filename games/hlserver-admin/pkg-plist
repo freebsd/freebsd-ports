@@ -3,15 +3,17 @@
 %%HLDSDIR%%Adminmod/.amdd/.delete.cfg.sed
 %%HLDSDIR%%Adminmod/.amdd/.instscr.sed
 %%HLDSDIR%%Adminmod/.amdd/.instscrDOS.sed
+%%HLDSDIR%%Adminmod/.amdd/.xdbbase
 %%HLDSDIR%%Adminmod/.amdd/versions
+%%PORTDOCS%%%%HLDSDIR%%Adminmod/CHANGES
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/LICENSE
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/README
+%%HLDSDIR%%Adminmod/config/Legacy/admin_help.cfg
 %%HLDSDIR%%Adminmod/config/Samples/ips.ini
 %%HLDSDIR%%Adminmod/config/Samples/maps.ini
 %%HLDSDIR%%Adminmod/config/Samples/models.ini
 %%HLDSDIR%%Adminmod/config/Samples/users.ini
 %%HLDSDIR%%Adminmod/config/Samples/wordlist.txt
-%%HLDSDIR%%Adminmod/config/admin_help.cfg
 %%HLDSDIR%%Adminmod/config/adminmod.cfg
 %%HLDSDIR%%Adminmod/config/metamod.ini
 %%HLDSDIR%%Adminmod/config/plugin.ini
@@ -29,6 +31,7 @@
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Admin_Etc/Admin_Mod_Erata.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Admin_Mod_Plugins/Downloading_and_Installing_Additional_Plugins.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Admin_Mod_Plugins/The_Admin_Mod_Default_Plugins.htm
+%%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Admin_Mod_Reference/.#Admin_Mod_Configuration_Variables_CVARs.htm.1.10
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Admin_Mod_Reference/Access_Levels_and_Respective_Admin_Commands.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Admin_Mod_Reference/Admin_Mod_Commands.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Admin_Mod_Reference/Admin_Mod_Configuration_Variables_CVARs.htm
@@ -46,6 +49,7 @@
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Before_You_Start/Introductory_Information.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Before_You_Start/License_and_Copyright_Information.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Before_You_Start/What_this_document_covers.htm
+%%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Configuration/.#Setting_up_your_server.cfg_file.htm.1.11
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Configuration/How_to_Use_Bots_with_MetaMod_AM_2.50_and_up.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Configuration/Linux_Passwords.htm
 %%PORTDOCS%%%%HLDSDIR%%Adminmod/docs/html/Configuration/MySQL_Setup.htm
@@ -219,6 +223,7 @@
 %%PORTDOCS%%@dirrm %%HLDSDIR%%Adminmod/docs
 @dirrm %%HLDSDIR%%Adminmod/dlls
 @dirrm %%HLDSDIR%%Adminmod/config/Samples
+@dirrm %%HLDSDIR%%Adminmod/config/Legacy
 @dirrm %%HLDSDIR%%Adminmod/config
 @dirrm %%HLDSDIR%%Adminmod/.amdd
 @dirrm %%HLDSDIR%%Adminmod
