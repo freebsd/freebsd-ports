@@ -8,10 +8,10 @@
 PORTNAME=	gracula
 PORTVERSION=	3.0
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.whizkidtech.net/cgi/gcl/ \
-		http://www.whizkidtech.net/gcl/
+MASTER_SITES=	ftp://ftp.whizkidtech.redprince.net/cgi/gcl/ \
+		http://www.whizkidtech.redprince.net/gcl/
 
-MAINTAINER=	adam@whizkidtech.net
+MAINTAINER=	adam@redprince.net
 COMMENT=	A Graphic Counter Language compiler/interpreter
 
 do-install:
