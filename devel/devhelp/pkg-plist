@@ -1,14 +1,14 @@
 bin/devhelp
 lib/devhelp/libdevhelp.so
+share/gnome/applications/devhelp.desktop
 share/gnome/devhelp/dtd/devhelp-1.dtd
-share/gnome/devhelp/images/book_open.png
 share/gnome/devhelp/images/book_closed.png
+share/gnome/devhelp/images/book_open.png
 share/gnome/devhelp/images/helpdoc.png
 share/gnome/devhelp/ui/window.ui
-share/gnome/pixmaps/devhelp.png
-share/gnome/applications/devhelp.desktop
 share/gnome/mime-info/devhelp.keys
 share/gnome/mime-info/devhelp.mime
+share/gnome/pixmaps/devhelp.png
 share/locale/am/LC_MESSAGES/devhelp.mo
 share/locale/az/LC_MESSAGES/devhelp.mo
 share/locale/be/LC_MESSAGES/devhelp.mo
@@ -43,3 +43,4 @@ share/locale/zh_TW/LC_MESSAGES/devhelp.mo
 @dirrm share/gnome/devhelp/images
 @dirrm share/gnome/devhelp/dtd
 @dirrm share/gnome/devhelp
+@dirrm lib/devhelp
