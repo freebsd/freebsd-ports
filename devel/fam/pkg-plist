@@ -1,6 +1,5 @@
 bin/fam
 etc/fam.conf
-etc/rc.d/fam.sh.sample
 include/fam.h
 lib/libfam.a
 lib/libfam.la
