@@ -17,6 +17,7 @@ COMMENT=	A program to estimate population sizes and migration rates
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_REINPLACE=	yes
 
 MAN1=		migrate.1
 MLINKS=		migrate.1 migrate-n.1
@@ -25,6 +26,9 @@ DOCS=		HISTORY HOWTO-PARALLEL README migrate.html
 EXAMPLES=	README infile.benchmark infile.ep infile.msat infile.seq \
 		parmfile parmfile.benchmark parmfile.ep parmfile.msat \
 		parmfile.seq
+
+post-patch:
+		@${REINPLACE_CMD} 's,-falign-loops=16,,g' ${WRKSRC}/configure
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/migrate-n ${PREFIX}/bin
