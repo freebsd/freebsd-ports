@@ -3,19 +3,32 @@
 # Date created:		So  21 Jun 1998 16:09:39 CEST
 # Whom:			Stefan Herrmann <stefan@asterix.webaffairs.net>
 #
-# $Id: Makefile,v 1.67 1999/03/08 07:28:32 asami Exp $
+# $Id: Makefile,v 1.68 1999/03/09 11:22:59 dirk Exp $
 #
 
 DISTNAME=	apache_${VERSION_APACHE}
 PKGNAME=	apache-php3-${VERSION_APACHE}
 CATEGORIES=	www
-MASTER_SITES=	ftp://www.apache.org/apache/dist/ \
+MASTER_SITES=	http://www.apache.org/dist/ \
 		http://www.rge.com/pub/infosystems/apache/dist/ \
 		http://www.apache.de/dist/ \
 		http://www.php.net/distributions/ \
 		ftp://www.php.net/pub/distributions/ \
+		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/ \
+		ftp://apache.compuex.com/pub/apache/dist/ \
 		http://php.he.net/distributions/ \
 		http://www.php3.de/distributions/
+		ftp://apache.arctic.org/pub/apache/dist/ \
+		ftp://ftp.epix.net/pub/apache/dist/ \
+		ftp://ftp.ameth.org/pub/mirrors/ftp.apache.org/apache/dist/ \
+		ftp://ftp.connectnet.com/pub/www/apache/ \
+		ftp://apache.technomancer.com/mirrors/apache/dist/ \
+		ftp://ftp.raver.net/pub/ftp.apache.org/ \
+		ftp://www3.service.digital.com/apache/dist/ \
+		ftp://galileo.galilei.com/pub/apache/ \
+		ftp://ftp.mtnranch.net/pub/apache/dist/ \
+		ftp://ftp.iodynamics.com/pub/mirror/apache/dist/ \
+		ftp://apache.nextpath.com/pub/apache/dist/
 DISTFILES=	apache_${VERSION_APACHE}.tar.gz php-${VERSION_PHP3}.tar.gz
 
 MAINTAINER=	dirk@FreeBSD.ORG

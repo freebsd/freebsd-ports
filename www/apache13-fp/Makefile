@@ -3,20 +3,34 @@
 # Date created:         Sat Oct 31 16:30:00 CDT 1997
 # Whom:                 hetzels@westbend.net
 #
-# $Id: Makefile,v 1.7 1999/01/26 02:27:26 steve Exp $
+# $Id: Makefile,v 1.8 1999/02/03 11:11:58 asami Exp $
 #
 
 DISTNAME=       apache_${AP_VERS}
 PKGNAME=        apache_fp-${AP_VERS}
 CATEGORIES=	www
-MASTER_SITES=	ftp://www.apache.org/apache/dist/ \
+MASTER_SITES=	http://www.apache.org/dist/ \
 		ftp://ftp.microsoft.com/products/frontpage/ \
 		ftp://sunsite.doc.ic.ac.uk/Mirrors/ftp.microsoft.com/Products/frontpage/
+		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/ \
+		ftp://ftp.rge.com/pub/infosystems/apache/dist/ \
+		ftp://apache.compuex.com/pub/apache/dist/ \
+		ftp://apache.arctic.org/pub/apache/dist/ \
+		ftp://ftp.epix.net/pub/apache/dist/ \
+		ftp://ftp.ameth.org/pub/mirrors/ftp.apache.org/apache/dist/ \
+		ftp://ftp.connectnet.com/pub/www/apache/ \
+		ftp://apache.technomancer.com/mirrors/apache/dist/ \
+		ftp://ftp.raver.net/pub/ftp.apache.org/ \
+		ftp://www3.service.digital.com/apache/dist/ \
+		ftp://galileo.galilei.com/pub/apache/ \
+		ftp://ftp.mtnranch.net/pub/apache/dist/ \
+		ftp://ftp.iodynamics.com/pub/mirror/apache/dist/ \
+		ftp://apache.nextpath.com/pub/apache/dist/
 DISTFILES=	${APACHE} ${FRONTPAGE}
 
 MAINTAINER=	hetzels@westbend.net
 
-#PATCH_SITES=    ftp://www.apache.org/apache/dist/patches/apply_to_${AP_VERS}/ \
+#PATCH_SITES=    http://www.apache.org/dist//patches/apply_to_${AP_VERS}/ \
 #		http://www.apache.org/dist/patches/apply_to_${AP_VERS}/
 #PATCHFILES=
 

@@ -3,25 +3,40 @@
 # Date created:		Sat Aug 22 12:00:00 CDT 1998
 # Whom:			rse@engelschall.com
 #
-# $Id: Makefile,v 1.21 1999/02/21 17:05:24 rse Exp $
+# $Id: Makefile,v 1.22 1999/03/04 20:21:42 rse Exp $
 #
 
 DISTNAME=	apache_${VERSION_APACHE}
 PKGNAME=	apache-${VERSION_APACHE}+mod_ssl-${VERSION_MODSSL}
 CATEGORIES=	www security
-MASTER_SITES=	ftp://www.apache.org/apache/dist/ \
+MASTER_SITES=	http://www.apache.org/dist/ \
 		http://www.engelschall.com/sw/mod_ssl/distrib/ \
 		ftp://ftp.engelschall.com/sw/mod_ssl/ \
 		ftp://ftp.pca.dfn.de/pub/tools/net/mod_ssl/ \
+		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/ \
+		ftp://ftp.rge.com/pub/infosystems/apache/dist/ \
 		ftp://ftp.ecrc.net/pub/security/mod_ssl/ \
 		ftp://ftp.nvg.ntnu.no/pub/unix/mod_ssl/ \
+		ftp://apache.compuex.com/pub/apache/dist/ \
+		ftp://apache.arctic.org/pub/apache/dist/ \
 		ftp://ftp.ulpgc.es/pub/mod_ssl/ \
 		ftp://glock.missouri.edu/pub/mod_ssl/ \
+		ftp://ftp.epix.net/pub/apache/dist/ \
+		ftp://ftp.ameth.org/pub/mirrors/ftp.apache.org/apache/dist/ \
 		ftp://ftp.infoscience.co.jp/pub/Crypto/SSL/mod_ssl/ \
 		ftp://ftp.uni-trier.de/pub/unix/security/mod_ssl/ \
+		ftp://ftp.connectnet.com/pub/www/apache/ \
+		ftp://apache.technomancer.com/mirrors/apache/dist/ \
 		ftp://ftp.blatzheim.com/pub/mod_ssl/ \
 		ftp://ftp.fu-berlin.de/unix/security/mod_ssl/ \
+		ftp://ftp.raver.net/pub/ftp.apache.org/ \
+		ftp://www3.service.digital.com/apache/dist/ \
 		ftp://ftp.ntrl.net/pub/mirror/ralfsw/mod_ssl/
+		ftp://galileo.galilei.com/pub/apache/ \
+		ftp://ftp.mtnranch.net/pub/apache/dist/ \
+		ftp://ftp.iodynamics.com/pub/mirror/apache/dist/ \
+		ftp://apache.nextpath.com/pub/apache/dist/
+
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		mod_ssl-${VERSION_MODSSL}-${VERSION_APACHE}${EXTRACT_SUFX}
 
