@@ -1,5 +1,5 @@
-# New ports collection makefile for:    husky-msged
-# Date created:                         6 January 2003
+# New ports collection makefile for:    golded+
+# Date created:                         20 October 2003
 # Whom:                                 Max Khon
 #
 # $FreeBSD$
