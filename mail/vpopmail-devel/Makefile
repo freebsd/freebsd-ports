@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vpopmail
-PORTVERSION=	5.3.9
-PORTREVISION=	2
+PORTVERSION=	5.3.16
 CATEGORIES=	mail
 MASTER_SITES=	http://www.inter7.com/devel/
 
@@ -41,6 +40,7 @@ CONFIGURE_ARGS=	--enable-qmaildir=${QMAIL_DIR} \
 # WITH_MYSQL	- allow authentitation via mysql
 # WITH_MYSQL_LARGE_SITE - enables large site layout
 # WITH_MYSQL_REPLICATION - enables MySQL database replication
+# WITH_MYSQL_LIMITS - enables the MySQL mailbox limit code
 # WITH_SYBASE   - allow authentication via Sybase (NOT TESTED!)
 # WITH_ORACLE   - allow authentication via Oracle (NOT TESTED!)
 # WITH_CLEAR_PASSWD - store passwords in plaintext into the MySQL db
@@ -82,7 +82,6 @@ CONFIGURE_ARGS=	--enable-qmaildir=${QMAIL_DIR} \
 # WITH_MYSQL_READ_SERVER, WITH_MYSQL_READ_USER, WITH_MYSQL_READ_PASSWD
 # WITH_MYSQL_UPDATE_SERVER, WITH_MYSQL_UPDATE_USER, WITH_MYSQL_UPDATE_PASSWD
 # Those variables, if defined, override WITH_MYSQL_{SERVER,USER,PASSWD}
-# WITH_MYSQL_LIMITS - enable vpopmail handling of .qmailadmin-limits (BROKEN)
 #
 # Oracle database configuration options
 #
@@ -179,7 +178,6 @@ CONFIGURE_ARGS+=	--enable-mysql-replication=y
 CONFIGURE_ARGS+=	--enable-mysql-logging=y
 .endif
 .if defined(WITH_MYSQL_LIMITS)
-BROKEN=		"the MySQL limits code is not usable yet; please unset WITH_MYSQL_LIMITS"
 CONFIGURE_ARGS+=	--enable-mysql-limits=y
 .endif
 

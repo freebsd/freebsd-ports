@@ -1,6 +1,15 @@
---- configure.old	Mon Nov 19 17:54:10 2001
-+++ configure	Mon Nov 19 17:57:27 2001
-@@ -1535,15 +1535,6 @@
+--- configure.old	Thu Feb 13 17:37:40 2003
++++ configure	Thu Feb 13 17:38:32 2003
+@@ -1285,7 +1285,7 @@
+   ;;
+ esac
+ 
+-if test `$idcommand` != "0"
++if false && test `$idcommand` != "0"
+ then
+     echo "configure: warning: === vpopmail must be configured as root. ===" 1>&2
+     echo "configure: warning: === please switch to the root user and  ===" 1>&2
+@@ -1563,15 +1563,6 @@
  rm -f vpopusername 
  
  
@@ -16,7 +25,7 @@
  # Check whether --enable-roaming-users or --disable-roaming-users was given.
  if test "${enable_roaming_users+set}" = set; then
    enableval="$enable_roaming_users"
-@@ -1605,7 +1596,7 @@
+@@ -1637,7 +1628,7 @@
    
          if test "$tcpserver_file" = ""
          then
@@ -25,7 +34,7 @@
      	    tcpserver_file="$vpopmaildir"/etc/tcp.smtp
  	
              echo "configure: warning: Unable to find your tcpserver relay file." 1>&2
-@@ -2042,7 +2033,7 @@
+@@ -2142,7 +2133,7 @@
          fi
  		auth_libs="-L$libdir $extralibflags -lmysqlclient -lz"
  
@@ -34,7 +43,7 @@
  		
          ;;
  *)
-@@ -2277,14 +2268,14 @@
+@@ -2399,14 +2390,14 @@
  		authlib=
  		
  		auth_inc="-Icdb"
