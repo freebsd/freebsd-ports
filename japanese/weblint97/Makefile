@@ -3,7 +3,7 @@
 # Date created:		27 Jun 1997
 # Whom:			Takayuki Ariga <a00821@cc.hc.keio.ac.jp>
 #
-# $Id: Makefile,v 1.2 1997/09/14 21:36:22 max Exp $
+# $Id: Makefile,v 1.3 1998/06/06 03:45:15 itojun Exp $
 #
 
 DISTNAME=	weblint-97-0.12
@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.win.or.jp/pub/network/www/weblint/ \
 		ftp://ftp.hipecs.hokudai.ac.jp/pub/network/WWW/contrib/
 
 MAINTAINER=	a00821@cc.hc.keio.ac.jp
+
+RUN_DEPENDS=   ${PREFIX}/lib/perl/jcode.pl:${PORTSDIR}/japanese/jcode.pl
 
 WRKSRC=         ${WRKDIR}/weblint-97
 MANLANG=	ja
