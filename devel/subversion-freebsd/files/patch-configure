@@ -1,0 +1,11 @@
+--- configure.orig	Sun Mar 10 18:06:50 2002
++++ configure	Sun Mar 10 18:07:48 2002
+@@ -7084,7 +7084,7 @@
+                 SVN_NEON_INCLUDES=`$neon_config --cflags | sed -e 's/-D[^ ]*//g'`
+         NEON_LIBS=`$neon_config --libs | sed -e 's/-lneon//g'`
+         CFLAGS="$CFLAGS `$neon_config --cflags | sed -e 's/-I[^ ]*//g'`"
+-                NEON_LIBS="$NEON_LIBS "`$neon_config --prefix `"/lib/libneon.la"
++                NEON_LIBS="$NEON_LIBS -lneon"
+         ;;
+       *)
+         echo "You have neon version $NEON_VERSION,"

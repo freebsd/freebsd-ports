@@ -5,35 +5,50 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	r1302
+PORTVERSION=	r1467
 CATEGORIES=	devel
-MASTER_SITES=	http://www.tigris.org/files/15/48/
+MASTER_SITES=	http://www.tigris.org/files/15/38/
 
 MAINTAINER=	rooneg@electricjellyfish.net
 
 LIB_DEPENDS=	db4:${PORTSDIR}/databases/db4 \
-		neon.18:${PORTSDIR}/www/neon
+		neon.19:${PORTSDIR}/www/neon \
+		expat:${PORTSDIR}/textproc/expat \
+		apr:${PORTSDIR}/devel/apr-devel
 
 RUN_DEPENDS=	gdiff:${PORTSDIR}/textproc/diffutils \
 		gpatch:${PORTSDIR}/devel/patch
 
 BUILD_DEPENDS=	gdiff:${PORTSDIR}/textproc/diffutils \
 		gpatch:${PORTSDIR}/devel/patch \
+		python:${PORTSDIR}/lang/python
 
 MAN1=		svn.1
 
-WRKSRC=	${WRKDIR}/subversion-r1302
+WRKSRC=	${WRKDIR}/subversion-r1467
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --disable-shared --with-ssl --with-neon=${LOCALBASE}
+CONFIGURE_ARGS= --with-ssl \
+		--with-neon=${LOCALBASE} \
+		--with-apr=${LOCALBASE} \
+		--with-apr-util=${LOCALBASE}
 
 post-extract:
+	# work around libdb4's name.
 	@${PERL} -pi -e 's/ldb/ldb4/g' ${WRKSRC}/configure
-	@${PERL} -pi -e 's/external-install//g' ${WRKSRC}/Makefile.in
+
+	# axe the neon, apr, and apr-util subdirs to keep svn's build process
+	# from using them, since we're providing our own.
 	@${RM} -r ${WRKSRC}/neon
+	@${RM} -r ${WRKSRC}/apr
+	@${RM} -r ${WRKSRC}/apr-util
 
 post-configure:
+	# regenerate build-outputs.mk so we can use our installed expat,
+	# rather than the expat-lite in svn's tree
+	(cd ${WRKSRC} && ./gen-make.py -s build.conf)
+
+	# make sure we don't install the swig stuff, even if it was found
 	@${PERL} -pi -e 's/install-swig-py-lib//g' ${WRKSRC}/Makefile
 	@${PERL} -pi -e 's/swig-py-lib//g' ${WRKSRC}/Makefile
-	@${PERL} -pi -e 's/cd expat-lite ;/#/g' ${WRKSRC}/build-outputs.mk
 
 .include <bsd.port.mk>
