@@ -102,13 +102,13 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 @exec /bin/mkdir -p %D/%%RUBY_SITEARCHLIBDIR%%
 @dirrm %%RUBY_SITEARCHLIBDIR%%
 @dirrm %%RUBY_SITELIBDIR%%
-@dirrm lib/ruby/site_ruby
+@unexec rmdir %D/lib/ruby/site_ruby 2>/dev/null || true
 @dirrm %%RUBY_ARCHLIBDIR%%
 @dirrm %%RUBY_LIBDIR%%/cgi
 @dirrm %%RUBY_LIBDIR%%/irb
 @dirrm %%RUBY_LIBDIR%%/net
 @dirrm %%RUBY_LIBDIR%%
-@dirrm lib/ruby
+@unexec rmdir %D/lib/ruby 2>/dev/null || true
 %%RUBY_DOCDIR%%/README
 %%RUBY_DOCDIR%%/README.EXT
 %%RUBY_DOCDIR%%/README.EXT.jp
@@ -195,6 +195,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 share/emacs/site-lisp/inf-ruby.el
 share/emacs/site-lisp/ruby-mode.el
 share/emacs/site-lisp/rubydb3x.el
+@comment share/emacs/site-lisp is created by mtree
 lib/xemacs/site-lisp/inf-ruby.el
 lib/xemacs/site-lisp/ruby-mode.el
 lib/xemacs/site-lisp/rubydb3x.el
