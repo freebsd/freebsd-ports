@@ -2,7 +2,7 @@ This port has include files (e.g. wnn/commonhd.h) and a library file
 (e.g. libwnn.a) to build Wnn6 clients. The files are compiled from
 sources Wnn6-SDK-sources.tar.gz which you can get in
 
-WWW: http://www.omronsoft.co.jp
+WWW: http://www.omronsoft.co.jp/
 
 The license of the sources is in
 

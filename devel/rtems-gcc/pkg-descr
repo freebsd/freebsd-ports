@@ -1,7 +1,7 @@
 This is a phantom port to fetch the gcc tarball used by the 
 *-rtems-gcc, *-rtems-gcj, *-rtems-g77 and *-rtems-objc ports.
 
-WWW: http://www.oarcorp.com
+WWW: http://www.oarcorp.com/
 
 - Jim
 jim@thehousleys.net
