@@ -1,0 +1,4 @@
+Note: to start crossfire in clientmode
+  crossfire -xpm
+Note: don't forget to update /usr/local/etc/rplay.conf
+  with new sounds in /usr/local/lib/crossfire/sounds
