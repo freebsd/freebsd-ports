@@ -1,0 +1,52 @@
+--- ./configure.in.orig	Sun Mar  2 15:23:17 2003
++++ ./configure.in	Sat Sep 13 23:52:23 2003
+@@ -361,8 +361,8 @@
+ 	# for subconfigurations
+ 	CFLAGS=-g
+ else
+-	TO3FLAGS="-O6 -fomit-frame-pointer"
+-	TO2FLAGS="-O"
++	TO3FLAGS="-fomit-frame-pointer"
++	TO2FLAGS=""
+ fi
+ 
+ AC_CHECK_PROGS(AWK,gawk nawk awk,"")
+@@ -1266,30 +1266,30 @@
+ 
+ if test -d ${TK_CONFIG_PREFIX}/tk${TK_VERSION} ; then
+   TK_LIBRARY=${TK_CONFIG_PREFIX}/tk${TK_VERSION}
+-  else
++else
+   if test -d ${TK_CONFIG_PREFIX}/../tk${TK_VERSION} ; then
+     TK_LIBRARY=${TK_CONFIG_PREFIX}/../tk${TK_VERSION}
+   fi
+ fi
+ if test -d ${TK_CONFIG_PREFIX}/tcl${TCL_VERSION} ; then
+   TCL_LIBRARY=${TK_CONFIG_PREFIX}/tcl${TCL_VERSION}
+-  else
++else
+   if test -d ${TK_CONFIG_PREFIX}/../tcl${TCL_VERSION} ; then
+     TCL_LIBRARY=${TK_CONFIG_PREFIX}/../tcl${TCL_VERSION}
+   fi
+ fi
+ if test -f ${TK_CONFIG_PREFIX}/../include/tk.h ; then
+   TK_INCLUDE=-I${TK_CONFIG_PREFIX}/../include
+-  else
+-  if test -f /usr/include/tcl${TCL_VERSION}/tk.h ; then
+-    TK_INCLUDE=-I/usr/include/tcl${TCL_VERSION}
++else
++  if test -f ${TK_CONFIG_PREFIX}/../../include/tk${TK_VERSION}/tk.h ; then
++    TK_INCLUDE=-I${TK_CONFIG_PREFIX}/../../include/tk${TK_VERSION}
+   fi	
+ fi
+ if test -f ${TCL_CONFIG_PREFIX}/../include/tcl.h ; then
+   TCL_INCLUDE=-I${TCL_CONFIG_PREFIX}/../include
+-  else
+-  if test -f /usr/include/tcl${TCL_VERSION}/tcl.h ; then
+-    TCL_INCLUDE=-I/usr/include/tcl${TCL_VERSION}
++else
++  if test -f ${TCL_CONFIG_PREFIX}/../../include/tcl${TCL_VERSION}/tcl.h ; then
++    TCL_INCLUDE=-I${TCL_CONFIG_PREFIX}/../../include/tcl${TCL_VERSION}
+   fi
+ fi
+ AC_CHECK_LIB(lieee,main,have_ieee=1,have_ieee=0)

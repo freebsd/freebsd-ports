@@ -1,0 +1,33 @@
+--- ./h/FreeBSD.defs.orig	Fri Nov  1 04:09:34 2002
++++ ./h/FreeBSD.defs	Sun Sep 14 01:49:46 2003
+@@ -1,26 +1,16 @@
+-# Machine dependent makefile definitions for intel 386,486 running 386bsd
++# Machine dependent makefile definitions for 386bsd
+ # Ported to FreeBSD 2.0 by Jeffrey Hsu (hsu@freebsd.org).
+ # Hacked September-93 by Paul F. Werkowski for 386BSD 0.1 + Patchkit 0.2.4
++# Hacked September-2003 by Juergen Weiss, Mark Murray for FreeBSD-5 CURRENT
+ 
+-LBINDIR=/usr/local/bin
+-
+-OFLAG	= -pipe -O2 
+-CFLAGS	= -fwritable-strings -fomit-frame-pointer -DVOL=volatile -I$(GCLDIR)/o -I/usr/local/lib/gcl-2.0/h -fsigned-char -I/usr/local/lib
+-LIBS    = -lm -L/usr/local/lib
+-ODIR_DEBUG=
+-NULLFILE=../h/twelve_null
++LBINDIR=${prefix}/bin
+ 
+ # This CC string will be used for compilation of the system,
+ # and also in the compiler::*cc* variable for later compilation of
+ # lisp files.
+-
+-CC = gcc
++CC = gcc @@CFLAGS@@
+ 
+ LDCC = $(CC) -static
+-
+-#  Use the mp.s file on 68k machine 
+-MPFILES= $(MPDIR)/mpi-386.o $(MPDIR)/libmport.a
+-GNULIB1=/usr/lib/libgcc.a
+ 
+ # Enable the fastloading mechanism which does not use ld -A
+ # requires c/rel_.. machine dependent code.
