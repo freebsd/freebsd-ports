@@ -144,7 +144,7 @@ do-install:
 	${CHMOD} 755 ${PREFIX}/lib/mozilla-vendor
 	cd ${WRKSRC}/dist/bin && ${FIND} . | \
 		cpio -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/mozilla-vendor
-	${INSTALL_SCRIPT} ${WRKSRC}/mozilla ${PREFIX}/bin/mozilla-vendor
+	${INSTALL_SCRIPT} ${WRKSRC}/mozilla-vendor ${PREFIX}/bin
 	if [ ! -x ${PREFIX}/bin/mozilla -a ! -L ${PREFIX}/bin/mozill ]; then \
 	    ${LN} -sf ${PREFIX}/bin/mozilla-vendor ${PREFIX}/bin/mozilla ; \
 	fi
