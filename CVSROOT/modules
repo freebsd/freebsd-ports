@@ -1446,6 +1446,7 @@ es-openoffice	ports/editors/openoffice-es
 esdl		ports/devel/esdl
 esh		ports/shells/esh
 eshell-emacs20	ports/editors/eshell-emacs20
+esmtp		ports/mail/esmtp
 esound		ports/audio/esound
 estic		ports/misc/estic
 eterm		ports/x11/eterm
