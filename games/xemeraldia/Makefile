@@ -3,7 +3,7 @@
 # Date created:         22 Mar 1995
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.1.1.1 1995/03/24 05:27:12 asami Exp $
+# $Id: Makefile,v 1.2 1995/03/24 05:47:58 asami Exp $
 #
 
 DISTNAME=       xemeraldia-0.2
@@ -21,7 +21,7 @@ ${EXTRACT_COOKIE}:
 	@(cd ${DISTDIR}; zcat ${DISTFILES} | uudecode)
 	@rm -rf ${WRKDIR}
 	@mkdir -p ${WRKDIR}
-	@(cd ${WRKDIR}; ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
+	@(cd ${WRKDIR}; tar -xzf \
 		${DISTDIR}/${DISTNAME}.tar.gz)
 	@${TOUCH} ${TOUCH_FLAGS} ${EXTRACT_COOKIE}
 
