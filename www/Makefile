@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.51 1997/06/28 14:27:41 max Exp $
+# $Id: Makefile,v 1.52 1997/07/03 01:12:05 ache Exp $
 #
 
     SUBDIR += Mosaic         # requires Motif
@@ -6,6 +6,7 @@
     SUBDIR += apache
     SUBDIR += arena
     SUBDIR += ashe           # requires Motif
+    SUBDIR += aswedit
     SUBDIR += cgiparse
     SUBDIR += chimera
     SUBDIR += comline
