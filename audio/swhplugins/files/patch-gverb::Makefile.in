@@ -1,0 +1,17 @@
+--- gverb/Makefile.in.dist	Sun Jun  1 14:00:49 2003
++++ gverb/Makefile.in	Sun Jul 13 16:07:42 2003
+@@ -150,8 +150,12 @@
+ 
+ TAR = gtar
+ GZIP_ENV = --best
+-SOURCES = $(libgverb_a_SOURCES) gverb-test.c
+-OBJECTS = $(libgverb_a_OBJECTS) gverb-test.$(OBJEXT)
++# removed gverb-test for FreeBSD due to using i386 asm;
++# it only seems to be a test harness in any case.
++#SOURCES = $(libgverb_a_SOURCES) gverb-test.c
++#OBJECTS = $(libgverb_a_OBJECTS) gverb-test.$(OBJEXT)
++SOURCES = $(libgverb_a_SOURCES)
++OBJECTS = $(libgverb_a_OBJECTS)
+ 
+ all: all-redirect
+ .SUFFIXES:
