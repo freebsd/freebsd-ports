@@ -8,7 +8,7 @@
 PORTNAME=	fb
 PORTVERSION=	1.5
 CATEGORIES=	editors
-MASTER_SITES=	http://home.MHO.net/JSwaby/
+MASTER_SITES=	http://home.mho.net/jswaby/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	_tar.gz
 
