@@ -877,7 +877,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>There exist a buffer overflow vulnerability in
+	<p>There exists a buffer overflow vulnerability in
 	  ImageMagick's EXIF parsing code which may lead to execution
 	  of arbitrary code.</p>
       </body>
