@@ -41,7 +41,6 @@
     SUBDIR += flim-xemacs20
     SUBDIR += flim-xemacs20-current
     SUBDIR += gedit
-    SUBDIR += ghex
     SUBDIR += gnotepad+
     SUBDIR += gxedit
     SUBDIR += hexedit
