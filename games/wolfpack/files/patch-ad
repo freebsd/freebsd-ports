@@ -1,0 +1,45 @@
+--- src/doconfig/doconfig.c	Sun Jan 17 03:14:13 1999
++++ src/doconfig/doconfig.c.orig	Tue Oct 26 15:13:27 1999
+@@ -91,12 +91,17 @@
+ #endif
+ 
+ int
+-main()
++main(int argc, char **argv)
+ {
+     char buf[256];
+     char *cp;
+ 	char *pathname;
+ 
++    if (argc != 2) {
++		printf("Bad usage");
++		exit(-1);
++    }
++
+     if ((pathname = getcwd(NULL, 255)) == NULL) {
+ 		printf("Can't get current path!\n");
+ 		exit(-1);
+@@ -113,13 +118,14 @@
+     cp = (char *)rindex(pathname, '\\');
+     *cp = '\0';
+ #endif
++    if (!strcasecmp(argv[1], "config")) {
+     printf("Configuring...\n");
+     wrmakesrc(pathname);
+     sprintf(buf, "%s/include/gamesdef.h", pathname);
+     wrgamesdef(buf);
+     sprintf(buf, "%s/src/client/ipglob.c", pathname);
+     wripglob(buf);
+-
++    } else {
+     if (access(EP, 0)) {
+ 		printf("making directory %s\n", EP);
+ 		if (mkdir(EP, 493)) {
+@@ -139,6 +145,7 @@
+     wrauth(buf);
+     sprintf(buf, "%s/data/hours", EP);
+     wrhours(buf);
++    }
+     exit(0);
+ }
+ 

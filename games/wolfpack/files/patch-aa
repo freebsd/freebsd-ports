@@ -1,0 +1,227 @@
+--- Makefile.orig	Tue Feb 16 01:06:47 1999
++++ Makefile	Tue Oct 26 14:56:09 1999
+@@ -80,7 +80,6 @@
+ 	($(MAKE) genlibs $(ALPHAMASTER))
+ 	(cd src/lib/lwp; $(MAKE) $(ALPHAMASTER))
+ 	($(MAKE) binaries $(ALPHAMASTER))
+-	($(MAKE) install)
+ 
+ alpha-pthreads:
+ 	@echo 'building a $(WORLDX) by $(WORLDY) server...'
+@@ -88,7 +87,6 @@
+ 	($(MAKE) genlibs $(ALPHAPOSMASTER))
+ 	(cd src/lib/lwp; $(MAKE) $(ALPHAPOSMASTER))
+ 	($(MAKE) binaries $(ALPHAPOSMASTER))
+-	($(MAKE) install)
+ 
+ apollo:
+ 	@echo 'building a $(WORLDX) by $(WORLDY) server...'
+@@ -96,7 +94,6 @@
+ 	($(MAKE) genlibs $(APOLLOMASTER))
+ 	(cd src/lib/lwp; $(MAKE) $(APOLLOMASTER))
+ 	($(MAKE) binaries $(APOLLOMASTER))
+-	($(MAKE) install)
+ 
+ freebsd:
+ 	@echo 'building a $(WORLDX) by $(WORLDY) server...'
+@@ -104,7 +101,6 @@
+ 	($(MAKE) genlibs $(FREEBSDMASTER))
+ 	(cd src/lib/lwp; $(MAKE) $(FREEBSDMASTER))
+ 	($(MAKE) binaries $(FREEBSDMASTER))
+-	($(MAKE) install)
+ 
+ hp:
+ 	@echo 'building a $(WORLDX) by $(WORLDY) server...'
+@@ -112,7 +108,6 @@
+ 	($(MAKE) genlibs $(HPMASTER))
+ 	(cd src/lib/lwp; $(MAKE) $(HPMASTER))
+ 	($(MAKE) binaries $(HPMASTER) CLIENTLIBS="")
+-	($(MAKE) install)
+ 
+ hpux:
+ 	@echo 'building a $(WORLDX) by $(WORLDY) server...'
+@@ -120,7 +115,6 @@
+ 	($(MAKE) genlibs $(HPUXMASTER))
+ 	(cd src/lib/lwp; $(MAKE) $(HPUXMASTER))
+ 	($(MAKE) binaries $(HPUXMASTER) CLIENTLIBS="")
+-	($(MAKE) install)
+ 
+ next:
+ 	@echo 'building a $(WORLDX) by $(WORLDY) server...'
+@@ -128,7 +122,6 @@
+ 	($(MAKE) genlibs $(NEXTMASTER))
+ 	(cd src/lib/lwp; $(MAKE) $(NEXTMASTER))
+ 	($(MAKE) binaries $(NEXTMASTER))
+-	($(MAKE) install)
+ 
+ irix:
+ 	@echo 'building a $(WORLDX) by $(WORLDY) server...'
+@@ -136,7 +129,6 @@
+ 	($(MAKE) genlibs $(IRIXMASTER))
+ 	(cd src/lib/lwp; $(MAKE) $(IRIXMASTER))
+ 	($(MAKE) binaries $(IRIXMASTER))
+-	($(MAKE) install)
+ 
+ irix5:
+ 	@echo 'building a $(WORLDX) by $(WORLDY) server...'
+@@ -144,7 +136,6 @@
+ 	($(MAKE) genlibs $(IRIX5MASTER))
+ 	(cd src/lib/lwp; $(MAKE) $(IRIX5MASTER))
+ 	($(MAKE) binaries $(IRIX5MASTER))
+-	($(MAKE) install)
+ 
+ isi:
+ 	@echo 'building a $(WORLDX) by $(WORLDY) server...'
+@@ -152,7 +143,6 @@
+ 	($(MAKE) genlibs $(ISIMASTER))
+ 	(cd src/lib/lwp; $(MAKE) $(ISIMASTER))
+ 	($(MAKE) binaries $(ISIMASTER))
+-	($(MAKE) install)
+ 
+ linux:
+ 	@echo 'building a $(WORLDX) by $(WORLDY) server...'
+@@ -162,7 +152,6 @@
+ 	($(MAKE) genlibs $(LINUXMASTER))
+ 	(cd src/lib/lwp; $(MAKE) $(LINUXMASTER))
+ 	($(MAKE) binaries $(LINUXMASTER))
+-	($(MAKE) install)
+ 
+ linux-pthreads:
+ 	@echo 'building a $(WORLDX) by $(WORLDY) server...'
+@@ -170,7 +159,6 @@
+ 	($(MAKE) genlibs $(LINUXPTHMASTER))
+ 	(cd src/lib/lwp; $(MAKE) $(LINUXPTHMASTER))
+ 	($(MAKE) binaries $(LINUXPTHMASTER))
+-	($(MAKE) install)
+ 
+ mipsbsd:
+ 	@echo 'building a $(WORLDX) by $(WORLDY) server...'
+@@ -178,7 +166,6 @@
+ 	($(MAKE) genlibs $(MIPSBSDMASTER))
+ 	(cd src/lib/lwp; $(MAKE) mipsultrix $(MIPSBSDMASTER))
+ 	($(MAKE) binaries $(MIPSBSDMASTER))
+-	($(MAKE) install)
+ 
+ mach2.5:
+ 	@echo 'building a $(WORLDX) by $(WORLDY) server...'
+@@ -186,7 +173,6 @@
+ 	($(MAKE) genlibs $(MACH25MASTER))
+ 	(cd src/lib/lwp; $(MAKE) mipsultrix $(MACH25MASTER))
+ 	($(MAKE) binaries $(MACH25MASTER))
+-	($(MAKE) install)
+ 
+ mipsultrix:
+ 	@echo 'building a $(WORLDX) by $(WORLDY) server...'
+@@ -194,7 +180,6 @@
+ 	($(MAKE) genlibs $(MIPSULTMASTER))
+ 	(cd src/lib/lwp; $(MAKE) mipsultrix $(MIPSULTMASTER))
+ 	($(MAKE) binaries $(MIPSULTMASTER))
+-	($(MAKE) install)
+ 
+ mipsultrix.gcc:
+ 	@echo 'building a $(WORLDX) by $(WORLDY) server...'
+@@ -202,7 +187,6 @@
+ 	($(MAKE) genlibs $(MIPSULTGMASTER))
+ 	(cd src/lib/lwp; $(MAKE) mipsultrix $(MIPSULTGMASTER))
+ 	($(MAKE) binaries $(MIPSULTGMASTER))
+-	($(MAKE) install)
+ 
+ nt:
+ 	@echo 'building a $(WORLDX) by $(WORLDY) server...'
+@@ -222,7 +206,6 @@
+ 	($(MAKE) genlibs $(VAXULTMASTER))
+ 	(cd src/lib/lwp; $(MAKE) $(VAXULTMASTER))
+ 	($(MAKE) binaries $(VAXULTMASTER))
+-	($(MAKE) install)
+ 
+ aix:
+ 	@echo 'building a $(WORLDX) by $(WORLDY) server...'
+@@ -230,7 +213,6 @@
+ 	($(MAKE) genlibs $(AIXMASTER))
+ 	(cd src/lib/lwp; $(MAKE) aix $(AIXMASTER))
+ 	($(MAKE) binaries $(AIXMASTER))
+-	($(MAKE) install)
+ 
+ rtpc:
+ 	@echo 'building a $(WORLDX) by $(WORLDY) server...'
+@@ -238,7 +220,6 @@
+ 	($(MAKE) genlibs $(RTPCMASTER))
+ 	(cd src/lib/lwp; $(MAKE) aix $(RTPCMASTER))
+ 	($(MAKE) binaries $(RTPCMASTER))
+-	($(MAKE) install)
+ 
+ sequent:
+ 	@echo 'building a $(WORLDX) by $(WORLDY) server...'
+@@ -246,7 +227,6 @@
+ 	($(MAKE) genlibs $(SEQMASTER))
+ 	(cd src/lib/lwp; $(MAKE) $(SEQMASTER))
+ 	($(MAKE) binaries $(SEQMASTER))
+-	($(MAKE) install)
+ 
+ sequent.fpa:
+ 	@echo 'building a $(WORLDX) by $(WORLDY) server...'
+@@ -254,7 +234,6 @@
+ 	($(MAKE) genlibs $(SEQFPAMASTER))
+ 	(cd src/lib/lwp; $(MAKE) $(SEQFPAMASTER))
+ 	($(MAKE) binaries $(SEQFPAMASTER))
+-	($(MAKE) install)
+ 
+ solaris:
+ 	@echo 'building a $(WORLDX) by $(WORLDY) server...'
+@@ -262,7 +241,6 @@
+ 	($(MAKE) genlibs $(SOLMASTER))
+ 	(cd src/lib/lwp; $(MAKE) $(SOLMASTER))
+ 	($(MAKE) binaries $(SOLMASTER))
+-	($(MAKE) install)
+ 
+ sun3:
+ 	@echo 'building a $(WORLDX) by $(WORLDY) server...'
+@@ -270,7 +248,6 @@
+ 	($(MAKE) genlibs $(SUN3MASTER))
+ 	(cd src/lib/lwp; $(MAKE) $(SUN3MASTER))
+ 	($(MAKE) binaries $(SUN3MASTER))
+-	($(MAKE) install)
+ 
+ sun4:
+ 	@echo 'building a $(WORLDX) by $(WORLDY) server...'
+@@ -278,7 +255,6 @@
+ 	($(MAKE) genlibs $(SUN4MASTER))
+ 	(cd src/lib/lwp; $(MAKE) $(SUN4MASTER))
+ 	($(MAKE) binaries $(SUN4MASTER))
+-	($(MAKE) install)
+ 
+ sun4.opt:
+ 	@echo 'building a $(WORLDX) by $(WORLDY) server...'
+@@ -286,7 +262,6 @@
+ 	($(MAKE) genlibs $(SUN4OPTMASTER))
+ 	(cd src/lib/lwp; $(MAKE) $(SUN4OPTMASTER))
+ 	($(MAKE) binaries $(SUN4OPTMASTER))
+-	($(MAKE) install)
+ 
+ sun4.debug:
+ 	@echo 'building a $(WORLDX) by $(WORLDY) server...'
+@@ -294,7 +269,6 @@
+ 	($(MAKE) genlibs $(SUN4DBGMASTER))
+ 	(cd src/lib/lwp; $(MAKE) $(SUN4DBGMASTER))
+ 	($(MAKE) binaries $(SUN4DBGMASTER))
+-	($(MAKE) install)
+ 
+ #
+ # Generic stuff that is called from the architecture specific stuff.
+@@ -527,9 +501,16 @@
+ # data directory if you didn't have one before.
+ 
+ install:
++	(cd src/doconfig; $(MAKE) install)
+ 	(cd src/client; $(MAKE) install)
+ 	(cd src/server; $(MAKE) install)
+ 	(cd src/util; $(MAKE) install)
++	cp README $(EMPDIR)
++	cp -r info.nr $(EMPDIR)
++	cp -r doc $(EMPDIR)
++	cp -r scripts $(EMPDIR)
++	cp man/*.1 $(PREFIX)/man/man1
++	cp man/*.6 $(PREFIX)/man/man6
+ 	-(mv $(EMPDIR)/data/econfig $(EMPDIR)/data/econfig.bak)
+ 	($(EMPDIR)/bin/pconfig > $(EMPDIR)/data/econfig)
+ 	-(mv $(EMPDIR)/data/econfig.bak $(EMPDIR)/data/econfig)
