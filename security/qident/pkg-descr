@@ -1,0 +1,4 @@
+A small program to query an ident protocol server (rfc1413).  Uses the   
+`libident' library.
+
+WWW: http://www.netbsd.org/~ad/qident/
