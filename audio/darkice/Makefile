@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	darkice
-PORTVERSION=	0.10.1
+PORTVERSION=	0.11
 CATEGORIES=	audio net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,14 +25,4 @@ CONFIGURE_ARGS=	--with-lame-prefix=${LOCALBASE} \
 MAN1=	darkice.1
 MAN5=	darkice.cfg.5
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500035
-CXXFLAGS:=	${CXXFLAGS:N-O*}
-.endif
-
-# alternatively:
-#
-#USE_GCC=	3.1
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
