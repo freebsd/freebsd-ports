@@ -11,21 +11,6 @@
  }
  
  /* ------------------------------------------------------------------------*/
---- renderer.cpp.orig	Sat Feb 24 10:12:53 2001
-+++ renderer.cpp	Sat Feb 24 10:13:04 2001
-@@ -1562,9 +1562,9 @@
-   
-   for(int i=0; i<numstars; i++)
-   {
--    x = rand() % renderedImage->width();
--    y = rand() % renderedImage->height();
--    brightness = 150+ (rand() % 106);
-+    x = random() % renderedImage->width();
-+    y = random() % renderedImage->height();
-+    brightness = 150+ (random() % 106);
-     p = (unsigned int *)renderedImage->scanLine(y);
-     p += x;
-     *p = qRgb(brightness, brightness, brightness);
 --- main.cpp.orig	Tue Jul 13 10:32:55 1999
 +++ main.cpp	Sat Feb 24 10:14:56 2001
 @@ -24,6 +24,7 @@
