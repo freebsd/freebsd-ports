@@ -1,5 +1,5 @@
---- makefile.FreeBSD.orig	Fri Nov  5 22:57:30 1999
-+++ makefile.FreeBSD	Sun Dec 19 14:55:37 1999
+--- makefile.FreeBSD.orig	Fri Nov  5 15:57:30 1999
++++ makefile.FreeBSD	Sun Jan 16 23:43:10 2000
 @@ -36,9 +36,9 @@
  # FBCONFIG_2, which is set to the value of IMTOOLRC in the definition of
  # the CFLAGS macro below.)
@@ -13,3 +13,12 @@
  
  IMTOOLRC  = $(IMTRCDIR)imtoolrc
  FIFO_I    = $(ROOT)/dev/imt1i
+@@ -76,7 +76,7 @@
+ # OFLAGS: compiler optimization/debug options.
+ 
+ #OFLAGS = -g -DDEBUG
+-OFLAGS = -O2 -m486 -pipe
++OFLAGS = -O2 -pipe
+ 
+ # ADFLAGS: architecture-dependent floating point flags, etc.
+ 
