@@ -3,7 +3,7 @@
 # Date created:			11 Feb. 1995
 # Whom:				torstenb
 #
-# $Id: Makefile,v 1.25 1997/06/25 05:24:43 torstenb Exp $
+# $Id: Makefile,v 1.26 1997/09/26 08:23:14 torstenb Exp $
 #
 
 DISTNAME=       zsh-3.0.5
@@ -32,5 +32,10 @@ post-install:
 	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
 	 fi
 	@install-info ${PREFIX}/info/zsh.info ${PREFIX}/info/dir
+	@${ECHO} "Updating /etc/shells"
+	@${CP} /etc/shells /etc/shells.bak
+	@(${GREP} -v ${PREFIX}/bin/zsh /etc/shells.bak; \
+	  ${ECHO} ${PREFIX}/bin/zsh) > /etc/shells
+	@${RM} /etc/shells.bak
 
 .include <bsd.port.mk>
