@@ -57,7 +57,7 @@ ALL_TARGET=	default
 WANT_GNOME=	yes
 
 MAN1=		d2c.1 dybug.1 make-dylan-app.1 melange.1 mindy.1 mindycomp.1 \
-		mindyexec.1 parsergen.1
+		mindyexec.1 parsergen.1 gobject-tool.1
 MAN5=		platforms.descr.5
 MAN7=		dylan.7 gwydion.7
 
