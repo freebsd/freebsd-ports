@@ -18,7 +18,7 @@ MAINTAINER=	mikeh@FreeBSD.org
 LIB_DEPENDS=	forms.0:${PORTSDIR}/x11-toolkits/xforms \
 		gdbm.2:${PORTSDIR}/databases/gdbm
 
-USE_AUTOMAKE=	yes
+USE_AUTOMAKE_VER=	15
 USE_BZIP2=	yes
 USE_GLIB=	yes
 USE_GMAKE=	yes
