@@ -7,6 +7,7 @@
 
 PORTNAME=	libsvm
 PORTVERSION=	2.71
+PORTREVISION=	1
 CATEGORIES=	science math
 MASTER_SITES=	http://www.csie.ntu.edu.tw/~cjlin/libsvm/ \
 		http://www.csie.ntu.edu.tw/~cjlin/libsvm/oldfiles/
@@ -16,6 +17,7 @@ COMMENT=	A library for Support Vector Machines
 
 USE_ZIP=	yes
 .if defined(WITH_PYTHON)
+CATEGORIES+=	python
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
 PLIST_SUB+=	LIBSVM_PYTHON=""
@@ -26,7 +28,7 @@ PYEXAMPLES=	python/cross_validation.py \
 		python/test_cross_validation.py
 .endif
 
-TXT_DOCS=	COPYRIGHT README FAQ.html python/README.python
+TXT_DOCS=	COPYRIGHT README FAQ.html README.python
 .if !defined(NOPORTDOCS)
 PORTDOCS=	${TXT_DOCS}
 .endif
@@ -71,7 +73,7 @@ do-install:
 	done
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${CP} ${WRKSRC}/python/README ${WRKSRC}/python/README.python
+	${CP} ${WRKSRC}/python/README ${WRKSRC}/README.python
 	for f in ${TXT_DOCS}; do \
 	  ${INSTALL_DATA} ${WRKSRC}/$$f ${DOCSDIR}; \
 	done
