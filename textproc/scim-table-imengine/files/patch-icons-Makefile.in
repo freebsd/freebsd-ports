@@ -1,0 +1,37 @@
+--- icons/Makefile.in.orig	Tue Mar  1 14:02:22 2005
++++ icons/Makefile.in	Tue Mar  1 14:02:45 2005
+@@ -222,33 +222,7 @@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ MAINTAINERCLEANFILES = Makefile.in
+-INST_ICONS = table.png	\
+-			  Amharic.png   \
+-			  Arabic.png    \
+-			  Array30.png   \
+-			  CangJie.png   \
+-			  CangJie3.png   \
+-			  Cantonese.png \
+-			  CantonHK.png \
+-			  Quick.png \
+-			  Stroke5.png \
+-			  Dayi.png      \
+-			  Erbi.png      \
+-			  Erbi-QS.png   \
+-			  EZ.png        \
+-			  Hangul.png    \
+-			  Hanja.png     \
+-			  HIRAGANA.png  \
+-			  Jyutping.png  \
+-			  KATAKANA.png  \
+-			  Nippon.png    \
+-			  Simplex.png   \
+-			  Viqr.png      \
+-			  Wubi.png      \
+-			  Yawerty.png   \
+-			  ZhuYin.png    \
+-			  Ziranma.png
+-
++INST_ICONS = table.png
+ EXTRA_DIST = $(INST_ICONS)
+ icondir = $(SCIM_ICONDIR)
+ icon_DATA = $(INST_ICONS)

@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Tue Mar  1 14:02:56 2005
++++ Makefile.in	Tue Mar  1 14:03:08 2005
+@@ -247,7 +247,7 @@
+ 
+ EXTRA_DIST = config.rpath mkinstalldirs  bootstrap scim-tables.spec
+ AUTOMAKE_OPTIONS = gnu
+-SUBDIRS = intl m4 src zh ja ko additional icons po
++SUBDIRS = intl m4 src icons po
+ MAINTAINERCLEANFILES = Makefile.in aclocal.m4 configure $(AUX_DIST)
+ CLEANFILES = *.bak 
+ ACLOCAL_AMFLAGS = -I m4
