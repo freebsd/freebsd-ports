@@ -1,12 +1,10 @@
 bin/git
 bin/gitps
 bin/gitview
-bin/gitcmp
 bin/gitkeys
 bin/gitwipe
 bin/gitmount
 bin/gitaction
-bin/gitredir
 bin/gitrgrep
 bin/gitxgrep
 bin/.gitaction
@@ -46,9 +44,7 @@ lib/git/term/.gitrc.xterms
 man/man1/git.1.gz
 man/man1/gitaction.1.gz
 man/man1/gitmount.1.gz
-man/man1/gitcmp.1.gz
 man/man1/gitkeys.1.gz
-man/man1/gitredir.1.gz
 man/man1/gitrgrep.1.gz
 man/man1/gitps.1.gz
 man/man1/gitview.1.gz

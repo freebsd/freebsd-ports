@@ -1,18 +1,20 @@
 # New ports collection makefile for:	git
-# Version required:	4.3.11
+# Version required:	4.3.16
 # Date created:		12 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.7 1996/11/18 10:25:02 asami Exp $
+# $Id: Makefile,v 1.8 1996/11/21 11:54:39 asami Exp $
 #
 
-DISTNAME=	git-4.3.11
+DISTNAME=	git-4.3.16
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNU}
 
+MAINTAINER=	ports@FreeBSD.ORG
+
 GNU_CONFIGURE=	YES
-MAN1=		git.1 gitaction.1 gitmount.1 gitcmp.1 gitkeys.1 \
-		gitredir.1 gitrgrep.1 gitps.1 gitview.1
+MAN1=		git.1 gitaction.1 gitkeys.1 gitmount.1 \
+		gitps.1 gitrgrep.1 gitview.1
 
 pre-install:
 	${CP} ${WRKSRC}/term/.gitrc.ansi \
