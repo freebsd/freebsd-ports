@@ -43,6 +43,8 @@ TEXIFILES=	ada-mode autotype cc-mode cl dired-x ebrowse ediff \
 		info message mh-e pcl-cvs reftex sc speedbar vip \
 		viper widget woman
 
+LATEST_LINK=	emacs21
+
 post-patch:
 	@${RM} -f ${WRKSRC}/info/*
 	@(cd ${WRKSRC}/man ; \
