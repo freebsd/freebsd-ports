@@ -204,6 +204,9 @@ _PYTHON_PORTVERSION!=	(${PYTHON_CMD} -c 'import string, sys; \
 PYTHON_PORTVERSION=	${_PYTHON_PORTVERSION}
 .endif
 
+# Propagate the chosen python version to submakes.
+.MAKEFLAGS:	PYTHON_VERSION=python${_PYTHON_VERSION}
+
 # Python-2.4
 .if ${PYTHON_VERSION} == "python2.4"
 PYTHON_PORTVERSION?=2.4
