@@ -9,7 +9,7 @@
 SNAPDATE=	2002-02-25
 SNAPVER=	${SNAPDATE:S/-//g}
 
-PORTNAME=	gcc-devel
+PORTNAME=	gcc31
 PORTVERSION=	${SNAPVER}
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}  \
@@ -26,8 +26,10 @@ DISTFILES=	\
 
 MAINTAINER=	obrien@FreeBSD.org
 
-LATEST_LINK=	gcc31
 NO_CDROM=	'dated material'
+LATEST_LINK=	gcc31
+
+USE_BZIP2=	yes
 
 .if defined(NETWINDER_SS)
 BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
@@ -37,12 +39,7 @@ EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	|cpio -idum
 EXTRACT_ONLY=
 .endif
-PATCH_ARGS=	-d ${SRCDIR} -E ${PATCH_STRIP}
-.if !defined(PATCH_DEBUG)
-PATCH_ARGS+=	--forward --quiet
-.endif
-PATCH_WRKDIR=	${SRCDIR}
-#CONFIGURE_SCRIPT=	../gcc-${SNAPVER}/configure
+PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
 
 .include <bsd.port.pre.mk>
@@ -67,6 +64,7 @@ USE_BISON=	yes
 CONFIGURE_ARGS=	--disable-nls --with-gnu-as --with-gnu-ld \
 		--with-gxx-include-dir=${TARGLIB}/include/g++
 #CONFIGURE_ARGS+=	--program-prefix=e
+CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 .if defined(WANT_SHAREDLIBS)
 CONFIGURE_ARGS+= --enable-shared
 .else
@@ -78,8 +76,8 @@ CONFIGURE_ARGS+= --enable-threads
 CONFIGURE_ARGS+= --enable-threads=posix
 .endif
 ALL_TARGET=	bootstrap
-#MAN1=		gcpp.1 gg++.1 gg77.1 ggcc.1 ggcov.1
-MAN1=		gg++.1
+#MAN1=		cpp31.1 g++31.1 g77-31.1 gcc31.1 gcov31.1
+MAN1=		g++31.1
 
 pre-fetch:
 	@${ECHO} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL} ${PORTOBJFORMAT}	target ${ARCH}-portbld-freebsd${OSREL}"
@@ -96,9 +94,10 @@ post-extract:
 pre-configure:
 	@# Keep from running `autoconf' and `autoheader' since we modified
 	@# configure.in by patching it.
-	@touch ${SRCDIR}/gcc/configure
-	@touch ${SRCDIR}/gcc/cstamp-h.in
+	@${TOUCH} ${SRCDIR}/gcc/configure
+	@${TOUCH} ${SRCDIR}/gcc/cstamp-h.in
 	@${MKDIR} ${CONFIGURE_WRKSRC}
+	@${RM} -f ${SRCDIR}/gcc/*/*.info*
 
 pre-build:
 	cd ${SRCDIR} ; contrib/gcc_update --touch
@@ -121,15 +120,15 @@ post-install:
 	do \
 		strip $$prog ; \
 	done )
-.for file in gcc g++ cpp g++filt gcov
-	${MV} -f ${PREFIX}/bin/${file} ${PREFIX}/bin/g${file}
-	-( test -e ${PREFIX}/man/man1/${file}.1 \
+.for file in gcc g++ cpp g++filt gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++ gcj gcjh jv-scan jcf-dump jar grepjar
+	${MV} -f ${PREFIX}/bin/${file} ${PREFIX}/bin/${file}31
+	-( ${TEST} -e ${PREFIX}/man/man1/${file}.1 \
 		&& ${MV} -f ${PREFIX}/man/man1/${file}.1 \
-		${PREFIX}/man/man1/g${file}.1 )
+		${PREFIX}/man/man1/${file}31.1 )
 .endfor
 .for file in g77
-	${MV} -f ${PREFIX}/bin/${file} ${PREFIX}/bin/g${file}
-	#${MV} -f ${PREFIX}/man/man1/${file}.1 ${PREFIX}/man/man1/g${file}.1
+	${MV} -f ${PREFIX}/bin/${file} ${PREFIX}/bin/${file}-31
+	#${MV} -f ${PREFIX}/man/man1/${file}.1 ${PREFIX}/man/man1/${file}-31.1
 .endfor
 	${MV} -f ${PREFIX}/bin/gccbug ${PREFIX}/bin/gccbug-${SNAPVER}
 	# These 3 libraries are moved from PREFIX/lib to avoid conflicts
@@ -140,7 +139,7 @@ post-install:
 #.if defined(WANT_SHAREDLIBS)
 #	${MV} -f ${PREFIX}/lib/libstdc++.so* ${TARGLIB}
 #.endif
-.for info in cpp g77 gcc
+.for info in cpp cppinternals g77 gcc gcj
 	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
 .endfor
 	cd ${PREFIX} ;\
@@ -149,6 +148,7 @@ post-install:
 	cd ${PREFIX} ;\
 	    ${FIND} ${TARGLIB:S/^${PREFIX}\///} -type d \
 	    	| sort -r | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.gcc-lib
+	(${ECHO_CMD} "@unexec rmdir %D/lib/gcc-lib/${CONFIGURE_TARGET} 2>&1 || true" ; ${ECHO_CMD} "@unexec rmdir %D/lib/gcc-lib 2>&1 || true") >> ${WRKDIR}/PLIST.gcc-lib
 	${ECHO_CMD} "r ${TMPPLIST}"		> ${WRKDIR}/ex.script
 	${ECHO_CMD} "/Insert PLIST.gcc-lib"	>> ${WRKDIR}/ex.script
 	${ECHO_CMD} "d"				>> ${WRKDIR}/ex.script
