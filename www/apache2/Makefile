@@ -1,21 +1,22 @@
-# New ports collection makefile for:    apache
-# Version required:     1.0.3
+# New ports collection makefile for:    apache HTTPD
+# Version required:     1.0.5
 # Date created:         Fri Aug 25 16:42:36 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.8 1996/02/22 21:54:58 ache Exp $
+# $Id: Makefile,v 1.9 1996/04/21 08:54:24 pst Exp $
 #
 
 DISTNAME=       apache_1.0.5
 PKGNAME=        apache-1.0.5
+DISTFILES=      ${DISTNAME}.tar.gz mod_env.c
+EXTRACT_ONLY=   ${DISTNAME}.tar.gz
 CATEGORIES+=	www
 MASTER_SITES=	ftp://www.apache.org/apache/dist/
-MASTER_SITES+=	ftp://gd.tuwien.ac.at/pub/infosys/servers/http/apache/dist/
-MASTER_SITES+=	ftp://ftp.uni-regensburg.de/pub/comp/infosystems/www/daemons/apache/dist/
-MASTER_SITES+=	ftp://Bond.edu.au/pub/apache/dist/
-MASTER_SITES+=	ftp://sunsite.mff.cuni.cz/Net/Infosystems/WWW/Servers/Apache/dist/
-MASTER_SITES+=	ftp://ftp.ast.cam.ac.uk/pub/WWW/apache/
+MASTER_SITES+=  ftp://www.apache.org/apache/dist/contrib/modules/
 
 MAINTAINER=	pst@freebsd.org
+
+post-extract:
+	cp ${DISTDIR}/mod_env.c ${WRKSRC}/src
 
 .include <bsd.port.mk>
