@@ -7,7 +7,7 @@
 
 PORTNAME=	allegro
 PORTVERSION=	4.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	alleg
@@ -51,6 +51,8 @@ PLIST_SUB+=	FULL=""
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|${PORTVERSION}|${SHLIB_VER}|g' ${WRKSRC}/makefile.ver
+	@${REINPLACE_CMD} -e 's|-l[$$]{lib_type}-[$$]{version}|-l\$${lib_type}|' \
+		${WRKSRC}/misc/allegro-config.in
 
 post-install:
 .if !defined(NOPORTDOCS)
