@@ -1,6 +1,6 @@
---- lib/unix/generic.t	Fri Apr  7 16:18:05 2000
-+++ lib/unix/generic.t.new	Sun May 14 13:51:52 2000
-@@ -156,10 +156,10 @@
+--- lib/unix/generic.t	Fri Aug  4 16:57:53 2000
++++ lib/unix/generic.t.new	Wed Aug  9 10:54:22 2000
+@@ -203,10 +203,10 @@
  
  ####### Compiler, tools and options
  
