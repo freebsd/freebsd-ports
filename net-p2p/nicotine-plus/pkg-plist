@@ -98,6 +98,14 @@ bin/nicotine-import-winconfig
 %%PYTHON_SITELIBDIR%%/pynicotine/utils.pyo
 %%PORTDOCS%%%%DOCSDIR%%/README.import-winconfig
 %%PORTDOCS%%%%DOCSDIR%%/README
+share/locale/de/LC_MESSAGES/nicotine.mo
+share/locale/dk/LC_MESSAGES/nicotine.mo
+share/locale/es/LC_MESSAGES/nicotine.mo
+share/locale/fr/LC_MESSAGES/nicotine.mo
+share/locale/it/LC_MESSAGES/nicotine.mo
+share/locale/nl/LC_MESSAGES/nicotine.mo
+share/locale/pl/LC_MESSAGES/nicotine.mo
+share/locale/sv/LC_MESSAGES/nicotine.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/pynicotine/gtkgui
 @dirrm %%PYTHON_SITELIBDIR%%/pynicotine

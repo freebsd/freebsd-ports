@@ -7,6 +7,7 @@
 
 PORTNAME=	nicotine
 PORTVERSION=	1.0.7
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://nicotine.thegraveyard.org/
 
@@ -19,6 +20,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolki
 USE_BZIP2=		yes
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
+USE_REINPLACE=		yes
 
 .include <bsd.port.pre.mk>
 
@@ -53,6 +55,9 @@ pre-everything::
 .endif
 	@${ECHO_MSG} ""
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|sys\.prefix|\"${PREFIX}\"|g" ${WRKSRC}/setup.py
 
 .if !defined(NOPORTDOCS)
 post-install:
