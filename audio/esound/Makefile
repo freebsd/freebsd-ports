@@ -3,14 +3,16 @@
 # Date created:		19 July 1998
 # Whom:			Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1998/09/22 15:47:43 vanilla Exp $
+# $Id: Makefile,v 1.5 1998/12/23 19:22:07 vanilla Exp $
 #
 
 DISTNAME=	esound-0.2.7
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.enlightenment.org/pub/enlightenment/enlightenment/ \
-		ftp://www.rasterman.com/pub/enlightenment/enlightenment/ \
-		ftp://ftp.labs.redhat.com/pub/imlib/TAR/
+MASTER_SITES=	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/ \
+		ftp://ftp.gnome.org/pub/GNOME/sources/
+#MASTER_SITES=	ftp://ftp.enlightenment.org/pub/enlightenment/enlightenment/ \
+#		ftp://www.rasterman.com/pub/enlightenment/enlightenment/ \
+#		ftp://ftp.labs.redhat.com/pub/imlib/TAR/
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 
