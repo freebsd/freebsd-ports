@@ -20,6 +20,7 @@ WRKSRC=		${WRKDIR}/Fnorb-${PORTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/src
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 USE_PYTHON=	yes
+USE_REINPLACE=	yes
 ALL_TARGET=
 
 CPIO=		cpio --quiet -pdum -R
@@ -27,9 +28,16 @@ FNORB_DIR=	${PREFIX}/lib/${PYTHON_VERSION}/site-packages/Fnorb
 FNORB_BINS=	fnaming fnendian fnfeed fngen fnidl fnifr fnior fnlogger \
 		fnmetrics fnmkior fnoptions fnping
 
+.include <bsd.port.pre.mk>
+
 do-configure:
 	@ cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
 	  Makefile.pre.in boot
+
+post-patch:
+.if ${PYTHON_REL} >= 230
+	@ ${REINPLACE_CMD} -e 's,@DEFS@,,g' ${WRKSRC}/src/Makefile.pre.in
+.endif
 
 post-build:
 	@ ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -f ${WRKSRC}
@@ -59,4 +67,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
