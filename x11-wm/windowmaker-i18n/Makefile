@@ -1,12 +1,12 @@
 # New ports collection makefile for:	WindowMaker
-# Version required:	0.19.1
+# Version required:	0.19.2
 # Date created:		August 13, 1997
 # Whom:			handy@physics.montana.edu
 #
-# $Id: Makefile,v 1.22 1998/09/02 06:14:50 tg Exp $
+# $Id: Makefile,v 1.23 1998/09/04 06:24:11 tg Exp $
 
-DISTNAME=	WindowMaker-0.19.1
-PKGNAME=	windowmaker-0.19.1
+DISTNAME=	WindowMaker-0.19.2
+PKGNAME=	windowmaker-0.19.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.windowmaker.org/pub/beta/srcs/ \
 		ftp://ftp.io.com/pub/mirror/windowmaker/beta/srcs/ \
@@ -27,6 +27,9 @@ CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 	--with-nlsdir=${LOCALBASE}/lib/locale \
 	--with-gfx-libs="-L${LOCALBASE}/lib" \
 	--with-gfx-incs="-I${LOCALBASE}/include/tiff34 -I${LOCALBASE}/include"
+
+MAN1=	convertstyle.1 geticonset.1x getstyle.1x seticons.1x setstyle.1x \
+	wdwrite.1x wmaker.1x wmsetbg.1x wxcopy.1x wxpaste.1x
 
 post-extract:
 	cd ${WRKSRC}; ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} libPropList.tar.gz
