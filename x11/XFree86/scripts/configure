@@ -10,7 +10,7 @@ cat >> xf86site.def << EOF
 
 #define XF86Vga2Drivers		et4000 et3000 pvga1 gvga ati tvga8900 cirrus \
 				ncr77c22 compaq oak cl6420 generic
- *
+ 
 #define XF86MonoDrivers		hgc1280 sigma apollo hercules
 
 #define XF86W32Drivers		et4000w32
