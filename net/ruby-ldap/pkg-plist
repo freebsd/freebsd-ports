@@ -1,6 +1,7 @@
 %%RUBY_SITEARCHLIBDIR%%/ldap.so
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/add.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/add2.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/bind-sasl.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/bind-ssl.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/bind.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/cgi/search.cgi
@@ -8,34 +9,17 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/conf.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/delete.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/modrdn.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/openldap1/schema/slapd.at.conf
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/openldap1/schema/slapd.oc.conf
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/openldap1/slapd.conf
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/openldap2/schema/corba.schema
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/openldap2/schema/core.schema
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/openldap2/schema/cosine.schema
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/openldap2/schema/inetorgperson.schema
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/openldap2/schema/java.schema
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/openldap2/schema/krb5-kdc.schema
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/openldap2/schema/misc.schema
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/openldap2/schema/nadf.schema
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/openldap2/schema/nis.schema
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/openldap2/schema/openldap.schema
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/openldap2/slapd-ssl.conf
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/openldap2/slapd.conf
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/openldap1/slapd.conf.in
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/openldap2/slapd-ssl.conf.in
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/openldap2/slapd.conf.in
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/openssl/openssl.cnf
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/search.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/search2.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/search3.rb
 %%PORTDOCS%%@unexec rm -f %D/%%RUBY_EXAMPLESDIR%%/ldap/test 2>/dev/null || true
-%%PORTDOCS%%@unexec rm -f %D/%%RUBY_EXAMPLESDIR%%/ldap/test.log 2>/dev/null || true
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/test.sh
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/ldap/openssl
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/ldap/openldap2/schema
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/ldap/openldap2/test-db
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/ldap/openldap2
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/ldap/openldap1/schema
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/ldap/openldap1/test-db
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/ldap/openldap1
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/ldap/cgi
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/ldap
