@@ -11,8 +11,6 @@ PKGNAME=	ja-plain2-2.54
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.nec.co.jp/pub/packages/plain2/
 
-MAINTAINER=	nkazushi@highway.or.jp
-
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 ALL_TARGET=	plain2
 

@@ -20,8 +20,6 @@ PATCH_DIST_STRIP=	-p1
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
-MAINTAINER=	nkazushi@highway.or.jp
-
 WRKSRC=	${WRKDIR}
 USE_X_PREFIX=	yes
 

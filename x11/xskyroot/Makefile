@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://ftp.fit.ac.jp/pub/X/contrib/  \
 		ftp://ftp.waseda.ac.jp/fj/fj.sources/X/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	nkazushi@highway.or.jp
-
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
 
