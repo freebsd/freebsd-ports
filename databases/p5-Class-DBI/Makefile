@@ -7,7 +7,7 @@
 
 PORTNAME=	Class-DBI
 PORTVERSION=	0.96
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
@@ -40,6 +40,11 @@ post-configure:
 BUILD_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 .if ${PERL_LEVEL} < 500600
 EXTRA_PATCHES=	${PATCHDIR}/5.005-lib::Class::DBI.pm ${PATCHDIR}/5.005-Makefile.PL
+
+post-patch:
+	@${FIND} ${WRKSRC} -name "*.pm" | ${XARGS} \
+		${PERL} -pi -e 's/\buse warnings[^;]*;//g'
+	@${FIND} ${WRKSRC} -name "*.orig" | ${XARGS} ${RM}
 .endif
 .endif
 
