@@ -33,6 +33,7 @@
     SUBDIR += host
     SUBDIR += idnkit
     SUBDIR += ipcheck
+    SUBDIR += ldapdns
     SUBDIR += libdjbdns
     SUBDIR += maradns
     SUBDIR += mdnsd

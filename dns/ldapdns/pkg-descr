@@ -1,0 +1,6 @@
+ldapdns is a lightweight, high performance DNS server 
+which utilizes LDAP as its backend. 
+It is originally based on djbdns and strives to maintain 
+the same goals of performance, security and simplicity.
+
+WWW:	http://www.nimh.org/code/ldapdns/
