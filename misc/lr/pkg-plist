@@ -1,4 +1,4 @@
 bin/lr
 %%LESSPIPE%%bin/lesspipe.sh
-%%PORTDOCS%%share/doc/lr/README
-%%PORTDOCS%%@dirrm share/doc/lr
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

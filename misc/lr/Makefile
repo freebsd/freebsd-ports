@@ -9,8 +9,8 @@
 PORTNAME=	lr
 PORTVERSION=	2.0
 CATEGORIES=	misc
-MASTER_SITES=	http://freebsdcluster.org/~mich/software/ \
-		http://www.seekrut.com/rk/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	lazyread
 DISTNAME=	lazyread-${PORTVERSION}
 
 MAINTAINER=	mich@FreeBSD.org
