@@ -1,0 +1,20 @@
+--- zebedee.c.orig	Sat May 27 20:48:35 2000
++++ zebedee.c	Sat May 27 20:51:13 2000
+@@ -902,7 +902,7 @@
+ 
+ 	case CMPTYPE_BZIP2:
+ #ifndef DONT_HAVE_BZIP2
+-	    if ((num = bzBuffToBuffDecompress((char *)(msg->data),
++	    if ((num = BZ2_bzBuffToBuffDecompress((char *)(msg->data),
+ 					      (unsigned int *)&uncmpSize,
+ 					      (char *)(msg->tmp),
+ 					      (unsigned int)size,
+@@ -981,7 +981,7 @@
+ 
+ 	case CMPTYPE_BZIP2:
+ #ifndef DONT_HAVE_BZIP2
+-	    if ((num = bzBuffToBuffCompress((char *)(msg->tmp + 2),
++	    if ((num = BZ2_bzBuffToBuffCompress((char *)(msg->tmp + 2),
+ 					    (unsigned int *)&cmpSize,
+ 					    (char *)(msg->data),
+ 					    (unsigned int)size,
