@@ -2,7 +2,7 @@
 # Date created:         2003-01-01
 # Whom:                 Juli Mallett
 #
-# $Id: Makefile,v 1.12 2005/02/18 03:16:37 tmclau02 Exp $
+# $Id: Makefile,v 1.2 2005/02/27 04:28:41 mezz Exp $
 # $FreeBSD$
 #
 
@@ -30,5 +30,7 @@ MAKE_ENV=MONO_SHARED_DIR=${WRKDIR}
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.pl' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|^#!/usr/bin/perl|#!${PERL}|'
+	@${REINPLACE_CMD} -e 's|libgtkhtml-3.0|libgtkhtml-3.6|g' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>
