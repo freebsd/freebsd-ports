@@ -28,6 +28,7 @@ PM_BASE=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-perl5="${PERL}"
 
 MAN1=		namazu.1 mknmz.1
 INSTALLS_SHLIB=	yes
