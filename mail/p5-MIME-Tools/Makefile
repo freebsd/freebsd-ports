@@ -16,7 +16,6 @@ DISTNAME=	MIME-tools-${PORTVERSION}
 MAINTAINER=	kuriyama@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Mail/Header.pm:${PORTSDIR}/mail/p5-Mail-Tools \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64	\
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/IO/Wrap.pm:${PORTSDIR}/devel/p5-IO-stringy
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
@@ -46,8 +45,14 @@ MAN3=	MIME::Body.3 \
 	MIME::WordDecoder.3 \
 	MIME::Words.3
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+BUILD_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
+.endif
+
 post-patch:
 	@${RM} -f ${WRKSRC}/lib/MIME/Field/ParamVal.pm.orig \
 		${WRKSRC}/lib/MIME/Words.pm.orig
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

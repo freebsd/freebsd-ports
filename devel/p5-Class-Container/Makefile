@@ -14,8 +14,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dsh@vlink.ru
 
-BUILD_DEPENDS=	${SITE_PERL}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate \
-		${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
+BUILD_DEPENDS=	${SITE_PERL}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -24,4 +23,10 @@ MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 MAN3=		Class::Container.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
+.endif
+
+.include <bsd.port.post.mk>
