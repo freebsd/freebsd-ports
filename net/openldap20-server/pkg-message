@@ -2,6 +2,8 @@
 
 The OpenLDAP server package has been successfully installed.
 
+CAUTION: This version is no longer actively maintained, please upgrade.
+
 In order to run the LDAP server, you need to edit
   %%PREFIX%%/etc/openldap/slapd.conf
 to suit your needs and add the following lines to /etc/rc.conf:

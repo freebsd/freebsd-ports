@@ -2,6 +2,8 @@
 
 The OpenLDAP client package has been successfully installed.
 
+CAUTION: This version is no longer actively maintained, please upgrade.
+
 Edit
   %%PREFIX%%/etc/openldap/ldap.conf
 to change the system-wide client defaults.
