@@ -8,8 +8,7 @@
 PORTNAME=	xcircuit
 PORTVERSION=	2.0b4
 CATEGORIES=	cad
-MASTER_SITES=	ftp://bach.ece.jhu.edu/pub/tim/xcircuit/ \
-		http://bach.ece.jhu.edu/~tim/programs/xcircuit/archive/
+MASTER_SITES=	http://bach.ece.jhu.edu/~tim/programs/xcircuit/archive/
 
 MAINTAINER=	ports@FreeBSD.org
 
