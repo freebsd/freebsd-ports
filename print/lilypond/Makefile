@@ -14,9 +14,9 @@ MASTER_SITES=	ftp://ftp.cs.uu.nl/pub/GNU/LilyPond/development/
 
 MAINTAINER=	trevor@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/bison:${PORTSDIR}/devel/bison
+BUILD_DEPENDS=	${LOCALBASE}/bin/bison:${PORTSDIR}/devel/bison \
+		${LOCALBASE}/bin/latex:${PORTSDIR}/print/teTeX
 LIB_DEPENDS=	guile.9:${PORTSDIR}/lang/guile
-RUN_DEPENDS=	${LOCALBASE}/bin/latex:${PORTSDIR}/print/teTeX
 
 GNU_CONFIGURE=	YES
 #CONFIGURE_ENV=	${MAKEINFO}="makeinfo --no-split"
