@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.19 1998/12/05 14:08:01 kuriyama Exp $
+# $Id: Makefile,v 1.20 1998/12/06 12:22:02 flathill Exp $
 #
 
     SUBDIR += X.language
@@ -10,6 +10,7 @@
     SUBDIR += pgp.language
     SUBDIR += pine.language
     SUBDIR += rispell
+    SUBDIR += wmcyrx
     SUBDIR += xruskb
 
 .include <bsd.port.subdir.mk>
