@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mx-base
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	lang python
 MASTER_SITES=	http://www.lemburg.com/python/ \
 		${MASTER_SITE_LOCAL}
