@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uulib
-PORTVERSION=	0.5.18
+PORTVERSION=	0.5.19
 CATEGORIES=	converters
 MASTER_SITES=	http://www.fpx.de/fp/Software/UUDeview/download/
 DISTNAME=	uudeview-${PORTVERSION}
@@ -25,9 +25,9 @@ ALL_TARGET=	libuu.a	libuu.so.${VERSION}
 .include <bsd.port.pre.mk>
 
 .if ${PORTOBJFORMAT} == "elf"
-VERSION=	2
+VERSION=	3
 .else
-VERSION=	2.0
+VERSION=	3.0
 .endif
 
 DOCFILES=	COPYING HISTORY doc/Makefile doc/README doc/binhex.fig \
