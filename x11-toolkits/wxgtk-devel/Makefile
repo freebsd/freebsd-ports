@@ -32,7 +32,7 @@ INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-libpng=sys \
 		--with-libjpeg=sys \
 		--with-libtiff=sys \
-		--with-zlib=sys \
+		--with-zlib=builtin \
 		--with-opengl
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} \
 			  -I${WRKSRC}/include \
