@@ -30,7 +30,6 @@ do-build:
 .endfor
 
 do-install:
-	${MKDIR} ${PREFIX}/include/xml
 .for f in ${MAKEFILES}
 	@(cd ${WRKSRC}; \
 	${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${f} ${MAKE_ARGS} ${INSTALL_TARGET})
