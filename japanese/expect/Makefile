@@ -3,18 +3,16 @@
 # Date created:		17 Oct 1997
 # Whom:			taguchi
 #
-# $Id: Makefile,v 1.8 1998/07/03 23:18:22 steve Exp $
+# $Id: Makefile,v 1.9 1998/07/21 13:26:01 asami Exp $
 #
 
 DISTNAME=	expect-5.26
 PKGNAME=	ja-expect-5.26
-CATEGORIES=	japanese lang tk42
+CATEGORIES=	japanese lang tk80
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
 LIB_DEPENDS=	tk80jp\\.1\\.:${PORTSDIR}/japanese/tk80
-
-BROKEN=		patch
 
 FILESDIR=	${.CURDIR}/../../lang/expect/files
 GNU_CONFIGURE=	yes

@@ -1,0 +1,11 @@
+--- aclocal.m4.ORIG	Tue Jul 21 09:53:21 1998
++++ aclocal.m4	Tue Jul 21 09:55:25 1998
+@@ -149,7 +149,7 @@
+     # this hack is cause the TCLHDIR won't print if there is a "-I" in it.
+     TCLHDIR="${ac_cv_c_tclh}"
+     TCLHDIRDASHI="-I${ac_cv_c_tclh}"
+-    TCL_LIBRARY=`echo $TCLHDIR | sed -e 's/generic//'`library
++    TCL_LIBRARY=`echo $TCLHDIR | sed -e 's/include/lib/' | sed -e s/generic//'`
+   fi
+ fi
+ 
