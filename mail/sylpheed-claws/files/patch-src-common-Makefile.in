@@ -1,11 +1,11 @@
---- src/common/Makefile.in.orig	Thu Dec 26 12:42:26 2002
-+++ src/common/Makefile.in	Fri Dec 27 22:47:48 2002
+--- src/common/Makefile.in.orig	Fri Jan 24 13:41:49 2003
++++ src/common/Makefile.in	Thu Jan 30 01:34:01 2003
 @@ -58,7 +58,7 @@
  CFLAGS = @CFLAGS@
  CPP = @CPP@
  
 -CPPFLAGS = \
 +CPPFLAGS = @CPPFLAGS@ \
+ 	$(GLIB_CFLAGS) \
+ 	$(OPENSSL_CFLAGS) \
  	-DLOCALEDIR=\""$(localedir)"\"
- 
- CYGPATH_W = @CYGPATH_W@

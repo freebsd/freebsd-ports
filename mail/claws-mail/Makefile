@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sylpheed-claws
-PORTVERSION=	0.8.8
+PORTVERSION=	0.8.9
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -33,7 +33,7 @@ MAN1=		sylpheed-claws.1
 
 CONFIGURE_ARGS=	--program-suffix="-claws" --enable-ipv6
 
-CONFIGURE_ENV=	CFLAGS="${CFLAGS}" CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 .if defined(WITH_PIXBUF) || defined(WITH_ALL)
@@ -72,6 +72,10 @@ LIB_DEPENDS+=		ldap.2:${PORTSDIR}/net/openldap2
 CONFIGURE_ARGS+=	--enable-ldap
 CONFIGURE_ENV+=		PTHREAD_LIBS=${PTHREAD_LIBS:S/"//g}
 .endif
+.if defined(WITH_SA_PLUG) || defined(WITH_ALL)
+RUN_DEPENDS+=		spamd:${PORTSDIR}/mail/p5-Mail-SpamAssassin
+CONFIGURE_ARGS+=	--enable-spamassassin-plugin
+.endif
 .if !defined(WITHOUT_SSL)
 USE_OPENSSL=		yes
 CONFIGURE_ARGS+=	--enable-openssl
@@ -95,6 +99,7 @@ pre-everything::
 	@${ECHO} "      WITH_ASPELL    Enable spell-checking support"
 	@${ECHO} "      WITH_JPILOT    Enable JPilot support"
 	@${ECHO} "      WITH_LDAP      Enable LDAP access support"
+	@${ECHO} "      WITH_SA_PLUG   Build Spamassassin plugin"
 	@${ECHO} ""
 	@${ECHO} "      WITHOUT_SSL    Disable OpenSSL support"
 	@${ECHO} "      WITHOUT_THEMES Don't install additional themes"
@@ -116,9 +121,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|src manual faq tools|src tools|' ${WRKSRC}/Makefile.in
 .endif
 
-pre-build:
-	@${LN} -sf ${LOCALBASE}/bin/${LIBTOOL} ${WRKSRC}/libtool
-
 post-install:
 .if !defined(NOPORTDOCS)
 .for i in NEWS README README.jp README.claws RELEASE_NOTES.claws TODO TODO.jp tools/README.sylprint
@@ -131,8 +133,8 @@ post-install:
 		${INSTALL_SCRIPT} OOo2sylpheed.pl calypso_convert.pl \
 		eud2gc.py filter_conv.pl gif2xface.pl google_msgid.pl \
 		gpg-sign-syl kmail2sylpheed.pl kmail2sylpheed_v2.pl \
-		newscache_clean.pl outlook2sylpheed.pl tb2sylpheed \
-		update-po uudec ${DATADIR}
+		launch_phoenix newscache_clean.pl outlook2sylpheed.pl \
+		tb2sylpheed update-po uudec ${DATADIR}
 .if !defined(WITHOUT_THEMES)
 	@${MKDIR} ${DATADIR}/themes
 	@cd ${WRKDIR}/${THEMEFILE:C/.tar.gz//} && for d in `find .`; do \

@@ -2,6 +2,8 @@ bin/sylpheed-claws
 bin/sylpheed-switcher
 bin/sylprint.pl
 etc/sylprint.rc.example
+lib/sylpheed-claws/plugins/spamassassin.so
+lib/sylpheed-claws/plugins/spamassassin_gtk.so
 %%PORTDOCS%%share/doc/sylpheed-claws/NEWS
 %%PORTDOCS%%share/doc/sylpheed-claws/README
 %%PORTDOCS%%share/doc/sylpheed-claws/README.claws
@@ -165,6 +167,7 @@ share/sylpheed-claws/google_msgid.pl
 share/sylpheed-claws/gpg-sign-syl
 share/sylpheed-claws/kmail2sylpheed.pl
 share/sylpheed-claws/kmail2sylpheed_v2.pl
+share/sylpheed-claws/launch_phoenix
 share/sylpheed-claws/newscache_clean.pl
 share/sylpheed-claws/outlook2sylpheed.pl
 share/sylpheed-claws/tb2sylpheed
@@ -770,3 +773,5 @@ share/sylpheed-claws/uudec
 %%PORTDOCS%%@dirrm share/doc/sylpheed-claws/faq/de
 %%PORTDOCS%%@dirrm share/doc/sylpheed-claws/faq
 %%PORTDOCS%%@dirrm share/doc/sylpheed-claws
+@dirrm lib/sylpheed-claws/plugins
+@dirrm lib/sylpheed-claws
