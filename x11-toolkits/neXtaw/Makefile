@@ -13,10 +13,6 @@ EXTRACT_SUFX=	.tar.gz.bin
 
 MAINTAINER=	tg@FreeBSD.org
 
-.if ${MACHINE_ARCH} == "alpha"
-BROKEN=		compiler error in funtion fixup_memory_subreg
-.endif
-
 USE_IMAKE=	yes
 
 .include <bsd.port.pre.mk>
