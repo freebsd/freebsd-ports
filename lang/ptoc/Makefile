@@ -3,7 +3,7 @@
 # Date created:				10 December 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/03/27 10:51:22 tg Exp $
 #
 
 DISTNAME=		ptoc
@@ -15,7 +15,6 @@ EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		andy@icc.surw.chel.su
 
-WRKSRC=			${WRKDIR}/ptoc
 MAKEFILE=		makefile
 
 pre-build:
