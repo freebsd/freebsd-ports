@@ -140,7 +140,7 @@
 +++ utils/lisp/Makefile	Sat Feb 27 17:52:17 1999
 @@ -0,0 +1,3 @@
 +install:
-+	(mkdir -p ${PREFIX}/share/emacs/site-lisp/CJK); && \
++	(mkdir -p ${PREFIX}/share/emacs/site-lisp/CJK) && \
 +	($(CP) -R [a-z]* ${PREFIX}/share/emacs/site-lisp/CJK)
 --- utils/pyhyphen/Makefile.orig	Mon Jan 10 15:07:11 2000
 +++ utils/pyhyphen/Makefile	Mon Jan 10 15:15:06 2000
