@@ -1,30 +1,30 @@
---- programs/xinit/startx.cpp.orig	Fri Apr 27 13:04:53 2001
-+++ programs/xinit/startx.cpp	Sat Oct 27 03:50:41 2001
-@@ -82,8 +82,12 @@
+--- programs/xinit/startx.cpp.orig	Fri Nov 30 21:57:48 2001
++++ programs/xinit/startx.cpp	Fri Jan 18 23:59:42 2002
+@@ -80,8 +80,12 @@
+ fi
  
- display=:0
  whoseargs="client"
 +listen_tcp="-nolisten tcp"
- while [ "x$1" != "x" ]; do
+ while [ x"$1" != x ]; do
      case "$1" in
 +    -listen_tcp)
-+	listen_tcp=""
-+	;;
-     --)
- 	whoseargs="server"
- 	;;
-@@ -134,7 +138,7 @@
++        listen_tcp=""
++        ;;
+     # '' required to prevent cpp from treating "/*" as a C comment.
+     /''*|\./''*)
+ 	if [ "$whoseargs" = "client" ]; then
+@@ -164,7 +168,7 @@
  done
  #endif
  
--xinit $clientargs -- $serverargs
-+xinit $clientargs -- $serverargs $listen_tcp
+-xinit $client $clientargs -- $server $display $serverargs
++xinit $client $clientargs -- $server $display $serverargs $listen_tcp
  
  if [ x"$removelist" != x ]; then
      xauth remove $removelist
---- programs/xinit/startx.man.orig	Thu Apr 19 17:08:32 2001
-+++ programs/xinit/startx.man	Sat Oct 27 03:40:01 2001
-@@ -42,10 +42,17 @@
+--- programs/xinit/startx.man.orig	Fri Dec 14 21:01:56 2001
++++ programs/xinit/startx.man	Fri Jan 18 23:56:03 2002
+@@ -46,10 +46,17 @@
  somewhat nicer user interface for running a single session of the X
  Window System.  It is often run with no arguments.
  .PP
@@ -43,7 +43,7 @@
  The special argument
  .RB '--'
  marks the end of client arguments and the beginning of server options.
-@@ -66,6 +73,8 @@
+@@ -70,6 +77,8 @@
  startx -- -dpi 100
  .PP
  startx -- -layout Multihead
