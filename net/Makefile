@@ -507,6 +507,7 @@
     SUBDIR += pear-Net_URL
     SUBDIR += pear-SOAP
     SUBDIR += pebrot
+    SUBDIR += pecl-yaz
     SUBDIR += pen
     SUBDIR += perldap
     SUBDIR += pfflowd
