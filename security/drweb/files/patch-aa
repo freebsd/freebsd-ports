@@ -1,5 +1,5 @@
---- etc/drweb/drweb32.ini.orig	Wed May 15 04:09:24 2002
-+++ etc/drweb/drweb32.ini	Fri May 17 12:34:29 2002
+--- etc/drweb/drweb32.ini.orig	Sat May 18 14:28:51 2002
++++ etc/drweb/drweb32.ini	Tue May 21 19:10:43 2002
 @@ -1,11 +1,11 @@
  [BSD]
 -EnginePath = "/opt/drweb/lib/drweb32.dll"
@@ -18,7 +18,7 @@
  RenameFilesTo = #??
  FilesTypes = EXE,COM,SYS,OV?,BAT,BIN,DRV,PRG,BOO,SCR,CMD,VXD,386,DLL,FON,DO?
  FilesTypes = XL?,WIZ,RTF,CL*,HT*,VB*,JS*,INF,AR?,ZIP,R??,PP?,OBJ,LIB,HLP,MD?
-@@ -30,39 +30,39 @@
+@@ -30,40 +30,40 @@
  ScanSubDirectories = Yes
  PromptOnAction = No
  LimitLog = No
@@ -48,20 +48,21 @@
 -;BusyFile = "/var/drweb/run/drwebd.bsy"
 -SocketMode = TCP
 -SocketFile = "/var/drweb/run/drwebd.socket"
+-;PidFile = "/var/drweb/run/drwebd.pid"
 -;SocketMode = Unix
 -;SocketAccess 0666
-+PidFile = "%INSTALL%/run/drwebd.pid"
++;LogFileName = "/var/log/drwebd.log"
 +;BusyFile = "%INSTALL%/run/drwebd.bsy"
 +;SocketMode = TCP
 +SocketFile = "%INSTALL%/run/drwebd.sock"
++PidFile = "%INSTALL%/run/drwebd.pid"
 +SocketMode = Unix
 +SocketAccess 0660
  DaemonPort = 3000
  SocketTimeout = 40
  SocketReuseAddr = Yes
--FileTimeout = 5
+ FileTimeout = 40
 -OutputMode = Terminal
-+FileTimeout = 20
 +OutputMode = Quiet
  LimitLog = No
 -MaxLogSize = 512
@@ -75,7 +76,7 @@
  ;UserID = 
  ;GroupID = 
  ScanFiles = All
-@@ -72,8 +72,8 @@
+@@ -73,7 +73,7 @@
  SyslogPriority = "Alert"
  
  FilterRule X-Mailer ".*Mass.*Sender.*" Reject
@@ -85,6 +86,4 @@
 +;FilterRule Subject ".*free.*xxx.*" Reject
  
 -UpdatePath = "/opt/drweb/updates"
--InfectedFiles = Cure
 +UpdatePath = "%INSTALL%/updates"
-+;InfectedFiles = Cure

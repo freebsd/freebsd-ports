@@ -7,6 +7,7 @@
 
 PORTNAME=	drweb
 PORTVERSION=    4.28.1
+PORTREVISION=   1
 CATEGORIES=	security
 MASTER_SITES=   http://drweb.spb.ru/download/unix/
 DISTFILES=      ${MAIN_NAME}.tgz

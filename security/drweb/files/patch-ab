@@ -1,6 +1,6 @@
---- opt/drweb/update/update.pl.orig	Wed May 15 03:58:22 2002
-+++ opt/drweb/update/update.pl	Fri May 17 13:07:42 2002
-@@ -35,10 +35,10 @@
+--- opt/drweb/update/update.pl.orig	Sat May 18 04:56:03 2002
++++ opt/drweb/update/update.pl	Tue May 21 19:03:37 2002
+@@ -35,7 +35,7 @@
  my $ini = $ARGV[0];
  if( $ini eq '' )
  {
@@ -8,11 +8,7 @@
 +  $ini = "%INSTALL%/drweb32.ini";
  }
  
--my $fetch = "fetch -aq -o";
-+my $fetch = "fetch -q -o";
- #my $fetch = "wget -q -O";
-    $fetch = "wget -q -O" if( $^O =~ /Linux/i );   
- 
+ my $fetch = "fetch -q -o";
 @@ -52,7 +52,7 @@
     die "Bases path is not defined!" unless $bases;
     die "Update path is not defined!" unless $update;
@@ -22,40 +18,3 @@
  
  my $version = readVersion( $engine ); 
     die "Engine version error (invalid engine?)" unless $version;
-@@ -179,7 +179,7 @@
-       {
-         $engine = $v;
-         $engine =~ s/^[\"\t =]*//g;
--        $engine =~ s/[\" \t]$*//g;       
-+	$engine =~ s/[\" \t]*$//g;
-       }
-     }
-     elsif( /^PidFile/ )
-@@ -189,7 +189,7 @@
-       {
-         $pidFile= $v;
-         $pidFile =~ s/^[\"\t =]*//g;
--        $pidFile =~ s/[\" \t]$*//g;       
-+	$pidFile =~ s/[\" \t]*$//g;
-       }
-     }
-     elsif( /^VirusBase/ && $bases eq '' ) # first base path only
-@@ -200,7 +200,8 @@
-         $bases = $v;
- 
-         $bases =~ s/^[\"\t =]*//g;
--        $bases =~ s/[\" \t]$*//g;
-+	$bases =~ s/,.*$//;
-+	$bases =~ s/[\" \t]*$//g;
- 	$bases =~ s/\/[\d\w\*\?\.]*$//;
-       }
-     }
-@@ -211,7 +212,7 @@
-       {
-         $update = $v;
-         $update =~ s/^[\"\t =]*//g;
--        $update =~ s/[\" \t]$*//g;       
-+	$update =~ s/[\" \t]*$//g;
-       }
-     }
-   } 
