@@ -80,7 +80,7 @@ WITHOUT_WCHAR_H=	yes
 .endif
 
 post-patch:
-.ifdef ${WITHOUT_WCHAR_H}
+.if defined(WITHOUT_WCHAR_H)
 	${REINPLACE_CMD} -e 's|#include <wchar[.]h>||g;' \
 		${WRKSRC}/src/libs/libgroff/encoding.cc
 .endif
