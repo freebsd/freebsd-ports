@@ -38,12 +38,12 @@ MOZDIR!=	${FIND} ${X11BASE}/lib -name firefox-bin -exec dirname {} \; | ${HEAD} 
 MOZDIR=
 . endif
 . if empty(MOZDIR)
-MOZVER=		firefox-1.0	# Warning! chase this when upgrading firefox.
+MOZVER=		firefox
 . else
 MOZVER!=	${BASENAME} ${MOZDIR}
 . endif
 MOZPORT=	firefox
-MOZLDIR=	lib/firefox/lib/${MOZVER}
+MOZLDIR=	lib/firefox
 .endif
 .if empty(MOZDIR)
 MOZDIR=		${X11BASE}/${MOZLDIR}

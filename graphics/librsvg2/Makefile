@@ -7,6 +7,7 @@
 
 PORTNAME=	librsvg2
 PORTVERSION=	2.8.1
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.8
@@ -50,8 +51,8 @@ OPTIONS=	MOZILLA_PLUGIN "Enable the RSVG browser plug-in" no
 
 .if defined(WITH_MOZILLA_PLUGIN)
 .if defined(WITH_MOZILLA) && ${WITH_MOZILLA}=="firefox"
-BUILD_DEPENDS+=	${X11BASE}/lib/firefox/lib/pkgconfig/firefox-plugin.pc:${PORTSDIR}/www/firefox
-RUN_DEPENDS+=	${X11BASE}/lib/firefox/lib/pkgconfig/firefox-plugin.pc:${PORTSDIR}/www/firefox
+BUILD_DEPENDS+=	${X11BASE}/libdata/pkgconfig/firefox-plugin.pc:${PORTSDIR}/www/firefox
+RUN_DEPENDS+=	${X11BASE}/libdata/pkgconfig/firefox-plugin.pc:${PORTSDIR}/www/firefox
 .else
 BUILD_DEPENDS+=	${X11BASE}/libdata/pkgconfig/mozilla-plugin${HEADERS_SUFX}.pc:${PORTSDIR}/www/mozilla${HEADERS_SUFX}
 RUN_DEPENDS+=	${X11BASE}/libdata/pkgconfig/mozilla-plugin${HEADERS_SUFX}.pc:${PORTSDIR}/www/mozilla${HEADERS_SUFX}
@@ -69,7 +70,7 @@ HEADERS_SUFX=
 HEADERS_SUFX=	-devel
 .else
 .if ${WITH_MOZILLA}=="firefox"
-CONFIGURE_ENV+=	PKG_CONFIG_PATH=${X11BASE}/lib/firefox/lib/pkgconfig
+HEADERS_SUFX=
 .endif
 .endif
 .endif

@@ -7,7 +7,7 @@
 
 PORTNAME?=	mozex
 PORTVERSION=	1.07
-PORTREVISION=	1
+PORTREVISION?=	1
 CATEGORIES=	www mail news ftp
 MASTER_SITES=	http://downloads.mozdev.org/mozex/	\
 		http://mozdev.sweetooth.org/mozex/
