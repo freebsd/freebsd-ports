@@ -13,10 +13,11 @@ MASTER_SITES=	${MASTER_SITE_EXIM}
 MASTER_SITE_SUBDIR=	exim3
 DISTFILES=	exim-${EXIM_VERSION}${EXTRACT_SUFX} exim-texinfo-${EXIM_DOCVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	sheldonh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High performance MTA for Unix systems on the Internet
 
 NO_LATEST_LINK=	yes
+FORBIDDEN=	EOL and nobody watching for security updates
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
