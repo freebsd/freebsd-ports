@@ -1,0 +1,9 @@
+9box aims to develop an application which can "pack" windows inside
+itself.
+
+This will allow to use applications as if they were put in tabs. 
+This behaviour is similar in spirit with konsole, but 9box will 
+allow to pack windows from different applications as well as 
+multiple instances from the same application.
+
+WWW: http://www.nongnu.org/9box/
