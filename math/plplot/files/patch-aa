@@ -1,19 +1,34 @@
---- configure.orig	Tue Jun  6 14:58:50 1995
-+++ configure	Sat Sep 26 23:34:48 1998
+--- configure.orig	Wed Jun  7 04:58:50 1995
++++ configure	Wed Jan  5 00:15:16 2000
+@@ -1175,10 +1175,10 @@
+ # ----------------------------------------------------------------------------
+ 
+ if test "$with_gcc" = "yes"; then
+-    CC=gcc
+-    CXX=gcc
+-    OCC="gcc -traditional"
+-    CPP="gcc -E"
++    CC=$CC
++    CXX=$CXX
++    OCC="$CC -traditional"
++    CPP="$CC -E"
+ 
+     if test "$with_warn" = "yes"; then
+ 	SYS_FLAGS_C=-Wall
 @@ -1472,13 +1472,13 @@
  # ----------------------------------------------------------------------------
  
  CC_FLAGS=\
 -"-c $DBL_FLAG_C $DEBUG_FLAG_C $SYS_FLAGS_C $PROF_FLAG_C $OPT_FLAG_C"
-+"-c $CFLAGS $DBL_FLAG_C $DEBUG_FLAG_C $SYS_FLAGS_C $PROF_FLAG_C $OPT_FLAG_C"
++"-c $DBL_FLAG_C $DEBUG_FLAG_C $SYS_FLAGS_C $PROF_FLAG_C $CFLAGS"
  
  CXX_FLAGS=\
 -"-c $DBL_FLAG_CXX $DEBUG_FLAG_CXX $SYS_FLAGS_CXX $PROF_FLAG_CXX $OPT_FLAG_CXX"
-+"-c $CFLAGS $DBL_FLAG_CXX $DEBUG_FLAG_CXX $SYS_FLAGS_CXX $PROF_FLAG_CXX $OPT_FLAG_CXX"
++"-c $DBL_FLAG_CXX $DEBUG_FLAG_CXX $SYS_FLAGS_CXX $PROF_FLAG_CXX $CXXFLAGS"
  
  F77_FLAGS=\
 -"-c $DBL_FLAG_F $DEBUG_FLAG_F $SYS_FLAGS_F $PROF_FLAG_F $OPT_FLAG_F"
-+"-c $FFLAGS $DBL_FLAG_F $DEBUG_FLAG_F $SYS_FLAGS_F $PROF_FLAG_F $OPT_FLAG_F"
++"-c $DBL_FLAG_F $DEBUG_FLAG_F $SYS_FLAGS_F $PROF_FLAG_F $FFLAGS"
  
  LDC_FLAGS=\
  "$PROF_FLAG_LC $SYS_FLAGS_LC $DEBUG_FLAG_LC"
@@ -38,7 +53,7 @@
      HP-UX-* )
  	SO=".sl"
  	SHLIB_F77FLAGS="+z"
-@@ -4192,16 +4206,16 @@
+@@ -4192,16 +4206,19 @@
      fi
  fi
  if test -z "$DOC_DIR"; then
@@ -55,6 +70,27 @@
  if test -z "$DEMOS_DIR"; then
 -    DEMOS_DIR=$prefix/examples
 +    DEMOS_DIR=$prefix/share/examples/plplot
++fi
++if test -z "$DATA_DIR"; then
++    DATA_DIR=$prefix/libdata/plplot
  fi
  
  cat >> confdefs.h <<EOF
+@@ -4216,6 +4233,9 @@
+ #define TCL_DIR "$TCL_DIR"
+ EOF
+ 
++cat >> confdefs.h <<EOF
++#define DATA_DIR "$DATA_DIR"
++EOF
+ 
+ 
+ 
+@@ -4449,6 +4469,7 @@
+ s%@INFO_DIR@%$INFO_DIR%g
+ s%@INCLUDE_DIR@%$INCLUDE_DIR%g
+ s%@DEMOS_DIR@%$DEMOS_DIR%g
++s%@DATA_DIR@%$DATA_DIR%g
+ s%@SHARED@%$SHARED%g
+ 
+ CEOF

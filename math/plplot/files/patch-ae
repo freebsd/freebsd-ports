@@ -1,0 +1,49 @@
+--- src/plctrl.c.orig	Sat May 27 05:20:57 1995
++++ src/plctrl.c	Wed Jan  5 01:50:02 2000
+@@ -131,7 +131,7 @@
+ /* Anything else is assumed to be Unix */
+ 
+ #ifndef PLLIBDEV
+-#define PLLIBDEV "/usr/local/plplot/lib"
++#define PLLIBDEV "%%PREFIX%%/libdata/plplot"
+ #endif
+ 
+ #endif
+@@ -1153,7 +1153,7 @@
+  *	PLPLOT_LIB_ENV = $(PLPLOT_LIB)
+  *	current directory
+  *	PLPLOT_HOME_ENV/lib = $(PLPLOT_HOME)/lib
+- *	LIB_DIR
++ *	DATA_DIR
+  *	PLLIBDEV
+ \*--------------------------------------------------------------------------*/
+ 
+@@ -1195,12 +1195,12 @@
+ 
+ /**** 	search installed location	****/
+ 
+-#if defined (LIB_DIR)
+-    plGetName(LIB_DIR, "", fn, &fs);
++#if defined (DATA_DIR)
++    plGetName(DATA_DIR, "", fn, &fs);
+ 
+     if ((file = fopen(fs, "rb")) != NULL)
+         goto done;
+-#endif  /* LIB_DIR */
++#endif  /* DATA_DIR */
+ 
+ /**** 	search hardwired location	****/
+ 
+@@ -1215,9 +1215,9 @@
+ 
+     pltext();
+     fprintf(stderr, "\nCannot open library file: %s\n", fn);
+-#if defined (LIB_DIR)
+-    fprintf(stderr, "lib dir=\"" LIB_DIR "\"\n" );      /* what WAS set? */
+-#endif  /* LIB_DIR */
++#if defined (DATA_DIR)
++    fprintf(stderr, "lib dir=\"" DATA_DIR "\"\n" );      /* what WAS set? */
++#endif  /* DATA_DIR */
+     plgra();
+     return NULL;
+ 

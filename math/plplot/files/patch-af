@@ -1,0 +1,11 @@
+--- utils/pltek.c.orig	Fri Sep 16 12:45:46 1994
++++ utils/pltek.c	Tue Jan  4 20:49:26 2000
+@@ -110,7 +110,7 @@
+ 	oldpage = ipage;
+ 	printf("Page %d/%d> ", ipage, npage);
+ 
+-	gets(ibuf);
++	fgets(ibuf, sizeof(ibuf), stdin);
+ 	c = ibuf[0];
+ 
+ /* User input a page number or a return */

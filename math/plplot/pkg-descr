@@ -11,3 +11,5 @@ a host of mathematical, musical, and other symbols.  The fonts can be
 scaled to any desired size.  A variety of output devices are supported and
 new devices can be easily added by writing a small number of device
 dependent routines.
+
+WWW: http://emma.la.asu.edu/plplot/
