@@ -353,7 +353,7 @@
     SUBDIR += linux-runrev
     SUBDIR += linux-sdl12
     SUBDIR += linux-understand_java
-    SUBDIR += linux_devtools
+    SUBDIR += linux_devtools-6
     SUBDIR += linux_devtools-7
     SUBDIR += linux_kdump
     SUBDIR += linuxthreads
