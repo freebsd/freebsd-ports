@@ -7,7 +7,7 @@
 
 PORTNAME=	mode-info
 PORTVERSION=	0.1.3
-CATEGORIES=	elisp
+CATEGORIES=	editors elisp
 MASTER_SITES=	http://namazu.org/~tsuchiya/elisp/
 
 MAINTAINER=	yoichi@FreeBSD.org
