@@ -1,8 +1,0 @@
---- ../crashrep/prj/build.lst.org	Wed Jun 25 23:19:29 2003
-+++ ../crashrep/prj/build.lst	Sun Jul 13 11:55:15 2003
-@@ -1,4 +1,4 @@
--cr	crashrep	:	sal sysui gtk tools shell NULL
-+cr	crashrep	:	sal sysui gtk vcl tools shell NULL
- cr	crashrep				usr1	-	all	cr_mkout NULL
- cr	crashrep\scripts		nmake	-	all	cr_suscript NULL
- cr	crashrep\source\all		get		-	all	cr_sresource NULL
