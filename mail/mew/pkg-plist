@@ -155,7 +155,6 @@ info/mew.info-3
 %%EMACS_LIBDIR%%/site-lisp/mew/mew.el
 %%EMACS_LIBDIR%%/site-lisp/mew/mew.elc
 @dirrm %%EMACS_LIBDIR%%/site-lisp/mew
-@unexec rmdir %D/%%EMACS_LIBDIR%%/site-lisp 2>/dev/null || true
 @dirrm %%EMACS_LIBDIR%%/etc/mew/etc
 @dirrm %%EMACS_LIBDIR%%/etc/mew
 @unexec rmdir %D/%%EMACS_LIBDIR%%/etc 2>/dev/null || true
