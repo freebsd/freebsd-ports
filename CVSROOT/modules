@@ -4378,7 +4378,6 @@ nast		ports/net/nast
 nat		ports/net/nat
 naturalmath	ports/math/naturalmath
 nautilus	ports/x11-fm/nautilus
-nautilus-gtkhtml	ports/www/nautilus-gtkhtml
 nautilus-media	ports/multimedia/nautilus-media
 nautilus2	ports/x11-fm/nautilus2
 nauty		ports/math/nauty
