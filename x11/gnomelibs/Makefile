@@ -29,10 +29,8 @@ USE_LIBTOOL=	yes
 LIBTOOLFILES=	configure libart_lgpl/configure
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome \
-		--disable-gnome-hello \
 		--disable-test-gnome
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
-			-I${LOCALBASE}/include/giflib" \
 		GTK_CONFIG="${GTK_CONFIG}" \
 		GLIB_CONFIG="${GLIB_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"
