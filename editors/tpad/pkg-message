@@ -1,0 +1,11 @@
+------------------------------------------------------------
+A sample configuration file has been copied to
+    %%PREFIX%%/etc/tpad.conf.sample
+
+tpad will not work without either
+    %%PREFIX%%/etc/tpad.conf
+or the running user's ~/.tpadrc being in place.
+
+Further information on configuration can be found in
+    %%PREFIX%%/share/doc/tpad/conf.html
+------------------------------------------------------------
