@@ -1,6 +1,5 @@
 include/proplist.h
 lib/libPropList.a
-lib/libPropList.la
 lib/libPropList.so
 lib/libPropList.so.1.1
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
