@@ -10,6 +10,8 @@ PORTVERSION=	1.4.16
 CATEGORIES=	www
 MASTER_SITES=	http://zipper.paco.net/~igor/oops/
 
+FORBIDDEN=	"Remotely exploitable"
+
 MAINTAINER=	ozz@FreeBSD.org.ru
 
 LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db
