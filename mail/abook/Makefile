@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	abook
-PORTVERSION=	0.4.14
+PORTVERSION=	0.4.15
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	leeym@cae.ce.ntu.edu.tw
+MAINTAINER=	leeym@leeym.com
 
 .include <bsd.port.pre.mk>
 
@@ -25,9 +25,12 @@ MAN1=		abook.1
 MAN5=		abookrc.5
 
 post-install:
-	${MKDIR} ${DOCSDIR}
-.for file in FAQ README
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in ANNOUNCE AUTHORS BUGS COPYING ChangeLog FAQ INSTALL NEWS README \
+	THANKS TODO
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
+.endif
 
 .include <bsd.port.post.mk>
