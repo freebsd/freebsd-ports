@@ -1,6 +1,6 @@
 # New ports collection makefile for:	jlint
 # Date created:		June 2, 2001
-# Whom:			Ernst de Haan <ernst@jollem.com>
+# Whom:			Ernst de Haan <znerd@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -9,9 +9,9 @@ PORTNAME=	jlint
 PORTVERSION=	2.3
 CATEGORIES=	java
 MASTER_SITES=	http://artho.com/jlint/ \
-		http://jollem.com/~ernst/
+		http://www.metaverse.nl/~ernst/
 
-MAINTAINER=	ernst@jollem.com
+MAINTAINER=	znerd@FreeBSD.org
 
 PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
 TARGET_DIR?=	${PREFIX}/bin
