@@ -15,56 +15,47 @@ System/Applications/Preferences.app/Resources/English.lproj/Localizable.strings
 System/Applications/Preferences.app/Resources/English.lproj/Preferences.gorm
 System/Applications/Preferences.app/Resources/PrefsApp.prefs/Resources/Info-gnustep.plist
 System/Applications/Preferences.app/Resources/PrefsApp.prefs/Resources/PrefsApp.gorm
-System/Applications/Preferences.app/Resources/PrefsApp.prefs/%%NOFLAT%%PrefsApp
+System/Applications/Preferences.app/Resources/PrefsApp.prefs/PrefsApp
 System/Applications/Preferences.app/Resources/PrefsApp.prefs/stamp.make
-%%GNUSTEP_STABLE%%System/Applications/Preferences.app/%%NOFLAT%%Preferences
-System/Applications/Preferences.app/%%NOFLAT%%library_paths.openapp
+System/Applications/Preferences.app/library_paths.openapp
 System/Applications/Preferences.app/stamp.make
-%%SYSTEMLIBRARY%%/Libraries/%%NOFLAT%%libPrefsModule.so
-%%SYSTEMLIBRARY%%/Libraries/%%NOFLAT%%libPrefsModule.so.1
-%%SYSTEMLIBRARY%%/Libraries/%%NOFLAT%%libPrefsModule.so.1.0.0
+System/Library/Libraries/libPrefsModule.so
+System/Library/Libraries/libPrefsModule.so.1
+System/Library/Libraries/libPrefsModule.so.1.0.0
 System/Library/Frameworks/PrefsModule.framework/Resources
 System/Library/Frameworks/PrefsModule.framework/Versions/A/Headers/PrefsModule.h
 System/Library/Frameworks/PrefsModule.framework/Versions/A/Resources/Info-gnustep.plist
 System/Library/Frameworks/PrefsModule.framework/Versions/A/Resources/Info.plist
-System/Library/Frameworks/PrefsModule.framework/Versions/A/%%NOFLAT%%PrefsModule
-System/Library/Frameworks/PrefsModule.framework/Versions/A/%%NOFLAT%%libPrefsModule.so
-System/Library/Frameworks/PrefsModule.framework/Versions/A/%%NOFLAT%%libPrefsModule.so.1
-System/Library/Frameworks/PrefsModule.framework/Versions/A/%%NOFLAT%%libPrefsModule.so.1.0.0
+System/Library/Frameworks/PrefsModule.framework/Versions/A/PrefsModule
+System/Library/Frameworks/PrefsModule.framework/Versions/A/libPrefsModule.so
+System/Library/Frameworks/PrefsModule.framework/Versions/A/libPrefsModule.so.1
+System/Library/Frameworks/PrefsModule.framework/Versions/A/libPrefsModule.so.1.0.0
 @exec ln -fs Versions/Current/Headers %D/System/Library/Frameworks/PrefsModule.framework/Headers
 @exec ln -fs Versions/Current/Resources %D/System/Library/Frameworks/PrefsModule.framework/Resources
 @exec ln -fs A %D/System/Library/Frameworks/PrefsModule.framework/Versions/Current
 @unexec rm -f %D/System/Library/Frameworks/PrefsModule.framework/Headers
 @unexec rm -f %D/System/Library/Frameworks/PrefsModule.framework/Resources
 @unexec rm -f %D/System/Library/Frameworks/PrefsModule.framework/Versions/Current
-@unexec rm -f %D/%%SYSTEMLIBRARY%%/Headers/PrefsModule
+@unexec rm -f %D/System/Library/Headers/PrefsModule
 System/Library/Preferences/Keyboard.prefs/Resources/Info-gnustep.plist
 System/Library/Preferences/Keyboard.prefs/Resources/Keyboard.gorm
-System/Library/Preferences/Keyboard.prefs/%%NOFLAT%%Keyboard
+System/Library/Preferences/Keyboard.prefs/Keyboard
 System/Library/Preferences/Keyboard.prefs/stamp.make
 @dirrm System/Applications/Preferences.app/Resources/English.lproj
 @dirrm System/Applications/Preferences.app/Resources/PrefsApp.prefs/Resources
-%%GNUSTEP_STABLE%%@dirrm System/Applications/Preferences.app/Resources/PrefsApp.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-%%GNUSTEP_STABLE%%@dirrm System/Applications/Preferences.app/Resources/PrefsApp.prefs/%%GNU_ARCH%%/%%OPSYS%%
-%%GNUSTEP_STABLE%%@dirrm System/Applications/Preferences.app/Resources/PrefsApp.prefs/%%GNU_ARCH%%
 @dirrm System/Applications/Preferences.app/Resources/PrefsApp.prefs
 @dirrm System/Applications/Preferences.app/Resources
-%%GNUSTEP_STABLE%%@dirrm System/Applications/Preferences.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-%%GNUSTEP_STABLE%%@dirrm System/Applications/Preferences.app/%%GNU_ARCH%%/%%OPSYS%%
-%%GNUSTEP_STABLE%%@dirrm System/Applications/Preferences.app/%%GNU_ARCH%%
 @dirrm System/Applications/Preferences.app
 @dirrm System/Library/Frameworks/PrefsModule.framework/Versions/A/Headers
 @dirrm System/Library/Frameworks/PrefsModule.framework/Versions/A/Resources
-%%GNUSTEP_STABLE%%@dirrm System/Library/Frameworks/PrefsModule.framework/Versions/A/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-%%GNUSTEP_STABLE%%@dirrm System/Library/Frameworks/PrefsModule.framework/Versions/A/%%GNU_ARCH%%/%%OPSYS%%
-%%GNUSTEP_STABLE%%@dirrm System/Library/Frameworks/PrefsModule.framework/Versions/A/%%GNU_ARCH%%
 @dirrm System/Library/Frameworks/PrefsModule.framework/Versions/A
 @dirrm System/Library/Frameworks/PrefsModule.framework/Versions
 @dirrm System/Library/Frameworks/PrefsModule.framework
 @dirrm System/Library/Frameworks
 @dirrm System/Library/Preferences/Keyboard.prefs/Resources
-%%GNUSTEP_STABLE%%@dirrm System/Library/Preferences/Keyboard.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-%%GNUSTEP_STABLE%%@dirrm System/Library/Preferences/Keyboard.prefs/%%GNU_ARCH%%/%%OPSYS%%
-%%GNUSTEP_STABLE%%@dirrm System/Library/Preferences/Keyboard.prefs/%%GNU_ARCH%%
 @dirrm System/Library/Preferences/Keyboard.prefs
 @dirrm System/Library/Preferences
+@dirrm Local/Library/Preferences
+@dirrm Local/Library
+@dirrm Network/Library/Preferences
+@dirrm Network/Library

@@ -93,107 +93,73 @@ Local/Applications/GNUMail.app/Resources/stop_32.tiff
 Local/Applications/GNUMail.app/Resources/stop_48.tiff
 Local/Applications/GNUMail.app/Resources/up.tiff
 Local/Applications/GNUMail.app/Resources/up_15.tiff
-%%GNUSTEP_STABLE%%Local/Applications/GNUMail.app/%%NOFLAT%%GNUMail
-Local/Applications/GNUMail.app/%%NOFLAT%%library_paths.openapp
+Local/Applications/GNUMail.app/library_paths.openapp
 Local/Applications/GNUMail.app/stamp.make
-%%LOCALLIBRARY%%/Libraries/%%NOFLAT%%libGNUMail.so
-%%LOCALLIBRARY%%/Libraries/%%NOFLAT%%libGNUMail.so.1
-%%LOCALLIBRARY%%/Libraries/%%NOFLAT%%libGNUMail.so.1.0.0
-Local/Library/GNUMail/Account.prefs/%%NOFLAT%%Account
+Local/Library/Libraries/libGNUMail.so
+Local/Library/Libraries/libGNUMail.so.1
+Local/Library/Libraries/libGNUMail.so.1.0.0
+Local/Library/GNUMail/Account.prefs/Account
 Local/Library/GNUMail/Account.prefs/Resources/Info-gnustep.plist
 Local/Library/GNUMail/Account.prefs/Resources/account.tiff
 Local/Library/GNUMail/Account.prefs/stamp.make
-Local/Library/GNUMail/Advanced.prefs/%%NOFLAT%%Advanced
+Local/Library/GNUMail/Advanced.prefs/Advanced
 Local/Library/GNUMail/Advanced.prefs/Resources/Info-gnustep.plist
 Local/Library/GNUMail/Advanced.prefs/Resources/advanced.tiff
 Local/Library/GNUMail/Advanced.prefs/stamp.make
-Local/Library/GNUMail/Colors.prefs/%%NOFLAT%%Colors
+Local/Library/GNUMail/Colors.prefs/Colors
 Local/Library/GNUMail/Colors.prefs/Resources/Info-gnustep.plist
 Local/Library/GNUMail/Colors.prefs/Resources/colors.tiff
 Local/Library/GNUMail/Colors.prefs/stamp.make
 Local/Library/GNUMail/Compose.prefs/Resources/Info-gnustep.plist
 Local/Library/GNUMail/Compose.prefs/Resources/MailIcon_create.tiff
-Local/Library/GNUMail/Compose.prefs/%%NOFLAT%%Compose
+Local/Library/GNUMail/Compose.prefs/Compose
 Local/Library/GNUMail/Compose.prefs/stamp.make
-Local/Library/GNUMail/Filtering.prefs/%%NOFLAT%%Filtering
+Local/Library/GNUMail/Filtering.prefs/Filtering
 Local/Library/GNUMail/Filtering.prefs/Resources/Filtering.tiff
 Local/Library/GNUMail/Filtering.prefs/Resources/Info-gnustep.plist
 Local/Library/GNUMail/Filtering.prefs/stamp.make
-Local/Library/GNUMail/Fonts.prefs/%%NOFLAT%%Fonts
+Local/Library/GNUMail/Fonts.prefs/Fonts
 Local/Library/GNUMail/Fonts.prefs/Resources/Info-gnustep.plist
 Local/Library/GNUMail/Fonts.prefs/Resources/fonts.tiff
 Local/Library/GNUMail/Fonts.prefs/stamp.make
-Local/Library/GNUMail/MIME.prefs/%%NOFLAT%%MIME
+Local/Library/GNUMail/MIME.prefs/MIME
 Local/Library/GNUMail/MIME.prefs/Resources/Info-gnustep.plist
 Local/Library/GNUMail/MIME.prefs/Resources/mime.tiff
 Local/Library/GNUMail/MIME.prefs/stamp.make
-Local/Library/GNUMail/Receiving.prefs/%%NOFLAT%%Receiving
+Local/Library/GNUMail/Receiving.prefs/Receiving
 Local/Library/GNUMail/Receiving.prefs/Resources/Info-gnustep.plist
 Local/Library/GNUMail/Receiving.prefs/Resources/MailIcon_retrieve.tiff
 Local/Library/GNUMail/Receiving.prefs/stamp.make
 Local/Library/GNUMail/Sending.prefs/Resources/Info-gnustep.plist
 Local/Library/GNUMail/Sending.prefs/Resources/MailIcon_send.tiff
-Local/Library/GNUMail/Sending.prefs/%%NOFLAT%%Sending
+Local/Library/GNUMail/Sending.prefs/Sending
 Local/Library/GNUMail/Sending.prefs/stamp.make
 Local/Library/GNUMail/Viewing.prefs/Resources/Info-gnustep.plist
 Local/Library/GNUMail/Viewing.prefs/Resources/viewing.tiff
-Local/Library/GNUMail/Viewing.prefs/%%NOFLAT%%Viewing
+Local/Library/GNUMail/Viewing.prefs/Viewing
 Local/Library/GNUMail/Viewing.prefs/stamp.make
-%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Viewing.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Viewing.prefs/%%GNU_ARCH%%/%%OPSYS%%
-%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Viewing.prefs/%%GNU_ARCH%%
 @dirrm Local/Library/GNUMail/Viewing.prefs/Resources
 @dirrm Local/Library/GNUMail/Viewing.prefs
-%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Sending.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Sending.prefs/%%GNU_ARCH%%/%%OPSYS%%
-%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Sending.prefs/%%GNU_ARCH%%
 @dirrm Local/Library/GNUMail/Sending.prefs/Resources
 @dirrm Local/Library/GNUMail/Sending.prefs
-%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Receiving.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Receiving.prefs/%%GNU_ARCH%%/%%OPSYS%%
-%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Receiving.prefs/%%GNU_ARCH%%
 @dirrm Local/Library/GNUMail/Receiving.prefs/Resources
 @dirrm Local/Library/GNUMail/Receiving.prefs
-%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/MIME.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/MIME.prefs/%%GNU_ARCH%%/%%OPSYS%%
-%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/MIME.prefs/%%GNU_ARCH%%
 @dirrm Local/Library/GNUMail/MIME.prefs/Resources
 @dirrm Local/Library/GNUMail/MIME.prefs
-%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Fonts.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Fonts.prefs/%%GNU_ARCH%%/%%OPSYS%%
-%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Fonts.prefs/%%GNU_ARCH%%
 @dirrm Local/Library/GNUMail/Fonts.prefs/Resources
 @dirrm Local/Library/GNUMail/Fonts.prefs
-%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Filtering.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Filtering.prefs/%%GNU_ARCH%%/%%OPSYS%%
-%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Filtering.prefs/%%GNU_ARCH%%
 @dirrm Local/Library/GNUMail/Filtering.prefs/Resources
 @dirrm Local/Library/GNUMail/Filtering.prefs
-%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Compose.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Compose.prefs/%%GNU_ARCH%%/%%OPSYS%%
-%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Compose.prefs/%%GNU_ARCH%%
 @dirrm Local/Library/GNUMail/Compose.prefs/Resources
 @dirrm Local/Library/GNUMail/Compose.prefs
-%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Colors.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Colors.prefs/%%GNU_ARCH%%/%%OPSYS%%
-%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Colors.prefs/%%GNU_ARCH%%
 @dirrm Local/Library/GNUMail/Colors.prefs/Resources
 @dirrm Local/Library/GNUMail/Colors.prefs
-%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Advanced.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Advanced.prefs/%%GNU_ARCH%%/%%OPSYS%%
-%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Advanced.prefs/%%GNU_ARCH%%
 @dirrm Local/Library/GNUMail/Advanced.prefs/Resources
 @dirrm Local/Library/GNUMail/Advanced.prefs
-%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Account.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Account.prefs/%%GNU_ARCH%%/%%OPSYS%%
-%%GNUSTEP_STABLE%%@dirrm Local/Library/GNUMail/Account.prefs/%%GNU_ARCH%%
 @dirrm Local/Library/GNUMail/Account.prefs/Resources
 @dirrm Local/Library/GNUMail/Account.prefs
 @dirrm Local/Library/GNUMail
 @dirrm Local/Library
-%%GNUSTEP_STABLE%%@dirrm Local/Applications/GNUMail.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-%%GNUSTEP_STABLE%%@dirrm Local/Applications/GNUMail.app/%%GNU_ARCH%%/%%OPSYS%%
-%%GNUSTEP_STABLE%%@dirrm Local/Applications/GNUMail.app/%%GNU_ARCH%%
 @dirrm Local/Applications/GNUMail.app/Resources/Swedish.lproj
 @dirrm Local/Applications/GNUMail.app/Resources/Spanish.lproj
 @dirrm Local/Applications/GNUMail.app/Resources/German.lproj

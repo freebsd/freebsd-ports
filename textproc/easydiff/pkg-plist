@@ -4,12 +4,8 @@ Local/Applications/EasyDiff.app/Resources/EasyDiff.desktop
 Local/Applications/EasyDiff.app/Resources/EasyDiff.gorm
 Local/Applications/EasyDiff.app/Resources/EasyDiffInfo.plist
 Local/Applications/EasyDiff.app/Resources/Info-gnustep.plist
-%%GNUSTEP_STABLE%%Local/Applications/EasyDiff.app/%%NOFLAT%%EasyDiff
-Local/Applications/EasyDiff.app/%%NOFLAT%%library_paths.openapp
+Local/Applications/EasyDiff.app/library_paths.openapp
 Local/Applications/EasyDiff.app/stamp.make
-%%GNUSTEP_STABLE%%@dirrm Local/Applications/EasyDiff.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-%%GNUSTEP_STABLE%%@dirrm Local/Applications/EasyDiff.app/%%GNU_ARCH%%/%%OPSYS%%
-%%GNUSTEP_STABLE%%@dirrm Local/Applications/EasyDiff.app/%%GNU_ARCH%%
 @dirrm Local/Applications/EasyDiff.app/Resources
 @dirrm Local/Applications/EasyDiff.app
 @dirrm Local/Applications

@@ -48,9 +48,5 @@ GUILE_VER!=	(cd ${PORTSDIR}/lang/guile && make -V GUILE_VER)
 
 pre-configure:
 	${TOUCH} ${WRKSRC}/Greg/ac_nonexistent.h
-.if !defined(WITH_GNUSTEP_DEVEL)
-	${REINPLACE_CMD} -e 's=ROOT/Library/Headers=ROOT/Headers=g' \
-		${WRKSRC}/configure
-.endif
 
 .include <bsd.port.post.mk>

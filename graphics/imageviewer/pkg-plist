@@ -14,12 +14,8 @@ Local/Applications/ImageViewer.app/Resources/ImageViewerInfo.plist
 Local/Applications/ImageViewer.app/Resources/Info-gnustep.plist
 Local/Applications/ImageViewer.app/Resources/README
 Local/Applications/ImageViewer.app/Resources/genericImage.tiff
-%%GNUSTEP_STABLE%%Local/Applications/ImageViewer.app/%%NOFLAT%%ImageViewer
-Local/Applications/ImageViewer.app/%%NOFLAT%%library_paths.openapp
+Local/Applications/ImageViewer.app/library_paths.openapp
 Local/Applications/ImageViewer.app/stamp.make
-%%GNUSTEP_STABLE%%@dirrm Local/Applications/ImageViewer.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-%%GNUSTEP_STABLE%%@dirrm Local/Applications/ImageViewer.app/%%GNU_ARCH%%/%%OPSYS%%
-%%GNUSTEP_STABLE%%@dirrm Local/Applications/ImageViewer.app/%%GNU_ARCH%%
 @dirrm Local/Applications/ImageViewer.app/Resources/German.lproj
 @dirrm Local/Applications/ImageViewer.app/Resources/French.lproj
 @dirrm Local/Applications/ImageViewer.app/Resources/English.lproj

@@ -1,5 +1,3 @@
-%%GNUSTEP_STABLE%%Local/Applications/Gomoku.app/%%NOFLAT%%Gomoku
-Local/Applications/Gomoku.app/%%NOFLAT%%library_paths.openapp
 Local/Applications/Gomoku.app/Gomoku
 Local/Applications/Gomoku.app/Resources/Computer.png
 Local/Applications/Gomoku.app/Resources/ComputerBottom.png
@@ -38,10 +36,8 @@ Local/Applications/Gomoku.app/Resources/Italian.lproj/Localizable.strings
 Local/Applications/Gomoku.app/Resources/Spanish.lproj/Localizable.strings
 Local/Applications/Gomoku.app/Resources/Swedish.lproj/Localizable.strings
 Local/Applications/Gomoku.app/Resources/TraditionalChinese.lproj/Localizable.strings
+Local/Applications/Gomoku.app/library_paths.openapp
 Local/Applications/Gomoku.app/stamp.make
-%%GNUSTEP_STABLE%%@dirrm Local/Applications/Gomoku.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-%%GNUSTEP_STABLE%%@dirrm Local/Applications/Gomoku.app/%%GNU_ARCH%%/%%OPSYS%%
-%%GNUSTEP_STABLE%%@dirrm Local/Applications/Gomoku.app/%%GNU_ARCH%%
 @dirrm Local/Applications/Gomoku.app/Resources/TraditionalChinese.lproj
 @dirrm Local/Applications/Gomoku.app/Resources/Swedish.lproj
 @dirrm Local/Applications/Gomoku.app/Resources/Spanish.lproj
