@@ -1,39 +1,61 @@
---- Makefile.orig	Fri Oct 17 16:11:10 1997
-+++ Makefile	Sun Jun  7 18:26:02 1998
-@@ -1,7 +1,7 @@
- 
- # Define your c compiler.  I recommend gcc if you've got it.
- #CC = cc
+--- Makefile.orig	Sat Nov 11 20:50:16 2000
++++ Makefile	Wed Nov 22 21:16:35 2000
+@@ -1,26 +1,26 @@
+ #Define your C compiler.  I recommend gcc if you have it.
 -CC = gcc
 +#CC = gcc
+ #CC = cc
  
  # Define your optimization flags.  Most compilers understand -O and -O2,
- # Debugging (don't use)
-@@ -43,7 +43,8 @@
- #                     have that option.
- #
- #DEFS = -DUSE_GETOPT_H -DCOLOR_SUPPORT -DEMACS_EDITING
--DEFS =
-+DEFS = -DCOLOR_SUPPORT -DEMACS_EDITING -DUSE_NCURSES_H -DUSE_NOTHING \
-+	-DUSE_UNISTD_H
+ # Standard (note: Solaris on UltraSparc using gcc 2.8.x might not like this.)
+-OPTS = -O2 
++#OPTS = -O2 
+ # Pentium with gcc 2.7.0 or better
+ #OPTS = -O2 -fomit-frame-pointer -malign-functions=2 -malign-loops=2 \
+ #-malign-jumps=2
  
- # This should point to the location of your curses or ncurses include file
- # if it's in a non-standard place.
-@@ -57,7 +58,7 @@
- #CURSES = -lncurses
+ # Define where you want Frotz to be installed.  Usually this is /usr/local
+-PREFIX = /usr/local
++#PREFIX = /usr/local
+ #PREFIX =
+ 
+ # Define where you want Frotz to look for frotz.conf.
+-CONFIG_DIR = /usr/local/etc
++CONFIG_DIR = ${PREFIX}/etc
+ #CONFIG_DIR = /etc
+ #CONFIG_DIR = /usr/pkg/etc
+ #CONFIG_DIR =
+ 
+ # Uncomment this if you want color support.  Usually this requires ncurses.
+-#COLOR_DEFS = -DCOLOR_SUPPORT
++COLOR_DEFS = -DCOLOR_SUPPORT
+ 
+ # Uncomment this if you have an OSS soundcard driver and want classical
+ # Infocom sound support.
+@@ -28,7 +28,7 @@
+ 
+ # This should point to the location of your curses.h or ncurses.h include
+ # file if your compiler doesn't know about it.
+-INCL = -I/usr/local/include
++#INCL = -I/usr/local/include
+ #INCL = -I/usr/pkg/include
+ #INCL = -I/usr/freeware/include
+ #INCL = -I/5usr/include
+@@ -37,7 +37,7 @@
+ # This should define the location and name of whatever curses library you're
+ # linking with.  Usually, this isn't necessary if /etc/ld.so.conf is set
+ # up correctly.
+-LIB = -L/usr/local/lib
++#LIB = -L/usr/local/lib
+ #LIB = -L/usr/pkg/lib
+ #LIB = -L/usr/freeware/lib
  #LIB = -L/5usr/lib
- LIB =
--CURSES = -lcurses
-+CURSES = -lncurses
+@@ -81,7 +81,7 @@
+ COMP_DEFS = $(OPT_DEFS) $(COLOR_DEFS) $(SOUND_DEFS) $(SOUNDCARD) \
+ 	$(MEMMOVE_DEF)
  
- # Nothing under this line should need to be changed.
+-CFLAGS = $(OPTS) $(COMP_DEFS) $(INCL)
++CFLAGS += $(OPTS) $(COMP_DEFS) $(INCL)
  
-@@ -66,7 +67,7 @@
-           text.o ux_init.o ux_input.o ux_pic.o ux_screen.o ux_sample.o \
-           ux_text.o variable.o
  
--CFLAGS = $(OPTS) $(DEFS) $(INCL)
-+CFLAGS+= $(DEFS)
- 
- frotz: $(OBJECTS)
- 	$(CC) -o frotz $(OBJECTS) $(LIB) $(CURSES)
+ $(BINNAME): soundcard.h $(OBJECTS)

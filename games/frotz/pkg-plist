@@ -1,4 +1,9 @@
 bin/frotz
-share/doc/frotz/Readme.unix
-share/doc/frotz/Todo
+share/doc/frotz/AUTHORS
+share/doc/frotz/BUGS
+share/doc/frotz/ChangeLog
+share/doc/frotz/HOW_TO_PLAY
+share/doc/frotz/INSTALL
+share/doc/frotz/README
+share/doc/frotz/TODO
 @dirrm share/doc/frotz
