@@ -26,6 +26,12 @@ ICIHDRS=	ici.h icistr-setup.h
 
 ICIDOCS=	doc/ici.pdf
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not compile on amd64"
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ici ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/libici4.a ${PREFIX}/lib
@@ -48,4 +54,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
