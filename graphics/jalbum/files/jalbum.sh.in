@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+cd "%%DATADIR%%" && "%%LOCALBASE%%/bin/java" -jar JAlbum.jar "$@"

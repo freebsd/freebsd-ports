@@ -1,0 +1,1582 @@
+@comment $FreeBSD$
+bin/jalbum
+%%DATADIR%%/JAlbum.jar
+%%DATADIR%%/StartJAlbum.bat
+%%DATADIR%%/filetypes.xml
+%%DATADIR%%/help/addbuttons.html
+%%DATADIR%%/help/faq.html
+%%DATADIR%%/help/features.html
+%%DATADIR%%/help/filters.html
+%%DATADIR%%/help/history.html
+%%DATADIR%%/help/images/a.gif
+%%DATADIR%%/help/images/beans.gif
+%%DATADIR%%/help/images/beforefilter-standard.jpg
+%%DATADIR%%/help/images/beforefilter.jpg
+%%DATADIR%%/help/images/bigicon.gif
+%%DATADIR%%/help/images/blurexample.jpg
+%%DATADIR%%/help/images/browsers.gif
+%%DATADIR%%/help/images/button.gif
+%%DATADIR%%/help/images/buttonedit.gif
+%%DATADIR%%/help/images/camera.gif
+%%DATADIR%%/help/images/closeupwithtext.jpg
+%%DATADIR%%/help/images/console.gif
+%%DATADIR%%/help/images/david.jpg
+%%DATADIR%%/help/images/demowebhost.gif
+%%DATADIR%%/help/images/digicam.gif
+%%DATADIR%%/help/images/download.gif
+%%DATADIR%%/help/images/dragndrop.png
+%%DATADIR%%/help/images/filterproperties.gif
+%%DATADIR%%/help/images/filters.gif
+%%DATADIR%%/help/images/first.gif
+%%DATADIR%%/help/images/fixedshapeexample.jpg
+%%DATADIR%%/help/images/folder.gif
+%%DATADIR%%/help/images/folders.gif
+%%DATADIR%%/help/images/free.gif
+%%DATADIR%%/help/images/ftp.gif
+%%DATADIR%%/help/images/grayscaleexample.jpg
+%%DATADIR%%/help/images/grayscalethumb.jpg
+%%DATADIR%%/help/images/heart.gif
+%%DATADIR%%/help/images/international.gif
+%%DATADIR%%/help/images/java.gif
+%%DATADIR%%/help/images/jlogo-big.png
+%%DATADIR%%/help/images/last.gif
+%%DATADIR%%/help/images/logoexample.jpg
+%%DATADIR%%/help/images/makealbum.png
+%%DATADIR%%/help/images/menubackground-right.gif
+%%DATADIR%%/help/images/menubackground.gif
+%%DATADIR%%/help/images/miniheart.gif
+%%DATADIR%%/help/images/movie.gif
+%%DATADIR%%/help/images/navigation1.gif
+%%DATADIR%%/help/images/navigation2.gif
+%%DATADIR%%/help/images/openskin.gif
+%%DATADIR%%/help/images/paypaldonate.gif
+%%DATADIR%%/help/images/pdf.gif
+%%DATADIR%%/help/images/pil.gif
+%%DATADIR%%/help/images/q.gif
+%%DATADIR%%/help/images/rotationexample.jpg
+%%DATADIR%%/help/images/runson-os.gif
+%%DATADIR%%/help/images/script.gif
+%%DATADIR%%/help/images/shadowtextexample.jpg
+%%DATADIR%%/help/images/sharpenexample.jpg
+%%DATADIR%%/help/images/skin.gif
+%%DATADIR%%/help/images/skindirectory.gif
+%%DATADIR%%/help/images/skinfolder.gif
+%%DATADIR%%/help/images/slideedit.gif
+%%DATADIR%%/help/images/smallicon.gif
+%%DATADIR%%/help/images/smiley.gif
+%%DATADIR%%/help/images/textexample.jpg
+%%DATADIR%%/help/images/tip.gif
+%%DATADIR%%/help/images/ui-advanced-main.png
+%%DATADIR%%/help/images/ui-advanced-naming.png
+%%DATADIR%%/help/images/ui-advanced-preferences.png
+%%DATADIR%%/help/images/ui-advanced-variables.png
+%%DATADIR%%/help/images/ui-custom.gif
+%%DATADIR%%/help/images/ui-edit.gif
+%%DATADIR%%/help/images/ui-macosx.gif
+%%DATADIR%%/help/images/ui-metal.gif
+%%DATADIR%%/help/images/ui-publish.gif
+%%DATADIR%%/help/images/ui-publish.png
+%%DATADIR%%/help/images/ui.gif
+%%DATADIR%%/help/images/uploading.gif
+%%DATADIR%%/help/images/watermarkexample.jpg
+%%DATADIR%%/help/images/xbfexample.jpg
+%%DATADIR%%/help/images/xborderexample.jpg
+%%DATADIR%%/help/images/zoomexample.jpg
+%%DATADIR%%/help/index.html
+%%DATADIR%%/help/index.ico
+%%DATADIR%%/help/misc.html
+%%DATADIR%%/help/quickstart.html
+%%DATADIR%%/help/scripting.html
+%%DATADIR%%/help/skincreation.html
+%%DATADIR%%/help/style.css
+%%DATADIR%%/help/supporting.html
+%%DATADIR%%/help/tutorials.html
+%%DATADIR%%/help/usermanual.html
+%%DATADIR%%/includes/printing.bsh
+%%DATADIR%%/includes/printing.inc
+%%DATADIR%%/includes/shutterfly.inc
+%%DATADIR%%/includes/test.inc
+%%DATADIR%%/init.bsh
+%%DATADIR%%/plugins/BlurFilter.class
+%%DATADIR%%/plugins/BlurFilter.java
+%%DATADIR%%/plugins/Compile.bat
+%%DATADIR%%/plugins/FixedShapeFilter.class
+%%DATADIR%%/plugins/FixedShapeFilter.java
+%%DATADIR%%/plugins/GrayscaleFilter.class
+%%DATADIR%%/plugins/GrayscaleFilter.java
+%%DATADIR%%/plugins/LogoFilter.class
+%%DATADIR%%/plugins/LogoFilter.java
+%%DATADIR%%/plugins/LogoFilter.jbx
+%%DATADIR%%/plugins/PropertySettingFilterWrapper.class
+%%DATADIR%%/plugins/PropertySettingFilterWrapper.java
+%%DATADIR%%/plugins/RotationFilter.class
+%%DATADIR%%/plugins/RotationFilter.java
+%%DATADIR%%/plugins/ShadowTextFilter.class
+%%DATADIR%%/plugins/ShadowTextFilter.java
+%%DATADIR%%/plugins/ShadowTextFilter.jbx
+%%DATADIR%%/plugins/SharpenFilter.class
+%%DATADIR%%/plugins/SharpenFilter.java
+%%DATADIR%%/plugins/SimpleFilter.class
+%%DATADIR%%/plugins/SimpleFilter.java
+%%DATADIR%%/plugins/TextFilter.class
+%%DATADIR%%/plugins/TextFilter.java
+%%DATADIR%%/plugins/TextFilter.jbx
+%%DATADIR%%/plugins/WatermarkFilter.class
+%%DATADIR%%/plugins/WatermarkFilter.java
+%%DATADIR%%/plugins/WatermarkFilter.jbx
+%%DATADIR%%/plugins/XBorderFilter.class
+%%DATADIR%%/plugins/XBorderFilter.java
+%%DATADIR%%/plugins/ZoomFilter.class
+%%DATADIR%%/plugins/ZoomFilter.java
+%%DATADIR%%/plugins/makedoc.bat
+%%DATADIR%%/plugins/readme.txt
+%%DATADIR%%/plugins/wishlist.txt
+%%DATADIR%%/readme.html
+%%DATADIR%%/res/doc.gif
+%%DATADIR%%/res/folder.gif
+%%DATADIR%%/res/img.gif
+%%DATADIR%%/res/mdb.gif
+%%DATADIR%%/res/movie.gif
+%%DATADIR%%/res/pdf.gif
+%%DATADIR%%/res/ppt.gif
+%%DATADIR%%/res/txt.gif
+%%DATADIR%%/res/unknown.gif
+%%DATADIR%%/res/xls.gif
+%%DATADIR%%/res/xml.gif
+%%DATADIR%%/res/zip.gif
+%%DATADIR%%/skins/BluPlusPlus/bsh/base.bsh
+%%DATADIR%%/skins/BluPlusPlus/bsh/common.bsh
+%%DATADIR%%/skins/BluPlusPlus/bsh/index.bsh
+%%DATADIR%%/skins/BluPlusPlus/bsh/photographic-meta-info.bsh
+%%DATADIR%%/skins/BluPlusPlus/bsh/slide-original.bsh
+%%DATADIR%%/skins/BluPlusPlus/bsh/slide.bsh
+%%DATADIR%%/skins/BluPlusPlus/bsh/vars.bsh
+%%DATADIR%%/skins/BluPlusPlus/cameras.properties
+%%DATADIR%%/skins/BluPlusPlus/docs/ChangesHistory.txt
+%%DATADIR%%/skins/BluPlusPlus/docs/ReadMe.txt
+%%DATADIR%%/skins/BluPlusPlus/docs/UserGuide.txt
+%%DATADIR%%/skins/BluPlusPlus/hints.jap
+%%DATADIR%%/skins/BluPlusPlus/includes/footer.inc
+%%DATADIR%%/skins/BluPlusPlus/includes/header.inc
+%%DATADIR%%/skins/BluPlusPlus/includes/help.inc
+%%DATADIR%%/skins/BluPlusPlus/includes/index-bottom-navigation.inc
+%%DATADIR%%/skins/BluPlusPlus/includes/index-top-navigation.inc
+%%DATADIR%%/skins/BluPlusPlus/includes/index-topbar.inc
+%%DATADIR%%/skins/BluPlusPlus/includes/setup-index.js
+%%DATADIR%%/skins/BluPlusPlus/includes/setup-slide-common.js
+%%DATADIR%%/skins/BluPlusPlus/includes/setup-slide-original.js
+%%DATADIR%%/skins/BluPlusPlus/includes/setup-slide.js
+%%DATADIR%%/skins/BluPlusPlus/includes/slide-bottom-navigation.inc
+%%DATADIR%%/skins/BluPlusPlus/includes/slide-comment.inc
+%%DATADIR%%/skins/BluPlusPlus/includes/slide-info.inc
+%%DATADIR%%/skins/BluPlusPlus/includes/slide-photographic-meta-info.inc
+%%DATADIR%%/skins/BluPlusPlus/includes/slide-top-navigation.inc
+%%DATADIR%%/skins/BluPlusPlus/includes/slide-topbar.inc
+%%DATADIR%%/skins/BluPlusPlus/index.htt
+%%DATADIR%%/skins/BluPlusPlus/init.bsh
+%%DATADIR%%/skins/BluPlusPlus/onload.bsh
+%%DATADIR%%/skins/BluPlusPlus/preview.jpg
+%%DATADIR%%/skins/BluPlusPlus/res/actions/black/download.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/black/first.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/black/first_disabled.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/black/folder.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/black/folder_small.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/black/help.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/black/index.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/black/info.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/black/info_disabled.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/black/last.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/black/last_disabled.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/black/movie.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/black/movie_small.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/black/next.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/black/next_disabled.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/black/order_print.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/black/pause.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/black/play.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/black/previous.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/black/previous_disabled.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/black/sound.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/black/sound_small.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/black/up.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/bright-matte/download.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/bright-matte/first.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/bright-matte/first_disabled.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/bright-matte/folder.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/bright-matte/folder_small.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/bright-matte/help.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/bright-matte/index.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/bright-matte/info.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/bright-matte/info_disabled.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/bright-matte/last.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/bright-matte/last_disabled.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/bright-matte/movie.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/bright-matte/movie_small.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/bright-matte/next.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/bright-matte/next_disabled.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/bright-matte/order_print.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/bright-matte/pause.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/bright-matte/play.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/bright-matte/previous.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/bright-matte/previous_disabled.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/bright-matte/sound.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/bright-matte/sound_small.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/bright-matte/up.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/dark-matte/download.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/dark-matte/first.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/dark-matte/first_disabled.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/dark-matte/folder.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/dark-matte/folder_small.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/dark-matte/help.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/dark-matte/index.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/dark-matte/info.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/dark-matte/info_disabled.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/dark-matte/last.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/dark-matte/last_disabled.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/dark-matte/movie.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/dark-matte/movie_small.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/dark-matte/next.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/dark-matte/next_disabled.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/dark-matte/order_print.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/dark-matte/pause.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/dark-matte/play.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/dark-matte/previous.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/dark-matte/previous_disabled.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/dark-matte/sound.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/dark-matte/sound_small.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/dark-matte/up.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/universal/download.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/universal/first.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/universal/first_disabled.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/universal/folder.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/universal/folder_small.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/universal/help.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/universal/index.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/universal/info.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/universal/info_disabled.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/universal/last.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/universal/last_disabled.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/universal/movie.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/universal/movie_small.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/universal/next.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/universal/next_disabled.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/universal/order_print.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/universal/pause.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/universal/play.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/universal/previous.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/universal/previous_disabled.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/universal/sound.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/universal/sound_small.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/universal/up.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/white/download.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/white/first.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/white/first_disabled.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/white/folder.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/white/folder_small.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/white/help.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/white/index.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/white/info.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/white/info_disabled.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/white/last.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/white/last_disabled.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/white/movie.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/white/movie_small.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/white/next.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/white/next_disabled.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/white/order_print.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/white/pause.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/white/play.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/white/previous.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/white/previous_disabled.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/white/sound.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/white/sound_small.gif
+%%DATADIR%%/skins/BluPlusPlus/res/actions/white/up.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_black/border_bottom_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_black/border_bottom_middle.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_black/border_bottom_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_black/border_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_black/border_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_black/border_top_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_black/border_top_middle.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_black/border_top_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_horizontal_black/border_bottom_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_horizontal_black/border_bottom_middle.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_horizontal_black/border_bottom_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_horizontal_black/border_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_horizontal_black/border_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_horizontal_black/border_top_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_horizontal_black/border_top_middle.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_horizontal_black/border_top_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_horizontal_white/border_bottom_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_horizontal_white/border_bottom_middle.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_horizontal_white/border_bottom_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_horizontal_white/border_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_horizontal_white/border_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_horizontal_white/border_top_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_horizontal_white/border_top_middle.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_horizontal_white/border_top_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_vertical_black/border_bottom_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_vertical_black/border_bottom_middle.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_vertical_black/border_bottom_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_vertical_black/border_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_vertical_black/border_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_vertical_black/border_top_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_vertical_black/border_top_middle.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_vertical_black/border_top_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_vertical_white/border_bottom_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_vertical_white/border_bottom_middle.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_vertical_white/border_bottom_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_vertical_white/border_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_vertical_white/border_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_vertical_white/border_top_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_vertical_white/border_top_middle.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_vertical_white/border_top_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_white/border_bottom_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_white/border_bottom_middle.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_white/border_bottom_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_white/border_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_white/border_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_white/border_top_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_white/border_top_middle.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_white/border_top_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/frame/border_bottom_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/frame/border_bottom_middle.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/frame/border_bottom_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/frame/border_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/frame/border_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/frame/border_top_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/frame/border_top_middle.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/frame/border_top_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/none/border_bottom_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/none/border_bottom_middle.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/none/border_bottom_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/none/border_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/none/border_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/none/border_top_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/none/border_top_middle.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/none/border_top_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow/border_bottom_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow/border_bottom_middle.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow/border_bottom_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow/border_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow/border_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow/border_top_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow/border_top_middle.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow/border_top_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_artsy/border_bottom_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_artsy/border_bottom_middle.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_artsy/border_bottom_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_artsy/border_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_artsy/border_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_artsy/border_top_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_artsy/border_top_middle.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_artsy/border_top_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_autumn/border_bottom_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_autumn/border_bottom_middle.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_autumn/border_bottom_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_autumn/border_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_autumn/border_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_autumn/border_top_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_autumn/border_top_middle.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_autumn/border_top_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_canvas/border_bottom_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_canvas/border_bottom_middle.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_canvas/border_bottom_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_canvas/border_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_canvas/border_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_canvas/border_top_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_canvas/border_top_middle.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_canvas/border_top_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_christmas/border_bottom_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_christmas/border_bottom_middle.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_christmas/border_bottom_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_christmas/border_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_christmas/border_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_christmas/border_top_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_christmas/border_top_middle.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_christmas/border_top_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_dark/border_bottom_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_dark/border_bottom_middle.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_dark/border_bottom_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_dark/border_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_dark/border_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_dark/border_top_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_dark/border_top_middle.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_dark/border_top_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_expedition/border_bottom_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_expedition/border_bottom_middle.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_expedition/border_bottom_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_expedition/border_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_expedition/border_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_expedition/border_top_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_expedition/border_top_middle.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_expedition/border_top_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_gray/border_bottom_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_gray/border_bottom_middle.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_gray/border_bottom_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_gray/border_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_gray/border_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_gray/border_top_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_gray/border_top_middle.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_gray/border_top_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_hakki/border_bottom_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_hakki/border_bottom_middle.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_hakki/border_bottom_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_hakki/border_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_hakki/border_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_hakki/border_top_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_hakki/border_top_middle.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_hakki/border_top_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/solid/border_bottom_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/solid/border_bottom_middle.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/solid/border_bottom_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/solid/border_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/solid/border_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/solid/border_top_left.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/solid/border_top_middle.gif
+%%DATADIR%%/skins/BluPlusPlus/res/borders/solid/border_top_right.gif
+%%DATADIR%%/skins/BluPlusPlus/res/empty.gif
+%%DATADIR%%/skins/BluPlusPlus/res/favicon.ico
+%%DATADIR%%/skins/BluPlusPlus/res/folder.gif
+%%DATADIR%%/skins/BluPlusPlus/res/js/common.js
+%%DATADIR%%/skins/BluPlusPlus/res/js/help.js
+%%DATADIR%%/skins/BluPlusPlus/res/js/keyboard.js
+%%DATADIR%%/skins/BluPlusPlus/res/js/nav-index.js
+%%DATADIR%%/skins/BluPlusPlus/res/js/nav-slide.js
+%%DATADIR%%/skins/BluPlusPlus/res/js/photographic-meta-info.js
+%%DATADIR%%/skins/BluPlusPlus/res/js/save-protection.js
+%%DATADIR%%/skins/BluPlusPlus/res/js/shadow.js
+%%DATADIR%%/skins/BluPlusPlus/res/js/slideshow.js
+%%DATADIR%%/skins/BluPlusPlus/res/js/statusbar.js
+%%DATADIR%%/skins/BluPlusPlus/res/movie.gif
+%%DATADIR%%/skins/BluPlusPlus/res/styles/arcs.css
+%%DATADIR%%/skins/BluPlusPlus/res/styles/arcs/background.jpg
+%%DATADIR%%/skins/BluPlusPlus/res/styles/arcs/rule.gif
+%%DATADIR%%/skins/BluPlusPlus/res/styles/arcs/theme.properties
+%%DATADIR%%/skins/BluPlusPlus/res/styles/artsy.css
+%%DATADIR%%/skins/BluPlusPlus/res/styles/artsy/background.jpg
+%%DATADIR%%/skins/BluPlusPlus/res/styles/artsy/rule.gif
+%%DATADIR%%/skins/BluPlusPlus/res/styles/artsy/theme.properties
+%%DATADIR%%/skins/BluPlusPlus/res/styles/autumn.css
+%%DATADIR%%/skins/BluPlusPlus/res/styles/autumn/theme.properties
+%%DATADIR%%/skins/BluPlusPlus/res/styles/black.css
+%%DATADIR%%/skins/BluPlusPlus/res/styles/black/theme.properties
+%%DATADIR%%/skins/BluPlusPlus/res/styles/bluish.css
+%%DATADIR%%/skins/BluPlusPlus/res/styles/bluish/theme.properties
+%%DATADIR%%/skins/BluPlusPlus/res/styles/bluish2.css
+%%DATADIR%%/skins/BluPlusPlus/res/styles/bluish2/rule.gif
+%%DATADIR%%/skins/BluPlusPlus/res/styles/bluish2/theme.properties
+%%DATADIR%%/skins/BluPlusPlus/res/styles/canvas.css
+%%DATADIR%%/skins/BluPlusPlus/res/styles/canvas/background.jpg
+%%DATADIR%%/skins/BluPlusPlus/res/styles/canvas/rule.gif
+%%DATADIR%%/skins/BluPlusPlus/res/styles/canvas/theme.properties
+%%DATADIR%%/skins/BluPlusPlus/res/styles/christmas.css
+%%DATADIR%%/skins/BluPlusPlus/res/styles/christmas/theme.properties
+%%DATADIR%%/skins/BluPlusPlus/res/styles/expedition.css
+%%DATADIR%%/skins/BluPlusPlus/res/styles/expedition/background.jpg
+%%DATADIR%%/skins/BluPlusPlus/res/styles/expedition/rule.gif
+%%DATADIR%%/skins/BluPlusPlus/res/styles/expedition/theme.properties
+%%DATADIR%%/skins/BluPlusPlus/res/styles/glacier.css
+%%DATADIR%%/skins/BluPlusPlus/res/styles/glacier/background.jpg
+%%DATADIR%%/skins/BluPlusPlus/res/styles/glacier/rule.gif
+%%DATADIR%%/skins/BluPlusPlus/res/styles/glacier/theme.properties
+%%DATADIR%%/skins/BluPlusPlus/res/styles/gray.css
+%%DATADIR%%/skins/BluPlusPlus/res/styles/gray/theme.properties
+%%DATADIR%%/skins/BluPlusPlus/res/styles/hakki.css
+%%DATADIR%%/skins/BluPlusPlus/res/styles/hakki/theme.properties
+%%DATADIR%%/skins/BluPlusPlus/res/styles/white.css
+%%DATADIR%%/skins/BluPlusPlus/res/styles/white/theme.properties
+%%DATADIR%%/skins/BluPlusPlus/res/topbars/black/classic.gif
+%%DATADIR%%/skins/BluPlusPlus/res/topbars/blue/classic.gif
+%%DATADIR%%/skins/BluPlusPlus/res/topbars/blue/panel.gif
+%%DATADIR%%/skins/BluPlusPlus/res/topbars/blue/pipe.gif
+%%DATADIR%%/skins/BluPlusPlus/res/topbars/dark-green/classic.gif
+%%DATADIR%%/skins/BluPlusPlus/res/topbars/dark-green/panel.gif
+%%DATADIR%%/skins/BluPlusPlus/res/topbars/dark-green/pipe.gif
+%%DATADIR%%/skins/BluPlusPlus/res/topbars/dark-green2/classic.gif
+%%DATADIR%%/skins/BluPlusPlus/res/topbars/dark-green2/panel.gif
+%%DATADIR%%/skins/BluPlusPlus/res/topbars/dark-green2/pipe.gif
+%%DATADIR%%/skins/BluPlusPlus/res/topbars/golden-green/classic.gif
+%%DATADIR%%/skins/BluPlusPlus/res/topbars/golden-green/panel.gif
+%%DATADIR%%/skins/BluPlusPlus/res/topbars/golden-green/pipe.gif
+%%DATADIR%%/skins/BluPlusPlus/res/topbars/gray/classic.gif
+%%DATADIR%%/skins/BluPlusPlus/res/topbars/gray/panel.gif
+%%DATADIR%%/skins/BluPlusPlus/res/topbars/gray/pipe.gif
+%%DATADIR%%/skins/BluPlusPlus/res/topbars/khaki/classic.gif
+%%DATADIR%%/skins/BluPlusPlus/res/topbars/light-green/classic.gif
+%%DATADIR%%/skins/BluPlusPlus/res/topbars/light-green/panel.gif
+%%DATADIR%%/skins/BluPlusPlus/res/topbars/light-green/pipe.gif
+%%DATADIR%%/skins/BluPlusPlus/res/topbars/purple/classic.gif
+%%DATADIR%%/skins/BluPlusPlus/res/topbars/purple/panel.gif
+%%DATADIR%%/skins/BluPlusPlus/res/topbars/purple/pipe.gif
+%%DATADIR%%/skins/BluPlusPlus/res/topbars/red/classic.gif
+%%DATADIR%%/skins/BluPlusPlus/slide-original.htt
+%%DATADIR%%/skins/BluPlusPlus/slide.htt
+%%DATADIR%%/skins/BluPlusPlus/styles/arcs.css
+%%DATADIR%%/skins/BluPlusPlus/styles/artsy.css
+%%DATADIR%%/skins/BluPlusPlus/styles/autumn.css
+%%DATADIR%%/skins/BluPlusPlus/styles/black.css
+%%DATADIR%%/skins/BluPlusPlus/styles/bluish.css
+%%DATADIR%%/skins/BluPlusPlus/styles/bluish2.css
+%%DATADIR%%/skins/BluPlusPlus/styles/canvas.css
+%%DATADIR%%/skins/BluPlusPlus/styles/christmas.css
+%%DATADIR%%/skins/BluPlusPlus/styles/expedition.css
+%%DATADIR%%/skins/BluPlusPlus/styles/glacier.css
+%%DATADIR%%/skins/BluPlusPlus/styles/gray.css
+%%DATADIR%%/skins/BluPlusPlus/styles/hakki.css
+%%DATADIR%%/skins/BluPlusPlus/styles/white.css
+%%DATADIR%%/skins/BluPlusPlus/texts/photo-metadata.properties
+%%DATADIR%%/skins/BluPlusPlus/texts/photo-metadata_en.properties
+%%DATADIR%%/skins/BluPlusPlus/texts/texts.properties
+%%DATADIR%%/skins/BluPlusPlus/texts/texts_ca.properties
+%%DATADIR%%/skins/BluPlusPlus/texts/texts_cs.properties
+%%DATADIR%%/skins/BluPlusPlus/texts/texts_da.properties
+%%DATADIR%%/skins/BluPlusPlus/texts/texts_de.properties
+%%DATADIR%%/skins/BluPlusPlus/texts/texts_en.properties
+%%DATADIR%%/skins/BluPlusPlus/texts/texts_es.properties
+%%DATADIR%%/skins/BluPlusPlus/texts/texts_fr.properties
+%%DATADIR%%/skins/BluPlusPlus/texts/texts_it.properties
+%%DATADIR%%/skins/BluPlusPlus/texts/texts_nl.properties
+%%DATADIR%%/skins/BluPlusPlus/texts/texts_pl.properties
+%%DATADIR%%/skins/BluPlusPlus/texts/texts_pl.properties_original
+%%DATADIR%%/skins/BluPlusPlus/texts/texts_pt.properties
+%%DATADIR%%/skins/BluPlusPlus/texts/texts_zh.properties
+%%DATADIR%%/skins/BluPlusPlus/texts/texts_zh.properties_original
+%%DATADIR%%/skins/Bluepro/hints.jap
+%%DATADIR%%/skins/Bluepro/index.htt
+%%DATADIR%%/skins/Bluepro/preview.jpg
+%%DATADIR%%/skins/Bluepro/res/blue-brain-dark.gif
+%%DATADIR%%/skins/Bluepro/res/camera.gif
+%%DATADIR%%/skins/Bluepro/res/corner-w-ll.gif
+%%DATADIR%%/skins/Bluepro/res/corner-w-lr.gif
+%%DATADIR%%/skins/Bluepro/res/corner-w-ul.gif
+%%DATADIR%%/skins/Bluepro/res/corner-w-ur.gif
+%%DATADIR%%/skins/Bluepro/res/download.gif
+%%DATADIR%%/skins/Bluepro/res/folder.gif
+%%DATADIR%%/skins/Bluepro/res/getpicture.gif
+%%DATADIR%%/skins/Bluepro/res/index.gif
+%%DATADIR%%/skins/Bluepro/res/informedia-liten.gif
+%%DATADIR%%/skins/Bluepro/res/movie.gif
+%%DATADIR%%/skins/Bluepro/res/next.gif
+%%DATADIR%%/skins/Bluepro/res/next_disabled.gif
+%%DATADIR%%/skins/Bluepro/res/previous.gif
+%%DATADIR%%/skins/Bluepro/res/previous_disabled.gif
+%%DATADIR%%/skins/Bluepro/res/up.gif
+%%DATADIR%%/skins/Bluepro/slide.htt
+%%DATADIR%%/skins/Bluepro/styles/White.css
+%%DATADIR%%/skins/Camera Geek/about.txt
+%%DATADIR%%/skins/Camera Geek/index.htt
+%%DATADIR%%/skins/Camera Geek/onload.bsh
+%%DATADIR%%/skins/Camera Geek/preview.jpg
+%%DATADIR%%/skins/Camera Geek/res/camera.gif
+%%DATADIR%%/skins/Camera Geek/res/folder.gif
+%%DATADIR%%/skins/Camera Geek/res/index.gif
+%%DATADIR%%/skins/Camera Geek/res/movie.gif
+%%DATADIR%%/skins/Camera Geek/res/next.gif
+%%DATADIR%%/skins/Camera Geek/res/next_disabled.gif
+%%DATADIR%%/skins/Camera Geek/res/previous.gif
+%%DATADIR%%/skins/Camera Geek/res/previous_disabled.gif
+%%DATADIR%%/skins/Camera Geek/res/up.gif
+%%DATADIR%%/skins/Camera Geek/slide.htt
+%%DATADIR%%/skins/Camera Geek/styles/Bright.css
+%%DATADIR%%/skins/Camera Geek/styles/Custom.css
+%%DATADIR%%/skins/Camera Geek/styles/Dark.css
+%%DATADIR%%/skins/Camera Geek/styles/Sunset.css
+%%DATADIR%%/skins/Colorful/defs.jap
+%%DATADIR%%/skins/Colorful/index.htt
+%%DATADIR%%/skins/Colorful/preview.jpg
+%%DATADIR%%/skins/Colorful/res/bakgrund.jpg
+%%DATADIR%%/skins/Colorful/res/bar.gif
+%%DATADIR%%/skins/Colorful/res/bg-pink.gif
+%%DATADIR%%/skins/Colorful/res/bg-td.gif
+%%DATADIR%%/skins/Colorful/res/bg.gif
+%%DATADIR%%/skins/Colorful/res/camera.gif
+%%DATADIR%%/skins/Colorful/res/first.gif
+%%DATADIR%%/skins/Colorful/res/first_disabled.gif
+%%DATADIR%%/skins/Colorful/res/folder.gif
+%%DATADIR%%/skins/Colorful/res/index.gif
+%%DATADIR%%/skins/Colorful/res/last.gif
+%%DATADIR%%/skins/Colorful/res/last_disabled.gif
+%%DATADIR%%/skins/Colorful/res/movie.gif
+%%DATADIR%%/skins/Colorful/res/next.gif
+%%DATADIR%%/skins/Colorful/res/next_disabled.gif
+%%DATADIR%%/skins/Colorful/res/previous.gif
+%%DATADIR%%/skins/Colorful/res/previous_disabled.gif
+%%DATADIR%%/skins/Colorful/res/ramen_01.jpg
+%%DATADIR%%/skins/Colorful/res/ramen_02.jpg
+%%DATADIR%%/skins/Colorful/res/ramen_03.jpg
+%%DATADIR%%/skins/Colorful/res/ramen_04.jpg
+%%DATADIR%%/skins/Colorful/res/ramen_05.jpg
+%%DATADIR%%/skins/Colorful/res/ramen_06.jpg
+%%DATADIR%%/skins/Colorful/res/ramen_07.jpg
+%%DATADIR%%/skins/Colorful/res/ramen_08.jpg
+%%DATADIR%%/skins/Colorful/res/ramen_09.jpg
+%%DATADIR%%/skins/Colorful/res/up.gif
+%%DATADIR%%/skins/Colorful/slide.htt
+%%DATADIR%%/skins/Colorful/styles/babyblue.css
+%%DATADIR%%/skins/Colorful/styles/pink.css
+%%DATADIR%%/skins/Exhibit/index.htt
+%%DATADIR%%/skins/Exhibit/init.bsh
+%%DATADIR%%/skins/Exhibit/onload.bsh
+%%DATADIR%%/skins/Exhibit/preview.jpg
+%%DATADIR%%/skins/Exhibit/res/OrderPrints.gif
+%%DATADIR%%/skins/Exhibit/res/b_l_corner.jpg
+%%DATADIR%%/skins/Exhibit/res/b_r_corner.jpg
+%%DATADIR%%/skins/Exhibit/res/bottom.jpg
+%%DATADIR%%/skins/Exhibit/res/download.gif
+%%DATADIR%%/skins/Exhibit/res/fill.gif
+%%DATADIR%%/skins/Exhibit/res/folder.gif
+%%DATADIR%%/skins/Exhibit/res/left.gif
+%%DATADIR%%/skins/Exhibit/res/left.jpg
+%%DATADIR%%/skins/Exhibit/res/microthumbseparator.gif
+%%DATADIR%%/skins/Exhibit/res/movie.gif
+%%DATADIR%%/skins/Exhibit/res/right.gif
+%%DATADIR%%/skins/Exhibit/res/right.jpg
+%%DATADIR%%/skins/Exhibit/res/separator.gif
+%%DATADIR%%/skins/Exhibit/res/t_l_corner.jpg
+%%DATADIR%%/skins/Exhibit/res/t_r_corner.jpg
+%%DATADIR%%/skins/Exhibit/res/tab1b.jpg
+%%DATADIR%%/skins/Exhibit/res/top.jpg
+%%DATADIR%%/skins/Exhibit/slide.htt
+%%DATADIR%%/skins/Exhibit/styles/White.css
+%%DATADIR%%/skins/ExhibitPlus/Optional files to be copied to image source directory/comments.properties
+%%DATADIR%%/skins/ExhibitPlus/Optional files to be copied to image source directory/footer.inc
+%%DATADIR%%/skins/ExhibitPlus/Optional files to be copied to image source directory/header.inc
+%%DATADIR%%/skins/ExhibitPlus/Optional files to be copied to image source directory/meta.properties
+%%DATADIR%%/skins/ExhibitPlus/Optional files to be copied to image source directory/news.inc
+%%DATADIR%%/skins/ExhibitPlus/Optional files to be copied to image source directory/styles.inc
+%%DATADIR%%/skins/ExhibitPlus/Optional files to be copied to image source directory/variables.inc
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-darkbackground/first.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-darkbackground/first_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-darkbackground/help1.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-darkbackground/index.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-darkbackground/index_next.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-darkbackground/index_next_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-darkbackground/index_previous.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-darkbackground/index_previous_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-darkbackground/info1.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-darkbackground/last.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-darkbackground/last_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-darkbackground/next.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-darkbackground/next_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-darkbackground/previous.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-darkbackground/previous_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-darkbackground/price.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-darkbackground/remove.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-darkbackground/select.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-darkbackground/slideshowstart.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-darkbackground/slideshowstop.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-darkbackground/up.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-darkbackground/zoom.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-lightbackground/first.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-lightbackground/first_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-lightbackground/help1.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-lightbackground/index.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-lightbackground/index_next.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-lightbackground/index_next_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-lightbackground/index_previous.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-lightbackground/index_previous_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-lightbackground/info1.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-lightbackground/last.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-lightbackground/last_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-lightbackground/next.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-lightbackground/next_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-lightbackground/previous.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-lightbackground/previous_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-lightbackground/price.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-lightbackground/remove.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-lightbackground/select.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-lightbackground/slideshowstart.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-lightbackground/slideshowstop.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-lightbackground/up.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-lightbackground/zoom.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-darkbackground/first.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-darkbackground/first_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-darkbackground/help1.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-darkbackground/index.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-darkbackground/index_next.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-darkbackground/index_next_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-darkbackground/index_previous.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-darkbackground/index_previous_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-darkbackground/info1.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-darkbackground/last.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-darkbackground/last_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-darkbackground/next.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-darkbackground/next_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-darkbackground/previous.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-darkbackground/previous_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-darkbackground/price.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-darkbackground/remove.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-darkbackground/select.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-darkbackground/slideshowstart.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-darkbackground/slideshowstop.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-darkbackground/up.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-darkbackground/zoom.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-lightbackground/first.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-lightbackground/first_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-lightbackground/help1.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-lightbackground/index.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-lightbackground/index_next.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-lightbackground/index_next_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-lightbackground/index_previous.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-lightbackground/index_previous_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-lightbackground/info1.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-lightbackground/last.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-lightbackground/last_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-lightbackground/next.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-lightbackground/next_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-lightbackground/previous.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-lightbackground/previous_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-lightbackground/price.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-lightbackground/remove.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-lightbackground/select.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-lightbackground/slideshowstart.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-lightbackground/slideshowstop.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-lightbackground/up.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-lightbackground/zoom.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-beige-20px/download.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-beige-20px/first.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-beige-20px/first_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-beige-20px/help.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-beige-20px/index.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-beige-20px/index_next.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-beige-20px/index_next_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-beige-20px/index_previous.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-beige-20px/index_previous_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-beige-20px/info.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-beige-20px/last.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-beige-20px/last_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-beige-20px/next.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-beige-20px/next_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-beige-20px/orderprints.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-beige-20px/previous.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-beige-20px/previous_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-beige-20px/slideshowstart.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-beige-20px/slideshowstop.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-beige-20px/up.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-beige-20px/zoom.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-blue-20px/download.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-blue-20px/first.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-blue-20px/first_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-blue-20px/help.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-blue-20px/index.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-blue-20px/index_next.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-blue-20px/index_next_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-blue-20px/index_previous.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-blue-20px/index_previous_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-blue-20px/info.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-blue-20px/last.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-blue-20px/last_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-blue-20px/next.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-blue-20px/next_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-blue-20px/orderprints.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-blue-20px/previous.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-blue-20px/previous_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-blue-20px/slideshowstart.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-blue-20px/slideshowstop.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-blue-20px/up.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-blue-20px/zoom.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-gold-20px/download.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-gold-20px/first.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-gold-20px/first_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-gold-20px/help.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-gold-20px/index.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-gold-20px/index_next.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-gold-20px/index_next_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-gold-20px/index_previous.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-gold-20px/index_previous_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-gold-20px/info.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-gold-20px/last.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-gold-20px/last_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-gold-20px/next.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-gold-20px/next_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-gold-20px/orderprints.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-gold-20px/previous.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-gold-20px/previous_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-gold-20px/slideshowstart.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-gold-20px/slideshowstop.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-gold-20px/up.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-gold-20px/zoom.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-silver-20px/download.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-silver-20px/first.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-silver-20px/first_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-silver-20px/help.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-silver-20px/index.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-silver-20px/index_next.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-silver-20px/index_next_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-silver-20px/index_previous.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-silver-20px/index_previous_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-silver-20px/info.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-silver-20px/last.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-silver-20px/last_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-silver-20px/next.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-silver-20px/next_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-silver-20px/orderprints.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-silver-20px/previous.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-silver-20px/previous_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-silver-20px/slideshowstart.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-silver-20px/slideshowstop.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-silver-20px/up.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-silver-20px/zoom.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/red-21px-darkbackground/first.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/red-21px-darkbackground/first_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/red-21px-darkbackground/index.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/red-21px-darkbackground/index_next.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/red-21px-darkbackground/index_next_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/red-21px-darkbackground/index_previous.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/red-21px-darkbackground/index_previous_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/red-21px-darkbackground/last.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/red-21px-darkbackground/last_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/red-21px-darkbackground/next.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/red-21px-darkbackground/next_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/red-21px-darkbackground/previous.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/red-21px-darkbackground/previous_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/red-21px-darkbackground/slideshowstart.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/red-21px-darkbackground/slideshowstop.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/red-21px-darkbackground/up.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/red-21px-darkbackground/zoom.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-darkbackground/first.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-darkbackground/first_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-darkbackground/help1.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-darkbackground/index.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-darkbackground/index_next.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-darkbackground/index_next_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-darkbackground/index_previous.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-darkbackground/index_previous_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-darkbackground/info1.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-darkbackground/last.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-darkbackground/last_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-darkbackground/next.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-darkbackground/next_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-darkbackground/previous.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-darkbackground/previous_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-darkbackground/price.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-darkbackground/remove.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-darkbackground/select.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-darkbackground/slideshowstart.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-darkbackground/slideshowstop.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-darkbackground/up.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-darkbackground/zoom.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-lightbackground/first.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-lightbackground/first_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-lightbackground/help1.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-lightbackground/index.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-lightbackground/index_next.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-lightbackground/index_next_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-lightbackground/index_previous.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-lightbackground/index_previous_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-lightbackground/info1.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-lightbackground/last.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-lightbackground/last_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-lightbackground/next.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-lightbackground/next_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-lightbackground/previous.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-lightbackground/previous_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-lightbackground/price.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-lightbackground/remove.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-lightbackground/select.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-lightbackground/slideshowstart.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-lightbackground/slideshowstop.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-lightbackground/up.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-lightbackground/zoom.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-darkbackground/first.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-darkbackground/first_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-darkbackground/help1.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-darkbackground/index.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-darkbackground/index_next.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-darkbackground/index_next_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-darkbackground/index_previous.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-darkbackground/index_previous_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-darkbackground/info1.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-darkbackground/last.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-darkbackground/last_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-darkbackground/next.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-darkbackground/next_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-darkbackground/previous.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-darkbackground/previous_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-darkbackground/price.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-darkbackground/remove.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-darkbackground/select.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-darkbackground/slideshowstart.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-darkbackground/slideshowstop.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-darkbackground/up.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-darkbackground/zoom.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-lightbackground/first.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-lightbackground/first_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-lightbackground/help1.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-lightbackground/index.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-lightbackground/index_next.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-lightbackground/index_next_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-lightbackground/index_previous.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-lightbackground/index_previous_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-lightbackground/info1.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-lightbackground/last.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-lightbackground/last_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-lightbackground/next.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-lightbackground/next_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-lightbackground/previous.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-lightbackground/previous_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-lightbackground/price.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-lightbackground/remove.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-lightbackground/select.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-lightbackground/slideshowstart.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-lightbackground/slideshowstop.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-lightbackground/up.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-lightbackground/zoom.gif
+%%DATADIR%%/skins/ExhibitPlus/changelog.txt
+%%DATADIR%%/skins/ExhibitPlus/hints.jap
+%%DATADIR%%/skins/ExhibitPlus/index.htt
+%%DATADIR%%/skins/ExhibitPlus/init.bsh
+%%DATADIR%%/skins/ExhibitPlus/onload.bsh
+%%DATADIR%%/skins/ExhibitPlus/originalslide.htt
+%%DATADIR%%/skins/ExhibitPlus/originalslide2.htt
+%%DATADIR%%/skins/ExhibitPlus/res/basestyle.css
+%%DATADIR%%/skins/ExhibitPlus/res/download.gif
+%%DATADIR%%/skins/ExhibitPlus/res/folder.gif
+%%DATADIR%%/skins/ExhibitPlus/res/foldernew.gif
+%%DATADIR%%/skins/ExhibitPlus/res/help.gif
+%%DATADIR%%/skins/ExhibitPlus/res/info.gif
+%%DATADIR%%/skins/ExhibitPlus/res/keyboard.js
+%%DATADIR%%/skins/ExhibitPlus/res/movie.gif
+%%DATADIR%%/skins/ExhibitPlus/res/navindex.js
+%%DATADIR%%/skins/ExhibitPlus/res/navslide.js
+%%DATADIR%%/skins/ExhibitPlus/res/navslideorig.js
+%%DATADIR%%/skins/ExhibitPlus/res/navslideorig2.js
+%%DATADIR%%/skins/ExhibitPlus/res/orderprints.gif
+%%DATADIR%%/skins/ExhibitPlus/res/purplestripe.gif
+%%DATADIR%%/skins/ExhibitPlus/shutterfly_xhtml.inc
+%%DATADIR%%/skins/ExhibitPlus/slide.htt
+%%DATADIR%%/skins/ExhibitPlus/styles/black.css
+%%DATADIR%%/skins/ExhibitPlus/styles/black.jpg
+%%DATADIR%%/skins/ExhibitPlus/styles/blue.css
+%%DATADIR%%/skins/ExhibitPlus/styles/blue.jpg
+%%DATADIR%%/skins/ExhibitPlus/styles/dark.css
+%%DATADIR%%/skins/ExhibitPlus/styles/dark.jpg
+%%DATADIR%%/skins/ExhibitPlus/styles/green.css
+%%DATADIR%%/skins/ExhibitPlus/styles/green.jpg
+%%DATADIR%%/skins/ExhibitPlus/styles/light.css
+%%DATADIR%%/skins/ExhibitPlus/styles/light.jpg
+%%DATADIR%%/skins/ExhibitPlus/styles/metodi-black.css
+%%DATADIR%%/skins/ExhibitPlus/styles/metodi-black.jpg
+%%DATADIR%%/skins/ExhibitPlus/texts.properties
+%%DATADIR%%/skins/ExhibitPlus/texts_de.properties
+%%DATADIR%%/skins/ExhibitPlus/texts_en.properties
+%%DATADIR%%/skins/ExhibitPlus/texts_fr.properties
+%%DATADIR%%/skins/ExhibitPlus/texts_hu.properties
+%%DATADIR%%/skins/ExhibitPlus/texts_is.properties
+%%DATADIR%%/skins/ExhibitPlus/texts_nl.properties
+%%DATADIR%%/skins/ExhibitPlus/texts_sr.properties
+%%DATADIR%%/skins/ExhibitPlus/texts_sv.properties
+%%DATADIR%%/skins/Experience/about.txt
+%%DATADIR%%/skins/Experience/hints.jap
+%%DATADIR%%/skins/Experience/index.htt
+%%DATADIR%%/skins/Experience/init.bsh
+%%DATADIR%%/skins/Experience/preview.jpg
+%%DATADIR%%/skins/Experience/res/button.gif
+%%DATADIR%%/skins/Experience/res/camera.gif
+%%DATADIR%%/skins/Experience/res/folder.gif
+%%DATADIR%%/skins/Experience/res/footer.inc
+%%DATADIR%%/skins/Experience/res/header.inc
+%%DATADIR%%/skins/Experience/res/index.gif
+%%DATADIR%%/skins/Experience/res/movie.gif
+%%DATADIR%%/skins/Experience/res/next.gif
+%%DATADIR%%/skins/Experience/res/next_disabled.gif
+%%DATADIR%%/skins/Experience/res/previous.gif
+%%DATADIR%%/skins/Experience/res/previous_disabled.gif
+%%DATADIR%%/skins/Experience/res/up.gif
+%%DATADIR%%/skins/Experience/slide.htt
+%%DATADIR%%/skins/Experience/styles/dark.css
+%%DATADIR%%/skins/Experience/styles/white.css
+%%DATADIR%%/skins/Family/footer.inc
+%%DATADIR%%/skins/Family/hints.jap
+%%DATADIR%%/skins/Family/index.htt
+%%DATADIR%%/skins/Family/init.bsh
+%%DATADIR%%/skins/Family/onload.bsh
+%%DATADIR%%/skins/Family/res/folder.gif
+%%DATADIR%%/skins/Family/res/trans.gif
+%%DATADIR%%/skins/Family/slide.htt
+%%DATADIR%%/skins/Family/styles/black.bsh
+%%DATADIR%%/skins/Family/styles/black.css
+%%DATADIR%%/skins/Family/styles/black.jpg
+%%DATADIR%%/skins/Family/styles/black/bktile.jpg
+%%DATADIR%%/skins/Family/styles/black/bottom.jpg
+%%DATADIR%%/skins/Family/styles/black/btn_off.gif
+%%DATADIR%%/skins/Family/styles/black/btn_on.gif
+%%DATADIR%%/skins/Family/styles/black/btnrow_bktile.jpg
+%%DATADIR%%/skins/Family/styles/black/folder.gif
+%%DATADIR%%/skins/Family/styles/black/left.jpg
+%%DATADIR%%/skins/Family/styles/black/right.jpg
+%%DATADIR%%/skins/Family/styles/black/top.jpg
+%%DATADIR%%/skins/Family/styles/blue.bsh
+%%DATADIR%%/skins/Family/styles/blue.css
+%%DATADIR%%/skins/Family/styles/blue.jpg
+%%DATADIR%%/skins/Family/styles/blue/bktile.jpg
+%%DATADIR%%/skins/Family/styles/blue/bottom.jpg
+%%DATADIR%%/skins/Family/styles/blue/btn_off.gif
+%%DATADIR%%/skins/Family/styles/blue/btn_on.gif
+%%DATADIR%%/skins/Family/styles/blue/btnrow_bktile.jpg
+%%DATADIR%%/skins/Family/styles/blue/folder.gif
+%%DATADIR%%/skins/Family/styles/blue/left.jpg
+%%DATADIR%%/skins/Family/styles/blue/right.jpg
+%%DATADIR%%/skins/Family/styles/blue/top.jpg
+%%DATADIR%%/skins/Family/styles/pink.bsh
+%%DATADIR%%/skins/Family/styles/pink.css
+%%DATADIR%%/skins/Family/styles/pink.jpg
+%%DATADIR%%/skins/Family/styles/pink/bktile.jpg
+%%DATADIR%%/skins/Family/styles/pink/bottom.jpg
+%%DATADIR%%/skins/Family/styles/pink/btn_off.gif
+%%DATADIR%%/skins/Family/styles/pink/btn_on.gif
+%%DATADIR%%/skins/Family/styles/pink/btnrow_bktile.jpg
+%%DATADIR%%/skins/Family/styles/pink/folder.gif
+%%DATADIR%%/skins/Family/styles/pink/left.jpg
+%%DATADIR%%/skins/Family/styles/pink/right.jpg
+%%DATADIR%%/skins/Family/styles/pink/top.jpg
+%%DATADIR%%/skins/Family/styles/white.bsh
+%%DATADIR%%/skins/Family/styles/white.css
+%%DATADIR%%/skins/Family/styles/white.jpg
+%%DATADIR%%/skins/Family/styles/white/bktile.jpg
+%%DATADIR%%/skins/Family/styles/white/bottom.jpg
+%%DATADIR%%/skins/Family/styles/white/btn_off.gif
+%%DATADIR%%/skins/Family/styles/white/btn_on.gif
+%%DATADIR%%/skins/Family/styles/white/btnrow_bktile.jpg
+%%DATADIR%%/skins/Family/styles/white/folder.gif
+%%DATADIR%%/skins/Family/styles/white/left.jpg
+%%DATADIR%%/skins/Family/styles/white/right.jpg
+%%DATADIR%%/skins/Family/styles/white/top.jpg
+%%DATADIR%%/skins/Film/about.txt
+%%DATADIR%%/skins/Film/hints.jap
+%%DATADIR%%/skins/Film/index.htt
+%%DATADIR%%/skins/Film/preview.jpg
+%%DATADIR%%/skins/Film/res/NavLeft.gif
+%%DATADIR%%/skins/Film/res/NavRight.gif
+%%DATADIR%%/skins/Film/res/NavUp.gif
+%%DATADIR%%/skins/Film/res/bottom_background_big_film.gif
+%%DATADIR%%/skins/Film/res/bottom_background_film.gif
+%%DATADIR%%/skins/Film/res/bottom_left_film.gif
+%%DATADIR%%/skins/Film/res/bottom_right_film.gif
+%%DATADIR%%/skins/Film/res/camera.gif
+%%DATADIR%%/skins/Film/res/clearpixel.gif
+%%DATADIR%%/skins/Film/res/folder.gif
+%%DATADIR%%/skins/Film/res/gray_background.gif
+%%DATADIR%%/skins/Film/res/left_background_big_film.gif
+%%DATADIR%%/skins/Film/res/left_background_film.gif
+%%DATADIR%%/skins/Film/res/movie.gif
+%%DATADIR%%/skins/Film/res/night_background.gif
+%%DATADIR%%/skins/Film/res/paper_background.gif
+%%DATADIR%%/skins/Film/res/right_background_big_film.gif
+%%DATADIR%%/skins/Film/res/right_background_film.gif
+%%DATADIR%%/skins/Film/res/spacer.gif
+%%DATADIR%%/skins/Film/res/top_background_big_film.gif
+%%DATADIR%%/skins/Film/res/top_background_film.gif
+%%DATADIR%%/skins/Film/res/top_left_film.gif
+%%DATADIR%%/skins/Film/res/top_right_film.gif
+%%DATADIR%%/skins/Film/slide.htt
+%%DATADIR%%/skins/Film/styles/Gray.css
+%%DATADIR%%/skins/Film/styles/Night.css
+%%DATADIR%%/skins/Film/styles/Paper.css
+%%DATADIR%%/skins/Flowing/about.txt
+%%DATADIR%%/skins/Flowing/index.htt
+%%DATADIR%%/skins/Flowing/res/camera.gif
+%%DATADIR%%/skins/Flowing/res/folder.gif
+%%DATADIR%%/skins/Flowing/res/index.gif
+%%DATADIR%%/skins/Flowing/res/movie.gif
+%%DATADIR%%/skins/Flowing/res/next.gif
+%%DATADIR%%/skins/Flowing/res/next_disabled.gif
+%%DATADIR%%/skins/Flowing/res/previous.gif
+%%DATADIR%%/skins/Flowing/res/previous_disabled.gif
+%%DATADIR%%/skins/Flowing/res/up.gif
+%%DATADIR%%/skins/Flowing/slide.htt
+%%DATADIR%%/skins/Flowing/styles/3D.css
+%%DATADIR%%/skins/Flowing/styles/Black.css
+%%DATADIR%%/skins/Flowing/styles/Blue.css
+%%DATADIR%%/skins/Flowing/styles/Khaki.css
+%%DATADIR%%/skins/Flowing/styles/Plain.css
+%%DATADIR%%/skins/Flowing/styles/White.css
+%%DATADIR%%/skins/Horizontal/about.txt
+%%DATADIR%%/skins/Horizontal/frameset.htt
+%%DATADIR%%/skins/Horizontal/hints.jap
+%%DATADIR%%/skins/Horizontal/index.htt
+%%DATADIR%%/skins/Horizontal/preview.jpg
+%%DATADIR%%/skins/Horizontal/res/blank.html
+%%DATADIR%%/skins/Horizontal/res/camera.gif
+%%DATADIR%%/skins/Horizontal/res/folder.gif
+%%DATADIR%%/skins/Horizontal/res/movie.gif
+%%DATADIR%%/skins/Horizontal/slide.htt
+%%DATADIR%%/skins/Horizontal/styles/AskUser.css
+%%DATADIR%%/skins/Horizontal/styles/Black.css
+%%DATADIR%%/skins/Horizontal/styles/Pro.css
+%%DATADIR%%/skins/Horizontal/styles/White.css
+%%DATADIR%%/skins/Mamba/index.htt
+%%DATADIR%%/skins/Mamba/preview.jpg
+%%DATADIR%%/skins/Mamba/res/bakgrund.jpg
+%%DATADIR%%/skins/Mamba/res/bar.gif
+%%DATADIR%%/skins/Mamba/res/camera.gif
+%%DATADIR%%/skins/Mamba/res/folder.gif
+%%DATADIR%%/skins/Mamba/res/index.gif
+%%DATADIR%%/skins/Mamba/res/movie.gif
+%%DATADIR%%/skins/Mamba/res/next.gif
+%%DATADIR%%/skins/Mamba/res/next_disabled.gif
+%%DATADIR%%/skins/Mamba/res/previous.gif
+%%DATADIR%%/skins/Mamba/res/previous_disabled.gif
+%%DATADIR%%/skins/Mamba/res/titlebakgrund.jpg
+%%DATADIR%%/skins/Mamba/res/up.gif
+%%DATADIR%%/skins/Mamba/slide.htt
+%%DATADIR%%/skins/Mamba/styles/Black.css
+%%DATADIR%%/skins/Minimal/about.txt
+%%DATADIR%%/skins/Minimal/hints.jap
+%%DATADIR%%/skins/Minimal/index.htt
+%%DATADIR%%/skins/Minimal/res/camera.gif
+%%DATADIR%%/skins/Minimal/res/first.gif
+%%DATADIR%%/skins/Minimal/res/folder.gif
+%%DATADIR%%/skins/Minimal/res/index.gif
+%%DATADIR%%/skins/Minimal/res/last.gif
+%%DATADIR%%/skins/Minimal/res/movie.gif
+%%DATADIR%%/skins/Minimal/res/next.gif
+%%DATADIR%%/skins/Minimal/res/next_disabled.gif
+%%DATADIR%%/skins/Minimal/res/previous.gif
+%%DATADIR%%/skins/Minimal/res/previous_disabled.gif
+%%DATADIR%%/skins/Minimal/res/up.gif
+%%DATADIR%%/skins/Minimal/slide.htt
+%%DATADIR%%/skins/Minimal/styles/plain.css
+%%DATADIR%%/skins/Minimal/texts.properties
+%%DATADIR%%/skins/Old Album/frameset.htt
+%%DATADIR%%/skins/Old Album/hints.jap
+%%DATADIR%%/skins/Old Album/index.htt
+%%DATADIR%%/skins/Old Album/res/blank.html
+%%DATADIR%%/skins/Old Album/res/camera.gif
+%%DATADIR%%/skins/Old Album/res/folder.gif
+%%DATADIR%%/skins/Old Album/res/movie.gif
+%%DATADIR%%/skins/Old Album/res/smallalbum.gif
+%%DATADIR%%/skins/Old Album/res/up.gif
+%%DATADIR%%/skins/Old Album/slide.htt
+%%DATADIR%%/skins/Old Album/styles/oldie.css
+%%DATADIR%%/skins/PBase/!readme!.txt
+%%DATADIR%%/skins/PBase/hints.jap
+%%DATADIR%%/skins/PBase/index.htt
+%%DATADIR%%/skins/PBase/notes/notes.htm
+%%DATADIR%%/skins/PBase/notes/propsfiles.htm
+%%DATADIR%%/skins/PBase/notes/uiSettings.jpg
+%%DATADIR%%/skins/PBase/onload.bsh
+%%DATADIR%%/skins/PBase/preview.jpg
+%%DATADIR%%/skins/PBase/res/camera.gif
+%%DATADIR%%/skins/PBase/res/folder.gif
+%%DATADIR%%/skins/PBase/res/folder_blank.gif
+%%DATADIR%%/skins/PBase/res/movie.gif
+%%DATADIR%%/skins/PBase/scripts/indexNav.inc
+%%DATADIR%%/skins/PBase/scripts/infoPropsFolder.inc
+%%DATADIR%%/skins/PBase/scripts/infoPropsImage.inc
+%%DATADIR%%/skins/PBase/scripts/infoPropsSubFolder.inc
+%%DATADIR%%/skins/PBase/scripts/slideNav.inc
+%%DATADIR%%/skins/PBase/skin.properties
+%%DATADIR%%/skins/PBase/slide.htt
+%%DATADIR%%/skins/PBase/styles/alexc.css
+%%DATADIR%%/skins/PBase/styles/athiker95.css
+%%DATADIR%%/skins/PBase/styles/blackstandard.css
+%%DATADIR%%/skins/PBase/styles/joshua.css
+%%DATADIR%%/skins/PBase/styles/karen1109.css
+%%DATADIR%%/skins/PBase/styles/tarheel.css
+%%DATADIR%%/skins/PBase/styles/timmyg.css
+%%DATADIR%%/skins/PBase/styles/webdev.css
+%%DATADIR%%/skins/PBase/styles/wedding.css
+%%DATADIR%%/skins/PBase/styles/whitestandard.css
+%%DATADIR%%/skins/Polaroid/about.txt
+%%DATADIR%%/skins/Polaroid/index.htt
+%%DATADIR%%/skins/Polaroid/preview.jpg
+%%DATADIR%%/skins/Polaroid/res/NavLeft.gif
+%%DATADIR%%/skins/Polaroid/res/NavRight.gif
+%%DATADIR%%/skins/Polaroid/res/NavUp.gif
+%%DATADIR%%/skins/Polaroid/res/bottom_background_polaroid.gif
+%%DATADIR%%/skins/Polaroid/res/bottom_background_polaroid_small.gif
+%%DATADIR%%/skins/Polaroid/res/bottom_left_polaroid.gif
+%%DATADIR%%/skins/Polaroid/res/bottom_left_polaroid_small.gif
+%%DATADIR%%/skins/Polaroid/res/bottom_right_polaroid.gif
+%%DATADIR%%/skins/Polaroid/res/bottom_right_polaroid_small.gif
+%%DATADIR%%/skins/Polaroid/res/camera.gif
+%%DATADIR%%/skins/Polaroid/res/clearpixel.gif
+%%DATADIR%%/skins/Polaroid/res/folder.gif
+%%DATADIR%%/skins/Polaroid/res/leather_background.gif
+%%DATADIR%%/skins/Polaroid/res/left_background_polaroid.gif
+%%DATADIR%%/skins/Polaroid/res/left_background_polaroid_small.gif
+%%DATADIR%%/skins/Polaroid/res/movie.gif
+%%DATADIR%%/skins/Polaroid/res/paper_background.gif
+%%DATADIR%%/skins/Polaroid/res/right_background_polaroid.gif
+%%DATADIR%%/skins/Polaroid/res/right_background_polaroid_small.gif
+%%DATADIR%%/skins/Polaroid/res/romance_background.gif
+%%DATADIR%%/skins/Polaroid/res/sky_background.gif
+%%DATADIR%%/skins/Polaroid/res/spacer.gif
+%%DATADIR%%/skins/Polaroid/res/top_background_polaroid.gif
+%%DATADIR%%/skins/Polaroid/res/top_background_polaroid_small.gif
+%%DATADIR%%/skins/Polaroid/res/top_left_polaroid.gif
+%%DATADIR%%/skins/Polaroid/res/top_left_polaroid_small.gif
+%%DATADIR%%/skins/Polaroid/res/top_right_polaroid.gif
+%%DATADIR%%/skins/Polaroid/res/top_right_polaroid_small.gif
+%%DATADIR%%/skins/Polaroid/slide.htt
+%%DATADIR%%/skins/Polaroid/styles/Leather.css
+%%DATADIR%%/skins/Polaroid/styles/Paper.css
+%%DATADIR%%/skins/Polaroid/styles/Romance.css
+%%DATADIR%%/skins/Polaroid/styles/Sky.css
+%%DATADIR%%/skins/ShowOff/about.txt
+%%DATADIR%%/skins/ShowOff/hints.jap
+%%DATADIR%%/skins/ShowOff/index.htt
+%%DATADIR%%/skins/ShowOff/init.bsh
+%%DATADIR%%/skins/ShowOff/onload.bsh
+%%DATADIR%%/skins/ShowOff/preview.jpg
+%%DATADIR%%/skins/ShowOff/res/OrderPrints.gif
+%%DATADIR%%/skins/ShowOff/res/camera.gif
+%%DATADIR%%/skins/ShowOff/res/folder.gif
+%%DATADIR%%/skins/ShowOff/res/index.gif
+%%DATADIR%%/skins/ShowOff/res/movie.gif
+%%DATADIR%%/skins/ShowOff/res/next.gif
+%%DATADIR%%/skins/ShowOff/res/next_disabled.gif
+%%DATADIR%%/skins/ShowOff/res/previous.gif
+%%DATADIR%%/skins/ShowOff/res/previous_disabled.gif
+%%DATADIR%%/skins/ShowOff/res/up.gif
+%%DATADIR%%/skins/ShowOff/slide.htt
+%%DATADIR%%/skins/ShowOff/styles/Custom.css
+%%DATADIR%%/skins/ShowOff/styles/Dark.css
+%%DATADIR%%/skins/ShowOff/styles/Sunset.css
+%%DATADIR%%/skins/Slide show/index.htt
+%%DATADIR%%/skins/Slide show/onload.bsh
+%%DATADIR%%/skins/Slide show/res/camera.gif
+%%DATADIR%%/skins/Slide show/res/close.gif
+%%DATADIR%%/skins/Slide show/res/folder.gif
+%%DATADIR%%/skins/Slide show/res/index.gif
+%%DATADIR%%/skins/Slide show/res/movie.gif
+%%DATADIR%%/skins/Slide show/res/next.gif
+%%DATADIR%%/skins/Slide show/res/next_disabled.gif
+%%DATADIR%%/skins/Slide show/res/pause.gif
+%%DATADIR%%/skins/Slide show/res/play.gif
+%%DATADIR%%/skins/Slide show/res/previous.gif
+%%DATADIR%%/skins/Slide show/res/previous_disabled.gif
+%%DATADIR%%/skins/Slide show/res/up.gif
+%%DATADIR%%/skins/Slide show/slide.htt
+%%DATADIR%%/skins/Slide show/styles/Black.css
+%%DATADIR%%/skins/Slide show/styles/White.css
+%%DATADIR%%/skins/Standard/about.txt
+%%DATADIR%%/skins/Standard/index.htt
+%%DATADIR%%/skins/Standard/init.bsh
+%%DATADIR%%/skins/Standard/res/camera.gif
+%%DATADIR%%/skins/Standard/res/first.gif
+%%DATADIR%%/skins/Standard/res/folder.gif
+%%DATADIR%%/skins/Standard/res/index.gif
+%%DATADIR%%/skins/Standard/res/last.gif
+%%DATADIR%%/skins/Standard/res/movie.gif
+%%DATADIR%%/skins/Standard/res/next.gif
+%%DATADIR%%/skins/Standard/res/next_disabled.gif
+%%DATADIR%%/skins/Standard/res/previous.gif
+%%DATADIR%%/skins/Standard/res/previous_disabled.gif
+%%DATADIR%%/skins/Standard/res/up.gif
+%%DATADIR%%/skins/Standard/slide.htt
+%%DATADIR%%/skins/Standard/styles/3D.css
+%%DATADIR%%/skins/Standard/styles/AskUser.css
+%%DATADIR%%/skins/Standard/styles/Black.css
+%%DATADIR%%/skins/Standard/styles/Blue.css
+%%DATADIR%%/skins/Standard/styles/Khaki.css
+%%DATADIR%%/skins/Standard/styles/Milkyblue.css
+%%DATADIR%%/skins/Standard/styles/Plain.css
+%%DATADIR%%/skins/Standard/styles/White.css
+%%DATADIR%%/skins/Standard/subdir/head.inc
+%%DATADIR%%/skins/Standard/texts.properties
+%%DATADIR%%/skins/Standard/texts_cs.properties
+%%DATADIR%%/skins/Standard/texts_en.properties
+%%DATADIR%%/skins/Standard/texts_sv.properties
+%%DATADIR%%/skins/Vertical/about.txt
+%%DATADIR%%/skins/Vertical/frameset.htt
+%%DATADIR%%/skins/Vertical/hints.jap
+%%DATADIR%%/skins/Vertical/index.htt
+%%DATADIR%%/skins/Vertical/preview.jpg
+%%DATADIR%%/skins/Vertical/res/blank.html
+%%DATADIR%%/skins/Vertical/res/camera.gif
+%%DATADIR%%/skins/Vertical/res/folder.gif
+%%DATADIR%%/skins/Vertical/res/movie.gif
+%%DATADIR%%/skins/Vertical/slide.htt
+%%DATADIR%%/skins/Vertical/styles/AskUser.css
+%%DATADIR%%/skins/Vertical/styles/Black.css
+%%DATADIR%%/skins/Vertical/styles/Pro.css
+%%DATADIR%%/skins/Vertical/styles/White.css
+%%DATADIR%%/skins/Wedding/hints.jap
+%%DATADIR%%/skins/Wedding/index.htt
+%%DATADIR%%/skins/Wedding/init.bsh
+%%DATADIR%%/skins/Wedding/onload.bsh
+%%DATADIR%%/skins/Wedding/png/ornamentBigBottomLeft.png
+%%DATADIR%%/skins/Wedding/png/ornamentBigBottomRight.png
+%%DATADIR%%/skins/Wedding/png/ornamentBigTopLeft.png
+%%DATADIR%%/skins/Wedding/png/ornamentBigTopRight.png
+%%DATADIR%%/skins/Wedding/png/ornamentSmallBottomLeft.png
+%%DATADIR%%/skins/Wedding/png/ornamentSmallBottomRight.png
+%%DATADIR%%/skins/Wedding/png/ornamentSmallTopLeft.png
+%%DATADIR%%/skins/Wedding/png/ornamentSmallTopRight.png
+%%DATADIR%%/skins/Wedding/res/back.gif
+%%DATADIR%%/skins/Wedding/res/dot.gif
+%%DATADIR%%/skins/Wedding/res/folder.gif
+%%DATADIR%%/skins/Wedding/res/next.gif
+%%DATADIR%%/skins/Wedding/res/ornament_left.gif
+%%DATADIR%%/skins/Wedding/res/ornament_right.gif
+%%DATADIR%%/skins/Wedding/res/prev.gif
+%%DATADIR%%/skins/Wedding/slide.htt
+%%DATADIR%%/skins/Wedding/styles/pink.bsh
+%%DATADIR%%/skins/Wedding/styles/pink.css
+%%DATADIR%%/skins/Wedding/styles/pink.jpg
+%%DATADIR%%/skins/Wedding/styles/pink/background.jpg
+%%DATADIR%%/skins/Wedding/styles/white.bsh
+%%DATADIR%%/skins/Wedding/styles/white.css
+%%DATADIR%%/skins/Wedding/styles/white.jpg
+%%DATADIR%%/skins/Wedding/styles/white/background.jpg
+%%DATADIR%%/skins/Wedding/texts/texts.properties
+%%DATADIR%%/skins/Wedding/texts/texts_sv.properties
+%%DATADIR%%/skins/Whitey/index.htt
+%%DATADIR%%/skins/Whitey/res/camera.gif
+%%DATADIR%%/skins/Whitey/res/folder.gif
+%%DATADIR%%/skins/Whitey/res/index.gif
+%%DATADIR%%/skins/Whitey/res/movie.gif
+%%DATADIR%%/skins/Whitey/res/next.gif
+%%DATADIR%%/skins/Whitey/res/next_disabled.gif
+%%DATADIR%%/skins/Whitey/res/previous.gif
+%%DATADIR%%/skins/Whitey/res/previous_disabled.gif
+%%DATADIR%%/skins/Whitey/res/up.gif
+%%DATADIR%%/skins/Whitey/slide.htt
+%%DATADIR%%/skins/Whitey/styles/White.css
+%%DATADIR%%/skins/XP/about.txt
+%%DATADIR%%/skins/XP/hints.jap
+%%DATADIR%%/skins/XP/index.htt
+%%DATADIR%%/skins/XP/init.bsh
+%%DATADIR%%/skins/XP/onload.bsh
+%%DATADIR%%/skins/XP/res/1x1.gif
+%%DATADIR%%/skins/XP/res/Back.gif
+%%DATADIR%%/skins/XP/res/FolderLarge.gif
+%%DATADIR%%/skins/XP/res/FolderUp.gif
+%%DATADIR%%/skins/XP/res/Forward.gif
+%%DATADIR%%/skins/XP/res/ImageLarge.gif
+%%DATADIR%%/skins/XP/res/JAlbum.gif
+%%DATADIR%%/skins/XP/res/OrderPrints.gif
+%%DATADIR%%/skins/XP/res/Slideshow.gif
+%%DATADIR%%/skins/XP/res/folder.gif
+%%DATADIR%%/skins/XP/res/movie.gif
+%%DATADIR%%/skins/XP/res/x.js
+%%DATADIR%%/skins/XP/slide.htt
+%%DATADIR%%/skins/XP/styles/LightGrey.css
+%%DATADIR%%/skins/XP/styles/LightGrey.jpg
+%%DATADIR%%/skins/XP/styles/LightGrey/ImagePaneHeaderOpen.gif
+%%DATADIR%%/skins/XP/styles/LightGrey/InfoPaneHeaderOpen.gif
+%%DATADIR%%/skins/XP/styles/LightGrey/MainBG.gif
+%%DATADIR%%/skins/XP/styles/OliveGreen.css
+%%DATADIR%%/skins/XP/styles/OliveGreen.jpg
+%%DATADIR%%/skins/XP/styles/OliveGreen/ImagePaneHeaderOpenOlive.gif
+%%DATADIR%%/skins/XP/styles/OliveGreen/InfoPaneHeaderOpenOlive.gif
+%%DATADIR%%/skins/XP/styles/OliveGreen/MainBGOlive.gif
+%%DATADIR%%/skins/XP/styles/Standard (Blue).css
+%%DATADIR%%/skins/XP/styles/Standard (Blue).jpg
+%%DATADIR%%/skins/XP/styles/Standard (Blue)/ImagePaneHeaderOpenBlue.gif
+%%DATADIR%%/skins/XP/styles/Standard (Blue)/InfoPaneHeaderOpenBlue.gif
+%%DATADIR%%/skins/XP/styles/Standard (Blue)/MainBGBlue.gif
+%%DATADIR%%/skins/XP/texts/texts.properties
+%%DATADIR%%/skins/XP/texts/texts_ca.properties
+%%DATADIR%%/skins/XP/texts/texts_cs.properties
+%%DATADIR%%/skins/XP/texts/texts_da.properties
+%%DATADIR%%/skins/XP/texts/texts_de.properties
+%%DATADIR%%/skins/XP/texts/texts_en.properties
+%%DATADIR%%/skins/XP/texts/texts_es.properties
+%%DATADIR%%/skins/XP/texts/texts_fi.properties
+%%DATADIR%%/skins/XP/texts/texts_fr.properties
+%%DATADIR%%/skins/XP/texts/texts_is.properties
+%%DATADIR%%/skins/XP/texts/texts_it.properties
+%%DATADIR%%/skins/XP/texts/texts_nl.properties
+%%DATADIR%%/skins/XP/texts/texts_no.properties
+%%DATADIR%%/skins/XP/texts/texts_pl.properties
+%%DATADIR%%/skins/XP/texts/texts_pt.properties
+%%DATADIR%%/skins/XP/texts/texts_sk.properties
+%%DATADIR%%/skins/XP/texts/texts_sv.properties
+%%DATADIR%%/skins/XP/texts/texts_zh.properties
+%%DATADIR%%/skins/XP/texts/texts_zh_tw.properties
+%%DATADIR%%/texts/texts.properties
+%%DATADIR%%/texts/texts_bg.properties
+%%DATADIR%%/texts/texts_cs.properties
+%%DATADIR%%/texts/texts_da.properties
+%%DATADIR%%/texts/texts_de.properties
+%%DATADIR%%/texts/texts_ee.properties
+%%DATADIR%%/texts/texts_es.properties
+%%DATADIR%%/texts/texts_fi.properties
+%%DATADIR%%/texts/texts_fr.properties
+%%DATADIR%%/texts/texts_hu.properties
+%%DATADIR%%/texts/texts_it.properties
+%%DATADIR%%/texts/texts_ja.properties
+%%DATADIR%%/texts/texts_nl.properties
+%%DATADIR%%/texts/texts_pl.properties
+%%DATADIR%%/texts/texts_pt.properties
+%%DATADIR%%/texts/texts_ru.properties
+%%DATADIR%%/texts/texts_sk.properties
+%%DATADIR%%/texts/texts_sv.properties
+%%DATADIR%%/texts/texts_th.properties
+%%DATADIR%%/tools/Adjust image orientation.bsh
+%%DATADIR%%/tools/Calculate album size.bsh
+%%DATADIR%%/tools/Clear user defined variables.bsh
+%%DATADIR%%/tools/Convert upper case to lower case.bsh
+%%DATADIR%%/tools/Extract comments.bsh
+%%DATADIR%%/tools/Perform garbage collection.bsh
+%%DATADIR%%/tools/Replace spaces with underscores.bsh
+%%DATADIR%%/tools/Reset file date to camera date.bsh
+%%DATADIR%%/tools/Sample tool.bsh
+@dirrm %%DATADIR%%/tools
+@dirrm %%DATADIR%%/texts
+@dirrm %%DATADIR%%/skins/XP/texts
+@dirrm %%DATADIR%%/skins/XP/styles/Standard (Blue)
+@dirrm %%DATADIR%%/skins/XP/styles/OliveGreen
+@dirrm %%DATADIR%%/skins/XP/styles/LightGrey
+@dirrm %%DATADIR%%/skins/XP/styles
+@dirrm %%DATADIR%%/skins/XP/res
+@dirrm %%DATADIR%%/skins/XP
+@dirrm %%DATADIR%%/skins/Whitey/styles
+@dirrm %%DATADIR%%/skins/Whitey/res
+@dirrm %%DATADIR%%/skins/Whitey
+@dirrm %%DATADIR%%/skins/Wedding/texts
+@dirrm %%DATADIR%%/skins/Wedding/styles/white
+@dirrm %%DATADIR%%/skins/Wedding/styles/pink
+@dirrm %%DATADIR%%/skins/Wedding/styles
+@dirrm %%DATADIR%%/skins/Wedding/res
+@dirrm %%DATADIR%%/skins/Wedding/png
+@dirrm %%DATADIR%%/skins/Wedding
+@dirrm %%DATADIR%%/skins/Vertical/styles
+@dirrm %%DATADIR%%/skins/Vertical/res
+@dirrm %%DATADIR%%/skins/Vertical
+@dirrm %%DATADIR%%/skins/Standard/subdir
+@dirrm %%DATADIR%%/skins/Standard/styles
+@dirrm %%DATADIR%%/skins/Standard/res
+@dirrm %%DATADIR%%/skins/Standard
+@dirrm %%DATADIR%%/skins/Slide show/styles
+@dirrm %%DATADIR%%/skins/Slide show/res
+@dirrm %%DATADIR%%/skins/Slide show
+@dirrm %%DATADIR%%/skins/ShowOff/styles
+@dirrm %%DATADIR%%/skins/ShowOff/res
+@dirrm %%DATADIR%%/skins/ShowOff
+@dirrm %%DATADIR%%/skins/Polaroid/styles
+@dirrm %%DATADIR%%/skins/Polaroid/res
+@dirrm %%DATADIR%%/skins/Polaroid
+@dirrm %%DATADIR%%/skins/PBase/styles
+@dirrm %%DATADIR%%/skins/PBase/scripts
+@dirrm %%DATADIR%%/skins/PBase/res
+@dirrm %%DATADIR%%/skins/PBase/notes
+@dirrm %%DATADIR%%/skins/PBase
+@dirrm %%DATADIR%%/skins/Old Album/styles
+@dirrm %%DATADIR%%/skins/Old Album/res
+@dirrm %%DATADIR%%/skins/Old Album
+@dirrm %%DATADIR%%/skins/Minimal/styles
+@dirrm %%DATADIR%%/skins/Minimal/res
+@dirrm %%DATADIR%%/skins/Minimal
+@dirrm %%DATADIR%%/skins/Mamba/styles
+@dirrm %%DATADIR%%/skins/Mamba/res
+@dirrm %%DATADIR%%/skins/Mamba
+@dirrm %%DATADIR%%/skins/Horizontal/styles
+@dirrm %%DATADIR%%/skins/Horizontal/res
+@dirrm %%DATADIR%%/skins/Horizontal
+@dirrm %%DATADIR%%/skins/Flowing/styles
+@dirrm %%DATADIR%%/skins/Flowing/res
+@dirrm %%DATADIR%%/skins/Flowing
+@dirrm %%DATADIR%%/skins/Film/styles
+@dirrm %%DATADIR%%/skins/Film/res
+@dirrm %%DATADIR%%/skins/Film
+@dirrm %%DATADIR%%/skins/Family/styles/white
+@dirrm %%DATADIR%%/skins/Family/styles/pink
+@dirrm %%DATADIR%%/skins/Family/styles/blue
+@dirrm %%DATADIR%%/skins/Family/styles/black
+@dirrm %%DATADIR%%/skins/Family/styles
+@dirrm %%DATADIR%%/skins/Family/res
+@dirrm %%DATADIR%%/skins/Family
+@dirrm %%DATADIR%%/skins/Experience/styles
+@dirrm %%DATADIR%%/skins/Experience/res
+@dirrm %%DATADIR%%/skins/Experience
+@dirrm %%DATADIR%%/skins/ExhibitPlus/styles
+@dirrm %%DATADIR%%/skins/ExhibitPlus/res
+@dirrm %%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-lightbackground
+@dirrm %%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-darkbackground
+@dirrm %%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-lightbackground
+@dirrm %%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-darkbackground
+@dirrm %%DATADIR%%/skins/ExhibitPlus/button-sets/red-21px-darkbackground
+@dirrm %%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-silver-20px
+@dirrm %%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-gold-20px
+@dirrm %%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-blue-20px
+@dirrm %%DATADIR%%/skins/ExhibitPlus/button-sets/metodi-beige-20px
+@dirrm %%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-lightbackground
+@dirrm %%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-darkbackground
+@dirrm %%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-lightbackground
+@dirrm %%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-darkbackground
+@dirrm %%DATADIR%%/skins/ExhibitPlus/button-sets
+@dirrm %%DATADIR%%/skins/ExhibitPlus/Optional files to be copied to image source directory
+@dirrm %%DATADIR%%/skins/ExhibitPlus
+@dirrm %%DATADIR%%/skins/Exhibit/styles
+@dirrm %%DATADIR%%/skins/Exhibit/res
+@dirrm %%DATADIR%%/skins/Exhibit
+@dirrm %%DATADIR%%/skins/Colorful/styles
+@dirrm %%DATADIR%%/skins/Colorful/res
+@dirrm %%DATADIR%%/skins/Colorful
+@dirrm %%DATADIR%%/skins/Camera Geek/styles
+@dirrm %%DATADIR%%/skins/Camera Geek/res
+@dirrm %%DATADIR%%/skins/Camera Geek
+@dirrm %%DATADIR%%/skins/Bluepro/styles
+@dirrm %%DATADIR%%/skins/Bluepro/res
+@dirrm %%DATADIR%%/skins/Bluepro
+@dirrm %%DATADIR%%/skins/BluPlusPlus/texts
+@dirrm %%DATADIR%%/skins/BluPlusPlus/styles
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/topbars/red
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/topbars/purple
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/topbars/light-green
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/topbars/khaki
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/topbars/gray
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/topbars/golden-green
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/topbars/dark-green2
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/topbars/dark-green
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/topbars/blue
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/topbars/black
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/topbars
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/styles/white
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/styles/hakki
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/styles/gray
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/styles/glacier
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/styles/expedition
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/styles/christmas
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/styles/canvas
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/styles/bluish2
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/styles/bluish
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/styles/black
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/styles/autumn
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/styles/artsy
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/styles/arcs
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/styles
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/js
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/borders/solid
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_hakki
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_gray
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_expedition
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_dark
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_christmas
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_canvas
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_autumn
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/borders/shadow_artsy
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/borders/shadow
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/borders/none
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/borders/frame
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_white
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_vertical_white
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_vertical_black
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_horizontal_white
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_horizontal_black
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/borders/bracket_black
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/borders
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/actions/white
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/actions/universal
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/actions/dark-matte
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/actions/bright-matte
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/actions/black
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res/actions
+@dirrm %%DATADIR%%/skins/BluPlusPlus/res
+@dirrm %%DATADIR%%/skins/BluPlusPlus/includes
+@dirrm %%DATADIR%%/skins/BluPlusPlus/docs
+@dirrm %%DATADIR%%/skins/BluPlusPlus/bsh
+@dirrm %%DATADIR%%/skins/BluPlusPlus
+@dirrm %%DATADIR%%/skins
+@dirrm %%DATADIR%%/res
+@dirrm %%DATADIR%%/plugins/documentation
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/includes
+@dirrm %%DATADIR%%/help/images
+@dirrm %%DATADIR%%/help
+@dirrm %%DATADIR%%

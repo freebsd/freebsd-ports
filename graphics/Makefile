@@ -209,6 +209,7 @@
     SUBDIR += irit
     SUBDIR += isreal
     SUBDIR += ivtools
+    SUBDIR += jalbum
     SUBDIR += jasper
     SUBDIR += jbigkit
     SUBDIR += jgraph
