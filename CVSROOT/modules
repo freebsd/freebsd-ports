@@ -1229,6 +1229,7 @@ demoniac	ports/misc/demoniac
 demoroniser	ports/www/demoroniser
 denemo		ports/audio/denemo
 des		src/eBones/des
+deskmenu	ports/x11/deskmenu
 despoof		ports/net/despoof
 detach		ports/sysutils/detach
 detex		ports/print/detex
