@@ -79,6 +79,7 @@ post-configure:
 
 post-install:
 	${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${FILESDIR}/kdelibs.sh > ${PREFIX}/etc/rc.d/kdelibs.sh
+	${CHMOD} 755 ${PREFIX}/etc/rc.d/kdelibs.sh
 .for LIB in DCOP kab kdecore kdesu kdeui kfile kformula kio kjs \
 	    kparts kspell ksycoca kjava
 	@${LN} -sf ${PREFIX}/lib/lib${LIB}.so.${SOMAJOR} ${PREFIX}/lib/lib${LIB}.so
