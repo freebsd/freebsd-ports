@@ -3,7 +3,7 @@
 # Date created:				26 Jan 1998
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
-# $Id: Makefile,v 1.33 1998/12/01 02:56:08 asami Exp $
+# $Id: Makefile,v 1.36 1998/12/22 18:01:41 dirk Exp $
 #
 
 DISTNAME=	mysql-3.22.11-beta
@@ -16,6 +16,8 @@ MASTER_SITES=	http://www.fh-wolfenbuettel.de/ftp/pub/database/mysql/Downloads/My
 		ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/MySQL-3.22/
 
 MAINTAINER=	dirk@FreeBSD.ORG
+
+BROKEN='fetch -- 3.22.13-beta is the current distfile'
 
 MANUAL_PACKAGE_BUILD=	incompatible with mysql321
 NO_LATEST_LINK=	yes
