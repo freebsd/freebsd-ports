@@ -1,0 +1,4 @@
+This is a VCP source driver for bk exported cvs repository,
+which is an extension from CVS repository source driver.
+
+WWW: http://search.cpan.org/~clkao/VCP-Source-cvsbk/
