@@ -1,0 +1,30 @@
+bin/pdnmesh
+bin/d2m
+share/pdnmesh/tutorial/README
+share/pdnmesh/tutorial/tutorial.tex
+share/pdnmesh/tutorial/tutorial.dvi
+share/pdnmesh/tutorial/ex1.eps
+share/pdnmesh/tutorial/ex2.eps
+share/pdnmesh/tutorial/exdraw.eps
+share/pdnmesh/examples/README
+share/pdnmesh/examples/coords.1
+share/pdnmesh/examples/coords.10
+share/pdnmesh/examples/coords.11
+share/pdnmesh/examples/coords.1a
+share/pdnmesh/examples/coords.2
+share/pdnmesh/examples/coords.3
+share/pdnmesh/examples/coords.4
+share/pdnmesh/examples/coords.5
+share/pdnmesh/examples/coords.6
+share/pdnmesh/examples/coords.7
+share/pdnmesh/examples/coords.8
+share/pdnmesh/examples/coords.9
+share/pdnmesh/examples/heat
+share/pdnmesh/examples/flow
+share/pdnmesh/examples/flow.1
+share/pdnmesh/examples/heart
+share/pdnmesh/examples/switch
+share/pdnmesh/examples/trans
+@dirrm share/pdnmesh/examples
+@dirrm share/pdnmesh/tutorial 
+@dirrm share/pdnmesh
