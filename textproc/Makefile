@@ -145,6 +145,7 @@
     SUBDIR += p5-XML-DT
     SUBDIR += p5-XML-Dumper
     SUBDIR += p5-XML-Encoding
+    SUBDIR += p5-XML-Filter-Base
     SUBDIR += p5-XML-LibXML
     SUBDIR += p5-XML-LibXSLT
     SUBDIR += p5-XML-Node
