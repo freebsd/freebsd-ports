@@ -1,4 +1,5 @@
 bin/frotz
+man/man6/frotz.6.gz
 share/doc/frotz/Readme.unix
 share/doc/frotz/Todo
 @dirrm share/doc/frotz
