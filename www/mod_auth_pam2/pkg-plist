@@ -1,0 +1,11 @@
+%%PORTDOCS%%%%DOCSDIR%%/configure.html
+%%PORTDOCS%%%%DOCSDIR%%/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/install.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+libexec/apache2/mod_auth_pam.so
+@exec %D/sbin/apxs -e -A -n auth_pam %D/%f
+libexec/apache2/mod_auth_sys_group.so
+@exec %D/sbin/apxs -e -A -n auth_sys_group %D/%f
+%%EXAMPLESDIR%%/pam-httpd.sample
+@dirrm %%EXAMPLESDIR%%
+@unexec echo "===>  If you do not plan on reinstalling mod_auth_pam, you must manually remove"; echo "===>  references to it in httpd.conf."

@@ -1,0 +1,6 @@
+The PAM authentication module implements Basic authentication on top of the
+Pluggable Authentication Module library. Thereby it supports whatever
+authentication method your PAM subsystem has specific support installed &
+configured for.
+
+WWW: http://pam.sourceforge.net/mod_auth_pam/
