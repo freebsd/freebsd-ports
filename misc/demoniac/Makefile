@@ -24,6 +24,8 @@ USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \
 		LDFLAGS="${PTHREAD_LIBS}"
+PLIST_FILES=	bin/demoniac share/demoniac/pixmaps/logo.xpm
+PLIST_DIRS=	share/demoniac/pixmaps share/demoniac
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
