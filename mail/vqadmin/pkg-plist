@@ -1,27 +1,41 @@
-bin/vqadmin
-www/cgi-bin.default/vqadmin/.htaccess
-www/cgi-bin.default/vqadmin/html/add_domain.html
-www/cgi-bin.default/vqadmin/html/add_user.html
-www/cgi-bin.default/vqadmin/html/auth_failed.html
-www/cgi-bin.default/vqadmin/html/br
-www/cgi-bin.default/vqadmin/html/del_domain.html
-www/cgi-bin.default/vqadmin/html/del_user.html
-www/cgi-bin.default/vqadmin/html/en
-www/cgi-bin.default/vqadmin/html/en-us
-www/cgi-bin.default/vqadmin/html/error.html
-www/cgi-bin.default/vqadmin/html/info_user.html
-www/cgi-bin.default/vqadmin/html/init_error.html
-www/cgi-bin.default/vqadmin/html/it
-www/cgi-bin.default/vqadmin/html/main.html
-www/cgi-bin.default/vqadmin/html/mod_domain.html
-www/cgi-bin.default/vqadmin/html/mod_user.html
-www/cgi-bin.default/vqadmin/html/show_domains.html
-www/cgi-bin.default/vqadmin/html/show_users.html
-www/cgi-bin.default/vqadmin/html/view_domain.html
-www/cgi-bin.default/vqadmin/html/view_user.html
-www/cgi-bin.default/vqadmin/vqadmin.acl
-www/cgi-bin.default/vqadmin/vqadmin.cgi
-@dirrm www/cgi-bin.default/vqadmin/html
-@dirrm www/cgi-bin.default/vqadmin
-@dirrm www/cgi-bin.default
-@dirrm www
+@cwd %%CGIBINDIR%%
+vqadmin/.htaccess
+vqadmin/html/add_alias_domain.html
+vqadmin/html/add_domain.html
+vqadmin/html/add_user.html
+vqadmin/html/auth_failed.html
+vqadmin/html/br
+vqadmin/html/control.html
+vqadmin/html/ctrl_file.html
+vqadmin/html/de
+vqadmin/html/del_domain.html
+vqadmin/html/del_user.html
+vqadmin/html/en
+vqadmin/html/en-us
+vqadmin/html/error.html
+vqadmin/html/fi
+vqadmin/html/fr
+vqadmin/html/info_user.html
+vqadmin/html/init_error.html
+vqadmin/html/it
+vqadmin/html/ja
+vqadmin/html/main.html
+vqadmin/html/mod_domain.html
+vqadmin/html/mod_user.html
+vqadmin/html/nl
+vqadmin/html/pl
+vqadmin/html/qmail_controls_bottom.html
+vqadmin/html/qmail_controls_middle.html
+vqadmin/html/qmail_controls_top.html
+vqadmin/html/show_domains.html
+vqadmin/html/show_users.html
+vqadmin/html/view_domain.html
+vqadmin/html/view_user.html
+vqadmin/vqadmin.acl
+vqadmin/vqadmin.cgi
+@dirrm vqadmin/html
+@dirrm vqadmin
+@cwd %%WEBDATADIR%%
+images/vqadmin/vqadmin.css
+@dirrm images/vqadmin
+@dirrm images
