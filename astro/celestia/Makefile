@@ -72,7 +72,7 @@ pre-install:
 	@${ECHO_CMD} share/celestia/${ii} >> ${PLIST}
 .endfor
 .if !defined(NOPORTDOCS)
-.for ii in AUTHORS ChangeLog COPYING README TODO controls.txt
+.for ii in AUTHORS ChangeLog README TODO controls.txt
 	@${ECHO_CMD} share/doc/celestia/${ii} >> ${PLIST}
 .endfor
 	@${FIND} ${WRKSRC}/manual/ -name '*.???*' | \
