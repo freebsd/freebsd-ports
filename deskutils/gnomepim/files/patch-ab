@@ -1,28 +1,52 @@
 --- gncal/Makefile.in.orig	Sat May 20 20:52:50 2000
-+++ gncal/Makefile.in	Tue May 30 14:34:37 2000
-@@ -143,3 +143,3 @@
++++ gncal/Makefile.in	Fri Jun  2 12:41:34 2000
+@@ -141,12 +141,12 @@
+ gnorbadir = $(sysconfdir)/CORBA/servers
+ gnorba_DATA = gnomecal.gnorba
  
 -help_base = $(datadir)/gnome/help/cal
 +help_base = $(datadir)/help/gnomecal
  
-@@ -148,3 +148,3 @@
+ @HAVE_GNOME_PILOT_TRUE@extra_pilot_bins = 		calendar-conduit-control-applet			calendar-pilot-sync
+ bin_PROGRAMS = gnomecal $(extra_pilot_bins)
  
 -INCLUDES =  	-I$(includedir)		$(GNOME_INCLUDEDIR) 	$(GNOME_CONDUIT_INCLUDEDIR) 	$(PISOCK_INCLUDEDIR)         -DGNOMELOCALEDIR=\""$(datadir)/locale"\"
 +INCLUDES =  	-I$(includedir)		$(GNOME_INCLUDEDIR) 	$(GNOME_CONDUIT_INCLUDEDIR) 	$(PISOCK_INCLUDEDIR)         -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"
  
-@@ -223,3 +223,3 @@
+ 
+ GNOMECAL_CORBA_GENERATED =  	GnomeCal.h			GnomeCal.c			GnomeCal-common.c		GnomeCal-skels.c		GnomeCal-stubs.c
+@@ -172,7 +172,7 @@
+ libcalendar_conduit_la_SOURCES =  	GnomeCal-common.c		GnomeCal-stubs.c		calendar-conduit.c		calobj.c 			alarm.c				calendar.c 			timeutil.c
+ 
+ 
+-libcalendar_conduit_la_LDFLAGS =  	-rpath $(libdir)
++libcalendar_conduit_la_LDFLAGS =  	-rpath $(libdir) -avoid-version
+ 
+ 
+ libcalendar_conduit_la_LIBADD =  	../libversit/libversit.la 	$(PISOCK_LIBDIR) $(PISOCK_LIBS) 	$(GNOME_LIBDIR) 	$(GNOME_LIBS)
+@@ -221,7 +221,7 @@
+ @HAVE_GNOME_PILOT_TRUE@ccenterConduitsdir = $(ccenterPalmPilotdir)/Conduits
+ @HAVE_GNOME_PILOT_TRUE@ccenterConduits_DATA = calendar-conduit-control-applet.desktop 
  
 -@HAVE_GNOME_PILOT_TRUE@panelConduitsdir = $(datadir)/gnome/apps/Settings/Peripherals/Conduits
 +@HAVE_GNOME_PILOT_TRUE@panelConduitsdir = $(datadir)/apps/Settings/Peripherals/Conduits
  @HAVE_GNOME_PILOT_TRUE@panelConduits_DATA = $(ccenterConduits_DATA)
-@@ -235,3 +235,3 @@
+ 
+ @HAVE_GNOME_PILOT_TRUE@Conduitdir = $(datadir)/gnome-pilot/conduits/
+@@ -233,7 +233,7 @@
+ appicondir = $(datadir)/pixmaps
+ appicon_DATA = gnome-calendar-conduit.png
  
 -Productivitydir = $(datadir)/gnome/apps/Applications
 +Productivitydir = $(datadir)/apps/Applications
  
+ Productivity_DATA = gncal.desktop
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
 --- gnomecard/Makefile.in.orig	Sat May 20 20:52:58 2000
-+++ gnomecard/Makefile.in	Tue May 30 14:35:44 2000
-@@ -137,5 +137,5 @@
++++ gnomecard/Makefile.in	Fri Jun  2 12:42:28 2000
+@@ -135,9 +135,9 @@
+ 
+ nSUBDIRS = help
  
 -xpmhelp_base = $(datadir)/gnome/help/cal
 +xpmhelp_base = $(datadir)/help/cal
@@ -30,13 +54,32 @@
 -INCLUDES =  	-I$(includedir)						$(GNOME_INCLUDEDIR)				        -DGNOMELOCALEDIR=\""$(datadir)/locale"\" 		$(PISOCK_INCLUDEDIR)                            	-I../../gcalendar
 +INCLUDES =  	-I$(includedir)						$(GNOME_INCLUDEDIR)				        -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 		$(PISOCK_INCLUDEDIR)                            	-I../../gcalendar
  
-@@ -185,3 +185,3 @@
+ 
+ @HAVE_GNOME_PILOT_TRUE@extra_pilot_bins = 		address-conduit-capplet	
+@@ -183,7 +183,7 @@
+ 
+ @HAVE_GNOME_PILOT_TRUE@ccenterConduits_DATA = 	address-conduit-capplet.desktop 
  
 -@HAVE_GNOME_PILOT_TRUE@panelConduitsdir = $(datadir)/gnome/apps/Settings/Peripherals/Conduits
 +@HAVE_GNOME_PILOT_TRUE@panelConduitsdir = $(datadir)/apps/Settings/Peripherals/Conduits
  @HAVE_GNOME_PILOT_TRUE@panelConduits_DATA = $(ccenterConduits_DATA)
-@@ -194,3 +194,3 @@
+ 
+ @HAVE_GNOME_PILOT_TRUE@Conduitdir = $(datadir)/gnome-pilot/conduits/
+@@ -192,7 +192,7 @@
+ EXTRA_DIST =  	addr.xpm		addrtool.xpm		cardedit.xpm		cardnew.xpm		cardfind.xpm		email.xpm		expl.xpm		first.xpm		geo.xpm			ident.xpm		last.xpm		org.xpm			sec.xpm			tel.xpm			teltool.xpm		phone.xpm		world.xpm		gnome-card.xpm  	gnomecard.desktop 	address-conduit-capplet.desktop 	gnomecard.conduit 	gnome-gnomecard.png 	gnomecard.gnorba 	ChangeLog 	BUGS
+ 
  
 -Productivitydir = $(datadir)/gnome/apps/Applications
 +Productivitydir = $(datadir)/apps/Applications
  
+ Productivity_DATA = gnomecard.desktop
+ 
+@@ -206,7 +206,7 @@
+ 
+ DEFS = @DEFS@ -I. -I$(srcdir) -I..
+ LIBS = @LIBS@
+-libaddress_conduit_la_LDFLAGS = 
++libaddress_conduit_la_LDFLAGS =  -avoid-version
+ libaddress_conduit_la_DEPENDENCIES =  ../libversit/libversit.la
+ libaddress_conduit_la_OBJECTS =  card.lo my.lo address-conduit.lo
+ PROGRAMS =  $(bin_PROGRAMS)

@@ -1,0 +1,19 @@
+--- gnomecard/address-conduit.c.orig	Tue Mar 14 01:39:27 2000
++++ gnomecard/address-conduit.c	Fri Jun  2 12:36:08 2000
+@@ -241,8 +241,16 @@
+ {
+ 	if (card->rev.prop.used) {
+ 		time_t syncTime, revTime;
++#ifdef __FreeBSD__
++		struct tm *tmptm;
++#endif
+ 		syncTime = GET_CONDUIT_DATA(abs)->dbi->pu->lastSyncDate;
++#ifdef __FreeBSD__
++		tmptm = localtime(&syncTime);
++		revTime = mktime(&card->rev.tm) - tmptm->tm_gmtoff;
++#else
+ 		revTime = mktime(&card->rev.tm)-timezone;
++#endif
+ 		LOG("Comparing rev time %lu with sync time %lu",revTime,syncTime);
+ 		if (revTime > syncTime) return TRUE;
+ 	}
