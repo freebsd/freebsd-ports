@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gimp-print
-PORTVERSION=	4.2.3
+PORTVERSION=	4.2.4
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,12 +18,16 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		MAKEINFO="makeinfo --no-split"
 CONFIGURE_ARGS=	--with-gimp=no
 INSTALLS_SHLIB=	yes
 
-MAN1=	escputil.1 gimpprint-config.1
+MAN1=	escputil.1 gimpprint-config.1 ijsgimpprint.1
 MAN3=	gimpprint.3
+MAN7=	gimpprint-color.7 gimpprint-dithers.7 gimpprint-imagetypes.7 \
+	gimpprint-inktypes.7 gimpprint-mediasizes.7 gimpprint-mediasources.7 \
+	gimpprint-mediatypes.7 gimpprint-models.7 gimpprint-resolutions.7
 MAN8=	cups-calibrate.8
 
 .if defined(WITHOUT_CUPS)
@@ -61,8 +65,6 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|=makeinfo|="makeinfo --no-split"|g ; \
 		 s|[\$$][{]CFLAGS:=[}] -O|\$$\{CFLAGS\}|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e \
-		's|[\$$][{]CFLAGS:=[}] -O|\$$\{CFLAGS\}|g' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|[\$$][(]PACKAGE[)]/doc|doc/\$$\(PACKAGE\)|g ; \
 		 s|[\$$][(]RM[)] -r|\$$\(RM\) -f -r|g'
