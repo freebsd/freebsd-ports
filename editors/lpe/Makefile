@@ -7,6 +7,7 @@
 
 PORTNAME=	lpe
 PORTVERSION=	1.2.5
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://cdsmith.twu.net/opensource/lpe/
