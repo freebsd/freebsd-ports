@@ -12,6 +12,7 @@
     SUBDIR += atlas
     SUBDIR += biggles
     SUBDIR += blas
+    SUBDIR += blitz++
     SUBDIR += calc
     SUBDIR += calcoo
     SUBDIR += calctool
