@@ -1,0 +1,15 @@
+lib/perl5/site_perl/%%PERL_VER%%/Authen/SASL/Perl/CRAM_MD5.pm
+lib/perl5/site_perl/%%PERL_VER%%/Authen/SASL/Perl/LOGIN.pm
+lib/perl5/site_perl/%%PERL_VER%%/Authen/SASL/Perl/ANONYMOUS.pm
+lib/perl5/site_perl/%%PERL_VER%%/Authen/SASL/Perl/EXTERNAL.pm
+lib/perl5/site_perl/%%PERL_VER%%/Authen/SASL/Perl/PLAIN.pm
+lib/perl5/site_perl/%%PERL_VER%%/Authen/SASL/EXTERNAL.pm
+lib/perl5/site_perl/%%PERL_VER%%/Authen/SASL/Perl.pm
+lib/perl5/site_perl/%%PERL_VER%%/Authen/SASL/CRAM_MD5.pm
+lib/perl5/site_perl/%%PERL_VER%%/Authen/SASL.pm
+lib/perl5/site_perl/%%PERL_VER%%/Authen/SASL.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Authen/SASL/.packlist
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Authen/SASL 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Authen/SASL/Perl 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Authen/SASL 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Authen 2>/dev/null || true
