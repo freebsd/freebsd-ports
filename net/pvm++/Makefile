@@ -7,22 +7,19 @@
 #
 
 PORTNAME=	pvm++
-PORTVERSION=	0.5.1
+PORTVERSION=	0.6.0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://pvm-plus-plus.sourceforge.net/pub/%SUBDIR%/ \
 		http://goethe.ira.uka.de/~wilhelmi/pvm++/
 MASTER_SITE_SUBDIR=	${PORTNAME:S:+:-plus:g}
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/pvm:${PORTSDIR}/net/pvm
 
 GNU_CONFIGURE=	yes
-USE_LIBTOOL=	yes
-
 USE_GMAKE=	yes
-
 INSTALLS_SHLIB=	yes
 
 post-install:
