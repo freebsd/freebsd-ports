@@ -1,0 +1,64 @@
+--- Makefile.in.orig	Fri Nov  5 00:00:15 1999
++++ Makefile.in	Wed Jan 12 22:26:59 2000
+@@ -3,12 +3,15 @@
+ #
+ 
+ TITLE	= lipsf
+-PREFIX	= /usr/local
++PREFIX	?= /usr/local
+ TOPDIR	= $(PREFIX)
+ BINDIR	= $(TOPDIR)/bin
+-MANDIR	= $(TOPDIR)/man__LANGDIR__/man$(MANSEC)
+-CATDIR	= $(TOPDIR)/man__LANGDIR__/cat$(MANSEC)
++MANLANG	?= ja
++MANDIR	= $(TOPDIR)/man/$(MANLANG)/man$(MANSEC)
++CATDIR	= $(TOPDIR)/man/$(MANLANG)/cat$(MANSEC)
+ INSTALL	= __INSTALL__
++INSTALL_BIN	= $(INSTALL) -o bin -g bin
++INSTALL_MAN	= $(INSTALL) -o bin -g bin
+ CHMOD	= chmod
+ MANSEC	= 1
+ 
+@@ -44,7 +47,7 @@
+ POBJ2	= output__OBJ__ print__OBJ__ control__OBJ__ args__OBJ__ var__OBJ__ __DOSOBJS__
+ KNJOBJ	= pols__OBJ__ input__OBJ__ file__OBJ__ style__OBJ__
+ LDFLAGS	= __TERMLIBS__ __OTHERLIBS__
+-CFLAGS	= -D__OSTYPE__ __CCOPTIONS__
++CFLAGS	+= -D__OSTYPE__ #__CCOPTIONS__
+ 
+ .SUFFIXES: .h .c __OBJ__ __EXE__
+ 
+@@ -116,25 +119,25 @@
+ # to install all
+ 
+ install: $(LIPSFB) $(POLSB) $(LIPSF).$(MANSEC) $(POLS).$(MANSEC)
+-	$(INSTALL) __INSTSTRIP__ $(LIPSFB) $(BINDIR)
++	$(INSTALL_BIN) __INSTSTRIP__ $(LIPSFB) $(BINDIR)
+ 	$(CHMOD) a+rx $(BINDIR)/$(LIPSFB)
+-	$(INSTALL) __INSTSTRIP__ $(POLSB) $(BINDIR)
++	$(INSTALL_BIN) __INSTSTRIP__ $(POLSB) $(BINDIR)
+ 	$(CHMOD) a+rx $(BINDIR)/$(POLSB)
+-	$(INSTALL) $(LIPSF).$(MANSEC) $(MANDIR)/$(LIPSF).$(MANSEC)
++	$(INSTALL_MAN) $(LIPSF).$(MANSEC) $(MANDIR)/$(LIPSF).$(MANSEC)
+ 	$(CHMOD) a+r $(MANDIR)/$(LIPSFB).$(MANSEC)
+-	$(INSTALL) $(POLS).$(MANSEC) $(MANDIR)/$(POLS).$(MANSEC)
++	$(INSTALL_MAN) $(POLS).$(MANSEC) $(MANDIR)/$(POLS).$(MANSEC)
+ 	$(CHMOD) a+r $(MANDIR)/$(POLSB).$(MANSEC)
+ 
+ catman: $(LIPSF).$(MANSEC)c $(POLS).$(MANSEC)c
+-	$(INSTALL) $(LIPSF).$(MANSEC)c $(CATDIR)/$(LIPSF).$(MANSEC)
++	$(INSTALL_MAN) $(LIPSF).$(MANSEC)c $(CATDIR)/$(LIPSF).$(MANSEC)
+ 	$(CHMOD) a+r $(CATDIR)/$(LIPSF).$(MANSEC)
+-	$(INSTALL) $(POLS).$(MANSEC)c $(CATDIR)/$(POLS).$(MANSEC)
++	$(INSTALL_MAN) $(POLS).$(MANSEC)c $(CATDIR)/$(POLS).$(MANSEC)
+ 	$(CHMOD) a+r $(CATDIR)/$(POLS).$(MANSEC)
+ 
+ catman-b: $(LIPSF).doc $(POLS).doc
+-	$(INSTALL) $(LIPSF).doc $(CATDIR)/$(LIPSF).$(MANSEC)
++	$(INSTALL_MAN) $(LIPSF).doc $(CATDIR)/$(LIPSF).$(MANSEC)
+ 	$(CHMOD) a+r $(CATDIR)/$(LIPSF).$(MANSEC)
+-	$(INSTALL) $(POLS).doc $(CATDIR)/$(POLS).$(MANSEC)
++	$(INSTALL_MAN) $(POLS).doc $(CATDIR)/$(POLS).$(MANSEC)
+ 	$(CHMOD) a+r $(CATDIR)/$(POLS).$(MANSEC)
+ 
+ compman: catman

@@ -1,29 +1,30 @@
 # New ports collection makefile for: lipsf
-# Version required:	1.13c
+# Version required:	1.14a
 # Date created:		6 Dec 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	lipsf113
-PKGNAME=	ja-lipsf-1.13c
+DISTNAME=	lpsf114a
+PKGNAME=	ja-lipsf-1.14a
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://ftp.eos.hokudai.ac.jp/pub/tools/
-
-PATCH_SITES=	${MASTER_SITE_LOCAL}
-PATCHFILES=	lipsf113c.patch.gz
+MASTER_SITES=	ftp://ftp.vector.co.jp/pack/unix/writing/print/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mita@jp.FreeBSD.org
+
+WRKSRC=		${WRKDIR}/lipsf-114a
 
 MANLANG=	ja
 MAN1=		lipsf.1 pols.1
 
-DOCDIR=		${PREFIX}/share/doc/lipsf
-
 post-install:
-	${MKDIR} ${DOCDIR}
-	(cd ${WRKSRC} ; \
-	 ${INSTALL_DATA} HISTORY Install README TECHKNOW ${DOCDIR})
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/lipsf
+.for file in HISTORY Install README TECHKNOW
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/lipsf
+.endfor
+.endif
 
 .include <bsd.port.mk>
