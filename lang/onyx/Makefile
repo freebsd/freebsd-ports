@@ -21,7 +21,7 @@ MAN1=		onyx.1
 MANCOMPRESSED=	no
 
 do-build:
-	(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} cook)
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} cook)
 
 do-install:
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} cook install)
