@@ -23,7 +23,13 @@ CONFIGURE_ENV=	CXXFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lexpat"
 INSTALLS_SHLIB=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500035
+BROKEN=		"Does not compile on 5.0"
+.endif
+
 pre-patch:
 	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
 		${WRKSRC}/src/abyss/src/data.c
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

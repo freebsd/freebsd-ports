@@ -18,6 +18,12 @@ NO_WRKSUBDIR=	yes
 
 USE_ZIP=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500035
+BROKEN=		"Does not compile on 5.0"
+.endif
+
 post-extract:
 	@cd ${WRKSRC} && unzip -q -aa source.zip \
 		&& ${LN} -sf GIF.CPP gif.cpp \
@@ -33,4 +39,4 @@ do-install:
 	${INSTALL_DATA}	${WRKSRC}/*.TXT ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
