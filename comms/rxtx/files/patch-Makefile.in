@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- Makefile.in.orig	Fri Apr  9 23:57:20 2004
++++ Makefile.in	Fri Apr  9 23:58:06 2004
+@@ -451,7 +451,7 @@
+ 			echo $$i; \
+ 		fi; \
+ 	done` $(RXTX_PATH)
+-	$(INSTALL_PROGRAM) $(JARTARGET) $(JHOME)/
++	$(BSD_INSTALL_DATA) $(JARTARGET) $(JHOME)/
+ 
+ clean-generic:
+ 	rm -rf $(DEST) $(TOP)/$(CLASSTOP)

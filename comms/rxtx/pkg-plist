@@ -1,0 +1,7 @@
+lib/ext/RXTXcomm.jar
+lib/i386/librxtxParallel-2.1-7pre17.so
+lib/i386/librxtxParallel.la
+lib/i386/librxtxParallel.so
+lib/i386/librxtxSerial-2.1-7pre17.so
+lib/i386/librxtxSerial.la
+lib/i386/librxtxSerial.so
