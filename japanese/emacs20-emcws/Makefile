@@ -127,7 +127,7 @@ MULE_PATCHED_ELS=	ange-ftp.el ange-ftp.elc \
 			international/titdic-cnv.elc \
 			loaddefs.el loadup.el
 
-PLIST_SUB=	EMACS_VER=${EMACS_VER} EMACS_ARCH=${CONFIGURE_TARGET} \
+PLIST_SUB+=	EMACS_VER=${EMACS_VER} EMACS_ARCH=${CONFIGURE_TARGET} \
 		DOC_FILE=${DOC_FILE}
 
 SCRIPTS_ENV=	SED=${SED} MV=${MV} \
