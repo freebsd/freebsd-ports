@@ -22,6 +22,8 @@ MASTER_SITES=	ftp://ftp.php.net/pub/${PHP_DISTDIR}/ \
 
 MAINTAINER=	roam@FreeBSD.org
 
+FORBIDDEN=	"Use lang/php3 instead"
+
 PHP_DISTDIR=	distributions
 
 GNU_CONFIGURE=	yes
