@@ -1,0 +1,17 @@
+PuzzleTama is a tetris-like puzzle game for X Window System.
+
+OPTIONS:
+	usage: xpuzzletama [options]
+	-display display 	Specify display name
+	-rensa   n		How many balls is need to disappear.
+				(Score registration available only 3)
+
+	-install 		Install colormap
+	-mouse			Use mouse
+	-net			Multi player through net
+	-host	host		Specify host when multi playing
+
+	You can also configure mouse button.
+	-rturn  button-number	default 1
+	-fall   button-number   default 2
+	-lturn  button-number   default 3

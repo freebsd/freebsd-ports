@@ -1,0 +1,36 @@
+*** Imakefile.orig	Wed Dec  4 15:42:03 1996
+--- Imakefile	Sat Jan 18 17:46:01 1997
+***************
+*** 7,13 ****
+  OBJS = xtama_init.o xtama_main.o xtama_move.o xtama_rensa.o xtama_score.o xtama_flush.o xtama_net.o
+  
+  #SCOREFILE = /opt/X11R6/lib/X11/tama_score
+! SCOREFILE = ./.tama_score
+  
+  # もしネットワーク対戦をサポートしないなら下の -DNET を削ってください。
+  # スコアファイルにロック機構が必要ないなら -DFILELOCK を付けてください。
+--- 7,13 ----
+  OBJS = xtama_init.o xtama_main.o xtama_move.o xtama_rensa.o xtama_score.o xtama_flush.o xtama_net.o
+  
+  #SCOREFILE = /opt/X11R6/lib/X11/tama_score
+! SCOREFILE = /usr/X11R6/lib/X11/xpuzzletama/tama_score
+  
+  # もしネットワーク対戦をサポートしないなら下の -DNET を削ってください。
+  # スコアファイルにロック機構が必要ないなら -DFILELOCK を付けてください。
+***************
+*** 23,29 ****
+  # ※必ずどれかを指定して下さい。
+  # 自分で作り直してもいいです。 (^^;
+  #                                         ↓ ↓ ↓ ↓
+! DEFINES = -DSFILE=\"${SCOREFILE}\" -DNET -DUSR_RAND
+  
+  #DEFINES = -DSFILE=\"${SCOREFILE}\" -DNET -DFILELOCK -I/opt/X11R6/include -DUSR_RANDOM
+  
+--- 23,29 ----
+  # ※必ずどれかを指定して下さい。
+  # 自分で作り直してもいいです。 (^^;
+  #                                         ↓ ↓ ↓ ↓
+! DEFINES = -DSFILE=\"${SCOREFILE}\" -DNET -DUSR_RANDOM
+  
+  #DEFINES = -DSFILE=\"${SCOREFILE}\" -DNET -DFILELOCK -I/opt/X11R6/include -DUSR_RANDOM
+  
