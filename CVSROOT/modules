@@ -3604,6 +3604,7 @@ jwhois		ports/net/jwhois
 jx		ports/x11-toolkits/jx
 jython		ports/lang/jython
 jzip		ports/games/jzip
+jzip.org	ports/archivers/jzip.org
 k3b		ports/sysutils/k3b
 kadu		ports/polish/kadu
 kaffe		ports/java/kaffe
