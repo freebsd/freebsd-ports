@@ -1,8 +1,9 @@
-# $Id: Makefile,v 1.25 1995/11/26 21:03:22 asami Exp $
+# $Id: Makefile,v 1.26 1995/12/04 09:46:10 asami Exp $
 #
 
     SUBDIR += axe
     SUBDIR += beav
+    SUBDIR += bpatch
     SUBDIR += e93
     SUBDIR += emacs
     SUBDIR += jove
