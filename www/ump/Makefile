@@ -9,14 +9,14 @@ PORTNAME=	ump
 PORTVERSION=	1.10
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	http://www.goice.co.jp/member/mo/timidity/dist/	\
+MASTER_SITES=	http://www.timidity.jp/dist/	\
 		http://www.geocities.com/SiliconValley/Lab/2826/1-10/	\
 		http://pubweb.bnl.gov/people/hoff/midi/1.10/	\
 		${MASTER_SITE_NETSCAPE}
 MASTER_SITE_SUBDIR=	sdk/plugin/unix
 DISTFILES=	${BZ2DIST} ${ZDIST}
 
-PATCH_SITES=	http://www.goice.co.jp/member/mo/timidity/dist/
+PATCH_SITES=	http://www.timidity.jp/dist/
 PATCHFILES=	ump-patch-1.gz ump-patch-2.gz ump-patch-3.gz ump-patch-4.gz
 
 MAINTAINER=	llwang@infor.org
