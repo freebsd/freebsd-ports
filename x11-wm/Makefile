@@ -51,6 +51,7 @@
     SUBDIR += libdockapp
     SUBDIR += libepplet
     SUBDIR += lwm
+    SUBDIR += metacity
     SUBDIR += mlvwm
     SUBDIR += mosfet-liquid
     SUBDIR += olvwm
