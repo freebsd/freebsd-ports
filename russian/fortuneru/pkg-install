@@ -1,0 +1,14 @@
+#!/bin/sh
+# $FreeBSD$
+#
+
+if [ "$2" != "PRE-INSTALL" ]; then
+    exit 0
+fi
+
+if [ ! -f "$STRCMD" ]; then
+    echo ""
+    echo "You must have the ``games'' distribution installed to use this port."
+    echo ""
+    exit 1
+fi

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fortuneru
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	russian
 MASTER_SITES=	ftp://de22.kiev.ua/pub/files/
 DISTNAME=	fortune.ru-${PORTVERSION}
@@ -15,25 +15,25 @@ MAINTAINER=	bestia@iptcom.net
 
 NO_BUILD=	yes
 
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
 STRCMD=		/usr/games/strfile
+FORTUNES=	4hf aphorizms beer-murphy enciklopedy fomenko fortune_rus \
+		guberman marazm maxim_and_fedor murphy police speed-info \
+		strug usenet verse windows_errors
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/games/fortune
-	@${INSTALL_DATA} ${WRKSRC}/speed-info ${PREFIX}/share/games/fortune
-	@${INSTALL_DATA} ${WRKSRC}/fomenko ${PREFIX}/share/games/fortune
-
-pre-install:
-.if !exists(${STRCMD})
-	@ ${ECHO_MSG}	"Please install the games distribution"
-	@ exit 1
-.endif
-
-post-install:
-	@${STRCMD} ${PREFIX}/share/games/fortune/speed-info
-	@${STRCMD} ${PREFIX}/share/games/fortune/fomenko
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Usage:"
-	@${ECHO_MSG} "/usr/games/fortune ${PREFIX}/share/games/fortune/speed-info"
-	@${ECHO_MSG} ""
+	@${SETENV} STRCMD=${STRCMD} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	${SED} -e "s,%%PREFIX%%,${PREFIX}," < ${FILESDIR}/pkg-message.in > \
+		${PKGMESSAGE}
+	@${MKDIR} ${PREFIX}/share/games/fortune/rus
+.for fortune in ${FORTUNES}
+	${INSTALL_DATA} ${WRKSRC}/${fortune} ${PREFIX}/share/games/fortune/rus
+.endfor
+.for fortune in ${FORTUNES}
+	${STRCMD} ${PREFIX}/share/games/fortune/rus/${fortune} \
+		>/dev/null 2>/dev/null
+.endfor
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

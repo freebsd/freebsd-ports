@@ -1,6 +1,35 @@
-share/games/fortune/speed-info
-share/games/fortune/speed-info.dat
-share/games/fortune/fomenko
-share/games/fortune/fomenko.dat
-@dirrm share/games/fortune
-@dirrm share/games
+share/games/fortune/rus/4hf
+share/games/fortune/rus/4hf.dat
+share/games/fortune/rus/aphorizms
+share/games/fortune/rus/aphorizms.dat
+share/games/fortune/rus/beer-murphy
+share/games/fortune/rus/beer-murphy.dat
+share/games/fortune/rus/enciklopedy
+share/games/fortune/rus/enciklopedy.dat
+share/games/fortune/rus/fomenko
+share/games/fortune/rus/fomenko.dat
+share/games/fortune/rus/fortune_rus
+share/games/fortune/rus/fortune_rus.dat
+share/games/fortune/rus/guberman
+share/games/fortune/rus/guberman.dat
+share/games/fortune/rus/marazm
+share/games/fortune/rus/marazm.dat
+share/games/fortune/rus/maxim_and_fedor
+share/games/fortune/rus/maxim_and_fedor.dat
+share/games/fortune/rus/murphy
+share/games/fortune/rus/murphy.dat
+share/games/fortune/rus/police
+share/games/fortune/rus/police.dat
+share/games/fortune/rus/speed-info
+share/games/fortune/rus/speed-info.dat
+share/games/fortune/rus/strug
+share/games/fortune/rus/strug.dat
+share/games/fortune/rus/usenet
+share/games/fortune/rus/usenet.dat
+share/games/fortune/rus/verse
+share/games/fortune/rus/verse.dat
+share/games/fortune/rus/windows_errors
+share/games/fortune/rus/windows_errors.dat
+@dirrm share/games/fortune/rus
+@unexec rmdir %D/share/games/fortune 2>/dev/null || true
+@unexec rmdir %D/share/games 2>/dev/null || true

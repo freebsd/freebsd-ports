@@ -1,0 +1,2 @@
+To use the fortunes intalled by this port, type:
+  /usr/games/fortune %%PREFIX%%/share/games/fortune/rus
