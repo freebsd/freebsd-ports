@@ -8,13 +8,3 @@
  #include <regex.h>
  #include <config.h>
  #include <gnome.h>
---- gweather/weather.c.orig	Thu Mar 16 16:26:51 2000
-+++ gweather/weather.c	Sat May 27 13:05:07 2000
-@@ -21,6 +21,7 @@
- #include <ctype.h>
- #include <math.h>
- 
-+#include <sys/types.h>
- #include <regex.h>
- #include <time.h>
- #include <unistd.h>
