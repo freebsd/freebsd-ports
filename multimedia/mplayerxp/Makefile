@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mplayer
-PORTVERSION=	0.90.0.6
+PORTVERSION=	0.90.0.8
 CATEGORIES=	graphics
 MASTER_SITES=	http://ftp.mplayerhq.hu/MPlayer/releases/ \
 		http://www.mplayerhq.hu/MPlayer/releases/ \
@@ -16,7 +16,7 @@ MASTER_SITES=	http://ftp.mplayerhq.hu/MPlayer/releases/ \
 		ftp://ftp2.mplayerhq.hu/MPlayer/releases/ \
 		ftp://ftp.lug.udel.edu/MPlayer/releases/ \
 		http://www.rrr.de/~riggs/mplayer/
-DISTNAME=	MPlayer-0.90pre6
+DISTNAME=	MPlayer-0.90pre8
 
 MAINTAINER=	riggs@rrr.de
 
@@ -32,7 +32,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS=${PTHREAD_LIBS}
 CONFIGURE_ARGS= --with-extralibdir=${LOCALBASE}/lib \
-		--with-extraincdir=${LOCALBASE}/include
+		--with-extraincdir=${LOCALBASE}/include \
+		--disable-vidix
 
 USE_GNOMENG=	yes
 WANT_GNOME=	yes
@@ -79,6 +80,9 @@ CFLAGS+=       -O3 -ffast-math -fomit-frame-pointer
 
 .if ${HAVE_GNOME:Mgtk12}!=""
 WITH_GUI=	yes
+PLIST_SUB+=	GMPLAYER=""
+.else
+PLIST_SUB+=	GMPLAYER="@comment"
 .endif
 
 .if defined(WITH_GUI)
@@ -228,7 +232,10 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/DOCS/${doc} ${DOCSDIR}
 .endfor
 .endif
-	@${CAT} pkg-message
+.if defined(WITH_GUI)
+	@${LN} -sf ${PREFIX}/bin/mplayer ${PREFIX}/bin/gmplayer
+.endif
+	@${CAT} ${.CURDIR}/pkg-message
 
 install-user:
 	@${PERL} ${FILESDIR}/install-user
