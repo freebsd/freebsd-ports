@@ -1,0 +1,21 @@
+bpft is a superset of trafshow, and extends it by adding a daemon
+which collects data about network connections (src, dst, protocol
+and length). The resulting data can be dumped to a file for later
+processing.
+
+Read /usr/local/share/doc/bpft/README after installation for more
+information.
+
+To use bpft, your kernel must be rebuilt with the following line
+added to your kernel config file (/sys/i386/conf/<YourMachine>):
+
+pseudo-device   bpfilter        4       # Berkeley packet filter
+
+The number after bpfilter is the number of interfaces that can be
+examined simultaneously. See section 6.1 of the Handbook for details.
+
+On FreeBSD 4.0 or later versions, use the following line instead:
+
+pseudo-device  bpf     4  # Berkeley packet filter
+
+- oddbjorn <oddbjorn@tricknology.org>
