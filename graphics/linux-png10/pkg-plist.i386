@@ -3,6 +3,7 @@ usr/doc/libpng-1.0.3/README
 usr/doc/libpng-1.0.3/TODO
 usr/doc/libpng-1.0.3/example.c
 usr/doc/libpng-1.0.3/libpng.txt
+@dirrm usr/doc/libpng-1.0.3
 usr/lib/libpng.so.2.1.0.3
 usr/lib/libpng.so.2
 usr/man/man5/png.5
