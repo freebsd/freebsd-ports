@@ -1,7 +1,7 @@
-You must add the /usr/local/AbiSuite/fonts directory to your X server's
+You must add the ${PREFIX}/AbiSuite/fonts directory to your X server's
 font path.  For XFree86, add the line:
 
-FontPath "/usr/local/AbiSuite/fonts/"
+FontPath "${PREFIX}/AbiSuite/fonts/"
 
 in the "Files" section of your /etc/XF86Config file.
 If you use a different X server, please see its documentation on how to do

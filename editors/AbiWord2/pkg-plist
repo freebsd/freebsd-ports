@@ -1,6 +1,29 @@
 bin/AbiWord
+bin/abiword
+AbiSuite/COPYING
+AbiSuite/readme.txt
+AbiSuite/AbiWord/readme.txt
+AbiSuite/AbiWord/system.profile
+AbiSuite/AbiWord/help/en-US/help.html
+AbiSuite/AbiWord/sample/en-US/Latin1.abw
+AbiSuite/AbiWord/strings/ca-ES.strings
+AbiSuite/AbiWord/strings/da-DK.strings
+AbiSuite/AbiWord/strings/de-DE.strings
+AbiSuite/AbiWord/strings/du-NL.strings
+AbiSuite/AbiWord/strings/es-ES.strings
+AbiSuite/AbiWord/strings/fi-FI.strings
+AbiSuite/AbiWord/strings/fr-FR.strings
+AbiSuite/AbiWord/strings/hu-HU.strings
+AbiSuite/AbiWord/strings/id-ID.strings
+AbiSuite/AbiWord/strings/it-IT.strings
+AbiSuite/AbiWord/strings/no-BOK.strings
+AbiSuite/AbiWord/strings/pt-BR.strings
+AbiSuite/AbiWord/strings/pt-PT.strings
+AbiSuite/AbiWord/strings/sv-SE.strings
 AbiSuite/bin/AbiWord
+AbiSuite/bin/AbiWord_d
 AbiSuite/bin/AbiWord_s
+AbiSuite/dictionary/american.hash
 AbiSuite/fonts/a010013l.afm
 AbiSuite/fonts/a010013l.pfa
 AbiSuite/fonts/a010015l.afm
@@ -80,33 +103,17 @@ AbiSuite/fonts/s050000l.afm
 AbiSuite/fonts/s050000l.pfa
 AbiSuite/fonts/z003034l.afm
 AbiSuite/fonts/z003034l.pfa
-AbiSuite/docs/AbiSource_DialogFramework.abw
-AbiSuite/docs/AbiSource_Localization.abw
-AbiSuite/docs/AbiSource_ProgrammerGuidelines.abw
-AbiSuite/docs/AbiWord_DocumentFormat.abw
-AbiSuite/docs/AbiWord_FileImport.abw
-AbiSuite/docs/AbiWord_LayoutDesign.abw
-AbiSuite/docs/AbiWord_SourceOverview.abw
-AbiSuite/docs/AbiWord_SpellCheck_Notes.abw
-AbiSuite/docs/AbiWord_list_notes.txt
-AbiSuite/docs/BUILD.TXT
-AbiSuite/docs/UnixAdmin.abw
-AbiSuite/docs/roadmap.html
-AbiSuite/docs/Bazaar.abw
-AbiSuite/docs/BillOfRights.abw
-AbiSuite/docs/Gettysburg.abw
-AbiSuite/docs/Interview.abw
-AbiSuite/docs/Latin1.abw
-AbiSuite/docs/Styles.abw
-AbiSuite/docs/Unicode1.abw
-AbiSuite/docs/Word97Test.doc
-AbiSuite/docs/abi_memo-new.abw
-AbiSuite/docs/abi_memo.abw
-AbiSuite/docs/data.abw
-AbiSuite/docs/footer.abw
-AbiSuite/docs/rtftest.rtf
-AbiSuite/docs/tabs.abw
-@dirrm AbiSuite/fonts
+AbiSuite/icons/abiword_48.png
+AbiSuite/icons/abiword_48.tif
+AbiSuite/icons/abiword_48.xpm
+@dirrm AbiSuite/AbiWord/help/en-US
+@dirrm AbiSuite/AbiWord/help
+@dirrm AbiSuite/AbiWord/sample/en-US
+@dirrm AbiSuite/AbiWord/sample
+@dirrm AbiSuite/AbiWord/strings
+@dirrm AbiSuite/AbiWord
 @dirrm AbiSuite/bin
-@dirrm AbiSuite/docs
+@dirrm AbiSuite/dictionary
+@dirrm AbiSuite/fonts
+@dirrm AbiSuite/icons
 @dirrm AbiSuite

@@ -1,0 +1,22 @@
+--- wp/Makefile	Tue Feb 29 07:34:31 2000
++++ wp/Makefile.new	Sun May 14 21:15:19 2000
+@@ -44,10 +44,16 @@
+ 	@$(subst xxxx,$(CANON_AppDir),$(VERIFY_DIRECTORY))
+ 	@$(subst xxxx,$(CANON_AppDir)/strings,$(VERIFY_DIRECTORY))
+ 	@$(subst xxxx,$(CANON_AppDir)/help,$(VERIFY_DIRECTORY))
++	@$(subst xxxx,$(CANON_AppDir)/help/en-US,$(VERIFY_DIRECTORY))
+ 	@$(subst xxxx,$(CANON_AppDir)/sample,$(VERIFY_DIRECTORY))
++	@$(subst xxxx,$(CANON_AppDir)/sample/en-US,$(VERIFY_DIRECTORY))
+ 	@$(ABICOPY) $(USERDIR)/wp/readme.txt $(CANON_AppDir)
++	@$(ABICHMOD) ugo=r $(CANON_AppDir)/readme.txt
+ 	@$(ABICOPY) $(USERDIR)/wp/system.profile $(CANON_AppDir)
++	@$(ABICHMOD) ugo=r $(CANON_AppDir)/system.profile
+ 	@$(ABICOPY) $(USERDIR)/wp/strings/*.strings $(CANON_AppDir)/strings
+-	(cd $(USERDIR)/wp/help; tar cf - $(CANON_Lang)/*.*) | (cd $(CANON_AppDir)/help; tar xf -)
+-	(cd $(USERDIR)/wp/sample; tar cf - $(CANON_Lang)/*.*) | (cd $(CANON_AppDir)/sample; tar xf -)
+-
++	@$(ABICHMOD) ugo=r $(CANON_AppDir)/strings/*.strings
++	@$(ABICOPY) $(USERDIR)/wp/help/en-US/*.html $(CANON_AppDir)/help/en-US
++	@$(ABICHMOD) ugo=r $(CANON_AppDir)/help/en-US/*.html
++	@$(ABICOPY) $(USERDIR)/wp/sample/en-US/*.abw $(CANON_AppDir)/sample/en-US
++	@$(ABICHMOD) ugo=r $(CANON_AppDir)/sample/en-US/*.abw
