@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.150 1998/04/04 04:59:26 obrien Exp $
+# $Id: Makefile,v 1.151 1998/04/11 15:08:25 vanilla Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -8,6 +8,7 @@
     SUBDIR += bb
     SUBDIR += bind8
     SUBDIR += bing
+    SUBDIR += bitchx
     SUBDIR += cap
     SUBDIR += choparp
     SUBDIR += clog
@@ -86,6 +87,7 @@
     SUBDIR += slirp
     SUBDIR += sniffit
     SUBDIR += socks5
+    SUBDIR += spegla
     SUBDIR += strobe
     SUBDIR += sup
     SUBDIR += tac_plus
