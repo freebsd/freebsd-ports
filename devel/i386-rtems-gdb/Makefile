@@ -7,17 +7,16 @@
 
 PORTNAME=	gdb
 PORTVERSION=	5.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gdb
-PATCHFILES=	${GDBNAME}-rtems-20000718.diff.gz
-PATCH_SITES=	ftp://ftp.oarcorp.com/pub/rtems/snapshots/c_tools/source/ \
-		http://rtems.thehousleys.net/
 
 MAINTAINER=	jeh@FreeBSD.org
 
-DIST_SUBDIR=	rtems
+PATCHFILES=	${GDBNAME}-rtems-20010314.diff
+PATCH_SITES=	ftp://ftp.oarcorp.com/pub/rtems/snapshots/c_tools/source/ \
+		http://rtems.thehousleys.net/
 
 LCLTARGET?=	i386-rtems
 
