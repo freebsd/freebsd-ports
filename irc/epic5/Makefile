@@ -7,6 +7,7 @@
 
 PORTNAME=	epic4
 PORTVERSION=	1.1.16
+PORTREVISION=	1
 CATEGORIES=	irc ipv6
 MASTER_SITES=	ftp://ftp.epicsol.org/pub/epic/EPIC4-ALPHA/ \
 		ftp://ftp.archive.de.uu.net/pub/unix/irc/epic/EPIC4-ALPHA/
@@ -26,12 +27,20 @@ GNU_CONFIGURE=	yes
 MAN1=		epic.1
 DISTFILE_HELP=	${PORTNAME}-help-20031106.tar.gz
 
+post-extract:
+	@${FIND} . -type d -name CVS | ${XARGS} ${RM} -rf
+
 post-patch:
-	${REINPLACE_CMD} -e 's|8.3|8.4|g' ${WRKSRC}/configure
-	${FIND} . -type d -name CVS | ${XARGS} ${RM} -rf
-	${RM} ${WRKDIR}/help/Makefile
+	@${REINPLACE_CMD} -e 's|8.3|8.4|g' ${WRKSRC}/configure
+	@${RM} ${WRKDIR}/help/Makefile
 
 post-install:
-	${CP} -R ${WRKDIR}/help/* ${PREFIX}/share/epic/help
+	@${CP} -R ${WRKDIR}/help/* ${PREFIX}/share/epic/help
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for i in README BUG_FORM UPDATES
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>

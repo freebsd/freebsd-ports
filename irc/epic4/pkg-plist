@@ -954,6 +954,9 @@ share/epic/script/utime
 share/epic/script/vi-binds
 share/epic/script/webster
 share/epic/script/window
+%%PORTDOCS%%%%DOCSDIR%%/BUG_FORM
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/UPDATES
 @dirrm share/epic/script
 @dirrm share/epic/help/8_Scripts
 @dirrm share/epic/help/7_Docs
@@ -971,3 +974,4 @@ share/epic/script/window
 @dirrm share/epic/help/1_General
 @dirrm share/epic/help
 @dirrm share/epic
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
