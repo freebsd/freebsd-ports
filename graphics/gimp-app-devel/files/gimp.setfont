@@ -1,0 +1,157 @@
+#!/usr/bin/perl
+
+# Font setting Perl script for GIMP
+#
+# by MANTANI Nobutaka <nobutaka@nobutaka.com>
+
+$progname = "gimp.setfont";
+$version = "Version 0.4 Feb 07 2000";
+
+$fontset{'chinese'} = "-*-helvetica-medium-r-normal--14-*-*-*-*-*-iso8859-1,-*-kai-medium-r-normal--16-*-*-*-*-*-big5-0";
+$fontset{'czech'} = "-*-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-2";
+$fontset{'danish'} = "-*-helvetica-medium-r-normal--14-*-*-*-*-*-iso8859-1";
+$fontset{'dutch'} = "-*-helvetica-medium-r-normal--14-*-*-*-*-*-iso8859-1";
+$fontset{'english'} = "-*-helvetica-medium-r-normal--14-*-*-*-*-*-iso8859-1";
+$fontset{'finnish'} = "-*-helvetica-medium-r-normal--14-*-*-*-*-*-iso8859-1";
+$fontset{'french'} = "-*-helvetica-medium-r-normal--14-*-*-*-*-*-iso8859-1";
+$fontset{'german'} = "-*-helvetica-medium-r-normal--14-*-*-*-*-*-iso8859-1";
+$fontset{'hungarian'} = "-*-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-2";
+$fontset{'italian'} = "-*-helvetica-medium-r-normal--14-*-*-*-*-*-iso8859-1";
+$fontset{'japanese'} = "-*-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1,-*-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0,-*-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0";
+$fontset{'korean'} = "-*-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1,-daewoo-gothic-medium-r-normal--16-*-*-*-*-*-ksc5601.1987-0";
+$fontset{'norwegian'} = "-*-helvetica-medium-r-normal--14-*-*-*-*-*-iso8859-1";
+$fontset{'polish'} = "-*-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-2";
+$fontset{'russian'} = "-*-helvetica-medium-r-normal--14-*-*-*-*-*-koi8-r";
+$fontset{'slovak'} = "-*-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-2";
+$fontset{'swedish'} = "-*-helvetica-medium-r-normal--14-*-*-*-*-*-iso8859-1";
+$fontset{'ukrainian'} = "-*-helvetica-medium-r-normal--14-*-*-*-*-*-koi8-r";
+
+$locale{'chinese'} = "zh_TW.Big5";
+$locale{'czech'} = "cs_CZ.ISO8859-2";
+$locale{'danish'} = "da_DK.ISO_8859-1";
+$locale{'dutch'} = "nl_NL.ISO_8859-1";
+$locale{'english'} = "C";
+$locale{'finnish'} = "fi_FI.ISO_8859-1";
+$locale{'french'} = "fr_FR.ISO_8859-1";
+$locale{'german'} = "de_DE.ISO_8859-1";
+$locale{'hungarian'} = "hu_HU.ISO_8859-2";
+$locale{'italian'} = "it_IT.ISO_8859-1";
+$locale{'japanese'} = "ja_JP.EUC";
+$locale{'korean'} = "ko_KR.EUC";
+$locale{'norwegian'} = "no_NO.ISO_8859-1";
+$locale{'polish'} = "pl_PL.ISO_8859-2";
+$locale{'russian'} = "ru_SU.KOI8-R";
+$locale{'slovak'} = "sk_SK.ISO_8859-2";
+$locale{'swedish'} = "sv_SE.ISO_8859-1";
+$locale{'ukrainian'} = "uk_UA.KOI8-U";
+
+# Show usage
+sub usage() {
+    print <<EOF;
+Usage: gimp.setfont <language>
+
+----------------------------------------------------------------
+[language]          [fontset]
+ chinese             -*-helvetica-(iso8859-1),-*-kai-(big5-0)
+ czech               -*-fixed-(iso8859-2)
+ danish              -*-helvetica-(iso8859-1)
+ dutch               -*-helvetica-(iso8859-1)
+ english             -*-helvetica-(iso8859-1)
+ finnish             -*-helvetica-(iso8859-1)
+ french              -*-helvetica-(iso8859-1)
+ german              -*-helvetica-(iso8859-1)
+ hungarian           -*-fixed-(iso8859-2)
+ italian             -*-helvetica-(iso8859-1)
+ japanese            -*-fixed-(iso8859-1,jisx0201,jisx0208)
+ korean              -*-fixed-(iso8859-1),-daewoo-gothic-(ksc5601)
+ norwegian           -*-helvetica-(iso8859-1)
+ polish              -*-fixed-(iso8859-2)
+ russian             -*-helvetica-(koi8-r)
+ slovak              -*-fixed-(iso8869-2)
+ swedish             -*-helvetica-(iso8859-1)
+ ukrainian           -*-helvetica-(koi8-r)
+----------------------------------------------------------------
+
+If you need iso8859-2 fonts, please install etlfonts
+(x11-fonts/etlfonts).
+
+EOF
+}
+
+# Write gtkrc of user's .gimp-1.2 directory
+sub write_gtkrc($) {
+    my $fontset = shift;
+    my $path = "$ENV{'HOME'}/.gimp-1.2";
+
+    if (-d $path) {
+	if (-e "$path/gtkrc") {
+	    chmod(0644, "$path/gtkrc");
+	    print "Renaming $path/gtkrc to $path/gtkrc.old...\n";
+	    rename("$path/gtkrc", "$path/gtkrc.old");
+	}
+
+	print "Writing $path/gtkrc...\n";
+	open(FILE, ">$path/gtkrc");
+	print FILE <<EOF;
+\# style <name> [= <name>]
+\# {
+\#   <option>
+\# }
+\#
+\# widget <widget_set> style <style_name>
+\# widget_class <widget_class_set> style <style_name>
+
+style "default"
+{
+  fontset = "$fontset"
+}
+
+widget_class "*" style "default"
+EOF
+        close(FILE);
+        print "Done.\n\n";
+    } else {
+        print <<EOF;
+Directory $path is not found. 
+Please execute "gimp" and install files into $path
+directory first. 
+
+EOF
+    exit;
+    }
+}
+
+sub main() {
+    my $lang = $ARGV[0];
+    my $tmp = ucfirst($lang);
+
+    print <<EOF;
+
+$progname - Font setting utility for GIMP ($version)
+
+EOF
+
+    if (@ARGV != 1) {
+	usage();
+	exit;
+    }
+
+    print "Setting for $tmp language...\n\n";
+
+    print qq(Please set "LANG" environment variable to "$locale{$lang}" and execute "gimp".\n\n);
+
+    if ($lang eq "slovak") {
+	print <<EOF;
+And please make symbolic link from lt_LN.ISO_8859-2 to sk_SK.ISO_8859-2 in 
+/usr/share/locale.
+
+EOF
+    }
+
+    write_gtkrc($fontset{$lang});
+
+    exit;
+}
+
+
+main();

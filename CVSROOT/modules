@@ -2522,6 +2522,7 @@ giftui		ports/net/giftui
 gigabase	ports/databases/gigabase
 gimageview	ports/graphics/gimageview
 gimp		ports/graphics/gimp
+gimp-devel	ports/graphics/gimp-devel
 gimp-manual-html	ports/graphics/gimp-manual-html
 gimp-manual-pdf		ports/graphics/gimp-manual-pdf
 gimp-pmosaic	ports/graphics/gimp-pmosaic
