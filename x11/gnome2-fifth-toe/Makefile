@@ -42,7 +42,7 @@ RUN_DEPENDS=	gnumeric:${PORTSDIR}/math/gnumeric2 \
 		${X11BASE}/libexec/stickynotes_applet:${PORTSDIR}/misc/stickynotes_applet \
 		tsclient:${PORTSDIR}/net/tsclient \
 		zenity:${PORTSDIR}/x11/zenity \
-		gucharmap:${PORTSDIR}/misc/gucharmap \
+		gucharmap:${PORTSDIR}/deskutils/gucharmap \
 		regexxer:${PORTSDIR}/devel/regexxer \
 		galeon:${PORTSDIR}/www/galeon2 \
 		streamtuner:${PORTSDIR}/audio/streamtuner \
