@@ -7,15 +7,14 @@
 
 PORTNAME=	libtorrent
 PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://libtorrent.rakshasa.no/downloads/
 
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	BitTorrent Library written in C++
 
-LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl \
-		sigc-2.0.0:${PORTSDIR}/devel/libsigc++20
+LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20
 
 USE_GCC=	3.3+
 USE_REINPLACE=	yes
