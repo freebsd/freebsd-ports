@@ -1,0 +1,19 @@
+kst is a program for looking at data streams. It can plot:
+ 
+   - x-y plots
+   - power spectra
+   - histograms
+   - equations (including equations of data streams). 
+   - data in files which are being updated as data is being logged,
+     in which case it can act as a plotter for a chart recorder.
+   - much more
+ 
+You can use the mouse to rapidly zoom into interesting parts of the plots.
+ 
+In addition to a complete GUI, kst has a convenient command line interface
+for rapid access to plotting data in files. kst can read data from stdin.
+It provides a DCOP interface for remote manipulation, and supports several
+file formats in use in scientific projects around the world.
+
+WWW: http://omega.astro.utoronto.ca/kst/
+WWW: http://extragear.kde.org/apps/kst.php
