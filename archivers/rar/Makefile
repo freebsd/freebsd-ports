@@ -1,5 +1,4 @@
 # New ports collection makefile for:    rar
-# http://www.rarsoft.com/
 # Date created:         15 May 1996
 # Whom:                 ache
 #
