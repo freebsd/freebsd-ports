@@ -1,0 +1,161 @@
+--- pfctl/pfctl.c	Sat Jun 21 17:29:45 2003
++++ pfctl/pfctl.c	Sat Jun 21 18:31:19 2003
+@@ -46,6 +46,7 @@
+ #include <err.h>
+ #include <errno.h>
+ #include <fcntl.h>
++#include <inttypes.h>
+ #include <limits.h>
+ #include <netdb.h>
+ #include <stdio.h>
+@@ -565,8 +566,8 @@
+ 		    rule->qname, rule->qid, rule->pqname, rule->pqid);
+ 	}
+ 	if (opts & PF_OPT_VERBOSE)
+-		printf("[ Evaluations: %-8llu  Packets: %-8llu  "
+-			    "Bytes: %-10llu  States: %-6u]\n\n",
++		printf("[ Evaluations: %-8"PRIu64"  Packets: %-8"PRIu64"  "
++			    "Bytes: %-10"PRIu64"  States: %-6u]\n\n",
+ 			    rule->evaluations, rule->packets,
+ 			    rule->bytes, rule->states);
+ }
+@@ -630,7 +631,7 @@
+ 		case 1:
+ 			if (pr.rule.label[0]) {
+ 				printf("%s ", pr.rule.label);
+-				printf("%llu %llu %llu\n",
++				printf("%"PRIu64" %"PRIu64" %"PRIu64"\n",
+ 				    pr.rule.evaluations, pr.rule.packets,
+ 				    pr.rule.bytes);
+ 			}
+@@ -662,7 +663,7 @@
+ 		case 1:
+ 			if (pr.rule.label[0]) {
+ 				printf("%s ", pr.rule.label);
+-				printf("%llu %llu %llu\n",
++				printf("%"PRIu64" %"PRIu64" %"PRIu64"\n",
+ 				    pr.rule.evaluations, pr.rule.packets,
+ 				    pr.rule.bytes);
+ 			}
+--- pfctl/pfctl_parser.c	Sat Jun 21 17:29:45 2003
++++ pfctl/pfctl_parser.c	Sat Jun 21 18:32:00 2003
+@@ -49,6 +49,7 @@
+ #include <stdarg.h>
+ #include <errno.h>
+ #include <err.h>
++#include <inttypes.h>
+ #include <ifaddrs.h>
+ 
+ #if defined(__FreeBSD__)
+@@ -503,29 +504,29 @@
+ 	if (s->ifname[0] != 0) {
+ 		printf("Interface Stats for %-16s %5s %16s\n",
+ 		    s->ifname, "IPv4", "IPv6");
+-		printf("  %-25s %14llu %16llu\n", "Bytes In",
++		printf("  %-25s %14"PRIu64" %16"PRIu64"\n", "Bytes In",
+ 		    s->bcounters[0][0], s->bcounters[1][0]);
+-		printf("  %-25s %14llu %16llu\n", "Bytes Out",
++		printf("  %-25s %14"PRIu64" %16"PRIu64"\n", "Bytes Out",
+ 		    s->bcounters[0][1], s->bcounters[1][1]);
+ 		printf("  Packets In\n");
+-		printf("    %-23s %14llu %16llu\n", "Passed",
++		printf("    %-23s %14"PRIu64" %16"PRIu64"\n", "Passed",
+ 		    s->pcounters[0][0][PF_PASS],
+ 		    s->pcounters[1][0][PF_PASS]);
+-		printf("    %-23s %14llu %16llu\n", "Blocked",
++		printf("    %-23s %14"PRIu64" %16"PRIu64"\n", "Blocked",
+ 		    s->pcounters[0][0][PF_DROP],
+ 		    s->pcounters[1][0][PF_DROP]);
+ 		printf("  Packets Out\n");
+-		printf("    %-23s %14llu %16llu\n", "Passed",
++		printf("    %-23s %14"PRIu64" %16"PRIu64"\n", "Passed",
+ 		    s->pcounters[0][1][PF_PASS],
+ 		    s->pcounters[1][1][PF_PASS]);
+-		printf("    %-23s %14llu %16llu\n\n", "Blocked",
++		printf("    %-23s %14"PRIu64" %16"PRIu64"\n\n", "Blocked",
+ 		    s->pcounters[0][1][PF_DROP],
+ 		    s->pcounters[1][1][PF_DROP]);
+ 	}
+ 	printf("%-27s %14s %16s\n", "State Table", "Total", "Rate");
+ 	printf("  %-25s %14u %14s\n", "current entries", s->states, "");
+ 	for (i = 0; i < FCNT_MAX; i++) {
+-		printf("  %-25s %14lld ", pf_fcounters[i],
++		printf("  %-25s %14"PRId64" ", pf_fcounters[i],
+ 			    s->fcounters[i]);
+ 		if (runtime > 0)
+ 			printf("%14.1f/s\n",
+@@ -535,7 +536,7 @@
+ 	}
+ 	printf("Counters\n");
+ 	for (i = 0; i < PFRES_MAX; i++) {
+-		printf("  %-25s %14lld ", pf_reasons[i],
++		printf("  %-25s %14"PRId64" ", pf_reasons[i],
+ 		    s->counters[i]);
+ 		if (runtime > 0)
+ 			printf("%14.1f/s\n",
+--- pfctl/pfctl_qstats.c	Sat Jun 21 17:29:45 2003
++++ pfctl/pfctl_qstats.c	Sat Jun 21 18:32:19 2003
+@@ -40,6 +40,7 @@
+ #include <arpa/inet.h>
+ 
+ #include <err.h>
++#include <inttypes.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+@@ -280,8 +281,8 @@
+ {
+ 	double	interval;
+ 
+-	printf("[ pkts: %10llu  bytes: %10llu  "
+-	    "dropped pkts: %6llu bytes: %6llu ]\n",
++	printf("[ pkts: %10"PRIu64"  bytes: %10"PRIu64"  "
++	    "dropped pkts: %6"PRIu64" bytes: %6"PRIu64" ]\n",
+ 	    cur.data.cbq_stats.xmit_cnt.packets,
+ 	    cur.data.cbq_stats.xmit_cnt.bytes,
+ 	    cur.data.cbq_stats.drop_cnt.packets,
+@@ -306,8 +307,8 @@
+ {
+ 	double	interval;
+ 
+-	printf("[ pkts: %10llu  bytes: %10llu  "
+-	    "dropped pkts: %6llu bytes: %6llu ]\n",
++	printf("[ pkts: %10"PRIu64"  bytes: %10"PRIu64"  "
++	    "dropped pkts: %6"PRIu64" bytes: %6"PRIu64" ]\n",
+ 	    cur.data.priq_stats.xmitcnt.packets,
+ 	    cur.data.priq_stats.xmitcnt.bytes,
+ 	    cur.data.priq_stats.dropcnt.packets,
+--- pfctl/pfctl_table.c	Sat Jun 21 17:29:45 2003
++++ pfctl/pfctl_table.c	Sat Jun 21 18:32:36 2003
+@@ -42,6 +42,7 @@
+ #include <ctype.h>
+ #include <err.h>
+ #include <errno.h>
++#include <inttypes.h>
+ #include <netdb.h>
+ #include <stdarg.h>
+ #include <stdio.h>
+@@ -363,11 +364,11 @@
+ 	printf("\tAddresses:   %d\n", ts->pfrts_cnt);
+ 	printf("\tReferences:  %d\n", ts->pfrts_refcnt);
+ 	printf("\tCleared:     %s", ctime(&time));
+-	printf("\tEvaluations: [ NoMatch: %-18llu Match: %-18llu ]\n",
++	printf("\tEvaluations: [ NoMatch: %-18"PRIu64" Match: %-18"PRIu64" ]\n",
+ 	    ts->pfrts_nomatch, ts->pfrts_match);
+ 	for (dir = 0; dir < PFR_DIR_MAX; dir++)
+ 		for (op = 0; op < PFR_OP_TABLE_MAX; op++)
+-			printf("\t%-12s [ Packets: %-18llu Bytes: %-18llu ]\n",
++			printf("\t%-12s [ Packets: %-18"PRIu64" Bytes: %-18"PRIu64" ]\n",
+ 			    stats_text[dir][op],
+ 			    ts->pfrts_packets[dir][op],
+ 			    ts->pfrts_bytes[dir][op]);
+@@ -541,7 +542,7 @@
+ 	printf("\tCleared:     %s", ctime(&time));
+ 	for (dir = 0; dir < PFR_DIR_MAX; dir++)
+ 		for (op = 0; op < PFR_OP_ADDR_MAX; op++)
+-			printf("\t%-12s [ Packets: %-18llu Bytes: %-18llu ]\n",
++			printf("\t%-12s [ Packets: %-18"PRIu64" Bytes: %-18"PRIu64" ]\n",
+ 			    stats_text[dir][op],
+ 			    as->pfras_packets[dir][op],
+ 			    as->pfras_bytes[dir][op]);
+

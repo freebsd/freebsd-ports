@@ -7,7 +7,7 @@
 
 PORTNAME=	authpf
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://pf4freebsd.love2party.net/
 .if defined(WITH_ALTQ) && (${WITH_ALTQ} == "yes")
@@ -20,7 +20,6 @@ MAINTAINER=	max@love2party.net
 COMMENT=	Authentification shell for pf gateways
 
 WRKSRC=		${WRKDIR}/pf_freebsd_${PORTVERSION}
-ONLY_FOR_ARCHS=	i386
 
 RUN_DEPENDS=	${LOCALBASE}/modules/pf.ko:${PORTSDIR}/security/pf
 
