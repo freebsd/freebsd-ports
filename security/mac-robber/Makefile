@@ -8,7 +8,8 @@
 PORTNAME=	mac-robber
 PORTVERSION=	1.00
 CATEGORIES=	security
-MASTER_SITES=	http://www.atstake.com/research/tools/forensic/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	Yonatan@xpert.com
 COMMENT=	A tool for listing Modify, Access, Create timestamps from files
