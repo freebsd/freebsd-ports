@@ -1,5 +1,5 @@
 --- scripts/exim_install.orig	Mon Nov  9 19:01:40 1998
-+++ scripts/exim_install	Thu Nov 12 15:26:57 1998
++++ scripts/exim_install	Wed Nov 18 13:22:51 1998
 @@ -121,18 +121,4 @@
  fi
  
@@ -44,16 +44,20 @@
 +
  
  # If there is no configuration file, install the default,
-@@ -208,7 +214,6 @@
+@@ -208,9 +214,8 @@
  echo $com ""
  
 -if [ ! -f ${CONFIGURE_FILE} ]; then
 -  echo $com Installing default configuration in ${CONFIGURE_FILE}
 -  echo $com because there is no existing configuration file.
+-  echo ${CP} ../src/configure.default ${CONFIGURE_FILE}
+-  ${real} ${CP} ../src/configure.default ${CONFIGURE_FILE}
 +  echo $com Installing sample configuration file
 +  ${real} mkdir -p ${CONFIGURE_FILE%/*}
-   echo ${CP} ../src/configure.default ${CONFIGURE_FILE}
-   ${real} ${CP} ../src/configure.default ${CONFIGURE_FILE}
++  echo ${CP} ../src/configure.default ${CONFIGURE_FILE}.sample
++  ${real} ${CP} ../src/configure.default ${CONFIGURE_FILE}.sample
+   if [ $? -ne 0 ]; then
+     echo $com ""
 @@ -218,44 +223,44 @@
      exit 1
    fi
