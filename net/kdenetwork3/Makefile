@@ -33,16 +33,13 @@ LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
 
-pre-configure::
-	${REINPLACE_CMD} -e 's@-pedantic @@g' ${WRKSRC}/configure
-
 .if !defined(WITHOUT_KTALKD)
 UTMP?=	/var/run/utmp
 .if exists(${UTMP})
 PLIST_APPEND+=	plist.ktalkd
 .else
 DO_NOT_COMPILE+=	ktalkd
-pre-configure::
+pre-everything::
 	@${ECHO_MSG} "===> \"${UTMP}\" was not found."
 	@${ECHO_MSG} "===> The talk daemon (ktalkd) will not be built."
 .endif # exists(${UTMP})

@@ -40,9 +40,6 @@ CONFIGURE_ARGS+=	--with-vorbis="${LOCALBASE}" \
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
 
-pre-configure::
-	${REINPLACE_CMD} -e 's@-pedantic @@g' ${WRKSRC}/configure
-
 .if defined(WITH_MIDI) || defined(WITH_KMIDI)
 PLIST_APPEND+=	plist.midi
 .if ${MACHINE_ARCH} == "alpha"

@@ -34,7 +34,4 @@ CONFIGURE_ENV+=	DO_NOT_COMPILE="${DO_NOT_COMPILE}"
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
 
-pre-configure::
-	${REINPLACE_CMD} -e 's|-pedantic ||g' ${WRKSRC}/configure
-
 .include <bsd.port.post.mk>

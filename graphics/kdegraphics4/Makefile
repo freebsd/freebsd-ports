@@ -93,7 +93,4 @@ pre-everything::
 	@${ECHO_MSG}
 .endif # defined(WITH_SANE)
 
-pre-configure::
-	${REINPLACE_CMD} -e 's@-pedantic @@g' ${WRKSRC}/configure
-
 .include <bsd.port.post.mk>
