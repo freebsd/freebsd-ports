@@ -1,5 +1,6 @@
---- libaudiofile/Makefile.linux.orig	Sun Jan 10 04:24:25 1999
-+++ libaudiofile/Makefile.linux	Sat Oct  2 09:25:01 1999
+diff -urN ../dap-2.1.1.orig/libaudiofile/Makefile.linux ./libaudiofile/Makefile.linux
+--- ../dap-2.1.1.orig/libaudiofile/Makefile.linux	Tue Feb 29 08:49:10 2000
++++ ./libaudiofile/Makefile.linux	Sun Jun 11 14:27:36 2000
 @@ -1,11 +1,11 @@
 -CC      = gcc
 -CXX     = g++
@@ -8,11 +9,11 @@
  BACKDIR = ../bak/libaudiofile
  HOMEDIR = $(HOME)
  INCDIR  = -I.
--CCFLAGS = $(INCDIR) $(DEBUG) $(OPTIM) -DLINUX -DBIGENDIAN -DUSINGGCC -Wall
-+CCFLAGS = $(INCDIR) $(OPTIM) -DLINUX -DUSINGGCC -Wall
+-CCFLAGS = $(INCDIR) $(DEBUG) $(OPTIM) -DLINUX -DBIGENDIAN -DUSINGGCC -Wall -Wno-unused
++CCFLAGS = $(INCDIR) $(OPTIM) -DLINUX -DUSINGGCC -Wall -Wno-unused
  DEBUG   = -g3
 -OPTIM   = -O1
-+OPTIM   = ${CXXFLAGS} 
++OPTIM   = ${CXXFLAGS}
  
  LIBNAME = libaudiofile.a
  OBJS    = audiofile.o ieee.o macros.o raw.o wav.o

@@ -1,28 +1,15 @@
---- libaudio/audio.h.orig	Fri Nov 12 11:35:21 1999
-+++ libaudio/audio.h	Sat Dec 11 13:36:15 1999
-@@ -17,13 +17,15 @@
- |
- ****************************************************************************/
- 
--#ifdef LINUX
-+#if defined(LINUX) || defined(__FreeBSD__)
- 
- #ifndef _audio_h
+diff -urN ../dap-2.1.1.orig/libaudio/audio.h ./libaudio/audio.h
+--- ../dap-2.1.1.orig/libaudio/audio.h	Tue Feb 29 10:16:06 2000
++++ ./libaudio/audio.h	Sun Jun 11 14:22:12 2000
+@@ -20,7 +20,11 @@
  #define _audio_h
  
  #include <stdio.h>
-+#ifndef __FreeBSD__
++#ifdef __FreeBSD__
++#include <stdlib.h>
++#else
  #include <malloc.h>
 +#endif
  #include <unistd.h>
  #include <fcntl.h>
  #include <limits.h>
-@@ -33,6 +35,8 @@
- #include <sys/ioctl.h>
- #ifdef __NetBSD__
- #include <soundcard.h>
-+#elif defined(__FreeBSD__)
-+#include <machine/soundcard.h>
- #else
- #include <sys/soundcard.h>
- #endif
