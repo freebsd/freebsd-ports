@@ -1,0 +1,28 @@
+--- src/io-motif.c.orig	Thu Nov 23 05:38:22 2000
++++ src/io-motif.c	Sat Dec  2 09:47:19 2000
+@@ -5995,7 +5995,11 @@
+ #endif
+ 
+ #ifdef	HAVE_LIBPLOT
++#if defined(PL_LIBPLOT_VER_STRING)
+ 	sprintf(xbae, "\n  GNU PlotUtils (libplot version %s)", PL_LIBPLOT_VER_STRING);
++#else
++	sprintf(xbae, "\n  GNU PlotUtils (libplot version %s)", LIBPLOT_VERSION);
++#endif
+ 	xms1 = xms;
+ 	xms2 = XmStringCreateLtoR(xbae, XmFONTLIST_DEFAULT_TAG);
+ 	xms = XmStringConcat(xms1, xms2);
+@@ -6079,6 +6083,7 @@
+ 		return;
+ 	}
+ 
++#if XbaeVersion > 4007
+ 	if (XbaeMatrixGetCellWidget(mat, r-1, c-1) == NULL) {
+ 		button = XtVaCreateManagedWidget(lbl, xmPushButtonWidgetClass, mat, NULL);
+ 		XbaeMatrixSetCellWidget(mat, r-1, c-1, button);
+@@ -6088,4 +6093,5 @@
+ 
+ 		fprintf(stderr, "MotifButton(%d,%d,%s,%s)\n", r-1, c-1, lbl, command);
+ 	}
++#endif
+ }
