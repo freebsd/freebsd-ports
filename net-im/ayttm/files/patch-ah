@@ -1,0 +1,11 @@
+--- src/#main.c~	Mon Jan 29 14:49:29 2001
++++ src/main.c	Mon Jan 29 14:49:29 2001
+@@ -279,7 +279,7 @@
+ 	strcat(local.sun_path, "eb_socket");
+ 	unlink(local.sun_path);
+ 	local.sun_family = AF_UNIX;
+-	len = strlen(local.sun_path) + sizeof(local.sun_family);
++	len = strlen(local.sun_path) + 1 + sizeof(local.sun_family);
+ 	if(bind(sock, (struct sockaddr *)&local, len) == -1)
+ 	{
+ 		perror("bind");
