@@ -45,7 +45,8 @@ BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT} \
 		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
 		${SITE_PERL}/Time/ParseDate.pm:${PORTSDIR}/devel/p5-Time-modules \
 		${SITE_PERL}/Tree/Simple.pm:${PORTSDIR}/devel/p5-Tree-Simple \
-		${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize
+		${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize \
+		${SITE_PERL}/XML/RSS.pm:${PORTSDIR}/textproc/p5-XML-RSS
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 HAS_CONFIGURE=	yes
@@ -81,7 +82,8 @@ DEPENDS_ARGS+=	WITHOUT_MODPERL=yes
 DEPENDS_ARGS+=	WITH_MODPERL2=yes
 .else
 # XXX - probe for static mod_perl using `httpd -l | grep perl`
-BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl
+BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl \
+		${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq
 .endif
 .endif
 
