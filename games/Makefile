@@ -294,6 +294,7 @@
     SUBDIR += vamos
     SUBDIR += virt
     SUBDIR += wmeyes
+    SUBDIR += wmfortune
     SUBDIR += wmminichess
     SUBDIR += wmshuffle
     SUBDIR += wmtictactoe

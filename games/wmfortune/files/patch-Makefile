@@ -1,0 +1,53 @@
+$FreeBSD$
+
+--- Makefile.orig	Thu May 16 10:51:45 2002
++++ Makefile	Thu May 16 10:53:56 2002
+@@ -1,35 +1,18 @@
+-### Edit here as you like :)
+-BINDIR = /usr/local/bin
+-############################
++CC ?= gcc
++CFLAGS += -c -Wall
++INCDIR = -I${X11BASE}/include -I/usr/local/include
++LIBDIR = -L${X11BASE}/lib
++LIBS   = -lXpm -lXext -lX11
++OBJS =  wmfortune.o dockapp.o
+ 
+-DEST = wmfortune
++.c.o:
++	${CC} ${CFLAGS} ${INCDIR} $< -o $*.o
+ 
+-# Programs used to move the binary to the proper place.
+-INSTALL = /usr/bin/install
+-INSTALL_PROGRAM = ${INSTALL} -m 755
+-UNINSTALL_PROGRAM = rm -f
++wmfortune: $(OBJS)
++	${CC} -o wmfortune $^ ${LIBDIR} ${LIBS}
+ 
+-CC = gcc
+-OPTIMIZE = -O2
+-XLIBDIR = /usr/X11R6/lib
+-#XLIB = -ldockapp -lXpm -lXext -lX11
+-XLIB = -lXpm -lXext -lX11
+-OBJ = wmfortune.o dockapp.o
+-
+-$(DEST) : $(OBJ)
+-	$(CC) $(OBJ) -L$(XLIBDIR) $(XLIB) -o $(DEST)
+-
+-dockapp.o: dockapp.c
+-	$(CC) $(OPTIMIZE) $< -c
+-
+-wmfortune.o: wmfortune.c
+-	$(CC) $(OPTIMIZE) $< -c
+-
+-install:
+-	$(INSTALL_PROGRAM) ./$(DEST) $(BINDIR)/$(DEST)
+-
+-uninstall:
+-	$(UNINSTALL_PROGRAM) $(BINDIR)/$(DEST)
++all: wmfortune
+ 
+ clean:
+-	rm -rf $(DEST) $(OBJ) *~
++	rm -f *.o
++	rm -f wmfortune core
