@@ -1,0 +1,9 @@
+@comment $FreeBSD$
+bandwidthd/etc/bandwidthd.conf-dist
+bandwidthd/bandwidthd
+bandwidthd/htdocs/legend.gif
+bandwidthd/htdocs/logo.gif
+etc/rc.d/bandwidthd.sh.sample
+@unexec rmdir %D/bandwidthd/etc 2> /dev/null || true
+@unexec rmdir %D/bandwidthd/htdocs 2> /dev/null || true
+@unexec rmdir %D/bandwidthd 2> /dev/null || echo "If you do not plan on reinstalling bandwidthd, you can safely remove %D/bandwidthd"

@@ -1,0 +1,6 @@
+bandwidthd tracks usage of TCP/IP network subnets and builds HTML files with 
+graphs to display network utilization. Charts are built by individual IP. It 
+color codes HTTP, TCP,UDP, ICMP, VPN, and P2P traffic. Unlike MRTG, it tracks 
+each individual IP address, not the status of any particular link. 
+
+WWW: http://bandwidthd.sourceforge.net/
