@@ -6,7 +6,7 @@ pb=/var/portbuild
 . ${pb}/portbuild.conf
 
 # packages for dependencies only
-dummyports="x11/XFree86"
+dummyports="" #x11/XFree86"
 
 # packages that take very long to build -- try to start building these first
 quickports="lang/ghc games/civ2demo games/rt2-demo x11/XFree86-4 editors/openoffice games/hlserver-cs misc/heyu x11/gnome x11/kde2"
@@ -19,7 +19,7 @@ errorexit () {
 }
 
 usage () {
-  echo "usage: [-nobuild] [-noindex] [-noduds] [-nocvsup] [-nocvs] [-noportscvs] [-norestr] [-noplistcheck] [-nodummy] [-ftp] branch date"
+  echo "usage: [-nobuild] [-noindex] [-noduds] [-nocvsup] [-nocvs] [-noportscvs] [-norestr] [-plistcheck] [-nodummy] [-ftp] branch date"
   errorexit 1
 }
 
@@ -187,8 +187,9 @@ nocvsup=0
 nocvs=0
 noportscvs=0
 norestr=0
-noplistcheck=0
+plistcheck=0
 nodummy=0
+nocdrom=0
 ftp=0
 
 # optional arguments
@@ -203,6 +204,9 @@ while [ $# -gt 2 ]; do
     x-noduds)
       noduds=1
       ;;
+    x-nocdrom)
+      nocdrom=1
+      ;;
     x-nocvsup)
       nocvsup=1
       ;;
@@ -215,8 +219,8 @@ while [ $# -gt 2 ]; do
     x-norestr)
       norestr=1
       ;;
-    x-noplistcheck)
-      noplistcheck=1
+    x-plistcheck)
+      plistcheck=1
       ;;
     x-nodummy)
       nodummy=1
@@ -242,8 +246,8 @@ if [ "$norestr" = 1 ]; then
   export NO_RESTRICTED=t
 fi
 
-if [ "$noplistcheck" = 1 ]; then
-  export NOPLISTCHECK=t
+if [ "$plistcheck" = 1 ]; then
+  export PLISTCHECK=t
 fi
 
 if [ "$nodummy" = 1 ]; then
@@ -261,9 +265,10 @@ if [ "$nocvsup" = 0 ]; then
 #  su ${user} -c 'cvsup -g -L 0 /etc/supfile.cvsup'
   if [ "$noportscvs" = 0 ]; then
     echo "================================================"
-    echo "running cvs update on /${branch}/ports"
+    echo "running cvs update on ${pb}/${branch}/ports"
     echo "================================================"
     su ${user} -c 'cvs -qR update -d -P'
+    # XXX Check for conflicts
   fi
   date > ${pb}/cvsdone
   echo "================================================"
@@ -275,14 +280,16 @@ if [ "$nocvsup" = 0 ]; then
   echo "================================================"
   cd ${pb}/usr/opt/doc
   su ${user} -c 'cvs -qR update -d -P'
+  # XXX Check for conflicts
 fi
 
 if [ "$nocvs" = 0 ]; then
   echo "================================================"
-  echo "running cvs update on /${branch}/src"
+  echo "running cvs update on ${pb}/${branch}/src"
   echo "================================================"
   cd ${pb}/${branch}/src
   su ${user} -c 'cvs -qR update -d -P'
+  # XXX Check for conflicts
 fi
 
 export SRCPREFIX=${pb}/${branch}/src
@@ -309,7 +316,9 @@ done
 restrictedlist ${pb} ${scripts} ${branch} &
 sleep 2
 
-cdromlist ${pb} ${scripts} ${branch} &
+if [ "$nocdrom" = 0 ]; then
+  cdromlist ${pb} ${scripts} ${branch} &
+fi
 
 wait
 
