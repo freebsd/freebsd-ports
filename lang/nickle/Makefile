@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	nickle
-PORTVERSION=	2.28
+PORTVERSION=	2.41
 CATEGORIES=	lang
 MASTER_SITES=	http://www.nickle.org/release/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	anholt@FreeBSD.org
 COMMENT=	A desk calculator language
 
 USE_GMAKE=	yes
