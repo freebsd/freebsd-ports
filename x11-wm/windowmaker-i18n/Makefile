@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	windowmaker-i18n
-PORTVERSION=	0.64.0
+PORTVERSION=	0.65.0
 # PORTREVISION=
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER}
@@ -16,9 +16,9 @@ DISTNAME=	WindowMaker-${PORTVERSION}
 MAINTAINER=	mac@jp.freebsd.org
 
 LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.4:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
+		Hermes.1:${PORTSDIR}/graphics/Hermes \
 		PropList.2:${PORTSDIR}/devel/libPropList \
 		intl.1:${PORTSDIR}/devel/gettext
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
@@ -33,12 +33,13 @@ USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	X11BASE=${X11BASE}  LOCALBASE=${LOCALBASE} \
 		CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib" \
-		LINGUAS="cs de es fr gl it ja_JP.EUC ko nl no pt ru sv tr fi hr el pl ro da zh_TW.Big5 zh_CN sk bg hu"
+		LINGUAS="cs de es et fr gl it ja ko nl no pt ru sv tr fi hr el pl ro da zh_TW.Big5 zh_CN sk bg hu"
 CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 	--with-nlsdir=${PREFIX}/share/locale \
 	--with-libs-from="-L${LOCALBASE}/lib" \
 	--with-incs-from="-I${LOCALBASE}/include" \
 	--with-appspath="${PREFIX}/GNUstep/Apps" \
+	--enable-hermes \
 	--disable-debug
 
 MAN1=	geticonset.1x getstyle.1x seticons.1x setstyle.1x \

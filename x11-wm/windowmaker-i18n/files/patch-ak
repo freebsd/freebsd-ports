@@ -1,11 +1,7 @@
---- po/Makefile.in.orig	Thu Jan 21 00:00:00 1999
-+++ po/Makefile.in	Fri Jan 29 10:23:01 1999
-@@ -206,12 +206,14 @@
- mostlyclean-generic distclean-generic clean-generic \
- maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+--- po/Makefile.in.orig	Mon Apr 30 07:17:51 2001
++++ po/Makefile.in	Fri May 11 10:23:26 2001
+@@ -212,10 +212,10 @@
  
-+ja_JP.EUC.po:	ja.po
-+	nkf -e ja.po > ja_JP.EUC.po
  
  .po.mo: 
 -	msgfmt -o $@ $<
