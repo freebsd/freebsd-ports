@@ -7,6 +7,8 @@
 
 PORTNAME=	si
 PORTVERSION=	0.97.0ra
+MASTER_SITES=	ftp://ftp2.extreme-players.de/hl/mod/si/ \
+		ftp://ftp.task.gda.pl/vol/d33/ftp.extreme-players.de/exp/hl/mod/si/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g:S/0r//}-linux
 
 MAINTAINER=	lioux@FreeBSD.org
@@ -17,12 +19,4 @@ HALFLIFE_COUNTERSTRIKE_MASTER=	${.CURDIR}/../hlserver-cs
 
 .include "${HALFLIFE_COUNTERSTRIKE_MASTER}/Makefile"
 
-.include <bsd.port.pre.mk>
-
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=		You must manually fetch the Linux Port distfile\
-		(${DISTFILES}) from http://www.fileplanet.com/dl/dl.asp?/planethalflife/si/${DISTFILES},\
-		place it in ${DISTDIR} and then run make again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
