@@ -2,9 +2,12 @@ etc/rc.d/diablo.sh-sample
 news/dactive.kp
 news/dbin/.cvsignore
 news/dbin/.empty
+news/dbin/dcancel
 news/dbin/dclient
 news/dbin/dexpire
+news/dbin/dexpirecache
 news/dbin/dexpireover
+news/dbin/dexpirescoring
 news/dbin/dfeedinfo
 news/dbin/dgrpctl
 news/dbin/diablo
@@ -15,6 +18,8 @@ news/dbin/didump
 news/dbin/diload
 news/dbin/diloadfromspool
 news/dbin/dilookup
+news/dbin/dhisctl
+news/dbin/dhisexpire
 news/dbin/dkp
 news/dbin/dlockhistory
 news/dbin/dnewslink
@@ -50,7 +55,7 @@ news/samples/adm/crontab.sample
 news/samples/adm/daily.atrim
 news/samples/adm/daily.reader
 news/samples/adm/hourly.expire
-news/samples/adm/quadhr.expire
+news/samples/adm/old.biweekly.atrim.dexpire
 news/samples/adm/rc.news
 news/samples/adm/rot
 news/samples/adm/weekly.reader
@@ -89,12 +94,7 @@ news/samples/reader/distrib.pats
 news/samples/reader/dreader.access
 news/samples/reader/dserver.hosts
 news/samples/reader/moderators
-share/doc/diablo/COPYRIGHT
-share/doc/diablo/INSTALL
-share/doc/diablo/README.READER
-share/doc/diablo/README.SERVER
-share/doc/diablo/RELEASE_NOTES
-@dirrm share/doc/diablo
+@dirrm news/log
 @dirrm news/spool/postq
 @dirrm news/spool/news
 @dirrm news/spool/group
