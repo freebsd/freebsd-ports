@@ -1,6 +1,28 @@
---- sys/dev/ltmdm/ltmdmsio.c.orig	Wed Jun 16 11:48:33 2004
-+++ sys/dev/ltmdm/ltmdmsio.c	Wed Jun 16 12:04:19 2004
-@@ -1478,7 +1478,11 @@
+--- sys/dev/ltmdm/ltmdmsio.c.orig	Thu Jul  1 13:03:22 2004
++++ sys/dev/ltmdm/ltmdmsio.c	Thu Jul  1 13:14:39 2004
+@@ -245,7 +245,9 @@
+     u_char  last_modem_status;  /* last MSR read by intr handler */
+     u_char  prev_modem_status;  /* last MSR handled by high level */
+ 
++#if __FreeBSD_version < 502119
+     u_char  hotchar;        /* ldisc-specific char to be handled ASAP */
++#endif
+     u_char  *ibuf;          /* start of input buffer */
+     u_char  *ibufend;       /* end of input buffer */
+     u_char  *ibufold;       /* old input buffer, to be freed */
+@@ -285,7 +287,11 @@
+     struct resource *iores[6];
+     struct resource *irqres;
+     void *cookie;
++#if __FreeBSD_version > 502115
++    struct cdev *devs[6];
++#else
+     dev_t devs[6];
++#endif
+ 
+     /*
+      * Data area for output buffers.  Someday we should build the output
+@@ -1478,7 +1484,11 @@
  
      s = splfunc();
      if (tp) {
@@ -12,7 +34,19 @@
          disc_optim(tp, &tp->t_termios, com);
          comstop(tp, FREAD | FWRITE);
          comhardclose(com);
-@@ -1655,7 +1659,11 @@
+@@ -1515,7 +1525,11 @@
+ }
+ 
+ static int
++#if __FreeBSD_version > 502115
++sioopen(struct cdev *dev, int flag, int mode, struct proc *p)
++#else
+ sioopen(dev_t dev, int flag, int mode, struct proc *p)
++#endif
+ {
+     struct com_s    *com;
+     int     error;
+@@ -1655,7 +1669,11 @@
           * the true carrier.
           */
          if (com->prev_modem_status & MSR_DCD || mynor & CALLOUT_MASK)
@@ -24,7 +58,7 @@
      }
      /*
       * Wait for DCD if necessary.
-@@ -1671,7 +1679,11 @@
+@@ -1671,7 +1689,11 @@
              goto out;
          goto open_top;
      }
@@ -36,7 +70,19 @@
      disc_optim(tp, &tp->t_termios, com);
      if (tp->t_state & TS_ISOPEN && mynor & CALLOUT_MASK)
          com->active_out = TRUE;
-@@ -1699,7 +1711,11 @@
+@@ -1684,7 +1706,11 @@
+ }
+ 
+ static int
++#if __FreeBSD_version > 502115
++sioclose(struct cdev *dev, int flag, int mode, struct proc *p)
++#else
+ sioclose(dev_t dev, int flag, int mode, struct proc *p)
++#endif
+ {
+     struct com_s    *com;
+     int     mynor;
+@@ -1699,7 +1725,11 @@
          return (ENODEV);
      tp = com->tp;
      s = splfunc();
@@ -48,7 +94,19 @@
      disc_optim(tp, &tp->t_termios, com);
      comstop(tp, FREAD | FWRITE);
      comhardclose(com);
-@@ -1782,7 +1798,11 @@
+@@ -1771,7 +1801,11 @@
+ }
+ 
+ static int
++#if __FreeBSD_version > 502115
++sioread(struct cdev *dev, struct uio *uio, int flag)
++#else
+ sioread(dev_t dev, struct uio *uio, int flag)
++#endif
+ {
+     int     mynor;
+     struct com_s    *com;
+@@ -1782,11 +1816,19 @@
      com = com_addr(MINOR_TO_UNIT(mynor));
      if (com == NULL || com->gone)
          return (ENODEV);
@@ -60,7 +118,15 @@
  }
  
  static int
-@@ -1801,7 +1821,11 @@
++#if __FreeBSD_version > 502115
++siowrite(struct cdev *dev, struct uio *uio, int flag)
++#else
+ siowrite(dev_t dev, struct uio *uio, int flag)
++#endif
+ {
+     int     mynor;
+     struct com_s    *com;
+@@ -1801,7 +1843,11 @@
      if (com == NULL || com->gone)
          return (ENODEV);
  
@@ -72,7 +138,7 @@
  }
  
  static void
-@@ -1907,7 +1931,11 @@
+@@ -1907,7 +1953,11 @@
                  if (line_status & LSR_PE)
                      recv_data |= TTY_PE;
              }
@@ -84,7 +150,31 @@
              lt_disable_intr();
          } while (buf < com->iptr);
      }
-@@ -2192,7 +2220,11 @@
+@@ -2006,7 +2056,11 @@
+                     recv_data = 0;
+             }
+             ++com->bytes_in;
++#if __FreeBSD_version > 502118
++            if (com->tp->t_hotchar != 0 && recv_data == com->tp->t_hotchar)
++#else
+             if (com->hotchar != 0 && recv_data == com->hotchar)
++#endif
+                 setsofttty();
+             ioptr = com->iptr;
+             if (ioptr >= com->ibufend)
+@@ -2111,7 +2165,11 @@
+ }
+ 
+ static int
++#if __FreeBSD_version > 502115
++sioioctl(struct cdev *dev, u_long cmd, caddr_t data, int flag, struct proc *p)
++#else
+ sioioctl(dev_t dev, u_long cmd, caddr_t data, int flag, struct proc *p)
++#endif
+ {
+     struct com_s    *com;
+     int     error;
+@@ -2192,7 +2250,11 @@
          if (lt->c_ospeed != 0)
              dt->c_ospeed = tp->t_ospeed;
      }
@@ -96,7 +186,20 @@
      if (error != ENOIOCTL)
          return (error);
      s = splfunc();
-@@ -2317,8 +2349,13 @@
+@@ -2247,10 +2309,12 @@
+         com->do_timestamp = TRUE;
+         *(struct timeval *)data = com->timestamp;
+         break;
++#if __FreeBSD_version < 502119
+     case TIOCDCDTIMESTAMP:
+         com->do_dcd_timestamp = TRUE;
+         *(struct timeval *)data = com->dcd_timestamp;
+         break;
++#endif
+     default:
+         splx(s);
+ #ifdef ENABLE_PPS
+@@ -2317,8 +2381,13 @@
              com->state &= ~CS_CHECKMSR;
              lt_enable_intr();
              if (delta_modem_status & MSR_DCD)
@@ -110,7 +213,7 @@
          }
          if (com->state & CS_ODONE) {
              lt_disable_intr();
-@@ -2330,7 +2367,11 @@
+@@ -2330,7 +2399,11 @@
                  sio_busycheck_handle = timeout(siobusycheck, com, hz / 100);
                  com->extra_state |= CSE_BUSYCHECK;
              }
@@ -122,7 +225,7 @@
          }
          if (com_events == 0)
              break;
-@@ -2829,11 +2870,19 @@
+@@ -2829,11 +2902,21 @@
          && (!(t->c_iflag & PARMRK)
          || (t->c_iflag & (IGNPAR | IGNBRK)) == (IGNPAR | IGNBRK))
          && !(t->c_lflag & (ECHO | ICANON | IEXTEN | ISIG | PENDIN))
@@ -135,7 +238,9 @@
      else
          tp->t_state &= ~TS_CAN_BYPASS_L_RINT;
 +#if __FreeBSD_version > 502112
++#if __FreeBSD_version < 502119
 +    com->hotchar = linesw[tp->t_line]->l_hotchar;
++#endif
 +#else
      com->hotchar = linesw[tp->t_line].l_hotchar;
 +#endif
