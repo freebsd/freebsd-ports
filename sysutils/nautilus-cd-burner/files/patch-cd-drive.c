@@ -1,5 +1,5 @@
---- cd-drive.c.orig	Sat Sep 20 00:07:14 2003
-+++ cd-drive.c	Sat Sep 20 00:14:56 2003
+--- cd-drive.c.orig	Mon Sep  8 15:24:07 2003
++++ cd-drive.c	Thu Oct  2 13:09:02 2003
 @@ -702,6 +702,7 @@
  	int speed = 16; /* XXX Hardcode the write speed for now. */
  	int max_speed = CDR_MAX_SPEED;
@@ -35,3 +35,12 @@
  		} else {
  			dev = g_strdup (cam_path);
  		}
+@@ -742,7 +752,7 @@
+ 		type |= CDDRIVE_TYPE_CD_DRIVE;
+ 		if (ioctl (fd, CDRIOCWRITESPEED, &max_speed) >= 0) {
+ 			/* XXX is it CD-R or CD-RW ? */
+-			type |= CDDRIVE_TYPE_CD_RECORDER;
++			type |= CDDRIVE_TYPE_CDRW_RECORDER;
+ 		}
+ 
+ 		close (fd);
