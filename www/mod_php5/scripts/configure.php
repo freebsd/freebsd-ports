@@ -41,65 +41,65 @@ case $retval in
 esac
 
 mkdir -p ${WRKDIRPREFIX}${CURDIR}
-> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+exec > ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 
 while [ "$1" ]; do
 	case $1 in
 		\"tuning\")
-			echo "APACHE_PERF_TUNING=	YES" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			echo "APACHE_PERF_TUNING=	YES"
 			;;
 		\"GD\")
-			echo "BUILD_DEPENDS+=		\${PREFIX}/lib/libgd.a:\${PORTSDIR}/graphics/gd" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-			echo "PHP3_CONF_ARGS+=	--with-gd=\${PREFIX}" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			echo "BUILD_DEPENDS+=		\${PREFIX}/lib/libgd.a:\${PORTSDIR}/graphics/gd"
+			echo "PHP3_CONF_ARGS+=	--with-gd=\${PREFIX}"
 			GD=1
 			;;
 		\"FreeType\")
-			echo "LIB_DEPENDS+=		ttf.3:\${PORTSDIR}/print/freetype" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			echo "LIB_DEPENDS+=		ttf.3:\${PORTSDIR}/print/freetype"
 			if [ -z "$GD" ]; then
 				set $* \"GD\"
 			fi
 			;;
 		\"zlib\")
-			echo "PHP3_CONF_ARGS+=	--with-zlib" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			echo "PHP3_CONF_ARGS+=	--with-zlib"
 			;;
 		\"mcrypt\")
-			echo "LIB_DEPENDS+=		mcrypt.2:\${PORTSDIR}/security/libmcrypt" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-			echo "PHP3_CONF_ARGS+=	--with-mcrypt=\${PREFIX}" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			echo "LIB_DEPENDS+=		mcrypt.2:\${PORTSDIR}/security/libmcrypt"
+			echo "PHP3_CONF_ARGS+=	--with-mcrypt=\${PREFIX}"
 			;;
 		\"mhash\")
-			echo "LIB_DEPENDS+=		mhash.1:\${PORTSDIR}/security/mhash" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-			echo "PHP3_CONF_ARGS+=	--with-mhash=\${PREFIX}" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			echo "LIB_DEPENDS+=		mhash.1:\${PORTSDIR}/security/mhash"
+			echo "PHP3_CONF_ARGS+=	--with-mhash=\${PREFIX}"
 			;;
 		\"pdflib\")
-			echo "BUILD_DEPENDS+=		\${PREFIX}/lib/libpdf.a:\${PORTSDIR}/print/pdflib" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-			echo "PHP3_CONF_ARGS+=	--with-pdflib=\${PREFIX}" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			echo "BUILD_DEPENDS+=		\${PREFIX}/lib/libpdf.a:\${PORTSDIR}/print/pdflib"
+			echo "PHP3_CONF_ARGS+=	--with-pdflib=\${PREFIX}"
 			;;
 		\"IMAP\")
-			echo "BUILD_DEPENDS+=		\${PREFIX}/lib/libc-client4.a:\${PORTSDIR}/mail/imap-uw" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-			echo "PHP3_CONF_ARGS+=	--with-imap=\${PREFIX}" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			echo "BUILD_DEPENDS+=		\${PREFIX}/lib/libc-client4.a:\${PORTSDIR}/mail/imap-uw"
+			echo "PHP3_CONF_ARGS+=	--with-imap=\${PREFIX}"
 			;;
 		\"MySQL\")
-			echo "LIB_DEPENDS+=		mysqlclient.6:\${PORTSDIR}/databases/mysql322-client" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-			echo "PHP3_CONF_ARGS+=	--with-mysql=\${PREFIX}" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			echo "LIB_DEPENDS+=		mysqlclient.6:\${PORTSDIR}/databases/mysql322-client"
+			echo "PHP3_CONF_ARGS+=	--with-mysql=\${PREFIX}"
 			;;
 		\"PostgreSQL\")
-			echo "BUILD_DEPENDS+=		\${PREFIX}/pgsql/bin/psql:\${PORTSDIR}/databases/postgresql" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-			echo "PHP3_CONF_ARGS+=	--with-pgsql=\${PREFIX}/pgsql" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			echo "BUILD_DEPENDS+=		\${PREFIX}/pgsql/bin/psql:\${PORTSDIR}/databases/postgresql"
+			echo "PHP3_CONF_ARGS+=	--with-pgsql=\${PREFIX}/pgsql"
 			;;
 		\"mSQL\")
-			echo "BUILD_DEPENDS+=		msql:\${PORTSDIR}/databases/msql" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-			echo "PHP3_CONF_ARGS+=	--with-msql=\${PREFIX}" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			echo "BUILD_DEPENDS+=		msql:\${PORTSDIR}/databases/msql"
+			echo "PHP3_CONF_ARGS+=	--with-msql=\${PREFIX}"
 			;;
 		\"dBase\")
-			echo "PHP3_CONF_ARGS+=	--with-dbase" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			echo "PHP3_CONF_ARGS+=	--with-dbase"
 			;;
 		\"OpenLDAP\")
-			echo "BUILD_DEPENDS+=		\${PREFIX}/lib/libldap.a:\${PORTSDIR}/net/openldap" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-			echo "BUILD_DEPENDS+=		\${PREFIX}/lib/liblber.a:\${PORTSDIR}/net/openldap" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-			echo "PHP3_CONF_ARGS+=	--with-ldap=\${PREFIX}" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			echo "BUILD_DEPENDS+=		\${PREFIX}/lib/libldap.a:\${PORTSDIR}/net/openldap"
+			echo "BUILD_DEPENDS+=		\${PREFIX}/lib/liblber.a:\${PORTSDIR}/net/openldap"
+			echo "PHP3_CONF_ARGS+=	--with-ldap=\${PREFIX}"
 			;;
 		\"modssl\")
-			cat << EOF >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			cat << EOF
 PKGNAME=	apache-php3-\${VERSION_APACHE}+mod_ssl-\${VERSION_MODSSL}
 MASTER_SITES+=	http://www.modssl.org/source/ \\
 		ftp://ftp.modssl.org/source/ \\
