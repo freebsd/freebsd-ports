@@ -127,6 +127,7 @@
     SUBDIR += xmmix
     SUBDIR += xmms
     SUBDIR += xmms-liveice
+    SUBDIR += xmms-tfmx
     SUBDIR += xmp
     SUBDIR += xmpeg3
     SUBDIR += xmradio
