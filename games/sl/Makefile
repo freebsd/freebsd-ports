@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.tkl.iis.u-tokyo.ac.jp/~toyoda/sl/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	th@cis.ibaraki.ac.jp
+MAINTAINER=	cbc06942@pop06.odn.ne.jp
 
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 
