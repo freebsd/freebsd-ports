@@ -161,6 +161,7 @@
     SUBDIR += kde3-i18n-fa
     SUBDIR += kde3-i18n-fi
     SUBDIR += kde3-i18n-gl
+    SUBDIR += kde3-i18n-hi
     SUBDIR += kde3-i18n-hr
     SUBDIR += kde3-i18n-id
     SUBDIR += kde3-i18n-is
