@@ -1,5 +1,5 @@
 --- _fdrc.orig	Mon Jun 10 00:00:00 2002
-+++ _fdrc	Tue Jun 11 21:27:57 2002
++++ _fdrc	Sun Aug 11 22:18:20 2002
 @@ -13,2 +13,3 @@
  #SORTTYPE=0
 +FD_SORTTYPE=101
@@ -39,7 +39,7 @@
 +  launch "$ext"		"$tar ztvf %C"		"$tar_format"
 +done
 +
-+for ext in .tar.bz2 .tbz2; do
++for ext in .tar.bz2 .tbz2 .tbz; do
 +  launch "$ext"		"$tar jtvf %C"		"$tar_format"
 +done
 +
@@ -76,7 +76,7 @@
 +  arch	"$ext"	"$tar cf - %T | gzip -9c > %C"	"$tar zxf %C %TA"
 +done
 +
-+for ext in .tar.bz2 .tbz2; do
++for ext in .tar.bz2 .tbz2 .tbz; do
 +  arch	"$ext"	"$tar cf - %T | bzip2 -9c > %C"	"$tar jxf %C %TA"
 +done
 +
