@@ -1,25 +1,38 @@
+@exec mkdir -p %%DBDIR%%/ntop
 bin/intop
 bin/ntop
 bin/ntop-config
 etc/rc.d/ntop.sh
 lib/libicmpPlugin.a
 lib/libicmpPlugin.so
-lib/libicmpPlugin.so.0
+lib/libicmpPlugin.so.99
 lib/liblastSeenPlugin.a
 lib/liblastSeenPlugin.so
-lib/liblastSeenPlugin.so.0
+lib/liblastSeenPlugin.so.99
+lib/libnetflowPlugin.a
+lib/libnetflowPlugin.so
+lib/libnetflowPlugin.so.99
 lib/libnfsPlugin.a
 lib/libnfsPlugin.so
-lib/libnfsPlugin.so.0
-lib/libntop-2.0.so.0
+lib/libnfsPlugin.so.99
+lib/libntop-2.0.so.99
 lib/libntop.a
 lib/libntop.so
-lib/libntopreport-2.0.so.0
+lib/libntopreport-2.0.so.99
 lib/libntopreport.a
 lib/libntopreport.so
+lib/libpdaPlugin.a
+lib/libpdaPlugin.so
+lib/libpdaPlugin.so.99
+lib/libsflowPlugin.a
+lib/libsflowPlugin.so
+lib/libsflowPlugin.so.99
 lib/ntop/plugins/icmpPlugin.so
 lib/ntop/plugins/lastSeenPlugin.so
+lib/ntop/plugins/netflowPlugin.so
 lib/ntop/plugins/nfsPlugin.so
+lib/ntop/plugins/pdaPlugin.so
+lib/ntop/plugins/sflowPlugin.so
 share/ntop/html/About.html
 share/ntop/html/Admin.html
 share/ntop/html/Copyright.html
@@ -33,8 +46,10 @@ share/ntop/html/Risk_low.gif
 share/ntop/html/Risk_medium.gif
 share/ntop/html/Risk_unknown.gif
 share/ntop/html/Stats.html
+share/ntop/html/antenna.gif
 share/ntop/html/arrow_down.gif
 share/ntop/html/arrow_up.gif
+share/ntop/html/back.gif
 share/ntop/html/bar.gif
 share/ntop/html/bg_line.gif
 share/ntop/html/black.gif
@@ -45,22 +60,37 @@ share/ntop/html/child.gif
 share/ntop/html/clear.gif
 share/ntop/html/collapsed.gif
 share/ntop/html/copyright.gif
+share/ntop/html/corner.gif
 share/ntop/html/deleteURL.gif
 share/ntop/html/deleteUser.gif
 share/ntop/html/dns.gif
 share/ntop/html/error.gif
 share/ntop/html/expanded.gif
+share/ntop/html/favicon.ico
+share/ntop/html/fback.gif
+share/ntop/html/fforward.gif
+share/ntop/html/forward.gif
 share/ntop/html/gauge.jpg
 share/ntop/html/gray_bg.gif
 share/ntop/html/help.html
 share/ntop/html/index.html
 share/ntop/html/index_inner.html
+share/ntop/html/index_inner_w3c.html
 share/ntop/html/index_left.html
+share/ntop/html/index_left_w3c.html
 share/ntop/html/index_top.html
+share/ntop/html/index_top_w3c.html
+share/ntop/html/index_w3c.html
 share/ntop/html/info.gif
+share/ntop/html/j_DataRcvd.html
+share/ntop/html/j_DataSent.html
+share/ntop/html/j_Stats.html
+share/ntop/html/j_home.html
+share/ntop/html/j_index_top.html
 share/ntop/html/mail.gif
 share/ntop/html/major.gif
 share/ntop/html/menubar.png
+share/ntop/html/menubar_j.png
 share/ntop/html/menuline.png
 share/ntop/html/minor.gif
 share/ntop/html/modifyUser.gif
@@ -307,6 +337,5 @@ share/ntop/ntop-cert.pem
 @dirrm share/ntop/html/statsicons
 @dirrm share/ntop/html
 @dirrm share/ntop
-@dirrm lib/plugins
 @dirrm lib/ntop/plugins
 @dirrm lib/ntop
