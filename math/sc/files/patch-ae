@@ -1,6 +1,15 @@
---- format.c.orig	Mon May 11 20:43:34 1992
-+++ format.c	Sat Dec  9 21:24:41 2000
-@@ -263,7 +263,6 @@
+--- format.c.orig	Mon May 11 11:43:34 1992
++++ format.c	Sun Jun 23 19:38:37 2002
+@@ -256,14 +256,14 @@
+ 
+         case '#':
+           width++;
++          zero_pad++;
+ 	  break;
+ 
+ 	case '0':
+-	  zero_pad = ++width;
++	  width++;
  	  break;
        }
      }
@@ -8,3 +17,12 @@
    }
    (void) sprintf(prtfmt, "%%.%dlf", width);
    (void) sprintf(mantissa, prtfmt, val);
+@@ -281,6 +281,8 @@
+     {
+       if (*cp == '0')
+         *cp = EOS;
++      else
++        break;
+     }
+   }
+ 
