@@ -61,6 +61,7 @@
     SUBDIR += moneydance
     SUBDIR += mrproject
     SUBDIR += multi-backgrounds-daemon
+    SUBDIR += multisync
     SUBDIR += nag
     SUBDIR += narval
     SUBDIR += notebook
