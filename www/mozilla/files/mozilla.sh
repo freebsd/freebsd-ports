@@ -20,10 +20,10 @@ case $1 in
     	exec ./$MOZILLA_EXEC "$@"
 	;;
     *)
-    	REMOTE_COMMAND="openURL($@, $LOCATION)"
+    	REMOTE_COMMAND="openURL($@,$LOCATION)"
 	;;
 esac
-    
+
 # process found
 ./$MOZILLA_EXEC -remote "ping()"                    &&
 ./$MOZILLA_EXEC -remote "$REMOTE_COMMAND"           && exit 0
