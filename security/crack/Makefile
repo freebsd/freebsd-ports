@@ -21,10 +21,10 @@ WRKSRC=		${WRKDIR}/c50a
 
 pre-configure:
 .if !defined(USE_DES)
-	/bin/mv -f ${WRKSRC}/src/libdes ${WRKSRC}/src/libdes.orig
-	/bin/mv -f ${WRKSRC}/src/util/elcid.c ${WRKSRC}/src/util/elcid.c.orig
-	${CP} -p ${WRKSRC}/src/util/elcid.c,bsd ${WRKSRC}/src/util/elcid.c
-	echo "XLIB+= -lcrypt" >> ${WRKSRC}/src/util/Makefile
+	@/bin/mv -f ${WRKSRC}/src/libdes ${WRKSRC}/src/libdes.orig
+	@/bin/mv -f ${WRKSRC}/src/util/elcid.c ${WRKSRC}/src/util/elcid.c.orig
+	@${CP} -p ${WRKSRC}/src/util/elcid.c,bsd ${WRKSRC}/src/util/elcid.c
+	@echo "XLIB+= -lcrypt" >> ${WRKSRC}/src/util/Makefile
 .endif
 
 pre-build:
@@ -37,13 +37,13 @@ do-build:
 	(cd ${WRKSRC} ; ./Crack -makeonly)
 	(cd ${WRKSRC} ; ./Crack -makedict)
 .if !defined(USE_DES)
-	#(cd ${WRKSRC} ; ./Crack -fgnd -fmt bsd ${FILESDIR}/pw-md5.test)
+	@#(cd ${WRKSRC} ; ./Crack -fgnd -fmt bsd ${FILESDIR}/pw-md5.test)
 .endif
 
 do-install:
-	${MKDIR} ${PREFIX}/crack
-	${RM} -f ${WRKSRC}/Run/*
-	(cd ${WRKSRC} ; tar cf - . | (cd ${PREFIX}/crack; tar xfBp -))
+	@${MKDIR} ${PREFIX}/crack
+	@${RM} -f ${WRKSRC}/Run/*
+	@(cd ${WRKSRC} ; tar cf - . | (cd ${PREFIX}/crack; tar xfBp -))
 
 
 .include <bsd.port.mk>
