@@ -5,7 +5,7 @@ To list displays installed by this port:
 
 To add this desklet to your desktop:
 
-    gdesklets %%PREFIX%%/share/gnome/gdesklets/Displays/%%NAME%%/networkinfo-lt.display
+    gdesklets open %%PREFIX%%/share/gnome/gdesklets/Displays/%%NAME%%/networkinfo-lt.display
 
 NOTE: Be sure to login as your user when you use the gdesklets command,
       as the configuration will be stored in the ~/.gdesklets/ directory
