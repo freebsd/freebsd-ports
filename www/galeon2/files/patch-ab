@@ -1,38 +1,24 @@
 
 $FreeBSD$
 
---- src/galeon.in.orig	Sat Nov 10 12:19:29 2001
-+++ src/galeon.in	Tue Nov 13 13:59:24 2001
-@@ -4,32 +4,14 @@
+--- src/galeon.in.orig	Thu Dec 27 23:49:08 2001
++++ src/galeon.in	Fri Dec 28 10:58:16 2001
+@@ -4,18 +4,14 @@
  
  if test -n "$MOZILLA_FIVE_HOME"; then
  	MOZILLA_HOME=$MOZILLA_FIVE_HOME
--elif [ -f @MOZILLA_HOME@/chrome/embed.jar ]; then
+-elif [ -f @MOZILLA_HOME@/chrome/comm.jar ]; then
 +elif [ -f @MOZILLA_HOME@/libgtkembedmoz.so ]; then
  	MOZILLA_HOME=@MOZILLA_HOME@
--elif [ -f /usr/local/mozilla/chrome/embed.jar ]; then
+-elif [ -f /usr/local/mozilla/chrome/comm.jar ]; then
 -	MOZILLA_HOME=/usr/local/mozilla
--elif [ -f /usr/lib/mozilla/chrome/embed.jar ]; then
+-elif [ -f /usr/lib/mozilla/chrome/comm.jar ]; then
 -	MOZILLA_HOME=/usr/lib/mozilla
--elif [ -f /opt/mozilla/chrome/embed.jar ]; then
+-elif [ -f /opt/mozilla/chrome/comm.jar ]; then
 -	MOZILLA_HOME=/opt/mozilla
--elif [ -f /usr/lib/mozilla-0.8.1/chrome/embed.jar ]; then
--	MOZILLA_HOME=/usr/lib/mozilla-0.8.1/
--elif [ -f /usr/lib/mozilla-0.9.1/chrome/embed.jar ]; then
--	MOZILLA_HOME=/usr/lib/mozilla-0.9.1/
--elif [ -f /usr/lib/mozilla-0.9.2/chrome/embed.jar ]; then
--	MOZILLA_HOME=/usr/lib/mozilla-0.9.2/
--elif [ -f /usr/lib/mozilla-0.9.3/chrome/embed.jar ]; then
--	MOZILLA_HOME=/usr/lib/mozilla-0.9.3/
--elif [ -f /usr/lib/mozilla-0.9.4/chrome/embed.jar ]; then
--	MOZILLA_HOME=/usr/lib/mozilla-0.9.4/
--elif [ -f /usr/lib/mozilla-0.9.5/chrome/embed.jar ]; then
--	MOZILLA_HOME=/usr/lib/mozilla-0.9.5/
--elif [ -f /usr/lib/mozilla-0.9.6/chrome/embed.jar ]; then
--	MOZILLA_HOME=/usr/lib/mozilla-0.9.6/
--elif [ -f /usr/lib/mozilla-0.9.7/chrome/embed.jar ]; then
+-elif [ -f /usr/lib/mozilla-0.9.7/chrome/comm.jar ]; then
 -	MOZILLA_HOME=/usr/lib/mozilla-0.9.7/
--elif [ -f /opt/gnome/lib/mozilla/chrome/embed.jar ]; then
+-elif [ -f /opt/gnome/lib/mozilla/chrome/comm.jar ]; then
 -        MOZILLA_HOME=/opt/gnome/lib/mozilla/
 +elif [ -f %%LOCALBASE%%/lib/%%MOZILLA%%/libgtkembedmoz.so ]; then
 +	MOZILLA_HOME=%%LOCALBASE%%/lib/%%MOZILLA%%
@@ -43,7 +29,7 @@ $FreeBSD$
  else
  	echo "Cannot find mozilla installation directory. Please set MOZILLA_FIVE_HOME to your mozilla directory"
  	exit
-@@ -41,16 +23,9 @@
+@@ -27,16 +23,9 @@
  MOZILLA_FIVE_HOME=$MOZILLA_HOME
  export MOZILLA_FIVE_HOME
  

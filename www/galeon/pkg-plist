@@ -226,19 +226,50 @@ share/gnome/galeon/themes/Remembrance/empty.png
 share/gnome/galeon/toc.css
 share/gnome/galeon/toolbars.png
 share/gnome/galeon/windows.png
+share/gnome/help/galeon-manual/C/aboutbook.html
 share/gnome/help/galeon-manual/C/apx-authors.sgml
 share/gnome/help/galeon-manual/C/apx-bugs.sgml
 share/gnome/help/galeon-manual/C/apx-command-line.sgml
 share/gnome/help/galeon-manual/C/apx-compiling.sgml
 share/gnome/help/galeon-manual/C/apx-troubleshooting.sgml
+share/gnome/help/galeon-manual/C/authors.html
+share/gnome/help/galeon-manual/C/bookmarks-aliases.html
+share/gnome/help/galeon-manual/C/bookmarks-context-menus.html
+share/gnome/help/galeon-manual/C/bookmarks-importing.html
+share/gnome/help/galeon-manual/C/bookmarks-my-portal.html
+share/gnome/help/galeon-manual/C/bookmarks-nicks.html
+share/gnome/help/galeon-manual/C/bookmarks-smart-bookmarks.html
+share/gnome/help/galeon-manual/C/bookmarks-toolbars.html
+share/gnome/help/galeon-manual/C/bookmarks-with-images.html
+share/gnome/help/galeon-manual/C/bookmarks.html
 share/gnome/help/galeon-manual/C/bookmarks.sgml
+share/gnome/help/galeon-manual/C/browser-window.html
 share/gnome/help/galeon-manual/C/browser-window.sgml
+share/gnome/help/galeon-manual/C/bugs.html
+share/gnome/help/galeon-manual/C/command-line-options.html
+share/gnome/help/galeon-manual/C/compiling-from-source.html
+share/gnome/help/galeon-manual/C/context-menus.html
+share/gnome/help/galeon-manual/C/find.html
+share/gnome/help/galeon-manual/C/full-screen-mode.html
 share/gnome/help/galeon-manual/C/galeon-manual.sgml
+share/gnome/help/galeon-manual/C/getting-started.html
 share/gnome/help/galeon-manual/C/getting-started.sgml
+share/gnome/help/galeon-manual/C/history.html
+share/gnome/help/galeon-manual/C/index.html
+share/gnome/help/galeon-manual/C/introduction.html
+share/gnome/help/galeon-manual/C/ln23.html
+share/gnome/help/galeon-manual/C/other-tools.html
 share/gnome/help/galeon-manual/C/other-tools.sgml
 share/gnome/help/galeon-manual/C/plugins.sgml
 share/gnome/help/galeon-manual/C/preface.sgml
+share/gnome/help/galeon-manual/C/preferences.html
 share/gnome/help/galeon-manual/C/preferences.sgml
+share/gnome/help/galeon-manual/C/prefs-advanced.html
+share/gnome/help/galeon-manual/C/prefs-gnome-url-handlers.html
+share/gnome/help/galeon-manual/C/prefs-handlers.html
+share/gnome/help/galeon-manual/C/prefs-rendering.html
+share/gnome/help/galeon-manual/C/prefs-user-interface.html
+share/gnome/help/galeon-manual/C/statusbar.html
 share/gnome/help/galeon-manual/C/stylesheet-images/caution.gif
 share/gnome/help/galeon-manual/C/stylesheet-images/home.gif
 share/gnome/help/galeon-manual/C/stylesheet-images/important.gif
@@ -251,6 +282,8 @@ share/gnome/help/galeon-manual/C/stylesheet-images/toc-minus.gif
 share/gnome/help/galeon-manual/C/stylesheet-images/toc-plus.gif
 share/gnome/help/galeon-manual/C/stylesheet-images/up.gif
 share/gnome/help/galeon-manual/C/stylesheet-images/warning.gif
+share/gnome/help/galeon-manual/C/tabbed-browsing.html
+share/gnome/help/galeon-manual/C/toolbar.html
 share/gnome/oaf/GNOME_Galeon_Automation.oaf
 share/gnome/omf/galeon/galeon-manual-C.omf
 share/gnome/pixmaps/galeon.png
@@ -291,7 +324,7 @@ share/locale/uk/LC_MESSAGES/galeon.mo
 share/locale/wa/LC_MESSAGES/galeon.mo
 share/locale/zh_CN/LC_MESSAGES/galeon.mo
 share/locale/zh_TW/LC_MESSAGES/galeon.mo
-@exec mkdir -p %D/share/gnome/help/galeon/C/figures
+@exec mkdir -p %D/share/gnome/help/galeon-manual/C/figures
 @dirrm share/gnome/sounds/galeon
 @dirrm share/gnome/omf/galeon
 @dirrm share/gnome/help/galeon-manual/C/stylesheet-images
