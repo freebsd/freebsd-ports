@@ -1,7 +1,8 @@
 aftp manipulates and browses Apple II disk images.  It
-supports both Apple  DOS 3.3,  ProDOS  and  XGS  images.
+supports both Apple II DOS 3.3,  ProDOS  and  XGS  images.
 Both  binary  floppy  images  (.IIE)  and hard disk volume
-(.HDV) images are also supported.
+(.HDV) images are also supported. It does NOT support the
+new 2mg format. 
 
 This version contains my patches and man page but nothing significant 
 has changed since Andru Luvisi released it at the end of 1996.
@@ -9,4 +10,4 @@ has changed since Andru Luvisi released it at the end of 1996.
 Share and enjoy,
 
 Joel...
-suttonj@interconnect.com.au
+sutton@aardvark.apana.org.au
