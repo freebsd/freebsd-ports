@@ -21,6 +21,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
+BROKEN=	Does not work with current version 0.8 of dependency mail/p5-Email-FolderType (CPAN RT #9562)
+
 MAN3=	Email::FolderType::Net.3
 
 .include <bsd.port.mk>
