@@ -1,0 +1,20 @@
+--- plug-ins/print/print-escp2.c.orig	Fri Oct 13 01:17:44 2000
++++ plug-ins/print/print-escp2.c	Fri Oct 13 01:18:14 2000
+@@ -26,6 +26,8 @@
+  * compile on generic platforms that don't support glib, gimp, gtk, etc.
+  */
+ 
++#include <sys/types.h>
++
+ #ifndef WEAVETEST
+ #include "print.h"
+ #endif
+@@ -4000,7 +4002,7 @@
+ 	      if (lineoffs[0].v[j] != 0)
+ 		fprintf(stderr,
+ 			"WARNING: pass %d subpass %d row %d: lineoffs %ld\n",
+-			w.pass, i, row, lineoffs[0].v[j]);
++			w.pass, i, row, (long)lineoffs[0].v[j]);
+ 	      lineoffs[0].v[j] = 0;
+ 	      lineactive[0].v[j] = 0;
+ 	    }
