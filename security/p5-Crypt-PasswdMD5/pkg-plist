@@ -1,4 +1,5 @@
 %%SITE_PERL%%/Crypt/PasswdMD5.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/PasswdMD5/.packlist
 @unexec rmdir %D/%%SITE_PERL%%/Crypt 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/PasswdMD5
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt 2>/dev/null || true
