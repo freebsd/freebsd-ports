@@ -1925,6 +1925,7 @@ fpc-gdbint	ports/devel/fpc-gdbint
 fpc-ide		ports/editors/fpc-ide
 fpc-inet	ports/net/fpc-inet
 fpc-odbc	ports/databases/fpc-odbc
+fpc-oracle	ports/databases/fpc-oracle
 fpc-postgres	ports/databases/fpc-postgres
 fpc-regexpr	ports/devel/fpc-regexpr
 fping		ports/net/fping
