@@ -3,12 +3,13 @@
 # Date created:		Oct 14, 1995
 # Whom:			pst
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1995/10/14 23:13:48 pst Exp $
 #
 
 DISTNAME=	weblint-1.011
-MASTER_SITES=	ftp://ftp.khoral.com/pub/perl/www/
 CATEGORIES+=	www
-MAINTAINER=	pst
+MASTER_SITES=	ftp://ftp.khoral.com/pub/perl/www/
+
+MAINTAINER=	pst@FreeBSD.ORG
 
 .include <bsd.port.mk>
