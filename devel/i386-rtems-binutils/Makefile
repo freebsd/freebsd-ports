@@ -6,20 +6,20 @@
 #
 
 PORTNAME=	binutils
-PORTVERSION=	2.11.2
+PORTVERSION=	2.13
 PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
-PATCHFILES=	${BINNAME}-rtems-20010622.diff
-PATCH_SITES=	ftp://ftp.oarcorp.com/pub/rtems/snapshots/c_tools/source/ \
-		http://rtems.thehousleys.net/
+#PATCHFILES=	${BINNAME}-rtems-20010622.diff
+#PATCH_SITES=	ftp://ftp.oarcorp.com/pub/rtems/snapshots/c_tools/source/ \
+#		http://rtems.thehousleys.net/
 
 MAINTAINER=	jeh@FreeBSD.org
 
 LCLTARGET?=	i386-rtems
 
-BINNAME=	binutils-2.11.2
+BINNAME=	binutils-2.13
 MASTERDIR=	${.CURDIR}/../i386-rtems-binutils
 PLIST=		${PKGDIR}/pkg-plist.${LCLTARGET}
 
@@ -40,7 +40,9 @@ MAN1=		${LCLTARGET}-ar.1 ${LCLTARGET}-nm.1 ${LCLTARGET}-objdump.1 \
 		${LCLTARGET}-ranlib.1 ${LCLTARGET}-size.1 \
 		${LCLTARGET}-strings.1 ${LCLTARGET}-strip.1 \
 		${LCLTARGET}-objcopy.1 ${LCLTARGET}-addr2line.1 \
-		${LCLTARGET}-nlmconv.1 ${LCLTARGET}-as.1 ${LCLTARGET}-ld.1
+		${LCLTARGET}-nlmconv.1 ${LCLTARGET}-as.1 ${LCLTARGET}-ld.1 \
+		${LCLTARGET}-dlltool.1 ${LCLTARGET}-readelf.1 \
+		${LCLTARGET}-windres.1
 
 pre-configure:
 	@(cd ${WRKDIR} ; ${MKDIR} build-${LCLTARGET})
