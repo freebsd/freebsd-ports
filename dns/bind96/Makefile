@@ -17,7 +17,7 @@ CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC} \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,dns/bind9/${ISCVERSION}/,}
 MASTER_SITE_SUBDIR=	bind9/${ISCVERSION}
-DISTFILES=	bind-${ISCVERSION}.tar.gz
+DISTNAME=	bind-${ISCVERSION}
 
 MAINTAINER=	DougB@FreeBSD.org
 COMMENT=	Completely new version of the BIND DNS server
@@ -83,7 +83,6 @@ MAN8=	dnssec-keygen.8 dnssec-makekeyset.8 dnssec-signkey.8 dnssec-signzone.8 \
 	lwresd.8 named-checkconf.8 named-checkzone.8 named.8 nsupdate.8 \
 	rndc-confgen.8 rndc.8
 
-WRKSRC=	${WRKDIR}/bind-${ISCVERSION}
 post-patch:
 .for FILE in check/named-checkconf.8 named/named.8 nsupdate/nsupdate.8 \
 	rndc/rndc.8
