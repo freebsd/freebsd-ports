@@ -16,9 +16,14 @@ MAINTAINER=	mph@freebsd.org
 COMMENT=	Version 4.0 of the threaded readnews newsreader
 
 NO_LATEST_LINK=	yes
-NO_PACKAGE=	"Too many questions"
 IS_INTERACTIVE=	yes
 MAN1=		trn.1 Pnews.1 Rnmail.1
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
 
 pre-configure:
 	@${ECHO_MSG} "===>  Running pre-configure target for ${DISTNAME}"
@@ -27,4 +32,4 @@ pre-configure:
 		${WRKDIR}/preconf.new
 	@sh ${WRKDIR}/preconf.new ${PORTSDIR} ${.CURDIR} ${WRKSRC}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
