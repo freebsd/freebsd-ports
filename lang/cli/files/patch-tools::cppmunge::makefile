@@ -1,0 +1,15 @@
+
+$FreeBSD$
+
+--- tools/cppmunge/makefile.orig	Fri Mar 22 03:49:22 2002
++++ tools/cppmunge/makefile	Wed Apr 10 12:10:29 2002
+@@ -17,7 +17,8 @@
+ # makefile for cppmunge
+ # ============================================================================
+ 
+-CFLAGS = -g -Wall -O2
++CFLAGS ?= -g -Wall -O2
++CFLAGS += -fno-builtin -fno-exceptions -fno-rtti
+ TARGET_NAME = $(TARGETCOMPLUS)/cppmunge
+ 
+ SOURCES=cppmunge.c

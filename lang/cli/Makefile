@@ -7,7 +7,7 @@
 
 PORTNAME=	cli
 PORTVERSION=	20020326
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	http://download.microsoft.com/download/.netframesdk/CLI/Beta1/WXP/EN-US/ \
 		http://download.microsoft.com/download/.netframesdk/Beta1/WXP/EN-US/ \
@@ -25,8 +25,11 @@ NO_CDROM=	${RESTRICTED}
 NO_PACKAGE=	${RESTRICTED}
 
 GNU_CONFIGURE=	yes
-CONFIGURE_SCRIPT=	env.sh ./configure
+CONFIGURE_ARGS=	${BUILD_TYPE}
+CONFIGURE_SCRIPT=	portconfigure
+MAKEFILE=	makefile
 MAKE_ENV=	CC_NAME="${CC}"
+BUILD_TYPE=	retail
 
 .include <bsd.port.pre.mk>
 
@@ -35,15 +38,10 @@ EXTRA_PATCHES!=	${ECHO_CMD} ${PKGDIR}/files.5/patch-*
 .endif
 
 post-extract:
-	@${CHMOD} 755 ${WRKSRC}/env.sh
-
-post-configure:
-	@for file in `/usr/bin/find ${WRKSRC} -type f -name "makefile*"`; do \
-		${LN} -sf $${file} `${ECHO_CMD} $${file} | ${SED} 's|makefile|Makefile|'` ; \
-	done
+	@${CP} ${SCRIPTDIR}/portconfigure ${WRKSRC}
 
 do-build:
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${SH} env.sh ./buildall)
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ./buildall ${BUILD_TYPE})
 
 .if !defined(I_AGREE_TO_LICENSE_TERMS)
 pre-install:
@@ -57,7 +55,7 @@ pre-install:
 do-install:
 	@${MKDIR} ${PREFIX}/cli-${PORTVERSION}
 	@${INSTALL_DATA} ${WRKSRC}/license.txt ${PREFIX}/cli-${PORTVERSION}
-	@${TAR} -C ${WRKSRC}/build/v1.x86fre.rotor -c -f - . | \
-		${TAR} -C ${PREFIX}/cli-${PORTVERSION} --unlink -x -f -
+	@cd ${WRKSRC}/build/v1.x86fre.rotor && ${FIND} . | \
+		/usr/bin/cpio -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/cli-${PORTVERSION}
 
 .include <bsd.port.post.mk>
