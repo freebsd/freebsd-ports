@@ -7,13 +7,14 @@
 
 PORTNAME=	teTeX
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://sunsite.informatik.rwth-aachen.de/pub/comp/tex/teTeX/2.0/distrib/ \
 		${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	systems/unix/teTeX/2.0/distrib/
 DISTFILES=	${TETEX_SRC} ${TETEX_TEXMF}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Thomas Esser's distribution of TeX & friends
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
@@ -82,6 +83,7 @@ pre-configure:
 pre-install:
 	@${MKDIR} ${TEXMF_TREE}
 	@cd ${TEXMF_TREE}; tar xfz ${_DISTDIR}/${TETEX_TEXMF}
+	@${INSTALL_DATA} ${FILESDIR}/listings.sty ${TEXMF_TREE}/tex/latex/listings/
 
 post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/utils/texinfo/util/texi2dvi ${PREFIX}/bin

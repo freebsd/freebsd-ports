@@ -10910,6 +10910,7 @@ share/texmf/tex/latex/koma-script/scrtime.sty
 share/texmf/tex/latex/koma-script/typearea.sty
 share/texmf/tex/latex/labels/labels.sty
 share/texmf/tex/latex/labels/olabels.sty
+share/texmf/tex/latex/listings/listings.sty
 share/texmf/tex/latex/listings/listings.cfg
 share/texmf/tex/latex/listings/lstdoc.sty
 share/texmf/tex/latex/listings/lstlang1.sty
