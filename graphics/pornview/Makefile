@@ -6,26 +6,32 @@
 #
 
 PORTNAME=	pornview
-PORTVERSION=	0.1.2.b
+PORTVERSION=	0.1.5
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/b/}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-#		xine.2:${PORTSDIR}/graphics/libxine
+LIB_DEPENDS=	exif.8:${PORTSDIR}/graphics/libexif
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include/" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-#CONFIGURE_ARGS+=	--with-xine
+USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	gtk12 gdkpixbuf gnomehier gnomeprefix
+USE_GNOME=	gdkpixbuf gnomehack gnomeprefix
 USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+.if defined(WITH_LIBXINE)
+LIB_DEPENDS+=	xine:${PORTSDIR}/graphics/libxine
+CONFIGURE_ARGS+=	--enable-xine
+.endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's,$(datadir)/gnome/apps/,$(datadir)/apps/,' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|INCLUDED_LIBINTL=yes|INCLUDED_LIBINTL=no|g ; \
+		 s|\\[$$][{]top_builddir[}]/intl/libintl.a|-lintl|g ; \
+		 s|[{]datadir[}]/locale|{prefix}/share/locale|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
