@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	speak_freely
-PORTVERSION=	7.5
+PORTVERSION=	7.6a
 CATEGORIES=	mbone audio security
-MASTER_SITES=	http://www.fourmilab.ch/speakfree/unix/download/${PORTVERSION}/
+MASTER_SITES=	http://www.fourmilab.ch/speakfree/unix/download/7.6/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Voice Communication Over Data Networks
+COMMENT=	Voice communication over data networks
 
 LIB_DEPENDS=	gsm.1:${PORTSDIR}/audio/gsm
 
@@ -22,11 +22,6 @@ SFLIB=		${PREFIX}/lib/speak_freely
 MAN1=		${UTILS:S/$/.1/} ${DEMNS:S/$/.1/} ${DDEMNS:S/$/.1/}
 
 MAKE_ENV=	"OPTFLAGS=${CFLAGS}"
-
-post-patch:
-	@${SED} -e 's,machine/soundcard.h,sys/soundcard.h,' < \
-		${WRKSRC}/soundbyte.c > ${WRKSRC}/soundbyte.c.new
-	@${MV} ${WRKSRC}/soundbyte.c.new ${WRKSRC}/soundbyte.c
 
 do-install:
 	if [ ! -d ${SFLIB} ]; then \
