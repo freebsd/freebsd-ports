@@ -7,7 +7,7 @@
 
 PORTNAME=	apache
 PORTVERSION=    1.3.24
-PORTREVISION=   3
+PORTREVISION=   4
 CATEGORIES=	www
 MASTER_SITES=   http://www.apache.org/dist/httpd/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/httpd/ \
@@ -32,6 +32,40 @@ PATCH_DIST_ARGS= -d ${WRKSRC}/src --forward --quiet -E ${PATCH_DIST_STRIP}
 
 MAINTAINER=	ache@freebsd.org
 
+DOCUMENT_ROOT=${PREFIX}/www/data
+DEFAULT_PATH=/bin:/usr/bin:${PREFIX}/bin
+
+.if defined(WITH_APACHE_SUEXEC) && ${WITH_APACHE_SUEXEC} == YES
+
+APACHE_SUEXEC_DOCROOT?=${DOCUMENT_ROOT}
+APACHE_SUEXEC_USERDIR?=public_html
+
+SUEXEC_CONF= \
+	--enable-suexec \
+	--suexec-docroot=${APACHE_SUEXEC_DOCROOT} \
+	--suexec-caller=www \
+	--suexec-uidmin=1000 \
+	--suexec-gidmin=1000 \
+	--suexec-logfile=/var/log/httpd-suexec.log \
+	--suexec-userdir=${APACHE_SUEXEC_USERDIR} \
+	--suexec-safepath=${DEFAULT_PATH}
+
+.if defined(APACHE_SUEXEC_UMASK)
+SUEXEC_CONF+= \
+	--suexec-umask=${APACHE_SUEXEC_UMASK}
+.endif
+
+PLIST_SUB+=     SUB_SUEXEC=""
+SUEXEC_MAN=     suexec.8
+
+.else   # !SUEXEC
+
+SUEXEC_CONF=
+PLIST_SUB+=     SUB_SUEXEC="@comment "
+SUEXEC_MAN=
+
+.endif  # !SUEXEC
+
 HAS_CONFIGURE=	yes
 # += for child ports
 CONFIGURE_ARGS+=	\
@@ -40,16 +74,16 @@ CONFIGURE_ARGS+=	\
 		--server-gid=www \
 		--with-perl=${PERL} \
 		--with-layout=FreeBSD \
-		--suexec-docroot=${PREFIX}/www/data \
 		--without-confadjust \
 		--enable-module=most \
 		--enable-module=auth_db \
 		--enable-module=mmap_static \
 		--disable-module=auth_dbm \
-		--enable-shared=max
+		--enable-shared=max \
+		${SUEXEC_CONF}
 
-OPTIM=          -DDOCUMENT_LOCATION=\\"${PREFIX}/www/data/\\" \
-		-DDEFAULT_PATH=\\"/bin:/usr/bin:${PREFIX}/bin\\"
+OPTIM=          -DDOCUMENT_LOCATION=\\"${DOCUMENT_ROOT}\\" \
+		-DDEFAULT_PATH=\\"${DEFAULT_PATH}\\"
 
 #
 # Set APACHE_HARD_SERVER_LIMIT env. variable to desired value
@@ -71,7 +105,8 @@ CFLAGS+=	-O6 -fomit-frame-pointer
 CONFIGURE_ENV=	OPTIM='${OPTIM}' LD_SHLIB='${CC}'
 
 MAN1=		dbmmanage.1 htdigest.1 htpasswd.1
-MAN8=		ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8
+MAN8=           ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8 \
+		${SUEXEC_MAN}
 
 post-extract:
 	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" ${FILESDIR}/apache.sh \
