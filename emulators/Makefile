@@ -60,6 +60,7 @@
     SUBDIR += linux_base-gentoo-stage1
     SUBDIR += mastergear
     SUBDIR += minivmac
+    SUBDIR += mips64emul
     SUBDIR += mtools
     SUBDIR += osf1_base
     SUBDIR += p-interp
