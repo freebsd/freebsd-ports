@@ -27,6 +27,8 @@ atari800-*		ports/emulators/atari800 xf25 contains copyright ROMs
 						and cannot be distributed.
 bb-*			ports/net/bb		FreeBSD has permission from
 						author to put bb onto CDROM.
+bcwipe			ports/security/bcwipe	Non-Commercial Distribution and
+						Use Only
 blender			ports/graphics/blender	Can't distribute commercially.
 bnetd			ports/games/bnetd	has been disabled for legal issue
 bro-*			ports/security/bro	No distribution due to
