@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	mail www
 
 MAINTAINER=	ports@FreeBSD.org
