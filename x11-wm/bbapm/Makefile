@@ -1,6 +1,6 @@
 # New ports collection makefile for:	bbapm
 # Date created:				3 August 2001
-# Whom:				Adam Weinberger <monkey@crackula.com>
+# Whom:				Adam Weinberger <adam@vectors.cx>
 #
 # $FreeBSD$
 #
@@ -14,7 +14,7 @@ PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	bbapm-0.0.1-freebsd-patch-2.diff
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	monkey@crackula.com
+MAINTAINER=	adam@vectors.cx
 
 RUN_DEPENDS=	blackbox:${PORTSDIR}/x11-wm/blackbox
 
