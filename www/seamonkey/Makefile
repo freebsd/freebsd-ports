@@ -6,12 +6,12 @@
 #
 
 PORTNAME?=	mozilla
-PORTVERSION=	1.2b
-PORTREVISION?=	3
+PORTVERSION=	1.3a
+PORTREVISION?=	0
 PORTEPOCH?=	1
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
-		http://people.FreeBSD.org/~marcus/:local
+	      	${MASTER_SITE_LOCAL}:local
 MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION:S/.rc/rc/}/src \
 		marcus/:local
 DISTFILES=	${PORTNAME}-source-${PORTVERSION:S/.rc/rc/}${EXTRACT_SUFX} \
@@ -72,11 +72,8 @@ CONFIGURE_ARGS=					\
 		--enable-crypto			\
 		--disable-debug			\
 		--enable-double-buffer		\
-		--enable-dtd-debug		\
-		--enable-jsd			\
 		--enable-mathml			\
 		--disable-md			\
-		--disable-optimize		\
 		--disable-pedantic		\
 		--disable-plaintext-editor-only	\
 		--enable-strip			\
@@ -114,6 +111,11 @@ CONFIGURE_ARGS+=	--enable-extensions=default,xmlterm
 .endif
 CONFIGURE_ENV=	MOZ_INTERNAL_LIBART_LGPL=1
 
+.if defined(WITH_JAVASCRIPT_DEBUGGER)
+CONFIGURE_ARGS+=	--enable-jsd \
+			--enable-dtd-debug
+.endif
+
 .if defined(WITH_CALENDAR)
 CONFIGURE_ENV+=		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--enable-calendar
@@ -125,7 +127,6 @@ CONFIGURE_ARGS+=	--disable-composer
 
 .if defined(WITH_GTK2)
 CONFIGURE_ARGS+=	--enable-default-toolkit=gtk2
-EXTRA_PATCHES=		${FILESDIR}/mozilla_12b_patch
 PKGCONFIG_FILES=	mozilla-gtkmozembed.pc mozilla-js.pc mozilla-xpcom.pc \
 			mozilla-nspr.pc mozilla-nss.pc
 .else
