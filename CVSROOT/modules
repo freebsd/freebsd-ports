@@ -6426,6 +6426,7 @@ ports_nut	ports/sysutils/nut
 ports_openssh	ports/security/openssh
 ports_openssl	ports/security/openssl
 ports_palm	ports/palm
+ports_pam_krb5	ports/security/pam_krb5
 ports_patch	ports/devel/patch
 ports_picobsd	ports/picobsd
 ports_portuguese	ports/portuguese
