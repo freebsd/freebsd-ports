@@ -26,7 +26,7 @@ RESTRICTED=	"Usage permitted for non-commercial purposes only"
 NO_CDROM=	"Sale for profit is not permitted"
 
 NO_BUILD=	yes
-NO_FILTER_SHLIBS=	yes
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 MAN1=		eagle.1
 
@@ -37,10 +37,12 @@ do-install:
 	${INSTALL_MAN} ${DATADIR}/man/eagle.1 ${PREFIX}/man/man1
 
 post-install:
+	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g" ${PKGDIR}/pkg-message > \
+		${PKGMESSAGE}
+.if !defined(BATCH)
 	@${ECHO_MSG}
-	@${ECHO_MSG} "After installation please enter the command \`eagle' to invoke the product"
-	@${ECHO_MSG} "registration (you need to have WRITE ACCESS to ${DATADIR}/bin"
-	@${ECHO_MSG} "directory for doing this)."
+	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
+.endif
 
 .include <bsd.port.mk>
