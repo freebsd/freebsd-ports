@@ -6,19 +6,22 @@
 #
 
 PORTNAME=	csv
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	textproc python
 MASTER_SITES=	http://object-craft.com.au/projects/csv/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	johann@egenetics.com
+MAINTAINER=	wjv@FreeBSD.org
 
 USE_PYTHON=	yes
 
 WRKSRC=		${WRKDIR}/csv
 
-do-configure:
-	@ (cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${MAKE} -f \
-	  Makefile.pre.in boot)
+do-build:
+	@ cd ${WRKSRC} && ${PYTHON_CMD} setup.py build
+
+do-install:
+	@ cd ${WRKSRC} && ${PYTHON_CMD} setup.py install \
+	  --prefix=${PREFIX}
 
 .include <bsd.port.mk>
