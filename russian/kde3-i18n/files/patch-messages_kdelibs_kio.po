@@ -1,0 +1,11 @@
+--- messages/kdelibs/kio.po	2005/03/11 08:20:39	1.275.2.2
++++ messages/kdelibs/kio.po	2005/03/18 13:20:23	1.275.2.3
+@@ -3735,7 +3735,7 @@
+ 
+ #: kfile/kfiledialog.cpp:1659 kfile/kfilefiltercombo.cpp:32
+ msgid "*|All Files"
+-msgstr "Все файлы"
++msgstr "*|Все файлы"
+ 
+ #: kfile/kfilefiltercombo.cpp:153
+ msgid "All Supported Files"
