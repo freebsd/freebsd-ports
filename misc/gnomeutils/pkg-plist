@@ -19,6 +19,7 @@ bin/splash
 bin/stripchart
 bin/stripchart-applet
 etc/CORBA/servers/gdict.gnorba
+etc/CORBA/servers/stripchart-applet.gnorba
 share/gnome/applets/Monitors/stripchart-applet.desktop
 share/gnome/applets/Utility/gdict.desktop
 share/gnome/application-registry/gnome-exe.applications
@@ -212,6 +213,30 @@ share/gnome/help/gdict/C/stylesheet-images/up.gif
 share/gnome/help/gdict/C/stylesheet-images/warning.gif
 share/gnome/help/gdict/C/topic.dat
 share/gnome/help/gdict/C/usage.html
+share/gnome/help/gdict/es/authors.html
+share/gnome/help/gdict/es/docbook.css
+share/gnome/help/gdict/es/figures/gdict-prefs.png
+share/gnome/help/gdict/es/figures/gdict-spell.png
+share/gnome/help/gdict/es/figures/gdictmain.png
+share/gnome/help/gdict/es/gdict.sgml
+share/gnome/help/gdict/es/index.html
+share/gnome/help/gdict/es/license.html
+share/gnome/help/gdict/es/ln10.html
+share/gnome/help/gdict/es/prefs.html
+share/gnome/help/gdict/es/stylesheet-images/caution.gif
+share/gnome/help/gdict/es/stylesheet-images/home.gif
+share/gnome/help/gdict/es/stylesheet-images/important.gif
+share/gnome/help/gdict/es/stylesheet-images/next.gif
+share/gnome/help/gdict/es/stylesheet-images/note.gif
+share/gnome/help/gdict/es/stylesheet-images/prev.gif
+share/gnome/help/gdict/es/stylesheet-images/tip.gif
+share/gnome/help/gdict/es/stylesheet-images/toc-blank.gif
+share/gnome/help/gdict/es/stylesheet-images/toc-minus.gif
+share/gnome/help/gdict/es/stylesheet-images/toc-plus.gif
+share/gnome/help/gdict/es/stylesheet-images/up.gif
+share/gnome/help/gdict/es/stylesheet-images/warning.gif
+share/gnome/help/gdict/es/topic.dat
+share/gnome/help/gdict/es/usage.html
 share/gnome/help/gdiskfree/C/authors.html
 share/gnome/help/gdiskfree/C/docbook.css
 share/gnome/help/gdiskfree/C/figures/gdiskfree-prefs.png
@@ -680,6 +705,7 @@ share/gnome/omf/gnome-utils/gcalc-it.omf
 share/gnome/omf/gnome-utils/gcharmap-C.omf
 share/gnome/omf/gnome-utils/gcolorsel-C.omf
 share/gnome/omf/gnome-utils/gdict-C.omf
+share/gnome/omf/gnome-utils/gdict-es.omf
 share/gnome/omf/gnome-utils/gdiskfree-C.omf
 share/gnome/omf/gnome-utils/gdiskfree-es.omf
 share/gnome/omf/gnome-utils/gdiskfree-it.omf
@@ -738,6 +764,7 @@ share/locale/ru/LC_MESSAGES/gnome-utils.mo
 share/locale/sk/LC_MESSAGES/gnome-utils.mo
 share/locale/sl/LC_MESSAGES/gnome-utils.mo
 share/locale/sv/LC_MESSAGES/gnome-utils.mo
+share/locale/ta/LC_MESSAGES/gnome-utils.mo
 share/locale/tr/LC_MESSAGES/gnome-utils.mo
 share/locale/uk/LC_MESSAGES/gnome-utils.mo
 share/locale/wa/LC_MESSAGES/gnome-utils.mo
@@ -815,6 +842,9 @@ share/locale/zh_TW.Big5/LC_MESSAGES/gnome-utils.mo
 @dirrm share/gnome/help/gdiskfree/C/figures
 @dirrm share/gnome/help/gdiskfree/C
 @dirrm share/gnome/help/gdiskfree
+@dirrm share/gnome/help/gdict/es/stylesheet-images
+@dirrm share/gnome/help/gdict/es/figures
+@dirrm share/gnome/help/gdict/es
 @dirrm share/gnome/help/gdict/C/stylesheet-images
 @dirrm share/gnome/help/gdict/C/figures
 @dirrm share/gnome/help/gdict/C
