@@ -1,6 +1,21 @@
---- src/term.c.orig	Sat Aug  7 05:07:34 1999
-+++ src/term.c	Sat Aug  7 05:07:39 1999
-@@ -201,11 +201,14 @@
+--- src/term.c.orig	Sat Jan 25 00:03:58 1997
++++ src/term.c	Wed Jan 24 00:08:14 2001
+@@ -33,7 +33,13 @@
+ #include	<termio.h>
+ #elif defined(__FreeBSD__)
+ #include	<termios.h>
+-#include	<machine/console.h>
++#include        <osreldate.h>
++#if __FreeBSD_version >= 410000
++#  include      <sys/consio.h>
++#  include      <sys/kbio.h>
++#else
++#  include      <machine/console.h>
++#endif
+ #define termio termios
+ #endif
+ #include	<signal.h>
+@@ -201,11 +207,14 @@
  	}
  	if (FD_ISSET(0, &readFds)) {
  	    i = read(0, buff, BUFSIZ);
