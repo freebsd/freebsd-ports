@@ -55,6 +55,12 @@ CONFIGURE_MULTIBYTE=	--enable-multibyte="${DEFAULT_ENCODING}"
 .else
 CONFIGURE_MULTIBYTE=	--enable-multibyte
 .endif
+.if defined(WITH_PERL)
+CONFIGURE_PERL=		--with-perl
+.endif
+.if defined(WITH_ODBC)
+CONFIGURE_ODBC=		--with-odbc
+.endif
 
 # if you want jdbc, type make -DWITH_JDBC
 # Honors JAVA_HOME if you have it set, and don't want the dependency.
@@ -76,6 +82,8 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}/pgsql \
 		--with-includes="${PREFIX}/include ${TCL_INCDIR} ${TK_INCDIR}" \
 		${CONFIGURE_TCL} \
 		${CONFIGURE_MULTIBYTE} \
+		${CONFIGURE_PERL} \
+		${CONFIGURE_ODBC} \
 		--with-libraries=${PREFIX}/lib
 
 MAN1=		createdb.1 createlang.1 createuser.1 dropdb.1 droplang.1 \
@@ -132,6 +140,18 @@ pre-fetch:
 	@${ECHO_MSG} "    make -DWITH_JDBC"
 .else
 	@${ECHO_MSG} "Building PostgreSQL with \"postgresql.jar\"."
+.endif
+.if !defined(WITH_PERL)
+	@${ECHO_MSG} "To build Perl interface and pl/Perl interpreter:"
+	@${ECHO_MSG} "    make -DWITH_PERL"
+.else
+	@${ECHO_MSG} "Building PostgreSQL with \"pl/Perl\"."
+.endif
+.if !defined(WITH_ODBC)
+	@${ECHO_MSG} "To build the ODBC driver package:"
+	@${ECHO_MSG} "    make -DWITH_ODBC"
+.else
+	@${ECHO_MSG} "Building PostgreSQL with ODBC Drivers."
 .endif
 
 post-patch:
@@ -210,6 +230,11 @@ post-install:
 	@${CP} ${TMPPLIST} ${TMPPLIST}.notcl
 	@${CAT} ${PKGDIR}/PLIST.tcl ${TMPPLIST}.notcl > ${TMPPLIST}
 	@${RM} ${TMPPLIST}.notcl
+.endif
+.if defined(WITH_ODBC)
+	@${CP} ${TMPPLIST} ${TMPPLIST}.noodbc
+	@${CAT} ${PKGDIR}/PLIST.odbc ${TMPPLIST}.noodbc > ${TMPPLIST}
+	@${RM} ${TMPPLIST}.noodbc
 .endif
 .if defined(WITH_JDBC)
 	@ ${MKDIR} -m 0555 ${PREFIX}/share/java/classes
