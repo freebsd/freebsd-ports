@@ -10,10 +10,11 @@ PORTVERSION=	3.1.0.6
 PORTREVISION=	2
 CATEGORIES=	games linux
 MASTER_SITES=	http://ftp1download.gamespy.com/fileplanet/fpnew/action/half-life/official/ \
-		http://www.jetstreamgames.co.nz/files/pub/gamespyftp1/fpnew/action/half-life/official/ \
 		ftp://ftp.fasta.fh-dortmund.de/gdi/halflife/server/linux/ \
-		ftp://fileplanet.ngi.it/fileplanet/fpnew/action/half-life/official/ \
+		http://fileplanet.games-world.net/dl/ftp1.gamespy.com/fpnew/action/half-life/official/ \
+		ftp://fileplanet.blueyonder.co.uk/ftp1.gamespy.com/fpnew/action/half-life/official/ \
 		ftp://ftp.gmd.de/people/cla/hl/hl-newest/linux/ \
+		ftp://ftp.fh-rosenheim.de/pub/games/halflife/servers/ \
 		ftp://ftp.icsmedia.de/pub/games/halflife/hl_server/
 DISTNAME=	hlds_l3106
 
