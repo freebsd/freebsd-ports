@@ -65,7 +65,7 @@ french/cups-base||2002-11-23|deleted since not supportable under cups 1.1.16
 french/cups-lpr||2002-11-23|deleted since not supportable under cups 1.1.16
 korean/w3m|www/w3m-m17n|2002-11-23|www/w3m-m17n could handle Korean
 korean/gaim|net/gaim|2002-11-24|net/gaim could handle Korean
-palm/xcopilot|ports/pose|2002-11-24|pose supersceded xcopilot
+palm/xcopilot|palm/pose|2002-11-24|pose supersceded xcopilot
 www/libxpg4-ns||2002-11-24|needless since all native netscapes are removed
 textproc/pspell-ispell||2002-11-28|this plugin was obsoleted by aspell
 audio/linux-realplayer|multimedia/linux-realplayer|2002-11-28|new category
@@ -265,7 +265,7 @@ japanese/ptex-common|japanese/ptex-base|2003-04-13|only used by one port
 misc/kde3-i18n-he|hebrew/kde3-i18n|2003-04-13|new category
 misc/kde3-i18n-hu|hungarian/kde3-i18n|2003-04-13|new category
 misc/kde3-i18n-vi|vietnamese/kde3-i18n|2003-04-13|new category
-devel/linux_devtools|linux/linux_devtools-6|2003-04-17|finished repocopy
+devel/linux_devtools|devel/linux_devtools-6|2003-04-17|finished repocopy
 emulators/linux-vmware-toolbox|emulators/linux-vmware-toolbox2|2003-04-19|port renamed
 emulators/vmware-guestd|emulators/vmware-guestd3|2003-04-19|port renamed
 archivers/ruby-zlib||2003-04-19|integrated into ruby16-shim-ruby18
@@ -315,7 +315,7 @@ devel/SN|devel/sourcenav|2003-05-07|renamed by upstream
 japanese/gp||2003-05-07|development discontinued and distfile unavailable
 www/orion-devel|www/orion|2003-05-08|stable version caught up with development version
 editors/xemacs21-mule-common||2003-05-09|needless since new xemacs21-mule is 21.4.12
-x11-toolkits/fltk-xunicode|x11-toolkits/fltk|2003-05-011|maintenance discontinued
+x11-toolkits/fltk-xunicode|x11-toolkits/fltk|2003-05-11|maintenance discontinued
 www/nautilus-gtkhtml||2003-05-11|maintenance discontinued
 editors/xemacs21-sumo||2003-05-12|needless since merged to xemacs-{mule-}packages
 editors/xemacs21-mule-sumo||2003-05-12|needless since merged to xemacs-{mule-}packages
@@ -532,7 +532,7 @@ net/gnugadu|polish/gnugadu|2003-08-19|moved to new polish category
 misc/pl-sms|polish/sms|2003-08-19|moved to new polish category
 misc/kde3-i18n-pl|polish/kde3-i18n|2003-08-19|moved to new polish category
 misc/koffice-i18n-pl|polish/koffice-i18n|2003-08-19|moved to new polish category
-textproc/pl-aspell|polish/pl-aspell|2003-08-19|moved to new polish category
+textproc/pl-aspell|polish/aspell|2003-08-19|moved to new polish category
 www/bmsync||2003-08-19|obsolete
 shells/tcsh||2003-08-21|removed, already in base system, not really maintained
 x11/ruby-panel-applet||2003-08-22|GNOME 1.4 desktop is gone
@@ -783,7 +783,7 @@ misc/quantlib|finance/quantlib|2004-01-22|moved to finance category
 misc/wmstock|finance/wmstock|2004-01-22|moved to finance category
 misc/xquote|finance/xquote|2004-01-22|moved to finance category
 java/xalan-j|textproc/xalan-j|2004-01-22|moved to textproc category
-x11-toolkits/render|x11/render|2004-01-24|moved to x11 category
+x11-toolkits/render|x11/renderext|2004-01-24|moved to x11 category
 x11-toolkits/xrender|x11/libXrender|2004-01-24|moved to x11 category
 net/py-rrdtool||2004-01-28|mastersite disappeared and functionality exists in net/py-rrdtool_lgpl
 graphics/sketch|graphics/skencil|2004-01-28|Project renamed
@@ -815,7 +815,7 @@ lang/squeak2|lang/squeak3|2004-02-17|Outdated, obsolete and no longer needed
 www/mozilla-gtk2|www/mozilla|2004-02-17|GTK2 mozilla is now the default
 www/mozilla-devel-gtk2|www/mozilla-devel|2004-02-17|GTK2 mozilla is now the default
 games/myth2_demo||2004-02-21|Port broken for >6 months
-ircatlite||2004-02-21|Software has not been developed in >4 years
+irc/ircatlite||2004-02-21|Software has not been developed in >4 years
 net/NeTraMet|net-mgmt/NeTraMet|2004-02-22|new category
 net/aggregate|net-mgmt/aggregate|2004-02-22|new category
 net/aguri|net-mgmt/aguri|2004-02-22|new category
@@ -991,7 +991,7 @@ print/rubber|textproc/rubber|2004-03-22|remove duplicate port
 print/libgnomeprint20||2004-03-23|removed obsolete port
 x11-toolkits/libgnomeprintui20||2004-03-23|removed obsolete port
 textproc/whitespace.el||2004-03-24|removed obsolete port
-editors/openoffice-1.1-sl-SL|editors/openoffice-1.1-sl-SI|2004-03-25|correct ISO code
+editors/openoffice-1.1-sl-SL|editors/openoffice-1.1-sl_SI|2004-03-25|correct ISO code
 www/webcpp|textproc/webcpp|2004-03-25|moved to textproc category
 x11-toolkits/eel||2004-03-25|removed obsolete port
 editors/xemacs21|editors/xemacs|2004-03-27|removed old version of xemacs 21.x
@@ -1002,13 +1002,13 @@ mail/mew3-xemacs21|mail/mew3|2004-03-28|removed old version of xemacs 21.x
 net/memcached|databases/memcached|2004-03-27|remove duplicate port
 japanese/emacs21-emcws|japanese/emacs-emcws|2004-03-29|emacs 21.x moved to default port location
 x11-wm/9menu|x11/9menu|2004-03-29|accurate category
-japanese/postgresql-man|japanese/postgresql73-man|renamed
-textproc/no-aspell|2004-04-01|renamed to textproc/nn-aspell
+japanese/postgresql-man|japanese/postgresql73-man|2004-04-01|renamed
+textproc/no-aspell|textproc/nn-aspell|2004-04-01|renamed to textproc/nn-aspell
 www/zope-cmf13|www/zope-cmf|2004-04-01|old version no longer needed
 multimedia/acme|sysutils/gnomecontrolcenter2|2004-04-04|merged into gnomecontrolcenter2
 x11/gswitchit|x11/gnomeapplets2|2004-04-04|merged into gnomeapplets2
 devel/gnomevfs-extras|devel/gnomevfs2|2004-04-04|merged into gnomevfs2
-games/scummvm|emulators/scummvm|2004-04-06|new category
+emulators/scummvm|games/scummvm|2004-04-06|new category
 ftp/wget+ipv6|ftp/wget|2004-04-06|removed, ftp/wget has this function
 misc/metatheme2||2004-04-09|removed obsolete port
 x11-fm/apotheke||2004-04-10|removed obsolete port
@@ -1059,7 +1059,7 @@ net/openldap20-client||2004-05-03|removed EOL version of OpenLDAP
 net/openldap20-server||2004-05-03|removed EOL version of OpenLDAP
 security/libgcrypt-devel|security/libgcrypt|2004-05-03|1.2.0 is now the new stable version
 security/newpg|security/gnupg-devel|2004-05-03|newpg replaced by gnupg-devel
-graphics/p5-GD1|graphics/p5-GD|removed (obsolete)
+graphics/p5-GD1|graphics/p5-GD|2004-05-01|removed (obsolete)
 japanese/gd1|japanese/gd|2004-05-01|removed (obsolete)
 russian/gd|ukrainian/gd|2004-05-01|removed (obsolete)
 graphics/gd1|graphics/gd|2004-05-01|removed (obsolete)
