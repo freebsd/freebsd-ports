@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vips
-PORTVERSION=	7.8.12
-PORTREVISION=	3
+PORTVERSION=	7.8.14
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.vips.ecs.soton.ac.uk/vips-7.8/
 
@@ -26,7 +25,9 @@ USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 
-CONFIGURE_ARGS=	--without-magick --without-x
+CONFIGURE_ARGS=	--without-magick --without-x \
+		--with-fftw-libraries=${LOCALBASE}/lib \
+		--with-fftw-includes=${LOCALBASE}/include 
 
 MAN1=		batch_image_convert.1 batch_rubber_sheet.1 \
 		binfile.1 cooc.1 cooc_features.1 debugim.1 \
