@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sun Mar 13 02:25:54 2005
++++ Makefile.in	Sun Mar 13 02:26:11 2005
+@@ -92,7 +92,7 @@
+ # Actions
+ #
+ 
+-install: install-base install-safe-config install-sample-config
++install: install-base install-sample-config
+ 
+ force-install: install-base install-unsafe-config install-sample-config
+ 

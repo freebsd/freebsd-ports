@@ -92,6 +92,7 @@
     SUBDIR += dcfldd
     SUBDIR += deleted
     SUBDIR += detach
+    SUBDIR += detox
     SUBDIR += di
     SUBDIR += dim
     SUBDIR += dirdiff
