@@ -19,6 +19,7 @@ USE_GHOSTSCRIPT_RUN=	yes
 RUN_DEPENDS=	enscript:${PORTSDIR}/print/enscript-letter
 
 USE_GETOPT_LONG=	yes
+USE_GMAKE=	yes
 MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 CFLAGS+=	${CPPFLAGS}
 
