@@ -1,5 +1,5 @@
---- configure.orig	Sat Oct  6 01:24:21 2001
-+++ configure	Tue Oct 23 02:16:02 2001
+--- configure.orig	Fri Oct  5 20:01:21 2001
++++ configure	Sat Mar  2 20:10:01 2002
 @@ -4,6 +4,7 @@
  use_plot=0
  use_pari=0
@@ -17,7 +17,22 @@
  	-fep)
  		use_fep=1 ;;
  	esac
-@@ -59,6 +62,10 @@
+@@ -43,12 +46,14 @@
+ libname=$libname"_pari"
+ libpari=pari
+ echo "#define USE_PARI" >> include/config.h
++echo "#define PARI_VERSION \"PARI CALCULATOR Version ${OLD_PARI_VERSION}, Copyright (C) 2000 The PARI Group\"" >> include/version.h
+ fi
+ 
+ if [ $use_pari = 2 ]; then
+ libname=$libname"_pari"
+ libpari=pari-2.2
+ echo "#define USE_PARI" >> include/config.h
++echo "#define PARI_VERSION \"PARI CALCULATOR Version ${PARI_VERSION}, Copyright (C) 2000 The PARI Group\"" >> include/version.h
+ fi
+ 
+ if [ $use_plot != 0 ]; then
+@@ -59,6 +64,11 @@
  if [ $use_interval != 0 ]; then
  libname=$libname"_itv"
  echo "#define USE_INTERVAL" >> include/config.h
@@ -25,6 +40,7 @@
 +
 +if [ $use_lapack != 0 ]; then
 +echo "#define USE_LAPACK" >> include/config.h
++echo "#define LAPACK_VERSION \"LAPACK Project Version ${LAPACK_VERSION}\"" >> include/version.h
  fi
  
  if [ $use_fep != 0 ]; then
