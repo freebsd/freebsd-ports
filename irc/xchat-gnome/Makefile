@@ -28,6 +28,8 @@ CONFIGURE_ARGS=	--enable-nls \
 		--enable-ipv6 \
 		--enable-perl
 
+CONFLICTS=	xchat-*
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_SOCKS)
