@@ -60,6 +60,7 @@
     SUBDIR += libxml
     SUBDIR += libxml2
     SUBDIR += libxode
+    SUBDIR += libxslt
     SUBDIR += linuxdoc
     SUBDIR += lotusxsl
     SUBDIR += ltxml

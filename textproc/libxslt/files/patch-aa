@@ -1,0 +1,12 @@
+--- Makefile.in.orig	Thu Feb  8 06:03:15 2001
++++ Makefile.in	Fri Feb  9 17:10:51 2001
+
+@@ -84,6 +84,6 @@
+ 
+-SUBDIRS =  	libxslt 	tests 	doc
++SUBDIRS =  	libxslt
+ 
+ 
+-confexecdir = $(libdir)
++confexecdir = $(sysconfdir)
+ confexec_DATA = xsltConf.sh
