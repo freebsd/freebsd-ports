@@ -210,6 +210,7 @@ share/nsl/test/test_new1.aut
 share/nsl/test/testa.sc
 share/nsl/test/testcb.sc
 share/nsl/test/testflow.sc
+share/nsl/test/testfwd.sc
 share/nsl/test/testline.sc
 share/nsl/test/testp.sc
 share/nsl/test/testr.sc
