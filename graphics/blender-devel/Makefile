@@ -20,6 +20,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		png.5:${PORTSDIR}/graphics/png
 
+BROKEN=		Does not build
+
 PLIST_FILES=	bin/blender
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
