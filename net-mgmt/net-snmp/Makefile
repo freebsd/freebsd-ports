@@ -268,6 +268,6 @@ display-message:
 
 # Maintainer's note:
 #   Don't forget to bump library version in these ports.
-#   lang/php4,lang/php5,net-mgmt/braa,net-mgmt/docsis,net/ethereal,net-mgmt/mbrowse,net/quagga,net/tethereal,net-mgmt/zabbix,security/libfwbuilder
+#   lang/php4,lang/php5,net-mgmt/braa,net-mgmt/docsis,net/ethereal,net-mgmt/mbrowse,net/quagga,net/tethereal,net-mgmt/zabbix,security/libfwbuilder,net-mgmt/p5-SNMP-Info,net-mgmt/nagios-snmp-plugins,french/plgrenouille
 
 .include <bsd.port.post.mk>
