@@ -1,0 +1,10 @@
+--- bin/i386/green_threads/.extract_args.orig	Wed Sep 17 23:13:11 2003
++++ bin/i386/green_threads/.extract_args	Wed Sep 17 23:14:57 2003
+@@ -10,6 +10,7 @@
+ 
+ RUNTIME_ARGS=""
+ APP_ARGS=""
++EXPR_COMPAT=yes; export EXPR_COMPAT
+ for a in "$@"
+ do
+     if ja=`expr "$a" : '-J\(..*\)'`
