@@ -3,3 +3,4 @@ share/games/pentix/pentix.qtn
 share/games/pentix/pentix.res
 share/games/pentix/readme.txt
 @dirrm share/games/pentix
+@dirrm share/games
