@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	obrien@FreeBSD.org
 
-WRKSRC=		${WRKDIR}
+NO_WRKSUBDIR=	yes
 MAKEFILE=	Makefile.i386
 MAN1=		mprof.1
 

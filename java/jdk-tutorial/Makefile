@@ -13,11 +13,10 @@ DISTNAME=	tutorial
 
 MAINTAINER=	martti.kuparinen@ericsson.com
 
-WRKSRC=		${WRKDIR}
+NO_WRKSUNDIR=	yes
 RESTRICTED=	"This software is under license and export control."
 NO_BUILD=	yes
 PLIST_SUB+=	VERSION=${PORTVERSION}
-PKGMESSAGE= ${WRKDIR}/MESSAGE
 
 .include <bsd.port.pre.mk>
 

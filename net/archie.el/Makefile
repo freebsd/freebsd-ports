@@ -20,7 +20,6 @@ RUN_DEPENDS=	archie:${PORTSDIR}/net/archie
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}
 
 ELISPDIR=	${PREFIX}/share/emacs/site-lisp
 XELISPDIR=	${PREFIX}/lib/xemacs/site-lisp

@@ -19,7 +19,6 @@ RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 EXTRACT_ONLY=	# empty
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}
 
 ELISPDIR=	${PREFIX}/share/emacs/site-lisp
 XELISPDIR=	${PREFIX}/lib/xemacs/site-lisp

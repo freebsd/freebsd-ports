@@ -14,7 +14,7 @@ DISTNAME=		AntipoliX_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-WRKSRC=		${WRKDIR}
+NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
 
 do-install:

@@ -16,7 +16,7 @@ MAINTAINER=	mita@jp.FreeBSD.org
 RUN_DEPENDS=	tgif:${PORTSDIR}/graphics/tgif
 
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}
+NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes
 
 do-install:

@@ -18,7 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk
 
 EXTRACT_ONLY=
 
-WRKSRC=		${WRKDIR}
+NO_WRKSUBDIR=	yes
 JDK_VERSION=    1.1.8
 NO_BUILD=	yes
 NO_CDROM=	"See the licence"

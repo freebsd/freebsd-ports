@@ -20,7 +20,7 @@ PATCH_DIST_STRIP=	-p1
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
-WRKSRC=	${WRKDIR}
+NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes
 
 pre-configure:

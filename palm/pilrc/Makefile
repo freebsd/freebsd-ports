@@ -17,7 +17,7 @@ LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		glib12.3:${PORTSDIR}/devel/glib12
 
 USE_ZIP=	YES
-WRKSRC=		${WRKDIR}
+NO_WRKSUBDIR=	YES
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pilrc ${WRKSRC}/pilrcui ${PREFIX}/bin
