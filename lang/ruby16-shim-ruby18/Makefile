@@ -50,7 +50,7 @@ pre-install:
 post-install:
 .if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
 	for f in ${INSTALLED_SCRIPTS}; do \
-		${LN} -f $${f}${RUBY_R} $${f}${_RUBY_SUFFIX}; \
+		${LN} -f $${f}${RUBY_SUFFIX} $${f}${RUBY_R}; \
 	done
 .endif
 
