@@ -3,7 +3,7 @@
 # Date created:         26 Oct 97
 # Whom:                 Pedro Giffuni <giffunip@asme.org>
 #
-# $Id: Makefile,v 1.2 1998/10/10 05:40:54 steve Exp $
+# $Id: Makefile,v 1.3 1999/04/13 10:54:19 jseger Exp $
 #
 
 DISTNAME=	metis-4.0
@@ -25,6 +25,13 @@ do-install:
 	$(INSTALL_PROGRAM) $(WRKSRC)/mesh2dual	$(PREFIX)/bin
 	$(INSTALL_PROGRAM) $(WRKSRC)/graphchk	$(PREFIX)/bin
 	$(INSTALL_DATA) $(WRKSRC)/libmetis.a $(PREFIX)/lib
+	${MKDIR} $(PREFIX)/include/metis
+	$(INSTALL_DATA) $(WRKSRC)/Lib/defs.h    $(PREFIX)/include/metis
+	$(INSTALL_DATA) $(WRKSRC)/Lib/macros.h  $(PREFIX)/include/metis
+	$(INSTALL_DATA) $(WRKSRC)/Lib/metis.h   $(PREFIX)/include/metis
+	$(INSTALL_DATA) $(WRKSRC)/Lib/proto.h   $(PREFIX)/include/metis
+	$(INSTALL_DATA) $(WRKSRC)/Lib/rename.h  $(PREFIX)/include/metis
+	$(INSTALL_DATA) $(WRKSRC)/Lib/struct.h  $(PREFIX)/include/metis
 .if !defined(NOPORTDOCS)
 	${MKDIR} $(PREFIX)/share/doc/METIS
 	$(INSTALL_DATA) ${WRKSRC}/Doc/manual.ps $(PREFIX)/share/doc/METIS
