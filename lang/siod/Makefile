@@ -3,7 +3,7 @@
 # Date created:        28 April 1999
 # Whom:                jkoshy
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/04/28 09:45:37 jkoshy Exp $
 #
 
 DISTNAME=	siod
@@ -18,6 +18,7 @@ MAINTAINER=	jkoshy@FreeBSD.ORG
 NO_WRKSUBDIR=	true
 MAKEFILE=	makefile
 ALL_TARGET=	freebsd
+MAKE_ENV=	LD_LIBRARY_PATH=.
 
 MAN1=	siod.1 snapshot-dir.1 snapshot-compare.1 http-get.1 \
 	cp-build.1 ftp-cp.1 csiod.1 ftp-put.1 ftp-test.1 ftp-get.1 \
