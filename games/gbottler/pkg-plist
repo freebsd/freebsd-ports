@@ -1,0 +1,18 @@
+bin/gbottler
+lib/gbottler-%%VERSION%%/gbottler.py
+lib/gbottler-%%VERSION%%/bottlelib.py
+lib/gbottler-%%VERSION%%/SakuraScript.py
+lib/gbottler-%%VERSION%%/gbottler.pyc
+lib/gbottler-%%VERSION%%/bottlelib.pyc
+lib/gbottler-%%VERSION%%/SakuraScript.pyc
+lib/gbottler-%%VERSION%%/gbottler.pyo
+lib/gbottler-%%VERSION%%/bottlelib.pyo
+lib/gbottler-%%VERSION%%/SakuraScript.pyo
+share/locale/ja/LC_MESSAGES/gbottler.mo
+share/doc/gbottler-%%VERSION%%/COPYING
+share/doc/gbottler-%%VERSION%%/ChangeLog
+share/doc/gbottler-%%VERSION%%/README
+share/doc/gbottler-%%VERSION%%/README.bottler
+share/doc/gbottler-%%VERSION%%/TODO
+@dirrm share/doc/gbottler-%%VERSION%%
+@dirrm lib/gbottler-%%VERSION%%
