@@ -5,8 +5,8 @@
 # $FreeBSD$
 
 PORTNAME=	libfwbuilder
-PORTVERSION=	1.0.2
-PORTREVISION=	3
+PORTVERSION=	2.0.2
+PORTREVISION=	0
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fwbuilder
@@ -14,16 +14,28 @@ MASTER_SITE_SUBDIR=	fwbuilder
 MAINTAINER=	vadim@fwbuilder.org
 COMMENT=	Firewall Builder API
 
-LIB_DEPENDS=	netsnmp.6:${PORTSDIR}/net-mgmt/net-snmp
+BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
+LIB_DEPENDS=	xslt.2:${PORTSDIR}/textproc/libxslt \
+		netsnmp.6:${PORTSDIR}/net-mgmt/net-snmp
 
-USE_GNOME=	glib12 libxslt
+USE_QT_VER=	3
+
+QTDIR?=		${X11BASE}
+
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=13
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-docdir=${DOCSDIR}
+CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
+CONFIGURE_ARGS+=	--with-docdir=${DOCSDIR}
+MAKE_ARGS+=	QTDIR="${QTDIR}" \
+		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 INSTALLS_SHLIB=	yes
+PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
+
+post-install:
+	${RM} ${PREFIX}/lib/libfwbuilder.so.6.1
+	${RM} ${PREFIX}/lib/libfwcompiler.so.6.1
 
 .include <bsd.port.mk>
