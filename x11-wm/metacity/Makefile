@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	metacity
-PORTVERSION=	2.3.610
+PORTVERSION=	2.3.987
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://people.redhat.com/~hp/metacity/
 DIST_SUBDIR=	gnome2
