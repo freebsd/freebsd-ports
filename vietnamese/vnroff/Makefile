@@ -4,7 +4,7 @@
 # Date created:		Monday, Dec 9, 1996
 # Whom:			David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.5 1997/11/03 21:07:12 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	vnroff

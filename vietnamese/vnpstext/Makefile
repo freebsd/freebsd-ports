@@ -3,7 +3,7 @@
 # Date created:         Sat Dec 7, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.6 1998/10/16 00:37:14 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	vnpstext

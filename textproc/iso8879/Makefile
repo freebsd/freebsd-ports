@@ -3,7 +3,7 @@
 # Date created:		June 19, 1997
 # Whom:			jfieber
 #
-# $Id: Makefile,v 1.9 1999/02/11 16:01:16 jfieber Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	isoENTS

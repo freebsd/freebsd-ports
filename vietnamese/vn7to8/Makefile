@@ -3,7 +3,7 @@
 # Date created:         Tue Dec 3, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.4 1998/10/16 00:32:56 jseger Exp $
+# $FreeBSD$
 #
 #	version # is VISCII version supported + .<edit_revision>
 

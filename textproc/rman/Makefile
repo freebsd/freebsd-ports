@@ -3,7 +3,7 @@
 # Date created:         27 Dec 1994
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.19 1998/07/30 11:06:53 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       rman-3.0.7

@@ -3,7 +3,7 @@
 # Date created:				28 October 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.3 1999/05/07 05:27:30 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		c2html-0.6.1

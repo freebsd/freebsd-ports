@@ -3,7 +3,7 @@
 # Date created:				27 May 1999
 # Whom:					Martin Kammerhofer
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=		perl2html-0.6.1

@@ -3,7 +3,7 @@
 # Date created:		Sept 19, 1997
 # Whom:			jfieber
 #
-# $Id: Makefile,v 1.4 1999/02/11 16:01:08 jfieber Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	html-4.0b

@@ -3,7 +3,7 @@
 # Date created:		April 26, 1997
 # Whom:			jfieber
 #
-# $Id: Makefile,v 1.9 1999/06/02 21:38:29 chuckr Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	sp-1.3

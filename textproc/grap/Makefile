@@ -3,7 +3,7 @@
 # Date created:        14 Jan 1999
 # Whom:                faber@lunabase.org
 #
-# $Id: Makefile,v 1.3 1999/03/31 15:13:49 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	grap-0.95b

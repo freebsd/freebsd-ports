@@ -3,7 +3,7 @@
 # Date created:        18 August 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: Makefile,v 1.8 1999/05/31 21:11:47 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	htdig-3.1.2

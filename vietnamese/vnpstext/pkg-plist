@@ -1,4 +1,4 @@
-@comment $Id$
+@comment $FreeBSD$
 bin/vnpstext
 share/vn-fonts/initcour.ps
 share/vn-fonts/initcourb.ps

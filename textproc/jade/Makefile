@@ -3,7 +3,7 @@
 # Date created:		June 19, 1997
 # Whom:			jfieber
 #
-# $Id: Makefile,v 1.15 1999/01/31 11:15:57 dirk Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	jade-1.2.1

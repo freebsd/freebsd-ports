@@ -3,7 +3,7 @@
 # Date created:				5 Nov 1997
 # Whom:					Ian Vaudrey <i.vaudrey@bigfoot.com>
 #
-# $Id: Makefile,v 1.3 1998/01/19 13:18:44 vanilla Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	texi2html

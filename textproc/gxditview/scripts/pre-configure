@@ -2,7 +2,7 @@
 #
 # Set up the Imakefile correctly for gxditview.
 #
-# $Id$
+# $FreeBSD$
 #
 
 cd $WRKSRC

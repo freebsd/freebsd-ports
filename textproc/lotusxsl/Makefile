@@ -3,7 +3,7 @@
 # Date created:		23 June 1999
 # Whom:			Jun Kuriyama <kuriyama@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1999/06/25 15:10:29 kuriyama Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	lotusxsl_0_17_4

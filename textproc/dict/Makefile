@@ -3,7 +3,7 @@
 # Date created:        19 February 1998
 # Whom:                Josh Gilliam <josh@quick.net>
 #
-# $Id: Makefile,v 1.5 1999/03/22 01:17:24 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	dictd-1.4.9

@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.3 1996/12/09 02:09:17 obrien Exp $
+# $FreeBSD$
 #
 
     SUBDIR += vn7to8

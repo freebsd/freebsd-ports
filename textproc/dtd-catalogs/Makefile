@@ -3,7 +3,7 @@
 # Date created:		23 January 1999
 # Whom:			shige
 #
-# $Id: Makefile,v 1.2 1999/03/01 09:38:26 shige Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	dtd-catalogs-1.0

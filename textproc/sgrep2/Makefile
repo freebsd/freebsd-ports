@@ -3,7 +3,7 @@
 # Date created:    			Apr 29 1998
 # Whom: 				<koshy@india.hp.com>
 #
-# $Id: Makefile,v 1.1.1.1 1998/04/29 10:55:39 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	sgrep-0.99

@@ -3,7 +3,7 @@
 # Date created:         6 Aug 1997
 # Whom:                 mark@grondar.za
 #
-# $Id: Makefile,v 1.1.1.1 1997/08/06 14:36:48 markm Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       Par150

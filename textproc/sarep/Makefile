@@ -4,7 +4,7 @@
 # Date created:                   Feb 18, 1999
 # Whom:                           ache
 #
-# $Id: Makefile,v 1.4 1999/02/19 01:52:16 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       sar

@@ -3,7 +3,7 @@
 # Date created:		July 9, 1997
 # Whom:			jfieber
 #
-# $Id: Makefile,v 1.1.1.1 1997/07/10 14:36:44 jfieber Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	iso12083-1993

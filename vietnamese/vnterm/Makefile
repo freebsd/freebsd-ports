@@ -4,7 +4,7 @@
 # Date created:         Sat July 20, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.12 1999/08/22 19:00:23 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	vnterm3.3

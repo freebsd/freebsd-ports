@@ -3,7 +3,7 @@
 # Date created:			30 Aug 1998
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1998/12/01 09:32:32 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	nfbtr750

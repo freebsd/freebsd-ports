@@ -3,7 +3,7 @@
 # Date created:         		22 October 1996
 # Whom:                 		andreas@marvin.robin.de
 #
-# $Id: Makefile,v 1.4 1997/04/27 00:11:48 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mgdiff

@@ -4,7 +4,7 @@
 # Date created:         6 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.29 1999/08/13 00:13:14 jmz Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ispell-3.1

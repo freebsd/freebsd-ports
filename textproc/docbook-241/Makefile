@@ -5,7 +5,7 @@
 #
 # Based heavily on work by jfieber.
 #
-# $Id: Makefile,v 1.3 1999/08/22 19:00:09 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	docbook-241

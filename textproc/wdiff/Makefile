@@ -3,7 +3,7 @@
 # Date created:		Sep 15, 1997
 # Whom:			Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
 #
-# $Id: Makefile,v 1.2 1999/01/27 07:41:28 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	wdiff-0.5

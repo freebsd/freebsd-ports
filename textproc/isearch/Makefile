@@ -3,7 +3,7 @@
 # Date created:			21 Sept 1996
 # Whom:				Pedro
 #
-# $Id: Makefile,v 1.4 1997/04/27 00:11:47 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Isearch-1.14

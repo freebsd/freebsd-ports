@@ -3,7 +3,7 @@
 # Date created:		16 May 1999
 # Whom:			Jun Kuriyama <kuriyama@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.7 1999/07/30 14:33:12 kuriyama Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xml4j_2_0_14

@@ -1,5 +1,5 @@
 #!/bin/sh
-# $Id$
+# $FreeBSD$
 
 export CLASSPATH=%%PREFIX%%/share/java/classes/xml4j.jar:%%PREFIX%%/share/java/classes/lotusxsl.jar:${CLASSPATH}
 

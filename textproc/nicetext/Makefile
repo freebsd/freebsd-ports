@@ -3,7 +3,7 @@
 # Date created:		20 February 1998
 # Whom:			Mark Chapman <markc@ctgi.net>
 #
-# $Id: Makefile,v 1.2 1999/08/22 19:00:20 mharo Exp $
+# $FreeBSD$
 
 DISTNAME=	nicetext-0.9
 CATEGORIES=	textproc

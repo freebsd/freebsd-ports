@@ -3,7 +3,7 @@
 # Date created:		July 16, 1997
 # Whom:			jfieber
 #
-# $Id: Makefile,v 1.12 1998/11/11 05:37:32 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	sgmlformat-1.7

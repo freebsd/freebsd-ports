@@ -3,7 +3,7 @@
 # Date created:				29 August 1998
 # Whom:                			Dima Sivachenko <demon@gpad.ac.ru>
 #
-# $Id: Makefile,v 1.1.1.1 1998/11/22 22:33:31 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	man2html3.0.1

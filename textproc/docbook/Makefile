@@ -5,7 +5,7 @@
 #
 # Based heavily on work by jfieber
 #
-# $Id: Makefile,v 1.7 1999/04/29 20:08:41 nik Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       docbook

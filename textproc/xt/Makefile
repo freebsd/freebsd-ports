@@ -3,7 +3,7 @@
 # Date created:		23 June 1999
 # Whom:			Jun Kuriyama <kuriyama@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1999/08/19 14:14:13 kuriyama Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xt

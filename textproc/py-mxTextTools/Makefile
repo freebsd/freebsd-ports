@@ -3,7 +3,7 @@
 # Date created:		12 May 1999
 # Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/26 07:53:17 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mxTextTools-1.1.0
