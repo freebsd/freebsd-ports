@@ -442,7 +442,7 @@ sub add_installed() {
     foreach $port (readdir(DIR)) {
 	next if ($port eq "." || $port eq ".." || ! -d "$dbdir/$port");
 	if (!defined($origin = get_origin($port))) {
-	    bsd::warn("$port has no \@origin line\n");
+	    bsd::warnx("$port has no \@origin line\n");
 	    if (!defined($origin = $ports{$port})) {
 		bsd::warnx("installed port %s is unknown", $port);
 	    }
