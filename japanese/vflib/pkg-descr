@@ -7,3 +7,17 @@ and modify /usr/local/lib/VFlib/vfontcap file.
 See /usr/local/lib/VFlib/doc/man.ps or
 http://www.se.hiroshima-u.ac.jp/~kakugawa/Hacks/VFlibMan/Index.html for
 more details (in Japanese)
+
+Note this port supports FreeType library from 16/Mar/98.  Freetype makes
+use of Hinting information in TrueType (i.e.clearer output is possible).
+To use Freetype, simply modify /usr/local/lib/VFlib/vfontcap file:
+
+# Before... you may find a entry like:
+r-ricoh-ttw-hg-mincho-l-pro|Ricoh TrueTypeWorld HG Mincho L PRO:\
+	:ft=truetype:\
+	:ff=/usr/local/lib/dp/font/truetype/hgrmlpsj:
+# After... then modify as follows:
+r-ricoh-ttw-hg-mincho-l-pro|Ricoh TrueTypeWorld HG Mincho L PRO:\
+	:ft=freetype:\
+	:ff=/usr/local/lib/dp/font/truetype/hgrmlpsj.ttf:
+-> Important point: change 1:truetype -> freetype, 2:add .ttf or .ttc
