@@ -3,12 +3,14 @@
 # Whom:			Ruslan@Shevchenko.Kiev.UA
 # Version required:	3.3.13
 #
-# $Id: Makefile,v 1.2 1999/05/03 01:52:27 steve Exp $
+# $Id: Makefile,v 1.3 1999/08/01 02:36:33 steve Exp $
 #
 
 DISTNAME=	doc++-3.3.13
 CATEGORIES=	devel
-MASTER_SITES=	http://www.imaginator.com/doc++/
+MASTER_SITES=	${MASTER_SITE_SUNSITE} \
+		http://www.imaginator.com/doc++/
+MASTER_SITE_SUBDIR=	apps/doctools
 
 MAINTAINER=	Ruslan@Shevchenko.Kiev.UA
 
