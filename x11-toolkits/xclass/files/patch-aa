@@ -1,0 +1,13 @@
+--- lib/libxclass/Makefile.in.orig	Fri Feb  6 09:21:15 2004
++++ lib/libxclass/Makefile.in	Fri Feb  6 09:21:57 2004
+@@ -14,8 +14,8 @@
+ 
+ CXX=@CXX@
+ INCLUDES=-I${top_srcdir}/include ${x_includes}
+-DEFINES=-DOX_DEFAULT_POOL=\"/usr/local/xclass-icons\" \
+-	-DOX_DEFAULT_ROOT=\"/usr/local/xclass\"
++DEFINES=-DOX_DEFAULT_POOL=\"${prefix}/xclass-icons\" \
++	-DOX_DEFAULT_ROOT=\"${prefix}/xclass\"
+ CXXFLAGS=${INCLUDES} ${DEFINES} @CXXFLAGS@
+ EXTRALIBS=${x_libraries}
+ RANLIB=@RANLIB@
