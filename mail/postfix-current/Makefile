@@ -76,7 +76,7 @@ post-patch:
 	${ECHO} "all: default" >> Makefile)
 
 pre-install:
-	@${PKGDIR}/INSTALL Postfix PRE-INSTALL
+	@${SH} @${PKGDIR}/INSTALL Postfix PRE-INSTALL
 
 do-install:
 	@${MKDIR} -m 755 ${PREFIX}/etc/postfix
