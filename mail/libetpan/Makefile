@@ -20,8 +20,8 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
 
 USE_OPENSSL=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/db4 -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/db4 -I${LOCALBASE}/include"
+LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>
