@@ -1,0 +1,56 @@
+--- configure.orig	Mon Jan 26 09:24:51 2004
++++ configure	Mon Jan 26 09:26:18 2004
+@@ -2362,21 +2362,7 @@
+ fi
+ echo "$as_me:$LINENO: result: $ac_cv_prog_cc_g" >&5
+ echo "${ECHO_T}$ac_cv_prog_cc_g" >&6
+-if test "$ac_test_CFLAGS" = set; then
+-  CFLAGS=$ac_save_CFLAGS
+-elif test $ac_cv_prog_cc_g = yes; then
+-  if test "$GCC" = yes; then
+-    CFLAGS="-g -O2"
+-  else
+-    CFLAGS="-g"
+-  fi
+-else
+-  if test "$GCC" = yes; then
+-    CFLAGS="-O2"
+-  else
+-    CFLAGS=
+-  fi
+-fi
++CFLAGS=$ac_save_CFLAGS
+ echo "$as_me:$LINENO: checking for $CC option to accept ANSI C" >&5
+ echo $ECHO_N "checking for $CC option to accept ANSI C... $ECHO_C" >&6
+ if test "${ac_cv_prog_cc_stdc+set}" = set; then
+@@ -2966,21 +2952,7 @@
+ fi
+ echo "$as_me:$LINENO: result: $ac_cv_prog_cxx_g" >&5
+ echo "${ECHO_T}$ac_cv_prog_cxx_g" >&6
+-if test "$ac_test_CXXFLAGS" = set; then
+-  CXXFLAGS=$ac_save_CXXFLAGS
+-elif test $ac_cv_prog_cxx_g = yes; then
+-  if test "$GXX" = yes; then
+-    CXXFLAGS="-g -O2"
+-  else
+-    CXXFLAGS="-g"
+-  fi
+-else
+-  if test "$GXX" = yes; then
+-    CXXFLAGS="-O2"
+-  else
+-    CXXFLAGS=
+-  fi
+-fi
++CXXFLAGS=$ac_save_CXXFLAGS
+ for ac_declaration in \
+    ''\
+    '#include <stdlib.h>' \
+@@ -3158,7 +3130,6 @@
+ 
+ 
+ 
+-CXXFLAGS="-O3 -Wall"
+ 
+ 
+ ac_ext=c

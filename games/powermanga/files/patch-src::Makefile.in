@@ -1,0 +1,102 @@
+--- src/Makefile.in.orig	Mon Jan 26 09:18:03 2004
++++ src/Makefile.in	Mon Jan 26 09:46:41 2004
+@@ -28,7 +28,7 @@
+ install_sh_PROGRAM = $(install_sh) -c
+ install_sh_SCRIPT = $(install_sh) -c
+ INSTALL_HEADER = $(INSTALL_DATA)
+-transform = $(program_transform_name)
++transform =
+ NORMAL_INSTALL = :
+ PRE_INSTALL = :
+ POST_INSTALL = :
+@@ -137,7 +137,7 @@
+ scoredir = /var/games
+ score = powermanga.hi
+ 
+-games_PROGRAMS = powermanga
++bin_PROGRAMS = powermanga
+ powermanga_SOURCES = $(SOURCES_MAIN) $(SOURCES_EXTRA)
+ powermanga_CXXFLAGS = -DPREFIX=\"$(prefix)\" -DSCOREFILE=\"$(scoredir)/$(score)\" @XLIB_CFLAGS@ @SDL_CFLAGS@
+ powermanga_LDADD = @XLIB_LIBS@ @SDL_LIBS@
+@@ -199,8 +199,8 @@
+ mkinstalldirs = $(SHELL) $(top_srcdir)/autotools/mkinstalldirs
+ CONFIG_HEADER = $(top_builddir)/config.h
+ CONFIG_CLEAN_FILES =
+-games_PROGRAMS = powermanga$(EXEEXT)
+-PROGRAMS = $(games_PROGRAMS)
++bin_PROGRAMS = powermanga$(EXEEXT)
++PROGRAMS = $(bin_PROGRAMS)
+ 
+ am__powermanga_SOURCES_DIST = afficheEtoiles.cpp bonus.cpp caractere.cpp \
+ 	caractere.hpp cercle.hpp chaine.cpp chaine.hpp \
+@@ -320,17 +320,17 @@
+ 	  $(AUTOMAKE) --foreign  src/Makefile
+ Makefile:  $(srcdir)/Makefile.in  $(top_builddir)/config.status
+ 	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__depfiles_maybe)
+-gamesPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
+-install-gamesPROGRAMS: $(games_PROGRAMS)
++binPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
++install-binPROGRAMS: $(bin_PROGRAMS)
+ 	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(DESTDIR)$(gamesdir)
+-	@list='$(games_PROGRAMS)'; for p in $$list; do \
++	$(mkinstalldirs) $(DESTDIR)$(bindir)
++	@list='$(bin_PROGRAMS)'; for p in $$list; do \
+ 	  p1=`echo $$p|sed 's/$(EXEEXT)$$//'`; \
+ 	  if test -f $$p \
+ 	  ; then \
+ 	    f=`echo "$$p1" | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`; \
+-	   echo " $(INSTALL_PROGRAM_ENV) $(gamesPROGRAMS_INSTALL) $$p $(DESTDIR)$(gamesdir)/$$f"; \
+-	   $(INSTALL_PROGRAM_ENV) $(gamesPROGRAMS_INSTALL) $$p $(DESTDIR)$(gamesdir)/$$f || exit 1; \
++	   echo " $(INSTALL_PROGRAM_ENV) $(binPROGRAMS_INSTALL) $$p $(DESTDIR)$(bindir)/$$f"; \
++	   $(INSTALL_PROGRAM_ENV) $(binPROGRAMS_INSTALL) $$p $(DESTDIR)$(bindir)/$$f || exit 1; \
+ 	  else :; fi; \
+ 	done
+ 
+@@ -1420,7 +1420,7 @@
+ all-am: Makefile $(PROGRAMS)
+ 
+ installdirs:
+-	$(mkinstalldirs) $(DESTDIR)$(gamesdir)
++	$(mkinstalldirs) $(DESTDIR)$(bindir)
+ 
+ install: install-am
+ install-exec: install-exec-am
+@@ -1463,7 +1463,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-gamesPROGRAMS
++install-data-am: install-binPROGRAMS
+ 	@$(NORMAL_INSTALL)
+ 	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
+ 
+@@ -1498,7 +1498,7 @@
+ 	distclean-depend distclean-generic distclean-tags distdir dvi \
+ 	dvi-am info info-am install install-am install-data \
+ 	install-data-am install-exec install-exec-am \
+-	install-gamesPROGRAMS install-info install-info-am install-man \
++	install-binPROGRAMS install-info install-info-am install-man \
+ 	install-strip installcheck installcheck-am installdirs \
+ 	maintainer-clean maintainer-clean-generic mostlyclean \
+ 	mostlyclean-compile mostlyclean-generic pdf pdf-am ps ps-am \
+@@ -1507,13 +1507,13 @@
+ 
+ 
+ install-data-hook:
+-	-chown root:games "$(DESTDIR)/$(gamesdir)/powermanga"
+-	-chmod 2755 "$(DESTDIR)/$(gamesdir)/powermanga"
+-	$(INSTALL) -d $(DESTDIR)/$(scoredir)
++	-chown root:games "$(DESTDIR)/$(bindir)/powermanga"
++	-chmod 2755 "$(DESTDIR)/$(bindir)/powermanga"
++	$(INSTALL) -d $(scoredir)
+ 	-for suffix in "-easy" "" "-hard"; do \
+-	  touch "$(DESTDIR)/$(scoredir)/$(score)$$suffix"; \
+-	  chown root:games "$(DESTDIR)/$(scoredir)/$(score)$$suffix"; \
+-	  chmod 644 "$(DESTDIR)/$(scoredir)/$(score)$$suffix"; \
++	  touch "$(scoredir)/$(score)$$suffix"; \
++	  chown root:games "$(scoredir)/$(score)$$suffix"; \
++	  chmod 664 "$(scoredir)/$(score)$$suffix"; \
+ 	done
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

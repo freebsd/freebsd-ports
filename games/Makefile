@@ -315,6 +315,7 @@
     SUBDIR += pinball
     SUBDIR += pipenightdreams
     SUBDIR += pmars
+    SUBDIR += powermanga
     SUBDIR += powerpak
     SUBDIR += pp
     SUBDIR += prboom
