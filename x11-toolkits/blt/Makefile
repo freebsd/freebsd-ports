@@ -18,6 +18,7 @@ LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 
 WRKSRC=		${WRKDIR}/blt2.4u
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX} --with-tcl=${PREFIX}/lib/tcl8.3 --with-tk=${PREFIX}/lib/tk8.3
 INSTALLS_SHLIB=	yes
 
 MANN=		BLT.n barchart.n beep.n bgexec.n bitmap.n \
