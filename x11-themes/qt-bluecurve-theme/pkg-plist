@@ -1,2 +1,2 @@
-plugins/styles/bluecurve.so
-@dirrm plugins/styles
+lib/plugins/styles/bluecurve.so
+@dirrm lib/plugins/styles
