@@ -1,14 +1,14 @@
---- Makefile.orig	Mon Jul 13 11:44:32 1998
-+++ Makefile	Wed Jul 22 16:12:08 1998
-@@ -44,14 +44,14 @@
+--- Makefile.orig	Wed Mar  1 20:09:59 2000
++++ Makefile	Sat May 20 07:55:37 2000
+@@ -27,14 +27,14 @@
  ### you need to localize the paths on these lines
  
- #WISH = /usr/sww/tcl-8.0/bin/wish
+ #WISH = /usr/sww/tcl-8.3/bin/wish
 -WISH = /private/share/bin/wish
 +#WISH = /private/share/bin/wish
- #WISH = /private/share/bin/wish8.1
--#WISH = /usr/local/bin/wish8.0
-+WISH = ${PREFIX}/bin/wish8.2
+ #WISH = /private/share/bin/wish8.3
+-#WISH = /usr/local/bin/wish8.3
++WISH = /usr/local/bin/wish8.3
  
  # the executable `tkman' is placed in BINDIR
  # this should be a directory that's in your bin PATH
@@ -19,7 +19,7 @@
  
  
  # OPTIONAL
-@@ -61,19 +61,20 @@
+@@ -44,13 +44,13 @@
  # This directory should not have any Texinfo source itself.
  # More information is given in tkman-help.html
  # if you don't have Texinfo files, leave this variable empty
@@ -36,14 +36,15 @@
  #gzgrep = "gzgrep -E"
  #gzgrep = "gzgrep -Ew"
  # Linux calls it zgrep
- #gzgrep = "zgrep -E"
+@@ -59,6 +59,7 @@
+ #gzgrep = grep
  # if you don't compress your Texinfo source, this is fine
  #gzgrep = grep
 +gzgrep = "/usr/bin/zgrep -E"
  
  # OPTIONAL
  # directory root of hierarchy of RFC files, with "rfc-index.txt" at the root
-@@ -97,10 +98,12 @@
+@@ -82,10 +83,12 @@
  # will examine for matches if a search in the usual locations fails while searching
  # for a man pages and displaying its associated binaries (if any).
  # Use this feature carefully as a large number of directories can slow down startup.
@@ -58,16 +59,16 @@
  
  
  # names of common printers, in addition to default printer (PRINTER or LPDEST)
-@@ -130,7 +133,7 @@
+@@ -115,7 +118,7 @@
  # Lines are cached in .../man/cat<n>@<line-length>; 
  #   that is, the line length is appended to the usual cache directory names
- #manformat = {groff -te -Tascii -man /tmp/ll - 2>/dev/null}
--manformat = {groff -te -Tlatin1 -man /tmp/ll - 2>/dev/null}
-+#manformat = {groff -te -Tlatin1 -man /tmp/ll - 2>/dev/null}
+ #manformat = {groff -te -Tascii -man /tmp/ll -}
+-manformat = {groff -te -Tlatin1 -man /tmp/ll -}
++#manformat = {groff -te -Tlatin1 -man /tmp/ll -}
  # Ultrix users should uncomment the following line (you don't have eqn)
  #manformat = {tbl | nroff -man }
  # HP-UX uses a number of macros that groff doesn't define, so use the builtin nroff
-@@ -138,7 +141,7 @@
+@@ -123,7 +126,7 @@
  #  space between the .de and the macro name, and groff doesn't like this.)
  #manformat = {tbl | neqn | nroff -man }
  # BSD macros (.Sh, .Ss, .PP, ...) need -mandoc
@@ -75,41 +76,23 @@
 +manformat = {groff -Tascii -te -mandoc}
  # BSDI
  #manformat = {tbl | eqn -Tascii | nroff -man }
- 
-@@ -174,7 +177,7 @@
- 
- 
- # pick a printing pipeline for which your platform has all the constituants
--manprint = {groff -man -Tps -te -l}
+ # It's actually legal to leave this empty if all the pages you'll ever
+@@ -174,7 +177,8 @@
+ #manprint = {tbl | eqn | psroff -man}
+ #manprint = {tbl | eqn | gtroff -Tpsc | psdit | lpr}
+ # use an empty pipeline if you're environmentally conscious or have no printer
+-manprint = ""
++#manprint = ""
 +manprint = {groff -mandoc -Tps -te -l}
- # alternatives
- #manprint = {groff -man -Tps -te -l | psnup -n2}
- #manprint = {tbl | eqn | troff -man -t | lpr -t}
-@@ -213,7 +216,7 @@
- # the right-topmost menu's Rebuild Database/Glimpse Index menu choice.
- 
- # BY DEFAULT ON (Boolean scope set to entire file)
--glimpse = "glimpse -W"
-+#glimpse = "glimpse -W"
- # IF YOU DON'T WANT TO BOTHER WITH GLIMPSE, you can disable it here
- #glimpse = ""
- # give the full path, if you'd like
-@@ -221,6 +224,7 @@
- # variations (refer to the Glimpse manual page)
- # no characters treated as meta characters:
- #glimpse = "glimpse -Wk"
-+glimpse = "glimpse -z"
- 
- # glimpseindex indexes the manual pages, for each component of one's MANPATH,
- # and places the results in a set of files named .glimpse_* in that MANPATH
-@@ -468,8 +472,8 @@
+ # printing string for preformatted pages without [tn]roff source
+ #catprint = lpr
+ #catprint = "lpr -h"
+@@ -461,7 +465,7 @@
  	chmod +rx $(BINDIR)/tkman
  	$(CP) retkman $(BINDIR)
  	chmod +rx $(BINDIR)/retkman
 -	@echo 'You also need RosettaMan to run TkMan.'
--	@echo 'Have you installed the elided text patch to Tk?'
 +#	@echo 'You also need RosettaMan to run TkMan.'
-+#	@echo 'Have you installed the elided text patch to Tk?'
  
  test: dox tkman
  	cp tkman $(BINDIR)
