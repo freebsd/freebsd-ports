@@ -1,3 +1,287 @@
+@exec mkdir -p %D/%%MMDIR%%/archives/private && chmod 2770 %D/%%MMDIR%%/archives/private
+@exec mkdir -p %D/%%MMDIR%%/archives/public && chmod 2775 %D/%%MMDIR%%/archives/public
+@exec mkdir -p %D/%%MMDIR%%/archives && chmod 2775 %D/%%MMDIR%%/archives
+@exec mkdir -p %D/%%MMDIR%%/lists && chmod 2775 %D/%%MMDIR%%/lists
+@exec mkdir -p %D/%%MMDIR%%/locks && chmod 2775 %D/%%MMDIR%%/locks
+@exec mkdir -p %D/%%MMDIR%%/logs && chmod 2775 %D/%%MMDIR%%/logs
+@exec mkdir -p %D/%%MMDIR%%/qfiles && chmod 2775 %D/%%MMDIR%%/qfiles
+@exec mkdir -p %D/%%MMDIR%%/spam && chmod 2775 %D/%%MMDIR%%/spam
+%%MMDIR%%/Mailman/Archiver/Archiver.py
+%%MMDIR%%/Mailman/Archiver/Archiver.pyc
+%%MMDIR%%/Mailman/Archiver/HyperArch.py
+%%MMDIR%%/Mailman/Archiver/HyperArch.pyc
+%%MMDIR%%/Mailman/Archiver/HyperDatabase.py
+%%MMDIR%%/Mailman/Archiver/HyperDatabase.pyc
+%%MMDIR%%/Mailman/Archiver/__init__.py
+%%MMDIR%%/Mailman/Archiver/__init__.pyc
+%%MMDIR%%/Mailman/Archiver/pipermail.py
+%%MMDIR%%/Mailman/Archiver/pipermail.pyc
+@exec chmod 2775 %B
+%%MMDIR%%/Mailman/Autoresponder.py
+%%MMDIR%%/Mailman/Autoresponder.pyc
+%%MMDIR%%/Mailman/Bouncer.py
+%%MMDIR%%/Mailman/Bouncer.pyc
+%%MMDIR%%/Mailman/Bouncers/BouncerAPI.py
+%%MMDIR%%/Mailman/Bouncers/BouncerAPI.pyc
+%%MMDIR%%/Mailman/Bouncers/Caiwireless.py
+%%MMDIR%%/Mailman/Bouncers/Caiwireless.pyc
+%%MMDIR%%/Mailman/Bouncers/Catchall.py
+%%MMDIR%%/Mailman/Bouncers/Catchall.pyc
+%%MMDIR%%/Mailman/Bouncers/Compuserve.py
+%%MMDIR%%/Mailman/Bouncers/Compuserve.pyc
+%%MMDIR%%/Mailman/Bouncers/DSN.py
+%%MMDIR%%/Mailman/Bouncers/DSN.pyc
+%%MMDIR%%/Mailman/Bouncers/Exim.py
+%%MMDIR%%/Mailman/Bouncers/Exim.pyc
+%%MMDIR%%/Mailman/Bouncers/GroupWise.py
+%%MMDIR%%/Mailman/Bouncers/GroupWise.pyc
+%%MMDIR%%/Mailman/Bouncers/Microsoft.py
+%%MMDIR%%/Mailman/Bouncers/Microsoft.pyc
+%%MMDIR%%/Mailman/Bouncers/Netscape.py
+%%MMDIR%%/Mailman/Bouncers/Netscape.pyc
+%%MMDIR%%/Mailman/Bouncers/Postfix.py
+%%MMDIR%%/Mailman/Bouncers/Postfix.pyc
+%%MMDIR%%/Mailman/Bouncers/Qmail.py
+%%MMDIR%%/Mailman/Bouncers/Qmail.pyc
+%%MMDIR%%/Mailman/Bouncers/SMTP32.py
+%%MMDIR%%/Mailman/Bouncers/SMTP32.pyc
+%%MMDIR%%/Mailman/Bouncers/SimpleMatch.py
+%%MMDIR%%/Mailman/Bouncers/SimpleMatch.pyc
+%%MMDIR%%/Mailman/Bouncers/Smail.py
+%%MMDIR%%/Mailman/Bouncers/Smail.pyc
+%%MMDIR%%/Mailman/Bouncers/Yahoo.py
+%%MMDIR%%/Mailman/Bouncers/Yahoo.pyc
+%%MMDIR%%/Mailman/Bouncers/__init__.py
+%%MMDIR%%/Mailman/Bouncers/__init__.pyc
+@exec chmod 2775 %B
+%%MMDIR%%/Mailman/Cgi/Auth.py
+%%MMDIR%%/Mailman/Cgi/Auth.pyc
+%%MMDIR%%/Mailman/Cgi/__init__.py
+%%MMDIR%%/Mailman/Cgi/__init__.pyc
+%%MMDIR%%/Mailman/Cgi/admin.py
+%%MMDIR%%/Mailman/Cgi/admin.pyc
+%%MMDIR%%/Mailman/Cgi/admindb.py
+%%MMDIR%%/Mailman/Cgi/admindb.pyc
+%%MMDIR%%/Mailman/Cgi/edithtml.py
+%%MMDIR%%/Mailman/Cgi/edithtml.pyc
+%%MMDIR%%/Mailman/Cgi/handle_opts.py
+%%MMDIR%%/Mailman/Cgi/handle_opts.pyc
+%%MMDIR%%/Mailman/Cgi/listinfo.py
+%%MMDIR%%/Mailman/Cgi/listinfo.pyc
+%%MMDIR%%/Mailman/Cgi/options.py
+%%MMDIR%%/Mailman/Cgi/options.pyc
+%%MMDIR%%/Mailman/Cgi/private.py
+%%MMDIR%%/Mailman/Cgi/private.pyc
+%%MMDIR%%/Mailman/Cgi/roster.py
+%%MMDIR%%/Mailman/Cgi/roster.pyc
+%%MMDIR%%/Mailman/Cgi/subscribe.py
+%%MMDIR%%/Mailman/Cgi/subscribe.pyc
+@exec chmod 2775 %B
+%%MMDIR%%/Mailman/Cookie.py
+%%MMDIR%%/Mailman/Cookie.pyc
+%%MMDIR%%/Mailman/Crypt.py
+%%MMDIR%%/Mailman/Crypt.pyc
+%%MMDIR%%/Mailman/Defaults.py
+%%MMDIR%%/Mailman/Defaults.pyc
+%%MMDIR%%/Mailman/Deliverer.py
+%%MMDIR%%/Mailman/Deliverer.pyc
+%%MMDIR%%/Mailman/Digester.py
+%%MMDIR%%/Mailman/Digester.pyc
+%%MMDIR%%/Mailman/EncWord.py
+%%MMDIR%%/Mailman/EncWord.pyc
+%%MMDIR%%/Mailman/Errors.py
+%%MMDIR%%/Mailman/Errors.pyc
+%%MMDIR%%/Mailman/GatewayManager.py
+%%MMDIR%%/Mailman/GatewayManager.pyc
+%%MMDIR%%/Mailman/HTMLFormatter.py
+%%MMDIR%%/Mailman/HTMLFormatter.pyc
+%%MMDIR%%/Mailman/Handlers/Acknowledge.py
+%%MMDIR%%/Mailman/Handlers/Acknowledge.pyc
+%%MMDIR%%/Mailman/Handlers/AfterDelivery.py
+%%MMDIR%%/Mailman/Handlers/AfterDelivery.pyc
+%%MMDIR%%/Mailman/Handlers/Approve.py
+%%MMDIR%%/Mailman/Handlers/Approve.pyc
+%%MMDIR%%/Mailman/Handlers/CalcRecips.py
+%%MMDIR%%/Mailman/Handlers/CalcRecips.pyc
+%%MMDIR%%/Mailman/Handlers/Cleanse.py
+%%MMDIR%%/Mailman/Handlers/Cleanse.pyc
+%%MMDIR%%/Mailman/Handlers/CookHeaders.py
+%%MMDIR%%/Mailman/Handlers/CookHeaders.pyc
+%%MMDIR%%/Mailman/Handlers/Decorate.py
+%%MMDIR%%/Mailman/Handlers/Decorate.pyc
+%%MMDIR%%/Mailman/Handlers/HandlerAPI.py
+%%MMDIR%%/Mailman/Handlers/HandlerAPI.pyc
+%%MMDIR%%/Mailman/Handlers/Hold.py
+%%MMDIR%%/Mailman/Handlers/Hold.pyc
+%%MMDIR%%/Mailman/Handlers/Replybot.py
+%%MMDIR%%/Mailman/Handlers/Replybot.pyc
+%%MMDIR%%/Mailman/Handlers/SMTPDirect.py
+%%MMDIR%%/Mailman/Handlers/SMTPDirect.pyc
+%%MMDIR%%/Mailman/Handlers/Sendmail.py
+%%MMDIR%%/Mailman/Handlers/Sendmail.pyc
+%%MMDIR%%/Mailman/Handlers/SpamDetect.py
+%%MMDIR%%/Mailman/Handlers/SpamDetect.pyc
+%%MMDIR%%/Mailman/Handlers/ToArchive.py
+%%MMDIR%%/Mailman/Handlers/ToArchive.pyc
+%%MMDIR%%/Mailman/Handlers/ToDigest.py
+%%MMDIR%%/Mailman/Handlers/ToDigest.pyc
+%%MMDIR%%/Mailman/Handlers/ToUsenet.py
+%%MMDIR%%/Mailman/Handlers/ToUsenet.pyc
+%%MMDIR%%/Mailman/Handlers/__init__.py
+%%MMDIR%%/Mailman/Handlers/__init__.pyc
+@exec chmod 2775 %B
+%%MMDIR%%/Mailman/ListAdmin.py
+%%MMDIR%%/Mailman/ListAdmin.pyc
+%%MMDIR%%/Mailman/LockFile.py
+%%MMDIR%%/Mailman/LockFile.pyc
+%%MMDIR%%/Mailman/Logging/Logger.py
+%%MMDIR%%/Mailman/Logging/Logger.pyc
+%%MMDIR%%/Mailman/Logging/MultiLogger.py
+%%MMDIR%%/Mailman/Logging/MultiLogger.pyc
+%%MMDIR%%/Mailman/Logging/StampedLogger.py
+%%MMDIR%%/Mailman/Logging/StampedLogger.pyc
+%%MMDIR%%/Mailman/Logging/Syslog.py
+%%MMDIR%%/Mailman/Logging/Syslog.pyc
+%%MMDIR%%/Mailman/Logging/Utils.py
+%%MMDIR%%/Mailman/Logging/Utils.pyc
+%%MMDIR%%/Mailman/Logging/__init__.py
+%%MMDIR%%/Mailman/Logging/__init__.pyc
+@exec chmod 2775 %B
+%%MMDIR%%/Mailman/MailCommandHandler.py
+%%MMDIR%%/Mailman/MailCommandHandler.pyc
+%%MMDIR%%/Mailman/MailList.py
+%%MMDIR%%/Mailman/MailList.pyc
+%%MMDIR%%/Mailman/Mailbox.py
+%%MMDIR%%/Mailman/Mailbox.pyc
+%%MMDIR%%/Mailman/Message.py
+%%MMDIR%%/Mailman/Message.pyc
+%%MMDIR%%/Mailman/Pending.py
+%%MMDIR%%/Mailman/Pending.pyc
+%%MMDIR%%/Mailman/SecurityManager.py
+%%MMDIR%%/Mailman/SecurityManager.pyc
+%%MMDIR%%/Mailman/Utils.py
+%%MMDIR%%/Mailman/Utils.pyc
+%%MMDIR%%/Mailman/Version.py
+%%MMDIR%%/Mailman/Version.pyc
+%%MMDIR%%/Mailman/__init__.py
+%%MMDIR%%/Mailman/__init__.pyc
+%%MMDIR%%/Mailman/aliases.py
+%%MMDIR%%/Mailman/aliases.pyc
+%%MMDIR%%/Mailman/htmlformat.py
+%%MMDIR%%/Mailman/htmlformat.pyc
+%%MMDIR%%/Mailman/mm_cfg.py
+%%MMDIR%%/Mailman/mm_cfg.py.dist
+%%MMDIR%%/Mailman/mm_cfg.pyc
+%%MMDIR%%/Mailman/pythonlib/StringIO.py
+%%MMDIR%%/Mailman/pythonlib/StringIO.pyc
+%%MMDIR%%/Mailman/pythonlib/__init__.py
+%%MMDIR%%/Mailman/pythonlib/__init__.pyc
+%%MMDIR%%/Mailman/pythonlib/cgi.py
+%%MMDIR%%/Mailman/pythonlib/cgi.pyc
+%%MMDIR%%/Mailman/pythonlib/nntplib.py
+%%MMDIR%%/Mailman/pythonlib/nntplib.pyc
+%%MMDIR%%/Mailman/pythonlib/rfc822.py
+%%MMDIR%%/Mailman/pythonlib/rfc822.pyc
+%%MMDIR%%/Mailman/pythonlib/smtplib.py
+%%MMDIR%%/Mailman/pythonlib/smtplib.pyc
+%%MMDIR%%/Mailman/pythonlib/tempfile.py
+%%MMDIR%%/Mailman/pythonlib/tempfile.pyc
+@exec chmod 2775 %B
+%%MMDIR%%/Mailman/versions.py
+%%MMDIR%%/Mailman/versions.pyc
+@exec chmod 2775 %B
+%%MMDIR%%/bin/add_members
+%%MMDIR%%/bin/arch
+%%MMDIR%%/bin/check_db
+%%MMDIR%%/bin/check_perms
+%%MMDIR%%/bin/clone_member
+%%MMDIR%%/bin/config_list
+%%MMDIR%%/bin/digest_arch
+%%MMDIR%%/bin/dumpdb
+%%MMDIR%%/bin/find_member
+%%MMDIR%%/bin/list_lists
+%%MMDIR%%/bin/list_members
+%%MMDIR%%/bin/mmsitepass
+%%MMDIR%%/bin/move_list
+%%MMDIR%%/bin/newlist
+%%MMDIR%%/bin/paths.py
+%%MMDIR%%/bin/paths.pyc
+%%MMDIR%%/bin/remove_members
+%%MMDIR%%/bin/rmlist
+%%MMDIR%%/bin/sync_members
+%%MMDIR%%/bin/update
+%%MMDIR%%/bin/version
+%%MMDIR%%/bin/withlist
+@exec chmod 2775 %B
+%%MMDIR%%/cgi-bin/admin
+%%MMDIR%%/cgi-bin/admindb
+%%MMDIR%%/cgi-bin/archives
+%%MMDIR%%/cgi-bin/edithtml
+%%MMDIR%%/cgi-bin/handle_opts
+%%MMDIR%%/cgi-bin/listinfo
+%%MMDIR%%/cgi-bin/options
+%%MMDIR%%/cgi-bin/private
+%%MMDIR%%/cgi-bin/roster
+%%MMDIR%%/cgi-bin/subscribe
+@exec chmod 2775 %B
+%%MMDIR%%/cron/bumpdigests
+%%MMDIR%%/cron/checkdbs
+%%MMDIR%%/cron/crontab.in
+%%MMDIR%%/cron/gate_news
+%%MMDIR%%/cron/mailpasswds
+%%MMDIR%%/cron/nightly_gzip
+%%MMDIR%%/cron/paths.py
+%%MMDIR%%/cron/qrunner
+%%MMDIR%%/cron/senddigests
+@exec chmod 2775 %B
+%%MMDIR%%/data/last_mailman_version
+%%MMDIR%%/data/pending_subscriptions.db
+@exec chmod 2775 %B
+%%MMDIR%%/filters/bowa-strip
+@exec chmod 2775 %B
+%%MMDIR%%/icons/PythonPowered.png
+%%MMDIR%%/icons/gnu-head-tiny.jpg
+%%MMDIR%%/icons/mailman-large.jpg
+%%MMDIR%%/icons/mailman.jpg
+@exec chmod 2775 %B
+%%MMDIR%%/mail/wrapper
+@exec chmod 2775 %B
+%%MMDIR%%/scripts/answer_majordomo_mail
+%%MMDIR%%/scripts/driver
+%%MMDIR%%/scripts/mailcmd
+%%MMDIR%%/scripts/mailowner
+%%MMDIR%%/scripts/paths.py
+%%MMDIR%%/scripts/post
+@exec chmod 2775 %B
+%%MMDIR%%/templates/admindbpreamble.html
+%%MMDIR%%/templates/adminsubscribeack.txt
+%%MMDIR%%/templates/adminunsubscribeack.txt
+%%MMDIR%%/templates/admlogin.txt
+%%MMDIR%%/templates/approve.txt
+%%MMDIR%%/templates/bounce.txt
+%%MMDIR%%/templates/checkdbs.txt
+%%MMDIR%%/templates/convert.txt
+%%MMDIR%%/templates/cronpass.txt
+%%MMDIR%%/templates/handle_opts.html
+%%MMDIR%%/templates/headfoot.html
+%%MMDIR%%/templates/help.txt
+%%MMDIR%%/templates/listinfo.html
+%%MMDIR%%/templates/masthead.txt
+%%MMDIR%%/templates/newlist.txt
+%%MMDIR%%/templates/nopass.txt
+%%MMDIR%%/templates/options.html
+%%MMDIR%%/templates/postack.txt
+%%MMDIR%%/templates/postauth.txt
+%%MMDIR%%/templates/postheld.txt
+%%MMDIR%%/templates/reenable.txt
+%%MMDIR%%/templates/refuse.txt
+%%MMDIR%%/templates/roster.html
+%%MMDIR%%/templates/subauth.txt
+%%MMDIR%%/templates/subscribe.html
+%%MMDIR%%/templates/subscribeack.txt
+%%MMDIR%%/templates/userpass.txt
+%%MMDIR%%/templates/verify.txt
+@exec chmod 2775 %B
 %%PORTDOCS%%share/doc/mailman/BUGS
 %%PORTDOCS%%share/doc/mailman/FAQ
 %%PORTDOCS%%share/doc/mailman/INSTALL
@@ -10,289 +294,29 @@
 %%PORTDOCS%%share/doc/mailman/README.QMAIL
 %%PORTDOCS%%share/doc/mailman/README.SENDMAIL
 %%PORTDOCS%%share/doc/mailman/UPGRADING
-mailman/Mailman/Archiver/Archiver.py
-mailman/Mailman/Archiver/Archiver.pyc
-mailman/Mailman/Archiver/HyperArch.py
-mailman/Mailman/Archiver/HyperArch.pyc
-mailman/Mailman/Archiver/HyperDatabase.py
-mailman/Mailman/Archiver/HyperDatabase.pyc
-mailman/Mailman/Archiver/__init__.py
-mailman/Mailman/Archiver/__init__.pyc
-mailman/Mailman/Archiver/pipermail.py
-mailman/Mailman/Archiver/pipermail.pyc
-mailman/Mailman/Autoresponder.py
-mailman/Mailman/Autoresponder.pyc
-mailman/Mailman/Bouncer.py
-mailman/Mailman/Bouncer.pyc
-mailman/Mailman/Bouncers/BouncerAPI.py
-mailman/Mailman/Bouncers/BouncerAPI.pyc
-mailman/Mailman/Bouncers/Caiwireless.py
-mailman/Mailman/Bouncers/Caiwireless.pyc
-mailman/Mailman/Bouncers/Catchall.py
-mailman/Mailman/Bouncers/Catchall.pyc
-mailman/Mailman/Bouncers/Compuserve.py
-mailman/Mailman/Bouncers/Compuserve.pyc
-mailman/Mailman/Bouncers/DSN.py
-mailman/Mailman/Bouncers/DSN.pyc
-mailman/Mailman/Bouncers/Exim.py
-mailman/Mailman/Bouncers/Exim.pyc
-mailman/Mailman/Bouncers/GroupWise.py
-mailman/Mailman/Bouncers/GroupWise.pyc
-mailman/Mailman/Bouncers/Microsoft.py
-mailman/Mailman/Bouncers/Microsoft.pyc
-mailman/Mailman/Bouncers/Netscape.py
-mailman/Mailman/Bouncers/Netscape.pyc
-mailman/Mailman/Bouncers/Postfix.py
-mailman/Mailman/Bouncers/Postfix.pyc
-mailman/Mailman/Bouncers/Qmail.py
-mailman/Mailman/Bouncers/Qmail.pyc
-mailman/Mailman/Bouncers/SMTP32.py
-mailman/Mailman/Bouncers/SMTP32.pyc
-mailman/Mailman/Bouncers/SimpleMatch.py
-mailman/Mailman/Bouncers/SimpleMatch.pyc
-mailman/Mailman/Bouncers/Smail.py
-mailman/Mailman/Bouncers/Smail.pyc
-mailman/Mailman/Bouncers/Yahoo.py
-mailman/Mailman/Bouncers/Yahoo.pyc
-mailman/Mailman/Bouncers/__init__.py
-mailman/Mailman/Bouncers/__init__.pyc
-mailman/Mailman/Cgi/Auth.py
-mailman/Mailman/Cgi/Auth.pyc
-mailman/Mailman/Cgi/__init__.py
-mailman/Mailman/Cgi/__init__.pyc
-mailman/Mailman/Cgi/admin.py
-mailman/Mailman/Cgi/admin.pyc
-mailman/Mailman/Cgi/admindb.py
-mailman/Mailman/Cgi/admindb.pyc
-mailman/Mailman/Cgi/edithtml.py
-mailman/Mailman/Cgi/edithtml.pyc
-mailman/Mailman/Cgi/handle_opts.py
-mailman/Mailman/Cgi/handle_opts.pyc
-mailman/Mailman/Cgi/listinfo.py
-mailman/Mailman/Cgi/listinfo.pyc
-mailman/Mailman/Cgi/options.py
-mailman/Mailman/Cgi/options.pyc
-mailman/Mailman/Cgi/private.py
-mailman/Mailman/Cgi/private.pyc
-mailman/Mailman/Cgi/roster.py
-mailman/Mailman/Cgi/roster.pyc
-mailman/Mailman/Cgi/subscribe.py
-mailman/Mailman/Cgi/subscribe.pyc
-mailman/Mailman/Cookie.py
-mailman/Mailman/Cookie.pyc
-mailman/Mailman/Crypt.py
-mailman/Mailman/Crypt.pyc
-mailman/Mailman/Defaults.py
-mailman/Mailman/Defaults.pyc
-mailman/Mailman/Deliverer.py
-mailman/Mailman/Deliverer.pyc
-mailman/Mailman/Digester.py
-mailman/Mailman/Digester.pyc
-mailman/Mailman/EncWord.py
-mailman/Mailman/EncWord.pyc
-mailman/Mailman/Errors.py
-mailman/Mailman/Errors.pyc
-mailman/Mailman/GatewayManager.py
-mailman/Mailman/GatewayManager.pyc
-mailman/Mailman/HTMLFormatter.py
-mailman/Mailman/HTMLFormatter.pyc
-mailman/Mailman/Handlers/Acknowledge.py
-mailman/Mailman/Handlers/Acknowledge.pyc
-mailman/Mailman/Handlers/AfterDelivery.py
-mailman/Mailman/Handlers/AfterDelivery.pyc
-mailman/Mailman/Handlers/Approve.py
-mailman/Mailman/Handlers/Approve.pyc
-mailman/Mailman/Handlers/CalcRecips.py
-mailman/Mailman/Handlers/CalcRecips.pyc
-mailman/Mailman/Handlers/Cleanse.py
-mailman/Mailman/Handlers/Cleanse.pyc
-mailman/Mailman/Handlers/CookHeaders.py
-mailman/Mailman/Handlers/CookHeaders.pyc
-mailman/Mailman/Handlers/Decorate.py
-mailman/Mailman/Handlers/Decorate.pyc
-mailman/Mailman/Handlers/HandlerAPI.py
-mailman/Mailman/Handlers/HandlerAPI.pyc
-mailman/Mailman/Handlers/Hold.py
-mailman/Mailman/Handlers/Hold.pyc
-mailman/Mailman/Handlers/Replybot.py
-mailman/Mailman/Handlers/Replybot.pyc
-mailman/Mailman/Handlers/SMTPDirect.py
-mailman/Mailman/Handlers/SMTPDirect.pyc
-mailman/Mailman/Handlers/Sendmail.py
-mailman/Mailman/Handlers/Sendmail.pyc
-mailman/Mailman/Handlers/SpamDetect.py
-mailman/Mailman/Handlers/SpamDetect.pyc
-mailman/Mailman/Handlers/ToArchive.py
-mailman/Mailman/Handlers/ToArchive.pyc
-mailman/Mailman/Handlers/ToDigest.py
-mailman/Mailman/Handlers/ToDigest.pyc
-mailman/Mailman/Handlers/ToUsenet.py
-mailman/Mailman/Handlers/ToUsenet.pyc
-mailman/Mailman/Handlers/__init__.py
-mailman/Mailman/Handlers/__init__.pyc
-mailman/Mailman/ListAdmin.py
-mailman/Mailman/ListAdmin.pyc
-mailman/Mailman/LockFile.py
-mailman/Mailman/LockFile.pyc
-mailman/Mailman/Logging/Logger.py
-mailman/Mailman/Logging/Logger.pyc
-mailman/Mailman/Logging/MultiLogger.py
-mailman/Mailman/Logging/MultiLogger.pyc
-mailman/Mailman/Logging/StampedLogger.py
-mailman/Mailman/Logging/StampedLogger.pyc
-mailman/Mailman/Logging/Syslog.py
-mailman/Mailman/Logging/Syslog.pyc
-mailman/Mailman/Logging/Utils.py
-mailman/Mailman/Logging/Utils.pyc
-mailman/Mailman/Logging/__init__.py
-mailman/Mailman/Logging/__init__.pyc
-mailman/Mailman/MailCommandHandler.py
-mailman/Mailman/MailCommandHandler.pyc
-mailman/Mailman/MailList.py
-mailman/Mailman/MailList.pyc
-mailman/Mailman/Mailbox.py
-mailman/Mailman/Mailbox.pyc
-mailman/Mailman/Message.py
-mailman/Mailman/Message.pyc
-mailman/Mailman/Pending.py
-mailman/Mailman/Pending.pyc
-mailman/Mailman/SecurityManager.py
-mailman/Mailman/SecurityManager.pyc
-mailman/Mailman/Utils.py
-mailman/Mailman/Utils.pyc
-mailman/Mailman/Version.py
-mailman/Mailman/Version.pyc
-mailman/Mailman/__init__.py
-mailman/Mailman/__init__.pyc
-mailman/Mailman/aliases.py
-mailman/Mailman/aliases.pyc
-mailman/Mailman/htmlformat.py
-mailman/Mailman/htmlformat.pyc
-mailman/Mailman/mm_cfg.py
-mailman/Mailman/mm_cfg.py.dist
-mailman/Mailman/mm_cfg.pyc
-mailman/Mailman/pythonlib/StringIO.py
-mailman/Mailman/pythonlib/StringIO.pyc
-mailman/Mailman/pythonlib/__init__.py
-mailman/Mailman/pythonlib/__init__.pyc
-mailman/Mailman/pythonlib/cgi.py
-mailman/Mailman/pythonlib/cgi.pyc
-mailman/Mailman/pythonlib/nntplib.py
-mailman/Mailman/pythonlib/nntplib.pyc
-mailman/Mailman/pythonlib/rfc822.py
-mailman/Mailman/pythonlib/rfc822.pyc
-mailman/Mailman/pythonlib/smtplib.py
-mailman/Mailman/pythonlib/smtplib.pyc
-mailman/Mailman/pythonlib/tempfile.py
-mailman/Mailman/pythonlib/tempfile.pyc
-mailman/Mailman/versions.py
-mailman/Mailman/versions.pyc
-mailman/bin/add_members
-mailman/bin/arch
-mailman/bin/check_db
-mailman/bin/check_perms
-mailman/bin/clone_member
-mailman/bin/config_list
-mailman/bin/digest_arch
-mailman/bin/dumpdb
-mailman/bin/find_member
-mailman/bin/list_lists
-mailman/bin/list_members
-mailman/bin/mmsitepass
-mailman/bin/move_list
-mailman/bin/newlist
-mailman/bin/paths.py
-mailman/bin/paths.pyc
-mailman/bin/remove_members
-mailman/bin/rmlist
-mailman/bin/sync_members
-mailman/bin/update
-mailman/bin/version
-mailman/bin/withlist
-mailman/cgi-bin/admin
-mailman/cgi-bin/admindb
-mailman/cgi-bin/archives
-mailman/cgi-bin/edithtml
-mailman/cgi-bin/handle_opts
-mailman/cgi-bin/listinfo
-mailman/cgi-bin/options
-mailman/cgi-bin/private
-mailman/cgi-bin/roster
-mailman/cgi-bin/subscribe
-mailman/cron/bumpdigests
-mailman/cron/checkdbs
-mailman/cron/crontab.in
-mailman/cron/gate_news
-mailman/cron/mailpasswds
-mailman/cron/nightly_gzip
-mailman/cron/paths.py
-mailman/cron/qrunner
-mailman/cron/senddigests
-mailman/data/last_mailman_version
-mailman/data/pending_subscriptions.db
-mailman/filters/bowa-strip
-mailman/icons/PythonPowered.png
-mailman/icons/gnu-head-tiny.jpg
-mailman/icons/mailman-large.jpg
-mailman/icons/mailman.jpg
-mailman/mail/wrapper
-mailman/scripts/answer_majordomo_mail
-mailman/scripts/driver
-mailman/scripts/mailcmd
-mailman/scripts/mailowner
-mailman/scripts/paths.py
-mailman/scripts/post
-mailman/templates/admindbpreamble.html
-mailman/templates/adminsubscribeack.txt
-mailman/templates/adminunsubscribeack.txt
-mailman/templates/admlogin.txt
-mailman/templates/approve.txt
-mailman/templates/bounce.txt
-mailman/templates/checkdbs.txt
-mailman/templates/convert.txt
-mailman/templates/cronpass.txt
-mailman/templates/handle_opts.html
-mailman/templates/headfoot.html
-mailman/templates/help.txt
-mailman/templates/listinfo.html
-mailman/templates/masthead.txt
-mailman/templates/newlist.txt
-mailman/templates/nopass.txt
-mailman/templates/options.html
-mailman/templates/postack.txt
-mailman/templates/postauth.txt
-mailman/templates/postheld.txt
-mailman/templates/reenable.txt
-mailman/templates/refuse.txt
-mailman/templates/roster.html
-mailman/templates/subauth.txt
-mailman/templates/subscribe.html
-mailman/templates/subscribeack.txt
-mailman/templates/userpass.txt
-mailman/templates/verify.txt
-@dirrm mailman/templates
-@dirrm mailman/spam
-@dirrm mailman/scripts
-@dirrm mailman/qfiles
-@dirrm mailman/mail
-@dirrm mailman/logs
-@dirrm mailman/locks
-@dirrm mailman/lists
-@dirrm mailman/icons
-@dirrm mailman/filters
-@dirrm mailman/data
-@dirrm mailman/cron
-@dirrm mailman/cgi-bin
-@dirrm mailman/bin
-@dirrm mailman/archives/public
-@dirrm mailman/archives/private
-@dirrm mailman/archives
-@dirrm mailman/Mailman/pythonlib
-@dirrm mailman/Mailman/Logging
-@dirrm mailman/Mailman/Handlers
-@dirrm mailman/Mailman/Cgi
-@dirrm mailman/Mailman/Bouncers
-@dirrm mailman/Mailman/Archiver
-@dirrm mailman/Mailman
-@dirrm mailman
+@dirrm %%MMDIR%%/templates
+@dirrm %%MMDIR%%/scripts
+@dirrm %%MMDIR%%/mail
+@dirrm %%MMDIR%%/icons
+@dirrm %%MMDIR%%/filters
+@dirrm %%MMDIR%%/data
+@dirrm %%MMDIR%%/cron
+@dirrm %%MMDIR%%/cgi-bin
+@dirrm %%MMDIR%%/bin
+@dirrm %%MMDIR%%/Mailman/pythonlib
+@dirrm %%MMDIR%%/Mailman/Logging
+@dirrm %%MMDIR%%/Mailman/Handlers
+@dirrm %%MMDIR%%/Mailman/Cgi
+@dirrm %%MMDIR%%/Mailman/Bouncers
+@dirrm %%MMDIR%%/Mailman/Archiver
+@dirrm %%MMDIR%%/Mailman
 %%PORTDOCS%%@dirrm share/doc/mailman
+@unexec rmdir %D/%%MMDIR%%/spam 2>/dev/null || true
+@unexec rmdir %D/%%MMDIR%%/qfiles 2>/dev/null || true
+@unexec rmdir %D/%%MMDIR%%/logs 2>/dev/null || true
+@unexec rmdir %D/%%MMDIR%%/locks 2>/dev/null || true
+@unexec rmdir %D/%%MMDIR%%/lists 2>/dev/null || true
+@unexec rmdir %D/%%MMDIR%%/archives/public 2>/dev/null || true
+@unexec rmdir %D/%%MMDIR%%/archives/private 2>/dev/null || true
+@unexec rmdir %D/%%MMDIR%%/archives 2>/dev/null || true
+@unexec rmdir %D/%%MMDIR%%/ 2>/dev/null || true

@@ -7,6 +7,7 @@
 
 PORTNAME=	mailman
 PORTVERSION=	2.0.8
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.list.org/ \
 		${MASTER_SITE_GNU} \
@@ -24,31 +25,47 @@ CONFIGURE_ARGS=	--prefix=${MAILMANDIR} \
 		--with-mail-gid=${MAIL_GID} --with-cgi-gid=${CGI_GID}
 USE_PYTHON=	yes
 
-USERNAME?=	mailman
-USERID?=	89
-
-# The default value of '1' for MAIL_GID works with sendmail.  If you're
-# using installed from ports, you should set MAIL_GID at build time
-# according to the following table:
+# These variables may be tweaked if required.  However, it is recommended
+# that the USERID and GROUPID not be changed.
 #
-# MTA		| MAIL_GID
-# Exim		| 6
-# Postfix	| ???
+USERNAME?=	mailman
+USERID?=	91
+GROUPNAME?=	${USERNAME}
+GROUPID?=	${USERID}
+MMDIR?=		mailman
 
+# The default value of '1' for MAIL_GID works with sendmail.  If you're using
+# an alternative MTA installed from ports, you should set MAIL_GID at build
+# time according to the following table.  (Please contact this port's
+# maintainer if you can fill in the blanks!)
+#
+# MTA     | MAIL_GID
+# Exim    | 6
+# Postfix | ???
+# Qmail   | ???
+#
 MAIL_GID?=	1
 CGI_GID?=	80
-MMDIR?=		mailman
+
 MAILMANDIR=	${PREFIX}/${MMDIR}
 PKGMESSAGE=	${WRKDIR}/pkg-message
+PKGINSTALL=	${WRKDIR}/pkg-install
+PLIST_SUB=	MMDIR=${MMDIR}
 
 pre-configure:
-	# Add the username, uid, group and gid
-	${SH} ${FILESDIR}/configure.sh ${USERNAME} ${USERID} ${MAILMANDIR}
+# Add the username, uid, group and gid
+# ${SH} ${FILESDIR}/configure.sh ${USERNAME} ${USERID} ${MAILMANDIR}
 
-	# Create the dir and the correct permissions for it.
-	${MKDIR} ${MAILMANDIR}
-	${CHOWN} ${USERNAME}:${USERNAME} ${MAILMANDIR}
-	${CHMOD} 2775 ${MAILMANDIR}
+	@ ${SED} -e 's#%%USER%%#${USERNAME}#g' -e 's#%%UID%%#${USERID}#g' \
+	  -e 's#%%GROUP%%#${GROUPNAME}#g' -e 's#%%GID%%#${GROUPID}#g' \
+	  -e 's#%%MAILMANDIR%%#${MAILMANDIR}#g' pkg-install > \
+	  ${PKGINSTALL}
+	@ ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+
+# Create the dir and the correct permissions for it.
+#${MKDIR} ${MAILMANDIR}
+#${CHOWN} ${USERNAME}:${USERNAME} ${MAILMANDIR}
+#${CHMOD} 2775 ${MAILMANDIR}
 
 post-configure:
 	@ ${SED} -e 's#%%MAILMANDIR%%#${MAILMANDIR}#g' \
