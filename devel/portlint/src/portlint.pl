@@ -2,10 +2,10 @@
 #
 # portlint - lint for port directory
 # implemented by:
-#	Jun-ichiro itojun Itoh <itojun@itojun.org>
+#	Jun-ichiro itojun Hagino <itojun@itojun.org>
 #	Yoshishige Arai <ryo2@on.rim.or.jp>
 #
-# Copyright(c) 1997 by Jun-ichiro Itoh <itojun@itojun.org>.
+# Copyright(c) 1997 by Jun-ichiro Hagino <itojun@itojun.org>.
 # All rights reserved.
 # Freely redistributable.  Absolutely no warranty.
 #
@@ -13,7 +13,7 @@
 # bsd.port.mk.  There are significant differences in those so you'll have
 # hard time upgrading this...
 #
-# $Id: portlint.pl,v 1.6 1999/04/22 05:37:46 itojun Exp $
+# $Id: portlint.pl,v 1.7 1999/07/24 14:24:46 itojun Exp $
 #
 
 $err = $warn = 0;
