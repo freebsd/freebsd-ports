@@ -32,7 +32,7 @@ RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore \
 		gdm:${PORTSDIR}/x11/gdm \
 		xalf:${PORTSDIR}/x11/xalf \
 		${X11BASE}/share/themes/Metal/ICON.png:${PORTSDIR}/x11-toolkits/gtk-engines \
-		${PYTHON_SITELIBDIR}/_appletmodule.so:${PORTSDIR}/x11-toolkits/py-gnome \
+		${PYTHON_SITELIBDIR}/gtk-1.2/_appletmodule.so:${PORTSDIR}/x11-toolkits/py-gnome \
 		gnomeg:${PORTSDIR}/x11-toolkits/guile-gnome \
 		${X11BASE}/etc/panelmmConf.sh:${PORTSDIR}/x11-toolkits/panel-- \
 		nautilus:${PORTSDIR}/x11-fm/nautilus \

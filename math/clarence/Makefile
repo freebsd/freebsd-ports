@@ -13,7 +13,7 @@ MASTER_SITES=	http://clay.ll.pl/clarence/
 
 MAINTAINER=	ports@FreeBSD.org
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/GDK.py:${PORTSDIR}/x11-toolkits/py-gtk
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/GDK.py:${PORTSDIR}/x11-toolkits/py-gtk
 
 USE_REINPLACE=	yes
 USE_PYTHON=	yes

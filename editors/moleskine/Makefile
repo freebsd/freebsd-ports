@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME:S/^m/M/}-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_gnomemodule.so:${PORTSDIR}/x11-toolkits/py-gnome \
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/_gnomemodule.so:${PORTSDIR}/x11-toolkits/py-gnome \
 		${PYTHON_SITELIBDIR}/_gtkscintillamodule.so:${PORTSDIR}/x11-toolkits/py-gtkscintilla
 
 USE_X_PREFIX=	yes
