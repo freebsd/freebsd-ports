@@ -1,2 +1,14 @@
 beep supports Gzipped and uncompressed skins.  If you would like to use
 Zip format skins you will need to ensure archivers/unzip is installed.
+
+FreeBSD 5.x users should add the following to their /etc/libmap.conf
+
+# Might crash if used with libpthread
+[beep-media-player]
+libc_r.so.5		libc_r.so.5
+libc_r.so		libc_r.so
+
+[/usr/X11R6/bin/beep-media-player]
+libc_r.so.5		libc_r.so.5
+libc_r.so		libc_r.so
+
