@@ -6,13 +6,13 @@
 # $FreeBSD$
 #
 
-DISTNAME=       libffi-1.20
+DISTNAME=	libffi-1.20
 CATEGORIES=	devel
-MASTER_SITES=   ftp://ftp.cygnus.com/pub/green/
+MASTER_SITES=	ftp://sourceware.cygnus.com/pub/libffi/
 
-MAINTAINER=     horance@freedom.ie.cycu.edu.tw
+MAINTAINER=	horance@freedom.ie.cycu.edu.tw
 
-USE_LIBTOOL=  yes
+USE_LIBTOOL=	yes
 CONFIGURE_TARGET=	# empty
 
 post-install:
