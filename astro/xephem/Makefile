@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xephem
-PORTVERSION=	3.6.1
+PORTVERSION=	3.6.2
 CATEGORIES=	astro
 MASTER_SITES=	# http://www.clearskyinstitute.com/xephem/
 
@@ -34,7 +34,7 @@ XEPHEMSRC=	${PORTNAME}-${PORTVERSION}.tar.gz
 
 .for file in ${XEPHEMSRC}
 .if !exists(${DISTDIR}/${file})
-ECHO_MSG=	/usr/bin/printf
+ECHO_MSG=	${PRINTF}
 IGNORE=:\n\
 Because of licensing restrictions, you must manually fetch\n\
 ${file} from http://www.clearskyinstitute.com/xephem/,\n\
