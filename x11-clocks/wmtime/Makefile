@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmtime
-PORTVERSION= 	1.0b2
+PORTVERSION=	1.0b2
 CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	ftp://ftp.enteract.com/users/rneswold/
 

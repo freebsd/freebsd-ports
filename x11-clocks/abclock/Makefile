@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	abclock
-PORTVERSION= 	1.0a
+PORTVERSION=	1.0a
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://odur.let.rug.nl/~kleiweg/abclock/
 

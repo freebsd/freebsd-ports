@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmtz
-PORTVERSION= 	0.5
+PORTVERSION=	0.5
 CATEGORIES=	x11-clocks windowmaker afterstep
 MASTER_SITES=	http://www.algonet.se/~jlin/wmtz/ \
 		${MASTER_SITE_LOCAL}

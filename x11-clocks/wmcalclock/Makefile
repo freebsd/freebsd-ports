@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmCalClock
-PORTVERSION= 	1.25
+PORTVERSION=	1.25
 CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	http://nis-www.lanl.gov/~mgh/WindowMaker/
 

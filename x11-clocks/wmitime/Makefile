@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmitime
-PORTVERSION= 	0.3
+PORTVERSION=	0.3
 CATEGORIES=	x11-clocks windowmaker afterstep
 MASTER_SITES=	http://www.neotokyo.org/illusion/downloads/
 

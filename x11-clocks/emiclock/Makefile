@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	emiclock
-PORTVERSION= 	2.0.2
+PORTVERSION=	2.0.2
 CATEGORIES=	x11-clocks
 MASTER_SITES=	ftp://ftp.noge.com/pub/EmiClock/X11/
 

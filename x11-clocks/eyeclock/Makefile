@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eyeclock
-PORTVERSION= 	2.0
+PORTVERSION=	2.0
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.seki.ee.kagu.sut.ac.jp/~sakai/
 

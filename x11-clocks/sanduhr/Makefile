@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sanduhr
-PORTVERSION= 	0.3.50
+PORTVERSION=	0.3.50
 CATEGORIES=	x11-clocks gnome
 MASTER_SITES=	http://www.mathematik.uni-kl.de/~wwwstoch/voss/
 
