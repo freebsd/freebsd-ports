@@ -3,7 +3,7 @@
 # Date created:        24 November 1997
 # Whom:                Murray Stokely <murray@cdrom.com>
 #
-# $Id: Makefile,v 1.2 1997/11/02 19:09:30 max Exp $
+# $Id: Makefile,v 1.3 1997/11/16 16:32:02 max Exp $
 #
 
 DISTNAME=	Eterm-DR-0.6aPL2
@@ -15,6 +15,7 @@ MAINTAINER=	murray@cdrom.com
 
 LIB_DEPENDS=	Im\\.3\\.:${PORTSDIR}/graphics/imlib
 
+BROKEN=		R_OK undefined
 WRKSRC=		$(WRKDIR)/Eterm-DR-0.6a
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
