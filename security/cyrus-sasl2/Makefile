@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	cyrus-sasl
-PORTVERSION=	2.1.18
-PORTREVISION=	1
+PORTVERSION=	2.1.19
+#PORTREVISION=	0
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/%SUBDIR%/ \
 		ftp://ftp.westbend.net/pub/cyrus-mail/%SUBDIR%/ \
@@ -99,9 +99,6 @@ CONFIGURE_ARGS+=--without-pgsql
 .endif
 
 .if defined(WITH_SQLITE)
-PATCH_SITES=	${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	nork
-PATCHFILES=	cyrus-sasl2-sqlite.20040529.diff
 LIB_DEPENDS+=	sqlite.2:${PORTSDIR}/databases/sqlite
 CONFIGURE_ARGS+=--with-sqlite=${LOCALBASE}
 .else
