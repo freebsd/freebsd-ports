@@ -1,6 +1,6 @@
 # New ports collection makefile for:	TiMidity++
 # Date created:		27 Feb 1999
-# Whom:			Yoichi Asai <yatt@msc.biglobe.ne.jp>
+# Whom:			Yoichi Asai <yatt@luna2.org>
 #
 # $FreeBSD$
 #
@@ -9,10 +9,10 @@ PORTNAME=	timidity++
 PORTVERSION=	2.11.3
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://www.goice.co.jp/member/mo/timidity/dist/
+MASTER_SITES=	http://www.timidity.jp/dist/
 DISTNAME=	TiMidity++-${PORTVERSION}
 
-MAINTAINER=	yatt@msc.biglobe.ne.jp
+MAINTAINER=	yatt@luna2.org
 
 # If you don't have X11, type "make -DWITHOUT_X11" or uncomment this.
 #WITHOUT_X11=	yes
