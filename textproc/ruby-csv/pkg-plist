@@ -1,0 +1,3 @@
+%%RUBY_SITELIBDIR%%/csv.rb
+%%PORTDOCS%%%%RUBY_DOCDIR%%/csv/README.txt
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/csv

@@ -119,6 +119,7 @@
     SUBDIR += py-xml
     SUBDIR += rand
     SUBDIR += rman
+    SUBDIR += ruby-csv
     SUBDIR += ruby-erb
     SUBDIR += ruby-html-parser
     SUBDIR += ruby-qt2xml
