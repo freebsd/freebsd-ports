@@ -33,7 +33,7 @@ DATAFILES=	License.txt Mailcap Mime.types RAObserver.class \
 IGNORE=		may not be automatically fetched due to licensing\
 		restrictions.  You MUST manually fetch the Linux ELF version after\
 		reading and agreeing to the license at:\
-		http://www.real.com/products/player/50player/downloadrealplayer.html?wp=dl1198&src=download\
+		http://proforma.real.com/real/player/blackjack.html \
 		- once ${DISTFILES} has been downloaded, move it to\
 		${DISTDIR} and then restart this build.
 .endif
