@@ -3,3 +3,4 @@ lib/X11/app-defaults/XbmBrowser
 lib/X11/app-defaults/XbmBrowser-color
 lib/X11/xbmbrowser/xbmbrowser.menu
 lib/X11/xbmbrowser/xbmbrowser.menu.tut
+@dirrm lib/X11/xbmbrowser
