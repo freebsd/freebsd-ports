@@ -28,7 +28,7 @@ bridged=@@BRIDGED@@
 bridge_interface=@@BRIDGE_INTF@@
 host_ip=`vmware_config vmnet1.HostOnlyAddress`
 netmask=`vmware_config vmnet1.HostOnlyNetMask`
-dev_vmnet1=@@LINUXBASE@@/dev/vmnet1
+dev_vmnet1=/dev/vmnet1
 
 if [ ! -x $vmware ]; then
     echo "$vmware does not exist!" >&2
@@ -84,6 +84,7 @@ stop)
 	    ngctl msg ${bridge_interface}: setautosrc 1
 	    ngctl msg ${bridge_interface}: setpromisc 0
 	fi
+	kldunload vmnet.ko
     fi
     ;;
 
