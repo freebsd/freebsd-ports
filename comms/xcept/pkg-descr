@@ -1,0 +1,29 @@
+XCept provides a decoder for the CEPT protocol as it is in use for
+example by the Btx service of the Deutsche Telekom.  In particular,
+electronic banking and other commercial services are being handled
+this way.  The CEPT protocol itself is supposed to be a European Telco
+protocol, though I don't know whether any other Telco is actually
+using it.
+
+The program consists of two parts, ceptd acting as a server on the
+host with the modem to use, and xcept as the client which interacts
+with the user, using an X11 frontend if desired.  Xcept also provides
+basic scripting facilities.
+
+The package has been developed by Arno Augustin and Frank Hoering at
+the University of Nürnberg-Erlangen, Germany.  XCept version 2 has
+been the last version distributed under a BSD-style copyright; the
+package went commercial in later versions.  The authors no longer
+distribute or support version 2.
+
+After installing the package, you must add
+
+xcept		20005/tcp #XCEPT
+
+to /etc/services, and
+
+xcept	stream	tcp	nowait	root	/usr/local/libexec/ceptd ceptd
+
+to /etc/inetd.conf on your server host.
+
+Jörg Wunsch  <joerg@FreeBSD.org>

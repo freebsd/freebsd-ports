@@ -1,0 +1,229 @@
+--- ceptd/config.h.orig	Wed Jul 27 10:28:38 1994
++++ ceptd/config.h	Sun Sep  1 12:37:09 1996
+@@ -49,7 +49,7 @@
+ 
+ #undef NO_STRERROR    /* define NO_STRERROR if you don't have strerror func. */
+ #define HASTERMIOS    /* define HASTERMIOS if system has termios.h */
+-#undef	ASCIIPID      /* define if your system writes pid in ascii to
++#define	ASCIIPID      /* define if your system writes pid in ascii to
+ 			 uucp-lock */
+ 
+ #endif /* __bsdi__ */
+--- ceptd/Makefile.orig	Wed Jun 15 17:10:59 1994
++++ ceptd/Makefile	Sun Sep  1 14:17:11 1996
+@@ -1,21 +1,30 @@
+ # directories:
+ OWNER= root
+-GROUP= sys
+-EXECMODE= 6750
++GROUP= bin
++EXECMODE= 04750
++MANMODE= 0644
+ 
+-BINDIR= /usr/local/bin# 		directory for the executable ceptd
+-MANDIR= /usr/local/man/manl# 	directory for the ceptds manpage 
++BINDIR= /usr/local/libexec# 	directory for the executable ceptd
++MANDIR= /usr/local/man/man8# 	directory for the ceptds manpage 
+ ETCDIR= /usr/local/etc# 	directory for 'init file' and 'users file'
+ 
+ # defaults for the ceptd :
+ 
+-DEFAULTINITFILENAME= 	$(ETCDIR)/init.cept# 	modems default init file
+-DEFAULTUSERSFILENAME= 	$(ETCDIR)/users.cept# 	file with allowed users
+-DEFAULTLOGFILENAME= 	/tmp/log.cept#		logfile for user online times
++DEFAULTINITFILENAME= 	$(ETCDIR)/cept.init# 	modems default init file
++DEFAULTUSERSFILENAME= 	$(ETCDIR)/cept.users# 	file with allowed users
++DEFAULTLOGFILENAME= 	/var/log/log.cept#	logfile for user online times
+ DEFAULTMODEM= 		/dev/modem#		char. special file for modem
+ DEFAULTSPEED= 		2400# 			modem baud rate
+ DEFAULTSOCKETPORT= 	20005#			socket port for connections
+-LOCKDIR=		/var/spool/locks#       lock dir for uucp-locks
++LOCKDIR=		/var/spool/lock#	lock dir for uucp-locks
++
++.ifdef NOMANCOMPRESS
++MANPAGE= ceptd.8
++MANCOMPRESS= cat
++.else
++MANPAGE= ceptd.8.gz
++MANCOMPRESS= gzip -c -9
++.endif
+ 
+ # define these flags in $(DEFS):
+ 
+@@ -54,86 +63,49 @@
+  	-DDEFAULTINITFILENAME=\"$(DEFAULTINITFILENAME)\"\
+ 	-DDEFAULTUSERSFILENAME=\"$(DEFAULTUSERSFILENAME)\"\
+ 	-DDEFAULTLOGFILENAME=\"$(DEFAULTLOGFILENAME)\"\
+-	-DSVR4
++	-DBSD
+ #	-DISDN\
+ 
+ # the GNU C-compiler:
+-CC	= gcc
+-CCOPTS	= -O
+-CCFLAGS = -Wswitch -Wcomment  -Wshadow -Wpointer-arith -Wcast-qual\
+-          -Wtrigraphs# -Wunused
++#CC	= gcc
++#CCOPTS	= -O
++#CCFLAGS = -Wswitch -Wcomment  -Wshadow -Wpointer-arith -Wcast-qual\
++#          -Wtrigraphs# -Wunused
+ 
+ # ... the lex is ...
+-LEX	= flex
++#LEX	=flex
+ 
+ ##############################################################################
+ 
+-all:	ceptd ceptd.8
++all:	ceptd ${MANPAGE}
+ 
+ OBJS = ceptd.o level2.o modeminit.o socket.o term.o lex.yy.o isdn.o
+ SRC  = ceptd.c level2.c modeminit.c socket.c term.c lex.yy.c isdn.c
+ INC  = config.h cept.h ../xcept/protocol.h
+ 
+-.c.o:		makefile config.h cept.h  ../xcept/protocol.h 
+-		@echo
+-		@echo '########################## $@ ########################'
+-		$(CC) -c $(CCOPTS) $(CCFLAGS) $(DEFS) $*.c
++.c.o:		config.h cept.h  ../xcept/protocol.h 
++		$(CC) -c $(CFLAGS) $(DEFS) $*.c
+ 
+ lex.yy.c:       lex_yy
+-		@echo
+-		@echo '########################## $@ ########################'
+ 		$(LEX) -s -i -p lex_yy
+ 		
+ 
+ ceptd:	$(OBJS)
+-		@echo
+-		@echo '########################## $@ ########################'
+-		$(CC) $(OBJS) -L. -o ceptd -lnsl -lsocket
+-		@echo "$@ finished"
+-
+-install:	ceptd ceptd.8
+-	@echo
+-	@echo '########################## $@ #################################'
+-	strip ceptd
+-	mv ceptd $(BINDIR)
+-	chown $(OWNER) $(BINDIR)/ceptd
+-	chgrp $(GROUP) $(BINDIR)/ceptd
+-	chmod $(EXECMODE) $(BINDIR)/ceptd
+-	mv ceptd.8 $(MANDIR)
+-	chown $(OWNER) $(MANDIR)/ceptd.8
+-	chgrp $(GROUP) $(MANDIR)/ceptd.8
+-	chmod 644 $(MANDIR)/ceptd.8
+-	@echo
+-	@echo '**************************************************************'
+-	@echo '**************************************************************'
+-	@echo "------>>> Now do the following steps:"
+-	@echo 
+-	@echo '1)' add the following line to your /etc/inetd.conf file:
+-	@echo "   cept stream tcp nowait $(OWNER)"\
+-		$(BINDIR)/ceptd ceptd 
+-	@echo 
+-	@echo '2)' add the following line to your /etc/services file:
+-	@echo "   cept    $(DEFAULTSOCKETPORT)/tcp    ceptd"
+-	@echo
+-	@echo '3)' copy the ../etc/users.cept file to $(DEFAULTUSERSFILENAME)\
+-		  and edit it.
+-	@echo
+-	@echo '4)' copy the ../etc/init.cept file to $(DEFAULTINITFILENAME)\
+-		  and edit it.
+-	@echo
+-	@echo '5)' read the ceptd manual.
+-	@echo '***************************************************************'
+-	@echo '***************************************************************'
++		$(CC) $(OBJS) -L. -o ceptd
++
++install:	ceptd ${MANPAGE}
++	${INSTALL} -c -o ${OWNER} -g ${GROUP} -m ${EXECMODE} ceptd ${BINDIR}/ceptd
++	${INSTALL} -c -o ${OWNER} -g ${GROUP} -m ${MANMODE} ${MANPAGE} ${MANDIR}/${MANPAGE}
+ 
+-ceptd.8:	ceptd.8.template
++${MANPAGE}:	ceptd.8.template
+ 		sed -e 's|--- The permissions file.|$(DEFAULTUSERSFILENAME)|g'\
+ 		   -e 's|--- The initalization file.|$(DEFAULTINITFILENAME)|g'\
+ 		   -e 's|--- The log file.|$(DEFAULTLOGFILENAME)|g'\
+-		   ceptd.8.template > ceptd.8
++		   ceptd.8.template | ${MANCOMPRESS} > ${MANPAGE}
+ 
+ 
+ clean:		
+-		rm -f ceptd.8 *.o TAGS ceptd
++		rm -f ${MANPAGE} *.o TAGS ceptd
+ 
+ veryclean:      
+ 		rm -f ceptd.8 *.o TAGS ceptd lex.yy.c *.zoo
+--- ceptd/ceptd.8.template.orig	Wed May 25 19:36:11 1994
++++ ceptd/ceptd.8.template	Sun Sep  1 15:33:16 1996
+@@ -17,8 +17,8 @@
+ .I ceptd 
+ can be started from the \fIinetd\fR. If not started from inetd,
+ \fIceptd\fR will deal with connection request forking on connects.
+-If the standard input of ceptd 
+-is not a tty, ceptd assumes being started from inetd.
++If standard input and output of ceptd 
++are sockets, ceptd assumes being started from inetd.
+ .PP
+ .I Available options:
+ .PP
+--- ceptd/ceptd.c.orig	Wed May 25 19:36:11 1994
++++ ceptd/ceptd.c	Sun Sep  1 15:36:13 1996
+@@ -67,12 +67,12 @@
+ static int      endtime();
+ static void  	exit_btx_server();        /* signal routine for parent */
+ static pid_t   	childpid = -1;            /* pid of child process      */
+-static int      modem = -1, inetd = 0;
++static int      modem = -1;
+ int             debug =0;
+ static char     *userlogfilename = DEFAULTLOGFILENAME;
+ static int	connected;
+ static char 	*caller;
+-int             connectstatus, isdnflag = 0;
++int             connectstatus, isdnflag = 0, inetd = 0;
+ 
+ main(argc,argv)
+ int argc;char *argv[];
+@@ -220,12 +220,8 @@
+ #else
+    {
+       struct sigaction act;
++      memset(&act, 0, sizeof act);
+       act.sa_handler = hang_childs;
+-      act.sa_mask.sa_sigbits[0] = 0;
+-      act.sa_mask.sa_sigbits[1] = 0;
+-      act.sa_mask.sa_sigbits[2] = 0;
+-      act.sa_mask.sa_sigbits[3] = 0;
+-      act.sa_flags =0;
+       sigaction(SIGCHLD, &act, NULL);	 /* POSIX */
+    }
+ #endif
+--- ceptd/modeminit.c.orig	Wed May 25 19:36:12 1994
++++ ceptd/modeminit.c	Sun Sep  1 15:35:42 1996
+@@ -82,6 +82,7 @@
+ 
+ extern int errno;
+ extern int connectstatus, isdnflag;
++extern int inetd;
+ 
+ #ifdef USE_LOCK
+ #include <string.h>
+@@ -134,7 +135,8 @@
+  */
+ modemclose()
+ {
+-   (void) setsid ();   /* give up controling terminal modem */
++   if (!inetd)
++     (void) setsid ();   /* give up controling terminal modem */
+    if(modem != -1){
+       sendmodem(hangupstring);
+       termflush(modem);  /* get rid of garbage */
+@@ -163,7 +165,7 @@
+ #endif
+    int s;
+ 
+-   if(-1 == setsid())
++   if(!inetd && -1 == setsid())
+       log(LOG_ERR,"Can't setsid : %m");
+ #ifdef USE_LOCK
+    device = strrchr(devname, '/');
