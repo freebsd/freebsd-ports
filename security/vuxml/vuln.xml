@@ -56,6 +56,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
+      <cvename>CAN-2004-1037</cvename>
       <mlist msgid="86zn1mhchx.fsf@n-dimensional.de">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110037207516456</mlist>
       <url>http://twiki.org/cgi-bin/view/Codev/SecurityAlertExecuteCommandsWithSearch</url>
     </references>
