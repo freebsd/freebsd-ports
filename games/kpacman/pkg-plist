@@ -1,8 +1,12 @@
 bin/kpacman
 share/applnk/Games/kpacman.desktop
+share/config/kpacmanrc
 share/icons/locolor/32x32/apps/kpacman.png
 share/icons/locolor/16x16/apps/kpacman.png
+share/icons/hicolor/16x16/apps/kpacman.png
+share/icons/hicolor/32x32/apps/kpacman.png
 share/locale/de/LC_MESSAGES/kpacman.mo
+share/locale/es/LC_MESSAGES/kpacman.mo
 share/locale/pt/LC_MESSAGES/kpacman.mo
 share/locale/sv/LC_MESSAGES/kpacman.mo
 share/doc/HTML/en/kpacman/kpacman-2.html
@@ -20,6 +24,7 @@ share/doc/HTML/de/kpacman/kpacman-4.html
 share/doc/HTML/de/kpacman/kpacman.gif
 share/doc/HTML/de/kpacman/index.html
 share/doc/HTML/de/kpacman/kpacman-1.html
+share/apps/kpacman/kpacmanui.rc
 share/apps/kpacman/fonts/font-small.pbm
 share/apps/kpacman/fonts/font-smooth.pbm
 share/apps/kpacman/fonts/font.pbm
