@@ -38,7 +38,7 @@ post-install:
 	@${ECHO} ""
 	@${ECHO} "${PREFIX}/sbin/mtr is setuid \"root\" "
 	@${ECHO} ""
-	@${ECHO} "Please read about potential security iussues"
+	@${ECHO} "Please read about potential security issues"
 	@${ECHO} "in file ${WRKSRC}/SECURITY (not installed)"
 	@${ECHO} ""
 
