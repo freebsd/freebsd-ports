@@ -50,14 +50,15 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </description>
     <references>
       <cvename>CAN-2004-0460</cvename>
-      <url>http://www.mandrakesoft.com/security/advisories?name=MDKSA-2004:061</url>
-      <url>http://www.us-cert.gov/cas/techalerts/TA04-174A.html</url>
-      <url>http://www.kb.cert.org/vuls/id/317350</url>
-      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108795911203342&amp;w=2</url>
+      <url>http://www.osvdb.org/7237</url>
+      <uscertta>TA04-174A</uscertta>
+      <certvu>317350</certvu>
+      <mlist msgid="BAY13-F94UHMuEEkHMz0005c4f7@hotmail.com">http://www.securityfocus.com/archive/1/366801</mlist>
     </references>
     <dates>
       <discovery>2004-06-22</discovery>
       <entry>2004-06-25</entry>
+      <modified>2004-06-27</modified>
     </dates>
   </vuln>
 
@@ -230,12 +231,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </description>
     <references>
       <url>http://leafnode.sourceforge.net/leafnode-SA-2002-01</url>
-      <url>http://sourceforge.net/mailarchive/message.php?msg_id=2796226</url>
-      <url>http://article.gmane.org/gmane.network.leafnode.announce/8</url>
-      <!--
       <mlist msgid="20021229205023.GA5216@merlin.emma.line.org">http://sourceforge.net/mailarchive/message.php?msg_id=2796226</mlist>
       <mlist msgid="20021229205023.GA5216@merlin.emma.line.org">http://article.gmane.org/gmane.network.leafnode.announce/8</mlist>
-      -->
       <bid>6490</bid>
       <freebsdpr>46613</freebsdpr>
     </references>
@@ -263,12 +260,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <references>
       <cvename>CAN-2003-0744</cvename>
       <url>http://leafnode.sourceforge.net/leafnode-SA-2003-01</url>
-      <url>http://sourceforge.net/mailarchive/message.php?msg_id=5975563</url>
-      <url>http://article.gmane.org/gmane.network.leafnode.announce/21</url>
-      <!--
       <mlist msgid="20030904011904.GB12350@merlin.emma.line.org">http://sourceforge.net/mailarchive/message.php?msg_id=5975563</mlist>
       <mlist msgid="20030904011904.GB12350@merlin.emma.line.org">http://article.gmane.org/gmane.network.leafnode.announce/21</mlist>
-      -->
       <bid>8541</bid>
       <freebsdpr>53838</freebsdpr>
     </references>
@@ -299,12 +292,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <references>
       <url>http://leafnode.sourceforge.net/leafnode-SA-2004-01</url>
       <url>http://sourceforge.net/tracker/index.php?func=detail&amp;aid=873149&amp;group_id=57767&amp;atid=485349</url>
-      <url>http://article.gmane.org/gmane.network.leafnode.announce/32</url>
-      <url>http://sourceforge.net/mailarchive/message.php?msg_id=6922570</url>
-      <!--
       <mlist msgid="20040109015625.GA12319@merlin.emma.line.org">http://article.gmane.org/gmane.network.leafnode.announce/32</mlist>
       <mlist msgid="20040109015625.GA12319@merlin.emma.line.org">http://sourceforge.net/mailarchive/message.php?msg_id=6922570</mlist>
-      -->
       <freebsdpr>61105</freebsdpr>
     </references>
     <dates>
@@ -520,14 +509,14 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <references>
       <cvename>CAN-2002-1580</cvename>
       <bid>6298</bid>
-      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=103886607825605</url>
       <certvu>740169</certvu>
-      <!-- <mlist msgid="20021202175606.GA26254@irccrew.org">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=103886607825605</mlist> -->
+      <mlist msgid="20021202175606.GA26254@irccrew.org">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=103886607825605</mlist>
+      <mlist>http://asg.web.cmu.edu/archive/message.php?mailbox=archive.info-cyrus&amp;msg=19349</mlist>
     </references>
     <dates>
       <discovery>2002-12-02</discovery>
       <entry>2004-05-12</entry>
-      <modified>2004-05-18</modified>
+      <modified>2004-06-27</modified>
     </dates>
   </vuln>
 
@@ -604,7 +593,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The Cyrus team reported multiple vulnerabilities in older
 	  versions of Cyrus IMSPd:</p>
-	<blockquote cite="http://marc.theaimsgroup.com/?l=cyrus-announce&amp;m=107150355226926">
+	<blockquote cite="http://asg.web.cmu.edu/archive/message.php?mailbox=archive.cyrus-announce&amp;msg=25">
 	  <p>These releases correct a recently discovered buffer
 	    overflow vulnerability, as well as clean up a significant
 	    amount of buffer handling throughout the code.</p>
@@ -612,12 +601,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
-      <url>http://marc.theaimsgroup.com/?l=cyrus-announce&amp;m=107150355226926</url>
-      <!-- <mlist>http://marc.theaimsgroup.com/?l=cyrus-announce&amp;m=107150355226926</mlist> -->
+      <mlist>http://asg.web.cmu.edu/archive/message.php?mailbox=archive.cyrus-announce&amp;msg=25</mlist>
     </references>
     <dates>
       <discovery>2004-12-12</discovery>
       <entry>2004-05-12</entry>
+      <modified>2004-06-27</modified>
     </dates>
   </vuln>
 
@@ -693,12 +682,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	</body>
     </description>
     <references>
-      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108256462710010</url>
-      <!--
-	<mlist msgid="20040421011055.GA1448@frontfree.net">
-	http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108256462710010
-	</mlist>
-      -->
+      <mlist msgid="20040421011055.GA1448@frontfree.net">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108256462710010</mlist>
     </references>
     <dates>
       <discovery>2004-03-05</discovery>
@@ -1182,8 +1166,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <references>
       <cvename>CAN-2004-0409</cvename>
       <url>http://xchat.org/files/source/2.0/patches/xc208-fixsocks5.diff</url>
-      <url>http://marc.theaimsgroup.com/?l=xchat-announce&amp;m=108114935507357</url>
-      <!-- <mlist msgid="20040405171305.04f19c44.zed@xchat.org">http://marc.theaimsgroup.com/?l=xchat-announce&amp;m=108114935507357</mlist> -->
+      <mlist msgid="20040405171305.04f19c44.zed@xchat.org">http://marc.theaimsgroup.com/?l=xchat-announce&amp;m=108114935507357</mlist>
     </references>
     <dates>
       <discovery>2004-04-05</discovery>
@@ -1370,10 +1353,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
-      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108239864203144</url>
-      <!--
       <mlist msgid="20040419000129.28917.qmail@www.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108239864203144</mlist>
-      -->
     </references>
     <dates>
       <discovery>2004-04-18</discovery>
@@ -1624,10 +1604,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </description>
     <references>
       <cvename>CAN-2003-1023</cvename>
-      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=106399528518704</url>
-      <!--
       <mlist msgid="E1A0LbX-000NPk-00.alienhard-mail-ru@f9.mail.ru">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=106399528518704</mlist>
-      -->
       <bid>8658</bid>
     </references>
     <dates>
@@ -1906,11 +1883,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <references>
       <url>http://www.mplayerhq.hu/homepage/design6/news.html</url>
       <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108066964709058</url>
-      <!-- <freebsdpr>ports/64974</freebsdpr> -->
+      <freebsdpr>ports/64974</freebsdpr>
     </references>
     <dates>
       <discovery>2004-03-30</discovery>
       <entry>2004-03-31</entry>
+      <modified>2004-06-27</modified>
     </dates>
   </vuln>
 
@@ -1997,11 +1975,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <cvename>CAN-2003-0781</cvename>
       <cvename>CAN-2003-0782</cvename>
       <url>http://www.securiteam.com/unixfocus/5YP0H2AAUY.html</url>
-      <!-- <freebsdpr>ports/57082</freebsdpr> -->
+      <freebsdpr>ports/57082</freebsdpr>
     </references>
     <dates>
       <discovery>2003-08-14</discovery>
       <entry>2004-03-29</entry>
+      <modified>2004-06-27</modified>
     </dates>
   </vuln>
 
@@ -2125,7 +2104,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
-      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=107403331309838</url>
+      <mlist msgid="20040113213940.GA1727@hzeroseven.org">http://www.securityfocus.com/archive/1/349756</mlist>
       <bid>9416</bid>
       <bid>9417</bid>
       <cvename>CAN-2004-0164</cvename>
@@ -2155,11 +2134,13 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <references>
       <url>http://www.s-quadra.com/advisories/Adv-20040315.txt</url>
       <bid>9885</bid>
+      <url>http://secunia.com/advisories/11138</url>
+      <certvu>779438</certvu>
     </references>
     <dates>
       <discovery>2004-02-09</discovery>
       <entry>2004-03-17</entry>
-      <modified>2004-03-29</modified>
+      <modified>2004-06-27</modified>
     </dates>
   </vuln>
 
@@ -3253,12 +3234,18 @@ misc.c:
       </body>
     </description>
     <references>
-      <url>http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/62586</url>
-      <url>http://www.securityfocus.com/archive/1/353186</url>
+      <freebsdpr>ports/62586</freebsdpr>
+      <mlist msgid="40279811.9050407@fillmore-labs.com">http://www.securityfocus.com/archive/1/353186</mlist>
+      <url>http://www.osvdb.org/3894</url>
+      <bid>9610</bid>
+      <url>http://secunia.com/advisories/10826</url>
+      <cvename>CAN-2004-0270</cvename>
+      <url>http://xforce.iss.net/xforce/xfdb/15077</url>
     </references>
     <dates>
       <discovery>2004-02-09</discovery>
       <entry>2004-02-12</entry>
+      <modified>2004-06-27</modified>
     </dates>
   </vuln>
 
