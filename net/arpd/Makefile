@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	arpd
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	net
-MASTER_SITES=	http://www.citi.umich.edu/u/provos/honeyd/
+MASTER_SITES=	http://niels.xtdnet.nl/honeyd/
 
-MAINTAINER=	dominc_marks@btinternet.com
+MAINTAINER=	yb@sainte-barbe.org
 COMMENT=	A daemon to service arp replies
 
 BUILD_DEPENDS=	${LOCALBASE}/include/dnet.h:${PORTSDIR}/net/libdnet \
@@ -18,9 +18,6 @@ BUILD_DEPENDS=	${LOCALBASE}/include/dnet.h:${PORTSDIR}/net/libdnet \
 RUN_DEPENDS=	${LOCALBASE}/lib/libdnet.a:${PORTSDIR}/net/libdnet \
 		${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent
 
-CONFIGURE_ARGS=	--with-libdnet=${LOCALBASE} \
-		--with-libevent=${LOCALBASE} \
-		--with-pcap
 GNU_CONFIGURE=	yes
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
