@@ -27,7 +27,6 @@ include/arlalib.h
 include/atypes.h
 include/auth.h
 include/base64.h
-include/bool.h
 include/bos.cs.h
 include/cb.cs.h
 include/cb.h
@@ -38,12 +37,8 @@ include/fs.h
 include/fs.ss.h
 include/fs_errors.h
 include/getarg.h
-include/hash.h
-include/heap.h
 include/ka-procs.h
-include/list.h
 include/lock.h
-include/log.h
 include/lwp.h
 include/parse_bytes.h
 include/parse_time.h
@@ -98,7 +93,6 @@ lib/librxvlserver.a
 lib/librxvolserver.a
 lib/libsl.a
 lib/libss.a
-lib/libutil.a
 libexec/arlad
 sbin/arla-cli
 sbin/rxperf
