@@ -1,18 +1,19 @@
 
 $FreeBSD$
 
---- Makefile.in.orig	Sun Sep  9 23:11:09 2001
-+++ Makefile.in	Mon Oct 22 18:57:47 2001
-@@ -114,14 +114,14 @@
- libesd_la_SOURCES =  	esdlib.c		esdmgr.c		esdfile.c		esd_config.c		audio.c			genrand.c		genrand.h
+--- Makefile.in.orig	Sat Mar  2 00:07:42 2002
++++ Makefile.in	Mon Mar  4 11:17:52 2002
+@@ -133,7 +133,7 @@
+ 	genrand.h
  
  
 -libesd_la_LDFLAGS = -version-info @ESD_VERSION_INFO@
 +libesd_la_LDFLAGS = -version-info 2:0:0
  
- libesd_la_LIBADD = @AUDIOFILE_LIBS@ @SOUND_LIBS@ -lm
+ libesd_la_LIBADD = @AUDIOFILE_LIBS@ @SOUND_LIBS@
  
- EXTRA_LTLIBRARIES =  	libesddsp.la
+@@ -141,7 +141,7 @@
+ 	libesddsp.la
  
  
 -libesddsp_la_LDFLAGS = -rpath $(libdir) -version-info @ESD_VERSION_INFO@
@@ -20,7 +21,7 @@ $FreeBSD$
  
  libesddsp_la_LIBADD = @DL_LIB@ -lm
  
-@@ -183,7 +183,7 @@
+@@ -239,7 +239,7 @@
  
  CLEANFILES = esound.spec esound.pc
  
