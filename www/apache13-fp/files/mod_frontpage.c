@@ -21,8 +21,8 @@
  * allow the exclusion or limitation of liability for consequential or
  * incidental damages, the above limitation may not apply to you.
  *
- * $Revision: 1.3 $
- * $Date: 1997/10/15 17:23:46 $
+ * $Revision: 5 $
+ * $Date: 6/19/98 5:25p $
  *
  */
 
@@ -69,6 +69,7 @@
 #define Vlstat lstat
 #endif 
 
+
 #ifndef TRUE
 #define TRUE 1
 #endif
@@ -92,21 +93,21 @@ static int  gfdKeyPipe[2];          /* Pipe to fpexe stub CGI */
 static int  gbKeyPipeActive = FALSE;/* Pipe to fpexe stub CGI is active */
 static int  gbEnabled = FALSE;      /* TRUE when SUID scheme is enabled */
 #if !defined(SHARED_MODULE)
-static int  giInitializeCount = 0;  /* FrontPageInit called previously */
+static int  giInitializeCount =0    /* FrontPageInit called previously */
 #endif
 
 static const char* FP         =
-          "/usr/local/frontpage/currentversion";
+          "/usr/local/frontpage/version4.0";
 static const char* FPKEYDIR   =
-          "/usr/local/frontpage/currentversion/apache-fp";
+          "/usr/local/frontpage/version4.0/apache-fp";
 static const char* KEYFILEXOR =
-          "/usr/local/frontpage/currentversion/apache-fp/suidkey";
+          "/usr/local/frontpage/version4.0/apache-fp/suidkey";
 static const char* KEYFILE    =
-          "/usr/local/frontpage/currentversion/apache-fp/suidkey.%d";
+          "/usr/local/frontpage/version4.0/apache-fp/suidkey.%d";
 static const char* FPSTUBDIR  =
-          "/usr/local/frontpage/currentversion/apache-fp/_vti_bin";
+          "/usr/local/frontpage/version4.0/apache-fp/_vti_bin";
 static const char* FPSTUB     =
-          "/usr/local/frontpage/currentversion/apache-fp/_vti_bin/fpexe";
+          "/usr/local/frontpage/version4.0/apache-fp/_vti_bin/fpexe";
 static const char* SHTML      =
           "/_vti_bin/shtml.exe";
 static const char* SHTML2     =
@@ -234,7 +235,7 @@ static int FrontPageCheckup(server_rec *s)
         return (FALSE);
     }
 
-    if (Vlstat(FPKEYDIR, &fs) == -1         || /* We can't stat the key dir */
+    if (Vlstat(FPKEYDIR, &fs) == -1          || /* We can't stat the key dir */
         fs.st_uid                           || /* key dir not owned by root */
         (fs.st_mode & (S_IRGRP | S_IROTH))  || /* key dir is readable */
         (fs.st_mode & (S_IWGRP | S_IWOTH))  || /* key dir is writable */
@@ -247,12 +248,12 @@ static int FrontPageCheckup(server_rec *s)
          * that non-root programs can run apache-fp/_vti_bin/fpexe (even though
          * non-root cannot list the directory).
          */
-        LogFrontPageError(s, "Incorrect permissions on key directory \"%-.1024s\", needs root ownership and perms rwx--x--x",
+        LogFrontPageError(s, "Incorrect permissions on key directory \"%-.1024s\", needs root ownership and permissions rwx--x--x",
                           FPKEYDIR, "FrontPageCheckup()", TRUE);
         return (FALSE);
     }
 
-    if (Vlstat(FPSTUBDIR, &fs) == -1        || /* We can't stat the stub dir */
+    if (Vlstat(FPSTUBDIR, &fs) == -1         || /* We can't stat the stub dir */
         fs.st_uid                           || /* stub dir not owned by root */
         (fs.st_mode & (S_IWGRP | S_IWOTH))  || /* stub dir is writable */
         (!S_ISDIR(fs.st_mode)))
@@ -261,12 +262,12 @@ static int FrontPageCheckup(server_rec *s)
          * User recovery: set directory to be owned by by root with permissions
          * r*x*-x*-x.
          */
-        LogFrontPageError(s, "Incorrect permissions on stub directory \"%-.1024s\", needs root ownership and perms r*x*-x*-x",
+        LogFrontPageError(s, "Incorrect permissions on stub directory \"%-.1024s\", needs root ownership and permissions r*x*-x*-x",
                           FPSTUBDIR, "FrontPageCheckup()", TRUE);
         return (FALSE);
     }
 
-    if (Vstat(FPSTUB, &fs) == -1            || /* We can't stat the stub */
+    if (Vstat(FPSTUB, &fs) == -1             || /* We can't stat the stub */
         fs.st_uid                           || /* stub not owned by root */
         !(fs.st_mode & S_ISUID)             || /* stub is not set-uid */
         (fs.st_mode & S_ISGID)              || /* stub is set-gid */
@@ -277,7 +278,7 @@ static int FrontPageCheckup(server_rec *s)
          * User recovery: set stub to be owned by by root with permissions
          * r*s*-x*-x.
          */
-        LogFrontPageError(s, "Incorrect permissions on stub \"%-.1024s\", needs root ownership and perms r*s*-x*-x",
+        LogFrontPageError(s, "Incorrect permissions on stub \"%-.1024s\", needs root ownership and permissions r*s*-x*-x",
                           FPSTUB, "FrontPageCheckup()", TRUE);
         return (FALSE);
     }
@@ -428,7 +429,7 @@ static void FrontPageInit(server_rec *s, pool *p)
 #ifdef LINUX
 #define RAND_CMD "/bin/ps laxww | /usr/bin/sum ; /bin/ps laxww | /usr/bin/sum"
 #else
-#if defined ( bsdi ) || ( defined ( BSD ) && ( BSD >=199103 ))
+#if defined ( bsdi ) || ( defined ( BSD ) && ( BSD >= 199103 ))
 #define RAND_CMD "/bin/ps laxww | /usr/bin/cksum -o 1 ; /bin/ps laxww | /usr/bin/cksum -o 1"
 #else
 #define RAND_CMD "/bin/ps -ea | /bin/sum ; /bin/ps -ea | /bin/sum"
@@ -497,6 +498,7 @@ static void FrontPageInit(server_rec *s, pool *p)
              */
             LogFrontPageError(s, "Key file \"%-.1024s\" is unreadable or is too short (must be at least 8 bytes)",
                               KEYFILEXOR, "FrontPageInit()", TRUE);
+            close(fd);
             return;
         }
 
@@ -513,6 +515,10 @@ static void FrontPageInit(server_rec *s, pool *p)
          */
         for (i = 0;  i < KEYLEN;  i++)
             gszKeyVal[i] = szBuf[i % iCount] ^ szRandom[i % sizeof(iRandom)];
+
+        /*
+         * Thanks to A.Mayrhofer@Austria.EU.net 980130
+         */
         close(fd);
     }
 
@@ -560,7 +566,7 @@ static void FrontPageInit(server_rec *s, pool *p)
     /*
      * Thanks to Scot Hetzel (hetzels@westbend.net)
      */
-    ap_add_version_component("FrontPage/3.0.4.3");
+    ap_add_version_component("FrontPage/4.0.4.3");
 }
 
 
@@ -675,7 +681,7 @@ static int FrontPageAlias(
     sprintf(szBuf, "%d", gfdKeyPipe[0]);
     ap_table_set(r->subprocess_env, "FPFD", ap_pstrdup(r->pool, szBuf));
 
-    r->execfilename = ap_pstrcat(r->pool, FPSTUB, szCgi + strlen(szFpexe), NULL);
+    r->execfilename = ap_pstrcat(r->pool, FPSTUB, szCgi+strlen(szFpexe), NULL);
     r->filename = ap_pstrcat(r->pool, r->filename, szCgi, NULL);
 
     if (write(gfdKeyPipe[1], gszKeyVal, 128) != 128)

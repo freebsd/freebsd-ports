@@ -6,11 +6,13 @@
 # $FreeBSD$
 #
 
-DISTNAME=       apache_${AP_VERS}
-PKGNAME=        apache_fp-${AP_VERS}
+DISTNAME=	apache_${AP_VERS}
+PKGNAME=	apache_fp-${AP_VERS}
 CATEGORIES=	www
 MASTER_SITES=	http://www.apache.org/dist/ \
 		ftp://ftp.microsoft.com/products/frontpage/ \
+		http://www.freebsd.org/gifs/ \
+		http://officeupdate.microsoft.com/frontpage/wpp/serk/ \
 		ftp://sunsite.doc.ic.ac.uk/Mirrors/ftp.microsoft.com/Products/frontpage/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/ \
 		ftp://ftp.rge.com/pub/infosystems/apache/dist/ \
@@ -26,22 +28,22 @@ MASTER_SITES=	http://www.apache.org/dist/ \
 		ftp://ftp.mtnranch.net/pub/apache/dist/ \
 		ftp://ftp.iodynamics.com/pub/mirror/apache/dist/ \
 		ftp://apache.nextpath.com/pub/apache/dist/
-DISTFILES=	${APACHE} ${FRONTPAGE}
+DISTFILES=	${APACHE} ${FRONTPAGE} powerlogo.gif fplogo.gif
 
 MAINTAINER=	hetzels@westbend.net
 
-#PATCH_SITES=    http://www.apache.org/dist/patches/apply_to_${AP_VERS}/
+#PATCH_SITES=	http://www.apache.org/dist/patches/apply_to_${AP_VERS}/
 #PATCHFILES=
 
 .if defined(PATCH_DEBUG)
-PATCH_DIST_ARGS=       -d ${WRKSRC}/src -E ${PATCH_DIST_STRIP}
+PATCH_DIST_ARGS=	-d ${WRKSRC}/src -E ${PATCH_DIST_STRIP}
 .else
-PATCH_DIST_ARGS=       -d ${WRKSRC}/src --forward --quiet -E ${PATCH_DIST_STRIP}
+PATCH_DIST_ARGS=	-d ${WRKSRC}/src --forward --quiet -E ${PATCH_DIST_STRIP}
 .endif
 
 AP_VERS=	1.3.9
 APACHE=		${DISTNAME}${EXTRACT_SUFX}
-FRONTPAGE=	fp30.bsdi3.tar.Z
+FRONTPAGE=	fp40.bsdi.tar.Z
 
 EXTRACT_ONLY=	${APACHE}
 
@@ -49,22 +51,28 @@ IS_INTERACTIVE=	YES
 NO_PACKAGE=	\
    "The FrontPage Installer needs to create FrontPage Admin user and password"
 
-FPINSTALL=	frontpage/version3.0/fp_install.sh
-CHANGESERVER=	frontpage/version3.0/change_server.sh
+FPINSTALL=	frontpage/version4.0/fp_install.sh
+CHANGESERVER=	frontpage/version4.0/change_server.sh
+README=		frontpage/version4.0/readme.htm
+SERK=		frontpage/version4.0/serk
+MOD_FPDOCDIR=	share/doc/apache/manual/mod/mod_frontpage
 MOD_FP=		${FILESDIR}/mod_frontpage.c
+IMAGES_DIR=	share/doc/apache/manual/images
+IMAGES_VTI=	${PREFIX}/www/data/images/_vti_cnf
 
 INSTALL_FILE=${INSTALL} -c -m 555 -o bin -g bin
 
-Y2K=		http://www.apache.org/docs/misc/FAQ.html#year2000
-Y2K+=           http://computingcentral.msn.com/guide/year2000/msy2k/productinfo/frontpage.asp
+Y2K=		http://www.apache.org/foundation/Y2K.html
+Y2K+=		http://computingcentral.msn.com/guide/year2000/msy2k/productinfo/frontpage.asp
 
-PLIST=  ${WRKDIR}/PLIST
+PLIST=		${WRKDIR}/PLIST
+PLIST_SUB=	FP_REV=version4.0
 
 #
 # Set APACHE_PERF_TUNING env. variable to YES to get maximum performance
 #
 
-HAS_CONFIGURE=  yes
+HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	 --prefix=${PREFIX} \
 		 --with-layout=GNU \
 		 --with-perl=${PERL} \
@@ -88,23 +96,24 @@ CONFIGURE_ARGS=	 --prefix=${PREFIX} \
 		 --enable-shared=max
 
 # Currently perl version doesn't matter
-USE_PERL5=	 YES
+USE_PERL5=	YES
 
-OPTIM=		 -DHARD_SERVER_LIMIT=512 \
-		 -DDOCUMENT_LOCATION=\\"${PREFIX}/www/data/\\" \
-		 -DDEFAULT_PATH=\\"/bin:/usr/bin:${PREFIX}/bin\\"
+OPTIM=		-DHARD_SERVER_LIMIT=512 \
+		-DDOCUMENT_LOCATION=\\"${PREFIX}/www/data/\\" \
+		-DDEFAULT_PATH=\\"/bin:/usr/bin:${PREFIX}/bin\\"
 
 .if defined(APACHE_PERF_TUNING)
-OPTIM+= 	 -DBUFFERED_LOGS -DFD_SETSIZE=1024
-CFLAGS+=	 -O6 -funroll-loops -fstrength-reduce -fomit-frame-pointer \
-		 -fexpensive-optimizations -ffast-math
+OPTIM+= 	-DBUFFERED_LOGS -DFD_SETSIZE=1024
+CFLAGS+=	-O6 -funroll-loops -fstrength-reduce -fomit-frame-pointer \
+		-fexpensive-optimizations -ffast-math
 .endif
 
-CONFIGURE_ENV=	 CFLAGS='${CFLAGS}' \
-		 OPTIM='${OPTIM}'
+CONFIGURE_ENV=	CFLAGS='${CFLAGS}' \
+		OPTIM='${OPTIM}' \
+		PATH="${PREFIX}/bin:${PATH}"
 
-MAN1=   dbmmanage.1 htdigest.1 htpasswd.1
-MAN8=   ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8
+MAN1=	dbmmanage.1 htdigest.1 htpasswd.1
+MAN8=	ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8
 
 .if defined(SUEXEC)
 HTTPD_USER?=www
@@ -131,7 +140,8 @@ post-extract:
 	@${ECHO} "===>  Extracting FrontPage install scripts"
 	@cd ${WRKSRC} && \
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${FRONTPAGE} \
-		${EXTRACT_AFTER_ARGS} ${FPINSTALL} ${CHANGESERVER}
+		${EXTRACT_AFTER_ARGS} ${FPINSTALL} ${CHANGESERVER} \
+		${README}
 
 .if !defined(PATCH_DEBUG)
 post-patch:
@@ -143,13 +153,12 @@ post-configure:
 .if defined(SUEXEC)
 	${CP} ${PKGDIR}/PLIST ${PLIST}
 .else
-	${CAT} ${PKGDIR}/PLIST | grep -v sbin/suexec >${PLIST}
+	${CAT} ${PKGDIR}/PLIST | ${GREP} -v sbin/suexec >${PLIST}
 .endif
 
+IMAGES=		apache_pb.gif fplogo.gif powerlogo.gif
+
 post-install:
-	@if [ ! -f ${PREFIX}/${FPINSTALL} ]; then \
-		${MAKE} fp-install ; \
-	fi
 	@if [ ! -f ${PREFIX}/etc/rc.d/apache.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/apache.sh file."; \
 		${CAT} ${FILESDIR}/apache.sh.tmpl | \
@@ -158,14 +167,39 @@ post-install:
 				> ${PREFIX}/etc/rc.d/apache.sh; \
 		${CHMOD} 751 ${PREFIX}/etc/rc.d/apache.sh; \
 	fi
-
-fp-install:
+	@${INSTALL} -c -m 644 ${DISTDIR}/powerlogo.gif ${PREFIX}/${IMAGES_DIR}
+	@${INSTALL} -c -m 644 ${DISTDIR}/fplogo.gif ${PREFIX}/${IMAGES_DIR}
+	@${INSTALL} -c -m 644 ${PREFIX}/share/doc/apache/apache_pb.gif ${PREFIX}/${IMAGES_DIR}
+	@mkdir -p ${PREFIX}/www/data/images
+	@( cd ${PREFIX}/share/doc/apache ; if [ -h images ] ; then ${RM} -f images ; fi ; ln -fs manual/images images)
+.for file in ${IMAGES}
+	@if [ ! -f ${PREFIX}/www/data/images/${file} ]; then \
+		${CP} -rp ${PREFIX}/${IMAGES_DIR}/${file} ${PREFIX}/www/data/images ; \
+	fi
+.endfor
 	@${CAT} ${WRKSRC}/${FPINSTALL} | \
-		${SED} -e 's;PREFIX;${PREFIX};' > ${WRKDIR}/tmp.fpinstall
+		${SED}  -e 's;PREFIX;${PREFIX};' \
+			-e 's;MOD_FPDOCDIR;${PREFIX}/${MOD_FPDOCDIR};' \
+			> ${WRKDIR}/tmp.fpinstall
 	@${SH} ${WRKDIR}/tmp.fpinstall
+#Add the appropriate comment to the images/_vti_cnf file.
+	@if [ -d ${IMAGES_VTI} ]; then \
+		if [ ! "`grep description ${IMAGES_VTI}/apache_pb.gif`" ] ; then \
+			${ECHO} "vti_description:SW|Apache Webserver" >> ${IMAGES_VTI}/apache_pb.gif ;\
+		fi ; \
+		if [ ! "`grep description ${IMAGES_VTI}/fplogo.gif`" ] ; then \
+			${ECHO} "vti_description:SW|Created with Microsoft FrontPage 2000" >> ${IMAGES_VTI}/fplogo.gif ; \
+		fi ; \
+		if [ ! "`grep description ${IMAGES_VTI}/powerlogo.gif`" ] ; then \
+			${ECHO} "vti_description:SW|Powered by FreeBSD" >> ${IMAGES_VTI}/powerlogo.gif ; \
+		fi ; \
+	fi
 	@${INSTALL_FILE} ${WRKDIR}/tmp.fpinstall ${PREFIX}/${FPINSTALL}
 	@${CAT} ${WRKSRC}/${CHANGESERVER} | \
 		${SED} -e 's;PREFIX;${PREFIX};' > ${WRKDIR}/tmp.changeserver
 	@${INSTALL_FILE} ${WRKDIR}/tmp.changeserver ${PREFIX}/${CHANGESERVER}
+	@${MKDIR} ${PREFIX}/${MOD_FPDOCDIR}
+	@${CP} ${PREFIX}/${README} ${PREFIX}/${MOD_FPDOCDIR}/index.html
+	@${LN} -s ${PREFIX}/${SERK} ${PREFIX}/${MOD_FPDOCDIR}/serk
 
 .include <bsd.port.mk>

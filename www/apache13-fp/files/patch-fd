@@ -1,5 +1,5 @@
 --- src/support/suexec.h.orig	Fri Jan  1 13:05:35 1999
-+++ src/support/suexec.h	Mon Sep  6 13:12:55 1999
++++ src/support/suexec.h	Fri Nov  5 19:55:49 1999
 @@ -56,6 +56,17 @@
   */
  
@@ -34,12 +34,12 @@
 +#define FPEXE "fpexe"
 +#endif
 +
-+#ifndef FPSTUB
-+#define FPSTUB "/usr/local/frontpage/version3.0/apache-fp/_vti_bin/fpexe"
++#ifndef FPSTUBDIR
++#define FPSTUBDIR "/usr/local/frontpage/version4.0/apache-fp/_vti_bin"
 +#endif
 +
-+#ifndef FPSTUBDIR
-+#define FPSTUBDIR "/usr/local/frontpage/currentversion/apache-fp/_vti_bin"
++#ifndef FPSTUB
++#define FPSTUB FPSTUBDIR "/fpexe"
 +#endif
 +
 +/*
