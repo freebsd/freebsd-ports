@@ -1,0 +1,6 @@
+Rtpmon is a third-party RTCP monitor.  It can be used to monitor
+the control information exchanged between applications that implement
+RTP, the Real-Time Transport Protocol.  Feedback from receivers,
+including the loss rate and jitter, are displayed in a table that
+can be sorted in various ways to help isolate and diagnose multicast
+distribution problems.

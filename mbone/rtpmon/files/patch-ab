@@ -1,0 +1,15 @@
+--- Makefile.in.orig	Wed Nov  6 18:18:43 1996
++++ Makefile.in	Wed Nov  6 18:20:40 1996
+@@ -112,5 +112,12 @@
+ rtpmon: $(OBJS)
+ 	$(C++) -o $@ $(LDFLAGS) $(OBJS) $(LIBS)
+ 
++install:	rtpmon
++	cp rtpmon @prefix@/bin
++	chown bin @prefix@/bin/rtpmon
++	chgrp bin @prefix@/bin/rtpmon
++	chmod 555 @prefix@/bin/rtpmon
++	cp rtpmon.1 @prefix@/man/man1
++
+ clean:
+ 	rm -f *.o rtpmon config.cache config.log
