@@ -3224,6 +3224,7 @@ jakarta-tomcat41	ports/www/jakarta-tomcat41
 jam		ports/devel/jam
 janosvm		ports/java/janosvm
 jargon		ports/misc/jargon
+jarl		ports/net/jarl
 jasper		ports/graphics/jasper
 java-checkstyle	ports/java/java-checkstyle
 java-commapi	ports/comms/java-commapi
@@ -6547,6 +6548,7 @@ qrash		ports/x11/qrash
 qscanplot	ports/math/qscanplot
 qscheme		ports/lang/qscheme
 qslim		ports/graphics/qslim
+qssl		ports/devel/qssl
 qstat		ports/games/qstat
 qt-bluecurve-theme	ports/x11-toolkits/qt-bluecurve-theme
 qt-designer	ports/devel/qt-designer
