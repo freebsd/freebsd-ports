@@ -7,11 +7,10 @@
 #
 
 PORTNAME=	wmdrawer
-PORTVERSION=	0.10.4.1
-PORTREVISION=	1
+PORTVERSION=	0.10.5
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://people.easter-eggs.org/~valos/wmdrawer/:tarball \
-		http://www.daemon.li/downloads/:pixmap
+		http://www.daemon.li/distfiles/:pixmap
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 DISTFILES=	${EXTRACT_ONLY}:tarball \
 		daemon.png:pixmap
@@ -23,7 +22,7 @@ COMMENT=	A dockapp which provides a drawer to launch applications
 USE_REINPLACE=	yes
 USE_GETOPT_LONG=yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gtk12 gdkpixbuf
+USE_GNOME=	gdkpixbuf
 USE_GMAKE=	yes
 CONFIGURE_ENV+=	DOCSDIR=${DOCSDIR}
 MAKE_ENV+=	${CONFIGURE_ENV}
