@@ -33,7 +33,7 @@ version comes out.
 -
      upvar #0 $mgh mh
      if [info exists mh(body)] {
-@@ -411,15 +410,8 @@
+@@ -411,15 +410,10 @@
  	    if [info exists p(charset)] {
  		set charset $p(charset)
 -	    } else {
@@ -44,6 +44,8 @@ version comes out.
 -		}
 +	    } elseif [info exists mh(charset)] {
 +		set charset $mh(charset)
++	    } else {
++		set charset [encoding system]
  	    }
 -	    if {"auto" == $charset} {
 -		set charset utf-8
@@ -84,6 +86,13 @@ version comes out.
 +
  # ComposeBuildStruct --
  #
+@@ -1066,5 +1092,5 @@
+ 	    if {0 != [RatDialog $mh(toplevel) $t(warning) $t(bad_charset) {} 0 \
+ 		    $t(continue) $t(abort)]} {
+-		return
++		return -1
+ 	    }
+ 	    set charset $fallback
 @@ -1074,10 +1096,9 @@
  	    lappend bh(parameter) [list charset $charset]
  	}

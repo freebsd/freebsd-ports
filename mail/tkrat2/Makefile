@@ -7,6 +7,7 @@
 
 PORTNAME=	tkrat
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	mail tk83
 MASTER_SITES=	ftp://ftp.md.chalmers.se/pub/tkrat/ \
 		ftp://ftp.sunet.se/pub/unix/mail/tkrat/ \
