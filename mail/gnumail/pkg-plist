@@ -1,4 +1,9 @@
 Local/Apps/GNUMail.app/GNUMail
+Local/Apps/GNUMail.app/Resources/Address_add.tiff
+Local/Apps/GNUMail.app/Resources/Address_bcc.tiff
+Local/Apps/GNUMail.app/Resources/Address_cc.tiff
+Local/Apps/GNUMail.app/Resources/Address_delete.tiff
+Local/Apps/GNUMail.app/Resources/Address_to.tiff
 Local/Apps/GNUMail.app/Resources/GNUMail.tiff
 Local/Apps/GNUMail.app/Resources/Info-gnustep.plist
 Local/Apps/GNUMail.app/Resources/Magnifier.tiff
