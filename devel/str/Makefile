@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	str
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.5
 CATEGORIES=	devel
 MASTER_SITES=	http://www.engelschall.com/sw/str/ \
 		ftp://ftp.engelschall.com/sw/str/
