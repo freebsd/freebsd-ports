@@ -5878,6 +5878,7 @@ php-sqlrelay	ports/databases/php-sqlrelay
 php-templates	ports/www/php-templates
 php3		ports/lang/php3
 php4		ports/lang/php4
+php4-cli	ports/lang/php4-cli
 phpSysInfo	ports/www/phpSysInfo
 php_doc		ports/lang/php_doc
 phpbb		ports/www/phpbb
