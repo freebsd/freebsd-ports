@@ -1,0 +1,36 @@
+*** Defines.FreeBSD.orig	Sun Jul 27 23:07:08 1997
+--- Defines.FreeBSD	Sun Jul 27 23:05:18 1997
+***************
+*** 65,73 ****
+  #
+  # Compiler options
+  #
+! MACHDEFS = -ansi -Dsparc
+! MACHINCLPATH = -I/SFOC/$(SFOCVER)/include/$(MACH) -I/usr/5include
+! MACHLIBPATH = -L/usr/5lib
+  MACHLIBS = 
+  MACHLIBS_SYBCL = -lsybdb -lcs -lct -lcomn -ltcl -lintl -linsck -lm
+  
+--- 65,73 ----
+  #
+  # Compiler options
+  #
+! MACHDEFS =	-ansi -fsigned-char
+! MACHINCLPATH =	-I$(X11BASE)/include
+! MACHLIBPATH =	-L$(X11BASE)/lib
+  MACHLIBS = 
+  MACHLIBS_SYBCL = -lsybdb -lcs -lct -lcomn -ltcl -lintl -linsck -lm
+  
+***************
+*** 87,91 ****
+  # loadable shared libraries for Perl modules
+  #
+  MACHPERLLIBSUFFIX = .so
+! MACHPERLLIB = $(PERLLIBHOME)/sun4-sunos/$(PERLVER)
+! MACHPERLINC = $(PERLLIBHOME)/sun4-sunos/$(PERLVER)/CORE
+--- 87,91 ----
+  # loadable shared libraries for Perl modules
+  #
+  MACHPERLLIBSUFFIX = .so
+! MACHPERLLIB = $(PERLLIBHOME)/lib
+! MACHPERLINC = $(PERLLIBHOME)/include
