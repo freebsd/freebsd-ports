@@ -83,7 +83,7 @@
 ***************
 *** 22,27 ****
 --- 22,28 ----
-  static char rcsid[]="$Header: PlowMain.c,v 6.0 90/08/28 18:52:57 mayo Exp $";
+  static char rcsid[]="$Header: /a/ncvs/ports/cad/magic/patches/patch-aa,v 1.1.1.1 1994/12/18 21:12:09 swallace Exp $";
   #endif  not lint
   
 + #include <sys/types.h>
@@ -227,7 +227,7 @@
 ***************
 *** 19,24 ****
 --- 19,25 ----
-  static char rcsid[] = "$Header: port.c,v 6.0 90/08/28 19:01:11 mayo Exp $";
+  static char rcsid[] = "$Header: /a/ncvs/ports/cad/magic/patches/patch-aa,v 1.1.1.1 1994/12/18 21:12:09 swallace Exp $";
   #endif  not lint
   
 + #include <stdlib.h>
@@ -340,3 +340,22 @@
       extern char* sprintf();
   #endif
   #endif
+*** graphics/Makefile.ORIG	Mon Sep 19 23:41:05 1994
+--- graphics/Makefile	Sun Jan 22 14:44:19 1995
+***************
+*** 10,16 ****
+  LIB=	${MAGICDIR}/lib
+  SYSLIB=	${CADDIR}/lib/magic/sys
+  BIN=	${CADDIR}/bin
+! IFLAGS=	-I. -I${H} -I/usr/openwin/include
+  #
+  # Configuration for flags and libraries
+  #
+--- 10,16 ----
+  LIB=	${MAGICDIR}/lib
+  SYSLIB=	${CADDIR}/lib/magic/sys
+  BIN=	${CADDIR}/bin
+! IFLAGS=	-I. -I${H} -I/usr/X11R6/include
+  #
+  # Configuration for flags and libraries
+  #
