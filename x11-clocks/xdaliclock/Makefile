@@ -1,9 +1,9 @@
 # New ports collection makefile for:	xdaliclock
-# Version required:			2.11
+# Version required:			2.13
 # Date created:				10th February 1995
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.10 1998/09/22 22:32:14 asami Exp $
+# $Id: Makefile,v 1.11 1999/01/01 22:43:44 gpalmer Exp $
 #
 
 DISTNAME=	xdaliclock-2.13
