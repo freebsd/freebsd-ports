@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lbreakout2
-PORTVERSION=	2.2.2
-PORTREVISION=	3
+PORTVERSION=	2.5.2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lgames
@@ -17,27 +16,34 @@ COMMENT=	The polished successor to LBreakout
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
-USE_SDL=	mixer sdl
+USE_SDL=	mixer net sdl
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-highscore-path=/var/games \
-		--with-doc-path=${PREFIX}/share/doc
-CONFIGURE_ENV=	LDFLAGS=-L${LOCALBASE}/lib
-USE_REINPLACE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--enable-sdl-net \
+		--localstatedir=/var/games
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/games\/lbreakout2/lbreakout2/g' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's/if .*lbreakout2.hscr/if false/' \
-		${WRKSRC}/src/Makefile.in
-.if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e 's/ docs / /g' ${WRKSRC}/src/Makefile.in
-.endif
+	@${REINPLACE_CMD} -e \
+		's|== "-D|= "-D|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|client docs|client|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|: install-data-local|:|g' ${WRKSRC}/client/Makefile.in
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/src/empty.hscr ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/client/empty.hscr ${DATADIR}
 	@${CHOWN} root:games ${PREFIX}/bin/lbreakout2
 	@${CHMOD} g+s ${PREFIX}/bin/lbreakout2
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/*.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/*.jpg ${DOCSDIR}
+.endif
 	@${SETENV} "PKG_PREFIX=${PREFIX}" \
 		${SH} pkg-install ${PKGNAME} POST-INSTALL
 
