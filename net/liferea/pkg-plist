@@ -1,12 +1,13 @@
 bin/liferea
-share/gnome/liferea/pixmaps/available.xpm
-share/gnome/liferea/pixmaps/directory.xpm
-share/gnome/liferea/pixmaps/empty.xpm
-share/gnome/liferea/pixmaps/help.xpm
-share/gnome/liferea/pixmaps/ocs.xpm
+share/gnome/liferea/pixmaps/available.png
+share/gnome/liferea/pixmaps/directory.png
+share/gnome/liferea/pixmaps/empty.png
+share/gnome/liferea/pixmaps/flag.xpm
+share/gnome/liferea/pixmaps/help.png
+share/gnome/liferea/pixmaps/ocs.png
 share/gnome/liferea/pixmaps/read.xpm
-share/gnome/liferea/pixmaps/unavailable.xpm
+share/gnome/liferea/pixmaps/unavailable.png
 share/gnome/liferea/pixmaps/unread.xpm
-share/gnome/liferea/pixmaps/vfolder.xpm
+share/gnome/liferea/pixmaps/vfolder.png
 @dirrm share/gnome/liferea/pixmaps
 @dirrm share/gnome/liferea
