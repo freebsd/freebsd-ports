@@ -58,6 +58,10 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		REALCURDIR="${.CURDIR}" \
 		WITH_DB3="${WITH_DB3}"
 
+.if defined(WITHOUT_OTP)
+CONFIGURE_ARGS+=	--disable-otp
+.endif
+
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
 CONFIGURE_ARGS+=	--enable-gssapi=${KRB5_HOME}
 .elif defined(HEIMDAL_HOME) && exists(${HEIMDAL_HOME})
