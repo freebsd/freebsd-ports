@@ -109,6 +109,7 @@
     SUBDIR += ipsc
     SUBDIR += jailer
     SUBDIR += jailutils
+    SUBDIR += kcpuload
     SUBDIR += kdeadmin3
     SUBDIR += lavaps
     SUBDIR += lcdproc

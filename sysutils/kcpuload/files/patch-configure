@@ -1,0 +1,14 @@
+--- configure.orig	Fri Jan 10 12:52:07 2003
++++ configure	Fri Jan 10 12:52:18 2003
+@@ -20919,9 +20919,9 @@
+ 
+ 
+ if test -z ""; then
+-  # Current default Qt version: 3.1
++  # Current default Qt version: 3.0
+   kde_qtver=3
+-  kde_qtsubver=1
++  kde_qtsubver=0
+ else
+   kde_qtsubver=`echo "" | sed -e 's#[0-9][0-9]*\.\([0-9][0-9]*\).*#\1#'`
+   # following is the check if subversion isnt found in passed argument
