@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	bio
-PORTVERSION=	0.3.5
+PORTVERSION=	0.3.6
 CATEGORIES=	biology ruby
-MASTER_SITES=	ftp://ftp.bioruby.org/bioruby/src/
+MASTER_SITES=	ftp://ftp.bioruby.org/bioruby/
 MASTER_SITE_SUBDIR=	knu
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}ruby-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
