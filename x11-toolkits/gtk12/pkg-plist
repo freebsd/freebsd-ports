@@ -120,18 +120,28 @@ include/gtk11d/gtk/gtkvscrollbar.h
 include/gtk11d/gtk/gtkvseparator.h
 include/gtk11d/gtk/gtkwidget.h
 include/gtk11d/gtk/gtkwindow.h
+@unexec install-info --delete %D/info/gdk.info %D/info/dir
+@unexec install-info --delete %D/info/gtk.info %D/info/dir
+info/gdk.info
+info/gtk.info
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/gdk.info %D/info/dir
+@exec install-info %D/info/gtk.info %D/info/dir
 lib/libgdk11d.a
 lib/libgdk11d.la
 lib/libgdk11d.so
-lib/libgdk11d.so.1.2
+lib/libgdk11d.so.1.3
 lib/libgtk11d.a
 lib/libgtk11d.la
 lib/libgtk11d.so
-lib/libgtk11d.so.1.2
+lib/libgtk11d.so.1.3
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+share/locale/cs/LC_MESSAGES/gtk+.mo
 share/locale/de/LC_MESSAGES/gtk+.mo
+share/locale/es/LC_MESSAGES/gtk+.mo
 share/locale/fr/LC_MESSAGES/gtk+.mo
+share/locale/it/LC_MESSAGES/gtk+.mo
 share/locale/ja/LC_MESSAGES/gtk+.mo
 share/locale/ko/LC_MESSAGES/gtk+.mo
 share/locale/nl/LC_MESSAGES/gtk+.mo
