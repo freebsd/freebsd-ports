@@ -7,11 +7,12 @@
 
 PORTNAME=	saxon
 PORTVERSION=	8.0
+PORTREVISION=	1
 CATEGORIES=	textproc java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	saxon
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}b${PORTVERSION:S/./-/g}
+DISTNAME=	${PORTNAME}b${PORTVERSION:S,.,-,g}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An XSLT 2.0 / XPath 2.0 / XQuery 1.0 processor for Java
@@ -33,7 +34,7 @@ PORTDOCS=	background documentation img index.html javadoc saxon.css
 .endif
 
 do-configure:
-	@${SED} 's|%%PREFIX%%|${PREFIX}|g ; s|%%JAVAJARDIR%%|${JAVAJARDIR}|g' \
+	@${SED} 's|%%PREFIX%%|${PREFIX}|g ; s|%%JAVAJARDIR%%|${JAVAJARDIR}|g ; s|%%JAVAVM%%|${JAVA}|g' \
 		${FILESDIR}/saxon.sh >${WRKSRC}/saxon
 
 do-install:
