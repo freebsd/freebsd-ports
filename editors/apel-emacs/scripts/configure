@@ -7,6 +7,7 @@ do
 		-e "s;@@PREFIX@@;${PREFIX};g" \
 		-e "s;@@EMACS_LIBDIR@@;${EMACS_LIBDIR};g" \
 		-e "s;@@EMACS_VER@@;${EMACS_VER};g" \
+		-e "s;@@EMACS_LIBDIR_WITH_VER@@;${EMACS_LIBDIR_WITH_VER};g" \
 	> ${WRKDIR}/${i}
 	fi
 done
