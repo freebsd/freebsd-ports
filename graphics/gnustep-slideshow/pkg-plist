@@ -1,0 +1,31 @@
+Local/Applications/SlideShow.app/Resources/DefaultSlideShowKeyBindings.dict
+Local/Applications/SlideShow.app/Resources/English.lproj/Main.gorm/Main.gorm/data.classes
+Local/Applications/SlideShow.app/Resources/English.lproj/Main.gorm/Main.gorm/data.info
+Local/Applications/SlideShow.app/Resources/English.lproj/Main.gorm/Main.gorm/objects.gorm
+Local/Applications/SlideShow.app/Resources/English.lproj/Main.gorm/data.classes
+Local/Applications/SlideShow.app/Resources/English.lproj/Main.gorm/data.info
+Local/Applications/SlideShow.app/Resources/English.lproj/Main.gorm/objects.gorm
+Local/Applications/SlideShow.app/Resources/English.lproj/Preferences.gorm/Preferences.gorm/data.classes
+Local/Applications/SlideShow.app/Resources/English.lproj/Preferences.gorm/Preferences.gorm/data.info
+Local/Applications/SlideShow.app/Resources/English.lproj/Preferences.gorm/Preferences.gorm/objects.gorm
+Local/Applications/SlideShow.app/Resources/English.lproj/Preferences.gorm/data.classes
+Local/Applications/SlideShow.app/Resources/English.lproj/Preferences.gorm/data.info
+Local/Applications/SlideShow.app/Resources/English.lproj/Preferences.gorm/objects.gorm
+Local/Applications/SlideShow.app/Resources/Info-gnustep.plist
+Local/Applications/SlideShow.app/Resources/SlideShow.desktop
+Local/Applications/SlideShow.app/Resources/arrowLeft.tiff
+Local/Applications/SlideShow.app/Resources/arrowRight.tiff
+Local/Applications/SlideShow.app/Resources/quit.tiff
+Local/Applications/SlideShow.app/Resources/rotateLeft.tiff
+Local/Applications/SlideShow.app/Resources/rotateRight.tiff
+Local/Applications/SlideShow.app/SlideShow
+Local/Applications/SlideShow.app/library_paths.openapp
+Local/Applications/SlideShow.app/stamp.make
+@dirrm Local/Applications/SlideShow.app/Resources/English.lproj/Preferences.gorm/Preferences.gorm
+@dirrm Local/Applications/SlideShow.app/Resources/English.lproj/Preferences.gorm
+@dirrm Local/Applications/SlideShow.app/Resources/English.lproj/Main.gorm/Main.gorm
+@dirrm Local/Applications/SlideShow.app/Resources/English.lproj/Main.gorm
+@dirrm Local/Applications/SlideShow.app/Resources/English.lproj
+@dirrm Local/Applications/SlideShow.app/Resources
+@dirrm Local/Applications/SlideShow.app
+@dirrm Local/Applications
