@@ -22,4 +22,8 @@ CONFIGURE_ARGS=	--disable-threading
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 
+# dirty hack
+post-configure:
+	@${CP} -f ${WRKSRC}/include/sys.ho ${WRKSRC}/include/sys.h
+
 .include <bsd.port.mk>
