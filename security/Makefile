@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.35 1998/11/23 05:16:14 kuriyama Exp $
+# $Id: Makefile,v 1.36 1998/11/23 14:12:44 kuriyama Exp $
 #
 
     SUBDIR += SSLeay
@@ -26,6 +26,7 @@
     SUBDIR += pgp5
     SUBDIR += pidentd
     SUBDIR += rsaref
+    SUBDIR += sentry
     SUBDIR += skip
     SUBDIR += smurflog
     SUBDIR += ssh
