@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	noattach
-PORTVERSION=	1.1
+PORTVERSION=	1.1.1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.rhnet.is/pub/noattach/
+DISTNAME=	${PORTNAME}-1.1p1
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A attatchment filter for Sendmail
