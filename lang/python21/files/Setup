@@ -46,18 +46,26 @@
 # to ftp sources from elsewhere.
 
 
+# -------> Uncomment this line if you are running AIX    <----------
+# -------> and if you are building with shared libraries <----------
+#LINKCC= makexp_aix python.exp "" $(MYLIBS) $(ADDOBJS) ; $(CC)
+
+
 # Some special rules to define PYTHONPATH.
 # Edit the definitions below to indicate which options you are using.
 # Don't add any whitespace or comments!
 
-# Don't edit this (usually)
-DESTLIB=$(prefix)/share/python
+# Directories where library files get installed.
+# DESTLIB is for Python modules; MACHDESTLIB for shared libraries.
+DESTLIB=$(prefix)/share/python1.4
+MACHDESTLIB=$(BINLIBDEST)
+
+# Standard path -- don't edit.
+# No leading colon since this is the first entry
+DESTPATH=:$(DESTLIB)
 
 # Site specific path insertions -- should begin with : if non-empty
 SITEPATH=
-
-# Standard path -- don't edit
-DESTPATH=:$(DESTLIB)
 
 # Standard enabled (tests are always available)
 TESTPATH=:$(DESTLIB)/test
@@ -93,17 +101,19 @@ signal signalmodule.c		# signal(2)
 # modules are to be built as shared libraries (see above for more
 # detail):
 
-#*noconfig*
+#*shared*
 
 
 # Modules that should always be present (non UNIX dependent):
 
 array arraymodule.c	# array objects
+cmath cmathmodule.c	# complex math library functions
 math mathmodule.c -lm	# math library functions, e.g. sin()
 regex regexmodule.c regexpr.c	# Regular expressions, GNU Emacs style
 strop stropmodule.c	# fast string operations implemented in C
 struct structmodule.c	# binary structure packing/unpacking
 time timemodule.c	# time operations and variables
+operator operator.c	# operator.add() and similar goodies
 
 
 # Modules with some UNIX dependencies -- on by default:
@@ -116,6 +126,7 @@ grp grpmodule.c		# grp(3)
 crypt cryptmodule.c -lcrypt	# crypt(3); needs -lcrypt on some systems
 select selectmodule.c	# select(2); not on ancient System V
 socket socketmodule.c	# socket(2); not on ancient System V
+errno errnomodule.c	# posix (UNIX) errno values
 
 
 # Some more UNIX dependent modules -- off by default, since these
@@ -124,6 +135,7 @@ socket socketmodule.c	# socket(2); not on ancient System V
 dbm dbmmodule.c 	# dbm(3) may require -lndbm or similar
 nis nismodule.c 	# Sun yellow pages -- not everywhere
 termios termios.c	# Steen Lumholt's termios module
+#_xdr xdrmodule.c # -lnsl # Helper for xdrlib.py
 
 
 # Multimedia modules -- on by default.
@@ -221,25 +233,23 @@ md5 md5module.c md5c.c
 #timing timingmodule.c
 
 
-# Steen Lumholt's tkinter module.
-#
-# For use with plain Tk, use the first line.
-#
-# For use with extended Tk (i.e. if you have added extra widgets to
-# the Tk library, such as the common "studButton" and "triButton"
-# extensions), edit tkappinit.c, add appropriate -DWITH_... and
-# libraries/objects to the second line, and use that.
-#
-# In all cases also enable the last line (TKPATH).
+# The _tkinter module.
 #
 # See the section "The Tk interface" in ../README for more info.
+#
+# Enable the TKPATH line and choose the most applicable _tkinter line.
+# You may have to change /usr/local to wherever Tcl/Tk are installed.
+# Change the -l arguments to use Tcl 7.4 and Tk 4.0!
 
-# *** Use ONE of the following two lines, see previous comments ***
-tkinter tkintermodule.c -I/usr/local/include -I/usr/X11R6/include -L/usr/local/lib -L/usr/X11R6/lib -ltk41 -ltcl75 -lX11
-#tkinter tkintermodule.c tkappinit.c -DWITH_APPINIT -I/usr/local/include -L/usr/local/lib -ltk -ltcl -lX11
-
-# *** ALWAYS use this line as well ***
+# *** ALWAYS enable this line:
 TKPATH=:$(DESTLIB)/tkinter
+
+# *** Enable *one* of the following lines:
+# For Solaris:
+#_tkinter _tkinter.c -I/usr/openwin/include -I/usr/local/include -L/usr/openwin/lib -L/usr/local/lib -ltk4.1 -ltcl7.5 -lX11
+# For generic system (may have to add -I/-L options to find X11):
+#_tkinter _tkinter.c -I/usr/local/include -L/usr/local/lib -ltk4.1 -ltcl7.5 -lX11
+_tkinter _tkinter.c -I/usr/local/include -I/usr/X11R6/include -L/usr/local/lib -L/usr/X11R6/lib -ltk41 -ltcl75 -lX11
 
 
 # Lance Ellinghaus's modules:
@@ -260,12 +270,6 @@ curses cursesmodule.c -lncurses -ltermcap
 # Tommy Burnette's 'new' module (creates new empty objects of certain kinds):
 
 #new newmodule.c
-
-
-# John Redford's sybase module (requires sybase):
-# (Unfortunately this code is orphaned.  Read the source for documentation.)
-
-#sybase sybasemodule.c
 
 
 # Generic (SunOS / SVR4) dynamic loading module.
@@ -297,21 +301,13 @@ bsddb bsddbmodule.o
 
 
 
-# Andy Bensky's "environment" module (contains putenv())
-environment environment.c
-
 # David Wayne Williams' soundex module
 #soundex soundex.c
-
-# Objective-C (incomplete!!!)
-#objc.c
 
 # Helper module for various ascii-encoders
 binascii binascii.c
 
 # Fred Drake's interface to the Python parser.
-# (Not enabled by default because it is big and doesn't compile with
-# cc on SunOS 4.1.3)
 #parser parsermodule.c
 
 

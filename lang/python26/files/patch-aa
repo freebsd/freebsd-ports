@@ -1,17 +1,25 @@
-diff -c -r Modules/cursesmodule.c.orig Modules/cursesmodule.c
-*** Modules/cursesmodule.c.orig	Fri Mar 17 04:18:36 1995
---- Modules/cursesmodule.c	Tue Aug  8 13:31:40 1995
+*** Makefile.in.orig	Wed Jul 31 19:30:37 1996
+--- Makefile.in	Sun Aug 18 11:15:25 1996
 ***************
-*** 145,151 ****
---- 145,155 ----
+*** 88,97 ****
   
-  #include "Python.h"
+  # Expanded directories
+  BINDIR=		$(exec_prefix)/bin
+! LIBDIR=		$(exec_prefix)/lib
+  MANDIR=		$(prefix)/man
+  INCLUDEDIR=	$(prefix)/include
+! SCRIPTDIR=	$(prefix)/lib
   
-+ #ifdef __FreeBSD__
-+ #include <ncurses.h>
-+ #else
-  #include <curses.h>
-+ #endif
+  # Detailed destination directories
+  BINLIBDEST=	$(LIBDIR)/python$(VERSION)
+--- 88,97 ----
   
-  typedef struct {
-  	PyObject_HEAD
+  # Expanded directories
+  BINDIR=		$(exec_prefix)/bin
+! LIBDIR=		$(exec_prefix)/share
+  MANDIR=		$(prefix)/man
+  INCLUDEDIR=	$(prefix)/include
+! SCRIPTDIR=	$(prefix)/share
+  
+  # Detailed destination directories
+  BINLIBDEST=	$(LIBDIR)/python$(VERSION)
