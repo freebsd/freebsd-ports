@@ -105,6 +105,7 @@
     SUBDIR += mango
     SUBDIR += matrix-kmod
     SUBDIR += mc
+    SUBDIR += menushki
     SUBDIR += metatheme
     SUBDIR += mgp-mode.el
     SUBDIR += misterproper
