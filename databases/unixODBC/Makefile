@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.unixodbc.org/
 
 MAINTAINER=	nsayer@FreeBSD.org
 
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 .if defined(WITH_X)
 USE_XLIB=	yes
