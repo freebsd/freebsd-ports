@@ -27,6 +27,14 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
+PLIST_FILES=	bin/pauseme \
+		bin/vifm \
+		share/vifm/vifm-0.2.help.txt \
+		share/vifm/vifm.txt \
+		share/vifm/vifm.vim \
+		share/vifm/vifmrc0.2
+PLIST_DIRS=	share/vifm
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/configure
