@@ -6770,6 +6770,7 @@ rpc2		ports/devel/rpc2
 rpcbind		src/usr.sbin/rpcbind
 rpcgen		src/usr.bin/rpcgen
 rpcinfo		src/usr.bin/rpcinfo
+rpl		ports/misc/rpl
 rplay		ports/audio/rplay
 rpm		ports/archivers/rpm
 rpm2cpio	ports/archivers/rpm2cpio
