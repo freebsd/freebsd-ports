@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	jmz
 MAINTAINER=	jmz@FreeBSD.org
 
 LIB_DEPENDS=	tixsam4182.1:${PORTSDIR}/x11-toolkits/tix
+USE_PERL5_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/cd-write
 

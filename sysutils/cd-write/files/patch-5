@@ -1,5 +1,5 @@
 --- Makefile.orig	Thu Jan 21 22:31:25 1999
-+++ Makefile	Sun Dec  5 16:58:55 1999
++++ Makefile	Sat Dec 28 22:43:03 2002
 @@ -1,10 +1,10 @@
  OBJS=	main.o iso9660.o copy.o write.o misc.o generic.o specific.o worm.o dao.o
  
@@ -7,8 +7,9 @@
 +CFLAGS = -g -O -Ic++tk -DTIX -DMKISOFS='"${PREFIX}/bin/mkisofs"'
  
  cd-write: $(OBJS) subdir
- 	$(CC) -o  cd-write $(OBJS) c++tk/c++tk.o\
+-	$(CC) -o  cd-write $(OBJS) c++tk/c++tk.o\
 -		-L/usr/local/lib -L/usr/X11R6/lib -ltixsam4180 -ltk80 -ltcl80 -lX11 -lm -lcam
++	$(CXX) -o  cd-write $(OBJS) c++tk/c++tk.o\
 +		-L${PREFIX}/lib -L${X11BASE}/lib -ltixsam4182 -ltk82 -ltcl82 -lX11 -lm -lcam
  
  subdir:
