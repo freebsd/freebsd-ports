@@ -6,6 +6,9 @@ lib/scons/SCons/Action.pyo
 lib/scons/SCons/Builder.py
 lib/scons/SCons/Builder.pyc
 lib/scons/SCons/Builder.pyo
+lib/scons/SCons/Conftest.py
+lib/scons/SCons/Conftest.pyc
+lib/scons/SCons/Conftest.pyo
 lib/scons/SCons/Defaults.py
 lib/scons/SCons/Defaults.pyc
 lib/scons/SCons/Defaults.pyo
@@ -141,6 +144,9 @@ lib/scons/SCons/Tool/Subversion.pyo
 lib/scons/SCons/Tool/__init__.py
 lib/scons/SCons/Tool/__init__.pyc
 lib/scons/SCons/Tool/__init__.pyo
+lib/scons/SCons/Tool/aixc++.py
+lib/scons/SCons/Tool/aixc++.pyc
+lib/scons/SCons/Tool/aixc++.pyo
 lib/scons/SCons/Tool/aixcc.py
 lib/scons/SCons/Tool/aixcc.pyc
 lib/scons/SCons/Tool/aixcc.pyo
@@ -156,6 +162,9 @@ lib/scons/SCons/Tool/ar.pyo
 lib/scons/SCons/Tool/as.py
 lib/scons/SCons/Tool/as.pyc
 lib/scons/SCons/Tool/as.pyo
+lib/scons/SCons/Tool/c++.py
+lib/scons/SCons/Tool/c++.pyc
+lib/scons/SCons/Tool/c++.pyo
 lib/scons/SCons/Tool/cc.py
 lib/scons/SCons/Tool/cc.pyc
 lib/scons/SCons/Tool/cc.pyo
@@ -189,6 +198,9 @@ lib/scons/SCons/Tool/gnulink.pyo
 lib/scons/SCons/Tool/gs.py
 lib/scons/SCons/Tool/gs.pyc
 lib/scons/SCons/Tool/gs.pyo
+lib/scons/SCons/Tool/hpc++.py
+lib/scons/SCons/Tool/hpc++.pyc
+lib/scons/SCons/Tool/hpc++.pyo
 lib/scons/SCons/Tool/hpcc.py
 lib/scons/SCons/Tool/hpcc.pyc
 lib/scons/SCons/Tool/hpcc.pyo
@@ -279,6 +291,9 @@ lib/scons/SCons/Tool/sgilink.pyo
 lib/scons/SCons/Tool/sunar.py
 lib/scons/SCons/Tool/sunar.pyc
 lib/scons/SCons/Tool/sunar.pyo
+lib/scons/SCons/Tool/sunc++.py
+lib/scons/SCons/Tool/sunc++.pyc
+lib/scons/SCons/Tool/sunc++.pyo
 lib/scons/SCons/Tool/suncc.py
 lib/scons/SCons/Tool/suncc.pyc
 lib/scons/SCons/Tool/suncc.pyo
