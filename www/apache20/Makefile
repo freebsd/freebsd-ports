@@ -7,6 +7,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	2.0.28
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.apache.org/dist/httpd/ \
 		http://apache.mirrorcentral.com/dist/httpd/ \
@@ -15,6 +16,9 @@ MASTER_SITES=	http://www.apache.org/dist/httpd/ \
 		ftp://ftp.digex.net/pub/packages/network/apache/httpd/ \
 		ftp://ftp.cuckoo.com/pub/mirrors/apache/dist/httpd/
 DISTNAME=	httpd-${PORTVERSION:S/./_/g}-beta
+
+PATCH_SITES=	http://fallin.lv/distfiles/
+PATCHFILES=	${PKGNAME}.diff
 
 MAINTAINER?=	perky@fallin.lv
 
