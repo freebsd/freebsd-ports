@@ -19,10 +19,6 @@ MAN1=		grap.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500035
-BROKEN=		"Does not compile on 5.0"
-.endif
-
 post-install:
 .if !defined(NOPORTDOCS)
 	cd ${WRKSRC} && make install-docs
