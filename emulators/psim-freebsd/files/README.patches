@@ -13,7 +13,3 @@ OpenFirmware callback.
 
 sim/ppc/hw_init.c:
 Allow the simulator to load a dynamically linked OEA environment.
-
-sim/ppc/hw_tab.c:
-Ignore warnings for the improper alignment of the htab. A better fix would be
-to properly align the htab when the memory is allocated in the first place.

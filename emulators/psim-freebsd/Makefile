@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	psim-freebsd
-PORTVERSION=	6.0
-PORTREVISION=	1
+PORTVERSION=	6.3
+PORTREVISION?=	0
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	gdb/releases
@@ -21,13 +21,8 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-psim --target=powerpc-freebsd-elf \
-		--program-suffix=psim
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
+		--program-suffix=psim \
+		--disable-nls
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gdb/gdb ${PREFIX}/bin/${PORTNAME}
@@ -44,4 +39,4 @@ cklatest:
 	    ftp://mirrors.rcn.net/mirrors/sources.redhat.com/${MASTER_SITE_SUBDIR}/  \
 	    | ${GREP} gdb+dejagnu-
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
