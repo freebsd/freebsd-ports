@@ -20,7 +20,12 @@ LIB_DEPENDS=	vanessa_logger.0:${PORTSDIR}/devel/libvanessa_logger
 INSTALLS_SHLIB=	YES
 
 USE_LIBTOOL=	YES
+USE_REINPLACE=	YES
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+post-patch:
+	@${REINPLACE_CMD} "s,^SUBDIRS = libvanessa_adt test debian,SUBDIRS = libvanessa_adt," \
+				${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
