@@ -21,6 +21,7 @@
     SUBDIR += bacula
     SUBDIR += barry
     SUBDIR += battstat-applet
+    SUBDIR += bbapm
     SUBDIR += bchunk
     SUBDIR += bkpupsd
     SUBDIR += blimitd

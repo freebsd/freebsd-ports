@@ -472,7 +472,7 @@ baudline	ports/audio/baudline
 bayespam	ports/mail/bayespam
 bayonne		ports/comms/bayonne
 bb		ports/misc/bb
-bbapm		ports/x11-wm/bbapm
+bbapm		ports/sysutils/bbapm
 bbconf		ports/x11-wm/bbconf
 bbdate		ports/x11-clocks/bbdate
 bbdb		ports/databases/bbdb
@@ -483,7 +483,7 @@ bblimage	ports/science/bblimage
 bbmail		ports/mail/bbmail
 bbpager		ports/x11-wm/bbpager
 bbrb		ports/graphics/bbrb
-bbrun		ports/x11-wm/bbrun
+bbrun		ports/x11/bbrun
 bbsnet		ports/net/bbsnet
 bcc		ports/devel/bcc
 bchunk		ports/sysutils/bchunk
@@ -2543,7 +2543,7 @@ icebreaker	ports/games/icebreaker
 icecast		ports/audio/icecast
 icecast2	ports/audio/icecast2
 icegradient	ports/x11-toolkits/icegradient
-icemc		ports/x11-wm/icemc
+icemc		ports/misc/icemc
 icepref		ports/x11-wm/icepref
 ices		ports/audio/ices
 icewm		ports/x11-wm/icewm

@@ -7,7 +7,7 @@
 
 PORTNAME=	bbrun
 PORTVERSION=	1.4
-CATEGORIES=	x11-wm
+CATEGORIES=	x11
 MASTER_SITES=	http://www.dwave.net/~jking/bbrun/
 
 MAINTAINER=	adamw@FreeBSD.org

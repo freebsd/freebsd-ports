@@ -12,11 +12,9 @@
     SUBDIR += alloywm
     SUBDIR += amaterus
     SUBDIR += amiwm
-    SUBDIR += bbapm
     SUBDIR += bbconf
     SUBDIR += bbkeys
     SUBDIR += bbpager
-    SUBDIR += bbrun
     SUBDIR += blackbox
     SUBDIR += blwm
     SUBDIR += boxtools
@@ -42,7 +40,6 @@
     SUBDIR += golem
     SUBDIR += gwm
     SUBDIR += hackedbox
-    SUBDIR += icemc
     SUBDIR += icepref
     SUBDIR += icewm
     SUBDIR += ion
