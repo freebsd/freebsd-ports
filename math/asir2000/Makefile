@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	asir
-PORTVERSION=	20020910
+PORTVERSION=	20021020
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.asir.org/pub/asir/src/
+MASTER_SITES=	ftp://ftp.jssac.org/pub/distfiles/asir/ \
+		ftp://ftp.asir.org/pub/asir/src/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${ASIR_DOC}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -24,7 +25,7 @@ CONFIGURE_ENV=	OLD_PARI_VERSION=${OLD_PARI_VERSION} \
 		PARI_VERSION=${PARI_VERSION} \
 		LAPACK_VERSION=${LAPACK_VERSION}
 CONFIGURE_ARGS= -oxhome ${PREFIX} -plot ${PARI} -fep -interval ${LAPACK}
-ASIR_DOC_VERSION=	20020910
+ASIR_DOC_VERSION=	20021020
 ASIR_DOC=	asirdoc-${ASIR_DOC_VERSION}.tar.gz
 MAN1=		asir.1
 
@@ -36,7 +37,7 @@ LIB_DEPENDS=	# dummy
 OLD_PARI_DIR=	${PORTSDIR}/math/pari
 OLD_PARI_VERSION=	`${GREP} PORTVERSION ${OLD_PARI_DIR}/Makefile | cut -f 2`
 PARI_DIR=	${PORTSDIR}/math/pari-devel
-PARI_VERSION=	`${GREP} PORTVERSION ${PARI_DIR}/Makefile | cut -f 2`
+PARI_VERSION=	`${GREP} MAJOR_VERSION ${PARI_DIR}/Makefile | ${GREP} -v { | cut -f 2`.`${GREP} MINOR_VERSION ${PARI_DIR}/Makefile | ${GREP} -v { | cut -f 2`.`${GREP} REV_VERSION ${PARI_DIR}/Makefile | ${GREP} -v { | cut -f 2`.alpha
 
 .if defined(USE_OLDPARI)
 LIB_DEPENDS+=	pari.1:${OLD_PARI_DIR}
