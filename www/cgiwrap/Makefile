@@ -3,7 +3,7 @@
 # Date created:         30 July 1998
 # Whom:                 Brent J. Nordquist <bjn@visi.com>
 #
-# $Id: Makefile,v 1.2 1998/08/17 00:38:16 steve Exp $
+# $Id: Makefile,v 1.3 1999/05/18 02:53:40 mharo Exp $
 #
 
 DISTNAME=	cgiwrap-3.6.3
@@ -37,7 +37,7 @@ CGIDIR=		public_html/cgi-bin
 ###
 # Use these options for Apache:
 ###
-INSTALLDIR=	${PREFIX}/www/cgi-bin
+INSTALLDIR=	${PREFIX}/share/apache/cgi-bin
 HTTPDUSER=	--with-httpd-user=nobody
 
 pre-install:
