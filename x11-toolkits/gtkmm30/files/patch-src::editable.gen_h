@@ -1,8 +1,6 @@
-$FreeBSD$
-
---- src/gtk--/editable.cc.orig	Sun Jun  9 11:15:59 2002
-+++ src/gtk--/editable.cc	Sun Jun  9 11:16:09 2002
-@@ -5,7 +5,7 @@
+--- src/editable.gen_h.orig	Mon Jun 10 21:40:43 2002
++++ src/editable.gen_h	Mon Jun 10 21:40:56 2002
+@@ -147,7 +147,7 @@
  namespace Gtk
  {
  
