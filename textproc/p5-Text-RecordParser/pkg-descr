@@ -1,0 +1,6 @@
+This module is for reading record-oriented data. The most common example have
+records separated by newlines and fields separated by commas or tabs, but this
+module aims to provide a consistent interface for handling sequential records
+in a file however they may be delimited.
+
+WWW: http://search.cpan.org/dist/Text-RecordParser
