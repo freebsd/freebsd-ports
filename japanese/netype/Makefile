@@ -8,7 +8,7 @@
 PORTNAME=	netype
 PORTVERSION=	0.1.1
 CATEGORIES=	japanese misc
-MASTER_SITES=	http://bishop.fuis.fukui-u.ac.jp/~funakami/software/netype/src/
+MASTER_SITES=	http://www.i.his.fukui-u.ac.jp/~funakami/software/netype/src/
 DISTNAME=	${PORTNAME}-0.1.0
 
 PATCH_SITES=	${MASTER_SITES}
@@ -16,7 +16,7 @@ PATCHFILES=	${PORTNAME}.${PORTVERSION}.patch.gz
 PATCH_DIST_STRIP=	-p1
 #PATH_WRKSRC=	${WRKSRC}
 
-MAINTAINER=	mutoh@info.nara-k.ac.jp
+MAINTAINER=	tmutoh@mx10.freecom.ne.jp
 
 USE_GNOMENG=	yes
 USE_GNOME=	imlib

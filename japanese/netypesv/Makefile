@@ -8,11 +8,11 @@
 PORTNAME=	netypesv
 PORTVERSION=	0.1.0
 CATEGORIES=	japanese misc
-MASTER_SITES=	http://bishop.fuis.fukui-u.ac.jp/~funakami/software/netype/src/
+MASTER_SITES=	http://www.i.his.fukui-u.ac.jp/~funakami/software/netype/src/
 DISTNAME=	netypesv-${PORTVERSION}
 EXTRACT_SUFX=	.jar
 
-MAINTAINER=	mutoh@info.nara-k.ac.jp
+MAINTAINER=	tmutoh@mx10.freecom.ne.jp
 
 RUN_DEPENDS=	${JDKDIR}/bin/java:${PORTSDIR}/java/jdk12
 
