@@ -1,0 +1,11 @@
+--- Makefile.bak	Tue Oct 19 23:58:46 1999
++++ Makefile	Mon Apr 16 11:23:01 2001
+@@ -2,7 +2,7 @@
+ 
+ LIB=/usr/lib/ispell
+ 
+-DICT = base.koi computer.koi geography.koi science.koi # rare.koi
++DICT = base.koi computer.koi geography.koi science.koi $(LOCAL_DICT) # rare.koi
+ 
+ ifdef YO
+ PATT=y
