@@ -7,7 +7,7 @@
 #
 
 DISTNAME=	slang-1.3.8__J067
-PKGNAME=	ja-libslang-1.3.8.j067
+PKGNAME=	ja-libslang-1.3.8.j067.1
 CATEGORIES=	japanese devel
 MASTER_SITES=	http://home.sprintmail.com/~kikutani/slang/
 
