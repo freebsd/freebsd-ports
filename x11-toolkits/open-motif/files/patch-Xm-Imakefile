@@ -1,0 +1,13 @@
+--- lib/Xm/Imakefile.orig	Sun Sep 17 23:14:50 2000
++++ lib/Xm/Imakefile	Sun Sep 17 23:15:01 2000
+@@ -41,8 +41,10 @@
+ 
+ #define DoNormalLib	NormalLibXm
+ #define DoSharedLib	SharedLibXm
++#if 0
+ #define DoDebugLib	DebugLibXm
+ #define DoProfileLib	ProfileLibXm
++#endif
+ #define LibName		Xm
+ #define SoRev		SOXMREV
+ #define HasSharedData	YES
