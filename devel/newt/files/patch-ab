@@ -1,6 +1,6 @@
---- Makefile.in.orig	Fri Aug 16 05:18:11 2002
-+++ Makefile.in	Sun Oct 13 15:04:07 2002
-@@ -1,28 +1,31 @@
+--- Makefile.in.orig	Thu Aug 15 13:18:11 2002
++++ Makefile.in	Fri Mar 19 03:29:21 2004
+@@ -1,36 +1,43 @@
 -LIBS = -lslang -lm #-lefence
 -SHLIBS = -lslang -lm -lc
 +LIBS = -lslang -lm -lpopt -lncurses #-lefence
@@ -43,28 +43,38 @@
  LIBNEWTSONAME = libnewt.so.$(SONAME)
  LIBOBJS = newt.o button.o form.o checkbox.o entry.o label.o listbox.o \
            scrollbar.o textbox.o scale.o grid.o windows.o buttonbar.o \
-@@ -30,7 +33,7 @@
+ 	  checkboxtree.o
  
- SHCFLAGS = -fPIC
+-SHCFLAGS = -fPIC
++LIBSHOBJS = newt.So button.So form.So checkbox.So entry.So label.So listbox.So \
++          scrollbar.So textbox.So scale.So grid.So windows.So buttonbar.So \
++	  checkboxtree.So
  
 -prefix = /usr
++SHCFLAGS = ${CFLAGS} -fPIC
++
 +prefix = ${PREFIX}
  includedir = $(prefix)/include
  libdir = $(prefix)/lib
  bindir = $(prefix)/bin
-@@ -41,41 +44,37 @@
- SOURCES = $(subst .o,.c,$(TESTOBJS) $(NDIALOGOBJS) $(LIBOBJS))
+@@ -38,44 +45,41 @@
  
- SHAREDDIR = shared
+ #--------------------------------------
+ 
+-SOURCES = $(subst .o,.c,$(TESTOBJS) $(NDIALOGOBJS) $(LIBOBJS))
++SOURCES = $(subst .o,.c,$(TESTOBJS) $(NDIALOGOBJS) $(LIBOBJS)) $(subst .So,.c,$(LIBSHOBJS))
+ 
+-SHAREDDIR = shared
 -SHAREDOBJS = $(patsubst %,$(SHAREDDIR)/%, $(LIBOBJS))
-+SHAREDOBJS = ${LIBOBJS}
++.SUFFIXES: .o .So
  
 -ifeq (.depend,$(wildcard .depend))
 -TARGET=$(PROGS)
 -else
 -TARGET=depend $(PROGS)
 -endif
--
++SHAREDOBJS = ${LIBSHOBJS}
+ 
 -all:	$(TARGET) _snackmodule.so
 +all:	$(TARGET)
  
@@ -106,16 +116,33 @@
  
  newt.o: newt.c Makefile
  	$(CC) $(CFLAGS) -DVERSION=\"$(VERSION)\" -c -o $@ $<
-@@ -96,7 +95,7 @@
+@@ -90,20 +94,16 @@
+ depend:
+ 	$(CPP) $(CFLAGS) -M $(SOURCES) > .depend
+ 
+-$(SHAREDDIR):
+-	mkdir -p $(SHAREDDIR)
+-
  sharedlib: $(LIBNEWTSH)
  
- $(LIBNEWTSH): $(SHAREDDIR) $(SHAREDOBJS)
+-$(LIBNEWTSH): $(SHAREDDIR) $(SHAREDOBJS)
 -	gcc -shared -o $(LIBNEWTSH) -Wl,-soname,$(LIBNEWTSONAME) $(SHAREDOBJS) $(SHLIBS)
++$(LIBNEWTSH): $(SHAREDOBJS)
 +	${CC} -shared ${LDFLAGS} -o $(LIBNEWTSH) -Wl,-soname,$(LIBNEWTSONAME) $(SHAREDOBJS) $(SHLIBS)
  
- $(SHAREDDIR)/%.o : %.c
+-$(SHAREDDIR)/%.o : %.c
++.c.So:
  	$(CC) $(SHCFLAGS) -c $(CFLAGS) -o $@ $<
-@@ -113,16 +112,11 @@
+ 
+-$(SHAREDDIR)/newt.o: newt.c Makefile
+-	$(CC) $(SHCFLAGS) $(CFLAGS) -DVERSION=\"$(VERSION)\" -c -o $@ $<
+-
++newt.So: newt.c Makefile
++	$(CC) $(SHCFLAGS) -DVERSION=\"$(VERSION)\" -c -o $@ $<
+ 
+ install: $(LIBNEWT) install-sh whiptail
+ 	[ -d $(instroot)/$(bindir) ] || install -m 755 -d $(instroot)/$(bindir)
+@@ -113,16 +113,11 @@
  	install -m 644 $(LIBNEWT) $(instroot)/$(libdir)
  	install -s -m 755 whiptail $(instroot)/$(bindir)
  
@@ -133,7 +160,7 @@
  
  configure:  configure.in
  	autoconf
-@@ -140,7 +134,3 @@
+@@ -140,7 +135,3 @@
  	@rm -f /tmp/newt-$(VERSION).tar.gz
  	@echo " "
  	@echo "The final archive is ./newt-$(VERSION).tar.gz."
