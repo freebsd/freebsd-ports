@@ -12,7 +12,7 @@ share/phpbb/contrib/fixfiles.sh
 share/phpbb/contrib/template_db_cache.php
 share/phpbb/contrib/template_file_cache.php
 share/phpbb/install.php
-share/phpbb/update_to_%%PHPBB_VER%%.php
+share/phpbb/update_to_latest.php
 share/phpbb/upgrade.php
 %%PHPBBDIR%%/admin/admin_board.php
 %%PHPBBDIR%%/admin/admin_db_utilities.php
@@ -113,7 +113,7 @@ share/phpbb/upgrade.php
 %%PHPBBDIR%%/install/schemas/mysql_schema.sql
 %%PHPBBDIR%%/install/schemas/postgres_basic.sql
 %%PHPBBDIR%%/install/schemas/postgres_schema.sql
-%%PHPBBDIR%%/install/update_to_%%PHPBB_VER%%.php
+%%PHPBBDIR%%/install/update_to_latest.php
 %%PHPBBDIR%%/install/upgrade.php
 %%PHPBBDIR%%/language/index.htm
 %%PHPBBDIR%%/language/lang_english/email/admin_activate.tpl

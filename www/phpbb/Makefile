@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpbb
-PORTVERSION=	2.0.11
+PORTVERSION=	2.0.12
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -45,7 +45,7 @@ PHPBBDIR=	${WWWDOCROOT}/${PHPBBURL}
 PKGOPTS=	${FILESDIR}/pkg-opts
 EXCEPTFILES=	${PREFIX}/${PHPBBDIR}/install/install.php \
 		${PREFIX}/${PHPBBDIR}/install/upgrade.php \
-		${PREFIX}/${PHPBBDIR}/install/update_to_${PHPBB_VER}.php
+		${PREFIX}/${PHPBBDIR}/install/update_to_latest.php
 
 options:
 	@ ${ECHO_MSG} "===>  Build options for ${PKGNAME}:"
