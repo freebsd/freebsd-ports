@@ -134,12 +134,12 @@ BBBike/lib/WinCompat.pm
 BBBike/lib/click.au
 BBBike/lib/click.wav
 BBBike/lib/wettermeldung2
-BBBike/lib/i386-freebsd/auto/BBBikeXS/BBBikeXS.so
-BBBike/lib/i386-freebsd/auto/BBBikeXS/BBBikeXS.bs
-BBBike/lib/i386-freebsd/auto/VirtArray/VirtArray.so
-BBBike/lib/i386-freebsd/auto/VirtArray/VirtArray.bs
-BBBike/lib/i386-freebsd/BBBikeXS.pm
-BBBike/lib/i386-freebsd/VirtArray.pm
+BBBike/lib/%%PERL_ARCH%%/auto/BBBikeXS/BBBikeXS.so
+BBBike/lib/%%PERL_ARCH%%/auto/BBBikeXS/BBBikeXS.bs
+BBBike/lib/%%PERL_ARCH%%/auto/VirtArray/VirtArray.so
+BBBike/lib/%%PERL_ARCH%%/auto/VirtArray/VirtArray.bs
+BBBike/lib/%%PERL_ARCH%%/BBBikeXS.pm
+BBBike/lib/%%PERL_ARCH%%/VirtArray.pm
 BBBike/bbbike.1
 @dirrm BBBike/lib/BikePower
 @dirrm BBBike/lib/Met
@@ -147,11 +147,11 @@ BBBike/bbbike.1
 @dirrm BBBike/lib/Tk
 @dirrm BBBike/ext/VirtArray
 @dirrm BBBike/ext
-@dirrm BBBike/lib/i386-freebsd/auto/VirtArray
+@dirrm BBBike/lib/%%PERL_ARCH%%/auto/VirtArray
 @dirrm BBBike/Bundle
-@dirrm BBBike/lib/i386-freebsd/auto/BBBikeXS
-@dirrm BBBike/lib/i386-freebsd/auto
-@dirrm BBBike/lib/i386-freebsd
+@dirrm BBBike/lib/%%PERL_ARCH%%/auto/BBBikeXS
+@dirrm BBBike/lib/%%PERL_ARCH%%/auto
+@dirrm BBBike/lib/%%PERL_ARCH%%
 @dirrm BBBike/Karte
 @dirrm BBBike/lib
 @dirrm BBBike/images
