@@ -1,56 +1,127 @@
+bin/x64
+bin/x128
+bin/xvic
+bin/xpet
+bin/xcbm2
+bin/c1541
+bin/petcat
+@unexec install-info --delete %D/info/vice.info %D/info/dir
+info/vice.info
+info/vice.info-1
+info/vice.info-2
+info/vice.info-3
+info/vice.info-4
+info/vice.info-5
+@exec install-info %D/info/vice.info %D/info/dir
 lib/vice/C64/basic
+lib/vice/C64/c64s.vpl
+lib/vice/C64/ccs64.vpl
 lib/vice/C64/chargen
-lib/vice/C64/dos1541
+lib/vice/C64/default.vkm
+lib/vice/C64/default.vpl
+lib/vice/C64/default.vrs
+lib/vice/C64/frodo.vpl
+lib/vice/C64/godot.vpl
 lib/vice/C64/kernal
-@dirrm lib/vice/C64
+lib/vice/C64/pc64.vpl
+lib/vice/C64/position.vkm
+lib/vice/C128/basic
+lib/vice/C128/c64s.vpl
+lib/vice/C128/ccs64.vpl
+lib/vice/C128/chargen
+lib/vice/C128/default.vkm
+lib/vice/C128/default.vpl
+lib/vice/C128/default.vrs
+lib/vice/C128/frodo.vpl
+lib/vice/C128/godot.vpl
+lib/vice/C128/kernal
+lib/vice/C128/pc64.vpl
+lib/vice/C128/position.vkm
 lib/vice/VIC20/basic
 lib/vice/VIC20/chargen
-lib/vice/VIC20/dos1541
+lib/vice/VIC20/default.vkm
+lib/vice/VIC20/default.vpl
 lib/vice/VIC20/kernal
-@dirrm lib/vice/VIC20
+lib/vice/VIC20/position.vkm
+lib/vice/VIC20/default.vrs
+lib/vice/PET/busi_uk.vkm
+lib/vice/PET/graphics.vkm
+lib/vice/PET/posg_de.vkm
+lib/vice/PET/busi_de.vkm
+lib/vice/PET/basic1
+lib/vice/PET/basic2
+lib/vice/PET/basic4
+lib/vice/PET/kernal1
+lib/vice/PET/kernal2
+lib/vice/PET/kernal4
+lib/vice/PET/edit1g
+lib/vice/PET/edit2g
+lib/vice/PET/edit2b
+lib/vice/PET/edit4g40
+lib/vice/PET/edit4b40
+lib/vice/PET/edit4b80
 lib/vice/PET/chargen
-lib/vice/PET/edit2.b
-lib/vice/PET/edit4.b40
-lib/vice/PET/edit4.b80
-lib/vice/PET/pet2001
-lib/vice/PET/pet3032
-lib/vice/PET/pet4032
-@dirrm lib/vice/PET
-lib/vice/doc/64doc
-lib/vice/doc/BUGS
-lib/vice/doc/CHANGES
-lib/vice/doc/COPYING
+lib/vice/PET/chargen.de
+lib/vice/PET/amber.vpl
+lib/vice/PET/default.vpl
+lib/vice/PET/white.vpl
+lib/vice/PET/rom1g.vrs
+lib/vice/PET/rom2b.vrs
+lib/vice/PET/rom2g.vrs
+lib/vice/PET/rom4b40.vrs
+lib/vice/PET/rom4b80.vrs
+lib/vice/PET/rom4g40.vrs
+lib/vice/CBM-II/amber.vpl
+lib/vice/CBM-II/basic.128
+lib/vice/CBM-II/basic.256
+lib/vice/CBM-II/chargen.600
+lib/vice/CBM-II/chargen.700
+lib/vice/CBM-II/busi_uk.vkm
+lib/vice/CBM-II/default.vpl
+lib/vice/CBM-II/kernal
+lib/vice/CBM-II/white.vpl
+lib/vice/CBM-II/rom128l.vrs
+lib/vice/CBM-II/rom128h.vrs
+lib/vice/CBM-II/rom256l.vrs
+lib/vice/CBM-II/rom256h.vrs
+lib/vice/DRIVES/dos1541
+lib/vice/DRIVES/dos1541II
+lib/vice/DRIVES/dos1571
+lib/vice/DRIVES/dos1581
+lib/vice/DRIVES/dos2031
+lib/vice/doc/vice_1.html
+lib/vice/doc/vice_2.html
+lib/vice/doc/vice_3.html
+lib/vice/doc/vice_4.html
+lib/vice/doc/vice_5.html
+lib/vice/doc/vice_6.html
+lib/vice/doc/vice_7.html
+lib/vice/doc/vice_8.html
+lib/vice/doc/vice_9.html
+lib/vice/doc/vice_10.html
+lib/vice/doc/vice_11.html
+lib/vice/doc/vice_12.html
+lib/vice/doc/vice_13.html
+lib/vice/doc/vice_14.html
+lib/vice/doc/vice_15.html
+lib/vice/doc/vice_16.html
+lib/vice/doc/vice_toc.html
+@exec ln -sf %f %B/index.html
+@unexec rm -f %B/index.html
+lib/vice/doc/64doc.txt
 lib/vice/doc/Evaluation
-lib/vice/doc/INSTALL
-lib/vice/doc/MANUAL.html
-@exec ln -s %f %B/index.html
-@unexec rm %B/index.html
-lib/vice/doc/PETdoc
-lib/vice/doc/README
-lib/vice/doc/TODO
-lib/vice/doc/cbm_basic_tokens
-lib/vice/doc/drive_info
-lib/vice/doc/mnemonics
-lib/vice/doc/recomment.html
-lib/vice/doc/serial
+lib/vice/doc/PETdoc.txt
+lib/vice/doc/Readme.dos
+lib/vice/doc/cbm_basic_tokens.txt
+lib/vice/doc/drive_info.txt
+lib/vice/doc/mnemonics.txt
+lib/vice/doc/mon.txt
+lib/vice/doc/serial.txt
+@dirrm lib/vice/C64
+@dirrm lib/vice/C128
+@dirrm lib/vice/VIC20
+@dirrm lib/vice/PET
+@dirrm lib/vice/CBM-II
+@dirrm lib/vice/DRIVES
 @dirrm lib/vice/doc
-lib/vice/i386-unknown-freebsd2.2.5/c1541-0.14.1
-@exec ln -s ../%F %D/bin/c1541
-@unexec rm %D/bin/c1541
-lib/vice/i386-unknown-freebsd2.2.5/petcat-0.14.1
-@exec ln -s ../%F %D/bin/petcat
-@unexec rm %D/bin/petcat
-lib/vice/i386-unknown-freebsd2.2.5/recomment-0.14.1
-@exec ln -s ../%F %D/bin/recomment
-@unexec rm %D/bin/recomment
-lib/vice/i386-unknown-freebsd2.2.5/x64-0.14.1
-@exec ln -s ../%F %D/bin/x64
-@unexec rm %D/bin/x64
-lib/vice/i386-unknown-freebsd2.2.5/xpet-0.14.1
-@exec ln -s ../%F %D/bin/xpet
-@unexec rm %D/bin/xpet
-lib/vice/i386-unknown-freebsd2.2.5/xvic-0.14.1
-@exec ln -s ../%F %D/bin/xvic
-@unexec rm %D/bin/xvic
-@dirrm lib/vice/i386-unknown-freebsd2.2.5
 @dirrm lib/vice
