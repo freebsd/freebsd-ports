@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	prc-tools binutils/old-releases
 DISTNAME=	prc-tools-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tar.gz binutils-2.9.1.tar.bz2
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_BZIP2=	YES
 USE_BISON=	YES
