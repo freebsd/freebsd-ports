@@ -1,4 +1,4 @@
-# New ports collection makefile for:	gtk-be-engine
+# New ports collection makefile for:	gtkbe
 # Date Created:				6 July 2000
 # Whom:				 	Maxim Sobolev <sobomax@FreeBSD.org>
 #
