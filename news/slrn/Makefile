@@ -15,6 +15,7 @@ MAINTAINER=	xaa+ports@timewasters.nl
 
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
 
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	all slrnpull
 MAN1=		slrn.1
