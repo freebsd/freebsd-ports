@@ -675,6 +675,7 @@ cdrtools	ports/sysutils/cdrtools
 cel		ports/lang/cel
 centericq	ports/net/centericq
 cervisia	ports/devel/cervisia
+cfe		ports/misc/cfe
 cfengine	ports/sysutils/cfengine
 cflow		ports/devel/cflow
 cflowd		ports/net/cflowd
