@@ -1,7 +1,10 @@
 bin/asc
-bin/ascdemount
+bin/asc_demount
+bin/asc_gfx2pcx
+bin/asc_makegfx
+bin/asc_mntgraph
+bin/asc_mount
 bin/ascmap2pcx
 bin/ascmapedit
-bin/ascmount
 share/asc/main.con
 @dirrm share/asc
