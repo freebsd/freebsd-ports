@@ -17,6 +17,10 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Sun's powerful and extensible IDE for Java
 
+.if defined(PACKAGE_BUILDING)
+BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT}
+.endif
+
 USE_JAVA=	1.3+
 JAVAVM=		${JAVA_HOME}/bin/java
 

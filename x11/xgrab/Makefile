@@ -18,6 +18,9 @@ MAINTAINER=	jmz@FreeBSD.org
 COMMENT=	An X11 image grabber
 
 BUILD_DEPENDS=	xrdb:${X_CLIENTS_PORT}
+.if defined(PACKAGE_BUILDING)
+BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT}
+.endif
 
 USE_X_PREFIX=	yes
 USE_IMAKE=	yes

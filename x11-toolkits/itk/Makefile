@@ -18,6 +18,9 @@ COMMENT=	[incr Tk] (A.K.A. "itk")
 
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83 \
 		itcl${MAJOR}${MINOR}.1:${PORTSDIR}/lang/itcl
+.if defined(PACKAGE_BUILDING)
+BUILD_DEPENDS+= Xvfb:${X_VFBSERVER_PORT}
+.endif
 
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/itcl${MAJOR}.${MINOR}/itk
