@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	gtk-cleanice-engine
-PORTVERSION=	1.2.5
+PORTVERSION=	1.2.6
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	elysium-project
-DISTNAME=	gtk-engines-cleanice-${PORTVERSION}
+DISTNAME=	cleanice-theme-${PORTVERSION}
 
 MAINTAINER=	philip@paeps.cx
 COMMENT=	A simplistic GTK+ 2.x theme engine
