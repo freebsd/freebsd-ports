@@ -49,6 +49,7 @@
     SUBDIR += glbiff
     SUBDIR += gmail
     SUBDIR += gmime
+    SUBDIR += gnumail
     SUBDIR += grepmail
     SUBDIR += hbiff
     SUBDIR += icqmail
