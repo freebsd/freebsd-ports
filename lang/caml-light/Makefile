@@ -18,6 +18,12 @@ DISTNAME=	cl74unix
 MAINTAINER=	jkoshy@freebsd.org
 COMMENT=	A strongly typed functional language belonging to the ML family
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
+
 USE_XLIB=	yes
 WRKSRC=		${WRKDIR}/cl74
 ALL_TARGET=	configure world bootstrap
@@ -34,4 +40,4 @@ do-install:
 	cd ${WRKSRC}/contrib; ${MAKE} all ${INSTALL_TARGET} PREFIX=${PREFIX} \
 	X11BASE=${X11BASE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
