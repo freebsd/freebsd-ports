@@ -11,6 +11,8 @@ pgsql/bin/pg_dumpall
 pgsql/bin/pg_id
 pgsql/bin/pg_passwd
 pgsql/bin/pg_version
+pgsql/bin/pgtclsh
+pgsql/bin/pgtksh
 pgsql/bin/postgres
 pgsql/bin/postmaster
 pgsql/bin/psql
@@ -71,6 +73,7 @@ pgsql/include/c.h
 pgsql/include/config.h
 pgsql/include/fmgr.h
 pgsql/include/lib/dllist.h
+pgsql/include/libpgtcl.h
 pgsql/include/libpq-fe.h
 pgsql/include/libpq/libpq-fs.h
 pgsql/include/libpq/pqcomm.h
@@ -81,6 +84,8 @@ pgsql/include/utils/elog.h
 pgsql/include/utils/geo_decls.h
 pgsql/include/utils/palloc.h
 pgsql/lib/global1.bki.source
+pgsql/lib/libpgtcl.a
+pgsql/lib/libpgtcl.so.1.0
 pgsql/lib/libpq.a
 pgsql/lib/libpq.so
 pgsql/lib/libpq.so.1.0
@@ -199,11 +204,6 @@ share/doc/pgsql/manual/xtypes.html
 share/doc/pgsql/spi.txt
 share/doc/pgsql/trigger.txt
 share/doc/pgsql/userguide.ps
-pgsql/lib/libpgtcl.a
-pgsql/lib/libpgtcl.so.1
-pgsql/bin/pgtclsh
-pgsql/bin/pgtksh
-pgsql/include/libpgtcl.h
 @dirrm share/doc/pgsql/manual
 @dirrm share/doc/pgsql
 @dirrm pgsql/bin
