@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	darcs
-PORTVERSION=	0.9.13
+PORTVERSION=	0.9.15
 CATEGORIES=	devel
 MASTER_SITES=	http://www.abridgegame.org/darcs/
 
 MAINTAINER=	obraun@FreeBSD.org
 COMMENT=	Yet another replacement for CVS, written in Haskell
 
-BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
+BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc6
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 USE_REINPLACE=	yes
