@@ -8457,6 +8457,7 @@ xml-i18n-tools	ports/textproc/xml-i18n-tools
 xml-lite.el	ports/textproc/xml-lite.el
 xml2rfc		ports/textproc/xml2rfc
 xml4j		ports/textproc/xml4j
+xmlada		ports/textproc/xmlada
 xmlcharent	ports/textproc/xmlcharent
 xmlink		ports/games/xmlink
 xmlpp		ports/textproc/xmlpp
