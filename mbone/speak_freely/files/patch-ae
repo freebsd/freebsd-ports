@@ -1,8 +1,20 @@
-*** soundbyte.c.orig	Mon Apr  8 17:39:41 1996
---- soundbyte.c	Fri Oct 25 20:36:06 1996
+*** soundbyte.c.orig	Wed Mar  5 23:04:49 1997
+--- soundbyte.c	Wed Jun 11 22:50:54 1997
+***************
+*** 15,21 ****
+--- 15,23 ----
+  #ifdef Solaris
+  #include <sys/filio.h>
+  #else
++ #ifndef __FreeBSD__
+  #include <sys/dir.h>
++ #endif
+  #include <sys/file.h>
+  #endif
+  
 ***************
 *** 96,101 ****
---- 96,106 ----
+--- 98,108 ----
   }
   #endif
   
@@ -16,7 +28,7 @@
   		   access.  Return TRUE if successful, FALSE
 ***************
 *** 145,150 ****
---- 150,170 ----
+--- 152,172 ----
   	    }
   	    ioctl(Audio_fd, AUDIO_SETINFO, &Audio_info);
   #endif
@@ -40,7 +52,7 @@
   	if (errno != EINTR) {
 ***************
 *** 160,165 ****
---- 180,194 ----
+--- 182,196 ----
   void soundterm()
   {
   	if (audiof >= 0) {
@@ -54,7 +66,7 @@
 + #endif
 + #endif
   	    if (close(audiof) < 0) {
-                  perror("closing audio device");
+  		perror("closing audio device");
   	    }
 ***************
 *** 210,219 ****
@@ -62,13 +74,13 @@
      arg	 = (value << 8) | value;
   
 !    if (ioctl(Audio_fd, MIXER_WRITE(SOUND_MIXER_PCM), &arg) < 0)
-!         perror("SOUND_MIXER_PCM");
+! 	perror("SOUND_MIXER_PCM");
   #endif
   }
   
   /*  SOUNDRECGAIN  --  Set recording gain from 0 (minimum) to 100 (maximum).  */
   
---- 239,268 ----
+--- 241,270 ----
   
      arg	 = (value << 8) | value;
   
@@ -87,8 +99,8 @@
 +    int arg, v1, v2;
 + 
 +    if (ioctl(Audio_fd, SOUND_MIXER_READ_PCM, &arg) < 0) {
-+ 	perror("SOUND_MIXER_READ_PCM");
-+ 	return -1;
++       perror("SOUND_MIXER_READ_PCM");
++       return -1;
 +    }
 +    v1 = arg & 0xFF;
 +    v2 = (arg >> 8) & 0xFF;
