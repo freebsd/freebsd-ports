@@ -1,7 +1,16 @@
---- modules/Makefile.in.orig	Tue May  6 15:39:48 2003
-+++ modules/Makefile.in	Tue May  6 15:41:28 2003
-@@ -210,7 +210,7 @@
- @BUILD_CDEMENU_MODULE_TRUE@CDEMENU_LTLIBS = @BUILD_CDEMENU_MODULE_TRUE@libcdemenu-desktop.la
+--- modules/Makefile.in.orig	Thu Aug 26 20:51:38 2004
++++ modules/Makefile.in	Thu Aug 26 21:00:56 2004
+@@ -195,7 +195,7 @@
+ am__quote = @am__quote@
+ install_sh = @install_sh@
+ NULL = 
+-SUBDIRS = extfs vfolder
++SUBDIRS = vfolder
+ 
+ INCLUDES = \
+ 	-I$(top_srcdir)				\
+@@ -240,13 +240,12 @@
+ @BUILD_CDEMENU_MODULE_TRUE@CDEMENU_LTLIBS = libcdemenu-desktop.la
  @BUILD_CDEMENU_MODULE_FALSE@CDEMENU_LTLIBS = 
  
 -module_flags = -export_dynamic -avoid-version -module -no-undefined
@@ -9,3 +18,22 @@
  modulesdir = $(libdir)/gnome-vfs-2.0/modules
  
  modules_LTLIBRARIES = \
+ 	$(CDDA_LTLIBS)				\
+ 	libcomputer.la				\
+-	libextfs.la				\
+ 	libfile.la				\
+ 	libnetwork.la				\
+ 	libnntp.la				\
+@@ -292,12 +291,6 @@
+ libcomputer_la_SOURCES = computer-method.c
+ libcomputer_la_LDFLAGS = $(module_flags)
+ libcomputer_la_LIBADD = $(MODULES_FILE_LIBS) ../libgnomevfs/libgnomevfs-2.la
+-
+-
+-###  `extfs' method
+-libextfs_la_SOURCES = extfs-method.c
+-libextfs_la_LDFLAGS = $(module_flags)
+-libextfs_la_LIBADD = $(MODULES_FILE_LIBS) ../libgnomevfs/libgnomevfs-2.la
+ 
+ 
+ ###  `file' method
