@@ -18,9 +18,14 @@ LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_QT_VER=	2
-QTCPPFLAGS+=	-I${LOCALBASE}/include/gd
 USE_GMAKE=	yes
-USE_AUTOMAKE=	yes
-CONFIGURE_ARGS=	--x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib
+GNU_CONFIGURE=	yes
+QTCPPFLAGS+=	-I${LOCALBASE}/include/gd
+
+pre-patch:
+	@${PERL} -pi -e 's|-lqt$$|-l${QTNAME}|g' ${WRKSRC}/ecg2png/Makefile.in
+	@find ${WRKSRC} -name '*.cpp' | xargs ${PERL} -pi -e \
+		's|#include <qimageio.h>||g'
+	@${CHMOD} ${BINMODE} ${WRKSRC}/missing
 
 .include <bsd.port.mk>
