@@ -1,5 +1,5 @@
---- doc/manual.sgml.orig	Fri Jul 10 22:10:27 1998
-+++ doc/manual.sgml	Sun Jul 19 15:52:04 1998
+--- doc/manual.sgml.in.orig	Tue Dec  8 13:20:07 1998
++++ doc/manual.sgml.in	Sat Dec 12 09:03:23 1998
 @@ -1,4 +1,7 @@
 -<!doctype linuxdoc system>
 +<!DOCTYPE linuxdoc PUBLIC "-//FreeBSD//DTD linuxdoc//EN" [
@@ -9,12 +9,3 @@
  
  <article>
  
-@@ -451,7 +454,7 @@
- ^F	forget-passphrase	whipe PGP passphrase from memory
- </verb></tscreen>
- 
--<sect2>Editing the message header<label id="edit_headers">
-+<sect2>Editing the message header<label id="editing_headers">
- <p>
- When editing the header of your outgoing message, there are a couple of
- special features available.

@@ -4,10 +4,10 @@
 # Date created:         Thur July 25, 1996
 # Whom:                 David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.51 1998/10/01 20:29:46 eivind Exp $
+# $Id: Makefile,v 1.52 1998/10/09 10:05:51 asami Exp $
 
-DISTNAME=	mutt-0.93.2i
-PKGNAME=	mutt-0.93.2
+DISTNAME=	mutt-0.95i
+PKGNAME=	mutt-0.95
 CATEGORIES=	mail
 MASTER_SITES=	ftp://riemann.iam.uni-bonn.de/pub/mutt/  \
 		ftp://ftp.gbnet.net/pub/mutt-international/  \
@@ -41,32 +41,29 @@ PATCH_DIST_STRIP=	-p1
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --enable-dsn --enable-pop --enable-imap --enable-flock \
 		--disable-fcntl --enable-hidden-host \
-		--with-sharedir=${PREFIX}/share/misc \
+		--with-sharedir=${PREFIX}/share/mutt \
 		--with-docdir=${PREFIX}/share/doc/mutt
 .if defined(BATCH) || defined(USE_SLANG)
 CONFIGURE_ARGS+=	--with-slang=${PREFIX}
 .elif defined(USE_NCURSES_PORT)
 CONFIGURE_ARGS+=	--with-curses=${PREFIX}
 .endif
-MAN1=		mutt.1
+WRKSRC=		${WRKDIR}/${PKGNAME}
+MAN1=		mutt.1 mutt_dotlock.1
 
-post-patch:
-	@touch ${WRKSRC}/doc/mutt.man ${WRKSRC}/doc/manual.txt
+
 .if !defined(NOPORTDOCS)
-	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/patch-doc-ref
-	@printf ",s|\$${PREFIX}|%s|g\nw\nq\n" ${PREFIX} | \
-		ed -s ${WRKSRC}/doc/mutt.man
-.endif
-
-pre-configure:
-	@${MKDIR} ${PREFIX}/share/misc
-
-.if defined(BATCH) && !defined(NOPORTDOCS)
-PLIST:=		${WRKDIR}/PLIST
 post-build:
-	cd ${WRKSRC}/doc; ${MAKE} fbsd
+	touch ${WRKSRC}/doc/mutt.man ${WRKSRC}/doc/manual.txt
+	${PATCH} ${PATCH_ARGS} < ${FILESDIR}/patch-doc-ref
+	printf ",s|\$${PREFIX}|%s|g\nw\nq\n" ${PREFIX} | \
+		ed -s ${WRKSRC}/doc/mutt.man
+.if defined(BATCH)
+PLIST:=		${WRKDIR}/PLIST
+pre-install:
 	@${CAT} ${PKGDIR}/PLIST.htmlfiles >> ${PLIST}
 	@${CAT} ${PKGDIR}/PLIST >> ${PLIST}
+.endif
 .endif
 
 post-install:
@@ -74,11 +71,13 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${ECHO} "===>   Installing Mutt documentation"
 	@${MKDIR} ${PREFIX}/share/doc/mutt && chmod a+rx ${PREFIX}/share/doc/mutt
-	@${INSTALL_MAN} ${WRKSRC}/doc/*.txt ${PREFIX}/share/doc/mutt
+	@cd ${WRKSRC}/doc ; ${INSTALL_MAN} manual.txt PGP-Notes.txt \
+		${PREFIX}/share/doc/mutt
 .if defined(BATCH)
+	@${INSTALL_MAN} ${WRKSRC}/doc/*.latin1 ${PREFIX}/share/doc/mutt
 	@${INSTALL_MAN} ${WRKSRC}/doc/*.html ${PREFIX}/share/doc/mutt
 .endif
-	@(cd ${WRKSRC} ; ${INSTALL_DATA} sample.muttrc Mush.rc Pine.rc  \
+	@(cd ${WRKSRC}/contrib ; ${INSTALL_DATA} sample.muttrc Mush.rc Pine.rc \
 		${PREFIX}/share/doc/mutt)
 .endif
 
