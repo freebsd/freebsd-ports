@@ -3,12 +3,12 @@
 # Date created:		21 August 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.6 1996/07/01 19:03:01 gpalmer Exp $
+# $Id: Makefile,v 1.7 1996/07/05 05:26:54 asami Exp $
 #
 
 DISTNAME=       netscape-3.0b5a
 CATEGORIES+=	www
-MASTER_SITES=   ftp://ftp13.netscape.com/pub/navigator/3.0/3.0b5/unix/
+MASTER_SITES=   ftp://ftp13.netscape.com/pub/navigator/3.0/3.0b5a/unix/
 DISTFILES=      netscape-v30b5a-export.x86-unknown-bsd.tar.gz
 
 MAINTAINER=	jkh@FreeBSD.ORG
