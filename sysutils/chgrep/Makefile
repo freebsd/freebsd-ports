@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	chgrep
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.bmk.bicom.pl/chgrep/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	krion@FreeBSD.org	
+MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Fast string substitution across multiple files
 
 GNU_CONFIGURE=	yes
