@@ -13,6 +13,12 @@ MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/rat/releases/${PO
 MAINTAINER=	anton@urc.ac.ru
 COMMENT=	IPv4/v6 Multicast and unicast audio conferencing tool
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
+
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
 WRKSRC=		${WRKDIR}/rat-3.0
@@ -30,4 +36,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/rat ${PREFIX}/bin/rat30
 	${INSTALL_MAN}  ${WRKSRC}/man/man1/rat.1 ${PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
