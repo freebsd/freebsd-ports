@@ -1,0 +1,9 @@
+libexec/linux-ymessenger/yahoo_gnome.png
+libexec/linux-ymessenger/yahoo_kde.xpm
+libexec/linux-ymessenger/ymessenger.desktop
+libexec/linux-ymessenger/ymessenger.kdelnk
+libexec/linux-ymessenger/ymessenger.bin
+bin/linux-ymessenger
+lib/linux-ymessenger/libgtkhtml.so.6
+@dirrm libexec/linux-ymessenger
+@dirrm lib/linux-ymessenger
