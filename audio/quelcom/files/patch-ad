@@ -1,9 +1,0 @@
---- src/qmp3frameheader.hh.orig	Tue Jan 23 13:03:03 2001
-+++ src/qmp3frameheader.hh	Tue Jan 23 13:03:11 2001
-@@ -2,6 +2,7 @@
- # define _qmp3frameheader_hh_
- 
- # include <string>
-+# include <sys/types.h>
- 
- typedef unsigned int uint;

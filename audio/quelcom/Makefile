@@ -6,36 +6,50 @@
 #
 
 PORTNAME=	quelcom
-PORTVERSION=	0.3.0
-PORTREVISION=	2
+PORTVERSION=	0.4.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.etse.urv.es/~dmanye/quelcom/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of command-line utilities for MP3 and wave files
 
-USE_GETOPT_LONG=yes
+USE_GCC=	3.3
+USE_GETOPT_LONG=	yes
+USE_GETTEXT=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKEFILE=	makefile
-USE_GCC=	2.95
-USE_REINPLACE=	yes
+MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS}"
+INSTALLS_SHLIB=	yes
 
-MAN1=		qmp3check.1 qmp3cut.1 qmp3info.1 qmp3join.1 qmp3report.1 \
-		qwavcut.1 qwavfade.1 qwavheaderdump.1 qwavinfo.1 qwavjoin.1 \
-		qwavsilence.1
-
-.include <bsd.port.pre.mk>
+CXXFLAGS+=	-I../lib -I${LOCALBASE}/include ${CPPFLAGS} \
+		-DHAVE_DECL_GETOPT -fPIC
+LDFLAGS=	-L../lib -L${LOCALBASE}/lib -lintl
 
 post-patch:
-	${REINPLACE_CMD} -e 's,g++,${CXX},g' ${WRKSRC}/src/makefile
-.if ${OSVERSION} >= 500041
-	${REINPLACE_CMD} -e 's, -lgnugetopt,,g' ${WRKSRC}/src/makefile
-.endif
+	@${FIND} ${WRKSRC} -name "makefile" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|make |$$(MAKE) |g ; \
+		 s|^CXX=|CXX?=|g ; \
+		 s|^CXXFLAGS=|CXXFLAGS+=|g ; \
+		 s|^LDFLAGS=|LDFLAGS+=|g ; \
+		 s|-L./../lib -lqextra|$$(LDFLAGS) -lqextra|g'
 
 do-install:
-.for F in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/man/${F} ${PREFIX}/man/man1
-	${INSTALL_PROGRAM} ${WRKSRC}/src/${F:S/.1//g} ${PREFIX}/bin
+.for file in qmp3check qmp3cut qmp3info qmp3join qmp3report qwavcut qwavfade \
+	qwavheaderdump qwavinfo qwavjoin qwavsilence
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${file} ${PREFIX}/bin
 .endfor
+.for file in libqextra.so libqmp3.so libqwav.so
+	${INSTALL_DATA} ${WRKSRC}/lib/${file} ${PREFIX}/lib
+.endfor
+.for lang in ca es
+	@${MKDIR} ${PREFIX}/share/locale/${lang}/LC_MESSAGES
+	${INSTALL_DATA} ${WRKSRC}/po/${lang}.mo \
+		${PREFIX}/share/locale/${lang}/LC_MESSAGES/quelcom.mo
+.endfor
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/quelcom.html ${DOCSDIR}
+.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

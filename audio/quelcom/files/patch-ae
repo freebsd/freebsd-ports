@@ -1,9 +1,0 @@
---- src/qwavinfo.cc.orig	Tue Jan 23 13:05:30 2001
-+++ src/qwavinfo.cc	Tue Jan 23 13:05:42 2001
-@@ -1,6 +1,6 @@
- # include <getopt.h>	// getopt
- # include <sys/types.h>	// ulong, ...
--
-+typedef unsigned long ulong;
- # include "qwav.hh"
- # include "qexception.hh"
