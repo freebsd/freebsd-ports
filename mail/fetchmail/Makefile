@@ -18,6 +18,8 @@ MASTER_SITES=	http://www.tuxedo.org/~esr/fetchmail/ \
 
 MAINTAINER=	ve@sci.fi
 
+FORBIDDEN=	Buffer overflow.  http://tuxedo.org/~esr/fetchmail/NEWS
+
 LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 .if defined(WITH_X11)
 USE_PYTHON=	yes
