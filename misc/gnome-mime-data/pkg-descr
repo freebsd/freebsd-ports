@@ -1,0 +1,4 @@
+The base MIME and Application database for GNOME. It is meant to be accessed
+through the MIME functions in GnomeVFS
+
+WWW: http://www.gnome.org/
