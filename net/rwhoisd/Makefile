@@ -25,10 +25,14 @@ MAN8=		rmkdbindex.8 rwhoisd.8
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 400011
 PLIST=		${WRKDIR}/PLIST
+.if ${OSVERSION} < 400011
 pre-install:
 	@${SED} -e "/libc.so.4/d" \
+		${PKGDIR}/PLIST > ${PLIST}
+.else
+pre-install:
+	@${SED} -e "/libc.so.3/d" \
 		${PKGDIR}/PLIST > ${PLIST}
 .endif
 
