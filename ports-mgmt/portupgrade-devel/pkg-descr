@@ -1,0 +1,23 @@
+Portupgrade is a tool to upgrade installed packages with ports.
+
+It upgrades ports without reinstalling dependent packages by directly
+modifying the package info recorded in the files under /var/db/pkg.
+
+The procedures it takes is shown as follows:
+
+    1.  Build the corresponding port of the given package
+
+    2.  Fix the dependency info of the ones which depends on the given
+        package
+
+    3.  Save the +REQUIRED_BY list of the given package
+
+    4.  Uninstall the given package forcibly if -u is specified
+
+    5.  Install the port
+
+    6.  Restore the +REQUIRED_BY list
+
+The usage can be shown by running it without arguments or with a -h.
+
+Author:	Akinori MUSHA <knu@FreeBSD.org>
