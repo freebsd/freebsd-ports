@@ -595,3 +595,7 @@ net/walker|dns/walker|2003-09-05|moved to new dns category
 net/gnomemeeting2|net/gnomemeeting|2003-09-07|no need to keep two versions in ports tree
 irc/ircproxy-freebsd-port|irc/ircproxy|2003-09-08|fix directory name
 audio/soribada||2003-09-09|project closed
+devel/bonobo-activation|devel/libbonobo|2003-09-18|merged into libbonobo
+x11-fonts/fontilus|sysutils/gnomecontrolcenter2|2003-09-18|merged into gnomecontrolcenter2
+misc/stickynotes_applet|x11/gnomeapplets2|2003-09-18|merged into gnomeapplets2
+x11-toolkits/gtk-thinice-engine|x11-toolkits/gnome-themes|2003-09-18|merged into gnome-themes
