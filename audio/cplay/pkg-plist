@@ -1,0 +1,6 @@
+bin/cplay
+%%PORTDOCS%%share/doc/cplay/README
+%%PORTDOCS%%share/doc/cplay/ChangeLog
+%%PORTDOCS%%share/doc/cplay/TODO
+share/locale/de/LC_MESSAGES/cplay.mo
+%%PORTDOCS%%@dirrm share/doc/cplay
