@@ -777,14 +777,14 @@ share/vips/vips2dj/mono/head4
 share/vips/vips2dj/mono/head5
 share/vips/vips2dj/mono/head6
 @dirrm include/vips
-%%PORTDOCS%%@dirrm%%DOCSDIR%%/html/appguide
-%%PORTDOCS%%@dirrm%%DOCSDIR%%/html/cppguide
-%%PORTDOCS%%@dirrm%%DOCSDIR%%/html/libguide
-%%PORTDOCS%%@dirrm%%DOCSDIR%%/html/man
-%%PORTDOCS%%@dirrm%%DOCSDIR%%/html/refguide
-%%PORTDOCS%%@dirrm%%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm%%DOCSDIR%%/ps
-%%PORTDOCS%%@dirrm%%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/appguide
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/cppguide
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/libguide
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/man
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/refguide
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ps
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/vips/vips2dj/cmyk
 @dirrm share/vips/vips2dj/lab
 @dirrm share/vips/vips2dj/mono
