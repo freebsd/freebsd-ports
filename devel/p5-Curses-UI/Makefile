@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Curses-UI
-PORTVERSION=	0.94
+PORTVERSION=	0.95
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Curses
@@ -36,5 +36,8 @@ MAN3=		Curses::UI::Color.3 Curses::UI::Label.3 \
 		Curses::UI::TextEntry.3 Curses::UI::TextViewer.3 \
 		Curses::UI::Window.3 Curses::UI::Dialog::Calendar.3 \
 		Curses::UI::Tutorial.3 Curses::UI::Calendar.3
+
+post-extract:
+	${RM} ${WRKSRC}/lib/Curses/UI/TextEditor.pm.orig
 
 .include <bsd.port.mk>

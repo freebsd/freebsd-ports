@@ -8,6 +8,7 @@
 %%SITE_PERL%%/Curses/UI/Dialog/Status.pm
 %%SITE_PERL%%/Curses/UI/Dialog/Error.pm
 %%SITE_PERL%%/Curses/UI/Dialog/Progress.pm
+%%SITE_PERL%%/Curses/UI/Dialog/Question.pm
 %%SITE_PERL%%/Curses/UI/Container.pm
 %%SITE_PERL%%/Curses/UI/PasswordEntry.pm
 %%SITE_PERL%%/Curses/UI/Buttonbox.pm
@@ -31,6 +32,7 @@
 %%SITE_PERL%%/Curses/UI/Widget.pm
 %%SITE_PERL%%/Curses/UI/Language.pm
 %%SITE_PERL%%/Curses/UI/Listbox.pm
+%%SITE_PERL%%/Curses/UI/Notebook.pm
 %%SITE_PERL%%/Curses/UI/Common.pm
 %%SITE_PERL%%/Curses/UI/Popupmenu.pm
 %%SITE_PERL%%/Curses/UI/Searchable.pm
