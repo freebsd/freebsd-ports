@@ -49,8 +49,9 @@ pre-extract:
 .endif
 
 post-configure:
-	${REINPLACE_CMD} -e 's,^(TARGET_CONFIGDIRS\s*=),\1#,' ${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e 's,^(install-info:),\1\ndonot-\1,; \
+	${REINPLACE_CMD} -Ee 's,^(TARGET_CONFIGDIRS\s*=),\1#,' \
+	    ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -Ee 's,^(install-info:),\1\ndonot-\1,; \
 	    s,\$$\(bindir\)/(\$$\(DEMANGLER_CROSS_NAME\)),./\1,' \
 	    ${WRKSRC}/gcc/Makefile
 
