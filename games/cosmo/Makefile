@@ -3,12 +3,12 @@
 # Date created:        28 December 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/05/25 17:24:02 max Exp $
 #
 
 DISTNAME=	cosmo-2.0.4
-CATEGORIES=    games
-MASTER_SITES=   http://www.u-aizu.ac.jp/~s1021127/cosmo/
+CATEGORIES=     games
+MASTER_SITES=   http://cheer.u-aizu.ac.jp:10080/~eiju/cosmo/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}  moon.tif.gz
 
 MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
