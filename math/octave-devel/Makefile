@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	octave
-PORTVERSION=	2.1.48
+PORTVERSION=	2.1.49
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.octave.org/pub/octave/bleeding-edge/ \
 		ftp://ftp.eos.hokudai.ac.jp/pub/GNU/misc/octave/bleeding-edge/
@@ -14,10 +14,13 @@ MASTER_SITES=	ftp://ftp.octave.org/pub/octave/bleeding-edge/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-level interactive language for numerical computations
 
-USE_BZIP2=	yes
 BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
-LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
+LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw \
+		f77blas.1:${PORTSDIR}/math/blas \
+		lapack.1:${PORTSDIR}/math/lapack
+
+USE_BZIP2=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -29,9 +32,11 @@ GNU_HOST=	${ARCH}-portbld-freebsdaout${OSREL}
 OCTAVE_VERSION=	${PORTVERSION}
 PLIST_SUB=	OCTAVE_VERSION=${OCTAVE_VERSION} GNU_HOST=${GNU_HOST}
 
+BLAS_LIBS=	"-L${LOCALBASE}/lib -lf77blas -latlas"
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-shared --with-fftw --host=${GNU_HOST}
+CONFIGURE_ARGS=	--host=${GNU_HOST} \
+		--with-fftw --with-blas=${BLAS_LIBS} --with-lpack
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"
