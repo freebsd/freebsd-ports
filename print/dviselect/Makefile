@@ -15,8 +15,6 @@ MAINTAINER=	jmz@FreeBSD.org
 
 SCRIPTS_ENV=	CFLAGS="${CFLAGS}"
 
-USE_GMAKE=	yes
-
 MAN1=		dviselect.1
 
 
