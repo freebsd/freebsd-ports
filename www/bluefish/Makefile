@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	bluefish
-PORTVERSION= 	0.3.6
+PORTVERSION= 	0.4
 CATEGORIES=	www editors
-MASTER_SITES=	http://bluefish.linuxave.net/download/ \
+MASTER_SITES=	http://bluefish.openoffice.nl/download/ \
 		http://student.wau.nl/~olivier/bluefish/download/
 
 MAINTAINER=	jim@FreeBSD.org
@@ -20,9 +20,11 @@ LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 USE_GMAKE=	yes
+USE_BZIP2=	yes
 USE_X_PREFIX= 	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-install-location="${X11BASE}/lib/bluefish"
+CONFIGURE_ARGS=	--with-install-location="${X11BASE}/lib/bluefish" \
+		--disable-nls
 CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
 
 post-install:
