@@ -3,8 +3,8 @@ bin/adabroker-config
 bin/ab_gnome
 bin/ab_names
 lib/libbroca.so.0
-lib/libbroca.so
 lib/libbroca.a
+lib/adabroker/allsrc.adb
 lib/adabroker/broca-buffers-io_operations.adb
 lib/adabroker/broca-buffers-io_operations.ads
 lib/adabroker/broca-buffers.adb
@@ -51,12 +51,17 @@ lib/adabroker/broca-poa.adb
 lib/adabroker/broca-poa.ads
 lib/adabroker/broca-policy.adb
 lib/adabroker/broca-policy.ads
+lib/adabroker/broca-profiles-tc.adb
+lib/adabroker/broca-profiles-tc.ads
+lib/adabroker/broca-profiles-unknown.adb
+lib/adabroker/broca-profiles-unknown.ads
+lib/adabroker/broca-profiles.adb
+lib/adabroker/broca-profiles.ads
 lib/adabroker/broca-protected_objects.adb
 lib/adabroker/broca-protected_objects.ads
 lib/adabroker/broca-refs.adb
 lib/adabroker/broca-refs.ads
 lib/adabroker/broca-repository.adb
-lib/adabroker/broca.ads
 lib/adabroker/broca-repository.ads
 lib/adabroker/broca-rootpoa.adb
 lib/adabroker/broca-rootpoa.ads
@@ -83,6 +88,7 @@ lib/adabroker/broca-value-value_skel.ads
 lib/adabroker/broca-value.ads
 lib/adabroker/broca-vararray.adb
 lib/adabroker/broca-vararray.ads
+lib/adabroker/broca.ads
 lib/adabroker/corba-abstractbase.adb
 lib/adabroker/corba-abstractbase.ads
 lib/adabroker/corba-context.adb
@@ -100,6 +106,7 @@ lib/adabroker/corba-local.ads
 lib/adabroker/corba-nvlist.adb
 lib/adabroker/corba-nvlist.ads
 lib/adabroker/corba-object-helper.adb
+lib/adabroker/corba.adb
 lib/adabroker/corba-object-helper.ads
 lib/adabroker/corba-object.adb
 lib/adabroker/corba-object.ads
@@ -120,7 +127,6 @@ lib/adabroker/corba-value-forward.adb
 lib/adabroker/corba-value-forward.ads
 lib/adabroker/corba-value.adb
 lib/adabroker/corba-value.ads
-lib/adabroker/corba.adb
 lib/adabroker/corba.ads
 lib/adabroker/portableserver-adapteractivator-impl.adb
 lib/adabroker/portableserver-adapteractivator-impl.ads
@@ -136,7 +142,6 @@ lib/adabroker/portableserver-servantactivator-impl.ads
 lib/adabroker/portableserver-servantactivator.adb
 lib/adabroker/portableserver-servantactivator.ads
 lib/adabroker/portableserver-servantlocator-impl.ads
-lib/adabroker/broca.ali
 lib/adabroker/portableserver-servantlocator.adb
 lib/adabroker/portableserver-servantlocator.ads
 lib/adabroker/portableserver-servantmanager-impl.adb
@@ -150,7 +155,6 @@ lib/adabroker/sequences-unbounded-search.adb
 lib/adabroker/sequences-unbounded-search.ads
 lib/adabroker/sequences-unbounded.adb
 lib/adabroker/sequences-unbounded.ads
-lib/adabroker/corba.ali
 lib/adabroker/sequences.ads
 lib/adabroker/test_cdr.adb
 lib/adabroker/broca-buffers-io_operations.ali
@@ -177,6 +181,9 @@ lib/adabroker/broca-orb.ali
 lib/adabroker/broca-parameters.ali
 lib/adabroker/broca-poa.ali
 lib/adabroker/broca-policy.ali
+lib/adabroker/broca-profiles-tc.ali
+lib/adabroker/broca-profiles-unknown.ali
+lib/adabroker/broca-profiles.ali
 lib/adabroker/broca-protected_objects.ali
 lib/adabroker/broca-refs.ali
 lib/adabroker/broca-repository.ali
@@ -193,6 +200,7 @@ lib/adabroker/broca-value-stream.ali
 lib/adabroker/broca-value-value_skel.ali
 lib/adabroker/broca-value.ali
 lib/adabroker/broca-vararray.ali
+lib/adabroker/broca.ali
 lib/adabroker/corba-abstractbase.ali
 lib/adabroker/corba-context.ali
 lib/adabroker/corba-contextlist.ali
@@ -202,8 +210,8 @@ lib/adabroker/corba-forward.ali
 lib/adabroker/corba-impl.ali
 lib/adabroker/corba-nvlist.ali
 lib/adabroker/corba-object-helper.ali
-lib/adabroker/corba-orb.ali
 lib/adabroker/corba-object.ali
+lib/adabroker/corba-orb.ali
 lib/adabroker/corba-request.ali
 lib/adabroker/corba-sequences-bounded.ali
 lib/adabroker/corba-sequences-unbounded.ali
@@ -211,6 +219,7 @@ lib/adabroker/corba-sequences.ali
 lib/adabroker/corba-value-box.ali
 lib/adabroker/corba-value-forward.ali
 lib/adabroker/corba-value.ali
+lib/adabroker/corba.ali
 lib/adabroker/portableserver-adapteractivator-impl.ali
 lib/adabroker/portableserver-adapteractivator.ali
 lib/adabroker/portableserver-current.ali
@@ -221,12 +230,10 @@ lib/adabroker/portableserver-servantactivator.ali
 lib/adabroker/portableserver-servantlocator-impl.ali
 lib/adabroker/portableserver-servantlocator.ali
 lib/adabroker/portableserver-servantmanager-impl.ali
-lib/adabroker/portableserver-servantmanager.ali
 lib/adabroker/portableserver.ali
+lib/adabroker/portableserver-servantmanager.ali
 lib/adabroker/sequences-bounded.ali
 lib/adabroker/sequences-unbounded-search.ali
 lib/adabroker/sequences-unbounded.ali
 lib/adabroker/sequences.ali
-@exec /sbin/ldconfig -m %D/lib
-@unexec /sbin/ldconfig -R
 @dirrm lib/adabroker
