@@ -1,0 +1,15 @@
+--- libroute/Makefile.orig	Thu Jun 12 16:16:47 1997
++++ libroute/Makefile	Thu Sep 30 11:34:21 1999
+@@ -1,8 +1,12 @@
+ include ../Make.defines
+ 
++CFLAGS += -I..
++
+ all:	${LIBROUTE_OBJS}
+ 		ar rv ${LIBUNP_NAME} $?
+ 		${RANLIB} ${LIBUNP_NAME}
++		ar rv ${LIBUNP_THREADSAFE_NAME} $?
++		${RANLIB} ${LIBUNP_THREADSAFE_NAME}
+ 
+ clean:
+ 		rm -f ${PROGS} ${CLEANFILES}

@@ -1,0 +1,10 @@
+--- icmpd/Makefile.orig	Tue Sep 28 11:40:21 1999
++++ icmpd/Makefile	Tue Sep 28 11:40:24 1999
+@@ -1,6 +1,6 @@
+ include ../Make.defines
+ 
+-OBJS = icmpd.o readable_listen.o readable_conn.o readable_v4.o readable_v6.o
++OBJS = icmpd.o readable_listen.o readable_conn.o readable_v4.o
+ 
+ PROGS =	icmpd udpcli01
+ 

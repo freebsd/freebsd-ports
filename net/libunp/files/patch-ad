@@ -1,0 +1,12 @@
+--- ping/Makefile.orig	Tue Sep 28 11:40:42 1999
++++ ping/Makefile	Tue Sep 28 11:40:53 1999
+@@ -1,7 +1,7 @@
+ include ../Make.defines
+ 
+-OBJS = main.o proc_v4.o proc_v6.o readloop.o \
+-		send_v4.o send_v6.o sig_alrm.o tv_sub.o
++OBJS = main.o proc_v4.o readloop.o \
++		send_v4.o sig_alrm.o tv_sub.o
+ PROGS =	ping
+ 
+ all:	${PROGS}

@@ -1,0 +1,10 @@
+--- traceroute/Makefile.orig	Tue Sep 28 11:41:09 1999
++++ traceroute/Makefile	Tue Sep 28 11:41:17 1999
+@@ -1,6 +1,6 @@
+ include ../Make.defines
+ 
+-OBJS = main.o icmpcode_v4.o icmpcode_v6.o recv_v4.o recv_v6.o \
++OBJS = main.o icmpcode_v4.o recv_v4.o \
+ 		sig_alrm.o traceloop.o tv_sub.o
+ PROGS =	traceroute
+ 
