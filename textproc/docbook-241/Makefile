@@ -9,7 +9,7 @@
 
 PORTNAME=	docbook
 PORTVERSION=	241
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.ora.com/pub/davenport/
 DISTFILES=	docbk241.tar.Z

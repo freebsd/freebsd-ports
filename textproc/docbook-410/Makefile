@@ -9,7 +9,7 @@
 
 PORTNAME=	docbook
 PORTVERSION=	4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.docbook.org/sgml/4.1/
 DISTNAME=	docbk41

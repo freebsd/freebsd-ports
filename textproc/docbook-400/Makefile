@@ -9,7 +9,7 @@
 
 PORTNAME=	docbook
 PORTVERSION=	4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.oasis-open.org/docbook/sgml/4.0/
 DISTNAME=	docbk40
