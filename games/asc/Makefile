@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	asc
-PORTVERSION=	1.5.15
+PORTVERSION=	1.9.4
 CATEGORIES=	games
-MASTER_SITES=	ftp://asc-hq.sourceforge.net/pub/asc-hq/develop/ \
-		http://www.asc-hq.org/develop/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-beta.src
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	asc-hq
+DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
@@ -23,7 +23,7 @@ LIB_DEPENDS=	SDL-1.1.3:${PORTSDIR}/devel/sdl12 \
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-beta
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
