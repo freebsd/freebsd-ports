@@ -16,10 +16,18 @@ COMMENT?=	A webmail system which accesses mail over IMAP
 
 CONFLICTS?=	ja-squirrelmail-1.*
 
-USE_PHP=	yes
+USE_PHP=	session mhash gettext mbstring
 WANT_PHP_WEB=	yes
 
 USE_BZIP2=	yes
+
+.ifdef WITH_DATABASE
+WANT_PHP_PEAR=	yes
+.endif
+
+.ifdef WITH_LDAP
+USE_PHP=	${USE_PHP} ldap
+.endif
 
 .ifndef WITHOUT_WWWDIR
 SQUIRRELDIR?=	${PREFIX}/www/squirrelmail
@@ -42,6 +50,9 @@ pre-everything::
 	@${ECHO_CMD} "SquirrelMail is installed into ${SQUIRRELDIR}"
 	@${ECHO_CMD} "To use the old location ${PREFIX}/squirrelmail define"
 	@${ECHO_CMD} "WITHOUT_WWWDIR when patching or installing"
+	@${ECHO_CMD}
+	@${ECHO_CMD} "Use WITH_LDAP to ensure PHP LDAP support is installed"
+	@${ECHO_CMD} "Use WITH_DATABASE to ensure PEAR framework for database support is installed"
 	@${ECHO_CMD}
 
 .if !target(slaveport-post-patch)
