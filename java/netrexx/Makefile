@@ -7,18 +7,18 @@
 
 PORTNAME=	NetRexx
 PORTVERSION=	2.02
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java lang
 MASTER_SITES=	http://www2.hursley.ibm.com/netrexx/
 DISTNAME=	NetRexx
 
-MAINTAINER=	jmcoopr@webmail.bmi.net
+MAINTAINER=	coop9211@uidaho.edu
 
-RUN_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk11 \
-		${LOCALBASE}/bin/rexx:${PORTSDIR}/lang/rexx-imc
+RUN_DEPENDS=	${LOCALBASE}/bin/rexx:${PORTSDIR}/lang/rexx-imc
 
 NO_BUILD=	yes
 USE_ZIP=	yes
+USE_JAVA=	1.1+
 USE_REINPLACE=	yes
 
 pre-patch:
