@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		pkg_install
-PORTVERSION=		20050226
+PORTVERSION=		20050321
 CATEGORIES=		sysutils
 MASTER_SITES=		${MASTER_SITE_LOCAL} \
 			http://people.FreeBSD.org/~marcus/
