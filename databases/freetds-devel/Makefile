@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	freetds
-PORTVERSION=	0.53
-PORTREVISION=	2
+PORTVERSION=	0.60
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	ALPHA/freetds
@@ -16,13 +15,15 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
+USE_GMAKE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-tdsver=4.2
 INSTALLS_SHLIB=	yes
+
+MAN1=		freebcp.1 tsql.1
 
 .if defined(WITH_IODBC)
 LIB_DEPENDS+=	iodbc:${PORTSDIR}/databases/libiodbc
@@ -35,18 +36,17 @@ CONFIGURE_ARGS+=	--with-unixodbc=${LOCALBASE}
 .endif
 
 .if defined(WITH_IODBC) || defined(WITH_UNIXODBC)
-USE_GNOMENG=	yes
-USE_GNOME=	glib12
 PLIST_SUB+=	ODBC=""
 .else
 PLIST_SUB+=	ODBC="@comment "
 .endif
 
+post-extract:
+	@cd ${WRKSRC} && ${LN} -s freetds.conf freetds.conf.dist
+
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|/freetds.conf|/freetds.conf.dist|g ; \
-		 s|glib-config|$$(GLIB_CONFIG)|g ; \
-		 s|-lglib|`$$(GLIB_CONFIG) --libs glib`|g ; \
 		 s| common.h||g'
 
 post-install:
