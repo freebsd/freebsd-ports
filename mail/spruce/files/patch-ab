@@ -1,11 +1,13 @@
---- server.h.orig	Wed Dec 22 10:57:01 1999
-+++ server.h	Wed Dec 22 10:57:03 1999
-@@ -26,9 +26,9 @@
+--- server.h.orig	Sun May 21 14:33:13 2000
++++ server.h	Sun May 21 14:33:30 2000
+@@ -26,11 +26,11 @@
  #include <sys/types.h>
  #include <sys/socket.h>
  /*#include <sys/param.h>*/
 +#include <netinet/in.h>
+ #ifdef __unix__
  #include <arpa/inet.h>
+ #endif
  #include <netdb.h>
 -#include <netinet/in.h>
  #include <unistd.h>
