@@ -7,6 +7,7 @@
 
 PORTNAME=	razor-agents
 PORTVERSION=	2.20
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	razor
@@ -20,13 +21,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/DNS.pm:${PORTSDI
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/URI/Escape.pm:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-.if exists(/usr/local/lib/perl5/${PERL_VER}/Test/More.pm)
-# Test::Simple is default module in perl-5.8.0 or above
-.else
-TEST_MORE=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
-BUILD_DEPENDS+=	${TEST_MORE}
-.endif
-
 PERL_CONFIGURE=	yes
 
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
@@ -37,4 +31,13 @@ MAN5=		razor-agents.5 razor-whitelist.5 razor-agent.conf.5
 post-install:
 	@${PREFIX}/bin/razor-client
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+PERL_MAJOR=${PERL_VER:C|^([1-9]+).*|\1|}
+PERL_MINOR=${PERL_VER:C|^[1-9]+\.0*([1-9]+).*|\1|}
+
+.if ${PERL_MAJOR} < 5 || ${PERL_MAJOR} == 5 && ${PERL_MINOR} < 8
+BUILD_DEPENDS+=		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>
