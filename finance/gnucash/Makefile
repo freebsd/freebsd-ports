@@ -7,6 +7,7 @@
 
 PORTNAME=	gnucash
 PORTVERSION=	1.8.4
+PORTREVISION=	1
 CATEGORIES=	finance gnome
 MASTER_SITES=	http://www.gnucash.org/pub/gnucash/sources/stable/ \
 		ftp://ftp.gnucash.org/pub/gnucash/sources/stable/ \
@@ -46,5 +47,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lintl"
 
 MAN1=		gnc-prices.1 gnucash.1
+INFO=		gnucash-design
 
 .include <bsd.port.mk>

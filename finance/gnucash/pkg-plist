@@ -117,13 +117,6 @@ include/gnucash/table-layout.h
 include/gnucash/table-model.h
 include/gnucash/window-help.h
 include/gnucash/window-report.h
-@unexec install-info --delete %D/info/gnucash-design.info %D/info/dir
-info/gnucash-design.info
-info/gnucash-design.info-1
-info/gnucash-design.info-2
-info/gnucash-design.info-3
-info/gnucash-design.info-4
-@exec install-info %D/info/gnucash-design.info %D/info/dir
 lib/gnucash/libgnc-business-ledger.la
 lib/gnucash/libgnc-business-ledger.so
 lib/gnucash/libgnc-business-ledger.so.0

@@ -24,6 +24,7 @@ CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 MAN1=		glib-config.1
+INFO=		glib
 
 post-install:
 	${LN} -sf ${PREFIX}/bin/glib-config ${PREFIX}/bin/glib12-config
