@@ -1,6 +1,8 @@
 share/doc/python/api.ps
+share/doc/python/dist.ps
 share/doc/python/doc.ps
 share/doc/python/ext.ps
+share/doc/python/inst.ps
 share/doc/python/lib.ps
 share/doc/python/mac.ps
 share/doc/python/ref.ps
