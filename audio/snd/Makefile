@@ -48,7 +48,9 @@ CONFIGURE_ARGS+=	--with-gtk-extra
 CONFIGURE_ARGS+=	--without-gui
 .endif
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
+		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
+
 GNU_CONFIGURE=	yes
 MAKEFILE=	makefile
 PLIST=		${WRKDIR}/pkg-plist
