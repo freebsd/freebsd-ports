@@ -10,16 +10,10 @@ lib/libgdk.so
 lib/libgdk.a
 include/gdk/gdk.h
 include/gdk/gdkcursors.h
+include/gdk/gdki18n.h
 include/gdk/gdkkeysyms.h
 include/gdk/gdkprivate.h
 include/gdk/gdktypes.h
-include/gdk/gdkinput.h
-include/gdk/gdkinputnone.h
-include/gdk/gdkinputcommon.h
-include/gdk/gdkinputgxi.h
-include/gdk/gdkinputxfree.h
-include/gdk/gxid_lib.h
-include/gdk/gxid_proto.h
 include/gdk/gdkx.h
 lib/libgtk.la
 lib/libgtk.so.1.0
