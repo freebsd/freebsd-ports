@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	libsigc++
-PORTVERSION=	0.8.6
+PORTVERSION=	1.0.0
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.ece.ucdavis.edu/pub/kenelson/libsigc++/
+MASTER_SITES=	http://download.sourceforge.net/libsigc/
 
 MAINTAINER=	JoeLu@JoeLu.m8.ntu.edu.tw
 
