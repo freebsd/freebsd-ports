@@ -1,6 +1,6 @@
---- scripts/safe_mysqld.sh.orig	Fri Sep  8 09:50:24 2000
-+++ scripts/safe_mysqld.sh	Sat Sep 23 21:16:08 2000
-@@ -36,26 +36,9 @@
+--- scripts/safe_mysqld.sh.orig	Wed Nov 22 12:58:59 2000
++++ scripts/safe_mysqld.sh	Fri Dec  1 00:53:26 2000
+@@ -61,26 +61,9 @@
    done
  }
  
@@ -28,13 +28,14 @@
 +DATADIR=@localstatedir@
 +ledir=@libexecdir@
  
- pid_file=$DATADIR/`@HOSTNAME@`.pid
- MYSQL_UNIX_PORT=@MYSQL_UNIX_ADDR@
-@@ -154,33 +137,6 @@
+ MYSQL_UNIX_PORT=${MYSQL_UNIX_PORT:-@MYSQL_UNIX_ADDR@}
+ MYSQL_TCP_PORT=${MYSQL_TCP_PORT:-@MYSQL_TCP_PORT@}
+@@ -206,34 +189,6 @@
    if test ! -f $pid_file		# This is removed if normal shutdown
    then
-     break;
+     break
 -  fi
+-
 -  if @IS_LINUX@
 -  then
 -    # Test if one process was hanging.
@@ -62,5 +63,5 @@
 -	I=`expr $I + 1`
 -    done
    fi
+ 
    echo "`date +'%y%m%d %H:%M:%S  mysqld restarted'`" | tee -a $err_log
- done

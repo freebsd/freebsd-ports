@@ -16,6 +16,7 @@ bin/mysql_zap
 bin/mysqlaccess
 bin/mysqlbinlog
 bin/mysqlbug
+bin/mysqldumpslow
 bin/mysqlhotcopy
 bin/pack_isam
 bin/perror
@@ -99,6 +100,7 @@ share/mysql/charsets/koi8_ru.conf
 share/mysql/charsets/koi8_ukr.conf
 share/mysql/charsets/latin1.conf
 share/mysql/charsets/latin2.conf
+share/mysql/charsets/latin5.conf
 share/mysql/charsets/swe7.conf
 share/mysql/charsets/usa7.conf
 share/mysql/charsets/win1250.conf
