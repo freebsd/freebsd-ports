@@ -1,0 +1,4 @@
+          hash_extra = 60000
+          pool_size = 1000000
+          max_strings = 70000
+          save_size = 10000

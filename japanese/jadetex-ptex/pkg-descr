@@ -1,0 +1,11 @@
+This is pJadeTeX, a localized TeX backend for Jade.
+
+JadeTeX enables you to produce formatted output of documents written
+with the Standard Generalized Markup Language (SGML).  JadeTeX uses
+tex to produce Device Independent (DVI) output; from there, you can
+produce high quality hardcopy.  JadeTeX also uses pdftex to produce
+Adobe Portable Document Format (PDF) versions of your documents,
+complete with hyperlinks, and suitable for distribution on the World
+Wide Web and other media.
+
+pJadeTeX is for pTeX, a Japanese specific TeX variant.

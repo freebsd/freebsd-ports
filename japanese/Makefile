@@ -103,6 +103,7 @@
     SUBDIR += ipadic
     SUBDIR += ircII
     SUBDIR += iv
+    SUBDIR += jadetex-ptex
     SUBDIR += japaneseAFM
     SUBDIR += jargon-fpw
     SUBDIR += jcode.pl

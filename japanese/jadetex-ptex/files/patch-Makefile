@@ -1,0 +1,98 @@
+Index: Makefile
+===================================================================
+RCS file: /home/cvs/private/hrs/jadetex-ptex/Makefile,v
+retrieving revision 1.1.1.1
+retrieving revision 1.6
+diff -d -u -I\$FreeBSD: /tmp/pcvs/ports/japanese/jadetex-ptex/files/patch-Makefile,v 1.1 2003-07-03 14:17:20 kuriyama Exp $ -I\$Id:.*\$ -I\$hrs:.*\$ -r1.1.1.1 -r1.6
+--- Makefile	10 Jun 2003 15:24:06 -0000	1.1.1.1
++++ Makefile	3 Jul 2003 13:48:35 -0000	1.6
+@@ -1,27 +1,67 @@
+-default: basic
++# $hrs: jadetex-ptex/Makefile,v 1.6 2003/07/03 13:48:35 hrs Exp $
+ 
+-basic: jadetex.ltx
+-	tex jadetex.ins
++PREFIX?=	/usr/local
+ 
+-jadetex.fmt: basic
+-	tex -ini -progname=jadetex "&latex" jadetex.ini
++TEX?=		ptex
++TEX_BIN?=	${PREFIX}/bin/${TEX}
+ 
+-pdfjadetex.fmt: basic
+-	pdftex -ini -progname=pdfjadetex "&pdflatex" pdfjadetex.ini
++PDFTEX?=	pdftex
++PDFTEX_BIN?=	${PREFIX}/bin/${PDFTEX}
+ 
+-install: jadetex.fmt pdfjadetex.fmt
+-	(TT=$$DESTDIR/`kpsewhich -expand-var '$$TEXMFMAIN'`; \
+-	mkdir -p $$TT/web2c; \
+-	cp pdfjadetex.fmt $$TT/web2c; \
+-	cp jadetex.fmt $$TT/web2c; \
+-	mkdir -p $$TT/tex/jadetex ; \
+-	cp dsssl.def jadetex.ltx $$TT/tex/jadetex)
++PROGNAME_JADETEX?=	jadetex-ptex
++PROGNAME_JADETEX_BIN?=	${PREFIX}/bin/${PROGNAME_JADETEX}
++
++PROGNAME_PDFJADETEX?=	pdfjadetex-ptex
++PROGNAME_PDFJADETEX?=	${PREFIX}/bin/${PROGNAME_PDFJADETEX}
++
++LATEX?=		platex
++PDFLATEX?=	pdflatex
++
++default: ${PROGNAME_JADETEX}.fmt
++all: default
++
++${PROGNAME_JADETEX}.ins: jadetex.ins
++	sed -e "s@[Jj][Aa][Dd][Ee][Tt][Ee][Xx]\.\([a-zA-Z]*\)@jadetex-ptex.\1@g;s@dsssl.def@dsssl-ptex.def@;s@\\[dsssl\\]@[dsssl-ptex]@" < $? > $@
++${PROGNAME_JADETEX}.dtx: jadetex.dtx
++	sed -e "s@[Jj][Aa][Dd][Ee][Tt][Ee][Xx]\.\([a-zA-Z]*\)@jadetex-ptex.\1@g;s@dsssl.def@dsssl-ptex.def@;s@\\[dsssl\\]@[dsssl-ptex]@" < $? > $@
++${PROGNAME_JADETEX}.ini: jadetex.ini
++	sed -e "s@[Jj][Aa][Dd][Ee][Tt][Ee][Xx]\.\([a-zA-Z]*\)@jadetex-ptex.\1@g;s@dsssl.def@dsssl-ptex.def@;s@\\[dsssl\\]@[dsssl-ptex]@" < $? > $@
++
++${PROGNAME_JADETEX}.ltx: ${PROGNAME_JADETEX}.ins ${PROGNAME_JADETEX}.dtx
++	${TEX_BIN} ${PROGNAME_JADETEX}.ins
++
++${PROGNAME_JADETEX}.fmt: ${PROGNAME_JADETEX}.ini ${PROGNAME_JADETEX}.ltx
++	${TEX_BIN} -ini -progname=${PROGNAME_JADETEX} "&${LATEX}" ${PROGNAME_JADETEX}.ini
++
++#${PROGNAME_PDFJADETEX}.fmt: ${PROGNAME_PDFJADETEX}.ini ${PROGNAME_PDFJADETEX}.ltx
++#	${PDFTEX_BIN} -ini -progname=${PROGNAME_PDFJADETEX} "&${PDFLATEX}" ${PROGNAME_PDFJADETEX}.ini
++
++TTDEST?= ${TTDIR}
++TTDIR!=	 kpsewhich -expand-var '$$TEXMFMAIN'
++
++install: ${PROGNAME_JADETEX}.ltx dsssl-ptex.def
++	${MAKE} ${.MAKEFLAGS} jadetex-install
++	mkdir -p ${TTDEST}/tex/jadetex
++	cp ${PROGNAME_JADETEX}.ltx dsssl-ptex.def ${TTDEST}/tex/jadetex
++
++jadetex-install: ${PROGNAME_JADETEX}.fmt
++	mkdir -p ${TTDEST}/web2c
++	cp ${PROGNAME_JADETEX}.fmt ${TTDEST}/web2c
++	ln -s -f ${TEX_BIN} ${PROGNAME_JADETEX_BIN}
++
++#pdfjadetex-install: ${PROGNAME_PDFJADETEX}.fmt
++#	mkdir -p ${TTDEST}/web2c
++#	cp ${PROGNAME_PDFJADETEX}.fmt ${TT}/web2c
++#	ln -s -f ${PDFTEX_BIN} ${PROGNAME_PDFJADETEX_BIN}
+ 
+ realclean: clean
+-	-rm jadetex.fmt pdfjadetex.fmt dsssl.def jadetex.ltx
++	-rm -f ${PROGNAME_JADETEX}.fmt ${PROGNAME_PDFJADETEX}.fmt
++	-rm -f ${PROGNAME_JADETEX}.ltx ${PROGNAME_JADETEX}.dtx
++	-rm -f ${PROGNAME_JADETEX}.ini ${PROGNAME_JADETEX}.ins
++	-rm -f dsssl-ptex.def 
+ 
+ clean:
+-	-rm  *.log *.aux *.idx *.pdf *.toc *.dvi *.out
++	-rm -f *-ptex.* *.log *.aux *.idx *.pdf *.toc *.dvi *.out
+ 
+ test:
+ 	openjade -t tex -d ../docbook/print/docbook.dsl test-tables.sgm
+@@ -31,5 +71,4 @@
+ 	jadetex/index.* jadetex/doc/install.pdf \
+ 	jadetex/Makefile jadetex/ChangeLog jadetex/*ini)
+ 
+-jadetex.ltx: jadetex.dtx
+ 

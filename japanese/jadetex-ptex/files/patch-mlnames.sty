@@ -1,0 +1,131 @@
+Index: mlnames.sty
+===================================================================
+RCS file: /home/cvs/private/hrs/jadetex-ptex/mlnames.sty,v
+retrieving revision 1.1.1.1
+retrieving revision 1.4
+diff -d -u -I\$FreeBSD: /tmp/pcvs/ports/japanese/jadetex-ptex/files/patch-mlnames.sty,v 1.1 2003-07-03 14:17:20 kuriyama Exp $ -I\$Id:.*\$ -I\$hrs:.*\$ -r1.1.1.1 -r1.4
+--- mlnames.sty	10 Jun 2003 15:24:06 -0000	1.1.1.1
++++ mlnames.sty	10 Jun 2003 18:20:49 -0000	1.4
+@@ -5,7 +6,24 @@
+ %% Either version 1.0 or, at your option, any later version.
+ %%
+ \ProvidesPackage{mlnames}[2001/01/10, some XSL and Unicode support material, Sebastian Rahtz]
+-%
++% -- pjadetex --
++\DeclareFontShape{JY1}{mc}{m}{n}{<-> min10}{}
++\DeclareFontShape{JY1}{gt}{m}{n}{<-> goth10}{}
++\DeclareFontShape{JY1}{mc}{m}{it}{<-> min10}{}
++\DeclareFontShape{JY1}{gt}{m}{it}{<-> goth10}{}
++\DeclareFontShape{JT1}{mc}{m}{it}{<-> min10}{}
++\DeclareFontShape{JT1}{gt}{m}{it}{<-> goth10}{}
++\DeclareFontShape{JY1}{mc}{bx}{n}{<-> min10}{}
++\DeclareFontShape{JY1}{gt}{bx}{n}{<-> goth10}{}
++\DeclareFontShape{JT1}{mc}{bx}{n}{<-> min10}{}
++\DeclareFontShape{JT1}{gt}{bx}{n}{<-> goth10}{}
++% -- workaround for T2A encoding
++\DeclareFontEncoding{T2A}{}{}
++\DeclareFontFamily{T2A}{mc}{}
++\DeclareFontFamily{T2A}{gt}{}
++\DeclareFontShape{T2A}{mc}{m}{n}{<-> min10}{}
++\DeclareFontShape{T2A}{gt}{m}{n}{<-> goth10}{}
++% -- end --
+ \DeclareFontFamily{T1}{pzd}{}  
+ \DeclareFontShape{T1}{pzd}{m}{n}{<->pzdr}{} 
+ \def\Family@monospace{pcr}
+@@ -18,7 +36,7 @@
+ \DeclareFontShape{T1}{uzc}{mb}{it}{<-> uzcmi8t}{}
+ \DeclareFontShape{T1}{uzc}{m}{it}{<->ssub * uzc/mb/it}{}
+ \DeclareFontShape{T1}{uzc}{m}{n}{<->ssub * uzc/mb/it}{}
+-\def\Family@unknown{<unknown>} 
++\def\Family@unknown{<unknown>}
+ \def\Family@Arial{phv}
+ \def\Family@Helvetica{phv}
+ \def\Family@Palatino{ppl}
+@@ -64,6 +82,54 @@
+ \expandafter\def\csname Family@OCRB10PitchBT\endcsname{bob}
+ \expandafter\def\csname Family@OCR-A\endcsname{boa}
+ \expandafter\def\csname Family@OCR-B-10PitchBT\endcsname{bob}
++% -- pjadetex --
++\def\KanjiFamily@unknown{<unknown>}
++\def\KanjiFamily@Arial{gt}
++\def\KanjiFamily@Helvetica{gt}
++\def\KanjiFamily@Palatino{gt}
++\def\KanjiFamily@Bookman{mc}
++\def\KanjiFamily@BaskervilleMT{gt}
++\def\KanjiFamily@Courier{mc}
++\def\KanjiFamily@Symbol{mc}
++\def\KanjiFamily@Wingdings{mc}
++\def\KanjiFamily@WingDings{mc}
++\def\KanjiFamily@LucidaSans{mc}
++\def\KanjiFamily@LucidaBright{mc}
++\def\KanjiFamily@LucidaTypewriter{mc}
++\def\KanjiFamily@Savoy{mc}
++\def\KanjiFamily@ACaslon{mc}
++\def\KanjiFamily@Caslon{mc}
++\def\KanjiFamily@Formata{mc}
++\def\KanjiFamily@FranklinGothic{mc}
++\def\KanjiFamily@OCRAbyBT{mc}
++\def\KanjiFamily@AGaramond{mc}
++\expandafter\def\csname KanjiFamily@Avant-Garde\endcsname{mc}
++\expandafter\def\csname KanjiFamily@Courier New\endcsname{mc}
++\expandafter\def\csname KanjiFamily@New-Century-Schoolbook\endcsname{mc}
++\expandafter\def\csname KanjiFamily@Times-Roman\endcsname{mc}
++\expandafter\def\csname KanjiFamily@Trade-Gothic\endcsname{mc}
++\expandafter\def\csname KanjiFamily@Times-New-Roman\endcsname{mc}
++\expandafter\def\csname KanjiFamily@Times New Roman\endcsname{mc}
++\expandafter\def\csname KanjiFamily@Times Roman\endcsname{mc}
++\expandafter\def\csname KanjiFamily@Times-NR-MT\endcsname{mc}
++\expandafter\def\csname KanjiFamily@Courier-New\endcsname{mc}
++\expandafter\def\csname KanjiFamily@Zapf-Dingbats\endcsname{mc}
++\expandafter\def\csname KanjiFamily@Gill-Sans\endcsname{mc}
++\expandafter\def\csname KanjiFamily@iso-serif\endcsname{mc}
++\expandafter\def\csname KanjiFamily@sans-serif\endcsname{mc}
++\expandafter\def\csname KanjiFamily@iso-sanserif\endcsname{mc}
++\expandafter\def\csname KanjiFamily@iso-monospace\endcsname{mc}
++\expandafter\def\csname KanjiFamily@LetterGothic12PitchBT\endcsname{mc}
++\expandafter\def\csname KanjiFamily@NewsGothic\endcsname{mc}
++\expandafter\def\csname KanjiFamily@NewsGothicBT\endcsname{mc}
++\expandafter\def\csname KanjiFamily@Humanist521\endcsname{mc}
++\expandafter\def\csname KanjiFamily@Humanist521BT\endcsname{mc}
++\expandafter\def\csname KanjiFamily@Monospace821\endcsname{mc}
++\expandafter\def\csname KanjiFamily@Monospace821BT\endcsname{mc}
++\expandafter\def\csname KanjiFamily@OCRB10PitchBT\endcsname{mc}
++\expandafter\def\csname KanjiFamily@OCR-A\endcsname{mc}
++\expandafter\def\csname KanjiFamily@OCR-B-10PitchBT\endcsname{mc}
++% -- end --
+ %    \end{macrocode}
+ % Matthias Clasen asked for the special code to be able
+ % to access Computer Modern caps and small caps as a font family.
+@@ -205,19 +271,19 @@
+ \ifeof1
+   \message{I couldn't find the file language.dat. No hyphenation!!!}
+ \else
+-  \last@language\m@ne
+-  \loop
+-    \endlinechar\m@ne
+-    \read1 to \fo@line
+-    \endlinechar`\^^M
+-    \ifx\fo@line\@empty
+-    \else
+-      \edef\fo@line{\fo@line\space/}%
+-      \expandafter\process@line\fo@line
+-    \fi
+-    \iftrue \csname fi\endcsname
+-    \csname if\ifeof1 false\else true\fi\endcsname
+-  \repeat
++%  \last@language\m@ne
++%  \loop
++%    \endlinechar\m@ne
++%    \read1 to \fo@line
++%    \endlinechar`\^^M
++%    \ifx\fo@line\@empty
++%    \else
++%      \edef\fo@line{\fo@line\space/}%
++%      \expandafter\process@line\fo@line
++%    \fi
++%    \iftrue \csname fi\endcsname
++%    \csname if\ifeof1 false\else true\fi\endcsname
++%  \repeat
+   \language=0
+ \fi
+ \closein1

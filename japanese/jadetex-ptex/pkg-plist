@@ -1,0 +1,11 @@
+@comment $FreeBSD$
+@exec ln -s -f %D/bin/ptex %D/bin/jadetex-ptex
+@unexec rm -f %D/bin/jadetex-ptex
+share/texmf/tex/jadetex/dsssl-ptex.def
+share/texmf/tex/jadetex/jadetex-ptex.ltx
+share/texmf/web2c/jadetex-ptex.fmt
+%%PORTDOCS%%share/doc/jadetex-ptex/README.jadetex-ptex
+%%PORTDOCS%%@dirrm share/doc/jadetex-ptex
+@exec %D/bin/mktexlsr
+@unexec %D/bin/mktexlsr
+@unexec rmdir %D/share/texmf/tex/jadetex 2> /dev/null || true
