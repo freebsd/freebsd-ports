@@ -3,7 +3,7 @@
 # Date created:		14 July 1995
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.16 1998/12/22 07:51:27 asami Exp $
+# $Id: Makefile,v 1.17 1999/02/11 13:32:08 flathill Exp $
 #
 
 DISTNAME=	fwf-4.0
@@ -15,6 +15,10 @@ MASTER_SITE_SUBDIR=libs/X/fwf
 MAINTAINER=	jseger@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
+
+.if ${MACHINE_ARCH} == "alpha"
+BROKEN=		../../lib/libfwf.a: cannot read symbols
+.endif
 
 REQUIRES_MOTIF=	yes
 USE_IMAKE=	yes
