@@ -4,7 +4,7 @@ bin/clamdscan
 bin/freshclam
 bin/sigtool
 etc/rc.d/clamav-clamd%%RC_SUFX%%
-etc/rc.d/freshclam%%RC_SUFX%%
+etc/rc.d/clamav-freshclam%%RC_SUFX%%
 %%CLAMAV-MILTER%%etc/rc.d/clamav-milter%%RC_SUFX%%
 %%CLAMAV-MILTER%%sbin/clamav-milter
 sbin/clamd
