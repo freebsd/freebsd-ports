@@ -6,12 +6,13 @@
 
 PORTNAME=	bsmtp
 PORTVERSION=	1.02
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.stud.uni-karlsruhe.de/~uk1o/bsmtp/
 
 MAINTAINER=	naddy@FreeBSD.org
 
+USE_PERL=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--redo
