@@ -395,6 +395,7 @@
     SUBDIR += nload
     SUBDIR += nocatauth-gateway
     SUBDIR += nocatauth-server
+    SUBDIR += nocatsplash
     SUBDIR += nocol
     SUBDIR += nrpe
     SUBDIR += nrpep
