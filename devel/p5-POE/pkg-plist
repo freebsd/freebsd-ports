@@ -21,6 +21,7 @@ lib/perl5/site_perl/%%PERL_VER%%/POE/Kernel/Gtk.pm
 lib/perl5/site_perl/%%PERL_VER%%/POE/Kernel/Poll.pm
 lib/perl5/site_perl/%%PERL_VER%%/POE/Kernel/Select.pm
 lib/perl5/site_perl/%%PERL_VER%%/POE/Kernel/Tk.pm
+lib/perl5/site_perl/%%PERL_VER%%/POE/Macro/UseBytes.pm
 lib/perl5/site_perl/%%PERL_VER%%/POE/NFA.pm
 lib/perl5/site_perl/%%PERL_VER%%/POE/Pipe.pm
 lib/perl5/site_perl/%%PERL_VER%%/POE/Pipe/OneWay.pm
@@ -71,6 +72,7 @@ lib/perl5/site_perl/%%PERL_VER%%/POE/Wheel/SocketFactory.pm
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/POE/Driver
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/POE/Filter 2>/dev/null || true
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/POE/Kernel
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/POE/Macro
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/POE/Pipe
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/POE/Wheel
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/POE 2>/dev/null || true
