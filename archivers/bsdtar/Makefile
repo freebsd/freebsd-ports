@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	bsdtar
-PORTVERSION=	2004.06.07
+PORTVERSION=	2004.07.14
 CATEGORIES=	archivers
 MASTER_SITES=	http://people.freebsd.org/~kientzle/libarchive/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/g}
@@ -34,6 +34,10 @@ MAN1=		bsdtar.1
 
 .if ${OSVERSION} >= 502111
 IGNORE=		is in the base system
+.endif
+
+.if ${OSVERSION} < 500000
+EXTRA_PATCHES=	${PATCHDIR}/diff-bsdtar.h
 .endif
 
 post-patch:
