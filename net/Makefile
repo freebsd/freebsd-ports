@@ -53,8 +53,8 @@
     SUBDIR += dgd-net
     SUBDIR += dhid
     SUBDIR += dhcpconf
+    SUBDIR += djbdns
     SUBDIR += dlint
-    SUBDIR += dnscache
     SUBDIR += dnsutl
     SUBDIR += dnswalk
     SUBDIR += doc
