@@ -6,27 +6,19 @@
 #
 
 PORTNAME=	slib
-PORTVERSION=	2c9
-PORTREVISION=	1
+PORTVERSION=	2d1
 CATEGORIES=	lang
 MASTER_SITES=	http://swissnet.ai.mit.edu/ftpdir/scm/
+DISTNAME=	slib2d1
 
 MAINTAINER=	nakai@FreeBSD.org
-DISTNAME=	slib2c9
-
-BUILD_DEPENDS=	scheme48:${PORTSDIR}/lang/scheme48 \
-		scm:${PORTSDIR}/lang/scm
 
 WRKSRC=		${WRKDIR}/slib
 
 USE_ZIP=	yes
-ALL_TARGET=	slib48
-INSTALL_TARGET=	install48
+NO_BUILD=	yes
 
-post-install:
-	# 	moved here from author's makefile
-	${MKDIR} ${PREFIX}/lib/scheme48
-	${TOUCH} -r ${WRKSRC}/slibcat ${PREFIX}/lib/scheme48/slibcat
+do-install:
 	${MKDIR} ${PREFIX}/share/slib
 	${INSTALL_DATA} ${WRKSRC}/*.scm ${PREFIX}/share/slib
 

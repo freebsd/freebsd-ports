@@ -1,4 +1,3 @@
-lib/scheme48/slibcat
 share/slib/Bev2slib.scm
 share/slib/Template.scm
 share/slib/alist.scm
@@ -11,10 +10,12 @@ share/slib/byte.scm
 share/slib/chap.scm
 share/slib/charplot.scm
 share/slib/cltime.scm
+share/slib/coerce.scm
 share/slib/collect.scm
 share/slib/comlist.scm
 share/slib/comparse.scm
 share/slib/cring.scm
+share/slib/db2html.scm
 share/slib/dbrowse.scm
 share/slib/dbutil.scm
 share/slib/debug.scm
@@ -36,12 +37,14 @@ share/slib/glob.scm
 share/slib/hash.scm
 share/slib/hashtab.scm
 share/slib/htmlform.scm
+share/slib/http-cgi.scm
 share/slib/lineio.scm
 share/slib/logical.scm
 share/slib/macrotst.scm
 share/slib/macwork.scm
 share/slib/makcrc.scm
 share/slib/mbe.scm
+share/slib/minimize.scm
 share/slib/mklibcat.scm
 share/slib/modular.scm
 share/slib/mulapply.scm
@@ -54,6 +57,7 @@ share/slib/obj2str.scm
 share/slib/object.scm
 share/slib/paramlst.scm
 share/slib/plottest.scm
+share/slib/pnm.scm
 share/slib/pp.scm
 share/slib/ppfile.scm
 share/slib/prec.scm
@@ -89,6 +93,7 @@ share/slib/scmacro.scm
 share/slib/scmactst.scm
 share/slib/selfset.scm
 share/slib/sierpinski.scm
+share/slib/simetrix.scm
 share/slib/sort.scm
 share/slib/soundex.scm
 share/slib/stdio.scm
@@ -109,8 +114,10 @@ share/slib/tree.scm
 share/slib/trnscrpt.scm
 share/slib/tsort.scm
 share/slib/tzfile.scm
+share/slib/uri.scm
 share/slib/values.scm
 share/slib/withfile.scm
 share/slib/wttest.scm
 share/slib/wttree.scm
 share/slib/yasyn.scm
+@dirrm share/slib
