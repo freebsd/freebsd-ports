@@ -1,4 +1,6 @@
 bin/SciTE
+%%GNOME_COMMENT%%share/gnome/applications/SciTE.desktop
+%%GNOME_COMMENT%%share/gnome/pixmaps/Sci48M.png
 %%PORTDOCS%%%%DOCSDIR%%/PrintHi.png
 %%PORTDOCS%%%%DOCSDIR%%/SciBreak2.jpg
 %%PORTDOCS%%%%DOCSDIR%%/SciTE.html
