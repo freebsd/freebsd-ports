@@ -1,4 +1,5 @@
 bin/swig
+bin/swig%%VER%%
 lib/libswig.a
 lib/libswigpl.a
 lib/libswigpy.a
