@@ -10,67 +10,51 @@ lib/clisp/base/makevars
 lib/clisp/base/modules.h
 lib/clisp/base/modules.o
 lib/clisp/clisp-link
-lib/clisp/data/UnicodeData.txt
+lib/clisp/data/UnicodeDataFull.txt
 lib/clisp/data/clhs.txt
 lib/clisp/full/libavcall.a
 lib/clisp/full/libcallback.a
-lib/clisp/full/libnoreadline.a
 lib/clisp/full/libcharset.a
+lib/clisp/full/libnoreadline.a
 lib/clisp/full/lisp.a
 lib/clisp/full/lisp.run
 lib/clisp/full/lispinit.mem
 lib/clisp/full/makevars
 lib/clisp/full/modules.h
 lib/clisp/full/modules.o
-lib/clisp/full/regex.o
 lib/clisp/full/regexi.o
 lib/clisp/full/regexp.dvi
-lib/clisp/full/regexp.o
 lib/clisp/linkkit/clisp.h
+lib/clisp/linkkit/exporting.lisp
+lib/clisp/linkkit/modprep.lisp
 lib/clisp/linkkit/modules.c
 lib/clisp/linkkit/modules.d
-share/doc/clisp/ANNOUNCE
-share/doc/clisp/COPYRIGHT
-share/doc/clisp/GNU-GPL
-share/doc/clisp/MAGIC.add
-share/doc/clisp/NEWS
-share/doc/clisp/README
-share/doc/clisp/README.de
-share/doc/clisp/README.es
-share/doc/clisp/SUMMARY
-share/doc/clisp/CLOS-guide.txt
-share/doc/clisp/LISP-tutorial.txt
-share/doc/clisp/clisp.1
-share/doc/clisp/clisp.dvi
-share/doc/clisp/clisp.html
-share/doc/clisp/clisp.png
-share/doc/clisp/editors.txt
-share/doc/clisp/impnotes.css
-share/doc/clisp/impnotes.html
-share/locale/de/LC_MESSAGES/clisp.mo
-share/locale/de/LC_MESSAGES/clisplow.mo
-share/locale/en/LC_MESSAGES/clisp.mo
-share/locale/en/LC_MESSAGES/clisplow.mo
-share/locale/es/LC_MESSAGES/clisp.mo
-share/locale/es/LC_MESSAGES/clisplow.mo
-share/locale/fr/LC_MESSAGES/clisp.mo
-share/locale/fr/LC_MESSAGES/clisplow.mo
-share/locale/nl/LC_MESSAGES/clisp.mo
-share/locale/nl/LC_MESSAGES/clisplow.mo
-share/locale/ru/LC_MESSAGES/clisp.mo
-share/locale/ru/LC_MESSAGES/clisplow.mo
-@dirrm share/doc/clisp
-@dirrm lib/clisp/base
-@dirrm lib/clisp/data
-@dirrm lib/clisp/full
+%%PORTDOCS%%%%DOCSDIR%%/ANNOUNCE
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/GNU-GPL
+%%PORTDOCS%%%%DOCSDIR%%/MAGIC.add
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.de
+%%PORTDOCS%%%%DOCSDIR%%/README.es
+%%PORTDOCS%%%%DOCSDIR%%/SUMMARY
+%%PORTDOCS%%%%DOCSDIR%%/clisp.dvi
+%%PORTDOCS%%%%DOCSDIR%%/clisp.html
+%%PORTDOCS%%%%DOCSDIR%%/clisp.ps
+%%PORTDOCS%%%%DOCSDIR%%/doc/CLOS-guide.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/LISP-tutorial.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/clisp.1
+%%PORTDOCS%%%%DOCSDIR%%/doc/clisp.dvi
+%%PORTDOCS%%%%DOCSDIR%%/doc/clisp.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/clisp.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/clisp.ps
+%%PORTDOCS%%%%DOCSDIR%%/doc/editors.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/impnotes.css
+%%PORTDOCS%%%%DOCSDIR%%/doc/impnotes.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/clisp/linkkit
+@dirrm lib/clisp/full
+@dirrm lib/clisp/data
+@dirrm lib/clisp/base
 @dirrm lib/clisp
-@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/de 2>/dev/null || true
-@unexec rmdir %D/share/locale/es/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/es 2>/dev/null || true
-@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/fr 2>/dev/null || true
-@unexec rmdir %D/share/locale/nl/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/nl 2>/dev/null || true
-@unexec rmdir %D/share/locale 2>/dev/null || true
