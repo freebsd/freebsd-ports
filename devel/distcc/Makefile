@@ -7,7 +7,7 @@
 
 PORTNAME=	distcc
 PORTVERSION=	2.16
-CATEGORIES=	devel
+CATEGORIES=	devel ipv6
 MASTER_SITES=	http://distcc.samba.org/ftp/distcc/
 
 MAINTAINER=	dom@helenmarks.co.uk
@@ -24,7 +24,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 DISTCCD_PIDFILE=/var/run/distccd.pid
 
 OPTIONS=	GNOME "Build GUI monitor based on GNOME" Off \
-		GTK "Build GUI monitor based on GTK" Off
+		GTK "Build GUI monitor based on GTK" Off \
+		IPV6 "Enable IPV6 (not available on 4.X)" Off
 
 .include <bsd.port.pre.mk>
 
@@ -40,6 +41,10 @@ PKGNAMESUFFIX=	-gtk
 PLIST_SUB+=	WITH_GNOME=""
 .else
 PLIST_SUB+=	WITH_GNOME="@comment "
+.endif
+
+.if ( ${OSVERSION} >= 500000 ) && defined(WITH_IPV6)
+CONFIGURE_ARGS+=	--enable-rfc2553
 .endif
 
 MAN1=		distcc.1 distccd.1
