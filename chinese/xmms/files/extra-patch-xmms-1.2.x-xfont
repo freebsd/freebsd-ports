@@ -1,46 +1,6 @@
-diff -ru xmms/playlist_list.c xmms/playlist_list.c
---- xmms/playlist_list.c	Thu Nov  9 03:12:08 2000
-+++ xmms/playlist_list.c.orig	Mon Nov 27 22:00:03 2000
-@@ -269,25 +269,24 @@
- 				*(wtmp++) = *(wtmp2++);
- 			*wtmp = L'\0';
- 		}
--	len = wcslen(wtext);
- 
- 	/*
- 	 * Convert the wide string to a GdkWChar string that someone,
- 	 * for some unknown reason has desided to make uncompatible
- 	 * with wchar_t strings.
- 	 */
--	if (sizeof(wchar_t) != sizeof(GdkWChar))
--	{
--		int i;
-+	len = wcstombs(NULL, wtext, 0);
-+	text = g_malloc(len + 3);
-+	len = wcstombs(text, wtext, len);
-+	text[len] = '\0';
-+
-+	len = wcslen(wtext);
-+	gwtext = g_malloc((len + 3) * sizeof(GdkWChar));
-+	gdk_mbstowcs(gwtext, text, len + 2);
-+
-+	g_free(text);
-+	g_free(wtext);
- 
--		gwtext = g_malloc((len + 3) * sizeof(GdkWChar));
--		for (i = 0; i <= len; i++)
--			gwtext[i] = wtext[i];
--		g_free(wtext);
--	}
--	else
--		gwtext = (GdkWChar*) wtext;
--	
- 	newlen = len + 2;
- 	
- 	while (gdk_text_width_wc(font, gwtext, len) > width && len > 4)
---- xmms/main.c.orig	Fri Dec  1 02:22:22 2000
-+++ xmms/main.c	Fri Dec  1 02:23:45 2000
-@@ -320,8 +320,8 @@
+--- xmms/main.c~	Fri Jun 22 15:36:14 2001
++++ xmms/main.c	Fri Jun 22 15:39:22 2001
+@@ -323,8 +323,8 @@
  	cfg.sticky = FALSE;
  	cfg.always_show_cb = TRUE;
  	cfg.convert_underscore = TRUE;
@@ -51,7 +11,7 @@ diff -ru xmms/playlist_list.c xmms/playlist_list.c
  	cfg.snap_windows = TRUE;
  	cfg.save_window_position = TRUE;
  	cfg.dim_titlebar = TRUE;
-@@ -333,7 +333,8 @@
+@@ -336,7 +336,8 @@
  	cfg.no_playlist_advance = FALSE;
  	cfg.smooth_title_scroll = TRUE;
  	cfg.random_skin_on_play = FALSE;
@@ -61,15 +21,15 @@ diff -ru xmms/playlist_list.c xmms/playlist_list.c
  
  	cfg.playlist_x = 295;
  	cfg.playlist_y = 20;
-@@ -463,9 +464,9 @@
+@@ -482,9 +483,9 @@
+ 		cfg.mainwin_font = NULL;
  	}
- 
  	if (cfg.playlist_font == NULL)
 -		cfg.playlist_font = g_strdup("-adobe-helvetica-bold-r-*-*-10-*");
 +		cfg.playlist_font = g_strdup("-adobe-helvetica-bold-r-*-*-10-*,-*-bold-r-*-big5-0");
  	if (cfg.mainwin_font == NULL)
 -		cfg.mainwin_font = g_strdup("-adobe-helvetica-medium-r-*-*-8-*");
 +		cfg.mainwin_font = g_strdup("-adobe-helvetica-medium-r-*-*-8-*,-*-medium-r-*-big5-0");
+ 	if (cfg.gentitle_format == NULL)
+ 		cfg.gentitle_format = g_strdup("%p - %t");
  	if (cfg.outputplugin == NULL)
- 	{
- #if defined(HAVE_SYS_SOUNDCARD_H) || defined(HAVE_MACHINE_SOUNDCARD_H)
