@@ -1562,6 +1562,7 @@ emacs20-dl	ports/editors/emacs20-dl
 emacs20-mule-devel	ports/editors/emacs20-mule-devel
 emacs21		ports/editors/emacs21
 emboss		ports/biology/emboss
+emc2		ports/math/emc2
 emelfm2		ports/x11-fm/emelfm2
 emh		ports/mail/emh
 emh-emacs20	ports/mail/emh-emacs20
