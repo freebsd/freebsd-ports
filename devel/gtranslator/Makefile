@@ -6,24 +6,24 @@
 #
 
 PORTNAME=	gtranslator
-PORTVERSION= 	0.21
+PORTVERSION= 	0.30
 CATEGORIES=	devel gnome
-MASTER_SITES=	http://gtranslator.sourceforge.net/tarbz2/ \
+MASTER_SITES=	http://gtranslator.sourceforge.net/${PORTVERSION}/tarbz2/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	oaf.0:${PORTSDIR}/devel/oaf
-RUN_DEPENDS=	gmc:${PORTSDIR}/x11-fm/gnomemc
+LIB_DEPENDS=	oaf.0:${PORTSDIR}/devel/oaf \
+		gconf-1.1:${PORTSDIR}/devel/gconf
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}" \
-		LIBS="-L${LOCALBASE}/lib"
+INSTALLS_SHLIB=	yes
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 
 MAN1=		gtranslator.1
 
