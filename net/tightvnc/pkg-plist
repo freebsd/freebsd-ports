@@ -9,16 +9,13 @@ share/tightvnc/classes/ClipboardFrame.class
 share/tightvnc/classes/DesCipher.class
 share/tightvnc/classes/OptionsFrame.class
 share/tightvnc/classes/RecordingFrame.class
+share/tightvnc/classes/ReloginPanel.class
 share/tightvnc/classes/RfbProto.class
 share/tightvnc/classes/SessionRecorder.class
+share/tightvnc/classes/SocketFactory.class
 share/tightvnc/classes/VncCanvas.class
 share/tightvnc/classes/VncViewer.class
 share/tightvnc/classes/VncViewer.jar
-share/tightvnc/classes/hextile.vnc
 share/tightvnc/classes/index.vnc
-share/tightvnc/classes/noshared.vnc
-share/tightvnc/classes/shared.vnc
-share/tightvnc/classes/tight.vnc
-share/tightvnc/classes/zlib.vnc
 @dirrm share/tightvnc/classes
 @dirrm share/tightvnc

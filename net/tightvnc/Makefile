@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	tightvnc
-PORTVERSION=	1.2.6
-PORTREVISION=	1
+PORTVERSION=	1.2.7
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	vnc-tight
@@ -16,12 +15,13 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}_unixsrc
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/misc/10x20.pcf.gz:${PORTSDIR}/x11-fonts/XFree86-4-fontDefaultBitmaps
 
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/vnc_unixsrc
 USE_IMAKE=	yes
+USE_XPM=	yes
 USE_PERL5=	yes
 ALL_TARGET=	World
 NO_INSTALL_MANPAGES=	yes
@@ -39,13 +39,15 @@ post-patch:
 .endfor
 	@${PERL} -pi -e "s,/usr/local/vnc/classes,${DATADIR}/classes,g ; \
 		s,^#!/usr/bin/perl,#!${PERL},g" ${WRKSRC}/vncserver
+	@${PERL} -pi -e "s,%%CC%%,${CC},g ; \
+		s,%%CFLAGS%%,${CFLAGS},g" ${WRKSRC}/Xvnc/config/cf/FreeBSD.cf
 
 do-install:
 	@(cd ${WRKSRC}; ./vncinstall ${PREFIX}/bin ${PREFIX}/man)
 .for file in Xvnc vncviewer vncpasswd vncconnect
-	@strip ${PREFIX}/bin/${file}
+	@${STRIP_CMD} ${PREFIX}/bin/${file}
 .endfor
-	@${MKDIR} ${DATADIR}
-	${CP} -R ${WRKSRC}/classes ${DATADIR}
+	@${MKDIR} ${DATADIR}/classes
+	${INSTALL_DATA} ${WRKSRC}/classes/*.* ${DATADIR}/classes
 
 .include <bsd.port.mk>

@@ -8,11 +8,3 @@
  #include <sys/types.h>
  #include <sys/time.h>
  #include <sys/socket.h>
-@@ -491,6 +492,7 @@
-     int sock;
-     int one = 1;
- 
-+    memset(&addr, 0, sizeof(addr));
-     addr.sin_family = AF_INET;
-     addr.sin_port = htons(port);
-     addr.sin_addr.s_addr = interface.s_addr;
