@@ -34,7 +34,8 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S/-src$//}
 MAKE_ARGS+=	CFLAGS="${CFLAGS}"
 
 .if defined(BATCH)
-WEBALIZER_LANG=	english
+# no cosmetique spaces allowed
+WEBALIZER_LANG=english
 .endif
 
 .if defined(WEBALIZER_LANG)
