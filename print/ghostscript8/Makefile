@@ -26,9 +26,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME} \
 			hpinkjet/:hpijs \
 			ghostscript/:ports_jp
 PKGNAMESUFFIX=	-afpl
-DISTFILES=	${GS_SRCS}:DEFAULT,gatekeeper \
-		${GS_FONTS_STD}:DEFAULT,fonts \
-		${GS_FONTS_OTHER}:DEFAULT,fonts,gatekeeper \
+DISTFILES=	${GS_SRCS}:DEFAULT \
+		${GS_FONTS_STD}:DEFAULT \
+		${GS_FONTS_OTHER}:DEFAULT \
 		${HP8XX_SRCS}:hp8xx \
 		${HPDJ_SRCS}:hpdj_pcl3 \
 		${PCL3_SRCS}:hpdj_pcl3 \
