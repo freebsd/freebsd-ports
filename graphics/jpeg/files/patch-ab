@@ -5,7 +5,7 @@
  echo $ac_n "checking libjpeg version number""... $ac_c" 1>&6
  echo "configure:1650: checking libjpeg version number" >&5
 -JPEG_LIB_VERSION=`sed -e '/^#define JPEG_LIB_VERSION/!d' -e 's/^[^0-9]*\([0-9][0-9]*\).*$/\1/' $srcdir/jpeglib.h`
-+JPEG_LIB_VERSION=8
++JPEG_LIB_VERSION=9
  echo "$ac_t""$JPEG_LIB_VERSION" 1>&6
  
  

@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.3 1998/04/15 22:18:04 jseger Exp $
+# $Id: Makefile,v 1.4 1998/04/29 17:52:12 asami Exp $
 #
 
 DISTNAME=	kdegraphics-Beta3-1
@@ -17,7 +17,7 @@ MAINTAINER=	se@freebsd.org
 
 LIB_DEPENDS=	qt\\.1\\.3[1-9]:${PORTSDIR}/x11/qt \
 		gif\\.[23]\\.:${PORTSDIR}/graphics/giflib \
-		jpeg\\.8\\.:${PORTSDIR}/graphics/jpeg \
+		jpeg\\.9\\.:${PORTSDIR}/graphics/jpeg \
 		kdecore\\.0\\.9[0-9]:${PORTSDIR}/x11/kdelibs \
 		kdeui\\.0\\.9[1-9]:${PORTSDIR}/x11/kdelibs \
 		jscript\\.0\\.9[0-9]:${PORTSDIR}/x11/kdelibs \

@@ -3,7 +3,7 @@
 # Date created:         Mon Nov 18 21:28:43 CST 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.28 1998/04/19 17:03:57 andreas Exp $
+# $Id: Makefile,v 1.29 1998/04/29 21:01:40 vanilla Exp $
 #
 
 MAJOR=	0
@@ -25,7 +25,7 @@ MAINTAINER=	erich@FreeBSD.org
 
 LIB_DEPENDS+=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 LIB_DEPENDS+=	aa\\.1\\.:${PORTSDIR}/graphics/aalib
-LIB_DEPENDS+=	jpeg\\.8\\.:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	jpeg\\.9\\.:${PORTSDIR}/graphics/jpeg
 LIB_DEPENDS+=	gtk\\.1\\.0:${PORTSDIR}/x11/gtk
 LIB_DEPENDS+=	mpeg\\.1\\.2:${PORTSDIR}/graphics/mpeg-lib
 LIB_DEPENDS+=	png\\.2\\.:${PORTSDIR}/graphics/png
