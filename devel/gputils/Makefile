@@ -1,12 +1,12 @@
-# New ports collection makefile for:	gpasm
-# Date created:				4 Aug 2000
+# New ports collection makefile for:	gputils
+# Date created:				21 Jan 2002
 # Whom:					Samuel Tardieu <sam@inf.enst.fr>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	gpasm
-PORTVERSION=	0.9.7
+PORTNAME=	gputils
+PORTVERSION=	0.10.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,15 +14,15 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	sam@inf.enst.fr
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CC="cc -I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
 
-.if !defined(NOPORTDOCS)
+MAN1=	gpasm.1 gpdasm.1 gputils.1 gpvc.1
+
 post-install:
-	${MKDIR} ${PREFIX}/share/doc/gpasm
-	${INSTALL_DATA} ${WRKSRC}/doc/gpasm.ps ${PREFIX}/share/doc/gpasm
-	${INSTALL_DATA} ${WRKSRC}/doc/gpasm.pdf ${PREFIX}/share/doc/gpasm
-	${INSTALL_DATA} ${WRKSRC}/doc/gpasm.lyx ${PREFIX}/share/doc/gpasm
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for ext in ps pdf lyx
+	@${INSTALL_DATA} ${WRKSRC}/doc/gputils.${ext} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>

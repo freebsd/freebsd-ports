@@ -1,7 +1,9 @@
-GPASM is the GNU Pic assembler, and can compile assembly files for 12c508
-and 16c84 microcontrollers family.
+GPUTILS contains a set of utilities (assembler, disassembler, ...) for
+Microchip's PIC microcontroller families.
 
-WWW: http://gpasm.sourceforge.net/
+This port was previously called GPASM.
+
+WWW: http://gputils.sourceforge.net/
 
  -- Samuel Tardieu
     sam@inf.enst.fr
