@@ -371,6 +371,7 @@
     SUBDIR += xmms-gforce
     SUBDIR += xmms-goom
     SUBDIR += xmms-infinity
+    SUBDIR += xmms-iris
     SUBDIR += xmms-jess
     SUBDIR += xmms-xvs
     SUBDIR += xmorph
