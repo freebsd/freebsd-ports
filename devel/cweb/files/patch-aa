@@ -1,0 +1,47 @@
+--- Makefile.orig	Thu Sep 21 22:32:18 1995
++++ Makefile	Tue Feb 10 19:30:55 1998
+@@ -18,23 +18,23 @@
+ #
+ 
+ # directory for TeX inputs (cwebmac.tex goes here)
+-MACROSDIR= /usr/local/lib/tex/inputs
++MACROSDIR= ${PREFIX}/share/texmf/tex/generic/misc
+ 
+ # directory for CWEB inputs in @i files
+-CWEBINPUTS= /usr/local/lib/cweb
++CWEBINPUTS= ${PREFIX}/share/cweb
+ 
+ # extension for manual pages ("l" distinguishes local from system stuff)
+-MANEXT= l
+-#MANEXT= 1
++#MANEXT= l
++MANEXT= 1
+ 
+ # directory for manual pages (cweb.1 goes here)
+-MANDIR= /usr/man/man$(MANEXT)
++MANDIR= ${PREFIX}/man/man$(MANEXT)
+ 
+ # destination directory for executables; must end in /
+-DESTDIR= /usr/local/bin/
++DESTDIR= ${PREFIX}/bin/
+ 
+ # directory for GNU EMACS Lisp code (cweb.el goes here)
+-EMACSDIR= /usr/local/emacs/lisp
++EMACSDIR= ${PREFIX}/share/emacs/site-lisp
+ 
+ # Set DESTPREF to null if you want to call the executables "tangle" and "weave"
+ # (probably NOT a good idea; we recommend leaving DESTPREF=c)
+@@ -50,10 +50,10 @@
+ WCHANGES=
+ 
+ # We keep debugging info around, for fun, but most users don't need it
+-CFLAGS = -g
++#CFLAGS = -g
+ #CFLAGS = -O
+-LINKFLAGS = -g
+-#LINKFLAGS = -s # for smaller (stripped) executables on many UNIX systems
++#LINKFLAGS = -g
++LINKFLAGS = -s # for smaller (stripped) executables on many UNIX systems
+ 
+ # What C compiler are you using?
+ CC = cc
