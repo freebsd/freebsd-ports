@@ -36,14 +36,11 @@ SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g' \
 		-e "s|%%REQPKGVER%%|${REQPKGVER}|g" \
 		-e "s|%%BZIP2_CMD%%|${BZIP2_CMD}|g" \
 
-PKG_INFO_BASE?=	/usr/sbin/pkg_info
-BASEPKGVER!=	${PKG_INFO_BASE} -qP 2>/dev/null || ${TRUE}
+.include <bsd.port.pre.mk>
 
-.if ${BASEPKGVER} < ${REQPKGVER}
+.if ${OSVERSION} < 492000 || ${OSVERSION} >= 500000 && ${OSVERSION} < 502120
 RUN_DEPENDS=	${LOCALBASE}/sbin/pkg_info:${PORTSDIR}/sysutils/pkg_install-devel
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if defined(BZIP2DEPENDS)
 RUN_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
