@@ -22,5 +22,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Crypt::OpenSSL::RSA.3
 
-
 .include <bsd.port.mk>

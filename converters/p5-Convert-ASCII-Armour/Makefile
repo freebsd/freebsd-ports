@@ -24,5 +24,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Convert::ASCII::Armour.3 Convert::ASCII::Armor.3
 
-
 .include <bsd.port.mk>

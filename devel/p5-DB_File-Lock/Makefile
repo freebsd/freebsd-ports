@@ -19,5 +19,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		DB_File::Lock.3
 
-
 .include <bsd.port.mk>

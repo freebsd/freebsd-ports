@@ -24,5 +24,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		IPC::SharedCache.3
 
-
 .include <bsd.port.mk>
