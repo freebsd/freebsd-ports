@@ -16,17 +16,14 @@ MAINTAINER=	sobomax@FreeBSD.org
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
 USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
 
-SETUP_CMD=	cd ${WRKSRC} && ${PYTHON_CMD} setup.py
-
-do-build:
-	${SETUP_CMD} build
-
-do-install:
-	@printf "#!/bin/sh\nexec ${PYTHON_CMD} ${PREFIX}/lib/${PYTHON_VERSION}/site-packages/idlelib/idle.pyc\n" \
+pre-install:
+	@printf "#!/bin/sh\nexec ${PYTHON_CMD} ${PYTHON_SITELIBDIR}/idlelib/idle.pyc\n" \
 		> ${WRKSRC}/idle
-	${SETUP_CMD} install -c -O1 --prefix=${PREFIX}
+
 .if !defined(NOPORTDOCS)
+post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/[^c]*.txt ${DOCSDIR}
 .endif

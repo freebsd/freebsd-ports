@@ -14,10 +14,8 @@ DISTNAME=	Grouch-${PORTVERSION}
 
 MAINTAINER=	wjv@FreeBSD.org
 
-BUILD_DEPENDS=	${PYDISTUTILS}
-
 USE_PYTHON=	yes
-PYTHON_SETUP=	${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py
+USE_PYDISTUTILS=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -25,14 +23,8 @@ PYTHON_SETUP=	${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/compiler/__init__.py:${PORTSDIR}/lang/py-compiler
 .endif
 
-do-build:
-	@ cd ${WRKSRC} && ${PYTHON_SETUP} build
-
 pre-install:
 	@ ${SH} ${PKGREQ} INSTALL
-
-do-install:
-	@ cd ${WRKSRC} && ${PYTHON_SETUP} install -c -O1 --prefix=${PREFIX}
 
 post-install:
 .if !defined(NOPORTDOCS)

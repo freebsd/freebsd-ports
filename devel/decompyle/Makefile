@@ -14,17 +14,11 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/beta/g}
 MAINTAINER=	perky@fallin.lv
 
 USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
 PLIST_SUB=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S,${LOCALBASE}/,,g}
-DISTUTIL_CMD=	cd ${WRKSRC} && ${PYTHON_CMD} setup.py
 
 post-patch:
 	${PERL} -pi -e 's,/usr/bin/env python2,${PYTHON_CMD},' \
 		${WRKSRC}/scripts/decompyle
-
-do-build:
-	${DISTUTIL_CMD} build
-
-do-install:
-	${DISTUTIL_CMD} install
 
 .include <bsd.port.mk>

@@ -13,8 +13,7 @@ DISTNAME=	${PORTNAME:S/-//}-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BUILD_DEPENDS=	${PYDISTUTILS} \
-		${PYNUMERIC}
+BUILD_DEPENDS=	${PYNUMERIC}
 LIB_DEPENDS=	SDL_ttf.3:${PORTSDIR}/graphics/sdl_ttf \
 		SDL_image.10:${PORTSDIR}/graphics/sdl_image \
 		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
@@ -24,7 +23,7 @@ RUN_DEPENDS=	${PYNUMERIC}
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
 USE_PYTHON=	yes
-SETUP_CMD=	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD}
+USE_PYDISTUTILS=	yes
 MAKE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 
 .include <bsd.port.pre.mk>
@@ -38,12 +37,8 @@ PYNUMERIC=	${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric17
 do-configure:
 	@${SETUP_CMD} config.py
 
-do-build:
-	@${SETUP_CMD} setup.py build
-
-do-install:
-	@${SETUP_CMD} setup.py install
 .if !defined(NOPORTDOCS)
+post-install:
 	${MKDIR} ${PREFIX}/share/examples/py-game
 	${TAR} -C ${WRKSRC}/examples -cf - . | \
 		${TAR} --unlink -C ${PREFIX}/share/examples/py-game -xf -
