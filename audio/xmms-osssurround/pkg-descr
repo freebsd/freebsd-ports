@@ -1,0 +1,12 @@
+OSSSuround is an output plugin for XMMS included with xmms-a52dec.
+(audio/xmms-a52dec).  It provides surround sound capability to
+xmms-a42dec and is fully compatible with all other input plugins.
+It can be used as a dropin replacement for the original OSS plugin
+distributed with XMMS.  For developers, if you are interested in
+using OSSSurround to provide surround sound support for your XMMS
+input plugin, you can read the API document or contact the author
+for help.
+
+For latest API info: http://xmms-a52dec.sourceforge.net/API
+
+WWW: http://xmms-a52dec.sourceforge.net/
