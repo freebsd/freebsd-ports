@@ -3,7 +3,7 @@
 # Date created:         1 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.8 1995/04/15 04:34:11 asami Exp $
+# $Id: Makefile,v 1.9 1995/04/15 14:44:37 joerg Exp $
 #
 
 DISTNAME=	xdvi
@@ -17,6 +17,8 @@ MAINTAINER=	jmz@FreeBSD.org
 USE_IMAKE=	yes
 USE_GMAKE=	yes
 IS_INTERACTIVE=	yes
+
+XMKMF=		xmkmf
 
 .if !defined(BATCH)
 install:
