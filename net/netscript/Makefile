@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	netscript
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.realhalo.org/netscript/
 EXTRACT_SUFX=	.tgz
