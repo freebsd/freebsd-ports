@@ -23,6 +23,7 @@ WRKSRC=		${WRKDIR}/vmware-freebsd-tools
 ONLY_FOR_ARCHS=	i386
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
+NO_LATEST_LINK=	yes
 
 RESTRICTED=	"Not sure if we can redistribute this."
 NO_PACKAGE=	${RESTRICTED}

@@ -26,6 +26,7 @@ IS_INTERACTIVE=	yes
 
 RESTRICTED=	"Not sure if we can redistribute this."
 NO_PACKAGE=	${RESTRICTED}
+NO_LATEST_LINK=	yes
 
 .include <bsd.port.pre.mk>
 
