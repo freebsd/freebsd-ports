@@ -138,7 +138,6 @@
     SUBDIR += snns
     SUBDIR += solitaire
     SUBDIR += spar
-    SUBDIR += spin
     SUBDIR += ss
     SUBDIR += superlu
     SUBDIR += surf
