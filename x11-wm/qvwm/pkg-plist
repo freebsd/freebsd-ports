@@ -1,0 +1,22 @@
+bin/qvwm
+lib/X11/qvwm/pixmaps/emacs.xpm
+lib/X11/qvwm/pixmaps/exit.xpm
+lib/X11/qvwm/pixmaps/help.xpm
+lib/X11/qvwm/pixmaps/retrieve.xpm
+lib/X11/qvwm/pixmaps/run.xpm
+lib/X11/qvwm/pixmaps/setting.xpm
+lib/X11/qvwm/pixmaps/taskbar.xpm
+lib/X11/qvwm/pixmaps/xcalc.xpm
+lib/X11/qvwm/pixmaps/xeyes.xpm
+lib/X11/qvwm/pixmaps/xterm.xpm
+lib/X11/qvwm/pixmaps/xv.xpm
+lib/X11/qvwm/system.qvwmrc
+lib/X11/qvwm/kanji.qvwmrc
+share/doc/qvwm/BUGS.en
+share/doc/qvwm/CHANGES.en
+share/doc/qvwm/INSTALL.en
+share/doc/qvwm/README.en
+share/doc/qvwm/TODO.en
+@dirrm lib/X11/qvwm/pixmaps
+@dirrm lib/X11/qvwm
+@dirrm share/doc/qvwm
