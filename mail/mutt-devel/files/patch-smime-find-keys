@@ -1,0 +1,13 @@
+--- smime.c.orig2	Sat Feb 19 13:49:51 2005
++++ smime.c	Sun Feb 20 08:58:35 2005
+@@ -464,8 +464,8 @@
+       }
+     }
+     if (hash) {
+-      fname = safe_malloc(14); /* Hash + '.' + Suffix + \n + \0 */
+-      sprintf(fname, "%.8x.%i\n", Table[cur].hash, Table[cur].suffix);
++      fname = safe_malloc(13); /* Hash + '.' + Suffix + \0 */
++      sprintf(fname, "%.8x.%i", Table[cur].hash, Table[cur].suffix);
+     }
+     else fname = NULL;
+   
