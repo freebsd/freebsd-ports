@@ -9,3 +9,11 @@
  #include <sys/poll.h>
  #else
  #include <poll.h>
+@@ -175,6 +175,7 @@
+ 	{ 0, "text/plain;charset=ksc5601.1992-0", "KSC5601.1992-0", 8 },
+ 	// eastern european encodings
+ 	{ 0, "text/plain;charset=koi8-r", "KOI8-R", 8 },
++	{ 0, "text/plain;charset=koi8-u", "KOI8-U", 8 },
+ 	// String (== iso8859-1)
+ 	{ XA_STRING, "text/plain;charset=string", "STRING", 8 },
+     // special for compound text
