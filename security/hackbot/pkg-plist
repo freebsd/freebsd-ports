@@ -1,0 +1,5 @@
+bin/hackbot.pl
+etc/hackbot/google.db
+etc/hackbot/fingerprint.db
+etc/hackbot/cgi.db
+@dirrm etc/hackbot
