@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	${SITE_PERL}/Tie/IxHash.pm:${PORTSDIR}/www/p5-Tie-IxHash
+BUILD_DEPENDS=	${SITE_PERL}/Tie/IxHash.pm:${PORTSDIR}/devel/p5-Tie-IxHash
 
 SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 USE_PERL5=	yes
