@@ -1,0 +1,16 @@
+To complete the installation of Plone: 
+
+- Restart Zope.  This may be done from the Zope Control Panel.
+
+If you are upgrading from an earlier version:
+
+- Go to http://yoursite/manage
+
+- Go to portal_migrations
+
+- Click the Migration tab
+
+- Click Migrate
+
+If you are upgrading from plone 1.0, please read:
+http://plone.org/documentation/migration/2.0
