@@ -64,8 +64,8 @@ MAKE_ENV+=	LT_CURRENT="${SHLIB_MAJ}" LT_REVISION="${SHLIB_MIN}"
 PLIST_SUB+=	LIBVER="${SHLIB_MAJ}"
 MAN1=		reswrap.1
 
-# Uncomment this to turn the default optimization flags on.
-CXXFLAGS=	-O2 -Wuninitialized -ffast-math -finline-functions -fomit-frame-pointer -fexpensive-optimizations
+# Uncomment this to turn the distribution-recommended optimization flags on.
+#CXXFLAGS=	-O2 -Wuninitialized -ffast-math -finline-functions -fomit-frame-pointer -fexpensive-optimizations
 
 .if defined(WITH_XUNICODE)
 post-extract:
