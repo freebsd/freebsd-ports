@@ -1,10 +1,8 @@
-# $Id: Makefile,v 1.65 1995/05/13 11:07:42 asami Exp $
-#
-# BROKEN: iv
+# $Id: Makefile,v 1.66 1995/05/14 03:30:07 asami Exp $
 #
 
 SUBDIR= XFree86 Xaw3d blt color_xterm ctwm emiclock emu fvwm g3view \
-	olvwm piewm \
+	iv olvwm piewm \
 	rxvt sxpc tk tkhfs tkinfo tkman tvtwm \
 	x3270 xcolors xdaliclock xdtm xearth xfed xfm xgrab \
 	xkeycaps xloadimage xlockmore xperfmon xphoon xsnow \
