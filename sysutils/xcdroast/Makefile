@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	xcdroast
-PORTVERSION=	0.98.a.9
+PORTVERSION=	0.98.a.10
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.xcdroast.org/download/
-DISTNAME=	${PORTNAME}-0.98alpha9
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a./alpha/}
 
 MAINTAINER=	lehmann@ans-netz.de
 
@@ -22,6 +22,7 @@ USE_GTK=	yes
 USE_IMLIB=	yes
 
 MAKE_ENV+=	GTK_CONFIG="${GTK_CONFIG}" \
+		GLIB_CONFIG="${GLIB_CONFIG}" \
 		IMLIB_CONFIG="${IMLIB_CONFIG}"
 
 post-patch:
@@ -29,31 +30,11 @@ post-patch:
 	  ${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/$$i ; \
 	done
 
-	for i in Makefile ; do \
+	for i in Makefile xcdroast.h ; do \
 	  ${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/$$i ; \
 	done
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
-
-enable-nonroot:
-
-	/usr/sbin/pw groupadd -n cdwrite
-
-	for i in cdrecord cdda2wav mkisofs readcd; do \
-	    ${CHOWN} root:cdwrite ${LOCALBASE}/bin/$$i ; \
-	    ${CHMOD} 4710 ${LOCALBASE}/bin/$$i ; \
-	done
-
-	${CHOWN} root:cdwrite ${PREFIX}/lib/xcdroast-0.98/bin/xcdrwrap
-	${CHMOD} 2755 ${PREFIX}/lib/xcdroast-0.98/bin/xcdrwrap
-
-	@${ECHO} ""
-	@${ECHO} "***************************************************************"
-	@${ECHO} " The first time root have to start xcdroast, to create the"
-	@${ECHO} " root-configuration-file ${PREFIX}/etc/xcdroast.conf. Without"
-	@${ECHO} " this file, a normal user will get an error message."
-	@${ECHO} "***************************************************************"
-	@${ECHO} ""
 
 .include <bsd.port.mk>
