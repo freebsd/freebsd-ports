@@ -3,7 +3,7 @@
 # Date created:         31 Aug 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.1.1.1 1995/08/30 00:49:35 ache Exp $
+# $Id: Makefile,v 1.1.1.1 1995/08/31 20:01:49 ache Exp $
 #
 
 PKGNAME=        russian-X11
@@ -11,7 +11,7 @@ CATEGORIES+=    x11
 
 MAINTAINER=	ache@FreeBSD.ORG
 
-EXEC_DEPENDS += ${X11BASE}/bin/xinit:${PORTSDIR}/x11/XFree86
+RUN_DEPENDS += ${X11BASE}/bin/xinit:${PORTSDIR}/x11/XFree86
 
 NO_EXTRACT=     YES
 NO_WRKSUBDIR=   YES
