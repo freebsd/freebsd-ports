@@ -1,0 +1,38 @@
+*** :makeall.ORIG	Thu Sep 13 22:22:01 1990
+--- :makeall	Mon Feb 13 11:34:57 1995
+***************
+*** 11,17 ****
+  	echo ------- Doing $mod -------
+  	echo -n "pushd "
+  	pushd $mod
+! 	make -k $name
+  	echo -n "popd "
+  	popd
+  end
+--- 11,17 ----
+  	echo ------- Doing $mod -------
+  	echo -n "pushd "
+  	pushd $mod
+! 	gmake -k $name
+  	echo -n "popd "
+  	popd
+  end
+*** :makemains.ORIG	Thu Sep 13 22:22:01 1990
+--- :makemains	Mon Feb 13 11:35:29 1995
+***************
+*** 10,16 ****
+  	echo ------- Doing program $mod -------
+  	echo -n "pushd "
+  	pushd $mod
+! 	make -k 
+  	echo -n "popd "
+  	popd
+  end
+--- 10,16 ----
+  	echo ------- Doing program $mod -------
+  	echo -n "pushd "
+  	pushd $mod
+! 	gmake -k 
+  	echo -n "popd "
+  	popd
+  end
