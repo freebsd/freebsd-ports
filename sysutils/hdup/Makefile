@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	hdup
-PORTVERSION=	2.0.6
+PORTVERSION=	2.0.7
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.miek.nl/projects/hdup2/
+MASTER_SITES=	http://www.miek.nl/projects/hdup2/ \
+		http://www.miek.nl/projects/hdup2/previous
 
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	The little, spiffy, backup tool
