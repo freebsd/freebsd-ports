@@ -132,6 +132,8 @@ do-configure:
 	${ECHO_CMD} " -maxdepth 1 -exec ${LN} -s {} \; 2>/dev/null"	>>${WRKDIR}/linkfarm
 	${ECHO_CMD} -n "${FIND} ../../linux-beonex/plugins"	>>${WRKDIR}/linkfarm
 	${ECHO_CMD} " -maxdepth 1 -exec ${LN} -s {} \; 2>/dev/null"	>>${WRKDIR}/linkfarm
+	${ECHO_CMD} -n "${FIND} ../../linux-flashplugin6"	>>${WRKDIR}/linkfarm
+	${ECHO_CMD} " -maxdepth 1 -exec ${LN} -s {} \; 2>/dev/null"	>>${WRKDIR}/linkfarm
 
 pre-install:
 	${ECHO_CMD} bin/${STARTUP_CMD} > ${PLIST}
