@@ -4,4 +4,4 @@
  #! /bin/sh
  
 -java -Xincgc -jar `dirname $0`/ApacheJMeter.jar "$@"
-+%%JAVA%% -jar `dirname $0`/ApacheJMeter.jar "$@"
++%%JAVA%% -jar %%APP_HOME%%/bin/ApacheJMeter.jar "$@"
