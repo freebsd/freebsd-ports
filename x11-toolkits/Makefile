@@ -84,8 +84,8 @@
     SUBDIR += libgnomeui
     SUBDIR += libgnomeuimm
     SUBDIR += libgnomeuimm26
-    SUBDIR += libgtkeditor
     SUBDIR += libgtk-java
+    SUBDIR += libgtkeditor
     SUBDIR += libj2dplot
     SUBDIR += libjparser
     SUBDIR += libjsearch
@@ -198,9 +198,9 @@
     SUBDIR += wxgtk2-contrib-devel
     SUBDIR += wxgtk2-devel
     SUBDIR += wxgtk2-unicode
-    SUBDIR += wxgtk2-unicode-devel
     SUBDIR += wxgtk2-unicode-contrib
     SUBDIR += wxgtk2-unicode-contrib-devel
+    SUBDIR += wxgtk2-unicode-devel
     SUBDIR += wxgtk2-utils-devel
     SUBDIR += wxmozilla
     SUBDIR += xbae
