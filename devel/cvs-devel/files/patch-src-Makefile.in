@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	Fri Apr 19 00:55:55 2002
-+++ src/Makefile.in	Mon Aug 26 20:51:29 2002
-@@ -98,7 +98,7 @@
+--- src/Makefile.in.orig	Fri Jan 17 06:36:43 2003
++++ src/Makefile.in	Thu Jan 23 01:41:33 2003
+@@ -106,7 +106,7 @@
  # some namespace hackery going on that maybe shouldn't be.  Long term fix is to
  # try and remove naming ocnflicts and fix Automake to allow particular includes
  # to be attached only to particular object files.  Short term fix is either or.
@@ -9,7 +9,7 @@
  
  bin_PROGRAMS = cvs
  bin_SCRIPTS = cvsbug
-@@ -139,6 +139,7 @@
+@@ -147,6 +147,7 @@
  	no_diff.c \
  	parseinfo.c \
  	patch.c \
@@ -17,7 +17,7 @@
  	rcs.c \
  	rcscmds.c \
  	recurse.c \
-@@ -179,8 +180,7 @@
+@@ -184,8 +185,7 @@
  
  cvs_LDADD = \
  	../diff/libdiff.a \
@@ -27,7 +27,7 @@
  
  
  # extra clean targets
-@@ -216,6 +216,7 @@
+@@ -221,6 +221,7 @@
  	main.$(OBJEXT) mkmodules.$(OBJEXT) modules.$(OBJEXT) \
  	myndbm.$(OBJEXT) no_diff.$(OBJEXT) parseinfo.$(OBJEXT) \
  	patch.$(OBJEXT) rcs.$(OBJEXT) rcscmds.$(OBJEXT) \
@@ -35,22 +35,29 @@
  	recurse.$(OBJEXT) release.$(OBJEXT) remove.$(OBJEXT) \
  	repos.$(OBJEXT) root.$(OBJEXT) run.$(OBJEXT) scramble.$(OBJEXT) \
  	server.$(OBJEXT) status.$(OBJEXT) subr.$(OBJEXT) tag.$(OBJEXT) \
-@@ -231,7 +232,7 @@
- DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir) -I.
+@@ -236,7 +237,7 @@
+ DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
  CPPFLAGS = @CPPFLAGS@
  LDFLAGS = @LDFLAGS@
 -LIBS = @LIBS@
 +LIBS = @LIBS@ -lmd -lgnuregex -lz
  depcomp = $(SHELL) $(top_srcdir)/depcomp
- @AMDEP_TRUE@DEP_FILES = $(DEPDIR)/add.Po $(DEPDIR)/admin.Po \
- @AMDEP_TRUE@	$(DEPDIR)/annotate.Po $(DEPDIR)/buffer.Po \
-@@ -250,7 +251,8 @@
- @AMDEP_TRUE@	$(DEPDIR)/main.Po $(DEPDIR)/mkmodules.Po \
- @AMDEP_TRUE@	$(DEPDIR)/modules.Po $(DEPDIR)/myndbm.Po \
- @AMDEP_TRUE@	$(DEPDIR)/no_diff.Po $(DEPDIR)/parseinfo.Po \
--@AMDEP_TRUE@	$(DEPDIR)/patch.Po $(DEPDIR)/rcs.Po \
-+@AMDEP_TRUE@	$(DEPDIR)/patch.Po $(DEPDIR)/prepend_args.Po $(DEPDIR)/rcs.Po \
-+@AMDEP_TRUE@	$(DEPDIR)/prepend_args.Po \
- @AMDEP_TRUE@	$(DEPDIR)/rcscmds.Po $(DEPDIR)/recurse.Po \
- @AMDEP_TRUE@	$(DEPDIR)/release.Po $(DEPDIR)/remove.Po \
- @AMDEP_TRUE@	$(DEPDIR)/repos.Po $(DEPDIR)/root.Po \
+ am__depfiles_maybe = depfiles
+ @AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/add.Po ./$(DEPDIR)/admin.Po \
+@@ -256,7 +257,7 @@
+ @AMDEP_TRUE@	./$(DEPDIR)/main.Po ./$(DEPDIR)/mkmodules.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/modules.Po ./$(DEPDIR)/myndbm.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/no_diff.Po ./$(DEPDIR)/parseinfo.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/patch.Po ./$(DEPDIR)/rcs.Po \
++@AMDEP_TRUE@	./$(DEPDIR)/patch.Po ./$(DEPDIR)/prepend_args.Po ./$(DEPDIR)/rcs.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/rcscmds.Po ./$(DEPDIR)/recurse.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/release.Po ./$(DEPDIR)/remove.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/repos.Po ./$(DEPDIR)/root.Po \
+@@ -375,6 +376,7 @@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/no_diff.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/parseinfo.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/patch.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/prepend_args.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rcs.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rcscmds.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/recurse.Po@am__quote@

@@ -1,6 +1,6 @@
 Index: FREEBSD-upgrade
 diff -u /dev/null src/contrib/cvs/FREEBSD-upgrade:1.10
---- /dev/null	Wed Sep 11 20:31:44 2002
+--- /dev/null	Wed Jan 22 14:40:02 2003
 +++ FREEBSD-upgrade	Mon Sep  2 00:58:30 2002
 @@ -0,0 +1,58 @@
 +FreeBSD: /cvs/cvsup/ncvs/src/contrib/cvs/FREEBSD-upgrade,v 1.10 2002/09/02 05:58:30 peter Exp $
@@ -76,7 +76,7 @@ diff -u src/contrib/cvs/contrib/sccs2rcs.in:1.1.1.2 src/contrib/cvs/contrib/sccs
 Index: diff/diagmeet.note
 diff -u src/contrib/cvs/diff/diagmeet.note:1.1.1.1 src/contrib/cvs/diff/diagmeet.note:removed
 --- src/contrib/cvs/diff/diagmeet.note:1.1.1.1	Sun Jan 25 21:09:49 1998
-+++ diff/diagmeet.note	Wed Sep 11 20:31:44 2002
++++ diff/diagmeet.note	Wed Jan 22 14:40:03 2003
 @@ -1,71 +0,0 @@
 -Here is a comparison matrix which shows a case in which
 -it is possible for the forward and backward scan in `diag'
@@ -377,37 +377,27 @@ diff -u src/contrib/cvs/man/cvsbug.8:1.1.1.4 src/contrib/cvs/man/cvsbug.8:1.3
  .TH CVSBUG 8 xVERSIONx "February 1993"
  .SH NAME
 Index: src/buffer.c
-diff -u src/contrib/cvs/src/buffer.c:1.1.1.4 src/contrib/cvs/src/buffer.c:1.2
---- src/contrib/cvs/src/buffer.c:1.1.1.4	Mon Sep  2 00:49:47 2002
-+++ src/buffer.c	Mon Sep  2 02:58:04 2002
+diff -u src/contrib/cvs/src/buffer.c:1.1.1.6 src/contrib/cvs/src/buffer.c:1.4
+--- src/contrib/cvs/src/buffer.c:1.1.1.6	Tue Jan 21 15:53:02 2003
++++ src/buffer.c	Tue Jan 21 16:01:38 2003
 @@ -1,5 +1,7 @@
  /* Code for the buffer data structure.  */
  
-+/* FreeBSD: /cvs/cvsup/ncvs/src/contrib/cvs/src/buffer.c,v 1.2 2002/09/02 07:58:04 peter Exp $ */
++/* FreeBSD: /cvs/cvsup/ncvs/src/contrib/cvs/src/buffer.c,v 1.4 2003/01/21 22:01:38 peter Exp $ */
 +
  #include <assert.h>
  #include "cvs.h"
  #include "buffer.h"
-@@ -1378,8 +1380,7 @@
- 
-     if (buf->input)
-     {
--	if (! buf_empty_p (buf)
--	    || getc (bc->fp) != EOF)
-+	if (! buf_empty_p (buf))
- 	{
- # ifdef SERVER_SUPPORT
- 	    if (server_active)
 Index: src/checkout.c
-diff -u src/contrib/cvs/src/checkout.c:1.1.1.11 src/contrib/cvs/src/checkout.c:1.3
---- src/contrib/cvs/src/checkout.c:1.1.1.11	Mon Sep  2 00:49:47 2002
-+++ src/checkout.c	Mon Sep  2 00:57:13 2002
+diff -u src/contrib/cvs/src/checkout.c:1.1.1.12 src/contrib/cvs/src/checkout.c:1.4
+--- src/contrib/cvs/src/checkout.c:1.1.1.12	Sun Dec  1 21:13:37 2002
++++ src/checkout.c	Sun Dec  1 21:17:48 2002
 @@ -33,6 +33,10 @@
   * edited by the user, if necessary (when the repository is moved, e.g.)
   */
  
 +/*
-+ * FreeBSD: /cvs/cvsup/ncvs/src/contrib/cvs/src/checkout.c,v 1.3 2002/09/02 05:57:13 peter Exp $
++ * FreeBSD: /cvs/cvsup/ncvs/src/contrib/cvs/src/checkout.c,v 1.4 2002/12/02 03:17:48 peter Exp $
 + */
 +
  #include <assert.h>
@@ -467,21 +457,21 @@ diff -u src/contrib/cvs/src/checkout.c:1.1.1.11 src/contrib/cvs/src/checkout.c:1
      free (preload_update_dir);
      preload_update_dir = oldupdate;
 Index: src/client.c
-diff -u src/contrib/cvs/src/client.c:1.1.1.12 src/contrib/cvs/src/client.c:1.8
---- src/contrib/cvs/src/client.c:1.1.1.12	Mon Sep  2 00:49:49 2002
-+++ src/client.c	Mon Sep  2 00:57:13 2002
+diff -u src/contrib/cvs/src/client.c:1.1.1.14 src/contrib/cvs/src/client.c:1.10
+--- src/contrib/cvs/src/client.c:1.1.1.14	Tue Jan 21 15:53:02 2003
++++ src/client.c	Tue Jan 21 16:01:38 2003
 @@ -12,6 +12,10 @@
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.  */
  
 +/*
-+ * FreeBSD: /cvs/cvsup/ncvs/src/contrib/cvs/src/client.c,v 1.8 2002/09/02 05:57:13 peter Exp $
++ * FreeBSD: /cvs/cvsup/ncvs/src/contrib/cvs/src/client.c,v 1.10 2003/01/21 22:01:38 peter Exp $
 + */
 +
  #ifdef HAVE_CONFIG_H
  # include "config.h"
  #endif /* HAVE_CONFIG_H */
-@@ -251,7 +255,7 @@
+@@ -252,7 +256,7 @@
  	}
  
  	/* Now check the value for root. */
@@ -490,7 +480,7 @@ diff -u src/contrib/cvs/src/client.c:1.1.1.12 src/contrib/cvs/src/client.c:1.8
  	    && (strcmp (this_root, current_parsed_root->original) != 0))
  	{
  	    /* Don't send this, since the CVSROOTs don't match. */
-@@ -4810,7 +4814,7 @@
+@@ -4823,7 +4827,7 @@
  	   example in CVS_RSH or other such mechanisms to be devised,
  	   if that is what they want (the manual already tells them
  	   that).  */
@@ -499,7 +489,7 @@ diff -u src/contrib/cvs/src/client.c:1.1.1.12 src/contrib/cvs/src/client.c:1.8
      if (!cvs_server)
  	cvs_server = "cvs";
  
-@@ -4871,7 +4875,7 @@
+@@ -4884,7 +4888,7 @@
      int child_pid;
  
      if (!cvs_rsh)
@@ -508,7 +498,7 @@ diff -u src/contrib/cvs/src/client.c:1.1.1.12 src/contrib/cvs/src/client.c:1.8
      if (!cvs_server)
  	cvs_server = "cvs";
  
-@@ -5227,7 +5231,8 @@
+@@ -5240,7 +5244,8 @@
      }
      else if (vers->ts_rcs == NULL
  	     || args->force
@@ -519,18 +509,18 @@ diff -u src/contrib/cvs/src/client.c:1.1.1.12 src/contrib/cvs/src/client.c:1.8
  	if (args->no_contents
  	    && supported_request ("Is-modified"))
 Index: src/commit.c
-diff -u src/contrib/cvs/src/commit.c:1.1.1.10 src/contrib/cvs/src/commit.c:1.11
---- src/contrib/cvs/src/commit.c:1.1.1.10	Mon Sep  2 00:49:49 2002
-+++ src/commit.c	Mon Sep  2 00:57:13 2002
+diff -u src/contrib/cvs/src/commit.c:1.1.1.12 src/contrib/cvs/src/commit.c:1.13
+--- src/contrib/cvs/src/commit.c:1.1.1.12	Tue Jan 21 15:53:02 2003
++++ src/commit.c	Tue Jan 21 16:01:38 2003
 @@ -12,6 +12,7 @@
   *
   * The call is: cvs commit [options] files...
   *
-+ * FreeBSD: /cvs/cvsup/ncvs/src/contrib/cvs/src/commit.c,v 1.11 2002/09/02 05:57:13 peter Exp $
++ * FreeBSD: /cvs/cvsup/ncvs/src/contrib/cvs/src/commit.c,v 1.13 2003/01/21 22:01:38 peter Exp $
   */
  
  #include <assert.h>
-@@ -2129,6 +2130,8 @@
+@@ -2144,6 +2145,8 @@
  	    /* branch does not exist.  Stub it.  */
  	    char *head;
  	    char *magicrev;
@@ -540,18 +530,18 @@ diff -u src/contrib/cvs/src/commit.c:1.1.1.10 src/contrib/cvs/src/commit.c:1.11
  	    head = RCS_getversion (rcsfile, NULL, NULL, 0, (int *) NULL);
  	    magicrev = RCS_magicrev (rcsfile, head);
 Index: src/cvs.h
-diff -u src/contrib/cvs/src/cvs.h:1.1.1.11 src/contrib/cvs/src/cvs.h:1.15
---- src/contrib/cvs/src/cvs.h:1.1.1.11	Mon Sep  2 00:50:02 2002
-+++ src/cvs.h	Mon Sep  2 00:57:13 2002
+diff -u src/contrib/cvs/src/cvs.h:1.1.1.13 src/contrib/cvs/src/cvs.h:1.17
+--- src/contrib/cvs/src/cvs.h:1.1.1.13	Tue Jan 21 15:53:02 2003
++++ src/cvs.h	Tue Jan 21 16:01:38 2003
 @@ -9,6 +9,7 @@
  /*
   * basic information used in all source files
   *
-+ * FreeBSD: /cvs/cvsup/ncvs/src/contrib/cvs/src/cvs.h,v 1.15 2002/09/02 05:57:13 peter Exp $
++ * FreeBSD: /cvs/cvsup/ncvs/src/contrib/cvs/src/cvs.h,v 1.17 2003/01/21 22:01:38 peter Exp $
   */
  
  
-@@ -190,6 +191,7 @@
+@@ -193,6 +194,7 @@
  #define CVSROOTADM_WRITERS	"writers"
  #define CVSROOTADM_PASSWD	"passwd"
  #define CVSROOTADM_CONFIG	"config"
@@ -559,16 +549,16 @@ diff -u src/contrib/cvs/src/cvs.h:1.1.1.11 src/contrib/cvs/src/cvs.h:1.15
  
  #define CVSNULLREPOS		"Emptydir"	/* an empty directory */
  
-@@ -259,6 +261,8 @@
+@@ -262,6 +264,8 @@
  #define	CVSREAD_ENV	"CVSREAD"	/* make files read-only */
  #define	CVSREAD_DFLT	0		/* writable files by default */
  
 +#define	CVSREADONLYFS_ENV "CVSREADONLYFS" /* repository is read-only */
 +
  #define	TMPDIR_ENV	"TMPDIR"	/* Temporary directory */
- /* #define	TMPDIR_DFLT		   Set by options.h */
  
-@@ -366,6 +370,7 @@
+ #define	EDITOR1_ENV	"CVSEDITOR"	/* which editor to use */
+@@ -371,6 +375,7 @@
  extern int use_editor;
  extern int cvswrite;
  extern mode_t cvsumask;
@@ -576,7 +566,7 @@ diff -u src/contrib/cvs/src/cvs.h:1.1.1.11 src/contrib/cvs/src/cvs.h:1.15
  
  
  
-@@ -384,7 +389,9 @@
+@@ -389,7 +394,9 @@
  
  extern int trace;		/* Show all commands */
  extern int noexec;		/* Don't modify disk anywhere */
@@ -586,15 +576,15 @@ diff -u src/contrib/cvs/src/cvs.h:1.1.1.11 src/contrib/cvs/src/cvs.h:1.15
  
  extern int top_level_admin;
  
-@@ -489,6 +496,7 @@
- char *get_homedir PROTO ((void));
+@@ -491,6 +498,7 @@
+ char *strcat_filename_onto_homedir PROTO ((const char *, const char *));
  char *cvs_temp_name PROTO ((void));
  FILE *cvs_temp_file PROTO ((char **filename));
 +void parseopts PROTO ((const char *root));
  
  int numdots PROTO((const char *s));
  char *increment_revnum PROTO ((const char *));
-@@ -525,6 +533,7 @@
+@@ -527,6 +535,7 @@
  void ParseTag PROTO((char **tagp, char **datep, int *nonbranchp));
  void WriteTag PROTO ((char *dir, char *tag, char *date, int nonbranch,
  		      char *update_dir, char *repository));
@@ -603,15 +593,15 @@ diff -u src/contrib/cvs/src/cvs.h:1.1.1.11 src/contrib/cvs/src/cvs.h:1.15
  void check_entries PROTO((char *dir));
  void close_module PROTO((DBM * db));
 Index: src/diff.c
-diff -u src/contrib/cvs/src/diff.c:1.1.1.9 src/contrib/cvs/src/diff.c:1.17
---- src/contrib/cvs/src/diff.c:1.1.1.9	Mon Sep  2 00:49:50 2002
-+++ src/diff.c	Mon Sep  2 00:57:13 2002
+diff -u src/contrib/cvs/src/diff.c:1.1.1.11 src/contrib/cvs/src/diff.c:1.19
+--- src/contrib/cvs/src/diff.c:1.1.1.11	Tue Jan 21 15:53:02 2003
++++ src/diff.c	Tue Jan 21 16:01:38 2003
 @@ -12,6 +12,8 @@
   * 
   * Without any file arguments, runs diff against all the currently modified
   * files.
 + *
-+ * FreeBSD: /cvs/cvsup/ncvs/src/contrib/cvs/src/diff.c,v 1.17 2002/09/02 05:57:13 peter Exp $
++ * FreeBSD: /cvs/cvsup/ncvs/src/contrib/cvs/src/diff.c,v 1.19 2003/01/21 22:01:38 peter Exp $
   */
  
  #include "cvs.h"
@@ -686,9 +676,9 @@ diff -u src/contrib/cvs/src/diff.c:1.1.1.9 src/contrib/cvs/src/diff.c:1.17
 -	if (diff_date2)
 +	else if (diff_date2)
  	    client_senddate (diff_date2);
+ 	send_arg ("--");
  
- 	/* Send the current files unless diffing two revs from the archive */
-@@ -401,28 +432,26 @@
+@@ -402,27 +433,25 @@
  
  	send_to_server ("diff\012", 0);
          err = get_responses_and_close ();
@@ -713,7 +703,7 @@ diff -u src/contrib/cvs/src/diff.c:1.1.1.9 src/contrib/cvs/src/diff.c:1.17
 -    /* start the recursion processor */
 -    err = start_recursion (diff_fileproc, diff_filesdoneproc, diff_dirproc,
 -			   diff_dirleaveproc, NULL, argc, argv, local,
--			   which, 0, 1, (char *) NULL, 1);
+-			   which, 0, CVS_LOCK_READ, (char *) NULL, 1);
 +    {
 +	if (diff_rev1 != NULL)
 +	    tag_check_valid (diff_rev1, argc, argv, local, 0, "");
@@ -729,13 +719,12 @@ diff -u src/contrib/cvs/src/diff.c:1.1.1.9 src/contrib/cvs/src/diff.c:1.17
 +	/* start the recursion processor */
 +	err = start_recursion (diff_fileproc, diff_filesdoneproc, diff_dirproc,
 +			       diff_dirleaveproc, NULL, argc, argv, local,
-+			       which, 0, 1, (char *) NULL, 1);
- 
++			       which, 0, CVS_LOCK_READ, (char *) NULL, 1);
 +    }
+ 
      /* clean up */
      free (options);
-     options = NULL;
-@@ -431,6 +460,10 @@
+@@ -432,6 +461,10 @@
  	free (diff_date1);
      if (diff_date2 != NULL)
  	free (diff_date2);
@@ -746,7 +735,7 @@ diff -u src/contrib/cvs/src/diff.c:1.1.1.9 src/contrib/cvs/src/diff.c:1.17
  
      return (err);
  }
-@@ -480,7 +513,7 @@
+@@ -481,7 +514,7 @@
  		int exists;
  
  		exists = 0;
@@ -755,7 +744,7 @@ diff -u src/contrib/cvs/src/diff.c:1.1.1.9 src/contrib/cvs/src/diff.c:1.17
  		if (diff_rev1 && strcmp (diff_rev1, TAG_HEAD) == 0)
  		{
  		    char *head =
-@@ -886,7 +919,7 @@
+@@ -887,7 +920,7 @@
  
      if (diff_rev1 || diff_date1)
      {
@@ -764,7 +753,7 @@ diff -u src/contrib/cvs/src/diff.c:1.1.1.9 src/contrib/cvs/src/diff.c:1.17
  	if (diff_rev1 && strcmp (diff_rev1, TAG_HEAD) == 0)
  	    use_rev1 = ((vers->vn_rcs == NULL || vers->srcfile == NULL)
  			? NULL
-@@ -901,7 +934,7 @@
+@@ -902,7 +935,7 @@
      }
      if (diff_rev2 || diff_date2)
      {
@@ -865,15 +854,15 @@ diff -u src/contrib/cvs/src/entries.c:1.1.1.7 src/contrib/cvs/src/entries.c:1.2
  
  /*
 Index: src/filesubr.c
-diff -u src/contrib/cvs/src/filesubr.c:1.1.1.9 src/contrib/cvs/src/filesubr.c:1.9
---- src/contrib/cvs/src/filesubr.c:1.1.1.9	Mon Sep  2 00:49:51 2002
-+++ src/filesubr.c	Mon Sep  2 00:57:13 2002
+diff -u src/contrib/cvs/src/filesubr.c:1.1.1.10 src/contrib/cvs/src/filesubr.c:1.10
+--- src/contrib/cvs/src/filesubr.c:1.1.1.10	Sun Dec  1 21:13:37 2002
++++ src/filesubr.c	Sun Dec  1 21:17:48 2002
 @@ -17,6 +17,10 @@
     definitions under operating systems (like, say, Windows NT) with different
     file system semantics.  */
  
 +/*
-+ * FreeBSD: /cvs/cvsup/ncvs/src/contrib/cvs/src/filesubr.c,v 1.9 2002/09/02 05:57:13 peter Exp $
++ * FreeBSD: /cvs/cvsup/ncvs/src/contrib/cvs/src/filesubr.c,v 1.10 2002/12/02 03:17:48 peter Exp $
 + */
 +
  #include <assert.h>
@@ -912,28 +901,28 @@ diff -u src/contrib/cvs/src/filesubr.c:1.1.1.9 src/contrib/cvs/src/filesubr.c:1.
      tfile = xstrdup (file);
      free (file);
 Index: src/import.c
-diff -u src/contrib/cvs/src/import.c:1.1.1.11 src/contrib/cvs/src/import.c:1.10
---- src/contrib/cvs/src/import.c:1.1.1.11	Mon Sep  2 00:49:52 2002
-+++ src/import.c	Mon Sep  2 00:57:13 2002
+diff -u src/contrib/cvs/src/import.c:1.1.1.12 src/contrib/cvs/src/import.c:1.11
+--- src/contrib/cvs/src/import.c:1.1.1.12	Sun Dec  1 21:13:37 2002
++++ src/import.c	Sun Dec  1 21:17:48 2002
 @@ -14,6 +14,8 @@
   *	VendorReleTag	Tag for this particular release
   *
   * Additional arguments specify more Vendor Release Tags.
 + *
-+ * FreeBSD: /cvs/cvsup/ncvs/src/contrib/cvs/src/import.c,v 1.10 2002/09/02 05:57:13 peter Exp $
++ * FreeBSD: /cvs/cvsup/ncvs/src/contrib/cvs/src/import.c,v 1.11 2002/12/02 03:17:48 peter Exp $
   */
  
  #include "cvs.h"
 Index: src/lock.c
-diff -u src/contrib/cvs/src/lock.c:1.1.1.9 src/contrib/cvs/src/lock.c:1.10
---- src/contrib/cvs/src/lock.c:1.1.1.9	Mon Sep  2 00:49:52 2002
-+++ src/lock.c	Mon Sep  2 00:57:13 2002
+diff -u src/contrib/cvs/src/lock.c:1.1.1.11 src/contrib/cvs/src/lock.c:1.12
+--- src/contrib/cvs/src/lock.c:1.1.1.11	Tue Jan 21 15:53:02 2003
++++ src/lock.c	Tue Jan 21 16:01:38 2003
 @@ -8,6 +8,8 @@
   * Set Lock
   * 
   * Lock file support for CVS.
 + *
-+ * FreeBSD: /cvs/cvsup/ncvs/src/contrib/cvs/src/lock.c,v 1.10 2002/09/02 05:57:13 peter Exp $
++ * FreeBSD: /cvs/cvsup/ncvs/src/contrib/cvs/src/lock.c,v 1.12 2003/01/21 22:01:38 peter Exp $
   */
  
  /* The node Concurrency in doc/cvs.texinfo has a brief introduction to
@@ -959,32 +948,32 @@ diff -u src/contrib/cvs/src/lock.c:1.1.1.9 src/contrib/cvs/src/lock.c:1.10
      /* We only know how to do one list at a time */
      if (locklist != (List *) NULL)
 Index: src/login.c
-diff -u src/contrib/cvs/src/login.c:1.1.1.7 src/contrib/cvs/src/login.c:1.6
---- src/contrib/cvs/src/login.c:1.1.1.7	Mon Sep  2 00:49:53 2002
-+++ src/login.c	Mon Sep  2 00:57:13 2002
+diff -u src/contrib/cvs/src/login.c:1.1.1.8 src/contrib/cvs/src/login.c:1.7
+--- src/contrib/cvs/src/login.c:1.1.1.8	Sun Dec  1 21:13:37 2002
++++ src/login.c	Sun Dec  1 21:17:48 2002
 @@ -5,6 +5,8 @@
   * specified in the README file that comes with CVS.
   * 
   * Allow user to log in for an authenticating server.
 + *
-+ * FreeBSD: /cvs/cvsup/ncvs/src/contrib/cvs/src/login.c,v 1.6 2002/09/02 05:57:13 peter Exp $
++ * FreeBSD: /cvs/cvsup/ncvs/src/contrib/cvs/src/login.c,v 1.7 2002/12/02 03:17:48 peter Exp $
   */
  
  #include "cvs.h"
 Index: src/logmsg.c
-diff -u src/contrib/cvs/src/logmsg.c:1.1.1.8 src/contrib/cvs/src/logmsg.c:1.10
---- src/contrib/cvs/src/logmsg.c:1.1.1.8	Mon Sep  2 00:49:53 2002
-+++ src/logmsg.c	Mon Sep  2 00:57:13 2002
+diff -u src/contrib/cvs/src/logmsg.c:1.1.1.9 src/contrib/cvs/src/logmsg.c:1.11
+--- src/contrib/cvs/src/logmsg.c:1.1.1.9	Sun Dec  1 21:13:37 2002
++++ src/logmsg.c	Sun Dec  1 21:17:48 2002
 @@ -4,6 +4,8 @@
   * 
   * You may distribute under the terms of the GNU General Public License as
   * specified in the README file that comes with the CVS source distribution.
 + *
-+ * FreeBSD: /cvs/cvsup/ncvs/src/contrib/cvs/src/logmsg.c,v 1.10 2002/09/02 05:57:13 peter Exp $
++ * FreeBSD: /cvs/cvsup/ncvs/src/contrib/cvs/src/logmsg.c,v 1.11 2002/12/02 03:17:48 peter Exp $
   */
  
  #include <assert.h>
-@@ -222,6 +224,8 @@
+@@ -225,6 +227,8 @@
  	    (*messagep)[strlen (*messagep) - 1] != '\n')
  	    (void) fprintf (fp, "\n");
      }
@@ -994,14 +983,14 @@ diff -u src/contrib/cvs/src/logmsg.c:1.1.1.8 src/contrib/cvs/src/logmsg.c:1.10
      if (repository != NULL)
  	/* tack templates on if necessary */
 Index: src/main.c
-diff -u src/contrib/cvs/src/main.c:1.1.1.11 src/contrib/cvs/src/main.c:1.21
---- src/contrib/cvs/src/main.c:1.1.1.11	Mon Sep  2 00:49:53 2002
-+++ src/main.c	Mon Sep  2 00:57:13 2002
+diff -u src/contrib/cvs/src/main.c:1.1.1.12 src/contrib/cvs/src/main.c:1.22
+--- src/contrib/cvs/src/main.c:1.1.1.12	Sun Dec  1 21:13:37 2002
++++ src/main.c	Sun Dec  1 21:17:48 2002
 @@ -10,10 +10,12 @@
   * Credit to Dick Grune, Vrije Universiteit, Amsterdam, for writing
   * the shell-script CVS system that this is based on.
   *
-+ * FreeBSD: /cvs/cvsup/ncvs/src/contrib/cvs/src/main.c,v 1.21 2002/09/02 05:57:13 peter Exp $
++ * FreeBSD: /cvs/cvsup/ncvs/src/contrib/cvs/src/main.c,v 1.22 2002/12/02 03:17:48 peter Exp $
   */
  
  #include <assert.h>
@@ -1086,7 +1075,7 @@ diff -u src/contrib/cvs/src/main.c:1.1.1.11 src/contrib/cvs/src/main.c:1.21
  	    case '?':
  	    default:
                  usage (usg);
-@@ -744,6 +772,12 @@
+@@ -746,6 +774,12 @@
  	    (void) putenv (env);
  	    /* do not free env, as putenv has control of it */
  	}
@@ -1099,7 +1088,7 @@ diff -u src/contrib/cvs/src/main.c:1.1.1.11 src/contrib/cvs/src/main.c:1.21
  #endif
  
  #ifndef DONT_USE_SIGNALS
-@@ -969,6 +1003,9 @@
+@@ -971,6 +1005,9 @@
  		   if we didn't, then there would be no way to check in a new
  		   CVSROOT/config file to fix the broken one!  */
  		parse_config (current_parsed_root->directory);
@@ -1109,7 +1098,7 @@ diff -u src/contrib/cvs/src/main.c:1.1.1.11 src/contrib/cvs/src/main.c:1.21
  	    }
  
  #ifdef CLIENT_SUPPORT
-@@ -1153,4 +1190,62 @@
+@@ -1158,4 +1195,62 @@
      for (; *cpp; cpp++)
  	(void) fprintf (stderr, *cpp);
      error_exit ();
@@ -1189,19 +1178,19 @@ diff -u src/contrib/cvs/src/mkmodules.c:1.1.1.11 src/contrib/cvs/src/mkmodules.c
  #include "cvs.h"
  #include "savecwd.h"
 Index: src/rcs.c
-diff -u src/contrib/cvs/src/rcs.c:1.1.1.11 src/contrib/cvs/src/rcs.c:1.23
---- src/contrib/cvs/src/rcs.c:1.1.1.11	Mon Sep  2 00:49:56 2002
-+++ src/rcs.c	Mon Sep  2 00:57:13 2002
+diff -u src/contrib/cvs/src/rcs.c:1.1.1.13 src/contrib/cvs/src/rcs.c:1.25
+--- src/contrib/cvs/src/rcs.c:1.1.1.13	Tue Jan 21 15:53:02 2003
++++ src/rcs.c	Tue Jan 21 16:01:38 2003
 @@ -6,6 +6,8 @@
   * 
   * The routines contained in this file do all the rcs file parsing and
   * manipulation
 + *
-+ * FreeBSD: /cvs/cvsup/ncvs/src/contrib/cvs/src/rcs.c,v 1.23 2002/09/02 05:57:13 peter Exp $
++ * FreeBSD: /cvs/cvsup/ncvs/src/contrib/cvs/src/rcs.c,v 1.25 2003/01/21 22:01:38 peter Exp $
   */
  
  #include <assert.h>
-@@ -130,6 +132,8 @@
+@@ -133,6 +135,8 @@
     evaluates its arguments multiple times.  */
  #define STREQ(a, b) ((a)[0] == (b)[0] && strcmp ((a), (b)) == 0)
  
@@ -1353,7 +1342,7 @@ diff -u src/contrib/cvs/src/rcs.c:1.1.1.11 src/contrib/cvs/src/rcs.c:1.23
  		    free (date);
  		    free_value = 1;
  		}
-@@ -8563,4 +8600,106 @@
+@@ -8562,4 +8599,106 @@
  	}
      }
      return label;
@@ -1483,56 +1472,67 @@ diff -u src/contrib/cvs/src/rcs.h:1.1.1.9 src/contrib/cvs/src/rcs.h:1.9
  
  extern int preserve_perms;
 Index: src/rcscmds.c
-diff -u src/contrib/cvs/src/rcscmds.c:1.1.1.8 src/contrib/cvs/src/rcscmds.c:1.8
---- src/contrib/cvs/src/rcscmds.c:1.1.1.8	Fri Aug 10 04:43:21 2001
-+++ src/rcscmds.c	Fri Aug 10 04:53:06 2001
+diff -u src/contrib/cvs/src/rcscmds.c:1.1.1.9 src/contrib/cvs/src/rcscmds.c:1.9
+--- src/contrib/cvs/src/rcscmds.c:1.1.1.9	Sun Dec  1 21:13:37 2002
++++ src/rcscmds.c	Sun Dec  1 21:17:48 2002
 @@ -7,6 +7,8 @@
   * 
   * The functions in this file provide an interface for performing 
   * operations directly on RCS files. 
 + *
-+ * FreeBSD: /cvs/cvsup/ncvs/src/contrib/cvs/src/rcscmds.c,v 1.8 2001/08/10 09:53:06 peter Exp $
++ * FreeBSD: /cvs/cvsup/ncvs/src/contrib/cvs/src/rcscmds.c,v 1.9 2002/12/02 03:17:48 peter Exp $
   */
  
  #include "cvs.h"
 Index: src/recurse.c
-diff -u src/contrib/cvs/src/recurse.c:1.1.1.10 src/contrib/cvs/src/recurse.c:1.9
---- src/contrib/cvs/src/recurse.c:1.1.1.10	Mon Sep  2 00:49:57 2002
-+++ src/recurse.c	Mon Sep  2 00:57:14 2002
+diff -u src/contrib/cvs/src/recurse.c:1.1.1.12 src/contrib/cvs/src/recurse.c:1.11
+--- src/contrib/cvs/src/recurse.c:1.1.1.12	Tue Jan 21 15:53:02 2003
++++ src/recurse.c	Tue Jan 21 16:01:38 2003
 @@ -6,6 +6,7 @@
   * 
   * General recursion handler
   * 
-+ * FreeBSD: /cvs/cvsup/ncvs/src/contrib/cvs/src/recurse.c,v 1.9 2002/09/02 05:57:14 peter Exp $
++ * FreeBSD: /cvs/cvsup/ncvs/src/contrib/cvs/src/recurse.c,v 1.11 2003/01/21 22:01:38 peter Exp $
   */
  
  #include "cvs.h"
 Index: src/server.c
-diff -u src/contrib/cvs/src/server.c:1.1.1.11 src/contrib/cvs/src/server.c:1.16
---- src/contrib/cvs/src/server.c:1.1.1.11	Mon Sep  2 00:49:59 2002
-+++ src/server.c	Mon Sep  2 00:57:14 2002
+diff -u src/contrib/cvs/src/server.c:1.1.1.13 src/contrib/cvs/src/server.c:1.19
+--- src/contrib/cvs/src/server.c:1.1.1.13	Tue Jan 21 15:53:02 2003
++++ src/server.c	Tue Jan 21 16:10:13 2003
 @@ -8,6 +8,10 @@
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.  */
  
 +/*
-+ * FreeBSD: /cvs/cvsup/ncvs/src/contrib/cvs/src/server.c,v 1.16 2002/09/02 05:57:14 peter Exp $
++ * FreeBSD: /cvs/cvsup/ncvs/src/contrib/cvs/src/server.c,v 1.19 2003/01/21 22:10:13 peter Exp $
 + */
 +
  #include <assert.h>
  #include "cvs.h"
  #include "watch.h"
-@@ -782,6 +786,9 @@
+@@ -772,6 +776,9 @@
         nothing.  But for rsh, we need to do it now.  */
      parse_config (current_parsed_root->directory);
  
 +    /* Now is a good time to read CVSROOT/options too. */
 +    parseopts(current_parsed_root->directory);
 +
-     path = malloc (strlen (current_parsed_root->directory)
+     path = xmalloc (strlen (current_parsed_root->directory)
  		   + sizeof (CVSROOTADM)
  		   + 2);
-@@ -5561,7 +5568,10 @@
+@@ -4745,8 +4752,8 @@
+   REQ_LINE("Max-dotdot", serve_max_dotdot, 0),
+   REQ_LINE("Static-directory", serve_static_directory, 0),
+   REQ_LINE("Sticky", serve_sticky, 0),
+-  REQ_LINE("Checkin-prog", serve_checkin_prog, 0),
+-  REQ_LINE("Update-prog", serve_update_prog, 0),
++  REQ_LINE("Checkin-prog", serve_noop, 0),
++  REQ_LINE("Update-prog", serve_noop, 0),
+   REQ_LINE("Entry", serve_entry, RQ_ESSENTIAL),
+   REQ_LINE("Kopt", serve_kopt, 0),
+   REQ_LINE("Checkin-time", serve_checkin_time, 0),
+@@ -5515,7 +5522,10 @@
         password file.  If so, that's enough to authenticate with.  If
         not, we'll check /etc/passwd. */
  
@@ -1545,15 +1545,15 @@ diff -u src/contrib/cvs/src/server.c:1.1.1.11 src/contrib/cvs/src/server.c:1.16
  
      if (rc == 2)
 Index: src/update.c
-diff -u src/contrib/cvs/src/update.c:1.1.1.11 src/contrib/cvs/src/update.c:1.10
---- src/contrib/cvs/src/update.c:1.1.1.11	Mon Sep  2 00:50:00 2002
-+++ src/update.c	Mon Sep  2 00:57:14 2002
+diff -u src/contrib/cvs/src/update.c:1.1.1.13 src/contrib/cvs/src/update.c:1.12
+--- src/contrib/cvs/src/update.c:1.1.1.13	Tue Jan 21 15:53:02 2003
++++ src/update.c	Tue Jan 21 16:01:38 2003
 @@ -31,6 +31,8 @@
   * versions, these are updated too.  If the -d option was specified, new
   * directories added to the repository are automatically created and updated
   * as well.
 + *
-+ * FreeBSD: /cvs/cvsup/ncvs/src/contrib/cvs/src/update.c,v 1.10 2002/09/02 05:57:14 peter Exp $
++ * FreeBSD: /cvs/cvsup/ncvs/src/contrib/cvs/src/update.c,v 1.12 2003/01/21 22:01:38 peter Exp $
   */
  
  #include "cvs.h"
@@ -1604,7 +1604,7 @@ diff -u src/contrib/cvs/src/update.c:1.1.1.11 src/contrib/cvs/src/update.c:1.10
  	    case 'd':
  		update_build_dirs = 1;
  		break;
-@@ -410,7 +417,8 @@
+@@ -414,7 +421,8 @@
      /* call the command line interface */
      err = do_update (argc, argv, options, tag, date, force_tag_match,
  		     local, update_build_dirs, aflag, update_prune_dirs,
@@ -1614,7 +1614,7 @@ diff -u src/contrib/cvs/src/update.c:1.1.1.11 src/contrib/cvs/src/update.c:1.10
  
      /* free the space Make_Date allocated if necessary */
      if (date != NULL)
-@@ -425,7 +433,7 @@
+@@ -429,7 +437,7 @@
  int
  do_update (argc, argv, xoptions, xtag, xdate, xforce, local, xbuild, xaflag,
  	   xprune, xpipeout, which, xjoin_rev1, xjoin_rev2, preload_update_dir,
@@ -1623,7 +1623,7 @@ diff -u src/contrib/cvs/src/update.c:1.1.1.11 src/contrib/cvs/src/update.c:1.10
      int argc;
      char **argv;
      char *xoptions;
-@@ -441,7 +449,7 @@
+@@ -445,7 +453,7 @@
      char *xjoin_rev1;
      char *xjoin_rev2;
      char *preload_update_dir;
@@ -1632,7 +1632,7 @@ diff -u src/contrib/cvs/src/update.c:1.1.1.11 src/contrib/cvs/src/update.c:1.10
  {
      int err = 0;
      char *cp;
-@@ -455,7 +463,7 @@
+@@ -459,7 +467,7 @@
      aflag = xaflag;
      update_prune_dirs = xprune;
      pipeout = xpipeout;
@@ -1641,7 +1641,7 @@ diff -u src/contrib/cvs/src/update.c:1.1.1.11 src/contrib/cvs/src/update.c:1.10
  
      /* setup the join support */
      join_rev1 = xjoin_rev1;
-@@ -595,7 +603,7 @@
+@@ -599,7 +607,7 @@
  	&& tag != NULL
  	&& finfo->rcs != NULL)
      {
@@ -1650,7 +1650,7 @@ diff -u src/contrib/cvs/src/update.c:1.1.1.11 src/contrib/cvs/src/update.c:1.10
  	if (rev != NULL
  	    && !RCS_nodeisbranch (finfo->rcs, tag))
  	    nonbranch = 1;
-@@ -966,7 +974,7 @@
+@@ -970,7 +978,7 @@
  			     via WriteTag.  */
  			  0,
  			  0,
@@ -1659,7 +1659,7 @@ diff -u src/contrib/cvs/src/update.c:1.1.1.11 src/contrib/cvs/src/update.c:1.10
  	    rewrite_tag = 1;
  	    nonbranch = 0;
  	    Subdir_Register (entries, (char *) NULL, dir);
-@@ -1023,6 +1031,12 @@
+@@ -1027,6 +1035,12 @@
  	    WriteTag (dir, tag, date, 0, update_dir, repository);
  	    rewrite_tag = 1;
  	    nonbranch = 0;
@@ -1694,7 +1694,7 @@ diff -u src/contrib/cvs/src/update.h:1.1.1.3 src/contrib/cvs/src/update.h:1.2
  extern int isemptydir PROTO ((char *dir, int might_not_exist));
 Index: src/prepend_args.c
 diff -u /dev/null src/gnu/usr.bin/cvs/cvs/prepend_args.c:1.3
---- /dev/null	Wed Sep 11 20:31:52 2002
+--- /dev/null	Wed Jan 22 14:40:20 2003
 +++ src/prepend_args.c	Mon Sep  2 01:09:03 2002
 @@ -0,0 +1,86 @@
 +/* prepend_args.c - utilility programs for manpiulating argv[]
@@ -1785,7 +1785,7 @@ diff -u /dev/null src/gnu/usr.bin/cvs/cvs/prepend_args.c:1.3
 +}
 Index: src/prepend_args.h
 diff -u /dev/null src/gnu/usr.bin/cvs/cvs/prepend_args.h:1.2
---- /dev/null	Wed Sep 11 20:31:52 2002
+--- /dev/null	Wed Jan 22 14:40:20 2003
 +++ src/prepend_args.h	Mon Sep  2 01:09:03 2002
 @@ -0,0 +1,26 @@
 +/* prepend_args.h - utilility programs for manpiulating argv[]
