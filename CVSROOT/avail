@@ -6,7 +6,7 @@
 #
 
 group|meisters|peter,jdp,markm,joe
-# Pick up the list of bad users from ncs/CVSROOT/badcommitters  See that
+# Pick up the list of bad users from ncvs/CVSROOT/badcommitters  See that
 # file for details
 group|penaltybox|!badcommitters
 
