@@ -770,6 +770,12 @@ share/perl5/LocaleData/nl/LC_MESSAGES/lire.mo
 @dirrm share/perl5/Lire/Config
 @dirrm share/perl5/Lire/ChartTypes
 @dirrm share/perl5/Lire
+@dirrm share/perl5/LocaleData/fr/LC_MESSAGES
+@dirrm share/perl5/LocaleData/fr
+@dirrm share/perl5/LocaleData/nl/LC_MESSAGES
+@dirrm share/perl5/LocaleData/nl
+@dirrm share/perl5/LocaleData
+@dirrm share/perl5
 @dirrm share/lire/xml/dtd
 @dirrm share/lire/xml
 @dirrm share/lire/tex
