@@ -25,16 +25,16 @@ include/dar/scrambler.hpp
 include/dar/special_alloc.hpp
 include/dar/statistics.hpp
 include/dar/storage.hpp
+include/dar/thread_cancellation.hpp
 include/dar/tools.hpp
+include/dar/tronconneuse.hpp
 include/dar/tuyau.hpp
 include/dar/user_interaction.hpp
 include/dar/wrapperlib.hpp
 lib/libdar.a
-lib/libdar.la
 lib/libdar.so
-lib/libdar.so.2
-%%DATADIR%%/DOC_API_V1
-%%DATADIR%%/DOC_API_V2
+lib/libdar.so.3
+%%DATADIR%%/FAQ
 %%DATADIR%%/FEATURES
 %%DATADIR%%/GOOD_BACKUP_PRACTICE
 %%DATADIR%%/LIMITATIONS
@@ -42,9 +42,13 @@ lib/libdar.so.2
 %%DATADIR%%/NOTES
 %%DATADIR%%/README
 %%DATADIR%%/TUTORIAL
+%%DATADIR%%/api_tutorial.html
 %%DATADIR%%/dar-differential-backup-mini-howto.en.html
+%%DATADIR%%/dar-differential-backup-mini-howto.es.html
+%%DATADIR%%/dar-differential-backup-mini-howto.it.html
 %%DATADIR%%/dar_par.dcf
 %%DATADIR%%/dar_par_create.duc
 %%DATADIR%%/dar_par_test.duc
+%%NLS%%share/locale/fr/LC_MESSAGES/dar.mo
 @dirrm %%DATADIR%%
 @dirrm include/dar

@@ -6,16 +6,28 @@
 #
 
 PORTNAME=	dar
-PORTVERSION=	2.1.5
+PORTVERSION=	2.2.0
 CATEGORIES=	sysutils
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=${PORTNAME}
 
 MAINTAINER=	ebrandi@fugspbr.org
-COMMENT=	DAR is a full featured command-line backup tool, aimed for disks
+COMMENT=	A full featured command-line backup tool, aimed for disks
 
 INSTALLS_SHLIB=	yes
-USE_INC_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
+
 MAN1=		dar.1 dar_cp.1 dar_manager.1 dar_slave.1 dar_xform.1
 
 .include <bsd.port.mk>
