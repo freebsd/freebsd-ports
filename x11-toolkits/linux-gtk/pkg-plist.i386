@@ -1,3 +1,19 @@
+etc/gtk/gtkrc
+etc/gtk/gtkrc.cs
+etc/gtk/gtkrc.hr
+etc/gtk/gtkrc.hu
+etc/gtk/gtkrc.iso-8859-2
+etc/gtk/gtkrc.iso-8859-9
+etc/gtk/gtkrc.ja
+etc/gtk/gtkrc.ko
+etc/gtk/gtkrc.pl
+etc/gtk/gtkrc.ro
+etc/gtk/gtkrc.ru
+etc/gtk/gtkrc.sk
+etc/gtk/gtkrc.sl
+etc/gtk/gtkrc.sr
+etc/gtk/gtkrc.tr
+etc/gtk/gtkrc.uk
 usr/doc/gtk+-1.2.5/AUTHORS
 usr/doc/gtk+-1.2.5/COPYING
 usr/doc/gtk+-1.2.5/ChangeLog
@@ -36,5 +52,33 @@ usr/share/locale/sv/LC_MESSAGES/gtk+.mo
 usr/share/locale/wa/LC_MESSAGES/gtk+.mo
 usr/share/locale/zh_TW.Big5/LC_MESSAGES/gtk+.mo
 usr/share/themes/Default/gtk/gtkrc
-@dirrm usr/share/themes/Default/gtk
+@dirrm etc/gtk
 @dirrm usr/doc/gtk+-1.2.5
+@dirrm usr/share/themes/Default/gtk
+@comment this port is not covered with mtree so removing locale directories.
+@unexec rmdir %D/usr/share/themes/Default 2>/dev/null || true
+@unexec rmdir %D/usr/share/themes 2>/dev/null || true
+@unexec rmdir %D/usr/share/themes/Default 2>/dev/null || true
+@unexec rmdir %D/usr/share/themes 2>/dev/null || true
+@unexec rmdir %D/usr/share/locale/zh_TW.Big5/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/usr/share/locale/zh_TW.Big5 2>/dev/null || true
+@unexec rmdir %D/usr/share/locale/wa/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/usr/share/locale/wa 2>/dev/null || true
+@unexec rmdir %D/usr/share/locale/ja/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/usr/share/locale/ja 2>/dev/null || true
+@unexec rmdir %D/usr/share/locale/it/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/usr/share/locale/it 2>/dev/null || true
+@unexec rmdir %D/usr/share/locale/hu/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/usr/share/locale/hu 2>/dev/null || true
+@unexec rmdir %D/usr/share/locale/hr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/usr/share/locale/hr 2>/dev/null || true
+@unexec rmdir %D/usr/share/locale/ga/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/usr/share/locale/ga 2>/dev/null || true
+@unexec rmdir %D/usr/share/locale/eu/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/usr/share/locale/eu 2>/dev/null || true
+@unexec rmdir %D/usr/share/locale/et/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/usr/share/locale/et 2>/dev/null || true
+@unexec rmdir %D/usr/share/locale/da/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/usr/share/locale/da 2>/dev/null || true
+@unexec rmdir %D/usr/share/locale/ca/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/usr/share/locale/ca 2>/dev/null || true
