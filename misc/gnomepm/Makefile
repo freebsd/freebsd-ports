@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomepm
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	misc gnome
 MASTER_SITES=	http://www.geocities.com/lordzephyroth/
 DISTNAME=	${PORTNAME:S/gnome/gnome-/}-${PORTVERSION}
