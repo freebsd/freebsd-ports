@@ -1,0 +1,94 @@
+diff -uNr ../ztelnet/telnet/Makefile.generic.ORG ./telnet/Makefile.generic.ORG
+--- ../ztelnet/telnet/Makefile.generic.ORG	Thu Jan  1 00:00:00 1970
++++ ./telnet/Makefile.generic.ORG	Wed Dec  3 00:54:17 1997
+@@ -0,0 +1,90 @@
++#
++# Copyright (c) 1991 The Regents of the University of California.
++# All rights reserved.
++#
++# Redistribution and use in source and binary forms are permitted provided
++# that: (1) source distributions retain this entire copyright notice and
++# comment, and (2) distributions including binaries display the following
++# acknowledgement:  ``This product includes software developed by the
++# University of California, Berkeley and its contributors'' in the
++# documentation or other materials provided with the distribution and in
++# all advertising materials mentioning features or use of this software.
++# Neither the name of the University nor the names of its contributors may
++# be used to endorse or promote products derived from this software without
++# specific prior written permission.
++# THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR IMPLIED
++# WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF
++# MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
++#
++#	@(#)Makefile.generic	5.5 (Berkeley) 3/1/91
++#
++
++INCLUDES= -I..
++ARPA_TELNET= ../arpa/telnet.h
++
++SRCS=	commands.c main.c network.c ring.c \
++	sys_bsd.c telnet.c terminal.c \
++	utilities.c ${GETOPT_SRC}
++
++CFLAGS=	-g ${INCLUDES} ${DEFINES}
++
++ALLHC=	${SRCS} \
++	defines.h externs.h fdset.h general.h \
++	ring.h types.h
++
++OBJS=	authenc.o commands.o main.o network.o ring.o sys_bsd.o \
++	telnet.o terminal.o utilities.o ${GETOPT_OBJ} \
++        ../zmodem/rz.o ../zmodem/sz.o
++MAN=	telnet.0
++
++#
++# These next three lines are not needed in 4.4BSD
++#
++.SUFFIXES: .0 .1
++.1.0:
++	nroff -man -h $< > $@
++
++all: telnet
++
++telnet:	${OBJS} ${LIBPATH}
++	${CC} -o $@ ${CFLAGS} ${OBJS} ${LIBS}
++
++clean: FRC
++	rm -f ${OBJS} core errs l.errs telnet
++
++cleandir: clean
++	rm -f ${MAN} tags .depend
++
++clist:	FRC ${SRCS}
++	@for i in ${SRCS} ; \
++		do (echo ${DIRPATH}$$i); done
++
++hclist:	FRC ${ALLHC}
++	@for i in ${ALLHC} ; \
++		do (echo ${DIRPATH}$$i); done
++
++depend: FRC ${SRCS}
++	mkdep ${CFLAGS} `make clist`
++
++install: ${MAN} FRC
++	install -s -o bin -g bin -m 755 telnet ${DEST}
++	install -c -o bin -g bin -m 444 telnet.0 ${DESTDIR}/usr/man/cat1
++
++lint: FRC ${SRCS}
++	lint ${CFLAGS} `make clist`
++
++tags: FRC ${SRCS}
++	ctags `make hclist`
++
++FRC:
++
++authenc.o: defines.h externs.h general.h ring.h types.h ${ARPA_TELNET}
++commands.o: defines.h externs.h general.h ring.h types.h ${ARPA_TELNET}
++main.o: defines.h externs.h ring.h
++network.o: defines.h externs.h fdset.h ring.h ${ARPA_TELNET}
++ring.o: general.h ring.h
++sys_bsd.o: defines.h externs.h fdset.h ring.h types.h ${ARPA_TELNET}
++telnet.o: defines.h externs.h general.h ring.h types.h ${ARPA_TELNET}
++terminal.o: externs.h ring.h types.h ${ARPA_TELNET}
++tn3270.o: defines.h externs.h fdset.h general.h ring.h ${ARPA_TELNET}
++utilities.o: defines.h externs.h fdset.h general.h ring.h ${ARPA_TELNET}

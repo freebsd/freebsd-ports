@@ -1,0 +1,16 @@
+diff -uNr ../ztelnet/zmodem/zmodem.h ./zmodem/zmodem.h
+--- ../ztelnet/zmodem/zmodem.h	Mon Apr 24 14:34:19 1995
++++ ./zmodem/zmodem.h	Wed Dec  3 04:01:31 1997
+@@ -117,9 +117,9 @@
+ /* Parameters for ZCOMMAND frame ZF0 (otherwise 0) */
+ #define ZCACK1	1	/* Acknowledge, then do command */
+ 
+-/* PMS
+-unsigned long rclhdr();
+-*/
++/*-----Modified by yongari to shut up compiler------*/
++/* unsigned long rclhdr(); */
++STATIC unsigned long rclhdr();
+ 
+ /* Globals used by ZMODEM functions */
+ extern Rxframeind;	/* ZBIN ZBIN32, or ZHEX type of frame */

@@ -1,0 +1,34 @@
+diff -uNr ../ztelnet/telnet/externs.h ./telnet/externs.h
+--- ../ztelnet/telnet/externs.h	Tue Sep 19 22:52:29 1995
++++ ./telnet/externs.h	Mon Mar 25 22:14:23 1991
+@@ -35,18 +35,14 @@
+ #include <sys/filio.h>
+ #endif
+ #ifdef	USE_TERMIO
+-#ifndef BYPMS
+ # ifndef	VINTR
+-#endif /* PMS */
+ #  ifdef SYSV_TERMIO
+ #   include <sys/termio.h>
+ #  else
+ #   include <sys/termios.h>
+ #   define termio termios
+ #  endif
+-#ifndef BYPMS
+ # endif
+-#endif /* PMS */
+ #endif
+ #if defined(NO_CC_T) || !defined(USE_TERMIO)
+ # if !defined(USE_TERMIO)
+@@ -315,11 +311,7 @@
+ 
+ # else
+ 
+-#ifdef BYPMS
+-extern struct	termios new_tc;
+-#else
+ extern struct	termio new_tc;
+-#endif /* PMS */
+ 
+ # define termEofChar		new_tc.c_cc[VEOF]
+ # define termEraseChar		new_tc.c_cc[VERASE]

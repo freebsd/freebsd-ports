@@ -1,0 +1,11 @@
+diff -uNr ../ztelnet/libtelnet/strdup.c ./libtelnet/strdup.c
+--- ../ztelnet/libtelnet/strdup.c	Mon Mar 25 22:14:21 1991
++++ ./libtelnet/strdup.c	Wed Dec  3 05:45:36 1997
+@@ -28,7 +28,6 @@
+ #include <string.h>
+ #endif
+ 
+-
+ char *
+ strdup(str)
+ 	char *str;

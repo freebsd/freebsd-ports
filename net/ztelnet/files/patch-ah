@@ -1,0 +1,36 @@
+diff -uNr ../ztelnet/qbkpark ./qbkpark
+--- ../ztelnet/qbkpark	Thu Jan  1 00:00:00 1970
++++ ./qbkpark	Sun Feb 12 15:48:38 1995
+@@ -0,0 +1,32 @@
++From bkpark@netcom.com Sun Feb 12 15:37:46 1995
++Received: from netcom17.netcom.com by dangun.kaist.ac.kr (8.6.9H1/8.6.4)
++	id AAA21108; Mon, 13 Feb 1995 00:37:44 +0900
++Received: by netcom17.netcom.com (8.6.9/Netcom)
++	id HAA24753; Sun, 12 Feb 1995 07:38:54 -0800
++Date: Sun, 12 Feb 1995 07:38:54 -0800
++From: bkpark@netcom.com (Byung Kyu Park)
++Message-Id: <199502121538.HAA24753@netcom17.netcom.com>
++To: jhheo@dangun.kaist.ac.kr
++Subject: Asking about ztelnet.tar.gz
++Status: RO
++
++
++Hello!
++I was informed your ztelnet.tar.gz in kaist BBS.
++I received that by the use of anonymous FTP.
++But... I couldn't take a download to my PC.
++I think that is unix compression file. I don't know about it.
++I tried to get it after renaming as ztelnet.tar.
++And succeeded..
++I got it. 
++But, I can't extract the renamed file. (ztelnet.tar) in my PC (DOS).
++
++Could you tell me how to extract that? 
++Was there my fault in this process?
++Please informe me in detail...
++
++Very truly yours.
++Thank you!
++
++Byung Kyu Park.  (Sorry about poor English)
++

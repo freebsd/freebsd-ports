@@ -1,0 +1,17 @@
+diff -uNr ../ztelnet/zmodem/zmr.c ./zmodem/zmr.c
+--- ../ztelnet/zmodem/zmr.c	Mon Apr 24 14:07:17 1995
++++ ./zmodem/zmr.c	Wed Dec  3 03:22:35 1997
+@@ -38,9 +38,10 @@
+  *
+  *	ZMODEM RLE compression and decompression functions
+  */
+-/*PMS*/
+-static zsdar32(char*, int, int);
+-static zrdatr32(register char *buf, int length);
++/*--- Appended by yongari yo shut up compiler -----*/
++STATIC zsdar32();
++STATIC zrdatr32();
++/*-------------------------------------------------*/
+ 
+ /* Send data subpacket RLE encoded with 32 bit FCS */
+ STATIC zsdar32(buf, length, frameend)
