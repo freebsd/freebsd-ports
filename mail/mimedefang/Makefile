@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mimedefang
-PORTVERSION=	2.12
+PORTVERSION=	2.13
 CATEGORIES=	mail
 MASTER_SITES=	http://www.roaringpenguin.com/mimedefang/
 
@@ -23,6 +23,7 @@ BUILD_DEPENDS=	\
 USE_PERL5=	yes
 PERL_SITELIBDIR=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/mimedefang
 
 MAN5=	mimedefang-filter.5
 MAN7=	mimedefang-protocol.7
@@ -32,16 +33,24 @@ MAN8=	mimedefang.8 mimedefang.pl.8 mimedefang-multiplexor.8
 BUILD_DEPENDS+=	${LOCALBASE}/include/libmilter/mfapi.h:${PORTSDIR}/mail/sendmail
 .endif
 
+post-extract:
+	@${MV} ${WRKSRC}/mimedefang-filter.5 ${WRKSRC}/mimedefang-filter.5.in
+	@${MV} ${WRKSRC}/mimedefang-multiplexor.8 ${WRKSRC}/mimedefang-multiplexor.8.in
+	@${MV} ${WRKSRC}/mimedefang.8 ${WRKSRC}/mimedefang.8.in
+	@${MV} ${WRKSRC}/mimedefang.pl.8 ${WRKSRC}/mimedefang.pl.8.in
+
 post-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/mimedefang.sh ${PREFIX}/etc/rc.d/mimedefang.sh
+	@${INSTALL_SCRIPT} ${WRKSRC}/examples/init-script ${PREFIX}/etc/rc.d/mimedefang.sh-dist
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${EXAMPLESDIR}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/README* ${DOCSDIR}
+	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/examples/stream-by-domain-filter ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/examples/suggested-minimum-filter-for-windows-clients ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/examples/README ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README* ${DOCSDIR}
 .endif
-	${CHOWN} mailnull:mailnull /var/spool/MIMEDefang
-	${CHMOD} 700 /var/spool/MIMEDefang
-	${CAT} ${PKGMESSAGE}
+	@${CHOWN} mailnull:mailnull /var/spool/MIMEDefang
+	@${CHMOD} 700 /var/spool/MIMEDefang
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

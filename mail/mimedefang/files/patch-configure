@@ -1,0 +1,11 @@
+--- configure.orig	Wed May 29 22:40:42 2002
++++ configure	Sun Jun  2 22:34:17 2002
+@@ -2505,7 +2505,7 @@
+ 
+ cat >> $CONFIG_STATUS <<EOF
+ 
+-CONFIG_FILES=\${CONFIG_FILES-"Makefile mimedefang.pl examples/init-script"}
++CONFIG_FILES=\${CONFIG_FILES-"Makefile mimedefang.pl examples/init-script mimedefang-filter.5 mimedefang-multiplexor.8 mimedefang.8 mimedefang.pl.8"}
+ EOF
+ cat >> $CONFIG_STATUS <<\EOF
+ for ac_file in .. $CONFIG_FILES; do if test "x$ac_file" != x..; then
