@@ -1,24 +1,3 @@
-On Tue, 25 Jun 2002 21:16:44 -0500, "David W. Chapman Jr." wrote:
-> > On Tue, 25 Jun 2002 20:07:37 -0500, "David W. Chapman Jr." wrote:
-> > >
-> > > > ================================================================
-> > > > ===>  Installing for ltmdm-1.4_2
-> > > > cannot open /usr/ports/comms/ltmdm/files/ltmdm.sh: no such file
-> 
-> This error is because ltmdm.sh isn't in files/ but work/ltmdm.sh
-> 
-> The maintainer is working on a fix for this.  I remember now why I
-> didn't add ltmdm.sh as it is included in the source tarball.
-> 
-
-Please commit files/ltmdm.sh which I sent on  26 Jun 2002 10:32:04 +0900.
-
-I talked with the maintainer about this problem.
-
-
-
-ports/comms/ltmdm/files/ltmdm.sh (new)
-================================================================
 #!/bin/sh
 
 PREFIX=%%PREFIX%%
@@ -55,7 +34,3 @@ case "$1" in
     echo -n ' ltmdm'
     ;;
 esac
-================================================================
-
---
-
