@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mziq
-PORTVERSION=	0.3
+PORTVERSION=	0.4.1
 CATEGORIES=	audio
 MASTER_SITES=	http://cseg.lucidx.com/projects/src/mziq/
 
