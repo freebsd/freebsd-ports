@@ -1,6 +1,6 @@
---- Makefile	Wed Mar 18 01:02:29 1998
-+++ /home/andy/tmp/wrk/Makefile	Sun Mar 22 11:00:29 1998
-@@ -45,7 +45,7 @@
+--- Makefile	Sat Oct 17 15:21:25 1998
++++ /home/andy/tmp/wrk/Makefile	Wed Jan  6 16:40:21 1999
+@@ -55,13 +55,13 @@
  #MANDIR=../../man
  MANDIR=/usr/local/man
  # Location of the word file
@@ -9,3 +9,27 @@
  # Name of the default wordfile
  WORDFILE=-DWORDFILE=\"$(WORDDIR)/words\"
  # C compiler
+-CC=cc
++CC?=cc
+ # Optimization or other flags for C compiler
+-CCFLAGS=-O
++CFLAGS?=-O
+ #CCFLAGS=-g
+ # Alter this if you have problems compiling the CPU limit code or the
+ # timer code
+@@ -77,13 +77,13 @@
+ doc: agm.ps
+ 
+ agm: main.o process.o listfuncs.o wordfuncs.o gobble.o sort.o output.o progress.o
+-	$(CC) $(CCFLAGS) $(DEFINES) $(RELEASE) $(WORDFILE) -o agm main.o process.o listfuncs.o wordfuncs.o gobble.o sort.o output.o progress.o
++	$(CC) $(CFLAGS) $(DEFINES) $(RELEASE) $(WORDFILE) -o agm main.o process.o listfuncs.o wordfuncs.o gobble.o sort.o output.o progress.o
+ 
+ #gagm: gtkmain.o
+ #	$(CC) $(CCFLAGS) $(DEFINES) $(RELEASE) $(WORDFILE) -o gagm gtkmain.o $(GTKCFLAGS) $(GTKLIBS)
+ 
+ .c.o:
+-	$(CC) -c $(CCFLAGS) $(DEFINES) $(RELEASE) $(WORDFILE) $<
++	$(CC) -c $(CFLAGS) $(DEFINES) $(RELEASE) $(WORDFILE) $<
+ 
+ #gtkmain.o: gtkmain.c agm.h
+ 
