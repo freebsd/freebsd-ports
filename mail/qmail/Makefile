@@ -138,7 +138,7 @@ do-install:
 	@${MKDIR} /usr/local/etc/rc.d
 	@${LN} -sf ${PREFIX}/rc /usr/local/etc/rc.d/qmail.sh
 	@${ECHO}
-	@${SED} s!/usr/local/!${PREFIX}/!g ${PKGDIR}/MESSAGE | /usr/bin/fmt
+	@${SED} s!/var/qmail!${PREFIX}/!g ${PKGDIR}/MESSAGE | /usr/bin/fmt
 
 # hack to allow slave ports to include bsd.port.pre.mk and then this file
 .if defined(_PREMKINCLUDED)
