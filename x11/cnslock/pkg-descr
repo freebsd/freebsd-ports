@@ -1,0 +1,9 @@
+Cnslock is a dock application (dockapp) which provides a visual
+indication of the states of the three "lock" buttons (caps, num, and
+scroll).
+
+It should be especially useful for people who own a wireless keyboard
+with no leds on it, and thus have difficulty keeping track of "lock"
+states.
+
+WWW: http://www.dockapps.com/file.php/id/123
