@@ -1,5 +1,5 @@
 
-$FreeBSD$
+$FreeBSD: /tmp/pcvs/ports/java/netbeans61/files/Attic/bin_runide.sh.diff,v 1.1 2003-06-07 19:55:11 olgeni Exp $
 
 --- bin/runide.sh.orig	Mon Jun  2 11:23:48 2003
 +++ bin/runide.sh	Mon Jun  2 11:26:50 2003
