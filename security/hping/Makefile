@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	hping
-PORTVERSION=	2b54
-PORTREVISION=	1
+PORTVERSION=	2.0.0r1
 CATEGORIES=	security net
-MASTER_SITES=	http://www.kyuzz.org/antirez/hping2-src/
-DISTNAME=	hping2-beta54
+MASTER_SITES=	http://www.hping.org/
+DISTNAME=	hping2.0.0-rc1
 
-MAINTAINER=	roman@xpert.com
+MAINTAINER=	Nicolas.Jombart@hsc-labs.com
 
-BROKEN=		See PR 28974
-
+WRKSRC=		${WRKDIR}/hping2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--force-libpcap
+USE_GMAKE= 	yes
 
 MAN8=	hping.8
 
