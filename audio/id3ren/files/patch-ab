@@ -1,0 +1,10 @@
+--- id3tag.c.orig	Wed Mar 18 17:18:34 1998
++++ id3tag.c	Sun Dec 26 15:11:42 1999
+@@ -365,6 +365,7 @@
+     return TRUE;
+   }
+ 
++  memset(string, 0, size);
+   fgets(string, size, stdin);
+ 
+   if (string[strlen(string)-1] == '\n')
