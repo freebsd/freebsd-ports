@@ -17,7 +17,7 @@ MAINTAINER=	grog
 RUN_DEPENDS=	${LOCALBASE}/bin/nsgmls:${PORTSDIR}/textproc/sp		\
 		${LOCALBASE}/bin/procmail:${PORTSDIR}/mail/procmail	\
 		${LOCALBASE}/share/sgml/docbook/3.1/docbook.dtd:${PORTSDIR}/textproc/docbook-310 \
-		${LOCALBASE}/bin/ghostview:${PORTSDIR}/print/ghostview
+		ghostview:${PORTSDIR}/print/ghostview
 
 post-install:
 	(cd ${WRKSRC}; tar cf - test) | (cd ${LOCALBASE}/share/gmat; tar xvf -)
