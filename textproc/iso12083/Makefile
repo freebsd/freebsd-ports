@@ -1,0 +1,36 @@
+# New ports collection makefile for:	iso12083
+# Version required:	1993
+# Date created:		July 9, 1997
+# Whom:			jfieber
+#
+# $Id$
+#
+
+DISTNAME=	iso12083-1993
+CATEGORIES=	textproc
+MASTER_SITES=	ftp://info.ex.ac.uk/pub/SGML/ISO-12083/
+DISTFILES=	article.dtd book.dtd maths.dtd serial.dtd
+
+MAINTAINER=	jfieber@FreeBSD.ORG
+
+DIST_SUBDIR=	iso12083
+
+NO_MTREE=	yes
+NO_BUILD=	yes
+NO_PATCH=	yes
+NO_CONFIGURE=	yes
+NO_WRKSUBDIR=	yes
+EXTRACT_ONLY=	# empty
+
+INSTDIR=	${PREFIX}/share/sgml/iso12083
+
+pre-install:
+	@[ -d ${INSTDIR} ] || ${MKDIR} ${INSTDIR}
+
+do-install:
+	@for i in ${DISTFILES}; do \
+		${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/$$i ${INSTDIR}/$$i; \
+	done
+	@${INSTALL_DATA} ${FILESDIR}/catalog ${INSTDIR}/catalog
+
+.include <bsd.port.mk>
