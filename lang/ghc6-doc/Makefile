@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	ghc6-doc
-PORTVERSION=	6.2.1
+PORTVERSION=	6.2.2
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/docs/${PORTVERSION}/ \
 		http://www.haskell.org/ghc/docs/${PORTVERSION}/html/
-DISTFILES=      building.html.tar.gz building.ps.gz hslibs.html.tar.gz \
+DISTFILES=	building.ps.gz building.html.tar.gz hslibs.html.tar.gz \
 		hslibs.ps.gz libraries.html.tar.gz users_guide.html.tar.gz \
 		users_guide.ps.gz index.html
 DIST_SUBDIR=	ghc-${PORTVERSION}

@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ghc
-PORTVERSION=	6.2.1
+PORTVERSION=	6.2.2
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		http://www.haskell.org/ghc/dist/${PORTVERSION}/FreeBSD/:boot
@@ -18,10 +18,6 @@ BOOT_DIST5=	ghc-${PORTVERSION}-i386-unknown-freebsd5-boot${EXTRACT_SUFX}:boot
 
 USE_BZIP2=	yes
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
 
 DISTFILES=	${SRC_DIST}
 
@@ -41,7 +37,7 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-PLIST_SUB=      GHC_VERSION=${PORTVERSION}
+PLIST_SUB=	GHC_VERSION=${PORTVERSION}
 .if defined(WITHOUT_PROFILE)
 PLIST_SUB+=	PROFILE="@comment "
 .else
@@ -53,7 +49,7 @@ PLIST_SUB+=	PROFILE=""
 BOOT_DIR=	${WRKDIR}/ghc-${PORTVERSION}-boot
 BOOT_GHC=	${BOOT_DIR}/bin/i386-unknown-freebsd/ghc-${PORTVERSION}
 
-CONFIGURE_ARGS= --with-ghc=${BOOT_GHC}  --with-gcc=${CC}
+CONFIGURE_ARGS=	--with-ghc=${BOOT_GHC}  --with-gcc=${CC}
 # specifying CONFIGURE_TARGET doesn't work for some reason.
 CONFIGURE_TARGET=
 # libgmp:
@@ -61,18 +57,18 @@ CONFIGURE_ENV+=	CFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
 
 # override TMPDIR because /tmp often doesn't have enough space
 # to build some of the larger libraries.
-TMPDIR = ${WRKSRC}/tmp
-MAKE_ENV += TMPDIR=${TMPDIR}
+TMPDIR=		${WRKSRC}/tmp
+MAKE_ENV+=	TMPDIR=${TMPDIR}
 
 # Just do a stage1 build
-ALL_TARGET = stage1
+ALL_TARGET=	stage1
 MAKE_ENV += stage=1
 
 pre-everything::
 .if !defined(WITHOUT_PROFILE)
 	@${ECHO_CMD} "To build GHC without profiling libraries,"
 	@${ECHO_CMD} "hit Ctrl-C now and restart with 'make"
-	@$(ECHO_CMD) "WITHOUT_PROFILE=YES'."
+	@${ECHO_CMD} "WITHOUT_PROFILE=YES'."
 .else
 	@${ECHO_CMD} "Building GHC without profiling libraries."
 .endif
