@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	rpc
-PORTVERSION=	0.97
+PORTVERSION=	0.98
 PORTREVISION=	0
 CATEGORIES=	math
 MASTER_SITES=	http://www.eecs.umich.edu/~pelzlpj/rpc/
