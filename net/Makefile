@@ -239,6 +239,7 @@
     SUBDIR += kdenetwork3
     SUBDIR += kmerlin
     SUBDIR += kmess
+    SUBDIR += kmldonkey
     SUBDIR += konverse
     SUBDIR += kopete
     SUBDIR += krdesktop
