@@ -7660,6 +7660,7 @@ tac_plus4	ports/net/tac_plus4
 tacshell	ports/net/tacshell
 tads		ports/games/tads
 taipan		ports/games/taipan
+talkfilters	ports/misc/talkfilters
 tamago		ports/editors/tamago
 tamago-emacs20	ports/editors/tamago-emacs20
 tank		ports/games/tank
