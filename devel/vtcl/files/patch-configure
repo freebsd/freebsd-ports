@@ -5,7 +5,7 @@
  
  cd `dirname $0`
 -VTCL_HOME=`pwd`
-+VTCL_HOME=/usr/local/lib/vtcl
++VTCL_HOME=$1/lib/vtcl
  
 -cat > $VTCL_HOME/vtcl << EOF
 +cat > vtcl << EOF
