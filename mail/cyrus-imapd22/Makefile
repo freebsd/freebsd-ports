@@ -66,7 +66,8 @@ post-install:
 			${PREFIX}/etc/imapd.conf.dist
 		${INSTALL_DATA} ${FILESDIR}/inetd.conf.cyrus \
 			${PREFIX}/etc/
-		${INSTALL} -d -m 750 -o cyrus -g cyrus /var/spool/imap \
+		${INSTALL} -d -m 750 -o cyrus -g cyrus \
+			/var/spool/imap \
 			${PREFIX}/etc/imap \
 			${PREFIX}/etc/imap/user \
 			${PREFIX}/etc/imap/quota \
@@ -76,6 +77,25 @@ post-install:
 		${INSTALL} -d -m 700 -o cyrus -g cyrus /var/pwcheck
 		${TOUCH} ${PREFIX}/etc/imap/mailboxes
 		${CHMOD} 640 ${PREFIX}/etc/imap/mailboxes
+		chown cyrus:cyrus ${PREFIX}/etc/imap/mailboxes
+		@${ECHO} "@exec mkdir %D/etc/imap" >>${TMPPLIST}
+.for dir in user quota proc log msg
+		@${ECHO} "@exec mkdir %D/etc/imap/${dir}" >>${TMPPLIST}
+		@${ECHO} "@dirrm etc/imap/${dir}" >>${TMPPLIST}
+.endfor
+		@${ECHO} "@exec cp /dev/null %D/etc/imap/mailboxes" >>${TMPPLIST}
+		@${ECHO} "@exec chown -R cyrus:cyrus %D/etc/imap" >>${TMPPLIST}
+		@${ECHO} "@exec chmod -R g-w,o= %D/etc/imap" >>${TMPPLIST}
+		@${ECHO} "@mode u=rwx,go=" >>${TMPPLIST}
+		@${ECHO} "@exec mkdir /var/pwcheck" >>${TMPPLIST}
+		@${ECHO} "@exec chown cyrus:cyrus /var/pwcheck" >>${TMPPLIST}
+		@${ECHO} "@exec chmod go= /var/pwcheck" >>${TMPPLIST}
+		@${ECHO} "@exec mkdir /var/spool/imap" >>${TMPPLIST}
+		@${ECHO} "@exec chown cyrus:cyrus /var/spool/imap" >>${TMPPLIST}
+		@${ECHO} "@exec chmod g-w,o= /var/spool/imap" >>${TMPPLIST}
+		@${ECHO} "@cwd /var" >>${TMPPLIST}
+		@${ECHO} "@dirrm pwcheck" >>${TMPPLIST}
+		@${ECHO} "@dirrm spool/imap" >>${TMPPLIST}
 		@${SED} -e "/%%PREFIX%%/s##${PREFIX}#g" ${FILESDIR}/cyrus.sh \
 			>${PREFIX}/etc/rc.d/cyrus.sh
 		@${CHMOD} 0755 ${PREFIX}/etc/rc.d/cyrus.sh
