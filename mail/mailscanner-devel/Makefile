@@ -7,6 +7,7 @@
 
 PORTNAME=	MailScanner
 PORTVERSION=	4.26.1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sng.ecs.soton.ac.uk/mailscanner/files/4/tar/
 PKGNAMESUFFIX=	-devel
@@ -27,7 +28,8 @@ BUILD_DEPENDS=	\
 	${SITE_PERL}/Net/CIDR.pm:${PORTSDIR}/net/p5-Net-CIDR
 
 RUN_DEPENDS=	${BUILD_DEPENDS} \
-		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2
+		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2 \
+		${LOCALBASE}/bin/tnef:${PORTSDIR}/converters/tnef
 
 CONFLICTS=	MailScanner-[0-9]*
 
@@ -54,52 +56,47 @@ ETC_FILES=	MailScanner.conf filename.rules.conf \
 
 do-build:
 	${PERL} -pi -e \
-		's,/opt/MailScanner/lib,'${PREFIX}'/lib/MailScanner,g; \
-		s,/opt/MailScanner/etc,'${PREFIX}'/etc/MailScanner,g;' \
+		's,/opt/MailScanner/lib,${PREFIX}/lib/MailScanner,g; \
+		s,/opt/MailScanner/etc,${PREFIX}/etc/MailScanner,g;' \
 		${WRKSRC}/bin/MailScanner
 	${PERL} -pi -e \
 		's,/opt/MailScanner/var/MailScanner.pid,/var/run/MailScanner.pid,g; \
 		s,/usr/lib/sendmail,/usr/sbin/sendmail,g; \
-		s,/opt/MailScanner/bin,'${PREFIX}'bin,g; \
-		s,/opt/MailScanner/etc/reports,'${DATADIR}'/reports,g; \
-		s,/opt/MailScanner/etc,'${PREFIX}'/etc/MailScanner,g;' \
+		s,/opt/MailScanner/bin,${PREFIX}/bin,g; \
+		s,/opt/MailScanner/etc/reports,${DATADIR}/reports,g; \
+		s,/opt/MailScanner/etc,${PREFIX}/etc/MailScanner,g;' \
 		${WRKSRC}/etc/MailScanner.conf
 	${PERL} -pi -e \
-		's,/opt/MailScanner/lib,'${PREFIX}'/libexec/MailScanner,g; \
+		's,/opt/MailScanner/lib,${PREFIX}/libexec/MailScanner,g; \
 		s,/bin/false,/usr/bin/false,;' ${WRKSRC}/etc/virus.scanners.conf
 	${PERL} -pi -e \
-		's,/bin/bash,'${LOCALBASE}'/bin/bash,g; \
-		s,/opt/MailScanner/etc,'${PREFIX}'/etc/MailScanner,g;' \
+		's,/bin/bash,${LOCALBASE}/bin/bash,g; \
+		s,/opt/MailScanner/etc,${PREFIX}/etc/MailScanner,g;' \
 		${WRKSRC}/bin/update_virus_scanners
 	${PERL} -pi -e \
 		's,/opt/MailScanner/var/MailScanner.pid,/var/run/MailScanner.pid,g; \
 		s,/usr/lib/sendmail,/usr/sbin/sendmail,g; \
-		s,/opt/MailScanner/bin,'${PREFIX}'/bin,g; \
-		s,/opt/MailScanner/etc/reports,'${DATADIR}'/reports,g; \
-		s,/opt/MailScanner/etc,'${PREFIX}'/etc/MailScanner,g;' \
+		s,/opt/MailScanner/bin,${PREFIX}/bin,g; \
+		s,/opt/MailScanner/etc/reports,${DATADIR}/reports,g; \
+		s,/opt/MailScanner/etc,${PREFIX}/etc/MailScanner,g;' \
 		${WRKSRC}/lib/MailScanner/ConfigDefs.pl
 	${PERL} -pi \
 		-e 's,/bin/sed,/usr/bin/sed,g;' ${WRKSRC}/lib/MailScanner/SystemDefs.pm
 
 do-install:
-	#
-	# Step 1: Install binaries
-	#
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/tnef.linux ${PREFIX}/bin/tnef
-	#
-	# Step 2: Install libexec files
+	# Step 1: Install libexec files
 	#
 	${MKDIR} ${PREFIX}/libexec/MailScanner
 	${CHMOD} -R ${BINMODE} ${PREFIX}/libexec/MailScanner
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/MailScanner ${PREFIX}/libexec/MailScanner
-	cd ${WRKSRC}/lib && ${FIND} * -name "*-wrapper" -exec ${INSTALL_SCRIPT} \
-		'{}' ${PREFIX}'/libexec/MailScanner/{}'.sample \;
+	cd ${WRKSRC}/lib && ${FIND} * -name "*-wrapper" -exec \
+		${INSTALL_SCRIPT} {} ${PREFIX}/libexec/MailScanner/{}.sample \;
 	cd ${WRKSRC}/lib && ${FIND} * -name "*-autoupdate" -exec \
-		${INSTALL_SCRIPT} '{}' ${PREFIX}'/libexec/MailScanner/{}'.sample \;
+		${INSTALL_SCRIPT} {} ${PREFIX}/libexec/MailScanner/{}.sample \;
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/update_virus_scanners \
 		${PREFIX}/libexec/MailScanner/update_virus_scanners
 	#
-	# Step 3: Install etc files
+	# Step 2: Install etc files
 	#
 	${MKDIR} ${PREFIX}/etc/MailScanner
 	${CHMOD} ${BINMODE} ${PREFIX}/etc/MailScanner
@@ -114,43 +111,43 @@ do-install:
 		${PREFIX}/etc/MailScanner/rules/spam.whitelist.rules.sample
 
 	#
-	# Step 4: Install files in share
+	# Step 3: Install files in share
 	#
 	@${MKDIR} ${DATADIR}
 	cd ${WRKSRC}/etc && ${FIND} reports -type d -exec \
-		mkdir ${DATADIR}'/{}' \;
+		mkdir ${DATADIR}/{} \;
 	cd ${WRKSRC}/etc && ${FIND} reports -type f ! -name "*.orig" -exec \
-		${INSTALL_DATA} '{}' ${DATADIR}'/{}'.sample \;
+		${INSTALL_DATA} {} ${DATADIR}/{}.sample \;
 	${CHMOD} -R ${BINMODE} ${DATADIR}/reports
 	#
-	# Step 5: Install lib
+	# Step 4: Install lib
 	#
 	${MKDIR} ${PREFIX}/lib/MailScanner/MailScanner
 	${INSTALL_SCRIPT} ${WRKSRC}/lib/MailScanner.pm \
 		${PREFIX}/lib/MailScanner/MailScanner.pm
 	cd ${WRKSRC}/lib/MailScanner && ${FIND} * -type f ! -name "*.orig" -exec \
-		${INSTALL_SCRIPT} '{}' ${PREFIX}'/lib/MailScanner/MailScanner/{}' \;
+		${INSTALL_SCRIPT} {} ${PREFIX}/lib/MailScanner/MailScanner/{} \;
 	#
-	# Step 6: Install Start/Stop scripts
+	# Step 5: Install Start/Stop scripts
 	#
 	${INSTALL_SCRIPT} ${FILESDIR}/mailscanner.sh \
 		${PREFIX}/etc/rc.d/mailscanner.sh.sample
 	${INSTALL_SCRIPT} ${FILESDIR}/mta.sh ${PREFIX}/etc/rc.d/mta.sh.sample
 	#
-	# Step 7: Docs & Manpages
+	# Step 6: Docs & Manpages
 	#
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD.port ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOC_FILES} ${DOCSDIR}
 	cd ${WRKSRC}/docs && \
-		${FIND} * -type d -exec mkdir ${DOCSDIR}'/{}' \; && \
+		${FIND} * -type d -exec mkdir ${DOCSDIR}/{} \; && \
 		${FIND} * -type f ! -name "*.orig" -exec \
-			${INSTALL_DATA} '{}' ${DOCSDIR}'/{}' \;
+			${INSTALL_DATA} {} ${DOCSDIR}/{} \;
+.endif
 	cd ${WRKSRC}/docs/man && \
 		${INSTALL_MAN} ${MAN5} ${MAN5PREFIX}/man/man5 && \
 		${INSTALL_MAN} ${MAN8} ${MAN8PREFIX}/man/man8
-.endif
 .if exists(${PREFIX}/etc/MailScanner/MailScanner.conf)
 	# Upgrading MailScanner.conf file... Please wait
 	@${WRKSRC}/bin/upgrade_MailScanner_conf \
@@ -182,7 +179,7 @@ renew-autoupdate: install
 renew-reports: install
 	# Renew reports
 	cd ${WRKSRC}/etc/reports/en && ${FIND} * -type f ! -name "*.orig" \
-		-exec ${INSTALL_DATA} '{}' ${DATADIR}'/reports/en/{}'  \;
+		-exec ${INSTALL_DATA} {} ${DATADIR}/reports/en/{}  \;
 
 initial-config: renew-wrapper renew-autoupdate renew-reports
 	cd ${WRKSRC}/etc && ${INSTALL_DATA} ${ETC_FILES} \
