@@ -5,10 +5,13 @@ include/mk4str.inl
 lib/libmk4.a
 lib/libmk4.so
 lib/libmk4.so.0
-lib/libmk4py.a
-lib/libmk4py.so
-lib/libmk4py.so.0
-lib/python1.5/site-packages/Mk4py.so
+%%WITH_PYTHON%%lib/libmk4py.a
+%%WITH_PYTHON%%lib/libmk4py.so
+%%WITH_PYTHON%%lib/libmk4py.so.0
+%%WITH_PYTHON%%lib/python1.5/site-packages/Mk4py.so
+%%WITH_TCL%%lib/libmk4tcl.a
+%%WITH_TCL%%lib/libmk4tcl.so
+%%WITH_TCL%%lib/libmk4tcl.so.0
 %%PORTDOCS%%share/doc/metakit/api/c4_Bytes.html
 %%PORTDOCS%%share/doc/metakit/api/c4_BytesProp.html
 %%PORTDOCS%%share/doc/metakit/api/c4_BytesProp_desc.html
@@ -110,9 +113,14 @@ lib/python1.5/site-packages/Mk4py.so
 %%PORTDOCS%%share/doc/metakit/api/tips.html
 %%PORTDOCS%%share/doc/metakit/e4s.gif
 %%PORTDOCS%%share/doc/metakit/format.html
+%%PORTDOCS%%share/doc/metakit/metakit.png
 %%PORTDOCS%%share/doc/metakit/python.html
 %%PORTDOCS%%share/doc/metakit/python.jpg
 %%PORTDOCS%%share/doc/metakit/tcl.gif
 %%PORTDOCS%%share/doc/metakit/tcl.html
+%%PORTDOCS%%share/doc/metakit/CHANGES
+%%PORTDOCS%%share/doc/metakit/MetaKit.html
+%%PORTDOCS%%share/doc/metakit/README
+%%PORTDOCS%%share/doc/metakit/WHATSNEW
 %%PORTDOCS%%@dirrm share/doc/metakit/api
 %%PORTDOCS%%@dirrm share/doc/metakit
