@@ -65,6 +65,7 @@
     SUBDIR += mathopd
     SUBDIR += mhonarc
     SUBDIR += mod_dav
+    SUBDIR += mod_dtcl
     SUBDIR += mod_perl
     SUBDIR += momspider
     SUBDIR += mozilla

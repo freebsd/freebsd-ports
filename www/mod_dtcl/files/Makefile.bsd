@@ -1,0 +1,28 @@
+# If you link against Tcl like so "-ltcl", leave this blank.
+TCL_VERSION?=8.2
+TCL_NDVER?=${TCL_VERSION:S/.//}	# same, but without the dot
+
+PREFIX?=	/usr/local
+
+INCLUDES=-I${PREFIX}/include/apache -I${PREFIX}/include/tcl${TCL_VERSION}
+
+CC!=		${PREFIX}/sbin/apxs -q CC
+CFLAGS!=	${PREFIX}/sbin/apxs -q CFLAGS CFLAGS_SHLIB
+CFLAGS+=	-Wall -DSTATUS -DNO_DBM_REWRITEMAP ${INCLUDES}
+
+LIB=	mod_dtcl
+SHLIB_MAJOR=1
+SHLIB_MINOR=0
+
+LDADD=	-L${PREFIX}/lib -ltcl${TCL_NDVER}
+LDFLAGS=${LDADD} -lm
+
+NOPROFILE=	True	# to avoid building profiled library
+INTERNALLIB=	True	# to avoid building a static version
+
+SRCS=	mod_dtcl.c
+NOMAN=	True	# don't bother with the man-page here, let the port handle it
+
+all:	${SHLIB_NAME} testdtcl
+
+.include <bsd.lib.mk>

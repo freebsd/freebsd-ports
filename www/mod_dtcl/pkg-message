@@ -1,0 +1,10 @@
+-
+	Please, follow the instructions in
+		file:/usr/local/share/doc/mod_dtcl/INSTALL.html
+
+	(where  /usr/local may  be  replaced  by your  machine's
+	setting for PREFIX) to enable the mod_dtcl's usage.
+
+	Note, that the dtcl.tcl mentioned in the instructions is
+	installed as /usr/local/share/doc/mod_dtcl/dtcl.tcl .
+-
