@@ -3,7 +3,7 @@
 # Date created:		22 November 1994
 # Whom:			Satoshi Asami (asami)
 #
-# $Id: Makefile,v 1.22 1995/07/28 23:46:43 asami Exp $
+# $Id: Makefile,v 1.23 1995/10/11 00:31:49 asami Exp $
 #
 
 DISTNAME=	mule-2.3
@@ -18,9 +18,9 @@ MAINTAINER=	asami@FreeBSD.ORG
 
 BUILD_DEPENDS=	${PREFIX}/bin/Wnn4/jserver:${PORTSDIR}/japanese/Wnn
 
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	i386--freebsd --prefix=${PREFIX} --with-x-toolkit \
+CONFIGURE_ARGS=	i386--freebsd --with-x-toolkit \
 		--with-wnn4 --wnn-libraries=/usr/X11R6/lib \
 		--wnn-includes=/usr/X11R6/include/wnn --terminal-face \
 		--locallisppath=${PREFIX}/lib/mule/site-lisp:${PREFIX}/share/emacs/site-lisp
@@ -37,10 +37,12 @@ post-install:
 	strip ${PREFIX}/bin/etags
 	strip ${PREFIX}/bin/m2ps
 	strip ${PREFIX}/bin/mule-19.28
+.if !defined(NOMANCOMPRESS)
 	gzip -9nf ${PREFIX}/man/man1/coco.1
 	gzip -9nf ${PREFIX}/man/man1/ctags.1
 	gzip -9nf ${PREFIX}/man/man1/etags.1
 	gzip -9nf ${PREFIX}/man/man1/m2ps.1
 	gzip -9nf ${PREFIX}/man/man1/mule.1
+.endif
 
 .include <bsd.port.mk>
