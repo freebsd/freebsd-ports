@@ -1,0 +1,8 @@
+#!/bin/sh
+if [ "$2" = "DEINSTALL" ]; then
+  exit 0
+fi
+
+echo "To use hpscat with font loading in gs, use hpscat.sh instead"
+echo "Otherwise, you must setup ghostscript to load font first."
+echo "Read /usr/local/share/fonts/ked-hpscat/README.jshin(.ks)"

@@ -1,0 +1,8 @@
+#!/usr/bin/perl
+#
+
+eval '(exit $?0)' && eval 'exec /usr/bin/perl -S $0 ${1+"$@"}'
+& eval 'exec /usr/bin/perl -S $0 $argv:q'
+if 0;
+
+system( "/usr/bin/perl -pi -e 's|%%PREFIX%%|$ENV{'PREFIX'}|g' $ENV{'WRKSRC'}/hpscat.sh" );
