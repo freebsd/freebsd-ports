@@ -680,6 +680,7 @@
     SUBDIR += sparc-rtems-gdb
     SUBDIR += sparc-rtems-objc
     SUBDIR += spirit
+    SUBDIR += spin
     SUBDIR += splint
     SUBDIR += st
     SUBDIR += stlport
