@@ -1,12 +1,12 @@
 # New ports collection makefile for:	aumix
-# Version required:    1.19
+# Version required:    1.21
 # Date created:        21 May 1999
 # Whom:                Chris Piazza <cpiazza@home.net>
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/29 04:47:12 steve Exp $
+# $Id: Makefile,v 1.2 1999/06/02 05:26:34 mharo Exp $
 #
 
-DISTNAME=	aumix-1.19
+DISTNAME=	aumix-1.21
 CATEGORIES=	audio
 MASTER_SITES=	http://jpj.net/~trevor/aumix/ \
 		${MASTER_SITE_SUNSITE}
