@@ -19,12 +19,11 @@ MAN8=		chrootuid.8
 
 do-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/chrootuid
-	${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/chrootuid
-	${INSTALL_MAN} ${WRKSRC}/chrootuid_license ${PREFIX}/share/doc/chrootuid
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/chrootuid_license ${DOCSDIR}
 .endif
-	${INSTALL_PROGRAM} ${WRKSRC}/chrootuid ${PREFIX}/sbin/chrootuid
-	${CP} ${WRKSRC}/chrootuid.1 ${WRKSRC}/chrootuid.8
-	${INSTALL_MAN} ${WRKSRC}/${MAN8} ${PREFIX}/man/man8
+	${INSTALL_PROGRAM} ${WRKSRC}/chrootuid ${PREFIX}/sbin/
+	${INSTALL_MAN} ${WRKSRC}/chrootuid.1 ${PREFIX}/man/man8/${MAN8}
 
 .include <bsd.port.mk>
