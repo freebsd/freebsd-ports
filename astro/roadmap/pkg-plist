@@ -1,13 +1,24 @@
+@cwd %%X11BASE%%
+bin/gtkroadmap
+bin/gtkroadgps
+@exec ln -sf %D/bin/gtkroadmap %D/bin/roadmap
+@exec ln -sf %D/bin/gtkroadgps %D/bin/roadgps
+@unexec rm -f %D/bin/roadmap %D/bin/roadgps
+@cwd %%LOCALBASE%%
 bin/buildmap
 bin/buildus
 bin/dumpmap
-bin/roadmap
-bin/roadgps
-%%PORTDOCS%%share/doc/roadmap/AUTHORS
-%%PORTDOCS%%share/doc/roadmap/BUGS
-%%PORTDOCS%%share/doc/roadmap/COPYING
-%%PORTDOCS%%share/doc/roadmap/README
-%%PORTDOCS%%share/doc/roadmap/TODO
-%%PORTDOCS%%@dirrm share/doc/roadmap
-@exec mkdir -p %D/share/roadmap 2>/dev/null || true
-@unexec rmdir %D/share/roadmap 2>/dev/null || true
+bin/rdmdownload
+bin/rdmgetall
+bin/rdmgenmaps
+bin/rdmcompare
+%%DATADIR%%/preferences
+%%DATADIR%%/schema
+%%DATADIR%%/sprites
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%
