@@ -1,25 +1,18 @@
---- scripts/wrapzap.orig	Wed Jan  9 16:57:21 2002
-+++ scripts/wrapzap	Sun Jan 13 01:02:59 2002
-@@ -16,7 +16,7 @@
+--- scripts/wrapzap.orig	Fri May 17 01:37:42 2002
++++ scripts/wrapzap	Fri May 17 01:38:15 2002
+@@ -16,9 +16,9 @@
  #
  
  # modify this to match your install
 -zapper=/usr/local/script/squid_redirect
 +zapper=%%PREFIX%%/libexec/squid_redirect
  
- ZAP_MODE=				# or "CLEAR"
+-ZAP_MODE=				# or "CLEAR"
++ZAP_MODE=CLEAR				# or "CLEAR"
  ZAP_BASE=http://adzap.cs.zip.com.au	# a local web server will be better
-@@ -28,6 +28,9 @@
- 					# for patterns in addition to the
- 					# stock zapper; this is the one to
- 					# which you should add new ads
-+
-+. %%PREFIX%%/etc/adzap.conf
-+
- STUBURL_AD=$ZAP_BASE/ad.gif
- STUBURL_ADSSL=$ZAP_BASE_SSL/ad.gif
- STUBURL_ADBG=$ZAP_BASE/adbg.gif
-@@ -40,6 +43,8 @@
+ ZAP_BASE_SSL=https://adzap.cs.zip.com.au # this can probably be ignored
+ ZAP_PREMATCH=				# pathname of extra pattern file
+@@ -40,6 +40,8 @@
  STUBURL_COUNTERJS=$ZAP_BASE/no-op-counter.js
  STUBURL_WEBBUG=$ZAP_BASE/webbug.gif
  STUBURL_WEBBUGJS=$ZAP_BASE/webbug.js
@@ -27,4 +20,4 @@
 +. %%PREFIX%%/etc/adzap.conf
  
  export ZAP_MODE ZAP_BASE ZAP_BASE_SSL ZAP_PREMATCH ZAP_POSTMATCH
- export STUBURL_AD STUBURL_ADSSL STUBURL_ADJS STUBURL_ADHTML STUDURL_ADMP3 \
+ export STUBURL_AD STUBURL_ADSSL STUBURL_ADJS STUBURL_ADHTML STUBURL_ADMP3 \
