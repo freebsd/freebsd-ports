@@ -1,5 +1,5 @@
-*** Makefile.orig	Thu Mar  2 16:53:34 1995
---- Makefile	Fri Mar  3 07:37:29 1995
+*** Makefile.orig	Sun Jun  4 17:29:07 1995
+--- Makefile	Thu Jun 22 04:28:14 1995
 ***************
 *** 32,38 ****
   MAN_DIR = $(PREFIX)/man
@@ -22,8 +22,8 @@
   #
   # If you don't wish to use the 'make install' and 'make install.man'
   # commands, you can ignore these.
-! INST_BIN_OPT = -c -s -m 755 -o root -g root
-! INST_MAN_OPT = -c -m 644 -o root -g root
+! INST_BIN_OPT = -c -s -m 555 -o store -g store
+! INST_MAN_OPT = -c -m 444 -o store -g store
   ###############################################################################
   #
   # C compiler flags and libraries for each machine.
@@ -31,8 +31,8 @@
   #
   # If you don't wish to use the 'make install' and 'make install.man'
   # commands, you can ignore these.
-! #INST_BIN_OPT = -c -s -m 755 -o root -g root
-! #INST_MAN_OPT = -c -m 644 -o root -g root
+! #INST_BIN_OPT = -c -s -m 555 -o store -g store
+! #INST_MAN_OPT = -c -m 444 -o store -g store
 ! INST_BIN_OPT = -c -s -m 555 -o bin -g bin
 ! INST_MAN_OPT = -c -m 644 -o bin -g bin
   ###############################################################################
