@@ -52,10 +52,4 @@ register-mozilla:
 	@cd ${WRKDIR}/mozilla-runtime ; ${FIND} . -type f \
 		| ${ZIP} ${WRKDIR}/FREEBSDGCCIruntime.zip -@
 
-mozilla:
-	@${MAKE} extract-mozilla
-	@${MAKE} patch-mozilla
-	@${MAKE} build-mozilla
-	@${MAKE} register-mozilla
-	@${MAKE} install-mozilla
-
+mozilla: extract-mozilla patch-mozilla build-mozilla register-mozilla install-mozilla
