@@ -1,7 +1,7 @@
 http://qa.openoffice.org/issues/show_bug.cgi?id=24142
 
---- ../odk/settings/settings.mk	Sun Jan 25 18:41:02 2004
-+++ ../odk/settings/settings.mk	Sun Jan 25 18:45:09 2004
+--- odk/settings/settings.mk	Sun Jan 25 18:41:02 2004
++++ odk/settings/settings.mk	Sun Jan 25 18:45:09 2004
 @@ -368,3 +368,85 @@
  
  endif

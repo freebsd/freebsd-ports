@@ -10,61 +10,60 @@ PORTVERSION=	2.0
 CATEGORIES+=	editors
 MASTER_SITES+=	${MASTER_SITE_LOCAL} \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
-		http://people.freebsd.org/~mbr/ooo/:moz \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/contrib/helpcontent/&,}:help \
-		ftp://ftp.kddlabs.co.jp/office/openoffice/contrib/helpcontent/:help \
-		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/contrib/helpcontent/:help \
+		ftp://ftp.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla1.7b/src/:moz \
 		http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/helpcontent/:help
+
 MASTER_SITE_SUBDIR=	maho/openoffice.org
-DISTFILES+=	OOo_${BUILD_NR}${MILESTONE}_${SNAPDATE}_source.tar.bz2 gpc231.tar.Z:gpc \
-		patch-openoffice-mozilla101-2002-10-14:moz mozilla-vendor-1.0.2a.tgz:moz
+DISTFILES+=	OOo_${BUILD_NR}${MILESTONE}_${SNAPDATE}_source.tar.bz2 gpc231.tar.Z:gpc
 EXTRACT_ONLY=	OOo_${BUILD_NR}${MILESTONE}_${SNAPDATE}_source.tar.bz2
 
 MAINTAINER=	openoffice@FreeBSD.org
 
-SNAPDATE=	20040812
+BROKEN=		"Bison 1.875d is required, and setup fails"
+
+SNAPDATE=	20041016
 NO_LATEST_LINK=	yes
-USE_GNOME=	orbit gtk12 gtk20
+USE_GNOME=	gtk20
+MOZILLA_PROJECT=	cws_srx645_mozooo.20041016.tar.gz
+MOZILLA_SOURCE=		mozilla-source-1.7b-source.tar.gz
+.if !defined(WITHOUT_MOZILLA)
+DISTFILES+=	${MOZILLA_PROJECT}:moz ${MOZILLA_SOURCE}:moz
+USE_GNOME+=	orbit gtk12
+.endif
+
 USE_PERL5=	yes
-#USE_BISON=	yes #bison1.875d is required
+USE_BISON=	yes
 USE_REINPLACE=	yes
 USE_BZIP2=	yes
-WITHOUT_MOZILLA=	yes # WIP for Mozilla 1.7
+
+.if !defined(WITHOUT_JAVA)
+USE_JAVA=	1.4+
+NO_RUN_DEPENDS_JAVA=	yes
+.endif
 
 .include <bsd.port.pre.mk>
 .include <${FILESDIR}/Makefile.localized>
 
-LANG_PKGNAME?=   en-US
-LANG_EXT?=       01
-LANG_CONFIGURE_ARG?=   ENUS
+LANG_PKGNAME?=	en-US
+LANG_EXT?=	01
+LANG_CONFIGURE_ARG?=	ENUS
 
-.if defined(ALL_LOCALIZED_LANGS)
-DISTFILES+=	helpcontent_31_unix.tgz:help helpcontent_33_unix.tgz:help \
-		helpcontent_34_unix.tgz:help helpcontent_39_unix.tgz:help \
-		helpcontent_46_unix.tgz:help helpcontent_49_unix.tgz:help \
-		helpcontent_55_unix.tgz:help \
-		helpcontent_81_unix.tgz:help helpcontent_82_unix.tgz:help \
-		helpcontent_86_unix.tgz:help helpcontent_88_unix.tgz:help \
-		helpcontent_90_unix.tgz:help
-L10NHELPS=	helpcontent_31_unix.tgz helpcontent_33_unix.tgz \
-		helpcontent_34_unix.tgz helpcontent_39_unix.tgz \
-		helpcontent_46_unix.tgz helpcontent_49_unix.tgz \
-		helpcontent_55_unix.tgz \
-		helpcontent_81_unix.tgz helpcontent_82_unix.tgz \
-		helpcontent_86_unix.tgz helpcontent_88_unix.tgz \
-		helpcontent_90_unix.tgz
+.if defined(L10NHELP)
+DISTFILES+=	${L10NHELP}:help
 .endif
-
-BROKEN=		"Work In Progress, Bison 1.875d is required"
+.if defined(ALL_LOCALIZED_LANGS)
+DISTFILES+=	helpcontent_49_unix.tgz:help
+L10NHELPS+=	helpcontent_49_unix.tgz
+.endif
 
 COMMENT?=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser(developer version)
 BUILD_NR=		680
-MILESTONE=		m48
+MILESTONE=		m56
 RELEASE_NR=		2.0
 DIST_SUBDIR=		openoffice2.0
 SIMPLEOSVER!=		${UNAME} -r | ${SED} -e 's/\.//' | ${SED} -e 's/\..*//'
 BUILD_DEPENDS+=	gcc32:${PORTSDIR}/lang/gcc32
-USE_GCC=3.2
+# FIXME
 .if defined(WITH_CCACHE)
 BUILD_DEPENDS+=	ccache:${PORTSDIR}/devel/ccache
 CC=	ccache gcc32
@@ -73,41 +72,44 @@ CXX=	ccache g++32
 CC=	gcc32
 CXX=	g++32
 .endif
-
-BUILD_DEPENDS+=	${JDKDIR}/bin/java:${PORTSDIR}/java/jdk14 \
-		zip:${PORTSDIR}/archivers/zip \
+BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
 		gcp:${PORTSDIR}/sysutils/coreutils \
-		${ANT}:${PORTSDIR}/devel/apache-ant \
+		gpatch:${PORTSDIR}/devel/patch \
 		${X11BASE}/lib/libXft.so:${PORTSDIR}/x11-fonts/libXft \
 		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
 		bison1875:${PORTSDIR}/devel/bison1875
-.if !defined(DISPLAY)
-BUILD_DEPENDS+= Xvfb:${X_VFBSERVER_PORT}
-.endif
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		mng.1:${PORTSDIR}/graphics/libmng \
 		freetype.9:${PORTSDIR}/print/freetype2
-
-JDKDIR?=	${LOCALBASE}/jdk1.4.2
+.if defined(WITHOUT_JAVA)
+LIB_DEPENDS=	xslt.2:${PORTSDIR}/textproc/libxslt
+.else
+BUILD_DEPENDS+=	${ANT}:${PORTSDIR}/devel/apache-ant
+.endif
 GNU_CONFIGURE=	yes
 USE_AUTOCONF_VER=	259
+
+OOODIR=		oo_${RELEASE_NR}_src
 WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/work
-WRKSRC=		${WRKDIR}/oo_${RELEASE_NR}_src/config_office
+WRKSRC=		${WRKDIR}/${OOODIR}
+CONFIGURE_WRKSRC=	${WRKDIR}/${OOODIR}/config_office
 ANT?=		${LOCALBASE}/bin/ant
 TCSH?=		/bin/tcsh
 ZIP?=		${PREFIX}/bin/zip
 UNZIP?=		${PREFIX}/bin/unzip
-BUILD=		dmake
-
-.if !defined(DISPLAY)
-DISPLAYHACK=localhost:1001
-.endif
 
 CONFIGURE_ENV=		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
 			PTHREAD_LIBS=${PTHREAD_LIBS}
-CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --with-jdk-home=${JDKDIR} --with-ant-home=${LOCALBASE}/ant 
+CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp  --with-gnu-patch=${LOCALBASE}/bin/gpatch
+
+.if defined(WITHOUT_JAVA)
+CONFIGURE_ARGS+=	--disable-java
+.else
+CONFIGURE_ARGS+=	--with-jdk-home="${JAVA_HOME}" --with-ant-home=${LOCALBASE}/ant
+.endif
+
 .if defined(WITHOUT_MOZILLA)
 CONFIGURE_ARGS+=	--disable-mozilla
 .endif
@@ -126,43 +128,8 @@ CONFIGURE_ARGS+=	--enable-symbols
 .endif
 .endif
 
-pre-fetch:
-	@${ECHO} "OPTIONS:"
-.if !defined(WITH_DEBUG)
-	@${ECHO}
-	@${ECHO} "You can compile OOo with debug symbols"
-	@${ECHO} "if you call make with WITH_DEBUG=1"
-	@${ECHO}
-	@${ECHO} "If you set WITH_DEBUG=2, you add internal"
-	@${ECHO} "OOo debug support."
-	@${ECHO}
-.endif
-.if !defined(WITH_TTF_BYTECODE_ENABLED)
-	@${ECHO}
-	@${ECHO} "You may set WITH_TTF_BYTECODE_ENABLED=YES"
-	@${ECHO} "if you like to use the Freetype library to"
-	@${ECHO} "render TTF fonts. Normally the TTF lib is"
-	@${ECHO} "not used to render fonts."
-	@${ECHO}
-	@${ECHO} "If you have licensed the Apple patents"
-	@${ECHO} "US05155805 US05159668 and US05325479"
-	@${ECHO} "you can enable this option to get better"
-	@${ECHO} "quality of glyphs at small bitmap sizes."
-	@${ECHO}
-.endif
-	@${ECHO}
-	@${ECHO} "NOTICE:"
-	@${ECHO}
-	@${ECHO} "To build Openoffice, you should have a lot"
-.if defined(WITH_DEBUG)
-	@${ECHO} "of free diskspace (~ 8GB)."
-.else
-	@${ECHO} "of free diskspace (~ 4GB)."
-.endif
-	@${ECHO} "If you want SDK and/or solver, please type make sdk and/or make solver"
-
 pre-everything::
-# really tewak, extremely useful when you build all localized language versions
+# really tweak, extremely useful when you build all localized language versions
 # needed after when you build with ALL_LOCALIZED_LANGS.
 .if defined(TWEAK_L10N)
 	@${RM} -f ${WRKDIR}/.PLIST*
@@ -180,8 +147,8 @@ pre-everything::
 
 post-extract:
 	@cd ${WRKDIR} ; ${CAT} ${DISTDIR}/${DIST_SUBDIR}/gpc231.tar.Z | ${TAR} xfz -
-	@${CP} ${WRKDIR}/gpc231/gpc.c ${WRKSRC}/../external/gpc/
-	@${CP} ${WRKDIR}/gpc231/gpc.h ${WRKSRC}/../external/gpc/
+	@${CP} ${WRKDIR}/gpc231/gpc.c ${WRKSRC}/external/gpc/
+	@${CP} ${WRKDIR}/gpc231/gpc.h ${WRKSRC}/external/gpc/
 .if defined(L10NHELP)
 	@${ECHO_MSG} "===>  Extracting L10NHELP sub project"
 	@${MKDIR} ${WRKDIR}/L10NHELP
@@ -196,82 +163,40 @@ post-extract:
 		${CAT} ${DISTDIR}/${DIST_SUBDIR}/$$file | ${GZIP_CMD} -d | ${TAR} xf - ; \
 	done
 .endif
+.if !defined(WITHOUT_MOZILLA)
+	cd ${WRKSRC} ; ${MV} moz moz.old ; ${TAR} xfz ${DISTDIR}/${DIST_SUBDIR}/${MOZILLA_PROJECT} ; ${PATCH} < ${FILESDIR}/moz-patch
+	${MKDIR} ${WRKSRC}/moz/download
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/mozilla-source-1.7b-source.tar.gz ${WRKSRC}/moz/download
+	cd ${WRKSRC} ; ${MV} moz moz.runtime ; ${MV} moz.old moz
+.endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's+%%PTHREAD_LIBS%%+${PTHREAD_LIBS}+g;' ${WRKSRC}/../odk/settings/settings.mk
-	@${REINPLACE_CMD} -e 's+%%PTHREAD_CFLAGS%%+${PTHREAD_CFLAGS}+g' ${WRKSRC}/../odk/settings/settings.mk
-.if defined(WITH_TTF_BYTECODE_ENABLED)
-	@if [ "`echo ${PATCHDIR}/optpatch-*`" != "${PATCHDIR}/optpatch-*" ]; then \
-		${ECHO_MSG} "===>  Applying additional TTF bytecode patches for ${PKGNAME}" ; \
-		if [ ${PATCH_DEBUG_TMP} = yes ]; then \
-			${ECHO_MSG} "===>   Applying ${OPSYS} patch ${PATCHDIR}/optpatch-freetype::patch" ; \
-		fi; \
-		${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/optpatch-freetype+patch ; \
-	fi
-.endif
-
-.include <${FILESDIR}/Makefile.mozilla>
+	@${REINPLACE_CMD} -e 's+%%PTHREAD_LIBS%%+${PTHREAD_LIBS}+g;' ${WRKSRC}/odk/settings/settings.mk
+	@${REINPLACE_CMD} -e 's+%%PTHREAD_CFLAGS%%+${PTHREAD_CFLAGS}+g' ${WRKSRC}/odk/settings/settings.mk
 
 do-build:
-.if !defined(WITHOUT_MOZILLA)
-.if !exists(${WRKSRC}/../moz/zipped/FREEBSDGCCIruntime.zip)
-.if !exists(${WRKSRC}/../moz/zipped/FREEBSDGCCIlib.zip)
-.if !exists(${WRKSRC}/../moz/zipped/FREEBSDGCCIinc.zip)
-	@${MAKE} mozilla
-.endif
-.endif
-.endif
-.endif
-.if exists(${WRKDIR}/.Xvfb.pid)
-	@-${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
-	@${RM} -f ${WRKDIR}/.Xvfb.pid
-.endif
-.if !defined(DISPLAY)
-	#
-	# This is a UGLY hack to not have to specify a X-Display.
-	#
-	${X11BASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
-	@sleep 5
-.endif
-	@cd ${WRKSRC}/.. ; PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" ./bootstrap
+	@cd ${WRKSRC} ; ./bootstrap
 .if defined(L10NHELP) || defined(ALL_LOCALIZED_LANGS)
-	@${MKDIR} ${WRKSRC}/../solver/${BUILD_NR}/unxfbsd.pro/pck
-	@${CP} ${WRKDIR}/L10NHELP/*.zip ${WRKSRC}/../solver/${BUILD_NR}/unxfbsd.pro/pck
+	@${MKDIR} ${WRKSRC}/solver/${BUILD_NR}/unxfbsd.pro/pck
+	@${CP} ${WRKDIR}/L10NHELP/*.zip ${WRKSRC}/solver/${BUILD_NR}/unxfbsd.pro/pck
 .endif
-.if !defined(DISPLAY)
-	@cd ${WRKSRC}/.. ; DISPLAY=${DISPLAYHACK} PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" ; \
-		${TCSH} -c 'source FreeBSDEnv.Set ; unsetenv TOP ; ${BUILD}'
-	@-${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
-	@${RM} -f ${WRKDIR}/.Xvfb.pid
+.if !defined(WITHOUT_MOZILLA)
+	cd ${WRKSRC}/moz.runtime ; ${SETENV} "BUILD_MOZAB=TRUE" ${TCSH} -c 'source ../FreeBSDEnv.Set ; build.pl ; dmake zip' ; cp unxfbsd.pro/zipped/FREEBSD*.zip ../moz/zipped
 .endif
-	@cd ${WRKSRC}/.. ; DISPLAY=${DISPLAY} PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" ; \
-		${TCSH} -c 'source FreeBSDEnv.Set ; unsetenv TOP ; ${BUILD}'
+	@cd ${WRKSRC} ;	${TCSH} -c 'source FreeBSDEnv.Set ; dmake'
 
 pre-install:
 	@${CP} ${FILESDIR}/oo_setup.resp \
-		${WRKSRC}/../instsetoo/unxfbsd.pro/${LANG_PKGNAME}/normal/
+		${WRKSRC}/instsetoo/unxfbsd.pro/${LANG_PKGNAME}/normal/
 	@${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#g' \
 			-e 's#%%RELEASE_NR%%#${RELEASE_NR}#g' \
-		${WRKSRC}/../instsetoo/unxfbsd.pro/${LANG_PKGNAME}/normal/oo_setup.resp
+		${WRKSRC}/instsetoo/unxfbsd.pro/${LANG_PKGNAME}/normal/oo_setup.resp
 
 do-install:
-.if !defined(DISPLAY)
-	#
-	# UGLY hack to not have to specify a X-Display.
-	#
-	${X11BASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
-	@sleep 5
-	@SAL_IGNOREXERRORS=1 TEMP=${WRKDIR} DISPLAY=${DISPLAYHACK} \
-		${WRKSRC}/../instsetoo/*.pro/${LANG_PKGNAME}/normal/setup -r:oo_setup.resp
-	@${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
-	@${RM} -f ${WRKDIR}/.Xvfb.pid
-.else
-	SAL_IGNOREXERRORS=1 TEMP=${WRKDIR} DISPLAY=${DISPLAY} \
-		${WRKSRC}/../instsetoo/*.pro/${LANG_PKGNAME}/normal/setup -r:oo_setup.resp
-.endif
+	TEMP=${WRKDIR} ${WRKSRC}/instsetoo/*.pro/${LANG_PKGNAME}/normal/setup -r:oo_setup.resp
 
 install-user:
-	@SAL_IGNOREXERRORS=1 ${PREFIX}/${INSTALLATION_BASEDIR}/program/setup
+	${PREFIX}/${INSTALLATION_BASEDIR}/program/setup
 
 post-install:
 	@${ECHO_MSG} "===>  Add wrapper scripts";
@@ -315,12 +240,11 @@ package-rename:
 
 sdk:
 	@${ECHO_MSG} "===>   Make SDK of OpenOffice.org"
-	@cd ${WRKSRC}/.. && DISPLAY=${DISPLAY} PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" && \
-		${SH} -c 'source FreeBSDEnv.Set && unsetenv TOP && cd sdk_oo && build.pl && deliver.pl'
-	${MV} ${WRKSRC}/../solver/${BUILD_NR}/unxfbsd.pro/bin/OpenOffice.org${RELEASE_NR}_SDK.tar.gz ${WRKDIR}/../OOo_${BUILD_NR}${MILESTONE}_${OPSYS}${SIMPLEOSVER}Intel_sdk.tar.gz
+	@cd ${WRKSRC} && ${SH} -c 'source FreeBSDEnv.Set ; cd sdk_oo ; build.pl ; deliver.pl'
+	${MV} ${WRKSRC}/solver/${BUILD_NR}/unxfbsd.pro/bin/OpenOffice.org${RELEASE_NR}_SDK.tar.gz ${WRKDIR}/../OOo_${BUILD_NR}${MILESTONE}_${OPSYS}${SIMPLEOSVER}Intel_sdk.tar.gz
 
 solver:
 	@${ECHO_MSG} "===>   Make Solver of OpenOffice.org"
-	@cd ${WRKSRC}/.. ; ${TAR} cfz ${WRKDIR}/../OOo_${BUILD_NR}${MILESTONE}_${OPSYS}${SIMPLEOSVER}Intel_solver.tar.gz solver
+	@cd ${WRKSRC} ; ${TAR} cfz ${WRKDIR}/../OOo_${BUILD_NR}${MILESTONE}_${OPSYS}${SIMPLEOSVER}Intel_solver.tar.gz solver
 
 .include <bsd.port.post.mk>
