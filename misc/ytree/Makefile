@@ -12,8 +12,6 @@ MASTER_SITES=	http://www.han.de/~werner/
 
 MAINTAINER=	ports@FreeBSD.org
 
-FETCH_BEFORE_ARGS=	-b
-
 ALL_TARGET=	ytree
 MAN1=		ytree.1
 

@@ -18,8 +18,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LIBS="-L${X11BASE}/lib"
 
-FETCH_BEFORE_ARGS=	-t
-
 INSTALL_TARGET=	install install.man
 MAN1=		xspread.1 pxspread.1
 

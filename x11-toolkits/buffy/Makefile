@@ -12,8 +12,6 @@ MASTER_SITES=	http://reality.sgi.com/offer/src/buffy/
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-FETCH_BEFORE_ARGS=	-b
-
 USE_X_PREFIX=	yes
 USE_GTK=	yes
 USE_LIBTOOL=	yes

@@ -15,7 +15,6 @@ MASTER_SITE_SUBDIR=	system/status/xstatus
 
 MAINTAINER=	obrien@FreeBSD.org
 
-FETCH_BEFORE_ARGS=	-b
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 MAN1=		xosview.1

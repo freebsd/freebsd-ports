@@ -13,7 +13,6 @@ MASTER_SITES=	http://www.xinetd.org/ \
 
 MAINTAINER=	vanilla@FreeBSD.org
 
-FETCH_BEFORE_ARGS=	-b
 GNU_CONFIGURE=	yes
 ALL_TARGET=	build
 CONFIGURE_ARGS=	--with-loadavg --with-libwrap
