@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dovecot
-DISTVERSION=	0.99.13
+DISTVERSION=	0.99.14
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/
 
