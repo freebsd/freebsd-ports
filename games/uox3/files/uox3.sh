@@ -8,6 +8,7 @@ start)
 		cd ${uox3dir} && \
 		uox3 > ${uox3dir}/stdout.log & && \
 		echo -n ' uox3'
+		;;
 stop)
 	killall uox3 && echo -n ' uox3'
 	;;
