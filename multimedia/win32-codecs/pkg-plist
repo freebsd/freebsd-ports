@@ -74,11 +74,19 @@ lib/win32/vssh264core.dll
 lib/win32/vssh264dec.dll
 lib/win32/vsslight.dll
 lib/win32/vsswlt.dll
+lib/win32/ultimo.dll
+lib/win32/vp4vfw.dll
 @comment qt6dlls
 lib/win32/QuickTimeEssentials.qtx
 lib/win32/QuickTime.qts
 lib/win32/QuickTimeInternetExtras.qtx
 lib/win32/qtmlClient.dll
+@comment qtextras
+lib/win32/BeHereiVideo.qtx
+lib/win32/Indeo4.qtx
+lib/win32/On2_VP3.qtx
+lib/win32/ZyGoVideo.qtx
+lib/win32/3ivX.qtx
 @comment rp8codecs
 lib/win32/dnet.so.6.0
 lib/win32/drv2.so.6.0

@@ -7,6 +7,7 @@
 
 PORTNAME=	win32-codecs
 PORTVERSION=	2.${CODEC_MPLAYER_VERSION:S/pre/.p/}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/codecs/:mplayer_extracodec \
