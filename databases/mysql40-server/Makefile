@@ -3,7 +3,7 @@
 # Date created:				28 Oct 1997
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
-# $Id: Makefile,v 1.10 1997/11/18 19:05:12 jfitz Exp $
+# $Id: Makefile,v 1.11 1997/11/26 23:35:27 jseger Exp $
 #
 
 DISTNAME=	mysql-3.20.32a
@@ -25,6 +25,9 @@ CONFIGURE_ARGS=	--localstatedir=/var/db/mysql \
 CONFIGURE_ENV+=	PERL=${PREFIX}/bin/perl INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 
 pre-install:
+.if defined(PACKAGE_BUILDING)
+	@ ${RM} -rf /var/db/mysql
+.endif
 	@ ${SETENV} ${MAKE_ENV} /usr/bin/perl ${SCRIPTDIR}/check_old_version
 
 post-install:
