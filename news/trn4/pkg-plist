@@ -1,21 +1,27 @@
-@exec echo "Be sure to edit %D/bin/Pnews and %D/bin/newsetup to set the Distribution codes"
+@exec echo "Be sure to edit %D/bin/Pnews to set the Distribution codes"
 bin/Pnews
 bin/Rnmail
-bin/newsetup
-bin/newsgroups
 bin/nntplist
 bin/trn
 bin/trn-artchk
+lib/trn/HelpFiles/changelog
+lib/trn/HelpFiles/hints
+lib/trn/HelpFiles/quickstart
+lib/trn/HelpFiles/samples/access
+lib/trn/HelpFiles/samples/index
+lib/trn/HelpFiles/samples/trnrc
+lib/trn/HelpFiles/top
 lib/trn/INIT
 lib/trn/Pnews.header
 lib/trn/Speller
+lib/trn/access.def
 lib/trn/filexp
 lib/trn/makedir
 lib/trn/mbox.saver
 lib/trn/newsnews
 lib/trn/norm.saver
-man/man1/trn.1.gz
 man/man1/Pnews.1.gz
 man/man1/Rnmail.1.gz
-man/man1/newsetup.1.gz
-man/man1/newsgroups.1.gz
+man/man1/trn.1.gz
+@dirrm lib/trn/HelpFiles
+@dirrm lib/trn
