@@ -1,0 +1,11 @@
+--- configure.orig	Fri Aug  2 19:55:11 1996
++++ configure	Sun Feb 16 19:28:11 1997
+@@ -1598,7 +1598,7 @@
+ 
+ 
+ 
+-CFLAGS="-g -I. -I.. -I../common"
++CFLAGS="-O -I. -I.. -I../common"
+ cat >> confdefs.h <<EOF
+ #define CFLAGS "$CFLAGS"
+ EOF
