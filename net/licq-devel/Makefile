@@ -38,7 +38,8 @@ post-configure:
 	    INSTALL_DATA="${INSTALL_DATA}" \
 	    INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 	    INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
-	    ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}; then \
+	    ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS} \
+		--enable-spoofing; then \
 			${ECHO} "===>  Script \"${CONFIGURE_SCRIPT}\" failed: here are the contents of \"${CONFIGURE_LOG}\""; \
 			${CAT} ${CONFIGURE_LOG}; \
 			${ECHO} "(end of \"${CONFIGURE_LOG}\")"; \
