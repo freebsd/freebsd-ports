@@ -1,0 +1,10 @@
+--- src/Makefile.in.orig	Sat Sep 20 09:10:49 2003
++++ src/Makefile.in	Sat Sep 20 09:16:21 2003
+@@ -108,7 +108,6 @@
+ 
+ AM_CFLAGS = \
+ 	@XDVSHOW_CFLAGS@        \
+-	-pthread	\
+ 	-Wall -Werror -O3
+ 
+ subdir = src

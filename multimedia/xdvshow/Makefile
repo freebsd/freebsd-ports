@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	xdvshow
-PORTVERSION=	00.2002.03.16
-PORTREVISION=	1
+PORTVERSION=	00.2003.09.03
+#PORTREVISION=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.sfc.wide.ad.jp/DVTS/software/xdvshow/
 DISTNAME=	${PORTNAME}
@@ -17,7 +17,15 @@ COMMENT=	DV/RTP viewer
 
 LIB_DEPENDS=	dv.3:${PORTSDIR}/multimedia/libdv
 
-GNU_CONFIGURE=	YES
+GNU_CONFIGURE=		YES
 USE_AUTOCONF_VER=	253
+
+USE_REINPLACE=		YES
+
+post-patch:
+	@${REINPLACE_CMD} \
+		-e "s|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|g" \
+		-e "s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g" \
+		${WRKSRC}/configure.in
 
 .include <bsd.port.mk>
