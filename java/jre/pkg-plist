@@ -49,8 +49,8 @@ jre%%JRE_VERSION%%/lib/security/java.security
 jre%%JRE_VERSION%%/lib/serialver.properties
 @exec mkdir -p %D/share/doc/java
 @unexec rmdir %D/share/doc/java 2>/dev/null || true
-@exec %D/bin/registervm "%D/jre%%JRE_VERSION%%/bin/java # JRE%%JRE_VERSION%%"
-@unexec %D/bin/unregistervm JRE%%JRE_VERSION%%
+@exec %%LOCALBASE%%/bin/registervm "%D/jre%%JRE_VERSION%%/bin/java # JRE%%JRE_VERSION%%"
+@unexec %%LOCALBASE%%/bin/unregistervm "%D/jre%%JRE_VERSION%%/bin/java"
 @dirrm jre%%JRE_VERSION%%/lib/security
 @dirrm jre%%JRE_VERSION%%/lib/i386/green_threads
 @dirrm jre%%JRE_VERSION%%/lib/i386
