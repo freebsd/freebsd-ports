@@ -17,7 +17,6 @@ LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		ungif.5:${PORTSDIR}/graphics/libungif \
 		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
-BUILD_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
