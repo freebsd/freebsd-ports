@@ -232,8 +232,6 @@ adonthell	ports/games/adonthell
 adpcm		ports/audio/adpcm
 adtool		ports/sysutils/adtool
 adzap		ports/www/adzap
-ae_fonts_mono	ports/x11-fonts/ae_fonts_mono
-ae_fonts_ttf	ports/x11-fonts/ae_fonts_ttf
 aee		ports/editors/aee
 aescrypt	ports/security/aescrypt
 aewm		ports/x11-wm/aewm
@@ -346,6 +344,12 @@ apr		ports/devel/apr
 apsfilter	ports/print/apsfilter
 aqmoney		ports/finance/aqmoney
 aqsis		ports/graphics/aqsis
+ar-ae_fonts_mono	ports/arabic/ae_fonts_mono
+ar-ae_fonts_ttf	ports/arabic/ae_fonts_ttf
+ar-kacst_fonts	ports/arabic/kacst_fonts
+ar-kde3-i18n	ports/arabic/kde3-i18n
+ar-khotot	ports/arabic/khotot
+ar-koffice-i18n	ports/arabic/koffice-i18n
 ar-openoffice-1.0	ports/editors/openoffice-1.0-ar
 ar-openoffice-1.1	ports/arabic/openoffice-1.1
 arc		ports/archivers/arc
@@ -3526,7 +3530,6 @@ jx		ports/x11-toolkits/jx
 jython		ports/lang/jython
 jzip		ports/games/jzip
 k3b		ports/sysutils/k3b
-kacst_fonts	ports/x11-fonts/kacst_fonts
 kadu		ports/polish/kadu
 kaffe		ports/java/kaffe
 kaffe-devel	ports/java/kaffe-devel
@@ -3557,7 +3560,6 @@ kdc2tiff	ports/graphics/kdc2tiff
 kde3		ports/x11/kde3
 kde3-i18n	ports/misc/kde3-i18n
 kde3-i18n-af	ports/misc/kde3-i18n-af
-kde3-i18n-ar	ports/misc/kde3-i18n-ar
 kde3-i18n-az	ports/misc/kde3-i18n-az
 kde3-i18n-bg	ports/misc/kde3-i18n-bg
 kde3-i18n-bs	ports/misc/kde3-i18n-bs
@@ -3624,7 +3626,6 @@ keyprint	ports/security/keyprint
 kgamma		ports/x11/kgamma
 kgpg		ports/security/kgpg
 khacc		ports/finance/khacc
-khotot		ports/x11-fonts/khotot
 kile		ports/editors/kile
 kiltdown	ports/mail/kiltdown
 kimagemapeiditor	ports/graphics/kimagemapeditor
@@ -3725,7 +3726,6 @@ ko-unzip	ports/korean/unzip
 kobodeluxe	ports/games/kobodeluxe
 koffice-i18n	ports/misc/koffice-i18n
 koffice-i18n-af	ports/misc/koffice-i18n-af
-koffice-i18n-ar	ports/misc/koffice-i18n-ar
 koffice-i18n-bs	ports/misc/koffice-i18n-bs
 koffice-i18n-cs	ports/misc/koffice-i18n-cs
 koffice-i18n-da	ports/misc/koffice-i18n-da
