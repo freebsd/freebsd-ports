@@ -1,22 +1,24 @@
---- config.h.orig	Fri Oct 30 20:36:26 1998
-+++ config.h	Sun Nov  1 17:43:51 1998
-@@ -1,8 +1,8 @@
+--- config.h.orig	Mon Nov 23 04:58:50 1998
++++ config.h	Tue Nov 24 00:54:58 1998
+@@ -1,7 +1,7 @@
  /* configuration file - precompile options */
  
  #define USE_NET /* Use networking features */
 -#undef BG_ON_START /* Background on startup */
--#undef GTK_1_1 /* Use GTK 1.1.x */
 +#define BG_ON_START /* Background on startup */
-+#define GTK_1_1 /* Use GTK 1.1.x */
+ #define GTK_1_1 /* Use GTK 1.1.x */
  #undef GTKEDITOR_PATCH /* Use the GtkEditor patch */
  
- /* Highlighting styles */
-@@ -15,7 +15,7 @@
- /* proxy */
- #undef USE_SOCKS /* you need to add -lsocks5 to the makefile for this */
+@@ -44,9 +44,9 @@
+ /* paths */
  
--#undef INTERNATIONAL /* set locale */
-+#define INTERNATIONAL /* set locale */
- 
- /* mail path */
- 
+ #define NETSCAPE "/usr/local/bin/netscape -remote"
+-#define EMACS "/usr/bin/emcas"
+-#define DES "/bin/des"
+-#define IDEA "/bin/idea"
++#define EMACS "/usr/local/bin/emcas"
++#define DES "/usr/local/bin/des"
++#define IDEA "/usr/local/bin/idea"
+ #define XTERM "/usr/X11R6/bin/xterm"
+ #define AWK "awk"
+ #define SED "sed"

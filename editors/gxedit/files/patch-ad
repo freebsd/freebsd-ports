@@ -1,0 +1,16 @@
+--- ftp-ls.sh.orig	Tue Nov 24 02:02:51 1998
++++ ftp-ls.sh	Tue Nov 24 02:03:00 1998
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ # ftp.sh output_file host directory user pass
+ ftp -n $2 > $1 2> $1 <<EOC
+ user $4 $5
+--- ftp.sh.orig	Tue Nov 24 02:02:48 1998
++++ ftp.sh	Tue Nov 24 02:02:56 1998
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ # ftp.sh output_file host directory remote_file local_file user pass
+ ftp -n $2 > $1 2> $1 <<EOC
+ user $6 $7
