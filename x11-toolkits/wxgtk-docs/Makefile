@@ -16,10 +16,14 @@ MAINTAINER=	dotz@irc.pl
 COMMENT=	wxWindows documentation in HTML
 
 NO_BUILD=	YES
+USE_REINPLACE=	YES
 USE_ZIP=	YES
 
 WXGTKDOCDIR=	${PREFIX}/share/doc/${PORTNAME}/html/
 WRKSRC=		${WRKDIR}/wxWindows-${PORTVERSION}/docs/html/
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|../pdf/wxTutorial.pdf|http://users.skynet.be/saw/download/wxWindows/wxTutorial.pdf|' ${WRKSRC}/index.htm
 
 do-install:
 	@${MKDIR} ${WXGTKDOCDIR}
