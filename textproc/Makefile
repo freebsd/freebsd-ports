@@ -142,6 +142,7 @@
     SUBDIR += nl-ispell
     SUBDIR += no-aspell
     SUBDIR += no-ispell
+    SUBDIR += ocaml-yaxpo
     SUBDIR += openjade
     SUBDIR += opensched
     SUBDIR += opensp

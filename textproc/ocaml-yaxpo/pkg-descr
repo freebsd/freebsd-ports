@@ -1,0 +1,11 @@
+[ excerpt from developer's www site ]
+
+Yaxpo is a hand-written nonvalidating XML 1.0 + XMLNS processing
+suite for Objective Caml, designed for flexibility in new and unusual
+applications of XML. The Yaxpo parser provides all three pull, push
+(SAX-like), and accumulate (DOM-like) interfaces. The latter of
+these provides a data model complete with DOM-like constructors,
+accessors, mutators, and serializers, enabling you to manipulate
+and emit XML as well as parse it.
+
+WWW: http://mikelin.mit.edu/yaxpo/
