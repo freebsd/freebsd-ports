@@ -8,8 +8,8 @@
 # APR_UTIL_WITHOUT_THREADS:	disable threads support
 # APR_UTIL_WITH_GDBM:		force dependency on the GNU dbm
 # APR_UTIL_WITHOUT_GDBM:	unconditionally disable the use of GNU dbm
-# APR_UTIL_WITH_BERKELEY_DB:	force dependency on Sleepycat's Berkeley DB 4
-# APR_UTIL_WITHOUT_BERKELEY_DB:	unconditionally disable the use of db4
+# APR_UTIL_WITH_BERKELEY_DB:	force dependency on Sleepycat's Berkeley DB 4.2
+# APR_UTIL_WITHOUT_BERKELEY_DB:	unconditionally disable the use of db4.2
 # (the database bindings are detected and recorded automatically if these
 # switches are not set)
 # APR_UTIL_WITH_LDAP:		force dependency on OpenLDAP
@@ -67,8 +67,8 @@ PKGNAMESUFFIX=	-gdbm
 
 .if defined(APR_UTIL_WITHOUT_BERKELEY_DB)
 APR_UTIL_CONF_ARGS+=	--without-berkeley-db
-.elif defined(APR_UTIL_WITH_BERKELEY_DB) || exists(${LOCALBASE}/lib/libdb4.so.0)
-LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
+.elif defined(APR_UTIL_WITH_BERKELEY_DB) || exists(${LOCALBASE}/lib/libdb-4.2.so.2)
+LIB_DEPENDS+=	db-4.2.2:${PORTSDIR}/databases/db42
 APR_UTIL_CONF_ARGS+=	--with-berkeley-db=${PREFIX}
 .if defined(PKGNAMESUFFIX)
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-db4
@@ -111,15 +111,15 @@ pre-extract:
 .endif
 	@${ECHO_MSG} ""
 .if defined(APR_UTIL_WITHOUT_BERKELEY_DB)
-	@${ECHO_MSG} "Berkeley db4 support is disabled."
+	@${ECHO_MSG} "Berkeley db4.2 support is disabled."
 .elif defined(APR_UTIL_WITH_BERKELEY_DB)
-	@${ECHO_MSG} "Berkeley db4 support forced."
-.elif exists(${LOCALBASE}/lib/libdb4.so.0)
-	@${ECHO_MSG} "Berkeley db4 support is enabled."
-	@${ECHO_MSG} "You can disable Berkeley db4 support by defining APR_UTIL_WITHOUT_BERKELEY_DB."
+	@${ECHO_MSG} "Berkeley db4.2 support forced."
+.elif exists(${LOCALBASE}/lib/libdb-4.2.so.2)
+	@${ECHO_MSG} "Berkeley db4.2 support is enabled."
+	@${ECHO_MSG} "You can disable Berkeley db4.2 support by defining APR_UTIL_WITHOUT_BERKELEY_DB."
 .else
-	@${ECHO_MSG} "Berkeley db4 was not found."
-	@${ECHO_MSG} "You can force Berkeley db4 support by defining APR_UTIL_WITH_BERKELEY_DB."
+	@${ECHO_MSG} "Berkeley db4.2 was not found."
+	@${ECHO_MSG} "You can force Berkeley db4.2 support by defining APR_UTIL_WITH_BERKELEY_DB."
 .endif
 	@${ECHO_MSG} ""
 
