@@ -13,24 +13,23 @@ PKGNAMEPREFIX=	py-
 
 MAINTAINER=	tg@FreeBSD.org
 
-BUILD_DEPENDS=	python1.5:${PORTSDIR}/lang/python15
-RUN_DEPENDS=	python1.5:${PORTSDIR}/lang/python15
-
+USE_PYTHON=	yes
 USE_ZIP=	yes
 EXTRACT_BEFORE_ARGS=	-aq
 WRKSRC=		${WRKDIR}/NewBuiltins/mxTools
+CONFIGURE_ENV=	PYTHON=${PYTHON_CMD}
 ALL_TARGET=	sharedmods
 
-PYTHONSCRIPTDIR=	${PREFIX}/lib/python1.5
-TOOLSDIR=	${PYTHONSCRIPTDIR}/site-packages/NewBuiltins
+TOOLSDIR=	${PYTHON_SITELIBDIR}/NewBuiltins
 DOCDIR=		${PREFIX}/share/doc/py-mxTools
 EXAMPLEDIR=	${PREFIX}/share/examples/py-mxTools
 
 post-extract:
 	@${CP} ${FILESDIR}/Setup ${WRKSRC}
+	@${CP} ${PYTHON_LIBDIR}/config/Makefile.pre.in ${WRKSRC}
 
 do-configure:
-	@(cd ${WRKSRC} && ${CONFIGURE_ENV} ${MAKE} -f Makefile.pre.in boot)
+	@(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${MAKE} -f Makefile.pre.in boot)
 
 do-install:
 	@${MKDIR} ${TOOLSDIR}
@@ -39,8 +38,8 @@ do-install:
 .for file in __init__.py mxTools.so xmap.so
 	${INSTALL_DATA} ${WRKDIR}/NewBuiltins/mxTools/${file} ${TOOLSDIR}/mxTools
 .endfor
-	@${PREFIX}/bin/python ${PYTHONSCRIPTDIR}/compileall.py ${TOOLSDIR}
-	@${PREFIX}/bin/python -O ${PYTHONSCRIPTDIR}/compileall.py ${TOOLSDIR}
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${TOOLSDIR}
+	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${TOOLSDIR}
 	@${MKDIR} ${EXAMPLEDIR}
 	${INSTALL_DATA} ${WRKDIR}/NewBuiltins/Examples/* ${EXAMPLEDIR}
 .if !defined(NOPORTDOCS)

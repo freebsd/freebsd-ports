@@ -1,18 +1,18 @@
-lib/python1.5/site-packages/NewBuiltins/NewBuiltins.py
-lib/python1.5/site-packages/NewBuiltins/NewBuiltins.pyc
-lib/python1.5/site-packages/NewBuiltins/NewBuiltins.pyo
-lib/python1.5/site-packages/NewBuiltins/__init__.py
-lib/python1.5/site-packages/NewBuiltins/__init__.pyc
-lib/python1.5/site-packages/NewBuiltins/__init__.pyo
-lib/python1.5/site-packages/NewBuiltins/mxTools/__init__.py
-lib/python1.5/site-packages/NewBuiltins/mxTools/__init__.pyc
-lib/python1.5/site-packages/NewBuiltins/mxTools/__init__.pyo
-lib/python1.5/site-packages/NewBuiltins/mxTools/mxTools.so
-lib/python1.5/site-packages/NewBuiltins/mxTools/xmap.so
-@dirrm lib/python1.5/site-packages/NewBuiltins/mxTools
-@dirrm lib/python1.5/site-packages/NewBuiltins
+lib/%%PYTHON_VERSION%%/site-packages/NewBuiltins/NewBuiltins.py
+lib/%%PYTHON_VERSION%%/site-packages/NewBuiltins/NewBuiltins.pyc
+lib/%%PYTHON_VERSION%%/site-packages/NewBuiltins/NewBuiltins.pyo
+lib/%%PYTHON_VERSION%%/site-packages/NewBuiltins/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/NewBuiltins/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/NewBuiltins/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/NewBuiltins/mxTools/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/NewBuiltins/mxTools/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/NewBuiltins/mxTools/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/NewBuiltins/mxTools/mxTools.so
+lib/%%PYTHON_VERSION%%/site-packages/NewBuiltins/mxTools/xmap.so
 share/doc/py-mxTools/mxTools.html
-@dirrm share/doc/py-mxTools
 share/examples/py-mxTools/Acquisition.py
 share/examples/py-mxTools/__init__.py
 @dirrm share/examples/py-mxTools
+@dirrm share/doc/py-mxTools
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/NewBuiltins/mxTools
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/NewBuiltins

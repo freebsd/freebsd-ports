@@ -1,27 +1,23 @@
-lib/python1.5/site-packages/TextTools/Constants/Sets.py
-lib/python1.5/site-packages/TextTools/Constants/Sets.pyc
-lib/python1.5/site-packages/TextTools/Constants/Sets.pyo
-lib/python1.5/site-packages/TextTools/Constants/TagTables.py
-lib/python1.5/site-packages/TextTools/Constants/TagTables.pyc
-lib/python1.5/site-packages/TextTools/Constants/TagTables.pyo
-lib/python1.5/site-packages/TextTools/Constants/__init__.py
-lib/python1.5/site-packages/TextTools/Constants/__init__.pyc
-lib/python1.5/site-packages/TextTools/Constants/__init__.pyo
-@dirrm lib/python1.5/site-packages/TextTools/Constants
-lib/python1.5/site-packages/TextTools/TextTools.py
-lib/python1.5/site-packages/TextTools/TextTools.pyc
-lib/python1.5/site-packages/TextTools/TextTools.pyo
-lib/python1.5/site-packages/TextTools/__init__.py
-lib/python1.5/site-packages/TextTools/__init__.pyc
-lib/python1.5/site-packages/TextTools/__init__.pyo
-lib/python1.5/site-packages/TextTools/mxTextTools/__init__.py
-lib/python1.5/site-packages/TextTools/mxTextTools/__init__.pyc
-lib/python1.5/site-packages/TextTools/mxTextTools/__init__.pyo
-lib/python1.5/site-packages/TextTools/mxTextTools/mxTextTools.so
-@dirrm lib/python1.5/site-packages/TextTools/mxTextTools
-@dirrm lib/python1.5/site-packages/TextTools
+lib/%%PYTHON_VERSION%%/site-packages/TextTools/Constants/Sets.py
+lib/%%PYTHON_VERSION%%/site-packages/TextTools/Constants/Sets.pyc
+lib/%%PYTHON_VERSION%%/site-packages/TextTools/Constants/Sets.pyo
+lib/%%PYTHON_VERSION%%/site-packages/TextTools/Constants/TagTables.py
+lib/%%PYTHON_VERSION%%/site-packages/TextTools/Constants/TagTables.pyc
+lib/%%PYTHON_VERSION%%/site-packages/TextTools/Constants/TagTables.pyo
+lib/%%PYTHON_VERSION%%/site-packages/TextTools/Constants/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/TextTools/Constants/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/TextTools/Constants/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/TextTools/TextTools.py
+lib/%%PYTHON_VERSION%%/site-packages/TextTools/TextTools.pyc
+lib/%%PYTHON_VERSION%%/site-packages/TextTools/TextTools.pyo
+lib/%%PYTHON_VERSION%%/site-packages/TextTools/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/TextTools/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/TextTools/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/TextTools/mxTextTools/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/TextTools/mxTextTools/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/TextTools/mxTextTools/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/TextTools/mxTextTools/mxTextTools.so
 share/doc/py-mxTextTools/mxTextTools.html
-@dirrm share/doc/py-mxTextTools
 share/examples/py-mxTextTools/HTML.py
 share/examples/py-mxTextTools/Loop.py
 share/examples/py-mxTextTools/Python.py
@@ -33,3 +29,7 @@ share/examples/py-mxTextTools/__init__.py
 share/examples/py-mxTextTools/altRTF.py
 share/examples/py-mxTextTools/pytag.py
 @dirrm share/examples/py-mxTextTools
+@dirrm share/doc/py-mxTextTools
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/TextTools/mxTextTools
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/TextTools/Constants
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/TextTools

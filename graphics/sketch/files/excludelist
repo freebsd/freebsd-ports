@@ -10,3 +10,4 @@ README
 *.c
 *.h
 *.o
+*.orig

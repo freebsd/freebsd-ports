@@ -1,17 +1,17 @@
-lib/python1.5/site-packages/Stack/UserStack.py
-lib/python1.5/site-packages/Stack/UserStack.pyc
-lib/python1.5/site-packages/Stack/UserStack.pyo
-lib/python1.5/site-packages/Stack/__init__.py
-lib/python1.5/site-packages/Stack/__init__.pyc
-lib/python1.5/site-packages/Stack/__init__.pyo
-lib/python1.5/site-packages/Stack/mxStack/__init__.py
-lib/python1.5/site-packages/Stack/mxStack/__init__.pyc
-lib/python1.5/site-packages/Stack/mxStack/__init__.pyo
-lib/python1.5/site-packages/Stack/mxStack/mxStack.so
-@dirrm lib/python1.5/site-packages/Stack/mxStack
-lib/python1.5/site-packages/Stack/stackbench.py
-lib/python1.5/site-packages/Stack/stackbench.pyc
-lib/python1.5/site-packages/Stack/stackbench.pyo
-@dirrm lib/python1.5/site-packages/Stack
+lib/%%PYTHON_VERSION%%/site-packages/Stack/UserStack.py
+lib/%%PYTHON_VERSION%%/site-packages/Stack/UserStack.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Stack/UserStack.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Stack/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Stack/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Stack/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Stack/mxStack/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Stack/mxStack/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Stack/mxStack/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Stack/mxStack/mxStack.so
+lib/%%PYTHON_VERSION%%/site-packages/Stack/stackbench.py
+lib/%%PYTHON_VERSION%%/site-packages/Stack/stackbench.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Stack/stackbench.pyo
 share/doc/py-mxStack/mxStack.html
 @dirrm share/doc/py-mxStack
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Stack/mxStack
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Stack
