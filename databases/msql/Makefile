@@ -3,12 +3,12 @@
 # Date created:		14 January 1995
 # Whom:			mr (original)
 #
-# $Id: Makefile,v 1.9 1995/09/14 11:27:52 asami Exp $
-#
 
-DISTNAME=	msql-1.0.14
+DISTNAME=	msql-1.0.16
 CATEGORIES+=	databases
 MASTER_SITES=	ftp://bond.edu.au/pub/Minerva/msql/
+
+MAINTAINTER=	jfitz@freebsd.org
 
 IS_INTERACTIVE=	yes
 PREFIX=		/usr/local/Minerva
@@ -16,7 +16,7 @@ NO_MTREE=	yes
 RESTRICTED=	"restrictive copyright (no commercial use)"
 
 post-install:
-.for file in License Rates.txt mSQL-Invoice.txt
+.for file in Commercial License mSQL-Invoice.txt msql-pwr.README msql-pwr.gif msql-pwr2.gif
 	cp ${WRKSRC}/doc/${file} ${PREFIX}/doc
 .endfor
 .if !defined(NOPORTDOCS)
@@ -24,5 +24,6 @@ post-install:
 	cp ${WRKSRC}/doc/${file} ${PREFIX}/doc
 .endfor
 .endif
+	cp ${WRKSRC}/scripts/run_daemon ${PREFIX}
 
 .include <bsd.port.mk>
