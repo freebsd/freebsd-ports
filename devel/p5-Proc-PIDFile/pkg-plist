@@ -1,0 +1,4 @@
+lib/perl5/site_perl/%%PERL_VER%%/Proc/test-T.pl
+lib/perl5/site_perl/%%PERL_VER%%/Proc/simple.pl
+lib/perl5/site_perl/%%PERL_VER%%/Proc/PID_File.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Proc

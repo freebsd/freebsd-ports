@@ -1,0 +1,7 @@
+A pid file is a file which contains a record of the process which created
+it.  Pids are written down to files so that:
+
+    * a program can know whether an instance of itself is currently running
+    * other processes can know the pid of a running program
+
+This module can be used so that your script can do the former.
