@@ -527,6 +527,7 @@
     SUBDIR += pear-Net_SMTP
     SUBDIR += pear-Net_Sieve
     SUBDIR += pear-Net_Socket
+    SUBDIR += pear-Net_URL
     SUBDIR += pen
     SUBDIR += perldap
     SUBDIR += pfinger
