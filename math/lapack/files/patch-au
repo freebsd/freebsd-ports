@@ -1,5 +1,5 @@
---- TIMING/Makefile.orig	Fri Feb 19 21:04:59 1999
-+++ TIMING/Makefile	Thu Oct  7 15:11:10 1999
+--- TIMING/Makefile~	Thu Nov  4 20:27:54 1999
++++ TIMING/Makefile	Fri Dec 10 00:56:04 1999
 @@ -141,242 +141,242 @@
  
  stime.out: stime.in xlintims
@@ -138,8 +138,8 @@
  
  SGEPTIM.out: SGEPTIM.in xeigtims
  	@echo GEP: Timing REAL Generalized Nonsymmetric Eigenvalue Problem routines
--	xeigtims < sgeptim.in > $@ 2>&1
-+	./xeigtims < sgeptim.in > $@ 2>&1
+-	xeigtims < SGEPTIM.in > $@ 2>&1
++	./xeigtims < SGEPTIM.in > $@ 2>&1
  
  sneptim.out: sneptim.in xeigtims
  	@echo NEP: Timing REAL Nonsymmetric Eigenvalue Problem routines
