@@ -22,6 +22,7 @@
     SUBDIR += anjuta
     SUBDIR += anjuta-devel
     SUBDIR += antlr
+    SUBDIR += apache-ant
     SUBDIR += apr
     SUBDIR += arch
     SUBDIR += argouml
@@ -279,7 +280,6 @@
     SUBDIR += inilib
     SUBDIR += invitation_to_ruby
     SUBDIR += ixlib
-    SUBDIR += jakarta-ant
     SUBDIR += jam
     SUBDIR += kaptain
     SUBDIR += kdbg
