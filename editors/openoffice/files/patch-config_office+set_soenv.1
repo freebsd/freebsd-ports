@@ -1,5 +1,5 @@
 --- set_soenv.1.orig	Sun Jun 30 21:51:05 2002
-+++ set_soenv.1	Mon Jul 15 14:09:14 2002
++++ set_soenv.1	Mon Oct 28 15:01:58 2002
 @@ -40,7 +40,7 @@
  #
  # Set this value equal to the corresponding amount of
@@ -158,13 +158,13 @@
 +                        $ps.'$SOLARENV'.$ds.'$OUTPATH'.$BIN.
 +                        $ps.'$SOLARENV'.$BIN.
 +                        $ps.'$JAVA_HOME'.$BIN.
-+			$ps.$USR_LOCAL.$BIN.
-+			$ps.$USR_LOCAL.$ds."sbin";
 +
 +   $PATH             .= GetCorrectPath($COMPATH, $PERL_PATH, $TCSH_PATH, $compiler);
 +
 +   $PATH             .= $ps.$USR.$ds."sbin".
 +                        $ps.$USR.$ds."X11R6".$ds."bin".
++			$ps.$USR_LOCAL.$BIN.
++			$ps.$USR_LOCAL.$ds."sbin";
 +                        $ps.$USR.$LIB;
 +}
 +
