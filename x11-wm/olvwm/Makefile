@@ -21,13 +21,12 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	green@FreeBSD.org
 
-BROKEN=		"Does not package correctly"
-
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
 USE_XPM=	yes
 MAN1=		olvwm.1 olvwmrc.1
+XFREE86_HTML_MAN=	no
 
 .include <bsd.port.mk>
