@@ -6,37 +6,24 @@
 #
 
 PORTNAME=	gnome-commander
-PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTVERSION=	1.1.6
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-commander/1.0/
+MASTER_SITE_SUBDIR=	sources/gnome-commander/1.1
+PKGNAMESUFFIX=	2
+DIST_SUBDIR=	gnome2
 
 MAINTAINER=	rehsack@liwing.de
-COMMENT=	File manager for Gnome
+COMMENT=	File manager for Gnome2
 
-.if defined(WITH_FAM)
-LIB_DEPENDS=	fam.0:${PORTSDIR}/devel/fam
-.else
-CONFIGURE_ARGS=	--without-fam
-.endif
-
-CONFLICTS=	gnome-commander2-*
+CONFLICTS=	gnome-commander-*
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
-USE_GNOME=	gnomeprefix gnomehack gnometarget gnomevfs gnomelibs gdkpixbuf
+USE_GNOME=	gnomeprefix gnomehack gnometarget libgnomeui lthack
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lintl"
-
-pre-everything::
-.if !defined(WITH_FAM)
-	@${ECHO} ""
-	@${ECHO} "	Define WITH_FAM to add support for the"
-	@${ECHO} "	'file alteration monitor' fam"
-	@${ECHO} ""
-.endif
 
 .include <bsd.port.mk>

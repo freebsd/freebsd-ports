@@ -15,6 +15,7 @@
     SUBDIR += fsv
     SUBDIR += gentoo
     SUBDIR += gnome-commander
+    SUBDIR += gnome-commander2
     SUBDIR += gprename
     SUBDIR += krusader
     SUBDIR += mtoolsfm
