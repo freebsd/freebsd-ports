@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	20041224
-PORTREVISION=	1
+PORTVERSION=	20041225
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.iDaemons.org/pub/distfiles/ \
 		${MASTER_SITE_LOCAL}
