@@ -10,6 +10,7 @@
     SUBDIR += filerunner
     SUBDIR += gnomemc
     SUBDIR += jafm
+    SUBDIR += mfm
     SUBDIR += offix-files
     SUBDIR += q3dmenu
     SUBDIR += tkdesk
