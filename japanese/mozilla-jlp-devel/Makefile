@@ -6,16 +6,14 @@
 #
 
 PORTNAME=	mozilla
-PORTVERSION=	1.5b
-#PORTEPOCH=	1
+PORTVERSION=	1.6.a
 CATEGORIES=	japanese www
-MASTER_SITES=	http://snip.skillup.jp/mozilla/jlp/
-#MASTER_SITE_SUBDIR=	jlpmoz
+MASTER_SITES=	http://plaza25.mbn.or.jp/~snip/jlp/
 PKGNAMESUFFIX=	-jlp
-DISTNAME=	moz${PORTVERSION}-langjajp-tm0.3
+DISTNAME=	moz1.6a-langjajp-tm0.2
 EXTRACT_SUFX=	.xpi
 
-MAINTAINER=	yatt@luna2.org
+MAINTAINER=	fortune@n.jpn.ph
 COMMENT=	Mozilla Japanese Language Pack (JLP)
 
 BUILD_DEPENDS=	${X11BASE}/lib/${MOZILLA}/regxpcom:${PORTSDIR}/www/${MOZILLA}
@@ -23,7 +21,6 @@ RUN_DEPENDS=	${MOZILLA}:${PORTSDIR}/www/${MOZILLA} \
 		${PKG_DBDIR}/ja-alias-fonts-1.0:${PORTSDIR}/japanese/alias-fonts
 
 WRKSRC=		${WRKDIR}/bin
-#IGNORE=		"japanese/mozilla-jlp has been updated to 1.4"
 
 LATEST_LINK=	ja-mozilla-jlp-devel
 USE_X_PREFIX=	yes

@@ -12,6 +12,7 @@ lib/%%MOZILLA%%/chrome/ja-mac.jar
 lib/%%MOZILLA%%/chrome/ja-unix.jar
 lib/%%MOZILLA%%/chrome/ja-win.jar
 lib/%%MOZILLA%%/components/xpti.dat
+lib/%%MOZILLA%%/defaults/messenger/JP/mailViews.dat
 lib/%%MOZILLA%%/defaults/pref/unix.js
 lib/%%MOZILLA%%/defaults/profile/JP/chrome/userChrome-example.css
 lib/%%MOZILLA%%/defaults/profile/JP/chrome/userContent-example.css
