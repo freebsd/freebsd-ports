@@ -1,9 +1,9 @@
---- src/page.c.orig	Mon Jul 23 18:14:53 2001
-+++ src/page.c	Wed Aug  8 18:24:04 2001
-@@ -838,8 +838,8 @@
- 		fseek (file, curr->offset, SEEK_SET);
+--- src/page.c.orig	Sat Apr 27 23:04:47 2002
++++ src/page.c	Sun May 26 13:35:27 2002
+@@ -952,8 +952,8 @@
  		if ((line = tin_fgets (file, FALSE)) == NULL)
  			break;	/* ran out of message */
+ 
 -		if ((int) strlen(line) >= cCOLS)
 -			line[cCOLS] = '\0';
 +		if ((int) strlen(line) >= LEN)
@@ -11,7 +11,7 @@
  
  		/*
  		 * rotN encoding on body and sig data only
-@@ -858,7 +858,7 @@
+@@ -971,7 +971,7 @@
  		strip_line(line);
  
  #ifndef USE_CURSES
@@ -20,7 +20,7 @@
  #endif /* !USE_CURSES */
  
  		MoveCursor (i + scroll_region_top, 0);
-@@ -1364,7 +1364,7 @@
+@@ -1492,7 +1492,7 @@
  					chunk += 50;
  					pgart.rawl = my_realloc((char *) pgart.rawl, sizeof(t_lineinfo) * chunk);
  				}
