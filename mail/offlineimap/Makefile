@@ -14,14 +14,16 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Powerful IMAP/Maildir synchronization and reader support
 
+.if !defined(WITHOUT_X11)
 RUN_DEPENDS=	${TKINTER}:${PORTSDIR}/x11-toolkits/py-tkinter
+TKINTER=	${PYTHON_SITELIBDIR}/_tkinter.so
+.endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-TKINTER=	${PYTHON_SITELIBDIR}/_tkinter.so
 
 MAN1=		offlineimap.1
 DOCS=		COPYRIGHT ChangeLog UPGRADING manual.html manual.pdf \
