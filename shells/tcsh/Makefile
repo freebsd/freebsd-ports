@@ -3,13 +3,13 @@
 # Date created:		22 August 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.16 1996/12/16 01:40:08 ache Exp $
+# $Id: Makefile,v 1.17 1996/12/17 05:18:09 asami Exp $
 #
 
 DISTNAME=       tcsh-6.07
 PKGNAME=        tcsh-6.07.02
 CATEGORIES=	shells
-MASTER_SITES=   ftp://ftp.deshaw.com/pub/tcsh/
+MASTER_SITES=   ftp://ftp.astron.com/pub/tcsh/
 
 MAINTAINER=     ache@FreeBSD.ORG
 
