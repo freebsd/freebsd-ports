@@ -1,11 +1,10 @@
 @comment $FreeBSD$
-@exec mkdir %D/%%T%%/server || true
-@exec mkdir %D/%%T%%/server/classes || true
-@exec mkdir %D/%%T%%/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/filters ||true
-@exec mkdir %D/%%T%%/shared || true
-@exec mkdir %D/%%T%%/shared/classes || true
-@exec mkdir %D/%%T%%/shared/lib || true
-@exec mkdir %D/%%T%%/webapps/tomcat-docs/jk2/printer ||true
+@unexec if cmp -s %D/%%T%%/conf/server.xml %D/%%T%%/conf/server.xml.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/server.xml; else echo If permanently deleting this package, %D/%%T%%/conf/server.xml must be removed manually; fi
+@unexec if cmp -s %D/%%T%%/conf/jk2.properties %D/%%T%%/conf/jk2.properties.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/jk2.properties; else echo If permanently deleting this package, %D/%%T%%/conf/jk2.properties must be removed manually; fi
+@unexec if cmp -s %D/%%T%%/conf/server-noexamples.xml.config %D/%%T%%/conf/server-noexamples.xml.config.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/server-noexamples.xml.config; else echo If permanently deleting this package, %D/%%T%%/conf/server-noexamples.xml.config must be removed manually; fi
+@unexec if cmp -s %D/%%T%%/conf/catalina.policy %D/%%T%%/conf/catalina.policy.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/catalina.policy; else echo If permanently deleting this package, %D/%%T%%/conf/server.xml must be removed manually; fi
+@unexec if cmp -s %D/%%T%%/conf/tomcat-users.xml %D/%%T%%/conf/tomcat-users.xml.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/tomcat-users.xml; else echo If permanently deleting this package, %D/%%T%%/conf/tomcat-users.xml must be removed manually; fi
+@unexec if cmp -s %D/%%T%%/conf/web.xml %D/%%T%%/conf/web.xml.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/web.xml; else echo If permanently deleting this package, %D/%%T%%/conf/web.xml must be removed manually; fi
 bin/tomcat41ctl
 etc/rc.d/020.jakarta-tomcat41.sh
 %%T%%/LICENSE
@@ -44,12 +43,12 @@ etc/rc.d/020.jakarta-tomcat41.sh
 %%T%%/common/lib/naming-resources.jar
 %%T%%/common/lib/servlet.jar
 %%T%%/common/lib/tools.jar
-%%T%%/conf/catalina.policy
-%%T%%/conf/jk2.properties
-%%T%%/conf/server-noexamples.xml.config
-%%T%%/conf/server.xml
-%%T%%/conf/tomcat-users.xml
-%%T%%/conf/web.xml
+%%T%%/conf/catalina.policy.%%CONF_EXT%%
+%%T%%/conf/jk2.properties.%%CONF_EXT%%
+%%T%%/conf/server-noexamples.xml.config.%%CONF_EXT%%
+%%T%%/conf/server.xml.%%CONF_EXT%%
+%%T%%/conf/tomcat-users.xml.%%CONF_EXT%%
+%%T%%/conf/web.xml.%%CONF_EXT%%
 %%T%%/logs/stderr.log
 %%T%%/logs/stdout.log
 %%T%%/server/lib/catalina-ant.jar
@@ -1482,6 +1481,11 @@ etc/rc.d/020.jakarta-tomcat41.sh
 %%T%%/webapps/webdav/index.html
 %%T%%/webapps/webdav/tomcat-power.gif
 %%T%%/webapps/webdav/tomcat.gif
+@exec mkdir %D/%%T%%/server/classes || true
+@exec mkdir %D/%%T%%/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/filters ||true
+@exec mkdir %D/%%T%%/shared || true
+@exec mkdir %D/%%T%%/shared/classes || true
+@exec mkdir %D/%%T%%/shared/lib || true
 @exec mkdir %D/%%T%%/work || true
 @exec mkdir %D/%%T%%/common/classes ||true
 @exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%T%%/
