@@ -15,12 +15,13 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A session manager for the ROX desktop
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20 \
-		xml2.5:${PORTSDIR}/textproc/libxml2
 RUN_DEPENDS=	${LOCALBASE}/bin/rox:${PORTSDIR}/x11-fm/rox-filer
 
 WRKSRC=		${WRKDIR}/ROX-Session-${PORTVERSION}
+
+USE_GNOME=	gtk20 pkgconfig libxml2
+USE_AUTOCONF=	yes
+HAS_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -31,6 +32,11 @@ BINARIES=	FreeBSD-${ARCH}
 .endif
 
 PLIST_SUB=	BINARIES="${BINARIES}"
+
+CONFIGURE_ARGS=		--enable-rox --with-platform=${BINARIES}
+CONFIGURE_WRKSRC=	${WRKSRC}/ROX-Session/src
+BUILD_WRKSRC=		${CONFIGURE_WRKSRC}
+ALL_TARGET=
 
 do-build:
 	# Run the custom build procedure
