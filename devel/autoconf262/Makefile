@@ -14,19 +14,20 @@ MASTER_SITE_SUBDIR=	autoconf
 DISTNAME=	autoconf-${PORTVERSION}
 
 MAINTAINER=	alane@FreeBSD.org
+COMMENT=	Automatically configure source code on many Un*x platforms
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		help2man:${PORTSDIR}/misc/help2man
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-BROKEN=	This port is not finished yet
+BROKEN=	Work is in progress right now.
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CONFIG_SHELL=/bin/sh
+CONFIGURE_ENV+=	CONFIG_SHELL=${SH}
 CONFIGURE_ENV+=	M4=${LOCALBASE}/bin/gm4
 CONFIGURE_ARGS=	--program-suffix=257
 
@@ -48,16 +49,6 @@ GENERIC_TOOLS=	config.guess	\
 		missing		\
 		mkinstalldirs
 
-MAN1=		autoconf.1	\
-		autoheader.1	\
-		autom4te.1	\
-		autoreconf.1	\
-		autoscan.1	\
-		autoupdate.1	\
-		config.guess.1	\
-		config.sub.1	\
-		ifnames.1
-
 .if defined(USE_AUTOCONF) || defined(USE_AUTOCONF_VER)
 pre-everything:
 	@${ECHO} ===========================================================
@@ -69,8 +60,11 @@ pre-everything:
 .endif # defined(USE_AUTOCONF) || defined(USE_AUTOCONF_VER)
 
 post-install:
+	${MKDIR} ${PREFIX}/share/autoconf257
 .for FILE in ${GENERIC_TOOLS}
 	${INSTALL_SCRIPT} ${WRKSRC}/config/${FILE} ${PREFIX}/share/autoconf257
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${FILESDIR}/manpages.mk"
+.include <bsd.port.post.mk>

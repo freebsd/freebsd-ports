@@ -1,0 +1,56 @@
+bin/autoconf257
+bin/autoheader257
+bin/autom4te257
+bin/autoreconf257
+bin/autoscan257
+bin/autoupdate257
+bin/ifnames257
+info/autoconf.info
+info/dir
+info/standards.info
+share/autoconf257/Autom4te/General.pm
+share/autoconf257/Autom4te/Struct.pm
+share/autoconf257/Autom4te/XFile.pm
+share/autoconf257/INSTALL
+share/autoconf257/autoconf/autoconf.m4
+share/autoconf257/autoconf/autoconf.m4f
+share/autoconf257/autoconf/autoheader.m4
+share/autoconf257/autoconf/autoscan.m4
+share/autoconf257/autoconf/autotest.m4
+share/autoconf257/autoconf/autoupdate.m4
+share/autoconf257/autoconf/c.m4
+share/autoconf257/autoconf/fortran.m4
+share/autoconf257/autoconf/functions.m4
+share/autoconf257/autoconf/general.m4
+share/autoconf257/autoconf/headers.m4
+share/autoconf257/autoconf/lang.m4
+share/autoconf257/autoconf/libs.m4
+share/autoconf257/autoconf/oldnames.m4
+share/autoconf257/autoconf/programs.m4
+share/autoconf257/autoconf/specific.m4
+share/autoconf257/autoconf/status.m4
+share/autoconf257/autoconf/types.m4
+share/autoconf257/autom4te.cfg
+share/autoconf257/autoscan/autoscan.list
+share/autoconf257/autotest/autotest.m4
+share/autoconf257/autotest/autotest.m4f
+share/autoconf257/autotest/general.m4
+share/autoconf257/config.guess
+share/autoconf257/config.sub
+share/autoconf257/elisp-comp
+share/autoconf257/install-sh
+share/autoconf257/m4sugar/m4sh.m4
+share/autoconf257/m4sugar/m4sh.m4f
+share/autoconf257/m4sugar/m4sugar.m4
+share/autoconf257/m4sugar/m4sugar.m4f
+share/autoconf257/m4sugar/version.m4
+share/autoconf257/mdate-sh
+share/autoconf257/missing
+share/autoconf257/mkinstalldirs
+@dirrm share/autoconf257/m4sugar
+@dirrm share/autoconf257/autotest
+@dirrm share/autoconf257/autoscan
+@dirrm share/autoconf257/autoconf
+@dirrm share/autoconf257/Autom4te
+@dirrm share/autoconf257
+@dirrm info
