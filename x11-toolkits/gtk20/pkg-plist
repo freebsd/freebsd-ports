@@ -12,7 +12,7 @@ share/aclocal/gtk.m4
 lib/libglib.so.1.0
 lib/libglib.la
 lib/libglib.a
-lib/glib/include/glibconfig.h
+include/glibconfig.h
 lib/libgdk.so.1.0
 lib/libgdk.la
 lib/libgdk.a
