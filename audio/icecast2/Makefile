@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	icecast
-PORTVERSION=	1.3.7
-PORTREVISION=	1
+PORTVERSION=	1.3.10
+PORTREVISION=	0
 CATEGORIES=	audio net
 MASTER_SITES=	http://www.icecast.org/releases/
 
-MAINTAINER=	chip@eboai.org
-
-FORBIDDEN=	"Nope, still insecure..lots of tasty buffer overflows"
+MAINTAINER=	zach@pabst.bendnet.com
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=--with-libwrap
