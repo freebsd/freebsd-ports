@@ -3,13 +3,13 @@
 # Date created:		31 Nov 97
 # Whom:			Pedro Giffuni <giffunip@asme.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/12/19 14:22:10 jseger Exp $
 #
 
 DISTNAME=	xwpl-1.3-freebsd
 PKGNAME=	xwpl-1.3
 CATEGORIES=	math
-MASTER_SITES=	ftp://pascal.math.yale.edu/pub/wavelets/software/xwpl/
+MASTER_SITES=	ftp://pascal.math.yale.edu/pub/wavelets/software/xwpl/other-versions/
 
 MAINTAINER=	giffunip@asme.org
 
