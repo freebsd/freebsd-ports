@@ -1,5 +1,4 @@
 apps/ROX-Filer/%%BINARIES%%/ROX-Filer
-apps/ROX-Filer/%%BINARIES%%/ROX-Filer.dbg
 apps/ROX-Filer/.DirIcon
 apps/ROX-Filer/AppInfo.xml
 apps/ROX-Filer/AppRun
