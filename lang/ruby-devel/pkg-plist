@@ -18,6 +18,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_ARCHLIBDIR%%/fcntl.so
 %%RUBY_ARCHLIBDIR%%/intern.h
 %%RUBY_ARCHLIBDIR%%/lib%%RUBY_NAME%%.a
+%%RUBY_ARCHLIBDIR%%/missing.h
 %%RUBY_ARCHLIBDIR%%/nkf.so
 %%RUBY_ARCHLIBDIR%%/node.h
 %%RUBY_ARCHLIBDIR%%/pty.so
