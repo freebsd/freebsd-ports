@@ -22,8 +22,8 @@ USE_GNOME=	gnomeprefix gnomehack intlhack gconf2
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=13
 USE_GMAKE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
-LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 #.if !defined(WITHOUT_SSL)
 #LIB_DEPENDS+=	gnutls.13:${PORTSDIR}/security/gnutls
