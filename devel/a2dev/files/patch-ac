@@ -1,0 +1,12 @@
+diff -ur a2dev-1.2.orig/asm/Makefile a2dev-1.2/asm/Makefile
+--- a2dev-1.2.orig/asm/Makefile	Sun Mar 26 03:52:23 1995
++++ a2dev-1.2/asm/Makefile	Wed Jul  1 18:23:11 1998
+@@ -25,7 +25,7 @@
+ ### Abstract rules
+ ###
+ 
+-default:	$(PROG)
++all:		$(PROG)
+ 
+ install:	installbin installman
+ 

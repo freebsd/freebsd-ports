@@ -1,0 +1,8 @@
+bin/a2asm
+bin/a2link
+bin/a2load
+bin/a2objx
+man/man1/a2asm.1.gz
+man/man1/a2link.1.gz
+man/man1/a2load.1.gz
+man/man1/a2objx.1.gz
