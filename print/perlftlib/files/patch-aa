@@ -1,0 +1,35 @@
+--- ./Makefile.orig	Mon Dec 14 14:13:26 1998
++++ ./Makefile	Tue Dec 22 16:14:46 1998
+@@ -1,8 +1,8 @@
+ 
+-BINDIR = /usr/local/bin
+-MANDIR = /usr/local/man/man1
+-PERL = perl
+-PERLLIBDIR = /usr/local/lib/perl5/site_perl
++BINDIR = ${PREFIX}/bin
++MANDIR = ${PREFIX}/man/man1
++PERL = ${PERL5}
++PERLLIBDIR = ${PREFIX}/lib/perl5/site_perl
+ 
+ VERSION = 1.2
+ 
+@@ -12,7 +12,9 @@
+ all: $(FREETYPELIB) $(PROGRAMS) $(MANFILES)
+ 
+ install: installlib $(PROGRAMS)
+-	cp $(PROGRAMS) $(BINDIR)
++	for file in $(PROGRAMS); do \
++		${BSD_INSTALL_SCRIPT} $${file} $(BINDIR); \
++	done
+ 	rm -f $(MANDIR)/ftinfo.1
+ 	ln -s $(BINDIR)/ftinfo $(MANDIR)/ftinfo.1
+ 	rm -f $(MANDIR)/mkttfdir.1
+@@ -43,7 +45,7 @@
+ 
+ installlib: $(FREETYPELIB)
+ 	cd FreeType; $(MAKE) $(MFLAGS) install
+-	cp FreeTypeWrapper.pm $(PERLLIBDIR)
++	cp FreeTypeWrapper.pm $(PERLLIBDIR)/${PERL_VER}
+ 
+ $(FREETYPELIB): FreeType/Makefile
+ 	cd FreeType; $(MAKE) $(MFLAGS)
