@@ -145,10 +145,6 @@ PKGNAMESUFFIX=	-pk${BDPI}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502000
-BROKEN=		"Does not install"
-.endif
-
 pre-fetch:
 	@( \
 	${ECHO} "**************************************************************"; \
