@@ -8,6 +8,7 @@
 
 PORTNAME=	autogen
 PORTVERSION=	5.4.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		${MASTER_SITE_GNU}
@@ -25,7 +26,7 @@ CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-libguile=${LOCALBASE} --with-libxml2=${LOCALBASE}
 INSTALLS_SHLIB=	yes
 
-MAN1=	autogen.1 autoopts-config.1 columns.1 getdefs.1
+MAN1=	autogen.1 autoopts-config.1 columns.1 getdefs.1 xml2ag.1
 MAN3=	optionFree.3 optionLoadLine.3 optionProcess.3 optionRestore.3 \
 	optionSaveState.3 optionVersion.3
 
