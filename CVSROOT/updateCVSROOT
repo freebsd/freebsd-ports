@@ -2,7 +2,7 @@
 #
 # Called in place of mkmodules to take care of files mkmodules doesn't know.
 #
-# $Id: updateCVSROOT,v 1.4 1995/11/27 07:30:26 peter Exp $
+# $Id: updateCVSROOT,v 1.5 1995/11/27 07:43:59 peter Exp $
 
 PATH=$PATH:/bin:/usr/bin:/usr/sbin:/sbin:/usr/local/bin
 export PATH
@@ -17,7 +17,7 @@ do
   find $i,v -newer $i -exec co -u $i \;
 done
 
-find avail,v -newer cvs-committers -exec ./mkavail
+find avail,v -newer cvs-committers -exec ./mkavail \;
 cmp -s cvs-committers /home/mail/cvs-committers || {
   echo "/home/mail/cvs-committers is different to \$CVSROOT/cvs-committers"
   echo "please check to see what needs to be updated..."
