@@ -1,6 +1,6 @@
---- ../../work/cocktail-9309//./l2cg/m2c/Makefile	Tue Feb 15 14:23:40 1994
-+++ ./l2cg/m2c/Makefile	Wed Mar 31 22:35:05 2004
-@@ -1,42 +1,31 @@
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./l2cg/m2c/Makefile	Tue Feb 15 14:23:40 1994
++++ ./l2cg/m2c/Makefile	Thu Aug  5 18:49:08 2004
+@@ -1,42 +1,32 @@
 -BIN	= $(HOME)/bin
 -LIB	= $(HOME)/lib
 -OPT	= -O
@@ -56,12 +56,13 @@
  
  
 +clean:
-+	rm -f core *.o l2cg ParserDrv
++	-rm -f $(STDCLEAN) 
++	-rm -f   *.o l2cg ParserDrv
 +
  # HEAD
  
  sources	: Parser.h
-@@ -68,18 +57,3 @@
+@@ -68,18 +58,3 @@
  	Scanner.o	\
  	$(CLIBS)
  

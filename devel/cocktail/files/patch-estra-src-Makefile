@@ -1,0 +1,25 @@
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./estra/src/Makefile	Tue Feb 15 14:23:14 1994
++++ ./estra/src/Makefile	Thu Aug  5 18:48:58 2004
+@@ -21,7 +21,7 @@
+ estra:	$(GENDEFS) $(GENIMPS) estra_boot
+ 
+ estra_boot:	$(DEFS) $(IMPS) estra.mi
+-	rm -f estra
++	-rm -f estra
+ 	echo p estra | mc -d ../../common/src -d ../../reuse/src
+ 
+ Tree.md Tree.mi:	Tree.ast
+@@ -54,10 +54,11 @@
+ 	cd ../m2c; rm -f *.m[id]
+ 
+ clean:
+-	rm -f core *.[dimor] ERRORS LISTING _Debug *.bak
++	-rm -f $(STDCLEAN) 
++	-rm -f   *.[dimor] ERRORS LISTING _Debug *.bak
+ 
+ CLEAN:	clean
+-	rm -f $(SOURCES) estra
++	-rm -f $(SOURCES) estra
+ 
+ .SUFFIXES: .MD .md .MI .mi
+ 

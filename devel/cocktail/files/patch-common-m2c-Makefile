@@ -1,6 +1,6 @@
---- ../../work/cocktail-9309//./common/m2c/Makefile	Tue Feb 15 14:21:29 1994
-+++ ./common/m2c/Makefile	Wed Mar 31 22:35:04 2004
-@@ -1,25 +1,20 @@
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./common/m2c/Makefile	Tue Feb 15 14:21:29 1994
++++ ./common/m2c/Makefile	Thu Aug  5 18:48:48 2004
+@@ -1,25 +1,21 @@
 -OPT	= -O
 -CC	= cc
  
@@ -28,13 +28,14 @@
  	ranlib libcommon.a
  
 +clean:
-+	rm -f core *.o Main 
-+	rm -f libcommon.a
++	-rm -f $(STDCLEAN) 
++	-rm -f Main 
++	-rm -f libcommon.a
 +
  
  # HEAD
  
-@@ -115,21 +110,3 @@
+@@ -115,21 +111,3 @@
  	Convert.o	\
  	$(CLIBS)
  

@@ -1,6 +1,6 @@
---- ../../work/cocktail-9309//./r2l/m2c/Makefile	Tue Feb 15 14:26:18 1994
-+++ ./r2l/m2c/Makefile	Wed Mar 31 22:35:06 2004
-@@ -1,33 +1,26 @@
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./r2l/m2c/Makefile	Tue Feb 15 14:26:18 1994
++++ ./r2l/m2c/Makefile	Thu Aug  5 18:49:31 2004
+@@ -1,33 +1,27 @@
 -BIN	= $(HOME)/bin
 -LIB	= $(HOME)/lib
 -OPT	= -O
@@ -43,12 +43,13 @@
  
 -# SYSTEM_	= SYSTEM_.o
 +clean:
-+	rm -f core *.o
-+	rm -f r2l
++	-rm -f $(STDCLEAN) 
++	-rm -f   *.o
++	-rm -f r2l
  
  # HEAD
  
-@@ -79,17 +72,3 @@
+@@ -79,17 +73,3 @@
  	$(CLIBS)
  
  # TAIL

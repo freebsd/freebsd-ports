@@ -1,6 +1,6 @@
---- ../../work/cocktail-9309//./y2l/src/Makefile	Tue Feb 15 14:29:16 1994
-+++ ./y2l/src/Makefile	Wed Mar 31 23:13:47 2004
-@@ -1,26 +1,28 @@
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./y2l/src/Makefile	Tue Feb 15 14:29:16 1994
++++ ./y2l/src/Makefile	Thu Aug  5 18:48:36 2004
+@@ -1,35 +1,35 @@
 -BIN	= $(HOME)/bin
 -OPT	= -O
 -CC	= cc
@@ -38,7 +38,18 @@
  
  lint:	y2l.c Parser.c Scanner.c Tables.c
  	lint -I$(REUSE) -b -u *.c
-@@ -43,7 +45,3 @@
+ 
+ clean:
+-	rm -f core *.o y2l
+-
+-CLEAN:	clean
+-	rm -f $(SOURCES)
++	-rm -f $(STDCLEAN) 
++	-rm -f y2l Scanner.[hc] Parser.[hc]
+ 
+ # dependencies
+ 
+@@ -43,7 +43,3 @@
  man:
  	nroff -man y2l.1
  

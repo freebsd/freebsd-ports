@@ -1,15 +1,27 @@
---- ../../work/cocktail-9309//./specs/c/minilax/Makefile	Tue Feb 15 14:28:44 1994
-+++ ./specs/c/minilax/Makefile	Wed Mar 31 23:06:11 2004
-@@ -1,7 +1,3 @@
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./specs/c/minilax/Makefile	Tue Feb 15 14:28:44 1994
++++ ./specs/c/minilax/Makefile	Wed Aug 25 12:03:00 2004
+@@ -1,7 +1,7 @@
 -LIB	= $(HOME)/lib
 -INCDIR	= $(LIB)/include
 -CFLAGS	= -I$(INCDIR)
 -CC	= cc
++ROOTDIR= ../../..
++.include "../../Makefile.inc"
++
++CFLAGS = $(TCFLAGS) -I $(TMPINC)
  
  SOURCES	= Scanner.h Scanner.c Parser.h Parser.c Tree.h Tree.c \
  	  Semantics.h Semantics.c Types.h Types.c Definitions.h Definitions.c \
-@@ -21,31 +17,31 @@
- 	lpp -cxzj minilax.pars;
+@@ -15,37 +15,37 @@
+ 	time minilax < in5
+ 
+ minilax:	$(OBJS)
+-	$(CC) $(CFLAGS) -o minilax $(OBJS) $(LIB)/libreuse.a -lm
++	$(CC) $(CFLAGS) -o minilax $(OBJS) -L $(TMPLIB)  -l reuse  -lm
+ 
+ Scanner.rpp Parser.lalr:	minilax.pars
+-	lpp -cxzj minilax.pars;
++	$(LPP) -cxzj minilax.pars;
  
  minilax.rex:	minilax.scan Scanner.rpp
 -	rpp < minilax.scan > minilax.rex;
@@ -49,7 +61,7 @@
  
  Parser.o:	Parser.h Scanner.h Tree.h Types.h Definitions.h
  Semantics.o:	Semantics.h Tree.h Definitions.h Types.h
-@@ -59,87 +55,85 @@
+@@ -59,87 +59,84 @@
  	lint $(CFLAGS) -u *.c
  
  test:	$(SOURCES)
@@ -179,12 +191,12 @@
  clean:
 -	rm -f Scanner.? Parser.? Tree.? Semantics.? Definitions.? Types.? ICode.? *.TS
 -	rm -f core _Debug minilax *Tab minilax.rex Parser.lalr Scanner.rpp yy*.w *.o
-+	rm -f Scanner.? Parser.? Tree.? Semantics.? Definitions.? 
-+	rm -f core _Debug minilax *Tab minilax.rex Parser.lalr 
-+	rm -f Types.? ICode.? *.TS Scanner.rpp yy*.w *.o
- 
+-
 -.SUFFIXES:	.c .o
 -
 -.c.o:
 -	$(CC) $(CFLAGS) -c $*.c
-+.include "../../../Makefile.inc" 
++	-rm -f Scanner.? Parser.? Tree.? Semantics.? Definitions.? 
++	-rm -f $(STDCLEAN) 
++	-rm -f   _Debug minilax *Tab minilax.rex Parser.lalr 
++	-rm -f Types.? ICode.? *.TS Scanner.rpp yy*.w *.o

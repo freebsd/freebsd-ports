@@ -1,22 +1,24 @@
---- ../../work/cocktail-9309//./specs/c/ada/Makefile	Tue Feb 15 14:28:23 1994
-+++ ./specs/c/ada/Makefile	Wed Mar 31 23:01:55 2004
-@@ -1,22 +1,23 @@
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./specs/c/ada/Makefile	Tue Feb 15 14:28:23 1994
++++ ./specs/c/ada/Makefile	Wed Aug 25 11:55:26 2004
+@@ -1,22 +1,24 @@
 -LIB	= $(HOME)/lib
 -INCDIR	= $(LIB)/include
 -CFLAGS	= -I$(INCDIR)
 -CC	= cc
 +
 +HOME	?= $(.CURDIR)/../..
++ROOTDIR= ../../..
 +.include "../../Makefile.inc" 
 +
-+CFLAGS += $(INCDIRC) $(LIBREUSEC)
++CFLAGS = $(TCFLAGS) -I $(TMPINC) 
  
  ParserDrv:	ParserDrv.o Scanner.o Parser.o
 -	$(CC) $(CFLAGS) ParserDrv.o Scanner.o Parser.o $(LIB)/libreuse.a -o ParserDrv
-+	$(CC) $(CFLAGS) ParserDrv.o Scanner.o Parser.o -o ParserDrv
++	$(CC) $(CFLAGS) ParserDrv.o Scanner.o Parser.o -L $(TMPLIB)  -l reuse -o ParserDrv
  
  Scanner.rpp Parser.lalr:	ada.pars
- 	lpp -cxzj ada.pars;
+-	lpp -cxzj ada.pars;
++	$(LPP)  -cxzj ada.pars;
  
  ada.rex:	ada.scan Scanner.rpp
 -	rpp < ada.scan > ada.rex;
@@ -32,11 +34,15 @@
  
  ParserDrv.o:	Parser.h Scanner.h
  Parser.o:	Parser.h Scanner.h
-@@ -28,7 +29,3 @@
- clean:
- 	rm -f ParserDrv core *.[hco] _Debug ada.rex Parser.lalr Scanner.rpp
+@@ -26,9 +28,6 @@
+ 	lint $(CFLAGS) -b -u *.c
  
--.SUFFIXES:	.c .o
+ clean:
+-	rm -f ParserDrv core *.[hco] _Debug ada.rex Parser.lalr Scanner.rpp
 -
+-.SUFFIXES:	.c .o
++	-rm -f $(STDCLEAN) 
++	-rm -f  ParserDrv  *.[hco] _Debug ada.rex Parser.lalr Scanner.rpp
+ 
 -.c.o:
 -	$(CC) $(CFLAGS) -c $*.c

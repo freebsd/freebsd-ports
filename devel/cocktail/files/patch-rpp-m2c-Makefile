@@ -1,6 +1,6 @@
---- ../../work/cocktail-9309//./rpp/m2c/Makefile	Tue Feb 15 14:28:12 1994
-+++ ./rpp/m2c/Makefile	Wed Mar 31 22:35:06 2004
-@@ -1,24 +1,18 @@
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./rpp/m2c/Makefile	Tue Feb 15 14:28:12 1994
++++ ./rpp/m2c/Makefile	Thu Aug  5 18:48:26 2004
+@@ -1,24 +1,19 @@
 -BIN	= $(HOME)/bin
 -BIN	= $(HOME)/bin
 -OPT	= -O
@@ -28,12 +28,13 @@
 +	install -c -s -m 755 rpp $(DESTBIN)
  
 +clean:
-+	rm -f core *.o
-+	rm -f rpp
++	-rm -f $(STDCLEAN) 
++	-rm -f   *.o
++	-rm -f rpp
  
  # HEAD
  
-@@ -42,18 +36,3 @@
+@@ -42,18 +37,3 @@
  	Scanner.o	\
  	$(CLIBS)
  

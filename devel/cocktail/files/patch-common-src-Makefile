@@ -1,0 +1,16 @@
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./common/src/Makefile	Tue Feb 15 14:21:34 1994
++++ ./common/src/Makefile	Thu Aug  5 18:48:50 2004
+@@ -1,6 +1,6 @@
+ all:
+ 	echo p Main | mc -d ../../reuse/src
+-	rm -f Main Main.[dimor]
++	-rm -f Main Main.[dimor]
+ 
+ m2c:
+ 	# co RCS/*
+@@ -9,4 +9,4 @@
+ 	cd ../m2c; rm -f *.m[id]
+ 
+ clean:
+-	rm -f *.[dimor]
++	-rm -f *.[dimor]

@@ -1,5 +1,5 @@
---- ../../work/cocktail-9309//./puma/src/Makefile	Tue Feb 15 14:25:38 1994
-+++ ./puma/src/Makefile	Wed Mar 31 22:56:36 2004
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./puma/src/Makefile	Tue Feb 15 14:25:38 1994
++++ ./puma/src/Makefile	Thu Aug  5 18:49:25 2004
 @@ -20,40 +20,40 @@
  	echo p puma | mc -d ../../reuse/src
  
@@ -65,6 +65,15 @@
  	chmod a+rx $(BIN)/puma
  	install -c -s -m 755 puma $(LIB)/puma
  	install -c -m 644 TypeTab.c $(LIB)/puma
+@@ -80,7 +80,7 @@
+ m2c:
+ 	# co RCS/*
+ 	make $(SOURCES)
+-	rm -f ../m2c/*.[hc]
++	-rm -f ../m2c/*.[hc]
+ 	cp TypeTab.[mc] ../m2c
+ 	ln *.m[id] ../m2c
+ 	cd ../m2c; make sources M2FLAGS="-c -d../../reuse/src"
 @@ -90,9 +90,9 @@
  
  pumaId:	puma.rex
@@ -77,3 +86,18 @@
  	echo p pumaIdDrv | mc -d ../../reuse/src
  	mv pumaIdDrv pumaId
  
+@@ -105,10 +105,11 @@
+ 	sh -c "if test ! -d $(LIB)/Id; then mkdir -p $(LIB)/Id; else true; fi"
+ 
+ cleanId:
+-	rm -f pumaId*
++	-rm -f pumaId*
+ 
+ clean:	cleanId
+-	rm -f _Debug core *.[dior] [A-SU-Za-z]*.m Tree*.m *.bak
++	-rm -f $(STDCLEAN) 
++	-rm -f  _Debug  *.[dior] [A-SU-Za-z]*.m Tree*.m *.bak
+ 
+ CLEAN:	clean
+-	rm -f puma $(SOURCES) Tree.TS Scanner.rpp puma.rex Parser.lalr
++	-rm -f puma $(SOURCES) Tree.TS Scanner.rpp puma.rex Parser.lalr

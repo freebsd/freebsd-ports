@@ -1,0 +1,29 @@
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./reuse/src/Makefile	Tue Feb 15 14:27:25 1994
++++ ./reuse/src/Makefile	Thu Aug  5 18:49:36 2004
+@@ -10,11 +10,11 @@
+ all:	$(MC)
+ 
+ MC:	rSystem.o
+-	rm -f Main
++	-rm -f Main
+ 	echo p Main | mc
+ 
+ M2C:	rSystem.o
+-	rm -f Main
++	-rm -f Main
+ 	for file in `ls *.md`; do ln $$file `basename $$file .md`.def; done
+ 	for file in `ls *.mi`; do ln $$file `basename $$file .mi`.mod; done
+ 	make Main -f MakefileM2C
+@@ -45,10 +45,10 @@
+ 	lint -u *.c
+ 
+ CLEAN:	clean
+-	rm -f *.[dimor] *.sym *.def *.mod
++	-rm -f *.[dimor] *.sym *.def *.mod
+ 
+ clean:
+-	rm -f *Drv.[dimor] *Drv.sym *Drv Main.[dimor] Main t *.bak
++	-rm -f *Drv.[dimor] *Drv.sym *Drv Main.[dimor] Main t *.bak
+ 
+ .c.o:
+ 	$(CC) $(CFLAGS) -c $*.c;

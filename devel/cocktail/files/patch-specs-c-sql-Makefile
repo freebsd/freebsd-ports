@@ -1,15 +1,22 @@
---- ../../work/cocktail-9309//./specs/c/sql/Makefile	Tue Feb 15 14:28:39 1994
-+++ ./specs/c/sql/Makefile	Wed Mar 31 23:03:58 2004
-@@ -1,7 +1,3 @@
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./specs/c/sql/Makefile	Tue Feb 15 14:28:39 1994
++++ ./specs/c/sql/Makefile	Wed Aug 25 12:03:45 2004
+@@ -1,22 +1,22 @@
 -LIB	= $(HOME)/lib
 -INCDIR	= $(LIB)/include
 -CFLAGS	= -I$(INCDIR)
 -CC	= cc
++ROOTDIR= ../../..
++.include "../../Makefile.inc"
++
++CFLAGS = $(TCFLAGS) -I $(TMPINC)
  
  ParserDrv:	ParserDrv.o Scanner.o Parser.o
- 	$(CC) $(CFLAGS) ParserDrv.o Scanner.o Parser.o $(LIB)/libreuse.a -o ParserDrv
-@@ -10,13 +6,13 @@
- 	lpp -cxzj sql.pars;
+-	$(CC) $(CFLAGS) ParserDrv.o Scanner.o Parser.o $(LIB)/libreuse.a -o ParserDrv
++	$(CC) $(CFLAGS) ParserDrv.o Scanner.o Parser.o -L $(TMPLIB)  -l reuse  -o ParserDrv
+ 
+ Scanner.rpp Parser.lalr:	sql.pars
+-	lpp -cxzj sql.pars;
++	$(LPP) -cxzj sql.pars;
  
  sql.rex:	sql.scan Scanner.rpp
 -	rpp < sql.scan > sql.rex;
@@ -25,12 +32,15 @@
  
  ParserDrv.o:	Parser.h Scanner.h
  Parser.o:	Parser.h Scanner.h
-@@ -28,7 +24,4 @@
- clean:
- 	rm -f ParserDrv core *.[hco] _Debug sql.rex Parser.lalr Scanner.rpp
+@@ -26,9 +26,6 @@
+ 	lint $(CFLAGS) -b -u *.c
  
--.SUFFIXES:	.c .o
+ clean:
+-	rm -f ParserDrv core *.[hco] _Debug sql.rex Parser.lalr Scanner.rpp
 -
+-.SUFFIXES:	.c .o
++	-rm -f $(STDCLEAN) 
++	-rm -f  ParserDrv  *.[hco] _Debug sql.rex Parser.lalr Scanner.rpp
+ 
 -.c.o:
 -	$(CC) $(CFLAGS) -c $*.c
-+.include "../../../Makefile.inc" 

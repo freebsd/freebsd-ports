@@ -1,5 +1,5 @@
---- ../../work/cocktail-9309//./mtc/src/Makefile	Tue Feb 15 14:25:08 1994
-+++ ./mtc/src/Makefile	Wed Mar 31 22:54:33 2004
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./mtc/src/Makefile	Tue Feb 15 14:25:08 1994
++++ ./mtc/src/Makefile	Thu Aug  5 18:49:23 2004
 @@ -27,25 +27,25 @@
  	echo p mtc | $(MC)
  
@@ -32,7 +32,7 @@
  #	Opp = output pre processor
  
  install:	mtc $(BIN) $(LIB)/mtc
-@@ -75,30 +75,30 @@
+@@ -75,35 +75,36 @@
  MTC	= time mtc -tm -d../../reuse/src s.mi
  
  test:	$(GEN) $(SRCM)
@@ -70,3 +70,11 @@
  	make mtc
  	$(MTC)
  
+ clean:
+-	rm -f *.[dimor] core ERRORS LISTING convert *.bak
++	-rm -f $(STDCLEAN) 
++	-rm -f  *.[dimor]  ERRORS LISTING convert *.bak
+ 
+ CLEAN:	clean
+-	rm -f mtc $(GEN) Tree.TS
++	-rm -f mtc $(GEN) Tree.TS

@@ -1,18 +1,43 @@
---- ../../work/cocktail-9309//./specs/c/occam/Makefile	Tue Feb 15 14:28:32 1994
-+++ ./specs/c/occam/Makefile	Wed Mar 31 22:35:08 2004
-@@ -1,6 +1,3 @@
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./specs/c/occam/Makefile	Tue Feb 15 14:28:32 1994
++++ ./specs/c/occam/Makefile	Wed Aug 25 12:03:33 2004
+@@ -1,6 +1,8 @@
 -LIB	= $(HOME)/lib
 -INCDIR	= $(LIB)/include
 -CC	= cc
++ROOTDIR= ../../..
++.include "../../Makefile.inc"
++
++CFLAGS = $(TCFLAGS) -I $(TMPINC)
++
  #
  #	Makefile for occam recogniser - pjmp @ hrc 22/7/86
  #
-@@ -43,7 +40,4 @@
- clean:
- 	rm -f *.o occam2.c occam.c lex2.h lex.h Parser.h occam occam2
+@@ -19,7 +21,7 @@
+ all:		occam2 occam
  
--.SUFFIXES:	.c .o
+ occam:		occam.o occamlex.o
+-		$(CC) $(CFLAGS) occam.o occamlex.o $(LIB)/libreuse.a -o occam
++		$(CC) $(CFLAGS) occam.o occamlex.o -L $(TMPLIB)  -l reuse  -o occam
+ 
+ occam.c:        occam.lalr
+ 		lalr $(LFLAGS) occam.lalr;
+@@ -27,7 +29,7 @@
+ 		mv Parser.c occam.c
+ 
+ occam2:		occam2.o occam2lex.o
+-		$(CC) $(CFLAGS) occam2.o occam2lex.o $(LIB)/libreuse.a -o occam2
++		$(CC) $(CFLAGS) occam2.o occam2lex.o -L $(TMPLIB)  -l reuse  -o occam2
+ 
+ occam2.c:       occam2.lalr
+ 		lalr $(LFLAGS) occam2.lalr;
+@@ -41,9 +43,5 @@
+ 		time occam < test4
+ 
+ clean:
+-	rm -f *.o occam2.c occam.c lex2.h lex.h Parser.h occam occam2
 -
+-.SUFFIXES:	.c .o
++	-rm -f *.o occam2.c occam.c lex2.h lex.h Parser.h occam occam2
+ 
 -.c.o:
 -	$(CC) $(CFLAGS) -c $*.c
-+.include "../../../Makefile.inc" 

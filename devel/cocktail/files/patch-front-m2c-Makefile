@@ -1,6 +1,6 @@
---- ../../work/cocktail-9309//./front/m2c/Makefile	Tue Feb 15 14:23:22 1994
-+++ ./front/m2c/Makefile	Wed Mar 31 22:35:05 2004
-@@ -1,17 +1,9 @@
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./front/m2c/Makefile	Tue Feb 15 14:23:22 1994
++++ ./front/m2c/Makefile	Thu Aug  5 18:49:00 2004
+@@ -1,35 +1,33 @@
 -LIB	= $(HOME)/lib
 -OPT	= -O
 -CC	= cc
@@ -21,8 +21,11 @@
 +CLIBS	+= $(REUSELIB)
  
  OBJS	= Actions.o Character.o Checks.o Errors.o Limits.o \
- 	  Listing.o Oper.o Pars.o Parser.o Path.o Rules.o Scanner.o \
-@@ -21,15 +13,20 @@
+-	  Listing.o Oper.o Pars.o Parser.o Path.o Rules.o Scanner.o \
++	  Listing.o Oper.o Parser.o Path.o Rules.o Scanner.o \
+ 	  SysError.o TokenTab.o Tokens.o WriteTok.o
+ 
+ libfront.a	: $(OBJS)
  	ar ruc libfront.a $(OBJS)
  	ranlib libfront.a
  
@@ -43,12 +46,13 @@
 +test:	Pars
  
 +clean:
-+	rm -f core *.o
-+	rm -f libfront.a Pars
++	-rm -f $(STDCLEAN) 
++	-rm -f   *.o
++	-rm -f libfront.a Pars
  
  # HEAD
  
-@@ -193,21 +190,3 @@
+@@ -193,21 +191,3 @@
  	Character.o	\
  	$(CLIBS)
  

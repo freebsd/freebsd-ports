@@ -1,6 +1,6 @@
---- ../../work/cocktail-9309//./specs/modula/minilax/Makefile	Tue Feb 15 14:29:06 1994
-+++ ./specs/modula/minilax/Makefile	Wed Mar 31 23:11:28 2004
-@@ -15,97 +15,98 @@
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./specs/modula/minilax/Makefile	Tue Feb 15 14:29:06 1994
++++ ./specs/modula/minilax/Makefile	Wed Aug 25 11:42:24 2004
+@@ -15,97 +15,99 @@
  	lpp -xzj minilax.pars;
  
  minilax.rex:	minilax.scan Scanner.rpp
@@ -148,6 +148,9 @@
 +	$(CG) -IK9Z	minilax.cg; make minilax; minilax < in1
  
  clean:
- 	rm -f Scanner.m? Parser.m? Tree.m? Semantics.m? Definitions.m? Types.m? ICode.m?
- 	rm -f core *.TS *.bak *.[dimor] _Debug minilax minilax.rex Parser.lalr Scanner.rpp
+-	rm -f Scanner.m? Parser.m? Tree.m? Semantics.m? Definitions.m? Types.m? ICode.m?
+-	rm -f core *.TS *.bak *.[dimor] _Debug minilax minilax.rex Parser.lalr Scanner.rpp
++	-rm -f Scanner.m? Parser.m? Tree.m? Semantics.m? Definitions.m? Types.m? ICode.m?
++	-rm -f $(STDCLEAN) 
++	-rm -f   *.TS *.bak *.[dimor] _Debug minilax minilax.rex Parser.lalr Scanner.rpp
 +.include "../../Makefile.inc" 

@@ -1,7 +1,10 @@
---- ../../work/cocktail-9309//./cg/test-m/Makefile	Tue Feb 15 14:21:26 1994
-+++ ./cg/test-m/Makefile	Wed Mar 31 22:35:04 2004
-@@ -9,3 +9,4 @@
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./cg/test-m/Makefile	Tue Feb 15 14:21:26 1994
++++ ./cg/test-m/Makefile	Thu Aug  5 18:48:36 2004
+@@ -8,4 +8,6 @@
+ 	cg -a g.cg;
  
  clean:
- 	rm -f Main Tree.* Main.[dimor] a aa aaa b bb core *.bak
+-	rm -f Main Tree.* Main.[dimor] a aa aaa b bb core *.bak
++	-rm -f $(STDCLEAN) 
++	-rm -f  Main Tree.* Main.[dimor] a aa aaa b bb  *.bak
 +.include "../../Makefile.inc" 

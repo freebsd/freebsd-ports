@@ -1,0 +1,12 @@
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./lalr/src/Makefile	Tue Feb 15 14:24:10 1994
++++ ./lalr/src/Makefile	Thu Aug  5 18:49:15 2004
+@@ -58,7 +58,8 @@
+ sources:
+ 
+ clean:
+-	rm -f core *.[dimor] *.def *.mod *.sym ERRORS LISTING _Debug *.bak
++	-rm -f $(STDCLEAN) 
++	-rm -f   *.[dimor] *.def *.mod *.sym ERRORS LISTING _Debug *.bak
+ 
+ .SUFFIXES:	.def .mod .md .mi
+ 

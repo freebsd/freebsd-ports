@@ -1,7 +1,9 @@
---- ../../work/cocktail-9309//./cg/hag-m/Makefile	Tue Feb 15 14:21:25 1994
-+++ ./cg/hag-m/Makefile	Wed Mar 31 22:35:04 2004
-@@ -37,3 +37,4 @@
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./cg/hag-m/Makefile	Tue Feb 15 14:21:25 1994
++++ ./cg/hag-m/Makefile	Thu Aug  5 18:48:48 2004
+@@ -36,4 +36,5 @@
+ 	echo 2 0 | Main
  
  clean:
- 	rm -f TraceTab Main Tree.* Eval.* Main.[dimor]
+-	rm -f TraceTab Main Tree.* Eval.* Main.[dimor]
++	-rm -f TraceTab Main Tree.* Eval.* Main.[dimor]
 +.include "../../Makefile.inc" 

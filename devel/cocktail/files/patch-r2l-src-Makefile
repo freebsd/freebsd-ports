@@ -1,5 +1,5 @@
---- ../../work/cocktail-9309//./r2l/src/Makefile	Tue Feb 15 14:26:26 1994
-+++ ./r2l/src/Makefile	Wed Mar 31 22:57:18 2004
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./r2l/src/Makefile	Tue Feb 15 14:26:26 1994
++++ ./r2l/src/Makefile	Thu Aug  5 18:49:31 2004
 @@ -15,14 +15,14 @@
  	echo p r2l | mc -d ../../reuse/src
  
@@ -18,3 +18,20 @@
  	chmod a+rx $(BIN)/r2l
  	install -c -s -m 755 r2l $(LIB)/r2l
  
+@@ -35,12 +35,13 @@
+ 	# co RCS/*
+ 	make $(SOURCES)
+ 	ln *.m[id] ../m2c
+-	rm -f ../m2c/*.[hc]
++	-rm -f ../m2c/*.[hc]
+ 	cd ../m2c; make sources M2FLAGS="-c -d../../reuse/src"
+ 	cd ../m2c; rm -f *.m[id]
+ 
+ clean:
+-	rm -f core *.[dimor] ERRORS LISTING _Debug r2l
++	-rm -f $(STDCLEAN) 
++	-rm -f   *.[dimor] ERRORS LISTING _Debug r2l
+ 
+ CLEAN:	clean
+-	rm -f $(SOURCES)
++	-rm -f $(SOURCES)

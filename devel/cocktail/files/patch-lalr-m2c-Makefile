@@ -1,5 +1,5 @@
---- ../../work/cocktail-9309//./lalr/m2c/Makefile	Tue Feb 15 14:23:56 1994
-+++ ./lalr/m2c/Makefile	Wed Mar 31 22:35:05 2004
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./lalr/m2c/Makefile	Tue Feb 15 14:23:56 1994
++++ ./lalr/m2c/Makefile	Thu Aug  5 18:49:12 2004
 @@ -1,21 +1,9 @@
 -BIN	= $(HOME)/bin
 -LIB	= $(HOME)/lib
@@ -26,7 +26,7 @@
  
  PLIB	= ParserDrv.mi Parser.md Parser.mi Errors.md Errors.mi Scanner.md Scanner.mi \
  	  ParserDrv.c Parser.c Parser.h Errors.c Errors.h Scanner.c Scanner.h \
-@@ -24,19 +12,21 @@
+@@ -24,19 +12,22 @@
  
  all	: lalr
  
@@ -53,11 +53,12 @@
 +	sh -c "if test ! -d $(DESTLIB)/lalr; then mkdir -p $(DESTLIB)/lalr; else true; fi"
  
 +clean:
-+	rm -f core *.o lalr
++	-rm -f $(STDCLEAN) 
++	-rm -f   *.o lalr
  
  # HEAD
  
-@@ -200,18 +190,3 @@
+@@ -200,18 +191,3 @@
  	Infos.o	\
  	$(CLIBS)
  

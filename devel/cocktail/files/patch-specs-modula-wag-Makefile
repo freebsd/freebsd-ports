@@ -1,6 +1,6 @@
---- ../../work/cocktail-9309//./specs/modula/wag/Makefile	Tue Feb 15 14:29:10 1994
-+++ ./specs/modula/wag/Makefile	Wed Mar 31 23:13:13 2004
-@@ -18,29 +18,30 @@
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./specs/modula/wag/Makefile	Tue Feb 15 14:29:10 1994
++++ ./specs/modula/wag/Makefile	Wed Aug 25 11:42:24 2004
+@@ -18,29 +18,31 @@
  	lpp -xzj minilax.pars;
  
  minilax.rex:	minilax.scan Scanner.rpp
@@ -36,6 +36,9 @@
 +	$(PUMA) -di ICode.puma;
  
  clean:
- 	rm -f Scanner.m? Parser.m? Tree.m? Semantics.m? Types.m? ICode.m? *.TS *.bak
- 	rm -f core *.[dimor] _Debug minilax minilax.rex Parser.lalr Scanner.rpp
+-	rm -f Scanner.m? Parser.m? Tree.m? Semantics.m? Types.m? ICode.m? *.TS *.bak
+-	rm -f core *.[dimor] _Debug minilax minilax.rex Parser.lalr Scanner.rpp
++	-rm -f Scanner.m? Parser.m? Tree.m? Semantics.m? Types.m? ICode.m? *.TS *.bak
++	-rm -f $(STDCLEAN) 
++	-rm -f   *.[dimor] _Debug minilax minilax.rex Parser.lalr Scanner.rpp
 +.include "../../Makefile.inc" 

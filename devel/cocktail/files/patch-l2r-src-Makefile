@@ -1,6 +1,6 @@
---- ../../work/cocktail-9309//./l2r/src/Makefile	Tue Feb 15 14:23:48 1994
-+++ ./l2r/src/Makefile	Wed Mar 31 23:29:37 2004
-@@ -1,32 +1,34 @@
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./l2r/src/Makefile	Tue Feb 15 14:23:48 1994
++++ ./l2r/src/Makefile	Thu Aug  5 18:49:10 2004
+@@ -1,35 +1,38 @@
 -BIN	= $(HOME)/bin
 -OPT	= -O
 -CC	= cc
@@ -42,11 +42,16 @@
  
  clean:
 -	rm -f core l2r *.o
-+	rm -f core l2r *.o Scanner.c Scanner.h
++	-rm -f $(STDCLEAN) 
++	-rm -f   l2r *.o Scanner.c Scanner.h Parser.h Parser.c
  
  CLEAN:	clean
- 	rm -f $(SOURCES)
-@@ -44,7 +46,4 @@
+-	rm -f $(SOURCES)
++	-rm -f $(SOURCES)
+ 
+ # dependencies
+ 
+@@ -44,7 +47,4 @@
  man:
  	nroff -man l2r.1
  

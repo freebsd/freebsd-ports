@@ -1,0 +1,12 @@
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./mpp/src/Makefile	Tue Feb 15 14:24:13 1994
++++ ./mpp/src/Makefile	Thu Aug  5 18:49:16 2004
+@@ -21,7 +21,7 @@
+ 	install -c -s -m 755 mpp $(BIN)/mpp
+ 
+ clean:
+-	rm -f *.[dimor] mpp *.bak
++	-rm -f *.[dimor] mpp *.bak
+ 
+ CLEAN:	clean
+-	rm -f Parser.m[di]
++	-rm -f Parser.m[di]

@@ -1,6 +1,6 @@
---- ../../work/cocktail-9309//./Makefile	Tue Feb 15 14:20:36 1994
-+++ ./Makefile	Wed Mar 31 22:35:03 2004
-@@ -17,58 +17,20 @@
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./Makefile	Tue Feb 15 14:20:36 1994
++++ ./Makefile	Fri Sep 10 17:31:02 2004
+@@ -17,58 +17,21 @@
  # *                                                                       *
  # *************************************************************************
  
@@ -59,10 +59,11 @@
 -	c_rex \
  	c_front \
 +	c_rex \
++	installtmp \
  	c_bnf \
  	c_ell \
  	c_lalr \
-@@ -79,7 +41,8 @@
+@@ -79,7 +42,8 @@
  	c_rpp \
  	c_cg \
  	c_puma \
@@ -72,13 +73,15 @@
  
  MTARGETS = \
  	reuselib \
-@@ -104,12 +67,16 @@
+@@ -104,12 +68,19 @@
  
  install:	install$(LANGUAGE)
  
 -reuselib:
 -	@echo; echo "Making public reuse library"
 -	cd reuse/c && $(MAKE) $(MFLAGS) TARGET=$(TARGET)
++full: $(LANGUAGE) test
++
 +diff:	clean
 +	-diff -rwPu -x'*cat' -x'?akefile*' ../cocktail-9309.org . > /tmp/cocktail.code.dif
 +	-diff -rwPu -x'*cat' -x'*h' -x'*c' ../cocktail-9309.org . > /tmp/cocktail.makefiles.dif
@@ -86,27 +89,38 @@
  c:	$(CTARGETS)
  
 +reuselib:
++	@echo WRKDIR = ${WRKDIR}
 +	@echo; echo "Making public reuse library"
 +	cd reuse/c && $(MAKE) TARGET=$(TARGET) $(MFLAGS)
 +
  c_reuse:
  	@echo; echo "Making local reuse library"
  	cd reuse/m2c && $(MAKE) $(MFLAGS)
-@@ -156,18 +123,24 @@
+@@ -156,18 +127,33 @@
  	@echo; echo "Making estra"
  	cd estra/m2c && $(MAKE) $(MFLAGS)
  
-+mtc:	$(REUSELIB)
-+	@echo; echo "Making mtc"
-+	cd mtc/m2c && $(MAKE) $(MFLAGS)
-+
-+
- installc:	c_reuse c_common
+-installc:	c_reuse c_common
 -	sh -c "if test ! -d $(BIN); then mkdir -p $(BIN); else true; fi"
 -	sh -c "if test ! -d $(LIB); then mkdir -p $(LIB); else true; fi"
 -	sh -c "if test ! -d $(MANDIR); then mkdir -p $(MANDIR); else true; fi"
 -	sh -c "if test ! -d $(INCDIR); then mkdir -p $(INCDIR); else true; fi"
 -	cd reuse/c	&& $(MAKE) install $(MFLAGS) TARGET=$(TARGET) INCDIR=$(INCDIR)
++mtc:	$(REUSELIB)
++	@echo; echo "Making mtc"
++	cd mtc/m2c && $(MAKE) $(MFLAGS)
++
++installtmp: c_reuse c_common c_front c_rex c_lalr c_bnf
++	mkdir -p $(TMPBIN)
++	mkdir -p $(TMPLIB)
++	mkdir -p $(TMPINC)
++	cd reuse/c	&& $(MAKE) install PREFIX=$(TMPDIR)
++	cd front/m2c	&& $(MAKE) install PREFIX=$(TMPDIR)
++	cd rex/m2c	&& $(MAKE) install PREFIX=$(TMPDIR)
++	cd lalr/m2c	&& $(MAKE) install PREFIX=$(TMPDIR)
++	cd bnf/m2c	&& $(MAKE) install PREFIX=$(TMPDIR)
++
++installc:	
 +	sh -c "if test ! -d $(DESTBIN); then mkdir -p $(DESTBIN); else true; fi"
 +	sh -c "if test ! -d $(DESTLIB); then mkdir -p $(DESTLIB); else true; fi"
 +	sh -c "if test ! -d $(DESTMANDIR); then mkdir -p $(DESTMANDIR); else true; fi"
@@ -123,7 +137,7 @@
  	cd l2r/src	&& $(MAKE) install $(MFLAGS)
  	cd y2l/src	&& $(MAKE) install $(MFLAGS)
  	cd r2l/m2c	&& $(MAKE) install $(MFLAGS)
-@@ -176,7 +149,10 @@
+@@ -176,7 +162,10 @@
  	cd cg/m2c	&& $(MAKE) install $(MFLAGS)
  	cd puma/m2c	&& $(MAKE) install $(MFLAGS)
  	cd estra/m2c	&& $(MAKE) install $(MFLAGS)
@@ -135,7 +149,7 @@
  
  
  modula:	$(MTARGETS)
-@@ -228,52 +204,46 @@
+@@ -228,52 +217,51 @@
  	sh -c "if test ! -d $(BIN); then mkdir -p $(BIN); else true; fi"
  	sh -c "if test ! -d $(LIB); then mkdir -p $(LIB); else true; fi"
  	sh -c "if test ! -d $(MANDIR); then mkdir -p $(MANDIR); else true; fi"
@@ -177,7 +191,7 @@
 +	cp mtc/doc/*.1 $(MANDIR) && chmod a+r $(MANDIR)/*.1
 +	cp mtc/doc/*.2 $(MANDIR2) && chmod a+r $(MANDIR2)/*.2
  
--test:
+ test:
 -	-cd specs/c/ada			&& $(MAKE) -i LIB=$(LIB) INCDIR=$(INCDIR)
 -	-cd specs/c/c			&& $(MAKE) -i LIB=$(LIB) INCDIR=$(INCDIR)
 -	-cd specs/c/cpp			&& $(MAKE) -i LIB=$(LIB) INCDIR=$(INCDIR)
@@ -196,7 +210,8 @@
 -	-cd specs/modula/pascal		&& $(MAKE) -i
 -	-cd specs/modula/minilax	&& $(MAKE) -i minilax
 -	-cd specs/modula/wag		&& $(MAKE) -i minilax
-+test: testc testm
++	make install PREFIX=$(TMPDIR)
++	make testc
  
 -clean:
 +testc:
@@ -207,7 +222,10 @@
 +	cd specs	&& $(MAKE) testm
 +	cd puma/ffaba-m	&& $(MAKE) test
 +
-+clean: cleans
++clean: cleantest cleantools
++
++cleantools:
++	-rm -rf $(TMPDIR)/bin $(TMPDIR)/include $(TMPDIR)/libexec
  	-cd reuse/c			&& $(MAKE) clean
  	-cd reuse/src			&& $(MAKE) clean
  	-cd common/src			&& $(MAKE) clean
@@ -218,14 +236,18 @@
  	-cd bnf/src			&& $(MAKE) clean
  	-cd lalr/src			&& $(MAKE) clean
  	-cd ell/src			&& $(MAKE) clean
-@@ -299,23 +269,11 @@
+@@ -299,23 +287,10 @@
  	-cd cg/m2c			&& $(MAKE) clean
  	-cd puma/m2c			&& $(MAKE) clean
  	-cd estra/m2c			&& $(MAKE) clean
 +	-cd mtc/m2c			&& $(MAKE) clean
 +
++cleantest:
++	-cd specs			&& $(MAKE) clean
++	-cd puma/ffaba-c		&& $(MAKE) clean
++	-cd puma/ffaba-m		&& $(MAKE) clean
  
- cleans:
+-cleans:
 -	-cd specs/c/ada			&& $(MAKE) clean
 -	-cd specs/c/c			&& $(MAKE) clean
 -	-cd specs/c/cpp			&& $(MAKE) clean
@@ -244,7 +266,3 @@
 -	-cd specs/modula/pascal		&& $(MAKE) clean
 -	-cd specs/modula/minilax	&& $(MAKE) clean
 -	-cd specs/modula/wag		&& $(MAKE) clean
-+	-cd specs			&& $(MAKE) clean
-+	-cd puma/ffaba-c		&& $(MAKE) clean
-+	-cd puma/ffaba-m		&& $(MAKE) clean
-+

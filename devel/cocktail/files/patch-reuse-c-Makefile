@@ -1,6 +1,6 @@
---- ../../work/cocktail-9309//./reuse/c/Makefile	Tue Feb 15 14:26:37 1994
-+++ ./reuse/c/Makefile	Wed Mar 31 22:35:06 2004
-@@ -1,35 +1,30 @@
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./reuse/c/Makefile	Tue Feb 15 14:26:37 1994
++++ ./reuse/c/Makefile	Thu Aug  5 18:49:32 2004
+@@ -1,35 +1,31 @@
 -LIB	= $(HOME)/lib
 -INCDIR	= $(LIB)/include
 -TARGET	= SUN
@@ -42,7 +42,8 @@
 +	chmod u+w,a+r $(DESTINCDIR)/*.h
 +
 +clean: cleantest
-+	-rm -f *.o *Drv core $(REUSE)
++	-rm -f $(STDCLEAN) 
++	-rm -f  *.o *Drv  
 +	-rm -f $(REUSE)
 +
 +cleantest:
@@ -53,7 +54,7 @@
  
  # test programs
  
-@@ -73,7 +68,3 @@
+@@ -73,7 +69,3 @@
  ErrorsDrv.o:	Errors.h Positions.h Sets.h Idents.h
  Source.o:	Source.h rSystem.h
  

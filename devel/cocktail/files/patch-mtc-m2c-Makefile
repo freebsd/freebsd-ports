@@ -1,6 +1,6 @@
---- ../../work/cocktail-9309//./mtc/m2c/Makefile	Tue Feb 15 14:24:29 1994
-+++ ./mtc/m2c/Makefile	Wed Mar 31 22:35:05 2004
-@@ -1,43 +1,36 @@
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./mtc/m2c/Makefile	Tue Feb 15 14:24:29 1994
++++ ./mtc/m2c/Makefile	Thu Aug  5 18:49:18 2004
+@@ -1,43 +1,37 @@
 -BIN	= $(HOME)/bin
 -LIB	= $(HOME)/lib
 -OPT	= -O
@@ -18,16 +18,17 @@
  
 -                # options for cc
 -CFLAGS	= -w -I$(REUSE) $(OPT)
--
++RTS	= $(INCDIR)/SYSTEM_.h $(INCDIR)/SYSTEM_.c Arguments.h Arguments.c
+ 
 -                # options for mtc
 -M2FLAGS	= -c
--
--                # "runtime system"
- RTS	= SYSTEM_.h SYSTEM_.c Arguments.h Arguments.c
- 
--all	:
 +all: mtc
  
+-                # "runtime system"
+-RTS	= SYSTEM_.h SYSTEM_.c Arguments.h Arguments.c
+-
+-all	:
+-
 -install:	mtc $(BIN) $(LIB)/mtc
 -	if test $(LIB) = $(BIN); then echo error: BIN = LIB; false; else true; fi
 -	install -c -s -m 755 mtc $(BIN)
@@ -58,13 +59,36 @@
  
  
 +clean:
-+	rm -f core *.o
-+	rm -f mtc
++	-rm -f $(STDCLEAN) 
++	-rm -f   *.o
++	-rm -f mtc
 +
  # HEAD
  
  sources	: AssocTab.h
-@@ -278,18 +271,3 @@
+@@ -236,9 +230,10 @@
+ mtc.o	: Defs.h
+ mtc.o	: Code.h
+ 
+-SYSTEM_.o	: SYSTEM_.c SYSTEM_.h
++# SYSTEM_.o	: SYSTEM_.c SYSTEM_.h
+ 
+-mtc	: $(SYSTEM)	\
++# mtc	: $(SYSTEM)	\
++mtc	: \
+ 	mtc.o	\
+ 	Code.o	\
+ 	Values.o	\
+@@ -257,7 +252,7 @@
+ 	Semantics.o	\
+ 	DefMods.o	\
+ 	Parser.o	\
+-;	$(CC) $(CFLAGS) -o mtc $(SYSTEM)	\
++;	$(CC) $(CFLAGS) -o mtc \
+ 	mtc.o	\
+ 	Code.o	\
+ 	Values.o	\
+@@ -278,18 +273,3 @@
  	Parser.o	\
  	$(CLIBS)
  

@@ -1,15 +1,24 @@
---- ../../work/cocktail-9309//./specs/c/cpp/Makefile	Tue Feb 15 14:28:21 1994
-+++ ./specs/c/cpp/Makefile	Wed Mar 31 23:01:31 2004
-@@ -1,7 +1,3 @@
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./specs/c/cpp/Makefile	Tue Feb 15 14:28:21 1994
++++ ./specs/c/cpp/Makefile	Wed Aug 25 12:00:23 2004
+@@ -1,46 +1,46 @@
 -LIB	= $(HOME)/lib
 -INCDIR	= $(LIB)/include
 -CFLAGS	= -I$(INCDIR)
 -CC	= cc
++ROOTDIR= ../../..
++.include "../../Makefile.inc"
++
++CFLAGS = $(TCFLAGS) -I $(TMPINC)
  
  all:	ParserDrv cParserDrv
  
-@@ -12,13 +8,13 @@
- 	lpp -cxzj cpp.pars;
+ ParserDrv:	ParserDrv.o Scanner.o Parser.o
+-	$(CC) $(CFLAGS) ParserDrv.o Scanner.o Parser.o $(LIB)/libreuse.a -o ParserDrv
++	$(CC) $(CFLAGS) ParserDrv.o Scanner.o Parser.o -L $(TMPLIB)  -lreuse -o ParserDrv
+ 
+ Scanner.rpp Parser.lalr:	cpp.pars
+-	lpp -cxzj cpp.pars;
++	$(LPP) -cxzj cpp.pars;
  
  cpp.rex:	cpp.scan Scanner.rpp
 -	rpp < cpp.scan > cpp.rex;
@@ -25,7 +34,15 @@
  
  ParserDrv.o:	Parser.h Scanner.h
  Parser.o:	Parser.h Scanner.h
-@@ -32,15 +28,15 @@
+ Scanner.o:	Scanner.h
+ 
+ cParserDrv:	cParserDrv.o cScannerSource.o cScanner.o cParser.o
+-	$(CC) $(CFLAGS) cParserDrv.o cScannerSource.o cScanner.o cParser.o $(LIB)/libreuse.a -o cParserDrv
++	$(CC) $(CFLAGS) cParserDrv.o cScannerSource.o cScanner.o cParser.o -L $(TMPLIB)  -l reuse  -o cParserDrv
+ 
+ cScanner.rpp cParser.lalr:	c.pars
+-	lpp -cxzj c.pars;
++	$(LPP) -cxzj c.pars;
  
  c.rex:	cpp.scan cScanner.rpp
  	(echo SCANNER cScanner; rpp cScanner.rpp < cpp.scan) | \
@@ -44,12 +61,16 @@
  
  cParserDrv.o:	cParser.h cScanner.h
  cParser.o:	cParser.h cScanner.h
-@@ -53,7 +49,4 @@
- 	rm -f core *.[hco] _Debug cParserDrv ParserDrv c.rex cpp.rex \
+@@ -50,10 +50,7 @@
+ 	lint $(CFLAGS) -b -u *.c
+ 
+ clean:
+-	rm -f core *.[hco] _Debug cParserDrv ParserDrv c.rex cpp.rex \
++	-rm -f $(STDCLEAN) 
++	-rm -f   *.[hco] _Debug cParserDrv ParserDrv c.rex cpp.rex \
  		cParser.lalr Parser.lalr cScanner.rpp Scanner.rpp
  
 -.SUFFIXES:	.c .o
 -
 -.c.o:
 -	$(CC) $(CFLAGS) -c $*.c
-+.include "../../Makefile.inc" 

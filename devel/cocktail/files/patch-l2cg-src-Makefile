@@ -1,5 +1,5 @@
---- ../../work/cocktail-9309//./l2cg/src/Makefile	Tue Feb 15 14:23:44 1994
-+++ ./l2cg/src/Makefile	Wed Mar 31 22:45:23 2004
+--- /usr/ports/devel/cocktail/work/cocktail-9309//./l2cg/src/Makefile	Tue Feb 15 14:23:44 1994
++++ ./l2cg/src/Makefile	Thu Aug  5 18:49:08 2004
 @@ -14,14 +14,14 @@
  	mv ParserDrv l2cg
  
@@ -18,3 +18,17 @@
  	chmod a+rx $(BIN)/l2cg
  	install -c -s -m 755 l2cg $(LIB)/l2cg
  
+@@ -33,10 +33,11 @@
+ m2c:
+ 	# co RCS/*
+ 	make $(SOURCES)
+-	rm -f ../m2c/*.[hc]
++	-rm -f ../m2c/*.[hc]
+ 	ln *.m[id] ../m2c
+ 	cd ../m2c; make sources M2FLAGS="-c -d../../reuse/src"
+ 	cd ../m2c; rm -f *.m[id]
+ 
+ clean:
+-	rm -f l2cg core *.[dimor] *.bak *.m?
++	-rm -f $(STDCLEAN) 
++	-rm -f  l2cg  *.[dimor] *.bak *.m?
