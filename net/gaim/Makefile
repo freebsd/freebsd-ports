@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gaim
-PORTVERSION=	0.56
+PORTVERSION=	0.57
 CATEGORIES?=	net
 MASTER_SITES=	ftp://ftp.marko.net/pub/gaim/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -20,7 +20,7 @@ USE_GMAKE=	yes
 USE_GTK=	yes
 WANT_ESOUND=	yes
 WANT_GNOME=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
