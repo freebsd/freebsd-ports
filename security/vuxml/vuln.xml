@@ -30,6 +30,36 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="700d43b4-a42a-11d8-9c6d-0020ed76ef5a">
+    <topic>Cyrus IMSPd multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>cyrus-imspd</name>
+	<range><lt>1.6a5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Cyrus team reported multiple vulnerabilities in older
+          versions of Cyrus IMSPd:</p>
+	<blockquote
+	  cite="http://marc.theaimsgroup.com/?l=cyrus-announce&amp;m=107150355226926">
+          <p>These releases correct a recently discovered buffer
+            overflow vulnerability, as well as clean up a significant
+	    amount of buffer handling throughout the code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://marc.theaimsgroup.com/?l=cyrus-announce&amp;m=107150355226926</url>
+      <!-- <mlist>http://marc.theaimsgroup.com/?l=cyrus-announce&amp;m=107150355226926</mlist> -->
+    </references>
+    <dates>
+      <discovery>2004-12-12</discovery>
+      <entry>2004-05-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="35f6fdf8-a425-11d8-9c6d-0020ed76ef5a">
     <topic>Cyrus IMAP pre-authentication heap overflow vulnerability</topic>
     <affects>
