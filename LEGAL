@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.79 1997/07/09 07:11:06 tg Exp $
+# $Id: LEGAL,v 1.80 1997/07/10 06:31:05 tg Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -80,9 +80,6 @@ rkive3.1.tar.gz		ports/news/rkive	Restrictive copyright
 rman-2.4.tar.Z		ports/misc/rman		Restrictive copyright
 rsaref*			ports/security/{rsaref,ssh} Crypto; export-controlled
 rzsz3_36.zip		ports/comms/rzsz	Restrictive copyright
-scsh-0.4.4.tar.gz	ports/shells/scsh	The author requested not to
-						include the current version
-						in the CD-ROM.
 sdr-2.3*		ports/mbone/sdr		Crypto; export-controlled
 socks5-*		ports/net/socks5	No commercial use
 ssh-*			ports/security/ssh	Crypto; export-controlled
