@@ -3,12 +3,12 @@
 # Date created:         24 Feb 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.30 1998/12/19 11:20:12 markm Exp $
+# $Id: Makefile,v 1.31 1998/12/20 22:16:04 sada Exp $
 #
 
 DISTNAME=       netscape-navigator-4.08
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.netscape.com/pub/communicator/4.08/english/unix/unsupported/freebsd/navigator_standalone
+MASTER_SITES=	ftp://ftp.netscape.com/pub/communicator/4.08/english/unix/unsupported/freebsd/navigator_standalone/
 DISTFILES=	navigator-v408-export.x86-unknown-freebsd.tar.gz
 
 MAINTAINER=     sada@FreeBSD.ORG
