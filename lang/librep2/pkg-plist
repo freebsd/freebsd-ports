@@ -17,6 +17,7 @@ info/librep.info-5
 info/librep.info-6
 info/librep.info-7
 info/librep.info-8
+info/librep.info-9
 @exec install-info %D/info/librep.info %D/info/dir
 lib/librep.la
 lib/librep.so
@@ -49,6 +50,8 @@ libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/io/timers.la
 libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/io/timers.so
 libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/lang/record-profile.la
 libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/lang/record-profile.so
+libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/util/md5.la
+libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/util/md5.so
 libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/vm/safe-interpreter.la
 libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/vm/safe-interpreter.so
 libexec/rep/%%VERSION%%/%%GNUHOST%%/sdbm.la
@@ -146,6 +149,8 @@ share/rep/%%VERSION%%/lisp/rep/module-system.jl
 share/rep/%%VERSION%%/lisp/rep/module-system.jlc
 share/rep/%%VERSION%%/lisp/rep/net/domain-name.jl
 share/rep/%%VERSION%%/lisp/rep/net/domain-name.jlc
+share/rep/%%VERSION%%/lisp/rep/net/rpc.jl
+share/rep/%%VERSION%%/lisp/rep/net/rpc.jlc
 share/rep/%%VERSION%%/lisp/rep/regexp.jl
 share/rep/%%VERSION%%/lisp/rep/regexp.jlc
 share/rep/%%VERSION%%/lisp/rep/structures.jl
@@ -156,6 +161,11 @@ share/rep/%%VERSION%%/lisp/rep/system/environ.jl
 share/rep/%%VERSION%%/lisp/rep/system/environ.jlc
 share/rep/%%VERSION%%/lisp/rep/system/pwd-prompt.jl
 share/rep/%%VERSION%%/lisp/rep/system/pwd-prompt.jlc
+share/rep/%%VERSION%%/lisp/rep/test/autoload.jl
+share/rep/%%VERSION%%/lisp/rep/test/data.jl
+share/rep/%%VERSION%%/lisp/rep/test/data.jlc
+share/rep/%%VERSION%%/lisp/rep/test/framework.jl
+share/rep/%%VERSION%%/lisp/rep/test/framework.jlc
 share/rep/%%VERSION%%/lisp/rep/threads/condition-variable.jl
 share/rep/%%VERSION%%/lisp/rep/threads/condition-variable.jlc
 share/rep/%%VERSION%%/lisp/rep/threads/mutex.jl
@@ -253,6 +263,7 @@ share/rep/%%VERSION%%/lisp/unscheme/syntax.jlc
 @dirrm share/rep/%%VERSION%%/lisp/rep/vm
 @dirrm share/rep/%%VERSION%%/lisp/rep/util
 @dirrm share/rep/%%VERSION%%/lisp/rep/threads
+@dirrm share/rep/%%VERSION%%/lisp/rep/test
 @dirrm share/rep/%%VERSION%%/lisp/rep/system
 @dirrm share/rep/%%VERSION%%/lisp/rep/net
 @dirrm share/rep/%%VERSION%%/lisp/rep/mail
@@ -267,6 +278,7 @@ share/rep/%%VERSION%%/lisp/unscheme/syntax.jlc
 @dirrm share/rep/%%VERSION%%
 @dirrm share/rep
 @dirrm libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/vm
+@dirrm libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/util
 @dirrm libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/lang
 @dirrm libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/io/db
 @dirrm libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/io
