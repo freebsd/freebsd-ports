@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.edu.cn/pub/Chinese/
 #	different.
 DISTNAME=	celvis
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 MAN1=		celvis.1
 MLINKS=		celvis.1 cvi.1
