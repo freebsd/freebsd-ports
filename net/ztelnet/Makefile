@@ -1,28 +1,38 @@
 # New ports collection makefile for:    ztelnet
-# Version required:     1.0p1
-# Date created:         4 Apr 1997
-# Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
+# Version required:     1.0p2
+# Date created:         15 Mar 1998
+# Whom:                 CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.1.1.1 1997/06/04 09:02:45 asami Exp $
+# $Id$
 #
+# In this ports..
+#   - new compilation diff for FreeBSD(now we can upload!)
+#   - linux patch(implied -8 and stairway effect) is applied
+# NOTE: in post-patch, we can ignore warnings.
 
-DISTNAME=	ztelnet
-PKGNAME=	ko-ztelnet-1.0p1
+DISTNAME=	ztelnet2
+PKGNAME=	ko-ztelnet-1.0p2
 CATEGORIES=	korean net
-MASTER_SITES=	ftp://ftp.kaist.ac.kr/pub/hangul/network/ \
-		ftp://sunsite.kren.nm.kr/pub/packages/hangul/network/ \
-		ftp://jazz.snu.ac.kr/pub/unix/util/net/
-DISTFILES=	ztelnet.tar.gz ztelnet-patch.tar.gz
+MASTER_SITES=	ftp://jazz.snu.ac.kr/pub/unix/util/net/
+DISTFILES=	ztelnet-linux.tar.gz ztelnet-patch.tar.gz
 
 MAINTAINER=	junker@jazz.snu.ac.kr
 
+NO_WRKSUBDIR=	yes
+PATCH_STRIP=	-p1
+
 post-patch:
-	@cd ${WRKDIR}; \
-	${PATCH} --quiet < ${FILESDIR}/ztelnet.patch.patch; \
-	${PATCH} --quiet < ztelnet.patch
+	@( cd ${WRKSRC}/ztelnet && \
+	${PATCH} -s -p1 < ${WRKSRC}/ztelnet.patch || \
+	true ) > /dev/null 2>&1
+
+do-build:
+	@cd ${WRKSRC}/ztelnet && \
+	${MAKE} clean && \
+	${MAKE} 4.4bsd
 
 do-install:
-	@cd ${WRKSRC}; \
+	@cd ${WRKSRC}/ztelnet; \
 	${MKDIR} ${PREFIX}/bin; \
 	${INSTALL_PROGRAM} telnet/telnet ${PREFIX}/bin/ztelnet
 

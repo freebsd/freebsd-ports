@@ -2,7 +2,10 @@ ztelnet
 -------
 
 ztelnet is telnet hack(from BSD source) to do zmodem transfer. It is useful
-for zmodem transfer in BBS.
+for zmodem transfer in BBS. You can upload and download the files with
+sz/rz command in telnet.
+
+In default, 8-bit transfer option(-8) is implied.
 
 --
-Ports by Choi Jun Ho <junker@jazz.snu.ac.kr>
+Ports by CHOI Junho <junker@jazz.snu.ac.kr>
