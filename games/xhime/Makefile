@@ -3,7 +3,7 @@
 # Date created:        25 August 1998
 # Whom:                Seiichirou Hiraoka
 #
-# $Id: Makefile,v 1.1.1.1 1998/11/24 08:49:45 flathill Exp $
+# $Id: Makefile,v 1.1.1.2 1998/11/25 11:13:20 flathill Exp $
 #
 
 DISTNAME=	xhime151
@@ -33,7 +33,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/ja/xhime
 	@(cd ${WRKSRC};\
-	${INSTALL_MAN} xhime-doc.euc xhime.doc rh110.xhm rh110-doc.euc \
+	${INSTALL_MAN} xhime-doc.euc xhime.doc rh110-doc.euc \
 		${PREFIX}/share/doc/ja/xhime; \
 	)
 .endif
