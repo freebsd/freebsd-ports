@@ -16,43 +16,20 @@ include/quicktime/lqt_codecinfo.h
 include/quicktime/lqt_version.h
 include/quicktime/qtprivate.h
 include/quicktime/quicktime.h
-@dirrm include/quicktime
-lib/libquicktime/lqt_audiocodec.a
-lib/libquicktime/lqt_audiocodec.la
 lib/libquicktime/lqt_audiocodec.so
-lib/libquicktime/lqt_dv.a
-lib/libquicktime/lqt_dv.la
 lib/libquicktime/lqt_dv.so
-lib/libquicktime/lqt_ferguson.a
-lib/libquicktime/lqt_ferguson.la
 lib/libquicktime/lqt_ferguson.so
-lib/libquicktime/lqt_mjpeg.a
-lib/libquicktime/lqt_mjpeg.la
 lib/libquicktime/lqt_mjpeg.so
-lib/libquicktime/lqt_opendivx.a
-lib/libquicktime/lqt_opendivx.la
 lib/libquicktime/lqt_opendivx.so
-lib/libquicktime/lqt_png.a
-lib/libquicktime/lqt_png.la
 lib/libquicktime/lqt_png.so
-lib/libquicktime/lqt_rtjpeg.a
-lib/libquicktime/lqt_rtjpeg.la
 lib/libquicktime/lqt_rtjpeg.so
-lib/libquicktime/lqt_svq.a
-lib/libquicktime/lqt_svq.la
 lib/libquicktime/lqt_svq.so
-lib/libquicktime/lqt_videocodec.a
-lib/libquicktime/lqt_videocodec.la
 lib/libquicktime/lqt_videocodec.so
-lib/libquicktime/lqt_vorbis.a
-lib/libquicktime/lqt_vorbis.la
 lib/libquicktime/lqt_vorbis.so
-lib/libquicktime/lqt_xanim.a
-lib/libquicktime/lqt_xanim.la
 lib/libquicktime/lqt_xanim.so
 lib/libquicktime.a
-lib/libquicktime.la
 lib/libquicktime.so
 lib/libquicktime.so.0
-@dirrm lib/libquicktime
 share/aclocal/lqt.m4
+@dirrm lib/libquicktime
+@dirrm include/quicktime
