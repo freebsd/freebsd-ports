@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	mkvtoolnix
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.4
 CATEGORIES=	multimedia audio
-MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/
+MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/old/
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Tools to extract from/get info about/create Matroska media streams
-
-BROKEN=		Unfetchable
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmatroska.a:${PORTSDIR}/multimedia/libmatroska \
 		${LOCALBASE}/lib/libebml.a:${PORTSDIR}/textproc/libebml
@@ -30,14 +28,18 @@ CONFIGURE_ARGS=	--with-extra-includes=${LOCALBASE}/include \
 		--with-extra-libs=${LOCALBASE}/lib
 
 MAN1=		base64tool.1 mkvextract.1 mkvinfo.1 mkvmerge.1
+PLIST_FILES=	bin/base64tool bin/mkvextract bin/mkvinfo bin/mkvmerge
 
-post-patch:
-# disable GNU auto* tools
-	@${FIND} ${WRKSRC} -type f -name "Makefile.in" | ${XARGS} \
-		-n 10 ${REINPLACE_CMD} -E -e \
-		's!^(ACLOCAL|AUTOCONF|AUTOMAKE|AUTOHEADER).+$$!\1=${TRUE}!'
+WXGTK_CONFIG=	wxgtk2-2.4-config
 
 .include <bsd.port.pre.mk>
+
+.ifndef(WITHOUT_WXGTK)
+LIB_DEPENDS+=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
+
+MAN1+=		mmg.1
+PLIST_FILES+=	bin/mmg
+.endif
 
 .if ${ARCH} == "sparc64"
 BROKEN=		"Does not compile on sparc64"
@@ -46,5 +48,21 @@ BROKEN=		"Does not compile on sparc64"
 .if ${OSVERSION} < 500000
 CFLAGS+= -DNO_WSTRING
 .endif
+
+pre-everything::
+.ifndef(WITHOUT_WXGTK)
+	@${ECHO_MSG} "===>"
+	@${ECHO_MSG} "===> You can disable wxGTK2 support by defining"
+	@${ECHO_MSG} "===>  WITHOUT_WXGTK"
+	@${ECHO_MSG} "===>"
+.endif
+
+post-patch:
+# disable GNU auto* tools
+	@${FIND} ${WRKSRC} -type f -name "Makefile.in" | ${XARGS} \
+		-n 10 ${REINPLACE_CMD} -E -e \
+		's!^(ACLOCAL|AUTOCONF|AUTOMAKE|AUTOHEADER).+$$!\1=${TRUE}!'
+	@${REINPLACE_CMD} -e 's|wx-config|${WXGTK_CONFIG}|' \
+		${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
