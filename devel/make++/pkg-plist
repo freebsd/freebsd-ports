@@ -1,4 +1,5 @@
 bin/makepp
+share/makepp/AutoloadComponent.pm
 share/makepp/FileInfo.pm
 share/makepp/FileInfo_makepp.pm
 share/makepp/Glob.pm
@@ -28,7 +29,7 @@ share/makepp/html/incompat.html
 share/makepp/html/index.html
 share/makepp/html/inferring.html
 share/makepp/html/legacy_makefiles.html
-share/makepp/html/release_notes_100.html
+share/makepp/html/release_notes_118.html
 share/makepp/html/repositories.html
 share/makepp/html/scanning.html
 share/makepp/html/signature_checking.html
