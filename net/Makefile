@@ -224,6 +224,7 @@
     SUBDIR += icmpinfo
     SUBDIR += icmpmonitor
     SUBDIR += icmpquery
+    SUBDIR += icpld
     SUBDIR += icqlib
     SUBDIR += icqlib0
     SUBDIR += icqnix
