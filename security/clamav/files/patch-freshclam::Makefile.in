@@ -1,0 +1,20 @@
+--- freshclam/Makefile.in.orig	Fri Nov 21 17:15:56 2003
++++ freshclam/Makefile.in	Fri Nov 21 17:16:27 2003
+@@ -161,7 +161,7 @@
+ 	$(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
+ LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+-	$(AM_LDFLAGS) $(LDFLAGS) -o $@
++	$(LIBS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
+ CFLAGS = @CFLAGS@
+ DIST_SOURCES = $(freshclam_SOURCES)
+ DIST_COMMON = Makefile.am Makefile.in
+@@ -205,7 +205,7 @@
+ 	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
+ freshclam$(EXEEXT): $(freshclam_OBJECTS) $(freshclam_DEPENDENCIES) 
+ 	@rm -f freshclam$(EXEEXT)
+-	$(LINK) $(freshclam_LDFLAGS) $(freshclam_OBJECTS) $(freshclam_LDADD) $(LIBS)
++	$(LINK) $(freshclam_LDFLAGS) $(freshclam_OBJECTS) $(freshclam_LDADD)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT) core *.core

@@ -4,6 +4,7 @@ bin/clamscan
 bin/clamdscan
 bin/freshclam
 bin/sigtool
+%%CLAMAV-MILTER%%etc/rc.d/clamav-milter%%RC_SUFX%%
 %%CLAMAV-MILTER%%sbin/clamav-milter
 sbin/clamd
 include/clamav.h

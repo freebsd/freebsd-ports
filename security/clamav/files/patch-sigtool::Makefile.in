@@ -1,0 +1,20 @@
+--- sigtool/Makefile.in.orig	Fri Nov 21 17:12:10 2003
++++ sigtool/Makefile.in	Fri Nov 21 17:13:13 2003
+@@ -149,7 +149,7 @@
+ 	$(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
+ LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+-	$(AM_LDFLAGS) $(LDFLAGS) -o $@
++	$(LIBS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
+ CFLAGS = @CFLAGS@
+ DIST_SOURCES = $(sigtool_SOURCES)
+ DIST_COMMON = Makefile.am Makefile.in
+@@ -193,7 +193,7 @@
+ 	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
+ sigtool$(EXEEXT): $(sigtool_OBJECTS) $(sigtool_DEPENDENCIES) 
+ 	@rm -f sigtool$(EXEEXT)
+-	$(LINK) $(sigtool_LDFLAGS) $(sigtool_OBJECTS) $(sigtool_LDADD) $(LIBS)
++	$(LINK) $(sigtool_LDFLAGS) $(sigtool_OBJECTS) $(sigtool_LDADD)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT) core *.core

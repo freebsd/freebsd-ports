@@ -1,7 +1,7 @@
 Clam Antivirus is command line virus scanner written entirely in C
 and its database is kept up to date. It also detects polymorphic
 viruses, scans compressed files and supported by AMaViS.
-On FreeBSD 4.X the milter interface isn't built by default because
-it needs gcc30 or higher.
+Optionally you can use the clamav-milter interface to connect
+clamav with sendmail.
 
 WWW: http://clamav.sourceforge.net/
