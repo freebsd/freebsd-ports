@@ -1,0 +1,39 @@
+--- ../../OLD/v/Config.mk	Thu Jan 29 11:44:48 1998
++++ Config.mk	Sun Feb  8 07:36:21 1998
+@@ -20,7 +20,8 @@
+ #---------------------------------------------------------------------
+ # HOMEV info
+ #---------------------------------------------------------------------
+-HOMEV	=	$(HOME)/v
++HOMEV	=	/usr/ports/x11/v/work/v
++# why not use ${WRKSRC}?  does not seem to work.
+ 
+ 
+ #---------------------------------------------------------------------
+@@ -43,7 +44,7 @@
+ # User contributed definitions are available for:
+ # hpux, aix, solaris, bsd
+ #---------------------------------------------------------------------
+-ARCH	= linux
++#ARCH	= linux
+ #ARCH	= linuxelf
+ #ARCH	= sun4
+ #ARCH	= mips
+@@ -51,7 +52,7 @@
+ #ARCH	= hpux
+ #ARCH	= aix
+ #ARCH	= solaris
+-#ARCH	= bsd
++ARCH	= bsd
+ Arch = $(ARCH)
+ 
+ 
+@@ -249,7 +250,7 @@
+ #CFLAGS	+= -v $(INCDIR) 
+ CFLAGS	+= $(INCDIR) 
+ ifeq ($(DEBUG),no)
+-CFLAGS	+=	-O
++CFLAGS	+=	-O3 -m486
+ endif
+ ifeq ($(DEBUG),yes)
+ CFLAGS	+=	-g
