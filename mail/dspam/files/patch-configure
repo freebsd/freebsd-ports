@@ -1,12 +1,56 @@
---- configure.orig	Sun Aug  3 01:16:30 2003
-+++ configure	Mon Aug  4 12:03:04 2003
-@@ -18216,7 +18216,8 @@
- 
- 
+--- configure.orig      Tue Sep 23 22:45:17 2003
++++ configure   Tue Sep 23 22:44:11 2003
+@@ -7513,7 +7513,8 @@
+
+
  # This can be used to rebuild libtool when needed
 -LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
 +LIBTOOL_DEPS="%%LIBTOOLFLAGS%% $ac_aux_dir/ltmain.sh"
 +$ac_aux_dir/ltconfig $LIBTOOL_DEPS
- 
+
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -9287,9 +9288,9 @@
+     ds_db4_libs_LIBS="-L$with_db4_libraries"
+ fi
+
+-echo "$as_me:$LINENO: checking for db_create in -ldb-4" >&5
+-echo $ECHO_N "checking for db_create in -ldb-4... $ECHO_C" >&6
+-LIBS="$ds_db4_libs_LIBS -ldb-4 $ds_db4_libs_save_LIBS"
++echo "$as_me:$LINENO: checking for db_create in -ldb41" >&5
++echo $ECHO_N "checking for db_create in -ldb41... $ECHO_C" >&6
++LIBS="$ds_db4_libs_LIBS -ldb41 $ds_db4_libs_save_LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -9325,7 +9326,7 @@
+   (exit $ac_status); }; }; then
+
+         ds_db4_libs_success=yes
+-        ds_db4_libs_LIBS="$ds_db4_libs_LIBS -ldb-4"
++        ds_db4_libs_LIBS="$ds_db4_libs_LIBS -ldb41"
+
+ else
+   echo "$as_me: failed program was:" >&5
+@@ -9340,9 +9341,9 @@
+
+ if test "x$ds_db4_libs_success" != xyes
+ then
+-    echo "$as_me:$LINENO: checking for db_create in -ldb-4 (with -lpthread)" >&5
+-echo $ECHO_N "checking for db_create in -ldb-4 (with -lpthread)... $ECHO_C" >&6
+-    LIBS="$ds_db4_libs_LIBS -ldb-4 -lpthread $LIBS"
++    echo "$as_me:$LINENO: checking for db_create in -ldb41 (with -lpthread)" >&5
++echo $ECHO_N "checking for db_create in -ldb41 (with -lpthread)... $ECHO_C" >&6
++    LIBS="$ds_db4_libs_LIBS -ldb41 -lpthread $LIBS"
+     cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -9378,7 +9379,7 @@
+   (exit $ac_status); }; }; then
+
+             ds_db4_libs_success=yes
+-            ds_db4_libs_LIBS="$ds_db4_libs_LIBS -ldb-4 -lpthread"
++            ds_db4_libs_LIBS="$ds_db4_libs_LIBS -ldb41 -lpthread"
+
+ else
+   echo "$as_me: failed program was:" >&5
