@@ -360,6 +360,7 @@ arpwatch	ports/net/arpwatch
 arrow		ports/mail/arrow
 artemis		ports/biology/artemis
 arts++		ports/net/arts++
+artwiz-fonts	ports/x11-fonts/artwiz-fonts
 as		src/gnu/usr.bin/as
 as80		ports/devel/as80
 asa		src/usr.bin/asa
