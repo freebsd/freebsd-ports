@@ -392,6 +392,7 @@
     SUBDIR += xaos
     SUBDIR += xbarcode
     SUBDIR += xbmbrowser
+    SUBDIR += xd3d
     SUBDIR += xdgagrab
     SUBDIR += xdl
     SUBDIR += xenomorph
