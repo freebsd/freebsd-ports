@@ -11,7 +11,7 @@ MASTERDIR=	${.CURDIR}/../../japanese/kon2-16dot
 EXTRA_PATCHES=	${.CURDIR}/files/patch-lib::coding.c
 CATEGORIES=	chinese
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
 
 BUILD_DEPENDS+=	${LOCALBASE}/share/fonts/bdf/kc15f.bdf.gz:${PORTSDIR}/chinese/kcfonts:patch
 

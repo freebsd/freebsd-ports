@@ -21,7 +21,7 @@ DISTFILES=	wp010-05.ttf wp010-08.ttf wp110-05.ttf wp110-08.ttf \
 		WCL-06.ttf WCL-07.ttf WCL-08.ttf WCL-09.ttf WCL-10.ttf
 EXTRACT_ONLY=
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
 COMMENT=	Many Chinese Big5 TrueType fonts, made by Dr. Hann-Tzong Wang
 
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig \

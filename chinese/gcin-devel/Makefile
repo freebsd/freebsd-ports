@@ -10,7 +10,7 @@ PORTVERSION=	0.5.3
 CATEGORIES=	chinese
 MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
 COMMENT=	A triditional chinese input utility in X
 
 USE_BZIP2=	YES

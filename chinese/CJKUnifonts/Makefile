@@ -13,7 +13,7 @@ MASTER_SITES=	http://debian.linux.org.tw/pub/3Anoppix/people/arne/uming/ \
 DISTFILES=	ttf-arphic-uming_0.0.20041031-1.tar.gz \
 		ttf-arphic-ukai_0.0.20041031-1.tar.gz
 
-MAINTAINER=	ports@FreeBSD.Org
+MAINTAINER=	statue@freebsd.netlab.cse.yzu.edu.tw
 COMMENT=	Arne TrueType Font is combine of arphic ming and kai fonts
 
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig \
