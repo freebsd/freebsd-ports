@@ -11,7 +11,7 @@ CATEGORIES=	mbone sysutils
 MASTER_SITES=	http://udpcast.linux.lu/current/
 DISTNAME=	${PORTNAME}-${RELEASE_DATE}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A file transfer tool using ethernet's multicast
 
 USE_REINPLACE=	yes

@@ -15,7 +15,7 @@ PKGNAMESUFFIX=	-decoder
 DISTNAME=	${PORTNAME}d-${PORTVERSION:C/\.//g}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A LayerII MPEG Audio decoder which supports multi-channel encoding
 
 USE_GMAKE=	yes
