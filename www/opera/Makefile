@@ -15,7 +15,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/10./10-/}.1-static-qt.i386.freebsd
 MAINTAINER=	des@FreeBSD.org
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
-LIB_DEPENDS=	c_r.4:${PORTSDIR}/misc/compat4x
 
 USE_BZIP2=	yes
 ONLY_FOR_ARCHS=	i386
@@ -27,4 +26,10 @@ NO_FILTER_SHLIBS=yes
 do-install:
 	(cd ${WRKSRC} && ${SH} install.sh --prefix="${PREFIX}")
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+LIB_DEPENDS+=	c_r.4:${PORTSDIR}/misc/compat4x
+.endif
+
+.include <bsd.port.post.mk>
