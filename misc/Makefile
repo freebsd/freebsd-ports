@@ -73,6 +73,7 @@
     SUBDIR += gctpc
     SUBDIR += geekcode
     SUBDIR += git
+    SUBDIR += gkrellm-reminder
     SUBDIR += gkrellmaflag
     SUBDIR += gkrellmlaunch
     SUBDIR += gkrellscore
