@@ -1,0 +1,96 @@
+--- _fdrc.orig	Wed Feb  6 00:00:00 2002
++++ _fdrc	Mon Feb 11 01:28:06 2002
+@@ -13,2 +13,3 @@
+ #SORTTYPE=0
++FD_SORTTYPE=101
+ 
+@@ -29,2 +30,3 @@
+ #SORTTREE=0
++FD_SORTTREE=1
+ 
+@@ -50,2 +52,3 @@
+ #ADJTTY=0
++FD_ADJTTY=1
+ 
+@@ -104,2 +107,3 @@
+ #ANSICOLOR=0
++FD_ANSICOLOR=1
+ 
+@@ -144,2 +148,3 @@
+ #LANGUAGE=$LANG
++FD_LANGUAGE=$LANG
+ 
+@@ -215,2 +220,3 @@
+ #PAGER=more%K
++FD_PAGER=${PAGER:-more}%K
+ #EDITOR=vi
+@@ -222,2 +228,35 @@
+ # launcher definition
++tar="tar"
++
++case `$tar --version 2>&1` in
++*GNU*\ 1.1[01]*)
++  tar_format="%a %u/%g %s %m %d %t %y %f"
++  ;;
++*)
++  tar_format="%a %u/%g %s %y-%m-%d %t %f"
++  ;;
++esac
++
++launch ".tar"		"$tar tvf"		"$tar_format"
++
++for ext in .tar.Z .taZ .tar.gz .tgz .taz; do
++  launch "$ext"		"$tar ztvf %C"		"$tar_format"
++done
++
++for ext in .tar.bz2 .tbz2; do
++  launch "$ext"		"$tar jtvf %C"		"$tar_format"
++done
++
++launch "/.lzh"		"lha -lq"		"%a %u/%g %s %x %m %d %{yt} %f"
++
++for ext in /.zip /.jar; do
++  launch "$ext"	"unzip -lqq"		"%s %m-%d-%y %t %f"
++done
++
++for ext in .Z .gz; do
++  launch "$ext"	"zcat %C | $PAGER"
++done
++
++launch ".bz2"		"bzip2 -cd %C | $PAGER"
++
+ #(Default)
+@@ -325,2 +364,33 @@
+ # archiver definition
++
++arch	".tar"	"$tar cf %C %T"			"$tar xf %C %TA"
++
++for ext in .tar.Z .taZ; do
++  arch	"$ext"	"$tar Zcf %C %T"		"$tar Zxf %C %TA"
++done
++
++for ext in .tar.gz .tgz .taz; do
++  arch	"$ext"	"$tar cf - %T | gzip -9c > %C"	"$tar zxf %C %TA"
++done
++
++for ext in .tar.bz2 .tbz2; do
++  arch	"$ext"	"$tar cf - %T | bzip2 -9c > %C"	"$tar jxf %C %TA"
++done
++
++arch	"/.lzh"	"lha aq %C %TA"			"lha xq %C %TA"
++
++for ext in /.zip /.jar; do
++  arch	"$ext"	"zip -q %C %TA"			"unzip -q %C %TA"
++done
++
++_uuencode() {
++  uu=$1
++  shift
++  for file; do
++    uuencode $file $file >> $uu
++  done
++}
++
++arch	".uu"  "_uuencode %C %TA"		"uudecode -ic < %C"
++
+ #(Default)

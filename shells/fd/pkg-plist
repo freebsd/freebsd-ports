@@ -1,7 +1,22 @@
 bin/fd
+bin/fdsh
+@exec echo "updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak; echo %D/%F) >/etc/shells; rm -f /etc/shells.bak
+@unexec echo "updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak) >/etc/shells; rm -f /etc/shells.bak
 bin/fd-unicd.tbl
-share/doc/fd/FAQ
-share/doc/fd/HISTORY
-share/doc/fd/README
-share/doc/fd/ToAdmin
-@dirrm share/doc/fd
+etc/fd2rc.dist
+@unexec if cmp -s %D/etc/fd2rc %D/etc/fd2rc.sample; then rm -f %D/etc/fd2rc; fi
+etc/fd2rc.sample
+@exec [ ! -f %B/fd2rc ] && cp %B/%f %B/fd2rc
+%%PORTDOCS%%share/doc/ja/fd/FAQ
+%%PORTDOCS%%share/doc/ja/fd/HISTORY
+%%PORTDOCS%%share/doc/ja/fd/LICENSES
+%%PORTDOCS%%share/doc/ja/fd/README
+%%PORTDOCS%%share/doc/ja/fd/TECHKNOW
+%%PORTDOCS%%share/doc/ja/fd/ToAdmin
+%%PORTDOCS%%@dirrm share/doc/ja/fd
+%%PORTDOCS%%share/doc/fd/FAQ.eng
+%%PORTDOCS%%share/doc/fd/LICENSES.eng
+%%PORTDOCS%%share/doc/fd/README.eng
+%%PORTDOCS%%share/doc/fd/TECHKNOW.eng
+%%PORTDOCS%%share/doc/fd/ToAdmin.eng
+%%PORTDOCS%%@dirrm share/doc/fd
