@@ -1,0 +1,12 @@
+--- ../fakeroot-0.8.5/scripts/fakeroot  Wed Nov 12 17:07:18 2003
++++ scripts/fakeroot    Thu Mar 11 13:40:00 2004
+@@ -16,7 +16,7 @@
+ PREFIX=`dirname ${BINDIR}`
+     
+ LIB=libfakeroot.so.0
+-PATHS=${PREFIX}/lib/libfakeroot:${PREFIX}/lib64/libfakeroot
++PATHS=${PREFIX}/lib
+ FAKED=${BINDIR}/faked
+ 
+ FAKED_MODE="unknown-is-root"
+

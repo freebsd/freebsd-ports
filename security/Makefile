@@ -76,6 +76,7 @@
     SUBDIR += f-prot-sig
     SUBDIR += fakebo
     SUBDIR += fakeident
+    SUBDIR += fakeroot
     SUBDIR += find-zlib
     SUBDIR += find_ddos
     SUBDIR += finger_mysql
