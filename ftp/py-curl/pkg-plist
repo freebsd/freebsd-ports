@@ -1,13 +1,41 @@
 %%PYTHON_SITELIBDIR%%/pycurl.so
+share/doc/py-curl/ChangeLog
 share/doc/py-curl/COPYING
 share/doc/py-curl/INSTALL
 share/doc/py-curl/README
 share/doc/py-curl/TODO
+share/doc/py-curl/html/callbacks.html
+share/doc/py-curl/html/curlmultiobjects.html
+share/doc/py-curl/html/curlobject.html
+share/doc/py-curl/html/pycurl.html
+share/doc/py-curl/tests/test.py
+share/doc/py-curl/tests/test_cb.py
+share/doc/py-curl/tests/test_debug.py
+share/doc/py-curl/tests/test_fileupload.py
+share/doc/py-curl/tests/test_getinfo.py
+share/doc/py-curl/tests/test_gtk.py
+share/doc/py-curl/tests/test_internals.py
+share/doc/py-curl/tests/test_memleak.py
+share/doc/py-curl/tests/test_multi.py
+share/doc/py-curl/tests/test_multi2.py
+share/doc/py-curl/tests/test_multi3.py
+share/doc/py-curl/tests/test_multi4.py
+share/doc/py-curl/tests/test_multi5.py
+share/doc/py-curl/tests/test_multi6.py
+share/doc/py-curl/tests/test_multi_vs_thread.py
+share/doc/py-curl/tests/test_post.py
+share/doc/py-curl/tests/test_post2.py
+share/doc/py-curl/tests/test_stringio.py
+share/doc/py-curl/tests/test_xmlrpc.py
+share/doc/py-curl/tests/util.py
 share/examples/py-curl/basicfirst.py
 share/examples/py-curl/curl.py
 share/examples/py-curl/gtkhtml_demo.py
+share/examples/py-curl/retriever-multi.py
 share/examples/py-curl/retriever.py
 share/examples/py-curl/sfquery.py
 share/examples/py-curl/xmlrpc_curl.py
 @dirrm share/examples/py-curl
+@dirrm share/doc/py-curl/tests
+@dirrm share/doc/py-curl/html
 @dirrm share/doc/py-curl

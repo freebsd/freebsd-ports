@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	curl
-PORTVERSION=	7.9.8.4
+PORTVERSION=	7.10.3
 CATEGORIES=	ftp python
 MASTER_SITES=	http://pycurl.sourceforge.net/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,10 +21,19 @@ USE_PYDISTUTILS=	yes
 USE_REINPLACE=	yes
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - 2>/dev/null || true
 
+.include <bsd.port.pre.mk>
+CURL_VERSION!=	${LOCALBASE}/bin/curl-config --version|grep '${PORTVERSION}$$' \
+		2>&1 || ${TRUE}
+.if empty(CURL_VERSION)
+IGNORE=		requires curl-${PORTVERSION}
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's@\(curl-config --\)@${LOCALBASE}/bin/\1@g' \
-		-e 's@os.path.join("doc", "pycurl")@"share/doc/py-curl"@g' \
-		-e 's@os.path.join("d.*"examples")@"share/examples/py-curl"@g' \
+		-e 's@^\(include_dirs = \).*@\1["${LOCALBASE}/include"]@' \
+		-e 's@^\(PACKAGE = \).*@\1"py-curl"@' \
+		-e 's@\(os.path.join(\)datadir, "examples")@\1"share/examples/py-curl")@' \
+		-e 's@name=PACKAGE@name="pycurl"@' \
 		${WRKSRC}/setup.py
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
