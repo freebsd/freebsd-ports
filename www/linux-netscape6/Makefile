@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	linux-netscape
-PORTVERSION=	6.1
+PORTVERSION=	6.2
 CATEGORIES=	www linux
 MASTER_SITES=	ftp://ftp.netscape.com/pub/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.bu.edu/pub/mirrors/ftp.netscape.com/pub/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
