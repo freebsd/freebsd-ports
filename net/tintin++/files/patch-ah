@@ -1,0 +1,17 @@
+--- install.sh.orig	Thu Mar 25 11:13:50 1999
++++ install.sh	Tue Sep 26 18:13:52 2000
+@@ -6,11 +6,12 @@
+ echo " "
+ echo "Copying the tintin++ executable to \"$1\"..."
+ #strip tt++
+-cp tt++ "$1"
++install -c -s -o bin -g bin -m 555 tt++ "$1"
+ 
+ echo "Copying the tintin++ help file to \"$2\"..."
+ if [ "$3" ]; then 
+-  cp support/.tt_help.txt.Z "$2/"
++ [ -d "$2" ] || mkdir -p "$2"
++ install -c -o bin -g bin -m 555 support/.tt_help.txt.Z "$2/"
+ fi
+ 
+ echo 

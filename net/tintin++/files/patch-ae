@@ -1,0 +1,25 @@
+--- utils.c.orig	Thu Mar  4 08:58:57 1999
++++ utils.c	Fri Aug 23 12:30:37 2002
+@@ -21,6 +21,10 @@
+ #include <unistd.h>
+ #endif
+ 
++#include <stdio.h>
++#include <errno.h>
++#include <sys/param.h>
++
+ void syserr();
+ 
+ /*********************************************/
+@@ -55,8 +59,9 @@
+ void syserr(msg)
+      char *msg;
+ {
+-  extern int errno, sys_nerr;
+-  //extern char *sys_errlist[];
++#if !defined(BSD) || (BSD < 199306)
++    extern char *sys_errlist[];
++#endif
+ 
+   fprintf(stderr,"ERROR: %s (%d",msg, errno);
+   if(errno>0 && errno<sys_nerr)
