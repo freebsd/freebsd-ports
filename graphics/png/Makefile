@@ -22,6 +22,7 @@ MAINTAINER=	ache@FreeBSD.org
 COMMENT=	Library for manipulating PNG images
 
 MAKEFILE=       ${WRKSRC}/scripts/makefile.freebsd
+ALL_TARGET=	all test
 INSTALLS_SHLIB=	yes
 SHLIB_VER=	5
 
@@ -44,8 +45,8 @@ pre-install:
 		${MKDIR} ${PREFIX}/libdata/pkgconfig
 
 post-install:
-	${CAT} ${WRKSRC}/scripts/libpng.pc.in | ${SED} -e \
-		's|@PREFIX@|${PREFIX}|' > ${WRKSRC}/scripts/libpng.pc
+	${SED} -e 's|@PREFIX@|${PREFIX}|' ${WRKSRC}/scripts/libpng.pc.in \
+		> ${WRKSRC}/scripts/libpng.pc
 	${INSTALL_DATA} ${WRKSRC}/scripts/libpng.pc \
 		${PREFIX}/libdata/pkgconfig/libpng12.pc
 

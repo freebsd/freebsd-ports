@@ -1,5 +1,5 @@
---- scripts/makefile.freebsd.bak	Sat May 18 18:46:45 2002
-+++ scripts/makefile.freebsd	Thu May 30 08:55:41 2002
+--- scripts/makefile.freebsd	Sat May 18 10:46:45 2002
++++ scripts/makefile.freebsd	Mon Oct 20 00:05:40 2003
 @@ -25,7 +25,7 @@
  DPADD+=         ${LIBM} ${LIBZ}
  
@@ -8,4 +8,14 @@
 +.if (${ARCH} != "i386")
  CFLAGS+= -DPNG_NO_ASSEMBLER_CODE
  .endif
+ 
+@@ -34,7 +34,7 @@
+ 	pngwtran.c pngmem.c pngerror.c pngpread.c pnggccrd.c
+ 
+-pngtest: pngtest.o libpng.a
++pngtest: pngtest.o ${SHLIB_NAME}
+-	${CC} ${CFLAGS} -L. -static -o pngtest pngtest.o -lpng -lz -lm
++	${CC} ${CFLAGS} -L. -Wl,-rpath=${.OBJDIR} -o pngtest pngtest.o -lpng -lz -lm
+ 
+ CLEANFILES= pngtest pngtest.o pngout.png
  
