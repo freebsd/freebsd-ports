@@ -10,7 +10,7 @@
 #
 # As all of the knobs have a unique name which should not interfere with
 # other ports you can add them to /etc/make.conf, e.g. a line like
-# "WITH_MUTT_HTML=yes" will enable mutt's HTML documentation.
+# "WITH_MUTT_NNTP=yes" will enable mutt's nntp facilities.
 #
 # In addition to the knobs listed below you can enable other configuration
 # options of mutt by adding them to the MUTT_CONFIGURE_ARGS variable. For
@@ -20,42 +20,51 @@
 # The two most important knobs are:
 #
 # In general you can choose between using the SLANG port (WITH_MUTT_SLANG)
-# and ncurses (WITH_MUTT_NCURSES) which is the default.
+# and ncurses (WITH_MUTT_NCURSES) which is the default. Note that you may
+# have to set the variables COLORTERM=yes and COLORFGBG=color,color in your
+# environment to get slang function properly.
 #
 # If you want to install the mutt documentation in html and ps format define:
 #  WITH_MUTT_HTML
+#  This is a default knob and can be disabled by WITHOUT_MUTT_HTML
 #
 # If you do not want that the documentation is rebuilt using sgmlformat
 # define:
 #  WITHOUT_MUTT_SGMLFORMAT
-#    (this can't be stated if WITH_MUTT_HTML is defined)
+#    (this can only be stated if WITHOUT_MUTT_HTML is defined)
+#
+# If you want to access compressed email folders define:
+#  WITH_MUTT_COMPRESSED_FOLDERS
+#  This is a default knob and can be disabled by WITHOUT_MUTT_COMPRESSED_FOLDERS
+#
+# If you want to enable extended quoting functions define:
+#  WITH_MUTT_QUOTE_PATCH
+#  This is a default knob and can be disabled by WITHOUT_MUTT_QUOTE_PATCH
+#
+# WITH_MUTT_SSL can be enabled if your IMAP/POP server is SSL capable.
+#  This is a default knob and can be disabled by WITHOUT_MUTT_SSL
+#
+# If you want to make SMIME outlook compatible define:
+#  WITH_MUTT_SMIME_OUTLOOK_COMPAT
+#  This is a default knob and can be disabled by
+#    WITHOUT_MUTT_SMIME_OUTLOOK_COMPAT
+#
+# If you want to use enhanced pgp features define:
+#  WITH_MUTT_PGP_PATCH
+#  This is a default knob and can be disabled by WITHOUT_MUTT_PGP_PATCH
 #
 # If you want to read and post news with mutt define:
 #  WITH_MUTT_NNTP
 #
-# WITH_MUTT_SSL can be enabled if your IMAP/POP server is SSL capable.
-#
 # If you want to use the SASL authentication features with your email server
 # define
 #  WITH_MUTT_CYRUS_SASL
-#
-# If you want to access compressed email folders define:
-#  WITH_MUTT_COMPRESSED_FOLDERS
-#
-# If you want to enable extended quoting functions define:
-#  WITH_MUTT_QUOTE_PATCH
-#
-# If you want to make SMIME outlook compatible define:
-#  WITH_MUTT_SMIME_OUTLOOK_COMPAT
 #
 # If you want to use the rethreading functions define:
 #  WITH_MUTT_EDIT_THREADS
 #
 # If you want to use the signature menu define:
 #  WITH_MUTT_SIGNATURE_MENU
-#
-# If you want to use enhanced pgp features define:
-#  WITH_MUTT_PGP_PATCH
 #
 # If you want to use the printf-like enhancement to the mbox-hook command
 # define:
@@ -102,6 +111,7 @@ USE_REINPLACE=	yes
 USE_AUTOMAKE=	yes
 
 PLIST=		${WRKDIR}/PLIST
+PKGMESSAGE=	${WRKDIR}/pkg-message
 SCRIPTS_ENV=	WRKDIR="${WRKDIR}"
 
 .include <bsd.port.pre.mk>
@@ -128,21 +138,11 @@ pre-build:
 		${BUILD_WRKSRC}/Makefile
 
 .if defined(PACKAGE_BUILDING)
-WITH_MUTT_SSL=			yes
-WITH_MUTT_SLANG=		yes
-WITH_MUTT_HTML=			yes
-WITH_MUTT_COMPRESSED_FOLDERS=	yes
-WITH_MUTT_QUOTE_PATCH=		yes
-WITH_MUTT_SMIME_OUTLOOK_COMPAT=	yes
-WITH_MUTT_PGP_PATCH=		yes
 BUILD_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell \
 		urlview:${PORTSDIR}/textproc/urlview
 .endif
 
-.if defined(WITH_MUTT_PS)
-WITH_MUTT_HTML=		yes
-.endif
 .if defined(WITH_MUTT_NCURSES_PORT)
 WITH_MUTT_NCURSES=	yes
 .endif
@@ -173,18 +173,18 @@ CFLAGS+=	-I${PREFIX}/include/ncurses -I${PREFIX}/include
 .elif defined(USE_SLANG)
 LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
 .endif
-.if defined(WITH_MUTT_SSL)
+.if !defined(WITHOUT_MUTT_SSL)
 USE_OPENSSL=	yes
 .endif
 .if defined(WITH_MUTT_CYRUS_SASL)
 LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
 .endif
-.if defined(WITH_MUTT_SMIME_OUTLOOK_COMPAT)
+.if ! defined(WITHOUT_MUTT_SMIME_OUTLOOK_COMPAT)
 pre-configure::
 	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-smime-outlook
 .endif
 
-.if defined(WITH_MUTT_PGP_PATCH)
+.if ! defined(WITHOUT_MUTT_PGP_PATCH)
 SGML_NEEDED=	yes
 pre-configure::
 	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-pgp-dw
@@ -198,7 +198,7 @@ CONFIGURE_ARGS+=	--with-curses=${PREFIX}
 .elif defined(USE_SLANG)
 CONFIGURE_ARGS+=	--with-slang=${PREFIX}
 .endif
-.if defined(WITH_MUTT_SSL)
+.if !defined(WITHOUT_MUTT_SSL)
 CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
 .endif
 .if defined(WITH_MUTT_CYRUS_SASL)
@@ -207,7 +207,7 @@ CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
 
 PATCH_DIST_STRIP=	-p1
 
-.if defined(WITH_MUTT_COMPRESSED_FOLDERS)
+.if ! defined (WITHOUT_MUTT_COMPRESSED_FOLDERS)
 PATCHFILES+=	patch-${VVV_PATCH_VERSION}.rr.compressed.gz:vvv
 CONFIGURE_ARGS+=	--enable-compressed
 SGML_NEEDED=	yes
@@ -217,7 +217,7 @@ PATCHFILES+=	patch-${VVV_PATCH_VERSION}.vvv.nntp.gz:vvv
 CONFIGURE_ARGS+=	--enable-nntp
 SGML_NEEDED=	yes
 .endif
-.if defined(WITH_MUTT_QUOTE_PATCH)
+.if ! defined(WITHOUT_MUTT_QUOTE_PATCH)
 PATCHFILES+=	patch-${VVV_PATCH_VERSION}.vvv.initials.gz:vvv \
 		patch-${VVV_PATCH_VERSION}.vvv.quote.gz:vvv
 SGML_NEEDED=	yes
@@ -254,10 +254,10 @@ pre-configure::
 .if defined(WITH_MUTT_NNTP)
 SCRIPTS_ENV+=	MUTT_NNTP="yes"
 .endif
-.if defined(WITH_MUTT_COMPRESSED_FOLDERS)
+.if ! defined (WITHOUT_MUTT_COMPRESSED_FOLDERS)
 SCRIPTS_ENV+=	MUTT_COMPRESSED_FOLDERS="yes"
 .endif
-.if defined(WITH_MUTT_QUOTE_PATCH)
+.if ! defined(WITHOUT_MUTT_QUOTE_PATCH)
 SCRIPTS_ENV+=	MUTT_QUOTE_PATCH="yes"
 .endif
 .if defined(WITH_MUTT_EDIT_THREADS)
@@ -269,10 +269,10 @@ SCRIPTS_ENV+=	MUTT_SIGNATURE_MENU="yes"
 .if defined(WITH_MUTT_IFDEF_PATCH)
 SCRIPTS_ENV+=	MUTT_IFDEF_PATCH="yes"
 .endif
-.if defined(WITH_MUTT_PGP_PATCH)
+.if ! defined(WITHOUT_MUTT_PGP_PATCH)
 SCRIPTS_ENV+=	MUTT_PGP_PATCH="yes"
 .endif
-.if defined(WITH_MUTT_HTML)
+.if ! defined(WITHOUT_MUTT_HTML)
 SCRIPTS_ENV+=	MUTT_HTML="yes"
 .endif
 
@@ -282,7 +282,7 @@ post-build:
 	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-doc-ref
 	printf ",s|\$${PREFIX}|%s|g\nw\nq\n" ${PREFIX} | \
 		ed -s ${WRKSRC}/doc/mutt.man
-.if defined(WITH_MUTT_HTML)
+.if ! defined(WITHOUT_MUTT_HTML)
 SGML_USED=	yes
 .endif
 .if defined(SGML_NEEDED) && !defined(WITHOUT_MUTT_SGMLFORMAT)
@@ -304,6 +304,7 @@ pre-install:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/generate-plist > ${PLIST}
 
 post-install:
+	@${ECHO} > ${PKGMESSAGE}
 .if !defined(NOPORTDOCS)
 	@${ECHO} "===>   Installing Mutt documentation"
 	@${MKDIR} ${PREFIX}/share/doc/mutt && \
@@ -319,11 +320,23 @@ post-install:
 	@cd ${WRKSRC} ; ${INSTALL_MAN} ChangeLog.nntp \
 		${PREFIX}/share/doc/mutt
 .endif
-.if defined(WITH_MUTT_HTML)
+.if ! defined(WITHOUT_MUTT_HTML)
 	@${MKDIR} ${PREFIX}/share/doc/mutt/html && \
 		${CHMOD} a+rx ${PREFIX}/share/doc/mutt/html
 	${INSTALL_MAN} ${WRKSRC}/doc/*.html ${PREFIX}/share/doc/mutt/html
 .endif
 .endif
-
+.if defined(USE_SLANG)
+	@${ECHO} "====================================================" >> ${PKGMESSAGE}
+	@${ECHO} "You have installed ${PORTNAME} with SLANG support." >> ${PKGMESSAGE}
+	@${ECHO} "This may work for a color terminal only when defining" >> ${PKGMESSAGE}
+	@${ECHO} "COLORTERM=yes and COLORFGBG=color,color in your" >> ${PKGMESSAGE}
+	@${ECHO} "environment." >> ${PKGMESSAGE}
+	@${ECHO} "====================================================" >> ${PKGMESSAGE}
+.endif
+.if !defined(BATCH)
+	@${ECHO}
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO}
+.endif
 .include <bsd.port.post.mk>
