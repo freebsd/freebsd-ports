@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	ifile
-PORTVERSION=	1.1.4
+PORTVERSION=	1.2.1
 CATEGORIES=	mail textproc
-MASTER_SITES=	http://www.ai.mit.edu/~jrennie/ifile/
+MASTER_SITES=	http://savannah.nongnu.org/download/ifile/default.pkg/${PORTVERSION}/
 
 MAINTAINER=	david+ports@bushong.net
+
+LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
@@ -21,5 +23,7 @@ post-patch:
 .for file in argp-help.c strndup.c
 	@${REINPLACE_CMD} -e 's/malloc\.h/stdlib.h/g' ${WRKSRC}/argp/${file}
 .endfor
+	@${REINPLACE_CMD} -e 's,-lm,-lm -L${LOCALBASE}/lib -lgnugetopt,' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

@@ -1,6 +1,2 @@
 @comment $FreeBSD$
 bin/ifile
-bin/ifilter.mh
-bin/irefile.mh
-bin/knowledge_base.mh
-bin/news2mail
