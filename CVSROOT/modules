@@ -350,6 +350,7 @@ apache13-modssl+ipv6	ports/www/apache13-modssl+ipv6
 apache13-ssl	ports/www/apache13-ssl
 apache2		ports/www/apache2
 apachetop	ports/sysutils/apachetop
+apan		ports/net-mgmt/apan
 apc		ports/math/apc
 apcpwr		ports/sysutils/apcpwr
 apcupsd		ports/sysutils/apcupsd
