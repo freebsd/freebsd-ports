@@ -77,6 +77,7 @@
     SUBDIR += vmware-tools2
     SUBDIR += vmware-tools3
     SUBDIR += vmware2
+    SUBDIR += vmware3
     SUBDIR += vmware_xf4mod
     SUBDIR += vpce
     SUBDIR += vx68k
