@@ -1,0 +1,31 @@
+bin/xfce4-tips
+lib/xfce4/panel-plugins/libeyes.a
+lib/xfce4/panel-plugins/libeyes.la
+lib/xfce4/panel-plugins/libeyes.so
+share/xfce4/eyes/themes/Bizarre/Bizarre-eye.png
+share/xfce4/eyes/themes/Bizarre/Bizarre-pupil.png
+share/xfce4/eyes/themes/Bizarre/config
+share/xfce4/eyes/themes/Bloodshot/Bloodshot-eye.png
+share/xfce4/eyes/themes/Bloodshot/Bloodshot-pupil.png
+share/xfce4/eyes/themes/Bloodshot/config
+share/xfce4/eyes/themes/Default/Default-eye.png
+share/xfce4/eyes/themes/Default/Default-pupil.png
+share/xfce4/eyes/themes/Default/config
+share/xfce4/eyes/themes/Default-tiny/Default-tiny-eye.png
+share/xfce4/eyes/themes/Default-tiny/Default-tiny-pupil.png
+share/xfce4/eyes/themes/Default-tiny/config
+share/xfce4/eyes/themes/Horrid/Horrid-eye.png
+share/xfce4/eyes/themes/Horrid/Horrid-pupil.png
+share/xfce4/eyes/themes/Horrid/config
+share/xfce4/tips/tips
+share/xfce4/tips/tips.dat
+@dirrm share/xfce4/eyes/themes/Bizarre
+@dirrm share/xfce4/eyes/themes/Bloodshot
+@dirrm share/xfce4/eyes/themes/Default
+@dirrm share/xfce4/eyes/themes/Default-tiny
+@dirrm share/xfce4/eyes/themes/Horrid
+@dirrm share/xfce4/eyes/themes
+@dirrm share/xfce4/eyes
+@dirrm share/xfce4/tips
+@unexec rmdir %D/share/xfce4 2>/dev/null || true
+@unexec rmdir %D/lib/xfce4/panel-plugins 2>/dev/null || true
