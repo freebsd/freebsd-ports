@@ -1,0 +1,27 @@
+#!/bin/sh
+
+case $2 in
+    PRE-INSTALL)
+	${PAGER:-more} share/doc/opera/LICENSE
+	echo
+	echo
+	echo -n 'Do you agree to the terms of the license? '
+	read answer
+	case ${answer} in
+	[Yy]|[Yy][Ee][Ss])
+		exit 0
+		;;
+	*)
+		exit 1
+		;;
+	esac
+	;;
+    POST-INSTALL)
+	exit 0
+	;;
+    *)
+	echo "Unexpected Argument $2!!!"
+	exit 1
+	;;
+esac
+
