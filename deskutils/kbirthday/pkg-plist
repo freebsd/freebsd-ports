@@ -1,5 +1,6 @@
-lib/libkbirthday.so
 lib/libkbirthday.la
+lib/libkbirthday.so
+share/apps/kicker/applets/kbirthday.desktop
 share/locale/de/LC_MESSAGES/kbirthday.mo
 share/locale/es/LC_MESSAGES/kbirthday.mo
-share/apps/kicker/applets/kbirthday.desktop
+share/locale/ru/LC_MESSAGES/kbirthday.mo
