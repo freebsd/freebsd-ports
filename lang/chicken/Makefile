@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	chicken
-PORTVERSION=	1.9
+PORTVERSION=	1.14
 CATEGORIES=	lang
 MASTER_SITES=	http://www.call-with-current-continuation.org/
 
