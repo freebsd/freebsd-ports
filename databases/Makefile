@@ -217,6 +217,7 @@
     SUBDIR += pear-DB_QueryTool
     SUBDIR += pear-MDB
     SUBDIR += pear-MDB2
+    SUBDIR += pear-MDB_QueryTool
     SUBDIR += pear-sqlite
     SUBDIR += pecl-memcache
     SUBDIR += pgaccess
