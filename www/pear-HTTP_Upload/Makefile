@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTTP_Upload
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.1
 CATEGORIES=	www devel pear
 
 MAINTAINER=	ports@FreeBSD.org
