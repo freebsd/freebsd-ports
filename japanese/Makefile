@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.102 1998/02/23 20:07:09 steve Exp $
+# $Id: Makefile,v 1.103 1998/02/23 20:20:33 steve Exp $
 #
 
     SUBDIR += Canna
@@ -110,6 +110,7 @@
     SUBDIR += weblint97
     SUBDIR += x0212fonts
     SUBDIR += xdvi
+    SUBDIR += xnetmaj
     SUBDIR += xshodo
     SUBDIR += zipcodes
 
