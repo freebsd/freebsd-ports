@@ -7,6 +7,7 @@
 
 PORTNAME=	pgp
 PORTVERSION=	2.6.3i
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.ifi.uio.no/pub/pgp/2.x/src/ \
 		ftp://ftp.kiarchive.ru/pub/unix/crypto/pgp/
@@ -18,8 +19,9 @@ COMMENT=	PGP MIT or International version - Public-Key encryption for the masses
 WRKSRC=		${WRKDIR}/src
 
 MAKEFILE=	makefile
-ALL_TARGET=	freebsd-${MACHINE_ARCH} OS_CFLAGS="${CFLAGS}"
-PGPLIB=		${PREFIX}/lib/pgp
+ALL_TARGET=	freebsd-${MACHINE_ARCH}
+MAKE_ENV=	PREFIX="${PREFIX}" OS_CFLAGS="${CFLAGS}"
+PGPLIB=		${PREFIX}/share/pgp
 MAN1=		pgp.1 pgp2.1
 ONLY_FOR_ARCHS=	i386 alpha
 
