@@ -21,7 +21,7 @@
  
  $(LIBOBJECTS): %.o: %.c $(HEADERLINKS)
  # Note that the user may have configured -I options into CFLAGS.
-+	$(CC) -c $(INCLUDE) $(CFLAGS) $(CADD) -o $@ $<
++	$(CC) -c $(INCLUDES) $(CFLAGS) $(CADD) -o $@ $<
 +
 +$(SHLIBOBJECTS): %.lo: %.c $(HEADERLINKS)
  	$(CC) -c $(INCLUDES) $(CFLAGS) $(CFLAGS_SHLIB) $(CADD) -o $@ $<
