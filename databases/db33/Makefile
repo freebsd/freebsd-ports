@@ -5,20 +5,21 @@
 # $FreeBSD$
 #
 
-PORTNAME=	db3
-PORTVERSION=	3.2.9
-PORTREVISION=	3
+PORTNAME=	db33
+PORTVERSION=	3.3.11
 PORTEPOCH?=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sleepycat.com/update/snapshot/
 DISTNAME=	db-${PORTVERSION}
 DIST_SUBDIR=	bdb
 
+LATEST_LINK=	db3
+
 PATCH_SITES=	http://www.sleepycat.com/update/${PORTVERSION}/
 PATCHFILES=	patch.${PORTVERSION}.1 patch.${PORTVERSION}.2
 PATCH_DIST_STRIP= -d ${WRKDIR}/${DISTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ade@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 
