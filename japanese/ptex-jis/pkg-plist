@@ -8,6 +8,7 @@ bin/virptex
 share/texmf/tex/ptex/jplain.tex
 share/texmf/tex/ptex/kinsoku.tex
 share/texmf/tex/ptex/ptex.tex
+share/texmf/plib-1.4-jis.txt
 share/texmf/fonts/tfm/ptex/goth10.tfm
 share/texmf/fonts/tfm/ptex/goth5.tfm
 share/texmf/fonts/tfm/ptex/goth6.tfm
@@ -87,6 +88,7 @@ share/texmf/fonts/source/ascgrp/ascgrp.mf
 share/texmf/fonts/source/ascgrp/ascii10.mf
 share/texmf/fonts/source/ascgrp/ascii36.mf
 share/texmf/fonts/source/ascgrp/ascii.mf
+share/texmf/doc/ptex/ptexskip.tex
 share/texmf/doc/ptex/jfm.tex
 share/texmf/doc/ptex/jtex.tex
 share/texmf/doc/ptex/jtexdoc.tex

@@ -1,7 +1,4 @@
-bin/MakeTeXMF
-bin/MakeTeXPK
-bin/MakeTeXTFM
-bin/MakeTeXls-R
+bin/access
 bin/bibtex
 bin/dmp
 bin/dvicopy
@@ -13,11 +10,15 @@ bin/gftype
 bin/inimf
 bin/inimpost
 bin/initex
+bin/kpsestat
 bin/kpsewhich
 bin/makempx
 bin/mf
 bin/mft
-bin/mltex
+bin/mktexlsr
+bin/mktexmf
+bin/mktexpk
+bin/mktextfm
 bin/mpost
 bin/mpto
 bin/newer
@@ -26,8 +27,10 @@ bin/pktogf
 bin/pktype
 bin/pooltype
 bin/ptex-common
+bin/readlink
 bin/tangle
 bin/tex
+bin/tie
 bin/vftovp
 bin/virmf
 bin/virmpost
@@ -35,7 +38,7 @@ bin/virtex
 bin/vptovf
 bin/weave
 include/kpathsea/absolute.h
-include/kpathsea/acconfig.h
+include/kpathsea/c-auto.h
 include/kpathsea/c-ctype.h
 include/kpathsea/c-dir.h
 include/kpathsea/c-errno.h
@@ -82,6 +85,7 @@ include/kpathsea/tilde.h
 include/kpathsea/truncate.h
 include/kpathsea/types.h
 include/kpathsea/variable.h
+include/kpathsea/win32lib.h
 include/kpathsea/xopendir.h
 include/kpathsea/xstat.h
 @unexec install-info --delete %D/info/kpathsea.info %D/info/dir
@@ -95,9 +99,51 @@ info/web2c.info-4
 @exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/kpathsea.info %D/info/dir
 @exec install-info %D/info/web2c.info %D/info/dir
+lib/libkpathsea.so.3.2.0
+@exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
+lib/libkpathsea.so
 lib/libkpathsea.a
-share/texmf/README
-share/texmf/VERSION-7.2
+man/man1/access.1.gz
+man/man1/amstex.1.gz
+man/man1/bibtex.1.gz
+man/man1/dmp.1.gz
+man/man1/dvicopy.1.gz
+man/man1/dvitype.1.gz
+man/man1/eplain.1.gz
+man/man1/etex.1.gz
+man/man1/gftodvi.1.gz
+man/man1/gftopk.1.gz
+man/man1/gftype.1.gz
+man/man1/kpsestat.1.gz
+man/man1/kpsewhich.1.gz
+man/man1/latex.1.gz
+man/man1/makempx.1.gz
+man/man1/mf.1.gz
+man/man1/mft.1.gz
+man/man1/mktexlsr.1.gz
+man/man1/mktexmf.1.gz
+man/man1/mktexpk.1.gz
+man/man1/mktextfm.1.gz
+man/man1/mpost.1.gz
+man/man1/mpto.1.gz
+man/man1/newer.1.gz
+man/man1/omega.1.gz
+man/man1/patgen.1.gz
+man/man1/pdftex.1.gz
+man/man1/pktogf.1.gz
+man/man1/pktype.1.gz
+man/man1/pltotf.1.gz
+man/man1/pooltype.1.gz
+man/man1/readlink.1.gz
+man/man1/tangle.1.gz
+man/man1/tex.1.gz
+man/man1/tftopl.1.gz
+man/man1/tie.1.gz
+man/man1/vftovp.1.gz
+man/man1/vptovf.1.gz
+man/man1/weave.1.gz
+share/texmf/VERSION-7.3
 share/texmf/bibtex/bib/base/xampl.bib
 share/texmf/bibtex/bst/base/abbrv.bst
 share/texmf/bibtex/bst/base/acm.bst
@@ -128,14 +174,46 @@ share/texmf/doc/eplain/progdef.texi
 share/texmf/doc/eplain/userdef.texi
 share/texmf/doc/eplain/xeplain.tex
 share/texmf/doc/latex/companion.ctan
+share/texmf/dvips/base/8a.enc
+share/texmf/dvips/base/8r.enc
+share/texmf/dvips/base/EC.enc
+share/texmf/dvips/base/ad.enc
+share/texmf/dvips/base/asex.enc
+share/texmf/dvips/base/asexp.enc
+share/texmf/dvips/base/color.pro
+share/texmf/dvips/base/cork.enc
+share/texmf/dvips/base/crop.pro
+share/texmf/dvips/base/dc.enc
+share/texmf/dvips/base/dvips.enc
+share/texmf/dvips/base/extex.enc
+share/texmf/dvips/base/finclude.pro
+share/texmf/dvips/base/funky.enc
+share/texmf/dvips/base/hps.pro
+share/texmf/dvips/base/psfonts.map
+share/texmf/dvips/base/special.pro
+share/texmf/dvips/base/tex.pro
+share/texmf/dvips/base/texc.pro
+share/texmf/dvips/base/texmext.enc
+share/texmf/dvips/base/texmital.enc
+share/texmf/dvips/base/texmsym.enc
+share/texmf/dvips/base/texps.pro
+share/texmf/dvips/base/xl2.enc
+share/texmf/dvips/base/xt2.enc
+share/texmf/dvips/config/config.dvired
+share/texmf/dvips/config/config.ps
+share/texmf/dvips/config/dfaxhigh.cfg
+share/texmf/dvips/config/dfaxlo.cfg
+share/texmf/dvips/gsftopk/render.ps
+share/texmf/dvips/misc/resolution400.ps
 share/texmf/fontname/adobe.map
 share/texmf/fontname/apple.map
 share/texmf/fontname/bitstrea.map
 share/texmf/fontname/dtc.map
 share/texmf/fontname/linotype.map
 share/texmf/fontname/monotype.map
-share/texmf/fontname/softkey-1250.map
-share/texmf/fontname/softkey-1555.map
+share/texmf/fontname/skey1250.map
+share/texmf/fontname/skey1555.map
+share/texmf/fontname/softkey.map
 share/texmf/fontname/special.map
 share/texmf/fontname/supplier.map
 share/texmf/fontname/texfonts.map
@@ -144,7 +222,122 @@ share/texmf/fontname/urw.map
 share/texmf/fontname/variant.map
 share/texmf/fontname/weight.map
 share/texmf/fontname/width.map
-share/texmf/fonts/source/public/cm/Makefile.gf
+share/texmf/fonts/source/jknappen/ec/ecbi.mf
+share/texmf/fonts/source/jknappen/ec/ecbl.mf
+share/texmf/fonts/source/jknappen/ec/ecbm.mf
+share/texmf/fonts/source/jknappen/ec/ecbx.mf
+share/texmf/fonts/source/jknappen/ec/eccc.mf
+share/texmf/fonts/source/jknappen/ec/ecci.mf
+share/texmf/fonts/source/jknappen/ec/ecdh.mf
+share/texmf/fonts/source/jknappen/ec/ecfb.mf
+share/texmf/fonts/source/jknappen/ec/ecff.mf
+share/texmf/fonts/source/jknappen/ec/ecfi.mf
+share/texmf/fonts/source/jknappen/ec/ecfs.mf
+share/texmf/fonts/source/jknappen/ec/ecit.mf
+share/texmf/fonts/source/jknappen/ec/eclb8.mf
+share/texmf/fonts/source/jknappen/ec/ecli8.mf
+share/texmf/fonts/source/jknappen/ec/eclo8.mf
+share/texmf/fonts/source/jknappen/ec/eclq8.mf
+share/texmf/fonts/source/jknappen/ec/ecltt8.mf
+share/texmf/fonts/source/jknappen/ec/ecoc.mf
+share/texmf/fonts/source/jknappen/ec/ecqi8.mf
+share/texmf/fonts/source/jknappen/ec/ecrb.mf
+share/texmf/fonts/source/jknappen/ec/ecrm.mf
+share/texmf/fonts/source/jknappen/ec/ecrm1000.mf
+share/texmf/fonts/source/jknappen/ec/ecrm1095.mf
+share/texmf/fonts/source/jknappen/ec/ecrm1200.mf
+share/texmf/fonts/source/jknappen/ec/ecsc.mf
+share/texmf/fonts/source/jknappen/ec/ecsi.mf
+share/texmf/fonts/source/jknappen/ec/ecsl.mf
+share/texmf/fonts/source/jknappen/ec/ecso.mf
+share/texmf/fonts/source/jknappen/ec/ecsq8.mf
+share/texmf/fonts/source/jknappen/ec/ecss.mf
+share/texmf/fonts/source/jknappen/ec/ecss1095.mf
+share/texmf/fonts/source/jknappen/ec/ecssdc10.mf
+share/texmf/fonts/source/jknappen/ec/ecst.mf
+share/texmf/fonts/source/jknappen/ec/ecsx.mf
+share/texmf/fonts/source/jknappen/ec/ectc.mf
+share/texmf/fonts/source/jknappen/ec/ecti.mf
+share/texmf/fonts/source/jknappen/ec/ectt.mf
+share/texmf/fonts/source/jknappen/ec/ectt1200.mf
+share/texmf/fonts/source/jknappen/ec/ecui.mf
+share/texmf/fonts/source/jknappen/ec/ecvi.mf
+share/texmf/fonts/source/jknappen/ec/ecvt.mf
+share/texmf/fonts/source/jknappen/ec/ecxc.mf
+share/texmf/fonts/source/jknappen/ec/exaccent.mf
+share/texmf/fonts/source/jknappen/ec/exaccess.mf
+share/texmf/fonts/source/jknappen/ec/exbase.mf
+share/texmf/fonts/source/jknappen/ec/exbraces.mf
+share/texmf/fonts/source/jknappen/ec/excligtb.mf
+share/texmf/fonts/source/jknappen/ec/excsc.mf
+share/texmf/fonts/source/jknappen/ec/excspl.mf
+share/texmf/fonts/source/jknappen/ec/exidigit.mf
+share/texmf/fonts/source/jknappen/ec/exileast.mf
+share/texmf/fonts/source/jknappen/ec/exilig.mf
+share/texmf/fonts/source/jknappen/ec/exiligtb.mf
+share/texmf/fonts/source/jknappen/ec/exillett.mf
+share/texmf/fonts/source/jknappen/ec/exilwest.mf
+share/texmf/fonts/source/jknappen/ec/exisixts.mf
+share/texmf/fonts/source/jknappen/ec/exitalp.mf
+share/texmf/fonts/source/jknappen/ec/exmligtb.mf
+share/texmf/fonts/source/jknappen/ec/expseudo.mf
+share/texmf/fonts/source/jknappen/ec/expunct.mf
+share/texmf/fonts/source/jknappen/ec/exrdigit.mf
+share/texmf/fonts/source/jknappen/ec/exrleast.mf
+share/texmf/fonts/source/jknappen/ec/exrlig.mf
+share/texmf/fonts/source/jknappen/ec/exrligtb.mf
+share/texmf/fonts/source/jknappen/ec/exrllett.mf
+share/texmf/fonts/source/jknappen/ec/exrlwest.mf
+share/texmf/fonts/source/jknappen/ec/exroman.mf
+share/texmf/fonts/source/jknappen/ec/exromp.mf
+share/texmf/fonts/source/jknappen/ec/exrueast.mf
+share/texmf/fonts/source/jknappen/ec/exrulett.mf
+share/texmf/fonts/source/jknappen/ec/exruwest.mf
+share/texmf/fonts/source/jknappen/ec/exsign.mf
+share/texmf/fonts/source/jknappen/ec/exsixtst.mf
+share/texmf/fonts/source/jknappen/ec/extextit.mf
+share/texmf/fonts/source/jknappen/ec/ieclb8.mf
+share/texmf/fonts/source/jknappen/ec/iecli8.mf
+share/texmf/fonts/source/jknappen/ec/ieclo8.mf
+share/texmf/fonts/source/jknappen/ec/ieclq8.mf
+share/texmf/fonts/source/jknappen/ec/iecltt8.mf
+share/texmf/fonts/source/jknappen/tc/tcbi.mf
+share/texmf/fonts/source/jknappen/tc/tcbl.mf
+share/texmf/fonts/source/jknappen/tc/tcbm.mf
+share/texmf/fonts/source/jknappen/tc/tcbx.mf
+share/texmf/fonts/source/jknappen/tc/tcci.mf
+share/texmf/fonts/source/jknappen/tc/tcdh.mf
+share/texmf/fonts/source/jknappen/tc/tcfb.mf
+share/texmf/fonts/source/jknappen/tc/tcff.mf
+share/texmf/fonts/source/jknappen/tc/tcfi.mf
+share/texmf/fonts/source/jknappen/tc/tcfs.mf
+share/texmf/fonts/source/jknappen/tc/tcit.mf
+share/texmf/fonts/source/jknappen/tc/tcrb.mf
+share/texmf/fonts/source/jknappen/tc/tcrm.mf
+share/texmf/fonts/source/jknappen/tc/tcsi.mf
+share/texmf/fonts/source/jknappen/tc/tcsl.mf
+share/texmf/fonts/source/jknappen/tc/tcso.mf
+share/texmf/fonts/source/jknappen/tc/tcss.mf
+share/texmf/fonts/source/jknappen/tc/tcst.mf
+share/texmf/fonts/source/jknappen/tc/tcsx.mf
+share/texmf/fonts/source/jknappen/tc/tcti.mf
+share/texmf/fonts/source/jknappen/tc/tctt.mf
+share/texmf/fonts/source/jknappen/tc/tcui.mf
+share/texmf/fonts/source/jknappen/tc/tcvi.mf
+share/texmf/fonts/source/jknappen/tc/tcvt.mf
+share/texmf/fonts/source/jknappen/tc/txaccent.mf
+share/texmf/fonts/source/jknappen/tc/txgen.mf
+share/texmf/fonts/source/jknappen/tc/txifract.mf
+share/texmf/fonts/source/jknappen/tc/txisuper.mf
+share/texmf/fonts/source/jknappen/tc/txitlod.mf
+share/texmf/fonts/source/jknappen/tc/txpseudo.mf
+share/texmf/fonts/source/jknappen/tc/txrfract.mf
+share/texmf/fonts/source/jknappen/tc/txromod.mf
+share/texmf/fonts/source/jknappen/tc/txrsuper.mf
+share/texmf/fonts/source/jknappen/tc/txsymb.mf
+share/texmf/fonts/source/jknappen/tc/txsymbol.mf
+share/texmf/fonts/source/public/cm/3test.mf
+share/texmf/fonts/source/public/cm/6test.mf
 share/texmf/fonts/source/public/cm/README
 share/texmf/fonts/source/public/cm/accent.mf
 share/texmf/fonts/source/public/cm/bigacc.mf
@@ -244,7 +437,6 @@ share/texmf/fonts/source/public/cm/mathit.mf
 share/texmf/fonts/source/public/cm/mathsy.mf
 share/texmf/fonts/source/public/cm/olddig.mf
 share/texmf/fonts/source/public/cm/punct.mf
-share/texmf/fonts/source/public/cm/readme
 share/texmf/fonts/source/public/cm/roman.mf
 share/texmf/fonts/source/public/cm/romand.mf
 share/texmf/fonts/source/public/cm/romanl.mf
@@ -255,6 +447,7 @@ share/texmf/fonts/source/public/cm/romms.mf
 share/texmf/fonts/source/public/cm/romspl.mf
 share/texmf/fonts/source/public/cm/romspu.mf
 share/texmf/fonts/source/public/cm/romsub.mf
+share/texmf/fonts/source/public/cm/rtest.mf
 share/texmf/fonts/source/public/cm/sym.mf
 share/texmf/fonts/source/public/cm/symbol.mf
 share/texmf/fonts/source/public/cm/texset.mf
@@ -262,6 +455,7 @@ share/texmf/fonts/source/public/cm/textit.mf
 share/texmf/fonts/source/public/cm/title.mf
 share/texmf/fonts/source/public/cm/tset.mf
 share/texmf/fonts/source/public/cm/tsetsl.mf
+share/texmf/fonts/source/public/cm/ztest.mf
 share/texmf/fonts/source/public/cmextra/cmbxcd10.mf
 share/texmf/fonts/source/public/cmextra/cmbxti12.mf
 share/texmf/fonts/source/public/cmextra/cmbxti7.mf
@@ -275,6 +469,8 @@ share/texmf/fonts/source/public/cmextra/cmssbxo10.mf
 share/texmf/fonts/source/public/cmextra/cmsslu30.mf
 share/texmf/fonts/source/public/cmextra/cmssu30.mf
 share/texmf/fonts/source/public/cmextra/cmvtti10.mf
+share/texmf/fonts/source/public/cmextra/ebigop.mf
+share/texmf/fonts/source/public/cmextra/odigs.mf
 share/texmf/fonts/source/public/concrete/cccsc10.mf
 share/texmf/fonts/source/public/concrete/ccmi10.mf
 share/texmf/fonts/source/public/concrete/ccmic9.mf
@@ -306,6 +502,7 @@ share/texmf/fonts/source/public/latex/lasy7.mf
 share/texmf/fonts/source/public/latex/lasy8.mf
 share/texmf/fonts/source/public/latex/lasy9.mf
 share/texmf/fonts/source/public/latex/lasyb10.mf
+share/texmf/fonts/source/public/latex/lcircle.mf
 share/texmf/fonts/source/public/latex/lcircle10.mf
 share/texmf/fonts/source/public/latex/lcirclew10.mf
 share/texmf/fonts/source/public/latex/lcmss8.mf
@@ -323,28 +520,26 @@ share/texmf/fonts/source/public/mflogo/logo9.mf
 share/texmf/fonts/source/public/mflogo/logobf10.mf
 share/texmf/fonts/source/public/mflogo/logod10.mf
 share/texmf/fonts/source/public/mflogo/logosl10.mf
+share/texmf/fonts/source/public/mflogo/logosl8.mf
 share/texmf/fonts/source/public/mflogo/logosl9.mf
 share/texmf/fonts/source/public/misc/black.mf
-share/texmf/fonts/source/public/misc/blackaps.mf
-share/texmf/fonts/source/public/misc/blackimagen.mf
-share/texmf/fonts/source/public/misc/blacklino.mf
+share/texmf/fonts/source/public/misc/blackcx.mf
+share/texmf/fonts/source/public/misc/blacklj.mf
 share/texmf/fonts/source/public/misc/cmman.mf
+share/texmf/fonts/source/public/misc/dummy.mf
 share/texmf/fonts/source/public/misc/gray.mf
-share/texmf/fonts/source/public/misc/grayaps.mf
+share/texmf/fonts/source/public/misc/graycx.mf
 share/texmf/fonts/source/public/misc/grayf.mf
-share/texmf/fonts/source/public/misc/grayimagen.mf
-share/texmf/fonts/source/public/misc/grayimagen3.mf
-share/texmf/fonts/source/public/misc/grayimagenlight.mf
-share/texmf/fonts/source/public/misc/grayljfour.mf
+share/texmf/fonts/source/public/misc/graylj.mf
 share/texmf/fonts/source/public/misc/manfnt.mf
-share/texmf/fonts/source/public/misc/mfman.mf
-share/texmf/fonts/source/public/misc/oneone.mf
 share/texmf/fonts/source/public/misc/random.mf
 share/texmf/fonts/source/public/misc/slant.mf
-share/texmf/fonts/source/public/misc/slantaps4.mf
-share/texmf/fonts/source/public/misc/slantimagen4.mf
-share/texmf/fonts/source/public/misc/slantimagen6.mf
-share/texmf/fonts/source/public/misc/slantlino4.mf
+share/texmf/fonts/source/public/misc/slantcx4.mf
+share/texmf/fonts/source/public/misc/slantcx6.mf
+share/texmf/fonts/source/public/misc/slantlj4.mf
+share/texmf/fonts/source/public/misc/slantlj6.mf
+share/texmf/fonts/source/public/misc/test.mf
+share/texmf/fonts/source/public/misc/xbmc10.mf
 share/texmf/fonts/tfm/public/cm/cmb10.tfm
 share/texmf/fonts/tfm/public/cm/cmbsy10.tfm
 share/texmf/fonts/tfm/public/cm/cmbx10.tfm
@@ -359,7 +554,9 @@ share/texmf/fonts/tfm/public/cm/cmbxti10.tfm
 share/texmf/fonts/tfm/public/cm/cmcsc10.tfm
 share/texmf/fonts/tfm/public/cm/cmdunh10.tfm
 share/texmf/fonts/tfm/public/cm/cmex10.tfm
+share/texmf/fonts/tfm/public/cm/cmex9.tfm
 share/texmf/fonts/tfm/public/cm/cmff10.tfm
+share/texmf/fonts/tfm/public/cm/cmfi10.tfm
 share/texmf/fonts/tfm/public/cm/cmfib8.tfm
 share/texmf/fonts/tfm/public/cm/cminch.tfm
 share/texmf/fonts/tfm/public/cm/cmitt10.tfm
@@ -379,7 +576,6 @@ share/texmf/fonts/tfm/public/cm/cmr6.tfm
 share/texmf/fonts/tfm/public/cm/cmr7.tfm
 share/texmf/fonts/tfm/public/cm/cmr8.tfm
 share/texmf/fonts/tfm/public/cm/cmr9.tfm
-share/texmf/fonts/tfm/public/cm/cmsa10.tfm
 share/texmf/fonts/tfm/public/cm/cmsl10.tfm
 share/texmf/fonts/tfm/public/cm/cmsl12.tfm
 share/texmf/fonts/tfm/public/cm/cmsl8.tfm
@@ -444,7 +640,6 @@ share/texmf/fonts/tfm/public/concrete/ccr9.tfm
 share/texmf/fonts/tfm/public/concrete/ccsl10.tfm
 share/texmf/fonts/tfm/public/concrete/ccslc9.tfm
 share/texmf/fonts/tfm/public/concrete/ccti10.tfm
-share/texmf/fonts/tfm/public/latex/icmcsc10.tfm
 share/texmf/fonts/tfm/public/latex/icmex10.tfm
 share/texmf/fonts/tfm/public/latex/icmmi8.tfm
 share/texmf/fonts/tfm/public/latex/icmsy8.tfm
@@ -474,25 +669,28 @@ share/texmf/fonts/tfm/public/mflogo/logobf10.tfm
 share/texmf/fonts/tfm/public/mflogo/logod10.tfm
 share/texmf/fonts/tfm/public/mflogo/logosl10.tfm
 share/texmf/fonts/tfm/public/mflogo/logosl9.tfm
+share/texmf/fonts/tfm/public/misc/black.tfm
 share/texmf/fonts/tfm/public/misc/cmman.tfm
+share/texmf/fonts/tfm/public/misc/dummy.tfm
+share/texmf/fonts/tfm/public/misc/gray.tfm
 share/texmf/fonts/tfm/public/misc/manfnt.tfm
-share/texmf/fonts/tfm/public/misc/mfman.tfm
 share/texmf/makeindex/bbglo.ist
 share/texmf/makeindex/bbind.ist
 share/texmf/makeindex/gglo.ist
 share/texmf/makeindex/gind.ist
-share/texmf/metafont/README
+share/texmf/metafont/base/expr.mf
+share/texmf/metafont/base/io.mf
+share/texmf/metafont/base/null.mf
 share/texmf/metafont/base/plain.mf
-share/texmf/metafont/misc/3test.mf
-share/texmf/metafont/misc/6test.mf
-share/texmf/metafont/misc/expr.mf
-share/texmf/metafont/misc/io.mf
+share/texmf/metafont/config/cmmf.ini
+share/texmf/metafont/config/cmmf.mf
+share/texmf/metafont/config/mf.ini
+share/texmf/metafont/config/mf.mf
+share/texmf/metafont/misc/mode2dpi.mf
+share/texmf/metafont/misc/mode2dxy.mf
+share/texmf/metafont/misc/modename.mf
 share/texmf/metafont/misc/modes.mf
-share/texmf/metafont/misc/null.mf
-share/texmf/metafont/misc/rtest.mf
-share/texmf/metafont/misc/test.mf
-share/texmf/metafont/misc/waits.mf
-share/texmf/metafont/misc/ztest.mf
+share/texmf/metafont/misc/ps2mfbas.mf
 share/texmf/metapost/base/TEX.mp
 share/texmf/metapost/base/boxes.mp
 share/texmf/metapost/base/format.mp
@@ -505,6 +703,10 @@ share/texmf/metapost/base/sarith.mp
 share/texmf/metapost/base/string.mp
 share/texmf/metapost/base/texnum.mp
 share/texmf/metapost/base/troffnum.mp
+share/texmf/metapost/config/mfmp.ini
+share/texmf/metapost/config/mfmp.mp
+share/texmf/metapost/config/mpost.ini
+share/texmf/metapost/config/mpost.mp
 share/texmf/metapost/misc/null.mp
 share/texmf/metapost/support/charlib/12
 share/texmf/metapost/support/charlib/14
@@ -525,43 +727,319 @@ share/texmf/metapost/support/charlib/ob
 share/texmf/metapost/support/charlib/rh
 share/texmf/metapost/support/charlib/sq
 share/texmf/metapost/support/charlib/~=
+share/texmf/metapost/support/grchars.adj
+share/texmf/metapost/support/grfonts.map
 share/texmf/metapost/support/trchars.adj
 share/texmf/metapost/support/trfonts.map
-share/texmf/mft/README
 share/texmf/mft/cmbase.mft
 share/texmf/mft/e.mft
 share/texmf/mft/plain.mft
-share/texmf/tex/eplain/eplain.tex
-share/texmf/tex/generic/README
+share/texmf/source/latex/base/00readme.txt
+share/texmf/source/latex/base/Makefile.unx
+share/texmf/source/latex/base/alltt.dtx
+share/texmf/source/latex/base/alltt.ins
+share/texmf/source/latex/base/amiweb2c.txt
+share/texmf/source/latex/base/autoload.ins
+share/texmf/source/latex/base/autoload.txt
+share/texmf/source/latex/base/begleit.err
+share/texmf/source/latex/base/bugs.txt
+share/texmf/source/latex/base/cfgguide.tex
+share/texmf/source/latex/base/changes.txt
+share/texmf/source/latex/base/classes.dtx
+share/texmf/source/latex/base/classes.ins
+share/texmf/source/latex/base/clsguide.tex
+share/texmf/source/latex/base/cmextra.ins
+share/texmf/source/latex/base/cmfonts.fdd
+share/texmf/source/latex/base/cmfonts.ins
+share/texmf/source/latex/base/compan.err
+share/texmf/source/latex/base/cstex.txt
+share/texmf/source/latex/base/decustex.txt
+share/texmf/source/latex/base/directex.txt
+share/texmf/source/latex/base/doc.dtx
+share/texmf/source/latex/base/docstrip.dtx
+share/texmf/source/latex/base/docstrip.ins
+share/texmf/source/latex/base/ec.ins
+share/texmf/source/latex/base/emtex.txt
+share/texmf/source/latex/base/exscale.dtx
+share/texmf/source/latex/base/exscale.ins
+share/texmf/source/latex/base/fntguide.tex
+share/texmf/source/latex/base/fontdef.dtx
+share/texmf/source/latex/base/format.ins
+share/texmf/source/latex/base/graphpap.dtx
+share/texmf/source/latex/base/graphpap.ins
+share/texmf/source/latex/base/grphcomp.err
+share/texmf/source/latex/base/idx.tex
+share/texmf/source/latex/base/ifthen.dtx
+share/texmf/source/latex/base/ifthen.ins
+share/texmf/source/latex/base/inputenc.dtx
+share/texmf/source/latex/base/inputenc.ins
+share/texmf/source/latex/base/install.txt
+share/texmf/source/latex/base/lablst.tex
+share/texmf/source/latex/base/latex209.dtx
+share/texmf/source/latex/base/latex209.ins
+share/texmf/source/latex/base/latexbug.el
+share/texmf/source/latex/base/latexbug.tex
+share/texmf/source/latex/base/latexsym.dtx
+share/texmf/source/latex/base/latexsym.ins
+share/texmf/source/latex/base/legal.txt
+share/texmf/source/latex/base/letter.dtx
+share/texmf/source/latex/base/letter.ins
+share/texmf/source/latex/base/lindner.txt
+share/texmf/source/latex/base/ltalloc.dtx
+share/texmf/source/latex/base/ltbibl.dtx
+share/texmf/source/latex/base/ltboxes.dtx
+share/texmf/source/latex/base/ltclass.dtx
+share/texmf/source/latex/base/ltcntrl.dtx
+share/texmf/source/latex/base/ltcounts.dtx
+share/texmf/source/latex/base/ltdefns.dtx
+share/texmf/source/latex/base/ltdirchk.dtx
+share/texmf/source/latex/base/lterror.dtx
+share/texmf/source/latex/base/ltfiles.dtx
+share/texmf/source/latex/base/ltfinal.dtx
+share/texmf/source/latex/base/ltfloat.dtx
+share/texmf/source/latex/base/ltfntcmd.dtx
+share/texmf/source/latex/base/ltfssbas.dtx
+share/texmf/source/latex/base/ltfsscmp.dtx
+share/texmf/source/latex/base/ltfssdcl.dtx
+share/texmf/source/latex/base/ltfssini.dtx
+share/texmf/source/latex/base/ltfsstrc.dtx
+share/texmf/source/latex/base/lthyphen.dtx
+share/texmf/source/latex/base/ltidxglo.dtx
+share/texmf/source/latex/base/ltlength.dtx
+share/texmf/source/latex/base/ltlists.dtx
+share/texmf/source/latex/base/ltlogos.dtx
+share/texmf/source/latex/base/ltmath.dtx
+share/texmf/source/latex/base/ltmiscen.dtx
+share/texmf/source/latex/base/ltnews.cls
+share/texmf/source/latex/base/ltnews01.tex
+share/texmf/source/latex/base/ltnews02.tex
+share/texmf/source/latex/base/ltnews03.tex
+share/texmf/source/latex/base/ltnews04.tex
+share/texmf/source/latex/base/ltnews05.tex
+share/texmf/source/latex/base/ltnews06.tex
+share/texmf/source/latex/base/ltnews07.tex
+share/texmf/source/latex/base/ltnews08.tex
+share/texmf/source/latex/base/ltoutenc.dtx
+share/texmf/source/latex/base/ltoutenc.ins
+share/texmf/source/latex/base/ltoutput.dtx
+share/texmf/source/latex/base/ltpage.dtx
+share/texmf/source/latex/base/ltpageno.dtx
+share/texmf/source/latex/base/ltpar.dtx
+share/texmf/source/latex/base/ltpatch.ltx
+share/texmf/source/latex/base/ltpictur.dtx
+share/texmf/source/latex/base/ltplain.dtx
+share/texmf/source/latex/base/ltsect.dtx
+share/texmf/source/latex/base/ltspace.dtx
+share/texmf/source/latex/base/lttab.dtx
+share/texmf/source/latex/base/ltthm.dtx
+share/texmf/source/latex/base/ltvers.dtx
+share/texmf/source/latex/base/ltx3info.tex
+share/texmf/source/latex/base/ltxcheck.tex
+share/texmf/source/latex/base/ltxdoc.dtx
+share/texmf/source/latex/base/ltxguide.cls
+share/texmf/source/latex/base/ltxref.dtx
+share/texmf/source/latex/base/makeindx.dtx
+share/texmf/source/latex/base/makeindx.ins
+share/texmf/source/latex/base/manifest.txt
+share/texmf/source/latex/base/manual.err
+share/texmf/source/latex/base/microtex.txt
+share/texmf/source/latex/base/minimal.cls
+share/texmf/source/latex/base/modguide.tex
+share/texmf/source/latex/base/multitex.txt
+share/texmf/source/latex/base/newdc.ins
+share/texmf/source/latex/base/newlfont.dtx
+share/texmf/source/latex/base/nfssfont.tex
+share/texmf/source/latex/base/olddc.ins
+share/texmf/source/latex/base/oldlfont.dtx
+share/texmf/source/latex/base/oztex.txt
+share/texmf/source/latex/base/pastex.txt
+share/texmf/source/latex/base/patches.txt
+share/texmf/source/latex/base/pctex.txt
+share/texmf/source/latex/base/pict2e.dtx
+share/texmf/source/latex/base/pict2e.ins
+share/texmf/source/latex/base/preload.dtx
+share/texmf/source/latex/base/proc.dtx
+share/texmf/source/latex/base/proc.ins
+share/texmf/source/latex/base/sample2e.tex
+share/texmf/source/latex/base/slides.dtx
+share/texmf/source/latex/base/slides.fdd
+share/texmf/source/latex/base/slides.ins
+share/texmf/source/latex/base/slifonts.fdd
+share/texmf/source/latex/base/small2e.tex
+share/texmf/source/latex/base/source2e.tex
+share/texmf/source/latex/base/syntonly.dtx
+share/texmf/source/latex/base/syntonly.ins
+share/texmf/source/latex/base/template.txt
+share/texmf/source/latex/base/testpage.tex
+share/texmf/source/latex/base/tex2.txt
+share/texmf/source/latex/base/texpert.txt
+share/texmf/source/latex/base/textures.txt
+share/texmf/source/latex/base/truetex.txt
+share/texmf/source/latex/base/unpack.ins
+share/texmf/source/latex/base/usrguide.tex
+share/texmf/source/latex/base/vtex.txt
+share/texmf/source/latex/base/web2ctex.txt
+share/texmf/source/latex/base/yandytex.txt
+share/texmf/source/latex/graphics/00readme.txt
+share/texmf/source/latex/graphics/changes.txt
+share/texmf/source/latex/graphics/color.dtx
+share/texmf/source/latex/graphics/drivers.dtx
+share/texmf/source/latex/graphics/epsfig.dtx
+share/texmf/source/latex/graphics/graphics.dtx
+share/texmf/source/latex/graphics/graphics.ins
+share/texmf/source/latex/graphics/graphicx.dtx
+share/texmf/source/latex/graphics/grfguide.ps
+share/texmf/source/latex/graphics/grfguide.tex
+share/texmf/source/latex/graphics/keyval.dtx
+share/texmf/source/latex/graphics/lscape.dtx
+share/texmf/source/latex/graphics/pdftex.def
+share/texmf/source/latex/graphics/pstcol.dtx
+share/texmf/source/latex/graphics/textures.def
+share/texmf/source/latex/graphics/trig.dtx
+share/texmf/source/latex/tools/afterpage.dtx
+share/texmf/source/latex/tools/array.dtx
+share/texmf/source/latex/tools/bm.dtx
+share/texmf/source/latex/tools/calc.dtx
+share/texmf/source/latex/tools/changes.txt
+share/texmf/source/latex/tools/dcolumn.dtx
+share/texmf/source/latex/tools/delarray.dtx
+share/texmf/source/latex/tools/enumerate.dtx
+share/texmf/source/latex/tools/fileerr.dtx
+share/texmf/source/latex/tools/fontsmpl.dtx
+share/texmf/source/latex/tools/ftnright.dtx
+share/texmf/source/latex/tools/hhline.dtx
+share/texmf/source/latex/tools/indentfirst.dtx
+share/texmf/source/latex/tools/layout.dtx
+share/texmf/source/latex/tools/longtable.dtx
+share/texmf/source/latex/tools/manifest.txt
+share/texmf/source/latex/tools/multicol.dtx
+share/texmf/source/latex/tools/rawfonts.dtx
+share/texmf/source/latex/tools/readme.txt
+share/texmf/source/latex/tools/showkeys.dtx
+share/texmf/source/latex/tools/somedefs.dtx
+share/texmf/source/latex/tools/tabularx.dtx
+share/texmf/source/latex/tools/theorem.dtx
+share/texmf/source/latex/tools/tools.ins
+share/texmf/source/latex/tools/varioref.dtx
+share/texmf/source/latex/tools/verbatim.dtx
+share/texmf/source/latex/tools/xr.dtx
+share/texmf/source/latex/tools/xspace.dtx
 share/texmf/tex/generic/hyphen/hyphen.tex
-share/texmf/tex/generic/misc/bibnames.sty
 share/texmf/tex/generic/misc/null.tex
 share/texmf/tex/generic/misc/path.sty
-share/texmf/tex/latex/misc/apalike.sty
-share/texmf/tex/latex/misc/lplain.tex
-share/texmf/tex/plain/README
+share/texmf/tex/generic/misc/texnames.sty
+share/texmf/tex/latex/config/latex209.cfg
+share/texmf/tex/latex/config/ltxdoc.cfg
+share/texmf/tex/latex/config/ltxguide.cfg
+share/texmf/tex/latex/config/texsys.cfg
+share/texmf/tex/latex/dvilj/cgalbertus.sty
+share/texmf/tex/latex/dvilj/cgantiqueolive.sty
+share/texmf/tex/latex/dvilj/cgcourier.sty
+share/texmf/tex/latex/dvilj/cggothic.sty
+share/texmf/tex/latex/dvilj/cgtimes.sty
+share/texmf/tex/latex/dvilj/cgunivers.sty
+share/texmf/tex/latex/dvilj/graybox.sty
+share/texmf/tex/latex/dvilj/hpfonts.sty
+share/texmf/tex/latex/dvips/README
+share/texmf/tex/latex/dvips/blackdvi.sty
+share/texmf/tex/latex/dvips/colordvi.sty
+share/texmf/tex/latex/dvips/epsf.sty
+share/texmf/tex/latex/dvips/rotate.sty
+share/texmf/tex/latex/graphics/color.cfg
+share/texmf/tex/latex/graphics/color.sty
+share/texmf/tex/latex/graphics/dvi2ps.def
+share/texmf/tex/latex/graphics/dvialw.def
+share/texmf/tex/latex/graphics/dvilaser.def
+share/texmf/tex/latex/graphics/dvipdf.def
+share/texmf/tex/latex/graphics/dvips.def
+share/texmf/tex/latex/graphics/dvipsnam.def
+share/texmf/tex/latex/graphics/dvipsone.def
+share/texmf/tex/latex/graphics/dvitops.def
+share/texmf/tex/latex/graphics/dviwin.def
+share/texmf/tex/latex/graphics/emtex.def
+share/texmf/tex/latex/graphics/epsfig.sty
+share/texmf/tex/latex/graphics/graphics.cfg
+share/texmf/tex/latex/graphics/graphics.sty
+share/texmf/tex/latex/graphics/graphicx.sty
+share/texmf/tex/latex/graphics/keyval.sty
+share/texmf/tex/latex/graphics/ln.def
+share/texmf/tex/latex/graphics/lscape.sty
+share/texmf/tex/latex/graphics/pctex32.def
+share/texmf/tex/latex/graphics/pctexhp.def
+share/texmf/tex/latex/graphics/pctexps.def
+share/texmf/tex/latex/graphics/pctexwin.def
+share/texmf/tex/latex/graphics/pdftex.def
+share/texmf/tex/latex/graphics/psprint.def
+share/texmf/tex/latex/graphics/pstcol.sty
+share/texmf/tex/latex/graphics/pubps.def
+share/texmf/tex/latex/graphics/tcidvi.def
+share/texmf/tex/latex/graphics/textures.def
+share/texmf/tex/latex/graphics/trig.sty
+share/texmf/tex/latex/graphics/truetex.def
+share/texmf/tex/latex/tools/.tex
+share/texmf/tex/latex/tools/afterpage.sty
+share/texmf/tex/latex/tools/array.sty
+share/texmf/tex/latex/tools/bm.sty
+share/texmf/tex/latex/tools/calc.sty
+share/texmf/tex/latex/tools/dcolumn.sty
+share/texmf/tex/latex/tools/delarray.sty
+share/texmf/tex/latex/tools/e.tex
+share/texmf/tex/latex/tools/enumerate.sty
+share/texmf/tex/latex/tools/fontsmpl.sty
+share/texmf/tex/latex/tools/fontsmpl.tex
+share/texmf/tex/latex/tools/ftnright.sty
+share/texmf/tex/latex/tools/h.tex
+share/texmf/tex/latex/tools/hhline.sty
+share/texmf/tex/latex/tools/indentfirst.sty
+share/texmf/tex/latex/tools/layout.sty
+share/texmf/tex/latex/tools/longtable.sty
+share/texmf/tex/latex/tools/multicol.sty
+share/texmf/tex/latex/tools/q.tex
+share/texmf/tex/latex/tools/r.tex
+share/texmf/tex/latex/tools/rawfonts.sty
+share/texmf/tex/latex/tools/s.tex
+share/texmf/tex/latex/tools/showkeys.sty
+share/texmf/tex/latex/tools/somedefs.sty
+share/texmf/tex/latex/tools/tabularx.sty
+share/texmf/tex/latex/tools/thb.sty
+share/texmf/tex/latex/tools/thc.sty
+share/texmf/tex/latex/tools/thcb.sty
+share/texmf/tex/latex/tools/theorem.sty
+share/texmf/tex/latex/tools/thm.sty
+share/texmf/tex/latex/tools/thmb.sty
+share/texmf/tex/latex/tools/thp.sty
+share/texmf/tex/latex/tools/varioref.sty
+share/texmf/tex/latex/tools/verbatim.sty
+share/texmf/tex/latex/tools/verbtest.tex
+share/texmf/tex/latex/tools/x.tex
+share/texmf/tex/latex/tools/xr.sty
+share/texmf/tex/latex/tools/xspace.sty
+share/texmf/tex/plain/base/gkpmac.tex
+share/texmf/tex/plain/base/letter.tex
+share/texmf/tex/plain/base/logmac.tex
+share/texmf/tex/plain/base/manmac.tex
 share/texmf/tex/plain/base/mftmac.tex
+share/texmf/tex/plain/base/picmac.tex
 share/texmf/tex/plain/base/plain.tex
+share/texmf/tex/plain/base/story.tex
+share/texmf/tex/plain/base/testfont.tex
 share/texmf/tex/plain/base/webmac.tex
-share/texmf/tex/plain/misc/apalike.tex
-share/texmf/tex/plain/misc/arrow.tex
-share/texmf/tex/plain/misc/btxmac.tex
-share/texmf/tex/plain/misc/fontchart.tex
-share/texmf/tex/plain/misc/manmac.tex
-share/texmf/tex/plain/misc/mproof.tex
-share/texmf/tex/plain/misc/story.tex
-share/texmf/tex/plain/misc/testfont.tex
-share/texmf/tex/plain/tugboat/tugboat.cmn
-share/texmf/tex/plain/tugboat/tugboat.sty
-share/texmf/tex/plain/tugboat/tugproc.sty
+share/texmf/tex/plain/dvips/blackdvi.tex
+share/texmf/tex/plain/dvips/colordvi.tex
+share/texmf/tex/plain/dvips/dvips.tex
+share/texmf/tex/plain/dvips/dvipsmac.tex
+share/texmf/tex/plain/dvips/epsf.tex
+share/texmf/tex/plain/dvips/rotate.tex
+share/texmf/tex/plain/dvips/rotsample.tex
 share/texmf/tex/texinfo/texinfo.tex
-share/texmf/web2c/MakeTeXcommon
-share/texmf/web2c/MakeTeXmkdir
-share/texmf/web2c/MakeTeXnames
-share/texmf/web2c/MakeTeXnames.cnf
-share/texmf/web2c/MakeTeXupdate
 share/texmf/web2c/mf.base
 share/texmf/web2c/mf.pool
+share/texmf/web2c/mktex.opt
+share/texmf/web2c/mktexdir
+share/texmf/web2c/mktexdir.opt
+share/texmf/web2c/mktexnam
+share/texmf/web2c/mktexnam.opt
+share/texmf/web2c/mktexupd
 share/texmf/web2c/mp.pool
 share/texmf/web2c/mpost.mem
 share/texmf/web2c/plain.base
@@ -572,24 +1050,33 @@ share/texmf/web2c/tex.pool
 share/texmf/web2c/texmf.cnf
 @dirrm share/texmf/web2c
 @dirrm share/texmf/tex/texinfo
-@dirrm share/texmf/tex/plain/tugboat
-@dirrm share/texmf/tex/plain/misc
+@dirrm share/texmf/tex/plain/dvips
 @dirrm share/texmf/tex/plain/base
 @dirrm share/texmf/tex/plain
-@dirrm share/texmf/tex/latex/misc
+@dirrm share/texmf/tex/latex/tools
+@dirrm share/texmf/tex/latex/graphics
+@dirrm share/texmf/tex/latex/dvips
+@dirrm share/texmf/tex/latex/dvilj
+@dirrm share/texmf/tex/latex/config
 @dirrm share/texmf/tex/latex
 @dirrm share/texmf/tex/generic/misc
 @dirrm share/texmf/tex/generic/hyphen
 @dirrm share/texmf/tex/generic
-@dirrm share/texmf/tex/eplain
 @dirrm share/texmf/tex
+@dirrm share/texmf/source/latex/tools
+@dirrm share/texmf/source/latex/graphics
+@dirrm share/texmf/source/latex/base
+@dirrm share/texmf/source/latex
+@dirrm share/texmf/source
 @dirrm share/texmf/mft
 @dirrm share/texmf/metapost/support/charlib
 @dirrm share/texmf/metapost/support
 @dirrm share/texmf/metapost/misc
+@dirrm share/texmf/metapost/config
 @dirrm share/texmf/metapost/base
 @dirrm share/texmf/metapost
 @dirrm share/texmf/metafont/misc
+@dirrm share/texmf/metafont/config
 @dirrm share/texmf/metafont/base
 @dirrm share/texmf/metafont
 @dirrm share/texmf/makeindex
@@ -608,9 +1095,17 @@ share/texmf/web2c/texmf.cnf
 @dirrm share/texmf/fonts/source/public/cmextra
 @dirrm share/texmf/fonts/source/public/cm
 @dirrm share/texmf/fonts/source/public
+@dirrm share/texmf/fonts/source/jknappen/tc
+@dirrm share/texmf/fonts/source/jknappen/ec
+@dirrm share/texmf/fonts/source/jknappen
 @dirrm share/texmf/fonts/source
 @dirrm share/texmf/fonts
 @dirrm share/texmf/fontname
+@dirrm share/texmf/dvips/misc
+@dirrm share/texmf/dvips/gsftopk
+@dirrm share/texmf/dvips/config
+@dirrm share/texmf/dvips/base
+@dirrm share/texmf/dvips
 @dirrm share/texmf/doc/latex
 @dirrm share/texmf/doc/eplain
 @dirrm share/texmf/doc/bibtex
@@ -621,3 +1116,4 @@ share/texmf/web2c/texmf.cnf
 @dirrm share/texmf/bibtex/bib
 @dirrm share/texmf/bibtex
 @dirrm share/texmf
+@dirrm include/kpathsea
