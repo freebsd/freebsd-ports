@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	tramp
-PORTVERSION=	0.0.20020411
+PORTVERSION=	2.0.15
 CATEGORIES=	net elisp
-MASTER_SITES=	http://tramp.sourceforge.net/download/
+MASTER_SITES=	http://freesoftware.fsf.org/download/tramp/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
-DISTNAME=	${PORTNAME}
 
 MAINTAINER=	yoichi@FreeBSD.org
 
@@ -58,8 +57,8 @@ do-install:
 	${INSTALL_DATA} ${BUILD_WRKSRC}/*.el ${BUILD_WRKSRC}/*.elc ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/tramp2/*.el ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 .if !defined(NOPORTDOCS)
-	${INSTALL_DATA} ${WRKSRC}/texi/tramp.info ${PREFIX}/info
-	install-info --section=${DIRSECTION} --entry=${INFOENTRY} ${PREFIX}/info/tramp.info ${PREFIX}/info/dir
+	${INSTALL_DATA} ${WRKSRC}/info/tramp ${PREFIX}/info
+	install-info --section=${DIRSECTION} --entry=${INFOENTRY} ${PREFIX}/info/tramp ${PREFIX}/info/dir
 .if defined(JAPANESE_INFO)
 	${INSTALL_DATA} ${WRKSRC}/texi/tramp_ja.info ${PREFIX}/info
 	install-info --section=${DIRSECTION} --entry=${INFOENTRY_JA} ${PREFIX}/info/tramp_ja.info ${PREFIX}/info/dir
