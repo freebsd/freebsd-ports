@@ -5867,7 +5867,6 @@ openvrml	ports/www/openvrml
 openwebmail	ports/mail/openwebmail
 openzz		ports/devel/openzz
 opera		ports/www/opera
-opera-devel	ports/www/opera-devel
 ophoto		ports/graphics/ophoto
 opmixer		ports/audio/opmixer
 oproute		ports/net-mgmt/oproute
