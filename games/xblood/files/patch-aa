@@ -1,0 +1,25 @@
+--- Makefile.orig	Thu Jul 23 00:58:34 1998
++++ Makefile	Sun Jun 27 11:01:30 1999
+@@ -1,5 +1,5 @@
+ xblood :	xblood.c
+-		gcc xblood.c -o xblood -O \
++		${CC} xblood.c -o xblood ${CFLAGS} \
+ 		-I/usr/X11R6/include -L/usr/X11R6/lib -lX11
+ clean :
+ 		rm xblood
+@@ -9,11 +9,11 @@
+ 		cp xblood.c xblood.c.bak
+ 		cp xblood.man xblood.man.bak
+ install :
+-		cp xblood /usr/X11R6/bin
+-		cp xblood.1.gz /usr/X11R6/man/man1
++		cp xblood ${PREFIX}/bin
++		cp xblood.1.gz ${PREFIX}/man/man1
+ uninstall :
+-		rm /usr/X11R6/bin/xblood
+-		rm /usr/X11R6/man/man1/xblood.1.gz
++		rm ${PREFIX}/bin/xblood
++		rm ${PREFIX}/man/man1/xblood.1.gz
+ package :
+ 		rm -f xblood-1.0/*
+ 		cp xblood.man xblood.1
