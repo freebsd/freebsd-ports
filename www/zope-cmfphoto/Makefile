@@ -19,6 +19,8 @@ COMMENT=	CMFPhoto product for Zope/CMF
 RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFDefault/__init__.py:${PORTSDIR}/www/zope-cmf \
 		${PYTHON_SITELIBDIR}/PIL/_imaging.so:${PORTSDIR}/graphics/py-imaging
 
+BROKEN=		Broken dependency
+
 USE_PYTHON=	yes
 USE_ZOPE=	yes
 DIST_SUBDIR=	zope

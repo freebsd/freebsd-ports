@@ -18,6 +18,8 @@ COMMENT=	ParsedXML - access and manipulated XML documents within Zope
 
 RUN_DEPENDS=	${PYTHON_LIBDIR}/site-packages/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
 
+BROKEN=		Broken dependency
+
 USE_PYTHON=	yes
 USE_ZOPE=	yes
 DIST_SUBDIR=	zope
