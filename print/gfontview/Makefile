@@ -19,8 +19,7 @@ COMMENT=	An outline font viewer
 LIB_DEPENDS=	t1.5:${PORTSDIR}/devel/t1lib
 
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
-USE_GNOME=	yes
+USE_GNOME=	gnomehack gnomelibs gnomeprefix
 USE_FREETYPE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype1/freetype \
@@ -32,13 +31,10 @@ CONFIGURE_ARGS=	--with-fontdir="${LOCALBASE}/share/ghostscript/fonts" \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CXXFLAGS="-O2"|CXXFLAGS="$$CXXFLAGS"|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
 		 s|USE_INCLUDED_LIBINTL=yes|#USE_INCLUDED_LIBINTL=yes|g ; \
 		 s|\$$(top_builddir)/intl/libintl.a|-lintl|g' \
-			${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|\$$(datadir)/gnome/|$$(datadir)/|g ; \
-		 s|\$$(datadir)/locale|$$(prefix)/share/locale|g ; \
-		 s|-I/usr/include/freetype||g' \
-			${WRKSRC}/Makefile.in
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|-I/usr/include/freetype||g' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
