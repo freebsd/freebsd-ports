@@ -3,7 +3,7 @@ GNU Network Object Model Environment
 This package does not contain anything by itself -- it is a
 "meta-port" that depends on other GNOME packages.  Its sole purpose is
 to require dependencies so users can install this package only and
-have all the GNOME 2.2 stuff pulled in by the port/package dependency
+have all the GNOME 2 stuff pulled in by the port/package dependency
 mechanism.
 
 WWW: http://www.FreeBSD.org/gnome/
