@@ -7,7 +7,7 @@
 
 PORTNAME=	libraries
 PORTVERSION=	6.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://freedesktop.org/~xorg/X11R6.7.0/src/:xorg \
 		${MASTER_SITE_XORG:S/$/:xorg/} \
