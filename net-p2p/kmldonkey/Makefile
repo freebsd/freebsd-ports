@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kmldonkey
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	net kde
 MASTER_SITES=	http://www.gibreel.net/dump/
 
@@ -17,6 +17,7 @@ RUN_DEPENDS=	 \
 	${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
 USE_KDELIBS_VER=3
+USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
