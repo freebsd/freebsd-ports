@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ninja
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ninja.qoop.org/ninja/sources/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
