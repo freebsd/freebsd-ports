@@ -1,0 +1,11 @@
+--- graphics/Makefile.in.orig	Mon Jan 26 09:16:58 2004
++++ graphics/Makefile.in	Mon Jan 26 09:17:15 2004
+@@ -37,7 +37,7 @@
+ build_triplet = @build@
+ host_triplet = @host@
+ target_triplet = @target@
+-pkgdatadir = $(datadir)/games/powermanga/graphics
++pkgdatadir = $(datadir)/powermanga/graphics
+ ACLOCAL = @ACLOCAL@
+ AMDEP_FALSE = @AMDEP_FALSE@
+ AMDEP_TRUE = @AMDEP_TRUE@

@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Mon Jan 26 09:15:26 2004
++++ Makefile.in	Mon Jan 26 09:16:25 2004
+@@ -38,7 +38,7 @@
+ host_triplet = @host@
+ target_triplet = @target@
+ 
+-pkgdatadir = $(mandir)
++pkgdatadir = $(mandir)/man6
+ ACLOCAL = @ACLOCAL@
+ AMDEP_FALSE = @AMDEP_FALSE@
+ AMDEP_TRUE = @AMDEP_TRUE@
