@@ -117,6 +117,7 @@
     SUBDIR += shorten
     SUBDIR += shout
     SUBDIR += sidplay
+    SUBDIR += snd
     SUBDIR += snowstar
     SUBDIR += soundtracker
     SUBDIR += sox
