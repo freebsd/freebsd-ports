@@ -14,7 +14,9 @@ DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 
 MAINTAINER=	reg@FreeBSD.org
 
-LIB_DEPENDS=	IDL.2:${PORTSDIR}/devel/ORBit
+LIB_DEPENDS=	IDL.2:${PORTSDIR}/devel/ORBit \
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.4:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -29,6 +31,7 @@ CONFIGURE_ARGS=					\
 		--disable-cpp-rtti		\
 		--disable-debug			\
 		--disable-idltool		\
+		--disable-jar-packaging		\
 		--disable-md			\
 		--disable-pedantic		\
 		--disable-xterm-updates		\
