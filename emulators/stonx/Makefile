@@ -20,12 +20,10 @@ TOSIMG=		tos.img
 USE_X_PREFIX=	yes
 HAS_CONFIGURE=	yes
 
-pre-fetch:
-	@if [ ! -f ${DISTDIR}/${TOSIMG} ]; then \
-		${ECHO} "Please get a ROM dump from your AtariST and"; \
-		${ECHO} "put it as \"${TOSIMG}\" in \"${DISTDIR}\" manually."; \
-		exit 1; \
-	fi
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
+IGNORE="Please get a ROM dump from your AtariST and save it as"\
+"\"${TOSIMG}\" in \"${DISTDIR}\" manually, and then make install again"
+.endif
 
 pre-build:
 	${CP} ${DISTDIR}/tos.img ${WRKSRC}
