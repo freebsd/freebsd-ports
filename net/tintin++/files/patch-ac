@@ -1,0 +1,57 @@
+--- Makefile.in.orig	Thu Mar 25 11:03:34 1999
++++ Makefile.in	Tue Sep 26 18:07:31 2000
+@@ -10,7 +10,6 @@
+ # try uncommenting the 'gcc' line and commenting the 'cc' one.
+ # Tintin++ doesn't *need* an ANSI compiler anymore, but gcc
+ # is still better than cc on many platforms...
+-CC = @CC@ -O
+ CFLAGS = @DEFS@
+ LIBS = @LIBS@
+ PIPE = @PIPE@
+@@ -22,10 +21,10 @@
+ 
+ # BINDIR is the directory you wish tt++ to be placed if you wish to use
+ # make install.  
+-BINDIR = ..
++BINDIR = /usr/local/bin
+ 
+ # DEFAULT_FILE_DIR is the path to tintin files. 
+-DEFAULT_FILE_DIR = ~
++DEFAULT_FILE_DIR = /usr/local/lib/tintin
+ 
+ #########################################
+ # You shouldn't need to change anything #
+@@ -41,14 +40,14 @@
+ 	variables.c highlight.c antisub.c ivars.c help.c text.c glob.c
+ OFILES = $(CFILES:.c=.o)
+ 
+-all: tintin++ install
++all: tintin++
+ 
+ tintin++: $(OFILES) tintin.h
+ 	@echo "Linking..."
+ 	$(CC) $(CFLAGS) $(FFLAGS) $(LFLAGS) -o tt++ $(OFILES) $(LIBS)
+ 
+ install: all
+-	@./install.sh $(BINDIR) $(DEFAULT_FILE_DIR) $(COMPRESSED_HELP)
++	@./install.sh $(BINDIR) $(DEFAULT_FILE_DIR) Ok
+ 
+ # Autocompile all .c files into .o files using this rule:
+ .c.o:
+--- install.sh.orig	Thu Mar 25 11:13:50 1999
++++ install.sh	Tue Sep 26 18:13:52 2000
+@@ -6,11 +6,12 @@
+ echo " "
+ echo "Copying the tintin++ executable to \"$1\"..."
+ #strip tt++
+-cp tt++ "$1"
++install -c -s -o bin -g bin -m 555 tt++ "$1"
+ 
+ echo "Copying the tintin++ help file to \"$2\"..."
+ if [ "$3" ]; then 
+-  cp support/.tt_help.txt.Z "$2/"
++ [ -d "$2" ] || mkdir -p "$2"
++ install -c -o bin -g bin -m 555 support/.tt_help.txt.Z "$2/"
+ fi
+ 
+ echo 
