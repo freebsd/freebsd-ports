@@ -7,3 +7,4 @@ share/lyx/doc/ja_UserGuide.lyx
 share/lyx/doc/mobius.eps
 share/lyx/doc/platypus.eps
 @dirrm share/lyx/doc
+@dirrm share/lyx
