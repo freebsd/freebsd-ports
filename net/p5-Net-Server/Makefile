@@ -23,6 +23,7 @@ MAN3=		Net::Server.3 \
 		Net::Server::Fork.3 \
 		Net::Server::INET.3 \
 		Net::Server::MultiType.3 \
+		Net::Server::Multiplex.3 \
 		Net::Server::PreFork.3 \
 		Net::Server::PreForkSimple.3\
 		Net::Server::Proto.3\
