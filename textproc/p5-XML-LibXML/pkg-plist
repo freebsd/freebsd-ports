@@ -1,0 +1,13 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/LibXML/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/LibXML.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/LibXML/CDATASection.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/LibXML/Comment.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/LibXML/Document.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/LibXML/Element.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/LibXML/Node.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/LibXML/Text.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/LibXML/LibXML.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/LibXML/LibXML.so
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/LibXML
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/XML 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
