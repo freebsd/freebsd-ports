@@ -2,19 +2,18 @@ bin/jwhois
 @unexec if cmp -s %D/etc/jwhois.conf %D/etc/jwhois.conf.sample; then rm -f %D/etc/jwhois.conf; fi
 etc/jwhois.conf.sample
 @exec if [ ! -f %B/jwhois.conf ]; then cp %B/%f %B/jwhois.conf; fi
-@unexec install-info --delete %D/info/jwhois.info %D/info/dir
-info/jwhois.info
-@exec install-info %D/info/jwhois.info %D/info/dir
-share/locale/es/LC_MESSAGES/jwhois.mo
-share/locale/fr/LC_MESSAGES/jwhois.mo
-share/locale/id/LC_MESSAGES/jwhois.mo
-share/locale/ru/LC_MESSAGES/jwhois.mo
-share/locale/sv/LC_MESSAGES/jwhois.mo
-share/locale/tr/LC_MESSAGES/jwhois.mo
-share/locale/zh_TW/LC_MESSAGES/jwhois.mo
-@unexec rmdir %D/share/locale/*/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/* 2>/dev/null || true
-@unexec rmdir %D/share/locale 2>/dev/null || true
+%%NLS%%share/locale/es/LC_MESSAGES/jwhois.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/jwhois.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/jwhois.mo
+%%NLS%%share/locale/id/LC_MESSAGES/jwhois.mo
+%%NLS%%share/locale/it/LC_MESSAGES/jwhois.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/jwhois.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/jwhois.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/jwhois.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/jwhois.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/jwhois.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/jwhois.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/jwhois.mo
 @exec mkdir -p %D/var/jwhois 2>/dev/null || true
 @unexec rm -f %D/var/jwhois/jwhois.db 2>/dev/null || true
 @unexec rmdir %D/var/jwhois 2>/dev/null || true
