@@ -1,0 +1,13 @@
+MANCK(1)                     UNIX Reference Manual                    MANCK(1)
+
+NAME
+     manck - check manual pages
+...
+DESCRIPTION
+     Manck check manual pages. Currently supported section FILES, NAME, SEE
+     ALSO, and SYNOPSIS.
+...
+AUTHOR
+     Wolfram Schneider <wosch@cs.tu-berlin.de>
+
+ FreeBSD                         July 25, 1995                               2
