@@ -1,17 +1,13 @@
-bin/render
 bin/panorama
+bin/render
 etc/panorama/config
 etc/panorama/pluginrc
 lib/libhlapi.a
-lib/libhlapi.la
+lib/libhlapi.so
 lib/libhlapi.so.0
-@exec ln -s libhlapi.so.0 %D/lib/libhlapi.so
-@unexec rm -f %D/lib/libhlapi.so
 lib/libllapi.a
-lib/libllapi.la
+lib/libllapi.so
 lib/libllapi.so.0
-@exec ln -s libllapi.so.0 %D/lib/libllapi.so
-@unexec rm -f %D/lib/libllapi.so
 lib/panorama/gradients/crackle1
 lib/panorama/gradients/lrgold
 lib/panorama/gradients/marble1
@@ -22,342 +18,147 @@ lib/panorama/gradients/wood2
 lib/panorama/gradients/wood3
 lib/panorama/gradients/wood4
 lib/panorama/gradients/wood5
-lib/panorama/plugins/aggregate_uniform_grid.a
-lib/panorama/plugins/aggregate_uniform_grid.la
-lib/panorama/plugins/aggregate_uniform_grid.so.0
-@exec ln -s aggregate_uniform_grid.so.0 %D/lib/panorama/plugins/aggregate_uniform_grid.so
-@unexec rm -f %D/lib/panorama/plugins/aggregate_uniform_grid.so
-lib/panorama/plugins/atm_const.a
-lib/panorama/plugins/atm_const.la
-lib/panorama/plugins/atm_const.so.0
-@exec ln -s atm_const.so.0 %D/lib/panorama/plugins/atm_const.so
-@unexec rm -f %D/lib/panorama/plugins/atm_const.so
-lib/panorama/plugins/bezier.a
-lib/panorama/plugins/bezier.la
-lib/panorama/plugins/bezier.so.0
-@exec ln -s bezier.so.0 %D/lib/panorama/plugins/bezier.so
-@unexec rm -f %D/lib/panorama/plugins/bezier.so
-lib/panorama/plugins/bsdf_cook_torrance.a
-lib/panorama/plugins/bsdf_cook_torrance.la
-lib/panorama/plugins/bsdf_cook_torrance.so.0
-@exec ln -s bsdf_cook_torrance.so.0 %D/lib/panorama/plugins/bsdf_cook_torrance.so
-@unexec rm -f %D/lib/panorama/plugins/bsdf_cook_torrance.so
-lib/panorama/plugins/bsdf_lambertian.a
-lib/panorama/plugins/bsdf_lambertian.la
-lib/panorama/plugins/bsdf_lambertian.so.0
-@exec ln -s bsdf_lambertian.so.0 %D/lib/panorama/plugins/bsdf_lambertian.so
-@unexec rm -f %D/lib/panorama/plugins/bsdf_lambertian.so
-lib/panorama/plugins/bsdf_phong.a
-lib/panorama/plugins/bsdf_phong.la
-lib/panorama/plugins/bsdf_phong.so.0
-@exec ln -s bsdf_phong.so.0 %D/lib/panorama/plugins/bsdf_phong.so
-@unexec rm -f %D/lib/panorama/plugins/bsdf_phong.so
-lib/panorama/plugins/bsdf_schlick.a
-lib/panorama/plugins/bsdf_schlick.la
-lib/panorama/plugins/bsdf_schlick.so.0
-@exec ln -s bsdf_schlick.so.0 %D/lib/panorama/plugins/bsdf_schlick.so
-@unexec rm -f %D/lib/panorama/plugins/bsdf_schlick.so
-lib/panorama/plugins/bsdf_schlick_double.a
-lib/panorama/plugins/bsdf_schlick_double.la
-lib/panorama/plugins/bsdf_schlick_double.so.0
-@exec ln -s bsdf_schlick_double.so.0 %D/lib/panorama/plugins/bsdf_schlick_double.so
-@unexec rm -f %D/lib/panorama/plugins/bsdf_schlick_double.so
-lib/panorama/plugins/bsdf_ward.a
-lib/panorama/plugins/bsdf_ward.la
-lib/panorama/plugins/bsdf_ward.so.0
-@exec ln -s bsdf_ward.so.0 %D/lib/panorama/plugins/bsdf_ward.so
-@unexec rm -f %D/lib/panorama/plugins/bsdf_ward.so
-lib/panorama/plugins/gif_io.a
-lib/panorama/plugins/gif_io.la
-lib/panorama/plugins/gif_io.so.0
-@exec ln -s gif_io.so.0 %D/lib/panorama/plugins/gif_io.so
-@unexec rm -f %D/lib/panorama/plugins/gif_io.so
-lib/panorama/plugins/if_cartoon.a
-lib/panorama/plugins/if_cartoon.la
-lib/panorama/plugins/if_cartoon.so.0
-@exec ln -s if_cartoon.so.0 %D/lib/panorama/plugins/if_cartoon.so
-@unexec rm -f %D/lib/panorama/plugins/if_cartoon.so
-lib/panorama/plugins/if_convert_to_grey.a
-lib/panorama/plugins/if_convert_to_grey.la
-lib/panorama/plugins/if_convert_to_grey.so.0
-@exec ln -s if_convert_to_grey.so.0 %D/lib/panorama/plugins/if_convert_to_grey.so
-@unexec rm -f %D/lib/panorama/plugins/if_convert_to_grey.so
-lib/panorama/plugins/if_fog.a
-lib/panorama/plugins/if_fog.la
-lib/panorama/plugins/if_fog.so.0
-@exec ln -s if_fog.so.0 %D/lib/panorama/plugins/if_fog.so
-@unexec rm -f %D/lib/panorama/plugins/if_fog.so
-lib/panorama/plugins/if_lens_flare.a
-lib/panorama/plugins/if_lens_flare.la
-lib/panorama/plugins/if_lens_flare.so.0
-@exec ln -s if_lens_flare.so.0 %D/lib/panorama/plugins/if_lens_flare.so
-@unexec rm -f %D/lib/panorama/plugins/if_lens_flare.so
-lib/panorama/plugins/if_text.a
-lib/panorama/plugins/if_text.la
-lib/panorama/plugins/if_text.so.0
-@exec ln -s if_text.so.0 %D/lib/panorama/plugins/if_text.so
-@unexec rm -f %D/lib/panorama/plugins/if_text.so
-lib/panorama/plugins/jpeg_io.a
-lib/panorama/plugins/jpeg_io.la
-lib/panorama/plugins/jpeg_io.so.0
-@exec ln -s jpeg_io.so.0 %D/lib/panorama/plugins/jpeg_io.so
-@unexec rm -f %D/lib/panorama/plugins/jpeg_io.so
-lib/panorama/plugins/of_cartoon.a
-lib/panorama/plugins/of_cartoon.la
-lib/panorama/plugins/of_cartoon.so.0
-@exec ln -s of_cartoon.so.0 %D/lib/panorama/plugins/of_cartoon.so
-@unexec rm -f %D/lib/panorama/plugins/of_cartoon.so
-lib/panorama/plugins/of_convert_to_grey.a
-lib/panorama/plugins/of_convert_to_grey.la
-lib/panorama/plugins/of_convert_to_grey.so.0
-@exec ln -s of_convert_to_grey.so.0 %D/lib/panorama/plugins/of_convert_to_grey.so
-@unexec rm -f %D/lib/panorama/plugins/of_convert_to_grey.so
-lib/panorama/plugins/parallel.a
-lib/panorama/plugins/parallel.la
-lib/panorama/plugins/parallel.so.0
-@unexec rm -f %D/lib/panorama/plugins/parallel.so
-@exec ln -s parallel.so.0 %D/lib/panorama/plugins/parallel.so
-lib/panorama/plugins/pat_amplifier.a
-lib/panorama/plugins/pat_amplifier.la
-lib/panorama/plugins/pat_amplifier.so.0
-@exec ln -s pat_amplifier.so.0 %D/lib/panorama/plugins/pat_amplifier.so
-@unexec rm -f %D/lib/panorama/plugins/pat_amplifier.so
-lib/panorama/plugins/pat_brick.a
-lib/panorama/plugins/pat_brick.la
-lib/panorama/plugins/pat_brick.so.0
-@exec ln -s pat_brick.so.0 %D/lib/panorama/plugins/pat_brick.so
-@unexec rm -f %D/lib/panorama/plugins/pat_brick.so
-lib/panorama/plugins/pat_checker.a
-lib/panorama/plugins/pat_checker.la
-lib/panorama/plugins/pat_checker.so.0
-@exec ln -s pat_checker.so.0 %D/lib/panorama/plugins/pat_checker.so
-@unexec rm -f %D/lib/panorama/plugins/pat_checker.so
-lib/panorama/plugins/pat_composite.a
-lib/panorama/plugins/pat_composite.la
-lib/panorama/plugins/pat_composite.so.0
-@exec ln -s pat_composite.so.0 %D/lib/panorama/plugins/pat_composite.so
-@unexec rm -f %D/lib/panorama/plugins/pat_composite.so
-lib/panorama/plugins/pat_crackle.a
-lib/panorama/plugins/pat_crackle.la
-lib/panorama/plugins/pat_crackle.so.0
-@exec ln -s pat_crackle.so.0 %D/lib/panorama/plugins/pat_crackle.so
-@unexec rm -f %D/lib/panorama/plugins/pat_crackle.so
-lib/panorama/plugins/pat_cylgrad.a
-lib/panorama/plugins/pat_cylgrad.la
-lib/panorama/plugins/pat_cylgrad.so.0
-@exec ln -s pat_cylgrad.so.0 %D/lib/panorama/plugins/pat_cylgrad.so
-@unexec rm -f %D/lib/panorama/plugins/pat_cylgrad.so
-lib/panorama/plugins/pat_leopard.a
-lib/panorama/plugins/pat_leopard.la
-lib/panorama/plugins/pat_leopard.so.0
-@exec ln -s pat_leopard.so.0 %D/lib/panorama/plugins/pat_leopard.so
-@unexec rm -f %D/lib/panorama/plugins/pat_leopard.so
-lib/panorama/plugins/pat_marble.a
-lib/panorama/plugins/pat_marble.la
-lib/panorama/plugins/pat_marble.so.0
-@exec ln -s pat_marble.so.0 %D/lib/panorama/plugins/pat_marble.so
-@unexec rm -f %D/lib/panorama/plugins/pat_marble.so
-lib/panorama/plugins/pat_noise.a
-lib/panorama/plugins/pat_noise.la
-lib/panorama/plugins/pat_noise.so.0
-@exec ln -s pat_noise.so.0 %D/lib/panorama/plugins/pat_noise.so
-@unexec rm -f %D/lib/panorama/plugins/pat_noise.so
-lib/panorama/plugins/pat_parquet.a
-lib/panorama/plugins/pat_parquet.la
-lib/panorama/plugins/pat_parquet.so.0
-@exec ln -s pat_parquet.so.0 %D/lib/panorama/plugins/pat_parquet.so
-@unexec rm -f %D/lib/panorama/plugins/pat_parquet.so
-lib/panorama/plugins/pat_texture.a
-lib/panorama/plugins/pat_texture.la
-lib/panorama/plugins/pat_texture.so.0
-@exec ln -s pat_texture.so.0 %D/lib/panorama/plugins/pat_texture.so
-@unexec rm -f %D/lib/panorama/plugins/pat_texture.so
-lib/panorama/plugins/pat_wood.a
-lib/panorama/plugins/pat_wood.la
-lib/panorama/plugins/pat_wood.so.0
-@exec ln -s pat_wood.so.0 %D/lib/panorama/plugins/pat_wood.so
-@unexec rm -f %D/lib/panorama/plugins/pat_wood.so
-lib/panorama/plugins/pat_worley.a
-lib/panorama/plugins/pat_worley.la
-lib/panorama/plugins/pat_worley.so.0
-@exec ln -s pat_worley.so.0 %D/lib/panorama/plugins/pat_worley.so
-@unexec rm -f %D/lib/panorama/plugins/pat_worley.so
-lib/panorama/plugins/per_brick.a
-lib/panorama/plugins/per_brick.la
-lib/panorama/plugins/per_brick.so.0
-@exec ln -s per_brick.so.0 %D/lib/panorama/plugins/per_brick.so
-@unexec rm -f %D/lib/panorama/plugins/per_brick.so
-lib/panorama/plugins/per_bump.a
-lib/panorama/plugins/per_bump.la
-lib/panorama/plugins/per_bump.so.0
-@exec ln -s per_bump.so.0 %D/lib/panorama/plugins/per_bump.so
-@unexec rm -f %D/lib/panorama/plugins/per_bump.so
-lib/panorama/plugins/per_crackle.a
-lib/panorama/plugins/per_crackle.la
-lib/panorama/plugins/per_crackle.so.0
-@exec ln -s per_crackle.so.0 %D/lib/panorama/plugins/per_crackle.so
-@unexec rm -f %D/lib/panorama/plugins/per_crackle.so
-lib/panorama/plugins/per_leopard.a
-lib/panorama/plugins/per_leopard.la
-lib/panorama/plugins/per_leopard.so.0
-@exec ln -s per_leopard.so.0 %D/lib/panorama/plugins/per_leopard.so
-@unexec rm -f %D/lib/panorama/plugins/per_leopard.so
-lib/panorama/plugins/per_marble.a
-lib/panorama/plugins/per_marble.la
-lib/panorama/plugins/per_marble.so.0
-@exec ln -s per_marble.so.0 %D/lib/panorama/plugins/per_marble.so
-@unexec rm -f %D/lib/panorama/plugins/per_marble.so
-lib/panorama/plugins/per_noise.a
-lib/panorama/plugins/per_noise.la
-lib/panorama/plugins/per_noise.so.0
-@exec ln -s per_noise.so.0 %D/lib/panorama/plugins/per_noise.so
-@unexec rm -f %D/lib/panorama/plugins/per_noise.so
-lib/panorama/plugins/per_wave.a
-lib/panorama/plugins/per_wave.la
-lib/panorama/plugins/per_wave.so.0
-@exec ln -s per_wave.so.0 %D/lib/panorama/plugins/per_wave.so
-@unexec rm -f %D/lib/panorama/plugins/per_wave.so
-lib/panorama/plugins/per_worley.a
-lib/panorama/plugins/per_worley.la
-lib/panorama/plugins/per_worley.so.0
-@exec ln -s per_worley.so.0 %D/lib/panorama/plugins/per_worley.so
-@unexec rm -f %D/lib/panorama/plugins/per_worley.so
-lib/panorama/plugins/pinhole.a
-lib/panorama/plugins/pinhole.la
-lib/panorama/plugins/pinhole.so.0
-@exec ln -s pinhole.so.0 %D/lib/panorama/plugins/pinhole.so
-@unexec rm -f %D/lib/panorama/plugins/pinhole.so
-lib/panorama/plugins/png_io.a
-lib/panorama/plugins/png_io.la
-lib/panorama/plugins/png_io.so.0
-@exec ln -s png_io.so.0 %D/lib/panorama/plugins/png_io.so
-@unexec rm -f %D/lib/panorama/plugins/png_io.so
-lib/panorama/plugins/point_light.a
-lib/panorama/plugins/point_light.la
-lib/panorama/plugins/point_light.so.0
-@exec ln -s point_light.so.0 %D/lib/panorama/plugins/point_light.so
-@unexec rm -f %D/lib/panorama/plugins/point_light.so
-lib/panorama/plugins/projector.a
-lib/panorama/plugins/projector.la
-lib/panorama/plugins/projector.so.0
-@exec ln -s projector.so.0 %D/lib/panorama/plugins/projector.so
-@unexec rm -f %D/lib/panorama/plugins/projector.so
-lib/panorama/plugins/raytracer.a
-lib/panorama/plugins/raytracer.la
-lib/panorama/plugins/raytracer.so.0
-@exec ln -s raytracer.so.0 %D/lib/panorama/plugins/raytracer.so
-@unexec rm -f %D/lib/panorama/plugins/raytracer.so
-lib/panorama/plugins/rt_io.a
-lib/panorama/plugins/rt_io.la
-lib/panorama/plugins/rt_io.so.0
-@exec ln -s rt_io.so.0 %D/lib/panorama/plugins/rt_io.so
-@unexec rm -f %D/lib/panorama/plugins/rt_io.so
-lib/panorama/plugins/tga_io.a
-lib/panorama/plugins/tga_io.la
-lib/panorama/plugins/tga_io.so.0
-@exec ln -s tga_io.so.0 %D/lib/panorama/plugins/tga_io.so
-@unexec rm -f %D/lib/panorama/plugins/tga_io.so
-lib/panorama/plugins/thinlens.a
-lib/panorama/plugins/thinlens.la
-lib/panorama/plugins/thinlens.so.0
-@exec ln -s thinlens.so.0 %D/lib/panorama/plugins/thinlens.so
-@unexec rm -f %D/lib/panorama/plugins/thinlens.so
-lib/panorama/plugins/warn_light.a
-lib/panorama/plugins/warn_light.la
-lib/panorama/plugins/warn_light.so.0
-@exec ln -s warn_light.so.0 %D/lib/panorama/plugins/warn_light.so
-@unexec rm -f %D/lib/panorama/plugins/warn_light.so
+lib/panorama/plugins/aggregate_uniform_grid.so
+lib/panorama/plugins/atm_const.so
+lib/panorama/plugins/bezier.so
+lib/panorama/plugins/bsdf_cook_torrance.so
+lib/panorama/plugins/bsdf_lambertian.so
+lib/panorama/plugins/bsdf_phong.so
+lib/panorama/plugins/bsdf_schlick.so
+lib/panorama/plugins/bsdf_schlick_double.so
+lib/panorama/plugins/bsdf_ward.so
+lib/panorama/plugins/gif_io.so
+lib/panorama/plugins/if_cartoon.so
+lib/panorama/plugins/if_convert_to_grey.so
+lib/panorama/plugins/if_fog.so
+lib/panorama/plugins/if_lens_flare.so
+lib/panorama/plugins/if_text.so
+lib/panorama/plugins/jpeg_io.so
+lib/panorama/plugins/of_cartoon.so
+lib/panorama/plugins/of_convert_to_grey.so
+lib/panorama/plugins/parallel.so
+lib/panorama/plugins/pat_amplifier.so
+lib/panorama/plugins/pat_brick.so
+lib/panorama/plugins/pat_checker.so
+lib/panorama/plugins/pat_composite.so
+lib/panorama/plugins/pat_crackle.so
+lib/panorama/plugins/pat_cylgrad.so
+lib/panorama/plugins/pat_leopard.so
+lib/panorama/plugins/pat_marble.so
+lib/panorama/plugins/pat_noise.so
+lib/panorama/plugins/pat_parquet.so
+lib/panorama/plugins/pat_texture.so
+lib/panorama/plugins/pat_wood.so
+lib/panorama/plugins/pat_worley.so
+lib/panorama/plugins/per_brick.so
+lib/panorama/plugins/per_bump.so
+lib/panorama/plugins/per_crackle.so
+lib/panorama/plugins/per_leopard.so
+lib/panorama/plugins/per_marble.so
+lib/panorama/plugins/per_noise.so
+lib/panorama/plugins/per_wave.so
+lib/panorama/plugins/per_worley.so
+lib/panorama/plugins/pinhole.so
+lib/panorama/plugins/png_io.so
+lib/panorama/plugins/point_light.so
+lib/panorama/plugins/projector.so
+lib/panorama/plugins/raytracer.so
+lib/panorama/plugins/rt_io.so
+lib/panorama/plugins/tga_io.so
+lib/panorama/plugins/thinlens.so
+lib/panorama/plugins/tiff_io.so
+lib/panorama/plugins/warn_light.so
 lib/panorama/texture/f16.tga
 lib/panorama/texture/supernova.tga
-%%PORTDOCS%%share/doc/panorama/AUTHORS
-%%PORTDOCS%%share/doc/panorama/BUGS
-%%PORTDOCS%%share/doc/panorama/CREDITS
-%%PORTDOCS%%share/doc/panorama/EXPERIMENTAL
-%%PORTDOCS%%share/doc/panorama/FAQ.html
-%%PORTDOCS%%share/doc/panorama/INSTALL
-%%PORTDOCS%%share/doc/panorama/LICENSE
-%%PORTDOCS%%share/doc/panorama/NEWS
-%%PORTDOCS%%share/doc/panorama/README
-%%PORTDOCS%%share/doc/panorama/config
-%%PORTDOCS%%share/doc/panorama/developers/C++_Coding_Style
-%%PORTDOCS%%share/doc/panorama/developers/General
-%%PORTDOCS%%share/doc/panorama/developers/PROJECTS
-%%PORTDOCS%%share/doc/panorama/developers/README
-%%PORTDOCS%%share/doc/panorama/developers/WRITING_A_PLUGIN
-%%PORTDOCS%%share/doc/panorama/pluginrc
-%%PORTDOCS%%share/doc/panorama/users/README
-%%PORTDOCS%%share/doc/panorama/users/classes.html
-%%PORTDOCS%%share/doc/panorama/users/language.html
-share/panorama/include/cameras.inc
-share/panorama/include/colors.inc
-share/panorama/include/materials.inc
-share/panorama/scenes/atmospheric/atmosphere.rt
-share/panorama/scenes/lights/area_light1.rt
-share/panorama/scenes/lights/area_light2.rt
-share/panorama/scenes/lights/halo_lights.rt
-share/panorama/scenes/lights/night.rt
-share/panorama/scenes/lights/night2.rt
-share/panorama/scenes/lights/projector.rt
-share/panorama/scenes/lights/warn.rt
-share/panorama/scenes/materials/amplifier.rt
-share/panorama/scenes/materials/anisotropic.rt
-share/panorama/scenes/materials/anisotropic2.rt
-share/panorama/scenes/materials/background_mapping.rt
-share/panorama/scenes/materials/brick.rt
-share/panorama/scenes/materials/bump.rt
-share/panorama/scenes/materials/checker.rt
-share/panorama/scenes/materials/checker45.rt
-share/panorama/scenes/materials/composite.rt
-share/panorama/scenes/materials/cook.rt
-share/panorama/scenes/materials/crackle.rt
-share/panorama/scenes/materials/crystal.rt
-share/panorama/scenes/materials/cylgrad.rt
-share/panorama/scenes/materials/leopard.rt
-share/panorama/scenes/materials/marble.rt
-share/panorama/scenes/materials/marble2.rt
-share/panorama/scenes/materials/materials.rt
-share/panorama/scenes/materials/painted_crystal.rt
-share/panorama/scenes/materials/pattern_demo.rt
-share/panorama/scenes/materials/schlick.rt
-share/panorama/scenes/materials/schlick_double.rt
-share/panorama/scenes/materials/texture.rt
-share/panorama/scenes/materials/ward.rt
-share/panorama/scenes/materials/warping.rt
-share/panorama/scenes/materials/water.rt
-share/panorama/scenes/materials/wood.rt
-share/panorama/scenes/materials/worley.rt
-share/panorama/scenes/misc/cornell_box.rt
-share/panorama/scenes/misc/lamp.rt
-share/panorama/scenes/misc/lamp_point.rt
-share/panorama/scenes/misc/lens_flare.rt
-share/panorama/scenes/misc/plastic_cornell_box.rt
-share/panorama/scenes/misc/projector_cartoon.rt
-share/panorama/scenes/misc/text.rt
-share/panorama/scenes/misc/train.rt
-share/panorama/scenes/misc/xmas-tree.rt
-share/panorama/scenes/objects/aggregate.rt
-share/panorama/scenes/objects/aggregate_uniform_grid.rt
-share/panorama/scenes/objects/box.rt
-share/panorama/scenes/objects/circle.rt
-share/panorama/scenes/objects/cone.rt
-share/panorama/scenes/objects/csg.rt
-share/panorama/scenes/objects/cylinder.rt
-share/panorama/scenes/objects/phong_triangle.rt
-share/panorama/scenes/objects/rectangle.rt
-share/panorama/scenes/objects/teapot.rt
-share/panorama/scenes/objects/torus.rt
-share/panorama/scenes/objects/triangle.rt
-@dirrm share/panorama/scenes/objects
-@dirrm share/panorama/scenes/misc
-@dirrm share/panorama/scenes/materials
-@dirrm share/panorama/scenes/lights
-@dirrm share/panorama/scenes/atmospheric
-@dirrm share/panorama/scenes
-@dirrm share/panorama/include
-@dirrm share/panorama
-%%PORTDOCS%%@dirrm share/doc/panorama/users
-%%PORTDOCS%%@dirrm share/doc/panorama/developers
-%%PORTDOCS%%@dirrm share/doc/panorama
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/EXPERIMENTAL
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.html
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/config
+%%PORTDOCS%%%%DOCSDIR%%/developers/C++_Coding_Style
+%%PORTDOCS%%%%DOCSDIR%%/developers/General
+%%PORTDOCS%%%%DOCSDIR%%/developers/PROJECTS
+%%PORTDOCS%%%%DOCSDIR%%/developers/README
+%%PORTDOCS%%%%DOCSDIR%%/developers/WRITING_A_PLUGIN
+%%PORTDOCS%%%%DOCSDIR%%/pluginrc
+%%PORTDOCS%%%%DOCSDIR%%/users/README
+%%PORTDOCS%%%%DOCSDIR%%/users/classes.html
+%%PORTDOCS%%%%DOCSDIR%%/users/language.html
+%%DATADIR%%/include/cameras.inc
+%%DATADIR%%/include/colors.inc
+%%DATADIR%%/include/materials.inc
+%%DATADIR%%/scenes/atmospheric/atmosphere.rt
+%%DATADIR%%/scenes/lights/area_light1.rt
+%%DATADIR%%/scenes/lights/area_light2.rt
+%%DATADIR%%/scenes/lights/halo_lights.rt
+%%DATADIR%%/scenes/lights/night.rt
+%%DATADIR%%/scenes/lights/night2.rt
+%%DATADIR%%/scenes/lights/projector.rt
+%%DATADIR%%/scenes/lights/warn.rt
+%%DATADIR%%/scenes/materials/amplifier.rt
+%%DATADIR%%/scenes/materials/anisotropic.rt
+%%DATADIR%%/scenes/materials/anisotropic2.rt
+%%DATADIR%%/scenes/materials/background_mapping.rt
+%%DATADIR%%/scenes/materials/brick.rt
+%%DATADIR%%/scenes/materials/bump.rt
+%%DATADIR%%/scenes/materials/checker.rt
+%%DATADIR%%/scenes/materials/checker45.rt
+%%DATADIR%%/scenes/materials/composite.rt
+%%DATADIR%%/scenes/materials/cook.rt
+%%DATADIR%%/scenes/materials/crackle.rt
+%%DATADIR%%/scenes/materials/crystal.rt
+%%DATADIR%%/scenes/materials/cylgrad.rt
+%%DATADIR%%/scenes/materials/leopard.rt
+%%DATADIR%%/scenes/materials/marble.rt
+%%DATADIR%%/scenes/materials/marble2.rt
+%%DATADIR%%/scenes/materials/materials.rt
+%%DATADIR%%/scenes/materials/painted_crystal.rt
+%%DATADIR%%/scenes/materials/pattern_demo.rt
+%%DATADIR%%/scenes/materials/schlick.rt
+%%DATADIR%%/scenes/materials/schlick_double.rt
+%%DATADIR%%/scenes/materials/texture.rt
+%%DATADIR%%/scenes/materials/ward.rt
+%%DATADIR%%/scenes/materials/warping.rt
+%%DATADIR%%/scenes/materials/water.rt
+%%DATADIR%%/scenes/materials/wood.rt
+%%DATADIR%%/scenes/materials/worley.rt
+%%DATADIR%%/scenes/misc/cornell_box.rt
+%%DATADIR%%/scenes/misc/lamp.rt
+%%DATADIR%%/scenes/misc/lamp_point.rt
+%%DATADIR%%/scenes/misc/lens_flare.rt
+%%DATADIR%%/scenes/misc/plastic_cornell_box.rt
+%%DATADIR%%/scenes/misc/projector_cartoon.rt
+%%DATADIR%%/scenes/misc/text.rt
+%%DATADIR%%/scenes/misc/train.rt
+%%DATADIR%%/scenes/misc/xmas-tree.rt
+%%DATADIR%%/scenes/objects/aggregate.rt
+%%DATADIR%%/scenes/objects/aggregate_uniform_grid.rt
+%%DATADIR%%/scenes/objects/box.rt
+%%DATADIR%%/scenes/objects/circle.rt
+%%DATADIR%%/scenes/objects/cone.rt
+%%DATADIR%%/scenes/objects/csg.rt
+%%DATADIR%%/scenes/objects/cylinder.rt
+%%DATADIR%%/scenes/objects/phong_triangle.rt
+%%DATADIR%%/scenes/objects/rectangle.rt
+%%DATADIR%%/scenes/objects/teapot.rt
+%%DATADIR%%/scenes/objects/torus.rt
+%%DATADIR%%/scenes/objects/triangle.rt
+@dirrm %%DATADIR%%/scenes/objects
+@dirrm %%DATADIR%%/scenes/misc
+@dirrm %%DATADIR%%/scenes/materials
+@dirrm %%DATADIR%%/scenes/lights
+@dirrm %%DATADIR%%/scenes/atmospheric
+@dirrm %%DATADIR%%/scenes
+@dirrm %%DATADIR%%/include
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/users
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/developers
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/panorama/texture
 @dirrm lib/panorama/plugins
 @dirrm lib/panorama/gradients

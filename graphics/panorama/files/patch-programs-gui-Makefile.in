@@ -1,18 +1,20 @@
---- programs/gui/Makefile.in.orig	Wed Feb 12 02:56:36 2003
-+++ programs/gui/Makefile.in	Tue Dec  9 15:42:14 2003
+--- programs/gui/Makefile.in.orig	Wed Feb 12 10:56:36 2003
++++ programs/gui/Makefile.in	Fri Dec 12 17:21:15 2003
+@@ -15,7 +15,7 @@
+ LDFLAGS += -L${BUILD_TOP}/llapi -L${BUILD_TOP}/hlapi -lllapi -lhlapi @LIBS@ ${ARCH_PROG_SETLIBPATH}
+ endif
+ 
+-CXXFLAGS += `gtkmm-config --cflags` -O2 -fno-expensive-optimizations
++CXXFLAGS += `gtkmm-config --cflags` -fno-expensive-optimizations
+ LDFLAGS  += `gtkmm-config --libs` -L${BUILD_TOP}/llapi -L${BUILD_TOP}/hlapi -lllapi -lhlapi @LIBS@
+ 
+ EXE = panorama
 @@ -39,7 +39,7 @@
  
  install:        all
  		@echo Installing program panorama...
 -		@@INSTALL_PROGRAM@ ${EXE} ${BIN_DIR}
-+		@@INSTALL_PROGRAM@ .libs/${EXE} ${BIN_DIR}
++		${LIBTOOL} --mode=install @INSTALL_PROGRAM@ ${EXE} ${BIN_DIR}
  
  ${EXE}:		${OBJ}
  		@echo Making program ${EXE}...
-@@ -53,4 +53,4 @@
- distclean:      clean
- 		@rm -f Makefile
- 
--include ${BUILD_TOP}/Makefile.deps
-\ No newline at end of file
-+include ${BUILD_TOP}/Makefile.deps

@@ -1,5 +1,23 @@
---- configure.orig	Wed Feb 12 05:06:57 2003
-+++ configure	Tue Dec  9 13:57:44 2003
+--- configure.orig	Wed Feb 12 13:06:57 2003
++++ configure	Sat Dec 13 16:06:49 2003
+@@ -7699,7 +7699,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lc  $LIBS"
++LIBS="$LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -7752,7 +7752,7 @@
+ #define HAVE_LIBC 1
+ _ACEOF
+ 
+-  LIBS="-lc $LIBS"
++  LIBS="$LIBS"
+ 
+ fi
+ 
 @@ -10538,3 +10538,4 @@
  
  ln -s $ac_aux_dir/Makefile.deps . 2>/dev/null
