@@ -162,6 +162,7 @@
     SUBDIR += kinput2-sj3+wnn7
     SUBDIR += kinput2-wnn6
     SUBDIR += kinput2-wnn7
+    SUBDIR += kochi-cidfonts
     SUBDIR += kochi-ttfonts
     SUBDIR += kon2-14dot
     SUBDIR += kon2-16dot

@@ -1,0 +1,6 @@
+`Kochi-CID' is a trial to convert modification-free TrueType fonts
+`Kochi Mincho' and `Kochi Gothic' designed by Yasuyuki Furukawa
+to CID-keyed fonts which can be used on Ghostscript, FreeType or
+other PostScript software/hardware.
+
+WWW: http://khdd.net/Kochi-CID/
