@@ -1,0 +1,27 @@
+bin/gbf-am-build
+bin/gbf-am-parse
+bin/gbf-am-project
+bin/gbf-controls-server
+bin/gnome-build-clean.sh
+etc/gnome_buildConf.sh
+include/gbf/gbf-build-info.h
+include/gbf/gbf-project-client.h
+include/gbf/gbf-project-tree.h
+include/gbf/gbf-target-tree.h
+include/gbf/gbf-widgets.h
+include/gbf/gbf.h
+include/gbf/gnome-build.h
+lib/libgbf-widgets.a
+lib/libgbf-widgets.so
+lib/libgbf-widgets.so.0
+lib/libgbf.a
+lib/libgbf.so
+lib/libgbf.so.0
+share/gnome/idl/gbf-project.idl
+share/gnome/idl/gnome-build.idl
+share/gnome/oaf/GNOME_Development_BuildControls.oaf
+share/gnome/oaf/GNOME_Development_Project_Automake.oaf
+share/gnome/pixmaps/gbf-build.png
+share/gnome/pixmaps/gbf-install.png
+share/gnome/ui/gbf-tree.xml
+@dirrm include/gbf

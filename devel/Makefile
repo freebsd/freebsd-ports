@@ -149,6 +149,7 @@
     SUBDIR += glib13
     SUBDIR += global
     SUBDIR += gmake
+    SUBDIR += gnomebuild
     SUBDIR += gnomecrash
     SUBDIR += gnomedebug
     SUBDIR += gnomevfs
