@@ -15,7 +15,7 @@ bin/webcam
 bin/xawtv
 bin/xawtv-remote
 lib/xawtv/bilinear.so
-lib/xawtv/conv-audio.so
+@comment lib/xawtv/conv-audio.so
 lib/xawtv/conv-mjpeg.so
 lib/xawtv/cubic.so
 lib/xawtv/drv0-bsd.so
@@ -26,8 +26,12 @@ lib/xawtv/flt-smooth.so
 lib/xawtv/linear-blend.so
 lib/xawtv/linedoubler.so
 lib/xawtv/read-avi.so
+%%DV%%lib/xawtv/read-dv.so
+%%QT%%lib/xawtv/read-qt.so
 lib/xawtv/snd-oss.so
 lib/xawtv/write-avi.so
+%%DV%%lib/xawtv/write-dv.so
+%%QT%%lib/xawtv/write-qt.so
 @dirrm lib/xawtv
 man/es/man1/fbtv.1
 man/es/man1/rootv.1
