@@ -14,6 +14,7 @@
     SUBDIR += gnu-regexp
     SUBDIR += guavac
     SUBDIR += infobus
+    SUBDIR += j2sdkee13
     SUBDIR += jad
     SUBDIR += jaf
     SUBDIR += jakarta-bcel
