@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Thu Feb 14 23:15:46 2002
++++ Makefile.in	Tue Sep  3 23:22:53 2002
+@@ -118,7 +118,7 @@
+              tools \
+              clients \
+              doc \
+-             demos
++             $(DEMOS)
+ 
+ AUTOMAKE_OPTIONS = 1.4
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4

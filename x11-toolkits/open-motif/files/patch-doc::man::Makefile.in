@@ -1,0 +1,11 @@
+--- doc/man/Makefile.in.orig	Thu Feb 14 23:15:49 2002
++++ doc/man/Makefile.in	Tue Sep  3 23:06:51 2002
+@@ -89,7 +89,7 @@
+ X_XMU = @X_XMU@
+ YACC = @YACC@
+ 
+-SUBDIRS = man1 man3 man4 man5
++SUBDIRS = man1 man3 man5
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../include/config.h
+ CONFIG_CLEAN_FILES = 
