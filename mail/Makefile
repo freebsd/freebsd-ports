@@ -87,6 +87,7 @@
     SUBDIR += muttzilla
     SUBDIR += nail
     SUBDIR += namg
+    SUBDIR += nbsmtp
     SUBDIR += newmail
     SUBDIR += nmh
     SUBDIR += nullmailer
