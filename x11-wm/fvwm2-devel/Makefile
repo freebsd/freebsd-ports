@@ -7,6 +7,7 @@
 
 PORTNAME=	fvwm
 PORTVERSION=	2.5.8
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/ \
 		http://www.fvwm.org/generated/icon_download/
@@ -21,7 +22,10 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Popular virtual window manager for X
 
-LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/Xft
+CONFIGURE_ARGS=	--with-iconv-library=${LOCALBASE}/lib \
+		--with-iconv-includes=${LOCALBASE}/include
+LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/Xft \
+		biconv.2:${PORTSDIR}/converters/iconv
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 .if defined(WITH_STROKE)
@@ -57,12 +61,6 @@ CONFIGURE_ARGS+=	--enable-multibyte
 LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
 CONFIGURE_ARGS+=	--with-png --with-png-includes=${LOCALBASE}/include \
 			--with-png-library=${LOCALBASE}/lib
-.endif
-
-.if !defined(WITHOUT_ICONV)
-LIB_DEPENDS+=	biconv.2:${PORTSDIR}/converters/iconv
-CONFIGURE_ARGS+=	--with-iconv-lib=/usr/local/lib \
-			--with-iconv-includes=/usr/local/include
 .endif
 
 .if defined(WITHOUT_BIDI)
