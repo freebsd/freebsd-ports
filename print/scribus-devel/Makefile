@@ -16,7 +16,7 @@ DIST_SUBDIR=		${PORTNAME}
 #PATCHFILES=		
 #PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=		freebsd-ports@freebsd.org
+MAINTAINER=		ports@freebsd.org
 
 RUN_DEPENDS+=		gs:${PORTSDIR}/print/ghostscript-gnu
 
