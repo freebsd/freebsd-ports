@@ -7,7 +7,7 @@ Fix the wrapper for ftruncate so that it deals properly with the 64-bit
 arguments.
 
 --- m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c.orig	Sat Mar 23 14:52:21 1996
-+++ m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c	Wed Sep 24 08:39:00 1997
++++ m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c	Tue Jun  2 14:22:48 1998
 @@ -80,7 +80,8 @@
  #include <sys/file.h>
  #include <sys/param.h>
@@ -437,7 +437,7 @@ arguments.
  { int result;
  
    ENTER_CRITICAL;
-@@ -950,24 +920,6 @@
+@@ -950,44 +920,40 @@
    return result;
  }
  
@@ -458,11 +458,56 @@ arguments.
 -  EXIT_CRITICAL;
 -  return result;
 -}
--
- int semctl(semid, semnum, cmd, arg)   /* ok ? */
- int semid, cmd;
- int semnum;
-@@ -1012,24 +964,6 @@
++int
++#if __FreeBSD_version >= 300002
++semctl(int semid, int semnum, int cmd, ...)
++#else
++semctl(int semid, int semnum, int cmd, union semun arg)
++#endif
++{
++  int result;
++#if __FreeBSD_version >= 300002
++  union semun arg;
++  va_list ap;
+ 
+-int semctl(semid, semnum, cmd, arg)   /* ok ? */
+-int semid, cmd;
+-int semnum;
+-union semun arg;
+-{ int result;
++  va_start(ap, cmd);
++  arg = va_arg(ap, union semun);
++  va_end(ap);
++#endif
+ 
+   ENTER_CRITICAL;
+   switch (cmd) {
+-  case GETNCNT:
+-  case GETPID:
+-  case GETVAL:
+-  case GETALL:
+-  case GETZCNT:
++
++  case IPC_SET:
+     MAKE_READABLE(arg.buf);
+     break;
++
+   case SETALL:
+-  case SETVAL:
++    MAKE_READABLE(arg.array);
++    break;
++
++  case IPC_STAT:
+     MAKE_WRITABLE(arg.buf);
+     break;
+-  default:
++
++  case GETALL:
++    MAKE_WRITABLE(arg.array);
+     break;
+   }
+   result = syscall(SYS_semsys, 0, semid, semnum, cmd, arg);
+@@ -1012,24 +978,6 @@
    return result;
  }
  
@@ -487,7 +532,7 @@ arguments.
  int sendmsg(s, msg, flags)   /* ok */
  int s;
  const struct msghdr msg[];
-@@ -1051,29 +985,8 @@
+@@ -1051,29 +999,8 @@
    return result;
  }
  
@@ -518,7 +563,7 @@ arguments.
  int namelen;
  { int result;
  
-@@ -1086,7 +999,7 @@
+@@ -1086,7 +1013,7 @@
  
  int setgroups(ngroups, gidset)   /* ok */
  int ngroups;
@@ -527,7 +572,7 @@ arguments.
  { int result;
  
    ENTER_CRITICAL;
-@@ -1097,7 +1010,7 @@
+@@ -1097,7 +1024,7 @@
  }
  
  int sethostname(name, namelen)   /* ok */
@@ -536,7 +581,7 @@ arguments.
  int namelen;
  { int result;
  #if __FreeBSD__ >= 2
-@@ -1213,20 +1126,20 @@
+@@ -1213,20 +1140,20 @@
    return result;
  }
  
@@ -564,7 +609,7 @@ arguments.
  int sigaltstack(ss, oss)   /* ok */
  const struct sigaltstack *ss;
  struct sigaltstack *oss;
-@@ -1239,20 +1152,6 @@
+@@ -1239,20 +1166,6 @@
    EXIT_CRITICAL;
    return result;
  }
@@ -585,7 +630,7 @@ arguments.
  
  int socketpair(d, type, protocol, sv)   /* ok */
  int d, type, protocol;
-@@ -1267,7 +1166,7 @@
+@@ -1267,7 +1180,7 @@
  }
  
  int stat(path, buf)   /* ok */
@@ -594,7 +639,7 @@ arguments.
  struct stat *buf;
  { int result;
  
-@@ -1280,7 +1179,7 @@
+@@ -1280,7 +1193,7 @@
  }
  
  int swapon(special)   /* ok */
@@ -603,7 +648,7 @@ arguments.
  { int result;
  
    ENTER_CRITICAL;
-@@ -1291,8 +1190,8 @@
+@@ -1291,8 +1204,8 @@
  }
  
  int symlink(name1, name2)   /* ok */
@@ -614,7 +659,7 @@ arguments.
  { int result;
  
    ENTER_CRITICAL;
-@@ -1304,14 +1203,14 @@
+@@ -1304,14 +1217,14 @@
  }
  
  int truncate(path, length)   /* ok */
@@ -633,7 +678,7 @@ arguments.
    EXIT_CRITICAL;
    return result;
  }
-@@ -1328,7 +1227,7 @@
+@@ -1328,7 +1241,7 @@
  }
  
  int unlink(path)   /* ok */
@@ -642,7 +687,7 @@ arguments.
  { int result;
  
    ENTER_CRITICAL;
-@@ -1414,19 +1313,6 @@
+@@ -1414,19 +1327,6 @@
    ENTER_CRITICAL;
    MAKE_WRITABLE(status);
    result = syscall(SYS_wait4, pid, status, options, NULL);
