@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jhb@FreeBSD.org
 
-LIB_DEPENDS=	epplet.1:${PORTSDIR}/x11-wm/epplets
+LIB_DEPENDS=	epplet.1:${PORTSDIR}/x11-wm/libepplet
 
 WRKSRC=		${WRKDIR}/E-FancyLauncher
 
