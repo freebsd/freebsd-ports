@@ -1,0 +1,20 @@
+*** vbidecode.cc.orig	Mon Jun  7 17:12:04 1999
+--- vbidecode.cc	Mon Jun  7 17:12:20 1999
+*************** TODO:
+*** 52,58 ****
+  #include <sys/stat.h>
+  
+  #include "tables.h"
+! #include "../../driver/bttv.h"
+  
+  int verbosity=0;
+  
+--- 52,59 ----
+  #include <sys/stat.h>
+  
+  #include "tables.h"
+! /* #include "../../driver/bttv.h" */
+! #define VBI_MAXLINES 16
+  
+  int verbosity=0;
+  

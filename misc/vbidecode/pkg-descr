@@ -1,0 +1,21 @@
+vbidecode - VBI data decoder
+Copyright (C) 1997,98 Ralph Metzler  (rjkm@thp.uni-koeln.de)
+
+Vbidecode decodes some of the data structures that are transmitted in the
+VBI (Vertical Blanking Interval) of television transmissions.
+It can decode the following formats, with some restrictions for NTSC users.
+
+- videotext/teletext
+  text based information pages (40x25 characters)
+
+- intercast
+  WWW pages transmitted via line 31 videotext in a kind of compressed
+  SLIP format
+
+- VPS
+  channel information and signals for automatic start/stop of VCRs
+
+- Videocrypt 1 and 2
+
+VBI data is read from /dev/vbi0 which is provided by a Video Capture
+card such as those using the Bt848/Bt878 family of video capture chips.
