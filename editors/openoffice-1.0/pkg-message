@@ -16,14 +16,6 @@ installation.
 
 1.2 OO.org installed as package
 
-First check if procfs is running. OO.org setup does depend on
-procfs and does crash without it. This dependency will be
-removed in future, but at the moment it is needed.
-Please read the procfs(5) manpage and ensure the the following
-line is in /etc/fstab:
-
-proc /proc procfs rw 0 0
-
 If you have just installed OO.org as package, there is no
 "make install-user" option available. Instead you'll have
 to run as the user you like to use OO.org:
