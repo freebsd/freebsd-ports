@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.mutt.org/mutt/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
 		ftp://ftp.demon.co.uk/pub/mirrors/mutt/ \
 		ftp://ftp.parodius.com/pub/mutt/ \
-		ftp://pgp.rasip.fer.hr/pub/mutt/international/ \
+		ftp://pgp.rasip.fer.hr/pub/mutt/international/
 DISTFILES=	${DISTNAME}i${EXTRACT_SUFX}
 
 PATCH_SITES=	http://www.mutt.org.ua/download/${PKGNAME}/ \
