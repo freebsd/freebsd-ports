@@ -20,6 +20,7 @@ WANT_GNOME=	yes
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
+MAKE_ENV=	SHELL=/bin/sh
 INSTALLS_SHLIB=	yes
 
 MAN1=	libmikmod-config.1
