@@ -1,0 +1,10 @@
+--- Makefile.orig	Sat Sep 25 10:29:04 1999
++++ Makefile	Sun Oct  3 15:19:42 1999
+@@ -1,6 +1,6 @@
+ # "Artistic Style" Makefile
+ 
+-CPPFLAGS = -O2 -W
++CPPFLAGS = ${CXXFLAGS} 
+ OBJS = ASResource.o ASBeautifier.o ASFormatter.o astyle_main.o
+ 
+ astyle: $(OBJS)
