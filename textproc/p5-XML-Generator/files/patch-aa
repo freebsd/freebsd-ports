@@ -1,0 +1,19 @@
+--- t/DOM.t.old	Fri Jan 30 22:31:16 2004
++++ t/DOM.t	Fri Jan 30 22:23:20 2004
+@@ -8,11 +8,11 @@
+ # (It may become useful if the test is moved to ./t subdirectory.)
+ 
+ BEGIN { 
+-  print "1..0 # Skipped: XML::DOM not installed\n" unless eval "use XML::DOM; 1";
+-  exit;
+-}
+-
+-BEGIN { $| = 1; print "1..37\n"; }
++  unless ( eval "use XML::DOM; 1" ) {
++    print "1..0 # Skipped: XML::DOM not installed\n";
++    exit;
++  }
++  $| = 1; print "1..37\n"; }
+ END {print "not ok 1\n" unless $loaded;}
+ use XML::Generator::DOM;
+ $loaded = 1;

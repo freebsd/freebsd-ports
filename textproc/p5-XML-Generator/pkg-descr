@@ -1,0 +1,5 @@
+XML::Generator is a simple perl module to help in the generation of XML.
+Basically, you create an XML::Generator object and then call a method
+for each tag, supplying the contents of that tag as parameters.
+
+WWW: http://search.cpan.org/search?dist=XML-Generator
