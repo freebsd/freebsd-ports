@@ -3,7 +3,7 @@
 # Date created:				10 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.3 1998/08/05 09:30:51 asami Exp $
+# $Id: Makefile,v 1.4 1998/08/10 12:16:53 steve Exp $
 #
 
 DISTNAME=	3dpong.0.3
@@ -21,6 +21,8 @@ do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/3dpong ${PREFIX}/bin
 	@ ${MKDIR} ${PREFIX}/share/3dpong
 	@ ${INSTALL_DATA} ${WRKSRC}/sounds/*.au ${PREFIX}/share/3dpong
+
+post-install:
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${PREFIX}/share/doc/3dpong
 	@ ${INSTALL_DATA} ${WRKSRC}/README.txt ${PREFIX}/share/doc/3dpong

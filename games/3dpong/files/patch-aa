@@ -1,20 +1,38 @@
---- makefile.orig	Mon Jan 26 17:18:05 1998
-+++ makefile	Sun Apr 26 23:48:06 1998
-@@ -11,11 +11,11 @@
+--- makefile	Sun Mar 15 05:43:34 1998
++++ /home/andy/tmp/wrk/makefile	Sun Jul 11 12:55:29 1999
+@@ -11,11 +11,28 @@
  
  # Makefile user-definable variables
  
--CC=gcc
-+CC+=$(CFLAGS) -I$(X11BASE)/include -DPREFIX=\"${PREFIX}\"
+-CC=gcc -I/usr/X11R6/include
++# C compiler
++CC?=cc
++
++# C compiler options
++CFLAGS?=-Wall
++
++# X Window base directory
++X11BASE?=/usr/X11R6
++
++# Include directory
++INCLUDE=-I$(X11BASE)/include
++
++# Installation directory
++PREFIX?=$(X11BASE)
++
++# Defines
++DEFINE=-DPREFIX=\"$(PREFIX)\"
++
  MATHLIB=-lm
  
- # adjust according to target
--XLIB=-lX11
+-# adjust according to target
+-XLIB=-L/usr/X11R6/lib -lX11
++# X library
 +XLIB=-L$(X11BASE)/lib -lX11
  
  # uncomment for sunos/solaris
  #XLIB=-L/usr/openwin/lib -lX11
-@@ -43,7 +43,7 @@
+@@ -43,7 +60,7 @@
  # Application:
  
  3dpong:	$(OBJECTS)
@@ -23,3 +41,44 @@
  	chmod 755 3dpong
  	strip 3dpong
  
+@@ -52,31 +69,31 @@
+ 
+ 3dpong.o:	3dpong.c window.h connect.h hints.h visual.h gc.h color.h \
+ 		randnum.h text.h
+-	$(CC)	3dpong.c -c
++	$(CC) $(CFLAGS) $(INCLUDE) $(DEFINE) 3dpong.c -c
+ 
+ 
+ # Library objects:
+ 
+ window.o:	window.c window.h
+-	$(CC)	window.c -c
++	$(CC) $(CFLAGS) $(INCLUDE) $(DEFINE) window.c -c
+ 
+ connect.o:	connect.c connect.h
+-	$(CC)	connect.c -c
++	$(CC) $(CFLAGS) $(INCLUDE) $(DEFINE) connect.c -c
+ 
+ hints.o:	hints.c hints.h
+-	$(CC)	hints.c -c
++	$(CC) $(CFLAGS) $(INCLUDE) $(DEFINE) hints.c -c
+ 
+ visual.o:	visual.c visual.h
+-	$(CC)	visual.c -c
++	$(CC) $(CFLAGS) $(INCLUDE) $(DEFINE) visual.c -c
+ 
+ gc.o:	gc.c gc.h
+-	$(CC)	gc.c -c
++	$(CC) $(CFLAGS) $(INCLUDE) $(DEFINE) gc.c -c
+ 
+ color.o:	color.c color.h
+-	$(CC)	color.c -c
++	$(CC) $(CFLAGS) $(INCLUDE) $(DEFINE) color.c -c
+ 
+ randnum.o:	randnum.c randnum.h
+-	$(CC)	randnum.c -c
++	$(CC) $(CFLAGS) $(INCLUDE) $(DEFINE) randnum.c -c
+ 
+ text.o:		text.c text.h
+-	$(CC)	text.c -c
++	$(CC) $(CFLAGS) $(INCLUDE) $(DEFINE) text.c -c
