@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	wdic-fpw
-PORTVERSION=	1.3a
-PORTREVISION=	1
+PORTVERSION=	1.4
+PORTREVISION=	0
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/wdic/
 DISTNAME=	${PORTNAME}${PORTVERSION}
