@@ -7,6 +7,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	0.6.7
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.zebra.fh-weingarten.de/~transcode/pre/
 
@@ -95,6 +96,10 @@ WITH_MJPEG=	yes
 
 .if exists(${LOCALBASE}/lib/liblzo.so)
 WITH_LZO=	yes
+.endif
+
+.if exists(${LINUXBASE}/usr/lib/libdivxdecore.so)
+WITH_DIVX5=	yes
 .endif
 
 .if defined(WITH_IMAGEMAGICK)
@@ -222,6 +227,12 @@ PLIST_SUB+=	WITH_SUBRIP=""
 PLIST_SUB+=	WITH_SUBRIP="@comment "
 .endif
 
+.if defined(WITH_DIVX5)
+BUILD_DEPENDS+=	${LINUXBASE}/usr/lib/libdivxdecore.so:${PORTSDIR}/multimedia/linux-divx4linux
+CONFIGURE_ENV+= CFLAGS="-I${LINUXBASE}/usr/include/divx" CPPFLAGS="-I${LINUXBASE}/usr/include/divx"
+.else
+.endif
+
 pre-everything::
 .if !defined(WITH_OPTIMIZED_CFLAGS)
 	@${ECHO_MSG}
@@ -302,6 +313,10 @@ pre-everything::
 .if !defined(WITH_SUBRIP)
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You can enable compilation of subtitleripper by defining WITH_SUBRIP."
+.endif
+.if !defined(WITH_DIVX5)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "You can enable experimental DivX 5 support by defining WITH_DIVX5."
 .endif
 
 post-patch:
