@@ -1,5 +1,0 @@
-libexec/apache/mod_macro.so
-@exec %D/sbin/apxs -e -A -n macro %D/%F
-@unexec %D/sbin/apxs -e -A -n macro %D/%F
-%%PORTDOCS%%%%DOCSDIR%%/mod_macro.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
