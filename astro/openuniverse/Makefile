@@ -8,7 +8,8 @@
 PORTNAME=	openuniverse
 PORTVERSION=	1.0.b3
 CATEGORIES=	astro
-MASTER_SITES=	http://download.sourceforge.net/openuniverse/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	openuniverse
 DISTNAME=	${PORTNAME}-1.0beta3
 
 MAINTAINER=	trevor@FreeBSD.org
