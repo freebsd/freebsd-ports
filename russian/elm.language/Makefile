@@ -2,13 +2,16 @@
 # Date created:         2 Dec 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.2 1996/02/26 01:04:20 ache Exp $
+# $Id: Makefile,v 1.3 1996/02/26 01:41:34 ache Exp $
 #
 
 PKGNAME=        ru-elm
 CATEGORIES+=    russian mail
+
 RUN_DEPENDS+=   elm:${PORTSDIR}/mail/elm
+
 MAINTAINER=     ache@FreeBSD.org
+
 NO_EXTRACT=     YES
 NO_WRKDIR=      YES
 NO_CONFIGURE=   YES
