@@ -32,6 +32,7 @@ do-extract:
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/* ${RUBY_ELISPDIR}/
+	${MKDIR} ${XEMACSLISPDIR}
 .for f in ${ELISP_FILES}
 	${LN} -sf ${RUBY_ELISPDIR}/${f} ${EMACSLISPDIR}/
 	${LN} -sf ${RUBY_ELISPDIR}/${f} ${XEMACSLISPDIR}/

@@ -31,6 +31,7 @@ do-extract:
 	${LN} -sf `cd ${.CURDIR}/../ruby-rdtool && ${MAKE} -V WRKSRC`/utils ${WRKSRC}
 
 do-install:
+	${MKDIR} ${XEMACSLISPDIR}/
 .for f in ${ELISP_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_ELISPDIR}/
 	${LN} -sf ${RUBY_ELISPDIR}/${f} ${EMACSLISPDIR}/
