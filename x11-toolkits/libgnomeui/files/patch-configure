@@ -1,0 +1,11 @@
+--- configure.orig	Fri Apr 30 16:48:30 2004
++++ configure	Fri Apr 30 16:48:40 2004
+@@ -1518,7 +1518,7 @@
+ LIBGNOMEUI_MAJOR_VERSION=2
+ LIBGNOMEUI_MINOR_VERSION=6
+ LIBGNOMEUI_MICRO_VERSION=1
+-LIBGNOMEUI_INTERFACE_AGE=0
++LIBGNOMEUI_INTERFACE_AGE=1
+ # If you need a modifier for the version number.
+ # Normally empty, but can be used to make "fixup" releases.
+ LIBGNOMEUI_EXTRAVERSION=
