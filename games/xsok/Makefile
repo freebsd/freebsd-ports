@@ -15,10 +15,12 @@ EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
 USE_IMAKE=	yes
-MAN6=		xsok.6x
+USE_XPM=	yes
+MAN6=		xsok.6
+
+do-configure:
+	cd ${WRKSRC}/src && ${XMKMF}
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/xsok.tex ${PREFIX}/share/doc/xsok

@@ -1,0 +1,12 @@
+--- Makefile.orig	Sun Mar 17 20:56:29 1996
++++ Makefile	Tue Sep 12 04:39:08 2000
+@@ -18,6 +18,9 @@
+ install:
+ 	(cd src && $(MAKE) install)
+ 
++install.man:
++	(cd src && $(MAKE) install.man)
++
+ install.local:
+ 	(cd src && $(MAKE) install.local)
+ 
