@@ -13,6 +13,7 @@ MASTER_SITES=	http://gusnet.cx/proj/ez-ipupdate/dist/
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Update your host name on any dynamic DNS service
 
+USE_RC_SUBR=	yes
 GNU_CONFIGURE=	yes
 
 post-install:
@@ -23,5 +24,6 @@ post-install:
 	done
 	${INSTALL_DATA} ${WRKSRC}/example.conf \
 			${PREFIX}/etc/ez-ipupdate.conf.sample
+	${INSTALL_SCRIPT} ${WRKDIR}/ez-ipupdate.sh ${PREFIX}/etc/rc.d
 
 .include <bsd.port.mk>
