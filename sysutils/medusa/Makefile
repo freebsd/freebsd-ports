@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	medusa
-PORTVERSION=	0.2
+PORTVERSION=	0.2.2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/medusa
