@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	plans
-PORTVERSION=	6.5.3
+PORTVERSION=	6.5.4
 CATEGORIES=	deskutils www
 MASTER_SITES=	http://www.planscalendar.com/release/:plans \
 		http://www.freebsd.org/gifs/:logo
@@ -40,6 +40,6 @@ do-install:
 	@${FIND} ${PREFIX}/${DIR} -type f -exec ${CHMOD} +x {} \;
 
 post-install:
-	${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
