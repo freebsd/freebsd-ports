@@ -15,6 +15,7 @@
     SUBDIR += jdk
     SUBDIR += jdk-doc
     SUBDIR += jdk-tutorial
+    SUBDIR += jdk12-beta
     SUBDIR += jfc
     SUBDIR += jikes
     SUBDIR += jlex
