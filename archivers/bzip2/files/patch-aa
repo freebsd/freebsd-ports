@@ -1,0 +1,13 @@
+--- Makefile.orig	Fri Aug 29 19:36:29 1997
++++ Makefile	Mon Apr 27 17:25:13 1998
+@@ -1,8 +1,8 @@
+ 
+-CC = gcc
++#CC = gcc
+ SH = /bin/sh
+ 
+-CFLAGS = -O3 -fomit-frame-pointer -funroll-loops
++#CFLAGS = -O3 -fomit-frame-pointer -funroll-loops
+ 
+ 
+ 
