@@ -1,6 +1,6 @@
---- Imakefile.orig	Mon Mar 14 05:42:26 2005
-+++ Imakefile	Mon Mar 14 20:22:16 2005
-@@ -101,7 +101,7 @@
+--- Imakefile.orig	Sun Mar 20 06:37:39 2005
++++ Imakefile	Mon Mar 21 13:27:05 2005
+@@ -98,7 +98,7 @@
  #endif
  
  DEPLIBS = always xpaint.man XPaint.ad
@@ -9,16 +9,52 @@
  
  SUBDIRS = rw
  
-@@ -163,7 +163,7 @@
+@@ -148,7 +148,7 @@
+ 
+ xaw::
+ 	-$(RM) $(XAWDEPENDS)
+-	-$(RM) xaw_incdir ; ln -sf /usr/include/X11/Xaw xaw_incdir
++	-$(RM) xaw_incdir ; ln -sf $(INCDIR)/X11/Xaw xaw_incdir
+ 	echo "XAWLIB_DEFINES = -DXAWPLAIN" > Local.xawdefs			
+ 	echo "SYS_LIBRARIES = XawClientLibs -lm" >> Local.xawdefs
+ 	xmkmf -a ; make
+@@ -160,7 +160,7 @@
  
  xaw3d::
- 	-$(RM) $(XAW3DDEPENDS)
+ 	-$(RM) $(XAWDEPENDS)
 -	-$(RM) xaw_incdir ; ln -sf /usr/include/X11/Xaw3d xaw_incdir	
 +	-$(RM) xaw_incdir ; ln -sf $(INCDIR)/X11/Xaw3d xaw_incdir	
  	echo "XAWLIB_DEFINES = -DXAW3D" > Local.xawdefs
  	echo "SYS_LIBRARIES = -lXaw3d -L." >> Local.xawdefs
  	xmkmf ; cd rw ; xmkmf ; cd .. ; make
-@@ -219,7 +219,7 @@
+@@ -171,7 +171,7 @@
+ 	
+ xaw3dg::
+ 	-$(RM) $(XAWDEPENDS)
+-	-$(RM) xaw_incdir ; ln -sf /usr/include/X11/Xaw3d xaw_incdir	
++	-$(RM) xaw_incdir ; ln -sf $(INCDIR)/X11/Xaw3d xaw_incdir	
+ 	echo "XAWLIB_DEFINES = -DXAW3D -DXAW3DG" > Local.xawdefs
+ 	echo "SYS_LIBRARIES = -lXaw3d -L." >> Local.xawdefs
+ 	xmkmf ; cd rw ; xmkmf ; cd .. ; make
+@@ -182,7 +182,7 @@
+ 
+ nextaw::
+ 	-$(RM) $(XAWDEPENDS)
+-	-$(RM) xaw_incdir ; ln -sf /usr/include/X11/neXtaw xaw_incdir	
++	-$(RM) xaw_incdir ; ln -sf $(INCDIR)/X11/neXtaw xaw_incdir	
+ 	echo "XAWLIB_DEFINES = -DXAW3D" > Local.xawdefs
+ 	echo "SYS_LIBRARIES = -lneXtaw -L." >> Local.xawdefs
+ 	xmkmf ; cd rw ; xmkmf ; cd .. ; make
+@@ -193,7 +193,7 @@
+ 
+ xaw95::
+ 	-$(RM) $(XAWDEPENDS)
+-	-$(RM) xaw_incdir ; ln -sf /usr/include/X11/Xaw95 xaw_incdir	
++	-$(RM) xaw_incdir ; ln -sf $(INCDIR)/X11/Xaw95 xaw_incdir	
+ 	echo "XAWLIB_DEFINES = -DXAW95" > Local.xawdefs
+ 	echo "SYS_LIBRARIES = -lXaw95 -L." >> Local.xawdefs
+ 	xmkmf -a ; make
+@@ -225,7 +225,7 @@
  		    XPAINT_PRINT_COMMAND "$(PRINT_COMMAND)" \
  		    XPAINT_POSTSCRIPT_VIEWER "$(POSTSCRIPT_VIEWER)" \
  		    XPAINT_EXTERN_VIEWER "$(EXTERN_VIEWER)"
