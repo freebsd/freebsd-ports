@@ -8,7 +8,7 @@
 PORTNAME=	decss
 PORTVERSION= 	1.0
 CATEGORIES=	www perl5
-MASTER_SITES=	http://www.totse.com/DeCSS/
+MASTER_SITES=	http://www.pigdog.org/decss/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
