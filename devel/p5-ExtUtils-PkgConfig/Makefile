@@ -17,6 +17,8 @@ COMMENT=	Simplistic interface to pkg-config
 
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
+BROKEN=		Configure fails
+
 PERL_CONFIGURE=	yes
 
 MAN3=		ExtUtils::PkgConfig.3
