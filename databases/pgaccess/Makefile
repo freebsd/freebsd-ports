@@ -7,6 +7,7 @@
 
 PORTNAME=	pgaccess
 PORTVERSION=	0.98.8
+PORTREVISION=	1
 CATEGORIES=	databases tcl83 tk83
 MASTER_SITES=	http://www.pgaccess.org/download/
 DIST_SUBDIR=	postgresql
@@ -15,9 +16,15 @@ MAINTAINER=	girgen@pingpong.net
 
 LIB_DEPENDS=	pgtcl:${PORTSDIR}/databases/postgresql-tcltk
 
+USE_REINPLACE=	yes
+
 TCL_VERSION?=	8.4
 PGACCESSDOCDIR=	${PREFIX}/share/doc/postgresql/pgaccess
 PGACCESSDIR=	${PREFIX}/share/postgresql/pgaccess
+
+post-patch:
+	@${REINPLACE_CMD} -e "s,/usr/bin,${PREFIX}/bin,g ; " ${WRKSRC}/lib/mainlib.tcl
+	@${RM} ${WRKSRC}/lib/mainlib.tcl.bak
 
 do-build:
 .for file in pgaccess.tcl pgmonitor
