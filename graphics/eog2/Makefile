@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	unstable/sources/eog
 
 MAINTAINER=	ade@FreeBSD.org
 
+BROKEN=		"Fails with new devel/bonobo"
+
 LIB_DEPENDS=	glade.4:${PORTSDIR}/devel/libglade \
 		bonobo.2:${PORTSDIR}/devel/bonobo \
 		gconf-1.1:${PORTSDIR}/devel/gconf
