@@ -7,7 +7,6 @@
 
 PORTNAME=	pfaedit
 PORTVERSION=	20${DIST_VER}
-PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://pfaedit.sourceforge.net/
 DISTFILES=	${EXTRACT_ONLY}
@@ -33,7 +32,7 @@ ALL_TARGET=	pfaedit
 
 MAN1=		pfaedit.1 sfddiff.1
 
-DIST_VER=	020310
+DIST_VER=	020312
 EXTRACT_ONLY=	${PORTNAME}_full-${DIST_VER}.tgz cidmaps.tgz
 
 .if !defined(NOPORTDOCS)
