@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.cairographics.org/snapshots/
 
 MAINTAINER=	ahze@FreeBSD.org
-COMMENT=	Gtk+ Bindings to cairo
+COMMENT=	Gtk+ bindings to cairo
 
 LIB_DEPENDS=	cairo.1:${PORTSDIR}/graphics/cairo
 
