@@ -7,7 +7,7 @@
 
 PORTNAME=	logcheck
 PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	ftp://sensimilia.eu.org/pub/software/sys/ \
 		http://www.ukc.mirror.ac.uk/sites/ftp.freebsd.org/pub/FreeBSD/ports/distfiles/ \
@@ -42,14 +42,16 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/logtail ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/systems/freebsd/logcheck.sh ${PREFIX}/etc
-	${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC}/systems/freebsd && \
-		${INSTALL_DATA} ${CONFIG_FILES} ${EXAMPLESDIR} && \
-		${INSTALL_DATA} ${CONFIG_FILES} ${PREFIX}/etc
+	@${MKDIR} ${EXAMPLESDIR}
+.for file in ${CONFIG_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/systems/freebsd/${file} ${EXAMPLESDIR}
+	@${TEST} -f ${PREFIX}/etc/${file} || \
+	  ${INSTALL_DATA} ${WRKSRC}/systems/freebsd/${file} ${PREFIX}/etc
+.endfor
 	${TEST} -d ${LOGCHECK_TMP} || ${MKDIR} -m 700 ${LOGCHECK_TMP}
 	${CHOWN} root:wheel ${LOGCHECK_TMP}
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
