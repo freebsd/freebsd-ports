@@ -1,13 +1,13 @@
 # New ports collection makefile for:	socks5
-# Version required:			beta-0.17.1-exportable
+# Version required:			beta-0.17.2-exportable
 # Date created:				24 Apr 1996
 # Whom:					pst
 #
-# $Id: Makefile,v 1.10 1996/12/05 00:55:51 jdp Exp $
+# $Id: Makefile,v 1.11 1996/12/08 09:48:58 max Exp $
 #
 
-PKGNAME=	socks5-0.17.1
-DISTNAME=	socks5-beta-0.17.1-exportable
+DISTNAME=	socks5-beta-0.17.2-exportable
+PKGNAME=	socks5-0.17.2
 CATEGORIES=	net security
 MASTER_SITES=	ftp://ftp.nec.com/pub/socks/socks5/
 
