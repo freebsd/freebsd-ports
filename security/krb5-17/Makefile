@@ -7,6 +7,7 @@
 
 PORTNAME=		krb5
 PORTVERSION=		1.2.7
+PORTREVISION=		1
 CATEGORIES=		security
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == "NO"
 # XXX crypto-publish.org does not at this time have the krb5-1.2.7 tarball.
