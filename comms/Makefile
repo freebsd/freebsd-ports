@@ -71,6 +71,7 @@
     SUBDIR += wy60
     SUBDIR += xcept
     SUBDIR += xlog
+    SUBDIR += xtt516
     SUBDIR += yaps
     SUBDIR += yawmppp
     SUBDIR += zmtx-zmrx
