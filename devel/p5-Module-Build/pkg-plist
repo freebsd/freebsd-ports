@@ -13,6 +13,7 @@
 %%SITE_PERL%%/Module/Build/Platform/VMS.pm
 %%SITE_PERL%%/Module/Build/Platform/VOS.pm
 %%SITE_PERL%%/Module/Build/Platform/Windows.pm
+%%SITE_PERL%%/Module/Build/Platform/cygwin.pm
 %%SITE_PERL%%/Module/Build/Platform/darwin.pm
 @dirrm %%SITE_PERL%%/Module/Build/Platform
 @dirrm %%SITE_PERL%%/Module/Build

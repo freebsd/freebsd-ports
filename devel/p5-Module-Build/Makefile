@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	Module-Build
-PORTVERSION=	0.20.02
+PORTVERSION=	0.21
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Module/KWILLIAMS
+MASTER_SITE_SUBDIR=	Module
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(..)$/_\1/}
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Build and install Perl modules
@@ -38,6 +37,7 @@ MAN3=		Module::Build.3 \
 		Module::Build::Platform::VMS.3 \
 		Module::Build::Platform::VOS.3 \
 		Module::Build::Platform::Windows.3 \
+		Module::Build::Platform::cygwin.3 \
 		Module::Build::Platform::darwin.3
 
 .include <bsd.port.pre.mk>
