@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	epstool
-PORTVERSION=	1.80
+PORTVERSION=	2.00
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/ghostgum/
-DISTNAME=	gsv40src
+DISTNAME=	gsv41src
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -27,8 +27,9 @@ post-extract:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/epstool
-	${INSTALL_DATA} ${WRKSRC}/epstool.htm ${PREFIX}/share/doc/epstool
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/epstool.htm ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/../gsview.css ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
