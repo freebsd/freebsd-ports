@@ -2,6 +2,8 @@
 bin/imapd
 bin/maildirmake
 bin/pop3d
+etc/courier-imap/authdaemonrc.dist
+%%MYSQLFLAG%%etc/courier-imap/authmysqlrc.dist
 etc/courier-imap/imapd-ssl.dist
 etc/courier-imap/imapd.cnf.dist
 etc/courier-imap/imapd.dist
@@ -9,12 +11,10 @@ etc/courier-imap/pop3d-ssl.dist
 etc/courier-imap/pop3d.cnf.dist
 etc/courier-imap/pop3d.dist
 etc/courier-imap/quotawarnmsg.example
-libexec/courier-imap/authlib/authcustom
-%%MYSQLFLAG%%libexec/courier-imap/authlib/authmysql
-%%PAMFLAG%%libexec/courier-imap/authlib/authpam
-libexec/courier-imap/authlib/authpwd
-libexec/courier-imap/authlib/authuserdb
-%%VPOPMAILFLAG%%libexec/courier-imap/authlib/authvchkpw
+libexec/courier-imap/authlib/authdaemon
+libexec/courier-imap/authlib/authdaemond
+%%MYSQLFLAG%%libexec/courier-imap/authlib/authdaemond.mysql
+libexec/courier-imap/authlib/authdaemond.plain
 libexec/courier-imap/couriertcpd
 libexec/courier-imap/deliverquota
 libexec/courier-imap/imapd-ssl.rc
@@ -24,14 +24,8 @@ libexec/courier-imap/makedatprog
 libexec/courier-imap/pop3d-ssl.rc
 libexec/courier-imap/pop3d.rc
 sbin/imaplogin
-sbin/makeuserdb
-sbin/mkimapdcert
-sbin/mkpop3dcert
 sbin/pop3login
-sbin/pw2userdb
-sbin/userdb
 sbin/userdbpw
-sbin/vchkpw2userdb
 share/courier-imap/makeuserdb
 share/courier-imap/mkimapdcert
 share/courier-imap/mkpop3dcert
@@ -42,6 +36,8 @@ share/doc/courier-imap/AUTHORS
 share/doc/courier-imap/ChangeLog
 share/doc/courier-imap/INSTALL
 share/doc/courier-imap/README
+@dirrm var/authdaemon
+@dirrm var
 @dirrm share/doc/courier-imap
 @dirrm share/courier-imap
 @dirrm libexec/courier-imap/authlib
