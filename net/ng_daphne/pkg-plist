@@ -1,0 +1,3 @@
+lib/ng_daphne.ko
+%%DOCSDIR%%/README
+@dirrm %%DOCSDIR%%
