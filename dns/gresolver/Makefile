@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		gresolver
-PORTVERSION=		0.0.1
-PORTREVISION=	1
+PORTVERSION=		0.0.3
 CATEGORIES=		dns
 MASTER_SITES=		http://jodrell.net/files/gresolver/
 
@@ -16,18 +15,14 @@ COMMENT=		A graphical DNS query tool using GTK+
 
 RUN_DEPENDS=		${SITE_PERL}/${PERL_ARCH}/Locale/gettext.pm:${PORTSDIR}/devel/p5-Locale-gettext \
 			${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
-			${SITE_PERL}/${PERL_ARCH}/Gtk2/GladeXML.pm:${PORTSDIR}/x11-toolkits/p5-Glade2
+			${SITE_PERL}/${PERL_ARCH}/Gtk2/GladeXML.pm:${PORTSDIR}/x11-toolkits/p5-Glade2 \
+			${SITE_PERL}/Net/IPv6Addr.pm:${PORTSDIR}/net-mgmt/p5-Net-IPv6Addr
 
 USE_X_PREFIX=		yes
 NO_BUILD=		yes
 USE_REINPLACE=		yes
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 503000
-# extra patch for BIND 9
-EXTRA_PATCHES=		${FILESDIR}/bind9.diff
-.endif
 
 post-patch:
 	@${SED} -e \
