@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	tuxnes
-PORTVERSION=	0.73
+PORTVERSION=	0.75
 CATEGORIES=	emulators
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://tmmm.simplenet.com/tuxnes/packages/
-MASTER_SITE_SUBDIR=	asmodai
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	asmodai@freebsd.org
 
