@@ -7,7 +7,7 @@
 
 PORTNAME=	fnorb
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.fnorb.org/download/ \
 		ftp://ftp.dstc.edu.au/DSTC/fnorb/
