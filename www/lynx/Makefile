@@ -18,7 +18,7 @@ PATCHFILES=	lynx2.8.4rel.1a.patch \
 		lynx2.8.4rel.1c.patch \
 		lynx2.8.4rel.1d.patch
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	jharris@widomaker.com
 COMMENT?=	A non-graphical, text-based World-Wide Web client
 
 USE_BZIP2=	yes
