@@ -34,6 +34,7 @@
     SUBDIR += gnustep-xgps
     SUBDIR += gob
     SUBDIR += gtk--
+    SUBDIR += gtk--2
     SUBDIR += gtk-Mac2-theme
     SUBDIR += gtk-engines
     SUBDIR += gtk-engines2
