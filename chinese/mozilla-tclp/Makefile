@@ -7,16 +7,16 @@
 # If this version is out-of-date, please visit 
 #    http://www.csie.ntu.edu.tw/~b7506051/mozilla/
 # And just download and install there.
+# Or, change the PORTVERSION below to feasible version and make makesum all
 
 PORTNAME=	mozilla
-PORTVERSION=	1.0
-LANGPACKDATE=	0607
+PORTVERSION=	1.0.1
 CATEGORIES=	chinese www
 MASTER_SITES=	http://www.csie.ntu.edu.tw/~b7506051/mozilla/langpack/distfiles/
 PKGNAMESUFFIX=	-tclp
 # Same as ftp://ftp.mozilla.org/pub/mozilla/l10n/lang/$MOZVER/langzhtw.xpi.
 # Use this to avoid checksum problems.
-DISTNAME=	${PORTNAME}-langzhtw-${PORTVERSION}-${LANGPACKDATE}
+DISTNAME=	${PORTNAME}-langzhtw-${PORTVERSION}
 EXTRACT_SUFX=	.xpi
 
 MAINTAINER=	piaip@csie.ntu.edu.tw
