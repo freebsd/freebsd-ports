@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.psy.unipd.it/pub/pluto/developers/ \
 
 MAINTAINER=	hoek@FreeBSD.org
 
-RUN_DEPENDS=    zip:${PORTSDIR}/archivers/zip
+RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
 GNU_CONFIGURE=	yes
 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmcyrx
-PORTVERSION= 	2.1
+PORTVERSION=	2.1
 CATEGORIES=     russian windowmaker
 MASTER_SITES=   http://yard.hitech.mipt.ru/~mini/distrib/
 DISTNAME=	cyrx-${PORTVERSION}

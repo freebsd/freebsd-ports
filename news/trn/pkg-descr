@@ -14,4 +14,3 @@ Other nice features include the extract commands for the source and binary
 groups, thread-oriented kill directives, a better newgroup finding strategy,
 and lots more.  See the file NEW for a list of the things that are new to
 trn 3.0 from previous versions.
-

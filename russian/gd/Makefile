@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gd
-PORTVERSION= 	1.3
+PORTVERSION=	1.3
 CATEGORIES=	russian graphics
 MASTER_SITES=   http://www.boutell.com/gd/http/ \
 		ftp://ftp.boutell.com/pub/boutell/gd/

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pilot_makedoc
-PORTVERSION= 	0.7a
+PORTVERSION=	0.7a
 CATEGORIES=	palm textproc
 MASTER_SITES=	ftp://ftp.forth.org/pub/PalmOS/ \
 		ftp://ftp.cs.tu-berlin.de/pub/palmtops/pilot/ \

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	isilo
-PORTVERSION= 	2.55
+PORTVERSION=	2.55
 CATEGORIES=	palm textproc
 MASTER_SITES=	ftp://ftp.iSilo.com/pub/
 DISTNAME=	iSiloBSD

@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 Y2K=		http://netwinsite.com/dnews_y2k.htm
 
-WRKSRC=         ${WRKDIR}/dnews
+WRKSRC=		${WRKDIR}/dnews
 NO_CDROM=	"no answer yet, if we are allowed to put it onto CDROM"
 RESTRICTED=	"only free for non-profit organisations"
 NO_PACKAGE=	"${RESTRICTED}"

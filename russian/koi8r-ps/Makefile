@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	koi8rPS
-PORTVERSION= 	1.0
+PORTVERSION=	1.0
 CATEGORIES=	russian print
 MASTER_SITES=	ftp://ftp.ziplink.net/users/kot/CyrPS/ \
 		ftp://ftp.kapella.gpi.ru/pub/cyrillic/psfonts/

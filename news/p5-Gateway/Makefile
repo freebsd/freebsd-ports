@@ -5,17 +5,17 @@
 # $FreeBSD$
 #
 
-PORTNAME=		p5-Gateway
-PORTVERSION=		0.42	
+PORTNAME=		Gateway
+PORTVERSION=		0.42
 CATEGORIES=		news perl5
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	News
-DISTNAME=		Gateway-0.42
+PKGNAMEPREFIX=		p5-
 
 MAINTAINER=		croyle@gelemna.ft-wayne.in.us
 
-BUILD_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/News/Article.pm:${PORTSDIR}/news/p5-News-Article
-RUN_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/News/Article.pm:${PORTSDIR}/news/p5-News-Article
+BUILD_DEPENDS=		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/News/Article.pm:${PORTSDIR}/news/p5-News-Article
+RUN_DEPENDS=		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/News/Article.pm:${PORTSDIR}/news/p5-News-Article
 
 USE_PERL5=		yes
 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	malsync
-PORTVERSION= 	1.8
+PORTVERSION=	1.8
 CATEGORIES=	palm
 MASTER_SITES=	http://www.tomw.org/ \
 		http://people.FreeBSD.org/~dirk/ports/distfiles/

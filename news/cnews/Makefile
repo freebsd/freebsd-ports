@@ -19,6 +19,7 @@ DISTNAME=	c-news
 EXTRACT_SUFX=	.tar.Z
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		pgpverify-1.12
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES=	ftp://ftp.lan-ks.de/pub/c-news/ \
 		ftp://ftp.dinoex.org/pub/c-news/
@@ -36,7 +37,6 @@ MAINTAINER=	dirk.meyer@dinoex.sub.org
 
 DIST_SUBDIR=	${DISTNAME}
 NO_WRKSUBDIR=	yes
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAKEFILE=	makefile
 MAN1=		checknews.1cn inews.1cn postnews.1cn readnews.1cn
 MAN5=		controlperm.5 news.5 newsctl.5 newsdb.5 newsoverview.5 \
@@ -68,7 +68,7 @@ PATCHFILES+=	c-news-patch-gawk3
 .endif
 
 check:
-	cd ${WRKSRC} && ${MAKE} -$(MAKEFLAGS) r
+	cd ${WRKSRC} && ${MAKE} -${MAKEFLAGS} r
 
 pre-patch:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${PGPVERIFY} ${WRKSRC}/${PGPVERIFY}

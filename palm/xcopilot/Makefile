@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xcopilot
-PORTVERSION= 	0.6.6
+PORTVERSION=	0.6.6
 CATEGORIES=	palm emulators
 MASTER_SITES=	http://xcopilot.cuspy.com/build/
 

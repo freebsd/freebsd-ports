@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	d1489
-PORTVERSION= 	1.4
+PORTVERSION=	1.4
 CATEGORIES=     russian
 MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/unix/convert/char/
 EXTRACT_SUFX=   .tgz
