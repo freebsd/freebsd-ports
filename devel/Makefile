@@ -138,6 +138,7 @@
     SUBDIR += gengameng
     SUBDIR += gengetopt
     SUBDIR += gettext
+    SUBDIR += gettext-devel
     SUBDIR += gide
     SUBDIR += gindent
     SUBDIR += glade
