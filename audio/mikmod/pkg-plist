@@ -1,6 +1,7 @@
 bin/mikmod
-bin/mikcvt
-share/doc/mikmod/credits.txt
+share/doc/mikmod/bugs.txt
+share/doc/mikmod/changes.txt
+share/doc/mikmod/future.txt
 share/doc/mikmod/mikmod.txt
-share/doc/mikmod/register.frm
+share/doc/mikmod/tips.txt
 @dirrm share/doc/mikmod
