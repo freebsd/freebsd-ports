@@ -11,8 +11,10 @@ PORTNAME=	outguess
 PORTVERSION=	0.2
 CATEGORIES=	security
 MASTER_SITES=	http://www.outguess.org/ \
-		ftp://ftp.cryptoarchive.net/pub/cryptoarchive/mirrors/www-sites/www.outguess.org/ \
-		http://munitions.vipul.net/software/steganography/
+		http://www.internet2.edu/~shalunov/mirror/ \
+		http://cimarron.river.com/mirrors/www.outguess.org/ \
+		http://munitions.vipul.net/software/steganography/ \
+		http://the25200-1.gw.connect.com.au/security/steganography/
 
 MAINTAINER=	trevor@FreeBSD.org
 
