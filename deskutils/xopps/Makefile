@@ -3,7 +3,7 @@
 # Date created:		1 Ag 1997
 # Whom:			Pedro Giffuni (orig)
 #
-# $Id: Makefile,v 1.5 1998/08/07 22:17:54 asami Exp $
+# $Id: Makefile,v 1.6 1998/10/12 12:47:37 jseger Exp $
 #
 
 DISTNAME=	xopps.1.13
@@ -12,8 +12,6 @@ CATEGORIES=	deskutils
 MASTER_SITES=	ftp://devvax.jpl.nasa.gov/pub/xopps/
 
 MAINTAINER=	ports@FreeBSD.org
-
-BROKEN_ELF=	yes
 
 ALL_TARGET=
 USE_X_PREFIX=	yes
