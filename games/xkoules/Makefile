@@ -16,6 +16,12 @@ EXTRACT_SUFX=	-src.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast action arcade-style game for X Window
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
+
 .if ${MACHINE_ARCH} == "i386"
 PLIST_SUB=	SNDSRV:=""
 .else
@@ -36,4 +42,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
