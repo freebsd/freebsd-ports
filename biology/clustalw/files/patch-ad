@@ -1,0 +1,29 @@
+--- util.c.orig	Wed Jun  7 16:50:08 2000
++++ util.c	Tue Aug  8 02:59:43 2000
+@@ -174,7 +174,7 @@
+ void getstr(char *instr,char *outstr)
+ {	
+ 	fprintf(stdout,"%s: ",instr);
+-	gets(outstr);
++	fgets(outstr,sizeof(outstr),stdin);
+ }
+ 
+ double getreal(char *instr,double minx,double maxx,double def)
+@@ -185,7 +185,7 @@
+ 	
+ 	while(TRUE) {
+ 		fprintf(stdout,"%s (%.1f-%.1f)   [%.1f]: ",instr,minx,maxx,def);
+-		gets(line);
++		fgets(line,sizeof(line),stdin);
+ 		status=sscanf(line,"%f",&ret);
+ 		if(status == EOF) return def;
+ 		if(ret>maxx) {
+@@ -210,7 +210,7 @@
+ 	while(TRUE) {
+ 		fprintf(stdout,"%s (%d..%d)    [%d]: ",
+ 		instr,(pint)minx,(pint)maxx,(pint)def);
+-		gets(line);
++		fgets(line,sizeof(line),stdin);
+ 		status=sscanf(line,"%d",&ret);
+ 		if(status == EOF) return def;
+ 		if(ret>maxx) {

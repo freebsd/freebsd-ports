@@ -1,0 +1,74 @@
+--- interface.c.orig	Wed Jun  7 16:50:07 2000
++++ interface.c	Tue Aug  8 03:11:33 2000
+@@ -1078,7 +1078,7 @@
+ 	/* added for File System Standards  - Francois */
+ 	path1=(char *)ckalloc((strlen(path)+64)*sizeof(char));
+ 	strcpy(path1,path);
+-	strcat(path1,"/usr/share/clustalx:/usr/local/share/clustalx"); 
++	strcat(path1,DATADIR); 
+ 
+         lf=(sint)strlen(fname);
+         deb=path1;
+@@ -2121,7 +2121,7 @@
+ 			strcpy(local_prompt,"\n\nEnter new name to avoid overwriting ");
+ 			strcat(local_prompt," [%s]: ");          
+ 			fprintf(stdout,local_prompt,file_name);
+-			gets(temp);
++			fgets(temp,sizeof(temp),stdin);
+ 			if(*temp != EOS) strcpy(file_name,temp);
+ 		}
+ 	}
+@@ -2129,7 +2129,7 @@
+ 		strcpy(local_prompt,prompt);
+ 		strcat(local_prompt," [%s]: ");          
+ 		fprintf(stdout,local_prompt,file_name);
+-		gets(temp);
++		fgets(temp,sizeof(temp),stdin);
+ 		if(*temp != EOS) strcpy(file_name,temp);
+ 	}
+ 
+@@ -2335,7 +2335,7 @@
+ 		if (usemenu)
+             	fprintf(stdout,"\nUse the existing GUIDE TREE file,  %s  (y/n) ? [y]: ",
+                                            tree_name);
+-                gets(temp);
++                fgets(temp,sizeof(temp),stdin);
+                 if(*temp != 'n' && *temp != 'N') {
+                     strcpy(phylip_name,tree_name);
+                     use_tree = TRUE;
+@@ -2567,7 +2567,7 @@
+ 
+             fprintf(stdout,"\nEnter a name for the guide tree file [%s]: ",
+                                            phylip_name);
+-                	gets(temp);
++                	fgets(temp,sizeof(temp),stdin);
+                 	if(*temp != EOS)
+                         	strcpy(phylip_name,temp);
+         	}
+@@ -2676,7 +2676,7 @@
+ #endif
+             	fprintf(stdout,"\nUse the existing GUIDE TREE file for Profile 1,  %s  (y/n) ? [y]: ",
+                                            tree_name);
+-                gets(temp);
++                fgets(temp,sizeof(temp),stdin);
+                 if(*temp != 'n' && *temp != 'N') {
+                     strcpy(p1_tree_name,tree_name);
+                     use_tree1 = TRUE;
+@@ -2702,7 +2702,7 @@
+ #endif
+             	fprintf(stdout,"\nUse the existing GUIDE TREE file for Profile 2,  %s  (y/n) ? [y]: ",
+                                            tree_name);
+-                gets(temp);
++                fgets(temp,sizeof(temp),stdin);
+                 if(*temp != 'n' && *temp != 'N') {
+                     strcpy(p2_tree_name,tree_name);
+                     use_tree2 = TRUE;
+@@ -3730,7 +3730,7 @@
+ 	if(usemenu) {
+         	fprintf(stdout,"\nEnter a name for the parameter output file [%s]: ",
+                                            parname);
+-               	gets(temp);
++               	fgets(temp,sizeof(temp),stdin);
+                	if(*temp != EOS)
+                        	strcpy(parname,temp);
+        	}
