@@ -1,0 +1,28 @@
+       These are quickie routines that are meant to save a couple
+       of lines of code over and over again.  They do not do
+       anything fancy.
+
+       read_file() does what you would expect.  If you are using
+       its output in array context, then it returns an array of
+       lines.  If you are calling it from scalar context, then
+       returns the entire file in a single string.
+
+       It croaks()s if it can't open the file.
+
+       write_file() creates or overwrites files.
+
+       append_file() appends to a file.
+
+       overwrite_file() does an in-place update of an existing
+       file or creates a new file if it didn't already exist.
+
+       Write_file will also replace a file.  The difference is
+       that the first that that write_file() does is to trucate
+       the file whereas the last thing that overwrite_file() is
+       to trucate the file.  Overwrite_file() should be used in
+       situations where you have a file that always needs to have
+       contents, even in the middle of an update.
+
+       read_dir() returns all of the entries in a directory
+       except for "."  and "..".  It croaks if it cannot open the
+       directory.
