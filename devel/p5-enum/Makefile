@@ -13,7 +13,8 @@ MASTER_SITE_SUBDIR=	enum
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	This perl module defines a set of symbolic constants with ordered numeric values ala C enum types.
+COMMENT=	\
+	Defines symbolic constants with ordered numeric values, like C enums
 
 PERL_CONFIGURE=	yes
 
