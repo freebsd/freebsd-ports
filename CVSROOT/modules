@@ -5342,6 +5342,7 @@ p5-Class-Inspector	ports/devel/p5-Class-Inspector
 p5-Class-Loader	ports/devel/p5-Class-Loader
 p5-Class-MakeMethods	ports/devel/p5-Class-MakeMethods
 p5-Class-MethodMaker	ports/devel/p5-Class-MethodMaker
+p5-Class-NamedParms	ports/devel/p5-Class-NamedParms
 p5-Class-ObjectTemplate	ports/devel/p5-Class-ObjectTemplate
 p5-Class-ObjectTemplate-DB	ports/devel/p5-Class-ObjectTemplate-DB
 p5-Class-ReturnValue	ports/devel/p5-Class-ReturnValue
