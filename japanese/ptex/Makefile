@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ptex
-PORTVERSION=	2.1.10
+PORTVERSION=	2.1.11
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/tetex/
 PKGNAMEPREFIX=	ja-
@@ -15,6 +15,9 @@ DISTNAME=	ptex-src-2.1.10
 DIST_SUBDIR=	teTeX/ptex
 
 MAINTAINER=	max@FreeBSD.org
+
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	ptex2.1.10-11.patch
 
 BUILD_DEPENDS=	${LOCALBASE}/share/texmf/ptex/plain/base/ptex.tex:${PORTSDIR}/japanese/ptex-common
 RUN_DEPENDS=	${LOCALBASE}/share/texmf/ptex/plain/base/ptex.tex:${PORTSDIR}/japanese/ptex-common

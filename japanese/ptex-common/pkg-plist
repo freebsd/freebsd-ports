@@ -71,6 +71,7 @@ bin/outocp
 bin/ovf2ovp
 bin/ovp2ovf
 bin/oxdvi
+bin/oxdvi.bin
 bin/patgen
 bin/pdfeinitex
 bin/pdfelatex
@@ -4899,6 +4900,8 @@ share/texmf/fonts/tfm/monotype/timesnew/tnr2n.tfm
 share/texmf/fonts/tfm/monotype/timesnew/tnr7j.tfm
 share/texmf/fonts/tfm/monotype/timesnew/tnr8u.tfm
 share/texmf/fonts/tfm/monotype/timesnew/tnr9t.tfm
+share/texmf/fonts/tfm/ptex/gbm.tfm
+share/texmf/fonts/tfm/ptex/gbmv.tfm
 share/texmf/fonts/tfm/ptex/goth10.tfm
 share/texmf/fonts/tfm/ptex/goth5.tfm
 share/texmf/fonts/tfm/ptex/goth6.tfm
@@ -4923,6 +4926,8 @@ share/texmf/fonts/tfm/ptex/nmin6.tfm
 share/texmf/fonts/tfm/ptex/nmin7.tfm
 share/texmf/fonts/tfm/ptex/nmin8.tfm
 share/texmf/fonts/tfm/ptex/nmin9.tfm
+share/texmf/fonts/tfm/ptex/rml.tfm
+share/texmf/fonts/tfm/ptex/rmlv.tfm
 share/texmf/fonts/tfm/ptex/tgoth10.tfm
 share/texmf/fonts/tfm/ptex/tgoth5.tfm
 share/texmf/fonts/tfm/ptex/tgoth6.tfm
@@ -6642,6 +6647,42 @@ share/texmf/fonts/vf/monotype/timesnew/mntr.vf
 share/texmf/fonts/vf/monotype/timesnew/mntri.vf
 share/texmf/fonts/vf/monotype/timesnew/mntriq.vf
 share/texmf/fonts/vf/monotype/timesnew/mntrq.vf
+share/texmf/fonts/vf/ptex/goth10.vf
+share/texmf/fonts/vf/ptex/goth5.vf
+share/texmf/fonts/vf/ptex/goth6.vf
+share/texmf/fonts/vf/ptex/goth7.vf
+share/texmf/fonts/vf/ptex/goth8.vf
+share/texmf/fonts/vf/ptex/goth9.vf
+share/texmf/fonts/vf/ptex/min10.vf
+share/texmf/fonts/vf/ptex/min5.vf
+share/texmf/fonts/vf/ptex/min6.vf
+share/texmf/fonts/vf/ptex/min7.vf
+share/texmf/fonts/vf/ptex/min8.vf
+share/texmf/fonts/vf/ptex/min9.vf
+share/texmf/fonts/vf/ptex/ngoth10.vf
+share/texmf/fonts/vf/ptex/ngoth5.vf
+share/texmf/fonts/vf/ptex/ngoth6.vf
+share/texmf/fonts/vf/ptex/ngoth7.vf
+share/texmf/fonts/vf/ptex/ngoth8.vf
+share/texmf/fonts/vf/ptex/ngoth9.vf
+share/texmf/fonts/vf/ptex/nmin10.vf
+share/texmf/fonts/vf/ptex/nmin5.vf
+share/texmf/fonts/vf/ptex/nmin6.vf
+share/texmf/fonts/vf/ptex/nmin7.vf
+share/texmf/fonts/vf/ptex/nmin8.vf
+share/texmf/fonts/vf/ptex/nmin9.vf
+share/texmf/fonts/vf/ptex/tgoth10.vf
+share/texmf/fonts/vf/ptex/tgoth5.vf
+share/texmf/fonts/vf/ptex/tgoth6.vf
+share/texmf/fonts/vf/ptex/tgoth7.vf
+share/texmf/fonts/vf/ptex/tgoth8.vf
+share/texmf/fonts/vf/ptex/tgoth9.vf
+share/texmf/fonts/vf/ptex/tmin10.vf
+share/texmf/fonts/vf/ptex/tmin5.vf
+share/texmf/fonts/vf/ptex/tmin6.vf
+share/texmf/fonts/vf/ptex/tmin7.vf
+share/texmf/fonts/vf/ptex/tmin8.vf
+share/texmf/fonts/vf/ptex/tmin9.vf
 share/texmf/fonts/vf/public/ae/aeb10.vf
 share/texmf/fonts/vf/public/ae/aebx10.vf
 share/texmf/fonts/vf/public/ae/aebx12.vf
@@ -9032,6 +9073,7 @@ share/texmf/xdvi/XDvi
 @dirrm share/texmf/fonts/vf/public/cmcyr
 @dirrm share/texmf/fonts/vf/public/ae
 @dirrm share/texmf/fonts/vf/public
+@dirrm share/texmf/fonts/vf/ptex
 @dirrm share/texmf/fonts/vf/monotype/timesnew
 @dirrm share/texmf/fonts/vf/monotype/helvetic
 @dirrm share/texmf/fonts/vf/monotype
