@@ -1,0 +1,32 @@
+--- osunixxf.c.orig	Fri Oct 19 05:21:52 2001
++++ osunixxf.c	Thu Nov  1 21:44:36 2001
+@@ -706,7 +706,7 @@
+     UINT32                  milliseconds)
+ {
+ 
+-    sleep ((seconds * 1000) + milliseconds);
++    usleep ((seconds * 1000) + milliseconds);
+     return;
+ }
+ 
+@@ -919,7 +919,7 @@
+ UINT32
+ AcpiOsGetThreadId(void)
+ {
+-	return 0;
++	return 1;
+ }
+ 
+ 
+@@ -965,4 +965,11 @@
+     return (AE_OK);
+ }
+ 
++ACPI_STATUS
++AcpiOsGetRootPointer (
++    UINT32                  Flags,
++    ACPI_PHYSICAL_ADDRESS   *RsdpPhysicalAddress)
++{
++    return (AE_OK);
++}
+ 
