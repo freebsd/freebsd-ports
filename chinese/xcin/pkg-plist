@@ -40,8 +40,5 @@ lib/X11/xcin/zmdbosh.cin
 lib/X11/xcin/zmdbosh.tab
 lib/X11/xcin/zmdbosh.tab.rev
 lib/X11/xcin/zo.kbm
-man/man1/cin2tab.1.gz
-man/man1/crxvt.1.gz
-man/man1/xcin.1.gz
 @dirrm lib/X11/xcin/docs
 @dirrm lib/X11/xcin

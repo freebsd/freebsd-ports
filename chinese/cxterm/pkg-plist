@@ -3,10 +3,6 @@ bin/tit2cit
 bin/cit2tit
 bin/hzimctrl
 bin/CXterm
-man/man1/cxterm.1.gz
-man/man1/tit2cit.1.gz
-man/man1/cit2tit.1.gz
-man/man1/hzimctrl.1.gz
 lib/X11/cxterm.dic/gb/CCDOSPY.cit
 lib/X11/cxterm.dic/gb/CTLau.cit
 lib/X11/cxterm.dic/gb/CangJie.cit
