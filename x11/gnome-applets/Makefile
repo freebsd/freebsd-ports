@@ -45,7 +45,7 @@ pre-patch:
 		's|[(]datadir[)]/locale|(prefix)/share/locale|g ; \
 		 s|[(]datadir[)]/gnome/|(datadir)/|g ; \
 		 s|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g ; \
-		 s|\$\(prefix\)/lib/bonobo/servers|\$\(prefix\)/libdata/bonobo/servers|g ; \
+		 s|[(]prefix[)]/lib/bonobo/servers|(prefix)/libdata/bonobo/servers|g ; \
 		 s|[(]libdir[)]/bonobo/servers|(prefix)/libdata/bonobo/servers|g'
 
 .include <bsd.port.post.mk>
