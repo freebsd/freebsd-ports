@@ -14,7 +14,7 @@
   	$(INSTALL_DATA) features.info $(infodir)/bash.info
   
   uninstall:
---- 90,101 ----
+--- 90,102 ----
   
   installdirs:
   	-[ -d $(mandir) ] || mkdir $(mandir)
@@ -23,6 +23,7 @@
   
   install: all installdirs
   	$(INSTALL_DATA) bash.1 $(mandir)
+! 	$(INSTALL_DATA) builtins.1 $(mandir)/bash_builtins.1
 ! #       $(INSTALL_DATA) readline.3 $(man3dir)
   	$(INSTALL_DATA) features.info $(infodir)/bash.info
   
