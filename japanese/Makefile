@@ -109,6 +109,9 @@
     SUBDIR += libjcode
     SUBDIR += libslang
     SUBDIR += lipsf
+    SUBDIR += lookup-emacs20
+    SUBDIR += lookup-mule
+    SUBDIR += lookup-xemacs
     SUBDIR += lynx
     SUBDIR += lynx-current
     SUBDIR += lyx
