@@ -7452,6 +7452,7 @@ view3ds		ports/graphics/view3ds
 viewcvs		ports/devel/viewcvs
 viewfax		ports/comms/viewfax
 viewkit		ports/x11-toolkits/viewkit
+viewklass	ports/x11-toolkits/viewklass
 viewml		ports/www/viewml
 vigor		ports/editors/vigor
 vile		ports/editors/vile
