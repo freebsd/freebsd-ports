@@ -1,6 +1,8 @@
-# $Id: Makefile,v 1.2 1995/01/13 13:44:56 jkh Exp $
+# $Id: Makefile,v 1.3 1995/02/21 17:16:25 jkh Exp $
 #
-SUBDIR=	dore mpeg-lib mpeg_play netpbm povray jpeg tiff xanim xli xfig \
+# Broken povray
+
+SUBDIR=	dore mpeg-lib mpeg_play netpbm jpeg tiff xanim xli xfig \
 	xpaint xpm xv
 
 .include <bsd.port.subdir.mk>
