@@ -378,6 +378,7 @@
     SUBDIR += xdelta
     SUBDIR += xdf
     SUBDIR += xenmenu
+    SUBDIR += xfce4-iconbox
     SUBDIR += xgas
     SUBDIR += xless
     SUBDIR += xosd
