@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Feb 17 03:41:03 1997
-+++ Makefile	Thu May  8 08:30:17 1997
+--- Makefile.orig	Tue Jun 10 13:09:55 1997
++++ Makefile	Wed Sep 17 06:33:48 1997
 @@ -15,7 +15,7 @@
  
  LIBFILE =	libmimekit.a
@@ -9,7 +9,7 @@
  TARGET =	all
  target:		$(TARGET)
  libx:		Makefile.go
-@@ -51,7 +51,8 @@
+@@ -58,7 +58,8 @@
  
  MMDIR =		../../../src
  MMSDIR =	../
@@ -19,7 +19,7 @@
  
  LOCALFILES =	README \
  		README.LIB \
-@@ -147,9 +148,9 @@
+@@ -154,9 +155,9 @@
  		enMime deMime bench.o test.out sample.out
  
  install:	fromMime toMime $(LIBFILE)
