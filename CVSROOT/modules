@@ -4361,6 +4361,7 @@ libole2		ports/devel/libole2
 liboop		ports/devel/liboop
 libosip		ports/net/libosip
 libosip2	ports/net/libosip2
+libowfat	ports/devel/libowfat
 libpanelappletmm	ports/x11-toolkits/libpanelappletmm
 libpaper	ports/print/libpaper
 libparanoia	ports/security/libparanoia
