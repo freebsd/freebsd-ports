@@ -6,14 +6,14 @@ lib/analog/domains.tab
 lib/analog/primes.tab
 lib/analog/analog.cfg
 www/cgi-bin/analform.cgi
-www/icons/analogo.gif
-www/icons/bar1.gif
-www/icons/bar16.gif
-www/icons/bar2.gif
-www/icons/bar32.gif
-www/icons/bar4.gif
-www/icons/bar8.gif
-www/icons/html2.gif
+www/data/images/analogo.gif
+www/data/images/bar1.gif
+www/data/images/bar16.gif
+www/data/images/bar2.gif
+www/data/images/bar32.gif
+www/data/images/bar4.gif
+www/data/images/bar8.gif
+www/data/images/html2.gif
 lib/analog/lang/danisha.lng
 lib/analog/lang/danishh.lng
 lib/analog/lang/englisha.lng
@@ -30,4 +30,5 @@ lib/analog/lang/usenga.lng
 lib/analog/lang/usengh.lng
 @dirrm lib/analog/lang
 @dirrm lib/analog
+@dirrm www/data/images
 @dirrm share/doc/analog
