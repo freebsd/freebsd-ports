@@ -20,9 +20,13 @@ COMMENT=	Python mhash module
 LIB_DEPENDS=	mhash:${PORTSDIR}/security/mhash
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=yes
+USE_REINPLACE=	yes
 PYDISTUTILS_BUILDARGS=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
+
+pre-patch:
+	${REINPLACE_CMD} -e '227s,$$,\\,' ${WRKSRC}/mhash.c # put a missed terminating quote
 
 do-build:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} build_ext ${PYDISTUTILS_BUILDARGS})
