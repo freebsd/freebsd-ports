@@ -57,6 +57,7 @@ share/examples/CJK/CJKbabel.tex
 share/examples/CJK/GB.tex
 share/examples/CJK/JIS.tex
 share/examples/CJK/KS.tex
+share/examples/CJK/README
 share/examples/CJK/SJIS.tex
 share/examples/CJK/UTF8.tex
 share/examples/CJK/muletest.tex
@@ -257,6 +258,7 @@ share/texmf/tex/latex/CJK/Bg5/Bg5.cap
 share/texmf/tex/latex/CJK/Bg5/Bg5.chr
 share/texmf/tex/latex/CJK/Bg5/Bg5.cpx
 share/texmf/tex/latex/CJK/Bg5/Bg5.enc
+share/texmf/tex/latex/CJK/Bg5/c00bsmi.fdv
 share/texmf/tex/latex/CJK/Bg5/c00cns.fd
 share/texmf/tex/latex/CJK/Bg5/c00fs.fd
 share/texmf/tex/latex/CJK/Bg5/c00kai.fd
@@ -282,6 +284,7 @@ share/texmf/tex/latex/CJK/CNS/c35song.fd
 share/texmf/tex/latex/CJK/CNS/c36song.fd
 share/texmf/tex/latex/CJK/CNS/c37song.fd
 share/texmf/tex/latex/CJK/GB/c10gbsn.fd
+share/texmf/tex/latex/CJK/GB/c10gbsn.fdv
 share/texmf/tex/latex/CJK/GB/GB.cap
 share/texmf/tex/latex/CJK/GB/GB.cpx
 share/texmf/tex/latex/CJK/GB/c10fs.fd
