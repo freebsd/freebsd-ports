@@ -15,13 +15,12 @@ DISTNAME=	pkgtools-${PORTVERSION}
 
 PATCH_SITES=	${MASTER_SITES}
 PATCH_SITE_SUBDIR=	${MASTER_SITE_SUBDIR}
-#PATCHFILES=	${DISTNAME}-yyyymmdd.diff.bz2
+PATCHFILES=	${DISTNAME}-shim.diff.bz2
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	knu@FreeBSD.org
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/optparse.rb:${PORTSDIR}/devel/ruby-optparse \
-		${RUBY_SITEARCHLIBDIR}/fnmatch.so:${PORTSDIR}/devel/ruby-fnmatch \
 		${RUBY_SITEARCHLIBDIR}/bdb1.so:${PORTSDIR}/databases/ruby-bdb1 \
 		${LOCALBASE}/sbin/pkg_tarup:${PORTSDIR}/sysutils/pkg_tarup
 # For PKG_DBDRIVER={bdb_btree,bdb_hash,bdb}
@@ -53,9 +52,15 @@ INSTALL_TARGET=		install
 INSTALL_TARGET+=	install-doc
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} < 1.7
+RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/features/ruby18/file.so:${PORTSDIR}/lang/ruby16-shim-ruby18
+.endif
+
 post-install:
 	if [ ! -f ${PREFIX}/etc/pkgtools.conf ]; then \
 		${CP} -p ${PREFIX}/etc/pkgtools.conf.sample ${PREFIX}/etc/pkgtools.conf; \
 	fi
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
