@@ -1,0 +1,24 @@
+--- configure.orig	Fri Oct 18 04:32:52 2002
++++ configure	Fri Mar 26 19:57:10 2004
+@@ -1033,14 +1033,16 @@
+ # Check whether --enable-thread or --disable-thread was given.
+ if test "${enable_thread+set}" = set; then
+   enableval="$enable_thread"
+-  disable_thread=yes
++  if test "x${enable_thread}" != "xyes"; then
++    disable_thread=yes
++  fi
+ fi;
+ 
+ # Check whether --enable-thread or --disable-thread was given.
+-if test "${enable_thread+set}" = set; then
+-  enableval="$enable_thread"
+-  disable_thread=no
+-fi;
++#if test "${enable_thread+set}" = set; then
++#  enableval="$enable_thread"
++#  disable_thread=no
++#fi;
+ 
+ # Check whether --enable-wall or --disable-wall was given.
+ if test "${enable_wall+set}" = set; then

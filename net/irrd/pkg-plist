@@ -1,0 +1,8 @@
+sbin/irrd
+sbin/irr_rpsl_submit
+sbin/irr_check
+sbin/irr_notify
+sbin/irrdcacher
+sbin/ripe2rpsl
+sbin/update_source
+etc/irrd.conf.sample
