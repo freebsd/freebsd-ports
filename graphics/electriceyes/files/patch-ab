@@ -1,0 +1,11 @@
+--- ee.desktop.orig	Tue Sep  1 12:06:06 1998
++++ ee.desktop	Tue Sep  1 12:06:51 1998
+@@ -11,7 +11,7 @@
+ Comment[de]=Bildbetrachter
+ Comment[no]=Program for bildeframvisning
+ Comment[pt]=Programa para visualização de imagens
+-Exec=ee
++Exec=ElectricEyes
+ Icon=gnome-ee.png
+ Terminal=0
+ Type=Application
