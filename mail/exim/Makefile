@@ -7,7 +7,7 @@
 
 PORTNAME=	exim
 PORTVERSION=	${EXIM_VERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/exim4/ \
 		http://www.exim.org/ftp/exim4/ \
@@ -18,9 +18,7 @@ MASTER_SITES+=	http://duncanthrax.net/exiscan/
 DISTFILES=	exim-${EXIM_VERSION}.tar.bz2 \
 		exim-texinfo-${EXIM_DOCVERSION}.tar.bz2
 .if !defined(WITHOUT_EXISCAN)
-DISTFILES+=	exiscan-${EXISCAN_VERSION}.tar.gz
-EXTRACT_ONLY=	exim-${EXIM_VERSION}.tar.bz2 \
-		exim-texinfo-${EXIM_DOCVERSION}.tar.bz2
+DISTFILES+=	exiscan-${EXISCAN_VERSION}.tar.bz2
 .endif
 
 MAINTAINER=	sheldonh@FreeBSD.org
@@ -30,7 +28,7 @@ MAN8=		exim.8
 
 EXIM_VERSION=	4.10
 EXIM_DOCVERSION=	4.10
-EXISCAN_VERSION=	4.10-15
+EXISCAN_VERSION=	4.10-16
 
 PLIST_SUB+=     EXIM_VERSION="${EXIM_VERSION}"
 
@@ -250,11 +248,6 @@ SEDLIST+=	-e 's,^\# LOOKUP_NIS=,LOOKUP_NIS=,'
 
 .if !defined(WITHOUT_LMTP)
 SEDLIST+=	-e 's,^\# TRANSPORT_LMTP=,TRANSPORT_LMTP=,'
-.endif
-
-post-extract:
-.if !defined(WITHOUT_EXISCAN)
-	cd ${WRKDIR} && ${TAR} -xzf ${DISTDIR}/exiscan-${EXISCAN_VERSION}.tar.gz
 .endif
 
 post-patch:
