@@ -17,26 +17,21 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A DVI to DVI transformer
 
-RUN_DEPENDS=	${PREFIX}/share/fonts/vf-n2a:${PORTSDIR}/japanese/vftool
+RUN_DEPENDS=	${LOCALBASE}/share/fonts/vf-n2a:${PORTSDIR}/japanese/vftool
 
 USE_GMAKE=	yes
 MAKE_ENV+=	kpathsea_parent=../${KPATHSEA_PARENT}
+GNU_CONFIGURE=	yes
+CONFIGURE_WRKSRC=	${WRKDIR}/${KPATHSEA_PARENT}/kpathsea
+CONFIGURE_ARGS+=	--prefix=${PREFIX}
 
 KPATHSEA_PARENT=	web2c-7.2
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not build on amd64"
-.endif
-
 post-extract:
 	@( cd ${WRKSRC} ; ${MAKE} newlib )
 	@${CP} ${FILESDIR}/fontdesc ${WRKSRC}/lib
-
-pre-configure:
-	@( cd ${WRKDIR}/${KPATHSEA_PARENT}/kpathsea ; \
-	    ./configure --prefix=${PREFIX} )
 
 pre-build:
 	@( cd ${WRKDIR}/${KPATHSEA_PARENT}/kpathsea ; ${GMAKE} )
