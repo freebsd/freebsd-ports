@@ -1,6 +1,33 @@
---- configure.orig	Fri Sep  5 21:43:28 2003
-+++ configure	Fri Sep  5 21:43:31 2003
-@@ -21260,7 +21260,7 @@
+--- configure.orig	Sun Aug 31 23:25:52 2003
++++ configure	Thu Oct 16 00:24:50 2003
+@@ -19343,7 +19343,7 @@
+ EOF
+ fi
+ 
+-echo "#if ! ($kde_qt_verstring)" >> conftest.$ac_ext
++echo "#if ! (1)" >> conftest.$ac_ext
+ cat >> conftest.$ac_ext <<EOF
+ #error 1
+ #endif
+@@ -19949,6 +19949,8 @@
+ echo "$as_me:19949: result: $USE_RPATH" >&5
+ echo "${ECHO_T}$USE_RPATH" >&6
+ 
++if test "x$configure_enable_KDE" = "xyes"; then
++
+ echo "$as_me:19952: checking for KDE" >&5
+ echo $ECHO_N "checking for KDE... $ECHO_C" >&6
+ 
+@@ -21156,6 +21158,8 @@
+ 
+ fi
+ 
++fi
++
+ if test "x$configure_enable_KDE" = "xyes"; then
+ 
+ DO_NOT_COMPILE="$DO_NOT_COMPILE CVS debian bsd-port admin"
+@@ -21260,7 +21264,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -9,7 +36,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  #line 21265 "configure"
  #include "confdefs.h"
-@@ -21322,7 +21322,7 @@
+@@ -21322,7 +21326,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -18,7 +45,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  #line 21327 "configure"
  #include "confdefs.h"
-@@ -21386,7 +21386,7 @@
+@@ -21386,7 +21390,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -27,7 +54,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  #line 21391 "configure"
  #include "confdefs.h"
-@@ -21450,7 +21450,7 @@
+@@ -21450,7 +21454,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -36,7 +63,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  #line 21455 "configure"
  #include "confdefs.h"
-@@ -21498,7 +21498,7 @@
+@@ -21498,7 +21502,7 @@
  #define HAVE_LIBGDK 1
  EOF
  
@@ -45,7 +72,7 @@
  
  else
    configure_enable_ogglibs=no
-@@ -21527,7 +21527,7 @@
+@@ -21527,7 +21531,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -54,7 +81,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  #line 21532 "configure"
  #include "confdefs.h"
-@@ -21589,7 +21589,7 @@
+@@ -21589,7 +21593,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
