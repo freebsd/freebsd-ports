@@ -3,7 +3,7 @@ share/nethack/nethack
 @exec mkdir %D/share/nethack/save
 @exec chmod -R 775 %D/share/nethack
 @exec chmod 2755 %D/share/nethack/nethack
-@exec chown games.games %D/share/nethack/save
+@exec chown games:games %D/share/nethack/save
 @unexec rm -rf %D/share/nethack/save
 share/doc/nethack/Guidebook.txt
 share/nethack/Arc-fila.lev

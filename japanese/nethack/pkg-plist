@@ -3,7 +3,7 @@ lib/jnethackdir/jnethack
 @exec mkdir %D/lib/jnethackdir/save
 @exec chmod -R 775 %D/lib/jnethackdir
 @exec chmod 2755 %D/lib/jnethackdir/jnethack
-@exec chown games.games %D/lib/jnethackdir/save
+@exec chown games:games %D/lib/jnethackdir/save
 @unexec rm -rf %D/lib/jnethackdir/save
 lib/jnethackdir/A-filla.lev
 lib/jnethackdir/A-fillb.lev

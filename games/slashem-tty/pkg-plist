@@ -3,7 +3,7 @@ share/slashem-tty/slashem-tty
 @exec mkdir %D/share/slashem-tty/save
 @exec chmod -R 775 %D/share/slashem-tty
 @exec chmod 2755 %D/share/slashem-tty/save
-@exec chown games.games %D/share/slashem-tty/save
+@exec chown games:games %D/share/slashem-tty/save
 @unexec rm -rf %D/share/slashem-tty/save
 @exec chmod -R 775 %D/share/doc/slashem-tty
 share/doc/slashem-tty/Guidebook.txt
