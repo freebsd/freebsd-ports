@@ -31,6 +31,9 @@ CVS_SITES?=	anoncvs@anoncvs1.ca.openbsd.org:/cvs \
 STAMPFILE=	${DISTDIR}/${PKGNAME}/.stamp
 WRKSRC=		${WRKDIR}/ssh-askpass
 
+MAN1=		ssh-askpass.1
+MANCOMPRESSED=	yes
+
 do-fetch:
 	@if [ ! -e ${STAMPFILE} ] || \
 	    [ "X${CVS_DATE}" != "X$$(${CAT} ${STAMPFILE})" ]; then \
