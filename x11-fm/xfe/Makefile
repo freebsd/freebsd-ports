@@ -7,6 +7,7 @@
 
 PORTNAME=	xfe
 PORTVERSION=	0.72
+PORTREVISION=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast MS-Explorer like filemanager for X
 
-LIB_DEPENDS=	FOX-1.2:${PORTSDIR}/x11-toolkits/fox-devel \
+LIB_DEPENDS=	FOX-1.4:${PORTSDIR}/x11-toolkits/fox-devel \
 		png.5:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
