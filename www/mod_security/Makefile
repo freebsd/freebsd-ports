@@ -36,8 +36,8 @@ SO=		so
 BUILD_DEPENDS+= ${APXS}:${APACHE_PORT}
 RUN_DEPENDS+=   ${APXS}:${APACHE_PORT}
 
-DOCS=		CHANGES INSTALL LICENSE README modsecurity-manual-${PORTVERSION}.pdf
-PLIST_SUB+=	VER=${PORTVERSION}
+DOCS=		CHANGES INSTALL LICENSE README modsecurity-manual-1.7.pdf
+PLIST_SUB+=	VER=1.7
 
 do-build:
 	@cd ${APWRKSRC} && ${APXS} -c mod_security.c
