@@ -1,23 +1,23 @@
---- configure.orig	Wed Sep 23 10:48:39 1998
-+++ configure	Sat Sep 26 01:50:28 1998
-@@ -3570,7 +3570,7 @@
+--- configure.orig	Fri Oct 23 06:49:55 1998
++++ configure	Sat Oct 24 12:58:13 1998
+@@ -3678,7 +3678,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-lgif $GFX_INC_PATH $GFX_LIB_PATH $XLFLAGS $LIBS"
 +LIBS="-lgif $GFX_INC_PATH $GFX_LIB_PATH $XLFLAGS $XLIBS $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 3576 "configure"
+ #line 3684 "configure"
  #include "confdefs.h"
-@@ -3629,14 +3629,14 @@
- #
+@@ -3778,14 +3778,14 @@
  
  if test "$tif" = yes; then
+     my_libname=""
 -    echo $ac_n "checking for TIFFGetVersion in -ltiff""... $ac_c" 1>&6
--echo "configure:3634: checking for TIFFGetVersion in -ltiff" >&5
+-echo "configure:3783: checking for TIFFGetVersion in -ltiff" >&5
 -ac_lib_var=`echo tiff'_'TIFFGetVersion | sed 'y%./+-%__p_%'`
 +    echo $ac_n "checking for TIFFGetVersion in -ltiff34""... $ac_c" 1>&6
-+echo "configure:3634: checking for TIFFGetVersion in -ltiff34" >&5
++echo "configure:3783: checking for TIFFGetVersion in -ltiff34" >&5
 +ac_lib_var=`echo tiff34'_'TIFFGetVersion | sed 'y%./+-%__p_%'`
  if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
@@ -26,26 +26,54 @@
 -LIBS="-ltiff $GFX_INC_PATH $GFX_LIB_PATH $XLFLAGS $XLIBS $GFXLIBS -lm $LIBS"
 +LIBS="-ltiff34 $GFX_INC_PATH $GFX_LIB_PATH $XLFLAGS $XLIBS $GFXLIBS -lm $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 3642 "configure"
+ #line 3791 "configure"
  #include "confdefs.h"
-@@ -3664,7 +3664,7 @@
+@@ -3813,7 +3813,7 @@
  fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
--  GFXFLAGS="$GFXFLAGS -DUSE_TIFF" GFXLIBS="-ltiff $GFXLIBS" 
-+  GFXFLAGS="$GFXFLAGS -DUSE_TIFF" GFXLIBS="-ltiff34 $GFXLIBS"
- 	ICONEXT="tiff"
+-  my_libok=yes my_libname="-ltiff"
++  my_libok=yes my_libname="-ltiff34"
  else
    echo "$ac_t""no" 1>&6
-@@ -3717,14 +3717,14 @@
+ my_libok=no
+@@ -3821,14 +3821,14 @@
+ 
+     if test "$my_libok" = no; then
+     	if test "$zlib" = "yes"; then
+-    	    echo $ac_n "checking for TIFFGetVersion in -ltiff""... $ac_c" 1>&6
+-echo "configure:3826: checking for TIFFGetVersion in -ltiff" >&5
+-ac_lib_var=`echo tiff'_'TIFFGetVersion | sed 'y%./+-%__p_%'`
++    	    echo $ac_n "checking for TIFFGetVersion in -ltiff34""... $ac_c" 1>&6
++echo "configure:3826: checking for TIFFGetVersion in -ltiff34" >&5
++ac_lib_var=`echo tiff34'_'TIFFGetVersion | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-ltiff $GFX_INC_PATH $GFX_LIB_PATH $XLFLAGS $XLIBS $GFXLIBS -lz -lm $LIBS"
++LIBS="-ltiff34 $GFX_INC_PATH $GFX_LIB_PATH $XLFLAGS $XLIBS $GFXLIBS -lz -lm $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 3834 "configure"
+ #include "confdefs.h"
+@@ -3856,7 +3856,7 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  my_libok=yes my_libname="-ltiff -lz"
++  my_libok=yes my_libname="-ltiff34 -lz"
+ else
+   echo "$ac_t""no" 1>&6
+ my_libok=no
+@@ -3866,14 +3866,14 @@
      fi
      
-     if test ! "$ICONEXT" = "tiff"; then
+     if test "$my_libok" = no; then
 -	echo $ac_n "checking for TIFFGetVersion in -ltiff34""... $ac_c" 1>&6
--echo "configure:3722: checking for TIFFGetVersion in -ltiff34" >&5
+-echo "configure:3871: checking for TIFFGetVersion in -ltiff34" >&5
 -ac_lib_var=`echo tiff34'_'TIFFGetVersion | sed 'y%./+-%__p_%'`
 +	echo $ac_n "checking for TIFFGetVersion in -ltiff""... $ac_c" 1>&6
-+echo "configure:3722: checking for TIFFGetVersion in -ltiff" >&5
++echo "configure:3871: checking for TIFFGetVersion in -ltiff" >&5
 +ac_lib_var=`echo tiff'_'TIFFGetVersion | sed 'y%./+-%__p_%'`
  if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
@@ -54,14 +82,14 @@
 -LIBS="-ltiff34 $GFX_INC_PATH $GFX_LIB_PATH $XLFLAGS $XLIBS $GFXLIBS -lm $LIBS"
 +LIBS="-ltiff $GFX_INC_PATH $GFX_LIB_PATH $XLFLAGS $XLIBS $GFXLIBS -lm $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 3730 "configure"
+ #line 3879 "configure"
  #include "confdefs.h"
-@@ -3752,7 +3752,7 @@
+@@ -3901,7 +3901,7 @@
  fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
--  GFXFLAGS="$GFXFLAGS -DUSE_TIFF" GFXLIBS="-ltiff34 $GFXLIBS"
-+  GFXFLAGS="$GFXFLAGS -DUSE_TIFF" GFXLIBS="-ltiff $GFXLIBS" 
- 		ICONEXT="tiff"
+-  my_libok=yes my_libname="-ltiff34"
++  my_libok=yes my_libname="-ltiff"
  else
    echo "$ac_t""no" 1>&6
+ my_libok=no

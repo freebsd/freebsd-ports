@@ -1,0 +1,11 @@
+--- WINGs/usleep.c.orig	Wed Oct 21 14:43:55 1998
++++ WINGs/usleep.c	Mon Oct 26 19:27:37 1998
+@@ -11,6 +11,8 @@
+ # include <sys/types.h>
+ #endif
+ 
++#include <unistd.h>
++#include <string.h>
+ 
+ #if defined(HAVE_SELECT)
+ 
