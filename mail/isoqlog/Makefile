@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	isoqlog
-PORTVERSION=	2.2
+PORTVERSION=	2.2.1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.enderunix.org/isoqlog/ \
 		http://www.trunix.org/projeler/isoqlog/ \
