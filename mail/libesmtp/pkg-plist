@@ -1,7 +1,20 @@
+bin/libesmtp-config
+include/auth-client.h
+include/auth-plugin.h
 include/libesmtp.h
-lib/libesmtp.so.2
-lib/libesmtp.so
+lib/esmtp/sasl-cram-md5.a
+lib/esmtp/sasl-cram-md5.la
+lib/esmtp/sasl-cram-md5.so
+lib/esmtp/sasl-login.a
+lib/esmtp/sasl-login.la
+lib/esmtp/sasl-login.so
+lib/esmtp/sasl-plain.a
+lib/esmtp/sasl-plain.la
+lib/esmtp/sasl-plain.so
 lib/libesmtp.a
+lib/libesmtp.la
+lib/libesmtp.so
+lib/libesmtp.so.5
 %%PORTDOCS%%share/doc/libesmtp/INSTALL
 %%PORTDOCS%%share/doc/libesmtp/Notes
 %%PORTDOCS%%share/doc/libesmtp/README
@@ -10,3 +23,4 @@ lib/libesmtp.a
 %%PORTDOCS%%share/examples/libesmtp/test-mail
 %%PORTDOCS%%@dirrm share/examples/libesmtp
 %%PORTDOCS%%@dirrm share/doc/libesmtp
+@unexec rmdir %D/lib/esmtp 2>/dev/null || true
