@@ -20,7 +20,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/source
 
 .if ${OSVERSION} >= 400005
 # Using g77 is troublesome, then it is better to use f2c/cc.
-BUILD_DEPENDS=	fc:${PORTSDIR}/lang/f77
+BUILD_DEPENDS=	ftn77:${PORTSDIR}/lang/f77
 .endif
 
 post-configure:

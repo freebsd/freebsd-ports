@@ -11,8 +11,8 @@ CFLAGS += -malign-double
 F2C = f2c
 F2CFLAGS += -w -Nn802
 .if ${OSVERSION} >= 400005
-#FC = ftn77
-FC = fc
+FC = ftn77
+#FC = fc
 CFLAGS += -I${PREFIX}/include
 .endif
 LFLAGS = 
