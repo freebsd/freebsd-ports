@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	gnomephotoprinter
-PORTVERSION=	0.6
-PORTREVISION=	1
+PORTVERSION=	0.6.3
 CATEGORIES=	print gnome
 MASTER_SITES=	http://www.fogman.de/gpp/
 DISTNAME=	gpp-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
