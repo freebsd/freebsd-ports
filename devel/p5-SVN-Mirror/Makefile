@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SVN-Mirror
-PORTVERSION=	0.37
+PORTVERSION=	0.38
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/C/CL/CLKAO
@@ -25,6 +25,6 @@ CONFIGURE_ENV=	PERL_EXTUTILS_AUTOINSTALL=--skipdeps
 PERL_CONFIGURE=	yes
 
 MAN1=		svm.1
-MAN3=		SVN::Mirror.3 VCP::Dest::svk.3
+MAN3=		SVN::Mirror.3
 
 .include <bsd.port.mk>
