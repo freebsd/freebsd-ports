@@ -1,0 +1,14 @@
+$NetBSD: patch-af,v 1.1 2001/08/02 12:44:18 itojun Exp $
+
+--- ../libipsec/pfkey_dump.c-	Thu Aug  2 21:38:21 2001
++++ ../libipsec/pfkey_dump.c	Thu Aug  2 21:38:34 2001
+@@ -299,8 +299,7 @@
+ 	}
+ 
+ 	/* replay windoe size & flags */
+-	printf("\tseq=0x%08x replay=%u flags=0x%08x ",
+-		m_sa2->sadb_x_sa2_sequence,
++	printf("\treplay=%u flags=0x%08x ",
+ 		m_sa->sadb_sa_replay,
+ 		m_sa->sadb_sa_flags);
+ 

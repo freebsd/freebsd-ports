@@ -1,0 +1,16 @@
+$NetBSD: patch-ae,v 1.9 2001/08/02 12:44:18 itojun Exp $
+
+--- ../libipsec/key_debug.c-	Thu Aug  2 21:38:17 2001
++++ ../libipsec/key_debug.c	Thu Aug  2 21:38:44 2001
+@@ -392,9 +392,8 @@
+ 
+ 	printf("sadb_x_sa2{ mode=%u reqid=%u\n",
+ 	    sa2->sadb_x_sa2_mode, sa2->sadb_x_sa2_reqid);
+-	printf("  reserved1=%u reserved2=%u sequence=%u }\n",
+-	    sa2->sadb_x_sa2_reserved1, sa2->sadb_x_sa2_reserved2,
+-	    sa2->sadb_x_sa2_sequence);
++	printf("  reserved1=%u reserved2=%u }\n",
++	    sa2->sadb_x_sa2_reserved1, sa2->sadb_x_sa2_reserved2);
+ 
+ 	return;
+ }
