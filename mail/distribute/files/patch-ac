@@ -1,0 +1,12 @@
+--- distribute.c.orig	Sun Sep 14 09:26:57 1997
++++ distribute.c	Sun Sep 14 09:27:09 1997
+@@ -37,7 +37,8 @@
+ #include <unistd.h>
+ #include <string.h>
+ 
+-#if defined(__bsdi__)		/* may be wrong -- we need to use NET/2 def.*/
++/* may be wrong -- we need to use NET/2 def.*/
++#if defined(__bsdi__) || defined(__FreeBSD__)
+ # include <paths.h>		/* for sendmail path */
+ #endif
+ 

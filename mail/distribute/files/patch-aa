@@ -1,0 +1,46 @@
+--- Makefile.orig	Thu Oct  2 01:18:07 1997
++++ Makefile	Thu Oct  2 01:21:10 1997
+@@ -66,7 +66,7 @@
+ ##	-DDEF_ALIAS_CHAR_OPTION=\"b\"
+ 
+ #
+-DESTDIR=
++DESTDIR= ${PREFIX}
+ #
+ CFLAGS=	-g ${OPTIONS} ${DEFAULTCONFIG} ${RCONFIG}
+ # -Wall
+@@ -75,8 +75,8 @@
+ MAKE=	make
+ CC= 	${PURIFY} ${PURIFYOPTS} cc 
+ 
+-WHERE=	/usr/local/libexec
+-MANDIR=	/usr/local/man
++WHERE=	/sbin
++MANDIR=	/man
+ MANSEC=	1
+ 
+ # Install as
+@@ -84,7 +84,7 @@
+ GROUP=	daemon
+ 
+ # install
+-INSTALL= install -c
++#INSTALL= install -c
+ 
+ # perl
+ PERL=perl
+@@ -130,11 +130,11 @@
+ 	@size xarchive
+ 
+ install: xdistribute distribute.1 xarchive
+-	${INSTALL} -s -o ${OWNER} -g ${GROUP} -m 511 xdistribute \
++	${INSTALL} -c -s -o ${OWNER} -g ${GROUP} -m 511 xdistribute \
+ 		${DESTDIR}${WHERE}/distribute
+-	${INSTALL} -s -o ${OWNER} -g ${GROUP} -m 511 xarchive \
++	${INSTALL} -c -s -o ${OWNER} -g ${GROUP} -m 511 xarchive \
+ 		${DESTDIR}${WHERE}/archive
+-	${INSTALL} -m 444 distribute.1 \
++	${INSTALL_MAN}  distribute.1 \
+ 		${DESTDIR}${MANDIR}/man${MANSEC}/distribute.${MANSEC}
+ 
+ testinst: xdistribute xarchive

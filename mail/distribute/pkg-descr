@@ -1,0 +1,18 @@
+distribute - reforward incoming messages to a mailing list
+
+Distribute takes as its standard input a mail message, modifies
+the header (and optionally the body) of that message, then invokes
+sendmail to send the message to the specified recipients. It is
+primarily useful for those who run large mailing lists.
+
+Distribute does not include membership management.  It only does the
+rewrite and dispatch of the mailng list emails.
+Use majordomo (ports/mail/majordomo) for membership management.
+
+Facilities include:
+	Article numbering
+	Subject rewrite to Subject: (mailing-list 1234)
+	Proper handling of error related headers
+	Reply-to rewrite/insertion if necessery
+	Archiving
+	membership file from Majordomo's configuration directory
