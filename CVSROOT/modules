@@ -6750,6 +6750,7 @@ p5-Mail-Spool	ports/mail/p5-Mail-Spool
 p5-Mail-Tools	ports/mail/p5-Mail-Tools
 p5-Mail-Verify	ports/mail/p5-Mail-Verify
 p5-Make		ports/devel/p5-Make
+p5-MasonX-Apache2Handler	ports/www/p5-MasonX-Apache2Handler
 p5-MasonX-Interp-WithCallbacks	ports/www/p5-MasonX-Interp-WithCallbacks
 p5-MasonX-Request-WithApacheSession	ports/www/p5-MasonX-Request-WithApacheSession
 p5-Math-Base85	ports/math/p5-Math-Base85
@@ -7320,6 +7321,7 @@ p5-ePerl	ports/lang/p5-ePerl
 p5-enum		ports/devel/p5-enum
 p5-hp200lx-db	ports/databases/p5-hp200lx-db
 p5-libapreq	ports/www/p5-libapreq
+p5-libapreq2	ports/www/p5-libapreq2
 p5-libapreq-static	ports/www/p5-libapreq-static
 p5-libservlet	ports/www/p5-libservlet
 p5-libvorbis	ports/audio/p5-libvorbis
