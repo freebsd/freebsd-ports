@@ -6,34 +6,45 @@
 #
 
 PORTNAME=	grip
-PORTVERSION=	2.96
-PORTREVISION=	2
+PORTVERSION=	2.99.0
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} 
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=grip
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@geeksrus.net
+
+LIB_DEPENDS=	id3-3.7.13:${PORTSDIR}/audio/id3lib \
+		ghttp.1:${PORTSDIR}/www/libghttp
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GTK=	yes
-ALL_TARGET=	gripnopar gcd
-MAN1=		grip.1
-MLINKS=		grip.1 gcd.1
+USE_GNOMELIBS=	yes
+GNU_CONFIGURE=	yes
 
-post-patch:
-	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/*.c
+CONFIGURE_ARGS+=	--datadir=${PREFIX}/share
+
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include"
+
+.if defined(WITH_DEBUG)
+CONFIGURE_ENV+=	CFLAGS="-g" \
+		LDFLAGS="-g -L${LOCALBASE}/lib"
+.else
+CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
+.endif
+
+INSTALL_SUBDIRS=	po src intl pixmaps
+.if !defined(NOPORTDOCS)
+INSTALL_SUBDIRS+=	doc
+.endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/grip ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/gcd ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/grip.1 ${MANPREFIX}/man/man1
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/grip
-.for file in CHANGES CREDITS README TODO
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/grip
+	@cd ${WRKSRC}; ${MAKE} install-am
+.for dir in ${INSTALL_SUBDIRS}
+	@cd ${WRKSRC}/${dir}; ${MAKE} ${INSTALL_TARGET}
 .endfor
-.endif
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
