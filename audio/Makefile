@@ -21,7 +21,6 @@
     SUBDIR += ccaudio
     SUBDIR += cd-console
     SUBDIR += cd2mp3
-    SUBDIR += cdd
     SUBDIR += cdindex
     SUBDIR += cdplay
     SUBDIR += cdplayer.app
