@@ -1,0 +1,63 @@
+bin/ri
+%%RUBY_SITELIBDIR%%/ri/Array
+%%RUBY_SITELIBDIR%%/ri/index
+%%RUBY_SITELIBDIR%%/ri/Bignum
+%%RUBY_SITELIBDIR%%/ri/Binding
+%%RUBY_SITELIBDIR%%/ri/Class
+%%RUBY_SITELIBDIR%%/ri/Continuation
+%%RUBY_SITELIBDIR%%/ri/Dir
+%%RUBY_SITELIBDIR%%/ri/Exception
+%%RUBY_SITELIBDIR%%/ri/FalseClass
+%%RUBY_SITELIBDIR%%/ri/File
+%%RUBY_SITELIBDIR%%/ri/File__Stat
+%%RUBY_SITELIBDIR%%/ri/Fixnum
+%%RUBY_SITELIBDIR%%/ri/Float
+%%RUBY_SITELIBDIR%%/ri/Hash
+%%RUBY_SITELIBDIR%%/ri/Integer
+%%RUBY_SITELIBDIR%%/ri/IO
+%%RUBY_SITELIBDIR%%/ri/MatchData
+%%RUBY_SITELIBDIR%%/ri/Method
+%%RUBY_SITELIBDIR%%/ri/Module
+%%RUBY_SITELIBDIR%%/ri/NilClass
+%%RUBY_SITELIBDIR%%/ri/Numeric
+%%RUBY_SITELIBDIR%%/ri/Object
+%%RUBY_SITELIBDIR%%/ri/Proc
+%%RUBY_SITELIBDIR%%/ri/Range
+%%RUBY_SITELIBDIR%%/ri/Regexp
+%%RUBY_SITELIBDIR%%/ri/String
+%%RUBY_SITELIBDIR%%/ri/Struct
+%%RUBY_SITELIBDIR%%/ri/Struct__Tms
+%%RUBY_SITELIBDIR%%/ri/Symbol
+%%RUBY_SITELIBDIR%%/ri/Thread
+%%RUBY_SITELIBDIR%%/ri/ThreadGroup
+%%RUBY_SITELIBDIR%%/ri/Time
+%%RUBY_SITELIBDIR%%/ri/TrueClass
+%%RUBY_SITELIBDIR%%/ri/Comparable
+%%RUBY_SITELIBDIR%%/ri/Enumerable
+%%RUBY_SITELIBDIR%%/ri/Errno
+%%RUBY_SITELIBDIR%%/ri/FileTest
+%%RUBY_SITELIBDIR%%/ri/GC
+%%RUBY_SITELIBDIR%%/ri/Kernel
+%%RUBY_SITELIBDIR%%/ri/Marshal
+%%RUBY_SITELIBDIR%%/ri/Math
+%%RUBY_SITELIBDIR%%/ri/ObjectSpace
+%%RUBY_SITELIBDIR%%/ri/Process
+%%RUBY_SITELIBDIR%%/ri/ri.rb
+%%RUBY_SITELIBDIR%%/ri/refdoc.rb
+%%RUBY_SITELIBDIR%%/ri/outputstream.rb
+%%RUBY_SITELIBDIR%%/ri/op/Emacs.rb
+%%RUBY_SITELIBDIR%%/ri/op/Tagged.rb
+%%RUBY_SITELIBDIR%%/ri/op/Plain.rb
+@dirrm %%RUBY_SITELIBDIR%%/ri/op
+@dirrm %%RUBY_SITELIBDIR%%/ri
+%%PORTDOCS%%%%RUBY_DOCDIR%%/ri/COPYING
+%%PORTDOCS%%%%RUBY_DOCDIR%%/ri/ChangeLog
+%%PORTDOCS%%%%RUBY_DOCDIR%%/ri/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/ri/emacs/Changelog
+%%PORTDOCS%%%%RUBY_DOCDIR%%/ri/emacs/DESCRIPTION
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/ri/emacs
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/ri
+lib/xemacs/site-lisp/ri.el
+@unexec rmdir -p %D/lib/xemacs/site-lisp 2>/dev/null || true
+share/emacs/site-lisp/ri.el
+@comment share/emacs/site-lisp is created by mtree
