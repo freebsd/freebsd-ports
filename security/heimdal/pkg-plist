@@ -19,7 +19,6 @@ bin/su
 bin/telnet
 bin/verify_krb5_conf
 etc/rc.d/kdc.sh.sample
-include/asn1.h
 include/asn1_err.h
 include/base64.h
 include/der.h
@@ -33,8 +32,8 @@ include/hdb_asn1.h
 include/hdb_err.h
 include/heim_err.h
 include/kadm5/admin.h
-include/kadm5/kadm5-protos.h
 include/kadm5/kadm5-private.h
+include/kadm5/kadm5-protos.h
 include/kadm5/kadm5_err.h
 include/kadm5/private.h
 include/kafs.h
@@ -42,15 +41,16 @@ include/krb5-private.h
 include/krb5-protos.h
 include/krb5-types.h
 include/krb5.h
+include/krb5_asn1.h
 include/krb5_err.h
 include/otp.h
 include/parse_bytes.h
 include/parse_time.h
 include/parse_units.h
 include/resolve.h
-include/rtbl.h
 include/roken-common.h
 include/roken.h
+include/rtbl.h
 include/sl.h
 include/ss/ss.h
 include/xdbm.h
@@ -59,7 +59,7 @@ info/heimdal.info
 @exec install-info %D/info/heimdal.info %D/info/dir
 lib/libasn1.a
 lib/libasn1.so
-lib/libasn1.so.4
+lib/libasn1.so.5
 lib/libeditline.a
 lib/libgssapi.a
 lib/libgssapi.so
@@ -75,13 +75,13 @@ lib/libkadm5srv.so
 lib/libkadm5srv.so.7
 lib/libkrb5.a
 lib/libkrb5.so
-lib/libkrb5.so.15
+lib/libkrb5.so.16
 lib/libotp.a
 lib/libotp.so
 lib/libotp.so.1
 lib/libroken.a
 lib/libroken.so
-lib/libroken.so.11
+lib/libroken.so.12
 lib/libsl.a
 lib/libsl.so
 lib/libsl.so.1
