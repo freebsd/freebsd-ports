@@ -1,0 +1,39 @@
+--- configure.orig	Mon Nov 22 10:30:20 2004
++++ configure	Mon Nov 22 10:32:52 2004
+@@ -309,7 +309,6 @@
+ # include <unistd.h>
+ #endif"
+ 
+-ac_subdirs_all="$ac_subdirs_all lib-src/zipios++"
+ ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS build build_cpu build_vendor build_os host host_cpu host_vendor host_os target target_cpu target_vendor target_os INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA CYGPATH_W PACKAGE VERSION ACLOCAL AUTOCONF AUTOMAKE AUTOHEADER MAKEINFO AMTAR install_sh STRIP ac_ct_STRIP INSTALL_STRIP_PROGRAM AWK SET_MAKE am__leading_dot MKINSTALLDIRS USE_NLS MSGFMT GMSGFMT XGETTEXT MSGMERGE CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT DEPDIR am__include am__quote AMDEP_TRUE AMDEP_FALSE AMDEPBACKSLASH CCDEPMODE am__fastdepCC_TRUE am__fastdepCC_FALSE RANLIB ac_ct_RANLIB CPP EGREP ALLOCA GLIBC21 HAVE_POSIX_PRINTF HAVE_ASPRINTF HAVE_SNPRINTF HAVE_WPRINTF LIBICONV LTLIBICONV INTLBISON BUILD_INCLUDED_LIBINTL USE_INCLUDED_LIBINTL CATOBJEXT DATADIRNAME INSTOBJEXT GENCAT INTLOBJS INTL_LIBTOOL_SUFFIX_PREFIX INTLLIBS LIBINTL LTLIBINTL POSUB CXX CXXFLAGS ac_ct_CXX CXXDEPMODE am__fastdepCXX_TRUE am__fastdepCXX_FALSE MINGW32_TRUE MINGW32_FALSE WINDRES TEXI2HTML TOLUA SDL_CONFIG SDL_CFLAGS SDL_LIBS HAVESDLTTF_TRUE HAVESDLTTF_FALSE BUILDTOOLS_TRUE BUILDTOOLS_FALSE BUILDTTF2BMF_TRUE BUILDTTF2BMF_FALSE subdirs LIBOBJS LTLIBOBJS'
+ ac_subst_files=''
+ 
+@@ -11386,7 +11385,7 @@
+ 
+ 
+ 
+-TOLUA="\$(top_builddir)/tools/tolua"
++TOLUA="${LOCALBASE}/bin/tolua"
+ 
+ 
+ # Check whether --with-sdl-prefix or --without-sdl-prefix was given.
+@@ -12215,10 +12214,9 @@
+ 
+ 
+ 
+-subdirs="$subdirs lib-src/zipios++"
+ 
+ 
+-                                                                                                                                                                                                                                                                                                            ac_config_files="$ac_config_files Makefile m4/Makefile intl/Makefile data/Makefile data/gfx/Makefile data/gfx32/Makefile data/gfx40/Makefile data/gfx48/Makefile data/levels/Makefile data/levels/Sokoban/Makefile data/levels/m_tutor/Makefile data/levels/patches/Makefile data/fonts/Makefile data/sound/Makefile data/thumbs/Makefile doc/Makefile doc/manual/Makefile doc/manual/images/Makefile doc/refman/Makefile etc/Makefile lib-src/Makefile lib-src/oxydlib/Makefile lib-src/lua/Makefile src/Makefile src/px/Makefile tools/Makefile etc/enigma.spec etc/mingw32-dist.sh etc/enigma.nsi po/Makefile.in"
++                                                                                                                                                                                                                                                                                                            ac_config_files="$ac_config_files Makefile m4/Makefile intl/Makefile data/Makefile data/gfx/Makefile data/gfx32/Makefile data/gfx40/Makefile data/gfx48/Makefile data/levels/Makefile data/levels/Sokoban/Makefile data/levels/m_tutor/Makefile data/levels/patches/Makefile data/fonts/Makefile data/sound/Makefile data/thumbs/Makefile doc/Makefile doc/manual/Makefile doc/manual/images/Makefile doc/refman/Makefile etc/Makefile lib-src/Makefile lib-src/oxydlib/Makefile src/Makefile src/px/Makefile tools/Makefile etc/enigma.spec etc/mingw32-dist.sh etc/enigma.nsi po/Makefile.in"
+ 
+ cat >confcache <<\_ACEOF
+ # This file is a shell script that caches the results of configure
+@@ -12840,7 +12838,6 @@
+   "etc/Makefile" ) CONFIG_FILES="$CONFIG_FILES etc/Makefile" ;;
+   "lib-src/Makefile" ) CONFIG_FILES="$CONFIG_FILES lib-src/Makefile" ;;
+   "lib-src/oxydlib/Makefile" ) CONFIG_FILES="$CONFIG_FILES lib-src/oxydlib/Makefile" ;;
+-  "lib-src/lua/Makefile" ) CONFIG_FILES="$CONFIG_FILES lib-src/lua/Makefile" ;;
+   "src/Makefile" ) CONFIG_FILES="$CONFIG_FILES src/Makefile" ;;
+   "src/px/Makefile" ) CONFIG_FILES="$CONFIG_FILES src/px/Makefile" ;;
+   "tools/Makefile" ) CONFIG_FILES="$CONFIG_FILES tools/Makefile" ;;

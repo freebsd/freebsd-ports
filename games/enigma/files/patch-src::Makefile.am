@@ -1,0 +1,26 @@
+--- src/Makefile.am.orig	Wed Nov  3 20:55:11 2004
++++ src/Makefile.am	Mon Nov 22 10:48:31 2004
+@@ -78,10 +78,7 @@
+ 
+ 
+ enigma_CXXFLAGS = @SDL_CFLAGS@  -DLOCALEDIR=\"$(localedir)\" \
+-	-I$(top_srcdir)/lib-src/zipios++  \
+-	-I$(top_builddir)/lib-src/zipios++ \
+-	-I$(top_srcdir)/lib-src/lua \
+-	-I$(top_srcdir)/lib-src \
++	-I$(top_builddir)/lib-src \
+ 	-I$(top_builddir)/intl
+ 
+ enigma_LIBS = @SDL_LIBS@
+@@ -89,9 +86,9 @@
+ 
+ enigma_LDADD =  @LIBINTL@ \
+ 	       	px/libpx.a \
+-		$(top_builddir)/lib-src/lua/liblua.a \
++		-llua -llualib -ltolua \
+ 		$(top_builddir)/lib-src/oxydlib/liboxyd.a \
+-		$(top_builddir)/lib-src/zipios++/src/libzipios.a \
++		-lzipios \
+ 		-lz \
+ 		$(mingw_ldadd)
+ 
