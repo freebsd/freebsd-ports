@@ -253,6 +253,7 @@
     SUBDIR += lambdamoo
     SUBDIR += ldapdiff
     SUBDIR += ldapsdk
+    SUBDIR += lft
     SUBDIR += libdnet
     SUBDIR += libfreenet
     SUBDIR += libicq
