@@ -3,25 +3,43 @@
 # Date created:        12 August 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: Makefile,v 1.6 1999/01/22 22:15:39 nectar Exp $
+# $Id:$
 #
 
-DISTNAME=	mtr-0.28
+DISTNAME=	mtr-0.37
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
-		http://www.FreeBSD.org/~billf/distfiles/
+		http://www.giovannelli.it/~gmarco/files/
 
 MAINTAINER=	billf@FreeBSD.org
 
-LIB_DEPENDS=    gtk10.1:${PORTSDIR}/x11-toolkits/gtk10
-
-USE_AUTOCONF=	yes
-USE_XLIB=	yes
-CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk10-config"
+HAS_CONFIGURE=	yes
 
 MAN8=	mtr.8
 
+pre-fetch:
+.if !defined(USE_GTK)
+	@${ECHO} ""
+	@${ECHO} "If you want to compile with GTK support,"
+	@${ECHO} "hit Ctrl-C right now and use \"make USE_GTK=yes\" "
+	@${ECHO} ""
+CONFIGURE_ARGS=--with-gtk-prefix=/nopath
+.else
+USE_XLIB=	yes
+LIB_DEPENDS=    gtk12.1:${PORTSDIR}/x11-toolkits/gtk12
+CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk12-config"
+.endif
+
+do-install:
+	${INSTALL} -c -s -m 4755 -o root -g wheel ${WRKSRC}/mtr ${PREFIX}/sbin
+	${INSTALL_DATA} ${WRKSRC}/mtr.8 ${PREFIX}/man/man8
+
 post-install:
-	@chown root ${PREFIX}/sbin/mtr
+	@${ECHO} ""
+	@${ECHO} "${PREFIX}/sbin/mtr is setuid \"root\" "
+	@${ECHO} ""
+	@${ECHO} "Please read about potential security iussues"
+	@${ECHO} "in file ${WRKSRC}/SECURITY (not installed)"
+	@${ECHO} ""
 
 .include <bsd.port.mk>
