@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fix-mime-charset
-PORTVERSION=	0.5.2
-PORTREVISION=	1
+PORTVERSION=	0.5.3
 CATEGORIES=	converters textproc russian ukrainian
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fix-mime-chr
