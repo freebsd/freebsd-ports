@@ -62,7 +62,6 @@ include/php/ext/mbstring/mbstring.h
 include/php/ext/mbstring/php_mbregex.h
 include/php/ext/mbstring/php_unicode.h
 include/php/ext/mbstring/unicode_data.h
-include/php/ext/mbstring/libmbfl/config.h
 include/php/ext/mbstring/libmbfl/mbfl/mbfilter.h
 include/php/ext/mbstring/libmbfl/mbfl/mbfilter_8bit.h
 include/php/ext/mbstring/libmbfl/mbfl/mbfilter_pass.h
@@ -193,7 +192,6 @@ include/php/regex/regex.h
 include/php/regex/regex2.h
 include/php/regex/regex_extra.h
 include/php/regex/utils.h
-lib/php/%%EXT_DIR%%/.keepme
 lib/php/build/Makefile.global
 lib/php/build/acinclude.m4
 lib/php/build/mkdep.awk
@@ -223,6 +221,8 @@ lib/php/build/shtool
 %%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Common.php
 %%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Config.php
 %%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Dependency.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Downloader.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/ErrorStack.php
 %%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Installer.php
 %%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Packager.php
 %%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Registry.php
@@ -242,7 +242,6 @@ lib/php/build/shtool
 @dirrm include/php/main
 @dirrm include/php/regex
 @dirrm include/php/
-@unexec rmdir %D/lib/php/%%EXT_DIR%% 2> /dev/null || true
 @dirrm lib/php/build
 @unexec rmdir %D/lib/php 2> /dev/null || true
 %%CLI%%%%PEAR%%@dirrm share/pear/bootstrap/Archive
