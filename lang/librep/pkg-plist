@@ -37,8 +37,6 @@ libexec/rep/0.9/%%GNUHOST%%/libtimers.a
 libexec/rep/0.9/%%GNUHOST%%/libtimers.la
 libexec/rep/0.9/%%GNUHOST%%/libtimers.so
 libexec/rep/0.9/%%GNUHOST%%/libtimers.so.0
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 libexec/rep/%%GNUHOST%%/libtool
 libexec/rep/%%GNUHOST%%/rules.mk
 share/aclocal/rep.m4
