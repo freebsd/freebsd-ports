@@ -27,6 +27,7 @@ share/locale/sl/LC_MESSAGES/lyx.mo
 %%DATADIR%%/bind/greekkeys.bind
 %%DATADIR%%/bind/hollywood.bind
 %%DATADIR%%/bind/latinkeys.bind
+%%DATADIR%%/bind/mac.bind
 %%DATADIR%%/bind/math.bind
 %%DATADIR%%/bind/menus.bind
 %%DATADIR%%/bind/pt_menus.bind
@@ -64,7 +65,9 @@ share/locale/sl/LC_MESSAGES/lyx.mo
 %%DATADIR%%/doc/es_TOC.lyx
 %%DATADIR%%/doc/es_Tutorial.lyx
 %%DATADIR%%/doc/escher-lsd.eps
+%%DATADIR%%/doc/eu_Customization.lyx
 %%DATADIR%%/doc/eu_Extended.lyx
+%%DATADIR%%/doc/eu_FAQ.lyx
 %%DATADIR%%/doc/eu_Intro.lyx
 %%DATADIR%%/doc/eu_TOC.lyx
 %%DATADIR%%/doc/eu_Tutorial.lyx
@@ -102,7 +105,6 @@ share/locale/sl/LC_MESSAGES/lyx.mo
 %%DATADIR%%/doc/pt_Tutorial.lyx
 %%DATADIR%%/doc/ro_Intro.lyx
 %%DATADIR%%/doc/ro_TOC.lyx
-%%DATADIR%%/doc/ro_splash.lyx
 %%DATADIR%%/doc/ru_FAQ.lyx
 %%DATADIR%%/doc/ru_Intro.lyx
 %%DATADIR%%/doc/ru_TOC.lyx
@@ -179,6 +181,7 @@ share/locale/sl/LC_MESSAGES/lyx.mo
 %%DATADIR%%/examples/noweb2lyx.lyx
 %%DATADIR%%/examples/pl_splash.lyx
 %%DATADIR%%/examples/pt_splash.lyx
+%%DATADIR%%/examples/ro_splash.lyx
 %%DATADIR%%/examples/ru_splash.lyx
 %%DATADIR%%/examples/script_form.lyx
 %%DATADIR%%/examples/sl_primer_lyxan.lyx
@@ -835,6 +838,7 @@ share/locale/sl/LC_MESSAGES/lyx.mo
 %%DATADIR%%/layouts/stdstarsections.inc
 %%DATADIR%%/layouts/stdstruct.inc
 %%DATADIR%%/layouts/stdtitle.inc
+%%DATADIR%%/layouts/svglobal.layout
 %%DATADIR%%/layouts/svjog.layout
 %%DATADIR%%/layouts/svjour.inc
 %%DATADIR%%/layouts/svprobth.layout
@@ -878,7 +882,7 @@ share/locale/sl/LC_MESSAGES/lyx.mo
 %%DATADIR%%/scripts/fig2pstex.py
 %%DATADIR%%/scripts/general_command_wrapper.py
 %%DATADIR%%/scripts/listerrors
-%%DATADIR%%/scripts/lyxpreview2bitmap.sh
+%%DATADIR%%/scripts/lyxpreview2ppm.py
 %%DATADIR%%/scripts/pic2ascii.py
 %%DATADIR%%/scripts/pic2png_eps.py
 %%DATADIR%%/scripts/pic2png_eps.sh
