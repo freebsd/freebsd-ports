@@ -1,0 +1,24 @@
+--- configure.orig	Sat Mar 13 21:11:43 2004
++++ configure	Sat Mar 13 21:11:46 2004
+@@ -461,10 +461,10 @@
+ 
+ 
+ 	for (@SRC) {
+-		$compile .= qq|\nsrc/$_.o : src/$_.c\n|;
+-		$compile .= qq|\t\$(CC) \$(INC) -c src/$_.c \$(DEF) -o src/$_.o \n|;
++		$compile .= qq|\nsrc/$_.lo : src/$_.c\n|;
++		$compile .= qq|\t\$(CC) \$(CFLAGS_SHLIB) \$(INC) -c src/$_.c \$(DEF) -o src/$_.lo \n|;
+ 		$src .=" $_.c";
+-		$obj .=" src/$_.o";
++		$obj .=" src/$_.lo";
+ 	}
+ 
+ 	$data =~ s|%APXS%|$apxs|sg;
+@@ -514,6 +514,7 @@
+ AINCLUDEDIR=-I`$(APXS) -q INCLUDEDIR` `$(APXS) -q CFLAGS`
+ ACFLAGS=-I`$(APXS) -q INCLUDEDIR`
+ LD_SHLIB=`$(APXS) -q LDFLAGS_SHLIB`
++CFLAGS_SHLIB=`$(APXS) -q CFLAGS_SHLIB`
+ CC=`$(APXS) -q CC`
+ LD=`$(APXS) -q LD_SHLIB`
+ CONFDIR=`$(APXS) -q SYSCONFDIR`
