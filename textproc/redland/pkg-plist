@@ -1,10 +1,14 @@
+bin/rasqal-config
 bin/rdfproc
 bin/redland-config
 bin/redland-db-upgrade
+bin/roqet
 include/librdf.h
+include/rasqal.h
 include/rdf_concepts.h
 include/rdf_init.h
 include/rdf_iterator.h
+include/rdf_log.h
 include/rdf_model.h
 include/rdf_node.h
 include/rdf_parser.h
@@ -16,7 +20,13 @@ include/rdf_stream.h
 include/rdf_uri.h
 include/rdf_utf8.h
 include/redland.h
+lib/librasqal.a
+lib/librasqal.so
+lib/librasqal.so.0
 lib/librdf.a
 lib/librdf.so
 lib/librdf.so.0
+libdata/pkgconfig/rasqal.pc
 libdata/pkgconfig/redland.pc
+%%DATADIR%%/Redland.i
+@dirrm %%DATADIR%%
