@@ -54,8 +54,6 @@
     SUBDIR += kde3-i18n-zh_TW
     SUBDIR += libtabe
     SUBDIR += linux-gtk
-    SUBDIR += linux-netscape47-communicator
-    SUBDIR += linux-netscape47-navigator
     SUBDIR += lunar
     SUBDIR += metalist
     SUBDIR += mkisofs
@@ -66,8 +64,6 @@
     SUBDIR += mule-freewnn
     SUBDIR += muni
     SUBDIR += mutt
-    SUBDIR += netscape47-communicator
-    SUBDIR += netscape47-navigator
     SUBDIR += nvi-big5
     SUBDIR += nvi-euc-cn
     SUBDIR += nvi-euc-tw

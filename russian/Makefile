@@ -14,7 +14,6 @@
     SUBDIR += koi8r-ps
     SUBDIR += messarge
     SUBDIR += mtc
-    SUBDIR += netscape4.language
     SUBDIR += openoffice
     SUBDIR += p5-Lingua-RU-Charset
     SUBDIR += p5-XML-Parser-encodings
