@@ -2743,6 +2743,7 @@ jgnat		ports/lang/jgnat
 jgnat-doc-html	ports/lang/jgnat-doc-html
 jgnat-doc-info	ports/lang/jgnat-doc-info
 jgnat-doc-ps	ports/lang/jgnat-doc-ps
+jgnat-doc-txt	ports/lang/jgnat-doc-txt
 jgraph		ports/graphics/jgraph
 jgv		ports/graphics/jgv
 jift		ports/net/jift
