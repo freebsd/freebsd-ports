@@ -1,6 +1,6 @@
 # New ports collection makefile for: mod_auth_pwcheck
 # Date created:		2001/08/08
-# Whom:			Anton Voronin <anton@urc.ac.ru>
+# Whom:			Anton Voronin <anton@chelcom.ru>
 #
 # $FreeBSD$
 #
@@ -28,6 +28,7 @@ AP_MOD_SSL_SUFFIX!=	${APXS} -q CFLAGS 2>/dev/null \
 		|| ${ECHO} -modssl
 AP_CATEGORY!=	${APXS} -q CFLAGS 2>/dev/null \
 		| ${GREP} DRUSSIAN_APACHE >/dev/null \
+		&& ${ECHO} russian \
 		|| ${ECHO} www
 AP_TARGET!=	${APXS} -q TARGET 2>/dev/null || ${ECHO}
 AP_LIBEXEC!=	${APXS} -q LIBEXECDIR 2>/dev/null | ${SED} 's@^${PREFIX}/@@'
