@@ -1,5 +1,5 @@
---- suplib/src/FileAttr.m3.orig	1999/02/01 22:44:53	1.25
-+++ suplib/src/FileAttr.m3	2000/01/20 06:10:34	1.26
+--- suplib/src/FileAttr.m3.orig	Mon Feb  1 14:44:53 1999
++++ suplib/src/FileAttr.m3	Sun Sep  9 10:51:30 2001
 @@ -102,6 +102,7 @@
      ELSE
        fa.mask := fa.mask + AttrTypes{AttrType.FileType};  (* Always valid. *)
@@ -8,3 +8,12 @@
      IF AttrType.ModTime IN fa.mask THEN
        fa.stat.st_mtime := ScanInt(t, pos, ModTimeRadix, "modTime");
      END;
+@@ -271,7 +272,7 @@
+       ch := Text.GetChar(t, pos);
+       INC(pos);
+       IF ch < '0' OR ch > '9' THEN EXIT END;
+-      count := Word.Plus(Word.Times(val, 10), ORD(ch) - ORD('0'));
++      count := Word.Plus(Word.Times(count, 10), ORD(ch) - ORD('0'));
+     END;
+     IF pos >= tLen OR ch # '#' THEN
+       RAISE TokScan.Error("Missing \"#\" in " & what);
