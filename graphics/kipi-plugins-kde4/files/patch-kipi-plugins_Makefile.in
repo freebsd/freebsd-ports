@@ -1,15 +1,14 @@
---- kipi-plugins/Makefile.in.orig	Tue Nov  9 23:15:56 2004
-+++ kipi-plugins/Makefile.in	Tue Nov  9 23:16:31 2004
-@@ -283,11 +283,7 @@
- 
- @compile_JPEGLOSSLESS_TRUE@JPEGLOSSLESSDIR = jpeglossless
- 
+--- kipi-plugins/Makefile.in.orig	Wed Feb  9 16:37:03 2005
++++ kipi-plugins/Makefile.in	Sat Mar  5 18:21:29 2005
+@@ -359,10 +359,7 @@
+ @compile_TIMEADJUST_TRUE@TIMEADJUSTDIR = timeadjust
+ @compile_ACQUIREIMAGES_TRUE@ACQUIREIMAGESDIR = acquireimages
+ @compile_RAWCONVERTER_TRUE@RAWCONVERTERDIR = rawconverter
 -SUBDIRS = printwizard calendar mpegencoder cdarchiving imagesgallery \
--	sendimages acquireimages batchprocessimages \
--	timeadjust wallpaper \
--	rawconverter findimages \
--	$(SLIDESHOWDIR) $(KAMERAKLIENTDIR) $(JPEGLOSSLESSDIR)
+-	sendimages batchprocessimages wallpaper findimages galleryexport \
+-	$(SLIDESHOWDIR) $(KAMERAKLIENTDIR) $(JPEGLOSSLESSDIR) \
+-	$(TIMEADJUSTDIR) $(ACQUIREIMAGESDIR) $(RAWCONVERTERDIR)
 +SUBDIRS = %%SUBDIRS%%
  
- 
  rcdir = $(kde_datadir)/kipi
+ rc_DATA = tips
