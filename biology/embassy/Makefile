@@ -19,6 +19,8 @@ COMMENT=	A collection of contributed EMBOSS applications
 BUILD_DEPENDS=	${LOCALBASE}/include/emboss.h:${PORTSDIR}/biology/emboss
 LIB_DEPENDS=	nucleus.1:${PORTSDIR}/biology/emboss:install
 
+BROKEN=		Broken distinfo file
+
 USE_SUBMAKE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
