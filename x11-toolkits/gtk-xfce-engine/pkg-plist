@@ -1,0 +1,41 @@
+lib/gtk-2.0/2.0.0/engines/libxfce.so
+share/themes/Xfce-Redmondxp/ICON.png
+share/themes/Xfce-Redmondxp/README.html
+share/themes/Xfce-Redmondxp/gtk-2.0/gtkrc
+share/themes/Xfce-b5/ICON.png
+share/themes/Xfce-b5/README.html
+share/themes/Xfce-b5/gtk-2.0/gtkrc
+share/themes/Xfce-basic/ICON.png
+share/themes/Xfce-basic/README.html
+share/themes/Xfce-basic/gtk-2.0/gtkrc
+share/themes/Xfce-funklor/ICON.png
+share/themes/Xfce-funklor/README.html
+share/themes/Xfce-funklor/gtk-2.0/gtkrc
+share/themes/Xfce-light/ICON.png
+share/themes/Xfce-light/README.html
+share/themes/Xfce-light/gtk-2.0/gtkrc
+share/themes/Xfce-saltlake/ICON.png
+share/themes/Xfce-saltlake/README.html
+share/themes/Xfce-saltlake/gtk-2.0/gtkrc
+share/themes/Xfce-smooth/ICON.png
+share/themes/Xfce-smooth/README.html
+share/themes/Xfce-smooth/gtk-2.0/gtkrc
+share/themes/Xfce/ICON.png
+share/themes/Xfce/README.html
+share/themes/Xfce/gtk-2.0/gtkrc
+@dirrm share/themes/Xfce/gtk-2.0
+@dirrm share/themes/Xfce-smooth/gtk-2.0
+@dirrm share/themes/Xfce-smooth
+@dirrm share/themes/Xfce-saltlake/gtk-2.0
+@dirrm share/themes/Xfce-saltlake
+@dirrm share/themes/Xfce-light/gtk-2.0
+@dirrm share/themes/Xfce-light
+@dirrm share/themes/Xfce-funklor/gtk-2.0
+@dirrm share/themes/Xfce-funklor
+@dirrm share/themes/Xfce-basic/gtk-2.0
+@dirrm share/themes/Xfce-basic
+@dirrm share/themes/Xfce-b5/gtk-2.0
+@dirrm share/themes/Xfce-b5
+@dirrm share/themes/Xfce-Redmondxp/gtk-2.0
+@dirrm share/themes/Xfce-Redmondxp
+@dirrm share/themes/Xfce
