@@ -19,16 +19,11 @@ LIB_DEPENDS=	artsmodules.0:${PORTSDIR}/multimedia/kdemultimedia3
 USE_KDELIBS_VER=	3
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_AUTOCONF_VER=	253
-USE_AUTOHEADER=	yes
-MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
-		AUTOHEADER="${TRUE}"
-
-.include <bsd.port.pre.mk>
+GNU_CONFIGURE=	yes
+INSTALLS_SHLIB=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's| -pedantic||g ; \
-		 s|-pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/aclocal.m4
+	@${REINPLACE_CMD} -e 's|-O2||g' -e 's|-lpthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/${CONFIGURE_SCRIPT}
 
-.include "${PORTSDIR}/x11/kde3/Makefile.kde"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
