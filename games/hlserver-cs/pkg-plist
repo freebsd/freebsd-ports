@@ -1,6 +1,5 @@
 %%HLDSDIR%%cstrike/ajawad.wad
 %%HLDSDIR%%cstrike/as_tundra.wad
-%%HLDSDIR%%cstrike/cached.wad
 %%HLDSDIR%%cstrike/chateau.wad
 %%HLDSDIR%%cstrike/cl_dlls/client.dll
 %%HLDSDIR%%cstrike/classes/ak47.txt
@@ -42,7 +41,6 @@
 %%HLDSDIR%%cstrike/classes/usp.txt
 %%HLDSDIR%%cstrike/classes/xm1014.txt
 %%HLDSDIR%%cstrike/commandmenu.txt
-%%HLDSDIR%%cstrike/config.cfg
 %%HLDSDIR%%cstrike/cs_747.wad
 %%HLDSDIR%%cstrike/cs_assault.wad
 %%HLDSDIR%%cstrike/cs_bdog.wad
@@ -54,6 +52,7 @@
 %%HLDSDIR%%cstrike/cstrike.ico
 %%HLDSDIR%%cstrike/cstrike.wad
 %%HLDSDIR%%cstrike/de_aztec.wad
+%%HLDSDIR%%cstrike/de_piranesi.wad
 %%HLDSDIR%%cstrike/de_storm.wad
 %%HLDSDIR%%cstrike/de_vegas.wad
 %%HLDSDIR%%cstrike/decals.wad
@@ -89,7 +88,7 @@
 %%HLDSDIR%%cstrike/itsitaly.wad
 %%HLDSDIR%%cstrike/jos.wad
 %%HLDSDIR%%cstrike/liblist.gam
-%%HLDSDIR%%cstrike/manual/manual.htm
+%%PORTDOCS%%%%HLDSDIR%%cstrike/manual/manual.htm
 %%HLDSDIR%%cstrike/mapcycle.txt
 %%HLDSDIR%%cstrike/maps/as_oilrig.bsp
 %%PORTDOCS%%%%HLDSDIR%%cstrike/maps/as_oilrig.txt
@@ -127,6 +126,8 @@
 %%PORTDOCS%%%%HLDSDIR%%cstrike/maps/de_inferno.txt
 %%HLDSDIR%%cstrike/maps/de_nuke.bsp
 %%PORTDOCS%%%%HLDSDIR%%cstrike/maps/de_nuke.txt
+%%HLDSDIR%%cstrike/maps/de_piranesi.bsp
+%%PORTDOCS%%%%HLDSDIR%%cstrike/maps/de_piranesi.txt
 %%HLDSDIR%%cstrike/maps/de_prodigy.bsp
 %%PORTDOCS%%%%HLDSDIR%%cstrike/maps/de_prodigy.txt
 %%HLDSDIR%%cstrike/maps/de_storm.bsp
@@ -820,7 +821,7 @@
 @dirrm %%HLDSDIR%%cstrike/models
 @dirrm %%HLDSDIR%%cstrike/media
 @dirrm %%HLDSDIR%%cstrike/maps
-@dirrm %%HLDSDIR%%cstrike/manual
+%%PORTDOCS%%@dirrm %%HLDSDIR%%cstrike/manual
 @dirrm %%HLDSDIR%%cstrike/events
 @dirrm %%HLDSDIR%%cstrike/dlls
 @dirrm %%HLDSDIR%%cstrike/classes
