@@ -30,6 +30,8 @@ MLINKS=		camlp4.1 camlp4o.1 camlp4.1 camlp4o.opt.1 \
 
 CONFIGURE_ARGS=	--prefix ${PREFIX}
 
+BROKEN=		"Does not compile"
+
 .if !defined(NOPORTDOCS)
 DOCFILES=	${DISTNAME}-manual.html${EXTRACT_SUFX} ${DISTNAME}-manual.ps.gz \
 	  	${DISTNAME}-tutorial.html${EXTRACT_SUFX} ${DISTNAME}-tutorial.ps.gz
