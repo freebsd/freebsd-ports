@@ -1,79 +1,285 @@
-include/apache/modules/perl/apache_inc.h
-include/apache/modules/perl/mod_perl.h
-include/apache/modules/perl/mod_perl_version.h
-include/apache/modules/perl/mod_perl_xs.h
-include/apache/modules/perl/perl_PL.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/Connection.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/Constants.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/Constants/Exports.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/Debug.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/ExtUtils.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/FakeRequest.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/File.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/Include.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/Leak.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/Log.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/ModuleConfig.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/MyConfig.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/Opcode.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/Options.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/PerlRun.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/PerlRunXS.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/PerlSections.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/RedirectLogFix.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/Registry.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/RegistryBB.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/RegistryLoader.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/RegistryNG.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/Resource.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/SIG.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/Server.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/SizeLimit.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/StatINC.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/Status.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/Symbol.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/Symdump.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/Table.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/URI.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/Util.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/httpd_conf.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/src.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/test.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Bundle/Apache.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Leak/Leak.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Leak/Leak.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Symbol/Symbol.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Symbol/Symbol.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/ap_config_auto.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/modules/perl/apache_inc.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/modules/perl/mod_perl.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/modules/perl/mod_perl_version.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/modules/perl/mod_perl_xs.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/modules/perl/perl_PL.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/mod_perl.exp
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/typemap
+include/apache2/modules/perl/mod_perl.h
+include/apache2/modules/perl/modperl_apache_includes.h
+include/apache2/modules/perl/modperl_bucket.h
+include/apache2/modules/perl/modperl_callback.h
+include/apache2/modules/perl/modperl_cgi.h
+include/apache2/modules/perl/modperl_cmd.h
+include/apache2/modules/perl/modperl_config.h
+include/apache2/modules/perl/modperl_const.h
+include/apache2/modules/perl/modperl_constants.h
+include/apache2/modules/perl/modperl_directives.h
+include/apache2/modules/perl/modperl_env.h
+include/apache2/modules/perl/modperl_filter.h
+include/apache2/modules/perl/modperl_flags.h
+include/apache2/modules/perl/modperl_global.h
+include/apache2/modules/perl/modperl_gtop.h
+include/apache2/modules/perl/modperl_handler.h
+include/apache2/modules/perl/modperl_hooks.h
+include/apache2/modules/perl/modperl_interp.h
+include/apache2/modules/perl/modperl_io.h
+include/apache2/modules/perl/modperl_largefiles.h
+include/apache2/modules/perl/modperl_log.h
+include/apache2/modules/perl/modperl_mgv.h
+include/apache2/modules/perl/modperl_module.h
+include/apache2/modules/perl/modperl_options.h
+include/apache2/modules/perl/modperl_pcw.h
+include/apache2/modules/perl/modperl_perl.h
+include/apache2/modules/perl/modperl_perl_global.h
+include/apache2/modules/perl/modperl_perl_includes.h
+include/apache2/modules/perl/modperl_perl_pp.h
+include/apache2/modules/perl/modperl_perl_unembed.h
+include/apache2/modules/perl/modperl_svptr_table.h
+include/apache2/modules/perl/modperl_sys.h
+include/apache2/modules/perl/modperl_time.h
+include/apache2/modules/perl/modperl_tipool.h
+include/apache2/modules/perl/modperl_trace.h
+include/apache2/modules/perl/modperl_types.h
+include/apache2/modules/perl/modperl_util.h
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/APR/PerlIO.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/APR/Table.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/Log.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/Reload.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/RequestRec.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/ServerUtil.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/SubProcess.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/Test.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/Test5005compat.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/TestBuild.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/TestClient.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/TestCommon.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/TestCommonPost.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/TestConfig.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/TestConfigC.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/TestConfigParse.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/TestConfigPerl.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/TestHandler.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/TestHarness.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/TestMM.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/TestPerlDB.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/TestReport.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/TestReportPerl.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/TestRequest.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/TestRun.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/TestRunPerl.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/TestSSLCA.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/TestServer.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/TestSmoke.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/TestSmokePerl.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/TestSort.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/TestTrace.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/TestUtil.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/compat.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/APR.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/APR/Base64.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/APR/Brigade.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/APR/Bucket.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/APR/Const.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/APR/Date.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/APR/NetLib.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/APR/OS.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/APR/PerlIO.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/APR/Pool.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/APR/SockAddr.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/APR/Socket.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/APR/String.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/APR/Table.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/APR/URI.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/APR/UUID.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/APR/Util.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/APR/XSLoader.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/Apache/Access.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/Apache/Build.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/Apache/BuildConfig.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/Apache/CmdParms.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/Apache/Command.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/Apache/Connection.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/Apache/Const.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/Apache/Directive.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/Apache/Filter.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/Apache/FilterRec.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/Apache/HookRun.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/Apache/Log.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/Apache/Module.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/Apache/ParseSource.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/Apache/PerlSection.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/Apache/Process.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/Apache/Reload.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/Apache/RequestIO.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/Apache/RequestRec.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/Apache/RequestUtil.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/Apache/Response.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/Apache/Server.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/Apache/ServerUtil.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/Apache/SourceTables.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/Apache/SubProcess.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/Apache/SubRequest.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/Apache/URI.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/Apache/Util.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/Apache/XSLoader.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/Apache/compat.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/ModPerl/BuildOptions.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/ModPerl/Code.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/ModPerl/Config.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/ModPerl/Const.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/ModPerl/FunctionMap.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/ModPerl/Global.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/ModPerl/MM.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/ModPerl/Manifest.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/ModPerl/MapUtil.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/ModPerl/ParseSource.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/ModPerl/PerlRun.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/ModPerl/Registry.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/ModPerl/RegistryBB.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/ModPerl/RegistryCooker.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/ModPerl/RegistryLoader.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/ModPerl/StructureMap.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/ModPerl/TestRun.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/ModPerl/TypeMap.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/ModPerl/Util.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/ModPerl/WrapXS.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/APR.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/APR.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/Base64/Base64.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/Base64/Base64.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/Brigade/Brigade.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/Brigade/Brigade.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/Bucket/Bucket.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/Bucket/Bucket.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/Const/Const.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/Const/Const.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/Date/Date.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/Date/Date.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/NetLib/NetLib.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/NetLib/NetLib.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/OS/OS.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/OS/OS.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/PerlIO/PerlIO.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/PerlIO/PerlIO.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/Pool/Pool.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/Pool/Pool.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/SockAddr/SockAddr.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/SockAddr/SockAddr.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/Socket/Socket.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/Socket/Socket.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/String/String.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/String/String.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/Table/Table.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/Table/Table.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/URI/URI.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/URI/URI.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/UUID/UUID.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/UUID/UUID.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/Util/Util.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/Util/Util.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/Access/Access.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/Access/Access.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/Build/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/CmdParms/CmdParms.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/CmdParms/CmdParms.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/Command/Command.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/Command/Command.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/Connection/Connection.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/Connection/Connection.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/Const/Const.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/Const/Const.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/Directive/Directive.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/Directive/Directive.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/Filter/Filter.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/Filter/Filter.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/FilterRec/FilterRec.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/FilterRec/FilterRec.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/HookRun/HookRun.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/HookRun/HookRun.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/Log/Log.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/Log/Log.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/Module/Module.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/Module/Module.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/Process/Process.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/Process/Process.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/RequestIO/RequestIO.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/RequestIO/RequestIO.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/RequestRec/RequestRec.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/RequestRec/RequestRec.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/RequestUtil/RequestUtil.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/RequestUtil/RequestUtil.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/Response/Response.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/Response/Response.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/Server/Server.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/Server/Server.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/ServerUtil/ServerUtil.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/ServerUtil/ServerUtil.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/SubProcess/SubProcess.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/SubProcess/SubProcess.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/SubRequest/SubRequest.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/SubRequest/SubRequest.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/URI/URI.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/URI/URI.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/Util/Util.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/Util/Util.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/ModPerl/Const/Const.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/ModPerl/Const/Const.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/ModPerl/Global/Global.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/ModPerl/Global/Global.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/ModPerl/Util/Util.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/ModPerl/Util/Util.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/mod_perl.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/typemap
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Bundle/ApacheTest.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/mod_perl/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/cgi_to_mod_perl.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/mod_perl.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/mod_perl.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/mod_perl_cvs.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/mod_perl_hooks.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/mod_perl_hooks.pm.PL
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/mod_perl_method_handlers.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/mod_perl_traps.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/mod_perl_tuning.pod
-libexec/apache/libperl.so
-@dirrm include/apache/modules/perl
-@dirrm include/apache/modules
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/modules/perl
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include/modules
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/include
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Leak
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Symbol
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/perllocal.pod
+libexec/apache2/mod_perl.so
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/mod_perl
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/Constants
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/ModPerl/Util
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/ModPerl/Global
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/ModPerl/Const
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/ModPerl
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/Util
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/URI
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/SubRequest
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/SubProcess
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/ServerUtil
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/Server
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/Response
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/RequestUtil
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/RequestRec
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/RequestIO
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/Process
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/Module
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/Log
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/HookRun
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/FilterRec
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/Filter
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/Directive
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/Const
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/Connection
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/Command
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/CmdParms
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/Build
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache/Access
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/Apache
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/Util
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/UUID
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/URI
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/Table
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/String
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/Socket
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/SockAddr
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/Pool
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/PerlIO
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/OS
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/NetLib
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/Date
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/Const
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/Bucket
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/Brigade
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR/Base64
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/APR
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/ModPerl
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/Apache
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/APR
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Bundle
-@unexec rmdir %D/etc/apache 2> /dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/APR
+@dirrm include/apache2/modules/perl
