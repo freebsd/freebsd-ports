@@ -5,11 +5,10 @@
 # $FreeBSD$
 #
 
-PORTNAME=	fishmatic
+PORTNAME=	xmms-fishmatic
 PORTVERSION=	0.0.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://stukach.com/hosted/
-PKGNAMEPREFIX=	xmms-
 DISTNAME=	fishmatic
 
 MAINTAINER=	dyeske@yahoo.com
@@ -17,18 +16,22 @@ MAINTAINER=	dyeske@yahoo.com
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/audio/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/audio/xmms
 
-INSTALLS_SHLIB=	yes
-USE_LIBTOOL=	yes
+USE_X_PREFIX=   yes
+USE_GNOMENG=    yes
+USE_GNOME=      gtk12
 USE_GMAKE=	yes
-USE_GTK=	yes
 USE_MESA=	yes
-USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
+GNU_CONFIGURE=  yes
 
+CONFIGURE_ENV=	LIBS="-lGL -lXext ${LIBS}"
 CFLAGS+=	-I${X11BASE}/include -L${X11BASE}/lib
 
 post-patch:
 	@${RM} -f ${WRKSRC}/config.cache
-	@${PERL} -pi -e 's@glib-config@${GLIB_CONFIG}@g;' \
-		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-O2||; \
+		s|-lpthreads|${PTHREAD_LIBS:S/"//g}|g' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
