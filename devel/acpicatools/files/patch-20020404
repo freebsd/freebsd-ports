@@ -16,8 +16,18 @@
 +ACPI_STATUS
 +AcpiOsGetRootPointer (
 +    UINT32                  Flags,
-+    ACPI_PHYSICAL_ADDRESS   *RsdpPhysicalAddress)
++    ACPI_POINTER            *RsdpPhysicalAddress)
 +{
 +    return (AE_OK);
 +}
+ 
+--- include/platform/acfreebsd.h.orig	Fri Apr  5 08:43:53 2002
++++ include/platform/acfreebsd.h	Thu Apr 11 14:38:34 2002
+@@ -156,6 +156,7 @@
+ 
+ #define __cli()
+ #define __sti()
++#define ACPI_FLUSH_CPU_CACHE()
+ 
+ #endif /* _KERNEL */
  
