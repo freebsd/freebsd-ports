@@ -51,72 +51,74 @@ etc/securetty
 etc/shells
 etc/termcap
 etc/yp.conf
-lib/ld-2.1.2.so
+lib/ld-2.1.3.so
 lib/ld-linux.so.1
 lib/ld-linux.so.1.9.5
 lib/ld-linux.so.2
 lib/ld.so
 lib/ld.so.1.9.5
-lib/libBrokenLocale-2.1.2.so
+lib/libBrokenLocale-2.1.3.so
 lib/libBrokenLocale.so.1
-lib/libNoVersion-2.1.2.so
+lib/libNoVersion-2.1.3.so
 lib/libNoVersion.so.1
 lib/libSegFault.so
-lib/libc-2.1.2.so
+lib/libc-2.1.3.so
 lib/libc.so.6
-lib/libcrypt-2.1.2.so
+lib/libcrypt-2.1.3.so
 lib/libcrypt.so.1
-lib/libdb-2.1.2.so
+lib/libdb-2.1.3.so
 lib/libdb.so.2
 lib/libdb.so.3
-lib/libdb1-2.1.2.so
+lib/libdb1-2.1.3.so
 lib/libdb1.so.2
-lib/libdl-2.1.2.so
+lib/libdl-2.1.3.so
 lib/libdl.so.1
 lib/libdl.so.1.9.5
 lib/libdl.so.2
-lib/libm-2.1.2.so
+lib/libm-2.1.3.so
 lib/libm.so.6
-lib/libnsl-2.1.2.so
+lib/libnsl-2.1.3.so
 lib/libnsl.so.1
-lib/libnss1_compat-2.1.2.so
+lib/libnss1_compat-2.1.3.so
 lib/libnss1_compat.so.1
-lib/libnss1_db-2.1.2.so
+lib/libnss1_db-2.1.3.so
 lib/libnss1_db.so.1
-lib/libnss1_dns-2.1.2.so
+lib/libnss1_dns-2.1.3.so
 lib/libnss1_dns.so.1
-lib/libnss1_files-2.1.2.so
+lib/libnss1_files-2.1.3.so
 lib/libnss1_files.so.1
-lib/libnss1_nis-2.1.2.so
+lib/libnss1_nis-2.1.3.so
 lib/libnss1_nis.so.1
-lib/libnss_compat-2.1.2.so
+lib/libnss_compat-2.1.3.so
 lib/libnss_compat.so.1
 lib/libnss_compat.so.2
-lib/libnss_db-2.1.2.so
+lib/libnss_db-2.1.3.so
 lib/libnss_db.so.1
 lib/libnss_db.so.2
-lib/libnss_dns-2.1.2.so
+lib/libnss_dns-2.1.3.so
 lib/libnss_dns.so.1
 lib/libnss_dns.so.2
-lib/libnss_files-2.1.2.so
+lib/libnss_files-2.1.3.so
 lib/libnss_files.so.1
 lib/libnss_files.so.2
-lib/libnss_hesiod-2.1.2.so
+lib/libnss_hesiod-2.1.3.so
 lib/libnss_hesiod.so.2
-lib/libnss_nis-2.1.2.so
+lib/libnss_nis-2.1.3.so
 lib/libnss_nis.so.1
 lib/libnss_nis.so.2
-lib/libnss_nisplus-2.1.2.so
+lib/libnss_nisplus-2.1.3.so
 lib/libnss_nisplus.so.2
 lib/libpthread-0.8.so
 lib/libpthread.so.0
-lib/libresolv-2.1.2.so
+lib/libresolv-2.1.3.so
 lib/libresolv.so.2
-lib/librt-2.1.2.so
+lib/librt-2.1.3.so
 lib/librt.so.1
 lib/libtermcap.so.2
 lib/libtermcap.so.2.0.8
-lib/libutil-2.1.2.so
+lib/libthread_db-1.0.so
+lib/libthread_db.so.1
+lib/libutil-2.1.3.so
 lib/libutil.so.1
 sbin/install-info
 sbin/ldconfig
@@ -245,42 +247,42 @@ usr/doc/glib-1.2.6/COPYING
 usr/doc/glib-1.2.6/ChangeLog
 usr/doc/glib-1.2.6/NEWS
 usr/doc/glib-1.2.6/README
-usr/doc/glibc-2.1.2/BUGS
-usr/doc/glibc-2.1.2/ChangeLog.1.gz
-usr/doc/glibc-2.1.2/ChangeLog.2.gz
-usr/doc/glibc-2.1.2/ChangeLog.3.gz
-usr/doc/glibc-2.1.2/ChangeLog.4.gz
-usr/doc/glibc-2.1.2/ChangeLog.5.gz
-usr/doc/glibc-2.1.2/ChangeLog.6.gz
-usr/doc/glibc-2.1.2/ChangeLog.7.gz
-usr/doc/glibc-2.1.2/ChangeLog.8.gz
-usr/doc/glibc-2.1.2/ChangeLog.9.gz
-usr/doc/glibc-2.1.2/ChangeLog.gz
-usr/doc/glibc-2.1.2/ChangeLog.threads.gz
-usr/doc/glibc-2.1.2/Changes.threads
-usr/doc/glibc-2.1.2/FAQ
-usr/doc/glibc-2.1.2/FAQ-threads.html
-usr/doc/glibc-2.1.2/INSTALL
-usr/doc/glibc-2.1.2/NEWS
-usr/doc/glibc-2.1.2/NOTES
-usr/doc/glibc-2.1.2/PROJECTS
-usr/doc/glibc-2.1.2/README
-usr/doc/glibc-2.1.2/README.crypt
-usr/doc/glibc-2.1.2/README.db2
-usr/doc/glibc-2.1.2/README.db2.mutex
-usr/doc/glibc-2.1.2/README.hesiod
-usr/doc/glibc-2.1.2/README.libm
-usr/doc/glibc-2.1.2/README.template
-usr/doc/glibc-2.1.2/README.threads
-usr/doc/glibc-2.1.2/README.timezone
-usr/doc/glibc-2.1.2/README.utmpd
-usr/doc/glibc-2.1.2/examples.threads/Makefile
-usr/doc/glibc-2.1.2/examples.threads/ex1.c
-usr/doc/glibc-2.1.2/examples.threads/ex2.c
-usr/doc/glibc-2.1.2/examples.threads/ex3.c
-usr/doc/glibc-2.1.2/examples.threads/ex4.c
-usr/doc/glibc-2.1.2/examples.threads/ex5.c
-usr/doc/glibc-2.1.2/examples.threads/ex6.c
+usr/doc/glibc-2.1.3/BUGS
+usr/doc/glibc-2.1.3/ChangeLog.1.gz
+usr/doc/glibc-2.1.3/ChangeLog.2.gz
+usr/doc/glibc-2.1.3/ChangeLog.3.gz
+usr/doc/glibc-2.1.3/ChangeLog.4.gz
+usr/doc/glibc-2.1.3/ChangeLog.5.gz
+usr/doc/glibc-2.1.3/ChangeLog.6.gz
+usr/doc/glibc-2.1.3/ChangeLog.7.gz
+usr/doc/glibc-2.1.3/ChangeLog.8.gz
+usr/doc/glibc-2.1.3/ChangeLog.9.gz
+usr/doc/glibc-2.1.3/ChangeLog.gz
+usr/doc/glibc-2.1.3/ChangeLog.threads.gz
+usr/doc/glibc-2.1.3/Changes.threads
+usr/doc/glibc-2.1.3/FAQ
+usr/doc/glibc-2.1.3/FAQ-threads.html
+usr/doc/glibc-2.1.3/INSTALL
+usr/doc/glibc-2.1.3/NEWS
+usr/doc/glibc-2.1.3/NOTES
+usr/doc/glibc-2.1.3/PROJECTS
+usr/doc/glibc-2.1.3/README
+usr/doc/glibc-2.1.3/README.crypt
+usr/doc/glibc-2.1.3/README.db2
+usr/doc/glibc-2.1.3/README.db2.mutex
+usr/doc/glibc-2.1.3/README.hesiod
+usr/doc/glibc-2.1.3/README.libm
+usr/doc/glibc-2.1.3/README.template
+usr/doc/glibc-2.1.3/README.threads
+usr/doc/glibc-2.1.3/README.timezone
+usr/doc/glibc-2.1.3/README.utmpd
+usr/doc/glibc-2.1.3/examples.threads/Makefile
+usr/doc/glibc-2.1.3/examples.threads/ex1.c
+usr/doc/glibc-2.1.3/examples.threads/ex2.c
+usr/doc/glibc-2.1.3/examples.threads/ex3.c
+usr/doc/glibc-2.1.3/examples.threads/ex4.c
+usr/doc/glibc-2.1.3/examples.threads/ex5.c
+usr/doc/glibc-2.1.3/examples.threads/ex6.c
 usr/doc/grep-2.3/ABOUT-NLS
 usr/doc/grep-2.3/AUTHORS
 usr/doc/grep-2.3/ChangeLog
@@ -418,7 +420,6 @@ usr/info/termcap.info-4.gz
 usr/info/termcap.info.gz
 usr/lib/gconv/ANSI_X3.110.so
 usr/lib/gconv/ASMO_449.so
-usr/lib/gconv/BALTIC.so
 usr/lib/gconv/BIG5.so
 usr/lib/gconv/CP1250.so
 usr/lib/gconv/CP1251.so
@@ -455,6 +456,7 @@ usr/lib/gconv/EUC-CN.so
 usr/lib/gconv/EUC-JP.so
 usr/lib/gconv/EUC-KR.so
 usr/lib/gconv/EUC-TW.so
+usr/lib/gconv/GBK.so
 usr/lib/gconv/GOST_19768-74.so
 usr/lib/gconv/GREEK-CCITT.so
 usr/lib/gconv/GREEK7-OLD.so
@@ -510,6 +512,7 @@ usr/lib/gconv/IEC_P27-1.so
 usr/lib/gconv/INIS-8.so
 usr/lib/gconv/INIS-CYRILLIC.so
 usr/lib/gconv/INIS.so
+usr/lib/gconv/ISIRI-3342.so
 usr/lib/gconv/ISO-2022-JP.so
 usr/lib/gconv/ISO-2022-KR.so
 usr/lib/gconv/ISO-IR-197.so
@@ -837,6 +840,7 @@ usr/share/i18n/charmaps/INIS
 usr/share/i18n/charmaps/INIS-8
 usr/share/i18n/charmaps/INIS-CYRILLIC
 usr/share/i18n/charmaps/INVARIANT
+usr/share/i18n/charmaps/ISIRI-3342
 usr/share/i18n/charmaps/ISO-8859-1
 usr/share/i18n/charmaps/ISO-8859-10
 usr/share/i18n/charmaps/ISO-8859-13
@@ -912,6 +916,8 @@ usr/share/i18n/charmaps/TIS-620
 usr/share/i18n/charmaps/UTF8
 usr/share/i18n/charmaps/VIDEOTEX-SUPPL
 usr/share/i18n/locales/POSIX
+usr/share/i18n/locales/af_ZA
+usr/share/i18n/locales/ar_SA
 usr/share/i18n/locales/ca_ES
 usr/share/i18n/locales/cs_CZ
 usr/share/i18n/locales/da_DK
@@ -922,6 +928,7 @@ usr/share/i18n/locales/de_DE
 usr/share/i18n/locales/de_LU
 usr/share/i18n/locales/el_GR
 usr/share/i18n/locales/en_AU
+usr/share/i18n/locales/en_BW
 usr/share/i18n/locales/en_CA
 usr/share/i18n/locales/en_CA,2.5
 usr/share/i18n/locales/en_DK
@@ -931,6 +938,7 @@ usr/share/i18n/locales/en_IE
 usr/share/i18n/locales/en_NZ
 usr/share/i18n/locales/en_US
 usr/share/i18n/locales/en_ZA
+usr/share/i18n/locales/en_ZW
 usr/share/i18n/locales/es_AR
 usr/share/i18n/locales/es_BO
 usr/share/i18n/locales/es_CL
@@ -950,6 +958,7 @@ usr/share/i18n/locales/es_UY
 usr/share/i18n/locales/es_VE
 usr/share/i18n/locales/et_EE
 usr/share/i18n/locales/eu_ES
+usr/share/i18n/locales/fa_IR
 usr/share/i18n/locales/fi_FI
 usr/share/i18n/locales/fo_FO
 usr/share/i18n/locales/fr_BE
@@ -959,6 +968,7 @@ usr/share/i18n/locales/fr_CH
 usr/share/i18n/locales/fr_FR
 usr/share/i18n/locales/fr_LU
 usr/share/i18n/locales/ga_IE
+usr/share/i18n/locales/gl_ES
 usr/share/i18n/locales/he_IL
 usr/share/i18n/locales/hr_HR
 usr/share/i18n/locales/hu_HU
@@ -972,6 +982,7 @@ usr/share/i18n/locales/ja_JP
 usr/share/i18n/locales/kl_GL
 usr/share/i18n/locales/lt_LT
 usr/share/i18n/locales/lv_LV
+usr/share/i18n/locales/mk_MK
 usr/share/i18n/locales/nl_BE
 usr/share/i18n/locales/nl_NL
 usr/share/i18n/locales/no_NO
@@ -992,6 +1003,18 @@ usr/share/i18n/locales/uk_UA
 usr/share/i18n/locales/zh_CN
 usr/share/i18n/repertoiremaps/charids.894
 usr/share/i18n/repertoiremaps/mnemonic.ds
+usr/share/locale/af_ZA/LC_COLLATE
+usr/share/locale/af_ZA/LC_CTYPE
+usr/share/locale/af_ZA/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/af_ZA/LC_MONETARY
+usr/share/locale/af_ZA/LC_NUMERIC
+usr/share/locale/af_ZA/LC_TIME
+usr/share/locale/ar_SA/LC_COLLATE
+usr/share/locale/ar_SA/LC_CTYPE
+usr/share/locale/ar_SA/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/ar_SA/LC_MONETARY
+usr/share/locale/ar_SA/LC_NUMERIC
+usr/share/locale/ar_SA/LC_TIME
 usr/share/locale/ca_ES/LC_COLLATE
 usr/share/locale/ca_ES/LC_CTYPE
 usr/share/locale/ca_ES/LC_MESSAGES/SYS_LC_MESSAGES
@@ -1062,6 +1085,12 @@ usr/share/locale/en_AU/LC_MESSAGES/SYS_LC_MESSAGES
 usr/share/locale/en_AU/LC_MONETARY
 usr/share/locale/en_AU/LC_NUMERIC
 usr/share/locale/en_AU/LC_TIME
+usr/share/locale/en_BW/LC_COLLATE
+usr/share/locale/en_BW/LC_CTYPE
+usr/share/locale/en_BW/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/en_BW/LC_MONETARY
+usr/share/locale/en_BW/LC_NUMERIC
+usr/share/locale/en_BW/LC_TIME
 usr/share/locale/en_CA/LC_COLLATE
 usr/share/locale/en_CA/LC_CTYPE
 usr/share/locale/en_CA/LC_MESSAGES/SYS_LC_MESSAGES
@@ -1092,6 +1121,12 @@ usr/share/locale/en_US/LC_MESSAGES/SYS_LC_MESSAGES
 usr/share/locale/en_US/LC_MONETARY
 usr/share/locale/en_US/LC_NUMERIC
 usr/share/locale/en_US/LC_TIME
+usr/share/locale/en_ZW/LC_COLLATE
+usr/share/locale/en_ZW/LC_CTYPE
+usr/share/locale/en_ZW/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/en_ZW/LC_MONETARY
+usr/share/locale/en_ZW/LC_NUMERIC
+usr/share/locale/en_ZW/LC_TIME
 usr/share/locale/es/LC_MESSAGES/fileutils.mo
 usr/share/locale/es/LC_MESSAGES/grep.mo
 usr/share/locale/es/LC_MESSAGES/libc.mo
@@ -1166,6 +1201,13 @@ usr/share/locale/ga_IE/LC_MESSAGES/SYS_LC_MESSAGES
 usr/share/locale/ga_IE/LC_MONETARY
 usr/share/locale/ga_IE/LC_NUMERIC
 usr/share/locale/ga_IE/LC_TIME
+usr/share/locale/gl/LC_MESSAGES/libc.mo
+usr/share/locale/gl_ES/LC_COLLATE
+usr/share/locale/gl_ES/LC_CTYPE
+usr/share/locale/gl_ES/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/gl_ES/LC_MONETARY
+usr/share/locale/gl_ES/LC_NUMERIC
+usr/share/locale/gl_ES/LC_TIME
 usr/share/locale/hr_HR/LC_COLLATE
 usr/share/locale/hr_HR/LC_CTYPE
 usr/share/locale/hr_HR/LC_MESSAGES/SYS_LC_MESSAGES
@@ -1190,6 +1232,7 @@ usr/share/locale/is_IS/LC_MESSAGES/SYS_LC_MESSAGES
 usr/share/locale/is_IS/LC_MONETARY
 usr/share/locale/is_IS/LC_NUMERIC
 usr/share/locale/is_IS/LC_TIME
+usr/share/locale/it/LC_MESSAGES/libc.mo
 usr/share/locale/it_CH/LC_COLLATE
 usr/share/locale/it_CH/LC_CTYPE
 usr/share/locale/it_CH/LC_MESSAGES/SYS_LC_MESSAGES
@@ -1230,6 +1273,12 @@ usr/share/locale/lv_LV/LC_MESSAGES/SYS_LC_MESSAGES
 usr/share/locale/lv_LV/LC_MONETARY
 usr/share/locale/lv_LV/LC_NUMERIC
 usr/share/locale/lv_LV/LC_TIME
+usr/share/locale/mk_MK/LC_COLLATE
+usr/share/locale/mk_MK/LC_CTYPE
+usr/share/locale/mk_MK/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/mk_MK/LC_MONETARY
+usr/share/locale/mk_MK/LC_NUMERIC
+usr/share/locale/mk_MK/LC_TIME
 usr/share/locale/nl/LC_MESSAGES/fileutils.mo
 usr/share/locale/nl/LC_MESSAGES/grep.mo
 usr/share/locale/nl/LC_MESSAGES/libc.mo
@@ -1347,6 +1396,12 @@ usr/share/locale/sv_SE/LC_MONETARY
 usr/share/locale/sv_SE/LC_NUMERIC
 usr/share/locale/sv_SE/LC_TIME
 usr/share/locale/tr/LC_MESSAGES/rpm.mo
+usr/share/locale/th_TH/LC_COLLATE
+usr/share/locale/th_TH/LC_CTYPE
+usr/share/locale/th_TH/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/th_TH/LC_MONETARY
+usr/share/locale/th_TH/LC_NUMERIC
+usr/share/locale/th_TH/LC_TIME
 usr/share/locale/tr_TR/LC_COLLATE
 usr/share/locale/tr_TR/LC_CTYPE
 usr/share/locale/tr_TR/LC_MESSAGES/SYS_LC_MESSAGES
@@ -3504,9 +3559,11 @@ usr/share/zoneinfo/America/Atka
 usr/share/zoneinfo/America/Barbados
 usr/share/zoneinfo/America/Belem
 usr/share/zoneinfo/America/Belize
+usr/share/zoneinfo/America/Boa_Vista
 usr/share/zoneinfo/America/Bogota
 usr/share/zoneinfo/America/Boise
 usr/share/zoneinfo/America/Buenos_Aires
+usr/share/zoneinfo/America/Cambridge_Bay
 usr/share/zoneinfo/America/Cancun
 usr/share/zoneinfo/America/Caracas
 usr/share/zoneinfo/America/Catamarca
@@ -3539,6 +3596,7 @@ usr/share/zoneinfo/America/Guayaquil
 usr/share/zoneinfo/America/Guyana
 usr/share/zoneinfo/America/Halifax
 usr/share/zoneinfo/America/Havana
+usr/share/zoneinfo/America/Hermosillo
 usr/share/zoneinfo/America/Indiana/Indianapolis
 usr/share/zoneinfo/America/Indiana/Knox
 usr/share/zoneinfo/America/Indiana/Marengo
@@ -3634,11 +3692,13 @@ usr/share/zoneinfo/Asia/Chungking
 usr/share/zoneinfo/Asia/Colombo
 usr/share/zoneinfo/Asia/Dacca
 usr/share/zoneinfo/Asia/Damascus
+usr/share/zoneinfo/Asia/Dili
 usr/share/zoneinfo/Asia/Dubai
 usr/share/zoneinfo/Asia/Dushanbe
 usr/share/zoneinfo/Asia/Gaza
 usr/share/zoneinfo/Asia/Harbin
 usr/share/zoneinfo/Asia/Hong_Kong
+usr/share/zoneinfo/Asia/Hovd
 usr/share/zoneinfo/Asia/Irkutsk
 usr/share/zoneinfo/Asia/Istanbul
 usr/share/zoneinfo/Asia/Jakarta
@@ -3681,6 +3741,7 @@ usr/share/zoneinfo/Asia/Tel_Aviv
 usr/share/zoneinfo/Asia/Thimbu
 usr/share/zoneinfo/Asia/Tokyo
 usr/share/zoneinfo/Asia/Ujung_Pandang
+usr/share/zoneinfo/Asia/Ulaanbaatar
 usr/share/zoneinfo/Asia/Ulan_Bator
 usr/share/zoneinfo/Asia/Urumqi
 usr/share/zoneinfo/Asia/Vientiane
@@ -3737,6 +3798,8 @@ usr/share/zoneinfo/Canada/Saskatchewan
 usr/share/zoneinfo/Canada/Yukon
 usr/share/zoneinfo/Chile/Continental
 usr/share/zoneinfo/Chile/EasterIsland
+usr/share/zoneinfo/China/Beijing
+usr/share/zoneinfo/China/Shanghai
 usr/share/zoneinfo/Cuba
 usr/share/zoneinfo/EET
 usr/share/zoneinfo/EST
@@ -3819,15 +3882,19 @@ usr/share/zoneinfo/Europe/Sofia
 usr/share/zoneinfo/Europe/Stockholm
 usr/share/zoneinfo/Europe/Tallinn
 usr/share/zoneinfo/Europe/Tirane
+usr/share/zoneinfo/Europe/Tiraspol
+usr/share/zoneinfo/Europe/Uzhgorod
 usr/share/zoneinfo/Europe/Vaduz
 usr/share/zoneinfo/Europe/Vatican
 usr/share/zoneinfo/Europe/Vienna
 usr/share/zoneinfo/Europe/Vilnius
 usr/share/zoneinfo/Europe/Warsaw
 usr/share/zoneinfo/Europe/Zagreb
+usr/share/zoneinfo/Europe/Zaporozhye
 usr/share/zoneinfo/Europe/Zurich
 usr/share/zoneinfo/Factory
 usr/share/zoneinfo/GB
+usr/share/zoneinfo/GB-Eire
 usr/share/zoneinfo/GMT
 usr/share/zoneinfo/GMT+0
 usr/share/zoneinfo/GMT-0
@@ -4008,9 +4075,11 @@ usr/share/zoneinfo/posix/America/Atka
 usr/share/zoneinfo/posix/America/Barbados
 usr/share/zoneinfo/posix/America/Belem
 usr/share/zoneinfo/posix/America/Belize
+usr/share/zoneinfo/posix/America/Boa_Vista
 usr/share/zoneinfo/posix/America/Bogota
 usr/share/zoneinfo/posix/America/Boise
 usr/share/zoneinfo/posix/America/Buenos_Aires
+usr/share/zoneinfo/posix/America/Cambridge_Bay
 usr/share/zoneinfo/posix/America/Cancun
 usr/share/zoneinfo/posix/America/Caracas
 usr/share/zoneinfo/posix/America/Catamarca
@@ -4043,6 +4112,7 @@ usr/share/zoneinfo/posix/America/Guayaquil
 usr/share/zoneinfo/posix/America/Guyana
 usr/share/zoneinfo/posix/America/Halifax
 usr/share/zoneinfo/posix/America/Havana
+usr/share/zoneinfo/posix/America/Hermosillo
 usr/share/zoneinfo/posix/America/Indiana/Indianapolis
 usr/share/zoneinfo/posix/America/Indiana/Knox
 usr/share/zoneinfo/posix/America/Indiana/Marengo
@@ -4138,11 +4208,13 @@ usr/share/zoneinfo/posix/Asia/Chungking
 usr/share/zoneinfo/posix/Asia/Colombo
 usr/share/zoneinfo/posix/Asia/Dacca
 usr/share/zoneinfo/posix/Asia/Damascus
+usr/share/zoneinfo/posix/Asia/Dili
 usr/share/zoneinfo/posix/Asia/Dubai
 usr/share/zoneinfo/posix/Asia/Dushanbe
 usr/share/zoneinfo/posix/Asia/Gaza
 usr/share/zoneinfo/posix/Asia/Harbin
 usr/share/zoneinfo/posix/Asia/Hong_Kong
+usr/share/zoneinfo/posix/Asia/Hovd
 usr/share/zoneinfo/posix/Asia/Irkutsk
 usr/share/zoneinfo/posix/Asia/Istanbul
 usr/share/zoneinfo/posix/Asia/Jakarta
@@ -4185,6 +4257,7 @@ usr/share/zoneinfo/posix/Asia/Tel_Aviv
 usr/share/zoneinfo/posix/Asia/Thimbu
 usr/share/zoneinfo/posix/Asia/Tokyo
 usr/share/zoneinfo/posix/Asia/Ujung_Pandang
+usr/share/zoneinfo/posix/Asia/Ulaanbaatar
 usr/share/zoneinfo/posix/Asia/Ulan_Bator
 usr/share/zoneinfo/posix/Asia/Urumqi
 usr/share/zoneinfo/posix/Asia/Vientiane
@@ -4241,6 +4314,8 @@ usr/share/zoneinfo/posix/Canada/Saskatchewan
 usr/share/zoneinfo/posix/Canada/Yukon
 usr/share/zoneinfo/posix/Chile/Continental
 usr/share/zoneinfo/posix/Chile/EasterIsland
+usr/share/zoneinfo/posix/China/Beijing
+usr/share/zoneinfo/posix/China/Shanghai
 usr/share/zoneinfo/posix/Cuba
 usr/share/zoneinfo/posix/EET
 usr/share/zoneinfo/posix/EST
@@ -4323,15 +4398,19 @@ usr/share/zoneinfo/posix/Europe/Sofia
 usr/share/zoneinfo/posix/Europe/Stockholm
 usr/share/zoneinfo/posix/Europe/Tallinn
 usr/share/zoneinfo/posix/Europe/Tirane
+usr/share/zoneinfo/posix/Europe/Tiraspol
+usr/share/zoneinfo/posix/Europe/Uzhgorod
 usr/share/zoneinfo/posix/Europe/Vaduz
 usr/share/zoneinfo/posix/Europe/Vatican
 usr/share/zoneinfo/posix/Europe/Vienna
 usr/share/zoneinfo/posix/Europe/Vilnius
 usr/share/zoneinfo/posix/Europe/Warsaw
 usr/share/zoneinfo/posix/Europe/Zagreb
+usr/share/zoneinfo/posix/Europe/Zaporozhye
 usr/share/zoneinfo/posix/Europe/Zurich
 usr/share/zoneinfo/posix/Factory
 usr/share/zoneinfo/posix/GB
+usr/share/zoneinfo/posix/GB-Eire
 usr/share/zoneinfo/posix/GMT
 usr/share/zoneinfo/posix/GMT+0
 usr/share/zoneinfo/posix/GMT-0
@@ -4512,9 +4591,11 @@ usr/share/zoneinfo/right/America/Atka
 usr/share/zoneinfo/right/America/Barbados
 usr/share/zoneinfo/right/America/Belem
 usr/share/zoneinfo/right/America/Belize
+usr/share/zoneinfo/right/America/Boa_Vista
 usr/share/zoneinfo/right/America/Bogota
 usr/share/zoneinfo/right/America/Boise
 usr/share/zoneinfo/right/America/Buenos_Aires
+usr/share/zoneinfo/right/America/Cambridge_Bay
 usr/share/zoneinfo/right/America/Cancun
 usr/share/zoneinfo/right/America/Caracas
 usr/share/zoneinfo/right/America/Catamarca
@@ -4547,6 +4628,7 @@ usr/share/zoneinfo/right/America/Guayaquil
 usr/share/zoneinfo/right/America/Guyana
 usr/share/zoneinfo/right/America/Halifax
 usr/share/zoneinfo/right/America/Havana
+usr/share/zoneinfo/right/America/Hermosillo
 usr/share/zoneinfo/right/America/Indiana/Indianapolis
 usr/share/zoneinfo/right/America/Indiana/Knox
 usr/share/zoneinfo/right/America/Indiana/Marengo
@@ -4642,11 +4724,13 @@ usr/share/zoneinfo/right/Asia/Chungking
 usr/share/zoneinfo/right/Asia/Colombo
 usr/share/zoneinfo/right/Asia/Dacca
 usr/share/zoneinfo/right/Asia/Damascus
+usr/share/zoneinfo/right/Asia/Dili
 usr/share/zoneinfo/right/Asia/Dubai
 usr/share/zoneinfo/right/Asia/Dushanbe
 usr/share/zoneinfo/right/Asia/Gaza
 usr/share/zoneinfo/right/Asia/Harbin
 usr/share/zoneinfo/right/Asia/Hong_Kong
+usr/share/zoneinfo/right/Asia/Hovd
 usr/share/zoneinfo/right/Asia/Irkutsk
 usr/share/zoneinfo/right/Asia/Istanbul
 usr/share/zoneinfo/right/Asia/Jakarta
@@ -4689,6 +4773,7 @@ usr/share/zoneinfo/right/Asia/Tel_Aviv
 usr/share/zoneinfo/right/Asia/Thimbu
 usr/share/zoneinfo/right/Asia/Tokyo
 usr/share/zoneinfo/right/Asia/Ujung_Pandang
+usr/share/zoneinfo/right/Asia/Ulaanbaatar
 usr/share/zoneinfo/right/Asia/Ulan_Bator
 usr/share/zoneinfo/right/Asia/Urumqi
 usr/share/zoneinfo/right/Asia/Vientiane
@@ -4745,6 +4830,8 @@ usr/share/zoneinfo/right/Canada/Saskatchewan
 usr/share/zoneinfo/right/Canada/Yukon
 usr/share/zoneinfo/right/Chile/Continental
 usr/share/zoneinfo/right/Chile/EasterIsland
+usr/share/zoneinfo/right/China/Beijing
+usr/share/zoneinfo/right/China/Shanghai
 usr/share/zoneinfo/right/Cuba
 usr/share/zoneinfo/right/EET
 usr/share/zoneinfo/right/EST
@@ -4827,15 +4914,19 @@ usr/share/zoneinfo/right/Europe/Sofia
 usr/share/zoneinfo/right/Europe/Stockholm
 usr/share/zoneinfo/right/Europe/Tallinn
 usr/share/zoneinfo/right/Europe/Tirane
+usr/share/zoneinfo/right/Europe/Tiraspol
+usr/share/zoneinfo/right/Europe/Uzhgorod
 usr/share/zoneinfo/right/Europe/Vaduz
 usr/share/zoneinfo/right/Europe/Vatican
 usr/share/zoneinfo/right/Europe/Vienna
 usr/share/zoneinfo/right/Europe/Vilnius
 usr/share/zoneinfo/right/Europe/Warsaw
 usr/share/zoneinfo/right/Europe/Zagreb
+usr/share/zoneinfo/right/Europe/Zaporozhye
 usr/share/zoneinfo/right/Europe/Zurich
 usr/share/zoneinfo/right/Factory
 usr/share/zoneinfo/right/GB
+usr/share/zoneinfo/right/GB-Eire
 usr/share/zoneinfo/right/GMT
 usr/share/zoneinfo/right/GMT+0
 usr/share/zoneinfo/right/GMT-0
@@ -5041,6 +5132,7 @@ var/log/lastlog
 @dirrm usr/share/zoneinfo/right/Indian
 @dirrm usr/share/zoneinfo/right/Europe
 @dirrm usr/share/zoneinfo/right/Etc
+@dirrm usr/share/zoneinfo/right/China
 @dirrm usr/share/zoneinfo/right/Chile
 @dirrm usr/share/zoneinfo/right/Canada
 @dirrm usr/share/zoneinfo/right/Brazil
@@ -5061,6 +5153,7 @@ var/log/lastlog
 @dirrm usr/share/zoneinfo/posix/Indian
 @dirrm usr/share/zoneinfo/posix/Europe
 @dirrm usr/share/zoneinfo/posix/Etc
+@dirrm usr/share/zoneinfo/posix/China
 @dirrm usr/share/zoneinfo/posix/Chile
 @dirrm usr/share/zoneinfo/posix/Canada
 @dirrm usr/share/zoneinfo/posix/Brazil
@@ -5081,6 +5174,7 @@ var/log/lastlog
 @dirrm usr/share/zoneinfo/Indian
 @dirrm usr/share/zoneinfo/Europe
 @dirrm usr/share/zoneinfo/Etc
+@dirrm usr/share/zoneinfo/China
 @dirrm usr/share/zoneinfo/Chile
 @dirrm usr/share/zoneinfo/Canada
 @dirrm usr/share/zoneinfo/Brazil
@@ -5138,6 +5232,8 @@ var/log/lastlog
 @dirrm usr/share/locale/tr_TR
 @dirrm usr/share/locale/tr/LC_MESSAGES
 @dirrm usr/share/locale/tr
+@dirrm usr/share/locale/th_TH/LC_MESSAGES
+@dirrm usr/share/locale/th_TH
 @dirrm usr/share/locale/sv_SE/LC_MESSAGES
 @dirrm usr/share/locale/sv_SE
 @dirrm usr/share/locale/sv_FI/LC_MESSAGES
@@ -5186,6 +5282,8 @@ var/log/lastlog
 @dirrm usr/share/locale/nl_BE
 @dirrm usr/share/locale/nl/LC_MESSAGES
 @dirrm usr/share/locale/nl
+@dirrm usr/share/locale/mk_MK/LC_MESSAGES
+@dirrm usr/share/locale/mk_MK
 @dirrm usr/share/locale/lv_LV/LC_MESSAGES
 @dirrm usr/share/locale/lv_LV
 @dirrm usr/share/locale/lt_LT/LC_MESSAGES
@@ -5200,6 +5298,8 @@ var/log/lastlog
 @dirrm usr/share/locale/it_IT
 @dirrm usr/share/locale/it_CH/LC_MESSAGES
 @dirrm usr/share/locale/it_CH
+@dirrm usr/share/locale/it/LC_MESSAGES
+@dirrm usr/share/locale/it
 @dirrm usr/share/locale/is_IS/LC_MESSAGES
 @dirrm usr/share/locale/is_IS
 @dirrm usr/share/locale/in_ID/LC_MESSAGES
@@ -5208,6 +5308,10 @@ var/log/lastlog
 @dirrm usr/share/locale/hu_HU
 @dirrm usr/share/locale/hr_HR/LC_MESSAGES
 @dirrm usr/share/locale/hr_HR
+@dirrm usr/share/locale/gl_ES/LC_MESSAGES
+@dirrm usr/share/locale/gl_ES
+@dirrm usr/share/locale/gl/LC_MESSAGES
+@dirrm usr/share/locale/gl
 @dirrm usr/share/locale/ga_IE/LC_MESSAGES
 @dirrm usr/share/locale/ga_IE
 @dirrm usr/share/locale/fr_LU/LC_MESSAGES
@@ -5236,6 +5340,8 @@ var/log/lastlog
 @dirrm usr/share/locale/es_ES
 @dirrm usr/share/locale/es/LC_MESSAGES
 @dirrm usr/share/locale/es
+@dirrm usr/share/locale/en_ZW/LC_MESSAGES
+@dirrm usr/share/locale/en_ZW
 @dirrm usr/share/locale/en_US/LC_MESSAGES
 @dirrm usr/share/locale/en_US
 @dirrm usr/share/locale/en_IE/LC_MESSAGES
@@ -5246,6 +5352,8 @@ var/log/lastlog
 @dirrm usr/share/locale/en_DK
 @dirrm usr/share/locale/en_CA/LC_MESSAGES
 @dirrm usr/share/locale/en_CA
+@dirrm usr/share/locale/en_BW/LC_MESSAGES
+@dirrm usr/share/locale/en_BW
 @dirrm usr/share/locale/en_AU/LC_MESSAGES
 @dirrm usr/share/locale/en_AU
 @dirrm usr/share/locale/el_GR/LC_MESSAGES
@@ -5272,6 +5380,10 @@ var/log/lastlog
 @dirrm usr/share/locale/cs
 @dirrm usr/share/locale/ca_ES/LC_MESSAGES
 @dirrm usr/share/locale/ca_ES
+@dirrm usr/share/locale/ar_SA/LC_MESSAGES
+@dirrm usr/share/locale/ar_SA
+@dirrm usr/share/locale/af_ZA/LC_MESSAGES
+@dirrm usr/share/locale/af_ZA
 @dirrm usr/share/locale
 @dirrm usr/share/i18n/repertoiremaps
 @dirrm usr/share/i18n/locales
@@ -5309,6 +5421,7 @@ var/log/lastlog
 @dirrm usr/i486-linux-libc5
 @dirrm usr/games
 @dirrm usr/etc
+@dirrm usr/doc/zlib-1.1.3
 @dirrm usr/doc/tcsh-6.08.00
 @dirrm usr/doc/sh-utils-2.0
 @dirrm usr/doc/setserial-2.15
@@ -5316,8 +5429,8 @@ var/log/lastlog
 @dirrm usr/doc/ncurses-4.2
 @dirrm usr/doc/ldconfig-1.9.5
 @dirrm usr/doc/grep-2.3
-@dirrm usr/doc/glibc-2.1.2/examples.threads
-@dirrm usr/doc/glibc-2.1.2
+@dirrm usr/doc/glibc-2.1.3/examples.threads
+@dirrm usr/doc/glibc-2.1.3
 @dirrm usr/doc/glib-1.2.6
 @dirrm usr/doc/gd-1.3
 @dirrm usr/doc/fileutils-4.0
