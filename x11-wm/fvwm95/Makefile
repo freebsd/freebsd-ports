@@ -8,7 +8,8 @@
 PORTNAME=	fvwm95
 PORTVERSION=	2.0.43a
 CATEGORIES=	x11-wm
-MASTER_SITES=	ftp://mitac11.uia.ac.be/pub/fvwm95/
+MASTER_SITES=	ftp://mitac11.uia.ac.be/pub/fvwm95/ \
+		ftp://ftp.plig.org/pub/fvwm95/
 DISTNAME=	${PKGNAME}-Autoconf
 EXTRACT_SUFX=	.tgz
 
