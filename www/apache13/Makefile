@@ -129,7 +129,7 @@ CFLAGS+=-DHARD_SERVER_LIMIT=512
 .if defined(WITH_APACHE_PERF_TUNING) && ${WITH_APACHE_PERF_TUNING} == yes
 CFLAGS+=-DBUFFERED_LOGS
 # Don't use OPTIM below, it is inserted _before_ CFLAGS
-CFLAGS+=-O6 -fomit-frame-pointer
+CFLAGS+=-O3
 .endif
 
 CONFIGURE_ENV=  OPTIM='${OPTIM}' LD_SHLIB='${CC}' LIBS='${LIBS}'
