@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	weather
-PORTVERSION=	0.23
+PORTVERSION=	0.24
 CATEGORIES=	astro gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-
@@ -24,9 +24,11 @@ USE_REINPLACE=	yes
 
 NAME=		Weather
 DATADIR=	${PREFIX}/share/gnome
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 do-build:
 	@${WRKSRC}/Install_${NAME}_Sensor.bin --nomsg ${WRKSRC}
+	@${CAT} pkg-message | ${SED} -e 's|%%PREFIX%%|${PREFIX}|g ; s|%%NAME%%|${NAME}|g' > ${PKGMESSAGE}
 
 do-install:
 	@${MKDIR} ${DATADIR}/gdesklets/Displays/${NAME}/gfx
