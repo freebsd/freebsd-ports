@@ -1,0 +1,7 @@
+lib/perl5/site_perl/%%PERL_VER%%/URI/Find.pm
+lib/perl5/site_perl/%%PERL_VER%%/URI/Find/Schemeless.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/URI/Find/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/URI/Find
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/URI 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/URI/Find
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/URI 2>/dev/null || true

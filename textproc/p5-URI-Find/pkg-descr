@@ -1,0 +1,11 @@
+This module does one thing:  finds URIs and URLs in plain text.  It
+finds them quickly and it finds them all (or what URI::URL considers
+a URI to be).  It employs a series of heuristics too:
+  - Find schemeless URIs (ie. www.foo.com)
+  - Avoid picking up trailing characters from the text
+  - Avoid picking up URL-like things such as Perl module names.
+
+WWW: http://search.cpan.org/search?dist=URI-Find
+
+- Pete
+petef@databits.net
