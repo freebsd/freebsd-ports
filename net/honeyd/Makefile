@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	honeyd
-PORTVERSION=	0.8
+PORTVERSION=	0.8a
 CATEGORIES=	net
 MASTER_SITES=	http://www.citi.umich.edu/u/provos/honeyd/ \
 		http://niels.xtdnet.nl/honeyd/
@@ -33,6 +33,7 @@ CONFIGURE_ARGS+=	--with-python
 CONFIGURE_ARGS+=	--without-python
 .endif
 
+MAN1=		honeydctl.1
 MAN8=		honeyd.8
 
 .if !defined(WITH_PYTHON)
