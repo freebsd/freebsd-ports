@@ -7,6 +7,7 @@
 
 PORTNAME=	flim
 PORTVERSION=	${FLIM_VER}
+PORTREVISION?=	1
 CATEGORIES=	editors elisp
 MASTER_SITES=	ftp://ftp.m17n.org/pub/mule/flim/flim-1.13/ \
 		ftp://ftp.etl.go.jp/pub/mule/flim/flim-1.13/ \
