@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/gimp/%SUBDIR%,}
 MASTER_SITE_SUBDIR=	gtk/v${PORTVERSION:R}
 
-MAINTAINER=	vanilla@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	giconv.2:${PORTSDIR}/converters/libiconv
 #iconv.1:${PORTSDIR}/converters/iconv

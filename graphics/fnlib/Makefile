@@ -13,7 +13,7 @@ MASTER_SITES=	http://mirror.nucba.ac.jp/mirror/enlightenment/enlightenment/libs/
 		ftp://ftp.dti.ad.jp/pub/X/enlightenment/enlightenment/libs/ \
 		ftp://mirror.nucba.ac.jp/mirror/enlightenment/enlightenment/libs/
 
-MAINTAINER=	vanilla@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
