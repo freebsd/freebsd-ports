@@ -3,7 +3,7 @@
 # Date created:				19 August 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.2 1999/02/03 11:11:55 asami Exp $
+# $Id: Makefile,v 1.3 1999/03/20 14:44:50 flathill Exp $
 #
 
 DISTNAME=		binkd092
@@ -12,16 +12,11 @@ CATEGORIES=		net
 MASTER_SITES=		ftp://ftp.sut.ru/pub/FidoNet/BinkD/092/ \
 			ftp://ftp.aanet.ru/pub/Linux/system/Fido/ \
 			http://www.corbina.net/~maloff/binkd/
-EXTRACT_SUFX=		.zip
 
 MAINTAINER=		andy@icc.surw.chel.su
 
-BUILD_DEPENDS=		unzip:${PORTSDIR}/archivers/unzip
-
 WRKSRC=			${WRKDIR}/${PKGNAME}
-EXTRACT_CMD=		unzip
-EXTRACT_BEFORE_ARGS=	# empty
-EXTRACT_AFTER_ARGS=	# empty
+USE_ZIP=		yes
 GNU_CONFIGURE=		yes
 MAN8=			binkd.8
 
