@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Change this to your getmail directory; defaults to /usr/local/share/getmail
+PPCPATH="__DATADIR__"
+
+PYTHONPATH="${PPCPATH}:${PYTHONPATH}"
+export PYTHONPATH
+
+# You can change this to point to your Python interpreter if you wish.
+PYTHON=__PYTHON__
+
+exec "$PYTHON" ${PPCPATH}/papercut.py $@
+

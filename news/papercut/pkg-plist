@@ -1,0 +1,48 @@
+bin/papercut
+%%DATADIR%%/papercut.py
+%%DATADIR%%/papercut_cache.py
+%%DATADIR%%/portable_locker.py
+%%DATADIR%%/settings.py.sample
+%%DATADIR%%/auth/__init__.py
+%%DATADIR%%/auth/mysql.py
+%%DATADIR%%/auth/phorum_mysql_users.py
+%%DATADIR%%/auth/phpbb_mysql_users.py
+%%DATADIR%%/storage/__init__.py
+%%DATADIR%%/storage/forwarding_proxy.py
+%%DATADIR%%/storage/mbox.py
+%%DATADIR%%/storage/mime.py
+%%DATADIR%%/storage/mysql.py
+%%DATADIR%%/storage/mysql_storage.sql
+%%DATADIR%%/storage/p2p.py
+%%DATADIR%%/storage/phorum_mysql.py
+%%DATADIR%%/storage/phorum_mysql_fix.sql
+%%DATADIR%%/storage/phorum_pgsql.py
+%%DATADIR%%/storage/phorum_pgsql_fix.sql
+%%DATADIR%%/storage/phpbb_mysql.py
+%%DATADIR%%/storage/phpbb_mysql_fix.sql
+%%DATADIR%%/storage/strutil.py
+@exec echo "To use papercut you need to copy %D/%%DATADIR%%/settings.py.sample to %D/%%DATADIR%%/settings.py and edit it." |fmt
+@unexec [ -f %D/%%DATADIR%%/papercut.pyc ] && rm %D/%%DATADIR%%/papercut.pyc || true
+@unexec [ -f %D/%%DATADIR%%/papercut_cache.pyc ] && rm %D/%%DATADIR%%/papercut_cache.pyc || true
+@unexec [ -f %D/%%DATADIR%%/portable_locker.pyc ] && rm %D/%%DATADIR%%/portable_locker.pyc || true
+@unexec [ -f %D/%%DATADIR%%/settings.py ] || true
+@unexec [ -f %D/%%DATADIR%%/settings.pyc ] && rm %D/%%DATADIR%%/settings.pyc || true
+@unexec [ -f %D/%%DATADIR%%/auth/__init__.pyc ] && rm %D/%%DATADIR%%/auth/__init__.pyc || true
+@unexec [ -f %D/%%DATADIR%%/auth/mysql.pyc ] && rm %D/%%DATADIR%%/auth/mysql.pyc || true
+@unexec [ -f %D/%%DATADIR%%/auth/phorum_mysql_users.pyc ] && rm %D/%%DATADIR%%/auth/phorum_mysql_users.pyc || true
+@unexec [ -f %D/%%DATADIR%%/auth/phpbb_mysql_users.pyc ] && rm %D/%%DATADIR%%/auth/phpbb_mysql_users.pyc || true
+@unexec [ -f %D/%%DATADIR%%/storage/__init__.pyc ] && rm %D/%%DATADIR%%/storage/__init__.pyc || true
+@unexec [ -f %D/%%DATADIR%%/storage/forwarding_proxy.pyc ] && rm %D/%%DATADIR%%/storage/forwarding_proxy.pyc || true
+@unexec [ -f %D/%%DATADIR%%/storage/mbox.pyc ] && rm %D/%%DATADIR%%/storage/mbox.pyc || true
+@unexec [ -f %D/%%DATADIR%%/storage/mime.pyc ] && rm %D/%%DATADIR%%/storage/mime.pyc || true
+@unexec [ -f %D/%%DATADIR%%/storage/mysql.pyc ] && rm %D/%%DATADIR%%/storage/mysql.pyc || true
+@unexec [ -f %D/%%DATADIR%%/storage/p2p.pyc ] && rm %D/%%DATADIR%%/storage/p2p.pyc || true
+@unexec [ -f %D/%%DATADIR%%/storage/phorum_mysql.pyc ] && rm %D/%%DATADIR%%/storage/phorum_mysql.pyc || true
+@unexec [ -f %D/%%DATADIR%%/storage/phorum_pgsql.pyc ] && rm %D/%%DATADIR%%/storage/phorum_pgsql.pyc || true
+@unexec [ -f %D/%%DATADIR%%/storage/phpbb_mysql.pyc ] && rm %D/%%DATADIR%%/storage/phpbb_mysql.pyc || true
+@unexec [ -f %D/%%DATADIR%%/storage/strutil.pyc ] && rm %D/%%DATADIR%%/storage/strutil.pyc || true
+@dirrm %%DATADIR%%/auth
+@unexec [ -d %D/%%DATADIR%%/cache ] && rmdir %%DATADIR%%/cache 2>/dev/null || true
+@unexec [ -d %D/%%DATADIR%%/logs ] && rmdir %%DATADIR%%/logs 2>/dev/null || true
+@dirrm %%DATADIR%%/storage
+@unexec [ -d %D/%%DATADIR%% ] && echo "If you are permanently removing this port, you should do a ``rm -rf %D/%%DATADIR%%`` to remove any files left." | fmt 
