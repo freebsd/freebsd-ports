@@ -1,20 +1,21 @@
 bin/librsvg-config
 etc/librsvgConf.sh
-include/librsvg/art_render.h
-include/librsvg/art_render_gradient.h
-include/librsvg/art_render_mask.h
-include/librsvg/art_render_svp.h
-include/librsvg/art_rgba.h
-include/librsvg/librsvg-features.h
-include/librsvg/rsvg-bpath-util.h
-include/librsvg/rsvg-css.h
-include/librsvg/rsvg-defs.h
-include/librsvg/rsvg-ft.h
-include/librsvg/rsvg-paint-server.h
-include/librsvg/rsvg-path.h
-include/librsvg/rsvg.h
+include/librsvg-1/librsvg/art_render.h
+include/librsvg-1/librsvg/art_render_gradient.h
+include/librsvg-1/librsvg/art_render_mask.h
+include/librsvg-1/librsvg/art_render_svp.h
+include/librsvg-1/librsvg/art_rgba.h
+include/librsvg-1/librsvg/librsvg-features.h
+include/librsvg-1/librsvg/rsvg-bpath-util.h
+include/librsvg-1/librsvg/rsvg-css.h
+include/librsvg-1/librsvg/rsvg-defs.h
+include/librsvg-1/librsvg/rsvg-ft.h
+include/librsvg-1/librsvg/rsvg-paint-server.h
+include/librsvg-1/librsvg/rsvg-path.h
+include/librsvg-1/librsvg/rsvg.h
 lib/librsvg.a
 lib/librsvg.so
 lib/librsvg.so.1
 share/aclocal/librsvg.m4
-@dirrm include/librsvg
+@dirrm include/librsvg-1/librsvg
+@dirrm include/librsvg-1

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	librsvg
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/librsvg
@@ -21,9 +21,8 @@ LIB_DEPENDS=	freetype.7:${PORTSDIR}/print/freetype2 \
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOMELIBS=	yes
-USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
