@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liveMedia
-PORTVERSION=	2004.07.20
+PORTVERSION=	2004.07.22
 PORTEPOCH=	1
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.LIVE.COM/liveMedia/public/
