@@ -7,7 +7,7 @@
 
 PORTNAME=	mpg123
 PORTVERSION=	0.59r
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio ipv6
 MASTER_SITES=	http://www.mpg123.de/mpg123/ \
 		http://www-ti.informatik.uni-tuebingen.de/~hippm/mpg123/ \
@@ -16,14 +16,24 @@ MASTER_SITES=	http://www.mpg123.de/mpg123/ \
 DISTFILES=	mpg123-0.59r-pl1.tar.gz
 
 PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/ \
-		http://www.unix-ag.org/Linux-Alpha/Packages/
+		http://www.unix-ag.org/Linux-Alpha/Packages/ \
+		${MASTER_SITE_LOCAL:S/%SUBDIR%/sobomax/}
 PATCHFILES=	mpg123-059r-v6-20000713b.diff.gz \
+		mpg123-059r-recode-20010410.diff.gz \
 		l3.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	sobomax@freebsd.org
 
 WANT_ESOUND=	yes
+
+.if defined(WITH_ICONV)
+MAKE_ARGS+=	WITH_ICONV=yes
+.if defined(DEFAULT_RECODE)
+MAKE_ARGS+=	DEFAULT_RECODE=${DEFAULT_RECODE}
+.endif
+LIB_DEPENDS+=	iconv.2:${PORTSDIR}/converters/iconv
+.endif
 
 .if defined(WITH_NAS)
 HAVE_NAS=	yes
@@ -54,6 +64,13 @@ pre-fetch:
 	@${ECHO_MSG}
 	@${ECHO_MSG} "If you want to compile with NAS support,"
 	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_NAS=yes\""
+	@${ECHO_MSG}
+.endif
+.if !defined(WITH_ICONV)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "If you want to enable ID3 tags charset recoding,"
+	@${ECHO_MSG} "hit Ctrl-C and use \"make WITH_ICONV=yes\"; you can"
+	@${ECHO_MSG} "also specify DEFAULT_RECODE in 'from:to' format"
 	@${ECHO_MSG}
 .endif
 .if ${MACHINE_ARCH} == "i386"

@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- Makefile.orig	Sat Mar 10 11:50:58 2001
-+++ Makefile	Sat Mar 10 12:02:21 2001
+--- Makefile	2001/04/10 11:50:14	1.1
++++ Makefile	2001/04/10 11:51:38
 @@ -4,13 +4,15 @@
  
  # Where to install binary and manpage on "make install":
@@ -21,13 +18,20 @@ $FreeBSD$
  # Additional LIBDIR and libraries if exist
  IPV6LIBDIR=
  IPV6LIB=
-@@ -300,35 +302,65 @@
+@@ -300,6 +302,9 @@
  #CFLAGS='$(CFLAGS) -DI386_ASSEM -O2 -DREAL_IS_FLOAT -DLINUX -Wall -g'
  #CFLAGS='$(CFLAGS) -DI386_ASSEM -DREAL_IS_FLOAT -DLINUX -Wall -O2 -m486 -fomit-frame-pointer -funroll-all-loops -finline-functions -ffast-math -malign-loops=2 -malign-jumps=2 -malign-functions=2'
  
 +CC ?= cc
 +LDFLAGS =
 +
+ .if defined(WITH_ICONV)
+ CFLAGS+=-DWITH_ICONV -I${LOCALBASE}/include
+ LDFLAGS+=-L${LOCALBASE}/lib -liconv
+@@ -308,35 +313,62 @@
+ .endif
+ .endif
+ 
 +.if ${MACHINE_ARCH} == "i386"
 +ARCHOPT= -funroll-all-loops -ffast-math -fomit-frame-pointer \
 +	 -DROT_I386 -DI386_ASSEM -DREAL_IS_FLOAT 
@@ -108,7 +112,7 @@ $FreeBSD$
  		$(FRONTEND)
   
  
-@@ -567,7 +599,7 @@
+@@ -575,7 +607,7 @@
  	@ $(MAKE) CFLAGS='$(CFLAGS)' BINNAME=mpg123m mpg123
  
  mpg123-make:
