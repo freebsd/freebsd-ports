@@ -617,6 +617,7 @@ bottlerocket	ports/misc/bottlerocket
 bounce		ports/net/bounce
 bouncycastle	ports/java/bouncycastle
 boxes		ports/misc/boxes
+boxtools	ports/x11-wm/boxtools
 bozohttpd	ports/www/bozohttpd
 bpatch		ports/editors/bpatch
 bpl+		ports/comms/bpl+
