@@ -1,0 +1,22 @@
+--- Makefile.orig	Wed Mar 21 21:02:32 2001
++++ Makefile	Wed Mar 21 21:03:58 2001
+@@ -1,5 +1,5 @@
+ CXXFLAGS = -c -O2 -Wall
+-LDFLAGS = -lm -lccm -lcurses
++LDFLAGS = -lm -lccm -lcurses -L${LOCALBASE}/lib
+ 
+ all: rpc
+ 
+@@ -7,10 +7,10 @@
+ 	cd src; $(MAKE)
+ 
+ install:
+-	cp -f src/rpc /usr/bin
++	cp -f src/rpc ${PREFIX}/bin
+ 
+ uninstall:
+-	rm /usr/bin/rpc
++	rm ${PREFIX}/bin/rpc
+ 
+ clean:
+ 	rm -f core src/rpc src/*.o src/*.co src/core

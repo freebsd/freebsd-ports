@@ -1,0 +1,11 @@
+--- src/Makefile.orig	Sun Feb 25 15:54:19 2001
++++ src/Makefile	Wed Mar 21 21:09:40 2001
+@@ -1,6 +1,6 @@
+ CXXFLAGS = -c -O2 -Wall
+-CFLAGS = -c -O2 -Wall
+-LDFLAGS = -lm -lccm -lcurses
++CFLAGS = -c -O2 -Wall -I${LOCALBASE}/include
++LDFLAGS = -lm -lccm -lcurses -L${LOCALBASE}/lib
+ 
+ all: rpc
+ 
