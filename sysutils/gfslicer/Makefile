@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.geocities.com/gfslicer/
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/share/automake14/automake/install-sh:${PORTSDIR}/devel/automake14
+BUILD_DEPENDS=	${LOCALBASE}/share/automake14/install-sh:${PORTSDIR}/devel/automake14
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
@@ -27,7 +27,7 @@ MANCOMPRESSED=	yes
 
 post-extract:
 .for file in install-sh missing mkinstalldirs
-	@${LN} -sf ${LOCALBASE}/share/automake14/automake/${file} ${WRKSRC}
+	@${LN} -sf ${LOCALBASE}/share/automake14/${file} ${WRKSRC}
 .endfor
 	@${RM} -f ${WRKSRC}/config.cache
 
