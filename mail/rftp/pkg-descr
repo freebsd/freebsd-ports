@@ -1,4 +1,3 @@
-
         This program is for any user who retrieves ftp files via
         ftpmail or bitftp servers.  It runs quietly in the background
         and watches the user's mail directory.  When the mail-    
