@@ -7,7 +7,7 @@
 
 PORTNAME=	cyrus-sasl
 PORTVERSION=	1.5.27
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/%SUBDIR%/ \
 		http://prdownloads.sourceforge.net/cyrus-utils/ \
@@ -26,13 +26,6 @@ PATCHFILES=	sasl_apop_patch.gz \
 		${DISTNAME}-ipv6-${IPV6_VER}.diff.gz
 
 MAINTAINER=	hetzels@westbend.net
-
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} < 450000
-FMT=	/usr/bin/fmt
-.else
-FMT=	/usr/bin/fmt -w 67
-.endif
 
 USE_OPENSSL=	YES
 
@@ -110,6 +103,13 @@ LDAP_MYSQL_PATCH=	ldap-mysql_sasl/sasl-ldap+mysql.patch
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGMESSAGE=	${WRKDIR}/pkg-message
+
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} < 450000
+FMT=    /usr/bin/fmt
+.else
+FMT=    /usr/bin/fmt -w 67
+.endif
 
 pre-fetch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.sasl
