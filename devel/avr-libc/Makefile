@@ -7,7 +7,7 @@
 
 PORTNAME=	avr-libc
 PORTVERSION=	1.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
@@ -82,5 +82,8 @@ do-install:
 			${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/doc/examples/twitest/$$f \
 				${PREFIX}/share/doc/avr-libc/examples/twitest; \
 		done
+.if !defined(NOPORTDOCS)
+		${RM} -f ${PREFIX}/share/doc/avr-libc/man/man3/_tmp*
+.endif
 
 .include <bsd.port.mk>
