@@ -1,6 +1,6 @@
---- Docs/Makefile.orig	Tue May 20 20:53:33 2003
-+++ Docs/Makefile	Tue May 20 20:54:25 2003
-@@ -62,6 +62,7 @@
+--- Docs/Makefile.orig	Tue Jul  8 23:23:28 2003
++++ Docs/Makefile	Tue Jul  8 23:24:48 2003
+@@ -63,6 +63,7 @@
  	@echo
  
  install:
@@ -8,12 +8,12 @@
  	$(INSTALL) -d $(DESTDIR)$(docdir)
  	$(INSTALL) -d $(DESTDIR)$(docdir)/sample/logo
  	$(INSTALL) -d $(DESTDIR)$(docdir)/sample/ringtone
-@@ -78,10 +79,10 @@
- 	$(INSTALL) $(GNOKII1_MAN) $(DESTDIR)$(man1dir)
- 	$(INSTALL) $(GNOKII8_MAN) $(DESTDIR)$(man8dir)
+@@ -79,10 +80,10 @@
+ 	$(INSTALL_DATA) $(GNOKII1_MAN) $(DESTDIR)$(man1dir)
+ 	$(INSTALL_DATA) $(GNOKII8_MAN) $(DESTDIR)$(man8dir)
  	if [ "x$(HAVE_XGNOKII)" = "xyes" ]; then \
 -		$(INSTALL) -d $(DESTDIR)$(xmandir); \
--		$(INSTALL) $(XGNOKII_MAN) $(DESTDIR)$(xmandir); \
+-		$(INSTALL_DATA) $(XGNOKII_MAN) $(DESTDIR)$(xmandir); \
 +		$(INSTALL) $(XGNOKII_MAN) $(DESTDIR)/$(xmandir)/xgnokii.1; \
  	fi
  	@echo "done"

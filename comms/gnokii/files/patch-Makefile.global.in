@@ -1,6 +1,6 @@
---- Makefile.global.in.orig	Tue May 20 20:34:17 2003
-+++ Makefile.global.in	Tue May 20 20:37:15 2003
-@@ -22,14 +22,14 @@
+--- Makefile.global.in.orig	Tue Jul  8 23:33:22 2003
++++ Makefile.global.in	Tue Jul  8 23:33:03 2003
+@@ -22,15 +22,15 @@
  
  bindir         = @bindir@
  sbindir        = @sbindir@
@@ -10,8 +10,9 @@
 -xgnokii_libdir = @XGNOKIIDIR@/share/@XPACKAGE@
 +xgnokii_libdir = ${prefix}/share/@XPACKAGE@
  includedir     = @includedir@
- man1dir        = @mandir@/man1/
- man8dir        = @mandir@/man8/
+ mandir         = @mandir@
+ man1dir        = ${mandir}/man1/
+ man8dir        = ${mandir}/man8/
 -xmandir        = @XGNOKIIDIR@/man/man1/
 -docdir         = ${prefix}/doc/${PACKAGE}
 +xmandir        = ${man1dir}

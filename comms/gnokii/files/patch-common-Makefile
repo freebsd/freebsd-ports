@@ -1,24 +1,30 @@
---- common/Makefile.orig	Tue May 20 21:04:08 2003
-+++ common/Makefile	Tue May 20 21:21:55 2003
-@@ -41,15 +41,12 @@
- 	misc.o \
+--- common/Makefile.orig	Sat Nov  8 12:15:34 2003
++++ common/Makefile	Wed Dec  3 21:35:14 2003
+@@ -44,13 +44,10 @@
  	snprintf.o
  
+ ifndef WIN32_CROSS
 -ifdef NO_SHARED
 -GNOKII_LIB=libgnokii.a
 -else
-+GNOKII_LIBNOSHARED  =libgnokii.a
++GNOKII_LIBNOSHARED=libgnokii.a
  GNOKII_LIB  =libgnokii.so
  GNOKII_LIBM =$(GNOKII_LIB).$(MAJOR_NUMBER)
  GNOKII_LIBMM=$(GNOKII_LIBM).$(MINOR_NUMBER)
 -endif
+ else
+ ifdef NO_SHARED
+ GNOKII_LIB=gnokii.lib
+@@ -59,7 +56,7 @@
+ endif
+ endif
  
 -all: $(GNOKII_LIB)
 +all: $(GNOKII_LIB) $(GNOKII_LIBNOSHARED)
  
  phones/PHONES.o:
  	$(MAKE) -C phones PHONES.o
-@@ -64,8 +61,7 @@
+@@ -74,8 +71,7 @@
  	$(CC) -o gnokii-debug $(OBJS) phones/PHONES.o links/LINKS.o devices/DEVICES.o ../gnokii/gnokii.o
  
  libgnokii.so: $(OBJS) phones/PHONES.o links/LINKS.o devices/DEVICES.o
@@ -28,7 +34,7 @@
  	ln -sf $(GNOKII_LIBM) $(GNOKII_LIB)
  
  libgnokii.a: $(OBJS) phones/PHONES.o links/LINKS.o devices/DEVICES.o
-@@ -84,8 +80,8 @@
+@@ -102,11 +98,11 @@
  
  install:
  	$(INSTALL) -d $(DESTDIR)$(libdir)
@@ -37,5 +43,10 @@
 +	$(INSTALL) $(GNOKII_LIBM) $(DESTDIR)$(libdir)
 +	$(INSTALL) $(GNOKII_LIBNOSHARED) $(DESTDIR)$(libdir)
  	cd $(DESTDIR)$(libdir) && ln -sf $(GNOKII_LIBM) $(GNOKII_LIB)
- 	$(INSTALL) -d $(DESTDIR)$(libdir)/pkgconfig
- 	$(INSTALL) gnokii.pc $(DESTDIR)$(libdir)/pkgconfig
+-	$(INSTALL) -d $(DESTDIR)$(libdir)/pkgconfig
+-	$(INSTALL_DATA) gnokii.pc $(DESTDIR)$(libdir)/pkgconfig
++	$(INSTALL) -d $(DESTDIR)$(prefix)/libdata/pkgconfig
++	$(INSTALL_DATA) gnokii.pc $(DESTDIR)$(prefix)/libdata/pkgconfig
+ 	@echo
+ 
+ install-strip: install
