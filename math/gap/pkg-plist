@@ -3664,6 +3664,67 @@ bin/gap
 %%GAP_LIBDIR%%/pkg/autpgrp/README
 %%GAP_LIBDIR%%/pkg/autpgrp/init.g
 %%GAP_LIBDIR%%/pkg/autpgrp/read.g
+%%GAP_LIBDIR%%/pkg/loops/data/steiner.tbl
+%%GAP_LIBDIR%%/pkg/loops/data/moufang.tbl
+%%GAP_LIBDIR%%/pkg/loops/data/moufang_discriminators.tbl
+%%GAP_LIBDIR%%/pkg/loops/data/interesting.tbl
+%%GAP_LIBDIR%%/pkg/loops/data/paige.tbl
+%%GAP_LIBDIR%%/pkg/loops/data/leftbol.tbl
+%%GAP_LIBDIR%%/pkg/loops/doc/EEPIC.STY
+%%GAP_LIBDIR%%/pkg/loops/doc/latexcad.sty
+%%GAP_LIBDIR%%/pkg/loops/doc/natbib.sty
+%%GAP_LIBDIR%%/pkg/loops/doc/EPIC.STY
+%%GAP_LIBDIR%%/pkg/loops/doc/loops_manual.ps
+%%GAP_LIBDIR%%/pkg/loops/doc/ROTATE.STY
+%%GAP_LIBDIR%%/pkg/loops/doc/fancyvrb.sty
+%%GAP_LIBDIR%%/pkg/loops/doc/EPSF.STY
+%%GAP_LIBDIR%%/pkg/loops/doc/loops_manual.html
+%%GAP_LIBDIR%%/pkg/loops/doc/isolatin1.sty
+%%GAP_LIBDIR%%/pkg/loops/doc/FANCYBOX.STY
+%%GAP_LIBDIR%%/pkg/loops/doc/LDIAG.LP
+%%GAP_LIBDIR%%/pkg/loops/doc/epic.sty
+%%GAP_LIBDIR%%/pkg/loops/doc/loops_manual.aux
+%%GAP_LIBDIR%%/pkg/loops/doc/loops_manual.dvi
+%%GAP_LIBDIR%%/pkg/loops/doc/loops_manual.idx
+%%GAP_LIBDIR%%/pkg/loops/doc/loops_manual.ilg
+%%GAP_LIBDIR%%/pkg/loops/doc/loops_manual.ind
+%%GAP_LIBDIR%%/pkg/loops/doc/loops_manual.log
+%%GAP_LIBDIR%%/pkg/loops/doc/loops_manual.pdf
+%%GAP_LIBDIR%%/pkg/loops/doc/loops_manual.tex
+%%GAP_LIBDIR%%/pkg/loops/doc/loops_manual.tid
+%%GAP_LIBDIR%%/pkg/loops/doc/loops_manual.tin
+%%GAP_LIBDIR%%/pkg/loops/doc/loops_manual.tms
+%%GAP_LIBDIR%%/pkg/loops/doc/loops_manual.toc
+%%GAP_LIBDIR%%/pkg/loops/doc/loops_manual.txt
+%%GAP_LIBDIR%%/pkg/loops/doc/Ldiag.lp
+%%GAP_LIBDIR%%/pkg/loops/doc/manual.six
+%%GAP_LIBDIR%%/pkg/loops/etc/clean_docus
+%%GAP_LIBDIR%%/pkg/loops/etc/makesix.g
+%%GAP_LIBDIR%%/pkg/loops/etc/letters
+%%GAP_LIBDIR%%/pkg/loops/etc/pack
+%%GAP_LIBDIR%%/pkg/loops/etc/HBHforLOOPS.g
+%%GAP_LIBDIR%%/pkg/loops/etc/make_docus
+%%GAP_LIBDIR%%/pkg/loops/etc/package2unix
+%%GAP_LIBDIR%%/pkg/loops/gap/quasigrp.gi
+%%GAP_LIBDIR%%/pkg/loops/gap/examples.gi
+%%GAP_LIBDIR%%/pkg/loops/gap/loop_iso.gd
+%%GAP_LIBDIR%%/pkg/loops/gap/loop_iso.gi
+%%GAP_LIBDIR%%/pkg/loops/gap/triality.gd
+%%GAP_LIBDIR%%/pkg/loops/gap/triality.gi
+%%GAP_LIBDIR%%/pkg/loops/gap/moufang_modifications.gd
+%%GAP_LIBDIR%%/pkg/loops/gap/moufang_modifications.gi
+%%GAP_LIBDIR%%/pkg/loops/gap/banner.g
+%%GAP_LIBDIR%%/pkg/loops/gap/quasigrp.gd
+%%GAP_LIBDIR%%/pkg/loops/gap/examples.gd
+%%GAP_LIBDIR%%/pkg/loops/tst/nilpot.tst
+%%GAP_LIBDIR%%/pkg/loops/tst/auto.tst
+%%GAP_LIBDIR%%/pkg/loops/tst/lib.tst
+%%GAP_LIBDIR%%/pkg/loops/tst/mouflib.tst
+%%GAP_LIBDIR%%/pkg/loops/tst/quasigrp.tst
+%%GAP_LIBDIR%%/pkg/loops/tst/testall.g
+%%GAP_LIBDIR%%/pkg/loops/PackageInfo.g
+%%GAP_LIBDIR%%/pkg/loops/read.g
+%%GAP_LIBDIR%%/pkg/loops/init.g
 %%GAP_LIBDIR%%/pkg/nq/examples/Makefile
 %%GAP_LIBDIR%%/pkg/nq/examples/G1.out
 %%GAP_LIBDIR%%/pkg/nq/examples/G2
@@ -5066,12 +5127,12 @@ bin/gap
 %%GAP_LIBDIR%%/pkg/repsn/doc/chapBib.txt
 %%GAP_LIBDIR%%/pkg/repsn/doc/chapInd.txt
 %%GAP_LIBDIR%%/pkg/repsn/doc/Makefile
-%%GAP_LIBDIR%%/pkg/repsn/doc/manual.css
 %%GAP_LIBDIR%%/pkg/repsn/doc/manual.dvi
 %%GAP_LIBDIR%%/pkg/repsn/doc/manual.pdf
 %%GAP_LIBDIR%%/pkg/repsn/doc/manual.ps
 %%GAP_LIBDIR%%/pkg/repsn/doc/manual.six
 %%GAP_LIBDIR%%/pkg/repsn/doc/repsn.bib
+%%GAP_LIBDIR%%/pkg/repsn/doc/repsn.blg
 %%GAP_LIBDIR%%/pkg/repsn/doc/chap0.txt
 %%GAP_LIBDIR%%/pkg/repsn/gap/data.g
 %%GAP_LIBDIR%%/pkg/repsn/gap/func.g
@@ -5081,6 +5142,7 @@ bin/gap
 %%GAP_LIBDIR%%/pkg/repsn/htm/chap2.html
 %%GAP_LIBDIR%%/pkg/repsn/htm/chapBib.html
 %%GAP_LIBDIR%%/pkg/repsn/htm/chapInd.html
+%%GAP_LIBDIR%%/pkg/repsn/htm/manual.css
 %%GAP_LIBDIR%%/pkg/repsn/init.g
 %%GAP_LIBDIR%%/pkg/repsn/PackageInfo.g
 %%GAP_LIBDIR%%/pkg/repsn/README.repsn
@@ -5802,6 +5864,7 @@ bin/gap
 %%GAP_LIBDIR%%/pkg/README.itc
 %%GAP_LIBDIR%%/pkg/README.kbmag
 %%GAP_LIBDIR%%/pkg/README.laguna
+%%GAP_LIBDIR%%/pkg/README.loops
 %%GAP_LIBDIR%%/pkg/README.nq
 %%GAP_LIBDIR%%/pkg/README.pargap
 %%GAP_LIBDIR%%/pkg/README.polenta
@@ -9309,6 +9372,12 @@ bin/gap
 @dirrm %%GAP_LIBDIR%%/pkg/automata/doc
 @dirrm %%GAP_LIBDIR%%/pkg/automata/gap
 @dirrm %%GAP_LIBDIR%%/pkg/automata
+@dirrm %%GAP_LIBDIR%%/pkg/loops/data
+@dirrm %%GAP_LIBDIR%%/pkg/loops/doc
+@dirrm %%GAP_LIBDIR%%/pkg/loops/etc
+@dirrm %%GAP_LIBDIR%%/pkg/loops/gap
+@dirrm %%GAP_LIBDIR%%/pkg/loops/tst
+@dirrm %%GAP_LIBDIR%%/pkg/loops
 @dirrm %%GAP_LIBDIR%%/pkg/repsn/doc
 @dirrm %%GAP_LIBDIR%%/pkg/repsn/gap
 @dirrm %%GAP_LIBDIR%%/pkg/repsn/htm
