@@ -4,7 +4,12 @@ bin/getclose
 bin/install-sid
 bin/query-pr
 bin/send-pr
-etc/gnats/databases
+%%SERVER%%@unexec if cmp -s %D/etc/gnats/databases %D/etc/gnats/databases.default; then rm -f %D/etc/gnats/databases; fi
+%%SERVER%%etc/gnats/databases.default
+%%SERVER%%@exec [ -f %B/databases ] || cp %B/%f %B/databases
+%%SERVER%%@unexec if cmp -s %D/etc/gnats/gnatsd.host_access %D/etc/gnats/gnatsd.host_access.default; then rm -f %D/etc/gnats/gnatsd.host_access; fi
+%%SERVER%%etc/gnats/gnatsd.host_access.default
+%%SERVER%%@exec [ -f %B/gnatsd.host_access ] || cp %B/%f %B/gnatsd.host_access
 etc/gnats/defaults/addresses
 etc/gnats/defaults/categories
 etc/gnats/defaults/classes
@@ -13,25 +18,29 @@ etc/gnats/defaults/gnatsd.user_access
 etc/gnats/defaults/responsible
 etc/gnats/defaults/states
 etc/gnats/defaults/submitters
-etc/gnats/gnatsd.host_access
 @dirrm etc/gnats/defaults
-@dirrm etc/gnats
-libexec/gnats/at-pr
-libexec/gnats/check-db
-libexec/gnats/delete-pr
+@unexec rmdir %D/etc/gnats 2>/dev/null || true
+%%SERVER%%libexec/gnats/at-pr
+%%SERVER%%libexec/gnats/check-db
+%%SERVER%%libexec/gnats/delete-pr
 libexec/gnats/diff-prs
 libexec/gnats/file-pr
-libexec/gnats/gen-index
-libexec/gnats/gnats-pwconv
-libexec/gnats/gnatsd
+%%SERVER%%libexec/gnats/gen-index
+%%SERVER%%libexec/gnats/gnats-pwconv
+%%SERVER%%libexec/gnats/gnatsd
 libexec/gnats/mail-agent
-libexec/gnats/mail-query
-libexec/gnats/mkcat
-libexec/gnats/mkdb
+%%SERVER%%libexec/gnats/mail-query
+%%SERVER%%libexec/gnats/mkcat
+%%SERVER%%libexec/gnats/mkdb
 libexec/gnats/pr-age
 libexec/gnats/pr-edit
-libexec/gnats/queue-pr
-libexec/gnats/rmcat
+%%SERVER%%libexec/gnats/queue-pr
+%%SERVER%%libexec/gnats/rmcat
 @dirrm libexec/gnats
+@exec mkdir -p %%GNATSDBDIR%%
+@exec chown gnats %%GNATSDBDIR%%
+@unexec rmdir %%GNATSDBDIR%% 2>/dev/null || true
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/UPGRADING
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%EMACS_SITE_LISPDIR%%/gnats.el
-@unexec rmdir %D/share/gnats 2>/dev/null || true

@@ -1,0 +1,11 @@
+--- gnats/configure.orig	Sun Sep 21 13:17:44 2003
++++ gnats/configure	Sun Sep 21 13:18:30 2003
+@@ -2864,7 +2864,7 @@
+ fi
+ 
+ if test "x$GCC" = "xyes" ; then
+-	GCC_CFLAGS="-W -Wall -ansi -pedantic  -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-format"
++	GCC_CFLAGS="-W -Wall -ansi -pedantic  -Wstrict-prototypes -Wmissing-prototypes -Wwrite-strings -Wno-format -Wno-long-long"
+ fi
+ 
+ # ***** Guess the configuration *****
