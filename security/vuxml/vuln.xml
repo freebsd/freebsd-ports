@@ -1903,7 +1903,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </package>
       <package>
 	<name>courier-imap</name>
-	<range><lt>3.0</lt></range>
+	<range><lt>3.0,1</lt></range>
       </package>
       <package>
 	<name>sqwebmail</name>
@@ -1939,10 +1939,14 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <url>http://cvs.sourceforge.net/viewcvs.py/courier/libs/unicode/iso2022jp.c?rev=1.10&amp;view=markup</url>
       <url>http://cvs.sourceforge.net/viewcvs.py/courier/libs/unicode/shiftjis.c?rev=1.6&amp;view=markup</url>
       <bid>9845</bid>
+      <url>http://secunia.com/advisories/11087</url>
+      <url>http://www.osvdb.org/4194</url>
+      <url>http://www.osvdb.org/6927</url>
     </references>
     <dates>
       <discovery>2004-02-01</discovery>
       <entry>2004-03-31</entry>
+      <modified>2004-07-16</modified>
     </dates>
   </vuln>
 
