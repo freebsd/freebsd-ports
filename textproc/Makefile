@@ -295,6 +295,7 @@
     SUBDIR += py-dsv
     SUBDIR += py-expat
     SUBDIR += py-jaxml
+    SUBDIR += py-ltxml
     SUBDIR += py-martel
     SUBDIR += py-rdflib
     SUBDIR += py-rxp
