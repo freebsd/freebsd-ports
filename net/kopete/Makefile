@@ -6,10 +6,12 @@
 #
 
 PORTNAME=	kopete
-PORTVERSION=	0.7
+PORTVERSION=	0.7.2
 CATEGORIES=	net kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+
+USE_BZIP2=      yes
 
 MAINTAINER=	stefan.jahn@nemesis-sektor.de
 COMMENT=	KDE instant messaging system (ICQ, AIM, MSN, Jabber, Yahoo, IRC)
@@ -26,11 +28,6 @@ _NO_KDE_FIXPTHREAD=	yes
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|-pedantic ||g' ${WRKSRC}/configure
- 
-post-install:
-	${RM} ${PREFIX}/share/locale/xx/LC_MESSAGES/kopete.mo
-	-${RMDIR} ${PREFIX}/share/locale/xx/LC_MESSAGES/
-	-${RMDIR} ${PREFIX}/share/locale/xx/
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/x11/kde3/Makefile.kde"
