@@ -42,7 +42,9 @@ do-install:
 		holiday_quebec holiday_spain holiday_swedish holiday_uk holiday_us \
 			${PREFIX}/share/doc/plan/examples
 
+.if !target(post-install)
 post-install:
 	@${MKDIR} ${PREFIX}/share/netplan.dir
+.endif
 
 .include <bsd.port.mk>
