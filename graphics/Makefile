@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.67 1998/02/20 02:39:06 steve Exp $
+# $Id: Makefile,v 1.68 1998/02/21 15:13:31 se Exp $
 #
 
     SUBDIR += ImageMagick
@@ -51,6 +51,7 @@
     SUBDIR += povray
     SUBDIR += ppm2fli
     SUBDIR += qvplay
+    SUBDIR += sane
     SUBDIR += sced
     SUBDIR += spigot
     SUBDIR += splitmpg
