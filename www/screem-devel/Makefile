@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	screem
-PORTVERSION=	0.5.5
+PORTVERSION=	0.5.6
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.screem.org/src/
