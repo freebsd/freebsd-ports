@@ -24,6 +24,7 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 
 USE_GMAKE=	yes
 USE_XLIB=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 	CFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2"
@@ -32,11 +33,11 @@ ALL_TARGET=	pfaedit
 
 MAN1=		pfaedit.1 sfddiff.1
 
-DIST_VER=	020518
+DIST_VER=	020627
 EXTRACT_ONLY=	${PORTNAME}_full-${DIST_VER}.tgz cidmaps.tgz
 
 .if !defined(NOPORTDOCS)
-DOC_VER=	020416
+DOC_VER=	020626
 DOCFILE=	${PORTNAME}_htdocs-${DOC_VER}.tgz
 .endif
 
@@ -49,16 +50,15 @@ post-extract:
 .endif
 
 post-patch:
-	${PERL} -pi.orig -e \
+	${REINPLACE_CMD} -e \
 		's,/usr/include/freetype2,${PREFIX}/include/freetype2 -I${PREFIX}/include,g' \
 		${WRKSRC}/configure ${WRKSRC}/configure.in \
 		${WRKSRC}/configure.pfaedit ${WRKSRC}/configure.pfaedit.in \
 		${WRKSRC}/configure.static.in \
 		${WRKSRC}/configure.ttfmod ${WRKSRC}/configure.ttfmod.in
-	${PERL} -pi.orig -e 's,/usr/share/,${PREFIX}/share/,g' \
+	${REINPLACE_CMD} -e 's,/usr/share/,${PREFIX}/share/,g' \
 		${WRKSRC}/pfaedit/pfaedit.1
-	${PERL} -pi.orig -e 's,/usr/pkg/,${PREFIX}/,g' \
-		${WRKSRC}/*/[mM]akefile.*
+	${REINPLACE_CMD} -e 's,/usr/pkg/,${PREFIX}/,g' ${WRKSRC}/*/[mM]akefile.*
 
 post-install:
 	${MKDIR} ${DOCSDIR}
