@@ -1,7 +1,6 @@
 lib/perl5/site_perl/%%PERL_VER%%/Net/Cmd.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/Config.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/Domain.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DummyInetd.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/FTP.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/FTP/A.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/FTP/E.pm
@@ -10,14 +9,12 @@ lib/perl5/site_perl/%%PERL_VER%%/Net/FTP/L.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/FTP/dataconn.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/NNTP.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/Netrc.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/PH.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/POP3.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/SMTP.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/SNPP.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/Time.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/libnet.cfg
 lib/perl5/site_perl/%%PERL_VER%%/Net/libnetFAQ.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/FTP
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/FTP
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Net 2>/dev/null || true
