@@ -8,8 +8,8 @@
 PORTNAME=	maint
 PORTVERSION=	0.5.2
 CATEGORIES=	sysutils python
-MASTER_SITES=	http://www.dynaplex.net/opensource/software/
-
+MASTER_SITES=	http://www.ukc.mirror.ac.uk/sites/ftp.freebsd.org/pub/FreeBSD/ports/distfiles/ \
+		http://people.FreeBSD.org/~foxfair/distfiles/
 MAINTAINER=	ports@FreeBSD.Org
 COMMENT=	System maintenance package written in Python and CSH
 
