@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	logmon
-PORTVERSION=	0.3.3
+PORTVERSION=	0.4.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.edespot.com/plaidhat/code/LogMon/
 DISTNAME=	LogMon-${PORTVERSION}
@@ -16,8 +16,5 @@ MAINTAINER=	gslin@ccca.nctu.edu.tw
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/LogMon ${PREFIX}/bin
 
 .include <bsd.port.mk>
