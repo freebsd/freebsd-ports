@@ -1,6 +1,6 @@
 DISTNAME=	mshell
 DISTFILES=	7432.Z
-MASTER_SITES=	ftp://src.doc.ic.ac.uk/usenet/alt.sources/articles/7000-7999/
+MASTER_SITES=	ftp://src.doc.ic.ac.uk/usenet/alt.sources/articles/07000-07999/
 NO_WRKSUBDIR=	yes
 
 EXTRACT_COOKIE?=	${.CURDIR}/.extract_done
