@@ -1,17 +1,17 @@
---- configure.orig	Fri Jan 14 18:21:58 2000
-+++ configure	Fri Jan 14 18:22:59 2000
-@@ -944,8 +944,8 @@
+--- configure.orig	Wed Mar 15 22:51:32 2000
++++ configure	Wed Mar 15 22:53:38 2000
+@@ -946,8 +946,8 @@
    x_includes="/usr/include"
  fi
  
 -LIBS="$LIBS `gtk-config --libs`"
--CFLAGS="$CFLAGS `gtk-config --cflags` -Wall"
+-CFLAGS="$CFLAGS `gtk-config --cflags`"
 +LIBS="$LIBS `${GTK_CONFIG} --libs`"
-+CFLAGS="$CFLAGS `${GTK_CONFIG} --cflags` -Wall"
++CFLAGS="$CFLAGS `${GTK_CONFIG} --cflags`"
  
  # Check whether --with-gtk-prefix or --without-gtk-prefix was given.
  if test "${with_gtk_prefix+set}" = set; then
-@@ -975,18 +975,18 @@
+@@ -977,18 +977,18 @@
    if test x$gtk_config_exec_prefix != x ; then
       gtk_config_args="$gtk_config_args --exec-prefix=$gtk_config_exec_prefix"
       if test x${GTK_CONFIG+set} != xset ; then
@@ -32,9 +32,9 @@
 +  # Extract the first word of "${GTK_CONFIG}", so it can be a program name with args.
 +set dummy ${GTK_CONFIG}; ac_word=$2
  echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
- echo "configure:992: checking for $ac_word" >&5
+ echo "configure:994: checking for $ac_word" >&5
  if eval "test \"`echo '$''{'ac_cv_path_GTK_CONFIG'+set}'`\" = set"; then
-@@ -1122,10 +1122,10 @@
+@@ -1124,10 +1124,10 @@
    else
       echo "$ac_t""no" 1>&6
  #     if test "$GTK_CONFIG" = "no" ; then
@@ -47,7 +47,7 @@
  #     else
  #       if test -f conf.gtktest ; then
  #        :
-@@ -1154,7 +1154,7 @@
+@@ -1156,7 +1156,7 @@
  #        [ echo "*** The test program failed to compile or link. See the file config.log for the"
  #          echo "*** exact error that occured. This usually means GTK was incorrectly installed"
  #          echo "*** or that you have moved GTK since it was installed. In the latter case, you"
