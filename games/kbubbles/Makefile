@@ -17,10 +17,4 @@ BUILD_DEPENDS=	${LOCALBASE}/include/QwSpriteField.h:${PORTSDIR}/converters/kdesu
 GNU_CONFIGURE=	yes
 USE_QT=		yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 400004
-BROKEN=		"Requires NEWGCC-compiled KDE libs"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
