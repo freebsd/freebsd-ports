@@ -17,7 +17,7 @@ COMMENT=	Cygnus GNATS bug tracking system
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-FORBIDDEN=	Compilation errors and security issues
+FORBIDDEN=	Security issues
 EXPIRATION_DATE=2004-08-20
 DEPRECATED=	${FORBIDDEN}
 
