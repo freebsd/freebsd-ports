@@ -1,14 +1,15 @@
---- Makefile.in.orig	Thu Dec 18 11:11:05 2003
-+++ Makefile.in	Tue Dec 30 20:20:01 2003
-@@ -4,13 +4,14 @@
+--- Makefile.in.orig	Mon Feb  9 12:08:00 2004
++++ Makefile.in	Mon Mar  1 12:42:34 2004
+@@ -3,14 +3,14 @@
  
- DISTNAME = ocrad-0.6
+ DISTNAME = ocrad-0.7
  
 -CXX = g++
 -INSTALL = install
 -INSTALL_PROGRAM = $(INSTALL)
 -INSTALL_DATA = $(INSTALL) -m 644
 -SHELL = /bin/sh
+-CPPFLAGS =
 -CXXFLAGS = -Wall -W -O2
 -LDFLAGS =
 +CXX?= g++
@@ -16,13 +17,13 @@
 +INSTALL_PROGRAM?= $(INSTALL)
 +INSTALL_DATA?= $(INSTALL) -m 644
 +SHELL?= /bin/sh
-+CXXFLAGS?= -Wall -W -O2
 +CPPFLAGS?=
++CXXFLAGS?= -Wall -W -O2
 +LDFLAGS?=
  
- objs = common.o rectangle.o iso_8859_1.o bitmap.o block.o blockmap.o \
-        profile.o feats.o character.o recognize1.o \
-@@ -22,10 +23,10 @@
+ objs = common.o rectangle.o ucs.o bitmap.o block.o blockmap.o \
+        profile.o feats.o character.o character_r11.o character_r12.o \
+@@ -23,10 +23,10 @@
  all : ocrad
  
  ocrad : $(objs)
@@ -34,12 +35,12 @@
 +	$(CXX) $(LDFLAGS) $(CXXFLAGS) $(CPPFLAGS) -pg -o ocradp $(objs)
  
  %.o : %.cc
- 	$(CXX) $(CXXFLAGS) -c -o $@ $<
-@@ -43,6 +44,7 @@
- recognize2.o : block.h character.h iso_8859_1.h textline.h
- textblock.o  : block.h character.h textline.h textblock.h
- main.o       : block.h blockmap.h bitmap.h character.h textline.h textblock.h
+ 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c -o $@ $<
+@@ -41,6 +41,7 @@
+ character_r13.o : ucs.h block.h blockmap.h character.h profile.h feats.h
+ feats.o         : ucs.h block.h blockmap.h profile.h feats.h
+ main.o          : bitmap.h block.h blockmap.h character.h textline.h textblock.h
 +	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c main.cc
- 
- 
- install : all install-info
+ profile.o       : block.h blockmap.h profile.h
+ textblock.o     : block.h character.h textline.h textblock.h
+ textline.o      : ucs.h block.h character.h textline.h

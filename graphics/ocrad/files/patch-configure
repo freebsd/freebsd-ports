@@ -1,0 +1,26 @@
+--- configure.orig	Fri Jan 23 22:55:38 2004
++++ configure	Mon Mar  1 11:34:35 2004
+@@ -19,12 +19,6 @@
+ progname=$0
+ srctrigger=ocrad.png
+ 
+-# clear some things potentially inherited from environment.
+-srcdir=
+-prefix=/usr/local
+-infodir=${prefix}/share/info
+-mandir=${prefix}/share/man
+-
+ # Loop over all args
+ while [ x$1 != x ] ; do
+ 
+@@ -64,6 +58,10 @@
+ 		exit 1 ;;
+ 	esac
+ done
++
++prefix=${prefix:-/usr/local}
++infodir=${infodir:-${prefix}/share/info}
++mandir=${mandir:-${prefix}/share/man}
+ 
+ # Find the source files, if location was not specified.
+ srcdirtext=
