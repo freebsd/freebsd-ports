@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wmnd
-PORTVERSION=	0.4.7
-PORTREVISION=	1
+PORTVERSION=	0.4.11
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.yuv.info/pub/wmnd/releases/
 

@@ -1,4 +1,3 @@
-
 	----------------------------------------------------------
 	Existing users of 'wmnd' be aware that the graph scrolling
 	speed is now specified in tenths of a second (previous
@@ -8,4 +7,3 @@
 
 	Some modes look much nicer with a fast update. YMMV.
 	----------------------------------------------------------
-
