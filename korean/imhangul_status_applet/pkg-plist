@@ -1,0 +1,47 @@
+etc/gconf/gconf.xml.defaults/schemas/apps/imhangul_status/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/imhangul_status/prefs/%gconf.xml
+etc/gconf/schemas/imhangul_status.schemas
+libdata/bonobo/servers/GNOME_IMHangulStatusApplet.server
+libexec/imhangul-status-applet
+share/gnome/gnome-2.0/ui/GNOME_IMHangulStatusApplet.xml
+share/gnome/imhangul/themes/MSWindows/Entries
+share/gnome/imhangul/themes/MSWindows/Repository
+share/gnome/imhangul/themes/MSWindows/Root
+share/gnome/imhangul/themes/MSWindows/english.png
+share/gnome/imhangul/themes/MSWindows/hangul.png
+share/gnome/imhangul/themes/MSWindows/none.png
+share/gnome/imhangul/themes/Mac/Entries
+share/gnome/imhangul/themes/Mac/Repository
+share/gnome/imhangul/themes/Mac/Root
+share/gnome/imhangul/themes/Mac/english.png
+share/gnome/imhangul/themes/Mac/hangul.png
+share/gnome/imhangul/themes/Mac/none.png
+share/gnome/imhangul/themes/Onion/README
+share/gnome/imhangul/themes/Onion/english.png
+share/gnome/imhangul/themes/Onion/hangul.png
+share/gnome/imhangul/themes/Onion/none.png
+share/gnome/imhangul/themes/SimplyRed/Entries
+share/gnome/imhangul/themes/SimplyRed/Repository
+share/gnome/imhangul/themes/SimplyRed/Root
+share/gnome/imhangul/themes/SimplyRed/english.png
+share/gnome/imhangul/themes/SimplyRed/hangul.png
+share/gnome/imhangul/themes/SimplyRed/none.png
+share/gnome/imhangul/themes/keyboard/Entries
+share/gnome/imhangul/themes/keyboard/README
+share/gnome/imhangul/themes/keyboard/Repository
+share/gnome/imhangul/themes/keyboard/Root
+share/gnome/imhangul/themes/keyboard/english.png
+share/gnome/imhangul/themes/keyboard/hangul.png
+share/gnome/imhangul/themes/keyboard/none.png
+share/gnome/pixmaps/imhangul-status-applet-logo.png
+share/gnome/pixmaps/imhangul-status-applet.png
+share/locale/ko/LC_MESSAGES/imhangul_status_applet.mo
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/imhangul_status/prefs
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/imhangul_status
+@dirrm share/gnome/imhangul/themes/MSWindows
+@dirrm share/gnome/imhangul/themes/Mac
+@dirrm share/gnome/imhangul/themes/Onion
+@dirrm share/gnome/imhangul/themes/SimplyRed
+@dirrm share/gnome/imhangul/themes/keyboard
+@dirrm share/gnome/imhangul/themes
+@dirrm share/gnome/imhangul

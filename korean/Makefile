@@ -43,6 +43,7 @@
     SUBDIR += hpscat
     SUBDIR += htexp
     SUBDIR += imhangul
+    SUBDIR += imhangul_status_applet
     SUBDIR += johabfonts
     SUBDIR += kaistfonts
     SUBDIR += kde3-i18n

@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Mon May 26 22:29:59 2003
++++ src/Makefile.in	Mon May 26 22:30:08 2003
+@@ -116,7 +116,7 @@
+ INCLUDES =  	-DGNOMELOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale"\"			-DIMHANGUL_STATUS_THEMES_DIR=\"@IMHANGUL_STATUS_THEMES_DIR@\"
+ 
+ 
+-CFLAGS = -Wall -g @IMHANGUL_STATUS_CFLAGS@
++CFLAGS += -Wall @IMHANGUL_STATUS_CFLAGS@
+ 
+ libexec_PROGRAMS = imhangul-status-applet
+ 
