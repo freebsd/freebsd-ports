@@ -1,0 +1,5 @@
+bin/gtksamba
+share/doc/gtksamba/COPYING
+share/doc/gtksamba/README
+share/doc/gtksamba/TODO
+@dirrm share/doc/gtksamba
