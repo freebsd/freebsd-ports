@@ -10,6 +10,7 @@ PORTVERSION=	1.1
 CATEGORIES=	net python
 MASTER_SITES=	http://www.zolera.com/resources/opensrc/zsi/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	wjv@FreeBSD.org
