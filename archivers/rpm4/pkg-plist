@@ -159,3 +159,5 @@ share/locale/zh_CN.GB2312/LC_MESSAGES/rpm.mo
 @unexec rmdir %D/src/portbld/RPMS 2>/dev/null || true
 @unexec rmdir %D/src/portbld/BUILD 2>/dev/null || true
 @unexec rmdir %D/src/portbld 2>/dev/null || true
+@unexec rmdir %D/share/locale/en_RN/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/en_RN 2> /dev/null || true

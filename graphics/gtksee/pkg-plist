@@ -6,3 +6,7 @@ bin/gtksee
 %%NLS%%share/locale/ru/LC_MESSAGES/gtksee.mo
 %%NLS%%share/locale/ru_UA/LC_MESSAGES/gtksee.mo
 %%NLS%%share/locale/zh_CN.EUC/LC_MESSAGES/gtksee.mo
+%%NLS%%@unexec rmdir %D/share/locale/zh_CN.EUC/LC_MESSAGES 2> /dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/zh_CN.EUC 2> /dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/ru_UA/LC_MESSAGES 2> /dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/ru_UA 2> /dev/null || true

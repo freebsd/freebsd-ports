@@ -133,9 +133,12 @@ share/postgresql/post-install-notes
 %%SERVER%%%%GETTEXT%%share/locale/tr/LC_MESSAGES/postgres.mo
 %%SERVER%%%%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/postgres.mo
 %%SERVER%%%%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/postgres.mo
-%%GETTEXT%%@unexec rmdir %D/share/locale/*/LC_MESSAGES 2>/dev/null || true
-%%GETTEXT%%@unexec rmdir %D/share/locale/* 2>/dev/null || true
-%%GETTEXT%%@unexec rmdir %D/share/locale 2>/dev/null || true
+%%GETTEXT%%@unexec rmdir %D/share/locale/cs/LC_MESSAGES 2> /dev/null || true
+%%GETTEXT%%@unexec rmdir %D/share/locale/cs 2> /dev/null || true
+%%GETTEXT%%@unexec rmdir %D/share/locale/zh_CN/LC_MESSAGES 2> /dev/null || true
+%%GETTEXT%%@unexec rmdir %D/share/locale/zh_CN 2> /dev/null || true
+%%GETTEXT%%@unexec rmdir %D/share/locale/zh_TW/LC_MESSAGES 2> /dev/null || true
+%%GETTEXT%%@unexec rmdir %D/share/locale/zh_TW 2> /dev/null || true
 %%SERVER%%@unexec if cmp -s ~pgsql/.profile %D/share/postgresql/dot.profile.dist; then rm -f ~pgsql/.profile; fi
 %%SERVER%%@unexec if cmp -s ~pgsql/.cshrc %D/share/postgresql/dot.cshrc.dist; then rm -f ~pgsql/.cshrc; fi
 %%SERVER%%@unexec [ -f ~pgsql/dot.profile.dist ] && rm ~pgsql/dot.profile.dist

@@ -19,6 +19,5 @@ bin/bison
 %%NLS%%share/locale/ru/LC_MESSAGES/bison.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/bison.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/bison.mo
-%%NLS%%@unexec rmdir %D/share/locale/hr/LC_MESSAGES 2> /dev/null || true
 @dirrm %%DATADIR%%/m4sugar
 @dirrm %%DATADIR%%

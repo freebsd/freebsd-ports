@@ -32,6 +32,8 @@ share/locale/sr/LC_MESSAGES/glunarclock-0.30.mo
 share/locale/sv/LC_MESSAGES/glunarclock-0.30.mo
 share/locale/vi/LC_MESSAGES/glunarclock-0.30.mo
 share/locale/wa/LC_MESSAGES/glunarclock-0.30.mo
+@unexec rmdir %D/share/locale/ast_ES/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/ast_ES 2> /dev/null || true
 @dirrm share/gnome/pixmaps/glunarclock
 @dirrm share/gnome/help/glunarclock-applet-2/C/figures
 @dirrm share/gnome/help/glunarclock-applet-2/C

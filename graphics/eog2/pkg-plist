@@ -156,4 +156,6 @@ share/locale/zu/LC_MESSAGES/eog.mo
 @dirrm share/gnome/help/eog
 @dirrm share/gnome/eog/glade
 @dirrm share/gnome/eog
+@unexec rmdir %D/share/locale/zu/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/zu 2> /dev/null || true
 @unexec update-desktop-database > /dev/null || /usr/bin/true

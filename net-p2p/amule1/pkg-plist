@@ -76,3 +76,5 @@ share/gnome/amuleweb/webserver/yellow.gif
 share/gnome/amuleweb/aMule.tmpl
 @dirrm share/gnome/amuleweb/webserver
 @dirrm share/gnome/amuleweb
+@unexec rmdir %D/share/locale/ee/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/ee 2> /dev/null || true

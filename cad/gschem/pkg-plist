@@ -33,3 +33,9 @@ share/locale/ru/LC_MESSAGES/geda-gschem.mo
 @unexec rmdir %D/share/doc/geda-doc/man 2>/dev/null || true
 @unexec rmdir %D/share/gEDA/scheme 2>/dev/null || true
 @dirrm share/gEDA/bitmap
+@unexec rmdir %D/share/locale/de_DE/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/de_DE 2> /dev/null || true
+@unexec rmdir %D/share/locale/nl_NL/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/nl_NL 2> /dev/null || true
+@unexec rmdir %D/share/locale/ja_JP/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/ja_JP 2> /dev/null || true

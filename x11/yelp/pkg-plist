@@ -118,6 +118,8 @@ share/locale/wa/LC_MESSAGES/yelp.mo
 share/locale/zh_CN/LC_MESSAGES/yelp.mo
 share/locale/zh_TW/LC_MESSAGES/yelp.mo
 share/locale/zu/LC_MESSAGES/yelp.mo
+@unexec rmdir %D/share/locale/zu/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/zu 2> /dev/null || true
 @dirrm share/gnome/yelp/ui
 @dirrm share/gnome/yelp/icons
 @dirrm share/gnome/yelp

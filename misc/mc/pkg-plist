@@ -137,8 +137,6 @@ share/mc/term/xterm.ti
 @dirrm share/mc
 @unexec rmdir %D/share/locale/wa/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/wa 2>/dev/null || true
-@unexec rmdir %D/share/locale/hu/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/hu 2>/dev/null || true
 @unexec rmdir %D/man/es/man1 2>/dev/null || true
 @unexec rmdir %D/man/es/cat1 2>/dev/null || true
 @unexec rmdir %D/man/es 2>/dev/null || true

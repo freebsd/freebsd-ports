@@ -13,5 +13,7 @@ share/locale/es/LC_MESSAGES/libgksuui1.0.mo
 share/locale/no_NB/LC_MESSAGES/libgksuui1.0.mo
 share/locale/pt_BR/LC_MESSAGES/libgksuui1.0.mo
 share/locale/ru/LC_MESSAGES/libgksuui1.0.mo
+@unexec rmdir %D/share/locale/no_NB/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/no_NB 2> /dev/null || true
 @dirrm share/libgksuui1.0
 @dirrm include/libgksuui1.0

@@ -2,3 +2,7 @@ bin/di
 bin/mi
 share/locale/de_DE/LC_MESSAGES/di.mo
 share/locale/en_US/LC_MESSAGES/di.mo
+@unexec rmdir %D/share/locale/de_DE/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/de_DE 2> /dev/null || true
+@unexec rmdir %D/share/locale/en_US/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/en_US 2> /dev/null || true

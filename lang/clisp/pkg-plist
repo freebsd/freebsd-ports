@@ -67,8 +67,6 @@ share/locale/ru/LC_MESSAGES/clisplow.mo
 @dirrm lib/clisp
 @unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/de 2>/dev/null || true
-@unexec rmdir %D/share/locale/en/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/en 2>/dev/null || true
 @unexec rmdir %D/share/locale/es/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/es 2>/dev/null || true
 @unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true

@@ -257,3 +257,5 @@ share/locale/zh_TW/LC_MESSAGES/libbonobo-2.0.mo
 @dirrm etc/bonobo-activation
 @unexec /bin/rmdir %D/lib/bonobo/monikers 2>/dev/null || /usr/bin/true
 @unexec /bin/rmdir %D/lib/bonobo 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/locale/li/LC_MESSAGES 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/locale/li 2>/dev/null || /usr/bin/true

@@ -229,3 +229,15 @@ etc/gentoorc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/config
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%NLS%%@unexec rmdir %D/share/locale/ru_RU.cp1251/LC_MESSAGES 2> /dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/ru_RU.cp1251 2> /dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/ru_RU.CP1251/LC_MESSAGES 2> /dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/ru_RU.CP1251 2> /dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/ru_RU.KOI8-R/LC_MESSAGES 2> /dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/ru_RU.KOI8-R 2> /dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/ru_RU.koi8r/LC_MESSAGES 2> /dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/ru_RU.koi8r 2> /dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/ru_RU.UTF-8/LC_MESSAGES 2> /dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/ru_RU.UTF-8 2> /dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/ru_RU.utf8/LC_MESSAGES 2> /dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/ru_RU.utf8 2> /dev/null || true

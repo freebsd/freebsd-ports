@@ -65,3 +65,7 @@ bin/Xdialog
 %%PORTDOCS%%%%DOCSDIR%%/yesno-wizard.png
 %%PORTDOCS%%%%DOCSDIR%%/yesno.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%NLS%%@unexec rmdir %D/share/locale/no_NO/LC_MESSAGES 2> /dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/no_NO 2> /dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/sv_SE/LC_MESSAGES 2> /dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/sv_SE 2> /dev/null || true

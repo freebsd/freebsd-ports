@@ -17,6 +17,7 @@ share/icons/hicolor/32x32/apps/kftpgrabber.png
 share/icons/hicolor/48x48/apps/kftpgrabber.png
 share/locale/de/LC_MESSAGES/kftpgrabber.mo
 share/locale/es/LC_MESSAGES/kftpgrabber.mo
+share/locale/hu/LC_MESSAGES/kftpgrabber.mo
 share/services/kftpimportplugin_gftp.desktop
 share/servicetypes/kftpbookmarkimportplugin.desktop
 @unexec rmdir %D/share/servicetypes 2>/dev/null || true

@@ -33,3 +33,5 @@ info/hello.info
 %%NLS%%share/locale/sv/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/hello.mo
+%%NLS%%@unexec rmdir %D/share/locale/de_DE/LC_MESSAGES 2> /dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/de_DE 2> /dev/null || true

@@ -165,9 +165,7 @@ bin/gyes
 %%NLS%%@unexec rmdir %D/share/locale/no/LC_TIME 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/nl/LC_TIME 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/nb/LC_TIME 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/nb/LC_MESSAGES 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/ms/LC_TIME 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/ms/LC_MESSAGES 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/lg/LC_TIME 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/lg/LC_MESSAGES 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/lg 2>/dev/null || true
@@ -177,8 +175,6 @@ bin/gyes
 %%NLS%%@unexec rmdir %D/share/locale/hu/LC_TIME 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/gl/LC_TIME 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/ga/LC_TIME 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/ga/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/ga 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/fr/LC_TIME 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/fi/LC_TIME 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/et/LC_TIME 2>/dev/null || true
@@ -190,5 +186,3 @@ bin/gyes
 %%NLS%%@unexec rmdir %D/share/locale/ca/LC_TIME 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/be/LC_TIME 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/af/LC_TIME 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/af/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/af 2>/dev/null || true

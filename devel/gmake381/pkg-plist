@@ -15,7 +15,3 @@ bin/gmake
 %%NLS%%share/locale/sv/LC_MESSAGES/make.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/make.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/make.mo
-%%NLS%%@unexec rmdir %D/share/locale/he/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/hr/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/he 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/hr 2>/dev/null || true
