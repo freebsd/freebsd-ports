@@ -1,5 +1,5 @@
---- src/hooks/msnhook.cc.orig	Mon Nov  3 20:25:37 2003
-+++ src/hooks/msnhook.cc	Mon Nov  3 20:24:20 2003
+--- src/hooks/msnhook.cc.orig	Sat Jan 17 17:01:03 2004
++++ src/hooks/msnhook.cc	Sat Jan 17 17:05:45 2004
 @@ -0,0 +1,801 @@
 +/*
 +*
@@ -105,7 +105,7 @@
 +    ourstatus = offline;
 +    fonline = false;
 +
-+    fcapabs.insert(hookcapab::synclist);
++//    fcapabs.insert(hookcapab::synclist); // removed from 4.9.10
 +    fcapabs.insert(hookcapab::changedetails);
 +    fcapabs.insert(hookcapab::directadd);
 +//    fcapabs.insert(hookcapab::files);
