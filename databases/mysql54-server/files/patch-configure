@@ -1,5 +1,5 @@
 --- configure.orig	Wed Oct  6 00:10:05 1999
-+++ configure	Mon Oct 11 16:35:53 1999
++++ configure	Thu Nov 25 21:00:43 1999
 @@ -2070,8 +2070,8 @@
  LD="$LD" LDFLAGS="$LDFLAGS" LIBS="$LIBS" \
  LN_S="$LN_S" NM="$NM" RANLIB="$RANLIB" \
@@ -20,6 +20,15 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -2737,7 +2737,7 @@
+   ;;
+ esac
+ fi
+-HOSTNAME="$ac_cv_path_HOSTNAME"
++HOSTNAME="$ac_cv_path_HOSTNAME -s"
+ if test -n "$HOSTNAME"; then
+   echo "$ac_t""$HOSTNAME" 1>&6
+ else
 @@ -2865,30 +2865,7 @@
  echo $ac_n "checking "how to check if pid exists"""... $ac_c" 1>&6
  echo "configure:2867: checking "how to check if pid exists"" >&5
