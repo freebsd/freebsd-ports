@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2003-11-12
+SNAPDATE=	2003-11-26
 #CVS_DATE=	${SNAPDATE} 18:53:04 EDT
 
 PORTNAME=	gcc
@@ -41,7 +41,7 @@ NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 
 .include <bsd.port.pre.mk>
 
-BROKEN=		"Building libjava causes an Internal Compiler Error iff built within the ports tree"
+#BROKEN=		"Building libjava causes an Internal Compiler Error iff built within the ports tree"
 
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 
@@ -49,10 +49,6 @@ GCC_VER=	${PORTVERSION:C/\.0$//}
 SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
 WRKSRC=		${WRKDIR}/build
 TARGLIB=	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_VER}
-GCJINC=		${PREFIX}/include/gcj
-GNUINC=		${PREFIX}/include/gnu
-JAVAINC=	${PREFIX}/include/java
-JAVAINC2=	${PREFIX}/include/javax
 PLIST_SUB=	GCC_VER=${GCC_VER} GNU_HOST=${CONFIGURE_TARGET}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -82,6 +78,7 @@ MAN1=		cpp34.1 g++34.1 g77-34.1 gcc34.1 gcov34.1 \
 		jcf-dump34.1 jv-scan34.1 jv-convert34.1 \
 		rmic34.1 rmiregistry34.1
 MAN7=		fsf-funding.7 gfdl.7 gpl.7
+INFO=		cpp cppinternals g77 gcc gccint gcj
 
 .if defined(CVS_DATE)
 NO_CHECKSUM=	yes
@@ -128,17 +125,8 @@ post-build:
 check: build
 	cd ${WRKSRC}; export RUNTESTFLAGS='--target_board ''unix{-pthread}'''; ${GMAKE} -sk check
 
-pre-install:
-	${MKDIR} ${PREFIX}/info
-
 post-install:
 	@${RM} -f ${PREFIX}/bin/c++ ${PREFIX}/bin/${CONFIGURE_TARGET}-c++
-	@(for prog in \
-		${TARGLIB}/cc1 ${TARGLIB}/cc1obj ${TARGLIB}/cc1plus \
-		${TARGLIB}/collect2 ${TARGLIB}/f771 ; \
-	do \
-		${STRIP_CMD} $$prog ; \
-	done )
 .for f in gcc g++ cpp gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++ gcj gcjh gij jv-scan jcf-dump jv-convert jar grepjar rmic rmiregistry
 	${STRIP_CMD} ${PREFIX}/bin/${f}
 	${MV} -f ${PREFIX}/bin/${f} ${PREFIX}/bin/${f}34
@@ -163,7 +151,7 @@ post-install:
 	-${MV} -f ${PREFIX}/lib/libgcj.* ${TARGLIB}
 	${RM} -f ${PREFIX}/lib/libiberty.a
 	${RM} -f ${TARGLIB}/*.la
-.for info in cpp cppinternals g77 gcc gccint gcj fastjar
+.for info in cpp cppinternals g77 gcc gccint gcj
 	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
 .endfor
 # I am sick and tired of the anonyance that man pages can only be generated if
@@ -178,30 +166,15 @@ post-install:
 	    ${FIND} ${TARGLIB:S/^${PREFIX}\///} -type d \
 	    	| sort -r | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.gcc-lib
 	(${ECHO_CMD} "@unexec rmdir %D/lib/gcc-lib/${CONFIGURE_TARGET} 2>&1 || true" ; ${ECHO_CMD} "@unexec rmdir %D/lib/gcc-lib 2>&1 || true") >> ${WRKDIR}/PLIST.gcc-lib
+	# Handle GCJ include files.
+	${RM} -f ${WRKDIR}/PLIST.gcj-inc
+.for inc in ${PREFIX}/include/gcj ${PREFIX}/include/gnu ${PREFIX}/include/java ${PREFIX}/include/javax
 	cd ${PREFIX} ;\
-	    ${FIND} ${GCJINC:S/^${PREFIX}\///} -type f -o -type l	\
-	    	>${WRKDIR}/PLIST.gcj-inc
-	cd ${PREFIX} ;\
-	    ${FIND} ${GNUINC:S/^${PREFIX}\///} -type f -o -type l	\
-	    	>>${WRKDIR}/PLIST.gcj-inc
-	cd ${PREFIX} ;\
-	    ${FIND} ${JAVAINC:S/^${PREFIX}\///} -type f -o -type l	\
-	    	>>${WRKDIR}/PLIST.gcj-inc
-	cd ${PREFIX} ;\
-	    ${FIND} ${JAVAINC2:S/^${PREFIX}\///} -type f -o -type l	\
-	    	>>${WRKDIR}/PLIST.gcj-inc
-	cd ${PREFIX} ;\
-	    ${FIND} ${GCJINC:S/^${PREFIX}\///} -type d \
+	    ${FIND} ${inc:S/^${PREFIX}\///} -type f -o -type l	\
+	    	>>${WRKDIR}/PLIST.gcj-inc ;\
+	    ${FIND} ${inc:S/^${PREFIX}\///} -type d \
 	    	| sort -r | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.gcj-inc
-	cd ${PREFIX} ;\
-	    ${FIND} ${GNUINC:S/^${PREFIX}\///} -type d \
-	    	| sort -r | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.gcj-inc
-	cd ${PREFIX} ;\
-	    ${FIND} ${JAVAINC:S/^${PREFIX}\///} -type d \
-	    	| sort -r | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.gcj-inc
-	cd ${PREFIX} ;\
-	    ${FIND} ${JAVAINC2:S/^${PREFIX}\///} -type d \
-	    	| sort -r | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.gcj-inc
+.endfor
 	${ECHO_CMD} "r ${TMPPLIST}"		> ${WRKDIR}/ex.script
 	${ECHO_CMD} "/Insert PLIST.gcc-lib"	>> ${WRKDIR}/ex.script
 	${ECHO_CMD} "d"				>> ${WRKDIR}/ex.script
