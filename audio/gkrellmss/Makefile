@@ -26,6 +26,12 @@ USE_XPM=	yes
 
 DOC_FILES=	Changelog README Themes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 503000
+BROKEN=		"Does not compile on FreeBSD >= 5.3"
+.endif
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/gkrellmss.so \
 		${PREFIX}/libexec/gkrellm/plugins
@@ -37,4 +43,4 @@ do-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
