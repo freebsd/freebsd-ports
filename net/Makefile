@@ -138,6 +138,7 @@
     SUBDIR += p5-Net-RawIP
     SUBDIR += p5-Net-Telnet
     SUBDIR += p5-Net-Whois
+    SUBDIR += p5-PlRPC
     SUBDIR += p5-SNMP
     SUBDIR += p5-SNMP-Util
     SUBDIR += p5-SNMP_Session
