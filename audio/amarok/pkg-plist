@@ -1,4 +1,5 @@
 bin/amarok
+%%LIBVISUAL%%bin/amarok_libvisual
 %%XMMS%%bin/amarok_xmmswrapper2
 bin/amarokapp
 bin/release_amarok
