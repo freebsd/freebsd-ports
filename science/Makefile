@@ -14,6 +14,7 @@
     SUBDIR += mpqc
     SUBDIR += mpqc-mpich
     SUBDIR += oases
+    SUBDIR += openbabel
     SUBDIR += p5-Chemistry-Elements
     SUBDIR += vis5d+
     SUBDIR += xloops-ginac
