@@ -11,17 +11,18 @@ MASTER_SITES=	http://www.giuseppetanzilli.it/mod_auth_pgsql/dist/
 
 MAINTAINER=	ports@freebsd.org
 
-BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/${AP_PORT}
-RUN_DEPENDS=	${LOCALBASE}/sbin/${AP_TARGET}:${PORTSDIR}/www/${AP_PORT}
+BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
+RUN_DEPENDS=	${LOCALBASE}/sbin/${AP_TARGET}:${APACHE_PORT}
 LIB_DEPENDS=	pq.2:${PORTSDIR}/databases/postgresql7
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION:S/a//}
 
 .include <bsd.port.pre.mk>
 
-APXS=		${LOCALBASE}/sbin/apxs
-
+APXS?=		${LOCALBASE}/sbin/apxs
 AP_PORT?=	apache13
+APACHE_PORT?=	${PORTSDIR}/www/${AP_PORT}
+
 .if exists(${APXS})
 APXS_WORKS!=	${APXS} -q TARGET 2>/dev/null || echo no
 .endif

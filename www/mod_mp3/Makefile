@@ -14,13 +14,14 @@ MASTER_SITES=	http://software.tangent.org/download/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
-RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
+BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
+RUN_DEPENDS=	${APXS}:${APACHE_PORT}
 
 HAS_CONFIGURE=	yes
 MAKE_ARGS+=	APXS="${APXS}"
 
 APXS?=		${LOCALBASE}/sbin/apxs
+APACHE_PORT?=	${PORTSDIR}/www/apache13
 DOCS=		ChangeLog README TODO faq.html
 
 do-install:

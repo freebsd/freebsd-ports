@@ -13,10 +13,11 @@ MASTER_SITES=	http://www.myrddin.demon.co.uk/dist/
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
+RUN_DEPENDS=	${APXS}:${APACHE_PORT}
 
 APXS?=		${LOCALBASE}/sbin/apxs
+APACHE_PORT?=	${PORTSDIR}/www/apache13
 
 MAKE_ARGS=	APXS=${APXS}
 

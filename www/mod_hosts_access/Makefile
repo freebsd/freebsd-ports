@@ -13,10 +13,11 @@ MASTER_SITES=	http://www.klomp.org/mod_hosts_access/
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
-RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
+BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
+RUN_DEPENDS=	${APXS}:${APACHE_PORT}
 
 APXS?=		${LOCALBASE}/sbin/apxs
+APACHE_PORT?=	${PORTSDIR}/www/apache13
 APXS_FLAGS?=	-S LDFLAGS_SHLIB="-shared -lwrap"
 
 do-build:
