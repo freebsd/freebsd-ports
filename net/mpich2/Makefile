@@ -8,7 +8,7 @@
 PORTNAME=	mpich
 PORTVERSION=	1.2.4
 PORTREVISION=	1
-CATEGORIES=	net
+CATEGORIES=	net parallel
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/
 DIST_SUBDIR=	mpich
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	sr
 PORTVERSION=	2.3.1
-CATEGORIES=	lang
+CATEGORIES=	lang parallel
 MASTER_SITES=	ftp://ftp.cs.arizona.edu/sr/
 DISTNAME=	sr231
 EXTRACT_SUFX=	.tar.Z
