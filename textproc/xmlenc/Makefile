@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	xmlenc
-PORTVERSION=	0.29
+PORTVERSION=	0.33
 CATEGORIES=	textproc java
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	xmlenc
+MASTER_SITES=	http://${PORTNAME}.sourceforge.net/
 
 MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	Light-weight XML encoding library for Java
@@ -24,7 +23,7 @@ ANT?=		${LOCALBASE}/bin/ant
 .if defined(NOPORTDOCS)
 ANT_TARGET=	jar
 .else
-ANT_TARGET=	jar apidocs
+ANT_TARGET=	jar javadoc
 .endif
 JAVASHAREDIR=	${PREFIX}/share/java
 JARDIR=		${JAVASHAREDIR}/classes
@@ -41,7 +40,7 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@${ECHO} -n ">> Installing documentation in ${DOCSDIR}..."
 	@${MKDIR} ${DOCSDIR}
-	@${CP} -r ${WRKSRC}/build/apidocs/* ${DOCSDIR}
+	@${CP} -r ${WRKSRC}/build/javadoc/* ${DOCSDIR}
 	@${ECHO} " [ DONE ]"
 .endif
 
