@@ -1,0 +1,16 @@
+bin/katoob
+share/gnome/applications/katoob.desktop
+share/gnome/katoob/close.png
+share/gnome/katoob/emulator/arabic
+share/gnome/katoob/green.png
+share/gnome/katoob/katoob.png
+share/gnome/katoob/katoob-small.png
+share/gnome/katoob/landscape.png
+share/gnome/katoob/portrait.png
+share/gnome/katoob/red.png
+share/gnome/pixmaps/katoob-icon.png
+share/locale/ar/LC_MESSAGES/katoob.mo
+share/locale/pl/LC_MESSAGES/katoob.mo
+share/locale/sv/LC_MESSAGES/katoob.mo
+@dirrm share/gnome/katoob/emulator
+@dirrm share/gnome/katoob
