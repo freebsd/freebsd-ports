@@ -35,12 +35,16 @@ NO_PACKAGE=	${RESTRICTED}
 VMWARE_VER=	3.2.1
 BUILD_VER=	2237
 
+.include <bsd.port.pre.mk>
+
+if ${OSVERSION} < 500000
 MOUNT_DEV?=	/dev/acd0c
+.else
+MOUNT_DEV?=	/dev/acd0
+.endif
 MOUNT_PT?=	/mnt
 MOUNT=		/sbin/mount
 UMOUNT=		/sbin/umount
-
-.include <bsd.port.pre.mk>
 
 .if ${X_WINDOW_SYSTEM:L} == xfree86-3
 PLIST_SUB+=	INSTALLXSERVER:=""
