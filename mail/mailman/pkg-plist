@@ -1,3 +1,15 @@
+%%PORTDOCS%%share/doc/mailman/BUGS
+%%PORTDOCS%%share/doc/mailman/FAQ
+%%PORTDOCS%%share/doc/mailman/INSTALL
+%%PORTDOCS%%share/doc/mailman/NEWS
+%%PORTDOCS%%share/doc/mailman/README
+%%PORTDOCS%%share/doc/mailman/README.BSD
+%%PORTDOCS%%share/doc/mailman/README.EXIM
+%%PORTDOCS%%share/doc/mailman/README.LINUX
+%%PORTDOCS%%share/doc/mailman/README.NETSCAPE
+%%PORTDOCS%%share/doc/mailman/README.QMAIL
+%%PORTDOCS%%share/doc/mailman/README.SENDMAIL
+%%PORTDOCS%%share/doc/mailman/UPGRADING
 mailman/Mailman/Archiver/Archiver.py
 mailman/Mailman/Archiver/Archiver.pyc
 mailman/Mailman/Archiver/HyperArch.py
@@ -258,41 +270,29 @@ mailman/templates/subscribe.html
 mailman/templates/subscribeack.txt
 mailman/templates/userpass.txt
 mailman/templates/verify.txt
-share/doc/mailman/BUGS
-share/doc/mailman/FAQ
-share/doc/mailman/INSTALL
-share/doc/mailman/NEWS
-share/doc/mailman/README
-share/doc/mailman/README.BSD
-share/doc/mailman/README.EXIM
-share/doc/mailman/README.LINUX
-share/doc/mailman/README.NETSCAPE
-share/doc/mailman/README.QMAIL
-share/doc/mailman/README.SENDMAIL
-share/doc/mailman/UPGRADING
-@dirrm mailman/Mailman/Archiver
-@dirrm mailman/Mailman/Bouncers
-@dirrm mailman/Mailman/Cgi
-@dirrm mailman/Mailman/Handlers
-@dirrm mailman/Mailman/Logging
-@dirrm mailman/Mailman/pythonlib
-@dirrm mailman/Mailman
-@dirrm mailman/archives/private
-@dirrm mailman/archives/public
-@dirrm mailman/archives
-@dirrm mailman/bin
-@dirrm mailman/cgi-bin
-@dirrm mailman/cron
-@dirrm mailman/data
-@dirrm mailman/filters
-@dirrm mailman/icons
-@dirrm mailman/lists
-@dirrm mailman/locks
-@dirrm mailman/logs
-@dirrm mailman/mail
-@dirrm mailman/qfiles
-@dirrm mailman/scripts
-@dirrm mailman/spam
 @dirrm mailman/templates
+@dirrm mailman/spam
+@dirrm mailman/scripts
+@dirrm mailman/qfiles
+@dirrm mailman/mail
+@dirrm mailman/logs
+@dirrm mailman/locks
+@dirrm mailman/lists
+@dirrm mailman/icons
+@dirrm mailman/filters
+@dirrm mailman/data
+@dirrm mailman/cron
+@dirrm mailman/cgi-bin
+@dirrm mailman/bin
+@dirrm mailman/archives/public
+@dirrm mailman/archives/private
+@dirrm mailman/archives
+@dirrm mailman/Mailman/pythonlib
+@dirrm mailman/Mailman/Logging
+@dirrm mailman/Mailman/Handlers
+@dirrm mailman/Mailman/Cgi
+@dirrm mailman/Mailman/Bouncers
+@dirrm mailman/Mailman/Archiver
+@dirrm mailman/Mailman
 @dirrm mailman
-@dirrm share/doc/mailman
+%%PORTDOCS%%@dirrm share/doc/mailman
