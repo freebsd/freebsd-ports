@@ -3,36 +3,41 @@ include/dotconf.h
 include/libpool.h
 lib/libpool.a
 lib/libdotconf.a
+lib/libdotconf.la
 lib/libdotconf.so
-lib/libdotconf-1.0.so.0
+lib/libdotconf.so.0
 share/aclocal/dotconf.m4
-%%PORTDOCS%%share/dotconf/dotconf-api.txt
-%%PORTDOCS%%share/dotconf/dotconf-features.txt
-share/dotconf/examples/README
-share/dotconf/examples/caseinsensitive/Makefile
-share/dotconf/examples/caseinsensitive/caseinsensitive
-share/dotconf/examples/caseinsensitive/caseinsensitive.c
-share/dotconf/examples/caseinsensitive/caseinsensitive.conf
-share/dotconf/examples/context/Makefile
-share/dotconf/examples/context/context.c
-share/dotconf/examples/context/context.conf
-share/dotconf/examples/errorhandler/Makefile
-share/dotconf/examples/errorhandler/errorhandler.c
-share/dotconf/examples/errorhandler/errorhandler.conf
-share/dotconf/examples/modules/Makefile
-share/dotconf/examples/modules/include.conf
-share/dotconf/examples/modules/module.c
-share/dotconf/examples/modules/my_module.c
-share/dotconf/examples/modules/sample.conf
-share/dotconf/examples/simple/Makefile
-share/dotconf/examples/simple/included.conf
-share/dotconf/examples/simple/linecat.conf
-share/dotconf/examples/simple/simple.c
-share/dotconf/examples/simple/simple.conf
-@dirrm share/dotconf/examples/caseinsensitive
-@dirrm share/dotconf/examples/context
-@dirrm share/dotconf/examples/errorhandler
-@dirrm share/dotconf/examples/modules
-@dirrm share/dotconf/examples/simple
-@dirrm share/dotconf/examples
-@dirrm share/dotconf
+%%PORTDOCS%%share/doc/dotconf/dotconf-api.txt
+%%PORTDOCS%%share/doc/dotconf/dotconf-features.txt
+%%PORTDOCS%%share/examples/dotconf/README
+%%PORTDOCS%%share/examples/dotconf/caseinsensitive/Makefile
+%%PORTDOCS%%share/examples/dotconf/caseinsensitive/caseinsensitive.c
+%%PORTDOCS%%share/examples/dotconf/caseinsensitive/caseinsensitive.conf
+%%PORTDOCS%%share/examples/dotconf/caseinsensitive/example_caseinsensitive.dsp
+%%PORTDOCS%%share/examples/dotconf/context/Makefile
+%%PORTDOCS%%share/examples/dotconf/context/context.c
+%%PORTDOCS%%share/examples/dotconf/context/context.conf
+%%PORTDOCS%%share/examples/dotconf/context/example_context.dsp
+%%PORTDOCS%%share/examples/dotconf/errorhandler/Makefile
+%%PORTDOCS%%share/examples/dotconf/errorhandler/errorhandler.c
+%%PORTDOCS%%share/examples/dotconf/errorhandler/errorhandler.conf
+%%PORTDOCS%%share/examples/dotconf/errorhandler/example_errorhandler.dsp
+%%PORTDOCS%%share/examples/dotconf/modules/Makefile
+%%PORTDOCS%%share/examples/dotconf/modules/example_modules.dsp
+%%PORTDOCS%%share/examples/dotconf/modules/include.conf
+%%PORTDOCS%%share/examples/dotconf/modules/module.c
+%%PORTDOCS%%share/examples/dotconf/modules/my_module.c
+%%PORTDOCS%%share/examples/dotconf/modules/sample.conf
+%%PORTDOCS%%share/examples/dotconf/simple/Makefile
+%%PORTDOCS%%share/examples/dotconf/simple/example_simple.dsp
+%%PORTDOCS%%share/examples/dotconf/simple/included.conf
+%%PORTDOCS%%share/examples/dotconf/simple/linecat.conf
+%%PORTDOCS%%share/examples/dotconf/simple/simple.c
+%%PORTDOCS%%share/examples/dotconf/simple/simple.conf
+@dirrm share/examples/dotconf/simple
+@dirrm share/examples/dotconf/modules
+@dirrm share/examples/dotconf/errorhandler
+@dirrm share/examples/dotconf/context
+@dirrm share/examples/dotconf/caseinsensitive
+@dirrm share/examples/dotconf
+@dirrm share/doc/dotconf
