@@ -38,12 +38,16 @@ else
       reason="files/md5 update"; tag="md5"
     elif grep -qE '(configure: error:|script.*failed: here are the contents of)' $1; then
       reason="configure error"; tag="configure"
+    elif grep -qE '(bison:.*(No such file|not found)|multiple definition of `yy)' $1; then
+      reason="bison"; tag="bison"
     elif grep -q "Couldn't fetch it - please try" $1; then
       reason="fetch"; tag="fetch"
     elif grep -q "out of .* hunks .*--saving rejects to" $1; then
       reason="patch"; tag="patch"
     elif grep -q 'Error: category .* not in list of valid categories' $1; then
       reason="CATEGORIES"; tag="categories"
+    elif grep -q 'Xm/Xm\.h: No such file' $1; then
+      reason="MOTIF"; tag="motif"
     elif grep -q 'undefined reference to `Xp' $1; then
       reason="MOTIFLIB"; tag="motiflib"
     elif grep -qi 'read-only file system' $1; then
@@ -54,6 +58,8 @@ else
       reason="perl5"; tag="perl5"
     elif grep -q "Error: shared library \".*\" does not exist" $1; then
       reason="LIB_DEPENDS"; tag="libdepends"
+    elif grep -qE "(crt0|c\+\+rt0)\.o: No such file" $1; then
+      reason="ELF"; tag="elf"
     elif grep -q ".*\.h: No such file" $1; then
       if grep -q "X11/.*\.h: No such file" $1; then
 	if grep -q "XFree86-.*\.tgz" $1; then
@@ -66,8 +72,10 @@ else
       fi
     elif grep -q "cd: can't cd to" $1; then
       reason="NFS"; tag="nfs"
-    elif grep -qE '(parse error|too (many|few) arguments to|argument.*doesn.*prototype|conflicting types for|undeclared \(first use in this function\))' $1; then
+    elif grep -qE '(parse error|too (many|few) arguments to|argument.*doesn.*prototype|incompatible type for argument|conflicting types for|undeclared \(first use (in |)this function\)|incorrect number of parameters|has incomplete type and cannot be initialized)' $1; then
       reason="compiler error"; tag="cc"
+    elif grep -qE '(ANSI C.. forbids|is a contravariance violation|changed for new ANSI .for. scoping|[0-9]: passing .* changes signedness|discards qualifiers|lacks a cast|redeclared as different kind of symbol|invalid type .* for default argument to|wrong type argument to unary exclamation mark|duplicate explicit instantiation of|incompatible types in assignment|assuming . on overloaded member function|call of overloaded .* is ambiguous|declaration of C function .* conflicts with|initialization of non-const reference type|using typedef-name .* after|[0-9]: implicit declaration of function|[0-9]: size of array .* is too large|fixed or forbidden register .* for class)' $1; then
+      reason="new compiler error"; tag="newgcc"
     elif grep -qE '(undefined reference to|cannot open -l.*: No such file)' $1; then
       reason="linker error"; tag="ld"
     elif grep -q 'install: .*: No such file' $1; then
@@ -78,10 +86,12 @@ else
       reason="PLIST"; tag="plist"
     elif grep -q "Can't open display" $1; then
       reason="DISPLAY"; tag="display"
+    elif grep -q "error in dependency .*, exiting" $1; then
+      reason="dependency"; tag="dependency"
     else
       reason="???"; tag="unknown"
     fi
-    echo -n "<a href=\"../index.html#$tag\">$reason</a>" >>$of
+    echo -n "<a href=\"../../index.html#$tag\">$reason</a>" >>$of
     echo "</td></tr>" >>$of
     shift
   done
