@@ -3,10 +3,10 @@
 # Date created:         
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.12 1996/11/27 12:04:32 asami Exp $
+# $Id: Makefile,v 1.13 1996/12/04 02:23:58 asami Exp $
 #
 
-DISTNAME=	linux_lib-2.2
+DISTNAME=	linux_lib-2.3
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://freefall.freebsd.org/pub/FreeBSD/LOCAL_PORTS/
 
