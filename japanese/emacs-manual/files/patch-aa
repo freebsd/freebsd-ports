@@ -1,29 +1,24 @@
---- emacs.texi.orig	Tue Dec  1 00:00:00 1998
-+++ emacs.texi	Fri Apr 23 23:21:44 1999
-@@ -10,20 +10,20 @@
+--- emacs.texi.~1~	Mon Sep 13 10:50:56 1999
++++ emacs.texi	Tue Nov 16 01:25:21 1999
+@@ -11,7 +11,8 @@
  @setchapternewpage odd
  @c @settitle GNU Emacs Manual
  @settitle GNU Emacsマニュアル
 -@setfilename ../info/emacs
-+@setfilename emacs-ja
++@setfilename ../info/emacs-ja
 +@footnotestyle end
  @synindex pg cp
  
  @ifinfo
-+@dircategory The Emacs editor and associated tools
-+@direntry
-+* Emacs-ja: (emacs-ja).         The extensible self-documenting text editor. (Japanese)
-+@end direntry
- @c @c The edition number appears in several places in this file
- @c This is the thirteenth edition of the @cite{GNU Emacs Manual},
- @c updated for Emacs version 20.3
- Emacs 20.3版対応に改訂した@cite{GNU Emacs Manual} 13版です。
+@@ -21,9 +22,9 @@
+ Emacs 20.4版対応に改訂した@cite{GNU Emacs Manual} 13版です。
  @c Please REMEMBER to update edition number in *three* places in this file.
--
+ 
 -@dircategory Editors
--@direntry
++@dircategory The Emacs editor and associated tools
+ @direntry
 -* Emacs: (emacs).	The extensible self-documenting text editor.
--@end direntry
++* Emacs-ja: (emacs-ja).		The extensible self-documenting text editor. (Japanese)
+ @end direntry
  
  Published by the Free Software Foundation
- 59 Temple Place, Suite 330
