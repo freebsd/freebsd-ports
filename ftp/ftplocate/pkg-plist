@@ -14,6 +14,7 @@ www/cgi-bin/ftplocate/flhistory.pl
 www/cgi-bin/ftplocate/flindex.pl
 www/cgi-bin/ftplocate/flsearch.pl
 www/cgi-bin/ftplocate/flserv.pl
+www/cgi-bin/ftplocate/fltrain.pl
 www/cgi-bin/ftplocate/indexer.sh
 www/data/flhelp.html
 www/data/flhelp.zhtw.html
