@@ -1,0 +1,3 @@
+Chameleon is an application which allows the user to put a picture
+in any format or a solid color onto the root window. It can be
+controlled through a GTK interface, or from the command line.
