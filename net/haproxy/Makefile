@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	haproxy
-PORTVERSION=	1.1.27
+PORTVERSION=	1.1.28
 CATEGORIES=	net www
 MASTER_SITES=	http://w.ods.org/tools/haproxy/src/ \
 		http://w.ods.org/tools/haproxy/src/old/
@@ -15,6 +15,8 @@ MAINTAINER=	clement@FreeBSD.org
 COMMENT=	High-performance and highly-robust TCP/HTTP load balancer
 
 USE_REINPLACE=	yes
+USE_RC_SUBR=	yes
+RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
 STATS_INTERVAL?=	0
 CFLAGS+=	-DSTATTIME=${STATS_INTERVAL}
@@ -41,19 +43,27 @@ pre-fetch:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's!localtime(!localtime((time_t *)!' ${WRKSRC}/haproxy.c
+	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/haproxy.sh > ${WRKDIR}/haproxy.sh
 
 do-build:
-	cd ${WRKSRC} && ${CC} ${CFLAGS} ${LDFLAGS} ${PORTNAME}.c -o ${PORTNAME}
+	@cd ${WRKSRC} && \
+		${CC} ${CFLAGS} ${LDFLAGS} ${PORTNAME}.c -o ${PORTNAME}
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/haproxy ${PREFIX}/sbin
-	@${INSTALL_DATA} ${WRKSRC}/examples/haproxy.cfg \
-			${PREFIX}/etc/haproxy.cfg.sample
-	@${INSTALL_SCRIPT} ${FILESDIR}/haproxy.sh \
-			${PREFIX}/etc/rc.d/haproxy.sh.sample
+	@${INSTALL_SCRIPT} ${WRKDIR}/haproxy.sh \
+			${PREFIX}/etc/rc.d/haproxy.sh
+
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/examples/haproxy.cfg \
+			${EXAMPLESDIR}/haproxy.cfg
 .endif
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

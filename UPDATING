@@ -6,6 +6,12 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20040608:
+  AFFECTS: users of net/haproxy
+
+  The haproxy port must now be enabled / disabled and configured in
+  rc.conf.  See the pkg-message or script for details.
+
 20040605:
   AFFECTS: users of www/apache2
 
