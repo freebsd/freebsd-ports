@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- configure.orig	Fri Jan  5 22:18:22 2001
-+++ configure	Sun Jan 21 23:03:55 2001
-@@ -80,6 +80,8 @@
+--- configure.orig	Tue Feb 13 00:29:56 2001
++++ configure	Fri Mar 30 16:26:42 2001
+@@ -82,6 +82,8 @@
  ac_help="$ac_help
    --enable-video-svga     use SVGAlib video driver [default=no]"
  ac_help="$ac_help
@@ -12,7 +12,7 @@ $FreeBSD$
    --enable-video-aalib    use AAlib video driver [default=no]"
  ac_help="$ac_help
    --enable-video-opengl   include OpenGL context creation [default=yes]"
-@@ -630,9 +632,9 @@
+@@ -632,9 +634,9 @@
  
  # libtool versioning
  LT_RELEASE=$SDL_MAJOR_VERSION.$SDL_MINOR_VERSION
@@ -24,7 +24,7 @@ $FreeBSD$
  
  
  
-@@ -3022,7 +3024,7 @@
+@@ -3032,7 +3034,7 @@
  
  
  SDL_CFLAGS=""
@@ -33,7 +33,7 @@ $FreeBSD$
  
  
  case "$target" in
-@@ -5144,6 +5146,57 @@
+@@ -5213,6 +5215,57 @@
      fi
  }
  
@@ -91,7 +91,18 @@ $FreeBSD$
  CheckAAlib()
  {
      # Check whether --enable-video-aalib or --disable-video-aalib was given.
-@@ -5883,6 +5936,7 @@
+@@ -5434,8 +5487,8 @@
+ #            pthread_cflags="-D_REENTRANT -D_THREAD_SAFE"
+             ;;
+         *-*-freebsd*)
+-            pthread_cflags="-D_REENTRANT -D_THREAD_SAFE"
+-            pthread_lib="-pthread"
++            pthread_cflags="-D_REENTRANT ${PTHREAD_CFLAGS}"
++            pthread_lib="${PTHREAD_LIBS}"
+             ;;
+         *-*-openbsd*)
+             pthread_cflags="-D_REENTRANT"
+@@ -6029,6 +6082,7 @@
          CheckX11
          CheckDGA
          CheckSVGA
@@ -99,7 +110,7 @@ $FreeBSD$
          CheckAAlib
          CheckOpenGL
          CheckPTHREAD
-@@ -5899,10 +5953,10 @@
+@@ -6214,10 +6268,10 @@
    cat >>$new <$old
  
          # Set up files for the audio library
@@ -114,18 +125,11 @@ $FreeBSD$
          # Set up files for the joystick library
          # (No joystick support yet)
          if test x$enable_joystick = xyes; then
-@@ -8412,6 +8466,7 @@
+@@ -8689,6 +8743,8 @@
  src/video/macdsp/Makefile
  src/video/macrom/Makefile
  src/video/svga/Makefile
 +src/video/vgl/Makefile
- src/video/aalib/Makefile
- src/video/wincommon/Makefile
- src/video/windib/Makefile
-@@ -8621,6 +8676,7 @@
- src/video/macdsp/Makefile
- src/video/macrom/Makefile
- src/video/svga/Makefile
 +src/video/vgl/Makefile
  src/video/aalib/Makefile
  src/video/wincommon/Makefile
