@@ -1,6 +1,6 @@
---- configure.orig	Thu Feb 19 14:18:40 2004
-+++ configure	Thu Feb 19 14:19:31 2004
-@@ -9317,7 +9317,7 @@
+--- configure.orig	Mon Mar 15 21:04:49 2004
++++ configure	Thu Apr  1 14:56:36 2004
+@@ -9329,7 +9329,7 @@
  
  
  
@@ -9,7 +9,7 @@
    INSTALL_CLAMAV_CONF_TRUE=
    INSTALL_CLAMAV_CONF_FALSE='#'
  else
-@@ -9327,7 +9327,7 @@
+@@ -9339,7 +9339,7 @@
  
  
  
@@ -18,11 +18,3 @@
    INSTALL_FRESHCLAM_CONF_TRUE=
    INSTALL_FRESHCLAM_CONF_FALSE='#'
  else
-@@ -9564,6 +9564,7 @@
-   cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
- #include "confdefs.h"
-+#include <sys/types.h>
- #include <netinet/in.h>
- int main(int argc, char **argv) { in_port_t pt; pt = 0; return pt; }
- _ACEOF

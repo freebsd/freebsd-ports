@@ -4,6 +4,8 @@ bin/clamscan
 bin/clamdscan
 bin/freshclam
 bin/sigtool
+etc/rc.d/clamav-clamd%%RC_SUFX%%
+etc/rc.d/clamav-freshclam%%RC_SUFX%%
 %%CLAMAV-MILTER%%etc/rc.d/clamav-milter%%RC_SUFX%%
 %%CLAMAV-MILTER%%sbin/clamav-milter
 sbin/clamd
@@ -17,16 +19,8 @@ etc/clamav.conf.default
 @unexec if cmp -s %D/etc/freshclam.conf %D/etc/freshclam.conf.default; then rm -f %D/etc/freshclam.conf; fi
 etc/freshclam.conf.default
 @exec [ -f %B/freshclam.conf ] || cp %B/%f %B/freshclam.conf
-etc/rc.d/clamav-clamd%%RC_SUFX%%
-etc/rc.d/clamav-freshclam%%RC_SUFX%%
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@owner clamav
-@group clamav
-%%DATADIR%%/daily.cvd
-%%DATADIR%%/main.cvd
-@exec chown clamav:clamav %B
+@unexec rm -f %D/%%DATADIR%%/daily.cvd || true
+@unexec rm -f %D/%%DATADIR%%/main.cvd || true
 @dirrm %%DATADIR%%
 @unexec rmdir /var/run/clamav 2>/dev/null || true
 @unexec rmdir /var/log/clamav 2>/dev/null || true
