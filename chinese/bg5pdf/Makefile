@@ -13,7 +13,7 @@ MASTER_SITES=	http://students.washington.edu/cschin/bg5ps/bg5pdf/ \
 
 MAINTAINER=	statue@freebsd.sinica.edu.tw
 
-LIB_DEPENDS=    pdf.3:${PORTSDIR}/print/pdflib3
+LIB_DEPENDS=    pdf.4:${PORTSDIR}/print/pdflib
 
 USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
