@@ -1,0 +1,14 @@
+--- system.h.orig	Tue Mar 20 22:24:05 2001
++++ system.h	Tue Mar 20 22:24:30 2001
+@@ -351,9 +351,9 @@
+ # elif HAVE_STRUCT_MNTTAB
+ #  include <stdio.h>
+ #  include <mnttab.h>
+-   struct our_mntent {
++   typedef struct our_mntent {
+        char * our_mntdir;
+-   };
++   } our_mntent;
+    struct our_mntent *getmntent(FILE *filep);
+ #  define our_mntent struct our_mntent
+ # else
