@@ -7,7 +7,8 @@
 
 PORTNAME=	tinyldap
 PORTVERSION=	0.0.20040226
-CATEGORIES=	net
+PORTREVISION=	2
+CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.dinoex.de/pub/tinyldap/
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -15,10 +16,13 @@ COMMENT=	A small LDAP implementation
 
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libowfat.a:${PORTSDIR}/${LIBOWFAT_PORT}
 
+USE_REINPLACE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
+CFLAGS+=	-DATTRIBS=512
 LIBOWFAT_PORT?=	devel/libowfat
+TINYLDAP_DATA?=	${PREFIX}/tinyldap/data
 SBINFILES=	dumpidx idx2ldif addindex parse tinyldap_debug \
 		tinyldap_standalone
 BINFILES=	ldapclient ldapclient_str md5password
@@ -26,6 +30,8 @@ DOCFILES=	FORMAT GETTING.STARTED README RFCs THANKS TODO
 
 post-patch:
 	${TOUCH} ${WRKSRC}/alloca.h
+	${REINPLACE_CMD} -e "s|\"data\"|\"${TINYLDAP_DATA}\"|" \
+		${WRKSRC}/tinyldap.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tinyldap ${PREFIX}/libexec/
