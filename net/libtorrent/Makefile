@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libtorrent
-PORTVERSION=	0.4.5
+PORTVERSION=	0.4.7
 CATEGORIES=	net
 MASTER_SITES=	http://libtorrent.rakshasa.no/downloads/
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl \
 
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=	15
+USE_INC_LIBTOOL_VER=	13
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 .include <bsd.port.pre.mk>
@@ -35,7 +35,7 @@ pre-everything::
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "s#\(pkgconfigdir =\).*#\1 ${PREFIX}/libexec/pkgconfig#" \
+	@${REINPLACE_CMD} -e "s#\(pkgconfigdir =\).*#\1 ${PREFIX}/libdata/pkgconfig#" \
 			${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s#-Wall -O3 -g#${CFLAGS} -fpermissive#" \
 			${WRKSRC}/client/Makefile2
@@ -47,7 +47,7 @@ post-patch:
 
 .if defined(WITH_CLIENT)
 .if ${OSVERSION} < 500000
-BROKEN=		"Client doesn't compile on 4.x"
+BROKEN=	"Client doesn't compile on 4.x"
 .endif
 
 PLIST_FILES=	bin/rtorrent
