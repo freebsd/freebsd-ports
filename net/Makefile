@@ -230,6 +230,7 @@
     SUBDIR += idnkit
     SUBDIR += ifstat
     SUBDIR += iftop
+    SUBDIR += imapproxy
     SUBDIR += imcom
     SUBDIR += iog
     SUBDIR += ip6_int
