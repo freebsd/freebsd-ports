@@ -6,18 +6,13 @@
 #
 
 PORTNAME?=	mozilla
-PORTVERSION=	1.8.a4
-PORTREVISION=	3
+PORTVERSION=	1.8.a5
+PORTREVISION=	0
 PORTEPOCH?=	2
 CATEGORIES?=	www
-MASTER_SITES=	${MASTER_SITE_MOZILLA} \
-		${MASTER_SITE_LOCAL:S/$/:local/}
-MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION:S/.a4/a4/}/src \
-			adamw/:local
-DISTFILES=	${PORTNAME}-source-${PORTVERSION:S/.a4/a4/}${EXTRACT_SUFX}
-.if !defined(WITH_CAIRO_RENDER)
-DISTFILES+=	libart_lgpl${EXTRACT_SUFX}:local
-.endif
+MASTER_SITES=	${MASTER_SITE_MOZILLA}
+MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION:S/.a5/a5/}/source
+DISTFILES=	${PORTNAME}-source-${PORTVERSION:S/.a5/a5/}${EXTRACT_SUFX}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
