@@ -1,39 +1,70 @@
-bin/gnomesword
+bin/gnomesword2
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-share/gnome/apps/Applications/gnomesword.desktop
-share/gnome/help/gnomesword/C/index.html
-share/gnome/help/gnomesword/C/intro.html
-share/gnome/pixmaps/gnomesword/GnomeSword.png
-share/gnome/pixmaps/gnomesword/GnomeSword.xpm
+share/gnome/applications/gnomesword.desktop
+share/gnome/help/gnomesword/C/figures/gnomesword_interface.png
+share/gnome/help/gnomesword/C/figures/gnomesword_interface_biblepane.png
+share/gnome/help/gnomesword/C/figures/gnomesword_interface_commentarypane.png
+share/gnome/help/gnomesword/C/figures/gnomesword_interface_sidepane.png
+share/gnome/help/gnomesword/C/figures/gnomesword_interface_toolbar.png
+share/gnome/help/gnomesword/C/figures/gnomesword_preferences_font_colors.png
+share/gnome/help/gnomesword/C/figures/gnomesword_preferences_general.png
+share/gnome/help/gnomesword/C/figures/gnomesword_preferences_sword_config.png
+share/gnome/help/gnomesword/C/figures/gnomesword_studypad.png
+share/gnome/help/gnomesword/C/gnomesword.xml
+share/gnome/help/gnomesword/C/legal.xml
+share/gnome/help/gnomesword/fr/figures/gnomesword_interface.png
+share/gnome/help/gnomesword/fr/figures/gnomesword_interface_bible.png
+share/gnome/help/gnomesword/fr/figures/gnomesword_interface_commentarypane.png
+share/gnome/help/gnomesword/fr/figures/gnomesword_interface_shortcutbar.png
+share/gnome/help/gnomesword/fr/figures/gnomesword_interface_toolbar.png
+share/gnome/help/gnomesword/fr/figures/gnomesword_preferences_font_colors.png
+share/gnome/help/gnomesword/fr/figures/gnomesword_preferences_misc_settings.png
+share/gnome/help/gnomesword/fr/figures/gnomesword_preferences_sword_config.png
+share/gnome/help/gnomesword/fr/figures/gnomesword_studypad.png
+share/gnome/help/gnomesword/fr/gnomesword.xml
+share/gnome/help/gnomesword/fr/legal.xml
+share/gnome/omf/gnomesword/gnomesword-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnomesword/gnomesword-C.omf 2>/dev/null || true
+share/gnome/omf/gnomesword/gnomesword-fr.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnomesword/gnomesword-fr.omf 2>/dev/null || true
 share/gnome/pixmaps/gnomesword/about.png
 share/gnome/pixmaps/gnomesword/book-bl.png
 share/gnome/pixmaps/gnomesword/book-gold.png
 share/gnome/pixmaps/gnomesword/book-green.png
 share/gnome/pixmaps/gnomesword/book-un.png
-share/gnome/pixmaps/gnomesword/dock.xpm
-share/gnome/pixmaps/gnomesword/exit2.xpm
-share/gnome/pixmaps/gnomesword/footnote3.xpm
-share/gnome/pixmaps/gnomesword/gnome-fontsel.xpm
-share/gnome/pixmaps/gnomesword/morphs.xpm
-share/gnome/pixmaps/gnomesword/search1.xpm
+share/gnome/pixmaps/gnomesword/dlg-bl.png
+share/gnome/pixmaps/gnomesword/dlg-un.png
+share/gnome/pixmaps/gnomesword/dock.png
+share/gnome/pixmaps/gnomesword/epiphany-bookmark-page.png
+share/gnome/pixmaps/gnomesword/epiphany-bookmarks.png
+share/gnome/pixmaps/gnomesword/epiphany-secure.png
+share/gnome/pixmaps/gnomesword/epiphany-unsecure.png
+share/gnome/pixmaps/gnomesword/gs2-48x48.png
+share/gnome/pixmaps/gnomesword/logo.png
+share/gnome/pixmaps/gnomesword/new_tab_button.png
 share/gnome/pixmaps/gnomesword/splash.png
-share/gnome/pixmaps/gnomesword/strongs.xpm
-share/gnome/pixmaps/gnomesword/sword.xpm
-share/gnome/pixmaps/gnomesword/sword2.xpm
-share/gnome/pixmaps/gnomesword/sword3.xpm
-share/gnome/pixmaps/gnomesword/yes.xpm
-share/locale/bg/LC_MESSAGES/gnomesword.mo
+share/gnome/pixmaps/gnomesword/sword.png
+share/gnome/pixmaps/gnomesword/sword3.png
+share/gnome/pixmaps/gnomesword/tt.png
+share/gnome/pixmaps/gnomesword/tt.xpm
 share/locale/de/LC_MESSAGES/gnomesword.mo
-share/locale/es/LC_MESSAGES/gnomesword.mo
-share/locale/es_ES/LC_MESSAGES/gnomesword.mo
-share/locale/fr/LC_MESSAGES/gnomesword.mo
-share/locale/sk/LC_MESSAGES/gnomesword.mo
+share/locale/de_DE/LC_MESSAGES/gnomesword.mo
+share/locale/en_GB/LC_MESSAGES/gnomesword.mo
+share/locale/fr_FR/LC_MESSAGES/gnomesword.mo
+share/locale/ru/LC_MESSAGES/gnomesword.mo
+share/locale/uk/LC_MESSAGES/gnomesword.mo
 @dirrm share/gnome/pixmaps/gnomesword
+@dirrm share/gnome/omf/gnomesword
+@dirrm share/gnome/help/gnomesword/fr/figures
+@dirrm share/gnome/help/gnomesword/fr
+@dirrm share/gnome/help/gnomesword/C/figures
 @dirrm share/gnome/help/gnomesword/C
 @dirrm share/gnome/help/gnomesword
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnomesword/gnomesword-C.omf 2>/dev/null || true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnomesword/gnomesword-fr.omf 2>/dev/null || true
