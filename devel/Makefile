@@ -432,6 +432,7 @@
     SUBDIR += p5-Class-Generate
     SUBDIR += p5-Class-ISA
     SUBDIR += p5-Class-Inner
+    SUBDIR += p5-Class-Inspector
     SUBDIR += p5-Class-Loader
     SUBDIR += p5-Class-MakeMethods
     SUBDIR += p5-Class-MethodMaker
