@@ -361,6 +361,7 @@
     SUBDIR += xmms-fishmatic
     SUBDIR += xmms-gforce
     SUBDIR += xmms-goom
+    SUBDIR += xmms-jess
     SUBDIR += xmms-xvs
     SUBDIR += xmorph
     SUBDIR += xmountains
