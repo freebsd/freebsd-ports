@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Sep 18 00:41:36 2002
-+++ Makefile	Tue Mar 25 23:20:18 2003
+--- Makefile.orig	Fri Oct 24 13:11:13 2003
++++ Makefile	Fri Oct 24 13:17:47 2003
 @@ -3,9 +3,9 @@
  # for details
  
@@ -11,9 +11,9 @@
 +OS_CFLAGS=-DNEED_LIBUTIL_H                  
  # Solaris, some version of
  #OS_CFLAGS=-DNEED_STRINGS_H -DNEED_LOCAL_FORKPTY_H
- 
-@@ -19,7 +19,7 @@
- # no forkpty in Solaris
+ # MacOS X needs libpoll from fink
+@@ -23,7 +23,7 @@
+ # no forkpty in Solaris or MacOS X
  # OS_OBJECTS=forkpty.o
  
 -INSTALL_DIR=/usr/local/bin
@@ -21,7 +21,7 @@
  
  # You probably don't need to edit anything below this line
  
-@@ -31,7 +31,7 @@
+@@ -35,7 +35,7 @@
  	-rm *.o *~ attachtty detachtty
  
  install: all

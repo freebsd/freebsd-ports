@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	detachtty
-PORTVERSION=	6
+PORTVERSION=	8
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.linux.org.uk/pub/lisp/
+MASTER_SITES=	ftp://ftp.linux.org.uk/pub/lisp/detachtty/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	johs@copyleft.no
 COMMENT=	Run interactive programs non-interactively
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GMAKE=	yes
 
 MAN1=		detachtty.1
