@@ -7703,6 +7703,7 @@ php4-iconv	ports/converters/php4-iconv
 php4-interbase	ports/databases/php4-interbase
 php4-mbstring	ports/converters/php4-mbstring
 php4-mcve	ports/devel/php4-mcve
+php4-ming	ports/graphics/php4-ming
 php4-mssql	ports/databases/php4-mssql
 php4-mysql	ports/databases/php4-mysql
 php4-ncurses	ports/devel/php4-ncurses
