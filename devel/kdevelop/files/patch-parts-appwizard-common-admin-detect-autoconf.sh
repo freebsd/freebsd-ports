@@ -5,7 +5,7 @@
    elif test -x "`$WHICH autoconf-2.57 2>/dev/null`" ; then
      AUTOCONF="`$WHICH autoconf-2.57`"
 +  elif test -x "`$WHICH autoconf259 2>/dev/null`" ; then
-+    AUTOCONF="`$WHICH autoconf295`"
++    AUTOCONF="`$WHICH autoconf259`"
    elif test -x "`$WHICH autoconf-2.56 2>/dev/null`" ; then
      AUTOCONF="`$WHICH autoconf-2.56`"
    elif test -x "`$WHICH autoconf-2.55 2>/dev/null`" ; then
