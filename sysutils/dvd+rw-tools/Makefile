@@ -16,6 +16,7 @@ COMMENT=	DVD burning software
 RUN_DEPENDS=	${LOCALBASE}/bin/mkisofs:${PORTSDIR}/sysutils/cdrtools
 
 USE_REINPLACE=	yes
+USE_GMAKE=	yes
 
 MAN1=		growisofs.1
 BIN_FILES=	growisofs dvd+rw-format dvd+rw-booktype dvd+rw-mediainfo dvd-ram-control
