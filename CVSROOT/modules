@@ -1858,6 +1858,7 @@ fujiplay	ports/graphics/fujiplay
 funktrackergold	ports/audio/funktrackergold
 funnelweb	ports/devel/funnelweb
 fuzz		ports/security/fuzz
+fvcool		ports/sysutils/fvcool
 fvwm		ports/x11-wm/fvwm
 fvwm-themes	ports/x11-wm/fvwm-themes
 fvwm2		ports/x11-wm/fvwm2
