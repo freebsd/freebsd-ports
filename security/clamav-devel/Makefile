@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20040603
+PORTVERSION=	20040609
 CATEGORIES=	security
 MASTER_SITES=	http://clamav.sourceforge.net/snapshot/
 PKGNAMESUFFIX=	-devel
@@ -28,7 +28,7 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_AUTOCONF_VER=257
+USE_AUTOCONF_VER=259
 USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 USE_RC_SUBR=	yes
@@ -41,7 +41,7 @@ CONFIGURE_ARGS=	--with-dbdir=${DATADIR} \
 CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" "CPPFLAGS=${CPPFLAGS}"
 
 MAN1=		clamscan.1 freshclam.1 sigtool.1 clamdscan.1
 MAN5=		clamav.conf.5 freshclam.conf.5
