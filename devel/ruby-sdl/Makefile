@@ -41,6 +41,8 @@ DOCS_JA=	NEWS.ja README.ja \
 		${RUBY_RD_FILES:N*.en.rd} \
 		${RUBY_RD_HTML_FILES:N*.en.html}
 
+.include <bsd.port.pre.mk>
+
 post-extract:
 	dir=`${RUBY_OPENGL_WRKSRC_CMD}`; \
 	for f in rbogl.h rbogl.c ogl.c glu.c; do \
@@ -52,8 +54,6 @@ post-patch:
 		${WRKSRC}/${RUBY_EXTCONF}
 
 post-install: doc-install
-
-.include <bsd.port.mk>
 
 doc-install:
 .if !defined(NOPORTDOCS)
@@ -67,3 +67,5 @@ doc-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
 .endfor
 .endif
+
+.include <bsd.port.post.mk>

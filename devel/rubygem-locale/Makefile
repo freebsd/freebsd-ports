@@ -28,9 +28,9 @@ RUBY_SHEBANG_FILES=	${WRKSRC}/samples/*.rb
 DOCS_EN=	ChangeLog README
 DOCS_JA=	README.ja
 
-post-install: doc-install
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+post-install: doc-install
 
 doc-install:
 .if !defined(NOPORTDOCS)
@@ -45,3 +45,5 @@ doc-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
 .endfor
 .endif
+
+.include <bsd.port.post.mk>

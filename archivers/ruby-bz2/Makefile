@@ -29,14 +29,14 @@ DOCS=		Changes \
 		${RUBY_RD_HTML_FILES} \
 		docs/doc
 
+.include <bsd.port.pre.mk>
+
 post-build:
 .if !defined(NOPORTDOCS)
 	cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} rdoc
 .endif
 
 post-install: doc-install
-
-.include <bsd.port.mk>
 
 doc-install:
 .if !defined(NOPORTDOCS)
@@ -45,3 +45,5 @@ doc-install:
 	${CP} -R ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .endif
+
+.include <bsd.port.post.mk>

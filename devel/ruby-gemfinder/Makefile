@@ -29,6 +29,8 @@ DOCS=		README \
 		${RUBY_RD_FILES} \
 		${RUBY_RD_HTML_FILES}
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	${RUBY} -i -pe 'sub(/<BODY>/, "<BODY bgcolor=\"#ffffff\">")' \
 		${WRKSRC}/gemfinder.rd
@@ -38,8 +40,6 @@ do-install:
 
 post-install: doc-install
 
-.include <bsd.port.mk>
-
 doc-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}
@@ -47,3 +47,5 @@ doc-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .endif
+
+.include <bsd.port.post.mk>
