@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnocl
-PORTVERSION=	0.5.17
-PORTREVISION=	1
+PORTVERSION=	0.5.18
 CATEGORIES=	x11-toolkits devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gnocl
@@ -37,6 +36,7 @@ CFLAGS+=	-fPIC
 GNOCL_CANVAS_FILE="lib/libgnoclCanvas.so.1"
 GNOCL_GCONF_FILE="lib/libgnoclGconf.so.1"
 GNOCL_GNOME_FILE="lib/libgnoclGnome.so.1"
+GNOCL_VFS_FILE="lib/libgnoclVFS.so.1"
 
 .if defined(WITHOUT_CANVAS)
 GNOCL_CANVAS_FILE=	"@comment "
@@ -56,9 +56,16 @@ GNOCL_GNOME_FILE=	"@comment "
 USE_GNOME+=	libgnomeui gnomepanel
 .endif
 
+.if defined(WITHOUT_GNOMEVFS2)
+GNOCL_VFS_FILE=		"@comment "
+.else
+USE_GNOME+=	gnomevfs2
+.endif
+
 PLIST_SUB+=	GNOCL_CANVAS_FILE=${GNOCL_CANVAS_FILE}
 PLIST_SUB+=	GNOCL_GCONF_FILE=${GNOCL_GCONF_FILE}
 PLIST_SUB+=	GNOCL_GNOME_FILE=${GNOCL_GNOME_FILE}
+PLIST_SUB+=	GNOCL_VFS_FILE=${GNOCL_VFS_FILE}
 
 post-patch:
 .if defined(WITHOUT_CANVAS)
@@ -69,6 +76,9 @@ post-patch:
 .endif
 .if defined(WITHOUT_GNOME)
 	${REINPLACE_CMD} -e 's=^USE_GNOME=#USE_GNOME=' ${BUILD_WRKSRC}/Makefile
+.endif
+.if defined(WITHOUT_GNOMEVFS2)
+	${REINPLACE_CMD} -e 's=^USE_VFS=#USE_VFS=' ${BUILD_WRKSRC}/Makefile
 .endif
 
 do-install:
@@ -81,6 +91,9 @@ do-install:
 	fi; \
 	if ${TEST} -f ${BUILD_WRKSRC}/gnoclGnome.so; then \
 		${INSTALL_DATA} ${BUILD_WRKSRC}/gnoclGnome.so ${PREFIX}/lib/libgnoclGnome.so.1; \
+	fi; \
+	if ${TEST} -f ${BUILD_WRKSRC}/gnoclVFS.so; then \
+		${INSTALL_DATA} ${BUILD_WRKSRC}/gnoclVFS.so ${PREFIX}/lib/libgnoclVFS.so.1; \
 	fi; \
 
 .include <bsd.port.post.mk>
