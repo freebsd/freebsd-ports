@@ -10,7 +10,7 @@ DISTNAME=       saoimage-1.26.10
 CATEGORIES=	astro
 MASTER_SITES=	ftp://cfa-ftp.harvard.edu/pub/gsc/SAOimage/
 
-MAINTAINER=	giffunip@asme.org
+MAINTAINER=	ports@FreeBSD.org
 
 MAKEFILE=	makefile
 ALL_TARGET=	FreeBSD
