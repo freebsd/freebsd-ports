@@ -18,6 +18,7 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
+LATEST_LINK=	gkrellmms2
 WRKSRC=		${WRKDIR}/gkrellmms
 
 USE_X_PREFIX=	yes

@@ -18,6 +18,7 @@ LIB_DEPENDS=	gdk_pixbuf_xlib.2:${PORTSDIR}/graphics/gdk-pixbuf
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
+LATEST_LINK=	gkrellmss2
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
