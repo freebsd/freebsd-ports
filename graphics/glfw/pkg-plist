@@ -1,0 +1,26 @@
+lib/libglfw.a
+include/GL/glfw.h
+%%EXAMPLESDIR%%/boing.c
+%%EXAMPLESDIR%%/gears.c
+%%EXAMPLESDIR%%/keytest.c
+%%EXAMPLESDIR%%/listmodes.c
+%%EXAMPLESDIR%%/mipmaps.c
+%%EXAMPLESDIR%%/mtbench.c
+%%EXAMPLESDIR%%/mthello.c
+%%EXAMPLESDIR%%/particles.c
+%%EXAMPLESDIR%%/pong3d.c
+%%EXAMPLESDIR%%/splitview.c
+%%EXAMPLESDIR%%/triangle.c
+%%EXAMPLESDIR%%/wave.c
+%%EXAMPLESDIR%%/mipmaps.tga
+%%EXAMPLESDIR%%/pong3d_field.tga
+%%EXAMPLESDIR%%/pong3d_instr.tga
+%%EXAMPLESDIR%%/pong3d_menu.tga
+%%EXAMPLESDIR%%/pong3d_title.tga
+%%EXAMPLESDIR%%/pong3d_winner1.tga
+%%EXAMPLESDIR%%/pong3d_winner2.tga
+%%EXAMPLESDIR%%/makefile
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/glfwrm14.pdf
+%%PORTDOCS%%%%DOCSDIR%%/glfwug14.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
