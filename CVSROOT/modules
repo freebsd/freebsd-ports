@@ -3491,6 +3491,7 @@ jabber-conference	ports/net/jabber-conference
 jabber-jud	ports/net/jabber-jud
 jabber-msn	ports/net/jabber-msn
 jabber-yahoo	ports/net/jabber-yahoo
+jabberd		ports/net/jabberd
 jacal		ports/math/jacal
 jad		ports/java/jad
 jade		ports/textproc/jade
