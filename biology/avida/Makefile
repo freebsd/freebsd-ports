@@ -22,6 +22,7 @@ USE_PERL5_BUILD=	yes
 USE_REINPLACE=	yes
 
 .if !defined(WITHOUT_QT)
+BUILD_DEPENDS+=	qmake:${PORTSDIR}/devel/qmake
 USE_QT_VER=		3
 CONFIGURE_ARGS+=	--enable-qt-viewer
 CONFIGURE_ENV+=	QTDIR="${LOCALBASE}"
