@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmglobe
-PORTVERSION=	1.0
+PORTVERSION=	1.3
 CATEGORIES=	astro windowmaker
 MASTER_SITES=	http://perso.linuxfr.org/jdumont/wmg/
 
