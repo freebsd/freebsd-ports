@@ -3,7 +3,7 @@ into a single network diagnostic tool.
 
 Authors:   Matt Kimball <mkimball@xmission.com> is the primary author of mtr.
 	   Roger Wolff <R.E.Wolff@BitWizard.nl> is currently maintaing mtr. 
-WWW:  http://www.bitwizard.nl/mtr
+WWW:  http://www.bitwizard.nl/mtr/
 
 Ported to FreeBSD by:
 Bill Fumerola (billf@chc-chimes.com)

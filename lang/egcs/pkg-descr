@@ -3,8 +3,8 @@ Version 2.95 contains many improvements and features not found in the
 gcc-2.7.2 and gcc-2.8.1 compliers.  C++ support, is vastly improved, in
 particular template support is worlds above that that of gcc-2.7.2.
 
-For more details, see <http://gcc.gnu.org/>.
+For more details, see <http://egcs.cygnus.com/>.
 
 - David O'Brien <obrien@FreeBSD.org>
 
-WWW: http://gcc.gnu.org
+WWW: http://egcs.cygnus.com/
