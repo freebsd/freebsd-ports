@@ -2,8 +2,6 @@ bin/galeon
 bin/galeon-bin
 bin/galeon-config-tool
 etc/sound/events/galeon.soundlist
-lib/galeon/components/libgaleon-xpcom.a
-lib/galeon/components/libgaleon-xpcom.so
 libdata/bonobo/servers/GNOME_Galeon_Automation.server
 libdata/bonobo/servers/GNOME_Galeon_NautilusView.server
 share/gnome/applications/galeon.desktop
@@ -224,6 +222,4 @@ share/locale/zh_TW/LC_MESSAGES/galeon-2.0.mo
 @dirrm share/gnome/help/galeon/es
 @dirrm share/gnome/help/galeon
 @dirrm share/gnome/galeon
-@dirrm lib/galeon/components
-@dirrm lib/galeon
 @unexec update-desktop-database > /dev/null || /usr/bin/true
