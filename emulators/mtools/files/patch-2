@@ -1,5 +1,5 @@
---- mtools.conf.orig	Sun Jan  4 01:29:32 1998
-+++ mtools.conf	Thu May  7 01:35:37 1998
+--- mtools.conf.orig	Sun Jan  4 03:29:32 1998
++++ mtools.conf	Tue Dec 28 12:57:49 1999
 @@ -1,6 +1,74 @@
  # Example mtools.conf files.  Uncomment the lines which correspond to
  # your architecture and comment out the "SAMPLE FILE" line below
@@ -9,7 +9,7 @@
 +# devices named here in order to access the DOS file systems.  You might give
 +# ALL USERS access to ALL FLOPPY DISKS via the command
 +#
-+#     chmod a+rw /dev/*fd*
++#     chmod a+rw /dev/*fd* /dev/rfd[0-9]*
 +#
 +# or you might give SPECIFIC GROUP MEMBERS access to a PARTICULAR FLOPPY DISK
 +# via the commands
@@ -23,11 +23,11 @@
 +#
 +# Example: To prepare drive A: for use as a 1.44M floppy on FreeBSD:
 +#   [1] low level format with ......... fdformat /dev/rfd0.1440
-+#   [2] write a file system with ...... mkdosfs -f 1440 /dev/rfd0
++#   [2] write a file system with ...... newfs_msdos -f 1440 /dev/rfd0
 +#   [3] then use mcopy/mdir etc. in the usual way.
 +#
 +# The mformat command could also be used to build the DOS file system
-+# in place of mkdosfs.
++# in place of newfs_msdos.
 +
 +# # FreeBSD floppy drives
 +drive a: file="/dev/rfd0"
@@ -51,7 +51,7 @@
 +#
 +# Example: To prepare and use a 720K floppy on FreeBSD:
 +#   [1] low level format with ......... fdformat /dev/rfd0.720
-+#   [2] write a file system with ...... mkdosfs -f 720 /dev/fd0
++#   [2] write a file system with ...... newfs_msdos -f 720 /dev/fd0
 +#   [3] then use mcopy/mdir etc. in the usual way.
 +#
 +drive s: file="/dev/rfd0.720"
