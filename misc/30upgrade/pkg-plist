@@ -18,6 +18,8 @@ usr/lib/libperl.so.3
 usr/libdata/perl/5.00503
 usr/libexec/elf/ld
 usr/libexec/ld-elf.so.1
+usr/share/misc/termcap
+usr/share/misc/termcap.db
 usr/share/mk/bsd.port.mk
 usr/share/mk/bsd.port.post.mk
 usr/share/mk/bsd.port.pre.mk

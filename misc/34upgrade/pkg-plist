@@ -1,3 +1,5 @@
 usr/bin/install-info
 usr/bin/makeinfo
 usr/lib/libc_r.so.4
+usr/share/misc/termcap
+usr/share/misc/termcap.db
