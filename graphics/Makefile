@@ -374,6 +374,7 @@
     SUBDIR += panorama
     SUBDIR += passepartout
     SUBDIR += pear-Image_Color
+    SUBDIR += pear-Image_Graph
     SUBDIR += pecl-imagick
     SUBDIR += peps
     SUBDIR += pgperl

@@ -1,0 +1,8 @@
+Image_Graph is a PHP based object oriented graph rendering package. It
+provides a simple yet powerful API to allow a user/developer create
+versatile graphs, charts and plots.
+
+The current incarnation of Image_Graph is a merger of the former Sourceforge
+package, GraPHPite, and the 'old' Image_Graph package from PEAR.
+
+WWW: http://pear.php.net/package/Image_Graph/

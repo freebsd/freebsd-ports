@@ -1,0 +1,12 @@
+------------------------------------------------------------------
+In order to render fonts correctly, Image_Graph requires TrueType fonts to
+be installed in its fonts directory.  In order to link all the TrueType
+fonts currently installed on your system to the Image_Graph directory, you
+should execute the following command:
+
+sh -c ' \
+for i in `locate \*.\[Tt\]\[Tt\]\[Ff\]`; do \
+	ln -s $i %%PREFIX%%/share/pear/Image/Graph/Fonts; \
+done'
+
+------------------------------------------------------------------
