@@ -5759,6 +5759,7 @@ nofgpg		ports/security/nofgpg
 nogger		ports/audio/nogger
 nohtml		ports/mail/nohtml
 noip		ports/dns/noip
+nokryptia	ports/comms/nokryptia
 nologinmsg	ports/shells/nologinmsg
 nomarch		ports/archivers/nomarch
 nonsense	ports/games/nonsense
