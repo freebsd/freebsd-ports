@@ -16,9 +16,9 @@ COMMENT=	XMMS controller plugin for the xfce4 panel
 
 BUILD_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
 LIB_DEPENDS=	xfce4util.1:${PORTSDIR}/x11/libxfce4util \
-		xfcegui4.1:${PORTSDIR}/x11-toolkits/libxfce4gui
-RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms \
-		xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
+		xfcegui4.1:${PORTSDIR}/x11-toolkits/libxfce4gui \
+		xmms.4:${PORTSDIR}/multimedia/xmms
+RUN_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
 
 USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
