@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	bbkeys
-PORTVERSION=	0.8.3
+PORTVERSION=	0.8.4
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://movingparts.thelinuxcommunity.org/bbkeys/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	stijn@win.tue.nl
 

@@ -1,8 +1,9 @@
 bin/bbkeys
-bin/bbkeysConfigC
+bin/bbkeysconf.pl
 share/bbtools/bbkeys.bb
 share/bbtools/bbkeys.nobb
-share/bbtools/README.bbkeys
+%%PORTDOCS%%share/doc/bbkeys/BUGS
+%%PORTDOCS%%share/doc/bbkeys/NEWS
 %%PORTDOCS%%share/doc/bbkeys/README
 %%PORTDOCS%%share/doc/bbkeys/AUTHORS
 %%PORTDOCS%%share/doc/bbkeys/ChangeLog
