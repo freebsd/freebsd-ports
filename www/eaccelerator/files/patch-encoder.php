@@ -1,6 +1,6 @@
---- encoder.php.orig	Thu May  8 16:58:25 2003
-+++ encoder.php	Thu May  8 17:00:00 2003
-@@ -1,25 +1,25 @@
+--- encoder.php.orig	Wed May 28 15:12:59 2003
++++ encoder.php	Thu May 29 16:19:28 2003
+@@ -1,10 +1,10 @@
 -#! /usr/bin/php -f
 +#! %%LOCALBASE%%/bin/php -f
  
@@ -15,12 +15,7 @@
    echo "Options:\n";
    echo "\t-s suffix\n\t\tencode files only with following suffix (default is \"php\")\n";
    echo "\t-a\n\t\tencode all files (no by default)\n";
-   echo "\t-l\n\t\tfollow symbolic links (no by default)\n";
-   echo "\t-r\n\t\tencode directories recursively (no by default)\n";
-   echo "\t-c\n\t\tcopy files those shouldn't be encoded (no by default)\n";
--  echo "\t-f\n\t\toverfrite existing files (no by default)\n";
-+  echo "\t-f\n\t\toverwrite existing files (no by default)\n";
-   echo "\t-o target\n\t\tIf you encode only one script then 'target' specifyes an output\n";
+@@ -16,10 +16,10 @@
    echo               "\t\tfile name. If you encode directory or several files at once\n";
    echo               "\t\tthen 'target' specifyes an output directory name.\n";
    echo "\nExamples:\n";

@@ -5,7 +5,7 @@ You have installed the turck-mmcache package.
 Edit %%LOCALBASE%%/etc/php.ini and add:
 
 [mmcache]
-zend_extension="%%PREFIX%%/lib/php/%%EXT_DIR%%/mmcache.so"
+zend_extension="%%PREFIX%%/lib/php/%%PHP_EXT_DIR%%/mmcache.so"
 mmcache.shm_size="16"
 mmcache.cache_dir="/tmp"
 mmcache.enable="1"
@@ -13,5 +13,8 @@ mmcache.optimizer="1"
 mmcache.check_mtime="1"
 mmcache.debug="0"
 mmcache.filter=""
+mmcache.shm_max="0"
+mmcache.shm_ttl="0"
+mmcache.shm_prune_period="0"
 
 *****************************************************************************
