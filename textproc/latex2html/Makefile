@@ -13,9 +13,9 @@ MASTER_SITES=	http://www-dsed.llnl.gov/files/programs/unix/latex2html/sources/ \
 
 MAINTAINER=	brett@peloton.runet.edu
 
-RUN_DEPENDS=	${PREFIX}/bin/latex:${PORTSDIR}/print/latex \
-		${PREFIX}/bin/dvips:${PORTSDIR}/print/dvips \
-		${PREFIX}/bin/gs:${PORTSDIR}/print/ghostscript5 \
+RUN_DEPENDS=	${LOCALBASE}/bin/latex:${PORTSDIR}/print/latex \
+		${LOCALBASE}/bin/dvips:${PORTSDIR}/print/dvips \
+		${LOCALBASE}/bin/gs:${PORTSDIR}/print/ghostscript5 \
 		${X11BASE}/bin/anytopnm:${PORTSDIR}/graphics/netpbm
 
 WRKSRC=	${WRKDIR}/latex2html
