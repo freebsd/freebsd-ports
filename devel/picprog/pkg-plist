@@ -1,6 +1,7 @@
 bin/picprog
-%%PORTDOCS%%share/doc/picprog/anybrowser3.gif
-%%PORTDOCS%%share/doc/picprog/jdm84pcb3.gif
-%%PORTDOCS%%share/doc/picprog/jdm84new.gif
-%%PORTDOCS%%share/doc/picprog/picprog.html
-%%PORTDOCS%%@dirrm share/doc/picprog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/anybrowser3.gif
+%%PORTDOCS%%%%DOCSDIR%%/jdm84pcb3.gif
+%%PORTDOCS%%%%DOCSDIR%%/jdm84new.gif
+%%PORTDOCS%%%%DOCSDIR%%/picprog.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

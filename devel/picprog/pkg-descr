@@ -1,19 +1,10 @@
 This is Picprog, pic16c84 programmer software for the serial port device.
-Copyright 1997 Jaakko Hyvatti
-
 To program a pic16c84 chip:
 
 	picprog --burn --input something.hex --pic /dev/cuaa1
 
-Full manual:
-
-	see file /usr/local/share/doc/picprog/picprog.html
-
-The author may be contacted at:
-
-	Email: Jaakko.Hyvatti@iki.fi
-
 Remember: this is not a production quality programmer!  See PIC16C84
 data sheet for more information.
 
-WWW: http://hyvatti.iki.fi/~jaakko/pic/
+Author:	Jaakko.Hyvatti@iki.fi
+WWW:	http://hyvatti.iki.fi/~jaakko/pic/
