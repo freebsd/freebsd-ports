@@ -3,7 +3,7 @@
 # Date created:         26 Oct 97
 # Whom:                 Pedro Giffuni <giffunip@asme.org>
 #
-# $Id: Makefile,v 1.1.1.1 1997/11/24 09:23:00 tg Exp $
+# $Id: Makefile,v 1.2 1998/01/27 01:26:13 fenner Exp $
 #
 
 DISTNAME=	yorick-1.4
@@ -14,10 +14,10 @@ MASTER_SITES=	ftp://ftp-icf.llnl.gov/pub/Yorick/		\
 
 PATCH_SITES=	ftp://ftp-icf.llnl.gov/pub/Yorick/
 PATCHFILES=	yorick-1.4.diff.gz
+PATCH_DIST_STRIP=-p1
 
 MAINTAINER=	giffunip@asme.org
 
-PATCH_DIST_STRIP=-p1
 HAS_CONFIGURE=	yes
 ALL_TARGET=
 MAN1=		yorick.1 gist.1
