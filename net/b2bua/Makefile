@@ -18,17 +18,12 @@ COMMENT=	A back-to-back (B2B) SIP user agent
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
 USE_GMAKE=	yes
+USE_GETOPT_LONG=	yes
 ALL_TARGET=	b2bua
 CFLAGS+=	-Wno-deprecated
 MAKE_ENV=	PTHREAD_LDFLAGS="${PTHREAD_LIBS}" \
 		PTHREAD_LIBNAME="${PTHREAD_LIBNAME}" \
 		VOCAL_USE_SYSTEM_LIBXML=true
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on 4.x"
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sip/b2b/bin.nodebug.FreeBSD.${MACHINE_ARCH}/b2bua \
@@ -40,4 +35,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/sip/b2b/b2bConfig.xml \
 		${PREFIX}/etc/b2bConfig.xml.sample
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
