@@ -1,5 +1,5 @@
-# ex:ts=8 
-# Ports collection makefile for:	egcs 
+# ex:ts=8
+# Ports collection makefile for:	egcs
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
@@ -22,7 +22,6 @@ DISTFILES=	gcc-core-${PORTVERSION}${EXTRACT_SUFX} \
 		gcc-g77-${PORTVERSION}${EXTRACT_SUFX} \
 		gcc-java-${PORTVERSION}${EXTRACT_SUFX} \
 		gcc-objc-${PORTVERSION}${EXTRACT_SUFX}
-
 #PATCH_SITES=	ftp://relay.nuxi.com/obrien/
 #PATCHFILES=	port_gcc32_${SNAPDATE}.diff
 
@@ -43,7 +42,7 @@ USE_BZIP2=	yes
 
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
-# do not require GCC 3.2 to compile -- or we have an infinate loop on RELENG_4.
+# Do not require GCC 3.2 to compile -- or we have an infinite loop on RELENG_4.
 USE_GCC=	X
 NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 
@@ -70,14 +69,14 @@ CONFIGURE_ARGS=	--disable-nls --with-gnu-as --with-gnu-ld \
 CONFIGURE_ARGS+=	--with-system-zlib --includedir=${TARGLIB}/include/Java
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 .if defined(WANT_SHAREDLIBS)
-CONFIGURE_ARGS+= --enable-shared
+CONFIGURE_ARGS+=	--enable-shared
 .else
-CONFIGURE_ARGS+= --disable-shared
+CONFIGURE_ARGS+=	--disable-shared
 .endif
 .if defined(WANT_THREADS_SUPPORT)
-CONFIGURE_ARGS+= --enable-threads
+CONFIGURE_ARGS+=	--enable-threads
 #	?is this an ObjC only thing?
-CONFIGURE_ARGS+= --enable-threads=posix
+CONFIGURE_ARGS+=	--enable-threads=posix
 .endif
 ALL_TARGET=	bootstrap
 MAN1=		cpp32.1 g++32.1 g77-32.1 gcc32.1 gcov32.1 \
@@ -150,7 +149,7 @@ post-build:
 	@echo "This suggestion assumes that you have dejagnu port installed."
 
 check: build
-	cd ${WRKSRC}; export RUNTESTFLAGS='--target_board ''unix{-pthread}'''; gmake -sk check
+	cd ${WRKSRC}; export RUNTESTFLAGS='--target_board ''unix{-pthread}'''; ${GMAKE} -sk check
 
 pre-install:
 	${MKDIR} ${PREFIX}/info
@@ -212,8 +211,8 @@ post-install:
 	cd ${WRKDIR} ; ex < ex.script
 
 cklatest:
-.for SITE in ftp://gcc.gnu.org/pub/gcc/snapshots/                                   ftp://mirrors.rcn.net/mirrors/sources.redhat.com/gcc/snapshots/	
-	@-ncftpls ${SITE} | grep LATEST
+.for SITE in ftp://gcc.gnu.org/pub/gcc/snapshots/                                   ftp://mirrors.rcn.net/mirrors/sources.redhat.com/gcc/snapshots/
+	@-ncftpls ${SITE} | ${GREP} LATEST
 .endfor
 
 .include <bsd.port.post.mk>
