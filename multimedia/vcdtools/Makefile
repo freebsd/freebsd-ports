@@ -9,7 +9,7 @@
 PORTNAME=	vcdtools
 PORTVERSION=	0.4
 PORTREVISION=	1
-CATEGORIES=	graphics
+CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.debian.org/debian/pool/main/v/vcdtools/
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 

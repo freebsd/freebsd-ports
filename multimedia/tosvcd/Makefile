@@ -8,7 +8,7 @@
 
 PORTNAME=	tosvcd
 PORTVERSION=	0.9
-CATEGORIES=	graphics
+CATEGORIES=	multimedia
 MASTER_SITES=	http://muse.seh.de/tosvcd/
 
 MAINTAINER=	ports@FreeBSD.org

@@ -7,7 +7,7 @@
 PORTNAME=	vcdimager
 PORTVERSION=	0.7.12
 PORTREVISION=	1
-CATEGORIES=	graphics
+CATEGORIES=	multimedia	
 MASTER_SITES=	http://www.vcdimager.org/pub/vcdimager/vcdimager-0.7_UNSTABLE/
 
 MAINTAINER=	arved@FreeBSD.org

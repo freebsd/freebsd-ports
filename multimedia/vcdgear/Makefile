@@ -7,7 +7,7 @@
 
 PORTNAME=	vcdgear
 PORTVERSION=	1.6d
-CATEGORIES=	graphics
+CATEGORIES=	multimedia
 MASTER_SITES=	http://www.vcdgear.org/files/
 
 MAINTAINER=	cpiazza@FreeBSD.org
