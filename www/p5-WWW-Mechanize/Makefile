@@ -27,11 +27,12 @@ MAN3=		WWW::Mechanize.3 WWW::Mechanize::Cookbook.3 \
 MAN1=		mech-dump.1
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	Changes etc/www-mechanize-logo.png
+MYPORTDOCS=	Changes etc/www-mechanize-logo.png
+PORTDOCS=	Changes www-mechanize-logo.png
 
 post-install:
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${INSTALL_DATA} ${MYPORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
