@@ -4,7 +4,7 @@
 # Date created:			  Tue Aug 04, 1998
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.15 1999/04/03 09:32:23 obrien Exp $
+# $Id: Makefile,v 1.16 1999/04/04 22:54:44 obrien Exp $
 #
 
 DISTNAME=	nmap-2.12
@@ -19,7 +19,6 @@ MAINTAINER=     obrien@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --libdir=${PREFIX}/share/misc
-OSVERSION!=	sysctl -n kern.osreldate
 .if ${OSVERSION} < 300004
 CFLAGS+=	-DDLT_RAW=12 # for obsoleted <net/bpf.h>
 .endif
