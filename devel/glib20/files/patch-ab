@@ -1,117 +1,21 @@
---- Makefile.in.orig	Thu Oct  7 12:35:19 1999
-+++ Makefile.in	Tue Oct 12 15:51:59 1999
-@@ -97,11 +97,11 @@
- 
- AUTOMAKE_OPTIONS = 1.4
- 
--SUBDIRS = . gmodule gthread docs tests
-+SUBDIRS = . gmodule gthread docs
- 
--configincludedir = $(pkglibdir)/include
-+configincludedir = $(includedir)
- 
--bin_SCRIPTS = glib-config
-+bin_SCRIPTS = glib@LT_RELEASE@-config
- 
- BUILT_SOURCES = stamp-gc-h #note: not glibconfig.h
- 
-@@ -136,7 +136,7 @@
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_HEADER = config.h
--CONFIG_CLEAN_FILES =  glib.spec glib-config
-+CONFIG_CLEAN_FILES =  glib.spec glib@LT_RELEASE@-config
- LTLIBRARIES =  $(lib_LTLIBRARIES)
- 
- 
-@@ -236,7 +236,7 @@
- maintainer-clean-hdr:
- glib.spec: $(top_builddir)/config.status glib.spec.in
- 	cd $(top_builddir) && CONFIG_FILES=$@ CONFIG_HEADERS= $(SHELL) ./config.status
--glib-config: $(top_builddir)/config.status glib-config.in
-+glib@LT_RELEASE@-config: $(top_builddir)/config.status glib@LT_RELEASE@-config.in
- 	cd $(top_builddir) && CONFIG_FILES=$@ CONFIG_HEADERS= $(SHELL) ./config.status
- 
- mostlyclean-libLTLIBRARIES:
-@@ -545,7 +545,6 @@
- 	      || exit 1; \
- 	  fi; \
- 	done
--	$(MAKE) $(AM_MAKEFLAGS) top_distdir="$(top_distdir)" distdir="$(distdir)" dist-hook
- 
- info-am:
- info: info-recursive
-@@ -572,7 +571,7 @@
- 		uninstall-configincludeDATA uninstall-m4dataDATA \
- 		uninstall-includeHEADERS
- uninstall: uninstall-recursive
--all-am: Makefile $(LTLIBRARIES) $(PROGRAMS) $(SCRIPTS) $(DATA) \
-+all-am: Makefile $(LTLIBRARIES) $(SCRIPTS) $(DATA) \
- 		$(HEADERS) config.h
- all-redirect: all-recursive-am
- install-strip:
-@@ -650,7 +649,9 @@
- installdirs mostlyclean-generic distclean-generic clean-generic \
- maintainer-clean-generic clean mostlyclean distclean maintainer-clean
- 
--glib-config: glib-config.in
-+glib@LT_RELEASE@-config.in: glib-config.in
-+	cp glib-config.in glib@LT_RELEASE@-config.in
-+
- glibconfig.h: stamp-gc-h
- 	@:
- stamp-gc-h: config.status
---- gmodule/Makefile.in.orig	Tue May 11 05:06:37 1999
-+++ gmodule/Makefile.in	Mon May 17 22:28:24 1999
-@@ -333,7 +333,7 @@
- install: install-am
- uninstall-am: uninstall-libLTLIBRARIES uninstall-includeHEADERS
- uninstall: uninstall-am
--all-am: Makefile $(LTLIBRARIES) $(PROGRAMS) $(HEADERS)
-+all-am: Makefile $(LTLIBRARIES) $(HEADERS)
- all-redirect: all-am
- install-strip:
- 	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
---- gthread/Makefile.in.orig	Tue May 11 05:06:39 1999
-+++ gthread/Makefile.in	Mon May 17 22:28:24 1999
-@@ -128,7 +128,7 @@
- testgthread_OBJECTS =  testgthread.o
- testgthread_DEPENDENCIES =  ../libglib.la libgthread.la
- testgthread_LDFLAGS = 
--CFLAGS = @CFLAGS@
-+CFLAGS = @CFLAGS@ @G_THREAD_CFLAGS@
- COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
- LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
- CCLD = $(CC)
-@@ -297,7 +297,7 @@
- install: install-am
- uninstall-am: uninstall-libLTLIBRARIES
- uninstall: uninstall-am
--all-am: Makefile $(LTLIBRARIES) $(PROGRAMS)
-+all-am: Makefile $(LTLIBRARIES)
- all-redirect: all-am
- install-strip:
- 	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
---- docs/Makefile.in.orig	Tue May 11 05:06:40 1999
-+++ docs/Makefile.in	Mon May 17 22:28:24 1999
-@@ -95,9 +95,9 @@
- 
- info_TEXINFOS = glib.texi
+--- docs/Makefile.in.orig	Mon Jul 17 10:35:35 2000
++++ docs/Makefile.in	Mon Jul 17 10:36:42 2000
+@@ -101,7 +101,7 @@
+ STRIP_END = @STRIP_END@
+ VERSION = @VERSION@
  
 -man_MANS = glib-config.1
-+man_MANS = glib@LT_RELEASE@-config.1
++man_MANS = glib-config-2.0.1
  
--EXTRA_DIST = glib-config.1.in		     glib.html 			     glib_toc.html
-+EXTRA_DIST = glib@LT_RELEASE@-config.1.in		     glib.html 			     glib_toc.html
- 
+ EXTRA_DIST = glib-config.1.in
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_HEADER = ../config.h
-@@ -133,6 +133,8 @@
- glib.info: glib.texi
- glib.dvi: glib.texi
+@@ -129,6 +129,9 @@
  
-+glib@LT_RELEASE@-config.1: glib-config.1
-+	cp glib-config.1 glib@LT_RELEASE@-config.1
+ glib-config.1: $(top_builddir)/config.status glib-config.1.in
+ 	cd $(top_builddir) && CONFIG_FILES=$(subdir)/$@ CONFIG_HEADERS= $(SHELL) ./config.status
++
++glib-config-2.0.1: glib-config.1
++	cp glib-config.1 glib-config-2.0.1
  
- DVIPS = dvips
- 
+ install-man1:
+ 	$(mkinstalldirs) $(DESTDIR)$(man1dir)

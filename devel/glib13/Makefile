@@ -1,4 +1,4 @@
-# New ports collection makefile for:   glib12
+# New ports collection makefile for:   glib13
 # Date Created:			28 July 1998
 # Whom:				Vanilla I. Shu <vanilla@FreeBSD.org>
 #
@@ -6,19 +6,17 @@
 #
 
 PORTNAME=	glib
-PORTVERSION=	1.2.8
+PORTVERSION=	1.3.1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.2/ \
-		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.2/ \
-		http://www.ameth.org/gimp/gtk/v1.2/
+MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.3/ \
+		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.3/ \
+		http://www.ameth.org/gimp/gtk/v1.3/
 
 MAINTAINER=	vanilla@FreeBSD.org
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-LIBTOOLFLAGS=	--disable-ltlibs --release-suffix
-CONFIGURE_ARGS=	--includedir=${PREFIX}/include/glib12
 
-MAN1=		glib12-config.1
+MAN1=		glib-config-2.0.1
 
 .include <bsd.port.mk>
