@@ -10,7 +10,7 @@ PORTVERSION=	0.9
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.gtk.org/pub/gtk/v1.1/docs/rdp/
 
-MAINTAINER=	jesper@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/share/sgml/docbook/dsssl/modular/html/docbook.dsl:${PORTSDIR}/textproc/dsssl-docbook-modular
 RUN_DEPENDS=	jade:${PORTSDIR}/textproc/jade
