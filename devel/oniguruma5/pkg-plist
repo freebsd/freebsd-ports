@@ -1,3 +1,4 @@
+include/oniggnu.h
 include/onigposix.h
 include/oniguruma.h
 lib/libonig.a
