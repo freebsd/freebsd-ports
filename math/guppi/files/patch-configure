@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- configure	2002/01/23 15:05:45	1.1
-+++ configure	2002/01/23 15:06:08
+--- configure.orig	Thu Mar 14 15:27:59 2002
++++ configure	Thu Mar 14 15:30:18 2002
 @@ -1259,10 +1259,10 @@
  
  # The aliases save the names the user supplied, while $host etc.
@@ -18,3 +18,20 @@ $FreeBSD$
  
  ac_config_headers="$ac_config_headers config.h"
  
+@@ -11158,15 +11158,13 @@
+ 
+ gnumeric_msg="not enabled"
+ gnumeric_enabled=no
+-GNUMERIC_IDLDIR=""
+ GUPPI_GNUMERIC_LIBS=""
+ GUPPI_GNUMERIC_CFLAGS=""
+ GUPPI_GNUMERIC_GRAPH_VERSION=Graph_v2
+ if test x"$enable_gnumeric" = xyes; then
+     echo "$as_me:11166: checking Gnumeric is installed" >&5
+ echo $ECHO_N "checking Gnumeric is installed... $ECHO_C" >&6
+-    if gnome-config --moddatadir gnumeric > /dev/null 2>&1; then
+-	GNUMERIC_IDLDIR=`gnome-config --moddatadir gnumeric`/idl
++    if /usr/bin/true; then
+ 
+ 	echo "$as_me:11171: result: yes" >&5
+ echo "${ECHO_T}yes" >&6
