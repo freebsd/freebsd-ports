@@ -6806,6 +6806,7 @@ ragel		ports/devel/ragel
 rain		ports/security/rain
 rancid		ports/net/rancid
 rand		ports/textproc/rand
+rapip		ports/palm/rapip
 raproxy		ports/audio/raproxy
 raptor		ports/textproc/raptor
 rar		ports/archivers/rar
