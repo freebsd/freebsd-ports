@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	eclipse-gef-examples
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.2
 CATEGORIES=	java devel
-MASTER_SITES=	http://download.eclipse.org/tools/gef/downloads/drops/R-2.1.1-200306180934/
-DISTNAME=	GEF-examples-I20030618
+MASTER_SITES=	http://download.eclipse.org/tools/gef/downloads/drops/R-2.1.2-200310151343/
+DISTNAME=	GEF-examples-I20031015
 DIST_SUBDIR=	eclipse
 
 MAINTAINER=	java@FreeBSD.ORG
