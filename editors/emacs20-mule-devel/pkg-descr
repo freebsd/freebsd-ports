@@ -1,0 +1,24 @@
+GNU Emacs is a self-documenting, customizable, extensible real-time
+display editor (emacs binary only).
+
+This package's emacs has a dynamic loading module function
+and mule 4.1 new features.
+
+Emacs binary is:
+    ${PREFIX}/bin/mule-20.7
+Dynamic loading patch:
+    ftp://ftp.m17n.org/mule/dynamic-loading/emacs-20.4-dl3.diff.gz
+
+NOTE: This binary is not linked with libxpg4 shared library by default.
+If your LANG environment variable has a value but "C", the following
+warning message may be displayed:
+
+	Warning: locale not supported by C library, locale unchanged
+
+If you complain about this message, type `make install WITH_XPG4=yes'
+at the "${PORTSDIR}/editors/emacs20-mule-devel" directory to re-make
+this package.
+
+WWW: http://www.m17n.org/mule/dynamic-loading/
+
+--- Ported by shige@FreeBSD.ORG
