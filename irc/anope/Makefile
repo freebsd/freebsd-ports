@@ -25,7 +25,7 @@ OPTIONS=	MYSQL "Use mysql" ON \
 		THREAD "Build with threads (needed for proxy detector)" ON \
 		DREAM "DreamForge 4.6.7 " OFF \
 		BAHAMUT "Bahamut 1.4.27 [or later]" OFF \
-		UNREAL "UnrealIRCd 3.1.1 [or later]" OFF \
+		UNREAL "UnrealIRCd 3.1.1 [or later]" ON \
 		ULT2 "UltimateIRCd 2.8.2 [or later]" OFF \
 		ULT3 "UltimateIRCd 3.0.0 [alpha26 or later]" OFF \
 		HYB "Hybrid IRCd 7.0 [experimental]" OFF \
