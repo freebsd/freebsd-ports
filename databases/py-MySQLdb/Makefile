@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	py-MySQLdb
-PORTVERSION=	0.9.2
+PORTVERSION=	1.0.0
 CATEGORIES=	databases python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mysql-python
@@ -19,12 +19,12 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 USE_MYSQL=		yes
 
-DOCS=		MANIFEST README doc/*.html
+PORTDOCS=		MANIFEST README
 
 .if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
-.for FILE in ${DOCS}
+.for FILE in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
 .endfor
 .endif
