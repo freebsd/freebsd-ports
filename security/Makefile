@@ -10,6 +10,7 @@
     SUBDIR += acid
     SUBDIR += aescrypt
     SUBDIR += aide
+    SUBDIR += aimsniff
     SUBDIR += altivore
     SUBDIR += amap
     SUBDIR += amavis-perl
