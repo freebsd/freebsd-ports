@@ -1,0 +1,76 @@
+bin/c_rehash
+bin/openssl
+include/openssl/asn1.h
+include/openssl/asn1_mac.h
+include/openssl/bio.h
+include/openssl/blowfish.h
+include/openssl/bn.h
+include/openssl/buffer.h
+include/openssl/cast.h
+include/openssl/comp.h
+include/openssl/conf.h
+include/openssl/crypto.h
+include/openssl/des.h
+include/openssl/dh.h
+include/openssl/dsa.h
+include/openssl/e_os.h
+include/openssl/e_os2.h
+include/openssl/ebcdic.h
+include/openssl/err.h
+include/openssl/evp.h
+include/openssl/hmac.h
+include/openssl/idea.h
+include/openssl/lhash.h
+include/openssl/md2.h
+include/openssl/md5.h
+include/openssl/mdc2.h
+include/openssl/objects.h
+include/openssl/opensslconf.h
+include/openssl/opensslv.h
+include/openssl/pem.h
+include/openssl/pem2.h
+include/openssl/pkcs12.h
+include/openssl/pkcs7.h
+include/openssl/rand.h
+include/openssl/rc2.h
+include/openssl/rc4.h
+include/openssl/rc5.h
+include/openssl/ripemd.h
+include/openssl/rsa.h
+include/openssl/safestack.h
+include/openssl/sha.h
+include/openssl/ssl.h
+include/openssl/ssl2.h
+include/openssl/ssl23.h
+include/openssl/ssl3.h
+include/openssl/stack.h
+include/openssl/tls1.h
+include/openssl/tmdiff.h
+include/openssl/txt_db.h
+include/openssl/x509.h
+include/openssl/x509_vfy.h
+include/openssl/x509v3.h
+lib/libRSAglue.a
+lib/libcrypto.a
+lib/libssl.a
+openssl/misc/CA.pl
+openssl/misc/CA.sh
+openssl/misc/c_hash
+openssl/misc/c_info
+openssl/misc/c_issuer
+openssl/misc/c_name
+openssl/misc/der_chop
+openssl/openssl.cnf.sample
+share/doc/openssl/openssl.txt
+@dirrm include/openssl
+@dirrm openssl/certs
+@dirrm openssl/lib
+@dirrm openssl/man/man1
+@dirrm openssl/man/man3
+@dirrm openssl/man/man5
+@dirrm openssl/man/man7
+@dirrm openssl/man
+@dirrm openssl/misc
+@dirrm openssl/private
+@dirrm openssl
+@dirrm share/doc/openssl
