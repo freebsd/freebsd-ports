@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	amavisd
-PORTVERSION=	20020531
-PORTREVISION=	1
+PORTVERSION=	0.1
+PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	amavis
-DISTNAME=	${PORTNAME}-snapshot-${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The daemonized version of amavis-perl
@@ -21,17 +21,17 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/arc:${PORTSDIR}/archivers/arc \
 		${LOCALBASE}/bin/unarj:${PORTSDIR}/archivers/unarj \
 		${LOCALBASE}/bin/unrar:${PORTSDIR}/archivers/unrar \
 		${LOCALBASE}/bin/zoo:${PORTSDIR}/archivers/zoo \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Convert/UUlib.pm:${PORTSDIR}/converters/p5-Convert-UUlib \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Unix-Syslog \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Convert/TNEF.pm:${PORTSDIR}/converters/p5-Convert-TNEF \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/IO/AtomicFile.pm:${PORTSDIR}/devel/p5-IO-stringy \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/MIME/Body.pm:${PORTSDIR}/mail/p5-MIME-Tools \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Mail/Address.pm:${PORTSDIR}/mail/p5-Mail-Tools \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net
+		${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
+		${SITE_PERL}/${PERL_ARCH}/Convert/UUlib.pm:${PORTSDIR}/converters/p5-Convert-UUlib \
+		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
+		${SITE_PERL}/${PERL_ARCH}/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Unix-Syslog \
+		${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
+		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
+		${SITE_PERL}/Convert/TNEF.pm:${PORTSDIR}/converters/p5-Convert-TNEF \
+		${SITE_PERL}/IO/AtomicFile.pm:${PORTSDIR}/devel/p5-IO-stringy \
+		${SITE_PERL}/MIME/Body.pm:${PORTSDIR}/mail/p5-MIME-Tools \
+		${SITE_PERL}/Mail/Address.pm:${PORTSDIR}/mail/p5-Mail-Tools \
+		${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
@@ -74,6 +74,7 @@ MTA?=		sendmail
 
 post-patch:
 	@${SED} 's,%%AMAVISUSER%%,${AMAVISUSER},g' ${FILESDIR}/${STARTSCRIPT} > ${WRKSRC}/${STARTSCRIPT}
+	@${PERL} -pi.orig -e 's|/etc/amavisd.conf|${PREFIX}/etc/amavisd.conf|g' ${WRKSRC}/configure ${WRKSRC}/amavis/amavisd.in ${WRKSRC}/amavis/Makefile.in
 
 pre-install:
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${AMAVISUSER} ${AMAVISGROUP}
