@@ -47,10 +47,6 @@ MAKE_FLAGS=	EMACS=${EMACS_CMD}
 BUILD_DEPENDS+=	${PREFIX}/${EMACS_LIBDIR}/${EMACS_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT}
 RUN_DEPENDS+=	${PREFIX}/${EMACS_LIBDIR}/${EMACS_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT}
 
-# depends on flim
-BUILD_DEPENDS+=	${PREFIX}/${EMACS_LIBDIR}/site-lisp/flim/std11.el:${PORTSDIR}/editors/flim-${EMACS_PORT}
-RUN_DEPENDS+=	${PREFIX}/${EMACS_LIBDIR}/site-lisp/flim/std11.el:${PORTSDIR}/editors/flim-${EMACS_PORT}
-
 pre-configure:
 	@${CP} ${FILESDIR}/${BITMAP_SETUPEL}.in ${WRKDIR}
 
@@ -59,9 +55,10 @@ post-install:
 		${PREFIX}/${EMACS_LIBDIR_WITH_VER}/site-lisp
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/${BITMAPDOCDIR}
-	@for i in ChangeLog README.* ; do \
+	@(cd ${WRKSRC} ; \
+	for i in ChangeLog NEWS README.* ; do \
 		${INSTALL_DATA} ${WRKSRC}/$${i} ${PREFIX}/${BITMAPDOCDIR}/ ; \
-	done
+	done)
 .endif
 
 .include <bsd.port.mk>
