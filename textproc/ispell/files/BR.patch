@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Oct 18 15:15:22 1999
-+++ Makefile	Tue Nov  2 23:55:52 1999
+--- Makefile.orig	Mon Oct 18 19:15:22 1999
++++ Makefile	Thu Feb 10 17:04:59 2000
 @@ -16,12 +16,11 @@
  #     VDIR - aqui será colocado o banco de verbos
  #     MANDIR - aqui será colocada a man page do conjugue
@@ -18,7 +18,13 @@
  
  #
  # Daqui para baixo não mexa mais em nada
-@@ -71,20 +70,16 @@
+@@ -66,25 +65,21 @@
+ br.hash: v.ispell
+ 	cat v.ispell E.ispell|sort|uniq >br.tmp
+ 	mv -f br.tmp br.ispell
+-	buildhash br.ispell br.aff br.hash
++	${BUILDHASH} br.ispell br.aff br.hash
+ 
  #
  # Instala o br.hash
  #
