@@ -1,0 +1,12 @@
+--- servmenu.c.orig	Tue Mar  2 14:02:17 1999
++++ servmenu.c	Fri Mar 29 11:24:14 2002
+@@ -8,7 +8,9 @@
+ 
+ #include <stdio.h>
+ #include <time.h>
++#ifndef STDLIBMALLOC
+ #include <malloc.h>
++#endif
+ #include <Xm/Xm.h>
+ #include <Xm/DialogS.h>
+ #include <Xm/Form.h>
