@@ -17,12 +17,3 @@
        while(!freePage(_firstPage++));
      else
        while(!freePage(_lastPage--));
-@@ -285,7 +286,7 @@
- #ifdef LFHEX_IOS_BASE_FMTFLAGS
- ostream& operator<< (ostream&out, const ReadBuffer& buff)
- {
--  ios_base::fmtflags old_flags = out.flags();
-+  ios::fmtflags old_flags = out.flags();
-   out.flags(old_flags | ios::hex | ios::showbase);
-   for(size_t i = 0; i < buff.size(); i++)
-     out << buff[i];
