@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.173 1998/11/12 01:35:23 smace Exp $
+# $Id: Makefile,v 1.174 1998/11/17 21:54:07 billf Exp $
 #
 
     SUBDIR += acron
@@ -36,6 +36,7 @@
     SUBDIR += less
     SUBDIR += lile
     SUBDIR += logsurfer
+    SUBDIR += lv
     SUBDIR += magicpoint
     SUBDIR += man.el
     SUBDIR += mc
