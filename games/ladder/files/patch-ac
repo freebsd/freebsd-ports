@@ -1,0 +1,11 @@
+--- ladder.c.org	Mon Oct 27 00:07:23 1997
++++ ladder.c	Wed Feb 18 22:33:55 1998
+@@ -14,7 +14,7 @@
+     char *d = t;
+     int i;
+     
+-    for( ; *s; *s++ ) 
++    for( ; *s; s++ ) 
+         if( *s & 0200 )
+             for( i = 210 - (unsigned char)*s; i; i-- )
+                 *d++ = ' ';
