@@ -6,6 +6,7 @@
 
 PORTNAME=	geepee32
 PORTVERSION=	30
+PORTREVISION=	1
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://users.skynet.be/firefly/gp32/project/geepee32/
 PKGNAMEPREFIX=	linux-
@@ -21,23 +22,18 @@ USE_LINUX=	yes
 USE_XLIB=	yes
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
+NO_BUILD=	yes
 
-TARGET_DIR=	${PREFIX}/geepee32
-
-STRIP=
-PROG_FILES=	${WRKDIR}/geepee32
-DATA_FILES=	${FILESDIR}/geepee32.sh
-
-do-build:
+TARGET_DIR=	${PREFIX}/${PORTNAME}
 
 do-install:
-	${INSTALL} -d -m 777 ${TARGET_DIR} && \
-	${INSTALL_PROGRAM} ${PROG_FILES} ${TARGET_DIR} && \
-	${INSTALL_SCRIPT} ${DATA_FILES} ${TARGET_DIR}
+	${INSTALL} -d -m 777 ${TARGET_DIR}
+	${INSTALL_PROGRAM} ${WRKDIR}/${PORTNAME} ${TARGET_DIR}
+	${INSTALL_SCRIPT} ${SCRIPTDIR}/${PORTNAME}.sh ${TARGET_DIR}
 
 post-install:
-	${TOUCH} ${TARGET_DIR}/iic.bin && \
-	${LN} -s ${TARGET_DIR}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}
+	@${TOUCH} ${TARGET_DIR}/iic.bin
+	@${LN} -s ${TARGET_DIR}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Please don't mail us with requests for ROM dump."
 	@${ECHO_MSG} ""
