@@ -8,7 +8,7 @@
 PORTNAME=	fep
 PORTVERSION=	1.0
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.sra.co.jp/pub/cmd/
+MASTER_SITES=	ftp://ftp.sra.co.jp/pub/cmd/fep/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	nobu@psrc.isac.co.jp
