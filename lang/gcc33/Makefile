@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-SNAPDATE=2003-12-01
+SNAPDATE=2003-12-08
 
 PORTNAME=	gcc
 PORTVERSION=	3.3.3
@@ -61,7 +61,7 @@ CONFIGURE_ARGS=	--disable-nls \
 		--with-gxx-include-dir=${TARGLIB}/include/c++/${GCC_REV}
 #CONFIGURE_ARGS+=	--program-suffix=33
 #	Java
-CONFIGURE_ARGS+=	--with-system-zlib #--includedir=${TARGLIB}/include/Java -libdir=${TARGLIB}
+CONFIGURE_ARGS+=	--with-system-zlib
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 .if defined(WANT_SHAREDLIBS)
 CONFIGURE_ARGS+=	--enable-shared
@@ -119,9 +119,6 @@ post-build:
 check: build
 	cd ${WRKSRC}; export RUNTESTFLAGS='--target_board ''unix{-pthread}'''; ${GMAKE} -sk check
 
-pre-install:
-	${MKDIR} ${PREFIX}/info
-
 post-install:
 	@${RM} -f ${PREFIX}/bin/c++ ${PREFIX}/bin/${CONFIGURE_TARGET}-c++
 	@(for prog in \
@@ -162,9 +159,6 @@ post-install:
 	-${MV} -f ${PREFIX}/lib/libgcj.* ${TARGLIB}
 	${RM} -f ${PREFIX}/lib/libiberty.a
 	${RM} -f ${TARGLIB}/*.la
-.for info in ${INFO}
-	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
-.endfor
 # I am sick and tired of the anonyance that man pages can only be generated if
 # perl 5.6 is installed.  This is becoming a royal PITA on non-5-CURRENT systems
 	for mp in ${_MANPAGES} ; do \
@@ -172,11 +166,11 @@ post-install:
 	    done
 	cd ${PREFIX} ;\
 	    ${FIND} ${TARGLIB:S/^${PREFIX}\///} -type f -o -type l	\
-	    	>${WRKDIR}/PLIST.gcc-lib
+	    	>${WRKDIR}/PLIST.lib
 	cd ${PREFIX} ;\
 	    ${FIND} ${TARGLIB:S/^${PREFIX}\///} -type d \
-	    	| sort -r | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.gcc-lib
-	(${ECHO_CMD} "@unexec rmdir %D/lib/gcc-lib/${CONFIGURE_TARGET} 2>&1 || true" ; ${ECHO_CMD} "@unexec rmdir %D/lib/gcc-lib 2>&1 || true") >> ${WRKDIR}/PLIST.gcc-lib
+	    	| sort -r | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.lib
+	(${ECHO_CMD} "@unexec rmdir %D/lib/gcc-lib/${CONFIGURE_TARGET} 2>&1 || true" ; ${ECHO_CMD} "@unexec rmdir %D/lib/gcc-lib 2>&1 || true") >> ${WRKDIR}/PLIST.lib
 	# Handle GCJ include files.
 	${RM} -f ${WRKDIR}/PLIST.gcj-inc
 .for inc in ${PREFIX}/include/gcj ${PREFIX}/include/gnu ${PREFIX}/include/java ${PREFIX}/include/javax
@@ -187,14 +181,14 @@ post-install:
 	    	| sort -r | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.gcj-inc
 .endfor
 	${ECHO_CMD} "r ${TMPPLIST}"		> ${WRKDIR}/ex.script
-	${ECHO_CMD} "/Insert PLIST.gcc-lib"	>> ${WRKDIR}/ex.script
+	${ECHO_CMD} "/Insert PLIST.lib"		>> ${WRKDIR}/ex.script
 	${ECHO_CMD} "d"				>> ${WRKDIR}/ex.script
-	${ECHO_CMD} "r ${WRKDIR}/PLIST.gcc-lib"	>> ${WRKDIR}/ex.script
+	${ECHO_CMD} "r ${WRKDIR}/PLIST.lib"	>> ${WRKDIR}/ex.script
 	${ECHO_CMD} "/Insert PLIST.gcj-inc"	>> ${WRKDIR}/ex.script
 	${ECHO_CMD} "d"				>> ${WRKDIR}/ex.script
 	${ECHO_CMD} "r ${WRKDIR}/PLIST.gcj-inc"	>> ${WRKDIR}/ex.script
 	${ECHO_CMD} "x!"			>> ${WRKDIR}/ex.script
-	${CP} -p ${TMPPLIST} ${TMPPLIST}.pre-gcc-lib
+	${CP} -p ${TMPPLIST} ${TMPPLIST}.pre
 	cd ${WRKDIR} ; ex < ex.script
 
 cklatest:
