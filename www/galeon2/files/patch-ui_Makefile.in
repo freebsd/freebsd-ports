@@ -1,10 +1,12 @@
---- ui/Makefile.in.orig	Sun Nov 17 00:56:49 2002
-+++ ui/Makefile.in	Sun Nov 17 00:56:52 2002
-@@ -182,7 +182,6 @@
+--- ui/Makefile.in.orig	Fri Jan 23 01:48:25 2004
++++ ui/Makefile.in	Fri Jan 23 01:48:55 2004
+@@ -265,8 +265,7 @@
+ uidir = $(pkgdatadir)
  
  uixmldir = $(datadir)/gnome-2.0/ui
- uixml_in_files = galeon-bookmarks-editor-ui.xml.in 	\
--                 nautilus-galeon-view-ui.xml.in 	\
- 		 galeon-ui.xml.in
+-uixml_in_files = galeon-bookmarks-editor-ui.xml.in 	\
+-                 nautilus-galeon-view-ui.xml.in
++uixml_in_files = galeon-bookmarks-editor-ui.xml.in
  
  
+ uixml_DATA = $(uixml_in_files:.xml.in=.xml)
