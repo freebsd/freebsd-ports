@@ -9,6 +9,8 @@ PORTNAME=		cd2mp3
 PORTVERSION=		0.81
 PORTEPOCH=		1
 CATEGORIES=		audio
+# both the NS servers for cd2mp3.org.uk are lame.
+# Informed maintainer - edwin 20021226
 MASTER_SITES=		http://download.cd2mp3.org.uk/${PORTVERSION}/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 
