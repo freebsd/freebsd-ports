@@ -13,7 +13,7 @@ MASTER_SITES=		http://gambas.sourceforge.net/
 MAINTAINER=		thierry@FreeBSD.org
 COMMENT=		Gambas Almost Means BASic
 
-LIB_DEPENDS=		curl.2:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=		curl.3:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=		pgrep:${PORTSDIR}/sysutils/pkill
 
 USE_LIBLTDL=		YES
