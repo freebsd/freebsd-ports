@@ -6,22 +6,34 @@
 # $FreeBSD$
 #
 
-PORTNAME=	xloops
+PORTNAME=	xloops-ginac
 PORTVERSION=	0.1.3
+PORTREVISOIN=	1
 CATEGORIES=	science
 MASTER_SITES=	http://wwwthep.physik.uni-mainz.de/~xloops/
-PKGNAMESUFFIX=	-ginac
-DISTNAME=	${PORTNAME}-ginac-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program calculating Feynman diagrams
 
-LIB_DEPENDS=	ginac:${PORTSDIR}/math/GiNaC
+LIB_DEPENDS=	ginac-1.1.3:${PORTSDIR}/math/GiNaC
 
-USE_LIBTOOL=	yes
 USE_GMAKE=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
+		AUTOHEADER="${TRUE}"
 
-post-install:
-	@${RMDIR} ${DOCSDIR}
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500035
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
+RUN_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
+CPPFLAGS+=	-I${LOCALBASE}/include/stlport ${PTHREAD_CFLAGS}
+LDFLAGS+=	-lstlport_gcc ${PTHREAD_LIBS}
+.endif
+
+.include <bsd.port.post.mk>

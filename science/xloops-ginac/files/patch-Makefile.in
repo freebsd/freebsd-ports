@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Thu Nov  8 23:19:05 2001
++++ Makefile.in	Fri Oct 10 11:10:31 2003
+@@ -91,7 +91,7 @@
+ am__quote = @am__quote@
+ install_sh = @install_sh@
+ 
+-SUBDIRS = lib check xloops ginsh doc
++SUBDIRS = lib check xloops ginsh
+ 
+ # Requires automake 1.4
+ AUTOMAKE_OPTIONS = 1.4
