@@ -1,10 +1,10 @@
 
 $FreeBSD$
 
---- configure.orig	Fri Jul 27 18:29:30 2001
-+++ configure	Fri Jul 27 18:58:09 2001
-@@ -5001,7 +5001,7 @@
- #line 5002 "configure"
+--- configure.orig	Thu Jan 10 12:57:53 2002
++++ configure	Thu Jan 10 12:59:14 2002
+@@ -8560,7 +8560,7 @@
+ #line 8561 "configure"
  #include "confdefs.h"
  #include <stdlib.h>
 -#include <iconv.h>
@@ -12,14 +12,14 @@ $FreeBSD$
  int main() {
  iconv_t cd = iconv_open("","");
         iconv(cd,NULL,NULL,NULL,NULL);
-@@ -5018,12 +5018,12 @@
+@@ -8577,12 +8577,12 @@
  rm -f conftest*
      if test "$am_cv_func_iconv" != yes; then
        am_save_LIBS="$LIBS"
 -      LIBS="$LIBS -liconv"
 +      LIBS="$LIBS -lgiconv"
        cat > conftest.$ac_ext <<EOF
- #line 5024 "configure"
+ #line 8583 "configure"
  #include "confdefs.h"
  #include <stdlib.h>
 -#include <iconv.h>
@@ -27,7 +27,7 @@ $FreeBSD$
  int main() {
  iconv_t cd = iconv_open("","");
           iconv(cd,NULL,NULL,NULL,NULL);
-@@ -5061,7 +5061,7 @@
+@@ -8620,7 +8620,7 @@
  #include "confdefs.h"
  
  #include <stdlib.h>
@@ -36,7 +36,7 @@ $FreeBSD$
  extern
  #ifdef __cplusplus
  "C"
-@@ -5099,7 +5099,7 @@
+@@ -8658,7 +8658,7 @@
    fi
    LIBICONV=
    if test "$am_cv_lib_iconv" = yes; then
@@ -45,7 +45,7 @@ $FreeBSD$
    fi
    
  
-@@ -6023,7 +6023,7 @@
+@@ -9608,7 +9608,7 @@
    withval="$with_help_prefix"
    GNC_HELPDIR="$with_help_prefix/gnome/help/gnucash"
  else
@@ -54,7 +54,7 @@ $FreeBSD$
  fi
  
  
-@@ -6461,7 +6461,7 @@
+@@ -10128,7 +10128,7 @@
  
  
  if test "$prefer_db1" = "yes"; then
@@ -63,7 +63,7 @@ $FreeBSD$
  do
  ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
  echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
-@@ -6501,7 +6501,7 @@
+@@ -10168,7 +10168,7 @@
  fi
  done
  
