@@ -377,3 +377,6 @@ misc/wmessage|x11/wmessage|2003-06-12|accurate category
 net/mldonkey-src|net/mldonkey|2003-06-15|no londer needed
 news/straw||2003-06-20|port was broken with no sign of a fix
 devel/libtool|devel/libtool13|2003-06-26|move to versioned libtool portnames
+www/mozilla-vendor|www/mozilla|2003-07-01|vendor tree in sync with 1.4
+www/mozilla-embedded-vendor|www/mozilla-embedded|2003-07-01|vendor tree in sync with 1.4
+www/mozilla-headers-vendor|www/mozilla-headers|2003-07-01|vendor tree in sync with 1.4
