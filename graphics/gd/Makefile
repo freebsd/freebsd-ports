@@ -16,10 +16,9 @@ MAINTAINER=	billf@FreeBSD.org
 LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 .if defined(WITH_X11)
-LIB_DEPENDS+=	ttf.4:${PORTSDIR}/print/freetype \
-		Xpm.4:${PORTSDIR}/graphics/xpm
-
 USE_XLIB=	yes
+USE_XPM=	yes
+USE_FREETYPE=	yes
 .endif
 
 INSTALLS_SHLIB=	yes

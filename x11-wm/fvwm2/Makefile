@@ -14,11 +14,10 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} fvwm_icons.tgz
 
 MAINTAINER=	jcwells@u.washington.edu
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--enable-extras --prefix=${PREFIX}
+CONFIGURE_ARGS=	--enable-extras --prefix=${PREFIX}
 USE_GMAKE=	yes
 
 MAN1=	FvwmAnimate.1 FvwmAudio.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 \

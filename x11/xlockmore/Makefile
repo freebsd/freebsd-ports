@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=	tg@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --without-gl --without-motif --without-sx \
 		--without-editres --without-dtsaver --without-rplay \
@@ -27,6 +25,7 @@ CONFIGURE_ARGS+= --enable-kerberos4
 CONFIGURE_ARGS+= --enable-kerberos5
 .endif
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 MAN1=		xlock.1
 
 .include <bsd.port.pre.mk>
@@ -38,7 +37,7 @@ MAN1=		xlock.1
 WITH_MESAGL?=	yes
 .if ${WITH_MESAGL} == yes
 CONFIGURE_ARGS+=	--with-mesagl
-LIB_DEPENDS+=		GL.14:${PORTSDIR}/graphics/Mesa3
+USE_MESA=	yes
 .else
 CONFIGURE_ARGS+=	--without-mesagl
 .endif

@@ -12,9 +12,8 @@ MASTER_SITES=	http://www.math.lsa.umich.edu/~mattiasj/games/xquarto/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 USE_IMAKE=	yes
+USE_XPM=	yes
 MAN6=		xquarto.6
 
 pre-configure:

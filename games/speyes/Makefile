@@ -12,10 +12,9 @@ MASTER_SITES=	http://www.halcyon.com/amalmin/speyes/
 
 MAINTAINER=	jedgar@fxp.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 NO_INSTALL_MANPAGES= yes
 USE_IMAKE=	yes
+USE_XPM=	yes
 
 pre-configure:
 	@${PERL} -pi.orig -e 's:__CFLAGS__:${CFLAGS}:g' ${WRKSRC}/Imakefile

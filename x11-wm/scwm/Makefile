@@ -14,8 +14,7 @@ MAINTAINER=	nakai@FreeBSD.org
 
 LIB_DEPENDS=	guile.6:${PORTSDIR}/lang/guile \
 		Imlib.5:${PORTSDIR}/graphics/imlib \
-		esd.2:${PORTSDIR}/audio/esound \
-		Xpm.4:${PORTSDIR}/graphics/xpm
+		esd.2:${PORTSDIR}/audio/esound
 RUN_DEPENDS=	${X11BASE}/share/scwm/pixmaps/Animator.xpm:${PORTSDIR}/graphics/scwm-icons
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
@@ -35,6 +34,7 @@ CONFIGURE_ENV+=	LIBS="-L${X11BASE}/lib -lxpg4"
 .endif
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 
 MAN1=		scwm.1 scwmexec.1 scwmrepl.1
 

@@ -12,9 +12,8 @@ MASTER_SITES=	http://www.trends.net/~mu/srcs/
 
 MAINTAINER=	handy@physics.montana.edu
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 REQUIRES_MOTIF=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	X11BASE=${X11BASE}

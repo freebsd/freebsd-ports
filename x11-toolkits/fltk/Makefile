@@ -18,8 +18,6 @@ DISTNAME=	${PKGNAME}-source
 
 MAINTAINER=	dima@chg.ru
 
-LIB_DEPENDS=	GL.14:${PORTSDIR}/graphics/Mesa3
-
 VERSION=	1.0.9
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
@@ -27,6 +25,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-shared
 WRKSRC=		${WRKDIR}/${PKGNAME}
 USE_X_PREFIX=	yes
+USE_MESA=	yes
 MAN1=		fluid.1
 
 post-install:

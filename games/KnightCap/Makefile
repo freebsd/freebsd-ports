@@ -15,10 +15,7 @@ DISTNAME=	KnightCap-${PORTVERSION}
 
 MAINTAINER=	bugg@bugg.strangled.net
 
-LIB_DEPENDS=	GL.14:${PORTSDIR}/graphics/Mesa3\
-		GLU.14:${PORTSDIR}/graphics/Mesa3 \
-		glut.3:${PORTSDIR}/graphics/Mesa3
-
+USE_MESA=	yes
 ALL_TARGET=	KnightCap
 WRKSRC=		${WRKDIR}/Export
 

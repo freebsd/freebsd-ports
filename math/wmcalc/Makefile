@@ -12,10 +12,9 @@ MASTER_SITES=	http://members.access1.net/ehflora/wmcalc/
 
 MAINTAINER=	jedgar@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 ALL_TARGET=	clean wmcalc
 USE_X_PREFIX=   yes
+USE_XPM=	yes
 WRKSRC=		${WRKDIR}/wmcalc
 
 do-install:

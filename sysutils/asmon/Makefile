@@ -13,12 +13,11 @@ MASTER_SITE_SUBDIR=	apps/asmon
 
 MAINTAINER=	jack@germanium.xtalwind.net
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 USE_X_PREFIX=	yes
 
 .include <bsd.port.pre.mk>
 
+USE_XPM=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	clean all
 

@@ -14,14 +14,13 @@ MASTER_SITE_SUBDIR=libs/X/fwf
 
 MAINTAINER=	jseger@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 .if ${MACHINE_ARCH} == "alpha"
 BROKEN=		../../lib/libfwf.a: cannot read symbols
 .endif
 
 REQUIRES_MOTIF=	yes
 USE_IMAKE=	yes
+USE_XPM=	yes
 WRKSRC=		${WRKDIR}/FWF
 XMKMF=		${SETENV} X11BASE=${X11BASE} WRKSRC=${WRKSRC} sh ${FILESDIR}/xmkmf
 

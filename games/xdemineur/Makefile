@@ -12,9 +12,8 @@ MASTER_SITES=	ftp://ftp.babafou.eu.org/pub/babafou/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 USE_IMAKE=	yes
+USE_XPM=	yes
 MAN1=		xdemineur.1
 
 .include <bsd.port.mk>

@@ -12,9 +12,8 @@ MASTER_SITES=	http://home.att.net/~apathos/code/
 
 MAINTAINER=	nugget@slacker.com
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 USE_IMAKE=	yes
+USE_XPM=	yes
 NO_INSTALL_MANPAGES=	yes
 
 do-install:

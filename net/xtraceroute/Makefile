@@ -14,13 +14,13 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DATAFILES}
 MAINTAINER=	sobomax@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
-		GL.14:${PORTSDIR}/graphics/Mesa3 \
 		gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 USE_X_PREFIX=	yes
+USE_MESA=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-GL-prefix=${X11BASE}/lib \
 		--with-lib-GL

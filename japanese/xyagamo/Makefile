@@ -12,9 +12,8 @@ MASTER_SITES=	http://www.dokidoki.ne.jp/home2/shinmaru/mahjong/
 
 MAINTAINER=	shinmaru@dokidoki.ne.jp
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 USE_X_PREFIX=	YES
+USE_XPM=	yes
 
 MAN6=		xyagamo.6
 MANLANG=	ja

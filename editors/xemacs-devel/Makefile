@@ -18,8 +18,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-elc${EXTRACT_SUFX} ${DISTNAME}
 MAINTAINER?=	gj@FreeBSD.org
 
 RUN_DEPENDS+=	${LOCALBASE}/lib/xemacs/xemacs-packages/etc/enriched.doc:${PORTSDIR}/editors/xemacs-packages
-LIB_DEPENDS+=	Xpm.4:${PORTSDIR}/graphics/xpm \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.4:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
@@ -29,6 +28,7 @@ DIST_SUBDIR=	xemacs
 
 SLAVEDIRS+=	editors/xemacs21-mule
 USE_XLIB=	yes
+USE_XPM=	yes
 USE_GMAKE=	yes
 STRIP=
 HAS_CONFIGURE=	yes

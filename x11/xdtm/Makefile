@@ -13,9 +13,8 @@ MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=		gpalmer@FreeBSD.org
 
-LIB_DEPENDS=		Xpm.4:${PORTSDIR}/graphics/xpm
-
 USE_IMAKE=		yes
+USE_XPM=		yes
 WRKSRC=			${WRKDIR}/xdtm
 MAN1=			xdtm.1
 

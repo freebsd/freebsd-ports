@@ -15,9 +15,9 @@ MASTER_SITE_SUBDIR=	sada
 
 MAINTAINER=	taoka@FreeBSD.org
 
-LIB_DEPENDS=	ttf.4:${PORTSDIR}/print/freetype
 RUN_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/jcode.pl:${PORTSDIR}/japanese/p5-jcode.pl
 
+USE_FREETYPE=	yes
 USE_PERL5=	yes
 NOMANCOMPRESS=	yes
 MAN1=		mkttfdir.1 ftinfo.1

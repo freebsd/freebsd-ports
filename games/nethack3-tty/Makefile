@@ -14,8 +14,7 @@ MASTER_SITE_SUBDIR=	nethack
 
 MAINTAINER=	dscheidt@enteract.com
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
+USE_XPM=	yes
 USE_GMAKE=	yes
 MAN6=		dgn_comp.6 dlb.6 lev_comp.6 nethack.6 recover.6
 

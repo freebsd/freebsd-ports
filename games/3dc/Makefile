@@ -14,10 +14,10 @@ DISTNAME=		3Dc-${PORTVERSION}
 
 MAINTAINER=		ports@FreeBSD.org
 
-LIB_DEPENDS=		Xpm.4:${PORTSDIR}/graphics/xpm \
-			Xaw3d.6:${PORTSDIR}/x11-toolkits/Xaw3d
+LIB_DEPENDS=		Xaw3d.6:${PORTSDIR}/x11-toolkits/Xaw3d
 
 USE_X_PREFIX=		yes
+USE_XPM=		yes
 WRKSRC=			${WRKDIR}/3Dc/src
 
 do-install:

@@ -13,9 +13,8 @@ MASTER_SITE_SUBDIR=	games
 
 MAINTAINER=	tg@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 WRKSRC=		${WRKDIR}/xminehunter
 REQUIRES_MOTIF=	yes
 ALL_TARGET=	xminehunter

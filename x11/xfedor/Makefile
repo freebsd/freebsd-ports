@@ -14,11 +14,10 @@ CATEGORIES=	x11
 MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/x11/util/
 DISTNAME=	${PORTNAME}
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 MAINTAINER=     ache@FreeBSD.org
 
 USE_IMAKE=      yes
+USE_XPM=	yes
 
 XFHELP= ${X11BASE}/lib/X11/xfedor # See patches too
 XCAT1= ${X11BASE}/man/cat1

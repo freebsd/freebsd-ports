@@ -21,8 +21,7 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	yatt@msc.biglobe.ne.jp
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
-		intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
 .if defined(WITH_GNOME)
 LIB_DEPENDS+=	gnome.4:${PORTSDIR}/x11/gnomelibs
@@ -31,6 +30,7 @@ LIB_DEPENDS+=	gnome.4:${PORTSDIR}/x11/gnomelibs
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 
 CONFIGURE_ARGS=	--enable-i18n --enable-nls
 CONFIGURE_ENV=	CXXFLAGS=-I${LOCALBASE}/include \

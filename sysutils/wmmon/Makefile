@@ -12,11 +12,10 @@ MASTER_SITES=	http://linux.tucows.com/files/x11/dock/
 
 MAINTAINER=	sk-ports@vegamuse.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 WRKSRC=		${WRKDIR}/wmmon.app/wmmon
 
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 
 .if !defined(NOPORTDOCS)
 post-install:

@@ -12,9 +12,8 @@ MASTER_SITES=	ftp://ftp.crynwr.com/piewm/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=    Xpm.4:${PORTSDIR}/graphics/xpm
-
 USE_IMAKE=	yes
+USE_XPM=	yes
 MAN1=		piewm.1
 
 .include <bsd.port.mk>

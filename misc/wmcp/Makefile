@@ -12,10 +12,9 @@ MASTER_SITES=	http://users.linuxbox.com/~bac/src/wmcp/
 
 MAINTAINER=	jim@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 
 pre-build:
 	(cd ${WRKSRC} && ${GMAKE} clean)

@@ -12,9 +12,8 @@ MASTER_SITES=	http://www.astr.tohoku.ac.jp/~taji/ActX/
 
 MAINTAINER=	esu@yk.rim.or.jp
 
-LIB_DEPENDS+=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 USE_IMAKE=	yes
+USE_XPM=	yes
 NO_INSTALL_MANPAGES=yes
 NO_CDROM=	'contains commercial character data'
 ACTXDIR=	${PREFIX}/share/examples/actx

@@ -12,12 +12,11 @@ MASTER_SITES=		http://plib.sourceforge.net/dist/
 
 MAINTAINER=		ports@FreeBSD.org
 
-LIB_DEPENDS=		GL.14:${PORTSDIR}/graphics/Mesa3
-
 USE_X_PREFIX=		yes
+USE_MESA=		yes
 GNU_CONFIGURE=		yes
-CONFIGURE_ENV+=		CPPFLAGS=-I${X11BASE}/include
-CONFIGURE_ARGS+=	--includedir=$(PREFIX)/include/plib \
+CONFIGURE_ENV=		CPPFLAGS=-I${X11BASE}/include
+CONFIGURE_ARGS=		--includedir=$(PREFIX)/include/plib \
 			--with-glut=${PREFIX}
 USE_GMAKE=		yes
 USE_NEWGCC=		yes

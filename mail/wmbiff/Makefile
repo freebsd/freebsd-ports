@@ -14,11 +14,10 @@ MASTER_SITE_SUBDIR=	jim
 
 MAINTAINER=	jim@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/wmbiff
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 
 pre-build:
 	@(cd ${WRKSRC} && ${GMAKE} clean)

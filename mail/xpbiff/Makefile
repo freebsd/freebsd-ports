@@ -14,9 +14,8 @@ DISTFILES=	xpbiff-1.27-with-YOUBIN.tar.gz.uu
 
 MAINTAINER=	sanpei@sanpei.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 USE_IMAKE=	yes
+USE_XPM=	yes
 NO_INSTALL_MANPAGES=	yes
 WRKSRC=		${WRKDIR}/xpbiff
 

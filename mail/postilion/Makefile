@@ -25,8 +25,8 @@ CONFIGURE_ARGS=	--with-tcl-config=${PREFIX}/lib/tcl8.2
 #LIB_DEPENDS+=	tkstep80.1:${PORTSDIR}/x11-toolkits/tkstep80 \
 #		Dnd.1:${PORTSDIR}/x11/libdnd \
 #		tiff.4:${PORTSDIR}/graphics/tiff \
-#		jpeg.9:${PORTSDIR}/graphics/jpeg \
-#		Xpm.4:${PORTSDIR}/graphics/xpm
+#		jpeg.9:${PORTSDIR}/graphics/jpeg
+#USE_XPM=	yes
 #CONFIGURE_ARGS+= --with-tk-config=${PREFIX}/lib/tkstep8.0
 #pre-patch:
 #	${SED} s/'(DND) 0/(DND) 1'/ ${FILESDIR}/options.tcl > \

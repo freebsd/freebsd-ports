@@ -16,12 +16,12 @@ DISTNAME=	${PORTNAME}_source-${PORTVERSION}
 
 MAINTAINER=	lioux@linf.unb.br
 
-LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
-		Xpm.4:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 INSTALLS_SHLIB=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes

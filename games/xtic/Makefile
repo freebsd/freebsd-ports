@@ -14,9 +14,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 USE_IMAKE=      yes
+USE_XPM=	yes
 MAN1=		xtic.1
 
 .include <bsd.port.mk>

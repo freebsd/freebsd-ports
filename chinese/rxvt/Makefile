@@ -15,9 +15,8 @@ MASTER_SITE_SUBDIR= X11/terms
 
 MAINTAINER=	frankch@waru.life.nthu.edu.tw
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 MAN1=		crxvt.1

@@ -12,9 +12,8 @@ MASTER_SITES=	ftp://crl.nmsu.edu/CLR/multiling/General/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	ttf.4:${PORTSDIR}/print/freetype
-
 USE_X_PREFIX=	yes
+USE_FREETYPE=	yes
 REQUIRES_MOTIF=	yes
 
 MAN1=		xmbdfed.1

@@ -12,9 +12,8 @@ MASTER_SITES=	http://xcopilot.cuspy.com/build/
 
 MAINTAINER=	nsayer@quack.kfu.com
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

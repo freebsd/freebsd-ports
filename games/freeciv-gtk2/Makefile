@@ -17,11 +17,11 @@ PKGNAMESUFFIX=	-gtk
 
 MAINTAINER=	sheldonh@freebsd.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 .if defined(WITH_GTK)
-LIB_DEPENDS+=	Imlib.5:${PORTSDIR}/graphics/imlib
+LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib
 .endif
 
+USE_XPM=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 .if defined(WITH_GTK)

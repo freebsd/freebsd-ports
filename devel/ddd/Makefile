@@ -14,13 +14,12 @@ MASTER_SITE_SUBDIR= ddd
 
 MAINTAINER=	obrien@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-motif-libraries="${LIBXMDIR}" \
 		--with-readline-libraries=/usr/lib
 USE_GMAKE=	yes
+USE_XPM=	yes
 REQUIRES_MOTIF=	yes
 
 MAN1=		ddd.1

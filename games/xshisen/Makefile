@@ -12,11 +12,10 @@ MASTER_SITES=	http://www.techfirm.co.jp/~masaoki/
 
 MAINTAINER=	nakai@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 # runs fine on ssh connection
 #IS_INTERACTIVE=	YES	# Has to create an app-defaults file
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-lxpg4"
 CONFIGURE_ARGS=	--datadir="${X11BASE}/lib/X11" \

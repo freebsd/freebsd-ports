@@ -12,9 +12,8 @@ MASTER_SITES=	http://www.fxp.org/~jedgar/wmlmmon/
 
 MAINTAINER=	jedgar@fxp.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 
 GNU_CONFIGURE=	yes
 MAN8=		wmlmmon.8

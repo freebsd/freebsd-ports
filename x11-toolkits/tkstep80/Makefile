@@ -17,11 +17,11 @@ PATCHFILES=	tk8.0.4-to-tkstep8.0.4-2.patch.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80 \
-		Xpm.4:${PORTSDIR}/graphics/xpm \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
 FILE_DEPENDS=	${PORTSDIR}/x11-toolkits/tk80
 
+USE_XPM=	yes
 FETCH_BEFORE_ARGS=	-b
 PATCH_DIST_ARGS=	-p1 -d ${WRKDIR}/tk8.0.4 -E --quiet
 WRKSRC=		${WRKDIR}/tk8.0.4/unix

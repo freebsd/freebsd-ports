@@ -15,9 +15,8 @@ DISTFILES=	netmaj-${PORTVERSION}.tar.gz \
 
 MAINTAINER=	nakai@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 ALL_TARGET=	libs all
 INSTALL_TARGET=	install install-pf
 

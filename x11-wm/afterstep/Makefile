@@ -15,10 +15,9 @@ DISTNAME=	AfterStep-${PORTVERSION}
 
 MAINTAINER=	jfitz@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 NO_LATEST_LINK= yes
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 INSTALL_TARGET=	install install.man
 MANCOMPRESSED=	yes
 MAN1=		afterstep.1 asclock.1 Animate.1 Audio.1 Auto.1 Banner.1 Pager.1 Wharf.1

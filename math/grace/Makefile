@@ -23,7 +23,6 @@ MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 
 BUILD_DEPENDS=  ${X11BASE}/lib/libhlpclient.a:${PORTSDIR}/x11/libhelp
 LIB_DEPENDS=	Xbae.7:${PORTSDIR}/x11-toolkits/xbae 	\
-		Xpm.4:${PORTSDIR}/graphics/xpm		\
 		netcdf.1:${PORTSDIR}/math/netcdf	\
 		fftw.2:${PORTSDIR}/math/fftw		\
 		pdf.2:${PORTSDIR}/print/pdflib		\
@@ -35,6 +34,7 @@ LIB_DEPENDS=	Xbae.7:${PORTSDIR}/x11-toolkits/xbae 	\
 MAN1=		grace.1 xmgrace.1 gracebat.1 grconvert.1
 
 USE_X_PREFIX=	YES
+USE_XPM=	yes
 USE_GMAKE=	YES
 REQUIRES_MOTIF=	YES
 HAS_CONFIGURE=	YES

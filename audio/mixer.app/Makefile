@@ -13,9 +13,8 @@ DISTNAME=	Mixer.app-${PORTVERSION}
 
 MAINTAINER=	cpiazza@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 USE_IMAKE=	yes
+USE_XPM=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Mixer ${PREFIX}/bin

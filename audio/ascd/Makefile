@@ -13,11 +13,11 @@ DISTFILES=	${DISTNAME}-src.tgz ${DATAFILES}
 
 MAINTAINER=	jim@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
-		workman.1:${PORTSDIR}/audio/libworkman
+LIB_DEPENDS=	workman.1:${PORTSDIR}/audio/libworkman
 
 WRKSRC=		${WRKDIR}/${PKGNAME}
 USE_IMAKE=	yes
+USE_XPM=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	default
 DATAFILES=	ascd-0.13pr6-themes.tgz

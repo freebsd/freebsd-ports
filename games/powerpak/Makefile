@@ -13,11 +13,10 @@ DISTNAME=	PowerPak
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	SDL-1.0.2:${PORTSDIR}/devel/sdl \
-		ttf.4:${PORTSDIR}/print/freetype
+LIB_DEPENDS=	SDL-1.0.2:${PORTSDIR}/devel/sdl
 
+USE_FREETYPE=	yes
 MAKEFILE=	Makefile.FreeBSD
-
 INSTALLS_SHLIB=	yes
 
 post-extract:

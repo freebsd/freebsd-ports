@@ -14,11 +14,11 @@ MASTER_SITES=	http://home.worldonline.dk/~torsten/xpaint/ \
 MAINTAINER=	jseger@FreeBSD.org
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
-		Xpm.4:${PORTSDIR}/graphics/xpm   \
 		png.4:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/xpaint
 USE_IMAKE=	yes
+USE_XPM=	yes
 MAN1=		xpaint.1
 
 .include <bsd.port.mk>

@@ -14,11 +14,11 @@ DISTNAME=	Execute-${PORTVERSION}
 
 MAINTAINER=	ruslan@shevchenko.kiev.ua
 
-LIB_DEPENDS=	Dnd.1:${PORTSDIR}/x11/libdnd \
-		Xpm.4:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Dnd.1:${PORTSDIR}/x11/libdnd
 
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
 USE_X_PREFIX=	YES
+USE_XPM=	YES
 
 .include <bsd.port.mk>

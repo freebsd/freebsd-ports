@@ -12,13 +12,13 @@ MASTER_SITES=	http://nis-www.lanl.gov/~mgh/WindowMaker/
 
 MAINTAINER=	ozz@FreeBSD.org.ru
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/wmGrabImage
 
 USE_GMAKE=	YES
 USE_X_PREFIX=	YES
+USE_XPM=	YES
 
 MAN1=		wmGrabImage.1
 

@@ -12,13 +12,13 @@ MASTER_SITES=	http://www.csn.ul.ie/~caolan/publink/libwmf/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
-		png.4:${PORTSDIR}/graphics/png \
-		ttf.4:${PORTSDIR}/print/freetype
+LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_XLIB=	yes
+USE_XPM=	yes
+USE_FREETYPE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype \

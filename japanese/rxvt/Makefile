@@ -12,13 +12,12 @@ MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/
 
 MAINTAINER=	honda@kashio.info.mie-u.ac.jp
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 MAN1=		rxvt.1 rclock.1
-CONFIGURE_ARGS+=--enable-xpm-background --enable-transparency \
+CONFIGURE_ARGS=	--enable-xpm-background --enable-transparency \
 		--enable-menubar --enable-graphics --enable-xim \
 		--enable-languages --with-encoding=eucj \
 		--disable-backspace-key --disable-delete-key \

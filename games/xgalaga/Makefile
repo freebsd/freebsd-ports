@@ -13,10 +13,9 @@ MASTER_SITE_SUBDIR=	games
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 HAS_CONFIGURE=	yes
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 # xgalaga has a very strange usage of these variables...
 CONFIGURE_ARGS=	--prefix=${X11BASE}/lib/X11/xgalaga \
 		--exec_prefix=${X11BASE}/bin

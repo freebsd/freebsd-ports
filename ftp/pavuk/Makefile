@@ -24,7 +24,7 @@ USE_AUTOCONF=		yes
 CONFIGURE_ARGS=		--disable-gtk
 .else
 CONFIGURE_ARGS=		--with-xpm-includes=${X11BASE}/include --disable-gtk
-LIB_DEPENDS=		Xpm.4:${PORTSDIR}/graphics/xpm
+USE_XPM=		yes
 .endif
 
 USE_GMAKE=		yes

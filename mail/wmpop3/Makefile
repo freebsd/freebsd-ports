@@ -13,11 +13,10 @@ DISTNAME=	WMPop3-${PORTVERSION}
 
 MAINTAINER=	jim@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PKGNAME}/wmpop3
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 
 .include <bsd.port.pre.mk>
 

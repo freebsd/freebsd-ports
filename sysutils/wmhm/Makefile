@@ -14,10 +14,9 @@ MASTER_SITES=	ftp://muir.yi.org/pub/wmhm/ \
 
 MAINTAINER=	mmuir@es.co.nz
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 WRKSRC=		${WRKDIR}/wmhm/wmhm
 
+USE_XPM=	yes
 GNU_CONFIGURE=	yes
 MAN8=		wmhm.8
 MANCOMPRESSED=	yes

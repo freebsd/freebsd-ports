@@ -14,10 +14,9 @@ DISTFILES=	nedit-5.1.1-src.tar.gz nedit-5.1.app-defaults
 
 MAINTAINER=	deischen@freebsd.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 REQUIRES_MOTIF=	yes
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 EXTRACT_ONLY=	nedit-5.1.1-src.tar.gz
 MAN1=		nclient.1 nedit.1
 ALL_TARGET=	freebsd

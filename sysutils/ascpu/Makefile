@@ -13,10 +13,10 @@ MASTER_SITES=	http://www.tigr.net/afterstep/as-apps/download/ascpu/	\
 
 MAINTAINER=	dima@Chg.RU
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
-		jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xpm
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"

@@ -12,9 +12,8 @@ MASTER_SITES=	http://www.surfline.ne.jp/hachi/xsoldier/
 
 MAINTAINER=	nakai@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 USE_IMAKE=	yes
+USE_XPM=	yes
 NO_INSTALL_MANPAGES=	yes
 
 .include <bsd.port.mk>

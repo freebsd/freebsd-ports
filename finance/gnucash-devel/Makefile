@@ -25,7 +25,6 @@ LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext \
 		png.4:${PORTSDIR}/graphics/png \
 		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		glib12.3:${PORTSDIR}/devel/glib12 \
-		Xpm.4:${PORTSDIR}/graphics/xpm \
 		gnome.4:${PORTSDIR}/x11/gnomelibs \
 		guile.6:${PORTSDIR}/lang/guile \
 		xml.5:${PORTSDIR}/textproc/libxml
@@ -38,6 +37,7 @@ RUN_DEPENDS=	slib48:${PORTSDIR}/lang/slib \
 		${site_perl}/${PERL_ARCH}/HTML/HeadParser.pm:${PORTSDIR}/www/p5-HTML-Parser
 
 USE_GMAKE=	yes
+USE_XPM=	yes
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 #USE_X_PREFIX=	yes

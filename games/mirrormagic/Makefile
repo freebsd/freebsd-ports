@@ -13,9 +13,8 @@ MASTER_SITE_SUBDIR=	games
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 
 post-extract:
 .for file in DoubleRayDoor DoubleRayFont DoubleRayFont2 DoubleRayScreen

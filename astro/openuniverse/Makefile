@@ -14,12 +14,12 @@ MASTER_SITES=		http://plasma.gsfc.nasa.gov/Ssystem/ \
 
 MAINTAINER=		will@FreeBSD.org
 
-LIB_DEPENDS=		jpeg.9:${PORTSDIR}/graphics/jpeg \
-			GL.14:${PORTSDIR}/graphics/Mesa3
+LIB_DEPENDS=		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 MAKEFILE=		Makefile.FreeBSD
 FETCH_BEFORE_ARGS=	-b
 USE_X_PREFIX=		yes
+USE_MESA=		yes
 USE_BISON=		yes
 
 do-install:

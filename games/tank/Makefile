@@ -13,12 +13,11 @@ DISTNAME=	${PKGNAME}-src
 
 MAINTAINER=	dburr@FreeBSD.org
 
-LIB_DEPENDS=	GL.14:${PORTSDIR}/graphics/Mesa3
-
 BROKEN=	can\'t find glaux.h
 
 WRKSRC=		${WRKDIR}/${PKGNAME}
 
+USE_MESA=	YES
 USE_GMAKE=	YES
 ALL_TARGET=	linux-mesa-elf
 
