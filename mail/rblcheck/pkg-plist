@@ -1,8 +1,8 @@
 bin/rblcheck
-share/doc/rblcheck/BUGS
-share/doc/rblcheck/CHANGES
-share/doc/rblcheck/CREDITS
-share/doc/rblcheck/INSTALL
-share/doc/rblcheck/PLATFORMS
-share/doc/rblcheck/TODO
-@dirrm share/doc/rblcheck
+%%PORTDOCS%%share/doc/rblcheck/BUGS
+%%PORTDOCS%%share/doc/rblcheck/CHANGES
+%%PORTDOCS%%share/doc/rblcheck/CREDITS
+%%PORTDOCS%%share/doc/rblcheck/INSTALL
+%%PORTDOCS%%share/doc/rblcheck/PLATFORMS
+%%PORTDOCS%%share/doc/rblcheck/TODO
+%%PORTDOCS%%@dirrm share/doc/rblcheck

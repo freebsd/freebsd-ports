@@ -13,15 +13,11 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTDOCS=	BUGS CHANGES CREDITS INSTALL PLATFORMS TODO
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rblcheck ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/rblcheck
-.for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/docs/${file} ${PREFIX}/share/doc/rblcheck
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/docs/* ${PREFIX}/share/doc/rblcheck
 .endif
 
 .include <bsd.port.mk>
