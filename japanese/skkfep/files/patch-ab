@@ -1,0 +1,28 @@
+--- protoMakefile.orig	Mon Jul 27 18:59:01 1998
++++ protoMakefile	Mon Jul 27 18:59:17 1998
+@@ -4,19 +4,19 @@
+ SRCS=fep.c connsh.c readwrite.c terms.c stty.c keybind.c romkan.c etc.c\
+ 	kkconv.c keymap.c version.c
+ FEPLIBSRCS=keybind.c romkan.c kkconv.c keymap.c
+-#SKKSRCS=skklib.c connserv.c
+-SKKSRCS=skklib.c skksrch.c
++SKKSRCS=skklib.c connserv.c
++#SKKSRCS=skklib.c skksrch.c
+ OBJS=fep.o connsh.o readwrite.o terms.o stty.o keybind.o romkan.o etc.o\
+ 	kkconv.o keymap.o version.o
+ FEPLIBOBJS=keybind.o romkan.o kkconv.o keymap.o
+-#SKKOBJS=skklib.o connserv.o
+-SKKOBJS=skklib.o skksrch.o
++SKKOBJS=skklib.o connserv.o
++#SKKOBJS=skklib.o skksrch.o
+ SDICOBJS=simpledic.o
+ SKKFEP=skkfep
+ SKKFEPLIB=libskkfep.a
+ 
+-all: jc $(SKKFEPLIB)
+-#all: jc $(SKKFEP)
++#all: jc $(SKKFEPLIB)
++all: jc $(SKKFEP)
+ 
+ romkan.c: romkan-org.c jc
+ 	./jc -`./jc -c romkan-org.c`P romkan-org.c > romkan.c
