@@ -5,9 +5,9 @@
 # $FreeBSD$
 #
 
-PORTNAME=	postgresql7
+# The portname is set in MASTERDIR/Makefile
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	girgen@pingpong.net
 COMMENT=	The most advanced open-source database available anywhere - client only
 
 WITHOUT_SERVER=	yes
