@@ -590,6 +590,7 @@
     SUBDIR += squidtimes
     SUBDIR += squirm
     SUBDIR += squishdot
+    SUBDIR += srg
     SUBDIR += ssserver
     SUBDIR += suphp
     SUBDIR += surfraw

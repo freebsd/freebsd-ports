@@ -1,0 +1,22 @@
+--- resolver-test.cpp.orig	Mon Jun 28 21:06:59 2004
++++ resolver-test.cpp	Mon Jun 28 21:08:30 2004
+@@ -32,16 +32,16 @@
+ 	}
+ 	
+ 	/* Use Root Servers because they are unlikey to change IP */
+-	i.s_addr = dottedquad(128,9,0,107);
++	i.s_addr = dottedquad(192,228,79,201);
+ 	t = r.get_name(i);
+ 	if (t) {
+ 		if (strcasecmp(t, "b.root-servers.net")!=0) {
+-			fprintf(stderr, "FAILED: 128.9.0.107 resolves to %s"
++			fprintf(stderr, "FAILED: 192.228.79.201 resolves to %s"
+ 				" expected b.root-servers.net please check "
+ 				"your resolver!\n", t);
+ 		}
+ 	} else {
+-		fprintf(stderr, "FAILED: Unable to resolve 128.9.0.107\n");
++		fprintf(stderr, "FAILED: Unable to resolve 192.228.79.201\n");
+ 	}
+ 
+ 	i.s_addr = dottedquad(192,203,230,10);
