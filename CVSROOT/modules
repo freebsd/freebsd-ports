@@ -4782,6 +4782,7 @@ libtool13	ports/devel/libtool13
 libtool15	ports/devel/libtool15
 libtre		ports/textproc/libtre
 libtremor	ports/audio/libtremor
+libtunepimp	ports/audio/libtunepimp
 libudbc		ports/databases/libudbc
 libukcprog	ports/devel/libukcprog
 libungif	ports/graphics/libungif
