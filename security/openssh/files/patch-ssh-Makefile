@@ -1,5 +1,5 @@
---- ssh/Makefile.orig	Tue Sep 11 00:44:47 2001
-+++ ssh/Makefile	Wed Oct  3 13:54:47 2001
+--- ssh/Makefile.orig	Tue Mar  5 01:49:51 2002
++++ ssh/Makefile	Sun Mar 17 14:58:13 2002
 @@ -7,8 +7,8 @@
  
  BINMODE?=4555
@@ -34,7 +34,7 @@
  
  .include <bsd.prog.mk>
  
--LDADD+=	-lcrypto -lz
+-LDADD+=	-lcrypto -lz -ldes
 -DPADD+=	${LIBCRYPTO} ${LIBZ}
 +LDADD+= ${CRYPTOLIBS} -lcrypt -lutil -lz
 +DPADD+= ${LIBCRYPTO} ${LIBUTIL} ${LIBZ}
