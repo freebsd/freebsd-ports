@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Sep 27 23:24:32 2002
-+++ Makefile	Sat Sep 28 20:11:41 2002
+--- Makefile.orig	Mon Oct 28 21:40:37 2002
++++ Makefile	Mon Oct 28 22:15:47 2002
 @@ -38,7 +38,7 @@
  #	-Ox   - optimize;
  #	-g    - produce debugging information.
@@ -9,7 +9,7 @@
  
  #
  # PREFIX - prefix for all below listed paths
-@@ -96,10 +96,10 @@
+@@ -81,10 +81,10 @@
  #
  # Some INSTALL_* variables
  #
@@ -24,7 +24,7 @@
  INSTALL_MAN_DIR=	${INSTALL} -d -m 0555 -g wheel -o root
  INSTALL_DATA_DIR=	${INSTALL} -d -m 0555 -g wheel -o root
  
-@@ -241,8 +241,10 @@
+@@ -247,8 +247,10 @@
  .endif
  	${INSTALL_MAN} man/ru_RU.KOI8-R/ipa.5 man/ru_RU.KOI8-R/ipa.conf.5 ${DSTMANDIR}/ru_SU.KOI8-R/man5
  	${INSTALL_MAN} man/ru_RU.KOI8-R/ipa.8 man/ru_RU.KOI8-R/ipastat.8 ${DSTMANDIR}/ru_SU.KOI8-R/man8
