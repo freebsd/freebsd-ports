@@ -91,6 +91,7 @@ CONFIGURE_ARGS=	--enable-flock --disable-fcntl \
 CONFIGURE_ARGS+=	${MUTT_CONFIGURE_ARGS}
 .endif
 
+USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_AUTOMAKE=	yes
 
