@@ -48,7 +48,6 @@ bin/revpath
 bin/rman
 bin/rstart
 bin/rstartd
-bin/scanpci
 bin/sessreg
 bin/setxkbmap
 bin/showfont
@@ -1819,7 +1818,6 @@ lib/X11/doc/html/glxgears.1.html
 lib/X11/doc/html/glxinfo.1.html
 lib/X11/doc/html/i128.4.html
 lib/X11/doc/html/i740.4.html
-lib/X11/doc/html/i810.4.html
 lib/X11/doc/html/iceauth.1.html
 lib/X11/doc/html/ico.1.html
 lib/X11/doc/html/imake.1.html
@@ -1859,7 +1857,6 @@ lib/X11/doc/html/rman.1.html
 lib/X11/doc/html/rstart.1.html
 lib/X11/doc/html/rstartd.1.html
 lib/X11/doc/html/s3virge.4.html
-lib/X11/doc/html/savage.4.html
 lib/X11/doc/html/scanpci.1.html
 lib/X11/doc/html/sessreg.1.html
 lib/X11/doc/html/setxkbmap.1.html
@@ -1878,7 +1875,6 @@ lib/X11/doc/html/twm.1.html
 lib/X11/doc/html/vesa.4.html
 lib/X11/doc/html/vga.4.html
 lib/X11/doc/html/viewres.1.html
-lib/X11/doc/html/vmware.4.html
 lib/X11/doc/html/void.4.html
 lib/X11/doc/html/wacom.4.html
 lib/X11/doc/html/x11perf.1.html
@@ -5708,8 +5704,6 @@ lib/X11/fonts/75dpi/timR24-ISO8859-9.pcf.gz
 lib/X11/fonts/75dpi/timR24.pcf.gz
 lib/X11/fonts/CID/fonts.dir
 lib/X11/fonts/CID/fonts.scale
-lib/X11/fonts/PEX/Roman.phont
-lib/X11/fonts/PEX/Roman_M.phont
 lib/X11/fonts/Speedo/encodings.dir
 lib/X11/fonts/Speedo/font0419.spd
 lib/X11/fonts/Speedo/font0582.spd
@@ -6461,7 +6455,6 @@ lib/modules/codeconv/libMULEENCODING.a
 lib/modules/codeconv/libTCVN.a
 lib/modules/codeconv/libVISCII.a
 lib/modules/dri/gamma_dri.so
-lib/modules/dri/i810_dri.so
 lib/modules/dri/mga_dri.so
 lib/modules/dri/r128_dri.so
 lib/modules/dri/radeon_dri.so
@@ -6479,16 +6472,13 @@ lib/modules/drivers/fbdev_drv.o
 lib/modules/drivers/glint_drv.o
 lib/modules/drivers/i128_drv.o
 lib/modules/drivers/i740_drv.o
-lib/modules/drivers/i810_drv.o
 lib/modules/drivers/mga_drv.o
-%%MATROX_GXX%%lib/modules/drivers/mga_hal_drv.o
 lib/modules/drivers/neomagic_drv.o
 lib/modules/drivers/nv_drv.o
 lib/modules/drivers/r128_drv.o
 lib/modules/drivers/radeon_drv.o
 lib/modules/drivers/rendition_drv.o
 lib/modules/drivers/s3virge_drv.o
-lib/modules/drivers/savage_drv.o
 lib/modules/drivers/siliconmotion_drv.o
 lib/modules/drivers/sis_drv.o
 lib/modules/drivers/tdfx_drv.o
@@ -6497,13 +6487,11 @@ lib/modules/drivers/trident_drv.o
 lib/modules/drivers/tseng_drv.o
 lib/modules/drivers/vesa_drv.o
 lib/modules/drivers/vga_drv.o
-lib/modules/drivers/vmware_drv.o
 lib/modules/extensions/libGLcore.a
 lib/modules/extensions/libdbe.a
 lib/modules/extensions/libdri.a
 lib/modules/extensions/libextmod.a
 lib/modules/extensions/libglx.a
-lib/modules/extensions/libpex5.a
 lib/modules/extensions/librecord.a
 lib/modules/extensions/libxie.a
 lib/modules/fonts/libbitmap.a
@@ -6522,7 +6510,6 @@ lib/modules/input/mutouch_drv.o
 lib/modules/input/spaceorb_drv.o
 lib/modules/input/void_drv.o
 lib/modules/input/wacom_drv.o
-lib/modules/libafb.a
 lib/modules/libcfb.a
 lib/modules/libcfb16.a
 lib/modules/libcfb24.a

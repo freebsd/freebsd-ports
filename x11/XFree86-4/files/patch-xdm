@@ -1,6 +1,6 @@
---- programs/xdm/session.c.orig	Fri Dec 14 21:01:23 2001
-+++ programs/xdm/session.c	Sat Jan 19 00:07:09 2002
-@@ -534,6 +534,7 @@
+--- programs/xdm/session.c.orig	Wed May 30 00:56:22 2001
++++ programs/xdm/session.c	Fri Sep 28 23:25:16 2001
+@@ -541,6 +541,7 @@
      int	pid;
  #ifdef HAS_SETUSERCONTEXT
      struct passwd* pwd;
@@ -8,7 +8,7 @@
  #endif
  #ifdef USE_PAM 
      pam_handle_t *pamh = thepamh();
-@@ -613,6 +614,8 @@
+@@ -623,6 +624,8 @@
  	 * Set the user's credentials: uid, gid, groups,
  	 * environment variables, resource limits, and umask.
  	 */
@@ -17,7 +17,7 @@
  	pwd = getpwnam(name);
  	if (pwd)
  	{
-@@ -622,6 +625,7 @@
+@@ -632,6 +635,7 @@
  		    errno);
  		return (0);
  	    }

@@ -6481,7 +6481,6 @@ lib/modules/drivers/i128_drv.o
 lib/modules/drivers/i740_drv.o
 lib/modules/drivers/i810_drv.o
 lib/modules/drivers/mga_drv.o
-%%MATROX_GXX%%lib/modules/drivers/mga_hal_drv.o
 lib/modules/drivers/neomagic_drv.o
 lib/modules/drivers/nv_drv.o
 lib/modules/drivers/r128_drv.o

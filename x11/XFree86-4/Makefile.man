@@ -26,7 +26,6 @@ MAN1=	XFree86.1 \
 	libxrx.1 \
 	listres.1 \
 	lndir.1 \
-	luit.1 \
 	makedepend.1 \
 	makeg.1 \
 	makepsres.1 \
@@ -101,7 +100,6 @@ MAN1=	XFree86.1 \
 	xmodmap.1 \
 	xon.1 \
 	xprop.1 \
-	xrandr.1 \
 	xrdb.1 \
 	xrefresh.1 \
 	xset.1 \
@@ -111,14 +109,6 @@ MAN1=	XFree86.1 \
 	xsm.1 \
 	xstdcmap.1 \
 	xterm.1 \
-	xtrap.1 \
-	xtrapchar.1 \
-	xtrapin.1 \
-	xtrapinfo.1 \
-	xtrapout.1 \
-	xtrapproto.1 \
-	xtrapreset.1 \
-	xtrapstats.1 \
 	xvidtune.1 \
 	xvinfo.1 \
 	xwd.1 \
@@ -342,7 +332,6 @@ MAN3=	AllPlanes.3 \
 	XF86VidModeSetViewPort.3 \
 	XF86VidModeSwitchMode.3 \
 	XF86VidModeSwitchToMode.3 \
-	XF86VidModeValidateModeLine.3 \
 	XFetchBuffer.3 \
 	XFetchBytes.3 \
 	XFetchName.3 \
@@ -596,7 +585,7 @@ MAN3=	AllPlanes.3 \
 	XSetModifierMapping.3 \
 	XSetOCValues.3 \
 	XSetOMValues.3 \
-	XSetPlaneMask.3 \
+	XSetPlanemask.3 \
 	XSetPointerMapping.3 \
 	XSetRGBColormaps.3 \
 	XSetRegion.3 \
@@ -683,7 +672,7 @@ MAN3=	AllPlanes.3 \
 	XUnregisterIMInstantiateCallback.3 \
 	XUnsetICFocus.3 \
 	XVaCreateNestedList.3 \
-	XVisibilityEvent.3 \
+	XVisibilityNotifyEvent.3 \
 	XVisualIDFromVisual.3 \
 	XVisualInfo.3 \
 	XWMGeometry.3 \
@@ -758,7 +747,6 @@ MAN3=	AllPlanes.3 \
 	XdbeQueryExtension.3 \
 	XdbeSwapBuffers.3 \
 	XeviGetVisualInfo.3 \
-	XeviQueryExtension.3 \
 	XeviQueryVersion.3 \
 	Xft.3 \
 	XmbDrawImageString.3 \
@@ -951,7 +939,6 @@ MAN3=	AllPlanes.3 \
 	XtIsRealized.3 \
 	XtIsRectObj.3 \
 	XtIsSensitive.3 \
-	XtIsSessionShell.3 \
 	XtIsShell.3 \
 	XtIsSubclass.3 \
 	XtIsTopLevelShell.3 \
@@ -1069,10 +1056,8 @@ MAN3=	AllPlanes.3 \
 	XtVaCreateWidget.3 \
 	XtVaGetApplicationResources.3 \
 	XtVaGetSubresources.3 \
-	XtVaGetSubvalues.3 \
 	XtVaGetValues.3 \
 	XtVaOpenApplication.3 \
-	XtVaSetSubvalues.3 \
 	XtVaSetValues.3 \
 	XtWarning.3 \
 	XtWarningMsg.3 \
@@ -1122,447 +1107,6 @@ MAN3=	AllPlanes.3 \
 	XwcTextListToTextProperty.3 \
 	XwcTextPerCharExtents.3 \
 	XwcTextPropertyToTextList.3 \
-	glAccum.3 \
-	glActiveTextureARB.3 \
-	glAlphaFunc.3 \
-	glAreTexturesResident.3 \
-	glArrayElement.3 \
-	glBegin.3 \
-	glBindTexture.3 \
-	glBitmap.3 \
-	glBlendColor.3 \
-	glBlendEquation.3 \
-	glBlendFunc.3 \
-	glCallList.3 \
-	glCallLists.3 \
-	glClear.3 \
-	glClearAccum.3 \
-	glClearColor.3 \
-	glClearDepth.3 \
-	glClearIndex.3 \
-	glClearStencil.3 \
-	glClientActiveTextureARB.3 \
-	glClipPlane.3 \
-	glColor.3 \
-	glColor3b.3 \
-	glColor3bv.3 \
-	glColor3d.3 \
-	glColor3dv.3 \
-	glColor3f.3 \
-	glColor3fv.3 \
-	glColor3i.3 \
-	glColor3iv.3 \
-	glColor3s.3 \
-	glColor3sv.3 \
-	glColor3ub.3 \
-	glColor3ubv.3 \
-	glColor3ui.3 \
-	glColor3uiv.3 \
-	glColor3us.3 \
-	glColor3usv.3 \
-	glColor4b.3 \
-	glColor4bv.3 \
-	glColor4d.3 \
-	glColor4dv.3 \
-	glColor4f.3 \
-	glColor4fv.3 \
-	glColor4i.3 \
-	glColor4iv.3 \
-	glColor4s.3 \
-	glColor4sv.3 \
-	glColor4ub.3 \
-	glColor4ubv.3 \
-	glColor4ui.3 \
-	glColor4uiv.3 \
-	glColor4us.3 \
-	glColor4usv.3 \
-	glColorMask.3 \
-	glColorMaterial.3 \
-	glColorPointer.3 \
-	glColorSubTable.3 \
-	glColorTable.3 \
-	glColorTableParameter.3 \
-	glColorTableParameterfv.3 \
-	glColorTableParameteriv.3 \
-	glConvolutionFilter1D.3 \
-	glConvolutionFilter2D.3 \
-	glConvolutionParameter.3 \
-	glCopyColorSubTable.3 \
-	glCopyColorTable.3 \
-	glCopyConvolutionFilter1D.3 \
-	glCopyConvolutionFilter2D.3 \
-	glCopyPixels.3 \
-	glCopyTexImage1D.3 \
-	glCopyTexImage2D.3 \
-	glCopyTexSubImage1D.3 \
-	glCopyTexSubImage2D.3 \
-	glCopyTexSubImage3D.3 \
-	glCullFace.3 \
-	glDeleteLists.3 \
-	glDeleteTextures.3 \
-	glDepthFunc.3 \
-	glDepthMask.3 \
-	glDepthRange.3 \
-	glDisable.3 \
-	glDisableClientState.3 \
-	glDrawArrays.3 \
-	glDrawBuffer.3 \
-	glDrawElements.3 \
-	glDrawPixels.3 \
-	glDrawRangeElements.3 \
-	glEdgeFlag.3 \
-	glEdgeFlagPointer.3 \
-	glEdgeFlagv.3 \
-	glEnable.3 \
-	glEnableClientState.3 \
-	glEnd.3 \
-	glEndList.3 \
-	glEvalCoord.3 \
-	glEvalCoord1d.3 \
-	glEvalCoord1dv.3 \
-	glEvalCoord1fv.3 \
-	glEvalCoord2d.3 \
-	glEvalCoord2dv.3 \
-	glEvalCoord2f.3 \
-	glEvalCoord2fv.3 \
-	glEvalMesh.3 \
-	glEvalMesh1.3 \
-	glEvalMesh2.3 \
-	glEvalPoint.3 \
-	glEvalPoint1.3 \
-	glEvalPoint2.3 \
-	glFeedbackBuffer.3 \
-	glFinish.3 \
-	glFlush.3 \
-	glFog.3 \
-	glFogf.3 \
-	glFogfv.3 \
-	glFogi.3 \
-	glFogiv.3 \
-	glFrontFace.3 \
-	glFrustum.3 \
-	glGenLists.3 \
-	glGenTextures.3 \
-	glGet.3 \
-	glGetBooleanv.3 \
-	glGetClipPlane.3 \
-	glGetColorTable.3 \
-	glGetColorTableParameter.3 \
-	glGetColorTableParameterfv.3 \
-	glGetColorTableParameteriv.3 \
-	glGetConvolutionFilter.3 \
-	glGetConvolutionParameter.3 \
-	glGetDoublev.3 \
-	glGetError.3 \
-	glGetFloatv.3 \
-	glGetHistogram.3 \
-	glGetHistogramParameter.3 \
-	glGetIntegerv.3 \
-	glGetLight.3 \
-	glGetLightfv.3 \
-	glGetLightiv.3 \
-	glGetMap.3 \
-	glGetMapdv.3 \
-	glGetMapfv.3 \
-	glGetMapiv.3 \
-	glGetMaterial.3 \
-	glGetMaterialfv.3 \
-	glGetMaterialiv.3 \
-	glGetMinmax.3 \
-	glGetMinmaxParameter.3 \
-	glGetPixelMap.3 \
-	glGetPixelMapfv.3 \
-	glGetPixelMapuiv.3 \
-	glGetPixelMapusv.3 \
-	glGetPointerv.3 \
-	glGetPolygonStipple.3 \
-	glGetSeparableFilter.3 \
-	glGetString.3 \
-	glGetTexEnv.3 \
-	glGetTexEnvfv.3 \
-	glGetTexEnviv.3 \
-	glGetTexGen.3 \
-	glGetTexGendv.3 \
-	glGetTexGenfv.3 \
-	glGetTexGeniv.3 \
-	glGetTexImage.3 \
-	glGetTexLevelParameter.3 \
-	glGetTexLevelParameterfv.3 \
-	glGetTexLevelParameteriv.3 \
-	glGetTexParameter.3 \
-	glGetTexParameterfv.3 \
-	glGetTexParameteriv.3 \
-	glHint.3 \
-	glHistogram.3 \
-	glIndex.3 \
-	glIndexMask.3 \
-	glIndexPointer.3 \
-	glIndexd.3 \
-	glIndexdv.3 \
-	glIndexf.3 \
-	glIndexfv.3 \
-	glIndexi.3 \
-	glIndexiv.3 \
-	glIndexs.3 \
-	glIndexsv.3 \
-	glIndexub.3 \
-	glIndexubv.3 \
-	glInitNames.3 \
-	glInterleavedArrays.3 \
-	glIsEnabled.3 \
-	glIsTexture.3 \
-	glIslist.3 \
-	glLight.3 \
-	glLightModel.3 \
-	glLightModelf.3 \
-	glLightModelfv.3 \
-	glLightModeli.3 \
-	glLightModeliv.3 \
-	glLightf.3 \
-	glLightfv.3 \
-	glLighti.3 \
-	glLightiv.3 \
-	glLineStipple.3 \
-	glLineWidth.3 \
-	glListBase.3 \
-	glLoadIdentity.3 \
-	glLoadMatrix.3 \
-	glLoadMatrixd.3 \
-	glLoadMatrixf.3 \
-	glLoadName.3 \
-	glLogicOp.3 \
-	glMap1.3 \
-	glMap1d.3 \
-	glMap1f.3 \
-	glMap2.3 \
-	glMap2d.3 \
-	glMap2f.3 \
-	glMapGrid.3 \
-	glMapGrid1d.3 \
-	glMapGrid1f.3 \
-	glMapGrid2d.3 \
-	glMapGrid2f.3 \
-	glMaterial.3 \
-	glMaterialf.3 \
-	glMaterialfv.3 \
-	glMateriali.3 \
-	glMaterialiv.3 \
-	glMatrixMode.3 \
-	glMinmax.3 \
-	glMultMatrix.3 \
-	glMultMatrixd.3 \
-	glMultMatrixf.3 \
-	glMultiTexCoord1dARB.3 \
-	glMultiTexCoord1dvARB.3 \
-	glMultiTexCoord1fARB.3 \
-	glMultiTexCoord1fvARB.3 \
-	glMultiTexCoord1iARB.3 \
-	glMultiTexCoord1ivARB.3 \
-	glMultiTexCoord1sARB.3 \
-	glMultiTexCoord1svARB.3 \
-	glMultiTexCoord2dARB.3 \
-	glMultiTexCoord2dvARB.3 \
-	glMultiTexCoord2fARB.3 \
-	glMultiTexCoord2fvARB.3 \
-	glMultiTexCoord2iARB.3 \
-	glMultiTexCoord2ivARB.3 \
-	glMultiTexCoord2sARB.3 \
-	glMultiTexCoord2svARB.3 \
-	glMultiTexCoord3dARB.3 \
-	glMultiTexCoord3dvARB.3 \
-	glMultiTexCoord3fARB.3 \
-	glMultiTexCoord3fvARB.3 \
-	glMultiTexCoord3iARB.3 \
-	glMultiTexCoord3ivARB.3 \
-	glMultiTexCoord3sARB.3 \
-	glMultiTexCoord3svARB.3 \
-	glMultiTexCoord4dARB.3 \
-	glMultiTexCoord4dvARB.3 \
-	glMultiTexCoord4fARB.3 \
-	glMultiTexCoord4fvARB.3 \
-	glMultiTexCoord4iARB.3 \
-	glMultiTexCoord4ivARB.3 \
-	glMultiTexCoord4sARB.3 \
-	glMultiTexCoord4svARB.3 \
-	glMultiTexCoordARB.3 \
-	glNewList.3 \
-	glNormal.3 \
-	glNormal3b.3 \
-	glNormal3bv.3 \
-	glNormal3d.3 \
-	glNormal3dv.3 \
-	glNormal3f.3 \
-	glNormal3fv.3 \
-	glNormal3i.3 \
-	glNormal3iv.3 \
-	glNormal3s.3 \
-	glNormal3sv.3 \
-	glNormalPointer.3 \
-	glOrtho.3 \
-	glPassThrough.3 \
-	glPixelMap.3 \
-	glPixelMapfv.3 \
-	glPixelMapuiv.3 \
-	glPixelMapusv.3 \
-	glPixelStore.3 \
-	glPixelStoref.3 \
-	glPixelStorei.3 \
-	glPixelTransfer.3 \
-	glPixelTransferf.3 \
-	glPixelTransferi.3 \
-	glPixelZoom.3 \
-	glPointSize.3 \
-	glPolygonMode.3 \
-	glPolygonOffset.3 \
-	glPolygonStipple.3 \
-	glPopAttrib.3 \
-	glPopClientAttrib.3 \
-	glPopMatrix.3 \
-	glPopName.3 \
-	glPrioritizeTextures.3 \
-	glPushAttrib.3 \
-	glPushClientAttrib.3 \
-	glPushMatrix.3 \
-	glPushName.3 \
-	glRasterPos.3 \
-	glRasterPos2d.3 \
-	glRasterPos2dv.3 \
-	glRasterPos2f.3 \
-	glRasterPos2fv.3 \
-	glRasterPos2i.3 \
-	glRasterPos2iv.3 \
-	glRasterPos2s.3 \
-	glRasterPos2sv.3 \
-	glRasterPos3d.3 \
-	glRasterPos3dv.3 \
-	glRasterPos3f.3 \
-	glRasterPos3fv.3 \
-	glRasterPos3i.3 \
-	glRasterPos3iv.3 \
-	glRasterPos3s.3 \
-	glRasterPos3sv.3 \
-	glRasterPos4d.3 \
-	glRasterPos4dv.3 \
-	glRasterPos4f.3 \
-	glRasterPos4fv.3 \
-	glRasterPos4i.3 \
-	glRasterPos4iv.3 \
-	glRasterPos4s.3 \
-	glRasterPos4sv.3 \
-	glReadBuffer.3 \
-	glReadPixels.3 \
-	glRect.3 \
-	glRectd.3 \
-	glRectdv.3 \
-	glRectf.3 \
-	glRectfv.3 \
-	glRecti.3 \
-	glRectiv.3 \
-	glRects.3 \
-	glRectsv.3 \
-	glRenderMode.3 \
-	glResetHistogram.3 \
-	glResetMinmax.3 \
-	glRotate.3 \
-	glRotated.3 \
-	glRotatef.3 \
-	glScale.3 \
-	glScaled.3 \
-	glScalef.3 \
-	glScissor.3 \
-	glSelectBuffer.3 \
-	glSeparableFilter2D.3 \
-	glShadeModel.3 \
-	glStencilFunc.3 \
-	glStencilMask.3 \
-	glStencilOp.3 \
-	glTexCoord.3 \
-	glTexCoord1d.3 \
-	glTexCoord1dv.3 \
-	glTexCoord1f.3 \
-	glTexCoord1fv.3 \
-	glTexCoord1i.3 \
-	glTexCoord1iv.3 \
-	glTexCoord1s.3 \
-	glTexCoord1sv.3 \
-	glTexCoord2d.3 \
-	glTexCoord2dv.3 \
-	glTexCoord2f.3 \
-	glTexCoord2fv.3 \
-	glTexCoord2i.3 \
-	glTexCoord2iv.3 \
-	glTexCoord2s.3 \
-	glTexCoord2sv.3 \
-	glTexCoord3d.3 \
-	glTexCoord3dv.3 \
-	glTexCoord3f.3 \
-	glTexCoord3fv.3 \
-	glTexCoord3i.3 \
-	glTexCoord3iv.3 \
-	glTexCoord3s.3 \
-	glTexCoord3sv.3 \
-	glTexCoord4d.3 \
-	glTexCoord4dv.3 \
-	glTexCoord4f.3 \
-	glTexCoord4fv.3 \
-	glTexCoord4i.3 \
-	glTexCoord4iv.3 \
-	glTexCoord4s.3 \
-	glTexCoord4sv.3 \
-	glTexCoordPointer.3 \
-	glTexEnv.3 \
-	glTexEnvf.3 \
-	glTexEnvfv.3 \
-	glTexEnvi.3 \
-	glTexEnviv.3 \
-	glTexGen.3 \
-	glTexGend.3 \
-	glTexGendv.3 \
-	glTexGenf.3 \
-	glTexGenfv.3 \
-	glTexGeni.3 \
-	glTexGeniv.3 \
-	glTexImage1D.3 \
-	glTexImage2D.3 \
-	glTexImage3D.3 \
-	glTexParameter.3 \
-	glTexParameterf.3 \
-	glTexParameterfv.3 \
-	glTexParameteri.3 \
-	glTexParameteriv.3 \
-	glTexSubImage1D.3 \
-	glTexSubImage2D.3 \
-	glTexSubImage3D.3 \
-	glTranslate.3 \
-	glTranslated.3 \
-	glTranslatef.3 \
-	glVertex.3 \
-	glVertex2d.3 \
-	glVertex2dv.3 \
-	glVertex2f.3 \
-	glVertex2fv.3 \
-	glVertex2i.3 \
-	glVertex2iv.3 \
-	glVertex2s.3 \
-	glVertex2sv.3 \
-	glVertex3d.3 \
-	glVertex3dv.3 \
-	glVertex3f.3 \
-	glVertex3fv.3 \
-	glVertex3i.3 \
-	glVertex3iv.3 \
-	glVertex3s.3 \
-	glVertex3sv.3 \
-	glVertex4d.3 \
-	glVertex4dv.3 \
-	glVertex4f.3 \
-	glVertex4fv.3 \
-	glVertex4i.3 \
-	glVertex4iv.3 \
-	glVertex4s.3 \
-	glVertex4sv.3 \
-	glVertexPointer.3 \
-	glViewport.3 \
 	glXChooseVisual.3 \
 	glXCopyContext.3 \
 	glXCreateContext.3 \
