@@ -3,7 +3,7 @@
 case ${LANGUAGE} in
     Japanese)
 	for f in DeepForest.app; do
-	    ${REINPLACE_CMD} -E -e \
+	    ${REINPLACE_CMD} -i "" -E -e \
 	    	"s/^(exec[[:space:]]+)wishstep[^[:space:]]*([[:space:]]+.*)\$/\1wishstep${VERSION}jp\2/" \
 		${PREFIX}/JDE/DeepForest/${f}
 	done

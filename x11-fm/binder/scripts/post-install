@@ -5,7 +5,7 @@ installdir=${PREFIX}/JDE/Binder; export installdir
 case ${LANGUAGE} in
     Japanese)
 	for f in bin/Binder.app bin/Processes.app misc/Mounter/Mounter.app; do
-	    ${REINPLACE_CMD} -E -e \
+	    ${REINPLACE_CMD} -i "" -E -e \
 		"s/^(exec[[:space:]]+)wishstep[[:space:]]*([[:space:]]+.*)\$/\1wishstep${VERSION}jp\2/" \
 		${installdir}/${f}
 	done
@@ -28,7 +28,7 @@ for f in Binder Binder.app Processes.app Mounter.app shortcut; do
 	    target=${installdir}/lib/${f}
 	;;
     esac
-    ${REINPLACE_CMD} -E \
+    ${REINPLACE_CMD} -i "" -E \
 	-e "s@^([[:space:]]*set[[:space:]]+ttblibPath[[:space:]]+)\"[^\"]*\"\$@\1\"${installdir}\"@" \
 	-e "s@^([[:space:]]*set[[:space:]]+ttblibPath[[:space:]]+)\{[^\}]*\}\$@\1\{${installdir}\}@" \
 	-e "s@^([a-zA-Z.]+;)/usr/local/([a-zA-Z/.]+;[a-zA-Z]+)\$@\1${PREFIX}/\2@" \
