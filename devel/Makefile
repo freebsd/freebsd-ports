@@ -447,6 +447,7 @@
     SUBDIR += p5-Class-MethodMaker
     SUBDIR += p5-Class-ObjectTemplate
     SUBDIR += p5-Class-ObjectTemplate-DB
+    SUBDIR += p5-Class-ReturnValue
     SUBDIR += p5-Class-Singleton
     SUBDIR += p5-Class-Tangram
     SUBDIR += p5-Class-Tom
