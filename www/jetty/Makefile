@@ -1,27 +1,25 @@
 # New ports collection makefile for:	Jetty
 # Date created:				28 August 2000
-# Whom:				Stephane Legrand <stephane.legrand@bigfoot.com>
+# Whom:				Stephane Legrand <stephane@freebsd-fr.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	jetty
-PORTVERSION=	4.0.2
+PORTVERSION=	4.1.3
 CATEGORIES=	www java
 MASTER_SITES=	http://download.sourceforge.net/jetty/ \
 		ftp://jetty.mortbay.com/pub/
 DISTNAME=	Jetty-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	stephane.legrand@bigfoot.com
+MAINTAINER=	stephane@freebsd-fr.org
 
-RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/javavmwrapper \
-		${LOCALBASE}/etc/javavms:${PORTSDIR}/java/jdk13
+USE_JAVA=	1.3+
 
-JAVAVM?=	${LOCALBASE}/bin/javavm
 NO_BUILD=	yes
 
-PLIST_SUB=      JETTY_VERSION=${PORTVERSION}
+PLIST_SUB=	JETTY_VERSION=${PORTVERSION}
 
 post-extract:
 	${FIND} ${WRKSRC} -name CVS -delete
