@@ -16,10 +16,6 @@ DISTNAME=	${PORTNAME}d-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Internic referral whois server
 
-.if !exists(/usr/include/tcpd.h)
-LIB_DEPENDS=	wrap.7:${PORTSDIR}/security/tcp_wrapper
-.endif
-
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}/lib/rwhois
 

@@ -104,16 +104,7 @@ post-install:
 	fi
 
 # Include tcp-wrapper support (call remote identd)
-.if exists(/usr/include/tcpd.h)
 CONFIGURE_ARGS+=	--with-libwrap
-.else
-.if defined(WITH_TCPWRAP) || (exists(${PREFIX}/lib/libwrap.a) \
-	&& !defined(WITHOUT_TCPWRAP))
-CONFIGURE_ENV+=	LDFLAGS=-L${PREFIX}/lib CFLAGS="${CFLAGS} -I${PREFIX}/include"
-CONFIGURE_ARGS+=	--with-libwrap
-LIB_DEPENDS+=	wrap.7:${PORTSDIR}/security/tcp_wrapper
-.endif
-.endif
 
 # Original IPv6 patches were obtained from ftp://ftp.kyoto.wide.ad.jp/IPv6/ssh/
 # ssh-1.2.27-IPv6-1.5-patch.gz

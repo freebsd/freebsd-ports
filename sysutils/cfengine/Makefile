@@ -22,9 +22,6 @@ BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 .endif
 
 LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
-.if defined(PACKAGE_BUILDING) && !exists(/usr/include/tcpd.h)
-LIB_DEPENDS+=	wrap.7:${PORTSDIR}/security/tcp_wrapper
-.endif
 
 USE_GMAKE=	yes
 USE_AUTOMAKE_VER=14
