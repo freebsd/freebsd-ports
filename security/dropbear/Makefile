@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dropbear
-PORTVERSION=	0.41
-PORTREVISION=	1
+PORTVERSION=	0.43
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://matt.ucc.asn.au/dropbear/releases/
 
@@ -26,6 +25,8 @@ post-patch:
 	@${REINPLACE_CMD} -e "s,_PRIV_FILENAME \"/etc/,_PRIV_FILENAME \"${PREFIX}/etc/,g; \
 		s,/usr/bin/X11/,${X11BASE}/,g" ${WRKSRC}/options.h
 	@${REINPLACE_CMD} -e "s,sys/dir.h,dirent.h," ${WRKSRC}/*.[ch]
+	${REINPLACE_CMD} -e "s,make clean,\$${MAKE} clean," \
+				${WRKSRC}/libtomcrypt/makefile
 	@${SED} -e 's:__PREFIX__:${PREFIX}:g' \
 		${FILESDIR}/dropbear.sh > ${WRKSRC}/dropbear.sh
 
