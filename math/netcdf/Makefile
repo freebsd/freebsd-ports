@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://unidata.ucar.edu/pub/netcdf/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for machine-independent, array-oriented data access
 
+BROKEN=		Unfetchable
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 CONFLICTS=	hdf-4.*
