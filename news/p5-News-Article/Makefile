@@ -12,8 +12,6 @@ MASTER_SITES=	http://www.erlenstar.demon.co.uk/perl/ \
 		http://www.gelemna.org/ports/
 PKGNAMEPREFIX=	p5-
 
-BROKEN=		unfetchable distfile
-
 MAINTAINER=	croyle@gelemna.org
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/DNS.pm:${PORTSDIR}/net/p5-Net-DNS \
