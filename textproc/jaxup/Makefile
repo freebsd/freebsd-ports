@@ -6,6 +6,7 @@
 
 PORTNAME=	jaxup
 PORTVERSION=	1.01
+PORTREVISION=	1
 CATEGORIES=	textproc java
 MASTER_SITES=	http://klomp.org/jaxup/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -13,9 +14,11 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	hq@FreeBSD.org
 COMMENT=	Java XUpdate engine
 
+BUILD_DEPENDS=	classpath:${PORTSDIR}/java/javavmwrapper
 RUN_DEPENDS=	${JAVALIBDIR}/jdom.jar:${PORTSDIR}/java/jdom \
 		${JAVALIBDIR}/jaxen-core.jar:${PORTSDIR}/java/jaxen \
-		${JAVALIBDIR}/xercesImpl.jar:${PORTSDIR}/textproc/xerces-j
+		${JAVALIBDIR}/xercesImpl.jar:${PORTSDIR}/textproc/xerces-j \
+		java:${PORTSDIR}/java/javavmwrapper
 
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -23,13 +26,17 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_JAVA=	yes
 JAVA_VERSION=	1.3+
 
+DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+
 USE_ANT=	yes
 ALL_TARGET=	jar
 .if !defined(NOPORTDOCS)
 ALL_TARGET+=	docs
 .endif
 
-PLIST_FILES+=	%%JAVAJARDIR%%/${PORTNAME}.jar
+PLIST_FILES+=	%%DATADIR%%/jaxup-xupdater.jar bin/jaxup-xupdater \
+		%%JAVAJARDIR%%/${PORTNAME}.jar
+PLIST_DIRS=	%%DATADIR%%
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	LICENSE.txt api index.html jaxup_files xupdate-wd.html xupdate-wd_files
@@ -37,12 +44,26 @@ PORTDOCS=	LICENSE.txt api index.html jaxup_files xupdate-wd.html xupdate-wd_file
 
 post-extract:
 	@${CP} ${FILESDIR}/build.xml ${WRKSRC}/
+	@${CP} ${FILESDIR}/DOMXUpdater.java ${WRKDIR}/
+	@${SED} -e 's,%%LOCALBASE%%,${LOCALBASE},g ; s,%%DATADIR%%,${DATADIR},g' \
+	  ${FILESDIR}/jaxup-xupdater.sh >${WRKDIR}/jaxup-xupdater
+
+post-build:
+	@${ECHO_MSG} ">> Building utility classes..."
+	cd ${WRKDIR} && ${JAVAC} -classpath "`${LOCALBASE}/bin/classpath`:${WRKSRC}/build/lib/jaxup.jar" DOMXUpdater.java
+	${ECHO_CMD} "Main-Class: DOMXUpdater" >${WRKDIR}/MANIFEST
+	cd ${WRKDIR} && ${JAR} -cmf MANIFEST jaxup-xupdater.jar DOMXUpdater.class
 
 do-install:
-	@${ECHO_MSG} -n ">> Installing JAR files as ${JAVAJARDIR}/${PORTNAME}.jar..."
+	@${ECHO_MSG} -n ">> Installing JAR file as ${JAVAJARDIR}/${PORTNAME}.jar..."
 	@${MKDIR} ${JAVAJARDIR}
 	@${INSTALL_DATA} ${WRKSRC}/build/lib/${PORTNAME}.jar ${JAVAJARDIR}/
 	@${ECHO_MSG} " [ DONE ]"
+	@${ECHO_MSG} ">> Installing utility scripts and classes..."
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/jaxup-xupdater.jar ${DATADIR}/
+	${INSTALL_SCRIPT} ${WRKDIR}/jaxup-xupdater ${PREFIX}/bin/
+	@${ECHO_MSG} "  [ DONE ]"
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
 	@${MKDIR} ${DOCSDIR}
