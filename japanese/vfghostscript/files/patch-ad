@@ -1,0 +1,11 @@
+--- ../gdevpatch/gdevcdj.c	Wed Oct 16 11:48:37 1996
++++ ./gdevcdj.c	Wed Oct 16 11:35:32 1996
+@@ -1397,7 +1397,7 @@
+   } else if (ptype == ESC_P) {
+       fputs("\033@", prn_stream); /* Reset printer */
+       ep_print_image(prn_stream, 'R', 0, 0); /* reset output routine */
+-  } if (ptype == BJC600J) {
++  } else if (ptype == BJC600J) {
+     bj_init_page(pdev, prn_stream);
+   } else {
+     fputs("\033E", prn_stream);	                     /* Reset printer */

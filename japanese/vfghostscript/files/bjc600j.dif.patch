@@ -1,0 +1,15 @@
+*** bjc600j/devsmak.dif.orig	Tue May 28 23:09:45 1996
+--- bjc600j/devsmak.dif	Tue May 28 23:09:52 1996
+***************
+*** 1,5 ****
+  --- devs.mak.orig	Wed Jun 22 03:29:02 1994
+! +++ 
+  @@ -56,6 +56,9 @@
+   # *	appledmp  Apple Dot Matrix Printer (should also work with Imagewriter)
+   #	bj10e	Canon BubbleJet BJ10e
+--- 1,5 ----
+  --- devs.mak.orig	Wed Jun 22 03:29:02 1994
+! +++ devs.mak
+  @@ -56,6 +56,9 @@
+   # *	appledmp  Apple Dot Matrix Printer (should also work with Imagewriter)
+   #	bj10e	Canon BubbleJet BJ10e

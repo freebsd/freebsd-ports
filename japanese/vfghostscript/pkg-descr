@@ -1,0 +1,39 @@
+This is  ghostscript 2.6.2 with Japanese & VFlib-2.x patch.
+With this package you can see PostScript file on X11 Window System and 
+print out by your printer.
+
+Check before using Ghostscript:
+
+Make sure that your vfontcap is well configured.
+  This package expects by default that 'vfontcap' file contains KANJI entry for:
+	min -  Entry for Mincho
+	goth - Entry for Gothic .
+
+  You can verify that font name min and goth are available by typing:
+  /usr/local/lib/VFlib/ktest -f min
+  /usr/local/lib/VFlib/ktest -f goth
+
+Note: These KANJI entry can be changed to another name by changing 
+/usr/local/lib/ghostscript/kanji/kconfig.ps (kanji/vflib.ps is the original),
+but the name must be consistent in both 'vfontcap' file and 'kconfig.ps' file.
+See /usr/local/lib/ghostscript/doc/gs261j.jis for details.
+
+Many printers are available with this package:
+1.  Canon BJ-10V
+2.  Canon BJC-600J
+3.  HP DeskJet 500C
+4.  HP DeskJet 550C
+5.  HP DeskJet 505J
+6.  generic dot impact printer
+7.  Epson LP-1700, LP-8200 (ESC/PS 300/600 dpi)
+8.  ESC/Page 300dpi generic
+9.  Star JJ-100
+10. LIPS III generic
+11. LIPS IV , IVc generic
+12.  MAG format
+13. MJC720, 800, 900, 5000 (ESC/P at 180/360/720 dpi)
+14. MJ-500C
+15. NEC PC-PR150
+16. NEC PC-PR201
+17. NEC PC-PR1000 /4
+See /usr/local/lib/ghostscript/doc/printers.doc for using these printers.

@@ -1,0 +1,27 @@
+*** zkfvflib.c.orig	Tue May 14 18:13:36 1996
+--- zkfvflib.c	Tue May 14 18:14:27 1996
+***************
+*** 172,182 ****
+    for (code=0;code<256;code++)
+      hash_index[code] = NULL;
+  
+!   pfcap = getenv("VFONTCAP");
+    if (pfcap == NULL) { /* environment variable VFONTCAP is not set. */
+      char *pfcapb = VFONTCAP_BASE;
+      
+!     pfcap = malloc(MAXPATHLEN+3);
+      if (pfcap == NULL) return e_VMerror;
+      
+      if (!access(pfcapb,0)) { /* found on current directory. */
+--- 172,182 ----
+    for (code=0;code<256;code++)
+      hash_index[code] = NULL;
+  
+!   pfcap = (char *)getenv("VFONTCAP");
+    if (pfcap == NULL) { /* environment variable VFONTCAP is not set. */
+      char *pfcapb = VFONTCAP_BASE;
+      
+!     pfcap = (char *)malloc(MAXPATHLEN+3);
+      if (pfcap == NULL) return e_VMerror;
+      
+      if (!access(pfcapb,0)) { /* found on current directory. */
