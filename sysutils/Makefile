@@ -99,6 +99,7 @@
     SUBDIR += p5-Unix-ConfigFile
     SUBDIR += p5-Unix-Syslog
     SUBDIR += paicc
+    SUBDIR += pdumpfs
     SUBDIR += perf
     SUBDIR += personality
     SUBDIR += pib
