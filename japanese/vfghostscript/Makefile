@@ -3,7 +3,7 @@
 # Date created:		14 May 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.8 1997/07/13 18:49:20 max Exp $
+# $Id: Makefile,v 1.9 1997/09/14 21:36:13 max Exp $
 #
 
 DISTNAME=	ghostscript2.6.2
@@ -17,7 +17,7 @@ MASTER_SITES=	${MASTER_SITE_GNU} \
 DISTFILES=	ghostscript-2.6.2.tar.gz ghostscript-fonts-2.6.2.tar.gz \
 		ghostscript-fonts-4.0.tar.gz gs261j10.tar.gz \
 		gs261d13.tar.gz \
-		gdevlips4-current.tar.gz \
+		gdevlips4-1.1.0.tar.gz \
 		bjc600j-0.9.tar.gz gdevmjc-0.7.tar.gz
 
 MAINTAINER=	mita@jp.FreeBSD.org
@@ -39,14 +39,14 @@ pre-patch:
 	  tar xzf ${DISTDIR}/gs261d13.tar.gz ; \
 	  tar xzf ${DISTDIR}/gdevmjc-0.7.tar.gz ; \
 	  tar xzf ${DISTDIR}/bjc600j-0.9.tar.gz ; \
-	  tar xzf ${DISTDIR}/gdevlips4-current.tar.gz ; \
+	  tar xzf ${DISTDIR}/gdevlips4-1.1.0.tar.gz ; \
 	  ${PATCH} ${PATCH_ARGS} < gs261j.diff ; \
 	  ${PATCH} ${PATCH_ARGS} <${FILESDIR}/gdevep82.patch ; \
 	  ${PATCH} ${PATCH_ARGS} <${FILESDIR}/bjc600j.dif.patch >/dev/null 2>&1; \
 	  ${PATCH} ${PATCH_ARGS} <${FILESDIR}/bjc600j.mak.patch >/dev/null 2>&1; \
 	  ${CP} gdevmjc-0.7/gdevmjc.c gdevmjc-0.7/mjc.dev .; \
 	  ${CP} bjc600j/paramod.c . ; \
-	  ${CP} gdevlips4-1.0.1/gdevlips4.c gdevlips4-1.0.1/gdevlips4.mak .; \
+	  ${CP} gdevlips4-1.1.0/gdevlips4.c gdevlips4-1.1.0/gdevlips4.mak .; \
 	  cd drivers ; \
 	  ${CP} gdev10v/gdev10v.c gdev10v/gdev10v.mak .. ; \
 	  ${CP} gdevdmpr/gdevdmpr.c gdevdmpr/gdevdmpr.mak .. ; \
@@ -113,7 +113,7 @@ post-install:
 	  ${CP} ${WRKSRC}/gdevmjc-0.7/MJ700V2C.FAQ ${DOC_DIR} ; \
 	  ${CP} ${WRKSRC}/bjc600j/bjc600j.jis  ${DOC_DIR} ; \
 	  ${CP} ${WRKSRC}/bjc600j/cmds.doc  ${DOC_DIR} ; \
-	  ${CP} ${WRKSRC}/gdevlips4-1.0.1/Readme ${DOC_DIR}/gdevlips4.euc ; \
+	  ${CP} ${WRKSRC}/gdevlips4-1.1.0/Readme ${DOC_DIR}/gdevlips4.euc ; \
 	  cd ${WRKSRC}/drivers ; \
 	  ${CP} gdev10v/gdev10v.jis ${DOC_DIR} ; \
 	  ${CP} gdevcdj/gdev505j.sj ${DOC_DIR} ; \
