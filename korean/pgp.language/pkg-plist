@@ -1,12 +1,12 @@
-lib/pgp/ko.hlp
-lib/pgp/ko2.hlp
-lib/pgp/README.ko
-lib/pgp/voca.txt
-lib/pgp/dict.txt
-@exec mv %D/lib/pgp/config.txt %D/lib/pgp/config.txt.bak
-lib/pgp/config.txt
+share/pgp/ko.hlp
+share/pgp/ko2.hlp
+share/pgp/README.ko
+share/pgp/voca.txt
+share/pgp/dict.txt
+@exec mv %D/share/pgp/config.txt %D/share/pgp/config.txt.bak
+share/pgp/config.txt
 @unexec mv %D/%F.bak %D/%F
-@exec mv %D/lib/pgp/language.txt %D/lib/pgp/language.txt.bak
-lib/pgp/language.txt
+@exec mv %D/share/pgp/language.txt %D/share/pgp/language.txt.bak
+share/pgp/language.txt
 @unexec mv %D/%F.bak %D/%F
-lib/pgp/language.idx
+share/pgp/language.idx

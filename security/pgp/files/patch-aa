@@ -33,7 +33,7 @@
 +
 +freebsd-alpha:
 +	$(MAKE) all LD="$(CC) -s" \
-+	CFLAGS="-DPREFIX=\\\"$(PREFIX)\\\" $(RSAINCDIR) $(OS_CFLAGS)
++	CFLAGS="-DPREFIX=\\\"$(PREFIX)\\\" $(RSAINCDIR) $(OS_CFLAGS) \
 +		-DPORTABLE -DUNIX -DIDEA32 -DMAX_NAMELEN=255"
  
  386bsd:

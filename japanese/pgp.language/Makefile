@@ -25,7 +25,7 @@ PGP_LANGUAGE=	japanese
 PGP_LANG=	ja
 PGP_CHARSET=	noconv
 
-PGPLIB=		${PREFIX}/lib/pgp
+PGPLIB=		${PREFIX}/share/pgp
 OBJS=		language.txt ${PGP_LANG}.hlp README.${PGP_LANG}
 
 do-install:

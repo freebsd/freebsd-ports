@@ -27,7 +27,7 @@ PGP_LANGUAGE=	korean
 PGP_LANG=	ko
 PGP_CHARSET=	noconv
 
-PGPLIB=		${PREFIX}/lib/pgp
+PGPLIB=		${PREFIX}/share/pgp
 OBJS=		language.txt ${PGP_LANG}.hlp README.${PGP_LANG} \
 		${PGP_LANG}2.hlp
 
