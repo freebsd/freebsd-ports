@@ -3187,16 +3187,10 @@ share/servicetypes/ktexteditoreditor.desktop
 share/servicetypes/kurifilterplugin.desktop
 share/servicetypes/renamedlgplugin.desktop
 share/servicetypes/scriptinterface.desktop
-@exec /bin/mkdir -p %D/share/icons/hicolor/32x32/actions/kde
-@exec /bin/mkdir -p %D/share/icons/hicolor/32x32/actions/kde
-@exec /bin/mkdir -p %D/share/icons/hicolor/32x32/actions/kde
-@exec /bin/mkdir -p %D/share/icons/hicolor/22x22/actions/kde
-@exec /bin/mkdir -p %D/share/icons/hicolor/22x22/actions/kde
+@comment empty directories
 @exec /bin/mkdir -p %D/share/icons/hicolor/22x22/actions/kde
 @exec /bin/mkdir -p %D/share/icons/hicolor/32x32/actions/kde
-@exec /bin/mkdir -p %D/share/icons/hicolor/22x22/actions/kde
-@exec /bin/mkdir -p %D/share/icons/hicolor/32x32/actions/kde
-@exec /bin/mkdir -p %D/share/icons/hicolor/22x22/actions/kde
+@comment remove directories
 @dirrm share/servicetypes
 @dirrm share/services/kded
 @dirrm share/services
