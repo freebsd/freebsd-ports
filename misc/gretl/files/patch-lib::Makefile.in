@@ -1,7 +1,7 @@
---- lib/Makefile.in.orig	Sun May 25 04:04:32 2003
-+++ lib/Makefile.in	Tue May 27 09:33:13 2003
-@@ -17,6 +17,11 @@
- FLIB = @FLIB@
+--- lib/Makefile.in.orig	Sun Jun 29 04:06:20 2003
++++ lib/Makefile.in	Fri Jul 25 20:47:07 2003
+@@ -18,6 +18,11 @@
+ 
  have_gtk = @have_gtk@
  
 +datadir = @datadir@
@@ -12,7 +12,7 @@
  ifeq ($(INSTALL_PROGRAM),)
    INSTALL_PROGRAM = $(INSTALL) -m 755
  endif
-@@ -31,7 +36,7 @@
+@@ -32,7 +37,7 @@
  libdir = $(prefix)/lib
  includedir = $(prefix)/include/gretl
  aclocaldir = $(prefix)/share/aclocal
@@ -21,16 +21,16 @@
  
  INSTALLDIRS = $(libdir) $(includedir) $(aclocaldir)
  
-@@ -47,7 +52,7 @@
+@@ -48,7 +53,7 @@
  
- # The LIBS line may need FLIB (-lf2c or equivalent)  at some point
+ # hard-coded -L/usr/local/lib is a bodge!!
  
--LIBS = -lm -ldl -L/usr/local/lib -lz $(XML_LIBS) $(GLIB_LIBS) $(GMP_LIBS)
-+LIBS = -lm -lz $(XML_LIBS) $(GLIB_LIBS) $(GMP_LIBS) $(INTL_LIBS)
+-LIBS = $(LAPACK_LIBS) -lm -ldl -L/usr/local/lib -lz $(XML_LIBS) $(GLIB_LIBS) $(GMP_LIBS)
++LIBS = $(LAPACK_LIBS) -lm -lz $(XML_LIBS) $(GLIB_LIBS) $(GMP_LIBS) $(INTL_LIBS)
  
  #### End of system configuration section. ####
  
-@@ -83,7 +88,7 @@
+@@ -76,7 +81,7 @@
  
  LIBTOOL = ../libtool
  
@@ -39,12 +39,12 @@
  
  COMPILE = $(LIBTOOL) --mode=compile $(CC) -c $(CFLAGS)
  
-@@ -93,7 +98,7 @@
+@@ -86,7 +91,7 @@
  
- $(LIBGRETL): $(OBJS) $(LOBJS) $(AUX_OBJ) $(AUX_LOBJ)
+ $(LIBGRETL): $(LOBJS) $(AUX_LOBJ)
  	$(LIBTOOL) --mode=link $(CC) -o $@ $(LOBJS) $(AUX_LOBJ) \
--	-rpath $(prefix)/lib $(LIBS) -version-info 0:8:0
-+	-rpath $(prefix)/lib $(LIBS) -version-info 0:8:0 $(LDFLAGS)
+-	-rpath $(prefix)/lib $(LIBS) -version-info 0:9:0
++	-rpath $(prefix)/lib $(LIBS) -version-info 0:9:0 $(LDFLAGS)
  
- -include $(OBJS:.o=.d)
+ -include $(LOBJS:.lo=.d)
  

@@ -1,6 +1,6 @@
---- cli/Makefile.in.orig	Mon Apr 28 21:44:49 2003
-+++ cli/Makefile.in	Sun May  4 03:10:33 2003
-@@ -9,7 +9,7 @@
+--- cli/Makefile.in.orig	Sun Jun 29 04:06:18 2003
++++ cli/Makefile.in	Fri Jul 25 20:49:23 2003
+@@ -9,12 +9,16 @@
  exec_prefix = @exec_prefix@
  bindir = @bindir@
  datadir = @datadir@
@@ -9,9 +9,7 @@
  
  have_readline = @have_readline@
  READLINE_LIBS = @READLINE_LIBS@
-@@ -17,6 +17,10 @@
- 
- GMP_CFLAGS = @GMP_CFLAGS@
+ READLINE_CFLAGS = @READLINE_CFLAGS@
  
 +CPPFLAGS = @CPPFLAGS@
 +LDFLAGS = @LDFLAGS@
@@ -20,16 +18,16 @@
  ifeq ($(CC),)
    CC = gcc
  endif
-@@ -41,7 +45,7 @@
+@@ -39,7 +43,7 @@
  
  DEFS = -DLOCALEDIR=\"$(localedir)\" -DHAVE_CONFIG_H
  
--override CFLAGS += -I.. -I$(topsrc) -I$(libsrc) $(GMP_CFLAGS) $(READLINE_CFLAGS) $(DEFS)
-+override CFLAGS += -I.. -I$(topsrc) -I$(libsrc) $(GMP_CFLAGS) $(READLINE_CFLAGS) $(DEFS) $(CPPFLAGS)
+-override CFLAGS += -I.. -I$(topsrc) -I$(libsrc) $(READLINE_CFLAGS) $(DEFS)
++override CFLAGS += -I.. -I$(topsrc) -I$(libsrc) $(READLINE_CFLAGS) $(DEFS) $(CPPFLAGS)
  
  CLI = gretlcli
  LIBTOOL = ../libtool
-@@ -51,7 +55,7 @@
+@@ -49,7 +53,7 @@
  	$(CC) -MM -MG -I$(libsrc) $(DEFS) $< >$*.d 2>/dev/null
  
  $(CLI): $(OBJS)
