@@ -1,0 +1,5 @@
+bin/unicode-config
+include/unicode.h
+lib/libunicode.a
+lib/libunicode.so
+lib/libunicode.so.0
