@@ -7,7 +7,7 @@
 
 PORTNAME=	jakarta-tomcat
 PORTVERSION=	4.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www java
 MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-tomcat-4.0/release/v${PORTVERSION}/bin/ \
 		http://www.metaverse.nl/~ernst/ \
@@ -140,6 +140,10 @@ do-install:
 	@${ECHO_CMD} -n ">> Creating log files..."
 	@${INSTALL} /dev/null ${STDOUT_LOG}
 	@${INSTALL} /dev/null ${STDERR_LOG}
+	@${ECHO_CMD} " [ DONE ]"
+
+	@${ECHO_CMD} -n ">> Creating symlink to tools.jar..."
+	@${LN} -sf ${JAVA_HOME}/lib/tools.jar ${APP_HOME}/common/lib/tools.jar
 	@${ECHO_CMD} " [ DONE ]"
 
 	@${ECHO_CMD} -n ">> Fixing ownership settings..."
