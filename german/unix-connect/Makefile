@@ -25,6 +25,7 @@ CONFIGURE_ARGS+=--with-mail=sendmail
 CONFIGURE_ARGS+=--with-news=cnews
 CONFIGURE_ARGS+=--enable-testing
 CFLAGS+=-g
+CFLAGS:= ${CFLAGS:S/-O[0-9]*//g}	# gcc generates broken code in uwsmtp
 
 post-install:
 .if !defined(NOPORTDOCS)
