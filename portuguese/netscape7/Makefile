@@ -1,31 +1,31 @@
-# New ports collection makefile for: de-netscape7
-# Date created:			28 Feb 2002
-# Whom:				Thomas E. Zander <riggs@rrr.de>
-# based on the www/linux-netscape6 port
+# New ports collection makefile for:		pt_BR-netscape7
+# Date created:					2003-05-23
+# Whom:						trevor
+# based on the german/netscape7 port by Thomas E. Zander
 #
 # $FreeBSD$
 #
 
-PKGNAMEPREFIX?=	de-
-CATEGORIES=	german www linux
-
+PKGNAMEPREFIX=	pt_BR-
+PORTVERSION=	7.0
+CATEGORIES?=	portuguese www linux
+MASTER_SITE_SUBDIR?=${DIST_SUBDIR}/unix/linux22/ewc9e
 DISTFILES=	AIM.xpi \
 		browser.xpi \
-		defldede.xpi \
+		deflptbr.xpi \
 		flash.xpi \
 		jre.xpi \
-		langdede.xpi \
+		langptbr.xpi \
 		mail.xpi \
 		psm.xpi \
-		regde.xpi \
-		regfr.xpi \
+		regbr.xpi \
 		spellchecker.xpi \
 		talkback.xpi \
 		xpcom.xpi
 
-MAINTAINER=	riggs@rrr.de
-COMMENT=	Linux Netscape 6 suite (German)
+MAINTAINER=	trevor@FreeBSD.org
+COMMENT=	Netscape 7 suite (Brazilian Portuguese)
 
-NETSCAPE_LANG=	german
+NETSCAPE_LANG=	portuguese_br
 
 .include "../../www/netscape7/Makefile"
