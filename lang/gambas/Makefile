@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		gambas
-PORTVERSION=		0.94a
+PORTVERSION=		0.95
 CATEGORIES=		lang
 MASTER_SITES=		http://gambas.sourceforge.net/
 
@@ -15,7 +15,7 @@ COMMENT=		Gambas Almost Means BASic
 LIB_DEPENDS=		curl.3:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=		pgrep:${PORTSDIR}/sysutils/pkill
 
-USE_LIBLTDL=		YES
+USE_LIBLTDL=		yes
 USE_KDELIBS_VER=	3
 USE_GETTEXT=		yes
 USE_BZIP2=		yes
@@ -84,6 +84,13 @@ PLIST_SUB+=		SQLITE=""
 .else
 CONFIGURE_ARGS+=	--disable-sqlite
 PLIST_SUB+=		SQLITE="@comment "
+.endif
+
+.if exists(${LOCALBASE}/bin/rpmbuild)
+WITH_RPMBUILD=		yes
+.endif
+.if defined(WITH_RPMBUILD)
+RUN_DEPENDS+=		rpmbuild:${PORTSDIR}/archivers/rpm4
 .endif
 
 pre-configure:

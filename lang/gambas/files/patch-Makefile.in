@@ -1,5 +1,5 @@
---- Makefile.in.orig	Tue Jun 22 12:45:17 2004
-+++ Makefile.in	Tue Jun 22 23:51:34 2004
+--- Makefile.in.orig	Mon Jul 19 23:57:54 2004
++++ Makefile.in	Sat Jul 31 17:31:52 2004
 @@ -35,6 +35,7 @@
  DESTDIR =
  
@@ -8,20 +8,23 @@
  pkglibdir = $(libdir)/@PACKAGE@
  pkgincludedir = $(includedir)/@PACKAGE@
  
-@@ -379,16 +380,16 @@
+@@ -378,19 +379,18 @@
+ 
  
  install-exec-local:
+-	@echo "Installing with ROOT=$(ROOT)"
  	@echo
--	@if test "$(bindir)" != "/usr/bin" && test "$(bindir)" != "/usr/bin/"; then \
+ 
+-	@if test "$(bindir)" != "$(ROOT)/usr/bin" && test "$(bindir)" != "$(ROOT)/usr/bin/"; then \
 -	 echo "Making symbolic links in /usr/bin..."; \
--	 rm -f /usr/bin/gbx; \
--	 ln -s $(bindir)/gbx /usr/bin/gbx; \
--	 rm -f /usr/bin/gbc; \
--	 ln -s $(bindir)/gbc /usr/bin/gbc; \
--	 rm -f /usr/bin/gba; \
--	 ln -s $(bindir)/gba /usr/bin/gba; \
--	 rm -f /usr/bin/gbi; \
--	 ln -s $(bindir)/gbi /usr/bin/gbi; \
+-	 rm -f $(ROOT)/usr/bin/gbx; \
+-	 ln -s $(bindir)/gbx $(ROOT)/usr/bin/gbx; \
+-	 rm -f $(ROOT)/usr/bin/gbc; \
+-	 ln -s $(bindir)/gbc $(ROOT)/usr/bin/gbc; \
+-	 rm -f $(ROOT)/usr/bin/gba; \
+-	 ln -s $(bindir)/gba $(ROOT)/usr/bin/gba; \
+-	 rm -f $(ROOT)/usr/bin/gbi; \
+-	 ln -s $(bindir)/gbi $(ROOT)/usr/bin/gbi; \
 +	@if test "$(bindir)" != "%%PREFIX%%/bin" && test "$(bindir)" != "%%PREFIX%%/bin/"; then \
 +	 echo "Making symbolic links in %%PREFIX%%/bin..."; \
 +	 rm -f %%PREFIX%%/bin/gbx; \
@@ -35,14 +38,14 @@
  	fi
  
  	@echo
-@@ -401,28 +402,28 @@
+@@ -404,28 +404,28 @@
  	@echo
  	@echo "Installing the development environment..."
  	@(cd $(srcdir)/app; d=`pwd`; for p in *; do echo "Compiling $$p..."; cd $$d/$$p; \
--	  gbc -ag; gba; rm -rf .gambas; $(INSTALL) $$p $(bindir); done)
--	@if test "$(bindir)" != "/usr/bin" && test "$(bindir)" != "/usr/bin/"; then \
--	 rm -f /usr/bin/gambas; \
--	 ln -s $(bindir)/gambas /usr/bin/gambas; \
+-	  $(bindir)/gbc -ag; $(bindir)/gba; rm -rf .gambas; $(INSTALL) $$p $(bindir); done)
+-	@if test "$(bindir)" != "$(ROOT)/usr/bin" && test "$(bindir)" != "$(ROOT)/usr/bin/"; then \
+-	 rm -f $(ROOT)/usr/bin/gambas; \
+-	 ln -s $(bindir)/gambas $(ROOT)/usr/bin/gambas; \
 +	  %%PREFIX%%/bin/gbc -ag; %%PREFIX%%/bin/gba; rm -rf .gambas; $(INSTALL) $$p $(bindir); done)
 +	@if test "$(bindir)" != "%%PREFIX%%/bin" && test "$(bindir)" != "%%PREFIX%%/bin/"; then \
 +	 rm -f %%PREFIX%%/bin/gambas; \
@@ -62,7 +65,7 @@
 -	@cp -R $(srcdir)/examples $(pkgdatadir)
 -	@(cd $(pkgdatadir)/examples; d=`pwd`; for p in */ */*/; do cd $$d/$$p; \
 -	  if test -e .project; then \
--	    echo "Compiling $$p..."; cd $$d/$$p; gbc -ag; gba; \
+-	    echo "Compiling $$p..."; cd $$d/$$p; $(bindir)/gbc -ag; $(bindir)/gba; \
 -	  fi \
 -	done)
 +# FreeBSD-Doc-Comment	@echo
@@ -83,4 +86,4 @@
 +# FreeBSD-Doc-Comment	done)
  
  uninstall-local:
- 	@rm -f /usr/bin/gbx
+ 	@rm -f $(ROOT)/usr/bin/gbx
