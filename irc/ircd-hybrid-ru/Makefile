@@ -7,13 +7,13 @@
 
 PORTNAME=	ircd
 PORTVERSION=	7.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	irc russian
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://rusunix.org/pub/FreeBSD/distfiles/
 MASTER_SITE_SUBDIR=	ircd-hybrid-ru
 PKGNAMESUFFIX=	-hybrid-ru
-DISTNAME=	ircd-hybrid-ru-7.0rc4
+DISTNAME=	ircd-hybrid-ru-7.0rc12
 
 MAINTAINER=	aquatique-ports@rambler.ru
 COMMENT=	Russian version of well known hybrid IRC server
