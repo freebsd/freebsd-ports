@@ -1,0 +1,59 @@
+*** ../display.c	Mon Aug 25 18:45:10 1997
+--- display.c	Mon Aug 25 18:48:31 1997
+***************
+*** 8,13 ****
+--- 8,14 ----
+  #include <curses.h>
+  #include <signal.h>
+  #include <ctype.h>
++ #include <stdio.h>
+  
+  
+  #define		DEFAULT_DELAY	5
+***************
+*** 16,30 ****
+  static	char	*Command;
+  static	int	Delay;
+  
+  
+  main(argc, argv)
+  int	argc;
+  char	*argv[];
+  {
+- 	extern	void	parse_args(),
+- 			die(),
+- 			display();
+- 
+  	parse_args(argc, argv);
+  
+  	signal(SIGHUP, die);
+--- 17,28 ----
+  static	char	*Command;
+  static	int	Delay;
+  
++ static void die(), display(), parse_args(), usage();
+  
+  main(argc, argv)
+  int	argc;
+  char	*argv[];
+  {
+  	parse_args(argc, argv);
+  
+  	signal(SIGHUP, die);
+***************
+*** 54,60 ****
+  
+  static void display()
+  {
+! 	auto	FILE	*fp, *popen();
+  	auto	char	ch;
+  
+  	if (!(fp = popen(Command, "r"))) {
+--- 52,58 ----
+  
+  static void display()
+  {
+! 	auto	FILE	*fp;
+  	auto	char	ch;
+  
+  	if (!(fp = popen(Command, "r"))) {
