@@ -7,12 +7,12 @@
 
 PORTNAME=	opera
 PKGNAMEPREFIX=	linux-
-PORTVERSION=	6.0-20011122.1
-PORTREVISION=	1
+OPERAVERSION=	6.0-20011122.1
+PORTVERSION=	${OPERAVERSION:S/-/./}
 CATEGORIES=	www linux
 MASTER_SITES=	http://opera.online.no/linux/600/tp1/ \
 		ftp://ftp.opera.com/pub/opera/linux/600/tp1/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-static_qt.i386
+DISTNAME=	${PORTNAME}-${OPERAVERSION}-static_qt.i386
 
 MAINTAINER=	des@FreeBSD.org
 
@@ -38,7 +38,7 @@ do-install:
 	    --docdir=${DOCSDIR} \
 	    --sharedir=${DATADIR} \
 	    --plugindir=${DATADIR}/plugins )
-	rmdir ${DATADIR}/uninst/rollback_${PORTVERSION}
+	${RM} -rf ${DATADIR}/uninst/rollback_${OPERAVERSION}
 	rmdir ${DATADIR}/uninst
 
 .include <bsd.port.mk>
