@@ -18,6 +18,14 @@ PATCHFILES=	patches_${APACHE_VERSION}rusPL${RA_VERSION}.tar.gz
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	The extremely popular Apache http server.  Very fast, very clean
 
+# New ports feature: conflicts
+CONFLICTS=	apache+ipv6-* \
+		apache+mod_ssl-* \
+		apache-* \
+		apache_fp-* \
+		publicfile-* \
+		ru-apache+mod_ssl-*
+
 RA_VERSION=	30.17
 APACHE_VERSION=	1.3.27
 
