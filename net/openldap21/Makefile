@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openldap
-PORTVERSION=	2.0.7
-PORTREVISION=	1
+PORTVERSION=	2.0.8
 CATEGORIES=	net databases
 MASTER_SITES=	ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
 		ftp://ftp.net.lut.ac.uk/openldap/%SUBDIR%/ \
@@ -78,19 +77,19 @@ BINS=		bin/ldapadd \
 .include "${FILESDIR}/manpages"
 
 post-configure:
-	cd ${WRKSRC} ; ${PATCH} < ${FILESDIR}/libtool.diff
+	@cd ${WRKSRC} ; ${PATCH} < ${FILESDIR}/libtool.diff
 
 pre-build:
-	cd ${WRKSRC} ; ${MAKE} depend
+	@cd ${WRKSRC} ; ${MAKE} depend
 
 post-build:
-	${SED} 's,@@PREFIX@@,${PREFIX},g' ${FILESDIR}/slapd.sh >${WRKDIR}/slapd.sh
+	@${SED} 's,@@PREFIX@@,${PREFIX},g' ${FILESDIR}/slapd.sh >${WRKDIR}/slapd.sh
 
 post-install:
 .for f in ${BINS}
-	strip ${PREFIX}/${f}
+	@strip ${PREFIX}/${f}
 .endfor
-	${INSTALL_SCRIPT} ${WRKDIR}/slapd.sh ${PREFIX}/etc/rc.d/slapd.sh.sample
+	@${INSTALL_SCRIPT} ${WRKDIR}/slapd.sh ${PREFIX}/etc/rc.d/slapd.sh.sample
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
