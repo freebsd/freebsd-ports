@@ -16,7 +16,8 @@ EXTRACT_SUFX=  .tgz
 MAINTAINER=	alan@clegg.com
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_IMLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	imlib
 
 post-build:
 	cd ${WRKSRC}; \

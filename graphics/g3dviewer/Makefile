@@ -15,7 +15,8 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gtkgl:${PORTSDIR}/x11-toolkits/gtkglarea
 
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 USE_MESA=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	\

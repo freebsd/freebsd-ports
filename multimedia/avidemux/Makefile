@@ -24,7 +24,8 @@ BUILD_DEPENDS=	\
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_XLIB=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
 		-I${LINUXBASE}/usr/include/divx" \

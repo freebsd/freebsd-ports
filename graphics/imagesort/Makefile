@@ -15,7 +15,8 @@ MASTER_SITE_SUBDIR=	apps/graphics/viewers/X
 MAINTAINER=	markp@FreeBSD.org
 
 USE_X_PREFIX=	yes
-USE_IMLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	imlib
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/imagesort ${PREFIX}/bin

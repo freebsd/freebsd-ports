@@ -34,7 +34,8 @@ CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 CONFIGURE_ARGS= --with-extralibdir=${LOCALBASE}/lib \
 		--with-extraincdir=${LOCALBASE}/include
 
-WANT_GTK=	yes
+USE_GNOMENG=	yes
+WANT_GNOME=	yes
 MAN1=		mplayer.1
 MLINKS=		mplayer.1 mencoder.1
 MANCOMPRESSED=	no
@@ -76,12 +77,13 @@ WITH_XANIM=	yes
 CFLAGS+=       -O3 -ffast-math -fomit-frame-pointer
 .endif
 
-.if defined(HAVE_GTK)
+.if ${HAVE_GNOME:Mgtk12}!=""
 WITH_GUI=	yes
 .endif
 
 .if defined(WITH_GUI)
-USE_GTK=	yes
+USE_GNOME+=	gtk12
+PKGNAMESUFFIX=	-gtk
 CONFIGURE_ARGS+=	--enable-gui
 .endif
 
@@ -160,7 +162,7 @@ pre-everything::
 	@${ECHO_MSG} "You can enable additional compilation optimizations"
 	@${ECHO_MSG} "by defining WITH_OPTIMIZED_CFLAGS"
 .endif
-.if !defined(WITH_GUI) && !defined(HAVE_GTK)
+.if !defined(WITH_GUI) && ${HAVE_GNOME:Mgtk12}==""
 	@${ECHO_MSG} "You can enable GTK GUI by defining WITH_GUI."
 .endif
 .if !defined(WITH_DVD)

@@ -21,7 +21,8 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 .if defined(WITH_IMLIB) || defined(KDE_WITH_IMLIB)
-USE_IMLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	imlib
 PLIST_SUB+=	IMLIB=""
 CONFIGURE_ARGS+=	--with-imlib-config=${X11BASE}/bin
 .else

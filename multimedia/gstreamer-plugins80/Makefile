@@ -41,7 +41,8 @@ INSTALLS_SHLIB=	yes
 PLIST_SUB=	LOCALBASE="${LOCALBASE}"
 
 # for esound detection
-WANT_ESOUND=	yes
+USE_GNOMENG=	yes
+WANT_GNOME=	yes
 
 MAN1=	gst-launch-ext.1 gst-visualise.1
 
@@ -138,7 +139,8 @@ WITH_AVIFILE=yes
 
 # esound
 .if exists(${LOCALBASE}/lib/libesd.a)
-WITH_ESOUND=yes
+USE_GNOME+=	esound
+PKGNAMESUFFIX=	-esound
 .endif
 
 # flac
@@ -263,12 +265,13 @@ PLIST_SUB+=	AVIFILE=""
 .endif
 
 # esound
-.if !(defined(HAVE_ESOUND) || defined(WITH_ESOUND))
+.if !(${HAVE_GNOME:Mesound}!="" || defined(WITH_ESOUND))
 CONFIGURE_ARGS+=	--disable-esd \
 			--disable-esdtest
 PLIST_SUB+=	ESOUND="@comment "
 .else
-USE_ESOUND=	yes
+USE_GNOME+=	esound
+PKGNAMESUFFIX=	-esound
 CONFIGURE_ARGS+=	--with-esd-prefix=${LOCALBASE}  \
 			--with-esd-exec-prefix=${LOCALBASE}
 PLIST_SUB+=	ESOUND=""
@@ -465,7 +468,7 @@ pre-everything::
 	@${ECHO_MSG} '===>'
 	@${ECHO_MSG} '===> Define WITH_AVIFILE to enable avifile Video plugin'
 .endif
-.if !(defined(HAVE_ESOUND) || defined(WITH_ESOUND))
+.if !(${HAVE_GNOME:Mesound}!="" || defined(WITH_ESOUND))
 	@${ECHO_MSG} '===>'
 	@${ECHO_MSG} '===> Define WITH_ESOUND to enable esound Audio plugin'
 .endif

@@ -13,7 +13,6 @@ MASTER_SITES=	ftp://wolfpack.twu.net/users/wolfpack/
 MAINTAINER=	sobomax@FreeBSD.org
 
 LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea \
-		Imlib.5:${PORTSDIR}/graphics/imlib \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/vertex
@@ -23,7 +22,8 @@ IMLIB_CONFIG?=	${X11BASE}/bin/imlib-config
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_MESA=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	imlib
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		IMLIB_CONFIG="${IMLIB_CONFIG}"
 INSTALL_TARGET=	vertex_install

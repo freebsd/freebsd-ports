@@ -21,7 +21,8 @@ LIB_DEPENDS=	xine.2:${PORTSDIR}/graphics/libxine \
 		intl.4:${PORTSDIR}/devel/gettext
 
 USE_X_PREFIX=	yes
-USE_IMLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	imlib
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

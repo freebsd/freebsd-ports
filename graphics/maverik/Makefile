@@ -18,7 +18,8 @@ LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 USE_REINPLACE=	yes
 USE_SUBMAKE=	yes
 USE_MESA=	yes
-WANT_GTK=	yes
+USE_GNOMENG=	yes
+WANT_GNOME=	yes
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		REALCURDIR="${.CURDIR}" \
 		DISTNAME="${DISTNAME}"
@@ -37,8 +38,9 @@ CONFIGURE_ARGS+=	--PNGLIBS="-L${LOCALBASE}/lib -lpng" \
 			--PNGINCL="-I${LOCALBASE}/include"
 .endif
 
-.if defined(HAVE_GTK)
-USE_GTK=	yes
+.if ${HAVE_GNOME:Mgtk12}!=""
+USE_GNOME+=	gtk12
+PKGNAMESUFFIX=	-gtk
 CONFIGURE_ARGS+=	--GTK
 PLIST_SUB+=	GTK=""
 .else

@@ -21,10 +21,11 @@ LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 RUN_DEPENDS=	ogle:${PORTSDIR}/graphics/ogle
 
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
+WANT_GNOME=	yes
 USE_XPM=	yes
 USE_REINPLACE=	yes
-WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-dvd-includes=${LOCALBASE}/include \
@@ -38,8 +39,9 @@ CONFIGURE_ARGS=	--with-dvd-includes=${LOCALBASE}/include \
 
 .include <bsd.port.pre.mk>
 
-.ifdef(HAVE_GNOME)
-USE_GNOME=	yes
+.if ${HAVE_GNOME:Mlibcapplet}!=""
+USE_GNOME+=	libcapplet
+PKGNAMESUFFIX=	-gnome
 SHARE_DATADIR=	share/gnome
 .else
 SHARE_DATADIR=	share

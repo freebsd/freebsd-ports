@@ -15,11 +15,10 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	netchild@FreeBSD.org
 
-LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf/
-
 # GNOME parts aren't prefix safe, they install into "gnome-config --prefix"
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
+USE_GNOME=	gdkpixbuf
 WANT_GNOME=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
@@ -33,7 +32,7 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS}" CPPFLAGS="-I${LOCALBASE}/include" \
 USE_GNOME+= gnomeprefix gnomehack libcapplet
 PKGNAMESUFFIX=	-gnome
 .else
-USE_GTK=	yes
+USE_GNOME+=	gtk12
 .endif
 
 MAN1=		chbg.1

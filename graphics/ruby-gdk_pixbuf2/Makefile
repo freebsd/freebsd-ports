@@ -16,15 +16,13 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk.so:${PORTSDIR}/x11-toolkits/ruby-gtk
 
-USE_GNOMECTRL=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 USE_XLIB=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	glib12
+USE_GNOME=	glib12 libcapplet gdkpixbuf
 
 .include "${.CURDIR}/../../x11/ruby-gnome/Makefile.common"
 
