@@ -19,7 +19,7 @@ EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER=	yoichi@FreeBSD.org
 
-RUN_DEPENDS=	compface:${PORTSDIR}/graphics/compface
+RUN_DEPENDS=	compface:${PORTSDIR}/mail/faces
 
 EMACS_PORT_NAME?=	emacs21
 
