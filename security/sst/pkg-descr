@@ -1,0 +1,23 @@
+Sst  can  be used to connect to SSL-encrypted network ser-
+vices or it can be used as an  SSL  front-end  to  network
+servers.   Sst  can  be used interactively, or in an inetd
+setting, or it can be embedded inside other programs  (eg.
+Amanda).
+
+
+One of the main goals of sst is to be as basic as possible
+so in most non-embedded cases sst uses netcat to setup the
+networking  I/O.  Sst uses a socketpair(2) pipe to stay in
+contact with its netcat child process.  In  this  way  sst
+only has to concern itself with file descriptors.
+
+In the embedded mode sst expects the parent program to set
+up the networking I/O and to provide the appropriate  file
+descriptors.   In  embedded client mode ("-c"), clear data
+is read from (or written to) stdin  (fildes  0)  and  SSL-
+encrypted data is read from (or written to) stdout (fildes
+1).  In embedded server mode ("-s"), SSL-encrypted data is
+read  from  (or written to) stdin and clear data read from
+(or written to) stdout.
+
+WWW: http://utcc.utoronto.ca/~pkern/stuff/sst/
