@@ -1,10 +1,19 @@
---- bounce.c.orig	Tue Sep 28 08:20:32 1999
-+++ bounce.c	Tue Sep 28 08:22:33 1999
-@@ -20,13 +20,14 @@
+--- bounce.c.orig	Fri Jan 14 20:47:39 2000
++++ bounce.c	Fri Jan 14 20:48:56 2000
+@@ -1,5 +1,7 @@
+ /* socket bouncer, by orabidoo  12 Feb '95 
+    using code from mark@cairo.anu.edu.au's general purpose telnet server.
++   Hacked by scot@poptart.org (April 1999) to allow a local bind address
++   and syslog logging.
+ */
+ 
+ #include <stdio.h>
+@@ -20,13 +22,15 @@
  #include <sys/ioctl.h>
  #include <signal.h>
  #include <sys/wait.h>
 +#include <unistd.h>
++#include <syslog.h>
 +#include <stdlib.h>
 +#include <string.h>
  
@@ -17,8 +26,96 @@
  
  void sigchld() {
    signal(SIGCHLD, sigchld);
-@@ -182,7 +183,7 @@
-     srv_addr.sin_addr.s_addr=htonl(INADDR_ANY);
+@@ -138,27 +142,45 @@
+     int myport=DEFAULT_PORT, remoteport;
+     struct sockaddr_in rem_addr, srv_addr, cl_addr;
+     char *myname;
+-    struct hostent *hp;
++    struct hostent *hp, *hpLocal;
++
++    extern char *optarg;
++    extern int optind;
++    char *hostname = NULL;
++    char ch;
+ 
+     myname=argv[0];
+-    if (argc==5) {
+-	if (strcmp(argv[1],"-p")==0) {
+-	    if ((myport=atoi(argv[2]))==0) {
+-		fprintf(stderr,"Bad port number.\n");
+-		exit(-1);
+-	    }
+-	    argv+=2;
+-	    argc-=2;
+-	} else {
+-	    fprintf(stderr,"Use: %s [-p localport] machine port \n",myname);
+-	    exit(-1);
++
++    /* Process arguments */
++
++    while( (ch = getopt(argc, argv, "p:a:")) != -1  ) {
++      switch(ch) { 
++      case 'a':
++	hostname = malloc( strlen(optarg) + 1);
++	if( !hostname ) {
++	  fprintf( stderr, "Can't allocate memory!\n" );
++	  exit(-1);
++	}
++	strcpy( hostname, optarg );
++	break;
++
++      case 'p':
++	if ((myport=atoi(optarg))==0) {
++	  fprintf(stderr,"Bad port number.\n");
++	  exit(-1);
+ 	}
++	break;
++      }
+     }
+-    if (argc!=3) {
+-	fprintf(stderr,"Use: %s [-p localport] machine port \n",myname);
++
++    argc -= optind;
++    argv += optind;
++
++    if (argc!=2) {
++	fprintf(stderr,"Use: %s [-a localaddr] [-p localport] machine port \n",myname);
+ 	exit(-1);
+     }
+-    if ((remoteport=atoi(argv[2]))<=0) {
++    if ((remoteport=atoi(argv[1]))<=0) {
+ 	fprintf(stderr, "Bad remote port number.\n");
+ 	exit(-1);
+     }
+@@ -169,8 +191,8 @@
+ 
+     cl_addr.sin_family=AF_INET;
+     cl_addr.sin_port=htons(remoteport);
+-    if ((hp=gethostbyname(argv[1]))==NULL) {
+-	cl_addr.sin_addr.s_addr=inet_addr(argv[1]);
++    if ((hp=gethostbyname(argv[0]))==NULL) {
++	cl_addr.sin_addr.s_addr=inet_addr(argv[0]);
+ 	if (cl_addr.sin_addr.s_addr==-1) {
+ 	    fprintf(stderr, "Unknown host.\n");
+ 	    exit(-1);
+@@ -178,11 +200,22 @@
+     } else
+ 	cl_addr.sin_addr=*(struct in_addr *)(hp->h_addr_list[0]);
+ 
++    if( hostname ) {
++      if ((hpLocal=gethostbyname(hostname))==NULL) {
++	srv_addr.sin_addr.s_addr=inet_addr(hostname);
++	if (srv_addr.sin_addr.s_addr==-1) {
++	    fprintf(stderr, "Unknown host: %s\n", hostname);
++	    exit(-1);
++	}
++    } else
++	srv_addr.sin_addr=*(struct in_addr *)(hp->h_addr_list[0]);
++    }
++
+     srv_addr.sin_family=AF_INET;
+-    srv_addr.sin_addr.s_addr=htonl(INADDR_ANY);
++    /*    srv_addr.sin_addr.s_addr=htonl(INADDR_ANY); */
      srv_addr.sin_port=htons(myport);
      srv_fd=socket(PF_INET,SOCK_STREAM,0);
 -    if (bind(srv_fd,&srv_addr,sizeof(srv_addr))==-1) {
@@ -26,7 +123,16 @@
  	perror("bind");
          exit(-1);
      }
-@@ -202,7 +203,7 @@
+@@ -190,7 +223,7 @@
+ 
+     signal(SIGCHLD, sigchld);
+     printf("Ready to bounce connections from port %i to %s on port %i\n",
+-	   myport, argv[1], remoteport);
++	   myport, argv[0], remoteport);
+     close(0); close(1); close(2);
+     chdir("/");
+ #ifdef TIOCNOTTY
+@@ -202,11 +235,13 @@
      if (fork()) exit(0);
      while (1) {
  	len=sizeof(rem_addr);
@@ -35,3 +141,9 @@
  	if (rem_fd<0) {
  	  if (errno==EINTR) continue;
  	  exit(-1);
+         }
++	syslog( LOG_NOTICE, "connection from %s to local port %i.  Bouncing to %s, %i",
++		inet_ntoa(rem_addr.sin_addr), myport, argv[0], remoteport );
+ 	switch(fork()) {
+ 	  case -1:
+ 	    /* we're in the background.. no-one to complain to */
