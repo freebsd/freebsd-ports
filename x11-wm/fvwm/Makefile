@@ -3,7 +3,7 @@
 # Date created:		12 May 1995
 # Whom:			me
 #
-# $Id: Makefile,v 1.17 1995/05/13 03:13:07 asami Exp $
+# $Id: Makefile,v 1.18 1995/05/30 09:54:14 asami Exp $
 #
 
 DISTNAME=	fvwm-1.24r
@@ -16,6 +16,7 @@ LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
 USE_IMAKE=	yes
 XMKMF=		xmkmf
+ALL_TARGET=	Makefiles all
 
 post-install:
 	@mkdir -p ${PREFIX}/include/X11/pixmaps
