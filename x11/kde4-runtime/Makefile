@@ -8,6 +8,7 @@
 
 PORTNAME=	kdebase
 PORTVERSION=	${KDE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -65,7 +66,7 @@ post-build:
 		| ${SED} -e 's,%%X11BASE%%,${X11BASE},g' > ${PKGMESSAGE}
 	@${CAT} ${PKGDIR}/pkg-install | ${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
 		| ${SED} -e 's,%%X11BASE%%,${X11BASE},g' > ${PKGINSTALL}
-	@${CAT} ${FILESDIR}/kdm.sh | ${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
+	@${CAT} ${FILESDIR}/genkdmconf.sh | ${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
 		| ${SED} -e 's,%%X11BASE%%,${X11BASE},g' > ${WRKDIR}/genkdmconf.sh
 
 post-install:
