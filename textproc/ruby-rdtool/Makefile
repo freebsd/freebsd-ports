@@ -15,9 +15,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 
 BUILD_DEPENDS=	${DEPEND_RUBY_AMSTD} \
-		racc:${PORTSDIR}/devel/ruby-racc \
-		${RUBY_SITELIBDIR}/optparse.rb:${PORTSDIR}/devel/ruby-optparse
-RUN_DEPENDS=	${RUBY_SITELIBDIR}/optparse.rb:${PORTSDIR}/devel/ruby-optparse
+		racc:${PORTSDIR}/devel/ruby-racc
 
 USE_RUBY=	yes
 
@@ -32,9 +30,8 @@ DOCS_JA=	README.ja.html	doc/rd-draft.rd.ja	doc/rd-draft.ja.html
 .include <bsd.port.pre.mk>
 
 .if ${RUBY_VER} < 1.7
-BUILD_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/strscan.so:${PORTSDIR}/lang/ruby16-shim-ruby18
-RUN_DEPENDS+=	${RUBY_SITELIBDIR}/racc/parser.rb:${PORTSDIR}/lang/ruby16-shim-ruby18 \
-		${RUBY_SITEARCHLIBDIR}/strscan.so:${PORTSDIR}/lang/ruby16-shim-ruby18
+BUILD_DEPENDS+=	${RUBY_SITELIBDIR}/optparse.rb:${PORTSDIR}/lang/ruby16-shim-ruby18
+RUN_DEPENDS+=	${RUBY_SITELIBDIR}/optparse.rb:${PORTSDIR}/lang/ruby16-shim-ruby18
 .endif
 
 do-configure:

@@ -55,8 +55,7 @@ INSTALL_TARGET+=	install-doc
 .include <bsd.port.pre.mk>
 
 .if ${RUBY_VER} < 1.7
-RUN_DEPENDS+=	${RUBY_SITELIBDIR}/optparse.rb:${PORTSDIR}/devel/ruby-optparse \
-		${RUBY_SITEARCHLIBDIR}/features/ruby18/file.so:${PORTSDIR}/lang/ruby16-shim-ruby18
+RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/features/ruby18/file.so:${PORTSDIR}/lang/ruby16-shim-ruby18
 .endif
 
 pre-install:
