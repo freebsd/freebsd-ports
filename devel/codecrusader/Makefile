@@ -9,7 +9,8 @@ PORTNAME=	code_crusader
 PORTVERSION=	2.1.4
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.cs.itu.edu.tr/pub/linux/x11/jx/
+MASTER_SITES=	ftp://ftp.bitcon.no/.2/linuxberg/files/x11/dev/ \
+		ftp://ftp.krasnodar.ru/pub/unix/IDE/CodeCrusader/
 DISTNAME=	${PORTNAME}_source-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org

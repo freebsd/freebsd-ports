@@ -8,8 +8,7 @@
 PORTNAME=	arrow
 PORTVERSION=	1.0.8
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.newplanetsoftware.com/pub/arrow/source/ \
-		ftp://ftp.cs.itu.edu.tr/pub/linux/x11/jx/
+MASTER_SITES=	ftp://ftp.uniovi.es/pub/unix/mail/
 DISTNAME=	Arrow_source-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
