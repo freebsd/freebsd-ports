@@ -7,8 +7,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	nmap-2.30BETA17
-PKGNAME=	nmap-2.3b17
+DISTNAME=	nmap-2.30BETA18
+PKGNAME=	nmap-2.3b18
 CATEGORIES=	security net
 MASTER_SITES=	http://www.insecure.org/nmap/dist/  \
 		ftp://nuxi.ucdavis.edu/pub/misc/  \
