@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.160 1997/10/31 13:06:54 tg Exp $
+# $Id: Makefile,v 1.161 1997/11/01 14:34:08 se Exp $
 #
 
     SUBDIR += FWF
@@ -18,6 +18,7 @@
     SUBDIR += emiclock
     SUBDIR += emu
     SUBDIR += enlightenment
+    SUBDIR += eterm
     SUBDIR += etlfonts
     SUBDIR += explorer
     SUBDIR += fbsd-icons
