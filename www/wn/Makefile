@@ -3,7 +3,7 @@
 # Date created:         4 May 1995
 # Whom:                 adam
 #
-# $Id: Makefile,v 1.6 1995/12/08 22:07:46 asami Exp $
+# $Id: Makefile,v 1.7 1996/01/14 23:00:24 adam Exp $
 #
 
 DISTNAME=       wn-1.12.3
@@ -36,6 +36,6 @@ post-install:
 	else \
 	    install -c -o bin -g bin -m 644 ${WRKDIR}/index ${PREFIX}/wn; \
 	fi
-	@cd ${PREFIX}/wn; ../sbin/wndex -r
+	@cd ${PREFIX}/wn; ../bin/wndex -r
 
 .include <bsd.port.mk>
