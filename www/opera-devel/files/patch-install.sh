@@ -1,6 +1,6 @@
---- install.sh.orig	Thu Oct  2 14:24:57 2003
-+++ install.sh	Thu Oct  2 18:11:45 2003
-@@ -728,9 +728,7 @@
+--- install.sh.orig	Mon Oct  6 15:01:39 2003
++++ install.sh	Wed Oct  8 22:36:31 2003
+@@ -760,9 +760,7 @@
  
      wrapper_opera_plugin_paths="    \"\${HOME}/.opera/plugins\" \\
      ${str_localdirplugin} \\
@@ -11,15 +11,7 @@
  
      case "${machine}:${os}" in
  	i[3456]86:Linux|i[3456]86:FreeBSD|i[3456]86:NetBSD|i[3456]86:OpenBSD)
-@@ -744,7 +742,6 @@
-     /usr/java/jre1.4.0/plugin/i386/ns4 \\
-     /usr/java/jre1.3.1/plugin/i386/ns4 \\
-     /usr/lib/j2re1.3/plugin/i386/netscape4 \\
--    /usr/local/jdk1.3.1/jre/plugin/i386/ns4 \\
-     /usr/local/linux-jdk1.3.1/jre/plugin/i386/ns4 \\"
- 	    wrapper_ibmjava="
- 	    IBMJava2-141/jre \\
-@@ -796,15 +793,10 @@
+@@ -817,15 +815,10 @@
  	;;
      esac
      wrapper_netscape_plugin_paths="
@@ -38,7 +30,7 @@
  
      wrapper_file="${wrapper_dir}/opera"
      
-@@ -960,11 +952,8 @@
+@@ -981,11 +974,8 @@
  
  # Acrobat Reader
  for BINDIR in \\
@@ -52,9 +44,9 @@
      ; do
      if test -d \${BINDIR} ; then PATH=\${PATH}:\${BINDIR}; fi
  done
-@@ -1222,44 +1211,6 @@
+@@ -1243,29 +1233,6 @@
  
- 	if test "${bool_destdir}" = "no"; then
+ 	if test -z "${OPERADESTDIR}"; then
  
 -	# System wide configuration files
 -	config_dir='/usr/local/etc'
@@ -64,27 +56,12 @@
 -	    echo "  $config_dir/opera6rc"
 -	    echo "  $config_dir/opera6rc.fixed"
 -	    echo " cannot be prefixed"
--	    echo "Do you want to install them [y,n | yes,no]?"
--	    while true; do
--		read install_config
--		case "${install_config}" in
--
--		    ''|[yY]|[yY][eE][sS])
--			backup $config_dir/opera6rc opera6rc config
--			backup $config_dir/opera6rc.fixed opera6rc.fixed config
--			cp $cpv $cpf config/opera6rc $config_dir
--			cp $cpv $cpf config/opera6rc.fixed $config_dir
--			break
--			;;
--
--		    [nN]|[nN][oO])
--			break
--			;;
--		    *)
--			echo 'Invalid answer, try again:'
--			;;
--		esac
--	    done
+-	    if con_firm "Do you want to install them"; then
+-		backup $config_dir/opera6rc opera6rc config
+-		backup $config_dir/opera6rc.fixed opera6rc.fixed config
+-		cp $cpv $cpf config/opera6rc $config_dir
+-		cp $cpv $cpf config/opera6rc.fixed $config_dir
+-	    fi
 -	else
 -	    echo
 -	    echo "User \"${USERNAME}\" does not have write access to $config_dir"
@@ -97,7 +74,7 @@
       # Shorcuts and Icons
  	icons
  	gnome
-@@ -1350,22 +1301,22 @@
+@@ -1356,22 +1323,22 @@
  
      debug_msg 0 "in icons()"
  
@@ -132,7 +109,7 @@
      fi
    
      if test ! -d /etc/X11/wmconfig/; then
-@@ -1431,33 +1382,33 @@
+@@ -1437,33 +1404,33 @@
        fi
        # end /opt/gnome share
  
@@ -187,7 +164,7 @@
            fi
  	fi
  	# end /usr/share/gnome link
-@@ -1497,12 +1448,12 @@
+@@ -1503,12 +1470,12 @@
  
      fi  
      
@@ -205,7 +182,7 @@
      fi
  }
  
-@@ -1526,8 +1477,8 @@
+@@ -1532,8 +1499,8 @@
        fi
        if test -w /opt/kde/share/applnk/Internet; then generate_desktop /opt/kde/share/applnk/Internet; fi
  
