@@ -1,7 +1,7 @@
 bin/astrolog
-share/astrolog/helpfile.520
-share/astrolog/readme.520
-info/astrolog.info.gz
+share/doc/astrolog/Helpfile.530
+share/doc/astrolog/Readme.530
+share/doc/astrolog/Update.530
 lib/astrolog/astrolog.dat
 lib/astrolog/LRZ5_24
 lib/astrolog/CHI_24

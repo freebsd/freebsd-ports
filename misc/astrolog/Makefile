@@ -1,72 +1,62 @@
 # New ports collection makefile for:    astrolog
 #
-# http://www-rpk.mach.uni-karlsruhe.de/~ferber/astrolog/
+# http://rpkalf2.mach.uni-karlsruhe.de/~ferber/astrolog/
 # http://www.magitech.com/~cruiser1/astrolog.htm
 #
-# Version required:     5.20
+# Version required:     5.30
 # Date created:         31 July 1995
 # Whom:                 faulkner@cactus.org
 #
-# $Id: Makefile,v 1.5 1996/11/11 05:49:12 obrien Exp $
+# $Id: Makefile,v 1.6 1996/12/03 04:07:24 asami Exp $
 #
 
-DISTNAME=       astrolog-5.20
-CATEGORIES=     misc x11
-MASTER_SITES=   http://www-rpk.mach.uni-karlsruhe.de/~ferber/astrolog/ \
-		ftp://ftp.relcom.ru/unix/magick/astrology/astrolog/
-DISTFILES=      ${EXTRACT_ONLY} ${EPHEM:S/$/.gz/}
+PKGNAME=        astrolog-5.30
+DISTNAME=       ast53src
+EXTRACT_SUFX=   .zip
+CATEGORIES=     misc
+MASTER_SITES=   http://rpkalf2.mach.uni-karlsruhe.de/~ferber/astrolog/
+DISTFILES=      ${EXTRACT_ONLY} ast53dos.zip
 EXTRACT_ONLY=   ${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=     ache@FreeBSD.ORG
 
-DIST_SUBDIR=    astrolog
-WRKSRC=         ${WRKDIR}/${DISTNAME}/src
+BUILD_DEPENDS=  unzip:${PORTSDIR}/archivers/unzip
 
-EPHEM=          lrz5_24 chi_24 cpjv_24
+EXTRACT_CMD=    unzip
+EXTRACT_ARGS=   -oqLaa
+DIST_SUBDIR=    astrolog
+MAKEFILE=       makefile.unx
+ALL_TARGET=     astrolog
+NO_WRKSUBDIR=   Yes
+
+EPHEM=          LRZ5_24 CHI_24 CPJV_24
+MISC=           helpfile.530 update.530
 
 post-extract:
-	cd ${WRKSRC}/..; \
-		for i in ${EPHEM}; do \
-			zcat ${DISTDIR}/${DIST_SUBDIR}/$$i.gz > \
-				`echo $$i | tr '[:lower:]' '[:upper:]'`; \
-		done
-
-post-patch:
-	cd ${WRKSRC}/../docs; \
-		sed 's/^@tpindex/@tindex/' < astrolog.texinfo > a.texinfo; \
-		mv a.texinfo astrolog.texinfo
-
-post-build:
-	cd ${WRKSRC}/../docs; \
-		makeinfo --no-split astrolog.texinfo -o astrolog.info; \
-		gzip -f astrolog.info
+	cd ${WRKSRC} && \
+		unzip -oq ${DISTDIR}/${DIST_SUBDIR}/ast53dos.zip ${EPHEM}
+	cd ${WRKSRC} && \
+		unzip -oqLaa ${DISTDIR}/${DIST_SUBDIR}/ast53dos.zip ${MISC}
 
 do-install:
-	-@mkdir ${PREFIX}/lib/astrolog
-	cd ${WRKSRC}/..; \
-		${INSTALL} -c -m ${SHAREMODE} -o ${SHAREOWN} -g ${SHAREGRP} \
-			LRZ5_* CHI_* CPJV_* ${PREFIX}/lib/astrolog
-	cd ${WRKSRC}/..; \
+	-@${MKDIR} ${PREFIX}/lib/astrolog
+	cd ${WRKSRC} && ${INSTALL_DATA} ${EPHEM} ${PREFIX}/lib/astrolog
+	cd ${WRKSRC} && \
 		if [ -f ${PREFIX}/lib/astrolog/astrolog.dat ] ; then \
-			${INSTALL} -c -m ${SHAREMODE} -o ${SHAREOWN} -g ${SHAREGRP} \
-				astrolog.dat ${PREFIX}/lib/astrolog/astrolog.dat-dist; \
+			${INSTALL_DATA} astrolog.dat ${PREFIX}/lib/astrolog/astrolog.dat-dist; \
 		else \
-			${INSTALL} -c -m 644 -o ${SHAREOWN} -g ${SHAREGRP} \
-				astrolog.dat ${PREFIX}/lib/astrolog; \
+			${INSTALL_DATA} astrolog.dat ${PREFIX}/lib/astrolog; \
 		fi
-	cd ${WRKSRC}; \
-		${INSTALL} -c -s -m ${BINMODE} -o ${BINOWN} -g ${BINGRP} \
-			astrolog ${PREFIX}/bin
-	cd ${WRKSRC}/../docs; \
-		$(INSTALL) -c -m ${INFOMODE} -o $(INFOOWN) -g $(INFOGRP) \
-			astrolog.info.gz ${PREFIX}/info
-	-@mkdir ${PREFIX}/share/astrolog
-	cd ${WRKSRC}/..; \
-		${INSTALL} -c -m ${SHAREMODE} -o ${SHAREOWN} -g ${SHAREGRP} \
-			helpfile.520 readme.520 ${PREFIX}/share/astrolog
+	cd ${WRKSRC} && ${INSTALL_PROGRAM} astrolog ${PREFIX}/bin
+	-@${MKDIR} ${PREFIX}/share/doc/astrolog
+	cd ${WRKSRC} && \
+		${INSTALL_DATA} helpfile.530 ${PREFIX}/share/doc/astrolog/Helpfile.530
+	cd ${WRKSRC} && \
+		${INSTALL_DATA} update.530 ${PREFIX}/share/doc/astrolog/Update.530
+	cd ${WRKSRC} && \
+		${INSTALL_DATA} readme.530 ${PREFIX}/share/doc/astrolog/Readme.530
 	@echo
-	@echo "See the file ${PREFIX}/share/astrolog/helpfile.520 for help"
-	@echo "and tune ${PREFIX}/lib/astrolog/astrolog.dat,"
-	@echo "also look at ${PREFIX}/info/astrolog.info.gz"
+	@echo "See the file ${PREFIX}/share/doc/astrolog/Helpfile.530 for help"
+	@echo "and tune ${PREFIX}/lib/astrolog/astrolog.dat"
 
 .include <bsd.port.mk>
