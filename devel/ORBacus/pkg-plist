@@ -41,3 +41,6 @@ bin/irgen
 lib/libCosNaming.a
 bin/nsserv
 man/man1/idl.1.gz
+share/doc/omniBroker/LICENSE
+@dirrm share/doc/omniBroker
+@dirrm include/OB
