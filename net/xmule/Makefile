@@ -19,7 +19,7 @@ COMMENT=	Port of eMule eDonkey P2P client using wxWindows class library
 
 LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
 		expat.4:${PORTSDIR}/textproc/expat2 \
-		wx_gtk2-2.4:${PORTSDIR}/x11-toolkits/wxgtk2
+		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
 USE_X_PREFIX=	yes
@@ -38,8 +38,6 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 WX_CONFIG?=	${X11BASE}/bin/wxgtk2-2.4-config
-
-wx_gtk2-2.4:${PORTSDIR}/x11-toolkits/wxgtk2
 
 post-patch:
 # it works for FreeBSD as well
