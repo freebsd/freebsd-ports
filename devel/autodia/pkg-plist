@@ -1,30 +1,34 @@
 bin/autodia.pl
 bin/autodia_java.pl
-lib/perl5/site_perl/%%PERL_VER%%/Autodia/Diagram.pm
-lib/perl5/site_perl/%%PERL_VER%%/Autodia/Diagram/Class.pm
-lib/perl5/site_perl/%%PERL_VER%%/Autodia/Diagram/Component.pm
-lib/perl5/site_perl/%%PERL_VER%%/Autodia/Diagram/Dependancy.pm
-lib/perl5/site_perl/%%PERL_VER%%/Autodia/Diagram/Inheritance.pm
-lib/perl5/site_perl/%%PERL_VER%%/Autodia/Diagram/Object.pm
-lib/perl5/site_perl/%%PERL_VER%%/Autodia/Diagram/Superclass.pm
-lib/perl5/site_perl/%%PERL_VER%%/Autodia/Handler.pm
-lib/perl5/site_perl/%%PERL_VER%%/Autodia/Handler/Cpp.pm
-lib/perl5/site_perl/%%PERL_VER%%/Autodia/Handler/Java.pm
-lib/perl5/site_perl/%%PERL_VER%%/Autodia/Handler/Perl.pm
-lib/perl5/site_perl/%%PERL_VER%%/Autodia/Handler/PHP.pm
-lib/perl5/site_perl/%%PERL_VER%%/Autodia.pm
-lib/perl5/site_perl/%%PERL_VER%%/autodia.pl
-lib/perl5/site_perl/%%PERL_VER%%/autodia_java.pl
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Autodia/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/mach/auto/Autodia
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Autodia/Diagram
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Autodia/Handler
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Autodia
-%%PORTDOCS%%share/doc/autodia/CHANGES
-%%PORTDOCS%%share/doc/autodia/COPYING
-%%PORTDOCS%%share/doc/autodia/CREDITS
-%%PORTDOCS%%share/doc/autodia/DEVELOP
-%%PORTDOCS%%share/doc/autodia/FAQ
-%%PORTDOCS%%share/doc/autodia/INSTALL
-%%PORTDOCS%%share/doc/autodia/README
-%%PORTDOCS%%@dirrm share/doc/autodia
+%%SITE_PERL%%/Autodia/Diagram.pm
+%%SITE_PERL%%/Autodia/Diagram/Class.pm
+%%SITE_PERL%%/Autodia/Diagram/Component.pm
+%%SITE_PERL%%/Autodia/Diagram/Dependancy.pm
+%%SITE_PERL%%/Autodia/Diagram/Inheritance.pm
+%%SITE_PERL%%/Autodia/Diagram/Object.pm
+%%SITE_PERL%%/Autodia/Diagram/Superclass.pm
+%%SITE_PERL%%/Autodia/Handler.pm
+%%SITE_PERL%%/Autodia/Handler/Cpp.pm
+%%SITE_PERL%%/Autodia/Handler/DBI.pm
+%%SITE_PERL%%/Autodia/Handler/Java.pm
+%%SITE_PERL%%/Autodia/Handler/PHP.pm
+%%SITE_PERL%%/Autodia/Handler/Perl.pm
+%%SITE_PERL%%/Autodia/Handler/SQL.pm
+%%SITE_PERL%%/Autodia/Handler/dia.pm
+%%SITE_PERL%%/Autodia.pm
+%%SITE_PERL%%/autodia.pl
+%%SITE_PERL%%/autodia_java.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Autodia/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Autodia
+@dirrm %%SITE_PERL%%/Autodia/Diagram
+@dirrm %%SITE_PERL%%/Autodia/Handler
+@dirrm %%SITE_PERL%%/Autodia
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/DEVELOP
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+lib/perllocal.pod-autodia
