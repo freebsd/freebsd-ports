@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	psiconv
-PORTVERSION=	0.8.3
-PORTREVISION=	1
+PORTVERSION=	0.9.6
 CATEGORIES=	converters devel
 MASTER_SITES=	http://www.frodol.dds.nl/psiconv/
 
@@ -16,8 +15,11 @@ COMMENT=	A conversion utility to convert Psion 5(MX) files into other formats
 
 USE_GETOPT_LONG=yes
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_LIBTOOL_VER=15
 CONFIGURE_ARGS=	--with-imagemagick=no
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
+
+MAN1=		psiconv.1 psiconv-config.1
 
 .include <bsd.port.mk>

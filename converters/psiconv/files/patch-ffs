@@ -1,0 +1,40 @@
+--- program/psiconv/gen_xhtml.c.orig	Wed Feb  4 12:26:54 2004
++++ program/psiconv/gen_xhtml.c	Mon Feb 14 11:41:57 2005
+@@ -719,7 +719,7 @@
+ }
+                                                                                 
+ 
+-static struct fileformat_s ffs[] =
++static struct fileformat_s my_ffs[] =
+   {
+     {
+       "XHTML",
+@@ -739,6 +739,6 @@
+ void init_xhtml(void)
+ {
+   int i;
+-  for (i = 0; ffs[i].name; i++)
+-    psiconv_list_add(fileformat_list,ffs+i);
++  for (i = 0; my_ffs[i].name; i++)
++    psiconv_list_add(fileformat_list,my_ffs+i);
+ }
+--- program/psiconv/gen_html4.c.orig	Wed Feb  4 13:17:38 2004
++++ program/psiconv/gen_html4.c	Mon Feb 14 11:41:40 2005
+@@ -317,7 +317,7 @@
+ }
+                                                                                 
+ 
+-static struct fileformat_s ffs[] =
++static struct fileformat_s my_ffs[] =
+   {
+     {
+       "HTML4",
+@@ -337,6 +337,6 @@
+ void init_html4(void)
+ {
+   int i;
+-  for (i = 0; ffs[i].name; i++)
+-    psiconv_list_add(fileformat_list,ffs+i);
++  for (i = 0; my_ffs[i].name; i++)
++    psiconv_list_add(fileformat_list,my_ffs+i);
+ }
