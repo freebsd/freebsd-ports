@@ -1,56 +1,95 @@
---- Makefile.orig	Mon Jul 28 03:25:41 1997
-+++ Makefile	Tue Sep  2 16:45:25 1997
-@@ -1,5 +1,5 @@
- #
--# Makefile for xmysqladmin on Linux
-+# Makefile for xmysqladmin on FreeBSD
- #
- 
- ########################################################
-@@ -29,21 +29,21 @@
- PROGRAM = 	xmysqladmin
- 
- # PROGRAM install path
+--- Makefile.orig	Sat Jan 10 18:17:46 1998
++++ Makefile	Thu Jan 29 13:36:49 1998
+@@ -34,7 +34,7 @@
+ # This is used by 'make install' command
+ #-------------------------------------------------------
+ #INSTALLPATH = /opt/local/i386/bin
 -INSTALLPATH = /usr/local/bin
 +INSTALLPATH = ${X11BASE}/bin
+ ########################################################
  
- # pixmap location
+ 
+@@ -45,7 +45,7 @@
+ # pixmap file location (mysql.xpm)
+ #-------------------------------------------------------
+ #PIXMAPPATH = /opt/local/lib
 -PIXMAPPATH = /usr/local/bin
 +PIXMAPPATH = ${X11BASE}/include/X11/pixmaps
+ ########################################################
  
+ 
+@@ -93,8 +93,8 @@
  # Compilation Details
+ # hum... I think you dont need to change this
+ #-------------------------------------------------------
 -CC = gcc
--STDCFLAGS = -g -c -O2 -Wall -DPIXMAPFILE=\"$(PIXMAPPATH)/mysql.xpm\" 
+-STDCFLAGS = -g -c -O2 -Wall -DPIXMAPFILE=\"$(PIXMAPPATH)/mysql.xpm\" \
 +# CC = gcc
-+STDCFLAGS = $(CFLAGS) -c -DPIXMAPFILE=\"$(PIXMAPPATH)/xmysqladmin.xpm\" 
- STDLFLAGS = 
- MYSQLINC = -I/usr/local/include/mysql
- MYSQLLOAD = -L/usr/local/lib/mysql -lmysqlclient -lmysys -ldbug -lmystrings
--XFORMLIBDIR = -L/usr/lib
--XFORMINCDIR = -I/usr/include
-+XFORMLIBDIR = -L$(X11BASE)/lib
-+XFORMINCDIR = -I$(X11BASE)/include
- XINC = 
--XLOAD = -L/usr/X11R6/lib  -lX11
-+XLOAD = -L$(X11BASE)/lib  -lX11
- ADMININC = xmysqladmin.h xmysqladmin2.h
++STDCFLAGS = $(CFLAGS) -c -DPIXMAPFILE=\"$(PIXMAPPATH)/mysql.xpm\" \
+             -DBACKUP=\"$(BACKUP)\" -DBACKUPDIR=\"$(BACKUPDIR)\" \
+             -DBACKUPSUFFIX=\"$(BACKUPSUFFIX)\" \
+             -DMYSQL_VERSION=$(MYSQL_VERSION)
+@@ -109,7 +109,7 @@
+ # mysql include dir 
+ #-------------------------------------------------------
+ #MYSQLINC = -I/opt/local/include/mysql
+-MYSQLINC = -I/usr/local/include/mysql
++MYSQLINC = -I${LOCALBASE}/include/mysql
+ ########################################################
  
- # no change needed after this line...
-@@ -64,8 +64,7 @@
+ 
+@@ -121,7 +121,7 @@
+ # mysql database dir
+ #-------------------------------------------------------
+ #MYSQLDBDIR = -DMYSQLDBDIR="\"/var/lib/mysql/\""
+-MYSQLDBDIR = -DMYSQLDBDIR="\"/usr/local/var/\""
++MYSQLDBDIR = -DMYSQLDBDIR="\"/var/db/mysql/\""
+ ########################################################
+ 
+ 
+@@ -133,7 +133,7 @@
+ # mysql library dir
+ #-------------------------------------------------------
+ #MYSQLLOAD = -L/opt/local/i386/lib/mysql -lmysqlclient -lmysys -ldbug -lmystrings
+-MYSQLLOAD = -L/usr/local/lib/mysql -lmysqlclient -lmysys -ldbug -lmystrings
++MYSQLLOAD = -L${LOCALBASE}/lib/mysql -lmysqlclient -lmysys -ldbug -lmystrings
+ ########################################################
+ 
+ 
+@@ -144,7 +144,7 @@
+ # xforms librairies dir
+ #-------------------------------------------------------
+ #XFORMLIBDIR = -L/opt/local/i386/lib
+-XFORMLIBDIR = -L/usr/lib
++XFORMLIBDIR = -L${X11BASE}/lib
+ ########################################################
+ 
+ 
+@@ -156,7 +156,7 @@
+ # xforms include dir (xforms.h)
+ #-------------------------------------------------------
+ #XFORMINCDIR = -I/opt/local/include
+-XFORMINCDIR = -I/usr/include
++XFORMINCDIR = -I${X11BASE}/include
+ ########################################################
+ 
+ 
+@@ -172,7 +172,7 @@
+ 
+ # Use this for Linux:
+ XINC =
+-XLOAD = -L/usr/X11R6/lib -lX11
++XLOAD = -L${X11BASE}/lib -lX11
+ ########################################################
+ 
+ 
+@@ -230,8 +230,7 @@
  ${PROGRAM}: $(OBJS)
  	$(CC) -o ${PROGRAM} $(OBJS) $(MYSQLINC) $(XFORMINCDIR) \
  	$(XINC) $(STDLFLAGS) $(MYSQLLOAD) \
--	$(XLOAD) $(XFORMLIBDIR) -lforms -lXpm -lm
+-	$(XLOAD) $(XFORMLIBDIR) -lforms -lXpm $(LIBS)
 -	./$(PROGRAM)
-+	$(XLOAD) $(XFORMLIBDIR) -lxforms -lXpm -lm
++	$(XLOAD) $(XFORMLIBDIR) -lxforms -lXpm $(LIBS)
  
  .c.o:
- 	$(CC) $*.c $(STDCFLAGS) $(XFORMINCDIR) $(MYSQLINC) $(XINC) 
-@@ -74,5 +73,5 @@
- 	rm -f ${PROGRAM} $(OBJS) 
- 
- install:
--	install --mode=711 $(PROGRAM) $(INSTALLPATH)
--	cp mysql.xpm $(PIXMAPPATH)
-+	install -s -m 555 $(PROGRAM) $(INSTALLPATH)
-+	install -m 444 mysql.xpm $(PIXMAPPATH)/xmysqladmin.xpm
+ 	$(CC) $*.c $(STDCFLAGS) $(XFORMINCDIR) $(MYSQLINC) $(MYSQLDBDIR) $(XINC)

@@ -3,13 +3,12 @@
 # Date created:			Di   2 Sep 1997 16:29:27 CEST
 # Whom:				Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.1.1.1 1997/09/02 15:06:32 andreas Exp $
+# $Id: Makefile,v 1.2 1997/10/04 14:53:11 andreas Exp $
 #
 
-DISTNAME=	xmysqladmin-0.2.0
+DISTNAME=	xmysqladmin-0.4.4
 CATEGORIES=	databases
-MASTER_SITES=	ftp://mysql.staufen.de/pub/mysql/Contrib/ \
-		http://www.tcx.se/Contrib/ \
+MASTER_SITES=	http://www.tcx.se/Contrib/ \
 		http://www.buoy.com/mysql/Contrib/ \
 		http://web.tryc.on.ca/mysql/Contrib/ \
 		http://mysql.acer.net/Contrib/
