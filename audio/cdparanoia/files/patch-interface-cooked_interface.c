@@ -1,11 +1,5 @@
-Index: interface/cooked_interface.c
-===================================================================
-RCS file: /home/cvs/cdparanoia/interface/cooked_interface.c,v
-retrieving revision 1.1.1.1
-retrieving revision 1.8
-diff -u -r1.1.1.1 -r1.8
---- interface/cooked_interface.c	2003/01/05 09:46:26	1.1.1.1
-+++ interface/cooked_interface.c	2003/01/11 08:58:45	1.8
+--- interface/cooked_interface.c.orig	Wed Apr 19 15:41:04 2000
++++ interface/cooked_interface.c	Fri Nov  7 17:16:03 2003
 @@ -1,6 +1,8 @@
  /******************************************************************
   * CopyPolicy: GNU Public License 2 applies
@@ -23,7 +17,7 @@ diff -u -r1.1.1.1 -r1.8
  static int cooked_readtoc (cdrom_drive *d){
    int i;
    int tracks;
-@@ -129,6 +132,128 @@
+@@ -129,6 +132,142 @@
    return(sectors);
  }
  
@@ -96,6 +90,10 @@ diff -u -r1.1.1.1 -r1.8
 +cooked_read(cdrom_drive *d, void *p, long begin, long sectors)
 +{
 +	int retry_count = 0;
++/* CDIOCREADAUDIO has been removed in FreeBSD 5.1-CURRENT */
++#if __FreeBSD_version >= 501106
++	int bsize = CD_FRAMESIZE_RAW;
++#else
 +	struct ioc_read_audio arg;
 +
 +	if (sectors > d->nsectors)
@@ -104,10 +102,20 @@ diff -u -r1.1.1.1 -r1.8
 +	arg.address_format = CD_LBA_FORMAT;
 +	arg.address.lba = begin;
 +	arg.buffer = p;
++#endif
 +
++#if  __FreeBSD_version >= 501106
++	if (ioctl(d->ioctl_fd, CDRIOCSETBLOCKSIZE, &bsize) == -1)
++		return -7;
++#endif
 +	for (;;) {
++/* CDIOCREADAUDIO has been removed in FreeBSD 5.1-CURRENT */
++#if  __FreeBSD_version >= 501106
++		if (pread(d->ioctl_fd, p, sectors*bsize, begin*bsize) != sectors*bsize) {
++#else
 +		arg.nframes = sectors;
 +		if (ioctl(d->ioctl_fd, CDIOCREADAUDIO, &arg) == -1) {
++#endif
 +			if (!d->error_retry)
 +				return -7;
 +
@@ -152,7 +160,7 @@ diff -u -r1.1.1.1 -r1.8
  /* hook */
  static int Dummy (cdrom_drive *d,int Switch){
    return(0);
-@@ -193,6 +318,7 @@
+@@ -193,6 +332,7 @@
  int cooked_init_drive (cdrom_drive *d){
    int ret;
  
@@ -160,7 +168,7 @@ diff -u -r1.1.1.1 -r1.8
    switch(d->drive_type){
    case MATSUSHITA_CDROM_MAJOR:	/* sbpcd 1 */
    case MATSUSHITA_CDROM2_MAJOR:	/* sbpcd 2 */
-@@ -243,6 +369,9 @@
+@@ -243,6 +383,9 @@
    default:
      d->nsectors=40; 
    }
