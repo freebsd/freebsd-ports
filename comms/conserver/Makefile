@@ -3,7 +3,7 @@
 # Date created:         22 November 1997
 # Whom:                 Peter Wemm <peter@netplex.com.au>
 #
-# $Id$
+# $Id: Makefile,v 1.1 1997/11/22 14:56:02 peter Exp $
 #
 
 DISTNAME=	conserver-5.21-Beta
@@ -20,9 +20,13 @@ EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	|sh
 NO_WRKSUBDIR=	yes
 NO_CONFIGURE=	yes
+MAN5=		conserver.cf.5
+MAN8=		console.8 conserver.8
 
 # Set this to where you want console(8) to connect to by default
-MAKE_ENV+=	DEFAULTHOST="localhost"
+# or use something like ``make DEFAULTHOST=myserver.mydomain.net''
+DEFAULTHOST?=	localhost
+MAKE_ENV+=	DEFAULTHOST="${DEFAULTHOST}"
 
 post-extract:
 	cp ${FILESDIR}/Makefile ${WRKSRC}
