@@ -124,6 +124,7 @@
     SUBDIR += gone
     SUBDIR += gonvert
     SUBDIR += gplbp
+    SUBDIR += gplink
     SUBDIR += gpt
     SUBDIR += gpt31
     SUBDIR += granulate
