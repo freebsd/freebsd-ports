@@ -1,0 +1,3 @@
+***
+Playlists should be created like:
+find ~/sound -name *.mp3 | sort > playlist
