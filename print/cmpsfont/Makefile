@@ -7,7 +7,7 @@
 
 PORTNAME=	cmpsfont
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print x11-fonts
 MASTER_SITES=	ftp://ftp.ams.org/pub/tex/psfonts/cm/
 DISTNAME=	cmps
@@ -28,11 +28,12 @@ do-build:
 	(cd ${WRKSRC}/pfb; ${LOCALBASE}/bin/type1inst -nolog)
 
 do-install:
-	${MKDIR} ${PREFIX}/${FONTSDIR}/afm
-	${INSTALL_DATA} ${WRKSRC}/afm/* ${PREFIX}/${FONTSDIR}/afm
-	${MKDIR} ${PREFIX}/${FONTSDIR}/pfb
-	${INSTALL_DATA} ${WRKSRC}/pfb/* ${PREFIX}/${FONTSDIR}/pfb
-	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/cmsample.tex ${PREFIX}/${FONTSDIR}
+	${MKDIR} ${PREFIX}/${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/afm/* ${PREFIX}/${FONTSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/pfb/* ${PREFIX}/${FONTSDIR}/
+	${INSTALL_DATA} \
+		${WRKSRC}/README ${WRKSRC}/cmsample.tex \
+		${PREFIX}/${FONTSDIR}/
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

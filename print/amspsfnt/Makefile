@@ -7,7 +7,7 @@
 
 PORTNAME=	amspsfnt
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print x11-fonts
 MASTER_SITES=	ftp://ftp.ams.org/pub/tex/psfonts/ams/
 DISTNAME=	amsps
@@ -27,11 +27,10 @@ do-build:
 	(cd ${WRKSRC}/pfb; ${LOCALBASE}/bin/type1inst -nolog)
 
 do-install:
-	${MKDIR} ${PREFIX}/${FONTSDIR}/afm
-	${INSTALL_DATA} ${WRKSRC}/afm/* ${PREFIX}/${FONTSDIR}/afm
-	${MKDIR} ${PREFIX}/${FONTSDIR}/pfb
-	${INSTALL_DATA} ${WRKSRC}/pfb/* ${PREFIX}/${FONTSDIR}/pfb
-	${INSTALL_DATA} ${WRKSRC}/READ.ME ${PREFIX}/${FONTSDIR}
+	${MKDIR} ${PREFIX}/${FONTSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/afm/* ${PREFIX}/${FONTSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/pfb/* ${PREFIX}/${FONTSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/READ.ME ${PREFIX}/${FONTSDIR}/
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
