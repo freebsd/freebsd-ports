@@ -1,12 +1,12 @@
 # New ports collection makefile for:	nslint
-# Version required:	2.0
+# Version required:	2.0.1
 # Date created:		27 October 1997
 # Whom:			dglo@ssec.wisc.edu
 #
 # $FreeBSD$
 #
 
-DISTNAME=	nslint-2.0
+DISTNAME=	nslint-2.0.1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/
 EXTRACT_SUFX=	.tar.Z
