@@ -7,6 +7,26 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20041012:
+  AFFECTS: users of devel/perforce
+  AUTHOR: marshall@chezmarshall.com
+
+  Upgrading from 2003.2 to 2004.2 is straightforward, it is highly
+  recommended to checkpoint and backup your server as follows:
+    p4 verify //...
+    p4 verify -u //... # possibly redundant
+    p4 admin checkpoint
+    p4 admin stop
+    <backup repository>
+
+  If you are upgrading from a version earlier than 2003.2, you should
+  consult the Perforce documentation
+    (http://www.perforce.com/perforce/technical.html)
+  before proceeding.
+
+  Also, it looks as though Perforce has stopped updating the man pages,
+  so they are no longer included in the port.
+
+20041012:
   AFFECTS: users of www/firefox
   AUTHOR: freebsd-gnome@FreeBSD.org
 

@@ -10,10 +10,9 @@ PORTVERSION=	${VERSION}
 PORTREVISION=	${REVISION}
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.perforce.com/pub/perforce/r${PORTVERSION}/bin.${PLATFORM}/ \
-		ftp://ftp.perforce.com/pub/perforce/r${PORTVERSION}/doc/man/:man
+MASTER_SITES=	ftp://ftp.perforce.com/pub/perforce/r${PORTVERSION}/bin.${PLATFORM}/ 
 EXTRACT_SUFX=
-DISTFILES=	${BIN_FILES} ${SBIN_FILES} ${MAN1:S/$/:man/}
+DISTFILES=	${BIN_FILES} ${SBIN_FILES}
 DIST_SUBDIR=	perforce/${VERSION}/${ARCH}
 EXTRACT_ONLY=	# none
 
@@ -29,12 +28,12 @@ ARCH?= i386
 
 MD5_FILE=	${MASTERDIR}/distinfo.${ARCH}
 .if ${ARCH} == i386
-VERSION=	03.2
-REVISION=	7
+VERSION=	04.2
+REVISION=	2
 PLATFORM=	freebsd4
 BIN_FILES=	p4 p4web
 SBIN_FILES=	p4d p4ftpd p4p
-REL_NOTES=	http://www.perforce.com/perforce/doc.032/user/relnotes.txt
+REL_NOTES=	http://www.perforce.com/perforce/doc.042/user/relnotes.txt
 .elif ${ARCH} == alpha
 VERSION=	99.1
 REVISION=	1
@@ -51,7 +50,6 @@ IGNORE=		"Unsupported platform, sorry."
 
 NO_PACKAGE=	Restricted distribution
 NO_CDROM=	Restricted distribution
-MAN1=		p4.1 p4d.1
 
 NO_WRKSUBDIR=	yes
 
@@ -117,9 +115,6 @@ do-install:
 		${CP} -p ${PREFIX}/etc/perforce.conf.default ${PREFIX}/etc/perforce.conf; \
 	fi
 	${INSTALL_SCRIPT} ${WRKSRC}/perforce.sh ${PREFIX}/etc/rc.d/
-.for f in ${MAN1}
-	${INSTALL_MAN} ${_DISTDIR}/${f} ${PREFIX}/man/man1/
-.endfor
 .for f in ${BIN_FILES}
 	${INSTALL_PROGRAM} ${_DISTDIR}/${f} ${PREFIX}/bin/
 .endfor
