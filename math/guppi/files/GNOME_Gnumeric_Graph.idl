@@ -1,0 +1,123 @@
+/**
+ * The interfaces Gnumeric uses to communicate with graphing components
+ *
+ * Author:
+ *   Jody Goldberg <jody@gnome.org>
+ */
+#include <Bonobo.idl>
+
+module GNOME {
+    module Gnumeric {
+	struct Pair {
+	    short start;
+	    short end;
+	};
+	typedef long		   PlotID;
+	typedef long		   SeriesID;
+	typedef long		   VectorID;
+	typedef sequence<Pair>	   SeqPair;
+	typedef sequence<VectorID> VectorIDs;
+	typedef sequence<octet>	   Buffer;
+
+	exception Error { string mesg; };
+
+	enum VectorType {
+	    VECTOR_TYPE_SCALAR,
+	    VECTOR_TYPE_DATE,
+	    VECTOR_TYPE_STRING
+	};
+
+	/* This is a place holder */
+	interface VectorSelection {
+	    oneway void selected (in SeqPair ranges);
+	};
+	module Scalar {
+	    typedef sequence<double> Seq;
+	    interface Vector : VectorSelection {
+		oneway void changed (in short start, in Seq new_values);
+		void value (out Seq values);
+	    };
+	};
+	module String {
+	    typedef sequence<string> Seq;
+	    interface Vector : VectorSelection {
+		oneway void changed (in short start, in Seq new_values);
+		void value (out Seq values);
+	    };
+	};
+
+	module Graph_v2 {
+	    interface ConfigGuru : Bonobo::Control {
+		oneway void applyChanges ();
+	    };
+
+	    interface DataGuru : ConfigGuru {
+		readonly attribute Buffer spec;
+
+		/**
+		 * seriesSetDimension :
+		 *
+		 * Add/Remove/Edit the vector associated with a specific dimension
+		 * of an series.
+		 *
+		 * a vectorID of -1 will remove the dimension.
+		 */
+		void seriesSetDimension (in SeriesID seriesID,
+					 in string dim,
+					 in VectorID vectorID)
+		    raises (Error);
+
+		PlotID   plotAdd      ()		   raises (Error);
+		void     plotDelete   (in PlotID plot)	   raises (Error);
+		SeriesID seriesAdd    (in PlotID plot)	   raises (Error);
+		void     seriesDelete (in SeriesID series) raises (Error);
+	    };
+
+	    interface Manager : Bonobo::Embeddable {
+		ConfigGuru configure (in string type);
+
+		/**
+		 * Read :
+		 * 	A full specified document including enough markup
+		 * 	information to assist in data assignment and for
+		 * 	persistence.
+		 *
+		 * Write :
+		 * 	Take a possibly incomplete description of a graph using
+		 * 	a subset of the dtd used for persistence and initialize
+		 * 	the graphs state.  The document refers to vectors by
+		 * 	IDs that were assigned previously.
+		 */
+		attribute Buffer spec;
+
+		/**
+		 * addVector :
+		 *
+		 * Register new vectors and get their callbacks.
+		 */
+		VectorSelection addVector (in VectorSelection v,
+					   in VectorType type, in VectorID id,
+					   in string default_fmt);
+
+		/**
+		 * clearVectors :
+		 *
+		 * Remove all references to the existing set of vectors.
+		 */
+		oneway void clearVectors ();
+
+		/**
+		 * arrangeVectors :
+		 *
+		 * Take the set of vectors and their optional
+		 * headers in the order specified by the
+		 * supplied @data ids, and arrange them into a
+		 * graph using the 'current' graph type.
+		 */
+		oneway void arrangeVectors (in VectorIDs data,
+					    in VectorIDs optional_headers);
+
+	    };
+	};
+    };
+};
