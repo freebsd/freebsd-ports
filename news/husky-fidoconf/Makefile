@@ -1,4 +1,4 @@
-# New ports collection makefile for:    husky-base
+# New ports collection makefile for:    husky-fidoconf
 # Date created:                         6 January 2003
 # Whom:                                 Max Khon
 #

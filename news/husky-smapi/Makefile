@@ -1,4 +1,4 @@
-# New ports collection makefile for:    husky-base
+# New ports collection makefile for:    husky-smapi
 # Date created:                         6 January 2003
 # Whom:                                 Max Khon
 #
