@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pyslsk
-PORTVERSION=	0.4.11
+PORTVERSION=	1.0.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.sensi.org/~ak/pyslsk/ \
 		http://stud4.tuwien.ac.at/~e0125637/
@@ -16,12 +16,11 @@ COMMENT=	"Client for SoulSeek filesharing system"
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/wxPython/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/wxPython/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython
+.if !defined(WITHOUT_VORBIS)
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ogg/vorbismodule.so:${PORTSDIR}/audio/py-vorbis
+.endif
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-USE_REINPLACE=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e '/encode_bitmaps/d' ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
