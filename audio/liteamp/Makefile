@@ -15,7 +15,8 @@ COMMENT=	Light-weight Music Player for GNOME2
 
 LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao \
 		mad.1:${PORTSDIR}/audio/mad \
-		ogg.4:${PORTSDIR}/audio/libogg
+		ogg.4:${PORTSDIR}/audio/libogg \
+		vorbisfile.3:${PORTSDIR}/audio/libvorbis
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
