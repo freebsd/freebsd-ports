@@ -11,7 +11,7 @@ CATEGORIES=	net security
 MASTER_SITES=	http://razor.bindview.com/tools/files/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	kris@FreeBSD.org
+MAINTAINER=	roam@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 

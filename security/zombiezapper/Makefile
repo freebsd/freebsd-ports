@@ -12,7 +12,7 @@ MASTER_SITES=	http://razor.bindview.com/tools/files/
 DISTNAME=	zombie
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	kris@FreeBSD.org
+MAINTAINER=	roam@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/libnet-config:${PORTSDIR}/net/libnet/
 
