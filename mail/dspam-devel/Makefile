@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	dspam
-PORTVERSION=	2.6.3
+PORTVERSION=	2.7.1
 CATEGORIES=	mail
-MASTER_SITES=	http://www.networkdweebs.com/software/dspam/
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}
+MASTER_SITES=	http://www.nuclearelephant.com/projects/dspam/
 
 MAINTAINER=	dom@wirespeed.org.uk
 COMMENT=	A server-side bayesian spam filter
