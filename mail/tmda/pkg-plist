@@ -1,9 +1,9 @@
 bin/tmda-address
 bin/tmda-check-address
-bin/tmda-pending
 bin/tmda-filter
 bin/tmda-inject
 bin/tmda-keygen
+bin/tmda-pending
 bin/tmda-rfilter
 bin/tmda-sendmail
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/Cookie.py
@@ -20,6 +20,8 @@ lib/%%PYTHON_VERSION%%/site-packages/TMDA/HMAC.py
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/HMAC.pyc
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/MTA.py
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/MTA.pyc
+lib/%%PYTHON_VERSION%%/site-packages/TMDA/SMTP.py 
+lib/%%PYTHON_VERSION%%/site-packages/TMDA/SMTP.pyc 
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/Util.py
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/Util.pyc
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/Version.py
@@ -58,9 +60,9 @@ lib/%%PYTHON_VERSION%%/site-packages/TMDA/__init__.pyc
 %%PORTDOCS%%share/doc/tmda/htdocs/resources.html
 %%PORTDOCS%%share/doc/tmda/htdocs/results.html
 %%PORTDOCS%%share/doc/tmda/htdocs/trouble.html
+share/tmda/bounce.txt
 share/tmda/confirm_accept.txt
 share/tmda/confirm_request.txt
-share/tmda/bounce.txt
 @dirrm share/tmda
 %%PORTDOCS%%@dirrm share/doc/tmda/contrib
 %%PORTDOCS%%@dirrm share/doc/tmda/htdocs
