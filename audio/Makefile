@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.76 1999/04/02 04:33:16 steve Exp $
+# $Id: Makefile,v 1.77 1999/04/03 01:32:42 steve Exp $
 #
 
     SUBDIR += 8hz-mp3
@@ -11,6 +11,7 @@
     SUBDIR += dagrab
     SUBDIR += dap
     SUBDIR += esound
+    SUBDIR += gmixer
     SUBDIR += gnomeaudio
     SUBDIR += gnomemedia
     SUBDIR += gqmpeg
