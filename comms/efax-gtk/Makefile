@@ -8,9 +8,10 @@
 #
 
 PORTNAME=	efax-gtk
-PORTVERSION=	2.2.5
+PORTVERSION=	2.2.8
 CATEGORIES=	comms
-MASTER_SITES=	http://www.cvine.freeserve.co.uk/efax-gtk/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.src.tgz
 
 MAINTAINER=	jb.quenot@caraldi.com
@@ -23,6 +24,7 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/gs:${PORTSDIR}/print/ghostscript-gnu
 
 USE_X_PREFIX=	YES
 GNU_CONFIGURE=	YES
+CONFIGURE_ARGS=	--datadir=${PREFIX}/share/gnome
 MAN1=	efax.1 efix.1 efax-gtk.1
 
 .include <bsd.port.pre.mk>

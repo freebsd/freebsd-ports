@@ -1,0 +1,66 @@
+--- src/efax_controller.cpp.orig	Sun Jun 27 13:22:08 2004
++++ src/efax_controller.cpp	Sun Jun 27 13:22:32 2004
+@@ -14,9 +14,6 @@
+ #include <sys/wait.h>
+ #include <fcntl.h>
+ #include <errno.h>
+-#ifdef HAVE_PTHREAD_SIGMASK 
+-#include <pthread.h>
+-#endif
+ 
+ #include <fstream>
+ #include <iomanip>
+@@ -30,6 +27,10 @@
+ #include <glibmm/thread.h>
+ 
+ #include "efax_controller.h"
++
++#ifdef HAVE_PTHREAD_SIGMASK 
++#include <pthread.h>
++#endif
+ 
+ #ifdef HAVE_STRINGSTREAM
+ #include <sstream>
+--- src/fax_list.cpp.orig	Sun Jun 27 13:22:08 2004
++++ src/fax_list.cpp	Sun Jun 27 13:22:44 2004
+@@ -24,9 +24,6 @@
+ #include <stdlib.h>
+ #include <signal.h>
+ #include <errno.h>
+-#ifdef HAVE_PTHREAD_SIGMASK 
+-#include <pthread.h>
+-#endif
+ 
+ #include <gdkmm/pixbuf.h>
+ #include <gdk/gdkkeysyms.h> // the key codes are here
+@@ -42,6 +39,10 @@
+ #include "dialogs.h"
+ #include "fax_list_icons.h"
+ #include "pipes.h"
++
++#ifdef HAVE_PTHREAD_SIGMASK 
++#include <pthread.h>
++#endif
+ 
+ #ifdef HAVE_STRINGSTREAM
+ #include <sstream>
+--- src/socket_server.cpp.orig	Sun Jun 27 13:22:08 2004
++++ src/socket_server.cpp	Sun Jun 27 13:22:54 2004
+@@ -20,14 +20,14 @@
+ #include <unistd.h>
+ #include <netdb.h>
+ #include <errno.h>
+-#ifdef HAVE_PTHREAD_SIGMASK 
+-#include <pthread.h>
+-#endif
+ 
+ #include <glibmm/convert.h>
+ 
+ #include "socket_server.h"
+ 
++#ifdef HAVE_PTHREAD_SIGMASK 
++#include <pthread.h>
++#endif
+ 
+ #ifdef ENABLE_NLS
+ #include <libintl.h>
