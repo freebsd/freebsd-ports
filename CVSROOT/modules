@@ -7658,6 +7658,7 @@ ttcp		ports/net/ttcp
 ttf2pt1		ports/print/ttf2pt1
 ttftot42	ports/print/ttftot42
 tth		ports/textproc/tth
+ttlscan		ports/net/ttlscan
 ttmkfdir	ports/x11-fonts/ttmkfdir
 ttraffic	ports/games/ttraffic
 ttt		ports/net/ttt
