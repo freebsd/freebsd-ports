@@ -8,7 +8,7 @@
 PORTNAME=	ncbi-toolkit
 PORTVERSION=	2001.12.20
 CATEGORIES=	biology
-MASTER_SITES=	ftp://ftp.ncbi.nlm.nih.gov/toolbox/ncbi_tools/old/${PORTVERSION:S/.//g}/
+MASTER_SITES=	ftp://ftp.ncbi.nih.gov/toolbox/ncbi_tools/old/${PORTVERSION:S/.//g}/
 DISTNAME=	ncbi
 
 MAINTAINER=	tonym@biolateral.com.au
