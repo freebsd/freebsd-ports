@@ -1,13 +1,17 @@
 HLaTeX
 ======
 
-This is a \LaTeX package to use Hangul with \LaTeX.
-With this package, you can run latex on KSC 5601 based Korean LaTeX
+This is a \TeX macro package to use Hangul with \LaTeX.
+With this package, you can run latex on UHC based Korean LaTeX
 file to produce a professionally looking Korean documents. You can
-typeset all Korean characters defined in KSC 5601, including Korean
+typeset all Korean characters defined in UHC, including Korean
 Symbol, Hangul and Hanja.
 
-Currently it can be used with teTeX-0.4.
+UHC means Unified Hangul Code, Microsoft's own Hangul code including
+EUC-KR.
+
+Currently it can be used with Lambda/Omega. teTeX 1.0 and above includes them.
 
 --
-Ports by CHOI Junho <cjh@kr.freebsd.org>
+Ports by CHOI Junho <cjh@FreeBSD.org>
+WWW: ftp://ftp.linguistik.uni-erlangen.de/pub/hangul/HLaTeX/hlatex-ko.html

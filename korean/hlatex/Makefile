@@ -1,95 +1,93 @@
-# New ports collection makefile for:    HLaTeX PS fonts-wansungstd
-# Date created:                 Sun Aug  9 18:05:29 KST 1998
-# Whom:                         CHOI Junho <cjh@kr.freebsd.org>
+# New ports collection makefile for:    HLaTeX(UHC encoding)
+# Date created:                 2 Jul 2000
+# Whom:                         CHOI Junho <cjh@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=		HLaTeX-${HLATEX_ENCODING}std
-PORTVERSION=		0.98
+PORTNAME=		HLaTeX
+PORTVERSION=		0.991
 CATEGORIES=             korean print
-MASTER_SITES=           ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/hlatex98/
-DISTNAME=               HLaTeX-${HLATEX_ENCODING}-0.98
-DISTFILES=              HLaTeX-0.98.tar.bz2 ${HLATEX_FONTS_BASE}
+MASTER_SITES=		ftp://ftp.linguistik.uni-erlangen.de/pub/hangul/HLaTeX/packed/
+DISTFILES=              HLaTeX-0.991.tar.gz ${HLATEX_FONTS_BASE}
+DIST_SUBDIR=		hlatex
+EXTRACT_ONLY=		HLaTeX-0.991.tar.gz
 
-MAINTAINER=             cjh@kr.freebsd.org
+MAINTAINER=             cjh@FreeBSD.org
 
-# in fact, it need to install.
-# and it depends teTeX.
-BUILD_DEPENDS=        	latex:${PORTSDIR}/print/teTeX
+# it depends on teTeX(lambda)
+BUILD_DEPENDS=        	texhash:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=		latex:${PORTSDIR}/print/teTeX
 
-USE_BZIP2=		YES
-DIST_SUBDIR=            hlatex98        # too many distfiles
-EXTRACT_ONLY=		HLaTeX-0.98.tar.bz2
-
 TEXMF=                  ${PREFIX}/share/texmf
-HLATEX_ENCODING=        wansung
-# default font. includes complete Myoungjo and Gothic fonts.
-HLATEX_FONTS_BASE	= common.tar.bz2 \
-			  wsmj.tar.bz2 wsgt.tar.bz2 \
-			  hanja-myoungjo.tar.bz2 hanja-gothic.tar.bz2 \
-			  hsym.tar.bz2 taza.tar.bz2
-# installation files
-HLATEX_BASE		= \
-	hfont.tex hangul.sty hfont.sty josa.tab hfont.cfg hltx209.cfg \
-	hsfonts.def VERSION0.98
-HLATEX_FD_BASE	= \
-	hhgs.fd hhgt.fd hhpgs.fd hhpgt.fd hhpsm.fd hhptt.fd hhsm.fd \
-	hhtt.fd hsgt.fd hspgt.fd hspsm.fd hsptt.fd hssm.fd hstt.fd \
-	hwbm.fd hwgr.fd hwgs.fd hwgt.fd hwmg.fd hwmgt.fd hwmj.fd \
-	hwmmj.fd hwmnv.fd hwmsr.fd hwmtt.fd hwol.fd hwpbm.fd hwpg.fd \
-	hwpgr.fd hwpgs.fd hwpgt.fd hwpmg.fd hwpmgt.fd hwpmj.fd hwpmmj.fd \
-	hwpmnv.fd hwpmsr.fd hwpmtt.fd hwpn.fd hwpol.fd hwppg.fd hwppn.fd \
-	hwpsm.fd hwpyt.fd hwsm.fd hwyt.fd
-HLATEX_DOC_BASE = \
-	changelog.ks complang.tex hlguide.tex hlguide.dvi hlguide.bib \
-	doc/compword.pdf.bz2 doc/compword.ps.bz2 doc/hlguide.ps.bz2 \
-	news.ks onews.ks readme.eng readme.ks \
-	${HLATEX_ENCODING}/${HLATEX_ENCODING}.ks Fontmap
-HLATEX_SAMPLE_BASE = \
-	sample/a.tex sample/p.tex sample/f.tex sample/readme.ks
+
+# default fonts.
+HLATEX_FONTS_BASE=	uhc-myoungjo.tar.gz \
+			uhc-gothic.tar.gz \
+			uhc-taza.tar.gz
+# documents.
+HLATEX_DOC_BASE=	VERSION0.991 changelog.ks complang.tex \
+			hlatex-en.html hlatex-ko.html hlatex.html \
+			hlguide.bib hlguide.dvi hlguide.tex \
+			news.098 news.099 readme.eng \
+			uhc/uhc.ks moonttf/moonttf.ks \
+			doc/compword.pdf.gz doc/compword.ps.gz \
+			doc/dot.js doc/font-exam.jpg doc/hlguide.html \
+			doc/hlguide.ps.gz doc/hlogo-bg.jpg doc/hlogo.jpg
+
+HLATEX_SAMPLE_BASE=	sample/a.tex sample/p.tex sample/f.tex sample/readme.ks
 
 # psfonts.map, special.map
-# it should be downloadable, so use wan-down.map
+# it should be downloadable, so use uhc-down.map
+# why? otherwise you need nasty gs Fontmap setup...
 do-build:
-	${CAT}  ${TEXMF}/fontname/special.map \
-		${WRKDIR}/${HLATEX_ENCODING}/config/special.map \
-		> ${WRKDIR}/special.map
 	${CAT}  ${TEXMF}/dvips/config/psfonts.map \
-		${WRKDIR}/${HLATEX_ENCODING}/config/wan-down.map \
+		${WRKDIR}/uhc/config/uhc-down.map \
 		> ${WRKDIR}/psfonts.map
-	${SED} 's@/usr/tex@/usr/local@' \
-		${WRKDIR}/${HLATEX_ENCODING}/config/Fontmap.wan \
+	${SED} 's@/usr/tex/share/texmf.local@${PREFIX}/share/texmf@' \
+		${WRKDIR}/uhc/config/Fontmap.uhc \
 		> ${WRKDIR}/Fontmap
 
 # Installation according to readme.ks
 do-install:
-	# Part 1: install psfonts, special, Fontmap
-	# psfonts
-	${MV} ${TEXMF}/fontname/special.map \
-	      ${TEXMF}/fontname/special.map.beforehlatex
-	${INSTALL_DATA} ${WRKDIR}/special.map ${TEXMF}/fontname
-	# special
+	# Part 1: install psfonts
+	# psfonts.map
 	${MV} ${TEXMF}/dvips/config/psfonts.map \
 	      ${TEXMF}/dvips/config/psfonts.map.beforehlatex
 	${INSTALL_DATA} ${WRKDIR}/psfonts.map ${TEXMF}/dvips/config
-	# Fontmap
-	#[ -d ${PREFIX}/share/ghostscript/fonts ] && \
-	#	${CP} ${WRKDIR}/Fontmap \
-	#	   ${PREFIX}/share/ghostscript/fonts
-	# Part 2: macros
+
+	# Part 2: macros, style, font descriptions
 	${MKDIR} ${TEXMF}/tex/latex/hlatex
-	for file in ${HLATEX_BASE}; \
-	do \
-		${INSTALL_DATA} \
-		  ${WRKDIR}/$$file ${TEXMF}/tex/latex/hlatex; \
-	done
-	for file in ${HLATEX_FD_BASE}; \
-	do \
-	  ${INSTALL_DATA} \
-	    ${WRKDIR}/${HLATEX_ENCODING}/$$file ${TEXMF}/tex/latex/hlatex; \
-	done
+	${MKDIR} ${TEXMF}/omega/lambda/hlatex
+	${MKDIR} ${TEXMF}/omega/otp/hlatex
+	${MKDIR} ${TEXMF}/omega/ocp/hlatex
+
+	${INSTALL_DATA} ${WRKDIR}/hfont.tex \
+			${WRKDIR}/hfont.sty \
+			${WRKDIR}/hfont.cfg \
+			${WRKDIR}/hangul.sty \
+			${WRKDIR}/josa.tab \
+			${WRKDIR}/uhc/latex/* \
+			${WRKDIR}/moonttf/*.fd \
+			${WRKDIR}/moonttf/moonttf.sty \
+			${TEXMF}/tex/latex/hlatex
+
+	${INSTALL_DATA} ${WRKDIR}/uhc/lambda/*.tex \
+			${WRKDIR}/uhc/lambda/*.fd \
+			${TEXMF}/omega/lambda/hlatex
+
+	${INSTALL_DATA} ${WRKDIR}/uhc/lambda/ksx1001.otp \
+			${TEXMF}/omega/otp/hlatex
+
+	${INSTALL_DATA} ${WRKDIR}/uhc/lambda/ksx1001.ocp \
+			${TEXMF}/omega/ocp/hlatex
+
+	${INSTALL_DATA} ${WRKDIR}/contrib/halpha.bst \
+			${TEXMF}/bibtex/bst/misc
+
+	${INSTALL_DATA} ${WRKDIR}/contrib/hind.ist \
+			${WRKDIR}/contrib/hglo.ist \
+			${TEXMF}/makeindex
 
 	# Part 3: documents and samples
 	${MKDIR} ${TEXMF}/doc/latex/hlatex/
@@ -104,6 +102,9 @@ do-install:
 		${INSTALL_DATA} \
 		  ${WRKDIR}/$$file ${TEXMF}/doc/latex/hlatex/sample; \
 	done
+	# fontmap...
+	${INSTALL_DATA} ${WRKDIR}/Fontmap \
+			${TEXMF}/doc/latex/hlatex/sample/Fontmap.uhc
 
 	# Part 4: default mf fonts
 	cd ${TEXMF}/fonts/; \
