@@ -1,0 +1,22 @@
+--- Makefile.orig	Sat Apr 10 16:49:04 1999
++++ Makefile	Sat Apr 10 16:51:43 1999
+@@ -1,15 +1,15 @@
+-INCLUDES =-I/usr/X11R6/include/X11 -I/usr/local/include -I/usr/include/X11R6/X11
+-LIBINC =-L/usr/X11R6/lib -L/usr/include/lib
++INCLUDES =-I${X11BASE}/include/X11 -I${LOCALBASE}/include -I/${X11BASE}/include
++LIBINC =-L${X11BASE}/lib -L${LOCALBASE}/lib
+ LIBS = -lX11 -lXpm -lXext
+ 
+ TARGET = wmbutton
+ OBJECTS = wmbutton.o readln.o
+ 
+ .c.o:
+-	gcc -O2 -c -Wall ${INCLUDES} ${FLAGS} $< -o $*.o
++	${CC} ${CFLAGS} -c -Wall ${INCLUDES} ${CFLAGS} $< -o $*.o
+ 
+ ${TARGET}: ${OBJECTS}
+-	gcc -O2 -o ${TARGET} ${OBJECTS} ${LIBINC} ${LIBS}
++	${CC} ${CFLAGS} -o ${TARGET} ${OBJECTS} ${LIBINC} ${LIBS}
+ 
+ clean::
+ 	for i in ${OBJECTS}; do if [ -e $$i ] ; then rm $$i; fi; done 
