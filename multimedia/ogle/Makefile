@@ -39,7 +39,10 @@ post-patch:
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
 	@${REINPLACE_CMD} -e "s|%%X11BASE%%|${X11BASE}|" ${WRKSRC}/scripts/ogle.in
-	@${REINPLACE_CMD} -E -e 's|(-la52)|\1 ${LIBA52_DEP_LIBS}|' \
+# hack to make ogle work with liba52 + djbfft
+# CFLAGS safeness
+	@${REINPLACE_CMD} -E -e 's|(-la52)|\1 ${LIBA52_DEP_LIBS}|; \
+		s,(X?CFLAGS[[:space:]]*=[[:space:]]*"\$$CFLAGS).*(-(fomit-frame-pointer|funroll-loops|march|mcpu)).*",\1",' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 pre-configure:
