@@ -1,21 +1,22 @@
 %%PKGINFODIR%%/MANIFEST.w3m
-%%ICONS%%%%ETCDIR%%/antenna-up.xpm
-%%ICONS%%%%ETCDIR%%/back-disabled.xpm
-%%ICONS%%%%ETCDIR%%/back-up.xpm
-%%ICONS%%%%ETCDIR%%/copy-up.xpm
-%%ICONS%%%%ETCDIR%%/db-history-up.xpm
-%%ICONS%%%%ETCDIR%%/forward-disabled.xpm
-%%ICONS%%%%ETCDIR%%/forward-up.xpm
-%%ICONS%%%%ETCDIR%%/history-up.xpm
-%%ICONS%%%%ETCDIR%%/home-up.xpm
-%%ICONS%%%%ETCDIR%%/image-up.xpm
-%%ICONS%%%%ETCDIR%%/open-up.xpm
-%%ICONS%%%%ETCDIR%%/parent-disabled.xpm
-%%ICONS%%%%ETCDIR%%/parent-up.xpm
-%%ICONS%%%%ETCDIR%%/reload-up.xpm
-%%ICONS%%%%ETCDIR%%/search-up.xpm
-%%ICONS%%%%ETCDIR%%/weather-up.xpm
-%%ICONS%%@dirrm %%ETCDIR%%
+%%ICONS%%%%ICONDIR%%/antenna-up.xpm
+%%ICONS%%%%ICONDIR%%/back-disabled.xpm
+%%ICONS%%%%ICONDIR%%/back-up.xpm
+%%ICONS%%%%ICONDIR%%/copy-up.xpm
+%%ICONS%%%%ICONDIR%%/db-history-up.xpm
+%%ICONS%%%%ICONDIR%%/forward-disabled.xpm
+%%ICONS%%%%ICONDIR%%/forward-up.xpm
+%%ICONS%%%%ICONDIR%%/history-up.xpm
+%%ICONS%%%%ICONDIR%%/home-up.xpm
+%%ICONS%%%%ICONDIR%%/image-up.xpm
+%%ICONS%%%%ICONDIR%%/open-up.xpm
+%%ICONS%%%%ICONDIR%%/parent-disabled.xpm
+%%ICONS%%%%ICONDIR%%/parent-up.xpm
+%%ICONS%%%%ICONDIR%%/reload-up.xpm
+%%ICONS%%%%ICONDIR%%/search-up.xpm
+%%ICONS%%%%ICONDIR%%/weather-up.xpm
+%%ICONS%%@dirrm %%ICONDIR%%
+%%ETC%%@dirrm %%ETCDIR%%
 %%XEMACS_ONLY%%%%LISPDIR%%/_pkg.el
 %%XEMACS_ONLY%%%%LISPDIR%%/_pkg.elc
 %%XEMACS_ONLY%%%%LISPDIR%%/auto-autoloads.el
@@ -149,7 +150,7 @@
 %%LISPDIR%%/w3m-search.el
 %%LISPDIR%%/w3m-search.elc
 %%LISPDIR%%/w3m-ucs.el
-%%EMACS21_ONLY%%%%LISPDIR%%/w3m-ucs.elc
+%%XEMACS_ONLY%%%%LISPDIR%%/w3m-ucs.elc
 %%LISPDIR%%/w3m-weather.el
 %%LISPDIR%%/w3m-weather.elc
 %%LISPDIR%%/w3m-xmas.el

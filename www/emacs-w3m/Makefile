@@ -19,7 +19,8 @@ EMACS_PORT_NAME?=	emacs21
 CONFIGURE_ARGS?=	--with-emacs=${EMACS_CMD} \
 			--with-lispdir=${PREFIX}/${LISPDIR}
 LISPDIR?=	${EMACS_VERSION_SITE_LISPDIR}/w3m
-ETCDIR?=	${EMACS_LIBDIR_WITH_VER}/etc/w3m/icons
+ICONDIR?=	${EMACS_LIBDIR_WITH_VER}/etc/w3m/icons
+ETCDIR?=	${EMACS_LIBDIR_WITH_VER}/etc/w3m
 PKGINFODIR?=	"@comment "
 
 USE_AUTOCONF=	yes
@@ -31,10 +32,12 @@ PLIST_SUB+=	EMACS_NAME=${EMACS_NAME} \
 		EMACS21_ONLY=${EMACS21_ONLY} \
 		EMACS_ONLY=${EMACS_ONLY} \
 		LISPDIR=${LISPDIR} \
+		ICONDIR=${ICONDIR} \
 		ETCDIR=${ETCDIR} \
 		PKGINFODIR=${PKGINFODIR} \
 		SHIMBUN=${SHIMBUN} \
-		ICONS=${ICONS}
+		ICONS=${ICONS} \
+		ETC=${ETC}
 
 DOCS=		FAQ README
 DOCS_JA=	FAQ.ja README.ja README.namazu.ja README.shimbun.ja TIPS.ja
@@ -48,6 +51,7 @@ EMACS_ONLY=	"@comment "
 EMACS20_ONLY=	"@comment "
 EMACS21_ONLY=	"@comment "
 ICONS=		""
+ETC=		"@comment "
 .else
 .if (${EMACS_PORT_NAME} == "emacs20")
 XEMACS_ONLY=	"@comment "
@@ -55,12 +59,14 @@ EMACS_ONLY=	""
 EMACS20_ONLY=	""
 EMACS21_ONLY=	"@comment "
 ICONS=		"@comment "
+ETC=		"@comment "
 .else
 XEMACS_ONLY=	"@comment "
 EMACS_ONLY=	""
 EMACS20_ONLY=	"@comment "
 EMACS21_ONLY=	""
 ICONS=		""
+ETC=		""
 INSTALL_TARGET=	install install-icons
 .endif
 .endif
@@ -85,9 +91,6 @@ SHIMBUN=	""
 .else
 SHIMBUN=	"@comment "
 .endif
-.endif
-.if (${EMACS_PORT_NAME} == "emacs21")
-SHIMBUN=	""
 .endif
 
 .if defined(HAVE_FLIM)
