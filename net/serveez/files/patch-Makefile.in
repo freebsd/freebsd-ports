@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sun Feb 17 01:23:50 2002
++++ Makefile.in	Sat Aug  3 00:05:59 2002
+@@ -130,7 +130,7 @@
+ WINDRES = @WINDRES@
+ resource_FILES = @resource_FILES@
+ 
+-SUBDIRS = src data test doc
++SUBDIRS = src data doc
+ 
+ EXTRA_DIST = BUGS autogen.sh README-alpha THANKS README-Win32 README-cross 	serveez.dsw config.h.serveez version.h.serveez 	RELEASE vcgen.bat autodsp serveez.ap
+ 

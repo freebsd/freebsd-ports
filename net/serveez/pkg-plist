@@ -31,19 +31,15 @@ include/libserveez/util.h
 include/libserveez/vector.h
 include/libserveez/windoze.h
 include/svzconfig.h
-@dirrm include/libserveez/codec
-@dirrm include/libserveez/coserver
-@dirrm include/libserveez
-lib/libserveez-0.1.3.so
-lib/libserveez.a
-lib/libserveez.la
-lib/libserveez.so
 @unexec install-info --delete %D/info/serveez-api.info %D/info/dir
-@unexec install-info --delete %D/info/serveez.info %D/info/dir
 info/serveez-api.info
-info/serveez.info
 @exec install-info %D/info/serveez-api.info %D/info/dir
+@unexec install-info --delete %D/info/serveez.info %D/info/dir
+info/serveez.info
 @exec install-info %D/info/serveez.info %D/info/dir
+lib/libserveez.a
+lib/libserveez.so
+lib/libserveez.so.0
 share/aclocal/serveez.m4
 share/serveez/echo-server.scm
 share/serveez/eval-server.scm
@@ -53,3 +49,6 @@ share/serveez/mandel-server.scm
 share/serveez/mandel-shared.scm
 share/serveez/serveez.scm
 @dirrm share/serveez
+@dirrm include/libserveez/coserver
+@dirrm include/libserveez/codec
+@dirrm include/libserveez
