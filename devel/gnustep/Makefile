@@ -37,7 +37,7 @@ GNU_ARCH=	${MACHINE_ARCH}
 .endif
 
 SYSLIBDIR=	${PREFIX}/System/Libraries/${GNU_ARCH}/${OPSYS:L}
-COMBOLIBDIR=	${SYSLIBDIR}/gnu-gnu-gnu-xgps
+COMBOLIBDIR=	${SYSLIBDIR}/gnu-gnu-gnu
 XGPSBUNDLEDIR=	${PREFIX}/System/Library/Bundles/libgnustep-xgps.bundle/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu/
 
 do-install:	# empty
