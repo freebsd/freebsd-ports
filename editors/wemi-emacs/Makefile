@@ -1,5 +1,5 @@
 # New ports collection makefile for:	wemi for emacs
-# Version required:	1.8.6
+# Version required:	1.13.4
 # Date created:		9 May 1999
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 #
@@ -8,19 +8,22 @@
 
 DISTNAME=	wemi-${WEMI_VER}
 CATEGORIES=	editors elisp
-MASTER_SITES=	ftp://ftp.jaist.ac.jp/pub/GNU/elisp/semi/semi-1.08-for-flim-1.9/
+MASTER_SITES=	ftp://ftp.jpl.org/pub/elisp/wemi/
 
 MAINTAINER?=	shige@FreeBSD.org
 
 PORTCLASS?=	master
 
 # distfile version
-FLIM_VER=	1.9.2
-WEMI_VER=	1.8.6
+FLIM_VER=	1.12.7
+WEMI_VER=	1.13.4
 # setupel filename
 WEMI_SETUPEL=	wemi-setupel.el
 # document install directory by install-doc target
 WEMIDOCDIR?=	share/doc/semi
+FLIM_COOKIE=	flim-${EMACS_PORT}-${FLIM_VER}.FreeBSD-packages
+SEMI_COOKIE=	semi-${EMACS_PORT}-${WEMI_VER}.FreeBSD-packages
+WEMI_COOKIE=	wemi-${EMACS_PORT}-${WEMI_VER}.FreeBSD-packages
 
 .if (${PORTCLASS} == "master")
 # emacs port setup
@@ -29,6 +32,7 @@ EMACS_PORT=	emacs
 EMACS_VER=	19.34
 EMACS_LIBDIR=		share/${EMACS_NAME}
 EMACS_LIBDIR_WITH_VER=	${EMACS_LIBDIR}/${EMACS_VER}
+# whether emacs requires *-setupel.el
 REQUIRE_SETUPEL=  YES
 .endif
 
@@ -38,9 +42,9 @@ ALL_TARGET?=	elc
 .if defined(EMACS_PORT)
 PKGNAME=	wemi-${EMACS_PORT}-${WEMI_VER}
 EMACS_CMD=	${PREFIX}/bin/${EMACS_NAME}-${EMACS_VER}
-BUILD_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}
-.if defined(HAVE_COMMON_PORT) && (${HAVE_COMMON_PORT} == "YES")
-RUN_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}-common
+BUILD_DEPENDS+=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}
+.if defined(HAS_COMMON_PORT) && (${HAS_COMMON_PORT} == "YES")
+RUN_DEPENDS+=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}-common
 .else
 RUN_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}
 .endif
@@ -51,8 +55,9 @@ SCRIPTS_ENV+=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER} \
 PLIST_SUB+=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER} \
 		EMACS_LIBDIR_WITH_VER=${EMACS_LIBDIR_WITH_VER} \
 		EMACS_PACKAGESDIR=${EMACS_PACKAGESDIR} \
-		WEMIDOCDIR=${WEMIDOCDIR} WEMI_SETUPEL=${WEMI_SETUPEL}
-MAKE_FLAGS+=	EMACS=${EMACS_CMD}
+		WEMIDOCDIR=${WEMIDOCDIR} WEMI_SETUPEL=${WEMI_SETUPEL} \
+		SEMI_COOKIE=${SEMI_COOKIE} WEMI_COOKIE=${WEMI_COOKIE}
+MAKE_FLAGS+=	EMACS=${EMACS_CMD} XEMACS=${EMACS_CMD}
 .if (${EMACS_VER} == "19.34")
 # depends on custom: emacs-19.34 or mule-19.34
 BUILD_DEPENDS+=	${PREFIX}/${EMACS_LIBDIR_WITH_VER}/site-lisp/custom.el:${PORTSDIR}/editors/custom-${EMACS_PORT}
@@ -68,8 +73,8 @@ BUILD_DEPENDS+=	${PREFIX}/${EMACS_LIBDIR_WITH_VER}/site-lisp/emu/emu.el:${PORTSD
 RUN_DEPENDS+=	${PREFIX}/${EMACS_LIBDIR_WITH_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT}
 .endif
 # depends on flim
-BUILD_DEPENDS+=	${PKG_DBDIR}/flim-${EMACS_PORT}-${FLIM_VER}:${PORTSDIR}/editors/flim-${EMACS_PORT}
-RUN_DEPENDS+=	${PKG_DBDIR}/flim-${EMACS_PORT}-${FLIM_VER}:${PORTSDIR}/editors/flim-${EMACS_PORT}
+BUILD_DEPENDS+=	${PREFIX}/share/flim/${FLIM_COOKIE}:${PORTSDIR}/editors/flim-${EMACS_PORT}
+RUN_DEPENDS+=	${PREFIX}/share/flim/${FLIM_COOKIE}:${PORTSDIR}/editors/flim-${EMACS_PORT}
 .else
 .BEGIN:
 	@${ECHO} "Error: Bad port."
@@ -77,8 +82,10 @@ RUN_DEPENDS+=	${PKG_DBDIR}/flim-${EMACS_PORT}-${FLIM_VER}:${PORTSDIR}/editors/fl
 	@${FALSE}
 .endif
 
+.if !defined(BUILD_INFO_BY_EMACS) || (${BUILD_INFO_BY_EMACS} == "NO")
 # info files JIS to EUC
 BUILD_DEPENDS+=	nkf:${PORTSDIR}/japanese/nkf
+.endif
 
 pre-configure:
 .if defined(REQUIRE_SETUPEL) && (${REQUIRE_SETUPEL} == "YES")
@@ -92,9 +99,16 @@ MAKEINFO_EMACS=		${EMACS_CMD} -no-site-file -no-init-file -batch
 MAKEINFO_EMACS_FLAGS=	-e texinfo-format-buffer -f save-buffer
 
 post-build:
+.if defined(BUILD_INFO_BY_EMACS) && (${BUILD_INFO_BY_EMACS} == "YES")
+	@${MAKE} info-build-by-emacs
+.else
 	@${MAKE} info-build
+.endif
 
 post-install:
+	@${MKDIR} -p ${PREFIX}/share/semi
+	@${TOUCH} ${PREFIX}/share/semi/${SEMI_COOKIE}
+	@${TOUCH} ${PREFIX}/share/semi/${WEMI_COOKIE}
 .if defined(REQUIRE_SETUPEL) && (${REQUIRE_SETUPEL} == "YES")
 	@${MAKE} setupel-install
 .endif
@@ -109,24 +123,37 @@ post-install:
 .endif
 
 
-
-# functions
+###############################################################################
+#
+# miscellaneous local functions
+#
 info-build:
 	@(cd ${WRKSRC} ; \
-	for i in mime-ui-en.texi mime-ui-ja.texi; do \
+	for i in mime-ui-en.texi; do \
 		${MV} $${i} $${i}.jis ; \
 		${CAT} $${i}.jis | nkf -e > $${i} ; \
 		${MAKEINFO} $${i} || ${TRUE} ; \
 	done)
+.if defined(HAS_MULE) && (${HAS_MULE} == "YES")
+	@(cd ${WRKSRC} ; \
+	for i in mime-ui-ja.texi; do \
+		${MV} $${i} $${i}.jis ; \
+		${CAT} $${i}.jis | nkf -e > $${i} ; \
+		${MAKEINFO} $${i} || ${TRUE} ; \
+	done)
+.endif
 
 info-build-by-emacs:
 	@(cd ${WRKSRC} ; \
-	for i in mime-ui-en.texi mime-ui-ja.texi; do \
-		${MV} $${i} $${i}.jis ; \
-		${CAT} $${i}.jis | nkf -e > $${i} ; \
+	for i in mime-ui-en.texi; do \
 		${MAKEINFO_EMACS} $${i} ${MAKEINFO_EMACS_FLAGS} || ${TRUE} ; \
 	done)
-
+.if defined(HAS_MULE) && (${HAS_MULE} == "YES")
+	@(cd ${WRKSRC} ; \
+	for i in mime-ui-ja.texi; do \
+		${MAKEINFO_EMACS} $${i} ${MAKEINFO_EMACS_FLAGS} || ${TRUE} ; \
+	done)
+.endif
 
 doc-install:
 	@${MKDIR} ${PREFIX}/${WEMIDOCDIR}
@@ -137,14 +164,21 @@ doc-install:
 
 setupel-install:
 	@${INSTALL_DATA} ${WRKDIR}/${WEMI_SETUPEL} \
-			${PREFIX}/${EMACS_LIBDIR_WITH_VER}/site-lisp
+		${PREFIX}/${EMACS_LIBDIR_WITH_VER}/site-lisp
 
 info-install:
 	@(cd ${WRKSRC} ; \
-	for i in mime-ui-en.info mime-ui-ja.info; do \
+	for i in mime-ui-en.info; do \
 		${INSTALL_DATA} ${WRKSRC}/$${i} ${PREFIX}/info ; \
 		install-info ${PREFIX}/info/$${i} ${PREFIX}/info/dir ; \
 	done)
+.if defined(HAS_MULE) && (${HAS_MULE} == "YES")
+	@(cd ${WRKSRC} ; \
+	for i in mime-ui-ja.info; do \
+		${INSTALL_DATA} ${WRKSRC}/$${i} ${PREFIX}/info ; \
+		install-info ${PREFIX}/info/$${i} ${PREFIX}/info/dir ; \
+	done)
+.endif
 
 info-package-install:
 	@(cd ${WRKSRC} ; \
@@ -152,7 +186,7 @@ info-package-install:
 		${INSTALL_DATA} ${WRKSRC}/$${i} \
 			${PREFIX}/${EMACS_PACKAGESDIR}/info ; \
 	done ; \
-        ${MKDIR} -p ${PREFIX}/${EMACS_PACKAGESDIR}/man/semi ; \
+	${MKDIR} -p ${PREFIX}/${EMACS_PACKAGESDIR}/man/semi ; \
 	for i in mime-ui-en.texi mime-ui-ja.texi; do \
 		${INSTALL_DATA} ${WRKSRC}/$${i} \
 			${PREFIX}/${EMACS_PACKAGESDIR}/man/semi ; \
