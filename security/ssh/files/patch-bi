@@ -1,6 +1,6 @@
---- log-server.c.orig	Wed Jul  5 08:26:48 2000
-+++ log-server.c	Sat Jun 29 14:25:37 2002
-@@ -160,6 +160,25 @@
+--- log-server.c.orig	Thu Jan 17 05:35:33 2002
++++ log-server.c	Sat Jun 29 14:50:00 2002
+@@ -163,6 +163,27 @@
    closelog();
  }
  
@@ -21,22 +21,26 @@
 +    fprintf(stderr, "log: %s\n", buf);
 +  syslog(LOG_INFO|LOG_AUTH, "%.500s", buf);
 +}
++
++extern char *unauthenticated_user;
 +#endif /* ENABLE_LOG_AUTH */
 +
  /* Converts portable syslog severity to machine-specific syslog severity. */
  
  static int syslog_severity(int severity)
-@@ -344,6 +363,9 @@
- {
-   char buf[1024];
-   va_list args;
+@@ -336,6 +357,11 @@
+     fprintf(stderr, "fatal: %s\n", buf);
+   openlog(prg_name, LOG_PID, log_facility);
+   syslog(LOG_ERR, "fatal: %.500s", buf);
 +#ifdef ENABLE_LOG_AUTH
-+  extern char *unauthenticated_user;
++  if (unauthenticated_user)
++    log_auth("LOGIN FAILED %.100s from %.200s",
++	     unauthenticated_user, get_canonical_hostname());
 +#endif /* ENABLE_LOG_AUTH */
+   closelog();
  
-   if (log_quiet)
-     exit(1);
-@@ -354,6 +376,11 @@
+   do_fatal_cleanups();
+@@ -357,6 +383,11 @@
      fprintf(stderr, "fatal: %s\n", buf);
    openlog(prg_name, LOG_PID, log_facility);
    syslog(syslog_severity(severity), "fatal: %.500s", buf);
