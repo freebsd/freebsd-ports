@@ -11,7 +11,6 @@ PORTREVISION=	2
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ic.eecs.berkeley.edu/pub/Cider/new/
 DISTNAME=	cider1b1
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	amakawa@jp.FreeBSD.org
 COMMENT=	A mixed-level circuit and device simulator (includes SPICE3)
