@@ -68,6 +68,11 @@ sbin/ndc
 %%PORTDOCS%%share/doc/bind/html/server.html
 %%PORTDOCS%%share/doc/bind/html/trusted-keys.html
 %%PORTDOCS%%share/doc/bind/html/zone.html
+%%PORTDOCS%%share/doc/bind/misc/DynamicUpdate
+%%PORTDOCS%%share/doc/bind/misc/FAQ.1of2
+%%PORTDOCS%%share/doc/bind/misc/FAQ.2of2
+%%PORTDOCS%%share/doc/bind/misc/rfc2317-notes.txt
+%%PORTDOCS%%share/doc/bind/misc/style.txt
 share/misc/nslookup.help
 @dirrm include/bind/arpa
 @dirrm include/bind/isc
@@ -80,4 +85,5 @@ share/misc/nslookup.help
 %%PORTDOCS%%@dirrm share/doc/bind/conf/workstation
 %%PORTDOCS%%@dirrm share/doc/bind/conf
 %%PORTDOCS%%@dirrm share/doc/bind/html
+%%PORTDOCS%%@dirrm share/doc/bind/misc
 %%PORTDOCS%%@dirrm share/doc/bind/
