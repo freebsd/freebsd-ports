@@ -893,9 +893,6 @@ lib/%%PYTHON_VERSION%%/gopherlib.pyo
 lib/%%PYTHON_VERSION%%/gzip.py
 lib/%%PYTHON_VERSION%%/gzip.pyc
 lib/%%PYTHON_VERSION%%/gzip.pyo
-lib/%%PYTHON_VERSION%%/heapq.py
-lib/%%PYTHON_VERSION%%/heapq.pyc
-lib/%%PYTHON_VERSION%%/heapq.pyo
 lib/%%PYTHON_VERSION%%/hmac.py
 lib/%%PYTHON_VERSION%%/hmac.pyc
 lib/%%PYTHON_VERSION%%/hmac.pyo
@@ -1118,6 +1115,7 @@ lib/%%PYTHON_VERSION%%/inspect.pyo
 lib/%%PYTHON_VERSION%%/keyword.py
 lib/%%PYTHON_VERSION%%/keyword.pyc
 lib/%%PYTHON_VERSION%%/keyword.pyo
+lib/%%PYTHON_VERSION%%/lib-dynload/_bisect.so
 lib/%%PYTHON_VERSION%%/lib-dynload/_csv.so
 lib/%%PYTHON_VERSION%%/lib-dynload/_curses.so
 lib/%%PYTHON_VERSION%%/lib-dynload/_curses_panel.so
@@ -1142,6 +1140,7 @@ lib/%%PYTHON_VERSION%%/lib-dynload/dbm.so
 %%32BIT_ONLY%%lib/%%PYTHON_VERSION%%/lib-dynload/dl.so
 lib/%%PYTHON_VERSION%%/lib-dynload/fcntl.so
 lib/%%PYTHON_VERSION%%/lib-dynload/grp.so
+lib/%%PYTHON_VERSION%%/lib-dynload/heapq.so
 %%X86_ONLY%%lib/%%PYTHON_VERSION%%/lib-dynload/imageop.so
 lib/%%PYTHON_VERSION%%/lib-dynload/itertools.so
 lib/%%PYTHON_VERSION%%/lib-dynload/math.so
@@ -1566,11 +1565,16 @@ lib/%%PYTHON_VERSION%%/test/badsyntax_future4.py
 lib/%%PYTHON_VERSION%%/test/badsyntax_future5.py
 lib/%%PYTHON_VERSION%%/test/badsyntax_future6.py
 lib/%%PYTHON_VERSION%%/test/badsyntax_future7.py
+lib/%%PYTHON_VERSION%%/test/badsyntax_future8.py
+lib/%%PYTHON_VERSION%%/test/badsyntax_future9.py
 lib/%%PYTHON_VERSION%%/test/badsyntax_nocaret.py
 lib/%%PYTHON_VERSION%%/test/double_const.py
 lib/%%PYTHON_VERSION%%/test/double_const.pyc
 lib/%%PYTHON_VERSION%%/test/double_const.pyo
 lib/%%PYTHON_VERSION%%/test/greyrgb.uue
+lib/%%PYTHON_VERSION%%/test/list_tests.py
+lib/%%PYTHON_VERSION%%/test/list_tests.pyc
+lib/%%PYTHON_VERSION%%/test/list_tests.pyo
 lib/%%PYTHON_VERSION%%/test/output/test_MimeWriter
 lib/%%PYTHON_VERSION%%/test/output/test_asynchat
 lib/%%PYTHON_VERSION%%/test/output/test_augassign
@@ -1583,14 +1587,12 @@ lib/%%PYTHON_VERSION%%/test/output/test_cookie
 lib/%%PYTHON_VERSION%%/test/output/test_exceptions
 lib/%%PYTHON_VERSION%%/test/output/test_extcall
 lib/%%PYTHON_VERSION%%/test/output/test_frozen
-lib/%%PYTHON_VERSION%%/test/output/test_future
 lib/%%PYTHON_VERSION%%/test/output/test_global
 lib/%%PYTHON_VERSION%%/test/output/test_grammar
 lib/%%PYTHON_VERSION%%/test/output/test_httplib
 lib/%%PYTHON_VERSION%%/test/output/test_linuxaudiodev
 lib/%%PYTHON_VERSION%%/test/output/test_logging
 lib/%%PYTHON_VERSION%%/test/output/test_math
-lib/%%PYTHON_VERSION%%/test/output/test_md5
 lib/%%PYTHON_VERSION%%/test/output/test_mmap
 lib/%%PYTHON_VERSION%%/test/output/test_new
 lib/%%PYTHON_VERSION%%/test/output/test_nis
@@ -1616,7 +1618,6 @@ lib/%%PYTHON_VERSION%%/test/output/test_thread
 lib/%%PYTHON_VERSION%%/test/output/test_threadedtempfile
 lib/%%PYTHON_VERSION%%/test/output/test_tokenize
 lib/%%PYTHON_VERSION%%/test/output/test_types
-lib/%%PYTHON_VERSION%%/test/output/test_unicode_file
 lib/%%PYTHON_VERSION%%/test/output/test_winreg
 lib/%%PYTHON_VERSION%%/test/output/test_xreadline
 lib/%%PYTHON_VERSION%%/test/output/xmltests
@@ -1641,6 +1642,9 @@ lib/%%PYTHON_VERSION%%/test/regrtest.pyo
 lib/%%PYTHON_VERSION%%/test/reperf.py
 lib/%%PYTHON_VERSION%%/test/reperf.pyc
 lib/%%PYTHON_VERSION%%/test/reperf.pyo
+lib/%%PYTHON_VERSION%%/test/seq_tests.py
+lib/%%PYTHON_VERSION%%/test/seq_tests.pyc
+lib/%%PYTHON_VERSION%%/test/seq_tests.pyo
 lib/%%PYTHON_VERSION%%/test/sortperf.py
 lib/%%PYTHON_VERSION%%/test/sortperf.pyc
 lib/%%PYTHON_VERSION%%/test/sortperf.pyo
@@ -1673,6 +1677,9 @@ lib/%%PYTHON_VERSION%%/test/test_al.pyo
 lib/%%PYTHON_VERSION%%/test/test_anydbm.py
 lib/%%PYTHON_VERSION%%/test/test_anydbm.pyc
 lib/%%PYTHON_VERSION%%/test/test_anydbm.pyo
+lib/%%PYTHON_VERSION%%/test/test_applesingle.py
+lib/%%PYTHON_VERSION%%/test/test_applesingle.pyc
+lib/%%PYTHON_VERSION%%/test/test_applesingle.pyo
 lib/%%PYTHON_VERSION%%/test/test_array.py
 lib/%%PYTHON_VERSION%%/test/test_array.pyc
 lib/%%PYTHON_VERSION%%/test/test_array.pyo
@@ -2009,6 +2016,9 @@ lib/%%PYTHON_VERSION%%/test/test_largefile.pyo
 lib/%%PYTHON_VERSION%%/test/test_linuxaudiodev.py
 lib/%%PYTHON_VERSION%%/test/test_linuxaudiodev.pyc
 lib/%%PYTHON_VERSION%%/test/test_linuxaudiodev.pyo
+lib/%%PYTHON_VERSION%%/test/test_list.py
+lib/%%PYTHON_VERSION%%/test/test_list.pyc
+lib/%%PYTHON_VERSION%%/test/test_list.pyo
 lib/%%PYTHON_VERSION%%/test/test_locale.py
 lib/%%PYTHON_VERSION%%/test/test_locale.pyc
 lib/%%PYTHON_VERSION%%/test/test_locale.pyo
@@ -2222,6 +2232,9 @@ lib/%%PYTHON_VERSION%%/test/test_scriptpackages.pyo
 lib/%%PYTHON_VERSION%%/test/test_select.py
 lib/%%PYTHON_VERSION%%/test/test_select.pyc
 lib/%%PYTHON_VERSION%%/test/test_select.pyo
+lib/%%PYTHON_VERSION%%/test/test_set.py
+lib/%%PYTHON_VERSION%%/test/test_set.pyc
+lib/%%PYTHON_VERSION%%/test/test_set.pyo
 lib/%%PYTHON_VERSION%%/test/test_sets.py
 lib/%%PYTHON_VERSION%%/test/test_sets.pyc
 lib/%%PYTHON_VERSION%%/test/test_sets.pyo
@@ -2342,6 +2355,9 @@ lib/%%PYTHON_VERSION%%/test/test_trace.pyo
 lib/%%PYTHON_VERSION%%/test/test_traceback.py
 lib/%%PYTHON_VERSION%%/test/test_traceback.pyc
 lib/%%PYTHON_VERSION%%/test/test_traceback.pyo
+lib/%%PYTHON_VERSION%%/test/test_tuple.py
+lib/%%PYTHON_VERSION%%/test/test_tuple.pyc
+lib/%%PYTHON_VERSION%%/test/test_tuple.pyo
 lib/%%PYTHON_VERSION%%/test/test_types.py
 lib/%%PYTHON_VERSION%%/test/test_types.pyc
 lib/%%PYTHON_VERSION%%/test/test_types.pyo
