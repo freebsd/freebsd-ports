@@ -60,6 +60,7 @@
     SUBDIR += file
     SUBDIR += filedupe
     SUBDIR += fileutils
+    SUBDIR += finfo
     SUBDIR += flasher
     SUBDIR += flexbackup
     SUBDIR += flog
