@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	logrotate
-PORTVERSION=	3.3
+PORTVERSION=	3.5.2
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.redhat.com/pub/redhat/current/SRPMS/SRPMS/ \
-		ftp://ftp.freesoftware.com/pub/linux/redhat/current/SRPMS/SRPMS/
+MASTER_SITES=	ftp://ftp.redhat.com/pub/redhat/current/SRPMS/i386/SRPMS/ \
+		ftp://ftp.freesoftware.com/pub/linux/redhat/current/SRPMS/i386/SRPMS/
+
 EXTRACT_SUFX=	-1.src.rpm
 
 MAINTAINER=	ycheng@sinica.edu.tw
