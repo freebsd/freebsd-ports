@@ -7,11 +7,12 @@
 
 PORTNAME=	mozilla
 PORTVERSION=	1.6
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	japanese www
 MASTER_SITES=	http://www33.ocn.ne.jp/~snip/mozilla/jlp/
 PKGNAMESUFFIX=	-jlp
-DISTNAME=	moz${PORTVERSION}-langjajp-tm0.2
+DISTNAME=	moz${PORTVERSION}-langjajp-tm0.2.1
 EXTRACT_SUFX=	.xpi
 
 MAINTAINER=	fortune@n.jpn.ph
