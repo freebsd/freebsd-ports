@@ -3,11 +3,11 @@
 # Date created:         So  17 Nov 1996 16:59:23 MET
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.18 1997/10/04 14:53:01 andreas Exp $
+# $Id: Makefile,v 1.19 1997/10/09 21:04:34 andreas Exp $
 #
 
 DISTNAME=	bb
-PKGNAME=	bb-1.04h
+PKGNAME=	bb-1.04
 CATEGORIES=	net
 MASTER_SITES=	http://www.iti.qc.ca/iti/users/sean/bb-dnld/
 EXTRACT_SUFX=   -src.tgz
@@ -19,7 +19,6 @@ BUILD_DEPENDS=	${PREFIX}/sbin/httpd:${PORTSDIR}/www/apache
 # The FreeBSD Ports Team has permission to include this in our CDROM
 # from the author, but others who wish to do likewise will have to
 # contact Sean MacGuire <sean@iti.qc.ca>.
-#NO_CDROM=	"It can't be sold"
 
 post-configure:
 	( cd ${WRKSRC}/doc; ${SH} bbconfig freebsd )
@@ -35,6 +34,8 @@ do-install:
 	@${MKDIR} ${PREFIX}/${DISTNAME}/www/notes
 	@${MKDIR} ${PREFIX}/${DISTNAME}/tmp
 	@${TOUCH} ${PREFIX}/${DISTNAME}/tmp/.keep_me
+	${INSTALL_SCRIPT} ${WRKSRC}/runbb.sh \
+				${PREFIX}/${DISTNAME}/runbb.sh
 	${INSTALL_DATA} ${WRKSRC}/README \
 				${PREFIX}/${DISTNAME}/README
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/bb \
@@ -47,6 +48,10 @@ do-install:
 				${PREFIX}/${DISTNAME}/bin/bb-page.sh
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/bbd \
 				${PREFIX}/${DISTNAME}/bin/bbd
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/bbnet \
+				${PREFIX}/${DISTNAME}/bin/bbnet
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/sendmsg \
+				${PREFIX}/${DISTNAME}/bin/sendmsg
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/touchtime \
 				${PREFIX}/${DISTNAME}/bin/touchtime
 	${INSTALL_DATA} ${WRKSRC}/doc/README \
@@ -77,8 +82,6 @@ do-install:
 				${PREFIX}/${DISTNAME}/etc/bbsys.solaris
 	${INSTALL_DATA} ${WRKSRC}/etc/bbsys.sunos \
 				${PREFIX}/${DISTNAME}/etc/bbsys.sunos
-	${INSTALL_SCRIPT} ${WRKSRC}/runbb.sh \
-				${PREFIX}/${DISTNAME}/runbb.sh
 	${INSTALL_SCRIPT} ${WRKSRC}/web/mkbb.bkg \
 				${PREFIX}/${DISTNAME}/web/mkbb.bkg
 	${INSTALL_SCRIPT} ${WRKSRC}/web/mkbb.cols \
