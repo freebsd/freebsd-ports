@@ -189,6 +189,7 @@
     SUBDIR += m68k-rtems-gcj
     SUBDIR += m68k-rtems-gdb
     SUBDIR += m68k-rtems-objc
+    SUBDIR += make++
     SUBDIR += makedepend
     SUBDIR += mico
     SUBDIR += mime
