@@ -3,7 +3,7 @@
 # Date created:                31 August 1998
 # Whom:                        brett@peloton.physics.montana.edu
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/08/10 00:23:48 steve Exp $
 #
 
 DISTNAME=	jafm-0.5
@@ -12,8 +12,7 @@ MASTER_SITES=	http://www-personal.usyd.edu.au:/~rlittlew/jafm/
 
 MAINTAINER=	brett@peloton.physics.montana.edu
 
-LIB_DEPENDS=    qt\\.1\\.\\\(33\\\|40\\\):${PORTSDIR}/x11-toolkits/qt140
-
+USE_QT=		yes
 USE_GMAKE=	yes
 ALL_TARGET=	jafm
 
