@@ -12,7 +12,7 @@ INSTALL_MANPAGES=	yes
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 EXTRACT_SUFX=	.tar.Z
 PKG_CMD=	pkg_create -N
-# DEPENDS=        ${PORTSDIR}/x11/xpm
+DEPENDS=        ${PORTSDIR}/x11/xpm
 
 # piewm.tar.Z includes and old version of xpm, and also a bunch of .o
 #  files plus an executable
