@@ -524,6 +524,9 @@ pre-install:
 	-e 's#%%PORTVERSION%%#${BUILD_NR}#g' \
 	${WRKSRC}/../instsetoo/unxfbsd.pro/${LANG_EXT}/normal/oo_setup.resp
 	@${MKDIR} -p ${WRKSRC}/../solver/644/unxfbsd.pro/bin/${LANG_EXT}/osl/
+	# fix KDE-files to use our wrapper skrips.
+	@${FIND} ${WRKSRC}/../sysui/unxfbsd.pro | ${EGREP} "\.desktop$$" | ${XARGS} \
+		${PERL} -pi -e 's|Exec="\<progpath\>/program/|Exec="${PREFIX}/bin/openoffice_${RELEASE_NR}-|'
 
 do-install:
 .if !defined(DISPLAY)

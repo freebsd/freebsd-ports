@@ -538,6 +538,9 @@ do-build:
 pre-install:
 	@${SED} -e 's#%%PREFIX%%#${PREFIX}#g' < ${FILESDIR}/oo_setup.resp \
 	   > ${WRKSRC}/../instsetoo/unxfbsd.pro/${LANG_EXT}/normal/oo_setup.resp
+	# fix KDE-files to use our wrapper skrips.
+	@${FIND} ${WRKSRC}/../sysui/unxfbsd.pro | ${EGREP} "\.desktop$$" | ${XARGS} \
+		${PERL} -pi -e 's|Exec="\<progpath\>/program/|Exec="${PREFIX}/bin/openoffice-|'
 
 do-install:
 .if !defined(DISPLAY)
