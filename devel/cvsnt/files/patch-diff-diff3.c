@@ -1,7 +1,7 @@
---- src/cvs.h.orig	Sun Feb 22 04:59:14 2004
-+++ src/cvs.h	Sun Feb 22 04:59:22 2004
-@@ -34,9 +34,6 @@
- #include <stdlib.h>
+--- diff/diff3.c.orig	Sun Feb 22 04:57:07 2004
++++ diff/diff3.c	Sun Feb 22 04:57:14 2004
+@@ -26,9 +26,6 @@
+ #include "diffrun.h"
  
  #ifdef HAVE_UNISTD_H
 -#ifndef _XOPEN_SOURCE

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cvsnt
-PORTVERSION=	2.0.14
+PORTVERSION=	2.0.26
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cvsnt.org/archive/ \
 		http://homepages.nildram.co.uk/~tmhoyle/
@@ -18,7 +18,11 @@ LIB_DEPENDS=	ltdl.4:${PORTSDIR}/devel/libltdl
 
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--enable-fork
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GETOPT_LONG=yes
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 .if exists(/usr/include/gssapi.h)
 PLIST_SUB=	GSERVER=""
