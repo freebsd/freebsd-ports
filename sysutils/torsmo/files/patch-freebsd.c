@@ -1,5 +1,5 @@
 --- freebsd.c.orig	Wed Aug 25 20:24:24 2004
-+++ freebsd.c	Wed Dec 29 22:11:31 2004
++++ freebsd.c	Sun Jan  2 08:49:26 2005
 @@ -4,14 +4,12 @@
  #include <stdio.h>
  #include <stdlib.h>
@@ -77,6 +77,15 @@
  
  	if((sysctl(mib, 2, &boottime, &size, NULL, 0) != -1) && (boottime.tv_sec != 0)) {
  		time(&now);
+@@ -292,7 +329,7 @@
+ }
+ 
+ double get_acpi_temperature(int fd) {
+-	double temp;
++	int temp;
+        
+ 	if (GETSYSCTL("hw.acpi.thermal.tz0.temperature", temp)) {
+         	(void)fprintf(stderr, "Cannot read sysctl \"hw.acpi.thermal.tz0.temperature\"\n");
 @@ -344,4 +381,38 @@
  
  char* get_acpi_fan() {
