@@ -38,6 +38,7 @@
     SUBDIR += gaspell
     SUBDIR += gdict
     SUBDIR += glimpse
+    SUBDIR += gmat
     SUBDIR += grap
     SUBDIR += gsed
     SUBDIR += gtkdiff

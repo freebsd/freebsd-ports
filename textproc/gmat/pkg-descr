@@ -1,0 +1,4 @@
+O'Reilly's SGML formatting package.
+
+This package processes the complete sources for a book in DocBook
+format and formats it with groff.
