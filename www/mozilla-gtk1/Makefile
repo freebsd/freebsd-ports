@@ -14,7 +14,6 @@ MASTERDIR=	${.CURDIR}/../mozilla
 DESCR=		${PKGDIR}/pkg-descr.gtk2
 
 WITH_GTK2=	yes
-WITHOUT_XFT=	"Causes crashes when used with apps such as Galeon 2"
 MOZILLA=	mozilla-gtk2
 
 .include "${MASTERDIR}/Makefile"
