@@ -13,8 +13,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	patrick@ginx.com
-COMMENT=	A "collaborative media application."
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A collaborative media application
 
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client \
 		expat.5:${PORTSDIR}/textproc/expat2
@@ -40,7 +40,7 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql323-server \
 		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
 		${SITE_PERL}/XML/RSS.pm:${PORTSDIR}/textproc/p5-XML-RSS
 
-NO_BUILD=yes
+NO_BUILD=	yes
 
 BROKEN=		"Inconsistent dependencies (mysql-client 3.x and 4.x)"
 DEPRECATED=	${BROKEN}
