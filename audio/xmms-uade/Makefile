@@ -7,10 +7,10 @@
 
 PORTNAME=	xmms-uade
 PORTVERSION=	0.80
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	audio
-MASTER_SITES=	http://www.ee.tut.fi/%7Eheikki/uade/pre/
-DISTFILES=	uade-${PORTVERSION}-pre3-antiwar${EXTRACT_SUFX}
+MASTER_SITES=	http://ee.tut.fi/~heikki/uade/pre/
+DISTFILES=	uade-${PORTVERSION}-pre5${EXTRACT_SUFX}
 
 MAINTAINER=	mbr@FreeBSD.org
 COMMENT=	Unix Amiga Delitracker Emulator with XMMS Input plugin.
@@ -31,6 +31,6 @@ CONFIGURE_ARGS=	--prefix=${X11BASE}/lib/xmms \
 
 CONFIGURE_ENV=	SYSCFLAGS='${CFLAGS}'
 
-WRKSRC=		${WRKDIR}/uade-${PORTVERSION}-pre3-antiwar
+WRKSRC=		${WRKDIR}/uade-${PORTVERSION}-pre5
 
 .include <bsd.port.mk>

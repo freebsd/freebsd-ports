@@ -17,6 +17,7 @@ share/uade/players/DariusZendeh
 share/uade/players/DaveLowe
 share/uade/players/DaveLoweNew
 share/uade/players/DaveLowe_Deli
+share/uade/players/DavidHanney
 share/uade/players/DavidWhittaker
 share/uade/players/Delta2.0
 share/uade/players/DeltaMusic
@@ -49,6 +50,7 @@ share/uade/players/JamCracker
 share/uade/players/JankoMrsic-Flogel
 share/uade/players/JasonBrooke
 share/uade/players/JasonPage
+share/uade/players/JesperOlsen
 share/uade/players/KrisHatlelid
 share/uade/players/LME
 share/uade/players/Laxity-Player
@@ -59,6 +61,7 @@ share/uade/players/MCMD
 share/uade/players/MagneticFieldsPacker
 share/uade/players/MajorTom
 share/uade/players/MarkCooksey
+share/uade/players/MarkCookseyNew
 share/uade/players/MarkCookseyOld
 share/uade/players/MarkII
 share/uade/players/MartinWalker
@@ -96,6 +99,7 @@ share/uade/players/SoundFX
 share/uade/players/SoundImages
 share/uade/players/SoundMon
 share/uade/players/SoundMon2.2
+share/uade/players/SoundPlayer
 share/uade/players/Soundcontrol
 share/uade/players/Soundfactory
 share/uade/players/Special_FX
@@ -118,6 +122,7 @@ share/uade/players/ThomasHermann
 share/uade/players/TimFollin
 share/uade/players/TomyTracker
 share/uade/players/Tronic
+share/uade/players/UltimateST
 share/uade/players/WallyBeben
 share/uade/players/YMPlayer
 share/uade/players/fwmp
@@ -172,6 +177,7 @@ lib/xmms/doc/uade-0.80/players/WantedTeam/EP_SOPROL.readme
 lib/xmms/doc/uade-0.80/players/WantedTeam/EP_SeanConran.readme
 lib/xmms/doc/uade-0.80/players/WantedTeam/EP_Silmarils.readme
 lib/xmms/doc/uade-0.80/players/WantedTeam/EP_SoundFX.readme
+lib/xmms/doc/uade-0.80/players/WantedTeam/EP_SoundPlayer.readme
 lib/xmms/doc/uade-0.80/players/WantedTeam/EP_Soundcontr.readme
 lib/xmms/doc/uade-0.80/players/WantedTeam/EP_Soundfactor.readme
 lib/xmms/doc/uade-0.80/players/WantedTeam/EP_SpecialFX.readme
@@ -193,6 +199,7 @@ lib/xmms/doc/uade-0.80/players/ptk-prowiz/Changelog.PTK-Prowiz
 lib/xmms/doc/uade-0.80/players/ptk-prowiz/DeliWiz-Readme.txt
 lib/xmms/doc/uade-0.80/players/ptk-prowiz/PTK-Prowiz.txt
 lib/xmms/doc/uade-0.80/players/ArtOfNoise.readme
+lib/xmms/doc/uade-0.80/players/README.UltimateST
 lib/xmms/doc/uade-0.80/players/Soundmon2.x.readme
 lib/xmms/doc/uade-0.80/players/Whittaker.readme
 lib/xmms/doc/uade-0.80/players/nasr_TFMX.Disclaimer.readme
