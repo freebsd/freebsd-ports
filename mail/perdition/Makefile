@@ -19,7 +19,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 		popt.0:${PORTSDIR}/devel/popt \
-		gdbm.2:${PORTSDIR}/databases/gdbm \
+		gdbm.3:${PORTSDIR}/databases/gdbm \
 		vanessa_logger.0:${PORTSDIR}/devel/libvanessa_logger \
 		vanessa_socket.0:${PORTSDIR}/devel/libvanessa_socket \
 		vanessa_adt.0:${PORTSDIR}/devel/libvanessa_adt

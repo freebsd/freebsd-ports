@@ -18,7 +18,7 @@ DISTFILES+=	${MOZART_DOCS}
 MAINTAINER=	mathiasp@virtual-earth.de
 
 BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs21
-LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm \
+LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
 		tk83.1:${PORTSDIR}/x11-toolkits/tk83
 
 MOZART_DOCS=	mozart-${PORTVERSION}-doc.tar.gz

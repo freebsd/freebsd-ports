@@ -18,7 +18,7 @@ MAINTAINER=	mikeh@FreeBSD.org
 BUILD_DEPENDS+=	autoconf:${PORTSDIR}/devel/autoconf
 
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms \
-		gdbm.2:${PORTSDIR}/databases/gdbm
+		gdbm.3:${PORTSDIR}/databases/gdbm
 
 USE_AUTOMAKE_VER=	15
 USE_AUTOCONF=	yes

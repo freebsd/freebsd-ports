@@ -16,7 +16,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 
 BUILD_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
-LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm \
+LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
 		glib-2.0.0:${PORTSDIR}/devel/glib20 \
 		xslt.1:${PORTSDIR}/textproc/libxslt \
 		popt.0:${PORTSDIR}/devel/popt

@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	pl-
 
 MAINTAINER=	doc@lublin.t1.pl
 
-LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 
 WRKSRC=	${WRKDIR}/sms
 USE_GMAKE=	yes

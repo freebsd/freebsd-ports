@@ -52,7 +52,7 @@ WITH_GTK?=		yes
 .endif
 
 .if defined(WITH_SQLITE) && ${WITH_SQLITE:L} != no
-LIB_DEPENDS+=		gdbm.2:${PORTSDIR}/databases/gdbm \
+LIB_DEPENDS+=		gdbm.3:${PORTSDIR}/databases/gdbm \
 			sqlite.2:${PORTSDIR}/databases/sqlite
 CONFIGURE_ARGS+=	--with-gdbm-prefix="${LOCALBASE}" \
 			--with-sqlite-prefix="${LOCALBASE}"

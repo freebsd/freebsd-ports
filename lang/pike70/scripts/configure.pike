@@ -66,7 +66,7 @@ while [ "$1" ]; do
 			JPEG=1
 			;;
 		\"GDBM\")
-			echo 'LIB_DEPENDS+=	gdbm.2:${PORTSDIR}/databases/gdbm' >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc 
+			echo 'LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm' >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc 
 			echo 'CONFIGURE_ARGS+=	--with-gdbm=${PREFIX}' >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 			GDBM=1
 			;;
