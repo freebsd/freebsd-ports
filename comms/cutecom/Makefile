@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	cutecom
-PORTVERSION=	0.0.5
+PORTVERSION=	0.0.7
 CATEGORIES=	comms
 MASTER_SITES=	http://cutecom.sourceforge.net/
 
