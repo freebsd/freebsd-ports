@@ -15,8 +15,10 @@ DISTNAME=	gnome-utils-${PORTVERSION}
 MAINTAINER=	ade@FreeBSD.org
 
 LIB_DEPENDS=	panel_applet.4:${PORTSDIR}/x11/gnomecore \
+		gtop.1:${PORTSDIR}/devel/libgtop \
 		guile.6:${PORTSDIR}/lang/guile \
 		glade.3:${PORTSDIR}/devel/libglade
+RUN_DEPENDS=	gnomecc:${PORTSDIR}/sysutils/gnomecontrolcenter
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
