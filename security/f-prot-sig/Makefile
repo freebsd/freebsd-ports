@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	f-prot-sig
-PORTVERSION=	20040521
+PORTVERSION=	20040524
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.f-prot.com/pub/
 DISTFILES=	fp-def.zip macrdef2.zip
