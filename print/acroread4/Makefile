@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	acroread
+PORTNAME=	acroread4
 PORTVERSION=	4.05
 CATEGORIES=	print linux
 MASTER_SITES=	ftp://ftp.adobe.com/pub/adobe/acrobatreader/unix/4.x/
@@ -23,8 +23,6 @@ RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulat
 .elif ${ARCH} == "alpha"
 RUN_DEPENDS=	/compat/osf1/usr/shlib/libc.so:${PORTSDIR}/emulators/osf1_base
 .endif
-
-NO_LATEST_LINK=	yes
 
 ONLY_FOR_ARCHS=	i386 alpha
 
