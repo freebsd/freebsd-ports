@@ -11,5 +11,3 @@ sbin/ndtpcheck
 sbin/ndtpcontrol
 sbin/ndtpd
 sbin/ndtpdaily
-@exec install -d -o %%OWNER%% -g %%GROUP%% -m %%MODE%% %%VARDIR%%/ndtpd
-@unexec rm -rf %%VARDIR%%/ndtpd
