@@ -371,6 +371,7 @@
     SUBDIR += ratoolset
     SUBDIR += rboot
     SUBDIR += rdesktop
+    SUBDIR += rdesktop-devel
     SUBDIR += rdist6
     SUBDIR += redir
     SUBDIR += relay
