@@ -46,14 +46,14 @@ CONFIGURE_ARGS=	--with-x=no --with-pop
 .endif
 .if defined(USE_WNN6)
 .if (${USE_WNN6} == "yes" || ${USE_WNN6} == "YES")
-CONFIGURE_ARGS+=--with-wnn6 --with-wnn-includes=${LOCALBASE}/include/wnn6/wnn \
+CONFIGURE_ARGS+=--with-wnn --with-wnn-includes=${LOCALBASE}/include/wnn6/wnn \
 		--with-wnn-libraries=${LOCALBASE}/lib/libwnn6.so
 LIB_DEPENDS+=	wnn6.1:${PORTSDIR}/japanese/Wnn6-lib
 .endif
 .endif
 .if defined(USE_FREEWNN)
 .if (${USE_FREEWNN} == "yes" || ${USE_FREEWNN} == "YES")
-CONFIGURE_ARGS+=--with-wnn4 --with-wnn-includes=${LOCALBASE}/include/wnn \
+CONFIGURE_ARGS+=--with-wnn --with-wnn-includes=${LOCALBASE}/include/wnn \
 		--with-wnn-libraries=${LOCALBASE}/lib/libwnn.so
 LIB_DEPENDS+=	wnn.0:${PORTSDIR}/japanese/FreeWnn-lib
 .endif
