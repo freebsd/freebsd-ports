@@ -15,15 +15,13 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An implementation of a SIP proxy server
 
-BUILD_DEPENDS=	pthread-config:${PORTSDIR}/devel/pth
 LIB_DEPENDS=	osip2.2:${PORTSDIR}/net/libosip2 \
 		gdbm.3:${PORTSDIR}/databases/gdbm
-RUN_DEPENDS=	pthread-config:${PORTSDIR}/devel/pth
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--enable-pth=yes --with-db=gdbm
+CONFIGURE_ARGS=	--with-db=gdbm
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>
