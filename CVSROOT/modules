@@ -8559,6 +8559,7 @@ ripit		ports/audio/ripit
 ripmime		ports/mail/ripmime
 rkhunter	ports/security/rkhunter
 rkive		ports/news/rkive
+rl		ports/textproc/rl
 rlogview	ports/sysutils/rlogview
 rlpr		ports/print/rlpr
 rlwrap		ports/devel/rlwrap
