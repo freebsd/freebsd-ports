@@ -8,14 +8,14 @@
 PORTNAME=	X11
 PORTVERSION=	3.3
 CATEGORIES=	russian x11
-MASTER_SITES=	http://koi8.pp.ru/dist/ \
-		ftp://ftp.kiarchive.ru/pub/misc/fonts/cyrillic/xwindows/
-DISTFILES=	x6rus-2.3.1-bin.tgz
+MASTER_SITES=   http://koi8.pp.ru/dist/:koi8 \
+		ftp://ftp.kiarchive.ru/pub/misc/fonts/cyrillic/xwindows/:kiae
+DISTFILES=      x6rus-2.3.1-bin.tgz:koi8
 
 .if defined(NON_FREE_FONTS)
-DISTFILES+=	Type1.koi8-r.tgz
+DISTFILES+=     Type1.koi8-r.tgz:kiae
 .else
-DISTFILES+=	Type1.koi8-r.free.tgz
+DISTFILES+=     Type1.koi8-r.free.tgz:kiae
 .endif
 
 MAINTAINER=	ache@FreeBSD.org
