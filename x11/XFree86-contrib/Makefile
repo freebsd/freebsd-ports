@@ -16,10 +16,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	jmz@FreeBSD.org
 COMMENT=	XFree86 contrib programs
 
-.if ${XFREE86_VERSION} != 3
-IGNORE=		"Only for XFree86 version 3"
-.endif
-
 # Define FORCE_PACKAGE from the command line if you want to override
 # this and build a package
 NO_PACKAGE=	"Binary package distributed by XFree86 already"
@@ -30,4 +26,10 @@ MAN1=		ico.1 listres.1 showfont.1 viewres.1 xbiff.1 xcalc.1 \
 		xditview.1 xedit.1 xev.1 xeyes.1 xfontsel.1 xgc.1 xload.1 \
 		xman.1 xmessage.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${XFREE86_VERSION} == 4
+IGNORE=		"Only for XFree86 version 3"
+.endif
+
+.include <bsd.port.post.mk>
