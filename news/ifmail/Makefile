@@ -7,7 +7,7 @@
 
 PORTNAME=	ifmail
 PORTVERSION=	2.15
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/fido
@@ -17,19 +17,19 @@ COMMENT=	FidoNet(tm) support package for UN*X platform
 
 MAN3=		parsedate.3
 MAN8=		ifmail.8 iftoss.8
+IFMAIL_RUNAS?=	ifmail
+PLIST_SUB+=	IFMAIL_RUNAS="${IFMAIL_RUNAS}"
 
-.if defined(IFMAIL_RUNAS)
 pre-configure:
 	@${MV} ${WRKSRC}/CONFIG ${WRKSRC}/CONFIG.sed
 	${SED} -e "s/OWNER = ifmail/OWNER = ${IFMAIL_RUNAS}/" \
+		-e "s#CC = gcc#CC = ${CC}#" \
+		-e "s#-O2 -Wall#${CFLAGS} -Wall#" \
 		${WRKSRC}/CONFIG.sed > ${WRKSRC}/CONFIG
-.endif
 
 pre-install:
-.if !defined(IFMAIL_RUNAS)
-	if ! pw usershow ifmail; then pw useradd ifmail -g uucp -u 75 \
+	if ! pw usershow ${IFMAIL_RUNAS}; then pw useradd ${IFMAIL_RUNAS} -g uucp -u 75 \
 		-h - -d /nonexistent -s /nonexistent -c "Ifmail Server"; fi
-.endif
 	${MKDIR} ${PREFIX}/libexec/ifmail
 
 post-install:
@@ -57,7 +57,10 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 501101
-BROKEN=		gcc33 does not support varargs.h
+CC=		gcc32
+CXX=		g++32
+BUILD_DEPENDS+=	gcc32:${PORTSDIR}/${GCC32_PORT}
+GCC32_PORT?=	lang/gcc32
 .endif
 
 .include <bsd.port.post.mk>
