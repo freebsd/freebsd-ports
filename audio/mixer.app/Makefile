@@ -8,21 +8,17 @@
 PORTNAME=	mixer.app
 PORTVERSION=	1.8.0
 CATEGORIES=	audio
-MASTER_SITES=	http://www.fukt.bth.se/~per/mixer/
-DISTNAME=	Mixer.app-${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
+DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another mixer intended for the windowmaker dockapp
 
+WRKSRC=		${WRKDIR}/Mixer.app-${PORTVERSION}
+
 USE_XPM=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Mixer.app ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
