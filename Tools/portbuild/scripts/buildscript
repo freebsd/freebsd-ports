@@ -104,7 +104,7 @@ else
     if [ "x${mtreefile}" != "x" ]; then
       mtree -f ${mtreefile} -p ${prefix} > /tmp/list3
       if [ -s /tmp/list3 ]; then
-        if [ "x${NOPLISTCHECK}" = "x" ]; then
+        if [ "x${PLISTCHECK}" != "x" ]; then
 	  echo "1" > /tmp/status
 	fi
         echo "================================================================"
