@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $Id: portlint.pl,v 1.32 2003/12/27 00:43:00 marcus Exp $
+# $Id: portlint.pl,v 1.35 2004/01/02 02:14:06 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -40,7 +40,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 5;
-my $micro = 4;
+my $micro = 5;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -86,12 +86,12 @@ my $re_lang_short = '(' . join('|', @lang_short) . ')-';
 my ($prog) = ($0 =~ /([^\/]+)$/);
 sub usage {
 	print STDERR <<EOF;
-usage: $prog [-AabchvtN] [-M ENV] [-B#] [port_directory]
+usage: $prog [-AabCchvtN] [-M ENV] [-B#] [port_directory]
 	-a	additional check for scripts/* and pkg-*
 	-A	turn on all additional checks (equivalent to -abcNt)
 	-b	warn \$(VARIABLE)
-	-C	pedantic committer mode (equivalent to -abct)
 	-c	committer mode
+	-C	pedantic committer mode (equivalent to -abct)
 	-h	show summary of command line options
 	-v	verbose mode
 	-t	nit pick about use of spaces
@@ -660,7 +660,8 @@ sub checkplist {
 				"please use USE_LIBTOOL in Makefile if possible");
 		}
 
-		if ($_ =~ /\.so(\.\d+)?$/ && $makevar{INSTALLS_SHLIB} eq '') {
+		if ($_ =~ m|^lib/lib[^\/]+\.so(\.\d+)?$| && 
+			$makevar{INSTALLS_SHLIB} eq '') {
 			&perror("WARN: $file [$.]: installing shared libraries, ".
 				"please define INSTALLS_SHLIB as appropriate");
 		}
@@ -1413,7 +1414,7 @@ DISTFILES DIST_SUBDIR EXTRACT_ONLY
 		" if nothing seems apropriate.");
 	}
 
-	if ($committer && $makevar{'.CURDIR'} =~ m'/([^/]+)/[^/]+/?$') {
+	if ($committer && $makevar{'.CURDIR'} =~ m'ports/([^/]+)/[^/]+/?$') {
 		if ($cat[0] ne $1 && $makevar{PKGCATEGORY} ne $1 ) {
 			&perror("FATAL: $file: category \"$1\" must be listed first");
 		}
@@ -2121,6 +2122,12 @@ sub abspathname {
 	my($str, $file) = @_;
 	my($s, $i, %cmdnames);
 	my($pre);
+
+	# trim all trailing backslash and newline
+	$str =~ s/\\\n\s*/ /g;
+
+	# ignore parameter string to reinplace command
+	$str =~ s/([ \t][\@-]?(?:sed|\$[\{\(]SED[\}\)]|\$[\{\(]REINPLACE_CMD[\}\)]))((?:\s+\-\w+)*\s+(?:"(?:\\"|[^"\n])*"|'(?:\\'|[^'\n])*'))+(.*)/$1$3/g; #'
 
 	# ignore parameter string to echo command
 	$str =~ s/[ \t][\@-]?(echo|\$[\{\(]ECHO[\}\)]|\$[\{\(]ECHO_MSG[\}\)])[ \t]+("(\\'|\\"|[^"])*"|'(\\'|\\"|[^"])*')[ \t]*[;\n]//; #'
