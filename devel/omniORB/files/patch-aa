@@ -1,10 +1,10 @@
---- config/config.mk.orig	Fri Aug 18 16:09:38 2000
-+++ config/config.mk	Mon Sep 11 17:26:22 2000
-@@ -77,6 +77,7 @@
- #platform = x86_freebsd_3.2
+--- config/config.mk.orig	Thu Jul 25 16:42:35 2002
++++ config/config.mk	Thu Jul 25 16:42:07 2002
+@@ -85,6 +85,7 @@
  #platform = x86_freebsd_4.0
+ #platform = x86_openbsd_3.0
  #platform = pc486_rtems_4.5.0
 +platform = __PLATFORM__
  
+ 
  # On Win32 platforms, uncomment the following line to build all the binaries
- # with debugging information. Useful if you want to debug the binaries under
