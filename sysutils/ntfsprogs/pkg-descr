@@ -1,0 +1,9 @@
+The goals of this project are: create a new Linux kernel driver for the NTFS
+file system (v1.2 and later 3.0), user space utilities (e.g. format, ntfs
+check, etc.) and a library to avoid code duplication and provide access to
+NTFS to other GPLed programs.
+
+WWW: http://linux-ntfs.sourceforge.net/
+
+- Florent Thoumie
+flz@xbsd.org

@@ -241,6 +241,7 @@
     SUBDIR += ndir
     SUBDIR += no-login
     SUBDIR += npadmin
+    SUBDIR += ntfsprogs
     SUBDIR += nut
     SUBDIR += nvclock
     SUBDIR += nwclient
