@@ -20,7 +20,8 @@ NO_BUILD=	yes
 do-install:
 	${INSTALL} -d ${PREFIX}/www/cgi-bin/ftplocate \
 		${PREFIX}/www/cgi-bin/ftplocate/index \
-		${PREFIX}/www/cgi-bin/ftplocate/desc
+		${PREFIX}/www/cgi-bin/ftplocate/desc \
+		${PREFIX}/www/data
 	${INSTALL} -o nobody -g nobody -m 755 -d ${PREFIX}/www/cgi-bin/ftplocate/cache
 	cd ${WRKSRC}; \
 	${INSTALL_DATA} \
