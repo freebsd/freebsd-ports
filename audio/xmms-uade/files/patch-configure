@@ -1,6 +1,181 @@
---- configure	Wed Jun  5 14:46:28 2002
-+++ configure	Sun Oct 27 22:36:31 2002
-@@ -139,10 +139,10 @@
+--- configure.orig	Mon Jan  6 02:56:29 2003
++++ configure	Fri Jan 24 00:44:31 2003
+@@ -8,38 +8,72 @@
+ usexmms=yes
+ xmmsinputplugindir=automatic
+ 
+-for arg
+-do 
+-
+-if expr "$arg" : "--prefix=.*" > /dev/null;then 
+-    prefix=`echo $arg | sed -n 's/--prefix=\(.*\)/\1/p'`
+-    echo $prefix
+-fi
+-
+-if expr "$arg" : "--package-prefix=.*" > /dev/null;then 
+-    packageprefix=`echo $arg | sed -n 's/--package-prefix=\(.*\)/\1/p'`
+-    if test "$prefix" = "$HOME/.xmms"; then
+-	echo
+-	echo "with --package-prefix you must give a global installation prefix first..."
+-        echo "example: --prefix=/usr/local --package-prefix=/tmp/foobar"
+-	echo
+-	exit
+-    fi
+-fi
+-
+-if expr "$arg" : "--mymods=.*" > /dev/null;then 
+-    mymods=`echo $arg | sed -n 's/--mymods=\(.*\)/\1/p'`
+-    mod=1
+-fi
+-
+-if expr "$arg" : "--input-plugin-dir=.*" > /dev/null;then 
+-    xmmsinputplugindir=`echo $arg | sed -n 's/--input-plugin-dir=\(.*\)/\1/p'`
+-fi
+-
+-if expr "$arg" : "--no-plugin" > /dev/null;then
+-    usexmms=no
+-fi
+-
++for _switch ; do
++	case $_switch in
++	--prefix=*)
++		prefix=`echo $1 | sed -n 's/--prefix=\(.*\)/\1/p'`
++		shift;
++		;;
++        --binprefix=*)
++                binprefix=`echo $1 | sed -n 's/--binprefix=\(.*\)/\1/p'`
++                shift;
++                ;;
++	--docprefix=*)
++		docprefix=`echo $1 | sed -n 's/--docprefix=\(.*\)/\1/p'`
++		shift;
++		;;
++	--package-prefix=*)
++		packageprefix=`echo $1 | sed -n 's/--package-prefix=\(.*\)/\1/p'`
++		if test "$prefix" = "$HOME/.xmms"; then
++			echo
++			echo "with --package-prefix you must give a global installation prefix first..."
++			echo "example: --prefix=/usr/local --package-prefix=/tmp/foobar"
++			echo
++			exit
++		else
++			shift;
++		fi
++		;;
++	--input-plugin-dir=*)
++		xmmsinputplugindir=`echo $1 | sed -n 's/--input-plugin-dir=\(.*\)/\1/p'`
++		shift;
++		;;
++	--mymods=*)
++		mymods=`echo $1 | sed -n 's/--mymods=\(.*\)/\1/p'`
++		mod=1
++		shift;
++		;;
++	--no-plugin)
++		usexmms=no
++		shift;
++		;;
++	--with-sdl)
++		SDL=yes
++		shift;
++		;;
++	--help)
++		echo
++		echo "Usage: --prefix=path if you don't want this installed in /usr/local."
++		echo "       --no-plugin if you don't want to have an xmms plugin"
++		echo "       --input-plugin-dir=path where path is the xmms input plugin"
++		echo "                               directory"
++		echo "       --mymods=path where path is the default mod directory for "
++		echo "                     pwraps tk interface. Default path is homedir."
++		echo "       --with-sdl use SDL rather than native audio for sound output."
++		echo
++		exit
++		;;
++	--x-libraries=*)
++		shift;
++		;;
++	--x-includes=*)
++		shift;
++		;;
++	*)
++		;;
++	esac
++done
++	
+ if test "$usexmms" = "yes"; then
+ if test -x "`which xmms-config`"; then
+  echo > /dev/null
+@@ -47,30 +81,8 @@
+ usexmms=no
+ echo "Couldn't find xmms-plugin => not compiling xmms-plugin!"
+ fi
+-
+ fi
+ 
+-if test "$arg" = "--with-sdl";then
+-SDL=yes
+-fi
+-
+-if test "$arg" = "--help";then
+-echo
+-echo "Usage: --prefix=path if you don't want this installed in /usr/local."
+-echo "       --no-plugin if you don't want to have an xmms plugin"
+-echo "       --input-plugin-dir=path where path is the xmms input plugin"
+-echo "                               directory"
+-echo "       --mymods=path where path is the default mod directory for "
+-echo "                     pwraps tk interface. Default path is homedir."
+-echo "       --with-sdl use SDL rather than native audio for sound output."
+-echo
+-exit 1
+-break
+-fi
+-
+-
+-done
+-
+ if [ -f src/sd-sound.c ];then
+ rm src/sd-sound.c
+ fi
+@@ -171,18 +183,34 @@
+ 
+ if test "$prefix" = "$HOME/.xmms"; then
+     uadedatadir="$prefix/uade"
+-    bindir="$prefix/uade"
++    if test -n "$binprefix"; then
++	    docdir="$binprefix/bin"
++    else
++            bindir="$prefix/uade"
++    fi
+     plugin="$HOME/.xmms/Plugins/Input"
+-    docdir="$prefix/uade/uade-$VERSION"
++    if test -n "$docprefix"; then
++	    docdir="$docprefix/doc/uade-$VERSION"
++    else
++	    docdir="$prefix/uade/uade-$VERSION"
++    fi
+ else
+     uadedatadir="$prefix/share/uade"
+-    bindir="$prefix/bin"
++    if test -n "$binprefix"; then
++	    docdir="$binprefix/bin"
++    else
++            bindir="$prefix/bin"
++    fi
+     if test "$usexmms" = "yes"; then
+ 	plugin=`xmms-config --input-plugin-dir`
+     else
+ 	plugin="$HOME/.xmms/Plugins/Input"
+     fi
+-    docdir="$prefix/doc/uade-$VERSION"
++    if test -n "$docprefix"; then
++	    docdir="$docprefix/doc/uade-$VERSION"
++    else
++	    docdir="$prefix/doc/uade-$VERSION"
++    fi
+ fi
+ 
+ if test "$xmmsinputplugindir" != "automatic"; then
+@@ -242,10 +270,10 @@
      -e "s|{UADEVERSION}|$VERSION|" \
      osdep/uadeconfig-unix.h.in > osdep/uadeconfig.h
  
