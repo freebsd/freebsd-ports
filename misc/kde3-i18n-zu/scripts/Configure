@@ -1,0 +1,81 @@
+#! /bin/sh
+# $FreeBSD$
+
+/bin/rm -f ${PLIST} ${PLIST}.dirs
+
+if [ "${BATCH}" ]; then
+	set \"ca\" \"cs\" \"da\" \"de\" \"el\" \"eo\" \"es\" \"et\" \"fi\" \"fr\" \"he\" \"hu\" \"ja\" \"is\" \"ko\" \"it\" \"nl\" \"no\" \"no_NY\" \"pl\" \"pt\" \"pt_BR\" \"ro\" \"ru\" \"sk\" \"sl\" \"sr\" \"sv\" \"tr\" \"uk\" \"zh_CN.GB2312\" \"zh_TW.Big5\"
+else
+if [ "${LINGUAS}" ]; then
+	set `echo $LINGUAS`
+else
+	/usr/bin/dialog --title "Select languages" --clear \
+		--checklist "\n\
+Please select desired languages:" -1 -1 16 \
+ca		"Canada" OFF \
+cs		"Czech" OFF \
+da		"Danish" OFF \
+de		"German" ON \
+el		"Greek" OFF \
+eo		"Esperanto" OFF \
+es		"Spanish" OFF \
+et		"Estonian" OFF \
+fi		"Finnish" ON \
+fr		"French" ON \
+he		"Hebrew" OFF \
+hu		"Hungarian" OFF \
+ja		"Japanese" ON \
+is		"Icelandic" OFF \
+ko		"Korean" ON \
+it		"Italian" OFF \
+nl		"Dutch" OFF \
+no		"Norwegian (Bokmaal)" OFF \
+no_NY		"Norwegian (Nynorsk)" OFF \
+pl		"Polish" OFF \
+pt		"Portuguese" OFF \
+pt_BR		"Brazil portuguese" OFF \
+ro		"Romanian" OFF \
+ru		"Russian" ON \
+sk		"Slovak" OFF \
+sl		"Slovenian" OFF \
+sr		"Serbian" OFF \
+sv		"Swedish" OFF \
+tr		"Turkish" OFF \
+uk		"Ukrainian" OFF \
+zh_CN.GB2312	"Simplified Chinese" ON \
+zh_TW.Big5	"Chinese" ON \
+2> /tmp/chklist.tmp.$$
+
+	retval=$?
+
+	if [ -s /tmp/chklist.tmp.$$ ]; then
+		set `cat /tmp/chklist.tmp.$$`
+	fi
+	rm -f /tmp/chklist.tmp.$$
+
+	case $retval in
+		0)	if [ -z "$*" ]; then
+				echo "Nothing selected"
+			fi
+			;;
+		1)	echo "Cancel pressed."
+			exit 1
+			;;
+	esac
+fi
+fi
+
+/bin/rm -f ${WRKSRC}/subdirs
+/usr/bin/grep "^[^@].*/en/.*" ${CURDIR}/pkg-plist > ${PLIST}
+/usr/bin/grep "^@.*/en/.*" ${CURDIR}/pkg-plist > ${PLIST}.dirs
+
+while [ "$1" ]; do
+	a=`echo -n $1 | /usr/bin/sed -e 's#\"##g'`
+	echo $a >> ${WRKSRC}/subdirs
+	/usr/bin/grep "^[^@].*/$a/.*" ${CURDIR}/pkg-plist >> ${PLIST}
+	/usr/bin/grep "^[^@].*-$a\$" ${CURDIR}/pkg-plist >> ${PLIST}
+	/usr/bin/grep "^@.*/$a/.*" ${CURDIR}/pkg-plist >> ${PLIST}.dirs
+	shift
+done
+
+/bin/cat ${PLIST}.dirs >> ${PLIST}
