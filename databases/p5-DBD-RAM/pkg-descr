@@ -1,0 +1,8 @@
+DBD::RAM allows you to import almost any type of Perl data
+structure into an in-memory table and then use DBI and SQL
+to access and modify it.  It also allows direct access to
+almost any kind of file, supporting SQL manipulation
+of the file without converting the file out of its native
+format.
+
+WWW: http://search.cpan.org/dist/DBD-RAM
