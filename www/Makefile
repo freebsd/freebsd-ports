@@ -68,6 +68,7 @@
     SUBDIR += clearsilver
     SUBDIR += clearsilver-python
     SUBDIR += comclear
+    SUBDIR += coppermine
     SUBDIR += crawl
     SUBDIR += css-mode.el
     SUBDIR += cybercalendar
