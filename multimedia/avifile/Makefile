@@ -150,7 +150,7 @@ PLIST_SUB+=	VORBIS="@comment "
 
 # xvid
 .if !defined(WITHOUT_XVID)
-LIB_DEPENDS+=	xvidcore.0:${PORTSDIR}/graphics/xvid
+LIB_DEPENDS+=	xvidcore.0:${PORTSDIR}/multimedia/xvid
 
 CONFIGURE_ARGS+=	--with-xvid-prefix=${LOCALBASE}
 PLIST_SUB+=	XVID=""

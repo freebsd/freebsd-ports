@@ -156,7 +156,7 @@ CONFIGURE_ARGS+=	--disable-sdl-image
 .endif
 # xvid
 .ifdef(WITH_XVID)
-LIB_DEPENDS+=	xvidcore.0:${PORTSDIR}/graphics/xvid
+LIB_DEPENDS+=	xvidcore.0:${PORTSDIR}/multimedia/xvid
 
 CONFIGURE_ARGS+=	--enable-xvid \
 			--with-xvidcore=${LOCALBASE}
