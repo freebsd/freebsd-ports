@@ -30,6 +30,9 @@ USE_GMAKE=      yes
 MAKE_FLAGS=	-e
 MAN1=		fxtv.1
 
+post-extract:
+	${RM} ${WRKSRC}/videolib/*.o
+
 pre-install:
 	${CP} ${WRKSRC}/fxtv.1 ${WRKSRC}/fxtv.man
 
