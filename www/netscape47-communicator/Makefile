@@ -1,15 +1,15 @@
 # New ports collection makefile for:	netscape
-# Version required:     4.0b3
+# Version required:     4.0b5
 # Date created:         24 Feb 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.1.1.1 1997/02/24 19:00:29 ache Exp $
+# $Id: Makefile,v 1.2 1997/04/09 15:12:05 ache Exp $
 #
 
-DISTNAME=       netscape-4.0b3
+DISTNAME=       netscape-4.0b5
 CATEGORIES=	www
-MASTER_SITES=   ftp://ftp.netscape.com/pub/communicator/4.0/4.0b3/unix/other/
-DISTFILES=      communicator-v40b3-export.x86-unknown-bsd.tar.gz
+MASTER_SITES=   ftp://ftp.netscape.com/pub/communicator/4.0/4.0b5/unix/other/
+DISTFILES=      communicator-v40b5-export.x86-bsdi-bsd.tar.gz
 NO_WRKSUBDIR=   Yes
 NO_BUILD=       Yes
 
@@ -23,9 +23,10 @@ RESTRICTED=	"Commercial software"
 
 do-install:
 	cd ${WRKSRC} && yes "" | \
-	    NSHOME="${NDIR}" ./ns-install
+	    LC_TIME=C MOZILLA_HOME="${NDIR}" ./ns-install
 	mv ${NDIR}/netscape ${NDIR}/netscape.bin
 	${INSTALL_SCRIPT} ${WRKSRC}/netscape ${BINDIR}
+	${INSTALL_DATA} ${WRKSRC}/policyMoz40P1.jar ${NDIR}
 	if [ ! -f ${NDIR}/mailcap ] ; then \
 	    ${INSTALL_DATA} ${FILESDIR}/mailcap ${NDIR}; \
 	fi

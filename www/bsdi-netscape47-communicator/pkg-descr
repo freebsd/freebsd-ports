@@ -1,6 +1,11 @@
 This is the netscape web-surfboard.  Please read the file
 "/usr/local/lib/netscape/LICENSE" for the licensing terms.
 
+After installation you need to repeat this additional steps for each user:
+
+1) ln -s /usr/local/lib/netscape/policyMoz40P1.jar ~/.netscape/
+2) ln -s /usr/local/lib/netscape/registry ~/.netscape/
+
 Note: If Java fails to start, set your LANG environment variable to C
 
 Note: Java does not work in 8bpp mode; run `X -bpp 16' if you need it
