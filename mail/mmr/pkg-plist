@@ -1,9 +1,0 @@
-bin/mmr
-%%PORTDOCS%%share/doc/mmr/BUGS
-%%PORTDOCS%%share/doc/mmr/CHANGES
-%%PORTDOCS%%share/doc/mmr/Features
-%%PORTDOCS%%share/doc/mmr/README
-%%PORTDOCS%%share/doc/mmr/TODO
-share/examples/mmr/dot.mmrc.sample
-@dirrm share/examples/mmr
-%%PORTDOCS%%@dirrm share/doc/mmr
