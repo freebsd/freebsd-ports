@@ -77,6 +77,7 @@
     SUBDIR += gfslicer
     SUBDIR += gkrellflynn
     SUBDIR += gkrellm
+    SUBDIR += gkrellm2
     SUBDIR += gkrellmouse
     SUBDIR += gkrellmwho
     SUBDIR += glload
