@@ -20,9 +20,12 @@ COMMENT=	Yet Another Part-of-Speech and Morphological Analyzer
 IPADIC_DISTNAME=	ipadic-2.5.1
 
 USE_PERL5_BUILD=	yes
+USE_REINPLACE=		yes
 
 USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
+
+CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}"
 
 .include "${.CURDIR}/Makefile.common"
 
@@ -52,5 +55,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
 .endfor
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e 's/-lpthread/${PTHREAD_LIBS}/g' \
+			 -e 's/-O3/${CFLAGS}/' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.post.mk>
