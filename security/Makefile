@@ -221,6 +221,7 @@
     SUBDIR += tea-total
     SUBDIR += trinokiller
     SUBDIR += tripwire
+    SUBDIR += tripwire12
     SUBDIR += tripwire-131
 #   SUBDIR += tripwire12
     SUBDIR += uvscan-dat
