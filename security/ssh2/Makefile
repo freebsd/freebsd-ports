@@ -1,15 +1,15 @@
 # New ports collection makefile for:	ssh
-# Version required:     1.2.22
+# Version required:     1.2.25
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.53 1998/05/22 06:05:43 mph Exp $
+# $Id: Makefile,v 1.54 1998/05/23 08:53:38 obrien Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
 #
 
-DISTNAME=       ssh-1.2.22
+DISTNAME=       ssh-1.2.25
 CATEGORIES=	security net
 MASTER_SITES=   ftp://ftp.funet.fi/pub/unix/security/login/ssh/
 
@@ -32,10 +32,11 @@ MASTER_SITES=	\
 # Download by hand from http://www.cryptography.org/cgi-bin/crypto.cgi/ssh/  
 # and put in distfiles directory.
 #
-.if defined(FAST_DES_PATCHKIT) && ${FAST_DES_PATCHKIT} == YES
-PATCHFILES=ssh-1.2.22-patchkit
-PATCH_DIST_STRIP=-p1
-.endif
+# Disabled for now, since there's not such a patchkit for 1.2.25 version.
+#.if defined(FAST_DES_PATCHKIT) && ${FAST_DES_PATCHKIT} == YES
+#PATCHFILES=ssh-1.2.22-patchkit
+#PATCH_DIST_STRIP=-p1
+#.endif
 
 RESTRICTED=	"Crypto; export-controlled"
 IS_INTERACTIVE=	YES
@@ -70,9 +71,9 @@ CONFIGURE_ARGS+= --with-secureid
 CONFIGURE_ARGS+= --without-idea
 .endif
 
-MAN1=		scp.1 ssh-add.1 ssh-agent.1 ssh-keygen.1 ssh.1 \
-		make-ssh-known-hosts.1
-MAN8=		sshd.8
+MAN1=		scp1.1 ssh-add1.1 ssh-agent1.1 ssh-keygen1.1 ssh1.1 \
+		make-ssh-known-hosts1.1
+MAN8=		sshd1.8
 
 
 pre-patch:
@@ -103,8 +104,17 @@ post-install:
 		${PREFIX}/bin/ssh-keygen -f ${PREFIX}/etc/ssh_host_key -N ""; \
 	fi
 .if !defined(NOMANCOMPRESS)
+	for file in make-ssh-known-hosts scp ssh-add ssh-agent \
+	    ssh-keygen ssh; do \
+		rm -f ${PREFIX}/man/man1/$${file}.1; \
+		ln -sf $${file}1.1.gz ${PREFIX}/man/man1/$${file}.1.gz; \
+	done
 	rm -f ${PREFIX}/man/man1/slogin.1
+	rm -f ${PREFIX}/man/man1/slogin1.1
+	rm -f ${PREFIX}/man/man8/sshd.8
 	ln -sf ssh.1.gz ${PREFIX}/man/man1/slogin.1.gz
+	ln -sf ssh1.1.gz ${PREFIX}/man/man1/slogin1.1.gz
+	ln -sf sshd1.8.gz ${PREFIX}/man/man8/sshd.8.gz
 .endif
 	@if [ ! -f ${PREFIX}/etc/rc.d/sshd.sh ]; then \
 		echo "Installing ${PREFIX}/etc/rc.d/sshd.sh startup file."; \

@@ -1,7 +1,7 @@
-*** Makefile.in.orig	Tue Sep 16 01:59:13 1997
---- Makefile.in	Tue Sep 16 02:06:08 1997
+*** Makefile.in.orig	Thu Jun 11 07:01:13 1998
+--- Makefile.in	Thu Jun 11 20:48:59 1998
 ***************
-*** 259,270 ****
+*** 287,298 ****
   SHELL = /bin/sh
   
   GMPDIR 		= gmp-2.0.2-ssh-2
@@ -14,7 +14,7 @@
   
   RSAREFDIR	= rsaref2
   RSAREFSRCDIR 	= $(RSAREFDIR)/source
---- 259,275 ----
+--- 287,303 ----
   SHELL = /bin/sh
   
   GMPDIR 		= gmp-2.0.2-ssh-2
@@ -33,7 +33,7 @@
   RSAREFDIR	= rsaref2
   RSAREFSRCDIR 	= $(RSAREFDIR)/source
 ***************
-*** 368,374 ****
+*** 397,403 ****
   	$(CC) -o rfc-pg rfc-pg.o
   
   .c.o:
@@ -41,7 +41,7 @@
   
   sshd: $(SSHD_OBJS) $(GMPDEP) $(RSAREFDEP) $(ZLIBDEP)
   	-rm -f sshd
---- 373,379 ----
+--- 402,408 ----
   	$(CC) -o rfc-pg rfc-pg.o
   
   .c.o:
@@ -50,7 +50,7 @@
   sshd: $(SSHD_OBJS) $(GMPDEP) $(RSAREFDEP) $(ZLIBDEP)
   	-rm -f sshd
 ***************
-*** 411,429 ****
+*** 440,458 ****
   	sed "s#&PERL&#$(PERL)#" <$(srcdir)/make-ssh-known-hosts.pl >make-ssh-known-hosts
   	chmod +x make-ssh-known-hosts
   
@@ -70,7 +70,7 @@
   
   $(RSAREFSRCDIR)/librsaref.a:
   	-if test '!' -d $(RSAREFDIR); then \
---- 416,434 ----
+--- 445,463 ----
   	sed "s#&PERL&#$(PERL)#" <$(srcdir)/make-ssh-known-hosts.pl >make-ssh-known-hosts
   	chmod +x make-ssh-known-hosts
   
@@ -91,24 +91,24 @@
   $(RSAREFSRCDIR)/librsaref.a:
   	-if test '!' -d $(RSAREFDIR); then \
 ***************
-*** 480,486 ****
+*** 509,515 ****
   # (otherwise it can only log in as the user it runs as, and must be
   # bound to a non-privileged port).  Also, password authentication may
   # not be available if non-root and using shadow passwords.
 ! install: $(PROGRAMS) make-dirs generate-host-key install-configs
-  	-rm -f $(install_prefix)$(bindir)/ssh.old
-  	-mv $(install_prefix)$(bindir)/ssh $(install_prefix)$(bindir)/ssh.old
-  	-chmod 755 $(install_prefix)$(bindir)/ssh.old
---- 485,491 ----
+  	-rm -f $(install_prefix)$(bindir)/ssh1.old
+  	-mv $(install_prefix)$(bindir)/ssh1 $(install_prefix)$(bindir)/ssh1.old
+  	-chmod 755 $(install_prefix)$(bindir)/ssh1.old
+--- 514,520 ----
   # (otherwise it can only log in as the user it runs as, and must be
   # bound to a non-privileged port).  Also, password authentication may
   # not be available if non-root and using shadow passwords.
 ! install: $(PROGRAMS) make-dirs install-configs
-  	-rm -f $(install_prefix)$(bindir)/ssh.old
-  	-mv $(install_prefix)$(bindir)/ssh $(install_prefix)$(bindir)/ssh.old
-  	-chmod 755 $(install_prefix)$(bindir)/ssh.old
+  	-rm -f $(install_prefix)$(bindir)/ssh1.old
+  	-mv $(install_prefix)$(bindir)/ssh1 $(install_prefix)$(bindir)/ssh1.old
+  	-chmod 755 $(install_prefix)$(bindir)/ssh1.old
 ***************
-*** 589,603 ****
+*** 665,679 ****
   
   clean:
   	-rm -f *.o gmon.out *core $(PROGRAMS) rfc-pg
@@ -122,9 +122,9 @@
 ! 	cd $(GMPDIR); $(MAKE) distclean
 ! 	cd $(ZLIBDIR); $(MAKE) distclean
   
-  dist: dist-free
+  dist: dist-commercial
   
---- 594,608 ----
+--- 670,684 ----
   
   clean:
   	-rm -f *.o gmon.out *core $(PROGRAMS) rfc-pg
@@ -138,12 +138,12 @@
 ! #	cd $(GMPDIR); $(MAKE) distclean
 ! #	cd $(ZLIBDIR); $(MAKE) distclean
   
-  dist: dist-free
+  dist: dist-commercial
   
 ***************
-*** 628,639 ****
-  #
-  #endif F_SECURE_COMMERCIAL
+*** 702,713 ****
+  	-mkdir $(DISTNAME)
+  	cp $(DISTFILES) $(DISTNAME)
   	for i in $(DISTSRCS); do cp $(srcdir)/$$i $(DISTNAME); done
 ! 	(cd $(GMPDIR); make dist)
 ! 	gzip -cd $(GMPDIR)/$(GMPDIR).tar.gz | (cd $(DISTNAME); tar pxf - )
@@ -152,11 +152,11 @@
 ! 	(cd  $(srcdir); tar pcf - $(ZLIBDIR) )| (cd $(DISTNAME); tar pxf -)
 ! 	cd $(DISTNAME)/$(ZLIBDIR); rm -f *.o *.a; rm -rf CVS
   
-  dist-free-make-tar:
-  	tar pcf $(DISTNAME).tar $(DISTNAME)
---- 633,644 ----
+  #ifdef F_SECURE_COMMERCIAL
   #
-  #endif F_SECURE_COMMERCIAL
+--- 707,718 ----
+  	-mkdir $(DISTNAME)
+  	cp $(DISTFILES) $(DISTNAME)
   	for i in $(DISTSRCS); do cp $(srcdir)/$$i $(DISTNAME); done
 ! #	(cd $(GMPDIR); make dist)
 ! #	gzip -cd $(GMPDIR)/$(GMPDIR).tar.gz | (cd $(DISTNAME); tar pxf - )
@@ -165,10 +165,10 @@
 ! #	(cd  $(srcdir); tar pcf - $(ZLIBDIR) )| (cd $(DISTNAME); tar pxf -)
 ! #	cd $(DISTNAME)/$(ZLIBDIR); rm -f *.o *.a; rm -rf CVS
   
-  dist-free-make-tar:
-  	tar pcf $(DISTNAME).tar $(DISTNAME)
+  #ifdef F_SECURE_COMMERCIAL
+  #
 ***************
-*** 656,662 ****
+*** 735,741 ****
   	 (echo "s/\.$$old_version\"/.$$new_version\"/g"; echo w; echo q) | ed $(srcdir)/version.h >/dev/null
   
   depend:
@@ -176,7 +176,7 @@
   
   tags:
   	-rm -f TAGS
---- 661,667 ----
+--- 740,746 ----
   	 (echo "s/\.$$old_version\"/.$$new_version\"/g"; echo w; echo q) | ed $(srcdir)/version.h >/dev/null
   
   depend:

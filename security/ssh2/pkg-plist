@@ -1,23 +1,39 @@
 etc/rc.d/sshd.sh
 bin/scp
+bin/scp1
 bin/ssh
+bin/ssh1
 @exec ln -fs %f %B/slogin
 @unexec rm -f %B/slogin
 bin/ssh-add
+bin/ssh-add1
 bin/ssh-agent
+bin/ssh-agent1
 bin/ssh-askpass
+bin/ssh-askpass1
 bin/ssh-keygen
+bin/ssh-keygen1
 bin/make-ssh-known-hosts
+bin/make-ssh-known-hosts1
 etc/ssh_config
 etc/sshd_config
 man/man1/make-ssh-known-hosts.1.gz
+man/man1/make-ssh-known-hosts1.1.gz
 man/man1/scp.1.gz
+man/man1/scp1.1.gz
 man/man1/ssh-add.1.gz
+man/man1/ssh-add1.1.gz
 man/man1/ssh-agent.1.gz
+man/man1/ssh-agent1.1.gz
 man/man1/ssh-keygen.1.gz
+man/man1/ssh-keygen1.1.gz
 man/man1/ssh.1.gz
+man/man1/ssh1.1.gz
 @exec ln -fs %f %B/slogin.1.gz
 @unexec rm -f %B/slogin.1.gz
+@unexec rm -f %B/slogin1.1.gz
 man/man8/sshd.8.gz
+man/man8/sshd1.8.gz
 sbin/sshd
+sbin/sshd1
 @exec if [ ! -f %D/etc/ssh_host_key ]; then echo "Generating a secret host key.." ; %D/bin/ssh-keygen -N "" -f %D/etc/ssh_host_key; fi
