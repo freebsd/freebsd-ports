@@ -1,0 +1,15 @@
+--- bin/gmat.troff~	Fri Dec 27 15:20:10 2002
++++ bin/gmat.troff	Fri Dec 27 15:20:33 2002
+@@ -519,10 +519,10 @@
+ # HANDLE RETURN CODE!
+     } elsif ($preview) {
+ 	print STDERR "Previewing $file.\n" if $VERBOSE;
+-	print COMMANDS "ghostview $grops_temp\n";
++	print COMMANDS "gv $grops_temp\n";
+ 	close (COMMANDS);	# so that you can see what's in there
+ 				# when the preview window is up...
+-	system "ghostview $grops_temp";
++	system "gv $grops_temp";
+ # HANDLE RETURN CODE!
+     } elsif ($checkonly) {
+ 	print STDERR "Checking completed.\n" if $VERBOSE;

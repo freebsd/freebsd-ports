@@ -20,6 +20,7 @@ share/gmat/bin/gmat.latex
 share/gmat/bin/gmat.nop
 share/gmat/bin/gmat.sgmls
 share/gmat/bin/gmat.troff
+share/gmat/bin/gmat.troff.orig
 share/gmat/bin/gnct
 share/gmat/bin/inx
 share/gmat/bin/lowres
