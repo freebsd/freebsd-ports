@@ -10,6 +10,7 @@ lib/%%PYTHON_VERSION%%/site-packages/libxml2mod.so
 %%EXAMPLESDIR%%/build.py
 %%EXAMPLESDIR%%/ctxterror.py
 %%EXAMPLESDIR%%/cutnpaste.py
+%%EXAMPLESDIR%%/dtdvalid.py
 %%EXAMPLESDIR%%/error.py
 %%EXAMPLESDIR%%/inbuf.py
 %%EXAMPLESDIR%%/indexes.py
@@ -33,6 +34,7 @@ lib/%%PYTHON_VERSION%%/site-packages/libxml2mod.so
 %%EXAMPLESDIR%%/schema.py
 %%EXAMPLESDIR%%/serialize.py
 %%EXAMPLESDIR%%/sync.py
+%%EXAMPLESDIR%%/test.dtd
 %%EXAMPLESDIR%%/thread2.py
 %%EXAMPLESDIR%%/tst.py
 %%EXAMPLESDIR%%/tst.xml
