@@ -24,7 +24,8 @@ CONFIGURE_ARGS=	--includedir="${LOCALBASE}/include" \
 
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${X11BASE}/include/GL -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lm"  \
-		LIBS="-lcompat"
+		LIBS="-lcompat" PTHREAD_LIBS="${PTHREAD_LIBS}"
+MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 USE_X_PREFIX=	yes
 
