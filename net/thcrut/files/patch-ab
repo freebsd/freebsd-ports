@@ -1,0 +1,33 @@
+--- Libnet-1.0.2a/configure.orig	Sun May 25 12:57:05 2003
++++ Libnet-1.0.2a/configure	Sat Jul 12 02:35:43 2003
+@@ -1281,18 +1281,6 @@
+ echo "$ac_t""$ac_cv_prog_cc_g" 1>&6
+ if test "$ac_test_CFLAGS" = set; then
+   CFLAGS="$ac_save_CFLAGS"
+-elif test $ac_cv_prog_cc_g = yes; then
+-  if test "$GCC" = yes; then
+-    CFLAGS="-g -O2"
+-  else
+-    CFLAGS="-g"
+-  fi
+-else
+-  if test "$GCC" = yes; then
+-    CFLAGS="-O2"
+-  else
+-    CFLAGS=
+-  fi
+ fi
+ 
+ 
+@@ -5352,11 +5340,6 @@
+ fi
+ 
+ 
+-
+-if test $ac_cv_prog_gcc = yes; then
+-    CCOPTS='-O2 -funroll-loops -fomit-frame-pointer -Wall'
+-    CFLAGS="$CCOPTS"
+-fi
+ 
+ # Check whether --with-pf_packet or --without-pf_packet was given.
+ if test "${with_pf_packet+set}" = set; then

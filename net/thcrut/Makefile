@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	thcrut
-PORTVERSION=	0.1
+PORTVERSION=	1.2.5
 CATEGORIES=	net
-MASTER_SITES=	http://www.thehackerschoice.com/releases/
+MASTER_SITES=	http://www.thc.org/releases/
 
 MAINTAINER=	kris@FreeBSD.org
 COMMENT=	Local network discovery tool
-
-BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 
 GNU_CONFIGURE=	yes
 
