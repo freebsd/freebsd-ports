@@ -3,7 +3,7 @@
 # Date created:		Mon Mar  8 10:10:42 EET 1999
 # Whom:			Martti Kuparinen <martti.kuparinen@ericsson.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/03/18 05:16:45 taoka Exp $
 #
 
 DISTNAME=	jdk117B-doc
@@ -36,7 +36,10 @@ do-fetch:
 
 do-install:
 	${MKDIR} ${PREFIX}/jdk1.1.7
-	(cd ${WRKSRC} && tar cf - docs) \
-		| (cd ${PREFIX}/jdk1.1.7 && tar xf -)
+	(cd ${WRKSRC} && ${TAR} -cf - docs) \
+		| (cd ${PREFIX}/jdk1.1.7 && ${TAR} -xf -)
+
+post-install:
+	@${SED} s+!!PREFIX!!+${PREFIX}+g < ${PKGDIR}/MESSAGE
 
 .include <bsd.port.mk>
