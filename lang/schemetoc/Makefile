@@ -7,7 +7,7 @@
 
 PORTNAME=	schemetoc
 PORTVERSION=	93.3.15
-CATEGORIES=	lang
+CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.cs.indiana.edu/pub/scheme-repository/imp/Scheme-to-C/
 DISTNAME=	15mar93
 EXTRACT_SUFX=	.tar.Z

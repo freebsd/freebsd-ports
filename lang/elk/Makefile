@@ -7,7 +7,7 @@
 
 PORTNAME=	elk
 PORTVERSION=	3.0.3
-CATEGORIES=	lang
+CATEGORIES=	lang scheme
 MASTER_SITES=	http://www-rn.informatik.uni-bremen.de/software/elk/dist/
 DISTNAME=	elk-3.0
 

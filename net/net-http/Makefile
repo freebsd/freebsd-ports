@@ -8,7 +8,7 @@
 
 PORTNAME=	net-http
 PORTVERSION=	0.3.1
-CATEGORIES=	net
+CATEGORIES=	net scheme
 MASTER_SITES=	http://evan.prodromou.san-francisco.ca.us/software/net-http/
 
 MAINTAINER=	ports@FreeBSD.org
