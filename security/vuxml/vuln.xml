@@ -239,8 +239,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Multiple cross-site scripting vulnerabilities, caused
-       	  by improper input parameter sanitizing, were
-       	  detected in phpMyAdmin, which may enable an attacker
+	  by improper input parameter sanitizing, were
+	  detected in phpMyAdmin, which may enable an attacker
 	  to do cross-site scripting attacks.</p>
       </body>
     </description>
@@ -563,7 +563,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <entry>2004-11-11</entry>
     </dates>
   </vuln>
-	   
+
   <vuln vid="027380b7-3404-11d9-ac1b-000d614f7fad">
     <topic>hafiye -- lack of terminal escape sequence filtering</topic>
     <affects>
@@ -826,7 +826,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <entry>2004-11-06</entry>
     </dates>
   </vuln>
-  
+
   <vuln vid="6a164d84-2f7f-11d9-a9e7-0001020eed82">
     <topic>postgresql-contrib -- insecure temporary file
       creation</topic>
@@ -4147,7 +4147,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	    client programs and application servers vulnerable.</p>
 	</blockquote>
 	<p>Double-free vulnerabilities of this type are not believed to be
-	  exploitable for code execution on FreeBSD systems.  However, 
+	  exploitable for code execution on FreeBSD systems.  However,
 	  the potential for other ill effects may exist.</p>
       </body>
     </description>
@@ -4185,7 +4185,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	    server to hang inside an infinite loop.</p>
 	  <p>An attacker impersonating a legitimate KDC or application
 	    server may cause a client program to hang inside an infinite
-  	    loop.</p>
+	    loop.</p>
 	</blockquote>
       </body>
     </description>
