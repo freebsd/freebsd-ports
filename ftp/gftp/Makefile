@@ -7,7 +7,7 @@
 
 PORTNAME=	gftp
 PORTVERSION=	2.0.16
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	ftp
 MASTER_SITES=	http://gftp.seul.org/ \
 		ftp://gftp.seul.org/pub/gftp/
@@ -60,10 +60,10 @@ PLIST_SUB+=	NOX11:=""
 .if ${HAVE_GNOME:Mgnomelibs}!="" && !defined(WITH_GTK2)
 USE_GNOME+=	gnomeprefix gnomelibs
 PKGNAMESUFFIX+=	-gnome
-PLIST_SUB+=	DATADIR="share/gnome"
+PLIST_SUB+=	DATADIR="share/gnome" MYGNOME=""
 MAKE_ENV=	HAVE_GNOME=1
 .else
-PLIST_SUB+=	DATADIR="share"
+PLIST_SUB+=	DATADIR="share" MYGNOME="@comment "
 .endif
 
 post-patch:
