@@ -15,6 +15,8 @@ DISTFILES=	TeXmacs-${PORTVERSION}-src.tar.gz \
 MAINTAINER=	mainland@apeiron.net
 COMMENT=	A free WYSIWYG scientific text editor
 
+BROKEN=		Does not compile
+
 BUILD_DEPENDS=	guile:${PORTSDIR}/lang/guile \
 		tex:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	tex:${PORTSDIR}/print/teTeX
