@@ -3,17 +3,14 @@
 # Date created:        2 January 1999
 # Whom:                Kris Kennaway <kris@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/03/01 11:13:12 kris Exp $
 #
 
-DISTNAME=	snarf-latest
-PKGNAME=	snarf-2.0.5
+DISTNAME=	snarf-2.0.5
 CATEGORIES=	www
 MASTER_SITES=	http://www.xach.com/snarf/
 
 MAINTAINER=	kris@FreeBSD.ORG
-
-WRKSRC=		${WRKDIR}/snarf-2.0.5/
 
 GNU_CONFIGURE=	yes
 
