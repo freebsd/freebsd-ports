@@ -1,11 +1,13 @@
---- Makefile.orig	Sun May 18 22:34:28 1997
-+++ Makefile	Thu Dec 31 12:06:38 1998
-@@ -1,11 +1,12 @@
- CC = cc 
+--- Makefile.orig	Mon May 19 06:04:28 1997
++++ Makefile	Sun Apr 11 20:42:32 1999
+@@ -1,11 +1,13 @@
+-CC = cc 
 -CFLAGS = -O3 -Wall -DNETWORK_DB -I./st
 -LDFLAGS = -lscsi 
 -STLIB = ./st/libst.a
-+CFLAGS = -O3 -Wall -DNETWORK_DB -I./st -I.
++CC ?= cc 
++CFLAGS ?= -O3
++CFLAGS += -Wall -DNETWORK_DB -I./st -I.
 +LDFLAGS =
 +STLIB = st/libst.a
  
@@ -16,7 +18,7 @@
                cdd_toshibacmds.o 
  
  PCMPLAY_OBJECTS = pcmplay.o
-@@ -14,6 +15,9 @@
+@@ -14,6 +16,9 @@
  
  all: cdd pcmplay stripzeros
  
@@ -26,7 +28,7 @@
  $(CDD_OBJECTS): cdd.h
  
  pcmplay: $(PCMPLAY_OBJECTS)
-@@ -22,7 +26,7 @@
+@@ -22,7 +27,7 @@
  stripzeros: $(STRIPZEROS_OBJECTS)
  	$(CC) $(CFLAGS) -o $@ $(STRIPZEROS_OBJECTS) $(LDFLAGS)
  
