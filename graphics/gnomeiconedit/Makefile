@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	gnomeiconedit
-PORTVERSION=	1.0.6
+PORTVERSION=	1.2.0
 CATEGORIES=	graphics gnome
-MASTER_SITES=	http://www.abdn.ac.uk/~u07ih/gnome-iconedit/
+MASTER_SITES=	http://www.webtribe.net/i/iain/
 DISTNAME=	gnome-iconedit-${PORTVERSION}
 
 MAINTAINER=	ade@FreeBSD.org
 
 LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
-		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
+		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
+		gnomeprint.9:${PORTSDIR}/print/gnomeprint \
+		bonobo.2:${PORTSDIR}/devel/bonobo
 RUN_DEPENDS=	gnomecc:${PORTSDIR}/sysutils/gnomecontrolcenter
 
 USE_GMAKE=	yes
