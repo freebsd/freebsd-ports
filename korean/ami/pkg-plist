@@ -26,21 +26,36 @@ share/doc/ami/README.en
 %%DATADIR%%/ami/pix/arctic/ami-d.xpm
 %%DATADIR%%/ami/pix/arctic/ami-e.xpm
 %%DATADIR%%/ami/pix/arctic/ami-h.xpm
+%%DATADIR%%/ami/pix/bluemarble/ami-e.xpm
+%%DATADIR%%/ami/pix/bluemarble/ami-h.xpm
+%%DATADIR%%/ami/pix/bluemarble/AUTHORS
+%%DATADIR%%/ami/pix/bluemarble/ami-d.xpm
 %%DATADIR%%/ami/pix/deepblue/AUTHORS
 %%DATADIR%%/ami/pix/deepblue/ami-d.xpm
 %%DATADIR%%/ami/pix/deepblue/ami-e.xpm
 %%DATADIR%%/ami/pix/deepblue/ami-h.xpm
+%%DATADIR%%/ami/pix/love/ami-e.xpm
+%%DATADIR%%/ami/pix/love/ami-h.xpm
+%%DATADIR%%/ami/pix/love/AUTHORS
+%%DATADIR%%/ami/pix/love/ami-d.xpm
 %%DATADIR%%/ami/pix/steelblue/AUTHORS
 %%DATADIR%%/ami/pix/steelblue/ami-d.xpm
 %%DATADIR%%/ami/pix/steelblue/ami-e.xpm
 %%DATADIR%%/ami/pix/steelblue/ami-h.xpm
+%%DATADIR%%/ami/pix/woody/ami-e.xpm
+%%DATADIR%%/ami/pix/woody/ami-h.xpm
+%%DATADIR%%/ami/pix/woody/AUTHORS
+%%DATADIR%%/ami/pix/woody/ami-d.xpm
 %%GNOME:%%share/gnome/applets/Utility/ami.desktop
 @dirrm share/doc/ami
 @dirrm %%DATADIR%%/ami/pix/Aqua
 @dirrm %%DATADIR%%/ami/pix/Mac
 @dirrm %%DATADIR%%/ami/pix/OSX
 @dirrm %%DATADIR%%/ami/pix/arctic
+@dirrm %%DATADIR%%/ami/pix/bluemarble
 @dirrm %%DATADIR%%/ami/pix/deepblue
+@dirrm %%DATADIR%%/ami/pix/love
 @dirrm %%DATADIR%%/ami/pix/steelblue
+@dirrm %%DATADIR%%/ami/pix/woody
 @dirrm %%DATADIR%%/ami/pix
 @dirrm %%DATADIR%%/ami
