@@ -8,6 +8,7 @@
 PORTNAME=	acroread
 PORTVERSION=	5.10
 PORTREVISION=	1
+PORTEPOCH=	1
 CATEGORIES=	print linux
 MASTER_SITES=	http://download.adobe.com/pub/adobe/acrobatreader/unix/5.x/ \
 		ftp://ftp.adobe.com/pub/adobe/acrobatreader/unix/5.x/
