@@ -3,13 +3,13 @@
 # Date created:        12 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.2 1996/12/08 09:48:54 max Exp $
+# $Id: Makefile,v 1.3 1997/01/03 09:37:40 obrien Exp $
 #
 
 DISTNAME=	xpuyo
-PKGNAME=        xpuyo-0.0
+PKGNAME=	xpuyo-0.0
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.huee.hokudai.ac.jp/pub/games/
+MASTER_SITES=	ftp://ftp.meme.hokudai.ac.jp/pub/games/
 
 MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
 
