@@ -65,6 +65,7 @@
     SUBDIR += p5-PGP-Sign
     SUBDIR += pgp
     SUBDIR += pgp5
+    SUBDIR += pgp6
     SUBDIR += pgpgpg
     SUBDIR += pidentd
     SUBDIR += pktsuckers
