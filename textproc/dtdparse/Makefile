@@ -13,20 +13,15 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dtdparse
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/beta/}
 
-MAINTAINER=	fuyuki@hadaly.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parse a DTD and produce an XML document that represents it
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Text/DelimMatch.pm:${PORTSDIR}/textproc/p5-DelimMatch \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/XML/DOM.pm:${PORTSDIR}/textproc/p5-XML-DOM
+RUN_DEPENDS=	${SITE_PERL}/Text/DelimMatch.pm:${PORTSDIR}/textproc/p5-DelimMatch \
+		${SITE_PERL}/XML/DOM.pm:${PORTSDIR}/textproc/p5-XML-DOM
 
 USE_PERL5=	yes
-
-# pod's are broken
-#MAN1=		dtdformat.1 dtdparse.1
-
-SITE_PERL=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}
+NO_BUILD=	yes
 XMLDIR=		${PREFIX}/share/xml/${PORTNAME}
-
 SCRIPTS=	dtdflatten dtdformat dtdparse \
 		tools/contentmodel tools/dtdstats tools/elements
 
@@ -34,11 +29,6 @@ post-patch:
 	cd ${WRKSRC}; \
 		${PERL} -pi -e 's,/usr/local/bin/perl5,${PERL},' ${SCRIPTS}
 	${PERL} -pi -e 's,modules/,XML/DTDParse/,' ${WRKSRC}/dtdformat
-
-do-build:
-#.for i in dtdformat dtdparse
-#	cd ${WRKSRC}; pod2man ${i} >${i}.1
-#.endfor
 
 do-install:
 	cd ${WRKSRC}; ${INSTALL_SCRIPT} ${SCRIPTS} ${PREFIX}/bin
@@ -50,7 +40,6 @@ do-install:
 	${ECHO_CMD} \
 		'PUBLIC "-//Norman Walsh//DTD DTDParse V2.0//EN" "dtd.dtd"' \
 		>${XMLDIR}/catalog
-#	cd ${WRKSRC}; ${INSTALL_MAN} ${MAN1} ${PREFIX}/man/man1
 
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
