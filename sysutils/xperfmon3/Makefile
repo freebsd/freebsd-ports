@@ -16,6 +16,8 @@ EXTRACT_SUFX=	v1.1.tar.Z
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 
+LATEST_LINK=	xperfmon3
+
 USE_IMAKE=	yes
 MAN1=		xperfmon++.1
 
