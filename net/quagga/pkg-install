@@ -53,14 +53,23 @@ case $2 in
 		fi
 	fi
 
-	chown -R ${ENABLE_USER}:${ENABLE_GROUP} ${SYSCONF_DIR}
-
 	mkdir ${LOCALSTATE_DIR}
 	if [ ! -d ${LOCALSTATE_DIR} ]; then
 	    echo "Creating \"${LOCALSTATE_DIR}\" failed."
 	    exit 1
 	fi
-
+	
 	chown -R ${ENABLE_USER}:${ENABLE_GROUP} ${LOCALSTATE_DIR}
+
+	if [ ! -d ${SYSCONF_DIR} ]; then
+	    mkdir -p ${SYSCONF_DIR}
+	fi
+	
+	if [ ! -d ${SYSCONF_DIR} ]; then
+	    echo "Creating \"${SYSCONF_DIR}\" failed."
+	    exit 1
+	fi
+
+	chown -R ${ENABLE_USER}:${ENABLE_GROUP} ${SYSCONF_DIR}
 	;;
 esac
