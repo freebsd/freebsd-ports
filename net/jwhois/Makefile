@@ -29,6 +29,8 @@ post-install:
 	${MKDIR} ${PREFIX}/var/jwhois
 	${CHOWN} :nogroup ${PREFIX}/var/jwhois
 	${CHMOD} g+w ${PREFIX}/var/jwhois
+	${CHOWN} :nogroup ${PREFIX}/bin/jwhois
+	${CHMOD} g+s ${PREFIX}/bin/jwhois
 	${INSTALL_DATA} ${WRKSRC}/example/jwhois.conf ${PREFIX}/etc/jwhois.conf.sample
 	if [ ! -f ${PREFIX}/etc/jwhois.conf ]; then ${INSTALL_DATA} ${PREFIX}/etc/jwhois.conf.sample ${PREFIX}/etc/jwhois.conf; fi
 
