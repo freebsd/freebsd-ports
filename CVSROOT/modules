@@ -2981,6 +2981,7 @@ ja-platex209-jis	ports/japanese/platex209-jis
 ja-platex209-sjis	ports/japanese/platex209-sjis
 ja-port_man	ports/japanese/man
 ja-postgresql	ports/japanese/postgresql
+ja-postgresql-man	ports/japanese/postgresql-man
 ja-postgresql-tcltk	ports/japanese/postgresql-tcltk
 ja-ppxp		ports/japanese/ppxp
 ja-prn		ports/japanese/prn
