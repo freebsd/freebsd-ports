@@ -44,6 +44,13 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION} GCC_TARG=${PKGNAMEPREFIX:S/-$//} \
 
 BINARIES=	gcc cpp
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not compile on amd64 due to platform rename"
+.endif
+
+
 post-configure:
 	@${PERL} -pi.bak -e 's,^(TARGET_CONFIGDIRS\s*=).+$$,\1,' ${WRKSRC}/Makefile
 	@${PERL} -pi.bak -e 's,^(install-info:),\1\ndonot-\1,' ${WRKSRC}/gcc/Makefile
@@ -55,4 +62,4 @@ post-install:
 		${PREFIX}/${PKGNAMEPREFIX:S/-$//}/bin/$F
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
