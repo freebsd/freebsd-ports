@@ -20,6 +20,10 @@ WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GMAKE=	yes
 
+USE_RC_SUBR=	YES
+PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
+
 INSTALL_TARGET=	install INST=${PREFIX}/${PORTNAME}
 
 post-extract:
@@ -49,6 +53,6 @@ post-install:
 			>${PREFIX}/etc/rc.d/aolserver.sh ; \
 		${CHMOD} 755 ${PREFIX}/etc/rc.d/aolserver.sh; \
 	fi
-	@${CAT} ${PKGDIR}/pkg-message
+	@${CAT} ${WRKDIR}/pkg-message
 
 .include <bsd.port.mk>
