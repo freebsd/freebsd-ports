@@ -65,6 +65,10 @@ PLIST_SUB+=	SCPONLY_CHROOT="@comment "
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 501105 && exists(/libexec/ld-elf.so.1)
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-aa
+.endif
+
 .if defined(WITHOUT_SCPONLY_WILDCARDS)
 CONFIGURE_ARGS+=--disable-wildcards
 .endif

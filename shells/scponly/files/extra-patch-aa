@@ -1,0 +1,21 @@
+--- ./setup_chroot.sh.in.orig	Fri Nov 21 00:14:36 2003
++++ ./setup_chroot.sh.in	Fri Nov 21 00:15:13 2003
+@@ -106,6 +106,7 @@
+ @INSTALL@ -d $targetdir/usr/local/lib
+ @INSTALL@ -d $targetdir/usr/local/bin
+ @INSTALL@ -d $targetdir/lib
++@INSTALL@ -d $targetdir/libexec
+ @INSTALL@ -d $targetdir/usr/lib
+ @INSTALL@ -d $targetdir/usr/libexec
+ @INSTALL@ -d $targetdir/usr/libexec/openssh
+@@ -125,6 +126,10 @@
+ fi
+ if [ -f /lib/ld-linux.so.2 ]; then 
+ 	LIB_LIST="$LIB_LIST /lib/ld-linux.so.2"
++	LDSOFOUND=1
++fi
++if [ -f /libexec/ld-elf.so.1 ]; then
++	LIB_LIST="$LIB_LIST /libexec/ld-elf.so.1"
+ 	LDSOFOUND=1
+ fi
+ if [ -f /usr/libexec/ld-elf.so.1 ]; then
