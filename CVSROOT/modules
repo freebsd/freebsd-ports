@@ -2591,6 +2591,7 @@ gkrellmearth	ports/astro/gkrellmearth
 gkrellmfmonitor	ports/misc/gkrellmfmonitor
 gkrellmfmonitor2	ports/misc/gkrellmfmonitor2
 gkrellmlaunch	ports/misc/gkrellmlaunch
+gkrellmlaunch2	ports/misc/gkrellmlaunch2
 gkrellmmailwatch	ports/mail/gkrellmmailwatch
 gkrellmmailwatch2	ports/mail/gkrellmmailwatch2
 gkrellmms	ports/audio/gkrellmms
