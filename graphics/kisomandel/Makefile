@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	arved
 
-MAINTAINER=	kde@freebsd.org
+MAINTAINER=	ports@freebsd.org
 COMMENT=	A fractal rendering program with nice 3d-display in realtime
 
 LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
