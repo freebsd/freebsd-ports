@@ -19,4 +19,12 @@ GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 
-.include <bsd.port.mk>
+ONLY_FOR_ARCHS=	i386
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+IGNORE=	"does not currently support FreeBSD 5.x"
+.endif
+
+.include <bsd.port.post.mk>
