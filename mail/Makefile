@@ -170,6 +170,7 @@
     SUBDIR += p5-Mail-Sender
     SUBDIR += p5-Mail-Sendmail
     SUBDIR += p5-Mail-SpamAssassin
+    SUBDIR += p5-Mail-SpamAssassin-devel
     SUBDIR += p5-Mail-Spool
     SUBDIR += p5-Mail-Tools
     SUBDIR += p5-Mail-Verify
