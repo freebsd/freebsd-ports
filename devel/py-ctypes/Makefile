@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ctypes
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.2
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%/,ctypes/:pyctypes,g} \
 		${MASTER_SITE_LOCAL:S,%SUBDIR%/,perky/:libffi,g}
