@@ -1,17 +1,25 @@
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/LibXML/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/LibXML.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/LibXML/Attr.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/LibXML/Booleam.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/LibXML/CDATASection.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/LibXML/Comment.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/LibXML/Document.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/LibXML/DocumentFragment.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/LibXML/Dtd.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/LibXML/Element.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/LibXML/Literal.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/LibXML/Namespace.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/LibXML/Node.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/LibXML/NodeList.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/LibXML/Number.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/LibXML/SAX/Builder.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/LibXML/SAX/Generator.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/LibXML/SAX/Parser.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/LibXML/Text.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/LibXML/LibXML.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/LibXML/LibXML.so
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/LibXML
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/XML 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/LibXML/SAX
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
