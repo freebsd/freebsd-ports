@@ -16,6 +16,7 @@ include/avifile/avm_args.h
 include/avifile/avm_default.h
 include/avifile/avm_fourcc.h
 include/avifile/avm_locker.h
+include/avifile/avm_output.h
 include/avifile/avm_stl.h
 include/avifile/configfile.h
 include/avifile/cpuinfo.h
@@ -79,6 +80,7 @@ lib/libaviplay.so.0
 %%QT%%lib/libqavm.la
 %%QT%%lib/libqavm.so
 %%QT%%lib/libqavm.so.0
+libdata/pkgconfig/avifile.pc
 share/aclocal/avifile.m4
 share/avifile/about.ppm
 share/avifile/action.cfg
@@ -94,6 +96,7 @@ share/avifile/test.xpm
 %%PORTDOCS%%share/doc/avifile/README
 %%PORTDOCS%%@dirrm share/doc/avifile
 @dirrm share/avifile
+@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
 @unexec rmdir %D/lib/avifile/vidix 2>/dev/null || true
 @dirrm lib/avifile
 @dirrm include/avifile
