@@ -1,0 +1,16 @@
+The OEL Project/Planner Scheduler (xopps) program is an easy-to-use
+graphics editing tool for generating milestone schedule charts. It
+represents an application-specific editor with its commands and functions
+tailored to plotting milestone events and activities on a timeline
+display.  The XOPPS graphics editor is written in C and runs under X/Motif.
+
+Availability                                                         
+
+The planning tool, xopps, is available as a complete package through NASA
+COSMIC (with source code, etc).  The COSMIC phone number is 706-542-3265,
+it is managed by The University of Georgia. This version is being made
+available as a test/demonstration copy of the executable for your use.
+
+For further information at JPL, contact:
+susan murphy	susan@natasha.jpl.nasa.gov	818-354-1948
+cassie mulnix	clm@natasha.jpl.nasa.gov	818-354-1430

@@ -1,0 +1,31 @@
+*** Makefile.orig	Sun Jul 27 22:35:11 1997
+--- Makefile	Sun Jul 27 22:49:41 1997
+***************
+*** 142,154 ****
+  # Installation locations (edit to suit your system)
+  #
+  
+! ROOTDIR = ### user defined ###
+! SUBSYS = ### user defined ###
+  BINDIR = $(ROOTDIR)/bin
+! RSCDIR = $(ROOTDIR)/setup/app-defaults
+  MAN1DIR = $(ROOTDIR)/man/man1
+! HELPDIR = $(ROOTDIR)/setup/$(SUBSYS)/help
+! BITDIR = $(ROOTDIR)/setup/bitmaps
+  
+  #
+  # You generally should not edit below this line
+--- 142,154 ----
+  # Installation locations (edit to suit your system)
+  #
+  
+! ROOTDIR = $(PREFIX)
+! SUBSYS = ..
+  BINDIR = $(ROOTDIR)/bin
+! RSCDIR = $(ROOTDIR)/lib/X11/app-defaults
+  MAN1DIR = $(ROOTDIR)/man/man1
+! HELPDIR = $(ROOTDIR)/lib/X11/$(SUBSYS)/help
+! BITDIR = $(ROOTDIR)/include/X11/bitmaps
+  
+  #
+  # You generally should not edit below this line
