@@ -127,7 +127,7 @@ audit_installed()
 {
 	local rc=0
 
-	extract_auditfile | awk -F\| '
+	extract_auditfile | awk -F\| "$PRINTAFFECTED_AWK"'
 		BEGIN { vul=0 }
 		/^(#|\$)/ { next }
 		$2 !~ /'"$opt_restrict"'/ { next }
@@ -135,12 +135,7 @@ audit_installed()
 			cmd="'"$pkg_info"' -E \"" $1 "\""
 			while((cmd | getline pkg) > 0) {
 				vul++
-				split($2, ref, / /)
-				print "Affected package: " pkg
-				print "Type of problem: " $3 "."
-				for (r in ref)
-					print "Reference: <" ref[r] ">"
-				print ""
+				print_affected(pkg)
 			}
 			close(cmd)
 		}
@@ -182,7 +177,7 @@ audit_file()
 		;;
 	esac
 
-	extract_auditfile | awk -F\| '
+	extract_auditfile | awk -F\| "$PRINTAFFECTED_AWK"'
 		BEGIN { vul=0 }
 		/^(#|\$)/ { next }
 		{
@@ -191,13 +186,7 @@ audit_file()
 				if ($2 !~ /'"$opt_restrict"'/)
 					next
 				vul++
-				split($2, ref, / /)
-				split(pkg, p)
-				print "Affected package: " p[1]
-				print "Type of problem: " $3 "."
-				for (r in ref)
-					print "Reference: <" ref[r] ">"
-				print ""
+				print_affected(pkg)
 			}
 			close(cmd)
 		}
@@ -233,14 +222,9 @@ audit_args()
 					{ print }
 				' | $pkg_version -T "$1" -`; then
 				VULCNT=$(($VULCNT+1))
-				echo "$VLIST" | awk -F\| '{
-					print "Affected package: '$1' (matched by " $1 ")"
-					print "Type of problem: " $3 "."
-					split($2, ref, / /)
-					for (r in ref)
-						print "Reference: <" ref[r] ">"
-					print ""
-				}'
+				echo "$VLIST" | awk -F\| "$PRINTAFFECTED_AWK"'
+					{ print_affected("'"$1"'") }
+				'
 			fi
 			;;
 		esac
@@ -271,14 +255,9 @@ audit_cwd()
 			$2 !~ /'"$opt_restrict"'/ { next }
 			{ print }
 		' | $pkg_version -T "$PKGNAME" -`; then
-		echo "$VLIST" | awk -F\| '{
-			print "Affected package: '$PKGNAME' (matched by " $1 ")"
-			print "Type of problem: " $3 "."
-			split($2, ref, / /)
-			for (r in ref)
-				print "Reference: <" ref[r] ">"
-			print ""
-		}'
+		echo "$VLIST" | awk -F\| "$PRINTAFFECTED_AWK"'
+			{ print_affected("'"$PKGNAME"'") }
+		'
 		return 1
 	fi
 }
@@ -375,7 +354,7 @@ while getopts aCdf:Fqr:vVX: opt; do
 	X)
 		opt_expiry="$OPTARG";;
 	?)
-		echo "Usage: $0 -aCdF [-f file] [pkg-name ...]"
+		echo "Usage: $0 -aCdF [-X days] [-r pattern] [-f file] [pkg-name ...]"
 		exit 2;;
 	esac
 done
@@ -418,6 +397,38 @@ if $opt_dbversion; then
 fi
 
 prerequisites_checked=false
+
+if $opt_quiet; then
+	PRINTAFFECTED_AWK='
+		function print_affected(apkg) {
+			print apkg
+		}
+		'
+elif $opt_verbose; then
+	PRINTAFFECTED_AWK='
+		function print_affected(apkg) {
+			split(apkg, thepkg)
+			print "Affected package: " thepkg[1] " (matched by " $1 ")"
+			print "Type of problem: " $3 "."
+			split($2, ref, / /)
+			for (r in ref)
+				print "Reference: <" ref[r] ">"
+			print ""
+		}
+		'
+else
+	PRINTAFFECTED_AWK='
+		function print_affected(apkg) {
+			split(apkg, thepkg)
+			print "Affected package: " thepkg[1]
+			print "Type of problem: " $3 "."
+			split($2, ref, / /)
+			for (r in ref)
+				print "Reference: <" ref[r] ">"
+			print ""
+		}
+		'
+fi
 
 if $opt_audit; then
 	portaudit_prerequisites
