@@ -15,7 +15,6 @@
     SUBDIR += anteater
     SUBDIR += apcpwr
     SUBDIR += apcupsd
-    SUBDIR += arson
     SUBDIR += asapm
     SUBDIR += ascpu
     SUBDIR += asfsm
