@@ -8,7 +8,8 @@
 
 CATEGORIES=	korean net
 
-PATCH_SITES=	http://master.debian.or.kr/~alee/patch/
+PATCH_SITES=	http://master.debian.or.kr/~alee/patch/ \
+		ftp://ftp.kr.FreeBSD.org/pub/FreeBSD-kr/distfiles/
 PATCHFILES=	gaim-0.58-i18n.diff
 PATCH_DIST_STRIP= -p1
 
