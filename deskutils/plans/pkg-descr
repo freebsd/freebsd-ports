@@ -1,0 +1,39 @@
+Plans lets you put calendars on the web.
+
+Sharp-looking
+    - Plans is the nicest-looking web calendar.
+    - Plans has several downloadable themes available.
+    - CSS-based layout makes it easy to match the colors & fonts with
+      your website.
+Open Source
+    - Plans is licensed under the GPL. You can freely modify the code
+      for your needs. Many organizations have done so.
+Multiple Calendars
+    - One installation of plans can support many calendars.
+    - Calendars can share information with each other.
+    - Each calendar is managed independently (unique password, custom
+      options, custom look & feel).
+    - Multiple calendars running on the same installation of plans
+      can be "embedded" in completely different websites.
+Extendable
+    - Plans' architecture allows add-ons and standalone programs
+      to re-use its framework.
+International Support
+    - Plans supports multiple languages.
+    - Weeks can start on days other than Sunday.
+    - Plans supports arbitrary date formats (mm/dd/yy, dd/mm/yy, etc.)
+Recurring Events
+    - Plans uses a powerful and flexible recurring event model.
+    - Template-based design
+    - Plans uses HTML templates to allow easy customization of the
+      look & feel.
+    - Each calendar can have its own custom template, even located
+      on a different server.
+Browser-Based Management
+    - Plans' interface is intuitive and easy to use.
+    - Online help is built into Plans.
+Database Support
+    - Plans can store data in flat files or an SQL database.
+
+WWW: http://www.planscalendar.com/
+Author: Lloyd Dalton <daltonlp@gmail.com>

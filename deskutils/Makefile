@@ -108,6 +108,7 @@
     SUBDIR += phpicalendar
     SUBDIR += plan
     SUBDIR += planner
+    SUBDIR += plans
     SUBDIR += preferences.app
     SUBDIR += remind
     SUBDIR += rolo
