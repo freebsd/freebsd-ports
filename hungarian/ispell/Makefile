@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	ispell
-PORTVERSION=	0.99.3
-PORTREVISION=	1
+PORTVERSION=	1.0.R.1
 CATEGORIES=	hungarian textproc
 #MASTER_SITES=	http://www.szofi.hu/gnu/magyarispell/
 MASTER_SITES=	http://magyarispell.sourceforge.net/
-DISTNAME=	magyarispell-${PORTVERSION}
+DISTNAME=	magyarispell-${PORTVERSION:S/.R.1/-RC1/}
 
 MAINTAINER=	Janos.Mohacsi@bsd.hu
 COMMENT=	Hungarian dictionary for ispell
@@ -22,6 +21,7 @@ RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 
 USE_GMAKE=	yes
 DOCSDIR=	${PREFIX}/share/doc/hu-ispell
+DOCS=		OLVASSEL README GYIK ChangeLog
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/tmp/magyar4ispell.hash ${DATADIR}/magyar.hash
@@ -31,7 +31,7 @@ do-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/ispell-hu.sh ${PREFIX}/bin/ispell-hu
 .ifndef(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/OLVASSEL ${WRKSRC}/README ${WRKSRC}/GYIK ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
