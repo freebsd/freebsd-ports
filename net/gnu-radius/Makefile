@@ -14,6 +14,8 @@ DISTNAME=	radius-${PORTVERSION}
 MAINTAINER=	lance@merlin.net.ua
 COMMENT=	GNU RADIUS server
 
+BROKEN=		Broken pkg-plist
+
 #MAKEFILE=	Makefile
 
 CONFLICTS=	freeradius-0.* openradius-0.* radiusd-cistron-1.*
