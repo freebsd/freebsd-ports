@@ -1,0 +1,26 @@
+*** goferc.0	Thu Jun 23 16:00:00 1994
+--- goferc	Wed Feb  8 01:12:53 1995
+***************
+*** 29,39 ****
+        ;;
+  esac
+  
+! GOFER=/home/staff/ian/gofer/lib/standard.prelude
+  export GOFER
+  /usr/local/lib/Gofer/gofc $args
+  echo '[Compiling with gcc]'
+  gcc -o $prog -O $prog.c /usr/local/lib/Gofer/runtime.o -lm
+  strip $prog
+  rm $prog.c
+- 
+--- 29,38 ----
+        ;;
+  esac
+  
+! GOFER=/usr/local/lib/Gofer/standard.prelude
+  export GOFER
+  /usr/local/lib/Gofer/gofc $args
+  echo '[Compiling with gcc]'
+  gcc -o $prog -O $prog.c /usr/local/lib/Gofer/runtime.o -lm
+  strip $prog
+  rm $prog.c

@@ -1,0 +1,5 @@
+@cwd /usr/local
+bin/gofer
+bin/goferc
+lib/Gofer
+man/man1/gofer.1.gz
