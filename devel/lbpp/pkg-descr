@@ -1,0 +1,16 @@
+LBPP is a front end to the GNU Common Compiler (GCC) that produces C
+source code from Liberty Basic source code.  This code then is fed to
+GCC to produce an executable.  It is similiar to C++ compilers that
+produce C code that then is compiled.  It can be thought of either as
+a GCC extension or a C translator.  The architecture of LBPP was
+designed to allow statements to be added dynamically without requiring
+a recompile of the source.  It accomplishes this by defining a
+standard interface between C and Liberty Basic that allows C functions
+to access all of the internal data of a Liberty Basic program.  The
+fact that all of the functionality of is based in a C library, porting
+LBPP to a new platform requires only porting the library to the native
+GUI system along with necessary modifications to allow the code to
+compile.  The translator should be ANSI C so porting should not be an
+issue.
+
+WWW: http://lbpp.sourceforge.net/
