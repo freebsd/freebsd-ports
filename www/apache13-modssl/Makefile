@@ -1,9 +1,9 @@
 # New ports collection makefile for:	Apache + mod_ssl
-# Version required:	1.3.4 + 2.2.4
+# Version required:	1.3.4 + 2.2.5
 # Date created:		Sat Aug 22 12:00:00 CDT 1998
 # Whom:			rse@engelschall.com
 #
-# $Id: Makefile,v 1.23 1999/03/13 17:11:03 billf Exp $
+# $Id: Makefile,v 1.24 1999/03/13 17:57:44 billf Exp $
 #
 
 DISTNAME=	apache_${VERSION_APACHE}
@@ -36,7 +36,6 @@ MASTER_SITES=	http://www.apache.org/dist/ \
 		ftp://ftp.mtnranch.net/pub/apache/dist/ \
 		ftp://ftp.iodynamics.com/pub/mirror/apache/dist/ \
 		ftp://apache.nextpath.com/pub/apache/dist/
-
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		mod_ssl-${VERSION_MODSSL}-${VERSION_APACHE}${EXTRACT_SUFX}
 
@@ -48,13 +47,15 @@ BUILD_DEPENDS=	ssleay:${PORTSDIR}/security/openssl \
 RUN_DEPENDS=	ssleay:${PORTSDIR}/security/openssl
 
 VERSION_APACHE=	1.3.4
-VERSION_MODSSL=	2.2.4
+VERSION_MODSSL=	2.2.5
 
 Y2K=		http://www.engelschall.com/sw/mod_ssl/docs/2.2/ssl_faq.html#y2k
 RESTRICTED=	"Contains cryptography"
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-layout=GNU \
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
+		--with-layout=GNU \
+		--with-perl=${PERL5} \
 		--sysconfdir=${PREFIX}/etc/apache \
 		--includedir=${PREFIX}/include/apache \
 		--logfiledir=/var/log \
