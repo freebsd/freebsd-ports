@@ -9,14 +9,15 @@
 DISTNAME=	so51a_lnx_01
 PKGNAME=	staroffice-5.1a
 CATEGORIES=	editors
-MASTER_SITES=	ftp://ftp.hagenhomes.com/freebsd/files/  \
+MASTER_SITES=	http://afug.hypermart.net/files/ \
+		http://www.hagenhomes.com/freebsd/files/  \
 		ftp://ftp.stat.duke.edu/pub/Users/sto/StarOffice51a/  \
 		ftp://ftp.stardivision.de/pub/support/so51a/nwspatch/unxlnxi/  \
 		ftp://ftp.stardivision.de/pub/support/so51a/db/unxlnxi/
 EXTRACT_SUFX=	.tar
 DISTFILES=	applicat.rdb.gz libofa517li.so libsdb517li.so
 
-MAINTAINER=	dkwiebe@hagenhomes.com
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
@@ -62,15 +63,13 @@ post-configure:
 do-install:
 	@${CP} /compat/linux/etc/ld.so.conf ${TMPDIR}/ld.so.conf.tmp
 	@${ECHO} "${WRKDIR}/tmp" >> ${TMPDIR}/ld.so.conf.tmp
-	@${ECHO} "${TMPDIR}/sv001.tmp" >> ${TMPDIR}/ld.so.conf.tmp
+	@${ECHO} "/usr/X11R6/lib" >> ${TMPDIR}/ld.so.conf.tmp
 	@PATH=${PATH}:${TMPDIR}/sv001.tmp:/usr/compat/linux/tmp/sv001.tmp:/usr/compat/linux/tmp:/tmp
 	@LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${TMPDIR}:${WRKDIR}/tmp:/usr/lib:/lib:/tmp:/usr/compat/linux/lib
 	@/usr/compat/linux/sbin/ldconfig -f ${TMPDIR}/ld.so.conf.tmp
 	@${CAT} ${PKGDIR}/MESSAGE
 	@-TEMP=${TMPDIR} ${WRKDIR}/so51inst/office51/setup /net
 
-# A seperate target as we need to be able to run this stuff independantly.
-post-install:
 	@${INSTALL_DATA} ${WRKDIR}/applicat.rdb ${PREFIX}/Office51/bin
 	@${INSTALL_DATA} ${_DISTDIR}/libofa517li.so ${PREFIX}/Office51/lib
 	@${INSTALL_DATA} ${_DISTDIR}/libsdb517li.so ${PREFIX}/Office51/lib
@@ -79,7 +78,6 @@ post-install:
 	@${PATCH} -s ${PREFIX}/Office51/bin/setup ${FILESDIR}/setup.patch
 	@${PATCH} -s ${PREFIX}/Office51/bin/soffice ${FILESDIR}/soffice.patch
 	@${PERL} -pi -e 's|DefaultDestPath = "${PREFIX}/Office51";|DefaultDestPath = "~/Office51";|' ${PREFIX}/Office51/instdb.ins
-	@${INSTALL_DATA} ${FILESDIR}/dot.sversionrc /root/.sversionrc
 
 install-user:
 	${PREFIX}/Office51/bin/setup

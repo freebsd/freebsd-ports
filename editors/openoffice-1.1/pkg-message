@@ -5,7 +5,6 @@ Darren Wiebe
 dkwiebe@hagenhomes.com
 
 You will very shortly be done a network install of StarOffice 5.1a.
-Once that is done run "make post-install".
 Once that is done exit X11 and run it again as the user that you usually use.
 Then run "make install-user" and do a standard workstation install.
 It will now be ready to use.
