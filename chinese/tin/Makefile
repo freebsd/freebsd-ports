@@ -15,8 +15,10 @@ MAINTAINER=	yssu@CCCA.NCTU.edu.tw
 EXTRA_PATCHES=	${.CURDIR}/files/patch-attrib.c \
 		${.CURDIR}/files/patch-cook.c \
 		${.CURDIR}/files/patch-mail.c \
-		${.CURDIR}/files/patch-init.c
+		${.CURDIR}/files/patch-init.c \
+		${.CURDIR}/files/patch-tin_defaults
 
 .include "${MASTERDIR}/Makefile"
 
-CONFIGURE_ARGS+=	--disable-locale --with-screen=termcap
+CONFIGURE_ARGS+=	--disable-locale --with-screen=termcap \
+			--with-mime-default-charset=Big5
