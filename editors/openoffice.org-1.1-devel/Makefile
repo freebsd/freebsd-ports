@@ -554,12 +554,12 @@ sdk:
 	@cd ${WRKSRC}/.. && DISPLAY=${DISPLAY} PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" && \
 		${TCSH} -c 'source FreeBSDEnv.Set && unsetenv TOP && cd sdk_oo && build.pl && deliver.pl'
 .endif
-	${MV} ${WRKSRC}/../solver/${BUILD_NR}/unxfbsd.pro/bin/OpenOffice.org${FRELEASE_NR}_SDK.tar.gz ${WRKDIR}/../OOo_${FRELEASE_NR}_${OPSYS}${SIMPLEOSVER}Intel_sdk.tar.gz 
+	${MV} ${WRKSRC}/../solver/${BUILD_NR}/unxfbsd.pro/bin/OpenOffice.org${FRELEASE_NR}_SDK.tar.gz ${WRKDIR}/../OOo_${PORTVERSION}_${OPSYS}${SIMPLEOSVER}Intel_sdk.tar.gz 
 
 
 solver:
 	@${ECHO_MSG} "===>   Make Solver of OpenOffice.org"
-	@cd ${WRKSRC}/.. ; ${TAR} cfz ${WRKDIR}/../OOo_${FRELEASE_NR}_${OPSYS}${SIMPLEOSVER}Intel_solver.tar.gz solver
+	@cd ${WRKSRC}/.. ; ${TAR} cfz ${WRKDIR}/../OOo_${PORTVERSION}_${OPSYS}${SIMPLEOSVER}Intel_solver.tar.gz solver
 
 update:
 	@${MAKE} fetch
