@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	mmake
-PORTVERSION=	2.2.1
-PORTREVISION=	1
+PORTVERSION=	2.3
 CATEGORIES=	java devel
 MASTER_SITES=	http://www.tildeslash.com/mmake/dist/
 
