@@ -1,7 +1,6 @@
 bin/ap-config
 bin/ap-mrtg
 sbin/ap-trapd
-lib/charset.alias
 share/locale/uk/LC_MESSAGES/ap-utils.mo
 share/locale/fr/LC_MESSAGES/ap-utils.mo
 share/locale/pl/LC_MESSAGES/ap-utils.mo

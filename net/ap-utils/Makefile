@@ -7,7 +7,7 @@
 
 PORTNAME=	ap-utils
 PORTVERSION=	1.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +19,12 @@ LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
+USE_REINPLACE=	yes
+CONFIGURE_ENV=	LDFLAGS="-lintl -L${LOCALBASE}/lib"
 MAN8=		ap-trapd.8 ap-mrtg.8 ap-config.8
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|_nl_domain_bindings|libintl_nl_domain_bindings|' ${WRKSRC}/configure
 
 .if !defined(NOPORTDOCS)
 post-install:
