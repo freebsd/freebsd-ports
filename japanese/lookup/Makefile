@@ -1,7 +1,7 @@
 # New ports collection makefile for:	lookup for Mule 2.3
 # Version required:	1.0
 # Date created:		98/11/19
-# Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
+# Whom:			Satoshi Taoka <taoka@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ PKGNAME?=	ja-lookup-mule-1.0
 CATEGORIES=	japanese elisp
 MASTER_SITES=	http://openlab.ring.gr.jp/lookup/DIST/
 
-MAINTAINER=	taoka@infonets.hiroshima-u.ac.jp
+MAINTAINER=	taoka@FreeBSD.org
 
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 RUN_DEPENDS+=	eblook:${PORTSDIR}/japanese/eblook
@@ -51,6 +51,9 @@ do-install:
 	${RM} ${ELISPDIR}/lookup-compile.el
 	${SED} -e 's,@VERSION@,1.0,' -e 's,@pkgemacsdir@,${ELISPDIR},' \
 		${WRKSRC}/lisp/lookup-vars.el.in > ${ELISPDIR}/lookup-vars.el
+	@if [ ! -f ${PORTINFODIR}/info/dir ]; then \
+		${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PORTINFODIR}/dir; \
+	fi
 	install-info ${PORTINFODIR}/lookup.info ${PORTINFODIR}/dir
 	${SED} -e 's,%%ELISPDIR%%,${ELISPDIR},' ${FILESDIR}/lookup-startup.el.tmpl > ${ELISPDIR}/../lookup-startup.el
 

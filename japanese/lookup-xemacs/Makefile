@@ -1,14 +1,12 @@
 # New ports collection makefile for:	lookup for XEmacs
 # Version required:	1.0
 # Date created:		98/11/19
-# Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
+# Whom:			Satoshi Taoka <taoka@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PKGNAME=	ja-lookup-xemacs-1.0
-
-MAINTAINER=	taoka@infonets.hiroshima-u.ac.jp
 
 MASTERDIR=	${.CURDIR}/../lookup-mule
 EMACS=		xemacs

@@ -25,5 +25,6 @@ lib/xemacs/site-lisp/lookup/stem-english.el
 lib/xemacs/info/lookup.info
 lib/xemacs/info/lookup.info-1
 lib/xemacs/info/lookup.info-2
+@exec [ -f %D/lib/xemacs/info/dir ] || mkdir -p %D/lib/xemacs/info; sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/lib/xemacs/info/dir
 @exec install-info %D/lib/xemacs/info/lookup.info %D/lib/xemacs/info/dir
 @dirrm lib/xemacs/site-lisp/lookup
