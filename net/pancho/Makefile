@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	pancho
-PORTVERSION=	2.6
+PORTVERSION=	3.0
 CATEGORIES=	net
 MASTER_SITES=	http://pancho.lunarmedia.net/
-DISTNAME=	pancho-v2.6
+DISTNAME=	pancho-v${PORTVERSION}
 
 MAINTAINER=	Nicolas.Jombart@hsc-labs.com
 
@@ -20,6 +20,7 @@ NO_BUILD=	YES
 pre-everything::
 .if !defined(WITH_PANCHO_LOGGING)
 	@${ECHO_MSG} "Type \"make WITH_PANCHO_LOGGING=yes\" if you want to enable logging."
+	@${ECHO_MSG} "Read LOGGING to know how to customize logging."
 .endif
 
 pre-patch:
