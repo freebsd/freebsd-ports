@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	knews
-PORTVERSION=	1.0.b1
+PORTVERSION=	1.0b.1
 CATEGORIES=	news
 MASTER_SITES=	http://www.matematik.su.se/~kjj/
 
