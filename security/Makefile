@@ -10,12 +10,14 @@
     SUBDIR += cops
     SUBDIR += crack
     SUBDIR += cyrus-sasl
+    SUBDIR += ddos_scan
     SUBDIR += donkey
     SUBDIR += dsniff
     SUBDIR += fakebo
     SUBDIR += firewalk
     SUBDIR += fragrouter
     SUBDIR += fwtk
+    SUBDIR += gag
     SUBDIR += gnupg
     SUBDIR += gpasman
     SUBDIR += gtkportscan
