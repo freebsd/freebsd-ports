@@ -6,10 +6,15 @@
 #
 
 PORTNAME=		bidwatcher
-PORTVERSION=		1.3.3
+PORTVERSION=		1.3.4
 CATEGORIES=		misc
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=		bidwatcher-1.3.3
+
+PATCH_SITES=		ftp://relay.nuxi.com:/obrien/
+PATCHFILES=		bidwatcher-1.3.3_1.3.4.diff
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=		mph@FreeBSD.org
 
