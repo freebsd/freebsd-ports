@@ -1,22 +1,19 @@
-# New ports collection makefile for: diction
+# New ports collection makefile for:	diction
 # Date created:		2 August 1998
 # Whom:			J Han <hjh@best.com>
 #
 # $FreeBSD$
 #
 
-PORTNAME=		diction
-PORTVERSION=		0.8
-CATEGORIES=		misc
-MASTER_SITES=		ftp://cantor.informatik.rwth-aachen.de/pub/unix/
+PORTNAME=	diction
+PORTVERSION=	0.9
+CATEGORIES=	misc
+MASTER_SITES=	http://www.moria.de/~michael/diction/
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
-GNU_CONFIGURE=		yes
-USE_GMAKE=		yes
+USE_AUTOCONF=	yes
 
-MAKE_ENV=		MKDIR="$(MKDIR)"
-
-MAN1=			diction.1 style.1
+MAN1=		diction.1 style.1
 
 .include <bsd.port.mk>
