@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.tf.hut.fi/~flu/cplay/ \
 		http://www.tf.hut.fi/~flu/cplay/old/
 
-MAINTAINER=	j.kossen@home.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A curses based front-end for various audio players
 
 BUILD_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
