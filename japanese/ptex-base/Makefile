@@ -27,6 +27,8 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		wwwcore.1:${PORTSDIR}/www/libwww \
 		t1.5:${PORTSDIR}/devel/t1lib
 
+BROKEN=		Incomplete pkg-plist
+
 OPTIONS=	DVIPSK "Install dvipsk with Japanize patch from ASCII" off
 OPTIONS+=	UDVIPS "Install udvips (Implies DVIPSK)" off
 
