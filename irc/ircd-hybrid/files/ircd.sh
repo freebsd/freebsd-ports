@@ -5,6 +5,7 @@ start)
 	[ -x /usr/local/sbin/ircd ] \
 	&& /usr/local/sbin/ircd >/dev/null 2>&1 \
 	&& echo -n " ircd"
+	;;
 stop)
 	killall ircd && echo -n ' ircd'
 	;;
