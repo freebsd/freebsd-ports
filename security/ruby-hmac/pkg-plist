@@ -1,0 +1,6 @@
+%%RUBY_SITELIBDIR%%/hmac-md5.rb
+%%RUBY_SITELIBDIR%%/hmac-rmd160.rb
+%%RUBY_SITELIBDIR%%/hmac-sha1.rb
+%%RUBY_SITELIBDIR%%/hmac-sha2.rb
+%%RUBY_SITELIBDIR%%/hmac.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/hmac/test.rb
