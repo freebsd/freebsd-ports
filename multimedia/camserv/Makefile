@@ -10,7 +10,7 @@ PORTVERSION=	0.42
 CATEGORIES=	graphics
 MASTER_SITES=	http://cserv.sourceforge.net/current/
 
-MAINTAINER=	chein@freebsd.org,overholt@isdw.net
+MAINTAINER=	chein@freebsd.org
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 

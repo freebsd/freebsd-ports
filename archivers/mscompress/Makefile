@@ -11,7 +11,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= utils/compress
 
-MAINTAINER=	patseal@hyperhost.net
+MAINTAINER=	ports@FreeBSD.org
 
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes

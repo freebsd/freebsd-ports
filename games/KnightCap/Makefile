@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://samba.anu.edu.au/pub/KnightCap/ \
 		ftp://ftp.cadvision.com/pub/linuxberg/files/x11/entertain/
 DISTNAME=	KnightCap-${PORTVERSION}
 
-MAINTAINER=	bugg@bugg.strangled.net
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/Export
 USE_MESA=	yes

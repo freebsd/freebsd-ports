@@ -13,7 +13,7 @@ MASTER_SITES=	http://www6.informatik.uni-erlangen.de/~tsjensen/software/boxes/do
 MASTER_SITE_SUBDIR=	utils/text
 EXTRACT_SUFX=	.src.tar.gz
 
-MAINTAINER=	patseal@hyperhost.net
+MAINTAINER=	ports@FreeBSD.org
 
 MAN1=		boxes.1
 USE_GMAKE=	yes

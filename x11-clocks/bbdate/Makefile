@@ -10,7 +10,7 @@ PORTVERSION=	0.2.3
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://bbtools.thelinuxcommunity.org/sources/
 
-MAINTAINER=	patseal@hyperhost.net
+MAINTAINER=	ports@FreeBSD.org
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
