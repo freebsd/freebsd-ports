@@ -13,7 +13,7 @@
   request for service.  Examples are given below.
   .PP
   The program examines the \fItcpd\fR access control tables (default
-! \fI!!PREFIX!!/etc/hosts.allow\fR and \fI!!PREFIXX!!/etc/hosts.deny\fR) and prints its
+! \fI!!PREFIX!!/etc/hosts.allow\fR and \fI!!PREFIX!!/etc/hosts.deny\fR) and prints its
   conclusion.  For maximal accuracy, it extracts additional information
   from your \fIinetd\fR or \fItlid\fR network configuration file.
   .PP
