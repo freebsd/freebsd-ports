@@ -6,13 +6,19 @@
 # $FreeBSD$
 #
 
-DISTNAME=	xgraph-11.3.2
+DISTNAME=	xgraph-11
+PKGNAME=	xgraph-11.3.2
 CATEGORIES=	math print
-MASTER_SITES=	${MASTER_SITE_PORTS_JP}
+MASTER_SITES=	ftp://ftp.cs.utoronto.ca/pub/radford/
+EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	sanpei@sanpei.org
 
 USE_IMAKE=	yes
 MAN1=		xgraph.1
+
+post-install:
+	@${MKDIR} ${PREFIX}/share/examples/xgraph
+	${INSTALL_DATA} ${WRKSRC}/examples/*.xg ${PREFIX}/share/examples/xgraph
 
 .include <bsd.port.mk>
