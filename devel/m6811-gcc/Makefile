@@ -22,7 +22,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/m6811-elf-as:${PORTSDIR}/devel/${PKGNAMEPREFIX}b
 BUILD_DEPENDS+=	autoconf:${PORTSDIR}/devel/autoconf
 
 # Configuration alpha-unknown-freebsdelf not supported
-ONLY_FOR_ARCHS=	i386
+#ONLY_FOR_ARCHS=	i386
 
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
