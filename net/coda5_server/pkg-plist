@@ -12,14 +12,13 @@ sbin/initpw
 sbin/inoder
 sbin/makeftree
 sbin/merge
-sbin/mvdb
 sbin/parserecdump
 sbin/partial-reinit.sh
-sbin/pcfgen
+sbin/pdbtool
 sbin/printvrdb
 sbin/purgevol
 sbin/purgevol_rep
-sbin/pwd2pdb
+sbin/pwdtopdbtool.py
 sbin/rdsinit
 sbin/readdump
 sbin/rpc2portmap
