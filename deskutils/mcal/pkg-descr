@@ -1,0 +1,5 @@
+Mcal is a program based on the libmcal library that can create your
+calendar and appointment either via mstore or ICAP protocol drivers.
+You may display these calendars with gmcal (see deskutils/gmcal).
+
+WWW: http://mcal.chek.com/

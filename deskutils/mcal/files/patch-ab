@@ -1,0 +1,67 @@
+--- mcal.c.orig	Mon Mar 27 06:06:04 2000
++++ mcal.c	Tue Oct 23 23:41:33 2001
+@@ -35,7 +35,15 @@
+ 
+ #include <stdlib.h>
+ #include <stdio.h>
++
++#if HAVE_GETOPT_H
+ #include <getopt.h>
++#else
++extern int	getopt();
++extern char	*optarg;
++extern int	optind;
++#endif
++
+ #include <unistd.h>
+ #include <string.h>
+ #include <pwd.h>
+@@ -44,7 +52,7 @@
+ 
+ #define REVON "\033[7m"
+ #define REVOFF "\033[27m"
+-#define MCAL_VER "0.3"
++#define MCAL_VER "0.3-FreeBSD"
+ 
+ CALSTREAM *stream;
+ int events[13][32];
+@@ -75,20 +83,7 @@
+ 
+   while (1)
+     {
+-      int option_index = 0;
+-      static struct option long_options[] =
+-      {
+-	{"folder", 1, 0, 'f'},
+-	{"user", 0, 0, 'u'},
+-	{"password", 0, 0, 'p'},
+-	{"store", 0, 0, 's'},
+-	{"version", 0, 0, 'v'},
+-	{"help", 0, 0, 'h'},
+-	{0, 0, 0, 0}
+-      };
+-
+-      c = getopt_long (argc, argv, "f:upsvh",
+-		       long_options, &option_index);
++      c = getopt (argc, argv, "f:upsvh");
+       if (c == -1)
+ 	break;
+ 
+@@ -109,7 +104,7 @@
+ 	   case 'v':
+ 	 printf("MCAL Version %s\n",MCAL_VER);
+ 	 printf("\tLicensed Under GPL\n");
+-	 printf("\thttp://mcal.chek.com\n");
++	 printf("\thttp://mcal.chek.com/\n");
+ 	 printf("\tMark Musone musone@edgeglobal.com\n\n");
+  	 exit(0);
+ 	 break;
+@@ -118,7 +113,7 @@
+ 	 printf("\t-f foldername\n");
+ 	 printf("\tuse calendar from specified folder or server.\n");
+ 	 printf("\tfolder names can be standard calendar folders:\n");
+-	 printf("\t{servername/protocol}foldername\n\n");
++	 printf("\t{servername/protocol}foldername - e.g.: -f {/mstore}\n\n");
+ 	 printf("\t-u prompt for a username. uses current username if flag not set\n");
+ 	 printf("\t-p dont prompt for a password. sends a blank password if flag set\n");
+ 	 printf("\t-s store event in the given YYYYMMDD\n");
