@@ -157,6 +157,7 @@
     SUBDIR += rplay
     SUBDIR += rsynth
     SUBDIR += s3mod
+    SUBDIR += sbagen
     SUBDIR += sdl_mixer
     SUBDIR += shntool
     SUBDIR += shorten
