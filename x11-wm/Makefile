@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.13 1999/04/03 01:12:38 steve Exp $
+# $Id: Makefile,v 1.14 1999/05/04 22:31:01 steve Exp $
 #
 
     SUBDIR += 9menu
@@ -20,6 +20,7 @@
     SUBDIR += gwm
     SUBDIR += icewm
     SUBDIR += iconmaker
+    SUBDIR += libdockapp
     SUBDIR += lwm
     SUBDIR += mlvwm
     SUBDIR += olvwm
