@@ -8056,6 +8056,7 @@ relay		ports/net/relay
 relay-ctrl	ports/mail/relay-ctrl
 relaydb		ports/mail/relaydb
 remarp		ports/net-mgmt/remarp
+renamedlgplugins	ports/misc/renamedlgplugins
 renderext	ports/x11/renderext
 renderpark	ports/graphics/renderpark
 reoback		ports/sysutils/reoback
