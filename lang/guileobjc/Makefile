@@ -3,7 +3,7 @@
 # Date created:        21 April 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.3 1998/10/05 05:04:46 steve Exp $
+# $Id: Makefile,v 1.4 1998/10/27 16:33:54 vanilla Exp $
 #
 
 DISTNAME=	guileobjc-0.3.8
@@ -14,6 +14,8 @@ MAINTAINER=	Nakai@technologist.com
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libobjects.a:${PORTSDIR}/lang/libobjects
 LIB_DEPENDS=	guile.4:${PORTSDIR}/lang/guile
+
+BROKEN=		Doesn't work with the latest guile.
 
 GNU_CONFIGURE=	yes
 

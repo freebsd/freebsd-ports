@@ -3,7 +3,7 @@
 # Date created:        22 April 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.2 1998/09/24 00:33:28 vanilla Exp $
+# $Id: Makefile,v 1.3 1998/10/04 22:48:23 steve Exp $
 #
 
 DISTNAME=	ScriptKit-0.1.6
@@ -14,6 +14,8 @@ MASTER_SITES= 	ftp://ftp.aist-nara.ac.jp/pub/personal/masata-y/gyve/fullkit/gyve
 MAINTAINER=	Nakai@technologist.com
 
 BUILD_DEPENDS=	goconfig:${PORTSDIR}/lang/guileobjc
+
+BROKEN=		Depends on guileobjc
 
 GNU_CONFIGURE=	yes
 
