@@ -8,7 +8,7 @@
 PORTNAME=	isic
 PORTVERSION=	0.05
 CATEGORIES=	net
-MASTER_SITES=	http://expert.cc.purdue.edu/~frantzen/
+MASTER_SITES=	http://www.packetfactory.net/Projects/ISIC/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	bradh@uunet.co.za
