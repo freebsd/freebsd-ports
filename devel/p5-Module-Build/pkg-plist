@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/config_data
 %%SITE_PERL%%/Module/Build.pm
 %%SITE_PERL%%/Module/Build/Base.pm
