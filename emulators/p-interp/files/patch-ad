@@ -1,0 +1,11 @@
+--- Term.c.orig	Tue Aug 21 06:52:09 2001
++++ Term.c	Tue Aug 21 06:52:18 2001
+@@ -396,7 +396,7 @@
+       tcgetattr(TermOut, &OldTerm);
+       NewTerm=OldTerm;
+       NewTerm.c_iflag &= ~(PARMRK | ISTRIP | INLCR | IGNCR | 
+-			   ICRNL | IUCLC | IXOFF | IXON);
++			   ICRNL | /*IUCLC |*/ IXOFF | IXON);
+       NewTerm.c_oflag &= ~OPOST;
+       NewTerm.c_lflag &= ~(ISIG | ICANON | ECHO | ECHONL | IEXTEN);
+       NewTerm.c_cc[VMIN]=1;

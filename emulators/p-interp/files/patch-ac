@@ -1,0 +1,11 @@
+--- svolio.c.orig	Tue Aug 21 06:48:18 2001
++++ svolio.c	Tue Aug 21 06:48:36 2001
+@@ -44,7 +44,7 @@
+ #include <unistd.h>
+ #include <stdarg.h>
+ #include <ctype.h>
+-#include <getopt.h>
++/*#include <getopt.h>*/
+ 
+ #include "psystem.h"
+ #include "Memory.h"
