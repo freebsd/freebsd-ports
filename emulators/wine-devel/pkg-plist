@@ -1,10 +1,11 @@
 bin/wine
+bin/wineserver
 bin/fnt2bdf
 bin/wineclipsrv
 bin/regapi
 bin/regSet.sh
 etc/wine.conf.sample
-etc/wine.sym
+lib/libwine.so
 lib/wine/README.patch
 lib/wine/patch-3.3-sys-ldtshare
 lib/wine/patch-3.3-sys-sigtrap
@@ -25,7 +26,6 @@ lib/wine/documentation/debugging
 lib/wine/documentation/dlls
 lib/wine/documentation/fonts
 lib/wine/documentation/ioport-trace-hints
-lib/wine/documentation/lables-and-serial-nubers
 lib/wine/documentation/no-windows
 lib/wine/documentation/printing
 lib/wine/documentation/psdriver
@@ -36,3 +36,5 @@ lib/wine/documentation/README.regapi
 @dirrm lib/wine/reg
 @dirrm lib/wine/documentation
 @dirrm lib/wine
+@exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R

@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	wine
-PORTVERSION=	99.11.14
+PORTVERSION=	2000.04.30
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	ALPHA/wine/development
 DISTNAME=	Wine-${PORTVERSION:S/.//g}
 
-MAINTAINER=	se@FreeBSD.org
+MAINTAINER=	pfeifer@dbai.tuwien.ac.at
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		GL.14:${PORTSDIR}/graphics/Mesa3
@@ -49,17 +49,17 @@ post-build:
 	${SED} 's-\(look at the file \)<dirs to wine>/wine.ini-\1'${PREFIX}/etc/wine.conf.sample- <${WRKSRC}/documentation/config >${WRKDIR}/config
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/wine ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/tools/fnt2bdf ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/windows/x11drv/wineclipsrv ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/programs/regapi/regapi ${PREFIX}/bin
+.for EXEC in wine server/wineserver tools/fnt2bdf windows/x11drv/wineclipsrv \
+	     programs/regapi/regapi
+	${INSTALL_PROGRAM} ${WRKSRC}/${EXEC} ${PREFIX}/bin
+.endfor
 	${INSTALL_SCRIPT} ${WRKDIR}/regSet.sh ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/wine.ini ${PREFIX}/etc/wine.conf.sample
 	[ -f ${PREFIX}/etc/wine.conf ] \
 		|| ${INSTALL_DATA} ${WRKSRC}/wine.ini ${PREFIX}/etc/wine.conf
-	${INSTALL_DATA} ${WRKSRC}/wine.sym ${PREFIX}/etc
 	${INSTALL_DATA} ${WRKSRC}/documentation/wine.man ${PREFIX}/man/man1/wine.1
 	${INSTALL_DATA} ${WRKSRC}/documentation/wine.conf.man ${PREFIX}/man/man5/wine.conf.5
+	${INSTALL_DATA} ${WRKSRC}/libwine.so ${PREFIX}/lib
 	-@${MKDIR} ${PREFIX}/lib/wine/documentation ${PREFIX}/lib/wine/reg 2>/dev/null
 	${INSTALL_DATA} ${WRKDIR}/bugreports ${WRKDIR}/config \
 		${WRKSRC}/README \
@@ -72,7 +72,6 @@ do-install:
 		${WRKSRC}/documentation/dlls \
 		${WRKSRC}/documentation/fonts \
 		${WRKSRC}/documentation/ioport-trace-hints \
-		${WRKSRC}/documentation/lables-and-serial-nubers \
 		${WRKSRC}/documentation/no-windows \
 		${WRKSRC}/documentation/printing \
 		${WRKSRC}/documentation/psdriver \

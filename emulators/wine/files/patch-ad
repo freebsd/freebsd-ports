@@ -1,19 +1,6 @@
 *** wine.ini.orig	Sun Oct 31 03:23:49 1999
 --- wine.ini	Sat Nov 13 13:36:18 1999
 ***************
-*** 53,57 ****
-  Temp=e:\
-  Path=c:\windows;c:\windows\system;e:\;e:\test;f:\
-! SymbolTableFile=./wine.sym
-  
-  # <wineconf>
---- 53,57 ----
-  Temp=e:\
-  Path=c:\windows;c:\windows\system;e:\;e:\test;f:\
-! SymbolTableFile=/usr/local/etc/wine.sym
-  
-  # <wineconf>
-***************
 *** 107,117 ****
   
   [serialports]
