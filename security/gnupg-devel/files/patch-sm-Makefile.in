@@ -1,0 +1,11 @@
+--- sm/Makefile.in.orig	Thu Dec 23 00:06:57 2004
++++ sm/Makefile.in	Thu Dec 23 00:07:42 2004
+@@ -366,7 +366,7 @@
+ gpgsm_LDADD = ../jnlib/libjnlib.a ../kbx/libkeybox.a	\
+               ../common/libcommon.a \
+               $(LIBGCRYPT_LIBS)  $(KSBA_LIBS) $(LIBASSUAN_LIBS) -lgpg-error \
+-	      $(LIBINTL)
++	      $(LIBINTL) $(PTH_LIBS)
+ 
+ all: all-am
+ 

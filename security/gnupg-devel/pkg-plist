@@ -7,6 +7,7 @@ bin/gpgv2
 bin/kbxutil
 %%WITH_OPENSC%%bin/scdaemon
 bin/watchgnupg
+libexec/gpg-preset-passphrase
 libexec/gpg-protect-tool
 sbin/addgnupghome
 share/gnupg/gpg-conf.skel

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnupg
-PORTVERSION=	1.9.13
+PORTVERSION=	1.9.14
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	alpha/gnupg
@@ -29,6 +29,9 @@ USE_ICONV=	yes
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 INFO=		gnupg
+
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include/pth" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib/pth"
 
 .include <bsd.port.pre.mk>
 
