@@ -1,0 +1,21 @@
+--- Makefile.am.orig	Wed Oct 15 21:59:20 2003
++++ Makefile.am	Thu Dec 11 21:09:25 2003
+@@ -5,8 +5,7 @@
+ 
+ SUBDIRS = intl po macros include src pixmaps
+ 
+-truevisiondocdir = ${prefix}/doc/Truevision
+-truevisiondoc_DATA = \
++EXTRA_DIST = \
+ 	README\
+ 	COPYING\
+ 	AUTHORS\
+@@ -15,8 +14,6 @@
+ 	NEWS\
+ 	TODO\
+ 	ABOUT-NLS
+-
+-EXTRA_DIST = $(truevisiondoc_DATA)
+ 
+ gnomemenudir = $(prefix)/@NO_PREFIX_PACKAGE_MENU_DIR@/Graphics
+ gnomemenu_DATA = Truevision.desktop

@@ -1,21 +1,28 @@
---- src/Makefile.am.orig	Tue Jan  1 20:43:01 2002
-+++ src/Makefile.am	Thu Jun 26 08:27:48 2003
-@@ -1,11 +1,9 @@
- ## Process this file with automake to produce Makefile.in
--localedir = @datadir@/locale
--datadir = @datadir@/@PACKAGE@
--
+--- src/Makefile.am.orig	Wed Oct 15 21:59:21 2003
++++ src/Makefile.am	Thu Dec 11 21:10:51 2003
+@@ -6,15 +6,7 @@
+ 
  INCLUDES = \
- 	-I$(top_srcdir)/intl \
- 	-I$(top_srcdir) \
- 	$(GNOME_INCLUDEDIR) \
-+	$(GTK_CFLAGS) \
- 	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" -D_REENTRANT
+ 	$(GNOME_CFLAGS)\
+-	 -I/usr/local/include/gtkglext-1.0 -I/usr/local/lib/gtkglext-1.0/include
+-
+-CFLAGS =\
+-	 -Wall -Wimplicit -Wunused -Wmissing-prototypes\
+-	 -O2
+-
+-CXXFLAGS =\
+-	 -Wall -Wimplicit -Wunused -Wmissing-prototypes\
+-	 -O2
++	 `$(PKG_CONFIG) --cflags gtkglext-x11-1.0`
  
  bin_PROGRAMS = truevision
-@@ -58,4 +56,4 @@
- 	undo.h undo.cc
  
- truevision_LDFLAGS = -s
--truevision_LDADD =  $(GNOME_LIBDIR) $(GNOMEUI_LIBS) -lgthread -lpthread $(INTLLIBS) @LIBS@
-+truevision_LDADD =  $(GNOME_LIBDIR) $(GNOMEUI_LIBS) $(GTK_LIBS) $(INTLLIBS) @LIBS@
+@@ -68,7 +60,7 @@
+ 	viewmanager.cc
+ 
+ truevision_LDFLAGS = \
+-	 -L/usr/X11R6/lib -L/usr/lib -L/usr/local/lib
++	 `$(PKG_CONFIG) --libs gtkglext-x11-1.0`
+ 
+ truevision_LDADD =  \
+ 	$(GNOME_LIBS)
