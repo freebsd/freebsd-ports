@@ -10,16 +10,17 @@ PORTVERSION=	6.52
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.gyve.org/pub/gs-cjk/M2/ \
 		ftp://ftp.gyve.org/pub/gs-cjk/ \
-		${GPRINT_SITE} ${HPIJS_SITE} ${NPDL_SITE} ${EPAG_SITE} \
-		${ALPS_SITE} ${LIPS_SITE} ${EPLASER_SITE} \
+		${GPRINT_SITE} ${HPIJS_SITE} \
+		${ALPS_SITE} ${BJ10V_SITE} ${EPAG_SITE} ${EPLASER_SITE} \
+		${LIPS_SITE} ${MD2K_SITE} ${MJC_SITE} ${NPDL_SITE} \
 		${MASTER_SITE_GNU} \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMESUFFIX=	-gnu-cjk
 DISTFILES=	${GS_SRC} ${GS_CJK_PATCH} ${CMAP} ${CJKFONTS} \
-		${GPRINT_SRC} ${HPIJS_SRC} ${NPDL_SRC} ${EPAG_SRC} \
-		${ALPS_SRC} ${LIPS_SRC} ${EPLASER_SRC} ${BJ_SRC} ${MD2K_SRC} \
-		${MJC_SRC}
+		${GPRINT_SRC} ${HPIJS_SRC} \
+		${ALPS_SRC} ${BJ10V_SRC} ${EPAG_SRC} ${EPLASER_SRC} \
+		${LIPS_SRC} ${MD2K_SRC} ${MJC_SRC} ${NPDL_SRC}
 DIST_SUBDIR=	ghostscript
 EXTRACT_ONLY=	${GS_SRC}
 
@@ -37,6 +38,10 @@ MAKEFILE=	src/unix-gcc.mak
 PLIST_SUB=	GS_VERSION=${PORTVERSION}
 
 XCFLAGS=	-DUPD_SIGNAL=0
+
+.if !defined(NO_A4)
+XCFLAGS+=	-DA4
+.endif
 
 GS_SRC=		${DISTNAME}${EXTRACT_SUFX}
 GS_CJK=		gs6.51-cjk-M2-R3
@@ -67,7 +72,7 @@ GPRINT_SITE=	${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%,gimp-print,}
 
 # HPinkjet - HP developed printer driver for PhotoSmart/DeskJet series
 HPIJS=		hpijs
-HPIJS_VERS=	1.0
+HPIJS_VERS=	1.0.1
 HPIJS_NAME=	${HPIJS}-${HPIJS_VERS}
 HPIJS_SRC=	${HPIJS_NAME}.tar.gz
 HPIJS_SITE=	${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%,hpinkjet,}
@@ -76,12 +81,18 @@ HPIJS_SITE=	${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%,hpinkjet,}
 CONTRIB_UPP=	lqx70ch.upp lqx70cl.upp lqx70cm.upp \
 		stc740ih.upp stc740p.upp stc740pl.upp
 
-# NPDL - NEC Printer Description Language driver
-NPDL=		gdevnpdl
-NPDL_VERS=	1.6.3
-NPDL_NAME=	${NPDL}-${NPDL_VERS}
-NPDL_SRC=	${NPDL_NAME}.tar.gz
-NPDL_SITE=	http://www.ceres.dti.ne.jp/~owatanab/gdevnpdl/
+# ALPS - Alps MD-5000 printer driver
+ALPS=		gdevalps
+ALPS_VERS=	0.2
+ALPS_NAME=	${ALPS}-${ALPS_VERS}
+ALPS_SRC=	${ALPS}-0.21.tar.gz
+ALPS_SITE=	${MASTER_SITE_PORTS_JP}
+
+# BJ10V - Canon BJ-10V printer driver
+BJ10V=		gdev10v
+BJ10V_NAME=	${BJ10V}
+BJ10V_SRC=	${BJ10V_NAME}.tar.gz
+BJ10V_SITE=	${MASTER_SITE_PORTS_JP}
 
 # EPAG - Epson ESC/Page Language driver
 EPAG=		epag
@@ -90,12 +101,12 @@ EPAG_NAME=	${EPAG}-${EPAG_VERS}
 EPAG_SRC=	${EPAG_NAME}.tar.gz
 EPAG_SITE=	http://www.humblesoft.com/pub/
 
-# ALPS - Alps MD-5000 printer driver
-ALPS=		gdevalps
-ALPS_VERS=	0.2
-ALPS_NAME=	${ALPS}-${ALPS_VERS}
-ALPS_SRC=	${ALPS}-0.21.tar.gz
-ALPS_SITE=	${MASTER_SITE_PORTS_JP}
+# EPLASER - Epson Kowa developed printer driver for ESC/Page Laser printers
+EPLASER=	eplaser
+EPLASER_VERS=	3.0.1
+EPLASER_NAME=	${EPLASER}-${EPLASER_VERS}
+EPLASER_SRC=	${EPLASER_NAME}-651.tgz
+EPLASER_SITE=	http://www.epkowa.on.arena.ne.jp/pips/data/gs65_301/
 
 # LIPS - Canon LIPS II+/III/IVc/IV printer driver
 LIPS=		gdevlips
@@ -104,41 +115,33 @@ LIPS_NAME=	${LIPS}-${LIPS_VERS}
 LIPS_SRC=	${LIPS_NAME}.tar.gz
 LIPS_SITE=	${MASTER_SITE_PORTS_JP}
 
-# EPLASER - Epson Kowa developed printer driver for ESC/Page Laser printers
-EPLASER=	eplaser
-EPLASER_VERS=	3.0.1
-EPLASER_NAME=	${EPLASER}-${EPLASER_VERS}
-EPLASER_SRC=	${EPLASER_NAME}-651.tgz
-EPLASER_SITE=	http://www.epkowa.on.arena.ne.jp/pips/data/gs65_301/
-
-# bj10v driver
-BJ=		gdev10v
-BJ_NAME=	${BJ}
-BJ_SRC=		${BJ_NAME}.tar.gz
-
-# md2k driver
+# MD2K - Alps MD-2000/2010/4000/1300/1500/5000 printer driver
 MD2K=		gdevmd2k
 MD2K_VERS=	0.2a
 MD2K_NAME=	${MD2K}-${MD2K_VERS}
 MD2K_SRC=	${MD2K_NAME}.tar.gz
+MD2K_SITE=	http://plaza26.mbn.or.jp/~higamasa/gdevmd2k/
 
-# mjc driver
+# MJC - Epson MachJet series printer driver
 MJC=		gdevmjc
 MJC_VERS=	0.8
 MJC_NAME=	${MJC}-${MJC_VERS}
 MJC_SRC=	${MJC_NAME}.tar.gz
+MJC_SITE=	${MASTER_SITE_PORTS_JP}
 
-.if defined(NO_A4)
-.else
-XCFLAGS+=	-DA4
-.endif
-
-pre-fetch:
-.if !defined(NO_A4)
-	@${ECHO_MSG} "Type \"make NO_A4=yes\" if you want not set A4 paper default."
-.endif
+# NPDL - NEC Printer Description Language driver
+NPDL=		gdevnpdl
+NPDL_VERS=	1.6.3
+NPDL_NAME=	${NPDL}-${NPDL_VERS}
+NPDL_SRC=	${NPDL_NAME}.tar.gz
+NPDL_SITE=	http://www.ceres.dti.ne.jp/~owatanab/gdevnpdl/
 
 .SILENT:
+
+pre-everything::
+.if !defined(NO_A4)
+	${ECHO_MSG} "Type \"make NO_A4=yes\" if you want not set A4 paper default."
+.endif
 
 post-extract:
 	${ECHO_MSG} ">>> in post-extract ..."
@@ -158,35 +161,34 @@ post-extract:
 # for HPinkjet driver
 	${ECHO_MSG} ">>>   extracting ${HPIJS_SRC} ..."
 	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${HPIJS_SRC}
-# for NPDL driver
-	${ECHO_MSG} ">>>   extracting ${NPDL_SRC} ..."
-	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${NPDL_SRC}
-# for EPAG driver
-	${ECHO_MSG} ">>>   extracting ${EPAG_SRC} ..."
-	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${EPAG_SRC}
 # for ALPS driver
 	${ECHO_MSG} ">>>   extracting ${ALPS_SRC} ..."
 	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${ALPS_SRC}
 	${LN} -sf ${ALPS_NAME} ${WRKSRC}/${ALPS}
+# for BJ10V driver
+	${ECHO_MSG} ">>>   extracting ${BJ10V_SRC} ..."
+	${TAR} -C ${WRKSRC} -xzf ${_DISTDIR}/${BJ10V_SRC}
+# for EPAG driver
+	${ECHO_MSG} ">>>   extracting ${EPAG_SRC} ..."
+	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${EPAG_SRC}
+# for EPLASER driver
+	${ECHO_MSG} ">>>   extracting ${EPLASER_SRC} ..."
+	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${EPLASER_SRC}
 # for LIPS driver
 	${ECHO_MSG} ">>>   extracting ${LIPS_SRC} ..."
 	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${LIPS_SRC}
 	${LN} -sf ${LIPS_NAME} ${WRKSRC}/${LIPS}
-# for EPLASER driver
-	${ECHO_MSG} ">>>   extracting ${EPLASER_SRC} ..."
-	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${EPLASER_SRC}
-# for bj10v driver
-	${ECHO_MSG}  ">>>   extracting ${BJ_SRC} ..."
-	${TAR} -C ${WRKSRC} -xzf ${_DISTDIR}/${BJ_SRC}
-	${CP} ${WRKSRC}/${BJ_NAME}/gdev10v.c ${WRKSRC}/src
-# for md2k driver
-	${ECHO_MSG}  ">>>   extracting ${MD2K_SRC} ..."
+# for MD2K driver
+	${ECHO_MSG} ">>>   extracting ${MD2K_SRC} ..."
 	${TAR} -C ${WRKSRC} -xzf ${_DISTDIR}/${MD2K_SRC}
-	${CP} ${WRKSRC}/${MD2K_NAME}/gdevmd2k.c ${WRKSRC}/src
-# for mjc driver
+	${LN} -sf ${MD2K_NAME} ${WRKSRC}/${MD2K}
+# for MJC driver
 	${ECHO_MSG} ">>>   extracting ${MJC_SRC} ..."
-	${TAR} -C ${WRKSRC} -xzf ${_DISTDIR}/${MJC_SRC}
-	${CP} ${WRKSRC}/${MJC_NAME}/*.[ch] ${WRKSRC}/src
+	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${MJC_SRC}
+	${LN} -sf ${MJC_NAME} ${WRKSRC}/${MJC}
+# for NPDL driver
+	${ECHO_MSG} ">>>   extracting ${NPDL_SRC} ..."
+	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${NPDL_SRC}
 
 post-patch:
 	${ECHO_MSG} ">>> in post-patch ..."
@@ -218,38 +220,40 @@ pre-configure:
 	${ECHO_MSG} ">>>   adding ${HPIJS} driver to contrib.mak ..."
 	${CAT} ${PORTSDIR}/print/ghostscript-gnu/files/hpijs.contrib.mak \
 		>> ${WRKSRC}/src/contrib.mak
-# for NPDL driver
-	${ECHO_MSG} ">>>   adding ${NPDL} driver to contrib.mak ..."
-	${CAT} ${WRKSRC}/${NPDL_NAME}/gdevnpdl.mak \
-		 >>  ${WRKSRC}/src/contrib.mak
-# for EPAG driver
-	${ECHO_MSG} ">>>   adding ${EPAG} driver to contrib.mak ..."
-	${SED} -e 's:npdl:epag:g' ${WRKSRC}/${NPDL_NAME}/gdevnpdl.mak \
-		>>  ${WRKSRC}/src/contrib.mak
 # for ALPS driver
 	${ECHO_MSG} ">>>   adding ${ALPS} driver to contrib.mak ..."
 	${CAT} ${WRKSRC}/${ALPS_NAME}/gdevalps.mak-5.50 \
 		>>  ${WRKSRC}/src/contrib.mak
-# for LIPS driver
-	${CAT} ${WRKSRC}/${LIPS_NAME}/gdevlips.mak \
+# for BJ10V driver
+	${ECHO_MSG} ">>>   adding ${BJ10V} driver to contrib.mak ..."
+	${CAT} ${WRKSRC}/${BJ10V_NAME}/gdev10v.mak \
+		>> ${WRKSRC}/src/contrib.mak
+# for EPAG driver
+	${ECHO_MSG} ">>>   adding ${EPAG} driver to contrib.mak ..."
+	${SED} -e 's:npdl:epag:g' ${WRKSRC}/${NPDL_NAME}/gdevnpdl.mak \
 		>>  ${WRKSRC}/src/contrib.mak
 # for EPLASER driver
+	${ECHO_MSG} ">>>   adding ${EPLASER} driver to contrib.mak ..."
 	${CAT} ${WRKSRC}/${EPLASER_NAME}/gdevescv6.mak \
 		>>  ${WRKSRC}/src/contrib.mak
 	${CAT} ${WRKSRC}/${EPLASER_NAME}/gdevesmv6.mak \
 		>>  ${WRKSRC}/src/contrib.mak
-# for bj10v driver
-	${ECHO_MSG} ">>>   adding ${BJ} driver to contrib.mak ..."
-	${CAT} ${WRKSRC}/${BJ_NAME}/gdev10v.mak \
-		>> ${WRKSRC}/src/contrib.mak
-# for md2k driver
+# for LIPS driver
+	${ECHO_MSG} ">>>   adding ${LIPS} driver to contrib.mak ..."
+	${CAT} ${WRKSRC}/${LIPS_NAME}/gdevlips.mak \
+		>>  ${WRKSRC}/src/contrib.mak
+# for MD2K driver
 	${ECHO_MSG} ">>>   adding ${MD2K} driver to contrib.mak ..."
 	${CAT} ${WRKSRC}/${MD2K_NAME}/gdevmd2k.mak-5.50 \
 		>> ${WRKSRC}/src/contrib.mak
-# for mjc driver
+# for MJC driver
 	${ECHO_MSG} ">>>   adding ${MJC} driver to contrib.mak ..."
 	${CAT} ${WRKSRC}/${MJC_NAME}/gdevmjc.mak \
-		>>  ${WRKSRC}/src/contrib.mak
+		 >>  ${WRKSRC}/src/contrib.mak
+# for NPDL driver
+	${ECHO_MSG} ">>>   adding ${NPDL} driver to contrib.mak ..."
+	${CAT} ${WRKSRC}/${NPDL_NAME}/gdevnpdl.mak \
+		 >>  ${WRKSRC}/src/contrib.mak
 
 do-configure:
 	${ECHO_MSG} ">>> in do-configure ..."
@@ -291,28 +295,37 @@ pre-build:
 .for file in gdevijs.[ch] ijs.[ch] ijs_client.[ch] ijs_exec_unix.c unistd_.h
 	${LN} -sf ${WRKSRC}/${HPIJS_NAME}/${file} ${WRKSRC}/src
 .endfor
-# for NPDL driver
-	${ECHO_MSG} ">>>   creating symlinks for ${NPDL} ..."
-	${LN} -sf ${WRKSRC}/${NPDL_NAME}/gdevnpdl.c ${WRKSRC}/src
+# for ALPS driver
+	${ECHO_MSG} ">>>   creating symlinks for ${ALPS} ..."
+	${LN} -sf ${WRKSRC}/${ALPS_NAME}/gdevalps.c ${WRKSRC}/src
+# for BJ10V driver
+	${ECHO_MSG} ">>>   creating symlinks for ${BJ10V} ..."
+	${LN} -sf ${WRKSRC}/${BJ10V_NAME}/gdev10v.c ${WRKSRC}/src
 # for EPAG driver
 	${ECHO_MSG} ">>>   building ert (Epson printer utility)..."
 	cd ${WRKSRC}/${EPAG_NAME} ; \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} Makefile
 	${ECHO_MSG} ">>>   creating symlinks for ${EPAG} ..."
 	${LN} -sf ${WRKSRC}/${EPAG_NAME}/gdevepag.c ${WRKSRC}/src
-# for ALPS driver
-	${ECHO_MSG} ">>>   creating symlinks for ${ALPS} ..."
-	${LN} -sf ${WRKSRC}/${ALPS_NAME}/gdevalps.c ${WRKSRC}/src
-# for LIPS driver
-	${ECHO_MSG} ">>>   creating symlinks for ${LIPS} ..."
-.for file in gdevlips.[ch] gdevlprn.[ch] gdevl4r.c gdevl4v.c gdevrpdl.c
-	${LN} -sf ${WRKSRC}/${LIPS_NAME}/${file} ${WRKSRC}/src
-.endfor
 # for EPLASER driver
 	${ECHO_MSG} ">>>   creating symlinks for ${EPLASER} ..."
 .for file in gdevescv.[ch] gdevesmv.c
 	${LN} -sf ${WRKSRC}/${EPLASER_NAME}/${file} ${WRKSRC}/src
 .endfor
+# for LIPS driver
+	${ECHO_MSG} ">>>   creating symlinks for ${LIPS} ..."
+.for file in gdevlips.[ch] gdevlprn.[ch] gdevl4r.c gdevl4v.c gdevrpdl.c
+	${LN} -sf ${WRKSRC}/${LIPS_NAME}/${file} ${WRKSRC}/src
+.endfor
+# for MD2K driver
+	${ECHO_MSG} ">>>   creating symlinks for ${MD2K} ..."
+	${LN} -sf ${WRKSRC}/${MD2K_NAME}/gdevmd2k.c ${WRKSRC}/src
+# for MJC driver
+	${ECHO_MSG} ">>>   creating symlinks for ${MJC} ..."
+	${LN} -sf ${WRKSRC}/${MJC_NAME}/*.c ${WRKSRC}/src
+# for NPDL driver
+	${ECHO_MSG} ">>>   creating symlinks for ${NPDL} ..."
+	${LN} -sf ${WRKSRC}/${NPDL_NAME}/gdevnpdl.c ${WRKSRC}/src
 
 do-install:
 	${ECHO_MSG} ">>> in do-install ..."
@@ -353,36 +366,37 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/${GS_CJK}/${i} \
 		${DOCSDIR}/${PORTVERSION}/CJK
 .endfor
-# EPAG documents
-	${MKDIR} ${PRINTER_DOC}/${EPAG_NAME}
+	${MKDIR} ${PRINTER_DOC}
+# for ALPS driver
+	${INSTALL_DATA} ${WRKSRC}/${ALPS_NAME}/README.gdevalps ${PRINTER_DOC}
+# for BJ10V driver
+	${INSTALL_DATA} ${WRKSRC}/${BJ10V_NAME}/gdev10v.jis ${PRINTER_DOC}
+# for EPAG driver
+	${MKDIR} ${PRINTER_DOC}/${EPAG}
 .for i in ert.txt gdevepag.txt ChangeLog
 	${INSTALL_DATA} ${WRKSRC}/${EPAG_NAME}/${i} \
-		${PRINTER_DOC}/${EPAG_NAME}
+		${PRINTER_DOC}/${EPAG}
 .endfor
 .for i in psprint gsepagif.sh
 	${INSTALL_SCRIPT} ${WRKSRC}/${EPAG_NAME}/${i} \
-		${PRINTER_DOC}/${EPAG_NAME}
+		${PRINTER_DOC}/${EPAG}
 .endfor
-# NPDL document
-	${INSTALL_DATA} ${WRKSRC}/${NPDL_NAME}/gdevnpdl.jis ${PRINTER_DOC}
-# ALPS document
-	${INSTALL_DATA} ${WRKSRC}/${ALPS_NAME}/README.gdevalps ${PRINTER_DOC}
-# LIPS document
-	${INSTALL_DATA} ${WRKSRC}/${LIPS_NAME}/Gdevlips.htm ${PRINTER_DOC}
-# EPLASER document
+# for EPLASER driver
 	${INSTALL_DATA} ${WRKSRC}/${EPLASER_NAME}/readme-eplaser-651.euc \
 		${PRINTER_DOC}
-# bj10v document
-	${INSTALL_DATA} ${WRKSRC}/${BJ_NAME}/gdev10v.jis ${PRINTER_DOC}
-# md2k document
+# for LIPS driver
+	${INSTALL_DATA} ${WRKSRC}/${LIPS_NAME}/Gdevlips.htm ${PRINTER_DOC}
+# for MD2K driver
 	${INSTALL_DATA} ${WRKSRC}/${MD2K_NAME}/README.jis \
 		${PRINTER_DOC}/README.${MD2K}
-# MJC document
+# for MJC driver
 	${MKDIR} ${PRINTER_DOC}/${MJC}
 .for i in MJ700V2C.FAQ README.mjc README.mje README.noz cpem.doc
 	${INSTALL_DATA} ${WRKSRC}/${MJC_NAME}/${i} \
 		${PRINTER_DOC}/${MJC}
 .endfor
+# for NPDL driver
+	${INSTALL_DATA} ${WRKSRC}/${NPDL_NAME}/gdevnpdl.jis ${PRINTER_DOC}
 .endif
 
 .include <bsd.port.mk>

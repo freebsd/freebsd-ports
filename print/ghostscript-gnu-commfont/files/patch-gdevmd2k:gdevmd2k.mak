@@ -1,5 +1,5 @@
---- gdevmd2k-0.2a/gdevmd2k.mak-5.50.orig	Sun Nov 19 18:42:20 2000
-+++ gdevmd2k-0.2a/gdevmd2k.mak-5.50	Sun Nov 19 18:52:14 2000
+--- gdevmd2k/gdevmd2k.mak-5.50.orig	Sun Nov 19 18:42:20 2000
++++ gdevmd2k/gdevmd2k.mak-5.50	Sun Nov 19 18:52:14 2000
 @@ -3,11 +3,11 @@
  
  md2k_=$(GLOBJ)gdevmd2k.$(OBJ)

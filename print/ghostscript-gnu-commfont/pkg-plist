@@ -15,11 +15,11 @@ bin/gs
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/printers/Gdevlips.htm
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/printers/README.gdevalps
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/printers/README.gdevmd2k
-%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/printers/epag-3.09/ert.txt
-%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/printers/epag-3.09/gdevepag.txt
-%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/printers/epag-3.09/ChangeLog
-%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/printers/epag-3.09/psprint
-%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/printers/epag-3.09/gsepagif.sh
+%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/printers/epag/ert.txt
+%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/printers/epag/gdevepag.txt
+%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/printers/epag/ChangeLog
+%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/printers/epag/psprint
+%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/printers/epag/gsepagif.sh
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/printers/gdevmjc/MJ700V2C.FAQ
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/printers/gdevmjc/README.mjc
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/printers/gdevmjc/README.mje
@@ -520,7 +520,6 @@ share/ghostscript/Resource/ag14/CMap/UniGB-UCS2-H
 @dirrm share/ghostscript/Resource/rksj-cmaps
 @dirrm share/ghostscript/Resource
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/CJK
-%%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/printers/epag-3.09
-%%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/printers/gdevmd2k
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/printers/gdevmjc
+%%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/printers/epag
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/printers

@@ -1,5 +1,5 @@
---- gdevmjc-0.8/gdevmjc.mak.orig	Tue May 23 19:19:13 2000
-+++ gdevmjc-0.8/gdevmjc.mak	Tue May 23 19:19:40 2000
+--- gdevmjc/gdevmjc.mak.orig	Tue May 23 19:19:13 2000
++++ gdevmjc/gdevmjc.mak	Tue May 23 19:19:40 2000
 @@ -4,25 +4,22 @@
  # Supports MJ-700V2C, MJ-5000C, MJ-900C, MJ-800C, MJ-500C
  #
