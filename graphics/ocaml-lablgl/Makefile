@@ -25,6 +25,8 @@ ALL_TARGET=	all opt
 #EXAMPLESDIR=	${PREFIX}/share/examples/ocaml/${PORTNAME}
 #DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
 
+BROKEN=		"Does not compile"
+
 post-extract:
 	@${CP} ${WRKSRC}/Makefile.config.freebsd ${WRKSRC}/Makefile.config
 
