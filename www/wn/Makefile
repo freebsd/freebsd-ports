@@ -3,7 +3,7 @@
 # Date created:         4 May 1995
 # Whom:                 adam
 #
-# $Id: Makefile,v 1.26 1998/07/20 13:39:40 adam Exp $
+# $Id: Makefile,v 1.27 1998/12/01 11:21:33 obrien Exp $
 #
 
 DISTNAME=       wn-1.18.6
@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.acns.nwu.edu/pub/wn/
 
 MAINTAINER=	adam@veda.is
 
-BROKEN='single MASTER_SITE and /pub/wn/ doesn't exist on ftp.acns.nwu.edu anymore'
+BROKEN='single MASTER_SITE and /pub/wn/ doesnt exist on ftp.acns.nwu.edu anymore'
 
 IS_INTERACTIVE=
 NO_PACKAGE=	"Hostname compiled in"
