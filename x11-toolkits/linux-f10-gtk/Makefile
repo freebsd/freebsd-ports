@@ -18,7 +18,11 @@ DISTFILES=	${RPM_SET}
 MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	rpm:${PORTSDIR}/misc/rpm
+.if (${MACHINE_ARCH} == "i386")
 RUN_DEPENDS=	/compat/linux/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
+.elif (${MACHINE_ARCH} == "alpha")
+RUN_DEPENDS=	/compat/linux/lib/libc.so.6.1:${PORTSDIR}/emulators/linux_base
+.endif
 
 ONLY_FOR_ARCHS=	i386 alpha
 DIST_SUBDIR=	rpm
