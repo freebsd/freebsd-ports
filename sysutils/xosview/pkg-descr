@@ -1,0 +1,17 @@
+XOsview is an application originally developed by Mike Romberg for 
+Linux.  It can be summarized as a graphical performance meter, and 
+it looks similar in appearance to the zoomy performance meters to 
+be found on various other platforms.  
+
+The FreeBSD version works but doesn't yet have full functionality.  
+At the time of this writing, the meters that work are the Load meter,
+the CPU meter and the memmeter.  The other nonfunctional meters are
+not displayed.  Someone who understands how to grab statistics out 
+of the kernel needs to volunteer to help make this a fully functional
+port!
+
+Visit the home page:
+        http://lore.ece.utexas.edu/~bgrayson/xosview.html
+
+--
+Brian Handy --> handy@physics.montana.edu
