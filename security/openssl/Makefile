@@ -7,6 +7,7 @@
 
 PORTNAME=	openssl
 PORTVERSION=	0.9.7a
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/source/ \
 		ftp://ftp.openssl.org/source/ \
@@ -22,6 +23,7 @@ COMMENT=	SSL and crypto library
 
 MAKE_ENV+=	MANPREFIX=${MANPREFIX}
 NOPRECIOUSMAKEVARS=	Too many _MLINKS for fetch
+USE_PERL5_BUILD=	yes
 
 MAN1=	CA.pl.1 asn1parse.1 ca.1 ciphers.1 crl.1 crl2pkcs7.1 dgst.1 dhparam.1 \
 	dsa.1 dsaparam.1 enc.1 gendsa.1 genrsa.1 nseq.1 ocsp.1 openssl.1 \
@@ -821,7 +823,6 @@ MAKE_ARGS+=	WHOLE_ARCHIVE_FLAG=-Bforcearchive
 MAKE_ARGS+=	WHOLE_ARCHIVE_FLAG=--whole-archive
 .endif
 
-USE_PERL5=	yes
 .if defined(NOSHARED)
 PLIST_SUB+=	SHARED="@comment "
 .else
