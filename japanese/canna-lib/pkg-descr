@@ -1,0 +1,20 @@
+Canna is a Kana-Kanji conversion server.
+Support Mule(Multi-lingal extention Emacs), kinput2 X11 input method,
+cannum front end and some others.
+
+  For example server start at bootup `/etc/rc.local':
+
+    canna=/usr/local/canna/bin/cannaserver
+    if [ -f $canna ]; then
+      echo -n " Canna"; $canna
+    fi
+
+  To use from Mule (CANNA version), in .emacs file:
+
+     (if (and (boundp 'CANNA) CANNA) ; Is it CANNA MULE?
+        (progn
+         (load-library "canna")
+         (canna) ))
+
+  Then kana-kanji conversion begin to `C-o' key. Show more detail
+Info, and/or documents.

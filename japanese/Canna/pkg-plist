@@ -1,0 +1,11 @@
+@cwd /usr/local
+canna
+lib/libcanna.a
+lib/libcanna.so.1.0
+lib/libcanna16.a
+lib/libcanna16.so.1.0
+lib/libRKC.a
+lib/libRKC.so.1.0
+lib/libRKC16.a
+lib/libRKC16.so.1.0
+@exec mkdir -p /var/spool/canna/lock
