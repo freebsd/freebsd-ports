@@ -1,0 +1,16 @@
+*** server/dda/voxware/auvoxware.c.orig	Thu Nov  3 11:24:11 1994
+--- server/dda/voxware/auvoxware.c	Thu Nov  3 11:24:50 1994
+***************
+*** 755,760 ****
+--- 755,765 ----
+  /*
+   * Setup soundcard at maximum audio quality.
+   */
++ 
++ #ifdef __FreeBSD__
++ #define NO_16_BIT_SAMPLING
++ #endif
++ 
+  static void setupSoundcard(sndStat)
+  SndStat* sndStat;
+  {
