@@ -89,7 +89,7 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 .if ${LOCALIZED_LANG} == "ja"
 CATEGORIES=	japanese
 LANG_PKGNAME=	${LOCALIZED_LANG}
-RUN_DEPENDS+=   ${X11BASE}/lib/X11/fonts/TrueType/kochi-mincho-subst.ttf:${PORTSDIR}/japanese/kochi-ttfonts
+RUN_DEPENDS+=   ${X11BASE}/lib/X11/fonts/TrueType/sazanami-mincho.ttf:${PORTSDIR}/japanese/sazanami-ttf
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "kn-IN"
