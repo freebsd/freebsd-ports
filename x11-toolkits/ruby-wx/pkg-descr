@@ -1,0 +1,5 @@
+wxRuby is a library to allow Ruby programs to use wxWindows (also
+known as wxWidgets), which is a mature, cross-platform, GUI toolkit
+that uses native widgets where possible.
+
+WWW: http://rubyforge.org/projects/wxruby/

@@ -1,0 +1,161 @@
+%%RUBY_SITEARCHLIBDIR%%/wxruby.so
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.linux
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/artprov/artprov.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/artprov/error.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/artprov/info.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/artprov/mondrian.ico
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/artprov/mondrian.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/artprov/null.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/artprov/question.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/artprov/warning.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/calendar/calendar.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/caret/caret.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/caret/mondrian.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/checklst/checklst.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/config/conftest.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/controls/controls.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/controls/get_item_sample.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/controls/icons/choice.bmp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/controls/icons/choice.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/controls/icons/combo.bmp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/controls/icons/combo.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/controls/icons/gauge.bmp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/controls/icons/gauge.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/controls/icons/list.bmp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/controls/icons/list.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/controls/icons/radio.bmp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/controls/icons/radio.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/controls/icons/stattext.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/controls/icons/text.bmp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/controls/icons/text.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/controls/mondrian.ico
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/controls/mondrian.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/controls/test2.bmp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/dialogs/dialogs.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/dialogs/tips.txt
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/etc/b1.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/etc/big-xrc-test.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/etc/big-xrc-test.xrc
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/etc/books.bmp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/etc/dndfile.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/etc/dndtext.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/etc/dragdrop.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/etc/events.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/etc/font.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/etc/minimal.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/etc/mondrian.ico
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/etc/mondrian.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/etc/test.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/etc/test10.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/etc/test11.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/etc/test12.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/etc/test13.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/etc/test14.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/etc/test15.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/etc/test16.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/etc/test17.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/etc/test18.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/etc/test19.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/etc/test2.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/etc/test20.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/etc/test21.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/etc/test3.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/etc/test4.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/etc/test5.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/etc/test6.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/etc/test7.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/etc/test8.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/etc/test9.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/grid/grid.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/html/about/about.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/html/about/data/about.htm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/html/about/data/logo.png
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/html/printing/printing.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/html/printing/test.htm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/html/test/8859_2.htm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/html/test/cp1250.htm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/html/test/f.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/html/test/fft.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/html/test/i18n.gif
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/html/test/imagemap.htm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/html/test/imagemap.png
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/html/test/pic.png
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/html/test/pic2.bmp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/html/test/regres.htm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/html/test/tables.htm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/html/test/test.htm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/html/test/test.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/images/images.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/images/paperclip.png
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/layout/layout.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/listctrl/bitmaps/small1.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/listctrl/bitmaps/toolbrai.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/listctrl/bitmaps/toolchar.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/listctrl/bitmaps/toolchec.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/listctrl/bitmaps/tooldata.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/listctrl/bitmaps/toolgame.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/listctrl/bitmaps/toolnote.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/listctrl/bitmaps/tooltime.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/listctrl/bitmaps/tooltodo.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/listctrl/bitmaps/toolword.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/listctrl/listtest.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/listctrl/mondrian.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/mdi/mdi.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/minimal/minimal.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/minimal/mondrian.ico
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/minimal/mondrian.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/minimal/nothing.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sockets/client.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sockets/mondrian.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sockets/server.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/splitter/splitter.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/toolbar/bitmaps/copy.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/toolbar/bitmaps/cut.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/toolbar/bitmaps/help.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/toolbar/bitmaps/new.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/toolbar/bitmaps/open.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/toolbar/bitmaps/preview.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/toolbar/bitmaps/print.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/toolbar/bitmaps/save.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/toolbar/mondrian.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/toolbar/toolbar.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/treectrl/icon1.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/treectrl/icon2.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/treectrl/icon3.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/treectrl/icon4.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/treectrl/icon5.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/treectrl/mondrian.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/treectrl/treetest.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/xrc/samples.xrc
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/xrc/xrc_sample.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/xrc
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/treectrl
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/toolbar/bitmaps
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/toolbar
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/splitter
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/sockets
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/minimal
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/mdi
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/listctrl/bitmaps
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/listctrl
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/layout
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/images
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/html/test
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/html/printing
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/html/about/data
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/html/about
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/html
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/grid
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/etc
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/dialogs
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/controls/icons
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/controls
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/config
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/checklst
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/caret
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/calendar
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/artprov
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
