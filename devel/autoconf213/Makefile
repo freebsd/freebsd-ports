@@ -17,7 +17,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEWARE} ${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	binutils autoconf
 DISTNAME=	autoconf-000227
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ade@FreeBSD.org
 COMMENT=	Automatically configure source code on many Un*x platforms (legacy 2.13 version)
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
