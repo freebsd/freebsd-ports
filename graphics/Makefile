@@ -54,6 +54,7 @@
     SUBDIR += entice
     SUBDIR += eog
     SUBDIR += eog2
+    SUBDIR += epix
     SUBDIR += eps2png
     SUBDIR += epstool
     SUBDIR += eterm-bg
