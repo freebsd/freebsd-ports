@@ -12,7 +12,7 @@ CATEGORIES=	net gnome
 MASTER_SITES=	ftp://ftp.gnome.org/pub/GNOME/sources/gnomemeeting/0.98/ \
 		# http://www.gnomemeeting.org/downloads/0.98.0/sources/
 
-MAINTAINER=	roger@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME H323 Video Conferencing program, similar to NetMeeting
 
 BUILD_DEPENDS=  ${NONEXISTENT}:${PORTSDIR}/net/openh323:build

@@ -11,7 +11,7 @@ PORTREVISION=	0
 CATEGORIES=	misc
 MASTER_SITES=	http://www.goron.de/~froese/alevt/
 
-MAINTAINER=	roger@freebsd.org
+MAINTAINER=	ports@freebsd.org
 COMMENT=	X11 Teletext decoding and display program. (reads from /dev/vbi)
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png

@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.openh323.org/bin/ \
 		http://www.ru.openh323.org/bin/
 DISTNAME=	opengk_${PORTVERSION}
 
-MAINTAINER=	roger@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Equivalence's H323 GateKeeper for OpenH323 OhPhone and NetMeeting
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/openh323:build

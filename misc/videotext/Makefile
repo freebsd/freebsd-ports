@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://elektra.e-technik.uni-ulm.de/~mbuck/download/
 
-MAINTAINER=	roger@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11/Xview TV Videotext/Teletext page viewer (.vtx files)
 
 BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
