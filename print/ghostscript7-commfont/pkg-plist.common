@@ -1,0 +1,4 @@
+@exec /bin/mv %D/share/ghostscript/%%GS_VERSION%%/lib/gs_init.ps %D/share/ghostscript/%%GS_VERSION%%/lib/gs_init.ps.pre_sed
+@exec /usr/bin/sed -e 's:^%.*(a4):(a4):g' %D/share/ghostscript/%%GS_VERSION%%/lib/gs_init.ps.pre_sed > %D/share/ghostscript/%%GS_VERSION%%/lib/gs_init.ps
+@unexec /bin/rm %D/share/ghostscript/%%GS_VERSION%%/lib/gs_init.ps
+@unexec /bin/mv %D/share/ghostscript/%%GS_VERSION%%/lib/gs_init.ps.pre_sed %D/share/ghostscript/%%GS_VERSION%%/lib/gs_init.ps

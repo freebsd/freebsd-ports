@@ -5,30 +5,10 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ghostscript
-PORTVERSION=	6.52
-CATEGORIES=	japanese print
-MASTER_SITES=	# nonexistent
-PKGNAMESUFFIX=	-gnu-cjk
-DISTNAME=	# nonexistent
-DISTFILES=	# empty
+MASTERDIR=	${.CURDIR}/../../print/ghostscript-gnu-commfont
 
-MAINTAINER=	mita@FreeBSD.org
+.undef		COMMFONT
 
-RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/Resource/cid.sh:${PORTSDIR}/print/ghostscript-gnu-cjk \
-		${X11BASE}/lib/X11/fonts/TrueType/kochi-mincho.ttf:${PORTSDIR}/japanese/kochi-ttfonts
+JPNFONT=	yes
 
-NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
-
-GSLIB_DIR=	${PREFIX}/share/ghostscript/${PORTVERSION}/lib
-PLIST_SUB=	GS_VERSION=${PORTVERSION}
-
-do-install:
-	${INSTALL_DATA} ${FILESDIR}/CIDFnmap.jp ${GSLIB_DIR}
-	${MV} ${GSLIB_DIR}/CIDFnmap  ${GSLIB_DIR}/CIDFnmap.orig
-	${GREP} -v -e "CIDFnmap.jp" ${GSLIB_DIR}/CIDFnmap.orig > \
-		${GSLIB_DIR}/CIDFnmap
-	${ECHO_CMD} '(CIDFnmap.jp) .runlibfile' >> ${GSLIB_DIR}/CIDFnmap
-
-.include <bsd.port.mk>
+.include "${MASTERDIR}/Makefile.common"
