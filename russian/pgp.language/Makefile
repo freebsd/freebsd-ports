@@ -7,6 +7,7 @@
 
 PORTNAME=	pgp
 PORTVERSION=	2.6.3ia
+PORTREVISION=   1
 CATEGORIES=	russian
 MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/crypto/pgp/
 DISTNAME=	pgp26ru
@@ -14,9 +15,7 @@ DISTNAME=	pgp26ru
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	Russian language module for PGP
 
-BROKEN=		Broken dependency
-
-RUN_DEPENDS+=	${LOCALBASE}/lib/pgp/config.txt:${PORTSDIR}/security/pgp
+RUN_DEPENDS+=   ${LOCALBASE}/share/pgp/config.txt:${PORTSDIR}/security/pgp
 
 USE_ZIP=	YES
 NO_WRKSUBDIR=	YES
