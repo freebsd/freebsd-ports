@@ -1605,7 +1605,6 @@ flounder	ports/science/flounder
 flow-tools	ports/net/flow-tools
 flowscan	ports/net/flowscan
 fltk		ports/x11-toolkits/fltk
-fltk-xunicode	ports/x11-toolkits/fltk-xunicode
 fluctuate	ports/biology/fluctuate
 fluxbox		ports/x11-wm/fluxbox
 fluxconf	ports/x11-wm/fluxconf
