@@ -86,3 +86,5 @@ share/doc/tracker/splitmod.readme
 share/doc/tracker/readme
 share/doc/tracker/protracker.fmt
 share/doc/tracker/FAQ
+@dirrm share/doc/tracker/Html
+@dirrm share/doc/tracker
