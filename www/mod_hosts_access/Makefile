@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_hosts_access
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.klomp.org/mod_hosts_access/
 
@@ -16,9 +17,10 @@ BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
 RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
 
 APXS?=		${LOCALBASE}/sbin/apxs
+APXS_FLAGS?=	-S LDFLAGS_SHLIB="-shared -lwrap"
 
 do-build:
-	@cd ${WRKSRC} && ${APXS} -c ${PORTNAME}.c
+	@cd ${WRKSRC} && ${APXS} ${APXS_FLAGS} -c ${PORTNAME}.c
 
 do-install:
 	${APXS} -i -A -n ${PORTNAME:S/mod_//g} ${WRKSRC}/${PORTNAME}.so
