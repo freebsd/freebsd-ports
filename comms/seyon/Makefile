@@ -20,10 +20,4 @@ USE_IMAKE=	yes
 
 MAN1=		seyon.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=		"Does not compile on FreeBSD ${OSVERSION} (missing header)"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
