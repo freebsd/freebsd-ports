@@ -19,9 +19,8 @@ LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
 MAN1=		gtkfind.1 mktmp.1
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=  GTK_CONFIG="${GTK_CONFIG}"
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+CONFIGURE_ENV=  GTK_CONFIG="${GTK_CONFIG}"
 USE_GMAKE=	yes
-USE_IMAKE=	yes
 
 .include <bsd.port.mk>
