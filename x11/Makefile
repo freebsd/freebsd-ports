@@ -1,9 +1,10 @@
-# $Id: Makefile,v 1.243 1998/12/24 07:18:18 steve Exp $
+# $Id: Makefile,v 1.244 1998/12/24 14:35:06 flathill Exp $
 #
 
     SUBDIR += XFree86
     SUBDIR += XFree86-contrib
     SUBDIR += Xfstt
+    SUBDIR += XttXF86srv-3DLabs
     SUBDIR += XttXF86srv-8514
     SUBDIR += XttXF86srv-AGX
     SUBDIR += XttXF86srv-I128
