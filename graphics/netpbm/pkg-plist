@@ -152,6 +152,7 @@ bin/pnmscalefixed
 bin/pnmshear
 bin/pnmsmooth
 bin/pnmsplit
+bin/pnmstitch
 bin/pnmtile
 bin/pnmtoddif
 bin/pnmtofiasco
