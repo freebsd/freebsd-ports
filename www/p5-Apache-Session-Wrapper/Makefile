@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Apache-Session-Wrapper
-PORTVERSION=	0.17
+PORTVERSION=	0.19
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache
@@ -24,6 +24,15 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_MODBUILD=	yes
 
 MAN3=		Apache::Session::Wrapper.3
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	Changes
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+.endif
 
 .include <bsd.port.pre.mk>
 
