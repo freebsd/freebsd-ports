@@ -260,7 +260,7 @@ do-configure:
 	${SED} -e "s=%%PREFIX%%=${PREFIX}=g" \
 		-e "s=%%LOCALBASE%%=${LOCALBASE}=g" \
 		${SITE} > ${WCONF}/site.config.m4
-.if defined(SENDMAIL_WITH_BERKELEYDB)
+.if defined(SENDMAIL_WITH_BERKELEYDB_VER)
 	${ECHO_CMD} \
 	 'APPENDDEF(`confENVDEF'\'', `-I${BERKELEYDB_INCLUDE}'\'')' \
 		>> ${WCONF}/site.config.m4
