@@ -2019,6 +2019,7 @@ ftpcopy		ports/ftp/ftpcopy
 ftpcube		ports/ftp/ftpcube
 ftpd-tls	ports/ftp/ftpd-tls
 ftpfind		ports/ftp/ftpfind
+ftplib		ports/ftp/ftplib
 ftplocate	ports/ftp/ftplocate
 ftpmap		ports/security/ftpmap
 ftpmirror	ports/ftp/ftpmirror
