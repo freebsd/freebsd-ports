@@ -1,0 +1,24 @@
+--- installZircon.orig	Wed Jun  7 11:16:06 2000
++++ installZircon	Fri Aug 15 20:29:58 2003
+@@ -2,19 +2,14 @@
+ #
+ # Thanks to Alain Nissen for this - I couldn't be fashed to do it!!
+ #
+-if test -z "$DISPLAY"
+-then
+-  echo You must run this program under the X-Window System
+-  exit 1
+-fi
+ IFS="${IFS=   }"
+ old_ifs="$IFS"
+ IFS="${IFS}:"
+ if test -z "$*"
+ then
+-    progs="wish8.4 wish8.3 wish8.2 wish8.1 wish8.0 wish4.2 wish4.1 wish wish"
++    progs="%%WISH%%"
+ else 
+-    progs="tclsh8.4 tclsh8.3 tclsh8.2 tclsh8.1 tclsh8.0 tclsh4.2 tclsh"
++    progs="%%TCLSH%%"
+ fi
+ my_wish=
+ for wish in $progs

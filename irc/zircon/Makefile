@@ -22,13 +22,17 @@ RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 NO_BUILD=	yes
 USE_REINPLACE=	yes
 .if defined(ZIRCON_WITH_TCL84) || defined(ZIRCON_WITH_TK84)
-TCL_INCLUDE=	${LOCALBASE}/include/tcl8.4
+TCL_VER=	8.4
 .else
-TCL_INCLUDE=	${LOCALBASE}/include/tcl8.3
+TCL_VER=	8.3
 .endif
 
 do-configure:
-	${REINPLACE_CMD} -e 's=%%TCL_INCLUDE%%=${TCL_INCLUDE}=' \
+	${REINPLACE_CMD} -e 's=%%WISH%%=wish${TCL_VER}=' \
+		-e 's=%%TCLSH%%=tclsh${TCL_VER}=' \
+		${WRKSRC}/installZircon
+	${REINPLACE_CMD} -e 's=%%WISH%%=wish${TCL_VER}=' \
+		-e 's=%%TCL_INCLUDE%%=${LOCALBASE}/include/tcl${TCL_VER}=' \
 		${WRKSRC}/installer/unix.tcl
 
 do-install:

@@ -5,7 +5,7 @@
  	if {[catch {open install.in w} fd]} {
  	} {
 -	    foreach x {Type Lib Bin CC SCflag SLDflag CFlags Wish TIDir} {
-+	    foreach x {Type Lib Bin CC SCflag SLDflag CFlags IWish TIDir} {
++	    foreach x {Type Lib Bin CC SCflag SLDflag CFlags WishCmd TIDir} {
  		puts $fd "set $x {[uplevel #0 set $x]}"
  	    }
  	    close $fd
@@ -14,7 +14,7 @@
  #
  proc doGlobals {argv} {
 -    global Type types Lib Bin CC LD Version Patchlevel Wish types cflags\
-+    global Type types Lib Bin CC LD Version Patchlevel IWish types cflags\
++    global Type types Lib Bin CC LD Version Patchlevel WishCmd types cflags\
        libs share SCflag GCC SLDflag CFlags TIDir Prefix ExecPrefix SED go \
        pseudo
  #
@@ -23,7 +23,7 @@
      set SLDflag {}
      set CFlags {}
 -    set Wish {}
-+    set IWish {}
++    set WishCmd {}
      set TIDir {}
      set go 0
      set SED 0
@@ -32,7 +32,7 @@
  	-s {set SCflag $v}
  	-t {set Type $v }
 -	-w {set Wish $v}
-+	-w {set IWish $v}
++	-w {set WishCmd $v}
  	-z {set SLDflag $v }
  	}
  	set argv [lrange $argv 2 end]
@@ -41,7 +41,7 @@
  proc makeBinary {} {
      zinfo "Making zircon..."
 -    global Bin Lib Version Patchlevel Wish Xtn
-+    global Bin Lib Version Patchlevel IWish Xtn
++    global Bin Lib Version Patchlevel WishCmd Xtn
      if {![file exists [pWrap [set Bin [fixPath $Bin]]]]} {
  	if {[catch {dirmake [pWrap $Bin]} msg]} {
  	    fail "Cannot create directory \"$Bin\" - $msg"
@@ -50,7 +50,7 @@
  	return 0
      }
 -    puts $fd "#!$Wish
-+    puts $fd "#!$IWish
++    puts $fd "#!$WishCmd
  set zircon(lib) [whereLib]
  #
  proc zVersion {} {
