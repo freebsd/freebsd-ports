@@ -15,8 +15,6 @@ EXTRACT_ONLY=	Csound${PORTVERSION}.tar.gz
 
 MAINTAINER=	trevor@FreeBSD.org
 
-BROKEN=		"Fails to compile"
-
 LIB_DEPENDS=	tcl83:${PORTSDIR}/lang/tcl83 \
 		tk83:${PORTSDIR}/x11-toolkits/tk83
 
