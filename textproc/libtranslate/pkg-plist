@@ -1,0 +1,42 @@
+bin/translate
+include/libtranslate/translate-common.h
+include/libtranslate/translate-pair.h
+include/libtranslate/translate-service.h
+include/libtranslate/translate-session.h
+include/libtranslate/translate-util.h
+include/libtranslate/translate.h
+lib/libtranslate.a
+lib/libtranslate.so
+lib/libtranslate.so.0
+%%GENERIC%%lib/libtranslate/modules/generic.so
+%%TALKFILTERS%%lib/libtranslate/modules/talkfilters.so
+libdata/pkgconfig/libtranslate.pc
+share/doc/libtranslate/TranslatePair.html
+share/doc/libtranslate/TranslateService.html
+share/doc/libtranslate/TranslateSession.html
+share/doc/libtranslate/api-reference.html
+share/doc/libtranslate/ch01s02.html
+share/doc/libtranslate/ch02s02.html
+share/doc/libtranslate/compiling-modules.html
+share/doc/libtranslate/home.png
+share/doc/libtranslate/index.html
+share/doc/libtranslate/index.sgml
+share/doc/libtranslate/ix01.html
+share/doc/libtranslate/left.png
+share/doc/libtranslate/libtranslate-translate-common.html
+share/doc/libtranslate/libtranslate-translate-util.html
+share/doc/libtranslate/libtranslate-translate.html
+share/doc/libtranslate/libtranslate.devhelp
+share/doc/libtranslate/overview.html
+share/doc/libtranslate/rfc3066-builtin.html
+share/doc/libtranslate/right.png
+share/doc/libtranslate/tutorials.html
+share/doc/libtranslate/up.png
+share/libtranslate/services.dtd
+share/libtranslate/services.xml
+share/locale/fr/LC_MESSAGES/libtranslate.mo
+@dirrm include/libtranslate
+@dirrm lib/libtranslate/modules
+@dirrm lib/libtranslate
+@dirrm share/doc/libtranslate
+@dirrm share/libtranslate

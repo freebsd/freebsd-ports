@@ -198,6 +198,7 @@
     SUBDIR += liblrdf
     SUBDIR += libparsifal
     SUBDIR += libpathan
+    SUBDIR += libtranslate
     SUBDIR += libtre
     SUBDIR += libuninameslist
     SUBDIR += libwpd
