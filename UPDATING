@@ -7,6 +7,32 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20041111:
+  AFFECTS: users of audio/faad, multimedia/mpeg4ip
+  AUTHOR: lioux@FreeBSD.org
+
+  mpeg4ip has been updated and broken down into 2 separate ports:
+  mpeg4ip and mpeg4ip-libmp4v2. Furthermore, mpeg4ip now depends
+  on faad. Moreover, faad now depends on mpeg4ip-libmp4v2 rather
+  than on mpeg4ip which avoids a cyclic dependency (mpeg4ip depends
+  on faad which depends on mpeg4ip).
+
+  If any of the old ports are installed, mpeg4ip will not compile.
+  Therefore,
+
+  1) Remove old faad and mpeg4ip ports which conflict with new
+  mpeg4ip
+
+  pkg_delete -f /var/db/pkg/mpeg4ip*
+  pkg_delete -f /var/db/pkg/faad*
+
+  2) Install faad, mpeg4ip and mpeg4ip-libmp4v2 in the following
+  order
+
+  cd /usr/ports/multimedia/mpeg4ip-libmp4v2 && make install clean
+  cd /usr/ports/audio/faad && make install clean
+  cd /usr/ports/multimedia/mpeg4ip && make install clean
+
+20041111:
   AFFECTS: users of java
   AUTHOR: glewis@FreeBSD.org
 
