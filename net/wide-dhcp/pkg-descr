@@ -1,9 +1,9 @@
-		<< DHCP WIDE-Implementation, version 1.3 >>
+		<< DHCP WIDE-Implementation, version 1.3.6 >>
 
-							October, 1995.
+							April, 1997.
 
    This package is a distribution kit of DHCP WIDE-Implementation
-   version 1.3.  DHCP (Dynamic Host Configuration Protocol) is a
+   version 1.3.6.  DHCP (Dynamic Host Configuration Protocol) is a
    protocol which provides informations to computer when it boots.
    This release includes DHCP server, relay agent, and client.
 
@@ -42,26 +42,6 @@ cd /dev
 
 	  Please read more information in
 	/usr/local/share/doc/dhcp/intro.dhcp or intro.dhcp.jis.
-
-** CHECK_SUM Problem under FreeBSD 2.1.x **
-
-	  This port collection is use tzfile.h from FreeBSD-current source
-	tree. Because this file is frequently changed, md5 check sum of
-	this file in files/md5 is ``IGNORE''.
-
-	  If you use this port collection ***under FreeBSD 2.1-stable***:
-	2.1.0-RELEASE, 2.1.5-RELASE, 2.1.6-RELEASE, 2.1.7-RELEASE,
-	please use latest bsd.ports.mk and bsd.port.subdir.mk files in
-	/usr/share/mk or manually check checksum and delete files/md5
-	file.
-
-** kernel dependence of package program files **
-
-	  This compiled programs(packages) depends on kernel table as
-	ifconfig program.
-	  So please use fit package to your FreeBSD (for example under
-	2.1.5-RELEASE, use packages-2.1.5, do not use packages-2.2) or
-	recompile from ports collection.
 
 ** additional function **
 

@@ -1,6 +1,6 @@
---- client/dhcpc_subr.c.orig	Fri Nov  3 01:39:55 1995
-+++ client/dhcpc_subr.c	Mon Apr 21 23:59:03 1997
-@@ -63,6 +63,12 @@
+--- client/dhcpc_subr.c.orig	Thu Jul  3 05:19:01 1997
++++ client/dhcpc_subr.c	Wed Apr 22 01:10:00 1998
+@@ -64,6 +64,12 @@
  #ifdef __osf__
  #include <net/pfilt.h>
  #endif
@@ -13,16 +13,16 @@
  #include <netinet/in.h>
  #include <netinet/in_systm.h>
  #include <netinet/if_ether.h>
-@@ -70,6 +76,8 @@
+@@ -71,6 +77,8 @@
  #include <netinet/ip.h>
  #include <netinet/udp.h>
  #include <arpa/inet.h>
 +#include <arpa/nameser.h>
 +#include <resolv.h>
- 
- #include "dhcp.h"
- #include "common.h"
-@@ -159,6 +167,8 @@
+ #ifdef VIP
+ #include <netinet/vip.h>
+ #endif
+@@ -164,6 +172,8 @@
  
  int config_if();
  void set_route();
@@ -31,60 +31,7 @@
  void make_decline();
  void make_release();
  Long generate_xid();
-@@ -273,7 +283,11 @@
-   tmp = 0;
-   bcopy(&tmp, sarp->arp_spa, sarp->arp_pln);
-   bcopy(&target->s_addr, sarp->arp_tpa, sarp->arp_pln);
-+#if (__FreeBSD_version < 199608) || (__FreeBSD_version == 199612) || (__FreeBSD_version >= 199703 && __FreeBSD_version <= 219999)
-+  sether->ether_type = ETHERTYPE_ARP;
-+#else
-   sether->ether_type = htons(ETHERTYPE_ARP);
-+#endif
- 
-   if (ether_write(ifp->fd, sbuf, ETHERHL + sizeof(struct ether_arp)) < 0) {
-     return(0);                               /* it is harmless to return 0 */
-@@ -341,7 +355,11 @@
-   bcopy(&ipaddr->s_addr, sarp->arp_spa, sarp->arp_pln);
-   bcopy(&ipaddr->s_addr, sarp->arp_tpa, sarp->arp_pln);
- 
-+#if (__FreeBSD_version < 199608) || (__FreeBSD_version == 199612) || (__FreeBSD_version > 199703 && __FreeBSD_version < 219999)
-+  sether->ether_type = ETHERTYPE_ARP;
-+#else
-   sether->ether_type = htons(ETHERTYPE_ARP);
-+#endif
- 
-   if (ether_write(ifp->fd, sbuf, ETHERHL + sizeof(struct ether_arp)) < 0) {
-     return(-1);
-@@ -1387,7 +1405,7 @@
-   /* get haddr of interface */
-   intface.haddr.htype = ETHER;
-   intface.haddr.hlen = 6;
--#if defined(sony_news) || defined(__FreeBSD__)
-+#if defined(sony_news) || !defined(__FreeBSD__)
-   if (ioctl(dhcpif.fd, SIOCGIFADDR, &ifr) < 0) {
-     syslog(LOG_WARNING, "ioctl(SIOCGIFADDR) error in initialize(): %m");
-     return(-1);
-@@ -1535,8 +1553,8 @@
-     ((struct sockaddr_in *)&ridreq.ifr_addr)->sin_addr.s_addr;
- 
-   if (current_addr.s_addr == addr->s_addr &&
--      current_mask.s_addr == mask->s_addr &&
--      current_brdcst.s_addr == brdcst->s_addr) {
-+      (mask && current_mask.s_addr == mask->s_addr) &&
-+      (brdcst && current_brdcst.s_addr == brdcst->s_addr)) {
-     close(sockfd);
-     return(1);
-   }
-@@ -1660,7 +1678,7 @@
- /*
-  * set routing table
-  */
--#ifndef BSDOS
-+#if !defined(BSDOS) && (__FreeBSD__ < 2)
- void
- set_route(param)
-   struct dhcp_param *param;
-@@ -1730,6 +1748,10 @@
+@@ -1853,6 +1863,10 @@
    register char *cp = m_rtmsg.m_space;
    register int l;
  
@@ -95,7 +42,7 @@
    bzero(&so_dst, sizeof(struct sockaddr));
    bzero(&so_mask, sizeof(struct sockaddr));
    bzero(&so_gate, sizeof(struct sockaddr));
-@@ -1772,6 +1794,44 @@
+@@ -1895,6 +1909,44 @@
  
  #endif
  
@@ -103,94 +50,61 @@
 +set_resolv(param)
 +struct dhcp_param *param;
 +{
-+    FILE *fp;
-+    int i;
++  FILE *fp;
++  int i;
 +
-+    if (param == NULL) {
-+	return;
-+    }
++  if (param == NULL) {
++    return;
++  }
 +
-+    /*
-+     * set resolv.conf
-+     */
-+    if (param->dns_domain != NULL && param->dns_server != NULL) {
-+	if(param->dns_server->num && param->dns_server->addr != NULL) {
-+	    unlink(_PATH_RESCONF);
-+	    if((fp = fopen(_PATH_RESCONF, "w")) == NULL) {
-+		return;
-+	    }
-+	    fprintf(fp, "domain %s\n", param->dns_domain);
-+	    for(i = 0; i < param->dns_server->num; i++) {
-+		fprintf(fp,"nameserver %s\n",inet_ntoa(param->dns_server->addr[i]));
-+	    }
-+	    fclose(fp);
-+	}
++  /*
++   * set resolv.conf
++   */
++  if (param->dns_domain != NULL && param->dns_server != NULL) {
++    if (param->dns_server->num && param->dns_server->addr != NULL) {
++      unlink(_PATH_RESCONF);
++      if ((fp = fopen(_PATH_RESCONF, "w")) == NULL) {
++        return;
++      }
++      fprintf(fp, "domain %s\n", param->dns_domain);
++      for (i = 0; i < param->dns_server->num; i++) {
++        fprintf(fp,"nameserver %s\n",inet_ntoa(param->dns_server->addr[i]));
++      }
++      fclose(fp);
 +    }
++  }
 +}
 +
 +void
 +set_hostname(param)
 +struct dhcp_param *param;
 +{
-+	if (param->hostname != NULL) {
-+		sethostname(param->hostname,strlen(param->hostname));
-+	}
-+	return;
++  if (param->hostname != NULL) {
++    sethostname(param->hostname,strlen(param->hostname));
++  }
++  return;
 +}
  
  void
  make_decline(lsbuf, reqspecp)
-@@ -1897,7 +1957,11 @@
-     lsether->ether_shost[i] = intface.haddr.haddr[i];
- #endif
-   }
-+#if (__FreeBSD_version < 199608) || (__FreeBSD_version == 199612) || (__FreeBSD_version > 199703 && __FreeBSD_version < 219999)
-+  lsether->ether_type = ETHERTYPE_IP;
-+#else
-   lsether->ether_type = htons(ETHERTYPE_IP);
-+#endif
- 
-   return;
- }
-@@ -2199,7 +2263,11 @@
-     snd.ether->ether_shost[i] = intface.haddr.haddr[i];
- #endif
-   }
-+#if (__FreeBSD_version < 199608) || (__FreeBSD_version == 199612) || (__FreeBSD_version > 199703 && __FreeBSD_version < 219999)
-+  snd.ether->ether_type = ETHERTYPE_IP;
-+#else
-   snd.ether->ether_type = htons(ETHERTYPE_IP);
-+#endif
- 
-   return;
- }
-@@ -2372,7 +2440,11 @@
-     snd.ether->ether_shost[i] = intface.haddr.haddr[i];
- #endif
-   }
-+#if (__FreeBSD_version < 199608) || (__FreeBSD_version == 199612) || (__FreeBSD_version > 199703 && __FreeBSD_version < 219999)
-+  snd.ether->ether_type = ETHERTYPE_IP;
-+#else
-   snd.ether->ether_type = htons(ETHERTYPE_IP);
-+#endif
- 
-   return(0);
- }
-@@ -2391,7 +2463,7 @@
+@@ -2528,11 +2580,9 @@
    struct msghdr msg;
    struct iovec bufvec[1];
    int bufsize = DFLTDHCPLEN;
--#ifdef BSDOS
-+#if defined(BSDOS) || (__FreeBSD__ >= 2)
+-#if 0
+ #if defined(__bsdi__) || defined(__FreeBSD__)
    int on;
  #endif
+-#endif
  
-@@ -2417,7 +2489,7 @@
+   if (sockfd == -1) {
+     struct sockaddr_in myaddr;
+@@ -2556,7 +2606,7 @@
        return(-1);
      }
  
--#ifdef BSDOS
-+#if defined(BSDOS) || (__FreeBSD__ >= 2)
+-#if 0
++#if defined(__bsdi__) || defined(__FreeBSD__)
      on = 1;
      if (setsockopt(sockfd, SOL_SOCKET, SO_REUSEPORT, &on, sizeof(on)) < 0) {
        close(sockfd);
