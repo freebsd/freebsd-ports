@@ -1,0 +1,6 @@
+Libcddb is a library that implements the different protocols (CDDBP,
+HTTP, SMTP) to access data on a CDDB server (http://freedb.org).  It
+tries to be as cross-platform as possible.  The initial libary will
+have a C API.
+
+WWW: http://libcddb.sourceforge.net/

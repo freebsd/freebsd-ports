@@ -1,0 +1,14 @@
+bin/cddb_query
+include/cddb/cddb.h
+include/cddb/cddb_cmd.h
+include/cddb/cddb_conn.h
+include/cddb/cddb_disc.h
+include/cddb/cddb_error.h
+include/cddb/cddb_log.h
+include/cddb/cddb_track.h
+lib/libcddb.a
+lib/libcddb.la
+lib/libcddb.so
+lib/libcddb.so.1
+libdata/pkgconfig/libcddb.pc
+@dirrm include/cddb
