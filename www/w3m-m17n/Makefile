@@ -5,8 +5,6 @@
 # $FreeBSD$
 #
 
-PKGNAMESUFFIX=	-m17n
-
 CATEGORIES=	www
 
 MASTERDIR=	${.CURDIR}/../../www/w3m
