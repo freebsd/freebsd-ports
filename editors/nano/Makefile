@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	nano
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	editors
-MASTER_SITES=	http://www.nano-editor.org/dist/ \
+MASTER_SITES=	http://www.nano-editor.org/dist/v1.0/ \
 		http://www.asty.org/nano/dist/ \
+		${MASTER_SITE_GNU} \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
