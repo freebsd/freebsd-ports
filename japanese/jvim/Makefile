@@ -67,6 +67,7 @@ do-build:
 
 do-install:
 	cd ${WRKSRC}/src; make install
+	${LN} -sf ${PREFIX}/bin/jvim2 ${PREFIX}/bin/jvim
 
 post-install:
 	for file in jcat jgrep jfold jvim; do \
