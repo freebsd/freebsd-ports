@@ -28,6 +28,12 @@ WRKSRC=		${WRKDIR}/linux_glx
 # switch off stripping during INSTALL_PROGRAM
 STRIP=
 
+.include <bsd.port.pre.mk>
+
+.if ${XFREE86_VERSION} > 3
+IGNORE=		"Requires XFree86 3.3.* - will not work with XFree86 4.*"
+.endif
+
 # NEVER EVER use plain INSTALL_PROGRAM on Linux binaries,
 # as they get stripped!
 do-install:
@@ -37,4 +43,4 @@ do-install:
 post-install:
 	@ ${PREFIX}/sbin/ldconfig
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
