@@ -17,7 +17,8 @@ MASTER_SITE_SUBDIR=	gtk/v${PORTVERSION:R}
 MAINTAINER=	gnome@FreeBSD.org
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-LIB_DEPENDS=	giconv.2:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=	giconv.2:${PORTSDIR}/converters/libiconv \
+		intl.1:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
 NO_LATEST_LINK=	"Unstable, development version."
