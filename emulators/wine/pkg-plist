@@ -611,14 +611,14 @@ lib/wine/ws2_32.dll.so
 lib/wine/wsock32.dll.so
 lib/wine/x11drv.dll.so
 share/aclocal/wine.m4
-%%DOCSDIR%%/ANNOUNCE
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/LICENSE
-%%DOCSDIR%%/README
-%%DOCSDIR%%/README.wcmd
-%%DOCSDIR%%/README.winedbg
-%%DOCSDIR%%/README.winedump
-%%PORTDOCS%%@dirrm share/doc/wine
+%%PORTDOCS%%%%DOCSDIR%%/ANNOUNCE
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.wcmd
+%%PORTDOCS%%%%DOCSDIR%%/README.winedbg
+%%PORTDOCS%%%%DOCSDIR%%/README.winedump
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/wine
 @dirrm include/wine/msvcrt/sys
 @dirrm include/wine/msvcrt
