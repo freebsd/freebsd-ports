@@ -3,12 +3,12 @@
 # Date created:		6 Nov 1997
 # Whom:			Sheldon Hearn <axl@iafrica.com>
 #
-# $Id: Makefile,v 1.2 1997/11/10 10:18:09 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1997/11/13 23:31:41 jraynard Exp $
 #
 
 DISTNAME=	asrpages
 PKGNAME=	asrpages-0.1
-CATEGORIES=	misc
+CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.winternet.com/users/eric/
 DISTFILES=	asr.pages.tar
 
