@@ -10,36 +10,38 @@ PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	java
 MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
-MASTER_SITE_SUBDIR=	commons/primitives/binaries
+MASTER_SITE_SUBDIR=	commons/primitives/source
 PKGNAMEPREFIX=	jakarta-
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	herve.quiroz@esil.univ-mrs.fr
+MAINTAINER=	hq@FreeBSD.org
 COMMENT=	A library supporting Java primitive types
 
-USE_JAVA=	1.3+
-NO_BUILD=	YES
+USE_JAVA=	yes
+JAVA_VERSION=	1.3+
+USE_ANT=	yes
 
-PORT_JARFILE=		${PORTNAME}-${PORTVERSION}.jar
-DEST_JARFILE=		${PORTNAME}.jar
-JAVA_WRKDOCSDIR=	${WRKSRC}/docs
-PLIST_SUB+=		JAVAJARDIR=${JAVAJARDIR:S/^${PREFIX}\///}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+ALL_TARGET=	jar
+
+PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	apidocs
+ALL_TARGET+=	javadoc
+PORTDOCS=	LICENSE.txt api
 .endif
 
 do-install:
-	@${ECHO_CMD} -n ">> Installing JAR file..."
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORT_JARFILE} ${JAVAJARDIR}/${DEST_JARFILE}
-	@${ECHO_CMD} " [DONE]"
+	@${ECHO_MSG} -n ">> Installing JAR file as ${JAVAJARDIR}/${PORTNAME}.jar..."
+	@${INSTALL_DATA} ${WRKSRC}/target/${PORTNAME}-${PORTVERSION}.jar ${JAVAJARDIR}/${PORTNAME}.jar
+	@${ECHO_MSG} " [DONE]"
 .if !defined(NOPORTDOCS)
-	@${ECHO_CMD} -n ">> Installing documentation..."
-	@cd ${JAVA_WRKDOCSDIR} && ${FIND} . -type d -mindepth 1 -exec ${MKDIR} ${DOCSDIR}/{} ";"
-	@cd ${JAVA_WRKDOCSDIR} && ${FIND} . -type f -exec ${INSTALL_MAN} ${JAVA_WRKDOCSDIR}/{} ${DOCSDIR}/{} ";"
-	@${ECHO_CMD} " [DONE]"
+	@${ECHO_MSG} -n ">> Installing documentation..."
+	@${MKDIR} ${DOCSDIR}
+	@cd ${WRKSRC}/target/docs && ${FIND} api \
+	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} > /dev/null 2>&1
+	@${INSTALL_DATA} ${WRKSRC}/LICENSE.txt ${DOCSDIR}/
+	@${ECHO_MSG} " [DONE]"
 .endif
-
-post-install:
-	@${ECHO_CMD} "${PORTNAME}-${PORTVERSION} installed as ${JAVAJARDIR}/${PORT_JARFILE}"
 
 .include <bsd.port.mk>
