@@ -5,12 +5,12 @@
  xmmsvislib=`xmms-config --visualization-plugin-dir`
  
 -CFLAGS=-O2 -Wall -DHAVE_LIBPNG -DXMMS_DIR=\"$(xmmsdir)\" -DKJSKIN=\"$(xmmsdir)/kjofol/default.zip\" -I. `xmms-config --cflags`
-+CFLAGS=-O2 -Wall -DHAVE_LIBPNG -DXMMS_DIR=\"$(xmmsdir)\" -DKJSKIN=\"$(xmmsdir)/kjofol/default.zip\" -I. `xmms-config --cflags` -fPIC
++CFLAGS+=-O2 -Wall -DHAVE_LIBPNG -DXMMS_DIR=\"$(xmmsdir)\" -DKJSKIN=\"$(xmmsdir)/kjofol/default.zip\" -I. `xmms-config --cflags` -fPIC
  LPNG = -lpng -lz
  LDFLAGS=-O2
  # LIBS=-L/usr/lib `gtk-config --libs` $(LPNG) -lgthread -lpthread -lxmms -Wl,--rpath -Wl,/usr/local/lib
 -LIBS=`xmms-config --libs` $(LPNG)
-+LIBS=`xmms-config --libs` $(LPNG) -lc_r
++LIBS=`xmms-config --libs` $(LPNG)  -pthread
  OBJS=kj.o resource.o config.o image.o playlist.o
  CC=gcc
  
