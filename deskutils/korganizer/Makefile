@@ -3,11 +3,11 @@
 # Date created:        23 May 1998
 # Whom:                Hans Petter Bieker <hanspb@persbraten.vgs.no>
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/25 12:41:51 tg Exp $
+# $Id: Makefile,v 1.2 1998/05/25 21:03:02 fenner Exp $
 #
 
 DISTNAME=	korganizer-0.9
-CATEGORIES=	misc kde
+CATEGORIES=	deskutils kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
 MASTER_SITE_SUBDIR= unstable/apps/office
 

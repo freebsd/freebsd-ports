@@ -3,12 +3,12 @@
 # Date created:        6 May 1996
 # Whom:                joerg
 #
-# $Id: Makefile,v 1.3 1996/11/18 11:44:27 asami Exp $
+# $Id: Makefile,v 1.4 1997/08/21 18:07:46 joerg Exp $
 #
 
 DISTNAME=      xpostit3.3.1
 PKGNAME=       xpostit-3.3.1
-CATEGORIES=    x11
+CATEGORIES=    deskutils
 #
 # Not all servers archie could find actually still have it.  Alas, some
 # servers only have the comp.sources.x version, with its distfile named

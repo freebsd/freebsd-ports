@@ -3,11 +3,11 @@
 # Date created:			14 September, 1997
 # Whom:				kline
 #
-# $Id: Makefile,v 1.2 1998/02/19 20:44:00 obrien Exp $
+# $Id: Makefile,v 1.3 1998/02/21 22:37:53 fenner Exp $
 #
 
 DISTNAME=	cbb-0.73
-CATEGORIES=	misc tk42
+CATEGORIES=	deskutils tk42
 MASTER_SITES=	ftp://ftp.me.umn.edu/pub/finance/ \
 		ftp://ftp.fifi.org/pub/cbb/
 

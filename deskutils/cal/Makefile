@@ -3,11 +3,11 @@
 # Date created:				2 April 1997
 # Whom:	Andrey Zakhvatov <andy@icc.surw.chel.su>
 #
-# $Id$
+# $Id: Makefile,v 1.5 1997/05/12 06:33:23 max Exp $
 #
 
 DISTNAME=		cal-3.5
-CATEGORIES=		misc
+CATEGORIES=		deskutils
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/shell
 

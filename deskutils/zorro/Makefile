@@ -3,12 +3,12 @@
 # Date created:         03 Aug 1996
 # Whom:                 shanee@rabbit.augusta.de
 #
-# $Id: Makefile,v 1.9 1997/11/22 19:55:25 jseger Exp $
+# $Id: Makefile,v 1.11 1998/03/20 14:35:30 tg Exp $
 #
 
 DISTNAME=	zorro-1.1p8
 PKGNAME=	zorro-1.1.8
-CATEGORIES=	misc tk80
+CATEGORIES=	deskutils tk80
 MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/sorted/apps/zorro-1.1p8/
 
 MAINTAINER=	shanee@augusta.de
