@@ -6,7 +6,7 @@ bin/kmailcvt
 bin/knewstickerstub
 bin/knode
 bin/korn
-bin/kotalkd
+%%KTALKD%%bin/kotalkd
 bin/kppp
 bin/kppplogview
 bin/ksirc
