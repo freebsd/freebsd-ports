@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xcircuit
-PORTVERSION=	3.1.18
-PORTREVISION=	2
+PORTVERSION=	3.1.38
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://xcircuit.ece.jhu.edu/archive/
@@ -18,6 +17,7 @@ COMMENT=	An X11 drawing program [especially for circuit schematics]
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
+USE_GHOSTSCRIPT_RUN=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -25,8 +25,6 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
-
-USE_GHOSTSCRIPT_RUN=	yes
 
 WISH=		${LOCALBASE}/bin/wish8.4
 
@@ -37,21 +35,12 @@ CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl8.4 \
 		--with-tk=${LOCALBASE}/lib/tk8.4
 ALL_TARGET=	tcl
 INSTALL_TARGET=	install-tcl
-PLIST_SUB+=	PYTHON="@comment " NOPYTHON="" TCLTK="" NOTCLTK="@comment "
+PLIST_SUB+=	TCLTK="" NOTCLTK="@comment "
 CFLAGS+=	-I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/tk8.4 \
 		-I${X11BASE}/include
 .else
 MAN1+=		xcircuit.1
-.if defined(WITH_PYTHON)
-PKGNAMESUFFIX=	-python
-USE_PYTHON=	yes
-CONFIGURE_ARGS+=	--with-python
-CPPFLAGS+=	${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS}
-PLIST_SUB+=	PYTHON="" NOPYTHON="@comment " TCLTK="@comment " NOTCLTK=""
-.else
-PLIST_SUB+=	PYTHON="@comment " NOPYTHON="" TCLTK="@comment " NOTCLTK=""
-.endif
+PLIST_SUB+=	TCLTK="@comment " NOTCLTK=""
 .endif
 
 pre-everything::
@@ -67,12 +56,6 @@ pre-everything::
 	@${ECHO_MSG} "      (prevents python support)"
 	@${ECHO_MSG} ""
 .endif
-.if !defined(WITH_PYTHON)
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "      Or define WITH_PYTHON for Python support"
-	@${ECHO_MSG} "      (only available without WITH_TCLTK defined)"
-	@${ECHO_MSG} ""
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|TCL_LIB_NAME=.*$$|TCL_LIB_NAME="tcl84"|g ; \
@@ -84,8 +67,8 @@ post-patch:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${EXAMPLESDIR}
-	${TAR} -C ${WRKSRC}/examples --exclude CVS -cf - . | \
-		${TAR} -C ${EXAMPLESDIR} --unlink -xf -
+	${TAR} -C ${WRKSRC}/examples --exclude "CVS" --exclude "*.py" \
+		-cf - . | ${TAR} -C ${EXAMPLESDIR} --unlink -xf -
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 .endif
 
