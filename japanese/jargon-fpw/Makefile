@@ -8,7 +8,7 @@
 PORTNAME=	jargon-fpw
 PORTVERSION=	${JG_VER}.${JGFPW_VER}
 CATEGORIES=	japanese
-MASTER_SITES=	http://plaza27.mbn.or.jp/~satomii/soft/archive/ \
+MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/jargon/ \
 		http://www.tuxedo.org/~esr/jargon/
 DISTNAME=	jarg-fpw${JGFPW_VER}-src
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -23,7 +23,7 @@ BUILD_DEPENDS=	fpwmake:${PORTSDIR}/japanese/freepwing \
 
 WRKSRC=		${WRKDIR}/jarg-fpw${JGFPW_VER}
 USE_GMAKE=	yes
-JGFPW_VER=	1.1
+JGFPW_VER=	1.1a
 JG_VER=		4.2.0
 FJG_VER=	420
 
@@ -37,10 +37,9 @@ post-extract:
 		> ${WRKSRC}/jarg${FJG_VER}
 
 post-patch:
-	${MV} ${WRKSRC}/catalogs.txt ${WRKSRC}/catalogs.txt.org
-	nkf -ed ${WRKSRC}/catalogs.txt.org > ${WRKSRC}/catalogs.txt
+	nkf -eSd ${WRKSRC}/catalogs.sjis > ${WRKSRC}/catalogs.txt
 	${MV} ${WRKSRC}/gaiji/halfchar.txt ${WRKSRC}/gaiji/halfchar.txt.org
-	nkf -ed ${WRKSRC}/gaiji/halfchar.txt.org > ${WRKSRC}/gaiji/halfchar.txt
+	nkf -eSd ${WRKSRC}/gaiji/halfchar.txt.org > ${WRKSRC}/gaiji/halfchar.txt
 
 do-build:
 	cd ${WRKSRC}; \
