@@ -1,16 +1,14 @@
---- old/sources/dico.c	Thu Mar 27 14:57:57 1997
-+++ new/sources/dico.c	Wed Oct 11 04:04:49 2000
-@@ -19,8 +19,8 @@
+--- sources/dico.c.orig	Sat Oct 24 16:16:30 1992
++++ sources/dico.c	Mon Apr 15 18:09:04 2002
+@@ -19,6 +19,7 @@
      |                                                                       |
      +-----------------------------------------------------------------------+
  */
--#define LINUX
- 
 +#ifndef __FreeBSD__
  #ifndef LINUX
  #ifndef sony
  #ifndef MSDOS
-@@ -28,6 +28,7 @@
+@@ -26,6 +27,7 @@
  #endif
  #endif
  #endif
@@ -18,7 +16,7 @@
  
  #ifdef sony                             /* Sony News WorkStations        */
  #define UNIX
-@@ -42,6 +43,12 @@
+@@ -40,6 +42,12 @@
  #define MYOS "LINUX" 
  #endif
  
@@ -31,20 +29,16 @@
  #ifdef MSDOS                            /* Systeme d'operation de disque */
  #define MYOS "MSDOS"                    /* Microsoft :-)                 */
  #endif
-@@ -51,8 +58,11 @@
+@@ -49,7 +57,7 @@
  #define ISO_TERM    3
  #define COMMENT_CHAR 35                 /* '#' ligne de commentaire        */
  
--#define DICT_PATH "/usr/local/lib/dico"	 /* path par defaut unix/dos        */
-+#ifndef MSDOS
-+#define DICT_PATH "!!PREFIX!!/share/dico" /* path par defaut unix/dos        */
-+#else
+-#define DICT_PATH "/usr/local/lib/dico"  /* path par defaut unix/dos        */
++#define DICT_PATH "%%PREFIX%%/share/dico" /* path par defaut unix/dos      */
  #define DOS_PATH  "lexique"              /* path par defaut Dos uniquement  */
-+#endif
  #define DICT_EXT ".dic"                  /* extension des fichiers dicos    */
  #define VERSION_FILE "version.dic"       /* fichier texte version dico      */
- 
-@@ -60,11 +70,13 @@
+@@ -58,11 +66,13 @@
  #define OK    0
  #define MYVBUF 10240                     /* pour setvbuf() eventuel         */
  
@@ -58,7 +52,7 @@
  
  typedef unsigned char byte;
  
-@@ -147,7 +159,9 @@
+@@ -145,7 +155,9 @@
      if(argv[1][0] =='-')                      /* option ligne commande?*/
          return   options( argv[1][1]  );
  
@@ -68,7 +62,7 @@
  
      while( --argc)                            /* Allez, roulez !       */
      {
-@@ -157,7 +171,9 @@
+@@ -155,7 +167,9 @@
              lookfor( argv[argc] );
      }
  
@@ -78,7 +72,7 @@
  
         return OK ;
  }
-@@ -369,7 +385,9 @@
+@@ -367,7 +381,9 @@
      
      StrLwr( pattern );  /* passe en minuscules comme le dico */
      car = equival (pattern[0]);
@@ -88,7 +82,7 @@
  
      sprintf(fname, "%s%s%c%s", dict_path, sep, pattern[0], DICT_EXT ) ;
  
-@@ -395,7 +413,11 @@
+@@ -393,7 +409,11 @@
          if( fmatch(sbuf,pattern) )
          {
              translate( buf ); /* gere terminaux....   */
@@ -100,7 +94,7 @@
              count ++ ;
          }
      }
-@@ -451,8 +473,11 @@
+@@ -449,8 +469,11 @@
              if( fmatch(sbuf,pattern) )
              { 
                  translate( buf ) ;
@@ -113,22 +107,13 @@
                  count ++ ;
              } 
          }
-@@ -474,7 +499,7 @@
- 
- mybanner()
- {
--/*    printf("\nDICO V %s (%s) - R.Cougnenc 1992\n\n", __Version__, MYOS);*/
-+    printf("\nDICO V %s (%s) - R.Cougnenc 1992\n\n", __Version__, MYOS);
- }
- /*--------------------------------------------------------------------------*/
- 
-@@ -526,7 +551,9 @@
+@@ -524,7 +547,9 @@
     byte ville[50], code[6];
     byte *r = ville;
  
-+/* #ifndef __FreeBSD__ */
++#ifndef __FreeBSD__
     *str = ToUpper ( *str );                 /* Premiere lettre...     */
-+/* #endif */
++#endif
  
      if( ! strchr( str, '\t') )               /* Cas du nom commun      */
      {

@@ -1,5 +1,5 @@
---- old/manuel/Makefile.am	Thu Jan  1 01:00:00 1970
-+++ new/manuel/Makefile.am	Wed Oct 11 03:46:58 2000
+--- /dev/null	Thu Jan  1 01:00:00 1970
++++ manuel/Makefile.am	Wed Oct 11 03:46:58 2000
 @@ -0,0 +1,7 @@
 +docdir = $(datadir)/doc/dico
 +doc_DATA = copying.doc

@@ -1,5 +1,5 @@
---- old/configure.in	Thu Jan  1 01:00:00 1970
-+++ new/configure.in	Wed Oct 11 04:19:05 2000
+--- /dev/null	Thu Jan  1 01:00:00 1970
++++ configure.in	Wed Oct 11 04:19:05 2000
 @@ -0,0 +1,4 @@
 +AC_INIT(sources/dico.c)
 +AM_INIT_AUTOMAKE(dico, 1.1)
