@@ -1,0 +1,56 @@
+@cwd /usr/local
+lib/wnn/cvt_key_empty
+lib/wnn/cvt_key_tbl
+lib/wnn/cvt_key_tbl.ST
+lib/wnn/cvt_key_tbl.gm
+lib/wnn/cvt_key_tbl.kt
+lib/wnn/cvt_key_tbl.mv
+lib/wnn/cvt_key_tbl.vt
+lib/wnn/ko_KR/dic/sys/full.fzk
+lib/wnn/ko_KR/dic/sys/hword.dic
+lib/wnn/ko_KR/dic/sys/single.dic
+lib/wnn/ko_KR/hinsi.data
+lib/wnn/ko_KR/kserverrc
+lib/wnn/ko_KR/libwnn.msg
+lib/wnn/ko_KR/rk/1B_TOUPPER
+lib/wnn/ko_KR/rk/2A_CTRL
+lib/wnn/ko_KR/rk/2C_HANGUL.KEY
+lib/wnn/ko_KR/rk/2C_HANGUL.ROM
+lib/wnn/ko_KR/rk/2C_KSC
+lib/wnn/ko_KR/rk/3B_JEONKAK
+lib/wnn/ko_KR/rk/mode
+lib/wnn/ko_KR/rk/mode.key
+lib/wnn/ko_KR/rk/mode.rom
+lib/wnn/ko_KR/uum.msg
+lib/wnn/ko_KR/uumkey
+lib/wnn/ko_KR/uumrc
+lib/wnn/ko_KR/wnnenvrc
+lib/wnn/ko_KR/wnnenvrc_R
+lib/wnn/ko_KR/wnnstat.msg
+lib/wnn/serverdefs
+@dirrm lib/wnn/ko_KR/rk
+@dirrm lib/wnn/ko_KR/dic/sys
+@dirrm lib/wnn/ko_KR/dic
+@dirrm lib/wnn/ko_KR
+@dirrm lib/wnn
+bin/kWnn4/katod
+bin/kWnn4/katof
+bin/kWnn4/kdtoa
+bin/kWnn4/kserver
+bin/kWnn4/kuum
+bin/kWnn4/kwddel
+bin/kWnn4/kwdreg
+bin/kWnn4/kwnnkill
+bin/kWnn4/kwnnstat
+bin/kWnn4/kwnntouch
+@dirrm bin/kWnn4
+@cwd /usr/X11R6
+lib/libkwnn.a
+include/kwnn/commonhd.h
+include/kwnn/cplib.h
+include/kwnn/jllib.h
+include/kwnn/jslib.h
+include/kwnn/msg.h
+include/kwnn/rk_spclval.h
+include/kwnn/wnnerror.h
+@dirrm include/kwnn
