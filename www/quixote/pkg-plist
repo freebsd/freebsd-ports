@@ -1,16 +1,26 @@
 %%PORTDOCS%%share/doc/quixote/ACKS
 %%PORTDOCS%%share/doc/quixote/CHANGES
 %%PORTDOCS%%share/doc/quixote/LICENSE
+%%PORTDOCS%%share/doc/quixote/PTL.html
 %%PORTDOCS%%share/doc/quixote/PTL.txt
 %%PORTDOCS%%share/doc/quixote/README
 %%PORTDOCS%%share/doc/quixote/TODO
 %%PORTDOCS%%share/doc/quixote/ZPL.txt
+%%PORTDOCS%%share/doc/quixote/demo.html
 %%PORTDOCS%%share/doc/quixote/demo.txt
+%%PORTDOCS%%share/doc/quixote/programming.html
 %%PORTDOCS%%share/doc/quixote/programming.txt
+%%PORTDOCS%%share/doc/quixote/session-mgmt.html
 %%PORTDOCS%%share/doc/quixote/session-mgmt.txt
+%%PORTDOCS%%share/doc/quixote/session-upgrade.html
 %%PORTDOCS%%share/doc/quixote/session-upgrade.txt
+%%PORTDOCS%%share/doc/quixote/upload.html
+%%PORTDOCS%%share/doc/quixote/upload.txt
+%%PORTDOCS%%share/doc/quixote/web-server.html
 %%PORTDOCS%%share/doc/quixote/web-server.txt
+%%PORTDOCS%%share/doc/quixote/web-services.html
 %%PORTDOCS%%share/doc/quixote/web-services.txt
+%%PORTDOCS%%share/doc/quixote/widgets.html
 %%PORTDOCS%%share/doc/quixote/widgets.txt
 lib/%%PYTHON_VERSION%%/site-packages/quixote/TemplateIO.py
 lib/%%PYTHON_VERSION%%/site-packages/quixote/TemplateIO.pyc
@@ -28,13 +38,16 @@ lib/%%PYTHON_VERSION%%/site-packages/quixote/demo/demo_scgi.py
 lib/%%PYTHON_VERSION%%/site-packages/quixote/demo/demo_scgi.pyc
 lib/%%PYTHON_VERSION%%/site-packages/quixote/demo/demo_scgi.pyo
 lib/%%PYTHON_VERSION%%/site-packages/quixote/demo/forms.ptl
+lib/%%PYTHON_VERSION%%/site-packages/quixote/demo/forms.ptlc
 lib/%%PYTHON_VERSION%%/site-packages/quixote/demo/integer_ui.py
 lib/%%PYTHON_VERSION%%/site-packages/quixote/demo/integer_ui.pyc
 lib/%%PYTHON_VERSION%%/site-packages/quixote/demo/integer_ui.pyo
 lib/%%PYTHON_VERSION%%/site-packages/quixote/demo/pages.ptl
 lib/%%PYTHON_VERSION%%/site-packages/quixote/demo/pages.ptlc
 lib/%%PYTHON_VERSION%%/site-packages/quixote/demo/session.ptl
+lib/%%PYTHON_VERSION%%/site-packages/quixote/demo/session.ptlc
 lib/%%PYTHON_VERSION%%/site-packages/quixote/demo/widgets.ptl
+lib/%%PYTHON_VERSION%%/site-packages/quixote/demo/widgets.ptlc
 lib/%%PYTHON_VERSION%%/site-packages/quixote/errors.py
 lib/%%PYTHON_VERSION%%/site-packages/quixote/errors.pyc
 lib/%%PYTHON_VERSION%%/site-packages/quixote/errors.pyo
@@ -82,15 +95,27 @@ lib/%%PYTHON_VERSION%%/site-packages/quixote/qx_distutils.pyo
 lib/%%PYTHON_VERSION%%/site-packages/quixote/sendmail.py
 lib/%%PYTHON_VERSION%%/site-packages/quixote/sendmail.pyc
 lib/%%PYTHON_VERSION%%/site-packages/quixote/sendmail.pyo
+lib/%%PYTHON_VERSION%%/site-packages/quixote/server/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/quixote/server/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/quixote/server/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/quixote/server/medusa_http.py
+lib/%%PYTHON_VERSION%%/site-packages/quixote/server/medusa_http.pyc
+lib/%%PYTHON_VERSION%%/site-packages/quixote/server/medusa_http.pyo
 lib/%%PYTHON_VERSION%%/site-packages/quixote/session.py
 lib/%%PYTHON_VERSION%%/site-packages/quixote/session.pyc
 lib/%%PYTHON_VERSION%%/site-packages/quixote/session.pyo
+lib/%%PYTHON_VERSION%%/site-packages/quixote/upload.py
+lib/%%PYTHON_VERSION%%/site-packages/quixote/upload.pyc
+lib/%%PYTHON_VERSION%%/site-packages/quixote/upload.pyo
 lib/%%PYTHON_VERSION%%/site-packages/quixote/util.py
 lib/%%PYTHON_VERSION%%/site-packages/quixote/util.pyc
 lib/%%PYTHON_VERSION%%/site-packages/quixote/util.pyo
 share/examples/quixote/demo.cgi
 share/examples/quixote/demo.conf
+share/examples/quixote/session_demo.cgi
+share/examples/quixote/upload.cgi
 @dirrm share/examples/quixote
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/quixote/server
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/quixote/form
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/quixote/demo
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/quixote
