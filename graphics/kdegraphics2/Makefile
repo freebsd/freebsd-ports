@@ -3,13 +3,13 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.24 1999/02/28 06:06:24 obrien Exp $
+# $Id: Makefile,v 1.25 1999/02/28 21:32:01 asami Exp $
 #
 
-DISTNAME=	kdegraphics-1.1
+DISTNAME=	kdegraphics-1.1.1
 CATEGORIES=	graphics kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
-MASTER_SITE_SUBDIR= stable/1.1/distribution/tar/generic/source/bz2
+MASTER_SITE_SUBDIR= stable/1.1.1/distribution/tar/generic/source/bz2
 
 MAINTAINER=	se@freebsd.org
 

@@ -227,6 +227,7 @@ share/locale/sl/LC_MESSAGES/kde.mo
 share/locale/sl/charset
 share/locale/sv/LC_MESSAGES/kde.mo
 share/locale/sv/charset
+share/locale/th/LC_MESSAGES/kde.mo
 share/locale/tr/LC_MESSAGES/kde.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/kde.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/kde.mo
@@ -317,6 +318,8 @@ share/toolbar/viewzoom.xpm
 @dirrm share/locale/zh_CN.GB2312
 @dirrm share/locale/tr/LC_MESSAGES
 @dirrm share/locale/tr
+@dirrm share/locale/th/LC_MESSAGES
+@dirrm share/locale/th
 @dirrm share/locale/sv/LC_MESSAGES
 @dirrm share/locale/sv
 @dirrm share/locale/sl/LC_MESSAGES

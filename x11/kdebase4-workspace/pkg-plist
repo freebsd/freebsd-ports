@@ -49,6 +49,7 @@ bin/klock
 bin/kmenuedit
 bin/kmorph3d.kss
 bin/konsole
+bin/konsole_grantpty
 bin/kpager
 bin/kpanel
 bin/kpipes.kss
@@ -90,7 +91,6 @@ share/applnk/Settings/Applications/.directory
 share/applnk/Settings/Applications/kdm.kdelnk
 share/applnk/Settings/Applications/kfm.kdelnk
 share/applnk/Settings/Applications/kfmbrowser.kdelnk
-share/applnk/Settings/Applications/konsole.kdelnk
 share/applnk/Settings/Applications/panel.kdelnk
 share/applnk/Settings/Desktop/.directory
 share/applnk/Settings/Desktop/background.kdelnk
@@ -265,6 +265,7 @@ share/apps/kcmlocale/pics/flag_ca.gif
 share/apps/kcmlocale/pics/flag_cs.gif
 share/apps/kcmlocale/pics/flag_da.gif
 share/apps/kcmlocale/pics/flag_de.gif
+share/apps/kcmlocale/pics/flag_de_CH.gif
 share/apps/kcmlocale/pics/flag_el.gif
 share/apps/kcmlocale/pics/flag_en.gif
 share/apps/kcmlocale/pics/flag_en_UK.gif
@@ -274,6 +275,7 @@ share/apps/kcmlocale/pics/flag_et.gif
 share/apps/kcmlocale/pics/flag_fi.gif
 share/apps/kcmlocale/pics/flag_fr.gif
 share/apps/kcmlocale/pics/flag_fr_CA.gif
+share/apps/kcmlocale/pics/flag_fr_CH.gif
 share/apps/kcmlocale/pics/flag_he.gif
 share/apps/kcmlocale/pics/flag_hr.gif
 share/apps/kcmlocale/pics/flag_hu.gif
@@ -295,6 +297,7 @@ share/apps/kcmlocale/pics/flag_us_eu.gif
 share/apps/kcmlocale/pics/flag_zh_CN.GB2312.gif
 share/apps/kcmlocale/pics/flag_zh_TW.Big5.gif
 share/apps/kcontrol/pics/kdekcc.xpm
+share/apps/kdisknav/CD-ROM.kdelnk
 share/apps/kdisknav/KDE.kdelnk
 share/apps/kdisknav/Root.kdelnk
 share/apps/kdisplay/app-defaults/AAAAAAGeneral.ad
@@ -306,9 +309,11 @@ share/apps/kdisplay/app-defaults/Emacs.ad
 share/apps/kdisplay/app-defaults/ML.ad
 share/apps/kdisplay/app-defaults/Nedit.ad
 share/apps/kdisplay/app-defaults/Netscape.ad
+share/apps/kdisplay/app-defaults/RVPlayer.ad
 share/apps/kdisplay/app-defaults/XCalc.ad
 share/apps/kdisplay/app-defaults/XTerm.ad
 share/apps/kdisplay/app-defaults/XV.ad
+share/apps/kdisplay/app-defaults/XWp.ad
 share/apps/kdisplay/color-schemes/AtlasGreen.kcsrc
 share/apps/kdisplay/color-schemes/BeOS.kcsrc
 share/apps/kdisplay/color-schemes/BlueSlate.kcsrc
@@ -371,18 +376,26 @@ share/apps/kikbd/csp.kimap
 share/apps/kikbd/csy.kimap
 share/apps/kikbd/csz.kimap
 share/apps/kikbd/de.kimap
-share/apps/kikbd/el.kimap
+share/apps/kikbd/de_ch.kimap
+share/apps/kikbd/dv.kimap
+share/apps/kikbd/el1.kimap
+share/apps/kikbd/el7.kimap
 share/apps/kikbd/en.kimap
 share/apps/kikbd/es.kimap
 share/apps/kikbd/fi.kimap
 share/apps/kikbd/fr.kimap
+share/apps/kikbd/fr_ch.kimap
 share/apps/kikbd/he.kimap
+share/apps/kikbd/hr.kimap
 share/apps/kikbd/hu.kimap
 share/apps/kikbd/is.kimap
+share/apps/kikbd/it.kimap
+share/apps/kikbd/la.kimap
 share/apps/kikbd/lt.kimap
 share/apps/kikbd/no.kimap
 share/apps/kikbd/pl.kimap
 share/apps/kikbd/plnew.kimap
+share/apps/kikbd/ro.kimap
 share/apps/kikbd/ru.kimap
 share/apps/kikbd/rua.kimap
 share/apps/kikbd/rui.kimap
@@ -394,6 +407,7 @@ share/apps/kikbd/skp.kimap
 share/apps/kikbd/sky.kimap
 share/apps/kikbd/skz.kimap
 share/apps/kikbd/sv.kimap
+share/apps/kikbd/th.kimap
 share/apps/kikbd/ua.kimap
 share/apps/kikbd/uam.kimap
 share/apps/kikbd/uaw.kimap
@@ -412,6 +426,7 @@ share/apps/konsole/default.Schema
 share/apps/konsole/linux.kdelnk
 share/apps/konsole/mc.kdelnk
 share/apps/konsole/shell.kdelnk
+share/apps/konsole/su.kdelnk
 share/apps/konsole/syscolor.schema
 share/apps/konsole/vim.schema
 share/apps/kpanel/default/Desktop.kdelnk
@@ -457,11 +472,6 @@ share/config/kdmrc
 share/config/kfmrc
 share/config/kikbdrc
 share/config/kpanelrc
-share/doc/HTML/de/kcontrol/kcmsyssound/logotp3.gif
-share/doc/HTML/de/kcontrol/kcmsyssound/syssound-1.html
-share/doc/HTML/de/kcontrol/kcmsyssound/syssound-2.html
-share/doc/HTML/de/kcontrol/kcmsyssound/syssound-3.html
-share/doc/HTML/de/kcontrol/kcmsyssound/syssound.html
 share/doc/HTML/en/kcontrol/index-1.html
 share/doc/HTML/en/kcontrol/index-2.html
 share/doc/HTML/en/kcontrol/index.html
@@ -531,8 +541,6 @@ share/doc/HTML/en/kcontrol/kcmsamba/smbstatus-2.html
 share/doc/HTML/en/kcontrol/kcmsamba/smbstatus.html
 share/doc/HTML/en/kcontrol/kcmsyssound/logotp3.gif
 share/doc/HTML/en/kcontrol/kcmsyssound/syssound-1.html
-share/doc/HTML/en/kcontrol/kcmsyssound/syssound-2.html
-share/doc/HTML/en/kcontrol/kcmsyssound/syssound-3.html
 share/doc/HTML/en/kcontrol/kcmsyssound/syssound.html
 share/doc/HTML/en/kcontrol/kdmconfig/index.html
 share/doc/HTML/en/kcontrol/kdmconfig/kdm-appear.html
@@ -708,11 +716,6 @@ share/doc/HTML/en/kwm/index-5.html
 share/doc/HTML/en/kwm/index-6.html
 share/doc/HTML/en/kwm/index.html
 share/doc/HTML/en/kwm/logotp3.gif
-share/doc/HTML/no/kcontrol/kcmsyssound/logotp3.gif
-share/doc/HTML/no/kcontrol/kcmsyssound/syssound-1.html
-share/doc/HTML/no/kcontrol/kcmsyssound/syssound-2.html
-share/doc/HTML/no/kcontrol/kcmsyssound/syssound-3.html
-share/doc/HTML/no/kcontrol/kcmsyssound/syssound.html
 share/doc/HTML/ru/kikbd/advanced.gif
 share/doc/HTML/ru/kikbd/general.gif
 share/doc/HTML/ru/kikbd/kikbd-1.html
@@ -1083,6 +1086,36 @@ share/icons/x.xpm
 share/icons/y_src.xpm
 share/icons/zip_mount.xpm
 share/icons/zip_unmount.xpm
+share/locale/br/LC_MESSAGES/kbgndwm.mo
+share/locale/br/LC_MESSAGES/kcmbell.mo
+share/locale/br/LC_MESSAGES/kcmdisplay.mo
+share/locale/br/LC_MESSAGES/kcminfo.mo
+share/locale/br/LC_MESSAGES/kcminput.mo
+share/locale/br/LC_MESSAGES/kcmkeys.mo
+share/locale/br/LC_MESSAGES/kcmkfm.mo
+share/locale/br/LC_MESSAGES/kcmkpanel.mo
+share/locale/br/LC_MESSAGES/kcmkwm.mo
+share/locale/br/LC_MESSAGES/kcmlocale.mo
+share/locale/br/LC_MESSAGES/kcmsamba.mo
+share/locale/br/LC_MESSAGES/kcmsample.mo
+share/locale/br/LC_MESSAGES/kcmsyssound.mo
+share/locale/br/LC_MESSAGES/kcontrol.mo
+share/locale/br/LC_MESSAGES/kdehelp.mo
+share/locale/br/LC_MESSAGES/kdm.mo
+share/locale/br/LC_MESSAGES/kdmconfig.mo
+share/locale/br/LC_MESSAGES/kfind.mo
+share/locale/br/LC_MESSAGES/kfm.mo
+share/locale/br/LC_MESSAGES/kfontmanager.mo
+share/locale/br/LC_MESSAGES/kikbd.mo
+share/locale/br/LC_MESSAGES/klock.mo
+share/locale/br/LC_MESSAGES/kmenuedit.mo
+share/locale/br/LC_MESSAGES/konsole.mo
+share/locale/br/LC_MESSAGES/kpager.mo
+share/locale/br/LC_MESSAGES/kpanel.mo
+share/locale/br/LC_MESSAGES/krootwm.mo
+share/locale/br/LC_MESSAGES/kstart.mo
+share/locale/br/LC_MESSAGES/kvt.mo
+share/locale/br/LC_MESSAGES/kwm.mo
 share/locale/ca/LC_MESSAGES/kbgndwm.mo
 share/locale/ca/LC_MESSAGES/kcmbell.mo
 share/locale/ca/LC_MESSAGES/kcmdisplay.mo
@@ -1353,6 +1386,7 @@ share/locale/fi/LC_MESSAGES/krootwm.mo
 share/locale/fi/LC_MESSAGES/kstart.mo
 share/locale/fi/LC_MESSAGES/kvt.mo
 share/locale/fi/LC_MESSAGES/kwm.mo
+share/locale/fr/LC_MESSAGES/kbgndwm.mo
 share/locale/fr/LC_MESSAGES/kcmbell.mo
 share/locale/fr/LC_MESSAGES/kcmdisplay.mo
 share/locale/fr/LC_MESSAGES/kcminfo.mo
@@ -1395,6 +1429,8 @@ share/locale/he/LC_MESSAGES/kfind.mo
 share/locale/he/LC_MESSAGES/kfm.mo
 share/locale/he/LC_MESSAGES/kpanel.mo
 share/locale/he/LC_MESSAGES/krootwm.mo
+share/locale/he/LC_MESSAGES/ksysv.mo
+share/locale/he/LC_MESSAGES/kuser.mo
 share/locale/he/LC_MESSAGES/kvt.mo
 share/locale/he/LC_MESSAGES/kwm.mo
 share/locale/hr/LC_MESSAGES/kbgndwm.mo
@@ -1449,8 +1485,12 @@ share/locale/hu/LC_MESSAGES/kfm.mo
 share/locale/hu/LC_MESSAGES/kfontmanager.mo
 share/locale/hu/LC_MESSAGES/kikbd.mo
 share/locale/hu/LC_MESSAGES/klock.mo
+share/locale/hu/LC_MESSAGES/kmenuedit.mo
+share/locale/hu/LC_MESSAGES/konsole.mo
+share/locale/hu/LC_MESSAGES/kpager.mo
 share/locale/hu/LC_MESSAGES/kpanel.mo
 share/locale/hu/LC_MESSAGES/krootwm.mo
+share/locale/hu/LC_MESSAGES/kstart.mo
 share/locale/hu/LC_MESSAGES/kvt.mo
 share/locale/hu/LC_MESSAGES/kwm.mo
 share/locale/is/LC_MESSAGES/kbgndwm.mo
@@ -1473,6 +1513,7 @@ share/locale/is/LC_MESSAGES/kdmconfig.mo
 share/locale/is/LC_MESSAGES/kfind.mo
 share/locale/is/LC_MESSAGES/kfm.mo
 share/locale/is/LC_MESSAGES/kfontmanager.mo
+share/locale/is/LC_MESSAGES/kikbd.mo
 share/locale/is/LC_MESSAGES/klock.mo
 share/locale/is/LC_MESSAGES/kmenuedit.mo
 share/locale/is/LC_MESSAGES/konsole.mo
@@ -1681,6 +1722,7 @@ share/locale/pt_BR/LC_MESSAGES/krootwm.mo
 share/locale/pt_BR/LC_MESSAGES/kstart.mo
 share/locale/pt_BR/LC_MESSAGES/kvt.mo
 share/locale/pt_BR/LC_MESSAGES/kwm.mo
+share/locale/ro/LC_MESSAGES/kbgndwm.mo
 share/locale/ro/LC_MESSAGES/kcmbell.mo
 share/locale/ro/LC_MESSAGES/kcmdisplay.mo
 share/locale/ro/LC_MESSAGES/kcminfo.mo
@@ -1833,10 +1875,13 @@ share/locale/tr/LC_MESSAGES/krootwm.mo
 share/locale/tr/LC_MESSAGES/kstart.mo
 share/locale/tr/LC_MESSAGES/kvt.mo
 share/locale/tr/LC_MESSAGES/kwm.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/kbgndwm.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/kcmbell.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/kcmdisplay.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/kcminfo.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/kcminput.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/kcmkeys.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/kcmkfm.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/kcmkpanel.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/kcmkwm.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/kcmlocale.mo
@@ -1854,6 +1899,7 @@ share/locale/zh_CN.GB2312/LC_MESSAGES/kikbd.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/klock.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/kmenuedit.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/konsole.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/kpager.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/kpanel.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/krootwm.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/kstart.mo
@@ -1940,6 +1986,7 @@ share/mimelnk/text/x-tcl.kdelnk
 share/mimelnk/text/x-tex.kdelnk
 share/mimelnk/video/mpeg.kdelnk
 share/mimelnk/video/quicktime.kdelnk
+share/mimelnk/video/x-flic.kdelnk
 share/mimelnk/video/x-msvideo.kdelnk
 share/wallpapers/abnormal_fluid.jpg
 share/wallpapers/absolute_zero.jpg
@@ -2093,9 +2140,6 @@ share/wallpapers/wood1.jpg
 @dirrm share/icons
 @dirrm share/doc/HTML/ru/kikbd
 @dirrm share/doc/HTML/ru
-@dirrm share/doc/HTML/no/kcontrol/kcmsyssound
-@dirrm share/doc/HTML/no/kcontrol
-@dirrm share/doc/HTML/no
 @dirrm share/doc/HTML/en/kwm
 @dirrm share/doc/HTML/en/kvt
 @dirrm share/doc/HTML/en/kpanel
@@ -2126,10 +2170,6 @@ share/wallpapers/wood1.jpg
 @dirrm share/doc/HTML/en/kcontrol/kcmdisplay
 @dirrm share/doc/HTML/en/kcontrol/kcmbell
 @dirrm share/doc/HTML/en/kcontrol
-@dirrm share/doc/HTML/en
-@dirrm share/doc/HTML/de/kcontrol/kcmsyssound
-@dirrm share/doc/HTML/de/kcontrol
-@dirrm share/doc/HTML/de
 @dirrm share/apps/kwm/pics
 @dirrm share/apps/kwm
 @dirrm share/apps/kscreensaver
@@ -2188,4 +2228,5 @@ share/wallpapers/wood1.jpg
 @dirrm share/applnk/Graphics
 @dirrm share/applnk/Games
 @dirrm share/applnk/Applications
+@dirrm share/applnk
 @dirrm cgi-bin

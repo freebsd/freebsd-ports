@@ -1,5 +1,5 @@
-*** kdm/config/kdmrc.cpp~	Thu Dec 31 14:59:39 1998
---- kdm/config/kdmrc.cpp	Sun Jan  3 15:41:31 1999
+*** kdm/config/kdmrc.in~	Tue Feb  9 23:13:14 1999
+--- kdm/config/kdmrc.in	Wed Apr 21 18:45:34 1999
 ***************
 *** 9,13 ****
   SortUsers=true
