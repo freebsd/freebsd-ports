@@ -28,6 +28,8 @@ lib/%%PYTHON_VERSION%%/site-packages/pygame/mouse.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/movie.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/rect.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/rwobject.so
+lib/%%PYTHON_VERSION%%/site-packages/pygame/sprite.py
+lib/%%PYTHON_VERSION%%/site-packages/pygame/sprite.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pygame/surface.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/surfarray.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/surflock.so
@@ -46,6 +48,7 @@ lib/%%PYTHON_VERSION%%/site-packages/pygame/version.pyc
 %%PORTDOCS%%share/doc/py-game/pygame_tiny.gif
 %%PORTDOCS%%share/doc/py-game/ref/CD.html
 %%PORTDOCS%%share/doc/py-game/ref/Channel.html
+%%PORTDOCS%%share/doc/py-game/ref/Clock.html
 %%PORTDOCS%%share/doc/py-game/ref/Font.html
 %%PORTDOCS%%share/doc/py-game/ref/Joystick.html
 %%PORTDOCS%%share/doc/py-game/ref/Movie.html
@@ -68,6 +71,7 @@ lib/%%PYTHON_VERSION%%/site-packages/pygame/version.pyc
 %%PORTDOCS%%share/doc/py-game/ref/pygame_mixer_music.html
 %%PORTDOCS%%share/doc/py-game/ref/pygame_mouse.html
 %%PORTDOCS%%share/doc/py-game/ref/pygame_movie.html
+%%PORTDOCS%%share/doc/py-game/ref/pygame_sprite.html
 %%PORTDOCS%%share/doc/py-game/ref/pygame_surfarray.html
 %%PORTDOCS%%share/doc/py-game/ref/pygame_time.html
 %%PORTDOCS%%share/doc/py-game/ref/pygame_transform.html
@@ -75,6 +79,8 @@ lib/%%PYTHON_VERSION%%/site-packages/pygame/version.pyc
 %%PORTDOCS%%share/doc/py-game/tut/ChimpLineByLine.html
 %%PORTDOCS%%share/doc/py-game/tut/DisplayModes.html
 %%PORTDOCS%%share/doc/py-game/tut/Executable.html
+%%PORTDOCS%%share/doc/py-game/tut/MoveIt.html
+%%PORTDOCS%%share/doc/py-game/tut/SpriteIntro.html
 %%PORTDOCS%%share/doc/py-game/tut/SurfarrayIntro.html
 %%PORTDOCS%%share/doc/py-game/tut/allblack.jpg
 %%PORTDOCS%%share/doc/py-game/tut/chimp.py.html
@@ -119,12 +125,12 @@ lib/%%PYTHON_VERSION%%/site-packages/pygame/version.pyc
 %%PORTDOCS%%share/examples/py-game/fonty.py
 %%PORTDOCS%%share/examples/py-game/glcube.py
 %%PORTDOCS%%share/examples/py-game/liquid.py
+%%PORTDOCS%%share/examples/py-game/moveit.py
 %%PORTDOCS%%share/examples/py-game/oldalien.py
 %%PORTDOCS%%share/examples/py-game/sdllogos.zip
 %%PORTDOCS%%share/examples/py-game/sound.py
 %%PORTDOCS%%share/examples/py-game/stars.py
 %%PORTDOCS%%share/examples/py-game/vgrade.py
-%%PORTDOCS%%share/examples/py-game/winaliens.pyw
 %%PORTDOCS%%share/examples/py-game/zipshow.py
 %%PORTDOCS%%@dirrm share/examples/py-game/data
 %%PORTDOCS%%@dirrm share/examples/py-game
