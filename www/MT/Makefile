@@ -14,10 +14,6 @@ COMMENT=	A web-based personal publishing system like weblogs
 
 DISTNAME=	${PORTNAME}-${PORTVERSION}-full-lib
 DOWNLOAD_URL?=	http://www.movabletype.org/download.shtml
-.if !exists(${DISTDIR}/${DISTFILES})
-IGNORE=		Please download the distfiles from ${DOWNLOAD_URL} and read \
-		the license agreement before download.
-.endif
 
 DATADIR=	www/data/mt
 CGIDIR=		www/cgi-bin/mt
@@ -39,6 +35,16 @@ USE_PERL5_RUN=	yes
 NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>
+
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
+ECHO_MSG=/usr/bin/printf
+IGNORE=	:\n\
+Because of licensing restrictions, you must fetch the source distribution\n\
+manually.  Please access ${DOWNLOAD_URL}, follow\n\
+the registration instructions, select \"full version, with libraries\" and\n\
+\"gzipped tar\", download the file into ${DISTDIR}/, and then\n\
+run make again.\n
+.endif
 
 do-install:
 	@cd ${WRKSRC} && ${FIND} * -name "*.orig" -delete
