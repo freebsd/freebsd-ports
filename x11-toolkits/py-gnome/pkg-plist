@@ -81,13 +81,13 @@ share/examples/py-gnome/stock_demo.py
 share/examples/py-gnome/ted_demo.py
 share/examples/py-gnome/uiinfo_demo.py
 share/examples/py-gnome/zterm.py
-share/gnome/pygtk/1.2/defs/applet.defs
-share/gnome/pygtk/1.2/defs/capplet.defs
-share/gnome/pygtk/1.2/defs/gnome-enums.defs
-share/gnome/pygtk/1.2/defs/gnome.defs
-share/gnome/pygtk/1.2/defs/gnomeui.defs
-share/gnome/pygtk/1.2/defs/gtkhtml.defs
-share/gnome/pygtk/1.2/defs/xmhtml.defs
-share/gnome/pygtk/1.2/defs/zvt.defs
+share/pygtk/1.2/defs/applet.defs
+share/pygtk/1.2/defs/capplet.defs
+share/pygtk/1.2/defs/gnome-enums.defs
+share/pygtk/1.2/defs/gnome.defs
+share/pygtk/1.2/defs/gnomeui.defs
+share/pygtk/1.2/defs/gtkhtml.defs
+share/pygtk/1.2/defs/xmhtml.defs
+share/pygtk/1.2/defs/zvt.defs
 @dirrm share/examples/py-gnome
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/gnome
