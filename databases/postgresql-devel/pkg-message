@@ -2,27 +2,23 @@
 
       * IMPORTANT UPGRADE NOTICE * IMPORTANT UPGRADE NOTICE *
 
-The PostgreSQL port now obeys hier(7) by default, which means that it
-installs into:
+If you have not backed up your data from the previous version, revert
+to using an older copy of this port and dump your data before
+proceeding.  Upgrading without performing a dump will likely result in
+instability, data loss, interoperability problems, and performance
+issues.  It is recommended that you re-initdb between upgrades.  If
+you have made a backup, ignore this warning.
 
-/usr/local/bin
-/usr/local/lib
-/usr/local/include  (NOTE! Changed again in 7.2, since PostgreSQL
-                           handles standard install nowadays)
+Please remember to keep PostgreSQL client installations in sync with
+the server.
 
-You *must* move away your old installation from users' and
-ldconfig(8)'s PATHs.
+You might want to add the following tunable to /etc/make.conf
 
-The pgsql user's home dir is /usr/local/pgsql by default, but can be
-changed with for example chpass(1). Datadir defaults to ~pgsql/data,
-but can be changed by modifying the ~pgsql/.profile script.
+POSTGRESQL_PORT=databases/postgresql-devel
 
 ======================================================================
 
-To initialize the database, you should run initdb as the "pgsql" user
-(if you want to use your locale for collation, edit ~pgsql/.profile
-and set the locale to your preference first).
-
+To initialize the database, you should run initdb as the "pgsql" user.
 Example:
 
   su -l pgsql -c initdb

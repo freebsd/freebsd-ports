@@ -1,18 +1,11 @@
 # both new and old layout's paths, but new path first...
 PATH=%%PREFIX%%/bin:${PATH}
 
-PGLIB=%%PREFIX%%/lib
-
 # note: PGDATA can be overridden by the -D startup option
 PGDATA=${HOME}/data
 
-export PATH PGLIB PGDATA
+export PATH PGDATA
 
 #You might want to set some locale stuff here
-#PGDATESTYLE=ISO
 #LC_ALL=sv_SE.ISO_8859-1
 #export PGDATESTYLE LC_ALL
-
-# if you want to make regression tests use this TZ
-#TZ=PST8PDT
-#export TZ

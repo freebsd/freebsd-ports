@@ -2,15 +2,17 @@
 
       * IMPORTANT UPGRADE NOTICE * IMPORTANT UPGRADE NOTICE *
 
-The PostgreSQL port now obeys hier(7) by default, which means that it
-installs into:
+There may be API compatibility issues between the last stable release
+and this development port.  Please report any problems you have to
+either the module maintainer or the postgresql-devel maintainer.  It
+is advised that you recompile libraries that depend on the
+postgresql-devel port after completing this upgrade.
 
-/usr/local/bin
-/usr/local/lib
-/usr/local/include  (NOTE! Changed again in 7.2, since PostgreSQL
-                           handles standard install nowadays)
+Please remember to upgrade this client installation when upgrading the
+server.
 
-You *must* move away your old installation from users' and
-ldconfig(8)'s PATHs.
+You might want to add the following tunable to /etc/make.conf
+
+POSTGRESQL_PORT=databases/postgresql-devel
 
 ======================================================================
