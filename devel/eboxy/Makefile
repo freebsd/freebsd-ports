@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create simple GUI interfaces for entertainment PC
 
+USE_BISON=	yes
 USE_BZIP2=	yes
 USE_SDL=	sdl gui mixer
 USE_GNOME=	gnometarget libxml2 lthack
