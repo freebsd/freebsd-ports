@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	cos
-PORTVERSION=	12Jun2000
+PORTVERSION=	21May2001
 CATEGORIES=	java
-MASTER_SITES=	http://www.servlets.com/resources/com.oreilly.servlet/
+MASTER_SITES=	http://www.servlets.com/cos/
 
 MAINTAINER=	noway@nohow.demon.co.uk
 
