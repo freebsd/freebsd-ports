@@ -203,17 +203,22 @@
 %%PORTDOCS%%share/doc/biopython/Blast.txt
 %%PORTDOCS%%share/doc/biopython/Enzyme.txt
 %%PORTDOCS%%share/doc/biopython/Fasta.txt
+%%PORTDOCS%%share/doc/biopython/IntelliGenetics.txt
+%%PORTDOCS%%share/doc/biopython/InterPro.txt
 %%PORTDOCS%%share/doc/biopython/KEGG.txt
 %%PORTDOCS%%share/doc/biopython/Medline.txt
 %%PORTDOCS%%share/doc/biopython/Parser.txt
 %%PORTDOCS%%share/doc/biopython/Prosite.txt
 %%PORTDOCS%%share/doc/biopython/References.txt
-%%PORTDOCS%%share/doc/biopython/SCOP.txt
 %%PORTDOCS%%share/doc/biopython/SwissProt.txt
 %%PORTDOCS%%share/doc/biopython/Tutorial.pdf
 %%PORTDOCS%%share/doc/biopython/Tutorial.tex
 %%PORTDOCS%%share/doc/biopython/Tutorial.txt
 %%PORTDOCS%%share/doc/biopython/make_api_docs.py
+%%PORTDOCS%%share/doc/biopython/metatool.txt
+%%PORTDOCS%%share/examples/biopython/GenBank/check_output.py
+%%PORTDOCS%%share/examples/biopython/GenBank/check_output_simple.py
+%%PORTDOCS%%share/examples/biopython/GenBank/find_parser_problems.py
 %%PORTDOCS%%share/examples/biopython/SeqGui/SeqGui.py
 %%PORTDOCS%%share/examples/biopython/clustal_run.py
 %%PORTDOCS%%share/examples/biopython/fasta_consumer.py
@@ -228,6 +233,7 @@
 %%PORTDOCS%%share/examples/biopython/pubmed_search.py
 %%PORTDOCS%%share/examples/biopython/query_entrez.py
 %%PORTDOCS%%share/examples/biopython/query_pubmed.py
+%%PORTDOCS%%share/examples/biopython/scop_pdb.py
 %%PORTDOCS%%share/examples/biopython/swissprot.py
 %%PORTDOCS%%share/examples/biopython/www_blast.py
 %%PORTDOCS%%share/examples/biopython/xbbtools/README
@@ -236,7 +242,9 @@
 %%PORTDOCS%%share/examples/biopython/xbbtools/testrp.fas
 %%PORTDOCS%%share/examples/biopython/xbbtools/xbb_blast.py
 %%PORTDOCS%%share/examples/biopython/xbbtools/xbb_blastbg.py
+%%PORTDOCS%%share/examples/biopython/xbbtools/xbb_help.py
 %%PORTDOCS%%share/examples/biopython/xbbtools/xbb_io.py
+%%PORTDOCS%%share/examples/biopython/xbbtools/xbb_search.py
 %%PORTDOCS%%share/examples/biopython/xbbtools/xbb_sequence.py
 %%PORTDOCS%%share/examples/biopython/xbbtools/xbb_translations.py
 %%PORTDOCS%%share/examples/biopython/xbbtools/xbb_utils.py
@@ -254,6 +262,8 @@ lib/%%PYTHON_VERSION%%/site-packages/Bio/Align/Generic.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Align/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Align/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Align/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Align/cfastpairwise.so
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Align/csupport.so
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Align/fastpairwise.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Align/fastpairwise.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Align/fastpairwise.pyo
@@ -269,6 +279,12 @@ lib/%%PYTHON_VERSION%%/site-packages/Bio/Alphabet/IUPAC.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Alphabet/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Alphabet/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Alphabet/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Application/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Application/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Application/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Blast/Applications.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Blast/Applications.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Blast/Applications.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Blast/NCBIStandalone.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Blast/NCBIStandalone.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Blast/NCBIStandalone.pyo
@@ -296,6 +312,21 @@ lib/%%PYTHON_VERSION%%/site-packages/Bio/Data/IUPACData.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Data/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Data/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Data/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Emboss/Applications.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Emboss/Applications.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Emboss/Applications.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Emboss/Primer.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Emboss/Primer.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Emboss/Primer.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Emboss/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Emboss/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Emboss/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Emboss/primer3_format.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Emboss/primer3_format.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Emboss/primer3_format.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Emboss/primersearch_format.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Emboss/primersearch_format.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Emboss/primersearch_format.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Encodings/IUPACEncoding.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Encodings/IUPACEncoding.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Encodings/IUPACEncoding.pyo
@@ -323,6 +354,54 @@ lib/%%PYTHON_VERSION%%/site-packages/Bio/Fasta/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Bio/File.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/File.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Bio/File.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Crossover/General.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Crossover/General.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Crossover/General.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Crossover/Point.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Crossover/Point.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Crossover/Point.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Crossover/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Crossover/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Crossover/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Evolver.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Evolver.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Evolver.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Mutation/General.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Mutation/General.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Mutation/General.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Mutation/Simple.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Mutation/Simple.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Mutation/Simple.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Mutation/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Mutation/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Mutation/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Organism.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Organism.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Organism.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Repair/Stabilizing.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Repair/Stabilizing.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Repair/Stabilizing.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Repair/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Repair/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Repair/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Selection/Abstract.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Selection/Abstract.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Selection/Abstract.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Selection/Diversity.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Selection/Diversity.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Selection/Diversity.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Selection/RouletteWheel.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Selection/RouletteWheel.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Selection/RouletteWheel.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Selection/Tournament.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Selection/Tournament.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Selection/Tournament.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Selection/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Selection/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Selection/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Bio/GenBank/LocationParser.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/GenBank/LocationParser.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Bio/GenBank/LocationParser.pyo
@@ -335,12 +414,54 @@ lib/%%PYTHON_VERSION%%/site-packages/Bio/GenBank/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Bio/GenBank/genbank_format.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/GenBank/genbank_format.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Bio/GenBank/genbank_format.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GenBank/utils.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GenBank/utils.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/GenBank/utils.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Gobase/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Gobase/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Gobase/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Graphics/BasicChromosome.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Graphics/BasicChromosome.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Graphics/BasicChromosome.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Graphics/Comparative.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Graphics/Comparative.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Graphics/Comparative.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Graphics/DisplayRepresentation.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Graphics/DisplayRepresentation.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Graphics/DisplayRepresentation.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Graphics/Distribution.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Graphics/Distribution.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Graphics/Distribution.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Graphics/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Graphics/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Graphics/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/HMM/DynamicProgramming.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/HMM/DynamicProgramming.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/HMM/DynamicProgramming.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/HMM/MarkovModel.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/HMM/MarkovModel.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/HMM/MarkovModel.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/HMM/Trainer.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/HMM/Trainer.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/HMM/Trainer.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/HMM/Utilities.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/HMM/Utilities.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/HMM/Utilities.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/HMM/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/HMM/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/HMM/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Index.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Index.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Index.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/IntelliGenetics/Record.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/IntelliGenetics/Record.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/IntelliGenetics/Record.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/IntelliGenetics/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/IntelliGenetics/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/IntelliGenetics/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/IntelliGenetics/intelligenetics_format.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/IntelliGenetics/intelligenetics_format.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/IntelliGenetics/intelligenetics_format.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Bio/InterPro/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/InterPro/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Bio/InterPro/__init__.pyo
@@ -356,6 +477,12 @@ lib/%%PYTHON_VERSION%%/site-packages/Bio/KEGG/Enzyme/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Bio/KEGG/Enzyme/enzyme_format.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/KEGG/Enzyme/enzyme_format.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Bio/KEGG/Enzyme/enzyme_format.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/KEGG/Map/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/KEGG/Map/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/KEGG/Map/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/KEGG/Map/map_format.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/KEGG/Map/map_format.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/KEGG/Map/map_format.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Bio/KEGG/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/KEGG/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Bio/KEGG/__init__.pyo
@@ -368,18 +495,99 @@ lib/%%PYTHON_VERSION%%/site-packages/Bio/Kabat/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Kabat/kabat_format.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Kabat/kabat_format.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Kabat/kabat_format.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Medline/NLMMedlineXML.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Medline/NLMMedlineXML.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Medline/NLMMedlineXML.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Medline/PubMed.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Medline/PubMed.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Medline/PubMed.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Medline/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Medline/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Medline/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Medline/nlmmedline_001211_format.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Medline/nlmmedline_001211_format.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Medline/nlmmedline_001211_format.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Medline/nlmmedline_010319_format.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Medline/nlmmedline_010319_format.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Medline/nlmmedline_010319_format.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Medline/nlmmedline_011101_format.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Medline/nlmmedline_011101_format.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Medline/nlmmedline_011101_format.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/MetaTool/Input.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/MetaTool/Input.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/MetaTool/Input.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/MetaTool/Record.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/MetaTool/Record.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/MetaTool/Record.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/MetaTool/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/MetaTool/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/MetaTool/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/MetaTool/metatool_format.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/MetaTool/metatool_format.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/MetaTool/metatool_format.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NBRF/Record.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NBRF/Record.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NBRF/Record.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NBRF/ValSeq.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NBRF/ValSeq.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NBRF/ValSeq.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NBRF/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NBRF/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NBRF/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NBRF/nbrf_format.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NBRF/nbrf_format.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NBRF/nbrf_format.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NeuralNetwork/BackPropagation/Layer.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NeuralNetwork/BackPropagation/Layer.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NeuralNetwork/BackPropagation/Layer.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NeuralNetwork/BackPropagation/Network.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NeuralNetwork/BackPropagation/Network.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NeuralNetwork/BackPropagation/Network.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NeuralNetwork/BackPropagation/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NeuralNetwork/BackPropagation/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NeuralNetwork/BackPropagation/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NeuralNetwork/Gene/Motif.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NeuralNetwork/Gene/Motif.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NeuralNetwork/Gene/Motif.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NeuralNetwork/Gene/Pattern.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NeuralNetwork/Gene/Pattern.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NeuralNetwork/Gene/Pattern.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NeuralNetwork/Gene/Schema.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NeuralNetwork/Gene/Schema.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NeuralNetwork/Gene/Schema.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NeuralNetwork/Gene/Signature.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NeuralNetwork/Gene/Signature.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NeuralNetwork/Gene/Signature.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NeuralNetwork/Gene/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NeuralNetwork/Gene/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NeuralNetwork/Gene/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NeuralNetwork/StopTraining.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NeuralNetwork/StopTraining.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NeuralNetwork/StopTraining.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NeuralNetwork/Training.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NeuralNetwork/Training.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NeuralNetwork/Training.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NeuralNetwork/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NeuralNetwork/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/NeuralNetwork/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Bio/PDB/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/PDB/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Bio/PDB/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Bio/ParserSupport.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/ParserSupport.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Bio/ParserSupport.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Pathway/Rep/HashSet.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Pathway/Rep/HashSet.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Pathway/Rep/HashSet.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Pathway/Rep/MultiGraph.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Pathway/Rep/MultiGraph.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Pathway/Rep/MultiGraph.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Pathway/Rep/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Pathway/Rep/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Pathway/Rep/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Pathway/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Pathway/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Pathway/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Bio/PropertyManager.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/PropertyManager.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Bio/PropertyManager.pyo
@@ -401,15 +609,27 @@ lib/%%PYTHON_VERSION%%/site-packages/Bio/Rebase/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Bio/RecordFile.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/RecordFile.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Bio/RecordFile.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Cla.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Cla.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Cla.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Des.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Des.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Des.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Dom.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Dom.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Dom.pyo
-lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Lin.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Lin.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Lin.pyo
-lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Location.py
-lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Location.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Location.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/FileIndex.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/FileIndex.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/FileIndex.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Hie.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Hie.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Hie.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Raf.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Raf.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Raf.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Residues.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Residues.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/Residues.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP/__init__.pyo
@@ -425,6 +645,9 @@ lib/%%PYTHON_VERSION%%/site-packages/Bio/SeqIO/FASTA.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Bio/SeqIO/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/SeqIO/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Bio/SeqIO/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SeqIO/generic.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SeqIO/generic.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/SeqIO/generic.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Bio/SeqRecord.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/SeqRecord.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Bio/SeqRecord.pyo
@@ -446,6 +669,9 @@ lib/%%PYTHON_VERSION%%/site-packages/Bio/SwissProt/SProt.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Bio/SwissProt/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/SwissProt/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Bio/SwissProt/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification/LogisticRegression.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification/LogisticRegression.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification/LogisticRegression.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification/MaxEntropy.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification/MaxEntropy.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification/MaxEntropy.pyo
@@ -516,6 +742,9 @@ lib/%%PYTHON_VERSION%%/site-packages/Bio/UniGene/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Bio/WWW/ExPASy.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/WWW/ExPASy.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Bio/WWW/ExPASy.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/WWW/InterPro.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/WWW/InterPro.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/WWW/InterPro.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Bio/WWW/NCBI.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/WWW/NCBI.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Bio/WWW/NCBI.pyo
@@ -547,22 +776,40 @@ lib/%%PYTHON_VERSION%%/site-packages/Bio/utils.pyo
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/SCOP
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Rebase
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Prosite
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Pathway/Rep
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Pathway
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/PDB
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/NeuralNetwork/Gene
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/NeuralNetwork/BackPropagation
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/NeuralNetwork
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/NBRF
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/MetaTool
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Medline
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Kabat
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/KEGG/Map
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/KEGG/Enzyme
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/KEGG/Compound
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/KEGG
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/InterPro
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/IntelliGenetics
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/HMM
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Graphics
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Gobase
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/GenBank
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Selection
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Repair
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Mutation
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/GA/Crossover
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/GA
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Fasta
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/FSSP
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Enzyme
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Encodings
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Emboss
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Data
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Clustalw
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Blast
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Application
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Alphabet
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Align
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio
@@ -570,6 +817,7 @@ lib/%%PYTHON_VERSION%%/site-packages/Bio/utils.pyo
 %%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/doc/biopython/BioCorba
 %%PORTDOCS%%@dirrm share/examples/biopython/xbbtools
 %%PORTDOCS%%@dirrm share/examples/biopython/SeqGui
+%%PORTDOCS%%@dirrm share/examples/biopython/GenBank
 %%PORTDOCS%%@dirrm share/examples/biopython
 %%PORTDOCS%%@dirrm share/doc/biopython
 %%PLIST_OMNIORB%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/bsane__POA/seqcore
