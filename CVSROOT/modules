@@ -10380,6 +10380,7 @@ shftool		ports/converters/shftool
 shishi		ports/security/shishi
 shlock		ports/sysutils/shlock
 shmap		ports/devel/shmap
+shmux		ports/net/shmux
 shntool		ports/audio/shntool
 shorten		ports/audio/shorten
 shout		ports/audio/shout
