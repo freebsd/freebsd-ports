@@ -10716,11 +10716,9 @@ share/texmf/tex/latex/utopia/t1put.fd
 share/texmf/tex/latex/utopia/ts1put.fd
 share/texmf/tex/latex/utopia/utopia.sty
 @dirrm share/texmf/tex/latex/utopia
-@dirrm share/texmf/tex/latex/titlesec
 @dirrm share/texmf/tex/latex/seminar/src
 @dirrm share/texmf/tex/latex/seminar/inputs
 @dirrm share/texmf/tex/latex/seminar/doc
-@dirrm share/texmf/tex/latex/seminar
 @dirrm share/texmf/tex/latex/pstricks/origdoc
 @dirrm share/texmf/tex/latex/pstricks/latex
 @dirrm share/texmf/tex/latex/pstricks/generic
@@ -10733,21 +10731,15 @@ share/texmf/tex/latex/utopia/utopia.sty
 @dirrm share/texmf/tex/latex/pstricks/contrib/palette
 @dirrm share/texmf/tex/latex/pstricks/contrib/misc
 @dirrm share/texmf/tex/latex/pstricks/contrib
-@dirrm share/texmf/tex/latex/pstricks
 @dirrm share/texmf/tex/latex/pdfscreen
 @dirrm share/texmf/tex/latex/package
-@dirrm share/texmf/tex/latex/natbib
 @dirrm share/texmf/tex/latex/misc
-@dirrm share/texmf/tex/latex/minitoc
 @dirrm share/texmf/tex/latex/mathptmx
-@dirrm share/texmf/tex/latex/hyperref
-@dirrm share/texmf/tex/latex/geometry
 @dirrm share/texmf/tex/latex/fontinst/inputs/tex
 @dirrm share/texmf/tex/latex/fontinst/inputs/mtx
 @dirrm share/texmf/tex/latex/fontinst/inputs/etx
 @dirrm share/texmf/tex/latex/fontinst/inputs
 @dirrm share/texmf/tex/latex/fontinst/doc
-@dirrm share/texmf/tex/latex/fontinst
 @dirrm share/texmf/tex/latex/foiltex
 @dirrm share/texmf/tex/latex/cwfont
 @dirrm share/texmf/tex/latex/charter
@@ -10786,6 +10778,5 @@ share/texmf/tex/latex/utopia/utopia.sty
 @dirrm share/texmf/cwtex/examples
 @dirrm share/texmf/cwtex/doc
 @dirrm share/texmf/cwtex
-@dirrm share/texmf/bibtex/bst/base
 @exec %D/bin/mktexlsr
 @unexec %D/bin/mktexlsr
