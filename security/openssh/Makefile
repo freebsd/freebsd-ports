@@ -48,7 +48,6 @@ PAM=no
 CRYPTOLIBS=	-L${OPENSSLLIB} -lcrypto
 # Here, MANDIR is concetenated to DESTDIR which all forms the man install dir...
 MAKE_ENV+=	DESTDIR=${PREFIX} MANDIR=/man/man CRYPTOLIBS="${CRYPTOLIBS}"
-MAKE_ENV+=	LDFLAGS=${LDFLAGS}
 
 .if ${OSVERSION} < 400014
 MAKE_ENV+=	COMPAT_GETADDRINFO=yes
