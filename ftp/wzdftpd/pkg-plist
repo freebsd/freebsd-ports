@@ -2,23 +2,44 @@
 bin/siteconfig
 bin/siteuptime
 bin/sitewho
+bin/wzd-config
 etc/rc.d/wzdftpd.sh
 etc/users.sample
 etc/wzd.cfg.sample
 etc/wzd.pem
+include/wzdftpd/wzd_action.h
+include/wzdftpd/wzd_backend.h
+include/wzdftpd/wzd_cache.h
+include/wzdftpd/wzd_crc32.h
+include/wzdftpd/wzd_crontab.h
+include/wzdftpd/wzd_debug.h
+include/wzdftpd/wzd_dir.h
+include/wzdftpd/wzd_file.h
+include/wzdftpd/wzd_hardlimits.h
+include/wzdftpd/wzd_ip.h
+include/wzdftpd/wzd_libmain.h
+include/wzdftpd/wzd_log.h
+include/wzdftpd/wzd_md5.h
+include/wzdftpd/wzd_messages.h
+include/wzdftpd/wzd_misc.h
+include/wzdftpd/wzd_mod.h
+include/wzdftpd/wzd_mutex.h
+include/wzdftpd/wzd_perm.h
+include/wzdftpd/wzd_section.h
+include/wzdftpd/wzd_shm.h
+include/wzdftpd/wzd_strlcat.h
+include/wzdftpd/wzd_strtok_r.h
+include/wzdftpd/wzd_structs.h
+include/wzdftpd/wzd_types.h
+include/wzdftpd/wzd_utf8.h
+include/wzdftpd/wzd_vars.h
+include/wzdftpd/wzd_vfs.h
 lib/libwzd.a
 lib/libwzd.so
+lib/libwzd.so.1
 lib/libwzd.la
+share/aclocal/wzd.m4
 sbin/wzdftpd
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/Permissions.ReadMeFirst
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TLS.ReadMeFirst
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/DOCS_XFERLOG_FORMAT
-%%PORTDOCS%%%%DOCSDIR%%/KNOWN_BUGS
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 etc/file_ginfo.txt
 etc/file_help.txt
 etc/file_swho.txt
@@ -35,9 +56,13 @@ etc/file_groups.txt
 %%DATADIR%%/modules/libwzd_sfv.la
 %%DATADIR%%/modules/libwzd_sfv.a
 %%DATADIR%%/modules/libwzd_sfv.so
+%%PERL%%%%DATADIR%%/modules/libwzd_perl.a
+%%PERL%%%%DATADIR%%/modules/libwzd_perl.la 
+%%PERL%%%%DATADIR%%/modules/libwzd_perl.so
 %%TCL%%%%DATADIR%%/modules/libwzd_tcl.a
 %%TCL%%%%DATADIR%%/modules/libwzd_tcl.la
 %%TCL%%%%DATADIR%%/modules/libwzd_tcl.so
 @dirrm %%DATADIR%%/modules/
 @dirrm %%DATADIR%%/backends/
 @dirrm %%DATADIR%%/
+@dirrm include/wzdftpd
