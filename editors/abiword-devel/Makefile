@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	AbiWord2
-PORTVERSION=	2.0.8
+PORTVERSION=	2.0.9
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.abisource.com/downloads/Version-${PORTVERSION}/lf/
