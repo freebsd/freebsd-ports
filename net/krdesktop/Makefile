@@ -7,10 +7,10 @@
 PORTNAME=	krdesktop
 PORTVERSION=	1.4
 CATEGORIES=	net kde
-MASTER_SITES=	http://krazykiwi.homeip.net/netwizard/krdesktop/
+MASTER_SITES=	http://hallon.fruitsalad.org/people/mdouhan/krdesktop/
 DISTNAME=	${PORTNAME:S/kr/KR/}-${PORTVERSION}
 
-MAINTAINER=	matt@athame.co.uk
+MAINTAINER=	matt@fruitsalad.org
 
 RUN_DEPENDS=	rdesktop:${PORTSDIR}/net/rdesktop-devel \
 		vncviewer:${PORTSDIR}/net/vnc
