@@ -21,7 +21,8 @@ USE_GMAKE=	yes
 USE_GNOME=	gnometarget gnomehack libxml2
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=15
-CONFIGURE_ARGS=	--disable-doxygen
+CONFIGURE_ARGS=	--disable-doxygen \
+		--with-xkb-base=${X11BASE}/lib/X11/xkb
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
