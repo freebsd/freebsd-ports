@@ -13,8 +13,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=		${PORTNAME}-devel-${PORTVERSION}
 EXTRACT_SUFX=		.tgz
 .ifdef (WITH_DEMOS)
-DISTFILES=		${PORTNAME}-devel-${PORTVERSION} \
-			${PORTNAME}-demo-${PORTVERSION}
+DISTFILES=		${PORTNAME}-devel-${PORTVERSION}${EXTRACT_SUFX} \
+			${PORTNAME}-demo-${PORTVERSION}${EXTRACT_SUFX}
 .endif
 
 MAINTAINER=	tiamat@telegraph.spb.ru
@@ -22,13 +22,15 @@ COMMENT=	Development environment used to build 2D/3D/stereo graphics
 
 LIB_DEPENDS=    jpeg.9:${PORTSDIR}/graphics/jpeg
 
-WRKSRC=		${WRKDIR}/rm142
+WRKSRC=		${WRKDIR}/rm${PORTVERSION:S/.//g}
 .ifdef (WITH_DEMOS)
 WRKSRC2=	${WRKDIR}/rmdemo
+EXTRA_PATCHES=	${PATCHDIR}/makeinclude.diff
 .endif
 
 USE_X_PREFIX=	yes
 USE_MESA=	yes
+USE_REINPLACE=	yes
 ALL_TARGET=	linux docs
 INSTALLS_SHLIB=	yes
 MAKE_ENV=	RM_INSTALL=${X11BASE}
@@ -42,6 +44,13 @@ PLIST_SUB=	WITH_DEMOS=""
 .ifndef (WITH_DEMOS)
 pre-everything::
 	@${ECHO} "You can define WITH_DEMOS=yes to fetch and install available demos"
+.endif
+
+.ifdef (WITH_DEMOS)
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g; \
+			      s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g; \
+			      s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC2}/makeinclude
 .endif
 
 do-install:
