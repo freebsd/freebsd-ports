@@ -15,7 +15,7 @@ DISTFILES=	${DISTNAME}-src.tar.gz
 
 MAINTAINER=	billf@FreeBSD.org
 
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 ALL_TARGET=
 INSTALL_TARGET=	install install-man
 
