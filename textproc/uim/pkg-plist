@@ -1,6 +1,7 @@
 bin/uim-helper-server
 %%GTK%%bin/uim-helper-candwin-gtk
 %%GTK%%bin/uim-helper-toolbar-gtk
+%%GTK%%bin/uim-helper-toolbar-gtk-systray
 bin/uim-xim
 include/uim/uim-helper.h
 include/uim/uim.h
@@ -23,6 +24,7 @@ share/uim/generic.scm
 share/uim/hangul.scm
 share/uim/hangul2.scm
 share/uim/hangul3.scm
+share/uim/hk.scm
 share/uim/im.scm
 share/uim/ipa.scm
 share/uim/japanese.scm
@@ -34,6 +36,13 @@ share/uim/rk.scm
 share/uim/skk-editor.scm
 share/uim/skk.scm
 share/uim/spellcheck.scm
+share/uim/tables/japanese-azik.table
+share/uim/tables/japanese-kana.table
+share/uim/tables/japanese-roma.table
+share/uim/tables/japanese-tcode.table
+share/uim/tables/japanese-tutcode.table
+share/uim/tables/korean-hangul2.table
+share/uim/tables/korean-hangul3.table
 share/uim/tcode.scm
 share/uim/tutcode.scm
 share/uim/util.scm
@@ -41,6 +50,7 @@ share/uim/viqr.scm
 @dirrm include/uim
 %%PORTDOCS%%@dirrm %%DOCSDIR_JA%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm share/uim/tables
 @dirrm share/uim
 %%GTK%%@exec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
 %%GTK%%@unexec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
