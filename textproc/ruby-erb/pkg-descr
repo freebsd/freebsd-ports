@@ -1,7 +1,0 @@
-ERb - Tiny eRuby.
-
-ERb is another eRuby implementation which can be invoked from within a
-script as a library.
-
-Author:	Masatoshi SEKI <m_seki@mva.biglobe.ne.jp>
-WWW:	http://www.ruby-lang.org/raa/list.rhtml?name=erb
