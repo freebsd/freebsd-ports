@@ -8,15 +8,14 @@
 
 PORTNAME=	geotrace
 PORTVERSION=	0.0.4
-CATEGORIES=	net
+PORTREVISION=	1
+CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ijliao@FreeBSD.org
 
-LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
-
-USE_GTK=	yes
+USE_GNOMECTRL=	yes
 
 post-patch:
 	@${PERL} -pi -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/prefs.h

@@ -1,95 +1,72 @@
---- Makefile.in.orig	Wed May 10 17:58:00 2000
-+++ Makefile.in	Tue May 16 15:45:21 2000
-@@ -5,14 +5,15 @@
- @MCFGR@@MCF@
+--- Makefile.in.orig	Sun Mar 18 12:20:52 2001
++++ Makefile.in	Wed Mar 28 18:16:22 2001
+@@ -159,3 +159,3 @@
  
- foreigndirs=pc
--codedirs=vfs lib doc slang gtkedit edit src gnome new_icons icons idl syntax
--unixdirs=intl $(codedirs) doc-gnome @POSUB@
-+codedirs=vfs lib doc slang gtkedit edit src syntax
-+unixdirs=intl $(codedirs) @POSUB@
- alldirs=$(unixdirs) $(foreigndirs) 
- subdirs=$(alldirs)
+-SUBDIRS = vfs lib doc slang gtkedit edit src gnome new_icons 	idl syntax intl doc-gnome po pc
++SUBDIRS = vfs lib doc gtkedit src gnome new_icons syntax intl po
  
- INSTALL = @INSTALL@
- INSTALL_PROGRAM = @INSTALL_PROGRAM@
- INSTALL_DATA = @INSTALL_DATA@
-+INSTALL_SCRIPT = @INSTALL_SCRIPT@
+@@ -174,3 +174,3 @@
+ CONFIG_HEADER = config.h
+-CONFIG_CLEAN_FILES =  Make.common mc.spec mcfn_install
++CONFIG_CLEAN_FILES =  Make.common mc.spec
+ DATA =  $(noinst_DATA)
+--- doc/Makefile.in.orig	Mon Apr 16 11:53:07 2001
++++ doc/Makefile.in	Fri Apr 20 13:41:42 2001
+@@ -159,3 +159,3 @@
  
- DISTMAIN =	configure configure.in NEWS README INSTALL INSTALL.FAST \
- 		Makefile.in FAQ COPYING create_vcs install-sh \
-@@ -45,7 +46,7 @@
- install: installdirs
- 	@for I in $(unixdirs); do cd $$I; $(MAKE) DESTDIR=$(DESTDIR) $@ || exit 1; cd ..; done
- 	$(INSTALL_DATA) $(srcdir)/FAQ $(DESTDIR)$(mclibdir)/FAQ
--	$(INSTALL_PROGRAM) mcfn_install $(DESTDIR)$(suppbindir)/mcfn_install
-+	$(INSTALL_SCRIPT) mcfn_install $(DESTDIR)$(suppbindir)/mcfn_install
- 	chmod +x $(DESTDIR)$(suppbindir)/mcfn_install
- 	@echo "Please verify that the configuration values are correctly"
- 	@echo "set in the mc.ext file in $(mclibdir)"
-@@ -57,9 +58,8 @@
+-man_MANS = mc.1 mcedit.1 mcserv.8
++man_MANS = midc.1 mcedit.1 mcserv.8
+ 
+@@ -185,2 +185,5 @@
+ 	  && CONFIG_FILES=$(subdir)/$@ CONFIG_HEADERS= $(SHELL) ./config.status
++
++midc.1:	mc.1
++	cp mc.1 midc.1
+ 
+--- lib/Makefile.in.orig	Mon Apr 16 11:53:06 2001
++++ lib/Makefile.in	Fri Apr 20 13:48:32 2001
+@@ -161,4 +161,2 @@
+ desktopdir = $(mclibdir)/desktop-scripts
+-suppbindir = $(mclibdir)/bin
+-tidir = $(mclibdir)/term
+ confdir = $(sysconfdir)
+@@ -176,5 +174,3 @@
+ conf_DATA = mc.global
+-suppbin_SCRIPTS = mc.csh mc.sh
+ desktop_DATA = startup.links README.desktop
+-ti_DATA = README.xterm linux.ti xterm.ad xterm.ti ansi.ti vt100.ti xterm.tcap
+ 
+@@ -188,6 +184,5 @@
+ CONFIG_CLEAN_FILES =  mc.ext mc.sh mc.csh
+-SCRIPTS =  $(noinst_SCRIPTS) $(suppbin_SCRIPTS)
++SCRIPTS =  $(noinst_SCRIPTS)
+ 
+-DATA =  $(conf_DATA) $(desktop_DATA) $(mclib_DATA) $(noinst_DATA) \
+-$(ti_DATA)
++DATA =  $(conf_DATA) $(desktop_DATA) $(mclib_DATA) $(noinst_DATA)
+ 
+@@ -340,4 +335,4 @@
+ 
+-install-data-am: install-suppbinSCRIPTS install-confDATA \
+-		install-desktopDATA install-mclibDATA install-tiDATA
++install-data-am: install-confDATA \
++		install-desktopDATA install-mclibDATA
+ install-data: install-data-am
+@@ -356,5 +351,4 @@
  installdirs:
- 	$(MKINSTALLDIRS) $(DESTDIR)$(bindir) $(DESTDIR)$(mclibdir)
- 	$(MKINSTALLDIRS) $(DESTDIR)$(mandir) $(DESTDIR)$(man8dir)
--	$(MKINSTALLDIRS) $(DESTDIR)$(icondir) $(DESTDIR)$(suppbindir)
-+	$(MKINSTALLDIRS) $(DESTDIR)$(suppbindir)
- 	$(MKINSTALLDIRS) $(DESTDIR)$(tidir) $(DESTDIR)$(extfsdir)
--	$(MKINSTALLDIRS) $(DESTDIR)$(idldir) $(DESTDIR)$(syntaxdir)
+-	$(mkinstalldirs)  $(DESTDIR)$(suppbindir) $(DESTDIR)$(confdir) \
+-		$(DESTDIR)$(desktopdir) $(DESTDIR)$(mclibdir) \
+-		$(DESTDIR)$(tidir)
++	$(mkinstalldirs)  $(DESTDIR)$(confdir) \
++		$(DESTDIR)$(desktopdir) $(DESTDIR)$(mclibdir)
  
- mcfninstall:
- 	-/bin/sh ./mcfn_install
---- src/Makefile.in.orig	Wed May 10 17:58:02 2000
-+++ src/Makefile.in	Tue May 16 15:45:43 2000
-@@ -130,7 +130,7 @@
- 	-$(RMF) $(srcdir)/Makefile
- 
- install: mc mcmfmt @saver@
+--- src/Makefile.in.orig	Wed Apr 11 07:07:47 2001
++++ src/Makefile.in	Fri Apr 20 14:03:52 2001
+@@ -121,6 +121,5 @@
+ 	$(mkinstalldirs) $(DESTDIR)$(mclibdir)
 -	$(INSTALL_PROGRAM) mc     $(DESTDIR)$(bindir)/$(binprefix)mc
 +	$(INSTALL_PROGRAM) mc     $(DESTDIR)$(bindir)/$(binprefix)midc
  	$(INSTALL_PROGRAM) mcmfmt $(DESTDIR)$(bindir)/$(binprefix)mcmfmt
- 	$(SEDCMD2) < $(srcdir)/mc.hlp > $(DESTDIR)$(mclibdir)/$(libprefix)mc.hlp 
- 
---- doc/Makefile.in.orig	Wed May 10 17:58:01 2000
-+++ doc/Makefile.in	Tue May 16 15:47:12 2000
-@@ -17,7 +17,7 @@
- install:
- 	$(MKINSTALLDIRS) $(DESTDIR)/$(man1dir)
- 	$(MKINSTALLDIRS) $(DESTDIR)/$(man8dir)
--	-$(SEDCMD2) < mc.1 > $(DESTDIR)$(man1dir)/$(manprefix)mc.$(manext)
-+	-$(SEDCMD2) < mc.1 > $(DESTDIR)$(man1dir)/$(manprefix)midc.$(manext)
- 	-$(SEDCMD2) < mcedit.1 > $(DESTDIR)$(man1dir)/$(manprefix)mcedit.$(manext)
- 	-$(SEDCMD2) < mcserv.8 > $(DESTDIR)$(man8dir)/$(manprefix)mcserv.$(man8ext)
- 
---- lib/Makefile.in.orig	Wed May 10 17:58:01 2000
-+++ lib/Makefile.in	Tue May 16 15:48:15 2000
-@@ -12,8 +12,8 @@
- # Distribution variables
- #
- 
--LIBFILES_IN = mc.ext.in mc-gnome.ext.in
--LIBFILES_OUT = mc.ext mc-gnome.ext mc.csh mc.sh
-+LIBFILES_IN = mc.ext.in
-+LIBFILES_OUT = mc.ext mc.csh mc.sh
- LIBFILES_CONST = mc.hint mc.hint.es mc.hint.cs mc.hint.ru mc.lib mc.menu cedit.menu edit.indent.rc
- SUPPBIN_IN = mc.csh.in mc.sh.in
- SUPPBIN_OUT =  mc.csh mc.sh
-@@ -62,7 +62,7 @@
- 	for I in $(LIBFILES_OUT); \
- 	do $(INSTALL_DATA) $(builddir)/lib/$$I $(DESTDIR)$(mclibdir)/$$I; done
- 	for I in $(SUPPBIN_OUT); \
--	do $(INSTALL_PROGRAM) -m 755 $(builddir)/lib/$$I $(DESTDIR)$(suppbindir)//$$I; done
-+	do $(INSTALL_DATA) -m 755 $(builddir)/lib/$$I $(DESTDIR)$(suppbindir)//$$I; done
- 	for I in $(TIFILES); \
- 	do $(INSTALL_DATA) $(srcdir)/$$I $(DESTDIR)$(tidir)/$$I; done
- 	$(MKINSTALLDIRS) $(DESTDIR)$(confdir)
---- edit/Makefile.in.orig	Wed May 10 17:58:01 2000
-+++ edit/Makefile.in	Tue May 16 15:48:47 2000
-@@ -58,7 +58,7 @@
- 
- mcedit:
- 	-$(RMF) $(DESTDIR)$(bindir)/$(binprefix)mcedit
--	$(LN_S) mc $(DESTDIR)$(bindir)/$(binprefix)mcedit
-+	$(LN_S) midc $(DESTDIR)$(bindir)/$(binprefix)mcedit
- 
- showlibdep:
- 	@echo 'OBJS="$(EDITOBJS)"'
+ 	$(SEDCMD2) < $(srcdir)/mc.hlp > $(DESTDIR)$(mclibdir)/mc.hlp 
+-	$(MAKE) install_mcview
+ 	$(MAKE) install_@MCEDIT@

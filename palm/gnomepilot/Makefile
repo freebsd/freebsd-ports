@@ -7,6 +7,7 @@
 
 PORTNAME=	gnomepilot
 PORTVERSION=	0.1.52
+PORTREVISION=	1
 CATEGORIES=	palm comms gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/gnome-pilot
@@ -15,9 +16,7 @@ DISTNAME=	gnome-pilot-${PORTVERSION}
 MAINTAINER=	ade@FreeBSD.org
 
 BUILD_DEPENDS=	gob:${PORTSDIR}/x11-toolkits/gob
-LIB_DEPENDS=	pisock.3:${PORTSDIR}/palm/pilot-link \
-		xml.5:${PORTSDIR}/textproc/libxml \
-		glade.4:${PORTSDIR}/devel/libglade
+LIB_DEPENDS=	pisock.3:${PORTSDIR}/palm/pilot-link
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

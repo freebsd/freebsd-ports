@@ -7,18 +7,15 @@
 
 PORTNAME=	screem
 PORTVERSION=	0.4.0
-CATEGORIES=	www
+PORTREVISION=	1
+CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.screem.org/src/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	glade.4:${PORTSDIR}/devel/libglade \
-		guile.9:${PORTSDIR}/lang/guile \
-		gtkhtml.8:${PORTSDIR}/www/gtkhtml \
-		gnomeprint.13:${PORTSDIR}/print/gnomeprint \
-		gnomevfs.0:${PORTSDIR}/devel/gnomevfs
+LIB_DEPENDS=	gtkhtml.10:${PORTSDIR}/www/gtkhtml
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes

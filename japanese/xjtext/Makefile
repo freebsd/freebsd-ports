@@ -7,19 +7,16 @@
 
 PORTNAME=	xjtext
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://plaza.harmonix.ne.jp/~onizuka/
 DISTNAME=	XJTEXT-${PORTVERSION}
 
 MAINTAINER=	sada@FreeBSD.org
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.4:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		ungif.5:${PORTSDIR}/graphics/libungif \
-		Imlib.5:${PORTSDIR}/graphics/imlib
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
 
+USE_IMLIB=	yes
 EXAMPLEDIR=	${PREFIX}/share/examples/xjtext
 DOCDIR=		${PREFIX}/share/doc/xjtext
 

@@ -1,8 +1,6 @@
---- Make.common.in.orig	Tue Mar 30 08:34:33 1999
-+++ Make.common.in	Wed Apr  7 23:40:05 1999
-@@ -17,9 +17,10 @@
- 
- builddir   = @builddir@
+--- Make.common.in.orig	Sun Oct  8 18:58:39 2000
++++ Make.common.in	Fri Apr 20 12:26:51 2001
+@@ -18,5 +18,6 @@
  bindir     = @bindir@
 +sbindir    = $(exec_prefix)/sbin
  sysconfdir = @sysconfdir@
@@ -10,14 +8,7 @@
 -libdir	   = @libdir@
 +libdir	   = @datadir@
  mandir     = @mandir@
- gnomeicondir = @gnomeicondir@
- xv_bindir  = @xv_bindir@
-@@ -64,7 +65,7 @@
- # No way, to make make happy (except GNU), we cannot use := to append
- # something to these, so that's why there is a leading _
- XCFLAGS = @CFLAGS@
--XCPPFLAGS = @CPPFLAGS@ @MCCPPFLAGS@ -I.. -DBINDIR=\""$(bindir)/"\" -DLIBDIR=\""$(mclibdir)/"\" -DICONDIR=\""$(icondir)/"\" $(XINC) -DLOCALEDIR=\""$(localedir)/"\" -DCONFDIR=\""$(confdir)/"\" -DDESKTOP_INIT_DIR=\""$(desktopdir)/"\"
-+XCPPFLAGS = @CPPFLAGS@ @MCCPPFLAGS@ -I.. -DSBINDIR=\""$(sbindir)/"\" -DBINDIR=\""$(bindir)/"\" -DLIBDIR=\""$(mclibdir)/"\" -DICONDIR=\""$(icondir)/"\" $(XINC) -DLOCALEDIR=\""$(localedir)/"\" -DCONFDIR=\""$(confdir)/"\" -DDESKTOP_INIT_DIR=\""$(desktopdir)/"\"
- XLDFLAGS = @LDFLAGS@
- XDEFS = @DEFS@
- XLIBS = @LIBS@
+@@ -60,2 +61,3 @@
+ XCPPFLAGS = @CPPFLAGS@ @MCCPPFLAGS@ -I.. \
++	-DSBINDIR=\""$(sbindir)/"\" \
+ 	-DBINDIR=\""$(bindir)/"\" \

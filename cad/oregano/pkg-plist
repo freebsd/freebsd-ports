@@ -40,6 +40,7 @@ share/gnome/help/oregano/C/simulation.html
 share/gnome/apps/Applications/oregano.desktop
 share/gnome/mime-info/oregano.keys
 share/gnome/mime-info/oregano.mime
+share/gnome/pixmaps/gnome-oregano.png
 @dirrm share/gnome/oregano/glade
 @dirrm share/gnome/oregano/samples
 @dirrm share/gnome/oregano/libraries

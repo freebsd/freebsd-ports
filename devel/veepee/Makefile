@@ -14,9 +14,9 @@ DISTNAME=	VeePee-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
-		gd.2:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 
+USE_GNOMELIBS=	yes
 USE_XLIB=	yes
 USE_PYTHON=	yes
 USE_LIBTOOL=	yes

@@ -1,163 +1,43 @@
---- configure.orig	Mon Dec  6 15:49:54 1999
-+++ configure	Wed Jan  5 23:31:22 2000
-@@ -3383,15 +3383,15 @@
- fi
- 
-         
--	USE_INCLUDED_LIBINTL=yes
-+#	USE_INCLUDED_LIBINTL=yes
-         CATOBJEXT=.gmo
-         INSTOBJEXT=.mo
-         DATADIRNAME=share
--	INTLDEPS='$(top_builddir)/intl/libintl.a'
-+	INTLDEPS='-lintl'
- 	INTLLIBS=$INTLDEPS
- 	LIBS=`echo $LIBS | sed -e 's/-lintl//'`
--        nls_cv_header_intl=intl/libintl.h
--        nls_cv_header_libgt=intl/libgettext.h
-+#        nls_cv_header_intl=intl/libintl.h
-+#        nls_cv_header_libgt=intl/libgettext.h
-       fi
- 
-             if test "$XGETTEXT" != ":"; then
-@@ -10049,7 +10049,7 @@
-   echo $ac_n "(cached) $ac_c" 1>&6
- else
+--- configure.orig	Mon Apr 16 11:40:15 2001
++++ configure	Fri Apr 20 12:22:48 2001
+@@ -10060,3 +10060,3 @@
    ac_save_LIBS="$LIBS"
 -LIBS="-lslang  $LIBS"
 +LIBS="-lslang -ltermcap $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 10055 "configure"
- #include "confdefs.h"
-@@ -10290,7 +10290,7 @@
- #define HAVE_SYSTEM_SLANG 1
- EOF
+@@ -10301,3 +10301,3 @@
  
 -	    LSLANG="-lslang"
 +	    LSLANG="-lslang -ltermcap"
  	    screen_manager="SLang (system-installed library)"
- 	    echo "$ac_t""Using system installed SLang library" 1>&6
- 	    rm -f slang/slang.h
-@@ -10736,13 +10736,13 @@
-     
-     if $search_ncurses
-     then
--        if test -f /usr/include/ncurses.h
-+        if test -f /usr/local/include/ncurses/ncurses.h
- 	then
--	    echo "$ac_t""Found ncurses on /usr/include/ncurses.h" 1>&6
-- 	    CURSES_LIBS="-lncurses"
--	    CURSES_INCLUDEDIR=""
-+	    echo "$ac_t""Found ncurses on /usr/local/include/ncurses/ncurses.h" 1>&6
-+ 	    CURSES_LIBS="-L/usr/local/lib -lncurses"
-+	    CURSES_INCLUDEDIR="-I/usr/local/include/ncurses"
- 	    search_ncurses=false
--	    screen_manager="ncurses on /usr/include"
-+	    screen_manager="ncurses on /usr/local/include/ncurses"
-             cat >> confdefs.h <<\EOF
- #define HAS_CURSES 1
- EOF
-@@ -10758,13 +10758,13 @@
-     
-     if $search_ncurses
-     then
--        if test -f /usr/include/ncurses/ncurses.h
-+        if test -f /usr/include/ncurses.h
- 	then
--	    echo "$ac_t""Found ncurses on /usr/include/ncurses/ncurses.h" 1>&6
-- 	    CURSES_LIBS="-lncurses"
--	    CURSES_INCLUDEDIR="-I/usr/include/ncurses"
-+	    echo "$ac_t""Found ncurses on /usr/include/ncurses.h" 1>&6
-+ 	    CURSES_LIBS="-lncurses -lmytinfo"
-+	    CURSES_INCLUDEDIR=""
- 	    search_ncurses=false
--	    screen_manager="ncurses on /usr/include/ncurses"
-+	    screen_manager="ncurses on /usr/include"
-             cat >> confdefs.h <<\EOF
- #define HAS_CURSES 1
- EOF
-@@ -10780,13 +10780,13 @@
-     
-     if $search_ncurses
-     then
--        if test -f /usr/local/include/ncurses.h
-+        if test -f /usr/include/ncurses/ncurses.h
- 	then
--	    echo "$ac_t""Found ncurses on /usr/local/include/ncurses.h" 1>&6
-- 	    CURSES_LIBS="-L/usr/local/lib -lncurses"
--	    CURSES_INCLUDEDIR="-I/usr/local/include"
-+	    echo "$ac_t""Found ncurses on /usr/include/ncurses/ncurses.h" 1>&6
-+ 	    CURSES_LIBS="-lncurses"
-+	    CURSES_INCLUDEDIR="-I/usr/include/ncurses"
- 	    search_ncurses=false
--	    screen_manager="ncurses on /usr/local"
-+	    screen_manager="ncurses on /usr/include/ncurses"
-             cat >> confdefs.h <<\EOF
- #define HAS_CURSES 1
- EOF
-@@ -10802,13 +10802,13 @@
-     
-     if $search_ncurses
-     then
--        if test -f /usr/local/include/ncurses/ncurses.h
-+        if test -f /usr/local/include/ncurses.h
- 	then
--	    echo "$ac_t""Found ncurses on /usr/local/include/ncurses/ncurses.h" 1>&6
-- 	    CURSES_LIBS="-L/usr/local/lib -L/usr/local/lib/ncurses -lncurses"
--	    CURSES_INCLUDEDIR="-I/usr/local/include/ncurses"
-+	    echo "$ac_t""Found ncurses on /usr/local/include/ncurses.h" 1>&6
-+ 	    CURSES_LIBS="-L/usr/local/lib -lncurses"
-+	    CURSES_INCLUDEDIR="-I/usr/local/include"
- 	    search_ncurses=false
--	    screen_manager="ncurses on /usr/local/include/ncurses"
-+	    screen_manager="ncurses on /usr/local"
-             cat >> confdefs.h <<\EOF
- #define HAS_CURSES 1
- EOF
-@@ -10867,6 +10867,8 @@
- 	fi
-     fi
- 
-+CFLAGS="$CFLAGS $CURSES_INCLUDEDIR"
-+LIBS="$LIBS $CURSES_LIBS"
- 
-                 if $search_ncurses 
-     then
-@@ -11071,7 +11073,7 @@
- #define HAVE_SYSTEM_SLANG 1
- EOF
+@@ -10749,3 +10749,3 @@
+ 	    echo "$ac_t""Found ncurses on /usr/include/ncurses.h" 1>&6
+- 	    LIBS="$LIBS -lncurses"
++ 	    LIBS="$LIBS -lncurses -lmytinfo"
+ 	    CPPFLAGS="$CPPFLAGS "
+@@ -10766,3 +10766,3 @@
+ 	    echo "$ac_t""Found ncurses on /usr/include/ncurses/ncurses.h" 1>&6
+- 	    LIBS="$LIBS -lncurses"
++ 	    LIBS="$LIBS -lncurses -lmytinfo"
+ 	    CPPFLAGS="$CPPFLAGS -I/usr/include/ncurses"
+@@ -11043,3 +11043,3 @@
  
 -	    LSLANG="-lslang"
 +	    LSLANG="-lslang -ltermcap"
  	    screen_manager="SLang (system-installed library)"
- 	    echo "$ac_t""Using system installed SLang library" 1>&6
- 	    rm -f slang/slang.h
-@@ -11688,7 +11690,7 @@
- vfs/extfs/ftplist vfs/extfs/uzip vfs/extfs/uzoo vfs/extfs/lslR vfs/extfs/ulha 
- vfs/extfs/uha vfs/extfs/ucpio vfs/extfs/deb vfs/extfs/urar vfs/extfs/uar
+@@ -11551,3 +11551,3 @@
  
 -doc/mc.1 doc/mcedit.1 doc/mcserv.8
 +doc/mc.1 doc/mcserv.8
  
- intl/Makefile po/Makefile.in
-  config.h" | sed "s/:[^ ]*//g"` conftest*; exit 1' 1 2 15
-@@ -11932,7 +11934,7 @@
- vfs/extfs/ftplist vfs/extfs/uzip vfs/extfs/uzoo vfs/extfs/lslR vfs/extfs/ulha 
- vfs/extfs/uha vfs/extfs/ucpio vfs/extfs/deb vfs/extfs/urar vfs/extfs/uar
+@@ -11834,6 +11834,6 @@
  
--doc/mc.1 doc/mcedit.1 doc/mcserv.8
-+doc/mc.1 doc/mcserv.8
- 
- intl/Makefile po/Makefile.in
- "}
-@@ -12237,10 +12239,6 @@
-       *) # Relative path.
-         ac_sub_cache_file="$ac_dots$cache_file" ;;
-       esac
 -  case "$ac_given_INSTALL" in
--        [/$]*) INSTALL="$ac_given_INSTALL" ;;
--        *) INSTALL="$ac_dots$ac_given_INSTALL" ;;
--        esac
+-  [/$]*) INSTALL="$ac_given_INSTALL" ;;
+-  *) INSTALL="$ac_dots$ac_given_INSTALL" ;;
+-  esac
++# case "$ac_given_INSTALL" in
++# [/$]*) INSTALL="$ac_given_INSTALL" ;;
++# *) INSTALL="$ac_dots$ac_given_INSTALL" ;;
++# esac
  
-       echo "running ${CONFIG_SHELL-/bin/sh} $ac_sub_configure $ac_sub_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_sub_srcdir"
-       # The eval makes quoting arguments work.

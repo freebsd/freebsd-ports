@@ -7,6 +7,7 @@
 
 PORTNAME=	barque
 PORTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,12 +15,8 @@ DISTFILES=	${PORTNAME}-0.1-2.tar.gz
 
 MAINTAINER=	nakai@FreeBSD.org
 
-LIB_DEPENDS=	gtkhtml.8:${PORTSDIR}/www/gtkhtml \
-		bonobo.2:${PORTSDIR}/devel/bonobo \
-		gconf-1.1:${PORTSDIR}/devel/gconf \
-		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
-		ghttp.1:${PORTSDIR}/www/libghttp \
-		glade.4:${PORTSDIR}/devel/libglade
+LIB_DEPENDS=	gtkhtml.10:${PORTSDIR}/www/gtkhtml \
+		ghttp.1:${PORTSDIR}/www/libghttp
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.1-2
 
