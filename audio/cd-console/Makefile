@@ -9,7 +9,7 @@ PORTNAME=	cd-console
 PORTVERSION=	2.3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.cs.helsinki.fi/~salerma/cd-console/ \
-		ftp://ftp.aquezada.com/pub/cd-console/
+		ftp://ftp.aquezada.com/pub/distrib/cd-console/
 
 MAINTAINER=	jdunn@aquezada.com
 
