@@ -1,0 +1,13 @@
+#!/bin/sh
+
+case "$2" in
+PRE-INSTALL)
+	DATADIR=${PKG_PREFIX}/share/tuxracer_golf
+	mkdir ${DATADIR}
+	mkdir ${DATADIR}/common.old
+	cp ${PKG_PREFIX}/share/tuxracer/courses/common/*rgb \
+		${DATADIR}/common.old
+	;;
+esac
+
+exit 0
