@@ -1,0 +1,40 @@
+--- mazes/Makefile.in.orig	Mon Jul 24 17:22:38 2000
++++ mazes/Makefile.in	Mon Jul 24 17:44:08 2000
+@@ -124,7 +124,8 @@
+ 
+ mazesdir = $(datadir)/gnome/pixmaps/pythoong/mazes
+ 
+-mazes_DATA =  	level01.xpm 	level02.xpm 	level03.xpm 	level04.xpm 	level05.xpm 	level06.xpm 	level07.xpm 	level08.xpm 	level09.xpm 	level10.xpm 	level11.xpm 	level12.xpm 	level13.xpm 	level14.xpm 	level15.xpm 	level16.xpm 	level17.xpm 	level18.xpm 	level19.xpm 	level20.xpm 	level21.xpm 	level22.xpm 	level23.xpm 	level24.xpm 	level25.xpm 	level26.xpm 	level27.xpm 	level28.xpm 	level29.xpm 	level30.xpm 	level31.xpm 	level32.xpm 	level33.xpm 	level34.xpm 	level35.xpm 	level36.xpm 	level37.xpm 	level38.xpm 	level39.xpm 	level40.xpm 
++mazes_DATA_xbm =  	level01.xpm 	level02.xpm 	level03.xpm 	level04.xpm 	level05.xpm 	level06.xpm 	level07.xpm 	level08.xpm 	level09.xpm 	level10.xpm 	level11.xpm 	level12.xpm 	level13.xpm 	level14.xpm 	level15.xpm 	level16.xpm 	level17.xpm 	level18.xpm 	level19.xpm 	level20.xpm 	level21.xpm 	level22.xpm 	level23.xpm 	level24.xpm 	level25.xpm 	level26.xpm 	level27.xpm 	level28.xpm 	level29.xpm 	level30.xpm 	level31.xpm 	level32.xpm 	level33.xpm 	level34.xpm 	level35.xpm 	level36.xpm 	level37.xpm 	level38.xpm 	level39.xpm 	level40.xpm 
++mazes_DATA = $(mazes_DATA_xbm:.xpm=.xp)
+ 
+ 
+ EXTRA_DIST = $(mazes_DATA)
+@@ -141,7 +142,10 @@
+ TAR = tar
+ GZIP_ENV = --best
+ all: all-redirect
+-.SUFFIXES:
++.SUFFIXES: .xpm .xp
++.xpm.xp:
++	(xbmtopbm < $< | ppmtoxpm > $@) 2>/dev/null
++
+ $(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ Makefile.am $(top_srcdir)/configure.in $(ACLOCAL_M4) 
+ 	cd $(top_srcdir) && $(AUTOMAKE) --gnu mazes/Makefile
+ 
+@@ -155,11 +159,11 @@
+ 	$(mkinstalldirs) $(DESTDIR)$(mazesdir)
+ 	@list='$(mazes_DATA)'; for p in $$list; do \
+ 	  if test -f $(srcdir)/$$p; then \
+-	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(mazesdir)/$$p"; \
+-	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(mazesdir)/$$p; \
++	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(mazesdir)/$${p}m"; \
++	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(mazesdir)/$${p}m; \
+ 	  else if test -f $$p; then \
+-	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(mazesdir)/$$p"; \
+-	    $(INSTALL_DATA) $$p $(DESTDIR)$(mazesdir)/$$p; \
++	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(mazesdir)/$${p}m"; \
++	    $(INSTALL_DATA) $$p $(DESTDIR)$(mazesdir)/$${p}m; \
+ 	  fi; fi; \
+ 	done
+ 

@@ -1,0 +1,54 @@
+bin/pythoong
+share/gnome/games/pythoong.scores
+share/gnome/pixmaps/pythoong/mazes/level01.xpm
+share/gnome/pixmaps/pythoong/mazes/level02.xpm
+share/gnome/pixmaps/pythoong/mazes/level03.xpm
+share/gnome/pixmaps/pythoong/mazes/level04.xpm
+share/gnome/pixmaps/pythoong/mazes/level05.xpm
+share/gnome/pixmaps/pythoong/mazes/level06.xpm
+share/gnome/pixmaps/pythoong/mazes/level07.xpm
+share/gnome/pixmaps/pythoong/mazes/level08.xpm
+share/gnome/pixmaps/pythoong/mazes/level09.xpm
+share/gnome/pixmaps/pythoong/mazes/level10.xpm
+share/gnome/pixmaps/pythoong/mazes/level11.xpm
+share/gnome/pixmaps/pythoong/mazes/level12.xpm
+share/gnome/pixmaps/pythoong/mazes/level13.xpm
+share/gnome/pixmaps/pythoong/mazes/level14.xpm
+share/gnome/pixmaps/pythoong/mazes/level15.xpm
+share/gnome/pixmaps/pythoong/mazes/level16.xpm
+share/gnome/pixmaps/pythoong/mazes/level17.xpm
+share/gnome/pixmaps/pythoong/mazes/level18.xpm
+share/gnome/pixmaps/pythoong/mazes/level19.xpm
+share/gnome/pixmaps/pythoong/mazes/level20.xpm
+share/gnome/pixmaps/pythoong/mazes/level21.xpm
+share/gnome/pixmaps/pythoong/mazes/level22.xpm
+share/gnome/pixmaps/pythoong/mazes/level23.xpm
+share/gnome/pixmaps/pythoong/mazes/level24.xpm
+share/gnome/pixmaps/pythoong/mazes/level25.xpm
+share/gnome/pixmaps/pythoong/mazes/level26.xpm
+share/gnome/pixmaps/pythoong/mazes/level27.xpm
+share/gnome/pixmaps/pythoong/mazes/level28.xpm
+share/gnome/pixmaps/pythoong/mazes/level29.xpm
+share/gnome/pixmaps/pythoong/mazes/level30.xpm
+share/gnome/pixmaps/pythoong/mazes/level31.xpm
+share/gnome/pixmaps/pythoong/mazes/level32.xpm
+share/gnome/pixmaps/pythoong/mazes/level33.xpm
+share/gnome/pixmaps/pythoong/mazes/level34.xpm
+share/gnome/pixmaps/pythoong/mazes/level35.xpm
+share/gnome/pixmaps/pythoong/mazes/level36.xpm
+share/gnome/pixmaps/pythoong/mazes/level37.xpm
+share/gnome/pixmaps/pythoong/mazes/level38.xpm
+share/gnome/pixmaps/pythoong/mazes/level39.xpm
+share/gnome/pixmaps/pythoong/mazes/level40.xpm
+share/gnome/pixmaps/pythoong/others/pythoong-icon.xpm
+share/gnome/pixmaps/pythoong/others/title_pyt.png
+share/gnome/pixmaps/pythoong/snakes/cubix.png
+share/gnome/pixmaps/pythoong/snakes/green.png
+share/gnome/pixmaps/pythoong/snakes/nature.png
+share/gnome/pixmaps/pythoong/snakes/standard.png
+share/gnome/pixmaps/pythoong/snakes/sunny.png
+share/gnome/pixmaps/pythoong/snakes/woody.png
+@dirrm share/gnome/pixmaps/pythoong/snakes
+@dirrm share/gnome/pixmaps/pythoong/others
+@dirrm share/gnome/pixmaps/pythoong/mazes
+@dirrm share/gnome/pixmaps/pythoong

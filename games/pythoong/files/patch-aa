@@ -1,0 +1,11 @@
+--- prefs.c.orig	Sun Jul 23 22:05:21 2000
++++ prefs.c	Mon Jul 24 17:13:43 2000
+@@ -11,7 +11,7 @@
+ #include "pythoong_def.h"
+ #include "prefs.h"
+ #include "keyboard.h"
+-#include "tgmath.h"
++/*#include "tgmath.h"*/
+ 
+ extern void reinit_speed();
+ extern void reinit_graphics();
