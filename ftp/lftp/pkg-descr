@@ -6,3 +6,5 @@ the ftp site or another one. This all is done in one process.
 Background jobs will be completed in nohup mode if you exit
 or close modem connection. Lftp has reput, mirror, reverse
 mirror among its features.
+
+WWW: http://ftp.yars.free.net/projects/lftp/
