@@ -249,7 +249,7 @@ xothello-*		ports/games/xothello	Possible trademark infringement
 xrisk-*			ports/games/xrisk	Copyright/trademark violation?
 xsmbrowser-*		ports/net/xsmbrowser	Commercial software
 xteddy-*		ports/games/xteddy	Don't sell for profit
-chitex			ports/chinese/chitex	Don't sell for profit
+zh-chitex		ports/chinese/chitex	Don't sell for profit
 zh-moettf/*		ports/chinese/moettf	Contact Taiwan Ministry of
 						Education for commercial use
 ztelnet-*		ports/net/ztelnet	zmodem code has 
