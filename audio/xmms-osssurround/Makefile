@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xmms-a52dec
 DISTNAME=	xmms-a52dec-1.0
 
-MAINTAINER=	verm@drunkmonk.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OSSSuround adds Surround Sound capabilities to XMMS
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms

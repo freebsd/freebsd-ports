@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.zero-based.org/software/jpegpixi/
 MASTER_SITE_SUBDIR=	jpegpixi
 
-MAINTAINER=	verm@drunkmonk.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Useful to correct images from digtal camera with CCD defects
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg

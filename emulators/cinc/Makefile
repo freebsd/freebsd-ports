@@ -12,7 +12,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	cinc
 
-MAINTAINER=	verm@drunkmonk.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bell Laboratories cardiac computer emulator
 
 GNU_CONFIGURE=	yes

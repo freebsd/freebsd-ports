@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lgames
 
-MAINTAINER=	verm@drunkmonk.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A challenging puzzle game similar to Atomix
 
 USE_SDL=	sdl
