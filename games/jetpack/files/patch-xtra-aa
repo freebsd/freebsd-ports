@@ -1,0 +1,113 @@
+*** defs.h~	Sun Feb 12 17:34:08 1995
+--- defs.h	Sun Feb 12 17:34:46 1995
+***************
+*** 319,321 ****
+--- 319,322 ----
+  */
+  
+  extern int	paused, leveldone, gameover, lastscore;
++ extern int usecdelay;
+*** draw.c~	Mon Nov  8 15:15:54 1993
+--- draw.c	Sun Feb 12 17:34:39 1995
+***************
+*** 533,539 ****
+          y, CGREY, fontinfo);
+      y += fontinfo->descent + fontinfo->ascent;
+      place_string(
+!         "             center button : fire jetpack                    ",
+          y, CYELLOW, fontinfo);
+      y += fontinfo->descent + 10 + fontinfo->ascent;
+      place_string("Extra Player awarded every 10000 points", y, CGREY,
+--- 533,539 ----
+          y, CGREY, fontinfo);
+      y += fontinfo->descent + fontinfo->ascent;
+      place_string(
+!         "             center button : fire jetpack  T : turbo         ",
+          y, CYELLOW, fontinfo);
+      y += fontinfo->descent + 10 + fontinfo->ascent;
+      place_string("Extra Player awarded every 10000 points", y, CGREY,
+*** events.c~	Mon Nov  8 15:16:07 1993
+--- events.c	Sun Feb 12 17:34:55 1995
+***************
+*** 4,9 ****
+--- 4,11 ----
+  #include "copyright.h"
+  #include "defs.h"
+  
++ int usecdelay = USECDELAY;
++ 
+  /*	event_filter handles game events
+  */
+  int	event_filter()
+***************
+*** 86,91 ****
+--- 88,100 ----
+  	
+  	XLookupString(event, &buf, 1, &key, &i);
+  	switch(key) {
++                 case 't':
++                 case 'T':
++                        if (usecdelay == USECDELAY)
++                            usecdelay = USECDELAY/1.5;
++                        else
++                            usecdelay = USECDELAY;
++                        break;
+  		case XK_KP_4:
+  		case 'a':
+  		case 'A':
+***************
+*** 115,120 ****
+--- 124,130 ----
+  			}
+  			break;
+  		case 'Q':
++ 	        case 'q':
+  			if(dead) break;
+  			dead = 1;
+  			deadtimer = 50;
+***************
+*** 124,129 ****
+--- 134,140 ----
+  			dumb_message(MQUIT);
+  			break;
+  		case 'p':
++ 		case 'P':
+  			if(paused) {
+  				paused = 0;
+  				bigmessagetime = 0;
+*** main.c~	Sun Feb 12 17:34:09 1995
+--- main.c	Sun Feb 12 17:34:29 1995
+***************
+*** 90,96 ****
+  				begin_timer();
+  				while(paused) {
+  					while(XPending(display) && !event_filter());
+! 					usleep(USECDELAY);
+  				}
+  				while(XPending(display) && !event_filter());
+  				update();
+--- 90,96 ----
+  				begin_timer();
+  				while(paused) {
+  					while(XPending(display) && !event_filter());
+! 					usleep(usecdelay);
+  				}
+  				while(XPending(display) && !event_filter());
+  				update();
+***************
+*** 111,117 ****
+  					busy, and you shouldn't be playing anyway.
+  				*/
+  				timer = get_timer();
+! 				if(timer < USECDELAY) usleep(USECDELAY - timer);
+  			}
+  		}
+  	}
+--- 111,117 ----
+  					busy, and you shouldn't be playing anyway.
+  				*/
+  				timer = get_timer();
+! 				if(timer < usecdelay) usleep(usecdelay - timer);
+  			}
+  		}
+  	}
