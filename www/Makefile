@@ -278,6 +278,7 @@
     SUBDIR += mod_mya
     SUBDIR += mod_mylo
     SUBDIR += mod_mysqluserdir
+    SUBDIR += mod_ntlm
     SUBDIR += mod_pcgi2
     SUBDIR += mod_perl
     SUBDIR += mod_perl2
