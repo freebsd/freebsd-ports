@@ -1,3 +1,4 @@
+@comment $FreeBSD: /tmp/pcvs/ports/lang/crossgo32-f77/Attic/pkg-plist,v 1.2 2001-03-10 06:46:32 dinoex Exp $
 bin/i386-go32-f77
 i386-go32/bin/f77
 i386-go32/include/f2c.h
