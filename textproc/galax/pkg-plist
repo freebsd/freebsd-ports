@@ -284,6 +284,8 @@
 %%GALAX%%/lib/caml-devel/galapi.cmi
 %%GALAX%%/lib/caml-devel/datamodel_api.cmi
 %%GALAX%%/lib/java/doc/allclasses-frame.html
+%%GALAX%%/lib/java/doc/allclasses-noframe.html
+%%GALAX%%/lib/java/doc/constant-values.html
 %%GALAX%%/lib/java/doc/deprecated-list.html
 %%GALAX%%/lib/java/doc/galapi/Atomic.html
 %%GALAX%%/lib/java/doc/galapi/AtomicList.html
@@ -307,6 +309,9 @@
 %%GALAX%%/lib/java/doc/galapi/ProcessingInstruction.html
 %%GALAX%%/lib/java/doc/galapi/QueryContext.html
 %%GALAX%%/lib/java/doc/galapi/Text.html
+%%GALAX%%/lib/java/doc/galapi/package-summary.html
+%%GALAX%%/lib/java/doc/galapi/package-tree.html
+%%GALAX%%/lib/java/doc/galapi/package-frame.html
 %%GALAX%%/lib/java/doc/galapi/xsAnyURI.html
 %%GALAX%%/lib/java/doc/galapi/xsBoolean.html
 %%GALAX%%/lib/java/doc/galapi/xsDecimal.html
@@ -323,6 +328,7 @@
 %%GALAX%%/lib/java/doc/overview-tree.html
 %%GALAX%%/lib/java/doc/package-list
 %%GALAX%%/lib/java/doc/packages.html
+%%GALAX%%/lib/java/doc/resources/inherit.gif
 %%GALAX%%/lib/java/doc/serialized-form.html
 %%GALAX%%/lib/java/doc/stylesheet.css
 %%GALAX%%/lib/java/galapi.jar
@@ -448,6 +454,7 @@
 @dirrm %%GALAX%%/examples/c_api
 @dirrm %%GALAX%%/examples/caml_api
 @dirrm %%GALAX%%/examples
+@dirrm %%GALAX%%/lib/java/doc/resources
 @dirrm %%GALAX%%/lib/java/doc/galapi
 @dirrm %%GALAX%%/lib/java/doc
 @dirrm %%GALAX%%/lib/java
