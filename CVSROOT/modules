@@ -3905,6 +3905,7 @@ libgii		ports/devel/libgii
 libglade	ports/devel/libglade
 libglade2	ports/devel/libglade2
 libglademm	ports/devel/libglademm
+libglut		ports/graphics/libglut
 libgmp-freebsd	ports/math/libgmp-freebsd
 libgmp4		ports/math/libgmp4
 libgnome	ports/x11/libgnome
