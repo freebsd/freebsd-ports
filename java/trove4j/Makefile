@@ -15,7 +15,9 @@ COMMENT=	GNU Trove: High performance collections for Java
 
 MAINTAINER=	herve.quiroz@esil.univ-mrs.fr
 
-USE_JAVA=	1.3+
+USE_JAVA=	yes
+JAVA_VERSION=	1.3+
+JAVA_RUN=	jdk
 NO_BUILD=	YES
 
 PORT_JARFILE=		trove.jar
