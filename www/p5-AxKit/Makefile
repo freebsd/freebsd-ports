@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	AxKit
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.axkit.org/download/
 PKGNAMEPREFIX=	p5-
@@ -15,24 +15,23 @@ MAINTAINER=	adam@migus.org
 COMMENT=	XML Delivery Toolkit for Apache/Perl
 
 BUILD_DEPENDS=	\
-		${SITE_PERL}/${PERL_ARCH}/Apache/libapreq.pm:${PORTSDIR}/www/p5-libapreq \
 		${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
-		${SITE_PERL}/${PERL_ARCH}/HTTP/GHTTP.pm:${PORTSDIR}/www/p5-HTTP-GHTTP \
-		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
-		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
-		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
-		${SITE_PERL}/${PERL_ARCH}/XML/LibXSLT.pm:${PORTSDIR}/textproc/p5-XML-LibXSLT \
-		${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl \
 		${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error \
-		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/XML/XPath.pm:${PORTSDIR}/textproc/p5-XML-XPath
+		${SITE_PERL}/${PERL_ARCH}/Apache/libapreq.pm:${PORTSDIR}/www/p5-libapreq \
+		${SITE_PERL}/${PERL_ARCH}/Apache/Test.pm:${PORTSDIR}/www/p5-Apache-Test \
+		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
+		${SITE_PERL}/XML/XPath.pm:${PORTSDIR}/textproc/p5-XML-XPath \
+		${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
+		${SITE_PERL}/${PERL_ARCH}/XML/LibXSLT.pm:${PORTSDIR}/textproc/p5-XML-LibXSLT \
+		${SITE_PERL}/${PERL_ARCH}/XML/Sablotron.pm:${PORTSDIR}/textproc/p5-XML-Sablotron \
+		${SITE_PERL}/Perl/Tidy.pm:${PORTSDIR}/devel/perltidy \
+		${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl \
+		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-# XXX Glitch in this release...
-WRKSRC=		${WRKDIR}/${PORTNAME}-1.61
+WRKSRC=		${WRKDIR}/${PORTNAME}-1.62
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		\
 		Apache::AxKit::Language.3 \
 		Apache::AxKit::Language::AxPoint.3 \
@@ -42,6 +41,7 @@ MAN3=		\
 		Apache::AxKit::Language::XSP.3 \
 		Apache::AxKit::Language::XSP::SimpleTaglib.3 \
 		Apache::AxKit::Language::XSP::TaglibHelper.3 \
+		Apache::AxKit::LibXMLSupport.3 \
 		Apache::AxKit::MediaChooser::WAPCheck.3 \
 		Apache::AxKit::Plugin::Fragment.3 \
 		Apache::AxKit::Plugin::Passthru.3 \
