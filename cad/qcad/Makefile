@@ -24,7 +24,8 @@ QTDIR?=		${X11BASE}
 USE_QT_VER=	3
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-MAKE_ENV=	QTDIR="${QTDIR}" QMAKESPEC="${X11BASE}/share/qt/mkspecs/freebsd-g++"
+MAKE_ENV=	QTDIR="${QTDIR}" MAKE="${GMAKE}" \
+		QMAKESPEC="${X11BASE}/share/qt/mkspecs/freebsd-g++"
 
 .include <bsd.port.pre.mk>
 
@@ -41,7 +42,7 @@ CFLAGS+=	-O0
 #		-spec ${X11BASE}/share/qt/mkspecs/freebsd-g++ qcad.pro
 
 do-build:
-	cd ${WRKSRC}/scripts && ${SETENV} ${MAKE_ENV} {SH} ./build_qcad.sh
+	cd ${WRKSRC}/scripts && ${SETENV} ${MAKE_ENV} ${SH} ./build_qcad.sh
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/qcad/qcad ${PREFIX}/bin/qcad
