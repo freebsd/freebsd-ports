@@ -1,5 +1,5 @@
---- configure.in.ORIG	Wed Dec  8 10:58:41 1999
-+++ configure.in	Wed Dec  8 10:58:50 1999
+--- configure.in.orig	Thu Apr  5 14:51:27 2001
++++ configure.in	Thu Apr  5 15:08:05 2001
 @@ -851,15 +851,21 @@
      NetBSD-*|FreeBSD-*|OpenBSD-*)
  	# Not available on all versions:  check for include file.
@@ -49,9 +49,12 @@
  	RANLIB=":"
      fi
  else
-@@ -1274,6 +1286,7 @@
+@@ -1272,8 +1284,9 @@
+ # so that the backslashes quoting the DBX braces are dropped.
+ 
  # Trick to replace DBGX with TCL_DBGX
- DBGX='${TCL_DBGX}'
+-DBGX='${TCL_DBGX}'
++DBGX=${TCL_DBGX}
  eval "TCL_LIB_FILE=${TCL_LIB_FILE}"
 +eval "TCL_STATIC_LIB_FILE=${TCL_STATIC_LIB_FILE}"
  
@@ -65,3 +68,9 @@
  AC_SUBST(TCL_LIB_FLAG)
  AC_SUBST(TCL_LIB_SPEC)
  AC_SUBST(TCL_LIB_VERSIONS_OK)
+@@ -1327,4 +1341,4 @@
+ AC_SUBST(TCL_UNSHARED_LIB_SUFFIX)
+ AC_SUBST(TCL_VERSION)
+ 
+-AC_OUTPUT(Makefile tclConfig.sh)
++AC_OUTPUT(Makefile tclConfig.sh ../README.FreeBSD.JP)
