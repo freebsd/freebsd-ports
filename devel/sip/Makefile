@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	sip
-PORTVERSION=	0.12
+PORTVERSION=	2.2
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.river-bank.demon.co.uk/software/
 
 MAINTAINER=	adsharma@sharmas.dhs.org
 
-BUILD_DEPENDS=	${LOCALBASE}/include/python1.5/Python.h:${PORTSDIR}/lang/python15
-
+USE_PYTHON=	yes
 USE_LIBTOOL=	yes
-INSTALLS_SHLIB=	yes
-USE_QT=		yes
-CONFIGURE_ARGS=	--enable-qt --with-qt-includes=${X11BASE}/include/X11/qt
 USE_GMAKE=	yes
+USE_QT2=	yes
+INSTALLS_SHLIB=	yes
+CONFIGURE_ARGS=	--enable-qt --with-qt-includes=${X11BASE}/include/qt2
 CONFIGURE_ENV=	LDFLAGS=-lgcc
 
 .include <bsd.port.mk>
