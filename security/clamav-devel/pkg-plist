@@ -3,7 +3,6 @@ bin/clamscan
 bin/clamdscan
 bin/freshclam
 bin/sigtool
-etc/clamav.conf
 %%CLAMAV-MILTER:%%sbin/clamav-milter
 sbin/clamd
 include/clamav.h
@@ -12,8 +11,6 @@ lib/libclamav.so
 lib/libclamav.la
 lib/libclamav.a
 share/clamav/mirrors.txt
-share/clamav/viruses.db
-share/clamav/viruses.db2
 @exec chown clamav share/clamav share/clamav/mirrors.txt share/clamav/viruses.db share/clamav/viruses.db2
 @dirrm share/clamav
 @unexec rmuser -y clamav
