@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mplayer
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.mplayerhq.hu/MPlayer/Skin/ \
 		http://ftp.mplayerhq.hu/MPlayer/Skin/ \
@@ -66,14 +66,20 @@ post-clean:
 #
 .if defined(WITH_SKIN_ALL)
 WITH_SKIN_DEFAULT=yes
+WITH_SKIN_ALIENMIND=yes
 WITH_SKIN_AVIFILE=yes
 WITH_SKIN_BLUEHEART=yes
+WITH_SKIN_CORNERMP=yes
+WITH_SKIN_CUBICPLAYER=yes
 WITH_SKIN_CYRUS=yes
 WITH_SKIN_MENTALIC=yes
 WITH_SKIN_MIDNIGHTLOVE=yes
+WITH_SKIN_NETSCAPE4=yes
 WITH_SKIN_NEUTRON=yes
 WITH_SKIN_PHONY=yes
 WITH_SKIN_PLASTIC=yes
+WITH_SKIN_PROTON=yes
+WITH_SKIN_SLIM=yes
 WITH_SKIN_WINDOWSMEDIAPLAYER6=yes
 WITH_SKIN_XANIM=yes
 WITH_SKIN_XINE_LCD=yes
@@ -89,6 +95,15 @@ EXTRACT_ONLY+=	default.tar.bz2
 PLIST_SUB+=	DEFAULT=""
 .else
 PLIST_SUB+=	DEFAULT="@comment "
+.endif
+
+DISTFILES+=	AlienMind.tar.bz2
+.ifdef(WITH_SKIN_ALIENMIND)
+EXTRACT_ONLY+=	AlienMind.tar.bz2
+
+PLIST_SUB+=	ALIENMIND=""
+.else
+PLIST_SUB+=	ALIENMIND="@comment "
 .endif
 
 DISTFILES+=	avifile.tar.bz2
@@ -107,6 +122,24 @@ EXTRACT_ONLY+=	BlueHeart.tar.bz2
 PLIST_SUB+=	BLUEHEART=""
 .else
 PLIST_SUB+=	BLUEHEART="@comment "
+.endif
+
+DISTFILES+=	CornerMP.tar.bz2
+.ifdef(WITH_SKIN_CORNERMP)
+EXTRACT_ONLY+=	CornerMP.tar.bz2
+
+PLIST_SUB+=	CORNERMP=""
+.else
+PLIST_SUB+=	CORNERMP="@comment "
+.endif
+
+DISTFILES+=	CubicPlayer.tar.bz2
+.ifdef(WITH_SKIN_CUBICPLAYER)
+EXTRACT_ONLY+=	CubicPlayer.tar.bz2
+
+PLIST_SUB+=	CUBICPLAYER=""
+.else
+PLIST_SUB+=	CUBICPLAYER="@comment "
 .endif
 
 DISTFILES+=	Cyrus.tar.bz2
@@ -136,6 +169,15 @@ PLIST_SUB+=	MIDNIGHTLOVE=""
 PLIST_SUB+=	MIDNIGHTLOVE="@comment "
 .endif
 
+DISTFILES+=	netscape4.tar.bz2
+.ifdef(WITH_SKIN_NETSCAPE4)
+EXTRACT_ONLY+=	netscape4.tar.bz2
+
+PLIST_SUB+=	NETSCAPE4=""
+.else
+PLIST_SUB+=	NETSCAPE4="@comment "
+.endif
+
 DISTFILES+=	neutron.tar.bz2
 .ifdef(WITH_SKIN_NEUTRON)
 EXTRACT_ONLY+=	neutron.tar.bz2
@@ -161,6 +203,24 @@ EXTRACT_ONLY+=	plastic.tar.bz2
 PLIST_SUB+=	PLASTIC=""
 .else
 PLIST_SUB+=	PLASTIC="@comment "
+.endif
+
+DISTFILES+=	proton.tar.bz2
+.ifdef(WITH_SKIN_PROTON)
+EXTRACT_ONLY+=	proton.tar.bz2
+
+PLIST_SUB+=	PROTON=""
+.else
+PLIST_SUB+=	PROTON="@comment "
+.endif
+
+DISTFILES+=	slim.tar.bz2
+.ifdef(WITH_SKIN_SLIM)
+EXTRACT_ONLY+=	slim.tar.bz2
+
+PLIST_SUB+=	SLIM=""
+.else
+PLIST_SUB+=	SLIM="@comment "
 .endif
 
 DISTFILES+=	WindowsMediaPlayer6.tar.bz2
