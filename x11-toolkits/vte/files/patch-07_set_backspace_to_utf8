@@ -1,0 +1,14 @@
+--- src/vte.c.orig	2004-12-20 00:57:39 -0800
++++ src/vte.c	2004-12-20 00:57:44 -0800
+@@ -7125,7 +7125,11 @@
+ 		break;
+ 	default:
+ 		if (pid != 0) {
++			char *codeset;
+ 			terminal->pvt->pty_master = i;
++			g_get_charset(&codeset);
++			_vte_pty_set_utf8(terminal->pvt->pty_master,
++					  (strcmp(codeset, "UTF-8") == 0));
+ 		}
+ 	}
+
