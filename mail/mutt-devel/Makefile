@@ -30,7 +30,6 @@ CONFIGURE_ARGS=	--enable-flock --disable-fcntl \
 
 .include <bsd.port.pre.mk>
 
-USE_AUTOCONF=	yes
 USE_AUTOMAKE=	yes
 USE_GMAKE=	yes
 
