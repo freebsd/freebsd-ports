@@ -15,9 +15,8 @@ include/pari/parisys.h
 include/pari/pariport.h
 include/pari/paridecl.h
 include/pari/genpari.h
-lib/libpari.so.2.1.1
-lib/libpari.so.1
 lib/libpari.so
+lib/libpari.so.1
 share/doc/pari/AUTHORS
 share/doc/pari/Announce.2.1
 share/doc/pari/CHANGES
