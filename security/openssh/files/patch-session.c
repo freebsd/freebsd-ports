@@ -1,5 +1,5 @@
---- session.c.orig	Wed Jun 26 14:23:47 2002
-+++ session.c	Wed Jun 26 16:38:27 2002
+--- session.c.orig	Wed Jun 26 17:32:54 2002
++++ session.c	Wed Jun 26 18:05:16 2002
 @@ -58,6 +58,13 @@
  #include "session.h"
  #include "monitor_wrap.h"
@@ -39,12 +39,30 @@
  		 * Create a new session and process group since the 4.4BSD
  		 * setlogin() affects the entire process group.
  		 */
-@@ -545,11 +563,24 @@
+@@ -539,17 +557,42 @@
+ {
+ 	int fdout, ptyfd, ttyfd, ptymaster;
+ 	pid_t pid;
++#ifdef USE_PAM
++	const char *shorttty;
++#endif /* USE_PAM */
+ 
+ 	if (s == NULL)
+ 		fatal("do_exec_pty: no session");
  	ptyfd = s->ptyfd;
  	ttyfd = s->ttyfd;
  
 +#ifdef USE_PAM
-+	do_pam_session(s->pw->pw_name, s->tty);
++	/* check if we have a pathname in the ttyname */
++	shorttty = rindex( s->tty, '/' );
++	if (shorttty != NULL ) {
++		/* use only the short filename to check */
++		shorttty ++;
++	} else {
++		/* nothing found, use the whole name found */
++		shorttty = s->tty;
++	}
++	do_pam_session(s->pw->pw_name, shorttty);
 +	do_pam_setcred();
 +#endif /* USE_PAM */
 +
@@ -64,7 +82,7 @@
  		/* Close the master side of the pseudo tty. */
  		close(ptyfd);
  
-@@ -638,6 +669,18 @@
+@@ -638,6 +681,18 @@
  	struct sockaddr_storage from;
  	struct passwd * pw = s->pw;
  	pid_t pid = getpid();
@@ -83,7 +101,7 @@
  
  	/*
  	 * Get IP address of client. If the connection is not a socket, let
-@@ -660,10 +703,97 @@
+@@ -660,10 +715,97 @@
  		    options.verify_reverse_mapping),
  		    (struct sockaddr *)&from);
  
@@ -182,7 +200,7 @@
  		time_string = ctime(&s->last_login_time);
  		if (strchr(time_string, '\n'))
  			*strchr(time_string, '\n') = 0;
-@@ -674,7 +804,30 @@
+@@ -674,7 +816,30 @@
  			    s->hostname);
  	}
  
@@ -214,7 +232,7 @@
  }
  
  /*
-@@ -690,9 +843,9 @@
+@@ -690,9 +855,9 @@
  #ifdef HAVE_LOGIN_CAP
  		f = fopen(login_getcapstr(lc, "welcome", "/etc/motd",
  		    "/etc/motd"), "r");
@@ -226,7 +244,7 @@
  		if (f) {
  			while (fgets(buf, sizeof(buf), f))
  				fputs(buf, stdout);
-@@ -719,10 +872,10 @@
+@@ -719,10 +884,10 @@
  #ifdef HAVE_LOGIN_CAP
  	if (login_getcapbool(lc, "hushlogin", 0) || stat(buf, &st) >= 0)
  		return 1;
@@ -239,7 +257,7 @@
  	return 0;
  }
  
-@@ -806,12 +959,39 @@
+@@ -813,12 +978,39 @@
  	fclose(f);
  }
  
@@ -279,7 +297,7 @@
  	struct passwd *pw = s->pw;
  
  	/* Initialize the environment. */
-@@ -820,16 +1000,33 @@
+@@ -827,16 +1019,33 @@
  	env[0] = NULL;
  
  	if (!options.use_login) {
@@ -316,7 +334,7 @@
  
  		snprintf(buf, sizeof buf, "%.200s/%.50s",
  			 _PATH_MAILDIR, pw->pw_name);
-@@ -882,6 +1079,10 @@
+@@ -889,6 +1098,10 @@
  		child_set_env(&env, &envsize, "KRB5CCNAME",
  		    s->authctxt->krb5_ticket_file);
  #endif
@@ -327,7 +345,7 @@
  	if (auth_sock_name != NULL)
  		child_set_env(&env, &envsize, SSH_AUTHSOCKET_ENV_NAME,
  		    auth_sock_name);
-@@ -998,7 +1199,7 @@
+@@ -1005,7 +1218,7 @@
  	if (getuid() == 0 || geteuid() == 0) {
  #ifdef HAVE_LOGIN_CAP
  		if (setusercontext(lc, pw, pw->pw_uid,
@@ -336,7 +354,7 @@
  			perror("unable to set user context");
  			exit(1);
  		}
-@@ -1038,6 +1239,36 @@
+@@ -1045,6 +1258,36 @@
  	exit(1);
  }
  
@@ -373,7 +391,7 @@
  /*
   * Performs common processing for the child, such as setting up the
   * environment, closing extra file descriptors, setting the user and group
-@@ -1116,7 +1347,7 @@
+@@ -1123,7 +1366,7 @@
  	 * initgroups, because at least on Solaris 2.3 it leaves file
  	 * descriptors open.
  	 */
@@ -382,7 +400,7 @@
  		close(i);
  
  	/*
-@@ -1146,6 +1377,31 @@
+@@ -1153,6 +1396,31 @@
  			exit(1);
  #endif
  	}

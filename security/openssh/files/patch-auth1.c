@@ -1,5 +1,5 @@
 --- auth1.c.orig	Wed Jun 19 02:27:55 2002
-+++ auth1.c	Mon Jun 24 23:54:35 2002
++++ auth1.c	Wed Jun 26 18:05:48 2002
 @@ -27,6 +27,15 @@
  #include "uidswap.h"
  #include "monitor_wrap.h"
@@ -153,17 +153,15 @@
  #ifdef BSD_AUTH
  		if (authctxt->as) {
  			auth_close(authctxt->as);
-@@ -299,9 +394,24 @@
+@@ -299,9 +394,23 @@
  		    !auth_root_allowed(get_authname(type)))
  			authenticated = 0;
  
--		/* Log before sending the reply */
 +		if (pw != NULL && pw->pw_uid == 0)
 +		  log("ROOT LOGIN as '%.100s' from %.100s",
 +		      pw->pw_name, from_host);
 +
-+		/* Log before ghT!
-+sending the reply */
+ 		/* Log before sending the reply */
  		auth_log(authctxt, authenticated, get_authname(type), info);
  
 +#ifdef USE_PAM
@@ -179,7 +177,7 @@
  		if (authenticated)
  			return;
  
-@@ -354,6 +464,11 @@
+@@ -354,6 +463,11 @@
  		authctxt->valid = 1;
  	else
  		debug("do_authentication: illegal user %s", user);
