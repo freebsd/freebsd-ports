@@ -1,0 +1,36 @@
+--- httpd.c.orig	Tue Nov  9 02:23:46 1999
++++ httpd.c	Sun Dec  9 21:30:59 2001
+@@ -271,8 +271,16 @@
+       if (!stralloc_copyb(&path,host.s + i,host.len - i)) _exit(21);
+       host.len = i;
+     }
+-    else
+-      if (!stralloc_copy(&path,&url)) _exit(21);
++    else {
++      if (case_startb(url.s,url.len,"https://")) {
++	if (!stralloc_copyb(&host,url.s + 8,url.len - 8)) _exit(21);
++	i = byte_chr(host.s,host.len,'/');
++	if (!stralloc_copyb(&path,host.s + i,host.len - i)) _exit(21);
++	host.len = i;
++      }
++      else
++	if (!stralloc_copy(&path,&url)) _exit(21);
++    }
+ 
+     if (!path.len || (path.s[path.len - 1] == '/'))
+       if (!stralloc_cats(&path,"index.html")) _exit(21);
+--- file.c.orig	Wed Dec 12 07:09:57 2001
++++ file.c	Wed Dec 12 07:09:33 2001
+@@ -15,7 +15,11 @@
+   char *x;
+ 
+   x = env_get("TCPREMOTEIP");
+-  if (!x) x = "0";
++  if (!x) {
++    x = env_get("SSLREMOTEIP");
++    if (!x)
++      x = "0";
++  }
+   substdio_puts(subfderr,x);
+   substdio_puts(subfderr,flagread ? " read ": " dir ");
+ 

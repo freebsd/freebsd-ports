@@ -1,3 +1,4 @@
 bin/configure
 bin/httpd
 bin/ftpd
+%%BASICAUTH%%bin/htrules
