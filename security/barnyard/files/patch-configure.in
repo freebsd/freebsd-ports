@@ -1,0 +1,9 @@
+--- configure.in	Sat May  1 11:43:29 2004
++++ configure.in.orig	Wed Feb  9 11:47:44 2005
+@@ -282,5 +282,5 @@
+   dnl check for the header
+   LDFLAGS="${LDFLAGS} -L${MYSQL_LIB_DIR}"
+-  LIBS="${LIBS} -lz -lssl -lmysqlclient"
++  LIBS="${LIBS} -lmysqlclient -lcrypto"
+   AC_CHECK_LIB(mysqlclient, mysql_real_connect, FOUND=yes, FOUND=no)
+ 

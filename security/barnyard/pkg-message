@@ -1,0 +1,14 @@
+************************************************************************
+ 
+Read the notes in the barnyard.conf file for how to configure 
+%%PREFIX%%/etc/barnyard.conf after installation.  For 
+further assistance, search the archives of the barnyard-users mailing 
+list at http://sourceforge.net/mailarchive/forum.php?forum=barnyard-users
+
+In order to enable barnyard to start on boot, you must edit /etc/rc.conf 
+with the appropriate flags, etc.  See the FreeBSD Handbook for syntax:
+http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/configtuning-rcng.html
+
+For the various options available, type % barnyard -h after install.
+
+************************************************************************
