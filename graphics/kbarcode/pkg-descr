@@ -1,0 +1,22 @@
+KBarcode creates, handles, manages and prints barcodes
+
+* a label designer with more than 1,000 predefined labels
+  and support for creating customized labels
+* a barcode generator for creating single barcodes and
+  saving or printing them
+* support for using an SQL database for storing data
+* a configuration wizard for connecting to an SQL database
+  and creating database tables
+* support for different barcode formats (like UPC, EAN, etc.)
+  for each article
+* support for adding customer-related information and print
+  customized barcodes for each article
+* batch control for importing a very large number of barcode
+  descriptions (quantity and number of articles) and printing
+  them using the specified barcode label
+* a friendly GUI.
+
+WWW:        http://kbarcode.sourceforge.net/
+Authors:    Dominik Seichter <domseichter@web.de>,
+            Stefan "Stonki" Onken <stonki@gmx.de>
+Maintainer: Andy Raffle <andy@digitalspecies.com>

@@ -165,6 +165,7 @@
     SUBDIR += jslice
     SUBDIR += juno-2
     SUBDIR += kallery
+    SUBDIR += kbarcode
     SUBDIR += kdc2tiff
     SUBDIR += kdegraphics3
     SUBDIR += kisomandel
