@@ -17,3 +17,4 @@ share/mule/19.34/site-lisp/diclookup-mule.elc
 share/mule/19.34/site-lisp/sirup-doc.elc
 share/mule/19.34/site-lisp/sirup.elc
 share/mule/19.34/site-lisp/ndtp.elc
+@dirrm lib/dserver
