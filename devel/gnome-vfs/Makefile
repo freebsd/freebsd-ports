@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomevfs
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-vfs
@@ -14,11 +14,13 @@ DISTNAME=	gnome-vfs-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 
-BUILD_DEPENDS=	msgfmt-new:${PORTSDIR}/devel/gettext-devel
+BUILD_DEPENDS=	msgfmt-new:${PORTSDIR}/devel/gettext-devel \
+		${X11BASE}/libdata/pkgconfig/gnome-mime-data-2.0.pc:${PORTSDIR}/misc/gnomemimedata
 LIB_DEPENDS=	gconf-1.1:${PORTSDIR}/devel/gconf
 .if !exists(/usr/bin/bzip2)
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif
+RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gnome-mime-data-2.0.pc:${PORTSDIR}/misc/gnomemimedata
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes

@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- configure.orig	Wed Nov  7 13:37:59 2001
-+++ configure	Wed Nov  7 13:38:44 2001
-@@ -5717,7 +5717,7 @@
+--- configure.orig	Tue Jan 22 12:36:47 2002
++++ configure	Tue Jan 22 12:38:07 2002
+@@ -5949,7 +5949,7 @@
  VFS_GNOMEUI_LIBS="`gnome-config --libs gnome gnomeui`"
  VFS_GNOMEGNORBA_LIBS="`gnome-config --libs gnome gnomeui gnorba`"
  VFS_CAPPLET_LIBS="`gnome-config --libs gnome gnomeui capplet`"
@@ -12,18 +12,18 @@ $FreeBSD$
  
  
  
-@@ -9630,8 +9630,8 @@
+@@ -9854,8 +9854,8 @@
    done
  fi
  
 -echo $ac_n "checking for bzCompressInit in -lbz2""... $ac_c" 1>&6
--echo "configure:9635: checking for bzCompressInit in -lbz2" >&5
+-echo "configure:9859: checking for bzCompressInit in -lbz2" >&5
 +echo $ac_n "checking for BZ2_bzCompressInit in -lbz2""... $ac_c" 1>&6
-+echo "configure:9635: checking for BZ2_bzCompressInit in -lbz2" >&5
++echo "configure:9859: checking for BZ2_bzCompressInit in -lbz2" >&5
  ac_lib_var=`echo bz2'_'bzCompressInit | sed 'y%./+-%__p_%'`
  if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
-@@ -9644,10 +9644,10 @@
+@@ -9868,10 +9868,10 @@
  /* Override any gcc2 internal prototype to avoid an error.  */
  /* We use char because int might match the return type of a gcc2
      builtin and then its argument prototype would still apply.  */
@@ -35,4 +35,22 @@ $FreeBSD$
 +BZ2_bzCompressInit()
  ; return 0; }
  EOF
- if { (eval echo configure:9654: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+ if { (eval echo configure:9878: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+@@ -10101,7 +10101,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   
+-		LDFLAGS="$LDFLAGS -L$with_openssl_libs -lssl -lcrypto -ldl"
++		LDFLAGS="$LDFLAGS -L$with_openssl_libs -lssl -lcrypto"
+ 		cat > conftest.$ac_ext <<EOF
+ #line 10107 "configure"
+ #include "confdefs.h"
+@@ -10135,7 +10135,7 @@
+ EOF
+ 
+ 		msg_openssl="yes"
+-		OPENSSL_LDFLAGS="-L$with_openssl_libs -lssl -lcrypto -ldl"
++		OPENSSL_LDFLAGS="-L$with_openssl_libs -lssl -lcrypto"
+ 		
+ 
+ if true; then

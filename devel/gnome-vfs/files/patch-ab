@@ -1,21 +1,21 @@
 
 $FreeBSD$
 
---- Makefile.in.orig	Fri Sep 28 11:17:29 2001
-+++ Makefile.in	Fri Sep 28 11:22:06 2001
-@@ -177,9 +177,9 @@
+--- Makefile.in.orig	Tue Jan 22 11:51:36 2002
++++ Makefile.in	Tue Jan 22 11:53:19 2002
+@@ -186,9 +186,9 @@
+ cxxflags_set = @cxxflags_set@
  l = @l@
- need_gnome_support = @need_gnome_support@
  @PLATFORM_GNOME_2_TRUE@SUBDIRS_GNOME = doc
 -@PLATFORM_GNOME_2_FALSE@SUBDIRS_GNOME = doc test
 +@PLATFORM_GNOME_2_FALSE@SUBDIRS_GNOME = doc
  
--SUBDIRS =  	libgnomevfs					libgnomevfs-pthread				idl						modules						data						man						devel-docs					$(SUBDIRS_GNOME)				po
-+SUBDIRS =  	libgnomevfs					libgnomevfs-pthread				idl						modules						data						man						$(SUBDIRS_GNOME)				po
+-SUBDIRS =  	libgnomevfs					libgnomevfs-pthread				idl						modules						man						devel-docs					$(SUBDIRS_GNOME)				po
++SUBDIRS =  	libgnomevfs					libgnomevfs-pthread				idl						modules						man						$(SUBDIRS_GNOME)				po
  
  
  EXTRA_DIST =  	HACKING						TODO						autogen.sh					gnome-vfs.spec					vfsConf.sh.in					xml-i18n-extract.in				xml-i18n-merge.in				xml-i18n-update.in				gnome-vfs-config.in
-@@ -187,7 +187,7 @@
+@@ -196,7 +196,7 @@
  
  bin_SCRIPTS = $(top_builddir)/gnome-vfs-config
  
@@ -24,7 +24,7 @@ $FreeBSD$
  confexec_DATA =  	vfsConf.sh
  
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-@@ -526,11 +526,13 @@
+@@ -535,11 +535,13 @@
  	    -e 's?\@VFS_INCLUDEDIR\@?$(VFS_INCLUDEDIR)?g' \
  	    -e 's?\@VERSION\@?$(VERSION)?g' \
  	    -e 's?\@VFS_LIBS\@?$(VFS_LIBS)?g' \
