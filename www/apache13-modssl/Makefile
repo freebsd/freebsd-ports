@@ -45,8 +45,7 @@ USE_OPENSSL=	RSA
 
 .include <bsd.port.pre.mk>
 
-BUILD_DEPENDS=	mm-config:${PORTSDIR}/devel/mm \
-		${PREFIX}/lib/libmm.a:${PORTSDIR}/devel/mm
+LIB_DEPENDS=	mm.11:${PORTSDIR}/devel/mm
 
 VERSION_APACHE=	1.3.12
 VERSION_MODSSL=	2.6.6
