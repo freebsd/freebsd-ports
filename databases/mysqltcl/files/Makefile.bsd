@@ -4,7 +4,7 @@ SHLIB_MINOR=	0
 
 SRCS	=	mysqltcl.c
 CFLAGS +=	-I${PREFIX}/include/${TCL_VERSION}/
-CFLAGS +=	-I${PREFIX}/include/mysql/
+CFLAGS +=	-I${PREFIX}/include/mysql/ -Wall
 LDADD  +=	-L${PREFIX}/lib -l${TCL_NODOT}
 LDADD  +=	-L${PREFIX}/lib/mysql -lmysqlclient
 

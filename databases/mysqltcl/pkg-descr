@@ -10,3 +10,6 @@ From the package man-page:
        left as it was when I started to work with this  interface
        (a  patch  of  msqltcl-1.50).  However,  I  have  tried to
        replace appropriate occurrences of msql by MySQL.
+
+This port makes  use of some of  the Tcl-8.x niceties, but  more on that
+front can be done.
