@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.xdr.com/dash/
 DISTNAME=	xscavenger-142
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	eivind@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Lode Runner clone for X11
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src

@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.cs.hmc.edu/~me/isync/
 
 LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
 
-MAINTAINER=	eivind@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Maintain local copies of remote IMAP folders w/synchronized flags
 
 GNU_CONFIGURE=	yes
