@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.dbox.handshake.de/download/ \
 		http://www.cs.cmu.edu/~kroening/dbox/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	anders@fix.no
+MAINTAINER=	ports@FreeBSD.org
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

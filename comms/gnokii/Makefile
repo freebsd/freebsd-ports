@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.gnokii.org/pub/gnokii/pre/ \
 		ftp://urtica.linuxnews.pl/pub/people/pkot/gnokii/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_pre22
 
-MAINTAINER=	anders@fix.no
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 

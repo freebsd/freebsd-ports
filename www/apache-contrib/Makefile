@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.apache.org/dist/%SUBDIR%/ \
 		ftp://ftp.sunet.se/pub/www/servers/apache/dist/%SUBDIR%/
 MASTER_SITE_SUBDIR=	httpd/contrib/modules/1.3
 
-MAINTAINER=	anders@fix.no
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13

@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://sunsite.dk/vpnd/archive/ \
 		http://www.freenix.no/~anders/
 
-MAINTAINER=	anders@fix.no
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 HAS_CONFIGURE=	yes

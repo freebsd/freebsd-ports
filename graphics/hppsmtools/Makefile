@@ -13,7 +13,7 @@ MASTER_SITES=	http://unimut.fsk.uni-heidelberg.de/demi/photosmart/ \
 		http://www.freenix.no/~anders/ \
 		ftp://totem.fix.no/pub/mirrors/misc/
 
-MAINTAINER=	anders@fix.no
+MAINTAINER=	ports@FreeBSD.org
 
 ALL_TARGET=
 

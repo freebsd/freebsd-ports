@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.snert.com/Software/mod_watch/ \
 DISTNAME=	${PORTNAME}203
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	anders@fix.no
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
 RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
