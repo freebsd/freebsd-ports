@@ -12,4 +12,4 @@ console. (Define FORCE_CONSOLE to 1 in dcons.c for this.)  Even it
 is not used as console, it can still be used as GDB(not DDB) port.
 
 See %%DOCSDIR%%/README.dcons and manpage of dcons(4)
-and fwchat(8) for details.
+and dconschat(8) for details.

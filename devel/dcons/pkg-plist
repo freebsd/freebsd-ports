@@ -1,4 +1,4 @@
-sbin/fwchat
+sbin/dconschat
 @unexec [ -f %%MAKEDEV%% ] && /bin/rm -f %%DCONS_DEV%% || true
 @unexec /bin/rm -f %D/lib/dcons/linker.hints
 lib/dcons/dcons.ko
@@ -8,6 +8,5 @@ lib/dcons/dcons_crom.ko
 etc/rc.d/dcons.sh
 %%DOCSDIR%%/gdb-usage
 %%DOCSDIR%%/README.dcons
-%%DOCSDIR%%/sample-script
 @dirrm lib/dcons
 @dirrm %%DOCSDIR%%
