@@ -1,0 +1,108 @@
+.\"
+.\" Copyleft by nagae@an.ip.titech.ac.jp and mac@research.co.jp
+.\" du2ps.man
+.TH du2ps 1 "Mar 2, 1994"
+.SH NAME
+du2ps \- filter for converting output of du to PostScript file
+.SH SYNOPSIS
+.B du2ps
+[
+.I options
+]
+<
+.I du_out_file
+>
+.I ps_file
+.SH DESCRIPTION
+The
+.B du2ps
+reads output of
+.BR du (1),
+then generate a figure of hierarchical structure and utilization of
+directory as one page PostScript file.
+.PP
+Each directory is illustrated as rectangle in utilization order with
+height corresponding to its utilization, and sub directories are placed
+branched from left to right recursively. 
+.SH OPTIONS
+.TP
+.B \-land
+Layout in landscape.
+Default is in portrait.
+.TP
+.B \-sa
+Place directories in alphabetical order.
+Default is in utilization order.
+.TP
+.B \-b4
+.TP
+.B \-b5
+.TP
+.B \-us
+Switch page size to B4, B5, or US letter. Default is A4.
+.TP
+.BI \-ff " name"
+Specify font name for text. Default is Times-Roman.
+.TP
+.BI \-fs " size"
+Specify font size. Default is 8.0 [pt].
+.TP
+.BI \-ms " size"
+Specify margin around page. Default is 50.0 [pt].
+.TP
+.BI \-lw " size"
+Line width for drawing rectangle area. Default is 0.5 [pt].
+.TP
+.BI \-ncols " num"
+Specify number of rectangle columns (maximum directory depth).
+Default is 7 for portrait and 10 for landscape.
+.TP
+.BI \-eps " width height"
+Output in EPS format.
+.I Width
+and
+.I height
+are the width and height of BoundingBox.
+.SH EXAMPLES
+.B " du | du2ps | lpr
+.IP
+The most left directory name becomes ``.'', and ``The number of disk
+blocks used at .'' will be displayed at the upper left corner.
+.
+.B " du /home/taro/work | du2ps | lpr
+.PP
+.B " du ~taro/work | du2ps | lpr
+.IP
+The most left directory name becomes ``work'', and 
+``The number of disk blocks used at /home/taro/work'' 
+will be displayed at the upper left corner.
+.PP
+.B " du ../../ps | du2ps -us -fs 16 > tmp.ps; gs tmp.ps
+.IP
+The most left directory name becomes ``ps'', and
+``The number of disk blocks used at ../../ps''
+will be displayed at the upper left corner.
+The ``-us'' option makes entire page to fit paper, because default size of
+GhostScript is US letter.
+.PP
+.B " du ~taro/work ~taro/bin | du2ps -eps 200 300 > fig1.eps
+.IP
+The most left directory name becomes ``taro'', and
+``The number of disk blocks used at /home/taro''
+will be display at the upper left corner.
+Output will be commented with ``%%BoundingBox: 0 0 200 300''.
+.PP
+.B " du work bin | du2ps -eps 100 100 -fs 4 > fig2.eps
+.IP
+The most left directory name becomes ``..'', and
+``The number of disk blocks used at''
+will be display at the upper left corner.
+.SH SEE ALSO
+.BR du (1),
+.BR xdu (1)
+.SH AUTHORS
+Takanori Nagae <nagae@an.ip.titech.ac.jp> and
+Shigeru Makino <mac@research.co.jp>
+.PP
+The du2ps is based on xdu.
+The author of xdu is Phillip C. Dykstra <phil@BRL.MIL>.

@@ -38,6 +38,7 @@
     SUBDIR += dirdiff
     SUBDIR += diskusage
     SUBDIR += doconfig
+    SUBDIR += du2ps
     SUBDIR += dvdtape
     SUBDIR += eject
     SUBDIR += extipl

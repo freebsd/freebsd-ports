@@ -1,0 +1,12 @@
+--- nodeop.c.orig	Tue Mar 15 18:15:58 1994
++++ nodeop.c	Wed Jun  6 15:03:28 2001
+@@ -142,7 +142,8 @@
+ 
+     /* for each child */
+ 	for(np = nodep->child; NODE_NULL != np; np = np->peer){
+-		double height = h * np->size / nodep->size;
++		/* When nodep->size is 0, 'divided by zero' will be raised */
++		double height = (nodep->size != 0 ? h * np->size / nodep->size : 0);
+ 
+ 		drawrect(np, y, height, depth);
+ 
