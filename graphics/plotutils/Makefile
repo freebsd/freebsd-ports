@@ -3,7 +3,7 @@
 # Date created:		19 June 1998
 # Whom:			Chuck Robey (chuckr)
 #
-# $Id: Makefile,v 1.1.1.1 1998/06/20 03:09:11 chuckr Exp $
+# $Id: Makefile,v 1.2 1998/06/26 04:53:29 asami Exp $
 #
 
 DISTNAME=	plotutils-2.1.1
@@ -19,6 +19,6 @@ CONFIGURE_ARGS=	--with-motif
 .endif
 
 post-install:
-	$(LDCONFIG) -m $(PREFIX)/lib
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

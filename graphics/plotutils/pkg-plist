@@ -41,10 +41,12 @@ share/tek2plot/ocpred.tek
 share/tek2plot/scale.tek
 share/tek2plot/skymap.tek
 share/tek2plot/usmap.tek
-lib/libplot.so.1.0
+lib/libplot.so
+lib/libplot.so.1
 lib/libplot.a
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R
+lib/libplot.la
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 include/plot.h
 @unexec install-info --delete --info-dir=/usr/local/info /usr/local/info/plotutils.info
 info/plotutils.info

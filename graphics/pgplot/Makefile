@@ -3,7 +3,7 @@
 # Date created:		21 December 1996
 # Whom:			jmz
 #
-# $Id: Makefile,v 1.3 1997/07/17 15:12:44 max Exp $
+# $Id: Makefile,v 1.4 1997/08/15 13:36:01 jmz Exp $
 #
 
 DISTNAME=       pgplot5.2
@@ -16,6 +16,15 @@ MAINTAINER=	jmz@FreeBSD.org
 WRKSRC=		${WRKDIR}/pgplot
 
 post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
+.for f in libcpgplot.so libpgplot.so
+	${LN} -sf $f.${VERSION} ${PREFIX}/lib/$f
+.endfor
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
+
+.if ${PORTOBJFORMAT} == "elf"
+VERSION=	5
+.else
+VERSION=	5.2
+.endif

@@ -8,10 +8,10 @@ $myname = $0;
 $count = 0;
 
 while ($ARGV[0] =~ /^-/) {
-    $opt . = " $ARGV[0]";
+    $opt .= " $ARGV[0]";
     if ($ARGV[0] eq "-o") {
 	shift;
-	$opt . = " $ARGV[0]";
+	$opt .= " $ARGV[0]";
     }
     shift;
 }
