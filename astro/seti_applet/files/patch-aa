@@ -1,0 +1,11 @@
+--- src/seti_applet.c.orig	Fri Jun 30 20:00:34 2000
++++ src/seti_applet.c	Fri Jun 30 20:00:45 2000
+@@ -705,7 +705,7 @@
+ 		g_free ( sa.setidir );
+ 	}
+ 	gnome_config_push_prefix ( path );
+-	sa.setidir = gnome_config_get_string ( "setiapplet/setidir=/usr/local/seti" );
++	sa.setidir = gnome_config_get_string ( "setiapplet/setidir=/var/db/setiathome" );
+ 	sa.updateinterval = gnome_config_get_int ( "setiapplet/updateinterval=10" );
+ 	sa.fileupdateinterval = gnome_config_get_int ( "setiapplet/fileupdateinterval=120" );
+ 	sa.showcpu = gnome_config_get_int ( "setiapplet/showcpu=1" );
