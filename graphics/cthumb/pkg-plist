@@ -1,0 +1,143 @@
+bin/cthumb
+share/cthumb/blue-steel.theme/theme.conf
+share/cthumb/blue-steel.theme/top.png
+share/cthumb/blue-steel.theme/bot.png
+share/cthumb/blue-steel.theme/left.png
+share/cthumb/blue-steel.theme/right.png
+share/cthumb/classic-clips.theme/theme.conf
+share/cthumb/classic-clips.theme/top.png
+share/cthumb/classic-clips.theme/bot.png
+share/cthumb/classic-clips.theme/left.png
+share/cthumb/classic-clips.theme/right.png
+share/cthumb/classic.theme/theme.conf
+share/cthumb/classic.theme/top.png
+share/cthumb/classic.theme/bot.png
+share/cthumb/classic.theme/left.png
+share/cthumb/classic.theme/right.png
+share/cthumb/crosshair.theme/theme.conf
+share/cthumb/crosshair.theme/top.png
+share/cthumb/crosshair.theme/bot.png
+share/cthumb/crosshair.theme/left.png
+share/cthumb/crosshair.theme/right.png
+share/cthumb/film.theme/top-1.png
+share/cthumb/film.theme/top-2.png
+share/cthumb/film.theme/top-3.png
+share/cthumb/film.theme/top-4.png
+share/cthumb/film.theme/top-5.png
+share/cthumb/film.theme/top-6.png
+share/cthumb/film.theme/top-7.png
+share/cthumb/film.theme/top-8.png
+share/cthumb/film.theme/top-9.png
+share/cthumb/film.theme/bot-1.png
+share/cthumb/film.theme/bot-2.png
+share/cthumb/film.theme/bot-3.png
+share/cthumb/film.theme/bot-4.png
+share/cthumb/film.theme/bot-5.png
+share/cthumb/film.theme/bot-6.png
+share/cthumb/film.theme/bot-7.png
+share/cthumb/film.theme/bot-8.png
+share/cthumb/film.theme/bot-9.png
+share/cthumb/film.theme/theme.conf
+share/cthumb/float-medium.theme/theme.conf
+share/cthumb/float-medium.theme/top.png
+share/cthumb/float-medium.theme/bot.png
+share/cthumb/float-medium.theme/left.png
+share/cthumb/float-medium.theme/right.png
+share/cthumb/float-more.theme/top.png
+share/cthumb/float-more.theme/bot.png
+share/cthumb/float-more.theme/left.png
+share/cthumb/float-more.theme/right.png
+share/cthumb/float-more.theme/theme.conf
+share/cthumb/float-thick.theme/top.png
+share/cthumb/float-thick.theme/bot.png
+share/cthumb/float-thick.theme/left.png
+share/cthumb/float-thick.theme/right.png
+share/cthumb/float-thick.theme/theme.conf
+share/cthumb/float.theme/top.png
+share/cthumb/float.theme/bot.png
+share/cthumb/float.theme/left.png
+share/cthumb/float.theme/right.png
+share/cthumb/float.theme/theme.conf
+share/cthumb/neat-round.theme/bot.png
+share/cthumb/neat-round.theme/left.png
+share/cthumb/neat-round.theme/right.png
+share/cthumb/neat-round.theme/theme.conf
+share/cthumb/neat-round.theme/top.png
+share/cthumb/neat-square.theme/bot.png
+share/cthumb/neat-square.theme/left.png
+share/cthumb/neat-square.theme/right.png
+share/cthumb/neat-square.theme/theme.conf
+share/cthumb/neat-square.theme/top.png
+share/cthumb/postcard.theme/theme.conf
+share/cthumb/postcard.theme/top.png
+share/cthumb/postcard.theme/bot.png
+share/cthumb/postcard.theme/left.png
+share/cthumb/postcard.theme/right.png
+share/cthumb/shiny-tube.theme/top.png
+share/cthumb/shiny-tube.theme/bot.png
+share/cthumb/shiny-tube.theme/left.png
+share/cthumb/shiny-tube.theme/right.png
+share/cthumb/shiny-tube.theme/theme.conf
+share/cthumb/simpleframe.theme/theme.conf
+share/cthumb/simpleframe.theme/top.png
+share/cthumb/simpleframe.theme/bot.png
+share/cthumb/simpleframe.theme/left.png
+share/cthumb/simpleframe.theme/right.png
+share/cthumb/slides-big.theme/bot.png
+share/cthumb/slides-big.theme/left.png
+share/cthumb/slides-big.theme/right.png
+share/cthumb/slides-big.theme/theme.conf
+share/cthumb/slides-big.theme/top.png
+share/cthumb/slides-clean.theme/bot.png
+share/cthumb/slides-clean.theme/left.png
+share/cthumb/slides-clean.theme/right.png
+share/cthumb/slides-clean.theme/theme.conf
+share/cthumb/slides-clean.theme/top.png
+share/cthumb/slides-huge.theme/top.png
+share/cthumb/slides-huge.theme/bot.png
+share/cthumb/slides-huge.theme/left.png
+share/cthumb/slides-huge.theme/right.png
+share/cthumb/slides-huge.theme/theme.conf
+share/cthumb/slides-small.theme/top.png
+share/cthumb/slides-small.theme/bot.png
+share/cthumb/slides-small.theme/left.png
+share/cthumb/slides-small.theme/right.png
+share/cthumb/slides-small.theme/theme.conf
+share/cthumb/tv-large.theme/theme.conf
+share/cthumb/tv-large.theme/top.png
+share/cthumb/tv-large.theme/bot.png
+share/cthumb/tv-large.theme/left.png
+share/cthumb/tv-large.theme/right.png
+share/cthumb/tv.theme/theme.conf
+share/cthumb/tv.theme/top.png
+share/cthumb/tv.theme/bot.png
+share/cthumb/tv.theme/left.png
+share/cthumb/tv.theme/right.png
+share/doc/cthumb/ChangeLog
+share/doc/cthumb/INSTALL
+share/doc/cthumb/README
+share/doc/cthumb/TO-DO
+share/doc/cthumb/VERSION
+share/doc/cthumb/cthumbrc.sample
+@dirrm share/cthumb/blue-steel.theme
+@dirrm share/cthumb/classic-clips.theme
+@dirrm share/cthumb/classic.theme
+@dirrm share/cthumb/crosshair.theme
+@dirrm share/cthumb/film.theme
+@dirrm share/cthumb/float-medium.theme
+@dirrm share/cthumb/float-more.theme
+@dirrm share/cthumb/float-thick.theme
+@dirrm share/cthumb/float.theme
+@dirrm share/cthumb/neat-round.theme
+@dirrm share/cthumb/neat-square.theme
+@dirrm share/cthumb/postcard.theme
+@dirrm share/cthumb/shiny-tube.theme
+@dirrm share/cthumb/simpleframe.theme
+@dirrm share/cthumb/slides-big.theme
+@dirrm share/cthumb/slides-clean.theme
+@dirrm share/cthumb/slides-huge.theme
+@dirrm share/cthumb/slides-small.theme
+@dirrm share/cthumb/tv-large.theme
+@dirrm share/cthumb/tv.theme
+@dirrm share/cthumb
+@dirrm share/doc/cthumb

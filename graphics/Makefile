@@ -20,6 +20,7 @@
     SUBDIR += camserv
     SUBDIR += chbg
     SUBDIR += cqcam
+    SUBDIR += cthumb
     SUBDIR += dc20ctrl
     SUBDIR += dc20pack
     SUBDIR += dc3play
