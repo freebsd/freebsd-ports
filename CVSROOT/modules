@@ -1848,6 +1848,7 @@ estic		ports/misc/estic
 estraier	ports/textproc/estraier
 esvn		ports/devel/esvn
 et-aspell	ports/textproc/et-aspell
+etask		ports/deskutils/etask
 etcmerge	ports/sysutils/etcmerge
 eterm		ports/x11/eterm
 eterm-bg	ports/graphics/eterm-bg
