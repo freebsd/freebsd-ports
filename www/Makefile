@@ -82,6 +82,8 @@
     SUBDIR += mod_dav
     SUBDIR += mod_dtcl
     SUBDIR += mod_perl
+    SUBDIR += mod_php3
+    SUBDIR += mod_php4
     SUBDIR += momspider
     SUBDIR += mozilla
     SUBDIR += netscape-remote
