@@ -1,12 +1,12 @@
 # New ports collection makefile for:   py-pypgsql
-# Date created:                                01 Nov 2001
-# Whom:                                        Gerhard Haering <gerhard@bigfoot.de>
+# Date created:                        01 Nov 2001
+# Whom:                                Gerhard Haering <gerhard@bigfoot.de>
 #
 # $FreeBSD$
 #
 
 PORTNAME=      pyPgSQL
-PORTVERSION=   1.6
+PORTVERSION=   2.0
 CATEGORIES=    databases python
 MASTER_SITES=  ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= pypgsql
@@ -29,6 +29,8 @@ PLIST_SUB+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S/^${LOCALBASE}\///g}
 
 DATETIME_DEP=	${PYTHON_SITELIBDIR}/mx/DateTime/__init__.py
 
+DOCSDIR=	${PREFIX}/share/doc/py-pyPgSQL
+
 post-patch:
 	perl -i -p \
 		-e 's#^include_dirs  = \[ "/usr/local/pgsql/include" \]#include_dirs  = [ "${LOCALBASE}/include/pgsql" ]# ;' \
@@ -39,7 +41,7 @@ do-build:
 	${SETUP_CMD} build_ext --inplace
 
 do-install:
-	${SETUP_CMD} install
+	${SETUP_CMD} install -c -O1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in ${DOCS}
