@@ -2,18 +2,14 @@ bin/naim
 bin/nicq
 bin/nirc
 bin/nlily
-bin/sendim.sh
-lib/naim/libnsocket.la
-lib/naim/libnsocket.so
-lib/naim/libnsocket.so.0
-lib/naim/libnstatus.la
-lib/naim/libnstatus.so
-lib/naim/libnstatus.so.0
-share/doc/naim/commands.txt
+include/firetalk.h
+include/naim/modutil.h
+include/naim/naim.h
+include/naim/secs.h
 share/doc/naim/COLORS
 share/doc/naim/FAQ
-share/doc/naim/keyboard.txt
 share/doc/naim/README
-%%PORTDOCS%%share/doc/naim/naim.hlp
+share/doc/naim/commands.txt
+share/doc/naim/keyboard.txt
+@dirrm include/naim
 @dirrm share/doc/naim
-@dirrm lib/naim

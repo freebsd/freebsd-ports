@@ -6,25 +6,33 @@
 #
 
 PORTNAME=	naim
-PORTVERSION=	0.11.5.9
-CATEGORIES=	net
+PORTVERSION=	0.11.6
+CATEGORIES=	net irc
 MASTER_SITES=	http://shell.n.ml.org/n/naim/
 
 MAINTAINER=	rtdean@cytherianage.net
 COMMENT=	Curses based AOL Instant Messager implementation
 
 GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=		--disable-nirc-manlink
+CONFIGURE_ARGS=		--disable-nirc-manlink \
+			--with-pkgdocdir=${DOCSDIR}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_LIBTOOL=		yes
 
 MAN1=		naim.1
 MLINKS=		naim.1 nirc.1 naim.1 nicq.1 naim.1 nlily.1
 
-post-install:
-.if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${DOCSDIR}
-	@ ${INSTALL_DATA} ${WRKSRC}/doc/naim.hlp ${DOCSDIR}
+.if defined(WITH_DETACH)
+BUILD_DEPENDS=	screen:${PORTSDIR}/misc/screen
+RUN_DEPENDS=	screen:${PORTSDIR}/misc/screen
+
+CONFIGURE_ARGS+=	--enable-detach
 .endif
+
+pre-fetch:
+	@ ${ECHO} ""
+	@ ${ECHO} "You can use the following build option(s):"
+	@ ${ECHO} ""
+	@ ${ECHO} "     WITH_DETACH=yes         Enables /detach (requires screen)"
+	@ ${ECHO} ""
 
 .include <bsd.port.mk>
