@@ -3673,6 +3673,7 @@ kopete		ports/net/kopete
 korelib		ports/devel/korelib
 kp		ports/misc/kp
 kpasswdd	src/libexec/kpasswdd
+kpovmodeler	ports/graphics/kpovmodeler
 kprof		ports/devel/kprof
 kprop		src/eBones/kprop
 kpropd		src/eBones/kpropd
