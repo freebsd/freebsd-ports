@@ -1,11 +1,27 @@
---- configure.orig	Tue Jan 18 01:56:11 2000
-+++ configure	Tue Mar 28 22:19:58 2000
-@@ -3309,7 +3309,7 @@
+--- configure.orig	Wed Jan 24 23:59:05 2001
++++ configure	Thu Jan 25 23:36:40 2001
+@@ -546,7 +546,6 @@
+   ac_n= ac_c='\c' ac_t=
+ fi
+ 
+-
+ ac_aux_dir=
+ for ac_dir in $srcdir $srcdir/.. $srcdir/../..; do
+   if test -f $ac_dir/install-sh; then
+@@ -1545,7 +1544,7 @@
+ if test "`uname -s`" = "FreeBSD" ; then
+   echo "FreeBSD detected."
+   FREEBSD=1
+-  LDFLAGS="-L/usr/local/lib $LDFLAGS"
++  LDFLAGS="-L/usr/local/lib -lgnugetopt $LDFLAGS"
+   CPPFLAGS="-I/usr/local/include $CPPFLAGS"
+ fi
+ 
+@@ -3310,7 +3309,6 @@
  
  
  
 -CXXFLAGS="$CXXFLAGS -g -Wall -Wstrict-prototypes -W -fno-strength-reduce "
-+CXXFLAGS="$CXXFLAGS "
- SRCDIRS="mpegsound nmixer src"
+ SRCDIRS="mpegsound nmixer src doc"
  
  trap '' 1 2 15

@@ -1,3 +1,8 @@
-bin/mp3blaster
 bin/nmixer
+bin/mp3blaster
 bin/mp3tag
+bin/splay
+share/mp3blaster/commands.txt
+share/mp3blaster/sample.mp3blasterrc_for_x
+share/mp3blaster/sample.mp3blasterrc
+@dirrm share/mp3blaster
