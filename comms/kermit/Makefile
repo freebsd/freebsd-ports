@@ -11,6 +11,9 @@ CATEGORIES+=	comms
 MASTER_SITES=	ftp://kermit.columbia.edu/kermit/archives/
 EXTRACT_SUFX=	.tar.gz
 
-NO_WRKSUBDIR=
+NO_WRKSUBDIR=	yes
+
+# We can't distribute the binary because of the copyright.
+NO_PACKAGE=	yes
 
 .include <bsd.port.mk>
