@@ -13,12 +13,12 @@
 # override these variables in /etc/rc.conf
 dnrd_enable=${dnrd_enable-"NO"}
 
-. /etc/rc.subr
+. %%RC_SUBR%%
 
 name=dnrd
 rcvar=$(set_rcvar)
 
-command=/usr/local/sbin/${name}
+command=%%PREFIX%%/sbin/${name}
 pidfile=/var/run/${name}.pid
 
 load_rc_config ${name}
