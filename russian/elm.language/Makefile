@@ -2,10 +2,10 @@
 # Date created:         2 Dec 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.3 1996/02/26 01:41:34 ache Exp $
+# $Id: Makefile,v 1.4 1996/02/29 09:23:31 asami Exp $
 #
 
-PKGNAME=        ru-elm
+PKGNAME=        ru-elm-2.4ME+13
 CATEGORIES+=    russian mail
 
 RUN_DEPENDS+=   elm:${PORTSDIR}/mail/elm
