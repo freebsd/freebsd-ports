@@ -1,10 +1,19 @@
---- configure.orig	Tue Oct 14 20:10:14 2003
-+++ configure	Wed Nov  5 03:55:28 2003
+--- configure.orig	Fri Nov 28 17:36:36 2003
++++ configure	Mon Jun 28 01:33:07 2004
+@@ -5017,7 +5017,7 @@
+                 LIBS="$LIBS -lwx_gtk2d_stc-${WX_VERSION} -lwx_gtk2d_xrc-${WX_VERSION}"
+                 LIBS="$LIBS $WX_NEW_LDFLAGS"
+                 ;;
+-            *wx_gtk2u-*)
++            *wx_gtk2u*)
+                 LIBS="$LIBS -lwx_gtk2u_stc-${WX_VERSION} -lwx_gtk2u_xrc-${WX_VERSION}"
+                 LIBS="$LIBS $WX_NEW_LDFLAGS"
+                 ;;
 @@ -5033,13 +5033,18 @@
                  LIBS="$LIBS -lwx_gtk_stc-${WX_VERSION} -lwx_gtk_xrc-${WX_VERSION}"
                  LIBS="$LIBS $WX_NEW_LDFLAGS"
                  ;;
-+            *wx_gtk2-*)
++            *wx_gtk2*)
 +                LIBS="$LIBS -lwx_gtk2_stc-${WX_VERSION} -lwx_gtk2_xrc-${WX_VERSION}"
 +                LIBS="$LIBS $WX_NEW_LDFLAGS"
 +		;;
