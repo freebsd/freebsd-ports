@@ -16,7 +16,7 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Set of tools to record/playback/edit videos in MPEG format
 
 LIB_DEPENDS=	aviplay.0:${PORTSDIR}/multimedia/avifile
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_GNOME=	glib12
 USE_GMAKE=	yes
@@ -58,10 +58,6 @@ post-install:
 
 .if ${ARCH} == "i386"
 BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
-.endif
-
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not compile on amd64 (needs -fPIC)"
 .endif
 
 # pre-detection

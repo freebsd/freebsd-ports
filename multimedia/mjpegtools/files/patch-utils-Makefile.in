@@ -1,0 +1,11 @@
+--- utils/Makefile.in.orig	Tue Nov  9 22:37:34 2004
++++ utils/Makefile.in	Tue Nov  9 22:37:44 2004
+@@ -56,7 +56,7 @@
+ CCAS = @CCAS@
+ CCASFLAGS = @CCASFLAGS@
+ CCDEPMODE = @CCDEPMODE@
+-CFLAGS = @CFLAGS@
++CFLAGS = @CFLAGS@ -fPIC
+ CPP = @CPP@
+ CPPFLAGS = @CPPFLAGS@
+ CXX = @CXX@
