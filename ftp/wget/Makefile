@@ -9,12 +9,7 @@ PORTNAME=	wget
 PORTVERSION=	1.8.2
 PORTREVISION=	1
 CATEGORIES=	ftp www
-MASTER_SITES=	${MASTER_SITE_GNU} \
-		ftp://ftp.dl.ac.uk/ccp14/ftp-mirror/wget/pub/unix/util/wget/ \
-		ftp://ftp.informatik.hu-berlin.de/gnu/wget/ \
-		ftp://ftp.uni-mainz.de/pub/gnu/wget/ \
-		ftp://ftp.max.irk.ru/unix/net/www/wget/ \
-		http://www3.big.or.jp/~sian/linux/products/
+MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	wget
 
 MAINTAINER=	sf@FreeBSD.org
