@@ -1,11 +1,8 @@
-This port of Lucent Technologies 'cscope' from the Software Toolchest
-Volume II lets one easily navigate large C programs.  It's designed
-to answer questions like where symbols are defined and used, and where
-variables are assigned.
+This port of SCO / USL's 'cscope' lets one easily navigate large C programs.
+It's designed to answer questions like where symbols are defined and used,
+and where variables are assigned.
 
-A source site license is available for approximately US$500 from distributors
-such as Unipress Software, <http://www.unipress.com/att>, or directly
-from Lucent,  <http://www.lucent.com/ssg/html/toolchest.html>.
+The Santa Cruz Operation (SCO) has made this available under a very friendly,
+BSD-style Open Source License.
 
-	-castor fu
-	castor@alumni.caltech.edu
+WWW:	http://cscope.sourceforge.net/
