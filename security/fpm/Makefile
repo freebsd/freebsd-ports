@@ -27,7 +27,7 @@ GNOME_LIBS?=	`${GNOME_CONFIG} --libs gnomeui` \
 CFLAGS+=	-DHAVE_CONFIG_H -I. -I.. ${GNOME_CFLAGS}
 
 pre-build:
-	${REINPLACE_CMD} -E -e ""s@encrypt\(@bfishencrypt\(@g" ${WRKSRC}/src/blowfish.c
+	${REINPLACE_CMD} -E -e "s@encrypt\(@bfishencrypt\(@g" ${WRKSRC}/src/blowfish.c
 
 do-build:
 .for f in ${SOURCEFILES}
