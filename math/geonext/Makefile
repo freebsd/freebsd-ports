@@ -7,7 +7,7 @@
 
 PORTNAME=	geonext
 PORTVERSION=	1.11
-CATEGORIES=	math graphics
+CATEGORIES=	math graphics java
 MASTER_SITES=	http://geonext.uni-bayreuth.de/data/download/\
 		http://home.arcor.de/fehlner/inhalt/download/\
 		http://home.arcor.de/teambushido/
@@ -19,7 +19,8 @@ COMMENT?=	Interactive (dynamic) elementary Geometry Software
 WRKSRC=		${WRKDIR}/geonext_install
 NO_BUILD=	yes
 USE_ZIP=	yes
-USE_JAVA=	1.4
+USE_JAVA=	yes
+JAVA_VERSION=	1.4
 DATA=	cacerts didmat.crt geonext.html geonext.jar license.txt index.html
 IMG=	g.gif gn.gif gni.gif geoint.png pixel.gif gx.gif gxt.gif ubt.gif x.ico
 
