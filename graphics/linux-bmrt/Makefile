@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	linux-bmrt
-PORTVERSION=	2.5
+PORTVERSION=	2.5.0.8
 CATEGORIES=	graphics linux
 MASTER_SITES=	http://www.bmrt.org/BMRTdownload/
-DISTNAME=	BMRT2.5g.linux-glibc2
+DISTNAME=	BMRT2.5h.linux-glibc2
 
 MAINTAINER=	rjoseph@mammalia.org
 
@@ -18,6 +18,10 @@ RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulat
 WRKSRC=		${WRKDIR}/BMRT2.5
 NO_BUILD=	yes
 NO_CDROM=	"See the License"
+
+# Linux binary should not be stripped by INSTALL_PROGRAM as it uses
+# /usr/bin/strip which then brands the binary as a FreeBSD ELF one.
+STRIP=
 
 # Linux binary should not be stripped by INSTALL_PROGRAM as it uses
 # /usr/bin/strip which then brands the binary as a FreeBSD ELF one.
@@ -44,7 +48,7 @@ do-install:
 	${MKDIR} ${PREFIX}/share/examples/bmrt
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${PREFIX}/share/examples/bmrt
 	${MKDIR} ${PREFIX}/share/bmrt ${PREFIX}/share/bmrt/shaders
-	${INSTALL_DATA} ${WRKSRC}/.rendribrc ${PREFIX}/share/bmrt
+	${INSTALL_DATA} ${WRKSRC}/.rendribrc ${PREFIX}/share/bmrt/rendribrc.sample
 	${INSTALL_DATA} ${WRKSRC}/shaders/* ${PREFIX}/share/bmrt/shaders
 .for i in ${SCRIPT}
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/${i} ${PREFIX}/bin
@@ -70,8 +74,8 @@ post-install:
 	@${ECHO} "      If using csh (or derivative),";
 	@${ECHO} "      setenv .:${PREFIX}/share/bmrt/shaders";
 	@${ECHO} "";
-	@${ECHO} "      Also, copy ${PREFIX}/share/examples/bmrt/.rendribrc";
-	@${ECHO} "      to your home directory, where it may be modified.";
+	@${ECHO} "      Also, copy ${PREFIX}/share/examples/bmrt/rendribrc.sample";
+	@${ECHO} "      to your home directory as .rendribrc, where it may be modified.";
 	@${ECHO} "";
 	@${ECHO} "************************************************************************";
 	@${ECHO} "";
