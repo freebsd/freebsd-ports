@@ -1,0 +1,11 @@
+--- source/libsmb/clilist.c	Fri Jul 26 23:56:45 2002
++++ source/libsmb/clilist.c	Mon 
+Sep 16 07:18:16 2002
+@@ -59,7 +59,6 @@
+ 				    sizeof(finfo->name),
+ 				    len, 
+ 				    STR_TERMINATE);
+-			p += 1; /* Skip the trailing \0 too */
+ 			return PTR_DIFF(p, base);
+ 
+ 		case 2: /* this is what OS/2 uses mostly */

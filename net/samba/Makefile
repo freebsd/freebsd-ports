@@ -7,6 +7,7 @@
 
 PORTNAME=	samba
 PORTVERSION=	2.2.6.p2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://us4.samba.org/samba/ftp/%SUBDIR%/
 MASTER_SITE_SUBDIR=	pre old-versions .
