@@ -1,0 +1,74 @@
+--- Makefile.orig	Wed Apr 11 21:12:20 2001
++++ Makefile	Sun Aug 19 03:41:52 2001
+@@ -1,27 +1,51 @@
+ # --------------------- M a c r o s -------------------------------
+-CC          = gcc
+-CXX         = g++
+-#CFLAGS = -O0 -g -pipe -fno-default-inline
+-CFLAGS      = -O3 -g -pipe -fforce-mem -fforce-addr
+-#CFLAGS = -g -pipe
+-#CFLAGS      =  -c -O2 -fstrength-reduce -finline-functions 
+-INCLUDE1    = -I. -I../mysql++-1.7/sqlplusint -I/usr/local/include/mysql 
+-LIBS =  -L. -L/usr/X11R6/lib -lrcl -lrcledit -lsqlplus /usr/local/lib/mysql/libmysqlclient.a -lm -lflvw  -lfltk -lXext -ljpeg 
+-#LIBS = -L. -L/usr/X11R6/lib -lrcl -lrcledit /home/Sinisa/guiclient/libsqlplus.a /usr/local/lib/mysql/libmysqlclient.a -lfltk /usr/X11R6/lib/libXext.a /usr/X11R6/lib/libX11.a /usr/lib/libstdc++.a /usr/lib/libm.a /usr/lib/libc.a xx.o
+-OBJS =  edfile.o about.o db_tree.o Fl_NSlider.o getvars.o qsort.o queries.o bebac.o main.o do_sql.o tables.o dodatni.o status.o process.o grant.o password.o get_table.o admin.o  single.o zoom.o sin_jpeg.o jmemsrc.o options.o Fl_File_Dialog.o Fl_Dir.o Fl_Input_File.o Fl_Toggle_Tree.o Fl_Toggle_Node.o Fl_Toggle_Tree_Base.o Fl_Toggle_Node_Base.o Animated_Icon.o  Fl_Help.o Fl_Envelope.o Fl_Envelope_Scroll.o Selection.o gif.o 
++
++PREFIX?=	/usr/X11R6
++LOCALBASE?=	/usr/local
++X11BASE?=	/usr/X11R6
++BSD_INSTALL_PROGRAM?= install -C -c -s -o root -g wheel -m 555
++PTHREAD_CFLAGS?= -D_THREAD_SAFE
++PTHREAD_LIBS?=	-pthread
++CPPFLAGS=	${PTHREAD_CFLAGS} \
++		-I. \
++		-I${LOCALBASE}/include \
++		-I${LOCALBASE}/include/mysql \
++		-I${X11BASE}/include
++LDFLAGS=	-L${LOCALBASE}/lib \
++		-L${LOCALBASE}/lib/mysql \
++		-L${X11BASE}/lib
++LIBS=		-lsqlplus -lmysqlclient -lfleditor -lflvw -lfltk \
++		-ljpeg -lGLU -lGL -lXext -lX11 -lintl -lm -lz ${PTHREAD_LIBS}
++
++TARGET=		mysqlgui
++OBJS =		Fl_Dir.o Fl_Envelope.o Fl_Envelope_Scroll.o \
++		Fl_File_Dialog.o Fl_Help.o Fl_Input_File.o \
++		Fl_NSlider.o Fl_Toggle_Node.o Fl_Toggle_Node_Base.o \
++		Fl_Toggle_Tree.o Fl_Toggle_Tree_Base.o \
++		Animated_Icon.o Selection.o \
++		about.o admin.o bebac.o db_tree.o do_sql.o \
++		dodatni.o get_table.o getvars.o gif.o grant.o \
++		jmemsrc.o main.o options.o password.o process.o \
++		qsort.o queries.o sin_jpeg.o single.o status.o \
++		tables.o zoom.o
+ 
+ # --------------------  R u l e s ---------------------------------
+-default: all
+-all:        mysqlgui
++
++all:        $(TARGET)
++
++install:	$(TARGET)
++	${BSD_INSTALL_PROGRAM} $(TARGET) ${PREFIX}/bin
++
+ clean : 
+-	/bin/rm *.o mysqlgui
++	rm -f *.o
+ 
++clobber: clean
++	rm -f $(TARGET)
+ 
+-mysqlgui: $(OBJS)
+-#	$(CC) $(OBJS) $(LIBS) -o mysqlgui  "-Wl,-rpath,../mysql++-1.7/sqlplusint/.libs"
+-	$(CXX)  -o mysqlgui $(OBJS) $(LIBS) /usr/lib/libz.a
++$(TARGET): $(OBJS)
++	$(CXX) $(LDFLAGS) -o mysqlgui $(OBJS) $(LIBS)
+ 
+-%.o : %.cc
+-	$(CXX) $(CFLAGS) $(INCLUDE1) -c $<
+-%.o : %.c
+-	gcc $(CFLAGS) $(INCLUDE1) -c $<
++.c.o:
++	${CC} ${CFLAGS} ${CPPFLAGS} -c $<
++.cc.o:
++	${CXX} ${CXXFLAGS} ${CPPFLAGS} -c $<

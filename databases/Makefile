@@ -35,6 +35,7 @@
     SUBDIR += myodbc
     SUBDIR += mysql++
     SUBDIR += mysql-editor
+    SUBDIR += mysql-gui
     SUBDIR += mysql-jdbc-mm
     SUBDIR += mysql-navigator
     SUBDIR += mysql2pgsql
