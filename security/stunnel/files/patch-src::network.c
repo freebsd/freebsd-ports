@@ -1,5 +1,5 @@
 --- src/network.c.orig	Thu Oct 14 18:03:49 2004
-+++ src/network.c	Wed Dec 29 14:16:06 2004
++++ src/network.c	Thu Dec 30 16:12:16 2004
 @@ -125,7 +125,7 @@
      int retval;
  
@@ -22,17 +22,19 @@
          case EAI_FAMILY:
              return "ai_family not supported (EAI_FAMILY)";
          case EAI_SOCKTYPE:
-@@ -562,10 +566,13 @@
+@@ -561,11 +565,14 @@
+ 
  /* getnameinfo() version */
  char *s_ntop(char *text, SOCKADDR_UNION *addr) {
-     char host[20], port[6];
+-    char host[20], port[6];
++    char host[IPLEN], port[6];
 +    int err;
  
 -    if(getnameinfo(&addr->sa, addr_len(*addr),
 -            host, 20, port, 6, NI_NUMERICHOST|NI_NUMERICSERV)) {
 -        sockerror("getnameinfo");
 +    err = getnameinfo(&addr->sa, addr_len(*addr),
-+            host, 20, port, 6, NI_NUMERICHOST|NI_NUMERICSERV);
++            host, IPLEN, port, 6, NI_NUMERICHOST|NI_NUMERICSERV);
 +    if (err) {
 +        s_log(LOG_ERR, "Error resolving the specified address: %s",
 +            s_gai_strerror(err));
