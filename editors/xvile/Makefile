@@ -7,6 +7,7 @@
 
 PORTNAME=	xvile
 PORTVERSION=	9.3c
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.phred.org/pub/vile/ \
 		ftp://dickey.his.com/vile/
