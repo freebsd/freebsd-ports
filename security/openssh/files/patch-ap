@@ -1,15 +1,15 @@
---- servconf.c.orig	Thu Apr 20 17:55:11 2000
-+++ servconf.c	Thu Apr 20 18:00:08 2000
-@@ -71,6 +71,8 @@
- 	options->num_deny_groups = 0;
+--- servconf.c.orig	Tue May  9 02:12:15 2000
++++ servconf.c	Fri May 12 07:13:13 2000
+@@ -74,6 +74,8 @@
  	options->ciphers = NULL;
  	options->protocol = SSH_PROTO_UNKNOWN;
-+	options->connections_per_period = 0;
-+	options->connections_period = 0;
+ 	options->gateway_ports = -1;
++ 	options->connections_per_period = 0;
++ 	options->connections_period = 0;
  }
  
  void
-@@ -163,7 +165,7 @@
+@@ -172,7 +174,7 @@
  #ifdef SKEY
  	sSkeyAuthentication,
  #endif
@@ -18,15 +18,15 @@
  	sPrintMotd, sIgnoreRhosts, sX11Forwarding, sX11DisplayOffset,
  	sStrictModes, sEmptyPasswd, sRandomSeedFile, sKeepAlives, sCheckMail,
  	sUseLogin, sAllowUsers, sDenyUsers, sAllowGroups, sDenyGroups,
-@@ -218,6 +220,7 @@
- 	{ "denygroups", sDenyGroups },
+@@ -231,6 +233,7 @@
  	{ "ciphers", sCiphers },
  	{ "protocol", sProtocol },
-+	{ "connectionsperperiod", sConnectionsPerPeriod },
+ 	{ "gatewayports", sGatewayPorts },
++ 	{ "connectionsperperiod", sConnectionsPerPeriod },
  	{ NULL, 0 }
  };
  
-@@ -327,7 +330,11 @@
+@@ -340,7 +343,11 @@
  					filename, linenum);
  				exit(1);
  			}
@@ -39,7 +39,7 @@
  			if (*intptr == -1)
  				*intptr = value;
  			break;
-@@ -551,6 +558,21 @@
+@@ -584,6 +591,21 @@
  					    filename, linenum);
  				options->deny_groups[options->num_deny_groups++] = xstrdup(cp);
  			}
