@@ -1,27 +1,106 @@
 --- mtools.conf.orig	Tue Apr 29 19:08:20 1997
-+++ mtools.conf	Fri Aug 22 23:31:49 1997
-@@ -1,17 +1,20 @@
++++ mtools.conf	Sun Sep 28 00:45:54 1997
+@@ -1,17 +1,71 @@
 -drive a: file="/dev/fd0" exclusive
 -drive b: file="/dev/fd1" exclusive
++# A note on permissions:  a user must have read and write permissions for the
++# devices named here in order to access the DOS file systems.  You might give
++# ALL USERS access to ALL FLOPPY DISKS via the command
++#
++#     chmod a+rw /dev/*fd*
++#
++# or you might give SPECIFIC GROUP MEMBERS access to a PARTICULAR FLOPPY DISK
++# via the commands
++#
++#     chmod g+rw /dev/rfd0 ; chgrp staff /dev/rfd0
++#
++# (and ensure selected people are in a group such as staff).
++
++
++# Floppy disks.  Here, A: and B: use automatic size detection.
++#
++# Example: To prepare drive A: for use as a 1.44M floppy on FreeBSD:
++#   [1] low level format with ......... fdformat /dev/rfd0.1440
++#   [2] write a file system with ...... mkdosfs -f 1440 /dev/rfd0
++#   [3] then use mcopy/mdir etc. in the usual way.
++#
++# The mformat command could also be used to build the DOS file system
++# in place of mkdosfs.
 +drive a: file="/dev/rfd0"
 +drive b: file="/dev/rfd1"
- 
- # First SCSI hard disk partition
--drive c: file="/dev/sda1"
-+drive c: file="/dev/rsd0s1"
- 
- # First IDE hard disk partition
--#drive c: file="/dev/hda1"
-+#drive c: file="/dev/rwd0s1"
- 
- #dosemu floppy image
- drive m: file="/var/lib/dosemu/diskimage"
- 
- #dosemu hdimage
- drive n: file="/var/lib/dosemu/diskimage" offset=3840
 +
-+#720 KB floppy in drive 0
-+drive d: file="/dev/rfd0.720" exclusive
++
++# Drive T: is a 1.72M floppy format with 80 cylinders, double sided (2 heads),
++#          and 43 sectors of size 256 bytes per track.  It uses the same
++#          floppy disk drive (fd0) as drive A: above.
++#
++# Example: To prepare and use a 1.72M floppy on FreeBSD:
++#   [1] low level format with ......... fdformat /dev/rfd0.1720
++#   [2] write a file system with ...... mformat -t 80 -h 2 -s 43 -S 1 t:
++#   [3] then use mcopy/mdir etc. in the usual way.
++#
++# The above note on access permissions applies to /dev/rfd0.1720 as well.
++drive t: file="/dev/rfd0.1720"
+ 
+-# First SCSI hard disk partition
+-drive c: file="/dev/sda1"
+ 
+-# First IDE hard disk partition
+-#drive c: file="/dev/hda1"
++# Drive S: is a 720K floppy format with 80 cylinders, double sided (2 heads),
++#          and 43 sectors of size 256 bytes per track.  It uses the same
++#          floppy disk drive (fd0) as drive A: above.
++#
++# Example: To prepare and use a 720K floppy on FreeBSD:
++#   [1] low level format with ......... fdformat /dev/rfd0.720
++#   [2] write a file system with ...... mkdosfs -f 720 /dev/fd0
++#   [3] then use mcopy/mdir etc. in the usual way.
++#
++drive s: file="/dev/rfd0.720"
+ 
+-#dosemu floppy image
+-drive m: file="/var/lib/dosemu/diskimage"
+ 
+-#dosemu hdimage
+-drive n: file="/var/lib/dosemu/diskimage" offset=3840
++# SCSI hard disks
++#  first disk (sd0) slice 1 (s1)
++#drive c: file="/dev/rsd0s1"
++
++# IDE hard disks
++#   first disk on the first IDE interface (wd0) slice 1 (s1)
++drive c: file="/dev/rwd0s1"
++#   first disk on the first IDE interface (wd0) slice 3 (s3)
++#drive d: file="/dev/rwd0s3"
++#  second disk on the first IDE interface (wd1) slice 1 (s1)
++#drive d: file="/dev/rwd1s1"
++#  first disk on the second IDE interface (wd2) slice 1 (s1)
++drive d: file="/dev/rwd2s1"
++
++# PCEMU floppy boot image
++drive p: file="/usr/local/lib/pcemu/DriveA"
  
  # # Atari ramdisk image
  # drive o: file="/tmp/atari_rd" offset=136
+@@ -39,20 +93,6 @@
+ # ZIP drive on SCSI ID 6
+ #drive z: file="/dev/scsi_disk_060" offset=16384 fat_bits=16                        
+ 
+-# SCO Unix 3.2v4
+-# # Floppy disk drives
+-#
+-# drive a: file="/dev/install" exclusive
+-# drive b: file="/dev/install1" exclusive
+-#  
+-# # SCSI hard disk partitions
+-#  
+-# drive c: file="/dev/dsk/0sC"
+-# drive d: file="/dev/dsk/0sD"
+-# drive e: file="/dev/dsk/0sE"
+-# drive f: file="/dev/dsk/0sF"
+-# drive g: file="/dev/dsk/0sG"
+-# drive h: file="/dev/dsk/0sH"
+-
+ mtools_lower_case=1
++
+ 
