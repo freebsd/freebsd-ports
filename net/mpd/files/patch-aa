@@ -1,0 +1,11 @@
+--- src/Makefile.orig	Thu Feb 25 22:18:47 1999
++++ src/Makefile	Fri Apr 30 12:24:58 1999
+@@ -69,7 +69,7 @@
+ 
+ MPD_VERSION!=	echo -n "${VERSION} (`id -un`@`uname -n` `date +'%R %v'`)"
+ 
+-COPTS+=		-g -Wall -Wmissing-prototypes -Wnested-externs -Werror
++COPTS+=		-g -Wall -Wmissing-prototypes -Wnested-externs
+ COPTS+=		-DPATH_CONF_DIR=\"${MPD_CONF_DIR}\"
+ COPTS+=		-DSYSLOG_FACILITY=${SYSLOG_FACILITY}
+ COPTS+=		-DMPD_VERSION='"${MPD_VERSION}"'
