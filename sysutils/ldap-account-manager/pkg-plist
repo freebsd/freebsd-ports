@@ -18,7 +18,7 @@
 %%WWWROOT%%/graphics/printLogo.jpg
 %%WWWROOT%%/graphics/select.png
 %%WWWROOT%%/graphics/warn.png
-%%WWWROOT%%/help/extFileExample.php
+%%WWWROOT%%/help/help_numbers.assign
 %%WWWROOT%%/help/help.inc
 %%WWWROOT%%/index.html
 %%WWWROOT%%/lib/.htaccess
@@ -31,22 +31,6 @@
 %%WWWROOT%%/lib/font/helveticab.php
 %%WWWROOT%%/lib/font/helveticabi.php
 %%WWWROOT%%/lib/font/helveticai.php
-%%WWWROOT%%/lib/font/makefont/cp1250.map
-%%WWWROOT%%/lib/font/makefont/cp1251.map
-%%WWWROOT%%/lib/font/makefont/cp1252.map
-%%WWWROOT%%/lib/font/makefont/cp1253.map
-%%WWWROOT%%/lib/font/makefont/cp1254.map
-%%WWWROOT%%/lib/font/makefont/cp1257.map
-%%WWWROOT%%/lib/font/makefont/iso-8859-1.map
-%%WWWROOT%%/lib/font/makefont/iso-8859-15.map
-%%WWWROOT%%/lib/font/makefont/iso-8859-16.map
-%%WWWROOT%%/lib/font/makefont/iso-8859-2.map
-%%WWWROOT%%/lib/font/makefont/iso-8859-4.map
-%%WWWROOT%%/lib/font/makefont/iso-8859-5.map
-%%WWWROOT%%/lib/font/makefont/iso-8859-7.map
-%%WWWROOT%%/lib/font/makefont/iso-8859-9.map
-%%WWWROOT%%/lib/font/makefont/koi8-r.map
-%%WWWROOT%%/lib/font/makefont/makefont.php
 %%WWWROOT%%/lib/font/symbol.php
 %%WWWROOT%%/lib/font/times.php
 %%WWWROOT%%/lib/font/timesb.php
@@ -109,12 +93,11 @@
 %%WWWROOT%%/templates/profedit/profileuser.php
 %%PORTDOCS%%%%DOCSDIR%%/HISTORY
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.fpdf
-%%PORTDOCS%%%%DOCSDIR%%/README.hosts
-%%PORTDOCS%%%%DOCSDIR%%/README.lamdaemon.pl
-%%PORTDOCS%%%%DOCSDIR%%/README.openldap
-%%PORTDOCS%%%%DOCSDIR%%/README.security
-%%PORTDOCS%%%%DOCSDIR%%/README.shells
+%%PORTDOCS%%%%DOCSDIR%%/README.fpdf.htm
+%%PORTDOCS%%%%DOCSDIR%%/README.hosts.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.lamdaemon.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.openldap.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.security.txt
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%WWWROOT%%/config/pdf
@@ -125,7 +108,6 @@
 @dirrm %%WWWROOT%%/graphics
 @dirrm %%WWWROOT%%/config
 @dirrm %%WWWROOT%%/help
-@dirrm %%WWWROOT%%/lib/font/makefont
 @dirrm %%WWWROOT%%/lib/font
 @dirrm %%WWWROOT%%/lib
 @dirrm %%WWWROOT%%/locale/de_DE/LC_MESSAGES
