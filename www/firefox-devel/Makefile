@@ -168,7 +168,7 @@ pre-install:
 		${FAKEDIR}/bin/firefox \
 		${FAKEDIR}/bin/firefox-config
 	for i in ${EXTRA_SCRIPTS}; do \
-		${ECHO_CMD} bin/${i} ; \
+		${ECHO_CMD} bin/${i} >> ${PLIST}; \
 	done
 	${ECHO_CMD} bin/firefox >> ${PLIST}
 	${ECHO_CMD} bin/firefox-config >> ${PLIST}
