@@ -918,6 +918,7 @@ cherokee	ports/www/cherokee
 chexedit	ports/editors/chexedit
 chgrep		ports/sysutils/chgrep
 chicken		ports/lang/chicken
+childsplay	ports/games/childsplay
 chimera		ports/www/chimera
 chipmunk	ports/cad/chipmunk
 chipvault	ports/cad/chipvault
