@@ -1,23 +1,22 @@
 # New ports collection makefile for:   wmCalClock
-# Version required:    1.22
+# Version required:    1.24
 # Date created:        16 March 1999
 # Whom:                Kris Kennaway <kris@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1999/03/22 12:59:45 kris Exp $
+# $Id: Makefile,v 1.3 1999/03/30 13:47:01 kris Exp $
 #
 
-DISTNAME=	wmCalClock-1.22
+DISTNAME=	wmCalClock-1.24
 CATEGORIES=	x11-clocks windowmaker
-MASTER_SITES=	ftp://ftp.ukrnet.net/pub/Unix/WindowMaker/src/
+MASTER_SITES=	http://nis-www.lanl.gov/~mgh/WindowMaker/
 
 MAINTAINER=	kris@FreeBSD.ORG
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm/
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/wmCalClock
+WRKSRC=		${WRKDIR}/${DISTNAME}/Src
 
 USE_X_PREFIX=	yes
-USE_XLIB=	yes
 USE_GMAKE=	yes
 
 ALL_TARGET=	clean all
