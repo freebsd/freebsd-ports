@@ -3,7 +3,7 @@
 # Date created:		25 May 1998
 # Whom:			Mario S F Ferreira <lioux@gns.com.br> et al.
 #
-# $Id: Makefile,v 1.4 1998/07/25 12:15:37 asami Exp $
+# $Id: Makefile,v 1.5 1998/07/25 21:49:36 hoek Exp $
 #
 
 DISTNAME=	qmail-1.03
@@ -94,6 +94,8 @@ do-configure:
 	@${ECHO} ${PREFIX} > ${WRKSRC}/conf-qmail
 	@${SED} s+@DOCDIR@+${DOCDIR}+g ${FILESDIR}/pkg.PLIST > ${PLIST}
 
+post-patch: thereal-post-patch
+
 do-install:
 	@# Check again, just in case (ideally should error if not found)
 	@PKG_PREFIX=${PREFIX} /usr/bin/perl ${PKGDIR}/INSTALL
@@ -128,6 +130,20 @@ do-install:
 	@${ECHO}
 	@${SED} s!/usr/local/!${PREFIX}/!g ${PKGDIR}/MESSAGE | /usr/bin/fmt
 
+.include <bsd.port.mk>
+
+# Ugh...  ;-)
+thereal-post-patch:
+.for i in ${BOOTFILES}
+	if [ `dirname $i` != ${FILESDIR} ] ; \
+	then \
+		${CP} $i.sh $i.sh.orig; \
+		(head -c `expr \`ls -l $i.sh.orig \
+		    | ${AWK} '{print $$5}'\` - 1` $i.sh.orig ; ${ECHO} '&') \
+		    > $i.sh ; \
+	fi
+.endfor
+
 # The users are instructed (in PORT_NOTES) to install ${QUEUE_DIR}/rc
 # themselves.  Each /var/qmail/ should have its own rc.  On many machines,
 # /usr/local/ is nfs mounted and /var/qmail/ is local.  An individual
@@ -136,5 +152,3 @@ do-install:
 
 # Wouldn't hurt to provide an "enable_qmail" and "disable_sendmail" target
 # that do 1) and 2) above and disable the existing sendmail, respectively.
-
-.include <bsd.port.mk>
