@@ -24,7 +24,7 @@ USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-pthread -L${LOCALBASE}/lib -lintl"
+		LIBS="${PTHREAD_LIBS} -L${LOCALBASE}/lib -lintl"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 PLIST_SUB=	VERSION=${PORTVERSION}
 
