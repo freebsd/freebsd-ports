@@ -428,6 +428,7 @@
     SUBDIR += p5-MasonX-Request-WithApacheSession
     SUBDIR += p5-PHP-Session
     SUBDIR += p5-ParallelUA
+    SUBDIR += p5-PodToHTML
     SUBDIR += p5-Sledge
     SUBDIR += p5-Sledge-Plugin-CacheContent
     SUBDIR += p5-Sledge-Plugin-Download
