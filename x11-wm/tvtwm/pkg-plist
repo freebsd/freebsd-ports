@@ -1,0 +1,3 @@
+@cwd /usr/X11R6
+bin/tvtwm
+man/man1/tvtwm.1.gz
