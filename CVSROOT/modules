@@ -4069,6 +4069,7 @@ lsdb-emacs20	ports/databases/lsdb-emacs20
 lsh		ports/security/lsh
 lsmlib		ports/sysutils/lsmlib
 lsof		ports/sysutils/lsof
+lsysexp		ports/biology/lsysexp
 ltmdm		ports/comms/ltmdm
 ltrace		ports/sysutils/ltrace
 ltris		ports/games/ltris
