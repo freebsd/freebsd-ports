@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lighttpd
-PORTVERSION=	1.3.10
-PORTREVISION=	1
+PORTVERSION=	1.3.11
 CATEGORIES=	www
 MASTER_SITES=	http://www.lighttpd.net/download/ \
 				http://dl.fkb.wormulon.net/lighttpd/ \
@@ -25,6 +24,7 @@ USE_LIBTOOL_VER=	15
 USE_GNOME=	lthack
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS=-I${PREFIX}/include LIBS=-L${PREFIX}/lib
+CONFIGURE_ARGS=	--libdir=${PREFIX}/lib/lighttpd
 STARTUP_FILE=	${PREFIX}/etc/rc.d/lighttpd.sh
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
