@@ -1,4 +1,1 @@
-MD5 (squid/squid-1.1.5-src.tar.gz) = efd6cb5bfe7958f2a74e4d8b5a0fc8a8
-MD5 (squid/acl.c.patch) = 840c0d06c37cfb12732439f501864354
-MD5 (squid/main.c.patch) = f631976a0e7984e2ac104f92d62fb507
-MD5 (squid/redirect.c.patch) = c79dacd428a9fbb5e1b95b007a70a1e3
+MD5 (squid/squid-1.1.6-src.tar.gz) = 99a5d163781c116a97b5e01ce2a6c72e
