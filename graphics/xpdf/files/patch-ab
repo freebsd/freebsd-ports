@@ -1,0 +1,11 @@
+--- xpdf/XOutputDev.cc.orig	Wed Jul  1 22:54:59 1998
++++ xpdf/XOutputDev.cc	Wed Jul  1 22:56:09 1998
+@@ -275,7 +275,7 @@
+       // rendering the font.  This code tries to guess by looking at the
+       // width of the character 'm' (which breaks if the font is a
+       // subset that doesn't contain 'm').
+-      if (w1 > 1.1 * w2 || w1 < 0.9 * w2) {
++      if (w1 > 0 && (w1 > 1.1 * w2 || w1 < 0.9 * w2)) {
+ 	w1 /= w2;
+ 	mat11 *= w1;
+ 	mat12 *= w1;
