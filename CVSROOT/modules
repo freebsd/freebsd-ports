@@ -4418,6 +4418,7 @@ libtai		ports/devel/libtai
 libtar		ports/devel/libtar
 libtasn1	ports/security/libtasn1
 libtecla	ports/devel/libtecla
+libtheora	ports/graphics/libtheora
 libticables	ports/comms/libticables
 libticalcs	ports/devel/libticalcs
 libtifiles	ports/devel/libtifiles
