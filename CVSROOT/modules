@@ -3122,6 +3122,7 @@ ja-libjcode	ports/japanese/libjcode
 ja-libjconv	ports/japanese/libjconv
 ja-libslang	ports/japanese/libslang
 ja-linux-JM	ports/japanese/linux-JM
+ja-linux-mozillafirebird-gtk1	ports/japanese/linux-mozillafirebird-gtk1
 ja-linux_locale	ports/japanese/linux_locale
 ja-lipsf	ports/japanese/lipsf
 ja-lookup	ports/japanese/lookup
