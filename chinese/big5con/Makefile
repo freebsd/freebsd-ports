@@ -18,8 +18,10 @@ ONLY_FOR_ARCHS=	i386
 USE_REINPLACE=	yes
 
 post-patch:
-	${REINPLACE_CMD} -e 's,/dev/vga,/dev/ttyv0,g' ${WRKSRC}/src/*c
-	${REINPLACE_CMD} -e 's,#endif.*,#endif,g' ${WRKSRC}/include/ksymdef.h
+	@${REINPLACE_CMD} -e 's,/dev/vga,/dev/ttyv0,g' ${WRKSRC}/src/*c
+	@${REINPLACE_CMD} -e 's,GetShmem(),GetShmem(char),g' ${WRKSRC}/src/fnld.c
+	@${REINPLACE_CMD} -e 's,#endif.*,#endif,g' ${WRKSRC}/include/ksymdef.h
+	@${REINPLACE_CMD} -e 's,TOPDIR,PREFIX,g' ${WRKSRC}/big5con.mk
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
