@@ -125,7 +125,8 @@ dat-*.tar		ports/security/uvscan-dat Restricted to the license
 						terms set for VirusScan
 dc3play-*		ports/graphics/dc3play	No redistribution due to
 						beta status
-dcl-*			ports/science/cdcl	No commercial use
+dcl-*-C.tar.gz		ports/science/cdcl	No commercial use
+dcl-*.tar.gz		ports/science/dcl	No commercial use
 dgd/*			ports/net/dgd		License required for commercial
 						use as a server, and even for
 						distribution of sources and/or
