@@ -1,0 +1,3 @@
+GRegExp Explorer is a graphical regular expression explorer based on the PCRE
+regular expression library. It is possible to test regular expressions on the
+fly and check the result in detail.
