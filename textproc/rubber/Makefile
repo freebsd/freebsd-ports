@@ -8,6 +8,7 @@
 
 PORTNAME=	rubber
 PORTVERSION=	0.99.8
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,7 +24,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --moddir=${PYTHON_SITELIBDIR}
 
 MANLANG=	"" fr
-MAN1=		rubber.1 rubber-info.1
+MAN1=		rubber.1 rubber-info.1 rubber-pipe.1
 INFO=		rubber
 
 pre-install:
