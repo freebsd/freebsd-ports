@@ -18,15 +18,9 @@ COMMENT=	An editor for editing (primarily LaTeX) Hebrew files
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/hebrew:${PORTSDIR}/hebrew/elmar-fonts
 
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
-.endif
+USE_LIBTOOL_VER=	13
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
