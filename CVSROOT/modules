@@ -1229,6 +1229,7 @@ de-aspell	ports/german/aspell
 de-citrix_ica	ports/german/citrix_ica
 de-dict		ports/german/dict
 de-ding		ports/german/ding
+de-geonext	ports/german/geonext
 de-ispell	ports/german/ispell
 de-ispell-alt	ports/german/ispell-alt
 de-ispell-neu	ports/german/ispell-neu
