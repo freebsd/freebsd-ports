@@ -16,6 +16,7 @@
     SUBDIR += grass
     SUBDIR += gtksql
     SUBDIR += interbase4
+    SUBDIR += jdbc-oracle816
     SUBDIR += libiodbc
     SUBDIR += metakit
     SUBDIR += msql
