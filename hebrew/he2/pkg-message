@@ -1,0 +1,5 @@
+I've installed a sample config file for you in 
+${PREFIX}/share/he2/.he2rc.sample
+
+You may want to copy it to either your home directory, or to a file named
+${PREFIX}/share/he2/.he2rc to set some system-wide defaults.

@@ -1,0 +1,8 @@
+The Hebrew Editor package is intended mostly for Hebrew speaking users for 
+creating and editing Hebrew/English LaTeX documents.
+ 
+This package provides a text (terminal) based word processor (in the spirit 
+of the  good-old DOS days word processors) which is extreamly LaTeX (or 
+rather LaXeT) oriented.
+
+WWW: http://www.sourceforge.net/projects/he2/
