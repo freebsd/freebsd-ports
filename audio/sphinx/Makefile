@@ -16,4 +16,7 @@ MAINTAINER=	trevor@jpj.net
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
 
+# contains i386 sound code
+ONLY_FOR_ARCHS=	i386
+
 .include <bsd.port.mk>
