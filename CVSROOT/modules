@@ -391,7 +391,6 @@ asmon		ports/sysutils/asmon
 asmutils	ports/devel/asmutils
 asp2php		ports/www/asp2php
 aspell		ports/textproc/aspell
-aspell-dict	ports/textproc/aspell-dict
 aspostit	ports/deskutils/aspostit
 asprint		ports/print/asprint
 astime		ports/x11-clocks/astime
