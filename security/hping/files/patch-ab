@@ -1,0 +1,10 @@
+--- configure.orig	Fri Sep 14 22:04:25 2001
++++ configure	Fri Sep 14 22:05:02 2001
+@@ -99,6 +99,7 @@
+ 	-e "s^@PCAP_INCLUDE@^$PCAP_INCLUDE^g" \
+ 	-e "s^@MANPATH@^$INSTALL_MANPATH^g" \
+ 	-e "s^@SOLARISLIB@^$SOLARISLIB^g" \
++	-e "s^@CFLAGS@^$CFLAGS^g" \
+ 	<Makefile.in > Makefile
+ 
+ #
