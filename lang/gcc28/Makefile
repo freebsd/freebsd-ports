@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	gcc
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Compiler Collection 2.8
 
+NOT_FOR_ARCHS=	amd64 sparc64 ia64
 NO_CDROM=	'old version, not worth the cost in real estate'
 
 LATEST_LINK=	gcc28
