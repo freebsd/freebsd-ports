@@ -1,9 +1,7 @@
-%%NOGNOME:%%bin/BitchX
-%%NOGNOME:%%bin/BitchX-1.0c16+H1
-%%GNOME:%%bin/gtkBitchX
-%%GNOME:%%bin/gtkBitchX-1.0c16+H1
+bin/BitchX
+bin/BitchX-1.0c16+H1
 bin/bx
-%%NOGNOME:%%bin/scr-bx
+bin/scr-bx
 share/bx/BitchX.quit
 share/bx/BitchX.ircnames
 share/bx/BitchX.reasons
@@ -913,7 +911,6 @@ share/bx/plugins/encrypt.so
 share/bx/plugins/fserv.so
 share/bx/plugins/hint.so
 share/bx/plugins/nap.so
-%%GNOME:%%share/bx/plugins/nicklist.so
 share/bx/plugins/pkga.so
 share/bx/plugins/possum.so
 share/bx/plugins/qmail.so
@@ -960,7 +957,7 @@ share/bx/translation/SWEDISH_NAMES_COM
 share/bx/translation/SWISS
 share/bx/translation/UNITED_KINGDOM
 share/bx/translation/UNITED_KINGDOM_COM
-%%NOGNOME:%%share/bx/wserv
+share/bx/wserv
 share/doc/bitchx/bxfaq.html
 @dirrm share/doc/bitchx
 @dirrm share/bx/translation
