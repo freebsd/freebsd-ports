@@ -55,7 +55,7 @@
   
   # Put the directory that mirror is actually in at the start of PERLLIB.
 ! # $dir = &real_dir_from_path( $0 );
-! $dir = "!!PREFIX!!"/lib/mirror";
+! $dir = "!!PREFIX!!/lib/mirror";
   unshift( @INC, $dir );
   
   # Make sure that your PERLLIB environment variable can get you
