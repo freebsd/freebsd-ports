@@ -18,6 +18,8 @@ COMMENT=	teTeX Vietnamese language + font support
 #	actually just need to make sure ${PREFIX}/share/texmf/tex/ exists
 RUN_DEPENDS=	virtex:${PORTSDIR}/print/teTeX
 
+BROKEN=		Broken dependency
+
 USE_ZIP=	yes
 NO_BUILD=	yes
 
