@@ -67,6 +67,7 @@
     SUBDIR += obconf
     SUBDIR += olvwm
     SUBDIR += openbox
+    SUBDIR += orion
     SUBDIR += oroborus
     SUBDIR += pager
     SUBDIR += pawm
