@@ -4,6 +4,7 @@ bin/tux_serv
 %%PORTDOCS%%share/doc/xtux/images
 %%PORTDOCS%%share/doc/xtux/mapformat
 %%PORTDOCS%%share/doc/xtux/weapons
+%%PORTDOCS%%share/doc/xtux/README
 share/xtux/images/entities/arrow.xpm
 share/xtux/images/entities/borg.xpm
 share/xtux/images/entities/borg_die.xpm
@@ -17,8 +18,10 @@ share/xtux/images/entities/cd_die.xpm
 share/xtux/images/entities/clippy.xpm
 share/xtux/images/entities/clippy_die.xpm
 share/xtux/images/entities/cobol.xpm
+share/xtux/images/entities/cobol_die.xpm
 share/xtux/images/entities/crate.xpm
 share/xtux/images/entities/duckboy.xpm
+share/xtux/images/entities/duckboy_die.xpm
 share/xtux/images/entities/duke.xpm
 share/xtux/images/entities/duke_die.xpm
 share/xtux/images/entities/fireball.xpm
@@ -81,6 +84,7 @@ share/xtux/images/items/natalie_portman.xpm
 share/xtux/images/items/nodoze.xpm
 share/xtux/images/items/nuke_crate.xpm
 share/xtux/images/items/patent.xpm
+share/xtux/images/items/pizzabox.xpm
 share/xtux/images/items/random.xpm
 share/xtux/images/items/rocket.xpm
 share/xtux/images/items/shells.xpm
@@ -530,7 +534,7 @@ share/xtux/maps/end.map
 share/xtux/maps/geekusa.map
 share/xtux/maps/home.map
 share/xtux/maps/home2.map
-share/xtux/maps/mapgen.map
+share/xtux/maps/mapedit.map
 share/xtux/maps/my_way_home.map
 share/xtux/maps/penguinland.map
 share/xtux/maps/sewer.map
@@ -540,6 +544,7 @@ share/xtux/maps/street_spirit.map
 share/xtux/maps/test.map
 share/xtux/maps/unfinished_sympathy.map
 share/xtux/maps/watership.map
+share/xtux/maps/wwt.map
 share/xtux/default.table
 share/xtux/desktop.table
 share/xtux/generic.table
