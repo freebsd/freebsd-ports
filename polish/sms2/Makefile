@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sms
-PORTVERSION=	1.8.9h
+PORTVERSION=	1.9.1h
 CATEGORIES=	misc
 MASTER_SITES=	http://www.ceti.pl/~miki/komputery/download/sms/
 PKGNAMEPREFIX=	pl-
