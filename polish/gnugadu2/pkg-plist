@@ -12,12 +12,22 @@ share/gg/pixmaps/msg.xpm
 share/gg/pixmaps/offline.xpm
 share/gg/pixmaps/online.xpm
 share/gg/pixmaps/online_connecting.xpm
-share/gg/pixmaps/online_main.xpm
 share/gg/pixmaps/search.xpm
+share/gg/pixmaps/away-mobile.xpm
+share/gg/pixmaps/cell.xpm
+share/gg/pixmaps/gg-logo.xpm
+share/gg/pixmaps/go-chat.xpm
+share/gg/pixmaps/go-msg.xpm
+share/gg/pixmaps/mobile.xpm
+share/gg/pixmaps/offline-mobile.xpm
+share/gg/pixmaps/online-mobile.xpm
+share/gg/pixmaps/pubdir_info.xpm
+share/gg/pixmaps/search_unknown.xpm
+share/gg/pixmaps/wmexit.xpm
+share/gg/pixmaps/wmmsg.xpm
 share/gg/sounds/msg.wav
 share/gg/sounds/usr.wav
 share/gg/sounds/yahoo.wav
-share/gnome/apps/Internet/GnuGadu.desktop
 @unexec rmdir %D/share/gnome/apps/Internet 2>/dev/null || true
 @unexec rmdir %D/share/gnome/apps 2>/dev/null || true
 @unexec rmdir %D/share/gnome 2>/dev/null || true
