@@ -53,6 +53,9 @@ MAKE_ENV+=	SUB_GL=${SUB_GL}		\
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|-pthread|g' ${WRKSRC}/configure
 
+post-configure:
+	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/src/config.c
+
 post-install:
 .for lib in GL GLU
 	@${LN} -sf ${PREFIX}/lib/lib${lib}.so ${PREFIX}/lib/libMesa${lib}.so
