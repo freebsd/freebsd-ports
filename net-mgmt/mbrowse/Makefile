@@ -20,19 +20,16 @@ LIB_DEPENDS=	snmp.4:${PORTSDIR}/net-mgmt/net-snmp4
 LIB_DEPENDS=	netsnmp.6:${PORTSDIR}/net-mgmt/net-snmp
 .endif
 
-BROKEN=		"Configure fails"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2004-06-18
-
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/mbrowse
-USE_GNOME=	gtk12
-CONFIGURE_ARGS+=	--with-snmp-prefix=${LOCALBASE}
+USE_GNOME=	gtk12 gnometarget
+CONFIGURE_ARGS+=	--with-snmp-prefix=${PREFIX} 
 
 .if defined(WITH_NET_SNMP4)
 CONFIGURE_ARGS+=	--with-snmp-type=ucd
 .else
-CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV+=		LDFLAGS="`net-snmp-config --libs`" \
+			CPPFLAGS="`net-snmp-config --cflags`"
 CONFIGURE_ARGS+=	--with-snmp-type=net
 .endif
 
