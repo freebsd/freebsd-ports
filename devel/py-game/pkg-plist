@@ -16,7 +16,6 @@ lib/%%PYTHON_VERSION%%/site-packages/pygame/display.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/draw.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/event.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/font.so
-lib/%%PYTHON_VERSION%%/site-packages/pygame/ignore.pth
 lib/%%PYTHON_VERSION%%/site-packages/pygame/image.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/joystick.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/key.so
