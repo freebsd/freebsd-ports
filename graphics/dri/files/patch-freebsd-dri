@@ -17,7 +17,7 @@
 +CFLAGS = $(FBSDCFLAGS) -DDRI_NEW_INTERFACE_ONLY -Wmissing-prototypes -g \
 +	-std=c9x -Wundef -fPIC -ffast-math -I$(LOCALBASE)/include \
 +	-I$(X11BASE)/include -I$(X11BASE)/include/X11/extensions
-+CXXFLAGS += $(FBSDCXXFLAGS) -DDRI_NEW_INTERFACE_ONLY -Wall -g -ansi -pedantic \
++CXXFLAGS = $(FBSDCXXFLAGS) -DDRI_NEW_INTERFACE_ONLY -Wall -g -ansi -pedantic \
 +	-fPIC
  
  ASM_SOURCES = 
@@ -25,8 +25,8 @@
  # Library/program dependencies
 -DRI_LIB_DEPS = -lm -lpthread -lexpat
 -GL_LIB_DEPS = -L/usr/X11R6/lib -lX11 -lXext -lm -pthread
-+DRI_LIB_DEPS = -L$(LOCALBASE)/lib -lm -lpthread -lexpat
-+GL_LIB_DEPS = -L$(X11BASE) -lX11 -lXext -lm -pthread
++DRI_LIB_DEPS = -L$(LOCALBASE)/lib -lm -lexpat ${PTHREAD_LIBS}
++GL_LIB_DEPS = -L$(X11BASE) -lX11 -lXext -lm ${PTHREAD_LIBS}
  
  GLUT_LIB_DEPS = -L$(LIB_DIR) -L/usr/X11R6/lib -lGLU -lGL -lX11 -lXmu -lXt -lXi -lm
  GLW_LIB_DEPS = -L$(LIB_DIR) -L/usr/X11R6/lib -lGL -lXt -lXm -lX11
