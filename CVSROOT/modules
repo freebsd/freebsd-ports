@@ -4968,6 +4968,7 @@ nylon		ports/net/nylon
 o2c		ports/lang/o2c
 oaf		ports/devel/oaf
 oases		ports/science/oases
+obconf		ports/x11-wm/obconf
 objc		ports/lang/objc
 obliterate	ports/sysutils/obliterate
 obnc		ports/net/obnc
