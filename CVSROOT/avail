@@ -2,6 +2,12 @@
 # $FreeBSD$
 #
 # This can be used to implement finer grain access controls beyond
-# being in access.  For now, everybody who has access can commit anywhere.
+# being in access.
 #
-avail
+unavail
+avail||CVSROOT
+avail||distrib
+avail||doc
+avail||ports
+avail||src
+avail||www
