@@ -8,10 +8,6 @@ bin/gammu
 %%DOCSDIR%%/examples/fax/faxreceive
 %%DOCSDIR%%/examples/fax/faxsend
 %%DOCSDIR%%/examples/gammu.png
-%%DOCSDIR%%/examples/logos/gnokii.nol
-%%DOCSDIR%%/examples/logos/gnokii.xpm
-%%DOCSDIR%%/examples/logos/gnokii2.nol
-%%DOCSDIR%%/examples/logos/magic
 %%DOCSDIR%%/examples/ppp/data
 %%DOCSDIR%%/examples/ppp/gprs
 %%DOCSDIR%%/examples/ppp/startppp
@@ -29,7 +25,6 @@ share/gammu/gammu_us.txt
 @dirrm %%DOCSDIR%%/docs/italian
 @dirrm %%DOCSDIR%%/docs
 @dirrm %%DOCSDIR%%/examples/config
-@dirrm %%DOCSDIR%%/examples/logos
 @dirrm %%DOCSDIR%%/examples/ppp
 @dirrm %%DOCSDIR%%/examples/ring
 @dirrm %%DOCSDIR%%/examples/fax
