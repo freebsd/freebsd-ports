@@ -1656,6 +1656,7 @@ dxpc		ports/x11/dxpc
 dylan		ports/lang/dylan
 dynamag		ports/x11/dynamag
 dynamechs	ports/graphics/dynamechs
+dynamite	ports/archivers/dynamite
 e		ports/math/e
 e16utils	ports/x11-wm/e16utils
 e2fsprogs	ports/sysutils/e2fsprogs
