@@ -1,0 +1,37 @@
+--- configure.orig     Sat Jan 23 03:50:58 1999
++++ configure  Sun Dec  5 11:25:05 1999
+@@ -1484,7 +1484,7 @@
+ ARCH_TYPE=`uname -m`
+ echo "$ac_t""$ARCH_TYPE" 1>&6
+ 
+-CFLAGS=
++CFLAGS=$CFLAGS
+ CFLAGS_ARCH=
+ DEFINES=
+ 
+@@ -1502,7 +1502,7 @@
+     ;;
+ 
+   Linux|FreeBSD)
+-    CC="gcc"
++    CC="$CC"
+     if test "$ARCH_TYPE" = "i486" ; then
+       CFLAGS_ARCH="-m486"
+     fi
+@@ -1512,7 +1512,7 @@
+     if test "$OS_TYPE" = "FreeBSD" ; then
+       OS_TYPE="BSD"
+     fi
+-    CFLAGS="-O6 -ffast-math -fomit-frame-pointer ${CFLAGS_ARCH}"
++    CFLAGS="$CFLAGS -ffast-math -fomit-frame-pointer ${CFLAGS_ARCH}"
+     DEFINES="-DNO_BYTE_SWAPPING -DOS_$OS_TYPE -DARCH_$ARCH_TYPE" 
+     ;;
+ 
+@@ -1806,6 +1806,7 @@
+ s%@CFLAGS_ARCH@%$CFLAGS_ARCH%g
+ s%@DEFINES@%$DEFINES%g
+ s%@ESD_LIB@%$ESD_LIB%g
++s%@GTK_CONFIG@%$GTK_CONFIG%g
+ 
+ CEOF
+ EOF
