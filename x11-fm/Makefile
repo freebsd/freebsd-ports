@@ -19,6 +19,7 @@
     SUBDIR += systemg
     SUBDIR += tkdesk
     SUBDIR += vide
+    SUBDIR += worker
     SUBDIR += workplace
     SUBDIR += x-files
     SUBDIR += xcruise
