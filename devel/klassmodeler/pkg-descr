@@ -1,0 +1,19 @@
+The KlassModeler is a tool for visually creating and documenting classes. It is
+not unlike other UML design tools except for four major differences:
+    * Strict focus on class modeling: UML as a whole does a lot of things that
+      I never really found a use for. I am only interested in class and
+      inheritence modeling and documentation. I don't like having lots of
+      comments in my source, so I find it nicer to have the docs in the class
+      model.
+    * Code generation: I think there are some UML tools out there that do this,
+      but they tend to generate it with lots of special comments that tell the
+      tool where things are and how to re-write the files and all that. The
+      KlassModeler writes headers that I find clean and easy to read.
+    * Reads existing headers: You can point it to a header file and it will
+      read it in and create a class diagram. You can use this functionality to
+      import existing projects into KlassModeler.
+    * HTML doc generation: It spits out a set of HTML pages that puts all your
+      documentation in an easy to read format that can be used with any web
+      browser. A very big plus for helping other people understand your code.
+
+WWW: http://www.jameswells.net/KlassModeler/
