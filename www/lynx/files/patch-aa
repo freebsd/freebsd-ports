@@ -1,58 +1,32 @@
-*** Makefile.orig	Mon Mar 17 09:18:40 1997
---- Makefile	Tue Mar 18 13:40:12 1997
+*** configure.bak	Mon Jul 28 04:36:15 1997
+--- configure	Tue Jul 29 00:22:49 1997
 ***************
-*** 14,31 ****
-  
-  ##change the next line if you want lynx installed somewhere
-  ##besides /usr/local/bin
-! exec= /usr/local/bin
-  
-  ##change the next line if you want the lynx man file installed somewhere
-  ##besides /usr/local/man/man1
-! doc= /usr/local/man/man1
-  
-  ##change the next line if you want the lynx.cfg file installed somewhere
-  ##besides /usr/local/lib
-! cfg= /usr/local/lib
-  
-! installbin= install -c -s -m 755
-! installdoc= install -c -m 444
-  
-  ##set the relative location of the WWW library Implementation directory,
-  ##from this directory
---- 14,31 ----
-  
-  ##change the next line if you want lynx installed somewhere
-  ##besides /usr/local/bin
-! exec= ${PREFIX}/bin
-  
-  ##change the next line if you want the lynx man file installed somewhere
-  ##besides /usr/local/man/man1
-! doc= ${PREFIX}/man/man1
-  
-  ##change the next line if you want the lynx.cfg file installed somewhere
-  ##besides /usr/local/lib
-! cfg= ${PREFIX}/etc
-  
-! installbin= ${INSTALL} -c -s -m ${BINMODE} -o ${BINOWN} -g ${BINGRP}
-! installdoc= ${INSTALL} -c -m ${MANMODE} -o ${MANOWN} -g ${MANGRP}
-  
-  ##set the relative location of the WWW library Implementation directory,
-  ##from this directory
+*** 5058,5063 ****
+--- 5058,5064 ----
+  	cat > conftest.$ac_ext <<EOF
+  #line 5060 "configure"
+  #include "confdefs.h"
++ #include <sys/types.h>
+  #include <utmp.h>
+  int main() {
+  struct utmp x; char *y = &x.ut_host[0]
+*** aclocal.m4.orig	Mon Jul 28 04:36:15 1997
+--- aclocal.m4	Tue Jul 29 14:08:40 1997
 ***************
-*** 270,276 ****
-  SITE_LYDEFS = $(DIR_LYDEFS) # Your defines here
-  
-  # Set SITE_DEFS to one or more of the defines for lynx below:
-! SITE_DEFS = $(DIR_DEFS) # Your defines here
-  
-  # if you are compiling on a previously unsupported system, modify
-  # this generic entry!!
---- 270,276 ----
-  SITE_LYDEFS = $(DIR_LYDEFS) # Your defines here
-  
-  # Set SITE_DEFS to one or more of the defines for lynx below:
-! SITE_DEFS = $(DIR_DEFS) -DLYNX_CFG_FILE='\"${PREFIX}/etc/lynx.cfg\"'
-  
-  # if you are compiling on a previously unsupported system, modify
-  # this generic entry!!
+*** 891,897 ****
+  [
+  AC_MSG_CHECKING(if struct utmp is declared)
+  AC_CACHE_VAL(cf_cv_have_utmp,[
+! 	AC_TRY_COMPILE([#include <utmp.h>],
+  	[struct utmp x; char *y = &x.ut_host[0]],
+  	[cf_cv_have_utmp=yes],
+  	[AC_TRY_COMPILE([#include <utmpx.h>],
+--- 891,898 ----
+  [
+  AC_MSG_CHECKING(if struct utmp is declared)
+  AC_CACHE_VAL(cf_cv_have_utmp,[
+! 	AC_TRY_COMPILE([#include <sys/types.h>
+! #include <utmp.h>],
+  	[struct utmp x; char *y = &x.ut_host[0]],
+  	[cf_cv_have_utmp=yes],
+  	[AC_TRY_COMPILE([#include <utmpx.h>],
