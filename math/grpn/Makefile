@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	grpn
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	math
 MASTER_SITES=	http://lashwhip.com/grpn/
 
@@ -17,7 +17,10 @@ USE_GTK=	yes
 
 ALL_TARGET=
 
+MAN1=		grpn.1
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/grpn ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/grpn.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
