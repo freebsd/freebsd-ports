@@ -1,0 +1,12 @@
+An interactive dynamic graphics program for data visualization
+in the X Window System.  It is especially designed for the exploration
+of multivariate data.  Its basic plot is a scatterplot and there are
+a number of the tools available for scatterplot display and manipulation.
+It has a direct manipulation interface, and all the manipulations
+are performed using the mouse.
+It can be used in conjunction with the S language for scientific
+computing and data analysis. (Or R language).
+Also it can be programmed using RPC to communicate with other software.
+
+--
+Tony Maher <tonym@biolateral.com.au>

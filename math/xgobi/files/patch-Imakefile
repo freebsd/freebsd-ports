@@ -1,0 +1,20 @@
+$FreeBSD$
+
+--- Imakefile.orig	Wed Dec  5 08:01:33 2001
++++ Imakefile	Wed Dec  5 08:01:51 2001
+@@ -12,11 +12,11 @@
+ /**/#  the xgobi directories src, help, ps, etc.
+          XGOBID = $(PWD)/..
+ 
+-              CC = cc
+-       CCOPTIONS = -xansi -n32
++#              CC = cc
++#       CCOPTIONS = -xansi -n32
+ 
+-#           CC = gcc
+-#    CCOPTIONS = -ansi -w
++           CC ?= gcc
++    CCOPTIONS = -ansi -w
+ 
+              LD = 
+      CDEBUGFLAGS = -g
