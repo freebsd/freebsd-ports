@@ -7,6 +7,7 @@
 
 PORTNAME=	dhcpconf
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	net sysutils
 MASTER_SITES=	http://members.xoom.com/vschade/dhcp-conf/
 DISTNAME=	dhcp-conf
@@ -15,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm \
-		newt.0:${PORTSDIR}/devel/newt
+		newt.50:${PORTSDIR}/devel/newt
 
 ALL_TARGET=	${DISTNAME}
 WRKSRC=		${WRKDIR}/${DISTNAME}_${PORTVERSION}
