@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.167 1998/10/02 01:01:08 vanilla Exp $
+# $Id: Makefile,v 1.168 1998/10/19 17:01:10 mph Exp $
 #
 
     SUBDIR += 3dc
@@ -29,6 +29,7 @@
     SUBDIR += doom
     SUBDIR += empire
     SUBDIR += flying
+    SUBDIR += fkiss
     SUBDIR += freeciv
     SUBDIR += frotz
     SUBDIR += galaxis
