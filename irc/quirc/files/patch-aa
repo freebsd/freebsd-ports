@@ -1,5 +1,5 @@
---- Makefile.in.orig	Sat Aug 19 09:10:37 2000
-+++ Makefile.in	Sat Aug 19 09:54:30 2000
+--- Makefile.in.orig	Wed Aug  2 19:24:59 2000
++++ Makefile.in	Tue Oct 24 02:31:35 2000
 @@ -70,7 +70,7 @@
  VERSION = @VERSION@
  WISH = @WISH@
@@ -9,3 +9,15 @@
  
  # Main binary targets
  bin_PROGRAMS = quirc
+@@ -90,11 +90,6 @@
+ 
+ noinst_PROGRAMS = generate_tags
+ generate_tags_SOURCES = generate_tags.cc
+-
+-# Documentation
+-
+-docdir = $(prefix)/doc/@PACKAGE@
+-doc_DATA = FAQ AUTHORS COPYING ChangeLog INSTALL NEWS README ChangeLog.themes
+ 
+ # RPM and spec file generation
+ 
