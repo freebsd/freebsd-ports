@@ -1,16 +1,8 @@
 bin/Alisp
 bin/alisp
 bin/alisp_install
-bin/iai
-bin/iai-1
-bin/iai_color
-bin/iai_pfmt
 share/alisp/LICENSE
 share/alisp/alisp.image
-share/alisp/black.rc
-share/alisp/blue.rc
-share/alisp/default.rc
-share/alisp/default-1.rc
 share/alisp/ext/date-after-p.l
 share/alisp/ext/date-before-p.l
 share/alisp/ext/date-difference.l
@@ -18,6 +10,7 @@ share/alisp/ext/date-to-days.l
 share/alisp/ext/date.l
 share/alisp/ext/ext-date.l
 share/alisp/ext/ext-tree.l
+share/alisp/ext/fixed-point.l
 share/alisp/ext/tree-assoc.l
 share/alisp/ext/tree-balance.l
 share/alisp/ext/tree-flatten.l
@@ -153,7 +146,6 @@ share/alisp/lib/union.l
 share/alisp/lib/unique.l
 share/alisp/lib/unsort.l
 share/alisp/lib/zerop.l
-share/alisp/monochrm.rc
 share/alisp/src/bottles.l
 share/alisp/src/bubblesort.l
 share/alisp/src/evaluate.l
@@ -165,10 +157,7 @@ share/alisp/src/prolog.l
 share/alisp/src/queens.l
 share/alisp/src/unlabel.l
 share/alisp/src/xeval.l
-share/alisp/white.rc
 share/doc/alisp/alisp.sd
-share/doc/alisp/helpfile
-share/doc/alisp/helpfile-1
 @dirrm share/alisp/ext
 @dirrm share/alisp/lib
 @dirrm share/alisp/src
