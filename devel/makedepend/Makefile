@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	makedepend
-PORTVERSION=	2000.09.07
+PORTVERSION=	2000.12.28
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/
-DISTNAME=	cyrus-imapd-2.0.7
+MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/%SUBDIR%/
+MASTER_SITE_SUBDIR=. OLD-VERSIONS/imap
+DISTNAME=	cyrus-imapd-2.0.9
 
 MAINTAINER=	roam@FreeBSD.org
 
