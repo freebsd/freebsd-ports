@@ -1,0 +1,9 @@
+Arch is a really nifty revision control system. It's "whole-tree
+changeset based" which means, roughly, that it can handle (with atomic
+commits) file and directory adds, deletes, and renames cleanly, and
+that it does branching simply and easily. Arch is also "distributed"
+which means, for example that you can make arch branches of your own
+from remote projects, even if you don't have write access to the
+revision control archives for those projects. 
+
+WWW: http://arch.fifthvision.net/bin/view
