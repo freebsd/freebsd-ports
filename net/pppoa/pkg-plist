@@ -1,6 +1,3 @@
-bin/speedtouch-setup
-bin/speedtouch-start
-bin/speedtouch-stop
 sbin/modem_run
 sbin/pppoa2
 sbin/pppoa3
