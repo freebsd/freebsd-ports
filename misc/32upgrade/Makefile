@@ -3,7 +3,7 @@
 # Date created:		20 May 1999
 # Whom:			asami
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/05/20 20:46:28 asami Exp $
 #
 
 DISTNAME=	32upgrade-1999.05.20
@@ -17,7 +17,7 @@ MAINTAINER=	asami@Freebsd.ORG
 .if !defined(PACKAGE_BUILDING)
 BROKEN=		this \"port\" is for building packages for distribution only, please get the package from http://www.freebsd.org/ports/ if you need an upgrade
 .elif ${OSVERSION} < 320000
-FORBIDDEN=	this needs to be built on a 3.2-stable system
+FORBIDDEN=	this needs to be built on a 3-stable system
 .endif
 NO_MTREE=	yes
 PREFIX=		/
