@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/lang/php/scripts/Attic/configure.php,v 1.1 2000-12-19 14:00:03 will Exp $
+# $FreeBSD: /tmp/pcvs/ports/lang/php/scripts/Attic/configure.php,v 1.2 2001-01-09 09:40:22 roam Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -76,7 +76,7 @@ while [ "$1" ]; do
 			ZLIB=1
 			;;
 		\"mcrypt\")
-			echo "LIB_DEPENDS+=	mcrypt-2.2.2:\${PORTSDIR}/security/libmcrypt"
+			echo "LIB_DEPENDS+=	mcrypt.2:\${PORTSDIR}/security/libmcrypt"
 			echo "CONFIGURE_ARGS+=--with-mcrypt=\${PREFIX}"
 			;;
 		\"mhash\")
