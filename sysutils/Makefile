@@ -76,6 +76,7 @@
     SUBDIR += gkrellflynn
     SUBDIR += gkrellm
     SUBDIR += gkrellmouse
+    SUBDIR += gkrellmwho
     SUBDIR += glload
     SUBDIR += gnomecontrolcenter
     SUBDIR += gnomecontrolcenter2

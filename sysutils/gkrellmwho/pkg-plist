@@ -1,0 +1,2 @@
+@comment $FreeBSD$
+libexec/gkrellm/plugins/gkrellmwho.so
