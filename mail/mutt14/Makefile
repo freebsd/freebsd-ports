@@ -4,7 +4,7 @@
 # Date created:         Thur July 25, 1996
 # Whom:                 David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.60 1999/05/26 07:02:03 obrien Exp $
+# $Id: Makefile,v 1.61 1999/06/23 06:29:13 obrien Exp $
 
 DISTNAME=	mutt-0.95.6i
 PKGNAME=	mutt-0.95.6
@@ -27,6 +27,10 @@ PATCH_SITES=	http://www.frmug.org/mutt/mutt/${PKGNAME:S/^mutt-//}/  \
 PATCHFILES=
 
 MAINTAINER=     obrien@FreeBSD.org
+
+.if ${MACHINE_ARCH} == "alpha"
+BROKEN=		coredump in sgmls
+.endif
 
 .if defined(BATCH)
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
