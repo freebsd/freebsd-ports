@@ -1,0 +1,22 @@
+--- htconfig.h.in.orig	Thu Oct 26 09:44:10 2000
++++ htconfig.h.in	Thu Oct 26 09:44:26 2000
+@@ -53,7 +53,7 @@
+    but are required by the linker to create a executable.
+ */
+ 
+-/* Define if you have the db library (-ldb).  */ 
++/* Define if you have the db library (-ldb2).  */ 
+ #undef HAVE_LIBDB
+ /* Set library db version 1.85 compatibility feature on for versions >= 2.xx.  */
+ #undef USE_DB_185_COMPATIBILITY
+@@ -120,8 +120,8 @@
+ 
+ /* Default linker args 2  */
+ /* 
+- #define HTG_LD_ARGS_DEFAULT2    "-lhtcobol -ldb -lncurses -lm " 
+- #define HTG_LD_ARGS_DEFAULT2    "-lhtcobol -ldb -lncurses -lreadline -lm " 
++ #define HTG_LD_ARGS_DEFAULT2    "-lhtcobol -ldb2 -lncurses -lm " 
++ #define HTG_LD_ARGS_DEFAULT2    "-lhtcobol -ldb2 -lncurses -lreadline -lm " 
+  #define HTG_LD_ARGS_DEFAULT2    "-lhtcobol -lm -dl" 
+ */
+ #undef HTG_LD_ARGS_DEFAULT2

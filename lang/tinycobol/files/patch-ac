@@ -1,0 +1,13 @@
+--- compiler/cobopt.orig	Thu Oct 26 10:05:09 2000
++++ compiler/cobopt	Thu Oct 26 10:05:14 2000
+@@ -14,8 +14,8 @@
+ 
+ #LD_PATH: -L/usr/lib -L/opt/cobol/lib 
+ LD_PATH: -L/usr/lib -L/usr/local/lib 
+-#LD_LIBS: -lhtcobol -ldb -lm -lreadline
+-LD_LIBS: -lhtcobol -ldb -lm
++LD_LIBS: -lhtcobol -ldb2 -lm -lreadline
++#LD_LIBS: -lhtcobol -ldb2 -lm
+ #XREF - generate sumbolic cross-ref in listing - not implimented
+ #NOXREF - not implemented
+ #COPYBOOKS_PATH: -Ipath - not implimented 
