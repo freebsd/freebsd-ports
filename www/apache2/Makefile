@@ -4,10 +4,12 @@
 #
 # $FreeBSD$
 #
+# For more information, please read Makefile.doc
+#
 
 PORTNAME=	apache
 PORTVERSION=	2.0.48
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		http://sheepkiller.nerim.net/ports/${PORTNAME}/:powerlogo
@@ -16,7 +18,7 @@ DISTFILES=	${DISTNAME}.tar.gz powerlogo.gif:powerlogo
 DIST_SUBDIR=	apache2
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
-MAINTAINER?=	sheepkiller@cultdeadsheep.org
+MAINTAINER?=	clement@FreeBSD.org
 COMMENT?=	Version 2 of the extremely popular Apache http server
 
 LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
@@ -27,82 +29,38 @@ CONFLICTS=	apache+ipv6-1.* apache+modssl-1.* apache+ssl-1.* apache-1.* apache_fp
 		caudium-devel-1.* caudium10-1.* caudium12-* \
 		ru-apache+mod_ssl-1.* ru-apache-1.* thttpd-2.*
 
-## Available knobs:
-## By default, modules are compiled as dynamically loadable (DSO) modules.
-##
-##   Apache-related
-##      WITH_MPM:                 prefork (default)
-##                                worker
-##                                perchild
-##      WITH_HTTP_PORT:           default: 80
-##      WITH_LDAP:                Enable LDAP support (mod_auth_ldap)
-##      WITHOUT_PROXY:            Disable proxy support
-##          WITH_CUSTOM_PROXY:    Let you choose which proxy modules you wish
-##      WITHOUT_AUTH:             Disable auth modules
-##          WITH_CUSTOM_AUTH:     Let you choose which auth modules you wish
-##      WITHOUT_DAV:              Disable DAV support
-##      WITH_IPV6_V6ONLY:         Disable IPv4 support
-##      WITHOUT_SSL:              Disable SSL support
-##      WITH_THREADS:             Enable threads support !! USE IT WITH CARE !!
-##           WITH_CUSTOM_THREADS: Let you choose which threaded modules you want
-##      WITH_DBM:                 Choose your DBM: bdb (Berkeley DB), gdbm or ndbm (default)
-##          WITH_BERKELEYDB:      Choose your BerkeleyDB version: db2, db3, db4, db41 or FreeBSD (1.85)(default)
-##      WITH_STATIC_SUPPORT:      Build statically linked support binaries
-##      WITH_STATIC_APACHE:       Build a static version of httpd (implies WITH_STATIC_MODULES)
-##      WITH_ALL_STATIC_MODULES:  All modules will be statically linked.
-##      WITH_STATIC_MODULES:      List of modules to build modules statics (usefull for slave ports)
-##                                (They must be already enabled (i.e. WITH_MODULES or with default configuration
-##                                use 'make show-modules', to check if they are enabled)
-##      WITH_EXPERIMENTAL:        Build and install experimental modules
-##      WITH_EXTRA_MODULES:       To add addtionnal modules
-##      WITH_MODULES:             List of your own modules
-##      WITHOUT_MODULES:          Disable listed modules
-##
-##
-##   Port-related:
-##      WITHOUT_WWW:              Implies NO_CGI, NO_WWWDATA, NO_ICONS and NO_ERROR
-##           WITH_CUSTOM_WWW:     Let you choose your ${LOCALBASE}/www components: [cgi|errordocs|icons|wwwdata]
-##
-## Available make targets:
-##      show-options:             prints this message
-##      show-modules:             prints list of available modules
-##
-## Examples:
-##      make WITHOUT_SSL=yes WITH_EXTRA_MODULES="bucketeer case_filter case_filter_in" WITHOUT_PROXY=yes
-##      make WITH_STATIC_MODULES="ssl rewrite include" WITH_EXPERIMENTAL=yes WITH_CUSTOM_AUTH="auth auth_dbm"
-##      make WITH_EXPERIMENTAL=yes WITHOUT_MODULES="access speling status"
-##      make WITH_MODULES="include rewrite auth"
-##
+# patch files
+PATCH_SITES+=		http://www.cultdeadsheep.org/FreeBSD/ports/download/distfiles/:apache
+PATCHFILES+=		httpd-2.0.48-buildconf.patch:apache \
+			httpd-2.0.48-ldap-fix.patch:apache
+PATCH_DIST_STRIP+=	-p1:apache-clem
+SCRIPTS_ENV+=		LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE} \
+			LIBTOOL_VERSION=${LIBTOOL_VERSION}
 
-WITH_MPM?=	prefork # or worker, perchild
-HTTP_PORT?=	${WITH_HTTP_PORT}
-
-GNU_CONFIGURE=	yes
+WANT_AUTOCONF_VER?=	253
 USE_LIBTOOL=	yes
 USE_PERL5=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 		--enable-layout=FreeBSD \
 		--with-perl=${PERL5} \
-		--with-port=${HTTP_PORT} \
+		--with-port=${WITH_HTTP_PORT} \
 		--with-expat=${LOCALBASE} \
 		--libdir=${PREFIX_RELDEST}/lib/apache2 \
 		--includedir=${PREFIX_RELDEST}/include/apache2
 
-CONFIGURE_ENV=	CC="${CC}" CPPFLAGS="${CPPFLAGS}" CFLAGS="${CFLAGS}" \
-		LDFLAGS="${LDFLAGS}" CONFIG_SHELL="${SH}"
+CONFIGURE_ENV=	CC="${CC}" CPPFLAGS="${CPPFLAGS}" \
+		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
+		LIBS="${PTHREAD_LIBS}" \
+ 		LDFLAGS="${LDFLAGS}" CONFIG_SHELL="${SH}"
 
-DOCSDIR=	share/doc/apache2
 PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
 RC_SUB=		-e 's,@@PREFIX@@,${PREFIX_RELDEST},g'
 MAKE_ENV+=	DESTDIR=${DESTDIR} EXPR_COMPAT=yes
 
-.if defined(NOPORTDOCS)
-MAKE_ENV+=	NOPORTDOCS=yes
-.endif
+WITH_MPM?=	prefork # or worker, perchild
 
-MAN1=		dbmmanage.1 htdigest.1 htpasswd.1
-MAN8=		ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8 suexec.8
+WITH_HTTP_PORT?=	80
 
 .if !defined(WITH_IPV6_V6ONLY)
 CONFIGURE_ARGS+=	--enable-v4-mapped
@@ -112,47 +70,33 @@ CONFIGURE_ARGS+=	--enable-v4-mapped
 USE_OPENSSL=	yes
 .endif
 
-.if defined(WITH_LDAP)
-USE_OPENLDAP=	YES
+.if defined(WITH_STATIC_SUPPORT)
+CONFIGURE_ARGS+=	--enable-static-support
+.endif
+
+# for slave ports
+.if !defined(MASTERDIR)
+APACHEDIR=	${.CURDIR}
+.else
+APACHEDIR=	${MASTERDIR}
+.endif
+
+.if defined (WITH_LDAP)
+USE_OPENLDAP=		YES
 CONFIGURE_ARGS+=	--with-ldap \
 			--with-ldap-lib="${LOCALBASE}/lib" \
 			--with-ldap-include="${LOCALBASE}/include"
 .endif
 
-.if defined(WITHOUT_WWW)
-NO_CGI=		YES
-NO_WWWDATA=	YES
-NO_ICONS=	YES
-NO_ERROR=	YES
-.endif
-
-.if defined(WITH_CUSTOM_WWW)
-.    if ${WITH_CUSTOM_WWW:Mcgi} == ""
-NO_CGI=		YES
-.    endif
-.    if ${WITH_CUSTOM_WWW:Mwwwdata} == ""
-NO_WWWDATA=		YES
-.    endif
-.    if ${WITH_CUSTOM_WWW:Merrordocs} == ""
-NO_ERROR=		YES
-.    endif
-.    if ${WITH_CUSTOM_WWW:Micons} == ""
-NO_ICONS=		YES
-.    endif
-.endif
-
-.if defined(WITH_STATIC_SUPPORT)
-CONFIGURE_ARGS+=	--enable-static-support
-.endif
-
 .include <bsd.port.pre.mk>
 
-.include "${.CURDIR}/Makefile.modules"
+.include "${APACHEDIR}/Makefile.doc"
+.include "${APACHEDIR}/Makefile.modules"
 
 CONFIGURE_ARGS+=	--with-mpm=${WITH_MPM:L} ${CONFIGURE_TARGET}
 
 show-options:
-	@${SED} -ne 's/^##//p' ${.CURDIR}/Makefile
+	@${SED} -ne 's/^##//p' ${APACHEDIR}/Makefile.doc
 
 show-modules:
 	@for module in $(AVAILABLE_MODULES) ; do \
@@ -176,6 +120,9 @@ pre-everything::
 
 post-extract:
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/powerlogo.gif ${WRKSRC}/docs/icons/freebsd.gif
+
+pre-configure:
+	cd ${WRKSRC}; ${SETENV} ${SCRIPTS_ENV} ./buildconf
 
 post-patch:
 	@cd ${WRKSRC}/docs/docroot && \
