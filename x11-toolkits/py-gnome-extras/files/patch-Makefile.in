@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Fri Jan 28 14:22:51 2005
++++ Makefile.in	Fri Jan 28 14:23:04 2005
+@@ -43,7 +43,7 @@
+ @BUILD_WNCK_TRUE@am__append_5 = wnck
+ @BUILD_GTKMOZEMBED_TRUE@am__append_6 = gtkmozembed
+ @BUILD_GTKSPELL_TRUE@am__append_7 = gtkspell
+-@BUILD_GDL_TRUE@am__append_8 = gdl
++@BUILD_GDL_TRUE@am__append_8 =
+ @BUILD_TOTEM_PLPARSER_TRUE@am__append_9 = totem
+ @BUILD_GTOP_TRUE@am__append_10 = gtop
+ @BUILD_NAUTILUSBURN_TRUE@am__append_11 = nautilusburn

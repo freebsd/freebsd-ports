@@ -1,0 +1,71 @@
+%%PYTHON_SITELIBDIR%%/gtk-2.0/egg/__init__.py
+%%PYTHON_SITELIBDIR%%/gtk-2.0/egg/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gtk-2.0/egg/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gtk-2.0/egg/recent.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/egg/trayicon.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/applet.py
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/applet.pyc
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/applet.pyo
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomeapplet.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomeprint/__init__.py
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomeprint/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomeprint/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomeprint/_print.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomeprint/ui.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gtkhtml2.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gtkmozembed.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gtksourceview.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gtkspell.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gtop.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/nautilusburn.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/totem/__init__.py
+%%PYTHON_SITELIBDIR%%/gtk-2.0/totem/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gtk-2.0/totem/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gtk-2.0/totem/plparser.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/wnck.so
+libdata/pkgconfig/gnome-python-extras-2.0.pc
+%%PORTDOCS%%share/examples/py-gnome/applet/GNOME_PythonAppletSample.server
+%%PORTDOCS%%share/examples/py-gnome/applet/README
+%%PORTDOCS%%share/examples/py-gnome/applet/applet.py
+%%PORTDOCS%%share/examples/py-gnome/egg/trayicon.py
+%%PORTDOCS%%share/examples/py-gnome/egg/recent/Bonobo_Sample_Hello.xml
+%%PORTDOCS%%share/examples/py-gnome/egg/recent/bonobo-view.py
+%%PORTDOCS%%share/examples/py-gnome/egg/recent/gtk-view.py
+%%PORTDOCS%%share/examples/py-gnome/egg/recent/populate-recent.py
+%%PORTDOCS%%share/examples/py-gnome/gdl/gdl_test.py
+%%PORTDOCS%%share/examples/py-gnome/gnomeprint/README
+%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_01.py
+%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_02.py
+%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_03.py
+%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_04.py
+%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_05.py
+%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_06.py
+%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_08.py
+%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_09.py
+%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_10.glade
+%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_10.py
+%%PORTDOCS%%share/examples/py-gnome/gnomeprint/example_11.py
+%%PORTDOCS%%share/examples/py-gnome/gnomeprint/sample-image.png
+%%PORTDOCS%%share/examples/py-gnome/gnomeprint/test-print.py
+%%PORTDOCS%%share/examples/py-gnome/gtkhtml2/simple-browser.py
+%%PORTDOCS%%share/examples/py-gnome/gtksourceview/test-widget.py
+%%PORTDOCS%%share/examples/py-gnome/gtkspell/test.py
+%%PORTDOCS%%share/examples/py-gnome/nautilusburn/blank_disc.py
+%%PORTDOCS%%share/examples/py-gnome/nautilusburn/drive_selection.py
+%%PORTDOCS%%share/examples/py-gnome/nautilusburn/write_iso.py
+share/pygtk/2.0/defs/applet.defs
+share/pygtk/2.0/defs/art.defs
+share/pygtk/2.0/defs/gtkhtml2.defs
+share/pygtk/2.0/defs/nautilus_burn.defs
+share/pygtk/2.0/defs/nb_drive_selection.defs
+share/pygtk/2.0/defs/print.defs
+share/pygtk/2.0/defs/printui.defs
+share/pygtk/2.0/defs/trayicon.defs
+share/pygtk/2.0/defs/wnck.defs
+%%PORTDOCS%%@dirrm share/examples/py-gnome/gtksourceview
+%%PORTDOCS%%@dirrm share/examples/py-gnome/gtkhtml2
+%%PORTDOCS%%@dirrm share/examples/py-gnome/gnomeprint
+%%PORTDOCS%%@dirrm share/examples/py-gnome/egg/recent
+%%PORTDOCS%%@dirrm share/examples/py-gnome/egg
+%%PORTDOCS%%@dirrm share/examples/py-gnome/applet
+@dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/totem
