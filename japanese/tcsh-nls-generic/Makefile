@@ -12,7 +12,8 @@ CATEGORIES=	japanese shells
 MASTER_SITES=	${MASTER_SITE_PORTS_JP}
 DISTNAME=	tcsh-${PORTVERSION}.add2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
+COMMENT?=	Japanese NLS catalog for TCSH ("Generic Japanese" taste)
 
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 

@@ -8,6 +8,7 @@
 CATALOGNAME=	merril
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Japanese NLS catalog for TCSH ("Merril" taste)
 
 MASTERDIR=	${.CURDIR}/../tcsh-nls-generic
 PKGDIR=		${.CURDIR}
