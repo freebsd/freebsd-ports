@@ -12,3 +12,18 @@
  
  libC: libDnd.a
  
+--- DragAndDrop.c.orig	Mon Sep 15 21:02:20 1997
++++ DragAndDrop.c	Mon Sep 15 21:03:53 1997
+@@ -22,7 +22,12 @@
+ #include <X11/Xmu/WinUtil.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#if defined(__OpenBSD__) || defined(__FreeBSD__) || defined(__NetBSD__)
++#include <limits.h>
++#define MAXINT INT_MAX
++#else
+ #include <values.h>
++#endif
+ 
+ /* Local variables */
+ static Display		*dpy;		/* current display		*/
