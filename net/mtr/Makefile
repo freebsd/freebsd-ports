@@ -1,12 +1,12 @@
 # New ports collection makefile for:   mtr
-# Version required:    0.41
+# Version required:    0.42
 # Date created:        12 August 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	mtr-0.41
+DISTNAME=	mtr-0.42
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
 		http://www.giovannelli.it/~gmarco/files/
@@ -20,15 +20,15 @@ MAN8=	mtr.8
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 400014
-PATCHFILES=	mtr-041-v6-20000127a.diff.gz
-PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
-PATCH_DIST_STRIP=	-p1
+#.if ${OSVERSION} >= 400014
+#PATCHFILES=	mtr-041-v6-20000127a.diff.gz
+#PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
+#PATCH_DIST_STRIP=	-p1
 
-CONFIGURE_ARGS+=--enable-ipv6
-.else
+#CONFIGURE_ARGS+=--enable-ipv6
+#.else
 CONFIGURE_ARGS+=--disable-ipv6
-.endif
+#.endif
 
 pre-patch:
 .if !defined(USE_GTK)
