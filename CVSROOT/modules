@@ -1522,6 +1522,7 @@ filepp		ports/textproc/filepp
 filerunner	ports/x11-fm/filerunner
 fileutils	ports/sysutils/fileutils
 find		src/usr.bin/find
+find-zlib	ports/security/find-zlib
 find_ddos	ports/security/find_ddos
 finder		ports/x11/finder
 findutils	ports/misc/findutils
