@@ -1,5 +1,6 @@
 @mode 755
 bin/xxgdb
+bin/xxgdbiowin
 @mode 444
 man/man1/xxgdb.1.gz
 lib/X11/app-defaults/XDbx
