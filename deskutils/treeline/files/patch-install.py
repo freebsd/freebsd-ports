@@ -1,6 +1,6 @@
---- install.py.orig	Thu Sep  2 10:31:10 2004
-+++ install.py	Thu Sep  2 10:31:35 2004
-@@ -257,10 +257,6 @@
+--- install.py.orig	Tue Oct 19 19:34:17 2004
++++ install.py	Tue Oct 19 19:34:29 2004
+@@ -231,10 +231,6 @@
                      'dataFilePath = None', \
                      'dataFilePath =  \'%s\'   # modified by install script\n' \
                      % dataPrefixDir)
@@ -8,6 +8,6 @@
 -        iconBuildDir = os.path.join(buildRoot, prefixDir[1:], 'share', 'icons')
 -        print '  Copying icon files to %s' % iconBuildDir
 -        copyDir('icons', iconBuildDir)
-     if siteCustomReqd:
-         createSiteCustomize(siteCustomExt)
      createWrapper(pythonPrefixDir, progName)
+     binBuildDir = os.path.join(buildRoot, prefixDir[1:], 'bin')
+     print '  Copying executable file "%s" to %s' % (progName, binBuildDir)
