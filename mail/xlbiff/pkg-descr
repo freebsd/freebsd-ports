@@ -1,0 +1,18 @@
+Xlbiff lets you preview new mail to decide if you want to read it
+immediately.  Regular xbiff lets you know when you have mail but not what
+it is.
+
+Xlbiff lurks in the background, monitoring your mailbox file.  When
+something shows up there, it invokes the scanCommand (MH's scan by
+default), and displays the output in a window.  If more mail comes in, it
+scans again and resizes accordingly.
+
+If you're a Berkeley mail person, you can set scanCommand to:
+
+	echo x | mail | grep "^.[NU]"
+
+Or use the ``frm'' utility that is part of the Elm port as your
+scanCommand.  A simular utility is the ``fromwho'' package, posted to
+comp.sources.unix volume 25.
+
+-- David	(obrien@cs.ucdavis.edu)
