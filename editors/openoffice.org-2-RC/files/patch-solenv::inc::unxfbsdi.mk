@@ -36,7 +36,7 @@
 +
 +# flags for the C++ Compiler
 +CFLAGSCC=-pipe -g
-+CFLAGSCXX=-pipe -fno-for-scope -fpermissive -fno-rtti
++CFLAGSCXX=-pipe -fno-for-scope -fpermissive
 +
 +# Flags for enabling exception handling
 +CFLAGSEXCEPTIONS=-fexceptions
