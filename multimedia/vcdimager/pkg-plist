@@ -13,7 +13,6 @@ include/libvcd/logging.h
 include/libvcd/sector.h
 include/libvcd/types.h
 include/libvcd/version.h
-lib/libvcdinfo.la
 lib/libvcdinfo.so.0
 lib/libvcdinfo.so
 lib/libvcdinfo.a
