@@ -1,5 +1,5 @@
-*** Makefile.orig	Sat Jul  1 04:10:00 1995
---- Makefile	Mon May  6 17:19:27 1996
+*** Makefile.orig	Sat Jun  1 04:11:00 1996
+--- Makefile	Sun Jul 14 02:24:09 1996
 ***************
 *** 30,49 ****
   #
@@ -11,8 +11,8 @@
   #
   # COPTS   = -c -ml
   # COPTS   = -c -AL
-! # COPTS   = -c -DNO_STRUPR -O2
-! COPTS   = -c -ansi -Wall -DNO_STRUPR -DNO_STRDUP -O2
+  # COPTS   = -c -DNO_STRUPR -O2
+! COPTS   = -c -ansi -Wall -DNO_STRDUP -DNO_STRUPR -O2
   #
   # LOPTS are linker options (if any)
   #
@@ -22,7 +22,7 @@
   #
   # OBJLIB is the collection of independend object files
   #
---- 30,53 ----
+--- 30,54 ----
   #
   # CC      = bcc
   # CC      = cl
@@ -32,8 +32,9 @@
   #
   # COPTS   = -c -ml
   # COPTS   = -c -AL
+  # COPTS   = -c -DNO_STRUPR -O2
+! # COPTS   = -c -ansi -Wall -DNO_STRDUP -DNO_STRUPR -O2
 ! COPTS   = ${CFLAGS} -c -Wall -DNO_STRUPR
-! # COPTS   = -c -ansi -Wall -DNO_STRUPR -DNO_STRDUP -O2
   #
   # LOPTS are linker options (if any)
   #
@@ -56,7 +57,7 @@
   
   #
   ###############################################################################
---- 66,81 ----
+--- 67,82 ----
   #
   
   install:
@@ -65,7 +66,7 @@
 ! 		$(INSTALL) -c -m $(MANMODE) -o $(MANOWN) -g $(MANGRP) $$i.man ${PREFIX}/man/cat1/$$i.1; \
 ! 	done
 ! 	-mkdir -p ${LIBDIR}/tables ${LIBDIR}/xlt ${LIBDIR}/doc
-! 	$(INSTALL) -c -m $(BINMODE) -o $(BINOWN) -g $(BINGRP) checkall mkbintab mklist ${LIBDIR}
+! 	$(INSTALL) -c -m $(BINMODE) -o $(BINOWN) -g $(BINGRP) checkall mkbintab mklist one iso ${LIBDIR}
 ! 	$(INSTALL) -c -m $(SHAREMODE) -o $(SHAREOWN) -g $(SHAREGRP) iso10646 encoding.lis bin/trans.[ch] bin/trans.man ${LIBDIR}
 ! 	cd tables; $(INSTALL) -c -m $(SHAREMODE) -o $(SHAREOWN) -g $(SHAREGRP) * ${LIBDIR}/tables
 ! 	cd xlt; $(INSTALL) -c -m $(SHAREMODE) -o $(SHAREOWN) -g $(SHAREGRP) * ${LIBDIR}/xlt
