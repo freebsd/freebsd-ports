@@ -7,13 +7,32 @@
 
 PORTNAME=	chora
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	devel www
 MASTER_SITES=	ftp://ftp.horde.org/pub/chora/tarballs/	\
 		ftp://ftp.uk.horde.org/mirrors/ftp.horde.org/pub/chora/tarballs/
 
 MAINTAINER=	thierry@pompo.net
 
+#-----------------------------------------------------------------------
+# You may define these options:
+#
+# - WITHOUT_ENSCRIPT	: if you do not need syntax highlighting;
+#
+# - A4 or DJ		: if you run enscript with this paper size.
+#
+#-----------------------------------------------------------------------
+
 RUN_DEPENDS=	${LOCALBASE}/www/horde/index.php:${PORTSDIR}/www/horde-devel
+.if !defined(WITHOUT_ENSCRIPT)
+.if defined(A4)
+RUN_DEPENDS=	${LOCALBASE}/bin/enscript:${PORTSDIR}/print/enscript-a4
+.elif defined(DJ)
+RUN_DEPENDS=	${LOCALBASE}/bin/enscript:${PORTSDIR}/print/enscript-letterdj
+.else
+RUN_DEPENDS=	${LOCALBASE}/bin/enscript:${PORTSDIR}/print/enscript-letter
+.endif
+.endif
 
 NO_BUILD=	yes
 
@@ -58,6 +77,10 @@ do-install:
 		${HORDE_INC}/httpd.conf.chora
 	@${PERL} -pi -e "s://UNCOMMENTWHENINSTCHORA::" \
 		${HORDEDIR}/config/registry.php
+.if !defined(WITHOUT_ENSCRIPT)
+	@${PERL} -pi -e "s://UNCOMMENTWHENINSTCHORA::" \
+		${HORDEDIR}/config/mime_drivers.php
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${DOCS}
