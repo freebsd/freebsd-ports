@@ -7,7 +7,7 @@
 
 PORTNAME?=	mod_php3
 PORTVERSION=	3.0.18
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	www
 MASTER_SITES=	ftp://ftp.php.net/pub/${PHP_DISTDIR}/ \
 		http://us.php.net/${PHP_DISTDIR}/ \
@@ -55,9 +55,7 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 
 AP_LIBEXEC=	${PREFIX}/libexec/apache
 
-PHPDOCDIR=	${PREFIX}/share/doc/php3
-PLIST_SUB=	PHPDOCDIR=${PHPDOCDIR:S/^${PREFIX}\///} \
-		AP_LIBEXEC=${AP_LIBEXEC:S/^${PREFIX}\///}
+PLIST_SUB=	AP_LIBEXEC=${AP_LIBEXEC:S/^${PREFIX}\///}
 
 pre-fetch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.php
@@ -70,13 +68,6 @@ post-install:
 .else
 	@${MKDIR} ${PREFIX}/etc/php.standalone
 	@${INSTALL_DATA} ${WRKSRC}/php3.ini-dist ${PREFIX}/etc/php.standalone
-.endif
-
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${PHPDOCDIR}
-.for i in CODING_STANDARDS LICENSE
-	@${INSTALL_DATA} ${WRKSRC}/$i ${PHPDOCDIR}
-.endfor
 .endif
 
 .if !defined(STANDALONE)

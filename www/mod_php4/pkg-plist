@@ -2,8 +2,5 @@ etc/php.ini-dist
 %%AP_LIBEXEC%%/libphp4.so
 @exec %D/sbin/apxs -e -a -n php4 %f
 @unexec %D/sbin/apxs -e -A -n php4 %f
-%%PHPDOCDIR%%/CODING_STANDARDS
-%%PHPDOCDIR%%/LICENSE
 @exec %D/sbin/apachectl restart
 @unexec %D/sbin/apachectl restart
-@dirrm %%PHPDOCDIR%%
