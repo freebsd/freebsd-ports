@@ -7,6 +7,7 @@
 
 PORTNAME=	sc
 PORTVERSION=	6.21
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://gatekeeper.dec.com/pub/misc/
 EXTRACT_SUFX=	.tar.Z
