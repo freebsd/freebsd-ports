@@ -1,0 +1,11 @@
+--- src/defaults.c.orig	Tue Dec 28 14:44:07 1999
++++ src/defaults.c	Tue Dec 28 14:45:08 1999
+@@ -2200,7 +2200,7 @@
+ 
+     font = WMCreateFont(scr->wmscreen, val);
+     if (!font)
+-	font = WMCreateFont(scr->wmscreen, "fixed");
++	font = WMCreateFont(scr->wmscreen, "fixed,-default-*--16-*,*");
+ 
+     if (!font) {
+ 	wfatal(_("could not load any usable font!!!"));
