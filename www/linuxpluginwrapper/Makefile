@@ -54,9 +54,9 @@ RTLD=		/libexec/ld-elf.so.1
 CFLAGS+=	-DDEBUG=1
 .endif
 
-.if		${OSVERSION} < 501107 && !defined(PACKAGE_BUILDING)
+.if		(${OSVERSION} < 490102 || ${OSVERSION} >= 500000 && ${OSVERSION} < 501107) && !defined(PACKAGE_BUILDING)
 pre-everything::
-	if ! strings ${RTLD} | ${GREP} libmap.conf > /dev/null 2>&1; then \
+	@if ! strings ${RTLD} | ${GREP} libmap.conf > /dev/null 2>&1; then \
 		${ECHO_MSG} 'Please enable libmap.conf(5) feature for rtld(1).'; \
 		${ECHO_MSG} '4-stable user:'; \
 		${ECHO_MSG} '	You can get a following patch.'; \
