@@ -7,6 +7,7 @@
 
 PORTNAME=	EZWGL
 PORTVERSION=	1.50
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	ftp://ftp.ma.utexas.edu/pub/mzou/
 DISTFILES=	${DISTNAME}-demo.tgz ${DISTNAME}-doc.tgz ${DISTNAME}-src.tgz
@@ -22,7 +23,7 @@ INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-NOPRECIOUSMAKEVARS= yes # Otherwise 'make readmes' is broken
+NOPRECIOUSMAKEVARS=	yes # Otherwise 'make readmes' is broken
 
 .include <bsd.port.pre.mk>
 
