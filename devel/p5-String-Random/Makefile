@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	String-Random
-PORTVERSION=	0.198
+PORTVERSION=	0.20
+PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	String
@@ -17,7 +18,6 @@ COMMENT=	Perl interface to generate "random" strings
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		String::Random.3
 
 .include <bsd.port.mk>
