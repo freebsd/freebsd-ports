@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Compress-Zlib
-PORTVERSION=	1.21
+PORTVERSION=	1.22
 CATEGORIES=	archivers perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Compress
@@ -18,6 +18,5 @@ COMMENT=	Perl5 interface to zlib compression library
 PERL_CONFIGURE=	YES
 
 MAN3=		Compress::Zlib.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>
