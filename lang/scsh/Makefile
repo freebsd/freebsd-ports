@@ -6,20 +6,20 @@
 #
 
 PORTNAME=	scsh
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.4
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.scsh.net/pub/scsh/0.6/
 
-MAINTAINER=	alex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Unix shell embedded into Scheme, with access to all Posix calls
 
 CONFIGURE_ENV+=	LDFLAGS="-Wl,-E"
 
 .include <bsd.port.pre.mk>
 
-.if ${MACHINE_ARCH} == "alpha"
-BROKEN=		bus errors on unaligned accesses in scshvm
-.endif
+#.if ${MACHINE_ARCH} == "alpha"
+#BROKEN=		bus errors on unaligned accesses in scshvm
+#.endif
 
 GNU_CONFIGURE=	yes
 
@@ -37,6 +37,8 @@ post-install:
 .else
 	@${RM} -rf ${PREFIX}/lib/scsh/doc
 .endif
+	@(cd ${WRKSRC} && \
+	 ${CP} -R emacs ${PREFIX}/lib/scsh/)
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

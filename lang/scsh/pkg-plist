@@ -1,6 +1,7 @@
 bin/scsh
 include/scheme48.h
 include/write-barrier.h
+
 %%PORTDOCS%%lib/scsh/doc/scsh-manual/html/man-Z-H-1.html
 %%PORTDOCS%%lib/scsh/doc/scsh-manual/html/man-Z-H-10.html
 %%PORTDOCS%%lib/scsh/doc/scsh-manual/html/man-Z-H-11.html
@@ -16,11 +17,12 @@ include/write-barrier.h
 %%PORTDOCS%%lib/scsh/doc/scsh-manual/html/man-Z-H-9.html
 %%PORTDOCS%%lib/scsh/doc/scsh-manual/html/man.html
 %%PORTDOCS%%lib/scsh/doc/scsh-manual/html/man-Z-G-D-1.gif
-%%PORTDOCS%%lib/scsh/doc/scsh-manual/html/man-Z-C.css
+%%PORTDOCS%%lib/scsh/doc/scsh-manual/html/man-Z-S.css
 %%PORTDOCS%%lib/scsh/doc/scsh-manual/awk.tex
 %%PORTDOCS%%lib/scsh/doc/scsh-manual/decls.tex
 %%PORTDOCS%%lib/scsh/doc/scsh-manual/front.tex
 %%PORTDOCS%%lib/scsh/doc/scsh-manual/intro.tex
+%%PORTDOCS%%lib/scsh/doc/scsh-manual/man-Z-G-D-1.tex
 %%PORTDOCS%%lib/scsh/doc/scsh-manual/man.tex
 %%PORTDOCS%%lib/scsh/doc/scsh-manual/miscprocs.tex
 %%PORTDOCS%%lib/scsh/doc/scsh-manual/network.tex
@@ -154,7 +156,7 @@ include/write-barrier.h
 %%PORTDOCS%%lib/scsh/doc/scsh-paper/html/scsh-paper-Z-H-8.html
 %%PORTDOCS%%lib/scsh/doc/scsh-paper/html/scsh-paper-Z-H-9.html
 %%PORTDOCS%%lib/scsh/doc/scsh-paper/html/scsh-paper.html
-%%PORTDOCS%%lib/scsh/doc/scsh-paper/html/scsh-paper-Z-C.css
+%%PORTDOCS%%lib/scsh/doc/scsh-paper/html/scsh-paper-Z-S.css
 %%PORTDOCS%%lib/scsh/doc/scsh-paper/headings.tex
 %%PORTDOCS%%lib/scsh/doc/scsh-paper/scsh-paper.tex
 %%PORTDOCS%%lib/scsh/doc/scsh-paper/boxedminipage.sty
@@ -178,6 +180,7 @@ include/write-barrier.h
 %%PORTDOCS%%lib/scsh/doc/README
 %%PORTDOCS%%lib/scsh/doc/RELEASE
 %%PORTDOCS%%lib/scsh/doc/COPYING
+
 lib/scsh/rts/bignum.scm
 lib/scsh/rts/defenum.scm
 lib/scsh/rts/floatnum.scm
@@ -186,6 +189,7 @@ lib/scsh/rts/ratnum.scm
 lib/scsh/rts/recnum.scm
 lib/scsh/rts/xnum.scm
 lib/scsh/rts/jar-defrecord.scm
+
 lib/scsh/env/assem.scm
 lib/scsh/env/basic-command.scm
 lib/scsh/env/build.scm
@@ -211,6 +215,7 @@ lib/scsh/env/space.scm
 lib/scsh/env/start.scm
 lib/scsh/env/traverse.scm
 lib/scsh/env/version-info.scm
+
 lib/scsh/big/array.scm
 lib/scsh/big/big-util.scm
 lib/scsh/big/bigbit.scm
@@ -241,12 +246,14 @@ lib/scsh/big/socket.scm
 lib/scsh/big/sort.scm
 lib/scsh/big/strong.scm
 lib/scsh/big/thread-fluid.scm
+
 lib/scsh/opt/analyze.scm
 lib/scsh/opt/flatten.scm
 lib/scsh/opt/inline.scm
 lib/scsh/opt/sort.scm
 lib/scsh/opt/tst.scm
 lib/scsh/opt/usage.scm
+
 lib/scsh/misc/annotate.scm
 lib/scsh/misc/doodl.scm
 lib/scsh/misc/either.scm
@@ -268,6 +275,7 @@ lib/scsh/misc/sicp.scm
 lib/scsh/misc/static.scm
 lib/scsh/misc/syscall.scm
 lib/scsh/misc/test-doodl.scm
+
 lib/scsh/link/data.scm
 lib/scsh/link/generate-c-header.scm
 lib/scsh/link/generate-old-c-header.scm
@@ -276,6 +284,7 @@ lib/scsh/link/loadc.scm
 lib/scsh/link/reify.scm
 lib/scsh/link/transport.scm
 lib/scsh/link/write-image.scm
+
 lib/scsh/srfi/srfi-1.scm
 lib/scsh/srfi/srfi-11.scm
 lib/scsh/srfi/srfi-13.scm
@@ -284,10 +293,16 @@ lib/scsh/srfi/srfi-16.scm
 lib/scsh/srfi/srfi-17.scm
 lib/scsh/srfi/srfi-19.scm
 lib/scsh/srfi/srfi-2.scm
+lib/scsh/srfi/srfi-25.scm
+lib/scsh/srfi/srfi-26.scm
+lib/scsh/srfi/srfi-27.scm
+lib/scsh/srfi/srfi-28.scm
+lib/scsh/srfi/srfi-31.scm
+lib/scsh/srfi/srfi-37.scm
 lib/scsh/srfi/srfi-5.scm
 lib/scsh/srfi/srfi-7.scm
+
 lib/scsh/scsh/awk.scm
-lib/scsh/scsh/char-set.scm
 lib/scsh/scsh/db.scm
 lib/scsh/scsh/dbm.scm
 lib/scsh/scsh/defrec.scm
@@ -306,7 +321,9 @@ lib/scsh/scsh/fr.scm
 lib/scsh/scsh/glob.scm
 lib/scsh/scsh/here.scm
 lib/scsh/scsh/let-opt.scm
+lib/scsh/scsh/libscsh.scm
 lib/scsh/scsh/low-interrupt.scm
+lib/scsh/scsh/md5.scm
 lib/scsh/scsh/meta-arg.scm
 lib/scsh/scsh/ndbm.scm
 lib/scsh/scsh/network.scm
@@ -321,10 +338,8 @@ lib/scsh/scsh/scsh-package.scm
 lib/scsh/scsh/scsh-read.scm
 lib/scsh/scsh/scsh-version.scm
 lib/scsh/scsh/scsh.scm
-lib/scsh/scsh/select.scm
 lib/scsh/scsh/sighandlers.scm
 lib/scsh/scsh/startup.scm
-lib/scsh/scsh/static.scm
 lib/scsh/scsh/stringcoll.scm
 lib/scsh/scsh/syntax-helpers.scm
 lib/scsh/scsh/syntax.scm
@@ -348,22 +363,13 @@ lib/scsh/scsh/waitcodes.scm
 lib/scsh/scsh/ccp-pack.scm
 lib/scsh/scsh/ccp.scm
 lib/scsh/scsh/char-package.scm
-lib/scsh/scsh/cset-lib.scm
-lib/scsh/scsh/cset-obsolete.scm
-lib/scsh/scsh/cset-package.scm
-lib/scsh/scsh/cset-tests.scm
-lib/scsh/scsh/list-lib.scm
-lib/scsh/scsh/list-pack.scm
-lib/scsh/scsh/string-lib.scm
-lib/scsh/scsh/string-pack.scm
-lib/scsh/scsh/string-package.scm
+lib/scsh/scsh/generate-constants.scm
+lib/scsh/scsh/odbc-bindcol.scm
+lib/scsh/scsh/odbc-constants.scm
+lib/scsh/scsh/odbc-types.scm
 lib/scsh/scsh/odbc.scm
-lib/scsh/scsh/cond-package.scm
-lib/scsh/scsh/loadem.scm
-lib/scsh/scsh/modules.scm
+lib/scsh/scsh/scshql.scm
 lib/scsh/scsh/oldfuns.scm
-lib/scsh/scsh/packages-old.scm
-lib/scsh/scsh/packages-old2.scm
 lib/scsh/scsh/parse.scm
 lib/scsh/scsh/posixstr.scm
 lib/scsh/scsh/re-fold.scm
@@ -383,14 +389,27 @@ lib/scsh/scsh/env-test-add.scm
 lib/scsh/scsh/env-test-code.scm
 lib/scsh/scsh/file-system-tests.scm
 lib/scsh/scsh/process-state-tests.scm
+lib/scsh/scsh/strings-and-chars-test.scm
 lib/scsh/scsh/test-base.scm
 lib/scsh/scsh/test-packages.scm
+
+lib/scsh/emacs/cmuscheme48.el
+lib/scsh/emacs/cmulisp.el
+lib/scsh/emacs/cmuscheme.el
+lib/scsh/emacs/README
+lib/scsh/emacs/cmushell.el
+lib/scsh/emacs/comint.el
+lib/scsh/emacs/jar-hacks.el
+
 lib/scsh/scshvm
 lib/scsh/scsh.image
+lib/scsh/stripped-scsh.image
 lib/scsh/libscshvm.a
 lib/scsh/libscsh.a
+
 %%PORTDOCS%%@exec ln -fs %D/lib/scsh/doc %D/share/doc/scsh
 @unexec rm -f %D/share/doc/scsh
+
 @dirrm lib/scsh/scsh
 @dirrm lib/scsh/rts
 @dirrm lib/scsh/big
@@ -400,6 +419,8 @@ lib/scsh/libscsh.a
 @dirrm lib/scsh/srfi
 @dirrm lib/scsh/env
 @dirrm lib/scsh/cig
+@dirrm lib/scsh/emacs
+
 %%PORTDOCS%%@dirrm lib/scsh/doc/scsh-manual/html
 %%PORTDOCS%%@dirrm lib/scsh/doc/scsh-manual
 %%PORTDOCS%%@dirrm lib/scsh/doc/s48-manual/html
@@ -407,5 +428,6 @@ lib/scsh/libscsh.a
 %%PORTDOCS%%@dirrm lib/scsh/doc/scsh-paper/html
 %%PORTDOCS%%@dirrm lib/scsh/doc/scsh-paper
 %%PORTDOCS%%@dirrm lib/scsh/doc
+
 @dirrm lib/scsh
 @unexec echo 'You might check whether to remove %D/lib/scsh.old'
