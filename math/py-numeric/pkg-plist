@@ -34,10 +34,12 @@ lib/python1.5/site-packages/RandomArray.pyo
 lib/python1.5/site-packages/UserArray.py
 lib/python1.5/site-packages/UserArray.pyc
 lib/python1.5/site-packages/UserArray.pyo
-@dirrm lib/python1.5/site-packages
+@unexec rmdir %B 2>/dev/null || true
 share/doc/NumPy/doc.html
 share/doc/NumPy/home.html
 @dirrm share/doc/NumPy
+share/examples/NumPy/life.py
+share/examples/NumPy/life.pyc
 share/examples/NumPy/mandelbrot.py
 share/examples/NumPy/mandelbrot.pyc
 share/examples/NumPy/sieve.py
