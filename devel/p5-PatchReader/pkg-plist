@@ -1,0 +1,15 @@
+%%SITE_PERL%%/PatchReader.pm
+%%SITE_PERL%%/PatchReader/NarrowPatch.pm
+%%SITE_PERL%%/PatchReader/FilterPatch.pm
+%%SITE_PERL%%/PatchReader/AddCVSContext.pm
+%%SITE_PERL%%/PatchReader/Base.pm
+%%SITE_PERL%%/PatchReader/Raw.pm
+%%SITE_PERL%%/PatchReader/FixPatchRoot.pm
+%%SITE_PERL%%/PatchReader/CVSClient.pm
+%%SITE_PERL%%/PatchReader/PatchInfoGrabber.pm
+%%SITE_PERL%%/PatchReader/DiffPrinter/template.pm
+%%SITE_PERL%%/PatchReader/DiffPrinter/raw.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PatchReader/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/PatchReader 2>/dev/null || true
+@dirrm %%SITE_PERL%%/PatchReader/DiffPrinter
+@unexec rmdir %D/%%SITE_PERL%%/PatchReader 2>/dev/null || true
