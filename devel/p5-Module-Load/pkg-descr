@@ -1,0 +1,4 @@
+load() eliminates the need to know whether you are trying to require
+either a file or a module.
+
+WWW: http://search.cpan.org/dist/Module-Load
