@@ -1,10 +1,10 @@
---- common.h.orig	Sun Aug 12 22:12:11 2001
-+++ common.h	Thu Aug 16 08:55:30 2001
-@@ -136,6 +136,7 @@
+--- common.h.orig	Wed Oct 31 00:07:31 2001
++++ common.h	Wed Oct 31 11:07:29 2001
+@@ -174,6 +174,7 @@
  #define writesocket(s,b,n)      write((s),(b),(n))
  #define closesocket(s)          close(s)
  #define ioctlsocket(a,b,c)      ioctl((a),(b),(c))
 +#define sock_ioctlsocket(a,b,c) ioctl((a),(b),(c))
  
- /* POSIX threads */
- #if HAVE_PTHREAD_H && HAVE_LIBPTHREAD
+     /* Unix-specific headers */
+ #include <syslog.h>
