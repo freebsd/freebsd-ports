@@ -3,12 +3,13 @@
 # Date created:		16 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.18 1997/10/15 09:16:03 torstenb Exp $
+# $Id: Makefile,v 1.19 1997/10/15 09:38:57 torstenb Exp $
 #
 
-DISTNAME=	smail-3.2.0.97
+DISTNAME=	smail-3.2.0.101
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.uu.net/networking/mail/smail/ \
+		ftp://ftp.planix.com/pub/Smail/ \
 		ftp://ftp.fu-berlin.de/unix/mail/smail/
 
 MAINTAINER=	torstenb@FreeBSD.ORG

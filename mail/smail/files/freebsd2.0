@@ -58,6 +58,10 @@ FORCE_PATHS_TYPE=lsearch
 FORCE_SMTP_FILE=forcesmtp
 FORCE_SMTP_TYPE=lsearch
 
+# Rewrite File
+REWRITE_FILE=rewrite
+REWRITE_TYPE=lsearch
+
 # CPPFLAGS - interesting flags for the cpp, and cc commands
 CPPFLAGS="-I!!PREFIX!!/include"
 
@@ -69,4 +73,4 @@ LDFLAGS="-L!!PREFIX!!/lib"
 # LIBS - libraries to include in binaries
 LIBS="-lident -lwrap"
 
-MISC_DEFINES="$MISC_DEFINES:USE_TARGET_DOMAIN:NO_FORWARDTO_FILE"
+MISC_DEFINES="$MISC_DEFINES:USE_TARGET_DOMAIN:NO_FORWARDTO_FILE:USE_LSEARCH_REGEXCMP:USE_STRICT_MX"
