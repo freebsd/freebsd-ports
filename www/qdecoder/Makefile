@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	qDecoder-5.0.7
+DISTNAME=	qDecoder-5.0.8
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.hongik.com/pub/qDecoder/
 EXTRACT_SUFX=	.tar.Z
