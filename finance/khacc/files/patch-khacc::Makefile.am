@@ -1,5 +1,5 @@
---- khacc/Makefile.am.orig	Thu Jun 17 05:20:16 2004
-+++ khacc/Makefile.am	Thu Aug 12 03:25:03 2004
+--- khacc/Makefile.am.orig	Sun Jan 30 07:03:21 2005
++++ khacc/Makefile.am	Sun Feb 27 01:09:33 2005
 @@ -50,7 +50,7 @@
  
  # set the include path for X, qt and KDE
@@ -17,7 +17,7 @@
  rcdir = $(kde_datadir)/khacc
  rc_DATA = khaccui.rc
  
-@@ -68,128 +67,3 @@
+@@ -68,135 +67,3 @@
  	 $(XGETTEXT) $$LIST -o $(podir)/khacc.pot; \
  	fi
  
@@ -36,7 +36,7 @@
 -qhaccacctboxchsr.moc:	qhaccacctboxchsr.h
 -	$(MOC) $(srcdir)/qhaccacctboxchsr.h -o qhaccacctboxchsr.moc
 -
--transeditor.moc:	transeditor.h
+-transeditor.moc:	transeditor.h splitdialog.h metadialog.h
 -	$(MOC) $(srcdir)/transeditor.h -o transeditor.moc
 -
 -qhaccrecwin.moc:	qhaccrecwin.h
@@ -72,6 +72,9 @@
 -qhaccprefdlg.moc: qhaccprefdlg.h
 -	$(MOC) $(srcdir)/qhaccprefdlg.h -o qhaccprefdlg.moc
 -
+-metadialog.moc:	metadialog.h
+-	$(MOC) $(srcdir)/metadialog.h -o metadialog.moc
+-
 -$(srcdir)/qhaccwidget.cpp:	qhaccwidget.moc
 -$(srcdir)/qhaccview.cpp:	qhaccview.moc
 -$(srcdir)/qhaccacctchsr.cpp:	qhaccacctchsr.moc
@@ -89,6 +92,7 @@
 -$(srcdir)/khaccsounder.cpp: khaccsounder.moc
 -$(srcdir)/qhaccacctdlg.cpp: qhaccacctdlg.moc
 -$(srcdir)/qhaccprefdlg.cpp: qhaccprefdlg.moc
+-$(srcdir)/metadialog.cpp: metadialog.moc
 -
 -qhaccwidget.$(OBJEXT):	$(srcdir)/qhaccwidget.cpp qhaccwidget.h
 -	$(CXXCOMPILE) -c $<
@@ -139,6 +143,9 @@
 -	$(CXXCOMPILE) -c $<
 -
 -qhaccprefdlg.$(OBJEXT): $(srcdir)/qhaccprefdlg.cpp qhaccprefdlg.h
+-	$(CXXCOMPILE) -c $<
+-
+-metadialog.$(OBJEXT):	$(srcdir)/metadialog.cpp metadialog.h
 -	$(CXXCOMPILE) -c $<
 -
 -clean:
