@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	xdrawchem
-PORTVERSION=	0.84a
+PORTVERSION=	0.84
 CATEGORIES=	biology
 MASTER_SITES=	http://www.prism.gatech.edu/~gte067k/xdrawchem/
-DISTNAME=	xdc084
+DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	trevor@FreeBSD.org
 
 MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" QTDIR="${X11BASE}"
-PLIST=		${WRKSRC}/pkg-plist
+PLIST=		${WRKDIR}/pkg-plist
 USE_GMAKE=	yes
 USE_NEWGCC=	yes
 USE_QT2=	yes
@@ -24,7 +24,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/a//}
 
 pre-install:
 	${ECHO} bin/xdrawchem > ${PLIST}
-	${ECHO} share/xdrawchem/calix4.ring >> ${PLIST}
+	cd ${WRKSRC}/ring && find -s . -type f | \
+		${SED} -e 's:^.:share/xdrawchem:' >> ${PLIST}
 	${ECHO} @dirrm share/xdrawchem >> ${PLIST}
 
 do-install:
