@@ -1,0 +1,24 @@
+From the README:
+
+   OTcl, short for MIT Object Tcl, is an extension to Tcl/Tk for
+   object-oriented programming. It shouldn't be confused with the IXI
+   Object Tcl extension by Dean Sheenan. (Sorry, but we both like the
+   name and have been using it for a while.)
+
+   Some of OTcl's features as compared to alternatives are:
+     * designed to be dynamically extensible, like Tcl, from the ground
+       up
+     * builds on Tcl syntax and concepts rather than importing another
+       language
+     * compact yet powerful object programming system (draws on CLOS,
+       Smalltalk, and Self)
+     * fairly portable implementation (2000 lines of C, without core
+       hacks)
+
+   OTcl was presented at the Tcl/Tk Workshop '95. It constitutes a
+   standalone release of a system that has been in use, embedded in the
+   VuSystem, for two years. We made the release public (with free use,
+   distribution and modification under the MIT license) to meet the
+   demand for object-oriented programming in Tcl.
+
+-Oscar <obonilla@fisicc-ufm.edu>
