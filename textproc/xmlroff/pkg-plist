@@ -142,13 +142,16 @@ libdata/pkgconfig/libfo-0.3.pc
 %%DOCSDIR%%/context.html
 %%DOCSDIR%%/datatypes.html
 %%DOCSDIR%%/declarations.html
+%%DOCSDIR%%/debugging.html
 %%DOCSDIR%%/direction.html
+%%DOCSDIR%%/directory-structure.html
 %%DOCSDIR%%/display-align.html
 %%DOCSDIR%%/dominant-baseline.html
 %%DOCSDIR%%/end-indent.html
 %%DOCSDIR%%/external-graphic.html
 %%DOCSDIR%%/flow-name.html
 %%DOCSDIR%%/flow.html
+%%DOCSDIR%%/fo-c-file.html
 %%DOCSDIR%%/font-family.html
 %%DOCSDIR%%/font-size.html
 %%DOCSDIR%%/font-stretch.html
@@ -159,6 +162,7 @@ libdata/pkgconfig/libfo-0.3.pc
 %%DOCSDIR%%/format.html
 %%DOCSDIR%%/formatting-objects.html
 %%DOCSDIR%%/generated-properties.html
+%%DOCSDIR%%/generating-source.html
 %%DOCSDIR%%/grouping-separator.html
 %%DOCSDIR%%/grouping-size.html
 %%DOCSDIR%%/height.html
@@ -272,6 +276,7 @@ libdata/pkgconfig/libfo-0.3.pc
 %%DOCSDIR%%/xmlroff-FoNeutralFoIface.html
 %%DOCSDIR%%/xmlroff-FoPcw.html
 %%DOCSDIR%%/xmlroff-FoWrapper.html
+%%DOCSDIR%%/xmlroff-FoXmlDoc.html
 %%DOCSDIR%%/xmlroff-FoXslFormatter.html
 %%DOCSDIR%%/xmlroff-FoXsltTransformer.html
 %%DOCSDIR%%/xmlroff-background-image.html
@@ -336,10 +341,10 @@ libdata/pkgconfig/libfo-0.3.pc
 %%DOCSDIR%%/xmlroff-space-startoptimum.html
 %%DOCSDIR%%/xmlroff-space-startprecedence.html
 %%DOCSDIR%%/xmlroff.devhelp
-share/xml/libfo-0.3.0/catalog.xml
-share/xml/libfo-0.3.0/libfo-compat.xsl
-share/xml/libfo-0.3.0/xmlroff.fo
-@dirrm share/xml/libfo-0.3.0
+share/xml/libfo-0.3.1/catalog.xml
+share/xml/libfo-0.3.1/libfo-compat.xsl
+share/xml/libfo-0.3.1/xmlroff.fo
+@dirrm share/xml/libfo-0.3.1
 @unexec rmdir %D/share/xml 2>/dev/null || true
 @dirrm %%DOCSDIR%%
 @dirrm include/libfo-0.3/property

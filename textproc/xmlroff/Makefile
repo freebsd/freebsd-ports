@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	xmlroff
-PORTVERSION=	0.3.0
-PORTREVISION=	2
+PORTVERSION=	0.3.1
+PORTREVISION=	0
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	chero7@telus.net
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	XSL formatter that produces PDF and PostScript
 
 LIB_DEPENDS=	pangoxsl-1.0.600:${PORTSDIR}/x11-toolkits/pangoxsl
