@@ -1,0 +1,3 @@
+@cwd /usr/local
+bin/uzap
+man/man1/uzap.1
