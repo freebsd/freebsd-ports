@@ -1,9 +1,12 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/mail/courier/Attic/pkg-install,v 1.2 2002-01-30 03:56:07 pat Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/courier/Attic/pkg-install,v 1.3 2002-06-08 18:54:01 ijliao Exp $
 #
 
 PKG_PREFIX=${PKG_PREFIX:=/usr/local}
+
+USER=courier;	UID=62
+GROUP=courier;	GID=62
 
 ask() {
     local question default answer
@@ -13,7 +16,7 @@ ask() {
     if [ -z "${PACKAGE_BUILDING}" ]; then
         read -p "${question} [${default}]? " answer
     fi
-    if [ x${answer} = x ]; then
+    if [ -z "${answer}" ]; then
         answer=${default}
     fi
     echo ${answer}
@@ -48,10 +51,7 @@ replace() {
     fi
 }
 
-if [ x"$2" = xPRE-INSTALL ]; then
-    USER=courier;	UID=62
-    GROUP=courier;	GID=62
-
+if [ ":$2" = ":PRE-INSTALL" ]; then
     if /usr/sbin/pw groupshow "${GROUP}" 2>/dev/null; then
         echo "You already have a group \"${GROUP}\", so I will use it."
     else
@@ -82,7 +82,7 @@ if [ x"$2" = xPRE-INSTALL ]; then
     fi
 fi
 
-if [ x"$2" = xPOST-INSTALL -a -z "${PACKAGE_BUILDING}" ]; then
+if [ ":$2" = ":POST-INSTALL" ]; then
     if [ -x /sbin/sysctl ]; then
         OSVERSION=`/sbin/sysctl -n kern.osreldate`
     else

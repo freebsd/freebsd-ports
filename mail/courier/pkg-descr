@@ -1,8 +1,6 @@
 Courier is a modular multiprotocol mail server that's designed to
 strike a balance between reasonable performance, flexibility and
-features.
-
-A partial list of features:
+features:
    
  * Can be configured to function as an intermediate mail relay, or
    as a mail server that receives mail for one or more domains, or
@@ -16,6 +14,7 @@ A partial list of features:
    certificate is signed by a trusted root CA (a default set of
    root CAs is provided).
  * Mailboxes can be accessed via POP3, IMAP, and HTTP.
+ * A faxmail gateway that forwards E-mail messages via fax.
  * Courier includes a mailing list manager.
  * PAM, LDAP, PostgreSQL, or MySQL authentication. 
  * Authenticated SMTP.

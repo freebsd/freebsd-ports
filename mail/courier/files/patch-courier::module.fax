@@ -1,0 +1,35 @@
+--- courier/module.fax/application-pdf.filter.in.orig	Mon Mar  4 19:32:16 2002
++++ courier/module.fax/application-pdf.filter.in	Fri Jun  7 10:21:37 2002
+@@ -8,7 +8,4 @@
+ . @filterbindir@/init
+ 
+ cat >$OUTDIR/.pdf
+-@PDFTOPS@ -q $OUTDIR/.pdf $OUTDIR/.ps
+-rm -f $OUTDIR/.pdf
+-
+-$GS -sDEVICE=faxg3 $FAXRES -dBATCH -sOutputFile=$OUTDIR/f%04d -dNOPAUSE -q -dSAFER - <$OUTDIR/.ps
++exec $GS -sDEVICE=faxg3 $FAXRES -dBATCH -sOutputFile=$OUTDIR/f%04d -dNOPAUSE -q -dSAFER -c save pop -_ <$OUTDIR/.pdf
+--- courier/module.fax/application-postscript.filter.in.orig	Mon Mar  4 19:32:16 2002
++++ courier/module.fax/application-postscript.filter.in	Fri Jun  7 10:20:55 2002
+@@ -7,4 +7,4 @@
+ 
+ . @filterbindir@/init
+ 
+-$GS -sDEVICE=faxg3 $FAXRES -dBATCH -sOutputFile=$OUTDIR/f%04d -dNOPAUSE -q -dSAFER -
++exec $GS -sDEVICE=faxg3 $FAXRES -dBATCH -sOutputFile=$OUTDIR/f%04d -dNOPAUSE -q -dSAFER -_
+--- courier/module.fax/coverpage.in.orig	Mon Mar  4 19:32:16 2002
++++ courier/module.fax/coverpage.in	Fri Jun  7 10:23:51 2002
+@@ -49,4 +49,4 @@
+ rm -f $OUTDIR/.tbl
+ $DPOST <$OUTDIR/.troff >$OUTDIR/.dpost
+ rm -f $OUTDIR/.troff
+-$GS -sDEVICE=faxg3 $FAXRES -dBATCH -sOutputFile=$OUTDIR/f%04d -dNOPAUSE -q -dSAFER - <$OUTDIR/.dpost
++exec $GS -sDEVICE=faxg3 $FAXRES -dBATCH -sOutputFile=$OUTDIR/f%04d -dNOPAUSE -q -dSAFER -_ <$OUTDIR/.dpost
+--- courier/module.fax/text-plain.filter.in.orig	Mon Mar  4 19:32:16 2002
++++ courier/module.fax/text-plain.filter.in	Fri Jun  7 10:24:54 2002
+@@ -27,4 +27,4 @@
+ rm -f $OUTDIR/.troff
+ $DPOST <$OUTDIR/.dpost >$OUTDIR/.ps
+ rm -f $OUTDIR/.dpost
+-$GS -sDEVICE=faxg3 $FAXRES -dBATCH -sOutputFile=$OUTDIR/f%04d -dNOPAUSE -q -dSAFER - <$OUTDIR/.ps
++exec $GS -sDEVICE=faxg3 $FAXRES -dBATCH -sOutputFile=$OUTDIR/f%04d -dNOPAUSE -q -dSAFER -_ <$OUTDIR/.ps
