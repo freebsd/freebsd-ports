@@ -24,6 +24,7 @@
     SUBDIR += kproject
     SUBDIR += logjam
     SUBDIR += loserjabber
+    SUBDIR += mhc
     SUBDIR += mhc-emacs20
     SUBDIR += mhc-xemacs21-mule
     SUBDIR += moneydance
