@@ -2263,6 +2263,7 @@ glclock		ports/x11-clocks/glclock
 gle		ports/graphics/gle
 glean		ports/graphics/glean
 glens		ports/science/glens
+glew		ports/graphics/glew
 gleyes		ports/games/gleyes
 glg		ports/devel/glg
 glgraph		ports/math/glgraph
