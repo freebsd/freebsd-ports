@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src/Makefile.in.orig	Sat Aug 10 14:06:29 2002
++++ src/Makefile.in	Sat Aug 10 14:06:54 2002
+@@ -75,7 +75,7 @@
+ am__quote = @am__quote@
+ install_sh = @install_sh@
+ bin_PROGRAMS = darkice
+-CXXFLAGS = -O2 -pedantic -Wall
++CXXFLAGS = @CXXFLAGS@
+ INCLUDES = @LAME_INCFLAGS@ @VORBIS_INCFLAGS@
+ LDADD = @LAME_LDFLAGS@ @VORBIS_LDFLAGS@
+ 
