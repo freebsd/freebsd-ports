@@ -1,12 +1,13 @@
---- Makefile.orig	Sat Jan 13 11:11:55 1996
-+++ Makefile	Mon Feb  5 18:06:05 1996
-@@ -11,6 +11,9 @@
- 	cd ltk; make depend; make
- 	cd xpdf; make depend; make
+--- Makefile.orig	Wed May  1 17:52:04 1996
++++ Makefile	Wed May  1 17:53:14 1996
+@@ -21,8 +21,8 @@
+ 	cd xpdf; make pdftops
  
-+install:
-+	install -c xpdf/xpdf ${PREFIX}/bin
-+
+ install:
+-	install -c xpdf/xpdf $(PREFIX)/bin
+-	install -c xpdf/pdftops $(PREFIX)/bin
++	install -c xpdf/xpdf $(X11BASE)/bin
++	install -c xpdf/pdftops $(X11BASE)/bin
+ 
  clean:
  	cd goo; make clean
- 	cd ltk; make clean

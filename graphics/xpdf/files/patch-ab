@@ -1,25 +1,34 @@
---- Makefile.config.orig	Sat Jan 13 11:11:45 1996
-+++ Makefile.config	Mon Feb  5 17:44:39 1996
-@@ -15,18 +15,19 @@
- # Extra flags for C compiler
- # This can include things like -I and -L if your include files or
- # libraries are in non-standard places.
-+# For FreeBSD, need -DHAVE_PARAM_H
+--- Makefile.config.orig	Wed May  1 17:36:22 1996
++++ Makefile.config	Wed May  1 17:37:41 1996
+@@ -74,13 +74,13 @@
  #CFLAGS2 = 
+ 
+ # If you're using g++ 2.7.x, you'll want to use -Wno-unused:
 -CFLAGS2 = -Wno-unused
-+CFLAGS2 = -Wno-unused -DHAVE_PARAM_H -I${X11BASE}/include
++#CFLAGS2 = -Wno-unused
  
- # Extra flags for C++ compiler
- # This can include things like -I and -L if your include files or
- # libraries are in non-standard places.
- #CXXFLAGS2 = 
--CXXFLAGS2 = -Wno-unused
-+CXXFLAGS2 = -Wno-unused -I${X11BASE}/include
+ # For Linux systems using XFree86:
+ #CFLAGS2 = -I/usr/X11/include -Wno-unused
  
- # Any flags necessary to link in libX11.
- #XLIBS = -lX11
--XLIBS = -L/usr/X11/lib -lX11
-+XLIBS = -L${X11BASE}/lib -lX11
- #XLIBS = -lX11-mit
+ # For FreeBSD systems using XFree86:
+-#CFLAGS2 = -I$(X11BASE)/include -Wno-unused
++CFLAGS2 = -I$(X11BASE)/include -Wno-unused
  
- # Different versions of make have different C++ rules.
+ # For Solaris:
+ #CFLAGS2 = -I/usr/openwin/include
+@@ -97,13 +97,13 @@
+ #------------------------------------------------------------------------
+ 
+ # For most systems, just grab the X library:
+-XLIBS = -lX11
++#XLIBS = -lX11
+ 
+ # For Linux systems using XFree86:
+ #XLIBS = -L/usr/X11/lib -lX11
+ 
+ # For FreeBSD systems using XFree86:
+-#XLIBS = -L$(X11BASE)/lib -lX11
++XLIBS = -L$(X11BASE)/lib -lX11
+ 
+ # For Solaris:
+ #XLIBS = -L/usr/openwin/lib -lX11 -lnsl -lsocket
