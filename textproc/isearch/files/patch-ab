@@ -1,0 +1,11 @@
+--- src/index.cxx.old	Thu Feb 10 20:39:15 2000
++++ src/index.cxx	Thu Feb 10 20:39:24 2000
+@@ -530,7 +530,7 @@
+ }
+ 
+ GDT_BOOLEAN INDEX::ValidateInField(const GPTYPE HitGp, const STRING& FieldName,
+-			   const PhraseLength) {
++			   const int PhraseLength) {
+   STRING Fn;
+   Parent->DfdtGetFileName(FieldName, &Fn);
+   PFILE Fp = Parent->ffopen(Fn, "rb");
