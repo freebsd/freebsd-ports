@@ -9,13 +9,10 @@ PORTNAME=	gfe
 PORTVERSION=	0.0.4
 PORTREVISION=	1
 CATEGORIES=	x11-fonts
-MASTER_SITES=	ftp://alpha.gnu.org/gnu/gfe/
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	X11/fonts
 
 MAINTAINER=	bms@spc.org
-
-BROKEN=	"The source tarball no longer resides on alpha.gnu.org and\
-	is only available via CVS:\
-	http://subversions.gnu.org/cgi-bin/cvsweb/gfe/"
 
 GNU_CONFIGURE=	yes
 USE_GNOMENG=	yes
