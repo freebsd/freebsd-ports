@@ -3,9 +3,10 @@ icons, keyboard controls, and virtual screens.  It comes with two
 applets:  a biff-like mail indicator and a clock, both designed to
 be swallowed by its toolbar.
 
-Caution!  This window manager will end your X session when it is
-killed, so finish up in all your X programs first.
+Caution!  Killing this window manager will kill some of your X
+clients (applications).
 
-WWW:  http://www.netcologne.de/~nc-lindenal/qlwm
+WWW:  http://www.alinden.mynetcologne.de/qlwm/
+and http://www.netcologne.de/~nc-lindenal/qlwm
 
 Trevor Johnson
