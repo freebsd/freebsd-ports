@@ -10877,3 +10877,4 @@ ztrack		ports/games/ztrack
 zu-aspell	ports/textproc/zu-aspell
 zziplib		ports/devel/zziplib
 pdtpd		ports/net/pdtpd
+libpdtp		ports/net/libpdtp
