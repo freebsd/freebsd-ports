@@ -1,56 +1,155 @@
---- pine/takeaddr.c.orig	Fri Jun 26 02:26:36 1998
-+++ pine/takeaddr.c	Wed Jul 15 17:02:38 1998
-@@ -785,7 +785,7 @@
-     return;
+--- pine/reply.c.orig	Wed Jul 15 08:40:00 1998
++++ pine/reply.c	Tue Jul 28 08:35:06 1998
+@@ -88,9 +88,9 @@
+ /*
+  * Little defs to keep the code a bit neater...
+  */
+-#define	FRM_PMT	"Use \"Reply-To:\" address instead of \"From:\" address"
+-#define	ALL_PMT		"Reply to all recipients"
+-#define	NEWS_PMT	"Follow-up to news group(s), Reply via email to author or Both? "
++#define	FRM_PMT	"使用 \"Reply-To:\" 地址代替 \"From:\" 地址"
++#define	ALL_PMT		"回覆給所有的收信者"
++#define	NEWS_PMT	"回覆至新聞組群，回函給作者或兩者皆要？"
  
- take_to_addrbooks_cancel:
--    cancel_warning(NO_DING, "addition");
-+    cancel_warning(NO_DING, "新增");
-     if(tas && *tas){
- 	restore_state(&((*tas)->state));
- 	(*tas)->pab   = NULL;
-@@ -1267,7 +1267,7 @@
- 	    break;
+ /*
+  * standard type of storage object used for body parts...
+@@ -411,7 +411,7 @@
+ #endif
  
- 	  case MC_EXIT:				/* exit takeaddr screen */
--	    cancel_warning(NO_DING, "addition");
-+	    cancel_warning(NO_DING, "新增");
- 	    ret = 1;
- 	    done++;
- 	    break;
-@@ -2698,7 +2698,7 @@
-     
-     switch(j){
-       case 'x':
--	cancel_warning(NO_DING, "save");
-+	cancel_warning(NO_DING, "存檔");
- 	return;
+     /* partially formatted outgoing message */
+-    pine_send(outgoing, &body, "COMPOSE MESSAGE REPLY",
++    pine_send(outgoing, &body, "編輯信件回函",
+ 	      fcc.tptr, &reply, NULL, NULL, NULL, 0);
+   done:
+     pine_free_body(&body);
+@@ -485,7 +485,7 @@
+ 			 (ADDRESS *) NULL, env->from, 0);
  
-       case 'e':
-@@ -2798,7 +2798,7 @@
+     if(ret == 'x') {
+-	cmd_cancelled("Reply");
++	cmd_cancelled("回覆");
+ 	return(0);
+     }
  
-     switch(i){
-       case 'x':
--	cancel_warning(NO_DING, "export");
-+	cancel_warning(NO_DING, "匯出");
- 	return;
-     
-       case 'a':
-@@ -4737,7 +4737,7 @@
- 	    
- 	    switch(j){
- 	      case 'x':
--		cancel_warning(NO_DING, "Save");
-+		cancel_warning(NO_DING, "存檔");
- 		break;
+@@ -534,7 +534,7 @@
+ 	       || (*saved_cc || *saved_resent))){
+ 	    *flags &= ~RSF_QUERY_REPLY_ALL;
+ 	    if((ret=want_to(ALL_PMT,'n','x',NO_HELP,WT_SEQ_SENSITIVE)) == 'x'){
+-		cmd_cancelled("Reply");
++		cmd_cancelled("回覆");
+ 		return(0);
+ 	    }
+ 	    else if(ret == 'y')
+@@ -1099,8 +1099,8 @@
+ {
+     int ret, edited = 0;
+     static ESCKEY_S rtq_opts[] = {
+-	{'y', 'y', "Y", "Yes"},
+-	{'n', 'n', "N", "No"},
++	{'y', 'y', "Y", "是"},
++	{'n', 'n', "N", "否"},
+ 	{-1, 0, NULL, NULL},	                  /* may be overridden below */
+ 	{-1, 0, NULL, NULL}
+     };
+@@ -1110,19 +1110,18 @@
+       return(1);
  
- 	      case 'e':
-@@ -4957,7 +4957,7 @@
- 	
- 	switch(j){
+     while(1){
+-	sprintf(tmp_20k_buf, "Include %s%soriginal message%s in Reply%s%s%s? ",
+-		(many > 1L) ? comatose(many) : "",
+-		(many > 1L) ? " " : "",
+-		(many > 1L) ? "s" : "",
+-		F_ON(F_ENABLE_EDIT_REPLY_INDENT, ps) ? " (using \"" : "",
++	sprintf(tmp_20k_buf, "在回函%s%s%s中包含%s%s原本的訊息？",
++		F_ON(F_ENABLE_EDIT_REPLY_INDENT, ps) ? "（使用 \"" : "",
+ 		F_ON(F_ENABLE_EDIT_REPLY_INDENT, ps) ? *prefix : "",
+-		F_ON(F_ENABLE_EDIT_REPLY_INDENT, ps) ? "\")" : "");
++		F_ON(F_ENABLE_EDIT_REPLY_INDENT, ps) ? "\" 為引言標示代號）" : "",
++		(many > 1L) ? comatose(many) : "",
++		(many > 1L) ? " " : "");
+ 
+ 	if(F_ON(F_ENABLE_EDIT_REPLY_INDENT, ps)){
+ 	    rtq_opts[2].ch    = ctrl('R');
+ 	    rtq_opts[2].rval  = 'r';
+ 	    rtq_opts[2].name  = "^R";
+-	    rtq_opts[2].label = "Edit Indent String";
++	    rtq_opts[2].label = "編輯引言標示代號";
+ 	}
+ 	else
+ 	  rtq_opts[2].ch    = -1;
+@@ -1133,7 +1132,7 @@
+ 				   rtq_opts, edited ? 'y' : 'n',
+ 				   'x', NO_HELP, RB_SEQ_SENSITIVE)){
  	  case 'x':
--	    cancel_warning(NO_DING, "Export");
-+	    cancel_warning(NO_DING, "匯出");
- 	    break;
- 	
- 	  case 't':
+-	    cmd_cancelled("Reply");
++	    cmd_cancelled("回覆");
+ 	    return(-1);
+ 
+ 	  case 'r':
+@@ -1152,7 +1151,7 @@
+ 
+ 		    switch(optionally_enter(buf, ps->ttyo->screen_rows > 4
+ 					    ? -FOOTER_ROWS(ps_global) : -1,
+-					    0, 63, "Reply prefix : ", 
++					    0, 63, "引言標示代號：", 
+ 					    NULL, NO_HELP, &flags)){
+ 		      case 0:		/* entry successful, continue */
+ 			if(flags & OE_USER_MODIFIED){
+@@ -1165,7 +1164,7 @@
+ 			break;
+ 
+ 		      case 1:
+-			cmd_cancelled("Reply");
++			cmd_cancelled("回覆");
+ 
+ 		      case -1:
+ 			return(-1);
+@@ -1518,9 +1517,9 @@
+     ENVELOPE *env, *outgoing;
+ {
+     int    ret = 1;
+-    static ESCKEY_S news_opt[] = { {'f', 'f', "F", "Follow-up"},
+-				   {'r', 'r', "R", "Reply"},
+-				   {'b', 'b', "B", "Both"},
++    static ESCKEY_S news_opt[] = { {'f', 'f', "F", "回覆至版上"},
++				   {'r', 'r', "R", "回給作者"},
++				   {'b', 'b', "B", "兩者皆要"},
+ 				   {-1, 0, NULL, NULL} };
+ 
+     if(env->newsgroups && *env->newsgroups && !reply_poster_followup(env))
+@@ -1544,7 +1543,7 @@
+ 
+ 	case 'x' :		/* cancel or unknown response */
+ 	default  :
+-	  cmd_cancelled("Reply");
++	  cmd_cancelled("回覆");
+ 	  ret = 0;
+ 	  break;
+       }
+@@ -1552,7 +1551,7 @@
+     if(ret > 1){
+ 	if(env->followup_to){
+ 	    q_status_message(SM_ORDER, 2, 3,
+-			     "Posting to specified Followup-To groups");
++			     "刊登至特定的回覆組群");
+ 	    outgoing->newsgroups = cpystr(env->followup_to);
+ 	}
+ 	else if(!outgoing->newsgroups)
+@@ -1710,7 +1709,7 @@
+      * up...
+      */
+     if(ret == 'x'){
+-	q_status_message(SM_ORDER, 0, 3, "Forward message cancelled");
++	q_status_message(SM_ORDER, 0, 3, "取消信件轉寄");
+ 	goto clean_early;
+     }
+     else if(ret == 'y'){			/* attach message[s]!!! */
+@@ -1842,7 +1841,7 @@
+       pine_simple_send(outgoing, &body, NULL, NULL, NULL, 1);
+     else			/* partially formatted outgoing message */
+       pine_send(outgoing, &body,
+-		ps->nr_mode ? "SEND MESSAGE" : "FORWARD MESSAGE",
++		ps->nr_mode ? "送出信件" : "轉寄信件",
+ 		NULL, NULL, NULL, NULL, NULL, FALSE);
+ 
+   clean:

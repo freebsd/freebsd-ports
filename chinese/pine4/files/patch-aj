@@ -1,5 +1,5 @@
 --- pico/display.c.orig	Sat Jun 20 01:19:53 1998
-+++ pico/display.c	Wed Jul 15 17:02:30 1998
++++ pico/display.c	Tue Jul 28 08:34:59 1998
 @@ -71,32 +71,32 @@
   * Standard pico keymenus...
   */

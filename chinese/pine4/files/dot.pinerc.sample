@@ -23,13 +23,13 @@
 personal-name=
 
 # Sets domain part of From: and local addresses in outgoing mail.
-user-domain=brahms.mmlab.cse.yzu.edu.tw
+user-domain=
 
 # List of SMTP servers for sending mail. If blank: Unix Pine uses sendmail.
-smtp-server=brahms.mmlab.cse.yzu.edu.tw
+smtp-server=
 
 # NNTP server for posting news. Also sets news-collections for news reading.
-nntp-server=news.yzu.edu.tw
+nntp-server=
 
 # Path of (local or remote) INBOX, e.g. ={mail.somewhere.edu}inbox
 # Normal Unix default is the local INBOX (usually /usr/spool/mail/$USER).
@@ -126,7 +126,7 @@ addrbook-sort-rule=
 
 # Reflects capabilities of the display you have. Default: US-ASCII.
 # Typical alternatives include ISO-8859-x, (x is a number between 1 and 9).
-character-set=
+character-set=ISO-8859-1
 
 # Specifies the program invoked by ^_ in the Composer,
 # or the "enable-alternate-editor-implicitly" feature.

@@ -1,5 +1,5 @@
 --- pico/osdep/os-bsf.h.orig	Thu Jul  9 00:37:28 1998
-+++ pico/osdep/os-bsf.h	Wed Jul 15 17:02:31 1998
++++ pico/osdep/os-bsf.h	Tue Jul 28 08:35:00 1998
 @@ -23,7 +23,7 @@
  
  #define  USE_DIRENT

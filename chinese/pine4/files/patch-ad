@@ -1,5 +1,5 @@
---- imap/Makefile.orig	Wed Apr 29 07:38:46 1998
-+++ imap/Makefile	Wed Jul 15 17:02:29 1998
+--- imap/Makefile.orig	Thu Jul 16 14:54:19 1998
++++ imap/Makefile	Tue Jul 28 08:34:58 1998
 @@ -250,12 +250,12 @@
  	$(TOOLS)/$@ "$(LN)" src/charset c-client
  	$(LN) `pwd`/src/kerberos/* c-client

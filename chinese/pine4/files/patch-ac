@@ -1,6 +1,6 @@
---- imap/src/osdep/unix/unix.c.orig	Tue Jun 23 08:25:52 1998
-+++ imap/src/osdep/unix/unix.c	Wed Jul 15 17:02:29 1998
-@@ -1006,7 +1006,11 @@
+--- imap/src/osdep/unix/unix.c.orig	Thu Jul 16 09:52:38 1998
++++ imap/src/osdep/unix/unix.c	Tue Jul 28 08:34:59 1998
+@@ -1008,7 +1008,11 @@
  				/* try again if file exists(?) */
  	if (!stat (hitch,&sb)) break;
  				/* punt silently if paranoid site */

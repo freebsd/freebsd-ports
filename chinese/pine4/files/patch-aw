@@ -1,477 +1,101 @@
---- pine/mailview.c.orig	Tue Jul  7 10:05:59 1998
-+++ pine/mailview.c	Wed Jul 15 17:02:35 1998
-@@ -142,8 +142,8 @@
- static struct key view_keys[] = 
-        {HELP_MENU,
- 	OTHER_MENU,
--	{"<","MsgIndex",{MC_INDEX,3,{'i','<',','}},KS_FLDRINDEX},
--	{">","ViewAttch",{MC_VIEW_ATCH,3,{'v','>','.'}},KS_NONE},
-+	{"<","索引",{MC_INDEX,3,{'i','<',','}},KS_FLDRINDEX},
-+	{">","檢視附件",{MC_VIEW_ATCH,3,{'v','>','.'}},KS_NONE},
- 	PREVMSG_MENU,
- 	NEXTMSG_MENU,
- 	PREVPAGE_MENU,
-@@ -168,11 +168,11 @@
+--- pine/help.c.orig	Wed Jul  1 06:22:26 1998
++++ pine/help.c	Tue Jul 28 08:35:02 1998
+@@ -50,15 +50,15 @@
  
- 	HELP_MENU,
- 	OTHER_MENU,
--	{"Ret","[View Hilite]",{MC_VIEW_HANDLE,3,
-+	{"Ret","[檢視 Hilite]",{MC_VIEW_HANDLE,3,
- 				{ctrl('m'),ctrl('j'),KEY_RIGHT}},KS_NONE},
--	{":","SelectCur",{MC_SELCUR,1,{':'}},KS_SELECTCUR},
--	{"^B","Prev URL",{MC_PREV_HANDLE,1,{ctrl('B')}},KS_NONE},
--	{"^F","Next URL",{MC_NEXT_HANDLE,1,{ctrl('F')}},KS_NONE},
-+	{":","選擇",{MC_SELCUR,1,{':'}},KS_SELECTCUR},
-+	{"^B","前一 URL",{MC_PREV_HANDLE,1,{ctrl('B')}},KS_NONE},
-+	{"^F","次一 URL",{MC_NEXT_HANDLE,1,{ctrl('F')}},KS_NONE},
- 	JUMP_MENU,
- 	TAB_MENU,
- 	HDRMODE_MENU,
-@@ -189,7 +189,7 @@
- #define FLAG_KEY		34
- #define VIEW_PIPE_KEY		35
- 
--static struct key nr_anon_view_keys[] = 
-+static struct key nr_anon_view_keys[] =
-        {HELP_MENU,
- 	WHEREIS_MENU,
- 	QUIT_MENU,
-@@ -213,7 +213,7 @@
- 	NEXTMSG_MENU,
+ static struct key help_keys[] =
+        {MAIN_MENU,
+-	{"E","Exit Help",{MC_EXIT,1,{'e'}}, KS_EXITMODE},
++	{"E","離開",{MC_EXIT,1,{'e'}}, KS_EXITMODE},
+ 	{NULL,NULL,{MC_EXIT,1,{'e'}}, KS_EXITMODE},
+ 	{NULL,NULL,{MC_VIEW_HANDLE,3,{'v',ctrl('m'),ctrl('j')}},KS_NONE},
+-	{"^B","PrevLink",{MC_PREV_HANDLE,1,{ctrl('B')}},KS_NONE},
+-	{"^F","NextLink",{MC_NEXT_HANDLE,1,{ctrl('F')}},KS_NONE},
++	{"^B","前一連結",{MC_PREV_HANDLE,1,{ctrl('B')}},KS_NONE},
++	{"^F","次一連結",{MC_NEXT_HANDLE,1,{ctrl('F')}},KS_NONE},
  	PREVPAGE_MENU,
  	NEXTPAGE_MENU,
--	{"F", "Fwd Email", {MC_FORWARD,1,{'f'}}, KS_FORWARD},
-+	{"F", "信件轉寄", {MC_FORWARD,1,{'f'}}, KS_FORWARD},
- 	JUMP_MENU,
- 	PRYNTTXT_MENU,
- 	SAVE_MENU,
-@@ -235,7 +235,7 @@
- static struct key simple_text_keys[] =
-        {HELP_MENU,
+ 	PRYNTMSG_MENU,
+-	{"Z","Print All",{MC_PRINTALL,1,{'z'}},KS_NONE},
++	{"Z","列印全部",{MC_PRINTALL,1,{'z'}},KS_NONE},
  	NULL_MENU,
--	{"E","Exit Viewer",{MC_EXIT,1,{'e'}},KS_NONE},
-+	{"E","離開",{MC_EXIT,1,{'e'}},KS_NONE},
+ 	WHEREIS_MENU};
+ INST_KEY_MENU(help_keymenu, help_keys);
+@@ -77,7 +77,7 @@
+ static struct key gripe_modal_keys[] = 
+        {NULL_MENU,
+ 	NULL_MENU,
+-	{"Ret","Finished",{MC_EXIT,2,{ctrl('m'),ctrl('j')}},KS_NONE},
++	{"Ret","完畢",{MC_EXIT,2,{ctrl('m'),ctrl('j')}},KS_NONE},
  	NULL_MENU,
  	NULL_MENU,
  	NULL_MENU,
-@@ -244,7 +244,7 @@
- 	PRYNTTXT_MENU,
- 	WHEREIS_MENU,
- 	FWDEMAIL_MENU,
--	{"S", "Save", {MC_SAVETEXT,1,{'s'}}, KS_SAVE}};
-+	{"S", "存檔", {MC_SAVETEXT,1,{'s'}}, KS_SAVE}};
- INST_KEY_MENU(simple_text_keymenu, simple_text_keys);
+@@ -269,7 +269,7 @@
+ 		memset(&sargs, 0, sizeof(SCROLL_S));
+ 		sargs.text.text	   = so_text(store);
+ 		sargs.text.src	   = CharStar;
+-		sargs.text.desc	   = "help text";
++		sargs.text.desc	   = "輔助說明文字";
+ 		sargs.text.handles = handles;
+ 		if(!(sargs.bar.title = title)){
+ 		    if(!struncmp(shown_text[0], "<html>", 6)){
+@@ -297,7 +297,7 @@
+ 		    }
  
- 
-@@ -379,7 +379,7 @@
- 	 * we were viewing.  If so, make sure we don't just come back.
- 	 */
- 	if(mn_get_total(ps->msgmap) <= 0L || !ps->mail_stream){
--	    q_status_message(SM_ORDER, 0, 3, "No messages to read!");
-+	    q_status_message(SM_ORDER, 0, 3, "沒有可供讀取的信件！");
- 	    ps->next_screen = mail_index_screen;
- 	    break;
- 	}
-@@ -393,7 +393,7 @@
- 	body      = NULL;
- 	if(!(env = mail_fetchstructure(ps->mail_stream, raw_msgno, &body))
- 	   || !(mc = mail_elt(ps->mail_stream, raw_msgno))){
--	    q_status_message1(SM_ORDER, 3, 3, "Error getting message %s data",
-+	    q_status_message1(SM_ORDER, 3, 3, "取得信件 %s 的資料時發生錯誤",
- 			      comatose(mn_get_cur(ps->msgmap)));
- 	    dprint(1, (debugfile, "!!!! ERROR fetching %s of msg %ld\n",
- 		       env ? "elt" : "env", mn_get_cur(ps->msgmap)));
-@@ -446,7 +446,7 @@
- 	memset(&scrollargs, 0, sizeof(SCROLL_S));
- 	scrollargs.text.text	= so_text(store);
- 	scrollargs.text.src	= src;
--	scrollargs.text.desc	= "message";
-+	scrollargs.text.desc	= "信件";
- 
- 	/*
- 	 * make first selectable handle the default
-@@ -465,11 +465,11 @@
- 	else
- 	  scrollargs.body_valid = 1;
- 
--	scrollargs.bar.title	= "MESSAGE TEXT";
-+	scrollargs.bar.title	= "信件文字";
- 	scrollargs.end_scroll	= view_end_scroll;
- 	scrollargs.resize_exit	= 1;
- 	scrollargs.help.text	= h_mail_view;
--	scrollargs.help.title	= "HELP FOR MESSAGE TEXT VIEW";
-+	scrollargs.help.title	= "信件文字的輔助說明";
- 	scrollargs.keys.menu	= &view_keymenu;
- 	scrollargs.keys.what    = save_what;
- 	setbitmap(scrollargs.keys.bitmap);
-@@ -1192,7 +1192,7 @@
-     /*---- format and copy envelope ----*/
-     if(ps_global->full_header)
-       q_status_message(SM_INFO, 0, 3,
--		       "Full header mode ON.  All header text being included");
-+		       "完整標頭模式開啟。所有的標頭文字都包含在內");
- 
-     HD_INIT(&h, ps_global->VAR_VIEW_HEADERS, ps_global->view_all_except,
- 	    FE_DEFAULT);
-@@ -1231,7 +1231,7 @@
- 	    if(append_file_name)
- 	      fs_give((void **)&append_file_name);
- 
--	    q_status_message1(SM_ORDER,3,3,"Can't make temp file: %s",
-+	    q_status_message1(SM_ORDER,3,3,"無法建立暫存檔：%s",
- 			      error_description(errno));
- 	    return(0);
- 	}
-@@ -1525,7 +1525,7 @@
-   write_error:
- 
-     if(!(flgs & FM_DISPLAY))
--      q_status_message1(SM_ORDER, 3, 4, "Error writing message: %s",
-+      q_status_message1(SM_ORDER, 3, 4, "寫入信件時發生錯誤：%s",
- 			decode_err ? decode_err : error_description(errno));
- 
-     return(0);
-@@ -1855,8 +1855,8 @@
-     char prompt[256], tmp[MAILTMPLEN];
-     int  rc, flags, local_h;
-     static ESCKEY_S launch_opts[] = {
--	{'y', 'y', "Y", "Yes"},
--	{'n', 'n', "N", "No"},
-+	{'y', 'y', "Y", "是"},
-+	{'n', 'n', "N", "否"},
- 	{-2, 0, NULL, NULL},
- 	{-2, 0, NULL, NULL},
- 	{0, 'u', "U", "editURL"},
-@@ -1877,7 +1877,7 @@
- 	else{
- 	    launch_opts[5].ch = -1;
- 	    if(!local_h){
--		if(want_to("No Web-Browser application defined!  Define now",
-+		if(want_to("尚未定義 Web-Browser！現在定義",
- 			   'y', 0, NO_HELP, WT_SEQ_SENSITIVE) == 'y'){
- 		    /* Prompt for the displayer? */
- 		    tmp[0] = '\0';
-@@ -1921,7 +1921,7 @@
- 				}
- 				else{
- 				    q_status_message1(SM_ORDER | SM_DING, 2, 2,
--						     "Browser not found: %s",
-+						     "找不到瀏覽器：%s",
- 						     error_description(errno));
- 				    continue;
- 				}
-@@ -1950,8 +1950,8 @@
-       return(1);
- 
-     while(1){
--	sprintf(prompt, "View selected %s %s%.37s%s? ",
--		(handle->type == URL) ? "URL" : "Attachment",
-+	sprintf(prompt, "檢視選擇的 %s %s%.37s%s? ",
-+		(handle->type == URL) ? "URL" : "附件",
- 		(handle->type == URL) ? "\"" : "",
- 		(handle->type == URL) ? handle->h.url.path : "",
- 		(handle->type == URL)
-@@ -2416,11 +2416,11 @@
- 	mode = PIPE_RESET | PIPE_USER ;
- 	if(syspipe = open_system_pipe(cmd, NULL, NULL, mode)){
- 	    close_system_pipe(&syspipe);
--	    q_status_message(SM_ORDER, 0, 4, "VIEWER command completed");
-+	    q_status_message(SM_ORDER, 0, 4, "VIEWER 命令完成");
- 	}
- 	else
- 	  q_status_message1(SM_ORDER, 3, 4,
--				"Cannot spawn command : %s", cmd);
-+				"無法起始命令：%s", cmd);
-     }
-     else if(f = url_local_handler(handle->h.url.path)){
- 	if((*f)(handle->h.url.path) > 1)
-@@ -2428,7 +2428,7 @@
-     }
-     else
-       q_status_message1(SM_ORDER, 2, 2,
--			"\"Web-Browser\" not defined: Can't open %s",
-+			"尚未定義 \"Web-Browser\"：無法開啟 %s",
- 			handle->h.url.path);
-     
-     return(rv);
-@@ -2748,7 +2748,7 @@
-     }
-     else
-       q_status_message(SM_ORDER | SM_DING, 3, 4,
--		       "Can't create space for composer");
-+		       "無法替編輯器建立空間");
- 
-     if(outgoing)
-       mail_free_envelope(&outgoing);
-@@ -2835,7 +2835,7 @@
- 	    if(uid_val != ps_global->mail_stream->uid_validity){
- 		/* Complain! */
- 		q_status_message(SM_ORDER|SM_DING, 3, 3,
--		     "Warning!  Referenced folder changed since URL recorded");
-+		     "警告！參考資料匣已於 URL 記錄後改變");
- 	    }
- 
- 	    if(uid){
-@@ -2851,7 +2851,7 @@
- 
- 		if(i > mn_get_total(ps_global->msgmap))
- 		  q_status_message(SM_ORDER, 2, 3,
--				   "Couldn't find specified article number");
-+				   "找不到指定的文章編號");
- 	    }
- 	    else if(search){
- 		/*
-@@ -2872,9 +2872,9 @@
- 		if(i = any_lflagged(ps_global->msgmap, MN_SLCT)){
- 		    extern long zoom_index();
- 
--		    q_status_message2(SM_ORDER, 0, 3,
--				      "%s message%s selected",
--				      long2string(i), plural(i));
-+		    q_status_message1(SM_ORDER, 0, 3,
-+				      "已選擇 %s 封信件",
-+				      long2string(i));
- 		    /* Zoom the index! */
- 		    zoom_index(ps_global, ps_global->msgmap);
+ 		    if(!sargs.bar.title)
+-		      sargs.bar.title = "HELP TEXT";
++		      sargs.bar.title = "輔助說明文字";
  		}
-@@ -3013,9 +3013,9 @@
  
- 	    if(auth && *auth != '*')
- 	      q_status_message1(SM_ORDER, 3, 3,
--				"Unsupported authentication method.  %s.",
--				user ? "Using standard login"
--				     : "Logging in as \"Anonymous\"");
-+				"未支援的認證模式。%s。",
-+				user ? "使用標準登入"
-+				     : "以 \"Anonymous\" 登入");
- 
- 	    /*
- 	     * At this point our structure should contain the
-@@ -3100,7 +3100,7 @@
- 
- 		if(i > mn_get_total(ps_global->msgmap))
- 		  q_status_message(SM_ORDER, 2, 3,
--				   "Couldn't find specified article number");
-+				   "找不到指定的文章編號");
- 	    }
- 
- 	    break;
-@@ -3179,7 +3179,7 @@
-     }
-     else
-       q_status_message1(SM_ORDER | SM_DING, 0, 3,
--			"Can't find fragment: %s", fragment);
-+			"找不到片斷：%s", fragment);
- 
-     return(1);
- }
-@@ -3190,10 +3190,10 @@
- url_local_phone_home(url)
-     char *url;
- {
--    if(want_to("Request document", 'y', 0, NO_HELP, WT_FLUSH_IN) == 'y')
-+    if(want_to("要求文件", 'y', 0, NO_HELP, WT_FLUSH_IN) == 'y')
-       phone_home(url + 18);	/* 18 == length of "x-pine-phone-home:" */
-     else
--      q_status_message(SM_ORDER, 0, 3, "No request sent");
-+      q_status_message(SM_ORDER, 0, 3, "請求未送出");
- 
-     return(1);
- }
-@@ -3210,7 +3210,7 @@
-     dprint(2, (debugfile, "-- bogus url \"%s\": %s\n",
- 	       url ? url : "<NULL URL>", reason));
-     if(url)
--      q_status_message3(SM_ORDER|SM_DING, 2, 3, "Malformed \"%.*s\" URL: %s",
-+      q_status_message3(SM_ORDER|SM_DING, 2, 3, "格式錯誤的 \"%.*s\" URL：%s",
- 			(void *) (strchr(url, ':') - url), url, reason);
- 
-     return(0);
-@@ -3354,7 +3354,7 @@
- 
-   write_error:
-     if(style == QStatus)
--      q_status_message1(SM_ORDER, 3, 4, "Error writing message: %s", 
-+      q_status_message1(SM_ORDER, 3, 4, "寫入信件時發生錯誤：%s", 
- 			error_description(errno));
- 
-     return(1);
-@@ -3604,7 +3604,7 @@
- 		gf_set_so_writec(&tmp_pc, df_store);
- 		if(errstr = dfilter(display_filter, tmp_store, tmp_pc, NULL)){
- 		    q_status_message1(SM_ORDER | SM_DING, 3, 3,
--				      "Formatting error: %s", errstr);
-+				      "格式錯誤：%s", errstr);
- 		    rv = FHT_WRTERR;
+ 		sargs.bar.style	   = TextPercent;
+@@ -313,13 +313,13 @@
+ 		setbitmap(sargs.keys.bitmap);
+ 		if(flags & HLPD_FROMHELP){
+ 		    km.keys[HLP_EXIT_KEY].name	     = "P";
+-		    km.keys[HLP_EXIT_KEY].label	     = "Prev Help";
++		    km.keys[HLP_EXIT_KEY].label	     = "前一說明";
+ 		    km.keys[HLP_EXIT_KEY].bind.cmd   = MC_FINISH;
+ 		    km.keys[HLP_EXIT_KEY].bind.ch[0] = 'p';
  		}
  		else{
-@@ -3616,7 +3616,7 @@
- 	    }
- 	    else{
- 		q_status_message1(SM_ORDER | SM_DING, 3, 3,
--				  "No space for filtered text: %s", errstr);
-+				  "沒有足夠的空間過濾文字：%s", errstr);
- 		rv = FHT_WRTERR;
- 	    }
- 	}
-@@ -3641,7 +3641,7 @@
- 	    if(errstr = gf_pipe(tmp_gc, final_pc)){
- 		rv = FHT_WRTERR;
- 		q_status_message1(SM_ORDER | SM_DING, 3, 3,
--				  "Can't build header : %s", errstr);
-+				  "無法建立標頭：%s", errstr);
- 	    }
+ 		    km.keys[HLP_EXIT_KEY].name	     = "E";
+-		    km.keys[HLP_EXIT_KEY].label	     = "Exit Help";
++		    km.keys[HLP_EXIT_KEY].label	     = "離開";
+ 		    km.keys[HLP_EXIT_KEY].bind.cmd   = MC_EXIT;
+ 		    km.keys[HLP_EXIT_KEY].bind.ch[0] = 'e';
+ 		    clrbitn(HLP_SUBEXIT_KEY, sargs.keys.bitmap);
+@@ -478,7 +478,7 @@
  	}
  
-@@ -3780,7 +3780,7 @@
- 	format_newsgroup_string("Newsgroups: ", e->newsgroups, prefix, pc);
- 	if(e->ngbogus)
- 	  q_status_message(SM_ORDER, 0, 3,
--     "Unverified Newsgroup header -- Message MAY or MAY NOT have been posted");
-+     "未經證實的新聞組群標頭 -- 訊息可能從未被張貼");
+ 	sparms->keys.menu->keys[HLP_VIEW_HANDLE].name  = "V";
+-	sparms->keys.menu->keys[HLP_VIEW_HANDLE].label = "[View Link]";
++	sparms->keys.menu->keys[HLP_VIEW_HANDLE].label = "[檢視連結]";
      }
+ }
  
-     if((which & FE_FOLLOWUPTO) && e->followup_to)
-@@ -4404,7 +4404,7 @@
-     }
+@@ -559,7 +559,7 @@
+ #endif
+ 	    if(ps_global->intr_pending){
+ 		q_status_message(SM_ORDER, 3, 3,
+-				 "Print of all help cancelled");
++				 "取消列印所有的輔助說明");
+ 		break;
+ 	    }
  
-     if(!sparms->bar.title)
--      sparms->bar.title = "Text";
-+      sparms->bar.title = "文字";
+@@ -948,7 +948,7 @@
+     memset(&sargs, 0, sizeof(SCROLL_S));
+     sargs.text.text = tmp_text;
+     sargs.text.src  = CharStar;
+-    sargs.text.desc = "journal";
++    sargs.text.desc = "日誌";
+     sargs.bar.title = title;
+     sargs.start.on  = LastPage;
  
-     if(sparms->bar.style == TitleBarNone)
-       sparms->bar.style = MsgTextPercent;
-@@ -4553,7 +4553,7 @@
+@@ -1304,7 +1304,7 @@
+ #endif
+ 	    }
+ 	    else if(ch == 'x'){
+-		q_status_message(SM_ORDER, 0, 3, "Bug report cancelled.");
++		q_status_message(SM_ORDER, 0, 3, "取消錯誤回報。");
+ 		return(-1);
+ 	    }
  	}
- 
- 	if(first_view && num_display_lines >= get_scroll_text_lines())
--	  q_status_message1(SM_INFO, 0, 1, "ALL of %s", STYLE_NAME(sparms));
-+	  q_status_message1(SM_INFO, 0, 1, "%s 全部", STYLE_NAME(sparms));
- 			    
- 
- 	force      = 0;		/* may not need to next time around */
-@@ -4669,7 +4669,7 @@
- 	    whereis_pos.row = 0;
-             if(sparms->help.text == NO_HELP || ps_global->nr_mode){
-                 q_status_message(SM_ORDER, 0, 5,
--				 "No help text currently available");
-+				 "目前尚無輔助說明");
-                 break;
-             }
- 
-@@ -4708,12 +4708,12 @@
- 		cur_top_line -= scroll_lines;
- 		if(cur_top_line <= 0){
- 		    cur_top_line = 0;
--		    q_status_message1(SM_INFO, 0, 1, "START of %s",
-+		    q_status_message1(SM_INFO, 0, 1, "%s起始",
- 				      STYLE_NAME(sparms));
- 		}
- 	    }
- 	    else
--	      q_status_message1(SM_ORDER, 0, 1, "Already at start of %s",
-+	      q_status_message1(SM_ORDER, 0, 1, "已經在%s的起始",
- 				STYLE_NAME(sparms));
-             break;
- 
-@@ -4727,12 +4727,12 @@
- 		cur_top_line += scroll_lines;
- 
- 		if(cur_top_line + num_display_lines >= get_scroll_text_lines())
--		  q_status_message1(SM_INFO, 0, 1, "END of %s",
-+		  q_status_message1(SM_INFO, 0, 1, "%s結尾",
- 				    STYLE_NAME(sparms));
-             }
- 	    else if(!sparms->end_scroll
- 		    || !(done = (*sparms->end_scroll)(sparms)))
--	      q_status_message1(SM_ORDER, 0, 1, "Already at end of %s",
-+	      q_status_message1(SM_ORDER, 0, 1, "已經在%s的結尾",
- 				STYLE_NAME(sparms));
- 
-             break;
-@@ -4749,11 +4749,11 @@
- 		    cur_top_line++;
- 		    if(cur_top_line + num_display_lines
- 						   >= get_scroll_text_lines())
--		      q_status_message1(SM_INFO, 0, 1, "END of %s",
-+		      q_status_message1(SM_INFO, 0, 1, "%s結尾",
- 					STYLE_NAME(sparms));
- 		}
- 		else
--		  q_status_message1(SM_ORDER, 0, 1, "Already at end of %s",
-+		  q_status_message1(SM_ORDER, 0, 1, "已經在%s的結尾",
- 				    STYLE_NAME(sparms));
- 	    }
- 
-@@ -4770,11 +4770,11 @@
- 		if(cur_top_line){
- 		    cur_top_line--;
- 		    if(cur_top_line == 0)
--		      q_status_message1(SM_INFO, 0, 1, "START of %s",
-+		      q_status_message1(SM_INFO, 0, 1, "%s起始",
- 					STYLE_NAME(sparms));
- 		}
- 		else
--		  q_status_message1(SM_ORDER, 0, 1, "Already at start of %s",
-+		  q_status_message1(SM_ORDER, 0, 1, "已經在%s的起始",
- 				    STYLE_NAME(sparms));
- 	    }
- 
-@@ -4805,7 +4805,7 @@
- 		}
- 
- 		q_status_message(SM_ORDER, 0, 1,
--				 "Already on last selectable item");
-+				 "已經在最後一個可選擇的項目上");
- 	    }
- 
- 	    break;
-@@ -4835,7 +4835,7 @@
- 		}
- 
- 		q_status_message(SM_ORDER, 0, 1,
--				 "Already on first selectable item");
-+				 "已經在第一個可選擇的項目上");
- 	    }
- 
- 	    break;
-@@ -4941,14 +4941,14 @@
- 		  q_status_message(SM_ORDER, 0, 3, tmp_20k_buf);
- 		else
- 		  q_status_message2(SM_ORDER, 0, 3,
--				    "%sFound on line %s on screen",
--				    result ? "Search wrapped to start. " : "",
-+				    "%s在畫面上第 %s 行找到",
-+				    result ? "重頭搜尋。" : "",
- 				    int2string(whereis_pos.row));
-             }
- 	    else if(found_on == -1)
- 	      cmd_cancelled("Search");
-             else
--	      q_status_message(SM_ORDER | SM_DING, 0, 3, "Word not found");
-+	      q_status_message(SM_ORDER | SM_DING, 0, 3, "找不到該字");
- 
-             break; 
- 
-@@ -6065,10 +6065,10 @@
- 	    if(*msg_p[0])
- 	      for(i = 0; i < msg_q; i++)
- 		q_status_message2(SM_ORDER, 3, 4,
--		    "%s Result: %s", title, msg_p[i]);
-+		    "%s 結果：%s", title, msg_p[i]);
- 	    else
- 	      q_status_message2(SM_ORDER, 0, 4, "%s%s", title,
--		alt_msg ? alt_msg : " command completed");
-+		alt_msg ? alt_msg : " 命令完成");
- 	}
- 	else{
- 	    SCROLL_S sargs;
-@@ -6079,7 +6079,7 @@
- 	    memset(&sargs, 0, sizeof(SCROLL_S));
- 	    sargs.text.text  = f;
- 	    sargs.text.src   = FileStar;
--	    sargs.text.desc  = "help text";
-+	    sargs.text.desc  = "輔助說明文字";
- 	    sargs.bar.title  = title;
- 	    sargs.bar.style  = TextPercent;
- 	    sargs.help.text  = h_simple_text_view;

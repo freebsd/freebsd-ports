@@ -1,109 +1,65 @@
---- pine/screen.c.orig	Fri Jun  5 04:09:17 1998
-+++ pine/screen.c	Wed Jul 15 17:02:37 1998
-@@ -433,7 +433,7 @@
+--- pine/newmail.c.orig	Fri Mar 27 07:28:33 1998
++++ pine/newmail.c	Tue Jul 28 08:35:04 1998
+@@ -289,38 +289,28 @@
+     ENVELOPE	*e;
+     char	 subject[200], from[2*MAX_SCREEN_COLS],
+ 		 intro[MAX_SCREEN_COLS+1];
+-    static char *carray[] = { "regarding",
+-				"concerning",
+-				"about",
+-				"as to",
+-				"as regards",
+-				"as respects",
+-				"in re",
+-				"re",
+-				"respecting",
+-				"in point of",
+-				"with regard to",
+-				"subject:"
++    static char *carray[] = { "關於",
++				"有關"
+     };
  
+     e = mail_fetchstructure(stream, max_num, NULL);
  
- static struct key cancel_keys[] = 
--     {{NULL,NULL,KS_NONE},            {"^C","Cancel",KS_NONE},
-+     {{NULL,NULL,KS_NONE},            {"^C","取消",KS_NONE},
-       {NULL,NULL,KS_NONE},            {NULL,NULL,KS_NONE},
-       {NULL,NULL,KS_NONE},            {NULL,NULL,KS_NONE},
-       {NULL,NULL,KS_NONE},            {NULL,NULL,KS_NONE},
-@@ -1124,10 +1124,10 @@
-     as.page_column    = -1;
-     is_context        = strlen(as.context_name);
-     sprintf(version, "PINE %s", pine_version); 
--    ss_string         = as.stream_status == Closed ? "(CLOSED)" :
-+    ss_string         = as.stream_status == Closed ? "(已關閉)" :
-                         (as.stream_status == ReadOnly
- 			 && !IS_NEWS(as.stream))
--                           ? "(READONLY)" : "";
-+                           ? "(唯讀)" : "";
-     ss_len            = strlen(ss_string);
+     if(!folder) {
+         if(number > 1)
+-          sprintf(intro, "%ld new messages!", number);
++          sprintf(intro, "%ld 封新信件！", number);
+         else
+-	  sprintf(intro, "New mail%s!",
+-		  (e && address_is_us(e->to, ps_global)) ? " to you" : "");
++	  sprintf(intro, "%s新信！",
++		  (e && address_is_us(e->to, ps_global)) ? "您有" : "");
+     }
+     else {
+         if(number > 1)
+-          sprintf(intro,"%ld messages saved to folder \"%s\"", number, folder);
++          sprintf(intro,"%ld 封信件被存至資料匣 \"%s\"", number, folder);
+         else
+-          sprintf(intro, "Mail saved to folder \"%s\"", folder);
++          sprintf(intro, "信件被存至資料匣 \"%s\"", folder);
+     }
  
-     tit_len = strlen(as.title);		/* fixed title field width   */
-@@ -1144,17 +1144,17 @@
-     /* 
-      * set location field's length and value based on requested style 
-      */
--    loc_label = (is_context) ? "Msg" : "Message";
-+    loc_label = (is_context) ? "信" : "信件";
-     loc_len   = strlen(loc_label);
-     if(!mn_get_total(as.msgmap)){
--	sprintf(tmp_20k_buf, "No %ss", loc_label);
-+	sprintf(tmp_20k_buf, "沒有%s", loc_label);
- 	loc_len += 4;
-     }else{
- 	switch(as.style){
- 	  case FolderName :			/* "x,xxx <loc_label>s" */
- 	    loc_len += digit_count(mn_get_total(as.msgmap)) + 3;
--	    sprintf(tmp_20k_buf, "%s %s%s", comatose(mn_get_total(as.msgmap)),
--		    loc_label, plural(mn_get_total(as.msgmap)));
-+	    sprintf(tmp_20k_buf, "%s 封%s", comatose(mn_get_total(as.msgmap)),
-+		    loc_label);
- 	    break;
- 	  case MessageNumber :	       	/* "<loc_label> xxx of xxx DEL"  */
- 	    num_len	     = digit_count(mn_get_total(as.msgmap));
-@@ -1162,7 +1162,7 @@
- 	    as.cur_mess_col  = sc - (2 * num_len) - 10;
- 	    as.del_column    = as.cur_mess_col + num_len 
- 	      + digit_count(as.current_msg) + 5;
--	    sprintf(tmp_20k_buf, "%s %s of %s %s", loc_label,
-+	    sprintf(tmp_20k_buf, "%s %s 之 %s %s", loc_label,
- 		    strcpy(tmp_20k_buf + 1000, comatose(as.current_msg)),
- 		    strcpy(tmp_20k_buf + 1500, comatose(mn_get_total(as.msgmap))),
- 		    BAR_STATUS(as.msg_state));
-@@ -1174,7 +1174,7 @@
- 	    as.percent_column  = as.cur_mess_col + num_len
- 	      + digit_count(as.current_msg) + 7;
- 	    as.del_column      = as.percent_column + 4;
--	    sprintf(tmp_20k_buf, "%s %s of %s %s %s", loc_label, 
-+	    sprintf(tmp_20k_buf, "%s %s 之 %s %s %s", loc_label, 
- 		    strcpy(tmp_20k_buf + 1000, comatose(as.current_msg)),
- 		    strcpy(tmp_20k_buf + 1500, comatose(mn_get_total(as.msgmap))),
- 		    percentage(as.current_line, as.total_lines, 1),
-@@ -1185,7 +1185,7 @@
- 	  case FileTextPercent :
- 	    as.page_column = sc - (14 + 2*(num_len = digit_count(as.total_lines)));
- 	    loc_len        = 17 + 2*num_len;
--	    sprintf(tmp_20k_buf, "Line %*ld of %*ld %s    ",
-+	    sprintf(tmp_20k_buf, "行 %*ld 之 %*ld %s    ",
- 		    num_len, as.current_line, 
- 		    num_len, as.total_lines,
- 		    percentage(as.current_line, as.total_lines, 1));
-@@ -1259,7 +1259,7 @@
- 		      ss_string);
+     if(e && e->from){
+-	sprintf(from, " %srom ", (number > 1L) ? "Most recent f" : "F");
++	sprintf(from, "%s自", (number > 1L) ? "最近來" : "來");
+ 	if(e->from->personal)
+ 	  istrncpy(from + ((number > 1L) ? 18 : 6),
+ 		   (char *) rfc1522_decode((unsigned char *) tmp_20k_buf,
+@@ -337,13 +327,13 @@
+ 
+     if(number <= 1L) {
+         if(e && e->subject){
+-	    sprintf(subject, " %s ", carray[(unsigned)random()%12]);
++	    sprintf(subject, " %s ", carray[(unsigned)random()%2]);
+ 	    istrncpy(subject + strlen(subject),
+ 		     (char *) rfc1522_decode((unsigned char *) tmp_20k_buf,
+ 					     e->subject, NULL), 100);
  	}
- 	else{
--	    char *fmt = "Folder: %s%s";
-+	    char *fmt = "信件匣：%s%s";
- 	    if(fold_len + ss_len + 8 < avail) 	/* all of folder fit? */
- 	      sprintf(fold_tmp, fmt, as.folder_name, ss_string);
- 	    else if((fold_len/2) + ss_len + 8 < avail)
-@@ -1307,7 +1307,7 @@
- 	as.current_msg = mn_get_cur(as.msgmap);
+ 	else
+-	  strcpy(subject, " with no subject");
++	  strcpy(subject, " 沒有主題");
  
-         if(as.style == MsgTextPercent){
--            PutLine5(0, as.cur_mess_col, "%s of %s %s %s%s",
-+            PutLine5(0, as.cur_mess_col, "%s 之 %s %s %s%s",
- 		     strcpy(tmp_20k_buf + 1000, comatose(as.current_msg)),
- 		     strcpy(tmp_20k_buf + 1500,
- 			    comatose(mn_get_total(as.msgmap))),
-@@ -1317,7 +1317,7 @@
- 	    as.del_column     += delta;
- 	    as.percent_column += delta;
-         } else {
--            PutLine4(0, as.cur_mess_col, "%s of %s %s%s",
-+            PutLine4(0, as.cur_mess_col, "%s 之 %s %s%s",
- 		     strcpy(tmp_20k_buf + 1000, comatose(as.current_msg)),
- 		     strcpy(tmp_20k_buf + 1500,
- 			    comatose(mn_get_total(as.msgmap))),
-@@ -1420,7 +1420,7 @@
- 
-     as.current_line = new_line_number;
- 
--    sprintf(tmp_20k_buf, "%*ld of %*ld %s    ",
-+    sprintf(tmp_20k_buf, "%*ld 之 %*ld %s    ",
- 	    digit_count(as.total_lines), as.current_line, 
- 	    digit_count(as.total_lines), as.total_lines,
- 	    percentage(as.current_line, as.total_lines, 0));
+         if(!from[0])
+           subject[1] = toupper((unsigned char)subject[1]);

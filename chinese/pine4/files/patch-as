@@ -1,101 +1,31 @@
---- pine/help.c.orig	Wed Jul  1 06:22:26 1998
-+++ pine/help.c	Wed Jul 15 17:02:33 1998
-@@ -50,15 +50,15 @@
+--- pine/osdep/os-bsf.h.orig	Fri Jun 26 14:19:54 1998
++++ pine/osdep/os-bsf.h	Tue Jul 28 08:35:05 1998
+@@ -87,7 +87,7 @@
+    NOTE: You'll also have to make sure the appropriate osdep/postreap.*
+          file is included in the os-*.ic file for your system.
+  ----*/
+-/* #define BACKGROUND_POST  /* comment out to disable posting from child */
++#define BACKGROUND_POST     /* comment out to disable posting from child */
  
- static struct key help_keys[] =
-        {MAIN_MENU,
--	{"E","Exit Help",{MC_EXIT,1,{'e'}}, KS_EXITMODE},
-+	{"E","離開",{MC_EXIT,1,{'e'}}, KS_EXITMODE},
- 	{NULL,NULL,{MC_EXIT,1,{'e'}}, KS_EXITMODE},
- 	{NULL,NULL,{MC_VIEW_HANDLE,3,{'v',ctrl('m'),ctrl('j')}},KS_NONE},
--	{"^B","PrevLink",{MC_PREV_HANDLE,1,{ctrl('B')}},KS_NONE},
--	{"^F","NextLink",{MC_NEXT_HANDLE,1,{ctrl('F')}},KS_NONE},
-+	{"^B","前一連結",{MC_PREV_HANDLE,1,{ctrl('B')}},KS_NONE},
-+	{"^F","次一連結",{MC_NEXT_HANDLE,1,{ctrl('F')}},KS_NONE},
- 	PREVPAGE_MENU,
- 	NEXTPAGE_MENU,
- 	PRYNTMSG_MENU,
--	{"Z","Print All",{MC_PRINTALL,1,{'z'}},KS_NONE},
-+	{"Z","列印全部",{MC_PRINTALL,1,{'z'}},KS_NONE},
- 	NULL_MENU,
- 	WHEREIS_MENU};
- INST_KEY_MENU(help_keymenu, help_keys);
-@@ -77,7 +77,7 @@
- static struct key gripe_modal_keys[] = 
-        {NULL_MENU,
- 	NULL_MENU,
--	{"Ret","Finished",{MC_EXIT,2,{ctrl('m'),ctrl('j')}},KS_NONE},
-+	{"Ret","完畢",{MC_EXIT,2,{ctrl('m'),ctrl('j')}},KS_NONE},
- 	NULL_MENU,
- 	NULL_MENU,
- 	NULL_MENU,
-@@ -269,7 +269,7 @@
- 		memset(&sargs, 0, sizeof(SCROLL_S));
- 		sargs.text.text	   = so_text(store);
- 		sargs.text.src	   = CharStar;
--		sargs.text.desc	   = "help text";
-+		sargs.text.desc	   = "輔助說明文字";
- 		sargs.text.handles = handles;
- 		if(!(sargs.bar.title = title)){
- 		    if(!struncmp(shown_text[0], "<html>", 6)){
-@@ -297,7 +297,7 @@
- 		    }
  
- 		    if(!sargs.bar.title)
--		      sargs.bar.title = "HELP TEXT";
-+		      sargs.bar.title = "輔助說明文字";
- 		}
  
- 		sargs.bar.style	   = TextPercent;
-@@ -313,13 +313,13 @@
- 		setbitmap(sargs.keys.bitmap);
- 		if(flags & HLPD_FROMHELP){
- 		    km.keys[HLP_EXIT_KEY].name	     = "P";
--		    km.keys[HLP_EXIT_KEY].label	     = "Prev Help";
-+		    km.keys[HLP_EXIT_KEY].label	     = "前一說明";
- 		    km.keys[HLP_EXIT_KEY].bind.cmd   = MC_FINISH;
- 		    km.keys[HLP_EXIT_KEY].bind.ch[0] = 'p';
- 		}
- 		else{
- 		    km.keys[HLP_EXIT_KEY].name	     = "E";
--		    km.keys[HLP_EXIT_KEY].label	     = "Exit Help";
-+		    km.keys[HLP_EXIT_KEY].label	     = "離開";
- 		    km.keys[HLP_EXIT_KEY].bind.cmd   = MC_EXIT;
- 		    km.keys[HLP_EXIT_KEY].bind.ch[0] = 'e';
- 		    clrbitn(HLP_SUBEXIT_KEY, sargs.keys.bitmap);
-@@ -478,7 +478,7 @@
- 	}
+@@ -219,7 +219,9 @@
+ /*----------------------------------------------------------------------
+    If no nntp-servers are defined, this program will be used to post news.
+  ----*/
+-#define SENDNEWS	"/usr/local/news/inews -h"	/* news posting cmd */
++#define SENDNEWS	"/usr/local/news/lib/inews -h"	/* For NN inews    */
++/*#define SENDNEWS	"/usr/local/bin/inews -h"	/* For INN inews   */
++/*#define SENDNEWS	"/usr/local/bin/inews -h"	/* For Cnews inews */
  
- 	sparms->keys.menu->keys[HLP_VIEW_HANDLE].name  = "V";
--	sparms->keys.menu->keys[HLP_VIEW_HANDLE].label = "[View Link]";
-+	sparms->keys.menu->keys[HLP_VIEW_HANDLE].label = "[檢視連結]";
-     }
- }
  
-@@ -559,7 +559,7 @@
- #endif
- 	    if(ps_global->intr_pending){
- 		q_status_message(SM_ORDER, 3, 3,
--				 "Print of all help cancelled");
-+				 "取消列印所有的輔助說明");
- 		break;
- 	    }
+ /*--------- Program employed by users to change their password ---------*/
+@@ -268,7 +270,7 @@
+        8
+        9 logs gross details of command execution
+  ----*/
+-#define DEFAULT_DEBUG 2
++#define DEFAULT_DEBUG 0
  
-@@ -948,7 +948,7 @@
-     memset(&sargs, 0, sizeof(SCROLL_S));
-     sargs.text.text = tmp_text;
-     sargs.text.src  = CharStar;
--    sargs.text.desc = "journal";
-+    sargs.text.desc = "日誌";
-     sargs.bar.title = title;
-     sargs.start.on  = LastPage;
  
-@@ -1304,7 +1304,7 @@
- #endif
- 	    }
- 	    else if(ch == 'x'){
--		q_status_message(SM_ORDER, 0, 3, "Bug report cancelled.");
-+		q_status_message(SM_ORDER, 0, 3, "取消錯誤回報。");
- 		return(-1);
- 	    }
- 	}
+ 
