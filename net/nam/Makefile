@@ -13,7 +13,7 @@ MASTER_SITES=	http://www-mash.cs.berkeley.edu/dist/vint/
 
 MAINTAINER=	obonilla@fisicc-ufm.edu
 
-BUILD_DEPENDS=	${PREFIX}/lib/libtclcl.a:${PORTSDIR}/devel/tclcl
+BUILD_DEPENDS=	${LOCALBASE}/lib/libtclcl.a:${PORTSDIR}/devel/tclcl
 
 MAN1=		nam.1
 MANCOMPRESSED=	no
