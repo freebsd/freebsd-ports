@@ -2,6 +2,6 @@ Parity v2 Archive create/verify/recover
 
 par2cmdline is a program for creating and using PAR2 files to detect
 damage in data files and repair them if necessary. It can be used with
-any kind of file. Par files are expecially popular on Usenet.
+any kind of file. Par files are especially popular on Usenet.
 
 WWW: http://parchive.sourceforge.net/
