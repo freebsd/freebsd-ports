@@ -4,7 +4,7 @@
 # Whom:				gary@hotlava.com
 #				obrien@FreeBSD.org
 #
-# $Id: Makefile,v 1.12 1998/12/06 09:37:28 vanilla Exp $
+# $Id: Makefile,v 1.13 1999/01/22 22:10:04 nectar Exp $
 #
 
 DISTNAME=       sane-1.00
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.mostang.com/pub/sane/ \
 
 MAINTAINER=	gary@hotlava.com
 
-LIB_DEPENDS=	gtk10.1:${PORTSDIR}/x11-toolkits/gtk10 \
+LIB_DEPENDS=	gtk12.1:${PORTSDIR}/x11-toolkits/gtk12 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 VERSION!=	sysctl -n kern.osreldate
@@ -24,11 +24,11 @@ GNU_CONFIGURE=	yes
 .if ${VERSION} < 300000
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib" \
-		GTK_CONFIG="${X11BASE}/bin/gtk10-config"
+		GTK_CONFIG="${X11BASE}/bin/gtk12-config"
 .else
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lcam" \
-		GTK_CONFIG="${X11BASE}/bin/gtk10-config"
+		GTK_CONFIG="${X11BASE}/bin/gtk12-config"
 .endif
 
 MAN1=		scanimage.1 \
