@@ -86,6 +86,7 @@
     SUBDIR += hs-frantk
     SUBDIR += hs-gtk+hs
     SUBDIR += hs-gtk2hs
+    SUBDIR += hs-port
     SUBDIR += icegradient
     SUBDIR += itk
     SUBDIR += iwidgets

@@ -1,0 +1,12 @@
+Port is part of the HToolkit. The goal of the HToolkit project is to implement
+a portable Haskell library for writing graphical user interfaces (GUI's).
+
+To tackle the problem of portability, the library will be built upon a
+low-level interface that will be implemented for each different target
+platform. The low-level library is called Port and is currently implemented for
+GTK and Windows.
+
+WWW: http://htoolkit.sourceforge.net/
+
+-- Oliver Braun
+obraun@FreeBSD.org
