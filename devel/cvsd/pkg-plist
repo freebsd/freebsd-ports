@@ -1,0 +1,8 @@
+sbin/cvsd
+sbin/cvsd-buildroot
+sbin/cvsd-passwd
+etc/cvsd/cvsd.conf
+etc/rc.d/cvsd.sh
+@dirrm etc/cvsd
+%%PORTDOCS%%share/doc/cvsd/README
+%%PORTDOCS%%@dirrm share/doc/cvsd
