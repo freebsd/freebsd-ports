@@ -8,8 +8,9 @@
 PORTNAME=	xfig
 PORTVERSION=	3.2.3c
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_XCONTRIB} \
-		ftp://www-epb.lbl.gov/xfig/libraries/
+MASTER_SITES=	http://www.xfig.org/xfigdist/ \
+		ftp://www-epb.lbl.gov/xfig/ \
+		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications/drawing_tools/xfig
 DISTNAME=	${PORTNAME}.${PORTVERSION}.full
 
