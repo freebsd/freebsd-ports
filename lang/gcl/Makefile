@@ -1,22 +1,25 @@
 # New ports collection makefile for:    gcl
-# Version required:     2.2.2
-# Date created:         Wed Feb  8 01:49:11  1995
+# Version required:     2.3
+# Date created:         Feb  8 1995
 # Whom:                 hsu
 #
 # $FreeBSD$
 #
 
-DISTNAME=       gcl-2.2.2
-CATEGORIES=	lang
-MASTER_SITES=   ftp://ftp.ma.utexas.edu/pub/gcl/ \
-		${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	gcl
+DISTNAME=       gcl-2.3
+CATEGORIES=	lang tk82
+MASTER_SITES=   ftp://ftp.ma.utexas.edu/pub/gcl/
+EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jseger@freebsd.org
+MAINTAINER=	jseger@FreeBSD.org
 
-BROKEN_ELF=	yes
+LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
 MAKEFILE=	makefile
+
+GNU_CONFIGURE=	yes
+
+PLIST_SUB=	GCL_VER=2.3
 
 pre-build:
 	${RM} -rf ${WRKSRC}/info/gcl-si.info*

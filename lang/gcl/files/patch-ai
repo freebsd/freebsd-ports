@@ -1,0 +1,120 @@
+--- h/FreeBSD.h.orig	Tue Nov 17 18:51:53 1998
++++ h/FreeBSD.h	Thu Nov 25 01:17:34 1999
+@@ -1,92 +1,41 @@
+ /*
+- * FreeBSD.h for gcl 1.1
++ * FreeBSD.h for gcl 2.3
+  *
+- * Ported by Jeffrey Hsu (hsu@freebsd.org).
++ * Ported by Jeffrey Hsu (hsu@freebsd.org) for gcl 1.1
+  *  Looked at previous versions by Hsu, Werkowsksi, Tobin, and Mogart.
+  *
++ * Updated to work with gcl 2.3 and FreeBSD 4.0/ELF by
++ * Justin Seger (jseger@FreeBSD.org).
++ *
+  */
+ 
+-#include "bsd.h"
+-
+-#undef LD_COMMAND
+-#define LD_COMMAND(command,main,start,input,ldarg,output) \
+-  sprintf(command, "ld -dc -N -x -A %s -T %x %s %s -o %s", \
+-            main,start,input,ldarg,output)
+-
+-#define ADDITIONAL_FEATURES \
+-		     ADD_FEATURE("386BSD");\
+-                     ADD_FEATURE("FreeBSD");
+-
+-
+-#define I386
+-#define	IEEEFLOAT
+-
+-/* we don't need to worry about zeroing fp->_base, to prevent what??? */
+-#define FCLOSE_SETBUF_OK 
+-
+-#undef HAVE_XDR
+-
+-#define USE_ATT_TIME
+-
+-#undef LISTEN_FOR_INPUT
+-#define LISTEN_FOR_INPUT(fp) \
+-  if ((fp)->_r <=0 && (c=0, ioctl((fp)->_file, FIONREAD, &c), c<=0)) \
+-	return(FALSE)
+-
+-#ifdef IN_GBC
+ #include <sys/types.h>
+-#endif
+ 
+-#define DATA_BEGIN (char *) N_DATADDR(header);
+-#define A_TEXT_OFFSET(x) (sizeof (struct exec))
+-#define A_TEXT_SEEK(hdr) (N_TXTOFF(hdr) + A_TEXT_OFFSET(hdr))
+-#define start_of_data() &etext
+-#define start_of_text() ((char *)(sizeof(struct exec) + getpagesize()))
+-
+-#define UNIXSAVE "unexec.c"
+-#ifdef UNIXSAVE 
+- extern char etext;
++#ifdef IN_UNIXSAVE
++  #undef IN_UNIXSAVE
++  #define WAS_IN_UNIXSAVE
+ #endif
+ 
+-#define RELOC_FILE "rel_sun3.c"	/* for SFASL - enabled in bsd.h */
++#include "386-linux.h"
+ 
+-#ifdef CLOCKS_PER_SEC
+-#define HZ CLOCKS_PER_SEC
+-#else
+-#define HZ 128
++#ifdef WAS_IN_UNIXSAVE
++  #define IN_UNIXSAVE
+ #endif
+-#define ss_base ss_sp
+ 
+-/* begin for GC */
+-#define PAGEWIDTH 12		/* i386 sees 4096 byte pages */
+-/* end for GC */
+-
+-#define SIG_STACK_SIZE (SIGSTKSZ/sizeof(double))
+-#define SETUP_SIG_STACK \
+-{ \
+-	static struct sigaltstack estack; \
+-	estack.ss_sp = estack_buf; \
+-	estack.ss_size = SIGSTKSZ; \
+-	estack.ss_flags = 0; \
+-	if (sigaltstack(&estack, 0) < 0) \
+-	  perror("sigaltstack"); \
+-}
+-
+-#define INSTALL_SEGMENTATION_CATCHER \
+-  	 (void) gcl_signal(SIGSEGV, segmentation_catcher); \
+-  	 (void) gcl_signal(SIGBUS, segmentation_catcher)
+-
+-/*
+- * The next two defines are for SGC,
+- *	one of which needs to go in cmpinclude.h.
+- */
+-#define SIGPROTV SIGBUS
+-
+-/* Begin for cmpinclude */
+-#define SGC	/* can mprotect pages and so selective gc will work */
++#undef INSTALL_MPROTECT_HANDLER
++#undef GET_FAULT_ADDR
++#undef LISTEN_FOR_INPUT
+ 
+-/* End for cmpinclude */
++#define LISTEN_FOR_INPUT(fp) \
++  if ((fp)->_r <=0 && (c=0, ioctl((fp)->_file, FIONREAD, &c), c<=0)) \
++        return(FALSE)
+ 
+-#if defined(IN_UNIXTIME)
+-# include <time.h>
++#if 0
++{\
++  int fd = (fp)->_file;\
++  static struct timeval tv = {0,0};\
++  static fd_set rmask; FD_ZERO(&rmask); FD_SET(fd,&rmask);\
++  select(fd+1,&rmask,NULL,NULL,&tv);\
++  return (FD_ISSET(fd,&rmask));\
++}
+ #endif

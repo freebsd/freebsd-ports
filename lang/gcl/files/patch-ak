@@ -1,0 +1,11 @@
+--- o/unixfasl.c.orig	Thu Nov 25 01:11:50 1999
++++ o/unixfasl.c	Thu Nov 25 01:12:20 1999
+@@ -282,7 +282,7 @@
+ 
+ object faslfile, ldargstring;
+ {
+-#if defined(__linux__) && defined(__ELF__)
++#if (defined(__linux__) || defined(__FreeBSD__)) && defined(__ELF__)
+   FEerror("faslink() not supported for ELF yet",0);
+ #else
+ 	struct exec header, faslheader;
