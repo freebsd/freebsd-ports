@@ -7,16 +7,17 @@
 #
 
 PORTNAME=	Digest-MD4
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Digest
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Perl5 interface to the MD4 message digest algorithm
 
 PERL_CONFIGURE=	yes
+CONFIGURE_ARGS=	INSTALLDIRS=site
 
 MAN3=		Digest::MD4.3
 
