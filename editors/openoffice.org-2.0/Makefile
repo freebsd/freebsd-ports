@@ -211,8 +211,8 @@ package-rename:
 
 sdk:
 	@${ECHO_MSG} "===>   Make SDK of OpenOffice.org"
-	@cd ${WRKSRC} ; ${TCSH} -c 'source FreeBSDEnv.Set ; cd sdk_oo ; build.pl ; deliver.pl'
-	@${MV} ${WRKSRC}/solver/${CODELINE}/unxfbsd.pro/bin/OpenOffice.org${RELEASE_NR}._SDK.tar.gz ${WRKDIR}/../${PACKAGE_BASENAME}_sdk.tar.gz
+	#@cd ${WRKSRC} ; ${TCSH} -c 'source FreeBSDEnv.Set ; cd sdk_oo ; build.pl ; deliver.pl'
+	#@${MV} ${WRKSRC}/solver/${CODELINE}/unxfbsd.pro/bin/OpenOffice.org${RELEASE_NR}._SDK.tar.gz ${WRKDIR}/../${PACKAGE_BASENAME}_sdk.tar.gz
 
 solver:
 	@${ECHO_MSG} "===>   Make Solver of OpenOffice.org"
