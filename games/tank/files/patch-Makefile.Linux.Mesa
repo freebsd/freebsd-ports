@@ -38,7 +38,7 @@ $FreeBSD$
  	$(CC) -o $(EXECNAME) $(Obj) $(LDFLAGS) \
 -	-lMesaaux -lMesatk -lMesaGLU -lMesaGL \
 -	-lXext -lX11 -lm
-+	-laux -lGLU -lGL -lXext -lX11 -lm
++	-laux -lGLU -lGL -lXext -lX11 -lm -pthread
  	@echo "****** Done ******"
  
  linux: $(Obj)
