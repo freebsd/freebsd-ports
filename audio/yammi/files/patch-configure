@@ -1,0 +1,65 @@
+--- configure.orig	Fri Sep  5 21:43:28 2003
++++ configure	Fri Sep  5 21:43:31 2003
+@@ -21260,7 +21260,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-logg  $LIBS"
++LIBS="-logg  $LIBS $USER_LDFLAGS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line 21265 "configure"
+ #include "confdefs.h"
+@@ -21322,7 +21322,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lvorbis  $LIBS"
++LIBS="-lvorbis  $LIBS $USER_LDFLAGS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line 21327 "configure"
+ #include "confdefs.h"
+@@ -21386,7 +21386,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lvorbisfile  $LIBS"
++LIBS="-lvorbisfile  $LIBS $USER_LDFLAGS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line 21391 "configure"
+ #include "confdefs.h"
+@@ -21450,7 +21450,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lgdk  $LIBS"
++LIBS="-lgdk12  $LIBS $USER_LDFLAGS $X_LDFLAGS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line 21455 "configure"
+ #include "confdefs.h"
+@@ -21498,7 +21498,7 @@
+ #define HAVE_LIBGDK 1
+ EOF
+ 
+-  LIBS="-lgdk $LIBS"
++  LIBS="-lgdk12 $LIBS"
+ 
+ else
+   configure_enable_ogglibs=no
+@@ -21527,7 +21527,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lz  $LIBS"
++LIBS="-lz  $LIBS $USER_LDFLAGS $X_LDFLAGS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line 21532 "configure"
+ #include "confdefs.h"
+@@ -21589,7 +21589,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lid3  $LIBS"
++LIBS="-lid3  $LIBS $USER_LDFLAGS $X_LDFLAGS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line 21594 "configure"
+ #include "confdefs.h"

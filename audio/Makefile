@@ -379,6 +379,7 @@
     SUBDIR += xtuner
     SUBDIR += xvmixer
     SUBDIR += xwave
+    SUBDIR += yammi
     SUBDIR += yamt
     SUBDIR += zinf
 

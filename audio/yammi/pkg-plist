@@ -1,0 +1,12 @@
+bin/yammi
+bin/yammiGrabAndEncode
+share/doc/HTML/en/yammi/index-1.html
+share/doc/HTML/en/yammi/index-2.html
+share/doc/HTML/en/yammi/index-3.html
+share/doc/HTML/en/yammi/index-4.html
+share/doc/HTML/en/yammi/index-5.html
+share/doc/HTML/en/yammi/index-6.html
+share/doc/HTML/en/yammi/index.html
+@dirrm share/doc/HTML/en/yammi
+@dirrm share/doc/HTML/en
+@dirrm share/doc/HTML
