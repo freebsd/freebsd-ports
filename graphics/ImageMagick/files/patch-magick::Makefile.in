@@ -1,0 +1,11 @@
+--- magick/Makefile.in.orig	Mon Oct 28 20:48:26 2002
++++ magick/Makefile.in	Mon Oct 28 20:48:44 2002
+@@ -359,7 +359,7 @@
+ ALLMANPAGES = Magick-config.1
+ 
+ libMagick_la_LDFLAGS = -no-undefined \
+-	-release $(MAJOR_VERSION).$(MINOR_VERSION).$(MICRO_VERSION)
++	-version-info $(MAJOR_VERSION):$(MINOR_VERSION):$(MICRO_VERSION)
+ 
+ 
+ #AM_CFLAGS = @LIBRARY_EXTRA_CPPFLAGS@
