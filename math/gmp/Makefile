@@ -8,22 +8,22 @@
 
 PORTNAME=	libgmp
 PORTVERSION=	4.1.2
+PORTREVISION=	1
 CATEGORIES=	math devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gmp
 DISTNAME=	gmp-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sysadmin@alexdupre.com
 COMMENT=	A free library for arbitrary precision arithmetic
 
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--enable-cxx
+CONFIGURE_ARGS=	--enable-cxx --enable-mpfr
 INSTALLS_SHLIB=	yes
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|--tag=CC||g'
+	@${FIND} ${WRKSRC} -name "Makefile.in" | \
+		${XARGS} ${REINPLACE_CMD} -e 's|--tag=CC||g' 
 
 .include <bsd.port.mk>
