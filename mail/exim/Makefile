@@ -17,7 +17,7 @@ MAINTAINER=	sheldonh@FreeBSD.org
 
 USE_BZIP2=	yes
 
-.if !defined(NOPORTDOCS)
+.if defined(NOPORTDOCS)
 PKGMESSAGE=	${FILESDIR}/POST-INSTALL-NOTES
 .endif
 
