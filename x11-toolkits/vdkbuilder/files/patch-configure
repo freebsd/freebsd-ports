@@ -1,0 +1,19 @@
+--- configure.orig	Sat May 17 14:09:44 2003
++++ configure	Mon Nov 17 13:47:23 2003
+@@ -7562,6 +7562,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -12106,7 +12107,7 @@
+ _ACEOF
+ 
+ else
+-  cflag="-s"
++  cflag="$CXXFLAGS"
+ fi
+ 
+ if test "x$enable_opt" != "xno"; then
