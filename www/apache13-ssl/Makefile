@@ -3,14 +3,14 @@
 # Date created:     	15th August 1997
 # Whom:			Mark Murray <mark@grondar.za>
 #
-# $Id: Makefile,v 1.43 1998/02/17 21:16:02 markm Exp $
+# $Id: Makefile,v 1.44 1998/02/20 00:43:40 steve Exp $
 
-DISTNAME=       apache_1.2.5
-PKGNAME=        apacheSSL-1.2.5
+DISTNAME=       apache_1.2.6
+PKGNAME=        apacheSSL-1.2.6
 CATEGORIES=	www security
 MASTER_SITES=   ftp://www.apache.org/apache/dist/ \
 		ftp://ftp.ox.ac.uk/pub/crypto/SSL/
-DISTFILES=      ${DISTNAME}${EXTRACT_SUFX} apache_1.2.5+ssl_1.13.tar.gz
+DISTFILES=      ${DISTNAME}${EXTRACT_SUFX} apache_1.2.6+ssl_1.15.tar.gz
 
 MAINTAINER=     markm@freebsd.org
 
@@ -22,7 +22,7 @@ EXTRACT_ONLY=   ${DISTNAME}${EXTRACT_SUFX}
 RESTRICTED=     "Contains cryptography"
 
 post-extract:
-	@cd ${WRKSRC} && tar xzf ${DISTDIR}/apache_1.2.5+ssl_1.13.tar.gz
+	@cd ${WRKSRC} && tar xzf ${DISTDIR}/apache_1.2.6+ssl_1.15.tar.gz
 
 pre-patch:
 	@cd ${WRKSRC} && ${PATCH} ${PATCH_DIST_ARGS} < SSLpatch
