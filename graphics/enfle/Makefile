@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	enfle
-PORTVERSION=	20000403
+PORTVERSION=	20000422
 CATEGORIES=	graphics
 MASTER_SITES=	http://enfle.fennel.org/ \
 		ftp://ftp.goldmoon.org/pub/FreeBSD/ports/distfiles/
