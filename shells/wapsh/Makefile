@@ -41,8 +41,8 @@ HTDOCS=			command.php command_html.inc command_wml.inc \
 			shortcuts_wml.php
 
 post-patch:
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/htshd/htshd.c > foo && \
-		${MV} foo ${WRKSRC}/htshd/htshd.c
+	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/htshd/htshd.c > ${WRKDIR}/foo && \
+		${MV} ${WRKDIR}/foo ${WRKSRC}/htshd/htshd.c
 
 do-build:
 	(cd ${WRKSRC}/htshd && ${CC} ${CFLAGS} -o htshd htshd.c -lcrypt \
