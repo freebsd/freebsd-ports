@@ -1,0 +1,12 @@
+************************************************************
+Please read docs in
+
+     $(PREFIX)/share/doc/doomlegacy
+
+before you run the application.
+************************************************************
+Copy doom2.wad or other Id iwad into
+
+     $(PREFIX)/doomlegacy
+
+************************************************************
