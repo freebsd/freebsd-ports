@@ -1014,6 +1014,7 @@ cyrus-imapd	ports/mail/cyrus-imapd
 cyrus-imspd	ports/databases/cyrus-imspd
 cyrus-sasl	ports/security/cyrus-sasl
 d1489		ports/russian/d1489
+dact		ports/archivers/dact
 dadadodo	ports/textproc/dadadodo
 daemon		src/usr.sbin/daemon
 daemontools	ports/sysutils/daemontools
