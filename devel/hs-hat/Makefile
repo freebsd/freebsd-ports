@@ -12,8 +12,13 @@ MASTER_SITES=	ftp://ftp.cs.york.ac.uk/pub/haskell/${PORTNAME}/
 
 MAINTAINER=	obraun@informatik.unibw-muenchen.de
 
+.if !defined(WITHOUT_NHC98)
 BUILD_DEPENDS=	nhc98:${PORTSDIR}/lang/nhc98
 RUN_DEPENDS=	nhc98:${PORTSDIR}/lang/nhc98
+.else
+WITH_GHC=	yes
+BUILD_DEPENDS+= hmake:${PORTSDIR}/devel/hmake
+.endif
 .if defined(WITH_GHC)
 BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
 RUN_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
@@ -23,15 +28,26 @@ USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 USE_REINPLACE=	yes
 USE_GLIB=	yes
-.if defined(WITH_GHC)
-PLIST_SUB=	GHC=""
-.else
+.if !defined(WITH_GHC) || defined(WITHOUT_NHC98)
 ALL_TARGET=	hat
-PLIST_SUB=	GHC="@comment "
+.endif
+.if !defined(WITHOUT_NHC98)
+PLIST_SUB+=	NHC98=""
+.else
+PLIST_SUB+=	NHC98="@comment "
+.endif
+.if defined(WITH_GHC)
+PLIST_SUB+=	GHC=""
+.else
+PLIST_SUB+=	GHC="@comment "
 .endif
 
-CONFIGURE_ARGS=		--prefix=${PREFIX}
-CONFIGURE_ARGS+=	--buildwith=nhc98 --libdir=${PREFIX}/lib
+CONFIGURE_ARGS=		--prefix=${PREFIX} --libdir=${PREFIX}/lib
+.if !defined(WITHOUT_NHC98)
+CONFIGURE_ARGS+=	--buildwith=nhc98
+.else
+CONFIGURE_ARGS+=	--buildwith=ghc
+.endif
 .if !defined(NOPORTDOCS)
 CONFIGURE_ARGS+=	--docdir=${PREFIX}/share/doc +docs
 .endif
@@ -40,11 +56,14 @@ MAN1=		hat-detect.1 hat-observe.1 hat-stack.1 hat-trail.1
 
 pre-everything::
 	@${ECHO_CMD} ""
-.if defined(WITH_GHC)
-	@${ECHO_CMD} " HAT will build and install for both nhc98 and ghc."
+.if defined(WITH_GHC) && !defined(WITHOUT_NHC98)
+	@${ECHO_CMD} " HAT will be built and installed for both nhc98 and ghc."
+.elif defined(WITHOUT_NHC98)
+	@${ECHO_CMD} " HAT will be built and installed for ghc only."
 .else
-	@${ECHO_CMD} " HAT will build and install for nhc98 only."
-	@${ECHO_CMD} " Define WITH_GHC to install for ghc, too."
+	@${ECHO_CMD} " HAT will be built and installed for nhc98 only."
+	@${ECHO_CMD} " Define WITH_GHC      to install for ghc, too."
+	@${ECHO_CMD} " Define WITHOUT_NHC98 to install for ghc only."
 .endif
 	@${ECHO_CMD} ""
 
