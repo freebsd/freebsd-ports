@@ -10,5 +10,5 @@ share/amap/appdefs.trig
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%@dirrm share/doc/amap
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/amap
