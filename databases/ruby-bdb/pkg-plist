@@ -24,6 +24,7 @@
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/bdb/replication/test3
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/bdb/replication
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/bdb/tmp
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/bdb/zippy
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/bdb
 %%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/Changes
 %%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/README.en
