@@ -1,6 +1,26 @@
---- src/glob.c.dist	Tue Oct  5 11:54:42 1999
-+++ src/glob.c	Thu Oct 21 19:51:03 1999
-@@ -107,7 +107,7 @@
+--- src/glob.c.old	Sat Jul  1 22:17:39 2000
++++ src/glob.c	Wed Nov 28 13:42:26 2001
+@@ -41,6 +41,7 @@
+ #include <pwd.h>
+ #include <errno.h>
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <string.h>
+ 
+ #include "proto.h"
+@@ -48,6 +49,11 @@
+ #define	QUOTE 0200
+ #define	TRIM 0177
+ #define	eq(a,b)		(strcmp(a, b)==0)
++
++#ifndef NCARGS
++#define NCARGS	20480		/* at least on SGI IRIX */
++#endif
++
+ #define	GAVSIZ		(NCARGS/6)
+ #define	isdir(d)	((d.st_mode & S_IFMT) == S_IFDIR)
+ 
+@@ -112,7 +118,7 @@
  
      fixpath(v);
      if (v[0] == '\0')
@@ -9,3 +29,212 @@
      else if ((strlen(v) > 1) && (v[strlen(v) - 1] == '/'))
  	v[strlen(v) - 1] = '\0';
  
+@@ -174,19 +180,21 @@
+ 	sort();
+ }
+ 
++static int
++argcmp(const void *p1, const void *p2)
++{
++    char *s1 = *(char **) p1;
++    char *s2 = *(char **) p2;
++
++    return (strcmp(s1, s2));
++}
++
+ static void sort(void)
+ {
+-    register char **p1, **p2, *c;
+     char **Gvp = &gargv[gargc];
+ 
+-    p1 = sortbas;
+-    while (p1 < Gvp - 1) {
+-	p2 = p1;
+-	while (++p2 < Gvp)
+-	    if (strcmp(*p1, *p2) > 0)
+-		c = *p1, *p1 = *p2, *p2 = c;
+-	p1++;
+-    }
++    if (!globerr)
++	qsort(sortbas, Gvp - sortbas, sizeof (*sortbas), argcmp);
+     sortbas = Gvp;
+ }
+ 
+@@ -292,13 +300,16 @@
+ static int execbrc(char *p, char *s)
+ {
+     char restbuf[BUFSIZ + 2];
++    char *restbufend = &restbuf[sizeof(restbuf)];
+     register char *pe, *pm, *pl;
+     int brclev = 0;
+     char *lm, savec, *sgpathp;
+ 
+-    for (lm = restbuf; *p != '{'; *lm++ = *p++)
+-	continue;
+-    for (pe = ++p; *pe; pe++)
++    for (lm = restbuf; *p != '{'; *lm++ = *p++) {
++	if (lm >= restbufend)
++	    return (0);
++    }
++    for (pe = ++p; *pe; pe++) {
+ 	switch (*pe) {
+ 
+ 	case '{':
+@@ -314,11 +325,19 @@
+ 	case '[':
+ 	    for (pe++; *pe && *pe != ']'; pe++)
+ 		continue;
++	    if (!*pe) {
++		globerr = "Missing ]";
++		return (0);
++	    }
+ 	    continue;
+ 	}
++    }
+   pend:
+-    brclev = 0;
+-    for (pl = pm = p; pm <= pe; pm++)
++    if (brclev || !*pe) {
++	globerr = "Missing }";
++	return (0);
++    }
++    for (pl = pm = p; pm <= pe; pm++) {
+ 	switch (*pm & (QUOTE | TRIM)) {
+ 
+ 	case '{':
+@@ -339,6 +358,8 @@
+ 	  doit:
+ 	    savec = *pm;
+ 	    *pm = 0;
++	    if (lm + strlen(pl) + strlen(pe + 1) >= restbufend)
++		return (0);
+ 	    (void) strcpy(lm, pl);
+ 	    (void) strcat(restbuf, pe + 1);
+ 	    *pm = savec;
+@@ -352,19 +373,18 @@
+ 		return (1);
+ 	    sort();
+ 	    pl = pm + 1;
+-	    if (brclev)
+-		return (0);
+ 	    continue;
+ 
+ 	case '[':
+ 	    for (pm++; *pm && *pm != ']'; pm++)
+ 		continue;
+-	    if (!*pm)
+-		pm--;
++	    if (!*pm) {
++		globerr = "Missing ]";
++		return (0);
++	    }
+ 	    continue;
+ 	}
+-    if (brclev)
+-	goto doit;
++    }
+     return (0);
+ }
+ 
+@@ -416,11 +436,10 @@
+ 		else if (scc == (lc = cc))
+ 		    ok++;
+ 	    }
+-	    if (cc == 0)
+-		if (ok)
+-		    p--;
+-		else
+-		    return 0;
++	    if (cc == 0) {
++		globerr = "Missing ]";
++		return (0);
++	    }
+ 	    continue;
+ 
+ 	case '*':
+@@ -473,73 +492,16 @@
+     }
+ }
+ 
+-/* This function appears to be unused, so why waste time and space on it? */
+-#if 0 == 1
+-static int Gmatch(register char *s, register char *p)
+-{
+-    register int scc;
+-    int ok, lc;
+-    int c, cc;
+-
+-    for (;;) {
+-	scc = *s++ & TRIM;
+-	switch (c = *p++) {
+-
+-	case '[':
+-	    ok = 0;
+-	    lc = 077777;
+-	    while (cc = *p++) {
+-		if (cc == ']') {
+-		    if (ok)
+-			break;
+-		    return (0);
+-		}
+-		if (cc == '-') {
+-		    if (lc <= scc && scc <= *p++)
+-			ok++;
+-		}
+-		else if (scc == (lc = cc))
+-		    ok++;
+-	    }
+-	    if (cc == 0)
+-		if (ok)
+-		    p--;
+-		else
+-		    return 0;
+-	    continue;
+-
+-	case '*':
+-	    if (!*p)
+-		return (1);
+-	    for (s--; *s; s++)
+-		if (Gmatch(s, p))
+-		    return (1);
+-	    return (0);
+-
+-	case 0:
+-	    return (scc == 0);
+-
+-	default:
+-	    if ((c & TRIM) != scc)
+-		return (0);
+-	    continue;
+-
+-	case '?':
+-	    if (scc == 0)
+-		return (0);
+-	    continue;
+-
+-	}
+-    }
+-}
+-#endif /* Gmatch exclusion */
+-
+ static void Gcat(register char *s1, register char *s2)
+ {
+     register size_t len = strlen(s1) + strlen(s2) + 1;
+ 
++    if (globerr)
++	return;
+     if (len >= gnleft || gargc >= GAVSIZ - 1)
+ 	globerr = "Arguments too long";
++    else if (len > MAXPATHLEN)
++	globerr = "Pathname too long";
+     else {
+ 	gargc++;
+ 	gnleft -= len;
+@@ -620,6 +582,7 @@
+ {
+     register char **av = av0;
+ 
++    if (av)
+     while (*av)
+ 	free(*av++);
+ }
