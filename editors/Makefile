@@ -37,8 +37,6 @@
     SUBDIR += flim-mule-current
     SUBDIR += flim-xemacs
     SUBDIR += flim-xemacs-current
-    SUBDIR += flim-xemacs21-mule
-    SUBDIR += flim-xemacs21-mule-current
     SUBDIR += flim-xemacs20
     SUBDIR += flim-xemacs20-current
     SUBDIR += fte
@@ -77,8 +75,6 @@
     SUBDIR += semi-mule-current
     SUBDIR += semi-xemacs
     SUBDIR += semi-xemacs-current
-    SUBDIR += semi-xemacs21-mule
-    SUBDIR += semi-xemacs21-mule-current
     SUBDIR += semi-xemacs20
     SUBDIR += semi-xemacs20-current
     SUBDIR += staroffice5
@@ -102,8 +98,6 @@
     SUBDIR += wemi-mule-current
     SUBDIR += wemi-xemacs
     SUBDIR += wemi-xemacs-current
-    SUBDIR += wemi-xemacs21-mule
-    SUBDIR += wemi-xemacs21-mule-current
     SUBDIR += wemi-xemacs20
     SUBDIR += wemi-xemacs20-current
     SUBDIR += wily
