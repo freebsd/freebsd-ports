@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Rcs
-PORTVERSION=	1.04
+PORTVERSION=	1.05
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Rcs
@@ -20,14 +20,12 @@ PERL_CONFIGURE=	yes
 MAN3=		Rcs.3
 
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
-EXAMPLES=	access.pl ci-tree.pl ci.pl co-tree.pl co.pl \
-		comments.pl comments2.pl daterev.pl dates.pl \
-		green.txt mark.pl parse.pl pause \
+EXAMPLES=	access.pl ci.pl co-tree.pl co.pl comments.pl \
+		comments2.pl daterev.pl dates.pl parse.pl \
 		project/RCS/Rcs.pm,v project/RCS/testfile,v \
-		project/src/Rcs.pm project/src/testfile \
-		rcsclean.pl rcsdiff.pl revdate.pl rlog.pl \
-		symbols.pl symrev.pl test1.pl test2.pl test3.pl \
-		type unlock.pl
+		project/src/Rcs.pm project/src/testfile rcsclean.pl \
+		rcsdiff.pl revdate.pl rlog.pl symbols.pl symrev.pl \
+		test1.pl test2.pl test3.pl unlock.pl
 
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
