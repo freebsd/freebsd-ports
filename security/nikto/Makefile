@@ -17,29 +17,27 @@ MASTER_SITES=	http://www.cirt.net/nikto/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web and CGI vulnerability scanner with SSL support
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay \
-		${SITE_PERL}/libwhisker/LW.pm:${PORTSDIR}/security/libwhisker
-
 NO_BUILD=	yes
 USE_REINPLACE=	yes
 
 PORTDOCS=	nikto_usage.txt nikto_usage.html CHANGES.txt README_plugins.txt
 
+post-patch:
+	@${REINPLACE_CMD} -Ee 's,(config.txt),${PREFIX}/etc/nikto/\1,g' ${WRKSRC}/nikto.pl
+	@${REINPLACE_CMD} -Ee "s|/usr/bin/nmap|${PREFIX}/bin/nmap|g" \
+		-e "s|# (PLUGINDIR=)/usr/local/nikto/plugins|\1${DATADIR}|g" \
+		${WRKSRC}/config.txt
+
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/nikto.pl ${PREFIX}/bin/nikto
-	@${MKDIR} ${PREFIX}/etc/nikto && ${CHMOD} 755 ${PREFIX}/etc/nikto
-	@${REINPLACE_CMD} -e "s|/usr/bin/nmap|${PREFIX}/bin/nmap|g" ${WRKSRC}/config.txt
-	@${REINPLACE_CMD} -e "s|/usr/local/nikto|${PREFIX}/share/nikto|g" ${WRKSRC}/config.txt
-	@${INSTALL_DATA} ${WRKSRC}/config.txt ${PREFIX}/etc/nikto/
-	@${MKDIR} ${PREFIX}/share/nikto/ && ${CHMOD} 755 ${PREFIX}/share/nikto/
-	@for i in `${LS} ${WRKSRC}/plugins/` ; \
-	do \
-	${INSTALL_SCRIPT} ${WRKSRC}/plugins/$$i ${PREFIX}/share/nikto; \
-	done
+	${INSTALL_SCRIPT} ${WRKSRC}/nikto.pl ${PREFIX}/bin/nikto
+	@${MKDIR} ${PREFIX}/etc/nikto
+	${INSTALL_DATA} ${WRKSRC}/config.txt ${PREFIX}/etc/nikto
+	@${MKDIR} ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/plugins/* ${DATADIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/docs/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/${i} ${DOCSDIR}
 .endfor
 .endif
 
