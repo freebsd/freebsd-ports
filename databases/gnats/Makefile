@@ -1,13 +1,13 @@
 # New ports collection makefile for:	gnats
-# Version required:     3.102-beta
+# Version required:     3.107-beta
 # Date created:		10 November 1995
 # Whom:			pst
 #
-# $Id: Makefile,v 1.16 1998/08/16 19:25:41 pst Exp $
+# $Id: Makefile,v 1.17 1998/11/20 15:26:10 kuriyama Exp $
 #
 
-DISTNAME=       gnats-3.106-beta
-PKGNAME=	gnats-3.106b
+DISTNAME=	gnats-3.107-beta
+PKGNAME=	gnats-3.107b
 CATEGORIES=	databases elisp
 #MASTER_SITES=	ftp://ftp.cygnus.com/pub/gnats/
 MASTER_SITES=	ftp://ftp.juniper.net/pub/gnats/
