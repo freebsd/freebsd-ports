@@ -2287,7 +2287,6 @@ head		src/usr.bin/head
 healthd		ports/sysutils/healthd
 heimdal		ports/security/heimdal
 hello		ports/misc/hello
-help		src/usr.bin/help
 help2man	ports/misc/help2man
 hercules	ports/emulators/hercules
 heretic		ports/games/heretic
@@ -6611,7 +6610,7 @@ sbniconfig	ports/sysutils/sbniconfig
 sc		ports/math/sc
 scandoc		ports/devel/scandoc
 scanssh		ports/security/scanssh
-sccs		src/usr.bin/sccs
+sccs		projects/sccs
 scdp		ports/net/scdp
 sced		ports/graphics/sced
 sceptre		ports/cad/sceptre
