@@ -1,0 +1,18 @@
+# New ports collection makefile for: vqadmin
+# Date created:		29 Mar 2001
+# Whom:			nbm
+#
+# $FreeBSD$
+#
+
+PORTNAME=	vqadmin
+PORTVERSION=	1.4
+CATEGORIES=	mail
+MASTER_SITES= 	http://www.vpopmail.cx/
+
+MAINTAINER=	nbm@FreeBSD.org
+
+GNU_CONFIGURE=	YES
+CONFIGURE_ARGS=	--enable-cgibindir=${PREFIX}/www/cgi-bin.default/
+
+.include <bsd.port.mk>
