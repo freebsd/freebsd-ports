@@ -3,17 +3,13 @@
 # Date created:		26 January 1998
 # Whom:			Stephane Legrand
 #
-# $Id: Makefile,v 1.6 1998/12/17 10:43:52 asami Exp $
+# $Id: Makefile,v 1.7 1999/02/12 21:55:04 obrien Exp $
 #
 
-DISTNAME=	proftpd-1.2.0pre1
+DISTNAME=	proftpd-1.2.0pre2
 PKGNAME=	proftpd-1.2.0
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/
-
-PATCH_SITES=	ftp://ftp.proftpd.org/patches/
-PATCHFILES=	proftpd-1.2.0pre1-path_exploit3.patch
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	stephane@lituus.fr
 
