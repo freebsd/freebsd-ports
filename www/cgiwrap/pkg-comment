@@ -1,0 +1,1 @@
+Make certain that CGI scripts run with the user's permissions.
