@@ -1,0 +1,12 @@
+--- capplets/theme-switcher/lister.c.orig	Mon Nov 27 11:39:55 2000
++++ capplets/theme-switcher/lister.c	Mon Nov 27 11:18:25 2000
+@@ -160,6 +160,8 @@
+       while (!feof (fin))
+ 	{
+ 	  getline (&lineptr, &linecount, fin);
++          if (feof(fin))
++            break;
+ 	  if (ferror(fin))
+ 	    {
+ 	      errstring = g_strdup_printf ("Error reading from RC file %s: %s",
+
