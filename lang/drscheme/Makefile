@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	drscheme
-PORTVERSION=	208
+PORTVERSION=	209
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://download.plt-scheme.org/bundles/${PORTVERSION}/plt/ \
 		http://www.cs.utah.edu/plt/download/${PORTVERSION}/plt/ \
@@ -30,7 +30,7 @@ USE_XLIB=	yes
 USE_GMAKE=	yes
 
 PLTHOME=	${PREFIX}/drscheme
-PLTPATCHES=	plt-208-p1.plt:PLT
+PLTPATCHES=	# none yet for this version
 DRS_B=		drscheme mred mzc mzscheme tex2page help-desk
 MAN1=		drscheme.1 help-desk.1 mred.1 mzscheme.1 tex2page.1
 
