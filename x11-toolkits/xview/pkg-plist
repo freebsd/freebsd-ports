@@ -422,6 +422,8 @@ include/xview/text.h
 include/xview/textsw.h
 include/xview/tty.h
 include/xview/ttysw.h
+include/xview/types.h
+include/xview/wait.h
 include/xview/win_enum.h
 include/xview/win_env.h
 include/xview/win_event.h
