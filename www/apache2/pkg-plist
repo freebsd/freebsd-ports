@@ -1,6 +1,7 @@
+sbin/httpd
 www/cgi-bin
+www/data
 www/server/logs
-www/server/httpd
 www/server/conf/httpd.conf
 www/server/conf/srm.conf
 www/server/conf/access.conf
@@ -33,4 +34,3 @@ www/icons/text.gif
 www/icons/transfer.gif
 www/icons/unknown.gif
 www/icons/uu.gif
-
