@@ -669,6 +669,7 @@ bytebench	ports/benchmarks/bytebench
 bzflag		ports/games/bzflag
 bzip		ports/archivers/bzip
 bzip2		ports/archivers/bzip2
+c-hey		ports/misc/c-hey
 c-nocem		ports/news/c-nocem
 c2html		ports/textproc/c2html
 c2lib		ports/devel/c2lib
