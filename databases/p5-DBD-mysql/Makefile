@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	Msql-Mysql-modules-1.2209
-PKGNAME=	p5-Mysql-modules-1.2209
+DISTNAME=	Msql-Mysql-modules-1.2210
+PKGNAME=	p5-Mysql-modules-1.2210
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBD
