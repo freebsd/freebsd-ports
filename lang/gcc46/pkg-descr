@@ -1,7 +1,0 @@
-GCC, the GNU Compiler Collection includes gcc, g++, g77, and gcj.
-
-Beware: This port installs new versions of "gcc", "g++", "c++" and
-so forth into the "${PREFIX}/bin" directory.  Mind your PATHs if you
-don't want to use this compiler by default.
-
-WWW: http://gcc.gnu.org/

@@ -1,8 +1,0 @@
-The openldap21 port now creates a ldap user an a ldap group.
-
-If you use slapadd as root to populate your ldap Database please
-remember to chown the database directories and containing files
-to user ldap and group ldap.
-
-	chown -R ldap:ldap /var/db/openldap-data 
-

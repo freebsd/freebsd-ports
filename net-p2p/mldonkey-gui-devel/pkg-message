@@ -1,9 +1,0 @@
-	ATTENTIONATTENTION:
-
-- If this is the first time you install mldonkey,
-  please go to the mldonkey-gui port's dir as the user who will run
-  mldonkey and enter:
-
-     make install-user
-
-  this will set up your user config.

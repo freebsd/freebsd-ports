@@ -1,5 +1,0 @@
-************************************************************
-TIPS:
-  o Use rndcontrol(8) if you want more entropy.
-    See http://people.freebsd.org/~dougb/randomness.html for more details.
-************************************************************

@@ -1,0 +1,23 @@
+--- nsprpub/configure.in.orig	Sun Jun  1 00:16:23 2003
++++ nsprpub/configure.in	Sun Jun  1 00:13:09 2003
+@@ -920,6 +920,7 @@
+     AC_DEFINE(XP_UNIX)
+     AC_DEFINE(FREEBSD)
+     AC_DEFINE(HAVE_BSD_FLOCK)
++    AC_DEFINE(HAVE_SOCKLEN_T)
+     CFLAGS="$CFLAGS $(DSO_CFLAGS) -ansi -Wall"
+     MOZ_OBJFORMAT=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
+     if test "$MOZ_OBJFORMAT" = "elf"; then
+--- nsprpub/configure.orig	Sun Jun  1 00:11:33 2003
++++ nsprpub/configure	Sun Jun  1 00:12:49 2003
+@@ -3300,6 +3300,10 @@
+ #define HAVE_BSD_FLOCK 1
+ EOF
+ 
++    cat >> confdefs.h <<\EOF
++#define HAVE_SOCKLEN_T 1
++EOF
++
+     CFLAGS="$CFLAGS $(DSO_CFLAGS) -ansi -Wall"
+     MOZ_OBJFORMAT=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
+     if test "$MOZ_OBJFORMAT" = "elf"; then

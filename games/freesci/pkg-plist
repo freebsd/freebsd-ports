@@ -1,7 +1,0 @@
-bin/sciconsole
-bin/scidisasm
-bin/sciunpack
-bin/sciv
-lib/libsciengine.a
-%%PORTDOCS%%share/freesci/sci.sgml
-%%PORTDOCS%%@dirrm share/freesci

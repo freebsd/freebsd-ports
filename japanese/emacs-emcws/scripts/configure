@@ -1,6 +1,0 @@
-#! /bin/sh
-
-for f in site-init.el; do
-	${SED} -e "s,%%DOC_FILE%%,${DOC_FILE},g" \
-		< ${FILESDIR}/${f}.tmpl > ${WRKSRC}/lisp/${f}
-done

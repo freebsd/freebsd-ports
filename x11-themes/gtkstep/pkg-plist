@@ -1,6 +1,0 @@
-lib/gtk/themes/engines/libstep.so
-share/themes/Step/ICON.png
-share/themes/Step/README.html
-share/themes/Step/gtk/gtkrc
-@dirrm share/themes/Step/gtk
-@dirrm share/themes/Step

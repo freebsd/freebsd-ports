@@ -1,4 +1,0 @@
-libexec/gkrellm/plugins/gkx86info.so
-%%PORTDOCS%%share/doc/gkx86info/COPYING
-%%PORTDOCS%%share/doc/gkx86info/README
-%%PORTDOCS%%@dirrm share/doc/gkx86info

@@ -1,5 +1,0 @@
-etc/pdnsd.conf.sample
-etc/rc.d/pdnsd.sh
-sbin/pdnsd
-sbin/pdnsd-ctl
-@unexec rm -rf /var/db/pdnsd

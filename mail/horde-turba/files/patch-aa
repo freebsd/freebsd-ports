@@ -1,7 +1,0 @@
---- config/conf.php.dist.orig	Fri Apr 12 18:21:30 2002
-+++ config/conf.php.dist	Sun May 19 00:11:06 2002
-@@ -30,3 +30,4 @@
- // example providing a link to IMP (an email program) would be:
- // $conf['menu']['apps'] = array('imp');
- $conf['menu']['apps'] = array();
-+//UNCOMMENTWHENINSTIMP$conf['menu']['apps'] = array('imp');
