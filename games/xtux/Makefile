@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	xtux
-PORTVERSION=	2001.03.24
+PORTVERSION=	2001.05.08
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=xtux
-DISTNAME=	xtux-src-20010324
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-src-${PORTVERSION:S/.//g}
 
 MAINTAINER=	goranrunfeldt@home.se
 
@@ -46,6 +46,7 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/xtux
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/xtux
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/xtux
 .endif
 
 .include <bsd.port.mk>
