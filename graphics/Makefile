@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.88 1998/08/12 22:54:27 asami Exp $
+# $Id: Makefile,v 1.89 1998/08/19 22:49:44 steve Exp $
 #
 
     SUBDIR += 4va
@@ -53,7 +53,6 @@
     SUBDIR += netshow
     SUBDIR += p5-GD
     SUBDIR += p5-Image-Size
-    SUBDIR += p5-PerlMagick
     SUBDIR += p5-chart
     SUBDIR += pgperl
     SUBDIR += pgplot
