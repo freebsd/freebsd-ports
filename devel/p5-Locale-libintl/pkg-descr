@@ -1,0 +1,5 @@
+The package libintl-perl is an internationalization library for Perl
+that aims to be compatible with the Uniforum message translations
+system as implemented for example in GNU gettext.
+
+WWW: http://search.cpan.org/dist/libintl-perl/
