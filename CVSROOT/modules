@@ -9435,6 +9435,7 @@ workplace	ports/x11-fm/workplace
 workrave	ports/x11/workrave
 worldtools	ports/sysutils/worldtools
 wots		ports/sysutils/wots
+wotsap		ports/misc/wotsap
 wping		ports/net/wping
 wprint		ports/print/wprint
 wput		ports/ftp/wput
