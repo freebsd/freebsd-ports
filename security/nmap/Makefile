@@ -8,7 +8,7 @@
 
 PORTNAME=	nmap
 PORTVERSION=	2.53
-CATEGORIES=	security net
+CATEGORIES=	security
 MASTER_SITES=	http://www.insecure.org/nmap/dist/  \
 		ftp://nuxi.ucdavis.edu/pub/misc/  \
 		http://www.mobis.com/ajax/projects/

@@ -8,7 +8,7 @@
 
 PORTNAME=	bro
 PORTVERSION=	0.5a
-CATEGORIES=	security net
+CATEGORIES=	security
 #MASTER_SITES=	ftp://ee.lbl.gov/
 #see http://www-nrg.ee.lbl.gov/bro-info.html
 DISTNAME=	vp-bro-0.5-alpha

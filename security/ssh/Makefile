@@ -10,7 +10,7 @@
 
 PORTNAME=	ssh
 PORTVERSION=	1.2.27
-CATEGORIES=	security net ipv6
+CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.cs.hut.fi/pub/ssh/ \
 		ftp://ftp.bitcon.no/.4/console/system/ \
 		ftp://ftp.kddlabs.co.jp/.0/security/Crypto/SSH/ \

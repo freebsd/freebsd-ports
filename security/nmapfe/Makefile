@@ -8,7 +8,7 @@
 
 PORTNAME=	nmapfe
 PORTVERSION=	0.9.5
-CATEGORIES=	security net
+CATEGORIES=	security
 MASTER_SITES=	http://codebox.net/download/  \
 		http://www.insecure.org/nmap/dist/
 EXTRACT_SUFX=	.tgz

@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkportscan
 PORTVERSION=	1.2
-CATEGORIES=	security net
+CATEGORIES=	security
 #MASTER_SITES=	http://armageddon.splorg.org/gtkportscan/
 MASTER_SITES=	http://people.FreeBSD.org/~cpiazza/distfiles/
 

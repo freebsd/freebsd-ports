@@ -7,7 +7,7 @@
 
 PORTNAME=	smurflog
 PORTVERSION=	2.1
-CATEGORIES=	net security
+CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.bitchx.org/pub/misc/                          \
 		ftp://ftp.plur.net/pub/software/bitchx/files/           \
 		http://www.nectar.com/distfiles/

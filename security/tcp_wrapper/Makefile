@@ -7,7 +7,7 @@
 
 PORTNAME=	tcp_wrappers
 PORTVERSION=	7.6
-CATEGORIES=	security net
+CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.porcupine.org/pub/security/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 

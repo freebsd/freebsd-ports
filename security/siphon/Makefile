@@ -7,7 +7,7 @@
 
 PORTNAME=	siphon
 PORTVERSION=	0.666
-CATEGORIES=	security net
+CATEGORIES=	security
 MASTER_SITES=	http://www.subterrain.net/projects/siphon/
 DISTFILES=	siphon-v.666.tar.gz siphon-report.pl
 EXTRACT_ONLY=	siphon-v.666.tar.gz

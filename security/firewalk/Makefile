@@ -7,7 +7,7 @@
 
 PORTNAME=	firewalk
 PORTVERSION=	0.9.9b
-CATEGORIES=	security net
+CATEGORIES=	security
 MASTER_SITES=	http://www.packetfactory.net/firewalk/
 DISTNAME=	firewalk-0.99beta
 

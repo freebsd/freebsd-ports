@@ -7,7 +7,7 @@
 
 PORTNAME=	radiusniff
 PORTVERSION=	0.2
-CATEGORIES=	security net
+CATEGORIES=	security
 MASTER_SITES=	http://adm.freelsd.net/ADM/
 EXTRACT_SUFX=	.tgz
 

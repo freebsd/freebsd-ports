@@ -7,7 +7,7 @@
 
 PORTNAME=	libident
 PORTVERSION=	0.22
-CATEGORIES=	devel net security
+CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/ident/libs/
 
 MAINTAINER=	torstenb@FreeBSD.org

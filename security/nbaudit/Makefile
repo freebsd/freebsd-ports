@@ -8,7 +8,7 @@
 
 PORTNAME=	nbaudit
 PORTVERSION=	1.0
-CATEGORIES=	security net
+CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.secnet.com/pub/tools/nat10/  \
 		ftp://ftp.auscert.org.au/pub/coast/mirrors/ftp.secnet.com/tools/nat10/
 DISTNAME=	nat10
