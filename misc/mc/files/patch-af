@@ -1,5 +1,5 @@
---- Makefile.in.orig	Tue Jan 19 00:44:07 1999
-+++ Makefile.in	Tue Jan 26 19:38:26 1999
+--- Makefile.in.orig	Sat Feb 27 02:25:11 1999
++++ Makefile.in	Sat Feb 27 21:02:30 1999
 @@ -5,7 +5,7 @@
  @MCFGR@@MCF@
  
@@ -10,7 +10,7 @@
  alldirs=$(unixdirs) $(foreigndirs) 
  subdirs=$(alldirs)
 @@ -46,7 +46,7 @@
- install: installdirs @vcs@
+ install: installdirs
  	@for I in $(unixdirs); do cd $$I; $(MAKE) DESTDIR=$(DESTDIR) $@ || exit 1; cd ..; done
  	$(INSTALL_DATA) $(srcdir)/FAQ $(DESTDIR)$(libdir)/FAQ
 -	$(INSTALL_PROGRAM) mcfn_install $(DESTDIR)$(suppbindir)/mcfn_install
@@ -20,12 +20,12 @@
  	@echo "set in the mc.ext file in $(libdir)"
 @@ -58,9 +58,8 @@
  installdirs:
- 	$(mcsrcdir)/xmkdir $(DESTDIR)$(bindir) $(DESTDIR)$(libdir)
- 	$(mcsrcdir)/xmkdir $(DESTDIR)$(mandir) $(DESTDIR)$(man8dir)
--	$(mcsrcdir)/xmkdir $(DESTDIR)$(icondir) $(DESTDIR)$(suppbindir)
-+	$(mcsrcdir)/xmkdir $(DESTDIR)$(suppbindir)
- 	$(mcsrcdir)/xmkdir $(DESTDIR)$(tidir) $(DESTDIR)$(extfsdir)
--	$(mcsrcdir)/xmkdir $(DESTDIR)$(idldir)
+ 	$(MKINSTALLDIRS) $(DESTDIR)$(bindir) $(DESTDIR)$(libdir)
+ 	$(MKINSTALLDIRS) $(DESTDIR)$(mandir) $(DESTDIR)$(man8dir)
+-	$(MKINSTALLDIRS) $(DESTDIR)$(icondir) $(DESTDIR)$(suppbindir)
++	$(MKINSTALLDIRS) $(DESTDIR)$(suppbindir)
+ 	$(MKINSTALLDIRS) $(DESTDIR)$(tidir) $(DESTDIR)$(extfsdir)
+-	$(MKINSTALLDIRS) $(DESTDIR)$(idldir)
  
  mcfninstall:
  	-/bin/sh ./mcfn_install
@@ -40,15 +40,15 @@
  	$(INSTALL_PROGRAM) mcmfmt $(DESTDIR)$(bindir)/$(binprefix)mcmfmt
  	$(SEDCMD2) < $(srcdir)/mc.hlp > $(DESTDIR)$(libdir)/$(libprefix)mc.hlp 
  
---- doc/Makefile.in.orig	Sun Dec  6 12:09:48 1998
-+++ doc/Makefile.in	Sun Dec  6 12:10:08 1998
-@@ -15,7 +15,7 @@
- all:
- 
+--- doc/Makefile.in.orig	Sat Feb 27 02:25:12 1999
++++ doc/Makefile.in	Sat Feb 27 21:03:37 1999
+@@ -17,7 +17,7 @@
  install:
--	-$(SEDCMD2) < mc.1 > $(DESTDIR)$(mandir)/$(manprefix)mc.$(manext)
-+	-$(SEDCMD2) < mc.1 > $(DESTDIR)$(mandir)/$(manprefix)midc.$(manext)
- 	-$(SEDCMD2) < mcedit.1 > $(DESTDIR)$(mandir)/$(manprefix)mcedit.$(manext)
+ 	$(MKINSTALLDIRS) $(DESTDIR)/$(man1dir)
+ 	$(MKINSTALLDIRS) $(DESTDIR)/$(man8dir)
+-	-$(SEDCMD2) < mc.1 > $(DESTDIR)$(man1dir)/$(manprefix)mc.$(manext)
++	-$(SEDCMD2) < mc.1 > $(DESTDIR)$(man1dir)/$(manprefix)midc.$(manext)
+ 	-$(SEDCMD2) < mcedit.1 > $(DESTDIR)$(man1dir)/$(manprefix)mcedit.$(manext)
  	-$(SEDCMD2) < mcserv.8 > $(DESTDIR)$(man8dir)/$(manprefix)mcserv.$(man8ext)
  
 --- lib/Makefile.in.orig	Wed Jan 27 01:10:33 1999

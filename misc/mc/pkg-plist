@@ -1,6 +1,9 @@
-bin/midc
 bin/mcmfmt
+bin/midc
+etc/mc.global
 sbin/mcserv
+share/locale/cs/LC_MESSAGES/mc.mo
+share/locale/da/LC_MESSAGES/mc.mo
 share/locale/de/LC_MESSAGES/mc.mo
 share/locale/es/LC_MESSAGES/mc.mo
 share/locale/fr/LC_MESSAGES/mc.mo
@@ -42,7 +45,7 @@ share/mc/term/vt100.ti
 share/mc/term/xterm.ad
 share/mc/term/xterm.tcap
 share/mc/term/xterm.ti
-@dirrm share/mc/bin
-@dirrm share/mc/extfs
 @dirrm share/mc/term
+@dirrm share/mc/extfs
+@dirrm share/mc/bin
 @dirrm share/mc
