@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	apps/sound/players
 
 MAINTAINER=	greg@rosevale.com.au
 
+ONLY_FOR_ARCHS=	i386
+
 MAN1=		wavplay.1
 
 .include <bsd.port.mk>
