@@ -1,11 +1,17 @@
---- src/Makefile.orig	Mon Jul 20 03:17:51 1998
-+++ src/Makefile	Fri Jul 24 20:32:54 1998
-@@ -35,7 +35,7 @@
- #OPTIMIZE   = -O -g
- #OPTIMIZE   = -O -g -pg
- #OPTIMIZE   = -O
--OPTIMIZE   = -O2
-+#OPTIMIZE   = -O2
- #OPTIMIZE   = -O2 -g
- #OPTIMIZE   = -O -s
- #OPTIMIZE   = -O2 -s
+--- install.inc.orig	Wed Oct  7 16:35:35 1998
++++ install.inc	Wed Oct  7 16:36:29 1998
+@@ -1,10 +1,10 @@
+-PREFIX      = /usr/local
++PREFIX      = $(X11BASE)
+ BINDIR      = $(PREFIX)/bin
+ LIBDIR      = $(PREFIX)/lib/X11/icewm
+-ETCDIR      = /etc/X11/icewm
++ETCDIR      = $(LIBDIR)
+ 
+ INSTALL     = install -c
+-INSTALLDIR  = $(INSTALL) -m 755 -d
+-INSTALLBIN  = $(INSTALL) -m 555
++INSTALLDIR  = mkdir -p
++INSTALLBIN  = $(INSTALL) $(STRIP) -m 555
+ INSTALLLIB  = $(INSTALL) -m 444
+ #INSTALLETC  = $(INSTALL) -m 644
