@@ -2,4 +2,7 @@ bin/enhance
 lib/libtecla.a
 lib/libtecla.so
 lib/libtecla.so.1
+lib/libtecla_r.a
+lib/libtecla_r.so
+lib/libtecla_r.so.1
 include/libtecla.h
