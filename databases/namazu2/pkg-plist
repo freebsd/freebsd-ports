@@ -31,11 +31,15 @@ include/namazu/util.h
 include/namazu/var.h
 include/namazu/wakati.h
 @dirrm include/namazu
+@comment see pkg-{install,deinstall} for this file
+lib/charset.alias
 lib/libnmz.a
 lib/libnmz.la
 lib/libnmz.so
 lib/libnmz.so.6
 libexec/namazu.cgi
+@comment see pkg-{install,deinstall} for this file
+share/locale/locale.alias
 share/locale/es/LC_MESSAGES/namazu.mo
 share/locale/fr/LC_MESSAGES/namazu.mo
 share/locale/ja/LC_MESSAGES/namazu.mo

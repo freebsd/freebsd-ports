@@ -34,7 +34,11 @@ INSTALLS_SHLIB=	yes
 post-configure:
 	${PERL} -i~ -pe 's,^(LIBS *= *)(.*),$$1 -L${LOCALBASE}/lib -lintl $$2\n,' ${WRKSRC}/nmz/Makefile
 
+pre-install:
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/pkg-install ${PKGNAME} PRE-INSTALL
+
 post-install:
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/pkg-install ${PKGNAME} POST-INSTALL
 .if defined(NOPORTDOCS)
 	${RM} -rf ${PREFIX}/share/namazu/doc
 .endif

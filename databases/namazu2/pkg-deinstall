@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+PATH=/bin:/usr/bin
+
+files="${PKG_PREFIX}/lib/charset.alias ${PKG_PREFIX}/share/locale/locale.alias"
+sfx=.namazu2.backup
+
+case $2 in
+    DEINSTALL)
+	for f in $files; do
+	    [ -f $f$sfx ] || continue
+	    if [ $f -nt $f$sfx ]; then
+		cp -p $f $f$sfx
+	    fi
+	done
+	;;
+
+    POST-DEINSTALL)
+	for f in $files; do
+	    if [ -f $f$sfx ]; then
+		mv -f $f$sfx $f
+	    fi
+	done
+	;;
+esac
+
+exit 0
