@@ -11,7 +11,8 @@ PORTVERSION=	1999
 CATEGORIES=	devel
 #Users must register with AT&T before downloading tarball.
 #MASTER_SITES=	http://www.research.att.com/sw/tools/sfio/
-DISTFILES=	${PORTNAME}_${PORTVERSION}.src.unix.cpio
+DISTNAME=	${PORTNAME}_${PORTVERSION}
+EXTRACT_SUFX=	.src.unix.cpio
 
 MAINTAINER=	obrien@FreeBSD.org
 
