@@ -14,7 +14,7 @@
 
 PORTNAME=	uqm
 PORTVERSION=	0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sc2
@@ -27,8 +27,7 @@ COMMENT=	A port of the original Star Control 2 for 3DO consoles
 ONLY_FOR_ARCHS=	i386
 
 LIB_DEPENDS=	SDL_image:${PORTSDIR}/graphics/sdl_image \
-		vorbis:${PORTSDIR}/audio/libvorbis \
-		ogg:${PORTSDIR}/audio/libogg
+		vorbis.3:${PORTSDIR}/audio/libvorbis
 
 USE_XLIB=	yes
 USE_GMAKE=	yes

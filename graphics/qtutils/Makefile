@@ -8,13 +8,14 @@
 
 PORTNAME=	qtutils
 PORTVERSION=	0.0.6
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.flyn.org/projects/qtutils/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	QuickTime Utilities
 
-LIB_DEPENDS=	vorbis.2:${PORTSDIR}/audio/libvorbis \
+LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
 		quicktime.0:${PORTSDIR}/multimedia/libquicktime
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

@@ -7,6 +7,7 @@
 
 PORTNAME=	avifile
 PORTVERSION=	0.7.38
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -139,7 +140,7 @@ PLIST_SUB+=	VIDIX="@comment "
 
 # libvorbis; thus, libogg
 .if !defined(WITHOUT_VORBIS)
-LIB_DEPENDS+=	vorbis.2:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
 
 CONFIGURE_ARGS+=	--with-vorbis-prefix=${LOCALBASE} \
 			--with-ogg-prefix=${LOCALBASE}

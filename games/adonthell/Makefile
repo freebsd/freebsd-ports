@@ -7,6 +7,7 @@
 
 PORTNAME=	adonthell
 PORTVERSION=	0.3.3
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}/src
@@ -19,7 +20,7 @@ COMMENT=	A free role playing game
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
-		vorbis.2:${PORTSDIR}/audio/libvorbis
+		vorbis.3:${PORTSDIR}/audio/libvorbis
 
 USE_PYTHON=	yes
 USE_GMAKE=	yes
