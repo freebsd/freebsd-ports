@@ -183,7 +183,6 @@ share/sylpheed-claws/newscache_clean.pl
 share/sylpheed-claws/outlook2sylpheed.pl
 share/sylpheed-claws/tb2sylpheed
 share/sylpheed-claws/vcard2xml.py
-%%THEMES%%share/sylpheed-claws/themes/Crystal/.directory
 %%THEMES%%share/sylpheed-claws/themes/Crystal/close.xpm
 %%THEMES%%share/sylpheed-claws/themes/Crystal/continue.xpm
 %%THEMES%%share/sylpheed-claws/themes/Crystal/dir-close.xpm
