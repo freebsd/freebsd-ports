@@ -23,6 +23,7 @@
     SUBDIR += tclock
     SUBDIR += wmcalclock
     SUBDIR += wmdate
+    SUBDIR += wmfishtime
     SUBDIR += wmitime
     SUBDIR += wmtime
     SUBDIR += wmtz

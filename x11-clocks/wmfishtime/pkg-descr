@@ -1,0 +1,11 @@
+This is a time/date applet for WindowMaker (and BlackBox, E, SawFish...). Top
+part has the clock face, bottom part has day of the week, followed by day,
+followed by month. Yellow hand counts seconds, green hand counts minutes, red
+hand counts hours. Few seconds after startup there are at least 32 bubbles
+floating up behind the clock face.  There are 4 fishes randomly swimming back
+and forth. If you move your mouse inside the dockapp window, the fish will get
+scared and run away.
+
+WWW: http://www.ne.jp/asahi/linux/timecop/#wmfishtime
+
+- Anders Nordby <anders@fix.no>
