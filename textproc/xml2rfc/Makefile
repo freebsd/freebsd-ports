@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	xml2rfc
-PORTVERSION=	1.25
+PORTVERSION=	1.26
 CATEGORIES=	textproc tcl83
 MASTER_SITES=	http://xml.resource.org/authoring/
 EXTRACT_SUFX=	.tgz
