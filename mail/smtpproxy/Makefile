@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.quietsche-entchen.de/download/
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 MAKEFILE=	makefile
 
 MAN1=		smtp.proxy.1
