@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	LJ-TextMessage
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	http://livejournal.com/files/code/textmessage/ \
 		ftp://ftp.livejournal.com/code/textmessage/
