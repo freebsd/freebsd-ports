@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cyrus-imapd
-PORTVERSION= 	2.2.10
+PORTVERSION= 	2.2.12
 #PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
@@ -48,24 +48,34 @@ USE_BDB_VER=	3
 OPTIONS+=	BDB_3		"Use BerkeleyDB v3"	on \
 		BDB_4		"Use BerkeleyDB v4"	off \
 		BDB_41		"Use BerkeleyDB v4.1"	off \
-		BDB_42		"Use BerkeleyDB v4.2"	off
+		BDB_42		"Use BerkeleyDB v4.2"	off \
+		BDB_43		"Use BerkeleyDB v4.3"	off
 .elif ${USE_BDB_VER} == 4
 OPTIONS+=	BDB_3		"Use BerkeleyDB v3"	off \
 		BDB_4		"Use BerkeleyDB v4"	on \
 		BDB_41		"Use BerkeleyDB v4.1"	off \
-		BDB_42		"Use BerkeleyDB v4.2"	off
+		BDB_42		"Use BerkeleyDB v4.2"	off \
+		BDB_43		"Use BerkeleyDB v4.3"	off
 .elif ${USE_BDB_VER} == 41
 OPTIONS+=	BDB_3		"Use BerkeleyDB v3"	off \
 		BDB_4		"Use BerkeleyDB v4"	off \
 		BDB_41		"Use BerkeleyDB v4.1"	on \
-		BDB_42		"Use BerkeleyDB v4.2"	off
+		BDB_42		"Use BerkeleyDB v4.2"	off \
+		BDB_43		"Use BerkeleyDB v4.3"	off
 .elif ${USE_BDB_VER} == 42
 OPTIONS+=	BDB_3		"Use BerkeleyDB v3"	off \
 		BDB_4		"Use BerkeleyDB v4"	off \
 		BDB_41		"Use BerkeleyDB v4.1"	off \
-		BDB_42		"Use BerkeleyDB v4.2"	on
+		BDB_42		"Use BerkeleyDB v4.2"	on \
+		BDB_43		"Use BerkeleyDB v4.3"	off
+.elif ${USE_BDB_VER} == 43
+OPTIONS+=	BDB_3		"Use BerkeleyDB v3"	off \
+		BDB_4		"Use BerkeleyDB v4"	off \
+		BDB_41		"Use BerkeleyDB v4.1"	off \
+		BDB_42		"Use BerkeleyDB v4.2"	off \
+		BDB_43		"Use BerkeleyDB v4.3"	on
 .else
-BROKEN=		"WITH_BDB_VER must be 3, 4, 41 or 42"
+BROKEN=		"WITH_BDB_VER must be 3, 4, 41, 42 or 43"
 .endif
 
 OPTIONS+=	DRAC		"Enable DRAC support"			off
@@ -83,9 +93,11 @@ OPTIONS+=	PASS8BITHACK	"Add pass8bit option (not recommended)"	off
 .include <bsd.port.pre.mk>
 
 .if !defined(WITH_BDB_3) && !defined(WITH_BDB_4) && \
-	!defined(WITH_BDB_41) && !defined(WITH_BDB_42)
+	!defined(WITH_BDB_41) && !defined(WITH_BDB_42) && \
+	!defined(WITH_BDB_43)
 .if defined(WITHOUT_BDB_3) && defined(WITHOUT_BDB_4) && \
-	defined(WITHOUT_BDB_41) && defined(WITHOUT_BDB_42)
+	defined(WITHOUT_BDB_41) && defined(WITHOUT_BDB_42) && \
+	defined(WITHOUT_BDB_43)
 BROKEN=		"You need to select one BDB version.  Run 'make config' again!"
 .endif
 .if ${USE_BDB_VER} == 3
@@ -96,14 +108,20 @@ WITH_BDB_4=	yes
 WITH_BDB_41=	yes
 .elif ${USE_BDB_VER} == 42
 WITH_BDB_42=	yes
+.elif ${USE_BDB_VER} == 43
+WITH_BDB_43=	yes
 .endif
 .endif
 .if (defined(WITH_BDB_3) && defined(WITH_BDB_4)) || \
 	(defined(WITH_BDB_3) && defined(WITH_BDB_41)) || \
 	(defined(WITH_BDB_3) && defined(WITH_BDB_42)) || \
+	(defined(WITH_BDB_3) && defined(WITH_BDB_43)) || \
 	(defined(WITH_BDB_4) && defined(WITH_BDB_41)) || \
 	(defined(WITH_BDB_4) && defined(WITH_BDB_42)) || \
-	(defined(WITH_BDB_41) && defined(WITH_BDB_42))
+	(defined(WITH_BDB_4) && defined(WITH_BDB_43)) || \
+	(defined(WITH_BDB_41) && defined(WITH_BDB_42)) || \
+	(defined(WITH_BDB_41) && defined(WITH_BDB_43)) || \
+	(defined(WITH_BDB_42) && defined(WITH_BDB_43))
 BROKEN=		"Multiple BDB versions selected.  Run 'make config' again!"
 .endif
 .if defined(WITH_BDB_3)
@@ -118,6 +136,9 @@ CONFIGURE_ARGS+=--with-bdb-incdir=${LOCALBASE}/include/db41 --with-bdb=db41
 .elif defined(WITH_BDB_42)
 LIB_DEPENDS+=	db-4.2.2:${PORTSDIR}/databases/db42
 CONFIGURE_ARGS+=--with-bdb-incdir=${LOCALBASE}/include/db42 --with-bdb=db-4.2
+.elif defined(WITH_BDB_43)
+LIB_DEPENDS+=	db-4.3.0:${PORTSDIR}/databases/db43
+CONFIGURE_ARGS+=--with-bdb-incdir=${LOCALBASE}/include/db43 --with-bdb=db-4.3
 .endif
 
 .if defined(WITH_NNTP)
