@@ -4,15 +4,16 @@
 # Date created:			  Tue Jan 28, 1997
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.13 1999/03/08 21:23:31 steve Exp $
+# $Id: Makefile,v 1.14 1999/03/09 09:11:47 asami Exp $
 #
 
-DISTNAME=	ddd-3.1.3
+DISTNAME=	ddd-3.1.4
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ips.cs.tu-bs.de/pub/local/softech/ddd/src/  \
 		ftp://uiarchive.cso.uiuc.edu/pub/packages/ddd/src/  \
 		ftp://ftp.gre.ac.uk/pub/tools/debuggers/ddd/src/  \
 		ftp://richb-pc.acc.qc.edu/pub/ddd/src/  \
+		ftp://ftp.gre.ac.uk/pub/tools/debuggers/ddd/src/  \
 		ftp://ftp.th-darmstadt.de/pub/programming/tools/ddd/src/
 
 MAINTAINER=     obrien@FreeBSD.org
@@ -20,6 +21,7 @@ MAINTAINER=     obrien@FreeBSD.org
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-motif-libraries=${MOTIFLIB}
 USE_GMAKE=	yes
 REQUIRES_MOTIF=	yes
 MAN1=		ddd.1
