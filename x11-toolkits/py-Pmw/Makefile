@@ -3,11 +3,11 @@
 # Date created:		03 June 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1998/06/05 06:50:32 tg Exp $
+# $Id: Makefile,v 1.2 1998/06/27 05:19:52 asami Exp $
 
 DISTNAME=	Pmw.0.7
 PKGNAME=	pmw-0.7
-CATEGORIES=	x11
+CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.dscpl.com.au/pub/pmw/
 
 MAINTAINER=	tg@FreeBSD.ORG

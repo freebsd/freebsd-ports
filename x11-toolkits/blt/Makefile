@@ -3,12 +3,12 @@
 # Date created:		9 July 1998
 # Whom:			Kenjiro Cho <kjc@csl.sony.co.jp>
 #
-# $Id: Makefile,v 1.16 1997/11/22 11:22:00 asami Exp $
+# $Id: Makefile,v 1.17 1998/07/12 17:40:31 kjc Exp $
 #
 
 DISTNAME=	BLT2.4c
 PKGNAME=	blt-2.4c
-CATEGORIES=	x11 tk80
+CATEGORIES=	x11-toolkits tk80
 MASTER_SITES=	ftp://ftp.tcltk.com/pub/blt/
 
 MAINTAINER=	kjc@csl.sony.co.jp

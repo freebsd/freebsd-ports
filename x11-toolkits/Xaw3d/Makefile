@@ -3,11 +3,11 @@
 # Date created:		18 November 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.15 1997/12/25 22:29:48 asami Exp $
+# $Id: Makefile,v 1.16 1997/12/29 13:29:24 asami Exp $
 #
 
 DISTNAME=	Xaw3d-1.3
-CATEGORIES=	x11
+CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	widgets/Xaw3d/R6.1
 

@@ -3,11 +3,11 @@
 # Date created:         8 Feb 1998
 # Whom:                 Donald Burr <dburr@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.5 1998/07/25 12:51:12 asami Exp $
+# $Id: Makefile,v 1.6 1998/08/05 09:31:48 asami Exp $
 #
 
 DISTNAME=	v-1.19
-CATEGORIES=	x11 devel graphics
+CATEGORIES=	x11-toolkits devel graphics
 MASTER_SITES=	ftp://objectcentral.com/
 
 MAINTAINER=	dburr@FreeBSD.ORG

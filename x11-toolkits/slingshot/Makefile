@@ -3,12 +3,12 @@
 # Date created:        5 March 1997
 # Whom:                Pedro Giffuni
 #
-# $Id: Makefile,v 1.2 1998/02/20 18:39:58 steve Exp $
+# $Id: Makefile,v 1.3 1998/08/05 09:31:48 asami Exp $
 #
 
 DISTNAME=	SlingShot2.1
 PKGNAME=	slingshot-2.1
-CATEGORIES=	x11
+CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.cdrom.com/pub/X11/R5contrib/
 EXTRACT_SUFX=	.tar.Z
 

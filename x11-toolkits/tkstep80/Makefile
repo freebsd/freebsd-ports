@@ -3,12 +3,12 @@
 # Date created:		06 November 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.9 1998/07/03 23:07:17 steve Exp $
+# $Id: Makefile,v 1.10 1998/07/27 21:36:08 hoek Exp $
 #
 
 DISTNAME=	tk8.0p2
 PKGNAME=	tkstep-8.0p2
-CATEGORIES=	x11 tk80
+CATEGORIES=	x11-toolkits tk80
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_0/
 
 PATCH_SITES=	http://rhein-zeitung.de/~ograf/files/ \

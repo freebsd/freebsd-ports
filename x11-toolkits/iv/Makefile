@@ -3,11 +3,11 @@
 # Date created:		23.sept.1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.14 1997/02/13 00:40:55 asami Exp $
+# $Id: Makefile,v 1.15 1997/03/02 14:47:31 asami Exp $
 #
 
 DISTNAME=	iv-3.1
-CATEGORIES=	x11
+CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://interviews.stanford.edu/pub/
 DISTFILES=	3.1.tar.Z
 
