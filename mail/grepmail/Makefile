@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	grepmail
-PORTVERSION=	4.60
+PORTVERSION=	4.70
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,10 +19,6 @@ RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Date/Parse.pm:${PORTSD
 PERL_CONFIGURE=	yes
 
 MAN1=		grepmail.1
-
-post-extract:
-	# we don't want to build the FastReader module
-	@${RM} -f ${WRKSRC}/FastReader/Makefile.PL
 
 post-patch:
 	@${PERL} -pi -e 's!<STDIN>!"n"!' ${WRKSRC}/Makefile.PL
