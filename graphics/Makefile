@@ -20,6 +20,7 @@
     SUBDIR += dia
     SUBDIR += diacanvas
     SUBDIR += dore
+    SUBDIR += ecg2png
     SUBDIR += electriceyes
     SUBDIR += enfle
     SUBDIR += eog
