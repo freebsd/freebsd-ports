@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://developer.linuxtag.net/knoppix/sources/
 DISTNAME=	cloop_${PORTVERSION}-1
 
-MAINTAINER=	fjoe@freebsd.org
+MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Compressed loop FS utils
 
 WRKSRC=		${WRKDIR}/cloop-${PORTVERSION}
