@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.148 1997/08/19 07:10:14 fenner Exp $
+# $Id: Makefile,v 1.149 1997/08/20 20:03:17 jkh Exp $
 #
 
     SUBDIR += FWF
@@ -91,5 +91,6 @@
     SUBDIR += xview-clients
     SUBDIR += xview-config
     SUBDIR += xview-lib
+    SUBDIR += xzoom
 
 .include <bsd.port.subdir.mk>
