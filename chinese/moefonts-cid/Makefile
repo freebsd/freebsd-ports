@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/moefonts-cid/ \
 DISTFILES=	MOEKai-Regular MOESung-Regular ac14.tar.Z
 
 MAINTAINER=	keith@FreeBSD.org
+COMMENT=	MOE CIDFonts converted by Adobe
 
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
 

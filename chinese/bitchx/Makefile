@@ -10,6 +10,7 @@ PORTREVISION=	3
 CATEGORIES=	chinese irc
 
 MAINTAINER=	clive@FreeBSD.org
+COMMENT=	A zh-tw cursor movement friendly, wrapping clean BitchX
 
 MASTERDIR=	${.CURDIR}/../../irc/bitchx
 EXTRA_PATCHES=	${.CURDIR}/files/patch-source::input.c \

@@ -9,6 +9,7 @@
 CATEGORIES=     chinese www
 
 MAINTAINER=     eric@fractal.csie.org
+COMMENT=	Links WWW browser with Chinese language support
 
 MASTERDIR=	${.CURDIR}/../../www/links
 EXTRA_PATCHES=	${.CURDIR}/files/patch-codepage.inc \

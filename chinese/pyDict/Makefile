@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/
 DISTNAME=	pyDict-0.2.5.1
 
 MAINTAINER=	keith@FreeBSD.org
+COMMENT=	A Chinese <-> English dictionary, under both console and X11
 
 RUN_DEPENDS=	${LOCALBASE}/include/pygtk/pygtk.h:${PORTSDIR}/x11-toolkits/py-gtk \
 		${X11BASE}/lib/X11/fonts/TrueType/bsmi00lp.ttf:${PORTSDIR}/chinese/arphicttf

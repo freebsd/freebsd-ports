@@ -12,6 +12,7 @@ CATEGORIES=	chinese print
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/ttfm/
 
 MAINTAINER=	keith@FreeBSD.org
+COMMENT=	A Big5/GB enhanced TrueType Font Manager
 
 .include <bsd.port.pre.mk>
 .if ${XFREE86_VERSION} == 4

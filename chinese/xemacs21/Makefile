@@ -8,8 +8,8 @@
 CATEGORIES=	chinese editors
 
 MAINTAINER=	keith@FreeBSD.org
+COMMENT=	XEmacs text editor version 21, with XIM support and Big5 settings
 
-COMMENTFILE=	${.CURDIR}/pkg-comment
 PLIST=		${.CURDIR}/pkg-plist
 PKGMESSAGE=	${.CURDIR}/pkg-message
 

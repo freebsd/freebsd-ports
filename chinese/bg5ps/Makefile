@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/
 DISTNAME=	bg5ps-1.3.0
 
 MAINTAINER=	keith@FreeBSD.org
+COMMENT=	Convert Chinese-Big5/GB encoded files to Postscript, using TTF fonts
 
 USE_FREETYPE=	yes
 USE_PYTHON=	yes

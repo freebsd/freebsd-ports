@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/c-utils/  \
 		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/c-utils/
 
 MAINTAINER=	obrien@FreeBSD.org
+COMMENT=	Convert between Gregorian Solar Calendar (SC) and Lunar Calendar (LC)
 
 ALL_TARGET=
 MAN1=		lunar.1

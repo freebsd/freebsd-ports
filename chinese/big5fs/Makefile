@@ -11,6 +11,7 @@ CATEGORIES=		chinese
 MASTER_SITES=		ftp://freebsd.csie.ntu.edu.tw/pub/users/rafan/
 
 MAINTAINER=		keith@FreeBSD.org
+COMMENT=		Reads Big5 filenames on Joliet, VFAT and NTFS filesystems
 
 NO_PACKAGE=		"Different versions definitely cause crash"
 
