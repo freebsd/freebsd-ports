@@ -24,13 +24,7 @@ MANCOMPRESSED=	yes
 GNU_CONFIGURE=	yes
 IS_INTERACTIVE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
 pre-install:
 	${CAT} ${MASTERDIR}/pkg-plist | ${SED} -e "s,/usr/local,${LOCALBASE},g" > ${PLIST}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
