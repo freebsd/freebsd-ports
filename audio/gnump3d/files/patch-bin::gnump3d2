@@ -20,7 +20,7 @@
 -  $theme_dir     = getConfig( "theme_directory", "/usr/share/gnump3d" );
 -  $plugin_dir    = getConfig( "plugin_directory",  "/usr/lib/perl5/gnump3d/plugins" );
 +  $theme_dir     = getConfig( "theme_directory", "%%PREFIX%%/share/gnump3d" );
-+  $plugin_dir    = getConfig( "plugin_directory",  "%%PERL_SITELIBDIR%%/gnump3d/plugins" );
++  $plugin_dir    = getConfig( "plugin_directory",  "%%SITE_PERL%%/gnump3d/plugins" );
    $always_stream = getConfig( "always_stream", 1 );
    $access_log    = getConfig( "logfile", "/var/log/gnump3d/access.log" );
    $error_log     = getConfig( "errorlog", "/var/log/gnump3d/error.log" );
