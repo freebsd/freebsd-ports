@@ -50,6 +50,11 @@ LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
 CPPFLAGS+=	-I${LOCALBASE}/include/sasl
 .endif
 
+.if defined(WITH_ODBC)
+LIB_DEPENDS+=	iodbc.2:${PORTSDIR}/databases/libiodbc
+CONFIGURE_ARGS+=--enable-sql
+.endif
+
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 
