@@ -4,11 +4,10 @@
 # Set up the work area and run setiathome to login or register
 #
 
-DBDIR=/var/db/setiathome
-RCD=${PKG_PREFIX}/etc/rc.d/setiathome.sh
+seti_rcdir=${PKG_PREFIX}/etc/rc.d	# startup directory
+seti_script=setiathome.sh		# startup script
 seti_wrkdir=/var/db/setiathome		# working directory
-seti_user=nobody					# user id to run under
-seti_nice=1							# nice level to run at
+seti_user=nobody			# user id to run under
 seti_maxprocs=`sysctl -n hw.ncpu`	# max. number of processes to start
 
 if [ -f ${PKG_PREFIX}/etc/setiathome.conf ]; then
@@ -24,7 +23,7 @@ case $2 in
 		echo "****  setihome requires a working directory for temporary files and"
 		echo "      a brief registration process."
 		echo
-		echo "      Would you like to set up a working directory in ${DBDIR},"
+		echo "      Would you like to set up a working directory in ${seti_wrkdir},"
 		if [ ${seti_maxprocs} -gt 1 ]; then
 			if [ `sysctl -n hw.ncpu` -eq ${seti_maxprocs} ]; then
 				echo "      register with SETI@home, and let me arrange for ${seti_maxprocs} setiathome"
@@ -44,18 +43,18 @@ case $2 in
 		if [ "X$a" = "XN" -o "X$a" = "Xn" ]; then
 			echo ""
 			echo "Please set up the working directory yourself.  You can use"
-			echo "${RCD} register"
+			echo "${seti_rcdir}/${seti_script} register"
 			echo "to do so. See setiathome(1) for details."
 			exit 0
 		fi
 
-		${RCD} register
+		${seti_rcdir}/${seti_script} register
 
-		if [ ! -f ${DBDIR}/user_info.sah ]; then
+		if [ ! -f ${seti_wrkdir}/user_info.sah ]; then
 			echo "unable to start setiathome: it seems registration or login failed."
 			exit 0
 		fi
-		${RCD} start >/dev/null
+		${seti_rcdir}/{seti_script} start >/dev/null
 		echo
 		echo "****  Congratulations!  Your system now participates in the search for extra-"
 		echo "      terrestrial intelligence.  Be sure to visit the home page at"
