@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ "$2" = "POST-INSTALL" -o -n "${PACKAGE_BUILDING}" ]; then
+  exit 0
+fi
+
+/usr/bin/dialog --yesno "SECURITY NOTE: This software contains known locally-exploitable buffer overflows. However since the binaries in question are setgid to the games group, the impact of this vulnerability is believed to be limited to the ability for local users to overwrite score files, saved games, and certain other game data for this and other installed game packages. The wider system security is not believed to be compromised by this problem. Do you wish to install the software anyway?" 12 70 || /usr/bin/false
+
+
