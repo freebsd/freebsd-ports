@@ -2021,6 +2021,7 @@ gdeskcal	ports/deskutils/gdeskcal
 gdeskcal-skins	ports/deskutils/gdeskcal-skins
 gdesklets	ports/deskutils/gdesklets
 gdesklets-clock	ports/x11-clocks/gdesklets-clock
+gdesklets-goodweather	ports/astro/gdesklets-goodweather
 gdesklets-recentlyused	ports/deskutils/gdesklets-recentlyused
 gdesklets-starterbar	ports/deskutils/gdesklets-starterbar
 gdict		ports/textproc/gdict
