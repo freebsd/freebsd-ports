@@ -20,6 +20,8 @@ post-install:
 	${FIND} ${PREFIX}/man/cat* -type l -name '*.0' -delete
 	${FIND} ${PREFIX}/man/fr/cat* -type l -name '*.0' -delete
 
+MANLANG=	"" fr
+
 .include "${.CURDIR}/../../print/cups/Makefile.common"
 .include <bsd.port.pre.mk>
 .include "${FILESDIR}/manpages.mk"

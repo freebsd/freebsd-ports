@@ -33,6 +33,8 @@ post-install:
 	if test ! -f ${f}.N; then cp -p ${f} ${f}.N; else true; fi
 .endfor # classes.conf client.conf cupsd.conf printers.conf
 
+MANLANG=	"" fr
+
 .include "${.CURDIR}/../../print/cups/Makefile.common"
 .include <bsd.port.pre.mk>
 .include "${FILESDIR}/manpages.mk"
