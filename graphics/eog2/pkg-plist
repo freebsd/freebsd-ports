@@ -154,12 +154,6 @@ share/locale/zh_TW/LC_MESSAGES/eog.mo
 @dirrm share/gnome/help/eog/C/figures
 @dirrm share/gnome/eog/glade
 @dirrm share/gnome/eog
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/eog/window
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/eog/view
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/eog
-@dirrm etc/gconf/gconf.xml.defaults/apps/eog/window
-@dirrm etc/gconf/gconf.xml.defaults/apps/eog/view
-@dirrm etc/gconf/gconf.xml.defaults/apps/eog
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/eog/eog-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/eog/eog-de.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/eog/eog-es.omf 2>/dev/null || /usr/bin/true
