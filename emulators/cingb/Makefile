@@ -6,21 +6,52 @@
 #
 
 PORTNAME=	cingb
-PORTVERSION=	0.22A
+PORTVERSION=	0.28
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	yet another Nintendo GameBoy(tm) emulator
+COMMENT=	Yet another Nintendo GameBoy(tm) emulator
 
-WRKSRC=		${WRKDIR}/cingb
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
-GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
+MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 ALL_TARGET=	standard
 
-do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/cingb ${PREFIX}/bin
+CPPFLAGS=	${PTHREAD_CFLAGS}
+LDFLAGS=	${PTHREAD_LIBS}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "sparc64" && ${ARCH} != "powerpc"
+CPPFLAGS+=	-DUSE_LITTLE_ENDIAN
+.endif
+
+do-configure:
+	cd ${WRKSRC} && ${SED} -e \
+		's|gcc|$${CC}|g ; \
+		 s|/usr/X11R6|$${X11BASE}|g ; \
+		 s|-O6|$${CFLAGS}|g ; \
+		 s|%%%endian%%%|$${CPPFLAGS}|g ; \
+		 s|%%%pthread%%%|$${LDFLAGS}|g ; \
+		 s|%%%libext%%%|-lXext|g ; \
+		 s|%%%libsocket%%%||g ; \
+		 s|%%%libnsl%%%||g ; \
+		 s|%%%joystick%%%|-DBSD_JOYSTICK|g ; \
+		 s|%%%framebuffer%%%||g ; \
+		 s|%%%mitshm%%%|-DMIT_SHM|g ; \
+		 s|%%%sound%%%|-DSOUND|g ; \
+		 s|%%%joyconf%%%|conf|g' < Makefile.templ > Makefile
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/cingb ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/cingb_conf ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.FAQ ${DOCSDIR}
+.endif
+
+.include <bsd.port.post.mk>

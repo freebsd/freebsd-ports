@@ -1,1 +1,5 @@
 bin/cingb
+bin/cingb_conf
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.FAQ
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
