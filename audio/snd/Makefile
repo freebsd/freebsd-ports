@@ -15,12 +15,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=		trevor@FreeBSD.org
 
-BROKEN=			"Does not build"
-
 LIB_DEPENDS=		gsl.0:${PORTSDIR}/math/gsl \
 			intl.2:${PORTSDIR}/devel/gettext
 
-.if defined(WITHOUT_ESD)
+.if !defined(WITHOUT_ESD)
 RUN_DEPENDS=		esd:${PORTSDIR}/audio/esound
 .endif
 .if !defined(WITHOUT_RUBY)
