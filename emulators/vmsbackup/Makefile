@@ -8,7 +8,8 @@
 DISTNAME=	vmsbackup
 PKGNAME=	vmsbackup-3.0
 MASTER_SITES=	ftp://ftp.cs.uni-sb.de/pub/utils/
-MASTER_SITES+=	ftp://ftp.uni-passau.de/pub/unix/system/backup/
+# slightly different version
+# MASTER_SITES+=	ftp://ftp.uni-passau.de/pub/unix/system/backup/
 CATEGORIES+=	utilities
 EXTRACT_SUFX=	.tar.Z
 
