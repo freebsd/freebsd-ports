@@ -5,7 +5,7 @@
  
  XCOMM Sometimes you need -lXp after -lXm
 -          XMLIB = -lXm
-+          XMLIB = ${MOTIFLIB} -lXm
++          XMLIB = ${MOTIFLIB}
          DEPLIBS = $(DEPXMLIB) $(DEPXTOOLLIB) $(DEPXLIB)
   EXTRA_INCLUDES = -I../../libastro
    LOCAL_LDFLAGS = -L../../libastro

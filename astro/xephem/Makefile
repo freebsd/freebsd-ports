@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	xephem
-PORTVERSION=	3.2.3
+PORTVERSION=	3.4
 CATEGORIES=	astro
-MASTER_SITES=	http://www.clearskyinstitute.com/xephem/xephem/ \
+MASTER_SITES=	http://www.clearskyinstitute.com/xephem/ \
 		ftp://iraf.noao.edu/contrib/xephem/ \
 		ftp://wolf.ifj.edu.pl/mirror/xephem/
 
@@ -17,61 +17,24 @@ MAINTAINER=	ports@FreeBSD.org
 WRKSRC=		${WRKDIR}/${DISTNAME}/GUI/xephem
 
 USE_MOTIF=	yes
-USE_XPM=	yes
 USE_IMAKE=	yes
 MAN1=		xephem.1
 
 LIBSRC=		${WRKDIR}/${DISTNAME}/libastro
 
-AUXIL=		README jupiter.9910 logo.gif mars.9910 mars_db marsmap.fts \
-		moon.fts moon_db saturne.9910 uranus.9910 xephem.hlp \
-		xephem_sites
-
-CATALOGS=	ISS.edb Messier.edb NGC.edb README SAC.edb \
-		YBS.edb asteroids.edb comets.edb hickson.edb
-
-TOOLS=		README extract.awk astorb2edb.pl jost2edb.awk mpcorb2edb.pl \
-		tle2edb.pl
-
-GSC=		Makefile README gscload.c support.c
-
-XEPHEMDBD=	INSTALL Makefile README cgi-lib.pl db.c fsfetch.c request.c \
-		stubs.c xephemdbd.c xephemdbd.html xephemdbd.pl
-
 pre-configure:
-	@(cd ${LIBSRC} && ${XMKMF})
+	@(cd ${LIBSRC} && ${SETENV} ${MAKE_ENV} ${XMKMF})
 
 pre-build:
-	@(cd ${LIBSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET})
-	${SED} -e "s^@PREFIX@^${PREFIX}^" ${WRKSRC}/XEphem.ad > ${WRKSRC}/XEphem.ad.new
+	@(cd ${LIBSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET})
+	@${ECHO} 'XEphem.ShareDir: ${PREFIX}/lib/X11/xephem' > ${WRKSRC}/XEphem.ad
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/XEphem.ad.new ${PREFIX}/lib/X11/app-defaults/XEphem
-	${MKDIR} ${PREFIX}/lib/X11/xephem
-
-	${MKDIR} ${PREFIX}/lib/X11/xephem/auxil
-.for file in ${AUXIL}
-	${INSTALL_DATA} ${WRKSRC}/auxil/${file} ${PREFIX}/lib/X11/xephem/auxil/${file}
-.endfor
-
-	${MKDIR} ${PREFIX}/lib/X11/xephem/catalogs
-.for file in ${CATALOGS}
-	${INSTALL_DATA} ${WRKSRC}/catalogs/${file} ${PREFIX}/lib/X11/xephem/catalogs/${file}
-.endfor
-
-	${MKDIR} ${PREFIX}/lib/X11/xephem/tools
-.for file in ${TOOLS}
-	${INSTALL_DATA} ${WRKSRC}/tools/${file} ${PREFIX}/lib/X11/xephem/tools/${file}
-.endfor
-
-	${MKDIR} ${PREFIX}/lib/X11/xephem/tools/gsc
-.for file in ${GSC}
-	${INSTALL_DATA} ${WRKSRC}/tools/gsc/${file} ${PREFIX}/lib/X11/xephem/tools/gsc/${file}
-.endfor
-
-	${MKDIR} ${PREFIX}/lib/X11/xephem/tools/xephemdbd
-.for file in ${XEPHEMDBD}
-	${INSTALL_DATA} ${WRKSRC}/tools/xephemdbd/${file} ${PREFIX}/lib/X11/xephem/tools/xephemdbd/${file}
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/XEphem.ad ${PREFIX}/lib/X11/app-defaults/XEphem
+	@${MKDIR} ${PREFIX}/lib/X11/xephem
+	${TAR} -C ${WRKSRC} -cf - auxil catalogs fits fifos tools \
+		| ${TAR} -C ${PREFIX}/lib/X11/xephem --unlink -xf -
+	@find ${PREFIX}/lib/X11/xephem | xargs ${CHOWN} ${SHAREOWN}:${SHAREMODE}
+	@find ${PREFIX}/lib/X11/xephem -type f | xargs ${CHMOD} ${SHAREMODE}
 
 .include <bsd.port.mk>
