@@ -1,0 +1,13 @@
+Index: imap/lmtpengine.h
+diff -u imap/lmtpengine.h.orig imap/lmtpengine.h
+--- imap/lmtpengine.h.orig	Sun Feb 10 10:53:58 2002
++++ imap/lmtpengine.h	Thu Feb 21 14:16:52 2002
+@@ -44,7 +44,7 @@
+ #define LMTPENGINE_H
+ 
+ /* configuration parameters */
+-#define DEFAULT_SENDMAIL ("/usr/lib/sendmail")
++#define DEFAULT_SENDMAIL ("/usr/sbin/sendmail")
+ #define DEFAULT_POSTMASTER ("postmaster")
+ 
+ #define SENDMAIL (config_getstring("sendmail", DEFAULT_SENDMAIL))
