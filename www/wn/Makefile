@@ -3,7 +3,7 @@
 # Date created:         4 May 1995
 # Whom:                 adam
 #
-# $Id: Makefile,v 1.28 1998/12/02 09:48:36 obrien Exp $
+# $Id: Makefile,v 1.29 1999/08/22 23:33:35 mharo Exp $
 #
 
 DISTNAME=       wn-1.18.6
@@ -31,7 +31,7 @@ post-install:
 	@install -c -o bin -g bin  ${WRKSRC}/bin/authwn ${PREFIX}/wn/bin
 	@if [ -s ${PREFIX}/etc/wn_mime.types ]; then \
 	    cmp -s ${PREFIX}/etc/wn_mime.types ${WRKSRC}/lib/mime.types || { \
-		echo Warning: new mime.types installed as ${PREFIX}/etc/wn_mime.types-dist; \
+		${ECHO_MSG} Warning: new mime.types installed as ${PREFIX}/etc/wn_mime.types-dist; \
 		install -c -o bin -g bin -m 644 ${WRKSRC}/lib/mime.types \
 					${PREFIX}/etc/wn_mime.types-dist; } \
 	else \
@@ -40,7 +40,7 @@ post-install:
 	fi
 	@if [ -s ${PREFIX}/wn/index ]; then \
 	    cmp -s ${PREFIX}/wn/index ${WRKDIR}/index || { \
-		echo Warning: new index installed as ${PREFIX}/wn/index-dist; \
+		${ECHO_MSG} Warning: new index installed as ${PREFIX}/wn/index-dist; \
 		install -c -o bin -g bin -m 644 ${WRKDIR}/index ${PREFIX}/wn/index-dist; } \
 	else \
 	    install -c -o bin -g bin -m 644 ${WRKDIR}/index ${PREFIX}/wn; \

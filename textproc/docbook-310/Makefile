@@ -5,7 +5,7 @@
 #
 # Based heavily on work by jfieber
 #
-# $Id: Makefile,v 1.4 1999/05/05 17:40:24 nik Exp $
+# $Id: Makefile,v 1.5 1999/08/22 19:00:11 mharo Exp $
 #
 
 DISTNAME=	docbk31
@@ -32,7 +32,7 @@ pre-install:
 do-install:
 	@unzip -a -q -o ${DISTDIR}/${DISTFILES} -d ${INSTDIR}/3.1
 	@${INSTALL_DATA} ${FILESDIR}/catalog ${INSTDIR}/3.1/catalog
-	@echo "CATALOG \"${ISOCAT}\"" >> ${INSTDIR}/3.1/catalog
+	@${ECHO} "CATALOG \"${ISOCAT}\"" >> ${INSTDIR}/3.1/catalog
 	@${CHMOD} ${SHAREMODE} ${INSTDIR}/3.1/*
 	@${CHOWN} -R ${SHAREOWN}.${SHAREGRP} ${INSTDIR}
 

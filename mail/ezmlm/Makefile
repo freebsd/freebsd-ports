@@ -50,7 +50,7 @@ post-patch:
 pre-install:
 	@${ECHO} ${PREFIX} > ${WRKDIR}/.IPREFIX
 	@${ECHO} ${QMAIL_DIR} >> ${WRKDIR}/.IPREFIX
-	@diff ${WRKDIR}/.[PI]PREFIX || (echo ${DIFF_MSG} && exit 1)
+	@diff ${WRKDIR}/.[PI]PREFIX || (${ECHO} ${DIFF_MSG} && exit 1)
 
 do-install:
 .for file in ${MY_PROGRAMS}

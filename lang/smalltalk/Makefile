@@ -26,29 +26,29 @@ NO_PACKAGE=	"Installation requires interaction"
 CFLAGS+=	-I${X11BASE}/include
 
 do-install:
-	@echo "Installing method definitions..."
+	@${ECHO_MSG} "Installing method definitions..."
 	@ if [ ! -d ${PREFIX}/lib/smalltalk ]; then ${MKDIR} ${PREFIX}/lib/smalltalk; fi
 	@(cd ${WRKSRC}; ${CP} *.st ${PREFIX}/lib/smalltalk)
 	@(cd ${PREFIX}/lib/smalltalk ; ${CHMOD} +r *.st)
-	@echo
-	@echo "To complete the installation of GNU Smalltalk, do"
-	@echo "	cd ${WRKSRC};"
-	@echo "./gst -iV"
-	@echo "to test the interpreter and create the image."
-	@echo
-	@echo "When you are satisfied everything works, do Control-D to quit"
-	@echo "followed by"
-	@echo "cp gst ${PREFIX}/bin"
-	@echo "cp gst.im ${PREFIX}/lib/smalltalk"
-	@echo "to install the interpreter and image."
-	@echo
-	@echo "If Emacs is installed, you may also wish to copy the"
-	@echo "*st.el files to the Emacs Lisp directory. This will enable you"
-	@echo "to configure Emacs for Interactor mode."
-	@echo
-	@echo ">>Please read the file"
-	@echo "${WRKSRC}/info/gst.txi"
-	@echo "for more information.<<"
-	@echo
+	@${ECHO_MSG}
+	@${ECHO_MSG} "To complete the installation of GNU Smalltalk, do"
+	@${ECHO_MSG} "	cd ${WRKSRC};"
+	@${ECHO_MSG} "./gst -iV"
+	@${ECHO_MSG} "to test the interpreter and create the image."
+	@${ECHO_MSG}
+	@${ECHO_MSG} "When you are satisfied everything works, do Control-D to quit"
+	@${ECHO_MSG} "followed by"
+	@${ECHO_MSG} "cp gst ${PREFIX}/bin"
+	@${ECHO_MSG} "cp gst.im ${PREFIX}/lib/smalltalk"
+	@${ECHO_MSG} "to install the interpreter and image."
+	@${ECHO_MSG}
+	@${ECHO_MSG} "If Emacs is installed, you may also wish to copy the"
+	@${ECHO_MSG} "*st.el files to the Emacs Lisp directory. This will enable you"
+	@${ECHO_MSG} "to configure Emacs for Interactor mode."
+	@${ECHO_MSG}
+	@${ECHO_MSG} ">>Please read the file"
+	@${ECHO_MSG} "${WRKSRC}/info/gst.txi"
+	@${ECHO_MSG} "for more information.<<"
+	@${ECHO_MSG}
 
 .include <bsd.port.mk>

@@ -37,7 +37,7 @@ MAN1=		${F77NAME}.1
 PLIST=		${WRKDIR}/PLIST
 
 do-install:
-	@echo 'bin/${F77NAME}' > ${PLIST}
+	@${ECHO} 'bin/${F77NAME}' > ${PLIST}
 	${INSTALL_PROGRAM} ${WRKSRC}/f77 ${PREFIX}/bin/${F77NAME}
 	@${SED} -e 's/F77/${F77NAME}/g' -e 's/f77/${F77NAME}/g' \
 	${WRKSRC}/f77.1  > ${WRKSRC}/${F77NAME}.1

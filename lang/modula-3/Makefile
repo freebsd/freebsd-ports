@@ -37,19 +37,19 @@ temp_prefix=	${WRKSRC}/installed
 PLIST=		${WRKDIR}/PLIST.noX11
 .else
 pre-fetch:
-	@echo "To build this port without X11, define \"NO_X11\"."
+	@${ECHO_MSG} "To build this port without X11, define \"NO_X11\"."
 
 PLIST=		${WRKDIR}/PLIST
 MAN1+=		formsedit.1 replayheap.1 showheap.1 shownew.1 showthread.1
 .endif
 
 do-install:
-	@echo "Deleting extraneous cruft"
+	@${ECHO_MSG} "Deleting extraneous cruft"
 	@cd ${temp_prefix}/lib/m3/pkg; \
 	    rm -rf m3 m3front m3middle m3linker
 	@cd ${temp_prefix}/lib/m3/FreeBSD2; \
 	    rm -f libm3front.so.*.* libm3link.so.*.* libm3middle.so.*.*
-	@echo "Installing files in \"${PREFIX}\""
+	@${ECHO_MSG} "Installing files in \"${PREFIX}\""
 	@cd ${temp_prefix}; \
 	    umask 022; \
 	    sed -e "/^@/d" -e "/m3build-/d" -e "s/\.gz$$//" \
@@ -59,9 +59,9 @@ do-install:
 	    umask 022; \
 	    ${ECHO} ${MAN1} | perl -pe 's/ /\n/g' | \
 		cpio -dump -R ${MANOWN}.${MANGRP} ${PREFIX}/man/man1
-	@echo "Fixing absolute pathnames in installed files"
+	@${ECHO_MSG} "Fixing absolute pathnames in installed files"
 	@${SH} ${SCRIPTDIR}/fix_pathnames ${temp_prefix} ${PREFIX}
-	@echo "Rebuilding and shipping m3build with correct pathnames"
+	@${ECHO_MSG} "Rebuilding and shipping m3build with correct pathnames"
 	@cd ${WRKSRC}/m3/m3build; \
 	    LD_LIBRARY_PATH=${PREFIX}/lib/m3/FreeBSD2:$$LD_LIBRARY_PATH; \
 	    PATH=${PREFIX}/bin:$$PATH; \
@@ -75,7 +75,7 @@ do-install:
 		${PREFIX}/lib/m3/pkg/m3build/templates/FreeBSD2 \
 		${WRKSRC}/m3/m3build/src/m3makefile; \
 	    ./m3ship
-	@echo "Rebuilding and shipping m3configvars with correct pathnames"
+	@${ECHO_MSG} "Rebuilding and shipping m3configvars with correct pathnames"
 	@cd ${WRKSRC}/m3/m3configvars; \
 	    LD_LIBRARY_PATH=${PREFIX}/lib/m3/FreeBSD2:$$LD_LIBRARY_PATH; \
 	    export LD_LIBRARY_PATH; \
@@ -85,20 +85,20 @@ do-install:
 	    rm -rf FreeBSD2; \
 	    m3build; \
 	    m3ship
-	@echo "Installing copyright notice"
+	@${ECHO_MSG} "Installing copyright notice"
 	@if [ ! -d ${PREFIX}/share/modula-3 ]; then \
 	    ${MKDIR} ${PREFIX}/share/modula-3; \
 	    ${CHMOD} 755 ${PREFIX}/share/modula-3; \
 	fi
 	@${INSTALL_DATA} ${WRKSRC}/m3/src/COPYRIGHT ${PREFIX}/share/modula-3
-	@echo "Stripping executables"
+	@${ECHO_MSG} "Stripping executables"
 	@cd ${temp_prefix}; \
 	    find bin -type f ! -name recordheap |\
 		(cd ${PREFIX}; xargs ${SH} ${SCRIPTDIR}/maybe-strip)
 	@cd ${PREFIX}/lib/m3/FreeBSD2; strip m3 m3cgc1 m3mkdir
 	@cd ${PREFIX}/bin; \
 	    ln -f m3build m3build-${major}
-	@echo "Fixing file permissions"
+	@${ECHO_MSG} "Fixing file permissions"
 	@cd ${PREFIX}; \
 	    sed -e "/^@/d" -e "s/\.gz$$//" ${PLIST}.real |\
 		xargs ${CHOWN} ${BINOWN}.${BINGRP}; \
@@ -106,7 +106,7 @@ do-install:
 		xargs ${CHMOD} go=u-w; \
 	    find -X lib/m3 -type d | xargs ${CHOWN} ${BINOWN}.${BINGRP}; \
 	    find -X lib/m3 -type d | xargs ${CHMOD} 755
-	@echo "Running ldconfig"
+	@${ECHO_MSG} "Running ldconfig"
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib/m3/FreeBSD2
 
 .include <bsd.port.mk>

@@ -27,11 +27,11 @@ do-build:
 
 pre-extract:
 .if !defined(TET_ROOT)
-	@echo
-	@echo "The environment variable \"TET_ROOT\" is not set."
-	@echo "You must set it to the directory where you would like "
-	@echo "this port to reside before attempting extraction."
-	@echo
+	@${ECHO_MSG}
+	@${ECHO_MSG} "The environment variable \"TET_ROOT\" is not set."
+	@${ECHO_MSG} "You must set it to the directory where you would like "
+	@${ECHO_MSG} "this port to reside before attempting extraction."
+	@${ECHO_MSG}
 	@${FALSE}
 .else
 	@${TRUE}

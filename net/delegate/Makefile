@@ -3,7 +3,7 @@
 # Date created:			26 Jan 1997
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.15 1999/04/18 06:31:27 max Exp $
+# $Id: Makefile,v 1.16 1999/08/02 21:02:25 max Exp $
 #
 
 DISTNAME=	delegate5.9.3
@@ -17,7 +17,7 @@ MAKE_ENV=	PATH=$${PATH}:.
 
 .if defined(BATCH)
 pre-build:
-	@echo "MANAGER=root@localhost" >> ${WRKSRC}/DELEGATE_CONF
+	@${ECHO} "MANAGER=root@localhost" >> ${WRKSRC}/DELEGATE_CONF
 .endif
 
 do-install:

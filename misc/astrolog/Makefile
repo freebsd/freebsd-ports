@@ -47,8 +47,8 @@ do-install:
 		${INSTALL_DATA} Update.540 ${PREFIX}/share/doc/astrolog
 	cd ${WRKSRC} && \
 		${INSTALL_DATA} README.540 ${PREFIX}/share/doc/astrolog
-	@echo
-	@echo "See the file ${PREFIX}/share/doc/astrolog/Helpfile.540 for help"
-	@echo "and tune ${PREFIX}/lib/astrolog/astrolog.dat"
+	@${ECHO_MSG}
+	@${ECHO_MSG} "See the file ${PREFIX}/share/doc/astrolog/Helpfile.540 for help"
+	@${ECHO_MSG} "and tune ${PREFIX}/lib/astrolog/astrolog.dat"
 
 .include <bsd.port.mk>

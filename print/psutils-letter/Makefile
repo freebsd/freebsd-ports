@@ -3,7 +3,7 @@
 # Date created:         21 September 1994
 # Whom:                 jmz & David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.17 1998/10/30 08:35:38 asami Exp $
+# $Id: Makefile,v 1.18 1998/11/20 04:15:15 asami Exp $
 #
 
 DISTNAME=	psutils-p17
@@ -41,11 +41,11 @@ PAPERSIZE_UNSPECIFIED=	yes
 
 pre-fetch:
 .if defined(PAPERSIZE_UNSPECIFIED)
-	@echo "Defaulting to ${PAPERSIZE} sized paper."
-	@echo ""
-	@echo "Set the environment variable PAPERSIZE if you want to use other sizes."
-	@echo "Possible values are:  A3, A4, A5, B5, letter, legal,"
-	@echo "   ledger, tabloid, statement, executive, folio, quarto, and 10x14."
+	@${ECHO_MSG} "Defaulting to ${PAPERSIZE} sized paper."
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Set the environment variable PAPERSIZE if you want to use other sizes."
+	@${ECHO_MSG} "Possible values are:  A3, A4, A5, B5, letter, legal,"
+	@${ECHO_MSG} "   ledger, tabloid, statement, executive, folio, quarto, and 10x14."
 .endif
 
 .include <bsd.port.mk>

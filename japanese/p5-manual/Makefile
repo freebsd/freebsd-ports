@@ -48,9 +48,9 @@ do-install:
 .include <bsd.port.mk>
 
 plist:
-	@echo -n >${PLIST}
+	@${ECHO} -n >${PLIST}
 .for item in 1 3
 .for file in ${CAT${item}}
-	@echo man/ja/cat${item}/${file}.gz >>${PLIST}
+	@${ECHO} man/ja/cat${item}/${file}.gz >>${PLIST}
 .endfor
 .endfor

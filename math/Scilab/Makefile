@@ -26,12 +26,6 @@ USE_X_PREFIX=	yes
 SCIDIR= ${X11BASE}/lib/X11/scilab
 
 post-install:
-	@echo "******************************************************************************"
-	@echo 0 - COPYRIGHT NOTICE
-	@echo
-	@echo To use Scilab, you need to fill and return the end of the file notice.tex
-	@echo "or notice.ps (postscript file). You may email to Scilab@inria.fr."
-	@echo
-	@echo "******************************************************************************"
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

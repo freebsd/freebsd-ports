@@ -3,7 +3,7 @@
 # Date created:		Mar 29, 1998
 # Whom:			issei@jp.FreeBSD.ORG
 #
-# $Id: Makefile,v 1.8 1999/08/05 08:00:18 dirk Exp $
+# $Id: Makefile,v 1.9 1999/08/23 04:23:52 mharo Exp $
 
 DISTNAME=		SSLtelnet-0.13
 CATEGORIES=		net security
@@ -13,10 +13,10 @@ MAINTAINER=		issei@jp.FreeBSD.ORG
 
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} != YES && ${USA_RESIDENT} != NO
 pre-fetch:
-	@echo
-	@echo You must set variable USA_RESIDENT to YES, if you are USA resident
-	@echo or to NO, if you aren\'t USA resident to build this package.
-	@echo You must also have installed RSAREF if you are USA resident.
+	@${ECHO_MSG}
+	@${ECHO_MSG} You must set variable USA_RESIDENT to YES, if you are USA resident
+	@${ECHO_MSG} or to NO, if you aren\'t USA resident to build this package.
+	@${ECHO_MSG} You must also have installed RSAREF if you are USA resident.
 	@${FALSE}
 .elif defined(USA_RESIDENT)
 .if ${USA_RESIDENT} == YES

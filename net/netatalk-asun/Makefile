@@ -3,7 +3,7 @@
 # Date created:         07 Sep 1998
 # Whom:                 stb@freebsd.org
 #
-# $Id: Makefile,v 1.7 1999/05/17 08:17:57 stb Exp $
+# $Id: Makefile,v 1.8 1999/06/21 12:43:07 sheldonh Exp $
 #
 
 DISTNAME=       netatalk-1.4b2+asun2.1.3
@@ -37,15 +37,15 @@ pre-build:
 ## sendfile(2) support seems to be broken in this version, but go ahead an try
 ## to fix it!
 .if defined(USE_SENDFILE) && ${OSVERSION} < 310000
-	@echo "***   sendfile(2) support is available only with FreeBSD 3.1-RELEASE"
-	@echo "      or newer.  This port probably won't compile."
+	@${ECHO_MSG} "***   sendfile(2) support is available only with FreeBSD 3.1-RELEASE"
+	@${ECHO_MSG} "      or newer.  This port probably won't compile."
 .endif
 .if ${OSVERSION} >= 310000
 .if defined(USE_SENDFILE)
-	@echo "***   sendfile(2) support is experimental and will likely cause"
-	@echo "      undesired behaviour!"
+	@${ECHO_MSG} "***   sendfile(2) support is experimental and will likely cause"
+	@${ECHO_MSG} "      undesired behaviour!"
 .else
-#	@echo "***   Use -DUSE_SENDFILE to enable the experimental sendfile(2) support."
+#	@${ECHO_MSG} "***   Use -DUSE_SENDFILE to enable the experimental sendfile(2) support."
 .endif
 .endif
 

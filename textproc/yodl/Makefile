@@ -3,7 +3,7 @@
 # Date created:         22 Oct 1997
 # Whom:                 Donald Burr <dburr@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/20 23:55:33 dburr Exp $
+# $Id: Makefile,v 1.2 1999/01/10 10:05:02 simokawa Exp $
 #
 
 DISTNAME=	yodl-1.22
@@ -35,7 +35,7 @@ do-build:
 # this weird contortion is because the YODL makefile is broken
 # trust me, it works.
 do-install:
-	@echo "*** NOTE: any errors from make can be safely ignored."
+	@${ECHO_MSG} "*** NOTE: any errors from make can be safely ignored."
 	(cd ${WRKSRC} && ${GMAKE} PREFIX=${PREFIX} install)
 	-(cd ${WRKSRC} && ${GMAKE} PREFIX=${PREFIX} manpages)
 	(cd ${WRKSRC}/manpages && ${GMAKE} PREFIX=${PREFIX} manpages)

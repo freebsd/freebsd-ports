@@ -3,7 +3,7 @@
 # Date created:		27 Oct 1998
 # Whom:			Abel Chow <achow@transoft.net>
 #
-# $Id: Makefile,v 1.8 1999/07/06 01:07:35 cpiazza Exp $
+# $Id: Makefile,v 1.9 1999/07/11 02:28:34 cpiazza Exp $
 #
 
 DISTNAME=	tidy7jul99
@@ -21,7 +21,7 @@ DOCFILES=	Overview.html tidy.gif release-notes.html grid.gif config.txt
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tidy ${PREFIX}/bin/tidy
 .if !defined(NOPORTDOCS)
-	@echo "===>   Installing documentation for ${PKGNAME}"
+	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
 	@${MKDIR} ${PREFIX}/share/doc/tidy
 .for docfile in ${DOCFILES}
 	@${INSTALL_DATA} ${WRKSRC}/${docfile} ${PREFIX}/share/doc/tidy

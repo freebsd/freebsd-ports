@@ -23,16 +23,16 @@ PLIST_SUB+=	VERSION=${VERSION}
 
 do-fetch:
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-	@echo ''
-	@echo 'You have to fetch the documentation from'
-	@echo '    http://java.sun.com/products/jdk/1.1/docs.html'
-	@echo ''
-	@echo 'Put ${DISTNAME}${EXTRACT_SUFX} in in ${DISTDIR}/ and run make again.'
-	@echo ''
-	@echo 'All this hassle is because of the license and export restrictions'
-	@echo 'as described in'
-	@echo '    http://java.sun.com/feedback/faq/downloading.html'
-	@echo ''
+	@${ECHO_MSG} ''
+	@${ECHO_MSG} 'You have to fetch the documentation from'
+	@${ECHO_MSG} '    http://java.sun.com/products/jdk/1.1/docs.html'
+	@${ECHO_MSG} ''
+	@${ECHO_MSG} 'Put ${DISTNAME}${EXTRACT_SUFX} in in ${DISTDIR}/ and run make again.'
+	@${ECHO_MSG} ''
+	@${ECHO_MSG} 'All this hassle is because of the license and export restrictions'
+	@${ECHO_MSG} 'as described in'
+	@${ECHO_MSG} '    http://java.sun.com/feedback/faq/downloading.html'
+	@${ECHO_MSG} ''
 	@${FALSE}
 .endif
 

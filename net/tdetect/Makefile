@@ -4,7 +4,7 @@
 # Date created:			  Sun Jan 31, 1997
 # Whom:               		  shipley@dis.org
 #
-# $Id: Makefile,v 1.2 1999/07/04 19:18:49 obrien Exp $
+# $Id: Makefile,v 1.3 1999/08/22 18:59:33 mharo Exp $
 #
 
 DISTNAME=	tdetect-0.2
@@ -27,7 +27,7 @@ post-install:
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/tdetect.sh startup file."; \
 		${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/tdetect.sh; \
 		${ECHO} "ETHERNETDEV=ed0" >> ${PREFIX}/etc/rc.d/tdetect.sh; \
-		${ECHO} '[ -x ${PREFIX}/sbin/tdetect ] && ${PREFIX}/sbin/tdetect \$ETHERNETDEV && echo -n " tdetect"' >> ${PREFIX}/etc/rc.d/tdetect.sh; \
+		${ECHO} '[ -x ${PREFIX}/sbin/tdetect ] && ${PREFIX}/sbin/tdetect \$ETHERNETDEV && ${ECHO} -n " tdetect"' >> ${PREFIX}/etc/rc.d/tdetect.sh; \
 		${CHMOD} 750 ${PREFIX}/etc/rc.d/tdetect.sh; \
 		${ECHO} ''; \
 		${ECHO} 'IMPORTANT edit ${PREFIX}/etc/rc.d/tdetect.sh and set "ETHERNETDEV" to'; \

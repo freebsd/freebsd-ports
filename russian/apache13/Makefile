@@ -3,7 +3,7 @@
 # Date created:         Sat Apr 10 22:30:36 EEST 1999
 # Whom:                 vns@delta.odessa.ua
 #
-# $Id: Makefile,v 1.3 1999/08/22 18:59:51 mharo Exp $
+# $Id: Makefile,v 1.4 1999/08/22 23:33:20 mharo Exp $
 #
 
 DISTNAME=	apache_1.3.6
@@ -85,7 +85,7 @@ post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/apache.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/apache.sh startup file."; \
 		${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/apache.sh; \
-		${ECHO} "[ -x ${PREFIX}/sbin/apachectl ] && ${PREFIX}/sbin/apachectl start > /dev/null && echo -n ' apache'" >> ${PREFIX}/etc/rc.d/apache.sh; \
+		${ECHO} "[ -x ${PREFIX}/sbin/apachectl ] && ${PREFIX}/sbin/apachectl start > /dev/null && ${ECHO_MSG} -n ' apache'" >> ${PREFIX}/etc/rc.d/apache.sh; \
 		${CHMOD} 751 ${PREFIX}/etc/rc.d/apache.sh; \
 	fi
 

@@ -3,7 +3,7 @@
 # Date created:		21 October 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.19 1999/02/09 17:48:55 mph Exp $
+# $Id: Makefile,v 1.20 1999/05/21 22:39:37 mph Exp $
 #
 
 DISTNAME=	trn4-test72
@@ -20,7 +20,7 @@ IS_INTERACTIVE=	yes
 MAN1=		trn.1 Pnews.1 Rnmail.1
 
 pre-configure:
-	@echo "===>  Running pre-configure target for ${DISTNAME}"
+	@${ECHO_MSG} "===>  Running pre-configure target for ${DISTNAME}"
 	@${SED} -e "s:__CC__:$(CC):" -e "s:__CFLAGS__:$(CFLAGS):" \
 		-e "s:/PREFIX:$(PREFIX):"  ${SCRIPTDIR}/preconf > \
 		${WRKDIR}/preconf.new

@@ -3,7 +3,7 @@
 # Date created:		21 August 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.35 1999/05/28 05:16:08 ache Exp $
+# $Id: Makefile,v 1.36 1999/06/05 22:31:47 mharo Exp $
 #
 
 DISTNAME=       bash-2.03
@@ -23,7 +23,7 @@ MAN1=		bash.1 bashbug.1
 
 post-install:
 	${CP} /etc/shells /etc/shells.bak
-	(${GREP} -v ${PREFIX}/bin/bash /etc/shells.bak; echo ${PREFIX}/bin/bash) >/etc/shells
+	(${GREP} -v ${PREFIX}/bin/bash /etc/shells.bak; ${ECHO} ${PREFIX}/bin/bash) >/etc/shells
 	${RM} /etc/shells.bak
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/bash

@@ -5,7 +5,7 @@
 # Whom:			David O'Brien <obrien@FreeBSD.org>
 # Whom:                 Yukihiro Nakai <nakai@mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.6 1997/11/26 01:42:55 obrien Exp $
+# $Id: Makefile,v 1.7 1998/10/10 03:42:59 steve Exp $
 #
 
 DISTNAME=	crack5.0
@@ -27,12 +27,12 @@ pre-configure:
 	@/bin/mv -f ${WRKSRC}/src/util/elcid.c ${WRKSRC}/src/util/elcid.c.orig
 	@${CP} -p ${WRKSRC}/src/util/elcid.c,bsd ${WRKSRC}/src/util/elcid.c
 .endif
-	@echo "XLIB+= -lcrypt" >> ${WRKSRC}/src/util/Makefile
+	@${ECHO} "XLIB+= -lcrypt" >> ${WRKSRC}/src/util/Makefile
 
 pre-build:
 	@(if [ ! -f /usr/share/dict/words ];then \
-		echo "You may want to install the dict distribution into /usr/share/dict" ; \
-		echo "to increase the size of the cracking dictionary." ; \
+		${ECHO_MSG} "You may want to install the dict distribution into /usr/share/dict" ; \
+		${ECHO_MSG} "to increase the size of the cracking dictionary." ; \
 	fi)
 
 do-build:

@@ -5,7 +5,7 @@
 #
 # Based heavily on work by jfieber.
 #
-# $Id: Makefile,v 1.2 1999/05/05 17:40:15 nik Exp $
+# $Id: Makefile,v 1.3 1999/08/22 19:00:09 mharo Exp $
 #
 
 DISTNAME=	docbook-241
@@ -31,7 +31,7 @@ pre-install:
 do-install:
 	@zcat ${DISTDIR}/docbk241.tar.Z |(cd ${INSTDIR}/2.4.1; pax -r)
 	@${INSTALL_DATA} ${FILESDIR}/catalog ${INSTDIR}/2.4.1/catalog
-	@echo "CATALOG \"${ISOCAT}\"" >> ${INSTDIR}/2.4.1/catalog
+	@${ECHO} "CATALOG \"${ISOCAT}\"" >> ${INSTDIR}/2.4.1/catalog
 	@${CHMOD} ${SHAREMODE} ${INSTDIR}/2.4.1/*
 	@${CHOWN} -R ${SHAREOWN}.${SHAREGRP} ${INSTDIR}
 

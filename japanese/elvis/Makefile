@@ -33,21 +33,21 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README.j18 ${PREFIX}/share/doc/ja-elvis
 	@${SH} ${PKGDIR}/REQ ${PKGNAME} INSTALL
 	@if [ ! -f ${STARTUP_SCRIPT} ]; then				\
-		echo "Installing ${STARTUP_SCRIPT} startup file.";	\
-		echo '#!/bin/sh' > ${STARTUP_SCRIPT};			\
-		echo 'virecovery=`echo /var/tmp/elv_*`'			\
+		${ECHO} "Installing ${STARTUP_SCRIPT} startup file.";	\
+		${ECHO} '#!/bin/sh' > ${STARTUP_SCRIPT};			\
+		${ECHO} 'virecovery=`${ECHO} /var/tmp/elv_*`'			\
 			>> ${STARTUP_SCRIPT};				\
-		echo 'if [ "$$virecovery" != '"'/var/tmp/elv_*' ]; then"	\
+		${ECHO} 'if [ "$$virecovery" != '"'/var/tmp/elv_*' ]; then"	\
 			>> ${STARTUP_SCRIPT};				\
-		echo "	echo 'Recovering ja-elvis editor sessions'"	\
+		${ECHO} "	${ECHO} 'Recovering ja-elvis editor sessions'"	\
 			>> ${STARTUP_SCRIPT};				\
-		echo '	for i in $$virecovery; do'			\
+		${ECHO} '	for i in $$virecovery; do'			\
 			>> ${STARTUP_SCRIPT};				\
-		echo "		${PREFIX}/bin/elvprsv "'$$i'		\
+		${ECHO} "		${PREFIX}/bin/elvprsv "'$$i'		\
 			>> ${STARTUP_SCRIPT};				\
-		echo '	done'						\
+		${ECHO} '	done'						\
 			>> ${STARTUP_SCRIPT};				\
-		echo 'fi' >> ${STARTUP_SCRIPT};				\
+		${ECHO} 'fi' >> ${STARTUP_SCRIPT};				\
 		${CHMOD} 755 ${STARTUP_SCRIPT};				\
 		${CHOWN} bin.bin ${STARTUP_SCRIPT};                        \
 	fi

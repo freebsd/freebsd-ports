@@ -3,7 +3,7 @@
 # Date created:         20 June 1996
 # Whom:                 Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
 #
-# $Id: Makefile,v 1.6 1997/01/06 07:24:39 max Exp $
+# $Id: Makefile,v 1.7 1999/01/27 07:41:25 fenner Exp $
 #
 
 DISTNAME=       finger-1.37
@@ -23,7 +23,7 @@ post-install:
 	@${CP} ${WRKSRC}/support/ttylocs ${PREFIX}/etc/fingerdir/ttylocs.sample
 	@${CP} ${FILESDIR}/clients.sample ${PREFIX}/etc/fingerdir/clients.sample
 	@${INSTALL} ${COPY} -m 744 -o root ${FILESDIR}/fingerd.sh.sample ${PREFIX}/etc/rc.d/fingerd.sh.sample
-	@echo "GNU.finger.server.hotname" > ${PREFIX}/etc/fingerdir/serverhost.sample
-	@echo "mail.spool.server.hostname" > ${PREFIX}/etc/fingerdir/mailhost.sample
+	@${ECHO} "GNU.finger.server.hotname" > ${PREFIX}/etc/fingerdir/serverhost.sample
+	@${ECHO} "mail.spool.server.hostname" > ${PREFIX}/etc/fingerdir/mailhost.sample
 
 .include <bsd.port.mk>

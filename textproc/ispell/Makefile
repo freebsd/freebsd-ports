@@ -4,7 +4,7 @@
 # Date created:         6 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.28 1999/07/04 18:21:51 obrien Exp $
+# $Id: Makefile,v 1.29 1999/08/13 00:13:14 jmz Exp $
 #
 
 DISTNAME=	ispell-3.1
@@ -27,10 +27,10 @@ MLINKS=		ispell.1 buildhash.1 ispell.1 findaffix.1 ispell.1 munchlist.1\
 .if !defined(ISPELL_FR)
 .if (make(patch) || make(configure) || make(build) || make (install))
 .BEGIN:
-	@echo '*********************************************************'
-	@echo '* Note that you can build a french or british version   *'
-	@echo '* by typing "make french" or "make british"             *'
-	@echo '*********************************************************'
+	@${ECHO_MSG} '*********************************************************'
+	@${ECHO_MSG} '* Note that you can build a french or british version   *'
+	@${ECHO_MSG} '* by typing "make french" or "make british"             *'
+	@${ECHO_MSG} '*********************************************************'
 .endif
 .else
 EXTRA_DICT=	francais-IREQ-1.4.tar.gz
@@ -40,28 +40,28 @@ DISTFILES+=	${EXTRA_DICT}
 
 pre-extract:
 .if !defined(LANG)
-	@echo '******************************************************'
-	@echo '* Note that you can build a british version by       *'
-	@echo '* typing "make british" following a "make clean"     *'
-	@echo '******************************************************'
+	@${ECHO_MSG} '******************************************************'
+	@${ECHO_MSG} '* Note that you can build a british version by       *'
+	@${ECHO_MSG} '* typing "make british" following a "make clean"     *'
+	@${ECHO_MSG} '******************************************************'
 .endif
 
 pre-configure:
 .if defined(EXTRA_DICT)
-	@echo ${EXTRA_DICT} > ${WRKDIR}/extra_dict
+	@${ECHO} ${EXTRA_DICT} > ${WRKDIR}/extra_dict
 .else
-	@echo -n
+	@${ECHO} -n
 .endif
 
 post-configure:
-	@echo "#define CFLAGS \"${CFLAGS}\"" >> ${WRKSRC}/local.h
+	@${ECHO} "#define CFLAGS \"${CFLAGS}\"" >> ${WRKSRC}/local.h
 
 british:
-	@echo "Okay, making a british version of ispell...."
+	@${ECHO_MSG} "Okay, making a british version of ispell...."
 	@${MAKE} ${.MAKEFLAGS} LANG=british all
 
 french:
-	@echo "Okay, making a french/english version of ispell...."
+	@${ECHO_MSG} "Okay, making a french/english version of ispell...."
 	@${MAKE} ${.MAKEFLAGS} ISPELL_FR=yes
 
 pre-install:

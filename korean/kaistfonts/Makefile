@@ -3,7 +3,7 @@
 # Date created:		Fri Mar 27 17:26:42 KST 1998
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.3 1998/08/07 22:43:11 asami Exp $
+# $Id: Makefile,v 1.4 1998/11/17 02:31:47 asami Exp $
 #
 
 DISTNAME=	ko-kaistfonts-ksc-1.0
@@ -24,7 +24,7 @@ do-extract:
 	${MKDIR} ${WRKDIR} && \
 	cd ${WRKDIR} && \
 	for file in ${DISTFILES}; do \
-		${GUNZIP_CMD} -c < ${_DISTDIR}/$$file > `echo $$file | ${SED} -e 's/\.Z//' -e 's/\.gz//'`; \
+		${GUNZIP_CMD} -c < ${_DISTDIR}/$$file > `${ECHO} $$file | ${SED} -e 's/\.Z//' -e 's/\.gz//'`; \
 	done
 
 post-install:

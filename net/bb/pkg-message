@@ -1,0 +1,18 @@
+
+================================================================
+==== Configuration Notes:                                    ===
+================================================================
+
+a) your hosts 'full qualified domain name' and IP-address
+b) 'watched' hosts 'full qualified domain name' and IP-address
+go here -> /usr/local/bb/etc/bb-hosts
+c) configure -> /usr/local/bb/etc/bbdef.sh
+d) configure -> /usr/local/bb/etc/bbinc.sh
+e) You need to have a running WWW server (apache)
+f) You need kermit or qpage for pager functionality
+After that, you can startup the big brother service by typing
+        /usr/local/bb/runbb.sh &
+and watching your systems status by viewing this URL with
+Netscape or another WWW browser
+        http://localhost/bb
+

@@ -17,7 +17,7 @@ MANCOMPRESSED= yes
 
 pre-fetch:
 	@if [ ! -d /usr/src/contrib/gdb ]; then \
-	    echo "To build this port you must have the FreeBSD" \
+	    ${ECHO_MSG} "To build this port you must have the FreeBSD" \
 		"sources in \"/usr/src\"."; \
 	    exit 1; \
 	fi

@@ -62,19 +62,19 @@ do-install:
 	${CHMOD} 700 ${PBX_VAR} # estic will create ./1996.11 etc
 
 post-install:
-	@echo ""
-	@echo " Suggestion, try:	make demo"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} " Suggestion, try:	make demo"
 
 demo:
-	@echo "If you want to try this under X-Windows, do this:"
-	@echo " ${SETENV} SPUNK_LANGUAGE 001"
-	@echo " ${SETENV} SPUNK_XFONT 8x13"
-	@echo " cd ${PBX_ETC}"
-	@echo " vi estic.ini"
-	@echo " ${CHMOD} 666 /dev/cuaaX, or su"
-	@echo " ${ESTIC}/xestic -display :0"
-	@echo " (If you have no Istec 100[38] connected, append -n )"
-	@echo " A BUGS & PROBLEMS section exists in ${FILESDIR}/README == man estic_freebsd"
+	@${ECHO_MSG} "If you want to try this under X-Windows, do this:"
+	@${ECHO_MSG} " ${SETENV} SPUNK_LANGUAGE 001"
+	@${ECHO_MSG} " ${SETENV} SPUNK_XFONT 8x13"
+	@${ECHO_MSG} " cd ${PBX_ETC}"
+	@${ECHO_MSG} " vi estic.ini"
+	@${ECHO_MSG} " ${CHMOD} 666 /dev/cuaaX, or su"
+	@${ECHO_MSG} " ${ESTIC}/xestic -display :0"
+	@${ECHO_MSG} " (If you have no Istec 100[38] connected, append -n )"
+	@${ECHO_MSG} " A BUGS & PROBLEMS section exists in ${FILESDIR}/README == man estic_freebsd"
 
 # Ref. NO_CDROM= & NO_PACKAGE=
 # It is not necessary to prevent inclusion of source or binary on FreeBSD
