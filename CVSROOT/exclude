@@ -10,6 +10,7 @@
 ^src/share/info/dir-tmpl
 ^src/share/man/man0
 ^src/sys/boot/common/help.common
+^src/sys/contrib/dev/acpica
 ^src/usr.bin/doscmd/fonts.dir
 ^src/usr.bin/more/more.help
 ^src/.*\.ps
