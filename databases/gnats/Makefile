@@ -3,13 +3,16 @@
 # Date created:		28 October 1995
 # Whom:			pst
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1995/10/30 17:26:09 pst Exp $
 #
 
 DISTNAME=       gnats-3.2
 CATEGORIES+=	development
 MASTER_SITES=   ftp://prep.ai.mit.edu/pub/gnu/ \
 		ftp://ftp.uu.net/systems/gnu/
+
+# we've got some .elc and info files to compile (yuck)
+BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs
 
 GNU_CONFIGURE=	yes
 
@@ -22,8 +25,5 @@ CONFIGURE_ENV=  SEND_PR=/usr/bin/false
 # the gnats distribution comes with a lot of baggage we don't want to install
 # just install gnats
 INSTALL_TARGET=	install-gnats install-send-pr
-
-# we've got some .elc and info files to compile (yuck)
-BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs
 
 .include <bsd.port.mk>
