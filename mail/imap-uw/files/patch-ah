@@ -1,5 +1,5 @@
---- src/ipopd/ipop3d.c.old	Wed Apr  4 00:19:48 2001
-+++ src/ipopd/ipop3d.c	Wed Apr  4 00:28:24 2001
+--- src/ipopd/ipop3d.c.orig	Wed Feb 21 03:23:01 2001
++++ src/ipopd/ipop3d.c	Wed Apr 11 12:02:25 2001
 @@ -28,6 +28,11 @@
  #include <time.h>
  #include "c-client.h"
@@ -50,7 +50,7 @@
 + 
 +                       if ( (dracconf = fopen(ETC_DIR "/dracd.host", "r")) == NULL)
 +                       {
-+                         syslog (LOG_INFO, "dracd: error opening /etc/mail/dracd.host config file");
++                         syslog (LOG_INFO, "dracd: error opening %s/dracd.host config file",ETC_DIR);
 +                         exit(1);
 +                       }
 + 

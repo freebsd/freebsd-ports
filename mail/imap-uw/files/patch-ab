@@ -1,13 +1,6 @@
---- src/osdep/unix/Makefile.orig	Thu Apr  5 00:45:53 2001
-+++ src/osdep/unix/Makefile	Tue Apr 10 01:13:38 2001
-@@ -22,16 +22,16 @@
- 
- EXTRAAUTHENTICATORS=
- EXTRADRIVERS=mbox
--PASSWDTYPE=std
-+PASSWDTYPE=pam
- SSLTYPE=none
- 
+--- src/osdep/unix/Makefile.orig	Wed Apr 11 00:02:06 2001
++++ src/osdep/unix/Makefile	Sat Apr 14 03:20:57 2001
+@@ -28,12 +28,12 @@
  
  # Extended flags needed for SSL.  You may need to modify.
  
@@ -20,14 +13,26 @@
 +SSLINCLUDE=$(OPENSSLINC)
 +SSLLIB=$(OPENSSLLIB)
  
- SSLCRYPTO=-lcrypto
+-SSLCRYPTO=-lcrypto
++SSLCRYPTO=-lcrypto -lcrypt
  
+ # Older versions of MIT Kerberos also have a libcrypto.  If so, you may need
+ # to use this instead
+@@ -46,7 +46,7 @@
+ 
+ SSLCFLAGS= -I$(SSLINCLUDE) -I$(SSLINCLUDE)/openssl\
+  -DSSL_CERT_DIRECTORY=\"$(SSLCERTS)\"
+-SSLLDFLAGS= -L$(SSLLIB) -lssl $(SSLCRYPTO) $(SSLRSA)
++SSLLDFLAGS= # -L$(SSLLIB) -lssl $(SSLCRYPTO) $(SSLRSA)
+ 
+ 
+ # Extended flags needed for non-standard passwd types.  You may need to modify.
 @@ -60,7 +60,7 @@
  # AFSLDFLAGS may also need -L/usr/ucblib -lucb
  DCECFLAGS= -DDCE_MINIMAL -DPASSWD_OVERRIDE=\"/opt/pop3/passwd/passwd\"
  DCELDFLAGS= -ldce
 -PAMLDFLAGS= -lpam -ldl
-+PAMLDFLAGS= -lpam
++PAMLDFLAGS= # -lpam -lcrypt
  
  
  # Build parameters normally set by the individual port
@@ -65,12 +70,7 @@
  bs3:	# BSD/i386 3.0 or higher
  	$(BUILD) `$(CAT) SPECIALS` OS=bsi \
  	 CHECKPW=bsi LOGINPW=bsi CRXTYPE=nfs \
-@@ -213,12 +222,13 @@
- 
- bsf:	# FreeBSD
- 	$(BUILD) `$(CAT) SPECIALS` OS=$@ \
--	 SIGTYPE=psx CRXTYPE=nfs \
-+	 SIGTYPE=psx CRXTYPE=nfs CHECKPW=pam \
+@@ -217,8 +226,9 @@
  	 SPOOLDIR=/var \
  	 ACTIVEFILE=/usr/local/news/lib/active \
  	 RSHPATH=/usr/bin/rsh \
@@ -78,7 +78,7 @@
 -	 BASELDFLAGS="-lcrypt"
 +	 LOCKPGM=$(PREFIX)/libexec/mlock \
 +	 BASECFLAGS="-DNFSKLUDGE" \
-+	 BASELDFLAGS="-lpam -lcrypt"
++	 BASELDFLAGS=""
  
  bsi:	# BSD/i386
  	$(BUILD) `$(CAT) SPECIALS` OS=$@ \
