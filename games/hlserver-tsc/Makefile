@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tsc
-PORTVERSION=	0.2.5.2.b
+PORTVERSION=	0.2.5.3.b
 MASTER_SITES=	http://www.fatalgaming.com/ \
 		http://207.127.210.8/starsoft/forum/ \
 		http://tsc.austin2600.org/ \
