@@ -112,8 +112,6 @@ share/locale/zh_CN/LC_MESSAGES/gedit-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gedit-2.0.mo
 @dirrm share/gnome/omf/gedit
 @dirrm share/gnome/help/gedit/C/figures
-@dirrm share/gnome/help/gedit/C
-@dirrm share/gnome/help/gedit
 @dirrm share/gnome/gedit-2/ui
 @dirrm share/gnome/gedit-2/taglist
 @dirrm share/gnome/gedit-2/glade
