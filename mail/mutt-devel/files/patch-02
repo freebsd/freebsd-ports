@@ -9,7 +9,7 @@
  
  try-html: ../makedoc
 -	test -f manual.html || $(MAKE) manual.html || cp $(srcdir)/manual*.html ./
-+	rm *.html && $(MAKE) manual.html || cp $(srcdir)/manual*.html ./
++	rm -f *.html && $(MAKE) manual.html || cp $(srcdir)/manual*.html ./
  
  try-txt: ../makedoc
 -	test -f manual.txt || $(MAKE) manual.txt || cp $(srcdir)/manual.txt ./

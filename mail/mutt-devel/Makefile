@@ -23,8 +23,8 @@
 #
 # If you want to read news with mutt define:
 #  WITH_MUTT_NNTP
-#    (note that this implies building of the inn port to be able to post new
-#     articles)
+#    (note that this implies building of the inn-stable port to be able to 
+#     post new articles)
 #
 # If you want to use the SASL authentication features with your email server
 # define
@@ -42,7 +42,7 @@
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.3.25
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	mail
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -139,7 +139,7 @@ USE_OPENSSL=	yes
 BUILD_DEPENDS+=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
 .endif
 .if defined(WITH_MUTT_NNTP)
-BUILD_DEPENDS+=	${LOCALBASE}/news/bin/inews:${PORTSDIR}/news/inn
+BUILD_DEPENDS+=	${LOCALBASE}/news/bin/inews:${PORTSDIR}/news/inn-stable
 pre-configure::
 	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-inews
 .endif
