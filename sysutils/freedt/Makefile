@@ -8,7 +8,7 @@
 PORTNAME=	freedt
 PORTVERSION=	0.18
 CATEGORIES=	sysutils
-MASTER_SITES=	http://azz.us-lot.org/files/
+MASTER_SITES=	http://offog.org/files/
 
 MAINTAINER=	tim@bishnet.net
 COMMENT=	An experimental reimplementation of Dan Bernstein's daemontools
