@@ -1719,6 +1719,7 @@ flashplayer	ports/graphics/flashplayer
 flashplugin	ports/www/flashplugin
 flashplugin-mozilla	ports/www/flashplugin-mozilla
 flashplugin-mozilla-devel	ports/www/flashplugin-mozilla-devel
+flashpluginwrapper	ports/www/flashpluginwrapper
 flasm		ports/graphics/flasm
 flawfinder	ports/security/flawfinder
 flexbackup	ports/sysutils/flexbackup
