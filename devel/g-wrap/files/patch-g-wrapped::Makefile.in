@@ -1,0 +1,23 @@
+
+$FreeBSD$
+
+--- g-wrapped/Makefile.in.orig	Thu Jan 25 19:24:47 2001
++++ g-wrapped/Makefile.in	Tue Jul 31 12:24:38 2001
+@@ -99,7 +99,7 @@
+ 
+ #BEGIN TEMP JUNK ============================================================
+ 
+-CFLAGS =  -O2 -Wall -g -I../libruntime-guile @CFLAGS@
++CFLAGS =  -Wall -I../libruntime-guile @CFLAGS@
+ 
+ #I believe libtool won't allow this yet.
+ #EXTRA_LTLIBRARIES=libruntime.la
+@@ -107,7 +107,7 @@
+ gwrappedmodule_LTLIBRARIES =  libgw-runtime.la
+ libgw_runtime_la_SOURCES = gw-runtime.c
+ libgw_runtime_la_LDFLAGS = -rpath $(libdir) -module -export-dynamic
+-libgw_runtime_la_LIBADD =    @GUILE_LIBS@   -L$(LOCALPWD)/../libruntime-guile/.libs -lg-wrap-runtime-guile
++libgw_runtime_la_LIBADD =    @GUILE_LIBS@   ../libruntime-guile/libg-wrap-runtime-guile.la
+ 
+ CLEANFILES =  gw-runtime.h gw-runtime.c gw-runtime.html
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs

@@ -1,0 +1,26 @@
+
+$FreeBSD$
+
+--- test/Makefile.in.orig	Thu Jan 25 19:24:52 2001
++++ test/Makefile.in	Tue Jul 31 12:29:40 2001
+@@ -100,17 +100,17 @@
+ 
+ #BEGIN TEMP JUNK ============================================================
+ 
+-CFLAGS = -O2 -Werror -Wall -g -I../libruntime-guile @CFLAGS@
++CFLAGS = -Werror -Wall -I../libruntime-guile @CFLAGS@
+ 
+ noinst_LTLIBRARIES =  libgw-test-parent.la libgw-test-child.la
+ libgw_test_parent_la_SOURCES = gw-test-parent.c gw-test-parent-code.c
+ libgw_test_parent_la_LDFLAGS = -rpath $(libdir) -module -export-dynamic
+-libgw_test_parent_la_LIBADD =    -L$(LOCALPWD)/../libruntime-guile/.libs -lg-wrap-runtime-guile
++libgw_test_parent_la_LIBADD =    ../libruntime-guile/libg-wrap-runtime-guile.la
+ 
+ CLEANFILES =  gw-test-parent.h gw-test-parent.c gw-test-parent.html gw-test-parent-autogen.h gw-test-child.h gw-test-child.c gw-test-child.html gw-test-child-autogen.h
+ libgw_test_child_la_SOURCES = gw-test-child.c gw-test-child-code.c
+ libgw_test_child_la_LDFLAGS = -rpath $(libdir) -module -export-dynamic
+-libgw_test_child_la_LIBADD =    -L$(LOCALPWD)/../libruntime-guile/.libs -lg-wrap-runtime-guile
++libgw_test_child_la_LIBADD =    ../libruntime-guile/libg-wrap-runtime-guile.la
+ 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../conf.h
