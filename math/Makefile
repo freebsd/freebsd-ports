@@ -55,6 +55,7 @@
     SUBDIR += gsl
     SUBDIR += guppi
     SUBDIR += hexcalc
+    SUBDIR += it++
     SUBDIR += jacal
     SUBDIR += javanns
     SUBDIR += kseg
