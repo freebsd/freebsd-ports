@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	gpsman
-PORTVERSION=	5.4.1
+PORTVERSION=	5.4.2
 CATEGORIES=	astro tk83
 MASTER_SITES=	http://www.ncc.up.pt/~mig/gpsmanhtml/ \
+		http://www.ncc.up.pt/~mig/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	science/cartography
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	david@catwhisker.org
 
 RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
-
-EXTRACT_SUFX=	.tgz
 
 NO_BUILD=	yes
 
@@ -30,8 +30,8 @@ do-install:
 	@${MKDIR} ${PREFIX}/share/gpsman
 	@${MKDIR} ${PREFIX}/share/gpsman/gmsrc
 	${INSTALL_DATA} ${WRKSRC}/gmsrc/*.tcl ${PREFIX}/share/gpsman/gmsrc
-	@${MKDIR} ${PREFIX}/share/gpsman/gmicons
-	${INSTALL_DATA} ${WRKSRC}/gmsrc/gmicons/* ${PREFIX}/share/gpsman/gmicons
+	@${MKDIR} ${PREFIX}/share/gpsman/gmsrc/gmicons
+	${INSTALL_DATA} ${WRKSRC}/gmsrc/gmicons/* ${PREFIX}/share/gpsman/gmsrc/gmicons
 	@${MKDIR} ${PREFIX}/share/gpsman/util
 	${INSTALL_DATA} ${WRKSRC}/util/*.sh ${PREFIX}/share/gpsman/util
 	${INSTALL_DATA} ${WRKSRC}/util/*.tcl ${PREFIX}/share/gpsman/util
