@@ -1,0 +1,12 @@
+bin/bulb
+bin/bulb-applet
+bin/bulbexec
+etc/CORBA/servers/bulb-applet.gnorba
+etc/CORBA/servers/bulb.gnorba
+share/gnome/applets/Utility/bulb.desktop
+share/gnome/pixmaps/bulb/allume.png
+share/gnome/pixmaps/bulb/erreur.png
+share/gnome/pixmaps/bulb/eteint.png
+share/locale/de/LC_MESSAGES/bulb.mo
+share/locale/fr/LC_MESSAGES/bulb.mo
+@dirrm share/gnome/pixmaps/bulb
