@@ -29,8 +29,4 @@ MAN5=		medusa.conf.5 medusa-file-index-stoplist.5
 MAN7=		medusa-search-uri.7
 MAN8=		medusa-searchd.8
 
-post-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-
 .include <bsd.port.mk>

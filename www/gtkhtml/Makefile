@@ -36,10 +36,6 @@ VERSION=	${PORTNAME}-${PORTVERSION}
 LIB_DEPENDS+=	soup.6:${PORTSDIR}/devel/soup
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-
 post-configure:
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g ; \
 		s|%%LOCALBASE%%|${LOCALBASE}|g ; \

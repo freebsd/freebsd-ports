@@ -74,9 +74,4 @@ pre-everything::
 	@${ECHO_MSG} "WITH_TCL=yes for tcl support"
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} \
-		-e 's|-lpthread|${PTHREAD_LIBS}|g;' \
-		${WRKSRC}/configure
-
 .include <bsd.port.post.mk>

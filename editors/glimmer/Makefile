@@ -36,8 +36,6 @@ PYTHON_LIBS=	-lssl -lcrypto
 PYTHON_LIBS+=	-lutil -lreadline -lcrypt -lpython
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		s|-lpython|${PYTHON_LIBS}|g ; \
-		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-lpython|${PYTHON_LIBS}|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

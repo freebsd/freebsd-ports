@@ -52,8 +52,6 @@ pre-extract:
 	@${ECHO_MSG}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 .for file in vcc.y vobject.c
 	@${REINPLACE_CMD} -e "s/malloc[.]h/stdlib.h/g" ${WRKSRC}/libversit/${file}
 .endfor

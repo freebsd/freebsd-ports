@@ -23,7 +23,7 @@ USE_XPM=	yes
 USE_MESA=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_GNOME=	gnomehier libglade2
+USE_GNOME=	gnomehier libglade2 gnomehack
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-pam --with-gl --with-gle --with-xpm --with-xml \
 		--with-hackdir=${PREFIX}/bin/xscreensaver-hacks \
@@ -67,8 +67,6 @@ MAN1=   anemone.1 ant.1 apollonian.1 atlantis.1 attraction.1 blaster.1 \
 	xscreensaver-getimage.1 xscreensaver-gl-helper.1 xscreensaver.1
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/configure
 	@${REINPLACE_CMD}  -e 's|malloc[.]h|stdlib.h|g' \
 		${WRKSRC}/hacks/glx/extrusion.c
 	@${REINPLACE_CMD} -e 's|||' \

@@ -56,9 +56,7 @@ CONFIGURE_ARGS+=--disable-capplet \
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's^-l(pthread|c_r)^${PTHREAD_LIBS}^g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
-		 s|USE_INCLUDED_LIBINTL=yes|#USE_INCLUDED_LIBINTL=yes|g ; \
+	@${REINPLACE_CMD} -e 's|USE_INCLUDED_LIBINTL=yes|#USE_INCLUDED_LIBINTL=yes|g ; \
 		 s|[(]top_builddir[)]/intl/libintl.a|-lintl|g' ${WRKSRC}/configure
 
 post-install:

@@ -45,8 +45,4 @@ PLIST_SUB=	BATTERY=""
 MAN1+=	battery_applet.1
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-
 .include <bsd.port.post.mk>

@@ -46,9 +46,7 @@ CONFIGURE_ENV=	CPPFLAGS="${SOCKSFLAGS} -I${LOCALBASE}/include" \
 		CFLAGS="${CFLAGS}"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
-		 s|gnet|gnet-glib2|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|gnet|gnet-glib2|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|GNOME_PARAM_GNOME_DATADIR|GNOME_PARAM_APP_DATADIR|g' \
 		${WRKSRC}/src/gnomeicu.c
 

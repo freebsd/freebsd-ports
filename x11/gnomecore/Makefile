@@ -38,8 +38,4 @@ MAN1=		deskguide_applet.1 gmenu.1 gnome-about.1 gnome-convert.1 \
 		session-properties-capplet.1 
 MAN5=		default.session.5
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-
 .include <bsd.port.mk>

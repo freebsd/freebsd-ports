@@ -47,9 +47,4 @@ LIB_DEPENDS+=	gpgme.9:${PORTSDIR}/security/gpgme
 CONFIGURE_ARGS+=	--enable-gpgme
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' \
-			${WRKSRC}/configure ${WRKSRC}/libmutt/configure
-
 .include <bsd.port.mk>
