@@ -4656,6 +4656,7 @@ ogle		ports/graphics/ogle
 ogle-gui	ports/graphics/ogle-gui
 ohphone		ports/net/ohphone
 oidentd		ports/security/oidentd
+okle		ports/graphics/okle
 oleo		ports/math/oleo
 olirc		ports/irc/olirc
 olvwm		ports/x11-wm/olvwm
