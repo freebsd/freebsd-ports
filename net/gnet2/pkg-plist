@@ -1,50 +1,57 @@
-bin/gnet-glib2-config
-include/gnet-glib2/conn.h
-include/gnet-glib2/gnet.h
-include/gnet-glib2/gnetconfig.h
-include/gnet-glib2/inetaddr.h
-include/gnet-glib2/iochannel.h
-include/gnet-glib2/mcast.h
-include/gnet-glib2/md5.h
-include/gnet-glib2/pack.h
-include/gnet-glib2/server.h
-include/gnet-glib2/sha.h
-include/gnet-glib2/socks.h
-include/gnet-glib2/tcp.h
-include/gnet-glib2/udp.h
-include/gnet-glib2/unix.h
-include/gnet-glib2/url.h
-lib/libgnet-glib2.a
-lib/libgnet-glib2.so
-lib/libgnet-glib2.so.7
-libdata/pkgconfig/gnet-glib2.pc
-share/aclocal/gnet-glib2.m4
-share/doc/libgnet1.1-glib2-dev/html/book1.html
-share/doc/libgnet1.1-glib2-dev/html/gnet-conn.html
-share/doc/libgnet1.1-glib2-dev/html/gnet-developers-tips.html
-share/doc/libgnet1.1-glib2-dev/html/gnet-developers.html
-share/doc/libgnet1.1-glib2-dev/html/gnet-examples.html
-share/doc/libgnet1.1-glib2-dev/html/gnet-gnet.html
-share/doc/libgnet1.1-glib2-dev/html/gnet-inetaddr.html
-share/doc/libgnet1.1-glib2-dev/html/gnet-iochannel.html
-share/doc/libgnet1.1-glib2-dev/html/gnet-mcast.html
-share/doc/libgnet1.1-glib2-dev/html/gnet-md5.html
-share/doc/libgnet1.1-glib2-dev/html/gnet-overview.html
-share/doc/libgnet1.1-glib2-dev/html/gnet-pack.html
-share/doc/libgnet1.1-glib2-dev/html/gnet-server.html
-share/doc/libgnet1.1-glib2-dev/html/gnet-sha.html
-share/doc/libgnet1.1-glib2-dev/html/gnet-socks.html
-share/doc/libgnet1.1-glib2-dev/html/gnet-tcp.html
-share/doc/libgnet1.1-glib2-dev/html/gnet-udp.html
-share/doc/libgnet1.1-glib2-dev/html/gnet-unix.html
-share/doc/libgnet1.1-glib2-dev/html/gnet-url.html
-share/doc/libgnet1.1-glib2-dev/html/hfetch.html
-share/doc/libgnet1.1-glib2-dev/html/index.html
-share/doc/libgnet1.1-glib2-dev/html/index.sgml
-share/doc/libgnet1.1-glib2-dev/html/libgnet-reference.html
-share/doc/libgnet1.1-glib2-dev/html/sdr.html
-share/doc/libgnet1.1-glib2-dev/html/tests.html
-@dirrm share/doc/libgnet1.1-glib2-dev/html
-@dirrm share/doc/libgnet1.1-glib2-dev
-@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
-@dirrm include/gnet-glib2
+include/gnet-2.0/base64.h
+include/gnet-2.0/conn.h
+include/gnet-2.0/gnet.h
+include/gnet-2.0/inetaddr.h
+include/gnet-2.0/iochannel.h
+include/gnet-2.0/ipv6.h
+include/gnet-2.0/mcast.h
+include/gnet-2.0/md5.h
+include/gnet-2.0/pack.h
+include/gnet-2.0/server.h
+include/gnet-2.0/sha.h
+include/gnet-2.0/socks.h
+include/gnet-2.0/tcp.h
+include/gnet-2.0/udp.h
+include/gnet-2.0/unix.h
+include/gnet-2.0/uri.h
+lib/gnet-2.0/include/gnetconfig.h
+lib/libgnet-2.0.a
+lib/libgnet-2.0.so
+lib/libgnet-2.0.so.0
+libdata/pkgconfig/gnet-2.0.pc
+share/aclocal/gnet-2.0.m4
+share/doc/libgnet2.0-dev/html/gnet/book1.html
+share/doc/libgnet2.0-dev/html/gnet/gnet-base64.html
+share/doc/libgnet2.0-dev/html/gnet/gnet-conn.html
+share/doc/libgnet2.0-dev/html/gnet/gnet-developers-async.html
+share/doc/libgnet2.0-dev/html/gnet/gnet-developers-tips.html
+share/doc/libgnet2.0-dev/html/gnet/gnet-developers.html
+share/doc/libgnet2.0-dev/html/gnet/gnet-examples-other.html
+share/doc/libgnet2.0-dev/html/gnet/gnet-examples.html
+share/doc/libgnet2.0-dev/html/gnet/gnet-gnet.html
+share/doc/libgnet2.0-dev/html/gnet/gnet-inetaddr.html
+share/doc/libgnet2.0-dev/html/gnet/gnet-iochannel.html
+share/doc/libgnet2.0-dev/html/gnet/gnet-ipv6.html
+share/doc/libgnet2.0-dev/html/gnet/gnet-mcast.html
+share/doc/libgnet2.0-dev/html/gnet/gnet-md5.html
+share/doc/libgnet2.0-dev/html/gnet/gnet-overview.html
+share/doc/libgnet2.0-dev/html/gnet/gnet-pack.html
+share/doc/libgnet2.0-dev/html/gnet/gnet-server.html
+share/doc/libgnet2.0-dev/html/gnet/gnet-sha.html
+share/doc/libgnet2.0-dev/html/gnet/gnet-socks.html
+share/doc/libgnet2.0-dev/html/gnet/gnet-tcp.html
+share/doc/libgnet2.0-dev/html/gnet/gnet-udp.html
+share/doc/libgnet2.0-dev/html/gnet/gnet-unix.html
+share/doc/libgnet2.0-dev/html/gnet/gnet-uri.html
+share/doc/libgnet2.0-dev/html/gnet/home.png
+share/doc/libgnet2.0-dev/html/gnet/index.sgml
+share/doc/libgnet2.0-dev/html/gnet/left.png
+share/doc/libgnet2.0-dev/html/gnet/libgnet-reference.html
+share/doc/libgnet2.0-dev/html/gnet/right.png
+share/doc/libgnet2.0-dev/html/gnet/up.png
+@dirrm share/doc/libgnet2.0-dev/html/gnet
+@dirrm share/doc/libgnet2.0-dev/html
+@dirrm share/doc/libgnet2.0-dev
+@dirrm lib/gnet-2.0/include
+@dirrm lib/gnet-2.0
+@dirrm include/gnet-2.0

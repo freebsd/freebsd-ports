@@ -1,15 +1,6 @@
---- configure.orig	Mon Apr 28 23:00:52 2003
-+++ configure	Fri Jul  4 17:13:31 2003
-@@ -1880,7 +1880,7 @@
- 
- fi;
- if test "x$with_html_dir" = "x" ; then
--  HTML_DIR=$datadir/doc/libgnet$GNET_MAJOR_VERSION.$GNET_MINOR_VERSION-dev/html
-+  HTML_DIR=$prefix/share/doc/libgnet$GNET_MAJOR_VERSION.$GNET_MINOR_VERSION-glib2-dev/html
- else
-   HTML_DIR=$with_html_dir
- fi
-@@ -7905,6 +7905,7 @@
+--- configure	2002/07/20 11:29:10	1.1
++++ configure	2002/07/20 11:29:19
+@@ -6725,6 +6725,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
