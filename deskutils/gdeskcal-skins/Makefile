@@ -6,18 +6,16 @@
 #
 
 PORTNAME=	gdeskcal-skins
-PORTVERSION=	0.50
+PORTVERSION=	0.53
 CATEGORIES=	deskutils python gnome
 MASTER_SITES=	http://www.pycage.de/download/skins/gdeskcal/
 DISTNAME=
 DISTFILES=	gnometheme.tar.gz \
 		SimpleForDark.tar.gz \
 		e_01.tar.gz \
-		miderat_RTL.tar.gz \
 		light_01.tar.gz \
 		light_02.tar.gz \
 		tnf.tar.gz \
-		miderat_v2.tar.gz \
 		redskin.tar.gz \
 		tiny_and_simple.tar.gz \
 		LCD.tar.gz
@@ -33,7 +31,7 @@ USE_GNOME=	gnomeprefix
 NO_BUILD=	yes
 
 DATA_DIRS=	GNOME LCD Red_skin SimpleForDark e light_01 light_02 \
-		miderat miderat_RTL tiny_and_simple tnf
+		tiny_and_simple tnf
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/gnome/gdeskcal
