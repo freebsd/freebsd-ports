@@ -1,8 +1,7 @@
 MikMod is a portable modules player originally written by
-of Jean-Paul Mikkers (MikMak) for DOS. It has 
-subsequently been hacked by many hands and now runs on 
-many platforms, this particular distribution intended
-to compile fairly painlessly in a Unix (Linux) environment.
+of Jean-Paul Mikkers (MikMak) for DOS. 
+Current MikMod'Unix maintener(since version 3.0.4)is 
+Miodrag Vallat <miodrag@mygale.org>
 It uses the OSS /dev/dsp driver including in all recent 
 kernels for output, and will also write wav files. 
 Supported file formats include mod, stm, s3m, mtm, xm,

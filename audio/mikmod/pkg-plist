@@ -1,7 +1,11 @@
 bin/mikmod
-share/doc/mikmod/bugs.txt
-share/doc/mikmod/changes.txt
-share/doc/mikmod/future.txt
-share/doc/mikmod/mikmod.txt
-share/doc/mikmod/tips.txt
+lib/libmikmod.a
+lib/libmmio.a
+share/doc/mikmod/AUTHORS
+share/doc/mikmod/COPYING.LIB
+share/doc/mikmod/ChangeLog
+share/doc/mikmod/README
+share/doc/mikmod/README.EsounD
+share/doc/mikmod/README.SGI
+share/doc/mikmod/README.SUN
 @dirrm share/doc/mikmod
