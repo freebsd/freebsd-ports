@@ -1,5 +1,5 @@
---- src/hooks/msnhook.cc	Mon Nov 24 10:16:27 2002
-+++ src/hooks/msnhook.cc	Mon Nov 25 10:16:27 2002
+--- src/hooks/msnhook.cc	Mon Oct 28 19:29:41 2002
++++ src/hooks/msnhook.cc	Tue Nov 26 16:10:34 2002
 @@ -30,6 +30,7 @@
  #include "eventmanager.h"
  #include "centericq.h"
@@ -39,7 +39,7 @@
  	em.store(immessage(ic, imevent::incoming, text));
  
  	if(c)
-@@ -453,3 +456,132 @@
+@@ -453,3 +456,136 @@
  	clist.get(contactroot)->playsound(imevent::email);
      }
  }
@@ -68,6 +68,10 @@
 +	return loc_charset;
 +
 +    lang = getenv("LANG");
++    if (!lang) {
++	strcpy( loc_charset, DEFAULT_CHARSET );
++	return loc_charset;
++    };
 +    ch = strrchr( lang, '.' );
 +    if (!ch)
 +	strcpy( loc_charset, DEFAULT_CHARSET );
@@ -91,8 +95,8 @@
 +char *StrToUtf8( const char *inbuf )
 +{
 +    size_t length = strlen( inbuf );
-+    size_t outmaxlength = length * 4; /* FIXME: Is x4 multiplier enoght? */
-+    char *outbuf = (char*) malloc( outmaxlength + 1 );
++    size_t outmaxlength = UTF8_BUF_LENGTH;
++    char *outbuf = utf8_buf;
 +    char *outbuf_save = outbuf;
 +    int ret;
 +
@@ -111,9 +115,9 @@
 +std::string StrToUtf8( const std::string &instr )
 +{
 +    size_t length = instr.length();
-+    size_t outmaxlength = length * 4; /* FIXME: Is x4 multiplier enoght? */
++    size_t outmaxlength = UTF8_BUF_LENGTH;
 +    const char *inbuf = instr.c_str();
-+    char *outbuf = (char*) malloc( outmaxlength + 1 );
++    char *outbuf = utf8_buf;
 +    char *outbuf_save = outbuf;
 +    int ret;
 +
@@ -134,8 +138,8 @@
 +char *Utf8ToStr( const char *inbuf )
 +{
 +    size_t length = strlen( inbuf );
-+    size_t outmaxlength = length;
-+    char *outbuf = (char*) malloc( outmaxlength + 1 );
++    size_t outmaxlength = UTF8_BUF_LENGTH / 4;
++    char *outbuf = utf8_buf;
 +    char *outbuf_save = outbuf;
 +    int ret;
 +
@@ -153,9 +157,9 @@
 +std::string Utf8ToStr( const std::string &instr )
 +{
 +    size_t length = instr.length();
-+    size_t outmaxlength = length;
 +    const char *inbuf = instr.c_str();
-+    char *outbuf = (char*) malloc( outmaxlength + 1 );
++    size_t outmaxlength = UTF8_BUF_LENGTH / 4;
++    char *outbuf = utf8_buf;
 +    char *outbuf_save = outbuf;
 +    int ret;
 +

@@ -1,13 +1,13 @@
 --- src/hooks/utf8conv.h	Thu Jan  1 08:00:00 1970
-+++ src/hooks/utf8conv.h	Tue Nov 19 15:19:44 2002
-@@ -0,0 +1,56 @@
++++ src/hooks/utf8conv.h	Tue Nov 26 16:10:40 2002
+@@ -0,0 +1,58 @@
 +/*-------------------------------------------------------*/
 +/* utf8conv.h     ( Utf8 Converter )                     */
 +/*-------------------------------------------------------*/
 +/* target : Converting Utf8 from/to string/char          */
 +/* modifier : clsung@dragon2.net                         */
 +/* create : unknown                                      */
-+/* update : 02/11/19                                     */
++/* update : 02/11/26                                     */
 +/*-------------------------------------------------------*/
 +#ifndef _UTF8CONV_
 +#define _UTF8CONV_
@@ -21,8 +21,10 @@
 +#endif
 +#include <string>
 +#define DEFAULT_CHARSET "ISO-8859-1"
++#define UTF8_BUF_LENGTH 2048
 +/* charset name cache buffer */
 +static char loc_charset[32];
++static char utf8_buf[UTF8_BUF_LENGTH]; // max 401 length or per message
 +/* 
 +** Name:    safe_iconv
 +** Purpose: 'Fault-tolerant' version if iconv. Replaces invalid seq with '?'
