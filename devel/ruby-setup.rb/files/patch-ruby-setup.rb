@@ -1,7 +1,11 @@
---- ruby-setup.rb.orig	Tue May  7 13:52:44 2002
-+++ ruby-setup.rb	Sat May 25 11:06:36 2002
-@@ -1121,3 +1121,3 @@
-   begin
--    installer = PackageManager.new( File.dirname($0) )
-+    installer = PackageManager.new( Dir.pwd )
-     installer.execute
+--- ruby-setup.rb.orig	Tue Feb 25 15:33:48 2003
++++ ruby-setup.rb	Tue Feb 25 15:34:25 2003
+@@ -857,7 +857,7 @@
+ class ToplevelInstaller < Installer
+ 
+   def self.invoke
+-    new(File.dirname($0)).invoke
++    new(Dir.pwd).invoke
+   end
+ 
+ 
