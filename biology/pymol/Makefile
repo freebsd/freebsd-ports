@@ -6,6 +6,7 @@
 
 PORTNAME=	pymol
 PORTVERSION=	0.82
+PORTREVISION=	1
 CATEGORIES=	biology python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pymol
@@ -16,7 +17,6 @@ MAINTAINER=	chat95@mbox.kyoto-inet.or.jp
 
 BUILD_DEPENDS=	${PYNUMERIC}
 RUN_DEPENDS=	${PYNUMERIC} \
-		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_SITELIBDIR}/PMW:${PORTSDIR}/x11-toolkits/pmw
 LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/Mesa3
 
