@@ -22,6 +22,7 @@ USE_LIBTOOL=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
+NO_LATEST_LINK=yes
 
 INFO=	gcrypt
 
@@ -39,7 +40,6 @@ pre-extract:
 .else
 	@${ECHO_CMD} "===> GnuPG not installed. Signature can not be verified"
 .endif
-
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|" \
