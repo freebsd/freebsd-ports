@@ -8,7 +8,9 @@
 PORTNAME=	fbcmd
 PORTVERSION=	0.5
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://darkshed.dyndns.org/~mathias/files/c_cpp/fbcmd/
+MASTER_SITES=	http://darkshed.dyndns.org/~mathias/files/c_cpp/fbcmd/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	pav
 
 MAINTAINER=	bogorodskiy@inbox.ru
 COMMENT=	A commandline utility for controlling fluxbox
