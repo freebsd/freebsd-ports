@@ -199,6 +199,7 @@ share/gnome/gnomeicu/icons/reDubbed/gnomeicu-offline.png
 share/gnome/gnomeicu/icons/reDubbed/gnomeicu-online.png
 share/gnome/help/gnomeicu/C/gnomeicu.xml
 share/gnome/omf/gnomeicu/gnomeicu-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnomeicu/gnomeicu-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/gnome-gnomeicu.png
 share/gnome/sounds/gnomeicu/message.wav
 share/locale/ca/LC_MESSAGES/gnomeicu.mo
@@ -252,3 +253,4 @@ share/locale/zh_TW/LC_MESSAGES/gnomeicu.mo
 @dirrm share/gnome/gnomeicu/emoticons/AIM
 @dirrm share/gnome/gnomeicu/emoticons
 @dirrm share/gnome/gnomeicu
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnomeicu/gnomeicu-C.omf 2>/dev/null || /usr/bin/true
