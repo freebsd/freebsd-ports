@@ -8,7 +8,7 @@
 PORTNAME=	SETISupport
 PORTVERSION=	0.75
 CATEGORIES=	astro java
-MASTER_SITES=	http://www.vt.sakura.ne.jp/~grgr56/SETITest/
+MASTER_SITES=	http://otsubo.info/contents/SETISupport/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//}
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
