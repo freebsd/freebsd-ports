@@ -6,7 +6,13 @@ VPATH=		${PLUGIN}:${DRIVER}
 CXXFLAGS+=	-I${PLUGIN} -I${DRIVER} \
 		-I${LOCALBASE}/include/mysql \
 		-I${LOCALBASE}/include/postgresql/server \
-		-I${LOCALBASE}/include -I${X11BASE}/include
+		-I${LOCALBASE}/include -I${X11BASE}/include \
+		${PTHREAD_CFLAGS} -DQT_THREAD_SUPPORT
+.if ${DB}==mysql
+LDADD=		-L${X11BASE}/lib -L${LOCALBASE}/lib/mysql ${PTHREAD_LIBS} -lqt-mt -lmysqlclient 
+.else
+LDADD=		-L${X11BASE}/lib -L${LOCALBASE}/lib ${PTHREAD_LIBS} -lqt-mt -lpq
+.endif
 
 SRCS=		qsql_${DB}.cpp main.cpp
 LIBDIR=		${PREFIX}/lib/plugins/sqldrivers
