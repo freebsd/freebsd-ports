@@ -197,6 +197,7 @@
     SUBDIR += mkcmd
     SUBDIR += mkmf
     SUBDIR += mm
+    SUBDIR += mob
     SUBDIR += moonshine
     SUBDIR += mprof
     SUBDIR += msrc0
