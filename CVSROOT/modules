@@ -1883,6 +1883,7 @@ entice		ports/graphics/entice
 entity		ports/devel/entity
 entitymib	ports/net/entitymib
 entropy		ports/math/entropy
+env4801		ports/sysutils/env4801
 envelope	ports/print/envelope
 eo-aspell	ports/textproc/eo-aspell
 eog		ports/graphics/eog
