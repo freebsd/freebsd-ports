@@ -1,0 +1,12 @@
+ACT (Artemis Comparison Tool) is a DNA sequence comparison viewer based on
+Artemis. In common with Artemis, ACT is written in Java and runs on UNIX,
+GNU/Linux, Macintosh and MS Windows systems. It can read complete EMBL
+and GENBANK entries or sequence in FASTA or raw format. Extra sequence
+features can be in EMBL, GENBANK or GFF format. ACT is distributed under the
+same license as Artemis. 
+
+The sequence comparison displayed by ACT is usually the result of a blastn or
+tblastx search that has been processed by MSPcrunch. MSPcrunch must be run
+with the -d flag for the output to be usable by ACT. 
+
+WWW:  http://www.sanger.ac.uk/Software/ACT/manual

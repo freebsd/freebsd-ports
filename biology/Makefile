@@ -2,6 +2,7 @@
 #
 
     SUBDIR += L-Breeder
+    SUBDIR += act
     SUBDIR += artemis
     SUBDIR += avida
     SUBDIR += babel
