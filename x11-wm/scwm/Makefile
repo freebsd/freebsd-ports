@@ -1,12 +1,12 @@
 # New ports collection makefile for:   scwm
-# Version required:    0.99.3
+# Version required:    0.99.4
 # Date created:        26 December 1997
 # Whom:                Yukihiro Nakai <nacai@iname.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	scwm-0.99.3
+DISTNAME=	scwm-0.99.4
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://scwm.mit.edu/pub/scwm/
 
