@@ -14,13 +14,19 @@ MASTER_SITE_SUBDIR=	fame
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
-		fame-0.9.0:${PORTSDIR}/graphics/libfame
+LIB_DEPENDS=	fame-0.9.0:${PORTSDIR}/graphics/libfame
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=	recmpeg.1
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
+
+.if !exists(/usr/include/getopt.h)
+LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+LDFLAGS+=	-lgnugetopt
+.endif
 
 .include <bsd.port.mk>
