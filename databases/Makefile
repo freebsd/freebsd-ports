@@ -137,6 +137,7 @@
     SUBDIR += postgresql7
     SUBDIR += postgresql72
     SUBDIR += postgresql_autodoc
+    SUBDIR += puredb
     SUBDIR += pxtools
     SUBDIR += py-MySQL
     SUBDIR += py-MySQLdb
