@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.69 1995/07/05 21:39:13 asami Exp $
+# $Id: Makefile,v 1.70 1995/07/08 00:31:12 ache Exp $
 #
 
    SUBDIR += XFree86
@@ -34,6 +34,7 @@
    SUBDIR += xlockmore
    SUBDIR += xperfmon
    SUBDIR += xphoon
+   SUBDIR += xscreensaver
    SUBDIR += xsnow
    SUBDIR += xview-config
    SUBDIR += xview-lib
