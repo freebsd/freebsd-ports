@@ -10,6 +10,8 @@ lib/Ngraph/Ngraph.xpm
 lib/Ngraph/append.nsc
 lib/Ngraph/calc.nsc
 lib/Ngraph/calc.tcl
+lib/Ngraph/gpl.txt
+lib/Ngraph/gpl.ja.txt
 lib/Ngraph/demo/demo.ngp
 lib/Ngraph/demo/demo1.dat
 lib/Ngraph/demo/demo1.ngp
@@ -31,6 +33,7 @@ lib/Ngraph/fft.tcl
 lib/Ngraph/fitrslt.nsc
 lib/Ngraph/fitrslt.tcl
 lib/Ngraph/gra2ps
+lib/Ngraph/gra2ps.ini
 lib/Ngraph/ja/Ngraph
 lib/Ngraph/legend.nsc
 lib/Ngraph/legend.tcl
