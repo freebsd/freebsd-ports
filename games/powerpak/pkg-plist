@@ -1,5 +1,6 @@
 include/PowerPak/IMG.h
 include/PowerPak/gfx.h
+include/PowerPak/joystick.h
 include/PowerPak/keyboard.h
 include/PowerPak/mouse.h
 include/PowerPak/powerdraw.h
@@ -13,8 +14,6 @@ lib/libPP.so
 @exec /sbin/ldconfig -m %B
 @unexec /sbin/ldconfig -R
 share/examples/PowerPak/PowerDraw/Makefile
-share/examples/PowerPak/PowerDraw/crackman.ttf
-share/examples/PowerPak/PowerDraw/crackman.txt
 share/examples/PowerPak/PowerDraw/ex1.c
 share/examples/PowerPak/PowerDraw/ex2.c
 share/examples/PowerPak/PowerDraw/ex3.c
@@ -25,11 +24,14 @@ share/examples/PowerPak/PowerDraw/ex5-2.pcx
 share/examples/PowerPak/PowerDraw/ex5.c
 share/examples/PowerPak/PowerDraw/ex6.c
 share/examples/PowerPak/PowerDraw/ex7.c
+share/examples/PowerPak/PowerDraw/krylon.ttf
 share/examples/PowerPak/PowerInput/Makefile
 share/examples/PowerPak/PowerInput/ex1.c
 share/examples/PowerPak/PowerInput/ex2.c
 share/examples/PowerPak/PowerInput/ex3.c
 share/examples/PowerPak/PowerInput/ex4.c
+share/examples/PowerPak/PowerInput/ex5.c
+share/examples/PowerPak/PowerInput/sprite.pcx
 @dirrm include/PowerPak
 @dirrm share/examples/PowerPak/PowerDraw
 @dirrm share/examples/PowerPak/PowerInput
