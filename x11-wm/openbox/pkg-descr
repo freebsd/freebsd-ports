@@ -1,7 +1,11 @@
-Openbox is based on, and similar to, blackbox.  In this port/package,
-bsetbg and bsetroot are renamed to osetbg and osetroot in order to
-avoid conflict with blackbox.
+Openbox is a window manager for the X11 windowing system. It currently runs
+on a large list of platforms. It was originally based on Blackbox and currently
+remains very similar, even using Blackbox styles (with available extensions)
+for its themeing.
 
-Internationalization/localization does not work in this port.
+-Why does Openbox exist?
+Openbox is the spawn of a number of previous Blackbox users/hackers. Being
+overall pleased with the window manager, but feeling left unable to contribute,
+this project was born. It aims to be open for all to contribute to.
 
-WWW: http://openbox.sunsite.dk/
+WWW: http://icculus.org/openbox/
