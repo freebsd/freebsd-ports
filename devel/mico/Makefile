@@ -13,14 +13,12 @@ MASTER_SITES=	http://www.mico.org/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A CORBA 2.0 implementation which goal is freely available
 
-BROKEN=		"Does not compile"
-
 WRKSRC=			${WRKDIR}/mico
 INSTALLS_SHLIB=		yes
 GNU_CONFIGURE=		yes
 USE_REINPLACE=		yes
 USE_GMAKE=		yes
-USE_GCC=		2.95
+USE_GCC=		3.2
 CONIFUGRE_ARGS+=	--enable-minimum-corba --enable-cd \
 			--disable-mini-stl \
 
