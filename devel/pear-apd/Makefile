@@ -15,6 +15,8 @@ COMMENT=	A full-featured engine-level PHP profiler/debugger
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Does not compile
+
 USE_PHP=	yes
 USE_PHPIZE=	yes
 
