@@ -81,6 +81,7 @@ taginfo		CVSROOT taginfo
 ADMsmb		ports/security/ADMsmb
 ADMsnmp		ports/security/ADMsnmp
 AquaGatekeeper	ports/net/AquaGatekeeper
+AquaGatekeeper2	ports/net/AquaGatekeeper2
 BillardGL	ports/games/BillardGL
 CaribbeanStud	ports/games/CaribbeanStud
 Cgraph		ports/graphics/Cgraph
