@@ -7706,6 +7706,7 @@ php4-pcre	ports/devel/php4-pcre
 php4-pear	ports/devel/php4-pear
 php4-pgsql	ports/databases/php4-pgsql
 php4-recode	ports/converters/php4-recode
+php4-sybase	ports/databases/php4-sybase
 php4-xml	ports/textproc/php4-xml
 php4-zlib	ports/archivers/php4-zlib
 php5		ports/lang/php5
