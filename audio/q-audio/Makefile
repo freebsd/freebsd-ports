@@ -12,17 +12,13 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	q-lang
 PKGNAMEPREFIX=	q-
-DISTNAME=	${PKGNAME}
+DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 MAINTAINER=	ag@muwiinfa.geschichte.uni-mainz.de
 COMMENT=	Q-Audio -- digital audio interface for the Q language
 
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
 		q.4:${PORTSDIR}/lang/q
-
-BROKEN=		"Broken distinfo"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2004-04-17
 
 USE_REINPLACE=	yes
 USE_GNOME=	gnometarget
