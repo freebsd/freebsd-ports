@@ -1,8 +1,5 @@
-jdk%%JDK_VERSION%%/bin/NetRexxC.bat
 jdk%%JDK_VERSION%%/bin/NetRexxC.cmd
-jdk%%JDK_VERSION%%/bin/hello.nrx
-jdk%%JDK_VERSION%%/bin/nrc.bat
-jdk%%JDK_VERSION%%/bin/nrc.cmd
+jdk%%JDK_VERSION%%/bin/nrc
 jdk%%JDK_VERSION%%/lib/NetRexxC.zip
 jdk%%JDK_VERSION%%/lib/NetRexxR.zip
 share/doc/NetRexx/ArchText.class
