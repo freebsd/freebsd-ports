@@ -8,7 +8,7 @@
 PORTNAME=	doxygen
 PORTVERSION=	1.2.6
 CATEGORIES=	devel
-MASTER_SITES=	http://www.stack.nl/~dimitri/doxygen/dl/
+MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/
 EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	joep@di.nl
