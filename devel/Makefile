@@ -108,6 +108,7 @@
     SUBDIR += ctags
     SUBDIR += cutils
     SUBDIR += cvs2cl
+    SUBDIR += cvs+ipv6
     SUBDIR += cvs2html
     SUBDIR += cvs2p4
     SUBDIR += cvsadmin
