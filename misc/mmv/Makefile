@@ -3,14 +3,14 @@
 # Date created:		2 Feb 1995
 # Whom:			Michael Elbel (me)
 #
-# $Id: Makefile,v 1.5 1995/04/16 05:22:22 asami Exp $
+# $Id: Makefile,v 1.6 1995/04/23 13:02:30 asami Exp $
 #
 
 
 DISTNAME=	mmv
 PKGNAME=	mmv-1.01b
 CATEGORIES+=	utilities
-MASTER_SITES=	ftp://gatekeeper.dec.com/archive/.b/usenet/comp.sources.unix/
+MASTER_SITES=	ftp://gatekeeper.dec.com/pub/usenet/comp.sources.unix/
 DISTFILES=	part01.Z part02.Z mmv.pch.Z
 
 MAINTAINER=	me@FreeBSD.org
