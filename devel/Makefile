@@ -777,6 +777,7 @@
     SUBDIR += p5-File-chdir
     SUBDIR += p5-FileHandle-Unget
     SUBDIR += p5-Filesys-Statvfs_Df
+    SUBDIR += p5-Filesys-Virtual
     SUBDIR += p5-Filter
     SUBDIR += p5-Filter-CBC
     SUBDIR += p5-FreezeThaw
