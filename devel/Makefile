@@ -113,6 +113,7 @@
     SUBDIR += cedet-emacs20
     SUBDIR += cflow
     SUBDIR += cflow2vcg
+    SUBDIR += cgprof
     SUBDIR += chora
     SUBDIR += cil
     SUBDIR += cl-asdf
