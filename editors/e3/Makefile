@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	e3
-PORTVERSION=	1.1
+PORTVERSION=	1.4
 CATEGORIES=	editors
 MASTER_SITES=	http://www.sax.de/~adlibit/
 
 MAINTAINER=	joseph@randomnetworks.com
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
-
-WRKSRC=		${WRKDIR}/${DISTNAME}a
 
 USE_GMAKE=	yes
 MAKE_ARGS=	OS=FREEBSD
