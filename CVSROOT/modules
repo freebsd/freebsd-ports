@@ -3329,6 +3329,7 @@ iiimf-le-unit	ports/textproc/iiimf-le-unit
 iiimf-protocol-lib	ports/textproc/iiimf-protocol-lib
 iiimf-server	ports/textproc/iiimf-server
 iiimf-x		ports/textproc/iiimf-x
+iiimf-x-lib	ports/textproc/iiimf-x-lib
 iip		ports/irc/iip
 ija		ports/news/ija
 ike-scan	ports/security/ike-scan
