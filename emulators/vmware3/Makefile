@@ -154,6 +154,11 @@ pre-install: setoptions
 		 ; do \
 		${INSTALL_SCRIPT} ${WRKSRC}/bin/$${i} ${VMDIR}/bin; \
 	done
+	for i in \
+		vmware-ui vmware-mks \
+		; do \
+		${INSTALL_SCRIPT} ${WRKSRC}/lib/bin/$${i} ${VMDIR}/bin; \
+	done
 	${INSTALL_SCRIPT} -m 4555 ${WRKSRC}/bin/vmware ${VMDIR}/bin
 	${INSTALL_SCRIPT} ${WRKDIR}/vmware ${PREFIX}/bin
 	${MKDIR} ${VMDIR}/lib
@@ -172,6 +177,7 @@ pre-install: setoptions
 
 post-install:
 	${LN} -sf ${PREFIX}/etc/vmware /etc/
+	${LN} -sf ${PREFIX}/lib/vmware /compat/linux/usr/lib/vmware
 	@${CAT} ${PKGMESSAGE}
 
 pre-clean:

@@ -268,6 +268,8 @@ lib/vmware/bin/vmnet-bridge
 lib/vmware/bin/vmnet-dhcpd
 lib/vmware/bin/vmnet-sniffer
 lib/vmware/bin/vmware-ping
+lib/vmware/bin/vmware-ui
+lib/vmware/bin/vmware-mks
 lib/vmware/bin/vmware-wizard
 lib/vmware/bin/vmware
 share/doc/vmware/Hints.FreeBSD
