@@ -1,36 +1,59 @@
 
 $FreeBSD$
 
---- configure	2001/07/03 16:13:39	1.1
-+++ configure	2001/07/03 16:14:05
-@@ -6438,7 +6438,7 @@
-   echo $ac_n "(cached) $ac_c" 1>&6
+--- configure.orig	Fri Feb  8 11:02:55 2002
++++ configure	Fri Feb  8 11:47:15 2002
+@@ -1193,10 +1193,10 @@
+ 
+ # The aliases save the names the user supplied, while $host etc.
+ # will get canonicalized.
+-test -n "$target_alias" &&
+-  test "$program_prefix$program_suffix$program_transform_name" = \
+-    NONENONEs,x,x, &&
+-  program_prefix=${target_alias}-
++#test -n "$target_alias" &&
++#  test "$program_prefix$program_suffix$program_transform_name" = \
++#    NONENONEs,x,x, &&
++#  program_prefix=${target_alias}-
+ 
+ # Find a good install program.  We prefer a C program (faster),
+ # so one script is as good as another.  But avoid the broken or
+@@ -8721,7 +8721,7 @@
+ echo "$as_me:8721: result: $ac_cv_lib_dl_dlopen" >&5
+ echo "${ECHO_T}$ac_cv_lib_dl_dlopen" >&6
+ if test $ac_cv_lib_dl_dlopen = yes; then
+-  GUILE_LIBS="-ldl $GUILE_LIBS"
++  GUILE_LIBS="$GUILE_LIBS"
+ fi
+ 
+ 		echo "$as_me:8727: checking for t_accept in -lnsl" >&5
+@@ -9467,7 +9467,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
  else
-   ac_save_LIBS="$LIBS"
+   ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lpam -ldl $LIBS"
 +LIBS="-lpam $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 6444 "configure"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line 9472 "configure"
  #include "confdefs.h"
-@@ -6478,7 +6478,7 @@
-   echo $ac_n "(cached) $ac_c" 1>&6
+@@ -9522,7 +9522,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
  else
-   ac_save_LIBS="$LIBS"
+   ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lpam_misc -ldl -lpam $LIBS"
 +LIBS="-lpam_misc -lpam $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 6484 "configure"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line 9527 "configure"
  #include "confdefs.h"
-@@ -6506,10 +6506,10 @@
- fi
- if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
-   echo "$ac_t""yes" 1>&6
+@@ -9566,9 +9566,9 @@
+ echo "$as_me:9566: result: $ac_cv_lib_pam_misc_pam_misc_setenv" >&5
+ echo "${ECHO_T}$ac_cv_lib_pam_misc_pam_misc_setenv" >&6
+ if test $ac_cv_lib_pam_misc_pam_misc_setenv = yes; then
 -  PAM_LIBS="-ldl -lpam -lpam_misc"
 +  PAM_LIBS="-lpam -lpam_misc"
  else
-   echo "$ac_t""no" 1>&6
--PAM_LIBS="-ldl -lpam"
-+PAM_LIBS="-lpam"
+-  PAM_LIBS="-ldl -lpam"
++  PAM_LIBS="-lpam"
  fi
  
- 
+ else
