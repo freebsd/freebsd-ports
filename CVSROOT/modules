@@ -3739,6 +3739,7 @@ lmd		ports/net/lmd
 lmmon		ports/sysutils/lmmon
 lmtp2nntp	ports/mail/lmtp2nntp
 ln		src/bin/ln
+loadd		ports/net/loadd
 locate		src/usr.bin/locate
 lock		src/usr.bin/lock
 lockf		src/usr.bin/lockf
