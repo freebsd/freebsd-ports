@@ -32,7 +32,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
-  <vuln vid="ad74a1bd-16d2-11d9-bc4a-000c41e2cdad">
+  <vuln vid="d47e9d19-5016-11d9-9b5f-0050569f0001">
     <topic>php -- multiple vulnerabilities</topic>
     <affects>
       <package>
