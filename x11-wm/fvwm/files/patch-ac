@@ -1,0 +1,49 @@
+*** ../fvwm-1.24r/sample.fvwmrc/system.fvwmrc	Fri Dec  2 19:19:12 1994
+--- sample.fvwmrc/system.fvwmrc	Fri May 12 14:33:03 1995
+***************
+*** 17,22 ****
+--- 17,26 ----
+  # If you get it wrong, the most common problem is that color or font settings
+  # are ignored
+  
++ # for m4 processing we have to undefine the include macro or pathts to
++ # /usr/.../include/... will be mangled
++ undefine(`include')
++ 
+  ###########################################################################
+  # set up the colors
+  #
+***************
+*** 63,69 ****
+  # Set windows to auto-raise after 750 milliseconds if you like it.
+  # Autoraise can sometimes obscure pop-up windows. Performance is now
+  # similar to olvwm's auto-raise feature.
+! #AutoRaise 750
+  
+  # Normally, we'll be in focus-follows mouse mode, but uncomment this 
+  # for mwm-style click-to-focus
+--- 67,73 ----
+  # Set windows to auto-raise after 750 milliseconds if you like it.
+  # Autoraise can sometimes obscure pop-up windows. Performance is now
+  # similar to olvwm's auto-raise feature.
+! AutoRaise 500
+  
+  # Normally, we'll be in focus-follows mouse mode, but uncomment this 
+  # for mwm-style click-to-focus
+***************
+*** 227,233 ****
+  
+  Function "InitFunction"
+  	Module	"I"	FvwmBanner
+! 	Exec	"I"	xpmroot /usr/include/X11/pixmaps/fvwm.xpm &
+  	Module	"I"	GoodStuff
+  	Exec	"I"	exec xterm -geometry 80x64+0+0 &
+  	Wait	"I"	xterm
+--- 231,237 ----
+  
+  Function "InitFunction"
+  	Module	"I"	FvwmBanner
+! 	Exec	"I"	xpmroot /usr/X11R6/include/X11/pixmaps/fvwm.xpm &
+  	Module	"I"	GoodStuff
+  	Exec	"I"	exec xterm -geometry 80x64+0+0 &
+  	Wait	"I"	xterm
