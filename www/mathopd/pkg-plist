@@ -6,8 +6,7 @@ sbin/mathopd
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/cgi.txt
 %%PORTDOCS%%%%DOCSDIR%%/config.txt
-%%PORTDOCS%%%%DOCSDIR%%/processing.txt
 %%PORTDOCS%%%%DOCSDIR%%/running.txt
 %%PORTDOCS%%%%DOCSDIR%%/sample.cfg
 %%PORTDOCS%%%%DOCSDIR%%/syntax.txt
-%%PORTDOCS%%@dirrm share/doc/mathopd
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	mathopd
-PORTVERSION=	1.4p2
+PORTVERSION=	1.5p3
 CATEGORIES=	www
-MASTER_SITES=	http://www.mathopd.org/dist/ \
-		http://www.tobez.org/download/port-mirrors/www/mathopd/
+MASTER_SITES=	http://www.mathopd.org/dist/
 
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	A very small, yet very fast HTTP server
 
-DOCS=	CHANGES cgi.txt config.txt processing.txt running.txt sample.cfg syntax.txt
+DOCS=	CHANGES cgi.txt config.txt running.txt sample.cfg syntax.txt
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/sample.cfg ${PREFIX}/etc/mathopd.conf.sample
