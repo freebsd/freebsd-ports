@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	samba
-PORTVERSION=	2.2.7a.20030314
+PORTVERSION=	2.2.8
 CATEGORIES=	net
 MASTER_SITES=	http://us3.samba.org/samba/ftp/%SUBDIR%/ \
 		http://us4.samba.org/samba/ftp/%SUBDIR%/ \
 		http://us5.samba.org/samba/ftp/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old-versions
-DISTNAME=	${PORTNAME}-2.2.7a
-PATCHFILES=	samba-2.2.7a-vs-2.2-20030314.diff.bz2
 
 MAINTAINER=	dwcjr@FreeBSD.org
 COMMENT=	A free SMB and CIFS client and server for UNIX
