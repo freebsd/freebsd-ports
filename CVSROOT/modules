@@ -2069,6 +2069,7 @@ gdesklets-multitail	ports/sysutils/gdesklets-multitail
 gdesklets-psi_themes	ports/deskutils/gdesklets-psi_themes
 gdesklets-recentlyused	ports/deskutils/gdesklets-recentlyused
 gdesklets-sensor-psi_iconbutton	ports/deskutils/gdesklets-sensor-psi_iconbutton
+gdesklets-sensor-psi_memo	ports/deskutils/gdesklets-sensor-psi_memo
 gdesklets-sensor-psi_memory	ports/sysutils/gdesklets-sensor-psi_memory
 gdesklets-sensor-psi_network	ports/net/gdesklets-sensor-psi_network
 gdesklets-sensor-psi_ping	ports/net/gdesklets-sensor-psi_ping
