@@ -20,7 +20,7 @@ BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 
 .if !defined(NOPORTDOCS)
-BUILD_DEPENDS=	haddock:${PORTSDIR}/devel/hs-haddock
+BUILD_DEPENDS+=	haddock:${PORTSDIR}/devel/hs-haddock
 .endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
