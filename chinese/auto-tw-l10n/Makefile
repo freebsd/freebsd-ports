@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	auto-tw-l10n
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://ftp.iteration.net/pub/patch_chinese/
 DISTNAME=	zh-tw-skel-${PORTVERSION}
@@ -42,7 +42,7 @@ RUN_DEPENDS=	${X11BASE}/lib/aout/zh-XFree86-aoutlibs-3.3.6:${PORTSDIR}/chinese/X
 		${LOCALBASE}/lib/xemacs-21.1.12/etc/app-defaults/zh_TW.Big5/Emacs:${PORTSDIR}/chinese/xemacs21 \
 		xmms:${PORTSDIR}/chinese/xmms
 
-NO_BUILD=       yes
+NO_BUILD=	yes
 
 do-install:
 #Temporary hack before adduser is modified
