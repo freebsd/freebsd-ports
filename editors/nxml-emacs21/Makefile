@@ -10,11 +10,11 @@ PORTVERSION=	${NXML_VER}
 CATEGORIES=	editors elisp
 MASTER_SITES=	http://www.thaiopensource.com/download/
 
-MAINTAINER=	fritz.heinrichmeyer@Fernuni-hagen.de
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A major mode for editing XML documents for emacs21
 
 # distfile version
-NXML_VER=	20031031
+NXML_VER=	20041004
 NXML_STARTUPEL=	nxml-startup.el
 EMACS_PORT_NAME=emacs21
 

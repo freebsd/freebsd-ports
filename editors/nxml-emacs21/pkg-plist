@@ -8,8 +8,12 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/nxml/nxml-mode.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/nxml/nxml-ns.el
 %%EMACS_VERSION_SITE_LISPDIR%%/nxml/nxml-ns.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/nxml/nxml-outln.el
+%%EMACS_VERSION_SITE_LISPDIR%%/nxml/nxml-outln.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/nxml/nxml-parse.el
 %%EMACS_VERSION_SITE_LISPDIR%%/nxml/nxml-parse.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/nxml/nxml-rap.el
+%%EMACS_VERSION_SITE_LISPDIR%%/nxml/nxml-rap.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/nxml/nxml-uchnm.el
 %%EMACS_VERSION_SITE_LISPDIR%%/nxml/nxml-uchnm.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/nxml/nxml-util.el
