@@ -6,33 +6,44 @@
 #
 
 PORTNAME=	gri
-PORTVERSION=	2.10.1
+PORTVERSION=	2.12.1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gri
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	gri-${PORTVERSION}-arch-indep
 
-MAINTAINER=	bdodson@scms.utmb.edu
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	netcdf.1:${PORTSDIR}/math/netcdf
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 
-WRKSRC=		${WRKDIR}/gri-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+USE_PERL5_BUILD=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	YES
-MAKE_ENV+=	PREFIX=${PREFIX}
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+
+.if defined(NOPORTDOCS)
 ALL_TARGET=	gri
-MAN1=		gri.1
+INSTALL_TARGET=	install-bin
+.endif
+
+MAN1=	gri.1 gri_merge.1 gri_unpage.1
 
 post-extract:
-	${CP} ${WRKSRC}/doc/gri-manpage.1 ${WRKSRC}/gri.1
+	@${RM} -f ${WRKSRC}/doc/*.info* ${WRKSRC}/doc/info
+	@${MV} -f ${WRKSRC}/doc/gri-manpage.1 ${WRKSRC}/doc/gri.1
+
+post-patch:
+	@${REINPLACE_CMD} -e "s/makeinfo/makeinfo --no-split/" ${WRKSRC}/doc/Makefile
 
 post-install:
-.if defined(NOPORTDOCS)
-	${RM} -rf ${PREFIX}/share/gri/doc
+.for file in ${MAN1}
+	${INSTALL_MAN} ${WRKSRC}/doc/${file} ${MANPREFIX}/man/man1
+.endfor
+.if !defined(NOPORTDOCS)
+	@${INSTALL_DATA} ${WRKSRC}/doc/gri.info ${PREFIX}/info
+	install-info ${PREFIX}/info/gri.info ${PREFIX}/info/dir
 .endif
-	${CHMOD} 555 ${PREFIX}/bin/gri_merge
-	${CHMOD} 555 ${PREFIX}/bin/gri_unpage
-	${INSTALL_MAN} ${WRKSRC}/gri.1 ${PREFIX}/man/man1
-	@-${RM} ${PREFIX}/share/gri/${PORTVERSION}/license.txt
 
 .include <bsd.port.mk>
