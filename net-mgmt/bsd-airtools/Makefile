@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	bsd-airtools
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	net
-MASTER_SITES=	http://www.dachb0den.com/projects/bsd-airtools/
+MASTER_SITES=	http://people.FreeBSD.org/~seanc/ports/bsd-airtools/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
