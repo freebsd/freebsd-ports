@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	jlex
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.6
 CATEGORIES=	java
-MASTER_SITES=	http://www.cs.princeton.edu/~appel/modern/java/JLex/Archive/1.2.3/
+MASTER_SITES=	http://www.cs.princeton.edu/~appel/modern/java/JLex/Archive/1.2.6/
 DISTNAME=	Main
 EXTRACT_SUFX=	.java
 EXTRACT_ONLY=	#
@@ -16,14 +16,11 @@ EXTRACT_ONLY=	#
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lexical analyzer generator, written for Java, in Java
 
-BUILD_DEPENDS=	${LOCALBASE}/${JAVADIR}/bin/java:${PORTSDIR}/java/jdk11
-
-JAVADIR=	jdk1.1.8
-JAVAC=		${LOCALBASE}/${JAVADIR}/bin/javac
-
+USE_JAVA=	1.1+
+NEED_JAVAC=	yes
 NO_WRKSUBDIR=	yes
 
-PLIST_SUB=	JAVADIR=${JAVADIR}
+PLIST_SUB=	JAVAJARDIR=${JAVAJARDIR:S|^${PREFIX}/||}
 
 do-extract:
 	@${RM} -rf ${WRKDIR}
@@ -31,13 +28,14 @@ do-extract:
 	@${CP} ${DISTDIR}/Main.java ${WRKDIR}
 
 do-build:
-	@${JAVAC} ${WRKDIR}/Main.java
+	@cd ${WRKDIR} && \
+		${JAVAC} -d . Main.java && \
+		${JAR} cf ${PORTNAME}.jar JLex/*.class
 
 do-install:
-	@${MKDIR} ${PREFIX}/${JAVADIR}/jlex
-	@${INSTALL_SCRIPT} ${WRKDIR}/*.class ${PREFIX}/${JAVADIR}/jlex
+	@${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.jar ${JAVAJARDIR}
 
 post-install:
-	@${CAT} ${PKGMESSAGE} | ${SED} -e s:/usr/local:${PREFIX}: -e s:jdk1.1.8:${JAVADIR}:
+	@${SED} s:JAVAJARDIR:${JAVAJARDIR}: < ${PKGMESSAGE}
 
 .include <bsd.port.mk>
