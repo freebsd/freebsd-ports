@@ -1,0 +1,78 @@
+--- wmeyes.c.orig	Sat May 23 18:44:25 1998
++++ wmeyes.c	Mon Mar 22 08:45:36 1999
+@@ -3,7 +3,6 @@
+ #include <string.h>
+ #include <math.h>
+ #include <signal.h>
+-#include <getopt.h>
+ #include <sys/time.h>
+ 
+ #include <X11/X.h>
+@@ -74,6 +73,8 @@
+ void scanArgs(int argc,char *argv[]);
+ unsigned long getColor(char *colorName);
+ 
++extern char *optarg;
++
+ void do_nothing(void)
+ {
+ }
+@@ -322,19 +323,8 @@
+ 	bool helpflag = FALSE;
+ 	bool errflag = FALSE;
+ 
+-	static struct option long_opts[] = {
+-		{"help",      no_argument,       NULL, 'h'},
+-		{"withdrawn", no_argument,       NULL, 'w'},
+-		{"shape",     no_argument,       NULL, 's'},
+-		{"pupil",     required_argument, NULL, 'p'},
+-		{"outside",   required_argument, NULL, 'o'},
+-		{"inside",    required_argument, NULL, 'i'},
+-		{"time",      required_argument, NULL, 't'},
+-		{"display",   required_argument, NULL, 'd'}};
+-
+-	while(1)  {
+-		opt_index = 0;
+-		c = getopt_long_only(argc, argv, "hwsp:o:i:d:", long_opts, &opt_index);
++    while(1) {
++        c = getopt(argc, argv, "hwsp:o:i:d:t:");
+ 		if (c == -1)  {
+ 			break;
+ 		}
+@@ -372,24 +362,25 @@
+ 				break;
+ 		}
+ 	}
++
+ 	if (errflag)  {
+ 		fprintf(stderr, "Usage: %s [-h] [-ws] [-p pupclr] [-o outclr] [-i inclr] [-display disp]\n", argv[0]);
+ 		exit(1);
+ 	}
++
+ 	if (helpflag)  {
+ 		fprintf(stderr,"WMeyes 1.0 - The world's most useless WindowMaker dock app.\n");
+ 		fprintf(stderr,"by Bryan Feir (jenora@istar.ca)\n\n");
+-		fprintf(stderr,"Usage: %s [-h] [-ws] [-p pupclr] [-o outclr] [-i inclr] [-display disp]\n", argv[0]);
+-		fprintf(stderr,"short  long      argument  description\n");
+-		fprintf(stderr,"  -h  --help               display this help screen\n");
+-		fprintf(stderr,"  -w  --withdrawn          withdraw window (for WindowMaker)\n");
+-		fprintf(stderr,"  -s  --shape              use shaped window\n");
+-		fprintf(stderr,"  -p  --pupil     pupclr   set the colour of the eyes' pupils (default %s)\n", EYECOLOR);
+-		fprintf(stderr,"  -o  --outside   outclr   set the outside colour of the eyes (default %s)\n", OUTCOLOR);
+-		fprintf(stderr,"  -i  --inside    inclr    set the inside colour of the eyes (default %s)\n", INCOLOR);
+-		fprintf(stderr,"  -t  --time      msec     set the interation time in msec (default %d)\n", REPTIME);
+-		fprintf(stderr,"  -d  --display   disp     set the X display to use\n");
+-		fprintf(stderr,"       -display   disp     set the X display to use\n");
++		fprintf(stderr,"Usage: %s [-h] [-ws] [-p pupclr] [-o outclr] [-i inclr] [-d disp]\n", argv[0]);
++		fprintf(stderr,"option     argument        description\n");
++		fprintf(stderr,"  -h                       display this help screen\n");
++		fprintf(stderr,"  -w                       withdraw window (for WindowMaker)\n");
++		fprintf(stderr,"  -s                       use shaped window\n");
++		fprintf(stderr,"  -p        pupclr         set the colour of the eyes' pupils (default %s)\n", EYECOLOR);
++		fprintf(stderr,"  -o        outclr         set the outside colour of the eyes (default %s)\n", OUTCOLOR);
++		fprintf(stderr,"  -i        inclr          set the inside colour of the eyes (default %s)\n", INCOLOR);
++		fprintf(stderr,"  -t        msec           set the interation time in msec (default %d)\n", REPTIME);
++		fprintf(stderr,"  -d        disp           set the X display to use\n");
+ 		exit(0);
+ 	}
+ }
