@@ -5033,6 +5033,7 @@ openradius	ports/net/openradius
 openreg		ports/net/openreg
 openrm		ports/graphics/openrm
 opensc		ports/security/opensc
+opensc-esteid	ports/security/opensc-esteid
 opensched	ports/textproc/opensched
 openslp		ports/net/openslp
 opensp		ports/textproc/opensp
