@@ -1,4 +1,4 @@
-The SeizeDesktop is like a customizer of disktop screen environment.
+The SeizeDesktop is like a customizer of desktop screen environment.
 
 Note that both x11-toolkits/seizedesktop and japanese/seizedesktop
 are mutually exclusive and SHOULD NOT BE INSTALLED SIMULTANEOUSLY!
