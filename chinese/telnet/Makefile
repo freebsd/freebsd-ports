@@ -8,8 +8,7 @@
 PORTNAME=	telnet
 PORTVERSION=	1.0
 CATEGORIES=	chinese
-MASTER_SITES=	ftp://freebsd.ntu.edu.tw/freebsd/woju/source/ \
-		ftp://bsd.sinica.edu.tw/pub/FreeBSD/taiwan/users/woju/source/
+MASTER_SITES=	ftp://bsd.sinica.edu.tw/pub/FreeBSD/taiwan/users/woju/source/
 DISTNAME=	telnet8-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
