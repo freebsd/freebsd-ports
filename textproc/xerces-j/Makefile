@@ -43,7 +43,7 @@ JARFILES+=	xerces.jar xmlParserAPIs.jar resolver.jar
 JARFILES+=	xercesSamples.jar
 .endif
 
-PLIST_FILES+=	${JARFILES:S,^,${JAVAJARDIR:S,${PREFIX},,}/,}
+PLIST_FILES+=	${JARFILES:S,^,${JAVAJARDIR:S,${PREFIX}/,,}/,}
 
 TOOLS_JARFILES=	resolver.jar stylebook-1.0-b2.jar bin/xjavac.jar
 
