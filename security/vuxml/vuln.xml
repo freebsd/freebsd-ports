@@ -32,6 +32,36 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="76301302-1d59-11d9-814e-0001020eed82">
+    <topic>xerces_c -- Attribute blowup denial-of-service</topic>
+    <affects>
+      <package>
+	<name>xerces_c</name>
+        <range><lt>2.6.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Amit Klein reports about Xerces-C++:</p>
+        <blockquote cite="http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109674050017645">
+          <p>An attacker can craft a malicious XML document, which
+            uses XML attributes in a way that inflicts a denial of
+            service condition on the target machine (XML parser).  The
+            result of this attack is that the XML parser consumes all
+            the CPU.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>11312</bid>
+      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109674050017645</url>
+    </references>
+    <dates>
+      <discovery>2004-10-02</discovery>
+      <entry>2004-10-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="12b7b4cf-1d53-11d9-814e-0001020eed82">
     <topic>wordpress -- XSS in administration panel</topic>
     <affects>
@@ -816,7 +846,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Accroding to the Mozilla project:</p>
+	<p>According to the Mozilla project:</p>
 	<blockquote cite="http://www.mozilla.org/projects/security/known-vulnerabilities.html">
 	  <p>An attacker who could lure users into clicking in
 	    particular places, or typing specific text, could cause a
