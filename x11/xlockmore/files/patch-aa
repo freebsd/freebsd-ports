@@ -1,6 +1,6 @@
---- Imakefile.orig	Wed Apr 16 05:36:21 1997
-+++ Imakefile	Fri Apr 18 09:04:31 1997
-@@ -35,7 +35,7 @@
+--- Imakefile.orig	Fri Jun 13 20:14:21 1997
++++ Imakefile	Mon Jun 30 09:33:33 1997
+@@ -44,7 +44,7 @@
  
  XCOMM Only the image.c and bat.c modes use this.
  XCOMM If your system has libXpm, remove the 'XCOMM ' from the next line.
@@ -9,7 +9,7 @@
  
  #ifdef XpmLibrary
            XPMDEF = -DUSE_XPM
-@@ -50,7 +50,7 @@
+@@ -59,7 +59,7 @@
  
  XCOMM If you get an error "Cannot find libXpm" while linking, set XPMLIBPATH
  XCOMM to the directory libXpm.* is in.  Below is a guess.
@@ -18,7 +18,7 @@
  
  #endif
  
-@@ -164,8 +164,8 @@
+@@ -174,8 +174,8 @@
  XCOMM SRANDDEF = -DSRAND=srand48
  XCOMM LRANDDEF = -DLRAND=lrand48
  
@@ -29,19 +29,21 @@
  
  XCOMM Least desirable RNG
  XCOMM SRANDDEF = -DSRAND=srand
-@@ -374,9 +381,9 @@
+@@ -370,11 +370,11 @@
  XCOMM  -DSTAFF_NETGROUP=\"/etc/xlock.netgroup\"  Netgroup that is exempt
  
  XCOMM May have to combine in one long line if "+=" does not work
 -        OPTDEF = -DUSE_VROOT -DALWAYS_ALLOW_ROOT -DUSE_BOMB
 +XCOMM        OPTDEF = -DUSE_VROOT -DALWAYS_ALLOW_ROOT -DUSE_BOMB
- XCOMM        OPTDEF += -DUSE_SYSLOG
+ XCOMM        OPTDEF += -DUSE_SYSLOG -DSYSLOG_FACILITY=LOG_AUTH
+ XCOMM        OPTDEF += -DSYSLOG_WARNING=LOG_WARNING
+ XCOMM        OPTDEF += -DSYSLOG_NOTICE=LOG_NOTICE -DSYSLOG_INFO=LOG_INFO
 -XCOMM        OPTDEF += -DUSE_MOUSE_MOTION
 +        OPTDEF += -DUSE_MOUSE_MOTION
  XCOMM        OPTDEF += -DUSE_MULTIPLE_ROOT
  XCOMM        OPTDEF += -DUSE_OLD_EVENT_LOOP
  XCOMM        OPTDEF += -DUSE_XLOCKRC
-@@ -404,7 +411,7 @@
+@@ -403,7 +403,7 @@
  XCOMM IMAGEBITMAP = l-bob #Slackware icon
  XCOMM IMAGEBITMAP = m-xlock #XLock icon
  XCOMM LIFEBITMAP = $(SMALLBITMAP)
