@@ -15,8 +15,9 @@ DISTNAME=	2865-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	flynn@energyhq.es.eu.org
 COMMENT=	A lightweight native KWin style for KDE3
 
-BROKEN=		'Does not build since KDE 3.2'
-IGNORE=	${BROKEN}
+BROKEN=		'Does not build since KDE 3.2 because of new kwin API'
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	'18 June 2004'
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
