@@ -1,0 +1,6 @@
+isync is a command line application which synchronizes a local maildir-style
+mailbox with a remote IMAP4 mailbox, suitable for use in IMAP-disconnected
+mode. Multiple copies of the remote IMAP4 mailbox can be maintained, and all
+flags are synchronized. TLS/SSL is supported via imaps: or STARTTLS.
+
+WWW: http://www.sigpipe.org/isync/
