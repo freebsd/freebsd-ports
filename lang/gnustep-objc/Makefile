@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnustep-objc
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 #PORTREVISION=	1
 CATEGORIES=	lang devel
 MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/libs/
@@ -38,14 +38,14 @@ GNU_ARCH=	${MACHINE_ARCH}
 PLIST_SUB+=	GNU_ARCH=${GNU_ARCH} OPSYS=${OPSYS:L} VERSION=${PORTVERSION} \
 		MAJORVERSION=${PORTVERSION:C/([0-9]).*/\1/1}
 
-SYSTEMDIR=	${PREFIX}/System
+SYSTEMDIR=	${LOCALBASE}/GNUstep/System
 
 do-build:
-	@(cd ${WRKSRC}; . ${PREFIX}/System/Makefiles/GNUstep.sh; \
+	(cd ${WRKSRC}; . ${SYSTEMDIR}/Makefiles/GNUstep.sh; \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET})
 
 do-install:
-	@(cd ${WRKSRC}; . ${PREFIX}/System/Makefiles/GNUstep.sh; \
+	@(cd ${WRKSRC}; . ${SYSTEMDIR}/Makefiles/GNUstep.sh; \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
 
 .include <bsd.port.post.mk>
