@@ -8,14 +8,19 @@
 PORTNAME=		krb5
 PORTVERSION=		1.2.5
 CATEGORIES=		security
+.if defined(USA_RESIDENT) && ${USA_RESIDENT} == "NO"
+MASTER_SITES=		http://www.crypto-publish.org/dist/mit-kerberos5/
+EXTRACT_SUFX=		.tar.gz
+.else
 MASTER_SITES=		# manual download
+EXTRACT_SUFX=		.tar
+.endif
 
 MAINTAINER=		cy@FreeBSD.org
 
 BUILD_DEPENDS=		gm4:${PORTSDIR}/devel/m4
 
 KERBEROSV_URL=		http://web.mit.edu/network/kerberos-form.html
-EXTRACT_SUFX=		.tar
 USE_GMAKE=		yes
 INSTALLS_SHLIB=		yes
 GNU_CONFIGURE=		yes
@@ -56,6 +61,7 @@ HTML_DOCS=		admin.html install_foot.html user-guide.html          \
 			admin_toc.html krb425.html user-guide_toc.html        \
 			install.html krb425_toc.html
 
+.if !defined(USA_RESIDENT) || ${USA_RESIDENT} == "YES"
 do-fetch:
 	@if [ ! -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then        \
 	${ECHO} "";							\
@@ -76,6 +82,7 @@ post-extract:
 	@${RM} ${WRKDIR}/${DISTNAME}.tar.gz ${WRKDIR}/${DISTNAME}.tar.gz.asc
 	@${CHMOD} -R ug-s,go-w ${WRKDIR}/${DISTNAME}
 	@${CHOWN} -R 0:0 ${WRKDIR}/${DISTNAME}
+.endif
 
 pre-build:
 .if !defined(KRB5_KRB4_COMPAT)
