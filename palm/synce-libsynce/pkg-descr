@@ -1,0 +1,5 @@
+SynCE is a project for connecting to devices running Windows CE or Pocket PC.
+Libsynce provides common functions needed for communication with a Windows CE
+device.
+
+WWW: http://synce.sourceforge.net/

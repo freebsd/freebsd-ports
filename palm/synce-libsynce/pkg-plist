@@ -1,0 +1,9 @@
+include/synce.h
+include/synce_log.h
+include/synce_socket.h
+include/synce_types.h
+lib/libsynce.a
+lib/libsynce.la
+lib/libsynce.so
+lib/libsynce.so.0
+share/aclocal/libsynce.m4
