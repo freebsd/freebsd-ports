@@ -120,7 +120,6 @@ PDL		ports/math/PDL
 PicMonger	ports/news/PicMonger
 R		ports/math/R
 SETIsupport	ports/astro/SETIsupport
-SSLtelnet	ports/net/SSLtelnet
 STk		ports/lang/STk
 Sather		ports/lang/Sather
 SciPlot		ports/graphics/SciPlot
@@ -4256,10 +4255,6 @@ ko-hlatex-psfonts-uhc-extra	ports/korean/hlatex-psfonts-uhc-extra
 ko-hlatex-psfonts-wansung	ports/korean/hlatex-psfonts-wansung
 ko-hlatex-wansung	ports/korean/hlatex-wansung
 ko-hlatexfonts-ocf	ports/korean/hlatexfonts-ocf
-ko-hlatexp	ports/korean/hlatexp
-ko-hlatexp-pkfonts1200	ports/korean/hlatexp-pkfonts1200
-ko-hlatexp-pkfonts300	ports/korean/hlatexp-pkfonts300
-ko-hlatexp-pkfonts600	ports/korean/hlatexp-pkfonts600
 ko-hmconv	ports/korean/hmconv
 ko-hpscat	ports/korean/hpscat
 ko-imhangul	ports/korean/imhangul
@@ -5570,7 +5565,6 @@ mplayer-skins	ports/multimedia/mplayer-skins
 mplayerxp	ports/multimedia/mplayerxp
 mplex		ports/multimedia/mplex
 mpmf20		ports/audio/mpmf20
-mppdec		ports/audio/mppdec
 mpqc		ports/science/mpqc
 mpqc-mpich	ports/science/mpqc-mpich
 mprime		ports/math/mprime
@@ -5779,7 +5773,6 @@ nethack32	ports/games/nethack32
 nethack33	ports/games/nethack33
 nethack33-gnome	ports/games/nethack33-gnome
 nethack33-nox11	ports/games/nethack33-nox11
-nethack33-qt	ports/games/nethack33-qt
 nethack34	ports/games/nethack34
 nethack34-gnome	ports/games/nethack34-gnome
 nethack34-nox11	ports/games/nethack34-nox11
@@ -8886,7 +8879,6 @@ rbot		ports/irc/rbot
 rc		ports/shells/rc
 rc5pipe		ports/security/rc5pipe
 rc_subr		ports/sysutils/rc_subr
-rcalc		ports/math/rcalc
 rclean		ports/sysutils/rclean
 rclock		ports/x11-clocks/rclock
 rdate		ports/sysutils/rdate
@@ -10243,7 +10235,6 @@ toolame		ports/audio/toolame
 topaz		ports/math/topaz
 toppler		ports/games/toppler
 tor		ports/security/tor
-tora		ports/databases/tora
 torcs		ports/games/torcs
 tornado		ports/games/tornado
 torrentsniff	ports/net/torrentsniff
