@@ -3,7 +3,7 @@
 # Date created:		26 August 1997
 # Whom:			Michael Elbel (me)
 #
-# $Id: Makefile,v 1.22 1998/10/01 19:29:50 gj Exp $
+# $Id: Makefile,v 1.23 1998/10/07 21:37:20 gj Exp $
 #
 
 DISTNAME=	xemacs-20.4
@@ -26,6 +26,7 @@ USE_GMAKE=	yes
 STRIP=
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	i386--freebsd --prefix=${PREFIX} \
+		--with-clash-detection \
 		--lockdir=/var/run/emacs/lock \
 		--with-sound=native \
 		--site-includes=${PREFIX}/include \
