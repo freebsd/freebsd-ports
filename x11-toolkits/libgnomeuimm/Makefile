@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libgnomeuimm
-PORTVERSION=	1.3.17
+PORTVERSION=	2.0.0
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtkmm
@@ -18,7 +18,6 @@ COMMENT=	C++ wrapper for libgnomeui library
 LIB_DEPENDS=	gnomemm-1.3:${PORTSDIR}/x11/libgnomemm \
 		gnomecanvasmm-2.0:${PORTSDIR}/graphics/libgnomecanvasmm \
 		gconfmm-2.0:${PORTSDIR}/devel/gconfmm \
-		bonobouimm_servers-1.3:${PORTSDIR}/x11-toolkits/libbonobouimm \
 		glademm-2.0:${PORTSDIR}/devel/libglademm
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
