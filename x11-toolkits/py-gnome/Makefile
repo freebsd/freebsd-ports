@@ -22,7 +22,6 @@ LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12                  \
 		capplet.1:${PORTSDIR}/sysutils/gnomecontrolcenter
 RUN_DEPENDS=	python1.5:${PORTSDIR}/lang/python ${PYGTK_DEP}
 
-
 GTK_CONFIG=	${X11BASE}/bin/gtk12-config
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
