@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netwox
-PORTVERSION=	5.21.0
+PORTVERSION=	5.22.0
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://www.laurentconstantin.com/common/netw/netwox/download/v5/ \
 		http://membres.lycos.fr/lauconstantin/common/netw/netwox/download/v5/ \
@@ -28,6 +28,8 @@ PLIST_SUB+=	SHORTPORTVERSION=${SHORTPORTVERSION}
 do-configure:
 		@${REINPLACE_CMD} \
 		-e 's|%%PREFIX%%|${PREFIX}|' \
+		-e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		-e 's|%%CFLAGS%%|${CFLAGS}|' \
 		${WRKSRC}/config.dat
 		(cd ${WRKSRC} ; ${SH} ${WRKSRC}/genemake )
 
