@@ -42,12 +42,14 @@
     SUBDIR += fep
     SUBDIR += figlet
     SUBDIR += fortuneit
+    SUBDIR += freedialog
     SUBDIR += geekcode
     SUBDIR += git
     SUBDIR += gnomeusersguide
     SUBDIR += gnomeutils
     SUBDIR += gnuls
     SUBDIR += gone
+    SUBDIR += gplbp
     SUBDIR += grun
     SUBDIR += gtkfind
     SUBDIR += gtl
@@ -64,6 +66,7 @@
     SUBDIR += logsurfer
     SUBDIR += lv
     SUBDIR += magicpoint
+    SUBDIR += makeself
     SUBDIR += man.el
     SUBDIR += mc
     SUBDIR += mgp-mode.el
@@ -81,6 +84,7 @@
     SUBDIR += proxyper
     SUBDIR += qclock
     SUBDIR += quotes
+    SUBDIR += rboot
     SUBDIR += rc5des
     SUBDIR += rfc
     SUBDIR += rpm
@@ -97,6 +101,7 @@
     SUBDIR += team
     SUBDIR += tet
     SUBDIR += tkcron
+    SUBDIR += tkdiff
     SUBDIR += tkinfo
     SUBDIR += tkman
     SUBDIR += tkrunit
