@@ -1,6 +1,6 @@
---- events.c.orig	Wed Feb 14 05:24:43 2001
-+++ events.c	Wed Feb 14 05:32:51 2001
-@@ -102,7 +102,7 @@
+--- events.c.orig	Mon Mar  5 23:57:00 2001
++++ events.c	Thu Mar  8 02:47:52 2001
+@@ -101,7 +101,7 @@
     if (eventmode == PRESS_MODE || eventmode == COPY2_MODE) {
        short ps = objectdata->parts;
        short *newsel;
@@ -9,16 +9,16 @@
        areastruct.selectlist = (short *) malloc(areastruct.selects *
  	   sizeof(short));
    
-@@ -1359,7 +1359,7 @@
- 	 case XK_J: unjoin();			 break;
- 	 case XK_s: splinebutton(bevent); 	 break;
- 	 case XK_e: edit(bevent);	 	 break;
--	 case XK_u: undelete(w, DRAW, bevent);	 break;
-+	 case XK_u: startundelete(w, DRAW, bevent);	 break;
- 	 case XK_m:
- 	 case XK_M: selectsave(w, NULL, NULL);	 break;
- 	 case XK_x: objectselect(-SEL_ANY);	 break;
-@@ -2926,7 +2926,7 @@
+@@ -1396,7 +1396,7 @@
+       else if (isbound(keywstate, XCF_Edit))
+ 	 edit(bevent);
+       else if (isbound(keywstate, XCF_Undelete))
+-	 undelete(w, DRAW, bevent);
++	 startundelete(w, DRAW, bevent);
+       else if (isbound(keywstate, XCF_Select_Save))
+ 	 selectsave(w, NULL, NULL);
+       else if (isbound(keywstate, XCF_Unselect))
+@@ -2977,7 +2977,7 @@
  /* Undelete last deleted objects */
  /*-------------------------------*/
  

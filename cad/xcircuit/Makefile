@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xcircuit
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 CATEGORIES=	cad
 MASTER_SITES=	http://bach.ece.jhu.edu/~tim/programs/xcircuit/archive/
 
