@@ -1,13 +1,15 @@
 This is a Linux version of the Netscape suite (Web browser, HTML
 editor, mail user agent and news reader). Using the Linux version
 on FreeBSD is necessary if you want to use Linux versions of plugins.
-Many plugins are distributed only as Linux binaries.
+Many plugins are distributed only as Linux binaries.  The Sun Java
+and Macromedia Flash plugins are included.  AOL Instant Messenger
+is omitted (see ports/net/aim).  The Canadian, Latin American and
+British region packs, spell-checker, and talkback are enabled.
 
-In this port/package, the Java virtual machine is omitted because
-it does not work.  AOL Instant Messenger is also omitted (see
-ports/net/aim).  Only the U.S. English locale is installed.  Plugins
-do not work.  Messenger can be started by going to a mailto: or
-news: URL.
+Messenger can be started by going to a mailto: or news: URL (for
+example, by typing into the location window).  The dialogs for
+saving files and for searching within a document do not work, nor
+does the Privacy & Security menu, nor does about:plugins.
 
 WWW: http://browsers.netscape.com/browsers/6/
 
