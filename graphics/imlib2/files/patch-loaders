@@ -1,0 +1,155 @@
+--- src/modules/loaders/Makefile.am.orig	Mon Mar 21 09:50:16 2005
++++ src/modules/loaders/Makefile.am	Mon Mar 21 09:52:07 2005
+@@ -43,49 +43,49 @@
+ lbm.la
+ 
+ jpeg_la_SOURCES      = loader_jpeg.c
+-jpeg_la_LDFLAGS      = -module -avoid-version
+-jpeg_la_LIBADD       = @JPEGLIBS@
++jpeg_la_LDFLAGS      = -module -avoid-version -L$(top_builddir)/src/lib/
++jpeg_la_LIBADD       = @JPEGLIBS@ -lImlib2
+ 
+ png_la_SOURCES       = loader_png.c
+-png_la_LDFLAGS       = -module -avoid-version
+-png_la_LIBADD        = @PNGLIBS@
++png_la_LDFLAGS       = -module -avoid-version -L$(top_builddir)/src/lib/
++png_la_LIBADD        = @PNGLIBS@ -lImlib2
+                        
+ tiff_la_SOURCES      = loader_tiff.c
+-tiff_la_LDFLAGS      = -module -avoid-version
+-tiff_la_LIBADD       = @TIFFLIBS@
++tiff_la_LDFLAGS      = -module -avoid-version -L$(top_builddir)/src/lib/
++tiff_la_LIBADD       = @TIFFLIBS@ -lImlib2
+ 
+ gif_la_SOURCES       = loader_gif.c
+-gif_la_LDFLAGS       = -module -avoid-version
+-gif_la_LIBADD        = @GIFLIBS@
++gif_la_LDFLAGS       = -module -avoid-version -L$(top_builddir)/src/lib/
++gif_la_LIBADD        = @GIFLIBS@ -lImlib2
+ 
+ zlib_la_SOURCES      = loader_zlib.c
+-zlib_la_LDFLAGS      = -module -avoid-version
+-zlib_la_LIBADD       = @ZLIBLIBS@ 
++zlib_la_LDFLAGS      = -module -avoid-version -L$(top_builddir)/src/lib/
++zlib_la_LIBADD       = @ZLIBLIBS@  -lImlib2
+ 
+ bz2_la_SOURCES       = loader_bz2.c
+-bz2_la_LDFLAGS       = -module -avoid-version
+-bz2_la_LIBADD        = @BZ2LIBS@ 
++bz2_la_LDFLAGS       = -module -avoid-version -L$(top_builddir)/src/lib/
++bz2_la_LIBADD        = @BZ2LIBS@  -lImlib2
+ 
+ pnm_la_SOURCES       = loader_pnm.c
+-pnm_la_LDFLAGS       = -module -avoid-version
+-pnm_la_LIBADD        = 
++pnm_la_LDFLAGS       = -module -avoid-version -L$(top_builddir)/src/lib/
++pnm_la_LIBADD        = -lImlib2
+ 
+ argb_la_SOURCES      = loader_argb.c
+-argb_la_LDFLAGS      = -module -avoid-version
+-argb_la_LIBADD       = 
++argb_la_LDFLAGS      = -module -avoid-version -L$(top_builddir)/src/lib/
++argb_la_LIBADD       = -lImlib2
+ 
+ bmp_la_SOURCES       = loader_bmp.c
+-bmp_la_LDFLAGS       = -module -avoid-version
+-bmp_la_LIBADD        = 
++bmp_la_LDFLAGS       = -module -avoid-version -L$(top_builddir)/src/lib/
++bmp_la_LIBADD        = -lImlib2
+ 
+ xpm_la_SOURCES       = loader_xpm.c
+-xpm_la_LDFLAGS       = -module -avoid-version
+-xpm_la_LIBADD        = 
++xpm_la_LDFLAGS       = -module -avoid-version -L$(top_builddir)/src/lib/
++xpm_la_LIBADD        = -lImlib2
+ 
+ tga_la_SOURCES       = loader_tga.c
+-tga_la_LDFLAGS       = -module -avoid-version
+-tga_la_LIBADD        = 
++tga_la_LDFLAGS       = -module -avoid-version -L$(top_builddir)/src/lib/
++tga_la_LIBADD        = -lImlib2
+ 
+ lbm_la_SOURCES       = loader_lbm.c
+-lbm_la_LDFLAGS       = -module -avoid-version
+-lbm_la_LIBADD        = 
++lbm_la_LDFLAGS       = -module -avoid-version -L$(top_builddir)/src/lib/
++lbm_la_LIBADD        = -lImlib2
+--- src/modules/loaders/Makefile.in.orig	Mon Mar 21 09:47:45 2005
++++ src/modules/loaders/Makefile.in	Mon Mar 21 09:50:06 2005
+@@ -113,52 +113,52 @@
+ 
+ 
+ jpeg_la_SOURCES = loader_jpeg.c
+-jpeg_la_LDFLAGS = -module -avoid-version
+-jpeg_la_LIBADD = @JPEGLIBS@
++jpeg_la_LDFLAGS = -module -avoid-version -L$(top_builddir)/src/lib/
++jpeg_la_LIBADD = @JPEGLIBS@ -lImlib2
+ 
+ png_la_SOURCES = loader_png.c
+-png_la_LDFLAGS = -module -avoid-version
+-png_la_LIBADD = @PNGLIBS@
++png_la_LDFLAGS = -module -avoid-version -L$(top_builddir)/src/lib/
++png_la_LIBADD = @PNGLIBS@ -lImlib2
+ 
+ tiff_la_SOURCES = loader_tiff.c
+-tiff_la_LDFLAGS = -module -avoid-version
+-tiff_la_LIBADD = @TIFFLIBS@
++tiff_la_LDFLAGS = -module -avoid-version -L$(top_builddir)/src/lib/
++tiff_la_LIBADD = @TIFFLIBS@ -lImlib2
+ 
+ gif_la_SOURCES = loader_gif.c
+-gif_la_LDFLAGS = -module -avoid-version
+-gif_la_LIBADD = @GIFLIBS@
++gif_la_LDFLAGS = -module -avoid-version -L$(top_builddir)/src/lib/
++gif_la_LIBADD = @GIFLIBS@ -lImlib2
+ 
+ zlib_la_SOURCES = loader_zlib.c
+-zlib_la_LDFLAGS = -module -avoid-version
+-zlib_la_LIBADD = @ZLIBLIBS@ 
++zlib_la_LDFLAGS = -module -avoid-version -L$(top_builddir)/src/lib/
++zlib_la_LIBADD = @ZLIBLIBS@  -lImlib2
+ 
+ bz2_la_SOURCES = loader_bz2.c
+-bz2_la_LDFLAGS = -module -avoid-version
+-bz2_la_LIBADD = @BZ2LIBS@ 
++bz2_la_LDFLAGS = -module -avoid-version -L$(top_builddir)/src/lib/
++bz2_la_LIBADD = @BZ2LIBS@  -lImlib2
+ 
+ pnm_la_SOURCES = loader_pnm.c
+-pnm_la_LDFLAGS = -module -avoid-version
+-pnm_la_LIBADD = 
++pnm_la_LDFLAGS = -module -avoid-version -L$(top_builddir)/src/lib/
++pnm_la_LIBADD = -lImlib2
+ 
+ argb_la_SOURCES = loader_argb.c
+-argb_la_LDFLAGS = -module -avoid-version
+-argb_la_LIBADD = 
++argb_la_LDFLAGS = -module -avoid-version -L$(top_builddir)/src/lib/
++argb_la_LIBADD = -lImlib2
+ 
+ bmp_la_SOURCES = loader_bmp.c
+-bmp_la_LDFLAGS = -module -avoid-version
+-bmp_la_LIBADD = 
++bmp_la_LDFLAGS = -module -avoid-version -L$(top_builddir)/src/lib/
++bmp_la_LIBADD = -lImlib2
+ 
+ xpm_la_SOURCES = loader_xpm.c
+-xpm_la_LDFLAGS = -module -avoid-version
+-xpm_la_LIBADD = 
++xpm_la_LDFLAGS = -module -avoid-version -L$(top_builddir)/src/lib/
++xpm_la_LIBADD = -lImlib2
+ 
+ tga_la_SOURCES = loader_tga.c
+-tga_la_LDFLAGS = -module -avoid-version
+-tga_la_LIBADD = 
++tga_la_LDFLAGS = -module -avoid-version -L$(top_builddir)/src/lib/
++tga_la_LIBADD = -lImlib2
+ 
+ lbm_la_SOURCES = loader_lbm.c
+-lbm_la_LDFLAGS = -module -avoid-version
+-lbm_la_LIBADD = 
++lbm_la_LDFLAGS = -module -avoid-version -L$(top_builddir)/src/lib/
++lbm_la_LIBADD = -lImlib2
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../../config.h
+ CONFIG_CLEAN_FILES = 
