@@ -1,0 +1,16 @@
+This Audio File Library is an implementation of the SGI Audio File
+library.  Since the latter is specified ambiguously in places, I've
+taken some liberties in interpreting certain such ambiguities.  At the
+present, not all features of the SGI Audio File library are
+implemented.  I feel, though, that this implementation of the Audio
+File Library offers enough functionality to be useful for general
+tasks.
+
+This library allows the processing of audio data to and from audio
+files of many common formats (currently AIFF, AIFC, WAVE, and
+NeXT/Sun).
+
+http://www.68k.org./~michael/audiofile/
+
+-Vanilla
+vanilla@FreeBSD.ORG
