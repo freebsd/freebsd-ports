@@ -1,0 +1,217 @@
+From: Giles Lean <giles@nemeton.com.au>
+To: publicfile@list.cr.yp.to
+Subject: redirect patch for publicfile-0.52
+Date: Sun, 05 Dec 1999 08:43:14 +1100
+
+------- =_aaaaaaaaaa0
+Content-Type: text/plain; charset="us-ascii"
+Content-ID: <23894.944342900.1@nemeton.com.au>
+
+I have a patch for publicfile-0.52 that will make it send redirects
+instead of "404 access denied" when directories are requested
+without a trailing slash.
+
+Comments and suggestions are welcome, particularly if someone can
+see where I've either done something wrong protocol-wise or if the
+integration with Dan's code can be improved.
+
+This patch is only appropriate for publicfile installations where
+an existing server is being replaced or where lots of third party
+HTML is installed without editing.  This is not the target market
+Dan Bernstein claims for publicfile, but some of us will use it
+anyway.  (My #1 reason? The low memory requirement.)
+
+After this patch is applied log messages about "is a directory"
+will show up if the redirect code is used:
+
+@4000000038490b1f26a03cac 127.0.0.1 read ./localhost.nemeton.com.au/cr.yp.to/publicfile: is a directory
+@40000000384973483712ee2c 127.0.0.1 read ./localhost.nemeton.com.au/susv2: is a directory
+
+Regards,
+
+Giles
+
+
+------- =_aaaaaaaaaa0
+Content-Type: text/plain; name="diff"; charset="us-ascii"
+Content-ID: <23894.944342900.2@nemeton.com.au>
+
+Index: error.c
+===================================================================
+RCS file: /a/CVS/net/publicfile/error.c,v
+retrieving revision 1.1.1.1
+retrieving revision 1.1.1.1.2.1
+diff -c -r1.1.1.1 -r1.1.1.1.2.1
+*** error.c	1999/12/01 19:38:15	1.1.1.1
+--- error.c	1999/12/04 21:15:37	1.1.1.1.2.1
+***************
+*** 100,102 ****
+--- 100,109 ----
+  #else
+  -14;
+  #endif
++ 
++ int error_isdir =
++ #ifdef EISDIR
++ EISDIR;
++ #else
++ -15;
++ #endif
+Index: error.h
+===================================================================
+RCS file: /a/CVS/net/publicfile/error.h,v
+retrieving revision 1.1.1.1
+retrieving revision 1.1.1.1.2.1
+diff -c -r1.1.1.1 -r1.1.1.1.2.1
+*** error.h	1999/12/01 19:38:15	1.1.1.1
+--- error.h	1999/12/04 21:15:37	1.1.1.1.2.1
+***************
+*** 17,22 ****
+--- 17,23 ----
+  extern int error_perm;
+  extern int error_acces;
+  extern int error_nodevice;
++ extern int error_isdir;
+  
+  extern char *error_str();
+  extern int error_temp();
+Index: error_str.c
+===================================================================
+RCS file: /a/CVS/net/publicfile/error_str.c,v
+retrieving revision 1.1.1.1
+retrieving revision 1.1.1.1.2.1
+diff -c -r1.1.1.1 -r1.1.1.1.2.1
+*** error_str.c	1999/12/01 19:38:15	1.1.1.1
+--- error_str.c	1999/12/04 21:15:38	1.1.1.1.2.1
+***************
+*** 21,26 ****
+--- 21,27 ----
+    X(error_perm,"permission denied")
+    X(error_acces,"access denied")
+    X(error_nodevice,"device not configured")
++   X(error_isdir,"is a directory")
+  #ifdef ESRCH
+    X(ESRCH,"no such process")
+  #endif
+Index: file.c
+===================================================================
+RCS file: /a/CVS/net/publicfile/file.c,v
+retrieving revision 1.1.1.1
+retrieving revision 1.1.1.1.2.1
+diff -c -r1.1.1.1 -r1.1.1.1.2.1
+*** file.c	1999/12/01 19:38:14	1.1.1.1
+--- file.c	1999/12/04 21:15:38	1.1.1.1.2.1
+***************
+*** 65,77 ****
+      errno = error_acces;
+      return -1;
+    }
+!   if (flagread)
+!     if ((st.st_mode & S_IFMT) != S_IFREG) {
+        log(fn,": ","not a regular file",flagread);
+        close(fd);
+        errno = error_acces;
+-       return -1;
+      }
+  
+    log(fn,": ","success",flagread);
+  
+--- 65,83 ----
+      errno = error_acces;
+      return -1;
+    }
+!   if (flagread && (st.st_mode & S_IFMT) != S_IFREG) {
+!     if ((st.st_mode & S_IFMT) == S_IFDIR) {
+!       log(fn,": ",error_str(error_isdir),flagread);
+!       close(fd);
+!       errno = error_isdir;
+!     }
+!     else {
+        log(fn,": ","not a regular file",flagread);
+        close(fd);
+        errno = error_acces;
+      }
++     return -1;
++   }
+  
+    log(fn,": ","success",flagread);
+  
+Index: httpd.c
+===================================================================
+RCS file: /a/CVS/net/publicfile/httpd.c,v
+retrieving revision 1.1.1.1
+retrieving revision 1.1.1.1.2.1
+diff -c -r1.1.1.1 -r1.1.1.1.2.1
+*** httpd.c	1999/12/01 19:38:14	1.1.1.1
+--- httpd.c	1999/12/04 21:15:38	1.1.1.1.2.1
+***************
+*** 103,114 ****
+--- 103,142 ----
+  stralloc fn = {0};
+  stralloc contenttype = {0};
+  
++ void redirect(void)
++ {
++   if (!stralloc_cats(&url, "/")) _exit(21);
++   if (protocolnum > 0) {
++     tai_now(&now);
++     header("301 ", "Moved Permanently");
++     out_puts("Content-Length: ");
++     out_put(strnum,fmt_ulong(strnum,url.len * 2 + 127));
++     out_puts("\r\nLocation: ");
++     out_put(url.s, url.len);
++     out_puts("\r\nContent-Type: text/html\r\n\r\n");
++   }
++   if (flagbody) {
++     out_puts("<html><body>The document you requested is a directory.  Try adding a trailing slash to the URL: <A HREF=\"");
++     out_put(url.s,url.len);
++     out_puts("\">");
++     out_put(url.s,url.len);
++     out_puts("</A></body></html>\r\n");
++   }
++   out_flush();
++ }
++ 
+  void get(void)
+  {
+    unsigned long length;
+    int fd;
+    int r;
+  
++   if (!case_startb(url.s,url.len,"http://")) {
++     if (!stralloc_copys(&url,"http://")) _exit(21);
++     if (!stralloc_cat(&url,&host)) _exit(21);
++     if (!stralloc_cat(&url,&path)) _exit(21);
++   }
++ 
+    host.len = byte_chr(host.s,host.len,':');
+    if (!host.len) {
+      if (protocolnum > 1)
+***************
+*** 126,133 ****
+    if (!stralloc_0(&fn)) _exit(21);
+  
+    fd = file_open(fn.s,&mtime,&length,1);
+!   if (fd == -1)
+      barf("404 ",error_str(errno));
+  
+    if (protocolnum > 0) {
+      tai_now(&now);
+--- 154,167 ----
+    if (!stralloc_0(&fn)) _exit(21);
+  
+    fd = file_open(fn.s,&mtime,&length,1);
+!   if (fd == -1) {
+!     if (errno == error_isdir) {
+!       redirect();
+!       if (protocolnum < 2) _exit(0);
+!       return;
+!     }
+      barf("404 ",error_str(errno));
++   }
+  
+    if (protocolnum > 0) {
+      tai_now(&now);
+
+------- =_aaaaaaaaaa0--
+

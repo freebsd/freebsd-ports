@@ -1,0 +1,463 @@
+diff -rNC3 publicfile-0.52.orig/Makefile publicfile-0.52/Makefile
+*** publicfile-0.52.orig/Makefile	Tue Nov  9 08:23:46 1999
+--- publicfile-0.52/Makefile	Fri Nov  9 10:09:45 2001
+***************
+*** 450,460 ****
+  stralloc.a: \
+  makelib stralloc_cat.o stralloc_catb.o stralloc_cats.o \
+  stralloc_copy.o stralloc_eady.o stralloc_opyb.o stralloc_opys.o \
+! stralloc_pend.o stralloc_num.o
+  	./makelib stralloc.a stralloc_cat.o stralloc_catb.o \
+  	stralloc_cats.o stralloc_copy.o stralloc_eady.o \
+  	stralloc_opyb.o stralloc_opys.o stralloc_pend.o \
+! 	stralloc_num.o
+  
+  stralloc_cat.o: \
+  compile stralloc_cat.c byte.h stralloc.h gen_alloc.h
+--- 450,460 ----
+  stralloc.a: \
+  makelib stralloc_cat.o stralloc_catb.o stralloc_cats.o \
+  stralloc_copy.o stralloc_eady.o stralloc_opyb.o stralloc_opys.o \
+! stralloc_pend.o stralloc_num.o stralloc_opytrim.o
+  	./makelib stralloc.a stralloc_cat.o stralloc_catb.o \
+  	stralloc_cats.o stralloc_copy.o stralloc_eady.o \
+  	stralloc_opyb.o stralloc_opys.o stralloc_pend.o \
+! 	stralloc_num.o stralloc_opytrim.o
+  
+  stralloc_cat.o: \
+  compile stralloc_cat.c byte.h stralloc.h gen_alloc.h
+***************
+*** 484,489 ****
+--- 484,493 ----
+  stralloc_opyb.o: \
+  compile stralloc_opyb.c stralloc.h gen_alloc.h byte.h
+  	./compile stralloc_opyb.c
++ 
++ stralloc_opytrim.o: \
++ compile stralloc_opytrim.c stralloc.h
++ 	./compile stralloc_opytrim.c
+  
+  stralloc_opys.o: \
+  compile stralloc_opys.c byte.h str.h stralloc.h gen_alloc.h
+diff -rNC3 publicfile-0.52.orig/README.log_combined publicfile-0.52/README.log_combined
+*** publicfile-0.52.orig/README.log_combined	Thu Jan  1 01:00:00 1970
+--- publicfile-0.52/README.log_combined	Fri Nov  9 10:09:45 2001
+***************
+*** 0 ****
+--- 1,36 ----
++ This version of publicfile has been patched to write *additional* log 
++ information to STDERR. This additional information conforms to Apache's
++ and Netscape's "common" or "combined" log formats, i. e. a line may look
++ like this (common log format):
++ 
++ 127.0.0.1 - - [23/Oct/2001:14:04:56 +0200] "HEAD /~conrad/hello_world_gen.swf HTTP/1.0" 200 0
++ 
++ or like this (combined log format):
++ 
++ 127.0.0.1 - - [23/Oct/2001:14:04:56 +0200] "HEAD /~conrad/hello_world_gen.swf HTTP/1.0" 200 0 "http://localhost/~conrad/hello_world.html" "Mozilla 4"
++ 
++ The meaning of the (space-separated) fields is as follows:
++ 
++ 1. Client IP-address
++ 2. Remote logname (from ident (RFC-...) lookup - always "-" in publicfile)
++ 3. Authenticated username (from Basic-Auth - always "-" in publicfile)
++ 4. Human-readable timestamp enclosed in []
++ 5. The request line enclosed in ""
++ 6. HTTP status code
++ 7. Number of bytes sent excluding HTTP headers
++ 8. Referrer information sent by the browser
++ 9. User-Agent information sent by the browser
++ 
++ These log lines can easily be distinguished from other log lines using the
++ second field: this will always be "-" for common and combined log lines,
++ and "read" or "dir" for publicfile standard log lines (see
++ http://cr.yp.to/publicfile/log.html). The script "splitPublicfileLog.pl"
++ may serve as an example how to split the log into interesting parts.
++ 
++ The logformat to be used can be selected via environment variables:
++ 
++  - HTTPD_LOG_COMMON selects common log format
++  - HTTPD_LOG_COMBINED selects combined log format
++ 
++ The latter takes precedence over the former.
++ 
+diff -rNC3 publicfile-0.52.orig/httpd.c publicfile-0.52/httpd.c
+*** publicfile-0.52.orig/httpd.c	Tue Nov  9 08:23:46 1999
+--- publicfile-0.52/httpd.c	Fri Nov  9 10:10:51 2001
+***************
+*** 15,20 ****
+--- 15,102 ----
+  #include "substdio.h"
+  #include "error.h"
+  #include "getln.h"
++ #include "caltime.h"
++ #include "subfd.h"
++ #include "env.h"
++ 
++ char logformat = 0;
++ char *remoteip;
++ char *months[] = {"Jan", "Feb", "Mar", "Apr", "May", "Jun",
++ 		  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
++ stralloc referer = {0};
++ stralloc agent = {0};
++ 
++ char strnum[FMT_ULONG];
++ stralloc method = {0};
++ stralloc url = {0};
++ stralloc protocol = {0};
++ stralloc host = {0};
++ 
++ void log(char *code, unsigned long length) {
++   struct caltime ct;
++   int dummy1, dummy2;
++   struct tai now;
++ 
++   if (!logformat) return;
++ 
++   substdio_puts(subfderr,remoteip);
++   substdio_puts(subfderr," - - [");
++   tai_now(&now);
++   caltime_utc(&ct, &now, &dummy1, &dummy2);
++   if (ct.date.day < 10)
++     substdio_puts(subfderr,"0");
++   dummy1 = fmt_ulong(strnum,ct.date.day);
++   substdio_put(subfderr,strnum,dummy1);
++   substdio_puts(subfderr,"/");
++   if (ct.date.month > 0 && ct.date.month < 13)
++     substdio_puts(subfderr,months[ct.date.month-1]);
++   substdio_puts(subfderr,"/");
++   dummy1 = fmt_ulong(strnum,ct.date.year);
++   substdio_put(subfderr,strnum,dummy1);
++   substdio_puts(subfderr,":");
++   if (ct.hour < 10)
++     substdio_puts(subfderr,"0");
++   dummy1 = fmt_ulong(strnum,ct.hour);
++   substdio_put(subfderr,strnum,dummy1);
++   substdio_puts(subfderr,":");
++   if (ct.minute < 10)
++     substdio_puts(subfderr,"0");
++   dummy1 = fmt_ulong(strnum,ct.minute);
++   substdio_put(subfderr,strnum,dummy1);
++   substdio_puts(subfderr,":");
++   if (ct.second < 10)
++     substdio_puts(subfderr,"0");
++   dummy1 = fmt_ulong(strnum,ct.second);
++   substdio_put(subfderr,strnum,dummy1);
++   substdio_puts(subfderr," +0000] \"");
++   substdio_put(subfderr,method.s,method.len - 1); /* len includes \0 */
++   substdio_puts(subfderr," ");
++   substdio_put(subfderr,url.s,url.len);
++   substdio_puts(subfderr," ");
++   substdio_put(subfderr,protocol.s,protocol.len > 0 ? protocol.len - 1 : 0); /* len includes \0 */
++   substdio_puts(subfderr,"\" ");
++   substdio_put(subfderr,code,str_len(code) < 3 ? str_len(code) : 3);
++   substdio_puts(subfderr," ");
++   if (length > 0) {
++     dummy1 = fmt_ulong(strnum,length);
++     substdio_put(subfderr,strnum,dummy1);
++   } else {
++     substdio_puts(subfderr,"-");
++   }
++ 
++   if (logformat > 1) {
++     substdio_puts(subfderr," \"");
++     substdio_put(subfderr,referer.s,referer.len);
++     substdio_puts(subfderr,"\" \"");
++     substdio_put(subfderr,agent.s,agent.len);
++     substdio_puts(subfderr,"\"");
++   }
++ 
++   substdio_puts(subfderr," \"");
++   substdio_put(subfderr,host.s,host.len);
++   substdio_puts(subfderr,"\"\n");
++   substdio_flush(subfderr);
++ }
+  
+  int safewrite(int fd,char *buf,int len)
+  {
+***************
+*** 42,54 ****
+    substdio_flush(&out);
+  }
+  
+- char strnum[FMT_ULONG];
+- 
+- stralloc protocol = {0};
+  int protocolnum = 0;
+- stralloc method = {0};
+- stralloc url = {0};
+- stralloc host = {0};
+  stralloc path = {0};
+  stralloc ims = {0};
+  int flagbody = 1;
+--- 124,130 ----
+***************
+*** 93,98 ****
+--- 169,175 ----
+      out_puts("</body></html>\r\n");
+    }
+    out_flush();
++   log(code, str_len(message) + 28);
+    if (protocolnum >= 2) {
+      shutdown(1,1);
+      sleep(1); /* XXX */
+***************
+*** 105,108 ****
+--- 182,186 ----
+  
+  void get(void)
+  {
++   char *code;
+    unsigned long length;
+***************
+*** 133,143 ****
+      tai_now(&now);
+      if (!httpdate(&mtimestr,&mtime)) _exit(21);
+      if ((ims.len < mtimestr.len) || byte_diff(mtimestr.s,mtimestr.len,ims.s))
+!       header("200 ","OK");
+      else {
+!       header("304 ","OK");
+        flagbody = 0;
+      }
+      if (tai_less(&mtime,&now)) {
+        tai_sub(&mtimeage,&now,&mtime);
+        if (tai_approx(&mtimeage) >= 60.0) {
+--- 211,222 ----
+      tai_now(&now);
+      if (!httpdate(&mtimestr,&mtime)) _exit(21);
+      if ((ims.len < mtimestr.len) || byte_diff(mtimestr.s,mtimestr.len,ims.s))
+!       code = "200 ";
+      else {
+!       code = "304 ";
+        flagbody = 0;
+      }
++     header(code,"OK");
+      if (tai_less(&mtime,&now)) {
+        tai_sub(&mtimeage,&now,&mtime);
+        if (tai_approx(&mtimeage) >= 60.0) {
+***************
+*** 166,171 ****
+--- 245,253 ----
+          if (r == 0) break;
+          out_put(filebuf,r);
+        }
++     else
++       length = 0;
++     log(code,length);
+      out_flush();
+      _exit(0);
+    }
+***************
+*** 180,185 ****
+--- 262,270 ----
+        out_put(filebuf,r);
+        out_puts("\r\n");
+      }
++   else
++     length = 0;
++   log(code,length);
+  
+    close(fd);
+  }
+***************
+*** 216,221 ****
+--- 301,314 ----
+  
+    sig_pipeignore();
+  
++   if (env_get("HTTPD_LOG_COMMON"))
++     logformat = 1;
++   if (env_get("HTTPD_LOG_COMBINED"))
++     logformat = 2;
++   remoteip = env_get("TCPREMOTEIP");
++   if (!remoteip)
++     remoteip = "0";
++ 
+    for (;;) {
+      readline();
+  
+***************
+*** 227,232 ****
+--- 320,327 ----
+      if (!stralloc_copys(&path,"")) _exit(21);
+      if (!stralloc_copys(&protocol,"")) _exit(21);
+      if (!stralloc_copys(&ims,"")) _exit(21);
++     if (!stralloc_copys(&referer,"")) _exit(21);
++     if (!stralloc_copys(&agent,"")) _exit(21);
+      protocolnum = 2;
+  
+      spaces = 0;
+***************
+*** 294,299 ****
+--- 389,398 ----
+              barf("412 ","I do not accept If-None-Match");
+            if (case_startb(field.s,field.len,"if-unmodified-since:"))
+              barf("412 ","I do not accept If-Unmodified-Since");
++           if (case_startb(field.s,field.len,"referer:"))
++ 	    if (!stralloc_copytrim(&referer,field.s + 8,field.len - 8)) _exit(21);
++           if (case_startb(field.s,field.len,"user-agent:"))
++ 	    if (!stralloc_copytrim(&agent,field.s + 11,field.len - 11)) _exit(21);
+            if (case_startb(field.s,field.len,"host:"))
+              if (!host.len)
+                for (i = 5;i < field.len;++i)
+diff -rNC3 publicfile-0.52.orig/splitPublicfileLog.pl publicfile-0.52/splitPublicfileLog.pl
+*** publicfile-0.52.orig/splitPublicfileLog.pl	Thu Jan  1 01:00:00 1970
+--- publicfile-0.52/splitPublicfileLog.pl	Fri Nov  9 10:09:45 2001
+***************
+*** 0 ****
+--- 1,119 ----
++ #!/usr/bin/perl -w
++ 
++ # This script will read lines from stdin. All lines starting with
++ # "a.b.c.d - " (for an IP-number a.b.c.d) will be written to the
++ # "access logfile" given as the first argument. Anything else will be
++ # prepended with a timestamp and
++ # written to the "error logfile" given as the second argument.
++ # Note that the messages usually are not really *error* messages, but
++ # simply the standard publicfile output.
++ 
++ use strict;
++ use Symbol;
++ 
++ if ($#ARGV < 0 || $#ARGV > 3) {
++     &usage();
++ }
++ 
++ local $main::logdir;
++ local $main::accessfile;
++ local $main::errorfile;
++ local $main::multilog;
++ local %main::handles = ();
++ 
++ if ($ARGV[0] eq "-m") {
++     $main::multilog = 1;
++     if ($#ARGV != 3) { &usage(); }
++     $main::logdir = $ARGV[1]."/";
++     $main::accessfile = $main::logdir.$ARGV[2];
++     $main::errorfile = $main::logdir.$ARGV[3];
++ } else {
++     $main::multilog = 0;
++     if ($#ARGV != 1) { &usage(); }
++     $main::accessfile = $ARGV[0];
++     $main::errorfile = $ARGV[1];
++ }
++ 
++ #open(ACCESS, ">>".$ARGV[0]) || die("Can't open access logfile!");
++ #open(ERROR, ">>".$ARGV[1]) || die("Can't open error logfile!");
++ $SIG{PIPE} = \&closeAndExit;
++ $SIG{TERM} = \&closeAndExit;
++ $SIG{QUIT} = \&closeAndExit;
++ $SIG{INT} = \&closeAndExit;
++ $SIG{HUP} = \&closeAll;
++ 
++ while($_ = <STDIN>) {
++     if (/^\d+\.\d+\.\d+\.\d+ - /) {
++ 	my $host = "";
++ 	if ($main::multilog && / \"([^\"\/]*)\"[\r\n]*$/) {
++ 	    $_ = $`."\n";
++ 	    $host = $1;
++ 	}
++ 	my $fh = &getHandle($host);
++ 	print $fh $_;
++     } else {
++ 	my $fh = &getHandle($main::errorfile);
++ 	print $fh time()." $_";
++     }
++ }
++ 
++ closeAndExit("End of input");
++ 
++ sub closeAll {
++     foreach my $key (keys %main::handles) {
++ 	my $fh = $main::handles{$key};
++ 	close $fh;
++ 	delete $main::handles{$key};
++     }
++ }
++ 
++ sub closeAndExit {
++     my $reason = shift;
++     my $now = time();
++ 
++     my $fh = &getHandle($main::errorfile);
++     print $fh "$now $reason received\n";
++     print STDERR "$now $reason received\n";
++     &closeAll();
++     exit 0;
++ }
++ 
++ sub getHandle {
++     my $key = shift;
++     my $res = 0;
++ 
++     if (defined($main::handles{$key})) {
++ 	return $main::handles{$key};
++     }
++ 
++     my $fh = Symbol::gensym();
++     if ($key eq $main::errorfile) {
++ 	open($fh, ">>".$main::errorfile) || die("Can't open error logfile!");
++     } else {
++ 	if ($main::multilog) {
++             my $fn = $main::logdir.$key;
++             if (-f $fn && -w $fn) {
++ 	        $res = open($fh, ">>$fn");
++ 	    }
++         }
++ 	if (!$res) {
++ 	    open($fh, ">>".$main::accessfile) || die("Can't open error logfile!");
++ 	}
++     }
++ 
++     $main::handles{$key} = $fh;
++     return $fh;
++ }
++ 
++ sub usage {
++     print STDERR "Usage: $0 <access-path> <error-path>\n";
++     print STDERR "   or: $0 -m <logdir> <access-file> <error-file>\n";
++     print STDERR "The first form will separate publicfile standard messages from \"common\" log\n";
++     print STDERR "lines. The second form will write \"common\" lines to <logdir>/<hostname>\n";
++     print STDERR "where <hostname> is the host given in the request. The file <logdir>/<hostname>\n";
++     print STDERR "must exist before it will be used. Anything for which no suitable logfile can\n";
++     print STDERR "be found will be logged to <logdir>/<access-path>.\n";
++ 
++     exit 1;
++ }
++ 
+diff -rNC3 publicfile-0.52.orig/stralloc.h publicfile-0.52/stralloc.h
+*** publicfile-0.52.orig/stralloc.h	Tue Nov  9 08:23:46 1999
+--- publicfile-0.52/stralloc.h	Fri Nov  9 10:09:45 2001
+***************
+*** 12,17 ****
+--- 12,18 ----
+  extern int stralloc_copys();
+  extern int stralloc_cats();
+  extern int stralloc_copyb();
++ extern int stralloc_copytrim();
+  extern int stralloc_catb();
+  extern int stralloc_append(); /* beware: this takes a pointer to 1 char */
+  extern int stralloc_starts();
+diff -rNC3 publicfile-0.52.orig/stralloc_opytrim.c publicfile-0.52/stralloc_opytrim.c
+*** publicfile-0.52.orig/stralloc_opytrim.c	Thu Jan  1 01:00:00 1970
+--- publicfile-0.52/stralloc_opytrim.c	Fri Nov  9 10:09:45 2001
+***************
+*** 0 ****
+--- 1,17 ----
++ #include "stralloc.h"
++ 
++ int stralloc_copytrim(sa,s,n)
++ stralloc *sa;
++ char *s;
++ unsigned int n;
++ {
++   while (n > 0 &&
++ 	 (s[n] == ' ' || s[n] == '\t' || s[n] == '\n' || s[n] == '\r')) n--;
++   while (n > 0 &&
++ 	 (s[0] == ' ' || s[0] == '\t' || s[0] == '\n' || s[0] == '\r')) {
++     n--;
++     s++;
++   }
++ 
++   return stralloc_copyb(sa,s,n);
++ }

@@ -1,0 +1,638 @@
+diff -N -u -r publicfile-0.52.orig/Makefile publicfile-0.52/Makefile
+--- publicfile-0.52.orig/Makefile	Mon Nov  8 23:23:46 1999
++++ publicfile-0.52/Makefile	Wed Aug 29 20:27:09 2001
+@@ -234,21 +234,43 @@
+ compile hier.c auto_home.h
+ 	./compile hier.c
+ 
++htrules: \
++load htrules.o base64.o
++	./load htrules cdb.a base64.o byte.a getln.a stralloc.a alloc.a \
++	substdio.a str.a buffer.a unix.a 
++
++htrules.o: \
++compile htrules.c strerr.h stralloc.h gen_alloc.h getln.h buffer.h \
++stralloc.h buffer.h exit.h fmt.h byte.h cdb_make.h buffer.h uint32.h \
++base64.h
++	./compile htrules.c
++
++base64.o: \
++compile base64.c base64.h
++	./compile base64.c
++
+ httpd: \
+ load httpd.o main.o pathdecode.o file.o filetype.o httpdate.o \
+ percent.o prot.o timeoutread.o timeoutwrite.o libtai.a case.a getln.a \
+ stralloc.a alloc.a substdio.a error.a open.a sig.a env.a str.a fs.a \
+-socket.lib
++socket.lib readclose.o openreadclose.o
+ 	./load httpd main.o pathdecode.o file.o filetype.o \
+ 	httpdate.o percent.o prot.o timeoutread.o timeoutwrite.o \
+ 	libtai.a case.a getln.a stralloc.a alloc.a substdio.a \
+-	error.a open.a sig.a env.a str.a fs.a  `cat socket.lib`
++	error.a open.a sig.a env.a str.a fs.a cdb.a byte.a seek_set.o \
++	readclose.o openreadclose.o `cat socket.lib`
++
++cdb:
++	(cd __PORTSDIR__/databases/cdb/work/cdb-0.75 && \
++	 make && \
++	 cp -p cdb_make.h buffer.h cdb.h uint32.h cdb.a byte.a seek_set.o \
++	 cdb_make.o error.c buffer.a unix.a __WRKSRC__/)
+ 
+ httpd.o: \
+ compile httpd.c pathdecode.h stralloc.h gen_alloc.h file.h tai.h \
+ uint64.h filetype.h stralloc.h percent.h stralloc.h stralloc.h sig.h \
+ exit.h fmt.h case.h str.h tai.h httpdate.h stralloc.h tai.h \
+-timeoutread.h timeoutwrite.h substdio.h error.h getln.h
++timeoutread.h timeoutwrite.h substdio.h error.h getln.h byte.h
+ 	./compile httpd.c
+ 
+ httpdate.o: \
+@@ -358,6 +380,11 @@
+ compile open_trunc.c open.h
+ 	./compile open_trunc.c
+ 
++openreadclose.o: \
++compile openreadclose.c error.h open.h readclose.h stralloc.h \
++gen_alloc.h openreadclose.h stralloc.h
++	./compile openreadclose.c
++
+ pathdecode.o: \
+ compile pathdecode.c pathdecode.h stralloc.h gen_alloc.h
+ 	./compile pathdecode.c
+@@ -367,7 +394,7 @@
+ 	./compile percent.c
+ 
+ prog: \
+-configure httpd ftpd rts utime
++cdb configure httpd ftpd rts utime htrules
+ 
+ prot.o: \
+ compile prot.c hasshsgr.h prot.h
+diff -N -u -r publicfile-0.52.orig/README.basicauth publicfile-0.52/README.basicauth
+--- publicfile-0.52.orig/README.basicauth	Wed Dec 31 16:00:00 1969
++++ publicfile-0.52/README.basicauth	Wed Aug 29 22:16:02 2001
+@@ -0,0 +1,100 @@
++Here is a patch for publicfile to allow for Basic Auth.
++
++Building Instructions:
++
++Save this patch as publicfile-0.52.basicauth.patch
++Download publicfile-0.52
++Download cdb-0.75
++
++gunzip publicfile-0.52.tar
++gunzip cdb-0.75.tar
++tar -xf publicfile-0.52.tar
++cd publicfile-0.52
++tar -xf ../cdb-0.75.tar
++patch -p1 < publicfile-0.52.basicauth.patch
++
++Follow normal installation instructions for publicfile beginning with
++'make setup check'
++
++Usage Instructions:
++
++Once this patch has been applied, httpd will check for a file
++called '.access' in the current directory of any requested
++file. e.g, if /public/file/0/path/to/file.html is requested, httpd
++will first check for /public/file/0/path/to/.access.
++
++.access should have the format:
++  realm_id:realm_txt
++
++realm_id is used as documented below. realm_txt is typically
++presented by the user's browser. .access must be readable by httpd
++and only protects a specific directory. Sub-directories are not
++protected unless they also contain a .access file.
++
++An additional program will be installed in /usr/local/publicfile (or
++whatever conf-home is) called htrules. Use this like tcprules:
++
++cd /public/file
++htrules access.cdb access.tmp < access
++
++This may safely be run at any time.
++
++access should have the format:
++
++  # this is a comment. blank lines are allowed too.
++  # the next line authorizes a user to a specific realm_id
++  realm_id:username:password
++  # the next line authorizes host class.
++  realm_id:LOCALHOST
++
++access.cdb must be readable by httpd.
++
++realm_id corresponds to the realm_id in the .access file(s).
++
++Each realm_id line specifies either a username:password combination
++or a host class. Note that the same username may have different 
++passwords in different realm_id's.
++
++A host is mapped into a host class via the environment
++variable HTTPCLIENT. This environment variable should be
++set in tcpserver's rules.cdb. 
++
++Here is an example:
++
++  === /public/file/0/private1/.access ===
++  realm1:Dr. Suess
++
++  === /public/file/0/private2/.access ===
++  realm2:Sesame Street
++
++  === /public/file/access ===
++  # realm1 are Dr Suess users/clients
++  realm1:john:catinthehat
++  realm1:mary:greeneggswithham
++  realm1:LOCALHOST
++  realm1:DR SUESS
++  # realm1 are Sesame Street users/clients
++  realm2:tom:bigbird
++  realm2:abi:cookiemonster
++  realm2:mary:earnie
++  realm2:LOCALHOST
++  realm2:SESAME STREET
++
++  === /etc/rules ===
++  127.0.0.1:allow,HTTPCLIENT="LOCALHOST"
++  10.0.0.:allow,HTTPCLIENT="DR SUESS"
++  10.1.0.:allow,HTTPCLIENT="SESAME STREET"
++  :allow
++
++The changes to the Makefile aren't very clean, but everything compiles
++correctly.
++
++Thanks to Eric M. Johnston's for base64.{c,h} from YAQSAP
++(Yet Another qmail SMTP AUTH Patch) -
++http://qmail.goof.com/qmail-auth-20010105.tar.gz
++
++This patch available at
++http://www.soffian.org/downloads/publicfile-0.52_basicauth.patch
++
++Jay Soffian <jay@soffian.org> 29 Aug 2001
++
+diff -N -u -r publicfile-0.52.orig/base64.c publicfile-0.52/base64.c
+--- publicfile-0.52.orig/base64.c	Wed Dec 31 16:00:00 1969
++++ publicfile-0.52/base64.c	Wed Aug 22 22:17:39 2001
+@@ -0,0 +1,90 @@
++#include "base64.h"
++#include "stralloc.h"
++#include "substdio.h"
++#include "str.h"
++
++static char *b64alpha =
++  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
++#define B64PAD '='
++
++/* returns 0 ok, 1 illegal, -1 problem */
++
++int b64decode(in,l,out)
++const unsigned char *in;
++int l;
++stralloc *out; /* not null terminated */
++{
++  int i, j;
++  unsigned char a[4];
++  unsigned char b[3];
++  char *s;
++
++  if (l == 0)
++  {
++    if (!stralloc_copys(out,"")) return -1;
++    return 0;
++  }
++
++  if (!stralloc_ready(out,l + 2)) return -1; /* XXX generous */
++  s = out->s;
++
++  for (i = 0;i < l;i += 4) {
++    for (j = 0;j < 4;j++)
++      if ((i + j) < l && in[i + j] != B64PAD)
++      {
++        a[j] = str_chr(b64alpha,in[i + j]);
++        if (a[j] > 63) return 1;
++      }
++      else a[j] = 0;
++
++    b[0] = (a[0] << 2) | (a[1] >> 4);
++    b[1] = (a[1] << 4) | (a[2] >> 2);
++    b[2] = (a[2] << 6) | (a[3]);
++
++    *s++ = b[0];
++
++    if (in[i + 1] == B64PAD) break;
++    *s++ = b[1];
++
++    if (in[i + 2] == B64PAD) break;
++    *s++ = b[2];
++  }
++  out->len = s - out->s;
++  while (out->len && !out->s[out->len - 1]) --out->len; /* XXX avoid? */
++  return 0;
++}
++
++int b64encode(in,out)
++stralloc *in;
++stralloc *out; /* not null terminated */
++{
++  unsigned char a, b, c;
++  int i;
++  char *s;
++
++  if (in->len == 0)
++  {
++    if (!stralloc_copys(out,"")) return -1;
++    return 0;
++  }
++
++  if (!stralloc_ready(out,in->len / 3 * 4 + 4)) return -1;
++  s = out->s;
++
++  for (i = 0;i < in->len;i += 3) {
++    a = in->s[i];
++    b = i + 1 < in->len ? in->s[i + 1] : 0;
++    c = i + 2 < in->len ? in->s[i + 2] : 0;
++
++    *s++ = b64alpha[a >> 2];
++    *s++ = b64alpha[((a & 3 ) << 4) | (b >> 4)];
++
++    if (i + 1 >= in->len) *s++ = B64PAD;
++    else *s++ = b64alpha[((b & 15) << 2) | (c >> 6)];
++
++    if (i + 2 >= in->len) *s++ = B64PAD;
++    else *s++ = b64alpha[c & 63];
++  }
++  out->len = s - out->s;
++  return 0;
++}
+diff -N -u -r publicfile-0.52.orig/base64.h publicfile-0.52/base64.h
+--- publicfile-0.52.orig/base64.h	Wed Dec 31 16:00:00 1969
++++ publicfile-0.52/base64.h	Wed Aug 22 22:17:39 2001
+@@ -0,0 +1,7 @@
++#ifndef BASE64_H
++#define BASE64_H
++
++extern int b64decode();
++extern int b64encode();
++
++#endif
+diff -N -u -r publicfile-0.52.orig/hier.c publicfile-0.52/hier.c
+--- publicfile-0.52.orig/hier.c	Mon Nov  8 23:23:46 1999
++++ publicfile-0.52/hier.c	Wed Aug 22 22:17:39 2001
+@@ -7,6 +7,7 @@
+   d(auto_home,"bin",-1,-1,02755);
+ 
+   c(auto_home,"bin","configure",-1,-1,0755);
++  c(auto_home,"bin","htrules",-1,-1,0755);
+   c(auto_home,"bin","httpd",-1,-1,0755);
+   c(auto_home,"bin","ftpd",-1,-1,0755);
+ }
+diff -N -u -r publicfile-0.52.orig/htrules.c publicfile-0.52/htrules.c
+--- publicfile-0.52.orig/htrules.c	Wed Dec 31 16:00:00 1969
++++ publicfile-0.52/htrules.c	Wed Aug 29 21:27:42 2001
+@@ -0,0 +1,117 @@
++#include "strerr.h"
++#include "stralloc.h"
++#include "getln.h"
++#include "buffer.h"
++#include "exit.h"
++#include "fmt.h"
++#include "byte.h"
++#include "base64.h"
++#include "cdb_make.h"
++
++#define FATAL "htrules: fatal: "
++
++unsigned long linenum = 0;
++char *fntemp;
++char *fn;
++
++stralloc line = {0};
++int match = 1;
++
++stralloc base64 = {0};
++stralloc key = {0};
++stralloc realm = {0};
++stralloc userpass = {0};
++
++struct cdb_make c;
++
++void nomem(void)
++{
++  strerr_die2x(111,FATAL,"out of memory");
++}
++void usage(void)
++{
++  strerr_die1x(100,"htrules: usage: htrules access.cdb access.tmp");
++}
++void die_bad(void)
++{
++  if (!stralloc_0(&line)) nomem();
++  strerr_die3x(100,FATAL,"unable to parse this line: ",line.s);
++}
++void die_write(void)
++{
++  strerr_die4sys(111,FATAL,"unable to write to ",fntemp,": ");
++}
++
++main(int argc,char **argv)
++{
++  int colon;
++  char *x;
++  int len;
++  int fd;
++  int i;
++  char ch;
++
++  fn = argv[1];
++  if (!fn) usage();
++  fntemp = argv[2];
++  if (!fntemp) usage();
++
++  fd = open_trunc(fntemp);
++  if (fd == -1)
++    strerr_die4sys(111,FATAL,"unable to create ",fntemp,": ");
++  if (cdb_make_start(&c,fd) == -1) die_write();
++
++  while (match) {
++    if (getln(buffer_0,&line,&match,'\n') == -1)
++      strerr_die2sys(111,FATAL,"unable to read input: ");
++
++    x = line.s; len = line.len;
++
++    if (!len) break;
++    if (x[0] == '#') continue;
++    if (x[0] == '\n') continue;
++
++    while (len) {
++      ch = x[len - 1];
++      if (ch != '\n') if (ch != ' ') if (ch != '\t') break;
++      --len;
++    }
++    line.len = len; /* for die_bad() */
++    if (!len) continue;
++
++    colon = byte_chr(x,len,':');
++    if (!colon || colon == len) die_bad();
++    if (!stralloc_copyb(&realm,x,colon)) nomem();
++    x += colon + 1; len -= colon + 1;
++
++    colon = byte_chr(x,len,':');
++    if (colon == len) {
++      if (!stralloc_copyb(&key,"C",1)) nomem();
++      if (!stralloc_cat(&key,&realm)) nomem();
++      if (!stralloc_catb(&key,":",1)) nomem();
++      if (!stralloc_catb(&key,x,len)) nomem();
++      if (cdb_make_add(&c,key.s,key.len,"",0) == -1) die_write();
++    } else {
++      if (!stralloc_copyb(&userpass,x,len)) nomem();
++      if (b64encode(&userpass,&base64) == -1) nomem();
++
++      if (!stralloc_copyb(&key,"U",1)) nomem();
++      if (!stralloc_cat(&key,&base64)) nomem();
++      if (cdb_make_add(&c,key.s,key.len,"",0) == -1) die_write();
++
++      if (!stralloc_copyb(&key,"R",1)) nomem();
++      if (!stralloc_cat(&key,&realm)) nomem();
++      if (!stralloc_catb(&key,":",1)) nomem();
++      if (!stralloc_cat(&key,&base64)) nomem();
++      if (cdb_make_add(&c,key.s,key.len,"",0) == -1) die_write();
++    } 
++  }
++
++  if (cdb_make_finish(&c) == -1) die_write();
++  if (fsync(fd) == -1) die_write();
++  if (close(fd) == -1) die_write(); /* NFS stupidity */
++  if (rename(fntemp,fn))
++    strerr_die6sys(111,FATAL,"unable to move ",fntemp," to ",fn,": ");
++
++  _exit(0);
++}
+diff -N -u -r publicfile-0.52.orig/httpd.c publicfile-0.52/httpd.c
+--- publicfile-0.52.orig/httpd.c	Mon Nov  8 23:23:46 1999
++++ publicfile-0.52/httpd.c	Wed Aug 29 21:30:34 2001
+@@ -15,6 +15,10 @@
+ #include "substdio.h"
+ #include "error.h"
+ #include "getln.h"
++#include "byte.h"
++#include "cdb.h"
++#include "openreadclose.h"
++#include "env.h"
+ 
+ int safewrite(int fd,char *buf,int len)
+ {
+@@ -51,6 +55,7 @@
+ stralloc host = {0};
+ stralloc path = {0};
+ stralloc ims = {0};
++stralloc basic_auth = {0};
+ int flagbody = 1;
+ 
+ char filebuf[1024];
+@@ -75,11 +80,16 @@
+   out_puts("\r\n");
+ }
+ 
+-void barf(char *code,char *message)
++void barf2(char *code,char *message,char *realm)
+ {
+   if (protocolnum > 0) {
+     tai_now(&now);
+     header(code,message);
++    if(realm) {
++      out_puts("WWW-Authenticate: Basic realm=\"");
++      out_puts(realm);
++      out_puts("\"\r\n");
++    }
+     out_puts("Content-Length: ");
+     out_put(strnum,fmt_ulong(strnum,str_len(message) + 28));
+     out_puts("\r\n");
+@@ -100,8 +110,81 @@
+   _exit(0);
+ }
+ 
++void barf(char *code,char *message)
++{
++  barf2(code,message,(char *)0);
++}
++
+ stralloc fn = {0};
++stralloc accessfn = {0};
+ stralloc contenttype = {0};
++stralloc realm = {0};
++stralloc realmtxt = {0};
++stralloc key = {0};
++
++void checkauth(void)
++{
++  int len;
++  int fd;
++  int colon;
++  static struct cdb c;
++  char *x;
++ 
++  len = byte_rchr(fn.s,fn.len,'/');
++  if (!stralloc_copyb(&accessfn,fn.s,len)) _exit(21);
++  if (!stralloc_cats(&accessfn,"/.access")) _exit(21);
++  if (!stralloc_0(&accessfn)) _exit(21);
++
++  if (openreadclose(accessfn.s,&realm,256) == 0) return;
++  if (!realm.len) _exit(23); /* no realm */
++  realm.len = byte_chr(realm.s,realm.len,'\n');
++  while (realm.len) {
++    if (realm.s[realm.len - 1] != ' ')
++      if (realm.s[realm.len - 1] != '\t')
++        break;
++    --realm.len;
++  }
++  colon = byte_chr(realm.s,realm.len,':');
++  if (!colon) _exit(23); /* no realm */
++  if (colon == realm.len) {
++    if (!stralloc_copys(&realmtxt,"restricted access")) _exit(21);
++  } else {
++    if (!stralloc_copyb(&realmtxt,realm.s+colon+1,realm.len-(colon+1))) _exit(21);
++    realm.len = colon;
++  }
++  if (!stralloc_0(&realmtxt)) _exit(21);
++
++  fd = open_read("/access.cdb");
++  if (fd == -1) _exit(23);
++  cdb_init(&c,fd);
++
++  x = env_get("HTTPCLIENT");
++  if (x) {
++    if (!stralloc_copyb(&key,"C",1)) _exit(21);
++    if (!stralloc_cat(&key,&realm)) _exit(21);
++    if (!stralloc_catb(&key,":",1)) _exit(21);
++    if (!stralloc_cats(&key,x)) _exit(21);
++    if (cdb_find(&c,key.s,key.len) == 1) goto AUTH_OK;
++  }
++
++  if (!basic_auth.len) barf2("401 ","Authorization Required", realmtxt.s);
++
++  if (!stralloc_copyb(&key,"U",1)) _exit(21);
++  if (!stralloc_cat(&key,&basic_auth)) _exit(21);
++  if (cdb_find(&c,key.s,key.len) != 1)
++    barf2("401 ","Authorization Required",realmtxt.s);
++
++  if (!stralloc_copyb(&key,"R",1)) _exit(21);
++  if (!stralloc_cat(&key,&realm)) _exit(21);
++  if (!stralloc_catb(&key,":",1)) _exit(21);
++  if (!stralloc_cat(&key,&basic_auth)) _exit(21);
++  if (cdb_find(&c,key.s,key.len) != 1) barf("403 ","Forbidden");
++
++  AUTH_OK:
++  alloc_free(key);
++  cdb_free(&c);
++  close(fd);
++}
+ 
+ void get(void)
+ {
+@@ -124,6 +207,8 @@
+   if (!stralloc_cat(&fn,&path)) _exit(21);
+   pathdecode(&fn);
+   if (!stralloc_0(&fn)) _exit(21);
++  
++  checkauth();
+ 
+   fd = file_open(fn.s,&mtime,&length,1);
+   if (fd == -1)
+@@ -227,6 +312,7 @@
+     if (!stralloc_copys(&path,"")) _exit(21);
+     if (!stralloc_copys(&protocol,"")) _exit(21);
+     if (!stralloc_copys(&ims,"")) _exit(21);
++    if (!stralloc_copys(&basic_auth,"")) _exit(21);
+     protocolnum = 2;
+ 
+     spaces = 0;
+@@ -302,6 +388,8 @@
+                     if (!stralloc_append(&host,&field.s[i])) _exit(21);
+           if (case_startb(field.s,field.len,"if-modified-since:"))
+ 	    if (!stralloc_copyb(&ims,field.s + 18,field.len - 18)) _exit(21);
++	  if (case_startb(field.s,field.len,"authorization: basic "))
++	    if (!stralloc_copyb(&basic_auth,field.s + 21,field.len - 21)) _exit(21);
+           field.len = 0;
+         }
+         if (!line.len) break;
+diff -N -u -r publicfile-0.52.orig/openreadclose.c publicfile-0.52/openreadclose.c
+--- publicfile-0.52.orig/openreadclose.c	Wed Dec 31 16:00:00 1969
++++ publicfile-0.52/openreadclose.c	Wed Aug 29 14:24:21 2001
+@@ -0,0 +1,18 @@
++/* Public domain. */
++
++#include "error.h"
++#include "open.h"
++#include "readclose.h"
++#include "openreadclose.h"
++
++int openreadclose(const char *fn,stralloc *sa,unsigned int bufsize)
++{
++  int fd;
++  fd = open_read(fn);
++  if (fd == -1) {
++    if (errno == error_noent) return 0;
++    return -1;
++  }
++  if (readclose(fd,sa,bufsize) == -1) return -1;
++  return 1;
++}
+diff -N -u -r publicfile-0.52.orig/openreadclose.h publicfile-0.52/openreadclose.h
+--- publicfile-0.52.orig/openreadclose.h	Wed Dec 31 16:00:00 1969
++++ publicfile-0.52/openreadclose.h	Wed Aug 29 14:24:21 2001
+@@ -0,0 +1,10 @@
++/* Public domain. */
++
++#ifndef OPENREADCLOSE_H
++#define OPENREADCLOSE_H
++
++#include "stralloc.h"
++
++extern int openreadclose(const char *,stralloc *,unsigned int);
++
++#endif
+diff -N -u -r publicfile-0.52.orig/readclose.c publicfile-0.52/readclose.c
+--- publicfile-0.52.orig/readclose.c	Wed Dec 31 16:00:00 1969
++++ publicfile-0.52/readclose.c	Wed Aug 29 14:30:52 2001
+@@ -0,0 +1,23 @@
++/* Public domain. */
++
++#include <unistd.h>
++#include "error.h"
++#include "readclose.h"
++
++int readclose_append(int fd,stralloc *sa,unsigned int bufsize)
++{
++  int r;
++  for (;;) {
++    if (!stralloc_readyplus(sa,bufsize)) { close(fd); return -1; }
++    r = read(fd,sa->s + sa->len,bufsize);
++    if (r == -1) if (errno == error_intr) continue;
++    if (r <= 0) { close(fd); return r; }
++    sa->len += r;
++  }
++}
++
++int readclose(int fd,stralloc *sa,unsigned int bufsize)
++{
++  if (!stralloc_copys(sa,"")) { close(fd); return -1; }
++  return readclose_append(fd,sa,bufsize);
++}
+diff -N -u -r publicfile-0.52.orig/readclose.h publicfile-0.52/readclose.h
+--- publicfile-0.52.orig/readclose.h	Wed Dec 31 16:00:00 1969
++++ publicfile-0.52/readclose.h	Wed Aug 29 14:30:52 2001
+@@ -0,0 +1,11 @@
++/* Public domain. */
++
++#ifndef READCLOSE_H
++#define READCLOSE_H
++
++#include "stralloc.h"
++
++extern int readclose_append(int,stralloc *,unsigned int);
++extern int readclose(int,stralloc *,unsigned int);
++
++#endif

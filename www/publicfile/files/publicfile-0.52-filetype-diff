@@ -1,0 +1,34 @@
+--- filetype.c.old	Mon Dec  6 10:43:36 1999
++++ filetype.c	Mon Dec  6 10:50:36 1999
+@@ -1,5 +1,6 @@
+ #include "filetype.h"
+ #include "str.h"
++#include "env.h"
+ 
+ void filetype(char *fn,stralloc *contenttype)
+ {
+@@ -22,7 +23,7 @@
+       if (!stralloc_append(contenttype,&ch)) _exit(21);
+     }
+   else {
+-    result = "text/plain";
++    result = 0;
+     if (str_equal(x,".html")) result = "text/html";
+     else if (str_equal(x,".gz")) result = "application/x-gzip";
+     else if (str_equal(x,".dvi")) result = "application/x-dvi";
+@@ -32,6 +33,15 @@
+     else if (str_equal(x,".jpeg")) result = "image/jpeg";
+     else if (str_equal(x,".png")) result = "image/png";
+     else if (str_equal(x,".mpeg")) result = "video/mpeg";
++	if (!result) {
++		stralloc envname = {0};
++		if (!stralloc_copys(&envname,"CT_")) _exit(21);
++		if (!stralloc_cats(&envname,x+1)) _exit(21);
++		if (!stralloc_0(&envname)) _exit(21);
++		result=env_get(envname.s);
++		alloc_free(envname.s); /* is this the right function */
++	}
++	if (!result) result="text/plain";
+ 
+     if (!stralloc_cats(contenttype,result)) _exit(21);
+   }
