@@ -7,6 +7,7 @@
 
 PORTNAME=	sox
 PORTVERSION=	12.17.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sox
@@ -20,7 +21,7 @@ GNU_CONFIGURE=		yes
 .if defined(WITH_VORBIS)
 CONFIGURE_ARGS+=	--with-ogg-vorbisinc=${LOCALBASE}/include \
 		 	--with-ogg-vorbislib=${LOCALBASE}/lib
-LIB_DEPENDS+=		vorbis.1:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=		vorbis.2:${PORTSDIR}/audio/libvorbis
 .else
 CONFIGURE_ARGS+=	--with-ogg-vorbisinc=no
 .endif

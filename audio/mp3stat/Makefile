@@ -8,6 +8,7 @@
 
 PORTNAME=	mp3stat
 PORTVERSION=	2.5.6
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://safemode.homeip.net/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -21,7 +22,7 @@ USE_GMAKE=	yes
 MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 
 .if defined(WITH_VORBIS)
-LIB_DEPENDS=	vorbis.1:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	vorbis.2:${PORTSDIR}/audio/libvorbis
 MAKE_ENV+=	WITH_VORBIS="${WITH_VORBIS}"
 
 pre-everything::

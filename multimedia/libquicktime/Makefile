@@ -8,13 +8,14 @@
 
 PORTNAME=	libquicktime
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	vorbis:${PORTSDIR}/audio/libvorbis \
+LIB_DEPENDS=	vorbis.2:${PORTSDIR}/audio/libvorbis \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		png:${PORTSDIR}/graphics/png \
 		dv:${PORTSDIR}/graphics/libdv

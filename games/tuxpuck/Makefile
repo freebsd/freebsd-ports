@@ -8,6 +8,7 @@
 
 PORTNAME=	tuxpuck
 PORTVERSION=	0.7.116
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.efd.lth.se/~d00jkr/tuxpuck/
 
@@ -15,7 +16,7 @@ MAINTAINER=	Jan.Stocker@t-online.de
 
 LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
 		png.5:${PORTSDIR}/graphics/png \
-		vorbis.1:${PORTSDIR}/audio/libvorbis
+		vorbis.2:${PORTSDIR}/audio/libvorbis
 
 SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
 USE_GMAKE=	yes

@@ -7,6 +7,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	0.90.0.5
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://ftp.mplayerhq.hu/MPlayer/releases/ \
 		http://www.mplayerhq.hu/MPlayer/releases/ \
@@ -98,7 +99,7 @@ LIB_DEPENDS+=	SDL-1.1.4:${PORTSDIR}/devel/sdl12
 .endif
 
 .if defined(WITH_VORBIS)
-LIB_DEPENDS+=	vorbis.1:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.2:${PORTSDIR}/audio/libvorbis
 .endif
 
 .if defined(WITH_XANIM)
