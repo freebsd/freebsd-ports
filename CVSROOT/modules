@@ -4413,6 +4413,7 @@ p5-File-Temp	ports/devel/p5-File-Temp
 p5-File-Tools	ports/devel/p5-File-Tools
 p5-Filesys-DiskSpace	ports/sysutils/p5-Filesys-DiskSpace
 p5-Filter	ports/devel/p5-Filter
+p5-Filter-CBC	ports/devel/p5-Filter-CBC
 p5-Finance-Quote	ports/misc/p5-Finance-Quote
 p5-Font-AFM	ports/x11-fonts/p5-Font-AFM
 p5-FreeBSD-Ports	ports/textproc/p5-FreeBSD-Ports
