@@ -5,90 +5,54 @@
 # $FreeBSD$
 #
 
-PORTNAME=	Cherokee
-PORTVERSION=	0.2.8
+PORTNAME=	cherokee
+PORTVERSION=	0.4.2
 CATEGORIES=	www
-MASTER_SITES=	http://www.alobbs.com/cherokee/
+MASTER_SITES=	ftp://www.alobbs.com/cherokee/
 
 MAINTAINER=	oksala@videotron.ca
 COMMENT=	Cherokee is an extremely fast and tiny web server
 
-USE_AUTOCONF=	yes
-USE_AUTOMAKE=	yes
+#USE_AUTOCONF=	yes
+#USE_AUTOMAKE=	yes
 HAS_CONFIGURE=  yes
-CONFIGURE_ARGS+=	\
-		--prefix=${PREFIX} \
-		--enable-daemon\
-		--enable-warnings\
-		--with-htdocs=${HTDOCS}\
-		--with-uid=${UID} \
-		--with-gid=${GID} \
-		--with-port=${PORT} \
-		--with-index=${INDEX}
+CONFIGURE_ARGS= --prefix=${PREFIX}
+INSTALLS_SHLIB=	yes
 
-
-#
-# User Configuration
-# This may seem a little overloaded
-# But there is not configuration files or getopt options
-#
-
-#User Configurations
-#Dir for your html files
-.if defined(HTDOCS)
-HTDOCS=${HTDOCS}
-.else
-HTDOCS=${PREFIX}/www/data
+#This is experimental
+#do not expect it to work properly
+.if defined(WITH_PHP)
+CONFIGURE_ARGS+=--with-php=${PREFIX}/include/php
+BUILD_DEPENDS=mod_php4:${PORTSDIR}/www/mod_php4:
 .endif
 
-#Process UID
-.if defined(USER_ID)
-USER_ID=${USER_ID}
-.else
-USER_ID=80      #www
-.endif
+MAN1=		cherokee.1
 
-#Process GID
-.if defined(GROUP_ID)
-GROUP_ID=${GROUP_ID}
-.else
-GROUP_ID=80     #www
-.endif
-
-#inet port
-.if defined(PORT)
-PORT=${PORT}
-.else
-PORT=80
-.endif
-
-#index files
-.if defined(INDEX)
-INDEX=${INDEX}
-.else
-INDEX=index.html
-.endif
-
-pre-configure:
-	@${ECHO} ""
-	@${ECHO} "=================================="
-	@${ECHO} ""
-	@${ECHO} "Current configuration :"
-	@${ECHO} "Working directory : ${HTDOCS} (HTDOCS)"
-	@${ECHO} "Process id : ${USER_ID} (USER_ID)"
-	@${ECHO} "Process gid : ${GROUP_ID} (GROUP_ID)"
-	@${ECHO} "Inet port : ${PORT} (PORT)"
-	@${ECHO} "Index files : ${INDEX} (INDEX)"
-	@${ECHO} ""
-	@${ECHO} "=================================="
-	@${ECHO} ""
+#pre-everything:
+#	@${ECHO_MSG} "----------------------------"
+#	@${ECHO_MSG} " "
+#	@${ECHO_MSG} "You can add php support"
+#	@${ECHO_MSG} "This is experimental"
+#	@${ECHO_MSG} "builds cherokee with WITH_PHP=yes"
+#	@${ECHO_MSG} "For example,"
+#	@${ECHO_MSG} "make WITH_PHP=yes"
+#	@${ECHO_MSG} " "
+#	@${ECHO_MSG} "----------------------------"
 
 pre-install:
 	@if [ ! -f ${PREFIX}/www ]; then \
 		${MKDIR} ${PREFIX}/www;\
 	fi
-	@if [ ! -f ${HTDOCS} ] ; then \
-		${MKDIR} ${HTDOCS};\
+	@if [ ! -f ${PREFIX}/www/data ] ; then \
+		${MKDIR} ${PREFIX}/www/data;\
 	fi
+	@${ECHO_MSG} " `pwd` "
+
+post-install:
+	@${INSTALL}  -m 644 ${WRKSRC}/doc/Intro.txt ${PREFIX}/share/cherokee
+	@${ECHO_MSG} " "
+	@${ECHO_MSG} " Dont forget to read the doc "
+	@${ECHO_MSG} " ${PREFIX}/share/cherokee/Intro.txt"
+	@${ECHO_MSG} " "
 
 .include <bsd.port.mk>
