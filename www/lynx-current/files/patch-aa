@@ -1,5 +1,5 @@
---- makefile.in.orig	Tue Feb 13 04:33:21 2001
-+++ makefile.in	Sat Mar  3 05:21:01 2001
+--- makefile.in.orig	Thu Aug 16 02:09:52 2001
++++ makefile.in	Wed Oct 10 08:46:54 2001
 @@ -387,22 +387,19 @@
  		fi ; \
  		)'
@@ -16,8 +16,8 @@
 +	@echo Updating $(libdir)/lynx.cfg.default to point to installed help-files
  	@ECHO_CC@sed	-e '/^HELPFILE:http/s!^!#!' \
  		-e '/^#HELPFILE:file/s!#!!' \
- 		-e '/^HELPFILE:file/s!/PATH_TO/lynx_help!$(helpdir)!' \
- 		-e '/^[A-Z_]*:/s!/PATH_TO/lynx_doc!$(docdir)!' \
+ 		-e '/^HELPFILE:file/s!PATH_TO/lynx_help!$(helpdir1)!' \
+ 		-e '/^[A-Z_]*:/s!PATH_TO/lynx_doc!$(docdir1)!' \
  		-e '/^HELPFILE:file/s!$$!$(COMPRESS_EXT)!' \
  		-e '/^HELPFILE:file/s!$(COMPRESS_EXT)$(COMPRESS_EXT)$$!$(COMPRESS_EXT)!' \
 -		$(LIBDIR)/lynx.tmp >$(LIBDIR)/lynx.cfg

@@ -18,9 +18,11 @@ share/doc/lynx/samples/cernrules.txt
 share/doc/lynx/samples/installdirs.html
 share/doc/lynx/samples/jumpsUnix.html
 share/doc/lynx/samples/jumpsVMS.html
+share/doc/lynx/samples/keepviewer
 share/doc/lynx/samples/lynx-keymaps
 share/doc/lynx/samples/lynx.com
 share/doc/lynx/samples/lynx.lss
+share/doc/lynx/samples/lynxdump
 share/doc/lynx/samples/mailcap
 share/doc/lynx/samples/mailto-form.pl
 share/doc/lynx/samples/mild-colors.lss
