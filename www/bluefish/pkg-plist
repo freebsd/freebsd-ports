@@ -26,6 +26,22 @@ share/bluefish/xhtml1-frameset.dtd
 share/bluefish/xhtml1-strict.dtd
 share/bluefish/xhtml1-transitional.dtd
 share/doc/bluefish/README
+share/locale/de/LC_MESSAGES/bluefish.mo
+share/locale/da/LC_MESSAGES/bluefish.mo
+share/locale/fr/LC_MESSAGES/bluefish.mo
+share/locale/ru/LC_MESSAGES/bluefish.mo
+share/locale/ro/LC_MESSAGES/bluefish.mo
+share/locale/cs/LC_MESSAGES/bluefish.mo
+share/locale/es/LC_MESSAGES/bluefish.mo
+share/locale/el/LC_MESSAGES/bluefish.mo
+share/locale/en/LC_MESSAGES/bluefish.mo
+share/locale/ja/LC_MESSAGES/bluefish.mo
+share/locale/it/LC_MESSAGES/bluefish.mo
+share/locale/sv/LC_MESSAGES/bluefish.mo
+share/locale/pt_BR/LC_MESSAGES/bluefish.mo
+share/locale/hu/LC_MESSAGES/bluefish.mo
+share/locale/pl/LC_MESSAGES/bluefish.mo
+share/locale/nl/LC_MESSAGES/bluefish.mo
 share/pixmaps/bluefish_icon.xpm
 @dirrm share/bluefish/man1
 @dirrm share/bluefish
