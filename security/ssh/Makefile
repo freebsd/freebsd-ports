@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.40 1997/04/25 05:01:02 peter Exp $
+# $Id: Makefile,v 1.41 1997/05/24 13:17:14 jfitz Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -55,7 +55,7 @@ CONFIGURE_ARGS+= --with-secureid
 .endif
 
 # Don't use IDEA. IDEA can be freely used for non-commercial use. However,
-# commercial use may require a licence in a number of countried
+# commercial use may require a licence in a number of countries
 # Warning: untested !
 .if defined(DONT_USE_IDEA) && ${DONT_USE_IDEA} == YES
 CONFIGURE_ARGS+= --without-idea
