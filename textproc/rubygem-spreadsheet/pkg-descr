@@ -1,0 +1,7 @@
+This is Spreadsheet/Excel for Ruby, a module that allows you to
+generate Microsoft Excel compatible files on any platform (also
+readable by Gnumeric).  It's a port of John McNamara's
+Spreadsheet::WriteExcel Perl module.
+
+Author:	Daniel J. Berger <djberg96@yahoo.com>
+WWW:	http://rubyspreadsheet.sourceforge.net/
