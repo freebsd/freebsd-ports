@@ -163,6 +163,8 @@ share/mysql/spanish/errmsg.sys
 share/mysql/spanish/errmsg.txt
 share/mysql/swedish/errmsg.sys
 share/mysql/swedish/errmsg.txt
+share/mysql/ukrainian/errmsg.sys
+share/mysql/ukrainian/errmsg.txt
 %%PORTDOCS%%@dirrm share/doc/mysql/Flags
 %%PORTDOCS%%@dirrm share/doc/mysql
 @dirrm share/mysql/charsets
@@ -187,6 +189,7 @@ share/mysql/swedish/errmsg.txt
 @dirrm share/mysql/slovak
 @dirrm share/mysql/spanish
 @dirrm share/mysql/swedish
+@dirrm share/mysql/ukrainian
 @dirrm share/mysql
 @exec %D/bin/mysql_install_db
 @unexec /usr/bin/killall mysqld > /dev/null 2>&1 || true
