@@ -5803,6 +5803,7 @@ offlineimap	ports/mail/offlineimap
 oftpd		ports/ftp/oftpd
 ogle		ports/multimedia/ogle
 ogle-gui	ports/multimedia/ogle-gui
+oglext		ports/graphics/oglext
 ogmtools	ports/multimedia/ogmtools
 ohphone		ports/net/ohphone
 ohugs		ports/lang/ohugs
