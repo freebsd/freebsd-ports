@@ -78,7 +78,7 @@ pre-fetch:
 
 post-patch:
 	@echo "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
-	@echo "${CC} -s" > ${WRKSRC}/conf-ld
+	@echo "${CC} ${STRIP}" > ${WRKSRC}/conf-ld
 	@echo "${PREFIX}" > ${WRKSRC}/conf-home
 
 .if !defined(WITHOUT_MAN)
