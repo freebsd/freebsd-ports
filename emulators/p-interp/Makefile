@@ -18,6 +18,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A UCSD (Apple) Pascal p-code interpreter environment
 
+BUILD_DEPENDS=	gccmakedep:${X_IMAKE_PORT}
+
 USE_XLIB=	yes
 
 RESTRICTED=	"Redistribution rights for Apple Pascal disk images are unclear"
