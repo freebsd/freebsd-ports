@@ -16,6 +16,8 @@ MAINTAINER=	rbt@zort.ca
 
 RUN_DEPENDS=	xanim:${PORTSDIR}/graphics/xanim
 
+WRKSRC=	${WRKDIR}/gxanim-${PORTVERSION}
+
 USE_BZIP2=	yes
 USE_XLIB=	yes
 USE_GTK=	yes
