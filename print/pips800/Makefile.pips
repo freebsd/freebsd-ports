@@ -21,7 +21,7 @@ PIPS_LEVEL!=	/usr/bin/printf "%d%02d" ${PIPS_MAJOR} ${PIPS_MINOR}
 .if ${PIPS_LEVEL} < 206
 DIST_TYPE=	lpr
 .endif
-DIST_TYPE?=	lpr_and_caps
+DIST_TYPE?=	""
 
 PRTTYPE_PREFIX=	${PRTYPE:C|^([^0-9]+)[0-9]+.*$|\1|}
 
@@ -53,24 +53,15 @@ MASTER_SITE_SUBDIR=	pm750c_2000clpr
 MASTER_SITE_SUBDIR=	${PRTYPE}_20
 .elif ${PRTYPE} == 970
 MASTER_SITE_SUBDIR=	${PRT_MODEL}
-.elif ${PRTYPE} == 3500
-MASTER_SITE_SUBDIR=	${PRT_MODEL:L}
-.elif ${PRTYPE} == 4000 || ${PRTTYPE_PREFIX} == g
-MASTER_SITE_SUBDIR=	${PRT_MODEL:L}lpr
-.elif ${PRTTYPE_PREFIX} == v
-.if ${DIST_TYPE} == cups
-MASTER_SITE_SUBDIR=	${PRT_MODEL:L}cups
-.else
-MASTER_SITE_SUBDIR=	${PRT_MODEL:L}lpr
-.endif
 .elif ${PIPS_LEVEL} == 201
 MASTER_SITE_SUBDIR=	${PRTYPE}_21
-.elif ${DIST_TYPE} == cups
-MASTER_SITE_SUBDIR=	${PRTYPE}Ccups
-.elif ${PIPS_MAJOR} >= 2 && ${DIST_TYPE} == lpr
-MASTER_SITE_SUBDIR=	${PRTYPE}Clpr
-.else
+.elif ${PIPS_MAJOR} >= 2 && (${DIST_TYPE} == cups || ${DIST_TYPE} == lpr) && \
+	${PRTYPE} != v700
+MASTER_SITE_SUBDIR=	${PRTYPE}C${DIST_TYPE}
+.elif ${DIST_TYPE} != cups && ${DIST_TYPE} != lpr
 MASTER_SITE_SUBDIR=	${PRT_MODEL:L}lpr
+.else
+MASTER_SITE_SUBDIR=	${PRT_MODEL:L}${DIST_TYPE}
 .endif
 
 MAINTAINER=	ume@FreeBSD.org
