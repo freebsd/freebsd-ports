@@ -9,3 +9,7 @@ sbin/iauth
 sbin/ircd-mkpasswd
 sbin/ircdwatch
 @dirrm etc/ircd
+@dirrm var/log/ircd
+@dirrm var/log
+@dirrm var/run
+@dirrm var
