@@ -1,0 +1,39 @@
+--- Makefile.dist	Thu Nov 11 16:49:23 1999
++++ Makefile	Sat Apr  8 23:44:45 2000
+@@ -6,8 +6,8 @@
+ # they should be set.  All of them are conditional on options set in this
+ # file, so it should be relatively easy to determine which branch is correct
+ 
+-BINDIR = ..
+-MODDIR = ../modules
++BINDIR = /usr/local/listar
++MODDIR = /usr/local/listar/modules
+ 
+ # First things first we need to set up some various options since OS's aren't
+ # as nice about things are they could be.
+@@ -27,7 +27,7 @@
+ # Uncomment this if you are on a BSD system AND you want dynamic modules
+ # SunOS (4 and 5 both) also needs this setting.
+ #
+-#BSDMOD = 1
++BSDMOD = 1
+ 
+ # Uncomment this if you are compiling on OpenBSD with modules (BSDMOD = 1)
+ #OBSDMOD = 1
+@@ -49,7 +49,7 @@
+ # Uncomment this if you have the GNU strftime() function.  This version
+ # of the function understands %z to return the numerical offset.  It's better
+ # to use that if it's available for RFC822 date headers
+-GNU_STRFTIME=-DGNU_STRFTIME
++#GNU_STRFTIME=-DGNU_STRFTIME
+ 
+ # Uncomment this if you are on a machine that doesn't have strerror()
+ #
+@@ -301,6 +301,7 @@
+ install: targets
+ 	cp build/listar ${BINDIR}
+ 	chmod ug+s ${BINDIR}/listar
++	chown -R listar:listar ${BINDIR}
+ ifdef DYNMOD
+ 	@for dir in ${MODULES}; do \
+ 		cp build/$${dir}.lpm ${MODDIR}/$${dir}.lpm; \
