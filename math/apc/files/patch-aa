@@ -1,0 +1,11 @@
+--- Makefile.orig	Fri Aug 31 23:39:56 2001
++++ Makefile	Fri Aug 31 23:40:02 2001
+@@ -2,7 +2,7 @@
+ #
+ CFLAGS+=-DOS=\"$(OSTYPE)\" -I${X11BASE}/include
+ LDFLAGS+=-L${X11BASE}/lib
+-LDADD+=-lxforms -lX11 -lm
++LDADD+=-lxforms -lX11 -lm -lXpm
+ BINDIR=${X11BASE}/bin
+ MANDIR=${X11BASE}/man/man
+ PROG=	apc
