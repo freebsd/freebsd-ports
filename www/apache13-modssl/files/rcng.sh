@@ -27,4 +27,4 @@ load_rc_config $name
 
 pidfile="${apache_pidfile}"
 
-run_rc_commmand "$1"
+run_rc_command "$1"
