@@ -8,7 +8,7 @@
 PORTNAME=	ucspi-tcp
 PORTVERSION=	0.84
 CATEGORIES=	sysutils net
-MASTER_SITES=	http://cr.yp.to/software/
+MASTER_SITES=	http://cr.yp.to/ucspi-tcp/
 
 MAINTAINER=     dom@myrddin.demon.co.uk
 
@@ -21,7 +21,7 @@ MAN5=		tcp-environ.5
 PLIST=		${PKGDIR}/PLIST.nodocs
 .endif
 
-NO_PACKAGE=	Unsure of djb's license
+NO_PACKAGE=	"Unsure of djb's license"
 
 ALL_TARGET=	prog install instcheck
 
