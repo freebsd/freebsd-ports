@@ -5,6 +5,8 @@ bin/fvwm-menu-directory
 bin/fvwm-menu-headlines
 bin/fvwm-menu-xlock
 bin/fvwm2
+bin/fvwm
+bin/fvwm-root
 bin/fvwm24_convert
 bin/fvwmbug
 bin/xpmroot
@@ -29,7 +31,7 @@ libexec/fvwm/%%FVWM_VERSION%%/FvwmDebug
 libexec/fvwm/%%FVWM_VERSION%%/FvwmDragWell
 libexec/fvwm/%%FVWM_VERSION%%/FvwmEvent
 libexec/fvwm/%%FVWM_VERSION%%/FvwmForm
-%%GNOME:%%libexec/fvwm/%%FVWM_VERSION%%/FvwmGtk
+libexec/fvwm/%%FVWM_VERSION%%/FvwmGtk
 libexec/fvwm/%%FVWM_VERSION%%/FvwmIconBox
 libexec/fvwm/%%FVWM_VERSION%%/FvwmIconMan
 libexec/fvwm/%%FVWM_VERSION%%/FvwmIdent
