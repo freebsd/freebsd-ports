@@ -36,10 +36,10 @@
   CFLAGS= -DDORE_REAL_$(PRECISION) -I$(INCDIR)
   
   all: libdore_util.a
-*** examples/programs/simple/makefile.ORIG	Thu Jan 12 23:13:55 1995
---- examples/programs/simple/makefile	Sat Feb 25 16:56:59 1995
+*** examples/programs/simple/makefile.orig	Thu Jan 12 23:13:55 1995
+--- examples/programs/simple/makefile	Sun Mar 19 14:05:29 1995
 ***************
-*** 15,23 ****
+*** 15,25 ****
   # EXPRESS OR IMPLIED.
    
   PRECISION= SINGLE
@@ -47,9 +47,11 @@
   
 ! INCDIR=/usr/include
   CFLAGS= -DDORE_REAL_$(PRECISION) -I$(INCDIR) 
-  LIBS= $(DORELIB) -lX11 -lm
+! LIBS= $(DORELIB) -lX11 -lm
   
---- 15,23 ----
+  all: render
+  
+--- 15,25 ----
   # EXPRESS OR IMPLIED.
    
   PRECISION= SINGLE
@@ -57,5 +59,7 @@
   
 ! INCDIR=../../../include
   CFLAGS= -DDORE_REAL_$(PRECISION) -I$(INCDIR) 
-  LIBS= $(DORELIB) -lX11 -lm
+! LIBS= $(DORELIB) -L${X11BASE}/lib -lX11 -lm
+  
+  all: render
   
