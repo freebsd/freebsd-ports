@@ -7,6 +7,7 @@
 
 PORTNAME=	despoof
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	net security
 MASTER_SITES=	http://razor.bindview.com/tools/files/ \
 		${MASTER_SITE_PACKETSTORM}
