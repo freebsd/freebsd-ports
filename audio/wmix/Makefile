@@ -10,7 +10,7 @@ PORTVERSION=	2.20
 CATEGORIES=	audio windowmaker
 MASTER_SITES=	http://www.ne.jp/asahi/linux/timecop/software/
 
-MAINTAINER=	kkonstan@daemon.gr
+MAINTAINER=	ports@FreeBSD.org
 
 USE_XPM=	YES
 USE_X_PREFIX=	YES

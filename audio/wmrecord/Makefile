@@ -10,7 +10,7 @@ PORTVERSION=	1.0.5
 CATEGORIES=	audio windowmaker
 MASTER_SITES=	http://www.bruhaha.co.uk/
 
-MAINTAINER=	kkonstan@daemon.gr
+MAINTAINER=	ports@FreeBSD.org
 
 USE_XPM=	YES
 USE_X_PREFIX=	YES

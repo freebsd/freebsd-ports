@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://vanessa.sourceforge.net/pub/vanessa/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	vanessa_adt/${PORTVERSION}
 DISTNAME=	vanessa_adt-${PORTVERSION}
 
-MAINTAINER=	kkonstan@daemon.gr
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	vanessa_logger.0:${PORTSDIR}/devel/libvanessa_logger
 

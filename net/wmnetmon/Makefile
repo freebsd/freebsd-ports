@@ -13,7 +13,7 @@ CATEGORIES=	net windowmaker
 MASTER_SITES=	http://avdira.cc.duth.gr/~kkonstan/stuff/software/
 
 
-MAINTAINER=	kkonstan@daemon.gr
+MAINTAINER=	ports@FreeBSD.org
 
 USE_XPM=	YES
 USE_X_PREFIX=	YES
