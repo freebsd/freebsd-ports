@@ -5,11 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=		superkaramba
-PORTVERSION=		0.34
+PORTVERSION=		0.35
 CATEGORIES=		deskutils kde
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	netdragon
-DISTNAME=		${PORTNAME}-${PORTVERSION}-1
 
 MAINTAINER=		markus@FreeBSD.org
 COMMENT=		KDE tool that allows interactive eye-candy on the desktop
@@ -22,7 +21,6 @@ LIB_DEPENDS=		xmms.4:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=		mbmon:${PORTSDIR}/sysutils/xmbmon
 .endif
 
-WRKSRC=			${WRKDIR}/${DISTNAME:S/-1//}
 USE_KDEBASE_VER=	3
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
