@@ -33,7 +33,7 @@ post-patch:
 	@${GREP} -lR "malloc.h" ${WRKSRC} | ${XARGS} \
 		${REINPLACE_CMD} -e "s/malloc.h/stdlib.h/g"
 
-.if !defiend(NOPORTDOCS)
+.if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/indent.html ${DOCSDIR}
