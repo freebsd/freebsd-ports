@@ -22,6 +22,10 @@ DIST_SUBDIR=	povray35
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Persistence of Vision Ray Tracer
 
+.if defined(WITH_ICC)
+BUILD_DEPENDS=	${LOCALBASE}/intel_cc_80/bin/icc:${PORTSDIR}/lang/icc
+.endif
+
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		tiff:${PORTSDIR}/graphics/tiff \
 		jpeg:${PORTSDIR}/graphics/jpeg
@@ -43,6 +47,13 @@ CXXFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loop
 CFLAGS+=	-mfancy-math-387 -mpreferred-stack-boundary=3 -malign-double
 CXXFLAGS+=	-mfancy-math-387 -mpreferred-stack-boundary=3 -malign-double
 .endif # i386
+.endif
+
+.if defined(WITH_ICC)
+CC=		${LOCALBASE}/intel_cc_80/bin/icc
+CXX=		${LOCALBASE}/intel_cc_80/bin/icpc
+CFLAGS=		-O3 -tpp7 -xKW -Vaxlib
+CXXFLAGS=	-O3 -tpp7 -xKW -Vaxlib
 .endif
 
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-portbld-freebsd${OSREL}
