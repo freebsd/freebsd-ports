@@ -24,6 +24,7 @@ USE_PERL5=	yes
 INSTALLDIR=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/cgi-lib.pl ${INSTALLDIR}/
+	${MKDIR} ${INSTALLDIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/cgi-lib.pl ${INSTALLDIR}
 
 .include <bsd.port.mk>
