@@ -1,0 +1,265 @@
+.\"
+.\" $Id$
+.\"
+.\" Note: The date here should be updated whenever a non-trivial
+.\" change is made to the manual page.
+.Dd September 5, 2002
+.Dt SPAMPROBE 1
+.Os
+.Sh NAME
+.Nm spamprobe
+.Nd "Spam detector using Bayesian analysis of word counts."
+.Sh SYNOPSIS
+.Nm
+.Op Fl a Ar char
+.Op Fl c
+.Op Fl d Ar directory
+.Op Fl h
+.Op Fl H Ar option
+.Op Fl m
+.Op Fl n Ar number
+.Op Fl r Ar number
+.Op Fl v
+.Op Fl 7
+.Op Fl 8
+.Ar command Op ...
+.Nm
+.Ar receive Op filename ...
+.Nm
+.Ar score Op filename ...
+.Nm
+.Ar find-spam Op filename ...
+.Nm
+.Ar find-good Op filename ...
+.Nm
+.Ar good Op filename ...
+.Nm
+.Ar spam Op filename ...
+.Nm
+.Ar remove Op filename ...
+.Sh DESCRIPTION
+Welcome to
+.Nm SpamProbe ! 
+Are you tired of the constant bombardment of your inbox by unwanted
+email pushing everything from porn to get rich quick schemes?  Have you
+tried other spam filters but become disenchanted with them when you
+realized that their manually generated rule sets weren't updated fast
+enough to keep up with spammers wording changes?  Or that they generated
+unwanted false positive scores?
+.Pp
+.Nm SpamProbe
+operates on a different basis entirely.  Instead of using pattern matching
+and a set of human generated rules
+.Nm SpamProbe
+relies on a Bayesian analysis
+of the frequency of words used in spam and non-spam emails received by an
+individual person.  The process is completely automatic and tailors itself
+to the kinds of emails that each person receives.
+.Ss FEATURES
+.Bl -bullet -offset indent -compact
+.It
+Spam detection using Bayesian analysis of terms contained in each email.  
+Words used often in spams but not in good email tend to indicate that a
+message is spam.
+.It
+Written in C++ for good performance.  Database access using GDBM for quick
+startup and fast term count retrieval.
+.It
+Recognition and decoding of MIME attachments in quoted-printable and
+base64 encoding.  Automatically skips non-text attachments.
+.It
+Counts two word phrases as well as single words for higher precision.
+.It
+Ignores HTML tags in emails for scoring purposes unless the -h command
+line option is used.  Many spams use HTML and few humans do so HTML tends
+to become a powerful recognizer of spams.  However in the author's opinion
+this also substantially increases the likelihood of false positives if
+someone does send a non-spam email containing HTML tags.
+.Nm SpamProbe
+does pull urls from inside of html tags however since those tend to be
+spammer specific.
+.It
+Locks mboxes and databases using fcntl file locking to avoid problems when
+multiple emails arrive simultaneously.
+.It
+Scores only the Received, Subject, To, From, and Cc headers.  All other
+headers are ignored to make it hard for spammers to hide non-spammy words
+in X- headers to fool the filter.
+.El
+.Ss OPTIONS
+.Bl -tag -width ".Fl d Ar directory"
+.It Fl a Ar char
+By default
+.Nm
+converts non-ascii characters (characters with the most significant bit
+set to 1) into the letter 'z'.  This is useful for lumping all Asian
+characters into a single word for easy recognition.  The
+.Fl a
+option allows you to change the character to something else if you don't
+like the letter 'z' for some reason.
+.It Fl c
+Create the database directory if it does not already exist.  Normally
+.Nm
+exits with a usage error if the database directory does not already exist.
+.It Fl d Ar directory
+By default
+.Nm
+stores its database in a directory named .spamprobe under your home
+directory.  The
+.Fl d
+option allows you to specify a different directory to use.  This is
+necessary if your home directory is NFS mounted for example.
+.It Fl h
+By default
+.Nm
+removes HTML markup from the text in emails to help avoid false positives.  
+The
+.Fl h
+option allows you to override this behavior and force
+.Nm
+to include words from within HTML tags in its word counts.  Note that
+.Nm
+always counts any URLs in hrefs within tags whether
+.Fl h
+is used or not.  Use of this option is discouraged.  It can increase the
+rate of spam detection slightly but unless the user receives a significant
+amount of HTML emails it also tends to increase the number of false
+positives.
+.It Fl H Ar option
+By default
+.Nm
+only scans a meaningful subset of headers from the email message when
+searching for words to score.  The
+.Fl H
+option allows the user to specify additional headers to scan. Legal values
+are "all", "nox", or "normal".  "all" scans all headers, "nox" scans all
+headers except those starting with X-, and "normal" scans the normal set
+of headers.
+.It Fl m
+Use mbox format for reading emails in receive mode.  Normally
+.Nm
+assumes that the input to receive mode contains a single message so it
+doesn't look for message breaks.
+.It Fl n Ar number
+Changes the number of most significant words/phrases used by
+.Nm
+to calculate the score for each message.  Generally this is changed only
+for optimization purposes.
+.It Fl r Ar number
+Changes the number of times that a single word/phrase can occurr in the
+top words array used to calculate the score for each message.  Allowing
+repeats reduces the number of words overall (since a single word occupies
+more than one slot) but allows words which occur frequently in the message
+to have a higher weight. Generally this is changed only for optimization
+purposes.
+.It Fl v
+Write debugging information to stderr.  This can be useful for debugging
+or for seeing which terms
+.Nm
+used to score each email.
+.It Fl 7
+Ignore any characters with the most significant bit set to 1 instead of
+mapping them to the letter 'z'.
+.It Fl 8
+Store all characters even if their most significant bit is set to 1.
+.El
+.Pp
+.Ss COMMANDS
+.Bl -tag -width ".Ar find-spam Op filename ..."
+.It Ar receive Op filename ...
+Tells
+.Nm
+to read its standard input (or a file specified after the receive command)
+and score it using the current databases.  Once the message has been
+scored the message is classified as either spam or non-spam and its word
+counts are written to the appropriate database.  The message's score is
+written to stdout along with a single word.  For example:
+.Pp
+     SPAM 0.99
+  or
+     GOOD 0.02
+.It Ar score Op filename ...
+Similar to receive except that the databases are not modified in any way
+and only the score is printed to stdout.
+.It Ar find-spam Op filename ...
+Similar to score except that it prints a short summary and score for each
+message that is determined to be spam.  This can be useful when testing.
+.It Ar find-good Op filename ...
+Similar to score except that it prints a short summary and score for each
+message that is determined to be good.  This can be useful when testing.
+.It Ar good Op filename ...
+Scans each file (or stdin if no file is specified) and reclassifies every
+email in the file as non-spam.  The databases are updated appropriately.  
+Previously processed messages (recognized using their message ids) are
+ignored.
+.It Ar spam Op filename ...
+Scans each file (or stdin if no file is specified) and reclassifies every
+email in the file as spam.  The databases are updated appropriately.  
+Previously processed messages (recognized using their message ids) are
+ignored.
+.It Ar remove Op filename ...
+Scans each file (or stdin if no file is specified) and removes its term
+counts from the database.  Messages which are not in the database
+(recognized using their message ids) are ignored.
+.El
+.Sh ENVIRONMENT
+The
+.Nm
+command looks for the database directory in the users home directory
+specified by the
+.Ev HOME
+environment variable.  Use the
+.Fl d
+flag to specify a different database directory.
+.Sh FILES
+.Bl -tag -width ".Pa $HOME/. Ns Nm" -compact
+.It Pa $HOME/. Ns Nm
+The default database directory.
+.El
+.Sh EXAMPLES
+Typically one would use
+.Nm
+with
+.Nm procmail
+and
+.Nm formail
+to flag and filter incoming email.
+.Pp
+.Dl "# SpamProbe rule."
+.Dl ":0"
+.Dl "{"
+.Dl "    # Generate a score for the message."
+.Dl "    SCORE=`spamprobe receive`"
+.Dl "    # Add a X-SpamProbe header to the message."
+.Dl "    :0 fhW"
+.Dl "    | formail -I ""X-SpamProbe: $SCORE"""
+.Dl "}"
+.Pp
+.Dl "# Filter matching messages to their own mailbox."
+.Dl ":0:"
+.Dl "*^X-SpamProbe: SPAM"
+.Dl "spamprobe"
+.Sh DIAGNOSTICS
+Exit status is 0 on success, and 1 if 
+.Nm
+encounters an invalid command.
+.Sh COMPATIBILITY
+The
+.Nm
+command has no known compatibility issues.
+.Sh SEE ALSO
+.Xr formail 1 ,
+.Xr procmail 1 ,
+.Rs
+.%A "Paul Graham"
+.%T "A Plan for Spam"
+.%O http://www.paulgraham.com/spam.html
+.%D "August 2002"
+.Re
+.Sh AUTHORS
+This
+manual page was written by
+.An Matthew N. Dodd Aq mdodd@FreeBSD.org .
+.Nm
+was written by
+.An Brian Burton Aq bburton@users.sourceforge.net
