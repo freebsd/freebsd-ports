@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.9 1998/05/09 18:06:24 se Exp $
+# $Id: Makefile,v 1.10 1998/05/22 22:36:51 se Exp $
 #
 
 DISTNAME=	kdegames-beta4-1
@@ -26,7 +26,7 @@ LIB_DEPENDS=	qt\\.1\\.3[1-9]:${PORTSDIR}/x11/qt \
 		khtmlw\\.0\\.9[1-9]:${PORTSDIR}/x11/kdelibs \
 		kfm\\.0\\.9[0-9]:${PORTSDIR}/x11/kdelibs \
 		mediatool\\.0\\.9[1-9]:${PORTSDIR}/x11/kdelibs \
-		QwSpriteField\\.5\\.[2-9]:${PORTSDIR}/x11/kdesupport
+		QwSpriteField\\.5\\.[2-9]:${PORTSDIR}/converters/kdesupport
 
 EXTRACT_CMD=	bzip2
 EXTRACT_BEFORE_ARGS= -cd
