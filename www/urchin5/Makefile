@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	urchin
-PORTVERSION=	5.500
+PORTVERSION=	5.501
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.urchin.com/pub/urchin5/
-DISTNAME=	urchin5500_freebsd4x
+DISTNAME=	urchin5501_freebsd4x
 
 MAINTAINER=	freebsd@urchin.com
 COMMENT=	The most powerful web traffic analysis program available
