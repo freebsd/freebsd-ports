@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gopher
-PORTVERSION=	3.0.2
+PORTVERSION=	3.0.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.quux.org/give-me-gopher/
 
