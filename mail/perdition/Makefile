@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://perdition.sourceforge.net/pub/perdition/%SUBDIR%/ \
 		ftp://ftp.us.vergenet.net/pub/perdition/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 
-MAINTAINER=	kkonstan@daemon.gr
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 		popt.0:${PORTSDIR}/devel/popt \
