@@ -1,5 +1,2 @@
-@cwd /usr/X11R6
-@mode 555
 bin/%%PROGRAM_NAME%%
-@mode 444
 lib/X11/app-defaults/%%RESOURCE_NAME%%
