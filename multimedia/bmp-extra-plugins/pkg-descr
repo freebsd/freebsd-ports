@@ -1,0 +1,10 @@
+bmp-extra-plugins is a package of additional plugins for beep-mediaplayer,
+(ports/multimedia/beep-media-player), including:
+
+Input: musepack, mplayer
+General: xf86audio, status
+Output: crossfade, ogg, arts
+Visualization: blursk, minilcd, wmdiscotux
+
+The distribution package is maintained by:
+	Artur Frysiak <wiget/at/plg-linux.org>

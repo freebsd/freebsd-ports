@@ -1,0 +1,25 @@
+bin/bmp-arts-helper
+lib/bmp/General/statusdocklet.so
+lib/bmp/General/xf86audio.so
+lib/bmp/Input/mplayer.so
+lib/bmp/Input/musepack.so
+lib/bmp/Output/arts.so
+lib/bmp/Output/crossfade.so
+lib/bmp/Output/oggre.so
+lib/bmp/Visualization/blursk.so
+lib/bmp/Visualization/minilcd.so
+lib/bmp/Visualization/wmdiscotux.so
+share/bmp/status_docklet/joost-idle.xpm
+share/bmp/status_docklet/joost-paused-anim.xpm
+share/bmp/status_docklet/joost-playing-anim.xpm
+share/bmp/status_docklet/rest.xpm
+share/bmp/status_docklet/stave-anim.xpm
+share/bmp/status_docklet/stave-anim2.xpm
+share/bmp/status_docklet/stave-anim3.xpm
+share/bmp/status_docklet/stave-anim4.xpm
+share/bmp/status_docklet/stave-anim5.xpm
+share/bmp/status_docklet/timetre-idle.xpm
+share/bmp/status_docklet/timetre-paused-anim.xpm
+share/bmp/status_docklet/timetre-playing-anim.xpm
+@dirrm share/bmp/status_docklet
+@dirrm lib/bmp/General
