@@ -1,24 +1,42 @@
-*** /usr/ports/lang/squeak/work/Squeak-1.18/src/Makefile	Sun Jan 19 00:29:00 1997
---- Makefile	Fri Apr 25 18:12:29 1997
+*** /usr/ports/lang/squeak1/work/1.31/src/GNUmakefile.conf	Thu Mar  5 15:42:07 1998
+--- src/GNUmakefile.conf	Mon Dec 21 01:01:59 1998
 ***************
-*** 23,32 ****
+*** 27,33 ****
   
-  CC=		gcc
-  LD=		gcc
-! CCFLAGS=	-O3 -funroll-loops -g
-  LDFLAGS=
-! LIBS=		-lX11 -lm
-! INCLUDE=
+  # platform identification
   
-  # top-level targets -- default is to build just the VM
+! UTSMAC:=	$(shell arch     | tr [A-Z] [a-z])
+  UTSSYS:=	$(shell uname -s | tr [A-Z] [a-z] | sed 's/-//g')
+  UTSREL:=	$(shell uname -r | tr [A-Z] [a-z])
   
---- 23,32 ----
+--- 27,34 ----
   
-  CC=		gcc
-  LD=		gcc
-! CCFLAGS=	-O2 -funroll-loops
-  LDFLAGS=
-! LIBS=		-L${X11BASE}/lib -lX11 -lm
-! INCLUDE=	-I${X11BASE}/include
+  # platform identification
   
-  # top-level targets -- default is to build just the VM
+! #UTSMAC:=	$(shell arch     | tr [A-Z] [a-z])
+! UTSMAC:=	$(shell uname -m | tr [A-Z] [a-z])
+  UTSSYS:=	$(shell uname -s | tr [A-Z] [a-z] | sed 's/-//g')
+  UTSREL:=	$(shell uname -r | tr [A-Z] [a-z])
+  
+***************
+*** 52,57 ****
+--- 53,71 ----
+  #									   #
+  #			START OF CONFIGURATION SECTION			   #
+  #									   #
++ ifeq ($(SYSTEM),                                        freebsd)
++   CC=		gcc
++   CCFLAGS:=	-O3 -fomit-frame-pointer $(PROFILE)
++   INCDIRS:=	-I/usr/X11R6/include
++   LDO=		ld -r
++   LD=		gcc
++   LDFLAGS:=	$(PROFILE)
++   LIBDIRS=	-L/usr/X11R6/lib
++   LIBS=		-lX11 -lXext -lm
++   GNU=		gnu-
++   GAWK=		awk
++ endif
++ 
+  ifeq ($(SYSTEM),					linux)
+    CC=		gcc
+    CCFLAGS:=	-O2 -g $(PROFILE)
