@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	Text-ChaSen
-PORTVERSION=	0.20
+PORTVERSION=	1.03
 CATEGORIES=	japanese perl5
-MASTER_SITES=	ftp://ftp.aist-nara.ac.jp/pub/lab/nlp/tools/chasen/
-DISTNAME=	chasen-sys${CHASEN_VERSION}-ipadic2.1
+MASTER_SITES=	http://chasen.aist-nara.ac.jp/stable/chasen/
+DISTNAME=	chasen-${CHASEN_VERSION}
 
 MAINTAINER=	knu@FreeBSD.org
 
-LIB_DEPENDS=	chasen.0:${PORTSDIR}/japanese/chasen
+LIB_DEPENDS=	chasen.0:${PORTSDIR}/japanese/chasen-base
 
-MD5_FILE=	${.CURDIR}/../chasen/distinfo
+MD5_FILE=	${.CURDIR}/../chasen-base/distinfo
 
-CHASEN_VERSION=	2.02
+CHASEN_VERSION=	2.2.7
 
 WRKSRC=		${WRKDIR}/chasen-${CHASEN_VERSION}/perl
 PERL_CONFIGURE=	yes
@@ -31,7 +31,7 @@ PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/chasen/ja/README.perl
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/chasen/doc/README.perl
 .endif
 
 .include <bsd.port.post.mk>
