@@ -15,7 +15,7 @@ DISTFILES=	${PYTHON_DISTFILE}
 
 MAINTAINER=	tg@FreeBSD.org
 
-LIB_DEPENDS=	gmp.3:${PORTSDIR}/math/libgmp
+LIB_DEPENDS=	gmp.3:${PORTSDIR}/math/libgmp-freebsd
 
 DIST_SUBDIR=	python
 USE_PYTHON=	yes
