@@ -12,7 +12,8 @@ CATEGORIES=	java
 MASTER_SITES=	http://www.karmira.com/products/bugseeker2/download/
 DISTNAME=	bugseeker2demo
 
-PATCH_SITES=	http://www.metaverse.nl/~ernst/
+PATCH_SITES=	${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	znerd
 PATCHFILES=	bugseeker2demo.sh.diff
 
 MAINTAINER=	znerd@FreeBSD.org
