@@ -19,6 +19,9 @@ DISTNAME=	${PORTNAME}-${PKGNAMEPREFIX:S/-$//}-${PORTVERSION}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PKGNAMEPREFIX:S/-$//}
 .endif
 
+# KDE_DIST_VERSION (PORTVERSION)
+KDE_DIST_VERSION?=	${KDE_VERSION}
+
 # Unfortunately, this feature doesn't work right now due to binary files.
 _NO_KDE_PATCHUP=yes
 
