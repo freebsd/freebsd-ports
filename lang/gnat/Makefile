@@ -5,7 +5,7 @@
 # Porter (original):	nils@guru.ims.uni-stuttgart.de
 # Porter (version 3):	maurice@serc.rmit.edu.au
 #
-# $Id: Makefile,v 1.14 1998/01/18 09:08:33 steve Exp $
+# $Id: Makefile,v 1.15 1998/01/18 12:09:58 asami Exp $
 #
 # Note:
 # - FreeBSD tasking libraries created by Dan Eischen have been incorportated
@@ -22,8 +22,6 @@ MASTER_SITES=   ftp://cs.nyu.edu/pub/gnat/ \
 DISTFILES=      gnat-3.10p-src.tar.gz gcc-2.7.2.1.tar.gz
 
 MAINTAINER=	maurice@serc.rmit.edu.au
-
-BROKEN=		patch
 
 .if !exists(/usr/local/bin/gnatf)
 BROKEN=		"requires existing gnat compiler"
