@@ -3,7 +3,7 @@
 # Date created:         24 Feb 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.36 1999/05/21 06:29:13 asami Exp $
+# $Id: Makefile,v 1.37 1999/06/10 20:18:42 sada Exp $
 #
 
 DISTNAME?=	netscape-${BROWSER}-${BROWSER_VER}
@@ -29,7 +29,7 @@ PKGREQ=		${MASTERDIR}/pkg/REQ
 AUTOADMIN?=	autoadmin-v408.x86-unknown-freebsd.tar.gz
 BROWSER?=	communicator
 BROWSER_VER?=	4.08
-FORTIFY=	Fortify-1.4.2-unix-x86
+FORTIFY=	Fortify-1.4.3-unix-x86
 NDIR=		${PREFIX}/${NSUBDIR}
 NSUBDIR=	lib/netscape
 BINDIR=		${PREFIX}/bin

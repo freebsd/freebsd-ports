@@ -8,7 +8,7 @@ bin/communicator-%%BROWSER_VER%%
 %%NSUBDIR%%/README
 %%NSUBDIR%%/XKeysymDB
 %%NSUBDIR%%/bookmark.htm
-%%NSUBDIR%%/communicator-4.6.bin
+%%NSUBDIR%%/communicator-4.61.bin
 %%NSUBDIR%%/java/classes/aix/font.properties
 %%NSUBDIR%%/java/classes/aix/font.properties.cs
 %%NSUBDIR%%/java/classes/aix/font.properties.hu
