@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	silvaviews
-PORTVERSION=	0.9
-PORTREVISION=	1
+PORTVERSION=	0.10
 CATEGORIES=	www zope
-MASTER_SITES=	http://zope.org/Members/infrae/SilvaViews/SilvaViews-${PORTVERSION}/
+MASTER_SITES=	http://www.infrae.com/download/SilvaViews/${PORTVERSION}/
 PKGNAMEPREFIX=	zope-
 DISTNAME=	SilvaViews-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
@@ -24,7 +23,6 @@ DIST_SUBDIR=	zope
 ZOPEPRODUCTNAME=SilvaViews
 
 WRKSRC=		${WRKDIR}/${ZOPEPRODUCTNAME}
-CPIO=		cpio --quiet -pdum -R
 
 do-build:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
@@ -33,7 +31,7 @@ do-install:
 	@ ${CHMOD} -R og+rX ${WRKSRC}/
 	@ ${MKDIR} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/${ZOPEPRODUCTNAME}
 	@ cd ${WRKSRC} && ${FIND} . \
-	  | ${CPIO} ${BINOWN}:${BINGRP} \
+	  | ${CPIO} --quiet -pdum -R ${BINOWN}:${BINGRP} \
 	  ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/${ZOPEPRODUCTNAME}
 
 post-install:
