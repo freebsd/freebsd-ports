@@ -127,6 +127,7 @@
     SUBDIR += p5-ePerl
     SUBDIR += pbasic
     SUBDIR += perl5
+    SUBDIR += perl5.8
     SUBDIR += pfe-devel
     SUBDIR += php-mode.el
     SUBDIR += php3
