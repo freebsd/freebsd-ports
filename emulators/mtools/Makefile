@@ -3,7 +3,7 @@
 # Date created:         5 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.6 1995/11/22 11:48:15 asami Exp $
+# $Id: Makefile,v 1.7 1996/05/27 14:09:17 jmz Exp $
 #
 
 DISTNAME=	mtools-3.0
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
 MAINTAINER=	jmz@FreeBSD.org
 
 HAS_CONFIGURE=  yes
-CONFIGURE_ARGS= --prefix=${PREFIX}
+CONFIGURE_ARGS+=--enable-xdf --prefix=${PREFIX}
 
 post-patch:
 	@cd ${WRKSRC}; for f in config.c mtools.5 mtools.texi; do \
@@ -30,6 +30,5 @@ post-install:
 	 gzip -fn ${PREFIX}/man/man1/$$f; done
 	@gzip -fn ${PREFIX}/man/man5/mtools.5
 .endif
-	@rm -f ${PREFIX}/bin/lz
 
 .include <bsd.port.mk>

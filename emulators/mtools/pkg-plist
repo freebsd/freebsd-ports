@@ -1,42 +1,46 @@
-bin/mattrib 
-bin/mcd 
-bin/mcopy 
-bin/mdel 
-bin/mdeltree
-bin/mdir 
-bin/mformat 
-bin/mlabel 
-bin/mmd 
-bin/mmount
-bin/mmove
-bin/mrd 
-bin/mread 
-bin/mren 
-bin/mtest
 bin/mtools
-bin/mtype 
-bin/mwrite 
+@exec ln -fs %D/%F %B/mattrib
+@exec ln -fs %D/%F %B/mcd
+@exec ln -fs %D/%F %B/mcopy
+@exec ln -fs %D/%F %B/mdel
+@exec ln -fs %D/%F %B/mdeltree
+@exec ln -fs %D/%F %B/mdir
+@exec ln -fs %D/%F %B/mformat
+@exec ln -fs %D/%F %B/mlabel
+@exec ln -fs %D/%F %B/mmd
+@exec ln -fs %D/%F %B/mmount
+@exec ln -fs %D/%F %B/mmove
+@exec ln -fs %D/%F %B/mrd
+@exec ln -fs %D/%F %B/mread
+@exec ln -fs %D/%F %B/mren
+@exec ln -fs %D/%F %B/mtype
+@exec ln -fs %D/%F %B/mwrite
+@exec ln -fs %D/%F %B/mtest
 bin/mkmanifest
+bin/mcheck
+bin/mxtar
+bin/xcopy
+bin/mcomp
 info/mtools.info
-man/man1/mattrib.1
-man/man1/mbadblocks.1
-man/man1/mcd.1
-man/man1/mcopy.1
-man/man1/mdel.1
-man/man1/mdeltree.1
-man/man1/mdir.1
-man/man1/mformat.1
-man/man1/mkmanifest.1
-man/man1/mlabel.1
-man/man1/mmd.1
-man/man1/mmount.1
-man/man1/mmove.1
-man/man1/mrd.1
-man/man1/mread.1
-man/man1/mren.1
-man/man1/mtest.1
-man/man1/mtools.1
-man/man1/mtype.1
-man/man1/mwrite.1
-man/man5/mtools.5
 etc/mtools.conf
+man/man1/mattrib.1.gz
+man/man1/mbadblocks.1.gz
+man/man1/mcd.1.gz
+man/man1/mcopy.1.gz
+man/man1/mdel.1.gz
+man/man1/mdeltree.1.gz
+man/man1/mdir.1.gz
+man/man1/mformat.1.gz
+man/man1/mkmanifest.1.gz
+man/man1/mlabel.1.gz
+man/man1/mmd.1.gz
+man/man1/mmount.1.gz
+man/man1/mmove.1.gz
+man/man1/mrd.1.gz
+man/man1/mread.1.gz
+man/man1/mren.1.gz
+man/man1/mtest.1.gz
+man/man1/mtools.1.gz
+man/man1/mtype.1.gz
+man/man1/mwrite.1.gz
+man/man5/mtools.5.gz
