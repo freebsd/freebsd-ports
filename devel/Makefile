@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.106 1998/05/16 17:43:29 eivind Exp $
+# $Id: Makefile,v 1.107 1998/05/19 06:59:33 tg Exp $
 #
 
     SUBDIR += ElectricFence
@@ -86,6 +86,7 @@
     SUBDIR += p5-Resources
     SUBDIR += p5-Sort-Versions
     SUBDIR += p5-Storable
+    SUBDIR += p5-Term-Query
     SUBDIR += p5-Term-ReadKey
     SUBDIR += p5-Time
     SUBDIR += p5-TimeDate
