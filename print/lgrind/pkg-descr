@@ -1,0 +1,12 @@
+LGrind is a descendant of the Unix utility vgrind. It is
+used to produce a beautified version of your source code using LaTeX. Unlike
+other packages this is not pure TeX but an external preprocessor. You run e.g.
+    lgrind example.c > example.tex
+    latex example.tex
+to get a complete listing. Options for producing includable files and pro-
+cessing embedded listings in LaTeX texts are provided.
+
+WWW: ftp://ftp.dante.de/tex-archive/help/Catalogue/entries/lgrind.html
+
+- Lehmann
+kay_lehmann@web.de
