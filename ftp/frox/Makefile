@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	frox
-PORTVERSION=	0.7.8
+PORTVERSION=	0.7.10
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.hollo.org/frox/download/ \
 		http://frox.sourceforge.net/download/ \
