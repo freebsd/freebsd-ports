@@ -6,6 +6,7 @@
 %%RUBY_SITELIBDIR%%/xmlrpc/httpserver.rb
 %%RUBY_SITELIBDIR%%/xmlrpc/parser.rb
 %%RUBY_SITELIBDIR%%/xmlrpc/server.rb
+%%RUBY_SITELIBDIR%%/xmlrpc/utils.rb
 @dirrm %%RUBY_SITELIBDIR%%/xmlrpc
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/call.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/xml.cgi
