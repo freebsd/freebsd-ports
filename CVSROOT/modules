@@ -6640,6 +6640,7 @@ qconfirm	ports/mail/qconfirm
 qcread		ports/graphics/qcread
 qdecoder	ports/www/qdecoder
 qdraw		ports/graphics/qdraw
+qextmdi		ports/devel/qextmdi
 qfsm		ports/cad/qfsm
 qglviewer	ports/graphics/qglviewer
 qgo		ports/games/qgo
