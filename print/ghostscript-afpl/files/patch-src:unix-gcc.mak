@@ -1,5 +1,5 @@
 --- src/unix-gcc.mak.orig	Fri Feb  1 15:27:58 2002
-+++ src/unix-gcc.mak	Sat Feb  9 04:34:53 2002
++++ src/unix-gcc.mak	Fri Jun  7 05:20:39 2002
 @@ -26,14 +26,15 @@
  # source, generated intermediate file, and object directories
  # for the graphics library (GL) and the PostScript/PDF interpreter (PS).
@@ -101,7 +101,7 @@
  #   specific stuff that <math.h> typically needs; nevertheless, we expect
  #   gcc to accept ANSI-style function prototypes and function definitions.
 -XCFLAGS=
-+XCFLAGS+=-I${.CURDIR}/gimp-print
++#XCFLAGS=
  
  CFLAGS=$(CFLAGS_STANDARD) $(GCFLAGS) $(XCFLAGS)
  
@@ -110,7 +110,7 @@
  # giving the full path names of the shared library directories.
  # XLDFLAGS can be set from the command line.
 -XLDFLAGS=
-+XLDFLAGS=-L${.CURDIR}/gimp-print -L${LOCALBASE}/lib
++XLDFLAGS=-L${LOCALBASE}/lib
  
  LDFLAGS=$(XLDFLAGS) -fno-common
  
