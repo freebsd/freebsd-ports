@@ -136,6 +136,7 @@
     SUBDIR += linux-netscape6
     SUBDIR += linux-opera
     SUBDIR += logtools
+    SUBDIR += lws
     SUBDIR += lynx
     SUBDIR += lynx-current
     SUBDIR += lynx-ssl
@@ -387,8 +388,8 @@
     SUBDIR += web2ldap
     SUBDIR += web500gw
     SUBDIR += webalizer
-    SUBDIR += webcopy
     SUBDIR += webcheck
+    SUBDIR += webcopy
     SUBDIR += webcrawl
     SUBDIR += webfs
     SUBDIR += webglimpse
