@@ -5393,6 +5393,7 @@ python-doc-postscript-a4	ports/lang/python-doc-postscript-a4
 python-doc-postscript-letter	ports/lang/python-doc-postscript-letter
 python15	ports/lang/python15
 python20	ports/lang/python20
+python21	ports/lang/python21
 pythoong	ports/games/pythoong
 pyweather	ports/astro/pyweather
 q3server	ports/games/q3server
