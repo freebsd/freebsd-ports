@@ -13,8 +13,8 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE} \
 			http://www.xsproject.org/speedtouch/files/ \
 			http://www.alcatel.com/consumer/dsl/ \
     			http://benoit.papillault.free.fr/speedtouch/
-DISTFILES=		${SPEEDTOUCH}.tar.gz speedmgmt.tar.gz
 MASTER_SITE_SUBDIR=	speedtouch
+DISTFILES=		${SPEEDTOUCH}.tar.gz speedmgmt.tar.gz
 
 MAINTAINER=		brian@Awfulhak.org
 
