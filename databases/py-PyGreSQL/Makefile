@@ -3,7 +3,7 @@
 # Date created:				2/22/1999
 # Whom:					nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.10 1998/11/23 17:47:42 nectar Exp $
+# $Id: Makefile,v 1.11 1999/02/23 00:28:15 nectar Exp $
 #
 
 DISTNAME=		PyGreSQL-2.3
@@ -13,6 +13,8 @@ MASTER_SITES=		ftp://ftp.druid.net/pub/distrib/
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		nectar@FreeBSD.ORG
+
+WWW_SITE=		http://www.druid.net/pygresql
 
 BUILD_DEPENDS=		python:${PORTSDIR}/lang/python
 RUN_DEPENDS=		python:${PORTSDIR}/lang/python

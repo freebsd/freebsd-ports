@@ -3,7 +3,7 @@
 # Date created:		10 November 1995
 # Whom:			pst
 #
-# $Id: Makefile,v 1.17 1998/11/20 15:26:10 kuriyama Exp $
+# $Id: Makefile,v 1.18 1999/01/04 03:30:39 steve Exp $
 #
 
 DISTNAME=	gnats-3.107-beta
@@ -13,6 +13,9 @@ CATEGORIES=	databases elisp
 MASTER_SITES=	ftp://ftp.juniper.net/pub/gnats/
 
 MAINTAINER=	pst@FreeBSD.org
+
+Y2K=		http://www.cyclic.com/cyclic-pages/gnats.html
+WWW_SITE=	http://www.cyclic.com/cyclic-pages/gnats.html
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
