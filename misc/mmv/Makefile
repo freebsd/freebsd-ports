@@ -3,7 +3,7 @@
 # Date created:		2 Feb 1995
 # Whom:			Michael Elbel (me)
 #
-# $Id: Makefile,v 1.8 1995/11/26 10:47:58 asami Exp $
+# $Id: Makefile,v 1.9 1996/03/29 03:28:08 asami Exp $
 #
 
 
@@ -15,6 +15,7 @@ DISTFILES=	part01.Z part02.Z mmv.pch.Z
 
 MAINTAINER=	me@FreeBSD.org
 
+RESTRICTED=	"Restrictive copyright."
 DIST_SUBDIR=	${DISTNAME}
 SITE_DISTFILES= volume21/mmv/part01.Z volume21/mmv/part02.Z volume22/mmv.pch.Z
 NO_WRKSUBDIR=	yes
