@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	xerces
+PORTNAME=	xerces-j
 PORTVERSION=	1.4.4
 CATEGORIES=	textproc
 MASTER_SITES=	http://xml.apache.org/dist/xerces-j/
@@ -15,7 +15,7 @@ MAINTAINER=	kevlo@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/./_/g}
+WRKSRC=		${WRKDIR}/xerces-${PORTVERSION:S/./_/g}
 NO_BUILD=	yes
 
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
