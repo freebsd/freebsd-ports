@@ -431,6 +431,7 @@ share/doc/qt2/html/objecttrees.html
 share/doc/qt2/html/opengl.html
 share/doc/qt2/html/organizers.html
 share/doc/qt2/html/palette.png
+share/doc/qt2/html/performance-qws.html
 share/doc/qt2/html/picture-picture-cpp.html
 share/doc/qt2/html/pictures.html
 share/doc/qt2/html/pnglogo.png
@@ -1401,6 +1402,8 @@ share/doc/qt2/html/qwsmousehandler-members.html
 share/doc/qt2/html/qwsmousehandler.html
 share/doc/qt2/html/qwsserver-members.html
 share/doc/qt2/html/qwsserver.html
+share/doc/qt2/html/qwswindow-members.html
+share/doc/qt2/html/qwswindow.html
 share/doc/qt2/html/qxml-h.html
 share/doc/qt2/html/qxmlattributes-members.html
 share/doc/qt2/html/qxmlattributes.html
