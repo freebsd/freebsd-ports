@@ -1,0 +1,10 @@
+--- configure.orig	Sat Feb  7 23:48:23 2004
++++ configure	Sat Feb  7 23:48:35 2004
+@@ -8510,7 +8510,6 @@
+ 
+ fi
+ 
+-CFLAGS="-Wall -W -pipe -O2"
+ 
+                                                                                                                         ac_config_files="$ac_config_files Makefile src/Makefile src/common/Makefile src/irc/Makefile src/plugins/Makefile src/plugins/perl/Makefile src/gui/Makefile src/gui/curses/Makefile src/gui/gtk/Makefile src/gui/qt/Makefile intl/Makefile po/Makefile.in"
+ cat >confcache <<\_ACEOF
