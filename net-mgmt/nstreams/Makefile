@@ -10,7 +10,7 @@ PORTVERSION=	1.0.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.hsc.fr/ressources/outils/nstreams/download/
 
-MAINTAINER=	darius@dons.net.au
+MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/nstreams
