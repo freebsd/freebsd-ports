@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-Babelfish
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WWW
@@ -23,4 +23,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=		WWW::Babelfish.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+IGNORE=		This program only support perl 5.8.0 or above
+.endif
+
+.include <bsd.port.post.mk>
