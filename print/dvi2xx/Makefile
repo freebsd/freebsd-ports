@@ -3,42 +3,20 @@
 # Date created:         14 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.12 1996/11/18 14:11:00 asami Exp $
+# $Id: Makefile,v 1.13 1996/12/17 12:33:37 asami Exp $
 #
 
 DISTNAME=	dvi2xx
 PKGNAME=	dvi2xx-0.51a9
 DISTFILES=	dvi2xx.tar.gz
 CATEGORIES=	print
+MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
+MASTER_SITE_SUBDIR=	dviware
 
 MAINTAINER=	jmz@FreeBSD.ORG
 
 MAN1=		dvi2xx.1
 IGNOREFILES=	${DISTFILES}
-
-#other equivalent sites: ftp.shsu.edu ftp.dante.de
-CTAN?=		ftp.tex.ac.uk
-
-do-fetch:
-	@if [ ! -d ${DISTDIR} ]; then ${MKDIR} -p ${DISTDIR}; fi
-	@(cd ${DISTDIR}; \
-	 if [ ! -f ${DISTFILES} -a ! -f `${BASENAME} ${DISTFILES}` ]; then \
-	   if [ -h ${DISTFILES} -o -h `${BASENAME} ${DISTFILES}` ]; then \
-	     ${ECHO_MSG} ">> ${DISTDIR}/${DISTFILES} is a broken symlink."; \
-	     ${ECHO_MSG} ">> Perhaps a filesystem (most likely a CD) isn't mounted?"; \
-	     ${ECHO_MSG} ">> Please correct this problem and try again."; \
-	     exit 1; \
-	   fi ; \
-	   ${ECHO_MSG} ">> ${DISTFILES} doesn't seem to exist on this system."; \
-	   ${ECHO_MSG} ">> Attempting to fetch from ${CTAN}."; \
-	   if ${FETCH_CMD} -h ${CTAN} -c /tex-archive/dviware -f ${DISTFILES}; then \
-	     exit 0; \
-	   fi; \
-	   ${ECHO_MSG} ">> Couldn't fetch it - please try to retreive this";\
-	   ${ECHO_MSG} ">> port manually into ${DISTDIR} and try again."; \
-	   exit 1; \
-	 fi)
-
 
 pre-install:
 	@${MKDIR} ${PREFIX}/lib/dvi2xx
