@@ -1,15 +1,15 @@
 # New ports collection makefile for:    xgrab
-# Version required:     2.3
+# Version required:     2.41
 # Date created:         27 February 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.5 1995/05/13 10:04:19 asami Exp $
+# $Id: Makefile,v 1.6 1995/05/15 16:33:19 jmz Exp $
 #
 
-DISTNAME=	xgrabsc.2_3
-PKGNAME=	xgrab-2.3
+DISTNAME=	xgrabsc.2_41
+PKGNAME=	xgrab-2.41
 CATEGORIES+=	x11
-MASTER_SITES=	ftp://ftp.sunet.se/pub/X11/R5contrib/
+MASTER_SITES=	ftp://ftp.ibp.fr/pub/X11/contrib/applications/
 
 MAINTAINER=	jmz@FreeBSD.org
 
