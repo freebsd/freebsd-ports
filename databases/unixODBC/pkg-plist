@@ -4,8 +4,6 @@ bin/dltest
 bin/isql
 bin/odbcinst
 %%GUI:%%bin/odbctest
-etc/odbc.ini
-etc/odbcinst.ini
 include/autotest.h
 include/odbcinst.h
 include/odbcinstext.h
