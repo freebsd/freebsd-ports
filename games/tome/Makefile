@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	tome
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.5
 CATEGORIES=	games
 MASTER_SITES=	http://t-o-m-e.net/dl/src/
-DISTNAME=	tome-222-src
+DISTNAME=	tome-225-src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	kris@FreeBSD.org

@@ -147,7 +147,6 @@ share/tome/file/book-8.txt
 share/tome/file/book-9.txt
 share/tome/file/bravado.txt
 share/tome/file/chainswd.txt
-share/tome/file/crime.txt
 share/tome/file/dam_huge.txt
 share/tome/file/dam_lots.txt
 share/tome/file/dam_med.txt
@@ -295,7 +294,6 @@ share/tome/help/r_wodelf.txt
 share/tome/help/r_yeek.txt
 share/tome/help/rm_barb.txt
 share/tome/help/rm_class.txt
-share/tome/help/rm_corru.txt
 share/tome/help/rm_herm.txt
 share/tome/help/rm_lsoul.txt
 share/tome/help/rm_skel.txt
@@ -358,6 +356,7 @@ share/tome/scpt/corrupt.lua
 share/tome/scpt/drunk.lua
 share/tome/scpt/fireprof.lua
 share/tome/scpt/god.lua
+share/tome/scpt/gods.lua
 share/tome/scpt/help.lua
 share/tome/scpt/init.lua
 share/tome/scpt/intro.lua
@@ -426,7 +425,6 @@ share/tome/xtra/font/xm8x16.fnt
 share/tome/xtra/graf/16x16.bmp
 share/tome/xtra/graf/8x8.bmp
 share/tome/xtra/graf/mask.bmp
-share/tome/xtra/graf/tome-128.png
 share/tome/xtra/music/delete.me
 share/tome/xtra/sound/Sound.cfg
 share/tome/xtra/sound/readme.txt
