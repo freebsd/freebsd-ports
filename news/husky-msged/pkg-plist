@@ -1,0 +1,24 @@
+@unexec install-info --delete %D/info/msged.info %D/info/dir
+info/msged.info
+@exec install-info %D/info/msged.info %D/info/dir
+bin/msged
+bin/testcons
+etc/fido/msghelp.dat
+etc/fido/readmaps.dat
+etc/fido/writmaps.dat
+etc/fido/readmaps.437
+etc/fido/readmaps.850
+etc/fido/readmaps.865
+etc/fido/readmaps.866
+etc/fido/readmaps.koi
+etc/fido/readmaps.is1
+etc/fido/readmaps.is5
+etc/fido/readmaps.ukr
+etc/fido/writmaps.437
+etc/fido/writmaps.850
+etc/fido/writmaps.865
+etc/fido/writmaps.866
+etc/fido/writmaps.koi
+etc/fido/writmaps.is1
+etc/fido/writmaps.is5
+etc/fido/writmaps.ukr

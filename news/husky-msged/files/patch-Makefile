@@ -1,0 +1,12 @@
+--- Makefile.orig	Mon Jan  6 00:37:30 2003
++++ Makefile	Mon Jan  6 00:38:28 2003
+@@ -22,7 +22,8 @@
+ CDEFS=-D$(OSTYPE) -DUSE_MSGAPI -DUNAME=\"$(UNAME)\" \
+       $(ADDCDEFS) -DREADMAPSDAT=\"$(CFGDIR)/readmaps.dat\" \
+       -DWRITMAPSDAT=\"$(CFGDIR)/writmaps.dat\" \
+-      -DDEFAULT_CONFIG_FILE=$(MSGEDCFG)
++      -DDEFAULT_CONFIG_FILE=$(MSGEDCFG) \
++      -DFIDOCONFIG_FILE=\"$(CFGDIR)/config\"
+ 
+ ifeq ($(SHORTNAME), 1)
+   LIBS= -L$(LIBDIR) -lsmapi

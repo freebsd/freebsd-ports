@@ -1,0 +1,13 @@
+--- doc/manual/makefile.husky.orig	Wed Apr 11 04:50:01 2001
++++ doc/manual/makefile.husky	Mon Jan  6 00:22:15 2003
+@@ -7,8 +7,8 @@
+ ifdef HTMLDIR
+ 
+ ifdef INFODIR
+-all: html info
+-install: install-html install-info
++all: info
++install: install-info
+ else
+ all: html
+ install: install-html

@@ -1,0 +1,5 @@
+@unexec install-info --delete %D/info/hpucode.info %D/info/dir
+info/hpucode.info
+@exec install-info %D/info/hpucode.info %D/info/dir
+share/doc/husky/hpucode.html
+bin/hpucode

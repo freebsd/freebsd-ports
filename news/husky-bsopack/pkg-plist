@@ -1,0 +1,5 @@
+@unexec install-info --delete %D/info/bsopack.info %D/info/dir
+info/bsopack.info
+@exec install-info %D/info/bsopack.info %D/info/dir
+share/doc/husky/bsopack.html
+bin/bsopack

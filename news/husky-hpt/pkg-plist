@@ -1,0 +1,9 @@
+@unexec install-info --delete %D/info/hpt.info %D/info/dir
+info/hpt.info
+@exec install-info %D/info/hpt.info %D/info/dir
+share/doc/husky/hpt.html
+bin/hpt
+bin/pktinfo
+bin/txt2pkt
+bin/hptlink
+bin/hpttree

@@ -1,0 +1,33 @@
+@unexec install-info --delete %D/info/fidoconfig.info %D/info/dir
+info/fidoconfig.info
+@exec install-info %D/info/fidoconfig.info %D/info/dir
+share/doc/husky/fidoconfig.html
+lib/libfidoconfig.so.0.14
+lib/libfidoconfig.so.0
+lib/libfidoconfig.so
+lib/libfidoconfig.a
+bin/fconf2msged
+bin/fconf2golded
+bin/fconf2aquaed
+bin/fconf2fidogate
+bin/fconf2squish
+bin/tparser
+bin/linkedto
+bin/fconf2areasbbs
+include/fidoconf/fidoconf.h
+include/fidoconf/areatree.h
+include/fidoconf/findtok.h
+include/fidoconf/typesize.h
+include/fidoconf/common.h
+include/fidoconf/dirlayer.h
+include/fidoconf/adcase.h
+include/fidoconf/xstr.h
+include/fidoconf/fidoconf.pas
+include/fidoconf/crc.h
+include/fidoconf/log.h
+include/fidoconf/recode.h
+include/fidoconf/tree.h
+include/fidoconf/temp.h
+include/fidoconf/afixcmd.h
+include/fidoconf/arealist.h
+@dirrm include/fidoconf
