@@ -1,5 +1,5 @@
---- Makefile.orig	Mon May 18 08:09:21 1998
-+++ Makefile	Wed Aug  9 04:55:31 2000
+--- Makefile.orig	Sun May 17 16:09:21 1998
++++ Makefile	Thu Nov  6 15:07:34 2003
 @@ -2,11 +2,11 @@
  
  # what C compiler? It better be Ansi-C. Use gcc if you have it.
@@ -22,11 +22,12 @@
 -GLUT = /usr/local/Mesa-2.1/glut-3.2
 -X11 = /usr/X11R6
 -GLUT_LIBS = -L$(GLUT)/lib/glut -lglut
+-MESA_LIBS = -L$(MESA)/lib -lMesaGLU -lMesaGL -lm
 +MESA = ${X11BASE}
 +GLUT = ${X11BASE}
 +X11 = ${X11BASE}
 +GLUT_LIBS = -L$(GLUT)/lib -lglut
- MESA_LIBS = -L$(MESA)/lib -lMesaGLU -lMesaGL -lm
++MESA_LIBS = -L$(MESA)/lib -lGLU -lGL -lm
  XLIBS = -L$(X11)/lib -lXmu -lXt -lXext -lX11 -lXi
 -DISPLAYFLAGS = -I$(MESA)/include -I$(GLUT) -DRENDERED_DISPLAY=1
 +DISPLAYFLAGS = -I$(X11)/include -I$(MESA)/include -I$(GLUT)/include -DRENDERED_DISPLAY=1
