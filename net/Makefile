@@ -90,6 +90,7 @@
     SUBDIR += ldapsdk
     SUBDIR += libicq
     SUBDIR += libnet
+    SUBDIR += libnids
     SUBDIR += libsocket++
     SUBDIR += libunp
     SUBDIR += libunpipc
