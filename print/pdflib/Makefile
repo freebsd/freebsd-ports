@@ -14,6 +14,8 @@ DISTNAME=	PDFlib-Lite-${PORTVERSION}
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A C library for dynamically generating PDF
 
+FORBIDDEN=	http://vuxml.freebsd.org/fc7e6a42-6012-11d9-a9e7-0001020eed82.html
+
 RESTRICTED=	"many odd restrictions on usage and distribution"
 
 INSTALLS_SHLIB=	yes
