@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	yptransitd
 
-MAINTAINER=	mjoyner@hq.dyns.cx
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A replacement for nss_ldap
 
 USE_OPENLDAP=	yes
