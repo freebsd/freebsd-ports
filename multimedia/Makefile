@@ -131,6 +131,7 @@
     SUBDIR += tkxanim
     SUBDIR += tosvcd
     SUBDIR += totem
+    SUBDIR += totem-gstreamer
     SUBDIR += transcode
     SUBDIR += vcdgear
     SUBDIR += vcdimager
