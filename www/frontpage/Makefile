@@ -7,6 +7,7 @@
 
 PORTNAME=	frontpage
 PORTVERSION=	5.0.2.2623
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.microsoft.com/products/frontpage/ \
 		ftp://www.westbend.net/Mirrors/ftp.microsoft.com/Products/frontpage/

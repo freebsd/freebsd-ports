@@ -1,5 +1,5 @@
---- frontpage/version5.0/fp_install.sh.orig	Mon Apr 16 14:39:25 2001
-+++ frontpage/version5.0/fp_install.sh		Mon Jan 21 11:45:36 2002
+--- fp_install.sh.orig	Mon Apr 16 07:39:25 2001
++++ fp_install.sh	Tue Feb 12 17:37:58 2002
 @@ -12,7 +12,7 @@
  main() {
      initialize
@@ -86,7 +86,31 @@
      
      if [ "$installdir" != "/usr/local/frontpage" ]
      then
-@@ -1290,20 +1256,30 @@
+@@ -805,16 +771,22 @@
+                 accessconffile="${configfiledir}${file}"
+                 ;;
+         esac
++	if [ ! -f $accessconffile ]
++	then
++	    echo "ERROR:  $accessconffile does not exist! Using $configfile instead."
++	    accessconffile=$configfile
++	fi
+     else
+         accessconffile="${configfiledir}access.conf"
+         if [ ! -f $accessconffile ]
+         then
++	    echo "ERROR: No AccessConfig directive found, add 'AccessConfig /dev/null' to $configfile"
+             accessconffile=$configfile
+         fi
+     fi
+     if [ "$accessconffile" != "" -a "$accessconffile" != "/dev/null" -a ! -f "$accessconffile" ]
+     then
+-        echo "$accessconffile does not exist."
++        echo "ERROR: $accessconffile does not exist!"
+         return 1
+     fi
+ 
+@@ -1290,20 +1262,30 @@
      echo " " 
      
      webname="/"
@@ -119,7 +143,7 @@
      done
      
      getHttpRootDirective $configfile Port
-@@ -1316,9 +1292,23 @@
+@@ -1316,9 +1298,23 @@
      done
      weconfigfile="${installdir}/we${port}.cnf"
      
@@ -143,7 +167,7 @@
      webowner=""
      until [ "$webowner" != "" ]
      do
-@@ -1333,6 +1323,12 @@
+@@ -1333,6 +1329,12 @@
      echo 
      getparam Group $configfile $port "Getting Group from "
      defgroup=$param
@@ -156,7 +180,7 @@
      webgroup=""
      until [ "$webgroup" != "" ]
      do
-@@ -1464,7 +1460,7 @@
+@@ -1464,7 +1466,7 @@
          return $retval
      fi
      
@@ -165,3 +189,38 @@
      configfile=""
      while ( [ "$configfile" = "" ] || [ ! -f $configfile ] )
      do
+@@ -1922,10 +1924,16 @@
+                 resconffile="${configfiledir}${file}"
+                 ;;
+         esac
++	if [ ! -f $resconffile ]
++	then
++	    echo "ERROR:  $resconffile does not exist! Using $configfile instead."
++	    resconffile=$configfile
++	fi
+     else
+         resconffile="${configfiledir}srm.conf"
+         if [ ! -f $resconffile ]
+         then
++	    echo "ERROR: No ResourceConfig directive found, add 'ResourceConfig /dev/null' to $configfile"
+             resconffile=$configfile
+         fi
+     fi
+@@ -1999,7 +2007,7 @@
+     
+     param=`cat $configfile | $awk "
+             /^[^#]* *< *${virtualhost}/,/^[^#]* *< *\/${virtualhost}/ { next }
+-            /^[^#]* *${mc_string}[ $TAB]/  { print \\\$2 }"` 
++            /^[^#]* *${mc_string}[ $TAB]/  { print \\\$2 }" | sed -e 's/"//g'` 
+             
+     return 0
+ }
+@@ -2050,7 +2058,7 @@
+                                     print ARRAY[i] 
+                                 }
+                             }
+-                    } "`
++                    } " | sed -e 's/"//g'`
+     
+     if [ "$param" = "" ]
+     then
