@@ -60,6 +60,7 @@ echo "#define FreeBSDCC	${CC}"			>> $LOCALDEF
 echo "#define FreeBSDCXX ${CXX}"		>> $LOCALDEF
 echo "#define FreeBSDCFLAGS ${CFLAGS}"		>> $LOCALDEF
 
+echo "#define FontLibSharedFreeType  YES"	>> $LOCALDEF
 echo "#define LibInstallBuild  YES"		>> $LOCALDEF
 echo "#define FreeBSDBuildXlib NO"		>> $LOCALDEF
 echo "#define FreeBSDBuildXbin YES"		>> $LOCALDEF
