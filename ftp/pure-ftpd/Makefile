@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pure-ftpd
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.6
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pureftpd
@@ -25,9 +25,14 @@ LIB_DEPENDS+=	ldap:${PORTSDIR}/net/openldap2
 LIB_DEPENDS+=	mysqlclient:${PORTSDIR}/databases/mysql323-client
 .endif
 
+.if defined(WITH_PGSQL)
+LIB_DEPENDS+=	pq:${PORTSDIR}/databases/postgresql7
+.endif
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-everything \
 			--with-paranoidmsg \
+			--with-virtualchroot \
 			--sysconfdir=/etc
 # language support requested?
 .if defined(WITH_LANG)
@@ -44,8 +49,13 @@ CONFIGURE_ARGS+=	--with-ldap
 CONFIGURE_ARGS+=	--with-mysql
 .endif
 
+# mysql support requested ?
+.if defined(WITH_PGSQL)
+CONFIGURE_ARGS+=	--with-pgsql
+.endif
+
 # if mysql or ldap are disabled, enable pam
-.if !defined(WITH_LDAP) && !defined(WITH_MYSQL)
+.if !defined(WITH_LDAP) && !defined(WITH_MYSQL) && !defined(WITH_PGSQL)
 CONFIGURE_ARGS+=	--with-pam
 .endif
 
@@ -74,7 +84,7 @@ PAM_TARGET?=	pure-ftpd
 
 DOCS=		AUTHORS CONTACT COPYING HISTORY NEWS \
 		README README.Configuration-File README.Contrib README.LDAP \
-		README.Netfilter README.MySQL README.Virtual-Users \
+		README.Netfilter README.MySQL README.PGSQL README.Virtual-Users \
 		THANKS poweredby.jpg
 
 CONTRIB=	xml_python_processors.txt
@@ -85,15 +95,17 @@ pre-fetch:
 	@${ECHO} "WITH_LDAP=1           - Support for users in LDAP \
 		directories;"
 	@${ECHO} "WITH_MYSQL=1          - Support for users in MySQL databases;"
+	@${ECHO} "WITH_PGSQL=1          - Support for users in PostgreSQL databases;"	
 	@${ECHO} "WITH_LANG=lang        - enable compilation of language \
 		support, lang is one of"
 	@${ECHO} "  english, german, romanian, french, french-funny, polish, spanish,"
-	@${ECHO} "  dutch, italian, brazilian-portuguese, danish, slovak or korean."
+	@${ECHO} "  dutch, italian, brazilian-portuguese, danish, slovak, korean or swedish."
 	@${ECHO}
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/pureftpd-ldap.conf ${PREFIX}/etc/pureftpd-ldap.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/pureftpd-mysql.conf ${PREFIX}/etc/pureftpd-mysql.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/pureftpd-pgsql.conf ${PREFIX}/etc/pureftpd-pgsql.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/configuration-file/pure-ftpd.conf ${PREFIX}/etc/pure-ftpd.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/configuration-file/pure-config.pl ${PREFIX}/sbin/
 	${MKDIR} ${PREFIX}/share/examples/pure-ftpd
