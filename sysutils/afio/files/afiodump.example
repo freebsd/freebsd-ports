@@ -1,0 +1,40 @@
+level=$1
+#
+# Construct basename for dump records
+FS=`echo $2 | sed -e '1,$s?/?:?g'`
+echo Dump root = $2   Level = $level
+echo -n Finding files to dump...
+DUMPFILES=/tmp/backup$$
+date +"%b %d %H:%M" > /var/adm/dumpafio/newdump$$
+#
+# If it is a level 0 dump simply dump everything...
+if [ $level = 0 ]
+then
+find -x $2 | grep -v -f /var/adm/dumpafio/DONTDUMP > ${DUMPFILES}
+echo done
+#cat ${DUMPFILES} | afio -G 2 -o -v -f -b 5120 -c 1000 -s 100000x -Z /dev/nrst0
+else
+#
+# Otherwise dump only stuff newer...
+#
+# Get the date of the most recent dump with the highest level <= $level]
+#prevdump=`ls --reverse /var/adm/dumpafio/${FS}.[0-${level}] | head --lines=1`
+prevdump=`ls -r /var/adm/dumpafio/${FS}.[0-${level}] | head -n 1`
+if [ "x${prevdump}" = x ]
+then
+echo failed
+echo backup: No lower level dump - cannot do level $level dump
+exit 1
+fi
+#find -x $2 -cnewer ${prevdump} | grep -v -f /var/adm/dumpafio/DONTDUMP > ${DUMPFILES}
+find -x $2 -newer ${prevdump} | grep -v -f /var/adm/dumpafio/DONTDUMP > ${DUMPFILES}
+echo done
+fi
+cat ${DUMPFILES} | afio -G 2 -o -v -f -b 5120 -c 1000 -s 100000x -Z /dev/nrst0
+/bin/rm -f ${DUMPFILES}
+#
+# All higher level dumps are now invalidated
+/bin/rm -f /var/adm/dumpafio/${FS}.[${level}-9]
+#
+# Record date of dump future reference
+mv /var/adm/dumpafio/newdump$$ /var/adm/dumpafio/${FS}.${level}
