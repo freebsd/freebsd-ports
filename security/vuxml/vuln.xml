@@ -32,6 +32,37 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e3e266e9-5473-11d9-a9e7-0001020eed82">
+    <topic>xpdf -- buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>xpdf</name>
+	<range><lt>3.00_5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>An iDEFENSE Security Advisory reports:</p>
+	<blockquote cite="http://www.idefense.com/application/poi/display?id=172&amp;type=vulnerabilities">
+	  <p>Remote exploitation of a buffer overflow vulnerability in
+	    the xpdf PDF viewer, as included in multiple Linux
+	    distributions, could allow attackers to execute arbitrary
+	    code as the user viewing a PDF file. The offending code
+	    can be found in the Gfx::doImage() function in the source
+	    file xpdf/Gfx.cc.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-1125</cvename>
+      <url>http://www.idefense.com/application/poi/display?id=172&amp;type=vulnerabilities</url>
+    </references>
+    <dates>
+      <discovery>2004-11-23</discovery>
+      <entry>2004-12-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="28e93883-539f-11d9-a9e7-0001020eed82">
     <topic>acroread5 -- mailListIsPdf() buffer overflow vulnerability</topic>
     <affects>
