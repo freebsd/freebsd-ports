@@ -36,6 +36,7 @@ lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/TKEY.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/TSIG.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/TXT.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/X25.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/Resolver/Recurse.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/Resolver.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/Select.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/Update.pm
@@ -44,6 +45,7 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/DNS/.packlist
 %%PORTDOCS%%share/doc/p5-Net-DNS/README
 %%PORTDOCS%%share/doc/p5-Net-DNS/TODO
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/Resolver
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/DNS
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/DNS
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
