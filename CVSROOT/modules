@@ -677,6 +677,7 @@ bluej		ports/java/bluej
 blwm		ports/x11-wm/blwm
 bmf		ports/mail/bmf
 bmon		ports/net/bmon
+bnbt		ports/net/bnbt
 bnc		ports/irc/bnc
 bnf		ports/devel/bnf
 boa		ports/www/boa
