@@ -24,6 +24,7 @@ USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_LIBTOOL_VER=15
 USE_GNOME=	gnomeprefix gnomehack gtk20
+WANT_SDL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
 		-I${LOCALBASE}/include/ffmpeg \
@@ -36,6 +37,14 @@ CONFIGURE_ARGS=	--disable-warnings
 USE_GMAKE=	yes
 
 .include <bsd.port.pre.mk>
+
+#.if ${HAVE_SDL:Msdl}!=""
+#WITH_SDL=	yes
+#.endif
+
+.if exists(${LOCALBASE}/lib/libfaad.so.0)
+WITH_FAAD=	yes
+.endif
 
 .if exists(${LOCALBASE}/bin/mpeg2enc)
 WITH_MPEGENC=	yes
@@ -60,10 +69,20 @@ CONFIGURE_ARGS+=	--with-xvid-as-decoder
 
 .if ${ARCH} != "i386"
 CONFIGURE_ARGS+=	--disable-mmx
+.else
+BUILD_DEPENDS+=		nasm:${PORTSDIR}/devel/nasm
 .endif
 
 .if defined(WITH_A52)
 LIB_DEPENDS+=	a52.0:${PORTSDIR}/audio/liba52
+.endif
+
+.if defined(WITH_SDL)
+USE_SDL+=	sdl
+.endif
+
+.if defined(WITH_FAAD)
+LIB_DEPENDS+=	faad.0:${PORTSDIR}/audio/faad
 .endif
 
 pre-everything::
@@ -79,6 +98,14 @@ pre-everything::
 	@${ECHO_MSG} "To enable A/52 support define WITH_A52."
 .endif
 
+.if !defined(WITH_SDL)
+	@${ECHO_MSG} "To enable SDL support define WITH_SDL."
+.endif
+
+.if !defined(WITH_FAAD)
+	@${ECHO_MSG} "To enable FAAD (mpeg4/aac) support define WITH_FAAD."
+.endif
+
 post-patch:
 	@${TOUCH} ${WRKSRC}/*
 	@${REINPLACE_CMD} 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure ${WRKSRC}/*/*/Makefile
@@ -87,5 +114,9 @@ post-patch:
 	@${REINPLACE_CMD} 's|ADM_LOCALEDIR=$${datadir}/locale|ADM_LOCALEDIR=${PREFIX}/share/locale|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} "s|-O2|${CFLAGS}|" ${WRKSRC}/adm_lavcodec/Makefile
 	@${REINPLACE_CMD} "s|-O2||" ${WRKSRC}/configure
+	@${REINPLACE_CMD} 's|SDL/|SDL11/|' \
+		${WRKSRC}/avidemux/ADM_audiodevice/ADM_deviceSDL.cpp \
+		${WRKSRC}/avidemux/ADM_gui2/GUI_sdlDraw.cpp \
+		${WRKSRC}/avidemux/main.cpp
 
 .include <bsd.port.post.mk>
