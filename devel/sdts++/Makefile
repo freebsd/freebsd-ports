@@ -6,26 +6,26 @@
 #
 
 PORTNAME=	sdts++
-PORTVERSION=	1.3.1a
-PORTREVISION=	1
+PORTVERSION=	1.5.1
+PORTREVISION=	0
 CATEGORIES=	devel
-MASTER_SITES=	ftp://sdts.er.usgs.gov/pub/sdts/software/sdtsxx/:site1 \
-		http://lychnobite.org/sdts/:site1 \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	boost
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:site1 \
-		boost_1_27_0${EXTRACT_SUFX}
+MASTER_SITES=	http://thor-f5.er.usgs.gov/sdts/sdtsxx/ \
+		http://lychnobite.org/sdts/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library for SDTS related development
 
+BUILD_DEPENDS=	${LOCALBASE}/lib/libboost_thread.so:${PORTSDIR}/devel/boost
+RUN_DEPENDS=	${LOCALBASE}/lib/libboost_thread.so:${PORTSDIR}/devel/boost
+
 USE_LIBTOOL=	yes
-CONFIGURE_ARGS=	--with-boost=${WRKDIR}/boost_1_27_0
+INSTALLS_SHLIB=	yes
+CONFIGURE_ARGS=	--with-boost=${LOCALBASE}/include
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.pre.mk>                                          
 
-.if ${OSVERSION} >= 500113
-BROKEN=         "Configure fails"
+.if ${OSVERSION} < 500035
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
 .endif
 
 .include <bsd.port.post.mk>
