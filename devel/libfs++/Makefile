@@ -8,12 +8,20 @@
 
 PORTNAME=	libfs++
 PORTVERSION=	0.1.7
+PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://bluebat.dnsalias.org/software/libfs++/
+MASTER_SITES=	http://bluebat.dnsalias.org/software/libfs++/%SUBDIR%/
+MASTER_SITE_SUBDIR=	. archive
 
 MAINTAINER=	ports@FreeBSD.org
 
-GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
+
+post-patch:
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|-Wall -g -O2||g' 
 
 .include <bsd.port.mk>
