@@ -1,0 +1,13 @@
+*** ./trap.c.orig	Wed Nov 17 18:36:19 1999
+--- ./trap.c	Wed Nov 17 18:36:29 1999
+*************** restore_original_signals ()
+*** 556,563 ****
+  {
+    register int i;
+  
+-   reset_terminating_signals ();		/* in shell.c */
+- 
+    if (sigmodes[0] & SIG_TRAPPED)
+      {
+        free_trap_command (0);
+--- 556,561 ----
