@@ -11,7 +11,7 @@ GID=$UID
 
 CLAMRUN=$DESTDIR/var/run/clamav
 CLAMLOG=$DESTDIR/var/log/clamav
-DATADIR=$DESTDIR%%DATADIR%%
+DBDIR=$DESTDIR%%DBDIR%%
 
 if [ "$2" = "PRE-INSTALL" ]; then
 
@@ -49,9 +49,9 @@ elif [ "$2" = "POST-INSTALL" ]; then
 		chown "$CLAMAVUSER:$CLAMAVGROUP" "$CLAMLOG" || exit 1
 	fi
 
-	if [ ! -d "$DATADIR" ]; then
-		mkdir -p "$DATADIR" || exit 1
-		chown "$CLAMAVUSER:$CLAMAVGROUP" "$DATADIR" || exit 1
+	if [ ! -d "$DBDIR" ]; then
+		mkdir -p "$DBDIR" || exit 1
+		chown "$CLAMAVUSER:$CLAMAVGROUP" "$DBDIR" || exit 1
 	fi
 
 	if [ -f "$DESTDIR$PREFIX/etc/clamav.conf" ]; then

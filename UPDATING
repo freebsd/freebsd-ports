@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20041222:
+  AFFECTS: users of security/clamav, security/clamav-devel
+  AUTHOR: jylefort@brutele.be
+
+  The ClamAV database path has changed from /usr/local/share/clamav to
+  /var/db/clamav. You should update the DatabaseDirectory keyword in
+  /usr/local/etc/clamd.conf and /usr/local/etc/freshclam.conf.
+
 20041221
   AFFECTS: users of security/gpgme03
   AUTHOR: clement@FreeBSD.org

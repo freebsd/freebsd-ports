@@ -22,8 +22,8 @@ etc/clamd.conf.default
 @unexec if cmp -s %D/etc/freshclam.conf %D/etc/freshclam.conf.default; then rm -f %D/etc/freshclam.conf; fi
 etc/freshclam.conf.default
 @exec [ -f %B/freshclam.conf ] || cp %B/%f %B/freshclam.conf
-@unexec [ -s %D/%%DATADIR%%/daily.cvd ] || rm -f %D/%%DATADIR%%/daily.cvd || true
-@unexec [ -s %D/%%DATADIR%%/main.cvd ] || rm -f %D/%%DATADIR%%/main.cvd || true
-@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
+@unexec [ ! -f %%DBDIR%%/daily.cvd ] || rm -f %%DBDIR%%/daily.cvd || true
+@unexec [ ! -f %%DBDIR%%/main.cvd ] || rm -f %%DBDIR%%/main.cvd || true
+@unexec rmdir %%DBDIR%%
 @unexec rmdir /var/run/clamav 2>/dev/null || true
 @unexec rmdir /var/log/clamav 2>/dev/null || true
