@@ -5,16 +5,17 @@
 # $FreeBSD$
 #
 
-PORTNAME=       ipsorc
-PORTVERSION=    1.6
-CATEGORIES=     net security
-MASTER_SITES=   http://www.legions.org/~phric/
-MASTER_SITE_SUBDIR=     ${PORTNAME}
+PORTNAME=	ipsorc
+PORTVERSION=	1.7.5
+CATEGORIES=	net security
+MASTER_SITES=	http://www.informony.com/ipsorc/
+#MASTER_SITE_SUBDIR=     ${PORTNAME}
 
-MAINTAINER=     Nicolas.Jombart@hsc-labs.com
+MAINTAINER=	Nicolas.Jombart@hsc-labs.com
 
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12
+USE_BZIP2=	yes
 
 post-patch:
 	@${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.old
@@ -28,7 +29,7 @@ do-install:
 .endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for i in README
+.for i in README HOWTO
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
