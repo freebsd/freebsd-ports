@@ -8032,6 +8032,7 @@ p5-Test-Cmd	ports/devel/p5-Test-Cmd
 p5-Test-Deep	ports/devel/p5-Test-Deep
 p5-Test-Differences	ports/devel/p5-Test-Differences
 p5-Test-Exception	ports/devel/p5-Test-Exception
+p5-Test-File	ports/devel/p5-Test-File
 p5-Test-Harness	ports/devel/p5-Test-Harness
 p5-Test-Inline	ports/devel/p5-Test-Inline
 p5-Test-LectroTest	ports/devel/p5-Test-LectroTest
