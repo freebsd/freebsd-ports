@@ -7,7 +7,7 @@
 #
 
 DISTNAME=	gcolor-0.4
-CATEGORIES=	graphics gnome
+CATEGORIES=	graphics gnome x11
 MASTER_SITES=	http://download.sourceforge.net/gcolor/
 
 MAINTAINER=	andrews@technologist.com
