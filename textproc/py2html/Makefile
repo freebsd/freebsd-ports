@@ -11,7 +11,7 @@ CATEGORIES=	textproc www python
 MASTER_SITES=	http://dist.freebsd-kr.org/pub/FreeBSD/ports/distfiles/ \
 		ftp://ftp2.python.or.kr/pub/FreeBSD/ports/distfiles/
 
-MAINTAINER=	perky@python.or.kr
+MAINTAINER=	perky@fallin.lv
 
 USE_PYTHON=	yes
 PLIST_SUB+=	PYTHON_LIBPATH=${PYTHON_LIBPATH:S/^${LOCALBASE}//g}lib \

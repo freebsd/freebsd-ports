@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://people.linuxkorea.co.kr/pub/Python/ \
 		ftp://www3.kr.freebsd.org/pub/FreeBSD/ports/distfiles/
 DISTNAME=	KoreanCodecs-${PORTVERSION}
 
-MAINTAINER=	perky@python.or.kr
+MAINTAINER=	perky@fallin.lv
 
 USE_PYTHON=	yes
 PYTHON_CODECDIR=${PYTHON_LIBDIR}/encodings

@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	linux-ibm-
 DISTNAME=	IBMJava2-SDK-13
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	perky@python.or.kr
+MAINTAINER=	perky@fallin.lv
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper \
 		${X11BASE}/lib/X11/fonts/TrueType/wadalab-gothic.ttf:${PORTSDIR}/japanese/truetypefonts
