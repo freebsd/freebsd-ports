@@ -12,7 +12,7 @@ CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	trevor
 
-PATCH_SITES=	${MASTER_SITES}
+PATCH_SITES=	http://people.freebsd.org/~trevor/ports/
 PATCHFILES=	workplace-1.0.a3+tj1.diff.gz
 
 MAINTAINER=	trevor@FreeBSD.org
