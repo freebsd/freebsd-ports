@@ -14,7 +14,7 @@
 +if (null$my_directory == null) then
 +    setenv my_directory `echo $PWD`
 +endif
-+setenv DeFT_directory /usr/local/share/DeFT
++setenv DeFT_directory %%PREFIX%%/share/DeFT
 +setenv temp_directory /usr/tmp/tmp$$
  
  mkdir $temp_directory

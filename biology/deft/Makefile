@@ -23,6 +23,10 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/source
 BUILD_DEPENDS=	ftn77:${PORTSDIR}/lang/f77
 .endif
 
+post-patch:
+	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g \
+		${WRKDIR}/${DISTNAME}/examples/DeFT
+
 post-configure:
 	${CP} ${FILESDIR}/Makefile.deft ${WRKSRC}/Makefile
 
