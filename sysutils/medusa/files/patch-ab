@@ -1,0 +1,14 @@
+--- libmedusa-internal/medusa-rdb-query.c.orig	Fri Jul 28 05:14:34 2000
++++ libmedusa-internal/medusa-rdb-query.c	Thu Aug 17 10:04:48 2000
+@@ -26,7 +26,11 @@
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <string.h>
++#ifdef __FreeBSD__
++#include <gnuregex.h>
++#else
+ #include <regex.h>
++#endif
+ #include <medusa-test.h>
+ 
+ #include "medusa-rdb-query-private.h"

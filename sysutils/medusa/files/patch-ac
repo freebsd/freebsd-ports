@@ -1,0 +1,14 @@
+--- libmedusa-internal/medusa-text-index-mime-module.c.orig	Fri Jul 14 21:54:26 2000
++++ libmedusa-internal/medusa-text-index-mime-module.c	Thu Aug 17 10:06:12 2000
+@@ -32,7 +32,11 @@
+ #include <glib.h>
+ #include <ctype.h>
+ #include <string.h>
++#ifdef __FreeBSD__
++#include <gnuregex.h>
++#else
+ #include <regex.h>
++#endif
+ 
+ struct MedusaTextIndexMimeModule {
+   /* These lists should be short */

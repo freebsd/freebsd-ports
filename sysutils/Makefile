@@ -55,6 +55,7 @@
     SUBDIR += logrotate
     SUBDIR += lsof
     SUBDIR += manck
+    SUBDIR += medusa
     SUBDIR += mei
     SUBDIR += memtest
     SUBDIR += mkisofs
