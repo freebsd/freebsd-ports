@@ -1,0 +1,19 @@
+*** xlibvid.cxx.orig	Mon Nov 25 13:15:04 2002
+--- xlibvid.cxx	Mon Nov 25 13:15:24 2002
+*************** BOOL GenericXlibVideoDevice::SetFrameSiz
+*** 199,205 ****
+       return TRUE;
+  }
+  
+! BOOL GenericXlibVideoDevice::OpenWindow(unsigned _width = 0, unsigned _height = 0)
+  {
+    PTRACE(3,"XDisplay\tOpenWindow of size "<<_width<<"x"<<_height<<
+              " "<<DirectionStr()<<" window");
+--- 199,205 ----
+       return TRUE;
+  }
+  
+! BOOL GenericXlibVideoDevice::OpenWindow(unsigned _width, unsigned _height)
+  {
+    PTRACE(3,"XDisplay\tOpenWindow of size "<<_width<<"x"<<_height<<
+              " "<<DirectionStr()<<" window");
