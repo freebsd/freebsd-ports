@@ -23,6 +23,10 @@ NO_WRKSUBDIR=	YES
 LICENSE=	shareware
 RESTRICTED=	"restrictive 30 day evaluation license"
 
+.if !exists(/usr/lib/compat/libc.so.3)
+BROKEN=		"You must have the compat3x libraries installed."
+.endif
+
 do-configure:
 	${SED} <${FILESDIR}/uvscan.sh >${WRKSRC}/uvscan.sh \
 		-e 's:@@PREFIX@@:${PREFIX}:g'
