@@ -775,6 +775,7 @@
     SUBDIR += ruby-gnustep
     SUBDIR += ruby-inline
     SUBDIR += ruby-intl
+    SUBDIR += ruby-jttui
     SUBDIR += ruby-libglade
     SUBDIR += ruby-libglade2
     SUBDIR += ruby-libgtop
