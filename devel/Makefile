@@ -700,6 +700,7 @@
     SUBDIR += p5-Test-Unit
     SUBDIR += p5-Tie-Cache
     SUBDIR += p5-Tie-DB_FileLock
+    SUBDIR += p5-Tie-File
     SUBDIR += p5-Tie-IxHash
     SUBDIR += p5-Time-Duration
     SUBDIR += p5-Time-HiRes
