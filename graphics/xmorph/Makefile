@@ -27,15 +27,16 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 INSTALLS_SHLIB=	yes
 
-MAN1=		xmorph.1
+MAN1=		morph.1
 INFO=		xmorph
 
 .include <bsd.port.pre.mk>
 
+# XXX Seems that gtkmorph.1 is always installed
+MAN1+=		gtkmorph.1
 .if ${HAVE_GNOME:Mgtk20}!=""
 USE_GNOME+=		gtk20
 CONFIGURE_ARGS+=	--with-gtk2
-MAN1+=		gtkmorph.1
 .else
 CONFIGURE_ARGS+=	--without-gtkmorph
 .endif
