@@ -19,15 +19,13 @@ COMMENT=	An X11 IRC client using the GTK+ 2 toolkit
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_PERL5=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--enable-nls \
-		--enable-ipv6 \
-		--enable-perl
+		--enable-ipv6
 
 CONFLICTS=	xchat-1*
 
@@ -50,7 +48,7 @@ PLIST_SUB+=		PYTHON="@comment "
 .if defined(WITH_TCL)
 LIB_DEPENDS+=	tcl83.1:${PORTSDIR}/lang/tcl83
 CONFIGURE_ARGS+=--enable-tcl=${LOCALBASE}/lib/tcl8.3
-CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS} \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS} \
 		-I${LOCALBASE}/include/tcl8.3" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS} \
 		-L${LOCALBASE}/lib/tcl8.3"
@@ -58,6 +56,17 @@ PLIST_SUB+=	TCL=""
 .else
 CONFIGURE_ARGS+=--enable-tcl=no
 PLIST_SUB+=	TCL="@comment "
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" || defined(WITHOUT_PERL)
+CONFIGURE_ARGS+=--disable-perl
+PLIST_SUB+=	PERL="@comment "
+.else
+USE_PERL5=	yes
+CONFIGURE_ARGS+=--enable-perl
+PLIST_SUB+=	PERL=""
 .endif
 
 pre-everything::
@@ -74,9 +83,12 @@ pre-everything::
 .if !defined(WITH_TCL)
 	@${ECHO_MSG} "WITH_TCL=yes for tcl support"
 .endif
+.if ${ARCH} != "amd64" && !defined(WITHOUT_PERL)
+	@${ECHO_MSG} "WITHOUT_PERL=yes to disable Perl support"
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -E -e 's|PY_LIBS=.*|PY_LIBS="-L\$$PY_EXEC_PREFIX/lib/python\$$PY_VER/config -lpython\$$PY_VER ${PTHREAD_LIBS} -lutil"|' \
 		${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

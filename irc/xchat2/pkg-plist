@@ -1,5 +1,5 @@
 bin/xchat
-lib/xchat/plugins/perl.so
+%%PERL%%lib/xchat/plugins/perl.so
 %%PYTHON%%lib/xchat/plugins/python.so
 %%TCL%%lib/xchat/plugins/tcl.so
 share/gnome/apps/Internet/xchat.desktop
