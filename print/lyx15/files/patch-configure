@@ -1,0 +1,94 @@
+--- configure.orig	Thu Feb 19 02:35:31 2004
++++ configure	Tue Mar  2 01:03:20 2004
+@@ -5304,33 +5304,51 @@
+ 
+ fi
+ 
+-
+-echo "$as_me:$LINENO: checking for fopen in -lc" >&5
+-echo $ECHO_N "checking for fopen in -lc... $ECHO_C" >&6
+-if test "${ac_cv_lib_c_fopen+set}" = set; then
++echo "$as_me:$LINENO: checking for fopen" >&5
++echo $ECHO_N "checking for fopen... $ECHO_C" >&6
++if test "${ac_cv_func_fopen+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+-  ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lc  $LIBS"
+-cat >conftest.$ac_ext <<_ACEOF
++  cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+ _ACEOF
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+-
++/* System header to define __stub macros and hopefully few prototypes,
++    which can conflict with char fopen (); below.
++    Prefer <limits.h> to <assert.h> if __STDC__ is defined, since
++    <limits.h> exists even on freestanding compilers.  */
++#ifdef __STDC__
++# include <limits.h>
++#else
++# include <assert.h>
++#endif
+ /* Override any gcc2 internal prototype to avoid an error.  */
+ #ifdef __cplusplus
+ extern "C"
++{
+ #endif
+ /* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+ char fopen ();
++/* The GNU C library defines this for functions which it implements
++    to always fail with ENOSYS.  Some functions are actually named
++    something starting with __ and the normal name is an alias.  */
++#if defined (__stub_fopen) || defined (__stub___fopen)
++choke me
++#else
++char (*f) () = fopen;
++#endif
++#ifdef __cplusplus
++}
++#endif
++
+ int
+ main ()
+ {
+-fopen ();
++return f != fopen;
+   ;
+   return 0;
+ }
+@@ -5347,26 +5365,17 @@
+   ac_status=$?
+   echo "$as_me:$LINENO: \$? = $ac_status" >&5
+   (exit $ac_status); }; }; then
+-  ac_cv_lib_c_fopen=yes
++  ac_cv_func_fopen=yes
+ else
+   echo "$as_me: failed program was:" >&5
+ sed 's/^/| /' conftest.$ac_ext >&5
+ 
+-ac_cv_lib_c_fopen=no
++ac_cv_func_fopen=no
+ fi
+ rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
+-LIBS=$ac_check_lib_save_LIBS
+-fi
+-echo "$as_me:$LINENO: result: $ac_cv_lib_c_fopen" >&5
+-echo "${ECHO_T}$ac_cv_lib_c_fopen" >&6
+-if test $ac_cv_lib_c_fopen = yes; then
+-  cat >>confdefs.h <<_ACEOF
+-#define HAVE_LIBC 1
+-_ACEOF
+-
+-  LIBS="-lc $LIBS"
+-
+ fi
++echo "$as_me:$LINENO: result: $ac_cv_func_fopen" >&5
++echo "${ECHO_T}$ac_cv_func_fopen" >&6
+ 
+ 
+ ### Add extra directories to check for libraries.
