@@ -1,0 +1,8 @@
+Mixmaster is an "Chaumian mix-net" anonymous remailer. Remailers provide
+protection against traffic analysis and allow sending email anonymously or
+pseudonymously. 
+
+This software comes in a client only configuration! If you want
+to setup a mixmaster server, read through the example files and man page.
+
+WWW: http://mixmaster.sf.net

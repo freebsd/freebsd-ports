@@ -1,0 +1,11 @@
+--- config.h.orig	2003-09-27 18:53:56.000000000 +0200
++++ config.h	2003-09-27 18:54:08.000000000 +0200
+@@ -138,7 +138,7 @@
+ /* Give up if a file is larger than BUFFER_MAX bytes: */
+ /* #define BUFFER_MAX 64*1024*1024 */
+ 
+-#define PATHMAX 512
++#define PATHMAX 1024
+ #define LINELEN 128
+ #define BUFSIZE 4096
+ 

@@ -1,0 +1,13 @@
+--- pcre-2.08/Makefile.orig	Fri Aug 30 09:36:52 2002
++++ pcre-2.08/Makefile	Fri Aug 30 09:37:14 2002
+@@ -51,8 +51,8 @@
+ # into errlist.
+ 
+ AR = ar cq
+-CC = gcc -O2 -Wall
+-CFLAGS =
++#CC = gcc -O2 -Wall
++CFLAGS += -Wall
+ RANLIB = @true
+ 
+ # If you are going to obey "make install", edit these settings for your

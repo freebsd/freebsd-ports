@@ -1,0 +1,11 @@
+--- mix.c.orig	2003-09-27 19:42:28.000000000 +0200
++++ mix.c	2003-09-27 19:42:47.000000000 +0200
+@@ -86,7 +86,7 @@ char POOLDIR[PATHMAX];
+ #ifdef WIN32
+ char SENDMAIL[LINELEN] = "outfile";
+ #else /* end of WIN32 */
+-char SENDMAIL[LINELEN] = "/usr/lib/sendmail -t";
++char SENDMAIL[LINELEN] = "/usr/sbin/sendmail -t";
+ #endif /* else if not WIN32 */
+ char SENDANONMAIL[LINELEN];
+ char NEWS[LINELEN];
