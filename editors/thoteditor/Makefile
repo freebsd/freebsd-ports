@@ -10,11 +10,7 @@ PORTVERSION=	2.1e
 PORTREVISION=	1
 CATEGORIES=	editors www
 MASTER_SITES=	ftp://ftp.inrialpes.fr/pub/opera/sources/thot/ \
-		${MASTER_SITE_SUNSITE} \
-		ftp://ftp.ruhr-uni-bochum.de/local/jk.collection/thot/ \
-		ftp://ftp.uni-stuttgart.de/pub/comm/infosystems/www/clients/amaya/thot/ \
-		ftp://ftp.netlab.is.tsukuba.ac.jp/pub/editors/opera.inrialpes.fr/sources/thot/ \
-		ftp://ftp.agix.net/pub/infosystems/www/clients/amaya/thot/
+		ftp://ftp.ruhr-uni-bochum.de/local/jk.collection/thot/
 MASTER_SITE_SUBDIR=	apps/editors/X/thot
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
