@@ -7,6 +7,7 @@
 
 PORTNAME=	columns
 PORTVERSION=	1.2b
+PORTREVISION=	1
 CATEGORIES=	games
 # mastersite disappeared in December 2000
 MASTER_SITES=	# http://www.rzuser.uni-heidelberg.de/~dheck/columns/

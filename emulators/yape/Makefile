@@ -7,7 +7,7 @@
 
 PORTNAME=	yape
 PORTVERSION=	0.32.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://yape.homeserver.hu/download/
 DISTNAME=	yapeSDL-${PORTVERSION}

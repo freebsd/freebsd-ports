@@ -7,7 +7,7 @@
 
 PORTNAME=	xmps
 PORTVERSION=	0.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia gnome
 # per distfile survey, site disappeared in June 2003
 MASTER_SITES=	# http://xmps.sourceforge.net/sources/

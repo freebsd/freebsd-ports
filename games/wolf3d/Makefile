@@ -7,7 +7,7 @@
 
 PORTNAME=	wolf3d
 PORTVERSION=	20011028
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.icculus.org/wolf3d/:wolf \
 		http://www.liquidx.org/distfiles/:wolfdata

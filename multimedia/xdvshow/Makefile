@@ -7,8 +7,7 @@
 
 PORTNAME=	xdvshow
 PORTVERSION=	00.2003.09.03
-PORTREVISION=	1
-#PORTREVISION=	0
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.sfc.wide.ad.jp/DVTS/software/xdvshow/
 DISTNAME=	${PORTNAME}

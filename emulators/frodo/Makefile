@@ -7,7 +7,7 @@
 
 PORTNAME=	frodo
 PORTVERSION=	4.1b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators tk84
 MASTER_SITES=	http://iphcip1.physik.uni-mainz.de/~cbauer/
 DISTNAME=	FrodoV4_1b.Src

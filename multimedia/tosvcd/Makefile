@@ -8,7 +8,7 @@
 
 PORTNAME=	tosvcd
 PORTVERSION=	0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://linvdr.org/download/tosvcd/
 

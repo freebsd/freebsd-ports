@@ -6,7 +6,7 @@
 
 PORTNAME=	jools
 PORTVERSION=	0.20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.eecs.umich.edu/~pelzlpj/jools/
 
