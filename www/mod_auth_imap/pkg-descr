@@ -1,0 +1,3 @@
+An Apache module to provide authentication via an IMAP mail server.
+
+WWW: http://ben.brillat.net/projects/mod_auth_imap/
