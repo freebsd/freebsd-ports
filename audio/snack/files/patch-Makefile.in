@@ -4,12 +4,12 @@
  # The path to the tcl.h header file
  
 -TCL_INCPATH = @TCL_SRC_DIR@/generic
-+TCL_INCPATH = %%LOCALBASE%%/include/tcl8.3/generic
++TCL_INCPATH = %%LOCALBASE%%/include/tcl8.4/generic
  
  # The path to the tk.h header file
  
 -TK_INCPATH  = @TK_SRC_DIR@/generic
-+TK_INCPATH  = %%LOCALBASE%%/include/tk8.3/generic
++TK_INCPATH  = %%LOCALBASE%%/include/tk8.4/generic
  
  # The path to the X11 include files
 
