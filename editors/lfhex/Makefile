@@ -15,13 +15,14 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
 
+USE_REINPLACE=	yes
 USE_QT_VER=	2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-qt-moc=${MOC}
 USE_GMAKE=	yes
 
 post-patch:
-	@${PERL} -pi -e "s,%%LOCALBASE%%,${LOCALBASE},g ; \
+	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g ; \
 		s,%%X11BASE%%,${X11BASE},g" ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>

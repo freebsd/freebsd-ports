@@ -20,6 +20,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 
 WRKSRC=		${WRKDIR}/Ted-${PORTVERSION}
 
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_MOTIF=	yes
 GNU_CONFIGURE=	yes
@@ -41,7 +42,7 @@ post-patch:
 		-e 's,/usr/local/ind,${INDDIR},' \
 		-e 's,/usr/local/info,${INFODIR},' \
 		Ted.ad.sample >Ted
-	${PERL} -pi -e 's|/usr/apps|${LOCALBASE}|g' ${WRKSRC}/bitmap/configure
+	${REINPLACE_CMD} -e 's|/usr/apps|${LOCALBASE}|g' ${WRKSRC}/bitmap/configure
 
 post-configure:
 .for dir in appFrame appUtil bitmap ind libreg

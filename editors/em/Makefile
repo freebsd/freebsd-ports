@@ -14,10 +14,11 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-lt
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" DEFINES=""
 
 pre-patch:
-	@${PERL} -pi -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/epath.h
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/epath.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/em ${PREFIX}/bin/em

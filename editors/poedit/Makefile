@@ -23,6 +23,7 @@ LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext \
 		db3:${PORTSDIR}/databases/db3
 
 PATCH_DIST_ARGS=	-d ${PATCH_WRKSRC} -E ${PATCH_DIST_STRIP} -p1
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
@@ -42,10 +43,10 @@ CONFIGURE_ARGS+=	--without-gnome
 .endif
 
 pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${PERL} -pi -e \
-		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
+	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|\$$(datadir)/gnome/|\$$(datadir)/|g ; \
+		s|\$$(datadir)/locale|\$$(prefix)/share/locale|g'
 
 .include <bsd.port.post.mk>
