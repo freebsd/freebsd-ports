@@ -1,0 +1,10 @@
+C-sig is signature insertion tool for Emacs. It provides the following
+features:
+
+- Easy to create signatures.
+- Three insertion functions.
+- Powerful retrieval and learning function.
+- c-sig can convert text automatically when insertion.
+- signatures can be modified by emacs lisp.
+
+WWW: http://www.osk.3web.ne.jp/~kshibata/c-sig/english/

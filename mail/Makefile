@@ -31,6 +31,7 @@
     SUBDIR += bsfilter
     SUBDIR += bsmtp
     SUBDIR += bulk_mailer
+    SUBDIR += c-sig
     SUBDIR += cclient
     SUBDIR += chk4mail
     SUBDIR += cmail
