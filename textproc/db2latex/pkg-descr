@@ -1,0 +1,10 @@
+DB2LaTeX are a set of XSLT stylesheets which generate high level LaTeX2e from
+your docbook document. They do not perform any FO transformation, the only
+thing they do is to map DocBook tags into more or less standard LaTeX (a recent
+installation of LaTeX 2e is required, with most common packages. However, in
+more stable releases, package dependencies will be completely managed with xsl
+parameters, making it virtually compatible with basic LaTeX 2e installations).
+All the "styling" has to be done by modifying available xsl:params, overriding
+and customizing templates, and in the last, by adding your "sty" files.
+
+WWW: http://db2latex.sourceforge.net/
