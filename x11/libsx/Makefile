@@ -3,7 +3,7 @@
 # Date created:                5 December 1996
 # Whom:                        pgiffuni@FPS.biblos.unal.edu.co
 #
-# $Id: Makefile,v 1.1.1.1 1997/01/13 07:43:50 tg Exp $
+# $Id: Makefile,v 1.2 1997/01/13 11:32:25 obrien Exp $
 #
 
 DISTNAME=	libsx
@@ -11,6 +11,7 @@ PKGNAME=	libsx-1.1
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	libraries
+EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	pgiffuni@FPS.biblos.unal.edu.co
 
