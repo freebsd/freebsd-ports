@@ -7,14 +7,16 @@
 
 PORTNAME=	flac
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	naddy@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/share/gettext/config.rpath:${PORTSDIR}/devel/gettext
-LIB_DEPENDS=	ogg.4:${PORTSDIR}/audio/libogg
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/converters/libiconv:extract
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
+		ogg.4:${PORTSDIR}/audio/libogg
 
 .if defined(WITH_XMMS)
 # id3lib is only used by the XMMS plugin
@@ -50,7 +52,7 @@ MAN1=		flac.1
 
 # missing auxiliary script
 post-extract:
-	@${CP} ${LOCALBASE}/share/gettext/config.rpath ${WRKSRC}
+	@${CP} `cd ${PORTSDIR}/converters/libiconv && make -V WRKSRC`/autoconf/config.rpath ${WRKSRC}
 
 # "obj" is magic to our make(1)
 post-configure:
