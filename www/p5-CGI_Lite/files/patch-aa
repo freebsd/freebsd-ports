@@ -1,0 +1,10 @@
+--- Makefile.PL.orig	Wed Sep 17 22:32:03 1997
++++ Makefile.PL	Wed Sep 17 22:32:08 1997
+@@ -8,7 +8,6 @@
+ WriteMakefile (
+                  NAME      =>   "CGI_Lite",
+                  DISTNAME  =>   "CGI_Lite",
+-                 MAN3PODS  =>   ' ',  
+                  VERSION   =>   "$VERSION",
+                  'dist'    =>   {
+ 				    COMPRESS => 'gzip -9f', 
