@@ -9,9 +9,8 @@ PORTNAME=		heimdal
 PORTVERSION=	0.6.1
 CATEGORIES=		security ipv6
 MASTER_SITES=	ftp://ftp.pdc.kth.se/pub/heimdal/src/ \
-				ftp://ftp.replay.com/pub/replay/crypto/APPS/kerberos/heimdal/ \
-				ftp://ftp.tuniv.szczecin.pl/dsk4/ftp.replay.com/pub/crypto/APPS/kerberos/heimdal/ \
-				ftp://ftp.hacktic.nl/pub/replay/crypto/APPS/kerberos/heimdal/
+		ftp://ftp.sunet.se/pub/unix/admin/mirror-pdc/pub/heimdal/src/ \
+		ftp://ftp.ayamura.org/pub/heimdal/
 DISTNAME=		heimdal-${PORTVERSION}
 
 MAINTAINER=		nectar@FreeBSD.ORG
