@@ -10,7 +10,7 @@ DISTNAME=	jbigkit-1.0
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.informatik.uni-erlangen.de/pub/doc/ISO/JBIG/
 
-MAINTAINER=	mi@aldan.ziplink.net
+MAINTAINER=	mi@aldan.algebra.com
 
 WRKSRC= ${WRKDIR}/jbigkit
 MAN1=	jbgtopbm.1 pbmtojbg.1

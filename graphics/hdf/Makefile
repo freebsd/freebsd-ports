@@ -11,7 +11,7 @@ PKGNAME=	hdf-4.1r2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.ncsa.uiuc.edu/HDF/HDF4.1r2/tar/
 
-MAINTAINER=	mi@aldan.ziplink.net
+MAINTAINER=	mi@aldan.algebra.com
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
