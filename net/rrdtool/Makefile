@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	rrdtool
-PORTVERSION=	1.0.32
+PORTVERSION=	1.0.33
 CATEGORIES=	net
-MASTER_SITES=	http://ee-staff.ethz.ch/~oetiker/webtools/rrdtool/pub/
+MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/rrdtool/pub/
 
 MAINTAINER=	demon@FreeBSD.org
 
