@@ -1,9 +1,11 @@
-bin/ijs_client_example
 bin/ijs-config
+bin/ijs_client_example
+bin/ijs_server_example
 include/ijs/ijs.h
 include/ijs/ijs_client.h
 include/ijs/ijs_server.h
 lib/libijs.a
 lib/libijs.so
-lib/libijs.so.%%SHLIB_VER%%
+lib/libijs.so.1
+libdata/pkgconfig/ijs.pc
 @dirrm include/ijs
