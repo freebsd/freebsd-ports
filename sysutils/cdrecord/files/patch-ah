@@ -1,0 +1,20 @@
+--- libscg/scg/scsireg.h.orig	Sun May 28 23:31:20 2000
++++ libscg/scg/scsireg.h	Fri Aug 18 22:40:38 2000
+@@ -244,7 +244,7 @@
+ 
+ #if	defined(_BIT_FIELDS_LTOH)	/* Intel byteorder */
+ 
+-struct scsi_mode_page_header {
++struct scg_scsi_mode_page_header {
+ 	Ucbit	p_code		: 6;
+ 	Ucbit	res		: 1;
+ 	Ucbit	parsave		: 1;
+@@ -262,7 +262,7 @@
+ 
+ #else					/* Motorola byteorder */
+ 
+-struct scsi_mode_page_header {
++struct scg_scsi_mode_page_header {
+ 	Ucbit	parsave		: 1;
+ 	Ucbit	res		: 1;
+ 	Ucbit	p_code		: 6;

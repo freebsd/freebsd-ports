@@ -1,0 +1,20 @@
+--- cdrecord/modes.c.orig	Sun May  7 14:49:37 2000
++++ cdrecord/modes.c	Fri Aug 18 22:40:38 2000
+@@ -58,7 +58,7 @@
+ 	int	hdlen;
+ 	int	len = 1;				/* Nach SCSI Norm */
+ 	int	try = 0;
+-	struct	scsi_mode_page_header *mp;
++	struct	scg_scsi_mode_page_header *mp;
+ 
+ again:
+ 	fillbytes((caddr_t)mode, sizeof(mode), '\0');
+@@ -89,7 +89,7 @@
+ 		scsiprbytes("Mode Sense Data", mode, len - scsigetresid(scgp));
+ 	hdlen = sizeof(struct scsi_mode_header) +
+ 			((struct scsi_mode_header *)mode)->blockdesc_len;
+-	mp = (struct scsi_mode_page_header *)(mode + hdlen);
++	mp = (struct scg_scsi_mode_page_header *)(mode + hdlen);
+ 	if (scgp->verbose)
+ 		scsiprbytes("Mode Page  Data", (u_char *)mp, mp->p_len+2);
+ 

@@ -1,0 +1,89 @@
+--- cdrecord/drv_sony.c.orig	Sun Jul  2 23:11:58 2000
++++ cdrecord/drv_sony.c	Fri Aug 18 22:40:38 2000
+@@ -399,12 +399,12 @@
+ 	msf_t	msf;
+ 
+ 	char			mode[256];
+-	struct scsi_mode_page_header	*mp;
++	struct scg_scsi_mode_page_header	*mp;
+ 	struct sony_924_mode_page_22	*xp;
+ 
+ 	dummy = get_page22_sony(scgp, mode);
+ 	if (dummy >= 0) {
+-		mp = (struct scsi_mode_page_header *)
++		mp = (struct scg_scsi_mode_page_header *)
+ 			(mode + sizeof(struct scsi_mode_header) +
+ 			((struct scsi_mode_header *)mode)->blockdesc_len);
+ 
+@@ -572,7 +572,7 @@
+ 	int	sectype;
+ 	int	tracktype;
+ {
+-	struct	scsi_mode_page_header *mp;
++	struct	scg_scsi_mode_page_header *mp;
+ 	char			mode[256];
+ 	int			len = 0x30;
+ 	int			page = 0x23;
+@@ -590,7 +590,7 @@
+ 	if (len == 0)
+ 		return (-1);
+ 
+-	mp = (struct scsi_mode_page_header *)
++	mp = (struct scg_scsi_mode_page_header *)
+ 		(mode + sizeof(struct scsi_mode_header) +
+ 		((struct scsi_mode_header *)mode)->blockdesc_len);
+ 
+@@ -613,7 +613,7 @@
+ 	int	sectype;
+ 	int	tracktype;
+ {
+-	struct	scsi_mode_page_header *mp;
++	struct	scg_scsi_mode_page_header *mp;
+ 	char			mode[256];
+ 	int			len = 0x30;
+ 	int			page = 0x23;
+@@ -635,7 +635,7 @@
+ 	if (len == 0)
+ 		return (-1);
+ 
+-	mp = (struct scsi_mode_page_header *)
++	mp = (struct scg_scsi_mode_page_header *)
+ 		(mode + sizeof(struct scsi_mode_header) +
+ 		((struct scsi_mode_header *)mode)->blockdesc_len);
+ 
+@@ -707,7 +707,7 @@
+ 	int	toctype;
+ 	int	multi;
+ {
+-	struct	scsi_mode_page_header *mp;
++	struct	scg_scsi_mode_page_header *mp;
+ 	char			mode[256];
+ 	int	i;
+ 	int	len = 0x30;
+@@ -718,7 +718,7 @@
+ 	if ((len = get_page22_sony(scgp, mode)) < 0)
+ 		return (-1);
+ 
+-	mp = (struct scsi_mode_page_header *)
++	mp = (struct scg_scsi_mode_page_header *)
+ 		(mode + sizeof(struct scsi_mode_header) +
+ 		((struct scsi_mode_header *)mode)->blockdesc_len);
+ 
+@@ -747,7 +747,7 @@
+ 	SCSI	*scgp;
+ 	char	*mode;
+ {
+-	struct	scsi_mode_page_header *mp;
++	struct	scg_scsi_mode_page_header *mp;
+ 	int	len = 0x30;
+ 	int	page = 0x22;
+ 	struct sony_924_mode_page_22	*xp;
+@@ -764,7 +764,7 @@
+ 	if (len == 0)
+ 		return (-1);
+ 
+-	mp = (struct scsi_mode_page_header *)
++	mp = (struct scg_scsi_mode_page_header *)
+ 		(mode + sizeof(struct scsi_mode_header) +
+ 		((struct scsi_mode_header *)mode)->blockdesc_len);
+ 
