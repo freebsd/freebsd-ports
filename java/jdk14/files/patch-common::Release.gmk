@@ -4,17 +4,16 @@ RCS file: /data/java/JDK2/javasrc_1_3_scsl/j2sdk1.3.1/make/common/Release.gmk,v
 retrieving revision 1.7
 diff -u -r1.7 common/Release.gmk
 --- common/Release.gmk	21 Jan 2002 22:40:08 -0000	1.7
-+++ common/Release.gmk	9 Mar 2002 18:01:51 -0000
-@@ -521,10 +521,18 @@
++++ common/Release.gmk	10 Apr 2002 18:02:30 -0000
+@@ -521,10 +521,17 @@
  	@# src.jar
  	@#
  	$(MKDIR) -p $(JDK_IMAGE_DIR)/src
 +ifeq ($(PLATFORM), bsd) 
 +	# Avoid the "argument list too long" problem.
 +	($(CD) $(SHARE_SRC)/classes; \
-+	    for list in `$(FIND) $(SOURCES) -name CVS -prune -o -name SCCS -prune -o  -name '*.java' -print`; do \
-+	        $(TAR) cf - $$list | ($(CD) $(JDK_IMAGE_DIR)/src; $(TAR) xvf -); \
-+	    done)
++	    $(FIND) $(SOURCES) -name CVS -prune -o -name SCCS -prune -o  -name '*.java' -print \
++	    | $(CPIO) -pd $(JDK_IMAGE_DIR)/src)
 +else
  	($(CD) $(SHARE_SRC)/classes; $(TAR) cf - \
  	    `$(FIND) $(SOURCES) -name CVS -prune -o -name SCCS -prune -o \
