@@ -6,17 +6,19 @@
 #
 
 PORTNAME=	gnugo
-PORTVERSION=	2.6
+PORTVERSION=	3.0.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gnugo
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	spcoltri@omcl.org
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 MAN6=		gnugo.6
-MANCOMPRESSED=	no
+
+post-extract:
+	${RM} -f ${WRKSRC}/doc/gnugo.info*
 
 .include <bsd.port.mk>
