@@ -5,32 +5,33 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ganglia-monitor-core
+PORTNAME=	monitor-core
 PORTVERSION=	3.0.0
+PORTREVISION=	1
 CATEGORIES=	sysutils net parallel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ganglia
+PKGNAMEPREFIX=	ganglia-
 DISTNAME=	ganglia-${PORTVERSION}
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Ganglia cluster monitor, monitoring daemon
 
-PKGINSTALL=	${WRKSRC}/pkg-install
-
 .if defined (WITH_GMETAD)
 LIB_DEPENDS=	rrd.0:${PORTSDIR}/net/rrdtool
 .endif
 
+PKGINSTALL=	${WRKSRC}/pkg-install
+
 OPTIONS+=	GMETAD "include gmetad" on
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	CFLAGS="${_CFLAGS}" LDFLAGS="${_LDFLAGS}"
+_CFLAGS=	${CFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+_LDFLAGS=	${LDFLAGS} -L${LOCALBASE}/lib
 
 USE_REINPLACE=	yes
 USE_BZIP2=	yes
-USE_LIBTOOL_VER=	15
 USE_RC_SUBR=	ganglia.sh
 
 SUB_FILES=	pkg-install

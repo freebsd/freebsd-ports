@@ -4,12 +4,13 @@ bin/gstat
 bin/gmetric
 @unexec if cmp -s %D/etc/gmond.conf %D/etc/gmond.conf.sample; then rm -f %D/etc/gmond.conf; fi
 etc/gmond.conf.sample
-%%GMETAD%%@unexec cmp -s %D/etc/gmetad.conf %D/etc/gmetad.conf.sample && rm -f %D/etc/gmetad.conf
+%%GMETAD%%@unexec if cmp -s %D/etc/gmetad.conf %D/etc/gmetad.conf.sample; then rm -f %D/etc/gmetad.conf; fi
 %%GMETAD%%etc/gmetad.conf.sample
 include/ganglia.h
 lib/libganglia-3.0.0.so.0
 lib/libganglia-3.0.0.so
 lib/libganglia.so
+lib/libganglia.la
 lib/libganglia.a
 %%GMETAD%%sbin/gmetad
 sbin/gmond
