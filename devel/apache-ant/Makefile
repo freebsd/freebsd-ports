@@ -6,15 +6,12 @@
 #
 
 PORTNAME=	jakarta-ant
-PORTVERSION=	1.4.1
-PORTREVISION=	2
+PORTVERSION=	1.5.0.b1
 CATEGORIES=	devel java
-MASTER_SITES=	http://jakarta.apache.org/builds/${PORTNAME}/release/v${PORTVERSION}/bin/ \
+MASTER_SITES=	http://jakarta.apache.org/builds/${PORTNAME}/release/v${ANT_VERSION}/bin/ \
 		http://www.metaverse.nl/~ernst/
-DISTFILES=	${DISTNAME}-bin${EXTRACT_SUFX} \
-		${DISTNAME}-optional.jar
+DISTNAME=	${PORTNAME}-${ANT_VERSION}-bin
 DIST_SUBDIR=	jakarta
-EXTRACT_ONLY=	${DISTNAME}-bin${EXTRACT_SUFX}
 
 MAINTAINER=	znerd@FreeBSD.org
 
@@ -23,16 +20,18 @@ RUN_DEPENDS=	${LOCALBASE}/share/java/classes/crimson.jar:${PORTSDIR}/textproc/cr
 USE_JAVA=	1.2+
 
 NO_BUILD=	YES
-PORTDESTDIR=	${PREFIX}/share/java/${DISTNAME}
+PORTDESTDIR=	${PREFIX}/${DISTNAME}
 PLIST_SUB+=	T=${PORTDESTDIR:S/^${PREFIX}\///}
 
 READMES=	LICENSE README WHATSNEW
 SCRIPTS=	bin/ant bin/antRun bin/runant.pl
+ANT_VERSION=	1.5Beta1
 
 DATADIRS=	lib
 .if !defined(NOPORTDOCS)
 DATADIRS+=	docs
 .endif
+WRKSRC=		${WRKDIR}/${PORTNAME}-${ANT_VERSION}
 
 post-patch:
 	@${ECHO_CMD} -n ">> Customizing ant shell script..."
@@ -74,7 +73,6 @@ do-install:
 .endif
 
 	@${ECHO_CMD} -n ">> Installing additional JAR files..."
-	@${INSTALL_DATA} ${_DISTDIR}/${DISTNAME}-optional.jar ${PORTDESTDIR}/lib/optional.jar
 	@${LN} -sf ../../classes/jaxp.jar ${PORTDESTDIR}/lib
 	@${LN} -sf ../../classes/crimson.jar ${PORTDESTDIR}/lib
 	@${ECHO_CMD} " [ DONE ]"
