@@ -316,6 +316,7 @@ XSB/packages/regmatch/cc/CVS/Tag
 XSB/packages/regmatch/cc/.cvsignore
 XSB/packages/regmatch/cc/NMakefile.mak
 XSB/packages/regmatch/cc/xsb_re_match.c
+XSB/packages/regmatch/cc/xsb_re_match.o
 XSB/packages/regmatch/cc/xsb_re_match.H
 XSB/packages/regmatch/cc/xsb_re_match.O
 XSB/packages/regmatch/.cvsignore
@@ -410,6 +411,7 @@ XSB/packages/wildmatch/cc/CVS/Tag
 XSB/packages/wildmatch/cc/.cvsignore
 XSB/packages/wildmatch/cc/NMakefile.mak
 XSB/packages/wildmatch/cc/xsb_wildmatch.c
+XSB/packages/wildmatch/cc/xsb_wildmatch.o
 XSB/packages/wildmatch/cc/xsb_wildmatch.H
 XSB/packages/wildmatch/cc/xsb_wildmatch.O
 XSB/packages/wildmatch/.cvsignore
