@@ -26,6 +26,7 @@
     SUBDIR += epplets
     SUBDIR += evilwm
     SUBDIR += fluxbox
+    SUBDIR += fluxconf
     SUBDIR += flwm
     SUBDIR += fvwm
     SUBDIR += fvwm-themes
