@@ -7,6 +7,7 @@
 
 PORTNAME=	freebsd-update
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.daemonology.net/freebsd-update/
 
