@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkhtml
 PORTVERSION=	1.1.10
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.1
@@ -16,7 +16,7 @@ DIST_SUBDIR=	gnome
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Lightweight HTML rendering/printing/editing engine
 
-LIB_DEPENDS=	pspell.15:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS=	pspell.16:${PORTSDIR}/textproc/aspell
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
