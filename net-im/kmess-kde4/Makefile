@@ -15,8 +15,13 @@ MAINTAINER=	perky@FreeBSD.org
 
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
 .include <bsd.port.pre.mk>
+pre-patch:
+	${REINPLACE_CMD} -e '22s/^.*$$/#include <unistd.h>/' \
+		${WRKSRC}/kmess/kmessview.cpp
+
 .include "${PORTSDIR}/x11/kde3/Makefile.kde"
 .include <bsd.port.post.mk>
