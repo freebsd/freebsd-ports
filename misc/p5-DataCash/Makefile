@@ -15,12 +15,16 @@ MAINTAINER=	markm@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/FreezeThaw.pm:${PORTSDIR}/devel/p5-FreezeThaw \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Text/CSV.pm:${PORTSDIR}/devel/p5-Text-CSV
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Text/CSV.pm:${PORTSDIR}/devel/p5-Text-CSV
 		
 PERL_CONFIGURE=	yes
 
-MAN3=		CCCheck.3
+MAN3=		CCCheck.3 \
+		DataCash::External.3
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+
+post-extract:
+	find ${WRKSRC} -type f -exec perl -spi -e 's/\r//g' {} ';'
 
 .include <bsd.port.mk>
