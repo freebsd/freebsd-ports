@@ -1,0 +1,6 @@
+mergelog is a tool which merges and sorts by date http log files in
+'Common Log Format'. The result is sent to the standard output. It is
+useful to create a single log file for multiple hosts using ro und-robin
+DNS.
+
+WWW: http://mergelog.sourceforge.net/
