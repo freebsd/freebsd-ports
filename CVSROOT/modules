@@ -7275,6 +7275,7 @@ scalapack	ports/math/scalapack
 scandoc		ports/devel/scandoc
 scanssh		ports/security/scanssh
 scdp		ports/net/scdp
+sccmilter	ports/mail/sccmilter
 sced		ports/graphics/sced
 sceptre		ports/cad/sceptre
 scheme48	ports/lang/scheme48
