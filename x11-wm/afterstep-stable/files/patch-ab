@@ -1,0 +1,11 @@
+--- afterstep/zharf.in.orig	Tue Jul 27 11:38:01 1999
++++ afterstep/zharf.in	Mon Sep 27 12:11:45 1999
+@@ -26,7 +26,7 @@
+ *Zharf Disk	-		Swallow "asfsm" asfsm_lite -bg Grey30 -fg Grey70 -bp None -pbg Grey30 -pfg Grey70 -pbp None
+ *Zharf Start 	Start.xpm	Popup "0"
+ *Zharf Swap	Install.xpm	WindowList
+-*Zharf Xiterm	linux-penguin.xpm Exec "xiterm" xterm -fg wheat -bg black &
++*Zharf Xterm	monitor_bsd.xpm Exec "xterm" xterm -fg wheat -bg black &
+ *Zharf Netscape netscape.xpm    Exec "netscape" netscape &
+ *Zharf(3x1) -	whatever	SwallowModule "Pager" Pager 0 @with_desktops_1@
+ *Zharf Quit?	RedFire.xpm	Module "QuitForm" Form QuitForm
