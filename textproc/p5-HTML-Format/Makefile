@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=     petef@databits.net
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/HTML/Element.pm:${PORTSDIR}/www/p5-HTML-Tree \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Font/AFM.pm:${PORTSDIR}/textproc/p5-Font-AFM
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Font/AFM.pm:${PORTSDIR}/x11-fonts/p5-Font-AFM
 
 PERL_CONFIGURE=	yes
 MAN3=		HTML::Formatter.3 HTML::FormatPS.3 HTML::FormatText.3
