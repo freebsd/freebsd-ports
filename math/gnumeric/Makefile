@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnumeric
-PORTVERSION=	0.60
+PORTVERSION=	0.61
 CATEGORIES=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnumeric
@@ -17,7 +17,6 @@ LIB_DEPENDS=	gnomeprint.13:${PORTSDIR}/print/gnomeprint \
 		glade.4:${PORTSDIR}/devel/libglade \
 		guile.9:${PORTSDIR}/lang/guile \
 		gnomeole2.0:${PORTSDIR}/devel/libole2 \
-		gb.0:${PORTSDIR}/lang/gnomebasic \
 		gal.3:${PORTSDIR}/x11-toolkits/gal
 
 USE_X_PREFIX=	yes
@@ -27,7 +26,7 @@ USE_GNOME=	yes
 USE_PYTHON=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	--with-guile --without-bonobo --with-gb
+CONFIGURE_ARGS=	--with-guile --without-bonobo --without-gb
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lintl"
 
