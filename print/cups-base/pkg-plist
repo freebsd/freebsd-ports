@@ -49,7 +49,6 @@ libexec/cups/filter/gziptoany
 libexec/cups/filter/hpgltops
 libexec/cups/filter/imagetops
 libexec/cups/filter/imagetoraster
-libexec/cups/filter/libcupsimage.a
 libexec/cups/filter/pdftops
 libexec/cups/filter/pstops
 libexec/cups/filter/rastertodymo
@@ -154,6 +153,7 @@ share/cups/templates/de/jobs.tmpl
 share/cups/templates/de/modify-class.tmpl
 share/cups/templates/de/modify-printer.tmpl
 share/cups/templates/de/option-boolean.tmpl
+share/cups/templates/de/option-conflict.tmpl
 share/cups/templates/de/option-header.tmpl
 share/cups/templates/de/option-pickmany.tmpl
 share/cups/templates/de/option-pickone.tmpl
@@ -200,6 +200,7 @@ share/cups/templates/fr/jobs.tmpl
 share/cups/templates/fr/modify-class.tmpl
 share/cups/templates/fr/modify-printer.tmpl
 share/cups/templates/fr/option-boolean.tmpl
+share/cups/templates/fr/option-conflict.tmpl
 share/cups/templates/fr/option-header.tmpl
 share/cups/templates/fr/option-pickmany.tmpl
 share/cups/templates/fr/option-pickone.tmpl
