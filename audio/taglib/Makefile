@@ -28,4 +28,3 @@ post-configure:
 	${TOUCH} ${WRKSRC}/config.h.in
 
 .include <bsd.port.mk>
-
