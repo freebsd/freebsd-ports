@@ -236,6 +236,7 @@
     SUBDIR += sonicmail
     SUBDIR += spamass-milter
     SUBDIR += spambnc
+    SUBDIR += spamprobe
     SUBDIR += spruce
     SUBDIR += squirrelmail
     SUBDIR += sqwebmail
