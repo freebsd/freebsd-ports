@@ -2,21 +2,19 @@ bin/geoipexport
 bin/geoipexportlocations
 bin/geoiplookup
 bin/geoipupdate
+@unexec if cmp -s %D/etc/GeoIP.conf %D/etc/GeoIP.conf.default; then rm -f %D/etc/GeoIP.conf; fi
 etc/GeoIP.conf.default
 include/GeoIP.h
 include/GeoIPBitReader.h
 include/GeoIPCity.h
 include/GeoIPUpdate.h
 lib/libGeoIP.a
-lib/libGeoIP.la
 lib/libGeoIP.so
-lib/libGeoIP.so.3
+lib/libGeoIP.so.4
 lib/libGeoIPBitReader.a
-lib/libGeoIPBitReader.la
 lib/libGeoIPBitReader.so
 lib/libGeoIPBitReader.so.0
 lib/libGeoIPUpdate.a
-lib/libGeoIPUpdate.la
 lib/libGeoIPUpdate.so
 lib/libGeoIPUpdate.so.0
 share/GeoIP/GeoIP.dat

@@ -1,4 +1,0 @@
-***
-*** Please do this after you've ran the installation:
-*** - Copy ${PREFIX}/etc/GeoIP.conf.default to ${PREFIX}/etc/GeoIP.conf
-***
