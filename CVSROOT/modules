@@ -5456,7 +5456,7 @@ p5-Math-Calc-Units	ports/math/p5-Math-Calc-Units
 p5-Math-Currency	ports/math/p5-Math-Currency
 p5-Math-Expr	ports/math/p5-Math-Expr
 p5-Math-FFT	ports/math/p5-Math-FFT
-p5-Math-Financial	ports/math/p5-Math-Financial
+p5-Math-Financial	ports/finance/p5-Math-Financial
 p5-Math-FixedPrecision	ports/math/p5-Math-FixedPrecision
 p5-Math-GMP	ports/math/p5-Math-GMP
 p5-Math-Interpolate	ports/math/p5-Math-Interpolate
@@ -6310,7 +6310,7 @@ pstotext	ports/print/pstotext
 pstree		ports/sysutils/pstree
 psutils-a4	ports/print/psutils-a4
 psutils-letter	ports/print/psutils-letter
-pt-aspell	ports/textproc/pt-aspell
+pt-aspell	ports/portuguese/aspell
 pt-ooodict-BR	ports/editors/ooodict-pt_BR
 pt-ooodict-PT	ports/editors/ooodict-pt_PT
 pt-openoffice	ports/editors/openoffice-pt
@@ -8697,7 +8697,7 @@ xmmix		ports/audio/xmmix
 xmms		ports/audio/xmms
 xmms-a52dec	ports/audio/xmms-a52dec
 xmms-alarm	ports/x11-clocks/xmms-alarm
-xmms-avi	ports/graphics/xmms-avi
+xmms-avi	ports/multimedia/xmms-avi
 xmms-blursk	ports/graphics/xmms-blursk
 xmms-bonk	ports/audio/xmms-bonk
 xmms-crossfade	ports/audio/xmms-crossfade
