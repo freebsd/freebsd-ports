@@ -21,6 +21,7 @@
     SUBDIR += java-commapi
     SUBDIR += java-commapi-freebsd
     SUBDIR += kermit
+    SUBDIR += kpsk
     SUBDIR += lrzsz
     SUBDIR += ltmdm
     SUBDIR += mgetty+sendfax

@@ -1,0 +1,13 @@
+bin/kpsk
+share/applnk/Applications/HamRadio/kpsk.desktop
+share/icons/locolor/32x32/apps/kpsk.png
+share/icons/locolor/16x16/apps/kpsk.png
+share/locale/es/LC_MESSAGES/kpsk.mo
+share/doc/HTML/en/kpsk/index.docbook
+share/doc/HTML/en/kpsk/index.cache.bz2
+share/apps/kpsk/dxcc.db
+share/doc/HTML/en/kpsk/common
+%%PORTDOCS%%share/doc/HTML/en/kpsk/handbook.html
+@dirrm share/apps/kpsk
+@dirrm share/doc/HTML/en/kpsk
+@dirrm share/applnk/Applications/HamRadio

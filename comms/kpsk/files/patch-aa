@@ -1,0 +1,11 @@
+--- configure.orig	Thu Oct 24 11:17:10 2002
++++ configure	Thu Oct 24 11:17:32 2002
+@@ -8703,7 +8703,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-ldb-4.0  $LIBS"
++LIBS="-ldb-4.0 $USER_LDFLAGS  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 8709 "configure"
+ #include "confdefs.h"
