@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=       HTML-Parser-3.02
-PKGNAME=        p5-HTML-Parser-3.02
+DISTNAME=       HTML-Parser-3.05
+PKGNAME=        p5-HTML-Parser-3.05
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
