@@ -1,40 +1,14 @@
-*** old/vw_converter.C	Thu Jan 30 00:22:41 1997
---- vw_converter.C	Mon Jul 12 15:28:20 1999
-***************
-*** 27,33 ****
---- 27,37 ----
-  #pragma implementation
-  #endif
-  
-+ #ifdef __FreeBSD__
-+ #include <machine/soundcard.h>
-+ #else
-  #include <sys/soundcard.h>
-+ #endif
-  #include "localdefs.h"
-  #include "application.h"
-  #include "vw_converter.h"
-***************
-*** 114,122 ****
-  		fprintf(stderr, "setting frag size code to 0x%x\n", sizeCode);
-  #endif
-  
-  		if (!ioctl (SNDCTL_DSP_SETFRAGMENT, (char *) &sizeCode))
-  			error("Unable to set fragment size.");
-! 		else if (!ioctl(SNDCTL_DSP_SETFMT, (char *) &confirmedFormat))
-  			error("Unable to set sample format.");
-  		else if(confirmedFormat != sampleFormat)
-  			error("This sample format not supported by hardware.");
---- 118,129 ----
-  		fprintf(stderr, "setting frag size code to 0x%x\n", sizeCode);
-  #endif
-  
-+ #ifndef __FreeBSD__
-  		if (!ioctl (SNDCTL_DSP_SETFRAGMENT, (char *) &sizeCode))
-  			error("Unable to set fragment size.");
-! 		else 
-! #endif
-! 		if (!ioctl(SNDCTL_DSP_SETFMT, (char *) &confirmedFormat))
-  			error("Unable to set sample format.");
-  		else if(confirmedFormat != sampleFormat)
-  			error("This sample format not supported by hardware.");
+--- vw_converter.C.orig	Sun Feb 18 04:29:16 2001
++++ vw_converter.C	Mon Jan 13 16:09:13 2003
+@@ -36,7 +36,11 @@
+ #ifdef DEBUG_MIXER
+ #include <string.h>
+ #endif
++#ifdef __FreeBSD__
++#include <machine/soundcard.h>
++#else
+ #include <sys/soundcard.h>
++#endif
+ #include <String.h>
+ #include "localdefs.h"
+ #include "application.h"

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mxv
-PORTVERSION=	1.20
+PORTVERSION=	1.25
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.create.ucsb.edu/pub/MixViews/source/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}-source
@@ -15,7 +15,8 @@ MAINTAINER=	ports@FreeBSD.org
 
 BROKEN=		"Does not build"
 
-BUILD_DEPENDS=	${LOCALBASE}/interviews/bin/FREEBSD/ivmkmf:${PORTSDIR}/x11-toolkits/iv
+BUILD_DEPENDS=	${LOCALBASE}/interviews/bin/FREEBSD/ivmkmf:${PORTSDIR}/x11-toolkits/iv \
+		${LOCALBASE}/include/f2c.h:${PORTSDIR}/lang/f2c
 
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
