@@ -3,18 +3,23 @@
 # Date created:		19 Feb 1998
 # Whom:			eivind
 #
-# $Id: Makefile,v 1.2 1998/02/25 07:44:50 asami Exp $
+# $Id: Makefile,v 1.3 1998/03/08 23:29:59 fenner Exp $
 #
 
-DISTNAME=	xscavenger-1.3
+PKGNAME=	xscavenger-1.3.2
+DISTNAME=	xscavenger-132
 CATEGORIES=	games
-MASTER_SITES=	http://www.epyx.com/dash/
-DISTFILES=	xscavenger-13.tgz
+MASTER_SITES=	http://epyx.com/dash/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	eivind@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=yes
+MAN6=		scavenger.6
+
+post-install:
+	@${INSTALL_MAN} ${WRKSRC}/scavenger.6 ${PREFIX}/man/man6/scavenger.6
 
 .include <bsd.port.mk>
