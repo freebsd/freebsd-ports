@@ -7,7 +7,7 @@
 #
 
 DISTNAME=	helvis-1.8h2-
-PKGNAME=	ko-helvis-1.8h2-
+PKGNAME=	ko-helvis-1.8h2
 CATEGORIES=	korean editors
 MASTER_SITES=	ftp://ftp.kaist.ac.kr/pub/hangul/editor/HElvis/ \
 		ftp://sunsite.kren.nm.kr/pub/packages/hangul/editor/HElvis/
