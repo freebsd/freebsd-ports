@@ -6,7 +6,6 @@
 #
 
 PKGNAMESUFFIX=	-ssl
-CATEGORIES=	www ipv6
 
 MASTERDIR=     ${.CURDIR}/../../www/w3m
 PKGDIR=        ${.CURDIR}/pkg

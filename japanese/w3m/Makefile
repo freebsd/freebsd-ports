@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	japanese www ipv6
+CATEGORIES=	japanese
 
 MASTERDIR=	${.CURDIR}/../../www/w3m
 PKGDIR=		${.CURDIR}/pkg

@@ -7,7 +7,7 @@
 
 PORTNAME=	w3m
 PORTVERSION?=	${W3M_VER}
-CATEGORIES?=	www ipv6
+CATEGORIES+=	www ipv6
 MASTER_SITES=	ftp://ei5nazha.yz.yamagata-u.ac.jp/w3m/dev/ \
 		ftp://ftp.firedrake.org/w3m/dev/ \
 		http://www.instinct.org/~pgl/w3m/dev/ \
