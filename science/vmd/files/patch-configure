@@ -1,6 +1,23 @@
---- configure-xxx	Fri Dec  5 13:20:58 2003
-+++ configure	Thu Aug 12 00:22:30 2004
-@@ -624,8 +624,8 @@
+--- configure.orig	Sat Dec  6 04:20:58 2003
++++ configure	Wed Feb  2 21:16:23 2005
+@@ -46,6 +46,7 @@
+ # ---------------------------------------------------------------
+ # AIX4        - compile on an RS/6000 machine (gcc/g++/xlc/xlC)
+ # FREEBSD     - compile on a FreeBSD machine (gcc/g++)
++# FREEBSDAMD64- compile on a FreeBSD machine (gcc/g++)
+ # HPUX11      - compile on an HP-UX 11.0 machine (cc/CC/cc/aCC)
+ # IRIX6       - compile on an SGI, IRIX 6.X or later, 32-bit ABI
+ # IRIX6_64    - compile on an SGI, IRIX 6.X or later, 64-bit ABI
+@@ -116,7 +117,7 @@
+ 
+ #################### Parse command line options   ###########
+ # list of allowed architectures
+-@archlist=('IRIX6', 'IRIX6_64', 'FREEBSD', 'HPUX11', 'AIX4', 'LINUX', 'LINUXALPHA', 'LINUXAMD64', 'LINUXPPC', 'MACOSX', 'TRU64', 'SOLARIS2', 'SOLARIS2_64', 'SOLARISX86', 'WIN32');
++@archlist=('IRIX6', 'IRIX6_64', 'FREEBSD', 'FREEBSDAMD64', 'HPUX11', 'AIX4', 'LINUX', 'LINUXALPHA', 'LINUXAMD64', 'LINUXPPC', 'MACOSX', 'TRU64', 'SOLARIS2', 'SOLARIS2_64', 'SOLARISX86', 'WIN32');
+ 
+ if ($#ARGV == -1) {
+     $text = `cat configure.options`;
+@@ -624,8 +625,8 @@
  # This may be commented out if not required.
  $libtachyon_defines        = "-DVMDLIBTACHYON";
  $libtachyon_dir         = "$vmd_library_dir/tachyon";
@@ -11,7 +28,7 @@
  $libtachyon_libs        = "-ltachyon";
  @libtachyon_cc             = ();
  @libtachyon_ccpp           = ('LibTachyonDisplayDevice.C'
-@@ -1174,8 +1174,10 @@
+@@ -1174,8 +1175,10 @@
  
      # XFree 4.0 Direct Rendering Interface and GLX 
      $opengl_dir         = "/usr/X11R6";
@@ -24,11 +41,70 @@
      $opengl_libs        = "-lGL -lGLU"; 
  
      $arch_lex      = "flex";
-@@ -1209,7 +1211,7 @@
+@@ -1209,7 +1212,66 @@
  
      # this is to make tcl happy,
      # also needed for plugins
 -    $system_libs .= " -ldl";
++    # $system_libs .= " -ldl";
++ 
++    if ($config_python) {
++      # this is to make python happy
++      $system_libs .= " -lutil";
++    }
++
++    # this is necessary for the embedded Python interpreter to dynamically
++    # load shared libraries.  It increases the size of the binary by 200k.
++    $arch_lopts .= " -Xlinker -export-dynamic";
++}
++
++
++
++if ($config_arch eq "FREEBSDAMD64") {
++    $def_imageviewer="display %s";
++    if ($config_lp64) {
++      print "LP64 ABI is already the default on this platform.\n";
++    }
++
++    # XFree 4.0 Direct Rendering Interface and GLX 
++    $opengl_dir         = "/usr/X11R6";
++# -DGLX_GLXEXT_LEGACY is required for patched OpenGLExtensions.C to compile.
++# See patched OpenGLExtensions.C for explanation.
++    $opengl_include     = "-DGLX_GLXEXT_LEGACY -I$opengl_dir/include";
++    $opengl_library     = "-L$opengl_dir/lib -L/usr/local/lib";
++    $opengl_libs        = "-lGL -lGLU"; 
++
++    $arch_lex      = "flex";
++    $arch_yacc     = "bison -b y -d ";  # If standard yacc doesn't work
++
++    $arch_cc          = "gcc";
++    $arch_ccpp        = "g++";
++    $arch_depend_flag = "-MM";
++    $arch_shld        = "ld -shared";
++    $arch_shlibname   = "so";
++    $arch_shcppopts   = "-fPIC";
++    $arch_shldopts    = "-L/usr/local/lib -L/usr/X11R6/lib";
++
++    $arch_opt_flag	= "-m64 -Wall -O6 -ffast-math";
++    $arch_copts	        = "-m64 -Wall -O6 -ffast-math";
++
++    if ($config_static) {
++      $arch_lopts       = "-static";
++      $mesa_libs        = "-lMesaGL -lMesaGLU -L/usr/X11R6/lib -lXext -lX11";
++    } else {
++      $arch_lopts       = "";
++      $mesa_libs        = "-lGL -lGLU -L/usr/X11R6/lib -lXext -lX11";
++    }
++
++    if ($config_shared) {
++      $arch_lopts       = "-shared";
++    }
++
++    # a hack - to be removed, just keeps make happy
++    $arch_template_repository = "foobar";
++
++    # this is to make tcl happy,
++    # also needed for plugins
 +    # $system_libs .= " -ldl";
   
      if ($config_python) {

@@ -5,7 +5,7 @@
  #endif
  
 -#if !defined(_MSC_VER) && !defined(ARCH_MACOSX)
-+#if !defined(_MSC_VER) && !defined(ARCH_MACOSX) && !defined(ARCH_FREEBSD)
++#if !defined(_MSC_VER) && !defined(ARCH_MACOSX) && !defined(ARCH_FREEBSD) && !defined(ARCH_FREEBSDAMD64)
  #include <values.h>
  #endif
  

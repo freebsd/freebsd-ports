@@ -1,6 +1,6 @@
---- Makefile-ooo	Fri Dec  5 13:20:58 2003
-+++ Makefile	Thu Aug 12 00:12:06 2004
-@@ -52,11 +52,11 @@
+--- Makefile.orig	Sat Dec  6 04:20:58 2003
++++ Makefile	Wed Feb  2 21:30:13 2005
+@@ -52,11 +52,14 @@
  
  ## FreeBSD builds
  freebsd.mesa:
@@ -11,6 +11,9 @@
  freebsd.opengl:
 -	./configure FREEBSD OPENGL FLTK TK IMD VRPN SILENT SPACEBALL TCL PTHREADS ACTC LIBTACHYON PYTHON NUMPY
 +	./configure FREEBSD OPENGL FLTK TK IMD SILENT TCL PTHREADS LIBTACHYON PYTHON NUMPY
++
++freebsd.amd64.opengl:
++	./configure FREEBSDAMD64 OPENGL FLTK TK IMD SILENT TCL PTHREADS LIBTACHYON PYTHON NUMPY
  
  
  

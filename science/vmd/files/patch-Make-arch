@@ -1,0 +1,31 @@
+--- ../plugins/Make-arch.orig	Fri Nov 14 07:50:25 2003
++++ ../plugins/Make-arch	Fri Jan 21 19:30:53 2005
+@@ -9,6 +9,7 @@
+ 	@echo "--------------------------------------"
+ 	@echo " AIX4"
+ 	@echo " FREEBSD"
++	@echo " FREEBSDAMD64"
+ 	@echo " HPUX11"
+ 	@echo " IRIX6"
+ 	@echo " IRIX6_64"
+@@ -142,6 +143,20 @@
+ 	"CXX = g++" \
+ 	"CCFLAGS = -O2 -Wall -ansi -I/usr/local/include/tcl8.4" \
+ 	"CXXFLAGS = -O2 -Wall" \
++	"TCLLDFLAGS = -L/usr/local/lib -ltcl84" \
++	"NM = nm -p" \
++	"RANLIB = touch" \
++	"SHLD = gcc -shared"
++
++FREEBSDAMD64:
++	$(MAKE) dynlibs staticlibs \
++	"ARCH = FREEBSDAMD64" \
++	"COPTO = -fPIC -m64 -o " \
++	"LOPTO = -fPIC -m64 -o " \
++	"CC = gcc" \
++	"CXX = g++" \
++	"CCFLAGS = -m64 -O2 -Wall -ansi -I/usr/local/include/tcl8.4" \
++	"CXXFLAGS = -m64 -O2 -Wall" \
+ 	"TCLLDFLAGS = -L/usr/local/lib -ltcl84" \
+ 	"NM = nm -p" \
+ 	"RANLIB = touch" \
