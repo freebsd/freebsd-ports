@@ -7,8 +7,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	vim-5.4
-PKGNAME?=	vim-5.4.49
+DISTNAME=	vim-5.5
+PKGNAME?=	vim-5.5
 CATEGORIES=	editors
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
 		ftp://ftp.nuxi.com/pub/vim/unix/ \
@@ -19,12 +19,7 @@ MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
 DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX} ${DISTNAME}-rt${EXTRACT_SUFX}
 
 PATCH_SITES=	${MASTER_SITES:S/unix/patches/}
-PATCHFILES=	5.4.1 5.4.2 5.4.3 5.4.4 5.4.5 5.4.6 5.4.7 5.4.8 5.4.9 5.4.10 \
-		5.4.11 5.4.12 5.4.13 5.4.14 5.4.15 5.4.16 5.4.17 5.4.18 \
-		5.4.19 5.4.20 5.4.21 5.4.22 5.4.23 5.4.24 5.4.25 5.4.26 5.4.27 \
-		5.4.28 5.4.29 5.4.30 5.4.31 5.4.32 5.4.33 5.4.34 5.4.35 5.4.36 \
-		5.4.37 5.4.38 5.4.39 5.4.40 5.4.41 5.4.42 5.4.43 5.4.44 5.4.45 \
-		5.4.46 5.4.47 5.4.48 5.4.49
+PATCHFILES=
 
 MAINTAINER=     obrien@FreeBSD.org
 
