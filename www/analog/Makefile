@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	analog
-PORTVERSION=	5.21
+PORTVERSION=	5.22
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.analog.cx/ \
