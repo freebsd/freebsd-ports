@@ -246,6 +246,15 @@ pre-fetch:
 	@${ECHO} "quality of glyphs at small bitmap sizes."
 	@${ECHO}
 .endif
+.if !defined(WITH_GIF_LZW_COMPRESSION)
+	@${ECHO}
+	@${ECHO} "You may set WITH_GIF_LZW_COMPRESSION=YES"
+	@${ECHO} "If you want to make compressed gif images"
+	@${ECHO}
+	@${ECHO} "If must have license from the Unisys and IBM patents"
+	@${ECHO} "to enable this option to get compressed GIF images."
+	@${ECHO}
+.endif
 .if ${OSVERSION} < 450002
 	@${ECHO}
 	@${ECHO} "OS-VERSION ${OSVERSION} too low"
@@ -356,6 +365,17 @@ post-patch:
 			${ECHO_MSG} "===>   Applying ${OPSYS} patch ${PATCHDIR}/optpatch-freetype::patch" ; \
 		fi; \
 		${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/optpatch-freetype+patch ; \
+	fi
+.endif
+.if !defined(WITH_GIF_LZW_COMPRESSION)
+	@if [ "`echo ${PATCHDIR}/gifpatch-*`" != "${PATCHDIR}/gifpatch-*" ]; then \
+		${ECHO_MSG} "===>  Removing GIF LZW compression for ${PKGNAME}" ; \
+		if [ ${PATCH_DEBUG_TMP} = yes ]; then \
+			${ECHO_MSG} "===>   Applying GIF LZW compression ${OPSYS} patch" ; \
+		fi; \
+		${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/gifpatch-goodies+source+filter.vcl+egif+giflzwc.cxx ; \
+		${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/gifpatch-goodies+source+filter.vcl+egif+giflzwc_disabled.cxx ; \
+		${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/gifpatch-goodies+source+filter.vcl+egif+makefile.mk ; \
 	fi
 .endif
 .if defined(WITH_DEBUG)
@@ -502,6 +522,8 @@ pre-install:
 	@${SED} -i orig -e 's#%%PREFIX%%#${PREFIX}#g' \
 	-e 's#%%PORTVERSION%%#${BUILD_NR}#g' \
 	${WRKSRC}/../instsetoo/unxfbsd.pro/${LANG_EXT}/normal/oo_setup.resp
+	@${MKDIR} -p ${WRKSRC}/../solver/644/unxfbsd.pro/bin/${LANG_EXT}/osl/
+	@${CP}	${WRKSRC}/../solver/644/unxfbsd.pro/bin/01/osl/* ${WRKSRC}/../solver/644/unxfbsd.pro/bin/${LANG_EXT}/osl/
 
 do-install:
 .if !defined(DISPLAY)
