@@ -1,0 +1,11 @@
+--- acid_conf.php	Mon Mar  4 00:02:44 2002
++++ /usr/local/www/acid/acid_conf.php	Wed Apr 10 00:22:38 2002
+@@ -9,7 +9,7 @@
+  *        $foo = "c:\tmp"    [OK]
+  *        $foo = "c:\tmp\"   [WRONG]
+  */
+-$DBlib_path = "";
++$DBlib_path = "/usr/local/www/data.default/php/adodb";
+ 
+ /* The type of underlying alert database
+  * 

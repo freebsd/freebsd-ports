@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	acid
-PORTVERSION=	0.9.6b20
+PORTVERSION=	0.9.6b21
 CATEGORIES=	security
 MASTER_SITES=	http://www.andrew.cmu.edu/~rdanyliw/snort/
 
@@ -14,7 +14,8 @@ MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4 \
 		${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql323-server \
-		${LOCALBASE}/bin/snort:${PORTSDIR}/security/snort
+		${LOCALBASE}/bin/snort:${PORTSDIR}/security/snort \
+		${LOCALBASE}/www/data.default/php/adodb:${PORTSDIR}/databases/adodb
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
