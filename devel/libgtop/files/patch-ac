@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- configure.orig	Mon Jan 28 16:26:32 2002
-+++ configure	Mon Jan 28 16:34:25 2002
+--- configure.orig	Tue Nov 27 00:50:58 2001
++++ configure	Fri Jul 12 15:38:19 2002
 @@ -1260,10 +1260,10 @@
  
  # The aliases save the names the user supplied, while $host etc.
@@ -31,3 +31,11 @@ $FreeBSD$
  LT_VERSION_INFO='-version-info ${LT_CURRENT}:${LT_REVISION}:${LT_AGE}'
  
  if test x = y; then
+@@ -7555,6 +7555,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
