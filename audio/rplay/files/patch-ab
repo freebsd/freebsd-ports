@@ -1,0 +1,39 @@
+*** rplayd/Makefile.in.orig	Fri Feb  2 03:13:57 1996
+--- rplayd/Makefile.in	Fri Jun 13 19:31:38 1997
+***************
+*** 1,4 ****
+--- 1,5 ----
+  include @RPLAY_TOP@/Makefile.config
++ bindir=         $(exec_prefix)/sbin
+  
+  srcdir = @srcdir@
+  VPATH = @srcdir@
+***************
+*** 9,21 ****
+  MKINSTALLDIRS= @srcdir@/../mkinstalldirs
+  
+  CPPFLAGS=	$(CC_OPTIONS) -I. -I../include -I@srcdir@ -I@srcdir@/../include -I@srcdir@/../lib \
+! 		-I@srcdir@/../adpcm -I@srcdir@/../gsm @DEFS@
+  
+  .c.o:
+  		$(CC) -c $(CPPFLAGS) $(CFLAGS) $<
+  
+  LDFLAGS=	$(LD_OPTIONS) -L../librplay -lrplay -L../lib -lrp \
+! 		-L../adpcm -ladpcm -L../gsm -lgsm @LDFLAGS@ @LIBS@ -lm
+  
+  TARGET=		rplayd
+  
+--- 10,22 ----
+  MKINSTALLDIRS= @srcdir@/../mkinstalldirs
+  
+  CPPFLAGS=	$(CC_OPTIONS) -I. -I../include -I@srcdir@ -I@srcdir@/../include -I@srcdir@/../lib \
+! 		-I@srcdir@/../adpcm -I/usr/local/include @DEFS@
+  
+  .c.o:
+  		$(CC) -c $(CPPFLAGS) $(CFLAGS) $<
+  
+  LDFLAGS=	$(LD_OPTIONS) -L../librplay -lrplay -L../lib -lrp \
+! 		-L../adpcm -ladpcm -L/usr/local/lib -lgsm @LDFLAGS@ @LIBS@ -lm
+  
+  TARGET=		rplayd
+  
