@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	steghide
-PORTVERSION=	0.4.2
+PORTVERSION=	0.4.3
 CATEGORIES=	security
 MASTER_SITES=	http://steghide.sourceforge.net/download/
 
@@ -15,7 +15,7 @@ MAINTAINER=	rara.rasputin@virgin.net
 LIB_DEPENDS=	mcrypt.6:${PORTSDIR}/security/libmcrypt \
 		mhash.2:${PORTSDIR}/security/mhash
 
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib"
 
