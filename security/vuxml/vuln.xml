@@ -32,6 +32,52 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   "http://www.vuxml.org/dtd/vuxml-1/vuxml-10.dtd">
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
 
+  <vuln vid="cdf18ed9-7f4a-11d8-9645-0020ed76ef5a">
+    <topic>multiple vulnerabilities in ethereal</topic>
+    <affects>
+      <package>
+	<name>ethereal</name>
+	<range><lt>0.10.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Stefan Esser of e-matters Security discovered a baker's dozen
+	  of buffer overflows in Ethereal's decoders, including:</p>
+	<ul>
+	  <li>NetFlow</li>
+	  <li>IGAP</li>
+	  <li>EIGRP</li>
+	  <li>PGM</li>
+	  <li>IRDA</li>
+	  <li>BGP</li>
+	  <li>ISUP</li>
+	  <li>TCAP</li>
+	  <li>UCP</li>
+	</ul>
+	<p>In addition, a vulnerability in the RADIUS decoder was found
+	  by Jonathan Heusser.</p>
+	<p>Finally, there are is one uncredited
+	  vulnerability described by the Ethereal team as:</p>
+	<blockquote
+	  cite="http://www.ethereal.com/appnotes/enpa-sa-00013.html">
+	    <p>A zero-length Presentation protocol selector could make
+	    Ethereal crash.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.ethereal.com/appnotes/enpa-sa-00013.html</url>
+      <cvename>CAN-2004-0176</cvename>
+      <cvename>CAN-2004-0365</cvename>
+      <cvename>CAN-2004-0367</cvename>
+    </references>
+    <dates>
+      <discovery>2004-03-23</discovery>
+      <entry>2004-03-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="705e003a-7f36-11d8-9645-0020ed76ef5a">
     <topic>squid ACL bypass due to URL decoding bug</topic>
     <affects>
