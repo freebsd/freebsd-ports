@@ -1,0 +1,7 @@
+Portmon is a network service monitoring daemon. Portmon
+basically uses a list of hosts and port numbers, and tries to
+connect to each host on the list at a regular time interval. It
+is a lightweight program, and requires no software to be
+installed on the machines one wishes to monitor.
+
+WWW: http://www.aboleo.net/software/portmon

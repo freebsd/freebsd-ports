@@ -1,0 +1,4 @@
+bin/portmon
+etc/portmon.hosts.sample
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
