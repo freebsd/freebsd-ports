@@ -1,6 +1,6 @@
---- configure.in.orig	Thu Aug 31 08:37:36 2000
-+++ configure.in	Thu Nov 30 00:56:41 2000
-@@ -233,15 +233,15 @@
+--- configure.in.orig	Thu Dec 14 06:47:13 2000
++++ configure.in	Fri Dec 15 23:12:19 2000
+@@ -244,15 +244,15 @@
  		CFLAGS="$CFLAGS -I$WITH_SSL_PFX/include"
  		LDFLAGS="$LDFLAGS -L$WITH_SSL_PFX/lib"
  	fi
@@ -19,7 +19,7 @@
  	fi
  fi
  
-@@ -250,7 +250,7 @@
+@@ -269,7 +269,7 @@
  	echo 'void f(){}' > conftest.c
  	if test -z "`${CC-cc} -pthread -c conftest.c 2>&1`"; then
  		ac_ccpthread_opt=yes
@@ -28,14 +28,3 @@
  		x_libs="-pthread $x_libs"
  		HAVE_MT="yes"
  	else
-@@ -297,8 +297,8 @@
- 
- 	dnl Test for gtk
- 	if eval "test x$WITH_GTK = xyes"; then
--		AC_CHECK_PROG(GTK_CONFIG, $WITH_GTK_CONFIG, "yes", "no")
--		if eval "test x$GTK_CONFIG = xyes"; then
-+		AC_CHECK_PROG(GTK_CONFIG_SCRIPT, $WITH_GTK_CONFIG, "yes", "no")
-+		if eval "test x$GTK_CONFIG_SCRIPT = xyes"; then
- 			AC_MSG_RESULT("checking for gtk configuration using gtk-config script ...")
- 			if eval "test x$HAVE_MT = xyes"; then
- 				GTK_LIBS=`$WITH_GTK_CONFIG --libs gtk gthread`
