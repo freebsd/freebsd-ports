@@ -1,0 +1,34 @@
+bin/cstest
+bin/static.cgi
+include/ClearSilver/ClearSilver.h
+include/ClearSilver/cgi/cgi.h
+include/ClearSilver/cgi/cgiwrap.h
+include/ClearSilver/cgi/date.h
+include/ClearSilver/cgi/html.h
+include/ClearSilver/cs/cs.h
+include/ClearSilver/cs_config.h
+include/ClearSilver/util/dict.h
+include/ClearSilver/util/filter.h
+include/ClearSilver/util/neo_date.h
+include/ClearSilver/util/neo_err.h
+include/ClearSilver/util/neo_files.h
+include/ClearSilver/util/neo_hash.h
+include/ClearSilver/util/neo_hdf.h
+include/ClearSilver/util/neo_misc.h
+include/ClearSilver/util/neo_net.h
+include/ClearSilver/util/neo_rand.h
+include/ClearSilver/util/neo_server.h
+include/ClearSilver/util/neo_str.h
+include/ClearSilver/util/rcfs.h
+include/ClearSilver/util/skiplist.h
+include/ClearSilver/util/ulist.h
+include/ClearSilver/util/ulocks.h
+include/ClearSilver/util/wildmat.h
+lib/libneo_cgi.a
+lib/libneo_cs.a
+lib/libneo_utl.a
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/neo_cgi.so
+@dirrm include/ClearSilver/util
+@dirrm include/ClearSilver/cs
+@dirrm include/ClearSilver/cgi
+@dirrm include/ClearSilver

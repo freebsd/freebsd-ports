@@ -65,6 +65,8 @@
     SUBDIR += cl-lml-clisp
     SUBDIR += cl-lml-cmucl
     SUBDIR += cl-lml-sbcl
+    SUBDIR += clearsilver
+    SUBDIR += clearsilver-python
     SUBDIR += comclear
     SUBDIR += crawl
     SUBDIR += css-mode.el
