@@ -7,4 +7,7 @@
 %%PYTHON_SITELIBDIR%%/OpenSSL/tsafe.py
 %%PYTHON_SITELIBDIR%%/OpenSSL/tsafe.pyc
 %%PYTHON_SITELIBDIR%%/OpenSSL/tsafe.pyo
+%%PYTHON_SITELIBDIR%%/OpenSSL/version.py
+%%PYTHON_SITELIBDIR%%/OpenSSL/version.pyc
+%%PYTHON_SITELIBDIR%%/OpenSSL/version.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/OpenSSL
