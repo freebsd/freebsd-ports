@@ -1,22 +1,12 @@
---- gcc/configure.in.orig	Sat Mar 10 22:07:33 2001
-+++ gcc/configure.in	Sat Mar 10 22:13:54 2001
-@@ -626,7 +626,7 @@
-  			thread_file='posix'
-  		fi
- 		;;
--	alpha*-*-netbsd*)
-+	alpha*-*-netbsd*|alpha*-*-freebsd*)
- 		tm_file="${tm_file} alpha/elf.h alpha/netbsd.h alpha/netbsd-elf.h"
- 		target_cpu_default="MASK_GAS"
- 		tmake_file="alpha/t-crtbe alpha/t-ieee"
---- gcc/configure.orig	Wed Oct 13 09:58:02 1999
-+++ gcc/configure	Thu Mar 15 17:52:27 2001
-@@ -3059,7 +3059,7 @@
-  			thread_file='posix'
-  		fi
- 		;;
--	alpha*-*-netbsd*)
-+	alpha*-*-netbsd*|alpha*-*-freebsd*)
- 		tm_file="${tm_file} alpha/elf.h alpha/netbsd.h alpha/netbsd-elf.h"
- 		target_cpu_default="MASK_GAS"
- 		tmake_file="alpha/t-crtbe alpha/t-ieee"
+--- libiberty/Makefile.in.orig	Sat Dec  9 00:16:27 2000
++++ libiberty/Makefile.in	Thu Apr 19 22:27:57 2001
+@@ -152,7 +152,8 @@
+ 	$(RANLIB) $(TARGETLIB)
+ 
+ INSTALL_DEST = @INSTALL_DEST@
+-install: install_to_$(INSTALL_DEST) install-subdir
++#install: install_to_$(INSTALL_DEST) install-subdir
++install:
+ 
+ install_to_libdir: all
+ 	$(INSTALL_DATA) $(TARGETLIB) $(libdir)$(MULTISUBDIR)/$(TARGETLIB)n

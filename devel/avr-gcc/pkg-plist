@@ -1,50 +1,43 @@
 avr/bin/gcc
 avr/include/assert.h
 bin/avr-gcc
-bin/cpp
-lib/gcc-lib/avr/2.95.2/include/assert.h
-lib/gcc-lib/avr/2.95.2/include/syslimits.h
-lib/gcc-lib/avr/2.95.2/include/stdarg.h
-lib/gcc-lib/avr/2.95.2/include/stddef.h
-lib/gcc-lib/avr/2.95.2/include/varargs.h
-lib/gcc-lib/avr/2.95.2/include/va-alpha.h
-lib/gcc-lib/avr/2.95.2/include/va-h8300.h
-lib/gcc-lib/avr/2.95.2/include/va-i860.h
-lib/gcc-lib/avr/2.95.2/include/va-i960.h
-lib/gcc-lib/avr/2.95.2/include/va-mips.h
-lib/gcc-lib/avr/2.95.2/include/va-m88k.h
-lib/gcc-lib/avr/2.95.2/include/va-mn10200.h
-lib/gcc-lib/avr/2.95.2/include/va-mn10300.h
-lib/gcc-lib/avr/2.95.2/include/va-pa.h
-lib/gcc-lib/avr/2.95.2/include/va-pyr.h
-lib/gcc-lib/avr/2.95.2/include/va-sparc.h
-lib/gcc-lib/avr/2.95.2/include/va-clipper.h
-lib/gcc-lib/avr/2.95.2/include/va-spur.h
-lib/gcc-lib/avr/2.95.2/include/va-m32r.h
-lib/gcc-lib/avr/2.95.2/include/va-sh.h
-lib/gcc-lib/avr/2.95.2/include/va-v850.h
-lib/gcc-lib/avr/2.95.2/include/va-arc.h
-lib/gcc-lib/avr/2.95.2/include/iso646.h
-lib/gcc-lib/avr/2.95.2/include/va-ppc.h
-lib/gcc-lib/avr/2.95.2/include/va-avr.h
-lib/gcc-lib/avr/2.95.2/include/va-c4x.h
-lib/gcc-lib/avr/2.95.2/include/proto.h
-lib/gcc-lib/avr/2.95.2/include/stdbool.h
-lib/gcc-lib/avr/2.95.2/include/limits.h
-lib/gcc-lib/avr/2.95.2/include/float.h
-lib/gcc-lib/avr/2.95.2/include/README
-lib/gcc-lib/avr/2.95.2/include/fixed
-lib/gcc-lib/avr/2.95.2/cc1
-lib/gcc-lib/avr/2.95.2/collect2
-lib/gcc-lib/avr/2.95.2/cpp
-lib/gcc-lib/avr/2.95.2/libgcc.a
-lib/gcc-lib/avr/2.95.2/specs
+bin/avr-cpp
+bin/gccbug
+lib/gcc-lib/avr/3.0/cc1
+lib/gcc-lib/avr/3.0/collect2
+lib/gcc-lib/avr/3.0/specs
+lib/gcc-lib/avr/3.0/cpp0
+lib/gcc-lib/avr/3.0/tradcpp0
+lib/gcc-lib/avr/3.0/libgcc.a
+lib/gcc-lib/avr/3.0/avr3/libgcc.a
+lib/gcc-lib/avr/3.0/avr4/libgcc.a
+lib/gcc-lib/avr/3.0/avr5/libgcc.a
+lib/gcc-lib/avr/3.0/include/assert.h
+lib/gcc-lib/avr/3.0/include/syslimits.h
+lib/gcc-lib/avr/3.0/include/stdarg.h
+lib/gcc-lib/avr/3.0/include/stddef.h
+lib/gcc-lib/avr/3.0/include/varargs.h
+lib/gcc-lib/avr/3.0/include/proto.h
+lib/gcc-lib/avr/3.0/include/stdbool.h
+lib/gcc-lib/avr/3.0/include/iso646.h
+lib/gcc-lib/avr/3.0/include/limits.h
+lib/gcc-lib/avr/3.0/include/float.h
+lib/gcc-lib/avr/3.0/include/README
+lib/gcc-lib/avr/3.0/include/fixed
+share/locale/sv/LC_MESSAGES/gcc.mo
 @unexec install-info --delete %D/info/cpp.info %D/info/dir
 @unexec install-info --delete %D/info/gcc.info %D/info/dir
+@unexec install-info --delete %D/info/c-tree.info %D/info/dir
+@unexec install-info --delete %D/info/cppinternals.info %D/info/dir
+info/c-tree.info
+info/c-tree.info-1
+info/c-tree.info-2
+info/c-tree.info-3
 info/cpp.info
 info/cpp.info-1
 info/cpp.info-2
 info/cpp.info-3
+info/cppinternals.info
 info/gcc.info
 info/gcc.info-1
 info/gcc.info-10
@@ -70,6 +63,11 @@ info/gcc.info-28
 info/gcc.info-29
 info/gcc.info-3
 info/gcc.info-30
+info/gcc.info-31
+info/gcc.info-32
+info/gcc.info-33
+info/gcc.info-34
+info/gcc.info-35
 info/gcc.info-4
 info/gcc.info-5
 info/gcc.info-6
@@ -78,7 +76,12 @@ info/gcc.info-8
 info/gcc.info-9
 @exec install-info %D/info/cpp.info %D/info/dir
 @exec install-info %D/info/gcc.info %D/info/dir
-@dirrm lib/gcc-lib/avr/2.95.2/include
-@dirrm lib/gcc-lib/avr/2.95.2
+@exec install-info %D/info/c-tree.info %D/info/dir
+@exec install-info %D/info/cppinternals.info %D/info/dir
+@dirrm lib/gcc-lib/avr/3.0/avr3
+@dirrm lib/gcc-lib/avr/3.0/avr4
+@dirrm lib/gcc-lib/avr/3.0/avr5
+@dirrm lib/gcc-lib/avr/3.0/include
+@dirrm lib/gcc-lib/avr/3.0
 @dirrm lib/gcc-lib/avr
 @dirrm avr/include
