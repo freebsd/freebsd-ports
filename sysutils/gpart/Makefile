@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gpart
-PORTVERSION=	0.1f
+PORTVERSION=	0.1g
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.stud.uni-hannover.de/user/76201/gpart/ \
 		${MASTER_SITE_SUNSITE}
@@ -16,5 +16,9 @@ MAINTAINER=	andrew@ugh.net.au
 
 USE_GMAKE=	yes
 MAN8=		gpart.8
+
+.if defined(WANT_STATIC)
+LDFLAGS=	-static
+.endif
 
 .include <bsd.port.mk>

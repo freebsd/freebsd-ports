@@ -1,11 +1,16 @@
---- make.defs.orig	Wed Sep 29 15:10:52 1999
-+++ make.defs	Wed Sep 29 15:11:05 1999
-@@ -2,7 +2,7 @@
+--- make.defs.orig	Sun May 14 21:07:18 2000
++++ make.defs	Sat Sep 16 17:44:32 2000
+@@ -1,10 +1,10 @@
  #
  #
- CC      = gcc
+ #
+-CC      = gcc
 -CFLAGS  = -Wall -O2 -pedantic
-+CFLAGS  += -Wall -O2 -pedantic
++CC      ?= gcc
++CFLAGS  += -Wall -pedantic
  LDFLAGS =
- MAKEDEP = gcc -M
+-MAKEDEP = gcc -M
++MAKEDEP = $(CC) -M
  INSTALL = install
+ RM      = rm -f
+ #

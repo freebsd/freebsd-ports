@@ -1,10 +1,12 @@
---- inst.defs.orig	Fri Dec  4 06:59:41 1998
-+++ inst.defs	Wed Sep 29 14:18:55 1999
-@@ -2,7 +2,7 @@
+--- inst.defs.orig	Sun May 14 21:04:24 2000
++++ inst.defs	Sat Sep 16 17:41:38 2000
+@@ -1,8 +1,8 @@
+ #
  # installation directories for gpart
  #
- prefix=/usr/local
+-prefix=/usr/local
 -bindir=$(prefix)/bin
++prefix=$(PREFIX)
 +bindir=$(prefix)/sbin
  libdir=$(prefix)/lib
  mandir=$(prefix)/man
