@@ -18,7 +18,9 @@ EXTRACT_CMD=		${GZIP_CMD}
 EXTRACT_BEFORE_ARGS=	-dc
 EXTRACT_AFTER_ARGS=	| ${SH}
 
-NO_WRKSUBDIR=		yes
-USE_IMAKE=		yes
+NO_WRKSUBDIR=	yes
+USE_IMAKE=	yes
+
+MAN1=		t3d.1
 
 .include <bsd.port.mk>
