@@ -3,12 +3,12 @@
 # Date created:         Mar 15 1999
 # Whom:                 rox@fearme.com
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/06/04 06:14:32 mharo Exp $
 #
 
 DISTNAME=	roxirc-1.2
 CATEGORIES=	net tk80
-MASTER_SITES=	http://w3.lighter.net/roxirc/download/
+MASTER_SITES=	http://roxirc.lighter.net/download/
 
 MAINTAINER=	rox@fearme.com
 
