@@ -3,7 +3,7 @@
 # Date created:		6 July 1997
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.32 1998/09/21 22:33:05 steve Exp $
+# $Id: Makefile,v 1.33 1998/10/07 08:11:28 asami Exp $
 #
 
 DISTNAME=	mule-2.3
@@ -25,6 +25,7 @@ RUN_DEPENDS=	${PREFIX}/share/${EMACS_PREFIX}/19.34/lisp/mule.el:${PORTSDIR}/edit
 LIB_DEPENDS=	${LIB_INPUT_METHOD}
 BUILD_DEPENDS=	${BUILD_INPUT_METHOD}
 
+USE_XLIB=	yes
 EXTRACT_ONLY=	emacs-19.34b.tar.gz
 WRKSRC=		${WRKDIR}/emacs-19.34
 PATCHDIR=	${.CURDIR}/../../editors/mule-common/patches
