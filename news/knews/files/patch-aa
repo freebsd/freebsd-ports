@@ -1,5 +1,5 @@
 --- configure.h.orig	Tue Dec 29 11:47:02 1998
-+++ configure.h	Thu Jan  7 21:02:56 1999
++++ configure.h	Sun Apr 16 18:48:00 2000
 @@ -14,7 +14,7 @@
   *
   *  If you don't have sendmail, use /bin/false :-).
@@ -9,15 +9,17 @@
  /* #define MAIL_COMMAND "/usr/lib/sendmail -t"  */
  
  
-@@ -84,8 +84,8 @@
+@@ -84,9 +84,9 @@
   *  libcompface.
   */
  
 -#define HAVE_JPEG	0
 -#define HAVE_PNG	0
+-#define HAVE_COMPFACE	0
 +#define HAVE_JPEG	1
 +#define HAVE_PNG	1
- #define HAVE_COMPFACE	0
++#define HAVE_COMPFACE	1
+ 
  
  
 @@ -138,7 +138,7 @@
