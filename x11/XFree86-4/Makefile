@@ -18,6 +18,8 @@ DISTFILES=	X335src-1.tgz X335src-2.tgz
 
 MAINTAINER=	jmz@FreeBSD.org
 
+BROKEN=		"Defines their own version of putenv(), which we don't override properly."
+
 IS_INTERACTIVE=	yes	# configure script asks questions
 .if (${MACHINE} != "alpha")
 NO_PACKAGE=	package available from XFree86
