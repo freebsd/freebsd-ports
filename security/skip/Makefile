@@ -3,7 +3,7 @@
 # Date created:         		26 November 1997
 # Whom:                 		Archie L. Cobbs <archie@whistle.com>
 #
-# $Id: Makefile,v 1.7 1999/05/04 23:18:35 steve Exp $
+# $Id: Makefile,v 1.8 1999/07/22 18:37:04 archie Exp $
 
 DISTNAME=		skip-1.0
 CATEGORIES=		security
@@ -56,6 +56,10 @@ post-patch:
 	  mv $$FILE.new $$FILE; \
 	done
 
-BROKEN=		Needs to be updated wrt. new device registration
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${OSVERSION} >= 400006
+BROKEN=		New character device registration issues
+.endif
+
+.include <bsd.port.post.mk>
