@@ -1,3 +1,5 @@
+# $ApsCVS: src/apsfilter/uniprint/stc740ih.upp,v 1.2 2000/04/21 18:48:00 andreas Exp $
+#
 -supModel="Epson Stylus Color 740, 1440x720DpI, Inkjet Paper"
 -sDEVICE=uniprint
 -dNOPAUSE
