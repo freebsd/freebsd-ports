@@ -14,7 +14,7 @@
    ""
  };
  
--#define wget_opts "--proxy=off --cache=off"
+-#define wget_opts "--cache=off"
  #define BUFLEN 256
  #define MIN_NUMPANELS 0
  #define MAX_NUMPANELS 5
