@@ -19,16 +19,16 @@ MASTER_SITES=	ftp://ftp.OpenLDAP.org/pub/OpenLDAP/openldap-release/ \
 		ftp://ftp.zcu.cz/pub/network/openldap/openldap-release/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=     ulmo@earthling.net
+MAINTAINER=	ulmo@earthling.net
 
 .if defined(WITH_DB2)
-BUILD_DEPENDS=	${PREFIX}/lib/libdb2.a:${PORTSDIR}/databases/db/
-CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include/db2 -D_THREAD_SAFE" \
-		LDFLAGS=-L${PREFIX}/lib
+BUILD_DEPENDS=	${LOCALBASE}/lib/libdb2.a:${PORTSDIR}/databases/db/
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/db2 -D_THREAD_SAFE" \
+		LDFLAGS=-L${LOCALBASE}/lib
 .endif
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --localstatedir=/var/run --enable-shared --enable-dns
+CONFIGURE_ARGS=	--localstatedir=/var/run --enable-shared --enable-dns
 
 # Include tcp-wrapper support
 .if exists(/usr/include/tcpd.h)
