@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.apache.org/dist/jakarta/tomcat-4/v${PORTVERSION}/bin/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	znerd
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	liukang@bjut.edu.cn
 COMMENT=	Open-source Java web server by Apache, stable 4.1.x branch
 
 USE_JAVA=	1.2+
