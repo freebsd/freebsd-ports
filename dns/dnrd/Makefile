@@ -8,7 +8,8 @@
 PORTNAME=       	dnrd
 PORTVERSION=		2.10
 CATEGORIES=     	dns
-MASTER_SITES=   	http://members.home.com/garsh/dnrd/archive/
+MASTER_SITES=   	http://users.zoominternet.net/~garsh/dnrd/archive/ \
+			http://www.netsw.org/net/ip/infoservice/dns/dnrd/
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A proxy DNS daemon

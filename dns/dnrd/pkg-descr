@@ -15,5 +15,7 @@ forwarding messages to the desired DNS servers). All other
 machines on the home network, including the dialup machine
 itself, will use the dialup machine as its DNS server.
 
+WWW: http://users.zoominternet.net/~garsh/dnrd/
+
 - George Reid
 greid@ukug.uk.freebsd.org
