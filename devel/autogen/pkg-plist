@@ -4,26 +4,23 @@ bin/columns
 bin/getdefs
 bin/xml2ag
 include/options.h
-@unexec install-info --delete %D/info/autogen.info %D/info/dir
-info/autogen.info
-@exec install-info %D/info/autogen.info %D/info/dir
-lib/libguileopts.a
 lib/libguileopts.so
 lib/libguileopts.so.0
 lib/libopts.a
 lib/libopts.so
-lib/libopts.so.19
+lib/libopts.so.20
 share/aclocal/autoopts.m4
 share/autogen/aginfo.tpl
 share/autogen/aginfo3.tpl
 share/autogen/agman1.tpl
 share/autogen/agman3.tpl
+share/autogen/autoopts.m4
 share/autogen/confmacs.tpl
 share/autogen/conftest.tpl
 share/autogen/fsm-macro.tpl
 share/autogen/fsm-trans.tpl
 share/autogen/fsm.tpl
-share/autogen/libopts-19.2.10.tar.gz
+share/autogen/libopts-20.0.11.tar.gz
 share/autogen/optcode.tpl
 share/autogen/opthead.tpl
 share/autogen/options.tpl
