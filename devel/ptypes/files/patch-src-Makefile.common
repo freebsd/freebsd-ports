@@ -1,18 +1,18 @@
---- src/Makefile.common.orig	Sun Jan 25 20:37:18 2004
-+++ src/Makefile.common	Thu Jan 29 19:50:41 2004
-@@ -19,12 +19,12 @@
+--- src/Makefile.common.orig	Sat Mar 27 14:22:01 2004
++++ src/Makefile.common	Wed Mar 31 23:44:05 2004
+@@ -18,12 +18,12 @@
  AR              = ar
  RANLIB          = ranlib
  
 -DDEBUG          = -DDEBUG
 +DDEBUG          = $(DEBUG_FLAGS)
  INCDIR          = ../include
--CXXOPTS         = $(OS_CXXOPTS) $(DDEBUG) -I$(INCDIR) -fPIC -Wall -O2
-+CXXOPTS         = $(OS_CXXOPTS) $(DDEBUG) -I$(INCDIR) -fPIC -Wall $(PTYPES_CFLAGS)
+-CXXOPTS         = $(OS_CXXOPTS) $(DDEBUG) -I$(INCDIR) -Wall -O2
++CXXOPTS         = $(OS_CXXOPTS) $(DDEBUG) -I$(INCDIR) -Wall $(CFLAGS)
  LDLIBS          = $(OS_LDLIBS)
  
 -CXXOPTS_ST      = -DPTYPES_ST $(OS_CXXOPTS_ST) $(DDEBUG) -I$(INCDIR) -Wall -O2
-+CXXOPTS_ST      = -DPTYPES_ST $(OS_CXXOPTS_ST) $(DDEBUG) -I$(INCDIR) -Wall $(PTYPES_CFLAGS)
++CXXOPTS_ST      = -DPTYPES_ST $(OS_CXXOPTS_ST) $(DDEBUG) -I$(INCDIR) -Wall $(CFLAGS) $(PTHREAD_CFLAGS)
  LDLIBS_ST       = $(OS_LDLIBS_ST)
  
  LIBNAME         = libptypes.a

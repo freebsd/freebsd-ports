@@ -1,6 +1,6 @@
---- Makefile.FreeBSD.orig	Wed Jun 25 02:38:24 2003
-+++ wshare/Makefile.FreeBSD	Wed Jun 25 02:38:48 2003
-@@ -15,8 +15,8 @@
+--- wshare/Makefile.FreeBSD.orig	Sat Mar 27 14:22:01 2004
++++ wshare/Makefile.FreeBSD	Wed Mar 31 23:33:45 2004
+@@ -14,8 +14,8 @@
  
  CXX = g++
  
