@@ -186,4 +186,4 @@ sbin/cannaserver
 @exec chmod 775 %D/lib/canna/dic
 @exec chown bin.bin %D/lib/canna/dic/user/user %D/lib/canna/dic/user
 @exec chmod 775 %D/lib/canna/dic/user/user %D/lib/canna/dic/user
-@dirrm /var/run/canna
+@unexec /bin/rmdir /var/run/canna
