@@ -1,0 +1,20 @@
+--- configure.orig	Sat Sep 14 13:56:38 2002
++++ configure	Sat Sep 14 13:59:07 2002
+@@ -4864,6 +4864,8 @@
+ 
+ fi
+ 
++if false; then # begin <wchar.h>-disabling hack
++
+ echo "$as_me:$LINENO: checking for towupper" >&5
+ echo $ECHO_N "checking for towupper... $ECHO_C" >&6
+ if test "${ac_cv_func_towupper+set}" = set; then
+@@ -4934,6 +4936,8 @@
+ _ACEOF
+ 
+ fi
++
++fi # end <wchar.h>-disabling hack
+ 
+ echo "$as_me:$LINENO: checking for gettext" >&5
+ echo $ECHO_N "checking for gettext... $ECHO_C" >&6
