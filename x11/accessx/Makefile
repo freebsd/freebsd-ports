@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	accessx
-PORTVERSION=	9.50
+PORTVERSION=	0.950
 CATEGORIES=	x11
 MASTER_SITES=	http://www.rehab.uiuc.edu/accessx/software/
-DISTNAME=	accessx0${PORTVERSION:S/.//g}
+DISTNAME=	accessx${PORTVERSION:S/.//g}
 
 MAINTAINER=	stephen@math.missouri.edu
 
