@@ -33,7 +33,8 @@ WRKSRC=			${WRKDIR}/xc
 PATCHDIR=		${.CURDIR}/../../x11/XFree86-4-libraries/files
 .for pf in patch-savage-pci-id patch-alpha_video.c patch-Pci.h patch-radeondri \
 	patch-r128_driver.c patch-mga_driver.c patch-xkbInit.c patch-radeon_dri.c \
-	patch-mga_dri.c patch-nv_driver.c patch-nv_setup.c patch-int10-generic.c
+	patch-mga_dri.c patch-nv_driver.c patch-nv_setup.c patch-int10-generic.c \
+	patch-radeon_cursor.c
 EXTRA_PATCHES+=		${FILESDIR}/${pf}
 .endfor
 SCRIPTS_ENV=		OSVERSION=${OSVERSION} \
