@@ -1,1 +1,1 @@
-A perl-based, flexible tape backup system. Uses dump, cpio, or afio.
+Perl-based, flexible tape backup system that uses dump, cpio, or afio
