@@ -6,7 +6,6 @@ export MOZ_PHOENIX=1
 mk_add_options MOZ_PHOENIX=1
 ac_add_options --enable-crypto
 ac_add_options --disable-tests
-ac_add_options --disable-debug
 ac_add_options --disable-mailnews
 ac_add_options --disable-composer
 ac_add_options --enable-default-toolkit=gtk2
@@ -42,25 +41,22 @@ ac_add_options --disable-ldap
 ac_add_options --disable-pedantic
 ac_add_options --disable-profilesharing
 ac_add_options --disable-installer
-ac_add_options --enable-extensions=cookie,xml-rpc,xmlextras,p3p,pref,transformiix,universalchardet,typeaheadfind,webservices,inspector
+ac_add_options --enable-image-decoders=png,gif,jpeg,bmp
+ac_add_options --enable-extensions=cookie,xml-rpc,xmlextras,p3p,pref,transformiix,universalchardet,typeaheadfind,webservices,inspector,venkman
 ######################################################################
 # conditional from port Makefile
-if test -n "$WITH_REORDER"; then
-    ac_add_options --enable-reorder
-else
-    ac_add_options --disable-reorder
-fi # test -n "$WITH_REORDER"
+#if test -n "$WITH_REORDER"; then
+#    ac_add_options --enable-reorder
+#else
+#    ac_add_options --disable-reorder
+#fi # test -n "$WITH_REORDER"
 if test -n "$WITH_DEBUG"; then
     ac_add_options --enable-debug
     ac_add_options --disable-strip
 else
     ac_add_options --disable-debug
-    ac_add_options --enable-optimize
+    ac_add_options --enable-optimize=${WITH_OPTIMIZE}
     ac_add_options --enable-strip
-    export BUILD_OFFICIAL=1
-    export MOZILLA_OFFICIAL=1
-    mk_add_options BUILD_OFFICIAL=1
-    mk_add_options MOZILLA_OFFICIAL=1
 fi # test -n "$WITH_DEBUG"
 if test -n "$WITH_LOGGING"; then
     ac_add_options --enable-logging

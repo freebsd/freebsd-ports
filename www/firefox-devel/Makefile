@@ -7,7 +7,7 @@
 
 PORTNAME=	firefox
 PORTVERSION=	0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${PORTVERSION}
@@ -57,10 +57,6 @@ OPTIONS=	DEBUG "Build a debugging image" off \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386"
-CONFIGURE_ENV+=		WITH_REORDER=yes
-.endif # ${ARCH} == "i386"
-
 .if defined(WITH_DEBUG)
 WITH_LOGGING=		yes
 CONFIGURE_ENV+=		WITH_DEBUG=yes
@@ -68,6 +64,9 @@ CONFIGURE_ENV+=		WITH_DEBUG=yes
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS+=		-O2
+CONFIGURE_ENV+=		WITH_OPTIMIZE=-O2
+.else
+CONFIGURE_ENV+=		WITH_OPTIMIZE=-O
 .endif # defined(WITH_OPTIMIZED_CFLAGS)
 
 .if defined(WITH_LOGGING)
@@ -137,10 +136,11 @@ pre-configure:
 	fi
 
 post-build:
-	# XXX This works around an install problem that is triggered when
-	# toolkit/profile/src is built after profile/src.
-	@(cd ${WRKSRC}/dist/lib && ${LN} -sf ../../profile/src/libprofile_s.a \
-		.)
+# XXX This works around an install problem that is triggered when
+# toolkit/profile/src is built after profile/src.
+#	@(cd ${WRKSRC}/dist/lib && ${LN} -sf ../../profile/src/libprofile_s.a \
+#		.)
+	@${TOUCH} -f ${WRKSRC}/profile/build/libprofile.so
 
 pre-install:
 # Overview:  the program installs itself in FAKEDIR, then a list is made of the
