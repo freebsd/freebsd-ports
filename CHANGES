@@ -10,6 +10,46 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20041209:
+AUTHOR: portmgr@FreeBSD.org
+  The following changes were committed:
+
+  * Define new macros: DATE, FMT, MKTEMP, OBJDUMP, and use
+    command macro SORT.
+
+  * Change layout of comments to 4 column tabs, remove lots
+    of spaces and eight-column-tabs.
+
+  * Introduce 2 new variables: SUB_FILES and SUB_LIST:
+
+    Example:
+
+    SUB_FILES=	pkg-message pkg-install
+    SUB_LIST+=	"VERSION=${VERSION}"
+
+    This looks for ${FILESDIR}/pkg-message.in and ${FILESDIR}/pkg-install.in
+    Substitutions in SUB_LIST are applied to these files and the
+    output is redirected to ${WRKDIR}.
+
+    PKGMESSAGE will be set to ${WRKDIR}/pkg-message.
+    PKGINSTALL will be set to ${WRKDIR}/pkg-install.
+
+  * Document DEPRECATED and EXPIRATION_DATE variables.
+
+  * Sanitize the intermittent output by the build infrastructure
+    so that cutting and pasting from it no longer interferes
+    with GNATS-tags.
+
+  * Honour configure arguments for USE_XLIB if USE/WITH_LIBTOOL_ is
+    used.
+
+  * Properly document 'describe' target.
+
+  * Properly remove directories at deinstallation time if ports sets
+    a non-standard PREFIX.
+
+  * Defaults INDEXFILE to INDEX-6 on 6-CURRENT.
+
 20041119:
 AUTHOR: portmgr@FreeBSD.org
   The following changes were committed:
