@@ -16,6 +16,7 @@ COMMENT=	A utility for saying hello to the world and reading email
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
+USE_PERL5_BUILD=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
