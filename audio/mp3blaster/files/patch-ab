@@ -1,0 +1,11 @@
+--- configure.orig	Tue Jan 18 01:56:11 2000
++++ configure	Tue Mar 28 22:19:58 2000
+@@ -3309,7 +3309,7 @@
+ 
+ 
+ 
+-CXXFLAGS="$CXXFLAGS -g -Wall -Wstrict-prototypes -W -fno-strength-reduce "
++CXXFLAGS="$CXXFLAGS "
+ SRCDIRS="mpegsound nmixer src"
+ 
+ trap '' 1 2 15
