@@ -1,0 +1,15 @@
+--- Imakefile.orig	Sat Mar 16 04:27:42 1996
++++ Imakefile	Tue Nov 17 12:53:05 1998
+@@ -22,10 +22,10 @@
+ 
+ MakeFontsDir($(HAN_PCF_FONTS))
+ 
+-InstallFontObjs($(HAN_PCF_FONTS), $(FONTDIR)/misc)
++InstallFontObjs($(HAN_PCF_FONTS), $(FONTDIR)/local)
+ 
+ install::
+-	cd $(FONTDIR)/misc; mkfontdir
++	cd $(FONTDIR)/local; mkfontdir
+ clean::
+ 	$(RM) $(HAN_PCF_FONTS)
+ 

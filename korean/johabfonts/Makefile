@@ -3,7 +3,7 @@
 # Date created:		15 Mar 1998
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.4 1998/04/19 15:50:11 steve Exp $
+# $Id: Makefile,v 1.5 1998/08/07 22:43:10 asami Exp $
 #
 
 DISTNAME=       hanterm304fonts
@@ -16,5 +16,8 @@ MAINTAINER=	junker@jazz.snu.ac.kr
 
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES= yes
+
+pre-install:
+	-mkdir -p ${PREFIX}/lib/X11/fonts/local
 
 .include <bsd.port.mk>
