@@ -19,12 +19,6 @@ GNU_CONFIGURE=  yes
 USE_GMAKE=	yes
 USE_AUTOCONF_VER=	213
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 do-install:
 	@${INSTALL_PROGRAM} -o root -g wheel -m 0755 ${WRKSRC}/twhttpd ${PREFIX}/sbin/twhttpd
 	@${INSTALL} -o root -g wheel -m 0755 ${WRKSRC}/rm_cache ${PREFIX}/sbin/rm_cache
@@ -32,4 +26,5 @@ do-install:
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
-.include <bsd.port.post.mk>
+
+.include <bsd.port.mk>
