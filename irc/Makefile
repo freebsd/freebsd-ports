@@ -21,6 +21,7 @@
     SUBDIR += epic4
     SUBDIR += erc
     SUBDIR += ezbounce
+    SUBDIR += gdesklets-irc
     SUBDIR += gruftistats
     SUBDIR += gseen.mod
     SUBDIR += hybserv

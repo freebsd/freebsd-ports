@@ -1,0 +1,13 @@
+##
+To view the installed applets:
+
+	ls %%PREFIX%%/share/gnome/gdesklets/Displays
+
+To use this applet:
+
+	gdesklets %%PREFIX%%/share/gnome/gdesklets/Displays/%%NAME%%/%%NAME%%.display
+
+NOTE: Be sure to login as your user when you use the gdesklets command,
+      as the configuration will be stored in the ~/.gdesklets/ directory
+      and/or gconf database.
+##
