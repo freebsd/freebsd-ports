@@ -8150,6 +8150,7 @@ ypserv		src/usr.sbin/ypserv
 ypset		src/usr.sbin/ypset
 ypwhich		src/usr.bin/ypwhich
 ypxfr		src/libexec/ypxfr
+ysm		ports/net/ysm
 ytalk		ports/net/ytalk
 ytree		ports/misc/ytree
 yudit		ports/editors/yudit
