@@ -16,6 +16,7 @@ MAINTAINER=	johann@egenetics.com
 NO_CDROM=	Free for academic, research and non-commercial purposes only
 WRKSRC=		${WRKDIR}/Fnorb-${PORTVERSION}/src
 USE_PYTHON=	yes
+ALL_TARGET=
 
 do-configure:
 	@ (cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
