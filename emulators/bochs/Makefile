@@ -8,7 +8,7 @@
 
 PORTNAME=	bochs
 PORTVERSION=	2000.0325
-CATEGORIES= 	emulators
+CATEGORIES=	emulators
 MASTER_SITES= 	ftp://ftp.bochs.com/bochs/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/}a
 
