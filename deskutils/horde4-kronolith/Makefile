@@ -7,9 +7,10 @@
 
 PORTNAME=	kronolith
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	deskutils www
 MASTER_SITES=	ftp://ftp.horde.org/pub/kronolith/tarballs/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-RC1
+DISTNAME=	${PORTNAME}-${PORTVERSION}-RC2
 
 MAINTAINER=	thierry@pompo.net
 

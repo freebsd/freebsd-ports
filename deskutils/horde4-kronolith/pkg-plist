@@ -110,7 +110,6 @@
 %%KRONOLITHDIR%%/templates/edit/edit.inc
 %%KRONOLITHDIR%%/templates/edit/javascript.inc
 %%KRONOLITHDIR%%/templates/index/css.inc
-%%KRONOLITHDIR%%/templates/index/index.inc
 %%KRONOLITHDIR%%/templates/index/notconfigured.inc
 %%KRONOLITHDIR%%/templates/javascript/goto.inc
 %%KRONOLITHDIR%%/templates/menu/menu.inc
