@@ -8,7 +8,8 @@
 PORTNAME=	crashme
 PORTVERSION=	2.4
 CATEGORIES=	sysutils
-MASTER_SITES=	http://people.delphi.com/gjc/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=kris
 DISTNAME=	crashme
 EXTRACT_SUFX=	.tgz
 
