@@ -8,7 +8,7 @@
 # I putted it into 'math' and not 'devel' or other
 
 PORTNAME=	Date-Handler
-PORTVERSION=	0.19
+PORTVERSION=	1.1
 CATEGORIES=	math perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Date
@@ -21,6 +21,9 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Date::Handler.3 Date::Handler::Delta.3 \
 		Date::Handler::Range.3 Date::Handler::Test.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+
+post-patch:
+	@${PERL} -pi -e 's/[a-z][a-z]_[A-Z][A-Z]/$$&.ISO8859-15/g' \
+		${WRKSRC}/Handler.* ${WRKSRC}/README*
 
 .include <bsd.port.mk>
