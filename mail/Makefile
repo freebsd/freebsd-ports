@@ -359,6 +359,7 @@
     SUBDIR += sylpheed-gtk2
     SUBDIR += sympa
     SUBDIR += teapop
+    SUBDIR += teapop-devel
     SUBDIR += tkrat2
     SUBDIR += tlb
     SUBDIR += tmda

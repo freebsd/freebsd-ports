@@ -1,15 +1,15 @@
-# New ports collection makefile for:	teapop
-# Date created:			18 May 2000
-# Whom:				Jim Mock <jim@FreeBSD.org>
+# New ports collection makefile for:	teapop-devel
+# Date created:				7/08/2003
+# Whom:					sheepkiller@cultdeadsheep.org
 #
 # $FreeBSD$
 #
 
 PORTNAME=	teapop
-PORTVERSION=	0.3.7
+PORTVERSION=	20030414
 CATEGORIES=	mail ipv6
-MASTER_SITES=	ftp://ftp.toontown.org/pub/teapop/ \
-		http://www.toontown.org/pub/teapop/
+MASTER_SITES=	ftp://ftp.toontown.org/pub/teapop/snapshots/ \
+		http://www.toontown.org/pub/teapop/snapshots/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another RFC1939 compliant POP3 server
@@ -17,10 +17,11 @@ COMMENT=	Yet another RFC1939 compliant POP3 server
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--enable-flock
 
+##
 ## Available knobs:
 ## General options
 ##   WITHOUT_IPV6: disable IPv6 support
-##   WITH_TCPD: enable support for tcpd/tcpwrapper
+##   WITH_TCPWRAPPERS: enable the use of tcp_wrappers
 ##   WITHOUT_APOP: don't allow users to authenticate with APOP
 ##   WITHOUT_VPOP: don't support virtual domains
 ##   WITH_DRAC: enable support for DRAC
@@ -33,8 +34,8 @@ POPAUTH_FILE?=		${PREFIX}/etc/teapop.popauth
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
-.if defined(WITH_TCPD)
-CONFIGURE_ARGS+=	--with-tcpd
+.if defined(WITH_TCPWRAPPERS)
+CONFIGURE_ARGS+=	--enable-tcp_wrappers
 .endif
 
 .if defined(WITHOUT_APOP)
@@ -55,10 +56,12 @@ CONFIGURE_ARGS+=	--enable-popauth-file=${POPAUTH_FILE}
 
 MAN8=		teapop.8
 
+##
 ## Authentication backend
 ##   WITH_OPENLDAP: add support for authentication through OpenLDAP server
 ##   WITH_MYSQL: enable support for authentication from MySQL database
 ##   WITH_PGSQL: enable support for authentication from PostgreSQL database
+##
 
 .if defined(WITH_PGSQL)
 CONFIGURE_ARGS+=	--with-pgsql
@@ -76,7 +79,7 @@ CONFIGURE_ARGS+=	--with-ldap=openldap
 .endif
 
 show-options:
-	@${EGREP} '^##' ${.CURDIR}/Makefile | ${SED} 's/##//'
+	@${SED} -ne 's/^##//p' ${.CURDIR}/Makefile
 
 post-install:
 	@${ECHO_MSG} ""
