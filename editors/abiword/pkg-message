@@ -1,0 +1,11 @@
+If you are going to display AbiWord on the remote X server please make sure
+that files from the ${PREFIX}/share/AbiSuite/fonts directory available to
+your remote X server and add ${PREFIX}/share/AbiSuite/fonts into server's
+font path. For XFree86, add the line:
+
+FontPath "${PREFIX}/share/AbiSuite/fonts"
+
+in the "Files" section of your /etc/XF86Config file. If you use a different
+X server, please see its documentation on how to do this.
+
+Then re-start your X server.
