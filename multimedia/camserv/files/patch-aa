@@ -1,0 +1,178 @@
+*** camserv.cfg.orig	Sun Feb 13 18:07:06 2000
+--- camserv.cfg	Sat Aug 19 02:51:13 2000
+***************
+*** 1,45 ****
+  # video_basic: The 'basic' color-changing video module.
+  [video_basic]
+  path		/usr/local/lib/libvideo_basic.so
+  
+- # video_v4l_bttv:  Example of a common BTTV module for video4linux.  
+- # port 0 == TV, port 1 = Composite 1, port 2 = Composite 2
+- # frequency == is the channel frequency for the TV
+- # autobright == 0 turns off autobrightness adjusting, otherwise it adjusts
+- #               the brightness of the picture every 'autobright' frames.
+- # brightmean == The mean pixel value that is the 'goal' of the autobright.
+- #               (0->255)
+- # brightx1->y2 == (x1,y1) top left coords, and (x2,y2) bottom right coords
+- #                 of a rectangle of which to take the average pixel value.
+- #                 this is then used in calculating the mean to adjust the
+- #                 brightness of the image.
+- # mode == the video norm to use:  0 == PAL, 1 == NTSC, 2 == SECAM, 3 == AUTO
+- # color,hue,contrast,brightness,whiteness = 0->60000, representing
+- # the value of each component.
+- 
+- [video_v4l_bttv]
+- path		/usr/local/lib/libvideo_v4l.so
+- device_path	/dev/video0
+- port		0
+- mode		3
+- frequency	74.43
+- color		30000
+- hue		30000
+- contrast	30000
+- brightness	30000
+- whiteness	30000
+- autobright	1
+- brightmean      128
+- brightx1	0
+- brighty1	320
+- brightx2	0
+- brighty2	240
+- 
+  # FreeBSD BTTV driver:
+  # port 0  = Video
+  #      1  = Tuner
+  # Channel Sets:
+  # nabscst   1
+  # cableirc  2
+  # cablehrc  3
+  # weurope   4
+--- 1,14 ----
+  # video_basic: The 'basic' color-changing video module.
+  [video_basic]
+  path		/usr/local/lib/libvideo_basic.so
+  
+  # FreeBSD BTTV driver:
+  # port 0  = Video
+  #      1  = Tuner
++ #      2  = S-Video
++ #
+  # Channel Sets:
+  # nabscst   1
+  # cableirc  2
+  # cablehrc  3
+  # weurope   4
+***************
+*** 47,78 ****
+  # jpncable  6
+  # xussr     7
+  # australia 8
+  
+  [video_fbsd_bttv]
+! path		/usr/local/lib/libvideo_fbsd_bttv.so.0.0
+  port		1
+  width		320
+  height		240
+  autobright	100
+  #brightness	0
+  #chroma		180
+  #contrast	1000
+! channelset      2
+! channel         60
+! 
+! [video_v4l_qcam]
+! path		/usr/local/lib/libvideo_v4l.so
+! device_path	/dev/video1
+! port		0
+! color		30000
+! hue		30000
+! contrast	30000
+! brightness	30000
+! whiteness	30000
+! autobright	0
+! 
+  
+  [jpg_filter]
+  path            /usr/local/lib/libjpg_filter.so
+  quality		30
+  
+--- 16,35 ----
+  # jpncable  6
+  # xussr     7
+  # australia 8
+  
+  [video_fbsd_bttv]
+! path		/usr/local/lib/libvideo_fbsd_bttv.so
+  port		1
+  width		320
+  height		240
+  autobright	100
+  #brightness	0
+  #chroma		180
+  #contrast	1000
+! channelset      1
+! channel         3
+  
+  [jpg_filter]
+  path            /usr/local/lib/libjpg_filter.so
+  quality		30
+  
+***************
+*** 147,157 ****
+  # [video] - This section is devoted to all things dealing with the pictures
+  #           taken by the input video module.  These are general things which
+  #           should be used by all video modules.
+  
+  [video]
+! video_section		video_v4l_bttv
+  width			320
+  height			240
+  maxfps                  0
+  memhack			1
+  
+--- 104,114 ----
+  # [video] - This section is devoted to all things dealing with the pictures
+  #           taken by the input video module.  These are general things which
+  #           should be used by all video modules.
+  
+  [video]
+! video_section		video_fbsd_bttv
+  width			320
+  height			240
+  maxfps                  0
+  memhack			1
+  
+*** configure.orig	Sun Feb 13 18:33:16 2000
+--- configure	Sat Aug 19 02:48:27 2000
+***************
+*** 2181,2193 ****
+    echo "$ac_t""no" 1>&6
+  fi
+  
+  echo $ac_n "checking for gdk_pixbuf""... $ac_c" 1>&6
+  echo "configure:2186: checking for gdk_pixbuf" >&5
+! GDK_PIXBUF_CFLAGS=`$gnomeconfig gdk_pixbuf --cflags`
+! GDK_PIXBUF_LDFLAGS=`$gnomeconfig gdk_pixbuf --libs`
+! 
+  
+  if test "_$GDK_PIXBUF_CFLAGS" != _; then
+    HAVE_GDK_PIXBUF_TRUE=
+    HAVE_GDK_PIXBUF_FALSE='#'
+  else
+--- 2181,2196 ----
+    echo "$ac_t""no" 1>&6
+  fi
+  
+  echo $ac_n "checking for gdk_pixbuf""... $ac_c" 1>&6
+  echo "configure:2186: checking for gdk_pixbuf" >&5
+! echo "gdk_pixbuf seems to be broken in FreeBSD"
+! echo "not configuring GDK Pixbuf filter in this build"
+! # GDK_PIXBUF_CFLAGS=`$gnomeconfig gdk_pixbuf --cflags`
+! # GDK_PIXBUF_LDFLAGS=`$gnomeconfig gdk_pixbuf --libs`
+! GDK_PIXBUF_CFLAGS=
+! GDK_PIXBUF_LDFLAGS=
+  
+  if test "_$GDK_PIXBUF_CFLAGS" != _; then
+    HAVE_GDK_PIXBUF_TRUE=
+    HAVE_GDK_PIXBUF_FALSE='#'
+  else

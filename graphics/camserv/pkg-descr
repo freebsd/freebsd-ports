@@ -1,0 +1,14 @@
+Camserv is a free program to do streaming video through the web
+Streaming video can be sent to both Netscape and Internet Explorer clients.
+However, Internet Explorer under Windows cannot apparently handle
+the multi-part JPEGs, and therefore a special javascript page must be setup.
+One is included in the distribution as an example. 
+
+Currently, the only supported BSD device is the bttv driver.
+Both tunable modes and camera inputs are supported. 
+
+WWW: http://cserv.sourceforge.net/
+
+--
+chein, overholt
+chein@freebsd.org, overholt@isdw.net
