@@ -69,3 +69,9 @@ lib/libCosNaming.a
 lib/libCosProperty.a
 lib/libCosEvent.a
 man/man1/idl.1.gz
+man/man1/hidl.1.gz
+man/man1/irdel.1.gz
+man/man1/irfeed.1.gz
+man/man1/irgen.1.gz
+man/man1/irserv.1.gz
+man/man1/jidl.1.gz
