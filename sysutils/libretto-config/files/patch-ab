@@ -1,0 +1,123 @@
+--- libapm.c.orig	Fri Jun 19 09:28:23 1998
++++ libapm.c	Thu Nov 26 13:22:19 1998
+@@ -8,12 +8,19 @@
+ /*                                                         */
+ /***********************************************************/
+ 
++#undef HAVE_GETOPT_LONG
++#ifdef __linux__
++#define HAVE_GETOPT_LONG 1
++#endif
++
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <sys/types.h>
+ #include <string.h>
+ #include <ctype.h>
++#ifdef HAVE_GETOPT_LONG
+ #include <getopt.h>
++#endif
+ #include <fcntl.h>
+ #include <unistd.h>
+ #include <sys/mman.h>
+@@ -63,6 +70,7 @@
+     int r;
+     char c;
+ 
++#ifdef HAVE_GETOPT_LONG
+     struct option longopts[] = {
+       { "Help",        0, 0, 'h' },
+       { "Version",     0, 0, 'v' },
+@@ -78,6 +86,7 @@
+ #endif /* CMOS_ACCESS */
+       {0, 0, 0, 0}
+     };
++#endif
+ 
+     if( 0 != geteuid() ){
+         printf("%s: Only root can execute !!\n", argv[0]);
+@@ -98,8 +107,12 @@
+ 
+     get_status();
+ 
++#ifdef HAVE_GETOPT_LONG
+     while ((c = getopt_long(argc,argv,
+                             "hvP:T:a:S:A:L:V:O:", longopts, NULL)) != -1) {
++#else
++    while ((c = getopt(argc,argv, "hvP:T:a:S:A:L:V:O:")) != -1) {
++#endif
+       switch (c) {
+         case 'h':
+           usage();
+@@ -215,8 +228,9 @@
+ void usage(void)
+ {
+ #ifdef CMOS_ACCESS
++# ifdef HAVE_GETOPT_LONG
+     printf("
+-usage: libapm [-v --Version]
++usage: libretto-config [-v --Version]
+               [-h --Help]
+               [-P --PowerUp {boot,hibernation}]
+               [-T --StandbyTime {0,5,10,15,30,45,60,unlimit}]
+@@ -225,9 +239,24 @@
+               [-A --AlarmOn {disable,<time>}]
+               [-L --LcdPower {0,1,2,3}]
+           \n");
+-#else
++# else /* not HAVE_GETOPT_LONG */
++    printf("
++usage: libretto-config [-v			: Version]
++              [-h				: Help]
++              [-P {boot,hibernation}		: PowerUp]
++              [-T {0,5,10,15,30,45,60,unlimit}	: StandbyTime]
++              [-a {disable,10,20,30,40,50,60}	: AutoOff]
++              [-S {disable,enable}		: PanelSwitch]
++              [-A {disable,<time>}		: AlarmOn]
++              [-L {0,1,2,3}			: LcdPower]
++          \n");
++# endif /* HAVE_GETOPT_LONG */
++
++#else /* not CMOS_ACCESS */
++
++# ifdef HAVE_GETOPT_LONG
+     printf("
+-usage: libapm [-v --Version]
++usage: libretto-config [-v --Version]
+               [-h --Help]
+               [-P --PowerUp {boot,hibernation}]
+               [-T --StandbyTime {0,5,10,15,30,45,60,unlimit}]
+@@ -238,6 +267,21 @@
+               [-V --Volume {0,1,2,3}]
+               [-O --Off {suspend|hibernation}  Use Only >= Libretto100]
+           \n");
++# else /* not HAVE_GETOPT_LONG */
++    printf("
++usage: libretto-config [-v			: Version]
++              [-h				: Help]
++              [-P {boot,hibernation}		: PowerUp]
++              [-T {0,5,10,15,30,45,60,unlimit}	: StandbyTime]
++              [-a {disable,10,20,30,40,50,60}	: AutoOff]
++              [-S {disable,enable}		: PanelSwitch]
++              [-A {disable,<time>}		: AlarmOn]
++              [-L {0,1,2,3}			: LcdPower]
++              [-V {0,1,2,3}			: Volume]
++              [-O {suspend|hibernation}		: Off (Use Only>=Libretto100)]
++          \n");
++# endif /* HAVE_GETOPT_LONG */
++
+ #endif /* CMOS_ACCESS */
+     exit(1);
+ }
+@@ -246,7 +290,11 @@
+ void init(void)
+ {
+   /* SMI port */
++#ifdef __linux__
+   ioperm(0xb2, 1, 1);
++#else
++  open("/dev/io", O_RDWR, 0);
++#endif
+ }
+ #endif /* CMOS_ACCESS */
+ 

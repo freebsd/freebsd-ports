@@ -1,0 +1,101 @@
+--- libapm-e.man.orig	Fri Jun 19 12:02:48 1998
++++ libapm-e.man	Thu Nov 26 12:38:56 1998
+@@ -1,73 +1,73 @@
+ .\" Written Tue May 12 19:30:00 1998 by ISHIOKA Takashi
+ .\" (ishioka@ppp01.infopepper.or.jp )
+-.TH libapm l "" "TOSHIBA Libretto only"  ""
++.TH libretto-config 8 "" "TOSHIBA Libretto only"  ""
+ .SH NAME
+-libapm \- TOSHIBA Libretto BIOS Setup Program
++libretto-config \- TOSHIBA Libretto BIOS Setup Program
+ .SH SYNOPSIS
+ 
+-.B libapm
+-{\-v,\-\-Version}
+-{\-h,\-\-Help}
++.B libretto-config
++{\-v}
++{\-h}
+ 
+-.B libapm
+-{\-P,\-\-PowerUp (boot,hibernation)}
+-{\-T,\-\-StandbyTime (0,5,10,15,30,45,60)}
+-{\-a,\-\-AutoOff (disable,10,20,30,40,50,60)}
+-{\-S,\-\-PanelSwitch (disable,enable)}
+-{\-A,\-\-PowerOn (disable,<time>)}
+-{\-L,\-\-LcdPower (0,1,2,3)}
+-{\-V,\-\-Volume (0,1,2,3)}
+-{\-O,\-\-Off (suspend|hibernation)}
++.B libretto-config
++{\-P (boot,hibernation)}
++{\-T (0,5,10,15,30,45,60)}
++{\-a (disable,10,20,30,40,50,60)}
++{\-S (disable,enable)}
++{\-A (disable,<time>)}
++{\-L (0,1,2,3)}
++{\-V (0,1,2,3)}
++{\-O (suspend|hibernation)}
+ 
+ .SH DESCRIPTION
+-.B libapm
++.B libretto-config
+ configures the setting of Toshiba Libretto.
+ Changes are done immediately and rebooting is not neccesary.
+ 
+ .SH OPTIONS
+ .TP
+-.B \-P,\-\-PowerUp (boot,hibernation)
++.B \-P (boot,hibernation)
+ sets the Hibernation function.
+ If hibernation is specified, the hibernation function is enabled.
+ If boot is specified, it is disabled.
+ .TP 
+-.B \-T,\-\-StandbyTime (0,5,10,15,30,45,60)
++.B \-T (0,5,10,15,30,45,60)
+ sets the Standby time.
+ If the Stanby time is specified, the power is not cut after hibernation
+ for that time in order to resume quickly from hibernation.
+ You can select the time from 0, 5, 10, 15, 30, 45, 60 minutes.
+ This function is valid if the hibernation function is enabled.
+ .TP
+-.B \-a,\-\-AutoOff (disable,10,20,30,40,50,60)
++.B \-a (disable,10,20,30,40,50,60)
+ sets the time to the Auto Power Off.
+ You can select the time from disable, 10, 20, 30, 40, 50, 60 minutes.
+ This function is valid if the hibernation function is enabled.
+ .TP
+-.B \-S,\-\-PanelSwitch (disable,enable)
++.B \-S (disable,enable)
+ sets the Panel Switch funtion. If enabled, hibernation is done by 
+ closing the panel and vice versa.
+ This function is valid if the hibernation function is enabled.
+ .TP
+-.B \-A,\-\-PowerOn (disable,<time>)
++.B \-A (disable,<time>)
+ sets the Power On timer.
+ The format of the <time> is hh:mm. If time is specified, power is 
+ automatically turned on at the time. 
+ .TP
+-.B \-L,\-\-LcdPower (0,1,2,3)
++.B \-L (0,1,2,3)
+ sets the brightness of the LCD.
+ 0 is the darkest and 3 is the brightest.
+ .TP
+-.B \-V,\-\-Volume (0,1,2,3)
++.B \-V (0,1,2,3)
+ sets the volume of beep sound.
+ 0 is off, 1 is minimum and 3 is maximum.
+ .TP
+-.B \-O,\-\-Off (suspend|hibernation)
++.B \-O (suspend|hibernation)
+ sets the suspend/hibernation mode. (100CT Only)
+ .TP
+-.B \-v,\-\-Version 
++.B \-v
+ displays the version of this program.
+ .TP
+-.B \-h,\-\-Help 
++.B \-h
+ displays the simple usage.
+ 
+ .SH BUGS

@@ -1,0 +1,7 @@
+sbin/libretto-config
+share/doc/libretto-config/README.1st
+share/doc/libretto-config/APM-EXBIOS.txt
+share/doc/libretto-config/ja/README.1st
+share/doc/libretto-config/ja/APM-EXBIOS.txt
+@dirrm share/doc/libretto-config/ja
+@dirrm share/doc/libretto-config
