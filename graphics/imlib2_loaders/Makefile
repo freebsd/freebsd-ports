@@ -6,21 +6,24 @@
 #
 
 PORTNAME=	imlib2_loaders
-PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTVERSION=	1.1.1
+PORTREVISION=	0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	enlightenment
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	Extra image loader plugins for Imlib 2
 
 LIB_DEPENDS=	Imlib2.2:${PORTSDIR}/graphics/imlib2 \
-		edb.1:${PORTSDIR}/databases/edb
+		edb.1:${PORTSDIR}/databases/edb \
+		eet.9:${PORTSDIR}/devel/eet
 
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=	15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
+
+CONFIGURE_TARGET:=	--build=${CONFIGURE_TARGET}

@@ -1,2 +1,5 @@
-lib/loaders/image/db.so
-lib/loaders/image/xcf.so
+lib/imlib2_loaders/image/ani.so
+lib/imlib2_loaders/image/db.so
+lib/imlib2_loaders/image/eet.so
+lib/imlib2_loaders/image/ico.so
+lib/imlib2_loaders/image/xcf.so
