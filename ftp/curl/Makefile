@@ -1,11 +1,11 @@
 # New ports collection makefile for:	curl
-# Version required:     5.9
+# Version required:     6.1
 # Date created:		12 December 1998
 # Whom:			Neil Blakey-Milner <nbm@rucus.ru.ac.za>
 #
 # $FreeBSD$
 
-DISTNAME=	curl-5.9
+DISTNAME=	curl-6.1
 CATEGORIES=	ftp www
 MASTER_SITES=	http://www.fts.frontec.se/~dast/stuff/ \
 		ftp://ftp.rhrz.uni-bonn.de/pub-koeln/net/inet/ \
