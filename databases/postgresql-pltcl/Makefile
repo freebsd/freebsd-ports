@@ -10,11 +10,12 @@ CATEGORIES=	databases tcl83
 
 MAINTAINER=	girgen@pingpong.net
 
+POSTGRESQL_PORT?=	databases/postgresql7
 POSTGRESQL_SUBPORT=YES
-.include <${.CURDIR}/../postgresql7/Makefile>
+.include <${PORTSDIR}/${POSTGRESQL_PORT}/Makefile>
 
 LIB_DEPENDS=	tcl${TCLVERSION:S/.//}:${PORTSDIR}/lang/tcl${TCLVERSION:S/.//}
-RUN_DEPENDS=	postgres:${PORTSDIR}/databases/postgresql7
+RUN_DEPENDS=	postgres:${PORTSDIR}/${POSTGRESQL_PORT}
 
 # you can use "make TCLVERSION=8.4" or similar for your favourite tcl version
 TCLVERSION?=	8.3
