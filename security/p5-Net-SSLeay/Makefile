@@ -16,10 +16,6 @@ MAINTAINER=	andreas@FreeBSD.org
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 400000
-FORBIDDEN=	infinite loop trying to find OpenSSL
-.endif
-
 RESTRICTED=	"Cryptography"
 USE_PERL5=	YES
 
