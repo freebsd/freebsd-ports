@@ -9,7 +9,7 @@ PORTNAME=	xcdplayer
 PORTVERSION=	2.2
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/ \
-		ftp://ftp.cdrom.com/pub/X11/R5contrib/
+		ftp://ftp.freesoftware.com/pub/X11/R5contrib/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	swallace@FreeBSD.org
