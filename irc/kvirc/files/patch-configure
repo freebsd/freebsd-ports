@@ -1,15 +1,24 @@
---- configure	Sat Jan  4 16:54:22 2003
-+++ configure.patched	Mon Jan  5 19:16:14 2004
-@@ -18245,7 +18245,7 @@
- 		ss_save_LIBS="$LIBS"
- 		CPPFLAGS="-I$SS_X_INCDIR -I$SS_QT_INCDIR $CPPFLAGS $X_CFLAGS"
+--- configure.orig	Sun May 30 19:45:23 2004
++++ configure	Tue Dec 14 22:19:39 2004
+@@ -14789,7 +14789,7 @@
+ 
+ 
+ # This can be used to rebuild libtool when needed
+-LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++LIBTOOL_DEPS="--disable-ltlibs /usr/local/share/libtool15/ltmain.sh"
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -18476,7 +18476,7 @@
+ 		fi
+ 		CPPFLAGS="$CPPFLAGS -I$SS_QT_INCDIR $CPPFLAGS $X_CFLAGS"
  		CXXFLAGS="-O2 -Wall $CXXFLAGS"
 -		LIBS="-L$SS_X_LIBDIR -L$SS_QT_LIBDIR $X_EXTRA_LIBS $X_LIBS $LIBS -l$SS_QTLIB_NAME -lXext -lX11"
 +		LIBS="-L$SS_X_LIBDIR -L$SS_QT_LIBDIR $X_EXTRA_LIBS $X_LIBS $LIBS -l$SS_QTLIB_NAME -lXext -lX11 -pthread"
  		LDFLAGS="-s $LDFLAGS"
  		cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
-@@ -18586,7 +18586,7 @@
+@@ -18859,7 +18859,7 @@
  		ss_save_LIBS="$LIBS"
  		CPPFLAGS="-I$SS_X_INCDIR -I$SS_QT_INCDIR -I$SS_KDE_INCDIR $CPPFLAGS $X_CFLAGS"
  		CXXFLAGS="-O2 -Wall $CXXFLAGS"
@@ -18,3 +27,12 @@
  		if test "$SS_LINK_TO_LIBDL" = "yes"; then
  			LIBS="$LIBS -ldl";
  		fi
+@@ -19695,7 +19695,7 @@
+ 			ss_save_LIBS="$LIBS"
+ 			CPPFLAGS="-I$SS_X_INCDIR -I$SS_QT_INCDIR -I$SS_KDE_INCDIR $CPPFLAGS $X_CFLAGS"
+ 			CXXFLAGS="-O2 -Wall $CXXFLAGS"
+-			LIBS="-L$SS_KDE_LIBDIR -L$SS_X_LIBDIR -L$SS_QT_LIBDIR $X_ $X_EXTRA_LIBS $X_LIBS $LIBS -lsoundserver_idl -lkdecore -l$SS_QTLIB_NAME $SS_XFT_LIBLINK -lXext -lX11 -Wl,-rpath $SS_KDE_LIBDIR"
++			LIBS="-L$SS_KDE_LIBDIR -L$SS_X_LIBDIR -L$SS_QT_LIBDIR $X_ $X_EXTRA_LIBS $X_LIBS $LIBS -lsoundserver_idl -lkdecore -l$SS_QTLIB_NAME $SS_XFT_LIBLINK -lXext -lX11 -pthread -Wl,-rpath $SS_KDE_LIBDIR"
+ 			if test "$SS_LINK_TO_LIBDL" = "yes"; then
+ 				LIBS="$LIBS -ldl";
+ 			fi
