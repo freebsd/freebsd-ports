@@ -41,15 +41,6 @@ CONFIGURE_ARGS+= --enable-static-link=no
 .endif
 MAN1=		bash.1 bashbug.1
 
-.if defined(WITH_NET_REDIRECTIONS)
-CONFIGURE_ARGS+=	--enable-net-redirections
-.endif
-
-pre-extract:
-.if !defined(WITH_NET_REDIRECTIONS)
-	@${ECHO_MSG} "You can enable support for /dev/(tcp|udp)/host/port redirection by defining WITH_NET_REDIRECTIONS."
-.endif
-
 post-install:
 	${CP} /etc/shells /etc/shells.bak
 	(${GREP} -v ${PREFIX}/bin/bash /etc/shells.bak; ${ECHO_CMD} ${PREFIX}/bin/bash) >/etc/shells
