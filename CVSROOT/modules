@@ -6495,6 +6495,7 @@ slisp		ports/lang/slisp
 slmon		ports/sysutils/slmon
 slnr		ports/news/slnr
 sloccount	ports/misc/sloccount
+sloth		ports/sysutils/sloth
 slrn		ports/news/slrn
 sls		ports/misc/sls
 slsc		ports/math/slsc
