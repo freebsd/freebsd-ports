@@ -1,0 +1,11 @@
+--- erts/boot/src/Makefile.orig	Sat Nov  2 16:15:36 2002
++++ erts/boot/src/Makefile	Sat Nov  2 16:16:17 2002
+@@ -103,7 +103,7 @@
+ 	$(INSTALL_DIR) $(RELSYSDIR)
+ 	$(INSTALL_DATA) erlang.ear $(RELSYSDIR)/erlang.ear
+ 	$(INSTALL_DIR) $(RELSYSDIR)/bin
+-	$(INSTALL_PROGRAM) ecc elink escript ear esh $(RELSYSDIR)/bin
++	$(INSTALL_SCRIPT) ecc elink escript ear esh $(RELSYSDIR)/bin
+ endif
+ 
+ bootstrap: ${BEAM} ${FAKES} elink

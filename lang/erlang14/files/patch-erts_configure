@@ -1,0 +1,11 @@
+--- erts/configure.orig	Wed Oct 16 10:41:01 2002
++++ erts/configure	Sat Nov  2 15:43:52 2002
+@@ -3960,7 +3960,7 @@
+ 
+ 
+ for ac_func in ieee_handler fpsetmask finite isnan isinf res_gethostbyname dlopen \
+-		poll pread pwrite writev memmove strerror strncasecmp \
++		poll pread pwrite writev memmove strerror strerror_r strncasecmp \
+ 		gethrtime localtime_r gmtime_r mremap memcpy mallopt
+ do
+ echo $ac_n "checking for $ac_func""... $ac_c" 1>&6
