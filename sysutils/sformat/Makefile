@@ -21,14 +21,17 @@ USE_REINPLACE=	yes
 MAN1=		sformat.1
 
 MAKE_ENV=	CCOM=${CC}
+SFMTTARGET=	${ARCH}-freebsd-${CC}
+
+.include <bsd.port.pre.mk>
 
 post-extract:
 .for i in config.guess config.sub
 	@${CP} ${PORTSDIR}/Templates/${i} ${WRKSRC}/conf
 .endfor
-.if ${MACHINE_ARCH} != "i386" || ${CC} != "cc"
-	@${LN} -s ${WRKSRC}/RULES/i386-freebsd-cc.rul \
-		${WRKSRC}/RULES/${MACHINE_ARCH}-freebsd-${CC}.rul
+.if ${ARCH} != "i386" || ${CC} != "cc"
+	@${LN} -sf ${WRKSRC}/RULES/i386-freebsd-cc.rul \
+		${WRKSRC}/RULES/${SFMTTARGET}.rul
 .endif
 
 post-patch:
@@ -38,10 +41,10 @@ post-patch:
 .endfor
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/sformat/OBJ/${ARCH}-freebsd-cc/sformat \
+	@${INSTALL_PROGRAM} ${WRKSRC}/sformat/OBJ/${SFMTTARGET}/sformat \
 		${PREFIX}/bin
 	@${MKDIR} ${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/sformat/sformat.dat ${DATADIR}
 	@${INSTALL_MAN} ${WRKSRC}/sformat/sformat.1 ${PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
