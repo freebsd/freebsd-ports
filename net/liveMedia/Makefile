@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liveMedia
-PORTVERSION=	2004.07.27
+PORTVERSION=	2004.07.31
 PORTEPOCH=	1
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.LIVE.COM/liveMedia/public/
@@ -115,6 +115,7 @@ liveMedia=		\
 		liveMedia/include/MPEG4ESVideoRTPSource.hh \
 		liveMedia/include/MPEG4GenericRTPSink.hh \
 		liveMedia/include/MPEG4GenericRTPSource.hh \
+		liveMedia/include/MPEG4LATMAudioRTPSink.hh \
 		liveMedia/include/MPEG4LATMAudioRTPSource.hh \
 		liveMedia/include/MPEG4VideoFileServerMediaSubsession.hh \
 		liveMedia/include/MPEG4VideoStreamFramer.hh \
