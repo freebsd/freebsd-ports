@@ -19,9 +19,6 @@ WRKSRC=		${WRKDIR}/wmtimebomb.app
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
 
-post-patch:
-	@${PERL} -pi -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/Imakefile
-
 post-install:
 	@${MKDIR} ${PREFIX}/lib/X11/wmtimebomb
 	${INSTALL_DATA} ${WRKSRC}/example.modefile ${PREFIX}/lib/X11/wmtimebomb
