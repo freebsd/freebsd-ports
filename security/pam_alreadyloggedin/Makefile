@@ -20,7 +20,7 @@ MANCOMPRESSED=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=	"only works on systems with OpenPAM (5.0-CURRENT)"
+IGNORE=	"only works on systems with OpenPAM (5.0-CURRENT)"
 .endif
 
 .if ${OSVERSION} >= 500113
