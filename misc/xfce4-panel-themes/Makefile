@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfce4-panel-themes
-PORTVERSION=	4.0.5
+PORTVERSION=	4.0.6
 PORTREVISION=	0
 CATEGORIES=	misc xfce
 MASTER_SITES=	ftp://ftp.berlios.de/pub/xfce-goodies/${PORTVERSION}/ \

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfce4-toys
-PORTVERSION=	4.0.5
+PORTVERSION=	4.0.6
 PORTREVISION=	0
 CATEGORIES=	games xfce
 MASTER_SITES=	ftp://ftp.berlios.de/pub/xfce-goodies/${PORTVERSION}/ \
