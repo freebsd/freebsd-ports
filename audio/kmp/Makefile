@@ -20,6 +20,8 @@ USE_BZIP2=	true
 USE_QT_VER=	3
 MAKE_ENV=	QTDIR="${QT_PREFIX}"
 
+PLIST_FILES=	bin/kmp
+
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} qmake \
 		-spec ${LOCALBASE}/share/qt/mkspecs/freebsd-g++ kmp.pro
