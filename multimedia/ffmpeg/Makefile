@@ -9,8 +9,9 @@ PORTNAME=	ffmpeg
 PORTVERSION=	0.4.5
 PORTREVISION=	3
 CATEGORIES=	graphics
-MASTER_SITES=	http://ffmpeg.sourceforge.net/
-DISTNAME=	ffmpeg-cvs
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	lioux
+DISTNAME=	ffmpeg-cvs-2002101400
 
 MAINTAINER=	lioux@FreeBSD.org
 
@@ -26,7 +27,7 @@ USE_REINPLACE=	yes
 CONFIGURE_ARGS= --cc="${CC}" --prefix="${PREFIX}" \
 		--make="${GMAKE}" --enable-shared \
 		--extra-cflags="-I${LOCALBASE}/include" \
-		--extra-libs="-L${LOCALBASE}/lib"
+		--extra-libs="-lm -L${LOCALBASE}/lib"
 PLIST_SUB=	SHLIB_VERSION=${SHLIB_VERSION}
 INSTALLS_SHLIB=	yes
 
