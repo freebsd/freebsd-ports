@@ -5,8 +5,7 @@
 #
 
 PORTNAME=	howl
-PORTVERSION=	0.9.4
-PORTREVISION=	1
+PORTVERSION=	0.9.5
 CATEGORIES?=	net devel
 MASTER_SITES=	http://www.porchdogsoft.com/download/
 
@@ -16,7 +15,7 @@ COMMENT=	Zeroconf/Rendezvous implementation
 ONLY_FOR_ARCHS=	i386
 
 USE_GMAKE=	yes
-USE_GNOME=	gnometarget
+USE_GNOME=	lthack gnometarget pkgconfig
 USE_LIBTOOL_VER=13
 CONFIGURE_ENV+=	CFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
 USE_REINPLACE=	yes
