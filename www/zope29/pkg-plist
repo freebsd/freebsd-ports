@@ -1,7 +1,9 @@
+etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/bin/README.txt
 %%ZOPEBASEDIR%%/bin/check_catalog.py
 %%ZOPEBASEDIR%%/bin/compilezpy.py
 %%ZOPEBASEDIR%%/bin/copyzopeskel.py
+@exec rm -f %%ZOPEBASEDIR%%/bin/copyzopeskel.pyc
 %%ZOPEBASEDIR%%/bin/decompilezpy.py
 %%ZOPEBASEDIR%%/bin/load_site.py
 %%ZOPEBASEDIR%%/bin/mkzeoinstance.py
@@ -3043,6 +3045,7 @@
 @dirrm %%ZOPEBASEDIR%%/lib/python/AccessControl
 @dirrm %%ZOPEBASEDIR%%/lib/python
 @dirrm %%ZOPEBASEDIR%%/lib
+@dirrm %%ZOPEBASEDIR%%/Products
 @dirrm %%ZOPEBASEDIR%%/import
 @dirrm %%ZOPEBASEDIR%%/doc/zconfig
 @dirrm %%ZOPEBASEDIR%%/doc/changenotes
