@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	bbmail
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.8
 CATEGORIES=	mail
-MASTER_SITES=	http://bbtools.windsofstorm.net/sources/ \
-		ftp://stokes.tte.ele.tue.nl/pub/bbmail/
+MASTER_SITES=	http://bbtools.thelinuxcommunity.org/sources/
 
 MAINTAINER=	patseal@hyperhost.net
 
+USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-USE_XLIB=	yes
 
 .include <bsd.port.mk>
