@@ -1,6 +1,7 @@
 %%SITE_PERL%%/Spreadsheet/WriteExcel.pm
 %%SITE_PERL%%/Spreadsheet/WriteExcel/BIFFwriter.pm
 %%SITE_PERL%%/Spreadsheet/WriteExcel/Big.pm
+%%SITE_PERL%%/Spreadsheet/WriteExcel/Chart.pm
 %%SITE_PERL%%/Spreadsheet/WriteExcel/Format.pm
 %%SITE_PERL%%/Spreadsheet/WriteExcel/Formula.pm
 %%SITE_PERL%%/Spreadsheet/WriteExcel/OLEwriter.pm
@@ -9,6 +10,7 @@
 %%SITE_PERL%%/Spreadsheet/WriteExcel/WorkbookBig.pm
 %%SITE_PERL%%/Spreadsheet/WriteExcel/Worksheet.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spreadsheet/WriteExcel/.packlist
+bin/chartex
 %%PORTDOCS%%%%DOCSDIR%%/WriteExcel.html
 %%PORTDOCS%%%%DOCSDIR%%/examples.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
@@ -35,11 +37,22 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/bigfile.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/bug_report.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/cgi.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/charts/Chart1.xls
+%%PORTDOCS%%%%EXAMPLESDIR%%/charts/Chart2.xls
+%%PORTDOCS%%%%EXAMPLESDIR%%/charts/Chart3.xls
+%%PORTDOCS%%%%EXAMPLESDIR%%/charts/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/charts/chartex.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/charts/charts.pod
+%%PORTDOCS%%%%EXAMPLESDIR%%/charts/charts.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/charts/demo1.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/charts/demo2.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/charts/demo3.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/chess.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/colors.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/convertA1.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/copyformat.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/csv2xls.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/date_time.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/datecalc1.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/datecalc2.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/demo.pl
@@ -76,12 +89,35 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/tab2xls.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/textwrap.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/unicode.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/unicode_2022_jp.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/unicode_2022_jp.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/unicode_8859_11.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/unicode_8859_11.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/unicode_8859_7.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/unicode_8859_7.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/unicode_big5.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/unicode_big5.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/unicode_cp1251.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/unicode_cp1251.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/unicode_cp1256.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/unicode_cp1256.txt
 %%PORTDOCS%%%%EXAMPLESDIR%%/unicode_japan.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/unicode_koi8r.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/unicode_koi8r.txt
 %%PORTDOCS%%%%EXAMPLESDIR%%/unicode_list.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/unicode_polish_utf8.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/unicode_polish_utf8.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/unicode_shift_jis.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/unicode_shift_jis.txt
 %%PORTDOCS%%%%EXAMPLESDIR%%/win32ole.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/writeA1.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/write_arrays.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/writemany.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/write_handler1.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/write_handler2.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/write_handler3.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/write_handler4.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/write_to_scalar.pl
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/charts
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spreadsheet/WriteExcel

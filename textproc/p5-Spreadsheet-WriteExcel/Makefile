@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Spreadsheet-WriteExcel
-PORTVERSION=	2.04
+PORTVERSION=	2.11
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Spreadsheet
@@ -23,9 +23,11 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
+MAN1=		chartex.1
 MAN3=		Spreadsheet::WriteExcel.3 \
 		Spreadsheet::WriteExcel::BIFFwriter.3 \
 		Spreadsheet::WriteExcel::Big.3 \
+		Spreadsheet::WriteExcel::Chart.3 \
 		Spreadsheet::WriteExcel::Format.3 \
 		Spreadsheet::WriteExcel::Formula.3 \
 		Spreadsheet::WriteExcel::OLEwriter.3 \
@@ -60,6 +62,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/README \
 		${WRKSRC}/examples/republic.bmp ${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/*.pl ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*.txt ${EXAMPLESDIR}
+	@${MKDIR} ${EXAMPLESDIR}/charts
+	${INSTALL_DATA} ${WRKSRC}/charts/* ${EXAMPLESDIR}/charts
 .endif
 
 .include <bsd.port.post.mk>
