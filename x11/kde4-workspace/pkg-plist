@@ -37,10 +37,12 @@ bin/klipper
 bin/klorenz.kss
 bin/kmatrix.kss
 bin/kmenuedit
+bin/kmorph3d.kss
 bin/konqueror
 bin/konsole
 bin/konsole_grantpty
 bin/kpager
+bin/kpipes.kss
 bin/kpolygon.kss
 bin/kpyro.kss
 bin/krandom.kss
@@ -51,6 +53,7 @@ bin/kscience.kss
 bin/kslidescreen.kss
 bin/kslideshow.kss
 bin/ksmserver
+bin/kspace.kss
 bin/ksplash
 bin/kstart
 bin/kswarm.kss
@@ -67,6 +70,8 @@ bin/kxkb
 bin/kxmlrpcd
 bin/kxsconfig
 bin/kxsrun
+bin/nspluginscan
+bin/nspluginviewer
 bin/startkde
 include/KBackgroundIface.h
 include/KDesktopIface.h
@@ -136,8 +141,6 @@ lib/kde2/kio_imap4.la
 lib/kde2/kio_imap4.so
 lib/kde2/kio_info.la
 lib/kde2/kio_info.so
-lib/kde2/kio_ldap.la
-lib/kde2/kio_ldap.so
 lib/kde2/kio_man.la
 lib/kde2/kio_man.so
 lib/kde2/kio_nfs.la
@@ -309,6 +312,8 @@ lib/libkcm_ioslaveinfo.la
 lib/libkcm_ioslaveinfo.so
 lib/libkcm_layout.la
 lib/libkcm_layout.so
+lib/libkcm_nsplugin.la
+lib/libkcm_nsplugin.so
 lib/libkcm_xmlrpcd.la
 lib/libkcm_xmlrpcd.so
 lib/libkhelpcenter.la
@@ -344,6 +349,9 @@ lib/libkwritepart.so
 lib/libnaughtyapplet.la
 lib/libnaughtyapplet.so
 lib/libnaughtyapplet.so.1
+lib/libnsplugin.la
+lib/libnsplugin.so
+lib/libnsplugin.so.4
 lib/libquicklauncher.la
 lib/libquicklauncher.so
 lib/libquicklauncher.so.1
@@ -370,6 +378,7 @@ share/applnk/Internet/.directory
 share/applnk/Internet/keditbookmarks.desktop
 share/applnk/Internet/konqbrowser.desktop
 share/applnk/Internet/netscape.desktop
+share/applnk/Internet/xchat.desktop
 share/applnk/KControl.desktop
 share/applnk/Multimedia/.directory
 share/applnk/Multimedia/aviplay.desktop
@@ -404,6 +413,7 @@ share/applnk/Settings/LookNFeel/Themes/iconthemes.desktop
 share/applnk/Settings/LookNFeel/Themes/style.desktop
 share/applnk/Settings/LookNFeel/Windows/actions.desktop
 share/applnk/Settings/LookNFeel/Windows/kwinmouse.desktop
+share/applnk/Settings/LookNFeel/Windows/mouse.desktop
 share/applnk/Settings/LookNFeel/background.desktop
 share/applnk/Settings/LookNFeel/colors.desktop
 share/applnk/Settings/LookNFeel/desktop.desktop
@@ -443,11 +453,42 @@ share/applnk/Settings/WebBrowsing/.directory
 share/applnk/Settings/WebBrowsing/cookies.desktop
 share/applnk/Settings/WebBrowsing/ebrowsing.desktop
 share/applnk/Settings/WebBrowsing/konqhtml.desktop
+share/applnk/Settings/WebBrowsing/nsplugin.desktop
 share/applnk/Settings/WebBrowsing/proxy.desktop
 share/applnk/Settings/WebBrowsing/smb.desktop
 share/applnk/Settings/WebBrowsing/useragent.desktop
 share/applnk/System/.directory
 share/applnk/System/ScreenSavers/.directory
+share/applnk/System/ScreenSavers/Ant.desktop
+share/applnk/System/ScreenSavers/Atlantis.desktop
+share/applnk/System/ScreenSavers/Attraction.desktop
+share/applnk/System/ScreenSavers/Bouboule.desktop
+share/applnk/System/ScreenSavers/Braid.desktop
+share/applnk/System/ScreenSavers/Bubble3d.desktop
+share/applnk/System/ScreenSavers/Bubbles.desktop
+share/applnk/System/ScreenSavers/Cage.desktop
+share/applnk/System/ScreenSavers/Compass.desktop
+share/applnk/System/ScreenSavers/Coral.desktop
+share/applnk/System/ScreenSavers/Crystal.desktop
+share/applnk/System/ScreenSavers/Cynosure.desktop
+share/applnk/System/ScreenSavers/Demon.desktop
+share/applnk/System/ScreenSavers/Drift.desktop
+share/applnk/System/ScreenSavers/Fadeplot.desktop
+share/applnk/System/ScreenSavers/Flag.desktop
+share/applnk/System/ScreenSavers/Flame.desktop
+share/applnk/System/ScreenSavers/Flow.desktop
+share/applnk/System/ScreenSavers/Forest.desktop
+share/applnk/System/ScreenSavers/GLPlanet.desktop
+share/applnk/System/ScreenSavers/Galaxy.desktop
+share/applnk/System/ScreenSavers/Gears.desktop
+share/applnk/System/ScreenSavers/Goop.desktop
+share/applnk/System/ScreenSavers/Grav.desktop
+share/applnk/System/ScreenSavers/Hopalong.desktop
+share/applnk/System/ScreenSavers/Hypercube.desktop
+share/applnk/System/ScreenSavers/Ifs.desktop
+share/applnk/System/ScreenSavers/Imsmap.desktop
+share/applnk/System/ScreenSavers/Interference.desktop
+share/applnk/System/ScreenSavers/Julia.desktop
 share/applnk/System/ScreenSavers/KBanner.desktop
 share/applnk/System/ScreenSavers/KBlankscreen.desktop
 share/applnk/System/ScreenSavers/KBlob.desktop
@@ -469,7 +510,34 @@ share/applnk/System/ScreenSavers/KSlideshow.desktop
 share/applnk/System/ScreenSavers/KSpace.desktop
 share/applnk/System/ScreenSavers/KSwarm.desktop
 share/applnk/System/ScreenSavers/KVm.desktop
+share/applnk/System/ScreenSavers/Kaleidescope.desktop
+share/applnk/System/ScreenSavers/Kumppa.desktop
+share/applnk/System/ScreenSavers/LMorph.desktop
+share/applnk/System/ScreenSavers/Lament.desktop
+share/applnk/System/ScreenSavers/Laser.desktop
+share/applnk/System/ScreenSavers/Lightning.desktop
+share/applnk/System/ScreenSavers/Lissie.desktop
+share/applnk/System/ScreenSavers/Moenius.desktop
+share/applnk/System/ScreenSavers/Penrose.desktop
+share/applnk/System/ScreenSavers/Phosphor.desktop
+share/applnk/System/ScreenSavers/Pulsar.desktop
+share/applnk/System/ScreenSavers/Rubik.desktop
+share/applnk/System/ScreenSavers/Slip.desktop
+share/applnk/System/ScreenSavers/Sonar.desktop
+share/applnk/System/ScreenSavers/Sproingies.desktop
+share/applnk/System/ScreenSavers/Stairs.desktop
+share/applnk/System/ScreenSavers/Starfish.desktop
+share/applnk/System/ScreenSavers/Strange.desktop
+share/applnk/System/ScreenSavers/Superquadrics.desktop
+share/applnk/System/ScreenSavers/Swirl.desktop
+share/applnk/System/ScreenSavers/T3d.desktop
+share/applnk/System/ScreenSavers/Triangle.desktop
+share/applnk/System/ScreenSavers/Vines.desktop
 share/applnk/System/ScreenSavers/Worm.desktop
+share/applnk/System/ScreenSavers/XFlame.desktop
+share/applnk/System/ScreenSavers/XJack.desktop
+share/applnk/System/ScreenSavers/XMatrix.desktop
+share/applnk/System/ScreenSavers/XPipes.desktop
 share/applnk/System/kappfinder.desktop
 share/applnk/System/kfmclient.desktop
 share/applnk/System/kfmclient_dir.desktop
@@ -484,6 +552,7 @@ share/applnk/Toys/.directory
 share/applnk/Toys/ktip.desktop
 share/applnk/Toys/xeyes.desktop
 share/applnk/Utilities/.directory
+share/applnk/Utilities/XUtilities/.directory
 share/applnk/Utilities/XUtilities/xcalc.desktop
 share/applnk/Utilities/XUtilities/xclipboard.desktop
 share/applnk/Utilities/XUtilities/xclock.desktop
@@ -493,7 +562,8 @@ share/applnk/Utilities/XUtilities/xmag.desktop
 share/applnk/Utilities/XUtilities/xterm.desktop
 share/applnk/Utilities/klipper.desktop
 share/applnk/Utilities/kpager.desktop
-share/applnk/WordProcessing/gv.desktop
+share/applnk/WordProcessing/.directory
+share/applnk/WordProcessing/ghostview.desktop
 share/applnk/WordProcessing/xpdf.desktop
 share/apps/clockapplet/pics/lcd.png
 share/apps/drkonqi/debuggers/gdbrc
@@ -1679,6 +1749,7 @@ share/icons/hicolor/16x16/apps/package_system.png
 share/icons/hicolor/16x16/apps/package_toys.png
 share/icons/hicolor/16x16/apps/package_utilities.png
 share/icons/hicolor/16x16/apps/package_wordprocessing.png
+share/icons/hicolor/16x16/apps/pybliographic.png
 share/icons/hicolor/16x16/apps/realplayer.png
 share/icons/hicolor/16x16/apps/remote.png
 share/icons/hicolor/16x16/apps/samba.png
@@ -1786,6 +1857,7 @@ share/icons/hicolor/32x32/apps/package_utilities.png
 share/icons/hicolor/32x32/apps/package_wordprocessing.png
 share/icons/hicolor/32x32/apps/password.png
 share/icons/hicolor/32x32/apps/proxy.png
+share/icons/hicolor/32x32/apps/pybliographic.png
 share/icons/hicolor/32x32/apps/realplayer.png
 share/icons/hicolor/32x32/apps/style.png
 share/icons/hicolor/32x32/apps/terminal.png
@@ -2400,7 +2472,6 @@ share/services/kurisearchfilter.desktop
 share/services/kwrite_component.desktop
 share/services/kxkb.desktop
 share/services/kxmlrpcd.desktop
-share/services/ldap.protocol
 share/services/man.protocol
 share/services/nfs.protocol
 share/services/nntp.protocol
@@ -2506,13 +2577,11 @@ share/wallpapers/simple_wallpaper.jpg
 share/wallpapers/sunday_brunch.jpg
 share/wallpapers/vegetative_fog.jpg
 @dirrm share/wallpapers
+@dirrm share/templates/.source/emptydir
 @dirrm share/templates/.source
 @dirrm share/templates
 @dirrm share/sounds
-@dirrm share/servicetypes
 @dirrm share/services/searchproviders
-@dirrm share/services
-@dirrm share/mimelnk/application
 @dirrm share/locale/l10n/za
 @dirrm share/locale/l10n/ve
 @dirrm share/locale/l10n/vc
@@ -2590,16 +2659,10 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/icons/locolor/32x32/apps
 @dirrm share/icons/locolor/16x16/devices
 @dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/locolor/16x16/actions
-@dirrm share/icons/hicolor/48x48/filesystems
 @dirrm share/icons/hicolor/48x48/devices
 @dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/32x32/filesystems
 @dirrm share/icons/hicolor/32x32/devices
 @dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/32x32/actions
-@dirrm share/icons/hicolor/22x22/actions
-@dirrm share/icons/hicolor/16x16/filesystems
 @dirrm share/icons/hicolor/16x16/devices
 @dirrm share/icons/hicolor/16x16/apps
 @dirrm share/fonts/override
@@ -2621,10 +2684,9 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/doc/HTML/en/kdesu
 @dirrm share/doc/HTML/en/kdebugdialog
 @dirrm share/doc/HTML/en/kcontrol
-@dirrm share/doc/HTML/en
-@dirrm share/config
 @dirrm share/autostart
 @dirrm share/apps/naughtyapplet/pics
+@dirrm share/apps/naughtyapplet
 @dirrm share/apps/kwrite
 @dirrm share/apps/kwin/pics
 @dirrm share/apps/kwin
@@ -2637,6 +2699,7 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/apps/ksysguard
 @dirrm share/apps/ksplash/pics/locolor
 @dirrm share/apps/ksplash/pics
+@dirrm share/apps/ksplash
 @dirrm share/apps/kscreensaver
 @dirrm share/apps/konsole/pics
 @dirrm share/apps/konsole
@@ -2651,6 +2714,7 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/apps/konqueror/icons/hicolor/22x22/actions
 @dirrm share/apps/konqueror/icons/hicolor/22x22
 @dirrm share/apps/konqueror/icons/hicolor/16x16/actions
+@dirrm share/apps/konqueror/icons/hicolor/16x16
 @dirrm share/apps/konqueror/icons/hicolor
 @dirrm share/apps/konqueror/icons
 @dirrm share/apps/konqueror/dirtree/remote/web
@@ -2682,6 +2746,8 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/apps/kicker/icons/locolor/16x16
 @dirrm share/apps/kicker/icons/locolor
 @dirrm share/apps/kicker/icons/hicolor/16x16/actions
+@dirrm share/apps/kicker/icons/hicolor/16x16
+@dirrm share/apps/kicker/icons/hicolor
 @dirrm share/apps/kicker/icons
 @dirrm share/apps/kicker/extensions
 @dirrm share/apps/kicker/applets
@@ -2696,6 +2762,10 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/apps/khelpcenter/en
 @dirrm share/apps/khelpcenter
 @dirrm share/apps/kfind/icons/locolor/22x22/actions
+@dirrm share/apps/kfind/icons/locolor/22x22
+@dirrm share/apps/kfind/icons/locolor
+@dirrm share/apps/kfind/icons
+@dirrm share/apps/kfind
 @dirrm share/apps/keditbookmarks
 @dirrm share/apps/kdm/pics/users
 @dirrm share/apps/kdm/pics
@@ -2716,6 +2786,7 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/apps/kcmlocale/pics
 @dirrm share/apps/kcmlocale
 @dirrm share/apps/kcmkeys/standard
+@dirrm share/apps/kcmkeys
 @dirrm share/apps/kcminput
 @dirrm share/apps/kbookmark
 @dirrm share/apps/kappfinder/apps/WordProcessing
@@ -2732,13 +2803,15 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/apps/kappfinder/apps/Editors
 @dirrm share/apps/kappfinder/apps/Development
 @dirrm share/apps/kappfinder/apps
+@dirrm share/apps/kappfinder
 @dirrm share/apps/drkonqi/presets
 @dirrm share/apps/drkonqi/pics
 @dirrm share/apps/drkonqi/debuggers
 @dirrm share/apps/drkonqi
 @dirrm share/apps/clockapplet/pics
 @dirrm share/apps/clockapplet
-@dirrm share/apps
+@dirrm share/applnk/WordProcessing
+@dirrm share/applnk/Utilities/XUtilities
 @dirrm share/applnk/Utilities
 @dirrm share/applnk/Toys
 @dirrm share/applnk/System/ScreenSavers
@@ -2768,5 +2841,4 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/applnk/Applications
 @dirrm share/applnk/.hidden
 @dirrm share/applnk
-@dirrm lib/kde2
 @dirrm include/kwin
