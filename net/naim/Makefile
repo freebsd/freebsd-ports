@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	naim
-PORTVERSION=	0.11.6
+PORTVERSION=	0.11.6.3
 CATEGORIES=	net irc
 MASTER_SITES=	http://shell.n.ml.org/n/naim/
 
 MAINTAINER=	rtdean@cytherianage.net
 COMMENT=	Curses based AOL Instant Messager implementation
 
+USE_BZIP2=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--disable-nirc-manlink \
 			--with-pkgdocdir=${DOCSDIR}
