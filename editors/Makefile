@@ -92,6 +92,7 @@
     SUBDIR += nvi-perl
     SUBDIR += offix-editor
     SUBDIR += openoffice
+    SUBDIR += openoffice-ar
     SUBDIR += openoffice-devel
     SUBDIR += openoffice-dk
     SUBDIR += openoffice-gr
