@@ -3,7 +3,7 @@
 # Date created:		7 January 1997
 # Whom:			Yoshiro MIHIRA
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/01/24 06:58:44 max Exp $
 #
 
 DISTNAME=	perl5.003
@@ -72,6 +72,6 @@ test:
 
 post-install:
 	@strip ${PREFIX}/bin/perl ${PREFIX}/bin/suidperl
-	@ln -s ${PREFIX}/bin/perl ${PREFIX}/bin/jperl
+	@ln -fs ${PREFIX}/bin/perl ${PREFIX}/bin/jperl
 
 .include <bsd.port.mk>
