@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.138 1998/05/18 04:10:14 mph Exp $
+# $Id: Makefile,v 1.139 1998/05/18 09:14:56 tg Exp $
 #
 
     SUBDIR += 3dc
@@ -93,6 +93,7 @@
     SUBDIR += xlife
     SUBDIR += xlines
     SUBDIR += xmahjongg
+    SUBDIR += xmastermind
     SUBDIR += xmemory
     SUBDIR += xmille
     SUBDIR += xmine
