@@ -4474,6 +4474,7 @@ nfsd		src/sbin/nfsd
 nfsiod		src/sbin/nfsiod
 nfsstat		src/usr.bin/nfsstat
 ngctl		src/usr.sbin/ngctl
+nget		ports/news/nget
 nghook		src/usr.sbin/nghook
 ngpt		ports/devel/ngpt
 ngraph		ports/math/ngraph
