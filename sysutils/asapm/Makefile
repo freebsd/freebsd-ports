@@ -3,7 +3,7 @@
 # Date created:		6 Aug 1998
 # Whom:			Brian Handy <handy@physics.montana.edu>
 #
-# $Id: Makefile,v 1.5 1998/11/29 12:43:12 asami Exp $
+# $Id: Makefile,v 1.6 1998/12/08 18:49:04 vanilla Exp $
 #
 
 DISTNAME=	asapm-2.3
@@ -13,6 +13,8 @@ MASTER_SITES=	http://bewoner.dma.be/Albert/linux/software/
 MAINTAINER=	handy@physics.montana.edu
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
+
+ONLY_FOR_ARCHS=	i386
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
