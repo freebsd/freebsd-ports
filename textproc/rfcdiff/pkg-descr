@@ -1,0 +1,13 @@
+The purpose of this program is to compare two versions of an
+Internet Draft and as output produce a diff in one of several
+formats:
+
+	- side-by-side html diff
+	- paged wdiff output in a text terminal
+	- a text file with changebars in the left margin
+	- a simple unified diff output
+
+In all cases, internet-draft headers and footers are stripped before
+generating the diff, to produce a cleaner diff.
+
+WWW: http://www.levkowetz.com/ietf/tools/rfcdiff
