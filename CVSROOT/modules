@@ -5459,6 +5459,7 @@ p5-Locale-Maketext	ports/devel/p5-Locale-Maketext
 p5-Locale-Maketext-Fuzzy	ports/devel/p5-Locale-Maketext-Fuzzy
 p5-Locale-Maketext-Gettext	ports/devel/p5-Locale-Maketext-Gettext
 p5-Locale-Maketext-Lexicon	ports/devel/p5-Locale-Maketext-Lexicon
+p5-Locale-Maketext-Simple	ports/devel/p5-Locale-Maketext-Simple
 p5-Locale-Msgcat	ports/misc/p5-Locale-Msgcat
 p5-Locale-PGetText	ports/devel/p5-Locale-PGetText
 p5-Locale-SubCountry	ports/misc/p5-Locale-SubCountry
