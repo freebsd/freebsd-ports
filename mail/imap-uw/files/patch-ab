@@ -1,22 +1,8 @@
-*** src/osdep/unix/Makefile.orig	Wed Apr 16 09:15:28 1997
---- src/osdep/unix/Makefile	Mon Apr 21 11:45:54 1997
+*** src/osdep/unix/Makefile.orig	Wed Apr 30 08:26:49 1997
+--- src/osdep/unix/Makefile	Sun May  4 12:10:20 1997
 ***************
-*** 32,45 ****
-  
-  
-  ARCHIVE=c-client.a
-  ARRC=ar rc
-  EXTRAAUTHENTICATORS=
-  DEFAULTAUTHENTICATORS=log
-  BINARIES=mail.o misc.o newsrc.o smanager.o osdep.o dummy.o pseudo.o netmsg.o \
-  	flstring.o fdstring.o rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
-  	bezerk.o mbox.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o
-  CC=cc
-! CFLAGS=$(EXTRACFLAGS)
-  EXTRADRIVERS=mbox
-  DEFAULTDRIVERS=imap nntp pop3 mh mx mbx tenex mtx mmdf bezerk news phile dummy
-  LN=ln -s
---- 32,47 ----
+*** 32,37 ****
+--- 32,38 ----
   
   
   ARCHIVE=c-client.a
@@ -24,8 +10,19 @@
   ARRC=ar rc
   EXTRAAUTHENTICATORS=
   DEFAULTAUTHENTICATORS=log
-  BINARIES=mail.o misc.o newsrc.o smanager.o osdep.o dummy.o pseudo.o netmsg.o \
-  	flstring.o fdstring.o rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
+***************
+*** 39,46 ****
+  	dummy.o pseudo.o netmsg.o flstring.o fdstring.o \
+  	rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
+  	bezerk.o mbox.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o
+  CC=cc
+! CFLAGS=$(EXTRACFLAGS)
+  EXTRADRIVERS=mbox
+  DEFAULTDRIVERS=imap nntp pop3 mh mx mbx tenex mtx mmdf bezerk news phile dummy
+  LN=ln -s
+--- 40,48 ----
+  	dummy.o pseudo.o netmsg.o flstring.o fdstring.o \
+  	rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
   	bezerk.o mbox.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o
 + SOFILES=      ${BINARIES:.o=.so}
   CC=cc
@@ -34,8 +31,8 @@
   DEFAULTDRIVERS=imap nntp pop3 mh mx mbx tenex mtx mmdf bezerk news phile dummy
   LN=ln -s
 ***************
-*** 51,56 ****
---- 53,61 ----
+*** 52,57 ****
+--- 54,62 ----
   RSHPATH=/usr/ucb/rsh
   SHELL=/bin/sh
   
@@ -46,12 +43,12 @@
   	@echo "You must specify what type of system"
   	@false
 ***************
-*** 131,136 ****
---- 136,151 ----
+*** 132,137 ****
+--- 137,152 ----
   		RSHPATH=/usr/bin/rsh \
   		CFLAGS="-g -O -pipe -DNFSKLUDGE $(EXTRACFLAGS)"
   
-+ fbd:	# FreeBSD
++ fbd: sigbsd	# FreeBSD
 + 	$(MAKE) $(ARCHIVE) $(SHLIB) OS=$@ EXTRADRIVERS="$(EXTRADRIVERS)" \
 + 		STDPROTO=bezerkproto \
 + 		MAILSPOOL=/var/mail \
@@ -61,11 +58,11 @@
 + 		CFLAGS="$(CFLAGS) -DNFSKLUDGE $(EXTRACFLAGS)" \
 + 		LDFLAGS="-lcrypt"
 + 
-  cvx:	# Convex
+  cvx:	sigbsd	# Convex
   	$(MAKE) $(ARCHIVE) OS=$@ EXTRADRIVERS="$(EXTRADRIVERS)" \
   		STDPROTO=bezerkproto MAILSPOOL=/usr/spool/mail \
 ***************
-*** 455,467 ****
+*** 456,468 ****
   # From here on down is OS-independent
   
   clean:
@@ -79,7 +76,7 @@
   # Dependencies
   
   bezerk.o: mail.h misc.h osdep.h bezerk.h pseudo.h dummy.h
---- 470,488 ----
+--- 471,489 ----
   # From here on down is OS-independent
   
   clean:
@@ -100,8 +97,8 @@
   
   bezerk.o: mail.h misc.h osdep.h bezerk.h pseudo.h dummy.h
 ***************
-*** 510,515 ****
---- 531,556 ----
+*** 511,516 ****
+--- 532,557 ----
   	-DRSH=\"$(RSH)\" -DRSHPATH=\"$(RSHPATH)\" \
   	$(EXTRAOSDEFS) -c os_$(OS).c
   	$(MV) os_$(OS).o osdep.o

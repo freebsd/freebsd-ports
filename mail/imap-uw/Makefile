@@ -3,7 +3,7 @@
 # Date created:		9 Jan 1997
 # Whom:			pst
 #
-# $Id: Makefile,v 1.2 1997/01/10 05:18:07 asami Exp $
+# $Id: Makefile,v 1.3 1997/01/12 16:10:28 ache Exp $
 #
 
 DISTNAME=	imap-4.1.BETA
@@ -16,6 +16,9 @@ MAINTAINER=	pst@freebsd.org
 
 ALL_TARGET=	fbd
 MAN8=		ipopd.8 imapd.8
+
+pre-build:
+	@chmod 755 ${WRKSRC}/src/osdep/unix/drivers ${WRKSRC}/src/osdep/unix/mkauths
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/c-client/libc-client.so.2.0 ${PREFIX}/lib
