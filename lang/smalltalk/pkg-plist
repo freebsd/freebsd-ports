@@ -1,27 +1,12 @@
-@unexec install-info --delete --info-dir=%D/info %D/info/gst.info
 bin/gst
 bin/gst-config
 bin/gst-package
 include/gst.h
 include/gstconf.h
 include/gstpub.h
+@unexec install-info --delete %D/info/gst.info %D/info/dir
 info/gst.info
-info/gst.info-1
-info/gst.info-10
-info/gst.info-11
-info/gst.info-12
-info/gst.info-13
-info/gst.info-14
-info/gst.info-15
-info/gst.info-16
-info/gst.info-2
-info/gst.info-3
-info/gst.info-4
-info/gst.info-5
-info/gst.info-6
-info/gst.info-7
-info/gst.info-8
-info/gst.info-9
+@exec install-info %D/info/gst.info %D/info/dir
 lib/libgst.a
 share/gnu-smalltalk/Load.st
 share/gnu-smalltalk/Reload.st
@@ -57,28 +42,10 @@ share/gnu-smalltalk/blox/StrcInspect.st
 share/gnu-smalltalk/blox/View.st
 share/gnu-smalltalk/blox/bear.gif
 share/gnu-smalltalk/blox/test.st
-share/gnu-smalltalk/cint/CDeclNode.st
-share/gnu-smalltalk/cint/CExpressionNode.st
-share/gnu-smalltalk/cint/CPP.st
-share/gnu-smalltalk/cint/CPStrConc.st
-share/gnu-smalltalk/cint/CPStrUnq.st
-share/gnu-smalltalk/cint/CParseType.st
-share/gnu-smalltalk/cint/CSymbol.st
-share/gnu-smalltalk/cint/CSymbolTable.st
-share/gnu-smalltalk/cint/CTok.st
-share/gnu-smalltalk/cint/CToken.st
-share/gnu-smalltalk/cint/CTreeBuilder.st
-share/gnu-smalltalk/cint/CollapsedStream.st
-share/gnu-smalltalk/cint/ExpansionStream.st
-share/gnu-smalltalk/cint/ExpansionStreamStack.st
-share/gnu-smalltalk/cint/LineStream.st
-share/gnu-smalltalk/cint/LineTokenStream.st
-share/gnu-smalltalk/cint/README
-share/gnu-smalltalk/cint/StreamStack.st
 share/gnu-smalltalk/compiler/Load.st
-share/gnu-smalltalk/compiler/README
 share/gnu-smalltalk/compiler/STCompLit.st
 share/gnu-smalltalk/compiler/STCompiler.st
+share/gnu-smalltalk/compiler/STFormatter.st
 share/gnu-smalltalk/compiler/STParseNodes.st
 share/gnu-smalltalk/compiler/STParser.st
 share/gnu-smalltalk/compiler/STSymTable.st
@@ -89,7 +56,6 @@ share/gnu-smalltalk/compiler/StartCompiler.st
 share/gnu-smalltalk/examples/Application.st
 share/gnu-smalltalk/examples/Bench.st
 share/gnu-smalltalk/examples/Buffers.st
-share/gnu-smalltalk/examples/CStream.st
 share/gnu-smalltalk/examples/Case.st
 share/gnu-smalltalk/examples/CompFileSeg.st
 share/gnu-smalltalk/examples/DBFile.st
@@ -97,7 +63,6 @@ share/gnu-smalltalk/examples/Debugger.st
 share/gnu-smalltalk/examples/Dinner.st
 share/gnu-smalltalk/examples/EditStream.st
 share/gnu-smalltalk/examples/GenClasses.st
-share/gnu-smalltalk/examples/IndStream.st
 share/gnu-smalltalk/examples/Lisp.st
 share/gnu-smalltalk/examples/MemUsage.st
 share/gnu-smalltalk/examples/Prolog.st
@@ -110,43 +75,28 @@ share/gnu-smalltalk/examples/RandomInt.st
 share/gnu-smalltalk/examples/RecursLit.st
 share/gnu-smalltalk/examples/RegExp.st
 share/gnu-smalltalk/examples/Richards.st
+share/gnu-smalltalk/examples/SortCriter.st
 share/gnu-smalltalk/examples/Timer.st
 share/gnu-smalltalk/examples/Tokenizer.st
 share/gnu-smalltalk/examples/Watchdog.st
 share/gnu-smalltalk/examples/blox/Man.st
 share/gnu-smalltalk/examples/blox/Tetris.st
-share/gnu-smalltalk/examples/gdbm/gdbm.st
-share/gnu-smalltalk/examples/mixed/BigExpr.st
-share/gnu-smalltalk/examples/mixed/CInt.st
-share/gnu-smalltalk/examples/mixed/CPP-test.st
-share/gnu-smalltalk/examples/mixed/CParseT1.st
-share/gnu-smalltalk/examples/mixed/CParseT2.st
-share/gnu-smalltalk/examples/mixed/CParseT3.st
-share/gnu-smalltalk/examples/mixed/CString.st
-share/gnu-smalltalk/examples/mixed/Compiler.st
-share/gnu-smalltalk/examples/mixed/DLD.st
-share/gnu-smalltalk/examples/mixed/Extensn.st
-share/gnu-smalltalk/examples/mixed/IfError.st
-share/gnu-smalltalk/examples/mixed/Interr.st
-share/gnu-smalltalk/examples/mixed/ParseErr.st
-share/gnu-smalltalk/examples/mixed/Process1.st
-share/gnu-smalltalk/examples/mixed/Process2.st
-share/gnu-smalltalk/examples/mixed/Profile.st
-share/gnu-smalltalk/examples/mixed/Sorting.st
-share/gnu-smalltalk/examples/mixed/a.st
-share/gnu-smalltalk/examples/mixed/ba.st
-share/gnu-smalltalk/examples/mixed/binary.c
-share/gnu-smalltalk/examples/mixed/bug.st
-share/gnu-smalltalk/examples/mixed/bug2.st
-share/gnu-smalltalk/examples/mixed/bug4.st
-share/gnu-smalltalk/examples/mixed/er2.st
-share/gnu-smalltalk/examples/mixed/market.st
-share/gnu-smalltalk/examples/mixed/resolve.st
-share/gnu-smalltalk/examples/mixed/self.st
-share/gnu-smalltalk/examples/mixed/t.st
-share/gnu-smalltalk/examples/mixed/torture.st
 share/gnu-smalltalk/examples/shell
 share/gnu-smalltalk/gst.im
+share/gnu-smalltalk/i18n/Collation.st
+share/gnu-smalltalk/i18n/GetText.st
+share/gnu-smalltalk/i18n/Load.st
+share/gnu-smalltalk/i18n/Locale.st
+share/gnu-smalltalk/i18n/Numbers.st
+share/gnu-smalltalk/i18n/Set-0208.st
+share/gnu-smalltalk/i18n/Set-BIG5.st
+share/gnu-smalltalk/i18n/Set-EUC.st
+share/gnu-smalltalk/i18n/Set-GB.st
+share/gnu-smalltalk/i18n/Set-SBCS.st
+share/gnu-smalltalk/i18n/Set-SJIS.st
+share/gnu-smalltalk/i18n/Times.st
+share/gnu-smalltalk/kernel/AnsiDates.st
+share/gnu-smalltalk/kernel/AnsiExcept.st
 share/gnu-smalltalk/kernel/Array.st
 share/gnu-smalltalk/kernel/ArrayColl.st
 share/gnu-smalltalk/kernel/Association.st
@@ -159,7 +109,6 @@ share/gnu-smalltalk/kernel/Boolean.st
 share/gnu-smalltalk/kernel/Browser.st
 share/gnu-smalltalk/kernel/Builtins.st
 share/gnu-smalltalk/kernel/ByteArray.st
-share/gnu-smalltalk/kernel/ByteMemory.st
 share/gnu-smalltalk/kernel/ByteStream.st
 share/gnu-smalltalk/kernel/CFuncs.st
 share/gnu-smalltalk/kernel/CObject.st
@@ -220,6 +169,7 @@ share/gnu-smalltalk/kernel/ReadStream.st
 share/gnu-smalltalk/kernel/Rectangle.st
 share/gnu-smalltalk/kernel/RootNamespc.st
 share/gnu-smalltalk/kernel/RunArray.st
+share/gnu-smalltalk/kernel/ScaledDec.st
 share/gnu-smalltalk/kernel/Semaphore.st
 share/gnu-smalltalk/kernel/SeqCollect.st
 share/gnu-smalltalk/kernel/Set.st
@@ -238,7 +188,6 @@ share/gnu-smalltalk/kernel/True.st
 share/gnu-smalltalk/kernel/UndefObject.st
 share/gnu-smalltalk/kernel/ValueAdapt.st
 share/gnu-smalltalk/kernel/WeakObjects.st
-share/gnu-smalltalk/kernel/WordMemory.st
 share/gnu-smalltalk/kernel/WriteStream.st
 share/gnu-smalltalk/kernel/initialize.st
 share/gnu-smalltalk/packages
@@ -258,49 +207,33 @@ share/gnu-smalltalk/tcp/TCPSocketImpl.st
 share/gnu-smalltalk/tcp/UDPSocketImpl.st
 share/gnu-smalltalk/tcp/URL.st
 share/gnu-smalltalk/tcp/UnixStream.st
-share/gnu-smalltalk/tcp/init.st
 share/gnu-smalltalk/tcp/cfuncs.st
-share/gnu-smalltalk/test/arrays.ok
-share/gnu-smalltalk/test/arrays.st
-share/gnu-smalltalk/test/blocks.ok
-share/gnu-smalltalk/test/blocks.st
-share/gnu-smalltalk/test/chars.ok
-share/gnu-smalltalk/test/chars.st
-share/gnu-smalltalk/test/classes.ok
-share/gnu-smalltalk/test/classes.st
-share/gnu-smalltalk/test/dates.ok
-share/gnu-smalltalk/test/dates.st
-share/gnu-smalltalk/test/delays.ok
-share/gnu-smalltalk/test/delays.st
-share/gnu-smalltalk/test/do-check
-share/gnu-smalltalk/test/exceptions.ok
-share/gnu-smalltalk/test/exceptions.st
-share/gnu-smalltalk/test/floatmath.ok
-share/gnu-smalltalk/test/floatmath.st
-share/gnu-smalltalk/test/geometry.ok
-share/gnu-smalltalk/test/geometry.st
-share/gnu-smalltalk/test/intmath.ok
-share/gnu-smalltalk/test/intmath.st
-share/gnu-smalltalk/test/objects.ok
-share/gnu-smalltalk/test/objects.st
-share/gnu-smalltalk/test/processes.ok
-share/gnu-smalltalk/test/processes.st
-share/gnu-smalltalk/test/sets.ok
-share/gnu-smalltalk/test/sets.st
-share/gnu-smalltalk/test/strings.ok
-share/gnu-smalltalk/test/strings.st
+share/gnu-smalltalk/tcp/init.st
+share/gnu-smalltalk/web/FileServer.st
+share/gnu-smalltalk/web/Haiku.st
+share/gnu-smalltalk/web/Load.st
+share/gnu-smalltalk/web/WebServer.st
+share/gnu-smalltalk/web/WikiServer.st
+share/gnu-smalltalk/web/edit.jpg
+share/gnu-smalltalk/web/find.jpg
+share/gnu-smalltalk/web/head.jpg
+share/gnu-smalltalk/web/help.jpg
+share/gnu-smalltalk/web/history.jpg
+share/gnu-smalltalk/web/next.jpg
+share/gnu-smalltalk/web/prev.jpg
+share/gnu-smalltalk/web/recent.jpg
+share/gnu-smalltalk/web/rename.jpg
+share/gnu-smalltalk/web/test.st
+share/gnu-smalltalk/web/top.jpg
 share/gnu-smalltalk/xml/DOM.st
 share/gnu-smalltalk/xml/XWalker.st
 @dirrm share/gnu-smalltalk/xml
-@dirrm share/gnu-smalltalk/test
+@dirrm share/gnu-smalltalk/web
 @dirrm share/gnu-smalltalk/tcp
 @dirrm share/gnu-smalltalk/kernel
-@dirrm share/gnu-smalltalk/examples/mixed
-@dirrm share/gnu-smalltalk/examples/gdbm
+@dirrm share/gnu-smalltalk/i18n
 @dirrm share/gnu-smalltalk/examples/blox
 @dirrm share/gnu-smalltalk/examples
 @dirrm share/gnu-smalltalk/compiler
-@dirrm share/gnu-smalltalk/cint
 @dirrm share/gnu-smalltalk/blox
 @dirrm share/gnu-smalltalk
-@exec install-info --info-dir=%D/info %D/info/gst.info
