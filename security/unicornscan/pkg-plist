@@ -20,6 +20,7 @@ share/unicornscan/p0f.fp
 share/unicornscan/p0fa.fp
 share/unicornscan/p0fr.fp
 share/unicornscan/port-numbers
+@exec %D/var/unicornscan/
 @unexec rmdir %D/var/unicornscan 2>/dev/null || true
 @unexec rmdir %D/var 2>/dev/null || true
 @unexec rmdir %D/share/unicornscan 2>/dev/null || true
