@@ -1,5 +1,5 @@
---- include/sybdb.h	Wed Oct 18 19:35:34 2000
-+++ include/sybdb.h.new	Fri Feb  2 09:42:36 2001
+--- include/sybdb.h	Sun Jul  1 17:57:40 2001
++++ include/sybdb.h.new	Thu Jul 12 09:50:28 2001
 @@ -298,6 +298,11 @@
  extern	RETCODE    DBSETLUSER(LOGINREC *login, char *username);
  extern	RETCODE    DBSETLHOST(LOGINREC *login, char *hostname);
@@ -11,4 +11,4 @@
 +
  #ifdef DBMFIX
  extern	DBPROCESS *tdsdbopen(LOGINREC *login,char *server);
- #else
+ #define   dbopen(x,y) tdsdbopen(x,y)

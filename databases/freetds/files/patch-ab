@@ -1,6 +1,6 @@
---- src/tds/util.c	Mon Oct 16 16:08:57 2000
-+++ src/tds/util.c.new	Fri Feb  2 09:40:31 2001
-@@ -280,7 +280,7 @@
+--- src/tds/config.c	Tue Jun 19 05:22:00 2001
++++ src/tds/config.c.new	Thu Jul 12 09:49:08 2001
+@@ -609,7 +609,7 @@
        char  *sybase = getenv("SYBASE");
        if (sybase!=NULL && sybase[0]!='\0')
        {
