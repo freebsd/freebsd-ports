@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	gnupod
-PORTVERSION=	0.95
+PORTVERSION=	0.96
 CATEGORIES=	audio perl5
-MASTER_SITES=	http://blinkenlights.ch/gnupod-dist/stable/
+MASTER_SITES=	http://savannah.gnu.org/download/gnupod/ \
+		http://blinkenlights.ch/gnupod-dist/stable/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	david@dyn-ns.net
