@@ -18,7 +18,6 @@ share/gnome/help/glade-2/C/figures/window-palette-add.png
 share/gnome/help/glade-2/C/figures/window-palette-basic.png
 share/gnome/help/glade-2/C/figures/window-palette-gnome.png
 share/gnome/help/glade-2/C/glade-faq.xml
-share/gnome/help/glade-2/C/glade-turbo-start.xml
 share/gnome/help/glade-2/C/glade-user-guide.xml
 share/gnome/help/glade-2/C/legal.xml
 share/gnome/help/glade-2/ro/glade-faq.xml
@@ -27,8 +26,6 @@ share/gnome/omf/glade-2/glade-faq-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/glade-2/glade-faq-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/glade-2/glade-faq-ro.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/glade-2/glade-faq-ro.omf 2>/dev/null || /usr/bin/true
-share/gnome/omf/glade-2/glade-turbo-start-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/glade-2/glade-turbo-start-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/glade-2/glade-user-guide-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/glade-2/glade-user-guide-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/glade-2.png
@@ -41,11 +38,13 @@ share/locale/cs/LC_MESSAGES/glade-2.0.mo
 share/locale/da/LC_MESSAGES/glade-2.0.mo
 share/locale/de/LC_MESSAGES/glade-2.0.mo
 share/locale/el/LC_MESSAGES/glade-2.0.mo
+share/locale/en_CA/LC_MESSAGES/glade-2.0.mo
 share/locale/en_GB/LC_MESSAGES/glade-2.0.mo
 share/locale/es/LC_MESSAGES/glade-2.0.mo
 share/locale/fr/LC_MESSAGES/glade-2.0.mo
 share/locale/ga/LC_MESSAGES/glade-2.0.mo
 share/locale/gl/LC_MESSAGES/glade-2.0.mo
+share/locale/hr/LC_MESSAGES/glade-2.0.mo
 share/locale/hu/LC_MESSAGES/glade-2.0.mo
 share/locale/it/LC_MESSAGES/glade-2.0.mo
 share/locale/ja/LC_MESSAGES/glade-2.0.mo
@@ -81,5 +80,5 @@ share/locale/zh_CN/LC_MESSAGES/glade-2.0.mo
 @dirrm share/gnome/glade-2/gtk
 @dirrm share/gnome/glade-2
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/glade-2/glade-faq-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/glade-2/glade-turbo-start-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/glade-2/glade-faq-ro.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/glade-2/glade-user-guide-C.omf 2>/dev/null || /usr/bin/true
