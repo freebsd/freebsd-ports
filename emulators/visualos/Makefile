@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	VisualOS
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	emulators gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	visualos
@@ -21,6 +21,8 @@ USE_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+MAN1=		VisualOS.1
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
