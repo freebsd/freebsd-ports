@@ -25,18 +25,6 @@ checkfile() {
         esac
 }
 
-# Uninstall timseived's Cyrus.conf file.
-
-cyrus_conf() {
-	if [ -f ${PKG_PREFIX}/lib/sasl2/Cyrus.conf ]; then
-		echo "pwcheck_method: pwcheck" > ${PKG_PREFIX}/lib/sasl2/Cyrus.conf.tmp
-		if cmp -s ${PKG_PREFIX}/lib/sasl2/Cyrus.conf ${PKG_PREFIX}/lib/sasl2/Cyrus.conf.tmp; then
-			rm -f ${PKG_PREFIX}/lib/sasl2/Cyrus.conf
-		fi
-		rm -f ${PKG_PREFIX}/lib/sasl2/Cyrus.conf.tmp
-	fi
-}
-
 #
 # Modify the 'cyrus' user created from the cyrus-sasl port
 #
@@ -62,7 +50,6 @@ modify_cyrus_user() {
 case $2 in
 	DEINSTALL)
 		cd ${PKG_PREFIX}
-		cyrus_conf
 		checkfile ${PKG_PREIFX}/etc/imapd.conf
 		checkfile ${PKG_PREIFX}/etc/cyrus.conf
 		;;
