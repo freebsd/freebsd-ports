@@ -100,6 +100,8 @@ lib/kde3/kbabel_whitespacetool.la
 lib/kde3/kbabel_whitespacetool.so
 lib/kde3/kbabel_xmltool.la
 lib/kde3/kbabel_xmltool.so
+lib/kde3/kbabeldict_dbsearchengine.la
+lib/kde3/kbabeldict_dbsearchengine.so
 lib/kde3/kbabeldict_poauxiliary.la
 lib/kde3/kbabeldict_poauxiliary.so
 lib/kde3/kbabeldict_pocompendium.la
@@ -691,6 +693,7 @@ share/icons/locolor/32x32/mimetypes/umbrellofile.png
 share/mimelnk/application/x-kcachegrind.desktop
 share/mimelnk/application/x-umbrello.desktop
 share/services/cvsservice.desktop
+share/services/dbsearchengine.desktop
 share/services/designerthumbnail.desktop
 share/services/kbabel_accelstool.desktop
 share/services/kbabel_argstool.desktop
@@ -725,12 +728,38 @@ share/servicetypes/kbabeldict_module.desktop
 share/servicetypes/kbabelfilter.desktop
 share/servicetypes/komparenavigationpart.desktop
 share/servicetypes/kompareviewpart.desktop
+@dirrm share/servicetypes
+@dirrm share/services
+@dirrm share/mimelnk/application
+@dirrm share/mimelnk
 @dirrm share/icons/locolor/32x32/mimetypes
+@dirrm share/icons/locolor/32x32/apps
+@dirrm share/icons/locolor/32x32
 @dirrm share/icons/locolor/16x16/mimetypes
+@dirrm share/icons/locolor/16x16/apps
+@dirrm share/icons/locolor/16x16
+@dirrm share/icons/locolor
 @dirrm share/icons/hicolor/48x48/apps
 @dirrm share/icons/hicolor/48x48
 @dirrm share/icons/hicolor/32x32/mimetypes
+@dirrm share/icons/hicolor/32x32/apps
+@dirrm share/icons/hicolor/32x32
 @dirrm share/icons/hicolor/16x16/mimetypes
+@dirrm share/icons/hicolor/16x16/apps
+@dirrm share/icons/hicolor/16x16
+@dirrm share/icons/hicolor
+@dirrm share/icons/crystalsvg/48x48/apps
+@dirrm share/icons/crystalsvg/48x48
+@dirrm share/icons/crystalsvg/32x32/apps
+@dirrm share/icons/crystalsvg/32x32
+@dirrm share/icons/crystalsvg/22x22/apps
+@dirrm share/icons/crystalsvg/22x22
+@dirrm share/icons/crystalsvg/16x16/apps
+@dirrm share/icons/crystalsvg/16x16
+@dirrm share/icons/crystalsvg/128x128/apps
+@dirrm share/icons/crystalsvg/128x128
+@dirrm share/icons/crystalsvg
+@dirrm share/icons
 @dirrm share/doc/HTML/en/umbrello/pics
 @dirrm share/doc/HTML/en/umbrello
 @dirrm share/doc/HTML/en/kompare
@@ -738,11 +767,15 @@ share/servicetypes/kompareviewpart.desktop
 @dirrm share/doc/HTML/en/kbugbuster
 @dirrm share/doc/HTML/en/kbabel
 @dirrm share/doc/HTML/en/cervisia
+@dirrm share/doc/HTML/en
+@dirrm share/doc/HTML
 @dirrm share/apps/umbrello/pics
 @dirrm share/apps/umbrello/headings
 @dirrm share/apps/umbrello
 @dirrm share/apps/kuiviewerpart
 @dirrm share/apps/kuiviewer
+@dirrm share/apps/kstyle/themes
+@dirrm share/apps/kstyle
 @dirrm share/apps/komparepart
 @dirrm share/apps/kompare/icons/locolor/32x32/apps
 @dirrm share/apps/kompare/icons/locolor/32x32
@@ -760,6 +793,7 @@ share/servicetypes/kompareviewpart.desktop
 @dirrm share/apps/kompare/icons/crystalsvg
 @dirrm share/apps/kompare/icons
 @dirrm share/apps/kompare
+@dirrm share/apps/kconf_update
 @dirrm share/apps/kcachegrind/icons/hicolor/32x32/actions
 @dirrm share/apps/kcachegrind/icons/hicolor/32x32
 @dirrm share/apps/kcachegrind/icons/hicolor/22x22/actions
@@ -801,7 +835,15 @@ share/servicetypes/kompareviewpart.desktop
 @dirrm share/apps/kapptemplate/appframework
 @dirrm share/apps/kapptemplate/admin
 @dirrm share/apps/kapptemplate
+@dirrm share/apps/kabc/formats
+@dirrm share/apps/kabc
 @dirrm share/apps/cervisiapart
 @dirrm share/apps/cervisia
 @dirrm share/apps/catalogmanager
+@dirrm share/apps
+@dirrm share/applications/kde
+@dirrm share/applications
+@dirrm lib/kde3/plugins/styles
+@dirrm lib/kde3/plugins
+@dirrm lib/kde3
 @dirrm include/kbabel
