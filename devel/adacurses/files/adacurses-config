@@ -1,0 +1,32 @@
+#! /bin/sh
+#
+# This script will return the option to add to `gnatmake' for using
+# AdaCurses.
+#
+
+prefix=/usr/local
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+VERSION=5.2
+
+CFLAGS="-I$libdir/adacurses -L$libdir/adacurses"
+LIBS="-L$prefix/lib -lAdaCurses"
+
+case "x$1" in
+    x--version)
+        echo AdaCurses $VERSION
+        ;;
+    x--cflags)
+        echo $CFLAGS
+        ;;
+    x--libs)
+        echo $LIBS
+        ;;
+    x)
+        echo $CFLAGS -largs $LIBS
+        ;;
+    *)
+        echo 'Usage: adacurses-config [--version | --cflags | --libs]' >&2
+        exit 1
+        ;;
+esac
