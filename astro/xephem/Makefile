@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xephem
-PORTVERSION=	3.5
-#PORTREVISION=	1
+PORTVERSION=	3.5.1
 CATEGORIES=	astro
 MASTER_SITES=	http://www.clearskyinstitute.com/xephem/ \
 		ftp://iraf.noao.edu/contrib/xephem/ \
@@ -23,6 +22,11 @@ MAN1=		xephem.1
 
 LIBASTROSRC=	${WRKDIR}/${DISTNAME}/libastro
 LIBIPSRC=	${WRKDIR}/${DISTNAME}/libip
+
+post-patch:
+	@${PERL} -pi -e 's|CC =|CC?=|g ; \
+		 s|CFLAGS=|CFLAGS+=|g ; \
+		 s|-O2 ||g' ${LIBASTROSRC}/Makefile ${LIBIPSRC}/Makefile
 
 pre-build:
 	@cd ${LIBASTROSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE}
