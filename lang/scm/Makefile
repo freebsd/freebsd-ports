@@ -3,18 +3,17 @@
 # Date created:         Sat Nov  5 17:11:01 PST 1994
 # Whom:                 hsu
 #
-# $Id: Makefile,v 1.12 1998/02/01 22:46:18 fenner Exp $
+# $Id: Makefile,v 1.13 1998/08/10 12:11:42 steve Exp $
 #
 
 DISTNAME=       scm
 PKGNAME=	scm-4e1
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.swiss.ai.mit.edu/archive/scm/OLD/ \
-		ftp://swiss-ftp.ai.mit.edu/pub/scm/ \
-		ftp://swiss-ftp.ai.mit.edu/pub/scm/OLD/
-DISTFILES=      scm4e1.tar.gz \
-		slib.info.tar.gz slib2a2.tar.gz slib-psd1-3.tar.gz \
-		scmconfig4e1.tar.gz
+MASTER_SITES=	ftp://ftp.cs.oswego.edu/pub/Z/unix/scheme/ \
+		ftp://ftp.swiss.ai.mit.edu/pub/scm/ \
+		ftp://ftp.swiss.ai.mit.edu/pub/scm/OLD/
+DISTFILES=      scm4e1.tar.gz slib.info.tar.gz slib2a2.tar.gz \
+		slib-psd1-3.tar.gz scmconfig4e1.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 

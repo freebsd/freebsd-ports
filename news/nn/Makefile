@@ -3,13 +3,13 @@
 # Date created:		24 September 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.15 1998/07/20 20:58:13 adam Exp $
+# $Id: Makefile,v 1.16 1998/07/23 15:30:32 asami Exp $
 #
 
 DISTNAME=	nn-6.5.3
 CATEGORIES=	news
-#MASTER_SITES=	ftp://ftp.isca.uiowa.edu/unix/nn/
-MASTER_SITES=	ftp://ftp.visi.com/users/mtpins/
+MASTER_SITES=	ftp://ftp.visi.com/users/mtpins/ \
+		ftp://maroon.webmaster.com/pub/nn/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=     ports@FreeBSD.ORG
