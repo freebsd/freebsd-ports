@@ -2,15 +2,15 @@ Index: webmagick.in
 ===================================================================
 RCS file: /cvsroot/webmagick/WebMagick/webmagick.in,v
 retrieving revision 1.117
-retrieving revision 1.126
-diff -u -r1.117 -r1.126
+retrieving revision 1.127
+diff -u -r1.117 -r1.127
 --- webmagick.in	23 Oct 2002 16:14:47 -0000	1.117
-+++ webmagick.in	19 Oct 2003 08:12:35 -0000	1.126
++++ webmagick.in	19 Oct 2003 09:06:14 -0000	1.127
 @@ -1,6 +1,6 @@
  #! @PERL@ 
  #
 -# $Id: webmagick.in,v 1.117 2002/10/23 16:14:47 clindell Exp $
-+# $Id: webmagick.in,v 1.126 2003/10/19 08:12:35 ache Exp $
++# $Id: webmagick.in,v 1.127 2003/10/19 09:06:14 ache Exp $
  #
  # You are looking at the main PERL script for WebMagick, a package to
  # intelligently create HTML and JavaScript index files and imagemaps
@@ -192,7 +192,17 @@ diff -u -r1.117 -r1.126
      close( INDEX );
  
  
-@@ -2242,17 +2244,14 @@
+@@ -2224,7 +2226,8 @@
+     print( INDEX "  <BASE TARGET=\"$opt_frame_name_top\">\n" );
+ 
+     # Meta tags
+-    print( INDEX "  <META NAME=\"GENERATOR\" CONTENT=\"WebMagick/$webmagickInfo{version} [WebMagick]\">\n" );
++    print( INDEX "  <META NAME=\"GENERATOR\" CONTENT=\"WebMagick/$webmagickInfo{version} [WebMagick]\">\n" )
++	if (!$opt_anonymous);
+     print( INDEX "  <META NAME=\"Author\" CONTENT=\"${opt_metaauthor}\">\n" )
+ 	if( "$opt_metaauthor" ne '' );
+     print( INDEX "  <META NAME=\"Description\" CONTENT=\"${opt_metadescription}\">\n" )
+@@ -2242,17 +2245,14 @@
      
      print( INDEX "</HEAD>\n" );
      print( INDEX "<BODY\n" );
@@ -218,7 +228,17 @@ diff -u -r1.117 -r1.126
      print( INDEX ">\n");
      print( INDEX $pagedirhtml );
      print( INDEX "</BODY></HTML>\n" );
-@@ -2379,16 +2378,13 @@
+@@ -2361,7 +2361,8 @@
+ 	if ($opt_frames);
+ 
+     # Meta tags
+-    print( INDEX "  <META NAME=\"GENERATOR\" CONTENT=\"WebMagick/$webmagickInfo{version} [WebMagick]\">\n" );
++    print( INDEX "  <META NAME=\"GENERATOR\" CONTENT=\"WebMagick/$webmagickInfo{version} [WebMagick]\">\n" )
++	if (!$opt_anonymous);
+     print( INDEX "  <META NAME=\"Author\" CONTENT=\"${opt_metaauthor}\">\n" )
+ 	if( "$opt_metaauthor" ne '' );
+     print( INDEX "  <META NAME=\"Description\" CONTENT=\"${opt_metadescription}\">\n" )
+@@ -2379,16 +2380,13 @@
  
      print( INDEX "</HEAD>\n" );
      print( INDEX "<BODY\n" );
@@ -242,7 +262,7 @@ diff -u -r1.117 -r1.126
      print( INDEX ">\n");
  
      print( INDEX "${opt_header}\n" ) if ("$opt_header" ne '');
-@@ -2397,8 +2393,12 @@
+@@ -2397,8 +2395,12 @@
      if( $numimages > 0 ) {
  	# Total HACK!!!
  	if( !$opt_frames || $opt_framestyle == 1 ) {
@@ -257,7 +277,7 @@ diff -u -r1.117 -r1.126
  	}
  	print( INDEX "$indexbar<BR>\n" );
  
-@@ -2433,22 +2433,30 @@
+@@ -2433,25 +2435,34 @@
  	
  	    my $pic = $imageNames[$pageNumber - 1][$imageNum];
  	    my $pichtml;
@@ -289,8 +309,13 @@ diff -u -r1.117 -r1.126
 +			print( PICHTML "  <TITLE>${altlabel}</TITLE>\n" );
  
  			# Meta tags
- 			print( PICHTML "  <META NAME=\"GENERATOR\" CONTENT=\"WebMagick/$webmagickInfo{version} [WebMagick]\">\n" );
-@@ -2469,28 +2477,19 @@
+-			print( PICHTML "  <META NAME=\"GENERATOR\" CONTENT=\"WebMagick/$webmagickInfo{version} [WebMagick]\">\n" );
++			print( PICHTML "  <META NAME=\"GENERATOR\" CONTENT=\"WebMagick/$webmagickInfo{version} [WebMagick]\">\n" )
++			    if (!$opt_anonymous);
+ 			print( PICHTML "  <META NAME=\"Author\" CONTENT=\"${opt_metaauthor}\">\n" )
+ 			    if( "$opt_metaauthor" ne '' );
+ 			print( PICHTML "  <META NAME=\"Description\" CONTENT=\"${opt_metadescription}\">\n" )
+@@ -2469,28 +2480,19 @@
  
  			print( PICHTML "</HEAD>\n" );
  			print( PICHTML "<BODY\n" );
@@ -327,7 +352,7 @@ diff -u -r1.117 -r1.126
  			}
  
  			if ($opt_pichtmlnav) {
-@@ -2526,9 +2525,9 @@
+@@ -2526,9 +2528,9 @@
  				} else {
  					print ( PICHTML "<A${target} HREF=\"");
  					if ($imageNum == 0 && $pageNumber != 1) {
@@ -339,7 +364,7 @@ diff -u -r1.117 -r1.126
  					}
  					print ( PICHTML $opt_pichtmlext);
  					print ( PICHTML "\"><IMG SRC=\"$iconImageUrls{'prev'}\"",
-@@ -2543,9 +2542,9 @@
+@@ -2543,9 +2545,9 @@
  				} else {
  					print ( PICHTML "<A${target} HREF=\"");
  					if (($imageNum == $#{$imageNames[$pageNumber - 1]}) && $pageNumber != $numPages) {
@@ -351,7 +376,7 @@ diff -u -r1.117 -r1.126
  					}
  					print ( PICHTML $opt_pichtmlext);
  					print ( PICHTML "\"><IMG SRC=\"$iconImageUrls{'next'}\"",
-@@ -2556,10 +2555,10 @@
+@@ -2556,10 +2558,10 @@
  				print ( PICHTML "</NOBR><BR>");
  			}
  
@@ -365,7 +390,7 @@ diff -u -r1.117 -r1.126
  			}
  
  			print( PICHTML "$opt_pichtmlbottom\n") if ("$opt_pichtmlbottom" ne '');
-@@ -2601,12 +2600,16 @@
+@@ -2601,12 +2603,16 @@
  			# TODO: make sure the thumbnails are created, and get some image sizes
  			# TODO: save the labels in a new array, maybe same with sizes
  			if ( $thumbImageSizes{$pic}) {
@@ -385,7 +410,7 @@ diff -u -r1.117 -r1.126
  						
  			if ($imageNum%$opt_columns == ($opt_columns - 1))
  			{
-@@ -4156,25 +4159,29 @@
+@@ -4156,25 +4162,29 @@
    --footer           Page footer (imagemap frame) (default to </CENTER>)
    --header           Page header (imagemap frame) (default to <CENTER>)
    --[no]javascript   Enable JavaScript output (default off)
@@ -420,7 +445,7 @@ diff -u -r1.117 -r1.126
    --framestyle       Frame style to use (out of those available)
    --[no]allowconfig  Allow user to configure framestyle, columns and rows (requires javascript and tables) (default off)
  
-@@ -4296,6 +4303,7 @@
+@@ -4296,6 +4306,7 @@
      s/&/&amp;/g;
      s/>/&gt;/g;
      s/</&lt;/g;
@@ -428,7 +453,7 @@ diff -u -r1.117 -r1.126
      return( $_ );
  }
  
-@@ -4324,22 +4332,10 @@
+@@ -4324,22 +4335,10 @@
  # Escape unsafe characters in URLs
  #		
  sub escapeurl {
