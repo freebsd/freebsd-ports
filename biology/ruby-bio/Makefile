@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bio
-PORTVERSION=	0.5.3
+PORTVERSION=	0.6.2
 CATEGORIES=	biology ruby
 MASTER_SITES=	http://bioruby.org/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

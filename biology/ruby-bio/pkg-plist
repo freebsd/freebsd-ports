@@ -1,6 +1,7 @@
-bin/biofetch
-bin/bioflat
-bin/biogetseq
+bin/br_biofetch.rb
+bin/br_bioflat.rb
+bin/br_biogetseq.rb
+bin/br_pmfetch.rb
 @unexec if cmp -s %D/etc/bioinformatics/seqdatabase.ini %D/etc/bioinformatics/seqdatabase.ini.sample; then rm -f %D/etc/bioinformatics/seqdatabase.ini; fi
 etc/bioinformatics/seqdatabase.ini.sample
 @exec [ ! -f %B/etc/bioinformatics/seqdatabase.ini ] && cp %B/%f %B/etc/bioinformatics/seqdatabase.ini
@@ -15,6 +16,7 @@ etc/bioinformatics/seqdatabase.ini.sample
 %%RUBY_SITELIBDIR%%/bio/appl/blast/rexml.rb
 %%RUBY_SITELIBDIR%%/bio/appl/blast/wublast.rb
 %%RUBY_SITELIBDIR%%/bio/appl/blast/xmlparser.rb
+%%RUBY_SITELIBDIR%%/bio/appl/blat/report.rb
 %%RUBY_SITELIBDIR%%/bio/appl/clustalw.rb
 %%RUBY_SITELIBDIR%%/bio/appl/clustalw/report.rb
 %%RUBY_SITELIBDIR%%/bio/appl/emboss.rb
@@ -28,16 +30,19 @@ etc/bioinformatics/seqdatabase.ini.sample
 %%RUBY_SITELIBDIR%%/bio/appl/mafft/report.rb
 %%RUBY_SITELIBDIR%%/bio/appl/psort.rb
 %%RUBY_SITELIBDIR%%/bio/appl/psort/report.rb
+%%RUBY_SITELIBDIR%%/bio/appl/sim4.rb
+%%RUBY_SITELIBDIR%%/bio/appl/sim4/report.rb
 %%RUBY_SITELIBDIR%%/bio/appl/sosui/report.rb
+%%RUBY_SITELIBDIR%%/bio/appl/spidey/report.rb
 %%RUBY_SITELIBDIR%%/bio/appl/targetp/report.rb
 %%RUBY_SITELIBDIR%%/bio/appl/tmhmm/report.rb
 %%RUBY_SITELIBDIR%%/bio/data/aa.rb
 %%RUBY_SITELIBDIR%%/bio/data/codontable.rb
-%%RUBY_SITELIBDIR%%/bio/data/keggorg.rb
 %%RUBY_SITELIBDIR%%/bio/data/na.rb
 %%RUBY_SITELIBDIR%%/bio/db.rb
 %%RUBY_SITELIBDIR%%/bio/db/aaindex.rb
 %%RUBY_SITELIBDIR%%/bio/db/embl.rb
+%%RUBY_SITELIBDIR%%/bio/db/embl/common.rb
 %%RUBY_SITELIBDIR%%/bio/db/embl/embl.rb
 %%RUBY_SITELIBDIR%%/bio/db/embl/sptr.rb
 %%RUBY_SITELIBDIR%%/bio/db/embl/swissprot.rb
@@ -45,6 +50,7 @@ etc/bioinformatics/seqdatabase.ini.sample
 %%RUBY_SITELIBDIR%%/bio/db/fantom.rb
 %%RUBY_SITELIBDIR%%/bio/db/fasta.rb
 %%RUBY_SITELIBDIR%%/bio/db/genbank.rb
+%%RUBY_SITELIBDIR%%/bio/db/genbank/common.rb
 %%RUBY_SITELIBDIR%%/bio/db/genbank/ddbj.rb
 %%RUBY_SITELIBDIR%%/bio/db/genbank/genbank.rb
 %%RUBY_SITELIBDIR%%/bio/db/genbank/genpept.rb
@@ -57,13 +63,21 @@ etc/bioinformatics/seqdatabase.ini.sample
 %%RUBY_SITELIBDIR%%/bio/db/kegg/enzyme.rb
 %%RUBY_SITELIBDIR%%/bio/db/kegg/genes.rb
 %%RUBY_SITELIBDIR%%/bio/db/kegg/genome.rb
+%%RUBY_SITELIBDIR%%/bio/db/kegg/glycan.rb
 %%RUBY_SITELIBDIR%%/bio/db/kegg/keggtab.rb
 %%RUBY_SITELIBDIR%%/bio/db/kegg/ko.rb
 %%RUBY_SITELIBDIR%%/bio/db/kegg/microarray.rb
+%%RUBY_SITELIBDIR%%/bio/db/kegg/reaction.rb
 %%RUBY_SITELIBDIR%%/bio/db/litdb.rb
 %%RUBY_SITELIBDIR%%/bio/db/medline.rb
 %%RUBY_SITELIBDIR%%/bio/db/nbrf.rb
 %%RUBY_SITELIBDIR%%/bio/db/pdb.rb
+%%RUBY_SITELIBDIR%%/bio/db/pdb/atom.rb
+%%RUBY_SITELIBDIR%%/bio/db/pdb/chain.rb
+%%RUBY_SITELIBDIR%%/bio/db/pdb/model.rb
+%%RUBY_SITELIBDIR%%/bio/db/pdb/pdb.rb
+%%RUBY_SITELIBDIR%%/bio/db/pdb/residue.rb
+%%RUBY_SITELIBDIR%%/bio/db/pdb/utils.rb
 %%RUBY_SITELIBDIR%%/bio/db/prosite.rb
 %%RUBY_SITELIBDIR%%/bio/db/transfac.rb
 %%RUBY_SITELIBDIR%%/bio/extend.rb
@@ -80,6 +94,7 @@ etc/bioinformatics/seqdatabase.ini.sample
 %%RUBY_SITELIBDIR%%/bio/io/keggapi.rb
 %%RUBY_SITELIBDIR%%/bio/io/pubmed.rb
 %%RUBY_SITELIBDIR%%/bio/io/registry.rb
+%%RUBY_SITELIBDIR%%/bio/io/soapwsdl.rb
 %%RUBY_SITELIBDIR%%/bio/io/sql.rb
 %%RUBY_SITELIBDIR%%/bio/location.rb
 %%RUBY_SITELIBDIR%%/bio/pathway.rb
@@ -87,6 +102,7 @@ etc/bioinformatics/seqdatabase.ini.sample
 %%RUBY_SITELIBDIR%%/bio/sequence.rb
 @dirrm %%RUBY_SITELIBDIR%%/bio/io/flatfile
 @dirrm %%RUBY_SITELIBDIR%%/bio/io
+@dirrm %%RUBY_SITELIBDIR%%/bio/db/pdb
 @dirrm %%RUBY_SITELIBDIR%%/bio/db/kegg
 @dirrm %%RUBY_SITELIBDIR%%/bio/db/genbank
 @dirrm %%RUBY_SITELIBDIR%%/bio/db/embl
@@ -94,13 +110,16 @@ etc/bioinformatics/seqdatabase.ini.sample
 @dirrm %%RUBY_SITELIBDIR%%/bio/data
 @dirrm %%RUBY_SITELIBDIR%%/bio/appl/tmhmm
 @dirrm %%RUBY_SITELIBDIR%%/bio/appl/targetp
+@dirrm %%RUBY_SITELIBDIR%%/bio/appl/spidey
 @dirrm %%RUBY_SITELIBDIR%%/bio/appl/sosui
+@dirrm %%RUBY_SITELIBDIR%%/bio/appl/sim4
 @dirrm %%RUBY_SITELIBDIR%%/bio/appl/psort
 @dirrm %%RUBY_SITELIBDIR%%/bio/appl/mafft
 @dirrm %%RUBY_SITELIBDIR%%/bio/appl/hmmer
 @dirrm %%RUBY_SITELIBDIR%%/bio/appl/genscan
 @dirrm %%RUBY_SITELIBDIR%%/bio/appl/fasta
 @dirrm %%RUBY_SITELIBDIR%%/bio/appl/clustalw
+@dirrm %%RUBY_SITELIBDIR%%/bio/appl/blat
 @dirrm %%RUBY_SITELIBDIR%%/bio/appl/blast
 @dirrm %%RUBY_SITELIBDIR%%/bio/appl
 @dirrm %%RUBY_SITELIBDIR%%/bio
