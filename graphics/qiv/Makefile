@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qiv
-PORTVERSION=	1.8
-PORTREVISION=	2
+PORTVERSION=	1.9
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.klografx.net/qiv/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -17,9 +16,9 @@ MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Small, fast GDK/Imlib image viewer
 
 USE_GETOPT_LONG=yes
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	imlib
+USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAN1=		qiv.1
