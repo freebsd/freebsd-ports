@@ -21,7 +21,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2 \
-		${PREFIX}/lib/afm/Courier:${PORTSDIR}/print/afm
+		${LOCALBASE}/lib/afm/Courier:${PORTSDIR}/print/afm
 # no dependency on ghostscript because we don't know which
 # version the user prefers
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
@@ -37,8 +37,8 @@ Y2K=		http://www.hylafax.org/HylaFAQ/Q189.html
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-INSTALL="" \
 		--with-MAKE=gmake --with-CC=/usr/bin/cc \
-		--with-LIBTIFF="-L${PREFIX}/lib -ltiff -ljpeg" \
-		--with-TIFFINC="${PREFIX}/include"
+		--with-LIBTIFF="-L${LOCALBASE}/lib -ltiff -ljpeg" \
+		--with-TIFFINC="${LOCALBASE}/include"
 HAS_CONFIGURE=	yes
 
 MAN1=	hylafax.1 faxalter.1 faxcover.1 faxmail.1 faxrm.1 faxstat.1 sendfax.1 \
