@@ -17,8 +17,6 @@ MAINTAINER=	lance@evitel.net
 USE_SUBMAKE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-include-path="${LOCALBASE}/include/" \
-		--with-lib-path="${LOCALBASE}/lib/"
 
 MAN1=		radgrep.1 radlast.1 raduse.1 radwho.1
 MAN8=		builddbm.8 radctl.8 radiusd.8 radping.8 radzap.8
@@ -29,7 +27,10 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 
 STARTUP_FILE=	${PREFIX}/etc/rc.d/gnu-radius.sh
 
-.if !defined(BATCH)
+.if defined(BATCH)
+CONFIGURE_ARGS+=--with-include-path="${LOCALBASE}/include/" \
+		--with-lib-path="${LOCALBASE}/lib/"
+.else
 post-fetch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
 .endif
