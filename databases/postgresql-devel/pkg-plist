@@ -506,6 +506,7 @@ share/postgresql/post-install-notes
 %%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/pg_resetxlog.mo
 %%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/psql.mo
 %%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/pgscripts.mo
+%%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/postgres.mo
 %%GETTEXT%%share/locale/ru/LC_MESSAGES/libpq.mo
 %%GETTEXT%%share/locale/ru/LC_MESSAGES/pg_controldata.mo
 %%GETTEXT%%share/locale/ru/LC_MESSAGES/pg_dump.mo
