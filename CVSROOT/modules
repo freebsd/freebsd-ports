@@ -9258,6 +9258,7 @@ rexx-sock	ports/net/rexx-sock
 rexx-wrapper	ports/lang/rexx-wrapper
 rfbproxy	ports/net/rfbproxy
 rfc		ports/misc/rfc
+rfcdiff		ports/textproc/rfcdiff
 rfksay		ports/games/rfksay
 rftp		ports/mail/rftp
 rhtvision	ports/devel/rhtvision
