@@ -13,13 +13,15 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	vmware-linux-tools
 
 MAINTAINER=	matusita@FreeBSD.org
-COMMENT=VMware toolbox for FreeBSD Guest OS (full-featured Linux version)
+COMMENT=VMware toolbox for guest OS (for VMware 2.x, Linux version)
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
+.if !defined(BATCH)
 IS_INTERACTIVE=	yes
+.endif
 
 RESTRICTED=	"Not sure if we can redistribute this."
 
@@ -40,6 +42,8 @@ MOUNT_DEV?=	vn0
 .else
 MOUNT_DEV?=	fd0
 .endif
+STRIP=
+
 VMWARE_VER=	2.0.4
 BUILD_VER=	1142
 
@@ -58,6 +62,7 @@ pre-fetch:
 	@${ECHO} "========================================================================"
 	@${ECHO} ""
 	@${ECHO} -n "Are ready to install this ports? [Y/n]: "
+.if !defined(BATCH)
 	@(read line;			\
 	  case "$${line}" in		\
 		[Nn]*)			\
@@ -66,16 +71,17 @@ pre-fetch:
 			${TRUE} ;;	\
 	  esac)
 .endif
+.endif
 
 do-fetch:
 .if exists("${DISTDIR}/${DISTFILES}")
 	@${ECHO} "Found ${DISTDIR}/${DISTFILES}."
 .else
 	${MKDIR} ${MOUNT_PT}
-	-@${UMOUNT} ${MOUNT_PT} 2>&1 >/dev/null
-	-@${UMOUNT} /dev/${MOUNT_DEV} 2>&1 >/dev/null
+	-${UMOUNT} ${MOUNT_PT} 2>&1 >/dev/null
+	-${UMOUNT} /dev/${MOUNT_DEV} 2>&1 >/dev/null
 .if exists(${LINUX_FLP})
-	-@${DEV_DETACH} 2>&1 >/dev/null
+	-${DEV_DETACH} 2>&1 >/dev/null
 	${DEV_ATTACH}
 .endif
 	${MOUNT} -t msdos -r /dev/${MOUNT_DEV} ${MOUNT_PT}
@@ -87,6 +93,6 @@ do-fetch:
 .endif
 
 do-install:
-	${CP} ${WRKSRC}/vmware-toolbox ${PREFIX}/bin/linux-vmware-toolbox
+	${INSTALL_PROGRAM} ${WRKSRC}/vmware-toolbox ${PREFIX}/bin/linux-vmware-toolbox
 
 .include <bsd.port.post.mk>

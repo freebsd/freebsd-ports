@@ -11,6 +11,6 @@ This ports will install vmware-toolbox to your computer, and
 XFree86 X server if you set XFREE86_VERSION to 3 in /etc/make.conf, 
 If you already use XFree86 4.1.0 or later, you may use 'vmware'
 driver for X server.  Vmware-guestd is installed as a separate port,
-ports/emulators/vmware-guestd, but this port install guestd automatically.
+ports/emulators/vmware-guestd3, but this port install guestd automatically.
 
 WWW:	http://www.vmware.com/products/desktop/ws_features.html

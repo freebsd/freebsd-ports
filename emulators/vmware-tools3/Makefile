@@ -12,10 +12,10 @@ MASTER_SITES=	# none
 DISTNAME=	vmware-freebsd-tools
 
 MAINTAINER=	matusita@FreeBSD.org
-COMMENT=VMware tools for FreeBSD guest OS (for VMware 3.x)
+COMMENT=VMware tools for guest OS (for VMware 3.x, FreeBSD version)
 
 LIB_DEPENDS=	c.3:${PORTSDIR}/misc/compat3x
-RUN_DEPENDS=	${LOCALBASE}/sbin/vmware-guestd:${PORTSDIR}/emulators/vmware-guestd
+RUN_DEPENDS=	${LOCALBASE}/sbin/vmware-guestd:${PORTSDIR}/emulators/vmware-guestd3
 
 DISTDIR=	${MOUNT_PT}
 IGNOREFILES=	${DISTFILES}
@@ -24,6 +24,9 @@ WRKSRC=		${WRKDIR}/vmware-freebsd-tools
 ONLY_FOR_ARCHS=	i386
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
+.if !defined(BATCH)
+IS_INTERACTIVE=	yes
+.endif
 
 RESTRICTED=	"Not sure if we can redistribute this."
 .if defined(PACKAGE_BUILDING)
