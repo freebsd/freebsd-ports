@@ -27,10 +27,14 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	${ARCH}-pc-freebsd${OSREL:C/\..*//}
 
+.if defined(PACKAGE_BUILDING) || defined(PARALLEL_PACKAGE_BUILD)
+.undef WITHOUT_GNOME
+WITH_GNOME=	yes
+.endif
+
 .include <bsd.port.pre.mk>
 
-.if defined(HAVE_GNOME) || defined(PACKAGE_BUILDING)
-.undef WITHOUT_GNOME
+.if defined(HAVE_GNOME)
 USE_GNOME=	yes
 CONFIGURE_ARGS=	--with-gnome --with-libglade --with-gdk-pixbuf \
 		--with-gnome-canvas-pixbuf
