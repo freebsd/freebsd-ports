@@ -8,7 +8,9 @@ share/mime/packages/xlog.xml
 share/mime/text/x-xlog.xml
 share/mimelnk/text/x-xlog.desktop
 share/pixmaps/gnome-mime-text-x-xlog.png
+share/pixmaps/xlog/cwdaemon.png
 share/pixmaps/xlog/gnome-mime-text-x-xlog.png
+share/pixmaps/xlog/jigsaw.png
 share/pixmaps/xlog/mini-clock.xpm
 share/pixmaps/xlog/mini-trx.xpm
 share/pixmaps/xlog/mini-xlog.xpm
@@ -24,21 +26,38 @@ share/pixmaps/xlog/s6.xpm
 share/pixmaps/xlog/s7.xpm
 share/pixmaps/xlog/s8.xpm
 share/pixmaps/xlog/s9.xpm
+share/pixmaps/xlog/xlog-b4.png
 share/pixmaps/xlog/xlog-icon.png
+share/pixmaps/xlog/xlog-keyer.png
 share/pixmaps/xlog/xlog.png
 share/pixmaps/xlog/xlog.xpm
 share/xlog/AUTHORS
 share/xlog/BUGS
 share/xlog/ChangeLog
 share/xlog/FAQ
+share/xlog/FAQ.fr
 share/xlog/FAQ.pl
 share/xlog/MANUAL
+share/xlog/MANUAL.fr
 share/xlog/MANUAL.pl
 share/xlog/THANKS
 share/xlog/TODO
 share/xlog/dxcc/cty.dat
 share/xlog/dxcc/xlog.dat
+share/xlog/images/xlog-defaultsdialog.png
+share/xlog/images/xlog-dupecheckdialog.png
+share/xlog/images/xlog-keyerwindow.png
+share/xlog/images/xlog-logeditor.png
+share/xlog/images/xlog-mainwindow.png
+share/xlog/images/xlog-mergelogdialog.png
+share/xlog/images/xlog-newlogdialog.png
+share/xlog/images/xlog-openlogdialog.png
+share/xlog/images/xlog-preferencesdialog-hamlib.png
+share/xlog/images/xlog-preferencesdialog-info.png
+share/xlog/images/xlog-printdialog.png
+share/xlog/images/xlog-workedwindow.png
 share/xlog/qsllabels.glabels
+@dirrm share/xlog/images
 @dirrm share/xlog/dxcc
 @dirrm share/xlog
 @dirrm share/pixmaps/xlog
