@@ -7,13 +7,13 @@
 
 PORTNAME=	flvw
 PORTVERSION=	20000224
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	cyrille.lefevre@laposte.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Virtual Widgets for the Fast Light ToolKit
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
@@ -25,11 +25,13 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAKE_ARGS=	DIRS=src
 
+PLIST_SUB=	INCSDIR="${INCSDIR:S,^${PREFIX}/,,}"
+
+INCSDIR=	${PREFIX}/include/FL
+
 DOC_FILES=	documentation/html/*.html
-DOC_SUBDIR=	share/doc/${PKGBASE}
 INC_FILES=	Flv_CStyle.H Flv_Data_Source.H Flv_List.H Flv_Style.H \
 		Flv_Table.H Flve_Check_Button.H Flve_Combo.H Flve_Input.H
-INC_SUBDIR=	include/FL
 
 INSTALLS_SHLIB=	yes
 
@@ -47,14 +49,14 @@ post-install: symlink-inc install-doc
 
 symlink-inc:
 .for file in ${INC_FILES}
-	@${LN} -fs ${file} ${PREFIX}/${INC_SUBDIR}/${file:R}.${file:E:L}
+	@${LN} -fs ${file} ${INCSDIR}/${file:R}.${file:E:L}
 .endfor
 
 install-doc:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/${DOC_SUBDIR}
+	@${MKDIR} ${DOCSDIR}
 .for file in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/${DOC_SUBDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 

@@ -1,43 +1,44 @@
 @comment $FreeBSD$
-include/FL/Flv_CStyle.H
+%%INCSDIR%%/Flv_CStyle.H
 @exec ln -fs %f %B/Flv_CStyle.h
 @unexec rm -f %B/Flv_CStyle.h
-include/FL/Flv_Data_Source.H
+%%INCSDIR%%/Flv_Data_Source.H
 @exec ln -fs %f %B/Flv_Data_Source.h
 @unexec rm -f %B/Flv_Data_Source.h
-include/FL/Flv_List.H
+%%INCSDIR%%/Flv_List.H
 @exec ln -fs %f %B/Flv_List.h
 @unexec rm -f %B/Flv_List.h
-include/FL/Flv_Style.H
+%%INCSDIR%%/Flv_Style.H
 @exec ln -fs %f %B/Flv_Style.h
 @unexec rm -f %B/Flv_Style.h
-include/FL/Flv_Table.H
+%%INCSDIR%%/Flv_Table.H
 @exec ln -fs %f %B/Flv_Table.h
 @unexec rm -f %B/Flv_Table.h
-include/FL/Flve_Check_Button.H
+%%INCSDIR%%/Flve_Check_Button.H
 @exec ln -fs %f %B/Flve_Check_Button.h
 @unexec rm -f %B/Flve_Check_Button.h
-include/FL/Flve_Combo.H
+%%INCSDIR%%/Flve_Combo.H
 @exec ln -fs %f %B/Flve_Combo.h
 @unexec rm -f %B/Flve_Combo.h
-include/FL/Flve_Input.H
+%%INCSDIR%%/Flve_Input.H
 @exec ln -fs %f %B/Flve_Input.h
 @unexec rm -f %B/Flve_Input.h
 lib/libflvw.a
 lib/libflvw.so.1
 @exec ln -fs %f %B/libflvw.so
 @unexec rm -f %B/libflvw.so
-%%PORTDOCS%%share/doc/flvw/basics.html
-%%PORTDOCS%%share/doc/flvw/callbacks.html
-%%PORTDOCS%%share/doc/flvw/classref.html
-%%PORTDOCS%%share/doc/flvw/flv_ctable.html
-%%PORTDOCS%%share/doc/flvw/flv_list.html
-%%PORTDOCS%%share/doc/flvw/flv_style.html
-%%PORTDOCS%%share/doc/flvw/flv_style_list.html
-%%PORTDOCS%%share/doc/flvw/flv_table.html
-%%PORTDOCS%%share/doc/flvw/index.html
-%%PORTDOCS%%share/doc/flvw/intro.html
-%%PORTDOCS%%share/doc/flvw/scroll_bar.html
-%%PORTDOCS%%share/doc/flvw/stylebasics.html
-%%PORTDOCS%%share/doc/flvw/widget_features.html
-%%PORTDOCS%%@dirrm share/doc/flvw
+%%PORTDOCS%%%%DOCSDIR%%/basics.html
+%%PORTDOCS%%%%DOCSDIR%%/callbacks.html
+%%PORTDOCS%%%%DOCSDIR%%/classref.html
+%%PORTDOCS%%%%DOCSDIR%%/flv_ctable.html
+%%PORTDOCS%%%%DOCSDIR%%/flv_list.html
+%%PORTDOCS%%%%DOCSDIR%%/flv_style.html
+%%PORTDOCS%%%%DOCSDIR%%/flv_style_list.html
+%%PORTDOCS%%%%DOCSDIR%%/flv_table.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/intro.html
+%%PORTDOCS%%%%DOCSDIR%%/scroll_bar.html
+%%PORTDOCS%%%%DOCSDIR%%/stylebasics.html
+%%PORTDOCS%%%%DOCSDIR%%/widget_features.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@unexec rmdir %%INCSDIR%% 2> /dev/null || :
