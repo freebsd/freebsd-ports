@@ -1,9 +1,20 @@
+@comment $FreeBSD$
 bin/xpaint
 lib/X11/app-defaults/XPaint
+lib/X11/xpaint/filters/leftright.c
+lib/X11/xpaint/filters/mapping.c
+lib/X11/xpaint/filters/merge.c
+lib/X11/xpaint/filters/permute.c
+lib/X11/xpaint/filters/rotleft.c
+lib/X11/xpaint/filters/rotright.c
+lib/X11/xpaint/filters/updown.c
 lib/X11/xpaint/help/Help
 lib/X11/xpaint/help/Help_fr
+lib/X11/xpaint/include/image.h
 lib/X11/xpaint/messages/Messages
 lib/X11/xpaint/messages/Messages_fr
 @dirrm lib/X11/xpaint/messages
+@dirrm lib/X11/xpaint/include
 @dirrm lib/X11/xpaint/help
+@dirrm lib/X11/xpaint/filters
 @dirrm lib/X11/xpaint
