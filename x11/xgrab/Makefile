@@ -7,6 +7,7 @@
 
 PORTNAME=	xgrab
 PORTVERSION=	2.41
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
@@ -17,13 +18,13 @@ MAINTAINER=	jmz@FreeBSD.org
 COMMENT=	An X11 image grabber
 
 USE_X_PREFIX=	yes
+USE_IMAKE=	yes
 
 .include <bsd.port.pre.mk>
 .if ${XFREE86_VERSION} == 4
 BUILD_DEPENDS=	xrdb:${PORTSDIR}/x11/XFree86-4-clients
 .endif
 
-USE_IMAKE=	yes
 MAKE_FLAGS=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man1 \
 		XAPPLOADDIR=${PREFIX}/lib/X11/app-defaults  -f
 # "make depend" blows up
