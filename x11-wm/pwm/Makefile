@@ -6,28 +6,29 @@
 #
 
 PORTNAME=	pwm
-PORTVERSION=	1.0
-PORTREVISION=	2
+PORTVERSION=	2003.06.17
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://modeemi.fi/~tuomov/dl/
+MASTER_SITES=	http://modeemi.fi/~tuomov/pwm/dl/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lightweight window manager with emphasis on usability
 
 USE_X_PREFIX=	yes
-USE_PERL5_BUILD=yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
+MAKE_ENV=	X11_PREFIX="${X11BASE}"
 
 MAN1=		pwm.1x
 
 post-patch:
-	@${PERL} -pi \
-		-e 's#^PREFIX.*$$#PREFIX=${PREFIX}#;' \
-		-e 's#^X11_PREFIX.*$$#X11_PREFIX=${X11BASE}#;' \
-		-e 's#^CC=.*$$#CC=${CC}#;' \
-		-e 's#^CFLAGS=-g -O2 (.*)$$#CFLAGS=${CFLAGS} \1#;' \
-		-e 's#^LDFLAGS=-g (.*)$$#LDFLAGS=${LDFLAGS} \1#;' \
-		${WRKSRC}/system.mk
+	@${REINPLACE_CMD} -e \
+		's|^PREFIX=|PREFIX?=|g ; \
+		 s|^X11_PREFIX=|X11_PREFIX?=|g ; \
+		 s|^CC=|CC?=|g ; \
+		 s|^CFLAGS=-g -O2|CFLAGS+=|g ; \
+		 s|^LDFLAGS=-g|LDFLAGS=|g ; \
+		 s|-pedantic-errors||g' ${WRKSRC}/system.mk
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pwm ${PREFIX}/bin
@@ -38,9 +39,9 @@ do-install:
 	${CP} ${PREFIX}/etc/pwm/sample.conf ${PREFIX}/etc/pwm/pwm.conf
 .endif
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/pwm
-	${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/pwm
-	${INSTALL_DATA} ${WRKSRC}/config.txt ${PREFIX}/share/doc/pwm
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/config.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
