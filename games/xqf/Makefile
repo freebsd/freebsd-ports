@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	xqf-0.9.0
+DISTNAME=	xqf-0.9.1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.linuxgames.com/xqf/
 
@@ -17,5 +17,8 @@ LIB_DEPENDS=    gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
 USE_GMAKE=	yes
 MAKE_ENV=	INSTALL_PROGRAM="${INSTALL_PROGRAM}"
+.ifdef CC
+MAKE_ENV+=	CC="${CC}"
+.endif
 
 .include <bsd.port.mk>
