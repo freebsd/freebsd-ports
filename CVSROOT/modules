@@ -912,7 +912,6 @@ cgoban		ports/games/cgoban
 cgoban2		ports/games/cgoban2
 chameleon	ports/lang/chameleon
 chbg		ports/graphics/chbg
-cheatah		ports/misc/cheatah
 checkbot	ports/www/checkbot
 checkpassword	ports/security/checkpassword
 checkpassword-pam	ports/security/checkpassword-pam
