@@ -17,12 +17,22 @@ COMMENT=	Desktop Organizer Software for the Palm Pilot
 LIB_DEPENDS=	pisock.8:${PORTSDIR}/palm/pilot-link
 
 CONFIGURE_ARGS+=	--with-pilot-prefix=${PREFIX}
+.if (!defined(WITHOUT_NLS))
 USE_GETTEXT=	yes
+.endif
 .if defined(WITH_GTK2)
 USE_GNOME=	gtk20
 CONFIGURE_ARGS+=	--enable-gtk2=yes
 .else
 USE_GNOME=	gtk12
+.endif
+
+.if !defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--enable-nls
+PLIST_SUB=		NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB=		NLS="@comment "
 .endif
 
 USE_LIBTOOL_VER=13
