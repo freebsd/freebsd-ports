@@ -7,6 +7,7 @@
 
 PORTNAME=	xdiskusage
 PORTVERSION=	1.46
+PORTREVISION=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://xdiskusage.sourceforge.net/
 EXTRACT_SUFX=	.tgz
@@ -16,6 +17,7 @@ COMMENT=	Show where disk space is taken up
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
+MAN1=		xdiskusage.1
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 
@@ -30,6 +32,7 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xdiskusage ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/xdiskusage.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/xdiskusage
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/xdiskusage
