@@ -1,0 +1,9 @@
+XScreenSaver.App is a simple WindowMaker dockapp that allows you
+to lock your screen (using XScreenSaver by default) with a single
+left-click of the mouse. The dockapp also allows you to configure
+XScreenSaver by right-clicking on the app.
+
+The left- and right-click behaviors are configurable, so this app
+can work with applications other than XScreenSaver.
+
+WWW: http://www.asleep.net/hacking/XScreenSaver.App/
