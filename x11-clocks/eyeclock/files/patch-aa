@@ -1,12 +1,18 @@
---- Makefile.orig	Thu Sep 17 01:42:06 1998
-+++ Makefile	Mon Sep 21 07:45:06 1998
-@@ -1,20 +1,25 @@
-+LIBS=	-L${X11BASE}/lib -lm -lX11 -lXt -lXmu -lXaw -lXpm
+--- Makefile.orig	Wed Dec  9 14:20:29 1998
++++ Makefile	Wed Dec  9 14:30:10 1998
+@@ -1,31 +1,35 @@
+-EYECLOCK_PREFIX = /usr/X11R6
++EYECLOCK_PREFIX = ${PREFIX}
+ EYECLOCK_BIN = ${EYECLOCK_PREFIX}/bin
+ EYECLOCK_LIB = ${EYECLOCK_PREFIX}/lib/X11/EyeClock
+ EYECLOCK_MAN = ${EYECLOCK_PREFIX}/man/man1
+ EYECLOCK_TARBALL = eyeclock-1.03
++LIBS=	-L${PREFIX}/lib -lX11 -lXt -lXmu -lXaw -lXpm -lm
 +.if ${PORTOBJFORMAT} == "elf"
-+LDFLAGS=-Wl,-rpath,${X11BASE}/lib
++LDFLAGS=-Wl,-rpath,${PREFIX}/lib
 +.endif
-+CFLAGS+=-I${X11BASE}/include
-+
++CFLAGS+=-I${PREFIX}/include
+ 
  eyeclock :	eyegraph.o eyeinit.o eyemain.o eyequit.o eyestr.o eyetime.o
  			gcc eyegraph.o eyeinit.o eyemain.o eyequit.o eyestr.o \
  			eyetime.o \
@@ -14,53 +20,38 @@
 -			-lm -lX11 -lXt -lXmu -lXaw -lXpm
 +			-o eyeclock ${CFLAGS} ${LIBS} ${LDFLAGS}
  eyegraph.o :	eyegraph.c
--		gcc -c eyegraph.c -O -I/usr/X11R6/include
-+		gcc -c eyegraph.c ${CFLAGS}
+-		gcc -c eyegraph.c -O -I/usr/X11R6/include \
++		gcc -c eyegraph.c ${CFLAGS} \
+ 		-DEYECLOCK_LIB=\"${EYECLOCK_LIB}/\"
  eyeinit.o :	eyeinit.c
--		gcc -c eyeinit.c -O -I/usr/X11R6/include
-+		gcc -c eyeinit.c ${CFLAGS}
+-		gcc -c eyeinit.c -O -I/usr/X11R6/include \
++		gcc -c eyeinit.c ${CFLAGS} \
+ 		-DEYECLOCK_LIB=\"${EYECLOCK_LIB}/\"
  eyemain.o :	eyemain.c
--		gcc -c eyemain.c -O -I/usr/X11R6/include
-+		gcc -c eyemain.c ${CFLAGS}
+-		gcc -c eyemain.c -O -I/usr/X11R6/include \
++		gcc -c eyemain.c ${CFLAGS} \
+ 		-DEYECLOCK_LIB=\"${EYECLOCK_LIB}/\"
  eyequit.o :	eyequit.c
--		gcc -c eyequit.c -O -I/usr/X11R6/include
-+		gcc -c eyequit.c ${CFLAGS}
+-		gcc -c eyequit.c -O -I/usr/X11R6/include \
++		gcc -c eyequit.c ${CFLAGS} \
+ 		-DEYECLOCK_LIB=\"${EYECLOCK_LIB}/\"
  eyestr.o :	eyestr.c
--		gcc -c eyestr.c -O -I/usr/X11R6/include
-+		gcc -c eyestr.c ${CFLAGS}
+-		gcc -c eyestr.c -O -I/usr/X11R6/include \
++		gcc -c eyestr.c ${CFLAGS} \
+ 		-DEYECLOCK_LIB=\"${EYECLOCK_LIB}/\"
  eyetime.o :	eyetime.c
--		gcc -c eyetime.c -O -I/usr/X11R6/include
-+		gcc -c eyetime.c ${CFLAGS}
+-		gcc -c eyetime.c -O -I/usr/X11R6/include \
++		gcc -c eyetime.c ${CFLAGS} \
+ 		-DEYECLOCK_LIB=\"${EYECLOCK_LIB}/\"
  clean :
  		rm *.o eyeclock
- backup :
-@@ -36,19 +41,19 @@
- 		cp sample2 sample2.bak
- 		cp sample2.xpm sample2.xpm.bak
+@@ -50,8 +54,7 @@
+ 		cp sample3 sample3.bak
+ 		cp sample3.xpm sample3.xpm.bak
  install :
--		cp eyeclock /usr/X11R6/bin
--		chmod 0755 /usr/X11R6/bin/eyeclock
--		mkdir /usr/X11R6/lib/X11/EyeClock
-+		cp eyeclock ${PREFIX}/bin
-+		chmod 0755 ${PREFIX}/bin/eyeclock
-+		mkdir -p ${PREFIX}/lib/X11/EyeClock
+-		cp eyeclock ${EYECLOCK_BIN}
+-		chmod 0755 ${EYECLOCK_BIN}/eyeclock
++		${INSTALL} -s eyeclock ${EYECLOCK_BIN}
+ 		mkdir -p ${EYECLOCK_LIB}
  		cp COPYRIGHT.euc Makefile README.euc \
  			sample1 sample1.xpm sample2 sample2.xpm \
--			/usr/X11R6/lib/X11/EyeClock
--		chmod 0444 /usr/X11R6/lib/X11/EyeClock/*
--		cp eyeclock.1.gz /usr/X11R6/man/man1
--		chmod 0444 /usr/X11R6/man/man1/eyeclock.1.gz
-+			${PREFIX}/lib/X11/EyeClock
-+		chmod 0444 ${PREFIX}/lib/X11/EyeClock/*
-+		cp eyeclock.1.gz ${PREFIX}/man/man1
-+		chmod 0444 ${PREFIX}/man/man1/eyeclock.1.gz
- uninstall :
--		rm /usr/X11R6/bin/eyeclock
--		rm /usr/X11R6/man/man1/eyeclock.1.gz
--		rm -f -R /usr/X11R6/lib/X11/EyeClock
-+		rm ${PREFIX}/bin/eyeclock
-+		rm ${PREFIX}/man/man1/eyeclock.1.gz
-+		rm -f -R ${PREFIX}/lib/X11/EyeClock
- package :
- 		rm -f eyeclock-1.0/*
- 		cp eyeclock.man eyeclock.1
