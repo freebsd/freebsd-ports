@@ -17,6 +17,10 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	todorov@freebsd-bg.org
 COMMENT=	An English-to-Bulgarian and Bulgarian-to-English dictionary
 
+BROKEN=		"fails to patch"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2005-02-17
+
 RUN_DEPENDS=	${DICT_DIR}/${DICT_CHECK}:${PORTSDIR}/textproc/bedic-data
 
 DICT_CHECK?=	buleng.dat
