@@ -78,7 +78,7 @@ CONFIGURE_ARGS+=--with-ldap=${PREFIX}
 CONFIGURE_ARGS+=--enable-gssapi=${KRB5_HOME}
 .elif !defined(WITHOUT_GSSAPI) && defined(HEIMDAL_HOME) && exists(${HEIMDAL_HOME}/lib/libgssapi.a)
 CONFIGURE_ARGS+=--enable-gssapi=${HEIMDAL_HOME} --with-gss_impl=heimdal
-.elif !defined(WITHOUT_GSSAPI) && defined(MAKE_KERBEROS5) && exists(/usr/lib/libkrb5.a)
+.elif !defined(WITHOUT_GSSAPI) && (defined(MAKE_KERBEROS5) || ${OSVERSION} > 500105) && exists(/usr/lib/libkrb5.a)
 CONFIGURE_ARGS+=--enable-gssapi
 .else
 CONFIGURE_ARGS+=--disable-gssapi
