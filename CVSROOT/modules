@@ -3310,6 +3310,7 @@ hcidump		ports/comms/hcidump
 hdconv		ports/palm/hdconv
 hdf		ports/science/hdf
 hdf5		ports/science/hdf5
+hdup		ports/sysutils/hdup
 health-nut	ports/misc/nut
 healthd		ports/sysutils/healthd
 heimdal		ports/security/heimdal
