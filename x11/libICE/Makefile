@@ -14,7 +14,8 @@ MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Inter Client Exchange library for X11
 
-LIB_PC_DEPENDS=	${X11BASE}/libdata/pkgconfig/xtrans.pc:${PORTSDIR}/x11/libXtrans
+LIB_PC_DEPENDS=	${X11BASE}/libdata/pkgconfig/x11.pc:${PORTSDIR}/x11/libX11 \
+		${X11BASE}/libdata/pkgconfig/xtrans.pc:${PORTSDIR}/x11/libXtrans
 BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/xproto.pc:${PORTSDIR}/x11/xproto \
 		${LIB_PC_DEPENDS}
 RUN_DEPENDS=	${LIB_PC_DEPENDS}
@@ -27,11 +28,7 @@ MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=13
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomehack pkgconfig
-
-post-patch:
-	${REINPLACE_CMD} 's|xproto x11|xproto|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
