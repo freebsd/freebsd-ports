@@ -20,13 +20,8 @@ LIB_DEPENDS=	fcgi.0:${PORTSDIR}/www/fcgi
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--use-installed=${LOCALBASE}
+MAKE_ARGS=	CCFLAGS="${CFLAGS}"
 
 MAN3=		FCGI.3
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
