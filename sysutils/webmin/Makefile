@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	webmin
-PORTVERSION=	0.90
-PORTREVISION=	6
+PORTVERSION=	0.91
 CATEGORIES=	sysutils
-MASTER_SITES=	http://webadmin.sourceforge.net/webmin/updates/ \
-		http://webadmin.sourceforge.net/webmin/download/
+MASTER_SITES=	http://www.webmin.com/webmin/updates/ \
+		http://www.webmin.com/webmin/download/
+
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${WEBMIN_MODULES} ${WEBMIN_THEMES}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -22,8 +22,7 @@ NO_BUILD=	yes
 USE_PERL5=	yes
 SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
 
-WEBMIN_MODULES=	servers-0.90-1.wbm.gz quota-0.90-1.wbm.gz squid-0.90-1.wbm.gz \
-		proftpd-0.90-1.wbm.gz dnsadmin-0.90-1.wbm.gz acl-0.90-1.wbm.gz
+WEBMIN_MODULES=	sendmail-0.91-1.wbm.gz
 WEBMIN_THEMES=
 		
 post-extract:
