@@ -54,10 +54,9 @@ WITHOUT_MMX=	yes
 .else
 # only for i386
 EXTRA_PATCHES+=	${FILESDIR}/extra-bktr-patch-libavformat::Makefile
-.endif
-
-.if ${ARCH} == "i386" && ${OSVERSION} > 502104
-BROKEN=		"Does not compile on i386 5.x"
+. if ${OSVERSION} >= 502000 && !defined(WITH_OPTIMIZED_CFLAGS)
+CFLAGS+=	-fomit-frame-pointer
+. endif
 .endif
 
 ## lib detection
