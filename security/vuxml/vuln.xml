@@ -32,6 +32,33 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3030ae22-1c7f-11d9-81a4-0050fc56d258">
+    <topic>mail-notification -- denial-of-service vulnerability</topic>
+    <affects>
+      <package>
+	<name>mail-notification</name>
+	<range><lt>0.7.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Caused by an untested return value, and a resulting
+	  null pointer dereference, it is possible for an attacker
+	  to crash the application.  However, the attacker must first
+	  hijack the connection between Mail Notification and the
+	  Gmail or IMAP server.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.nongnu.org/mailnotify/sa/mail-notification-SA-04:2.asc</url>
+      <url>http://www.nongnu.org/mailnotify/sa/mail-notification-SA-04:3.asc</url>
+    </references>
+    <dates>
+      <discovery>2004-10-06</discovery>
+      <entry>2004-10-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="65e99f52-1c5f-11d9-bc4a-000c41e2cdad">
     <topic>squid -- SNMP module denial-of-service vulnerability</topic>
     <affects>
