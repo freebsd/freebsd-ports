@@ -7,8 +7,6 @@ lib/%%PYTHON_VERSION%%/site-packages/pygame/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/pygame/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pygame/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pygame/base.so
-lib/%%PYTHON_VERSION%%/site-packages/pygame/bluebold.ttf
-lib/%%PYTHON_VERSION%%/site-packages/pygame/bluebold.txt
 lib/%%PYTHON_VERSION%%/site-packages/pygame/cdrom.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/constants.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/cursors.py
@@ -18,6 +16,8 @@ lib/%%PYTHON_VERSION%%/site-packages/pygame/display.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/draw.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/event.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/font.so
+lib/%%PYTHON_VERSION%%/site-packages/pygame/helmetb.ttf
+lib/%%PYTHON_VERSION%%/site-packages/pygame/helmetb.txt
 lib/%%PYTHON_VERSION%%/site-packages/pygame/image.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/imageext.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/joystick.so
@@ -115,6 +115,7 @@ lib/%%PYTHON_VERSION%%/site-packages/pygame/version.pyo
 %%PORTDOCS%%share/examples/py-game/data/arraydemo.bmp
 %%PORTDOCS%%share/examples/py-game/data/background.gif
 %%PORTDOCS%%share/examples/py-game/data/bomb.gif
+%%PORTDOCS%%share/examples/py-game/data/bong.wav
 %%PORTDOCS%%share/examples/py-game/data/boom.wav
 %%PORTDOCS%%share/examples/py-game/data/car_door.wav
 %%PORTDOCS%%share/examples/py-game/data/chimp.bmp
@@ -135,11 +136,10 @@ lib/%%PYTHON_VERSION%%/site-packages/pygame/version.pyo
 %%PORTDOCS%%share/examples/py-game/moveit.py
 %%PORTDOCS%%share/examples/py-game/oldalien.py
 %%PORTDOCS%%share/examples/py-game/readme.txt
-%%PORTDOCS%%share/examples/py-game/sdllogos.zip
 %%PORTDOCS%%share/examples/py-game/sound.py
 %%PORTDOCS%%share/examples/py-game/stars.py
+%%PORTDOCS%%share/examples/py-game/uberball.py
 %%PORTDOCS%%share/examples/py-game/vgrade.py
-%%PORTDOCS%%share/examples/py-game/zipshow.py
 %%PORTDOCS%%@dirrm share/examples/py-game/data
 %%PORTDOCS%%@dirrm share/examples/py-game
 %%PORTDOCS%%@dirrm share/doc/py-game/util
