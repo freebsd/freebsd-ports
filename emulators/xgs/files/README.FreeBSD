@@ -1,3 +1,6 @@
+General Notes
+=============
+
 This emulator does a great job of emulating an Apple IIGS. Various
 IIGS hardware devices are also emulated but this version is still an
 alpha quality release so you might find a few things missing.
@@ -9,10 +12,34 @@ should need to do is drop it in the xgs subdirectory of the distfiles
 directory to allow the port to build. This ROM cannot be distributed
 due to copyright reasons.
 
+Version Specific Notes
+======================
+
+Disk emulation has improved considerably. Many images available on the
+net will now load. 
+
+A new disk image format has been adopted and further support for other
+image types have been added. Also most of the utilities have been
+consolidated into one program. Be sure to check the docs on this one. 
+
+Sound emulation is currently broken and I'm looking for help in this
+area as I lack experience with sound programming. If you are able to
+assist, or even better, have some patches you can send me please
+contact me on the email address below.
+
+Finally
+=======
+
 Please check out the files in /usr/local/share/doc/xgs (or equivalent
 on your system). As this package has no man pages you will need to
 pick up the basics from there. All author credits can be found in
 these files also.
+
+Check out the following for all sorts of Apple II goodies:
+
+	ftp://ftp.apple.asimov.net/pub/apple_II/
+	http://www.inwards.com/xgs/
+	comp.emulators.apple2
 
 Share and enjoy,
 
@@ -20,4 +47,3 @@ Joel...
 :->
 sutton@aardvark.apana.org.au
 
-WWW: http://www.inwards.com/xgs/
