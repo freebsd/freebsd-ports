@@ -1,0 +1,21 @@
+--- install.sh.orig	Tue Oct  1 16:20:51 2002
++++ install.sh	Sat Oct  5 13:37:56 2002
+@@ -1042,8 +1042,9 @@
+ 	ln $lns $lnf libnpp.so.$plugin_version_major.$plugin_version_minor.$plugin_version_release $plugin_dir/libnpp.so
+ 
+      # System wide configuration files
+-	config_dir='/usr/local/etc'
++	config_dir="$prefix/etc"
+ 	if can_write_to "$config_dir"; then
++if false; then # XXX
+ 	    echo
+ 	    echo "System wide configuration files:"
+ 	    echo "  $config_dir/opera6rc"
+@@ -1070,6 +1071,7 @@
+ 			;;
+ 		esac
+ 	    done
++fi # XXX
+ 	else
+ 	    echo
+ 	    echo "User \"${USERNAME}\" does not have write access to $config_dir"

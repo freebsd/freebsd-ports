@@ -239,6 +239,7 @@
     SUBDIR += nspostgres
     SUBDIR += oops
     SUBDIR += openvrml
+    SUBDIR += opera
     SUBDIR += orion
     SUBDIR += orion-devel
     SUBDIR += p5-Apache-ASP
