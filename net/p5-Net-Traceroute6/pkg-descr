@@ -1,0 +1,9 @@
+This module implements traceroute6(8) functionality for perl5.  It
+allows you to trace the path IP packets take to a destination.  It
+is currently implemented as a parser around the system traceroute
+command.
+
+WWW: http://search.cpan.org/search?dist=Net-Traceroute6
+
+- Pete
+petef@FreeBSD.org
