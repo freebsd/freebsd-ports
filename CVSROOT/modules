@@ -688,6 +688,7 @@ bonnie		ports/benchmarks/bonnie
 bonnie++	ports/benchmarks/bonnie++
 bonobo		ports/devel/bonobo
 bonobo-conf	ports/devel/bonobo-conf
+boodler		ports/audio/boodler
 bookcase	ports/misc/bookcase
 boost		ports/devel/boost
 borzoi		ports/security/borzoi
