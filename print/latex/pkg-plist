@@ -76,6 +76,7 @@ share/texmf/documentation/ltnews10.tex
 share/texmf/documentation/ltnews11.tex
 share/texmf/documentation/ltnews12.tex
 share/texmf/documentation/ltnews13.tex
+share/texmf/documentation/ltnews14.tex
 share/texmf/documentation/ltoutenc.dtx
 share/texmf/documentation/ltoutput.dtx
 share/texmf/documentation/ltpage.dtx
@@ -110,12 +111,14 @@ share/texmf/documentation/source2e.tex
 share/texmf/documentation/syntonly.dtx
 share/texmf/documentation/tabularx.dtx
 share/texmf/documentation/theorem.dtx
+share/texmf/documentation/trace.dtx
 share/texmf/documentation/trig.dtx
 share/texmf/documentation/usrguide.tex
 share/texmf/documentation/varioref.dtx
 share/texmf/documentation/verbatim.dtx
 share/texmf/documentation/xr.dtx
 share/texmf/documentation/xspace.dtx
+share/texmf/fonts/tfm/BodoniBoldItalic.tfm
 share/texmf/fonts/tfm/adobe/avantgar/pagd7t.tfm
 share/texmf/fonts/tfm/adobe/avantgar/pagd8c.tfm
 share/texmf/fonts/tfm/adobe/avantgar/pagd8r.tfm
@@ -255,12 +258,14 @@ share/texmf/fonts/tfm/adobe/ncntrsbk/pncro8t.tfm
 share/texmf/fonts/tfm/adobe/palatino/eurbo10.tfm
 share/texmf/fonts/tfm/adobe/palatino/eurmo10.tfm
 share/texmf/fonts/tfm/adobe/palatino/pplb7t.tfm
+share/texmf/fonts/tfm/adobe/palatino/pplb8a.tfm
 share/texmf/fonts/tfm/adobe/palatino/pplb8c.tfm
 share/texmf/fonts/tfm/adobe/palatino/pplb8r.tfm
 share/texmf/fonts/tfm/adobe/palatino/pplb8t.tfm
 share/texmf/fonts/tfm/adobe/palatino/pplbc7t.tfm
 share/texmf/fonts/tfm/adobe/palatino/pplbc8t.tfm
 share/texmf/fonts/tfm/adobe/palatino/pplbi7t.tfm
+share/texmf/fonts/tfm/adobe/palatino/pplbi8a.tfm
 share/texmf/fonts/tfm/adobe/palatino/pplbi8c.tfm
 share/texmf/fonts/tfm/adobe/palatino/pplbi8r.tfm
 share/texmf/fonts/tfm/adobe/palatino/pplbi8t.tfm
@@ -269,12 +274,14 @@ share/texmf/fonts/tfm/adobe/palatino/pplbo8c.tfm
 share/texmf/fonts/tfm/adobe/palatino/pplbo8r.tfm
 share/texmf/fonts/tfm/adobe/palatino/pplbo8t.tfm
 share/texmf/fonts/tfm/adobe/palatino/pplr7t.tfm
+share/texmf/fonts/tfm/adobe/palatino/pplr8a.tfm
 share/texmf/fonts/tfm/adobe/palatino/pplr8c.tfm
 share/texmf/fonts/tfm/adobe/palatino/pplr8r.tfm
 share/texmf/fonts/tfm/adobe/palatino/pplr8t.tfm
 share/texmf/fonts/tfm/adobe/palatino/pplrc7t.tfm
 share/texmf/fonts/tfm/adobe/palatino/pplrc8t.tfm
 share/texmf/fonts/tfm/adobe/palatino/pplri7t.tfm
+share/texmf/fonts/tfm/adobe/palatino/pplri8a.tfm
 share/texmf/fonts/tfm/adobe/palatino/pplri8c.tfm
 share/texmf/fonts/tfm/adobe/palatino/pplri8r.tfm
 share/texmf/fonts/tfm/adobe/palatino/pplri8t.tfm
@@ -426,6 +433,18 @@ share/texmf/fonts/tfm/lcmssb8.tfm
 share/texmf/fonts/tfm/lcmssi8.tfm
 share/texmf/fonts/tfm/line10.tfm
 share/texmf/fonts/tfm/linew10.tfm
+share/texmf/fonts/tfm/public/pazo/fplmb.tfm
+share/texmf/fonts/tfm/public/pazo/fplmbb.tfm
+share/texmf/fonts/tfm/public/pazo/fplmbi.tfm
+share/texmf/fonts/tfm/public/pazo/fplmr.tfm
+share/texmf/fonts/tfm/public/pazo/fplmri.tfm
+share/texmf/fonts/tfm/public/pazo/zplmb7m.tfm
+share/texmf/fonts/tfm/public/pazo/zplmb7t.tfm
+share/texmf/fonts/tfm/public/pazo/zplmb7y.tfm
+share/texmf/fonts/tfm/public/pazo/zplmr7m.tfm
+share/texmf/fonts/tfm/public/pazo/zplmr7t.tfm
+share/texmf/fonts/tfm/public/pazo/zplmr7v.tfm
+share/texmf/fonts/tfm/public/pazo/zplmr7y.tfm
 share/texmf/fonts/vf/adobe/avantgar/pagd7t.vf
 share/texmf/fonts/vf/adobe/avantgar/pagd8c.vf
 share/texmf/fonts/vf/adobe/avantgar/pagd8t.vf
@@ -640,6 +659,13 @@ share/texmf/fonts/vf/bitstrea/charter/bchri8t.vf
 share/texmf/fonts/vf/bitstrea/charter/bchro7t.vf
 share/texmf/fonts/vf/bitstrea/charter/bchro8c.vf
 share/texmf/fonts/vf/bitstrea/charter/bchro8t.vf
+share/texmf/fonts/vf/public/pazo/zplmb7m.vf
+share/texmf/fonts/vf/public/pazo/zplmb7t.vf
+share/texmf/fonts/vf/public/pazo/zplmb7y.vf
+share/texmf/fonts/vf/public/pazo/zplmr7m.vf
+share/texmf/fonts/vf/public/pazo/zplmr7t.vf
+share/texmf/fonts/vf/public/pazo/zplmr7v.vf
+share/texmf/fonts/vf/public/pazo/zplmr7y.vf
 share/texmf/makeindx/gglo.ist
 share/texmf/makeindx/gind.ist
 share/texmf/metafont/circle.mf
@@ -735,8 +761,10 @@ share/texmf/tex/latex/flafter.sty
 share/texmf/tex/latex/fleqn.clo
 share/texmf/tex/latex/fleqn.sty
 share/texmf/tex/latex/fontenc.sty
+share/texmf/tex/latex/fontmath.cfg
 share/texmf/tex/latex/fontsmpl.sty
 share/texmf/tex/latex/fontsmpl.tex
+share/texmf/tex/latex/fonttext.cfg
 share/texmf/tex/latex/ftnright.sty
 share/texmf/tex/latex/graphics.cfg
 share/texmf/tex/latex/graphics.sty
@@ -760,6 +788,7 @@ share/texmf/tex/latex/latin2.def
 share/texmf/tex/latex/latin3.def
 share/texmf/tex/latex/latin4.def
 share/texmf/tex/latex/latin5.def
+share/texmf/tex/latex/latin9.def
 share/texmf/tex/latex/layout.sty
 share/texmf/tex/latex/leqno.clo
 share/texmf/tex/latex/leqno.sty
@@ -771,6 +800,7 @@ share/texmf/tex/latex/ltnews.cls
 share/texmf/tex/latex/ltxdoc.cls
 share/texmf/tex/latex/ltxguide.cls
 share/texmf/tex/latex/makeidx.sty
+share/texmf/tex/latex/mathpazo.sty
 share/texmf/tex/latex/mathpple.sty
 share/texmf/tex/latex/mathptm.sty
 share/texmf/tex/latex/mathptmx.sty
@@ -813,6 +843,7 @@ share/texmf/tex/latex/pdftex.def
 share/texmf/tex/latex/pict2e.sty
 share/texmf/tex/latex/pifont.sty
 share/texmf/tex/latex/pitest.tex
+share/texmf/tex/latex/preload.cfg
 share/texmf/tex/latex/proc.cls
 share/texmf/tex/latex/proc.sty
 share/texmf/tex/latex/psnfss/8rbch.fd
@@ -836,6 +867,7 @@ share/texmf/tex/latex/psnfss/omlptm.fd
 share/texmf/tex/latex/psnfss/omlptmcm.fd
 share/texmf/tex/latex/psnfss/omlput.fd
 share/texmf/tex/latex/psnfss/omlpzc.fd
+share/texmf/tex/latex/psnfss/omlzplm.fd
 share/texmf/tex/latex/psnfss/omlzpple.fd
 share/texmf/tex/latex/psnfss/omlztmcm.fd
 share/texmf/tex/latex/psnfss/omsbch.fd
@@ -849,12 +881,15 @@ share/texmf/tex/latex/psnfss/omsptm.fd
 share/texmf/tex/latex/psnfss/omsput.fd
 share/texmf/tex/latex/psnfss/omspzc.fd
 share/texmf/tex/latex/psnfss/omspzccm.fd
+share/texmf/tex/latex/psnfss/omszplm.fd
 share/texmf/tex/latex/psnfss/omszpple.fd
 share/texmf/tex/latex/psnfss/omsztmcm.fd
 share/texmf/tex/latex/psnfss/omxpsycm.fd
+share/texmf/tex/latex/psnfss/omxzplm.fd
 share/texmf/tex/latex/psnfss/omxzpple.fd
 share/texmf/tex/latex/psnfss/omxztmcm.fd
 share/texmf/tex/latex/psnfss/ot1bch.fd
+share/texmf/tex/latex/psnfss/ot1fplmbb.fd
 share/texmf/tex/latex/psnfss/ot1pag.fd
 share/texmf/tex/latex/psnfss/ot1pbk.fd
 share/texmf/tex/latex/psnfss/ot1pcr.fd
@@ -865,9 +900,11 @@ share/texmf/tex/latex/psnfss/ot1ptm.fd
 share/texmf/tex/latex/psnfss/ot1ptmcm.fd
 share/texmf/tex/latex/psnfss/ot1put.fd
 share/texmf/tex/latex/psnfss/ot1pzc.fd
+share/texmf/tex/latex/psnfss/ot1zplm.fd
 share/texmf/tex/latex/psnfss/ot1zpple.fd
 share/texmf/tex/latex/psnfss/ot1ztmcm.fd
 share/texmf/tex/latex/psnfss/t1bch.fd
+share/texmf/tex/latex/psnfss/t1fplmbb.fd
 share/texmf/tex/latex/psnfss/t1pag.fd
 share/texmf/tex/latex/psnfss/t1pbk.fd
 share/texmf/tex/latex/psnfss/t1pcr.fd
@@ -887,6 +924,7 @@ share/texmf/tex/latex/psnfss/ts1ppl.fd
 share/texmf/tex/latex/psnfss/ts1ptm.fd
 share/texmf/tex/latex/psnfss/ts1put.fd
 share/texmf/tex/latex/psnfss/ts1pzc.fd
+share/texmf/tex/latex/psnfss/ufplm.fd
 share/texmf/tex/latex/psnfss/upsy.fd
 share/texmf/tex/latex/psnfss/upzd.fd
 share/texmf/tex/latex/psnfss2e.tex
@@ -926,6 +964,8 @@ share/texmf/tex/latex/tabularx.sty
 share/texmf/tex/latex/tcidvi.def
 share/texmf/tex/latex/test0.tex
 share/texmf/tex/latex/test1.tex
+share/texmf/tex/latex/test2.tex
+share/texmf/tex/latex/test3.tex
 share/texmf/tex/latex/testpage.tex
 share/texmf/tex/latex/textcomp.sty
 share/texmf/tex/latex/textures.def
@@ -937,6 +977,7 @@ share/texmf/tex/latex/thm.sty
 share/texmf/tex/latex/thmb.sty
 share/texmf/tex/latex/thp.sty
 share/texmf/tex/latex/times.sty
+share/texmf/tex/latex/trace.sty
 share/texmf/tex/latex/tracefnt.sty
 share/texmf/tex/latex/trig.sty
 share/texmf/tex/latex/truetex.def
@@ -959,6 +1000,8 @@ share/texmf/tex/latex/x.tex
 share/texmf/tex/latex/xr.sty
 share/texmf/tex/latex/xspace.sty
 share/texmf/web2c/latex.fmt
+@dirrm share/texmf/fonts/tfm/public/pazo
+@dirrm share/texmf/fonts/tfm/public
 @dirrm share/texmf/fonts/tfm/adobe/avantgar
 @dirrm share/texmf/fonts/tfm/adobe/courier
 @dirrm share/texmf/fonts/tfm/adobe/bookman
@@ -973,6 +1016,8 @@ share/texmf/web2c/latex.fmt
 @dirrm share/texmf/fonts/tfm/bitstrea/charter
 @dirrm share/texmf/fonts/tfm/bitstrea
 @dirrm share/texmf/fonts/tfm/adobe
+@dirrm share/texmf/fonts/vf/public/pazo
+@dirrm share/texmf/fonts/vf/public
 @dirrm share/texmf/fonts/vf/adobe/avantgar
 @dirrm share/texmf/fonts/vf/adobe/bookman
 @dirrm share/texmf/fonts/vf/adobe/courier
