@@ -17,6 +17,8 @@ DISTNAME=	cdrtools-2.00.3
 MAINTAINER=	dirk@FreeBSD.org
 COMMENT?=	Cdrecord, mkisofs and several other programs to record CD-R[W]
 
+CONFLICTS?=	cdrtools-devel-*
+
 .if defined(MKISOFS)
 MAN8=		apple_driver.8 isoinfo.8 mkhybrid.8 mkisofs.8
 .else
