@@ -1,0 +1,10 @@
+--- plug-ins/perl/po/Makefile.in.in	2000/09/26 14:53:46	1.1
++++ plug-ins/perl/po/Makefile.in.in	2000/09/26 14:54:01
+@@ -49,7 +49,6 @@
+ DISTFILES = ChangeLog Makefile.in.in POTFILES.in $(PACKAGE).pot \
+ stamp-cat-id $(POFILES) $(GMOFILES) $(SOURCES) $(srcdir)/pxgettext
+ 
+-POTFILES = \
+ 
+ CATALOGS = @CATALOGS@
+ CATOBJEXT = @CATOBJEXT@
