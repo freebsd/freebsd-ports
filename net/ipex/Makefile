@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipex
-PORTVERSION=	2.3.5
+PORTVERSION=	2.3.5.2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ipex
@@ -18,10 +18,4 @@ MANCOMPRESSED=	yes
 
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500000
-BROKEN=		"currently does not support -CURRENT"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
