@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.58 1995/10/12 07:43:30 asami Exp $
+# $Id: Makefile,v 1.59 1995/10/13 09:19:57 asami Exp $
 #
 
 RESTRICTED += Mosaic         # requires Motif, Mosaic itself isn't
@@ -39,6 +39,7 @@ RESTRICTED += ivs            # crypto, export controlled
     SUBDIR += tkined
     SUBDIR += vic
     BROKEN += wais           # for XFree3.x
+    SUBDIR += wn
     SUBDIR += wu-ftpd
     SUBDIR += wwwish
     SUBDIR += xarchie
