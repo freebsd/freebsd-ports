@@ -2,6 +2,7 @@ bin/runtest
 include/dejagnu.h
 %%DATADIR%%/baseboards/README
 %%DATADIR%%/baseboards/a29k-udi.exp
+%%DATADIR%%/baseboards/am33_2.0-libremote.exp
 %%DATADIR%%/baseboards/arc-sim.exp
 %%DATADIR%%/baseboards/arm-ice.exp
 %%DATADIR%%/baseboards/arm-sid.exp
@@ -63,9 +64,10 @@ include/dejagnu.h
 %%DATADIR%%/baseboards/powerpc-sim.exp
 %%DATADIR%%/baseboards/powerpcle-sim.exp
 %%DATADIR%%/baseboards/rom68k-idp.exp
-%%DATADIR%%/baseboards/sh-hms-sim.exp
 %%DATADIR%%/baseboards/sh-hms.exp
 %%DATADIR%%/baseboards/sh-sid.exp
+%%DATADIR%%/baseboards/sh-sim.exp
+%%DATADIR%%/baseboards/sparc-sim.exp
 %%DATADIR%%/baseboards/sparc64-sim.exp
 %%DATADIR%%/baseboards/sparclet-aout.exp
 %%DATADIR%%/baseboards/sparclite-coff.exp
@@ -141,7 +143,6 @@ include/dejagnu.h
 %%DATADIR%%/dg.exp
 %%DATADIR%%/framework.exp
 %%DATADIR%%/ftp.exp
-%%DATADIR%%/i960glue.c
 %%DATADIR%%/kermit.exp
 %%DATADIR%%/libexec/config.guess
 %%DATADIR%%/libgloss.exp
