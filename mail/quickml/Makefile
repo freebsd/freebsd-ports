@@ -7,6 +7,7 @@
 
 PORTNAME=	quickml
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://namazu.org/%7esatoru/quickml/
 
@@ -29,6 +30,7 @@ USE_RC_SUBR=	yes
 FILES_SUB=	USER=${QUICKML_USER} GROUP=${QUICKML_GROUP} \
 		PREFIX=${PREFIX} RC_SUBR=${RC_SUBR} RUBY=${RUBY}
 
+CONFIGURE_ARGS+=	--datadir="${PREFIX}/share/quickml"
 CONFIGURE_ARGS+=	--with-ruby="${RUBY}"
 CONFIGURE_ARGS+=	--with-user="${QUICKML_USER}"
 CONFIGURE_ARGS+=	--with-group="${QUICKML_GROUP}"
@@ -55,6 +57,8 @@ pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/messages.ja ${DATADIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/ml-usage.en.rd ${DOCSDIR}
