@@ -1,3 +1,4 @@
+bin/gamma4scanimage
 bin/sane-config
 bin/sane-find-scanner
 bin/scanimage
@@ -18,7 +19,7 @@ etc/sane.d/dll.conf
 etc/sane.d/dmc.conf
 etc/sane.d/epson.conf
 etc/sane.d/fujitsu.conf
-%%GPHOTO2%%etc/sane.d/gphtoto2.conf
+%%GPHOTO2%%etc/sane.d/gphoto2.conf
 etc/sane.d/hp.conf
 etc/sane.d/leo.conf
 etc/sane.d/matsushita.conf
@@ -41,6 +42,8 @@ etc/sane.d/sp15c.conf
 etc/sane.d/st400.conf
 etc/sane.d/tamarack.conf
 etc/sane.d/teco1.conf
+etc/sane.d/teco2.conf
+etc/sane.d/teco3.conf
 etc/sane.d/test.conf
 etc/sane.d/umax.conf
 etc/sane.d/umax1220u.conf
@@ -173,6 +176,12 @@ lib/sane/libsane-tamarack.so.1
 lib/sane/libsane-teco1.a
 lib/sane/libsane-teco1.so
 lib/sane/libsane-teco1.so.1
+lib/sane/libsane-teco2.a
+lib/sane/libsane-teco2.so
+lib/sane/libsane-teco2.so.1
+lib/sane/libsane-teco3.a
+lib/sane/libsane-teco3.so
+lib/sane/libsane-teco3.so.1
 lib/sane/libsane-test.a
 lib/sane/libsane-test.so
 lib/sane/libsane-test.so.1
@@ -195,8 +204,13 @@ sbin/saned
 %%PORTDOCS%%share/doc/sane/PROJECTS
 %%PORTDOCS%%share/doc/sane/README
 %%PORTDOCS%%share/doc/sane/README.aix
+%%PORTDOCS%%share/doc/sane/README.beos
+%%PORTDOCS%%share/doc/sane/README.darwin
+%%PORTDOCS%%share/doc/sane/README.freebsd
 %%PORTDOCS%%share/doc/sane/README.hp-ux
 %%PORTDOCS%%share/doc/sane/README.linux
+%%PORTDOCS%%share/doc/sane/README.netbsd
+%%PORTDOCS%%share/doc/sane/README.openbsd
 %%PORTDOCS%%share/doc/sane/README.os2
 %%PORTDOCS%%share/doc/sane/README.solaris
 %%PORTDOCS%%share/doc/sane/README.unixware2
@@ -211,6 +225,8 @@ sbin/saned
 %%PORTDOCS%%share/doc/sane/mustek_usb/mustek_usb.TODO
 %%PORTDOCS%%share/doc/sane/sceptre/s1200.txt
 %%PORTDOCS%%share/doc/sane/teco/teco1.txt
+%%PORTDOCS%%share/doc/sane/teco/teco2.txt
+%%PORTDOCS%%share/doc/sane/teco/teco3.txt
 %%PORTDOCS%%share/doc/sane/umax/sane-logo.jpg
 %%PORTDOCS%%share/doc/sane/umax/sane-logo2.jpg
 %%PORTDOCS%%share/doc/sane/umax/sane-umax-advanced-options-doc.html
