@@ -20,7 +20,6 @@ RUN_DEPENDS=	${LOCALBASE}/lib/cscc/lib/libXsharpSupport.so.0:${PORTSDIR}/lang/pn
 
 USE_LIBTOOL_VER=13
 USE_GMAKE=	yes
-STRIP=		# Nothing to be stripped.
 
 .include "${.CURDIR}/../pnet/Makefile.pnet"
 .include <bsd.port.mk>
