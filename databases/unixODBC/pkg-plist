@@ -145,3 +145,4 @@ lib/libtemplate.so.1
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ProgrammerManual
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/AdministratorManual
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm etc/ODBCDataSources
