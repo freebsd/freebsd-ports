@@ -7,7 +7,7 @@
 
 PORTNAME=	cvsnt
 PORTVERSION=	2.0.58d
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cvsnt.org/archive/
 
@@ -35,6 +35,7 @@ MAN5=		cvs.5
 PLIST_SUB=	GSERVER=""
 .else
 PLIST_SUB=	GSERVER="@comment "
+CONFIGURE_ARGS+=--disable-gserver
 .endif
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
