@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	mysql-navigator
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	databases kde
-MASTER_SITES=	http://ftp.kde.com/Database/MySQL_Navigator/ \
-		http://sql.kldp.org/snapshots/ \
-		ftp://sise15.mizi.com/pub/
+MASTER_SITES=	http://sql.kldp.org/snapshots/
 DISTNAME=	mysqlnavigator-${PORTVERSION}
 
 MAINTAINER=	demon@FreeBSD.org
@@ -19,7 +17,6 @@ COMMENT=	MySQL database server administration package for KDE
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 
 USE_KDELIBS_VER=3
-INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes

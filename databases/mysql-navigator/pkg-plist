@@ -1,5 +1,1 @@
 bin/mysqlnavigator
-lib/libmysqlui.a
-lib/libmysqlui.la
-lib/libmysqlui.so
-lib/libmysqlui.so.1
