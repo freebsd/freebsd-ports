@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.in	2002/05/10 17:17:43	1.1
++++ Makefile.in	2002/05/10 17:18:54
+@@ -108,7 +108,7 @@
+ 	$(SHELL) ./config.status
+ 
+ $(SUBDIRS):
+-	cd $@ && $(MAKE)
++	cd $@ && $(MAKE) all
+ 
+ clean:
+ 	for dir in $(SUBDIRS); do \
