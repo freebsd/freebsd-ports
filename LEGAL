@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.35 1996/07/06 10:46:49 torstenb Exp $
+# $Id: LEGAL,v 1.36 1996/07/06 12:09:29 gpalmer Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -16,27 +16,27 @@ Such ports are listed below:
 Dist			Port			Why
 ------------------------------------------------------------------------------
 cku190.tar.gz		ports/comms/kermit	Restrictive copyright
-ivs3.4-src.tar.gz	ports/net/ivs		Crypto; export-controlled
-maxima-5.0-beta		ports/math/maxima	License required
-pgp262s.zip		ports/utils/pgp*	Various locality restrictions
-rzsz3_36.zip		ports/comms/rzsz	Restrictive copyright
-tkman-1.7.3.tar.Z	ports/x11/tkman		Restrictive copyright
-rman-2.4.tar.Z		ports/utils/rman	Restrictive copyright
-xrisk-2.13.tar.Z	ports/games/xrisk	Copyright/trademark violation?
-xtetris-2.5.2.tar.gz	ports/games/xtetris	Possible trademark violation
-mmv/*			ports/utils/mmv		Restrictive/unclear copyright
+fwtk-*			ports/security/fwtk	No redistribution allowed
+glimpse-*		ports/misc/glimpse	Don't sell for profit
 irc-2.8.21.tar.gz	ports/net/irc		Restrictive copyright
 						in irc2.8.21/ircd/res.c
-uzap.tar.gz             ports/editors/uzap      Restrictive copyright
-rkive3.1.tar.gz		ports/news/rkive	Restrictive copyright
-netscape-*		ports/net/netscape	Commercial product
+ivs3.4-src.tar.gz	ports/net/ivs		Crypto; export-controlled
+maxima-5.0-beta		ports/math/maxima	License required
+mmv/*			ports/utils/mmv		Restrictive/unclear copyright
 msql-*			ports/databases/msql	Not free for commercial org.
-ssh-*			ports/security/ssh	Crypto; export-controlled
-xinvaders-*		ports/games/xinvaders	Don't sell for profit
-glimpse-*		ports/misc/glimpse	Don't sell for profit
-SSLeay-0.5.1b.tar.gz	ports/security/SSLeay	Crypto; export-controlled
-sattrack-3.1.4		ports/misc/sattrack	Don't sell for profit
-spice-3f4		ports/cad/spice		Export restrictions
+netscape-*		ports/net/netscape	Commercial product
+pgp262s.zip		ports/utils/pgp*	Various locality restrictions
 radius-2.4.21		ports/net/radius	Restrictive copyright in
 						src/rlmadmin.c
-fwtk-*			ports/security/fwtk	No redistribution allowed
+rkive3.1.tar.gz		ports/news/rkive	Restrictive copyright
+rman-2.4.tar.Z		ports/utils/rman	Restrictive copyright
+rzsz3_36.zip		ports/comms/rzsz	Restrictive copyright
+sattrack-3.1.4		ports/misc/sattrack	Don't sell for profit
+ssh-*			ports/security/ssh	Crypto; export-controlled
+SSLeay-0.5.1b.tar.gz	ports/security/SSLeay	Crypto; export-controlled
+spice-3f4		ports/cad/spice		Export restrictions
+tkman-1.7.3.tar.Z	ports/x11/tkman		Restrictive copyright
+uzap.tar.gz             ports/editors/uzap      Restrictive copyright
+xrisk-2.13.tar.Z	ports/games/xrisk	Copyright/trademark violation?
+xtetris-2.5.2.tar.gz	ports/games/xtetris	Possible trademark violation
+xinvaders-*		ports/games/xinvaders	Don't sell for profit
