@@ -86,7 +86,8 @@ MASKBITS?=	64
 .endif
 .if defined(ISPELL_NL)
 NLDISTFILE=	ispell-nl-1.0.0.tar.gz
-MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITES+=	${MASTER_SITE_LOCAL} \
+		http://www.ninth-circle.org/~asmodai/
 MASTER_SITE_SUBDIR=	asmodai
 EXTRA_DICT+=	${NLDISTFILE}
 EXTRACT_ONLY+=	${NLDISTFILE}
