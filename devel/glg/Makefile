@@ -16,16 +16,15 @@ MASTER_SITE_SUBDIR=	kris
 
 MAINTAINER=	lo_gafet@users.sourceforge.net
 
-BROKEN=		"Build fails"
-
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 WANT_GNOME=	yes
 
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mgnomelibs}!=""
-USE_GNOME=	gtk12
+USE_GNOME+=	gnomelibs
 .endif
 
 pre-build:
