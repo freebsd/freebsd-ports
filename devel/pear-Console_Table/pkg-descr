@@ -1,0 +1,6 @@
+PHP classes providing methods such as addRow(), insertRow(), addCol(), etc.
+to build Console tables.
+
+Can be with or without headers, and has various configurable options.
+
+WWW: http://pear.php.net/package/Console_Table
