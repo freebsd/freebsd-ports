@@ -5,21 +5,20 @@
 # $FreeBSD$
 
 PORTNAME=		basket
-PORTVERSION=		0.4.0d
+PORTVERSION=		0.5.0
 CATEGORIES=		deskutils kde
 MASTER_SITES=		http://www.hitnet.rwth-aachen.de/~brueffer/distfiles/
 
 MAINTAINER=		markus@FreeBSD.org
 COMMENT=		Desktop organization tool
 
-WRKSRC=			${WRKDIR}/${PORTNAME}-0.4
+USE_BZIP2=		yes
 USE_KDELIBS_VER=	3
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 USE_REINPLACE=		yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/-O2//g; s/-lpthread/${PTHREAD_LIBS}/g' \
-		${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's/-O2//g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.mk>
