@@ -22,15 +22,10 @@ PERL_CONFIGURE=	yes
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Archive::Zip.3 Archive::Zip::Tree.3 Archive::Zip::FAQ.3 Archive::Zip::MemberRead.3
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.mk>
 
-SITE_PERL?=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
-
-PERL_MAJOR=${PERL_VER:C|^([1-9]+).*|\1|}
-PERL_MINOR=${PERL_VER:C|^[1-9]+\.0*([1-9]+).*|\1|}
-
-.if ${PERL_MAJOR} < 5 || ${PERL_MAJOR} == 5 && ${PERL_MINOR} < 8
+# ${PERL} defined after bsd.port.post.mk.  So place this after .include line.
+USE_FILESPEC!=	${PERL} -MFile::Spec -e 'print $$File::Spec::VERSION<0.8'
+.if (${USE_FILESPEC} == 1)
 BUILD_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
-.endif # ${PERL_MAJOR} < 5 || ${PERL_MAJOR} == 5 && ${PERL_MINOR} < 8
-
-.include <bsd.port.post.mk>
+.endif
