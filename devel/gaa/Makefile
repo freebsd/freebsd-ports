@@ -8,7 +8,7 @@
 
 DISTNAME=	gaa-1.5
 CATEGORIES=	devel
-MASTER_SITES=	http://gaa.netpedia.net/
+MASTER_SITES=	ftp://ftp.gpad.ac.ru/pub/FreeBSD/distfiles/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dima@chg.ru
