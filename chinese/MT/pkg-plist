@@ -2,14 +2,7 @@
 %%CGIDIR%%/lib/MT/L10N/zh_cn.pm
 %%CGIDIR%%/lib/MT/L10N/zh_tw.pm
 %%CGIDIR%%/lib/XML/RSS/LP.pm
-%%CGIDIR%%/extlib/YAML/Error.pm
-%%CGIDIR%%/extlib/YAML/Family.pm
-%%CGIDIR%%/extlib/YAML/Node.pm
-%%CGIDIR%%/extlib/YAML/Transfer.pm
-%%CGIDIR%%/extlib/Yaml.pm
 %%CGIDIR%%/extlib/jayallen/Blacklist.pm
-%%CGIDIR%%/extlib/jayallen/Blacklist_Config/blacklist.yaml
-%%CGIDIR%%/extlib/jayallen/Blacklist_Config/config.yaml
 %%CGIDIR%%/extlib/jayallen/MTBlPing.pm
 %%CGIDIR%%/extlib/jayallen/MTBlPost.pm
 %%DATADIR%%/dialog.js
@@ -254,7 +247,15 @@
 %%DATADIR%%/license.txt
 %%DATADIR%%/mt.diff
 %%DATADIR%%/plugins/Blacklist.pl
+%%DATADIR%%/plugins/CHANGELOG
+%%DATADIR%%/plugins/LICENSE
 %%DATADIR%%/plugins/MT-Blacklist.README
+%%DATADIR%%/plugins/MTFastInclude.pl
+%%DATADIR%%/plugins/MTFastInclude.txt
+%%DATADIR%%/plugins/MTOptimizeHTML.pl
+%%DATADIR%%/plugins/MTOptimizeHTML.txt
+%%DATADIR%%/plugins/mt-rebuild.pl
+%%DATADIR%%/plugins/mt-rssfeed.pl
 %%DATADIR%%/plugins/SpellChecker/img/spell-check.gif
 %%DATADIR%%/plugins/SpellChecker/lang/en-us.js
 %%DATADIR%%/plugins/SpellChecker/lang/en.js
@@ -320,6 +321,4 @@
 @dirrm %%DATADIR%%/docs/en-us
 @dirrm %%CGIDIR%%/lib/XML/RSS
 @dirrm %%CGIDIR%%/lib/XML
-@dirrm %%CGIDIR%%/extlib/jayallen/Blacklist_Config
 @dirrm %%CGIDIR%%/extlib/jayallen
-@dirrm %%CGIDIR%%/extlib/YAML
