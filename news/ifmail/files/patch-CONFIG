@@ -1,0 +1,179 @@
+*** CONFIG.orig	Sat Apr 26 01:44:17 1997
+--- CONFIG	Sat Nov 15 20:28:40 1997
+***************
+*** 8,21 ****
+  # Debug messages turned on by -x key are written here.
+  # Some error messages may occationally appear here too.
+  # This may be changed in the 'config' file.
+! DEBUGFILE   = "/var/log/ifmail/ifdebug"
+  
+  # Procession log. Usually gets several lines for each invocation.
+  # Also look for error diagnostics here.  If HAS_SYSLOG defined,
+  # only stdout and stderr from the packers and unpackers go to this
+  # file, while actual logging is done via syslog() calls.
+  # This may be changed in the 'config' file.
+! LOGFILE     = "/var/log/ifmail/iflog"
+  
+  # Use syslog() facility codes for mail gate, news gate and ifcico.
+  # Define -DHAS_SYSLOG (see below)
+--- 8,21 ----
+  # Debug messages turned on by -x key are written here.
+  # Some error messages may occationally appear here too.
+  # This may be changed in the 'config' file.
+! DEBUGFILE   = "/var/spool/ifmail/ifdebug"
+  
+  # Procession log. Usually gets several lines for each invocation.
+  # Also look for error diagnostics here.  If HAS_SYSLOG defined,
+  # only stdout and stderr from the packers and unpackers go to this
+  # file, while actual logging is done via syslog() calls.
+  # This may be changed in the 'config' file.
+! LOGFILE     = "/var/spool/ifmail/iflog"
+  
+  # Use syslog() facility codes for mail gate, news gate and ifcico.
+  # Define -DHAS_SYSLOG (see below)
+***************
+*** 27,39 ****
+  CICOLOG    = LOG_LOCAL0
+  
+  # Directory where UUCP lock files reside.
+! #LOCKDIR     = "/var/spool/uucp"
+! LOCKDIR     = "/var/lock"
+  
+  # Directory from which file requests are resolved.
+  # This may be changed from the 'config' file.
+! #PUBDIR      = "/home/ftp/pub"
+! PUBDIR      = "/var/spool/uucppublic"
+  
+  # News spool directory (to check space only)
+  #NEWSSPOOL   = "/usr/spool/news"
+--- 27,39 ----
+  CICOLOG    = LOG_LOCAL0
+  
+  # Directory where UUCP lock files reside.
+! LOCKDIR     = "/var/spool/uucp"
+! #LOCKDIR     = "/var/lock"
+  
+  # Directory from which file requests are resolved.
+  # This may be changed from the 'config' file.
+! PUBDIR      = "/home/ftp/pub"
+! #PUBDIR      = "/var/spool/uucppublic"
+  
+  # News spool directory (to check space only)
+  #NEWSSPOOL   = "/usr/spool/news"
+***************
+*** 138,155 ****
+  # (see below).
+  
+  # Linux:
+! OPTS        = -DHAS_STATFS -DSTATFS_IN_VFS_H -DHAS_SETSID -DHAS_NDBM_H \
+! 		-DDONT_HAVE_TM_GMTOFF -DHAS_TERMIOS_H -DASCII_LOCKFILES \
+! 		-DHAS_FSYNC -DHAS_IOCTL_H -DHAS_REGEX_H -DHAS_TCP \
+! 		-DFORCEINTL -DHAS_SYSLOG -DNEED_UUCPFROM -DNEED_BSY \
+! 		-DREGEX_NEED_CARET -DSLAVE_SENDS_NAK_TOO -DNEED_FORK
+! 
+! # 386BSD:
+! #OPTS        = -DHAS_STATFS -DSTATFS_IN_MOUNT_H -DHAS_SETSID -DHAS_NDBM_H \
+! #		-DHAS_TERMIOS_H -DASCII_LOCKFILES -DHAS_FSYNC -DHAS_IOCTL_H \
+! #		-DHAS_REGEX_H -DHAS_TCP -DHAS_SYSLOG -DNEED_UUCPFROM \
+! #		-DNEED_BSY -DNEED_FORK -DNEGATIVE_SEEK_BUG \
+! #		-DREGEX_NEED_CARET -DHAS_SYS_ERRLIST
+  
+  # SVR4:
+  #OPTS        = -DHAS_STATVFS -DDONT_HAVE_TM_GMTOFF -DHAS_SETSID -DHAS_NDBM_H \
+--- 138,155 ----
+  # (see below).
+  
+  # Linux:
+! #OPTS        = -DHAS_STATFS -DSTATFS_IN_VFS_H -DHAS_SETSID -DHAS_NDBM_H \
+! #		-DDONT_HAVE_TM_GMTOFF -DHAS_TERMIOS_H -DASCII_LOCKFILES \
+! #		-DHAS_FSYNC -DHAS_IOCTL_H -DHAS_REGEX_H -DHAS_TCP \
+! #		-DFORCEINTL -DHAS_SYSLOG -DNEED_UUCPFROM -DNEED_BSY \
+! #		-DREGEX_NEED_CARET -DSLAVE_SENDS_NAK_TOO -DNEED_FORK
+! 
+! # 386BSD,FreeBSD:
+! OPTS        = -DHAS_STATFS -DSTATFS_IN_MOUNT_H -DHAS_SETSID -DHAS_NDBM_H \
+! 		-DHAS_TERMIOS_H -DASCII_LOCKFILES -DHAS_FSYNC -DHAS_IOCTL_H \
+! 		-DHAS_REGEX_H -DHAS_TCP -DHAS_SYSLOG -DNEED_UUCPFROM \
+! 		-DNEED_BSY -DNEED_FORK -DNEGATIVE_SEEK_BUG \
+! 		-DREGEX_NEED_CARET -DHAS_SYS_ERRLIST
+  
+  # SVR4:
+  #OPTS        = -DHAS_STATVFS -DDONT_HAVE_TM_GMTOFF -DHAS_SETSID -DHAS_NDBM_H \
+***************
+*** 193,199 ****
+  #		-DREGEX_NEED_CARET -DDONT_HAVE_GETOPT
+  
+  # for make install, where to put binaries and what owner to set
+! BINDIR = /usr/lib/ifmail
+  OWNER = ifmail
+  GROUP = uucp
+  MODE = 0711
+--- 193,199 ----
+  #		-DREGEX_NEED_CARET -DDONT_HAVE_GETOPT
+  
+  # for make install, where to put binaries and what owner to set
+! BINDIR = ${PREFIX}/libexec/ifmail
+  OWNER = ifmail
+  GROUP = uucp
+  MODE = 0711
+***************
+*** 213,219 ****
+  TAR = tar
+  
+  #CFLAGS = -g -Wall
+! # Linux, 386BSD, SunOS:
+  CFLAGS = -O2 -Wall
+  # SVR4:
+  #CFLAGS = -O -Xa
+--- 213,219 ----
+  TAR = tar
+  
+  #CFLAGS = -g -Wall
+! # Linux, 386BSD,FreeBsd, SunOS:
+  CFLAGS = -O2 -Wall
+  # SVR4:
+  #CFLAGS = -O -Xa
+***************
+*** 227,237 ****
+  # If you need TERM also add e.g. "/usr/src/term112/client.a"
+  
+  # Linux
+! LIBS = -lgdbm
+  # SunOS:
+  #LIBS =
+  # 386BSD:
+  #LIBS = -lgdbm -lcompat
+  # SVR4
+  #LIBS = -ldbm -lform -lnsl -lsocket -lc -L/usr/ucblib -lucb
+  # SCO
+--- 227,239 ----
+  # If you need TERM also add e.g. "/usr/src/term112/client.a"
+  
+  # Linux
+! #LIBS = -lgdbm
+  # SunOS:
+  #LIBS =
+  # 386BSD:
+  #LIBS = -lgdbm -lcompat
++ # FreeBsd:
++ LIBS = -lgnuregex
+  # SVR4
+  #LIBS = -ldbm -lform -lnsl -lsocket -lc -L/usr/ucblib -lucb
+  # SCO
+***************
+*** 248,254 ****
+  # What programs are absent at your system?
+  #NEEDED = strcasestr.o strncasecmp.o strcasecmp.o rename.o mkdir.o usleep.o \
+  #		regexpr.o
+! # Linux
+  NEEDED =
+  # SVR4
+  #NEEDED = regexpr.o
+--- 250,256 ----
+  # What programs are absent at your system?
+  #NEEDED = strcasestr.o strncasecmp.o strcasecmp.o rename.o mkdir.o usleep.o \
+  #		regexpr.o
+! # Linux, FreeBSD
+  NEEDED =
+  # SVR4
+  #NEEDED = regexpr.o

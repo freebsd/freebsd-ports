@@ -1,0 +1,78 @@
+#!/bin/sh
+
+user=ifmail
+group=uucp
+
+ask() {
+    local question default answer
+
+    question=$1
+    default=$2
+    if [ -z "${PACKAGE_BUILDING}" ]; then
+	read -p "${question} [${default}]? " answer
+    fi
+    if [ x${answer} = x ]; then
+	answer=${default}
+    fi
+    echo ${answer}
+}
+
+yesno() {
+    local dflt question answer
+
+    question=$1
+    dflt=$2
+    while :; do
+	answer=$(ask "${question}" "${dflt}")
+	case "${answer}" in
+	[Yy]*)		return 0;;
+	[Nn]*)		return 1;;
+	esac
+	echo "Please answer yes or no."
+    done
+}
+
+case $2 in
+
+PRE-INSTALL)
+
+    if which -s pw; then
+	:
+    else
+	cat <<EOF
+
+This system looks like a pre-2.2 version of FreeBSD.  I see that
+it is missing the "pw" utility.  I need this utility.  Please get
+it and install it, and try again.  You can get the sources from:
+
+  ftp://ftp.freebsd.org/pub/FreeBSD/FreeBSD-current/src/usr.sbin/pw.tar
+
+EOF
+	exit 1
+    fi
+    
+    if pw user show "${user}" 2>/dev/null; then
+	echo "You already have a user \"${user}\", so I will use it."
+    else
+	echo "You need a user \"${user}\"."
+	if which -s pw && yesno "Would you like me to create it" y; then
+	    pw useradd ${user} -g ${group} -h - -d /nonexistent \
+		-s /nonexistent -c "Ifmail user" || exit
+	    echo "Done."
+	else
+	    echo "Please create it, and try again."
+	    exit 1
+	fi
+    fi
+
+    ;;
+
+#
+# The package system untar's the file first, potentially before the
+# ifmail user is created.  This means that the files in
+# ${PREFIX}/libexec/ifmail will be setuid root, not setuid ifmail.
+# We have to fix this up.
+POST-INSTALL)
+    chown ifmail ${PREFIX}/libexec/ifmail/*
+    ;;
+esac
