@@ -1,0 +1,17 @@
+libAfterImage is the imaging library implemented for AfterStep X Window
+Manager. It has been generalized to be suitable for any application in
+need of robust graphics engine.
+
+It provides facilities for loading images from files of different formats,
+compressed in memory storage of images, scaling, tinting/shading, flipping
+and superimposition of arbitrary number of images over each other. In
+addition it allows for linear gradients drawing, and antialiased/smoothed
+text drawing using both  FreeType library and X Window fonts.
+
+Primary goals of this library are to achieve exceptional quality of images
+and text, making code fast and small at the same time. Additional steps are
+taken to compensate for screen colordepth limitation, and different error
+diffusion algorithms are used to provide for smooth images even in low
+colordepth modes.
+
+WWW: http://afterstep.sourceforge.net/afterimage/
