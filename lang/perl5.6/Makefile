@@ -10,7 +10,7 @@ PORTVERSION=	${PERL_VER}
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:S|/modules/by-module|/src|}
 
-MAINTAINER=	markm@FreeBSD.org
+MAINTAINER=	tobez@FreeBSD.org
 
 # This will need to be "fixed" in ../../Mk/bsd.port.mk as well.
 PERL_VER=	5.6.1
