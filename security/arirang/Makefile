@@ -9,7 +9,7 @@ PORTNAME=	arirang
 PORTVERSION=	1.6
 PORTEPOCH=	1
 CATEGORIES=	security www
-MASTER_SITES=	http://www.monkey.org/~pilot/arirang/
+MASTER_SITES=	http://monkey.org/~pilot/arirang/
 
 MAINTAINER=	roman@xpert.com
 
