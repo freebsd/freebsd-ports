@@ -1,5 +1,5 @@
---- vmmon-only/freebsd/driver.c.orig	Tue Oct 21 23:03:43 2003
-+++ vmmon-only/freebsd/driver.c	Tue Oct 21 23:19:51 2003
+--- vmmon-only/freebsd/driver.c.orig	Tue Nov 18 21:21:34 2003
++++ vmmon-only/freebsd/driver.c	Tue Nov 18 21:27:02 2003
 @@ -45,7 +45,7 @@
  #include <sys/kernel.h>
  #include <sys/module.h>
@@ -9,22 +9,24 @@
  #include <sys/file.h>
  #include <sys/filedesc.h>
  #include <sys/fcntl.h>
-@@ -141,11 +141,10 @@
+@@ -141,9 +141,16 @@
   *----------------------------------------------------------------------
   */
  static d_open_t FreeBSD_Driver_Open;
--static int FreeBSD_Driver_Close(struct file *, struct thread *);
++#if __FreeBSD_version >= 500000
+ static fo_close_t FreeBSD_Driver_Close;
+ static fo_poll_t FreeBSD_Driver_Poll;
+ static fo_ioctl_t FreeBSD_Driver_Ioctl;
++#else
 +static int FreeBSD_Driver_Close(struct file *, struct proc *);
- static int FreeBSD_Driver_Poll(struct file *, int,
--			       struct ucred *, struct thread *);
--static int FreeBSD_Driver_Ioctl(struct file *, u_long, void *,
--				struct ucred *, struct thread *);
++static int FreeBSD_Driver_Poll(struct file *, int,
 +			       struct ucred *, struct proc *);
 +static int FreeBSD_Driver_Ioctl(struct file *, u_long, caddr_t, struct proc *);
++#endif
  
  static timeout_t FreeBSD_DriverSelectTimeout;
  
-@@ -156,6 +155,11 @@
+@@ -154,6 +161,11 @@
  
  #define CDEV_MINOR 0
  
@@ -35,10 +37,10 @@
 +
  /* todo01 - support for multiple vms. fileops for each vm opened. */
  static struct fileops vmmon_fileops = {
-         .fo_ioctl = FreeBSD_Driver_Ioctl,
-@@ -169,12 +171,10 @@
-        .d_name =       DEVICE_NAME,
-        .d_maj =        CDEV_MAJOR
+ 	.fo_close =	FreeBSD_Driver_Close,
+@@ -167,12 +179,10 @@
+ 	.d_name =       DEVICE_NAME,
+ 	.d_maj =        CDEV_MAJOR
  #else
 -        /* open */      FreeBSD_Driver_Open,
 -        /* close */     noclose,
@@ -53,45 +55,56 @@
  #endif
  };
  
-@@ -344,25 +344,22 @@
+@@ -364,24 +374,37 @@
   * Based on dev/streams/streams.c
   */
  static int
--vmmon_clone(dev_t dev, int flags, void *data, struct thread *td)
++#if __FreeBSD_version >= 500000
+ vmmon_clone(dev_t dev, int flags, void *data, struct thread *td)
++#else
 +vmmon_clone(dev_t dev, int flags, void *data, struct proc *p)
++#endif
  {
- 	/* XXX This has been tested with RELENG_5_1 only. */
  	int fd, error;
  	struct file *fp;
--	struct proc *p;
- 
--	p = td->td_proc;
++#if __FreeBSD_version >= 500000
+ 	struct proc *p;
+-
+ 	p = td->td_proc;
 -	
++#endif
++
  	/* Ensure that the dupfd isn't already used! */
  	PROC_LOCK(p);
--	if (td->td_dupfd >= 0) {
++#if __FreeBSD_version >= 500000
+ 	if (td->td_dupfd >= 0) {
++#else
 +	if (p->p_dupfd >= 0) {
++#endif
  		PROC_UNLOCK(p);
  		return ENODEV;
  	}
  	PROC_UNLOCK(p);
  
  	/* Create a new file descriptor used as dupfd */
--	if ((error = falloc(td, &fp, &fd)) != 0)
++#if __FreeBSD_version >= 500000
+ 	if ((error = falloc(td, &fp, &fd)) != 0)
++#else
 +	if ((error = falloc(p, &fp, &fd)) != 0)
++#endif
  		return error;
  
  	FILEDESC_LOCK(p->p_fd);
-@@ -373,7 +370,7 @@
+@@ -392,7 +415,7 @@
  	FILEDESC_UNLOCK(p->p_fd);
  
  	PROC_LOCK(p);
 -	td->td_dupfd = fd;
 +	p->p_dupfd = fd;
  	PROC_UNLOCK(p);
-         
+ 
  	vmmon_ref_count++;
-@@ -396,7 +393,7 @@
+@@ -415,7 +438,7 @@
   *----------------------------------------------------------------------
   */
  static int
@@ -100,7 +113,7 @@
  {
  	VMFreeBSD *vmFreeBSD;
  	
-@@ -441,7 +438,7 @@
+@@ -460,7 +483,7 @@
  	timespecclear(&vmFreeBSD->max_diff);
  #endif
  	/* Clone device! */
@@ -109,7 +122,7 @@
  }
  
  /*
-@@ -457,7 +454,7 @@
+@@ -476,7 +499,7 @@
   */
  
  static int
@@ -118,7 +131,7 @@
  {
  	VMFreeBSD *vmFreeBSD = (VMFreeBSD *)fp->f_data;
  	MemRange *head, *first;
-@@ -472,8 +469,8 @@
+@@ -491,8 +514,8 @@
  #endif
  
  	VMDEBUG(DEVICE_NAME ": close fd %d for pid=%d vm=%p\n",
@@ -129,7 +142,7 @@
          	vmFreeBSD);
  
  	if (vmFreeBSD == NULL) {
-@@ -529,7 +526,7 @@
+@@ -548,7 +571,7 @@
  
  static int 
  FreeBSD_Driver_Poll(struct file *fp, int events,
@@ -138,7 +151,7 @@
  {
  	VMFreeBSD *vmFreeBSD = (VMFreeBSD *)fp->f_data;
  	int revents = 0;
-@@ -559,7 +556,7 @@
+@@ -578,7 +601,7 @@
  #if POLL_TRACE
  		nanotime(&vmFreeBSD->time_sleep);
  #endif
@@ -147,7 +160,7 @@
  		vmFreeBSD->flags.twaiting = TRUE;
  		vmFreeBSD->thandle = timeout(FreeBSD_DriverSelectTimeout, vmFreeBSD, 1);
  	}
-@@ -608,12 +605,10 @@
+@@ -627,12 +650,10 @@
   *----------------------------------------------------------------------
   */
  static int 
@@ -161,7 +174,7 @@
  	int error;
  	u_long numPages;
  	int32_t limit;
-@@ -633,7 +628,6 @@
+@@ -652,7 +673,6 @@
  #endif
  	caddr_t data = *(caddr_t *)parg;
  
@@ -169,7 +182,7 @@
  	vm = vmFreeBSD->vm;
  
  #ifdef SUPPORT_LINUXVMWARE
-@@ -643,7 +637,7 @@
+@@ -662,7 +682,7 @@
  	switch (cmd) {
  		case VMIO_VERSION:
  			VMDEBUG(" ** VMIO_VERSION pid=%d\n", p->p_pid);
@@ -178,7 +191,7 @@
  			break;
  
  		case VMIO_CREATE_VM:
-@@ -653,11 +647,11 @@
+@@ -672,11 +692,11 @@
  			error = copyin(data, &wslimitsInfo, sizeof(wslimitsInfo));
  			if (error != 0)
    				return error;
@@ -192,7 +205,7 @@
  			break;
  
  		case VMIO_BIND_VM:
-@@ -704,7 +698,7 @@
+@@ -723,7 +743,7 @@
  			VMDEBUG(" ** VMIO_RUN_VM\n");
  			if (vm == NULL)
  				return EINVAL;
@@ -201,7 +214,7 @@
  			break;
  
  		case VMIO_LOOK_UP_MPN:
-@@ -713,7 +707,7 @@
+@@ -732,7 +752,7 @@
  				return EINVAL;
        
  			mpn = HostIF_LookupUserMPN(vm, data);
@@ -210,7 +223,7 @@
  			break;
  
  		case VMIO_LOCK_PAGE:
-@@ -721,7 +715,7 @@
+@@ -740,7 +760,7 @@
  			if (vm == NULL)
  				return EINVAL;
  			mpn = Vmx86_LockPage(vm, data, TRUE);
@@ -219,7 +232,7 @@
  			break;
  
  		case VMIO_UNLOCK_PAGE:
-@@ -729,12 +723,12 @@
+@@ -748,12 +768,12 @@
  			if (vm == NULL)
  				return EINVAL;
  			mpn = Vmx86_UnlockPage(vm, data, TRUE);
@@ -234,7 +247,7 @@
  			break;
  
  		case VMIO_APIC_BASE:
-@@ -752,14 +746,14 @@
+@@ -771,14 +791,14 @@
  				ma = HostIF_APICEnable(vm);
    			}
  #endif
@@ -251,7 +264,7 @@
  			break;
  
  		case VMIO_GET_STATS:
-@@ -782,7 +776,7 @@
+@@ -801,7 +821,7 @@
  
  		case VMIO_GET_HARD_LIMIT:
  			VMDEBUG(" ** VMIO_GET_HARD_LIMIT\n");
@@ -260,7 +273,7 @@
  			break;
  
  		case VMIO_SET_HARD_LIMIT:
-@@ -815,12 +809,12 @@
+@@ -834,12 +854,12 @@
  
  		case VMIO_PAE_ENABLED:
  			VMDEBUG(" ** VMIO_PAE_ENABLED\n");
@@ -275,7 +288,7 @@
  			break;
  
  		case VMIO_SET_UID:
-@@ -830,15 +824,15 @@
+@@ -849,15 +869,15 @@
  		case VMIO_IS_MP_SAFE:
  			VMDEBUG(" ** VMIO_IS_MP_SAFE\n");
  #ifdef SMP
@@ -294,7 +307,7 @@
  			break;
  
  		case VMIO_ALLOW_CORE_DUMP:
-@@ -849,7 +843,7 @@
+@@ -868,7 +888,7 @@
  			VMDEBUG(" ** VMIO_CHECK_MEMORY\n");
  			if (vm == NULL)
  				return EINVAL;
@@ -303,7 +316,7 @@
  			break;
  
  		case VMIO_BROADCAST_IPI:
-@@ -862,7 +856,7 @@
+@@ -881,7 +901,7 @@
  			error = copyin(data, &iorange, sizeof(iorange));
  			if (error)
  				return error;
@@ -312,7 +325,7 @@
  				Passthrough_RegisterIORegion(iorange.ioBase, 
  					iorange.numPorts, "VMware");
  #else
-@@ -872,7 +866,7 @@
+@@ -891,7 +911,7 @@
   		case VMIO_REGISTER_PASSTHROUGH_IRQ:
  			VMDEBUG(" ** VMIO_REGISTER_PASSTHROUGH_IRQ\n");
  #ifdef SUPPORT_PASSTHROUGH
@@ -321,7 +334,7 @@
  				Passthrough_RegisterIRQ((unsigned char)data, "VMware", vmFreeBSD);
  #else
  			return EINVAL;
-@@ -884,7 +878,7 @@
+@@ -903,7 +923,7 @@
  			error = copyin(data, &iorange, sizeof(iorange));
  			if (error)
  				return error;
@@ -330,7 +343,7 @@
  				Passthrough_ReleaseIORegion(iorange.ioBase, iorange.numPorts);
  #else
  			return EINVAL;
-@@ -901,7 +895,7 @@
+@@ -920,7 +940,7 @@
  		case VMIO_START_PASSTHROUGH:
  			VMDEBUG(" ** VMIO_START_PASSTHROUGH\n");
  #ifdef SUPPORT_PASSTHROUGH
@@ -339,7 +352,7 @@
  #else
  			return EINVAL;
  #endif
-@@ -909,7 +903,7 @@
+@@ -928,7 +948,7 @@
  		case VMIO_STOP_PASSTHROUGH:
  			VMDEBUG(" ** VMIO_STOP_PASSTHROUGH\n");
  #ifdef SUPPORT_PASSTHROUGH
@@ -348,7 +361,7 @@
  #else
  			return EINVAL;
  #endif
-@@ -920,7 +914,7 @@
+@@ -939,7 +959,7 @@
  			if (vmFreeBSD->numPendingPassthroughIRQs > 0) {
  				--vmFreeBSD->numPendingPassthroughIRQs;
  				irq = vmFreeBSD->pendingPassthroughIRQs[vmFreeBSD->numPendingPassthroughIRQs];
@@ -357,7 +370,7 @@
  			} else {
  				return EAGAIN;
  			}
-@@ -1049,7 +1043,7 @@
+@@ -1068,7 +1088,7 @@
  	VMDriver *vm;
  	va_list args;
  
@@ -366,7 +379,7 @@
  
  	va_start(args, fmt);
  	vsprintf(freebsdState.buf, fmt, args); 
-@@ -1076,7 +1070,7 @@
+@@ -1095,7 +1115,7 @@
  	VMDriver *vm;
  	va_list args;
  
@@ -375,7 +388,7 @@
  
  	va_start(args, fmt);
  	vsprintf(freebsdState.buf, fmt, args); 
-@@ -1107,7 +1101,7 @@
+@@ -1126,7 +1146,7 @@
  void
  Panic(char *fmt, ...)
  {
@@ -384,7 +397,7 @@
  	va_list args;
  
  	va_start(args, fmt);
-@@ -1128,13 +1122,13 @@
+@@ -1147,13 +1167,13 @@
  		vLog(vm->logFD);
  		vWarning(vm);
  		sprintf(freebsdState.buf, "VMX86 driver panic. pid=%d\n\r",
@@ -400,8 +413,8 @@
  	/* NOTREACHED */
  }
  
---- vmmon-only/freebsd/linux_emu.c.orig	Tue Oct 21 23:03:43 2003
-+++ vmmon-only/freebsd/linux_emu.c	Tue Oct 21 23:03:45 2003
+--- vmmon-only/freebsd/linux_emu.c.orig	Tue Nov 18 21:21:34 2003
++++ vmmon-only/freebsd/linux_emu.c	Tue Nov 18 21:22:06 2003
 @@ -31,16 +31,15 @@
  #include <sys/param.h>
  #include <sys/systm.h>
@@ -614,8 +627,8 @@
  #include "ioctls.h"
  #undef IOCTL
      }
---- vmnet-only/freebsd/vmnet_linux.c.orig	Tue Oct 21 23:25:05 2003
-+++ vmnet-only/freebsd/vmnet_linux.c	Tue Oct 21 23:25:48 2003
+--- vmnet-only/freebsd/vmnet_linux.c.orig	Tue Nov 18 21:21:35 2003
++++ vmnet-only/freebsd/vmnet_linux.c	Tue Nov 18 21:22:06 2003
 @@ -85,9 +85,9 @@
  #endif
  

@@ -7,7 +7,7 @@
 
 PORTNAME=	vmware3
 PORTVERSION=	3.2.1.2242
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://www4.vmware.com/software/ \
