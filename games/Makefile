@@ -115,6 +115,7 @@
     SUBDIR += egoboo
     SUBDIR += eif
     SUBDIR += eights
+    SUBDIR += el
     SUBDIR += emacs-chess
     SUBDIR += empire
     SUBDIR += enigma
