@@ -50,6 +50,7 @@
     SUBDIR += emma
     SUBDIR += estic
     SUBDIR += ewipe
+    SUBDIR += explosions
     SUBDIR += ezload
     SUBDIR += fd
     SUBDIR += felis
