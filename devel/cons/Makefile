@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	cons
-PORTVERSION=	1.8.d
+PORTVERSION=	2.0.1
 CATEGORIES=	devel
-MASTER_SITES=	http://www.dsmit.com/cons/
-DISTNAME=	cons-1.8-dev
+MASTER_SITES=	http://www.dsmit.com/cons/stable/ \
+		http://www.baldmt.com/cons/stable/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	rv@dsmit.com
@@ -21,8 +21,8 @@ NO_BUILD=	yes
 PLIST_SUB=	CONS_VER=${PORTVERSION}
 
 MAN1=		cons.1
-DOCS=		CHANGES COPYRIGHT INSTALL MANIFEST README RELEASE cons.html \
-		TODO test.log
+DOCS=		CHANGES COPYING COPYRIGHT INSTALL MANIFEST README RELEASE \
+		cons.html TODO
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/cons ${PREFIX}/bin/cons
