@@ -1,0 +1,6 @@
+-----------------------------------------------------------------------
+Note: This port installs the SRS userspace tools with a filename suffix
+      of -libsrs in order to avoid conflicts with other SRS ports
+      providing tools of the same name.
+      Please create convenience symlinks manually, if desired.
+-----------------------------------------------------------------------

@@ -1,0 +1,5 @@
+include/srs.h
+lib/libsrs.a
+lib/libsrs.so
+lib/libsrs.so.%%LIBSRS_REV%%
+bin/srs-%%PORTNAME%%
