@@ -14,7 +14,7 @@ start)
 	fi
 	;;
 stop)
-	killall conserver && echo -n ' conserver'
+	killall -TERM conserver && echo -n ' conserver'
 	;;
 restart)
 	$0 stop
