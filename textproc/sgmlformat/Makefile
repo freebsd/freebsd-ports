@@ -24,8 +24,16 @@ RUN_DEPENDS=	nsgmls:${PORTSDIR}/textproc/sp
 RUN_DEPENDS=	nsgmls:${PORTSDIR}/textproc/jade
 .endif
 
+.if defined(WITH_OPENJADE)
+RUN_DEPENDS=	onsgmls:${PORTSDIR}/textproc/openjade
+.endif
+
+.if ${MACHINE_ARCH} == "alpha"
+WITH_OPENJADE=	yes
+.endif
+
 RUN_DEPENDS+=	${PREFIX}/share/sgml/linuxdoc:${PORTSDIR}/textproc/linuxdoc \
-		${PREFIX}/share/sgml/docbook:${PORTSDIR}/textproc/docbook \
+		${PREFIX}/share/sgml/docbook:${PORTSDIR}/textproc/docbook
 
 USE_PERL5=	yes
 
