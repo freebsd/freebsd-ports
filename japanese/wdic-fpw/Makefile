@@ -39,10 +39,16 @@ post-extract:
 		echo $$i; \
 		lha xf ${DISTDIR}/$$i; \
 	done
-# for debugging on bento
-.if defined(PARALLEL_PACKAGE_BUILD)
-	ls ${WRKSRC}/wdic${DICT_VERSION}
-.endif
+# In using lha-1.14f, characters of each filenames can be used uppercases, but
+# in lha-1.14g, all are only used lowercases. ??
+.for i in WDIC.MAN TECH.DIC TEL.DIC RAIL.DIC ORG.DIC STD.DIC \
+ COMM.DIC INFO.DIC MISC.DIC MOE1.DIC RCMP.DIC MOE2.DIC PASO.DIC \
+ TRAN.DIC ELEC.DIC GAME.DIC SOFT.DIC YOGO.DIC KNOW.DIC DEV.DIC
+	t=`${ECHO} $i | ${SED} "y/ABCDEFGHIJKLMNOPQRSTUVWXYZ/abcdefghijklmnopqrstuvwxyz/"`; \
+	if [ ! -f ${WRKSRC}/wdic${DICT_VERSION}/$i ]; then \
+	  ${MV} ${WRKSRC}/wdic${DICT_VERSION}/$$t ${WRKSRC}/wdic${DICT_VERSION}/$i; \
+	fi
+.endfor
 
 post-build:
 	cd ${WRKSRC}; nkf -eSd catalogs.sjis > catalogs.txt; \
