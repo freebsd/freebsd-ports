@@ -4,6 +4,7 @@
     SUBDIR += acs
     SUBDIR += chipmunk
     SUBDIR += cider
+    SUBDIR += electric
     SUBDIR += felt
     SUBDIR += geda
     SUBDIR += irsim
