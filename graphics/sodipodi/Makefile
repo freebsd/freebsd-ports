@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sodipodi
-PORTVERSION=	0.33
-PORTREVISION=	1
+PORTVERSION=	0.34
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +18,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack libglade2 libartlgpl2
+USE_GNOME=	gnomeprefix gnomehack lthack libglade2 libartlgpl2
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--without-gnome-print \
@@ -32,8 +31,10 @@ MAN1=		sodipodi.1
 post-patch:
 	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g' \
 		${WRKSRC}/src/helper/action.c \
+		${WRKSRC}/src/helper/bezier-utils.c \
 		${WRKSRC}/src/libarikkei/arikkei-dict.c \
 		${WRKSRC}/src/libarikkei/arikkei-token.c \
-		${WRKSRC}/src/libarikkei/arikkei-strlib.c
+		${WRKSRC}/src/libarikkei/arikkei-strlib.c \
+		${WRKSRC}/src/libnr/nr-pathops.c
 
 .include <bsd.port.mk>
