@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.asahi-net.or.jp/~dp8t-asm/java/tools/SmartDoc/
 DISTNAME=	setup${PORTVERSION:S/.//g}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	kunishi@acm.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML utility to create various documents
 
 BUILD_DEPENDS=	${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog
