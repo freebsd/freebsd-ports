@@ -17,6 +17,9 @@ COMMENT=	XSL DocBook stylesheets
 RUN_DEPENDS=	${XMLDIR}/docbook/4.2/catalog.xml:${PORTSDIR}/textproc/docbook-xml \
 		${XMLDIR}/sdocbook/4.1.2.5/catalog:${PORTSDIR}/textproc/sdocbook-xml
 
+USE_BZIP2=	yes
+NO_BUILD=	yes
+
 XMLDIR=		${LOCALBASE}/share/xml
 INSTDIR=	share/xsl/docbook
 PINSTDIR=	${PREFIX}/${INSTDIR}
@@ -25,7 +28,6 @@ COPYDIRS=	common fo extensions html htmlhelp images \
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
-NO_BUILD=	yes
 XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
 CATALOG_PORTS=	${XMLDIR}/catalog.ports
 
