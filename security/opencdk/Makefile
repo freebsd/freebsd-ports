@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	opencdk
-PORTVERSION=	0.5.4
-PORTREVISION=	1
+PORTVERSION=	0.5.5
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG} \
@@ -21,7 +20,8 @@ COMMENT=	Open Crypto Development Kit
 
 LIB_DEPENDS=	gcrypt.12:${PORTSDIR}/security/libgcrypt
 
-USE_INC_LIBTOOL_VER=13
+USE_BZIP2=	yes
+USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-libgcrypt-prefix=${LOCALBASE}
