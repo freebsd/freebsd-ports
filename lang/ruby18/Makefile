@@ -82,7 +82,9 @@ PLIST_SUB+=	IF_DEFAULT=${IF_DEFAULT} \
 
 INSTALLED_SCRIPTS=	${PREFIX}/bin/irb \
 			${PREFIX}/bin/erb \
-			${PREFIX}/bin/h2rb
+			${PREFIX}/bin/h2rb \
+			${PREFIX}/bin/rdoc \
+			${PREFIX}/bin/testrb
 
 OBSOLETED_MODULES=	bigfloat \
 			csv \
@@ -94,6 +96,7 @@ OBSOLETED_MODULES=	bigfloat \
 			openssl \
 			optparse \
 			racc-runtime \
+			rdoc \
 			rexml \
 			sha1 \
 			shell \
@@ -163,6 +166,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/ext/bigdecimal/bigdecimal_*.html ${RUBY_DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/ext/digest/digest.txt* ${RUBY_DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/ext/dl/doc/dl.txt ${RUBY_DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/ext/enumerator/enumerator.txt ${RUBY_DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/ext/etc/etc.txt* ${RUBY_DOCDIR}
 	${MKDIR} ${RUBY_DOCDIR}/pty
 	${INSTALL_DATA} ${WRKSRC}/ext/pty/README* ${RUBY_DOCDIR}/pty

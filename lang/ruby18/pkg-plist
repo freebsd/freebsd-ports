@@ -4,8 +4,12 @@ bin/erb%%_RUBY_SUFFIX%%
 bin/h2rb%%_RUBY_SUFFIX%%
 %%IF_DEFAULT%%bin/irb%%RUBY_R%%
 bin/irb%%_RUBY_SUFFIX%%
+%%IF_DEFAULT%%bin/rdoc%%RUBY_R%%
+bin/rdoc%%_RUBY_SUFFIX%%
 %%IF_DEFAULT%%bin/ruby%%RUBY_R%%
 bin/ruby%%_RUBY_SUFFIX%%
+%%IF_DEFAULT%%bin/testrb%%RUBY_R%%
+bin/testrb%%_RUBY_SUFFIX%%
 lib/lib%%RUBY_NAME%%-static.a
 lib/lib%%RUBY_NAME%%.so
 lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
@@ -193,6 +197,40 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/pstore.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/racc/parser.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rational.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/code_objects.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/diagram.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/dot/dot.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/generators/chm_generator.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/generators/html_generator.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/generators/template/chm/chm.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/generators/template/html/css2.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/generators/template/html/hefss.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/generators/template/html/html.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/generators/template/html/kilmer.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/generators/template/xml/rdf.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/generators/template/xml/xml.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/generators/xml_generator.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/markup/sample/rdoc2latex.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/markup/sample/sample.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/markup/simple_markup.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/markup/simple_markup/fragments.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/markup/simple_markup/inline.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/markup/simple_markup/lines.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/markup/simple_markup/preprocess.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/markup/simple_markup/to_html.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/markup/simple_markup/to_latex.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/markup/test/AllTests.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/markup/test/TestInline.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/markup/test/TestParse.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/options.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/parsers/parse_c.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/parsers/parse_f95.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/parsers/parse_rb.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/parsers/parse_simple.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/parsers/parserfactory.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/rdoc.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/template.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/tokenstream.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/readbytes.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/resolv-replace.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/resolv.rb
@@ -287,6 +325,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/soap/netHttpClient.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/soap/parser.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/soap/processor.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/soap/property.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/soap/rpc/cgistub.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/soap/rpc/driver.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/soap/rpc/element.rb
@@ -315,8 +354,10 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/test/unit/ui/console/testrunner.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/test/unit/ui/fox/testrunner.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/test/unit/ui/gtk/testrunner.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/test/unit/ui/gtk2/testrunner.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/test/unit/ui/testrunnermediator.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/test/unit/ui/testrunnerutilities.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/test/unit/ui/tk/testrunner.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/test/unit/util/backtracefilter.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/test/unit/util/observable.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/test/unit/util/procwrapper.rb
@@ -469,6 +510,8 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/webrick
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/uri
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/test/unit/util
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/test/unit/ui/tk
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/test/unit/ui/gtk2
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/test/unit/ui/gtk
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/test/unit/ui/fox
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/test/unit/ui/console
@@ -489,6 +532,18 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rexml/encodings
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rexml/dtd
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rexml
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rdoc/parsers
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rdoc/markup/test
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rdoc/markup/simple_markup
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rdoc/markup/sample
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rdoc/markup
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rdoc/generators/template/xml
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rdoc/generators/template/html
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rdoc/generators/template/chm
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rdoc/generators/template
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rdoc/generators
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rdoc/dot
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rdoc
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/racc
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/optparse
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/openssl
@@ -528,6 +583,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_DOCDIR%%/dl.txt
 %%PORTDOCS%%%%RUBY_DOCDIR%%/digest.txt
 %%PORTDOCS%%%%RUBY_DOCDIR%%/digest.txt.ja
+%%PORTDOCS%%%%RUBY_DOCDIR%%/enumerator.txt
 %%PORTDOCS%%%%RUBY_DOCDIR%%/etc.txt
 %%PORTDOCS%%%%RUBY_DOCDIR%%/etc.txt.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/irb/irb-tools.rd.ja
@@ -593,6 +649,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/smime_read.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/smime_write.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/wget.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/optparse/opttest.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/philos.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pi.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rcs.awk
@@ -621,6 +678,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pty/script.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pty/shl.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/pty
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/optparse
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/openssl
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/dl
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/curses
