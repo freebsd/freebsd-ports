@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	limewire
-PORTVERSION=	2.7.9
+PORTVERSION=	3.6.15
 CATEGORIES=	net java
 MASTER_SITES=	http://www3.limewire.com/download/
 DISTNAME=	LimeWireLinux
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	past@noc.ntua.gr
 COMMENT=	A Java based gnutella client
 
 USE_JAVA=	1.3+
@@ -24,7 +24,7 @@ NO_CDROM=	${RESTRICTED}
 NO_PACKAGE=	${RESTRICTED}
 
 JAR_DIR=	${PREFIX}/share/java/jar/limewire
-PLIST_SUB=	JAR_DIR="${JAR_DIR:S/${PREFIX}//}"
+PLIST_SUB=	JAR_DIR="${JAR_DIR:S/${PREFIX}\///}"
 
 post-patch:
 	@${SED} 's|%%JAR_DIR%%|${JAR_DIR}|; s|%%LOCALBASE%%|${LOCALBASE}|' \
@@ -34,6 +34,6 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/runLime.sh.sed ${PREFIX}/bin/limewire
 	@${MKDIR} ${JAR_DIR}
 	@${INSTALL_DATA} ${WRKSRC}/*.jar ${WRKSRC}/MessagesBundle.properties \
-		${JAR_DIR}
+		${WRKSRC}/xml.war ${WRKSRC}/update.ver ${JAR_DIR}
 
 .include <bsd.port.mk>
