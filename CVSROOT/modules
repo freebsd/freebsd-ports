@@ -5355,6 +5355,7 @@ mldonkey-urlslave	ports/net/mldonkey-urlslave
 mlmmj		ports/mail/mlmmj
 mls		ports/mail/mls
 mlterm		ports/x11/mlterm
+mlton		ports/lang/mlton
 mlview		ports/editors/mlview
 mlvwm		ports/x11-wm/mlvwm
 mm		ports/devel/mm
