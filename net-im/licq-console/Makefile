@@ -13,8 +13,6 @@ CATEGORIES=	net
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Ncurses-based console plugin for Licq
 
-#USE_AUTOCONF_VER=	254
-#USE_AUTOMAKE_VER=	15
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \
 		LIBS="${PTHREAD_LIBS}"
 LICQ_PORT?=	net/licq

@@ -116,12 +116,6 @@ Autotools_Include_MAINTAINER=	ade@FreeBSD.org
 #	the configuration steps.
 #
 # Things to do:
-# - Move both autoconf and automake to true versioned ports
-#	(devel/autoconf253 and devel/automake14 respectively).  This is
-#	likely to break a number of ports that make assumptions about
-#	"autoconf", "automake", et al. but is required if we are to move
-#	to strictly-versioned autotools.
-#
 # -	Work on killing off as many "old" autotools ports as possible
 #
 # - Bring back the installation of libtool .la files by default, removing
@@ -153,15 +147,7 @@ GNU_CONFIGURE?=		yes
 .endif
 
 .if defined(WANT_AUTOMAKE_VER)
-
-# XXX: hackery to handle non-versioned "legacy" ports
-#	   destined to die
-#
-. if ${WANT_AUTOMAKE_VER} == 15
-AUTOMAKE_SUFFIX=	# empty
-. else
 AUTOMAKE_SUFFIX=	${WANT_AUTOMAKE_VER}
-. endif
 
 # Make sure we specified a legal version of automake
 #
@@ -220,15 +206,7 @@ BROKEN=	"Incompatible autoheader ${WANT_AUTOHEADER_VER} and autoconf ${WANT_AUTO
 .endif
 
 .if defined(WANT_AUTOCONF_VER)
-
-# XXX: hackery to handle non-versioned "legacy" ports
-#	   destined to die
-#
-. if ${WANT_AUTOCONF_VER} == 253
-AUTOCONF_SUFFIX=	# empty
-. else
 AUTOCONF_SUFFIX=	${WANT_AUTOCONF_VER}
-. endif
 
 # Make sure we specified a legal version of autoconf
 #
@@ -277,9 +255,6 @@ GNU_CONFIGURE?=		yes
 WANT_LIBTOOL_VER?=	${USE_INC_LIBTOOL_VER}
 .endif
 
-# Note that there aren't any non-versioned libtools, so we can skip
-# a little bit of cruft that exists in automake/autoconf above
-#
 .if defined(WANT_LIBTOOL_VER)
 LIBTOOL_SUFFIX=	${WANT_LIBTOOL_VER}
 

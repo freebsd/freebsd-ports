@@ -1,0 +1,7 @@
+--- configure.in.orig	Sat Sep  6 03:06:11 2003
++++ configure.in	Wed Jul  7 00:38:40 2004
+@@ -125,3 +125,3 @@
+ LDFLAGS="$LDFLAGS `$apr_config --ldflags`"
+-LIBTOOL="`$apr_config --apr-libtool`"
++LIBTOOL="$LIBTOOL"
+ LIBTOOL_LIBS="$LIBTOOL_LIBS `$apr_config --link-libtool --libs`"

@@ -1,0 +1,20 @@
+--- autogen.orig	Tue Mar 18 15:47:57 2003
++++ autogen	Wed Jul  7 17:45:10 2004
+@@ -14,12 +14,12 @@
+ else
+- 	libtoolize --automake
++ 	libtoolize13 --automake
+ fi 
+ echo "aclocal..."
+-aclocal
++aclocal15
+ echo "autoheader..."
+-autoheader
++autoheader253
+ echo "automake..."
+-automake --add-missing
++automake15 --add-missing
+ echo "autoconf..."
+-autoconf
++autoconf253
+ 

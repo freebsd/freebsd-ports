@@ -10,6 +10,14 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20040803:
+AUTHOR:	ade@FreeBSD.org
+  As part of the ongoing autotools cleanup, devel/autoconf has been
+  replaced with devel/autoconf253, and devel/automake with devel/automake15.
+  Consumers of the various autotools knobs from bsd.autotools.mk should not
+  notice any differences.  This update completes the transition of autotools
+  to true versioned packages (cf: tcl/tk)
+
 20040723:
 AUTHOR: anholt@FreeBSD.org
   The XFREE86_VERSION variable is replaced by the X_WINDOW_SYSTEM variable.

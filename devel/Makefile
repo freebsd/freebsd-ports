@@ -55,13 +55,13 @@
     SUBDIR += atlas
     SUBDIR += aunit
     SUBDIR += autobook
-    SUBDIR += autoconf
     SUBDIR += autoconf213
+    SUBDIR += autoconf253
     SUBDIR += autoconf259
     SUBDIR += autodia
     SUBDIR += autogen
-    SUBDIR += automake
     SUBDIR += automake14
+    SUBDIR += automake15
     SUBDIR += automake18
     SUBDIR += avalon-framework
     SUBDIR += avarice

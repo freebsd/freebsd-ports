@@ -17,7 +17,7 @@ DIST_SUBDIR=	mod_webapp
 MAINTAINER=	asachs@uunet.co.za
 COMMENT=	Apache module mounts Tomcat web applications
 
-BUILD_DEPENDS=	${NONEXISTANT}:${PORTSDIR}/devel/apr:extract
+BUILD_DEPENDS=	${NONEXISTANT}:${PORTSDIR}/devel/apr:configure
 
 USE_APACHE=	yes
 WANT_AUTOCONF_VER=253

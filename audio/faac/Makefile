@@ -33,9 +33,9 @@ pre-patch: build-depends
 
 post-patch:
 	@${ECHO_CMD} "" >>${WRKSRC}/libfaac/psych.h
-	@cd ${WRKSRC}; ${ACLOCAL} -I .; \
+	@cd ${WRKSRC}; ${SETENV} ${AUTOMAKE_ENV} ${ACLOCAL} -I .; \
 		${SETENV} ${SCRIPTS_ENV} ${LIBTOOLIZE} --automake
-	@${REINPLACE_CMD} -e 's|$$lt_target|$$host|' \
+	${REINPLACE_CMD} -e 's|$$lt_target|$$host|' \
 		${WRKSRC}/aclocal.m4
 
 .include <bsd.port.mk>

@@ -20,6 +20,7 @@ LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2 \
 		apr-0.9:${PORTSDIR}/devel/apr
 
 USE_AUTOCONF_VER=	253
+WANT_LIBTOOL_VER=	15
 CONFIGURE_ARGS=	--disable-shared
 CONFIGURE_ENV=	LDFLAGS="-L${PREFIX}/lib"
 USE_GMAKE=	yes
