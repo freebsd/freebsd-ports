@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	Radiator
-PORTVERSION=	3.5
+PORTVERSION=	3.6
 CATEGORIES=	net
 MASTER_SITES=	# fetch manually
 EXTRACT_SUFX=	.tgz
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	shanali@yahoo.com
 COMMENT=	Radiator Radius Server by Open System Consultants
@@ -25,19 +26,19 @@ NO_CDROM=	${NO_PACKAGE}
 RESTRICTED=	${NO_PACKAGE}
 
 .include <bsd.port.pre.mk>
-
-pre-configure:
-.if exists(${DISTDIR}/patches-${PORTVERSION}.tar.gz)
-	${TAR} -xvzf ${DISTDIR}/patches-${PORTVERSION}.tar.gz -C ${WRKSRC}
-.endif
-
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+.if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTFILES})
 IGNORE=		will not be automatically fetched due to licensing\
 		restrictions.  You MUST manually fetch the UNIX version after\
 		purchasing the license at: http://www.open.com.au/ \
 		- once ${DISTFILES} has been downloaded, move it to\
-		${DISTDIR} and then restart this build. (optionally download\
-		patches-${PORTVERSION}.tar.gz to the same directory as well)
+		${DISTDIR}/${DIST_SUBDIR} and then restart this build. \
+		(optionally download patches-${PORTVERSION}.tar.gz to the \
+		same directory as well)
+.endif
+
+pre-configure:
+.if exists(${DISTDIR}/patches-${PORTVERSION}.tar.gz)
+	${TAR} -xvzf ${DISTDIR}/patches-${PORTVERSION}.tar.gz -C ${WRKSRC}
 .endif
 
 .include <bsd.port.post.mk>
