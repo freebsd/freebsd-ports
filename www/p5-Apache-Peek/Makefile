@@ -16,12 +16,11 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A data debugging tool for the XS programmer (under mod_perl)
 
 .if defined(WITH_MODPERL2)
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache2/mod_perl.pm:${PORTSDIR}/www/mod_perl2 \
- 		${SITE_PERL}/Apache2/Test.pm:${PORTSDIR}/www/p5-Apache-Test
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache2/mod_perl.pm:${PORTSDIR}/www/mod_perl2
 MOD_PERL=	2
 .else
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl \
-		${SITE_PERL}/Apache/Test.pm:${PORTSDIR}/www/p5-Apache-Test
+		${SITE_PERL}/${PERL_ARCH}/Apache/Test.pm:${PORTSDIR}/www/p5-Apache-Test
 MOD_PERL=	1
 .endif
 RUN_DEPENDS=	${BUILD_DEPENDS}
