@@ -1,0 +1,10 @@
+--- extconf.rb.orig     Tue Apr 15 14:49:33 2003
++++ extconf.rb  Tue Apr 15 14:49:38 2003
+@@ -5,7 +5,6 @@
+ def have_libexif_header
+   have_header('libexif/exif-ifd.h') and
+   have_header('libexif/exif-data.h') and
+-  have_header('libexif/exif-note.h') and
+   have_header('libexif/exif-utils.h') and
+   have_header('libexif/exif-tag.h') 
+ end
