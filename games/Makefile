@@ -33,6 +33,7 @@
     SUBDIR += awele
     SUBDIR += baduki
     SUBDIR += barrage
+    SUBDIR += bass
     SUBDIR += battalion
     SUBDIR += battleball
     SUBDIR += biorythm
