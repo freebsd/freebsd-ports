@@ -1,0 +1,17 @@
+--- config/default-web-site.xml.orig	Sat Mar 30 13:16:11 2002
++++ config/default-web-site.xml	Sat Mar 30 13:16:56 2002
+@@ -1,12 +1,12 @@
+ <?xml version="1.0"?>
+ <!DOCTYPE web-site PUBLIC "Orion Web-site" "http://www.orionserver.com/dtds/web-site.dtd">
+ 
+-<web-site host="[ALL]" port="80" display-name="Default Orion WebSite">
++<web-site host="[ALL]" port="%%HTTP_PORT%%" display-name="Default Orion WebSite">
+ 	<!-- The default web-app for this site, bound to the root -->
+ 	<default-web-app application="default" name="defaultWebApp" />
+ 
+ 	<!-- Uncomment this to activate the news app -->
+ 	<!-- <web-app application="news" name="news-web" root="/news" /> -->
+-	<!-- Access Log, where requests are logged to -->
++	<!-- Access Log, where requests are logged to -->
+ 	<access-log path="../log/default-web-access.log" />
+ </web-site>
