@@ -5,24 +5,21 @@
 # $FreeBSD$
 #
 
-PORTNAME=		plib
-PORTVERSION= 		1.2.0
-CATEGORIES=		x11-toolkits
-MASTER_SITES=		http://plib.sourceforge.net/dist/
+PORTNAME=	plib
+PORTVERSION= 	1.2.0
+CATEGORIES=	x11-toolkits
+MASTER_SITES=	http://plib.sourceforge.net/dist/
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
-USE_X_PREFIX=		yes
-USE_MESA=		yes
-GNU_CONFIGURE=		yes
-CONFIGURE_ENV=		CPPFLAGS=-I${X11BASE}/include
-CONFIGURE_ARGS=		--includedir=$(PREFIX)/include/plib \
-			--with-glut=${PREFIX}
-USE_GMAKE=		yes
-USE_NEWGCC=		yes
-MANCOMPRESSED=		yes
+USE_X_PREFIX=	yes
+USE_MESA=	yes
+USE_NEWGCC=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-glut=${X11BASE}
 
-pre-configure:
-	${PERL} -pi -e "s:-O6 ::g" ${WRKSRC}/configure
+post-patch:
+	@${PERL} -pi -e "s| -O6 -Wall||g" ${WRKSRC}/configure
 
 .include <bsd.port.mk>
