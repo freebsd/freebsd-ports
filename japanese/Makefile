@@ -32,6 +32,7 @@
     SUBDIR += eblook
     SUBDIR += ebw3
     SUBDIR += edict
+    SUBDIR += edict-sdic
     SUBDIR += ee
     SUBDIR += elisa10x8
     SUBDIR += elisa8x8
@@ -209,6 +210,7 @@
     SUBDIR += recjis
     SUBDIR += rubytk
     SUBDIR += rxvt
+    SUBDIR += sdic
     SUBDIR += sed
     SUBDIR += seizedesktop
     SUBDIR += sj3
