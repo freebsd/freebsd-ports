@@ -1,0 +1,5 @@
+txtmerge is a quick program that reads the GIFs listed in a txt91 
+file(see xanim.doc) and produces a single gif file comprised of 
+those images.
+
+Read /usr/local/share/doc/txtmerge/txtmerge.doc for usage.
