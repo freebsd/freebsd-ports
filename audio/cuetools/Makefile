@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cuetools
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	audio
 MASTER_SITES=	http://download.berlios.de/cuetools/
 
@@ -20,13 +20,13 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" prefix="${PREFIX}" \
 		INSTALL_DATA="${INSTALL_DATA}"
 
 MAN1=		cuebreakpoints.1 cueconvert.1 cueprint.1
-PORTDOCS=	README
+PORTDOCS=	README.txt
 PLIST_FILES=	bin/cuebreakpoints bin/cueconvert bin/cueprint
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
