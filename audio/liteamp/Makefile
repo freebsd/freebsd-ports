@@ -17,6 +17,8 @@ LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao \
 		mad.2:${PORTSDIR}/audio/mad \
 		vorbisfile.4:${PORTSDIR}/audio/libvorbis
 
+BROKEN=		Uses nonstandard locale directory
+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libgnomeui gnomeprefix
