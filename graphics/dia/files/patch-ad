@@ -1,6 +1,6 @@
---- configure.orig	Sat Nov  1 06:26:01 2003
-+++ configure	Fri Mar 19 02:22:25 2004
-@@ -18085,6 +18085,7 @@
+--- configure.orig	Thu Apr 29 13:14:25 2004
++++ configure	Sat May  1 14:31:21 2004
+@@ -18279,6 +18279,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -8,17 +8,7 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -20119,7 +20120,8 @@
- cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
--#include <freetype/freetype.h>
-+#include <ft2build.h>
-+#include FT_FREETYPE_H
- #if (FREETYPE_MAJOR*1000+FREETYPE_MINOR)*1000+FREETYPE_PATCH < 2000009
- #error Freetype version too low.
- #endif
-@@ -20301,7 +20303,7 @@
+@@ -20496,7 +20497,7 @@
  
  
  cat >>confdefs.h <<_ACEOF
@@ -27,3 +17,12 @@
  _ACEOF
  
      have_gnome=true
+@@ -23717,7 +23718,7 @@
+ 
+   PYTHON_PREFIX=${prefix}
+ 
+-  PYTHON_EXEC_PREFIX=${exec_prefix}
++  PYTHON_EXEC_PREFIX=${LOCALBASE}
+ 
+ 
+ 

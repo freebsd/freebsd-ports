@@ -26,6 +26,8 @@ lib/dia/libxfig_filter.so
 lib/dia/libxslt_filter.so
 share/gnome/applications/dia.desktop
 share/gnome/dia/dia_logo.png
+share/gnome/dia/images/broken-chain.xpm
+share/gnome/dia/images/unbroken-chain.xpm
 %%PYTHON:%%share/gnome/dia/python-startup.py
 %%PYTHON:%%share/gnome/dia/python/diasvg.py
 %%PYTHON:%%share/gnome/dia/python/group_props.py
@@ -54,6 +56,8 @@ share/gnome/dia/shapes/Assorted/arrow-right-notched.png
 share/gnome/dia/shapes/Assorted/arrow-right-notched.shape
 share/gnome/dia/shapes/Assorted/arrow-right.png
 share/gnome/dia/shapes/Assorted/arrow-right.shape
+share/gnome/dia/shapes/Assorted/arrow-turn-up.png
+share/gnome/dia/shapes/Assorted/arrow-turn-up.shape
 share/gnome/dia/shapes/Assorted/arrow-up-down-left.png
 share/gnome/dia/shapes/Assorted/arrow-up-down-left.shape
 share/gnome/dia/shapes/Assorted/arrow-up-down.png
@@ -698,6 +702,66 @@ share/gnome/dia/shapes/Contact/l_soutr.shape
 share/gnome/dia/shapes/Contact/l_soutr.xpm
 share/gnome/dia/shapes/Contact/l_souts.shape
 share/gnome/dia/shapes/Contact/l_souts.xpm
+share/gnome/dia/shapes/Cybernetics/b-integrator.png
+share/gnome/dia/shapes/Cybernetics/b-integrator.shape
+share/gnome/dia/shapes/Cybernetics/b-minus.png
+share/gnome/dia/shapes/Cybernetics/b-minus.shape
+share/gnome/dia/shapes/Cybernetics/b-sens.png
+share/gnome/dia/shapes/Cybernetics/b-sens.shape
+share/gnome/dia/shapes/Cybernetics/delta-t.png
+share/gnome/dia/shapes/Cybernetics/delta-t.shape
+share/gnome/dia/shapes/Cybernetics/empty-func.png
+share/gnome/dia/shapes/Cybernetics/empty-func.shape
+share/gnome/dia/shapes/Cybernetics/factor-0to-1.png
+share/gnome/dia/shapes/Cybernetics/factor-0to-1.shape
+share/gnome/dia/shapes/Cybernetics/factor-0to1.png
+share/gnome/dia/shapes/Cybernetics/factor-0to1.shape
+share/gnome/dia/shapes/Cybernetics/factor-greater1.png
+share/gnome/dia/shapes/Cybernetics/factor-greater1.shape
+share/gnome/dia/shapes/Cybernetics/factor-smaller-1.png
+share/gnome/dia/shapes/Cybernetics/factor-smaller-1.shape
+share/gnome/dia/shapes/Cybernetics/full-wave-rectifier.png
+share/gnome/dia/shapes/Cybernetics/full-wave-rectifier.shape
+share/gnome/dia/shapes/Cybernetics/half-wave-rectifier.png
+share/gnome/dia/shapes/Cybernetics/half-wave-rectifier.shape
+share/gnome/dia/shapes/Cybernetics/hpf.png
+share/gnome/dia/shapes/Cybernetics/hpf.shape
+share/gnome/dia/shapes/Cybernetics/l-integrator.png
+share/gnome/dia/shapes/Cybernetics/l-integrator.shape
+share/gnome/dia/shapes/Cybernetics/l-minus.png
+share/gnome/dia/shapes/Cybernetics/l-minus.shape
+share/gnome/dia/shapes/Cybernetics/l-sens.png
+share/gnome/dia/shapes/Cybernetics/l-sens.shape
+share/gnome/dia/shapes/Cybernetics/lpf.png
+share/gnome/dia/shapes/Cybernetics/lpf.shape
+share/gnome/dia/shapes/Cybernetics/negative-shift.png
+share/gnome/dia/shapes/Cybernetics/negative-shift.shape
+share/gnome/dia/shapes/Cybernetics/positive-shift.png
+share/gnome/dia/shapes/Cybernetics/positive-shift.shape
+share/gnome/dia/shapes/Cybernetics/product.png
+share/gnome/dia/shapes/Cybernetics/product.shape
+share/gnome/dia/shapes/Cybernetics/r-integrator.png
+share/gnome/dia/shapes/Cybernetics/r-integrator.shape
+share/gnome/dia/shapes/Cybernetics/r-minus.png
+share/gnome/dia/shapes/Cybernetics/r-minus.shape
+share/gnome/dia/shapes/Cybernetics/r-sens.png
+share/gnome/dia/shapes/Cybernetics/r-sens.shape
+share/gnome/dia/shapes/Cybernetics/relay.png
+share/gnome/dia/shapes/Cybernetics/relay.shape
+share/gnome/dia/shapes/Cybernetics/saturation.png
+share/gnome/dia/shapes/Cybernetics/saturation.shape
+share/gnome/dia/shapes/Cybernetics/sigmoid.png
+share/gnome/dia/shapes/Cybernetics/sigmoid.shape
+share/gnome/dia/shapes/Cybernetics/sine.png
+share/gnome/dia/shapes/Cybernetics/sine.shape
+share/gnome/dia/shapes/Cybernetics/sum.png
+share/gnome/dia/shapes/Cybernetics/sum.shape
+share/gnome/dia/shapes/Cybernetics/t-integrator.png
+share/gnome/dia/shapes/Cybernetics/t-integrator.shape
+share/gnome/dia/shapes/Cybernetics/t-minus.png
+share/gnome/dia/shapes/Cybernetics/t-minus.shape
+share/gnome/dia/shapes/Cybernetics/t-sens.png
+share/gnome/dia/shapes/Cybernetics/t-sens.shape
 share/gnome/dia/shapes/Electric/cnx.shape
 share/gnome/dia/shapes/Electric/cnx.xpm
 share/gnome/dia/shapes/Electric/command.shape
@@ -714,6 +778,20 @@ share/gnome/dia/shapes/Electric/lamp.shape
 share/gnome/dia/shapes/Electric/lamp.xpm
 share/gnome/dia/shapes/Electric/relay.shape
 share/gnome/dia/shapes/Electric/relay.xpm
+share/gnome/dia/shapes/Electric/vcommand.shape
+share/gnome/dia/shapes/Electric/vcommand.xpm
+share/gnome/dia/shapes/Electric/vcontact_f.shape
+share/gnome/dia/shapes/Electric/vcontact_f.xpm
+share/gnome/dia/shapes/Electric/vcontact_o.shape
+share/gnome/dia/shapes/Electric/vcontact_o.xpm
+share/gnome/dia/shapes/Electric/vintpos_f.shape
+share/gnome/dia/shapes/Electric/vintpos_f.xpm
+share/gnome/dia/shapes/Electric/vintpos_o.shape
+share/gnome/dia/shapes/Electric/vintpos_o.xpm
+share/gnome/dia/shapes/Electric/vlamp.shape
+share/gnome/dia/shapes/Electric/vlamp.xpm
+share/gnome/dia/shapes/Electric/vrelay.shape
+share/gnome/dia/shapes/Electric/vrelay.xpm
 share/gnome/dia/shapes/Flowchart/collate.shape
 share/gnome/dia/shapes/Flowchart/collate.xpm
 share/gnome/dia/shapes/Flowchart/delay.shape
@@ -792,6 +870,56 @@ share/gnome/dia/shapes/MSE/small_extension_node.shape
 share/gnome/dia/shapes/MSE/small_extension_node.xpm
 share/gnome/dia/shapes/MSE/tacsat.shape
 share/gnome/dia/shapes/MSE/tacsat.xpm
+share/gnome/dia/shapes/Map/Isometric/Block1.png
+share/gnome/dia/shapes/Map/Isometric/Block1.shape
+share/gnome/dia/shapes/Map/Isometric/Block2.png
+share/gnome/dia/shapes/Map/Isometric/Block2.shape
+share/gnome/dia/shapes/Map/Isometric/Block3.png
+share/gnome/dia/shapes/Map/Isometric/Block3.shape
+share/gnome/dia/shapes/Map/Isometric/Block4.png
+share/gnome/dia/shapes/Map/Isometric/Block4.shape
+share/gnome/dia/shapes/Map/Isometric/Block5.png
+share/gnome/dia/shapes/Map/Isometric/Block5.shape
+share/gnome/dia/shapes/Map/Isometric/Block6.png
+share/gnome/dia/shapes/Map/Isometric/Block6.shape
+share/gnome/dia/shapes/Map/Isometric/Block7.png
+share/gnome/dia/shapes/Map/Isometric/Block7.shape
+share/gnome/dia/shapes/Map/Isometric/Car1.png
+share/gnome/dia/shapes/Map/Isometric/Car1.shape
+share/gnome/dia/shapes/Map/Isometric/Car2.png
+share/gnome/dia/shapes/Map/Isometric/Car2.shape
+share/gnome/dia/shapes/Map/Isometric/Corner1.png
+share/gnome/dia/shapes/Map/Isometric/Corner1.shape
+share/gnome/dia/shapes/Map/Isometric/Corner2.png
+share/gnome/dia/shapes/Map/Isometric/Corner2.shape
+share/gnome/dia/shapes/Map/Isometric/Crossroads.png
+share/gnome/dia/shapes/Map/Isometric/Crossroads.shape
+share/gnome/dia/shapes/Map/Isometric/Elevated.png
+share/gnome/dia/shapes/Map/Isometric/Elevated.shape
+share/gnome/dia/shapes/Map/Isometric/Factory.png
+share/gnome/dia/shapes/Map/Isometric/Factory.shape
+share/gnome/dia/shapes/Map/Isometric/FootBridge.png
+share/gnome/dia/shapes/Map/Isometric/FootBridge.shape
+share/gnome/dia/shapes/Map/Isometric/OneWay.png
+share/gnome/dia/shapes/Map/Isometric/OneWay.shape
+share/gnome/dia/shapes/Map/Isometric/RedCar.png
+share/gnome/dia/shapes/Map/Isometric/RedCar.shape
+share/gnome/dia/shapes/Map/Isometric/River.png
+share/gnome/dia/shapes/Map/Isometric/River.shape
+share/gnome/dia/shapes/Map/Isometric/Road1.png
+share/gnome/dia/shapes/Map/Isometric/Road1.shape
+share/gnome/dia/shapes/Map/Isometric/Roof1.png
+share/gnome/dia/shapes/Map/Isometric/Roof1.shape
+share/gnome/dia/shapes/Map/Isometric/StraightRoad1.png
+share/gnome/dia/shapes/Map/Isometric/StraightRoad1.shape
+share/gnome/dia/shapes/Map/Isometric/T-Junction.png
+share/gnome/dia/shapes/Map/Isometric/T-Junction.shape
+share/gnome/dia/shapes/Map/Isometric/Train1.png
+share/gnome/dia/shapes/Map/Isometric/Train1.shape
+share/gnome/dia/shapes/Map/Isometric/Train2.png
+share/gnome/dia/shapes/Map/Isometric/Train2.shape
+share/gnome/dia/shapes/Map/Isometric/Tree1.png
+share/gnome/dia/shapes/Map/Isometric/Tree1.shape
 share/gnome/dia/shapes/Misc/file.png
 share/gnome/dia/shapes/Misc/file.shape
 share/gnome/dia/shapes/Misc/folder.png
@@ -979,6 +1107,7 @@ share/gnome/dia/shapes/sybase/stableq.xpm
 share/gnome/dia/sheets/Assorted.sheet
 share/gnome/dia/sheets/Circuit.sheet
 share/gnome/dia/sheets/Contact.sheet
+share/gnome/dia/sheets/Cybernetics.sheet
 share/gnome/dia/sheets/EML.sheet
 share/gnome/dia/sheets/ER.sheet
 share/gnome/dia/sheets/ER/weakentity.xpm
@@ -992,6 +1121,7 @@ share/gnome/dia/sheets/GRAFCET/etapeme.xpm
 share/gnome/dia/sheets/GRAFCET/etapems.xpm
 share/gnome/dia/sheets/GRAFCET/etapesp.xpm
 share/gnome/dia/sheets/GRAFCET/vergent_and.xpm
+share/gnome/dia/sheets/IsometricMap.sheet
 share/gnome/dia/sheets/Logic.sheet
 share/gnome/dia/sheets/MSE.sheet
 share/gnome/dia/sheets/Misc.sheet
@@ -1019,13 +1149,30 @@ share/gnome/dia/xslt/dia-uml2c++.xsl
 share/gnome/dia/xslt/dia-uml2componentlist.xsl
 share/gnome/dia/xslt/dia-uml2idl.xsl
 share/gnome/dia/xslt/dia-uml2java.xsl
+share/gnome/dia/xslt/dia-uml2owl.xsl
+share/gnome/dia/xslt/dia-uml2python.xsl
 share/gnome/dia/xslt/stylesheets.xml
 %%GNOME:%%share/gnome/help/dia/C
-%%GNOME:%%share/gnome/help/dia/en/topic.dat
-%%GNOME:%%share/gnome/help/dia/pl/topic.dat
+%%GNOME:%%share/gnome/help/dia/en/dia.xml
+%%GNOME:%%share/gnome/help/dia/en/graphics/greendots.png
+%%GNOME:%%share/gnome/help/dia/en/graphics/home_network.png
+%%GNOME:%%share/gnome/help/dia/en/graphics/line_icon.png
+%%GNOME:%%share/gnome/help/dia/en/graphics/line_props.png
+%%GNOME:%%share/gnome/help/dia/pl/dia.xml
+%%GNOME:%%share/gnome/help/dia/pl/graphics/greendots.png
+%%GNOME:%%share/gnome/help/dia/pl/graphics/home_network.png
+%%GNOME:%%share/gnome/help/dia/pl/graphics/line_props.png
 %%NOGNOME:%%share/gnome/dia/help/C
-%%NOGNOME:%%share/gnome/dia/help/en/topic.dat
-%%NOGNOME:%%share/gnome/dia/help/pl/topic.dat
+%%NOGNOME:%%share/gnome/dia/help/en/dia.xml
+%%NOGNOME:%%share/gnome/dia/help/en/graphics/greendots.png
+%%NOGNOME:%%share/gnome/dia/help/en/graphics/home_network.png
+%%NOGNOME:%%share/gnome/dia/help/en/graphics/line_icon.png
+%%NOGNOME:%%share/gnome/dia/help/en/graphics/line_props.png
+%%NOGNOME:%%share/gnome/dia/help/pl/dia.xml
+%%NOGNOME:%%share/gnome/dia/help/pl/graphics/greendots.png
+%%NOGNOME:%%share/gnome/dia/help/pl/graphics/home_network.png
+%%NOGNOME:%%share/gnome/dia/help/pl/graphics/line_icon.png
+%%NOGNOME:%%share/gnome/dia/help/pl/graphics/line_props.png
 share/gnome/mime-info/dia.keys
 share/gnome/mime-info/dia.mime
 share/gnome/pixmaps/dia-diagram.png
@@ -1038,17 +1185,21 @@ share/locale/cs/LC_MESSAGES/dia.mo
 share/locale/da/LC_MESSAGES/dia.mo
 share/locale/de/LC_MESSAGES/dia.mo
 share/locale/el/LC_MESSAGES/dia.mo
+share/locale/en_CA/LC_MESSAGES/dia.mo
 share/locale/en_GB/LC_MESSAGES/dia.mo
 share/locale/es/LC_MESSAGES/dia.mo
 share/locale/fi/LC_MESSAGES/dia.mo
 share/locale/fr/LC_MESSAGES/dia.mo
 share/locale/ga/LC_MESSAGES/dia.mo
+share/locale/hr/LC_MESSAGES/dia.mo
 share/locale/hu/LC_MESSAGES/dia.mo
+share/locale/is/LC_MESSAGES/dia.mo
 share/locale/it/LC_MESSAGES/dia.mo
 share/locale/ja/LC_MESSAGES/dia.mo
 share/locale/ko/LC_MESSAGES/dia.mo
 share/locale/mk/LC_MESSAGES/dia.mo
 share/locale/ml/LC_MESSAGES/dia.mo
+share/locale/mn/LC_MESSAGES/dia.mo
 share/locale/ms/LC_MESSAGES/dia.mo
 share/locale/nl/LC_MESSAGES/dia.mo
 share/locale/nn/LC_MESSAGES/dia.mo
@@ -1060,6 +1211,7 @@ share/locale/ro/LC_MESSAGES/dia.mo
 share/locale/ru/LC_MESSAGES/dia.mo
 share/locale/sk/LC_MESSAGES/dia.mo
 share/locale/sl/LC_MESSAGES/dia.mo
+share/locale/sq/LC_MESSAGES/dia.mo
 share/locale/sr/LC_MESSAGES/dia.mo
 share/locale/sr@Latn/LC_MESSAGES/dia.mo
 share/locale/sv/LC_MESSAGES/dia.mo
@@ -1068,10 +1220,14 @@ share/locale/uk/LC_MESSAGES/dia.mo
 share/locale/vi/LC_MESSAGES/dia.mo
 share/locale/zh_CN/LC_MESSAGES/dia.mo
 share/locale/zh_TW/LC_MESSAGES/dia.mo
+%%GNOME:%%@dirrm share/gnome/help/dia/pl/graphics
 %%GNOME:%%@dirrm share/gnome/help/dia/pl
+%%GNOME:%%@dirrm share/gnome/help/dia/en/graphics
 %%GNOME:%%@dirrm share/gnome/help/dia/en
 %%GNOME:%%@dirrm share/gnome/help/dia
+%%NOGNOME:%%@dirrm share/gnome/dia/help/pl/graphics
 %%NOGNOME:%%@dirrm share/gnome/dia/help/pl
+%%NOGNOME:%%@dirrm share/gnome/dia/help/en/graphics
 %%NOGNOME:%%@dirrm share/gnome/dia/help/en
 %%NOGNOME:%%@dirrm share/gnome/dia/help
 @dirrm share/gnome/dia/xslt
@@ -1085,10 +1241,13 @@ share/locale/zh_TW/LC_MESSAGES/dia.mo
 @dirrm share/gnome/dia/shapes/Pneumatic
 @dirrm share/gnome/dia/shapes/Network
 @dirrm share/gnome/dia/shapes/Misc
+@dirrm share/gnome/dia/shapes/Map/Isometric
+@dirrm share/gnome/dia/shapes/Map
 @dirrm share/gnome/dia/shapes/MSE
 @dirrm share/gnome/dia/shapes/Logic
 @dirrm share/gnome/dia/shapes/Flowchart
 @dirrm share/gnome/dia/shapes/Electric
+@dirrm share/gnome/dia/shapes/Cybernetics
 @dirrm share/gnome/dia/shapes/Contact
 @dirrm share/gnome/dia/shapes/Civil
 @dirrm share/gnome/dia/shapes/Cisco
@@ -1096,5 +1255,6 @@ share/locale/zh_TW/LC_MESSAGES/dia.mo
 @dirrm share/gnome/dia/shapes/Assorted
 @dirrm share/gnome/dia/shapes
 %%PYTHON:%%@dirrm share/gnome/dia/python
+@dirrm share/gnome/dia/images
 @dirrm share/gnome/dia
 @dirrm lib/dia
