@@ -1,0 +1,15 @@
+--- mkfiles/freebsd.orig	Mon May 27 21:23:17 2002
++++ mkfiles/freebsd	Mon May 27 21:23:31 2002
+@@ -116,10 +116,10 @@
+ 	install ../mp3d.conf $(CONFIGDIR)
+ 	# Default template.
+ 	install -d $(TEMPLATEDIR)/default
+-	cp -R ../templates/default/ $(TEMPLATEDIR)
++	cp -R ../templates/default $(TEMPLATEDIR)
+ 	# Simple template
+ 	install -d $(TEMPLATEDIR)/simple 
+-	cp -R ../templates/simple/ $(TEMPLATEDIR)
++	cp -R ../templates/simple $(TEMPLATEDIR)
+ 	install ../templates/README $(TEMPLATEDIR)
+ 	# Man pages.
+ 	install -d $(MANDIR)
