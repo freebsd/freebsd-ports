@@ -11,7 +11,7 @@ CATEGORIES=	x11-wm kde
 MASTER_SITES=	http://www.kde-look.org/content/files/
 DISTNAME=	2194-${PORTNAME}
 
-MAINTAINER=	flynn@energyhq.homeip.net
+MAINTAINER=	adam@vectors.cx
 
 BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake \
 		autoconf:${PORTSDIR}/devel/autoconf

@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}_${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	flynn@energyhq.homeip.net
+MAINTAINER=	adam@vectors.cx
 
 LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12
 

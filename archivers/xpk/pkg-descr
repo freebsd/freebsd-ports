@@ -10,6 +10,3 @@ applications do not need to know which library was used to pack the data -
 the appropriate library needs to be installed.
 
 WWW: http://www.jormas.com/~vesuri/xpk/
-
-- Miguel Mendez
-flynn@energyhq.homeip.net

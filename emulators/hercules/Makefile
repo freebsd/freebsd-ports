@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.conmicro.cx/hercules/
 
-MAINTAINER=	flynn@energyhq.homeip.net
+MAINTAINER=	adam@vectors.cx
 
 GNU_CONFIGURE=	yes
 
