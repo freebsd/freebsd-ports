@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games/multiplayer
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	dchapes@ddm.on.ca
+MAINTAINER=	bsdport@ddm.wox.org
 
 USE_IMAKE=	yes
 MAN1=		xmemory.1

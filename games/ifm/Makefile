@@ -17,7 +17,7 @@ MASTER_SITES=	ftp://ftp.gmd.de/if-archive/mapping-tools/ \
 		ftp://ftp.nodomainname.net/pub/mirrors/if-archive/mapping-tools/
 DISTFILES=	ifm41.tgz
 
-MAINTAINER=	dchapes@ddm.on.ca
+MAINTAINER=	bsdport@ddm.wox.org
 
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
