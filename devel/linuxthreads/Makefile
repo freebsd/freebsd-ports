@@ -7,7 +7,7 @@
 
 PORTNAME=	linuxthreads
 PORTVERSION=	2.2.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	glibc
@@ -26,6 +26,9 @@ BROKEN="Requires FreeBSD 4.0 or newer"
 .if ${OSVERSION} >= 500035
 USING_GCC3=true
 MAKE_ENV+= USING_GCC3=true
+.endif
+.if defined(INSTALL_LIBLTHREAD_PIC_ARCHIVE)
+MAKE_ENV+=	INSTALL_LIBLTHREAD_PIC_ARCHIVE=yes
 .endif
 
 threads_files := README.FreeBSD clone.S clone.h freebsd-compat.h getgr_r.c \
@@ -155,6 +158,16 @@ PLIST_SUB=	PROFILE:=""
 PLIST_SUB+=	PIC:="@comment "
 .else
 PLIST_SUB+=	PIC:=""
+.endif
+.if defined(INSTALL_PIC_ARCHIVE)
+PLIST_SUB+=	PICARCHIVE:=""
+.else
+PLIST_SUB+=	PICARCHIVE:="@comment "
+.endif
+.if defined(INSTALL_PIC_ARCHIVE) || defined(INSTALL_LIBLTHREAD_PIC_ARCHIVE)
+PLIST_SUB+=	LIBLTHREADPICARCHIVE:=""
+.else
+PLIST_SUB+=	LIBLTHREADPICARCHIVE:="@comment "
 .endif
 .if defined(USING_GCC3)
 PLIST_SUB+=	GCC3ONLY:=""
