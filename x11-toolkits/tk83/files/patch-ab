@@ -1,5 +1,5 @@
---- Makefile.in.orig	Thu Feb 10 06:11:01 2000
-+++ Makefile.in	Mon Apr 24 16:10:36 2000
+--- Makefile.in.orig	Sun Feb 20 06:39:43 2000
++++ Makefile.in	Mon May  1 10:37:26 2000
 @@ -56,7 +56,9 @@
  BIN_DIR =		$(exec_prefix)/bin
  
@@ -11,7 +11,7 @@
  
  # Top-level directory for manual entries:
  MAN_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/man
-@@ -153,7 +155,7 @@
+@@ -154,7 +156,7 @@
  # "install" around;  better to use the install-sh script that comes
  # with the distribution, which is slower but guaranteed to work.
  
@@ -20,7 +20,7 @@
  INSTALL_PROGRAM =	${INSTALL}
  INSTALL_DATA =		${INSTALL} -m 644
  
-@@ -190,7 +192,7 @@
+@@ -195,7 +197,7 @@
  # Libraries to use when linking.  This definition is determined by the
  # configure script.
  LIBS = @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@ -lc
@@ -29,7 +29,7 @@
  
  # The symbol below provides support for dynamic loading and shared
  # libraries.  See configure.in for a description of what it means.
-@@ -361,8 +363,14 @@
+@@ -371,8 +373,14 @@
  ${TK_LIB_FILE}: ${OBJS}
  	rm -f ${TK_LIB_FILE}
  	@MAKE_LIB@
@@ -44,16 +44,16 @@
  ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	rm -f ${STUB_LIB_FILE}
  	@MAKE_STUB_LIB@
-@@ -424,7 +432,7 @@
+@@ -442,7 +450,7 @@
  # some ranlibs write to current directory, and this might not always be
  # possible (e.g. if installing as root).
  
 -install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $(TK_BUILD_EXP_FILE) wish
 +install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $(TK_BUILD_EXP_FILE) libtk${SHORT_TK_VER}.a wish
- 	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) ; \
+ 	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) $(SCRIPT_INSTALL_DIR); \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -442,12 +450,18 @@
+@@ -460,14 +468,20 @@
  	    fi
  	@echo "Installing $(TK_LIB_FILE) to $(LIB_INSTALL_DIR)/"
  	@$(INSTALL_DATA) $(TK_LIB_FILE) $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
@@ -64,6 +64,8 @@
 +	@$(INSTALL_DATA) libtk${SHORT_TK_VER}.a $(LIB_INSTALL_DIR)/libtk${SHORT_TK_VER}.a
 +	@(cd $(LIB_INSTALL_DIR); $(RANLIB) libtk${SHORT_TK_VER}.a)
 +	@chmod 555 $(LIB_INSTALL_DIR)/libtk${SHORT_TK_VER}.a
+ 	@echo "Installing pkgIndex.tcl"
+ 	@$(INSTALL_DATA) pkgIndex.tk $(SCRIPT_INSTALL_DIR)/pkgIndex.tcl
  	@echo "Installing wish as $(BIN_INSTALL_DIR)/wish$(VERSION)"
  	@$(INSTALL_PROGRAM) wish $(BIN_INSTALL_DIR)/wish$(VERSION)
  	@echo "Installing tkConfig.sh to $(LIB_INSTALL_DIR)/"
@@ -73,7 +75,7 @@
  	@if test "$(TK_BUILD_EXP_FILE)" != ""; then \
  	    echo "Installing $(TK_EXP_FILE) to $(LIB_INSTALL_DIR)/"; \
  	    $(INSTALL_DATA) $(TK_BUILD_EXP_FILE) \
-@@ -461,6 +475,7 @@
+@@ -481,6 +495,7 @@
  
  install-libraries:
  	@for i in $(INSTALL_ROOT)$(prefix)/lib $(INCLUDE_INSTALL_DIR) \
@@ -81,7 +83,7 @@
  		$(SCRIPT_INSTALL_DIR) $(SCRIPT_INSTALL_DIR)/images; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -474,10 +489,16 @@
+@@ -494,10 +509,16 @@
  	    chmod +x $(UNIX_DIR)/install-sh; \
  	    fi
  	@echo "Installing header files";
@@ -100,7 +102,7 @@
  	@echo "Installing library files to $(SCRIPT_INSTALL_DIR)";
  	@for i in $(SRC_DIR)/library/*.tcl $(GENERIC_DIR)/prolog.ps \
  	        $(SRC_DIR)/library/tclIndex $(UNIX_DIR)/tkAppInit.c; \
-@@ -543,7 +564,6 @@
+@@ -563,7 +584,6 @@
  	    chmod 444 $(MAN1_INSTALL_DIR)/$$i; \
  	    done;
  	@echo "Cross-linking top-level (.1) docs";
@@ -108,15 +110,15 @@
  	@echo "Installing C API (.3) docs";
  	@cd $(SRC_DIR)/doc; for i in *.3; \
  	    do \
-@@ -553,7 +573,6 @@
+@@ -573,7 +593,6 @@
  	    chmod 444 $(MAN3_INSTALL_DIR)/$$i; \
  	    done;
- 	@echo "Cross-linking top-level (.3) docs";
+ 	@echo "Cross-linking C API (.3) docs";
 -	@$(UNIX_DIR)/mkLinks $(MAN3_INSTALL_DIR)
  	@echo "Installing command (.n) docs";
  	@cd $(SRC_DIR)/doc; for i in *.n; \
  	    do \
-@@ -563,7 +582,6 @@
+@@ -583,7 +602,6 @@
  	    chmod 444 $(MANN_INSTALL_DIR)/$$i; \
  	    done;
  	@echo "Cross-linking command (.n) docs";

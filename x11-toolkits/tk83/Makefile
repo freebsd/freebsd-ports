@@ -8,15 +8,16 @@
 PORTNAME=	tk
 PORTVERSION= 	8.3.0
 CATEGORIES=	x11-toolkits tk83
-MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_3/
-DISTNAME=	${PORTNAME}${PORTVERSION}
+MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/sorted/packages-8.0/devel/ \
+		http://www.neosoft.com/tcl/ftparchive/sorted/packages-8.0/devel/
+DISTNAME=	${PORTNAME}${PORTVERSION}plus
 
 MAINTAINER=	jseger@FreeBSD.org
 
 LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83
 
 USE_XLIB=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME}/unix
+WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}/unix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --with-tcl=${PREFIX}/lib/tcl8.3
 CONFIGURE_ENV=  PORTSDIR=${PORTSDIR} TK_LIB_FILE=libtk83.so.1

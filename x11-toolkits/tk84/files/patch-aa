@@ -1,5 +1,5 @@
---- configure.orig	Thu Feb 10 06:11:02 2000
-+++ configure	Mon Apr 24 15:59:27 2000
+--- configure.orig	Sun Feb 20 06:30:02 2000
++++ configure	Mon May  1 11:21:14 2000
 @@ -1763,7 +1763,7 @@
  	    LDFLAGS="-Wl,-Bexport"
  	    LD_SEARCH_FLAGS=""
@@ -25,3 +25,12 @@
  
  LIB_RUNTIME_DIR='${LIB_RUNTIME_DIR}'
  
+@@ -4005,7 +4007,7 @@
+ eval eval "TK_UNSHARED_LIB_SUFFIX=${UNSHARED_LIB_SUFFIX}"
+ 
+ TCL_LIB_SPEC='-L$(TCL_BIN_DIR) $(TCL_LIB_FLAG)'
+-TCL_STUB_LIB_SPEC='-L$(TCL_BIN_DIR) $(TCL_STUB_LIB_FLAG)'
++TCL_STUB_LIB_SPEC='/usr/local/lib/libtclstub83.a'
+ 
+ if test "${SHARED_BUILD}" = "1" -a "${SHLIB_SUFFIX}" != ""; then
+     TK_SHLIB_CFLAGS="${SHLIB_CFLAGS}"
