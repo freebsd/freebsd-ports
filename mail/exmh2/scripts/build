@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# $Id: build,v 1.3 1997/07/02 04:59:54 peter Exp $
+# $Id: build,v 1.4 1997/08/14 03:44:30 peter Exp $
 #
 
 VERSION="`sed -ne 's/^set vers \(.*\)/\1/p' ${WRKSRC}/exmh.install`"
@@ -72,5 +72,5 @@ done
 
 rm -f ${SEDFILE}
 
-echo "cd lib ;  echo 'auto_mkindex . *.tcl ; exit' | tclsh"
-cd lib ;  echo 'auto_mkindex . *.tcl ; exit' | tclsh
+echo "cd lib ;  echo 'auto_mkindex . *.tcl ; exit' | ${TCLSH}"
+cd lib ;  echo 'auto_mkindex . *.tcl ; exit' | ${TCLSH}
