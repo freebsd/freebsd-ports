@@ -339,6 +339,7 @@
     SUBDIR += ixlib
     SUBDIR += jakelib2
     SUBDIR += jam
+    SUBDIR += jclassinfo
     SUBDIR += jrtplib
     SUBDIR += jude_take
     SUBDIR += kaptain

@@ -1,0 +1,23 @@
+bin/jclassinfo
+include/jclass/attributes.h
+include/jclass/bytecode.h
+include/jclass/class.h
+include/jclass/class_loader.h
+include/jclass/constant_pool.h
+include/jclass/field.h
+include/jclass/jar.h
+include/jclass/jclass.h
+include/jclass/jstring.h
+include/jclass/manifest.h
+include/jclass/types.h
+lib/jclass/include/jclassconfig.h
+lib/libjclass.a
+lib/libjclass.so
+lib/libjclass.so.3
+libdata/pkgconfig/jclass.pc
+share/xml/jclassinfo/jclassinfo.dtd
+share/xml/jclassinfo/jclassinfo2xhtml.xsl
+@dirrm include/jclass
+@dirrm lib/jclass/include
+@dirrm lib/jclass
+@dirrm share/xml/jclassinfo
