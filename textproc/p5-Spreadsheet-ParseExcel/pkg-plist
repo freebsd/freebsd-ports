@@ -1,16 +1,16 @@
-lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/ParseExcel.pm
-lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/ParseExcel/Dump.pm
-lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/ParseExcel/FmtDefault.pm
-lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/ParseExcel/FmtJapan.pm
-lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/ParseExcel/FmtJapan2.pm
-lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/ParseExcel/FmtUnicode.pm
-lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/ParseExcel/SaveParser.pm
-lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/ParseExcel/Utility.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Spreadsheet/ParseExcel/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Spreadsheet/ParseExcel
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Spreadsheet 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/ParseExcel
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet 2>/dev/null || true
+%%SITE_PERL%%/Spreadsheet/ParseExcel.pm
+%%SITE_PERL%%/Spreadsheet/ParseExcel/Dump.pm
+%%SITE_PERL%%/Spreadsheet/ParseExcel/FmtDefault.pm
+%%SITE_PERL%%/Spreadsheet/ParseExcel/FmtJapan.pm
+%%SITE_PERL%%/Spreadsheet/ParseExcel/FmtJapan2.pm
+%%SITE_PERL%%/Spreadsheet/ParseExcel/FmtUnicode.pm
+%%SITE_PERL%%/Spreadsheet/ParseExcel/SaveParser.pm
+%%SITE_PERL%%/Spreadsheet/ParseExcel/Utility.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Spreadsheet/ParseExcel/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spreadsheet/ParseExcel
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Spreadsheet 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Spreadsheet/ParseExcel
+@unexec rmdir %D/%%SITE_PERL%%/Spreadsheet 2>/dev/null || true
 %%PORTDOCS%%%%EXAMPLESDIR%%/Excel/AuthorK.xls
 %%PORTDOCS%%%%EXAMPLESDIR%%/Excel/AuthorK95.xls
 %%PORTDOCS%%%%EXAMPLESDIR%%/Excel/FmtTest.xls
@@ -32,6 +32,7 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Spreadsheet/ParseExcel/.pack
 %%PORTDOCS%%%%EXAMPLESDIR%%/dmpExJ.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/dmpExR.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/dmpExU.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/dmpEx_2xml.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/iftest.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/iftestj.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/res_fmt
