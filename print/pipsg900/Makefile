@@ -13,4 +13,6 @@ PRTYPE=		g900
 
 PATCH_PRN=	PATCH.PRN
 
+BROKEN=		"Does not compile"
+
 .include "${MASTERDIR}/Makefile.pips"
