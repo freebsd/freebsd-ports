@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libbonobo
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.2
@@ -27,5 +27,8 @@ CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 MAKE_ENV=	gnomelocaledir=${PREFIX}/share/locale
+
+post-patch:
+	@${REINPLACE_CMD} -e "/^SUBDIRS/s/tests//" ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
