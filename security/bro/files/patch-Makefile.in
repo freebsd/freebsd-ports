@@ -1,0 +1,27 @@
+--- Makefile.in.orig	Sun Aug 31 04:39:14 2003
++++ Makefile.in	Tue Oct 14 12:08:51 2003
+@@ -52,13 +52,13 @@
+ LIBS = $(LIBEDIT_LIBS) @LIBS@ -lm
+ 
+ # Purify barfs when c++ is used for $(CPLUS).
+-PURIFY_CPLUS = g++
++PURIFY_CPLUS = @CC@
+ PURE_FLAGS = -chain-length=20
+ 
+ YACC = @YACC@
+ YFLAGS = -d -t -v
+ LEX = @LEX@
+-INSTALL = @INSTALL@ -d
++INSTALL = @INSTALL_PROGRAM@
+ INSTALL_DATA = @INSTALL_DATA@
+ @SET_MAKE@
+ COMPRESS = @COMPRESS@
+@@ -121,7 +121,7 @@
+ 
+ all: $(PKG)
+ 
+-$(PKG): $(LIBEDIT_LIB) $(OBJ)
++$(PKG): $(OBJ)
+ 	$(CPLUS) -o $(EXEC) $(OBJ) $(LDFLAGS) $(LIBS)
+ opt:
+ 	@$(MAKE) $(MFLAGS) CCOPT="`echo $(CCOPT) | sed -e 's/-O2//;s/$$/ -O3/'`"
