@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.92 1999/05/17 10:43:58 foxfair Exp $
+# $Id: Makefile,v 1.93 1999/06/17 09:38:38 taoka Exp $
 #
 
     SUBDIR += a2ps-a4
@@ -17,6 +17,7 @@
     SUBDIR += bibview
     SUBDIR += c2ps-a4
     SUBDIR += c2ps-letter
+    SUBDIR += cdlabelgen
     SUBDIR += cmpsfont
     SUBDIR += detex
     SUBDIR += dvi2tty
