@@ -19,7 +19,7 @@ LIB_DEPENDS=	ogg.1:${PORTSDIR}/audio/libogg
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ARGS=	--with-ogg=${LOCALBASE}
+CONFIGURE_ARGS=	--with-ogg-prefix=${LOCALBASE}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 AUTOCONF_ARGS=	; ${PERL} -pi -e 's|-lpthread|-pthread|g' ${WRKSRC}/configure
 
