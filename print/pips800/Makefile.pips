@@ -217,12 +217,12 @@ DOCS=		COPYING COPYING.KOWA COPYING.KOWA.ja COPYING.LIB
 post-extract:
 .if ${PORTVERSION} == 2.1.2 || \
 	(${PORTVERSION} == 2.6.2 && ${DIST_TYPE} == lpr)
-	cd ${WRKSRC}/ekpnavi && ${TAR} xf ekpnavi-${EKPNAVI_VER}.tar.gz
+	cd ${WRKSRC}/ekpnavi && ${TAR} xzf ekpnavi-${EKPNAVI_VER}.tar.gz
 .endif
 .if ${PORTVERSION} == 2.1.2 || \
 	(${PORTVERSION} == 2.6.2 && ${DIST_TYPE} == lpr) || \
 	${DIST_TYPE} == cups
-	cd ${WRKSRC}/ekpstm && ${TAR} xf ekpstm-${EKPSTM_VER}.tar.gz
+	cd ${WRKSRC}/ekpstm && ${TAR} xzf ekpstm-${EKPSTM_VER}.tar.gz
 .endif
 
 post-patch:
