@@ -27,7 +27,7 @@ SHLIB_VER=	4
 MAKE_ENV=	SHLIB_VER="${SHLIB_VER}"
 PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
 
-MAN3=           libpng.4 libpngpf.3
+MAN3=           libpng.3 libpngpf.3
 MAN5=           png.5
 
 do-configure:
