@@ -18,6 +18,7 @@ DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	A C++ X GUI toolkit
+IGNORE=	This will become the port of QT 3.3.1. Right now it's just a placeholder.
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
