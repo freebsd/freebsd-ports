@@ -18,23 +18,24 @@ include/streamtuner/st-version-api.h
 include/streamtuner/streamtuner.h
 lib/streamtuner/plugins/shoutcast.so
 libdata/pkgconfig/streamtuner.pc
-share/doc/streamtuner/C/documentation-license.xml
-share/doc/streamtuner/C/figures/main-window.png
-share/doc/streamtuner/C/figures/search-category.png
-share/doc/streamtuner/C/figures/search-dialog.png
-share/doc/streamtuner/C/software-license.xml
-share/doc/streamtuner/C/streamtuner.xml
 share/gnome/applications/streamtuner.desktop
+share/gnome/doc/streamtuner/C/documentation-license.xml
+share/gnome/doc/streamtuner/C/figures/main-window.png
+share/gnome/doc/streamtuner/C/figures/search-category.png
+share/gnome/doc/streamtuner/C/figures/search-dialog.png
+share/gnome/doc/streamtuner/C/software-license.xml
+share/gnome/doc/streamtuner/C/streamtuner.xml
+share/gnome/omf/streamtuner/streamtuner-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/streamtuner/streamtuner-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/streamtuner.png
 share/locale/de/LC_MESSAGES/streamtuner.mo
 share/locale/fr/LC_MESSAGES/streamtuner.mo
-share/omf/streamtuner/streamtuner-C.omf
-@exec scrollkeeper-install -q %D/share/omf/streamtuner/streamtuner-C.omf 2>/dev/null || /usr/bin/true
+share/locale/pt/LC_MESSAGES/streamtuner.mo
 @dirrm include/streamtuner
 @dirrm lib/streamtuner/plugins
 @dirrm lib/streamtuner
-@dirrm share/doc/streamtuner/C/figures
-@dirrm share/doc/streamtuner/C
-@dirrm share/doc/streamtuner
-@dirrm share/omf/streamtuner
-@unexec scrollkeeper-uninstall -q %D/share/omf/streamtuner/streamtuner-C.omf 2>/dev/null || /usr/bin/true
+@dirrm share/gnome/doc/streamtuner/C/figures
+@dirrm share/gnome/doc/streamtuner/C
+@dirrm share/gnome/doc/streamtuner
+@dirrm share/gnome/omf/streamtuner
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/streamtuner/streamtuner-C.omf 2>/dev/null || /usr/bin/true
