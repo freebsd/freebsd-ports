@@ -1,6 +1,1 @@
-bin/debugboard
 bin/gnugo
-@unexec install-info --delete %D/info/gnugo.info %D/info/dir
-info/gnugo.info
-@unexec rmdir %D/share/gnugo 2>/dev/null || true
-@exec install-info %D/info/gnugo.info %D/info/dir
