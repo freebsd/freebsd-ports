@@ -6,18 +6,19 @@
 #
 
 PORTNAME?=	cs
-PORTVERSION?=	1.1c
+PORTVERSION?=	1.3
 CATEGORIES=	games linux
 MASTER_SITES?=	http://games.velocity.net/files/Counter-Strike/ \
-		ftp://ftp.pipex.net/uunet/games/counterstrike/linux/ \
-		ftp://ftp.icsmedia.de/pub/games/halflife/counter_strike/linux_server/ \
-		ftp://ftp.phil.uni-erlangen.de/pub/hl/mods/ \
-		http://fileplanet.games-world.net/dl/ftp1.gamespy.com/fpnew/action/half-life/modifications/cstrike/ \
-		ftp://ftp.fasta.fh-dortmund.de/gdi/halflife/counterstrike/ \
-		http://ftp2.gamespy.com/pub/cdrom/counter-strike/
+		ftp://extreme-players.de/pub/hl/mod/cs/ \
+		http://fileplanet.games-world.net/dl/ftp1.gamespy.com/action/half-life/modifications/cstrike/ \
+		ftp://downloads2.homelanfed.com/CS/Patches/ \
+		ftp://downloads.homelanfed.com/CS/Patches/ \
+		ftp://downloads3.homelanfed.com/CS/Patches/ \
+		ftp://downloads4.homelanfed.com/CS/Patches/ \
+		http://www.redphive.org/files/
 PKGNAMEPREFIX=	hlserver-
-.ifndef(DISTNAME)
-DISTFILES?=	cs_11b_full.tar.gz cs_11c_up.tar.gz
+.ifndef(DISTFILES)
+DISTNAME?=	${PORTNAME}_${PORTVERSION:S/.//}_full
 .endif
 
 MAINTAINER?=	pat@databits.net
