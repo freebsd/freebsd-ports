@@ -1,0 +1,48 @@
+# *** *** ***
+# -------------------
+# Zope Configuration.
+# -------------------
+#
+# IMPORTANT: In order for SSL access to work, copy the part between the
+# lines with the nine asterisks * to your SSL virtual host section, too!
+#
+# This rule adds the trailing slash if omitted. So, we will have it for
+# all subsequent rules
+RewriteEngine on
+RewriteRule ^/Zope$ /Zope/ [R]
+#
+# Zope requires the authentication headers to be passed to it if it is
+# called through the cgi of another web server (like apache). An "easy"
+# way to do so is to do a little mod_rewrite'ing. See doc/WEBSERVER.txt in
+# your Zope base directory for further information.
+#
+# This maps maps /Zope/ to the Zope.cgi CGI script.
+RewriteCond %{HTTP:Authorization} ^(.*)
+RewriteRule ^/Zope/(.*) /usr/local/www/cgi-bin/Zope.cgi/$1 [env=HTTP_CGI_AUTHORIZATION:%1,t=application/x-httpd-cgi,l]
+#
+# *** *** ***
+#
+# Also, Zope, in spite of some fussing about "security", totally ignores
+# the man in the middle. So, all contacts to Zope management screens are
+# made to require SSL.
+#
+<LocationMatch "/Zope/(.*)manage(.*)">
+ SSLRequireSSL
+</LocationMatch>
+#
+<LocationMatch "/cgi-bin/Zope.cgi(.*)manage(.*)">
+ SSLRequireSSL
+</LocationMatch>
+#
+# One final notice: If you can't get working your authentication with Zope
+# check if the access file in the Zope base directory (maybe this is
+# /usr/local/www/Zope or the like) contains a CLEARTEXT password. If
+# encryption there is set to SHA, to my knowledge, authentication does not
+# work. Try `python zpasswd.py -u zopemaster -p test -e CLEARTEXT access`
+# (in the Zope base dir). This sets the required username/passwd pair to
+# zopemaster/test respectively and stores them as CLEARTEXT password.
+# Don't forget the proper access restrictions to this file if you have
+# user access to the file system that it is stored on.
+#
+# End of Zope configuration section.
+

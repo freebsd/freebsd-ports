@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	zope
-PORTVERSION=	2.0.0b5
-DISTNAME=	Zope-${VERSION}-src
+PORTVERSION=	2.1.6
 CATEGORIES=	www python
-MASTER_SITES=	http://www.zope.org/Products/Zope/${VERSION}/
+MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/
 DISTNAME=	Zope-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	thomas@hentschel.net
 
 BUILD_DEPENDS=	python1.5:${PORTSDIR}/lang/python
 RUN_DEPENDS=	${LOCALBASE}/sbin/apache:${PORTSDIR}/www/apache13-modssl
@@ -54,10 +53,13 @@ do-install:	#
 		${INSTALL} -o nobody -m 555 Zope.cgi pcgi/pcgi-wrapper ${CGI_BIN_DIR} ; \
 		${ECHO} "===>   Fixing permissions of Zope's own var directory..." ; \
 		${CHMOD} ugo+rwt var ; \
+		${CHOWN} nobody var ; \
+		${CHOWN} nobody var/* ; \
 		${ECHO} "===>   Setting user/password to zopemaster/test..." ; \
 		${PYTHON15} zpasswd.py -u zopemaster -p test -e CLEARTEXT access ; \
-		${ECHO} "===>   Copying Apache config file changes to ${APACHE_CONFDIR}/apache.conf.Zope-${PORTVERSION}-Changes." ; \
-		${CP} -p ${FILESDIR}/apache.conf.Zope-${PORTVERSION}-Changes ${APACHE_CONFDIR}/ ; \
+		${CHOWN} nobody access; \
+		${ECHO} "===>   Copying Apache config file changes to ${APACHE_CONFDIR}/apache.conf.Zope-Changes." ; \
+		${CP} -p ${FILESDIR}/apache.conf.Zope-Changes ${APACHE_CONFDIR}/ ; \
 		${ECHO} "===>   Please have a look at this file and the instructions" ; \
 		${ECHO} "===>   therein and incorporate them to your apache.conf." ; \
 		${ECHO} "===>   Creating rc startup file for Zope-${PORTVERSION}..." ; \
@@ -69,7 +71,7 @@ do-install:	#
 		${CAT} ${FILESDIR}/Message ; \
 		${ECHO} "===>   Your Zope base directory is ${ZOPEBASEDIR}." ; \
 		${ECHO} "===>   The Zope license is in ${ZOPEBASEDIR}/LICENSE.txt." ; \
-		${ECHO} "===>   For Apache changes see ${APACHE_CONFDIR}/apache.conf.Zope-${PORTVERSION}-Changes." ; \
+		${ECHO} "===>   For Apache changes see ${APACHE_CONFDIR}/apache.conf.Zope-Changes." ; \
 		${ECHO} "===>   Zope.cgi and pcgi-wrapper live in ${CGI_BIN_DIR}." )
 
 #pre-deinstall:	# Save Database contents. I expect /tmp to have sufficient
