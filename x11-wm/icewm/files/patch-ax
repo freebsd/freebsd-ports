@@ -1,0 +1,11 @@
+--- src/wmclient.h.orig	Tue Mar 26 14:29:05 2002
++++ src/wmclient.h	Tue Mar 26 14:29:13 2002
+@@ -5,6 +5,8 @@
+ #include "ymenu.h"
+ #include "MwmUtil.h"
+ 
++#include <X11/Xutil.h>
++
+ class YFrameWindow;
+ class WindowListItem;
+ 
