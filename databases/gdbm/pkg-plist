@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 include/gdbm.h
 %%GDBM_COMPAT%%include/dbm.h
 %%GDBM_COMPAT%%include/ndbm.h
