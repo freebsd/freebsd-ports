@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Email-Folder
-PORTVERSION=	0.82
+PORTVERSION=	0.83
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Email
@@ -25,9 +25,6 @@ MAN3=		Email::Folder.3 \
 		Email::Folder::Maildir.3 \
 		Email::Folder::Mbox.3 \
 		Email::Folder::Reader.3
-
-test:
-	cd ${WRKSRC} ; make test
 
 .include <bsd.port.pre.mk>
 
