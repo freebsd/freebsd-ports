@@ -172,6 +172,7 @@
     SUBDIR += xml-i18n-tools
     SUBDIR += xml4j
     SUBDIR += xp
+    SUBDIR += xsl-docbook-modular
     SUBDIR += xt
     SUBDIR += y2l
     SUBDIR += yodl

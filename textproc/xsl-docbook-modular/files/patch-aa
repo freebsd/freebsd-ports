@@ -1,0 +1,11 @@
+--- fo/index.xsl.orig	Thu Nov  9 09:56:33 2000
++++ fo/index.xsl	Tue Dec 26 14:20:58 2000
+@@ -40,7 +40,7 @@
+ 
+ <xsl:template match="book/index">
+   <xsl:variable name="id"><xsl:call-template name="object.id"/></xsl:variable>
+-  <fo:page-sequence id="{$id}">
++  <fo:page-sequence id="{$id}" master-name="pages">
+     <fo:static-content flow-name="xsl-region-after">
+       <fo:block text-align-last="center" font-size="10pt">
+         <fo:page-number/>
