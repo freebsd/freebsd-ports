@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pycodec
-PORTVERSION=	1.4.3
+PORTVERSION=	1.4.4
 CATEGORIES=	japanese python converters
 MASTER_SITES=	ftp://ftp.python.jp/JapaneseCodecs/ \
 		http://pseudo.grad.sccs.chukyo-u.ac.jp/~kajiyama/python/ \
