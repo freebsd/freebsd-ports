@@ -5,11 +5,13 @@ lib/libstunnel.la
 lib/libstunnel.a
 sbin/stunnel
 %%PORTDOCS%%share/doc/stunnel/stunnel.html
+%%PORTDOCS%%share/doc/stunnel/stunnel.fr.html
 %%PORTDOCS%%share/doc/stunnel/stunnel.pl.html
 %%PORTDOCS%%share/doc/stunnel/examples/ca.html
 %%PORTDOCS%%share/doc/stunnel/examples/ca.pl
 %%PORTDOCS%%share/doc/stunnel/examples/importCA.html
 %%PORTDOCS%%share/doc/stunnel/examples/importCA.sh
+%%PORTDOCS%%share/doc/stunnel/examples/script.sh
 %%PORTDOCS%%share/doc/stunnel/examples/stunnel.spec
 %%PORTDOCS%%share/doc/stunnel/examples/stunnel.init
 %%PORTDOCS%%share/doc/stunnel/AUTHORS

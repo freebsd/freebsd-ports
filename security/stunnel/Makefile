@@ -6,19 +6,14 @@
 #
 
 PORTNAME=	stunnel
-PORTVERSION=	4.04
-PORTREVISION=	2
+PORTVERSION=	4.05
 CATEGORIES=	security
 MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
 		ftp://stunnel.mirt.net/stunnel/OBSOLETE/ \
 		ftp://opensores.thebunker.net/pub/mirrors/stunnel/download/stunnel/src/
 
 MAINTAINER=	roam@FreeBSD.org
-COMMENT=	"SSL encryption wrapper for standard network daemons"
-
-PATCHFILES=	blinding-4.x_bri-rev2.patch
-PATCH_SITES=	http://people.FreeBSD.org/~roam/ports/patches/security/stunnel/
-PATCH_DIST_STRIP=	-p1
+COMMENT=	SSL encryption wrapper for standard network daemons
 
 USE_OPENSSL=	YES
 USE_REINPLACE=	YES
@@ -27,7 +22,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var/tmp --with-pem-dir=${PEM_DIR} \
 		--enable-static
 
-MAN8=		stunnel.8 stunnel.pl.8
+.if !defined(NOPORTDOCS)
+MAN8=		stunnel.8 stunnel.fr.8 stunnel.pl.8
+.endif
 
 PEM_DIR?=	${PREFIX}/etc
 
