@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	smbldap-tools
-PORTVERSION=	0.8.6
-PORTREVISION=	1
+PORTVERSION=	0.8.7
 CATEGORIES=	net
 MASTER_SITES=	http://samba.idealx.org/dist/
 EXTRACT_SUFX=	.tgz
@@ -42,8 +41,9 @@ do-install:
 .for i in smbldap-groupadd smbldap-groupdel smbldap-groupmod smbldap-groupshow smbldap-useradd smbldap-userdel smbldap-usermod smbldap-usershow smbldap-passwd smbldap-populate
 	${INSTALL_SCRIPT} ${WRKSRC}/$i ${PREFIX}/sbin
 .endfor
-	${INSTALL_SCRIPT} ${WRKSRC}/doc/smbldap-migrate-accounts ${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKSRC}/doc/smbldap-migrate-groups ${PREFIX}/sbin
+.for i in smbldap-migrate-accounts smbldap-migrate-groups smbldap-migrate-unix-accounts smbldap-migrate-unix-groups
+	${INSTALL_SCRIPT} ${WRKSRC}/doc/$i ${PREFIX}/sbin
+.endfor
 	${INSTALL_DATA} ${WRKSRC}/smbldap_tools.pm ${SITE_PERL}/
 	${INSTALL_DATA} ${WRKSRC}/smb.conf ${EXAMPLESDIR}/
 	${INSTALL_SCRIPT} ${WRKSRC}/configure.pl ${EXAMPLESDIR}/
