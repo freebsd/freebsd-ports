@@ -20,6 +20,8 @@ PATCH_DIST_STRIP=-p1
 MAINTAINER=	ukatsuta@mud.biglobe.ne.jp
 COMMENT=	A newsreader based by S-Lang
 
+BROKEN=		"Checksum mismatch"
+
 LIB_DEPENDS=	slang.2:${PORTSDIR}/japanese/libslang
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

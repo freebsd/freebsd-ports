@@ -15,6 +15,8 @@ MASTER_SITES=	http://www.speculate.de/styx/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scanner/parser generator
 
+BROKEN=		"Checksum mismatch"
+
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_GMAKE=	yes

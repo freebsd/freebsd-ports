@@ -16,6 +16,8 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of tools for reverse engineering Python code
 
+BROKEN=		"Checksum mismatch"
+
 BUILD_DEPENDS=	${PYXML}
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

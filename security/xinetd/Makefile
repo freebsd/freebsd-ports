@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.xinetd.org/
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	Replacement for inetd with better control and logging
 
+BROKEN=		"Checksum mismatch"
+
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
