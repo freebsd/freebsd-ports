@@ -1,0 +1,22 @@
+--- Makefile.in.orig	Tue Feb  5 23:02:47 2002
++++ Makefile.in	Tue Feb  5 22:57:32 2002
+@@ -67,7 +67,7 @@
+ 	-@mkdir -p $(DESTDIR)/$(mandir)/man1
+ 	-@mkdir -p $(DESTDIR)/$(mandir)/man5
+ 	-@mkdir -p $(DESTDIR)/@ETCDIR@
+-	@INSTALL_PROGRAM@ -o bin -g bin -m 755 bin/ftpd $(DESTDIR)/@sbindir@/in.ftpd
++	@INSTALL_PROGRAM@ -o bin -g bin -m 755 bin/ftpd $(DESTDIR)/@libexecdir@/ftpd
+ 	@INSTALL_PROGRAM@ -o bin -g bin -m 755 bin/ftpshut $(DESTDIR)/@sbindir@/ftpshut
+ 	@INSTALL_PROGRAM@ -o bin -g bin -m 755 bin/ftpcount $(DESTDIR)/@bindir@/ftpcount
+ 	@INSTALL_PROGRAM@ -o bin -g bin -m 755 bin/ftpwho $(DESTDIR)/@bindir@/ftpwho
+@@ -87,5 +87,8 @@
+ 	@INSTALL_DATA@ -o bin -g bin -m 644 doc/xferlog.5 $(DESTDIR)/$(mandir)/man5/xferlog.5
+ 	@INSTALL_DATA@ -o bin -g bin -m 644 doc/ftprestart.8 $(DESTDIR)/$(mandir)/man8/ftprestart.8
+ 	@INSTALL_DATA@ -o bin -g bin -m 644 util/privatepw/privatepw.8 $(DESTDIR)/$(mandir)/man8/privatepw.8
+-	@if test ! -f $(DESTDIR)/@ETCDIR@/ftpaccess; then echo "Since you didn't have a ftpaccess file, the sample has been"; echo "installed to $(DESTDIR)/@ETCDIR@/ftpaccess."; echo "You will probably want to edit it."; @INSTALL@ -c -o bin -g bin -m 644 doc/examples/ftpaccess $(DESTDIR)/@ETCDIR@/ftpaccess; fi
+-	@if test ! -f $(DESTDIR)/@ETCDIR@/ftpconversions; then echo "Since you didn't have a ftpconversions file, the sample has been"; echo "installed to $(DESTDIR)/@ETCDIR@/ftpconversions."; echo "You will probably want to edit it."; @INSTALL@ -c -o bin -g bin -m 644 doc/examples/ftpconversions $(DESTDIR)/@ETCDIR@/ftpconversions; fi
++	@INSTALL@ -c -o bin -g bin -m 644 doc/examples/ftpaccess $(DESTDIR)/@ETCDIR@/ftpaccess.example
++	@INSTALL@ -c -o bin -g bin -m 644 doc/examples/ftpconversions $(DESTDIR)/@ETCDIR@/ftpconversions.example
++	@INSTALL@ -c -o bin -g bin -m 644 doc/examples/ftpgroups $(DESTDIR)/@ETCDIR@/ftpgroups.example
++	@INSTALL@ -c -o bin -g bin -m 644 doc/examples/ftphosts $(DESTDIR)/@ETCDIR@/ftphosts.example
++	@INSTALL@ -c -o bin -g bin -m 644 doc/examples/ftpusers $(DESTDIR)/@ETCDIR@/ftpusers.example

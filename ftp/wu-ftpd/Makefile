@@ -9,7 +9,7 @@
 
 PORTNAME=	wu-ftpd
 PORTVERSION=	2.6.1
-PORTREVISION=   8
+PORTREVISION=   9
 CATEGORIES=	ftp
 DIST_SUBDIR=    wu-ftpd
 MASTER_SITES=	ftp://ftp.wu-ftpd.org/pub/wu-ftpd/
@@ -22,15 +22,16 @@ PATCHFILES=     ftpglob.patch \
 
 MAINTAINER=	ache@FreeBSD.org
 
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-rfc931 --disable-pasvip --enable-opie \
+		--enable-noop --disable-numericuid  --enable-nlst-dirs \
+		--prefix=${PREFIX} --with-etc-dir=${PREFIX}/etc
+
 MAN1=		ftpcount.1 ftpwho.1
-MAN5=		ftpaccess.5 ftphosts.5 ftpconversions.5 xferlog.5
+MAN5=		ftpaccess.5 ftphosts.5 ftpconversions.5 xferlog.5 \
+		ftpservers.5
 MAN8=		ftpd.8 ftpshut.8 ftprestart.8 privatepw.8
 
-post-patch:
-	@${CP} ${WRKSRC}/config.h.noac ${WRKSRC}/config.h
-	@${CP} ${WRKSRC}/src/pathnames.h.noac ${WRKSRC}/src/pathnames.h
-
-do-build:
-	cd ${WRKSRC} && ./build fbs
+USE_AUTOCONF=   yes
 
 .include <bsd.port.mk>
