@@ -12,11 +12,11 @@ bin/ers_slaveincludetable
 bin/ers_slaveremovetables
 bin/ers_slaveshowcolumns
 bin/ers_slaveshowtables
-share/doc/erserver/diagram.gif
-share/doc/erserver/install.html
-share/doc/erserver/install.pdf
-share/doc/erserver/install.txt
-share/doc/erserver/logo.png
+%%DOCSDIR%%/diagram.gif
+%%DOCSDIR%%/install.html
+%%DOCSDIR%%/install.pdf
+%%DOCSDIR%%/install.txt
+%%DOCSDIR%%/logo.png
 etc/repliclog.cfg.sample
 share/java/classes/jdbc7.0-1.2.jar
 @comment share/java/classes/erserver.jar
@@ -28,5 +28,5 @@ share/erserver/replication.cfg-template
 lib/postgresql/pte.so
 lib/postgresql/erserver.so
 %%SITE_PERL%%/eRServer.pm
-@dirrm share/doc/erserver
+@dirrm %%DOCSDIR%%
 @dirrm share/erserver
