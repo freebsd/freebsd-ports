@@ -17,7 +17,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ru@FreeBSD.org
 COMMENT=	Demos Commander, a free Norton Commander clone
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/share
 CONFIGURE_ENV=	ac_cv_lib_ncurses_tgetent=no
