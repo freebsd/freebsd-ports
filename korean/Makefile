@@ -3,7 +3,6 @@
 
     SUBDIR += Wnn
     SUBDIR += acroread-korfont
-    SUBDIR += afterstep
     SUBDIR += ami
     SUBDIR += baekmukfonts-bdf
     SUBDIR += baekmukfonts-ttf
@@ -13,7 +12,6 @@
     SUBDIR += engdic
     SUBDIR += eterm
     SUBDIR += ftghostscript5
-    SUBDIR += fvwm95
     SUBDIR += gau
     SUBDIR += gtk10
     SUBDIR += gtkcomm
@@ -54,6 +52,5 @@
     SUBDIR += pgp.language
     SUBDIR += pine
     SUBDIR += pinetreefonts
-    SUBDIR += vim
 
 .include <bsd.port.subdir.mk>
