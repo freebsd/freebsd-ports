@@ -19,8 +19,6 @@ LIB_DEPENDS=	kdecore.2:${PORTSDIR}/x11/kdelibs11 \
 USE_QT=		yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS}" \
-		INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 WRKSRC=		${WRKDIR}/kmp3
 
 .include <bsd.port.mk>
