@@ -10,7 +10,8 @@ PORTVERSION=	1.13.16
 CATEGORIES=	games
 MASTER_SITES=	http://www.giovannelli.it/~gmarco/files/ \
 	     	ftp://ftp.dementia.nu/tetrinet/servers/tetrix/
-DISTFILES=	${PORTNAME}.${PORTVERSION}.tgz
+DISTNAME=	${PORTNAME}.${PORTVERSION}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gmarco@giovannelli.it
 COMMENT=	An addictive 6 player tetr*s game
@@ -19,17 +20,11 @@ WRKSRC=		${WRKDIR}/tetrinetx-${PORTVERSION}
 
 INSTALLDIR=	${PREFIX}/tetrinet-x
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
 do-build:
-	(cd ${WRKDIR}/tetrinetx-1.13.16/src && \
-	gcc -O2 -fno-strength-reduce -Wall main.c -o ../bin/tetrix.freebsd)
-	(cd  ${WRKDIR}/tetrinetx-1.13.16/contrib/query/src && \
-	gcc -O2 -fno-strength-reduce -Wall query.c -o ../../../bin/server-query)
+	(cd ${WRKSRC}/src && \
+		${CC} ${CFLAGS} main.c -o ../bin/tetrix.freebsd)
+	(cd ${WRKSRC}/contrib/query/src && \
+		${CC} ${CFLAGS} query.c -o ../../../bin/server-query)
 
 do-install:
 	${MKDIR} ${INSTALLDIR}
@@ -48,6 +43,5 @@ post-install:
 	@${ECHO} "Please modify configuration files located in ${INSTALLDIR}"
 	@${ECHO} "before attempting to run Tetrinet server"
 	@${ECHO} ""
-	@${ECHO} ""
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
