@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	pat@FreeBSD.org
 
 LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
-BUILD_DEPENDS=	automake14:${PORTSDIR}/devel/automake14 \
-		autoconf213:${PORTSDIR}/devel/autoconf213
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
@@ -25,6 +23,7 @@ USE_MESA=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS} \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
+USE_AUTOMAKE_VER=	14
 
 MAN6=		${PORTNAME}.6
 
@@ -33,14 +32,12 @@ pre-patch:
 		${WRKSRC}/glchessrc
 	@${PERL} -pi.orig -e 's!/etc!${PREFIX}/etc!' \
 		${WRKSRC}/src/config.c
-	@${PERL} -pi.orig -e 's|aclocal|${ACLOCAL}|; s|autoconf|${AUTOCONF}|; \
-		s|automake|${AUTOMAKE}|' ${WRKSRC}/autogen.sh
+	@${PERL} -pi.orig -e 's|^aclocal|${ACLOCAL}|; \
+		s|^autoconf|${AUTOCONF}|; s|^automake|${AUTOMAKE}|' \
+		${WRKSRC}/autogen.sh
 
 pre-configure:
-	( cd ${WRKSRC} && ${SH} autogen.sh )
-	@${PERL} -pi.orig -e 's|aclocal|${ACLOCAL}|; s|autoconf|${AUTOCONF}|; \
-		s|automake|${AUTOMAKE}|; s|autoheader|${AUTOHEADER}|' \
-		${WRKSRC}/configure
+	cd ${WRKSRC}; ${SH} autogen.sh
 
 do-install:
 	@${MKDIR} ${DATADIR}
