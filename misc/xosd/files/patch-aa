@@ -1,0 +1,62 @@
+diff -ruN Makefile.orig Makefile
+--- Makefile.orig	Fri Mar 23 09:11:14 2001
++++ Makefile	Wed May  2 05:30:30 2001
+@@ -5,20 +5,18 @@
+ LIBRARY_VERSION=0
+ VERSION=0.7.0
+ 
+-PREFIX=/usr/local
+ EXEC_PREFIX=$(PREFIX)
+ BINDIR=$(EXEC_PREFIX)/bin
+ LIBDIR=$(EXEC_PREFIX)/lib
+ MANDIR=$(PREFIX)/man
+ INCLUDEDIR=$(PREFIX)/include
+-XMMS_PLUGINDIR=$(HOME)/.xmms
+ 
+ CC=gcc
+ INSTALL=/usr/bin/install -c
+ INSTALL_DATA=$(INSTALL) -m 644
+ 
+-CFLAGS=-O2 -Wall -pipe -I. -DXOSD_VERSION=\"$(VERSION)\" -I/usr/X11R6/include
+-LDFLAGS=-L. -L/usr/X11R6/lib -lX11 -lXext -lpthread -lXt
++CFLAGS+=-I. -DXOSD_VERSION=\"$(VERSION)\" -I/usr/X11R6/include -I/usr/local/include
++LDFLAGS=-lc_r -L. -L/usr/X11R6/lib -L/usr/local/lib -lX11 -lXext -pthread -lXt -lgnugetopt
+ 
+ XOSDLIBS=-lxosd
+ 
+@@ -66,9 +64,11 @@
+ 	$(INSTALL) libxosd.so $(LIBDIR)/libxosd.so.$(LIBRARY_VERSION)
+ 	rm -f $(PREFIX)/lib/libxosd.so
+ 	ln -s $(PREFIX)/lib/libxosd.so.$(LIBRARY_VERSION) $(PREFIX)/lib/libxosd.so
+-	mkdir -p $(XMMS_PLUGINDIR)/Plugins/General
+-	rm -f $(XMMS_PLUGINDIR)/Plugins/General/libxmms_osd.so
+-	cp -a libxmms_osd.so $(XMMS_PLUGINDIR)/Plugins/General
++	if [ "$(XMMS_PLUGINDIR)" ]; then \
++		mkdir -p $(XMMS_PLUGINDIR)/General; \
++		rm -f $(XMMS_PLUGINDIR)/General/libxmms_osd.so; \
++		cp -pf libxmms_osd.so $(XMMS_PLUGINDIR)/General; \
++	fi
+ 	$(INSTALL) osd_cat $(BINDIR)
+ 	mkdir -p $(MANDIR)/man1 $(MANDIR)/man3
+ 	$(INSTALL_DATA) osd_cat.1 $(MANDIR)/man1/
+diff -ruN xosd.c.orig xosd.c
+--- xosd.c.orig	Fri Mar 23 08:55:45 2001
++++ xosd.c	Wed May  2 04:34:44 2001
+@@ -270,7 +270,7 @@
+       if (!XCheckWindowEvent (osd->display, osd->window, ExposureMask, &report))
+ 	 {
+ 	 MUTEX_RELEASE ();
+-	 usleep (500);
++	 usleep (100000);
+ 	 continue;
+ 	 }
+       MUTEX_RELEASE ();
+@@ -304,7 +304,7 @@
+    
+    while (!osd->done)
+       {
+-      usleep (1000);
++      usleep (200000);
+       MUTEX_GET ();
+       if (osd->timeout != -1 && 
+ 	  osd->mapped && 
