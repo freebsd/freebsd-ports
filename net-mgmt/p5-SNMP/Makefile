@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS= 	snmp.4:${PORTSDIR}/net/ucd-snmp
+LIB_DEPENDS= 	snmp.4:${PORTSDIR}/net/net-snmp
 
 PERL_CONFIGURE=	yes
 
