@@ -27,7 +27,7 @@ Gnome_Pre_Include=			bsd.gnome.mk
 
 # non-version specific components
 _USE_GNOME_ALL=	gnomehack lthack gnomeprefix gnomehier esound gnomemimedata \
-				gnometarget pkgconfig intltool intlhack
+		gnometarget pkgconfig intltool intlhack
 
 # GNOME 1 components
 _USE_GNOME_ALL+=libghttp glib12 gtk12 libxml gdkpixbuf imlib orbit \
@@ -62,7 +62,7 @@ gnomehack_PRE_PATCH=	${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLA
 				 s|DATADIRNAME=lib|DATADIRNAME=share|g'
 
 lthack_PRE_PATCH=	${FIND} ${WRKSRC} -name "configure" | ${XARGS} ${REINPLACE_CMD} -e \
-					'/^LIBTOOL_DEPS="$$ac_aux_dir\/ltmain.sh"$$/s|$$|; $$ac_aux_dir/ltconfig $$LIBTOOL_DEPS;|'
+				'/^LIBTOOL_DEPS="$$ac_aux_dir\/ltmain.sh"$$/s|$$|; $$ac_aux_dir/ltconfig $$LIBTOOL_DEPS;|'
 
 gnomehier_DETECT=	${X11BASE}/share/gnome/.keep_me
 gnomehier_RUN_DEPENDS=	${gnomehier_DETECT}:${PORTSDIR}/misc/gnomehier
@@ -221,19 +221,19 @@ pygnome_BUILD_DEPENDS=	${pygnome_DETECT}:${PORTSDIR}/x11-toolkits/py-gnome
 pygnome_RUN_DEPENDS=	${pygnome_DETECT}:${PORTSDIR}/x11-toolkits/py-gnome
 pygnome_USE_GNOME_IMPL=	gtkhtml pygtk
 
-glib20_LIB_DEPENDS=	glib-2.0.200:${PORTSDIR}/devel/glib20
+glib20_LIB_DEPENDS=	glib-2.0.400:${PORTSDIR}/devel/glib20
 glib20_DETECT=		${LOCALBASE}/libdata/pkgconfig/glib-2.0.pc
 glib20_USE_GNOME_IMPL=gnometarget pkgconfig
 
-atk_LIB_DEPENDS=	atk-1.0.400:${PORTSDIR}/accessibility/atk
+atk_LIB_DEPENDS=	atk-1.0.600:${PORTSDIR}/accessibility/atk
 atk_DETECT=		${LOCALBASE}/libdata/pkgconfig/atk.pc
 atk_USE_GNOME_IMPL=	glib20
 
-pango_LIB_DEPENDS=	pango-1.0.200:${PORTSDIR}/x11-toolkits/pango
+pango_LIB_DEPENDS=	pango-1.0.399:${PORTSDIR}/x11-toolkits/pango
 pango_DETECT=		${X11BASE}/libdata/pkgconfig/pango.pc
 pango_USE_GNOME_IMPL=	glib20
 
-gtk20_LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
+gtk20_LIB_DEPENDS=	gtk-x11-2.0.400:${PORTSDIR}/x11-toolkits/gtk20
 gtk20_DETECT=		${X11BASE}/libdata/pkgconfig/gtk+-x11-2.0.pc
 gtk20_USE_GNOME_IMPL=	intltool atk pango
 
@@ -269,7 +269,7 @@ gconf2_LIB_DEPENDS=	gconf-2.5:${PORTSDIR}/devel/gconf2
 gconf2_DETECT=		${X11BASE}/libdata/pkgconfig/gconf-2.0.pc
 gconf2_USE_GNOME_IMPL=	orbit2 libxml2 gtk20 linc
 
-gnomevfs2_LIB_DEPENDS=	gnomevfs-2.400:${PORTSDIR}/devel/gnomevfs2
+gnomevfs2_LIB_DEPENDS=	gnomevfs-2.600:${PORTSDIR}/devel/gnomevfs2
 gnomevfs2_DETECT=	${X11BASE}/libdata/pkgconfig/gnome-vfs-2.0.pc
 gnomevfs2_USE_GNOME_IMPL=gconf2 libbonobo gnomemimedata
 
@@ -277,7 +277,7 @@ gail_LIB_DEPENDS=	gailutil.17:${PORTSDIR}/accessibility/gail
 gail_DETECT=		${X11BASE}/libdata/pkgconfig/gail.pc
 gail_USE_GNOME_IMPL=	libgnomecanvas
 
-libgnomecanvas_LIB_DEPENDS=	gnomecanvas-2.400:${PORTSDIR}/graphics/libgnomecanvas
+libgnomecanvas_LIB_DEPENDS=	gnomecanvas-2.600:${PORTSDIR}/graphics/libgnomecanvas
 libgnomecanvas_DETECT=		${X11BASE}/libdata/pkgconfig/libgnomecanvas-2.0.pc
 libgnomecanvas_USE_GNOME_IMPL=	libglade2 libartlgpl2
 
@@ -293,7 +293,7 @@ libgnomeprintui_LIB_DEPENDS=	gnomeprintui-2-2.1:${PORTSDIR}/x11-toolkits/libgnom
 libgnomeprintui_DETECT=		${X11BASE}/libdata/pkgconfig/libgnomeprintui-2.2.pc
 libgnomeprintui_USE_GNOME_IMPL=	libgnomeprint libgnomecanvas
 
-libgnome_LIB_DEPENDS=	gnome-2.400:${PORTSDIR}/x11/libgnome
+libgnome_LIB_DEPENDS=	gnome-2.600:${PORTSDIR}/x11/libgnome
 libgnome_DETECT=	${X11BASE}/libdata/pkgconfig/libgnome-2.0.pc
 libgnome_USE_GNOME_IMPL=libxslt gnomevfs2 esound
 
@@ -301,7 +301,7 @@ libbonoboui_LIB_DEPENDS=	bonoboui-2.0:${PORTSDIR}/x11-toolkits/libbonoboui
 libbonoboui_DETECT=		${X11BASE}/libdata/pkgconfig/libbonoboui-2.0.pc
 libbonoboui_USE_GNOME_IMPL=	libgnomecanvas libgnome
 
-libgnomeui_LIB_DEPENDS=		gnomeui-2.400:${PORTSDIR}/x11-toolkits/libgnomeui
+libgnomeui_LIB_DEPENDS=		gnomeui-2.600:${PORTSDIR}/x11-toolkits/libgnomeui
 libgnomeui_DETECT=		${X11BASE}/libdata/pkgconfig/libgnomeui-2.0.pc
 libgnomeui_USE_GNOME_IMPL=	libbonoboui
 
@@ -322,7 +322,7 @@ gnomedesktop_DETECT=		${X11BASE}/libdata/pkgconfig/gnome-desktop-2.0.pc
 gnomedesktop_USE_GNOME_IMPL=	libgnomeui
 gnomedesktop_GNOME_DESKTOP_VERSION=2
 
-libwnck_LIB_DEPENDS=	wnck-1.11:${PORTSDIR}/x11-toolkits/libwnck
+libwnck_LIB_DEPENDS=	wnck-1.13:${PORTSDIR}/x11-toolkits/libwnck
 libwnck_DETECT=		${X11BASE}/libdata/pkgconfig/libwnck-1.0.pc
 libwnck_USE_GNOME_IMPL=	gtk20
 
@@ -334,11 +334,11 @@ libzvt_LIB_DEPENDS=	zvt-2.0.0:${PORTSDIR}/x11-toolkits/libzvt
 libzvt_DETECT=	${X11BASE}/libdata/pkgconfig/libzvt-2.0.pc
 libzvt_USE_GNOME_IMPL=	gtk20
 
-librsvg2_LIB_DEPENDS=	rsvg-2.6:${PORTSDIR}/graphics/librsvg2
+librsvg2_LIB_DEPENDS=	rsvg-2.8:${PORTSDIR}/graphics/librsvg2
 librsvg2_DETECT=	${X11BASE}/libdata/pkgconfig/librsvg-2.0.pc
 librsvg2_USE_GNOME_IMPL=libartlgpl2 libxml2 gtk20 libgsf
 
-eel2_LIB_DEPENDS=	eel-2.6:${PORTSDIR}/x11-toolkits/eel2
+eel2_LIB_DEPENDS=	eel-2.8:${PORTSDIR}/x11-toolkits/eel2
 eel2_DETECT=		${X11BASE}/libdata/pkgconfig/eel-2.0.pc
 eel2_USE_GNOME_IMPL=	gnomevfs2 libgnomeui gail
 
@@ -376,8 +376,8 @@ gtksourceview_LIB_DEPENDS=	gtksourceview-1.0.0:${PORTSDIR}/x11-toolkits/gtksourc
 gtksourceview_DETECT=	${X11BASE}/libdata/pkgconfig/gtksourceview-1.0.pc
 gtksourceview_USE_GNOME_IMPL=libgnome libgnomeprintui
 
-pkgconfig_BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 pkgconfig_DETECT=			${LOCALBASE}/bin/pkg-config
+pkgconfig_BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 pkgconfig_RUN_DEPENDS=		pkg-config:${PORTSDIR}/devel/pkgconfig
 
 libgsf_LIB_DEPENDS=			gsf-1.9:${PORTSDIR}/devel/libgsf
@@ -394,17 +394,17 @@ pygnome2_BUILD_DEPENDS=	${pygnome2_DETECT}:${PORTSDIR}/x11-toolkits/py-gnome2
 pygnome2_RUN_DEPENDS=	${pygnome2_DETECT}:${PORTSDIR}/x11-toolkits/py-gnome2
 pygnome2_USE_GNOME_IMPL=libgnomeprintui libgtkhtml gnomepanel libzvt nautilus2 pygtk2
 
-gstreamerplugins_LIB_DEPENDS=	gstplay-0.6.1:${PORTSDIR}/multimedia/gstreamer-plugins \
-								gstreamer-0.6:${PORTSDIR}/multimedia/gstreamer
-gstreamerplugins_DETECT=        ${X11BASE}/libdata/pkgconfig/gstreamer-play-0.6.pc
-gstreamerplugins_USE_GNOME_IMPL=        gconf2
+gstreamerplugins_LIB_DEPENDS=	gstplay-0.8.1:${PORTSDIR}/multimedia/gstreamer-plugins \
+								gstreamer-0.8:${PORTSDIR}/multimedia/gstreamer
+gstreamerplugins_DETECT=	${X11BASE}/libdata/pkgconfig/gstreamer-play-0.7.pc
+gstreamerplugins_USE_GNOME_IMPL=	gconf2
 
 intltool_DETECT=		${LOCALBASE}/bin/intltool-extract
 intltool_BUILD_DEPENDS=	${intltool_DETECT}:${PORTSDIR}/textproc/intltool
 
 intlhack_PRE_PATCH=		${FIND} ${WRKSRC} -name "intltool-merge.in" | ${XARGS} ${REINPLACE_CMD} -e \
-						's|mkdir $$lang or|mkdir $$lang, 0777 or| ; \
-						 s|^push @INC, "/.*|push @INC, "${LOCALBASE}/share/intltool";|'
+				's|mkdir $$lang or|mkdir $$lang, 0777 or| ; \
+				 s|^push @INC, "/.*|push @INC, "${LOCALBASE}/share/intltool";|'
 intlhack_USE_GNOME_IMPL=intltool
 
 gtkhtml3_LIB_DEPENDS=	gtkhtml-3.0.4:${PORTSDIR}/www/gtkhtml3
@@ -461,7 +461,6 @@ GNOME_DESKTOP_VERSION?=	2
 # it does, and its requirement disagrees with the user's chosen desktop,
 # do not add the component to the HAVE_GNOME list.
 
-USE_GNOME?=
 _USE_GNOME_SAVED:=${USE_GNOME}
 _USE_GNOME_DESKTOP=yes
 HAVE_GNOME?=
