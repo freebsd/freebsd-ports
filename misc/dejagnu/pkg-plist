@@ -1,5 +1,6 @@
 bin/calc
 bin/runtest
+include/dejagnu.h
 share/dejagnu/libexec/config.guess
 share/dejagnu/runtest.exp
 share/dejagnu/i960glue.c

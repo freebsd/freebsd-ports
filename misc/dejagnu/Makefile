@@ -7,6 +7,7 @@
 
 PORTNAME=	dejagnu
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	misc tcl83 tk83
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	dejagnu
@@ -17,5 +18,7 @@ RUN_DEPENDS=	expect:${PORTSDIR}/lang/expect
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+
+MAN1=		runtest.1
 
 .include <bsd.port.mk>
