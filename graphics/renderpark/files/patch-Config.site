@@ -1,0 +1,37 @@
+--- Config.site.orig	Fri Jan 31 20:31:11 2003
++++ Config.site	Fri Jan 31 20:40:09 2003
+@@ -2,27 +2,28 @@
+ # contributed by Bertrand Petit elrond@phoe.frmug.org 23-feb-98
+ 
+ # with GCC:
+-CC = gcc 
++CC = %%CC%%
++CXX = %%CXX%%
+ MAKEDEPEND = gcc -M
+ PROFLAGS = # -pg 		# for profiling
+-DEBUGFLAGS = -g 		# for debugging
+-OPTFLAGS = -O3 -Wall -pedantic -ansi
++DEBUGFLAGS = # -g 		# for debugging
++OPTFLAGS = %%CFLAGS%% #-O3 -Wall -pedantic -ansi -Wno-long-long
+ 
+ ################################################################
+ # OpenGL/Mesa
+ DRIVER = opengl
+ 
+ # Mesa (free OpenGL-like library)
+-MESAHOME = /usr/local
++MESAHOME = ${X11BASE}
+ DRIVERFLAGS = -I$(MESAHOME)/include
+ DRIVERLIBS = -L$(MESAHOME)/lib -lGLU -lGL
+ 
+ ################################################################
+-X11HOME = /usr/X11R6
++X11HOME = ${X11BASE}
+ XINCLUDES = -I$(X11HOME)/include 
+ XLIBS = -L$(X11HOME)/lib -lXt -lXmu -lXext -lX11 
+ 
+-MOTIFHOME = /usr/local
++MOTIFHOME = ${X11BASE}
+ MOTIFINCLUDES = -I$(MOTIFHOME)/include
+ # -lXpm library necessary for Motif >=2.0, not for Motif <2.0
+ MOTIFLIBS = -L$(MOTIFHOME)/lib -lXm -lXpm
