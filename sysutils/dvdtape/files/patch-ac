@@ -1,0 +1,77 @@
+--- dvdtape.c.orig	Wed Aug  2 08:58:21 2000
++++ dvdtape.c	Sun Jun 10 22:27:29 2001
+@@ -153,8 +153,8 @@
+ 				  	fprintf (stderr,
+ 						 "Disc diameter must be \"8cm\" or \"12cm\".\n");
+ 					exit(1);
+-					break;
+ 				}
++				break;
+ 			case 'l': layer = atoi(optarg); break;
+ 			case 'L':
+ 				layers = atoi(optarg);
+@@ -184,6 +184,7 @@
+ 						 "Read out speed must be 2, 5 or 10 for 2.52, 5.04, or 10.08 megabits/second.\n");
+ 					exit(1);
+ 				}
++				break;
+ 			case 's': side = atoi(optarg); break;
+ 			case 'S':
+ 			  	sides = atoi(optarg);
+@@ -335,7 +336,7 @@
+ static void
+ write_vol_label(int outfd) {
+   	char buf[81];
+-  	sprintf(buf,
++  	snprintf(buf, sizeof(buf),
+ 		"VOL1"		/* Label ID */
+ 		"REEL%-2d"	/* Reel ID */
+ 		" "		/* Accessibility */
+@@ -351,7 +352,7 @@
+ static void
+ write_hdr1(int outfd, char *labelid, char *fileid, int block_count) {
+   	char buf[81];
+-  	sprintf(buf,
++  	snprintf(buf, sizeof(buf),
+ 		"%-4s"		/* Label ID */
+ 		"%-17s"		/* File ID */
+ 		"DVD   "	/* File set ID, 6 bytes */
+@@ -394,7 +395,7 @@
+ static void
+ write_hdr2(int outfd, char *labelid, int blocksize, int recordsize) {
+   	char buf[81];
+-  	sprintf(buf,
++  	snprintf(buf, sizeof(buf),
+ 		"%-4s"		/* Label ID */
+ 		"F"		/* Record format, "F" = fixed */
+ 		"%05d"		/* block size */
+@@ -415,9 +416,9 @@
+ 	if (strlen(usertext) == 0)
+ 	    strcpy(txtsize, "  ");
+ 	else
+-	    sprintf (txtsize, "%02d", strlen(usertext));
++	    snprintf (txtsize, sizeof(txtsize), "%02d", strlen(usertext));
+ 
+-  	sprintf(buf,
++  	snprintf(buf, sizeof(buf),
+ 		"DDP 2.00"	/* DDP level */
+ 		"             "	/* UPC, reserved, 13 bytes */
+ 		"        "	/* MSS, Map Stream Start, 8 bytes */
+@@ -456,7 +457,7 @@
+ static void
+ write_ddpms(int outfd, char *streamtype, int start, int len, char *filename) {
+   	char buf[129];
+-  	sprintf(buf,
++  	snprintf(buf, sizeof(buf),
+ 		"VVVM"		/* MPV Map Packet Valid */
+ 		"%-2s"		/* DST Data Stream Type
+ 				   "D2" = control
+@@ -657,7 +658,7 @@
+ 	struct tm *tm;
+ 	time(&now);
+ 	tm = localtime(&now);
+-	sprintf (time_string, "%c%02d%03d",
++	snprintf (time_string, sizeof(time_string), "%c%02d%03d",
+ 		 tm->tm_year >= 100 ? '0' : ' ',
+ 		 tm->tm_year % 100,
+ 		 tm->tm_yday + 1 /* E.g., Write Jan 1 as day 1, not day 0.*/
