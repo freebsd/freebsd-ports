@@ -4,4 +4,5 @@ include/nessus/nasl.h
 lib/libnasl.a
 lib/libnasl.la
 lib/libnasl.so
-lib/libnasl.so.2
+lib/libnasl.so.4
+var/nessus/nessus_org.pem
