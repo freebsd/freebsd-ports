@@ -29,7 +29,10 @@ MAN1=		bg5conv.1 cef5conv.1 cefconv.1 cefsconv.1 extconv.1 \
 		hbf2gf.1 sjisconv.1 ttf2pk.1 ttf2tfm.1
 
 pre-patch:
-	${RM} -fr ${WRKSRC}/Makefile
+	@${RM} -f ${WRKSRC}/Makefile
+
+post-patch:
+	@${RM} -f ${WRKSRC}/texinput/Bg5/c00bsmi.fd.orig
 
 post-install:
 .if !defined(NOPORTDOCS)
