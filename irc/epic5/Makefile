@@ -28,7 +28,7 @@ MAN1=		epic.1
 DISTFILE_HELP=	${PORTNAME}-help-20031106.tar.gz
 
 post-extract:
-	@${FIND} . -type d -name CVS | ${XARGS} ${RM} -rf
+	@${FIND} ${WRKSRC} -type d -name CVS | ${XARGS} ${RM} -rf
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|8.3|8.4|g' ${WRKSRC}/configure
