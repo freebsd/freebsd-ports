@@ -1,0 +1,22 @@
+--- programs/Xserver/hw/xfree86/drivers/i810/i810_driver.c.1  Sat Oct 28 21:59:54 2000
++++ programs/Xserver/hw/xfree86/drivers/i810/i810_driver.c    Sat Oct 28 22:03:34 2000
+@@ -391,6 +391,9 @@
+                                   devSections, numDevSections,
+                                   drv, &usedChips);
+
++   if (flags & PROBE_DETECT)
++       foundScreen = TRUE;
++   else
+    for (i=0; i<numUsed; i++) {
+        ScrnInfoPtr pScrn = NULL;
+        /* Allocate new ScrnInfoRec and claim the slot */
+@@ -435,6 +438,8 @@
+    char *mod=0, *reqSym=0;
+    int flags24;
+    rgb defaultWeight = {0, 0, 0};
++
++   if (flags & PROBE_DETECT) return FALSE;
+
+    if (pScrn->numEntities != 1) return FALSE;
+                                                                        
+
