@@ -1,0 +1,47 @@
+--- config.h.orig	Tue Sep 28 10:58:56 1999
++++ config.h	Fri Oct  8 02:26:28 1999
+@@ -28,13 +28,13 @@
+ /**********************************************************/
+ #ifdef makefile_parameter
+ 
+-BIN_DIR = /usr/local/bin
+-HELP_DIR = /usr/local/lib
+-HELP_FILE = w3mhelp_ja.html
+-SYS_LIBRARIES =  -lbsd -lnsl -ltermcap
++BIN_DIR = %%PREFIX%%/bin
++HELP_DIR = %%PREFIX%%/share/doc/w3m
++HELP_FILE = w3mhelp_en.html
++SYS_LIBRARIES =  -ltermcap
+ LOCAL_LIBRARIES = 
+ CC = gcc
+-MYCFLAGS = -g -I./gc 
++MYCFLAGS = -I./gc 
+ KEYBIND_SRC = keybind.c
+ KEYBIND_OBJ = keybind.o
+ EXT=
+@@ -48,15 +48,19 @@
+ #define JA 0
+ #define EN 1
+ #define LANG JA
+-#define KANJI_SYMBOLS
+ #define COLOR
+-#define MOUSE
++#undef MOUSE
+ #define MENU
++#undef JAPANESE_MSG
++
++#ifdef JAPANESE_MSG
++#define KANJI_SYMBOLS
++#endif
+ 
+-#define DEF_EDITOR "/bin/vi"
+-#define DEF_MAILER "/bin/mail"
+-#define DEF_EXT_BROWSER "/usr/bin/lynx"
+-#define HELP_FILE "/usr/local/lib/w3mhelp.html"
++#define DEF_EDITOR "/usr/bin/vi"
++#define DEF_MAILER "/usr/bin/mail"
++#define DEF_EXT_BROWSER "%%LOCALBASE%%/bin/netscape"
++#define HELP_FILE "%%LOCALBASE%%/share/doc/w3m/w3mhelp.html"
+ #define BOOKMARK "~/.w3m/bookmark.html"
+ #define KEYMAP_FILE  "~/.w3m/keymap"
+ #define MENU_FILE    "~/.w3m/menu"
