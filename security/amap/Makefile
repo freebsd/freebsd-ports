@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amap
-PORTVERSION=	4.5
+PORTVERSION=	4.6
 CATEGORIES=	security
 MASTER_SITES=	http://www.thc.org/releases/
 
@@ -16,14 +16,14 @@ COMMENT=	Application mapper
 HAS_CONFIGURE=	yes
 
 MAN1=		amap.1
-PORTDOCS=	README TODO CHANGES VOTE
+PORTDOCS=	README TODO CHANGES
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/amap ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/amapcrap ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/share/amap
+	${MKDIR} ${DATADIR}
 .	for i in appdefs.resp appdefs.rpc appdefs.trig
-		${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/amap
+		${INSTALL_DATA} ${WRKSRC}/${i} ${DATADIR}
 .	endfor
 	${INSTALL_MAN} ${WRKSRC}/amap.1 ${MANPREFIX}/man/man1
 .	if !defined(NOPORTDOCS)

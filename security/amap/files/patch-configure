@@ -1,5 +1,5 @@
---- configure.orig	Sun Sep 14 11:10:24 2003
-+++ configure	Sun Sep 14 11:16:41 2003
+--- configure.orig	Wed Oct 29 22:50:05 2003
++++ configure	Mon Aug 23 13:48:25 2004
 @@ -33,7 +33,9 @@
  echo
  
@@ -21,12 +21,3 @@
  /opt/*ssl/include /usr/*ssl/include /usr/local/*ssl/include
  do
      if [ "X" = "X$SSL_IPATH" ]; then
-@@ -152,7 +155,7 @@
-     XLIBS="$XLIBS -lresolv"
- fi
- 
--for i in /usr/man /usr/share/man /usr/local/man /usr/local/share/man ; do
-+for i in ${PREFIX}/man /usr/man /usr/share/man /usr/local/man /usr/local/share/man ; do
-   if [ -d $i ]; then
-     MANDIR=$i
-   fi
