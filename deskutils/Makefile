@@ -17,6 +17,7 @@
     SUBDIR += drivel
     SUBDIR += fusenshi
     SUBDIR += gaddr
+    SUBDIR += ganttproject
     SUBDIR += gcal
     SUBDIR += gdeskcal
     SUBDIR += gdeskcal-skins
