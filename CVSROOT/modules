@@ -6089,6 +6089,7 @@ py-opengl	ports/graphics/py-opengl
 py-openssl	ports/security/py-openssl
 py-optik	ports/devel/py-optik
 py-orbit	ports/devel/py-orbit
+py-orbit2	ports/devel/py-orbit2
 py-paint	ports/graphics/py-paint
 py-pcap	ports/net/py-pcap
 py-period	ports/devel/py-period
