@@ -3,7 +3,7 @@
 # Date created:		30 Sep 1997
 # Whom: Kawaguti Ginga <ginga@amalthea.phys.s.u-tokyo.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/04/22 14:19:07 kuriyama Exp $
 #
 
 DISTNAME=	Kappa20-0.2
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.st.ryukoku.ac.jp/pub/X11/fonts/ \
 MAINTAINER=	ginga@amalthea.phys.s.u-tokyo.ac.jp
 
 USE_X11=	yes
-MAKE_ENV+=	INSTALL_DATA="${INSTALL_DATA}"
+MAKE_ENV=	INSTALL_DATA="${INSTALL_DATA}"
 
 post-install:
 .if !defined(NOPORTDOCS)
