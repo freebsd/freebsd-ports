@@ -6,17 +6,21 @@
 #
 
 PORTNAME=	clip
-PORTVERSION=	1.1.9.1
-PORTREVISION=	1
+PORTVERSION=	1.1.10.1
 CATEGORIES=	databases lang
 MASTER_SITES=	ftp://ftp.linux.ru.net/mirrors/clip/	\
 		ftp://ftp.lastik.ru/clip/		\
 		ftp://ftp.itk.ru/pub/clip/
-DISTNAME=	${PORTNAME}-prg-${PORTVERSION:R}-${PORTVERSION:E}
-EXTRACT_SUFX=	.tgz
+DISTFILES=	${PORTNAME}-prg-${PORTVERSION:R}-${PORTVERSION:E}.tgz \
+		patch.tgz
+DIST_SUBDIR=	clip
+
+EXTRACT_ONLY=	${PORTNAME}-prg-${PORTVERSION:R}-${PORTVERSION:E}.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	xBase and Clipper language compatible compiler
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-prg-${PORTVERSION:R}-${PORTVERSION:E}
 
 USE_GETTEXT=	yes
 
@@ -82,15 +86,27 @@ CONFIGURE_WRKSRC=	${WRKSRC}/clip
 ALL_TARGET=		local
 MAKE_ENV=		HOME=${WRKDIR} LANG=C
 
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
 PGSQL_PORT?=	databases/postgresql7
 FIREBIRD_PORT?=	databases/firebird
 
 BIN2STRIP=	bdbf clip clip_bl clip_blank clip_cld clip_conv clip_dbf2txt	\
 		clip_dbg clip_fl clip_hashextract clip_hindex clip_hseek	\
 		clip_hv clip_prg clip_run clip_trans clip_we clipar cliphash	\
-		codb_ab codb_abx codb_addobj codb_make codb_pack ctosgml dbc	\
+		cobra_clnt1 cobra_serv codb_ab codb_abx codb_addobj codb_export \
+		codb_make codb_pack codb_reindex ctosgml dbc	\
 		ftosgml gen_tbl po_compat po_extr po_subst pp_ron sqlrun	\
 		wcl2prg www_clip xclip
+
+pre-everything::
+	@if [ ! -z "${CLIPROOT}" ]; then \
+		${ECHO} Please unset CLIPROOT in your environment! ; \
+		exit 1; \
+	fi
+
+pre-patch:
+	@cd ${WRKSRC} && ${PAX} -z -r -s '/clip-prg//' -f ${DISTDIR}/${DIST_SUBDIR}/patch.tgz
 
 pre-configure:
 	@${FIND} ${WRKSRC} -name "Makefile*" -or -name Imakefile |		\
@@ -108,8 +124,12 @@ pre-configure:
 	@${REINPLACE_CMD} -e "s|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|"		\
 	-e "s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|" ${WRKSRC}/cliplibs/clip-odbc/configure
 
+post-build: # don't include emppty directories
+	@cd ${WRKDIR}/cliproot && ${RMDIR} include/memdebug doc/clip-oasis/nanfor doc/clip-oasis
+
 do-install:
-	${CP} -R ${WRKDIR}/cliproot ${PREFIX}/clip
+	@${MKDIR} ${PREFIX}/clip
+	@${CP} -R ${WRKDIR}/cliproot/* ${PREFIX}/clip
 .for FILE in ${BIN2STRIP}
 	@${STRIP_CMD} ${PREFIX}/clip/bin/${FILE}
 .endfor
@@ -117,5 +137,9 @@ do-install:
 	do									\
 		${STRIP_CMD} $$f ;				\
 	done
+
+post-install:
+	@${SED} 's+/usr/local+${PREFIX}+' <${.CURDIR}/pkg-message >${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

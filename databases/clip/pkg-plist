@@ -35,6 +35,7 @@ clip/bin/codb_addobj
 clip/bin/codb_export
 clip/bin/codb_make
 clip/bin/codb_pack
+clip/bin/codb_reindex
 clip/bin/ctosgml
 clip/bin/dbc
 clip/bin/ftosgml
@@ -137,11 +138,17 @@ clip/cobra/auth/other
 clip/cobra/auth/pam-auth.c
 clip/cobra/auth/pam-err-msg
 clip/cobra/cobra_clnt.ini
-clip/cobra/cobra_clnt1
-clip/cobra/cobra_serv
 clip/cobra/cobra_serv.ini
+clip/cobra/codbdlist.po
 clip/cobra/codbtview.po
 clip/cobra/files/pam-err-msg
+clip/cobra/mod-ini/Makefile
+clip/cobra/mod-ini/cobra_codb.po
+clip/cobra/mod-ini/cobra_codb.prg
+clip/cobra/mod-ini/cobra_hello.po
+clip/cobra/mod-ini/cobra_hello.prg
+clip/cobra/mod-ini/cobra_mod.po
+clip/cobra/mod-ini/cobra_mod.prg
 clip/cobra/module1.po
 clip/cobra/tcp-wrap/Makefile
 clip/cobra/tcp-wrap/tcp-wrap.c
@@ -376,23 +383,41 @@ clip/doc/example/clip-fw/tooltip.prg
 clip/doc/example/clip-gd/Makefile
 clip/doc/example/clip-gd/gr.prg
 clip/doc/example/clip-gtk/Makefile
+clip/doc/example/clip-gtk/accel.prg
 clip/doc/example/clip-gtk/basket.bmp
 clip/doc/example/clip-gtk/clip.xpm
 clip/doc/example/clip-gtk/clipgtktest.prg
+clip/doc/example/clip-gtk/note.prg
+clip/doc/example/clip-gtk/simple.prg
 clip/doc/example/clip-gtk/tbrow.prg
 clip/doc/example/clip-gtk/tbrow.xpm
+clip/doc/example/clip-gtk/test.prg
+clip/doc/example/clip-gtk/test_gtk.prg
+clip/doc/example/clip-gtk/test_image.prg
+clip/doc/example/clip-gtk/test_list.prg
+clip/doc/example/clip-gtk/window.prg
+clip/doc/example/clip-gtk/winpic.prg
+clip/doc/example/clip-gtk/x.xpm
 clip/doc/example/clip-gtk2/Makefile
 clip/doc/example/clip-gtk2/accel.prg
 clip/doc/example/clip-gtk2/banner.gif
 clip/doc/example/clip-gtk2/basket.bmp
 clip/doc/example/clip-gtk2/clip.xpm
 clip/doc/example/clip-gtk2/clipgtktest.prg
+clip/doc/example/clip-gtk2/container.prg
+clip/doc/example/clip-gtk2/fonttest.prg
+clip/doc/example/clip-gtk2/note.prg
 clip/doc/example/clip-gtk2/simple.prg
 clip/doc/example/clip-gtk2/tbrow.prg
 clip/doc/example/clip-gtk2/tbrow.xpm
+clip/doc/example/clip-gtk2/test.prg
+clip/doc/example/clip-gtk2/test_dnd.prg
+clip/doc/example/clip-gtk2/test_gtk.prg
 clip/doc/example/clip-gtk2/test_image.prg
 clip/doc/example/clip-gtk2/test_stock.prg
 clip/doc/example/clip-gtk2/test_tree.prg
+clip/doc/example/clip-gtk2/text.prg
+clip/doc/example/clip-gtk2/winpic.prg
 clip/doc/example/clip-gzip/Makefile
 clip/doc/example/clip-gzip/gz.prg
 %%IBASE%%clip/doc/example/clip-interbase/Makefile
@@ -489,7 +514,6 @@ clip/include/clip-gtk2.ch
 clip/include/clip-gtk2.h
 clip/include/clip.ch
 clip/include/clip.h
-clip/include/clipbase.h
 clip/include/clipbrd.ch
 clip/include/clipcfg.h
 clip/include/clipcfg.sh
@@ -611,6 +635,7 @@ clip/include/getexit.ch
 clip/include/gtk2-stock.ch
 clip/include/hash.h
 clip/include/html.ch
+clip/include/http.ch
 clip/include/imenu.ch
 clip/include/inkey.ch
 %%IBASE%%clip/include/interbase.ch
@@ -637,6 +662,7 @@ clip/include/pgch.ch
 %%PGSQL%%clip/include/postgres.ch
 clip/include/pp_harb.ch
 clip/include/ppclass.ch
+clip/include/r2d2lib.ch
 clip/include/rdd.ch
 clip/include/rddsys.ch
 clip/include/reserved.ch
@@ -655,6 +681,7 @@ clip/include/std53.ch
 clip/include/task.h
 clip/include/taskcfg.h
 clip/include/tbrowse.ch
+clip/include/tcp.ch
 clip/include/ulimit.ch
 clip/keymaps/genmap.sh
 clip/keymaps/pl-maz
@@ -754,6 +781,10 @@ clip/lib/libclip.a
 clip/lib/libclip.ex
 clip/lib/libclip.nm
 clip/lib/libclip.so
+clip/lib/libclip-r2d2.a
+clip/lib/libclip-r2d2.ex
+clip/lib/libclip-r2d2.nm
+clip/lib/libclip-r2d2.so
 clip/locale.mo/es_ES.8859-1/bdbfs.mo
 clip/locale.mo/es_ES.8859-1/clip-cti.mo
 clip/locale.mo/es_ES.8859-1/clip-fw.mo
@@ -765,6 +796,7 @@ clip/locale.mo/es_ES.8859-1/cobra_clnt.mo
 clip/locale.mo/es_ES.8859-1/cobra_serv.mo
 clip/locale.mo/es_ES.8859-1/codb.mo
 clip/locale.mo/es_ES.8859-1/debug.mo
+clip/locale.mo/es_ES.8859-1/mod-ini.mo
 clip/locale.mo/es_ES.8859-1/pp.mo
 clip/locale.mo/es_ES.8859-1/sys.mo
 clip/locale.mo/es_ES.8859-1/udb.mo
@@ -780,6 +812,7 @@ clip/locale.mo/es_ES.ISO01/cobra_clnt.mo
 clip/locale.mo/es_ES.ISO01/cobra_serv.mo
 clip/locale.mo/es_ES.ISO01/codb.mo
 clip/locale.mo/es_ES.ISO01/debug.mo
+clip/locale.mo/es_ES.ISO01/mod-ini.mo
 clip/locale.mo/es_ES.ISO01/pp.mo
 clip/locale.mo/es_ES.ISO01/sys.mo
 clip/locale.mo/es_ES.ISO01/udb.mo
@@ -797,6 +830,7 @@ clip/locale.mo/ru_RU.KOI8-R/cobra_clnt.mo
 clip/locale.mo/ru_RU.KOI8-R/cobra_serv.mo
 clip/locale.mo/ru_RU.KOI8-R/codb.mo
 clip/locale.mo/ru_RU.KOI8-R/debug.mo
+clip/locale.mo/ru_RU.KOI8-R/mod-ini.mo
 clip/locale.mo/ru_RU.KOI8-R/pp.mo
 clip/locale.mo/ru_RU.KOI8-R/sys.mo
 clip/locale.mo/ru_RU.KOI8-R/udb.mo
@@ -812,6 +846,7 @@ clip/locale.po/es_ES.8859-1/cobra_clnt.po
 clip/locale.po/es_ES.8859-1/cobra_serv.po
 clip/locale.po/es_ES.8859-1/codb.po
 clip/locale.po/es_ES.8859-1/debug.po
+clip/locale.po/es_ES.8859-1/mod-ini.po
 clip/locale.po/es_ES.8859-1/pp.po
 clip/locale.po/es_ES.8859-1/sys.po
 clip/locale.po/es_ES.8859-1/udb.po
@@ -827,6 +862,7 @@ clip/locale.po/es_ES.ISO01/cobra_clnt.po
 clip/locale.po/es_ES.ISO01/cobra_serv.po
 clip/locale.po/es_ES.ISO01/codb.po
 clip/locale.po/es_ES.ISO01/debug.po
+clip/locale.po/es_ES.ISO01/mod-ini.po
 clip/locale.po/es_ES.ISO01/pp.po
 clip/locale.po/es_ES.ISO01/sys.po
 clip/locale.po/es_ES.ISO01/udb.po
@@ -844,6 +880,7 @@ clip/locale.po/ru_RU.KOI8-R/cobra_clnt.po
 clip/locale.po/ru_RU.KOI8-R/cobra_serv.po
 clip/locale.po/ru_RU.KOI8-R/codb.po
 clip/locale.po/ru_RU.KOI8-R/debug.po
+clip/locale.po/ru_RU.KOI8-R/mod-ini.po
 clip/locale.po/ru_RU.KOI8-R/pp.po
 clip/locale.po/ru_RU.KOI8-R/sys.po
 clip/locale.po/ru_RU.KOI8-R/udb.po
@@ -897,6 +934,8 @@ clip/locale.pot/debug/source.pot
 clip/locale.pot/debug/values.pot
 clip/locale.pot/debug/viewali.pot
 clip/locale.pot/debug/viewset.pot
+clip/locale.pot/mod-ini/_.pot
+clip/locale.pot/mod-ini/cobra_codb.pot
 clip/locale.pot/pp/_.pot
 clip/locale.pot/pp/pp.pot
 clip/locale.pot/sys/_.pot
@@ -911,11 +950,13 @@ clip/locale.pot/sys/dialbox.pot
 clip/locale.pot/sys/dtools.pot
 clip/locale.pot/sys/edit.pot
 clip/locale.pot/sys/errorsys.pot
+clip/locale.pot/sys/filed.pot
 clip/locale.pot/sys/filedd.pot
 clip/locale.pot/sys/foxsel.pot
 clip/locale.pot/sys/ftools.pot
 clip/locale.pot/sys/get_obj.pot
 clip/locale.pot/sys/hbrowse.pot
+clip/locale.pot/sys/http_service.pot
 clip/locale.pot/sys/inifile.pot
 clip/locale.pot/sys/memoedit.pot
 clip/locale.pot/sys/nation.pot
@@ -926,6 +967,7 @@ clip/locale.pot/sys/smtp_obj.pot
 clip/locale.pot/sys/sqlbrows.pot
 clip/locale.pot/sys/sys_init.pot
 clip/locale.pot/sys/sys_prn.pot
+clip/locale.pot/sys/tcp_server.pot
 clip/locale.pot/sys/te_find.pot
 clip/locale.pot/sys/tedit_obj.pot
 clip/locale.pot/sys/var_func.pot
@@ -942,6 +984,7 @@ clip/locale.pot/udb/codb_addobj.pot
 clip/locale.pot/udb/codb_export.pot
 clip/locale.pot/udb/codb_make.pot
 clip/locale.pot/udb/codb_pack.pot
+clip/locale.pot/udb/codb_reindex.pot
 clip/locale.pot/udb/counter.pot
 clip/locale.pot/udb/default.pot
 clip/locale.pot/udb/deposit.pot
@@ -954,12 +997,11 @@ clip/locale.pot/udb/tcolumn.pot
 clip/locale.pot/udb/tview.pot
 clip/locale.pot/udb/user.pot
 clip/locale.pot/udbx/_.pot
-clip/locale.pot/udbx/abx_data_browse.pot
-clip/locale.pot/udbx/abx_funcs.pot
-clip/locale.pot/udbx/abx_getobj.pot
 clip/locale.pot/udbx/abx_menu.pot
+clip/locale.pot/udbx/abx_funcs.pot
 clip/locale.pot/udbx/abx_meta_browse.pot
-clip/locale.pot/udbx/abx_obj.pot
+clip/locale.pot/udbx/abx_getobj.pot
+clip/locale.pot/udbx/abx_data_browse.pot
 clip/locale.pot/udbx/attr.pot
 clip/locale.pot/udbx/class.pot
 clip/locale.pot/udbx/counter.pot
@@ -972,6 +1014,7 @@ clip/locale.pot/udbx/report.pot
 clip/locale.pot/udbx/tcolumn.pot
 clip/locale.pot/udbx/tview.pot
 clip/locale.pot/udbx/user.pot
+clip/locale.pot/udbx/abx_obj.pot
 clip/term/cons25r
 clip/term/cygwin
 clip/term/linux-console
@@ -987,6 +1030,7 @@ clip/term/pcansi
 @dirrm clip/locale.pot/udb
 @dirrm clip/locale.pot/sys
 @dirrm clip/locale.pot/pp
+@dirrm clip/locale.pot/mod-ini
 @dirrm clip/locale.pot/debug
 @dirrm clip/locale.pot/codb
 @dirrm clip/locale.pot/cobra_serv
@@ -1010,7 +1054,6 @@ clip/term/pcansi
 @dirrm clip/keymaps
 @dirrm clip/include/netto
 @dirrm clip/include/nanfor
-@dirrm clip/include/memdebug
 @dirrm clip/include/fwin
 @dirrm clip/include/cti
 @dirrm clip/include
@@ -1045,8 +1088,6 @@ clip/term/pcansi
 @dirrm clip/doc/example
 %%PGSQL%%@dirrm clip/doc/clip-postgres
 %%ODBC%%@dirrm clip/doc/clip-odbc
-@dirrm clip/doc/clip-oasis/nanfor
-@dirrm clip/doc/clip-oasis
 %%MYSQL%%@dirrm clip/doc/clip-mysql
 @dirrm clip/doc/clip-gd/eng
 @dirrm clip/doc/clip-gd/rus
@@ -1060,6 +1101,7 @@ clip/term/pcansi
 @dirrm clip/codb_ab/plugins
 @dirrm clip/codb_ab
 @dirrm clip/cobra/tcp-wrap
+@dirrm clip/cobra/mod-ini
 @dirrm clip/cobra/files
 @dirrm clip/cobra/auth
 @dirrm clip/cobra
