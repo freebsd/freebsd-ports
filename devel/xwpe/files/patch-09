@@ -1,5 +1,5 @@
---- we_fl_unix.c.orig	Mon Dec 27 08:11:38 1999
-+++ we_fl_unix.c	Sat Feb 26 05:55:53 2000
+--- we_fl_unix.c.orig	Wed Jun  5 11:53:50 2002
++++ we_fl_unix.c	Fri Jul 12 02:37:37 2002
 @@ -13,6 +13,10 @@
  #include <sys/stat.h>
  #include <errno.h>
@@ -10,19 +10,18 @@
 +
  struct dirfile *e_make_win_list(FENSTER * f);
  extern char    *e_tmp_dir;
- extern int      (*e_u_system) (char *exe);
-@@ -3546,7 +3550,13 @@
-   if(getenv("MANPATH"))
-     strcpy(manpath, getenv("MANPATH"));
-   if(manpath[0] == '\0')
--    strcpy(manpath, "/usr/man:/usr/local/man");
-+    strcpy(manpath,
+ 
+@@ -3532,7 +3536,12 @@
+  }
+  if ((!manpath) || (manpath[0] == '\0'))
+  {
+-  manpath = strdup("/usr/man:/usr/share/man:/usr/X11R6/man:/usr/local/man");
++  manpath = strdup(
 +#if (defined(BSD) && (BSD >= 199306)) || (defined(sun) && defined(__svr4__))
-+		 "/usr/share/man:%%LOCALBASE%%/man");
++		"/usr/share/man:%%X11BASE%%/man:%%LOCALBASE%%/man");
 +#else
-+		 "/usr/man:/usr/local/man");
++		"/usr/man:%%X11BASE%%/man:%%LOCALBASE%%/man");
 +#endif
-+
-   while(manpath[i])
-   {
-     for(n = 0; (subpath[n] = manpath[i]) && manpath[i] != PTHD; i++, n++);
+  }
+  /* Allocate the maximum possible rather than continually realloc. */
+  sustr = malloc(strlen(manpath) + 10);

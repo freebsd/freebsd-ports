@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	xwpe
-PORTVERSION=	1.5.22a
+PORTVERSION=	1.5.29a
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.identicalsoftware.com/xwpe/ \
@@ -16,22 +16,23 @@ MASTER_SITE_SUBDIR=	apps/editors/X
 
 MAINTAINER=	ports@FreeBSD.org
 
-# LD_LIBRARY_PATH is to deal with a braindead libX11.a search in configure
-# (once again author assumes too many Linux'isms)
-# it is not exptected to be set at runtime.
-MAKE_ENV=	LD_LIBRARY_PATH="${X11BASE}/lib"
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LD_LIBRARY_PATH="${X11BASE}/lib"
-CONFIGURE_ARGS=	--libdir=${PREFIX}/share
 USE_XLIB=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
-ALL_TARGET=
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	
+CONFIGURE_ARGS=	--libdir=${PREFIX}/share
+ALL_TARGET=	# none
+
 MAN1=		xwpe.1
 MLINKS=		xwpe.1 xwe.1 \
 		xwpe.1 wpe.1 \
 		xwpe.1 we.1
 
-pre-configure:
-	@${PERL} -pi.in -e "s:%%LOCALBASE%%:${LOCALBASE}:g" ${WRKSRC}/*.c
+post-patch:
+.for file in we_prog.c we_fl_unix.c
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g ; \
+		 s|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/${file}
+.endfor
 
 .include <bsd.port.mk>
