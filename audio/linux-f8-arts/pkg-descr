@@ -1,0 +1,12 @@
+Red Hat Linux 8.0 shipping version of the arts library.
+
+The principle of arts is to create/process sound using small modules which do
+certain tasks. These may be create a waveform (oscillators), play samples,
+filter data, add signals, perform effects like delay/flanger/chorus, or
+output the data to the soundcard.
+
+By connecting all those small modules together, you can perform complex
+tasks like simulating a mixer, generating an instrument or things like
+playing a wave file with some effects.
+
+WWW: http://www.kde.org/

@@ -146,6 +146,7 @@
     SUBDIR += libsndfile
     SUBDIR += libvorbis
     SUBDIR += libworkman
+    SUBDIR += linux-arts
     SUBDIR += linux-esound
     SUBDIR += linux-libaudiofile
     SUBDIR += linux-vsound
