@@ -97,6 +97,7 @@
     SUBDIR += python-doc-postscript-letter
     SUBDIR += rexx-imc
     SUBDIR += ruby
+    SUBDIR += ruby-man
     SUBDIR += ruby-perl
     SUBDIR += ruby-python
     SUBDIR += scheme48
