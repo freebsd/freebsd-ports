@@ -20,6 +20,7 @@ BUILD_DEPENDS=	\
 	${PERL_SITELIBDIR}/Mail/Address.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 	${PERL_SITELIBDIR}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
 	${PERL_SITELIBDIR}/Mail/SpamAssassin.pm:${PORTSDIR}/mail/p5-Mail-SpamAssassin
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PERL5=	yes
 USE_REINPLACE=	yes
