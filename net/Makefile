@@ -15,6 +15,7 @@
     SUBDIR += archie
     SUBDIR += archie.el
     SUBDIR += argus
+    SUBDIR += ari-yahoo
     SUBDIR += arla
     SUBDIR += arping
     SUBDIR += arprelease

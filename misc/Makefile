@@ -20,7 +20,6 @@
     SUBDIR += amanda24-client
     SUBDIR += amanda24-server
     SUBDIR += argparse
-    SUBDIR += ari-yahoo
     SUBDIR += asbutton
     SUBDIR += astrolog
     SUBDIR += bb
