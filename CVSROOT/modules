@@ -2676,6 +2676,7 @@ jakarta-tomcat	ports/www/jakarta-tomcat
 jam		ports/devel/jam
 janosvm		ports/java/janosvm
 jargon		ports/misc/jargon
+jasper		ports/graphics/jasper
 java-cup	ports/java/java-cup
 java-sqlrelay	ports/databases/java-sqlrelay
 java2html	ports/textproc/java2html
