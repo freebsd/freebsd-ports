@@ -32,7 +32,6 @@ echo "#define XInputDrivers mouse keyboard digitaledge dynapro elo2300 \
 			wacom void citron"	>> $LOCALDEF
 echo "#define BuildXF86DRI ${BuildXF86DRI}"	>> $LOCALDEF
 echo "#define BuildXF86DRM NO"			>> $LOCALDEF
-echo "#define HasGlide3 YES"			>> $LOCALDEF
 
 # disable some options
 for i in \
