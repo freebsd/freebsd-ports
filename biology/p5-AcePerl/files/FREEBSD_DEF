@@ -9,7 +9,7 @@
 #################################################################
 
 NAME = FREEBSD
-CFLAGS+= -g -Wall -O2 -DACEDB4
+CFLAGS+= -g -Wall -DACEDB4
 COMPILER = XX__CC__XX ${CFLAGS}
 LINKER = XX__CC__XX -g
 
