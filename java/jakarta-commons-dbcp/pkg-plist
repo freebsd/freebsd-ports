@@ -1,0 +1,48 @@
+share/doc/commons-dbcp/allclasses-frame.html
+share/doc/commons-dbcp/allclasses-noframe.html
+share/doc/commons-dbcp/constant-values.html
+share/doc/commons-dbcp/index-all.html
+share/doc/commons-dbcp/index.html
+share/doc/commons-dbcp/org/apache/commons/dbcp/AbandonedConfig.html
+share/doc/commons-dbcp/org/apache/commons/dbcp/AbandonedObjectPool.html
+share/doc/commons-dbcp/org/apache/commons/dbcp/AbandonedTrace.html
+share/doc/commons-dbcp/org/apache/commons/dbcp/BasicDataSource.html
+share/doc/commons-dbcp/org/apache/commons/dbcp/BasicDataSourceFactory.html
+share/doc/commons-dbcp/org/apache/commons/dbcp/ConnectionFactory.html
+share/doc/commons-dbcp/org/apache/commons/dbcp/DataSourceConnectionFactory.html
+share/doc/commons-dbcp/org/apache/commons/dbcp/DbcpException.html
+share/doc/commons-dbcp/org/apache/commons/dbcp/DelegatingCallableStatement.html
+share/doc/commons-dbcp/org/apache/commons/dbcp/DelegatingConnection.html
+share/doc/commons-dbcp/org/apache/commons/dbcp/DelegatingPreparedStatement.html
+share/doc/commons-dbcp/org/apache/commons/dbcp/DelegatingResultSet.html
+share/doc/commons-dbcp/org/apache/commons/dbcp/DelegatingStatement.html
+share/doc/commons-dbcp/org/apache/commons/dbcp/DriverConnectionFactory.html
+share/doc/commons-dbcp/org/apache/commons/dbcp/DriverManagerConnectionFactory.html
+share/doc/commons-dbcp/org/apache/commons/dbcp/PoolableConnection.html
+share/doc/commons-dbcp/org/apache/commons/dbcp/PoolableConnectionFactory.html
+share/doc/commons-dbcp/org/apache/commons/dbcp/PoolablePreparedStatement.html
+share/doc/commons-dbcp/org/apache/commons/dbcp/PoolingConnection.html
+share/doc/commons-dbcp/org/apache/commons/dbcp/PoolingDataSource.html
+share/doc/commons-dbcp/org/apache/commons/dbcp/PoolingDriver.html
+share/doc/commons-dbcp/org/apache/commons/dbcp/cpdsadapter/DriverAdapterCPDS.html
+share/doc/commons-dbcp/org/apache/commons/dbcp/cpdsadapter/package-frame.html
+share/doc/commons-dbcp/org/apache/commons/dbcp/cpdsadapter/package-summary.html
+share/doc/commons-dbcp/org/apache/commons/dbcp/package-frame.html
+share/doc/commons-dbcp/org/apache/commons/dbcp/package-summary.html
+share/doc/commons-dbcp/org/apache/commons/jocl/ConstructorUtil.html
+share/doc/commons-dbcp/org/apache/commons/jocl/JOCLContentHandler.html
+share/doc/commons-dbcp/org/apache/commons/jocl/package-frame.html
+share/doc/commons-dbcp/org/apache/commons/jocl/package-summary.html
+share/doc/commons-dbcp/overview-frame.html
+share/doc/commons-dbcp/overview-summary.html
+share/doc/commons-dbcp/package-list
+share/doc/commons-dbcp/packages.html
+share/doc/commons-dbcp/serialized-form.html
+share/doc/commons-dbcp/stylesheet.css
+@dirrm share/doc/commons-dbcp/org/apache/commons/dbcp/cpdsadapter
+@dirrm share/doc/commons-dbcp/org/apache/commons/dbcp
+@dirrm share/doc/commons-dbcp/org/apache/commons/jocl
+@dirrm share/doc/commons-dbcp/org/apache/commons
+@dirrm share/doc/commons-dbcp/org/apache
+@dirrm share/doc/commons-dbcp/org
+@dirrm share/doc/commons-dbcp

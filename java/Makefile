@@ -29,6 +29,7 @@
     SUBDIR += jakarta-commons-beanutils
     SUBDIR += jakarta-commons-cli
     SUBDIR += jakarta-commons-collections
+    SUBDIR += jakarta-commons-dbcp
     SUBDIR += jakarta-commons-lang
     SUBDIR += jakarta-commons-logging
     SUBDIR += jakarta-commons-pool
