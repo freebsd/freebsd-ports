@@ -1,27 +1,11 @@
---- configure	Mon May 26 18:28:46 1997
-+++ configure	Sun Aug 31 23:26:12 1997
-@@ -1029,6 +1029,7 @@
-   LASERGNU=lasergnu_noinstall
+--- configure.orig	Wed Jul 23 19:16:20 1997
++++ configure	Sun Apr 19 17:41:14 1998
+@@ -925,6 +925,8 @@
+ 
  fi
  
 +LASERGNU=lasergnu_install
- 
- maybe_linuxdriver=
++
  # Check whether --with-linux-vga or --without-linux-vga was given.
-@@ -3419,7 +3420,7 @@
-   echo $ac_n "(cached) $ac_c" 1>&6
- else
-   ac_save_LIBS="$LIBS"
--LIBS="-lpng -lz $LIBS"
-+LIBS="-L$libdir -lpng -lz $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 3425 "configure"
- #include "confdefs.h"
-@@ -3450,6 +3451,7 @@
- #define HAVE_LIBPNG 1
- EOF
-  TERMLIBS="$TERMLIBS -lpng -lz"
-+ LDFLAGS="$LDFLAGS -L$libdir"
-     ac_save_CPPFLAGS="$CPPFLAGS"; CPPFLAGS="$CPPFLAGS -I$includedir"
-     for ac_hdr in png.h zlib.h
- do
+ if test "${with_linux_vga+set}" = set; then
+   withval="$with_linux_vga"
