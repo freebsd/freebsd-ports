@@ -1,5 +1,7 @@
 bin/aleph
+bin/aod
 bin/axc
+bin/axd
 bin/axl
 etc/aleph/license.txt
 @dirrm etc/aleph
@@ -9,12 +11,15 @@ include/aleph/eng/Class.hpp
 include/aleph/eng/Closure.hpp
 include/aleph/eng/Constant.hpp
 include/aleph/eng/Engsid.hpp
+include/aleph/eng/Enum.hpp
 include/aleph/eng/Extracter.hpp
+include/aleph/eng/Form.hpp
 include/aleph/eng/Former.hpp
 include/aleph/eng/Function.hpp
 include/aleph/eng/Globalset.hpp
 include/aleph/eng/Instance.hpp
 include/aleph/eng/Interp.hpp
+include/aleph/eng/Item.hpp
 include/aleph/eng/Lexer.hpp
 include/aleph/eng/Lexical.hpp
 include/aleph/eng/Localset.hpp
@@ -45,6 +50,14 @@ include/aleph/net/TcpSocket.hpp
 include/aleph/net/UdpClient.hpp
 include/aleph/net/UdpServer.hpp
 include/aleph/net/UdpSocket.hpp
+include/aleph/odb/Cell.hpp
+include/aleph/odb/Collection.hpp
+include/aleph/odb/Libaodb.hpp
+include/aleph/odb/Odbcalls.hpp
+include/aleph/odb/Odbsid.hpp
+include/aleph/odb/Persist.hpp
+include/aleph/odb/Record.hpp
+include/aleph/odb/Table.hpp
 include/aleph/plt/cclk.hpp
 include/aleph/plt/ccnf.hpp
 include/aleph/plt/ccnv.hpp
@@ -84,8 +97,8 @@ include/aleph/std/InputTerm.hpp
 include/aleph/std/Integer.hpp
 include/aleph/std/Iterable.hpp
 include/aleph/std/Iterator.hpp
-include/aleph/std/Library.hpp
 include/aleph/std/Librarian.hpp
+include/aleph/std/Library.hpp
 include/aleph/std/List.hpp
 include/aleph/std/Literal.hpp
 include/aleph/std/Lockrw.hpp
@@ -120,18 +133,27 @@ include/aleph/sys/Libasys.hpp
 include/aleph/sys/Predasys.hpp
 include/aleph/sys/Syscalls.hpp
 include/aleph/sys/Time.hpp
+include/aleph/txt/Digest.hpp
+include/aleph/txt/Libatxt.hpp
+include/aleph/txt/Predatxt.hpp
+include/aleph/txt/PrintTable.hpp
+include/aleph/txt/Sort.hpp
+include/aleph/txt/Txtcalls.hpp
 include/aleph/www/CgiQuery.hpp
 include/aleph/www/Cookie.hpp
 include/aleph/www/HtmlPage.hpp
 include/aleph/www/Libawww.hpp
 include/aleph/www/Predawww.hpp
 include/aleph/www/Url.hpp
+include/aleph/www/XHtmlPage.hpp
 @dirrm include/aleph/eng
 @dirrm include/aleph/net
+@dirrm include/aleph/odb
 @dirrm include/aleph/plt
 @dirrm include/aleph/sio
 @dirrm include/aleph/std
 @dirrm include/aleph/sys
+@dirrm include/aleph/txt
 @dirrm include/aleph/www
 @dirrm include/aleph
 lib/libaleph-eng.a
@@ -140,6 +162,9 @@ lib/libaleph-eng.so.%%PORTVER%%
 lib/libaleph-net.a
 lib/libaleph-net.so
 lib/libaleph-net.so.%%PORTVER%%
+lib/libaleph-odb.a
+lib/libaleph-odb.so
+lib/libaleph-odb.so.%%PORTVER%%
 lib/libaleph-plt.a
 lib/libaleph-plt.so
 lib/libaleph-plt.so.%%PORTVER%%
@@ -152,6 +177,9 @@ lib/libaleph-std.so.%%PORTVER%%
 lib/libaleph-sys.a
 lib/libaleph-sys.so
 lib/libaleph-sys.so.%%PORTVER%%
+lib/libaleph-txt.a
+lib/libaleph-txt.so
+lib/libaleph-txt.so.%%PORTVER%%
 lib/libaleph-www.a
 lib/libaleph-www.so
 lib/libaleph-www.so.%%PORTVER%%
