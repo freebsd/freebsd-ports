@@ -3,7 +3,7 @@
 # Date created:		19 March 1996
 # Whom:			janek@gaja.ipan.lublin.pl
 #
-# $Id: Makefile,v 1.1.1.1 1996/03/25 08:58:58 asami Exp $
+# $Id: Makefile,v 1.2 1996/11/18 09:54:30 asami Exp $
 #
 
 DISTNAME=	ftptool-4.6
@@ -22,7 +22,7 @@ WRKSRC=		${WRKDIR}/Ftptool4.6
 # Because lex.l is broken, lex.c is taken from old FreeBSD 1.1 port
 
 post-extract:
-	cp ${FILESDIR}/lex.c ${WRKSRC}
-	rm -f ${WRKSRC}/lex.l
+	@${CP} ${FILESDIR}/lex.c ${WRKSRC}
+	@${RM} -f ${WRKSRC}/lex.l
 
 .include <bsd.port.mk>

@@ -3,12 +3,14 @@
 # Date created:		19 Aug 1995
 # Whom:			jkh / pst
 #
-# $Id: Makefile,v 1.8 1996/08/17 11:07:53 peter Exp $
+# $Id: Makefile,v 1.9 1996/11/18 11:37:27 asami Exp $
 #
 
 DISTNAME=	zircon-1.17p3
 CATEGORIES=	net
 MASTER_SITES=	ftp://catless.ncl.ac.uk/pub/
+
+MAINTAINER=	jkh@FreeBSD.org
 
 #
 # You can define USE_DPWISH if you want to run under the older
@@ -36,6 +38,6 @@ MAKE_ENV+=	TCLSH=tclsh7.5
 MAKEFILE=	Makefile.FreeBSD
 
 pre-patch:
-	cp ${WRKSRC}/Makefile.Linux ${WRKSRC}/Makefile.FreeBSD
+	${CP} ${WRKSRC}/Makefile.Linux ${WRKSRC}/Makefile.FreeBSD
 
 .include <bsd.port.mk>

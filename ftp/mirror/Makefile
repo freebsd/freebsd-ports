@@ -3,7 +3,7 @@
 # Date created:		15 May 1995
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.4 1996/11/18 11:35:24 asami Exp $
+# $Id: Makefile,v 1.5 1996/11/18 14:08:35 asami Exp $
 #
 
 DISTNAME=	mirror-2.8
@@ -17,6 +17,6 @@ MAKEFILE=	makefile
 MAN1=		mirror.1 mirrormaster.1
 
 pre-install:
-	mkdir -p ${PREFIX}/lib/mirror
+	${MKDIR} ${PREFIX}/lib/mirror
 
 .include <bsd.port.mk>

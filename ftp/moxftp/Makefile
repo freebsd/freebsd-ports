@@ -3,7 +3,7 @@
 # Date created:		19 December 1994
 # Whom:			janek
 #
-# $Id: Makefile,v 1.10 1996/10/15 18:25:56 erich Exp $
+# $Id: Makefile,v 1.11 1996/11/18 09:54:35 asami Exp $
 #
 
 DISTNAME=	moxftp-2.2
@@ -15,6 +15,7 @@ EXTRACT_SUFX=	.tar.Z
 HAS_CONFIGURE=	yes
 USE_X11=	yes
 STRIP=
+MAN1=		${PROGRAM_NAME}.1
 
 # CONFIGURE_ARGS set to :
 #	motif - for motif version, (not tested!!!)
@@ -46,13 +47,10 @@ pre-install:
 	    -e 's,@GZIP_EXT@,${GZIP_EXT},' pkg/PLIST.in >pkg/PLIST
 
 post-install:
-	strip ${PREFIX}/bin/${PROGRAM_NAME}
-	install -c -m 0444 ${WRKSRC}/${PROGRAM_NAME}.man ${PREFIX}/man/man1/${PROGRAM_NAME}.1
-.if !defined(NOMANCOMPRESS)
-	gzip -9nf ${PREFIX}/man/man1/${PROGRAM_NAME}.1
-.endif
+	@strip ${PREFIX}/bin/${PROGRAM_NAME}
+	@${INSTALL_MAN} ${WRKSRC}/${PROGRAM_NAME}.man ${PREFIX}/man/man1/${PROGRAM_NAME}.1
 
 pre-clean:
-	@rm -f pkg/PLIST
+	@${RM} -f pkg/PLIST
 
 .include <bsd.port.mk>

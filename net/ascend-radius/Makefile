@@ -3,7 +3,7 @@
 # Date created:				August 28th 96
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.4 1996/10/18 11:50:13 jfitz Exp $
+#   $Id: Makefile,v 1.5 1996/11/18 11:34:23 asami Exp $
 #
 
 DISTNAME=	radius-961015
@@ -18,24 +18,16 @@ WRKPREFIX=	radius-961015/radius-1.16-ascend
 WRKSRC=		${WRKDIR}/${WRKPREFIX}/ascendd
 
 ALL_TARGET=	all dbm
+MAN1=		builddbm.1 users-file-syntax.1
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/radiusd ${PREFIX}/sbin
 		${INSTALL_PROGRAM} ${WRKSRC}/radiusd.dbm ${PREFIX}/sbin
 		${INSTALL_PROGRAM} ${WRKSRC}/builddbm ${PREFIX}/sbin
-.ifdef NOMANCOMPRESS
 		${INSTALL_MAN} ${WRKDIR}/${WRKPREFIX}/man1/users-file-syntax.1 ${PREFIX}/man/man1
 		${INSTALL_MAN} ${WRKDIR}/${WRKPREFIX}/man1/builddbm.1 ${PREFIX}/man/man1
-.else
-		@ ${CP} ${WRKDIR}/${WRKPREFIX}/man1/users-file-syntax.1 ${WRKSRC}
-		@ ${CP} ${WRKDIR}/${WRKPREFIX}/man1/builddbm.1 ${WRKSRC}
-		@ gzip -9nf ${WRKSRC}/users-file-syntax.1
-		@ gzip -9nf ${WRKSRC}/builddbm.1
-		${INSTALL_MAN} ${WRKSRC}/users-file-syntax.1.gz ${PREFIX}/man/man1
-		${INSTALL_MAN} ${WRKSRC}/builddbm.1.gz ${PREFIX}/man/man1
-.endif
 .ifndef NOPORTDOCS
-		@ mkdir -p ${PREFIX}/share/doc/ascend-radius
+		@ ${MKDIR} ${PREFIX}/share/doc/ascend-radius
 		for file in ascend.doc draft-ietf-radius-accounting-01.txt draft-ietf-radius-radius-03.txt draft-ietf-radius-radius-04.txt; do \
 			${INSTALL_DATA} ${WRKDIR}/${WRKPREFIX}/doc/$$file ${PREFIX}/share/doc/ascend-radius; \
 		done
@@ -43,13 +35,13 @@ do-install:
 			${INSTALL_DATA} ${WRKDIR}/${WRKPREFIX}/$$file ${PREFIX}/share/doc/ascend-radius; \
 		done
 .endif
-		@ mkdir -p ${PREFIX}/etc/raddb
+		@ ${MKDIR} ${PREFIX}/etc/raddb
 		@ chown root.wheel ${PREFIX}/etc/raddb
 		@ chmod 700 ${PREFIX}/etc/raddb
 		for file in clients.example dictionary users.example; do \
 			${INSTALL} -c -o root -g wheel -m 0400 ${WRKDIR}/${WRKPREFIX}/raddb/$$file ${PREFIX}/etc/raddb; \
 		done
-		@ mkdir -p /var/log/radacct
+		@ ${MKDIR} /var/log/radacct
 		@ chown root.wheel /var/log/radacct
 		@ chmod 700 /var/log/radacct
 

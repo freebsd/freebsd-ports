@@ -3,7 +3,7 @@
 # Date created:		18 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.6 1996/09/05 18:37:46 ache Exp $
+# $Id: Makefile,v 1.7 1996/11/18 11:37:07 asami Exp $
 #
 
 DISTNAME=	wu-ftpd-2.4
@@ -12,11 +12,13 @@ MASTER_SITES=   ftp://ftp.wustl.edu/packages/wuarchive-ftpd/ \
 		http://wuarchive.wustl.edu/packages/wuarchive-ftpd/
 EXTRACT_SUFX=   .tar.Z
 
+MAINTAINER=	torstenb@FreeBSD.org
+
 pre-install:
-	@mkdir -p ${PREFIX}/bin
-	@mkdir -p ${PREFIX}/etc
-	@mkdir -p ${PREFIX}/man/man1
-	@mkdir -p ${PREFIX}/man/man5
-	@mkdir -p ${PREFIX}/man/man8
+	@${MKDIR} ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/etc
+	@${MKDIR} ${PREFIX}/man/man1
+	@${MKDIR} ${PREFIX}/man/man5
+	@${MKDIR} ${PREFIX}/man/man8
 
 .include <bsd.port.mk>
