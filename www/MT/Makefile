@@ -5,58 +5,112 @@
 # $FreeBSD$
 #
 
-PORTNAME=	MT
+PORTNAME=		MT
 PORTVERSION=	2.661
-PORTREVISION=	1
-CATEGORIES=	www
+PORTREVISION=	2
+CATEGORIES=		www
 .if defined(WITH_OLD_DISTFILE)
-DISTNAME=	${PORTNAME}-${PORTVERSION}-full-lib
+DISTNAME=		${PORTNAME}-${PORTVERSION}-full-lib
 .endif
 
-MAINTAINER=	arved@FreeBSD.org
-COMMENT=	A web-based personal publishing system like weblogs
+MAINTAINER=		arved@FreeBSD.org
+COMMENT=		A web-based personal publishing system for weblogs
 
-DATADIR=	www/data/mt
-CGIDIR=		www/cgi-bin/mt
+RUN_DEPENDS=	${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
+				${SITE_PERL}/Image/Size.pm:${PORTSDIR}/graphics/p5-Image-Size \
+				${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm
+
+.if !defined(WITHOUT_OPTIONAL_MODULES)
+RUN_DEPENDS+=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
+				${SITE_PERL}/SOAP/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite \
+	${SITE_PERL}/${PERL_ARCH}/Image/Magick.pm:${PORTSDIR}/graphics/ImageMagick
+.endif
+
+DATADIR=		www/data/mt
+CGIDIR=			www/cgi-bin/mt
 
 .if defined(WITH_MYSQL)
-DB_DIR=		/var/db/mysql/blog
-USE_MYSQL=	yes
+DB_DIR?=			/var/db/mysql/blog
+USE_MYSQL=		yes
 .elif defined(WITH_POSTGRES)
-DB_DIR=		${PREFIX}/pgsql/data/blog	# Or somewhere defined in $PGDATA
-RUN_DEPENDS=	postgres:${PORTSDIR}/databases/postgresql7
+DB_DIR?=			${PREFIX}/pgsql/data/blog
+# Or somewhere defined in $PGDATA
+
+RUN_DEPENDS+=	postgres:${PORTSDIR}/databases/postgresql7
+.elif defined(WITH_SQLITE)
+DB_DIR?=			${PREFIX}/${CGIDIR}/db
+RUN_DEPENDS+=\
+	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite
 .else
-DB_DIR=		${PREFIX}/${CGIDIR}/db
+DB_DIR?=			${PREFIX}/${CGIDIR}/db
 WITH_DEFAULTDB=	yes
 .endif
 
-PLIST_SUB+=	DATADIR=${DATADIR} CGIDIR=${CGIDIR}
+PLIST_SUB+=		DATADIR=${DATADIR} CGIDIR=${CGIDIR}
 
 USE_PERL5_RUN=	yes
-NO_BUILD=	yes
-RESTRICTED=	"License does not permit distribution"
+NO_BUILD=		yes
+RESTRICTED=		License does not permit distribution
 
 .if defined(WITH_OLD_DISTFILE)
-PLIST_SUB+=	OLD=""
+PLIST_SUB+=		OLD=""
 .else
-WRKSRC=		${WRKDIR}/MT-${PORTVERSION}-full-lib
-PLIST_SUB+=	OLD="@comment "
+WRKSRC=			${WRKDIR}/MT-${PORTVERSION}-full-lib
+PLIST_SUB+=		OLD="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-ECHO_MSG=/usr/bin/printf
-IGNORE=	:\n\
-Because of licensing restrictions, you must fetch the source distribution\n\
-manually.  Goto http://www.movabletype.org/ register as if you are going\n\
-to download 3.x, and then choosing 2.661 from the list after you log on.\n\
-Download the file into ${DISTDIR}/, and then run make again.\n
+IGNORE=	\
+: Because of licensing restrictions, you must fetch the source distribution\
+manually. Goto http://www.movabletype.org/ register as if you are going\
+to download 3.x, and then choosing 2.661 from the list after you log on.\
+Download the file into ${DISTDIR}/, and then run make again
+ECHO_MSG=${ECHO_CMD}
+.endif
+
+.if !defined(WITHOUT_OPTIONAL_MODULES)
+.if ${PERL_LEVEL} < 500800
+RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
+.endif
+.endif
+.if ${PERL_LEVEL} < 500601
+RUN_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
+.endif
+
+pre-everything::
+	@${ECHO_CMD} "Available switches:"
+	@${ECHO_CMD} "-------------------"
+	@${ECHO_CMD} "DB_DIR"
+	@${ECHO_CMD} "		- Override the default database directory"
+	@${ECHO_CMD} "		  (${DB_DIR})"
+.if !defined(WITH_OLD_DISTFILE)
+	@${ECHO_CMD} "WITH_OLD_DISTFILE"
+	@${ECHO_CMD} "		- Use the pre 3.x distfile, which was available under"
+	@${ECHO_CMD} "		  a less restrictive license"
+.endif
+.if !defined(WITHOUT_OPTIONAL_MODULES)
+	@${ECHO_CMD} "WITHOUT_OPTIONAL_MODULES"
+	@${ECHO_CMD} "		- Don't install optional perl modules, needed for"
+	@${ECHO_CMD} "		  Trackbacks, XML-RPC and thumbnails"
+.endif
+.if !defined(WITH_MYSQL)
+	@${ECHO_CMD} "WITH_MYSQL"
+	@${ECHO_CMD} "		- Use MySQL instead of Berkeley DB as database backend"
+.endif
+.if !defined(WITH_MYSQL)
+	@${ECHO_CMD} "WITH_POSTGRES"
+	@${ECHO_CMD} "		- Use PostgreSQL instead of Berkeley DB as database backend"
+.endif
+.if !defined(WITH_SQLITE)
+	@${ECHO_CMD} "WITH_POSTGRES"
+	@${ECHO_CMD} "		- Use SQLite instead of Berkeley DB as database backend"
 .endif
 
 do-install:
 	@cd ${WRKSRC} && ${FIND} * -name "*.orig" -delete
-	@${ECHO_MSG} "Installing cgi ${PREFIX}/${CGIDIR}"
+	@${ECHO_MSG} "Installing cgi under ${PREFIX}/${CGIDIR}"
 	@${MKDIR} ${PREFIX}/${CGIDIR}
 	@cd ${WRKSRC} && ${CP} -R *.cgi lib extlib plugins search_templates \
 	  tmpl ${PREFIX}/${CGIDIR}
@@ -68,7 +122,7 @@ do-install:
 	[ -e ${PREFIX}/${CGIDIR}/mt.cfg ] || ${CP} ${PREFIX}/${CGIDIR}/mt.cfg.dist ${PREFIX}/${CGIDIR}/mt.cfg
 	${SED} -e 's#$$MT_DIR, .schemas.#"${PREFIX}/${DATADIR}/schemas"#' \
 	  ${WRKSRC}/mt-load.cgi > ${PREFIX}/${CGIDIR}/mt-load.cgi
-	@${ECHO_MSG} "Installing data ${PREFIX}/${DATADIR}"
+	@${ECHO_MSG} "Installing data under ${PREFIX}/${DATADIR}"
 	@${MKDIR} ${PREFIX}/${DATADIR}
 	@cd ${WRKSRC} && ${CP} -R docs images \
 	  index.html schemas styles.css \
@@ -84,7 +138,6 @@ do-install:
 	@${CHOWN} -R www:www ${PREFIX}/${CGIDIR} ${PREFIX}/${DATADIR}
 
 post-install:
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG} "Please read the docs to initialize a blog DB in ${DB_DIR}"
+	@${ECHO_MSG} "Please read the documentation about initializing a blog DB in ${DB_DIR}"
 
 .include <bsd.port.post.mk>
