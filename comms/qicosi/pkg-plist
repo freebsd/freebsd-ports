@@ -1,6 +1,20 @@
-%%WITH_QICO_MORDA%%bin/qcc
-etc/qico.conf.sample
-libexec/qico
+bin/qcc
+bin/qctl
+sbin/qico
+etc/fido/qico/qico.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.ru
 %%PORTDOCS%%%%DOCSDIR%%/README.ru
+%%PORTDOCS%%%%DOCSDIR%%/Changes.ru
+%%PORTDOCS%%%%EXAMPLESDIR%%/fts-0001
+%%PORTDOCS%%%%EXAMPLESDIR%%/onchat
+%%PORTDOCS%%%%EXAMPLESDIR%%/qhistory
+%%PORTDOCS%%%%EXAMPLESDIR%%/qico.xpm
+%%PORTDOCS%%%%EXAMPLESDIR%%/qlinks
+%%PORTDOCS%%%%EXAMPLESDIR%%/sfreq
+%%PORTDOCS%%%%EXAMPLESDIR%%/stat.run
+%%PORTDOCS%%%%EXAMPLESDIR%%/synctime
+%%PORTDOCS%%%%EXAMPLESDIR%%/tossing
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm etc/fido/qico
+@dirrm etc/fido

@@ -57,6 +57,7 @@
     SUBDIR += py-lirc
     SUBDIR += py-serial
     SUBDIR += qico
+    SUBDIR += qicosi
     SUBDIR += qpage
     SUBDIR += qtpcr
     SUBDIR += ruby-serialport
