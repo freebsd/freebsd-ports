@@ -7,9 +7,9 @@
 
 PORTNAME=	rxp
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.cogsci.ed.ac.uk/pub/richard/
-DISTFILES=	rxp.tar.gz
 
 MAINTAINER=	jkoshy@freebsd.org
 

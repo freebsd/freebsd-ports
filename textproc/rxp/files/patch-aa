@@ -1,0 +1,15 @@
+--- Makefile.orig	Fri Mar  9 20:55:41 2001
++++ Makefile	Fri Mar  9 20:55:58 2001
+@@ -3,9 +3,10 @@
+ CHAR_SIZE=16
+ 
+ DEBUG=		-g
+-CC=		gcc
++CC?=		gcc
+ GCCFLAGS=	-Wall -ansi -pedantic
+-CFLAGS=		$(GCCFLAGS) $(DEBUG) -O -DCHAR_SIZE=$(CHAR_SIZE)
++CFLAGS?=	-O
++CFLAGS+=	$(GCCFLAGS) $(DEBUG) -DCHAR_SIZE=$(CHAR_SIZE)
+ LDFLAGS=	$(DEBUG)
+ 
+ # You may well have to change this line.  Just "LIBS=" will probably work.
