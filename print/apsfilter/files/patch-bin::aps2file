@@ -2,7 +2,7 @@
 +++ bin/aps2file	Mon Dec 17 19:36:33 2001
 @@ -1,4 +1,4 @@
 -#!/bin/sh
-+#! !!PREFIX!!/bin/bash
++#! !!LOCALBASE!!/bin/bash
  #
  # $ApsCVS: src/apsfilter/bin/aps2file,v 1.1 2001/11/17 15:21:52 andreas Exp $
  #
