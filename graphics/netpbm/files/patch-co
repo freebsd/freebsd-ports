@@ -1,0 +1,11 @@
+--- pnm/pnmtopalm/Makefile.orig	Thu Jan 11 11:59:53 2001
++++ pnm/pnmtopalm/Makefile	Sat Jan 13 00:00:00 2001
+@@ -48,7 +48,7 @@
+ 	$(SRCDIR)/mkinstalldirs $(INSTALLDATA)
+ 	for x in palmcolor8.map palmgray1.map palmgray2.map palmgray4.map ;\
+ 	do \
+-	   $(INSTALL) -c -m $(INSTALL_PERM_DATA) $(SRCSUBDIR)/$$x \
++	   ${BSD_INSTALL_DATA} $(SRCSUBDIR)/$$x \
+                $(INSTALLDATA); \
+ 	done
+ 

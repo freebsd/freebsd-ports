@@ -1,6 +1,6 @@
---- ppm/ppmtojpeg.c.orig	Sun Apr  9 07:44:01 2000
-+++ ppm/ppmtojpeg.c	Mon May  8 00:00:00 2000
-@@ -325,6 +325,15 @@
+--- ppm/ppmtojpeg.c.orig	Thu Jan 11 07:30:35 2001
++++ ppm/ppmtojpeg.c	Sat Jan 13 00:00:00 2001
+@@ -334,6 +334,15 @@
      char ** const argv_parse = malloc(argc*sizeof(char *));
      /* argv, except we modify it as we parse */
  
@@ -16,20 +16,20 @@
      option_def_index = 0;   /* incremented by OPTENTRY */
      OPTENTRY(0, "verbose",     OPT_FLAG,   &cmdline_p->verbose,        0);
      OPTENTRY(0, "quality",     OPT_UINT,   &cmdline_p->quality,        0);
-@@ -344,6 +353,7 @@
-     OPTENTRY(0, "optimize",    OPT_FLAG,   &cmdline_p->optimize,       0);
+@@ -354,6 +363,7 @@
      OPTENTRY(0, "optimise",    OPT_FLAG,   &cmdline_p->optimize,       0);
      OPTENTRY(0, "restart",     OPT_STRING, &restart,                   0);
-+    option_def[option_def_index].type = OPT_END; 
+     OPTENTRY(0, "comment",     OPT_STRING, &cmdline_p->comment,        0);
++    option_def[option_def_index].type = OPT_END;
  
      /* Set the defaults */
      cmdline_p->verbose = FALSE;
-@@ -367,7 +377,7 @@
-     argc_parse = argc;
-     for (i=0; i < argc; i++) argv_parse[i] = argv[i];
+@@ -382,7 +392,7 @@
+     opt.short_allowed = FALSE;  /* We have no short (old-fashioned) options */
+     opt.allowNegNum = FALSE;  /* We have no parms that are negative numbers */
  
--    pm_optParseOptions(&argc_parse, argv_parse, option_def, 0);
-+    optParseOptions(&argc_parse, argv_parse, option_def, 0);
-     /* Uses and sets argc_parse, argv_parse and all of *cmdline_p. */
+-    pm_optParseOptions2(&argc_parse, argv, opt, 0);
++    optParseOptions2(&argc_parse, argv, opt, 0);
+         /* Uses and sets argc_parse, argv, and some of *cmdline_p and others. */
  
      if (argc_parse - 1 == 0)

@@ -1,6 +1,6 @@
---- pnm/jpegtopnm.c.orig	Mon Aug 28 04:56:27 2000
-+++ pnm/jpegtopnm.c	Tue Sep  5 00:00:00 2000
-@@ -161,6 +161,15 @@
+--- pnm/jpegtopnm.c.orig	Sat Dec 16 17:19:20 2000
++++ pnm/jpegtopnm.c	Sat Jan 13 00:00:00 2001
+@@ -162,6 +162,15 @@
      char ** const argv_parse = malloc(argc*sizeof(char *));
      /* argv, except we modify it as we parse */
  
@@ -16,15 +16,15 @@
      option_def_index = 0;   /* incremented by OPTENTRY */
      OPTENTRY(0, "verbose",     OPT_FLAG,   &cmdline_p->verbose,        0);
      OPTENTRY(0, "dct",         OPT_STRING, &dctval,                    0);
-@@ -170,6 +179,7 @@
+@@ -171,6 +180,7 @@
      OPTENTRY(0, "adobe",       OPT_FLAG,   &adobe,                     0);
      OPTENTRY(0, "notadobe",    OPT_FLAG,   &notadobe,                  0);
-     OPTENTRY(0, "nosmooth",    OPT_FLAG,   &cmdline_p->nosmooth,       0);
+     OPTENTRY(0, "comments",    OPT_FLAG,   &cmdline_p->comments,       0);
 +    option_def[option_def_index].type = OPT_END;
  
      /* Set the defaults */
      cmdline_p->verbose = FALSE;
-@@ -188,7 +198,7 @@
+@@ -190,7 +200,7 @@
      argc_parse = argc;
      for (i=0; i < argc; i++) argv_parse[i] = argv[i];
  

@@ -1,7 +1,7 @@
---- Makefile.config.orig	Sun Aug 20 01:29:00 2000
-+++ Makefile.config	Tue Sep  5 00:00:00 2000
+--- Makefile.config.orig	Mon Jan  8 03:52:54 2001
++++ Makefile.config	Sat Jan 13 00:00:00 2001
 @@ -39,7 +39,7 @@
- #Tru64:
+ #Tru64 (= Digital Unix):
  #CC = cc
  #CC = gcc
 -CC = gcc
@@ -9,7 +9,7 @@
  
  # The linker.
  LD = $(CC)
-@@ -65,7 +65,7 @@
+@@ -71,7 +71,7 @@
  # calls compress or pack.  Mantocat, included with Netpbm, is used on
  # systems which use man pages in the "cat" format.
  
@@ -18,7 +18,7 @@
  #DJGPP/Windows:
  #MANCP = $(SRCDIR)/mantocat
  
-@@ -79,7 +79,7 @@
+@@ -85,7 +85,7 @@
  # -ansi and -Werror should work too, but are not included
  # by default because there's no point in daring the build to fail.
  # -pedantic isn't a problem because it causes at worst a warning.
@@ -27,7 +27,25 @@
  # On DEC Tru64 4.0F (at least), you need -DLONG_32 for ppmtompeg.
  #Tru64:
  #CFLAGS = -O2 -std1 DLONG_32 $(CDEBUG)
-@@ -133,7 +133,7 @@
+@@ -100,7 +100,7 @@
+   
+ # linker options.  
+ 
+-LDFLAGS =
++#LDFLAGS =
+ # Eunice users may want to use -noshare so that the executables can
+ # run standalone:
+ #LDFLAGS = -noshare
+@@ -113,7 +113,7 @@
+ # For a traditional linker:
+ #LDFLAGS = -R$(INSTALLLIBS)
+ #If the linker is gcc (e.g. NetBSD):
+-#LDFLAGS = -Wl,--rpath,$(INSTALLLIBS)
++LDFLAGS = -Wl,--rpath,$(INSTALLLIBS)
+ 
+ # Linker options for created Netpbm shared libraries.
+ 
+@@ -139,7 +139,7 @@
  # independent code, so you need -fpic or fPIC here.  (The rule is: if 
  # -fpic works, use it.  If it bombs, go to fPIC).
  
@@ -36,7 +54,7 @@
  # Solaris, SunOS, and NetBSD:
  #CFLAGS_SHLIB = -fpic
  #CFLAGS_SHLIB = -fPIC
-@@ -149,11 +149,11 @@
+@@ -155,11 +155,11 @@
  # but otherwise will not.
  
  # Use the Tiff library included with Netpbm:
@@ -52,7 +70,7 @@
  # OSF, Tru64:
  #TIFFHDR_DIR = /usr/local1/DEC/include
  #TIFFLIB_DIR = /usr/local1/DEC/lib
-@@ -174,11 +174,11 @@
+@@ -186,11 +186,11 @@
  # at least JPEGLIB_DIR here, or the tiff converters will not build at
  # all.
  
@@ -68,7 +86,7 @@
  # OSF, Tru64:
  #JPEGLIB_DIR = /usr/local1/DEC/lib
  #JPEGHDR_DIR = /usr/local1/DEC/include
-@@ -196,11 +196,11 @@
+@@ -208,11 +208,11 @@
  # here.  If you do not have the PNG library, and still want to
  # successully build everything else, put NONE for these.
  
@@ -84,7 +102,7 @@
  # OSF/Tru64:
  #PNGLIB_DIR = /usr/local1/DEC/lib
  #PNGHDR_DIR = /usr/local1/DEC/include
-@@ -214,8 +214,10 @@
+@@ -226,8 +226,10 @@
  
  # And the Utah Raster Toolkit (aka URT aka RLE) library:
  
@@ -97,3 +115,12 @@
  
  # These are -l options to link in the network libraries.  Often, these are
  # built into the standard C library, so this can be null.  If you don't 
+@@ -321,7 +323,7 @@
+ # Specify the directory where you want data files that the Neptbm programs
+ # access to be installed
+ 
+-INSTALLDATA = $(INSTALL_PREFIX)/lib
++INSTALLDATA = $(INSTALL_PREFIX)/share/netpbm
+ 
+ 
+ #NETPBMLIBSUFFIX is the suffix on the filename of the generated and installed

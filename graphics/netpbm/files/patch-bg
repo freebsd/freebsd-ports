@@ -1,5 +1,5 @@
 --- ppm/Makefile.orig	Sun Dec  3 07:41:51 2000
-+++ ppm/Makefile	Fri Dec  8 00:00:00 2000
++++ ppm/Makefile	Sat Jan 13 00:00:00 2001
 @@ -22,26 +22,31 @@
  NETPBMLIBS = $(LIBPPM) $(PBMDIR)/$(LIBPBM) $(PGMDIR)/$(LIBPGM)
  LIBLIBS = $(PBMDIR)/$(LIBPBM) $(PGMDIR)/$(LIBPGM)
@@ -16,7 +16,7 @@
 +		ppmflash ppmmake ppmmix ppmnorm \
  		ppmquant ppmrelief ppmshift ppmspread ppmtoacad \
 -		ppmtobmp ppmtoeyuv ppmtogif ppmtoleaf \
-+		ppmtoeyuv ppmtogif ppmtoleaf \
++		ppmtoeyuv ppmtoleaf \
  		ppmtoicr ppmtoilbm ppmtolj ppmtomitsu \
  		ppmtopcx ppmtopgm ppmtopi1 ppmtopict ppmtopj \
  		ppmtopjxl ppmtopuzz ppmtorgb3 ppmtosixel \
@@ -26,8 +26,8 @@
 -		sputoppm tgatoppm winicontoppm ximtoppm xpmtoppm xvminitoppm \
 +		sputoppm winicontoppm xpmtoppm xvminitoppm \
  		yuvtoppm yuvsplittoppm
-+SHHOPTBINARIES =	ppmchange ppmcolormask ppmhist ppmtobmp tgatoppm \
-+			ximtoppm 
++SHHOPTBINARIES =	ppmchange ppmcolormask ppmhist ppmtobmp ppmtogif \
++		tgatoppm ximtoppm 
  
  # We don't build vidtoppm by default, because it requires special libraries
  # and there is no known requirement for vidtoppm.
