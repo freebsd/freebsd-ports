@@ -8,7 +8,7 @@
 
 PORTNAME=		bison
 PORTVERSION=		1.34
-PORTREVISION=	1
+PORTREVISION=           2
 CATEGORIES=		devel
 MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	bison
@@ -28,8 +28,6 @@ MAN1=			bison.1
 
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/bison.info*
-	@${PERL} -pi -e 's|-liconv|-lgiconv|g ; s|iconv\.h|giconv\.h|g' \
-		${WRKSRC}/configure ${WRKSRC}/intl/gettextP.h
 
 post-install:
 	install-info ${PREFIX}/info/bison.info ${PREFIX}/info/dir
