@@ -8,7 +8,8 @@
 PORTNAME=	gmime
 PORTVERSION=	0.5.0
 CATEGORIES=	mail
-MASTER_SITES=	http://www.xtorshun.org/gmime/sources/
+MASTER_SITES=	http://bsltwr.dnsalias.org/ftp/pub/gmime/ \
+		http://www.xtorshun.org/gmime/sources/
 
 MAINTAINER=	baskruit@bsltwr.dnsalias.org
 
