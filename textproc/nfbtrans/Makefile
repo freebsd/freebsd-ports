@@ -3,7 +3,7 @@
 # Date created:			30 Aug 1998
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: porting.sgml,v 1.16 1996/03/21 14:15:01 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1998/08/30 02:32:23 max Exp $
 #
 
 DISTNAME=	nfbtr750
@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.zip
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} nfb7502.zip
 
 MAINTAINER=	max@FreeBSD.ORG
+
+BROKEN="fetch, nfb7507 is the latest"
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
