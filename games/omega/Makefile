@@ -18,7 +18,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	# empty
 MAN6=		omega.6
 
-PORTDOCS=	buglist.txt docs/compile.all docs/omega.txt docs/readme.1st \
+MYPORTDOCS=	buglist.txt docs/compile.all docs/omega.txt docs/readme.1st \
 		docs/readme3 docs/readme4
 
 do-install:
@@ -36,7 +36,7 @@ do-install:
 	@${CHOWN} -R root:games ${DATADIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
+.for file in ${MYPORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif

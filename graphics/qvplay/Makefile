@@ -19,7 +19,7 @@ GNU_CONFIGURE=	yes
 
 MAN1= 		qvplay.1 qvrec.1 qvalldel.1
 
-PORTDOCS=	FAQ.txt HISTORY PROTOCOL.txt PROTOCOL.eng \
+MYPORTDOCS=	FAQ.txt HISTORY PROTOCOL.txt PROTOCOL.eng \
 		README README.eng README.FreeBSD
 
 pre-patch:
@@ -31,7 +31,7 @@ pre-configure:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
+.for file in ${MYPORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/../../${file} ${DOCSDIR}
 .endfor
 .endif

@@ -27,14 +27,14 @@ CONFIGURE_ARGS=	--with-wish=${PREFIX}/bin/wish8.3 \
 		--with-tk-lib=tk83 \
 		--with-tcl-version=8.3
 
-PORTDOCS=	AUTHORS ChangeLog FAQ NEWS README doc/color.txt \
+MYPORTDOCS=	AUTHORS ChangeLog FAQ NEWS README doc/color.txt \
 		doc/dccresum.txt doc/links.txt doc/nickcomp.txt \
 		doc/quedit.txt doc/rfc1459.txt doc/tdcc.txt
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/quirc
-.for file in ${PORTDOCS}
+.for file in ${MYPORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/quirc
 .endfor
 .endif

@@ -20,7 +20,7 @@ CONFIGURE_ARGS=	--with-openssl=/usr				\
 		--with-zlib					\
 		--enable-loginf
 
-PORTDOCS=	Acknowledgements Copyrights LICENSE copyright.c \
+MYPORTDOCS=	Acknowledgements Copyrights LICENSE copyright.c \
 		draft-altman-rfc2942bis-00.txt draft-altman-rfc2944bis-01.txt \
 		draft-altman-telnet-fwdx-02.txt \
 		draft-ietf-tn3270e-telnet-tls-05.txt rfc2941.txt rfc2942.txt \
@@ -35,7 +35,7 @@ BROKEN=		"Does not compile"
 
 .if !defined(NOPORTDOCS)
 post-install:
-.for f in ${PORTDOCS}
+.for f in ${MYPORTDOCS}
 	${MKDIR} ${PREFIX}/share/doc/srp
 	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${PREFIX}/share/doc/srp/${f}
 	@${ECHO_CMD} share/doc/srp/${f} >> ${TMPPLIST}

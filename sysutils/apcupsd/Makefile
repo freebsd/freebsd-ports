@@ -42,7 +42,7 @@ PLIST_SUB+=	POWERFL="@comment "
 
 MAN8=		"apcupsd.8"
 
-PORTDOCS=	apcupsd.pdf apcaccess.html apcnisd.html apctest.html apcupsd-styles.css \
+MYPORTDOCS=	apcupsd.pdf apcaccess.html apcnisd.html apctest.html apcupsd-styles.css \
 		apcupsd.apf apcupsd.book apcupsd.gif apcupsd.html batteries.html \
 		bugs.html cables.html cgiprogs.html charging.gif \
 		config-examples.html configure.html data.html eprom.html \
@@ -65,7 +65,7 @@ post-install:
 			  ${PREFIX}/etc/rc.d/${STARTUP_SCRIPT}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
+.for file in ${MYPORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/manual/${file} ${DOCSDIR}
 .endfor
 .endif

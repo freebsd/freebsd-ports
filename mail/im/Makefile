@@ -24,13 +24,13 @@ MAKE_ARGS=	prefix=${PREFIX} imlibdir=${PREFIX}/etc/im
 
 PORTDOCDIR=	${PREFIX}/share/doc/im
 SAMPLEDIR=	${PREFIX}/share/examples/im
-PORTDOCS=	00changes 00copyright 00copyright.jis 00perl 00readme 00usage
+MYPORTDOCS=	00changes 00copyright 00copyright.jis 00perl 00readme 00usage
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PORTDOCDIR}/man ${SAMPLEDIR}
 	@cd ${WRKSRC}; \
-	${INSTALL_DATA} ${PORTDOCS} ${PORTDOCDIR}; \
+	${INSTALL_DATA} ${MYPORTDOCS} ${PORTDOCDIR}; \
 	${INSTALL_DATA} man/* ${PORTDOCDIR}/man; \
 	${INSTALL_DATA} dot.im/* ${SAMPLEDIR}
 .endif

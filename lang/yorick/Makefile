@@ -42,7 +42,7 @@ MAKE_ARGS=	Y_HOME="${PREFIX}/lib/${PORTNAME}" Y_SITE="${DATADIR}" \
 MAN1=		yorick.1 gist.1
 INFO=		yorick
 
-PORTDOCS=	FILE_FORMATS README drat.doc drat.tex graph.doc hex.doc \
+MYPORTDOCS=	FILE_FORMATS README drat.doc drat.tex graph.doc hex.doc \
 		library.doc math.doc refs.pdf refs.ps refs.tex std.doc \
 		yorick.pdf yorick.ps yorick.tex
 
@@ -67,7 +67,7 @@ post-install:
 	@${CP} ${DATADIR}/i0/paths.i ${PREFIX}/lib/${PORTNAME}/bin/paths.i
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
+.for file in ${MYPORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
 .endfor
 	@${LN} -sf ../doc/${PORTNAME} ${DATADIR}/doc

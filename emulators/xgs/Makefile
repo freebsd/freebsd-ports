@@ -35,7 +35,7 @@ CONFIGURE_ARGS=	--with-x
 #
 XGS_DIR=	${PREFIX}/share/xgs
 XGS_DOC=	${PREFIX}/share/doc/xgs
-PORTDOCS=	CHANGES.TXT COMPAT.TXT INSTALL.TXT IWM-DOC.TXT TODO.TXT \
+MYPORTDOCS=	CHANGES.TXT COMPAT.TXT INSTALL.TXT IWM-DOC.TXT TODO.TXT \
 		XGS-FAQ.TXT
 
 post-extract:
@@ -46,7 +46,7 @@ post-install:
 	${INSTALL_DATA} -m 666 /dev/null ${XGS_DIR}/xgs.ram
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${XGS_DOC}
-.for file in ${PORTDOCS}
+.for file in ${MYPORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/docs/${file} ${XGS_DOC}
 .endfor
 	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${XGS_DOC}

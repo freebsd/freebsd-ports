@@ -22,7 +22,7 @@ RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 NO_BUILD=	YES
 USE_REINPLACE=	yes
 TCLLIBS=	definefont.tcl edittable.tcl setpointer.tcl viewer.tcl tclIndex
-PORTDOCS=	Changes.jp README README.jp dot.ewipe
+MYPORTDOCS=	Changes.jp README README.jp dot.ewipe
 EXAMPLES=	a1.gif a2.gif a3.gif a4.gif blue1.gif sample.ewp test.ewp \
 		tutorial.ewp tutorial-e.ewp
 
@@ -45,7 +45,7 @@ do-install:
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/ewipe
-.for file in ${PORTDOCS}
+.for file in ${MYPORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/ewipe
 .endfor
 	@${MKDIR} ${PREFIX}/share/examples/ewipe

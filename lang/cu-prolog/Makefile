@@ -18,7 +18,7 @@ COMMENT=	Experimental constraint logic programming language
 WRKSRC=		${WRKDIR}/src
 MAKEFILE=	makefile
 ALL_TARGET=	cup
-PORTDOCS=	CHANGES COPYRIGHT COPYRIGHT.j INSTALL INSTALL.j README \
+MYPORTDOCS=	CHANGES COPYRIGHT COPYRIGHT.j INSTALL INSTALL.j README \
 		README.j doc/cu3eman.dvi doc/cu3man.dvi doc/newpred_e.doc \
 		doc/newpred_j.doc
 
@@ -28,7 +28,7 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/sample/* ${PREFIX}/share/examples/cu-prolog
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/cu-prolog
-.for i in ${PORTDOCS}
+.for i in ${MYPORTDOCS}
 	${INSTALL_DATA} ${WRKDIR}/$i ${PREFIX}/share/doc/cu-prolog
 .endfor
 .endif

@@ -28,7 +28,7 @@ BINGRP=		bin
 
 MAN8=		rwhois_indexer.8 rwhoisd.8
 
-PORTDOCS=	INSTALL.html TODO UPGRADE operations_guide.html \
+MYPORTDOCS=	INSTALL.html TODO UPGRADE operations_guide.html \
 		operations_guide.txt rfc2167.txt security.html security.txt
 
 post-install:
@@ -36,7 +36,7 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/rwhoisd.8 ${PREFIX}/man/man8
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
+.for file in ${MYPORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
 .endfor
 .endif

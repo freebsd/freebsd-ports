@@ -20,7 +20,7 @@ GNU_CONFIGURE=	yes
 
 MAN1=		gentoo.1
 
-PORTDOCS=	BUGS CONFIG-CHANGES CREDITS NEWS README README.NLS \
+MYPORTDOCS=	BUGS CONFIG-CHANGES CREDITS NEWS README README.NLS \
 		README.gtkrc TODO
 
 post-patch:
@@ -31,7 +31,7 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/gentoo.1x ${MANPREFIX}/man/man1/gentoo.1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
+.for file in ${MYPORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 	${TAR} -C ${WRKSRC}/docs --exclude "gentoo.1x" -cf - . | \

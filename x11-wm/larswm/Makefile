@@ -17,14 +17,14 @@ USE_IMAKE=	yes
 
 MAN1=		larsclock.1 larsremote.1 larswm.1
 
-PORTDOCS=	ChangeLog README README.9wm keyboard_refcard.ms \
+MYPORTDOCS=	ChangeLog README README.9wm keyboard_refcard.ms \
 		mouse_refcard.ms sample.barclock sample.larswmrc \
 		sample.xmodmaprc sample.xsession
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@$(MKDIR) $(DOCSDIR)
-.for file in ${PORTDOCS}
+.for file in ${MYPORTDOCS}
 	$(INSTALL_DATA) $(WRKSRC)/${file} $(DOCSDIR)
 .endfor
 .endif
