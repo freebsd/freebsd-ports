@@ -8,7 +8,8 @@
 PORTNAME=	icpld
 PORTVERSION=	0.6.3
 CATEGORIES=	net
-MASTER_SITES=	http://www.ibiblio.org/icpld/download/
+MASTER_SITES=	http://www.ibiblio.org/icpld/download/ \
+		http://voodoo.oberon.net/download/
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Internet connection performance logging daemon
