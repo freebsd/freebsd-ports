@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}.${PORTVERSION:S/.//}.src
 
 MAINTAINER=	will@FreeBSD.org
 
+LIB_DEPENDS=	GL.14:${PORTSDIR}/graphics/Mesa3
+
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/battleball-2.1-src
 
