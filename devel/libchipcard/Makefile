@@ -24,7 +24,9 @@ CONFIGURE_TARGET=
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
 		--with-distri=freebsd
 
-MAN1=		ctfstool.1 chipcardd.1 geldkarte.1 hbcicard.1
+MAN1=		ctfstool.1 chipcardd.1 geldkarte.1 hbcicard.1 \
+		kvkd.1 memcard.1 libchipcard-config.1 readertest.1
+
 MAN5=		libchipcard.conf.5 chipcardc.conf.5 chipcardd.conf.5
 
 post-install:
