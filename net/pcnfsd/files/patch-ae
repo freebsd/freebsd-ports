@@ -1,0 +1,16 @@
+*** pcnfsd_print.c	Tue Jun 29 10:46:56 1999
+--- pcnfsd_print.c	Tue Jun 29 10:49:51 1999
+***************
+*** 691,697 ****
+--- 691,701 ----
+  int saw_system;
+  
+  #if (defined(BSD) && (BSD >= 199103))
++ #if __FreeBSD__ < 3
+  	p = popen("/usr/sbin/lpc status", "r");
++ #else
++ 	p = popen("/usr/sbin/lpc status all", "r");
++ #endif	/* __FreeBSD__ */
+  #else
+  	p = popen("/usr/etc/lpc status", "r");
+  #endif
