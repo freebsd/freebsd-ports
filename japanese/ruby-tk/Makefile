@@ -7,7 +7,7 @@
 
 CATEGORIES=	japanese
 
-MAINTAINER=	yasuf@big.or.jp
+MAINTAINER=	yasuf@bsdclub.org
 
 TCL_VERSION?=	80
 TK_VERSION?=	80
