@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	URI
-PORTVERSION=    1.19
+PORTVERSION=    1.20
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	URI
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	erwin@lansing.dk
 
-BUILD_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
+BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 
 PERL_CONFIGURE=	yes
 
@@ -27,5 +27,9 @@ MAN3=		URI.3 \
 		URI::data.3 \
 		URI::file.3 \
 		URI::ldap.3
+
+post-patch:
+	${PERL} -pi -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1);/' \
+		${WRKSRC}/URI/urn.pm
 
 .include <bsd.port.mk>
