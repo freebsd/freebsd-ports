@@ -3,7 +3,7 @@
 # Date created:                Tue Jun 23 07:36:55 EST 1998
 # Whom:                        Maurice Castro <maurice@serc.rmit.edu.au>
 #
-# $Id: Makefile,v 1.2 1998/05/07 06:08:24 mph Exp $
+# $Id: Makefile,v 1.3 1998/06/28 23:37:34 steve Exp $
 #
 
 DISTNAME=	R-0.62.1
@@ -20,6 +20,8 @@ MASTER_SITES=	ftp://ftp.ci.tuwien.ac.at/pub/R/src/base/ \
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	maurice@serc.rmit.edu.au
+
+BROKEN=		package
 
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
