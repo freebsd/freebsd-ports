@@ -1,9 +1,0 @@
-share/doc/coda-intro/00README
-share/doc/coda-intro/Announcement
-share/doc/coda-intro/BUILD.FreeBSD
-share/doc/coda-intro/ChangeLog
-share/doc/coda-intro/INSTALL.FreeBSD
-share/doc/coda-intro/README
-share/doc/coda-intro/RUN
-share/doc/coda-intro/WARNING
-@dirrm share/doc/coda-intro
