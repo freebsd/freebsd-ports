@@ -16,4 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 
 MAN1=	cam.1
 
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/cam ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/cam.1 ${PREFIX}/man/man1
+
 .include <bsd.port.mk>

@@ -21,17 +21,3 @@
  OBJS   = cam.o screens.o sounds.o
  ###############################################################################
  
-@@ -68,11 +68,8 @@
- install:$(EFILE) $(MANFILE)
- 	@echo ""
- 	@echo "installing $(EFILE) in directory $(BINDIR)"
--	@$(INSTALL) -m 755 -o root -g root $(EFILE) $(BINDIR)
--	@$(INSTALL) -m 755 -o root -g root $(XEFILE) $(BINDIR)
-+	@$(INSTALL) -c -m 755 -o $(BINOWN) -g $(BINGRP) $(EFILE) $(BINDIR)
- 	@echo ""
- 	@echo "installing manpages for cam"
--	@$(INSTALL) -m 644 -o root -g root $(MANFILE) $(MANDIR)
--	@echo ""
--	@. installvgafont.sh
-+	@$(INSTALL) -c -m 644 -o $(MANOWN) -g $(MANGRP) $(MANFILE) $(MANDIR)
- 	@echo ""
