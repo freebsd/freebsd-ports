@@ -123,6 +123,7 @@
     SUBDIR += xmangekyou
     SUBDIR += xmascot
     SUBDIR += xmold
+    SUBDIR += xmon
     SUBDIR += xmotd
     SUBDIR += xmove
     SUBDIR += xmsg
