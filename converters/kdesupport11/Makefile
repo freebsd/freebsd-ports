@@ -21,7 +21,15 @@ USE_QT=		yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--without-libjpeg --without-libgif \
-		--without-libgdbm --without-libuulib
-CONFIGURE_ENV=	CXXFLAGS="$(CFLAGS)" INSTALL_SCRIPT="install -c -m 555"
+		--without-libgdbm --without-libuulib \
+		--with-qt-includes=${QTDIR}/include/X11/qt
+CONFIGURE_ENV=	CXXFLAGS="$(CFLAGS)" INSTALL_SCRIPT="install -c -m 555" \
+		QTDIR=${QTDIR}
+
+.if defined(PREFIX)
+QTDIR?=		${PREFIX}
+.else
+QTDIR?=		${X11BASE}
+.endif
 
 .include <bsd.port.mk>

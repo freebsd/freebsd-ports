@@ -19,9 +19,19 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 USE_BZIP2=	yes
 USE_QT=		yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	"--prefix=$(PREFIX)"
+CONFIGURE_ARGS=	"--prefix=$(PREFIX)" \
+		"--with-qt-includes=${QTDIR}/include/X11/qt" \
+		"--with-extra-includes=${LOCALBASE}/include" \
+		"--with-extra-libs=${LOCALBASE}/lib"
 CONFIGURE_ENV=	CXXFLAGS="$(CFLAGS)" \
-		INSTALL_SCRIPT="install -c -m 555"
+		INSTALL_SCRIPT="install -c -m 555" \
+		QTDIR=${QTDIR}
 USE_GMAKE=	yes
+
+.if defined(PREFIX)
+QTDIR?=		${PREFIX}
+.else
+QTDIR?=		${X11BASE}
+.endif
 
 .include <bsd.port.mk>
