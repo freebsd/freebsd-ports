@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	odbc
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	databases ruby
 MASTER_SITES=	http://www.ch-werner.de/rubyodbc/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
