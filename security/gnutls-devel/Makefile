@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnutls
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.6
 CATEGORIES=	security net
 MASTER_SITES=	${MASTER_SITE_GNUPG} \
 	http://www.mirrors.wiretapped.net/security/network-security/gnutls/ \
@@ -18,7 +18,7 @@ MAINTAINER=	sergei@kolobov.com
 COMMENT=	GNU Transport Layer Security library
 
 LIB_DEPENDS=	gcrypt.6:${PORTSDIR}/security/libgcrypt \
-		tasn1.1:${PORTSDIR}/security/libtasn1 \
+		tasn1.2:${PORTSDIR}/security/libtasn1 \
 		opencdk.6:${PORTSDIR}/security/opencdk
 
 USE_LIBTOOL=	yes
