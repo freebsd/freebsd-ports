@@ -1,0 +1,6 @@
+######################################################################
+#
+# You will need to set the CONFIG_KEYDATA=${PREFIX}/etc/ in your environment
+# before running this software
+#
+######################################################################

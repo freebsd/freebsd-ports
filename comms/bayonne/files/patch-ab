@@ -1,0 +1,11 @@
+--- server/Makefile.in.orig	Thu Nov  2 13:52:11 2000
++++ server/Makefile.in	Thu Nov  2 13:53:49 2000
+@@ -106,7 +106,7 @@
+ EXTRA_DIST = server.h bayonne.conf bayonne.init bayonne.conf.in 	bayonne.sched $(man_MANS) baxs.in baxs
+ 
+ pkgincludedir = ${includedir}/cc++
+-etc_prefix = /etc
++etc_prefix = @prefix@/etc
+ etc_suffix = .orig
+ 
+ CXXFLAGS = @CXXFLAGS@ -DLIB_VERSION=\"/$(VERSION)/\"
