@@ -3,11 +3,11 @@
 # Date created:         15 July 1998
 # Whom:                 Chuck Robey (chuckr@freebsd.org)
 #
-# $Id: Makefile,v 1.23 1998/11/22 01:56:20 obrien Exp $
+# $Id: Makefile,v 1.24 1998/11/22 07:45:42 chuckr Exp $
 #
 
-DISTNAME=	a2ps-4.10.4
-PKGNAME=	a2ps-${PAPERSIZE}-4.10.4
+DISTNAME=	a2ps-4.12
+PKGNAME=	a2ps-${PAPERSIZE}-4.12
 CATEGORIES=	print
 MASTER_SITES=	http://www-inf.enst.fr/~demaille/ftp/a2ps/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} sheets.map.fixed
@@ -21,7 +21,7 @@ MAN1=		a2ps.1 ogonkify.1 card.1 psmandup.1 fixps.1 pdiff.1
 PAPERSIZE?=	letter
 PAPERSIZECNF=	${PAPERSIZE:S/l/L/:S/a/A/}
 STRIP=
-CONFIGURE_ARGS=	--with-medium=${PAPERSIZECNF}
+CONFIGURE_ARGS=	--with-medium=${PAPERSIZECNF} --sharedstatedir=$(PREFIX)/share/a2ps --sysconfdir=$(PREFIX)/share/a2ps --datadir=$(PREFIX)/share/a2ps --localstatedir=$(PREFIX)/share/a2ps
 
 .if ${PAPERSIZE} != a4 && ${PAPERSIZE} != letter && ${PAPERSIZE} != letterdj
 .BEGIN:
@@ -37,7 +37,6 @@ post-extract:
 	$(CP) $(DISTDIR)/sheets.map.fixed $(WRKSRC)/sheets/sheets.map
 
 post-install:
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 	strip ${PREFIX}/bin/a2ps
 	(cd ${WRKSRC}/doc; ${MAKE} install)
 	$(RM) -f $(PREFIX)/lib/liba2ps.la
