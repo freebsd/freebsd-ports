@@ -10,7 +10,7 @@ PORTVERSION=	0.5.2
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.ohse.de/uwe/ftpcopy/
 
-MAINTAINER=	Matthias Andree <matthias.andree@web.de>
+MAINTAINER=	matthias.andree@web.de
 
 WRKSRC=		${WRKDIR}/web/${DISTNAME}
 
