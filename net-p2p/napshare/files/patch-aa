@@ -1,0 +1,10 @@
+--- src/main.c.orig	Wed Jul  4 10:28:06 2001
++++ src/main.c	Wed Jul  4 10:28:15 2001
+@@ -2,7 +2,6 @@
+ #include "gnutella.h"
+ 
+ #include <signal.h>
+-#include <mcheck.h>
+ 
+ #include "interface.h"
+ #include "support.h"
