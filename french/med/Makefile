@@ -6,50 +6,56 @@
 #
 
 PORTNAME=	med
-PORTVERSION=	2.1.5
-PORTREVISION=	1
+PORTVERSION=	2.2.2
 CATEGORIES=	french cad converters
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
-DISTNAME=	${PORTNAME}hdf-src-${PORTVERSION}-1.noarch
-EXTRACT_SUFX=	.tar
+DISTNAME=	${PORTNAME}_fichier${PORTVERSION}.src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modélisation et Échanges de Données
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libhdf5.a:${PORTSDIR}/science/hdf5
+BUILD_DEPENDS=	wish${TK_VER}:${PORTSDIR}/x11-toolkits/tk${SHORT_TK_VER}
+LIB_DEPENDS=	hdf5.0:${PORTSDIR}/science/hdf5
 
-EXTRACT_CMD=	${TAR}
-EXTRACT_BEFORE_ARGS=	-xf
-EXTRACT_AFTER_ARGS=	# empty
-CONFIGURE_ARGS=	--prefix=${PREFIX} --disable-shared
-CONFIGURE_ENV=	HDF5HOME=${LOCALBASE}
-USE_INC_LIBTOOL_VER=	13
+TK_VER?=	8.4
+SHORT_TK_VER=	${TK_VER:S/.//}
+
+#CONFIGURE_ARGS=	--disable-shared
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	HDF5HOME=${LOCALBASE} CPPFLAGS="${PTHREAD_CFLAGS}"	\
+		LDFLAGS="${PTHREAD_LIBS}"
+USE_LIBTOOL_VER=	15
 USE_GMAKE=	yes
+INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}.src
+DOC2FIX=	. gif html jpg png tests
+TST2FIX=	c f
 
-post-extract:
-	@(cd ${WRKDIR} && \
-	${TAR} xfz ${WRKDIR}/${PORTNAME}${PORTVERSION}.src.tar.gz)
+.include <bsd.port.pre.mk>
+
+.if !${OSVERSION} < 500039
+F77?=		f77
+.endif
+FFLAGS?=	-O2
 
 pre-configure:
-	@${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g'	\
-		${WRKSRC}/config/commence.in
-	@${REINPLACE_CMD} -e 's|@PTHREAD_LIBS@|${PTHREAD_LIBS}|'	\
-		 -e 's|@PTHREAD_CFLAGS@|${PTHREAD_CFLAGS}|'		\
-			${WRKSRC}/tests/Makefile.in
-
-pre-install:
-	@${MKDIR} ${EXAMPLESDIR}
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e 's|SUBDIRS = src tests tools doc|SUBDIRS = src tests tools|'	\
+		${WRKSRC}/Makefile.in
+.endif
+.for dd in ${DOC2FIX}
+	@${REINPLACE_CMD} -e 's|docdir = $$(datadir)/doc|docdir = $$(datadir)/doc/@PACKAGE@|'	\
+		${WRKSRC}/doc/${dd}/Makefile.in
+.endfor
+.for dd in ${TST2FIX}
+	@${REINPLACE_CMD} -e 's|test${dd}dir = $$(bindir)/test|test${dd}dir = ${EXAMPLESDIR}/test|' \
+		${WRKSRC}/tests/${dd}/Makefile.in
+.endfor
 
 post-install:
-.if defined(NOPORTDOCS)
-	@${RM} -rf ${EXAMPLESDIR}
-.else
-	@${MKDIR} ${DOCSDIR}
-	@${CP} -R ${WRKSRC}/doc/html ${DOCSDIR}
+.if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
