@@ -1,0 +1,245 @@
+--- mod_auth_tcl.c	Fri Nov 19 19:35:28 1999
++++ mod_auth_tcl.c	Thu Jan  3 12:24:41 2002
+@@ -5,5 +5,5 @@
+  * You may freely redistribute most NeoSoft extensions to the Apache webserver
+  * for any purpose except commercial resale and/or use in secure servers,
+- * which requires, in either case, written permission from NeoSoft, Inc.  Any 
++ * which requires, in either case, written permission from NeoSoft, Inc.  Any
+  * redistribution of this software must retain this copyright, unmodified
+  * from the original.
+@@ -12,5 +12,5 @@
+  * commerce, require a license for use and may not be redistributed
+  * without explicit written permission, obtained in advance of any
+- * such distribution from NeoSoft, Inc.  These files are clearly marked 
++ * such distribution from NeoSoft, Inc.  These files are clearly marked
+  * with a different copyright.
+  *
+@@ -21,7 +21,7 @@
+  * said copyrights.
+  *
+- * Some of the software in this file may be derived from code 
++ * Some of the software in this file may be derived from code
+  * Copyright (c) 1995 The Apache Group.  All rights reserved.
+- * 
++ *
+  * Redistribution and use of Apache code in source and binary forms is
+  * permitted under most conditions.  Please consult the source code to
+@@ -46,8 +46,9 @@
+ /*
+  * auth_tcl: authentication via Tcl procs in main interpreter
+- * 
++ *
+  * Rob McCool
+  * Randy Kunkee
+- * 
++ * Mark Abrams (Video Collage, Inc.)
++ *
+  */
+ 
+@@ -58,10 +59,10 @@
+  * in your server, since this module depends on Tcl_Interp *interp to be
+  * exported by it.
+- * 
++ *
+  * Based on authentication module originally written by Rob McCool and
+  * adapted to Shambhala by rst.
+  *
+  * Alterations from there to present form by Randy Kunkee of NeoSoft.
+- * 
++ *
+  */
+ 
+@@ -79,4 +80,5 @@
+     char *tcl_basic_auth_command;
+     char *tcl_basic_access_command;
++    char *tcl_access_command;
+ } tcl_auth_config_rec;
+ 
+@@ -87,4 +89,5 @@
+     sec->tcl_basic_auth_command = NULL;
+     sec->tcl_basic_access_command = NULL;
++    sec->tcl_access_command = NULL;
+     return sec;
+ }
+@@ -105,4 +108,6 @@
+ { "TclAuthAccess", tcl_set_string_slot,
+     (void*)XtOffsetOf(tcl_auth_config_rec,tcl_basic_access_command), OR_AUTHCFG, RAW_ARGS, NULL },
++{ "TclAccess", tcl_set_string_slot,
++    (void*)XtOffsetOf(tcl_auth_config_rec,tcl_access_command), OR_AUTHCFG, RAW_ARGS, NULL },
+ { NULL }
+ };
+@@ -121,10 +126,12 @@
+  */
+ 
+-/* Determine user ID, and call Tcl with configured basic auth command.
++/*    A u t h e t i c a t i o n
++ *
++ * Determine user ID, and call Tcl with configured basic auth command.
+  * Tcl command must return either a string containing the password, or`
+  * an empty string, indicating the user was not found.
+  */
+ 
+-int authenticate_basic_user_via_tcl (request_rec *r)
++static int authenticate_basic_user_via_tcl (request_rec *r)
+ {
+     tcl_auth_config_rec *sec =
+@@ -134,9 +141,9 @@
+     char errstr[MAX_STRING_LEN];
+     int res;
+-    
++
+     if ((res = get_basic_auth_pw (r, &sent_pw))) return res;
+-    
+-    if(!sec->tcl_basic_auth_command) 
+-        return DECLINED;
++
++    if(!sec->tcl_basic_auth_command)
++	return DECLINED;
+ 
+     /*
+@@ -148,5 +155,5 @@
+      */
+     if (Tcl_VarEval(interp, sec->tcl_basic_auth_command, " ", c->user, " ", sent_pw, (char*)0)) {
+-        sprintf(errstr,"Tcl auth_command error: %s\n%s",interp->result, Tcl_GetVar(interp, "errorInfo", TCL_GLOBAL_ONLY));
++	sprintf(errstr,"Tcl auth_command error: %s\n%s",interp->result, Tcl_GetVar(interp, "errorInfo", TCL_GLOBAL_ONLY));
+ 	log_reason (errstr, r->uri, r);
+ 	note_basic_auth_failure (r);
+@@ -160,8 +167,14 @@
+     return OK;
+ }
+-    
+-/* Checking ID */
+-    
+-int check_user_access_via_tcl (request_rec *r) {
++
++/*   A u t h o r i z a t i o n
++ *
++ * after authenticating who a user is Apache enters the authorizarion phase.
++ * In this phase we determine if this user should be granted access to the
++ * requested location.  Naming this routine check_user_authorization_via_tcl
++ * might makes things a bit less confusing
++ */
++
++static int check_user_access_via_tcl (request_rec *r) {
+     tcl_auth_config_rec *sec =
+       (tcl_auth_config_rec *)ap_get_module_config (r->per_dir_config, &tcl_auth_module);
+@@ -175,9 +188,10 @@
+     require_line *reqs;
+ 
+-    /* BUG FIX: tadc, 11-Nov-1995.  If there is no "requires" directive, 
++    /* BUG FIX: tadc, 11-Nov-1995.  If there is no "requires" directive,
+      * then any user will do.
+      */
+     if (!reqs_arr)
+-        return (OK);
++	return (OK);
++
+     if (! sec->tcl_basic_access_command)
+ 	return AUTH_REQUIRED;
+@@ -186,10 +200,10 @@
+ 
+     for(x=0; x < reqs_arr->nelts; x++) {
+-      
++
+ 	if (! (reqs[x].method_mask & (1 << m))) continue;
+-	
++
+ 	method_restricted = 1;
+ 
+-        t = reqs[x].requirement;
++	t = reqs[x].requirement;
+ 	code = Tcl_VarEval(interp, sec->tcl_basic_access_command, " ", user, " ", t, (char*)NULL);
+ 	if (code == TCL_ERROR)
+@@ -206,5 +220,5 @@
+ 	}
+     }
+-    
++
+     if (!method_restricted)
+       return OK;
+@@ -214,4 +228,59 @@
+ }
+ 
++/* A c c e s s
++ *
++ * Access control doesnt care about user identity, so the user doesnt
++ * need to enter anything. This routine gets called for attempts to
++ * access any file within a directory with a defined access procedure
++ * (through .htaccess or elsewhere). To define an access procedure the
++ * .htacess file should contain a line that looks like this:
++ *    TclAccess my_access_procedure
++ * my_access_procedure is a tcl procedure which is defined within
++ * neowebscript (for instance, in neowebscript's init.tcl). This
++ * routine will be passed the name of the file whose access is being
++ * attempted. Note that the access procedure can use the webenv array,
++ * so the file whose access is being attempted is also available as
++ *	$webenv(DOCUMENT_URI).
++ * The access procedure must return one of the following:
++ *	OK return allows access
++ *	FORBIDDEN return denies access
++ *	DECLINED return passes decision on to any other handlers
++ *		which may exist
++ */
++
++static int ck_direct_access_via_tcl (request_rec *r) {
++    tcl_auth_config_rec *sec =
++      (tcl_auth_config_rec *)ap_get_module_config(r->per_dir_config,
++						  &tcl_auth_module);
++    char errstr[MAX_STRING_LEN];
++    int code;
++    char *t;
++
++    if (!sec->tcl_access_command)
++	return DECLINED;
++
++    propagate_vars_to_nws(interp, r) ;
++
++    code = Tcl_VarEval(interp, sec->tcl_access_command, " ",
++		       r->filename, (char*)NULL);
++    if (code == TCL_ERROR) {
++	sprintf(errstr,"Tcl ck_direct_access call error: %s\n%s",
++		interp->result,
++		Tcl_GetVar(interp, "errorInfo", TCL_GLOBAL_ONLY));
++	log_reason (errstr, r->uri, r);
++	return DECLINED ;
++    }
++
++    if (strcmp(interp->result,"OK") == 0)
++       return OK ;
++    if (strcmp(interp->result,"DECLINED") == 0)
++       return DECLINED ;
++    if (strcmp(interp->result,"FORBIDDEN") == 0)
++       return FORBIDDEN ;
++
++    /* there is an access routine but we dont understand it's return, so */
++    return DECLINED ;
++}
++
+ module tcl_auth_module = {
+    STANDARD_MODULE_STUFF,
+@@ -224,7 +293,7 @@
+    NULL,			/* handlers */
+    NULL,			/* filename translation */
+-   authenticate_basic_user_via_tcl,	/* check_user_id */
+-   check_user_access_via_tcl,	/* check auth */
+-   NULL,			/* check access */
++   authenticate_basic_user_via_tcl,	/* authentication - who is it? */
++   check_user_access_via_tcl,	/* authorization - do we let him/her in? */
++   ck_direct_access_via_tcl,	/* access (for instance by host id) */
+    NULL,			/* type_checker */
+    NULL,			/* fixups */
+--- ../htdocs/neowebscript/sysopinfo/management.nhtml	Mon Nov 22 02:33:45 1999
++++ ../htdocs/neowebscript/sysopinfo/management.nhtml	Wed Jan  9 16:48:55 2002
+@@ -30,2 +30,12 @@
+ <p>
++<li>TclAccess <i>script</i>
++<p>
++This directive can be used to allow or forbid access without user's
++input -- based, for example, on credentials like IP address, referrer,
++a cookie, etc.  The script is appended the name of the requested
++file before being evaluated and is expected to return OK, FORBIDDEN,
++or DECLINED. The latter means this script "did not care" and the
++other access control mechanisms should be consulted.
++ 
++<p>
+ <li>TclAuthBasic <i>procname arg1 arg2 ... </i>
