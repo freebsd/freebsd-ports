@@ -372,6 +372,7 @@
     SUBDIR += tei-p4
     SUBDIR += tei-xlite
     SUBDIR += tei-xsl-fo
+    SUBDIR += tei-xsl-html
     SUBDIR += tex2im
     SUBDIR += texi2db
     SUBDIR += texi2html
