@@ -15,12 +15,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Weird GNOME fractal generator
 
-BROKEN=		"Does not compile"
-
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack gnomeprefix gnometarget libgnomeui
+USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack libgnomeui lthack
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=	13
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
