@@ -11,6 +11,4 @@ include/sidplay/libcfg.h
 lib/libsidplay.a
 lib/libsidplay.so.1
 lib/libsidplay.so
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R
 @dirrm include/sidplay

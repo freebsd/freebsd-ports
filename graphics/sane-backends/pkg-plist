@@ -119,8 +119,6 @@ lib/sane/libsane-tamarack.so.1
 lib/sane/libsane-umax.a
 lib/sane/libsane-umax.so
 lib/sane/libsane-umax.so.1
-@exec /sbin/ldconfig -m %D/lib
-@unexec /sbin/ldconfig -R
 sbin/saned
 share/sane-style.rc
 @dirrm lib/sane

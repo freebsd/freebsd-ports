@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.engelschall.com/sw/str/ \
 MAINTAINER=	rse@engelschall.com
 
 HAS_CONFIGURE=	yes
+INSTALL_SHLIBS=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
 MAN1=		str-config.1
@@ -24,8 +25,5 @@ post-build:
 
 test:
 	@cd ${WRKSRC} && ${MAKE} test
-
-post-install:
-	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

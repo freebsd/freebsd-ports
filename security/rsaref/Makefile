@@ -23,6 +23,8 @@ MAINTAINER=	kris@FreeBSD.ORG
 WRKSRC=		${WRKDIR}/source
 RESTRICTED=	"Contains cryptography"
 
+INSTALL_SHLIBS=	yes
+
 pre-extract:
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 	/usr/bin/more -e ${FILESDIR}/LICENSE.english
@@ -43,7 +45,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/librsaref.a ${WRKSRC}/librsaref.so.2 \
 		${PREFIX}/lib
 	${LN} -sf librsaref.so.2 ${PREFIX}/lib/librsaref.so
-	${LDCONFIG} -m ${PREFIX}/lib
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/rsaref
 .for file in info.txt rsaref.txt

@@ -163,6 +163,5 @@ share/doc/sp/sx.htm
 share/doc/sp/sysdecl.htm
 share/doc/sp/sysid.htm
 share/doc/sp/xml.htm
-@comment @exec /sbin/ldconfig -m %D/lib
 @dirrm include/sp
 @dirrm share/doc/sp

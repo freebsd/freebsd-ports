@@ -16,7 +16,9 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jkoshy@FreeBSD.org
 
-NO_WRKSUBDIR=	true
+INSTALL_SHLIBS=	yes
+
+NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	freebsd
 MAKE_ENV=	LD_LIBRARY_PATH=.
@@ -24,8 +26,5 @@ MAKE_ENV=	LD_LIBRARY_PATH=.
 MAN1=	siod.1 snapshot-dir.1 snapshot-compare.1 http-get.1 \
 	cp-build.1 ftp-cp.1 csiod.1 ftp-put.1 ftp-test.1 ftp-get.1 \
 	http-stress.1 proxy-server.1
-
-post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

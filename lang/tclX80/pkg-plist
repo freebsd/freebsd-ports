@@ -8,8 +8,6 @@ lib/libtclx%%TCLX_SHORT_VER%%.so
 lib/libtkx%%TCLX_SHORT_VER%%.a
 lib/libtkx%%TCLX_SHORT_VER%%.so.1
 lib/libtkx%%TCLX_SHORT_VER%%.so
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 lib/tclX%%TCLX_LONG_VER%%/autoload.tcl
 lib/tclX%%TCLX_LONG_VER%%/buildidx.tcl
 lib/tclX%%TCLX_LONG_VER%%/help/Tcl.brf

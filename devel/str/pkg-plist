@@ -4,5 +4,3 @@ lib/libstr.a
 lib/libstr.la
 lib/libstr.so
 lib/libstr.so.9
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B

@@ -3,8 +3,6 @@ bin/rrdcgi
 lib/librrd.a
 lib/librrd.so.0
 lib/librrd.so
-@exec /sbin/ldconfig -m %D/lib
-@unexec /sbin/ldconfig -R
 share/examples/rrdtool/cgi-demo.cgi
 share/examples/rrdtool/piped-demo.pl
 share/examples/rrdtool/shared-demo.pl

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	recode
 MAINTAINER=	torstenb@FreeBSD.org
 
 USE_LIBTOOL=	yes
+INSTALL_SHLIBS=	yes
 
 MAN1=		recode.1
 

@@ -1,7 +1,5 @@
 lib/libqt.so
 lib/libqt.so.%%VERSION%%
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R
 bin/moc
 include/X11/qt/qt_gif.h
 include/X11/qt/qxt.h

@@ -14,6 +14,7 @@ DISTNAME=       ${PORTNAME}${PORTVERSION}
 MAINTAINER=	jmz@FreeBSD.org
 
 USE_XLIB=	yes
+INSTALL_SHLIBS=	yes
 WRKSRC=		${WRKDIR}/pgplot
 
 .include <bsd.port.pre.mk>
@@ -36,6 +37,5 @@ post-install:
 .for f in libcpgplot.so libpgplot.so
 	${LN} -sf $f.${VERSION} ${PREFIX}/lib/$f
 .endfor
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.post.mk>

@@ -9,8 +9,6 @@ lib/libsc.so.1
 lib/libscxl.a
 lib/libscxl.so
 lib/libscxl.so.1
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 lib/schemetoc/doc/README.FreeBSD
 lib/schemetoc/doc/embedded.psf
 lib/schemetoc/doc/hello.sc

@@ -12,6 +12,8 @@ MASTER_SITES=	ftp://ftp.jclark.com/pub/sp/
 
 MAINTAINER=	chuckr@FreeBSD.org
 
+INSTALL_SHLIBS=	yes
+
 post-patch:
 	$(CP) $(WRKSRC)/Makefile $(WRKSRC)/Makefile.sed
 	$(CP) $(WRKSRC)/Makefile.lib $(WRKSRC)/Makefile.lib.sed

@@ -32,8 +32,6 @@ lib/libpspell-modules.so.1
 lib/libpspell.a
 lib/libpspell.so
 lib/libpspell.so.2
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/doc/pspell/man-html/1_Introduction.html
 share/doc/pspell/man-html/2_Getting.html
 share/doc/pspell/man-html/3_Library.html

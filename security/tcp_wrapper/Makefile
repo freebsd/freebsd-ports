@@ -17,13 +17,14 @@ MAINTAINER=	torstenb@FreeBSD.org
 FORBIDDEN=	tcp_wrappers is in the base system
 .endif
 
+INSTALL_SHLIBS=	yes
+
 ALL_TARGET=	freebsd
 MAN3=		hosts_access.3
 MAN5=		hosts_access.5 hosts_options.5
 MAN8=		tcpd.8 tcpdchk.8 tcpdmatch.8
 
 post-install:
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 	@${INSTALL_DATA} ${FILESDIR}/inetd.conf.wrapped.sample ${PREFIX}/etc
 
 update:

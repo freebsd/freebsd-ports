@@ -5,5 +5,3 @@ lib/libsip.a
 include/sip/sip.h
 include/sip/sipQt.h
 @dirrm include/sip
-@exec /sbin/ldconfig -m %D/lib
-@unexec /sbin/ldconfig -R

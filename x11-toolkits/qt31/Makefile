@@ -19,6 +19,7 @@ LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png \
 
 NO_LATEST_LINK=	yes
 USE_GMAKE=	yes
+INSTALL_SHLIBS=	yes
 USE_X_PREFIX=	yes
 USE_NEWGCC=	yes
 HAS_CONFIGURE=	yes
@@ -62,7 +63,6 @@ do-install:
 	${INSTALL_DATA} lib/libqxt.a ${PREFIX}/lib ; \
 	${INSTALL_DATA} lib/libqt2.so.3 ${PREFIX}/lib )
 	${LN} -sf libqt2.so.3 ${PREFIX}/lib/libqt2.so
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/qt2/html
 	(cd ${WRKSRC} ; \

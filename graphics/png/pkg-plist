@@ -4,5 +4,3 @@ lib/libpng.a
 lib/libpng.so.3
 @exec ln -sf %f %B/libpng.so
 @unexec rm -f %B/libpng.so
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R

@@ -22,5 +22,3 @@ include/tiffio.h
 lib/libtiff.a
 lib/libtiff.so
 lib/libtiff.so.4
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R

@@ -10,8 +10,6 @@ info/recode.info-5
 lib/librecode.a
 lib/librecode.so
 lib/librecode.so.3
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 include/recode.h
 include/recodext.h
 share/locale/da/LC_MESSAGES/recode.mo

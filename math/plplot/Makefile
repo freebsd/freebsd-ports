@@ -17,6 +17,7 @@ DISTNAME=       plplot4p99j
 MAINTAINER=	ports@FreeBSD.org
 
 USE_XLIB=	yes
+INSTALL_SHLIBS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --with-gcc=yes --with-double=yes
 
@@ -31,6 +32,5 @@ post-install:
 .else
 	${LN} -sf libplplotdX.so.4.99 ${PREFIX}/lib/libplplotdX.so
 .endif
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.post.mk>
