@@ -585,7 +585,7 @@ CONFIGURE_ARGS+=--enable-yp
 .endif
 
 .if defined(WITH_ZIP)
-LIB_DEPENDS+=	zzip-0.10:${PORTSDIR}/devel/zziplib
+LIB_DEPENDS+=	zzip.10:${PORTSDIR}/devel/zziplib
 CONFIGURE_ARGS+=--with-zip=${LOCALBASE}
 .endif
 
