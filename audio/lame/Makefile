@@ -3,7 +3,7 @@
 # Date created:         November 1998
 # Whom:                yoshiaki Uchikawa
 #
-# $Id:$
+# $Id: Makefile,v 1.1.1.1 1998/12/01 22:33:47 sada Exp $
 #
 
 DISTNAME=	dist10
