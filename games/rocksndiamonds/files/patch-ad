@@ -1,12 +1,10 @@
---- ./src/libgame/sound.h.orig	Fri Mar 15 11:07:46 2002
-+++ ./src/libgame/sound.h	Sat Sep  7 17:31:52 2002
-@@ -24,8 +24,8 @@
- 
- #if defined(PLATFORM_LINUX)
+--- src/libgame/sound.c.orig	Sat Jul 19 15:53:46 2003
++++ src/libgame/sound.c	Sat Jul 19 15:54:26 2003
+@@ -26,7 +26,7 @@
+ #include <sys/ioctl.h>
  #include <linux/soundcard.h>
--#elif defined(PLATFORM_FREEBSD)
+ #elif defined(PLATFORM_FREEBSD)
 -#include <machine/soundcard.h>
-+#elif defined(PLATFORM_FREEBSD) && !defined(NO_SOUNDS)
 +#include <sys/soundcard.h>
  #elif defined(PLATFORM_NETBSD)
  #include <sys/ioctl.h>

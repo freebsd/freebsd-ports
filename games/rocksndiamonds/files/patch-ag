@@ -1,6 +1,6 @@
---- src/joystick.c.orig	Tue Dec  5 02:11:08 2000
-+++ src/joystick.c	Tue Jan 30 09:52:41 2001
-@@ -11,10 +11,6 @@
+--- src/libgame/joystick.c.orig	Sat Jul 19 16:12:04 2003
++++ src/libgame/joystick.c	Sat Jul 19 16:16:51 2003
+@@ -11,12 +11,12 @@
  * joystick.c                                               *
  ***********************************************************/
  
@@ -8,24 +8,12 @@
 -#include <machine/joystick.h>
 -#endif
 -
- #include "libgame/libgame.h"
- 
  #include "joystick.h"
-@@ -319,7 +315,7 @@
- #if defined(PLATFORM_UNIX)
- int Joystick(int player_nr)
- {
--#ifdef __FreeBSD__
-+#if defined(__FreeBSD__) && !defined(NO_JOYSTICK)
-   struct joystick joy_ctrl;
- #else
-   struct joystick_control
-@@ -355,7 +351,7 @@
-   js_x  = joy_ctrl.x;
-   js_y  = joy_ctrl.y;
+ #include "misc.h"
++
++#if defined(PLATFORM_FREEBSD)
++#include <sys/joystick.h>
++#endif
  
--#ifdef __FreeBSD__
-+#if defined(__FreeBSD__) && !defined(NO_JOYSTICK)
-   js_b1 = joy_ctrl.b1;
-   js_b2 = joy_ctrl.b2;
- #else
+ 
+ /* ========================================================================= */
