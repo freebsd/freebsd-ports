@@ -12,7 +12,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.cs.wisc.edu/pub/spim/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 PREFIX?=	${LOCALBASE}
 NO_WRKSUBDIR=	yes
