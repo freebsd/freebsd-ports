@@ -1,11 +1,12 @@
---- etc/Makefile.in.dist	Tue Jun  4 18:18:10 2002
-+++ etc/Makefile.in	Tue Jun  4 18:18:25 2002
-@@ -72,7 +72,7 @@
- RANLIB = @RANLIB@
- ac_aux_dir = @ac_aux_dir@
- 
+--- etc/Makefile.in.bak Mon Mar 17 03:13:17 2003
++++ etc/Makefile.in     Mon Mar 17 03:14:27 2003
+@@ -27,3 +27,3 @@
+ datadir = @datadir@
+-sysconfdir = @sysconfdir@
++#sysconfdir = @sysconfdir@
+ sharedstatedir = @sharedstatedir@
+@@ -96,3 +96,3 @@
+
 -sysconf_DATA = reader.conf
-+sysconf_DATA =
- 
- EXTRA_DIST = reader.conf StartupParameters.plist SmartcardServices 
- mkinstalldirs = $(SHELL) $(top_srcdir)/build/mkinstalldirs
++#sysconf_DATA = reader.conf
+
