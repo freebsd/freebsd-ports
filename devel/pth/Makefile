@@ -3,10 +3,10 @@
 # Date Created:			23 May 1999
 # Whom:				Ralf S. Engelschall
 #
-# $Id: Makefile,v 1.10 1999/06/09 07:00:39 rse Exp $
+# $Id: Makefile,v 1.11 1999/06/20 10:10:48 rse Exp $
 #
 
-DISTNAME=	nps-0.9.18
+DISTNAME=	nps-0.9.19
 CATEGORIES=	devel
 MASTER_SITES=	http://www.engelschall.com/sw/nps/ \
 		ftp://ftp.engelschall.com/sw/nps/
