@@ -16,7 +16,8 @@ MASTER_SITES=	ftp://ftp.opera.com/pub/opera/linux/750/final/en/i386/static/ \
 		http://mirrors.pmmf.hu/mirror/opera/linux/750/final/en/i386/static/ \
 		ftp://ftp.task.gda.pl/pub/opera/linux/750/final/en/i386/static/ \
 		ftp://ftp.planetmirror.com/pub/opera/linux/750/final/en/i386/static/ \
-		http://gd.tuwien.ac.at/infosys/browsers/opera/linux/750/final/en/i386/static/
+		http://gd.tuwien.ac.at/infosys/browsers/opera/linux/750/final/en/i386/static/ \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/opera/linux/750/final/en/i386/static/&,}
 PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.2004/-2004/}.1-static-qt.i386-en
 
