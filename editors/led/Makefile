@@ -14,5 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}-editor
 MAINTAINER=	fracture@allusion.net
 
 GNU_CONFIGURE=	yes
+USE_PERL5=	yes
 
 .include <bsd.port.mk>

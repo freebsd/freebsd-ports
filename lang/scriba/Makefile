@@ -19,6 +19,7 @@ PRFXFILES=	variations/standard/basiccmd.c \
 		testconf.c
 
 WRKSRC=		${WRKDIR}
+USE_PERL5=	yes
 
 post-patch:
 .for P in ${PRFXFILES}
