@@ -30,6 +30,7 @@
     SUBDIR += doconfig
     SUBDIR += eject
     SUBDIR += ffsrecov
+    SUBDIR += fileutils
     SUBDIR += flexbackup
     SUBDIR += fontedit
     SUBDIR += fortunelock
