@@ -63,6 +63,7 @@
     SUBDIR += generic-haskell
     SUBDIR += gforth
     SUBDIR += ghc
+    SUBDIR += ghc6
     SUBDIR += ghc-doc
     SUBDIR += glibstdc++28
     SUBDIR += gnat
