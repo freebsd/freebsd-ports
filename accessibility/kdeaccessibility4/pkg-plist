@@ -1,0 +1,145 @@
+bin/kmag
+bin/kmousetool
+bin/kmouth
+share/applnk/Applications/kmag.desktop
+share/applnk/Applications/kmousetool.desktop
+share/applnk/Applications/kmouth.desktop
+share/apps/kmag/icons/hicolor/16x16/actions/followmouse.png
+share/apps/kmag/icons/hicolor/16x16/actions/hidemouse.png
+share/apps/kmag/icons/hicolor/16x16/actions/window.png
+share/apps/kmag/kmagui.rc
+share/apps/kmousetool/icons/hicolor/16x16/actions/kmousetool_off.png
+share/apps/kmousetool/icons/hicolor/16x16/actions/kmousetool_on.png
+share/apps/kmousetool/icons/hicolor/16x16/apps/kmousetool.png
+share/apps/kmousetool/icons/hicolor/32x32/actions/kmousetool_off.png
+share/apps/kmousetool/icons/hicolor/32x32/actions/kmousetool_on.png
+share/apps/kmousetool/icons/hicolor/32x32/apps/kmousetool.png
+share/apps/kmousetool/sounds/mousetool_tap.wav
+share/apps/kmouth/books/de/de-courteousness.phrasebook
+share/apps/kmouth/books/de/de-greetings.phrasebook
+share/apps/kmouth/books/de/de-howareyou.phrasebook
+share/apps/kmouth/books/de/de-personal.phrasebook
+share/apps/kmouth/books/de/de.desktop
+share/apps/kmouth/books/en/en-courteousness.phrasebook
+share/apps/kmouth/books/en/en-greetings.phrasebook
+share/apps/kmouth/books/en/en-howareyou.phrasebook
+share/apps/kmouth/books/en/en-personal.phrasebook
+share/apps/kmouth/books/en/en.desktop
+share/apps/kmouth/books/sv/sv-courteousness.phrasebook
+share/apps/kmouth/books/sv/sv-greetings.phrasebook
+share/apps/kmouth/books/sv/sv-howareyou.phrasebook
+share/apps/kmouth/books/sv/sv-personal.phrasebook
+share/apps/kmouth/books/sv/sv.desktop
+share/apps/kmouth/icons/hicolor/16x16/actions/phrase.png
+share/apps/kmouth/icons/hicolor/16x16/actions/phrase_new.png
+share/apps/kmouth/icons/hicolor/16x16/actions/phrase_open.png
+share/apps/kmouth/icons/hicolor/16x16/actions/phrase_save.png
+share/apps/kmouth/icons/hicolor/16x16/actions/phrasebook.png
+share/apps/kmouth/icons/hicolor/16x16/actions/phrasebook_closed.png
+share/apps/kmouth/icons/hicolor/16x16/actions/phrasebook_new.png
+share/apps/kmouth/icons/hicolor/16x16/actions/phrasebook_open.png
+share/apps/kmouth/icons/hicolor/16x16/actions/phrasebook_save.png
+share/apps/kmouth/icons/hicolor/16x16/actions/phrasehistory_open.png
+share/apps/kmouth/icons/hicolor/16x16/actions/phrasehistory_print.png
+share/apps/kmouth/icons/hicolor/16x16/actions/phrasehistory_save.png
+share/apps/kmouth/icons/hicolor/16x16/actions/speak.png
+share/apps/kmouth/icons/hicolor/22x22/actions/phrase.png
+share/apps/kmouth/icons/hicolor/22x22/actions/phrase_new.png
+share/apps/kmouth/icons/hicolor/22x22/actions/phrase_open.png
+share/apps/kmouth/icons/hicolor/22x22/actions/phrase_save.png
+share/apps/kmouth/icons/hicolor/22x22/actions/phrasebook.png
+share/apps/kmouth/icons/hicolor/22x22/actions/phrasebook_closed.png
+share/apps/kmouth/icons/hicolor/22x22/actions/phrasebook_new.png
+share/apps/kmouth/icons/hicolor/22x22/actions/phrasebook_open.png
+share/apps/kmouth/icons/hicolor/22x22/actions/phrasebook_save.png
+share/apps/kmouth/icons/hicolor/22x22/actions/phrasehistory_open.png
+share/apps/kmouth/icons/hicolor/22x22/actions/phrasehistory_print.png
+share/apps/kmouth/icons/hicolor/22x22/actions/phrasehistory_save.png
+share/apps/kmouth/icons/hicolor/22x22/actions/speak.png
+share/apps/kmouth/icons/hicolor/32x32/actions/phrase.png
+share/apps/kmouth/icons/hicolor/32x32/actions/phrase_new.png
+share/apps/kmouth/icons/hicolor/32x32/actions/phrase_open.png
+share/apps/kmouth/icons/hicolor/32x32/actions/phrase_save.png
+share/apps/kmouth/icons/hicolor/32x32/actions/phrasebook.png
+share/apps/kmouth/icons/hicolor/32x32/actions/phrasebook_closed.png
+share/apps/kmouth/icons/hicolor/32x32/actions/phrasebook_new.png
+share/apps/kmouth/icons/hicolor/32x32/actions/phrasebook_open.png
+share/apps/kmouth/icons/hicolor/32x32/actions/phrasebook_save.png
+share/apps/kmouth/icons/hicolor/32x32/actions/phrasehistory_open.png
+share/apps/kmouth/icons/hicolor/32x32/actions/phrasehistory_print.png
+share/apps/kmouth/icons/hicolor/32x32/actions/phrasehistory_save.png
+share/apps/kmouth/icons/hicolor/32x32/actions/speak.png
+share/apps/kmouth/icons/hicolor/48x48/actions/speak.png
+share/apps/kmouth/kmouthui.rc
+share/apps/kmouth/phrasebookdialogui.rc
+share/config/kmouthrc
+share/doc/HTML/en/kmag/common
+share/doc/HTML/en/kmag/index.cache.bz2
+share/doc/HTML/en/kmag/index.docbook
+share/doc/HTML/en/kmag/screenshot.png
+share/doc/HTML/en/kmousetool/common
+share/doc/HTML/en/kmousetool/index.cache.bz2
+share/doc/HTML/en/kmousetool/index.docbook
+share/doc/HTML/en/kmouth/common
+share/doc/HTML/en/kmouth/index.cache.bz2
+share/doc/HTML/en/kmouth/index.docbook
+share/doc/HTML/en/kmouth/kmouthcpref.eps
+share/doc/HTML/en/kmouth/kmouthcpref.png
+share/doc/HTML/en/kmouth/kmouthctts.eps
+share/doc/HTML/en/kmouth/kmouthctts.png
+share/doc/HTML/en/kmouth/kmouthedit.eps
+share/doc/HTML/en/kmouth/kmouthedit.png
+share/doc/HTML/en/kmouth/kmouthmain.eps
+share/doc/HTML/en/kmouth/kmouthmain.png
+share/doc/HTML/en/kmouth/kmouthwizard.eps
+share/doc/HTML/en/kmouth/kmouthwizard.png
+share/icons/hicolor/16x16/apps/kmag.png
+share/icons/hicolor/16x16/apps/kmousetool.png
+share/icons/hicolor/16x16/apps/kmouth.png
+share/icons/hicolor/22x22/apps/kmouth.png
+share/icons/hicolor/32x32/apps/kmag.png
+share/icons/hicolor/32x32/apps/kmousetool.png
+share/icons/hicolor/32x32/apps/kmouth.png
+share/icons/hicolor/48x48/apps/kmouth.png
+share/icons/locolor/16x16/apps/kmag.png
+share/icons/locolor/16x16/apps/kmouth.png
+share/icons/locolor/22x22/apps/kmouth.png
+share/icons/locolor/32x32/apps/kmag.png
+share/icons/locolor/32x32/apps/kmouth.png
+@dirrm share/icons/locolor/22x22/apps
+@dirrm share/icons/locolor/22x22
+@dirrm share/icons/hicolor/22x22/apps
+@dirrm share/icons/hicolor/22x22
+@dirrm share/doc/HTML/en/kmouth
+@dirrm share/doc/HTML/en/kmousetool
+@dirrm share/doc/HTML/en/kmag
+@dirrm share/apps/kmouth/icons/hicolor/48x48/actions
+@dirrm share/apps/kmouth/icons/hicolor/48x48
+@dirrm share/apps/kmouth/icons/hicolor/32x32/actions
+@dirrm share/apps/kmouth/icons/hicolor/32x32
+@dirrm share/apps/kmouth/icons/hicolor/22x22/actions
+@dirrm share/apps/kmouth/icons/hicolor/22x22
+@dirrm share/apps/kmouth/icons/hicolor/16x16/actions
+@dirrm share/apps/kmouth/icons/hicolor/16x16
+@dirrm share/apps/kmouth/icons/hicolor
+@dirrm share/apps/kmouth/icons
+@dirrm share/apps/kmouth/books/sv
+@dirrm share/apps/kmouth/books/en
+@dirrm share/apps/kmouth/books/de
+@dirrm share/apps/kmouth/books
+@dirrm share/apps/kmouth
+@dirrm share/apps/kmousetool/sounds
+@dirrm share/apps/kmousetool/icons/hicolor/32x32/apps
+@dirrm share/apps/kmousetool/icons/hicolor/32x32/actions
+@dirrm share/apps/kmousetool/icons/hicolor/32x32
+@dirrm share/apps/kmousetool/icons/hicolor/16x16/apps
+@dirrm share/apps/kmousetool/icons/hicolor/16x16/actions
+@dirrm share/apps/kmousetool/icons/hicolor/16x16
+@dirrm share/apps/kmousetool/icons/hicolor
+@dirrm share/apps/kmousetool/icons
+@dirrm share/apps/kmousetool
+@dirrm share/apps/kmag/icons/hicolor/16x16/actions
+@dirrm share/apps/kmag/icons/hicolor/16x16
+@dirrm share/apps/kmag/icons/hicolor
+@dirrm share/apps/kmag/icons
+@dirrm share/apps/kmag
