@@ -30,6 +30,7 @@ PLIST_SUB=	PHPDOCDIR=${PHPDOCDIR:S/^${PREFIX}\///}
 pre-fetch:
 	@${ECHO}
 	@${ECHO} "You may set PHP_LANG to"
+	@${ECHO} "	br (brazillian),"
 	@${ECHO} "	de (german),"
 	@${ECHO} "	es (spanish),"
 	@${ECHO} "	fr (french) or"
