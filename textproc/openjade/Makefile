@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	kuriyama@FreeBSD.org
+COMMENT=	Object-oriented SGML/XML parser toolkit and DSSSL engine
 
 LIB_DEPENDS=	osp.3:${PORTSDIR}/textproc/opensp
 RUN_DEPENDS=	${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog

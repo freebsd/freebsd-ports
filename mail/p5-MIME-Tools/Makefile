@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	MIME
 DISTNAME=	MIME-tools-${PORTVERSION}
 
 MAINTAINER=	kuriyama@FreeBSD.org
+COMMENT=	A set of perl5 modules for MIME
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Mail/Header.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/IO/Wrap.pm:${PORTSDIR}/devel/p5-IO-stringy

@@ -12,6 +12,7 @@ MASTER_SITES=	http://blue.ribbon.to/~harpy/ming/jaming/
 DISTFILES=	jaming-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	kuriyama@FreeBSD.org
+COMMENT=	LGPL'ed Flash 4/5 movie output library with Japanese languages support
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		ungif.5:${PORTSDIR}/graphics/libungif

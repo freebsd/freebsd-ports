@@ -12,6 +12,7 @@ CATEGORIES=	textproc print
 MASTER_SITES=	http://fallout.campusview.indiana.edu/ports/distfiles/
 
 MAINTAINER=	kuriyama@FreeBSD.org
+COMMENT=	Generates groff and HTML from linuxdoc and docbook SGML documents
 
 # There are two ports that satisfy the nsgmls requirement.
 # Jade is preferred, but it currently doesn't compile on 2.1.x

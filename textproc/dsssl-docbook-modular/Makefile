@@ -16,6 +16,7 @@ DISTNAME=	docbook-dsssl-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} docbook-dsssl-doc-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	kuriyama@FreeBSD.org
+COMMENT=	DSSSL stylesheets for the DocBook DTD by Norman Walsh
 
 BUILD_DEPENDS=	${LOCALBASE}/share/sgml/docbook/3.0/catalog:${PORTSDIR}/textproc/docbook-300
 RUN_DEPENDS=	${LOCALBASE}/share/sgml/docbook/3.0/catalog:${PORTSDIR}/textproc/docbook-300

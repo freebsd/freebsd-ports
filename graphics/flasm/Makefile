@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	kuriyama
 DISTNAME=	flasm141src
 
 MAINTAINER=	kuriyama@FreeBSD.org
+COMMENT=	Command line assembler/disassembler of flash actionscript bytecode
 
 USE_ZIP=	YES
 USE_GMAKE=	YES

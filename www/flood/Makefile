@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	kuriyama
 DISTNAME=	${PORTNAME}-20030108
 
 MAINTAINER=	kuriyama@FreeBSD.org
+COMMENT=	Profile-driven HTTP load tester
 
 LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2 \
 		iconv.3:${PORTSDIR}/converters/libiconv \

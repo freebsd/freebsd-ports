@@ -16,6 +16,7 @@ MASTER_SITE_SUBDIR=	net-snmp
 DISTNAME=	ucd-snmp-${PORTVERSION}
 
 MAINTAINER=	kuriyama@FreeBSD.org
+COMMENT=	An extendable SNMP implementation (tkmib part)
 
 RUN_DEPENDS=	${SITE_PERL}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk \
 		${SITE_PERL}/SNMP.pm:${PORTSDIR}/net/p5-SNMP

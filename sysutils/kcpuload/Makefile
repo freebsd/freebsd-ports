@@ -11,6 +11,7 @@ CATEGORIES=	sysutils kde
 MASTER_SITES=	http://ftp.kde.com/Administration/Monitoring/Resources/KCPULoad/
 
 MAINTAINER=	kuriyama@FreeBSD.org
+COMMENT=	CPU meter for Kicker
 
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes

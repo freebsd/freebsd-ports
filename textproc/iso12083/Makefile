@@ -14,6 +14,7 @@ DISTFILES=	article.dtd book.dtd maths.dtd serial.dtd
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	kuriyama@FreeBSD.org
+COMMENT=	SGML DTDs from the The Electronic Publishing Special Interest Group
 
 RUN_DEPENDS=	${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog
 

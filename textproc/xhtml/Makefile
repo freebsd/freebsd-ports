@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	kuriyama
 DISTNAME=	xhtml1-20000126
 
 MAINTAINER=	kuriyama@FreeBSD.org
+COMMENT=	W3C's XHTML DTD
 
 BUILD_DEPENDS=	${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog
 RUN_DEPENDS=	${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	kuriyama
 DISTNAME=	${PKGNAME}beta
 
 MAINTAINER=	kuriyama@FreeBSD.org
+COMMENT=	New flavor of asclock (GTK version)
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	asclock

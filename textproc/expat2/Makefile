@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	expat
 
 MAINTAINER=	kuriyama@FreeBSD.org
+COMMENT=	XML 1.0 parser written in C
 
 USE_LIBTOOL=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}

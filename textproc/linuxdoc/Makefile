@@ -11,6 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://fallout.campusview.indiana.edu/ports/distfiles/
 
 MAINTAINER=	kuriyama@FreeBSD.org
+COMMENT=	The Linuxdoc SGML DTD
 
 RUN_DEPENDS=	${ISOCAT}:${PORTSDIR}/textproc/iso8879 \
 		${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog

@@ -12,6 +12,7 @@ MASTER_SITES=
 DISTFILES=	sdk40-core.tar.gz sdk40upd1.tar.gz
 
 MAINTAINER=	kuriyama@FreeBSD.org
+COMMENT=	Palm OS SDK
 
 RESTRICTED=	License agreement is required.
 WRKSRC=		${WRKDIR}/Palm\ OS\ Support

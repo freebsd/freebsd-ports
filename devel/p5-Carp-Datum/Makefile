@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Carp
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
+COMMENT=	Debugging And Tracing Ultimate Module
 
 BUILD_DEPENDS=	${PM_BASE}/Log/Agent.pm:${PORTSDIR}/devel/p5-Log-Agent \
 		${PM_BASE}/Getargs/Long.pm:${PORTSDIR}/devel/p5-Getargs-Long

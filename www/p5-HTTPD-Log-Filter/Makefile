@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	../../authors/id/A/AW/AWRIGLEY
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
+COMMENT=	Perl module to filter entries out of an httpd log
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/IO/Zlib.pm:${PORTSDIR}/archivers/p5-IO-Zlib
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/IO/Zlib.pm:${PORTSDIR}/archivers/p5-IO-Zlib

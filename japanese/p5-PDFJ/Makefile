@@ -12,6 +12,7 @@ CATEGORIES=	japanese perl5
 MASTER_SITES=	http://hp1.jonex.ne.jp/%7Enakajima.yasushi/archives/
 
 MAINTAINER=	kuriyama@FreeBSD.org
+COMMENT=	PDFJ module provides methods to generate Japanese PDF file
 
 USE_ZIP=	YES
 PERL_CONFIGURE=	YES

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.docbook.org/xml/${PORTVERSION}/ \
 		http://www.oasis-open.org/committees/docbook/xml/${PORTVERSION}/
 
 MAINTAINER=	kuriyama@FreeBSD.org
+COMMENT=	XML version of the DocBook DTD
 
 RUN_DEPENDS=	${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog
 

@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.jaist.ac.jp/pub/dbms/PostgreSQL/ \
 		ftp://ftp.postgresql.org/pub/
 
 MAINTAINER=	kuriyama@FreeBSD.org
+COMMENT=	A robust, next generation, object-relational DBMS plus Multibyte-patch
 
 NO_LATEST_LINK=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src

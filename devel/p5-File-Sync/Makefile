@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	File
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
+COMMENT=	Perl5 module interface to the UNIX sync(2) and POSIX.1b fsync(2)
 
 PERL_CONFIGURE=	yes
 
