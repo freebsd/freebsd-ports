@@ -1,6 +1,5 @@
 bin/novawm
 %%PORTDOCS%%share/doc/novawm/AUTHORS
-%%PORTDOCS%%share/doc/novawm/COPYING
 %%PORTDOCS%%share/doc/novawm/ChangeLog
 %%PORTDOCS%%share/doc/novawm/INSTALL
 %%PORTDOCS%%share/doc/novawm/README
