@@ -1,4 +1,4 @@
-/*-
+/*
  * Copyright (c) 2002 Marius Strobl
  * All rights reserved.
  *

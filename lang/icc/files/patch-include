@@ -52,3 +52,41 @@
  using ::wmemchr; using ::wmemcmp; using ::wmemcpy;
  using ::wmemmove; using ::wmemset;
  // using ::wcsftime;
+--- opt/intel/compiler60/ia32/include/cfloat.orig	Thu Sep 12 07:08:29 2002
++++ opt/intel/compiler60/ia32/include/cfloat	Thu Sep 12 08:01:57 2002
+@@ -6,35 +6,6 @@
+ 
+ #include <float.h>
+ 
+- #if __EDG__
+-_C_STD_BEGIN
+-		/* TYPE DEFINITIONS */
+-typedef struct
+-	{	/* parameters for a floating-point type */
+-	int _Ddig, _Dmdig, _Dmax10e, _Dmaxe, _Dmin10e, _Dmine;
+-	union
+-		{	/* union of short array and all floats */
+-		unsigned short _Us[8];
+-		float _Float;
+-		double _Double;
+-		long double _Long_double;
+-		} _Deps, _Dmax, _Dmin;
+-	} _Dvals;
+-
+-		/* DECLARATIONS */
+-_C_LIB_DECL
+-extern const _Dvals _Ldbl;
+-_END_C_LIB_DECL
+-_C_STD_END
+-
+-#undef LDBL_EPSILON	/* redefine macros that use gcc extension */
+-#undef LDBL_MAX
+-#undef LDBL_MIN
+-
+-#define LDBL_EPSILON	_CSTD _Ldbl._Deps._Long_double
+-#define LDBL_MAX		_CSTD _Ldbl._Dmax._Long_double
+-#define LDBL_MIN		_CSTD _Ldbl._Dmin._Long_double
+- #endif /* __EDG__ */
+ #endif /* _CFLOAT_ */
+ 
+ /*

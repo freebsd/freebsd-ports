@@ -678,8 +678,6 @@
 %%PORTDOCS%%intel/compiler60/docs/ref/webhelp4.js
 %%PORTDOCS%%@dirrm intel/compiler60/docs/ref
 %%PORTDOCS%%@dirrm intel/compiler60/docs
-intel/compiler60/ia32/bin/real/ld
-@dirrm intel/compiler60/ia32/bin/real
 intel/compiler60/ia32/bin/Errormatch.txt
 intel/compiler60/ia32/bin/INTEL
 intel/compiler60/ia32/bin/icc
@@ -729,6 +727,7 @@ intel/compiler60/ia32/include/exception
 intel/compiler60/ia32/include/fvec.h
 intel/compiler60/ia32/include/iso646.h
 intel/compiler60/ia32/include/ivec.h
+intel/compiler60/ia32/include/mathf.h
 intel/compiler60/ia32/include/mmintrin.h
 intel/compiler60/ia32/include/new
 intel/compiler60/ia32/include/new.h
@@ -746,13 +745,16 @@ intel/compiler60/ia32/include/xmtx.h
 intel/compiler60/ia32/include/xstddef
 intel/compiler60/ia32/include/yvals.h
 @dirrm intel/compiler60/ia32/include
+intel/compiler60/ia32/lib/crtxi.o
+intel/compiler60/ia32/lib/crtxn.o
 intel/compiler60/ia32/lib/icrt.internal.map
-intel/compiler60/ia32/lib/libcprts.a
+intel/compiler60/ia32/lib/icrt.link
 intel/compiler60/ia32/lib/libcxa.a
 intel/compiler60/ia32/lib/libcxa.so
 intel/compiler60/ia32/lib/libcxa.so.1
 intel/compiler60/ia32/lib/libguide.a
 intel/compiler60/ia32/lib/libguide.so
+intel/compiler60/ia32/lib/libimf.a
 intel/compiler60/ia32/lib/libirc.a
 intel/compiler60/ia32/lib/libircmt.a
 intel/compiler60/ia32/lib/libompstub.a
