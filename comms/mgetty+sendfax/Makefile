@@ -3,7 +3,7 @@
 # Date created:         21 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.13 1996/11/18 13:57:14 asami Exp $
+# $Id: Makefile,v 1.14 1996/11/22 08:19:50 swallace Exp $
 #
 
 DISTNAME=	mgetty-0.99
@@ -13,6 +13,7 @@ DISTFILES=	mgetty099-Aug07.tar.gz
 
 MAINTAINER=	jmz@FreeBSD.org
 
+NO_PACKAGE=	yes	# too many questions
 IS_INTERACTIVE= yes
 MAKE_FLAGS=	prefix=${PREFIX} -f 
 MAN1=		coverpg.1 fax.1 faxq.1 faxrm.1 faxrunq.1 faxspool.1 \
