@@ -48,46 +48,7 @@
  
  #if defined(SOLARIS)
  
-@@ -299,23 +305,23 @@
- #elif defined(IRIX)
- 
- const _pair _nl_language_list[] = {
--   { "ISO8859-1",  	RTL_TEXTENCODING_ISO_8859_1	}, /* Western */
--   { "ISO8859-2",  	RTL_TEXTENCODING_ISO_8859_2     }, /* Central European */
--   { "ISO8859-5",  	RTL_TEXTENCODING_ISO_8859_5     }, /* Cyrillic */
--   { "ISO8859-7",  	RTL_TEXTENCODING_ISO_8859_7    	}, /* Greek */
--   { "ISO8859-9",  	RTL_TEXTENCODING_ISO_8859_9     }, /* Turkish */
--   { "ISO8859-15", 	RTL_TEXTENCODING_ISO_8859_15    }, /* Western Updated (w/Euro sign) */
--   { "eucJP",		RTL_TEXTENCODING_EUC_JP 	}, /* Japan */
--   { "eucKR",		RTL_TEXTENCODING_EUC_KR		}, /* Korea */
--   { "eucCN",		RTL_TEXTENCODING_EUC_CN		}, /* China */
--   { "eucTW",		RTL_TEXTENCODING_EUC_TW		}, /* Taiwan - Traditional Chinese */
--   { "big5",		RTL_TEXTENCODING_BIG5		}, /* China - Traditional Chinese */
--   { "eucgbk",		RTL_TEXTENCODING_DONTKNOW	}, /* China - Simplified Chinese */
--   { "gbk",		RTL_TEXTENCODING_GBK		}, /* China - Simplified Chinese */
--   { "sjis",		RTL_TEXTENCODING_SHIFT_JIS	}, /* Japan */
-+   { "BIG5",		RTL_TEXTENCODING_BIG5		}, /* China - Traditional Chinese */
-+   { "EUCCN",		RTL_TEXTENCODING_EUC_CN		}, /* China */
-+   { "EUCGBK",		RTL_TEXTENCODING_DONTKNOW	}, /* China - Simplified Chinese */
-+   { "EUCJP",		RTL_TEXTENCODING_EUC_JP		}, /* Japan */
-+   { "EUCKR",		RTL_TEXTENCODING_EUC_KR		}, /* Korea */
-+   { "EUCTW",		RTL_TEXTENCODING_EUC_TW		}, /* Taiwan - Traditional Chinese */
-+   { "GBK",		RTL_TEXTENCODING_GBK		}, /* China - Simplified Chinese */
-+   { "ISO8859-1",	RTL_TEXTENCODING_ISO_8859_1	}, /* Western */
-+   { "ISO8859-15",	RTL_TEXTENCODING_ISO_8859_15	}, /* Western Updated (w/Euro sign) */
-+   { "ISO8859-2",	RTL_TEXTENCODING_ISO_8859_2	}, /* Central European */
-+   { "ISO8859-5",	RTL_TEXTENCODING_ISO_8859_5	}, /* Cyrillic */
-+   { "ISO8859-7",	RTL_TEXTENCODING_ISO_8859_7	}, /* Greek */
-+   { "ISO8859-9",	RTL_TEXTENCODING_ISO_8859_9	}, /* Turkish */
-+   { "SJIS",		RTL_TEXTENCODING_SHIFT_JIS	}  /* Japan */
- };
- 
--#elif defined(LINUX) || defined(NETBSD)
-+#elif defined(LINUX)
- 
- const _pair _nl_language_list[] = {
-     { "ANSI_X3.110-1983",           RTL_TEXTENCODING_DONTKNOW   },  /* ISO-IR-99 NAPLPS */
-@@ -496,7 +502,59 @@
+@@ -497,7 +503,59 @@
      { "WIN-SAMI-2",                 RTL_TEXTENCODING_DONTKNOW }     /* WS2 */
  };
  
@@ -148,7 +109,7 @@
  
  static pthread_mutex_t aLocalMutex = PTHREAD_MUTEX_INITIALIZER;
  
-@@ -618,7 +676,7 @@
+@@ -619,7 +677,7 @@
      return ret;
  }
  
@@ -157,7 +118,7 @@
  
  /*
   * FIXME: the MacOS X implemetation is missing
-@@ -651,7 +709,7 @@
+@@ -652,7 +710,7 @@
      return 0;
  }
  
@@ -166,7 +127,7 @@
  
  /*
   * This implementation of osl_getTextEncodingFromLocale maps 
-@@ -684,6 +742,7 @@
+@@ -685,6 +743,7 @@
      { "iso8859-8",    RTL_TEXTENCODING_ISO_8859_8  },
      { "iso8859-9",    RTL_TEXTENCODING_ISO_8859_9  },
      { "koi8-r",       RTL_TEXTENCODING_KOI8_R      },
@@ -174,7 +135,7 @@
      { "pck",          RTL_TEXTENCODING_MS_932      },
  #if (0)
      { "sun_eu_greek", RTL_TEXTENCODING_DONTKNOW    },
-@@ -887,6 +946,6 @@
+@@ -888,6 +947,6 @@
      return 0;
  }
  

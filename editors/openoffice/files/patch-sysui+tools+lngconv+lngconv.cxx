@@ -4,8 +4,8 @@
  #include <stdlib.h>
  #include <stdio.h>
  
--#if defined( LINUX ) || defined (SOLARIS)
-+#if defined(LINUX) || defined (SOLARIS) || defined (FREEBSD)
+-#if defined( LINUX ) || defined (SOLARIS) || defined(IRIX)
++#if defined(LINUX) || defined (SOLARIS) || defined(IRIX) || defined (FREEBSD)
  #include <locale.h>
  #include <langinfo.h>
  #endif
