@@ -7,9 +7,9 @@
 #
 
 PORTNAME?=	nmap
-PORTVERSION=	2.54.b34
+PORTVERSION=	3.00
 CATEGORIES=	security
-MASTER_SITES=	http://www.insecure.org/nmap/dist/  \
+MASTER_SITES=	http://download.insecure.org/nmap/dist/  \
 		ftp://nuxi.ucdavis.edu/pub/misc/  \
 		http://www.mobis.com/ajax/projects/
 DISTNAME=	nmap-${PORTVERSION:S/.b/BETA/}
