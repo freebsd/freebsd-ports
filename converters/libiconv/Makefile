@@ -8,9 +8,12 @@
 PORTNAME=	libiconv
 PORTVERSION=	1.7.0.1
 CATEGORIES=	converters devel
-MASTER_SITES=	ftp://ftp.ilog.fr/pub/Users/haible/gnu/ \
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://www.marcuscom.com/downloads/ \
+		ftp://ftp.ilog.fr/pub/Users/haible/gnu/ \
 		${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITE_SUBDIR=	marcus \
+		${PORTNAME}
 
 MAINTAINER=	gnome@FreeBSD.org
 
