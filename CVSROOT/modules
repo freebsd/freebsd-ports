@@ -1100,6 +1100,7 @@ coolmail	ports/mail/coolmail
 coppermine	ports/www/coppermine
 cops		ports/security/cops
 copytape	ports/sysutils/copytape
+coq		ports/math/coq
 coreutils	ports/sysutils/coreutils
 corewars	ports/games/corewars
 corkscrew	ports/net/corkscrew
