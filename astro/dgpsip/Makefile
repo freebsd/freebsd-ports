@@ -14,4 +14,6 @@ MAINTAINER=     dbaker@FreeBSD.org
 
 GNU_CONFIGURE=	YES
 
+MAN1=	dgpsip.1
+
 .include <bsd.port.mk>
