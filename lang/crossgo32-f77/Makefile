@@ -19,7 +19,7 @@ COMMENT=	G2c libraries and compatibility for DJGPP V2 crossgo32 crosscompiler
 DEPRECATED=	"project abandoned, mastersite long gone"
 EXPIRATION_DATE=	"May 5, 2004"
 
-BUILD_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS+=unzip:${PORTSDIR}/archivers/unzip
 .if !defined(GNU_CPP)
 RUN_DEPENDS+=	${LOCALBASE}/bin/fpp:${PORTSDIR}/devel/fpp
 .endif
