@@ -3,7 +3,7 @@
 # Date created:		31 Mar 1998
 # Whom:			eivind/dima/jseger
 #
-# $Id: Makefile,v 1.20 1998/04/13 10:59:30 jseger Exp $
+# $Id: Makefile,v 1.21 1998/04/16 02:05:31 jseger Exp $
 #
 
 DISTNAME=	unix_19980408
@@ -26,6 +26,8 @@ OSNAME=	`uname -s`
 OSVER=	`uname -r | ${SED} 's/-.*//'`
 OBJDIR=	${WRKSRC}/dist/${OSNAME}${OSVER}_DBG.OBJ
 
+post-configure:
+	@${ECHO} ${MOTIFLIB} > work/ns/MOTIFLIB
 do-install:
 	@${MKDIR} ${PREFIX}/lib/mozilla/bin
 	@cd ${OBJDIR}/bin && tar -chf - bsdecho lib* moz-export \
