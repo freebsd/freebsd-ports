@@ -31,6 +31,7 @@ OPTIONS=	CDPARANOIA "Enable cdparanoia support" off
 
 .if defined(WITH_CDPARANOIA)
 LIB_DEPENDS+=	cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia
+CONFIGURE_ARGS+=	--enable-cdpar
 .endif
 
 .include <bsd.port.post.mk>
