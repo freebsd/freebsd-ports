@@ -133,6 +133,7 @@
     SUBDIR += p5-DBD-mysql41
     SUBDIR += p5-DBI
     SUBDIR += p5-DBI-137
+    SUBDIR += p5-DBI-Shell
     SUBDIR += p5-DBIWrapper
     SUBDIR += p5-DBIx-AnyDBD
     SUBDIR += p5-DBIx-Browse
