@@ -110,7 +110,9 @@ sub exclude_file {
 			chomp;
 			my $ex_entry = $_;
 
+			# Skip comments and blank lines.
 			next if $ex_entry =~ /^#/;
+			next if $ex_entry =~ /^$/;
 
 			if ($path =~ /$ex_entry/) {
 				close(EX);
