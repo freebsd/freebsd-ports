@@ -1,0 +1,9 @@
+#!/bin/sh
+if [ "$2" != "POST-INSTALL" ]; then
+  exit 0
+fi
+if ! which gs >/dev/null; then
+  echo "I can't find ghostscript (gs) in your search path."
+  echo "Please install your favorite version of ghostscript,"
+  echo "otherwise this program is useless."
+fi
