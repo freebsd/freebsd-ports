@@ -3499,7 +3499,6 @@ ko-nvi-iso-2022-kr	ports/korean/nvi-iso-2022-kr
 ko-openoffice	ports/korean/openoffice
 ko-pgp.language	ports/korean/pgp.language
 ko-pinetreefonts	ports/korean/pinetreefonts
-ko-pycodec	ports/korean/pycodec
 ko-qt31		ports/korean/qt31
 ko-texinfo	ports/korean/texinfo
 ko-uniksc	ports/korean/uniksc
@@ -9048,7 +9047,6 @@ zh-p5-Lingua-ZH-Numbers	ports/chinese/p5-Lingua-ZH-Numbers
 zh-p5-Lingua-ZH-TaBE	ports/chinese/p5-Lingua-ZH-TaBE
 zh-pine4	ports/chinese/pine4
 zh-pyDict	ports/chinese/pyDict
-zh-pycodec	ports/chinese/pycodec
 zh-qe		ports/chinese/qe
 zh-qterm	ports/chinese/qterm
 zh-stardict	ports/chinese/stardict
