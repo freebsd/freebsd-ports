@@ -307,20 +307,7 @@ while [ "$1" ]; do
 			echo "CONFIGURE_ARGS+=--with-pspell=\${LOCALBASE}"
 			;;
 		\"mbregex\")
-			${CAT} << EOF
-MASTER_SITES+=	ftp://night.fminn.nagano.nagano.jp/php4/
-DISTFILES=	\${DISTNAME}\${EXTRACT_SUFX} php4_mbregex-1.2.1.tar.gz
-CONFIGURE_ARGS+=--enable-mbregex
-BUILD_DEPENDS+=	automake:\${PORTSDIR}/devel/automake
-BUILD_DEPENDS+=	autoconf:\${PORTSDIR}/devel/autoconf
-POSTEXTRACT+=	post-extract-mbregex
-
-post-extract-mbregex:
-	[ -d \${WRKDIR}/mbregex ] && \\
-	(cd \${WRKSRC}; \\
-	 \${MV} ${WRKDIR}/mbregex ext)
-
-EOF
+			echo "CONFIGURE_ARGS+=--enable-mbregex"
 			;;
 		\"mbstring\")
 			echo "CONFIGURE_ARGS+=--enable-mbstring"
