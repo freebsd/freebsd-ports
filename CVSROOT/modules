@@ -8322,6 +8322,7 @@ ups-debug	ports/devel/ups-debug
 upsd		ports/sysutils/upsd
 upsmon		ports/sysutils/upsmon
 uptimed		ports/sysutils/uptimed
+uqm		ports/games/uqm
 urlendec	ports/net/urlendec
 urlview		ports/textproc/urlview
 urt		ports/graphics/urt
