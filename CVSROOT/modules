@@ -4200,6 +4200,7 @@ mei		ports/sysutils/mei
 memcheck	ports/devel/memcheck
 memcontrol	src/usr.sbin/memcontrol
 memtest		ports/sysutils/memtest
+mencal		ports/deskutils/mencal
 menushki	ports/misc/menushki
 mergeant	ports/databases/mergeant
 mergelog	ports/www/mergelog
