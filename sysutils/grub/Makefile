@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	grub
-PORTVERSION=	0.94
-PORTREVISION=	4
+PORTVERSION=	0.95
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://alpha.gnu.org/gnu/grub/
 
@@ -30,9 +29,10 @@ INFO=		grub multiboot
 PLIST_DIRS=	${GRUB_DIR} ${DATADIR:C|^${PREFIX}/||}
 PLIST_FILES=	bin/mbchk sbin/grub sbin/grub-install sbin/grub-md5-crypt \
 		sbin/grub-terminfo ${GRUB_DIR}/stage1 ${GRUB_DIR}/stage2
-.for f in e2fs fat ffs jfs minix reiserfs ufs2 vstafs xfs
+.for f in e2fs fat ffs iso9660 jfs minix reiserfs ufs2 vstafs xfs
 PLIST_FILES+=	${GRUB_DIR}/${f}_stage1_5
 .endfor
+PLIST_FILES+=	${GRUB_DIR}/stage2_eltorito
 
 pre-configure:
 	@cd ${WRKSRC}; ${ACLOCAL}
