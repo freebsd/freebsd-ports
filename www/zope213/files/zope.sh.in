@@ -2,7 +2,13 @@
 
 case "$1" in
 start)
-	nohup %%ZOPEBASEDIR%%/start -w '' -f '' -m '' -p %%CGIBINDIR%%/Zope.cgi >> %%ZOPEBASEDIR%%/var/zope-output &
+	umask 077
+	nohup %%ZOPEBASEDIR%%/start \
+	       -w %%ZOPE_HTTP_PORT%% \
+	       -f %%ZOPE_FTP_PORT%% \
+	       -m %%ZOPE_MONITOR_PORT%% \
+	       -u %%ZOPE_USER%% \
+	       -p %%CGIBINDIR%%/Zope.cgi >> %%ZOPEBASEDIR%%/var/zope-output &
 	echo -n " Zope"
 	;;
 stop)
