@@ -1,5 +1,5 @@
---- get/getx11/XGetHClrs.c.orig	Wed Jan 12 17:03:11 2005
-+++ get/getx11/XGetHClrs.c	Wed Jan 12 17:06:40 2005
+--- get/getx11/XGetHClrs.c.orig	Sun Jan 30 15:48:57 2005
++++ get/getx11/XGetHClrs.c	Sun Jan 30 15:49:38 2005
 @@ -1,5 +1,4 @@
  #ifndef XLIBINT_H_NOT_AVAILABLE
 -#include <X11/copyright.h>
