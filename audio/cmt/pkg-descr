@@ -1,0 +1,8 @@
+The Computer Music Toolkit (CMT) is a collection of LADSPA plugins for
+use with software synthesis and recording packages
+
+Author: Richard W.E. Furseb <richard@muse.demon.co.uk>
+WWW: http://www.ladspa.org/cmt
+
+- Tilman Linneweh
+freebsdports@arved.de
