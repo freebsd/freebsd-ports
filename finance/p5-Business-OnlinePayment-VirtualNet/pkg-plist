@@ -1,0 +1,5 @@
+lib/perl5/site_perl/%%PERL_VER%%/Business/OnlinePayment/VirtualNet.pm
+lib/perl5/site_perl/%%PERL_VER%%/auto/Business/OnlinePayment/VirtualNet/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/VirtualNet/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/VirtualNet
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Business/OnlinePayment/VirtualNet
