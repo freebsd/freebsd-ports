@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.37 1997/08/31 22:24:32 max Exp $
+# $Id: Makefile,v 1.38 1997/09/05 17:13:14 max Exp $
 #
 
     SUBDIR += amp
@@ -30,5 +30,6 @@
     SUBDIR += xmcd
     SUBDIR += xmix
     SUBDIR += xmmix
+    SUBDIR += xmpeg3
 
 .include <bsd.port.subdir.mk>
