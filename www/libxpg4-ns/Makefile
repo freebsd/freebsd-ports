@@ -1,13 +1,13 @@
 # New ports collection makefile for:	libxpg4-ns
-# Version required:	3.1-R
+# Version required:	3.3
 # Date created:		27 February 1999
 # Whom:			sada
 #
 # $FreeBSD$
 #
 
-DISTNAME=	libxpg4-3.1r
-PKGNAME=	libxpg4-ns-3.1r
+DISTNAME=	libxpg4-3.3
+PKGNAME=	libxpg4-ns-3.3
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_PORTS_JP} \
 		http://WWW.FreeBSD.ORG/~sada/distfiles/
@@ -21,6 +21,12 @@ PORTOBJFORMAT=	aout
 LIBDIR=		${PREFIX}/lib/aout
 SRCDIR=		/usr/src
 
+pre-build:
+.if !exists(/usr/lib/aout/crt0.o)
+	@${CAT} ${FILESDIR}/message.nolib
+	@${FALSE}
+.endif
+
 pre-install:
 	${MKDIR} ${LIBDIR}
 
@@ -29,15 +35,15 @@ post-install:
 
 extract-from-freebsd: # only for port maintainer.
 .if exists(/usr/src/lib)
-	${RM} -rf ${WRKSRC}
-	${MKDIR} ${WRKSRC}
-	tar cfC - ${SRCDIR}/lib/libc locale | tar xfC - ${WRKSRC}
-	${CP} ${SRCDIR}/lib/libxpg4/Makefile ${WRKSRC}/
+	@${RM} -rf ${WRKSRC}
+	@${MKDIR} ${WRKSRC}
+	@tar cfC - ${SRCDIR}/lib/libc locale | tar xfC - ${WRKSRC}
+	@${CP} ${SRCDIR}/lib/libxpg4/Makefile ${WRKSRC}/
 .else
-	${ECHO} You should INSTALL \"src/lib\" distribution"
+	@${ECHO} You should INSTALL \"src/lib\" distribution"
 .endif
 
 private-distribution: # only for port maintainer.
-	tar czfC ${WRKDIR}/${DISTNAME}${EXTRACT_SUFX} ${WRKDIR} ${DISTNAME}
+	@(cd ${WRKDIR}; find ${DISTNAME} -type f | ${GREP} -v 'CVS' | ${SED} -e 's;^./;;' | tar czfCT ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} . -)
 
 .include <bsd.port.mk>
