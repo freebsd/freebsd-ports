@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	cedet
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 #DISTNAME=       ${PORTNAME}-${PORTVERSION:S/.b/beta/}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dryice@liu.com.cn
 COMMENT=	A lexer, parser-generator, and parser for Emacs
 
 EMACS_PORT_NAME?=	emacs21
@@ -29,8 +29,16 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_GMAKE=	yes
 MAKE_ARGS=	LOADPATH=
+CONFLICTS=	cedet*
+INFO=		semantic
 
 LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/semantic
+
+pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "New version of semantic is now in devel/cedet."
+	@${ECHO_MSG} "Hit C-c now if you want the new version."
+	@${ECHO_MSG} ""
 
 do-install:
 	${MKDIR} ${LISPDIR}
