@@ -1,14 +1,16 @@
---- src/audio.c.orig	Mon Nov  9 08:22:55 1998
-+++ src/audio.c	Fri Jun 30 19:49:15 2000
-@@ -37,7 +37,7 @@
+--- src/audio.c.orig	Sun Nov  8 15:22:55 1998
++++ src/audio.c	Sun Sep  8 03:35:52 2002
+@@ -37,8 +37,8 @@
  #ifdef linux
  #include <linux/soundcard.h>
  
 -#elif defined(FreeBSD)
+-#include <machine/soundcard.h>
 +#elif defined(__FreeBSD__)
- #include <machine/soundcard.h>
++#include <sys/soundcard.h>
  
  #elif defined(sgi)
+ #include <dmedia/audio.h>
 @@ -55,7 +55,7 @@
  #include "sample_settings.h"
  #include "audio.h"
