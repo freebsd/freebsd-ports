@@ -1,0 +1,11 @@
+--- Makefile.orig	Tue Feb  8 18:23:08 2000
++++ Makefile	Sun Feb 13 18:32:40 2000
+@@ -1,6 +1,6 @@
+ 
+-CC=gcc
+-LIBS=-lsocket -lnsl -lpcap -ll -ly
++#CC=gcc
++LIBS=-lpcap
+ SRCS = sender.c main.c pinger.c y.tab.c lex.yy.c listen.c
+ OBJS = sender.o main.o pinger.o y.tab.o lex.yy.o listen.o
+ CFLAGS=-g

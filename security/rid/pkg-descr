@@ -1,0 +1,12 @@
+RID - Remote Intrusion Detection
+--------------------------------
+RID is a configurable tool which uses intrusion fingerprints to track down
+compromised hosts.  RID can remotely detect Stacheldraht, TFN, Trinoo and TFN2k
+if the attacker did not change the default ports.
+
+After a compromise, this information can often be turned into a "fingerprint"
+of the intrusion.  RID is designed to be capable of accurately specifying this
+"fingerprint" with little knowledge of network programming.
+
+RID is based off an extension of ngrep (network grep).  It is different because
+it extends ngrep into a probing tool.
