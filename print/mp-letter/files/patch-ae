@@ -1,0 +1,11 @@
+--- print.cc.orig	Sat Jun 19 18:04:15 1999
++++ print.cc	Sat Jun 19 18:04:57 1999
+@@ -33,7 +33,7 @@
+ {
+   char *ptr ;            // Pointer to current time or date string.
+   int len ;
+-  long clock ;           // Used by the localtime function call.
++  time_t clock ;           // Used by the localtime function call.
+   struct stat status ;   // Stat(2) information from current file (-modtime).
+   struct tm *tm ;        // Used by the localtime and asctime calls.
+   char *timenow ;        // Used to set TimeNow field with users name.
