@@ -1,8 +1,13 @@
 etc/boa.conf.sample
 etc/rc.d/boa.sh.sample
+%%PORTDOCS%%@unexec install-info --delete %D/info/boa.info %D/info/dir
+%%PORTDOCS%%info/boa.info
+%%PORTDOCS%%@exec install-info %D/info/boa.info %D/info/dir
 sbin/boa
 sbin/boa_indexer
 %%PORTDOCS%%share/doc/boa/boa.texi
+%%PORTDOCS%%share/doc/boa/boa.html
+%%PORTDOCS%%share/doc/boa/boa.txt
 %%PORTDOCS%%share/doc/boa/boa_banner.png
 share/examples/boa/cgi-test.cgi
 share/examples/boa/nph-test.cgi
