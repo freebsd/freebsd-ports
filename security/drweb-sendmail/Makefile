@@ -7,6 +7,7 @@
 
 PORTNAME=	drweb_sendmail
 PORTVERSION=    4.26b
+PORTREVISION=   1
 CATEGORIES=	security mail
 MASTER_SITES=	http://www.drweb.ru/ftp/web_pub/
 DISTNAME=	drwebd-${PORTVERSION}-freebsd4
