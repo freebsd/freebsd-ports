@@ -44,7 +44,9 @@ wyvern/etc/.admin_passwd-dist
 @unexec if cmp -s %D/wyvern/etc/.admin_passwd_md5 %D/wyvern/etc/.admin_passwd_md5-dist; then rm -f %D/wyvern/etc/.admin_passwd_md5; fi
 wyvern/etc/.admin_passwd_md5-dist
 @exec [ ! -f %B/.admin_passwd_md5 ] && cp %B/%f %B/.admin_passwd_md5
-wyvern/htdocs/index.html
+@unexec if cmp -s %D/wyvern/htdocs/index.html %D/wyvern/htdocs/index.html-dist; then rm -f %D/wyvern/htdocs/index.html; fi
+wyvern/htdocs/index.html-dist
+@exec [ ! -f %B/index.html ] && cp %B/%f %B/index.html
 wyvern/icons/a.gif
 wyvern/icons/alert.black.gif
 wyvern/icons/alert.red.gif

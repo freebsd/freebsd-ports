@@ -28,8 +28,14 @@ MAKE_ARGS=	rcdir="${LOCALBASE}/etc/rc.d"
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
+post-extract:
+	${MV} ${WRKSRC}/htdocs/index.html ${WRKSRC}/htdocs/index.html-dist
+
 post-install:
 	${LN} -sf ${PREFIX}/sbin/* ${LOCALBASE}/sbin/
+	if [ ! -f ${PREFIX}/htdocs/index.html ]; then \
+		${CP} -p ${PREFIX}/htdocs/index.html-dist ${PREFIX}/htdocs/index.html; \
+	fi
 	@${CAT} ${PKGMESSAGE}
 
 certificate:

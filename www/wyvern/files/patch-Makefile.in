@@ -1,5 +1,14 @@
---- Makefile.in.orig	Mon Dec 11 01:06:38 2000
-+++ Makefile.in	Sat Mar  3 23:29:15 2001
+--- Makefile.in.orig	Sun Mar  4 22:41:15 2001
++++ Makefile.in	Mon Aug  6 18:00:15 2001
+@@ -48,7 +48,7 @@
+ install_admin_md5 = dot.admin_passwd_md5
+ install_conf	  = wyvern.conf wyvern.conf.ja mime.types @ssl_cnf@
+ install_docs	  = AUTHORS ChangeLog LICENSE NEWS README TODO README.module README.en README.module.en LICENSE.en
+-install_htdocs	  = index.html
++install_htdocs	  = index.html-dist
+ install_admin	  = menu.whtml config.whtml passwd.whtml module.whtml roaming.whtml
+ install_samples	  = dot.waccess dot.wpasswd hosts.allow hosts.deny
+ install_rc_d	  = wyvern.sh
 @@ -74,21 +74,20 @@
  	${INSTALL} -m 444 ${install_docs} ${docsdir}
  	-(cd ${confdir}; ${MV} wyvern.conf wyvern.conf.old)
