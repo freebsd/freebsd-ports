@@ -74,6 +74,7 @@
     SUBDIR += nmap
     SUBDIR += nmapfe
     SUBDIR += oidentd
+    SUBDIR += op
     SUBDIR += opencl
     SUBDIR += openssh
     SUBDIR += openssh-askpass
