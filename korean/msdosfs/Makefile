@@ -28,11 +28,14 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/msdosfs.ko
 .if ${OSVERSION} >= 410001 && ${OSVERSION} < 500000
 LAST_UPDATED=	20001027
 PATCHDIR=	${MASTERDIR}/patches.4
-.elif ${OSVERSION} >= 500016
+.elif ${OSVERSION} >= 500016 && ${OSVERSION} < 501109
 # runs only after 9th Feb 2001 world
 LAST_UPDATED=	20010209
 PATCHDIR=	${MASTERDIR}/patches.5
 NO_PACKAGE=	"to avoid crashing a machine when try to install incorrect version"
+.elif ${OSVERSION} >= 501109
+LAST_UPDATED=	20010209
+IGNORE=		is obsolete. See mount_msdosfs(8)
 .else
 LAST_UPDATED=	20001022
 BROKEN=		"Supports up-to-date -CURRENT only"
