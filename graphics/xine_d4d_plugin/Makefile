@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.geocities.com/captain_css/
 
 MAINTAINER=	gibbon@cocoa.freemail.ne.jp
 
-LIB_DEPENDS=	xine.5:${PORTSDIR}/graphics/libxine
+LIB_DEPENDS=	xine.0:${PORTSDIR}/graphics/libxine
 
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=		yes
