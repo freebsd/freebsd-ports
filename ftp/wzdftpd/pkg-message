@@ -1,1 +1,2 @@
-Sample file can be found at PREFIX/wzd.cfg.sample
+Sample config file can be found at PREFIX/etc/wzd.cfg.sample
+Sample users file can be found at PREFIX/share/wzdftpd/users.sample

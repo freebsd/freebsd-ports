@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wzdftpd
-PORTVERSION=	0.1
+PORTVERSION=	0.2.3
 PORTREVISION=	1
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -17,6 +17,8 @@ COMMENT=	Modular FTP server configurable online using SITE commands
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+INSTALLS_SHLIB=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .if defined(WITH_SSL)
@@ -29,12 +31,15 @@ CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
 DOCS=		AUTHORS Permissions.ReadMeFirst README TLS.ReadMeFirst \
-		src/CHANGELOG src/DOCS_XFERLOG_FORMAT src/KNOWN_BUGS src/TODO
+		ChangeLog src/DOCS_XFERLOG_FORMAT src/KNOWN_BUGS src/TODO
 
-.if !defined(NOPORTDOCS)
 post-install:
+	${MV} ${PREFIX}/etc/wzd.cfg ${PREFIX}/etc/wzd.cfg.sample
+	${MV} ${DATADIR}/users ${DATADIR}/users.sample
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
+	${SED} -e 's,PREFIX,${PREFIX},g' ${PKGMESSAGE}
 
 .include <bsd.port.mk>

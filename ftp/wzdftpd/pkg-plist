@@ -3,6 +3,7 @@ bin/siteconfig
 bin/siteuptime
 bin/sitewho
 etc/wzd.cfg.sample
+etc/wzd.pem
 etc/init.d/wzdftpd
 lib/libwzd.a
 lib/libwzd.so
@@ -12,7 +13,7 @@ sbin/wzdftpd
 %%PORTDOCS%%%%DOCSDIR%%/Permissions.ReadMeFirst
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TLS.ReadMeFirst
-%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/DOCS_XFERLOG_FORMAT
 %%PORTDOCS%%%%DOCSDIR%%/KNOWN_BUGS
 %%PORTDOCS%%%%DOCSDIR%%/TODO
