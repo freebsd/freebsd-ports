@@ -1,6 +1,7 @@
-This is the linux version of the netscape web-surfboard. Linux version
-on FreeBSD is necessary if you want binary downloadable plugins, made
-available for linux, to work.
+This is the linux version of the netscape web-surfboard. Using the
+Linux version on FreeBSD is necessary if you want to use Linux
+versions of plugins. Many plugins are distributed only as Linux
+binaries.
 
 Please read the file "/usr/local/lib/netscape/LICENSE" for the
 licensing terms.

@@ -1,5 +1,5 @@
-# New ports collection makefile for: netscape-communcator-linux-4.61
-# Version required:		4.61
+# New ports collection makefile for: netscape-communcator-linux-4.x
+# Version required:		4.7
 # Date created:			27 June 1999
 # Whom:				girgen@partitur.se
 # Based on work by:		thepish
@@ -8,16 +8,17 @@
 #
 
 DISTNAME=	linux-netscape-${BROWSER}-${BROWSER_VER}
-MASTER_SITES?=	ftp://ftp.netscape.com/pub/communicator/english/4.61/unix/supported/linux20_libc5/complete_install/
-DISTFILES?=	communicator-v461-export.x86-unknown-linux2.0.tar.gz
+MASTER_SITES=	ftp://ftp.netscape.com/pub/communicator/english/4.7/unix/supported/linux20_glibc2/complete_install/ \
+		ftp://ftp.sunet.se/pub/www/Netscape/communicator/english/4.7/unix/supported/linux20_glibc2/complete_install/
+DISTFILES=	communicator-v47-export.x86-unknown-linuxglibc2.0.tar.gz
 
 MAINTAINER=	girgen@partitur.se
 
-RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
+RUN_DEPENDS=	/compat/linux/lib/ld.so:${PORTSDIR}/emulators/linux_base
 
-WRKSRC=		${WRKDIR}/${BROWSER}-v461.x86-unknown-linux2.0
+WRKSRC=		${WRKDIR}/${BROWSER}-v47.x86-unknown-linux2.0
 
 MAILCAP=	${.CURDIR}/files/mailcap
-NSUBDIR?=	lib/netscape-linux
+NSUBDIR=	lib/netscape-linux
 
-.include "../netscape46-communicator/Makefile"
+.include "../netscape47-communicator/Makefile"
