@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	bpft
-PORTVERSION=	4.20030925
+PORTVERSION=	4.20031028
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://rusunix.org/pub/FreeBSD/distfiles/
@@ -18,12 +18,11 @@ COMMENT=	The BPF Traffic collector
 
 CONFLICTS=	trafd-3.0.*
 
-BROKEN=		Does not fetch, will be removed after Feb 2
-
 WRKSRC=		${WRKDIR}/bpft
 MAN1=		traflog.1 trafstat.1
 MAN8=		trafstatd.8 trafd.8
 MANCOMPRESSED=	yes
+USE_REINPLACE=	yes
 
 pre-everything::
 	@${ECHO_MSG}
@@ -35,9 +34,14 @@ pre-everything::
 	@${ECHO_MSG} "Original trafd and bpft binaries layout are mutually exclusive"
 	@${ECHO_MSG}
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/include/pathnames.h
+
 post-install:
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/WhatsNew ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
