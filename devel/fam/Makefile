@@ -13,6 +13,7 @@ MASTER_SITES=		ftp://oss.sgi.com/projects/fam/download/
 PATCH_SITES=		ftp://oss.sgi.com/projects/fam/download/patches/
 PATCH_DIST_STRIP=	-p1
 PATCHFILES=		freebsd-mntent.patch # freebsd-build.patch
+DIST_SUBDIR=		${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A file alteration monitor
