@@ -229,6 +229,7 @@
     SUBDIR += mplayer-fonts
     SUBDIR += mplayer-skins
     SUBDIR += mplex
+    SUBDIR += mrsidviewer
     SUBDIR += mtv
     SUBDIR += netpbm
     SUBDIR += netshow

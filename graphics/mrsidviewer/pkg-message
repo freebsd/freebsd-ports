@@ -1,0 +1,8 @@
+To use MrSID, add the following to your environment:
+
+  MrSID_HOME=%%PREFIX%%/lib/MrSID_linux2.0.32
+  PATH=$PATH:$MrSID_HOME/bin
+
+and execute:
+
+  $ MrSID

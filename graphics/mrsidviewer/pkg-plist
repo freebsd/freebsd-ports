@@ -1,0 +1,11 @@
+lib/MrSID_linux2.0.32/app-defaults/MrSID
+lib/MrSID_linux2.0.32/bin/MrSID
+lib/MrSID_linux2.0.32/help/About.doc
+lib/MrSID_linux2.0.32/help/License
+lib/MrSID_linux2.0.32/help/MrSIDview.hlp
+lib/MrSID_linux2.0.32/help/Overview.doc
+lib/MrSID_linux2.0.32/help/Readme
+@dirrm lib/MrSID_linux2.0.32/help
+@dirrm lib/MrSID_linux2.0.32/bin
+@dirrm lib/MrSID_linux2.0.32/app-defaults
+@dirrm lib/MrSID_linux2.0.32
