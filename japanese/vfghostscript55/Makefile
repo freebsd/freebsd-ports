@@ -3,7 +3,7 @@
 # Date created:		26 Aug 1997
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.12 1997/09/20 20:37:25 max Exp $
+# $Id: Makefile,v 1.13 1997/09/29 11:42:31 max Exp $
 #
 
 DISTNAME=	ghostscript-5.03
@@ -45,7 +45,7 @@ GS_DRIVERS+=	gdevmjc-0.7.tar.gz
 GS_DRIVERS+=	gdevrpdl.tar.gz
 GS_DRIVERS+=	gdev10v.tar.gz
 GS_DRIVERS+=	dmprt-2.01.tar.gz
-GS_DRIVERS+=	gdevnpdl-1.3.tar.gz
+GS_DRIVERS+=	gdevnpdl-1.4.tar.gz
 #  Note: the following two are real files that have symlinks with
 #  later version numbers pointing to them.  To avoid unnecessarily
 #  downloading distfiles, do not change these when upgrading the port
@@ -70,7 +70,7 @@ post-patch:
 	  ${MKDIR} ${PRINTER}/gdevdmpr ; \
 	  tar -C gdevdmpr -xzf ${DISTDIR}/dmprt-2.01.tar.gz ; \
 	  ${MKDIR} ${PRINTER}/gdevnpdl ; \
-	  tar -C gdevnpdl -xzf ${DISTDIR}/gdevnpdl-1.3.tar.gz ; \
+	  tar -C gdevnpdl -xzf ${DISTDIR}/gdevnpdl-1.4.tar.gz ; \
 	  ${CP} gdev10v/gdev10v.c gdev10v/gdev10v.mak ${WRKSRC}; \
 	  ${CP} gdevmjc-0.7/gdevmjc.c gdevmjc-0.7/mjc.dev ${WRKSRC}; \
 	  ${CP} gdevlips4-1.2.0/gdevlips4.c gdevlips4-1.2.0/gdevlips4.mak ${WRKSRC}; \
