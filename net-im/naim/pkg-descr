@@ -2,3 +2,5 @@ A chat program for use with America Online's Instant Messenger. The
 name naim is derived from n's AIM client, but it could also have been
 derived from ncurses AIM client because of naim's use of the ncurses
 text-mode screen library.
+
+WWW: http://naim.n.ml.org/
