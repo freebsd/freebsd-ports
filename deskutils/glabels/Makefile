@@ -12,13 +12,12 @@ CATEGORIES=	deskutils
 MASTER_SITES=	http://snaught.com/glabels/source/
 
 MAINTAINER=	martin.klaffenboeck@gmx.at
+COMMENT=	A programm to create labels and business cards
 
-LIB_DEPENDS=	gnomeprint-2-2.0:${PORTSDIR}/print/libgnomeprint \
-		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
-		gnomeprintui-2-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui \
+LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
+		gnomeprintui-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui20 \
 		gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui
 
-BROKEN=		"Requires update to work with libgnomeprint-2-2"
 USE_GNOMENG=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomelibs
 USE_X_PREFIX=	yes

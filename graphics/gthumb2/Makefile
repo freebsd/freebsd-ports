@@ -7,16 +7,17 @@
 
 PORTNAME=	gthumb2
 PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gthumb
 DISTNAME=	gthumb-${PORTVERSION}
 
 MAINTAINER=	verbophobe@hotmail.com
+COMMENT=	An image viewer and browser for the GNOME 2 environment
 
 LIB_DEPENDS=	gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui \
-		gnomeprintui-2-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui
+		gnomeprintui-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui20
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

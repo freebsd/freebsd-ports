@@ -38,8 +38,7 @@ MAN1=	gretl.1 gretl-config.1
 CONFIGURE_ARGS+=	--without-gnome
 PLIST_SUB+=	GNOME2:="@comment " DATADIR="share"
 .else
-BROKEN=		"Needs to be updated for libgnomeprint-2.2"
-LIB_DEPENDS+=	gnomeprintui-2-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui \
+LIB_DEPENDS+=	gnomeprintui-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui20 \
 		gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui
 USE_GNOME=	gnomeprefix
 PLIST_SUB+=	GNOME2:="" DATADIR="share/gnome"
