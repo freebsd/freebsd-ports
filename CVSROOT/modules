@@ -1784,6 +1784,7 @@ flounder	ports/science/flounder
 flow-extract	ports/net/flow-extract
 flow-tools	ports/net/flow-tools
 flowscan	ports/net/flowscan
+flphoto		ports/graphics/flphoto
 fltk		ports/x11-toolkits/fltk
 fluctuate	ports/biology/fluctuate
 fluidsynth	ports/audio/fluidsynth
