@@ -1,0 +1,8 @@
+SpaceChart is a program that allows you to see the stars in glorious
+3D and rotate them to see them from any point of view. You can also
+limit which stars you want to see, according to their spectral
+class and luminosity, and draw links between all stars closer than
+a certain distance.
+
+WWW: http://zipi.fi.upm.es/~e970095/spacechart/
+Author: Miguel Coca <e970095@zipi.fi.upm.es>
