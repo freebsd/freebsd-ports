@@ -6,47 +6,64 @@
 #
 
 PORTNAME=	crafty
-PORTVERSION=	18.14
+PORTVERSION=	19.1
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/ \
-		ftp://ftp.cis.uab.edu/pub/hyatt/common/ \
-		ftp://ftp.cis.uab.edu/pub/hyatt/v18/ \
-		ftp://ftp.jpunix.com/pub/hyatt/ \
-		ftp://ftp.jpunix.com/pub/hyatt/common/ \
-		ftp://ftp.jpunix.com/pub/hyatt/v18/
-DISTFILES=	crafty-${PORTVERSION}.tar.gz crafty.doc.ascii crafty.doc.ps \
-		crafty.faq read.me start.zip
+MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/common/:data \
+		ftp://ftp.cis.uab.edu/pub/hyatt/doc/:doc \
+		ftp://ftp.cis.uab.edu/pub/hyatt/v${PORTVERSION:R}/:src
+DISTFILES=	crafty-${PORTVERSION}.tar.gz:src \
+		start.pgn.gz:data
 
 MAINTAINER=	seggers@semyam.dinoco.de
 
-.if ${MACHINE_ARCH} == "i386"
-ALL_TARGET=	freebsd-i386
-.else
-ALL_TARGET=	freebsd-generic
+.if !defined(NOPORTDOCS)
+DOCFILES=	crafty.doc.ascii crafty.doc.ps
+DISTFILES+=	${DOCFILES:S/$/:doc/}
 .endif
+
+ALL_TARGET=	crafty
+
+OPT=		-DCOMPACT_ATTACKS -DUSE_ATTACK_FUNCTIONS
+.if ${MACHINE_ARCH} == "i386"
+MAKE_ENV+=	asm=X86-elf.o
+OPT+=		-DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B -DFAST
+# XXX Someone with ASM knowledge would have to fix the Sparc.S
+.elif ${MACHINE_ARCH} == "sparc64" && defined(CRAFTY_SPARC_ASM)
+MAKE_ENV+=	asm=Sparc.o
+OPT+=		-DUSE_ASSEMBLY_A
+.else
+OPT+=		-DFAST
+.endif
+MAKE_ENV+=	opt="${OPT}" target=${OPSYS} CXFLAGS="${CXXFLAGS}"
+
 DIST_SUBDIR=	crafty
 EXTRACT_ONLY=	crafty-${PORTVERSION}.tar.gz
-IGNOREFILES=	crafty.faq read.me
 
 MAN6=		crafty.6
-NO_WRKSUBDIR=	yes
 
 post-extract:
-	(cd ${WRKDIR}; ${GUNZIP_CMD} <${DISTDIR}/${DIST_SUBDIR}/start.zip >${WRKDIR}/start.pgn)
+	${GUNZIP_CMD} <${DISTDIR}/${DIST_SUBDIR}/start.pgn.gz >${WRKSRC}/start.pgn
+	${MV} ${WRKSRC}/Sparc.s ${WRKSRC}/Sparc.S
+.ifdef CRAFTY_SPARC_ASM
+	########################################################
+	#
+	# Sparc.S is known to segfault! Use at your own risk or
+	# turn off the CRAFTY_SPARC_ASM defined
+	#
+	########################################################
+.endif
 
 post-build:
-	(cd ${WRKDIR}; ./crafty <${FILESDIR}/books-building)
+	(cd ${WRKSRC}; ./crafty <${FILESDIR}/books-building)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/crafty ${PREFIX}/bin/crafty
+	${INSTALL_PROGRAM} ${WRKSRC}/crafty ${PREFIX}/bin/crafty
 	${MKDIR} ${PREFIX}/lib/crafty
-	${INSTALL_DATA} ${WRKDIR}/books.bin ${PREFIX}/lib/crafty/books.bin
+	${INSTALL_DATA} ${WRKSRC}/books.bin ${PREFIX}/lib/crafty/books.bin
 	${INSTALL_MAN} ${FILESDIR}/crafty.6 ${MANPREFIX}/man/man6/crafty.6
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for file in crafty.doc.ascii crafty.doc.ps crafty.faq read.me
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${file} ${DOCSDIR}
-.endfor
+	cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} ${DOCFILES} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
