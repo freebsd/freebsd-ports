@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- conf.php.orig	Thu Feb 20 18:10:49 2003
-+++ conf.php	Thu Feb 20 18:14:37 2003
+--- conf.php.orig	Mon Aug 11 15:56:15 2003
++++ conf.php	Tue Oct 28 11:59:38 2003
 @@ -22,12 +22,12 @@
  #$gmetad_root = "/usr/local/gmetad";
  
@@ -12,7 +12,7 @@ $FreeBSD$
  $rrds = "$gmetad_root/rrds";
  
  # Leave this alone if rrdtool is installed in $gmetad_root,
- # otherwise, change it if it's installed elsewhere (like /usr/bin)
+ # otherwise, change it if it is installed elsewhere (like /usr/bin)
 -define("RRDTOOL", "/usr/bin/rrdtool");
 +define("RRDTOOL", "%%PREFIX%%/bin/rrdtool");
  
