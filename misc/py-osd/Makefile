@@ -8,7 +8,8 @@
 PORTNAME=	osd
 PORTVERSION=	0.2.6
 CATEGORIES=	misc python
-MASTER_SITES=	http://repose.cx/pyosd/
+MASTER_SITES=	http://repose.cx/pyosd/ \
+		http://damien.kangaweb.com/moving/stuff/pyosd/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyosd-${PORTVERSION}
 
@@ -16,8 +17,6 @@ MAINTAINER=	larse@isi.edu
 COMMENT=	A python wrapper for osd, for displaying text on your X display
 
 LIB_DEPENDS=	xosd.4:${PORTSDIR}/misc/xosd
-
-BROKEN=		Does not fetch, will be removed after Feb 2
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
