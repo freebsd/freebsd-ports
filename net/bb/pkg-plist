@@ -1,4 +1,5 @@
 bb/README
+bb/runbb.sh
 bb/bin/bb
 bb/bin/bb-local.sh
 bb/bin/bb-network.sh
@@ -63,7 +64,6 @@ bb/www/gifs/red.gif
 bb/www/gifs/yellow.gif
 bb/www/index.html
 bb/www/logs/later
-etc/rc.d/runbb.sh
 share/doc/bb/FAQ
 share/doc/bb/README
 share/doc/bb/README.SMS

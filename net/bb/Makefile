@@ -3,7 +3,7 @@
 # Date created:         So  17 Nov 1996 16:59:23 MET
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.20 1997/10/13 20:19:23 andreas Exp $
+# $Id: Makefile,v 1.21 1998/01/31 11:44:35 andreas Exp $
 #
 
 DISTNAME=	bb-1.06a
@@ -35,7 +35,7 @@ do-install:
 	@${MKDIR} ${PREFIX}/share/doc/bb
 	@${TOUCH} ${PREFIX}/bb/tmp/.keep_me
 	${INSTALL_SCRIPT} ${WRKSRC}/runbb.sh \
-				${PREFIX}/etc/rc.d
+				${PREFIX}/bb
 	${INSTALL_DATA} ${WRKSRC}/README \
 				${PREFIX}/bb/README
 .for file in	bb-local.sh bb-network.sh bb-page.sh sendmsg
