@@ -3,27 +3,24 @@
 # Date created:				June 15th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.6 1998/08/07 23:08:39 asami Exp $
+#   $Id: Makefile,v 1.7 1998/08/07 23:56:51 asami Exp $
 
-DISTNAME=	TclTk-b1
-PKGNAME=	p5-Tcl-Tk-b1
-CATEGORIES=	x11-toolkits lang perl5 tk41
+DISTNAME=	TclTk-b2
+PKGNAME=	p5-Tcl-Tk-b2
+CATEGORIES=	x11-toolkits lang perl5 tk42
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Tcl
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-BUILD_DEPENDS= 	${PREFIX}/lib/perl5/site_perl/Tcl.pm:${PORTSDIR}/lang/p5-Tcl
-RUN_DEPENDS=	perl5.00401:${PORTSDIR}/lang/perl5
-LIB_DEPENDS=	tk41\\.1\\.:${PORTSDIR}/x11-toolkits/tk41
-
-BROKEN=		tcl
+BUILD_DEPENDS= 	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/i386-freebsd/Tcl.pm:${PORTSDIR}/lang/p5-Tcl
+LIB_DEPENDS=	tk42\\.1:${PORTSDIR}/x11-toolkits/tk42
 
 USE_PERL5=	YES
 
 WRKSRC=		${WRKDIR}/TclTk
 
-MANPREFIX=	${PREFIX}/lib/perl5
+MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Tcl::Tk.3
 
 do-configure:
