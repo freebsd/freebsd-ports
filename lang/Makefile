@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.48 1996/06/16 06:47:36 jkh Exp $
+# $Id: Makefile,v 1.49 1996/07/10 10:28:28 asami Exp $
 #
 
     SUBDIR += Gofer
@@ -18,6 +18,7 @@
     SUBDIR += logo
     SUBDIR += mit-scheme
     SUBDIR += modula-3
+    SUBDIR += moscow_ml
     SUBDIR += p2c
     SUBDIR += pTk
     SUBDIR += pbasic
