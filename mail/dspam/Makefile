@@ -98,7 +98,7 @@ CONFIGURE_ARGS+=	--disable-system-logging
 CONFIGURE_ARGS+=	--enable-logging
 .endif
 
-.if defined(WITH_USER_LOGGING)
+.if defined(WITHOUT_USER_LOGGING)
 CONFIGURE_ARGS+=	--disable-user-logging
 .else
 CONFIGURE_ARGS+=	--enable-user-logging
