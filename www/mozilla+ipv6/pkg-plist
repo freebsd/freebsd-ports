@@ -55,6 +55,7 @@ lib/mozilla/TestObserverService
 lib/mozilla/TestOutSinks.pl
 lib/mozilla/TestOutput
 lib/mozilla/TestPageLoad
+lib/mozilla/TestPermanentAtoms
 lib/mozilla/TestPipes
 lib/mozilla/TestProtocols
 lib/mozilla/TestRect
@@ -62,6 +63,7 @@ lib/mozilla/TestServMgr
 lib/mozilla/TestSocketIO
 lib/mozilla/TestSocketInput
 lib/mozilla/TestSocketTransport
+lib/mozilla/TestSpaceManager
 lib/mozilla/TestStreamConv
 lib/mozilla/TestTXMgr
 lib/mozilla/TestThreads
@@ -76,6 +78,7 @@ lib/mozilla/chrome/US.jar
 lib/mozilla/chrome/all-locales.rdf
 lib/mozilla/chrome/all-packages.rdf
 lib/mozilla/chrome/all-skins.rdf
+lib/mozilla/chrome/chromelist.txt
 lib/mozilla/chrome/classic.jar
 lib/mozilla/chrome/comm.jar
 lib/mozilla/chrome/content-packs.jar
@@ -166,6 +169,7 @@ lib/mozilla/components/libgklayout.so
 lib/mozilla/components/libgkplugin.so
 lib/mozilla/components/libgkview.so
 lib/mozilla/components/libhtmlpars.so
+lib/mozilla/components/libimgbmp.so
 lib/mozilla/components/libimggif.so
 lib/mozilla/components/libimgjpeg.so
 lib/mozilla/components/libimglib2.so
@@ -242,7 +246,6 @@ lib/mozilla/components/mailnews.xpt
 lib/mozilla/components/mime.xpt
 lib/mozilla/components/mimetype.xpt
 lib/mozilla/components/mozbrwsr.xpt
-lib/mozilla/components/mozcomps.xpt
 lib/mozilla/components/mozfind.xpt
 lib/mozilla/components/mozldap.xpt
 lib/mozilla/components/mozxfer.xpt
@@ -286,14 +289,11 @@ lib/mozilla/components/proxytest.xpt
 lib/mozilla/components/rdf.xpt
 lib/mozilla/components/regviewer.xpt
 lib/mozilla/components/related.xpt
-lib/mozilla/components/remote.xpt
-lib/mozilla/components/remoteControl.js
 lib/mozilla/components/sample.xpt
 lib/mozilla/components/search.xpt
 lib/mozilla/components/shistory.xpt
 lib/mozilla/components/sidebar.xpt
 lib/mozilla/components/signonviewer.xpt
-lib/mozilla/components/timebomb.xpt
 lib/mozilla/components/transformiix.xpt
 lib/mozilla/components/txmgr.xpt
 lib/mozilla/components/txtsvc.xpt
@@ -307,6 +307,7 @@ lib/mozilla/components/wallet.xpt
 lib/mozilla/components/walleteditor.xpt
 lib/mozilla/components/walletpreview.xpt
 lib/mozilla/components/webBrowser_core.xpt
+lib/mozilla/components/webbrowserpersist.xpt
 lib/mozilla/components/webshell_idls.xpt
 lib/mozilla/components/widget.xpt
 lib/mozilla/components/windowwatcher.xpt
@@ -322,7 +323,6 @@ lib/mozilla/components/xpconnect.xpt
 lib/mozilla/components/xpconnect_tests.xpt
 lib/mozilla/components/xpinstall.xpt
 lib/mozilla/components/xpti.dat
-lib/mozilla/components/xptitemp.dat
 lib/mozilla/components/xremoteservice.xpt
 lib/mozilla/components/xuldoc.xpt
 lib/mozilla/components/xultmpl.xpt
@@ -357,7 +357,6 @@ lib/mozilla/defaults/wallet/StateSchema.tbl
 lib/mozilla/defaults/wallet/VcardSchema.tbl
 lib/mozilla/dirver
 lib/mozilla/dtd/mathml.dtd
-lib/mozilla/gtkEmbed
 lib/mozilla/htmlrobot
 lib/mozilla/icons/mozicon16.xpm
 lib/mozilla/icons/mozicon50.xpm
@@ -395,7 +394,6 @@ lib/mozilla/rdfpoll
 lib/mozilla/regExport
 lib/mozilla/regchrome
 lib/mozilla/regxpcom
-lib/mozilla/res/acceptlanguage.properties
 lib/mozilla/res/arrow.gif
 lib/mozilla/res/builtin/htmlBindings.xml
 lib/mozilla/res/builtin/platformHTMLBindings.xml
@@ -431,6 +429,7 @@ lib/mozilla/res/html/gopher-movie.gif
 lib/mozilla/res/html/gopher-telnet.gif
 lib/mozilla/res/html/gopher-text.gif
 lib/mozilla/res/html/gopher-unknown.gif
+lib/mozilla/res/html/loading-image.gif
 lib/mozilla/res/langGroups.properties
 lib/mozilla/res/language.properties
 lib/mozilla/res/mathml.css
@@ -580,8 +579,6 @@ lib/mozilla/searchplugins/lxrmozilla.src
 lib/mozilla/searchplugins/mozilla.gif
 lib/mozilla/searchplugins/mozilla.src
 lib/mozilla/splash.xpm
-lib/mozilla/startup-test.html
-lib/mozilla/timebombgen
 lib/mozilla/urltest
 lib/mozilla/viewer
 lib/mozilla/viewer_gtk
