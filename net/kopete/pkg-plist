@@ -187,6 +187,7 @@ share/apps/kopete/icons/crystalsvg/64x64/apps/icq_protocol.png
 share/apps/kopete/icons/crystalsvg/64x64/apps/msn_protocol.png
 share/apps/kopete/icons/crystalsvg/64x64/apps/sms_protocol.png
 share/apps/kopete/icons/crystalsvg/64x64/apps/yahoo_protocol.png
+share/apps/kopete/ircchatui.rc
 share/apps/kopete/kopetechatwindow.rc
 share/apps/kopete/kopeteemailwindow.rc
 share/apps/kopete/kopeteui.rc
@@ -432,6 +433,7 @@ share/icons/crystalsvg/22x22/apps/kopete.png
 share/icons/crystalsvg/32x32/apps/kopete.png
 share/icons/crystalsvg/48x48/apps/kopete.png
 share/icons/crystalsvg/64x64/apps/kopete.png
+share/locale/az/LC_MESSAGES/kopete.mo
 share/locale/be/LC_MESSAGES/kopete.mo
 share/locale/bg/LC_MESSAGES/kopete.mo
 share/locale/bs/LC_MESSAGES/kopete.mo
@@ -461,9 +463,11 @@ share/locale/ro/LC_MESSAGES/kopete.mo
 share/locale/ru/LC_MESSAGES/kopete.mo
 share/locale/sl/LC_MESSAGES/kopete.mo
 share/locale/sr/LC_MESSAGES/kopete.mo
+share/locale/sr@Latn/LC_MESSAGES/kopete.mo
 share/locale/sv/LC_MESSAGES/kopete.mo
 share/locale/ta/LC_MESSAGES/kopete.mo
 share/locale/tr/LC_MESSAGES/kopete.mo
+share/locale/uz/LC_MESSAGES/kopete.mo
 share/locale/ven/LC_MESSAGES/kopete.mo
 share/locale/xh/LC_MESSAGES/kopete.mo
 share/locale/zh_CN/LC_MESSAGES/kopete.mo
