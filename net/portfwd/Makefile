@@ -23,6 +23,12 @@ USE_REINPLACE=	yes
 MAN5=	portfwd.cfg.5
 MAN8=	portfwd.8
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 .if defined(NOPORTDOCS)
 post-configure:
 	@${REINPLACE_CMD} -e "s|\(^install-data-am:\) install-docDATA|\1|g" \
@@ -36,4 +42,4 @@ post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/cfg/* ${EXAMPLESDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
