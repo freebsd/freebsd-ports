@@ -1,0 +1,29 @@
+# New ports collection makefile for:	TSC Server
+# Date created:				Mon Nov 12 13:19:17 BRST 2001
+# Whom:		Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	tsc
+PORTVERSION=	0.2.4.6.b
+MASTER_SITES=	http://www.heyphucker.com/ \
+		http://www.wbg-clan.de/download/server/ \
+		http://www.mystwalker.de/cs/
+DISTNAME=	${PORTNAME}${PORTVERSION:S/^0.//:S/.b$//}
+
+MAINTAINER=	lioux@FreeBSD.org
+
+BUILD_DEPENDS+=	${LINUXBASE}${HLDSDIR}cstrike/liblist.gam:${HALFLIFE_COUNTERSTRIKE_MASTER}
+
+NO_WRKSUBDIR=	yes
+USE_ZIP=	yes
+PKGDEINSTALL=	${PKGINSTALL}
+
+slaveport-post-install:
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \
+		${PKGINSTALL} ${PKGNAME} POST-INSTALL
+
+HALFLIFE_COUNTERSTRIKE_MASTER=	${.CURDIR}/../hlserver-cs
+
+.include "${HALFLIFE_COUNTERSTRIKE_MASTER}/Makefile"

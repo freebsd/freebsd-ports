@@ -1,0 +1,105 @@
+#!/bin/sh
+# $FreeBSD$
+
+# based on original from op port, written by Cyrille Lefevre
+# <clefevre@citeweb.net>
+
+[ $# != 2 ] && exit 1
+PKGNAME=$1
+ACTION=$2
+
+HLDSDIR=/usr/games/hlds_l/
+CONF_DIR=${PKG_PREFIX}/${HLDSDIR}/cstrike
+
+CONF_FILE=liblist.gam
+CONF_OWN=root
+CONF_GRP=wheel
+CONF_MODE=444
+
+SAMP_SUFX=.old
+
+INSTALL=install
+CMP=cmp
+FMT=fmt
+GREP=grep
+PERL=perl
+RM=rm
+RMDIR=rmdir
+
+WWW="http://www.tsc.austin2600.org/"
+
+INSTALL_DIR="${INSTALL} -d -o root -g wheel -m 755"
+INSTALL_DATA="install -c -o root -g wheel -m 444"
+
+AUDIO_FILES="gasp1.wav gasp2.wav"
+
+case "$ACTION" in
+
+POST-INSTALL)
+	for file in ${AUDIO_FILES}
+	do
+        	${INSTALL_DATA} ${PKG_PREFIX}/${HLDSDIR}dmc/sound/player/${file} \
+			${PKG_PREFIX}${HLDSDIR}cstrike/sound/player/
+	done
+
+	echo "$PKGNAME: ======> <======" 
+
+	if [ -f ${CONF_DIR}/${CONF_FILE} ]
+	then
+IS_IT_THERE=`${GREP} -E -e '^gamedll_linux.*\"dlls\/cs_i386.so\"$' ${CONF_DIR}/${CONF_FILE}`
+	fi
+
+	if [ -n "${IS_IT_THERE}" ]
+	then
+		${PERL} -pi -ne 's|^(gamedll_linux.*\"dlls\/)cs_i386(.so\"\s*)$|\1tsc\2|' \
+			${CONF_DIR}/${CONF_FILE}
+		echo "$PKGNAME: Modified ${CONF_DIR}/${CONF_FILE}. It now uses TSC."
+		echo "$PKGNAME: If you want admin mod or metamod, check TSC's site (${WWW}) for installation instructions." | ${FMT}
+	else
+		echo "$PKGNAME: ERROR: Existing ${CONF_DIR}/${CONF_FILE} configuration file was modified by hand." | ${FMT}
+		echo "$PKGNAME: You probably edited it by hand. Therefore, I can't automatically modify it."
+		echo "$PKGNAME: There is no problem."
+		echo "$PKGNAME: Just go to developer's site (${WWW}) and check installation instructions."
+	fi
+
+	echo "$PKGNAME: ======> <======" 
+	;;
+
+DEINSTALL)
+	for file in ${AUDIO_FILES}
+	do
+		${RM} ${PKG_PREFIX}/${HLDSDIR}cstrike/sound/player/${file}
+	done
+
+	echo "$PKGNAME: ======> <======" 
+
+        if [ -f ${CONF_DIR}/${CONF_FILE} ]
+        then
+IS_IT_THERE=`${GREP} -E -e '^gamedll_linux.*\"dlls\/tsc.so\"$' ${CONF_DIR}/${CONF_FILE}`
+        fi
+
+	if [ -n "${IS_IT_THERE}" ]
+	then
+		${PERL} -pi -ne 's|^(gamedll_linux.*\"dlls\/)tsc(.so\"\s*)$|\1cs_i386\2|' \
+			${CONF_DIR}/${CONF_FILE}
+		echo "$PKGNAME: Modified ${CONF_DIR}/${CONF_FILE}. It no longer uses TSC."
+		echo "$PKGNAME: If added admin mod or metamod to TSC, check TSC's site (${WWW}) for deinstallation (do installation backwards) instructions." | ${FMT}
+	else
+		echo "$PKGNAME: ERROR: Existing ${CONF_DIR}/${CONF_FILE} configuration file was modified by hand." | ${FMT}
+		echo "$PKGNAME: You probably edited it by hand. Therefore, I can't automatically modify it."
+		echo "$PKGNAME: There is no problem."
+		echo "$PKGNAME: Just go to developer's site (${WWW}) and check deinstallation (do installation backwards) instructions." | ${FMT}
+	fi
+
+	echo "$PKGNAME: ======> <======" 
+	;;
+
+PRE-INSTALL|POST-DEINSTALL)
+	;;
+
+*)
+	exit 1
+	;;
+esac
+
+exit
