@@ -17,6 +17,8 @@ COMMENT=	LGPL'ed Flash 4/5 movie output library with Japanese languages support
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		ungif.5:${PORTSDIR}/graphics/libungif
 
+CONFLICTS=	ming-*
+
 WRKSRC=		${WRKDIR}/jaming-${PORTVERSION}/src
 MAKE_ARGS=	NOPROFILE=true
 INSTALLS_SHLIB=	yes
