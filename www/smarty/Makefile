@@ -1,0 +1,57 @@
+# New ports collection makefile for:	smarty
+# Date created:		10 March 2002
+# Whom:			Simon 'corecode' Schubert <corecode@corecode.ath.cx>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	smarty
+PORTVERSION=	2.0
+CATEGORIES=	www
+MASTER_SITES=	http://www.phpinsider.com/php/code/Smarty/download/
+DISTFILES=	Smarty-${PORTVERSION}${EXTRACT_SUFX}
+.if !defined(NOPORTDOCS)
+DISTFILES+=	Smarty-${PORTVERSION}-docs${EXTRACT_SUFX}
+.endif
+
+MAINTAINER=	corecode@corecode.ath.cx
+
+RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
+
+WRKSRC=	${WRKDIR}/Smarty-${PORTVERSION}
+
+NO_BUILD=	yes
+
+PKGMESSAGE=	${WRKDIR}/pkg-message
+MSG_SRC=${FILESDIR}/pkg-message
+
+MSG_SUB=	DATADIR=${DATADIR} LOCALBASE=${LOCALBASE}
+
+do-install:
+	@${MKDIR} ${DATADIR}
+.for f in Config_File.class.php Smarty.class.php Smarty_Compiler.class.php overlib.js
+	@${INSTALL_DATA} ${WRKSRC}/$f ${DATADIR}
+.endfor
+	@${MKDIR} ${DATADIR}/plugins
+	@${INSTALL_DATA} ${WRKSRC}/plugins/* ${DATADIR}/plugins
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for f in BUGS FAQ INSTALL QUICKSTART README RESOURCES
+	@${INSTALL_DATA} ${WRKSRC}/$f ${DOCSDIR}
+.endfor
+	@${MKDIR} ${DOCSDIR}/manual
+	@${INSTALL_DATA} ${WRKDIR}/manual/* ${DOCSDIR}/manual
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/index.php ${EXAMPLESDIR}
+.for f in configs templates templates_c cache
+	@${MKDIR} ${EXAMPLESDIR}/$f
+	@-${INSTALL_DATA} ${WRKSRC}/$f/* ${EXAMPLESDIR}/$f 2>/dev/null || ${TRUE}
+.endfor
+.endif
+
+post-install:
+	@${SED} ${MSG_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${MSG_SRC} > \
+		${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.mk>
