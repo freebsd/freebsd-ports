@@ -12,4 +12,4 @@ you make install or pkg_add and needed working directiries
 (typically PREFIX/lib/leafnode and /var/spool/leafnode)
 are setup automatically.
 
-WWW: http://www.io.com/~kazushi/freeware/leafnode+.html
+WWW: http://www.io.com/~kazushi/leafnode+/
