@@ -128,7 +128,6 @@
     SUBDIR += pbasic
     SUBDIR += perl5
     SUBDIR += pfe-devel
-    SUBDIR += pgcc
     SUBDIR += php3
     SUBDIR += php4
     SUBDIR += php_doc
