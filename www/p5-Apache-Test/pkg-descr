@@ -4,6 +4,3 @@ testing an Apache server.
 Note that Apache::Test is already included in mod_perl2.
 
 WWW: http://search.cpan.org/dist/Apache-Test/
-
--- Sergey Skvortsov
-skv@FreeBSD.org
