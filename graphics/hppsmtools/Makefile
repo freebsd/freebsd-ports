@@ -8,7 +8,7 @@
 PORTNAME=	hppsmtools
 PORTVERSION=	1.0
 CATEGORIES=	graphics
-MASTER_SITES=	http://unimut.fsk.uni-heidelberg.de/unimut/photosmart/ \
+MASTER_SITES=	http://unimut.fsk.uni-heidelberg.de/demi/photosmart/ \
 		http://www.freenix.no/~anders/ \
 		ftp://totem.fix.no/pub/mirrors/misc/
 
