@@ -1,0 +1,20 @@
+--- configure.orig	Thu Jun 24 14:32:44 2004
++++ configure	Thu Jun 24 14:33:09 2004
+@@ -1961,7 +1961,7 @@
+ ac_given_srcdir=$srcdir
+ ac_given_INSTALL="$INSTALL"
+
+-trap 'rm -fr `echo "Makefile src/Makefile common/Makefile inc/Makefile tbdcmd/Makefile zlib/Makefile config.h" | sed "s/:[^ ]*//g"` conftest*; exit 1' 1 2 15
++trap 'rm -fr `echo "Makefile src/Makefile common/Makefile inc/Makefile tbdcmd/Makefile config.h" | sed "s/:[^ ]*//g"` conftest*; exit 1' 1 2 15
+ EOF
+ cat >> $CONFIG_STATUS <<EOF
+
+@@ -2054,7 +2054,7 @@
+
+ cat >> $CONFIG_STATUS <<EOF
+
+-CONFIG_FILES=\${CONFIG_FILES-"Makefile src/Makefile common/Makefile inc/Makefile tbdcmd/Makefile zlib/Makefile"}
++CONFIG_FILES=\${CONFIG_FILES-"Makefile src/Makefile common/Makefile inc/Makefile tbdcmd/Makefile "}
+ EOF
+ cat >> $CONFIG_STATUS <<\EOF
+ for ac_file in .. $CONFIG_FILES; do if test "x$ac_file" != x..; then

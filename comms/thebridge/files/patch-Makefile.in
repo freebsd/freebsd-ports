@@ -1,0 +1,16 @@
+--- Makefile.in.orig	Tue Sep  9 17:06:55 2003
++++ Makefile.in	Wed Jun 23 17:50:24 2004
+@@ -85,10 +85,10 @@
+ RANLIB = @RANLIB@
+ VERSION = @VERSION@
+
+-SUBDIRS = common zlib src inc tbdcmd
+-EXTRA_DIST = theBridge.dsp tbd.conf README.txt FreeBSD RedHat config SCRIPTING.txt
++SUBDIRS = common src inc tbdcmd
++EXTRA_DIST = theBridge.dsp tbd.conf.sample README.txt FreeBSD RedHat config SCRIPTING.txt
+
+-sysconf_DATA = tbd.conf
++sysconf_DATA = tbd.conf.sample
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/config/mkinstalldirs
+ CONFIG_HEADER = config.h

@@ -70,6 +70,7 @@
     SUBDIR += sms_client
     SUBDIR += snooper
     SUBDIR += sredird
+    SUBDIR += thebridge
     SUBDIR += tilp
     SUBDIR += tits
     SUBDIR += tkhylafax
