@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	erlang
-PORTVERSION=	9.0
-PORTREVISION=	1
+PORTVERSION=	9.1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.erlang.org/pub/download/     \
 		http://www.erlang.org/download/        \
 		http://erlang.stacken.kth.se/download/ \
 		http://www.csd.uu.se/ftp/mirror/erlang/download/
-DISTNAME=	otp_src_R9B-0
+DISTNAME=	otp_src_R9B-1
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${ERLANG_MAN} ${ERLANG_DOCS}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -37,9 +36,9 @@ CONFIGURE_TARGET=	# Empty
 # Don't clutter up /usr/ports/distfiles with all distfiles (including patches)
 DIST_SUBDIR=	erlang
 
-ERLANG_MAN=     otp_man_R9B-0.tar.gz
+ERLANG_MAN=     otp_man_R9B-1.tar.gz
 .if !defined(NOPORTDOCS)
-ERLANG_DOCS=	otp_html_R9B-0.tar.gz
+ERLANG_DOCS=	otp_html_R9B-1.tar.gz
 .endif
 
 .if !defined(WITHOUT_X11)
