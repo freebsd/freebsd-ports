@@ -1,11 +1,12 @@
---- configure.orig	Wed Feb 19 05:23:43 2003
-+++ configure	Mon Mar  1 01:25:03 2004
-@@ -843,7 +843,7 @@
+--- configure.orig	Tue Jun 15 18:11:25 2004
++++ configure	Mon Aug 30 03:37:21 2004
+@@ -4533,8 +4533,7 @@
+   enableval="$enable_debug"
    CFLAGS="-pipe -Wall -O0 -g"
  else
-   CPU=$(uname -m)
--    CFLAGS="-pipe -Wall -O3 -DNO_DEBUG -Wno-unused -ffast-math -fomit-frame-pointer -fstrength-reduce -funroll-loops -fmove-all-movables -fPIC -DPIC"
-+    CFLAGS="$CFLAGS -DNO_DEBUG -fPIC -DPIC"
+-  CFLAGS="-pipe -Wall -O3 -Wno-unused -DNO_DEBUG -DPIC -fPIC \
+-            -ffast-math -fomit-frame-pointer -funroll-loops"
++  CFLAGS="$CFLAGS -DNO_DEBUG -DPIC -fPIC"
  
- fi
+ fi;
  
