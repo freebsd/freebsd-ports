@@ -9,15 +9,12 @@ PORTNAME=		grail
 PORTVERSION= 		0.6
 CATEGORIES=		www python
 MASTER_SITES=		http://grail.cnri.reston.va.us/grail/source/
-DISTNAME=		${PORTNAME}-06
-EXTRACT_SUFX=		.tgz
+DISTFILES=		${PORTNAME}-06.tgz
 
 MAINTAINER=		nectar@freebsd.org
 
 USE_PYTHON=		yes
-RUN_DEPENDS=		${PYTHON_LIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
-
-WRKSRC=			${WRKDIR}/${PKGNAME}
+RUN_DEPENDS=		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
 GRAILSUBDIR=		share/grail
 GRAILDIR=		${PREFIX}/${GRAILSUBDIR}
