@@ -8,10 +8,11 @@ export PATH
 # This is the input filter that I use for my HP Deskjet 960c.
 # If you are using a different model, you will have to change
 # the -sDeviceModel= parameter below.  You will probably also
-# want to change some of the other parameters.  I have the
-# options set for the highest quality output my printer will
-# do with this driver.  I use the ghostscript-afpl port, but
-# this should work equally well with other types of gs.
+# want to change some of the other parameters. Check out the
+# hpijs_readme.html file in /usr/local/share/doc/hpijs for
+# more information on settings available per printer model.
+# I use the ghostscript-afpl port, but this should work
+# equally well with other types of gs.
 #
 # To use this, copy it into a handy location (the sample printcap
 # file in this directory assumes /usr/local/etc/bin/), adjust
@@ -54,7 +55,7 @@ esac
 exit 2
 
 
-# Copyright (c) 2003 Doug Barton
+# Copyright (c) 2003-2004 Doug Barton
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
