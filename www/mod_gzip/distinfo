@@ -1,2 +1,4 @@
-MD5 (mod_gzip/mod_gzip.c.gz) = 3b588205c6db5b26e86ef4f5421dc2dd
-MD5 (mod_gzip/readme.txt) = 3a9decb840fcd71cf3bf98c1219f0837
+MD5 (mod_gzip/mod_gzip.c.gz) = 4213af3e9a6cf208fa29b04512ce7c75
+MD5 (mod_gzip/changes.txt) = 2e8e0e9f753e886f5ce93f4cfca91fc7
+MD5 (mod_gzip/commands.txt) = 67b10b917047747e0f209ae0317e8099
+MD5 (mod_gzip/samples.txt) = 2b5a0521650dc87b789326d66ddbdee2
