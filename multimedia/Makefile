@@ -70,6 +70,7 @@
     SUBDIR += libmovtar
     SUBDIR += libmpeg2
     SUBDIR += libquicktime
+    SUBDIR += libtheora
     SUBDIR += libxine
     SUBDIR += linux-divx4linux
     SUBDIR += linux-divx4linux4

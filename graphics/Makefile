@@ -268,7 +268,6 @@
     SUBDIR += librsvg2
     SUBDIR += libsvg
     SUBDIR += libsvg-cairo
-    SUBDIR += libtheora
     SUBDIR += libungif
     SUBDIR += libv3d
     SUBDIR += libvisual

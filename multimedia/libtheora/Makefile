@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	libtheora
-PORTVERSION=	1.0.a3
+PORTVERSION=	1.0.a4
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.theora.org/files/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a3/alpha3/}
+MASTER_SITES=	http://downloads.xiph.org/releases/theora/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a4/alpha4/}
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Theora video codec for the Ogg multimedia streaming system
@@ -19,7 +19,8 @@ LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=13
+USE_BZIP2=	yes
+USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include " \
@@ -36,15 +37,6 @@ post-patch:
 		${WRKSRC}/examples/player_example.c
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/examples/Makefile.in
-
-do-install:
-	for i in ${WRKSRC}/lib/.libs/libtheora.so.0		\
-			${WRKSRC}/lib/.libs/libtheora.so	\
-			${WRKSRC}/lib/.libs/libtheora.a ; do	\
-		${INSTALL_DATA} $$i ${PREFIX}/lib ;		\
-	done
-	@${MKDIR} ${PREFIX}/include/theora
-	@${INSTALL_DATA} ${WRKSRC}/include/theora/theora.h	\
-		${PREFIX}/include/theora/
+	@${REINPLACE_CMD} -e 's|doc||g' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
