@@ -1,0 +1,11 @@
+--- configure.old	Fri Feb  6 09:23:28 2004
++++ configure	Fri Feb  6 09:23:50 2004
+@@ -5844,7 +5844,7 @@
+ 
+ 
+ cat >>confdefs.h <<_ACEOF
+-#define GQVIEW_HELPDIR "$prefix/share/gqview"
++#define GQVIEW_HELPDIR "$prefix/share/doc/gqview"
+ _ACEOF
+ 
+ 
