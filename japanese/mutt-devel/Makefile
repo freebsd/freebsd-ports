@@ -7,7 +7,7 @@
 # WITH_MUTT_CYRUS_SASL:	if defined, 'Cyrus sasl' support.
 #
 
-PORTNAME=	mutt
+PORTNAME=	mutt-devel
 PORTVERSION=	${VERSION}.j${JP_VERSION}
 PORTREVISION=	0
 CATEGORIES=	japanese mail
@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.emaillab.org/mutt/1.5/ \
 		http://my.reset.jp/~iwashita/mutt/distfiles/ \
 		http://ha4.seikyou.ne.jp/home/Kohtaro.Hitomi/mutt/ \
 		ftp://ftp.mutt.org/mutt/devel/
-DISTNAME=	${PORTNAME}-${VERSION}i
+DISTNAME=	mutt-${VERSION}i
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME}-ja.${JP_VERSION}${EXTRACT_SUFX} \
 		manual_ja-${MANUALVERSION}i-1${EXTRACT_SUFX}
@@ -25,16 +25,16 @@ MAINTAINER=	st@be.to
 COMMENT=	Text-based mail client (Japanised development version)
 
 LIB_DEPENDS=	slang.2:${PORTSDIR}/japanese/libslang
+RUN_DEPENDS=	urlview:${PORTSDIR}/textproc/urlview
 
-.if !defined(WITH_GETTEXT)
+.if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
-.else
-BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 .endif
 .if defined(WITH_MUTT_CYRUS_SASL)
 LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
 .endif
-RUN_DEPENDS=	urlview:${PORTSDIR}/textproc/urlview
+
+CONFLICTS=	mutt-* ja-mutt-1.[024]*
 
 VERSION=	1.5.6
 JP_VERSION=	1
@@ -48,7 +48,7 @@ USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_AUTOMAKE_VER=	14
 USE_OPENSSL=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${VERSION}
+WRKSRC=		${WRKDIR}/mutt-${VERSION}
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include -I${LOCALBASE}/include/slang" \
 		LDFLAGS="${LDFLAGS}"
@@ -61,8 +61,11 @@ CONFIGURE_ARGS=	--with-slang --enable-locales-fix \
 		--with-docdir=${DOCSDIR} \
 		--enable-pop --enable-imap \
 		--enable-default-japanese
-.if defined(WITH_GETTEXT)
-CONFIGURE_ARGS+=	--with-included-gettext
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB=	NLS="@comment "
+.else
+PLIST_SUB+=	NLS=""
 .endif
 .if defined(WITH_MUTT_CYRUS_SASL)
 CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
