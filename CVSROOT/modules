@@ -7645,6 +7645,7 @@ porttools	ports/devel/porttools
 portupgrade	ports/sysutils/portupgrade
 posadis		ports/dns/posadis
 pose		ports/palm/pose
+poseidon	ports/java/poseidon
 posixtestsuite	ports/misc/posixtestsuite
 poslib		ports/devel/poslib
 postal		ports/benchmarks/postal
