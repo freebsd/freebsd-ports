@@ -1,0 +1,13 @@
+*** scgi/web2ldap.py.orig	Thu Feb 24 15:08:33 2005
+--- scgi/web2ldap.py	Thu Feb 24 15:08:50 2005
+***************
+*** 1,4 ****
+! #!/usr/bin/python -OO
+  
+  """
+  scgi/web2ldap.py - stub script for running as SCGI server
+--- 1,4 ----
+! #!/usr/local/bin/python -OO
+  
+  """
+  scgi/web2ldap.py - stub script for running as SCGI server
