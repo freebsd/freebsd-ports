@@ -1,12 +1,12 @@
 
-$FreeBSD: /tmp/pcvs/ports/java/netbeans55/files/Attic/bin_runide.sh.diff,v 1.1 2003-06-07 19:55:11 olgeni Exp $
+$FreeBSD: /tmp/pcvs/ports/java/netbeans55/files/Attic/bin_runide.sh.diff,v 1.2 2003-06-11 21:23:58 olgeni Exp $
 
---- bin/runide.sh.orig	Mon Jun  2 11:23:48 2003
-+++ bin/runide.sh	Mon Jun  2 11:26:50 2003
-@@ -157,7 +157,7 @@
+--- bin/runide.sh.orig	Tue Jun  3 11:23:09 2003
++++ bin/runide.sh	Wed Jun 11 12:30:37 2003
+@@ -154,7 +154,7 @@
+             fi
+             ;;
          
-         -hotspot|-client|-server|-classic|-native|-green) thread_flag=$1;;
-         -J-hotspot|-J-client|-J-server|-J-classic|-J-native|-J-green) thread_flag=`expr $1 : '-J\(.*\)'`;;
 -        -J*) jopt=`expr "$1" : '-J\(.*\)'`; jargs="$jargs \"$jopt\"";;
 +        -J*) jopt=`expr -- "$1" : '-J\(.*\)'`; jargs="$jargs \"$jopt\"";;
          *) args="$args \"$1\"" ;;

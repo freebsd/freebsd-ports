@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	netbeans
-PORTVERSION=	3.4.1
-PORTREVISION=	1
+PORTVERSION=	3.5
 CATEGORIES=	java devel
-MASTER_SITES=	# http://www.netbeans.org/download/release341/night/build200301202341/
-DISTNAME=	NetBeansIDE-release341
+MASTER_SITES=	# http://www.netbeans.org/download/release35/night/build200306022350/
+DISTNAME=	NetBeansIDE-release35
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A full-featured integrated environment for Java
@@ -22,7 +21,7 @@ RESTRICTED=	"Restrictive license"
 
 WRKSRC=		${WRKDIR}/netbeans
 
-DOWNLOAD_URL?=	http://www.netbeans.org/download/dev/daily/build200306020100/platform-build-tar-bz2.html
+DOWNLOAD_URL?=	http://www.netbeans.org/download/release35/night/build200306022350/release35-build-tar-bz2.html
 
 .include <bsd.port.pre.mk>
 
