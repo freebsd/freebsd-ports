@@ -8,7 +8,7 @@
 
 PORTNAME=	dlint
 PORTVERSION=	1.4.0
-CATEGORIES=	net
+CATEGORIES=	dns
 MASTER_SITES=	http://www.domtools.com/pub/
 DISTNAME=	dlint${PORTVERSION}
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	adns
 PORTVERSION=	1.0.0
-CATEGORIES=	net python
+CATEGORIES=	dns python
 MASTER_SITES=	http://dustman.net/andy/python/adns-python/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	adns-python-${PORTVERSION}

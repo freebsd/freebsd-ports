@@ -7,7 +7,7 @@
 
 PORTNAME=	nsd
 PORTVERSION=	1.2.2
-CATEGORIES=	net ipv6
+CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/
 
 MAINTAINER=	ports@FreeBSD.org

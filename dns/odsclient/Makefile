@@ -7,7 +7,7 @@
 
 PORTNAME=	odsclient
 PORTVERSION=	1.02
-CATEGORIES=	net
+CATEGORIES=	dns
 MASTER_SITES=	http://www.ods.org/
 
 MAINTAINER=	geniusj@ods.org

@@ -7,7 +7,7 @@
 
 PORTNAME=	dnsmasq
 PORTVERSION=	1.13
-CATEGORIES=	net
+CATEGORIES=	dns
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/
 
 MAINTAINER=	shonson@isoproplex.net

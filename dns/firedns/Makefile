@@ -7,7 +7,7 @@
 
 PORTNAME=	firedns
 PORTVERSION=	0.1.30
-CATEGORIES=	net devel
+CATEGORIES=	dns devel
 MASTER_SITES=	http://ares.penguinhosting.net/~ian/projects/ \
 		http://www.wa.apana.org.au/~dean/sources/ \
 		ftp://ftp.wa.apana.org.au/pub/pc/unix/packages/

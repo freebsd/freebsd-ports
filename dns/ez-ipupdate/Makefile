@@ -7,7 +7,7 @@
 
 PORTNAME=	ez-ipupdate
 PORTVERSION=	3.0.11b7
-CATEGORIES=	net
+CATEGORIES=	dns
 MASTER_SITES=	http://gusnet.cx/proj/ez-ipupdate/dist/
 
 MAINTAINER=	se@FreeBSD.org

@@ -7,7 +7,7 @@
 
 PORTNAME=	ddclient
 PORTVERSION=	3.6.2
-CATEGORIES=	net
+CATEGORIES=	dns
 MASTER_SITES=	http://burry.ca:4141/ddclient/
 
 MAINTAINER=	dirk@FreeBSD.org

@@ -7,7 +7,7 @@
 
 PORTNAME=	host
 PORTVERSION=	991529
-CATEGORIES=	net
+CATEGORIES=	dns
 MASTER_SITES=	http://www.dtek.chalmers.se/~d3august/xt/ \
 		ftp://ftp.nikhef.nl/pub/network/
 DISTNAME=	${PORTNAME}
