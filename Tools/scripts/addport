@@ -1,15 +1,16 @@
 #!/usr/bin/perl
 #
 # addport - perl script that adds new ports to the
-# FreeBSD Ports Collection.
-# Created by: Will Andrews <will@FreeBSD.org>
-#             and Michael Haro <mharo@FreeBSD.org>
+# FreeBSD Ports Collection.  Replaces easy-import.
 #
-# $Id: addport,v 1.5 2000/04/22 22:19:43 mharo Exp $
+# Original shell script & idea: Will Andrews <will@FreeBSD.org>
+# Original conversion to Perl : Michael Haro <mharo@FreeBSD.org>
+#
+# $Id: addport,v 1.2 2000/04/02 06:21:13 will Exp $ (original shell script)
+# $Id: addport,v 1.5 2000/04/22 22:19:43 mharo Exp $ (perl conversion)
 # $FreeBSD$
 #
-# MAINTAINER= mharo@FreeBSD.org
-# however feel free to submit patches to will@FreeBSD.org.  =)
+# MAINTAINER=	will@FreeBSD.org
 #
 
 use Cwd "abs_path";
@@ -19,7 +20,7 @@ use strict;
 
 my %opts;
 
-getopts('d:h:ins:tu:v', \%opts);
+getopts('ad:fh:imns:tu:', \%opts);
 
 my $distdir = $opts{'s'} if ($opts{'s'} ne "");
 my $dir = $opts{'d'};
@@ -30,6 +31,10 @@ my $u = $ENV{USER};
 $u = $opts{'u'} if ($opts{'u'} ne "");
 my $more_testing = $opts{'t'};
 my $interactive = $opts{'i'};
+my $nomkdir = $opts{'m'};
+my $addlchk = $opts{'a'};
+my $nofetch = $opts{'f'};
+my $currentdir = abs_path(".");
 
 my $tmpdir;
 my $repo;
@@ -38,21 +43,22 @@ if( !defined $ENV{"CVS_RSH"} ) {
 	$ENV{CVS_RSH} = "ssh";
 }
 my $make = "make";
-my $portlint = "portlint -N -a -c -t";
+my $portlint = `which portlint`; chomp $portlint;
+my $plint_args = "-N -a -c -t";
 my $perl = "perl";
 my $cp = "cp";
 my $mv = "mv";
 my $rm = "rm";
 
-# now check to make sure this isn't running on freefall
 chomp(my $myhost = lc(hostname()));
 if ($myhost ne lc($h)) {
 	$ssh = "$ENV{CVS_RSH} $u\@$h";
-	$repo = "$u\@$h:/home/ncvs";
+	$repo = "$u\@$h:/home/ncvs" if !$ENV{CVSROOT};
 } else {
 	$ssh = "";
-	$repo = "/home/ncvs";
+	$repo = "/home/ncvs" if !$ENV{CVSROOT};
 }
+$repo = "$ENV{CVSROOT}" if $ENV{CVSROOT};
 my $cvs = "cvs $n-d $repo";
 
 # stuff that always happens when we start
@@ -73,25 +79,52 @@ END {
 	}
 }
 
+# setup the list of commands to run on the new port(s).
+my @commands;
+my $passenv = "";
+if ($addlchk && -f $portlint) {
+	$passenv = "DISTDIR=\"$distdir\"" if -d $distdir && $myhost ne "freefall.freebsd.org";
+	$passenv = "DISTDIR=\"$tmpdir\"" if $myhost eq "freefall.freebsd.org";
+	$passenv = $passenv . " PORTSDIR=\"$tmpdir\"" if !$nomkdir;
+	push(@commands, "$make clean check-categories");
+	push(@commands, "$portlint $plint_args");
+	push(@commands, "$make $passenv FETCH_BEFORE_ARGS='-btA' checksum") if !$nofetch;
+	if ($more_testing) {
+		push(@commands, "$make distclean");
+		push(@commands, "$make build");
+	}
+	if (!$nomkdir) {
+		chdir $tmpdir;
+		print "Checking out Mk directory to ensure portlint correctness.\n";
+		system("$cvs co ports/Mk") && errx(1, "Could not checkout Mk directory");
+		system("mv ports/Mk Mk") && errx(1, "Could not set up Mk directory");
+		chdir $currentdir;
+	}
+}
+
 if ($dir eq "") {
 	warnx("Need to specify a directory with -d argument!");
 	usage();
 	exit 1;
 }
 
+# make sure we're in the right place.
+chdir $currentdir;
 my @dirs = split(/\,/, $dir);
+foreach my $i (@dirs) { $i = abs_path($i); }
 my $portname; my $module;
 foreach my $thisdir (@dirs) {
+	# make double sure where we are..
+	chdir $thisdir;
 	# do some dir sanity checking first
 	errx(1, "Please specify valid directories to import new ports from.") if $thisdir eq "";
 	errx(1, "$thisdir is either not a directory or does not exist.") if (! -d $thisdir);
-	$thisdir = abs_path($thisdir);
 
 	print "Working with port directory $thisdir.\n";
 
 	$portname = `basename $thisdir`;	# avoid problems with dirs containing `/' in cvs
 	chomp $portname;
-	if ($opts{'i'}) {
+	if ($interactive) {
 		if (prompt("Port directory name will be $portname in CVS Repo.  OK? ")) {
 			do {
 				$portname = query("Preferred name for port directory? ");
@@ -101,13 +134,18 @@ foreach my $thisdir (@dirs) {
 
 	chdir $thisdir or err(1, "$thisdir");
 
+	# now run the tests on this baby.
+	for (@commands) {
+		system("$_") && errx(1, "'$_' had problems. aborting.");
+	}
+
 	# Get the category name and make it suitable for use with cvs
 	my $category;
 	$_ = `grep CATEGORIES Makefile`;
 	m/\w+\W+([\w-]+)/;
 	$category = $1;
 	chomp $category;
-	if ($opts{'i'}) {
+	if ($interactive) {
 		if (prompt("Port $portname will be put in category $category.  OK? " )) {
 			do {
 				$category = query("Preferred category for $portname? ");
@@ -118,7 +156,7 @@ foreach my $thisdir (@dirs) {
 	$cvs_category =~ s/-/_/g;
  
  	$module = $portname;
-	if ($opts{'i'}) {
+	if ($interactive) {
 		if (prompt("Port will be added as module $portname.  OK? ")) {
 			do {
 				$module = query("Preferred module name for $module? ");
@@ -187,7 +225,6 @@ sub warnx {
 	print STDERR $0 . ": " . $msg . "\n";
 }
 
-
 sub err {
 	my ($ex, $msg) = @_;
 
@@ -226,7 +263,7 @@ print <<EOF;
 authors: <will\@FreeBSD.org>, <mharo\@FreeBSD.org>
 
 SYNOPSIS
-	$0 [-h host] [-u user] [-s distdir] [-intv] -d directory
+	$0 [-h host] [-u user] [-s distdir] [-afimnt] -d directory
 
 	Where "directory" contains the comma-delimited list
 	of root directories of new ports that you wish to
@@ -234,25 +271,36 @@ SYNOPSIS
 	*WILL* matter in regards to the repository!
 
 OPTIONS
-	-h host		Use a cvshost besides freefall.FreeBSD.org
+	-a		Perform checks on the port to make sure
+			there are no problems.  Recommended.
+	-f		Do not fetch the distfile.
+	-h host		Use a cvshost besides freefall.FreeBSD.org.
 	-i		Interactive mode; allow more control over
 			where things are placed.  This is required in
 			order to change things like module names etc.
+	-m		Do not checkout ports/Mk (needed for support
+			of portlinting etc).
 	-n		Do not actually commit anything.
 	-s distdir	Use a different directory besides the default,
 			for downloading distfiles.  This defaults to the
 			temporary directory set up on freefall.
+	-t		Do more port testing.  Requires -a.
 	-u user		Use a different username (default: $u).
-	-t		Do more port testing
+
+ENVIRONMENT VARIABLES
+	$0 supports the following environment variables:
+
+	CVS_RSH - Command to use when connecting to CVS host.
+	CVSROOT - Location of CVS repository.
+	USER	- Username of user invoking $0.
 
 EXAMPLES
 	% addport -n -d greatgame,helpfuldev,shoot
 		Will show what happens but not actually commit ports
 	named "greatgame", "helpfuldev", and "shoot".
 
-	% addport -t -v thisport
-		Will not perform testing (does not matter in which
-	order -t and -v are used) on port "thisport" but just add it.
+	% addport
+		Displays this message.  :-)
 
 EOF
 }
