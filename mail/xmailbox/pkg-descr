@@ -1,0 +1,10 @@
+The xmailbox program displays, by default, an image of a mailbox.  When
+there is no mail, the image shown is that of a mailbox with its flag down.
+When new mail arrives, the image changes to that of a mailbox with the
+flag up, its door open and a letter visible inside.  It can also optionally
+play a sound through the sound-card. The NCD audio server, the rplay sound
+package, FreeBSD Sun-compatible audio drivers, and an external sound player
+program are supported.  By default, pressing any mouse button in the image
+forces xmailbox to remember the current size of the mail file as being the
+``empty'' size and to change its image accordingly.  In addition, the user
+can optionally invoke his/her favorite mail retrieving program.
