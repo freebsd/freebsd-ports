@@ -1,0 +1,12 @@
+$FreeBSD$
+
+--- build.xml	Fri Apr 16 09:13:39 2004
++++ build.xml	Fri Apr 16 09:13:46 2004
+@@ -12,7 +12,6 @@
+         <property name="project" value="spread"/>
+         <property name="title" value="${Name} ${version} API for Java"/>
+         <property name="year" value="2002"/>
+-        <property name="build.compiler" value="jikes"/>
+         <property name="build.dir" value="dest"/>
+         <property name="build.src" value="${build.dir}/src"/>
+         <property name="build.dest" value="${build.dir}/class"/>
