@@ -75,12 +75,12 @@
 +    if (if_number != -1) {
 +       size_t  if_miblen = 0;
 +       if_miblen = sizeof(if_mib);
-+       static  int name[] = { CTL_NET,
-+                              PF_LINK,
-+                              NETLINK_GENERIC,
-+                              IFMIB_IFDATA,
-+                              if_number,
-+                              IFDATA_GENERAL };
++       int name[] = { CTL_NET,
++                      PF_LINK,
++                      NETLINK_GENERIC,
++                      IFMIB_IFDATA,
++                      if_number,
++                      IFDATA_GENERAL };
 +
 +       sysctl(name, 6, (void*)&if_mib, (size_t*)&if_miblen, (void*)NULL, (size_t)0);
 +
