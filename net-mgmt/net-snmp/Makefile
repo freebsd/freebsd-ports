@@ -7,7 +7,7 @@
 
 PORTNAME=	net-snmp
 PORTVERSION=	5.0.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= net-snmp
@@ -106,7 +106,7 @@ post-patch:
 		-e 's|%%LTMAIN%%|${LIBTOOL_SHAREDIR}/ltmain.sh|g' \
 		${WRKSRC}/aclocal.m4
 
-post-configure:
+post-build:
 	@${FIND} ${CONFIGURE_WRKSRC}/perl -name Makefile | \
 	 ${XARGS} ${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//'
 
