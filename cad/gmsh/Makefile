@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.geuz.org/gmsh/src/	\
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 EXTRACT_SUFX=	.tgz
 .ifdef USE_TRIANGLE
-DISTFILES= 	${DISTNAME}${EXTRACT_SUFX}:source	\
+DISTFILES= 	${DISTNAME}${EXTRACT_SUFX}	\
 		triangle.shar.gz:triangle
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 .endif
