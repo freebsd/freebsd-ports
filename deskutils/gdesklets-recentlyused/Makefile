@@ -5,10 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gdesklets-recentlyused
+PORTNAME=	recentlyused
 PORTVERSION=	0.6
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
+PKGNAMEPREFIX= gdesklets-
 DISTNAME=	recently-used-${PORTVERSION}
 
 MAINTAINER=	mezz7@cox.net
@@ -18,15 +19,19 @@ RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutil
 
 USE_X_PREFIX=	yes
 NAME=		RecentlyUsed
+DATADIR=	${PREFIX}/share/gnome
 
 do-build:
 	@${WRKSRC}/Install_${NAME}_Sensor.bin --nomsg ${WRKSRC}
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/gnome/gdesklets/Displays/${NAME}
-	@${CP} ${WRKSRC}/*.display ${PREFIX}/share/gnome/gdesklets/Displays/${NAME}/
-	@${CP} -Rp ${WRKSRC}/${NAME} ${PREFIX}/share/gnome/gdesklets/Sensors/
+	@${MKDIR} ${DATADIR}/gdesklets/Displays/${NAME}
+	@${MKDIR} ${DATADIR}/gdesklets/Sensors/${NAME}
+	@${INSTALL_DATA} ${WRKSRC}/*.display ${DATADIR}/gdesklets/Displays/${NAME}/
+	@${INSTALL_DATA} ${WRKSRC}/${NAME}/*.py ${DATADIR}/gdesklets/Sensors/${NAME}/
+	@${INSTALL_DATA} ${WRKSRC}/${NAME}/AUTHORS ${DATADIR}/gdesklets/Sensors/${NAME}/
+	@${CP} ${WRKSRC}/${NAME}/.recently-used ${DATADIR}/gdesklets/Sensors/${NAME}/
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
