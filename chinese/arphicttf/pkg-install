@@ -42,10 +42,10 @@ echo ai=0.3:gbsn00lp.ttf -ar-sung-medium-i-normal--0-0-0-0-c-0-gb2312.1980-0 >> 
 echo ab=y:ai=0.3:gbsn00lp.ttf -ar-sung-bold-i-normal--0-0-0-0-c-0-gb2312.1980-0 >> fonts.dir
 
 # gkai00mp.ttf (GB)
-echo bkai00mp.ttf -ar-kai-medium-r-normal--0-0-0-0-c-0-gb2312.1980-0 >> fonts.dir
-echo ab=y:bkai00mp.ttf -ar-kai-bold-r-normal--0-0-0-0-c-0-gb2312.1980-0 >> fonts.dir
-echo ai=0.3:bkai00mp.ttf -ar-kai-medium-i-normal--0-0-0-0-c-0-gb2312.1980-0 >> fonts.dir
-echo ab=y:ai=0.3:bkai00mp.ttf -ar-kai-bold-i-normal--0-0-0-0-c-0-gb2312.1980-0 >> fonts.dir
+echo gkai00mp.ttf -ar-kai-medium-r-normal--0-0-0-0-c-0-gb2312.1980-0 >> fonts.dir
+echo ab=y:gkai00mp.ttf -ar-kai-bold-r-normal--0-0-0-0-c-0-gb2312.1980-0 >> fonts.dir
+echo ai=0.3:gkai00mp.ttf -ar-kai-medium-i-normal--0-0-0-0-c-0-gb2312.1980-0 >> fonts.dir
+echo ab=y:ai=0.3:gkai00mp.ttf -ar-kai-bold-i-normal--0-0-0-0-c-0-gb2312.1980-0 >> fonts.dir
 
 
 # Update fonts.alias, font size ranges from 8 to 128.
