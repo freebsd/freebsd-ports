@@ -7,12 +7,20 @@
 
 PORTNAME=	muttprint
 PORTVERSION=	0.61
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	muttprint
 
 MAINTAINER=	obraun@informatik.unibw-muenchen.de
+
+.if !defined(PAPERSIZE)
+PAPERSIZE=	letter
+.endif
+
+RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
+		psnup:${PORTSDIR}/print/psutils-${PAPERSIZE} \
+		convert:${PORTSDIR}/graphics/ImageMagick
 
 MAN1=		muttprint.1
 MANCOMPRESSED=	yes

@@ -1,5 +1,11 @@
 --- muttprint.orig	Sat Dec 15 08:49:39 2001
-+++ muttprint	Tue Feb 12 01:48:40 2002
++++ muttprint	Tue Feb 12 22:45:53 2002
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/perl -w
+ #
+ # Hinweis:	Tabulatorbreite: 4 Zeichen
+ #			(automatische Einstellung für ViM durch letzte Zeile)
 @@ -34,7 +34,7 @@
  # Deklaration erzwingen
  use strict;
