@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=		sem@ciam.ru
 COMMENT=		Database frontend for KDE
 
+BUILD_DEPENDS=		${LOCALBASE}/include/argp.h:${PORTSDIR}/devel/argp-standalone
 LIB_DEPENDS=		hk_classes.5:${PORTSDIR}/databases/hk_classes
 
 USE_BZIP2=		yes
