@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	racc
-PORTVERSION=	1.3.11
+PORTVERSION=	1.3.12
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.loveruby.net/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
