@@ -14,4 +14,6 @@ COMMENT=	KDE iconset
 
 WRKSRC=		"${WRKDIR}/${DISTNAME}"
 
+BROKEN=		"Unfetchable"
+
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"
