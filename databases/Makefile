@@ -260,6 +260,7 @@
     SUBDIR += sqlrelay
     SUBDIR += sqsh
     SUBDIR += sybase-ocsd
+    SUBDIR += sybtcl
     SUBDIR += tcl-Mysql
     SUBDIR += tdb
     SUBDIR += tinycdb

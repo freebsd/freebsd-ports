@@ -1,0 +1,45 @@
+# $FreeBSD$
+
+.PATH:	${.CURDIR}/generic
+
+SRCS=		sybtcl.c
+LOCALBASE?=	/usr/local
+PREFIX?=	${LOCALBASE}
+TCL_VER?=	8.4
+TCL_DVER=	${TCL_VER:S/.//}
+
+CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl${TCL_VER}
+LDADD=		-L${LOCALBASE}/lib -lsybdb # -ltcl${TCL_DVER}
+
+SHLIB_NAME=	libSybtcl.so.3
+LIBDIR=		${PREFIX}/lib
+PKGDIR=		${LIBDIR}/Sybtcl
+SCRIPTS=	sp_who wisqlite
+
+all:	${SHLIB_NAME} pkgIndex.tcl ${SCRIPTS}
+
+pkgIndex.tcl: pkgIndex.tcl.in
+	echo 'package ifneeded Sybtcl 3.0 "load $$dir/../${SHLIB_NAME}; \
+		set auto_index(getSignOn) \"source $$dir/sign_on.tcl\""' \
+		> pkgIndex.tcl
+
+.for s in ${SCRIPTS}
+$s:	${.CURDIR}/samples/$s
+	sed -e 's,#!/usr/local/bin/wishx,#!${LOCALBASE}/bin/wish${TCL_VER},'\
+	    -e 's,#!/usr/local/bin/wish8.0,#!${LOCALBASE}/bin/wish${TCL_VER},'\
+		< ${.CURDIR}/samples/$s > $s
+.endfor
+
+sp_who wisqlite: ${.CURDIR}
+
+${PKGDIR}:
+	mkdir -p ${PKGDIR}
+
+beforeinstall: ${PKGDIR}
+	${BSD_INSTALL_DATA} pkgIndex.tcl ${.CURDIR}/samples/sign_on.tcl \
+		${PKGDIR}
+	${BSD_INSTALL_SCRIPT} ${SCRIPTS} ${PREFIX}/bin/
+	${BSD_INSTALL_MAN} ${.CURDIR}/doc/sybtcl.man \
+		${LOCALBASE}/man/mann/sybtcl.n
+
+.include <bsd.lib.mk>

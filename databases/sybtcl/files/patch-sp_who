@@ -1,0 +1,15 @@
+--- samples/sp_who	Fri Jun  2 02:35:54 2000
++++ samples/sp_who	Mon Mar 29 18:10:59 2004
+@@ -22,12 +22,4 @@
+ package require Sybtcl
+ 
+-if {[file isfile sign_on.tcl]} {
+-    source sign_on.tcl
+-} elseif {[file isfile [file join [file dirname [info script]] sign_on.tcl]]} {
+-    source [file join [file dirname [info script]] sign_on.tcl]
+-} elseif {[file isfile [file join [file dirname [info nameofexecutable]] sign_on.tcl]]} {
+-    source [file join [file dirname [info nameofexecutable]] sign_on.tcl]
+-}
+-
+ global server interval now intervalid env secorsecs user password sybhandle
+ global opened WhoIsThere order_by_orders order_by order_by_stmnt order_by_text
