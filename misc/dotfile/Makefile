@@ -3,7 +3,7 @@
 # Date created:      11/12/96
 # Whom:              oly@world.std.com
 #
-# $Id: Makefile,v 1.8 1998/02/25 10:10:53 asami Exp $
+# $Id: Makefile,v 1.9 1998/02/25 16:14:31 steve Exp $
 #
 
 DISTNAME=	dotfile-2.2
@@ -19,6 +19,12 @@ GNU_CONFIGURE=	yes
 MAN1=		dotfile.1
 
 NO_BUILD=	yes
+
+post-configure:
+	@(cd ${WRKSRC}/Modules/procmail && CC="${CC}" ac_cv_path_CC="${CC}" CFLAGS="${CFLAGS}" \
+	INSTALL="${INSTALL} -c -o ${BINOWN} -g ${BINGRP}" \
+	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+	${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS})
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/doc/${DISTNAME}
