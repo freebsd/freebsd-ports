@@ -1,2 +1,3 @@
 bin/ipcad
 etc/ipcad.conf.sample
+etc/rc.d/ipcad.sh
