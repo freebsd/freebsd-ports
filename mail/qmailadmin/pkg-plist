@@ -1,4 +1,5 @@
 share/qmailadmin/html/add_alias.html
+share/qmailadmin/html/add_alias.html~
 share/qmailadmin/html/add_autorespond.html
 share/qmailadmin/html/add_forward.html
 share/qmailadmin/html/add_listmod.html
@@ -6,54 +7,63 @@ share/qmailadmin/html/add_listuser.html
 share/qmailadmin/html/add_mailinglist-idx.html
 share/qmailadmin/html/add_mailinglist-no-idx.html
 share/qmailadmin/html/add_user.html
+share/qmailadmin/html/colortable
 share/qmailadmin/html/de
 share/qmailadmin/html/del_alias_confirm.html
 share/qmailadmin/html/del_autorespond_confirm.html
 share/qmailadmin/html/del_forward_confirm.html
+share/qmailadmin/html/del_listmod.html
+share/qmailadmin/html/del_listuser.html
 share/qmailadmin/html/del_mailinglist_confirm.html
+share/qmailadmin/html/del_mod.html
 share/qmailadmin/html/del_user_confirm.html
 share/qmailadmin/html/en
 share/qmailadmin/html/es
+share/qmailadmin/html/footer.html
 share/qmailadmin/html/fr
+share/qmailadmin/html/header.html
+share/qmailadmin/html/it
 share/qmailadmin/html/ja
 share/qmailadmin/html/main_menu.html
-share/qmailadmin/html/main_table.html
 share/qmailadmin/html/mod_autorespond.html
 share/qmailadmin/html/mod_dotqmail.html
+share/qmailadmin/html/mod_mailinglist-idx.html
 share/qmailadmin/html/mod_user.html
 share/qmailadmin/html/no
 share/qmailadmin/html/pt-BR
 share/qmailadmin/html/ru
+share/qmailadmin/html/setremotecatchall.html
 share/qmailadmin/html/show_alias.html
 share/qmailadmin/html/show_autorespond.html
 share/qmailadmin/html/show_forwards.html
 share/qmailadmin/html/show_login.html
 share/qmailadmin/html/show_mailinglist.html
-share/qmailadmin/html/show_redirect.html
+share/qmailadmin/html/show_moderators.html
+share/qmailadmin/html/show_subscribers.html
 share/qmailadmin/html/show_users.html
 share/qmailadmin/html/sv
 share/qmailadmin/html/tr
-www/cgi-bin.default/qmailadmin/qmailadmin
-www/data.default/images/qmailadmin/delete.gif
-www/data.default/images/qmailadmin/lowerleft.gif
-www/data.default/images/qmailadmin/lowermiddle.gif
-www/data.default/images/qmailadmin/lowerright.gif
-www/data.default/images/qmailadmin/main1.gif
-www/data.default/images/qmailadmin/main2.gif
-www/data.default/images/qmailadmin/middleleft1.gif
-www/data.default/images/qmailadmin/middleleft2.gif
-www/data.default/images/qmailadmin/middlelogin.gif
-www/data.default/images/qmailadmin/middleright1.gif
-www/data.default/images/qmailadmin/pixel.gif
-www/data.default/images/qmailadmin/upperleft.gif
-www/data.default/images/qmailadmin/uppermiddle1.gif
-www/data.default/images/qmailadmin/uppermiddle2.gif
-www/data.default/images/qmailadmin/upperright.gif
-@dirrm www/data.default/images/qmailadmin
-@dirrm www/data.default/images
-@unexec /bin/rmdir %D/www/data.default 2> /dev/null || true
-@dirrm www/cgi-bin.default/qmailadmin
-@unexec /bin/rmdir %D/www/cgi-bin.default 2> /dev/null || true
-@unexec /bin/rmdir %D/www 2> /dev/null || true
+%%CGIBINDIR%%/%%CGIBINSUBDIR%%/qmailadmin
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/qmailadmin/delete.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/qmailadmin/disabled.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/qmailadmin/lowerleft.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/qmailadmin/lowermiddle.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/qmailadmin/lowerright.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/qmailadmin/main1.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/qmailadmin/main2.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/qmailadmin/middleleft1.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/qmailadmin/middleleft2.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/qmailadmin/middlelogin.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/qmailadmin/middleright1.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/qmailadmin/pixel.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/qmailadmin/upperleft.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/qmailadmin/uppermiddle1.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/qmailadmin/uppermiddle2.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/qmailadmin/upperright.png
+@dirrm %%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/qmailadmin
+@dirrm %%WEBDATADIR%%/%%WEBDATASUBDIR%%/images
+@unexec /bin/rmdir %%WEBDATADIR%% 2> /dev/null || true
+@dirrm %%CGIBINDIR%%/%%CGIBINSUBDIR%%
+@unexec /bin/rmdir %%CGIBINDIR%% 2> /dev/null || true
 @dirrm share/qmailadmin/html
 @dirrm share/qmailadmin
