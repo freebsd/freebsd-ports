@@ -1,0 +1,21 @@
+--- makefile.orig	Thu Apr 22 03:14:08 1993
++++ makefile	Tue Feb  4 23:51:25 1997
+@@ -7,7 +7,8 @@
+ 
+ # for gcc
+ CC = gcc
+-CFLAGS = -g -O
++#CFLAGS = -g -O
++DEFS = -DPROLOGUE_PATH=\"${PREFIX}/share/chinese/gb\"
+ 
+ # for other compilers,  add  -DNO_FUNCPROTO if  your C compiler cannot
+ # the understand ANSI function prototype feature.
+@@ -15,7 +16,7 @@
+ # CFLAGS = -g   # -DNO_FUNCPROTO
+ 
+ .c.o:
+-	$(CC) $(CFLAGS) -c $*.c
++	$(CC) $(CFLAGS) $(DEFS) -c $*.c
+ 
+ all: gbscript
+ 
