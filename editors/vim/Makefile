@@ -42,8 +42,8 @@ PATCH_DIST_ARGS=	-d ${WRKDIR}/${PORTNAME}${PORTVERSION:S/.//g} --forward --quiet
 MAKE_ARGS+=	CONF_ARGS="--prefix=${PREFIX} --with-tlib=termlib"
 ALL_TARGET=	#
 PLIST_SUB=	VIM_VER=${DISTNAME:S/-//:S/.//}
-MAN1=		vim.1 vimtutor.1 xxd.1 ectags.1
-MLINKS=		vim.1 rvim.1  vim.1 rview.1  ectags.1 etags.1
+MAN1=		vim.1 vimtutor.1 xxd.1
+MLINKS=		vim.1 rvim.1  vim.1 rview.1
 
 .include <bsd.port.pre.mk>
 
@@ -80,7 +80,5 @@ post-install:
 .if !defined(LITE)
 	[ -e ${PREFIX}/bin/gvim ] || ${LN} -s ${PREFIX}/bin/vim ${PREFIX}/bin/gvim
 .endif
-	@${RM} -f ${PREFIX}/man/man1/etags.1
-	@${MV} ${PREFIX}/man/man1/ctags.1 ${PREFIX}/man/man1/ectags.1
 
 .include <bsd.port.post.mk>
