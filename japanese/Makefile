@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.54 1997/01/29 04:02:50 max Exp $
+# $Id: Makefile,v 1.55 1997/02/03 16:38:14 max Exp $
 #
 
     SUBDIR += Canna
@@ -16,6 +16,7 @@
     SUBDIR += grep
     SUBDIR += groff
     SUBDIR += gxditview
+    SUBDIR += handbook
     SUBDIR += hex
     SUBDIR += ircII
     SUBDIR += jtex209-ascii
