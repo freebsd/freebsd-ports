@@ -17,8 +17,8 @@ COMMENT=	High-level interactive language for numerical computations
 BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw \
-		f77blas.1:${PORTSDIR}/math/blas \
-		lapack.1:${PORTSDIR}/math/lapack
+		f77blas.1:${PORTSDIR}/math/atlas \
+		lapack.3:${PORTSDIR}/math/lapack
 
 USE_BZIP2=	yes
 
