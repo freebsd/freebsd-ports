@@ -55,14 +55,6 @@ lib/X11/afterstep/sounds/meepmeep.au
 lib/X11/afterstep/sounds/small-step.au
 lib/X11/afterstep/sounds/train.au
 lib/X11/afterstep/system.steprc
-lib/X11/doc/html/Animate.1.html
-lib/X11/doc/html/Audio.1.html
-lib/X11/doc/html/Auto.1.html
-lib/X11/doc/html/Banner.1.html
-lib/X11/doc/html/Pager.1.html
-lib/X11/doc/html/Wharf.1.html
-lib/X11/doc/html/afterstep.1.html
-lib/X11/doc/html/asclock.1.html
 @dirrm lib/X11/afterstep/backgrounds
 @dirrm lib/X11/afterstep/doc
 @dirrm lib/X11/afterstep/sounds
