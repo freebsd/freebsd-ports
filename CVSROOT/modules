@@ -5389,6 +5389,7 @@ nicetext	ports/textproc/nicetext
 nickle		ports/lang/nickle
 nicmond		ports/net/nicmond
 nicotine	ports/net/nicotine
+nifmon		ports/net/nifmon
 nightfall	ports/astro/nightfall
 nighthawk	ports/games/nighthawk
 nikto		ports/security/nikto
