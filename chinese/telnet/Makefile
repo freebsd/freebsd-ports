@@ -17,7 +17,7 @@ SRCDIR=		/usr/src/usr.bin/telnet
 
 do-extract:
 .if exists (${SRCDIR})
-	@${MKDIR} work
+	@${MKDIR} ${WRKDIR}
 	@${CP} -R ${SRCDIR} ${WRKSRC}
 .else
 BROKEN=	"You need to build this port with ${SRCDIR}"
