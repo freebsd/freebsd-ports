@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.257 1999/04/27 13:22:27 taoka Exp $
+# $Id: Makefile,v 1.258 1999/04/30 23:06:17 asami Exp $
 #
 
     SUBDIR += 9term
@@ -55,7 +55,6 @@
     SUBDIR += kdebase11
     SUBDIR += kdelibs
     SUBDIR += kdelibs11
-    SUBDIR += ktranslator
     SUBDIR += kvidtune
     SUBDIR += kworldwatch
     SUBDIR += libdnd
