@@ -13,6 +13,6 @@ host: This is the smtp server you are sending to.
 port: The smtp port you want to connect to. 25 is standard, don't change it
 unless you know what you are doing.
 
-WWW: http://www2.fastdial.net/~drysdam/software/software.html
+WWW: http://physeeks.dyndns.org:8000/software.html
 
 - Anders Nordby <anders@fix.no>
