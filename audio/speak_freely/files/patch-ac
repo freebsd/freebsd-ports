@@ -1,14 +1,20 @@
-*** mike.c.orig	Tue Apr 23 14:45:52 1996
---- mike.c	Fri Oct 25 19:11:15 1996
-***************
-*** 687,692 ****
---- 687,695 ----
-  		    (sb->buffer.buffer_len > 16)) {
-  		    pktlen += sizeof(sb->sendinghost);
-  		}
-+ 		/* must stay in network order for debugging output */
-+ 		sb->compression = htonl(sb->compression);
-+ 		sb->buffer.buffer_len = htonl(sb->buffer.buffer_len);
-  	    }
-  	}
-      }
+--- mike.c.orig	Wed Mar  5 14:08:20 1997
++++ mike.c	Tue Dec 15 22:21:32 1998
+@@ -8,6 +8,7 @@
+ */
+ 
+ #include "speakfree.h"
++#define	sendfile sf_sendfile
+ 
+ /*  Destination host descriptor.  */
+ 
+@@ -687,6 +688,9 @@
+ 		    (sb->buffer.buffer_len > 16)) {
+ 		    pktlen += sizeof(sb->sendinghost);
+ 		}
++		/* must stay in network order for debugging output */
++		sb->compression = htonl(sb->compression);
++		sb->buffer.buffer_len = htonl(sb->buffer.buffer_len);
+ 	    }
+ 	}
+     }
