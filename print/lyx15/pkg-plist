@@ -26,6 +26,7 @@ share/locale/sv/LC_MESSAGES/lyx.mo
 share/locale/tr/LC_MESSAGES/lyx.mo
 share/locale/wa/LC_MESSAGES/lyx.mo
 %%DATADIR%%/CREDITS
+%%DATADIR%%/bind/aqua.bind
 %%DATADIR%%/bind/broadway.bind
 %%DATADIR%%/bind/cua.bind
 %%DATADIR%%/bind/cyrkeys.bind
@@ -155,10 +156,10 @@ share/locale/wa/LC_MESSAGES/lyx.mo
 %%DATADIR%%/examples/fr_Foils.lyx
 %%DATADIR%%/examples/fr_ListesPuces.lyx
 %%DATADIR%%/examples/fr_Minipage.lyx
-%%DATADIR%%/examples/fr_MultiColonnes.lyx
 %%DATADIR%%/examples/fr_exemple_brut.lyx
 %%DATADIR%%/examples/fr_exemple_lyxifie.lyx
 %%DATADIR%%/examples/fr_mathed.lyx
+%%DATADIR%%/examples/fr_multicol.lyx
 %%DATADIR%%/examples/fr_splash.lyx
 %%DATADIR%%/examples/he_example_raw.lyx
 %%DATADIR%%/examples/he_he_example_lyxified.lyx
@@ -804,6 +805,7 @@ share/locale/wa/LC_MESSAGES/lyx.mo
 %%DATADIR%%/layouts/ltugboat.layout
 %%DATADIR%%/layouts/lyxmacros.inc
 %%DATADIR%%/layouts/manpage.layout
+%%DATADIR%%/layouts/memoir.layout
 %%DATADIR%%/layouts/mwart.layout
 %%DATADIR%%/layouts/mwbk.layout
 %%DATADIR%%/layouts/mwrep.layout
@@ -889,8 +891,9 @@ share/locale/wa/LC_MESSAGES/lyx.mo
 %%DATADIR%%/templates/g-brief-de.lyx
 %%DATADIR%%/templates/g-brief-en.lyx
 %%DATADIR%%/templates/hollywood.lyx
-%%DATADIR%%/templates/koma-letter2.lyx
+%%DATADIR%%/templates/ijmpd.lyx
 %%DATADIR%%/templates/kluwer.lyx
+%%DATADIR%%/templates/koma-letter2.lyx
 %%DATADIR%%/templates/latex8.lyx
 %%DATADIR%%/templates/letter.lyx
 %%DATADIR%%/templates/linuxdoc_article.lyx
@@ -905,6 +908,7 @@ share/locale/wa/LC_MESSAGES/lyx.mo
 %%DATADIR%%/tex/revtex.cls
 %%DATADIR%%/textclass.lst
 %%DATADIR%%/ui/default.ui
+%%DATADIR%%/xfonts/PSres.upr
 %%DATADIR%%/xfonts/cmex10.pfb
 %%DATADIR%%/xfonts/cmmi10.pfb
 %%DATADIR%%/xfonts/cmr10.pfb

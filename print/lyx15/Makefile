@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lyx
-PORTVERSION=	1.3.2
-PORTREVISION=	1
+PORTVERSION=	1.3.3
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
 		ftp://ftp.sdsc.edu/pub/other/lyx/stable/ \
@@ -26,8 +25,7 @@ USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_PYTHON=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
+USE_LIBTOOL_VER=	14
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-extra-lib="${LOCALBASE}/lib" \
 		--with-extra-inc="${LOCALBASE}/include"
@@ -38,6 +36,8 @@ MAN1=		lyx.1 reLyX.1
 .if defined(WITH_QT)
 USE_QT_VER=	3
 CONFIGURE_ARGS+=	--with-frontend=qt
+QTCPPFLAGS+=	${PTHREAD_CFLAGS}
+QTCFGLIBS+=	${PTHREAD_LIBS}
 .else
 LIB_DEPENDS+=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 USE_XPM=	yes
@@ -57,12 +57,7 @@ RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500035
-CONFIGURE_ENV+=	CXXFLAGS="${CXXFLAGS} -Wno-non-template-friend -ftemplate-depth-30"
-.if defined(WITH_QT)
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}" \
-		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
-		CXXFLAGS="${CXXFLAGS} ${PTHREAD_CFLAGS} -Wno-non-template-friend -ftemplate-depth-30"
-.endif
+CFLAGS+=	-Wno-non-template-friend -ftemplate-depth-30
 .endif
 
 pre-everything::
@@ -86,10 +81,5 @@ pre-everything::
 	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_ISPELL=yes\""
 	@${ECHO_MSG}
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -E -e \
-		's|CFLAGS=$$|#CFLAGS=|' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.post.mk>
