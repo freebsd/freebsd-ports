@@ -9,3 +9,5 @@ include/jsconfig.h
 %%PORTDOCS%%info/js.info
 %%PORTDOCS%%@exec install-info %D/info/js.info %D/info/dir
 lib/libjs.a
+lib/libjs.so
+lib/libjs.so.0
