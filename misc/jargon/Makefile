@@ -3,7 +3,7 @@
 # Date created: 	11 July 1998
 # Whom:			moeding
 #
-# $Id: Makefile,v 1.2 1999/04/15 20:44:56 mharo Exp $
+# $Id: Makefile,v 1.3 1999/04/22 07:37:47 nectar Exp $
 #
 
 DISTNAME=	jargon-4.1.1
@@ -13,12 +13,14 @@ MASTER_SITES=	http://www.tuxedo.org/~esr/jargon/                     \
 
 MAINTAINER=	s.moeding@ndh.net
 
+USE_PERL5=	YES
 NO_BUILD=	YES
 
 FILES=		jarghist.html mirroring.html alternates.html jarginfo.html mirrorlist.html awards.html quoting.html search.html jargon-upd.lst submissions.html index.html jargtxt.html
 
 post-patch:
-	/usr/bin/perl -pi -e 's,/home/httpd/html,${PREFIX}/www/data,' ${WRKSRC}/jargon-search
+	${PERL} -pi -e 's,/home/httpd/html,${PREFIX}/www/data,' ${WRKSRC}/jargon-search
+
 do-install:
 	@${MKDIR} ${PREFIX}/www/cgi-bin
 	@${INSTALL_SCRIPT} ${WRKSRC}/jargon-search ${PREFIX}/www/cgi-bin
