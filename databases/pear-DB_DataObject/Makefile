@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DB_DataObject
-PORTVERSION=	1.7.2
+PORTVERSION=	1.7.5
 CATEGORIES=	databases www pear
 
 MAINTAINER=	antonio@php.net
@@ -16,28 +16,23 @@ BUILD_DEPENDS=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB \
 		${PEARDIR}/Date.php:${PORTSDIR}/devel/pear-Date
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_PHP=	yes
+USE_REINPLACE=	yes
 
 CATEGORY=	DB
-FILES=		DataObject.php DataObject/Cast.php DataObject/Error.php \
-		DataObject/Generator.php DataObject/createTables.php
-
+FILES=		DataObject.php DataObject/Cast.php DataObject/Generator.php \
+		DataObject/createTables.php DataObject/Error.php
 DOCS=		example.ini
 
-LATEST_LINK=    pear-DB_DataObject
-OPTIONS=        PEAR_VALIDATE "PEAR::Validate support" off
+LATEST_LINK=	pear-DB_DataObject
+OPTIONS=	PEAR_VALIDATE "PEAR::Validate support" off
 
-.include <bsd.port.pre.mk>
-
-PHP_VERS=       ${PHP_VERSION:S/.//g}
-
-.if defined(PHP_VERS) && ${PHP_VERS} < 420
-IGNORE=         "You need PHP 4.2.0 or later to install PEAR::DB_DataObject"
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e "s|@version@|${PORTVERSION}|" ${WRKSRC}/DataObject.php
 
 .if defined(WITH_PEAR_VALIDATE)
-BUILD_DEPENDS+= ${PEARDIR}/Validate.php:${PORTSDIR}/devel/pear-Validate
+RUN_DEPENDS+=	${PEARDIR}/Validate.php:${PORTSDIR}/devel/pear-Validate
 .endif
 
+.include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
 .include <bsd.port.post.mk>
