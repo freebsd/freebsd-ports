@@ -1,0 +1,79 @@
+The following two patches are security patches as discussed in CERT advisory
+CA:96-08.pcnfsd dated April 18th.
+
+*** /tmp/T0a005Z3	Fri Apr 19 14:50:43 1996
+--- pcnfsd_misc.c	Fri Apr 19 14:37:00 1996
+***************
+*** 114,120 ****
+  int suspicious (s)
+  char *s;
+  {
+! 	if(strpbrk(s, ";|&<>`'#!?*()[]^/") != NULL)
+  		return 1;
+  	return 0;
+  }
+--- 114,120 ----
+  int suspicious (s)
+  char *s;
+  {
+! 	if(strpbrk(s, ";|&<>`'#!?*()[]^/${}\n\r\"\\:") != NULL)
+  		return 1;
+  	return 0;
+  }
+*** /tmp/T0a002c1	Fri Apr  5 13:14:50 1996
+--- pcnfsd_print.c	Fri Apr  5 13:14:46 1996
+***************
+*** 221,226 ****
+--- 221,227 ----
+  {
+  int    dir_mode = 0777;
+  int rc;
++ mode_t oldmask;
+  
+  	*sp = &pathname[0];
+  	pathname[0] = '\0';
+***************
+*** 231,241 ****
+  	/* get pathname of current directory and return to client */
+  
+  	(void)sprintf(pathname,"%s/%s",sp_name, sys);
+  	(void)mkdir(sp_name, dir_mode);	/* ignore the return code */
+- 	(void)chmod(sp_name, dir_mode);
+  	rc = mkdir(pathname, dir_mode);	/* DON'T ignore this return code */
+  	if((rc < 0 && errno != EEXIST) ||
+- 	   (chmod(pathname, dir_mode) != 0) ||
+  	   (stat(pathname, &statbuf) != 0) ||
+  	   !(statbuf.st_mode & S_IFDIR)) {
+  	   (void)sprintf(tempstr,
+--- 232,242 ----
+  	/* get pathname of current directory and return to client */
+  
+  	(void)sprintf(pathname,"%s/%s",sp_name, sys);
++ 	oldmask = umask(0);
+  	(void)mkdir(sp_name, dir_mode);	/* ignore the return code */
+  	rc = mkdir(pathname, dir_mode);	/* DON'T ignore this return code */
++ 	umask(oldmask);
+  	if((rc < 0 && errno != EEXIST) ||
+  	   (stat(pathname, &statbuf) != 0) ||
+  	   !(statbuf.st_mode & S_IFDIR)) {
+  	   (void)sprintf(tempstr,
+***************
+*** 381,387 ****
+  		   ** filter with the appropriate arguments.
+                     **------------------------------------------------------
+  		   */
+! 		   (void)run_ps630(new_pathname, opts);
+  		   }
+  		/*
+  		** Try to match to an aliased printer
+--- 382,391 ----
+  		   ** filter with the appropriate arguments.
+                     **------------------------------------------------------
+  		   */
+! 		   (void)sprintf(tempstr,
+! 			"rpc.pcnfsd: ps630 filter disabled for %s\n", pathname);
+! 			msg_out(tempstr);
+! 			return(PS_RES_FAIL);
+  		   }
+  		/*
+  		** Try to match to an aliased printer
