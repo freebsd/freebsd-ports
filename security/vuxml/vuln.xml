@@ -32,6 +32,30 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="fc99c736-3499-11d9-98a7-0090962cff2a">
+    <topic>gnats4 -- format string vulnerability</topic>
+    <affects>
+      <package>
+	<name>gnats</name>
+	<range><ge>4.*</ge><le>4.0_2</le></range>
+	<range><le>3.113.1_9</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gnats suffers from a format string bug, which may enable an
+	  attacker to execute arbitary code.</p>
+      </body>
+    </description>
+    <references>
+      <mlist msgid="20040625164231.7437.qmail@www.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108820000823191</mlist>
+    </references>
+    <dates>
+      <discovery>2004-06-21</discovery>
+      <entry>2004-11-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7fbfe159-3438-11d9-a9e7-0001020eed82">
     <topic>squirrelmail -- cross site scripting vulnerability</topic>
     <affects>
