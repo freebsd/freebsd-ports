@@ -15,6 +15,7 @@
     SUBDIR += c2t
     SUBDIR += cdict
     SUBDIR += celvis
+    SUBDIR += chinput
     SUBDIR += cless
     SUBDIR += cxterm
     SUBDIR += gb2ps
