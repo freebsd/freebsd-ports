@@ -1307,5 +1307,3 @@ share/emacs/site-lisp/subdirs.el
 @dirrm share/emacs/%%EMACS_VER%%/lisp
 @dirrm share/emacs/%%EMACS_VER%%/site-lisp
 @dirrm share/emacs/%%EMACS_VER%%
-@dirrm share/emacs/site-lisp
-@dirrm share/emacs
