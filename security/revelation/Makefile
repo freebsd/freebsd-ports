@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://oss.codepoet.no/revelation/
 MAINTAINER=	ports@c0decafe.net
 COMMENT=	Password manager for the GNOME 2 desktop
 
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Crypto/test.py:${PORTSDIR}/security/py-pycrypto
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Crypto/test.py:${PORTSDIR}/security/py-pycrypto
 
 USE_BZIP2=	yes
