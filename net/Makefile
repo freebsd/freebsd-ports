@@ -299,6 +299,7 @@
     SUBDIR += licq-jons-gtk-gui
     SUBDIR += licq-osd
     SUBDIR += licq-qt-gui
+    SUBDIR += liferea
     SUBDIR += limewire
     SUBDIR += linc
     SUBDIR += linphone

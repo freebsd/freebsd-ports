@@ -1,0 +1,9 @@
+bin/liferea
+share/gnome/liferea/pixmaps/available.xpm
+share/gnome/liferea/pixmaps/directory.xpm
+share/gnome/liferea/pixmaps/ocs.xpm
+share/gnome/liferea/pixmaps/read.xpm
+share/gnome/liferea/pixmaps/unavailable.xpm
+share/gnome/liferea/pixmaps/unread.xpm
+@dirrm share/gnome/liferea/pixmaps
+@dirrm share/gnome/liferea
