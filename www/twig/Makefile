@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	twig
-PORTVERSION=	2.8.0
+PORTVERSION=	2.8.1
 CATEGORIES=	www mail
 MASTER_SITES=	http://www.informationgateway.org/download/ \
 		ftp://ftp.informationgateway.org/pub/

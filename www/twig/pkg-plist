@@ -896,6 +896,7 @@
 %%TWIG%%/images/menus-nt/primary/backto.gif
 %%TWIG%%/images/menus-nt/primary/bookmarks.gif
 %%TWIG%%/images/menus-nt/primary/contacts.gif
+%%TWIG%%/images/menus-nt/primary/global.gif
 %%TWIG%%/images/menus-nt/primary/groups.gif
 %%TWIG%%/images/menus-nt/primary/help.gif
 %%TWIG%%/images/menus-nt/primary/logout.gif
@@ -982,6 +983,7 @@
 %%TWIG%%/images/menus-nt2/primary/backto.gif
 %%TWIG%%/images/menus-nt2/primary/bookmarks.gif
 %%TWIG%%/images/menus-nt2/primary/contacts.gif
+%%TWIG%%/images/menus-nt2/primary/global.gif
 %%TWIG%%/images/menus-nt2/primary/groups.gif
 %%TWIG%%/images/menus-nt2/primary/help.gif
 %%TWIG%%/images/menus-nt2/primary/logout.gif
@@ -1309,6 +1311,7 @@
 %%TWIG%%/images/menus/primary/english/backto.gif
 %%TWIG%%/images/menus/primary/english/bookmarks.gif
 %%TWIG%%/images/menus/primary/english/contacts.gif
+%%TWIG%%/images/menus/primary/english/global.gif
 %%TWIG%%/images/menus/primary/english/groups.gif
 %%TWIG%%/images/menus/primary/english/help.gif
 %%TWIG%%/images/menus/primary/english/logout.gif
@@ -1567,6 +1570,7 @@
 %%TWIG%%/images/menus2/primary/english/backto.gif
 %%TWIG%%/images/menus2/primary/english/bookmarks.gif
 %%TWIG%%/images/menus2/primary/english/contacts.gif
+%%TWIG%%/images/menus2/primary/english/global.gif
 %%TWIG%%/images/menus2/primary/english/groups.gif
 %%TWIG%%/images/menus2/primary/english/help.gif
 %%TWIG%%/images/menus2/primary/english/logout.gif
@@ -1643,6 +1647,7 @@
 %%TWIG%%/lib/auth/oracle.authpro.inc.php3
 %%TWIG%%/lib/auth/pgsql.authpro.inc.php3
 %%TWIG%%/lib/auth/pop3.authpro.inc.php3
+%%TWIG%%/lib/auth/secureform.inc.php3
 %%TWIG%%/lib/auth/sqlimap.authpro.inc.php3
 %%TWIG%%/lib/auth/sqlopen.authpro.inc.php3
 %%TWIG%%/lib/auth/sqltable.authpro.inc.php3
