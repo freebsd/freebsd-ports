@@ -1,11 +1,11 @@
---- src/uipp/prompter/Makefile.in.orig	Thu Jan  6 21:18:08 2000
-+++ src/uipp/prompter/Makefile.in	Fri Feb 11 19:27:16 2000
-@@ -90,7 +90,7 @@
+--- src/uipp/prompter/ORIG/Makefile.in	Fri May 26 22:35:25 2000
++++ src/uipp/prompter/Makefile.in	Fri May 26 22:36:01 2000
+@@ -100,7 +100,7 @@
  YACC = @YACC@
  yakker = @yakker@
  
--INCLUDES =  -I../base -I../../../include -D@ARCH@
-+INCLUDES =  -I../base -I../../../include
+-INCLUDES = -I../base -I../../../include -D@ARCH@
++INCLUDES = -I../base -I../../../include
  
  dxbindir = $(prefix)/dx/bin_@ARCH@
  

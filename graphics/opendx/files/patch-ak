@@ -1,11 +1,11 @@
---- src/uipp/dxuilib/Makefile.in.orig	Thu Jan  6 21:18:03 2000
-+++ src/uipp/dxuilib/Makefile.in	Fri Feb 11 19:26:20 2000
-@@ -90,7 +90,7 @@
+--- src/uipp/dxuilib/ORIG/Makefile.in	Fri May 26 22:32:57 2000
++++ src/uipp/dxuilib/Makefile.in	Fri May 26 22:33:44 2000
+@@ -100,7 +100,7 @@
  YACC = @YACC@
  yakker = @yakker@
  
--INCLUDES =  -I../base -I../../../include -I../dxui -D@ARCH@
-+INCLUDES =  -I../base -I../../../include -I../dxui
+-INCLUDES = -I../base -I../../../include -I../dxui -D@ARCH@
++INCLUDES = -I../base -I../../../include -I../dxui
  
  noinst_LIBRARIES = libDXUI.a
  

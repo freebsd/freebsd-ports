@@ -1,11 +1,11 @@
---- src/exec/hwrender/opengl/Makefile.in.orig	Thu Jan  6 21:17:56 2000
-+++ src/exec/hwrender/opengl/Makefile.in	Fri Feb 11 19:24:28 2000
-@@ -90,7 +90,7 @@
+--- src/exec/hwrender/opengl/ORIG/Makefile.in	Fri May 26 22:29:51 2000
++++ src/exec/hwrender/opengl/Makefile.in	Fri May 26 22:30:49 2000
+@@ -100,7 +100,7 @@
  YACC = @YACC@
  yakker = @yakker@
  
--INCLUDES =  -I../../../../include -I.. -I../../libdx -I/usr/include -I/usr/local/include -D@ARCH@
-+INCLUDES =  -I../../../../include -I.. -I../../libdx -I/usr/include -I/usr/local/include
+-INCLUDES = -I../../../../include -I.. -I../../libdx -I/usr/include -I/usr/local/include -D@ARCH@
++INCLUDES = -I../../../../include -I.. -I../../libdx -I/usr/include -I/usr/local/include
  
  noinst_LIBRARIES = libOPENGL.a
  

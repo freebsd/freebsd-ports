@@ -1,11 +1,11 @@
---- src/uipp/java/Makefile.in.orig	Thu Jan  6 21:18:07 2000
-+++ src/uipp/java/Makefile.in	Fri Feb 11 19:29:50 2000
-@@ -460,7 +460,7 @@
+--- src/uipp/java/ORIG/Makefile.in	Fri May 26 22:38:50 2000
++++ src/uipp/java/Makefile.in	Fri May 26 22:50:56 2000
+@@ -475,7 +475,7 @@
  
  DXLink.o:  server.jar
  	(cd dxsc; $(JAVAH) -d ../server server.DXServer server.DXServerThread)
--	(cd server; $(CC) -o ../DXLink.o -I../../../../include -c -D@ARCH@ $(CFLAGS) @JINC@ DXLink.c)
-+	(cd server; $(CC) -o ../DXLink.o -I../../../../include -c $(CFLAGS) @JINC@ DXLink.c)
+-	(cd server; $(CC) $(DXABI) -o ../DXLink.o -I../../../../include -c -D@ARCH@ $(JNI_CFLAGS) @JINC@ DXLink.c)
++	(cd server; $(CC) $(DXABI) -o ../DXLink.o -I../../../../include -c $(JNI_CFLAGS) @JINC@ DXLink.c)
  
  distclean-local:
  	rm -rf classes dxsc
