@@ -9,7 +9,9 @@ PORTNAME=	xmysql
 PORTVERSION=	1.10
 CATEGORIES=	databases
 MASTER_SITES=	http://web.wt.net/~dblhack/ \
-		http://linux.tucows.com/files/x11/office/
+		http://thenewsmonsters.tucows.com/files/x11/office/ \
+		http://tucows.nyi.net/files/x11/office/ \
+		http://bonn.linux.tucows.com/files/x11/office/
 
 MAINTAINER=	dirk@FreeBSD.org
 
