@@ -5,14 +5,20 @@
 # $FreeBSD$
 
 PORTNAME=	LJ-TextMessage
-PORTVERSION=	1.4.1
+PORTVERSION=	1.5.0
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	http://livejournal.com/files/code/textmessage/ \
 		ftp://ftp.livejournal.com/code/textmessage/
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-1.4.1
 
 MAINTAINER=	ahze@ahze.net
 COMMENT=	Perl5 interface to send text messages to phones/pagers
+
+BUILD_DEPENDS=	${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
+		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
+		${SITE_PERL}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
