@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	openoffice
-PORTVERSION=	641c
+PORTVERSION=	642
 CATEGORIES=	editors x11
-MASTER_SITES=	http://sf1.mirror.openoffice.org/641c/ \
+MASTER_SITES=	ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/${PORTVERSION}/ \
+		http://sf1.mirror.openoffice.org/${PORTVERSION}/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/ \
 		http://people.freebsd.org/~mbr/distfiles/
 DISTFILES=	oo_${PORTVERSION}_src.tar.bz2 gpc231.tar.Z oo_moz_641.tar.gz

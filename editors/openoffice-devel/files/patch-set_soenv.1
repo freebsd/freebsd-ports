@@ -1,11 +1,11 @@
---- ../config_office/set_soenv.1.orig	Tue Nov 20 18:26:33 2001
-+++ ../config_office/set_soenv.1	Sun Mar 10 22:56:18 2002
+--- set_soenv.1.orig	Wed Feb 27 10:46:41 2002
++++ set_soenv.1	Mon Mar 11 13:46:57 2002
 @@ -40,7 +40,7 @@
  #
  # Set this value equal to the corresponding amount of
  # command line arguments. 
--my $numArgs = 17;
-+my $numArgs = 20;
+-my $numArgs = 19;
++my $numArgs = 22;
  # Determining the amount of arguments in the call.
  my $numEnter = $#ARGV + 1;
  if ( $numEnter != $numArgs ) 
@@ -21,7 +21,7 @@
  #
  #-------------------------------------------
  # IIc. Declaring the environment variables.
-@@ -301,7 +302,7 @@
+@@ -303,7 +304,7 @@
     $PROSWITCH      = "-DPRODUCT";
     $XPVERSION      = "3";
     $SOLAR_JAVA	   = "TRUE"; 
@@ -30,17 +30,17 @@
  } 
  elsif ( $platform eq "$FreeBSD" ) 
  {     print "Setting FreeBSD specific values... ";
-@@ -324,6 +325,9 @@
+@@ -326,6 +327,9 @@
        $PATH_SEPERATOR = $ps;
        $PROSWITCH      = "-DPRODUCT";
        $XPVERSION      = "3";
-+      $OSVERSION      = $ARGV[ 17 ];
-+      $PTHREAD_CFLAGS = $ARGV[ 18 ];
-+      $PTHREAD_LIBS   = $ARGV[ 19 ];
++      $OSVERSION      = $ARGV[ 19 ];
++      $PTHREAD_CFLAGS = $ARGV[ 20 ];
++      $PTHREAD_LIBS   = $ARGV[ 21 ];
  } 
  elsif ( $platform eq "$Linux" ) 
  {
-@@ -853,15 +857,16 @@
+@@ -889,15 +893,16 @@
                          $D.$COM.
  			$D.$CVER.
                          $D.$GVER.
@@ -60,7 +60,7 @@
  {  $SOLARDEF         .= $D."GLIBC=".$GLIBC;
  }
  $SOLARDEF            .= $D."SUPD=$UPD".
-@@ -954,7 +959,7 @@
+@@ -990,7 +995,7 @@
                          $ps.$USR.$LIB.
                          $ps.$USR_LOCAL.$BIN;
  }
@@ -69,7 +69,7 @@
  {  $PATH              = $cur_dir.
                          $ps.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$BIN.
                          $ps.'$SOLARENV'.$ds.'$OUTPATH'.$BIN.
-@@ -968,6 +973,22 @@
+@@ -1004,6 +1009,22 @@
                          $ps.$USR.$BIN.$ds."X11".
                          $ps.$USR.$LIB;
  }
@@ -92,10 +92,10 @@
  elsif ($platform eq "$Winnt")
  {  $COMPATH_ROOT      = $COMPATH;
     $COMPATH_ROOT      =~ s/\/vc98$//;
-@@ -1067,25 +1088,19 @@
- {
- $SOLARINC            .= $I.$USR.$INCLUDE.
- 			$STLPORT_stlport;
+@@ -1107,21 +1128,14 @@
+ 	$SOLARINC            .= $I.$USR.$INCLUDE;
+ }
+ $SOLARINC	     .= $STLPORT_stlport;
 -if ($platform eq "$Linux")
 -{
 -# This simply adds an include path, so even cases that break the FHS work
@@ -109,20 +109,15 @@
 -# Platform dependent include path at the top of this list of include paths
 -if ($platform eq "$Solaris") 
 -{  $SOLARINC         .= $I.'$COMPATH'.$ds."include";
-+$SOLARINC         .= $I.'$COMPATH'.$ds."include";
++$SOLARINC            .= $I.'$COMPATH'.$ds."include";
  }
  
 -if ($platform eq "$Linux")
-+if (($platform eq "$Linux") or ($platform eq "$FreeBSD"))
++if (($platform eq "$Linux") || ($platform eq "$FreeBSD"))
  {
  # This simply adds an include path, so even cases that break the FHS work
  $SOLARINC            .= $STLPORT_inc_stlport;
- }
-+
- $SOLARINC            .= $I.'$SOLARENV'.$INC.$ds."Xp31".
-                         $I.'$JAVA_HOME'.$INCLUDE;
- 
-@@ -1273,6 +1288,9 @@
+@@ -1313,6 +1327,9 @@
  ToFile( "GUIENV",            $GUIENV,            "e" );
  ToFile( "GVER",              $GVER,              "e" );
  ToFile( "OS",                $OS,                "e" );
