@@ -127,6 +127,76 @@ share/doc/diveintopython/roman_success.html
 share/doc/diveintopython/roman_summary.html
 share/doc/diveintopython/tips.html
 share/doc/diveintopython/toc.html
+share/examples/diveintopython/BaseHTMLProcessor.py
+share/examples/diveintopython/LICENSE.txt
+share/examples/diveintopython/apihelper.py
+share/examples/diveintopython/apihelpertest.py
+share/examples/diveintopython/autosize.py
+share/examples/diveintopython/builddialectexamples.py
+share/examples/diveintopython/colorize.py
+share/examples/diveintopython/dialect.py
+share/examples/diveintopython/fileinfo.py
+share/examples/diveintopython/fullpath.py
+share/examples/diveintopython/kgp/binary.xml
+share/examples/diveintopython/kgp/husserl.xml
+share/examples/diveintopython/kgp/kant.xml
+share/examples/diveintopython/kgp/kgp.dtd
+share/examples/diveintopython/kgp/kgp.py
+share/examples/diveintopython/kgp/russiansample.xml
+share/examples/diveintopython/kgp/stderr.py
+share/examples/diveintopython/kgp/stdout.py
+share/examples/diveintopython/kgp/template.xml
+share/examples/diveintopython/kgp/test.xml
+share/examples/diveintopython/kgp/thanks.xml
+share/examples/diveintopython/kgp/toolbox.py
+share/examples/diveintopython/kgptest.py
+share/examples/diveintopython/makerealworddoc.py
+share/examples/diveintopython/odbchelper.py
+share/examples/diveintopython/odbchelpertest.py
+share/examples/diveintopython/pyfontify.py
+share/examples/diveintopython/regression.py
+share/examples/diveintopython/roman.py
+share/examples/diveintopython/roman/stage1/roman1.py
+share/examples/diveintopython/roman/stage1/romantest1.py
+share/examples/diveintopython/roman/stage2/roman2.py
+share/examples/diveintopython/roman/stage2/romantest2.py
+share/examples/diveintopython/roman/stage3/roman3.py
+share/examples/diveintopython/roman/stage3/romantest3.py
+share/examples/diveintopython/roman/stage4/roman4.py
+share/examples/diveintopython/roman/stage4/romantest4.py
+share/examples/diveintopython/roman/stage5/roman5.py
+share/examples/diveintopython/roman/stage5/romantest5.py
+share/examples/diveintopython/roman/stage6/roman61.py
+share/examples/diveintopython/roman/stage6/roman62.py
+share/examples/diveintopython/roman/stage6/romantest61.py
+share/examples/diveintopython/roman/stage6/romantest62.py
+share/examples/diveintopython/roman/stage7/roman71.py
+share/examples/diveintopython/roman/stage7/roman72.py
+share/examples/diveintopython/roman/stage7/romantest71.py
+share/examples/diveintopython/roman/stage7/romantest72.py
+share/examples/diveintopython/roman/stage8/roman81.py
+share/examples/diveintopython/roman/stage8/roman82.py
+share/examples/diveintopython/roman/stage8/roman83.py
+share/examples/diveintopython/roman/stage8/romantest81.py
+share/examples/diveintopython/roman/stage8/romantest82.py
+share/examples/diveintopython/roman/stage8/romantest83.py
+share/examples/diveintopython/roman/stage9/roman9.py
+share/examples/diveintopython/roman/stage9/romantest9.py
+share/examples/diveintopython/romantest.py
+share/examples/diveintopython/unicode2koi8r.py
+share/examples/diveintopython/urllister.py
+@dirrm share/examples/diveintopython/roman/stage9
+@dirrm share/examples/diveintopython/roman/stage8
+@dirrm share/examples/diveintopython/roman/stage7
+@dirrm share/examples/diveintopython/roman/stage6
+@dirrm share/examples/diveintopython/roman/stage5
+@dirrm share/examples/diveintopython/roman/stage4
+@dirrm share/examples/diveintopython/roman/stage3
+@dirrm share/examples/diveintopython/roman/stage2
+@dirrm share/examples/diveintopython/roman/stage1
+@dirrm share/examples/diveintopython/roman
+@dirrm share/examples/diveintopython/kgp
+@dirrm share/examples/diveintopython
 @dirrm share/doc/diveintopython/images/callouts
 @dirrm share/doc/diveintopython/images
 @dirrm share/doc/diveintopython/download

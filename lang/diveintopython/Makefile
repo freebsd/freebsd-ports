@@ -7,6 +7,7 @@
 
 PORTNAME=	diveintopython
 PORTVERSION=	3.9.1
+PORTREVISION=	1
 CATEGORIES=	lang python
 MASTER_SITES=	http://diveintopython.org/download/
 DISTNAME=	${PORTNAME}
@@ -42,10 +43,16 @@ do-install:
 	@ ${MKDIR} ${DIPDLDIR}
 	@ cd ${WRKSRC} && find *.html *.css images \
 	  | ${CPIO} ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
+	@ cd ${WRKDIR}/py && find * \
+	  | ${CPIO} ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 .for format in html html-flat pdf text examples
 	@ ${INSTALL_DATA} \
 	  ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-${format}-${VERSIONSTR}.zip \
 	  ${DIPDLDIR}
 .endfor
+
+post-install:
+	@ ${CHMOD} -R ${SHAREMODE} ${DOCSDIR} ${EXAMPLESDIR}
+	@ ${CHMOD} -R ugo+X ${DOCSDIR} ${EXAMPLESDIR}
 
 .include <bsd.port.mk>
