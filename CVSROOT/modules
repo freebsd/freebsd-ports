@@ -735,6 +735,7 @@ cksum		src/usr.bin/cksum
 clanbomber	ports/games/clanbomber
 clanlib		ports/devel/clanlib
 claraocr	ports/graphics/claraocr
+clarence	ports/math/clarence
 clean-theme-gtk	ports/x11-toolkits/clean-theme-gtk
 cleanfeed	ports/news/cleanfeed
 clhep		ports/science/clhep
