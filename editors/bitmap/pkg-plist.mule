@@ -1,21 +1,21 @@
-%%EMACS_LIBDIR%%/site-lisp/bitmap/bitmap.el
-%%EMACS_LIBDIR%%/site-lisp/bitmap/bitmap.elc
-%%EMACS_LIBDIR%%/site-lisp/bitmap/bitmap-bi.el
-%%EMACS_LIBDIR%%/site-lisp/bitmap/bitmap-bi.elc
-%%EMACS_LIBDIR%%/site-lisp/bitmap/bm-utils.el
-%%EMACS_LIBDIR%%/site-lisp/bitmap/bm-utils.elc
-%%EMACS_LIBDIR%%/site-lisp/bitmap/gnus-bitmap.el
-%%EMACS_LIBDIR%%/site-lisp/bitmap/gnus-bitmap.elc
-%%EMACS_LIBDIR%%/site-lisp/bitmap/po.el
-%%EMACS_LIBDIR%%/site-lisp/bitmap/po.elc
-%%EMACS_LIBDIR%%/site-lisp/bitmap/smiley-mule.el
-%%EMACS_LIBDIR%%/site-lisp/bitmap/smiley-mule.elc
-%%EMACS_LIBDIR%%/site-lisp/bitmap/vm-bitmap.el
-@unexec rm -f %D/%%EMACS_LIBDIR%%/site-lisp/bitmap/vm-bitmap.elc
-%%EMACS_LIBDIR%%/site-lisp/bitmap/x-face-mule.el
-%%EMACS_LIBDIR%%/site-lisp/bitmap/x-face-mule.elc
-%%EMACS_LIBDIR_WITH_VER%%/site-lisp/%%BITMAP_SETUPEL%%
-@dirrm %%EMACS_LIBDIR%%/site-lisp/bitmap
+%%EMACS_VERSION_SITE_LISPDIR%%/bitmap/bitmap.el
+%%EMACS_VERSION_SITE_LISPDIR%%/bitmap/bitmap.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/bitmap/bitmap-bi.el
+%%EMACS_VERSION_SITE_LISPDIR%%/bitmap/bitmap-bi.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/bitmap/bm-utils.el
+%%EMACS_VERSION_SITE_LISPDIR%%/bitmap/bm-utils.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/bitmap/gnus-bitmap.el
+%%EMACS_VERSION_SITE_LISPDIR%%/bitmap/gnus-bitmap.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/bitmap/po.el
+%%EMACS_VERSION_SITE_LISPDIR%%/bitmap/po.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/bitmap/smiley-mule.el
+%%EMACS_VERSION_SITE_LISPDIR%%/bitmap/smiley-mule.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/bitmap/vm-bitmap.el
+@unexec rm -f %D/%%EMACS_VERSION_SITE_LISPDIR%%/bitmap/vm-bitmap.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/bitmap/x-face-mule.el
+%%EMACS_VERSION_SITE_LISPDIR%%/bitmap/x-face-mule.elc
+@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/bitmap
+%%EMACS_VERSION_SITE_LISPDIR%%/%%BITMAP_SETUPEL%%
 %%BITMAPDOCDIR%%/ChangeLog
 %%BITMAPDOCDIR%%/NEWS
 %%BITMAPDOCDIR%%/README.en

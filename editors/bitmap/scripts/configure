@@ -1,0 +1,15 @@
+#!/bin/sh
+
+for i in ${TARGETS}
+do
+	if [ -f ${WRKDIR}/${i}.in ]; then
+	cat ${WRKDIR}/${i}.in | /usr/bin/sed \
+	-e "s;@@LOCALBASE@@;${LOCALBASE};g" \
+	-e "s;@@EMACS_LIBDIR@@;${EMACS_LIBDIR};g" \
+	-e "s;@@EMACS_VER@@;${EMACS_VER};g" \
+	-e "s;@@EMACS_LIBDIR_WITH_VER@@;${EMACS_LIBDIR_WITH_VER};g" \
+	-e "s;@@EMACS_SITE_LISPDIR@@;${EMACS_SITE_LISPDIR};g" \
+	-e "s;@@EMACS_VERSION_SITE_LISPDIR@@;${EMACS_VERSION_SITE_LISPDIR};g" \
+	> ${WRKDIR}/${i}
+	fi
+done

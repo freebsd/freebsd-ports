@@ -13,11 +13,11 @@ Bitmap-mule, Package to use bitmap in MULE or Emacs/mule.
 	- vm-bitmap.el:		VM related functions for x-face-mule.el
 
   Bitmap-mule is installed the following directory tree:
-	${PREFIX}/share/mule/site-lisp/bitmap/	--- Bitmap-mule
+	${PREFIX}/share/mule/19.34/site-lisp/bitmap/
 
 To use bitmap-mule, put the following setup into your ~/.emacs:
 
 	(require 'apel-setupel)
 	(require 'bitmap-setupel)
 
---- Porting by shige <shige@FreeBSD.org>
+Ported by shige@FreeBSD.org.
