@@ -3,7 +3,7 @@
 # Date created:		30 August 1999
 # Whom:			sada
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	word-0.98
