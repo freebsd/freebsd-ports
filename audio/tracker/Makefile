@@ -18,6 +18,7 @@ RESTRICTED=	"Non-redistributable beta"
 
 WRKSRC=		${WRKDIR}/tracker
 INSTALL_TARGET=	install install.info
+INFO=		tracker
 
 post-patch:
 	@${SED} -e 's,machine/soundcard.h,sys/soundcard.h,' < \

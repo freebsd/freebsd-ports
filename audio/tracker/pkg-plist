@@ -1,9 +1,6 @@
 bin/randomize
 bin/tracker
 etc/compression_methods
-@unexec install-info --delete %D/info/tracker.info %D/info/dir
-info/tracker.info
-@exec install-info %D/info/tracker.info %D/info/dir
 %%PORTDOCS%%share/doc/tracker/FAQ
 %%PORTDOCS%%share/doc/tracker/html/Accessing_Aminet_on_the_Internet.html
 %%PORTDOCS%%share/doc/tracker/html/Accessing_Aminet_without_Internet.html
