@@ -1,5 +1,5 @@
---- client/dhcpc_subr.c.org	Sat Jan 20 19:40:45 1996
-+++ client/dhcpc_subr.c	Sat Jan 20 19:40:49 1996
+--- client/dhcpc_subr.c.org	Sat Jul  6 11:00:50 1996
++++ client/dhcpc_subr.c	Sat Jul  6 11:01:28 1996
 @@ -273,7 +273,11 @@
    tmp = 0;
    bcopy(&tmp, sarp->arp_spa, sarp->arp_pln);
@@ -33,6 +33,17 @@
    if (ioctl(dhcpif.fd, SIOCGIFADDR, &ifr) < 0) {
      syslog(LOG_WARNING, "ioctl(SIOCGIFADDR) error in initialize(): %m");
      return(-1);
+@@ -1535,8 +1543,8 @@
+     ((struct sockaddr_in *)&ridreq.ifr_addr)->sin_addr.s_addr;
+ 
+   if (current_addr.s_addr == addr->s_addr &&
+-      current_mask.s_addr == mask->s_addr &&
+-      current_brdcst.s_addr == brdcst->s_addr) {
++      (mask && current_mask.s_addr == mask->s_addr) &&
++      (brdcst && current_brdcst.s_addr == brdcst->s_addr)) {
+     close(sockfd);
+     return(1);
+   }
 @@ -1660,7 +1668,7 @@
  /*
   * set routing table
