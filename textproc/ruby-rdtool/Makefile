@@ -9,28 +9,19 @@ PORTNAME=	rdtool
 PORTVERSION=	0.6.5
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www2.pos.to/~tosh/ruby/rdtool/archive/
-PKGNAMEPREFIX=	ruby-
+PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-BUILD_DEPENDS=	ruby:${PORTSDIR}/lang/ruby \
-		racc:${PORTSDIR}/devel/ruby-racc \
+BUILD_DEPENDS=	racc:${PORTSDIR}/devel/ruby-racc \
 		${RUBY_SITEARCHLIBDIR}/strscan.so:${PORTSDIR}/devel/ruby-strscan \
 		${RUBY_SITELIBDIR}/optparse.rb:${PORTSDIR}/devel/ruby-optparse
-RUN_DEPENDS=	ruby:${PORTSDIR}/lang/ruby \
-		${RUBY_SITELIBDIR}/racc/parser.rb:${PORTSDIR}/devel/ruby-racc-runtime \
+RUN_DEPENDS=	${RUBY_SITELIBDIR}/racc/parser.rb:${PORTSDIR}/devel/ruby-racc-runtime \
 		${RUBY_SITEARCHLIBDIR}/strscan.so:${PORTSDIR}/devel/ruby-strscan \
 		${RUBY_SITELIBDIR}/optparse.rb:${PORTSDIR}/devel/ruby-optparse
 
-PLIST_SUB=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
-
-RUBY?=		${LOCALBASE}/bin/ruby
-RUBY_VER?=	1.4
-RUBY_ARCH?=	${ARCH}-freebsd${OSREL}
-
-RUBY_SITELIBDIR?=	${LOCALBASE}/lib/ruby/site_ruby/${RUBY_VER}
-RUBY_SITEARCHLIBDIR?=	${LOCALBASE}/lib/ruby/site_ruby/${RUBY_VER}/${RUBY_ARCH}
+USE_RUBY=	yes
 
 EMACSLISPDIR=	${PREFIX}/share/emacs/site-lisp
 XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp
@@ -69,18 +60,20 @@ post-install:
 	${LN} -sf ${EMACSLISPDIR}/rd-mode.el ${XEMACSLISPDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/utils/rdswap.rb ${PREFIX}/bin/rdswap
 .if !defined(NOPORTDOCS)
-	rd2 ${PREFIX}/share/doc/ruby/optparse/ja/optparse.ja.rd \
-		> ${PREFIX}/share/doc/ruby/optparse/ja/optparse.ja.html
-	${MKDIR} ${PREFIX}/share/examples/ruby/rd
-	${CP} ${RUBY_SITELIBDIR}/rd/dot.rd2rc ${PREFIX}/share/examples/ruby/rd/
-	${MKDIR} ${PREFIX}/share/doc/ruby/rd/ja
+	rd2 ${RUBY_DOCDIR}/optparse/ja/optparse.ja.rd \
+		> ${RUBY_DOCDIR}/optparse/ja/optparse.ja.html
+	${MKDIR} ${RUBY_EXAMPLESDIR}/rd
+	${CP} ${RUBY_SITELIBDIR}/rd/dot.rd2rc ${RUBY_EXAMPLESDIR}/rd/
+	${MKDIR} ${RUBY_DOCDIR}/rd/ja
 .for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/ruby/rd/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/rd/
 .endfor
 .for f in ${DOCS_JA}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/ruby/rd/ja/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/rd/ja/
 .endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/Mk/bsd.ruby.mk"
+.include <bsd.port.post.mk>

@@ -2,32 +2,32 @@ bin/rd2
 bin/rdswap
 bin/rmi2html
 bin/rmi2html.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/rd/dot.rd2rc
-lib/ruby/site_ruby/%%RUBY_VER%%/rd/filter.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/rd/rd2html-lib.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/rd/rd2html-opt.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/rd/rd2man-lib.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/rd/rd2rdo-lib.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/rd/rd2rmi-lib.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/rd/rdblockparser.tab.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/rd/rdfmt.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/rd/rdinlineparser.tab.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/rd/rdvisitor.rb
-@dirrm lib/ruby/site_ruby/%%RUBY_VER%%/rd
-share/examples/ruby/rd/dot.rd2rc
-@dirrm share/examples/ruby/rd
+%%RUBY_SITELIBDIR%%/rd/dot.rd2rc
+%%RUBY_SITELIBDIR%%/rd/filter.rb
+%%RUBY_SITELIBDIR%%/rd/rd2html-lib.rb
+%%RUBY_SITELIBDIR%%/rd/rd2html-opt.rb
+%%RUBY_SITELIBDIR%%/rd/rd2man-lib.rb
+%%RUBY_SITELIBDIR%%/rd/rd2rdo-lib.rb
+%%RUBY_SITELIBDIR%%/rd/rd2rmi-lib.rb
+%%RUBY_SITELIBDIR%%/rd/rdblockparser.tab.rb
+%%RUBY_SITELIBDIR%%/rd/rdfmt.rb
+%%RUBY_SITELIBDIR%%/rd/rdinlineparser.tab.rb
+%%RUBY_SITELIBDIR%%/rd/rdvisitor.rb
+@dirrm %%RUBY_SITELIBDIR%%/rd
+%%RUBY_EXAMPLESDIR%%/rd/dot.rd2rc
+@dirrm %%RUBY_EXAMPLESDIR%%/rd
 share/emacs/site-lisp/rd-mode.el
 lib/xemacs/site-lisp/rd-mode.el
 @unexec rmdir -p %D/share/emacs/site-lisp 2>/dev/null || true
 @unexec rmdir -p %D/lib/xemacs/site-lisp 2>/dev/null || true
-share/doc/ruby/optparse/ja/optparse.ja.html
-share/doc/ruby/rd/README.html
-share/doc/ruby/rd/rd-draft.html
-share/doc/ruby/rd/rd-draft.rd
-share/doc/ruby/rd/ja/README.ja.html
-share/doc/ruby/rd/ja/dev-note.ja.html
-share/doc/ruby/rd/ja/dev-note.rd.ja
-share/doc/ruby/rd/ja/rd-draft.ja.html
-share/doc/ruby/rd/ja/rd-draft.rd.ja
-@dirrm share/doc/ruby/rd/ja
-@dirrm share/doc/ruby/rd
+%%RUBY_DOCDIR%%/optparse/ja/optparse.ja.html
+%%RUBY_DOCDIR%%/rd/README.html
+%%RUBY_DOCDIR%%/rd/rd-draft.html
+%%RUBY_DOCDIR%%/rd/rd-draft.rd
+%%RUBY_DOCDIR%%/rd/ja/README.ja.html
+%%RUBY_DOCDIR%%/rd/ja/dev-note.ja.html
+%%RUBY_DOCDIR%%/rd/ja/dev-note.rd.ja
+%%RUBY_DOCDIR%%/rd/ja/rd-draft.ja.html
+%%RUBY_DOCDIR%%/rd/ja/rd-draft.rd.ja
+@dirrm %%RUBY_DOCDIR%%/rd/ja
+@dirrm %%RUBY_DOCDIR%%/rd

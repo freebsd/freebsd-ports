@@ -1,4 +1,4 @@
-lib/ruby/site_ruby/%%RUBY_VER%%/racc/parser.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/racc/cparse.so
-@dirrm lib/ruby/site_ruby/%%RUBY_VER%%/racc
-@dirrm lib/ruby/site_ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/racc
+%%RUBY_SITELIBDIR%%/racc/parser.rb
+%%RUBY_SITEARCHLIBDIR%%/racc/cparse.so
+@dirrm %%RUBY_SITELIBDIR%%/racc
+@dirrm %%RUBY_SITEARCHLIBDIR%%/racc

@@ -1,15 +1,15 @@
-lib/ruby/site_ruby/%%RUBY_VER%%/optparse/shellwords.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/optparse/time.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/optparse.rb
-@dirrm lib/ruby/site_ruby/%%RUBY_VER%%/optparse
-share/examples/ruby/optparse/ja/getopts.test
-share/examples/ruby/optparse/cmd-ls.rb
-share/examples/ruby/optparse/cmd.rb
-share/examples/ruby/optparse/getopts.test.en
-share/examples/ruby/optparse/opttest.rb
-share/doc/ruby/optparse/ja/optparse.ja.rd
-share/doc/ruby/optparse/optparse.rlog
-@dirrm share/examples/ruby/optparse/ja
-@dirrm share/examples/ruby/optparse
-@dirrm share/doc/ruby/optparse/ja
-@dirrm share/doc/ruby/optparse
+%%RUBY_SITELIBDIR%%/optparse/shellwords.rb
+%%RUBY_SITELIBDIR%%/optparse/time.rb
+%%RUBY_SITELIBDIR%%/optparse.rb
+@dirrm %%RUBY_SITELIBDIR%%/optparse
+%%RUBY_EXAMPLESDIR%%/optparse/ja/getopts.test
+%%RUBY_EXAMPLESDIR%%/optparse/cmd-ls.rb
+%%RUBY_EXAMPLESDIR%%/optparse/cmd.rb
+%%RUBY_EXAMPLESDIR%%/optparse/getopts.test.en
+%%RUBY_EXAMPLESDIR%%/optparse/opttest.rb
+%%RUBY_DOCDIR%%/optparse/ja/optparse.ja.rd
+%%RUBY_DOCDIR%%/optparse/optparse.rlog
+@dirrm %%RUBY_EXAMPLESDIR%%/optparse/ja
+@dirrm %%RUBY_EXAMPLESDIR%%/optparse
+@dirrm %%RUBY_DOCDIR%%/optparse/ja
+@dirrm %%RUBY_DOCDIR%%/optparse

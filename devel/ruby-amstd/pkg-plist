@@ -1,26 +1,26 @@
-lib/ruby/site_ruby/%%RUBY_VER%%/amstd/bench.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/amstd/bug.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/amstd/collfrom.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/amstd/dispatch.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/amstd/errutil.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/amstd/extmod.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/amstd/fileutils.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/amstd/futils.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/amstd/gconst.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/amstd/getdep.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/amstd/info.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/amstd/must.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/amstd/pipeline.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/amstd/rbparams.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/amstd/recycle.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/amstd/rubyemu.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/amstd/strquote.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/amstd/symbol.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/amstd/timer.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/amstd/to_s.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/amstd/version.rb
-@dirrm lib/ruby/site_ruby/%%RUBY_VER%%/amstd
-share/doc/ruby/amstd/README.en
-share/doc/ruby/amstd/ja/README.ja
-@dirrm share/doc/ruby/amstd/ja
-@dirrm share/doc/ruby/amstd
+%%RUBY_SITELIBDIR%%/amstd/bench.rb
+%%RUBY_SITELIBDIR%%/amstd/bug.rb
+%%RUBY_SITELIBDIR%%/amstd/collfrom.rb
+%%RUBY_SITELIBDIR%%/amstd/dispatch.rb
+%%RUBY_SITELIBDIR%%/amstd/errutil.rb
+%%RUBY_SITELIBDIR%%/amstd/extmod.rb
+%%RUBY_SITELIBDIR%%/amstd/fileutils.rb
+%%RUBY_SITELIBDIR%%/amstd/futils.rb
+%%RUBY_SITELIBDIR%%/amstd/gconst.rb
+%%RUBY_SITELIBDIR%%/amstd/getdep.rb
+%%RUBY_SITELIBDIR%%/amstd/info.rb
+%%RUBY_SITELIBDIR%%/amstd/must.rb
+%%RUBY_SITELIBDIR%%/amstd/pipeline.rb
+%%RUBY_SITELIBDIR%%/amstd/rbparams.rb
+%%RUBY_SITELIBDIR%%/amstd/recycle.rb
+%%RUBY_SITELIBDIR%%/amstd/rubyemu.rb
+%%RUBY_SITELIBDIR%%/amstd/strquote.rb
+%%RUBY_SITELIBDIR%%/amstd/symbol.rb
+%%RUBY_SITELIBDIR%%/amstd/timer.rb
+%%RUBY_SITELIBDIR%%/amstd/to_s.rb
+%%RUBY_SITELIBDIR%%/amstd/version.rb
+@dirrm %%RUBY_SITELIBDIR%%/amstd
+%%RUBY_DOCDIR%%/amstd/README.en
+%%RUBY_DOCDIR%%/amstd/ja/README.ja
+@dirrm %%RUBY_DOCDIR%%/amstd/ja
+@dirrm %%RUBY_DOCDIR%%/amstd
