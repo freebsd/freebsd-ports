@@ -193,6 +193,11 @@ usr/X11R6/lib/X11/locale/vi_VN.viscii/Compose
 usr/X11R6/lib/X11/locale/vi_VN.viscii/XLC_LOCALE
 usr/X11R6/lib/X11/locale/zh/Compose
 usr/X11R6/lib/X11/locale/zh/XLC_LOCALE
+usr/X11R6/lib/X11/locale/zh_CN.gb18030/Compose
+usr/X11R6/lib/X11/locale/zh_CN.gb18030/XLC_LOCALE
+usr/X11R6/lib/X11/locale/zh_CN.gbk/Compose
+usr/X11R6/lib/X11/locale/zh_CN.gbk/XLC_LOCALE
+usr/X11R6/lib/X11/locale/zh_HK.big5hkscs/XLC_LOCALE
 usr/X11R6/lib/X11/locale/zh_TW.big5/Compose
 usr/X11R6/lib/X11/locale/zh_TW.big5/XLC_LOCALE
 usr/X11R6/lib/X11/locale/zh_TW/Compose
@@ -233,10 +238,6 @@ usr/X11R6/lib/libXt.so.6
 usr/X11R6/lib/libXt.so.6.0
 usr/X11R6/lib/libXtst.so.6
 usr/X11R6/lib/libXtst.so.6.1
-usr/X11R6/lib/libXv.so.1
-usr/X11R6/lib/libXv.so.1.0
-usr/X11R6/lib/libXxf86dga.so.1
-usr/X11R6/lib/libXxf86dga.so.1.0
 usr/X11R6/lib/libdps.so.1
 usr/X11R6/lib/libdps.so.1.0
 usr/X11R6/lib/libdpstk.so.1
@@ -245,6 +246,7 @@ usr/X11R6/lib/libpsres.so.1
 usr/X11R6/lib/libpsres.so.1.0
 usr/X11R6/lib/libxrx.so.6
 usr/X11R6/lib/libxrx.so.6.3
+usr/bin/X11
 usr/bin/[
 usr/bin/bashbug
 usr/bin/bunzip2
@@ -321,6 +323,7 @@ usr/bin/whoami
 usr/bin/xtrace
 usr/bin/yes
 usr/include/popt.h
+usr/lib/X11
 usr/lib/gconv/ANSI_X3.110.so
 usr/lib/gconv/ASMO_449.so
 usr/lib/gconv/BIG5.so
@@ -4003,11 +4006,17 @@ usr/lib/locale/zh_TW/LC_NUMERIC
 usr/lib/locale/zh_TW/LC_PAPER
 usr/lib/locale/zh_TW/LC_TELEPHONE
 usr/lib/locale/zh_TW/LC_TIME
+usr/lib/rpm/alpha-linux
 usr/lib/rpm/alpha-redhat-linux/macros
+usr/lib/rpm/alphaev5-linux
 usr/lib/rpm/alphaev5-redhat-linux/macros
+usr/lib/rpm/alphaev56-linux
 usr/lib/rpm/alphaev56-redhat-linux/macros
+usr/lib/rpm/alphaev6-linux
 usr/lib/rpm/alphaev6-redhat-linux/macros
+usr/lib/rpm/alphaev67-linux
 usr/lib/rpm/alphaev67-redhat-linux/macros
+usr/lib/rpm/alphapca56-linux
 usr/lib/rpm/alphapca56-redhat-linux/macros
 usr/lib/rpm/config.guess
 usr/lib/rpm/config.sub
