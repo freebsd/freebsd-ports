@@ -43,13 +43,13 @@ CONFIGURE_ARGS=  --with-tcl=tcl80 --with-tk=tk80
 DATASTUFF=  brushes palettes gradients patterns
 
 post-install:
-	mkdir -p ${PREFIX}/share/gimp/${MM_VERSION};
+	mkdir -p ${PREFIX}/share/gimp/;
 	cd ${WRKDIR}/gimp-data-min-${MM_VERSION}; \
-	tar -cf - --exclude '*Makefile*' ${MM_DATASTUFF} |\
-	(cd ${PREFIX}/share/gimp/${MM_VERSION}; tar -xvf -)
+	tar -cf - --exclude '*Makefile*' ${DATASTUFF} |\
+	(cd ${PREFIX}/share/gimp/; tar -xvf -)
 	cd ${WRKDIR}/gimp-data-extras-${MM_VERSION}; \
 	tar -cf - --exclude '*Makefile*' ${DATASTUFF} |\
-	(cd ${PREFIX}/share/gimp/${MM_VERSION}; tar -xvf -)
+	(cd ${PREFIX}/share/gimp/; tar -xvf -)
 
 post-extract:
 	rm -f ${WRKSRC}/plug-ins/gimptcl/scripts/consolio \
