@@ -14,6 +14,8 @@
     SUBDIR += afbackup-server
     SUBDIR += alevt
     SUBDIR += amanda
+    SUBDIR += amanda-client
+    SUBDIR += amanda-server
     SUBDIR += amanda24-client
     SUBDIR += amanda24-server
     SUBDIR += argparse
