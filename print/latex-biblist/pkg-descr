@@ -1,0 +1,5 @@
+This style is appropriate to create a typeset listing of a
+(possibly large) BibTeX input file. With such large files --
+especially, if the cite keys are long -- the needed string space is
+often exceeded. Often a BigTeX is available to circumstance this
+problem, but with this style option each TeX will do it.
