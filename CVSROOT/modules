@@ -6701,6 +6701,7 @@ ruby-interbase	ports/databases/ruby-interbase
 ruby-intl	ports/devel/ruby-intl
 ruby-irc	ports/irc/ruby-irc
 ruby-ldap	ports/net/ruby-ldap
+ruby-libart	ports/graphics/ruby-libart
 ruby-libglade	ports/devel/ruby-libglade
 ruby-libgtop	ports/devel/ruby-libgtop
 ruby-libpng	ports/graphics/ruby-libpng
