@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- makefile.orig	Thu Oct 18 18:29:34 2001
-+++ makefile	Thu Oct 18 18:32:28 2001
+--- makefile.orig	Mon Feb 11 12:01:37 2002
++++ makefile	Mon Feb 11 12:06:45 2002
 @@ -10,34 +10,34 @@
  
  # For the Gnome desktop stuff to work, prefix must point to where Gnome thinks it is.
@@ -57,16 +57,22 @@ $FreeBSD$
  
  # SciTE-static no longer builds. Kept here in case of later need.
  SciTE-static: SciTEGTK.o SciTEBase.o SciTEBuffers.o SciTEIO.o Exporters.o SciTEProps.o \
-@@ -66,12 +66,12 @@
+@@ -66,15 +66,15 @@
  # This is OK - just means no SciTE in the Gnome Applications menu
  # Dead:	install -D SciTEGTK.properties $(SYSCONF_PATH)/SciTEGlobal.properties
  install:
 -	install -s $(PROG) $(bindir)
 -	install -d $(SYSCONF_PATH)
 -	install -D ../src/*.properties $(SYSCONF_PATH)
+-	install ../doc/*.html $(SYSCONF_PATH)
+-	install ../doc/SciTEIco.png $(SYSCONF_PATH)
+-	install ../doc/PrintHi.png $(SYSCONF_PATH)
 +	$(BSD_INSTALL_PROGRAM) $(PROG) $(bindir)
 +	$(MKDIR) $(SYSCONF_PATH)
 +	$(BSD_INSTALL_DATA) ../src/*.properties $(SYSCONF_PATH)
++	$(BSD_INSTALL_DATA) ../doc/*.html $(SYSCONF_PATH)
++	$(BSD_INSTALL_DATA) ../doc/SciTEIco.png $(SYSCONF_PATH)
++	$(BSD_INSTALL_DATA) ../doc/PrintHi.png $(SYSCONF_PATH)
  ifdef gnomeprefix
 -	install SciTE.desktop $(datadir)/gnome/apps/Applications
 -	install Sci48M.png $(pixmapdir)
