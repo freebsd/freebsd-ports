@@ -2,6 +2,7 @@ bin/subsql
 include/fastdb/array.h
 include/fastdb/class.h
 include/fastdb/cli.h
+include/fastdb/config.h
 include/fastdb/container.h
 include/fastdb/cursor.h
 include/fastdb/database.h
@@ -14,6 +15,7 @@ include/fastdb/query.h
 include/fastdb/reference.h
 include/fastdb/stdtp.h
 include/fastdb/sync.h
+include/fastdb/sync_unix.h
 include/fastdb/ttree.h
 include/fastdb/wwwapi.h
 lib/libcli_r.a
