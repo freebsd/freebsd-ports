@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.one.net/pub/users/dobez/
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	gtkhtml.6:${PORTSDIR}/www/gtkhtml \
+LIB_DEPENDS=	gtkhtml.7:${PORTSDIR}/www/gtkhtml \
 		glibwww.1:${PORTSDIR}/www/glibwww \
 		gconf-1.1:${PORTSDIR}/devel/gconf \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
