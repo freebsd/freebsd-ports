@@ -175,71 +175,143 @@ my %plistman = ();
 my %manlangs = ();
 
 my %predefined = ();
-# historical, no longer in FreeBSD's bsd.port.mk
+# historical, no longer in FreeBSD's bsd.sites.mk
 foreach my $i (split("\n", <<EOF)) {
-XCONTRIB	ftp://ftp.x.org/contrib/
-GNU 	ftp://prep.ai.mit.edu/pub/gnu/
+GNU 		ftp://prep.ai.mit.edu/pub/gnu/
 GNU		ftp://wuarchive.wustl.edu/systems/gnu/
+GNU		ftp://ftp.ecrc.net/pub/gnu/
 PERL_CPAN	ftp://ftp.cdrom.com/pub/perl/CPAN/modules/by-module/
 SUNSITE		ftp://sunsite.unc.edu/pub/Linux/
 SUNSITE		ftp://ftp.funet.fi/pub/mirrors/sunsite.unc.edu/pub/Linux/
+SUNSITE		ftp://ftp.infomagic.com/pub/mirrors/linux/sunsite/
 TEX_CTAN	ftp://ftp.cdrom.com/pub/tex/ctan/
 TEX_CTAN	ftp://ftp.tex.ac.uk/public/ctan/tex-archive/
+GNOME		ftp://ftp.cybertrails.com/pub/gnome/
+AFTERSTEP	ftp://ftp.alpha1.net/pub/mirrors/ftp.afterstep.org/
+AFTERSTEP	ftp://casper.yz.yamagata-u.ac.jp/pub/X11/apps/afterstep/
+WINDOWMAKER	ftp://ftp.io.com/pub/
 EOF
 	my ($j, $k) = split(/\t+/, $i);
 	$predefined{$k} = $j;
 }
 
-# This list should be in sync with bsd.port.mk
+# This list should be in sync with bsd.sites.mk
 foreach my $i (split("\n", <<EOF)) {
 XCONTRIB	ftp://crl.dec.com/pub/X11/contrib/
 XCONTRIB	ftp://uiarchive.uiuc.edu/pub/X11/contrib/
+XCONTRIB	ftp://ftp.gwdg.de/pub/x11/x.org/contrib/
 XCONTRIB	ftp://ftp.duke.edu/pub/X11/contrib/
+XCONTRIB	ftp://ftp.x.org/contrib/
 XCONTRIB	ftp://ftp.sunet.se/pub/X11/contrib/
+XCONTRIB	ftp://ftp.kddlabs.co.jp/X11/contrib/
+XCONTRIB	ftp://mirror.xmission.com/X/contrib/
+XCONTRIB	ftp://ftp2.x.org/contrib/
 XCONTRIB	ftp://sunsite.sut.ac.jp/pub/archives/X11/contrib/
+XCONTRIB	ftp://ftp.is.co.za/x/contrib/
+XCONTRIB	ftp://ftp.sunet.se/pub/X11/contrib/
+XCONTRIB	ftp://ftp.huji.ac.il/mirror/X11/contrib/
+XFREE	ftp://ftp.xfree86.org/pub/XFree86/
+XFREE	ftp://ftp.freesoftware.com/pub/XFree86/
+XFREE	ftp://ftp.lip6.fr/pub/X11/XFree86/XFree86-
+XFREE	ftp://ftp.cs.tu-berlin.de/pub/X/XFree86/
+XFREE	ftp://sunsite.doc.ic.ac.uk/packages/XFree86/
+XFREE	http://ftp-stud.fht-esslingen.de/pub/Mirrors/ftp.xfree86.org/XFree86/
 GNU	ftp://ftp.gnu.org/gnu/
 GNU	ftp://ftp.freesoftware.com/pub/gnu/
 GNU	ftp://ftp.digital.com/pub/GNU/
 GNU	ftp://ftp.uu.net/archive/systems/gnu/
 GNU	ftp://ftp.de.uu.net/pub/gnu/
-GNU	ftp://ftp.ecrc.net/pub/gnu/
+GNU	ftp://ftp.sourceforge.net/pub/mirrors/gnu/
 GNU	ftp://ftp.funet.fi/pub/gnu/prep/
 GNU	ftp://ftp.leo.org/pub/comp/os/unix/gnu/
 GNU	ftp://ftp.digex.net/pub/gnu/
 GNU	ftp://ftp.wustl.edu/systems/gnu/
 GNU	ftp://ftp.kddlabs.co.jp/pub/gnu/
 PERL_CPAN	ftp://ftp.digital.com/pub/plan/perl/CPAN/modules/by-module/
+PERL_CPAN	ftp://ftp.cpan.org/CPAN/modules/by-module/
 PERL_CPAN	ftp://ftp.freesoftware.com/pub/perl/CPAN/modules/by-module/
+PERL_CPAN	ftp://ftp.sourceforge.net/pub/mirrors/CPAN/modules/by-module/
+PERL_CPAN	ftp://ftp.funet.fi/pub/languages/perl/CPAN/modules/by-module/
+PERL_CPAN	ftp://bioinfo.weizmann.ac.il/pub/software/perl/CPAN/modules/by-module/
+PERL_CPAN	ftp://csociety-ftp.ecn.purdue.edu/archive0/CPAN/modules/by-module/
+PERL_CPAN	ftp://ftp.kddlabs.co.jp/lang/perl/CPAN/modules/by-module/
+PERL_CPAN	ftp://ftp.sunet.se/pub/lang/perl/CPAN/modules/by-module/
+PERL_CPAN	ftp://ftp.auckland.ac.nz/pub/perl/CPAN/modules/by-module/
+PERL_CPAN	ftp://mirror.hiwaay.net/CPAN/modules/by-module/
+PERL_CPAN	ftp://ftp.isu.net.sa/pub/CPAN/modules/by-module/
+PERL_CPAN	ftp://ftp.bora.net/pub/CPAN/modules/by-module/
+PERL_CPAN	ftp://uiarchive.uiuc.edu/pub/lang/perl/CPAN/modules/by-module/
+PERL_CPAN	ftp://ftp.ucr.ac.cr/pub/Unix/CPAN/modules/by-module/
+PERL_CPAN	http://www.cpan.dk/CPAN/modules/by-module/
+PERL_CPAN	ftp://ftp.cs.colorado.edu/pub/perl/CPAN/modules/by-module/
+PERL_CPAN	ftp://cpan.pop-mg.com.br/pub/CPAN/modules/by-module/
+PERL_CPAN	ftp://ftp.is.co.za/programming/perl/CPAN/modules/by-module/
 TEX_CTAN	ftp://ftp.freesoftware.com/pub/tex/ctan/
 TEX_CTAN	ftp://wuarchive.wustl.edu/packages/TeX/
 TEX_CTAN	ftp://ftp.funet.fi/pub/TeX/CTAN/
+TEX_CTAN	ftp://ctan.unsw.edu.au/tex-archive/
+TEX_CTAN	ftp://ftp.cise.ufl.edu/tex-archive/
 TEX_CTAN	ftp://ftp.tex.ac.uk/tex-archive/
+TEX_CTAN	ftp://shadowmere.student.utwente.nl/pub/CTAN/
+TEX_CTAN	ftp://ftp.kddlabs.co.jp/CTAN/
+TEX_CTAN	ftp://sunsite.auc.dk/pub/tex/ctan/
+TEX_CTAN	ftp://ctan.tug.org/tex-archive/
+TEX_CTAN	ftp://ftp.chg.ru/pub/TeX/CTAN/
 TEX_CTAN	ftp://ftp.dante.de/tex-archive/
 SUNSITE	ftp://metalab.unc.edu/pub/Linux/
-SUNSITE	ftp://ftp.infomagic.com/pub/mirrors/linux/sunsite/
 SUNSITE	ftp://ftp.freesoftware.com/pub/linux/sunsite/
+SUNSITE	ftp://ftp.sourceforge.net/pub/mirrors/metalab/Linux/
+SUNSITE	ftp://ftp.sun.ac.za/pub/linux/sunsite/
+SUNSITE	ftp://ftp.nuri.net/pub/Linux/
+SUNSITE	ftp://ftp.kddlabs.co.jp//Linux/metalab.unc.edu/
+SUNSITE	ftp://ftp.jaring.my/pub/Linux/
+SUNSITE	ftp://ftp.funet.fi/pub/Linux/mirrors/metalab/
+SUNSITE	ftp://ftp.archive.de.uu.net/pub/systems/Linux/Mirror.SunSITE/
+SUNSITE	ftp://sunsite.doc.ic.ac.uk/packages/linux/sunsite.unc-mirror/
+SUNSITE	ftp://uiarchive.cso.uiuc.edu/pub/systems/linux/sunsite/
+SUNSITE	ftp://ftp.cs.umn.edu/pub/Linux/sunsite/
 KDE	ftp://ftp.us.kde.org/pub/kde/
+KDE	ftp://ftp.sourceforge.net/pub/sourceforge/kde/
 KDE	ftp://ftp.kde.org/pub/kde/
 KDE	ftp://ftp.tuniv.szczecin.pl/pub/kde/
+KDE	ftp://ftp.kddlabs.co.jp/X11/kde/
+KDE	ftp://ftp2.sinica.edu.tw/pub5/wmgrs/kde/
+KDE	ftp://ftp.chg.ru/pub/X11/kde/
+KDE	ftp://ftp.synesis.net/pub/mirrors/kde/
+KDE	ftp://gd.tuwien.ac.at/hci/kde/
 KDE	ftp://ftp.fu-berlin.de/pub/unix/X11/gui/kde/
+KDE	ftp://ftp.twoguys.org/pub/kde/
 KDE	ftp://ftp.dataplus.se/pub/linux/kde/
+KDE	ftp://ftp.fu-berlin.de/pub/unix/X11/gui/kde/
 COMP_SOURCES	ftp://gatekeeper.dec.com/pub/usenet/comp.sources.
+COMP_SOURCES	ftp://ftp.kddlabs.co.jp/Unix/com.sources.
 COMP_SOURCES	ftp://ftp.uu.net/usenet/comp.sources.
+COMP_SOURCES	ftp://ftp.funet.fi/pub/archive/comp.sources.
 COMP_SOURCES	ftp://rtfm.mit.edu/pub/usenet/comp.sources.
 GNOME	ftp://ftp.gnome.org/pub/GNOME/
 GNOME	ftp://download.sourceforge.net/pub/mirrors/gnome/
-GNOME	ftp://ftp.cybertrails.com/pub/gnome/
+GNOME	ftp://rpmfind.net/linux/gnome.org/
+GNOME	ftp://ftp.mirror.ac.uk/sites/ftp.gnome.org/pub/GNOME/
+GNOME	ftp://slave.opensource.captech.com/gnome/
 GNOME	ftp://ftp.snoopy.net/pub/mirrors/GNOME/
+GNOME	ftp://ftp.kddlabs.co.jp/X11/GNOME/
+GNOME	ftp://ftp.sunet.se/pub/X11/GNOME/
+GNOME	ftp://ftp.cybertrails.com/pub/gnome/
+GNOME	ftp://ftp2.sinica.edu.tw/pub5/gnome/
+GNOME	ftp://gnomeftp.blue-labs.org/pub/gnome/
+GNOME	ftp://ftp.informatik.uni-bonn.de/pub/os/unix/gnome/
+GNOME	ftp://ftp.tas.gov.au/gnome/
 AFTERSTEP	ftp://ftp.afterstep.org/
 AFTERSTEP	ftp://ftp.digex.net/pub/X11/window-managers/afterstep/
-AFTERSTEP	ftp://ftp.alpha1.net/pub/mirrors/ftp.afterstep.org/
+AFTERSTEP	ftp://ftp.kddlabs.co.jp/X11/AfterStep/
 AFTERSTEP	ftp://ftp.math.uni-bonn.de/pub/mirror/ftp.afterstep.org/pub/
 AFTERSTEP	ftp://ftp.dti.ad.jp/pub/X/AfterStep/
-AFTERSTEP	ftp://casper.yz.yamagata-u.ac.jp/pub/X11/apps/afterstep/
 WINDOWMAKER	ftp://ftp.windowmaker.org/pub/
 WINDOWMAKER	ftp://ftp.goldweb.com.au/pub/WindowMaker/
-WINDOWMAKER	ftp://ftp.io.com/pub/
+WINDOWMAKER	ftp://ftp.kddlabs.co.jp/X11/window_managers/windowmaker/
 WINDOWMAKER	ftp://ftp.ameth.org/pub/mirrors/ftp.windowmaker.org/
+WINDOWMAKER	ftp://ftp.minet.net/pub/windowmaker/
+WINDOWMAKER	ftp://ftp.dti.ad.jp/pub/X/WindowMaker/
 PORTS_JP	ftp://ports.jp.FreeBSD.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/
 PORTS_JP	ftp://ftp4.jp.FreeBSD.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/
 PORTS_JP	ftp://ftp.ics.es.osaka-u.ac.jp/pub/mirrors/FreeBSD-jp/ports-jp/LOCAL_PORTS/
@@ -247,9 +319,22 @@ TCLTK	ftp://ftp.scriptics.com/pub/tcl/
 TCLTK	ftp://mirror.neosoft.com/pub/tcl/mirror/ftp.scriptics.com/
 TCLTK	ftp://sunsite.utk.edu/pub/tcl/
 TCLTK	ftp://ftp.funet.fi/pub/languages/tcl/tcl/
+TCLTK	ftp://ftp.uu.net/languages/tcl/
+TCLTK	ftp://ftp.kddlabs.co.jp/lang/tcl/ftp.scriptics.com/
 TCLTK	ftp://ftp.cs.tu-berlin.de/pub/tcl/distrib/
 TCLTK	ftp://ftp.srcc.msu.su/mirror/ftp.scriptics.com/pub/tcl/
 TCLTK	ftp://ftp.lip6.fr/pub/tcl/distrib/
+SOURCEFORGE	ftp://download.sourceforge.net/pub/sourceforge/
+SOURCEFORGE	http://download.sourceforge.net/
+SOURCEFORGE	ftp://ftp.kddlabs.co.jp/sourceforge/
+RUBY	ftp://ftp.netlab.co.jp/pub/lang/ruby/
+RUBY	ftp://ftp.TokyoNet.AD.JP/pub/misc/ruby/
+RUBY	ftp://ftp.iij.ad.jp/pub/lang/ruby/
+RUBY	ftp://blade.nagaokaut.ac.jp/pub/lang/ruby/
+RUBY	ftp://ftp.krnet.ne.jp/pub/ruby/
+RUBY	ftp://mirror.nucba.ac.jp/mirror/ruby/
+THEMES	ftp://ftp.themes.org/pub/themes/
+THEMES	ftp://ftp.tuwien.ac.at/opsys/linux/themes.org/
 EOF
 	my ($j, $k) = split(/\t+/, $i);
 	$predefined{$k} = $j;
