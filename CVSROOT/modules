@@ -3148,6 +3148,7 @@ libdlmalloc	ports/devel/libdlmalloc
 libdnd		ports/x11/libdnd
 libdockapp	ports/x11-wm/libdockapp
 libdsp		ports/devel/libdsp
+libdv		ports/graphics/libdv
 libdvdcss	ports/graphics/libdvdcss
 libdvdread	ports/graphics/libdvdread
 libedit		src/lib/libedit
