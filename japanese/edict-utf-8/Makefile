@@ -8,9 +8,9 @@
 PORTNAME=	edict
 PORTVERSION=	19990714
 CATEGORIES=	japanese
-MASTER_SITES=	ftp://ftp.cdrom.com/pub/japanese/monash/ \
-		ftp://ftp.sedl.org/pub/mirrors/nihongo/ \
-		ftp://ftp.u-aizu.ac.jp/pub/SciEng/nihongo/ftp.cc.monash.edu.au/
+MASTER_SITES=	ftp://ftp.sedl.org/pub/mirrors/nihongo/ \
+		ftp://ftp.u-aizu.ac.jp/pub/SciEng/nihongo/ftp.cc.monash.edu.au/ \
+		ftp://ftp.cc.monash.edu.au/pub/nihongo/
 EXTRACT_SUFX=
 DISTFILES=	${DICTFILES} ${SRCFILES} ${DOCFILES}
 
