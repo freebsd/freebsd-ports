@@ -3,7 +3,7 @@
 # Date created:                19 December 1998
 # Whom:                        Brad Hendrickse <bradh@iafrica.com>
 #
-# $Id: Makefile,v 1.2 1998/12/23 01:35:36 steve Exp $
+# $Id: Makefile,v 1.3 1999/02/12 02:22:10 flathill Exp $
 #
 
 DISTNAME=	gifsicle-1.11.1
@@ -16,6 +16,7 @@ MAINTAINER=	bradh@iafrica.com
 MAN1=		gifsicle.1
 
 GNU_CONFIGURE=	yes
+USE_XLIB=	yes
 
 post-install:
 .if !defined(NOPORTDOCS)
