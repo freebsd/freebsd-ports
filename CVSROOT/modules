@@ -5540,6 +5540,7 @@ p5-Expect	ports/lang/p5-Expect
 p5-Exporter-Lite	ports/devel/p5-Exporter-Lite
 p5-ExtUtils-Depends	ports/devel/p5-ExtUtils-Depends
 p5-ExtUtils-ParseXS	ports/devel/p5-ExtUtils-ParseXS
+p5-ExtUtils-PkgConfig	ports/devel/p5-ExtUtils-PkgConfig
 p5-ExtUtils-XSBuilder	ports/devel/p5-ExtUtils-XSBuilder
 p5-F77		ports/lang/p5-F77
 p5-FAQ-OMatic	ports/www/p5-FAQ-OMatic
