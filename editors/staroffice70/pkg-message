@@ -1,26 +1,15 @@
 StarOffice 6.0 Personal Install How-To
 
-Written by:      Darren Wiebe <dkwiebe@hagenhomes.com>
-		 and Martin Blapp <mb@imp.ch>
-
-------------------------------------------------------------------
-
-Note that this a a BETA RELEASE of Staroffice6.0
+Written by:   Martin Blapp <mb@imp.ch>
 
 ------------------------------------------------------------------
 
 BUGS:
 
-We have found a workaround for the install-user segfaults.
-The installation does not create serveral .dat files, which
-leads to segfaults and startup problems.
-
-WARNING:
-
-If you have already Staroffice5.2 installed and your work
-directory is a symlink to somewhere else and you do a upgrade,
-all your files in this directory will be lost ! Please make
-a backup of these files or the entire $HOME/office52 folder.
+If a user installation fails, just restart it. It will
+work the second time. Remove then your $HOME/staroffice6.0
+directory and the line beginning with "StarOffice 6.0" in
+your $HOME/.sversionrc and restart the installation.
 
 ------------------------------------------------------------------
 
