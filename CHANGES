@@ -10,6 +10,67 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20040402:
+	There has been a big update to bsd.java.mk.  However, this update
+	is mostly backwards compatible, so it shouldn't affect most java
+	port maintainers.  There is some new functionality and minor
+	changes worth documenting here though.
+
+	bsd.java.mk now provides a new set of macros to be used by ports that
+	require a JDK. When USE_JAVA is set, the following variables may be set
+	in order to give to precision regarding the requirements of the port:
+
+	. JAVA_VERSION
+	  A list of space-separated suitable java versions for the
+	  port. An optional "+" allows you to specify a range of versions.
+	  (allowed values: 1.1[+] 1.2[+] 1.3[+] 1.4[+])
+	  (NOTE: Used to be set by bsd.java.mk)
+	. JAVA_OS
+	  A list of space-separated suitable JDK port operating systems
+	  for the port. (allowed values: native linux)
+	  (NOTE: Used to be set by bsd.java.mk)
+	. JAVA_VENDOR
+	  A list of space-separated suitable JDK port vendors for
+	  the port. (allowed values: freebsd bsdjava sun ibm blackdown)
+	  (NOTE: Used to be set by bsd.java.mk)
+	. JAVA_BUILD
+	  When set, it means that the selected JDK port should be
+	  added to build dependencies for the port.
+	. JAVA_RUN
+	  This variable works exactly the same as JAVA_BUILD but
+	  regarding run dependencies.
+
+	Here are some of the macros defined after setting USE_JAVA:
+
+	. JAVA_PORT
+	  The name of the JDK port (e.g. java/jdk14)
+	. JAVA_HOME
+	  The home of the JDK port in the local base
+	. JAVA_PORT_VERSION
+	  The version of the JDK port.
+	  (NOTE: Used to be JAVA_VERSION, see above)
+	. JAVA_PORT_OS
+	  The operating system used by the JDK port.
+	  (NOTE: Used to be JAVA_OS, see above)
+	. JAVA_PORT_VENDOR
+	  The vendor of the JDK port.
+	  (NOTE: Used to be JAVA_VENDOR, see above)
+
+	Plus many macros for the commonly used java executables:
+
+		APPLETVIEWER, JAR, JAVA, JAVAC, JAVADOC, JAVAH,
+		JAVAP, JAVA_KEYTOOL, JAVA_N2A, JAVA_POLICYTOOL,
+		JAVA_SERIALVER, RMIC, RMID and RMIREGISTRY.
+
+	bsd.java.mk 2.0 is mostly backward compatible with the previous
+	version, save for the notes above and changed internal variables.
+	Using the new features is strongly encouraged, since the old
+	bsd.java.mk 1.0 features will be deprecated and may be removed in
+	the future.
+
+	You will find more detailed info (as well as a quick tutorial) at:
+	http://www.esil.univ-mrs.fr/~hquiroz/freebsd/bsd.java.mk-2.0.html
+
 20040316:
 	The print/freetype2 port has been updated to 2.1.7.  This update
 	changes some of the internal FreeType API.  Applications may need
@@ -68,7 +129,7 @@ All ports committers are allowed to commit to this file.
 		mozilla-devel		(www/mozilla-devel, GTK2)
 		mozilla-gtk1		(www/mozilla-gtk1, GTK1)
 		mozilla-devel-gtk1	(www/mozilla-devel-gtk1, GTK1)
-	
+
 	As before, WITH_MOZILLA can be set in /etc/make.conf, but doing
 	so is not advised unless you desire the development versions.
 	GTK2 browsers will automatically compile against GTK2 mozilla,
@@ -91,7 +152,7 @@ All ports committers are allowed to commit to this file.
 	Hopefully galeon2 can catch up to peoples' expectations from
 	galeon1 soon, and we can remove the GTK1 ports altogether.
 
-	
+
 20040204:
 	The bsd.php.mk file has been moved out of the lang/php4 port
 	into the Mk directory.  This will make it much easier to include
