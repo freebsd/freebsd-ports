@@ -14,7 +14,7 @@ MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/strategy
 EXTRACT_SUFX=		.tar.Z
 
-MAINTAINER=	sutton@aardvark.apana.org.au
+MAINTAINER=	jsutton@bbcon.com.au
 
 WRKSRC=		${WRKDIR}/yahtzee
 
