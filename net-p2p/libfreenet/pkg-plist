@@ -11,6 +11,7 @@ include/libfreenet/rijndael-api-fst.h
 include/libfreenet/twofish.h
 include/libfreenet/uri.h
 include/libfreenet/util.h
+@dirrm include/libfreenet
 lib/libfreenet.a
 lib/libfreenet.so
 lib/libfreenet.so.0
