@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mailfront
-PORTVERSION=	0.88
+PORTVERSION=	0.90
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 
@@ -17,6 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libbg-unix.a:${PORTSDIR}/devel/bglibs \
 		${LOCALBASE}/lib/libcvm-client.a:${PORTSDIR}/security/cvm
 
 QMAIL_ROOT?=	/var/qmail
+CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS?=	-s
 
 DOCS=		NEWS README TODO *.html
