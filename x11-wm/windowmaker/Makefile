@@ -1,12 +1,12 @@
 # New ports collection makefile for:	WindowMaker
-# Version required:	0.61.0
+# Version required:	0.61.1
 # Date created:		August 13, 1997
 # Whom:			handy@physics.montana.edu
 #
 # $FreeBSD$
 
-DISTNAME=	WindowMaker-0.61.0
-PKGNAME=	windowmaker-0.61.0
+DISTNAME=	WindowMaker-0.61.1
+PKGNAME=	windowmaker-0.61.1
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER} \
 		http://jgo.local.net/cool_downloads/wm/
@@ -20,7 +20,7 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.3:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		PropList.1:${PORTSDIR}/devel/libPropList
+		PropList.2:${PORTSDIR}/devel/libPropList
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -31,6 +31,7 @@ CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 	--with-nlsdir=${LOCALBASE}/lib/locale \
 	--with-libs-from="-L${LOCALBASE}/lib" \
 	--with-incs-from="-I${LOCALBASE}/include" \
+	--with-appspath="${PREFIX}/GNUstep/Apps" \
 	--disable-debug
 
 MAN1=	geticonset.1x getstyle.1x seticons.1x setstyle.1x \
