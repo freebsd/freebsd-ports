@@ -12,17 +12,18 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gplflash
 DISTNAME=	gplflash-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	llwang@infor.org
 COMMENT=	GPL standalone Flash (TM) player
 
 LIB_DEPENDS=	flash.0:${PORTSDIR}/graphics/libflash
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/player
-
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-MAKEFILE=	${FILESDIR}/Makefile
-
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"	\
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_WRKSRC=	${WRKDIR}/${DISTNAME}
 PLIST_FILES=	bin/swfplayer
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
---- sound.cc.orig	Sat Oct 16 03:16:19 2004
-+++ sound.cc	Sat Oct 23 17:44:05 2004
+--- lib/sound.cc.orig	Sat Oct 16 03:16:19 2004
++++ lib/sound.cc	Sat Oct 23 17:44:05 2004
 @@ -20,7 +20,7 @@
  //  Author : Olivier Debon  <odebon@club-internet.fr>
  //

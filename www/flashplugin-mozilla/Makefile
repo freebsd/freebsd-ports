@@ -21,18 +21,19 @@ RUN_DEPENDS?=	mozilla:${PORTSDIR}/www/mozilla
 WRKSRC=		${WRKDIR}/${DISTNAME}/plugin
 
 USE_BZIP2=	yes
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 PLUGIN_DIR?=	lib/browser_plugins
 PLIST_SUB+=	PLUGIN_DIR=${PLUGIN_DIR}
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--with-plugin-dir="${PREFIX}/${PLUGIN_DIR}"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"	\
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_WRKSRC=	${WRKDIR}/${DISTNAME}
 
-do-build:
-	cd ${WRKSRC} && ${CC} ${CFLAGS} -shared -fPIC -DXP_UNIX \
-		-I${.CURDIR}../lib -I${LOCALBASE}/include -I${X11BASE}/include \
-		-o npflash.so plugin.c npunix.c \
-		-L${LOCALBASE}/lib -L${X11BASE}/lib -lflash -lXt
-
-do-install:
-	@${MKDIR} ${PREFIX}/${PLUGIN_DIR}
-	@${INSTALL_PROGRAM} ${WRKSRC}/npflash.so ${PREFIX}/${PLUGIN_DIR}
+post-patch:
+	@${REINPLACE_CMD} -e "s,-L../lib/.libs,-L${LOCALBASE}/lib,"	\
+		-e "s/libnpflash.so.0.0.0/libnpflash.so.0/"	\
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
