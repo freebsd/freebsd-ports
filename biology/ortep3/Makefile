@@ -10,7 +10,8 @@ PORTVERSION=	1.0.3
 CATEGORIES=	biology
 #MASTER_SITES=	ftp://ftp.ccl.net/pub/chemistry/software/SOURCES/FORTRAN/ortep/ 
 #		ftp://ftp.ornl.gov/pub/ortep/src/
-MASTER_SITES=	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/alex/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=alex
 DISTFILES=	ortep-1.0.3.tar.Z ortep-1.0.3.f
 DISTNAME=	ortep
 EXTRACT_ONLY=	ortep.tar.Z
