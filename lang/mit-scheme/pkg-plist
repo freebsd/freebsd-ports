@@ -118,6 +118,7 @@ lib/mit-scheme/SRC/edwin/regexp.bci
 lib/mit-scheme/SRC/edwin/regops.bci
 lib/mit-scheme/SRC/edwin/rename.bci
 lib/mit-scheme/SRC/edwin/replaz.bci
+lib/mit-scheme/SRC/edwin/rfc822.bci
 lib/mit-scheme/SRC/edwin/ring.bci
 lib/mit-scheme/SRC/edwin/rmail.bci
 lib/mit-scheme/SRC/edwin/rmailsrt.bci
@@ -190,6 +191,7 @@ lib/mit-scheme/SRC/runtime/contin.bci
 lib/mit-scheme/SRC/runtime/cpoint.bci
 lib/mit-scheme/SRC/runtime/cpress.bci
 lib/mit-scheme/SRC/runtime/cpress.com
+lib/mit-scheme/SRC/runtime/crypto.bci
 lib/mit-scheme/SRC/runtime/datime.bci
 lib/mit-scheme/SRC/runtime/dbgcmd.bci
 lib/mit-scheme/SRC/runtime/dbgutl.bci
@@ -212,6 +214,7 @@ lib/mit-scheme/SRC/runtime/format.com
 lib/mit-scheme/SRC/runtime/framex.bci
 lib/mit-scheme/SRC/runtime/gc.bci
 lib/mit-scheme/SRC/runtime/gcdemn.bci
+lib/mit-scheme/SRC/runtime/gcfinal.bci
 lib/mit-scheme/SRC/runtime/gcnote.bci
 lib/mit-scheme/SRC/runtime/gcstat.bci
 lib/mit-scheme/SRC/runtime/gdatab.bci
@@ -245,6 +248,8 @@ lib/mit-scheme/SRC/runtime/list.bci
 lib/mit-scheme/SRC/runtime/load.bci
 lib/mit-scheme/SRC/runtime/macros.bci
 lib/mit-scheme/SRC/runtime/make.bci
+lib/mit-scheme/SRC/runtime/mime-codec.bci
+lib/mit-scheme/SRC/runtime/mime-codec.com
 lib/mit-scheme/SRC/runtime/msort.bci
 lib/mit-scheme/SRC/runtime/ntdir.bci
 lib/mit-scheme/SRC/runtime/ntprm.bci
@@ -339,6 +344,7 @@ lib/mit-scheme/all.com
 lib/mit-scheme/compiler.com
 lib/mit-scheme/doc/COPYING
 lib/mit-scheme/doc/index.html
+lib/mit-scheme/doc/scheme.html
 lib/mit-scheme/doc/scheme_1.html
 lib/mit-scheme/doc/scheme_10.html
 lib/mit-scheme/doc/scheme_11.html
@@ -352,16 +358,41 @@ lib/mit-scheme/doc/scheme_18.html
 lib/mit-scheme/doc/scheme_19.html
 lib/mit-scheme/doc/scheme_2.html
 lib/mit-scheme/doc/scheme_20.html
+lib/mit-scheme/doc/scheme_21.html
+lib/mit-scheme/doc/scheme_22.html
+lib/mit-scheme/doc/scheme_23.html
+lib/mit-scheme/doc/scheme_24.html
+lib/mit-scheme/doc/scheme_25.html
+lib/mit-scheme/doc/scheme_26.html
+lib/mit-scheme/doc/scheme_27.html
+lib/mit-scheme/doc/scheme_28.html
+lib/mit-scheme/doc/scheme_29.html
 lib/mit-scheme/doc/scheme_3.html
+lib/mit-scheme/doc/scheme_30.html
+lib/mit-scheme/doc/scheme_31.html
+lib/mit-scheme/doc/scheme_32.html
+lib/mit-scheme/doc/scheme_33.html
+lib/mit-scheme/doc/scheme_34.html
+lib/mit-scheme/doc/scheme_35.html
+lib/mit-scheme/doc/scheme_36.html
+lib/mit-scheme/doc/scheme_37.html
+lib/mit-scheme/doc/scheme_38.html
+lib/mit-scheme/doc/scheme_39.html
 lib/mit-scheme/doc/scheme_4.html
+lib/mit-scheme/doc/scheme_40.html
 lib/mit-scheme/doc/scheme_5.html
 lib/mit-scheme/doc/scheme_6.html
 lib/mit-scheme/doc/scheme_7.html
 lib/mit-scheme/doc/scheme_8.html
 lib/mit-scheme/doc/scheme_9.html
-lib/mit-scheme/doc/scheme_foot.html
+lib/mit-scheme/doc/scheme_abt.html
+lib/mit-scheme/doc/scheme_fot.html
+lib/mit-scheme/doc/scheme_ovr.html
 lib/mit-scheme/doc/scheme_toc.html
+lib/mit-scheme/doc/sos.html
 lib/mit-scheme/doc/sos_1.html
+lib/mit-scheme/doc/sos_10.html
+lib/mit-scheme/doc/sos_11.html
 lib/mit-scheme/doc/sos_2.html
 lib/mit-scheme/doc/sos_3.html
 lib/mit-scheme/doc/sos_4.html
@@ -370,10 +401,16 @@ lib/mit-scheme/doc/sos_6.html
 lib/mit-scheme/doc/sos_7.html
 lib/mit-scheme/doc/sos_8.html
 lib/mit-scheme/doc/sos_9.html
-lib/mit-scheme/doc/sos_foot.html
+lib/mit-scheme/doc/sos_abt.html
+lib/mit-scheme/doc/sos_fot.html
+lib/mit-scheme/doc/sos_ovr.html
 lib/mit-scheme/doc/sos_toc.html
+lib/mit-scheme/doc/user.html
 lib/mit-scheme/doc/user_1.html
 lib/mit-scheme/doc/user_10.html
+lib/mit-scheme/doc/user_11.html
+lib/mit-scheme/doc/user_12.html
+lib/mit-scheme/doc/user_13.html
 lib/mit-scheme/doc/user_2.html
 lib/mit-scheme/doc/user_3.html
 lib/mit-scheme/doc/user_4.html
@@ -382,12 +419,18 @@ lib/mit-scheme/doc/user_6.html
 lib/mit-scheme/doc/user_7.html
 lib/mit-scheme/doc/user_8.html
 lib/mit-scheme/doc/user_9.html
-lib/mit-scheme/doc/user_foot.html
+lib/mit-scheme/doc/user_abt.html
+lib/mit-scheme/doc/user_fot.html
+lib/mit-scheme/doc/user_ovr.html
 lib/mit-scheme/doc/user_toc.html
 lib/mit-scheme/edwin.com
 lib/mit-scheme/edwin/autoload
 lib/mit-scheme/edwin/etc/TUTORIAL
+lib/mit-scheme/edwin/etc/mime.types
 lib/mit-scheme/edwin/info/dir
+lib/mit-scheme/edwin/info/imail.info-1.gz
+lib/mit-scheme/edwin/info/imail.info-2.gz
+lib/mit-scheme/edwin/info/imail.info.gz
 lib/mit-scheme/edwin/info/r4rs.info-1.gz
 lib/mit-scheme/edwin/info/r4rs.info-2.gz
 lib/mit-scheme/edwin/info/r4rs.info-3.gz
@@ -410,6 +453,7 @@ lib/mit-scheme/edwin/info/scheme.info-14.gz
 lib/mit-scheme/edwin/info/scheme.info-15.gz
 lib/mit-scheme/edwin/info/scheme.info-16.gz
 lib/mit-scheme/edwin/info/scheme.info-17.gz
+lib/mit-scheme/edwin/info/scheme.info-18.gz
 lib/mit-scheme/edwin/info/scheme.info-2.gz
 lib/mit-scheme/edwin/info/scheme.info-3.gz
 lib/mit-scheme/edwin/info/scheme.info-4.gz
@@ -419,6 +463,8 @@ lib/mit-scheme/edwin/info/scheme.info-7.gz
 lib/mit-scheme/edwin/info/scheme.info-8.gz
 lib/mit-scheme/edwin/info/scheme.info-9.gz
 lib/mit-scheme/edwin/info/scheme.info.gz
+lib/mit-scheme/edwin/info/sos.info-1.gz
+lib/mit-scheme/edwin/info/sos.info-2.gz
 lib/mit-scheme/edwin/info/sos.info.gz
 lib/mit-scheme/edwin/info/user.info-1.gz
 lib/mit-scheme/edwin/info/user.info-2.gz
@@ -426,6 +472,35 @@ lib/mit-scheme/edwin/info/user.info-3.gz
 lib/mit-scheme/edwin/info/user.info-4.gz
 lib/mit-scheme/edwin/info/user.info-5.gz
 lib/mit-scheme/edwin/info/user.info.gz
+lib/mit-scheme/imail/imail-core.bci
+lib/mit-scheme/imail/imail-core.com
+lib/mit-scheme/imail/imail-file.bci
+lib/mit-scheme/imail/imail-file.com
+lib/mit-scheme/imail/imail-imap.bci
+lib/mit-scheme/imail/imail-imap.com
+lib/mit-scheme/imail/imail-rmail.bci
+lib/mit-scheme/imail/imail-rmail.com
+lib/mit-scheme/imail/imail-summary.bci
+lib/mit-scheme/imail/imail-summary.com
+lib/mit-scheme/imail/imail-top.bci
+lib/mit-scheme/imail/imail-top.com
+lib/mit-scheme/imail/imail-umail.bci
+lib/mit-scheme/imail/imail-umail.com
+lib/mit-scheme/imail/imail-util.bci
+lib/mit-scheme/imail/imail-util.com
+lib/mit-scheme/imail/imail.bco
+lib/mit-scheme/imail/imail.bld
+lib/mit-scheme/imail/imap-response.bci
+lib/mit-scheme/imail/imap-response.com
+lib/mit-scheme/imail/imap-syntax.bci
+lib/mit-scheme/imail/imap-syntax.com
+lib/mit-scheme/imail/load.scm
+lib/mit-scheme/imail/parser.bci
+lib/mit-scheme/imail/parser.com
+lib/mit-scheme/imail/rexp.bci
+lib/mit-scheme/imail/rexp.com
+lib/mit-scheme/imail/url.bci
+lib/mit-scheme/imail/url.com
 lib/mit-scheme/optiondb.scm
 lib/mit-scheme/options
 lib/mit-scheme/runtime.com
@@ -446,10 +521,11 @@ lib/mit-scheme/sos/sos.bco
 lib/mit-scheme/sos/sos.bld
 lib/mit-scheme/utabmd.bin
 @dirrm lib/mit-scheme/sos
-@dirrm lib/mit-scheme/doc
-@dirrm lib/mit-scheme/edwin/etc
+@dirrm lib/mit-scheme/imail
 @dirrm lib/mit-scheme/edwin/info
+@dirrm lib/mit-scheme/edwin/etc
 @dirrm lib/mit-scheme/edwin
+@dirrm lib/mit-scheme/doc
 @dirrm lib/mit-scheme/SRC/runtime
 @dirrm lib/mit-scheme/SRC/edwin
 @dirrm lib/mit-scheme/SRC
