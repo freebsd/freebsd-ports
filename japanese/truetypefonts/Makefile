@@ -11,7 +11,7 @@ CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://www.linux.or.jp/%7Eishikawa/linux/dists/FreeType/
 DISTNAME=	xtt-fonts_0.${PORTVERSION:S/.//g}-3
 
-MAINTAINER=	candy@kgc.co.jp
+MAINTAINER=	ports@FreeBSD.org
 
 USE_X_PREFIX=	yes
 
