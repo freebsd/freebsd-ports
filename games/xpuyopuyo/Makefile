@@ -23,10 +23,13 @@ WANT_GNOME=	yes
 
 MAN6=		xpuyopuyo.6
 
+OPTIONS=	MIKMOD "libmikmod support" off \
+		ROTATE_FIXED "Fix position of one blob during rotation"	off \
+		AIBREED "Allow AI breeding" off
+
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_MIKMOD) || (exists(${LOCALBASE}/lib/libmikmod.a) && \
-	!defined(WITHOUT_MIKMOD))
+.if defined(WITH_MIKMOD) || exists(${LOCALBASE}/lib/libmikmod.a)
 LIB_DEPENDS+=	mikmod.2:${PORTSDIR}/audio/libmikmod
 CONFIGURE_ARGS+=--with-libmikmod-prefix=${LOCALBASE}
 .endif
