@@ -7,7 +7,7 @@
 
 PORTNAME=	cvsnt
 PORTVERSION=	2.0.58d
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cvsnt.org/archive/
 
