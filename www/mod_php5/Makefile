@@ -32,7 +32,7 @@ VERS_ID=        dir/ache
 post-patch:
 	@cd ${WRKSRC}/src && \
 	mv Configuration Configuration.old && \
-	sed 's;^OPTIM=.*;& -DSERVER_SUBVERSION=\\"${VERS_ID}\\";' \
+	sed 's;^#*OPTIM=.*;& -DSERVER_SUBVERSION=\\"${VERS_ID}\\";' \
 	< Configuration.old > Configuration
 .endif
 
