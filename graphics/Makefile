@@ -18,6 +18,7 @@
     SUBDIR += aqsis
     SUBDIR += autotrace
     SUBDIR += aview
+    SUBDIR += ayam
     SUBDIR += backfract
     SUBDIR += barcode
     SUBDIR += bbrb
