@@ -30,6 +30,39 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="322d4ff6-85c3-11d8-a41f-0020ed76ef5a">
+    <topic>Midnight Commander buffer overflow during symlink
+      resolution</topic>
+    <affects>
+      <package>
+	<name>mc</name>
+	<range><lt>4.6.1.p1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Midnight Commander uses a fixed sized stack buffer while
+	  resolving symbolic links within file archives (tar or cpio).
+	  If an attacker can cause a user to process a specially
+	  crafted file archive with Midnight Commander,
+	  the attacker may be able to obtain the privileges of the
+	  target user.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-1023</cvename>
+      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=106399528518704</url>
+      <!--
+      <mlist msgid="E1A0LbX-000NPk-00.alienhard-mail-ru@f9.mail.ru">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=106399528518704</mlist>
+      -->
+      <bid>8658</bid>
+    </references>
+    <dates>
+      <discovery>2003-09-19</discovery>
+      <entry>2004-04-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bfb36941-84fa-11d8-a41f-0020ed76ef5a">
     <topic>Incorrect cross-realm trust handling in Heimdal</topic>
     <affects>
