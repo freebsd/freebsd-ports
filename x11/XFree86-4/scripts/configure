@@ -45,7 +45,7 @@ cat >> $F <<END
                                 neomagic i740 tdfx savage \
                                 cirrus tseng trident chips apm \
                                 GlideDriver fbdev i128 \
-                                ati AgpGartDrivers DevelDrivers ark cyrix \
+                                ati DevelDrivers ark cyrix \
                                 siliconmotion \
                                 vesa vga XF86OSCardDrivers XF86ExtraCardDrivers
 #endif
