@@ -5,12 +5,12 @@
  #else
  #ifndef _PATH_DHCPD_CONF
 -#define _PATH_DHCPD_CONF	"/etc/dhcpd.conf"
-+#define _PATH_DHCPD_CONF	"/usr/local/etc/dhcpd.conf"
++#define _PATH_DHCPD_CONF	"!!PREFIX!!/etc/dhcpd.conf"
  #endif
  
  #ifndef _PATH_DHCPD_DB
 -#define _PATH_DHCPD_DB		"/etc/dhcpd.leases"
-+#define _PATH_DHCPD_DB		"/usr/local/etc/dhcpd.leases"
++#define _PATH_DHCPD_DB		"!!PREFIX!!/etc/dhcpd.leases"
  #endif
  
  #ifndef _PATH_DHCPD_PID
@@ -19,7 +19,7 @@
  
  #ifndef _PATH_DHCLIENT_CONF
 -#define _PATH_DHCLIENT_CONF	"/etc/dhclient.conf"
-+#define _PATH_DHCLIENT_CONF	"/usr/local/etc/dhclient.conf"
++#define _PATH_DHCLIENT_CONF	"!!PREFIX!!/etc/dhclient.conf"
  #endif
  
  #ifndef _PATH_DHCLIENT_PID
@@ -28,7 +28,7 @@
  
  #ifndef _PATH_DHCLIENT_DB
 -#define _PATH_DHCLIENT_DB	"/etc/dhclient.leases"
-+#define _PATH_DHCLIENT_DB	"/usr/local/etc/dhclient.leases"
++#define _PATH_DHCLIENT_DB	"!!PREFIX!!/etc/dhclient.leases"
  #endif
  
  #ifndef _PATH_RESOLV_CONF

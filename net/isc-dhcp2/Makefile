@@ -21,6 +21,9 @@ MAN5=		dhclient.conf.5 dhclient.leases.5 dhcp-options.5 dhcpd.conf.5 \
 		dhcpd.leases.5
 MAN8=		dhclient.8 dhclient-script.8 dhcpd.8 dhcrelay.8
 
+post-patch:
+	@${PERL} -pi.fbsd -e 's.!!PREFIX!!.${PREFIX}.g' ${WRKSRC}/includes/dhcpd.h
+
 post-install:
 	${TOUCH} /var/db/dhcpd.leases
 .for file in dhclient dhcpd dhcrelay
