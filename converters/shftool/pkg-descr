@@ -1,0 +1,10 @@
+Shftool is the reference implementation for the new, 
+XML-based Standard Hex Format (SHF). 
+Shftool is also a working converter/generator/extractor 
+between/to/of SHF-files and other hex formats.
+
+SHF is specified in the the following Internet Draft:
+http://ietf.org/internet-drafts/draft-strombergson-shf-00.txt
+
+Author:	Linus Walleij  <triad@df.lth.se>
+WWW:	http://www.df.lth.se/~triad/krad/shftool/
