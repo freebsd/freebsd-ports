@@ -1,0 +1,12 @@
+
+$FreeBSD$
+
+--- gtk+.pc.in	2002/06/10 15:32:34	1.1
++++ gtk+.pc.in	2002/06/10 15:32:40
+@@ -7,5 +7,5 @@
+ Description: GIMP Tool Kit
+ Version: @VERSION@
+ Requires: gdk
+-Libs: -L${libdir} -lgtk
++Libs: -L${libdir} -lgtk12
+ Cflags: 
