@@ -3078,7 +3078,7 @@ http_access deny Gopher</pre>
       </package>
       <package>
 	<name>linux-tiff</name>
-	<range><lt>3.7.1_1</lt></range>
+	<range><lt>3.6.1_1</lt></range>
       </package>
     </affects>
     <description>
@@ -3095,7 +3095,7 @@ http_access deny Gopher</pre>
     <dates>
       <discovery>2005-01-06</discovery>
       <entry>2005-01-06</entry>
-      <modified>2005-02-28</modified>
+      <modified>2005-03-01</modified>
     </dates>
   </vuln>
 
