@@ -1,5 +1,5 @@
---- Makefile.in.ORIG	Fri Oct 17 14:53:29 1997
-+++ Makefile.in	Fri Oct 17 14:54:11 1997
+--- Makefile.in.ORIG	Mon Jun 29 10:12:36 1998
++++ Makefile.in	Mon Jun 29 10:12:54 1998
 @@ -30,7 +30,7 @@
  TCL_LIBRARY = @TCL_LIBRARY@
  
@@ -227,7 +227,7 @@
  		$(EXP_UNSHARED_LIB_FILE) $(EXP_SHARED_LIB_FILE)
  	@$(MAKE) subdir_do DO=$@ $(FLAGS_TO_PASS)
  
-@@ -682,7 +669,7 @@
+@@ -680,7 +667,7 @@
  expect-$(VERSION).tar.gz:	expect-$(VERSION).tar
  	gzip -fc expect-$(VERSION).tar > $@
  
@@ -236,7 +236,7 @@
  	rm -f .tmp
  	echo "set objdir" `pwd` > .tmp
  	if [ "$(srcdir)" = "." ] ; then \
-@@ -692,7 +679,7 @@
+@@ -690,7 +677,7 @@
  	echo "source all" >> .tmp
  	rootme=`pwd`; export rootme; \
  	srcdir=${srcdir} ; export srcdir ; \

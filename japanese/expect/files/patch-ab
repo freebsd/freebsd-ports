@@ -1,33 +1,15 @@
---- configure.ORIG	Fri Oct 17 10:31:25 1997
-+++ configure	Fri Oct 17 10:34:10 1997
-@@ -527,7 +527,7 @@
+--- configure.in.orig	Tue May 19 07:21:57 1998
++++ configure.in	Mon Jun 29 10:38:49 1998
+@@ -10,7 +10,7 @@
  # note when updating version numbers here, also update pkgIndex.in (see
  # comments in Makefile)
  EXP_MAJOR_VERSION=5
--EXP_MINOR_VERSION=25
-+EXP_MINOR_VERSION=25jp
+-EXP_MINOR_VERSION=26
++EXP_MINOR_VERSION=26jp
  EXP_MICRO_VERSION=0
  EXP_VERSION=$EXP_MAJOR_VERSION.$EXP_MINOR_VERSION
  EXP_VERSION_NODOTS=$EXP_MAJOR_VERSION$EXP_MINOR_VERSION
-@@ -1236,6 +1236,8 @@
- # It thinks the first close brace ends the variable substitution.
- test -z "$INSTALL_PROGRAM" && INSTALL_PROGRAM='${INSTALL}'
- 
-+test -z "$INSTALL_SCRIPT" && INSTALL_SCRIPT='${INSTALL}'
-+
- test -z "$INSTALL_DATA" && INSTALL_DATA='${INSTALL} -m 644'
- 
- 
-@@ -2094,7 +2096,7 @@
-     # this hack is cause the TCLHDIR won't print if there is a "-I" in it.
-     TCLHDIR="${ac_cv_c_tclh}"
-     TCLHDIRDASHI="-I${ac_cv_c_tclh}"
--    TCL_LIBRARY=`echo $TCLHDIR | sed -e 's/generic//'`library
-+    TCL_LIBRARY=`echo $TCLHDIR | sed -e 's/generic//'`
-   fi
- fi
- 
-@@ -5738,14 +5740,14 @@
+@@ -1002,9 +1002,9 @@
  if test x"$no_tk" != x"true" ; then
  # libexpectk no longer exists
  #  X_PROGS="expectk \$(LIBEXPECTK)"
@@ -38,35 +20,10 @@
 +  X_PROGS_INSTALLED=expectkjp_installed
  else
    X_PROGS="# no X support on this system"
-   echo "configure: warning: No X based programs will be built" 1>&2
-   echo "	WARNING: Can't find Tk headers or library.  You can still"
--  echo "	build expect, but not expectk.  See Expect's README for"
-+  echo "	build expectjp, but not expectkjp.  See Expect's README for"
-   echo "	information on how to obtain Tk.  If Tk is installed, see"
-   echo "	Expect's INSTALL on how to tell configure where Tk is"
-   echo "	installed."
-@@ -5836,13 +5838,15 @@
-     EXP_LIB_VERSION=$EXP_VERSION_NODOTS
- fi
- 
-+VERSION=${EXP_LIB_VERSION}
-+
- EXP_BUILD_LIB_SPEC="-L`pwd` -lexpect${EXP_LIB_VERSION}"
- EXP_LIB_SPEC="-L\${exec_prefix}/lib -lexpect${EXP_LIB_VERSION}"
- EXP_UNSHARED_LIB_FILE=libexpect${EXP_LIB_VERSION}.a
- 
- echo $ac_n "checking for type of library to build""... $ac_c" 1>&6
- echo "configure:5845: checking for type of library to build" >&5
--if test "$enable_shared" = "yes" && test "x${TCL_SHLIB_SUFFIX}" != "x" ; then
-+if test "$enable_shared" = "yes" -a "x${TCL_SHLIB_SUFFIX}" != "x" ; then
-   EXP_SHLIB_CFLAGS=$TCL_SHLIB_CFLAGS
- #  EXP_SHARED_LIB_FILE=libexpect$EXP_LIB_VERSION$TCL_SHLIB_SUFFIX
-   eval "EXP_SHARED_LIB_FILE=libexpect${TCL_SHARED_LIB_SUFFIX}"
-@@ -6019,6 +6023,7 @@
- s%@TK_LIB_SPEC@%$TK_LIB_SPEC%g
- s%@CC@%$CC%g
- s%@INSTALL_PROGRAM@%$INSTALL_PROGRAM%g
-+s%@INSTALL_SCRIPT@%$INSTALL_SCRIPT%g
- s%@INSTALL_DATA@%$INSTALL_DATA%g
- s%@RANLIB@%$RANLIB%g
- s%@subdirs@%$subdirs%g
+   AC_MSG_WARN([No X based programs will be built])
+@@ -1148,4 +1148,5 @@
+ AC_SUBST(SETUID)
+ AC_SUBST(UNSHARED_RANLIB)
+ AC_SUBST(DEFAULT_STTY_ARGS)
++AC_SUBST(INSTALL_SCRIPT)
+ AC_OUTPUT(Makefile pkgIndex)
