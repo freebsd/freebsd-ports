@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	apache+ipv6
-PORTVERSION=	1.3.17
+PORTVERSION=	1.3.19
 PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.apache.org/dist/ \
@@ -27,7 +27,7 @@ MASTER_SITES=	http://www.apache.org/dist/ \
 DISTNAME=	apache_${PORTVERSION}
 
 PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
-PATCHFILES=	apache-1.3.17-v6-20010206a.diff.gz
+PATCHFILES=	apache-1.3.19-v6-20010301a.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	sumikawa@FreeBSD.org
