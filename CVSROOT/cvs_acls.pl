@@ -103,46 +103,50 @@ my $exit_val = 0;			# Good Exit value
 my $universal_off = 0;
 open (AVAIL, $availfile) || exit(0);	# It is ok for avail file not to exist
 while (<AVAIL>) {
-    chop;
-    next if /^\s*\#/;
-    next if /^\s*$/;
+	chop;
+	next if /^\s*\#/;
+	next if /^\s*$/;
 
-    my ($flagstr, $u, $m) = split(/[\s,]*\|[\s,]*/, $_);
+	my ($flagstr, $u, $m) = split(/[\s,]*\|[\s,]*/, $_);
 
-    # Skip anything not starting with "avail" or "unavail" and complain.
-    (print "Bad avail line: $_\n"), next
-	if ($flagstr !~ /^avail/ && $flagstr !~ /^unavail/);
+	# Skip anything not starting with "avail" or "unavail" and complain.
+	(print "Bad avail line: $_\n"), next
+	    if ($flagstr !~ /^avail/ && $flagstr !~ /^unavail/);
 
-    # Set which bit we are playing with. ('0' is OK == Available).
-    my $flag = (($& eq "avail") ? 0 : 1);
+	# Set which bit we are playing with. ('0' is OK == Available).
+	my $flag = (($& eq "avail") ? 0 : 1);
 
-    # If we find a "universal off" flag (i.e. a simple "unavail") remember it
-    my $universal_off = 1 if ($flag && !$u && !$m);
+	# If we find a "universal off" flag (i.e. a simple "unavail")
+	# remember it
+	my $universal_off = 1 if ($flag && !$u && !$m);
 
-    # $myname considered "in user list" if actually in list or is NULL
-    my $in_user = (!$u || grep ($_ eq $myname, split(/[\s,]+/,$u)));
-    print "$$ \$myname($myname) in user list: $_\n" if $debug && $in_user;
+	# $myname considered "in user list" if actually in list or is NULL
+	my $in_user = (!$u || grep ($_ eq $myname, split(/[\s,]+/,$u)));
+	print "$$ \$myname($myname) in user list: $_\n" if $debug && $in_user;
 
-    # Module matches if it is a NULL module list in the avail line.  If module
-    # list is not null, we check every argument combination.
-    my $in_repo = (!$m || 0);
-    if (!$in_repo) {
-	my @tmp = split(/[\s,]+/,$m);
-	for my $j (@tmp) {
-	    # If the repos from avail is a parent(or equal) dir of $repos, OK
-	    $in_repo = 1, last if ($repos eq $j || $repos =~ /^$j\//);
-	}
+	# Module matches if it is a NULL module list in the avail line.
+	# If module list is not null, we check every argument combination.
+	my $in_repo = (!$m || 0);
 	if (!$in_repo) {
-	    #$in_repo = 1;
-	    for my $j (@ARGV) {
-		last if !($in_repo = grep ($_ eq $j, @tmp));
-	    }
+		my @tmp = split(/[\s,]+/,$m);
+		for my $j (@tmp) {
+			# If the repos from avail is a parent(or equal)
+			# dir of $repos, OK
+			$in_repo = 1, last if ($repos eq $j || $repos =~ /^$j\//);
+		}
+		if (!$in_repo) {
+			#$in_repo = 1;
+			for my $j (@ARGV) {
+				last if !($in_repo = grep ($_ eq $j, @tmp));
+			}
+		}
 	}
-    }
-    print "$$ \$repos($repos) in repository list: $_\n" if $debug && $in_repo;
+	print "$$ \$repos($repos) in repository list: $_\n"
+	    if $debug && $in_repo;
 
-    $exit_val = $flag if ($in_user && $in_repo);
-    print "$$ ==== \$exit_val = $exit_val\n$$ ==== \$flag = $flag\n" if $debug;
+	$exit_val = $flag if ($in_user && $in_repo);
+	print "$$ ==== \$exit_val = $exit_val\n$$ ==== \$flag = $flag\n"
+	    if $debug;
 }
 close(AVAIL);
 print "$$ ==== \$exit_val = $exit_val\n" if $debug;
