@@ -5,7 +5,7 @@ forms are "context diffs" and "unidiffs".
   ud2cd          converts a unidiff (input) to a context diff (output).
   cd2ud          converts a context diff (input) to a unidiff (output).
   cdiffreverse   reverses a context diff.
-  cdiffreverse   reverses a unidiff.
+  udiffreverse   reverses a unidiff.
 
 cd2ud is decicated to David S. Miller "context diffs make my head spin".
 
