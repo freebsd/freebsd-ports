@@ -37,6 +37,10 @@ MAKE_ARGS+=	HOST_CFLAGS="${HOST_CFLAGS}" CC="${CC}" LD="${CC}" \
 		TARGET_OS=unix TARGET_SCREEN_LIB=curses \
 		USE_MOUSE=y
 
+.if ${MACHINE_ARCH} != "i386"
+MAKE_ARGS+=	TARGET_PLATFORM=generic
+.endif
+
 post-build:
 	@ ${LN} -sf ../../biewlib ${WRKSRC}/tools/biewhlp/biewlib
 	cd ${WRKSRC}/tools/biewhlp; ${GMAKE} ${MAKE_ARGS}
