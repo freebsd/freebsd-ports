@@ -30,10 +30,10 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/tac_plus.1 ${PREFIX}/man/man8/tac_plus.8
 	${INSTALL_DATA} ${FILESDIR}/tac_plus.conf.example ${PREFIX}/etc/
 	@if [ ! -f ${PREFIX}/etc/rc.d/tac_plus.sh ]; then \
-	${ECHO} "Installing ${PREFIX}/etc/rc.d/tac_plus.sh startup file."; \
-	${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/tac_plus.sh; \
-	${ECHO} "[ -x ${PREFIX}/sbin/tac_plus -a -f ${PREFIX}/etc/tac_plus.conf ] && ${PREFIX}/sbin/tac_plus -C ${PREFIX}/etc/tac_plus.conf && ${ECHO} -n ' tac_plus'" >> ${PREFIX}/etc/rc.d/tac_plus.sh; \
-	${CHMOD} 751 ${PREFIX}/etc/rc.d/tac_plus.sh; \
+		${ECHO} "Installing ${PREFIX}/etc/rc.d/tac_plus.sh startup file."; \
+		${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/tac_plus.sh; \
+		${ECHO} "[ -x ${PREFIX}/sbin/tac_plus -a -f ${PREFIX}/etc/tac_plus.conf ] && ${PREFIX}/sbin/tac_plus -C ${PREFIX}/etc/tac_plus.conf && ${ECHO} -n ' tac_plus'" >> ${PREFIX}/etc/rc.d/tac_plus.sh; \
+		${CHMOD} 751 ${PREFIX}/etc/rc.d/tac_plus.sh; \
 	fi
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/tac_plus
