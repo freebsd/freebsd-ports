@@ -24,7 +24,7 @@ CONFIGURE_ARGS=	--enable-doc-dir=${PREFIX}/share/doc/pspell
 INSTALLS_SHLIB=	yes
 
 post-patch:
-	@${PERL} -pi -e 's,\@INSTALL\@,install,' ${WRKSC}/libltdl/Makefile.in \
+	@${PERL} -pi -e 's,\@INSTALL\@,install,' ${WRKSRC}/libltdl/Makefile.in \
 		${WRKSRC}/modules/Makefile.in
 
 .include <bsd.port.mk>
