@@ -3,13 +3,13 @@
 # Date created:		13 Mar 1998
 # Whom:			sada@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.16 1999/03/20 17:32:21 sada Exp $
+# $Id: Makefile,v 1.17 1999/03/31 16:41:29 sada Exp $
 #
 
 DISTNAME=	ja-netscape-${BROWSER}-${BROWSER_VERSION}
 CATEGORIES=	japanese www
-MASTER_SITES=	${PORTKIT_SITES}
-		http://www.bres.tsukuba.ac.jp/~yohta/netscape/ \
+MASTER_SITES=	${PORTKIT_SITES} \
+		http://www.bres.tsukuba.ac.jp/~yohta/netscape/
 DISTFILES=	${JAPANIZE_KIT} ${PORTKIT}
 
 MAINTAINER=	sada@FreeBSD.ORG
