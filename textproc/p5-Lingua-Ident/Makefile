@@ -21,4 +21,10 @@ MAN1=			trainlid.1
 MAN3=			Lingua::Ident.3
 MAN3PREFIX=		${PREFIX}/lib/perl5/${PERL_VERSION}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} >= 500800
+BROKEN=			"Does not compile with perl >=5.8"
+.endif
+
+.include <bsd.port.post.mk>
