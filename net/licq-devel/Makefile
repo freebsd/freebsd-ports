@@ -16,7 +16,6 @@ MASTER_SITES=	ftp://ftp.wibble.net/pub/licq/srcs/ \
 MAINTAINER=	green@FreeBSD.org
 
 USE_QT=		yes
-WRKSRC=		${WRKDIR}/${DISTNAME}
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
