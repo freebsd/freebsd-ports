@@ -21,7 +21,13 @@ following lines to your ~/.emacs:
 	     ))
 
 ====
-NOTE: This package does NOT contain irb (the interactive Ruby)
-      and Ruby/Tk (an interface to Tk GUI toolkits);  You need to
-      install separate packages to use them.
+Note that some stuff that comes with the standard Ruby distribution is
+provided as separate ports:
+
+	databases/ruby-gdbm:	GDBM module
+	lang/irb:		Interactive Ruby
+	japanese/rubytk or
+	x11-toolkits/rubytk:	TclTkLib & Ruby/Tk modules
+
+Please install them as occasion demands.
 ====
