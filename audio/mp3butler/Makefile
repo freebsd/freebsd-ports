@@ -12,6 +12,8 @@ MASTER_SITES=	http://projects.babblica.net/butler/versions/
 
 MAINTAINER=	rbg@gayteenresource.org
 
+USE_PERL5=	yes
+
 MAN1=		mp3butler.1
 
 do-build:
