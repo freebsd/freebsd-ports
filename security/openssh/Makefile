@@ -157,5 +157,6 @@ post-install:
 	@${ECHO_MSG} ">> If this is left over from another version of SSH, you will"
 	@${ECHO_MSG} ">> need to update it to work with OpenSSH."
 .endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
