@@ -1,5 +1,5 @@
 --- p3scan.c.orig	Wed Jan 21 01:26:48 2004
-+++ p3scan.c	Wed Feb 18 12:52:37 2004
++++ p3scan.c	Wed Feb 18 13:32:33 2004
 @@ -30,34 +30,39 @@
   *
   */
@@ -64,7 +64,7 @@
  #define DEBUG                    0
  #define QUIET                    0
  #define OVERWRITE                0
-@@ -340,11 +345,22 @@
+@@ -340,11 +345,24 @@
  #define MOVEIT "/bin/mv"
     FILE * scanner;
     static char  line[4096*16];
@@ -74,21 +74,23 @@
     int res, htmlfd, html, toggle;
  
 +#ifdef __FreeBSD__
-+/*
-+    struct statfs fsstats[10];
-+    if ((ret=getfsstat(fsstats,sizeof(fsstats)/sizeof(fsid_t),MNT_WAIT))!=0) {
++    struct statfs fs;
++    if ((ret=statfs(config->virusdir,&fs))!=0) {
 +      do_log(LOG_EMERG, "Unable to get available space!");
 +      return SCANNER_RET_CRIT; // Should never reach here, but keep it clean. :)
 +    }
-+*/
-+#warning I should do something with this information - getfsstat
++    kbfree=fs.f_bavail*fs.f_bsize/1024;
++    if ( config->freespace != 0 && kbfree < config->freespace ){
++      do_log(LOG_CRIT, "Not enough space! Available space: %d", kbfree);
++      return SCANNER_RET_CRIT;
++    }
 +#else
 +   struct statvfs fs;
 +
    /* See if we have enough room to process the message based upon
     what the user determines is enough room in p3scan.conf */
     if ( statvfs( config->virusdir, &fs ) == SCANNER_RET_ERR){
-@@ -356,6 +372,7 @@
+@@ -356,6 +374,7 @@
        do_log(LOG_CRIT, "Not enough space! Available space: %d", kbfree);
        return SCANNER_RET_CRIT;
     }
@@ -96,7 +98,7 @@
  
     /* This is where we should scan for spam - before demime to
        give SpamAssassin the virgin message */
-@@ -820,8 +837,8 @@
+@@ -820,8 +839,8 @@
     do_log(LOG_NOTICE, "Connection from %s:%i", inet_ntoa(p->client_addr.sin_addr), ntohs(p->client_addr.sin_port));
  
     p->server_addr.sin_family = AF_INET;
@@ -107,7 +109,7 @@
        return 1;
     }
     do_log(LOG_NOTICE, "Real-server adress is %s:%i", inet_ntoa(p->server_addr.sin_addr), ntohs(p->server_addr.sin_port));
-@@ -1534,7 +1551,7 @@
+@@ -1534,7 +1553,7 @@
     char * responsemsg;
     int virusdirlen;
     char chownit[100];
@@ -116,7 +118,7 @@
     int len;
     int ret;
     FILE * chowncmd;
-@@ -1574,8 +1591,8 @@
+@@ -1574,8 +1593,8 @@
        };
        // chown /var/run/p3scan/p3scan.pid mail.mail
        len=strlen(CHOWNCMD)+1+strlen(config->runasuser)+1+strlen(config->runasuser)+1+strlen(config->pidfile)+1;
