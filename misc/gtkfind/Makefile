@@ -22,5 +22,6 @@ GNU_CONFIGURE=	yes
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 CONFIGURE_ENV=  GTK_CONFIG="${GTK_CONFIG}"
 USE_GMAKE=	yes
+USE_X_PREFIX=	yes
 
 .include <bsd.port.mk>
