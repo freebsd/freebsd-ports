@@ -54,7 +54,7 @@ post-install:
 	${CP} ${WRKSRC}/doc/Guidebook.txt ${PREFIX}/share/doc/nethack
 .endif
 	@ cd ${PREFIX}/lib/nethackdir; tar xzf ${DISTDIR}/${QT_SOUND}
-	@ cd ${PREFIX}/lib/nethackdir; ${CHOWN} games.games *.au .nethackrc
+	@ cd ${PREFIX}/lib/nethackdir; ${CHOWN} root.games *.au .nethackrc
 	@ cd ${PREFIX}/lib/nethackdir; ${CHMOD} 444 *.au .nethackrc
 	@ ${ECHO}  "-----------------------"
 	@ ${ECHO}  "post-installation hints
