@@ -1598,6 +1598,7 @@ fr-koffice-i18n	ports/french/koffice-i18n
 fr-linux-netscape6	ports/french/linux-netscape6
 fr-staroffice52	ports/french/staroffice52
 fr-xtel		ports/french/xtel
+frabs		ports/games/frabs
 fractorama	ports/graphics/fractorama
 fragrouter	ports/security/fragrouter
 freeamp		ports/audio/freeamp
