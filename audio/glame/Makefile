@@ -31,6 +31,12 @@ INSTALLS_SHLIB=	yes
 
 INFO=		glame glame-dev
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha"
+BROKEN=		"Does not compile on alpha"
+.endif
+
 post-extract:
 	@cd ${WRKSRC}/doc && ${RM} -f *.info*
 
@@ -40,4 +46,4 @@ post-patch:
 	@${GREP} -lR "<values\.h>" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|<values\.h>|<limits.h>|'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
