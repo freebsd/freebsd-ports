@@ -9,13 +9,13 @@ PORTNAME=	zwiki
 PORTVERSION=	0.27.1
 CATEGORIES=	www zope
 MASTER_SITES=	http://www.zope.org/Members/simon/ZWiki/ \
-		http://zwiki.org/zwikidir/releases/
+		http://zwiki.org/releases/
 PKGNAMEPREFIX=	zope-
 DISTNAME=	ZWiki-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	wjv@FreeBSD.org
-COMMENT=	A WikiWikiWeb product for Zope
+MAINTAINER=	x@vex.net
+COMMENT=	A WikiWikiWeb product for Zope (colaborative web site system)
 
 USE_ZOPE=	yes
 USE_PYTHON=	yes
