@@ -3445,6 +3445,7 @@ ko-texinfo	ports/korean/texinfo
 ko-uniksc	ports/korean/uniksc
 kobodeluxe	ports/games/kobodeluxe
 koffice-i18n-af	ports/misc/koffice-i18n-af
+koffice-i18n-ar	ports/misc/koffice-i18n-ar
 koffice-kde3	ports/editors/koffice-kde3	
 konversation	ports/irc/konversation
 konverse	ports/net/konverse
