@@ -1,11 +1,15 @@
 bin/fdesign
+bin/fd2ps
 lib/libxforms.a
 lib/libxforms.so.0.86
+lib/libxforms.so
 @exec ldconfig -m %B
 @exec ranlib %D/lib/libxforms.a
 include/forms.h
 man/man1/fdesign.1.gz
+man/man1/fd2ps.1.gz
 man/man5/xforms.5.gz
+man/man5/forms.5.gz
 lib/X11/xforms/arrowbutton
 lib/X11/xforms/borderwidth
 lib/X11/xforms/boxtype
