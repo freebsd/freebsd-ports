@@ -23,6 +23,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		gdevlips4-1.1.0.tar.gz \
 		bjc600j-0.9.tar.gz \
 		gdevmjc-0.7.tar.gz
+DIST_SUBDIR=	ghostscript
 
 MAINTAINER=	mita@jp.FreeBSD.org
 
@@ -40,11 +41,11 @@ DOC_DIR=${PREFIX}/lib/ghostscript/doc
 # after the distributed patches
 pre-patch:
 	@(cd ${WRKSRC} ; \
-	  tar xzf ${DISTDIR}/gs261j10.tar.gz ; \
-	  tar xzf ${DISTDIR}/gs261d13.tar.gz ; \
-	  tar xzf ${DISTDIR}/gdevmjc-0.7.tar.gz ; \
-	  tar xzf ${DISTDIR}/bjc600j-0.9.tar.gz ; \
-	  tar xzf ${DISTDIR}/gdevlips4-1.1.0.tar.gz ; \
+	  tar xzf ${_DISTDIR}/gs261j10.tar.gz ; \
+	  tar xzf ${_DISTDIR}/gs261d13.tar.gz ; \
+	  tar xzf ${_DISTDIR}/gdevmjc-0.7.tar.gz ; \
+	  tar xzf ${_DISTDIR}/bjc600j-0.9.tar.gz ; \
+	  tar xzf ${_DISTDIR}/gdevlips4-1.1.0.tar.gz ; \
 	  ${PATCH} ${PATCH_ARGS} < gs261j.diff ; \
 	  ${PATCH} ${PATCH_ARGS} <${FILESDIR}/gdevep82.patch ; \
 	  ${PATCH} ${PATCH_ARGS} <${FILESDIR}/bjc600j.dif.patch >/dev/null 2>&1; \
@@ -98,10 +99,10 @@ post-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/paramod ${PREFIX}/bin ;
 	@(cd ${PREFIX}/lib/ghostscript ; \
 	  ${CP} ${WRKSRC}/bjc600j/*.ps . ; \
-	tar xzf ${DISTDIR}/ghostscript-fonts-2.6.2.tar.gz ; \
+	tar xzf ${_DISTDIR}/ghostscript-fonts-2.6.2.tar.gz ; \
 	${CP} ${PREFIX}/lib/ghostscript/kanji/vflib.ps ${PREFIX}/lib/ghostscript/kanji/kconfig.ps ; \
 	cd fonts ;\
-	tar xzf ${DISTDIR}/ghostscript-fonts-4.0.tar.gz ; \
+	tar xzf ${_DISTDIR}/ghostscript-fonts-4.0.tar.gz ; \
 	${PATCH} < ${FILESDIR}/Fontmap.diff ; \
 	${CAT} Fontmap >> ../Fontmap ; \
 	${RM} Fontmap* ; \

@@ -9,6 +9,7 @@ bin/gsdj500
 bin/gslj
 bin/gslp
 bin/gsnd
+bin/hpijs
 bin/pdf2dsc
 bin/pdf2ps
 bin/printafm

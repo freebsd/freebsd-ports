@@ -20,12 +20,14 @@ MASTER_SITES=	${MASTER_SITE_GNU} \
 		http://www.humblesoft.com/pub/ \
 		http://www6.vc-net.ne.jp/~umi/ \
 		http://plaza26.mbn.or.jp/~higamasa/gdevmd2k/ \
-		http://www.epkowa.on.arena.ne.jp/pips/data/lp1900/
+		http://www.epkowa.on.arena.ne.jp/pips/data/lp1900/\
+		${MASTER_SITE_SOURCEFORGE:S/%SUBDIR%/hpinkjet/g}
 # first for ${MASTER_SITE_GNU}, second for ${MASTER_SITE_LOCAL},
 # third for ${MASTER_SITE_PORTS_JP}
 MASTER_SITE_SUBDIR=	ghostscript asami/LOCAL_PORTS taoka .
 DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
 		${DECRYPT_PDF} ${GS_DRIVERS}
+DIST_SUBDIR=	ghostscript
 EXTRACT_ONLY=	${GS_SOURCES}
 
 MAINTAINER=	mita@jp.FreeBSD.org
@@ -65,26 +67,28 @@ GS_DRIVERS+=	gdevalps-0.21.tar.gz
 GS_DRIVERS+=	gdevmd2k-0.2a.tar.gz
 GS_DRIVERS+=	gdevrpdl-1.4.tar.gz
 GS_DRIVERS+=	eplaser-2.0.2-550.tgz
+GS_DRIVERS+=	hpijs0.97.tar.gz
 
 # replacement for pdf_sec.ps, that allows you to read encrypted PDF files
 DECRYPT_PDF=	pdf_sec.ps
 
 post-extract:
 	${LN} -s ${WRKDIRPREFIX}${.CURDIR}/../../graphics/jpeg/work/jpeg-6b ${WRKSRC}/jpeg
-	@${TAR} -C ${WRKSRC} --unlink -xzf ${DISTDIR}/gs5.50-vflib-1.0.tar.gz
+	@${TAR} -C ${WRKSRC} --unlink -xzf ${_DISTDIR}/gs5.50-vflib-1.0.tar.gz
 	@( ${MKDIR} ${PRINTER} ; \
 	  cd ${PRINTER} ; \
-	  ${TAR} --unlink -xzf ${DISTDIR}/gdevlips-2.3.6-550.tar.gz ; \
-	  ${TAR} --unlink -xzf ${DISTDIR}/gdevmjc-0.8.tar.gz ; \
-	  ${TAR} --unlink -xzf ${DISTDIR}/gdev10v.tar.gz ; \
+	  ${TAR} --unlink -xzf ${_DISTDIR}/gdevlips-2.3.6-550.tar.gz ; \
+	  ${TAR} --unlink -xzf ${_DISTDIR}/gdevmjc-0.8.tar.gz ; \
+	  ${TAR} --unlink -xzf ${_DISTDIR}/gdev10v.tar.gz ; \
 	  ${MKDIR} ${PRINTER}/gdevdmpr ; \
-	  ${TAR} -C gdevdmpr --unlink -xzf ${DISTDIR}/dmprt-2.01.tar.gz ; \
-	  ${TAR} --unlink -xzf ${DISTDIR}/gdevnpdl-1.6.2.tar.gz ; \
-	  ${TAR} --unlink -xzf ${DISTDIR}/epag-3.09.tar.gz ; \
-	  ${TAR} --unlink -xzf ${DISTDIR}/gdevalps-0.21.tar.gz ; \
-	  ${TAR} --unlink -xzf ${DISTDIR}/gdevmd2k-0.2a.tar.gz ; \
-	  ${TAR} --unlink -xzf ${DISTDIR}/gdevrpdl-1.4.tar.gz ; \
-	  ${TAR} --unlink -xzf ${DISTDIR}/eplaser-2.0.2-550.tgz ; \
+	  ${TAR} -C gdevdmpr --unlink -xzf ${_DISTDIR}/dmprt-2.01.tar.gz ; \
+	  ${TAR} --unlink -xzf ${_DISTDIR}/gdevnpdl-1.6.2.tar.gz ; \
+	  ${TAR} --unlink -xzf ${_DISTDIR}/epag-3.09.tar.gz ; \
+	  ${TAR} --unlink -xzf ${_DISTDIR}/gdevalps-0.21.tar.gz ; \
+	  ${TAR} --unlink -xzf ${_DISTDIR}/gdevmd2k-0.2a.tar.gz ; \
+	  ${TAR} --unlink -xzf ${_DISTDIR}/gdevrpdl-1.4.tar.gz ; \
+	  ${TAR} --unlink -xzf ${_DISTDIR}/eplaser-2.0.2-550.tgz ; \
+	  ${TAR} --unlink -xzf ${_DISTDIR}/hpijs0.97.tar.gz ; \
 	)
 
 pre-patch:
@@ -105,6 +109,9 @@ post-patch:
 	  ${CP} gdevmd2k-0.2a/gdevmd2k.c gdevmd2k-0.2a/gdevmd2k.mak-5.50 ${WRKSRC}; \
 	  ${CP} gdevrpdl-1.4/gdevrpdl.c gdevrpdl-1.4/gdevrpdl.mak ${WRKSRC}; \
 	  ${CP} eplaser/gdevescv.[ch] eplaser/gdevescv.mak eplaser/gdevesmv.c eplaser/gdevesmv.mak ${WRKSRC}; \
+	  ${CP} hpijs0.97/gdevhpij.[ch] ${WRKSRC}; \
+	  ${SED} -n -e '/^### -* Hewlett-Packard Co. Inkjet Driver -*/,/^###/p' \
+	    hpijs0.97/contrib.mak | ${SED} '$d' > ${WRKSRC}/gdevhpij.mak; \
 	  )
 	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/gdev10v.mak.patch
 	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/mjc.dev.patch
@@ -126,21 +133,25 @@ post-patch:
 	@${CAT} ${WRKSRC}/gdevmd2k.mak-5.50 >> ${WRKSRC}/contrib.mak
 	@${CAT} ${WRKSRC}/gdevescv.mak >> ${WRKSRC}/contrib.mak
 	@${CAT} ${WRKSRC}/gdevesmv.mak >> ${WRKSRC}/contrib.mak
+	@${CAT} ${WRKSRC}/gdevhpij.mak >> ${WRKSRC}/contrib.mak
+	@${PATCH} ${PATCH_ARGS} -d ${PRINTER}/hpijs0.97 < ${FILESDIR}/hpijs.patch
 
 pre-build:
 	${MKDIR} ${WRKSRC}/obj
 
 post-build:
 	@(cd ${PRINTER}/epag-3.09 ;  ${MAKE})
+	@(cd ${PRINTER}/hpijs0.97 ;  ${MAKE})
 
 pre-install:
 	@${MKDIR} ${PREFIX}/share/ghostscript
-	@${TAR} -C ${PREFIX}/share/ghostscript -xzf ${DISTDIR}/${GS_FONTS_STD}
-	@${TAR} -C ${PREFIX}/share/ghostscript -xzf ${DISTDIR}/${GS_FONTS_OTHER}
+	@${TAR} -C ${PREFIX}/share/ghostscript -xzf ${_DISTDIR}/${GS_FONTS_STD}
+	@${TAR} -C ${PREFIX}/share/ghostscript -xzf ${_DISTDIR}/${GS_FONTS_OTHER}
 
 post-install:
-	${INSTALL_DATA} ${DISTDIR}/pdf_sec.ps ${GSINST_DIR}
+	${INSTALL_DATA} ${_DISTDIR}/pdf_sec.ps ${GSINST_DIR}
 	${INSTALL_PROGRAM} ${PRINTER}/epag-3.09/ert ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${PRINTER}/hpijs0.97/hpijs ${PREFIX}/bin
 	@strip ${PREFIX}/bin/gs
 	@( \
 	  ${CP} ${WRKSRC}/gs5.50-vflib-1.0/README ${DOC_DIR}/README.gs5.10-vflib ; \

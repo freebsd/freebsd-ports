@@ -27,6 +27,7 @@ MASTER_SITES=	${MASTER_SITE_GNU} \
 MASTER_SITE_SUBDIR=	ghostscript asami/LOCAL_PORTS taoka .
 DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
 		${DECRYPT_PDF} ${GS_DRIVERS}
+DIST_SUBDIR=	ghostscript
 EXTRACT_ONLY=	${GS_SOURCES}
 
 MAINTAINER=	mita@jp.FreeBSD.org
@@ -70,20 +71,20 @@ DECRYPT_PDF=	pdf_sec.ps
 
 post-extract:
 	${LN} -s ${WRKDIRPREFIX}${.CURDIR}/../../graphics/jpeg/work/jpeg-6b ${WRKSRC}/jpeg
-	@${TAR} -C ${WRKSRC} --unlink -xzf ${DISTDIR}/gs${PORTVERSION}-vflib-1.2.tar.gz
-	@${TAR} -C ${WRKSRC} --unlink -xzf ${DISTDIR}/gs${PORTVERSION}-jpdf-0.2.tar.gz
+	@${TAR} -C ${WRKSRC} --unlink -xzf ${_DISTDIR}/gs${PORTVERSION}-vflib-1.2.tar.gz
+	@${TAR} -C ${WRKSRC} --unlink -xzf ${_DISTDIR}/gs${PORTVERSION}-jpdf-0.2.tar.gz
 	@( ${MKDIR} ${PRINTER} ; \
 	  cd ${PRINTER} ; \
-	  ${TAR} --unlink -xzf ${DISTDIR}/gdevlips-2.3.2-510.tar.gz ; \
-	  ${TAR} --unlink -xzf ${DISTDIR}/epag-3.09.tar.gz ; \
-	  ${TAR} --unlink -xzf ${DISTDIR}/gdevmjc-0.8.tar.gz ; \
-	  ${TAR} --unlink -xzf ${DISTDIR}/gdev10v.tar.gz ; \
+	  ${TAR} --unlink -xzf ${_DISTDIR}/gdevlips-2.3.2-510.tar.gz ; \
+	  ${TAR} --unlink -xzf ${_DISTDIR}/epag-3.09.tar.gz ; \
+	  ${TAR} --unlink -xzf ${_DISTDIR}/gdevmjc-0.8.tar.gz ; \
+	  ${TAR} --unlink -xzf ${_DISTDIR}/gdev10v.tar.gz ; \
 	  ${MKDIR} ${PRINTER}/gdevdmpr ; \
-	  ${TAR} -C gdevdmpr --unlink -xzf ${DISTDIR}/dmprt-2.01.tar.gz ; \
-	  ${TAR} --unlink -xzf ${DISTDIR}/gdevalps-0.21.tar.gz ; \
-	  ${TAR} --unlink -xzf ${DISTDIR}/gdevmd2k-0.2a.tar.gz ; \
-	  ${TAR} --unlink -xzf ${DISTDIR}/gdevrpdl-1.4-510.tar.gz ; \
-	  ${TAR} --unlink -xzf ${DISTDIR}/gdevnpdl-1.6.2.tar.gz ; \
+	  ${TAR} -C gdevdmpr --unlink -xzf ${_DISTDIR}/dmprt-2.01.tar.gz ; \
+	  ${TAR} --unlink -xzf ${_DISTDIR}/gdevalps-0.21.tar.gz ; \
+	  ${TAR} --unlink -xzf ${_DISTDIR}/gdevmd2k-0.2a.tar.gz ; \
+	  ${TAR} --unlink -xzf ${_DISTDIR}/gdevrpdl-1.4-510.tar.gz ; \
+	  ${TAR} --unlink -xzf ${_DISTDIR}/gdevnpdl-1.6.2.tar.gz ; \
 	  )
 
 pre-patch:
@@ -91,7 +92,7 @@ pre-patch:
 		${PATCH} -d ${WRKDIR} -p --forward --quiet -E
 	@${CAT} ${WRKSRC}/gs${PORTVERSION}-jpdf-0.2/gs${PORTVERSION}-jpdf-0.2.diff | \
 		${PATCH} -d ${WRKDIR} -p --forward --quiet -E
-	@${GZCAT} ${DISTDIR}/gs${PORTVERSION}-VFlibBM-PL2.diff.gz | \
+	@${GZCAT} ${_DISTDIR}/gs${PORTVERSION}-VFlibBM-PL2.diff.gz | \
 		${PATCH} -d ${WRKDIR} -p --forward --quiet -E
 
 post-patch:
@@ -128,14 +129,14 @@ post-patch:
 
 pre-install:
 	@${MKDIR} ${PREFIX}/share/ghostscript
-	@${TAR} -C ${PREFIX}/share/ghostscript -xzf ${DISTDIR}/${GS_FONTS_STD}
-	@${TAR} -C ${PREFIX}/share/ghostscript/fonts -xzf ${DISTDIR}/${GS_FONTS_OTHER}
+	@${TAR} -C ${PREFIX}/share/ghostscript -xzf ${_DISTDIR}/${GS_FONTS_STD}
+	@${TAR} -C ${PREFIX}/share/ghostscript/fonts -xzf ${_DISTDIR}/${GS_FONTS_OTHER}
 
 post-build:
 	@(cd ${PRINTER}/epag-3.09 ;  ${MAKE})
 
 post-install:
-	${INSTALL_DATA} ${DISTDIR}/pdf_sec.ps ${GSINST_DIR}
+	${INSTALL_DATA} ${_DISTDIR}/pdf_sec.ps ${GSINST_DIR}
 	${INSTALL_PROGRAM} ${PRINTER}/epag-3.09/ert ${PREFIX}/bin
 	@strip ${PREFIX}/bin/gs
 	@( \
