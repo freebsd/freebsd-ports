@@ -8,7 +8,7 @@
 PORTNAME=	xmms
 CATEGORIES=	russian
 
-MAINTAINER=	vasallia@ukr.net
+MAINTAINER=	anray@inet.ua
 COMMENT=	Gaim with underclared charsets support for oscar protocol
 
 MASTERDIR=	${.CURDIR}/../../net/gaim

@@ -13,7 +13,7 @@ MASTER_SITES=	http://kst.spb.ru/bforce/
 PKGNAMESUFFIX=	-kst
 DISTNAME=	${PORTNAME}-0.22.8.kst7
 
-MAINTAINER=	vasallia@ukr.net
+MAINTAINER=	anray@inet.ua
 COMMENT=	Simple ifcico like Fidonet technology mailer
 
 USE_BZIP2=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	comms
 MASTER_SITES=	http://santinel.bas-net.by/files/
 DISTNAME=	qico-${PORTVERSION}si
 
-MAINTAINER=	vasallia@ukr.net
+MAINTAINER=	anray@inet.ua
 COMMENT=	Ip/modem fido compatible mailer
 
 USE_BZIP2=	yes

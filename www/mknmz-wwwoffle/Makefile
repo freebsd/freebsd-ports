@@ -10,7 +10,7 @@ PORTVERSION=	0.7.2
 CATEGORIES=	www databases textproc
 MASTER_SITES=	http://www.naney.org/comp/distrib/mknmz-wwwoffle/archive/
 
-MAINTAINER=	vasallia@ukr.net
+MAINTAINER=	anray@inet.ua
 COMMENT=	WWWOFFLE cache indexer for full-text search system Namazu
 
 RUN_DEPENDS=	${LOCALBASE}/bin/wwwoffle:${PORTSDIR}/www/wwwoffle

@@ -10,7 +10,7 @@ PORTVERSION=	0.2.20
 CATEGORIES=	mail
 MASTER_SITES=	http://innominate.org/kurth/masqmail/download/
 
-MAINTAINER=	vasallia@ukr.net
+MAINTAINER=	anray@inet.ua
 COMMENT=	Mail server for hosts, not permanently connected to the internet
 
 CONFLICTS=	masqmail-0.1*
