@@ -1,3 +1,4 @@
 bin/mxico
 %%DOCSDIR%%/README
 %%DOCSDIR%%/READMEj
+@dirrm %%DOCSDIR%%
