@@ -1,0 +1,35 @@
+--- param/loadparm.c.orig	Fri Jan 15 22:35:00 1999
++++ param/loadparm.c	Fri Jan 15 22:33:18 1999
+@@ -104,6 +104,7 @@
+ {
+   char *szPrintcapname;
+   char *szLockDir;
++  char *szPidDir;
+   char *szRootdir;
+   char *szDefaultService;
+   char *szDfree;
+@@ -747,6 +748,8 @@
+   {"auto services",    P_STRING,  P_GLOBAL, &Globals.szAutoServices,    NULL,   NULL,  0},
+   {"lock dir",         P_STRING,  P_GLOBAL, &Globals.szLockDir,         NULL,   NULL,  0},
+   {"lock directory",   P_STRING,  P_GLOBAL, &Globals.szLockDir,         NULL,   NULL,  0},
++  {"pidfile dir",      P_STRING,  P_GLOBAL, &Globals.szPidDir,          NULL,   NULL,  0},
++  {"pidfile directory",P_STRING,  P_GLOBAL, &Globals.szPidDir,          NULL,   NULL,  0},
+   {"default service",  P_STRING,  P_GLOBAL, &Globals.szDefaultService,  NULL,   NULL,  0},
+   {"default",          P_STRING,  P_GLOBAL, &Globals.szDefaultService,  NULL,   NULL,  0},
+   {"message command",  P_STRING,  P_GLOBAL, &Globals.szMsgCommand,      NULL,   NULL,  0},
+@@ -824,6 +827,7 @@
+   string_set(&Globals.szPrintcapname, PRINTCAP_NAME);
+   string_set(&Globals.szDriverFile, DRIVERFILE);
+   string_set(&Globals.szLockDir, LOCKDIR);
++  string_set(&Globals.szPidDir, PIDFILEDIR);
+   string_set(&Globals.szRootdir, "/");
+   string_set(&Globals.szSmbrun, SMBRUN);
+   string_set(&Globals.szSocketAddress, "0.0.0.0");
+@@ -1100,6 +1104,7 @@
+ FN_GLOBAL_STRING(lp_serverstring,&Globals.szServerString)
+ FN_GLOBAL_STRING(lp_printcapname,&Globals.szPrintcapname)
+ FN_GLOBAL_STRING(lp_lockdir,&Globals.szLockDir)
++FN_GLOBAL_STRING(lp_piddir,&Globals.szPidDir)
+ FN_GLOBAL_STRING(lp_rootdir,&Globals.szRootdir)
+ FN_GLOBAL_STRING(lp_defaultservice,&Globals.szDefaultService)
+ FN_GLOBAL_STRING(lp_msg_command,&Globals.szMsgCommand)

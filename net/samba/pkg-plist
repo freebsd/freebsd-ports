@@ -5,13 +5,130 @@ bin/smbpasswd
 bin/nmblookup
 bin/smbtar
 bin/addtosmbpass
+bin/convert_smbpasswd
 bin/testparm
 bin/testprns
-bin/mksmbpasswd.sh
+bin/make_smbpasswd
 bin/make_smbcodepage
 bin/make_printerdef
+bin/rpcclient
 sbin/smbd
 sbin/nmbd
+sbin/swat
+share/examples/samba/README
+share/examples/samba/smb.conf.default
+share/examples/samba/autofs/auto.a
+share/examples/samba/autofs/mount-smb.doc
+share/examples/samba/autofs/mount.smb
+share/examples/samba/dce-dfs/README
+share/examples/samba/dce-dfs/smb.conf
+share/examples/samba/misc/extra_smbstatus
+share/examples/samba/misc/wall.perl
+share/examples/samba/printer-accounting/README
+share/examples/samba/printer-accounting/acct-all
+share/examples/samba/printer-accounting/acct-sum
+share/examples/samba/printer-accounting/hp5-redir
+share/examples/samba/printer-accounting/lp-acct
+share/examples/samba/printer-accounting/printcap
+share/examples/samba/printing/smbprint
+share/examples/samba/printing/smbprint.sysv
+share/examples/samba/simple/README
+share/examples/samba/simple/smb.conf
+share/examples/samba/svr4-startup/README
+share/examples/samba/svr4-startup/samba.server
+share/examples/samba/thoralf/smb.conf
+share/examples/samba/tridge/README
+share/examples/samba/tridge/smb.conf
+share/examples/samba/tridge/smb.conf.WinNT
+share/examples/samba/tridge/smb.conf.fjall
+share/examples/samba/tridge/smb.conf.lapland
+share/examples/samba/tridge/smb.conf.vittjokk
+share/examples/samba/validchars/msdos70.out
+share/examples/samba/validchars/nwdos70.out
+share/examples/samba/validchars/readme
+share/examples/samba/validchars/validchr.c
+share/examples/samba/validchars/validchr.com
+@dirrm share/examples/samba/autofs
+@dirrm share/examples/samba/dce-dfs
+@dirrm share/examples/samba/misc
+@dirrm share/examples/samba/printing
+@dirrm share/examples/samba/printer-accounting
+@dirrm share/examples/samba/simple
+@dirrm share/examples/samba/svr4-startup
+@dirrm share/examples/samba/thoralf
+@dirrm share/examples/samba/tridge
+@dirrm share/examples/samba/validchars
+@dirrm share/examples/samba
+etc/rc.d/samba.sh.sample
+etc/smb.conf.default
+etc/codepages/codepage.437
+etc/codepages/codepage.737
+etc/codepages/codepage.850
+etc/codepages/codepage.852
+etc/codepages/codepage.861
+etc/codepages/codepage.866
+etc/codepages/codepage.932
+etc/codepages/codepage.936
+etc/codepages/codepage.949
+etc/codepages/codepage.950
+@dirrm etc/codepages
+share/doc/samba/COPYING
+share/doc/samba/Manifest
+share/doc/samba/README
+share/doc/samba/README.FreeBSD
+share/doc/samba/README.swat
+share/doc/samba/Roadmap
+share/doc/samba/WHATSNEW.txt
+share/doc/samba/announce
+share/doc/samba/history
+share/doc/samba/THANKS
+share/doc/samba/Application_Serving.txt
+share/doc/samba/BROWSING-Config.txt
+share/doc/samba/BROWSING.txt
+share/doc/samba/BUGS.txt
+share/doc/samba/CVS_ACCESS.txt
+share/doc/samba/DHCP-Server-Configuration.txt
+share/doc/samba/DIAGNOSIS.txt
+share/doc/samba/DNIX.txt
+share/doc/samba/DOMAIN.txt
+share/doc/samba/DOMAIN_CONTROL.txt
+share/doc/samba/DOMAIN_MEMBER.txt
+share/doc/samba/ENCRYPTION.txt
+share/doc/samba/Faxing.txt
+share/doc/samba/GOTCHAS.txt
+share/doc/samba/HINTS.txt
+share/doc/samba/INSTALL.sambatar
+share/doc/samba/MIRRORS.txt
+share/doc/samba/Macintosh_Clients.txt
+share/doc/samba/NTDOMAIN.txt
+share/doc/samba/NetBIOS.txt
+share/doc/samba/OS2-Client-HOWTO.txt
+share/doc/samba/PRINTER_DRIVER.txt
+share/doc/samba/PROFILES.txt
+share/doc/samba/PROJECTS
+share/doc/samba/Passwords.txt
+share/doc/samba/Printing.txt
+share/doc/samba/README.DCEDFS
+share/doc/samba/README.jis
+share/doc/samba/README.sambatar
+share/doc/samba/Recent-FAQs.txt
+share/doc/samba/RoutedNetworks.txt
+share/doc/samba/SCO.txt
+share/doc/samba/SMBTAR.notes
+share/doc/samba/SSLeay.txt
+share/doc/samba/Speed.txt
+share/doc/samba/Speed2.txt
+share/doc/samba/Support.txt
+share/doc/samba/Tracing.txt
+share/doc/samba/UNIX-SMB.txt
+share/doc/samba/UNIX_INSTALL.txt
+share/doc/samba/UNIX_SECURITY.txt
+share/doc/samba/Win95.txt
+share/doc/samba/WinNT.txt
+share/doc/samba/cifsntdomain.txt
+share/doc/samba/security_level.txt
+share/doc/samba/NT4_PlainPassword.reg
+share/doc/samba/Win95_PlainPassword.reg
 share/doc/samba/faq/Samba-Server-FAQ-1.html
 share/doc/samba/faq/Samba-Server-FAQ-2.html
 share/doc/samba/faq/Samba-Server-FAQ.html
@@ -33,110 +150,42 @@ share/doc/samba/faq/sambafaq-5.html
 share/doc/samba/faq/sambafaq.html
 share/doc/samba/faq/sambafaq.sgml
 share/doc/samba/faq/sambafaq.txt
-share/doc/samba/Application_Serving.txt
-share/doc/samba/BROWSING.txt
-share/doc/samba/BUGS.txt
-share/doc/samba/CVS_ACCESS.txt
-share/doc/samba/DHCP-Server-Configuration.txt
-share/doc/samba/DIAGNOSIS.txt
-share/doc/samba/DNIX.txt
-share/doc/samba/DOMAIN.txt
-share/doc/samba/DOMAIN_CONTROL.txt
-share/doc/samba/ENCRYPTION.txt
-share/doc/samba/Faxing.txt
-share/doc/samba/GOTCHAS.txt
-share/doc/samba/HINTS.txt
-share/doc/samba/INSTALL.sambatar
-share/doc/samba/MIRRORS.txt
-share/doc/samba/NT4_PlainPassword.reg
-share/doc/samba/NTDOMAIN.txt
-share/doc/samba/NetBIOS.txt
-share/doc/samba/OS2-Client-HOWTO.txt
-share/doc/samba/PRINTER_DRIVER.txt
-share/doc/samba/PROFILES.txt
-share/doc/samba/PROJECTS
-share/doc/samba/Passwords.txt
-share/doc/samba/Printing.txt
-share/doc/samba/README
-share/doc/samba/README.DCEDFS
-share/doc/samba/README.FreeBSD
-share/doc/samba/README.jis
-share/doc/samba/README.sambatar
-share/doc/samba/SCO.txt
-share/doc/samba/SMBTAR.notes
-share/doc/samba/Speed.txt
-share/doc/samba/Speed2.txt
-share/doc/samba/Support.txt
-share/doc/samba/Tracing.txt
-share/doc/samba/THANKS
-share/doc/samba/UNIX-SMB.txt
-share/doc/samba/Win95.txt
-share/doc/samba/Win95_PlainPassword.reg
-share/doc/samba/UNIX_INSTALL.txt
-share/doc/samba/WHATSNEW.txt
-share/doc/samba/WinNT.txt
-share/doc/samba/announce
-share/doc/samba/cifsntdomain.txt
-share/doc/samba/history
-share/doc/samba/security_level.txt
-share/doc/samba/wfw_slip.htm
-share/examples/samba/dce-dfs/README
-share/examples/samba/dce-dfs/smb.conf
-share/examples/samba/tridge/smb.conf.WinNT
-share/examples/samba/tridge/smb.conf.vittjokk
-share/examples/samba/tridge/smb.conf.fjall
-share/examples/samba/tridge/README
-share/examples/samba/tridge/smb.conf.lapland
-share/examples/samba/tridge/smb.conf
-share/examples/samba/thoralf/smb.conf
-share/examples/samba/svr4-startup/README
-share/examples/samba/svr4-startup/samba.server
-share/examples/samba/misc/extra_smbstatus
-share/examples/samba/misc/wall.perl
-share/examples/samba/validchars/validchr.com
-share/examples/samba/validchars/readme
-share/examples/samba/validchars/validchr.c
-share/examples/samba/validchars/msdos70.out
-share/examples/samba/validchars/nwdos70.out
-share/examples/samba/printing/smbprint
-share/examples/samba/printing/smbprint.sysv
-share/examples/samba/printer-accounting/hp5-redir
-share/examples/samba/printer-accounting/acct-all
-share/examples/samba/printer-accounting/acct-sum
-share/examples/samba/printer-accounting/README
-share/examples/samba/printer-accounting/lp-acct
-share/examples/samba/printer-accounting/printcap
-share/examples/samba/simple/README
-share/examples/samba/simple/smb.conf
-share/examples/samba/smb.conf.default
-share/examples/samba/README
-etc/rc.d/samba.sh.sample
-etc/smb.conf.default
-etc/codepages/codepage.437
-etc/codepages/codepage.737
-etc/codepages/codepage.850
-etc/codepages/codepage.852
-etc/codepages/codepage.861
-etc/codepages/codepage.866
-etc/codepages/codepage.932
-etc/codepages/codepage.936
-etc/codepages/codepage.949
-etc/codepages/codepage.950
+@dirrm share/doc/samba/faq
+@dirrm share/doc/samba
+share/swat/help/welcome.html
+share/swat/help/DOMAIN_MEMBER.html
+share/swat/help/lmhosts.5.html
+share/swat/help/make_smbcodepage.1.html
+share/swat/help/nmbd.8.html
+share/swat/help/nmblookup.1.html
+share/swat/help/samba.7.html
+share/swat/help/smb.conf.5.html
+share/swat/help/smbclient.1.html
+share/swat/help/smbd.8.html
+share/swat/help/smbpasswd.5.html
+share/swat/help/smbpasswd.8.html
+share/swat/help/smbrun.1.html
+share/swat/help/smbstatus.1.html
+share/swat/help/smbtar.1.html
+share/swat/help/swat.8.html
+share/swat/help/testparm.1.html
+share/swat/help/testprns.1.html
+share/swat/images/globals.gif
+share/swat/images/home.gif
+share/swat/images/passwd.gif
+share/swat/images/printers.gif
+share/swat/images/samba.gif
+share/swat/images/shares.gif
+share/swat/images/status.gif
+share/swat/images/viewconfig.gif
+share/swat/include/footer.html
+share/swat/include/header.html
+@dirrm share/swat/help
+@dirrm share/swat/images
+@dirrm share/swat/include
+@dirrm share/swat
 @exec mkdir %D/private ; if [ ! -f %D/private/smbpasswd ] ; then chown -R root.wheel %D/private ;  cat /etc/passwd | %D/bin/mksmbpasswd.sh > %D/private/smbpasswd ; chmod 500 %D/private ; chmod 600 %D/private/smbpasswd ; fi
 @exec mkdir -p /var/spool/samba ; chmod 1777 /var/spool/samba
 @exec cat %D/share/doc/samba/README.FreeBSD
 @unexec echo "Warning: If you will *NOT* use this package anymore, please remove %D/private/smbpasswd manually."
 @unexec rm -rf /var/spool/samba
-@dirrm share/doc/samba/faq
-@dirrm share/doc/samba
-@dirrm share/examples/samba/dce-dfs
-@dirrm share/examples/samba/tridge
-@dirrm share/examples/samba/thoralf
-@dirrm share/examples/samba/svr4-startup
-@dirrm share/examples/samba/misc
-@dirrm share/examples/samba/validchars
-@dirrm share/examples/samba/printing
-@dirrm share/examples/samba/printer-accounting
-@dirrm share/examples/samba/simple
-@dirrm share/examples/samba
-@dirrm etc/codepages

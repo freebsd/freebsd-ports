@@ -14,7 +14,7 @@
 #======================= Global Settings =====================================
 [global]
 
-# workgroup = NT-Domain-Name or Workgroup-Name
+# workgroup = NT-Domain-Name or Workgroup-Name, eg: REDHAT4
    workgroup = MYGROUP
 
 # server string is the equivalent of the NT Description field
@@ -50,7 +50,7 @@
 
 # this tells Samba to use a separate log file for each machine
 # that connects
-   log file = __LOGDIR__/log.%m
+   log file = %%SAMBA_LOGDIR%%/log.%m
 
 # Put a capping on the size of the log files (in Kb).
    max log size = 50
@@ -61,22 +61,15 @@
 # Use password server option only with security = server
 ;   password server = <NT-Server-Name>
 
-# Password Level allows matching of _n_ characters of the password for
-# all combinations of upper and lower case.
-;  password level = 8
-
 # You may wish to use password encryption. Please read
 # ENCRYPTION.txt, Win95.txt and WinNT.txt in the Samba documentation.
 # Do not enable this option unless you have read those documents
 ;  encrypt passwords = yes
 
-# Unix users can map to different SMB User names
-;  username map = /etc/smbusers
-
 # Using the following line enables you to customise your configuration
 # on a per machine basis. The %m gets replaced with the netbios name
 # of the machine that is connecting
-;   include = /usr/local/samba/lib/smb.conf.%m
+;   include = %%SAMBA_CONFDIR%%/smb.conf.%m
 
 # Most people will find that this option gives better performance.
 # See speed.txt and the manual pages for details
@@ -86,13 +79,6 @@
 # If you have multiple network interfaces then you must list them
 # here. See the man page for details.
 ;   interfaces = 192.168.12.2/24 192.168.13.2/24 
-
-# Configure remote browse list synchronisation here
-#  request announcement to, or browse list sync from:
-#	a specific host or from / to a whole subnet (see below)
-;   remote browse sync = 192.168.3.25 192.168.5.255
-# Cause this host to announce itself to local subnets here
-;   remote announce = 192.168.1.255 192.168.2.44
 
 # Browser Control Options:
 # set local master to no if you don't want Samba to become a master
@@ -150,62 +136,6 @@
 # this has been changed in version 1.9.18 to no.
    dns proxy = no 
 
-# Case Preservation can be handy - system default is _no_
-# NOTE: These can be set on a per share basis
-;  preserve case = no
-;  short preserve case = no
-# Default case is normally upper case for all DOS files
-;  default case = lower
-# Be very careful with case sensitivity - it can break things!
-;  case sensitive = no
-
-# Client codepage settings
-
-# for Greek users
-; client code page=737
-
-# for European users (Latin 1)
-; client code page=850
-
-# for European users (Latin 2)
-; client code page=852
-
-# for Icelandic users
-; client code page=861
-
-# for Cyrillic users
-; client code page=866
-
-# for Japanese Users
-; client code page=932
-; coding system=cap
-
-# for Simplified Chinese Users
-; client code page=936
-; coding system=cap
-
-# for Korean Users
-; client code page=949
-; coding system=cap
-
-# for Traditional Chinese Users
-; client code page=950
-; coding system=cap
-
-# Samba performance workaround:
-#  If you have performance problem, please test these parameters.
-# Simon Lindgren <simon@lindgren.no> 's example:
-;   getwd cache = Yes
-;   max xmit = 8192
-;   read raw = yes
-;   read prediction = yes
-;   read size = 8192
-;   socket options = IPTOS_LOWDELAY TCP_NODELAY
-# Jerry Bell <bell@reillyplating.com> 's example:
-;   socket options = IPTOS_LOWDELAY TCP_NODELAY SO_SNDBUF=16384 SO_RCVBUF=16384
-;   readsize = 16384
-;   read prediction = true
-
 #============================ Share Definitions ==============================
 [homes]
    comment = Home Directories
@@ -233,7 +163,7 @@
 # specifically define each individual printer
 [printers]
    comment = All Printers
-   path = __SAMBA_SPOOL__
+   path = %%SAMBA_SPOOL%%
    browseable = no
 # Set public = yes to allow user 'guest account' to print
    guest ok = no

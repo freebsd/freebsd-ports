@@ -1,49 +1,46 @@
---- Makefile.orig	Thu Jan  8 03:29:04 1998
-+++ Makefile	Thu Jan  8 14:52:32 1998
-@@ -5,11 +5,11 @@
- ###########################################################################
+--- Makefile.in.orig	Fri Jan 15 05:07:20 1999
++++ Makefile.in	Fri Jan 15 22:47:59 1999
+@@ -23,9 +23,7 @@
  
- # The base directory for all samba files
--BASEDIR = /usr/local/samba
-+BASEDIR = $(PREFIX)
- 
- # The base manpages directory to put the man pages in
- # Note: $(MANDIR)/man1, $(MANDIR)/man5 and $(MANDIR)/man8 must exist.
--MANDIR = /usr/local/man
-+MANDIR = $(PREFIX)/man
- 
- # The directories to put things in. If you use multiple
- # architectures or share the samba binaries across NFS then
-@@ -18,9 +18,9 @@
- #       normally only applies to nmbd and smbd
- #       SBINDIR implies a secure binary directory
- BINDIR = $(BASEDIR)/bin
--SBINDIR = $(BASEDIR)/bin
--LIBDIR = $(BASEDIR)/lib
--VARDIR = $(BASEDIR)/var
-+SBINDIR = $(BASEDIR)/sbin
-+LIBDIR = $(BASEDIR)/etc
-+VARDIR = /var/log
- 
- # The permissions to give the executables
- INSTALLPERMS = 0755
-@@ -55,7 +55,7 @@
- WEB_ROOT = $(BASEDIR)
+ BASEDIR= @prefix@
+ BINDIR = @bindir@
+-# we don't use sbindir because we want full compatibility with
+-# the previous releases of Samba
+-SBINDIR = @bindir@
++SBINDIR = @sbindir@
+ LIBDIR = @libdir@
+ VARDIR = @localstatedir@
+ MANDIR = @mandir@
+@@ -36,8 +34,9 @@
+ # set these to where to find various files
+ # These can be overridden by command line switches (see smbd(8))
+ # or in smb.conf (see smb.conf(5))
+-SMBLOGFILE = $(VARDIR)/log.smb
+-NMBLOGFILE = $(VARDIR)/log.nmb
++LOGDIR=$(VARDIR)/log
++SMBLOGFILE = $(LOGDIR)/log.smb
++NMBLOGFILE = $(LOGDIR)/log.nmb
+ CONFIGFILE = $(LIBDIR)/smb.conf
+ LMHOSTSFILE = $(LIBDIR)/lmhosts
+ DRIVERFILE = $(LIBDIR)/printers.def
+@@ -52,7 +51,10 @@
+ SWATDIR = @swatdir@
  
  # the directory where lock files go
 -LOCKDIR = $(VARDIR)/locks
-+LOCKDIR = /var/spool/lock
++LOCKDIR = $(VARDIR)/spool/lock
++
++# the directory where pid files go
++PIDFILEDIR = $(VARDIR)/run
  
  # The directory where code page definition files go
  CODEPAGEDIR = $(LIBDIR)/codepages
-@@ -396,8 +396,8 @@
- # This is for FreeBSD
- # contributed by kuku@acds.physik.rwth-aachen.de
- # NOTE: You may need to add -DBSD44 if you have password problems
--# FLAGSM = -DFreeBSD -DFAST_SHARE_MODES
--# LIBSM = -lcrypt 
-+FLAGSM = -DFreeBSD -DFAST_SHARE_MODES
-+LIBSM = -lcrypt 
- 
- # This is for OpenBSD
- # contributed by todd@openbsd.org
+@@ -71,7 +73,7 @@
+ PASSWD_FLAGS = -DPASSWD_PROGRAM=\"$(PASSWD_PROGRAM)\" -DSMB_PASSWD_FILE=\"$(SMB_PASSWD_FILE)\" -DSMB_PASSWD_PROGRAM=\"$(SMB_PASSWD_PROGRAM)\"
+ FLAGS1 = $(CFLAGS) -Iinclude -I$(srcdir)/include -I$(srcdir)/ubiqx -I$(srcdir)/smbwrapper $(CPPFLAGS) -DSMBLOGFILE=\"$(SMBLOGFILE)\" -DNMBLOGFILE=\"$(NMBLOGFILE)\"
+ FLAGS2 = -DCONFIGFILE=\"$(CONFIGFILE)\" -DLMHOSTSFILE=\"$(LMHOSTSFILE)\"  
+-FLAGS3 = -DSWATDIR=\"$(SWATDIR)\" -DSBINDIR=\"$(SBINDIR)\" -DLOCKDIR=\"$(LOCKDIR)\" -DSMBRUN=\"$(SMBRUN)\" -DCODEPAGEDIR=\"$(CODEPAGEDIR)\"
++FLAGS3 = -DSWATDIR=\"$(SWATDIR)\" -DSBINDIR=\"$(SBINDIR)\" -DLOCKDIR=\"$(LOCKDIR)\" -DPIDFILEDIR=\"$(PIDFILEDIR)\" -DSMBRUN=\"$(SMBRUN)\" -DCODEPAGEDIR=\"$(CODEPAGEDIR)\"
+ FLAGS4 = -DDRIVERFILE=\"$(DRIVERFILE)\" -DBINDIR=\"$(BINDIR)\"
+ FLAGS5 = $(FLAGS1) $(FLAGS2) $(FLAGS3) $(FLAGS4) -DHAVE_INCLUDES_H
+ FLAGS  = $(FLAGS5) $(PASSWD_FLAGS)
