@@ -10,6 +10,7 @@ PORTVERSION=	0.48
 PORTEPOCH=	1
 CATEGORIES=	net linux
 MASTER_SITES=	http://www.overnet.com/files/
+PKGNAMEPREFIX=	linux-
 PKGNAMESUFFIX=	-core
 DISTNAME=	donkey${PORTVERSION}
 
