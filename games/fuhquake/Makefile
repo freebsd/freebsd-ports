@@ -7,6 +7,7 @@
 
 PORTNAME=	fuhquake
 PORTVERSION=	0.28
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.fuhquake.net/files/source/:src \
 		http://www.fuhquake.net/files/releases/:dat \
@@ -14,7 +15,16 @@ MASTER_SITES=	http://www.fuhquake.net/files/source/:src \
 DISTNAME=	${PORTNAME}-source-v${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src \
 		${PORTNAME}-linux-v${PORTVERSION}${EXTRACT_SUFX}:dat \
-		pak0.pak${EXTRACT_SUFX}:pak
+		pak0.pak:pak
+.if defined(WITH_SHAREWARE_DATA)
+DISTFILES+=	q1-shareware-pak0.pak:pak
+PLIST_SUB+=	SHAREWARE=""
+.else
+PLIST_SUB+=	SHAREWARE="@comment "
+.endif
+
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
+		${PORTNAME}-linux-v${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	danfe@regency.nsu.ru
 COMMENT=	An excellent QuakeWorld client
@@ -72,6 +82,12 @@ pre-everything::
 .if !defined(WITHOUT_GLX)
 	@${ECHO_MSG} "Define WITHOUT_GLX to disable building of GLX client"
 .endif
+.if defined(WITH_SHAREWARE_DATA)
+	@${ECHO_MSG} "Define WITH_SHAREWARE_DATA to install demo version game data"
+.endif
+.if !defined(WITHOUT_XMMS) && exists(${X11BASE}/lib/libxmms.so.3)
+	@${ECHO_MSG} "Define WITHOUT_XMMS to build without \`\`MP3 Player'' feature"
+.endif
 .if !defined(WITH_OPTIMIZED_CFLAGS)
 	@${ECHO_MSG} "Define WITH_OPTIMIZED_CFLAGS to enable extra optimization options"
 .endif
@@ -80,13 +96,16 @@ pre-everything::
 .endif
 
 MAKEFILE=	${FILESDIR}/Makefile
+USE_REINPLACE=	yes
 USE_ZIP=	yes
-EXTRACT_BEFORE_ARGS+=	-qo
 WRKSRC=		${WRKDIR}/source
 
 post-extract:
 	@${FIND} -E ${WRKDIR} -type f -iregex ".*\.(c|h|s|txt)" -exec ${FILESDIR}/fix^m.sh '{}' \;
 	@${CP} ${FILESDIR}/*.c ${WRKSRC}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%%%BASEDIR%%%%|${DATADIR}|' ${WRKSRC}/common.c
 
 do-build:
 .if !defined(WITHOUT_X11)
@@ -105,11 +124,15 @@ do-install:
 .for tgt in ${END_TARGETS}
 	${INSTALL_PROGRAM} ${WRKSRC}/${tgt} ${PREFIX}/bin
 .endfor
-	@${MKDIR} ${DATADIR}/qw
-	@${MKDIR} ${DATADIR}/${PORTNAME}
+	@${MKDIR} ${DATADIR}/qw ${DATADIR}/${PORTNAME}
 	${INSTALL_DATA} ${WRKDIR}/qw/qwprogs.dat ${DATADIR}/qw
 	${INSTALL_DATA} ${WRKDIR}/qw/spprogs.dat ${DATADIR}/qw
-	${INSTALL_DATA} ${WRKDIR}/pak0.pak ${DATADIR}/${PORTNAME}
+	${INSTALL_DATA} ${DISTDIR}/pak0.pak ${DATADIR}/${PORTNAME}
+.if defined(WITH_SHAREWARE_DATA)
+	@${MKDIR} ${DATADIR}/id1
+	${INSTALL_DATA} ${DISTDIR}/q1-shareware-pak0.pak \
+		${DATADIR}/id1/pak0.pak
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 . for txt in benchmark config_manager crosshairs linux logitech mp3 \
@@ -120,6 +143,6 @@ do-install:
 .endif
 
 post-install:
-	@${SED} -e 's#$${PREFIX}#${PREFIX}#g' ${PKGMESSAGE}
+	@${SED} -e 's|$${PREFIX}|${PREFIX}|g' ${PKGMESSAGE}
 
 .include <bsd.port.mk>
