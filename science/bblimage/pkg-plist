@@ -6,6 +6,7 @@ bin/dumpbblanz
 bin/imstack
 bin/inleav2
 bin/lovar
+bin/qdv
 bin/rowcol
 bin/rpsamp
 bin/skmiv
