@@ -3,7 +3,7 @@
 # Date created:         29 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.17 1995/06/27 12:56:00 jmz Exp $
+# $Id: Makefile,v 1.18 1995/09/23 20:23:18 jmz Exp $
 #
 VERSION=	95.06
 DISTNAME=	latex
@@ -31,6 +31,9 @@ latex_tfm-${VERSION}.tar.gz:
 	@${FTPGET} ${CTAN} /tex-archive/fonts latex/tfm.tar.gz ${DISTDIR}/$@
 latex_tools-${VERSION}.tar.gz:
 	@${FTPGET} ${CTAN} /tex-archive/macros latex/packages/tools.tar.gz ${DISTDIR}/$@
+
+pre-fetch:
+	@chmod +x ${FTPGET}
 
 do-build:
 	@(cd ${WRKSRC}/base; yes | initex unpack.ins)
