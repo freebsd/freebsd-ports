@@ -1,2 +1,3 @@
 bin/tt++
-lib/tintin
+lib/tintin/.tt_help.txt.Z
+@dirrm lib/tintin
