@@ -1,0 +1,21 @@
+--- contrib.mak.orig	Tue Sep 15 04:03:52 1998
++++ contrib.mak	Tue Dec  1 15:37:58 1998
+@@ -435,6 +435,18 @@
+ cdj850.dev: $(cdeskjet8_) page.dev
+ 	$(SETPDEV) cdj850 $(cdeskjet8_)
+ 
++cdj670.dev: $(cdeskjet8_) page.dev
++	$(SETPDEV) cdj670 $(cdeskjet8_)
++
++cdj890.dev: $(cdeskjet8_) page.dev
++	$(SETPDEV) cdj890 $(cdeskjet8_)
++
++cdj1600.dev: $(cdeskjet8_) page.dev
++	$(SETPDEV) cdj1600 $(cdeskjet8_)
++
++$(GLOBJ)gdevcd8.$(OBJ): $(GLSRC)gdevcd8.c $(GLSRC)gdevcd8.h $(PDEVH)
++	$(GLCC) $(GLO_)gdevcd8.$(OBJ) $(C_) $(GLSRC)gdevcd8.c
++
+ ### ------------ The H-P PaintJet color printer device ----------------- ###
+ ### Note: this driver also supports the DEC LJ250 color printer, which   ###
+ ###       has a PaintJet-compatible mode, and the PaintJet XL.           ###
