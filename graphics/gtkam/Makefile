@@ -28,6 +28,10 @@ CONFIGURE_ARGS=	--without-gnome
 
 MAN1=		gtkam.1
 
+.if exists(${X11BASE}/lib/libgimp-1.3.so)
+WITH_GIMP=	yes
+.endif
+
 .if defined(WITH_GIMP)
 LIB_DEPENDS+=	gimp-1.3:${PORTSDIR}/graphics/gimp-devel
 PLIST_SUB+=	GIMP=""
