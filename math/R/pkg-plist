@@ -106,7 +106,6 @@ lib/R/bin/build
 lib/R/bin/check
 lib/R/bin/config
 lib/R/bin/f77
-lib/R/bin/libRlapack.so
 lib/R/bin/libtool
 lib/R/bin/pager
 lib/R/bin/texi2dvi
@@ -492,6 +491,7 @@ lib/R/library/MASS/help/lh
 lib/R/library/MASS/help/lm.gls
 lib/R/library/MASS/help/lm.ridge
 lib/R/library/MASS/help/loglm
+lib/R/library/MASS/help/loglm1
 lib/R/library/MASS/help/logtrans
 lib/R/library/MASS/help/mammals
 lib/R/library/MASS/help/mca
@@ -650,6 +650,7 @@ lib/R/library/MASS/html/lh.html
 lib/R/library/MASS/html/lm.gls.html
 lib/R/library/MASS/html/lm.ridge.html
 lib/R/library/MASS/html/loglm.html
+lib/R/library/MASS/html/loglm1.html
 lib/R/library/MASS/html/logtrans.html
 lib/R/library/MASS/html/mammals.html
 lib/R/library/MASS/html/mca.html
@@ -807,6 +808,7 @@ lib/R/library/MASS/latex/lh.tex
 lib/R/library/MASS/latex/lm.gls.tex
 lib/R/library/MASS/latex/lm.ridge.tex
 lib/R/library/MASS/latex/loglm.tex
+lib/R/library/MASS/latex/loglm1.tex
 lib/R/library/MASS/latex/logtrans.tex
 lib/R/library/MASS/latex/mammals.tex
 lib/R/library/MASS/latex/mca.tex
@@ -1157,6 +1159,7 @@ lib/R/library/base/R-ex/function.R
 lib/R/library/base/R-ex/gc.R
 lib/R/library/base/R-ex/gc.time.R
 lib/R/library/base/R-ex/get.R
+lib/R/library/base/R-ex/getAnywhere.R
 lib/R/library/base/R-ex/getFromNamespace.R
 lib/R/library/base/R-ex/getNativeSymbolInfo.R
 lib/R/library/base/R-ex/getS3method.R
@@ -1244,7 +1247,7 @@ lib/R/library/base/R-ex/match.fun.R
 lib/R/library/base/R-ex/matmult.R
 lib/R/library/base/R-ex/matplot.R
 lib/R/library/base/R-ex/matrix.R
-lib/R/library/base/R-ex/max.col.R
+lib/R/library/base/R-ex/maxCol.R
 lib/R/library/base/R-ex/mean.R
 lib/R/library/base/R-ex/median.R
 lib/R/library/base/R-ex/memory.profile.R
@@ -1380,6 +1383,7 @@ lib/R/library/base/R-ex/rowsum.R
 lib/R/library/base/R-ex/rug.R
 lib/R/library/base/R-ex/sample.R
 lib/R/library/base/R-ex/save.R
+lib/R/library/base/R-ex/savehistory.R
 lib/R/library/base/R-ex/scale.R
 lib/R/library/base/R-ex/scan.R
 lib/R/library/base/R-ex/screen.R
@@ -1841,6 +1845,7 @@ lib/R/library/base/help/gc
 lib/R/library/base/help/gc.time
 lib/R/library/base/help/gctorture
 lib/R/library/base/help/get
+lib/R/library/base/help/getAnywhere
 lib/R/library/base/help/getFromNamespace
 lib/R/library/base/help/getNativeSymbolInfo
 lib/R/library/base/help/getS3method
@@ -1944,7 +1949,7 @@ lib/R/library/base/help/match.fun
 lib/R/library/base/help/matmult
 lib/R/library/base/help/matplot
 lib/R/library/base/help/matrix
-lib/R/library/base/help/max.col
+lib/R/library/base/help/maxCol
 lib/R/library/base/help/mean
 lib/R/library/base/help/median
 lib/R/library/base/help/memory.profile
@@ -2522,6 +2527,7 @@ lib/R/library/base/html/gc.html
 lib/R/library/base/html/gc.time.html
 lib/R/library/base/html/gctorture.html
 lib/R/library/base/html/get.html
+lib/R/library/base/html/getAnywhere.html
 lib/R/library/base/html/getFromNamespace.html
 lib/R/library/base/html/getNativeSymbolInfo.html
 lib/R/library/base/html/getS3method.html
@@ -2625,7 +2631,7 @@ lib/R/library/base/html/match.html
 lib/R/library/base/html/matmult.html
 lib/R/library/base/html/matplot.html
 lib/R/library/base/html/matrix.html
-lib/R/library/base/html/max.col.html
+lib/R/library/base/html/maxCol.html
 lib/R/library/base/html/mean.html
 lib/R/library/base/html/median.html
 lib/R/library/base/html/memory.profile.html
@@ -3202,6 +3208,7 @@ lib/R/library/base/latex/gc.tex
 lib/R/library/base/latex/gc.time.tex
 lib/R/library/base/latex/gctorture.tex
 lib/R/library/base/latex/get.tex
+lib/R/library/base/latex/getAnywhere.tex
 lib/R/library/base/latex/getFromNamespace.tex
 lib/R/library/base/latex/getNativeSymbolInfo.tex
 lib/R/library/base/latex/getS3method.tex
@@ -3305,7 +3312,7 @@ lib/R/library/base/latex/match.tex
 lib/R/library/base/latex/matmult.tex
 lib/R/library/base/latex/matplot.tex
 lib/R/library/base/latex/matrix.tex
-lib/R/library/base/latex/max.col.tex
+lib/R/library/base/latex/maxCol.tex
 lib/R/library/base/latex/mean.tex
 lib/R/library/base/latex/median.tex
 lib/R/library/base/latex/memory.profile.tex
@@ -4040,6 +4047,7 @@ lib/R/library/cluster/R-ex/flower.R
 lib/R/library/cluster/R-ex/lower.to.upper.tri.inds.R
 lib/R/library/cluster/R-ex/mona.R
 lib/R/library/cluster/R-ex/pam.R
+lib/R/library/cluster/R-ex/pam.object.R
 lib/R/library/cluster/R-ex/plot.agnes.R
 lib/R/library/cluster/R-ex/plot.diana.R
 lib/R/library/cluster/R-ex/plot.partition.R
@@ -5267,6 +5275,7 @@ lib/R/library/nlme/DESCRIPTION
 lib/R/library/nlme/INDEX
 lib/R/library/nlme/Meta/Rd.rds
 lib/R/library/nlme/Meta/data.rds
+lib/R/library/nlme/NAMESPACE
 lib/R/library/nlme/R-ex/ACF.R
 lib/R/library/nlme/R-ex/ACF.gls.R
 lib/R/library/nlme/R-ex/ACF.lme.R
@@ -5354,14 +5363,10 @@ lib/R/library/nlme/R-ex/augPred.R
 lib/R/library/nlme/R-ex/balancedGrouped.R
 lib/R/library/nlme/R-ex/bdf.R
 lib/R/library/nlme/R-ex/coef.corStruct.R
-lib/R/library/nlme/R-ex/coef.gls.R
 lib/R/library/nlme/R-ex/coef.gnls.R
 lib/R/library/nlme/R-ex/coef.lmList.R
 lib/R/library/nlme/R-ex/coef.lme.R
 lib/R/library/nlme/R-ex/coef.modelStruct.R
-lib/R/library/nlme/R-ex/coef.pdCompSymm.R
-lib/R/library/nlme/R-ex/coef.pdDiag.R
-lib/R/library/nlme/R-ex/coef.pdIdent.R
 lib/R/library/nlme/R-ex/coef.pdMat.R
 lib/R/library/nlme/R-ex/coef.reStruct.R
 lib/R/library/nlme/R-ex/coef.varFunc.R
@@ -5390,26 +5395,13 @@ lib/R/library/nlme/R-ex/corSpher.R
 lib/R/library/nlme/R-ex/corSymm.R
 lib/R/library/nlme/R-ex/ergoStool.R
 lib/R/library/nlme/R-ex/fdHess.R
-lib/R/library/nlme/R-ex/fitted.gls.R
-lib/R/library/nlme/R-ex/fitted.gnls.R
 lib/R/library/nlme/R-ex/fitted.lmList.R
 lib/R/library/nlme/R-ex/fitted.lme.R
 lib/R/library/nlme/R-ex/fixed.effects.R
 lib/R/library/nlme/R-ex/fixef.lmList.R
-lib/R/library/nlme/R-ex/fixef.lme.R
-lib/R/library/nlme/R-ex/formula.corStruct.R
-lib/R/library/nlme/R-ex/formula.gls.R
-lib/R/library/nlme/R-ex/formula.gnls.R
-lib/R/library/nlme/R-ex/formula.groupedData.R
-lib/R/library/nlme/R-ex/formula.lmList.R
-lib/R/library/nlme/R-ex/formula.lme.R
-lib/R/library/nlme/R-ex/formula.modelStruct.R
-lib/R/library/nlme/R-ex/formula.nlme.R
-lib/R/library/nlme/R-ex/formula.nlsList.R
 lib/R/library/nlme/R-ex/formula.pdBlocked.R
 lib/R/library/nlme/R-ex/formula.pdMat.R
 lib/R/library/nlme/R-ex/formula.reStruct.R
-lib/R/library/nlme/R-ex/formula.varFunc.R
 lib/R/library/nlme/R-ex/gapply.R
 lib/R/library/nlme/R-ex/getCovariate.R
 lib/R/library/nlme/R-ex/getCovariate.corStruct.R
@@ -5429,10 +5421,6 @@ lib/R/library/nlme/R-ex/getGroups.lme.R
 lib/R/library/nlme/R-ex/getGroups.varFunc.R
 lib/R/library/nlme/R-ex/getGroupsFormula.R
 lib/R/library/nlme/R-ex/getResponse.R
-lib/R/library/nlme/R-ex/getResponse.data.frame.R
-lib/R/library/nlme/R-ex/getResponse.gls.R
-lib/R/library/nlme/R-ex/getResponse.lmList.R
-lib/R/library/nlme/R-ex/getResponse.lme.R
 lib/R/library/nlme/R-ex/getResponseFormula.R
 lib/R/library/nlme/R-ex/getVarCov.R
 lib/R/library/nlme/R-ex/gls.R
@@ -5449,7 +5437,6 @@ lib/R/library/nlme/R-ex/intervals.lmList.R
 lib/R/library/nlme/R-ex/intervals.lme.R
 lib/R/library/nlme/R-ex/isBalanced.R
 lib/R/library/nlme/R-ex/isInitialized.R
-lib/R/library/nlme/R-ex/isInitialized.reStruct.R
 lib/R/library/nlme/R-ex/lmList.R
 lib/R/library/nlme/R-ex/lmList.groupedData.R
 lib/R/library/nlme/R-ex/lme.R
@@ -5462,7 +5449,6 @@ lib/R/library/nlme/R-ex/logDet.corStruct.R
 lib/R/library/nlme/R-ex/logDet.pdMat.R
 lib/R/library/nlme/R-ex/logDet.reStruct.R
 lib/R/library/nlme/R-ex/logLik.corStruct.R
-lib/R/library/nlme/R-ex/logLik.gls.R
 lib/R/library/nlme/R-ex/logLik.gnls.R
 lib/R/library/nlme/R-ex/logLik.lmList.R
 lib/R/library/nlme/R-ex/logLik.lme.R
@@ -5513,24 +5499,8 @@ lib/R/library/nlme/R-ex/predict.gnls.R
 lib/R/library/nlme/R-ex/predict.lmList.R
 lib/R/library/nlme/R-ex/predict.lme.R
 lib/R/library/nlme/R-ex/predict.nlme.R
-lib/R/library/nlme/R-ex/print.anova.lme.R
-lib/R/library/nlme/R-ex/print.corStruct.R
-lib/R/library/nlme/R-ex/print.gls.R
-lib/R/library/nlme/R-ex/print.groupedData.R
-lib/R/library/nlme/R-ex/print.lmList.R
-lib/R/library/nlme/R-ex/print.lme.R
-lib/R/library/nlme/R-ex/print.modelStruct.R
-lib/R/library/nlme/R-ex/print.pdMat.R
-lib/R/library/nlme/R-ex/print.reStruct.R
-lib/R/library/nlme/R-ex/print.summary.corStruct.R
-lib/R/library/nlme/R-ex/print.summary.gls.R
-lib/R/library/nlme/R-ex/print.summary.lmList.R
-lib/R/library/nlme/R-ex/print.summary.lme.R
-lib/R/library/nlme/R-ex/print.summary.modelStruct.R
 lib/R/library/nlme/R-ex/print.summary.pdMat.R
-lib/R/library/nlme/R-ex/print.summary.varFunc.R
 lib/R/library/nlme/R-ex/print.varFunc.R
-lib/R/library/nlme/R-ex/pruneLevels.R
 lib/R/library/nlme/R-ex/qqnorm.gls.R
 lib/R/library/nlme/R-ex/qqnorm.lme.R
 lib/R/library/nlme/R-ex/quinModel.R
@@ -5638,10 +5608,6 @@ lib/R/library/nlme/help/Initialize.lmeStruct
 lib/R/library/nlme/help/Initialize.reStruct
 lib/R/library/nlme/help/Initialize.varFunc
 lib/R/library/nlme/help/LDEsysMat
-lib/R/library/nlme/help/MEEM
-lib/R/library/nlme/help/MEdecomp
-lib/R/library/nlme/help/MEdims
-lib/R/library/nlme/help/MEestimate
 lib/R/library/nlme/help/Machines
 lib/R/library/nlme/help/MathAchSchool
 lib/R/library/nlme/help/MathAchieve
@@ -5700,14 +5666,10 @@ lib/R/library/nlme/help/augPred
 lib/R/library/nlme/help/balancedGrouped
 lib/R/library/nlme/help/bdf
 lib/R/library/nlme/help/coef.corStruct
-lib/R/library/nlme/help/coef.gls
 lib/R/library/nlme/help/coef.gnls
 lib/R/library/nlme/help/coef.lmList
 lib/R/library/nlme/help/coef.lme
 lib/R/library/nlme/help/coef.modelStruct
-lib/R/library/nlme/help/coef.pdCompSymm
-lib/R/library/nlme/help/coef.pdDiag
-lib/R/library/nlme/help/coef.pdIdent
 lib/R/library/nlme/help/coef.pdMat
 lib/R/library/nlme/help/coef.reStruct
 lib/R/library/nlme/help/coef.varFunc
@@ -5737,9 +5699,7 @@ lib/R/library/nlme/help/corSpher
 lib/R/library/nlme/help/corSymm
 lib/R/library/nlme/help/ergoStool
 lib/R/library/nlme/help/fdHess
-lib/R/library/nlme/help/fitted.gls
 lib/R/library/nlme/help/fitted.glsStruct
-lib/R/library/nlme/help/fitted.gnls
 lib/R/library/nlme/help/fitted.gnlsStruct
 lib/R/library/nlme/help/fitted.lmList
 lib/R/library/nlme/help/fitted.lme
@@ -5747,20 +5707,9 @@ lib/R/library/nlme/help/fitted.lmeStruct
 lib/R/library/nlme/help/fitted.nlmeStruct
 lib/R/library/nlme/help/fixed.effects
 lib/R/library/nlme/help/fixef.lmList
-lib/R/library/nlme/help/fixef.lme
-lib/R/library/nlme/help/formula.corStruct
-lib/R/library/nlme/help/formula.gls
-lib/R/library/nlme/help/formula.gnls
-lib/R/library/nlme/help/formula.groupedData
-lib/R/library/nlme/help/formula.lmList
-lib/R/library/nlme/help/formula.lme
-lib/R/library/nlme/help/formula.modelStruct
-lib/R/library/nlme/help/formula.nlme
-lib/R/library/nlme/help/formula.nlsList
 lib/R/library/nlme/help/formula.pdBlocked
 lib/R/library/nlme/help/formula.pdMat
 lib/R/library/nlme/help/formula.reStruct
-lib/R/library/nlme/help/formula.varFunc
 lib/R/library/nlme/help/gapply
 lib/R/library/nlme/help/getCovariate
 lib/R/library/nlme/help/getCovariate.corStruct
@@ -5780,10 +5729,6 @@ lib/R/library/nlme/help/getGroups.lme
 lib/R/library/nlme/help/getGroups.varFunc
 lib/R/library/nlme/help/getGroupsFormula
 lib/R/library/nlme/help/getResponse
-lib/R/library/nlme/help/getResponse.data.frame
-lib/R/library/nlme/help/getResponse.gls
-lib/R/library/nlme/help/getResponse.lmList
-lib/R/library/nlme/help/getResponse.lme
 lib/R/library/nlme/help/getResponseFormula
 lib/R/library/nlme/help/getVarCov
 lib/R/library/nlme/help/gls
@@ -5802,7 +5747,6 @@ lib/R/library/nlme/help/intervals.lmList
 lib/R/library/nlme/help/intervals.lme
 lib/R/library/nlme/help/isBalanced
 lib/R/library/nlme/help/isInitialized
-lib/R/library/nlme/help/isInitialized.reStruct
 lib/R/library/nlme/help/lmList
 lib/R/library/nlme/help/lmList.groupedData
 lib/R/library/nlme/help/lme
@@ -5817,7 +5761,6 @@ lib/R/library/nlme/help/logDet.corStruct
 lib/R/library/nlme/help/logDet.pdMat
 lib/R/library/nlme/help/logDet.reStruct
 lib/R/library/nlme/help/logLik.corStruct
-lib/R/library/nlme/help/logLik.gls
 lib/R/library/nlme/help/logLik.glsStruct
 lib/R/library/nlme/help/logLik.gnls
 lib/R/library/nlme/help/logLik.gnlsStruct
@@ -5830,7 +5773,6 @@ lib/R/library/nlme/help/model.matrix.reStruct
 lib/R/library/nlme/help/needUpdate
 lib/R/library/nlme/help/needUpdate.modelStruct
 lib/R/library/nlme/help/nlme
-lib/R/library/nlme/help/nlme-internal
 lib/R/library/nlme/help/nlme.nlsList
 lib/R/library/nlme/help/nlmeControl
 lib/R/library/nlme/help/nlmeObject
@@ -5875,24 +5817,8 @@ lib/R/library/nlme/help/predict.gnls
 lib/R/library/nlme/help/predict.lmList
 lib/R/library/nlme/help/predict.lme
 lib/R/library/nlme/help/predict.nlme
-lib/R/library/nlme/help/print.anova.lme
-lib/R/library/nlme/help/print.corStruct
-lib/R/library/nlme/help/print.gls
-lib/R/library/nlme/help/print.groupedData
-lib/R/library/nlme/help/print.lmList
-lib/R/library/nlme/help/print.lme
-lib/R/library/nlme/help/print.modelStruct
-lib/R/library/nlme/help/print.pdMat
-lib/R/library/nlme/help/print.reStruct
-lib/R/library/nlme/help/print.summary.corStruct
-lib/R/library/nlme/help/print.summary.gls
-lib/R/library/nlme/help/print.summary.lmList
-lib/R/library/nlme/help/print.summary.lme
-lib/R/library/nlme/help/print.summary.modelStruct
 lib/R/library/nlme/help/print.summary.pdMat
-lib/R/library/nlme/help/print.summary.varFunc
 lib/R/library/nlme/help/print.varFunc
-lib/R/library/nlme/help/pruneLevels
 lib/R/library/nlme/help/qqnorm.gls
 lib/R/library/nlme/help/qqnorm.lme
 lib/R/library/nlme/help/quinModel
@@ -5970,10 +5896,6 @@ lib/R/library/nlme/html/Initialize.lmeStruct.html
 lib/R/library/nlme/html/Initialize.reStruct.html
 lib/R/library/nlme/html/Initialize.varFunc.html
 lib/R/library/nlme/html/LDEsysMat.html
-lib/R/library/nlme/html/MEEM.html
-lib/R/library/nlme/html/MEdecomp.html
-lib/R/library/nlme/html/MEdims.html
-lib/R/library/nlme/html/MEestimate.html
 lib/R/library/nlme/html/Machines.html
 lib/R/library/nlme/html/MathAchSchool.html
 lib/R/library/nlme/html/MathAchieve.html
@@ -6032,14 +5954,10 @@ lib/R/library/nlme/html/augPred.html
 lib/R/library/nlme/html/balancedGrouped.html
 lib/R/library/nlme/html/bdf.html
 lib/R/library/nlme/html/coef.corStruct.html
-lib/R/library/nlme/html/coef.gls.html
 lib/R/library/nlme/html/coef.gnls.html
 lib/R/library/nlme/html/coef.lmList.html
 lib/R/library/nlme/html/coef.lme.html
 lib/R/library/nlme/html/coef.modelStruct.html
-lib/R/library/nlme/html/coef.pdCompSymm.html
-lib/R/library/nlme/html/coef.pdDiag.html
-lib/R/library/nlme/html/coef.pdIdent.html
 lib/R/library/nlme/html/coef.pdMat.html
 lib/R/library/nlme/html/coef.reStruct.html
 lib/R/library/nlme/html/coef.varFunc.html
@@ -6069,9 +5987,7 @@ lib/R/library/nlme/html/corSpher.html
 lib/R/library/nlme/html/corSymm.html
 lib/R/library/nlme/html/ergoStool.html
 lib/R/library/nlme/html/fdHess.html
-lib/R/library/nlme/html/fitted.gls.html
 lib/R/library/nlme/html/fitted.glsStruct.html
-lib/R/library/nlme/html/fitted.gnls.html
 lib/R/library/nlme/html/fitted.gnlsStruct.html
 lib/R/library/nlme/html/fitted.lmList.html
 lib/R/library/nlme/html/fitted.lme.html
@@ -6079,20 +5995,9 @@ lib/R/library/nlme/html/fitted.lmeStruct.html
 lib/R/library/nlme/html/fitted.nlmeStruct.html
 lib/R/library/nlme/html/fixed.effects.html
 lib/R/library/nlme/html/fixef.lmList.html
-lib/R/library/nlme/html/fixef.lme.html
-lib/R/library/nlme/html/formula.corStruct.html
-lib/R/library/nlme/html/formula.gls.html
-lib/R/library/nlme/html/formula.gnls.html
-lib/R/library/nlme/html/formula.groupedData.html
-lib/R/library/nlme/html/formula.lmList.html
-lib/R/library/nlme/html/formula.lme.html
-lib/R/library/nlme/html/formula.modelStruct.html
-lib/R/library/nlme/html/formula.nlme.html
-lib/R/library/nlme/html/formula.nlsList.html
 lib/R/library/nlme/html/formula.pdBlocked.html
 lib/R/library/nlme/html/formula.pdMat.html
 lib/R/library/nlme/html/formula.reStruct.html
-lib/R/library/nlme/html/formula.varFunc.html
 lib/R/library/nlme/html/gapply.html
 lib/R/library/nlme/html/getCovariate.corStruct.html
 lib/R/library/nlme/html/getCovariate.data.frame.html
@@ -6111,11 +6016,7 @@ lib/R/library/nlme/html/getGroups.lmList.html
 lib/R/library/nlme/html/getGroups.lme.html
 lib/R/library/nlme/html/getGroups.varFunc.html
 lib/R/library/nlme/html/getGroupsFormula.html
-lib/R/library/nlme/html/getResponse.data.frame.html
-lib/R/library/nlme/html/getResponse.gls.html
 lib/R/library/nlme/html/getResponse.html
-lib/R/library/nlme/html/getResponse.lmList.html
-lib/R/library/nlme/html/getResponse.lme.html
 lib/R/library/nlme/html/getResponseFormula.html
 lib/R/library/nlme/html/getVarCov.html
 lib/R/library/nlme/html/gls.html
@@ -6134,7 +6035,6 @@ lib/R/library/nlme/html/intervals.lmList.html
 lib/R/library/nlme/html/intervals.lme.html
 lib/R/library/nlme/html/isBalanced.html
 lib/R/library/nlme/html/isInitialized.html
-lib/R/library/nlme/html/isInitialized.reStruct.html
 lib/R/library/nlme/html/lmList.groupedData.html
 lib/R/library/nlme/html/lmList.html
 lib/R/library/nlme/html/lme.groupedData.html
@@ -6149,7 +6049,6 @@ lib/R/library/nlme/html/logDet.html
 lib/R/library/nlme/html/logDet.pdMat.html
 lib/R/library/nlme/html/logDet.reStruct.html
 lib/R/library/nlme/html/logLik.corStruct.html
-lib/R/library/nlme/html/logLik.gls.html
 lib/R/library/nlme/html/logLik.glsStruct.html
 lib/R/library/nlme/html/logLik.gnls.html
 lib/R/library/nlme/html/logLik.gnlsStruct.html
@@ -6161,7 +6060,6 @@ lib/R/library/nlme/html/logLik.varFunc.html
 lib/R/library/nlme/html/model.matrix.reStruct.html
 lib/R/library/nlme/html/needUpdate.html
 lib/R/library/nlme/html/needUpdate.modelStruct.html
-lib/R/library/nlme/html/nlme-internal.html
 lib/R/library/nlme/html/nlme.html
 lib/R/library/nlme/html/nlme.nlsList.html
 lib/R/library/nlme/html/nlmeControl.html
@@ -6207,24 +6105,8 @@ lib/R/library/nlme/html/predict.gnls.html
 lib/R/library/nlme/html/predict.lmList.html
 lib/R/library/nlme/html/predict.lme.html
 lib/R/library/nlme/html/predict.nlme.html
-lib/R/library/nlme/html/print.anova.lme.html
-lib/R/library/nlme/html/print.corStruct.html
-lib/R/library/nlme/html/print.gls.html
-lib/R/library/nlme/html/print.groupedData.html
-lib/R/library/nlme/html/print.lmList.html
-lib/R/library/nlme/html/print.lme.html
-lib/R/library/nlme/html/print.modelStruct.html
-lib/R/library/nlme/html/print.pdMat.html
-lib/R/library/nlme/html/print.reStruct.html
-lib/R/library/nlme/html/print.summary.corStruct.html
-lib/R/library/nlme/html/print.summary.gls.html
-lib/R/library/nlme/html/print.summary.lmList.html
-lib/R/library/nlme/html/print.summary.lme.html
-lib/R/library/nlme/html/print.summary.modelStruct.html
 lib/R/library/nlme/html/print.summary.pdMat.html
-lib/R/library/nlme/html/print.summary.varFunc.html
 lib/R/library/nlme/html/print.varFunc.html
-lib/R/library/nlme/html/pruneLevels.html
 lib/R/library/nlme/html/qqnorm.gls.html
 lib/R/library/nlme/html/qqnorm.lme.html
 lib/R/library/nlme/html/quinModel.html
@@ -6301,10 +6183,6 @@ lib/R/library/nlme/latex/Initialize.reStruct.tex
 lib/R/library/nlme/latex/Initialize.tex
 lib/R/library/nlme/latex/Initialize.varFunc.tex
 lib/R/library/nlme/latex/LDEsysMat.tex
-lib/R/library/nlme/latex/MEEM.tex
-lib/R/library/nlme/latex/MEdecomp.tex
-lib/R/library/nlme/latex/MEdims.tex
-lib/R/library/nlme/latex/MEestimate.tex
 lib/R/library/nlme/latex/Machines.tex
 lib/R/library/nlme/latex/MathAchSchool.tex
 lib/R/library/nlme/latex/MathAchieve.tex
@@ -6363,14 +6241,10 @@ lib/R/library/nlme/latex/augPred.tex
 lib/R/library/nlme/latex/balancedGrouped.tex
 lib/R/library/nlme/latex/bdf.tex
 lib/R/library/nlme/latex/coef.corStruct.tex
-lib/R/library/nlme/latex/coef.gls.tex
 lib/R/library/nlme/latex/coef.gnls.tex
 lib/R/library/nlme/latex/coef.lmList.tex
 lib/R/library/nlme/latex/coef.lme.tex
 lib/R/library/nlme/latex/coef.modelStruct.tex
-lib/R/library/nlme/latex/coef.pdCompSymm.tex
-lib/R/library/nlme/latex/coef.pdDiag.tex
-lib/R/library/nlme/latex/coef.pdIdent.tex
 lib/R/library/nlme/latex/coef.pdMat.tex
 lib/R/library/nlme/latex/coef.reStruct.tex
 lib/R/library/nlme/latex/coef.varFunc.tex
@@ -6400,9 +6274,7 @@ lib/R/library/nlme/latex/corSpher.tex
 lib/R/library/nlme/latex/corSymm.tex
 lib/R/library/nlme/latex/ergoStool.tex
 lib/R/library/nlme/latex/fdHess.tex
-lib/R/library/nlme/latex/fitted.gls.tex
 lib/R/library/nlme/latex/fitted.glsStruct.tex
-lib/R/library/nlme/latex/fitted.gnls.tex
 lib/R/library/nlme/latex/fitted.gnlsStruct.tex
 lib/R/library/nlme/latex/fitted.lmList.tex
 lib/R/library/nlme/latex/fitted.lme.tex
@@ -6410,20 +6282,9 @@ lib/R/library/nlme/latex/fitted.lmeStruct.tex
 lib/R/library/nlme/latex/fitted.nlmeStruct.tex
 lib/R/library/nlme/latex/fixed.effects.tex
 lib/R/library/nlme/latex/fixef.lmList.tex
-lib/R/library/nlme/latex/fixef.lme.tex
-lib/R/library/nlme/latex/formula.corStruct.tex
-lib/R/library/nlme/latex/formula.gls.tex
-lib/R/library/nlme/latex/formula.gnls.tex
-lib/R/library/nlme/latex/formula.groupedData.tex
-lib/R/library/nlme/latex/formula.lmList.tex
-lib/R/library/nlme/latex/formula.lme.tex
-lib/R/library/nlme/latex/formula.modelStruct.tex
-lib/R/library/nlme/latex/formula.nlme.tex
-lib/R/library/nlme/latex/formula.nlsList.tex
 lib/R/library/nlme/latex/formula.pdBlocked.tex
 lib/R/library/nlme/latex/formula.pdMat.tex
 lib/R/library/nlme/latex/formula.reStruct.tex
-lib/R/library/nlme/latex/formula.varFunc.tex
 lib/R/library/nlme/latex/gapply.tex
 lib/R/library/nlme/latex/getCovariate.corStruct.tex
 lib/R/library/nlme/latex/getCovariate.data.frame.tex
@@ -6442,10 +6303,6 @@ lib/R/library/nlme/latex/getGroups.lme.tex
 lib/R/library/nlme/latex/getGroups.tex
 lib/R/library/nlme/latex/getGroups.varFunc.tex
 lib/R/library/nlme/latex/getGroupsFormula.tex
-lib/R/library/nlme/latex/getResponse.data.frame.tex
-lib/R/library/nlme/latex/getResponse.gls.tex
-lib/R/library/nlme/latex/getResponse.lmList.tex
-lib/R/library/nlme/latex/getResponse.lme.tex
 lib/R/library/nlme/latex/getResponse.tex
 lib/R/library/nlme/latex/getResponseFormula.tex
 lib/R/library/nlme/latex/getVarCov.tex
@@ -6464,7 +6321,6 @@ lib/R/library/nlme/latex/intervals.lmList.tex
 lib/R/library/nlme/latex/intervals.lme.tex
 lib/R/library/nlme/latex/intervals.tex
 lib/R/library/nlme/latex/isBalanced.tex
-lib/R/library/nlme/latex/isInitialized.reStruct.tex
 lib/R/library/nlme/latex/isInitialized.tex
 lib/R/library/nlme/latex/lmList.groupedData.tex
 lib/R/library/nlme/latex/lmList.tex
@@ -6480,7 +6336,6 @@ lib/R/library/nlme/latex/logDet.pdMat.tex
 lib/R/library/nlme/latex/logDet.reStruct.tex
 lib/R/library/nlme/latex/logDet.tex
 lib/R/library/nlme/latex/logLik.corStruct.tex
-lib/R/library/nlme/latex/logLik.gls.tex
 lib/R/library/nlme/latex/logLik.glsStruct.tex
 lib/R/library/nlme/latex/logLik.gnls.tex
 lib/R/library/nlme/latex/logLik.gnlsStruct.tex
@@ -6492,7 +6347,6 @@ lib/R/library/nlme/latex/logLik.varFunc.tex
 lib/R/library/nlme/latex/model.matrix.reStruct.tex
 lib/R/library/nlme/latex/needUpdate.modelStruct.tex
 lib/R/library/nlme/latex/needUpdate.tex
-lib/R/library/nlme/latex/nlme-internal.tex
 lib/R/library/nlme/latex/nlme.nlsList.tex
 lib/R/library/nlme/latex/nlme.tex
 lib/R/library/nlme/latex/nlmeControl.tex
@@ -6538,24 +6392,8 @@ lib/R/library/nlme/latex/predict.gnls.tex
 lib/R/library/nlme/latex/predict.lmList.tex
 lib/R/library/nlme/latex/predict.lme.tex
 lib/R/library/nlme/latex/predict.nlme.tex
-lib/R/library/nlme/latex/print.anova.lme.tex
-lib/R/library/nlme/latex/print.corStruct.tex
-lib/R/library/nlme/latex/print.gls.tex
-lib/R/library/nlme/latex/print.groupedData.tex
-lib/R/library/nlme/latex/print.lmList.tex
-lib/R/library/nlme/latex/print.lme.tex
-lib/R/library/nlme/latex/print.modelStruct.tex
-lib/R/library/nlme/latex/print.pdMat.tex
-lib/R/library/nlme/latex/print.reStruct.tex
-lib/R/library/nlme/latex/print.summary.corStruct.tex
-lib/R/library/nlme/latex/print.summary.gls.tex
-lib/R/library/nlme/latex/print.summary.lmList.tex
-lib/R/library/nlme/latex/print.summary.lme.tex
-lib/R/library/nlme/latex/print.summary.modelStruct.tex
 lib/R/library/nlme/latex/print.summary.pdMat.tex
-lib/R/library/nlme/latex/print.summary.varFunc.tex
 lib/R/library/nlme/latex/print.varFunc.tex
-lib/R/library/nlme/latex/pruneLevels.tex
 lib/R/library/nlme/latex/qqnorm.gls.tex
 lib/R/library/nlme/latex/qqnorm.lme.tex
 lib/R/library/nlme/latex/quinModel.tex
@@ -6612,6 +6450,7 @@ lib/R/library/nlme/scripts/ch04.R
 lib/R/library/nlme/scripts/ch05.R
 lib/R/library/nlme/scripts/ch06.R
 lib/R/library/nlme/scripts/ch08.R
+lib/R/library/nlme/scripts/sims.rda
 lib/R/library/nls/CONTENTS
 lib/R/library/nls/DESCRIPTION
 lib/R/library/nls/INDEX
@@ -7194,6 +7033,7 @@ lib/R/library/survival/R-ex/residuals.survreg.R
 lib/R/library/survival/R-ex/ridge.R
 lib/R/library/survival/R-ex/strata.R
 lib/R/library/survival/R-ex/summary.survfit.R
+lib/R/library/survival/R-ex/survSplit.R
 lib/R/library/survival/R-ex/survdiff.R
 lib/R/library/survival/R-ex/survexp.R
 lib/R/library/survival/R-ex/survfit.R
@@ -7205,7 +7045,6 @@ lib/R/library/survival/R-ex/survreg.old.R
 lib/R/library/survival/R-ex/tcut.R
 lib/R/library/survival/R-ex/untangle.specials.R
 lib/R/library/survival/R/survival
-lib/R/library/survival/data/00Index
 lib/R/library/survival/data/aml.rda
 lib/R/library/survival/data/bladder.rda
 lib/R/library/survival/data/cancer.rda
@@ -7263,6 +7102,7 @@ lib/R/library/survival/help/ridge
 lib/R/library/survival/help/stanford2
 lib/R/library/survival/help/strata
 lib/R/library/survival/help/summary.survfit
+lib/R/library/survival/help/survSplit
 lib/R/library/survival/help/survdiff
 lib/R/library/survival/help/survexp
 lib/R/library/survival/help/survexp.fit
@@ -7322,6 +7162,7 @@ lib/R/library/survival/html/ridge.html
 lib/R/library/survival/html/stanford2.html
 lib/R/library/survival/html/strata.html
 lib/R/library/survival/html/summary.survfit.html
+lib/R/library/survival/html/survSplit.html
 lib/R/library/survival/html/survdiff.html
 lib/R/library/survival/html/survexp.fit.html
 lib/R/library/survival/html/survexp.html
@@ -7380,6 +7221,7 @@ lib/R/library/survival/latex/ridge.tex
 lib/R/library/survival/latex/stanford2.tex
 lib/R/library/survival/latex/strata.tex
 lib/R/library/survival/latex/summary.survfit.tex
+lib/R/library/survival/latex/survSplit.tex
 lib/R/library/survival/latex/survdiff.tex
 lib/R/library/survival/latex/survexp.fit.tex
 lib/R/library/survival/latex/survexp.tex
@@ -7800,287 +7642,287 @@ lib/R/share/texmf/hyperref.cfg
 lib/R/share/texmf/omsaer.fd
 lib/R/share/texmf/omsaett.fd
 lib/R/share/texmf/omscmtt.fd
-@dirrm lib/R/afm
-@dirrm lib/R/bin
-@dirrm lib/R/doc/html/search
-@dirrm lib/R/doc/html
-@dirrm lib/R/doc/manual
-@dirrm lib/R/doc
-@dirrm lib/R/etc
+@dirrm lib/R/share/texmf
+@dirrm lib/R/share/sh
+@dirrm lib/R/share/perl/Text
+@dirrm lib/R/share/perl/R
+@dirrm lib/R/share/perl
+@dirrm lib/R/share/make
+@dirrm lib/R/share/R
+@dirrm lib/R/share
+@dirrm lib/R/modules
+@dirrm lib/R/library/ts/man
+@dirrm lib/R/library/ts/libs
+@dirrm lib/R/library/ts/latex
+@dirrm lib/R/library/ts/html
+@dirrm lib/R/library/ts/help
+@dirrm lib/R/library/ts/data
+@dirrm lib/R/library/ts/R-ex
+@dirrm lib/R/library/ts/R
+@dirrm lib/R/library/ts/Meta
+@dirrm lib/R/library/ts
+@dirrm lib/R/library/tools/man
+@dirrm lib/R/library/tools/libs
+@dirrm lib/R/library/tools/latex
+@dirrm lib/R/library/tools/html
+@dirrm lib/R/library/tools/help
+@dirrm lib/R/library/tools/Sweave
+@dirrm lib/R/library/tools/R-ex
+@dirrm lib/R/library/tools/R
+@dirrm lib/R/library/tools/Meta
+@dirrm lib/R/library/tools
+@dirrm lib/R/library/tcltk/man
+@dirrm lib/R/library/tcltk/libs
+@dirrm lib/R/library/tcltk/latex
+@dirrm lib/R/library/tcltk/html
+@dirrm lib/R/library/tcltk/help
+@dirrm lib/R/library/tcltk/exec
+@dirrm lib/R/library/tcltk/demo
+@dirrm lib/R/library/tcltk/R-ex
+@dirrm lib/R/library/tcltk/R
+@dirrm lib/R/library/tcltk/Meta
+@dirrm lib/R/library/tcltk
+@dirrm lib/R/library/survival/man
+@dirrm lib/R/library/survival/libs
+@dirrm lib/R/library/survival/latex
+@dirrm lib/R/library/survival/html
+@dirrm lib/R/library/survival/help
+@dirrm lib/R/library/survival/data
+@dirrm lib/R/library/survival/R-ex
+@dirrm lib/R/library/survival/R
+@dirrm lib/R/library/survival/Meta
+@dirrm lib/R/library/survival
+@dirrm lib/R/library/stepfun/man
+@dirrm lib/R/library/stepfun/latex
+@dirrm lib/R/library/stepfun/html
+@dirrm lib/R/library/stepfun/help
+@dirrm lib/R/library/stepfun/R-ex
+@dirrm lib/R/library/stepfun/R
+@dirrm lib/R/library/stepfun/Meta
+@dirrm lib/R/library/stepfun
+@dirrm lib/R/library/splines/man
+@dirrm lib/R/library/splines/libs
+@dirrm lib/R/library/splines/latex
+@dirrm lib/R/library/splines/html
+@dirrm lib/R/library/splines/help
+@dirrm lib/R/library/splines/R-ex
+@dirrm lib/R/library/splines/R
+@dirrm lib/R/library/splines/Meta
+@dirrm lib/R/library/splines
+@dirrm lib/R/library/spatial/ppdata
+@dirrm lib/R/library/spatial/man
+@dirrm lib/R/library/spatial/libs
+@dirrm lib/R/library/spatial/latex
+@dirrm lib/R/library/spatial/html
+@dirrm lib/R/library/spatial/help
+@dirrm lib/R/library/spatial/R-ex
+@dirrm lib/R/library/spatial/R
+@dirrm lib/R/library/spatial/Meta
+@dirrm lib/R/library/spatial
+@dirrm lib/R/library/rpart/man
+@dirrm lib/R/library/rpart/libs
+@dirrm lib/R/library/rpart/latex
+@dirrm lib/R/library/rpart/html
+@dirrm lib/R/library/rpart/help
+@dirrm lib/R/library/rpart/data
+@dirrm lib/R/library/rpart/R-ex
+@dirrm lib/R/library/rpart/R
+@dirrm lib/R/library/rpart/Meta
+@dirrm lib/R/library/rpart
+@dirrm lib/R/library/nnet/man
+@dirrm lib/R/library/nnet/libs
+@dirrm lib/R/library/nnet/latex
+@dirrm lib/R/library/nnet/html
+@dirrm lib/R/library/nnet/help
+@dirrm lib/R/library/nnet/R-ex
+@dirrm lib/R/library/nnet/R
+@dirrm lib/R/library/nnet/Meta
+@dirrm lib/R/library/nnet
+@dirrm lib/R/library/nls/man
+@dirrm lib/R/library/nls/libs
+@dirrm lib/R/library/nls/latex
+@dirrm lib/R/library/nls/html
+@dirrm lib/R/library/nls/help
+@dirrm lib/R/library/nls/data
+@dirrm lib/R/library/nls/R-ex
+@dirrm lib/R/library/nls/R
+@dirrm lib/R/library/nls/Meta
+@dirrm lib/R/library/nls
+@dirrm lib/R/library/nlme/scripts
+@dirrm lib/R/library/nlme/mlbook
+@dirrm lib/R/library/nlme/man
+@dirrm lib/R/library/nlme/libs
+@dirrm lib/R/library/nlme/latex
+@dirrm lib/R/library/nlme/html
+@dirrm lib/R/library/nlme/help
+@dirrm lib/R/library/nlme/data
+@dirrm lib/R/library/nlme/R-ex
+@dirrm lib/R/library/nlme/R
+@dirrm lib/R/library/nlme/Meta
+@dirrm lib/R/library/nlme
+@dirrm lib/R/library/mva/man
+@dirrm lib/R/library/mva/libs
+@dirrm lib/R/library/mva/latex
+@dirrm lib/R/library/mva/html
+@dirrm lib/R/library/mva/help
+@dirrm lib/R/library/mva/data
+@dirrm lib/R/library/mva/R-ex
+@dirrm lib/R/library/mva/R
+@dirrm lib/R/library/mva/Meta
+@dirrm lib/R/library/mva
+@dirrm lib/R/library/modreg/man
+@dirrm lib/R/library/modreg/libs
+@dirrm lib/R/library/modreg/latex
+@dirrm lib/R/library/modreg/html
+@dirrm lib/R/library/modreg/help
+@dirrm lib/R/library/modreg/data
+@dirrm lib/R/library/modreg/R-ex
+@dirrm lib/R/library/modreg/R
+@dirrm lib/R/library/modreg/Meta
+@dirrm lib/R/library/modreg
+@dirrm lib/R/library/mgcv/man
+@dirrm lib/R/library/mgcv/libs
+@dirrm lib/R/library/mgcv/latex
+@dirrm lib/R/library/mgcv/html
+@dirrm lib/R/library/mgcv/help
+@dirrm lib/R/library/mgcv/R-ex
+@dirrm lib/R/library/mgcv/R
+@dirrm lib/R/library/mgcv/Meta
+@dirrm lib/R/library/mgcv
+@dirrm lib/R/library/methods/man
+@dirrm lib/R/library/methods/libs
+@dirrm lib/R/library/methods/latex
+@dirrm lib/R/library/methods/html
+@dirrm lib/R/library/methods/help
+@dirrm lib/R/library/methods/R-ex
+@dirrm lib/R/library/methods/R
+@dirrm lib/R/library/methods/Meta
+@dirrm lib/R/library/methods
+@dirrm lib/R/library/lqs/man
+@dirrm lib/R/library/lqs/libs
+@dirrm lib/R/library/lqs/latex
+@dirrm lib/R/library/lqs/html
+@dirrm lib/R/library/lqs/help
+@dirrm lib/R/library/lqs/R-ex
+@dirrm lib/R/library/lqs/R
+@dirrm lib/R/library/lqs/Meta
+@dirrm lib/R/library/lqs
+@dirrm lib/R/library/lattice/man
+@dirrm lib/R/library/lattice/libs
+@dirrm lib/R/library/lattice/latex
+@dirrm lib/R/library/lattice/html
+@dirrm lib/R/library/lattice/help
+@dirrm lib/R/library/lattice/demo
+@dirrm lib/R/library/lattice/data
+@dirrm lib/R/library/lattice/R-ex
+@dirrm lib/R/library/lattice/R
+@dirrm lib/R/library/lattice/Meta
+@dirrm lib/R/library/lattice
+@dirrm lib/R/library/grid/man
+@dirrm lib/R/library/grid/libs
+@dirrm lib/R/library/grid/latex
+@dirrm lib/R/library/grid/html
+@dirrm lib/R/library/grid/help
+@dirrm lib/R/library/grid/doc
+@dirrm lib/R/library/grid/R-ex
+@dirrm lib/R/library/grid/R
+@dirrm lib/R/library/grid/Meta
+@dirrm lib/R/library/grid
+@dirrm lib/R/library/foreign/man
+@dirrm lib/R/library/foreign/libs
+@dirrm lib/R/library/foreign/latex
+@dirrm lib/R/library/foreign/html
+@dirrm lib/R/library/foreign/help
+@dirrm lib/R/library/foreign/R-ex
+@dirrm lib/R/library/foreign/R
+@dirrm lib/R/library/foreign/Meta
+@dirrm lib/R/library/foreign
+@dirrm lib/R/library/eda/man
+@dirrm lib/R/library/eda/libs
+@dirrm lib/R/library/eda/latex
+@dirrm lib/R/library/eda/html
+@dirrm lib/R/library/eda/help
+@dirrm lib/R/library/eda/demo
+@dirrm lib/R/library/eda/R-ex
+@dirrm lib/R/library/eda/R
+@dirrm lib/R/library/eda/Meta
+@dirrm lib/R/library/eda
+@dirrm lib/R/library/ctest/man
+@dirrm lib/R/library/ctest/libs
+@dirrm lib/R/library/ctest/latex
+@dirrm lib/R/library/ctest/html
+@dirrm lib/R/library/ctest/help
+@dirrm lib/R/library/ctest/R-ex
+@dirrm lib/R/library/ctest/R
+@dirrm lib/R/library/ctest/Meta
+@dirrm lib/R/library/ctest
+@dirrm lib/R/library/cluster/man
+@dirrm lib/R/library/cluster/libs
+@dirrm lib/R/library/cluster/latex
+@dirrm lib/R/library/cluster/html
+@dirrm lib/R/library/cluster/help
+@dirrm lib/R/library/cluster/data
+@dirrm lib/R/library/cluster/R-ex
+@dirrm lib/R/library/cluster/R
+@dirrm lib/R/library/cluster/Meta
+@dirrm lib/R/library/cluster
+@dirrm lib/R/library/class/man
+@dirrm lib/R/library/class/libs
+@dirrm lib/R/library/class/latex
+@dirrm lib/R/library/class/html
+@dirrm lib/R/library/class/help
+@dirrm lib/R/library/class/R-ex
+@dirrm lib/R/library/class/R
+@dirrm lib/R/library/class/Meta
+@dirrm lib/R/library/class
+@dirrm lib/R/library/boot/man
+@dirrm lib/R/library/boot/latex
+@dirrm lib/R/library/boot/html
+@dirrm lib/R/library/boot/help
+@dirrm lib/R/library/boot/data
+@dirrm lib/R/library/boot/R-ex
+@dirrm lib/R/library/boot/R
+@dirrm lib/R/library/boot/Meta
+@dirrm lib/R/library/boot
+@dirrm lib/R/library/base/man
+@dirrm lib/R/library/base/latex
+@dirrm lib/R/library/base/html
+@dirrm lib/R/library/base/help
+@dirrm lib/R/library/base/demo
+@dirrm lib/R/library/base/data
+@dirrm lib/R/library/base/R-ex
+@dirrm lib/R/library/base/R
+@dirrm lib/R/library/base/Meta
+@dirrm lib/R/library/base
+@dirrm lib/R/library/MASS/scripts3
+@dirrm lib/R/library/MASS/scripts
+@dirrm lib/R/library/MASS/man
+@dirrm lib/R/library/MASS/libs
+@dirrm lib/R/library/MASS/latex
+@dirrm lib/R/library/MASS/html
+@dirrm lib/R/library/MASS/help
+@dirrm lib/R/library/MASS/data
+@dirrm lib/R/library/MASS/R-ex
+@dirrm lib/R/library/MASS/R
+@dirrm lib/R/library/MASS/Meta
+@dirrm lib/R/library/MASS
+@dirrm lib/R/library/KernSmooth/man
+@dirrm lib/R/library/KernSmooth/libs
+@dirrm lib/R/library/KernSmooth/latex
+@dirrm lib/R/library/KernSmooth/html
+@dirrm lib/R/library/KernSmooth/help
+@dirrm lib/R/library/KernSmooth/R-ex
+@dirrm lib/R/library/KernSmooth/R
+@dirrm lib/R/library/KernSmooth/Meta
+@dirrm lib/R/library/KernSmooth
+@dirrm lib/R/library
 @dirrm lib/R/include/R_ext
 @dirrm lib/R/include
-@dirrm lib/R/library/KernSmooth/Meta
-@dirrm lib/R/library/KernSmooth/R
-@dirrm lib/R/library/KernSmooth/R-ex
-@dirrm lib/R/library/KernSmooth/help
-@dirrm lib/R/library/KernSmooth/html
-@dirrm lib/R/library/KernSmooth/latex
-@dirrm lib/R/library/KernSmooth/libs
-@dirrm lib/R/library/KernSmooth/man
-@dirrm lib/R/library/KernSmooth
-@dirrm lib/R/library/MASS/Meta
-@dirrm lib/R/library/MASS/R
-@dirrm lib/R/library/MASS/R-ex
-@dirrm lib/R/library/MASS/data
-@dirrm lib/R/library/MASS/help
-@dirrm lib/R/library/MASS/html
-@dirrm lib/R/library/MASS/latex
-@dirrm lib/R/library/MASS/libs
-@dirrm lib/R/library/MASS/man
-@dirrm lib/R/library/MASS/scripts
-@dirrm lib/R/library/MASS/scripts3
-@dirrm lib/R/library/MASS
-@dirrm lib/R/library/base/Meta
-@dirrm lib/R/library/base/R
-@dirrm lib/R/library/base/R-ex
-@dirrm lib/R/library/base/data
-@dirrm lib/R/library/base/demo
-@dirrm lib/R/library/base/help
-@dirrm lib/R/library/base/html
-@dirrm lib/R/library/base/latex
-@dirrm lib/R/library/base/man
-@dirrm lib/R/library/base
-@dirrm lib/R/library/boot/Meta
-@dirrm lib/R/library/boot/R
-@dirrm lib/R/library/boot/R-ex
-@dirrm lib/R/library/boot/data
-@dirrm lib/R/library/boot/help
-@dirrm lib/R/library/boot/html
-@dirrm lib/R/library/boot/latex
-@dirrm lib/R/library/boot/man
-@dirrm lib/R/library/boot
-@dirrm lib/R/library/class/Meta
-@dirrm lib/R/library/class/R
-@dirrm lib/R/library/class/R-ex
-@dirrm lib/R/library/class/help
-@dirrm lib/R/library/class/html
-@dirrm lib/R/library/class/latex
-@dirrm lib/R/library/class/libs
-@dirrm lib/R/library/class/man
-@dirrm lib/R/library/class
-@dirrm lib/R/library/cluster/Meta
-@dirrm lib/R/library/cluster/R
-@dirrm lib/R/library/cluster/R-ex
-@dirrm lib/R/library/cluster/data
-@dirrm lib/R/library/cluster/help
-@dirrm lib/R/library/cluster/html
-@dirrm lib/R/library/cluster/latex
-@dirrm lib/R/library/cluster/libs
-@dirrm lib/R/library/cluster/man
-@dirrm lib/R/library/cluster
-@dirrm lib/R/library/ctest/Meta
-@dirrm lib/R/library/ctest/R
-@dirrm lib/R/library/ctest/R-ex
-@dirrm lib/R/library/ctest/help
-@dirrm lib/R/library/ctest/html
-@dirrm lib/R/library/ctest/latex
-@dirrm lib/R/library/ctest/libs
-@dirrm lib/R/library/ctest/man
-@dirrm lib/R/library/ctest
-@dirrm lib/R/library/eda/Meta
-@dirrm lib/R/library/eda/R
-@dirrm lib/R/library/eda/R-ex
-@dirrm lib/R/library/eda/demo
-@dirrm lib/R/library/eda/help
-@dirrm lib/R/library/eda/html
-@dirrm lib/R/library/eda/latex
-@dirrm lib/R/library/eda/libs
-@dirrm lib/R/library/eda/man
-@dirrm lib/R/library/eda
-@dirrm lib/R/library/foreign/Meta
-@dirrm lib/R/library/foreign/R
-@dirrm lib/R/library/foreign/R-ex
-@dirrm lib/R/library/foreign/help
-@dirrm lib/R/library/foreign/html
-@dirrm lib/R/library/foreign/latex
-@dirrm lib/R/library/foreign/libs
-@dirrm lib/R/library/foreign/man
-@dirrm lib/R/library/foreign
-@dirrm lib/R/library/grid/Meta
-@dirrm lib/R/library/grid/R
-@dirrm lib/R/library/grid/R-ex
-@dirrm lib/R/library/grid/doc
-@dirrm lib/R/library/grid/help
-@dirrm lib/R/library/grid/html
-@dirrm lib/R/library/grid/latex
-@dirrm lib/R/library/grid/libs
-@dirrm lib/R/library/grid/man
-@dirrm lib/R/library/grid
-@dirrm lib/R/library/lattice/Meta
-@dirrm lib/R/library/lattice/R
-@dirrm lib/R/library/lattice/R-ex
-@dirrm lib/R/library/lattice/data
-@dirrm lib/R/library/lattice/demo
-@dirrm lib/R/library/lattice/help
-@dirrm lib/R/library/lattice/html
-@dirrm lib/R/library/lattice/latex
-@dirrm lib/R/library/lattice/libs
-@dirrm lib/R/library/lattice/man
-@dirrm lib/R/library/lattice
-@dirrm lib/R/library/lqs/Meta
-@dirrm lib/R/library/lqs/R
-@dirrm lib/R/library/lqs/R-ex
-@dirrm lib/R/library/lqs/help
-@dirrm lib/R/library/lqs/html
-@dirrm lib/R/library/lqs/latex
-@dirrm lib/R/library/lqs/libs
-@dirrm lib/R/library/lqs/man
-@dirrm lib/R/library/lqs
-@dirrm lib/R/library/methods/Meta
-@dirrm lib/R/library/methods/R
-@dirrm lib/R/library/methods/R-ex
-@dirrm lib/R/library/methods/help
-@dirrm lib/R/library/methods/html
-@dirrm lib/R/library/methods/latex
-@dirrm lib/R/library/methods/libs
-@dirrm lib/R/library/methods/man
-@dirrm lib/R/library/methods
-@dirrm lib/R/library/mgcv/Meta
-@dirrm lib/R/library/mgcv/R
-@dirrm lib/R/library/mgcv/R-ex
-@dirrm lib/R/library/mgcv/help
-@dirrm lib/R/library/mgcv/html
-@dirrm lib/R/library/mgcv/latex
-@dirrm lib/R/library/mgcv/libs
-@dirrm lib/R/library/mgcv/man
-@dirrm lib/R/library/mgcv
-@dirrm lib/R/library/modreg/Meta
-@dirrm lib/R/library/modreg/R
-@dirrm lib/R/library/modreg/R-ex
-@dirrm lib/R/library/modreg/data
-@dirrm lib/R/library/modreg/help
-@dirrm lib/R/library/modreg/html
-@dirrm lib/R/library/modreg/latex
-@dirrm lib/R/library/modreg/libs
-@dirrm lib/R/library/modreg/man
-@dirrm lib/R/library/modreg
-@dirrm lib/R/library/mva/Meta
-@dirrm lib/R/library/mva/R
-@dirrm lib/R/library/mva/R-ex
-@dirrm lib/R/library/mva/data
-@dirrm lib/R/library/mva/help
-@dirrm lib/R/library/mva/html
-@dirrm lib/R/library/mva/latex
-@dirrm lib/R/library/mva/libs
-@dirrm lib/R/library/mva/man
-@dirrm lib/R/library/mva
-@dirrm lib/R/library/nlme/Meta
-@dirrm lib/R/library/nlme/R
-@dirrm lib/R/library/nlme/R-ex
-@dirrm lib/R/library/nlme/data
-@dirrm lib/R/library/nlme/help
-@dirrm lib/R/library/nlme/html
-@dirrm lib/R/library/nlme/latex
-@dirrm lib/R/library/nlme/libs
-@dirrm lib/R/library/nlme/man
-@dirrm lib/R/library/nlme/mlbook
-@dirrm lib/R/library/nlme/scripts
-@dirrm lib/R/library/nlme
-@dirrm lib/R/library/nls/Meta
-@dirrm lib/R/library/nls/R
-@dirrm lib/R/library/nls/R-ex
-@dirrm lib/R/library/nls/data
-@dirrm lib/R/library/nls/help
-@dirrm lib/R/library/nls/html
-@dirrm lib/R/library/nls/latex
-@dirrm lib/R/library/nls/libs
-@dirrm lib/R/library/nls/man
-@dirrm lib/R/library/nls
-@dirrm lib/R/library/nnet/Meta
-@dirrm lib/R/library/nnet/R
-@dirrm lib/R/library/nnet/R-ex
-@dirrm lib/R/library/nnet/help
-@dirrm lib/R/library/nnet/html
-@dirrm lib/R/library/nnet/latex
-@dirrm lib/R/library/nnet/libs
-@dirrm lib/R/library/nnet/man
-@dirrm lib/R/library/nnet
-@dirrm lib/R/library/rpart/Meta
-@dirrm lib/R/library/rpart/R
-@dirrm lib/R/library/rpart/R-ex
-@dirrm lib/R/library/rpart/data
-@dirrm lib/R/library/rpart/help
-@dirrm lib/R/library/rpart/html
-@dirrm lib/R/library/rpart/latex
-@dirrm lib/R/library/rpart/libs
-@dirrm lib/R/library/rpart/man
-@dirrm lib/R/library/rpart
-@dirrm lib/R/library/spatial/Meta
-@dirrm lib/R/library/spatial/R
-@dirrm lib/R/library/spatial/R-ex
-@dirrm lib/R/library/spatial/help
-@dirrm lib/R/library/spatial/html
-@dirrm lib/R/library/spatial/latex
-@dirrm lib/R/library/spatial/libs
-@dirrm lib/R/library/spatial/man
-@dirrm lib/R/library/spatial/ppdata
-@dirrm lib/R/library/spatial
-@dirrm lib/R/library/splines/Meta
-@dirrm lib/R/library/splines/R
-@dirrm lib/R/library/splines/R-ex
-@dirrm lib/R/library/splines/help
-@dirrm lib/R/library/splines/html
-@dirrm lib/R/library/splines/latex
-@dirrm lib/R/library/splines/libs
-@dirrm lib/R/library/splines/man
-@dirrm lib/R/library/splines
-@dirrm lib/R/library/stepfun/Meta
-@dirrm lib/R/library/stepfun/R
-@dirrm lib/R/library/stepfun/R-ex
-@dirrm lib/R/library/stepfun/help
-@dirrm lib/R/library/stepfun/html
-@dirrm lib/R/library/stepfun/latex
-@dirrm lib/R/library/stepfun/man
-@dirrm lib/R/library/stepfun
-@dirrm lib/R/library/survival/Meta
-@dirrm lib/R/library/survival/R
-@dirrm lib/R/library/survival/R-ex
-@dirrm lib/R/library/survival/data
-@dirrm lib/R/library/survival/help
-@dirrm lib/R/library/survival/html
-@dirrm lib/R/library/survival/latex
-@dirrm lib/R/library/survival/libs
-@dirrm lib/R/library/survival/man
-@dirrm lib/R/library/survival
-@dirrm lib/R/library/tcltk/Meta
-@dirrm lib/R/library/tcltk/R
-@dirrm lib/R/library/tcltk/R-ex
-@dirrm lib/R/library/tcltk/demo
-@dirrm lib/R/library/tcltk/exec
-@dirrm lib/R/library/tcltk/help
-@dirrm lib/R/library/tcltk/html
-@dirrm lib/R/library/tcltk/latex
-@dirrm lib/R/library/tcltk/libs
-@dirrm lib/R/library/tcltk/man
-@dirrm lib/R/library/tcltk
-@dirrm lib/R/library/tools/Meta
-@dirrm lib/R/library/tools/R
-@dirrm lib/R/library/tools/R-ex
-@dirrm lib/R/library/tools/Sweave
-@dirrm lib/R/library/tools/help
-@dirrm lib/R/library/tools/html
-@dirrm lib/R/library/tools/latex
-@dirrm lib/R/library/tools/libs
-@dirrm lib/R/library/tools/man
-@dirrm lib/R/library/tools
-@dirrm lib/R/library/ts/Meta
-@dirrm lib/R/library/ts/R
-@dirrm lib/R/library/ts/R-ex
-@dirrm lib/R/library/ts/data
-@dirrm lib/R/library/ts/help
-@dirrm lib/R/library/ts/html
-@dirrm lib/R/library/ts/latex
-@dirrm lib/R/library/ts/libs
-@dirrm lib/R/library/ts/man
-@dirrm lib/R/library/ts
-@dirrm lib/R/modules
-@dirrm lib/R/library
-@dirrm lib/R/share/R
-@dirrm lib/R/share/make
-@dirrm lib/R/share/perl/R
-@dirrm lib/R/share/perl/Text
-@dirrm lib/R/share/perl
-@dirrm lib/R/share/sh
-@dirrm lib/R/share/texmf
-@dirrm lib/R/share
+@dirrm lib/R/etc
+@dirrm lib/R/doc/manual
+@dirrm lib/R/doc/html/search
+@dirrm lib/R/doc/html
+@dirrm lib/R/doc
+@dirrm lib/R/bin
+@dirrm lib/R/afm
 @dirrm lib/R
