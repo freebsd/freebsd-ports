@@ -1,5 +1,13 @@
 Binaries of Sun's Java Developers Kit. Include bytecode machine,
 compiler, demos and sources for most Java runtime classes.
 
-For more information about the FreeBSD port see
+Executables are installed into /usr/local/java/bin. You may want to
+put this into your PATH or symlink them to /usr/local/bin in case you
+don't have kaffe installed (which shared many of the binarie's
+names). 
+
+You may want to build a kernel with
+options         SYSVSEM
+
+For more information about the JDK for FreeBSD see
 http://www.freebsd.org/java/

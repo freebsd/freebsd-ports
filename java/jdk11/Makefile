@@ -3,12 +3,12 @@
 # Date created:		Feb, 8, 1998
 # Whom:			Martin Cracauer <cracauer@cons.org>
 #
-# $Id: Makefile,v 1.10 1998/03/02 01:40:00 obrien Exp $
+# $Id: Makefile,v 1.11 1998/06/27 05:19:08 asami Exp $
 #
 
-DISTNAME=	jdk1.1.5.V98-2-25
-PKGNAME=	jdk-1.1.5
-WRKSRC=		${WRKDIR}/jdk1.1.5
+DISTNAME=	jdk1.1.6.V98-7-21
+PKGNAME=	jdk-1.1.6
+WRKSRC=		${WRKDIR}/jdk1.1.6
 CATEGORIES=	lang devel
 MASTER_SITES=	http://www.freebsd.org/java/
 
