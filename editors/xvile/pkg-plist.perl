@@ -14,3 +14,10 @@ share/vile/macros/digraphs.rc
 share/vile/macros/manpage.rc
 share/vile/macros/pictmode.rc
 share/vile/macros/vile-pager
+share/vile/perl/glob2re.pl
+share/vile/perl/hgrep.pl
+share/vile/perl/manfilt.pl
+share/vile/perl/search.pl
+share/vile/perl/shell.pl
+share/vile/perl/tailf.pl
+share/vile/perl/visit.pl
