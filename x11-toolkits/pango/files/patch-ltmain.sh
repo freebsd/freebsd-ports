@@ -1,15 +1,24 @@
---- ltmain.sh.orig	Fri Nov  8 15:40:11 2002
-+++ ltmain.sh	Tue Dec  3 18:47:10 2002
-@@ -1082,8 +1082,16 @@
+--- ltmain.sh.orig	Thu Apr 24 19:44:23 2003
++++ ltmain.sh	Sat May 31 01:34:34 2003
+@@ -1280,7 +1280,7 @@
+ 	  esac
+ 	elif test "X$arg" = "X-lc_r"; then
+ 	 case $host in
+-	 *-*-openbsd* | *-*-freebsd*)
++	 *-*-openbsd* | *-*-freebsd4*)
+ 	   # Do not include libc_r directly, use -pthread flag.
+ 	   continue
+ 	   ;;
+@@ -1290,8 +1290,16 @@
  	continue
  	;;
  
 +      -pthread)
-+       compile_command="$compile_command -pthread"
-+       finalize_command="$finalize_command -pthread"
-+       compiler_flags="$compiler_flags -pthread"
-+       continue
-+       ;;
++      compile_command="$compile_command -pthread"
++      finalize_command="$finalize_command -pthread"
++      compiler_flags="$compiler_flags -pthread"
++      continue
++      ;;
 +
        -module)
  	module=yes
@@ -17,9 +26,9 @@
  	continue
  	;;
  
-@@ -2397,6 +2405,9 @@
+@@ -3000,6 +3008,9 @@
  	    # problems, so we reset it completely
- 	    verstring=""
+ 	    verstring=
  	    ;;
 +	  *-*-freebsd*)
 +	    # FreeBSD doesn't need this...
@@ -27,7 +36,7 @@
  	  *)
  	    verstring="0.0"
  	    ;;
-@@ -4327,10 +4338,12 @@
+@@ -5428,10 +5439,12 @@
  	fi
  
  	# Install the pseudo-library for information purposes.

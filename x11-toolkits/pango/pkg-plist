@@ -52,10 +52,12 @@ lib/pango/%%VERSION%%/modules/pango-hebrew-ft2.so
 lib/pango/%%VERSION%%/modules/pango-hebrew-x.so
 lib/pango/%%VERSION%%/modules/pango-hebrew-xft.so
 lib/pango/%%VERSION%%/modules/pango-indic-xft.so
+lib/pango/%%VERSION%%/modules/pango-indic-ft2.so
 lib/pango/%%VERSION%%/modules/pango-myanmar-x.so
 lib/pango/%%VERSION%%/modules/pango-tamil-x.so
 lib/pango/%%VERSION%%/modules/pango-thai-x.so
 lib/pango/%%VERSION%%/modules/pango-thai-xft.so
+lib/pango/%%VERSION%%/modules/pango-thai-ft2.so
 libdata/pkgconfig/pango.pc
 libdata/pkgconfig/pangoft2.pc
 libdata/pkgconfig/pangox.pc
@@ -63,6 +65,7 @@ libdata/pkgconfig/pangoxft.pc
 share/doc/pango/home.png
 share/doc/pango/index.html
 share/doc/pango/index.sgml
+share/doc/pango/ix01.html
 share/doc/pango/layout.gif
 share/doc/pango/left.png
 share/doc/pango/lowlevel.html
