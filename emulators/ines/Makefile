@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ines
-PORTVERSION=	1.0
+PORTVERSION=	1.2
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.komkon.org/fms/iNES/
-DISTNAME=	iNES10-FreeBSD-80x86-bin
+DISTNAME=	iNES12-FreeBSD-80x86-bin
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	nakai@FreeBSD.org
