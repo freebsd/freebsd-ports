@@ -1,44 +1,27 @@
 # New ports collection makefile for:    apache HTTPD and HTTPSD
-# Version required:     1.1.1
+# Version required:     1.2b2
 # Date created:         Fri Aug 25 16:42:36 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.21 1996/11/07 01:53:14 ache Exp $
+# $Id: Makefile,v 1.22 1996/11/18 11:40:33 asami Exp $
 #
 
-DISTNAME=       apache_1.1.1
-PKGNAME=        apache-1.1.1
+DISTNAME=       apache_1.2b2
+PKGNAME=        apache-1.2b2
 CATEGORIES=	www
 MASTER_SITES=   ftp://www.apache.org/apache/dist/
 
 MAINTAINER=	ache@freebsd.org
 
 # User-controlled variables list
-# CHARSET_ACHE  - add charset negotiation to .var files and charset guessing
-#                 see http://www.nagual.ru/~ache/apache_var.html
 # DIR_ACHE      - add SuppressHTMLPreamble option to directory index
 #                 see http://www.nagual.ru/~ache/apache_dir.html
-# ALL_ACHE      - both patches from above
-#
 # SECURE_SERVER - build Apache with SSL
 
-.if defined(ALL_ACHE)
-CHARSET_ACHE=YES
-DIR_ACHE=YES
-.endif
-.if defined(CHARSET_ACHE) || defined(DIR_ACHE)
-PATCH_SITES+=   http://www.nagual.ru/~ache/
-.endif
-.if defined(CHARSET_ACHE)
-PATCHFILES+=    mod.patch
-VERS_ID1=       charset/
-.endif
 .if defined(DIR_ACHE)
+PATCH_SITES+=   http://www.nagual.ru/~ache/
 PATCHFILES+=    dir.patch
-VERS_ID2=       dir/
-.endif
-.if defined(VERS_ID1) || defined(VERS_ID2)
-VERS_ID=        ${VERS_ID1}${VERS_ID2}ache
+VERS_ID=        dir/ache
 .endif
 
 .if defined(VERS_ID)
