@@ -12,6 +12,7 @@ sbin/btape
 %%GNOMECONS%%sbin/gnome-console
 sbin/dbcheck
 sbin/bsmtp
+@unexec if cmp -s %D/share/bacula/mtx-changer.old %D/share/bacula/mtx-changer; then rm -f %D/share/bacula/mtx-changer.old; fi
 %%DATADIR%%/mtx-changer
 %%DATADIR%%/create_bacula_database
 %%DATADIR%%/create_%%DBTYPE%%_database
