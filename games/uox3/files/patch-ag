@@ -1,0 +1,12 @@
+diff -ruN work.orig/dev/combat.cpp work/dev/combat.cpp
+--- work.orig/dev/combat.cpp	Mon Feb  8 22:14:28 1999
++++ work/dev/combat.cpp	Fri Sep 10 17:31:40 1999
+@@ -960,7 +960,7 @@
+ 		chars[c].targ = s;
+     chars[c].npcWander=2;  //set wander mode Tauriel
+ 		npcToggleCombat(c);
+-		chars[c].npcmovetime=(int)(getclock()+(NPCSPEED*CLOCKS_PER_SEC));
++		chars[c].npcmovetime=(unsigned long int)(getclock()+(NPCSPEED*CLOCKS_PER_SEC));
+ 		
+ 			soundeffect2(c, 0x01, 0xFE);  //Tauriel 1-9-99 changed to stop crashing used to call soundeffect (expeted socket)
+ 			staticeffect(c, 0x37, 0x2A, 0x09, 0x06);

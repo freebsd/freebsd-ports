@@ -1,0 +1,29 @@
+--- work/dev/globals.cpp.orig	Tue Feb  9 00:14:28 1999
++++ work/dev/globals.cpp	Sun Feb 27 11:21:52 2000
+@@ -31,7 +31,7 @@
+ char noaccount[3]="\x82\x00";
+ char nopass[3]="\x82\x03";
+ char acctblock[3]="\x82\x02";
+-char pause[3]="\x33\x01";
++char xpause[3]="\x33\x01";
+ char restart[3]="\x33\x00";
+ char goxyz[20]="\x20\x00\x05\xA8\x90\x01\x90\x00\x83\xFF\x00\x06\x08\x06\x49\x00\x00\x02\x00";
+ char wearitem[16]="\x2E\x40\x0A\x00\x01\x00\x00\x00\x01\x00\x05\xA8\x90\x00\x00";
+@@ -87,7 +87,7 @@
+ #ifdef _MSVC
+ long int oldtime, newtime;
+ #else
+-unsigned long int oldtime, newtime;      //for autosaving
++time_t oldtime, newtime;      //for autosaving
+ #endif
+ int autosaved, saveinterval, heartbeat;
+ char saveintervalstr[4];
+@@ -120,7 +120,7 @@
+ unsigned int acctcount;
+ unsigned int servcount;
+ unsigned int startcount;
+-char acct[MAXACCT][3][31]; // Account list
++char xacct[MAXACCT][3][31]; // Account list
+ char acctinuse[MAXACCT];
+ char serv[MAXSERV][2][30]; // Servers list
+ char start[MAXSTART][5][30]; // Startpoints list

@@ -1,0 +1,12 @@
+diff -ruN work.orig/dev/makefile work/dev/makefile
+--- work.orig/dev/makefile	Fri Nov 27 23:34:50 1998
++++ work/dev/makefile	Fri Sep 10 17:29:52 1999
+@@ -27,7 +27,7 @@
+ # Objects
+ OBJS := $(patsubst %.cpp, %.o, $(SRC))
+ 
+-C_FLAGS = $(WARN) $(OTHER) $(OPT) $(DEBUG)
++C_FLAGS = $(CFLAGS) $(WARN) $(OTHER) $(OPT) $(DEBUG)
+ 
+ all:
+ 	@echo Please specify one of the following:

@@ -1,0 +1,28 @@
+--- work/dev/admin.cpp.orig	Sun Feb 27 11:16:37 2000
++++ work/dev/admin.cpp	Sun Feb 27 11:17:15 2000
+@@ -11,9 +11,9 @@
+  do
+  {
+   read2();
+-  if (!(strcmp(script1, "NAME"))) sprintf(acct[acctcount][0], "%s", script2);
+-  if (!(strcmp(script1, "PASS"))) sprintf(acct[acctcount][1], "%s", script2);
+-	if (!(strcmp(script1, "BAN"))) acct[acctcount][2][0]='1';
++  if (!(strcmp(script1, "NAME"))) sprintf(xacct[acctcount][0], "%s", script2);
++  if (!(strcmp(script1, "PASS"))) sprintf(xacct[acctcount][1], "%s", script2);
++	if (!(strcmp(script1, "BAN"))) xacct[acctcount][2][0]='1';
+  }
+  while (strcmp(script1, "}")&&strcmp(script1, "EOF"));
+ }
+@@ -40,9 +40,9 @@
+        //printf("DEBUG: %i guest accounts\n",guestnum);
+        for (i=1;i<guestnum+1;i++)
+        {
+-        sprintf(acct[acctcount][0], "guest%i", i);
+-        sprintf(acct[acctcount][1], "guest%i", i);
+-        //printf("DEBUG: Guest Account %i [L: %s] [P: %s]\n", i,acct[acctcount][0],acct[acctcount][1]);
++        sprintf(xacct[acctcount][0], "guest%i", i);
++        sprintf(xacct[acctcount][1], "guest%i", i);
++        //printf("DEBUG: Guest Account %i [L: %s] [P: %s]\n", i,xacct[acctcount][0],xacct[acctcount][1]);
+         acctcount++;
+        }
+        //printf("UOX3: %i guest accounts loaded.\n", guestnum);
