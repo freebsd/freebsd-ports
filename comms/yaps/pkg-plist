@@ -1,7 +1,7 @@
 bin/yaps
 @exec mkdir -p %D/share/yaps
 etc/yaps.rc.sample
-share/doc/yaps/yaps.doc
-share/doc/yaps/yaps.html
-@dirrm share/doc/yaps
+%%PORTDOCS%%share/doc/yaps/yaps.doc
+%%PORTDOCS%%share/doc/yaps/yaps.html
+%%PORTDOCS%%@dirrm share/doc/yaps
 @unexec rmdir %D/share/yaps 2>/dev/null || true
