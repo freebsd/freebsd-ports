@@ -3,12 +3,12 @@
 # Date created:		15 September 1996
 # Whom:			torstenb
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/09/14 23:43:02 torstenb Exp $
 #
 
 DISTNAME=	sunclock1.3
 PKGNAME=	sunclock-1.3
-CATEGORIES+=	x11
+CATEGORIES+=	astro
 MASTER_SITES=	ftp://ftp.x.org/contrib/applications/
 
 MAINTAINER=	torstenb@FreeBSD.org
