@@ -2,12 +2,12 @@
 # Date created:				20040812
 # Whom:				Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 #
+# $Id: Makefile,v 1.8 2005/01/09 09:37:27 tmclau02 Exp $
 # $FreeBSD$
 #
 
 PORTNAME=	blam
-PORTVERSION=	1.6.0
-PORTREVISION=	1
+PORTVERSION=	1.6.1
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.6
