@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postfix
-PORTVERSION=	1.1.7-20020331
+PORTVERSION=	1.1.8-20020505
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
@@ -114,6 +114,7 @@ post-install:
 # if we run etc/postfix/post-install again during package installation,
 # it will complain about missing files.
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/fix-files-list
+	@${CAT} ${PKGMESSAGE}
 
 post-clean:
 	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
