@@ -1,7 +1,7 @@
 etc/portmanager/portmanager.conf.SAMPLE
 bin/mgmlParse
 bin/pmStatus
-bin/pmUpgrade
+bin/pmupgrade
 bin/portmanager
 include/MGrDbArray.h
 include/MGrFileSize.h
@@ -14,7 +14,7 @@ include/PMGRrMakeDescribe.h
 include/libMG.h
 include/libPMGR.h
 include/pmStatus.h
-include/pmUpgrade.h
+include/pmupgrade.h
 lib/libMG.a
 lib/libMG
 lib/libMG.0
@@ -27,5 +27,5 @@ share/portmanager/.keepme
 @unexec rm -f %D/share/portmanager/ports_cache.db 2>/dev/null || true
 @unexec rm -f %D/share/portmanager/portCache.tmp 2>/dev/null || true
 @unexec rm -f %D/share/portmanager/ports_old.db 2>/dev/null || true
-@dirrm share/portmanager
-@dirrm etc/portmanager
+@unexec rmdir %D/share/portmanager 2>/dev/null || true
+@unexec rmdir %D/etc/portmanager 2>/dev/null || true
