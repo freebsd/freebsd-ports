@@ -1,0 +1,11 @@
+bin/oicq
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/OICQ/OICQ.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/OICQ/OICQ.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/OICQ/Event.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/OICQ/TextConsole.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/OICQ/ServerEvent.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/OICQ/ClientEvent.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/OICQ.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/OICQ/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/OICQ
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/OICQ
