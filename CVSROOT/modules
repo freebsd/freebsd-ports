@@ -81,6 +81,7 @@ FWF		ports/x11-toolkits/FWF
 GeoIP		ports/net/GeoIP
 GiNaC		ports/math/GiNaC
 Gofer		ports/lang/Gofer
+HVSC-Update	ports/audio/HVSC-Update
 Hermes		ports/graphics/Hermes
 HeroesOfMightAndMagic	ports/games/HeroesOfMightAndMagic
 Howto		ports/misc/Howto
