@@ -1,0 +1,47 @@
+--- lineakd/Makefile.in.orig	Sat Jan 15 11:20:25 2005
++++ lineakd/Makefile.in	Sat Jan 15 11:23:02 2005
+@@ -269,7 +269,7 @@
+ lineakd_SOURCES = lineakd_core_functions.cpp cmdprefs.cpp main.cpp 
+ lineakd_LDADD =  -llineak -lXext -lX11 
+ 
+-EXTRA_DIST = main.cpp eakprocs.h cmdprefs.cpp cmdprefs.h lineakkb.def lineakd.1.bz2 OLDCODE lineakd_core_functions.h lineakd_core_functions.cpp 
++EXTRA_DIST = main.cpp eakprocs.h cmdprefs.cpp cmdprefs.h lineakkb.def lineakd.1.gz OLDCODE lineakd_core_functions.h lineakd_core_functions.cpp 
+ 
+ ####### kdevelop will overwrite this part!!! (end)############
+ # set the include path found by configure
+@@ -574,10 +574,10 @@
+ 	uninstall-local
+ 
+ #man_MANS = lineakd.1.gz
+-lineakd.1.bz2:
+-	bzip2 -c lineakd.1 > lineakd.1.bz2
++lineakd.1.gz:
++	gzip lineakd.1
+ 
+-install-data-local: lineakd.1.bz2
++install-data-local: lineakd.1.gz
+ #>- 	$(mkinstalldirs) $(sysconfdir)/
+ #>+ 1
+ 	$(mkinstalldirs) $(DESTDIR)$(sysconfdir)/
+@@ -590,17 +590,17 @@
+ #>- 	$(INSTALL_DATA) $(srcdir)/lineakkb.def $(sysconfdir)/lineakkb.def
+ #>+ 1
+ 	$(INSTALL_DATA) $(srcdir)/lineakkb.def $(DESTDIR)$(sysconfdir)/lineakkb.def
+-#>- 	$(INSTALL_DATA) $(srcdir)/lineakd.1.bz2 $(mandir)/man1/lineakd.1.bz2
++#>- 	$(INSTALL_DATA) $(srcdir)/lineakd.1.gz $(mandir)/man1/lineakd.1.gz
+ #>+ 1
+-	$(INSTALL_DATA) $(srcdir)/lineakd.1.bz2 $(DESTDIR)$(mandir)/man1/lineakd.1.bz2
++	$(INSTALL_DATA) $(srcdir)/lineakd.1.gz $(DESTDIR)$(mandir)/man1/lineakd.1.gz
+ 
+ uninstall-local:
+ #>- 	-rm -f $(sysconfdir)/lineakkb.def
+ #>+ 1
+ 	-rm -f $(DESTDIR)$(sysconfdir)/lineakkb.def
+-#>- 	-rm -f $(mandir)/man1/lineakd.1.bz2
++#>- 	-rm -f $(mandir)/man1/lineakd.1.gz
+ #>+ 1
+-	-rm -f $(DESTDIR)$(mandir)/man1/lineakd.1.bz2
++	-rm -f $(DESTDIR)$(mandir)/man1/lineakd.1.gz
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
