@@ -1,0 +1,27 @@
+#!/bin/sh
+# Look for *crt0.o in /usr/lib or /usr/lib/aout
+
+olib=/usr/lib
+nlib=/usr/lib/aout
+dir=$WRKSRC/src/lib/env/freebsd/common/80x86
+
+fixlib()
+{
+    crt=$1
+    shift
+    if [ ! -f $olib/$crt ]; then
+        if [ ! -f $nlib/$crt ]; then
+            echo "Can't find $crt" >&2
+            exit 1
+        else
+            for i in "$@"
+            do
+                sed "s:$olib/$crt:$nlib/$crt:" $dir/$i >$dir/$i.tmp &&
+                mv -f $dir/$i.tmp $dir/$i || exit 1
+            done
+        fi
+    fi
+}
+
+fixlib crt0.o default.extra tcc_diag
+fixlib gcrt0.o tcc_prof
