@@ -12,8 +12,7 @@ MASTER_SITES=	ftp://ftp.dscpl.com.au/pub/pmw/
 
 MAINTAINER=	tg@FreeBSD.org
 
-BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
-RUN_DEPENDS=	python:${PORTSDIR}/lang/python
+RUN_DEPENDS=	${SITEPYDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
 PLIST_SUB=	PMWVERSION="${PMWVERSION}"
 

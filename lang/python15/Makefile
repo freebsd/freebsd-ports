@@ -8,14 +8,12 @@
 
 DISTNAME=       py152
 PKGNAME=        python-1.5.2
-CATEGORIES=	lang python tk82
+CATEGORIES=	lang python
 MASTER_SITES=	ftp://www.python.org/pub/python/src/ \
 		ftp://ftp.cwi.nl/pub/python/src/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	tg@FreeBSD.org
-
-LIB_DEPENDS=	${TK_DEPENDS}
 
 DIST_SUBDIR=	python
 WRKSRC=		${WRKDIR}/Python-1.5.2
@@ -30,18 +28,6 @@ MAN1=		python.1
 # The standard setup file
 #
 SETUP_FILE=	Setup
-
-#
-# Support for Tk is compiled in by default only if X11 is installed.
-#
-.if exists(${X11BASE})
-WITH_TK?=	yes
-.endif
-.if defined(WITH_TK) && $(WITH_TK) == yes
-TK_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
-SETUP_LOCAL=	Setup.tk
-PLIST_TK=	${PKGDIR}/PLIST.tk
-.endif
 
 #
 # If you want to use Python's thread module, you need to set WITH_THREADS
