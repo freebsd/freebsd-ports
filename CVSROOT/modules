@@ -8525,6 +8525,7 @@ py-clientform	ports/www/py-clientform
 py-compiler	ports/lang/py-compiler
 py-coro		ports/devel/py-coro
 py-cryptkit	ports/security/py-cryptkit
+py-cssutils	ports/www/py-cssutils
 py-csv		ports/textproc/py-csv
 py-ctypes	ports/devel/py-ctypes
 py-curl		ports/ftp/py-curl
