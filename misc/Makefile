@@ -305,6 +305,7 @@
     SUBDIR += wmpal
     SUBDIR += wmproxyper
     SUBDIR += wmstock
+    SUBDIR += wmtunlo
     SUBDIR += wmweather
     SUBDIR += wmwork
     SUBDIR += wmx10

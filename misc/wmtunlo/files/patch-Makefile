@@ -1,0 +1,22 @@
+--- Makefile.orig	Sat Jul 20 04:32:12 2002
++++ Makefile	Sat Jul 27 02:18:29 2002
+@@ -1,14 +1,15 @@
+ 
+ wmTunlo: wmtunlo.o wmgeneral.o
+-	gcc wmgeneral.o wmtunlo.o -o wmtunlo -L/usr/X11R6/lib -lXpm -lX11 -lXext -lm
++	${CC} wmgeneral.o wmtunlo.o -o wmtunlo \
++		-L${X11BASE}/lib -lXpm -lX11 -lXext -lm
+ 
+ wmtunlo.o: wmtunlo.c wmgeneral.c wmgeneral.h dock-master.xpm dock-mask.xbm
+-	gcc -O3 -Wall -c wmtunlo.c
++	${CC} $(CFLAGS) -c wmtunlo.c -I${X11BASE}/include
+ 
+ wmgeneral.o: wmgeneral.c wmgeneral.h
+-	gcc -O3 -Wall -c wmgeneral.c -I/usr/X11R6/include/X11
++	${CC} $(CFLAGS) -c wmgeneral.c -I${X11BASE}/include
+ 
+ clean:
+ 	rm -f *~ *.o wmtunlo
+ 
+-
++all: wmTunlo

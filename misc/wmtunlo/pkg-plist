@@ -1,0 +1,7 @@
+bin/wmtunlo
+share/examples/wmtunlo/wmtunlo.example1
+share/examples/wmtunlo/wmtunlo.example2
+share/examples/wmtunlo/wmtunlo.example3
+share/examples/wmtunlo/wmtunlo.example4
+share/examples/wmtunlo/wmtunlo.example5
+@dirrm share/examples/wmtunlo
