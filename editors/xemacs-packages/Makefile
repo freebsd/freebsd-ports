@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xemacs-packages
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_XEMACS} \
 		${MASTER_SITE_LOCAL}
@@ -15,20 +15,20 @@ DISTFILES=	\
 		apel-1.20-pkg.tar.gz \
 		auctex-1.25-pkg.tar.gz \
 		c-support-1.16-pkg.tar.gz \
-		cc-mode-1.25-pkg.tar.gz \
+		cc-mode-1.26-pkg.tar.gz \
 		debug-1.14-pkg.tar.gz \
 		dired-1.11-pkg.tar.gz \
-		edit-utils-1.65-pkg.tar.gz \
+		edit-utils-1.70-pkg.tar.gz \
 		efs-1.26-pkg.tar.gz \
 		fsf-compat-1.09-pkg.tar.gz \
 		hm--html-menus-1.16-pkg.tar.gz \
 		ispell-1.23-pkg.tar.gz \
 		mail-lib-1.39-pkg.tar.gz \
 		mailcrypt-2.09-pkg.tar.gz \
-		net-utils-1.20-pkg.tar.gz \
+		net-utils-1.23-pkg.tar.gz \
 		os-utils-1.25-pkg.tar.gz \
 		pcl-cvs-1.55-pkg.tar.gz \
-		prog-modes-1.40-pkg.tar.gz \
+		prog-modes-1.42-pkg.tar.gz \
 		ps-print-nomule-1.05-pkg.tar.gz \
 		psgml-1.23-pkg.tar.gz \
 		sgml-1.08-pkg.tar.gz \
@@ -37,10 +37,10 @@ DISTFILES=	\
 		text-modes-1.32-pkg.tar.gz \
 		time-1.11-pkg.tar.gz \
 		vc-1.28-pkg.tar.gz \
-		viper-1.26-pkg.tar.gz \
+		viper-1.28-pkg.tar.gz \
 		w3-1.20-pkg.tar.gz \
 		xemacs-base-1.55-pkg.tar.gz \
-		xemacs-devel-1.37-pkg.tar.gz
+		xemacs-devel-1.38-pkg.tar.gz
 DIST_SUBDIR=	xemacs
 
 MAINTAINER=	kiri@FreeBSD.org
