@@ -23,6 +23,8 @@ DIST_SUBDIR=	csound
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Manuals for Csound
 
+BROKEN=		Does not fetch
+
 RUN_DEPENDS=	csound:${PORTSDIR}/audio/csound
 
 RESTRICTED=	"no redistribution; no commercial use except to make music (see http://mitpress.mit.edu/e-books/csound/fpage/FAQml/faq/faq.html)"
