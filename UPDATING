@@ -6,6 +6,18 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20041020:
+  AFFECTS: users of security/antivir-milter
+  AUTHOR: marius@FreeBSD.org
+
+  When updating from previous versions of security/antivir-milter to
+  antivir-milter-1.1 and you had changed PREFIX/etc/avmilter.conf you
+  have to bring over your changes to PREFIX/etc/avmilter/avmilter.conf
+  after installing the new version of this port. Note, however, that
+  some variables have been renamed.
+  If you used AntiVir Milter ignore, scan and/or warn files in /etc
+  you can now move them to PREFIX/etc/avmilter.
+
 20041019:
   AFFECTS: users of databases/mysql41-server
   AUTHOR: ale@FreeBSD.org
