@@ -1,39 +1,77 @@
---- Makefile.orig	Tue Feb  1 17:39:53 2000
-+++ Makefile	Tue Feb  1 17:44:42 2000
-@@ -1,9 +1,9 @@
--prefix=
--BIN=/usr/X11R6/bin
+--- Makefile.orig	Mon Oct 29 14:59:12 2001
++++ Makefile	Mon Nov 12 00:58:11 2001
+@@ -3,22 +3,21 @@
+ WMBIFF_VERSION = "0.3.3"
+ 
+ DESTDIR=
+-prefix=/usr/local
++prefix=${PREFIX}
+ bindir=${prefix}/bin
+-mandir=${prefix}/share/man
 -CONF=/etc
++mandir=${prefix}/man
++CONF=${PREFIX}/etc
+ 
+-CC     = gcc
 -LIBDIR = -L/usr/X11R6/lib
-+CC ?= gcc
-+CFLAGS = -c -Wall
-+CONF = ${X11BASE}/etc
++CC     ?= gcc
 +LIBDIR = -L${X11BASE}/lib
 +INCLUDES = -I${X11BASE}/include
- LIBS   = -lXpm -lXext -lX11
--CFLAGS = -O2 -Wall
- OBJS =	wmbiff.o Pop3Client.o \
- 	../wmgeneral/wmgeneral.o \
- 	../wmgeneral/misc.o \
-@@ -11,11 +11,11 @@
+ LIBS   = -lXpm -lXext -lX11 
+-CFLAGS = -O2 -Wall -Wpointer-arith
++#CFLAGS = -O2 -Wall -Wpointer-arith
+ #CFLAGS = -g -Wall -pedantic 
  
+-EXTRAFLAGS = -DWMBIFF_VERSION='$(WMBIFF_VERSION)' 
++LIBS+=	-lgnuregex
+ 
+-# Comment these out if you don't want cryto support.
+-EXTRAFLAGS += -DWITH_TLS -DWITH_GCRYPT
+-LIBS   += -lgnutls -lgcrypt
++EXTRAFLAGS = -DWMBIFF_VERSION='$(WMBIFF_VERSION)' 
+ 
+ #EXTRAFLAGS += -DDEBUG_POP3 -DDEBUG_IMAP4 -DDEBUG_LICQ \
+ #	-DDEBUG_MBOX -DDEBUG_MAILDIR -DDEBUG -DDEBUG_MAIL_COUNT \
+@@ -35,24 +34,19 @@
+ 	../wmgeneral/list.o \
+ 	charutil.o
+ 
+-INSTALL = /usr/bin/install
+-INSTALL_DIR	= $(INSTALL) -p -d -o root -g root -m 755
+-INSTALL_PROGRAM	= $(INSTALL) -p -o root -g root -m 755
+-INSTALL_FILE 	= $(INSTALL) -p -o root -g root -m 644
+-
+ all: wmbiff-master.xpm wmbiff
+ 
+ Imap4Client.o: Imap4Client.c Client.h Makefile
  
  .c.o:
--	cc -I/usr/X11R6/share/include $(CFLAGS) -c -Wall $< -o $*.o
-+	${CC} ${INCLUDES} ${CFLAGS} $< -o $*.o
+-	$(CC) $(CFLAGS) $(EXTRAFLAGS) -c $< -o $*.o
++	$(CC) ${INCLUDES} $(CFLAGS) $(EXTRAFLAGS) -c $< -o $*.o
  
- wmbiff: $(OBJS)
--	cc $(CFLAGS) -o wmbiff $^ $(LIBDIR) $(LIBS)
--	strip wmbiff
-+	${CC} -o wmbiff $^ ${LIBDIR} ${LIBS}
-+	@/usr/bin/strip wmbiff
  
- all:: wmbiff
+ wmbiff-master.xpm:
+ 	ln -s wmbiff-master-led.xpm wmbiff-master.xpm
  
-@@ -26,5 +26,4 @@
- 	rm -f wmbiff *~ tags
+ wmbiff:	$(OBJS)
+-	$(CC) $(CFLAGS) $(EXTRAFLAGS) -o wmbiff -lX11 -lnsl $^ $(LIBDIR) $(LIBS)
++	$(CC) $(CFLAGS) $(EXTRAFLAGS) -o wmbiff -lX11  $^ $(LIBDIR) $(LIBS)
  
- install:: wmbiff
--	cp -f wmbiff $(prefix)$(BIN)/
--	chmod 755 $(prefix)$(BIN)/wmbiff
-+	@/usr/bin/install -c -o 0 -g 0 -s -m 755 wmbiff ${X11BASE}/bin/wmbiff
+ clean:
+ 	for i in $(OBJS) ; do \
+@@ -63,12 +57,9 @@
+ distclean: clean
+ 
+ install: wmbiff
+-	$(INSTALL_DIR) $(DESTDIR)$(bindir)
+-	$(INSTALL_DIR) $(DESTDIR)$(mandir)/man1
+-	$(INSTALL_DIR) $(DESTDIR)$(mandir)/man5
+-	$(INSTALL_PROGRAM) wmbiff $(DESTDIR)$(bindir)
+-	$(INSTALL_FILE) wmbiff.1 $(DESTDIR)$(mandir)/man1
+-	$(INSTALL_FILE) wmbiffrc.5 $(DESTDIR)$(mandir)/man5
++	${BSD_INSTALL_PROGRAM} wmbiff ${PREFIX}/bin/wmbiff
++	$(BSD_INSTALL_MAN) wmbiff.1 ${PREFIX}/man/man1
++	$(BSD_INSTALL_MAN) wmbiffrc.5 ${PREFIX}/man/man5
+ 
+ # CODING STYLE AND INDENTATION [2001-Mar-12]:
+ #

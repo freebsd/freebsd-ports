@@ -1,0 +1,11 @@
+--- Imap4Client.c.orig	Sat Nov  3 14:35:32 2001
++++ Imap4Client.c	Sat Nov  3 14:35:41 2001
+@@ -15,7 +15,7 @@
+ #include "tlsComm.h"
+ 
+ #include <sys/types.h>
+-#include <regex.h>
++#include <gnuregex.h>
+ #include <stdio.h>
+ #include <assert.h>
+ #include <unistd.h>
