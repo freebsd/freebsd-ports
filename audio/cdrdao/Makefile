@@ -3,14 +3,14 @@
 # Date created:         7 April 1999
 # Whom:                 futatuki
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/04/21 13:51:10 sada Exp $
 #
 # If You don't want to use Joerg Schilling's SCSI library,
 # set DONT_USE_SCGLIB = yes
 
 DISTNAME=		cdrdao-1.1.0.src
 PKGNAME=		cdrdao-1.1.0
-CATEGORIES=		cdrdao
+CATEGORIES=		audio
 MASTER_SITES=		http://www.ping.de/sites/daneb/
 
 MAINTAINER=		futatuki@fureai.or.jp
