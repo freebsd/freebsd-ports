@@ -16,10 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module that implements the Rijndael cipher
 
 PERL_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/Rijndael
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Crypt::Rijndael.3
 
 .include <bsd.port.mk>
