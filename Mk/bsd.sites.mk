@@ -370,12 +370,16 @@ MASTER_SITE_GNOME+=	\
 	http://ftp.gnome.org/pub/GNOME/%SUBDIR%/
 
 MASTER_SITE_GNU+=	\
+	http://ftp.gnu.org/gnu/%SUBDIR%/ \
 	ftp://ftp.gnu.org/gnu/%SUBDIR%/ \
-	http://mirrors.usc.edu/pub/gnu/%SUBDIR%/ \
+	http://ftp.lug.udel.edu/pub/gnu/%SUBDIR%/ \
+	http://gnu.mirror.mcgill.ca/%SUBDIR%/ \
+	ftp://ftp.nstu.ru/pub/mirrors/ftp.gnu.org/gnu/%SUBDIR%/ \
 	http://www.gtlib.cc.gatech.edu/pub/gnu/%SUBDIR%/ \
-	ftp://gatekeeper.dec.com/pub/GNU/%SUBDIR%/ \
+	http://mirrors.usc.edu/pub/gnu/%SUBDIR%/ \
+	http://gatekeeper.dec.com/pub/GNU/%SUBDIR%/ \
 	ftp://ftp.de.uu.net/pub/gnu/%SUBDIR%/ \
-	ftp://ftp.funet.fi/pub/gnu/prep/%SUBDIR%/ \
+	http://ftp.funet.fi/pub/gnu/prep/%SUBDIR%/ \
 	ftp://ftp.leo.org/pub/comp/os/unix/gnu/%SUBDIR%/ \
 	ftp://ftp.wustl.edu/mirrors/gnu/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/GNU/%SUBDIR%/ \
@@ -385,7 +389,7 @@ MASTER_SITE_GNU+=	\
 	ftp://ftp.sunsite.org.uk/package/gnu/%SUBDIR%/ \
 	ftp://ftp.informatik.hu-berlin.de/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.informatik.rwth-aachen.de/pub/mirror/ftp.gnu.org/pub/gnu/%SUBDIR%/ \
-	ftp://ftp.rediris.es/sites/ftp.gnu.org/pub/%SUBDIR%/ \
+	http://ftp.rediris.es/sites/ftp.gnu.org/pub/%SUBDIR%/ \
 	ftp://ftp.lip6.fr/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.tuwien.ac.at/linux/gnu/gnusrc/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/gnu/%SUBDIR%/
