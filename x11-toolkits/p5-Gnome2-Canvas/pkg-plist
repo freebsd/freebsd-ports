@@ -1,0 +1,27 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Canvas.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Canvas/Bpath.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Canvas/Ellipse.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Canvas/Group.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Canvas/Install/Files.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Canvas/Install/canvas.typemap
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Canvas/Install/gnomecanvasperl-autogen.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Canvas/Install/gnomecanvasperl-version.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Canvas/Install/gnomecanvasperl.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Canvas/Install/gnomecanvasperl.typemap
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Canvas/Item.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Canvas/Line.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Canvas/PathDef.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Canvas/Pixbuf.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Canvas/RE.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Canvas/Rect.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Canvas/RichText.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Canvas/Shape.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Canvas/Widget.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Canvas/index.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Canvas/version.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gnome2/Canvas/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gnome2/Canvas/Canvas.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gnome2/Canvas/Canvas.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Canvas/Install
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Canvas
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gnome2/Canvas
