@@ -8,7 +8,8 @@
 PORTNAME=	uemacs
 PORTVERSION=	4.0
 CATEGORIES=	editors
-MASTER_SITES=	ftp://aquest.com/pub/uemacs400/disk2/
+MASTER_SITES=	http://uemacs.tripod.com/ \
+		ftp://aquest.com/pub/uemacs400/disk2/
 DISTNAME=	ue400dev
 
 MAINTAINER=	ports@FreeBSD.org
