@@ -1274,6 +1274,7 @@ drm-kmod	ports/graphics/drm-kmod
 drscheme	ports/lang/drscheme
 drweb		ports/security/drweb
 drweb-postfix	ports/security/drweb-postfix
+drweb-qmail	ports/security/drweb-qmail
 drweb-sendmail	ports/security/drweb-sendmail
 drwebd		ports/security/drwebd
 dsbl-testers	ports/mail/dsbl-testers
