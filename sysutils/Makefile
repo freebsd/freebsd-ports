@@ -246,6 +246,7 @@
     SUBDIR += pfstat
     SUBDIR += pftop
     SUBDIR += pib
+    SUBDIR += pipemeter
     SUBDIR += pkg_cutleaves
     SUBDIR += pkg_install
     SUBDIR += pkg_remove
