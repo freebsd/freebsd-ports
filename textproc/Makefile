@@ -348,6 +348,7 @@
     SUBDIR += ruby-xmlscan
     SUBDIR += ruby-xmlscan-old
     SUBDIR += ruby-xslt
+    SUBDIR += ruby-xtemplate
     SUBDIR += rxp
     SUBDIR += sablotron
     SUBDIR += sarep

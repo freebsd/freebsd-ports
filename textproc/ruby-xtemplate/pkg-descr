@@ -1,0 +1,6 @@
+XTemplate is a lightweight XML template engine for Ruby.  The idea of
+XTemplate comes from Amrita and XSLT.  This template engine requires
+one of xmlscan and REXML as XML parser.
+
+Author:	Takaaki Tateishi <ttate@users.sourceforge.net>
+WWW:	http://xtemplate.sourceforge.net/
