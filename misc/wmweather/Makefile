@@ -1,15 +1,15 @@
-# New ports collection makefile for:	wmWeather-1.1
+# New ports collection makefile for:	wmWeather-1.28
 # Version required:     1.28
 # Date created:		26 January 1998
 # Whom:			Kris Kennaway <kkennawa@physics.adelaide.edu.au>
 #
-# $Id: Makefile,v 1.1.1.1 1999/03/11 12:08:08 kris Exp $
+# $Id: Makefile,v 1.2 1999/03/12 11:01:18 kris Exp $
 
 DISTNAME=       wmWeather-1.28
 CATEGORIES=	misc windowmaker
-MASTER_SITES=	ftp://leadbelly.lanl.gov/pub/mgh/
+MASTER_SITES=	http://www.physics.adelaide.edu.au/~kkennawa/
 
-MAINTAINER=	kkennawa@physics.adelaide.edu.au
+MAINTAINER=	kris@FreeBSD.ORG
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/wmWeather
 
