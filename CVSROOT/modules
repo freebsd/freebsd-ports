@@ -7690,6 +7690,7 @@ pear-Net_Cyrus	ports/mail/pear-Net_Cyrus
 pear-Net_DIME	ports/net/pear-Net_DIME
 pear-Net_IMAP	ports/mail/pear-Net_IMAP
 pear-Net_NNTP	ports/net/pear-Net_NNTP
+pear-Net_POP3	ports/net/pear-Net_POP3
 pear-Net_SMTP	ports/net/pear-Net_SMTP
 pear-Net_Sieve	ports/net/pear-Net_Sieve
 pear-Net_Socket	ports/net/pear-Net_Socket
