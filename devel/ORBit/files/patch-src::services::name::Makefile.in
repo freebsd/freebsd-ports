@@ -1,0 +1,13 @@
+$NetBSD: patch-ae,v 1.8 2000/10/17 23:48:01 jlam Exp $
+
+--- src/services/name/Makefile.in.orig	Thu Oct 12 12:07:08 2000
++++ src/services/name/Makefile.in
+@@ -123,7 +123,7 @@
+ DEPS = $(top_builddir)/src/orb/libORBit.la				$(top_builddir)/src/ORBitutil/libORBitutil.la 			$(top_builddir)/src/IIOP/libIIOP.la				libORBitCosNaming.la
+ 
+ 
+-LDADDS =  	$(top_builddir)/src/orb/libORBit.la				$(top_builddir)/src/IIOP/libIIOP.la				$(top_builddir)/src/ORBitutil/libORBitutil.la 			libORBitCosNaming.la						@GLIB_LIBS@ 							-lm
++LDADDS =  	$(top_builddir)/src/orb/libORBit.la				$(top_builddir)/src/IIOP/libIIOP.la				$(top_builddir)/src/ORBitutil/libORBitutil.la 			libORBitCosNaming.la						@GLIB_LIBS@ 							-lm @LIB_WRAP@
+ 
+ 
+ #name-client.c boot.c orbit-name-server.c new-name-server.c: CosNaming.h

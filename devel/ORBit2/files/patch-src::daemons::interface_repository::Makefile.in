@@ -1,0 +1,13 @@
+$NetBSD: patch-al,v 1.5 2000/10/17 23:48:01 jlam Exp $
+
+--- src/daemons/interface_repository/Makefile.in.orig	Thu Oct 12 12:07:12 2000
++++ src/daemons/interface_repository/Makefile.in
+@@ -102,7 +102,7 @@
+ 
+ 
+ orbit_ird_LDFLAGS = -static
+-orbit_ird_LDADD =  	$(top_builddir)/src/orb/libORBit.la 	$(top_builddir)/src/IIOP/libIIOP.la 	$(top_builddir)/src/ORBitutil/libORBitutil.la 	@GLIB_LIBS@ 	-lm
++orbit_ird_LDADD =  	$(top_builddir)/src/orb/libORBit.la 	$(top_builddir)/src/IIOP/libIIOP.la 	$(top_builddir)/src/ORBitutil/libORBitutil.la 	@GLIB_LIBS@ 	-lm @LIB_WRAP@
+ 
+ 
+ orbit_ird_SOURCES =  	interface_repository-skels.c 	interface_repository-impl.c

@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src/orb/Makefile.in.orig	Wed Oct  3 10:21:01 2001
++++ src/orb/Makefile.in	Wed Oct  3 14:43:17 2001
+@@ -115,7 +115,7 @@
+ IDL = $(top_builddir)/src/orbit-idl-compiler/orbit-idl
+ IRIDL = $(top_srcdir)/src/daemons/interface_repository/interface_repository.idl
+ 
+-libORBit_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
++libORBit_la_LDFLAGS = -version-info 2:0:0
+ libORBit_la_LIBADD = $(GLIB_LIBS) -lm
+ 
+ BUILT_SOURCES =  	orbit.h		interface_repository.h 	interface_repository-common.c 	interface_repository-stubs.c
