@@ -18,7 +18,7 @@ USE_GCC=	3.1
 USE_MESA=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${X11BASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib -lGL -lGLU -lglut"
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib -lGL -lGLU -lglut"
 
 .include <bsd.port.mk>

@@ -27,9 +27,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 ALL_TARGET=	# none
 
-CPPFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include \
+CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include \
 		-I${X11BASE}/include/X11 ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}
+LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 

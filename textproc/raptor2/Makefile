@@ -29,8 +29,8 @@ INSTALLS_SHLIB=	yes
 MAN1=		rdfdump.1
 MAN3=		libraptor.3
 
-CPPFLAGS+=	-I${LOCALBASE}/include `${LIBWWW_CONFIG} --cflags`
-LDFLAGS+=	-L${LOCALBASE}/lib `${LIBWWW_CONFIG} --libs`
+CPPFLAGS=	-I${LOCALBASE}/include `${LIBWWW_CONFIG} --cflags`
+LDFLAGS=	-L${LOCALBASE}/lib `${LIBWWW_CONFIG} --libs`
 
 .if !exists(/usr/include/getopt.h)
 LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt

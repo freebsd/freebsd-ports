@@ -24,8 +24,8 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=	wmwork.1
 
-CPPFLAGS+=	-I${X11BASE}/include
-LDFLAGS+=	-L${X11BASE}/lib
+CPPFLAGS=	-I${X11BASE}/include
+LDFLAGS=	-L${X11BASE}/lib
 
 .if !exists(/usr/include/getopt.h)
 LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
