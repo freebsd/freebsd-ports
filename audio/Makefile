@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.39 1997/10/29 12:19:56 tg Exp $
+# $Id: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 #
 
     SUBDIR += amp
@@ -7,6 +7,7 @@
     SUBDIR += cdplay
     SUBDIR += gmod
     SUBDIR += gsm
+    SUBDIR += kdemultimedia
     SUBDIR += maplay
     SUBDIR += mikmod
     SUBDIR += mpegaudio
