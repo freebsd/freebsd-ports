@@ -7174,6 +7174,7 @@ ruby-sdl	ports/devel/ruby-sdl
 ruby-search-namazu	ports/databases/ruby-search-namazu
 ruby-serialport	ports/comms/ruby-serialport
 ruby-setup.rb	ports/devel/ruby-setup.rb
+ruby-shout	ports/audio/ruby-shout
 ruby-slang	ports/devel/ruby-slang
 ruby-smf	ports/audio/ruby-smf
 ruby-snmp	ports/net/ruby-snmp
