@@ -3,12 +3,12 @@
 # Date created:				10 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/04/27 03:51:02 mph Exp $
 #
 
 DISTNAME=	3dpong.0.3
 PKGNAME=	3dpong-0.3
-CATEGORIES=	games x11
+CATEGORIES=	games
 MASTER_SITES=	http://zippy.sonoma.edu/kendrick/nbs/unix/x/3dpong/
 
 MAINTAINER=	andy@icc.surw.chel.su

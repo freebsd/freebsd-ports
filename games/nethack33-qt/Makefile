@@ -3,12 +3,12 @@
 # Date created:		So   6 Apr 1997 04:25:57 MET DST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.12 1998/03/14 14:58:02 andreas Exp $
+# $Id: Makefile,v 1.13 1998/07/20 17:37:13 andreas Exp $
 #
 
 DISTNAME=	nethack-3.2.2
 PKGNAME=	qt-nethack-1.0.1
-CATEGORIES=	games x11
+CATEGORIES=	games
 MASTER_SITES=	http://www.troll.no/warwick/nethack/ \
 		http://trolls.troll.no/warwick/nethack/ \
 		ftp://ftp.troll.no/contrib/ \

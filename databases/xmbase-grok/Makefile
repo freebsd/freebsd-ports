@@ -3,12 +3,12 @@
 # Date created:		Sat Aug 30 13:29:42 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.2 1997/09/09 00:39:46 asami Exp $
+# $Id: Makefile,v 1.3 1998/01/27 00:44:49 fenner Exp $
 #
 
 DISTNAME=	xmbase-grok-1.3.2.sbin
 PKGNAME=	xmbase-grok-1.3.2
-CATEGORIES=	databases x11
+CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/database/flatfile
 

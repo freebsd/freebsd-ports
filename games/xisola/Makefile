@@ -3,11 +3,11 @@
 # Date created:				9 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/05/18 09:10:51 tg Exp $
 #
 
 DISTNAME=		xisola-1.0
-CATEGORIES=		games x11
+CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
 

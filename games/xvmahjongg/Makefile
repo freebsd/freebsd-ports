@@ -3,12 +3,12 @@
 # Date created:				21 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/05/14 07:11:06 tg Exp $
 #
 
 DISTNAME=	xvmahjongg2.1
 PKGNAME=	xvmahjongg-2.1
-CATEGORIES=	games x11
+CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.cdrom.com/pub/X11/R5contrib/ \
 		ftp://ftp.tu-darmstadt.de/pub/X11/R5contrib/
 EXTRACT_SUFX=	.tar.Z

@@ -3,12 +3,12 @@
 # Date created:				13 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/17 05:43:35 mph Exp $
+# $Id: Makefile,v 1.2 1998/05/17 23:09:43 mph Exp $
 #
 
 DISTNAME=		Maelstrom-1.4.3-L2.0.6-src
 PKGNAME=		maelstrom-2.0.6
-CATEGORIES=		games x11
+CATEGORIES=		games
 MASTER_SITES=		ftp://ftp.devolution.com/pub/maelstrom/
 
 MAINTAINER=		andy@icc.surw.chel.su

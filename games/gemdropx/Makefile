@@ -3,12 +3,12 @@
 # Date created:				9 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/04/27 04:48:03 mph Exp $
 #
 
 DISTNAME=	gemdropx
 PKGNAME=	gemdropx-1.0b3
-CATEGORIES=	games x11
+CATEGORIES=	games
 MASTER_SITES=	http://zippy.sonoma.edu/kendrick/nbs/unix/x/gemdropx/
 
 MAINTAINER=	andy@icc.surw.chel.su

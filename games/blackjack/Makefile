@@ -3,11 +3,11 @@
 # Date created:		23 February 1998
 # Whom:			Peter Mutsaers
 #
-# $Id: Makefile,v 1.1.1.1 1998/02/23 19:55:07 steve Exp $
+# $Id: Makefile,v 1.2 1998/04/22 22:55:26 mph Exp $
 #
 
 DISTNAME=	blackjack-1.1
-CATEGORIES=	games x11
+CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/strategy
 

@@ -3,12 +3,12 @@
 # Date created:				11 February 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/02/13 18:08:28 vanilla Exp $
+# $Id: Makefile,v 1.2 1998/07/11 00:39:24 steve Exp $
 #
 
 DISTNAME=	xlines
 PKGNAME=	xlines-1.0
-CATEGORIES=	games x11
+CATEGORIES=	games
 MASTER_SITES=	ftp://risq.belcaf.minsk.by/pub/genie/
 
 MAINTAINER=	andy@icc.surw.chel.su

@@ -3,12 +3,12 @@
 # Date created:				14 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/03/15 17:11:15 jseger Exp $
 #
 
 DISTNAME=		xtruco
 PKGNAME=		xtruco-1.0
-CATEGORIES=		games x11
+CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
 

@@ -3,11 +3,11 @@
 # Date created:				16 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/04/27 05:01:10 mph Exp $
 #
 
 DISTNAME=		xoids-1.5
-CATEGORIES=		games x11
+CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
 

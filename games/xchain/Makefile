@@ -3,12 +3,12 @@
 # Date created:				13 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/04/27 04:36:16 mph Exp $
 #
 
 DISTNAME=	xchain_1.0-2
 PKGNAME=	xchain-1.0.2
-CATEGORIES=	games x11
+CATEGORIES=	games
 MASTER_SITES=	http://thor.cam.ac.uk/~ac212/xchain/
 
 MAINTAINER=	andy@icc.surw.chel.su
