@@ -1,0 +1,14 @@
+*** reslib/conf.lib.orig	Wed Mar 10 19:00:11 1999
+--- reslib/conf.lib	Tue Dec 23 15:34:07 2003
+***************
+*** 13,18 ****
+--- 13,21 ----
+  PI 1 		pi helix
+  phi    -57.0 psi    -70.0 omega  180.0
+  
++ PPII 1 		polyproline II helix
++ phi    -75.0 psi    145.0 omega  180.0
++ 
+  EXTENDED 1 	extended  conformation
+  phi    180.0 psi    180.0 omega  180.0
+  
