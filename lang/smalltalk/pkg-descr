@@ -1,0 +1,6 @@
+This is GNU Smalltalk version 1.1.1.
+
+At this time, the install target is disabled as the installation
+process is interactive. See the file `mst.texinfo' for more information.
+
+Gary Palmer <gpalmer@FreeBSD.org>
