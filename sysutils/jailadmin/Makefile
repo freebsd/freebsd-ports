@@ -7,6 +7,7 @@
 
 PORTNAME=	jailadmin
 PORTVERSION=	1.8
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://subwiki.honeypot.net/pub/Freebsd/JailAdmin/
 DISTNAME=	jailadmin-${PORTVERSION}
@@ -25,7 +26,7 @@ PORTDOCS=	INSTALL README
 .if exists(${LOCALBASE}/lib/libsnmp.so.4) || defined(WITH_SNMP4)
 LIB_DEPENDS+=	snmp.4:${PORTSDIR}/net-mgmt/net-snmp4
 .else
-LIB_DEPENDS+=	netsnmp.6:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=	netsnmp.7:${PORTSDIR}/net-mgmt/net-snmp
 .endif
 PLIST_SUB+=	SNMP=""
 .else
