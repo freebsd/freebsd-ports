@@ -1,19 +1,7 @@
 bin/rhythmbox
-etc/gconf/gconf.xml.defaults/apps/rhythmbox/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/rhythmbox/state/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/rhythmbox/state/iradio/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/rhythmbox/state/library/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/rhythmbox/state/load_failure_dialog/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/rhythmbox/ui/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/rhythmbox/ui/library/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/rhythmbox/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/rhythmbox/state/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/rhythmbox/state/iradio/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/rhythmbox/state/library/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/rhythmbox/state/load_failure_dialog/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/rhythmbox/ui/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/rhythmbox/ui/library/%gconf.xml
+@unexec GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/rhythmbox.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/rhythmbox.schemas
+@exec GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/rhythmbox.schemas > /dev/null || /usr/bin/true
 lib/bonobo/librb-nautilus-context-menu.so
 libdata/bonobo/servers/GNOME_Rhythmbox.server
 libdata/bonobo/servers/Rhythmbox_Nautilus_Context_Menu.server
@@ -126,6 +114,7 @@ share/locale/ga/LC_MESSAGES/rhythmbox.mo
 share/locale/hr/LC_MESSAGES/rhythmbox.mo
 share/locale/hu/LC_MESSAGES/rhythmbox.mo
 share/locale/id/LC_MESSAGES/rhythmbox.mo
+share/locale/is/LC_MESSAGES/rhythmbox.mo
 share/locale/it/LC_MESSAGES/rhythmbox.mo
 share/locale/ja/LC_MESSAGES/rhythmbox.mo
 share/locale/ko/LC_MESSAGES/rhythmbox.mo
@@ -141,6 +130,7 @@ share/locale/pt/LC_MESSAGES/rhythmbox.mo
 share/locale/pt_BR/LC_MESSAGES/rhythmbox.mo
 share/locale/ro/LC_MESSAGES/rhythmbox.mo
 share/locale/ru/LC_MESSAGES/rhythmbox.mo
+share/locale/sk/LC_MESSAGES/rhythmbox.mo
 share/locale/sr/LC_MESSAGES/rhythmbox.mo
 share/locale/sr@Latn/LC_MESSAGES/rhythmbox.mo
 share/locale/sv/LC_MESSAGES/rhythmbox.mo
@@ -156,18 +146,4 @@ share/locale/zh_TW/LC_MESSAGES/rhythmbox.mo
 @dirrm share/gnome/help/rhythmbox/C/figures
 @dirrm share/gnome/help/rhythmbox/C
 @dirrm share/gnome/help/rhythmbox
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/rhythmbox/ui/library
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/rhythmbox/ui
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/rhythmbox/state/load_failure_dialog
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/rhythmbox/state/library
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/rhythmbox/state/iradio
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/rhythmbox/state
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/rhythmbox
-@dirrm etc/gconf/gconf.xml.defaults/apps/rhythmbox/ui/library
-@dirrm etc/gconf/gconf.xml.defaults/apps/rhythmbox/ui
-@dirrm etc/gconf/gconf.xml.defaults/apps/rhythmbox/state/load_failure_dialog
-@dirrm etc/gconf/gconf.xml.defaults/apps/rhythmbox/state/library
-@dirrm etc/gconf/gconf.xml.defaults/apps/rhythmbox/state/iradio
-@dirrm etc/gconf/gconf.xml.defaults/apps/rhythmbox/state
-@dirrm etc/gconf/gconf.xml.defaults/apps/rhythmbox
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/rhythmbox/rhythmbox-C.omf 2>/dev/null || /usr/bin/true
