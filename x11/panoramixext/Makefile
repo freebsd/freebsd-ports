@@ -1,0 +1,26 @@
+# New ports collection makefile for:   panoramixext
+# Date Created:			7 May 2004
+# Whom:				Eric Anholt <anholt@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	panoramixext
+PORTVERSION=	1.1
+CATEGORIES=	x11
+MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
+
+MAINTAINER=	x11@FreeBSD.org
+COMMENT=	Header files and documentation for the X PanoramiX extension
+
+CONFLICTS=	XFree86-libraries-*
+
+USE_BZIP2=	yes
+PREFIX?=	${X11BASE}
+MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_GMAKE=	yes
+USE_GNOME=	gnomehack
+
+.include <bsd.port.mk>
