@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.132 1998/07/20 03:05:41 steve Exp $
+# $Id: Makefile,v 1.133 1998/07/20 04:04:38 steve Exp $
 #
 
     SUBDIR += Canna
@@ -119,7 +119,6 @@
     SUBDIR += platex209-euc
     SUBDIR += platex209-jis
     SUBDIR += platex209-sjis
-    SUBDIR += play
     SUBDIR += prn
     SUBDIR += ptex-common
     SUBDIR += ptex-euc
