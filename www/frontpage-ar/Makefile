@@ -44,7 +44,7 @@ PLIST_SUB+=	FP_LCID=${FP_LCID}
 .endif
 
 do-install:
-	@${ECHO_MSG} "===> Untaring FrontPage ${FP_LANGUAGE} Language Extentions to ${PREFIX}"
+	@${ECHO_MSG} "===> Untaring FrontPage ${FP_LANGUAGE} Language Extensions to ${PREFIX}"
 .for DISTFILE in ${DISTFILES}
 	@(cd ${PREFIX} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${DISTFILE} ${EXTRACT_AFTER_ARGS})
 .endfor

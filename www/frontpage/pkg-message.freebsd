@@ -1,4 +1,4 @@
-The FreeBSD FrontPage Extentions require that libcrypt.* be linked to the
+The FreeBSD FrontPage Extensions require that libcrypt.* be linked to the
 libdescrypt.* libraries.  This is due to a problem with the fpsrvadm.exe
 program will create invaild MD5 passwords when libcrypt.* are linked to
 the libscrypt.* libraries.
