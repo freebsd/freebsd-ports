@@ -37,6 +37,7 @@
     SUBDIR += truereality
     SUBDIR += tuxnes
     SUBDIR += twin
+    SUBDIR += uae
     SUBDIR += vgb
     SUBDIR += vgb-bin
     SUBDIR += vice
