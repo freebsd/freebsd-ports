@@ -1,25 +1,63 @@
+bin/kwebdiff
 bin/kwebwatch
-share/applnk/Internet/kwebwatch.kdelnk
-share/apps/kwebwatch/pics/kww_eye.xpm
-share/apps/kwebwatch/pics/kww_eye_new.xpm
-share/apps/kwebwatch/pics/kww_green-bullet.xpm
-share/apps/kwebwatch/pics/kww_grey-bullet.xpm
-share/apps/kwebwatch/pics/kww_new.xpm
-share/apps/kwebwatch/pics/kww_red-bullet.xpm
-share/doc/HTML/en/kwebwatch/index.html
-share/doc/HTML/en/kwebwatch/kwebwatch-1.html
-share/doc/HTML/en/kwebwatch/kwebwatch-10.html
-share/doc/HTML/en/kwebwatch/kwebwatch-2.html
-share/doc/HTML/en/kwebwatch/kwebwatch-3.html
-share/doc/HTML/en/kwebwatch/kwebwatch-4.html
-share/doc/HTML/en/kwebwatch/kwebwatch-5.html
-share/doc/HTML/en/kwebwatch/kwebwatch-6.html
-share/doc/HTML/en/kwebwatch/kwebwatch-7.html
-share/doc/HTML/en/kwebwatch/kwebwatch-8.html
-share/doc/HTML/en/kwebwatch/kwebwatch-9.html
-share/doc/HTML/en/kwebwatch/logotp3.gif
-share/icons/kwebwatch.xpm
-share/icons/mini/kwebwatch.xpm
-@dirrm share/apps/kwebwatch/pics
-@dirrm share/apps/kwebwatch
+lib/libwebwatch.la
+lib/libwebwatch.so
+lib/libwebwatch.so.0
+share/applnk/Applications/kwebwatch.desktop
+share/apps/kwebwatch/icons/hicolor/16x16/actions/file_broken.png
+share/apps/kwebwatch/icons/hicolor/16x16/actions/filenew.png
+share/apps/kwebwatch/icons/hicolor/16x16/actions/folder.png
+share/apps/kwebwatch/icons/hicolor/16x16/actions/folder_new.png
+share/apps/kwebwatch/icons/hicolor/16x16/actions/html.png
+share/apps/kwebwatch/icons/hicolor/16x16/actions/kicker.png
+share/apps/kwebwatch/icons/hicolor/16x16/actions/kww_eye.png
+share/apps/kwebwatch/icons/hicolor/16x16/actions/kww_eye_new.png
+share/apps/kwebwatch/icons/hicolor/16x16/actions/kww_new.png
+share/apps/kwebwatch/icons/hicolor/16x16/actions/remove.png
+share/apps/kwebwatch/icons/hicolor/16x16/actions/socket.png
+share/apps/kwebwatch/icons/hicolor/16x16/actions/view_text.png
+share/apps/kwebwatch/icons/hicolor/16x16/apps/kwebwatch.png
+share/apps/kwebwatch/icons/locolor/16x16/actions/file_broken.png
+share/apps/kwebwatch/icons/locolor/16x16/actions/filenew.png
+share/apps/kwebwatch/icons/locolor/16x16/actions/folder.png
+share/apps/kwebwatch/icons/locolor/16x16/actions/html.png
+share/apps/kwebwatch/icons/locolor/16x16/actions/kicker.png
+share/apps/kwebwatch/icons/locolor/16x16/actions/kww_eye.png
+share/apps/kwebwatch/icons/locolor/16x16/actions/kww_eye_new.png
+share/apps/kwebwatch/icons/locolor/16x16/actions/kww_new.png
+share/apps/kwebwatch/icons/locolor/16x16/actions/remove.png
+share/apps/kwebwatch/icons/locolor/16x16/actions/socket.png
+share/apps/kwebwatch/icons/locolor/16x16/actions/view_text.png
+share/apps/kwebwatch/icons/locolor/16x16/apps/kwebwatch.png
+share/apps/kwebwatch/icons/locolor/32x32/apps/kwebwatch.png
+share/apps/kwebwatch/kwebwatchui.rc
+share/doc/HTML/en/kwebwatch/common
+share/doc/HTML/en/kwebwatch/index.docbook
+share/doc/HTML/en/kwebwatch/popup.png
+share/doc/HTML/en/kwebwatch/status.png
+share/icons/locolor/16x16/apps/kwebwatch.png
+share/icons/locolor/32x32/apps/kwebwatch.png
+@unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
 @dirrm share/doc/HTML/en/kwebwatch
+@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
+@dirrm share/apps/kwebwatch/icons/locolor/32x32/apps
+@dirrm share/apps/kwebwatch/icons/locolor/32x32
+@dirrm share/apps/kwebwatch/icons/locolor/16x16/apps
+@dirrm share/apps/kwebwatch/icons/locolor/16x16/actions
+@dirrm share/apps/kwebwatch/icons/locolor/16x16
+@dirrm share/apps/kwebwatch/icons/locolor
+@dirrm share/apps/kwebwatch/icons/hicolor/16x16/apps
+@dirrm share/apps/kwebwatch/icons/hicolor/16x16/actions
+@dirrm share/apps/kwebwatch/icons/hicolor/16x16
+@dirrm share/apps/kwebwatch/icons/hicolor
+@dirrm share/apps/kwebwatch/icons
+@dirrm share/apps/kwebwatch
+@unexec rmdir %D/share/apps 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Applications 2>/dev/null || true
+@unexec rmdir %D/share/applnk 2>/dev/null || true
