@@ -30,9 +30,6 @@ USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/libapache-mod-musicindex-${PORTVERSION}
 SUB_FILES=	pkg-message
 
-PORTDOCS=	directory.png musicindex.css fetch.png \
-		right_arrow.gif general.png sound.png
-
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/apache2/Makefile.modules.3rd"
 
