@@ -8,7 +8,7 @@
 
 DISTNAME=	sniff-1.0
 CATEGORIES=	security
-MASTER_SITES=   ftp://righi.df.unibo.it/pub/sniff/
+MASTER_SITES=   http://people.FreeBSD.org/~fenner/distfiles/
 
 MAINTAINER=	veraldi@cs.unibo.it
 
