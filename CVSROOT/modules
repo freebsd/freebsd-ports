@@ -9098,6 +9098,7 @@ qwt		ports/x11-toolkits/qwt
 qwtplot3d	ports/math/qwtplot3d
 race		ports/games/race
 racoon		ports/security/racoon
+raddump		ports/net/raddump
 radiator	ports/net/radiator
 radio		ports/audio/radio
 radiusclient	ports/net/radiusclient
