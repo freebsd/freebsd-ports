@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	flashplugin
-PORTVERSION=	5.0r50
+PORTVERSION=	5.0r51
 CATEGORIES=	www graphics linux
 MASTER_SITES=	http://download.macromedia.com/pub/shockwave/flash/english/linux/${PORTVERSION}/
 PKGNAMEPREFIX=	linux-
