@@ -1,0 +1,10 @@
+--- gnome-data/Makefile.in.orig	Fri Nov 26 00:59:37 2004
++++ gnome-data/Makefile.in	Fri Nov 26 00:59:47 2004
+@@ -387,7 +387,6 @@
+ 
+ install-data-local:
+ 	$(mkinstalldirs) $(DESTDIR)$(scoredir)
+-	-chgrp $(GAMES_GROUP) $(DESTDIR)$(scoredir) && chmod g=rwXs $(DESTDIR)$(scoredir)
+ 	$(top_builddir)/libgnome/gnome-gen-mimedb $(DESTDIR)$(sysconfdir)/mime-magic
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
