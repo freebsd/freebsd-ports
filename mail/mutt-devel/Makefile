@@ -44,6 +44,9 @@
 # If you want to have the IMAP header cache define:
 #  WITH_MUTT_IMAP_HEADER_CACHE
 #
+# If you want to have the Maildir header cache define:
+#  WITH_MUTT_MAILDIR_HEADER_CACHE
+#
 # If you want to make SMIME outlook compatible define:
 #  WITH_MUTT_SMIME_OUTLOOK_COMPAT
 #  This is a default knob and can be disabled by
@@ -195,6 +198,9 @@ LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
 BROKEN=		"mutt-devel's SASL code appears to be broken"
 LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
 .endif
+.if defined(WITH_MUTT_MAILDIR_HEADER_CACHE)
+LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
+.endif
 .if ! defined(WITHOUT_MUTT_SMIME_OUTLOOK_COMPAT)
 pre-configure::
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-smime-outlook
@@ -202,6 +208,10 @@ pre-configure::
 .if defined(WITH_MUTT_IMAP_HEADER_CACHE)
 pre-configure::
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-imap-header-cache
+.endif
+.if defined(WITH_MUTT_MAILDIR_HEADER_CACHE)
+pre-configure::
+	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-maildir-header-cache
 .endif
 
 .if ! defined(WITHOUT_MUTT_PGP_PATCH)
@@ -288,6 +298,10 @@ SCRIPTS_ENV+=	MUTT_QUOTE_PATCH="yes"
 .endif
 .if defined(WITH_MUTT_IMAP_HEADER_CACHE)
 SCRIPTS_ENV+=	MUTT_IMAP_HEADER_CACHE="yes"
+.endif
+.if defined(WITH_MUTT_MAILDIR_HEADER_CACHE)
+SCRIPTS_ENV+=	MUTT_MAILDIR_HEADER_CACHE="yes"
+CONFIGURE_ARGS+=	--enable-hcache
 .endif
 .if defined(WITH_MUTT_EDIT_THREADS)
 SCRIPTS_ENV+=	MUTT_EDIT_THREADS="yes"

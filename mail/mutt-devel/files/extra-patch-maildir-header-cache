@@ -1,0 +1,629 @@
+--- Makefile.am.orig	Fri Mar  5 15:34:57 2004
++++ Makefile.am	Fri Mar  5 15:35:55 2004
+@@ -20,2 +20,3 @@
+ mutt_SOURCES = $(BUILT_SOURCES) \
++	hcache.c \
+ 	addrbook.c alias.c attach.c base64.c browser.c buffy.c color.c \
+diff -Nru a/configure.in b/configure.in
+--- configure.in	Sat Feb 28 11:16:57 2004
++++ configure.in	Sat Feb 28 11:16:57 2004
+@@ -768,6 +767,21 @@
+ 
+         fi])
+ 
++dnl -- start cache --
++AC_ARG_ENABLE(hcache, [  --enable-hcache            Enable header caching for Maildir folders],
++[if test x$enableval = xyes; then
++       AC_DEFINE(USE_HCACHE, 1, [Enable header caching for Maildir style mailboxes])
++       LIBS="$LIBS -lgdbm"
++       AC_CACHE_CHECK(for gdbm_open, ac_cv_gdbmopen,
++               [ac_cv_gdbmopen=no
++               AC_TRY_LINK([#include <gdbm.h>],[gdbm_open(0,0,0,0,0);],[ac_cv_gdbmopen=yes])])
++
++       if test $ac_cv_gdbmopen = no; then
++               AC_MSG_ERROR(You must install libgdbm with --enable-hcache)
++       fi
++fi])
++dnl -- end cache --
++
+ AC_SUBST(MUTTLIBS)
+ AC_SUBST(MUTT_LIB_OBJECTS)
+ AC_SUBST(LIBIMAP)
+diff -Nru a/globals.h b/globals.h
+--- globals.h	Sat Feb 28 11:16:57 2004
++++ globals.h	Sat Feb 28 11:16:57 2004
+@@ -63,6 +63,9 @@
+ WHERE char *Locale;
+ WHERE char *MailcapPath;
+ WHERE char *Maildir;
++#if USE_HCACHE
++WHERE char *MaildirCache;
++#endif
+ WHERE char *MhFlagged;
+ WHERE char *MhReplied;
+ WHERE char *MhUnseen;
+diff -Nru a/hcache.c b/hcache.c
+--- /dev/null	Wed Dec 31 16:00:00 1969
++++ hcache.c	Sat Feb 28 11:16:57 2004
+@@ -0,0 +1,420 @@
++/*
++ * Copyright (C) 2004 Thomas Glanzmann <sithglan@stud.uni-erlangen.de>
++ *
++ *     This program is free software; you can redistribute it and/or modify
++ *     it under the terms of the GNU General Public License as published by
++ *     the Free Software Foundation; either version 2 of the License, or
++ *     (at your option) any later version.
++ *
++ *     This program is distributed in the hope that it will be useful,
++ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
++ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ *     GNU General Public License for more details.
++ *
++ *     You should have received a copy of the GNU General Public License
++ *     along with this program; if not, write to the Free Software
++ *     Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111, USA.
++ */
++
++#if HAVE_CONFIG_H
++#include "config.h"
++#endif /* HAVE_CONFIG_H */
++
++#include <gdbm.h>
++#include <fcntl.h>
++#include "mutt.h"
++#include "mime.h"
++#include "mx.h"
++#include "lib.h"
++
++static unsigned char *
++dump_int(unsigned int i, unsigned char *d, unsigned int *off)
++{
++	safe_realloc(&d, *off + sizeof(int));
++	memcpy(d + *off, &i, sizeof(int));
++	(*off) += sizeof(int);
++
++	return d;
++}
++
++static void
++restore_int(unsigned int *i, unsigned char *d, unsigned int *off)
++{
++	memcpy(i, d + *off, sizeof(int));
++	(*off) += sizeof(int);
++}
++
++static unsigned char *
++dump_char(char *c, unsigned char *d, unsigned int *off)
++{
++	unsigned int size;
++
++	if (c == NULL) {
++		size = 0;
++		d = dump_int(size, d, off);
++		return d;
++	}
++
++	size = strlen(c) + 1;
++	d = dump_int(size, d, off);
++	safe_realloc(&d, *off + size);
++	memcpy(d + *off, c, size);
++	*off += size;
++
++	return d;
++}
++
++static void
++restore_char(char **c, unsigned char *d, unsigned int *off)
++{
++	unsigned int size;
++	restore_int(&size, d, off);
++
++	if (size == 0) {
++		*c = NULL;
++		return;
++	}
++
++	*c = safe_malloc(size);
++	memcpy(*c, d + *off, size);
++	*off += size;
++}
++
++static void
++skip_char(unsigned char *d, unsigned int *off)
++{
++	unsigned int size;
++	restore_int(&size, d, off);
++	*off += size;
++}
++
++static unsigned char *
++dump_address(ADDRESS *a, unsigned char *d, unsigned int *off)
++{
++	unsigned int counter = 0;
++	unsigned int start_off = *off;
++
++	d = dump_int(0xdeadbeaf, d, off);
++
++	while (a) {
++#ifdef EXACT_ADDRESS
++		d = dump_char(a->val, d, off);
++#endif
++		d = dump_char(a->personal, d, off);
++		d = dump_char(a->mailbox, d, off);
++		d = dump_int(a->group, d, off);
++		a = a->next;
++		counter++;
++	}
++
++	memcpy(d + start_off, &counter, sizeof(int));
++
++	return d;
++}
++
++static void
++restore_address(ADDRESS **a, unsigned char *d, unsigned int *off)
++{
++	unsigned int counter;
++
++	restore_int(&counter, d, off);
++
++	while (counter) {
++		*a = safe_malloc(sizeof(ADDRESS));
++#ifdef EXACT_ADDRESS
++		restore_char(&(*a)->val, d, off);
++#endif
++		restore_char(&(*a)->personal, d, off);
++		restore_char(&(*a)->mailbox, d, off);
++		restore_int((unsigned int *)&(*a)->group, d, off);
++		a = &(*a)->next;
++		counter--;
++	}
++
++	*a = NULL;
++	return;
++}
++
++static unsigned char *
++dump_list(LIST *l, unsigned char *d, unsigned int *off)
++{
++	unsigned int counter = 0;
++	unsigned int start_off = *off;
++
++	d = dump_int(0xdeadbeaf, d, off);
++
++	while (l) {
++		d = dump_char(l->data, d, off);
++		l = l->next;
++		counter++;
++	}
++
++	memcpy(d + start_off, &counter, sizeof(int));
++
++	return d;
++}
++
++static void
++restore_list(LIST **l, unsigned char *d, unsigned int *off)
++{
++	unsigned int counter;
++
++	restore_int(&counter, d, off);
++
++	while (counter) {
++		*l = safe_malloc(sizeof(LIST));
++		restore_char(&(*l)->data, d, off);
++		l = &(*l)->next;
++		counter--;
++	}
++
++	*l = NULL;
++	return;
++}
++
++static unsigned char *
++dump_parameter(PARAMETER *p, unsigned char *d, unsigned int *off)
++{
++	unsigned int counter = 0;
++	unsigned int start_off = *off;
++
++	d = dump_int(0xdeadbeaf, d, off);
++
++	while (p) {
++		d = dump_char(p->attribute, d, off);
++		d = dump_char(p->value, d, off);
++		p = p->next;
++		counter++;
++	}
++
++	memcpy(d + start_off, &counter, sizeof(int));
++
++	return d;
++}
++
++static void
++restore_parameter(PARAMETER **p, unsigned char *d, unsigned int *off)
++{
++	unsigned int counter;
++
++	restore_int(&counter, d, off);
++
++	while (counter) {
++		*p = safe_malloc(sizeof(PARAMETER));
++		restore_char(&(*p)->attribute, d, off);
++		restore_char(&(*p)->value, d, off);
++		p = &(*p)->next;
++		counter--;
++	}
++
++	*p = NULL;
++	return;
++}
++
++static unsigned char *
++dump_body(BODY *c, unsigned char *d, unsigned int *off)
++{
++	safe_realloc(&d, *off + sizeof(BODY));
++	memcpy(d + *off, c, sizeof(BODY));
++	*off += sizeof(BODY);
++
++	d = dump_char(c->xtype, d, off);
++	d = dump_char(c->subtype, d, off);
++
++	d = dump_parameter(c->parameter, d, off);
++
++	d = dump_char(c->description, d, off);
++	d = dump_char(c->form_name, d, off);
++	d = dump_char(c->filename, d, off);
++	d = dump_char(c->d_filename, d, off);
++
++	return d;
++}
++
++static void
++restore_body(BODY *c, unsigned char *d, unsigned int *off)
++{
++	memcpy(c, d + *off, sizeof(BODY));
++	*off += sizeof(BODY);
++
++	restore_char(& c->xtype, d, off);
++	restore_char(& c->subtype, d, off);
++
++	restore_parameter(& c->parameter, d, off);
++
++	restore_char(& c->description, d, off);
++	restore_char(& c->form_name, d, off);
++	restore_char(& c->filename, d, off);
++	restore_char(& c->d_filename, d, off);
++}
++
++static unsigned char *
++dump_envelope(ENVELOPE *e, unsigned char *d, unsigned int *off)
++{
++	d = dump_address(e->return_path, d, off);
++	d = dump_address(e->from, d, off);
++	d = dump_address(e->to, d, off);
++	d = dump_address(e->cc, d, off);
++	d = dump_address(e->bcc, d, off);
++	d = dump_address(e->sender, d, off);
++	d = dump_address(e->reply_to, d, off);
++	d = dump_address(e->mail_followup_to, d, off);
++
++	d = dump_char(e->subject, d, off);
++	d = dump_char(e->real_subj, d, off);
++	d = dump_char(e->message_id, d, off);
++	d = dump_char(e->supersedes, d, off);
++	d = dump_char(e->date, d, off);
++	d = dump_char(e->x_label, d, off);
++
++	d = dump_list(e->references, d, off);
++	d = dump_list(e->in_reply_to, d, off);
++	d = dump_list(e->userhdrs, d, off);
++
++	return d;
++}
++
++static void
++restore_envelope(ENVELOPE *e, unsigned char *d, unsigned int *off)
++{
++	restore_address(& e->return_path, d, off);
++	restore_address(& e->from, d, off);
++	restore_address(& e->to, d, off);
++	restore_address(& e->cc, d, off);
++	restore_address(& e->bcc, d, off);
++	restore_address(& e->sender, d, off);
++	restore_address(& e->reply_to, d, off);
++	restore_address(& e->mail_followup_to, d, off);
++
++	restore_char(& e->subject, d, off);
++	restore_char(& e->real_subj, d, off);
++	restore_char(& e->message_id, d, off);
++	restore_char(& e->supersedes, d, off);
++	restore_char(& e->date, d, off);
++	restore_char(& e->x_label, d, off);
++
++	restore_list(& e->references, d, off);
++	restore_list(& e->in_reply_to, d, off);
++	restore_list(& e->userhdrs, d, off);
++}
++
++
++/* This function transforms a header into a char so that it is useable by
++ * gdbm_store */
++
++#if HAVE_LANGINFO_CODESET
++int
++mutt_hcache_charset_matches(char *d)
++{
++	unsigned int off = sizeof(struct timeval);
++	char *charset = NULL;
++
++	restore_char(&charset, (unsigned char *) d, &off);
++
++	return (0 == mutt_strcmp(charset, Charset));
++}
++#endif /* HAVE_LANGINFO_CODESET */
++
++void *
++mutt_hcache_dump(HEADER *h, unsigned int *off)
++{
++	unsigned char *d = NULL;
++	struct timeval now;
++	*off             = 0;
++
++	d = safe_malloc(sizeof(struct timeval));
++	gettimeofday(&now, NULL);
++	memcpy(d, &now, sizeof(struct timeval));
++	*off += sizeof(struct timeval);
++
++#if HAVE_LANGINFO_CODESET
++	d = dump_char(Charset, d, off);
++#endif /* HAVE_LANGINFO_CODESET */
++
++
++	safe_realloc(&d, *off + sizeof(HEADER));
++	memcpy(d + *off, h, sizeof(HEADER));
++	*off += sizeof(HEADER);
++
++	d = dump_envelope(h->env, d, off);
++	d = dump_body(h->content, d, off);
++	d = dump_char(h->maildir_flags, d, off);
++
++	return d;
++}
++
++HEADER *
++mutt_hcache_restore(unsigned char *d, HEADER **oh)
++{
++	unsigned int off = 0;
++	HEADER *h        = mutt_new_header();
++
++	/* skip timeval */
++	off += sizeof(struct timeval);
++
++#if HAVE_LANGINFO_CODESET
++	skip_char(d, &off);
++#endif /* HAVE_LANGINFO_CODESET */
++
++	memcpy(h, d + off, sizeof(HEADER));
++	off += sizeof(HEADER);
++
++	h->env = mutt_new_envelope();
++	restore_envelope(h->env, d, &off);
++
++	h->content = mutt_new_body();
++	restore_body(h->content, d, &off);
++
++	restore_char(&h->maildir_flags, d, &off);
++
++	h->old  = (*oh)->old;
++	h->path = safe_strdup((*oh)->path);
++	mutt_free_header (oh);
++
++	return h;
++}
++
++GDBM_FILE
++mutt_hcache_open(char *path)
++{
++	GDBM_FILE db = NULL;
++
++	if (! path || path[0] == '\0') {
++		return NULL;
++	}
++
++	db = gdbm_open(path, 0, GDBM_WRCREAT, 00600, NULL);
++	if (db) {
++		return db;
++	}
++
++	/* if rw failed try ro */
++	return gdbm_open(path, 0, GDBM_READER, 00600, NULL);
++}
++
++void
++mutt_hcache_close(GDBM_FILE db)
++{
++	if (db) {
++		gdbm_close(db);
++	}
++}
++
++datum
++mutt_hcache_fetch(GDBM_FILE db, datum key)
++{
++	if (! db) {
++		datum ret = {NULL, 0};
++		return ret;
++	}
++	return gdbm_fetch(db, key);
++}
++
++int
++mutt_hcache_store(GDBM_FILE db, datum key, datum data)
++{
++	if (! db) {
++		return -1;
++	}
++	return gdbm_store(db, key, data, GDBM_REPLACE);
++}
+diff -Nru a/init.h b/init.h
+--- init.h	Sat Feb 28 11:16:57 2004
++++ init.h	Sat Feb 28 11:16:57 2004
+@@ -981,6 +981,13 @@
+   ** \fBDON'T CHANGE THIS SETTING UNLESS YOU ARE REALLY SURE WHAT YOU ARE
+   ** DOING!\fP
+   */
++#if USE_HCACHE
++  { "maildir_cache", DT_PATH, R_NONE, UL &MaildirCache, 0 },
++  /*
++  ** .pp
++  ** Path to the maildir cache file. If unset no cache will be used.
++  */
++#endif /* USE_HCACHE */
+   { "maildir_trash", DT_BOOL, R_NONE, OPTMAILDIRTRASH, 0 },
+   /*
+   ** .pp
+diff -Nru a/main.c b/main.c
+--- main.c	Sat Feb 28 11:16:57 2004
++++ main.c	Sat Feb 28 11:16:57 2004
+@@ -411,6 +411,12 @@
+ 	"-HAVE_GETADDRINFO  "
+ #endif
+ 
++#if USE_HCACHE
++	"+USE_HCACHE  "
++#else
++	"-USE_HCACHE  "
++#endif
++
+ 	);
+ 
+ #ifdef ISPELL
+diff -Nru a/mh.c b/mh.c
+--- mh.c	Sat Feb 28 11:16:57 2004
++++ mh.c	Sat Feb 28 11:16:57 2004
+@@ -42,6 +42,10 @@
+ #include <string.h>
+ #include <utime.h>
+ 
++#if USE_HCACHE
++#include <gdbm.h>
++#endif /* USE_HCACHE */
++
+ struct maildir
+ {
+   HEADER *h;
+@@ -779,11 +783,82 @@
+   return r;
+ }
+ 
++#if USE_HCACHE
++
++static ssize_t
++maildir_cache_keylen(const char *fn)
++{
++	char *lastcolon = strrchr(fn, ':');
++
++	if (lastcolon) {
++		*lastcolon = '\0';
++	}
++
++	return strlen(fn) + 1;
++}
+ 
+ /* 
+  * This function does the second parsing pass for a maildir-style
+  * folder.
+  */
++void maildir_delayed_parsing (CONTEXT * ctx, struct maildir *md)
++{
++	struct maildir *p;
++	GDBM_FILE db = NULL;
++	char fn[_POSIX_PATH_MAX];
++	char key_fn[_POSIX_PATH_MAX];
++	datum key;
++	datum data;
++	unsigned int size;
++	struct timeval *when = NULL;
++	struct stat lastchanged;
++	int ret;
++
++	db = mutt_hcache_open(MaildirCache);
++
++	for (p = md; p; p = p->next) {
++		if (! (p && p->h && !p->header_parsed)) {
++			continue;
++		}
++
++		snprintf(key_fn, sizeof(key_fn), "%s/%s", ctx->path, p->h->path + 4);
++		key.dptr  = key_fn;
++		key.dsize = maildir_cache_keylen(key_fn);
++		data      = mutt_hcache_fetch(db, key);
++		when      = (struct timeval *) data.dptr;
++
++		snprintf(fn, sizeof (fn), "%s/%s", ctx->path, p->h->path);
++		ret = stat(fn, &lastchanged);
++
++		if (data.dptr != NULL
++		 && ret == 0
++		 && lastchanged.st_mtime <= when->tv_sec
++#if HAVE_LANGINFO_CODESET
++		 && mutt_hcache_charset_matches(data.dptr)
++#endif /* HAVE_LANGINFO_CODESET */
++		 ) {
++			p->h = mutt_hcache_restore((unsigned char *)data.dptr, &p->h);
++			FREE(& data.dptr);
++			maildir_parse_flags(p->h, fn);
++
++		} else if (maildir_parse_message (ctx->magic, fn, p->h->old, p->h)) {
++			maildir_parse_flags(p->h, fn);
++			p->header_parsed = 1;
++			if (db) {
++				/* only try this if db connection is available */
++				data.dptr = mutt_hcache_dump(p->h, &size); 
++				data.dsize = size;
++				mutt_hcache_store(db, key, data);
++				FREE(& data.dptr);
++			}
++		} else {
++			mutt_free_header (&p->h);
++		}
++	}
++	mutt_hcache_close(db);
++}
++
++#else /* USE_HCACHE */
+ 
+ void maildir_delayed_parsing (CONTEXT * ctx, struct maildir *md)
+ {
+@@ -801,7 +876,7 @@
+     }
+ }
+ 
+-
++#endif /* USE_HCACHE */
+ 
+ /* Read a MH/maildir style mailbox.
+  *
+diff -Nru a/protos.h b/protos.h
+--- protos.h	Sat Feb 28 11:16:57 2004
++++ protos.h	Sat Feb 28 11:16:57 2004
+@@ -99,6 +99,18 @@
+ ENVELOPE *mutt_read_rfc822_header (FILE *, HEADER *, short, short);
+ HEADER *mutt_dup_header (HEADER *);
+ 
++#if USE_HCACHE
++#include <gdbm.h>
++GDBM_FILE mutt_hcache_open(char *path);
++void mutt_hcache_close(GDBM_FILE db);
++void * mutt_hcache_dump(HEADER *h, unsigned int *off);
++HEADER * mutt_hcache_restore(unsigned char *d, HEADER **oh);
++datum mutt_hcache_fetch(GDBM_FILE db, datum key);
++int mutt_hcache_store(GDBM_FILE db, datum key, datum data);
++int mutt_hcache_charset_matches(char *d);
++#endif /* USE_HCACHE */
++
++
+ ATTACHPTR **mutt_gen_attach_list (BODY *, int, ATTACHPTR **, short *, short *, int, int);
+ 
+ time_t mutt_decrease_mtime (const char *, struct stat *);
