@@ -6,17 +6,24 @@
 #
 
 PORTNAME=	visitors
-PORTVERSION=	0.3
+PORTVERSION=	0.3.a
 CATEGORIES=	www
 MASTER_SITES=	http://www.hping.org/visitors/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a/a/}
 
 MAINTAINER=	flz@xbsd.org
 COMMENT=	Very fast and easy to use web log analyzer
 
-WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION:S/.a/a/}
+
+USE_REINPLACE=	yes
 
 PLIST_FILES=	bin/visitors
 PORTDOCS=	doc.html
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|^DEBUG=.*||' -e 's|^CC=.*||' \
+			 -e 's|^\(CCOPT=\).*|\1 ${CFLAGS}|' ${WRKSRC}/Makefile
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/visitors ${PREFIX}/bin
