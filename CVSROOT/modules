@@ -3444,6 +3444,7 @@ ko-qt31		ports/korean/qt31
 ko-texinfo	ports/korean/texinfo
 ko-uniksc	ports/korean/uniksc
 kobodeluxe	ports/games/kobodeluxe
+koffice-i18n	ports/misc/koffice-i18n
 koffice-i18n-af	ports/misc/koffice-i18n-af
 koffice-i18n-ar	ports/misc/koffice-i18n-ar
 koffice-i18n-bs	ports/misc/koffice-i18n-bs
@@ -6696,6 +6697,7 @@ ru-elm.language	ports/russian/elm.language
 ru-fortuneru	ports/russian/fortuneru
 ru-gd		ports/russian/gd
 ru-kde3-i18n	ports/russian/kde3-i18n
+ru-koffice-i18n	ports/russian/koffice-i18n
 ru-koi8r-ps	ports/russian/koi8r-ps
 ru-ksocrat	ports/russian/ksocrat
 ru-messarge	ports/russian/messarge
