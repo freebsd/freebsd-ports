@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sablevm
-PORTVERSION=	1.1.5
+PORTVERSION=	1.1.6
 CATEGORIES=	java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=sablevm
@@ -18,11 +18,14 @@ COMMENT=	Java VM created by McGill University's Sable Research Group
 
 BUILD_DEPENDS=	jikes:${PORTSDIR}/java/jikes
 LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt \
-		ffi:${PORTSDIR}/devel/libffi
+		ffi:${PORTSDIR}/devel/libffi \
+		gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20 \
+		art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl2
 
-GNU_CONFIGURE=	yes
+USE_AUTOCONF_VER=259
+#GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 USE_LIBLTDL=	yes
 INSTALLS_SHLIB=	yes
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
@@ -40,8 +43,7 @@ CLASSPATHDIR=	${PORTNAME}-classpath-${PORTVERSION}
 post-build:
 		@${ECHO} "===>    ${CLASSPATHDIR}"
 		@( cd ${.CURDIR} && ${MAKE} do-configure \
-		    CONFIGURE_WRKSRC=${WRKDIR}/${CLASSPATHDIR} \
-		    CONFIGURE_ARGS="--disable-gtk-peer" )
+		    CONFIGURE_WRKSRC=${WRKDIR}/${CLASSPATHDIR})
 		@( cd ${.CURDIR} && ${MAKE} do-build \
 		    BUILD_WRKSRC=${WRKDIR}/${CLASSPATHDIR} )
 

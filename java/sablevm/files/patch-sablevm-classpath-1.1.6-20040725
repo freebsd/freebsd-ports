@@ -1,0 +1,13 @@
+Index: native/target/generic/target_generic_network.h
+===================================================================
+--- ../sablevm-classpath-1.1.6/native/target/generic/target_generic_network.h	(.../tags/sablevm-classpath-1.1.6)	(revision 2849)
++++ ../sablevm-classpath-1.1.6/native/target/generic/target_generic_network.h	(.../branches/staging)	(revision 2849)
+@@ -570,7 +570,7 @@
+   #include <netinet/in.h>
+   #define TARGET_NATIVE_NETWORK_SOCKET_SEND(socketDescriptor,buffer,length,bytesSent) \
+     do { \
+-      bytesSent=send(socketDescriptor,buffer,length,MSG_NOSIGNAL); \
++      bytesSent=send(socketDescriptor,buffer,length,0); \
+     } while (0)
+ #endif
+ 
