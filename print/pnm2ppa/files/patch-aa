@@ -1,0 +1,9 @@
+--- Makefile.orig	Tue Sep 22 22:47:02 1998
++++ Makefile	Tue Sep 22 22:47:23 1998
+@@ -1,5 +1,5 @@
+ CC=gcc
+-CFLAGS=-Wall -O2
++CFLAGS=-Wall -O2 -DPPA_CONF=\"${PREFIX}/etc/pbm2ppa.conf\"
+ LDFLAGS=
+ 
+ default:

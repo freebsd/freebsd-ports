@@ -1,0 +1,11 @@
+--- pbm2ppa.c.orig	Mon Apr  6 23:20:07 1998
++++ pbm2ppa.c	Tue Sep 22 22:37:45 1998
+@@ -268,7 +268,7 @@
+   exit(1);
+ }
+ 
+-char* defaultcfgfile="/etc/pbm2ppa.conf";
++char* defaultcfgfile=PPA_CONF;
+ int main (int argc, char *argv[])
+ {
+   int argn;
