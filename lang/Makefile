@@ -11,6 +11,7 @@
     SUBDIR += bwbasic
     SUBDIR += caml-light
     SUBDIR += ccscript
+    SUBDIR += cel
     SUBDIR += cim
     SUBDIR += clisp
     SUBDIR += cmucl
