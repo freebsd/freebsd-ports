@@ -3,7 +3,7 @@
 # Date created:		26 August 1997
 # Whom:			Michael Elbel (me)
 #
-# $Id: Makefile,v 1.5 1997/12/15 20:07:20 gj Exp $
+# $Id: Makefile,v 1.6 1997/12/27 02:53:16 asami Exp $
 #
 
 DISTNAME=	xemacs-20.3
@@ -42,10 +42,18 @@ ALL_TARGET=	all dist
 # Have 
 pre-configure:
 	@echo "To compile in the MULE features, set the environment variable USE_MULE"
+.if defined(HAVE_MOTIF)
+	@echo 
+	@echo "If your MOTIF library is actually lesstif, you might occasionally"
+	@echo "experience locked-up frames."
+	@echo "In this case, set the environment variable MOTIF_STATIC and recompile, "
+	@echo "which will force the use of athena widgets for dialogs."
+.endif
 
 .if defined(USE_MULE)
 WITH_MULE=	--with-mule
 MULEDISTFILE=	${DISTNAME}-mule.tar.gz
+PLIST=		${PKGDIR}/PLIST.mule
 .endif
 
 # hack to avoid shipping binaries linked with Motif
