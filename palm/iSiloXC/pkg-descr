@@ -1,0 +1,21 @@
+iSiloXC is the command-line tool for creating iSilo documents.
+It takes as input a conversion list file that specifies the information
+needed to create a set of documents.
+
+iSiloXC converts text or HTML documents to the iSilo 3.x document format.
+These can then be installed on a Palm Pilot, using tools in
+the palm/pilot-link port.
+
+These files are only readable using the iSilo reader,
+available from the web site.
+
+Main features:
+ * text file formats: HTML, CSS, text, Palm Doc
+ * image file formats: jpeg, gif, bmp, png
+ * conversion from local or Web contents, multiple root sources
+ * apply security attributes to converted documents
+
+WWW: http://www.iSiloX.com/
+
+-- Sergey Skvortsov
+skv@FreeBSD.org

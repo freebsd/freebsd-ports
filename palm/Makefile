@@ -6,6 +6,7 @@
     SUBDIR += gnomepilot
     SUBDIR += gnomepilot-conduits
     SUBDIR += hdconv
+    SUBDIR += iSiloXC
     SUBDIR += imgvtopgm
     SUBDIR += isilo
     SUBDIR += jfconv
