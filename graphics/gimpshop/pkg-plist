@@ -889,7 +889,6 @@ share/gimp/help/C/filters/repeat_last.html
 share/gimp/help/C/filters/reshow_last.html
 share/gimp/help/C/filters/ripple.html
 share/gimp/help/C/filters/rotate.html
-share/gimp/help/C/filters/rotators.html
 share/gimp/help/C/filters/sample_colorize.html
 share/gimp/help/C/filters/scatter_hsv.html
 share/gimp/help/C/filters/screenshot.html
@@ -1351,6 +1350,10 @@ share/locale/fr/LC_MESSAGES/gimp-libgimp.mo
 share/locale/fr/LC_MESSAGES/gimp-script-fu.mo
 share/locale/fr/LC_MESSAGES/gimp-std-plugins.mo
 share/locale/fr/LC_MESSAGES/gimp.mo
+share/locale/ga/LC_MESSAGES/gimp-libgimp.mo
+share/locale/ga/LC_MESSAGES/gimp-script-fu.mo
+share/locale/ga/LC_MESSAGES/gimp-std-plugins.mo
+share/locale/ga/LC_MESSAGES/gimp.mo
 share/locale/gl/LC_MESSAGES/gimp-libgimp.mo
 share/locale/gl/LC_MESSAGES/gimp-script-fu.mo
 share/locale/gl/LC_MESSAGES/gimp-std-plugins.mo
