@@ -7,7 +7,8 @@
 
 PORTNAME=	scotty
 PORTVERSION=	20000221
-CATEGORIES=	net
+PORTREVISION=	1
+CATEGORIES=	net tcl84 tk84
 MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/pub/local/tkined/devel/
 DISTNAME=	${PORTNAME}-00-02-21
 
@@ -16,20 +17,20 @@ COMMENT=	Network management extensions to tcl
 
 .ifdef (WITHOUT_X11)
 PKGNAMESUFFIX=	-nox11
-LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83
+LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84
 .else
-LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
+LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 .endif
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-tcl=${PREFIX}/lib/tcl8.3 \
+CONFIGURE_ARGS=	--with-tcl=${PREFIX}/lib/tcl8.4 \
 		--enable-multicast
 
 .ifdef (WITHOUT_X11)
 CONFIGURE_ARGS+=--with-tk=no
 .else
-CONFIGURE_ARGS+=--with-tk=${PREFIX}/lib/tk8.3
-CONFIGURE_ENV+=	wish=${PREFIX}/bin/wish8.3
+CONFIGURE_ARGS+=--with-tk=${PREFIX}/lib/tk8.4
+CONFIGURE_ENV+=	wish=${PREFIX}/bin/wish8.4
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
