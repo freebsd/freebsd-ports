@@ -7,7 +7,7 @@
 
 PORTNAME=	clusterit
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net devel parallel
 MASTER_SITES=	http://www.garbled.net/download/ \
 		ftp://ftp.chg.ru/pub/prog/parallel/clusterit/
