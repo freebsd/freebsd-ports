@@ -269,7 +269,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>phpMyAdmin</name>
-	<range><ge>2.6.0.2</ge><lt>2.6.1.1</lt></range>
+	<range><ge>2.6.0.2</ge><lt>2.6.1.r1</lt></range>
       </package>
     </affects>
     <description>
@@ -294,6 +294,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-12-13</discovery>
       <entry>2004-12-15</entry>
+      <modified>2004-12-19</modified>
     </dates>
   </vuln>
 
@@ -302,7 +303,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>phpMyAdmin</name>
-	<range><lt>2.6.1.1</lt></range>
+	<range><lt>2.6.1.r1</lt></range>
       </package>
     </affects>
     <description>
@@ -326,6 +327,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-12-13</discovery>
       <entry>2004-12-15</entry>
+      <modified>2004-12-19</modified>
     </dates>
   </vuln>
 
