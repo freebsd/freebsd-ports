@@ -32,6 +32,123 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="741f8841-9c6b-11d9-9dbe-000a95bc6fae">
+    <topic>firefox -- arbitrary code execution from sidebar panel</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>1.0.2,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>1.0.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Mozilla Foundation Security Advisory states:</p>
+	<blockquote cite="http://www.mozilla.org/security/announce/mfsa2005-31.html">
+	  <p>If a user bookmarked a malicious page as a Firefox
+	    sidebar panel that page could execute arbitrary programs
+	    by opening a privileged page and injecting javascript into
+	    it.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0402</cvename>
+      <url>http://www.mozilla.org/security/announce/mfsa2005-31.html</url>
+    </references>
+    <dates>
+      <discovery>2005-03-03</discovery>
+      <entry>2005-03-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7d2aac52-9c6b-11d9-99a7-000a95bc6fae">
+    <topic>mozilla -- heap buffer overflow in GIF image processing</topic>
+    <affects>
+      <package>
+        <name>firefox</name>
+        <range><lt>1.0.2,1</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+        <name>linux-firefox</name>
+        <range><lt>1.0.2</lt></range>
+      </package>
+      <package>
+        <name>mozilla</name>
+        <range><lt>1.7.6,2</lt></range>
+	<range><ge>1.8.*,2</ge></range>
+      </package>
+      <package>
+        <name>linux-mozilla</name>
+        <name>linux-mozilla-devel</name>
+        <range><lt>1.7.6</lt></range>
+	<range><ge>1.8.*</ge></range>
+      </package>
+      <package>
+	<name>netscape7</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<!-- These ports are obsolete. -->
+        <name>de-linux-mozillafirebird</name>
+	<name>el-linux-mozillafirebird</name>
+        <name>ja-linux-mozillafirebird-gtk1</name>
+        <name>ja-mozillafirebird-gtk2</name>
+        <name>linux-mozillafirebird</name>
+        <name>ru-linux-mozillafirebird</name>
+        <name>zhCN-linux-mozillafirebird</name>
+        <name>zhTW-linux-mozillafirebird</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<!-- These package names are obsolete. -->
+        <name>de-linux-netscape</name>
+        <name>de-netscape7</name>
+        <name>fr-linux-netscape</name>
+        <name>fr-netscape7</name>
+        <name>ja-linux-netscape</name>
+        <name>ja-netscape7</name>
+        <name>linux-netscape</name>
+        <name>linux-phoenix</name>
+        <name>mozilla+ipv6</name>
+        <name>mozilla-embedded</name>
+        <name>mozilla-firebird</name>
+        <name>mozilla-gtk1</name>
+        <name>mozilla-gtk2</name>
+        <name>mozilla-gtk</name>
+        <name>mozilla-thunderbird</name>
+        <name>phoenix</name>
+        <name>pt_BR-netscape7</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Mozilla Foundation Security Advisory states:</p>
+	<blockquote cite="http://www.mozilla.org/security/announce/mfsa2005-31.html">
+	  <p>An <em>(sic)</em> GIF processing error when parsing the
+	    obsolete Netscape extension 2 can lead to an exploitable
+	    heap overrun, allowing an attacker to run arbitrary code on
+	    the user's machine.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0399</cvename>
+      <url>http://www.mozilla.org/security/announce/mfsa2005-30.html</url>
+      <url>http://xforce.iss.net/xforce/alerts/id/191</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=285595</url>
+    </references>
+    <dates>
+      <discovery>2005-03-10</discovery>
+      <entry>2005-03-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f8536143-9bc4-11d9-b8b3-000a95bc6fae">
     <topic>sylpheed -- buffer overflow in header processing</topic>
     <affects>
