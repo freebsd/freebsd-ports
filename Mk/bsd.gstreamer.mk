@@ -54,7 +54,7 @@ GST_SHLIB_VERSION=	1
 #
 _USE_GSTREAMER_ALL=	a52dec aalib artsd audiofile cairo cdaudio cdparanoia \
 			dirac dts dv dvd esound faac faad ffmpeg flac \
-			gdkpixbuf gnomevfs gsm hermes ivorbis jack jpeg \
+			gconf gdkpixbuf gnomevfs gsm hermes ivorbis jack jpeg \
 			jpeg-mmx ladspa lame libcaca libfame libmms libmng \
 			libpng libvisual mad mikmod mpeg2dec mpeg2enc mplex \
 			musepack musicbrainz nas sdl shout shout2 sidplay \
@@ -71,6 +71,9 @@ core_GST_EXT=	.keep
 
 yes_DEPENDS=	multimedia/gstreamer-plugins
 yes_PLIST=	libgstac3parse
+
+gconf_DEPENDS=	devel/gstreamer-plugins-gconf
+gconf_PLIST=	libgstgconfelements
 
 # Audio Plugins Section
 a52dec_DEPENDS=	audio/gstreamer-plugins-a52dec
