@@ -66,5 +66,5 @@ post-install:
 .endfor
 
 .include <bsd.port.pre.mk>
-.include "${FILESDIR}/manpages.mk"
+#.include "${FILESDIR}/manpages.mk"
 .include <bsd.port.post.mk>
