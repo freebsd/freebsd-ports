@@ -1,1 +1,1 @@
-SVr4 and XSI-Curses compatible curses library
+Library for terminal-independent, full-screen output (color, etc).
