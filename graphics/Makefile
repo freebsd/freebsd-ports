@@ -313,6 +313,7 @@
     SUBDIR += paintlib
     SUBDIR += panorama
     SUBDIR += passepartout
+    SUBDIR += pecl-imagick
     SUBDIR += peps
     SUBDIR += pgperl
     SUBDIR += pgplot

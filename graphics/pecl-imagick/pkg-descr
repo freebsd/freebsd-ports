@@ -1,0 +1,7 @@
+Imagick is a wrapper for the ImageMagick library to read, write, and
+manipulate an image in many image formats.
+
+WWW: http://pecl.php.net/package/imagick/
+
+- Alex Dupre
+ale@FreeBSD.org
