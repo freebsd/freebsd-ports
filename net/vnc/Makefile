@@ -3,7 +3,7 @@
 # Date created:		24 February 1998
 # Whom:			msmith
 #
-# $Id: Makefile,v 1.2 1998/03/19 01:54:59 msmith Exp $
+# $Id: Makefile,v 1.3 1998/07/20 17:48:40 msmith Exp $
 #
 
 DISTNAME=       	vnc-3.3.2_unixsrc
@@ -18,6 +18,7 @@ MAINTAINER=	 	bmah@ca.sandia.gov
 USE_PERL5=		YES
 
 EXTRACT_ONLY=		vnc-3.3.2_unixsrc.tgz
+IGNOREFILES=		${DISTFILES}
 
 NO_WRKSUBDIR=		YES
 
