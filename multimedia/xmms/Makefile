@@ -12,6 +12,7 @@ CATEGORIES+=	multimedia audio ipv6
 MASTER_SITES=	ftp://ftp.xmms.org/pub/xmms/1.2.x/ \
 		http://www.xmms.org/files/1.2.x/ \
 		ftp://ftp.sunet.se/pub/multimedia/xmms/1.2.x/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER?=	esk@ira.uka.de
 COMMENT?=	X Multimedia System --- An audio player with a Winamp GUI
@@ -42,6 +43,14 @@ PLIST_SUB=	DATADIR="share"
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS+=	--enable-ipv6
+
+.if defined(WITH_ENCODING_PATCH)
+ENC_PATCHLEVEL=	22.2
+DISTFILES+=	${PORTNAME}-${PORTVERSION}-recode-csa${ENC_PATCHLEVEL}${EXTRACT_SUFX}:enc
+MASTER_SITES+=	${MASTER_SITE_SOURCEFORGE:S/$/:enc/}
+#MASTER_SITE_SUBDIR+=	rusxmms:enc		## Does not work
+_MASTER_SITE_SUBDIR_enc=	rusxmms
+.endif
 
 .if !defined(WITHOUT_MIKMOD)
 LIB_DEPENDS+=	mikmod.2:${PORTSDIR}/audio/libmikmod
@@ -111,6 +120,9 @@ pre-extract:
 .endif
 
 post-patch:
+.if defined(WITH_ENCODING_PATCH)
+	@${PATCH} -s -p1 -d ${WRKSRC} < ${WRKDIR}/xmms-ds-recode.patch
+.endif
 	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
 		 's|\(datadir\)/aclocal|(prefix)/share/aclocal|g'
 	@${REINPLACE_CMD} -e 's|{datadir}/locale|{prefix}/share/locale|g' \
