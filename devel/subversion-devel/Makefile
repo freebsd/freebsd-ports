@@ -177,7 +177,6 @@ pre-extract:
 	@${ECHO_MSG} ""
 
 post-extract:
-	@${REINPLACE_CMD} 's/ldb/ldb4/g' ${WRKSRC}/configure
 	@${RM} -r ${WRKSRC}/neon
 	@${RM} -r ${WRKSRC}/apr
 	@${RM} -r ${WRKSRC}/apr-util
