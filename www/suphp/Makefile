@@ -19,8 +19,7 @@ WANT_PHP_CGI=	yes
 USE_APACHE=	yes
 CONFLICTS=	mod_php4-4* php-4.*
 
-LOG_PATH?=	${WITH_LOGPATH}
-WITH_LOGNAME?=	suphp.log
+LOGFILE?=	/var/log/suphp.log
 PHP_PATH?=	${LOCALBASE}/bin/php
 APACHE_USER?=	${WWWOWN}
 MIN_UID?=	80
@@ -31,7 +30,7 @@ MYPORTDOCS=	apache/CONFIG apache/INSTALL apache/README apache/LICENSE \
 LANG=		en de
 
 CONFIGURE_ARGS+=	--with-php=${PHP_PATH} \
-			--with-logfile=${LOG_PATH}/${WITH_LOGNAME} \
+			--with-logfile=${LOGFILE} \
 			--with-apache-user=${APACHE_USER} \
 			--with-min-gid=${MIN_UID} \
 			--with-min-uid=${MIN_GID} \
@@ -52,9 +51,6 @@ CONFIGURE_ARGS+=	--disable-checkgid
 .endif
 ##   WITH_SETID_MODE: Mode to use for setting UID/GID.
 CONFIGURE_ARGS+=	--with-setid-mode=${WITH_SETID_MODE}
-##   WITH_LOGPATH (formerly known as LOG_PATH): logging directory
-##   (default: /var/log)
-##   WITH_LOGNAME: log file name (default suphp.log)
 
 .include <bsd.port.pre.mk>
 
