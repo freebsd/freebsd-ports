@@ -11,4 +11,3 @@ lib/libscxl.so.1.0
 @exec ranlib lib/schemetoc/libsc.a
 @exec ranlib lib/schemetoc/libsc_p.a
 @exec ranlib lib/schemetoc/scxl.a
-@exec ldconfig
