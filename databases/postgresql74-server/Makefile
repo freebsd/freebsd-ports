@@ -8,11 +8,10 @@
 PORTNAME=	postgresql
 PORTVERSION=	7.1.3
 CATEGORIES=	databases
-MASTER_SITES=	ftp://ftp.iodynamics.com/pub/mirror/postgresql/%SUBDIR%/ \
+MASTER_SITES=	ftp://ftp.sunet.se/pub/unix/databases/relational/postgresql/%SUBDIR%/ \
 		ftp://ftp.postgresql.org/pub/%SUBDIR%/ \
 		ftp://ftp.de.postgresql.org/%SUBDIR%/ \
 		ftp://ftp.digex.net/pub/packages/database/postgresql/%SUBDIR%/ \
-		ftp://ftp.sunet.se/pub/unix/databases/relational/postgresql/%SUBDIR%/ \
 		ftp://ftp.chg.ru/pub/databases/postgresql/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/db/postgresql/&,}
 MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
