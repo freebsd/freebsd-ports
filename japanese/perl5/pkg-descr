@@ -7,32 +7,6 @@
 	    and jperl5.003.patch7_1
 				by yasushi@cs.washington.edu. 
 
-* known PROBLEMS
-
-	   If you set envirment variable `LANG' to ja_JP.EUC, 
-	*jperl/perl* output `warning: setlocale(LC_CTYPE, "") failed.'
-
-	   I don't have solution. If you have, please contact me :-)
-
-	   If you do not need setting locale, edit Makefile as below
-	and reinstall jperl.
-
-Thank you.
-
--------- patch to Makefile
---- Makefile.org	Sun Jan 12 22:17:05 1997
-+++ Makefile	Sun Jan 12 22:17:36 1997
-@@ -40,7 +40,7 @@
- 
- HAS_CONFIGURE=		yes
- CONFIGURE_SCRIPT=	Configure
--CONFIGURE_ARGS=		-sde -Dprefix=${PREFIX}
-+CONFIGURE_ARGS=		-sde -Dprefix=${PREFIX} -U d_setlocale
- 
- MAN1= 	perlbook.1 perlbot.1 perlcall.1 perldata.1 perldebug.1 perldiag.1  \
- 	perlembed.1 perlform.1 perlfunc.1 perlguts.1 perlipc.1 perllol.1   \
----------
-
 ----------- From lang/perl5/pkg/DESC
 From the distribution README:
 
