@@ -1,0 +1,51 @@
+--- src/disku.c.orig	Sat Oct  4 04:33:32 2003
++++ src/disku.c	Sat Oct  4 04:33:38 2003
+@@ -28,7 +28,11 @@
+ 
+ #if defined(__FreeBSD__)
+ #include <errno.h>
++#include <sys/param.h>
+ #include <sys/disklabel.h>
++#if __FreeBSD_version >= 500040
++#include <sys/disk.h>
++#endif
+ #endif
+ 
+ 
+@@ -61,12 +65,36 @@
+ #endif
+ 
+ #if defined(__FreeBSD__)
++#if __FreeBSD_version < 500040
+ 	struct disklabel	dl;
+ 	if (ioctl(d->d_fd,DIOCGDINFO,&dl) == -1)
+ 		pr(FATAL,EM_IOCTLFAILED,"DIOCGDINFO",strerror(errno));
+ 	g.d_c = dl.d_ncylinders;
+ 	g.d_h = dl.d_ntracks;
+ 	g.d_s = dl.d_nsectors;
++#else
++	struct disklabel	loclab;
++	u_int    u;
++
++	if (ioctl(d->d_fd, DIOCGFWSECTORS, &u) == 0)
++		loclab.d_nsectors = u;
++	else
++		loclab.d_nsectors = 63;
++	if (ioctl(d->d_fd, DIOCGFWHEADS, &u) == 0)
++		loclab.d_ntracks = u;
++	else if (loclab.d_secperunit <= 63*1*1024)
++		loclab.d_ntracks = 1;
++	else if (loclab.d_secperunit <= 63*16*1024)
++		loclab.d_ntracks = 16;
++	else
++		loclab.d_ntracks = 255;
++	loclab.d_secpercyl = loclab.d_ntracks * loclab.d_nsectors;
++	loclab.d_ncylinders = loclab.d_secperunit / loclab.d_secpercyl;
++
++        g.d_c = loclab.d_ncylinders;
++	g.d_h = loclab.d_ntracks;
++	g.d_s = loclab.d_nsectors;
++#endif
+ #endif
+ 
+ 	return (&g);

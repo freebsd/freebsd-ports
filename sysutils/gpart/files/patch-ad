@@ -1,0 +1,11 @@
+--- man/gpart.man.orig	Sat Oct  4 04:34:37 2003
++++ man/gpart.man	Sat Oct  4 04:34:43 2003
+@@ -378,7 +378,7 @@
+ drive without starting the scan loop in FreeBSD type
+ 
+ .RS
+-gpart -vvd /dev/wd2
++gpart -vvd /dev/ad2
+ .RE
+ .RE
+ 
