@@ -8377,6 +8377,7 @@ qmail-tls	ports/mail/qmail-tls
 qmailadmin	ports/mail/qmailadmin
 qmailadmin-devel	ports/mail/qmailadmin-devel
 qmailanalog	ports/mail/qmailanalog
+qmailmrtg7	ports/mail/qmailmrtg7
 qmake		ports/devel/qmake
 qmc		ports/misc/qmc
 qmls		ports/cad/qmls
