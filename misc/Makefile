@@ -60,6 +60,7 @@
     SUBDIR += dnetc
     SUBDIR += dog
     SUBDIR += dotfile
+    SUBDIR += earthview
     SUBDIR += edonkey-tool-hash
     SUBDIR += edonkey-tool-list
     SUBDIR += edonkey-tool-recovermet

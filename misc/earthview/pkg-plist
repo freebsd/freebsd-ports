@@ -1,0 +1,8 @@
+bin/earthview
+share/earthview/topography/topography.cps
+share/earthview/topography/1440x720-2x2.az2
+share/earthview/population/population.cps
+share/earthview/population/4320x2160-6x6.pz2
+@dirrm share/earthview/topography
+@dirrm share/earthview/population
+@dirrm share/earthview
