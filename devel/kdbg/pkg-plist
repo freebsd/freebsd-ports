@@ -28,6 +28,7 @@ share/apps/kdbg/types/kdecore.kdbgtt
 share/apps/kdbg/types/kdecore3.kdbgtt
 share/apps/kdbg/types/qt.kdbgtt
 share/apps/kdbg/types/qt2.kdbgtt
+share/apps/kdbg/types/qt3.kdbgtt
 share/apps/kdbg/types/stdc++.kdbgtt
 share/doc/HTML/de/kdbg/argspwdenv.html
 share/doc/HTML/de/kdbg/breakptlist.html
