@@ -8,12 +8,13 @@
 
 PORTNAME=	libdbi
 PORTVERSION=	0.6.7
+PORTREVISION=	1
 CATEGORIES=	databases devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://linux.ucla.edu/~dap24/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	seanc@FreeBSD.org
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
@@ -29,7 +30,8 @@ PLIST_SUB+=	MYSQL="@comment "
 .endif
 
 .if defined(WITH_PGSQL)
-LIB_DEPENDS+=	pq:${PORTSDIR}/databases/postgresql7
+POSTGRESQL_PORT?=	databases/postgresql7
+LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 CONFIGURE_ARGS+=	--with-pgsql
 PLIST_SUB+=	PGSQL=""
 .else
