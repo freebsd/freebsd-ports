@@ -1,13 +1,14 @@
-
-$FreeBSD$
-
---- ../configure.orig	Sat Mar 30 17:35:05 2002
-+++ ../configure	Thu Aug  8 19:35:46 2002
-@@ -3290,16 +3290,17 @@
+--- ../configure.orig	Wed Mar 26 21:21:19 2003
++++ ../configure	Sun Jun  1 13:08:11 2003
+@@ -3300,16 +3300,21 @@
  #define HAVE_BSD_FLOCK 1
  EOF
  
 -    CFLAGS="$CFLAGS $(DSO_CFLAGS) -ansi -Wall"
++    cat >> confdefs.h <<\EOF
++#define HAVE_SOCKLEN_T 1
++EOF
++
 +    CFLAFS="$CFLAGS $DSO_CFLAGS -ansi -Wall -pipe -DXP_UNIX"
      MOZ_OBJFORMAT=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
      if test "$MOZ_OBJFORMAT" = "elf"; then
