@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	amaterus
-PORTVERSION=	0.33.2
+PORTVERSION=	0.34.1
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://www.taiyaki.org/src/
+MASTER_SITES=	http://www.taiyaki.org/amaterus/src/
 
 MAINTAINER=	nakai@FreeBSD.org
 
