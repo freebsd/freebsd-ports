@@ -30,6 +30,6 @@ APEL is programed by MORIOKA Tomohiko <morioka@jaist.ac.jp>.
 
 To use apel, put the following setup into your ~/.emacs:
 
-	(require 'apel-setup)
+	(require 'apel-setupel)
 
 --- Porting by shige <shige@FreeBSD.ORG>.
