@@ -37,6 +37,15 @@
 # defining this knob will force the ports system to install gtk12 first
 # (if not available) and then link mplayer against it. Then you'll
 # be able to use gmplayer, the graphical version of mplayer
+# Note: Defining both WITH_GUI and WITHOUT_GUI will build mplayer without
+#       grapical inteface.
+
+# WITHOUT_GUI
+# default: undefined
+# normally mplayer comes with gmplayer if gtk is installed on the system.
+# If you want to force mplayer to disable the graphical user interface and
+# build without gui ability, define this.
+#
 #
 # WITHOUT_FREETYPE
 # default: undefined
@@ -117,6 +126,9 @@
 #
 # WITH_ARTS
 # default: autodetect
+# Note: arts audio output cannot work together with mplayer's gtk1-gui
+# 	because of conflicting glib versions, so it it is disabled if
+# 	mplayer is built with graphical user interface
 #
 # WITH_CDPARANOIA
 # default: autodetect
@@ -187,6 +199,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	0.92.1
+PORTREVISION=	1
 CATEGORIES=	multimedia audio ipv6
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -359,6 +372,9 @@ CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
 
 .if ${HAVE_GNOME:Mgtk12}!=""
 WITH_GUI=	yes
+.endif
+
+.if defined(WITH_GUI) && !defined(WITHOUT_GUI)
 PLIST_SUB+=	GMPLAYER=""
 .else
 PLIST_SUB+=	GMPLAYER="@comment "
@@ -373,7 +389,7 @@ CONFIGURE_ENV+=		CFLAGS+="-I/${LOCALBASE}/include"
 CONFIGURE_ARGS+=	--disable-rtc
 .endif
 
-.if defined(WITH_GUI)
+.if defined(WITH_GUI) && !defined(WITHOUT_GUI)
 USE_GNOME+=	gtk12
 RUN_DEPENDS+=	${LOCALBASE}/share/mplayer/Skin:${PORTSDIR}/multimedia/mplayer-skins
 .if defined(PKGNAMESUFFIX)
@@ -382,6 +398,8 @@ PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-gtk
 PKGNAMESUFFIX=	-gtk
 .endif
 CONFIGURE_ARGS+=	--enable-gui
+.else
+CONFIGURE_ARGS+=	--disable-gui
 .endif
 
 .if !defined(WITHOUT_MENCODER)
@@ -393,7 +411,7 @@ CONFIGURE_ARGS+=	--disable-mencoder
 PLIST_SUB+=	MENCODER="@comment "
 .endif
 
-.if defined(WITH_ARTS)
+.if defined(WITH_ARTS) && (!defined(WITH_GUI) || defined(WITHOUT_GUI))
 LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
 
 CONFIGURE_ARGS+=	--enable-arts
@@ -601,7 +619,7 @@ pre-everything::
 	@${ECHO_MSG} "make WITH_GUI=yes"
 	@${ECHO_MSG} "builds MPlayer with GUI support."
 
-.if defined(WITH_GUI)
+.if defined(WITH_GUI) && !defined(WITHOUT_GUI)
 	@${ECHO_MSG} "If you want to use the GUI, you can either install"
 	@${ECHO_MSG} "${PORTSDIR}/multimedia/mplayer-skins"
 	@${ECHO_MSG} "or download official skin collections from"
@@ -659,7 +677,7 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/DOCS/${doc} ${DOCSDIR}
 .endfor
 .endif
-.if defined(WITH_GUI)
+.if defined(WITH_GUI) && !defined(WITHOUT_GUI)
 	@${LN} -sf ${PREFIX}/bin/mplayer ${PREFIX}/bin/gmplayer
 .endif
 	@${CAT} ${.CURDIR}/pkg-message
