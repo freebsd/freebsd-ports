@@ -1,9 +1,27 @@
 bin/Maelstrom
-bin/Maelstrom_sound
-share/Maelstrom/Maelstrom Fonts
-share/Maelstrom/Maelstrom Sounds
-share/Maelstrom/Maelstrom Sprites
-share/Maelstrom/Maelstrom-Scores
+bin/Maelstrom-netd
+bin/macres
+bin/playwave
+bin/snd2wav
+share/doc/Maelstrom/Ambrosia_Software,_Inc._FAQ
+share/doc/Maelstrom/COPYING
+share/doc/Maelstrom/COPYING.GPL
+share/doc/Maelstrom/Maelstrom-Announce
+share/doc/Maelstrom/Maelstrom.FAQ
+share/doc/Maelstrom/MaelstromGPL_press_release
+share/doc/Maelstrom/Makefile
+share/doc/Maelstrom/Makefile.in
+share/doc/Maelstrom/Networking.Paper
+share/doc/Maelstrom/Porting.Paper
+share/doc/Maelstrom/Quotes
+share/doc/Maelstrom/README
+share/doc/Maelstrom/README.joystick
+share/doc/Maelstrom/README.network
+share/doc/Maelstrom/README.options
+share/doc/Maelstrom/RSA.README
+share/doc/Maelstrom/Technical_Notes-v1.0
+share/doc/Maelstrom/Technical_Notes-v1.1
+share/doc/Maelstrom/Technical_Notes-v2.0
 share/Maelstrom/Images/Maelstrom_Icon#100.cicn
 share/Maelstrom/Images/Maelstrom_Icon#101.cicn
 share/Maelstrom/Images/Maelstrom_Icon#102.cicn
@@ -20,34 +38,24 @@ share/Maelstrom/Images/Maelstrom_Icon#134.cicn
 share/Maelstrom/Images/Maelstrom_Icon#135.cicn
 share/Maelstrom/Images/Maelstrom_Icon#136.cicn
 share/Maelstrom/Images/Maelstrom_Icon#137.cicn
-share/Maelstrom/Images/Maelstrom_Sprites#128.icon
-share/Maelstrom/Images/Maelstrom_Titles#100.icon
-share/Maelstrom/Images/Maelstrom_Titles#101.icon
-share/Maelstrom/Images/Maelstrom_Titles#102.icon
-share/Maelstrom/Images/Maelstrom_Titles#128.icon
-share/Maelstrom/Images/Maelstrom_Titles#129.icon
-share/Maelstrom/Images/Maelstrom_Titles#130.icon
-share/Maelstrom/Images/Maelstrom_Titles#133.icon
-share/Maelstrom/Images/Maelstrom_Titles#134.icon
-share/Maelstrom/Images/Maelstrom_Titles#135.icon
-share/Maelstrom/Images/Maelstrom_Titles#999.icon
-share/doc/Maelstrom/Ambrosia.FAQ
-share/doc/Maelstrom/Ambrosia.URL
-share/doc/Maelstrom/BUGS
-share/doc/Maelstrom/Changelog
-share/doc/Maelstrom/Copyright
-share/doc/Maelstrom/Maelstrom-Announce
-share/doc/Maelstrom/Maelstrom.FAQ
-share/doc/Maelstrom/Networking.Paper
-share/doc/Maelstrom/Porting.Paper
-share/doc/Maelstrom/Quotes
-share/doc/Maelstrom/README
-share/doc/Maelstrom/README.Options
-share/doc/Maelstrom/README.network
-share/doc/Maelstrom/RSA.README
-share/doc/Maelstrom/Technical_Notes-v1.0
-share/doc/Maelstrom/Technical_Notes-v1.1
-share/doc/Maelstrom/Technical_Notes-v2.0
+share/Maelstrom/Images/Maelstrom_Titles#100.bmp
+share/Maelstrom/Images/Maelstrom_Titles#101.bmp
+share/Maelstrom/Images/Maelstrom_Titles#102.bmp
+share/Maelstrom/Images/Maelstrom_Titles#128.bmp
+share/Maelstrom/Images/Maelstrom_Titles#129.bmp
+share/Maelstrom/Images/Maelstrom_Titles#130.bmp
+share/Maelstrom/Images/Maelstrom_Titles#133.bmp
+share/Maelstrom/Images/Maelstrom_Titles#134.bmp
+share/Maelstrom/Images/Maelstrom_Titles#135.bmp
+share/Maelstrom/Images/Maelstrom_Titles#999.bmp
+share/Maelstrom/Images/Makefile
+share/Maelstrom/Images/Makefile.in
+share/Maelstrom/Maelstrom-Scores
+share/Maelstrom/Maelstrom_Fonts
+share/Maelstrom/Maelstrom_Sounds
+share/Maelstrom/Maelstrom_Sprites
+share/Maelstrom/icon.bmp
+share/Maelstrom/icon.xpm
 @dirrm share/Maelstrom/Images
 @dirrm share/Maelstrom
 @dirrm share/doc/Maelstrom

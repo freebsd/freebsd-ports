@@ -1,15 +1,11 @@
---- mixer.cpp	Thu Dec  5 13:14:44 1996
-+++ /home/andy/tmp/wrk/mixer.cpp	Wed May 13 23:06:18 1998
-@@ -283,10 +283,12 @@
- #endif /* linux */
+--- netlogic/netplay.cpp.orig	Mon Mar 13 20:51:15 2000
++++ netlogic/netplay.cpp	Mon Mar 13 20:52:10 2000
+@@ -39,7 +39,7 @@
+ #define RESET_ERRNO()	errno = 0
+ #endif /* WIN32 */
  
- 	/* This is necessary so that the sound server stays in sync */
-+#ifndef __FreeBSD__
- 	long flags;
- 	flags = fcntl(dsp_fd, F_GETFL, 0);
- 	flags |= O_SYNC;
- 	(void) fcntl(dsp_fd, F_SETFL, flags);
-+#endif
+-#if !defined(linux) && !defined(__SVR4)
++#if !defined(linux) && !defined(__SVR4) && !defined(__FreeBSD__)
+ typedef int socklen_t;
+ #endif
  
- 	return(0);
- }

@@ -1,9 +1,13 @@
---- netlogic/Makefile.orig	Sun May 17 01:28:58 1998
-+++ netlogic/Makefile	Sun May 17 01:29:05 1998
-@@ -1,5 +1,5 @@
+--- Makefile.in.orig	Mon Mar 13 21:21:22 2000
++++ Makefile.in	Mon Mar 13 21:34:53 2000
+@@ -446,8 +446,8 @@
+ 	chmod 666 $(target)/Maelstrom-Scores
  
--CFLAGS = $(OPTIMIZE) -I.. $(INCLUDES) -DNETPLAY
-+CFLAGS += $(OPTIMIZE) -I.. $(INCLUDES) -DNETPLAY
- OBJS = about.o blit.o game.o logic.o make.o netplay.o object.o player.o
+ install_gamedocs:
+-	sh mkinstalldirs $(target)/
+-	cp -rv README* COPYING* Docs*	$(target)/
++	sh mkinstalldirs $(prefix)/share/doc/Maelstrom/
++	cp -rv README* COPYING* Docs/*	$(prefix)/share/doc/Maelstrom/
  
- netlogic.o: $(OBJS)
+ # Rule to build tar-gzipped distribution package
+ $(PACKAGE)-$(VERSION).tar.gz: dist
