@@ -11,6 +11,7 @@ lib/gauche/%%VERSION%%/%%TARGET%%/libnet.so
 lib/gauche/%%VERSION%%/%%TARGET%%/libuvector.so
 lib/gauche/%%VERSION%%/%%TARGET%%/mt-random.so
 lib/gauche/%%VERSION%%/%%TARGET%%/ndbm.so
+lib/gauche/%%VERSION%%/%%TARGET%%/syslog.so
 lib/gauche/%%VERSION%%/%%TARGET%%/termios.so
 lib/gauche/%%VERSION%%/%%TARGET%%/threads.so
 lib/gauche/%%VERSION%%/include/gauche.h
@@ -80,6 +81,7 @@ share/gauche/%%VERSION%%/lib/gauche/serializer.scm
 share/gauche/%%VERSION%%/lib/gauche/serializer/aserializer.scm
 share/gauche/%%VERSION%%/lib/gauche/signal.scm
 share/gauche/%%VERSION%%/lib/gauche/singleton.scm
+share/gauche/%%VERSION%%/lib/gauche/syslog.scm
 share/gauche/%%VERSION%%/lib/gauche/termios.scm
 share/gauche/%%VERSION%%/lib/gauche/test.scm
 share/gauche/%%VERSION%%/lib/gauche/threads.scm

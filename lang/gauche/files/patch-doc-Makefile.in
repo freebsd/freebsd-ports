@@ -1,27 +1,14 @@
---- doc/Makefile.in.orig	Fri Jul 19 14:47:53 2002
-+++ doc/Makefile.in	Mon Sep  9 23:36:04 2002
-@@ -11,8 +11,8 @@
- # make mandir=wherever
- prefix  = @prefix@
- datadir = @datadir@
--mandir  = $(datadir)/man/man1
--infodir = $(datadir)/info
-+mandir  = $(prefix)/man/man1
-+infodir = $(prefix)/info
- 
- all: info
- 
-@@ -22,8 +22,8 @@
+--- doc/Makefile.in.orig	Sun Sep  8 12:25:49 2002
++++ doc/Makefile.in	Mon Sep 23 23:24:03 2002
+@@ -22,7 +22,7 @@
  	  $(INSTALL) -m 444 $$m $(mandir)/; \
  	done
  	if test ! -d $(infodir); then $(INSTALL) -d $(infodir); fi
 -	if test -f gauche-refe.info.gz -o -f gauche-refj.info.gz; then \
--	  for info in *.info*; do \
 +	if test -f gauche-refe.info -o -f gauche-refj.info; then \
-+	  for info in *.info; do \
+ 	  for info in *.info*; do \
  	    $(INSTALL) -m 444 $$info $(infodir)/; \
  	  done; \
- 	fi
 @@ -48,7 +48,7 @@
  
  pdf : gauche-refe.pdf
@@ -36,12 +23,12 @@
  	gosh ./extract -en -o gauche-refe.texi gauche-ref.texi
  
 -gauche-refe.info.gz : gauche-refe.texi
--	if test X$(MAKEINFO) != X -a X$(GZIP) != X; then \
+-	if test X$(MAKEINFO) != X -a X$(GZIP_PROGRAM) != X; then \
 -	  $(MAKEINFO) --no-warn gauche-refe.texi; \
 -	  rm -rf gauche-refe.info*.gz; \
--	  $(GZIP) gauche-refe.info gauche-refe.info-[0-9]*; \
+-	  $(GZIP_PROGRAM) gauche-refe.info gauche-refe.info-[0-9]*; \
 +gauche-refe.info : gauche-refe.texi
-+	if test X$(MAKEINFO) != X; then \
++	if test X$(MAKEINFO) != X ; then \
 +	  $(MAKEINFO) --no-split --no-warn gauche-refe.texi; \
  	fi
  
@@ -51,12 +38,12 @@
  	gosh ./extract -jp -o gauche-refj.texi gauche-ref.texi
  
 -gauche-refj.info.gz : gauche-refj.texi
--	if test X$(MAKEINFO) != X -a X$(GZIP) != X; then \
+-	if test X$(MAKEINFO) != X -a X$(GZIP_PROGRAM) != X; then \
 -	  $(MAKEINFO) --no-warn gauche-refj.texi; \
 -	  rm -rf gauche-refj.info*.gz; \
--	  $(GZIP) gauche-refj.info gauche-refj.info-[0-9]*; \
+-	  $(GZIP_PROGRAM) gauche-refj.info gauche-refj.info-[0-9]*; \
 +gauche-refj.info : gauche-refj.texi
-+	if test X$(MAKEINFO) != X; then \
++	if test X$(MAKEINFO) != X ; then \
 +	  $(MAKEINFO) --no-split --no-warn gauche-refj.texi; \
  	fi
  
