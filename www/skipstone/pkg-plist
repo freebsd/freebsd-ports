@@ -1,0 +1,13 @@
+bin/skipstone
+bin/skipstone-bin
+bin/skipdownload
+share/skipstone/pixmaps/default/back.xpm
+share/skipstone/pixmaps/default/config.xpm
+share/skipstone/pixmaps/default/forward.xpm
+share/skipstone/pixmaps/default/home.xpm
+share/skipstone/pixmaps/default/logo.xpm
+share/skipstone/pixmaps/default/reload.xpm
+share/skipstone/pixmaps/default/stop.xpm
+@dirrm share/skipstone/pixmaps/default
+@dirrm share/skipstone/pixmaps
+@dirrm share/skipstone

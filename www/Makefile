@@ -159,6 +159,7 @@
     SUBDIR += ruboard
     SUBDIR += screem
     SUBDIR += sitecopy
+    SUBDIR += skipstone
     SUBDIR += smb_auth
     SUBDIR += snarf
     SUBDIR += squid22

@@ -1,0 +1,7 @@
+SkipStone is a web browser that is indended for just browsing the web. It does
+not include features to read email, edit html, or use newsgroups. It does
+have a number of interesting features such as tabbed mode, where many pages
+can appear within a single notebook-like window. SkipStone is built around
+the Mozilla page rendering system.
+
+WWW: http://www.muhri.net/skipstone/
