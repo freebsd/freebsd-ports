@@ -1,0 +1,14 @@
+--- rawio.c~	Fri Mar 29 16:52:17 2002
++++ rawio.c	Fri Mar 29 16:53:49 2002
+@@ -358,7 +358,11 @@
+   childinfo = mmap (NULL,
+ 		    nproc * sizeof (struct childinfo),
+ 		    PROT_READ | PROT_WRITE,
++#ifdef MAP_INHERIT
+ 		    MAP_INHERIT | MAP_SHARED | MAP_ANON,
++#else
++		    MAP_SHARED | MAP_ANON,
++#endif
+ 		    -1,
+ 		    0 );
+   if (childinfo == MAP_FAILED)
