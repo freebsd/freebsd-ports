@@ -64,6 +64,7 @@
     SUBDIR += fragrouter
     SUBDIR += fressh
     SUBDIR += fsh
+    SUBDIR += ftimes
     SUBDIR += ftpmap
     SUBDIR += fuzz
     SUBDIR += fwanalog
