@@ -5,7 +5,7 @@
  #platform = x86_sco5
  #platform = x86_uw7
 -#platform = i386_freebsd_3.2
-+platform = x86_freebsd_3.2
++platform = __PLATFORM__
  
  # On Win32 platforms, uncomment the following line to build all the binaries
  # with debugging information. Useful if you want to debug the binaries under
