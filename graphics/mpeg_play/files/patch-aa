@@ -1,10 +1,9 @@
---- ./Imakefile.org	Fri Dec 16 04:42:04 1994
-+++ ./Imakefile	Fri Dec 16 04:50:20 1994
-@@ -1,6 +1,6 @@
- 
+--- ./Imakefile.org	Tue Feb  6 23:37:51 1996
++++ ./Imakefile	Wed Feb  7 00:05:59 1996
+@@ -1,5 +1,5 @@
+ /* See Makefile.proto for flags to define */
+-        DESTDIR = /usr/pkg/video
++        /* DESTDIR = /usr/pkg/video */
          NDEBUG  = /* -DNDEBUG */
--       ANALYSIS = -DANALYSIS
-+       ANALYSIS = /* -DANALYSIS */
+        /*ANALYSIS = -DANALYSIS */
            SHMEM = -DSH_MEM
-   EXTRA_DEFINES = $(NDEBUG) $(ANALYSIS) $(SHMEM)
-         DEPLIBS = $(DEPXLIB)
