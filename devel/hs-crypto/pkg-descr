@@ -1,0 +1,20 @@
+Haskell Cryptographic Library
+
+This library collects together existing Haskell cryptographic functions and
+augments them so that they:
+
+* Have common type signatures.
+* Can be used with the standard mode and padding algorithms (in the case of
+  block mode ciphers).
+
+This very initial release contains:
+
+* DES
+* Blowfish
+* Cipher Block Chaining (CBC) mode
+* PKCS#5 and nulls padding
+
+WWW: http://www.haskell.org/crypto/ReadMe.html
+
+- Oliver Braun
+obraun@FreeBSD.org

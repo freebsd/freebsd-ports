@@ -1,0 +1,27 @@
+lib/HScrypto.o
+lib/libHScrypto.a
+lib/imports/HScrypto/Codec/Encryption/Blowfish.hi
+lib/imports/HScrypto/Codec/Encryption/BlowfishAux.hi
+lib/imports/HScrypto/Codec/Encryption/DES.hi
+lib/imports/HScrypto/Codec/Encryption/DESAux.hi
+lib/imports/HScrypto/Codec/Encryption/Modes.hi
+lib/imports/HScrypto/Codec/Encryption/Padding.hi
+lib/imports/HScrypto/Codec/Encryption/Utils.hi
+%%PORTDOCS%%share/doc/crypto/Codec.Encryption.Blowfish.html
+%%PORTDOCS%%share/doc/crypto/Codec.Encryption.BlowfishAux.html
+%%PORTDOCS%%share/doc/crypto/Codec.Encryption.DES.html
+%%PORTDOCS%%share/doc/crypto/Codec.Encryption.DESAux.html
+%%PORTDOCS%%share/doc/crypto/Codec.Encryption.Modes.html
+%%PORTDOCS%%share/doc/crypto/Codec.Encryption.Padding.html
+%%PORTDOCS%%share/doc/crypto/Codec.Encryption.Utils.html
+%%PORTDOCS%%share/doc/crypto/ReadMe.html
+%%PORTDOCS%%share/doc/crypto/ReadMe.txt
+%%PORTDOCS%%share/doc/crypto/doc-index.html
+%%PORTDOCS%%share/doc/crypto/haddock.css
+%%PORTDOCS%%share/doc/crypto/haskell_icon.gif
+%%PORTDOCS%%share/doc/crypto/index.html
+%%PORTDOCS%%@dirrm share/doc/crypto
+@dirrm lib/imports/HScrypto/Codec/Encryption
+@dirrm lib/imports/HScrypto/Codec
+@dirrm lib/imports/HScrypto
+@dirrm lib/imports

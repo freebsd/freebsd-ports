@@ -246,6 +246,7 @@
     SUBDIR += hs-alex
     SUBDIR += hs-buddha
     SUBDIR += hs-c2hs
+    SUBDIR += hs-crypto
     SUBDIR += hs-drift
     SUBDIR += hs-green-card
     SUBDIR += hs-haddock
