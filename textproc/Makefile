@@ -325,6 +325,7 @@
     SUBDIR += rxp
     SUBDIR += sablotron
     SUBDIR += sarep
+    SUBDIR += sary
     SUBDIR += saxon
     SUBDIR += scr2txt
     SUBDIR += scrollkeeper
