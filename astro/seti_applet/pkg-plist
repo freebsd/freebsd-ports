@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/seti_applet
 etc/CORBA/servers/seti_applet.gnorba
 share/gnome/applets/Monitors/seti_applet.desktop
@@ -5,6 +6,9 @@ share/gnome/help/seti_applet/C/configuration.html
 share/gnome/help/seti_applet/C/docbook.css
 share/gnome/help/seti_applet/C/images/adv_prop.gif
 share/gnome/help/seti_applet/C/images/basic_prop.gif
+share/gnome/help/seti_applet/C/images/new_user_details_large.gif
+share/gnome/help/seti_applet/C/images/new_user_details_small.gif
+share/gnome/help/seti_applet/C/images/new_user_detected.gif
 share/gnome/help/seti_applet/C/index.html
 share/gnome/help/seti_applet/C/operation.html
 share/gnome/help/seti_applet/C/startingsetiprocess.html
