@@ -2,16 +2,23 @@ bin/comp_err
 bin/isamchk
 bin/isamlog
 bin/msql2mysql
+bin/my_print_defaults
+bin/myisamchk
+bin/myisamlog
+bin/myisampack
+bin/mysql_config
+bin/mysql_convert_table_format
 bin/mysql_find_rows
 bin/mysql_fix_privilege_tables
 bin/mysql_install_db
 bin/mysql_setpermission
 bin/mysql_zap
 bin/mysqlaccess
+bin/mysqlbinlog
 bin/mysqlbug
 bin/mysqlhotcopy
+bin/pack_isam
 bin/perror
-bin/print_defaults
 bin/replace
 bin/resolveip
 bin/safe_mysqld
@@ -22,53 +29,51 @@ info/mysql.info
 lib/mysql/libdbug.a
 lib/mysql/libheap.a
 lib/mysql/libmerge.a
+lib/mysql/libmyisam.a
+lib/mysql/libmyisammrg.a
 lib/mysql/libmystrings.a
 lib/mysql/libmysys.a
 lib/mysql/libnisam.a
 libexec/mysqld
-share/doc/mysql/Img/australia.gif
-share/doc/mysql/Img/austria.gif
-share/doc/mysql/Img/brazil.gif
-share/doc/mysql/Img/bulgaria.gif
-share/doc/mysql/Img/canada.gif
-share/doc/mysql/Img/chile.gif
-share/doc/mysql/Img/china.gif
-share/doc/mysql/Img/croatia.gif
-share/doc/mysql/Img/czech-republic.gif
-share/doc/mysql/Img/denmark.gif
-share/doc/mysql/Img/estonia.gif
-share/doc/mysql/Img/finland.gif
-share/doc/mysql/Img/france.gif
-share/doc/mysql/Img/germany.gif
-share/doc/mysql/Img/great-britain.gif
-share/doc/mysql/Img/greece.gif
-share/doc/mysql/Img/html-fs.gif
-share/doc/mysql/Img/hungary.gif
-share/doc/mysql/Img/iceland.gif
-share/doc/mysql/Img/ireland.gif
-share/doc/mysql/Img/island.gif
-share/doc/mysql/Img/israel.gif
-share/doc/mysql/Img/italy.gif
-share/doc/mysql/Img/japan.gif
-share/doc/mysql/Img/kroatia.gif
-share/doc/mysql/Img/mysql-logo.gif
-share/doc/mysql/Img/mysql5.gif
-share/doc/mysql/Img/netherlands.gif
-share/doc/mysql/Img/poland.gif
-share/doc/mysql/Img/portugal.gif
-share/doc/mysql/Img/romania.gif
-share/doc/mysql/Img/russia.gif
-share/doc/mysql/Img/singapore.gif
-share/doc/mysql/Img/south-africa.gif
-share/doc/mysql/Img/south-africa1.gif
-share/doc/mysql/Img/south-korea.gif
-share/doc/mysql/Img/spain.gif
-share/doc/mysql/Img/sweden.gif
-share/doc/mysql/Img/switzerland.gif
-share/doc/mysql/Img/taiwan.gif
-share/doc/mysql/Img/tcxlogo3.gif
-share/doc/mysql/Img/ukraine.gif
-share/doc/mysql/Img/usa.gif
+share/doc/mysql/Flags/australia.gif
+share/doc/mysql/Flags/austria.gif
+share/doc/mysql/Flags/brazil.gif
+share/doc/mysql/Flags/bulgaria.gif
+share/doc/mysql/Flags/canada.gif
+share/doc/mysql/Flags/chile.gif
+share/doc/mysql/Flags/china.gif
+share/doc/mysql/Flags/croatia.gif
+share/doc/mysql/Flags/czech-republic.gif
+share/doc/mysql/Flags/denmark.gif
+share/doc/mysql/Flags/estonia.gif
+share/doc/mysql/Flags/finland.gif
+share/doc/mysql/Flags/france.gif
+share/doc/mysql/Flags/germany.gif
+share/doc/mysql/Flags/great-britain.gif
+share/doc/mysql/Flags/greece.gif
+share/doc/mysql/Flags/hungary.gif
+share/doc/mysql/Flags/iceland.gif
+share/doc/mysql/Flags/ireland.gif
+share/doc/mysql/Flags/island.gif
+share/doc/mysql/Flags/israel.gif
+share/doc/mysql/Flags/italy.gif
+share/doc/mysql/Flags/japan.gif
+share/doc/mysql/Flags/kroatia.gif
+share/doc/mysql/Flags/netherlands.gif
+share/doc/mysql/Flags/poland.gif
+share/doc/mysql/Flags/portugal.gif
+share/doc/mysql/Flags/romania.gif
+share/doc/mysql/Flags/russia.gif
+share/doc/mysql/Flags/singapore.gif
+share/doc/mysql/Flags/south-africa.gif
+share/doc/mysql/Flags/south-africa1.gif
+share/doc/mysql/Flags/south-korea.gif
+share/doc/mysql/Flags/spain.gif
+share/doc/mysql/Flags/sweden.gif
+share/doc/mysql/Flags/switzerland.gif
+share/doc/mysql/Flags/taiwan.gif
+share/doc/mysql/Flags/ukraine.gif
+share/doc/mysql/Flags/usa.gif
 share/doc/mysql/include.texi
 share/doc/mysql/manual.html
 share/doc/mysql/manual.ps
@@ -76,6 +81,29 @@ share/doc/mysql/manual.texi
 share/doc/mysql/manual.txt
 share/doc/mysql/manual_toc.html
 share/mysql/binary-configure
+share/mysql/charsets/Index
+share/mysql/charsets/README
+share/mysql/charsets/cp1251.conf
+share/mysql/charsets/cp1257.conf
+share/mysql/charsets/croat.conf
+share/mysql/charsets/danish.conf
+share/mysql/charsets/dec8.conf
+share/mysql/charsets/dos.conf
+share/mysql/charsets/estonia.conf
+share/mysql/charsets/german1.conf
+share/mysql/charsets/greek.conf
+share/mysql/charsets/hebrew.conf
+share/mysql/charsets/hp8.conf
+share/mysql/charsets/hungarian.conf
+share/mysql/charsets/koi8_ru.conf
+share/mysql/charsets/koi8_ukr.conf
+share/mysql/charsets/latin1.conf
+share/mysql/charsets/latin2.conf
+share/mysql/charsets/swe7.conf
+share/mysql/charsets/usa7.conf
+share/mysql/charsets/win1250.conf
+share/mysql/charsets/win1251.conf
+share/mysql/charsets/win1251ukr.conf
 share/mysql/czech/errmsg.sys
 share/mysql/czech/errmsg.txt
 share/mysql/danish/errmsg.sys
@@ -84,8 +112,8 @@ share/mysql/dutch/errmsg.sys
 share/mysql/dutch/errmsg.txt
 share/mysql/english/errmsg.sys
 share/mysql/english/errmsg.txt
-share/mysql/estonia/errmsg.sys
-share/mysql/estonia/errmsg.txt
+share/mysql/estonian/errmsg.sys
+share/mysql/estonian/errmsg.txt
 share/mysql/french/errmsg.sys
 share/mysql/french/errmsg.txt
 share/mysql/german/errmsg.sys
@@ -101,7 +129,12 @@ share/mysql/japanese/errmsg.txt
 share/mysql/korean/errmsg.sys
 share/mysql/korean/errmsg.txt
 share/mysql/make_binary_distribution
-share/mysql/my-example.cnf
+share/mysql/mi_test_all
+share/mysql/mi_test_all.res
+share/mysql/my-huge.cnf
+share/mysql/my-large.cnf
+share/mysql/my-medium.cnf
+share/mysql/my-small.cnf
 share/mysql/mysql-%%MYSQL_VERSION%%.spec
 share/mysql/mysql-log-rotate
 share/mysql/mysql.server
@@ -113,6 +146,8 @@ share/mysql/polish/errmsg.sys
 share/mysql/polish/errmsg.txt
 share/mysql/portuguese/errmsg.sys
 share/mysql/portuguese/errmsg.txt
+share/mysql/romanian/errmsg.sys
+share/mysql/romanian/errmsg.txt
 share/mysql/russian/errmsg.sys
 share/mysql/russian/errmsg.txt
 share/mysql/slovak/errmsg.sys
@@ -121,13 +156,14 @@ share/mysql/spanish/errmsg.sys
 share/mysql/spanish/errmsg.txt
 share/mysql/swedish/errmsg.sys
 share/mysql/swedish/errmsg.txt
-@dirrm share/doc/mysql/Img
+@dirrm share/doc/mysql/Flags
 @dirrm share/doc/mysql
+@dirrm share/mysql/charsets
 @dirrm share/mysql/czech
 @dirrm share/mysql/danish
 @dirrm share/mysql/dutch
 @dirrm share/mysql/english
-@dirrm share/mysql/estonia
+@dirrm share/mysql/estonian
 @dirrm share/mysql/french
 @dirrm share/mysql/german
 @dirrm share/mysql/greek
@@ -139,6 +175,7 @@ share/mysql/swedish/errmsg.txt
 @dirrm share/mysql/norwegian-ny
 @dirrm share/mysql/polish
 @dirrm share/mysql/portuguese
+@dirrm share/mysql/romanian
 @dirrm share/mysql/russian
 @dirrm share/mysql/slovak
 @dirrm share/mysql/spanish

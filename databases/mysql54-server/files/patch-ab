@@ -1,24 +1,15 @@
---- scripts/mysql_install_db.sh.orig	Wed Jan 12 21:06:30 2000
-+++ scripts/mysql_install_db.sh	Sun Mar 26 23:20:27 2000
-@@ -15,8 +15,6 @@
- force=0
- IN_RPM=0
- 
--# Are we doing an rpm install?
--if test "$1" = "-IN-RPM"; then IN_RPM=1; shift; fi
- if test "$1" = "--force"; then force=1; shift; fi
- 
- # Get mysqld/safe_mysqld options from /etc/my.cnf or ~/.my.cnf
-@@ -60,8 +58,6 @@
-   fi
- fi
- 
--# On IRIX hostname is in /usr/bsd so add this to the path
--PATH=$PATH:/usr/bsd
- hostname=`hostname`		# Install this too in the user table
- 
- # Check if hostname is valid
-@@ -255,12 +251,6 @@
+--- scripts/mysql_install_db.sh.orig	Fri Sep  8 09:50:24 2000
++++ scripts/mysql_install_db.sh	Sat Sep 23 21:13:37 2000
+@@ -21,8 +21,6 @@
+    case "$1" in
+    -*) eqvalue="`echo $1 |sed 's/[-_a-zA-Z0-9]*=//'`"
+        case "$1" in
+-       -IN-RPM) IN_RPM=1
+-                ;;
+        --force) force=1
+                 ;;
+        --no-defaults)     defaults="$1"; CONFIG_FILES=/nonexistent
+@@ -304,12 +302,6 @@
  END_OF_DATA
  then
    echo ""
@@ -30,4 +21,4 @@
 -  fi
    echo "PLEASE REMEMBER TO SET A PASSWORD FOR THE MySQL root USER !"
    echo "This is done with:"
-   echo "$bindir/mysqladmin -u root password 'new-password'"
+   echo "$bindir/mysqladmin -u root -p password 'new-password'"
