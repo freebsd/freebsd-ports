@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tgif
-PORTVERSION=	4.1.42
-PORTREVISION=	1
+PORTVERSION=	4.1.43
 CATEGORIES=	japanese
 MASTER_SITES=	http://home.jp.FreeBSD.org/~mita/LOCAL_PORTS/
 DISTNAME=	ja-${PORTNAME}-980222
@@ -17,8 +16,6 @@ COMMENT=	2-D drawing facility (with Japanese configuration)
 
 RUN_DEPENDS=	tgif:${PORTSDIR}/graphics/tgif-nls\
 		${PREFIX}/lib/X11/fonts/local/knm12p.pcf.gz:${PORTSDIR}/japanese/k12
-
-BROKEN=		Incomplete pkg-plist
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

@@ -1,2 +1,3 @@
 lib/X11/ja_JP.eucJP/app-defaults/Tgif
 @dirrm lib/X11/ja_JP.eucJP/app-defaults
+@dirrm lib/X11/ja_JP.eucJP
