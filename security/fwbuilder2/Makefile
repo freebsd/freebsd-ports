@@ -22,5 +22,16 @@ USE_GTK=	yes
 USE_LIBTOOL=	yes
 USE_GNOMELIBS=	yes
 WITHOUT_ESOUND=	yes
+CONFIGURE_ARGS+=	--with-iconsdir=${X11BASE}/share/gnome/fwbuilder/pixmaps/ --with-templatedir=${X11BASE}/share/gnome/fwbuilder
+
+post-extract:
+	@${PERL} -pi -e "s/lc_r/pthread/" ${WRKSRC}/configure ;\
+	${PERL} -pi -e "s|/usr/bin|${LOCALBASE}/bin|" ${WRKSRC}/etc/fwbuilder_prefs.xml.in
+.for i in compiler-framework/Makefile.in gui/gnome-wrappers/Makefile.in \
+	gui/Makefile.in ipchains/Makefile.in ipfilter/Makefile.in \
+	iptables/Makefile.in
+	@${PERL} -pi -e "s|^CFLAGS\s+=\s+-Wall\s+-g|CFLAGS = \@CFLAGS@ -Wall|" ${WRKSRC}/src/$i
+.endfor
+
 
 .include <bsd.port.mk>
