@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	mrtg
-PORTVERSION=	2.9.2
+PORTVERSION=	2.9.4
 CATEGORIES=	net
 MASTER_SITES=	http://ee-staff.ethz.ch/~oetiker/webtools/mrtg/pub/ \
 		${MASTER_SITE_RINGSERVER}
 MASTER_SITE_SUBDIR=	net/mrtg
 
-MAINTAINER=	dima@chg.ru
+MAINTAINER=	dima@Chg.RU
 
 LIB_DEPENDS=	gd.1:${PORTSDIR}/graphics/gd
 
