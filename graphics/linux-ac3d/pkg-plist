@@ -1,0 +1,63 @@
+bin/ac3d.sh
+%%DYNAMIC_VERSION%%bin/real-ac3d
+%%STATIC_VERSION%%bin/real-ac3ds
+share/ac3d/font.ac
+share/ac3d/fontwire.ac
+share/ac3d/lib/tcl8.3/auto.tcl
+share/ac3d/lib/tcl8.3/history.tcl
+share/ac3d/lib/tcl8.3/init.tcl
+share/ac3d/lib/tcl8.3/ldAout.tcl
+share/ac3d/lib/tcl8.3/license.terms
+share/ac3d/lib/tcl8.3/package.tcl
+share/ac3d/lib/tcl8.3/parray.tcl
+share/ac3d/lib/tcl8.3/safe.tcl
+share/ac3d/lib/tcl8.3/tclIndex
+share/ac3d/lib/tcl8.3/word.tcl
+share/ac3d/lib/tk8.3/bgerror.tcl
+share/ac3d/lib/tk8.3/button.tcl
+share/ac3d/lib/tk8.3/choosedir.tcl
+share/ac3d/lib/tk8.3/clrpick.tcl
+share/ac3d/lib/tk8.3/comdlg.tcl
+share/ac3d/lib/tk8.3/console.tcl
+share/ac3d/lib/tk8.3/dialog.tcl
+share/ac3d/lib/tk8.3/entry.tcl
+share/ac3d/lib/tk8.3/focus.tcl
+share/ac3d/lib/tk8.3/license.terms
+share/ac3d/lib/tk8.3/listbox.tcl
+share/ac3d/lib/tk8.3/menu.tcl
+share/ac3d/lib/tk8.3/msgbox.tcl
+share/ac3d/lib/tk8.3/obsolete.tcl
+share/ac3d/lib/tk8.3/optMenu.tcl
+share/ac3d/lib/tk8.3/palette.tcl
+share/ac3d/lib/tk8.3/safetk.tcl
+share/ac3d/lib/tk8.3/scale.tcl
+share/ac3d/lib/tk8.3/scrlbar.tcl
+share/ac3d/lib/tk8.3/tclIndex
+share/ac3d/lib/tk8.3/tearoff.tcl
+share/ac3d/lib/tk8.3/text.tcl
+share/ac3d/lib/tk8.3/tk.tcl
+share/ac3d/lib/tk8.3/tkfbox.tcl
+share/ac3d/lib/tk8.3/xmfbox.tcl
+share/ac3d/tcl/ac3d.tcl
+share/ac3d/tcl/ac3dfsbox.tcl
+share/ac3d/tcl/ac3dhier.tcl
+share/ac3d/tcl/ac3dops.tcl
+share/ac3d/tcl/ac3dpalette.tcl
+share/ac3d/tcl/ac3dplugins.tcl
+share/ac3d/tcl/ac3dprefs.tcl
+share/ac3d/tcl/ac3dtips.tcl
+share/ac3d/tcl/ac3duvedit.tcl
+share/ac3d/tcl/ac3dview.tcl
+%%PORTDOCS%%share/doc/ac3d/IMPORTANT
+%%PORTDOCS%%share/doc/ac3d/LICENCE
+%%PORTDOCS%%share/doc/ac3d/README
+%%PORTDOCS%%share/examples/ac3d/tie3.ac
+%%PORTDOCS%%share/examples/ac3d/tree.ac
+%%PORTDOCS%%share/examples/ac3d/tree_transparent.gif
+%%PORTDOCS%%@dirrm share/examples/ac3d
+%%PORTDOCS%%@dirrm share/doc/ac3d
+@dirrm share/ac3d/tcl
+@dirrm share/ac3d/lib/tk8.3
+@dirrm share/ac3d/lib/tcl8.3
+@dirrm share/ac3d/lib
+@dirrm share/ac3d
