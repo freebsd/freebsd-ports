@@ -7,6 +7,7 @@
 
 PORTNAME=		beaver
 PORTVERSION=		0.3.1
+PORTREVISION=		1
 CATEGORIES=		editors
 MASTER_SITES=		http://savannah.nongnu.org/download/beaver/
 
