@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	libcwd
-PORTVERSION=	0.99.31
-PORTREVISION=	2
+PORTVERSION=	0.99.39
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,21 +16,27 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The C++ Debugging Support Library
 
-USE_GCC=	3.3
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-threading
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
+USE_GETOPT_LONG=yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 501103
-# Work around bsd.port.mk bug: Does not currently set up MAKE_ENV for gcc 3.2 and 3.3
-MAKE_ENV+=	CC="${CC}" CXX="${CXX}"
+.if ${OSVERSION} < 500035
+USE_GCC=	3.4
 .endif
 
-# dirty hack
-post-configure:
-	@${CP} -f ${WRKSRC}/include/sys.ho ${WRKSRC}/include/sys.h
+post-patch:
+	@${REINPLACE_CMD} -e 's,test x"\$$libcwd_config_alloc" = x"yes",false,g' \
+		-E -e 's,^(DEFS=)(.*),\1"\2 -D__GNU_LIBRARY__=yes",g' \
+		${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's,localtime(,localtime((const time_t *),g' \
+		${WRKSRC}/debugmalloc.cc
+	@${REINPLACE_CMD} -E -e 's,\$$\(libdir\)/(pkgconfig),${PREFIX}/libdata/\1,g' \
+		${WRKSRC}/${MAKEFILE}.in
+	@${REINPLACE_CMD} -e 's,Elf32_Off,uint32_t,g' ${WRKSRC}/bfd.cc
 
 .include <bsd.port.post.mk>
