@@ -8,8 +8,7 @@
 
 DISTNAME=	upclient-3.04
 CATEGORIES=	misc
-MASTER_SITES=	ftp://uptime.hexon.cx/pub/ \
-		http://uptime.hexon.cx/download/
+MASTER_SITES=	http://uptime.hexon.cx/download/
 
 MAINTAINER=	kbyanc@posi.net
 
