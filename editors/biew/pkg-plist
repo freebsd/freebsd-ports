@@ -1,16 +1,18 @@
 bin/biew
 share/biew/biew.hlp
 share/biew/assembly.skn
+share/biew/golded.skn
+share/biew/insight.skn
 share/biew/standard.skn
-share/doc/biew/biew_en.txt
-share/doc/biew/biew_ru.txt
-share/doc/biew/develop.en
-share/doc/biew/develop.ru
-share/doc/biew/file_ini.en
-share/doc/biew/file_ini.ru
-share/doc/biew/licence.en
-share/doc/biew/licence.ru
-share/doc/biew/release.txt
-share/doc/biew/unix.txt
-@dirrm share/doc/biew
+%%PORTDOCS%%share/doc/biew/biew_en.txt
+%%PORTDOCS%%share/doc/biew/biew_ru.txt
+%%PORTDOCS%%share/doc/biew/develop.en
+%%PORTDOCS%%share/doc/biew/develop.ru
+%%PORTDOCS%%share/doc/biew/file_ini.en
+%%PORTDOCS%%share/doc/biew/file_ini.ru
+%%PORTDOCS%%share/doc/biew/licence.en
+%%PORTDOCS%%share/doc/biew/licence.ru
+%%PORTDOCS%%share/doc/biew/release.txt
+%%PORTDOCS%%share/doc/biew/unix.txt
+%%PORTDOCS%%@dirrm share/doc/biew
 @dirrm share/biew

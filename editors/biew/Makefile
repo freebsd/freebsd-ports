@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	biew
-PORTVERSION=	5.2.0
+PORTVERSION=	5.3.0
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -22,7 +22,7 @@ PORTDOCS=	biew_en.txt biew_ru.txt develop.en develop.ru file_ini.en \
 
 .include <bsd.port.pre.mk>
 
-HOST_CFLAGS=	${CFLAGS} -DLIBDIR="\'\"${PREFIX}/share\"\'"
+HOST_CFLAGS=	${CFLAGS} -DPREFIX="\'\"${PREFIX}\"\'"
 MAKEFILE=	makefile
 
 .if ${OSVERSION} < 400010
@@ -45,14 +45,13 @@ post-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/biew ${PREFIX}/bin
-	@ ${MKDIR} ${PREFIX}/share/biew
-.for file in bin_rc/assembly.skn bin_rc/standard.skn hlp/biew.hlp
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/biew
-.endfor
+	@ ${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/bin_rc/skn/*.skn ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/hlp/biew.hlp ${DATADIR}
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/biew
+	@ ${MKDIR} ${DOCSDIR}
 .for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${PREFIX}/share/doc/biew
+	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
 .endfor
 .endif
 
