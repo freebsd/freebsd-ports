@@ -1,4 +1,5 @@
 bin/neXtclock
+lib/X11/app-defaults/NeXtClock
 lib/libneXtaw.a
 lib/libneXtaw.so
 lib/libneXtaw.so.6
