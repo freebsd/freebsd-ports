@@ -1,0 +1,17 @@
+--- Makefile.orig	Sat Apr 22 09:47:37 2000
++++ Makefile	Sat Apr 22 09:48:06 2000
+@@ -9,12 +9,12 @@
+ ###
+ # set this to the absolute path (less extn) of compressed dict.
+ 
+-DICTPATH="/usr/local/lib/pw_dict"
++DICTPATH="/usr/local/libdata/cracklib/pw_dict"
+ 
+ ###
+ # Set this to the path of one or more files continaing wordlists.
+ 
+-SRCDICTS=/usr/dict/words
++SRCDICTS=/usr/share/dict/words
+ 
+ ###
+ # If you have installed the cracklib-dicts directory, use this

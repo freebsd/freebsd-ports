@@ -1,0 +1,11 @@
+bin/mkdict
+bin/packer
+bin/testlib
+bin/testnum
+bin/teststr
+bin/unpacker
+lib/libcrack.a
+libdata/cracklib/pw_dict.hwm
+libdata/cracklib/pw_dict.pwd
+libdata/cracklib/pw_dict.pwi
+@dirrm libdata/cracklib
