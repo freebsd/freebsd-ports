@@ -1,18 +1,23 @@
+@comment $FreeBSD$
 bin/BermudanSwaption
 bin/DiscreteHedging
 bin/EuropeanOption
 bin/SwapValuation
 bin/quantlib-config
+include/ql/Calendars/budapest.hpp
 include/ql/Calendars/frankfurt.hpp
 include/ql/Calendars/helsinki.hpp
 include/ql/Calendars/johannesburg.hpp
 include/ql/Calendars/london.hpp
 include/ql/Calendars/milan.hpp
 include/ql/Calendars/newyork.hpp
+include/ql/Calendars/oslo.hpp
+include/ql/Calendars/stockholm.hpp
 include/ql/Calendars/sydney.hpp
 include/ql/Calendars/target.hpp
 include/ql/Calendars/tokyo.hpp
 include/ql/Calendars/toronto.hpp
+include/ql/Calendars/warsaw.hpp
 include/ql/Calendars/wellington.hpp
 include/ql/Calendars/zurich.hpp
 include/ql/CashFlows/cashflowvectors.hpp
@@ -54,11 +59,13 @@ include/ql/Indexes/xibor.hpp
 include/ql/Indexes/xibormanager.hpp
 include/ql/Indexes/zarlibor.hpp
 include/ql/Instruments/capfloor.hpp
-include/ql/Instruments/plainoption.hpp
+include/ql/Instruments/forwardvanillaoption.hpp
+include/ql/Instruments/quantovanillaoption.hpp
 include/ql/Instruments/simpleswap.hpp
 include/ql/Instruments/stock.hpp
 include/ql/Instruments/swap.hpp
 include/ql/Instruments/swaption.hpp
+include/ql/Instruments/vanillaoption.hpp
 include/ql/Lattices/binomialtree.hpp
 include/ql/Lattices/bsmlattice.hpp
 include/ql/Lattices/lattice.hpp
@@ -73,6 +80,7 @@ include/ql/Math/interpolation.hpp
 include/ql/Math/interpolation2D.hpp
 include/ql/Math/lexicographicalview.hpp
 include/ql/Math/linearinterpolation.hpp
+include/ql/Math/loglinearinterpolation.hpp
 include/ql/Math/matrix.hpp
 include/ql/Math/multivariateaccumulator.hpp
 include/ql/Math/normaldistribution.hpp
@@ -84,6 +92,7 @@ include/ql/Math/symmetricschurdecomposition.hpp
 include/ql/MonteCarlo/arithmeticapopathpricer.hpp
 include/ql/MonteCarlo/arithmeticasopathpricer.hpp
 include/ql/MonteCarlo/basketpathpricer.hpp
+include/ql/MonteCarlo/cliquetoptionpathpricer.hpp
 include/ql/MonteCarlo/europeanpathpricer.hpp
 include/ql/MonteCarlo/everestpathpricer.hpp
 include/ql/MonteCarlo/geometricapopathpricer.hpp
@@ -99,6 +108,7 @@ include/ql/MonteCarlo/pagodapathpricer.hpp
 include/ql/MonteCarlo/path.hpp
 include/ql/MonteCarlo/pathgenerator.hpp
 include/ql/MonteCarlo/pathpricer.hpp
+include/ql/MonteCarlo/performanceoptionpathpricer.hpp
 include/ql/MonteCarlo/sample.hpp
 include/ql/Optimization/armijo.hpp
 include/ql/Optimization/conjugategradient.hpp
@@ -111,11 +121,11 @@ include/ql/Optimization/method.hpp
 include/ql/Optimization/problem.hpp
 include/ql/Optimization/simplex.hpp
 include/ql/Optimization/steepestdescent.hpp
+include/ql/Patterns/bridge.hpp
 include/ql/Patterns/observable.hpp
 include/ql/Pricers/analyticalcapfloor.hpp
 include/ql/Pricers/barrieroption.hpp
 include/ql/Pricers/binaryoption.hpp
-include/ql/Pricers/binomialplainoption.hpp
 include/ql/Pricers/blackcapfloor.hpp
 include/ql/Pricers/blackswaption.hpp
 include/ql/Pricers/capfloorpricer.hpp
@@ -123,7 +133,6 @@ include/ql/Pricers/cliquetoption.hpp
 include/ql/Pricers/continuousgeometricapo.hpp
 include/ql/Pricers/discretegeometricapo.hpp
 include/ql/Pricers/discretegeometricaso.hpp
-include/ql/Pricers/europeanengine.hpp
 include/ql/Pricers/europeanoption.hpp
 include/ql/Pricers/fdamericanoption.hpp
 include/ql/Pricers/fdbermudanoption.hpp
@@ -138,6 +147,7 @@ include/ql/Pricers/fdshoutoption.hpp
 include/ql/Pricers/fdstepconditionoption.hpp
 include/ql/Pricers/jamshidianswaption.hpp
 include/ql/Pricers/mcbasket.hpp
+include/ql/Pricers/mccliquetoption.hpp
 include/ql/Pricers/mcdiscretearithmeticapo.hpp
 include/ql/Pricers/mcdiscretearithmeticaso.hpp
 include/ql/Pricers/mceuropean.hpp
@@ -145,11 +155,19 @@ include/ql/Pricers/mceverest.hpp
 include/ql/Pricers/mchimalaya.hpp
 include/ql/Pricers/mcmaxbasket.hpp
 include/ql/Pricers/mcpagoda.hpp
+include/ql/Pricers/mcperformanceoption.hpp
 include/ql/Pricers/mcpricer.hpp
+include/ql/Pricers/performanceoption.hpp
 include/ql/Pricers/singleassetoption.hpp
 include/ql/Pricers/swaptionpricer.hpp
 include/ql/Pricers/treecapfloor.hpp
 include/ql/Pricers/treeswaption.hpp
+include/ql/PricingEngines/discretizedvanillaoption.hpp
+include/ql/PricingEngines/forwardengines.hpp
+include/ql/PricingEngines/genericengine.hpp
+include/ql/PricingEngines/latticeshortratemodelengine.hpp
+include/ql/PricingEngines/quantoengines.hpp
+include/ql/PricingEngines/vanillaengines.hpp
 include/ql/RandomNumbers/boxmullergaussianrng.hpp
 include/ql/RandomNumbers/centrallimitgaussianrng.hpp
 include/ql/RandomNumbers/inversecumgaussianrng.hpp
@@ -178,16 +196,26 @@ include/ql/Solvers1D/newtonsafe.hpp
 include/ql/Solvers1D/ridder.hpp
 include/ql/Solvers1D/secant.hpp
 include/ql/TermStructures/affinetermstructure.hpp
+include/ql/TermStructures/compoundforward.hpp
+include/ql/TermStructures/discountcurve.hpp
 include/ql/TermStructures/flatforward.hpp
+include/ql/TermStructures/forwardspreadedtermstructure.hpp
+include/ql/TermStructures/impliedtermstructure.hpp
 include/ql/TermStructures/piecewiseflatforward.hpp
 include/ql/TermStructures/ratehelpers.hpp
+include/ql/TermStructures/zerospreadedtermstructure.hpp
 include/ql/Utilities/combiningiterator.hpp
 include/ql/Utilities/couplingiterator.hpp
 include/ql/Utilities/filteringiterator.hpp
 include/ql/Utilities/iteratorcategories.hpp
 include/ql/Utilities/processingiterator.hpp
 include/ql/Utilities/steppingiterator.hpp
+include/ql/Volatilities/blackconstantvol.hpp
+include/ql/Volatilities/blackvariancecurve.hpp
+include/ql/Volatilities/blackvariancesurface.hpp
 include/ql/Volatilities/capflatvolvector.hpp
+include/ql/Volatilities/localconstantvol.hpp
+include/ql/Volatilities/localvolcurve.hpp
 include/ql/Volatilities/swaptionvolmatrix.hpp
 include/ql/argsandresults.hpp
 include/ql/array.hpp
@@ -198,6 +226,7 @@ include/ql/cashflow.hpp
 include/ql/config.hpp
 include/ql/currency.hpp
 include/ql/dataformatters.hpp
+include/ql/dataparsers.hpp
 include/ql/date.hpp
 include/ql/daycounter.hpp
 include/ql/diffusionprocess.hpp
@@ -206,6 +235,7 @@ include/ql/exercise.hpp
 include/ql/expressiontemplates.hpp
 include/ql/functions/daycounters.hpp
 include/ql/functions/mathf.hpp
+include/ql/functions/vols.hpp
 include/ql/grid.hpp
 include/ql/handle.hpp
 include/ql/history.hpp
@@ -215,6 +245,7 @@ include/ql/marketelement.hpp
 include/ql/null.hpp
 include/ql/numericalmethod.hpp
 include/ql/option.hpp
+include/ql/pricingengine.hpp
 include/ql/qldefines.hpp
 include/ql/quantlib.hpp
 include/ql/relinkablehandle.hpp
@@ -224,6 +255,7 @@ include/ql/solver1d.hpp
 include/ql/swaptionvolstructure.hpp
 include/ql/termstructure.hpp
 include/ql/types.hpp
+include/ql/voltermstructure.hpp
 lib/libQuantLib.a
 lib/libQuantLib.so
 lib/libQuantLib.so.0
@@ -238,6 +270,7 @@ share/aclocal/quantlib.m4
 @dirrm include/ql/ShortRateModels/CalibrationHelpers
 @dirrm include/ql/ShortRateModels
 @dirrm include/ql/RandomNumbers
+@dirrm include/ql/PricingEngines
 @dirrm include/ql/Pricers
 @dirrm include/ql/Patterns
 @dirrm include/ql/Optimization
