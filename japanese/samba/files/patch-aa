@@ -1,5 +1,5 @@
---- Makefile.in.orig	Tue Oct 30 13:03:01 2001
-+++ Makefile.in	Mon Nov 26 10:40:10 2001
+--- Makefile.in.orig	Fri Nov  9 20:28:07 2001
++++ Makefile.in	Wed Feb 20 11:48:46 2002
 @@ -51,7 +51,7 @@
  CONFIGFILE = $(CONFIGDIR)/smb.conf
  LMHOSTSFILE = $(CONFIGDIR)/lmhosts

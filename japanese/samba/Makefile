@@ -22,7 +22,7 @@ MAINTAINER=	nakaji@jp.FreeBSD.org
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext-old
 
 SAMBA_VERSION=		2.2.2
-SAMBA_JA_VERSION=	1.0
+SAMBA_JA_VERSION=	1.1
 
 # directories
 VARDIR=		/var
@@ -89,13 +89,11 @@ post-install:
 	fi
 	@${INSTALL_SCRIPT} ${WRKDIR}/${DISTNAME}/source/script/mksmbpasswd.sh ${PREFIX}/bin/make_smbpasswd
 
-	@${MKDIR} -p -m 500 ${SAMBA_PRIVATE}
+	@${MKDIR} -m 500 ${SAMBA_PRIVATE}
 	@${CHOWN} root:wheel ${SAMBA_PRIVATE}
-	@${CAT} /etc/passwd | ${PREFIX}/bin/make_smbpasswd > ${SAMBA_PRIVATE}/smbpasswd.default
-	@if [ ! -e ${SAMBA_PRIVATE}/smbpasswd ]; then	\
-		${CP} -p ${SAMBA_PRIVATE}/smbpasswd.default ${SAMBA_PRIVATE}/smbpasswd ;	\
-	fi
-	@${CHMOD} 600 ${SAMBA_PRIVATE}/smbpasswd*
+	@${CAT} /etc/passwd | ${AWK} -F: '$$6 ~ /home/' | ${PREFIX}/bin/make_smbpasswd > ${SAMBA_PRIVATE}/smbpasswd.sample
+	@test -f ${SAMBA_PRIVATE}/smbpasswd || ${TOUCH} ${SAMBA_PRIVATE}/smbpasswd
+	@${CHMOD} 600 ${SAMBA_PRIVATE}/smbpasswd.sample ${SAMBA_PRIVATE}/smbpasswd
 
 	@${CHOWN} root:wheel ${PREFIX}/bin/smbpasswd
 	@${CHMOD} 111 ${PREFIX}/bin/smbpasswd
