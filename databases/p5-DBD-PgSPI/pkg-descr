@@ -1,0 +1,5 @@
+DBD::PgSPI is a Perl module which works with the DBI module to provide
+access to PostgreSQL database from within pl/perl functions inside the
+database.
+
+WWW: http://search.cpan.org/dist/DBD-PgSPI/
