@@ -295,6 +295,7 @@
     SUBDIR += vbidecode
     SUBDIR += vera
     SUBDIR += videotext
+    SUBDIR += vifm
     SUBDIR += viz
     SUBDIR += whichman
     SUBDIR += wmScoreBoard
