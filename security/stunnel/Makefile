@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	stunnel
-PORTVERSION=	4.05
-PORTREVISION=	1
+PORTVERSION=	4.06
 CATEGORIES=	security
 MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
 		ftp://stunnel.mirt.net/stunnel/OBSOLETE/ \
@@ -18,7 +17,7 @@ COMMENT=	SSL encryption wrapper for standard network daemons
 
 USE_OPENSSL=	YES
 USE_REINPLACE=	YES
-USE_INC_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=	15
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -30,6 +29,10 @@ MAN8=		stunnel.8 stunnel.fr.8 stunnel.pl.8
 .endif
 
 PEM_DIR?=	${PREFIX}/etc
+
+.if defined(WITH_IPV6)
+CONFIGURE_ARGS+=	--enable-ipv6
+.endif
 
 post-patch:
 # place files under /var/tmp so that this can be run by an unprivileged user
@@ -76,7 +79,7 @@ EXTRA_PATCHES=	${FILESDIR}/ssl-noengine.patch
 pre-patch:
 	@${ECHO} "*************************************************************************"
 	@${ECHO} "Note: you have to explicitly define WITH_STUNNEL_SSL_ENGINE to activate"
-	@${ECHO} "the OpenSSL ENGINE code on FreeBSD 5.x."
+	@${ECHO} "the OpenSSL ENGINE code on FreeBSD 5.x or 6.x."
 	@${ECHO} "There are known reliability issues with stunnel and the OpenSSL ENGINE"
 	@${ECHO} "code, so you are advised not to enable it."
 	@${ECHO} "*************************************************************************"
