@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Thu May  7 12:42:53 1998
++++ src/Makefile.in	Thu May  7 12:43:00 1998
+@@ -186,7 +186,7 @@
+ 
+ # the libraries to link against. Be aware of the order. First the libraries,
+ # that depend on the following ones.
+-killustrator_LDADD   = filter/libsimple.a -lkfm -lkfile -lkdeui -lkdecore -lqt @LIBQIMGIO@ -lX11 -lXext @LIBSOCKET@ -ldl
++killustrator_LDADD   = filter/libsimple.a -lkfm -lkfile -lkdeui -lkdecore -lqt @LIBQIMGIO@ -lX11 -lXext @LIBSOCKET@
+ 
+ # this option you can leave out. Just, if you use "make dist", you need it
+ noinst_HEADERS = Handle.h GObject.h GPolyline.h GPolygon.h GOval.h \
