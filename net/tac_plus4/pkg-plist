@@ -1,5 +1,0 @@
-sbin/tac_plus
-etc/rc.d/tac_plus.sh
-etc/tac_plus.conf.example
-share/doc/tac_plus/users_guide
-@dirrm share/doc/tac_plus
