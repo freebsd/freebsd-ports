@@ -22,7 +22,8 @@ LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		mng.1:${PORTSDIR}/graphics/libmng \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		IDL.2:${PORTSDIR}/devel/ORBit \
-			Xft2.2:${PORTSDIR}/x11-fonts/Xft
+		Xft2.2:${PORTSDIR}/x11-fonts/Xft \
+		iconv.3:${PORTSDIR}/converters/libiconv
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		freetype-config:${PORTSDIR}/print/freetype2
