@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	lsdb
-PORTVERSION=	0.6
+PORTVERSION=	0.8
 CATEGORIES=	databases elisp
-MASTER_SITES=	http://deisui.org/~ueno/emacs-lisp/
+MASTER_SITES=	http://downloads.sourceforge.jp/lsdb/${SFJP_RELEASE_ID}/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	yoichi@FreeBSD.org
@@ -22,6 +22,7 @@ DEPPORT_SUFFIX=
 DEPPORT_SUFFIX=	-${EMACS_PORT_NAME}
 .endif
 
+SFJP_RELEASE_ID=	941	
 FLIM_COOKIE=	flim-${EMACS_PORT_NAME}-1.14.FreeBSD-packages
 
 ALL_TARGET=	elc
