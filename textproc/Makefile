@@ -142,6 +142,7 @@
     SUBDIR += ruby-html-parser
     SUBDIR += ruby-nqxml
     SUBDIR += ruby-qt2xml
+    SUBDIR += ruby-rd-mode.el
     SUBDIR += ruby-rdtool
     SUBDIR += ruby-rss
     SUBDIR += ruby-sablot

@@ -1,0 +1,6 @@
+share/emacs/site-lisp/rd-mode.el
+@comment share/emacs/site-lisp is created by mtree
+lib/xemacs/site-lisp/rd-mode.el
+@unexec rmdir -p %D/lib/xemacs/site-lisp 2>/dev/null || true
+%%RUBY_ELISPDIR%%/rd-mode.el
+@unexec rmdir -p %D/%%RUBY_ELISPDIR%% 2>/dev/null || true
