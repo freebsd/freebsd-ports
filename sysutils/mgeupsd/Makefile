@@ -1,6 +1,6 @@
 # Ports collection makefile for:	mgeupsd
 # Date created:				12 Aug 1999
-# Whom:					Donald Burr <dburr@FreeBSD.ORG>
+# Whom:                                 Andreas Dobloug <andreasd@@ifi.uio.no>
 #
 # $FreeBSD$
 #
