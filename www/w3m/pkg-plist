@@ -1,4 +1,6 @@
 bin/w3m
+libexec/w3m/dirlist.cgi
+libexec/w3m/w3mbookmark
 share/doc/ja/w3m/w3mhelp-lynx_ja.html
 share/doc/ja/w3m/w3mhelp_ja.html
 share/doc/w3m/FAQ.html
@@ -14,5 +16,6 @@ share/doc/w3m/menu.default
 share/doc/w3m/menu.submenu
 share/doc/w3m/w3mhelp-lynx_en.html
 share/doc/w3m/w3mhelp_en.html
+@dirrm libexec/w3m
 @dirrm share/doc/ja/w3m
 @dirrm share/doc/w3m

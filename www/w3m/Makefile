@@ -8,8 +8,8 @@
 
 DISTNAME=	w3m-${W3M_DIST_VER}
 PKGNAME?=	w3m-${W3M_VER}
-W3M_DIST_VER=	991028-2
-W3M_VER=	991028.2
+W3M_DIST_VER=	991203
+W3M_VER=	${W3M_DIST_VER}
 CATEGORIES?=	www
 MASTER_SITES=	ftp://ei5nazha.yz.yamagata-u.ac.jp/w3m/ \
 		ftp://ftp.firedrake.org/w3m/ \
@@ -55,7 +55,7 @@ SED_CMD+=	-e "s,undef USE_SSL,define USE_SSL,g"
 .endif
 
 MAKE_FLAGS+=	DEFS="-I${LOCALBASE}/include ${SSL_CFLAGS}" \
-		LIBS="-L${LOCALBASE}/lib -lgc ${SSL_LIBS} ${EXTRA_SSL_LIBS}"
+		LIBS="-L${LOCALBASE}/lib ${SSL_LIBS} ${EXTRA_SSL_LIBS}"
 
 post-configure:
 	@${CP} ${TARGET} ${TARGET}.in
