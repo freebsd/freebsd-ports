@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- configure.in.orig	Mon Jun  2 01:21:53 2003
++++ configure.in	Mon Jun  2 01:22:02 2003
+@@ -134,7 +134,7 @@
+    AC_MSG_RESULT()
+    AC_CHECKING( for md5 Library and Header files ... )
+ AC_SEARCH_HEADERS(md5.h,
+-    $SSL_HDR_DIR /usr/include/openssl "" /usr/include /usr/include/ssl /usr/local/include /usr/local/ssl/include, /usr/include/sys, 
++    $SSL_HDR_DIR /usr/include/openssl "" /usr/include /usr/include/ssl /usr/local/include /usr/local/ssl/include /usr/include/sys, 
+     ,
+     AC_MSG_ERROR( SSL headers not found. )
+    )
