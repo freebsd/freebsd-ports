@@ -2435,6 +2435,7 @@ gmt		ports/graphics/gmt
 gmysql		ports/databases/gmysql
 gnapster	ports/audio/gnapster
 gnarr		ports/games/gnarr
+gnarwl		ports/mail/gnarwl
 gnat		ports/lang/gnat
 gnat-doc-html	ports/lang/gnat-doc-html
 gnat-doc-info	ports/lang/gnat-doc-info
