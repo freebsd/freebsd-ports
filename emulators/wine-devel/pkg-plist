@@ -580,14 +580,14 @@ lib/wine/x11drv.dll.so
 lib/wine/reg/regFixer.pl
 lib/wine/reg/regRestorer.pl
 share/aclocal/wine.m4
-%%PORTDOCS%%share/doc/wine/ANNOUNCE
-%%PORTDOCS%%share/doc/wine/AUTHORS
-%%PORTDOCS%%share/doc/wine/LICENSE
-%%PORTDOCS%%share/doc/wine/README
-%%PORTDOCS%%share/doc/wine/README.regapi
-%%PORTDOCS%%share/doc/wine/README.wcmd
-%%PORTDOCS%%share/doc/wine/README.winedbg
-%%PORTDOCS%%share/doc/wine/README.winedump
+%%DOCSDIR%%/ANNOUNCE
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/LICENSE
+%%DOCSDIR%%/README
+%%DOCSDIR%%/README.regapi
+%%DOCSDIR%%/README.wcmd
+%%DOCSDIR%%/README.winedbg
+%%DOCSDIR%%/README.winedump
 %%PORTDOCS%%@dirrm share/doc/wine
 @unexec if [ -f %D/lib/wine/glu32.dll.so    ]; then rm %D/lib/wine/glu32.dll.so; fi
 @unexec if [ -f %D/lib/wine/opengl32.dll.so ]; then rm %D/lib/wine/opengl32.dll.so; fi
