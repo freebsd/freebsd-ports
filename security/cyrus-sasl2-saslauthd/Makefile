@@ -56,8 +56,11 @@ CONFIGURE_ARGS+=--with-bdb-incdir=${LOCALBASE}/include/db41 --with-bdb=db41
 .elif ${WITH_BDB_VER} == 42
 LIB_DEPENDS+=	db-4.2.2:${PORTSDIR}/databases/db42
 CONFIGURE_ARGS+=--with-bdb-incdir=${LOCALBASE}/include/db42 --with-bdb=db-4.2
+.elif ${WITH_BDB_VER} == 43
+LIB_DEPENDS+=	db-4.3.0:${PORTSDIR}/databases/db43
+CONFIGURE_ARGS+=--with-bdb-incdir=${LOCALBASE}/include/db43 --with-bdb=db-4.3
 .else
-BROKEN=		"WITH_BDB_VER must be 3, 4, 41 or 42"
+BROKEN=		"WITH_BDB_VER must be 3, 4, 41, 42 or 43"
 .endif
 CONFIGURE_ARGS+=--with-dblib=berkeley --with-bdb-libdir=${LOCALBASE}/lib
 .else
