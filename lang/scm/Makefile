@@ -8,9 +8,7 @@
 PORTNAME=	scm
 PORTVERSION=	5d3
 CATEGORIES=	lang
-MASTER_SITES=	${MASTER_SITE_GNU} \
-		ftp://ftp.swiss.ai.mit.edu/pub/scm/
-MASTER_SITE_SUBDIR=	jacal
+MASTER_SITES=	ftp://ftp.swiss.ai.mit.edu/pub/scm/
 DISTFILES=	scm5d3.zip slib2c8.zip slib-psd1-3.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
