@@ -1,6 +1,8 @@
 bin/exiftool
-%%SITE_PERL%%/File/RandomAccessFile.pm
+%%SITE_PERL%%/File/RandomAccess.pm
+%%SITE_PERL%%/File/RandomAccess.pod
 %%SITE_PERL%%/Image/ExifTool.pm
+%%SITE_PERL%%/Image/ExifTool.pod
 %%SITE_PERL%%/Image/ExifTool/Canon.pm
 %%SITE_PERL%%/Image/ExifTool/CanonCustom.pm
 %%SITE_PERL%%/Image/ExifTool/CanonRaw.pm

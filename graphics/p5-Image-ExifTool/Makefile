@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Image-ExifTool
-PORTVERSION=	3.50
+PORTVERSION=	3.72
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.sno.phy.queensu.ca/~phil/exiftool/
 PKGNAMEPREFIX=	p5-
@@ -16,6 +16,6 @@ COMMENT=	Perl module for getting EXIF data from image files
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Image::ExifTool.3 File::RandomAccessFile.3
+MAN3=		Image::ExifTool.3 File::RandomAccess.3
 
 .include <bsd.port.mk>
