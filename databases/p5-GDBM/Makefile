@@ -25,4 +25,10 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/ext/GDBM_File
 
 MAN3=		GDBM_File.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} >= 500800
+BROKEN=		"Does not compile
+.endif
+
+.include <bsd.port.post.mk>
