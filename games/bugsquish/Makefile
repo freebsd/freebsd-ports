@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.sonic.net/pub/users/nbs/unix/x/bugsquish/src/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bug-squishing, fly-swatting action
 
+BROKEN=		Broken pkg-plist
+
 USE_SDL=	mixer image
 USE_GMAKE=	yes
 USE_REINPLACE=	yes

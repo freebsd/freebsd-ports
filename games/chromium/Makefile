@@ -16,6 +16,8 @@ DISTFILES=	${PORTNAME}-src-${PORTVERSION}.tar.gz \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An arcade-style, top-scrolling space shooter
 
+BROKEN=		Broken pkg-plist
+
 LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
 		smpeg.1:${PORTSDIR}/multimedia/smpeg \
 		openal.0:${PORTSDIR}/audio/openal

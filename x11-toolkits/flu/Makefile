@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME:U}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small collection of FLTK Widgets
 
+BROKEN=		Broken pkg-plist
+
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
 USE_X_PREFIX=	yes
