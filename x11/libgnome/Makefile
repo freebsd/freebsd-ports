@@ -7,6 +7,7 @@
 
 PORTNAME=	libgnome
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES?=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	2.0.0/releases/gnome-2.0-desktop-final
@@ -14,8 +15,10 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER?=	gnome@FreeBSD.org
 
+BUILD_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
 LIB_DEPENDS+=	xslt.1:${PORTSDIR}/textproc/libxslt \
 		gnomevfs-2.0:${PORTSDIR}/devel/gnomevfs2
+RUN_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
