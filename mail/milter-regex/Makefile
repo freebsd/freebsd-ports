@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	milter_regex
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	mail
 MASTER_SITES=	http://www.benzedrine.cx/
 DISTNAME=	milter-regex-${PORTVERSION}
@@ -25,12 +25,10 @@ pre-everything::
 .endif
 
 post-patch:
-.for ii in Makefile milter-regex.c rules.c
-	${MV} ${WRKSRC}/${ii} ${WRKSRC}/${ii}.orig
+	${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.orig
 	${SED} -e "s:-lpthread:${PTHREAD_LIBS}:g; \
 	s:-I/usr/src/gnu/usr.sbin/sendmail/include:${PTHREAD_CFLAGS}:g; \
-	s/[[:<:]]log(/milterlog(/g" < ${WRKSRC}/${ii}.orig > ${WRKSRC}/${ii}
-.endfor
+	s/-Werror//g" < ${WRKSRC}/Makefile.orig > ${WRKSRC}/Makefile
 
 pre-install:
 	${ECHO_CMD} libexec/milter-regex > ${PLIST}
