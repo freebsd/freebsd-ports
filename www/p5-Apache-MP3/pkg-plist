@@ -1,19 +1,62 @@
 @comment $FreeBSD$
 lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/Resample.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/L10N.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/L10N/Aliases.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/L10N/RightToLeft.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/L10N/ar.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/L10N/ca.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/L10N/cs.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/L10N/de.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/L10N/en.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/L10N/es.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/L10N/fa.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/L10N/fi.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/L10N/fr.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/L10N/ga.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/L10N/he.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/L10N/hr.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/L10N/is.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/L10N/it.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/L10N/ja.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/L10N/ko.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/L10N/ms.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/L10N/nb.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/L10N/nb_no.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/L10N/nl.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/L10N/nl_be.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/L10N/nl_nl.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/L10N/nn.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/L10N/nn_no.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/L10N/no.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/L10N/no_no.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/L10N/pl.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/L10N/ru.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/L10N/sh.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/L10N/sk.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/L10N/sl.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/L10N/sr.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/L10N/tr.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/L10N/uk.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/L10N/x_marklar.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/L10N/zh_cn.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/L10N/zh_tw.pm
 lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/Playlist.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/Resample.pm
 lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/Sorted.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/MP3/.packlist
 share/Apache-MP3/apache_mp3.css
+share/Apache-MP3/apache_mp3_fig1.gif
 share/Apache-MP3/apache_mp3_help.gif
 share/Apache-MP3/back.gif
 share/Apache-MP3/cd_icon.gif
 share/Apache-MP3/cd_icon_small.gif
+share/Apache-MP3/functions.js
 share/Apache-MP3/playlist.gif
 share/Apache-MP3/right_arrow.gif
 share/Apache-MP3/sound.gif
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/MP3
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/L10N
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Apache 2>/dev/null || true
 @dirrm share/Apache-MP3
