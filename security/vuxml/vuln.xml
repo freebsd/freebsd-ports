@@ -32,6 +32,44 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="67710833-1626-11d9-bc4a-000c41e2cdad">
+    <topic></topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>5.0</ge><lt>5.2.1_11</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The syscons CONS_SCRSHOT <a
+	  href="http://www.freebsd.org/cgi/man.cgi?query=ioctl">ioctl(2)</a>
+          does insufficient validation of its input arguments.  In
+          particular, negative coordinates or large coordinates may
+          cause unexpected behavior.</p>
+        <p>It may be possible to cause the CONS_SCRSHOT ioctl to
+          return portions of kernel memory.  Such memory might
+          contain sensitive information, such as portions of the
+          file cache or terminal buffers.  This information might be
+          directly useful, or it might be leveraged to obtain elevated
+          privileges in some way.  For example, a terminal buffer
+          might include a user-entered password.</p>
+        <p>This bug may be exploitable by users who have access to the
+          physical console or can otherwise open a /dev/ttyv* device
+	  node.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0919</cvename>
+      <freebsdsa>SA-04:15.syscons</freebsdsa>
+      <url>http://www.freebsd.org/cgi/cvsweb.cgi/src/sys/dev/syscons/syscons.c#rev1.429</url>
+    </references>
+    <dates>
+      <discovery>2004-09-30</discovery>
+      <entry>2004-10-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2328ADEF-157C-11D9-8402-000D93664D5C">
     <topic>racoon -- improper certificate handling</topic>
     <affects>
