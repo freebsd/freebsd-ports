@@ -119,6 +119,9 @@
 %%LIBC_TARG%%/lib/crt430xE423.o
 %%LIBC_TARG%%/lib/crt430xE425.o
 %%LIBC_TARG%%/lib/crt430xE427.o
+%%LIBC_TARG%%/lib/crt430xG437.o
+%%LIBC_TARG%%/lib/crt430xG438.o
+%%LIBC_TARG%%/lib/crt430xG439.o
 %%LIBC_TARG%%/lib/crt430xW423.o
 %%LIBC_TARG%%/lib/crt430xW425.o
 %%LIBC_TARG%%/lib/crt430xW427.o
@@ -149,6 +152,14 @@
 %%LIBC_TARG%%/share/mspgcc/examples/cplusplus/leds/hardware.h
 %%LIBC_TARG%%/share/mspgcc/examples/cplusplus/leds/makefile
 %%LIBC_TARG%%/share/mspgcc/examples/cplusplus/leds/obsleds.cpp
+%%LIBC_TARG%%/share/mspgcc/examples/fet_spi_irq/hardware.h
+%%LIBC_TARG%%/share/mspgcc/examples/fet_spi_irq/irqspi.S
+%%LIBC_TARG%%/share/mspgcc/examples/fet_spi_irq/irqspi.h
+%%LIBC_TARG%%/share/mspgcc/examples/fet_spi_irq/main.c
+%%LIBC_TARG%%/share/mspgcc/examples/fet_spi_irq/makefile
+%%LIBC_TARG%%/share/mspgcc/examples/fet_spi_irq/spicontrol_gui.py
+%%LIBC_TARG%%/share/mspgcc/examples/fet_spi_irq/spicontrol_gui.wxg
+%%LIBC_TARG%%/share/mspgcc/examples/fet_spi_irq/spicontroller.py
 %%LIBC_TARG%%/share/mspgcc/examples/gfx_lcd/gfxbasic.c
 %%LIBC_TARG%%/share/mspgcc/examples/gfx_lcd/gfxbasic.h
 %%LIBC_TARG%%/share/mspgcc/examples/gfx_lcd/gfxcore.h
@@ -677,6 +688,11 @@
 %%LIBC_TARG%%/share/mspgcc/examples/slac019/fet440_wdt01.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac019/fet440_wdt02.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac019/Makefile
+%%LIBC_TARG%%/share/mspgcc/examples/stackcheck/README.txt
+%%LIBC_TARG%%/share/mspgcc/examples/stackcheck/gdb-sim.ini
+%%LIBC_TARG%%/share/mspgcc/examples/stackcheck/hardware.h
+%%LIBC_TARG%%/share/mspgcc/examples/stackcheck/main.c
+%%LIBC_TARG%%/share/mspgcc/examples/stackcheck/makefile
 %%LIBC_TARG%%/share/mspgcc/examples/tasker/config.h
 %%LIBC_TARG%%/share/mspgcc/examples/tasker/main.c
 %%LIBC_TARG%%/share/mspgcc/examples/tasker/Makefile
@@ -744,6 +760,7 @@
 @dirrm %%LIBC_TARG%%/share/mspgcc/examples/char_lcd
 @dirrm %%LIBC_TARG%%/share/mspgcc/examples/cplusplus/leds
 @dirrm %%LIBC_TARG%%/share/mspgcc/examples/cplusplus
+@dirrm %%LIBC_TARG%%/share/mspgcc/examples/fet_spi_irq
 @dirrm %%LIBC_TARG%%/share/mspgcc/examples/gfx_lcd
 @dirrm %%LIBC_TARG%%/share/mspgcc/examples/leds
 @dirrm %%LIBC_TARG%%/share/mspgcc/examples/pc_keyboard
@@ -776,6 +793,7 @@
 @dirrm %%LIBC_TARG%%/share/mspgcc/examples/slaa150
 @dirrm %%LIBC_TARG%%/share/mspgcc/examples/slaa151
 @dirrm %%LIBC_TARG%%/share/mspgcc/examples/slaa168
+@dirrm %%LIBC_TARG%%/share/mspgcc/examples/stackcheck
 @dirrm %%LIBC_TARG%%/share/mspgcc/examples/tasker
 @dirrm %%LIBC_TARG%%/share/mspgcc/examples/tcpip
 @dirrm %%LIBC_TARG%%/share/mspgcc/examples/timerA_uart
