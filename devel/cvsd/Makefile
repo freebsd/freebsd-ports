@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cvsd
-PORTVERSION=	0.9.12
+PORTVERSION=	0.9.13
 CATEGORIES=	devel
 MASTER_SITES=	http://tiefighter.et.tudelft.nl/~arthur/cvsd/
 
@@ -25,10 +25,13 @@ MAN5=	cvsd.conf.5
 MAN8=	cvsd.8 cvsd-buildroot.8 cvsd-passwd.8
 
 post-patch:
-	@${REINPLACE_CMD} -E -e 's|init.d/cvsd|rc.d/cvsd.sh.sample|g ; \
-		 s|init.d|rc.d|g ; \
-		s,@(ACLOCAL|AUTO(CONF|MAKE|HEADER))@,/usr/bin/true,' \
-		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|@ACLOCAL@|${TRUE}|g ; \
+		 s|@AUTOCONF@|${TRUE}|g ; \
+		 s|@AUTOMAKE@|${TRUE}|g ; \
+		 s|@AUTOHEADER@|${TRUE}|g ; \
+		 s|init.d/cvsd|rc.d/cvsd.sh.sample|g ; \
+		 s|init.d|rc.d|g' ${WRKSRC}/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
