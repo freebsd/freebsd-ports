@@ -1,0 +1,43 @@
+--- bkpupsd.c.old	Wed Aug  4 13:45:10 1999
++++ bkpupsd.c	Wed Aug  4 13:55:24 1999
+@@ -27,9 +27,12 @@
+  */
+ 
+ #include <stdio.h>
++#include <stdlib.h>
++#include <unistd.h>
+ #include <fcntl.h>
+ #include <err.h>
+ #include <errno.h>
++#include <string.h>
+ #include <sys/types.h>
+ #include <sys/ioctl.h>
+ #include <signal.h>
+@@ -44,16 +47,16 @@
+ #define SH_RESTORED		"/usr/local/libexec/bkpupsd/bkpups.restored"
+ #define SH_BATTLOW		"/usr/local/libexec/bkpupsd/bkpups.battlow"
+ 
++int makepid(char *s);
++
+ int main(argc, argv)
+ int argc;
+ char  **argv;
+ {
+ 	int fd;
+ 	int lstatus;
+-	int flags;
+ 	int rts_bit = TIOCM_RTS;
+ 	int dtr_bit = TIOCM_DTR;
+-	int rng_bit = TIOCM_RNG;
+ 	int pfail = 0;
+ 	int pfcount = 0;
+ 	int prcount = 0;
+@@ -179,7 +182,7 @@
+ 	pid = getpid();
+ 	if((fp =  fopen(s, "w")) == NULL)
+ 		return -1;
+-	fprintf(fp, "%ld\n", pid);
++	fprintf(fp, "%lu\n", (u_long)pid);
+ 	fclose(fp);
+ 	return 0;
+ }
