@@ -135,6 +135,7 @@
     SUBDIR += noattach
     SUBDIR += nocc
     SUBDIR += nullmailer
+    SUBDIR += offlineimap
     SUBDIR += openwebmail
     SUBDIR += p5-Email-Find
     SUBDIR += p5-Email-Valid
