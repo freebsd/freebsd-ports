@@ -1,6 +1,6 @@
 # New ports collection makefile for:	strace
 # Date created:		Tue May 15 22:29:27 MSD 2001
-# Whom:			Alex Semenyaka <alexs@snark.rinet.ru>
+# Whom:			Alex Semenyaka <alex@rinet.ru>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	alexs@snark.rinet.ru
+MAINTAINER=	alex@rinet.ru
 
 GNU_CONFIGURE=	yes
 
