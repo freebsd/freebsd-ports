@@ -60,7 +60,7 @@ if [ x"${PORTNAME}" = x"" -o x"${PORTVERSION}" = x"" -o x"${DISTFILES}" = x"" ];
   display_err "Either PORTNAME, PORTVERSION or DISTFILES is undefined in Makefile."
 fi
 
-MASTER_SITES=`env MASTER_SITE_BACKUP=\"\" make -V MASTER_SITES 2>/dev/null | xargs -n1 echo | grep ^ftp://`
+MASTER_SITES=`env MASTER_SITE_BACKUP=\"\" make master-sites-all 2>/dev/null | xargs -n1 echo | grep ^ftp://`
 if [ x"${MASTER_SITES}" = x"" ]; then
   display_err "Either MASTER_SITES is undefined in Makefile or it doesn't contain any ftp sites."
 fi
