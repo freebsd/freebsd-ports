@@ -8,8 +8,6 @@ o copy PREFIX/share/example/xsystem35/xsys35rc.sample
 o install game data from AliceSoft's cdrom with
   PREFIX/bin/instgame.
 
-o install X-TT for your real pleasure(optional).
-
 o pcm0 sound device doesn't work well with this program for now.
   Try snd0 instead, OSS commercial product or
   -devdsp none commandline option as the last resort.
