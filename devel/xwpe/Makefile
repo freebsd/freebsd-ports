@@ -27,10 +27,14 @@ ALL_TARGET=
 .if defined(GERMAN_LANG)
 INSTALL_TARGET= install_german
 .endif
-MAN1=		xwpe.1 xwe.1 wpe.1 we.1
+MAN1=		xwpe.1
+
 
 post-install:
 	@strip ${PREFIX}/bin/xwpe
+	@(cd ${PREFIX}/man/man1 ; \
+	for mp in xwe.1 wpe.1 we.1 ; \
+		do rm -f $$mp ; ln -sf xwpe.1.gz $$mp.gz ; done )
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/xwpe
 .if defined(GERMAN_LANG)
