@@ -7,8 +7,8 @@ bin/isamlog
 bin/make_binary_distribution
 bin/msql2mysql
 bin/mysql
-bin/mysql.server
 bin/mysql_install_db
+bin/mysql_zap
 bin/mysqlaccess
 bin/mysqladmin
 bin/mysqlbug
@@ -19,8 +19,6 @@ bin/perror
 bin/replace
 bin/resolveip
 bin/safe_mysqld
-bin/which1
-bin/zap
 etc/rc.d/mysql.sh
 include/mysql/dbug.h
 include/mysql/errmsg.h
@@ -41,7 +39,7 @@ lib/mysql/libmerge.a
 lib/mysql/libmysqlclient.a
 lib/mysql/libmysqlclient.la
 lib/mysql/libmysqlclient.so
-lib/mysql/libmysqlclient.so.4.0
+lib/mysql/libmysqlclient.so.4
 lib/mysql/libmystrings.a
 lib/mysql/libmysys.a
 lib/mysql/libnisam.a
@@ -52,6 +50,7 @@ share/doc/mysql/manual.ps
 share/doc/mysql/manual.texi
 share/doc/mysql/manual.txt
 share/doc/mysql/manual_toc.html
+share/mysql/binary-configure
 share/mysql/czech/errmsg.sys
 share/mysql/czech/errmsg.txt
 share/mysql/dutch/errmsg.sys
@@ -67,8 +66,9 @@ share/mysql/hungarian/errmsg.txt
 share/mysql/italian/errmsg.sys
 share/mysql/italian/errmsg.txt
 share/mysql/my-example.cnf
-share/mysql/mysql-3.22.6-alpha.spec
+share/mysql/mysql-3.22.9-beta.spec
 share/mysql/mysql-log-rotate
+share/mysql/mysql.server
 share/mysql/mysql/db.frm
 share/mysql/mysql/func.frm
 share/mysql/mysql/host.frm
@@ -108,5 +108,5 @@ share/mysql/swedish/errmsg.txt
 @dirrm share/mysql
 @exec %D/bin/mysql_install_db
 @exec /usr/bin/killall mysqld
-@unexec /sbin/ldconfig -R
-@exec /sbin/ldconfig -m %D/lib
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib/mysql
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
