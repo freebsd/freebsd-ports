@@ -3,7 +3,7 @@
 pb=/var/portbuild
 
 if [ $# -lt 2 ]; then
-        echo "usage: makeparallel arch branch [args]"
+        echo "usage: makeworld arch branch [args]"
         exit 1
 fi
 
@@ -12,13 +12,8 @@ branch=$2
 shift 2
 
 . ${pb}/${arch}/portbuild.conf
-. ${pb}/scripts/buildenv
 
-buildenv ${pb} ${arch} ${branch}
-
-# These confuse make world; remove them
-unset MACHINE_ARCH
-unset ARCH
+export TARGET_ARCH=${arch}
 
 client=0
 nocvs=0
