@@ -1,0 +1,21 @@
+--- ../scp/source/crashrep/crashrep_dynamic.scp.orig	Thu Aug 14 20:29:59 2003
++++ ../scp/source/crashrep/crashrep_dynamic.scp	Thu Aug 14 20:30:12 2003
+@@ -19,12 +19,12 @@
+ 
+ #ifdef UNX
+ 
+-File GID_FILE_ALIASES_PANGOX
+-	TXT_FILE_BODY;
+-    Name            = "pangox.aliases";
+-    Dir             = GID_DIR_PROGRAM;
+-    Styles          = (PACKED);
+-End
++// File GID_FILE_ALIASES_PANGOX
++// 	TXT_FILE_BODY;
++//     Name            = "pangox.aliases";
++//     Dir             = GID_DIR_PROGRAM;
++//     Styles          = (PACKED);
++// End
+ 
+ #endif
+ 
