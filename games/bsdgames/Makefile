@@ -7,7 +7,7 @@
 
 PORTNAME=	freebsd-games
 PORTVERSION=	5.1.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=markm
@@ -64,9 +64,9 @@ post-patch:
 	@${FIND} ${WRKSRC} -name '*.c' -or -name '*.h' -or -name '*.6' -or \
 		-name 'index' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|share/games|local/share/games|g'
-	@for file in ${PATHNAME_FILES}; do \
+	@for f in ${PATHNAME_FILES}; do \
 		${REINPLACE_CMD} -e 's|/usr/local/local/local|${PREFIX}|g' \
-			${WRKSRC}/$${file}; \
+			${WRKSRC}/$${f}; \
 	done
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' \
 		"${WRKSRC}/hack/hack.unix.c"
