@@ -1,7 +1,5 @@
-Axel is, as the title says already, a download accelerator. I know, Axel's
-not the first program which does things like this, but it does a nice job,
-just like any other program. The difference between Axel and most other
-programs is that it does segmented downloading, but all the data is written
-to the final destination file immediately.
+Axel tries to accelerate downloads by opening more than one connection to a
+server (possibly to different servers). Because of its size it might also
+be useful as a wget replacement on bootdisks and other small systems.
 
 WWW: http://www.lintux.cx/axel.html

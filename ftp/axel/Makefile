@@ -7,25 +7,22 @@
 #
 
 PORTNAME=	axel
-PORTVERSION=	0.99b
+PORTVERSION=	1.0
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.lintux.cx/downloads/
 
-MAINTAINER=	lintux@lintux.cx
+MAINTAINER=	lintux@debian.org
 
-LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt \
-		intl:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext
 
 USE_GMAKE=	yes
-CFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-MAKE_ENV=	LFLAGS="-L${LOCALBASE}/lib -lgnugetopt -lintl"
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${PREFIX}/man --i18n=1
 
 MAN1=		axel.1
 
-post-patch:
-	@${PERL} -pi -e "s,-pthread,${PTHREAD_LIBS},g ; \
-		s,^(CFLAGS = -O3),#\1,g ; \
-		s,gcc,${CC},g ; \
-		s,install -D,${INSTALL_DATA},g" ${WRKSRC}/Makefile
+post-configure:
+	@${PERL} -pi -e 's,-O3,${CFLAGS},; s/gcc/${CC}/; \
+		s/-pthread/${PTHREAD_LIBS}/' ${WRKSRC}/Makefile.settings
 
 .include <bsd.port.mk>
