@@ -38,7 +38,9 @@ MASTER_SITE_SUBDIR=	PM${PRTYPE}C
 MASTER_SITE_SUBDIR=	pm${PRTYPE}c
 .elif ${PRTYPE} == 4000
 MASTER_SITE_SUBDIR=	pm${PRTYPE}pxlpr
-.elif ${PRTYPE} == g700 || ${PRTYPE} == g800
+.elif ${PRTYPE} == g900
+MASTER_SITE_SUBDIR=	px${PRTYPE}lpr
+.elif ${PRTTYPE_PREFIX} == g
 MASTER_SITE_SUBDIR=	pm${PRTYPE}lpr
 .elif ${PRTTYPE_PREFIX} == v
 .if ${DIST_TYPE} == cups
@@ -118,6 +120,9 @@ LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base \
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-2.6.2-common \
 		${FILESDIR}/extra-patch-2.6.2-src \
 		${FILESDIR}/extra-patch-2.6.2-src-cups
+.if ${PRTYPE} != g900
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-2.6.2-ekpstm::main.c
+.endif
 BUILD_DEPEND+=	${LOCALBASE}/bin/autoconf253:${PORTSDIR}/devel/autoconf253
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base \
 		iconv.3:${PORTSDIR}/converters/libiconv
@@ -156,14 +161,14 @@ PRT_MODEL=	PM820CUG
 LIB_FILE=	libpm${PRTYPE}px.so
 MODEL_FILE=	ekpm${PRTYPE}px.ppd
 PRT_MODEL=	PM${PRTYPE}PX
+.elif ${PRTTYPE_PREFIX} == v || ${PRTYPE} == g900
+LIB_FILE=	libpx${PRTYPE}.so
+MODEL_FILE=	ekpx${PRTYPE}.ppd
+PRT_MODEL=	PX${PRTYPE:U}
 .elif ${PRTTYPE_PREFIX} == g
 LIB_FILE=	libpm${PRTYPE}.so
 MODEL_FILE=	ekpm${PRTYPE}.ppd
 PRT_MODEL=	PM${PRTYPE:U}
-.elif ${PRTTYPE_PREFIX} == v
-LIB_FILE=	libpx${PRTYPE}.so
-MODEL_FILE=	ekpx${PRTYPE}.ppd
-PRT_MODEL=	PX${PRTYPE:U}
 .else
 LIB_FILE=	libpm${PRTYPE}c.so
 MODEL_FILE=	ekpm${PRTYPE}c.ppd
@@ -271,7 +276,7 @@ post-patch:
 		${WRKSRC}/setup/inst-post.sh
 .endif
 .if ${PIPS_LEVEL} >= 205 && ${DIST_TYPE} != cups
-	${REINPLACE_CMD} -e 's,dtrfilter_LDADD = -ldl,dtrfilter_LDADD =,' \
+	${REINPLACE_CMD} -e '/^dtrfilter_LDADD =/s/-ldl //' \
 		${WRKSRC}/dtrfilter/Makefile.in
 	${REINPLACE_CMD} -e 's,/etc/pipsrc,${PREFIX}&,' \
 		-e 's,/usr/local/EPKowa,${PREFIX}/libexec/pips,' \
@@ -283,6 +288,8 @@ post-patch:
 	${REINPLACE_CMD} -e 's;/dev/\(usb/\)\{0,1\}lp0;/dev/ulpt0;' \
 		-e 's,^SUBDIRS = rc$$,#&,' \
 		${WRKSRC}/ekpd/Makefile.in
+	${REINPLACE_CMD} -e 's,^\(enum Ink\)set\(_Id inkbox_get_inkid\),\1box\2,' \
+		${WRKSRC}/ekpstm/inkbox.h
 .if ${DIST_TYPE} != cups
 	${REINPLACE_CMD} -e 's,/etc/ekpdrc,${PREFIX}&,' ${WRKSRC}/src/setup.c
 .endif
