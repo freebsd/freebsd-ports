@@ -3,7 +3,7 @@
 # Date created:		24 September 1994
 # Whom:			adam
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1994/10/02 19:27:48 adam Exp $
 #
 
 DISTNAME=	nn-6.5.0.b3
@@ -13,7 +13,10 @@ pre-configure:
 	@cp ${WRKSRC}/config.h-dist ${WRKSRC}/config.h
 	@cp ${WRKSRC}/conf/s-386bsd.h ${WRKSRC}/conf/s-freebsd.h
 
-install: all
-	@cd ${WRKSRC}; ./inst s
+pre-build:
+	[ -r /usr/local/lib/news/inews ] || ( cd ${WRKSRC}/inews; ${MAKE} all )
+
+pre-install:
+	[ -r /usr/local/lib/news/inews ] || ( cd ${WRKSRC}/inews; ${MAKE} install )
 
 .include <bsd.port.mk>
