@@ -6,20 +6,20 @@
 #
 
 PORTNAME=		openrm
-PORTVERSION=		1.5.0
+PORTVERSION=		1.5.1
 CATEGORIES=		graphics
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=		${PORTNAME}-devel-${PORTVERSION}
 .ifdef (WITH_DEMOS)
-DISTFILES=		${PORTNAME}-devel-${PORTVERSION}${EXTRACT_SUFX} \
+DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
 			${PORTNAME}-demo-${PORTVERSION}${EXTRACT_SUFX}
 .endif
 
 MAINTAINER=	tiamat@comset.net
 COMMENT=	Development environment used to build 2D/3D/stereo graphics
 
-LIB_DEPENDS=    jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 WRKSRC=		${WRKDIR}/rm${PORTVERSION:S/.//g}
 .ifdef (WITH_DEMOS)
@@ -28,7 +28,7 @@ EXTRA_PATCHES=	${PATCHDIR}/makeinclude.diff
 .endif
 
 USE_X_PREFIX=	yes
-USE_MESA=	yes
+USE_GL=		yes
 USE_REINPLACE=	yes
 ALL_TARGET=	freebsd docs
 MAKE_ARGS=	AR=${AR} \
@@ -53,9 +53,8 @@ pre-everything::
 	@${ECHO_MSG} "You can define WITH_DEMOS=yes to fetch and install available demos"
 .endif
 
-post-patch:
-	@${CHMOD} 0755 ${WRKSRC}/bin/mklib.freebsd
 .ifdef (WITH_DEMOS)
+post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g; \
 			      s|%%X11BASE%%|${X11BASE}|g; \
 			      s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g; \
