@@ -34,10 +34,10 @@ share/icons/locolor/32x32/apps/kcpuload.png
 @dirrm share/apps/kcpuload
 @dirrm share/doc/HTML/en/kcpuload/common
 @dirrm share/doc/HTML/en/kcpuload
-@dirrm share/icons/crystalsvg/16x16/apps
-@dirrm share/icons/crystalsvg/16x16
-@dirrm share/icons/crystalsvg/32x32/apps
-@dirrm share/icons/crystalsvg/32x32
-@dirrm share/icons/crystalsvg/48x48/apps
-@dirrm share/icons/crystalsvg/48x48
-@dirrm share/icons/crystalsvg
+@unexec rmdir %D/share/icons/crystalsvg/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/48x48/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/48x48 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg 2>/dev/null || true

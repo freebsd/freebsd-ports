@@ -7,6 +7,7 @@
 
 PORTNAME=	kcpuload
 PORTVERSION=	1.99
+PORTREVISION=	1
 CATEGORIES=	sysutils kde
 MASTER_SITES=	http://ftp.kde.com/Administration/Monitoring/Resources/KCPULoad/
 
