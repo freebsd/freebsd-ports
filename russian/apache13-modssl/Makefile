@@ -51,7 +51,7 @@ USE_OPENSSL=	YES
 
 .include <bsd.port.pre.mk>
 
-LIB_DEPENDS=	mm.11:${PORTSDIR}/devel/mm
+LIB_DEPENDS=	mm.12:${PORTSDIR}/devel/mm
 
 VERSION_APACHE=	1.3.26
 VERSION_MODSSL=	2.8.10

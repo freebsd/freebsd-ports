@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	mm.11:${PORTSDIR}/devel/mm
+LIB_DEPENDS=	mm.12:${PORTSDIR}/devel/mm
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
