@@ -177,3 +177,5 @@ libexec/ifmail/nlpatch
 %%PORTDOCS%%@dirrm share/examples/ifmail/tcp
 %%PORTDOCS%%@dirrm share/examples/ifmail/zmailer
 %%PORTDOCS%%@dirrm share/examples/ifmail
+@exec echo "updating /etc/services"; cp /etc/services /etc/services.bak; (grep -v ^ifcico /etc/services.bak ; echo "ifcico		60179/tcp  #ifcico server (ifmail)") > /etc/services
+@unexec echo "updating /etc/services"; cp /etc/services /etc/services.bak; (grep -v ^ifcico /etc/services.bak ) > /etc/services
