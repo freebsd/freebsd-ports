@@ -219,6 +219,7 @@
     SUBDIR += py-csv
     SUBDIR += py-dsv
     SUBDIR += py-expat
+    SUBDIR += py-jaxml
     SUBDIR += py-martel
     SUBDIR += py-sgrep
     SUBDIR += py-trex
