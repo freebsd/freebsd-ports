@@ -1,15 +1,8 @@
-@comment $FreeBSD$
 include/gmp.h
 include/gmpxx.h
 include/mpf2mpfr.h
 include/mpfr.h
 include/mpfrxx.h
-@unexec install-info --delete %D/info/gmp.info %D/info/dir
-info/gmp.info
-@exec install-info %D/info/gmp.info %D/info/dir
-@unexec install-info --delete %D/info/mpfr.info %D/info/dir
-info/mpfr.info
-@exec install-info %D/info/mpfr.info %D/info/dir
 lib/libgmp.a
 lib/libgmp.so
 lib/libgmp.so.6
