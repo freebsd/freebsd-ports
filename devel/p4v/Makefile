@@ -7,7 +7,7 @@
 
 PORTNAME=		p4v
 PORTVERSION=		2003.2
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		devel
 MASTER_SITES=		ftp://ftp.perforce.com/pub/perforce/r03.2/bin.freebsd4/
 DISTNAME=		${PORTNAME}
