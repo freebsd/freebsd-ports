@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cstringbuffer
-PORTVERSION=	0.1.5
+PORTVERSION=	0.1.6
 CATEGORIES=	devel
 MASTER_SITES=	http://www.translator.cx/dist/libs/
 
@@ -20,5 +20,7 @@ MANCOMPRESSED=	no
 
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
+PLIST_FILES=	include/csb.h lib/libcsb.a lib/libcsb.so lib/libcsb.so.1
 
 .include <bsd.port.mk>
