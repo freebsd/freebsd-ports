@@ -7,7 +7,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	0.65
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	clamav
@@ -102,24 +102,32 @@ post-build:
 	@${SED} ${SED_SCRIPT} ${PKGDIR}/pkg-install >${PKGINSTALL}
 	@${SED} ${SED_SCRIPT} ${FILESDIR}/clamav-clamd.sh \
 		>${WRKDIR}/clamav-clamd.sh
+	@${SED} ${SED_SCRIPT} ${FILESDIR}/clamav-freshclam.sh \
+		>${WRKDIR}/clamav-freshclam.sh
+.if defined(WITH_MILTER)
 	@${SED} ${SED_SCRIPT} ${FILESDIR}/clamav-milter.sh \
 		>${WRKDIR}/clamav-milter.sh
+.endif
 
 pre-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PREFIX} PRE-INSTALL
 
 post-install:
+	@${INSTALL_DATA} ${BUILD_WRKSRC}/etc/clamav.conf.default \
+		${PREFIX}/etc/clamav.conf.default
 	@${INSTALL_SCRIPT} ${WRKDIR}/clamav-clamd.sh \
 		${RC_DIR}/clamav-clamd${RC_SUFX}
+	@${INSTALL_SCRIPT} ${WRKDIR}/clamav-freshclam.sh \
+		${RC_DIR}/clamav-freshclam${RC_SUFX}
 	@${CHOWN} -R clamav:clamav ${DATADIR}
 	@[ -f ${PREFIX}/etc/clamav.conf ] || \
 		${CP} ${PREFIX}/etc/clamav.conf.default ${PREFIX}/etc/clamav.conf
-	@${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGINSTALL} ${PREFIX} POST-INSTALL
 .if defined(WITH_MILTER)
 	@${INSTALL_SCRIPT} ${WRKDIR}/clamav-milter.sh \
 		${RC_DIR}/clamav-milter${RC_SUFX}
 .endif
+	@${SETENV} PKG_PREFIX=${PREFIX} \
+		${SH} ${PKGINSTALL} ${PREFIX} POST-INSTALL
 
 .include <bsd.port.post.mk>
