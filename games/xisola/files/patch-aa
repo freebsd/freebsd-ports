@@ -1,0 +1,11 @@
+--- Imakefile.orig	Wed Mar 31 11:53:11 1993
++++ Imakefile	Mon May 18 11:10:07 1998
+@@ -6,7 +6,7 @@
+ 
+ EXTRA_INCLUDES =
+ 
+-CDEBUGFLAGS = -g
++XCOMM CDEBUGFLAGS = -g
+ 
+ EXTRA_LOAD_FLAGS = 
+ 
