@@ -1,0 +1,9 @@
+UnRTF is a command-line converter from RTF (Rich Text) to HTML, LaTeX,
+PostScript, plain text, and text with VT100 codes. When converting to HTML, it
+supports tables, fonts, embedded images, hyperlinks, paragraph alignment, and
+more. All other conversions are "alpha" i.e. being newly developed.
+
+WWW: http://www.geocities.com/tuorfa/unrtf.html
+
+-- Oliver Braun
+obraun@informatik.unibw-muenchen.de

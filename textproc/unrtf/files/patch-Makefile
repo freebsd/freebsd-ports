@@ -1,0 +1,19 @@
+--- Makefile.orig	Tue Mar 26 19:11:52 2002
++++ Makefile	Tue Mar 26 19:46:29 2002
+@@ -25,7 +25,7 @@
+ #
+ 
+ 
+-CFLAGS=-g -Wall
++#CFLAGS=-g -Wall
+ CC=gcc
+ 
+ OBJS=convert.o word.o error.o main.o hash.o \
+@@ -57,6 +57,6 @@
+ 	rm -f ${OBJS}
+ 
+ install:	${TARGET}
+-	cp ${TARGET} /usr/local/bin
++	${INSTALL} ${TARGET} ${PREFIX}/bin
+ 
+ 
