@@ -3,7 +3,7 @@
 # Date created:		27 August 1996
 # Whom:			Bernd Rosauer <br@schiele-ct.de>
 #
-# $Id: Makefile,v 1.7 1996/07/23 12:36:55 tg Exp $
+# $Id: Makefile,v 1.8 1996/09/13 07:50:37 tg Exp $
 #
 
 DISTNAME=	teTeX-src-0.4
@@ -13,8 +13,6 @@ MASTER_SITES=	${TETEX_SITE}/distrib/sources/
 DISTFILES=	teTeX-src-0.4pl2.tar.gz teTeX-lib-0.4pl1.tar.gz
 
 MAINTAINER=	br@schiele-ct.de
-
-RUN_DEPENDS=	wishx:${PORTSDIR}/lang/tclX75
 
 DIST_SUBDIR=	teTeX
 EXTRACT_ONLY=	teTeX-src-0.4pl2.tar.gz
