@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.mico.org/:src \
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:src \
 		doc-html.tar.gz:docs
 
-MAINTAINER=	sem@ciam.ru
+MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Fully compliant implementation of CORBA2.4 with some CORBA3 features
 
 WRKSRC=			${WRKDIR}/${PORTNAME}

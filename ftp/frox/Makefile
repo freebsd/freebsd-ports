@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.hollo.org/frox/download/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	sem@ciam.ru
+MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Transparent FTP proxy with caching support
 
 USE_BZIP2=	yes

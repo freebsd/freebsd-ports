@@ -12,7 +12,7 @@ MASTER_SITES=	http://deuce.doc.wustl.edu/old_distribution/ \
 		http://www.navicon.dk/mirrors/ace/deuce.doc.wustl.edu/old_distribution/
 DISTNAME=	ACE-${PORTVERSION:C/\.0$//}-html
 
-MAINTAINER=	sem@ciam.ru
+MAINTAINER=	sem@FreeBSD.org
 COMMENT=	The ACE+TAO HTML documentation
 
 WRKSRC=		${WRKDIR}/html
