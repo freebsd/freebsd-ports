@@ -15,14 +15,12 @@ DIST_SUBDIR=	gnome
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A sound library for enlightenment package
 
-LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile \
-		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 
+USE_GETOPT_LONG=	yes
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lgnugetopt"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 MAN1=	esd-config.1 esd.1 esdcat.1 esdctl.1 esddsp.1 esdfilt.1 esdloop.1 \
