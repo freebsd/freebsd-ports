@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	whatmask
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.laffeycomputer.com/current_builds/whatmask/
 
