@@ -1,0 +1,17 @@
+--- gonvert.orig	Mon Jan 26 02:22:42 2004
++++ gonvert	Mon Jan 26 13:22:52 2004
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!/usr/bin/env python
+ # -*- coding: UTF8 -*-
+ version = "0.1.7"   # keep version information here since Makefile needs it
+ 
+@@ -655,7 +655,7 @@
+ 	homepath=''
+ else:
+ 	#look for it in the installed directory
+-	homepath=sys.path[0] + '/../lib/gonvert-'+version + "/"
++	homepath=sys.path[0] + '/../share/gonvert' "/"
+ 
+ gladefile=homepath+'gonvert.glade'
+ 
