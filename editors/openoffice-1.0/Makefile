@@ -268,7 +268,7 @@ pre-fetch:
 	@${ECHO}
 	@${ECHO} "If must have license from the Unisys and IBM patents"
 	@${ECHO} "to enable this option to get compressed GIF images."
-	${ECHO}
+	@${ECHO}
 .endif
 .if ${OSVERSION} < 450002
 	@${ECHO}
