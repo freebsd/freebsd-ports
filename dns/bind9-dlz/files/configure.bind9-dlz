@@ -85,7 +85,7 @@ while [ "$1" ]; do
 			;;
 		\"BerkleyDB42\")
 			echo WITH_BERKLEYDB_DRIVER=YES
-			echo BERKLEYDB_LIB?=db4-2.1
+			echo BERKLEYDB_LIB?=db-4.2
 			echo BERKLEYDB_PORT?=databases/db42
 			;;
 		\"FileSystem\")
