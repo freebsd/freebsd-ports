@@ -3,7 +3,7 @@
 # Date created:		22 Jun 1998
 # Whom:                 sada
 #
-# $Id: Makefile,v 1.3 1998/11/17 17:48:45 sada Exp $
+# $Id: Makefile,v 1.4 1998/11/20 20:31:20 sada Exp $
 #
 
 DISTNAME=	ja-netscape-fonts-1.0
@@ -16,7 +16,7 @@ RUN_DEPENDS= \
 	${PREFIX}/lib/X11/fonts/local/jpnhn4-iso.pcf.gz:${PORTSDIR}/japanese/elisa8x8 \
 	${PREFIX}/lib/X11/fonts/local/5x10B.pcf.gz:${PORTSDIR}/japanese/k10 \
 	${PREFIX}/lib/X11/fonts/local/knmhn12x.pcf.gz:${PORTSDIR}/japanese/k12 \
-	${PREFIX}/lib/X11/fonts/misc/k20b.pcf.gz:${PORTSDIR}/japanese/kappa20
+	${PREFIX}/lib/X11/fonts/local/k20b.pcf.gz:${PORTSDIR}/japanese/kappa20
 
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
