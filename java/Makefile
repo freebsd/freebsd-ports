@@ -18,7 +18,6 @@
     SUBDIR += kaffe
     SUBDIR += netrexx
     SUBDIR += shujit
-    SUBDIR += starlogo
     SUBDIR += tya
 
 .include <bsd.port.subdir.mk>
