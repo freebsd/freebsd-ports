@@ -5,29 +5,29 @@
 # $FreeBSD$
 #
 
-PORTNAME=	logrotate
-PORTVERSION=	3.5.2
-PORTREVISION=	1
-CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_REDHAT_LINUX}
-MASTER_SITE_SUBDIR=	7.0/en/os/i386/SRPMS
-EXTRACT_SUFX=	-1.src.rpm
+PORTNAME=		logrotate
+PORTVERSION=		3.6.5
+CATEGORIES=		sysutils
+MASTER_SITES=		${MASTER_SITE_DEBIAN_POOL}
+MASTER_SITE_SUBDIR=	l/logrotate
+DISTNAME=		${PORTNAME}_${PORTVERSION}.orig
 
-MAINTAINER=	js@iksz.hu
-COMMENT=	Daemon to rotate, compress, remove and mail system log files
+PATCH_SITES=		${MASTER_SITES}
+PATCH_SITE_SUBDIR=	${MASTER_SITE_SUBDIR}
+PATCHFILES=		${PORTNAME}_${PORTVERSION}-2.diff.gz
 
-EXTRACT_DEPENDS=	${LOCALBASE}/bin/rpm2cpio:${PORTSDIR}/archivers/rpm
-LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
+MAINTAINER=		js@iksz.hu
+COMMENT=		Daemon to rotate, compress, remove and mail system log files
+
+LIB_DEPENDS=		popt.0:${PORTSDIR}/devel/popt
 
 USE_GMAKE=	yes
+MAKE_ENV=	"BASEDIR=${PREFIX}"
+PATCH_WRKSRC=		${WRKDIR}
+WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
 MAN8=		logrotate.8
 MANCOMPRESSED=	no
-
-do-extract:
-	@${RM} -rf ${WRKDIR}
-	@${MKDIR} ${WRKDIR}
-	@rpm2cpio ${_DISTDIR}${DISTFILES} | (cd ${WRKDIR}; cpio -i)
-	@${TAR} -xzf ${WRKDIR}/${DISTNAME}.tar.gz -C ${WRKDIR}
 
 post-install:
 	@${MKDIR} ${PREFIX}/etc/logrotate.d

@@ -1,0 +1,39 @@
+--- logrotate-3.6.5/Makefile.orig	Sat Aug  3 11:47:41 2002
++++ logrotate-3.6.5/Makefile	Sat Feb 28 23:09:20 2004
+@@ -8,6 +8,11 @@
+ MAN = logrotate.8
+ LOADLIBES = -lpopt
+ 
++ifeq ($(OS_NAME),FreeBSD)
++    LOADLIBES += -L${LOCALBASE}/lib
++    CFLAGS += -I${LOCALBASE}/include
++endif
++
+ # HP-UX using GCC
+ ifeq ($(OS_NAME),HP-UX)
+     ifeq ($(RPM_OPT_FLAGS),)
+@@ -78,9 +83,9 @@
+ 	(cd test; ./test)
+ 
+ install:
+-	[ -d $(PREFIX)/$(BINDIR) ] || mkdir -p $(PREFIX)/$(BINDIR)
+-	[ -d $(PREFIX)/$(MANDIR) ] || mkdir -p $(PREFIX)/$(MANDIR)
+-	[ -d $(PREFIX)/$(MANDIR)/man8 ] || mkdir -p $(PREFIX)/$(MANDIR)/man8
++	[ -d $(BINDIR) ] || mkdir -p $(BINDIR)
++	[ -d $(MANDIR) ] || mkdir -p $(MANDIR)
++	[ -d $(MANDIR)/man8 ] || mkdir -p $(MANDIR)/man8
+ 
+ 	if [ "$(OS_NAME)" = HP-UX ]; then \
+ 	$(INSTALL) $(PROG) $(PREFIX)/$(BINDIR) 0755 bin bin; \
+@@ -90,6 +95,11 @@
+ 	if [ "$(OS_NAME)" = Linux ]; then \
+ 	$(INSTALL) -m 755 $(PROG) $(PREFIX)/$(BINDIR); \
+ 	$(INSTALL) -m 644 $(MAN) $(PREFIX)/$(MANDIR)/man`echo $(MAN) | sed "s/.*\.//"`/$(MAN); \
++	fi
++
++	if [ "$(OS_NAME)" = FreeBSD ]; then \
++	$(BSD_INSTALL_PROGRAM) $(PROG) $(BINDIR); \
++	$(BSD_INSTALL_MAN) $(MAN) $(MANDIR)/man`echo $(MAN) | sed "s/.*\.//"`/$(MAN); \
+ 	fi
+ 
+ co:

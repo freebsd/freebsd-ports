@@ -1,12 +1,16 @@
---- config.c.orig	Tue Dec 28 15:24:25 1999
-+++ config.c	Tue Dec 28 15:26:54 1999
-@@ -1,9 +1,7 @@
+diff -ruN config.c config.c
+--- logrotate-3.6.5/config.c	Wed Mar 13 16:59:45 2002
++++ logrotate-3.6.5/config.c	Wed Feb  4 19:27:37 2004
+@@ -1,4 +1,3 @@
 -#include <alloca.h>
  #include <ctype.h>
  #include <dirent.h>
  #include <errno.h>
- #include <fcntl.h>
--#include <getopt.h>
- #include <glob.h>
- #include <grp.h>
- #include <pwd.h>
+diff -ruN logrotate-3.6.5-orig/logrotate.c logrotate-3.6.5/logrotate.c
+--- logrotate-3.6.5/logrotate.c	Wed Apr 24 01:29:19 2002
++++ logrotate-3.6.5/logrotate.c	Wed Feb  4 19:27:37 2004
+@@ -1,4 +1,3 @@
+-#include <alloca.h>
+ #include <ctype.h>
+ #include <dirent.h>
+ #include <errno.h>
