@@ -1,0 +1,11 @@
+--- tools/Makefile.old	Sat May 26 19:36:24 2001
++++ tools/Makefile	Sat May 26 19:36:29 2001
+@@ -5,7 +5,7 @@
+ EXECS=askmara strip.control benchmark
+ 
+ #FLAGS = -O2
+-FLAGS = -g
++FLAGS = -g $(CFLAGS)
+ 
+ all: $(EXECS)
+ 

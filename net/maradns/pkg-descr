@@ -1,0 +1,19 @@
+MaraDNS is a DNS server with the following features:
+
+* Security-aware programming. A DNS server needs to be secure. There is a
+number of security features in the code, including:
+
+	1. The code uses a special string library which is resistant to buffer
+	overflows.
+	2. The code, if started as root, mandates running as an unprivledged
+	user in a chroot() jail.
+
+* Open-Source. This DNS server is public-domain code. There are no restrictions
+attached to this code.
+
+* Simplicity. This DNS server has the minimum number of features needed to
+correctly act as an authoritative name server for a domain.
+
+WWW: http://www.maradns.org/
+
+- Anders Nordby <anders@fix.no>

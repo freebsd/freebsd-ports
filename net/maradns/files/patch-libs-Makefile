@@ -1,0 +1,10 @@
+--- libs/Makefile.old	Sat May 26 19:34:00 2001
++++ libs/Makefile	Sat May 26 19:34:09 2001
+@@ -1,6 +1,6 @@
+ OBJECTS = JessStr.o JessStrOS.o JessStrCP.o MaraHash.o
+ #FLAGS = -O2 -Wall
+-FLAGS = -g
++FLAGS = -g $(CFLAGS)
+ 
+ all: tests mtest
+ 
