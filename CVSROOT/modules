@@ -7864,6 +7864,7 @@ t_coffee	ports/biology/t_coffee
 tabs		src/usr.bin/tabs
 tac_plus-libradius	ports/net/tac_plus-libradius
 tac_plus4	ports/net/tac_plus4
+tads		ports/games/tads
 tail		src/usr.bin/tail
 taipan		ports/games/taipan
 talk		src/usr.bin/talk
