@@ -1,5 +1,5 @@
---- jconv.c.orig	Tue Nov  2 23:03:59 1999
-+++ jconv.c	Thu May  4 20:05:51 2000
+--- jconv.c.orig	Fri Nov 21 16:35:40 2003
++++ jconv.c	Fri Nov 21 16:35:40 2003
 @@ -67,7 +67,7 @@
  	strcpy(infile, "");
  
@@ -45,6 +45,15 @@
  	char 		inputString[MAX_RECORD_LENGTH];  
  	int 		inputStringLoc, inputStringLen;  
  	JFileAppInfoType	appInfo;
+@@ -747,7 +747,7 @@
+ 				if(inputStringLoc - dataLocs[currentField] > MAX_DATA_LENGTH)
+ 				{
+ 					sprintf(errorNum, "%d", currentRecord+1);
+-					sprintf(errorStr, "Field data too long
++					sprintf(errorStr, "Field data too long\n\
+  at record: %s", errorNum);
+ 					MessageBox2( errorStr, NULL, MB_OK );
+ 					fclose(input);
 @@ -1165,10 +1165,6 @@
  	sprintf(recNumStr, "%d", currentRecord+1);
  	sprintf(endMsg, "Conversion of %s  records in %s to %s was successful!",
@@ -56,3 +65,51 @@
  }
  
  int TypeIsString(int t)
+@@ -1599,16 +1595,16 @@
+ void showsynopsis()
+ {
+ 	fprintf(stderr,
+-"jconv [-e|-d] [-i <infofile>] [-t title] <infile> <outfile>
+-
+-        -e                encode: csv -> pdb
+-        -d                decode: pdb -> csv
+-	-s                use semicolon as delimiter
+-	-i <infofile>     use <infofile> as infofile
+-	-t title          title is the db-name
+-        -v                print version information
+-	-h                print this message
+-
++"jconv [-e|-d] [-i <infofile>] [-t title] <infile> <outfile>\n\
++\n\
++        -e                encode: csv -> pdb\n\
++        -d                decode: pdb -> csv\n\
++	-s                use semicolon as delimiter\n\
++	-i <infofile>     use <infofile> as infofile\n\
++	-t title          title is the db-name\n\
++        -v                print version information\n\
++	-h                print this message\n\
++\n\
+ ");
+ 	return;
+ }
+@@ -1625,13 +1621,13 @@
+ 
+ void showversion()
+ {
+-	fprintf(stderr, "
+-jconv: Converts JFile Pro database files to csv-files and vica versa
+-Version 1.0
+-copyright 1999 by Andreas Mock <AMock@osram.com>
+-with permission of J. J. Lehett <JLehett@land-j.com>
+-see also www.land-j.com
+-
++	fprintf(stderr, "\n\
++jconv: Converts JFile Pro database files to csv-files and vica versa\n\
++Version 1.0\n\
++copyright 1999 by Andreas Mock <AMock@osram.com>\n\
++with permission of J. J. Lehett <JLehett@land-j.com>\n\
++see also www.land-j.com\n\
++\n\
+ ");
+ 	return;
+ }
