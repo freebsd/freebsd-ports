@@ -95,6 +95,9 @@ CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE} \
 		OPENSSLINC=${OPENSSLINC} \
 		OPENSSLLIB=${OPENSSLLIB}
 
+CYRUS_USER?=	cyrus
+CYRUS_GROUP?=	cyrus
+
 DOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README
 
 DOC2=	ONEWS TODO draft-burdis-cat-srp-sasl-06.txt \
@@ -135,9 +138,13 @@ pre-fetch:
 post-patch:
 	@${SED} -e "s;%%SASLDB%%;${SASLDB_NAME};g" \
 		-e "s;%%PWCHECK_METHOD%%;${PWCHECK_METHOD};g" \
+		-e "s;%%CYRUS_USER%%;${CYRUS_USER};g" \
+		-e "s;%%CYRUS_GROUP%%;${CYRUS_GROUP};g" \
 		${.CURDIR}/pkg-install > ${PKGINSTALL}
 	@${SED} -e "s;%%SASLDB%%;${SASLDB_NAME};g" \
 		-e "s;%%PWCHECK_METHOD%%;${PWCHECK_METHOD};g" \
+		-e "s;%%CYRUS_USER%%;${CYRUS_USER};g" \
+		-e "s;%%CYRUS_GROUP%%;${CYRUS_GROUP};g" \
 		${.CURDIR}/pkg-deinstall > ${PKGDEINSTALL}
 	@${SED} -e "s;%%PWCHECK_METHOD%%;${PWCHECK_METHOD};g" \
 		-e "s;%%PREFIX%%;${PREFIX};g" \
@@ -158,7 +165,7 @@ post-install:
 		${FILESDIR}/saslauthd.sh > ${PREFIX}/etc/rc.d/saslauthd.sh
 	@${CHMOD} 755 ${PREFIX}/etc/rc.d/saslauthd.sh
 	${MKDIR} -m 770 /var/state/saslauthd
-	${CHOWN} cyrus:cyrus /var/state/saslauthd
+	${CHOWN} ${CYRUS_USER}:${CYRUS_GROUP} /var/state/saslauthd
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/html

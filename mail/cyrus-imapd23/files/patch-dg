@@ -1,29 +1,39 @@
 Index: tools/mkimap
 diff -u tools/mkimap.orig tools/mkimap
---- tools/mkimap.orig	Thu Jan 25 06:26:51 2001
-+++ tools/mkimap	Sat Apr  7 05:42:24 2001
-@@ -119,6 +119,8 @@
- mkdir "deliverdb", 0755;
- mkdir "deliverdb/db", 0755;
+--- tools/mkimap.orig	Fri Sep 28 01:02:34 2001
++++ tools/mkimap	Tue Jan 28 18:00:32 2003
+@@ -64,6 +64,9 @@
+ $nosievedir = 0;
+ $hashispool = 0;
  
-+system "/usr/sbin/chown -R cyrus:cyrus .";
++$cyrus_user = $ENV{CYRUS_USER} || "%%CYRUS_USER%%";
++$cyrus_group = $ENV{CYRUS_GROUP} || "%%CYRUS_GROUP%%";
++
+ open CONF, $imapdconf or die "can't open $imapdconf";
+ print "reading configure file...\n";
+ while (<CONF>) {
+@@ -117,6 +120,8 @@
+ mkdir "log", 0755;
+ mkdir "msg", 0755;
+ 
++system "/usr/sbin/chown -R $cyrus_user:$cyrus_group .";
 +
  # create the sieve stuff
  if (!$nosievedir) {
      print "creating $sievedir...\n";
-@@ -127,6 +129,7 @@
+@@ -125,6 +130,7 @@
      if (chdir $sievedir) {
  	foreach $i ("a".."z") { mkdir "$i", 0755; }
      }
-+    system "/usr/sbin/chown -R cyrus:cyrus $sievedir";
++    system "/usr/sbin/chown -R $cyrus_user:$cyrus_group $sievedir";
  }
  
  $flag = 0;
-@@ -138,6 +141,7 @@
+@@ -136,6 +142,7 @@
      chdir $part or die "couldn't change to partition $part";
      mkdir "stage.", 0755;
      if ($hashispool) { foreach $i ("a".."z") { mkdir $i, 0755; } }
-+    system "/usr/sbin/chown -R cyrus:cyrus $part";
++    system "/usr/sbin/chown -R $cyrus_user:$cyrus_group $part";
  }
  
  print "done\n";

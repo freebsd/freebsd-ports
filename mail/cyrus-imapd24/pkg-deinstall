@@ -10,6 +10,8 @@ PKG_BATCH=${BATCH:=NO}
 
 PKG_PREFIX=${PKG_PREFIX:=/usr/local}
 
+CYRUS_USER=${CYRUS_USER:=%%CYRUS_USER%%}
+
 checkfile() {
         diff -bBqw $1 $1.dist >/dev/null 2>&1
         case $? in
@@ -40,7 +42,7 @@ cyrus_conf() {
 #
 
 modify_cyrus_user() {
-	USER=cyrus
+	USER=${CYRUS_USER}
 	PW=/usr/sbin/pw
 	if [ -x /sbin/nologin ]; then
 		shell=/sbin/nologin

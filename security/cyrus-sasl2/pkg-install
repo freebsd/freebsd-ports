@@ -13,13 +13,16 @@ PKG_PREFIX=${PKG_PREFIX:=/usr/local}
 
 SASLDB_NAME=${PKG_PREFIX}/etc/%%SASLDB%%
 
+CYRUS_USER=${CYRUS_USER:=%%CYRUS_USER%%}
+CYRUS_GROUP=${CYRUS_GROUP:=%%CYRUS_GROUP%%}
+
 #
 # create 'cyrus' user and group before installing
 #
 
 create_user() {
-	USER=cyrus
-	GROUP=cyrus
+	USER=${CYRUS_USER}
+	GROUP=${CYRUS_GROUP}
 	PW=/usr/sbin/pw 
 
 	if [ -x /sbin/nologin ]; then   
@@ -77,12 +80,12 @@ create_user() {
 
 create_sasldb() {
 	if [ ! -f ${SASLDB_NAME} ]; then
-		echo "test" | ${PKG_PREFIX}/sbin/saslpasswd2 -p -c cyrus
+		echo "test" | ${PKG_PREFIX}/sbin/saslpasswd2 -p -c ${CYRUS_USER}
 		if [ `${PKG_PREFIX}/sbin/sasldblistusers2 | wc -l` -eq 0 ] ; then
                         echo "WARNING: Failed to create ${PKG_PREFIX}/etc/$SASLDB_NAME}"
                 else
-			${PKG_PREFIX}/sbin/saslpasswd2 -d cyrus
-			chown cyrus:mail ${SASLDB_NAME}
+			${PKG_PREFIX}/sbin/saslpasswd2 -d ${CYRUS_USER}
+			chown ${CYRUS_USER}:mail ${SASLDB_NAME}
 			chmod 640 ${SASLDB_NAME}
 		fi
 	fi

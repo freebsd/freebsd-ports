@@ -6,12 +6,14 @@ PKG_BATCH=${BATCH:=NO}
 
 PKG_PREFIX=${PKG_PREFIX:=/usr/local}
 
+CYRUS_USER=${CYRUS_USER:=%%CYRUS_USER%%}
+
 #
 # Modify the 'cyrus' user created from the cyrus-sasl port
 #
 
 modify_cyrus_user() {
-	USER=cyrus
+	USER=${CYRUS_USER}
 	PW=/usr/sbin/pw
 	shell=/bin/csh
 	uhome=${PKG_PREFIX}/cyrus
