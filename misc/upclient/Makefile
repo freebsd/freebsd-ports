@@ -6,18 +6,27 @@
 #
 
 PORTNAME=	upclient
-PORTVERSION=	3.04
+PORTVERSION=	4.2.1.19
 CATEGORIES=	misc
-MASTER_SITES=	http://uptime.hexon.cx/download/
+MASTER_SITES=	ftp://ftp.uptimes.net/pub/uptimes/ \
+		http://www.uptimes.net/download/ \
+		http://uptimes.atomicvoid.net/
 
-MAINTAINER=	kbyanc@posi.net
-
-BROKEN=		Client is outdated and new client cannot be reasonably ported
+MAINTAINER=	clefevre@citeweb.net
 
 ALL_TARGET=	bsd
-INSTALL_TARGET=	bsd install CP=$(CP)
+BUILD_WRKSRC=	${WRKSRC}/src
+
+post-patch:
+	@${PERL} -pi.fbsd -e 's.!!PREFIX!!.${PREFIX}.g' ${WRKSRC}/scripts/upchk
+
+do-install:
+	@${INSTALL_SCRIPT} ${FILESDIR}/upclient.sh ${PREFIX}/etc/rc.d/upclient.sh
+	@${INSTALL_DATA} -m 600 ${WRKSRC}/upclient.conf ${PREFIX}/etc/upclient.conf.sample
+	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/upchk ${PREFIX}/sbin/upchk
+	@${INSTALL_PROGRAM} -g kmem -m 2555 ${WRKSRC}/src/upclient ${PREFIX}/sbin/upclient
 
 post-install:
-	${CAT} ${PKGMESSAGE} | ${SED} 's:/usr/local:${PREFIX}:g'
+	@${CAT} ${PKGMESSAGE} | ${SED} 's:/usr/local:${PREFIX}:g'
 
 .include <bsd.port.mk>

@@ -1,2 +1,6 @@
-bin/upclient
-etc/upclient.conf
+etc/rc.d/upclient.sh
+etc/upclient.conf.sample
+@exec [ -f %B/upclient.conf ] || cp %B/%f %B/upclient.conf
+@unexec if cmp -s %B/%f %B/upclient.conf; then rm -f %B/upclient.conf; fi
+sbin/upchk
+sbin/upclient
