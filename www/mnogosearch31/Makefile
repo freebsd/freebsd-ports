@@ -43,7 +43,7 @@ CONFIGURE_ARGS+= --enable-charset-guesser
 
 .if defined(WITH_MNOGO_PGSQL)
 LIB_DEPENDS=		pq.2:${PORTSDIR}/databases/postgresql7
-CONFIGURE_ARGS+=	--with-pgsql=${LOCALBASE}/pgsql
+CONFIGURE_ARGS+=	--with-pgsql=${LOCALBASE}
 
 .elif defined(WITH_MNOGO_MSQL)
 LIB_DEPENDS=            msql.1:${PORTSDIR}/databases/msql
