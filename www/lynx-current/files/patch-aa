@@ -1,0 +1,10 @@
+--- configure.bak	Mon Feb  8 13:32:59 1999
++++ configure	Fri Feb 19 14:42:38 1999
+@@ -6233,6 +6233,7 @@
+ #line 6234 "configure"
+ #include "confdefs.h"
+ 
++#include <sys/types.h>
+ #include <sys/socket.h>
+ #include <netinet/in.h>
+ #include <arpa/inet.h>

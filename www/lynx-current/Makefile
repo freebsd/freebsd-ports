@@ -4,11 +4,11 @@
 # Date created:         15 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.94 1998/11/01 00:38:00 ache Exp $
+# $Id: Makefile,v 1.95 1998/12/29 23:52:12 ache Exp $
 #
 
-DISTNAME=       lynx2.8.2dev.12
-PKGNAME=        lynx-2.8.2dev.12
+DISTNAME=       lynx2.8.2dev.17
+PKGNAME=        lynx-2.8.2dev.17
 CATEGORIES=	www
 MASTER_SITES=   http://sol.slcc.edu/lynx/current/
 
@@ -25,7 +25,7 @@ INSTALL_TARGET= install install-help
 MAN1=		lynx.1
 
 L_LIB=          ${PREFIX}/etc
-L_HELP=         ${PREFIX}/lib/lynx_help
+L_HELP=         ${PREFIX}/share/lynx_help
 
 post-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} ${L_HELP}
