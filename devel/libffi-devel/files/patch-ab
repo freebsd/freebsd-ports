@@ -1,0 +1,44 @@
+--- src/x86/sysv.S.orig	Sun Jun 14 14:43:22 1998
++++ src/x86/sysv.S	Sun Jun 14 14:48:35 1998
+@@ -30,14 +30,14 @@
+ 
+ .text
+ 
+-.globl ffi_prep_args
++.globl _ffi_prep_args
+ 
+ 	# This assumes we are using gas.
+-        .balign 16
+-.globl ffi_call_SYSV
+-        .type    ffi_call_SYSV,@function
++        .align 4
++.globl _ffi_call_SYSV
++        .type    _ffi_call_SYSV,@function
+ 
+-ffi_call_SYSV:
++_ffi_call_SYSV:
+         pushl %ebp
+         movl  %esp,%ebp
+ 
+@@ -47,10 +47,10 @@
+ 
+ 	movl  %esp,%eax
+ 
+-	# Place all of the ffi_prep_args in position
++	# Place all of the _ffi_prep_args in position
+ 	pushl 12(%ebp)
+ 	pushl %eax
+-	call  ffi_prep_args
++	call  _ffi_prep_args
+ 
+ 	# Return stack to previous state and call the function
+ 	addl  $8,%esp	
+@@ -110,6 +110,6 @@
+         movl %ebp,%esp
+         popl %ebp
+         ret
+-.ffi_call_SYSV_end:
+-        .size    ffi_call_SYSV,.ffi_call_SYSV_end-ffi_call_SYSV
++._ffi_call_SYSV_end:
++        .size    _ffi_call_SYSV,._ffi_call_SYSV_end-_ffi_call_SYSV
+ 
