@@ -6,8 +6,7 @@
 # $FreeBSD$
 #
 
-MICOVER=	2.3.1
-DISTNAME=	mico-${MICOVER}
+DISTNAME=	mico-2.3.1
 CATEGORIES=	devel
 MASTER_SITES=	http://diamant-atm.vsb.cs.uni-frankfurt.de/~mico/
 
