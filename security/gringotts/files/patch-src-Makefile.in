@@ -1,10 +1,10 @@
---- src/Makefile.in.orig	Sun Jun 16 19:04:43 2002
-+++ src/Makefile.in	Sat Jul  6 16:55:20 2002
-@@ -417,7 +417,6 @@
- install-exec-local: gringotts
- 	strip $(DESTDIR)$(bindir)/gringotts-bin
- 	cp gringotts $(DESTDIR)$(bindir)
--	chmod u+s $(DESTDIR)$(bindir)/gringotts-bin
+--- src/Makefile.in.orig	Sat Oct 26 14:16:10 2002
++++ src/Makefile.in	Sat Oct 26 14:16:17 2002
+@@ -404,7 +404,6 @@
  
- uninstall-local:
- 	rm -f $(DESTDIR)$(bindir)/gringotts
+ install-exec-local:
+ 	strip $(DESTDIR)$(bindir)/gringotts
+-	chmod u+s $(DESTDIR)$(bindir)/gringotts
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
