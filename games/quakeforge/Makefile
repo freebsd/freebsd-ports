@@ -56,7 +56,7 @@ pre-configure:
 	@${ECHO_MSG} "Define WITH_GLX to use GLX (otherwise it is explicitly disabled!)"
 .endif
 	@cd ${WRKSRC} ; aclocal
-	@cd ${WRKSRC} ; autoheader
+	@cd ${WRKSRC} ; autoheader213
 
 do-install:
 	@${CP} ${PKGDIR}/pkg-plist ${PLIST}
