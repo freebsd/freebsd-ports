@@ -18,8 +18,9 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
 
-GNU_CONFIGURE=	YES
-#USE_LIBTOOL=	YES
+GNU_CONFIGURE=	yes
+#USE_LIBTOOL=	yes
+INSTALLS_SHLIB=	yes
 
 post-install:
 	${RM} -f ${PREFIX}/lib/libchasen.la
