@@ -6,6 +6,7 @@ etc/X11/starthere/.keep_me
 etc/X11/sysconfig/.keep_me
 etc/gconf/.keep_me
 etc/gconf/gconf.xml.defaults/.keep_me
+etc/gconf/gconf.xml.defaults/apps/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/.keep_me
 etc/gconf/gconf.xml.defaults/apps/eog/.keep_me
 etc/gconf/gconf.xml.defaults/apps/eog/full_screen/.keep_me
