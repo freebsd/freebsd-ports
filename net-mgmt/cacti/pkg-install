@@ -1,0 +1,43 @@
+#!/bin/sh
+
+PW=/usr/sbin/pw
+
+case $2 in
+
+PRE-INSTALL)
+
+	if ${PW} group show "${CACTIGROUP}" 2>/dev/null; then
+		echo "You already have a group \"${CACTIGROUP}\", so I will use it."
+	else
+		if ${PW} groupadd ${CACTIGROUP}; then
+			echo "Added group \"${CACTIGROUP}\"."
+		else
+			echo "Adding group \"${CACTIGROUP}\" failed..."
+			exit 1
+		fi
+	fi
+
+	if ${PW} user show "${CACTIUSER}" 2>/dev/null; then
+		echo "You already have a user \"${CACTIUSER}\", so I will use it."
+	else
+		if ${PW} useradd ${CACTIUSER} -g ${CACTIGROUP} -h - \
+			-d "/nonexistent" -s /sbin/nologin -c "Cacti Sandbox"
+		then
+			echo "Added user \"${CACTIUSER}\"."
+		else
+			echo "Adding user \"${CACTIUSER}\" failed..."
+			exit 1
+		fi
+	fi
+	;;
+
+POST-INSTALL)
+
+	chown ${CACTIUSER}:${CACTIGROUP} ${PREFIX}/${CACTIDIR}/log/
+	chown ${CACTIUSER}:${CACTIGROUP} ${PREFIX}/${CACTIDIR}/rra/
+	;;
+*)
+	exit 1
+;;
+esac
+exit
