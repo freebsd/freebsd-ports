@@ -751,6 +751,7 @@ share/apps/LICENSES/LGPL_V2
 share/apps/LICENSES/QPL_V1.0
 share/apps/kabc/formats/binary.desktop
 share/apps/kabc/plugins/dir.desktop
+share/apps/kabc/plugins/ldap.desktop
 share/apps/katepart/katepartreadonlyui.rc
 share/apps/katepart/katepartui.rc
 share/apps/katepart/syntax/ada.xml
@@ -3901,7 +3902,6 @@ share/servicetypes/scriptinterface.desktop
 @dirrm share/mimelnk/application
 @dirrm share/mimelnk/all
 @dirrm share/mimelnk
-@dirrm share/locale
 @dirrm share/icons/hicolor
 @dirrm share/icons/crystalsvg/scalable/filesystems
 @dirrm share/icons/crystalsvg/scalable/devices
@@ -3952,7 +3952,6 @@ share/servicetypes/scriptinterface.desktop
 @dirrm share/doc/HTML/en/common
 @dirrm share/doc/HTML/en
 @dirrm share/doc/HTML
-@dirrm share/doc
 @dirrm share/config/ui
 @dirrm share/config/colors
 @dirrm share/config
@@ -4115,6 +4114,3 @@ share/servicetypes/scriptinterface.desktop
 @dirrm include/kate
 @dirrm include/kabc
 @dirrm include/dom
-@dirrm include/arts
-@dirrm etc/rc.d
-@dirrm etc
