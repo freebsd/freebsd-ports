@@ -3,7 +3,7 @@
 # Date created:         Jul, 15, 1997
 # Whom:                 cracauer@cons.org "Martin Cracauer"
 #
-# $Id: Makefile,v 1.1.1.1 1997/07/15 14:35:19 cracauer Exp $
+# $Id: Makefile,v 1.2 1997/07/15 14:49:03 cracauer Exp $
 #
 #
 
@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp2.cons.org/pub/languages/lisp/cmucl/binaries/
 
 MAINTAINER= 	cracauer@cons.org
 
+NO_WRKSUBDIR=	yes
 NO_CONFIGURE=	yes
 NO_BUILD=	yes
 MAN1=		lisp.1 cmucl.1
