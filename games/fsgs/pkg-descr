@@ -1,0 +1,9 @@
+The Free Standard Game Server (FSGS) is the core part of the Net-Games
+gaming network technology, available for Windows, MacOS, Linux and FreeBSD.
+It enables you to build your own gaming network, either on the internet or
+in a local area network. It gives you rankings, ladders, built in chat and
+user management functions.
+
+WWW: http://www.fsgs.com/
+
+[ This port is maintained by Donald Burr <dburr@FreeBSD.ORG> ]

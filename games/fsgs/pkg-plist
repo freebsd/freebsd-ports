@@ -1,0 +1,50 @@
+fsgs/banners/ad000001.smk
+fsgs/banners/banners.ini
+fsgs/banners/banners.txt
+@dirrm fsgs/banners
+fsgs/data/help.txt
+fsgs/data/tos.txt
+fsgs/data/versions.dat
+fsgs/data/D2DV_IX86_102_103.MPQ
+fsgs/data/IX86ver1.mpq
+fsgs/data/PMACver4.mpq
+fsgs/data/adffffff.pcx
+fsgs/data/bw4-5.mpq
+fsgs/data/bw5-6.mpq
+fsgs/data/bw6-7b.mpq
+fsgs/data/icons.bni
+fsgs/data/icons.ngd
+fsgs/data/icons.ngi
+fsgs/data/sc4-5.mpq
+fsgs/data/sc5-6.mpq
+fsgs/data/sc6-7b.mpq
+fsgs/data/star107b.mpq
+fsgs/data/adffffff.bik
+fsgs/data/teams.dat
+@dirrm fsgs/data
+fsgs/fsgs
+fsgs/fsgs_static
+fsgs/ladder/entry.tpl
+fsgs/ladder/footer.tpl
+fsgs/ladder/header.tpl
+@dirrm fsgs/ladder
+fsgs/logs/df
+@dirrm fsgs/logs
+fsgs/players/df
+@dirrm fsgs/players
+fsgs/reports/report.tpl
+@dirrm fsgs/reports
+fsgs/fsgs.cfg
+fsgs/License.txt
+fsgs/Readme.Linux
+fsgs/readme.txt
+fsgs/client/readme
+@dirrm fsgs/client
+fsgs/Changes.txt
+fsgs/contrib/fsgsquery.zip
+fsgs/contrib/updquery.zip
+@dirrm fsgs/contrib
+fsgs/fsgs_db.so
+fsgs/fsgsprune
+fsgs/fsgsprune_static
+@dirrm fsgs
