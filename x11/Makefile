@@ -75,6 +75,7 @@
     SUBDIR += libgnomemm
     SUBDIR += libpanel
     SUBDIR += libsx
+    SUBDIR += libxfce4mcs
     SUBDIR += libxklavier
     SUBDIR += linux-gnomelibs
     SUBDIR += login.app
