@@ -9,7 +9,7 @@ PORTNAME=	librsvg2
 PORTVERSION=	1.1.6
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-20020525
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-20020607
 DIST_SUBDIR=	gnome2
 DISTNAME=	librsvg-${PORTVERSION}
 

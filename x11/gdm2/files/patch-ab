@@ -1,5 +1,5 @@
---- config/gdm.conf.in.orig	Mon May 20 23:50:34 2002
-+++ config/gdm.conf.in	Mon May 20 23:53:04 2002
+--- config/gdm.conf.in.orig	Sat Jun  1 12:10:13 2002
++++ config/gdm.conf.in	Tue Jun 11 16:45:25 2002
 @@ -17,7 +17,7 @@
  # want gdm to kill/restart the server, turn this on
  AlwaysRestartServer=false
@@ -34,7 +34,7 @@
 -StandardXServer=/usr/X11R6/bin/X
 +StandardXServer=@EXPANDED_BINDIR@/X
  FlexibleXServers=5
--Xnest=/usr/X11R6/bin/Xnest -name Xnest
+-Xnest=/usr/X11R6/bin/Xnest -name Xnest -kb
 +Xnest=@EXPANDED_BINDIR@/Xnest -name Xnest
  
  [security]

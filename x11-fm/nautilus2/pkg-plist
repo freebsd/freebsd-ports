@@ -16,6 +16,7 @@ etc/X11/starthere/sysconfig.desktop
 etc/X11/sysconfig/.directory
 etc/gconf/gconf.xml.defaults/apps/nautilus/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/nautilus/icon_view/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/nautilus/list_view/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/nautilus/news/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/nautilus/preferences/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/nautilus/preferences/xalf/%gconf.xml
@@ -23,6 +24,7 @@ etc/gconf/gconf.xml.defaults/apps/nautilus/sidebar_panels/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/nautilus/sidebar_panels/tree/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/nautilus/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/nautilus/icon_view/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/nautilus/list_view/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/nautilus/news/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/nautilus/preferences/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/nautilus/preferences/xalf/%gconf.xml
@@ -74,131 +76,6 @@ share/gnome/gnome-2.0/ui/nautilus-sample-content-view-ui.xml
 share/gnome/gnome-2.0/ui/nautilus-search-list-view-ui.xml
 share/gnome/gnome-2.0/ui/nautilus-shell-ui.xml
 share/gnome/gnome-2.0/ui/nautilus-sidebar-loser-ui.xml
-share/gnome/help/gnufdl/C/gnufdl.sgml
-share/gnome/help/gnugpl/C/gnugpl.sgml
-share/gnome/help/nautilus-quick-reference/C/figures/backgrounds_nqr.png
-share/gnome/help/nautilus-quick-reference/C/figures/emblems_nqr.png
-share/gnome/help/nautilus-quick-reference/C/figures/find.png
-share/gnome/help/nautilus-quick-reference/C/figures/locationbar_nqr.png
-share/gnome/help/nautilus-quick-reference/C/figures/menus_nqr.png
-share/gnome/help/nautilus-quick-reference/C/figures/music_nqr.png
-share/gnome/help/nautilus-quick-reference/C/figures/nautilus_window_full_nqr.png
-share/gnome/help/nautilus-quick-reference/C/figures/sidebar_nqr.png
-share/gnome/help/nautilus-quick-reference/C/figures/softcat.png
-share/gnome/help/nautilus-quick-reference/C/figures/storage.png
-share/gnome/help/nautilus-quick-reference/C/figures/themes_nqr.png
-share/gnome/help/nautilus-quick-reference/C/figures/toolbar_nqr.png
-share/gnome/help/nautilus-quick-reference/C/figures/viewmenu.png
-share/gnome/help/nautilus-quick-reference/C/index.html
-share/gnome/help/nautilus-quick-reference/es/figures/colors_small.png
-share/gnome/help/nautilus-quick-reference/es/figures/emblems_small.png
-share/gnome/help/nautilus-quick-reference/es/figures/ff_small.png
-share/gnome/help/nautilus-quick-reference/es/figures/find_small.png
-share/gnome/help/nautilus-quick-reference/es/figures/full_small.png
-share/gnome/help/nautilus-quick-reference/es/figures/locbar_small.png
-share/gnome/help/nautilus-quick-reference/es/figures/menubar_small.png
-share/gnome/help/nautilus-quick-reference/es/figures/music_small.png
-share/gnome/help/nautilus-quick-reference/es/figures/navbar_small.png
-share/gnome/help/nautilus-quick-reference/es/figures/sidebar_small.png
-share/gnome/help/nautilus-quick-reference/es/figures/softcat.png
-share/gnome/help/nautilus-quick-reference/es/figures/storage.png
-share/gnome/help/nautilus-quick-reference/es/figures/themes_small.png
-share/gnome/help/nautilus-quick-reference/es/index.html
-share/gnome/help/nautilus-quick-reference/ko/figures/emblems.png
-share/gnome/help/nautilus-quick-reference/ko/figures/find.png
-share/gnome/help/nautilus-quick-reference/ko/figures/full.png
-share/gnome/help/nautilus-quick-reference/ko/figures/locbar.png
-share/gnome/help/nautilus-quick-reference/ko/figures/menubar.png
-share/gnome/help/nautilus-quick-reference/ko/figures/music.png
-share/gnome/help/nautilus-quick-reference/ko/figures/navbar.png
-share/gnome/help/nautilus-quick-reference/ko/figures/patterns.png
-share/gnome/help/nautilus-quick-reference/ko/figures/sidebar.png
-share/gnome/help/nautilus-quick-reference/ko/figures/softcat.png
-share/gnome/help/nautilus-quick-reference/ko/figures/storage.png
-share/gnome/help/nautilus-quick-reference/ko/figures/themes.png
-share/gnome/help/nautilus-quick-reference/ko/figures/viewmenu.png
-share/gnome/help/nautilus-quick-reference/ko/index.html
-share/gnome/help/nautilus-quick-reference/no/figures/colors_small.png
-share/gnome/help/nautilus-quick-reference/no/figures/emblems_small.png
-share/gnome/help/nautilus-quick-reference/no/figures/ff_small.png
-share/gnome/help/nautilus-quick-reference/no/figures/find_small.png
-share/gnome/help/nautilus-quick-reference/no/figures/full_small.png
-share/gnome/help/nautilus-quick-reference/no/figures/locbar_small.png
-share/gnome/help/nautilus-quick-reference/no/figures/menubar_small.png
-share/gnome/help/nautilus-quick-reference/no/figures/music_small.png
-share/gnome/help/nautilus-quick-reference/no/figures/navbar_small.png
-share/gnome/help/nautilus-quick-reference/no/figures/sidebar_small.png
-share/gnome/help/nautilus-quick-reference/no/figures/softcat.png
-share/gnome/help/nautilus-quick-reference/no/figures/storage.png
-share/gnome/help/nautilus-quick-reference/no/figures/themes_small.png
-share/gnome/help/nautilus-quick-reference/no/index.html
-share/gnome/help/nautilus-quick-reference/sv/figures/emblems.png
-share/gnome/help/nautilus-quick-reference/sv/figures/find.png
-share/gnome/help/nautilus-quick-reference/sv/figures/full.png
-share/gnome/help/nautilus-quick-reference/sv/figures/locbar.png
-share/gnome/help/nautilus-quick-reference/sv/figures/menubar.png
-share/gnome/help/nautilus-quick-reference/sv/figures/music.png
-share/gnome/help/nautilus-quick-reference/sv/figures/navbar.png
-share/gnome/help/nautilus-quick-reference/sv/figures/patterns.png
-share/gnome/help/nautilus-quick-reference/sv/figures/sidebar.png
-share/gnome/help/nautilus-quick-reference/sv/figures/softcat.png
-share/gnome/help/nautilus-quick-reference/sv/figures/storage.png
-share/gnome/help/nautilus-quick-reference/sv/figures/themes.png
-share/gnome/help/nautilus-quick-reference/sv/figures/viewmenu.png
-share/gnome/help/nautilus-quick-reference/sv/index.html
-share/gnome/help/nautilus-release-notes/C/beta.html
-share/gnome/help/nautilus-release-notes/C/index.html
-share/gnome/help/nautilus-release-notes/C/legalnotice.html
-share/gnome/help/nautilus-release-notes/C/medusa.html
-share/gnome/help/nautilus-release-notes/C/mozilla.html
-share/gnome/help/nautilus-release-notes/C/nautilus-release-notes.sgml
-share/gnome/help/nautilus-release-notes/C/new10.html
-share/gnome/help/nautilus-release-notes/C/new102.html
-share/gnome/help/nautilus-release-notes/C/new103.html
-share/gnome/help/nautilus-release-notes/C/new104.html
-share/gnome/help/nautilus-release-notes/C/require.html
-share/gnome/help/nautilus-release-notes/C/session.html
-share/gnome/help/nautilus-screenshot-guidelines/C/callouts.html
-share/gnome/help/nautilus-screenshot-guidelines/C/circling.html
-share/gnome/help/nautilus-screenshot-guidelines/C/dropshadow.html
-share/gnome/help/nautilus-screenshot-guidelines/C/figures/callout_after.png
-share/gnome/help/nautilus-screenshot-guidelines/C/figures/callout_before.png
-share/gnome/help/nautilus-screenshot-guidelines/C/figures/circle_callout_after.png
-share/gnome/help/nautilus-screenshot-guidelines/C/figures/circle_callout_before.png
-share/gnome/help/nautilus-screenshot-guidelines/C/figures/dropshadow_after.png
-share/gnome/help/nautilus-screenshot-guidelines/C/figures/dropshadow_before.png
-share/gnome/help/nautilus-screenshot-guidelines/C/finishingtouches.html
-share/gnome/help/nautilus-screenshot-guidelines/C/generalguidelines.html
-share/gnome/help/nautilus-screenshot-guidelines/C/index.html
-share/gnome/help/nautilus-screenshot-guidelines/C/legalnotice.html
-share/gnome/help/nautilus-screenshot-guidelines/C/nautilus-screenshot-guidelines.sgml
-share/gnome/help/nautilus-screenshot-guidelines/C/resources.html
-share/gnome/help/nautilus-screenshot-guidelines/C/tools.html
-share/gnome/help/nautilus-user-manual/C/figures/custom_icon_num.png
-share/gnome/help/nautilus-user-manual/C/figures/full-1.png
-share/gnome/help/nautilus-user-manual/C/figures/full-2.png
-share/gnome/help/nautilus-user-manual/C/figures/full-3.png
-share/gnome/help/nautilus-user-manual/C/figures/full-4.png
-share/gnome/help/nautilus-user-manual/C/figures/full-5.png
-share/gnome/help/nautilus-user-manual/C/figures/full-6.png
-share/gnome/help/nautilus-user-manual/C/figures/help_num.png
-share/gnome/help/nautilus-user-manual/C/figures/home_folder_num.png
-share/gnome/help/nautilus-user-manual/C/figures/link.png
-share/gnome/help/nautilus-user-manual/C/figures/locationbar_nqr.png
-share/gnome/help/nautilus-user-manual/C/figures/nautilus_window_full_num.png
-share/gnome/help/nautilus-user-manual/C/figures/news_num.png
-share/gnome/help/nautilus-user-manual/C/figures/noread.png
-share/gnome/help/nautilus-user-manual/C/figures/nowrite.png
-share/gnome/help/nautilus-user-manual/C/figures/player-1.png
-share/gnome/help/nautilus-user-manual/C/figures/player-2.png
-share/gnome/help/nautilus-user-manual/C/figures/player-3.png
-share/gnome/help/nautilus-user-manual/C/figures/player-4.png
-share/gnome/help/nautilus-user-manual/C/figures/player.png
-share/gnome/help/nautilus-user-manual/C/figures/preferences_menu_num.png
-share/gnome/help/nautilus-user-manual/C/figures/sidebar_num.png
-share/gnome/help/nautilus-user-manual/C/figures/viewmenu.png
-share/gnome/help/nautilus-user-manual/C/figures/viewmusic.png
-share/gnome/help/nautilus-user-manual/C/nautilus-user-manual.xml
 share/gnome/idl/nautilus-distributed-undo.idl
 share/gnome/idl/nautilus-view-component.idl
 share/gnome/nautilus/browser.xml
@@ -265,13 +142,6 @@ share/gnome/nautilus/services/text/webster.xml
 share/gnome/nautilus/starthere-link.desktop
 share/gnome/nautilus/starthere.desktop
 share/gnome/nautilus/static_bookmarks.xml
-share/gnome/omf/nautilus/nautilus-quick-reference-C.omf
-share/gnome/omf/nautilus/nautilus-quick-reference-es.omf
-share/gnome/omf/nautilus/nautilus-quick-reference-ko.omf
-share/gnome/omf/nautilus/nautilus-quick-reference-no.omf
-share/gnome/omf/nautilus/nautilus-quick-reference-sv.omf
-share/gnome/omf/nautilus/nautilus-release-notes-C.omf
-share/gnome/omf/nautilus/nautilus-user-manual-C.omf
 share/gnome/pixmaps/gnome-starthere-96.png
 share/gnome/pixmaps/gnome-starthere.png
 share/gnome/pixmaps/nautilus/CD_drive.png
@@ -687,6 +557,7 @@ share/gnome/pixmaps/nautilus/throbber/rest.png
 share/gnome/pixmaps/nautilus/thumbnail_frame.png
 share/gnome/pixmaps/nautilus/zoom_body.png
 share/locale/az/LC_MESSAGES/nautilus.mo
+share/locale/bg/LC_MESSAGES/nautilus.mo
 share/locale/ca/LC_MESSAGES/nautilus.mo
 share/locale/cs/LC_MESSAGES/nautilus.mo
 share/locale/da/LC_MESSAGES/nautilus.mo
@@ -740,44 +611,18 @@ share/locale/zh_TW/LC_MESSAGES/nautilus.mo
 @dirrm share/gnome/pixmaps/nautilus/crux_eggplant/backgrounds
 @dirrm share/gnome/pixmaps/nautilus/crux_eggplant
 @dirrm share/gnome/pixmaps/nautilus
-@dirrm share/gnome/omf/nautilus
 @dirrm share/gnome/nautilus/services/text
 @dirrm share/gnome/nautilus/services
 @dirrm share/gnome/nautilus/patterns
 @dirrm share/gnome/nautilus/emblems
 @dirrm share/gnome/nautilus
-@dirrm share/gnome/help/nautilus-user-manual/C/figures
-@dirrm share/gnome/help/nautilus-user-manual/C
-@dirrm share/gnome/help/nautilus-user-manual
-@dirrm share/gnome/help/nautilus-screenshot-guidelines/C/stylesheet-images
-@dirrm share/gnome/help/nautilus-screenshot-guidelines/C/figures
-@dirrm share/gnome/help/nautilus-screenshot-guidelines/C
-@dirrm share/gnome/help/nautilus-screenshot-guidelines
-@dirrm share/gnome/help/nautilus-release-notes/C/stylesheet-images
-@dirrm share/gnome/help/nautilus-release-notes/C/figures
-@dirrm share/gnome/help/nautilus-release-notes/C
-@dirrm share/gnome/help/nautilus-release-notes
-@dirrm share/gnome/help/nautilus-quick-reference/sv/figures
-@dirrm share/gnome/help/nautilus-quick-reference/sv
-@dirrm share/gnome/help/nautilus-quick-reference/no/figures
-@dirrm share/gnome/help/nautilus-quick-reference/no
-@dirrm share/gnome/help/nautilus-quick-reference/ko/figures
-@dirrm share/gnome/help/nautilus-quick-reference/ko
-@dirrm share/gnome/help/nautilus-quick-reference/es/figures
-@dirrm share/gnome/help/nautilus-quick-reference/es
-@dirrm share/gnome/help/nautilus-quick-reference/C/figures
-@dirrm share/gnome/help/nautilus-quick-reference/C
-@dirrm share/gnome/help/nautilus-quick-reference
-@dirrm share/gnome/help/gnugpl/C
-@dirrm share/gnome/help/gnugpl
-@dirrm share/gnome/help/gnufdl/C
-@dirrm share/gnome/help/gnufdl
 @dirrm include/libnautilus
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/nautilus/sidebar_panels/tree
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/nautilus/sidebar_panels
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/nautilus/preferences/xalf
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/nautilus/preferences
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/nautilus/news
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/nautilus/list_view
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/nautilus/icon_view
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/nautilus
 @dirrm etc/gconf/gconf.xml.defaults/apps/nautilus/sidebar_panels/tree
@@ -785,6 +630,7 @@ share/locale/zh_TW/LC_MESSAGES/nautilus.mo
 @dirrm etc/gconf/gconf.xml.defaults/apps/nautilus/preferences/xalf
 @dirrm etc/gconf/gconf.xml.defaults/apps/nautilus/preferences
 @dirrm etc/gconf/gconf.xml.defaults/apps/nautilus/news
+@dirrm etc/gconf/gconf.xml.defaults/apps/nautilus/list_view
 @dirrm etc/gconf/gconf.xml.defaults/apps/nautilus/icon_view
 @dirrm etc/gconf/gconf.xml.defaults/apps/nautilus
 @dirrm etc/X11/sysconfig

@@ -8,7 +8,7 @@ lib/libgnome-desktop-2.so
 lib/libgnome-desktop-2.so.0
 libdata/pkgconfig/gnome-desktop-2.0.pc
 share/gnome/gnome-about/contributors.dat
-share/gnome/gnome-about/gnome-version
+share/gnome/gnome-about/gnome-version.xml
 share/gnome/help/fdl/C/fdl.xml
 share/gnome/help/gpl/C/gpl.xml
 share/gnome/help/lgpl/C/lgpl.xml
@@ -36,6 +36,7 @@ share/gnome/pixmaps/gnome-applications.png
 share/gnome/pixmaps/gnome-audio2.png
 share/gnome/pixmaps/gnome-background.png
 share/gnome/pixmaps/gnome-calc2.png
+share/gnome/pixmaps/gnome-calc3.png
 share/gnome/pixmaps/gnome-calendar.png
 share/gnome/pixmaps/gnome-cardgame.png
 share/gnome/pixmaps/gnome-ccbackground.png
@@ -153,6 +154,7 @@ share/gnome/pixmaps/panel-folder.png
 share/gnome/pixmaps/panel-knob.png
 share/gnome/pixmaps/panel-menu-main.png
 share/gnome/pixmaps/vnterm.xpm
+share/locale/ar/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/az/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/bg/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/ca/LC_MESSAGES/gnome-desktop-2.0.mo

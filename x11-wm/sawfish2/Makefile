@@ -9,7 +9,7 @@ PORTNAME=	sawfish2
 PORTVERSION=	2002.05.24
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-20020525
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-20020607
 DISTNAME=	sawfish-${PORTVERSION:S/./-/g}
 DIST_SUBDIR=	gnome2
 

@@ -198,6 +198,12 @@ share/gnome/gnome-2.0/ui/GNOME_MixerApplet.xml
 share/gnome/gnome-2.0/ui/GNOME_ModemlightsApplet.xml
 share/gnome/gnome-2.0/ui/GNOME_MultiloadApplet.xml
 share/gnome/gweather/Locations
+%%BATTERY%%share/gnome/help/battstat/C/battstat.xml
+%%BATTERY%%share/gnome/help/battstat/C/figures/battstat-apperance.png
+%%BATTERY%%share/gnome/help/battstat/C/figures/battstat-applet.png
+%%BATTERY%%share/gnome/help/battstat/C/figures/battstat-general.png
+%%BATTERY%%share/gnome/help/battstat/C/legal.xml
+%%BATTERY%%share/gnome/help/battstat/C/topic.dat
 share/gnome/help/cdplayer/C/cdplayer.xml
 share/gnome/help/cdplayer/C/figures/cdplayer_applet.png
 share/gnome/help/cdplayer/C/figures/cdplayer_applet_eject.png
@@ -220,6 +226,9 @@ share/gnome/help/geyes/C/figures/geyes_applet.png
 share/gnome/help/geyes/C/geyes.xml
 share/gnome/help/geyes/C/legal.xml
 share/gnome/help/geyes/C/topic.dat
+share/gnome/help/gkb/C/figures/gkb_applet.png
+share/gnome/help/gkb/C/gkb.xml
+share/gnome/help/gkb/C/legal.xml
 share/gnome/help/gtik2_applet2/C/figures/gtik_applet.png
 share/gnome/help/gtik2_applet2/C/gtik2_applet2.xml
 share/gnome/help/gtik2_applet2/C/legal.xml
@@ -231,10 +240,12 @@ share/gnome/help/mixer_applet2/C/figures/volumecontrol_applet.png
 share/gnome/help/mixer_applet2/C/legal.xml
 share/gnome/help/mixer_applet2/C/mixer_applet2.xml
 share/gnome/help/mixer_applet2/C/topic.dat
+%%BATTERY%%share/gnome/omf/gnome-applets/battstat-C.omf
 share/gnome/omf/gnome-applets/cdplayer-C.omf
 share/gnome/omf/gnome-applets/char-palette-C.omf
 share/gnome/omf/gnome-applets/command-line-C.omf
 share/gnome/omf/gnome-applets/geyes-C.omf
+share/gnome/omf/gnome-applets/gkb-C.omf
 share/gnome/omf/gnome-applets/gtik2_applet2-C.omf
 share/gnome/omf/gnome-applets/gweather-C.omf
 share/gnome/omf/gnome-applets/mixer_applet2-C.omf
@@ -400,6 +411,7 @@ share/gnome/xmodmap/xmodmap.us-sun
 share/gnome/xmodmap/xmodmap.us.old
 share/gnome/xmodmap/xmodmap.us_intl
 share/gnome/xmodmap/xmodmap.yu
+share/locale/ar/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/az/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/bg/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/ca/LC_MESSAGES/gnome-applets-2.0.mo

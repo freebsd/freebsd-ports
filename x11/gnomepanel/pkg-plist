@@ -8,6 +8,8 @@ etc/gconf/gconf.xml.defaults/apps/panel/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/panel/global/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/clock_applet/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/clock_applet/prefs/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/fish_applet/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/fish_applet/prefs/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/mailcheck_applet/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/mailcheck_applet/prefs/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/pager_applet/%gconf.xml
@@ -68,6 +70,7 @@ share/gnome/gnome-2.0/ui/GNOME_PagerApplet.xml
 share/gnome/gnome-2.0/ui/GNOME_Panel_Popup.xml
 share/gnome/gnome-2.0/ui/GNOME_TasklistApplet.xml
 share/gnome/gnome-panel/glade/panel-test-applets.glade2
+share/gnome/gnome-panelrc
 share/doc/panel-applet/applet-popups.html
 share/doc/panel-applet/applet-porting.html
 share/doc/panel-applet/applet-writing.html
@@ -81,17 +84,16 @@ share/doc/panel-applet/session-saving.html
 share/gnome/help/clock/C/clock.xml
 share/gnome/help/clock/C/figures/clock_applet.png
 share/gnome/help/clock/C/legal.xml
-share/gnome/help/clock/C/topic.dat
 share/gnome/help/fish-applet-2/C/figures/fish_applet.png
+share/gnome/help/fish-applet-2/C/figures/fish_settings.png
 share/gnome/help/fish-applet-2/C/fish-applet-2.xml
 share/gnome/help/fish-applet-2/C/legal.xml
-share/gnome/help/fish-applet-2/C/topic.dat
 share/gnome/help/mailcheck/C/figures/mailcheck-applet.png
 share/gnome/help/mailcheck/C/figures/mailcheck-properties-mailbox.png
 share/gnome/help/mailcheck/C/figures/mailcheck-properties-mailcheck.png
+share/gnome/help/mailcheck/C/figures/mailcheck_applet.png
 share/gnome/help/mailcheck/C/legal.xml
 share/gnome/help/mailcheck/C/mailcheck.xml
-share/gnome/help/mailcheck/C/topic.dat
 share/gnome/help/panel/C/figures/controlcenter_icon.png
 share/gnome/help/panel/C/figures/drawerprop_dialog.png
 share/gnome/help/panel/C/figures/footprint_icon.png
@@ -146,6 +148,7 @@ share/gnome/pixmaps/mailcheck/email-eclouds.png
 share/gnome/pixmaps/mailcheck/email-tiny.png
 share/gnome/pixmaps/mailcheck/email.png
 share/gnome/pixmaps/mailcheck/tux-anim.png
+share/locale/ar/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/az/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/bg/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ca/LC_MESSAGES/gnome-panel-2.0.mo

@@ -15,6 +15,7 @@ share/gnome/applications/gnome-terminal.desktop
 share/gnome/gnome-terminal/glade/gnome-terminal.glade2
 share/gnome/help/gnome-terminal/C/gnome-terminal.xml
 share/gnome/help/gnome-terminal/C/legal.xml
+share/gnome/omf/gnome-terminal/gnome-terminal-C.omf
 share/gnome/pixmaps/gnome-terminal.png
 share/locale/da/LC_MESSAGES/gnome-terminal.mo
 share/locale/de/LC_MESSAGES/gnome-terminal.mo
@@ -37,9 +38,9 @@ share/locale/sl/LC_MESSAGES/gnome-terminal.mo
 share/locale/sv/LC_MESSAGES/gnome-terminal.mo
 share/locale/tr/LC_MESSAGES/gnome-terminal.mo
 share/locale/uk/LC_MESSAGES/gnome-terminal.mo
+share/locale/vi/LC_MESSAGES/gnome-terminal.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-terminal.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-terminal.mo
-@dirrm share/gnome/help/gnome-terminal/C/figures
 @dirrm share/gnome/help/gnome-terminal/C
 @dirrm share/gnome/help/gnome-terminal
 @dirrm share/gnome/gnome-terminal/glade
