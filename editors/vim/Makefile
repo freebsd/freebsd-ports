@@ -7,8 +7,8 @@
 #
 
 PORTNAME?=	vim
-PATCHLEVEL=	23
-PORTVERSION=	6.0.270.${PATCHLEVEL}
+PATCHLEVEL=	0
+PORTVERSION=	6.0.271.${PATCHLEVEL}
 PORTREVISION?=	0
 CATEGORIES?=	editors
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unstable/unix/ \
@@ -19,15 +19,15 @@ MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unstable/unix/ \
 		ftp://ftp.mirror.ac.uk/sites/ftp.vim.org/pub/vim/unstable/unix/ \
 		ftp://ftp.progsoc.uts.edu.au/pub/vim/unstable/unix/
 #DISTNAME=	vim-${PORTVERSION:C/\.[0-9]*$//}
-DISTNAME=	vim-6.1a
+DISTNAME=	vim-6.1b
 
 PATCH_SITES=	${MASTER_SITES:S/unix/patches/}
-PATCHFILES!=    jot -s " " -w ${PORTVERSION:C/0\.270\.[0-9]*$//}1a.%03d  \
-			${PATCHLEVEL} 1 ${PATCHLEVEL}
+#PATCHFILES!=    jot -s " " -w ${PORTVERSION:C/0\.271\.[0-9]*$//}1a.%03d  \
+#			${PATCHLEVEL} 1 ${PATCHLEVEL}
 #	bits to remove
-BADPATCHES=	001 004 005 008
+BADPATCHES=
 .for p in ${BADPATCHES}
-PATCHFILES:=	${PATCHFILES:N6.1a.${p}}
+PATCHFILES:=	${PATCHFILES:N6.1b.${p}}
 .endfor
 
 MAINTAINER?=	obrien@FreeBSD.org
@@ -43,7 +43,7 @@ WITH_CSCOPE=	yes
 
 USE_BZIP2=	yes
 DIST_SUBDIR=	vim
-WRKSRC=		${WRKDIR}/vim${PORTVERSION:C/0\.270\.[0-9]*$//:S/.//g}1a/src
+WRKSRC=		${WRKDIR}/vim${PORTVERSION:C/0\.271\.[0-9]*$//:S/.//g}1b/src
 PATCH_DIST_ARGS=	-d ${WRKSRC:S/src$//} --forward --quiet -E ${PATCH_DIST_STRIP}
 # consider
 #PATCH_DIST_ARGS=	-t
