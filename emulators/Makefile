@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.11 1997/05/17 17:00:07 max Exp $
+# $Id: Makefile,v 1.12 1997/06/04 03:47:25 asami Exp $
 #
 
     SUBDIR += aftp
@@ -13,6 +13,7 @@
     SUBDIR += mastergear
     SUBDIR += mtools
     SUBDIR += pcemu
+    SUBDIR += prodosemu
     SUBDIR += sim6811
     SUBDIR += spim
     SUBDIR += tkhfs
