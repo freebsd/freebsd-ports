@@ -600,6 +600,7 @@ bro		ports/security/bro
 brouted		ports/net/brouted
 brs		ports/misc/brs
 bs		src/games/bs
+bsd-airtools	ports/net/bsd-airtools
 bsd_apropos	src/usr.bin/apropos
 bsd_diff	src/usr.bin/diff
 bsd_grep	src/usr.bin/grep
