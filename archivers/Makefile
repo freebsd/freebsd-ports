@@ -11,6 +11,7 @@
     SUBDIR += ha
     SUBDIR += hpack.non-usa.only
     SUBDIR += lha
+    SUBDIR += liblzo
     SUBDIR += linux_rar
     SUBDIR += lzo
     SUBDIR += makeself
