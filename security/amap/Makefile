@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amap
-PORTVERSION=	4.7
+PORTVERSION=	4.8
 CATEGORIES=	security
 MASTER_SITES=	http://www.thc.org/releases/
 
