@@ -6,6 +6,7 @@
 
 PORTNAME=	avltree
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	# disappeared in 2001
 
