@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pedisassem
-PORTVERSION=	0.22
+PORTVERSION=	0.23
 CATEGORIES=	devel
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Foothills/4078/
 DISTNAME=	dsasmsrc
@@ -16,17 +16,16 @@ MAINTAINER=	ports@FreeBSD.org
 NO_WRKSUBDIR=	yes
 
 USE_ZIP=	yes
-
-post-extract:
-	@${LN} -sf ${FILESDIR}/Makefile ${WRKSRC}
+MAKEFILE=	${FILESDIR}/Makefile
 
 post-patch:
 	@${PERL} -pi -e "s|\x0D|| ; s|malloc\.h|stdlib.h|" \
 		${WRKSRC}/*.[ch] ${WRKSRC}/readme.txt
 
 post-install:
-	${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
-	${INSTALL_MAN} ${WRKSRC}/readme.txt \
-		${PREFIX}/share/doc/${PORTNAME}/README
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
