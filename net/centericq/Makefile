@@ -19,6 +19,8 @@ CFLAGS+=	-nostdinc -I${LOCALBASE}/include/ncurses \
 		-I${LOCALBASE}/include -I/usr/include
 .endif
 
+LIB_DEPENDS=	icq.0:${PORTSDIR}/net/libicq
+
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 
