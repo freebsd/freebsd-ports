@@ -6,7 +6,6 @@
     SUBDIR += db
     SUBDIR += db3
     SUBDIR += dbf2mysql
-    SUBDIR += dbiwrapper
     SUBDIR += dbmetrix
     SUBDIR += dbtool
     SUBDIR += dbview
@@ -50,6 +49,7 @@
     SUBDIR += p5-DBD-Sybase
     SUBDIR += p5-DBD-XBase
     SUBDIR += p5-DBI
+    SUBDIR += p5-DBIWrapper
     SUBDIR += p5-DBIx-DataSource
     SUBDIR += p5-DBIx-Recordset
     SUBDIR += p5-DBIx-SearchBuilder
