@@ -28,6 +28,7 @@ POSTGRESQL_PORT?=	databases/postgresql7
 ALL_TARGET=	sharedmods
 
 CONFIGURE_ARGS=	--with-python=${PYTHON_CMD} \
+		--with-python-version=${PYTHON_VERSION:S/python//} \
 		--with-postgres-libraries=${LOCALBASE}/lib \
 		--with-postgres-includes=${LOCALBASE}/include \
 		--with-mxdatetime-includes=${DATETIME_INC}
