@@ -19,10 +19,7 @@ DISTNAME=       libvk-Apr19-2243
 MAINTAINER=	peterho@ned.dem.csiro.au
 COMMENT=	ViewKit workalike from Hungry Programmers
 
-BUILD_DEPENDS=   ${AUTOCONFIG}:${PORTSDIR}/devel/${AUTOCONFIG}
-
-AUTOCONFIG=      autoconf
-
+WANT_AUTOCONF_VER=	253
 MOTIFPACKAGE?=   open-motif
 USE_X_PREFIX=   yes
 USE_MOTIF = yes
@@ -36,6 +33,6 @@ BROKEN=         "Does not compile (bad C++ code)"
 .endif
 
 pre-configure:
-	@cd ${WRKSRC}; ${CHMOD} +w configure; ${AUTOCONFIG}
+	@cd ${WRKSRC}; ${CHMOD} +w configure; ${AUTOCONF}
 
 .include <bsd.port.post.mk>

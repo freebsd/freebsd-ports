@@ -99,6 +99,7 @@ pre-configure:
 .for FILE in ${PIC2FIX}
 	@${REINPLACE_CMD} -e "s|-prefer-pic|${CFLAGS}|g" ${WRKSRC}/${FILE}
 .endfor
+	@${REINPLACE_CMD} -e "s|/bin/sh|/bin/sh -x|" ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)

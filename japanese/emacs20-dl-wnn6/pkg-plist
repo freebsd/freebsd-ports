@@ -37,6 +37,6 @@ share/emacs/site-lisp/egg/its/zhuyin.el
 share/emacs/site-lisp/egg/its/zhuyin.elc
 @dirrm share/emacs/site-lisp/egg/its
 @dirrm share/emacs/site-lisp/egg
-%%DOCDIR%%/README.ja
-%%DOCDIR%%/ChangeLog
-@dirrm %%DOCDIR%%
+%%PORTDOCS%%%%DOCDIR%%/README.ja
+%%PORTDOCS%%%%DOCDIR%%/ChangeLog
+%%PORTDOCS%%@dirrm %%DOCDIR%%

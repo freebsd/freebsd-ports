@@ -21,7 +21,7 @@ USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_BZIP2=	yes
 WANT_AUTOMAKE_VER=	15
-USE_AUTOCONF_VER=	213
+USE_AUTOCONF_VER=	253
 GNU_CONFIGURE=	yes
 NO_CHECKSUM=	yes	# the tarball is created on the fly from CVS
 CONFIGURE_ARGS=	--prefix=${PREFIX}
@@ -69,8 +69,8 @@ do-fetch:
 		exit 1; \
 	fi
 
-pre-configure:
-	@cd ${WRKSRC} && ./make_configure
+#pre-configure:
+#	@cd ${WRKSRC} && ${SETENV} ${SCRIPTS_ENV} ./make_configure
 
 post-build:
 	@${CHMOD} +x ${WRKSRC}/mkinstalldirs

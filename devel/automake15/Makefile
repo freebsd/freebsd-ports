@@ -19,7 +19,7 @@ COMMENT=	GNU Standards-compliant Makefile generator (version 1.5)
 DEPRECATED=	Please use devel/automake18 instead
 EXPIRATION_DATE=31st December 2004
 
-WANT_AUTOCONF_VER=253
+WANT_AUTOCONF_VER=yes
 WANT_AUTOCONF_RUN=253
 BUILD_VERSION=	15
 PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}

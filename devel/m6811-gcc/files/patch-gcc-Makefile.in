@@ -1,0 +1,12 @@
+--- gcc/Makefile.in.orig	Thu Jan 25 14:02:58 2001
++++ gcc/Makefile.in	Wed Jul  7 20:48:46 2004
+@@ -805,3 +805,3 @@
+ $(srcdir)/configure: $(srcdir)/configure.in
+-	cd $(srcdir); autoconf
++	cd $(srcdir); autoconf253
+ 
+@@ -818,3 +818,3 @@
+ $(srcdir)/cstamp-h.in: $(srcdir)/configure.in $(srcdir)/acconfig.h
+-	cd $(srcdir) && autoheader
++	cd $(srcdir) && autoheader253
+ 	@rm -f $(srcdir)/cstamp-h.in

@@ -1,0 +1,7 @@
+--- configure.orig	Sat Oct 18 20:10:50 2003
++++ configure	Wed Jul  7 21:43:37 2004
+@@ -5,3 +5,3 @@
+     echo "Running autoconf..."
+-    autoconf
++    ${AUTOCONF}
+     test "x$1" = "x--regenerate" && shift
