@@ -1,0 +1,11 @@
+--- npadmin.C.orig	Sun Jan 17 19:48:13 1999
++++ npadmin.C	Sun Jan 17 19:48:30 1999
+@@ -18,7 +18,7 @@
+ #include <errno.h>
+ #include <stdio.h>
+ #include <unistd.h>
+-#include <getopt.h>
++#include "getopt.h"
+ #include <assert.h>
+ #include <string.h>
+ 

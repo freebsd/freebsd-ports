@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Mon Nov  9 23:54:59 1998
++++ Makefile.in	Sun Jan 17 20:02:00 1999
+@@ -20,12 +20,14 @@
+ CC     = @CC@
+ CXX    = @CXX@
+ 
+-CXXFLAGS=-g @__needs_excepthand_flag@
++CFLAGS= -I.
++CXXFLAGS=@__needs_excepthand_flag@ $(CFLAGS)
+ SOURCEFILES=ber.C beroid.C berseq.C oidseq.C session.C structfill.C \
+-	    grabrequest.C npadmin.C npahelpers.C printmib.C
++	    grabrequest.C npadmin.C npahelpers.C printmib.C \
++	    getopt.c getopt1.c
+ 
+ NPADMINOBJS=npadmin.o structfill.o session.o oidseq.o ber.o beroid.o \
+-	    berseq.o npahelpers.o printmib.o
++	    berseq.o npahelpers.o printmib.o getopt.o getopt1.o
+ LIBOBJS    = @LIBOBJS@
+ 
+ npadmin: $(NPADMINOBJS) 
