@@ -7,6 +7,7 @@
 
 PORTNAME=	zebra
 PORTVERSION=	0.89a
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/
 # you might need debugging, it's a developer release !
