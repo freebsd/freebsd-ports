@@ -7,7 +7,7 @@
 
 PORTNAME=	pflogsumm
 PORTVERSION=	20000916.01
-CATEGORIES=	mail pflogsumm
+CATEGORIES=	mail
 MASTER_SITES=	http://jimsun.LinxNet.com/downloads/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.pl
