@@ -5,7 +5,7 @@
  # gives unlimited permission to copy, distribute and modify it.
  
 +LIBS="$LIBS -L/usr/local/lib"
-+
++SDL_CONFIG="/usr/local/bin/sdl11-config"
 +
  # Defaults:
  ac_help=
