@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.54 1998/01/09 05:01:09 andreas Exp $
+# $Id: Makefile,v 1.55 1998/01/30 05:20:37 itojun Exp $
 #
 
     SUBDIR += adcomplain
@@ -39,6 +39,7 @@
     SUBDIR += procmail
     SUBDIR += rblcheck
     SUBDIR += smail
+    SUBDIR += smtpd
     SUBDIR += smtpfeed
     SUBDIR += tkrat
     SUBDIR += xfaces
