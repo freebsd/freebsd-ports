@@ -13,6 +13,11 @@ lib/libclamav.so
 lib/libclamav.la
 lib/libclamav.a
 share/clamav/mirrors.txt
-@exec chown clamav share/clamav share/clamav/mirrors.txt share/clamav/viruses.db share/clamav/viruses.db2
 @dirrm share/clamav
-@unexec rmuser -y clamav
+@unexec echo ""
+@unexec echo "========================================================="
+@unexec echo " If you want to deinstall this package permanently then"
+@unexec echo "               \"rmuser -y %%CLAMAVUSER%%\" "
+@unexec echo " This will remove clamav's spool-directory and user "
+@unexec echo "========================================================="
+@unexec echo ""
