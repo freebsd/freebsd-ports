@@ -15,6 +15,8 @@ MASTER_SITES=	ftp://ftp.uu.se/pub/unix/networking/mail/emil/ \
 		ftp://sunsite.doc.ic.ac.uk/Mirrors/ftp.uu.se/pub/unix/networking/mail/emil/
 DISTNAME=	${PORTNAME}-2.1.0-beta9
 
+FORBIDDEN=	http://vuxml.freebsd.org/ce46b93a-80f2-11d8-9645-0020ed76ef5a.html
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mail format/encoding converter
 
