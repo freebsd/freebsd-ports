@@ -1,5 +1,5 @@
 # New ports collection makefile for:	Citrix(R) ICA(R) Client
-# Version required:     2.80.76
+# Version required:     3.0.15
 # Date created:         20 Sep 1998
 # Whom:                 msmith
 #
