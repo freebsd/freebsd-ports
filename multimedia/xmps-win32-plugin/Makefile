@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp.vin.bg.ac.yu/linux/mmedia/xmps/
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	xmps plugin for Win32 (TM) Codecs
 
 LIB_DEPENDS=	xmps.0:${PORTSDIR}/multimedia/xmps
