@@ -7848,6 +7848,7 @@ p5-Perl6-Export	ports/devel/p5-Perl6-Export
 p5-Perl6-Form	ports/devel/p5-Perl6-Form
 p5-PerlIO-eol	ports/devel/p5-PerlIO-eol
 p5-PerlIO-gzip	ports/archivers/p5-PerlIO-gzip
+p5-PerlIO-via-MD5	ports/devel/p5-PerlIO-via-MD5
 p5-PerlIO-via-dynamic	ports/devel/p5-PerlIO-via-dynamic
 p5-PerlIO-via-symlink	ports/devel/p5-PerlIO-via-symlink
 p5-PerlMenu	ports/devel/p5-PerlMenu
