@@ -126,6 +126,9 @@ lib/gnumeric/%%VERSION%%/plugins/plot_pie/gog-ring-prefs.glade
 lib/gnumeric/%%VERSION%%/plugins/plot_pie/pie.so
 lib/gnumeric/%%VERSION%%/plugins/plot_pie/plot-types.xml
 lib/gnumeric/%%VERSION%%/plugins/plot_pie/plugin.xml
+lib/gnumeric/%%VERSION%%/plugins/plot_xy/plot-types.xml
+lib/gnumeric/%%VERSION%%/plugins/plot_xy/plugin.xml
+lib/gnumeric/%%VERSION%%/plugins/plot_xy/xy.so
 lib/gnumeric/%%VERSION%%/plugins/py-func/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/py-func/py_func.py
 lib/gnumeric/%%VERSION%%/plugins/py-func/py_func.pyc
@@ -212,10 +215,6 @@ share/gnome/gnumeric/%%VERSION%%/glade/gog-axis-prefs.glade
 share/gnome/gnumeric/%%VERSION%%/glade/gog-guru.glade
 share/gnome/gnumeric/%%VERSION%%/glade/gog-style-prefs.glade
 share/gnome/gnumeric/%%VERSION%%/glade/goto.glade
-share/gnome/gnumeric/%%VERSION%%/glade/gradient_n2s.png
-share/gnome/gnumeric/%%VERSION%%/glade/gradient_ne2sw.png
-share/gnome/gnumeric/%%VERSION%%/glade/gradient_nw2se.png
-share/gnome/gnumeric/%%VERSION%%/glade/gradient_w2e.png
 share/gnome/gnumeric/%%VERSION%%/glade/hf-config.glade
 share/gnome/gnumeric/%%VERSION%%/glade/histogram.glade
 share/gnome/gnumeric/%%VERSION%%/glade/hyperlink.glade
@@ -251,6 +250,7 @@ share/gnome/gnumeric/%%VERSION%%/glade/tabulate.glade
 share/gnome/gnumeric/%%VERSION%%/glade/variance-tests.glade
 share/gnome/gnumeric/%%VERSION%%/glade/view.glade
 share/gnome/gnumeric/%%VERSION%%/glade/workbook-attr.glade
+share/gnome/gnumeric/%%VERSION%%/gnome
 share/gnome/gnumeric/%%VERSION%%/gnome-2.0/ui/GNOME_Gnumeric.xml
 share/gnome/gnumeric/%%VERSION%%/gnome-2.0/ui/GNOME_Gnumeric_Component.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/about-authors.xml
@@ -259,7 +259,9 @@ share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/about-get-involved.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/about-history.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/about-license.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/analysis-complexNumbers.xml
+share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/analysis-goalseek.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/analysis-overview.xml
+share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/analysis-scenarios.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/analysis-simulation.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/analysis-solver.xml
 share/gnome/gnumeric/%%VERSION%%/help/gnumeric/C/analysis-statistical.xml
@@ -674,6 +676,7 @@ share/gnome/pixmaps/gnumeric/stf-druid.png
 share/gnome/pixmaps/gnumeric/stock.xpm
 share/gnome/pixmaps/gnumeric/surface.xpm
 share/locale/am/LC_MESSAGES/gnumeric.mo
+share/locale/az/LC_MESSAGES/gnumeric.mo
 share/locale/bg/LC_MESSAGES/gnumeric.mo
 share/locale/ca/LC_MESSAGES/gnumeric.mo
 share/locale/cs/LC_MESSAGES/gnumeric.mo
@@ -744,6 +747,7 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm lib/gnumeric/%%VERSION%%/plugins/qpro
 @dirrm lib/gnumeric/%%VERSION%%/plugins/python-loader
 @dirrm lib/gnumeric/%%VERSION%%/plugins/py-func
+@dirrm lib/gnumeric/%%VERSION%%/plugins/plot_xy
 @dirrm lib/gnumeric/%%VERSION%%/plugins/plot_pie
 @dirrm lib/gnumeric/%%VERSION%%/plugins/plot_barcol
 @dirrm lib/gnumeric/%%VERSION%%/plugins/plan_perfect
