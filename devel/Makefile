@@ -211,6 +211,7 @@
     SUBDIR += omniORB
     SUBDIR += p5-Agent
     SUBDIR += p5-Algorithm-Diff
+    SUBDIR += p5-Algorithm-MDiff
     SUBDIR += p5-Alias
     SUBDIR += p5-AppConfig
     SUBDIR += p5-B-Graph
