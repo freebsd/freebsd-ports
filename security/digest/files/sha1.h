@@ -1,4 +1,4 @@
-/*	$NetBSD: sha1.h,v 1.1.1.1 2001/03/06 11:21:05 agc Exp $	*/
+/*	$NetBSD: sha1.h,v 1.2 1998/05/29 22:55:44 thorpej Exp $	*/
 
 /*
  * SHA-1 in C
