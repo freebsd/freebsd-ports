@@ -21,6 +21,7 @@
     SUBDIR += jx
     SUBDIR += kde-qt-addon
     SUBDIR += lesstif
+    SUBDIR += libjsearch
     SUBDIR += libjtoolbar
     SUBDIR += libjtree
     SUBDIR += linux-gtk

@@ -1,0 +1,17 @@
+--- libjsearch/Make.header.orig	Fri Jun 25 17:06:12 1999
++++ libjsearch/Make.header	Sun Jun  4 05:03:01 2000
+@@ -7,11 +7,12 @@
+ 
+ # Directories to search for header files
+ 
+-SEARCHDIRS := -I- \
++SEARCHDIRS = -I- \
+               -I${JSEARCHDIR} \
+               -I${JCOREDIR} \
+               -I${MENUIMGDIR} \
+-              -I${JXDIR}   
++		-I${JXDIR} \
++		${J_X11_INCLUDE_DIR}
+ 
+ # makemake variables
+ 
