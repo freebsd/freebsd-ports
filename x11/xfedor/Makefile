@@ -1,12 +1,12 @@
 # New ports collection makefile for:    xfedor
-# Version required:     ?
+# Version required:     1994 year version with Imakefile
 # Date created:         3 Sep 1996
 # Whom:                 ache
 #
 # ATTENTION: It not work in > 256 colors modes, please fix it
 # if you can.
 #
-# $Id: Makefile,v 1.3 1996/11/18 11:44:17 asami Exp $
+# $Id: Makefile,v 1.4 1997/08/10 23:23:46 ache Exp $
 #
 
 DISTNAME=       xfedor
