@@ -72,7 +72,6 @@ fmsx-*			ports/emulators/fmsx	Unclear legal status of
 fwtk-*			ports/security/fwtk	No redistribution allowed
 Frisk-*			ports/games/xfrisk	Copyright/trademark violation?
 glimpse-*		ports/textproc/glimpse	Don't sell for profit
-giflib-*		ports/graphics/giflib	LZW patent issue
 giftool-*		ports/graphics/giftool	Don't redistribute for profit
 GimpUserManual-*-ps.gz	ports/graphics/gimp-manual-ps	too big
 gnupg-*			ports/security/gnupg	Crypto; export-controlled
