@@ -1,21 +1,19 @@
-bin/varconf-config
-include/varconf/Config.h
-include/varconf/dynbase.h
-include/varconf/dyncmp.h
-include/varconf/dyntypes.h
-include/varconf/dynvar.h
-include/varconf/parse_error.h
-include/varconf/varconf.h
-include/varconf/variable.h
-lib/libvarconf.a
-lib/libvarconf.la
-lib/libvarconf.so
-lib/libvarconf.so.1
-share/aclocal/varconf.m4
-share/doc/varconf-0.5.4/AUTHORS
-share/doc/varconf-0.5.4/COPYING
-share/doc/varconf-0.5.4/NEWS
-share/doc/varconf-0.5.4/README
-share/doc/varconf-0.5.4/THANKS
-@dirrm include/varconf
-@dirrm share/doc/varconf-0.5.4
+include/varconf-1.0/varconf/Config.h
+include/varconf-1.0/varconf/dynbase.h
+include/varconf-1.0/varconf/dyncmp.h
+include/varconf-1.0/varconf/dyntypes.h
+include/varconf-1.0/varconf/dynvar.h
+include/varconf-1.0/varconf/parse_error.h
+include/varconf-1.0/varconf/varconf.h
+include/varconf-1.0/varconf/variable.h
+lib/libvarconf-1.0.la
+lib/libvarconf-1.0.so.1
+libdata/pkgconfig/varconf-1.0.pc
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+@dirrm include/varconf-1.0/varconf
+@dirrm include/varconf-1.0
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
