@@ -16,6 +16,7 @@
     SUBDIR += malsync
     SUBDIR += mdbconv
     SUBDIR += p5-Palm
+    SUBDIR += p5-Palm-PalmDoc
     SUBDIR += palmos-sdk
     SUBDIR += palmpower
     SUBDIR += pilot-link
