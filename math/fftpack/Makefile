@@ -3,7 +3,7 @@
 # Date created:         31 October 1996
 # Whom:			Pedro Giffuni S.
 #
-# $Id: Makefile,v 1.5 1997/11/16 09:48:03 fenner Exp $
+# $Id: Makefile,v 1.6 1997/11/19 01:41:27 asami Exp $
 #
 
 DISTNAME=	bihar
@@ -31,6 +31,9 @@ post-install:
 	-${GZIP_CMD} ${GZIP} ${WRKSRC}/fft.doc
 	${CP} $(WRKSRC)/fft.doc.gz $(PREFIX)/share/doc/fftpack/
 .endif
-	${LDCONFIG} -m ${PREFIX}/lib
+	if [ "${PORTOBJFORMAT}" = "aout" ]; then \
+		${LN} -sf libbihar.so.1 ${PREFIX}/lib/libbihar.so; \
+	fi
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
