@@ -1,7 +1,6 @@
 bin/yacas
 bin/yacas_client
 bin/ytxt2tex
-share/yacas/addons/README
 share/yacas/addons/editvi.ys
 share/yacas/addons/editvi.ys.def
 share/yacas/addons/unix.ys
@@ -12,6 +11,10 @@ share/yacas/assoc.rep/code.ys
 share/yacas/assoc.rep/code.ys.def
 share/yacas/c_form.rep/code.ys
 share/yacas/c_form.rep/code.ys.def
+share/yacas/codecheck.rep/interface.ys
+share/yacas/codecheck.rep/interface.ys.def
+share/yacas/codecheck.rep/process.ys
+share/yacas/codecheck.rep/process.ys.def
 share/yacas/complex.rep/code.ys
 share/yacas/complex.rep/code.ys.def
 share/yacas/complex.rep/om.ys
@@ -22,18 +25,23 @@ share/yacas/controlflow.rep/code.ys
 share/yacas/controlflow.rep/code.ys.def
 share/yacas/cstubgen.rep/code.ys
 share/yacas/cstubgen.rep/code.ys.def
+share/yacas/debug.rep/code.ys
+share/yacas/debug.rep/code.ys.def
 share/yacas/deffunc.rep/code.ys
 share/yacas/deffunc.rep/code.ys.def
 share/yacas/deriv.rep/code.ys
 share/yacas/deriv.rep/code.ys.def
+share/yacas/documentation/Algo.html
 share/yacas/documentation/Algochapter1.html
 share/yacas/documentation/Algochapter2.html
 share/yacas/documentation/Algochapter3.html
 share/yacas/documentation/Algochapter4.html
 share/yacas/documentation/Algochapter5.html
 share/yacas/documentation/Algochapter6.html
+share/yacas/documentation/Algochapter7.html
 share/yacas/documentation/Algochapters.html
 share/yacas/documentation/Algomanual.html
+share/yacas/documentation/LispProgramming.html
 share/yacas/documentation/LispProgrammingchapter1.html
 share/yacas/documentation/LispProgrammingchapter2.html
 share/yacas/documentation/LispProgrammingchapter3.html
@@ -41,7 +49,21 @@ share/yacas/documentation/LispProgrammingchapter4.html
 share/yacas/documentation/LispProgrammingchapter5.html
 share/yacas/documentation/LispProgrammingchapters.html
 share/yacas/documentation/LispProgrammingmanual.html
+share/yacas/documentation/NewDesign.html
+share/yacas/documentation/NewDesignchapter1.html
+share/yacas/documentation/NewDesignchapter10.html
+share/yacas/documentation/NewDesignchapter2.html
+share/yacas/documentation/NewDesignchapter3.html
+share/yacas/documentation/NewDesignchapter4.html
+share/yacas/documentation/NewDesignchapter5.html
+share/yacas/documentation/NewDesignchapter6.html
+share/yacas/documentation/NewDesignchapter7.html
+share/yacas/documentation/NewDesignchapter8.html
+share/yacas/documentation/NewDesignchapter9.html
+share/yacas/documentation/NewDesignchapters.html
+share/yacas/documentation/NewDesignmanual.html
 share/yacas/documentation/books.html
+share/yacas/documentation/coding.html
 share/yacas/documentation/codingchapter1.html
 share/yacas/documentation/codingchapter2.html
 share/yacas/documentation/codingchapter3.html
@@ -50,8 +72,10 @@ share/yacas/documentation/codingchapter5.html
 share/yacas/documentation/codingchapter6.html
 share/yacas/documentation/codingchapter7.html
 share/yacas/documentation/codingchapter8.html
+share/yacas/documentation/codingchapter9.html
 share/yacas/documentation/codingchapters.html
 share/yacas/documentation/codingmanual.html
+share/yacas/documentation/essays.html
 share/yacas/documentation/essayschapter1.html
 share/yacas/documentation/essayschapter2.html
 share/yacas/documentation/essayschapter3.html
@@ -59,8 +83,10 @@ share/yacas/documentation/essayschapter4.html
 share/yacas/documentation/essayschapter5.html
 share/yacas/documentation/essayschapter6.html
 share/yacas/documentation/essayschapter7.html
+share/yacas/documentation/essayschapter8.html
 share/yacas/documentation/essayschapters.html
 share/yacas/documentation/essaysmanual.html
+share/yacas/documentation/intro.html
 share/yacas/documentation/introchapter1.html
 share/yacas/documentation/introchapter2.html
 share/yacas/documentation/introchapter3.html
@@ -79,6 +105,10 @@ share/yacas/documentation/refchapter15.html
 share/yacas/documentation/refchapter16.html
 share/yacas/documentation/refchapter17.html
 share/yacas/documentation/refchapter18.html
+share/yacas/documentation/refchapter19.html
+share/yacas/documentation/refchapter20.html
+share/yacas/documentation/refchapter21.html
+share/yacas/documentation/refchapter22.html
 share/yacas/documentation/refchapter2.html
 share/yacas/documentation/refchapter3.html
 share/yacas/documentation/refchapter4.html
@@ -89,7 +119,9 @@ share/yacas/documentation/refchapter8.html
 share/yacas/documentation/refchapter9.html
 share/yacas/documentation/refchapters.html
 share/yacas/documentation/refmanual.html
+share/yacas/documentation/refprog.html
 share/yacas/documentation/refprogchapter1.html
+share/yacas/documentation/refprogchapter10.html
 share/yacas/documentation/refprogchapter2.html
 share/yacas/documentation/refprogchapter3.html
 share/yacas/documentation/refprogchapter4.html
@@ -97,6 +129,7 @@ share/yacas/documentation/refprogchapter5.html
 share/yacas/documentation/refprogchapter6.html
 share/yacas/documentation/refprogchapter7.html
 share/yacas/documentation/refprogchapter8.html
+share/yacas/documentation/refprogchapter9.html
 share/yacas/documentation/refprogchapters.html
 share/yacas/documentation/refprogmanual.html
 share/yacas/documentation/yacaslogo.gif
@@ -122,6 +155,7 @@ share/yacas/functional.rep/code.ys.def
 share/yacas/glview.ys
 share/yacas/html.rep/code.ys
 share/yacas/html.rep/code.ys.def
+share/yacas/include/GPL_stuff.h
 share/yacas/include/anumber.h
 share/yacas/include/anumber.inl
 share/yacas/include/archiver.h
@@ -130,11 +164,16 @@ share/yacas/include/arrayclass.h
 share/yacas/include/arrayclass.inl
 share/yacas/include/choices.h
 share/yacas/include/commandline.h
+share/yacas/include/compressedfiles.h
 share/yacas/include/ctokenizer.h
+share/yacas/include/cyacas.h
 share/yacas/include/debugmem.h
 share/yacas/include/deffile.h
 share/yacas/include/deffile.inl
 share/yacas/include/elfdll.h
+share/yacas/include/epoccli.h
+share/yacas/include/epocclsv.h
+share/yacas/include/epocserv.h
 share/yacas/include/errors.h
 share/yacas/include/evalfunc.h
 share/yacas/include/genericobject.h
@@ -188,6 +227,9 @@ share/yacas/include/unipoly.h
 share/yacas/include/unixcommandline.h
 share/yacas/include/version.h
 share/yacas/include/win32dll.h
+share/yacas/include/win32dllresource.h
+share/yacas/include/win32yacasdll.h
+share/yacas/include/win32yacasdllresource.h
 share/yacas/include/xmltokenizer.h
 share/yacas/include/yacas.h
 share/yacas/include/yacasbase.h
@@ -214,7 +256,6 @@ share/yacas/localrules.rep/code.ys.def
 share/yacas/logic.rep/code.ys
 share/yacas/logic.rep/code.ys.def
 share/yacas/logic.rep/om.ys
-share/yacas/maketest
 share/yacas/manmake/book2TeX.sh
 share/yacas/manmake/book2TeX.ys
 share/yacas/manmake/txt2yacasdoc.pl
@@ -226,22 +267,37 @@ share/yacas/multivar.rep/sparsetree.ys
 share/yacas/multivar.rep/sparsetree.ys.def
 share/yacas/newly.rep/code.ys
 share/yacas/newly.rep/code.ys.def
+share/yacas/numbers.rep/GaussianIntegers.ys
+share/yacas/numbers.rep/GaussianIntegers.ys.def
+share/yacas/numbers.rep/NumberTheory.ys
+share/yacas/numbers.rep/NumberTheory.ys.def
 share/yacas/numbers.rep/code.ys
 share/yacas/numbers.rep/code.ys.def
+share/yacas/numbers.rep/nthroot.ys
+share/yacas/numbers.rep/nthroot.ys.def
 share/yacas/odesolver.rep/code.ys
 share/yacas/odesolver.rep/code.ys.def
 share/yacas/openmath.rep/code.ys
 share/yacas/openmath.rep/code.ys.def
 share/yacas/orthopoly.rep/code.ys
 share/yacas/orthopoly.rep/code.ys.def
+share/yacas/osdep.rep/code.ys
+share/yacas/osdep.rep/code.ys.def
+share/yacas/osdep.rep/unix.ys
+share/yacas/osdep.rep/win32.ys
 share/yacas/packages.ys
 share/yacas/padic.rep/code.ys
 share/yacas/padic.rep/code.ys.def
 share/yacas/patterns.rep/code.ys
 share/yacas/patterns.rep/code.ys.def
 share/yacas/plots.rep/backends-2d.ys
+share/yacas/plots.rep/backends-3d.ys
 share/yacas/plots.rep/code.ys
 share/yacas/plots.rep/code.ys.def
+share/yacas/plots.rep/plot2d.ys
+share/yacas/plots.rep/plot2d.ys.def
+share/yacas/plots.rep/plot3d.ys
+share/yacas/plots.rep/plot3d.ys.def
 share/yacas/predicates.rep/code.ys
 share/yacas/predicates.rep/code.ys.def
 share/yacas/probability.rep/code.ys
@@ -272,6 +328,8 @@ share/yacas/specfunc.rep/zeta.ys
 share/yacas/specfunc.rep/zeta.ys.def
 share/yacas/standard.ys
 share/yacas/standard.ys.def
+share/yacas/statistics.rep/distributions.ys
+share/yacas/statistics.rep/distributions.ys.def
 share/yacas/statistics.rep/hypothesystest.ys
 share/yacas/statistics.rep/incompletegamma.ys.def
 share/yacas/statistics.rep/regression.ys.def
@@ -285,6 +343,8 @@ share/yacas/stats.rep/code.ys
 share/yacas/stats.rep/code.ys.def
 share/yacas/stdfuncs.rep/code.ys
 share/yacas/stdfuncs.rep/code.ys.def
+share/yacas/stdfuncs.rep/elemfuncs.ys
+share/yacas/stdfuncs.rep/elemfuncs.ys.def
 share/yacas/stdfuncs.rep/numerical.ys
 share/yacas/stdfuncs.rep/numerical.ys.def
 share/yacas/stdfuncs.rep/nummethods.ys
@@ -304,8 +364,14 @@ share/yacas/testers.rep/code.ys
 share/yacas/testers.rep/code.ys.def
 share/yacas/texform.rep/code.ys
 share/yacas/texform.rep/code.ys.def
+share/yacas/transforms.rep/code.ys
+share/yacas/transforms.rep/code.ys.def
 share/yacas/trigsimp.rep/code.ys
 share/yacas/trigsimp.rep/code.ys.def
+share/yacas/univar.rep/Cyclotomic.ys
+share/yacas/univar.rep/Cyclotomic.ys.def
+share/yacas/univar.rep/sparse.ys
+share/yacas/univar.rep/sparse.ys.def
 share/yacas/univar.rep/code.ys
 share/yacas/univar.rep/code.ys.def
 share/yacas/univar.rep/sturm.ys
@@ -316,9 +382,11 @@ share/yacas/yacasinit.ys
 @dirrm share/yacas/assoc.rep
 @dirrm share/yacas/c_form.rep
 @dirrm share/yacas/complex.rep
+@dirrm share/yacas/codecheck.rep
 @dirrm share/yacas/constants.rep
 @dirrm share/yacas/controlflow.rep
 @dirrm share/yacas/cstubgen.rep
+@dirrm share/yacas/debug.rep
 @dirrm share/yacas/deffunc.rep
 @dirrm share/yacas/deriv.rep
 @dirrm share/yacas/documentation
@@ -344,6 +412,7 @@ share/yacas/yacasinit.ys
 @dirrm share/yacas/odesolver.rep
 @dirrm share/yacas/openmath.rep
 @dirrm share/yacas/orthopoly.rep
+@dirrm share/yacas/osdep.rep
 @dirrm share/yacas/padic.rep
 @dirrm share/yacas/patterns.rep
 @dirrm share/yacas/plots.rep
@@ -364,6 +433,7 @@ share/yacas/yacasinit.ys
 @dirrm share/yacas/tensor.rep
 @dirrm share/yacas/testers.rep
 @dirrm share/yacas/texform.rep
+@dirrm share/yacas/transforms.rep
 @dirrm share/yacas/trigsimp.rep
 @dirrm share/yacas/univar.rep
 @dirrm share/yacas/probability.rep
