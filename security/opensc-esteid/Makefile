@@ -35,4 +35,10 @@ MAN1=		pkcs15-crypt.1 pkcs15-init.1 pkcs15-tool.1 \
 MAN5=		pkcs15-profile.5
 MAN7=		pkcs15.7 opensc.7
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not compile on amd64 (missing -fPIC)"
+.endif
+
+.include <bsd.port.post.mk>
