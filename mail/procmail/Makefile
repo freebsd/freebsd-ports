@@ -7,6 +7,7 @@
 
 PORTNAME=	procmail
 PORTVERSION=	3.15.1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.procmail.org/pub/procmail/ \
 		ftp://ftp.informatik.rwth-aachen.de/pub/packages/procmail/
@@ -23,4 +24,9 @@ IS_INTERACTIVE=	yes
 MAN1=		procmail.1 formail.1 lockfile.1
 MAN5=		procmailex.5 procmailrc.5 procmailsc.5
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-configure:
+       @${PERL} -pi -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/config.h
+
+.include <bsd.port.post.mk>
