@@ -1,0 +1,20 @@
+This program is a graphical program for downloading files through the
+internet which support both ftp and http (not completed yet) protocols.
+Program also supports REGET if server side supports it too. It is like kget
+for linux and ReGet or GetRight for Windows. 
+
+This program supports queue of downloads, regets files after connection break
+and many other features:  
+
+	able to set limit amount of threads
+	saving list before quit
+	log for all downloads
+	limits for strings in logs
+	start stop threads, moving they in queue and other
+	recursive download via ftp (recursive http in plans)
+	auto reconnect and reget after break
+
+WWW: http://www.krasu.ru/soft/chuchelo/
+
+- Ying-Chieh Liao
+ijliao@csie.nctu.edu.tw
