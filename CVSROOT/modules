@@ -3193,6 +3193,7 @@ kdb_util	src/eBones/kdb_util
 kdbg		ports/devel/kdbg
 kdc2tiff	ports/graphics/kdc2tiff
 kde-i18n-uk	ports/ukrainian/kde-i18n-uk
+kde-icontheme-crystal	ports/x11-wm/kde-icontheme-crystal
 kde2		ports/x11/kde2
 kde2-i18n	ports/misc/kde2-i18n
 kde3		ports/x11/kde3
