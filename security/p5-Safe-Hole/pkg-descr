@@ -1,0 +1,12 @@
+	We can call outside defined subroutines from the Safe
+compartment using share(), and call methods through the object that is
+copied into the Safe compartment using varglob(). However, these
+subroutines and methods are still executed in the Safe compartment, so
+they cannot call other subroutines that are dynamically qualified with
+the package name, such as class methods.
+
+	Through Safe::Hole, we can execute outside defined subroutines
+in the original main compartment from the Safe compartment.
+
+- Seth
+sethk@meowfishies.com

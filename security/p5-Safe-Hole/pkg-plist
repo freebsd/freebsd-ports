@@ -1,0 +1,6 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Safe/Hole/Hole.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Safe/Hole/Hole.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Safe/Hole.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Safe/Hole/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Safe/Hole/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Safe/Hole/
