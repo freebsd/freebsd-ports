@@ -7,16 +7,14 @@
 
 PORTNAME=	cgihtml
 PORTVERSION=	1.69
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel
 MASTER_SITES=	http://www.eekim.com/software/cgihtml/ \
 		ftp://www.eekim.com/pub/users/eekim/cgihtml/ \
 		ftp://hcs.harvard.edu/pub/web/tools/cgihtml/
 
-FORBIDDEN=	Multiple vulnerabilities, see http://online.securityfocus.com/archive/1/305469
-
 MAINTAINER=	roam@FreeBSD.org
-COMMENT=	"Library that simplifies the task of writing CGI programs in C"
+COMMENT=	Library that simplifies the task of writing CGI programs in C
 
 INSTALLS_SHLIB=	yes
 
