@@ -1,17 +1,16 @@
-diff -ru ../dictd-freebsd/dictd.c ./dictd.c
---- ../dictd-freebsd/dictd.c	Sun Nov 24 09:35:55 2002
-+++ ./dictd.c	Sun Dec  1 22:29:55 2002
-@@ -662,6 +662,8 @@
+--- dictd.c.orig	Mon Mar 10 01:07:36 2003
++++ dictd.c	Fri Oct 10 00:19:17 2003
+@@ -1064,6 +1064,8 @@
  
- static void set_utf8_mode (const char *locale)
+ static void set_utf8bit_mode (const char *loc)
  {
 +#include <osreldate.h>
 +#if __FreeBSD_version > 499999
     char *locale_copy;
-    locale_copy = strdup (locale);
+    locale_copy = strdup (loc);
     strlwr_8bit (locale_copy);
-@@ -671,6 +673,9 @@
-        strstr (locale_copy, "utf8");
+@@ -1075,6 +1077,9 @@
+    bit8_mode = !utf8_mode && (locale_copy [0] != 'c' || locale_copy [1] != 0);
  
     free (locale_copy);
 +#else
@@ -20,10 +19,9 @@ diff -ru ../dictd-freebsd/dictd.c ./dictd.c
  }
  
  static void init (const char *fn)
-diff -ru ../dictd-freebsd/index.c ./index.c
---- ../dictd-freebsd/index.c	Sun Dec  1 22:12:49 2002
-+++ ./index.c	Sun Dec  1 22:25:06 2002
-@@ -111,6 +111,10 @@
+--- index.c.orig	Mon Mar 10 01:06:16 2003
++++ index.c	Fri Oct 10 00:20:22 2003
+@@ -123,6 +123,10 @@
     const char *src, char *dest,
     int allchars_mode)
  {
@@ -31,30 +29,30 @@ diff -ru ../dictd-freebsd/index.c ./index.c
 +#if __FreeBSD_version < 500000
 +    abort();
 +#else
-     wint_t      ucs4_char;
+    wchar_t      ucs4_char;
+    size_t len;
+    int    len2;
+@@ -154,6 +158,7 @@
+    *dest = 0;
  
-     while (src && src [0]){
-@@ -130,6 +134,7 @@
-     *dest = 0;
- 
-     return (src != NULL);
+    return (src != NULL);
 +#endif
  }
  
  static void dict_table_init(void)
-@@ -166,9 +171,11 @@
- 	p[i]         = &s[2 * i];
-     }
+@@ -200,9 +205,11 @@
+       p[i]         = &s[2 * i];
+    }
                                  /* Sort those strings in the locale */
 +#if __FreeBSD_version > 499999
-     if (utf8_mode)
- 	qsort(p, UCHAR_MAX + 1, sizeof(p[0]), dict_table_init_compare_utf8);
-     else
+    if (utf8_mode)
+       qsort(p, UCHAR_MAX + 1, sizeof(p[0]), dict_table_init_compare_utf8);
+    else
 +#endif
- 	qsort(p, UCHAR_MAX + 1, sizeof(p[0]), dict_table_init_compare_strcoll);
+       qsort(p, UCHAR_MAX + 1, sizeof(p[0]), dict_table_init_compare_strcoll);
  
                                  /* Extract our unordered arrays */
-@@ -1126,6 +1133,9 @@
+@@ -1258,6 +1265,9 @@
  */
  static int stranagram_utf8 (char *str)
  {
@@ -62,9 +60,9 @@ diff -ru ../dictd-freebsd/index.c ./index.c
 +    abort();
 +#else
     size_t len;
-    char *p;
+    char   *p;
  
-@@ -1142,6 +1151,7 @@
+@@ -1280,6 +1290,7 @@
  
     stranagram_8bit (str, -1);
     return 1;
@@ -72,31 +70,3 @@ diff -ru ../dictd-freebsd/index.c ./index.c
  }
  
  /* makes anagram of utf-8 string 'str' */
-diff -ru ../dictd-freebsd/utf8_ucs4.c ./utf8_ucs4.c
---- ../dictd-freebsd/utf8_ucs4.c	Sun Nov 24 09:35:55 2002
-+++ ./utf8_ucs4.c	Sun Dec  1 22:44:40 2002
-@@ -1,3 +1,5 @@
-+#include <osreldate.h>
-+#if __FreeBSD_version > 499999
- #include <wctype.h>
- #include <stdlib.h>
- #include <ctype.h>
-@@ -210,3 +212,4 @@
-     else
- 	return (size_t) -1;
- }
-+#endif // __FreeBSD_version > 499999
-diff -ru ../dictd-freebsd/utf8_ucs4.h ./utf8_ucs4.h
---- ../dictd-freebsd/utf8_ucs4.h	Sun Nov 24 09:35:55 2002
-+++ ./utf8_ucs4.h	Sun Dec  1 22:26:15 2002
-@@ -1,3 +1,5 @@
-+#include <osreldate.h>
-+#if __FreeBSD_version > 499999
- #ifndef _UTF8_UCS4_H_
- #define _UTF8_UCS4_H_
- 
-@@ -73,3 +75,4 @@
- __END_DECLS
- 
- #endif // _UTF8_UCS4_H_
-+#endif // __FreeBSD_version > 499999
