@@ -3,8 +3,8 @@
 # $Id$
 #
 cd /usr/local/libexec/uvscan/
-ftp http://download.nai.com/products/datfiles/4.x/nai/readme.txt >/dev/null
-AVVER=`grep DAT readme.txt | head -5 | grep '[^0-9]4[0-9][0-9][0-9][^0-9]' | head -1 | sed -e 's/^.*[^0-9]\(4[0-9]*\)[^0-9].*$/\1/'`
+ftp http://download.nai.com/products/datfiles/4.x/nai/update.ini >/dev/null
+AVVER=`grep DATVersion update.ini | head -1 | cut -f2 -d= | sed -e 's/^\(4[0-9]*\).$/\1/'`
 if [ ! -f dat-$AVVER.tar ]; then
 	for i in *.tar ; do
 		mv $i $i.old
