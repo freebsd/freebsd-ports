@@ -1,26 +1,27 @@
---- Makefile.in.orig	Thu Aug  6 01:16:42 1998
-+++ Makefile.in	Thu Aug 13 17:48:34 1998
-@@ -77,17 +77,15 @@
- RANLIB = @RANLIB@
- VERSION = @VERSION@
+--- Makefile.in.orig	Tue Sep 22 11:27:49 1998
++++ Makefile.in	Tue Sep 22 21:10:17 1998
+@@ -84,8 +84,6 @@
+ 
+ SUBDIRS = gmodule
  
 -configincludedir = $(pkglibdir)/include
 -
  bin_SCRIPTS=glib-config
+ BUILT_SOURCES=glib-config
  
- EXTRA_DIST =	\
+@@ -93,9 +91,9 @@
  		glib.m4 \
  		glib.spec
  
--lib_LTLIBRARIES = libglib-1.1.la
+-lib_LTLIBRARIES = libglib.la
 +lib_LTLIBRARIES = libglib11.la
  
--libglib_1_1_la_SOURCES = \
+-libglib_la_SOURCES = \
 +libglib11_la_SOURCES = \
  		garray.c	\
  		gcache.c	\
  		gcompletion.c	\
-@@ -109,17 +107,15 @@
+@@ -117,17 +115,15 @@
  		gutils.c
  
  include_HEADERS = \
@@ -30,38 +31,39 @@
 +		glib.h \
  		glibconfig.h
  
--libglib_1_1_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
-+libglib11_la_LDFLAGS = -version-info 0:2:0
- 
+-libglib_la_LDFLAGS = \
+-	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) -release $(LT_RELEASE)
++libglib11_la_LDFLAGS = \
++	-version-info 0:3:0
  INCLUDES = -I$(top_srcdir)
  
  noinst_PROGRAMS = testglib
--testglib_LDADD = libglib-@LT_RELEASE@.la
+-testglib_LDADD = libglib.la
 +testglib_LDADD = libglib11.la
  
  m4datadir = $(datadir)/aclocal
  m4data_DATA = glib.m4
-@@ -134,8 +130,8 @@
+@@ -142,8 +138,8 @@
  CPPFLAGS = @CPPFLAGS@
  LDFLAGS = @LDFLAGS@
  LIBS = @LIBS@
--libglib_1_1_la_LIBADD = 
--libglib_1_1_la_OBJECTS =  garray.lo gcache.lo gcompletion.lo gdataset.lo \
+-libglib_la_LIBADD = 
+-libglib_la_OBJECTS =  garray.lo gcache.lo gcompletion.lo gdataset.lo \
 +libglib11_la_LIBADD = 
 +libglib11_la_OBJECTS =  garray.lo gcache.lo gcompletion.lo gdataset.lo \
  gerror.lo ghash.lo glist.lo gmem.lo gmessages.lo gnode.lo gprimes.lo \
  gslist.lo gtimer.lo gtree.lo grel.lo gstring.lo gstrfuncs.lo \
  gscanner.lo gutils.lo
-@@ -143,7 +139,7 @@
+@@ -151,7 +147,7 @@
  
  testglib_SOURCES = testglib.c
  testglib_OBJECTS =  testglib.o
--testglib_DEPENDENCIES =  libglib-@LT_RELEASE@.la
+-testglib_DEPENDENCIES =  libglib.la
 +testglib_DEPENDENCIES =  libglib11.la
  testglib_LDFLAGS = 
  SCRIPTS =  $(bin_SCRIPTS)
  
-@@ -151,7 +147,7 @@
+@@ -159,7 +155,7 @@
  COMPILE = $(CC) $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)
  LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)
  LINK = $(LIBTOOL) --mode=link $(CC) $(CFLAGS) $(LDFLAGS) -o $@
@@ -70,29 +72,29 @@
  
  HEADERS =  $(include_HEADERS)
  
-@@ -165,8 +161,8 @@
+@@ -173,8 +169,8 @@
  
  TAR = tar
  GZIP = --best
--SOURCES = $(libglib_1_1_la_SOURCES) testglib.c
--OBJECTS = $(libglib_1_1_la_OBJECTS) testglib.o
+-SOURCES = $(libglib_la_SOURCES) testglib.c
+-OBJECTS = $(libglib_la_OBJECTS) testglib.o
 +SOURCES = $(libglib11_la_SOURCES) testglib.c
 +OBJECTS = $(libglib11_la_OBJECTS) testglib.o
  
- all: Makefile $(LTLIBRARIES) $(PROGRAMS) $(SCRIPTS) $(DATA) $(HEADERS) glibconfig.h
+ all: all-recursive-am all-am
  
-@@ -273,8 +269,8 @@
+@@ -281,8 +277,8 @@
  
  maintainer-clean-libtool:
  
--libglib-1.1.la: $(libglib_1_1_la_OBJECTS) $(libglib_1_1_la_DEPENDENCIES)
--	$(LINK) -rpath $(libdir) $(libglib_1_1_la_LDFLAGS) $(libglib_1_1_la_OBJECTS) $(libglib_1_1_la_LIBADD) $(LIBS)
+-libglib.la: $(libglib_la_OBJECTS) $(libglib_la_DEPENDENCIES)
+-	$(LINK) -rpath $(libdir) $(libglib_la_LDFLAGS) $(libglib_la_OBJECTS) $(libglib_la_LIBADD) $(LIBS)
 +libglib11.la: $(libglib11_la_OBJECTS) $(libglib11_la_DEPENDENCIES)
 +	$(LINK) -rpath $(libdir) $(libglib11_la_LDFLAGS) $(libglib11_la_OBJECTS) $(libglib11_la_LIBADD) $(LIBS)
  
  mostlyclean-noinstPROGRAMS:
  
-@@ -308,25 +304,6 @@
+@@ -316,25 +312,6 @@
  	  rm -f $(DESTDIR)$(bindir)/`echo $$p|sed '$(transform)'`; \
  	done
  
@@ -118,27 +120,140 @@
  install-m4dataDATA: $(m4data_DATA)
  	@$(NORMAL_INSTALL)
  	$(mkinstalldirs) $(DESTDIR)$(m4datadir)
-@@ -457,13 +434,13 @@
- install-exec: install-libLTLIBRARIES install-binSCRIPTS
+@@ -517,9 +494,9 @@
+ 
+ install-exec-am: install-libLTLIBRARIES install-binSCRIPTS
+ 
+-install-data-am: install-configincludeDATA install-m4dataDATA install-includeHEADERS
++install-data-am: install-m4dataDATA install-includeHEADERS
+ 
+-uninstall-am: uninstall-libLTLIBRARIES uninstall-binSCRIPTS uninstall-configincludeDATA uninstall-m4dataDATA uninstall-includeHEADERS
++uninstall-am: uninstall-libLTLIBRARIES uninstall-binSCRIPTS uninstall-m4dataDATA uninstall-includeHEADERS
+ 
+ install-exec: install-exec-recursive install-exec-am
  	@$(NORMAL_INSTALL)
- 
--install-data: install-configincludeDATA install-m4dataDATA install-includeHEADERS
-+install-data: install-m4dataDATA install-includeHEADERS
- 	@$(NORMAL_INSTALL)
- 
- install: install-exec install-data all
- 	@:
- 
--uninstall: uninstall-libLTLIBRARIES uninstall-binSCRIPTS uninstall-configincludeDATA uninstall-m4dataDATA uninstall-includeHEADERS
-+uninstall: uninstall-libLTLIBRARIES uninstall-binSCRIPTS uninstall-m4dataDATA uninstall-includeHEADERS
- 
- install-strip:
- 	$(MAKE) INSTALL_PROGRAM='$(INSTALL_PROGRAM) -s' INSTALL_SCRIPT='$(INSTALL_PROGRAM)' install
-@@ -519,7 +496,6 @@
+@@ -595,7 +572,6 @@
  maintainer-clean-libtool mostlyclean-noinstPROGRAMS \
  distclean-noinstPROGRAMS clean-noinstPROGRAMS \
  maintainer-clean-noinstPROGRAMS uninstall-binSCRIPTS install-binSCRIPTS \
 -uninstall-configincludeDATA install-configincludeDATA \
  uninstall-m4dataDATA install-m4dataDATA uninstall-includeHEADERS \
- install-includeHEADERS tags mostlyclean-tags distclean-tags clean-tags \
- maintainer-clean-tags distdir info dvi installcheck install-exec \
+ install-includeHEADERS install-data-recursive uninstall-data-recursive \
+ install-exec-recursive uninstall-exec-recursive installdirs-recursive \
+--- gmodule/Makefile.in.orig	Tue Sep 22 21:04:45 1998
++++ gmodule/Makefile.in	Tue Sep 22 21:09:58 1998
+@@ -94,30 +94,29 @@
+ include_HEADERS = \
+ 		gmodule.h
+ 
+-libglib = $(top_builddir)/libglib.la # -lglib
++libglib = $(top_builddir)/libglib11.la # -lglib
+ 
+-lib_LTLIBRARIES = libgmodule.la libgplugin_a.la libgplugin_b.la
++lib_LTLIBRARIES = libgmodule11.la libgplugin11_a.la libgplugin11_b.la
+ 
+-libgmodule_la_SOURCES = gmodule.c
+-libgmodule_la_LDFLAGS = \
++libgmodule11_la_SOURCES = gmodule.c
++libgmodule11_la_LDFLAGS = \
+ 	@G_MODULE_LDFLAGS@ \
+-	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) \
+-	-release $(LT_RELEASE)
++	-version-info 0:3:0
+ 
+-libgmodule_la_LIBADD = @G_MODULE_LIBS@ # $(libglib)
++libgmodule11_la_LIBADD = @G_MODULE_LIBS@ # $(libglib)
+ # we should really depend on $(libglib) for libgmodule.la, but libtool has a
+ # problem with this ;(
+ 
+-libgplugin_a_la_SOURCES = libgplugin_a.c
+-libgplugin_a_la_LDFLAGS = @G_MODULE_LDFLAGS@
+-libgplugin_a_la_LIBADD = @G_MODULE_LIBS@ # $(libglib)
+-
+-libgplugin_b_la_SOURCES = libgplugin_b.c
+-libgplugin_b_la_LDFLAGS = @G_MODULE_LDFLAGS@
+-libgplugin_b_la_LIBADD = @G_MODULE_LIBS@ # $(libglib)
++libgplugin11_a_la_SOURCES = libgplugin_a.c
++libgplugin11_a_la_LDFLAGS = @G_MODULE_LDFLAGS@
++libgplugin11_a_la_LIBADD = @G_MODULE_LIBS@ # $(libglib)
++
++libgplugin11_b_la_SOURCES = libgplugin_b.c
++libgplugin11_b_la_LDFLAGS = @G_MODULE_LDFLAGS@
++libgplugin11_b_la_LIBADD = @G_MODULE_LIBS@ # $(libglib)
+ 
+ noinst_PROGRAMS = testgmodule
+-testgmodule_LDADD = libgmodule.la $(libglib) @G_MODULE_LIBS@
++testgmodule_LDADD = libgmodule11.la $(libglib) @G_MODULE_LIBS@
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../glibconfig.h
+ CONFIG_CLEAN_FILES =  gmoduleconf.h
+@@ -128,17 +127,17 @@
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+-libgmodule_la_DEPENDENCIES = 
+-libgmodule_la_OBJECTS =  gmodule.lo
+-libgplugin_a_la_DEPENDENCIES = 
+-libgplugin_a_la_OBJECTS =  libgplugin_a.lo
+-libgplugin_b_la_DEPENDENCIES = 
+-libgplugin_b_la_OBJECTS =  libgplugin_b.lo
++libgmodule11_la_DEPENDENCIES = 
++libgmodule11_la_OBJECTS =  gmodule.lo
++libgplugin11_a_la_DEPENDENCIES = 
++libgplugin11_a_la_OBJECTS =  libgplugin_a.lo
++libgplugin11_b_la_DEPENDENCIES = 
++libgplugin11_b_la_OBJECTS =  libgplugin_b.lo
+ PROGRAMS =  $(noinst_PROGRAMS)
+ 
+ testgmodule_SOURCES = testgmodule.c
+ testgmodule_OBJECTS =  testgmodule.o
+-testgmodule_DEPENDENCIES =  libgmodule.la $(top_builddir)/libglib.la
++testgmodule_DEPENDENCIES =  libgmodule11.la $(top_builddir)/libglib11.la
+ testgmodule_LDFLAGS = 
+ CFLAGS = @CFLAGS@
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)
+@@ -154,8 +153,8 @@
+ 
+ TAR = tar
+ GZIP = --best
+-SOURCES = $(libgmodule_la_SOURCES) $(libgplugin_a_la_SOURCES) $(libgplugin_b_la_SOURCES) testgmodule.c
+-OBJECTS = $(libgmodule_la_OBJECTS) $(libgplugin_a_la_OBJECTS) $(libgplugin_b_la_OBJECTS) testgmodule.o
++SOURCES = $(libgmodule11_la_SOURCES) $(libgplugin11_a_la_SOURCES) $(libgplugin11_b_la_SOURCES) testgmodule.c
++OBJECTS = $(libgmodule11_la_OBJECTS) $(libgplugin11_a_la_OBJECTS) $(libgplugin11_b_la_OBJECTS) testgmodule.o
+ 
+ all: Makefile $(LTLIBRARIES) $(PROGRAMS) $(HEADERS)
+ 
+@@ -224,14 +223,14 @@
+ 
+ maintainer-clean-libtool:
+ 
+-libgmodule.la: $(libgmodule_la_OBJECTS) $(libgmodule_la_DEPENDENCIES)
+-	$(LINK) -rpath $(libdir) $(libgmodule_la_LDFLAGS) $(libgmodule_la_OBJECTS) $(libgmodule_la_LIBADD) $(LIBS)
++libgmodule11.la: $(libgmodule11_la_OBJECTS) $(libgmodule11_la_DEPENDENCIES)
++	$(LINK) -rpath $(libdir) $(libgmodule11_la_LDFLAGS) $(libgmodule11_la_OBJECTS) $(libgmodule11_la_LIBADD) $(LIBS)
+ 
+-libgplugin_a.la: $(libgplugin_a_la_OBJECTS) $(libgplugin_a_la_DEPENDENCIES)
+-	$(LINK) -rpath $(libdir) $(libgplugin_a_la_LDFLAGS) $(libgplugin_a_la_OBJECTS) $(libgplugin_a_la_LIBADD) $(LIBS)
++libgplugin11_a.la: $(libgplugin11_a_la_OBJECTS) $(libgplugin11_a_la_DEPENDENCIES)
++	$(LINK) -rpath $(libdir) $(libgplugin11_a_la_LDFLAGS) $(libgplugin11_a_la_OBJECTS) $(libgplugin11_a_la_LIBADD) $(LIBS)
+ 
+-libgplugin_b.la: $(libgplugin_b_la_OBJECTS) $(libgplugin_b_la_DEPENDENCIES)
+-	$(LINK) -rpath $(libdir) $(libgplugin_b_la_LDFLAGS) $(libgplugin_b_la_OBJECTS) $(libgplugin_b_la_LIBADD) $(LIBS)
++libgplugin11_b.la: $(libgplugin11_b_la_OBJECTS) $(libgplugin11_b_la_DEPENDENCIES)
++	$(LINK) -rpath $(libdir) $(libgplugin11_b_la_LDFLAGS) $(libgplugin11_b_la_OBJECTS) $(libgplugin11_b_la_LIBADD) $(LIBS)
+ 
+ mostlyclean-noinstPROGRAMS:
+ 
+@@ -387,10 +386,10 @@
+ 	  echo $$p; \
+ 	done
+ 
+-install-libLTLIBRARIES: libgmodule.la
++install-libLTLIBRARIES: libgmodule11.la
+ 	@$(NORMAL_INSTALL)
+ 	$(mkinstalldirs) $(DESTDIR)$(libdir)
+-	@list='libgmodule.la'; for p in $$list; do \
++	@list='libgmodule11.la'; for p in $$list; do \
+ 	 if test -f $$p; then \
+ 	  echo "$(LIBTOOL)  --mode=install $(INSTALL_DATA) $$p $(DESTDIR)$(libdir)/$$p"; \
+ 	  $(LIBTOOL)  --mode=install $(INSTALL_DATA) $$p $(DESTDIR)$(libdir)/$$p; \
