@@ -6505,6 +6505,7 @@ p5-Data-Random	ports/devel/p5-Data-Random
 p5-Data-Serializer	ports/devel/p5-Data-Serializer
 p5-Data-ShowTable	ports/devel/p5-Data-ShowTable
 p5-Data-TemporaryBag	ports/devel/p5-Data-TemporaryBag
+p5-Data-TreeDumper	ports/devel/p5-Data-TreeDumper
 p5-Data-UUID	ports/devel/p5-Data-UUID
 p5-Date-Calc	ports/devel/p5-Date-Calc
 p5-Date-DayOfWeek	ports/devel/p5-Date-DayOfWeek
