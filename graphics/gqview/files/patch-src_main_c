@@ -1,0 +1,19 @@
+--- src/main.c.orig	Thu Jun 26 21:27:18 2003
++++ src/main.c	Thu Jun 26 21:28:56 2003
+@@ -10,6 +10,7 @@
+  */
+ 
+ 
++#include <sys/param.h>
+ #include "gqview.h"
+ 
+ #include "collect.h"
+@@ -159,7 +160,7 @@
+ 
+ void start_editor_from_path_list(gint n, GList *list)
+ {
+-	gchar current_path[512];
++	gchar current_path[MAXPATHLEN];
+ 	gchar *success;
+ 	gchar *cmd;
+ 	gchar *buf;
