@@ -451,6 +451,7 @@
     SUBDIR += p5-MasonX-Request-WithApacheSession
     SUBDIR += p5-Maypole
     SUBDIR += p5-PHP-Session
+    SUBDIR += p5-POE-Component-Server-HTTP
     SUBDIR += p5-ParallelUA
     SUBDIR += p5-PodToHTML
     SUBDIR += p5-Sledge
