@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	wmmemmon
-PORTVERSION=	0.3.1
+PORTVERSION=	0.5.0
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://www.sh.rim.or.jp/~ssato/src/
 DISTNAME=	WMMemMon-${PORTVERSION}
 
 MAINTAINER=	pat@databits.net
-
-LIB_DEPENDS=	dockapp.1:${PORTSDIR}/x11-wm/libdockapp
 
 ONLY_FOR_ARCHS=	i386
 WRKSRC=		${WRKDIR}/${DISTNAME}
