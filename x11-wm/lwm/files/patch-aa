@@ -1,0 +1,10 @@
+--- Imakefile.orig	Wed Oct 20 17:33:03 1999
++++ Imakefile	Sat Oct 14 02:31:23 2000
+@@ -7,6 +7,6 @@
+ SRCS = lwm.c manage.c mouse.c client.c cursor.c error.c disp.c shape.c resource.c
+ OBJS = ${SRCS:.c=.o}
+ 
+-ComplexProgramTarget(lwm)
++ComplexProgramTargetNoMan(lwm)
+ 
+ ${OBJS}: ${HEADERS}

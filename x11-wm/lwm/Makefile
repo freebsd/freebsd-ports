@@ -7,6 +7,7 @@
 
 PORTNAME=	lwm
 PORTVERSION= 	1.00
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://users.ch.genedata.com/~enh/lwm/
 DISTNAME=	${PORTNAME}
