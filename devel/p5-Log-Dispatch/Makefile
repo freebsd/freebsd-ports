@@ -44,6 +44,12 @@ SCRIPTS_ENV+=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		MKDIR="${MKDIR}" \
 		REALCURDIR="${.CURDIR}"
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		Build fails
+.endif
+
 pre-fetch:
 	@${SETENV} ${SCRIPTS_ENV} ${PERL} ${SCRIPTDIR}/configure.pl
 
@@ -54,4 +60,4 @@ post-clean:
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
