@@ -66,7 +66,7 @@ post-extract:
 
 do-install:
 	${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -m 2755 -g kmem ${WRKSRC}/lsof ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/lsof.8 ${PREFIX}/man/man8/lsof.8
+	${INSTALL_MAN} ${WRKSRC}/lsof.8 ${MAN8PREFIX}/man/man8/lsof.8
 	@${MKDIR} ${PREFIX}/share/lsof
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/* ${PREFIX}/share/lsof
 	@${CHMOD} 0444 ${PREFIX}/share/lsof/00*
