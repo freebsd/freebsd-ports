@@ -1,0 +1,14 @@
+--- src/interfaces/jdbc/build.xml.orig	Thu Jun 24 11:51:44 2004
++++ src/interfaces/jdbc/build.xml	Thu Sep  2 01:51:36 2004
+@@ -113,10 +113,7 @@
+ 
+   <target name="compile" depends="prepare,check_versions,driver">
+ 
+-    <available classname="org.postgresql.Driver" property="old.driver.present" />
+-    <fail message="Old driver was detected on classpath or in jre/lib/ext, please remove and try again." if="old.driver.present" />
+-
+-    <javac classpath="${srcdir}" srcdir="${srcdir}" destdir="${builddir}" debug="${debug}">
++    <javac includeAntRuntime="no" classpath="${srcdir}" srcdir="${srcdir}" destdir="${builddir}" debug="${debug}">
+       <!-- This is the core of the driver.  It is common for all three versions. -->
+        <include name="${package}/*.java" />
+        <include name="${package}/core/**" />

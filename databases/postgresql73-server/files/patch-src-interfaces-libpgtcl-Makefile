@@ -1,0 +1,11 @@
+--- src/interfaces/libpgtcl/Makefile.orig	Wed Dec 11 05:08:05 2002
++++ src/interfaces/libpgtcl/Makefile	Sat Oct 23 17:37:20 2004
+@@ -25,7 +25,7 @@
+ # If crypt is a separate library, rather than part of libc, it may need
+ # to be referenced separately to keep (broken) linkers happy.  (This is
+ # braindead; users of libpq should not need to know what it depends on.)
+-SHLIB_LINK+= $(filter -L%, $(LDFLAGS)) $(filter -lcrypt, $(LIBS))
++SHLIB_LINK+= $(filter -L%, $(LDFLAGS)) $(filter -lcrypt -ltcl83 -ltcl84, $(LIBS))
+ 
+ all: submake-libpq all-lib
+ 

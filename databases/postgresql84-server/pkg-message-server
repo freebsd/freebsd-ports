@@ -1,0 +1,71 @@
+
+Specific for updating 7.4.1->7.4.x:
+
+   A dump/restore is *not* required for those running 7.4, BUT:
+
+   If you want to install the fixes in the information schema you will
+   need to reload it into the database. This is either accomplished by
+   initializing a new cluster by running "initdb", or by running the
+   following sequence of SQL commands in each database (ideally including
+   template1) as a superuser in psql, after installing the new release:
+
+DROP SCHEMA information_schema CASCADE;
+\i /usr/local/pgsql/share/information_schema.sql
+
+   Fixes to the information schema (from HISTORY):
+     * Fix information schema for bit data types (Peter)
+     * Fix information schema view constraint_column_usage for foreign
+       keys (Peter)
+
+=====================================================================
+
+For procedural languages and postgresql functions, please note that
+you might have to update them when updating the server. For example,
+the "elog" method disappeared in postgresql-7.4, so postgresql-contrib
+must be updated along with the server.
+
+If you have many tables and many clients running, consider raising
+kern.maxfiles using sysctl(8), or reconfigure your kernel
+appropriately.
+
+You should vacuum and backup your database regularly. There is a
+periodic script, /usr/local/etc/periodic/daily/502.pgsql, that you may
+find useful. See the script for instructions.
+
+To allow many simultaneous connections to your PostgreSQL server, you
+should raise the SystemV shared memory limits in your kernel. Here are
+example values for allowing up to 180 clients (configurations in
+postgresql.conf also needed, of course):
+  options         SYSVSHM
+  options         SYSVSEM
+  options         SYSVMSG
+  options         SHMMAXPGS=65536
+  options         SEMMNI=40
+  options         SEMMNS=240
+  options         SEMUME=40
+  options         SEMMNU=120
+
+If you plan to access your PostgreSQL server using ODBC, please
+consider running the SQL script /usr/local/share/postgresql/odbc.sql
+to get the functions required for ODBC compliance.
+
+======================================================================
+
+To initialize the database, run
+
+  /usr/local/etc/rc.d/postgresql.sh initdb
+
+You can then start PostgreSQL by running:
+
+  /usr/local/etc/rc.d/postgresql.sh start
+
+For postmaster settings, see ~pgsql/data/postgresql.conf
+
+NB. FreeBSD's PostgreSQL port now by default logs to syslog
+    See ~pgsql/data/postgresql.conf for more info
+
+======================================================================
+
+To run PostgreSQL at startup, add
+'postgresql_enable="YES"' to /etc/rc.conf
+

@@ -1,0 +1,8 @@
+PostgreSQL JDBC support installed!
+
+postgresql.jar resides in
+/usr/local/share/java/classes/postgresql.jar
+Add this to your CLASSPATH!
+
+java examples reside in
+/usr/local/share/examples/postgresql

@@ -1,0 +1,11 @@
+--- src/interfaces/libpgtcl/Makefile.orig	Tue Feb 10 08:26:48 2004
++++ src/interfaces/libpgtcl/Makefile	Thu Mar 11 21:12:25 2004
+@@ -21,7 +21,7 @@
+ OBJS= pgtcl.o pgtclCmds.o pgtclId.o
+ 
+ SHLIB_LINK = $(libpq) $(TCL_LIB_SPEC) $(TCL_LIBS) \
+-	$(filter -lintl -lssl -lcrypto -lkrb5 -lcrypt, $(LIBS)) $(THREAD_LIBS)
++	$(filter -lintl -lssl -lcrypto -lkrb5 -lcrypt -L% -ltcl83 -ltcl84, $(LIBS)) $(THREAD_LIBS)
+ 
+ all: submake-libpq all-lib
+ 

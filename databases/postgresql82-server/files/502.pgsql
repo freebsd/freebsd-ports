@@ -11,79 +11,87 @@
 # In public domain, do what you like with it,
 # and use it at your own risk... :)
 #
-######################################################################
+
+# Define these variables in either /etc/periodic.conf or
+# /etc/periodic.conf.local to override the default values.
 #
-# If you like to tweak the settings of the variables PGBACKUPDIR and
-# PGDUMP_ARGS, you should preferably set them in ~pgsql/.profile.
-# If set there, that setting will override the defaults here.
+# daily_pgsql_backup_enable="YES" # do backup
+# daily_pgsql_vacuum_enable="YES" # do vacuum
+
+daily_pgsql_vaccum_enable="NO"
+daily_pgsql_backup_enable="NO"
+
+daily_pgsql_vacuum_args="-z"
+daily_pgsql_pgdump_args="-b -F c"
+# backupdir is relative to ~pgsql home directory unless it begins with a slash:
+daily_pgsql_backupdir="~pgsql/backups"
+daily_pgsql_savedays="7"
+
+# If there is a global system configuration file, suck it in.
 #
-######################################################################
-
-DIR=`dirname $0`
-progname=`basename $0`
-PRG=`cd $DIR; pwd `/$progname
-
-# Run as user pgsql
-if [ `id -un` != pgsql ]; then
-    su -l pgsql -c ${PRG}
-    exit $?
-fi
-
-# arguments to pg_dump
-PGDUMP_ARGS=${PGDUMP_ARGS:-"-b -F c"}
-
-# The directory where the backups will reside.
-# ${HOME} is pgsql's home directory
-PGBACKUPDIR=${PGBACKUPDIR:-${HOME}/backups}
-
-# If you want to keep a history of database backups, set
-# PGBACKUP_SAVE_DAYS in ~pgsql/.profile to the number of days. This is
-# used as "find ... -mtime +${PGBACKUP_SAVE_DAYS} -delete", see below
-PGBACKUP_SAVE_DAYS=${PGBACKUP_SAVE_DAYS:-7}
-
-# PGBACKUPDIR must be writeable by user pgsql
-# ~pgsql is just that under normal circumstances,
-# but this might not be where you want the backups...
-if [ ! -d ${PGBACKUPDIR} ] ; then 
-    echo Creating ${PGBACKUPDIR}
-    mkdir ${PGBACKUPDIR}
-    chmod 700 ${PGBACKUPDIR}
-fi
-
-echo
-echo "PostgreSQL maintenance"
-
-# Protect the data
-umask 077
-dbnames=`psql -q -t -A -d template1 -c "SELECT datname FROM pg_database WHERE datname != 'template0'"`
-rc=$?
-now=`date "+%Y-%m-%dT%H:%M:%S"`
-file=${PGBACKUPDIR}/pgglobals_${now}
-pg_dumpall -g | gzip -9 > ${file}.gz
-for db in ${dbnames}; do
-    echo -n " $db"
-    file=${PGBACKUPDIR}/pgdump_${db}_${now}
-    pg_dump ${PGDUMP_ARGS} -f ${file} ${db}
-    [ $? -gt 0 ] && rc=3
-done
-
-if [ $rc -gt 0 ]; then
-    echo
-    echo "Errors were reported during backup."
-fi
-
-echo
-echo "vacuuming..."
-vacuumdb -a -z -q
-if [ $? -gt 0 ]
+if [ -r /etc/defaults/periodic.conf ]
 then
-    echo
-    echo "Errors were reported during vacuum."
-    rc=3
+    . /etc/defaults/periodic.conf
+    source_periodic_confs
 fi
 
-# cleaning up old data
-find ${PGBACKUPDIR} \( -name 'pgdump_*' -o -name 'pgglobals_*' \) \
-    -a -mtime +${PGBACKUP_SAVE_DAYS} -delete
+# allow '~´ in dir name
+eval backupdir=${daily_pgsql_backupdir}
+
+rc=0
+
+case "$daily_pgsql_backup_enable" in
+    [Yy][Ee][Ss])
+
+	# daily_pgsql_backupdir must be writeable by user pgsql
+	# ~pgsql is just that under normal circumstances,
+	# but this might not be where you want the backups...
+	if [ ! -d ${backupdir} ] ; then 
+	    echo Creating ${backupdir}
+	    mkdir ${backupdir}; chmod 700 ${backupdir}; chown pgsql ${backupdir}
+	fi
+
+	echo
+	echo "PostgreSQL maintenance"
+
+	# Protect the data
+	umask 077
+	dbnames=`su -l pgsql -c "psql -q -t -A -d template1 -c SELECT\ datname\ FROM\ pg_database\ WHERE\ datname!=\'template0\'"`
+	rc=$?
+	now=`date "+%Y-%m-%dT%H:%M:%S"`
+	file=${daily_pgsql_backupdir}/pgglobals_${now}
+	su -l pgsql -c "pg_dumpall -g | gzip -9 > ${file}.gz"
+	for db in ${dbnames}; do
+	    echo -n " $db"
+	    file=${backupdir}/pgdump_${db}_${now}
+	    su -l pgsql -c "pg_dump ${daily_pgsql_pgdump_args} -f ${file} ${db}"
+	    [ $? -gt 0 ] && rc=3
+	done
+
+	if [ $rc -gt 0 ]; then
+	    echo
+	    echo "Errors were reported during backup."
+	fi
+
+	# cleaning up old data
+	find ${backupdir} \( -name 'pgdump_*' -o -name 'pgglobals_*' \) \
+	    -a -mtime +${daily_pgsql_savedays} -delete
+	;;
+esac
+
+case "$daily_pgsql_vacuum_enable" in
+    [Yy][Ee][Ss])
+
+	echo
+	echo "vacuuming..."
+	su -l pgsql -c "vacuumdb -a -q ${daily_pgsql_vacuum_args}"
+	if [ $? -gt 0 ]
+	then
+	    echo
+	    echo "Errors were reported during vacuum."
+	    rc=3
+	fi
+	;;
+esac
 
 exit $rc

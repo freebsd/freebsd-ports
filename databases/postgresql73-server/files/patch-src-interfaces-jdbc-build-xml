@@ -1,0 +1,11 @@
+--- src/interfaces/jdbc/build.xml.orig	Fri Mar 28 09:55:21 2003
++++ src/interfaces/jdbc/build.xml	Fri Mar 28 09:57:29 2003
+@@ -101,7 +101,7 @@
+ 
+   <!-- This is the core of the driver.  It is common for all three versions. -->
+   <target name="compile" depends="prepare,check_versions,driver">
+-    <javac srcdir="${srcdir}" destdir="${builddir}" debug="${debug}">
++    <javac includeAntRuntime="no" srcdir="${srcdir}" destdir="${builddir}" debug="${debug}">
+       <include name="${package}/**" />
+ 
+       <exclude name="${package}/jdbc1/**" unless="jdbc1"/>

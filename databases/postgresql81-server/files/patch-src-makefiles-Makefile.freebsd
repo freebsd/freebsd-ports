@@ -1,0 +1,17 @@
+--- src/makefiles/Makefile.freebsd.orig	Wed Aug 29 21:14:40 2001
++++ src/makefiles/Makefile.freebsd	Sat Jan 31 17:51:25 2004
+@@ -7,7 +7,7 @@
+ endif
+ 
+ DLSUFFIX = .so
+-CFLAGS_SL = -fpic -DPIC
++CFLAGS_SL = -fPIC -DPIC
+ 
+ %.so: %.o
+ ifdef ELF_SYSTEM
+@@ -23,3 +23,5 @@
+ endif
+ 
+ sqlmansect = 7
++
++allow_nonpic_in_shlib = yes
