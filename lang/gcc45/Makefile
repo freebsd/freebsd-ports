@@ -3,7 +3,7 @@
 # Date created:		9 Jan 1998
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.5 1998/02/03 07:48:35 asami Exp $
+# $Id: Makefile,v 1.6 1998/02/14 04:18:22 obrien Exp $
 #
 
 DISTNAME=	egcs-980205
@@ -16,6 +16,7 @@ MAINTAINER=	jdp@polstra.com
 
 MANUAL_PACKAGE_BUILD=	installs libstdc++.a which conflicts with system version
 
+BROKEN=		package
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-gnu-as --with-gnu-ld i386-unknown-freebsd
