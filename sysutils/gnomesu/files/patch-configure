@@ -1,0 +1,11 @@
+--- configure.orig	Mon Jul 26 13:53:32 2004
++++ configure	Mon Jul 26 13:53:45 2004
+@@ -8006,7 +8006,7 @@
+ 
+ 
+ 
+-mysupwdout="Password: "
++mysupwdout="Password:"
+ mydisplenv="export DISPLAY="
+ mymaxsudelay=30000
+ 

@@ -160,6 +160,7 @@
     SUBDIR += gnomecontrolcenter
     SUBDIR += gnomecontrolcenter2
     SUBDIR += gnomefind
+    SUBDIR += gnomesu
     SUBDIR += gnomesystemmonitor
     SUBDIR += gnomesystemtools
     SUBDIR += gpart

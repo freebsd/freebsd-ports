@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Mon Jul 26 17:21:00 2004
++++ src/Makefile.in	Mon Jul 26 17:21:09 2004
+@@ -94,7 +94,7 @@
+ 
+ INCLUDES = $(XSU_CFLAGS) 
+ 
+-CFLAGS = \
++CFLAGS += \
+ 	 -Wimplicit -Wunused\
+ 	 -Werror \
+ 	 -g 

@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Mon Jul 26 17:11:15 2004
++++ Makefile.in	Mon Jul 26 17:12:25 2004
+@@ -94,7 +94,7 @@
+ 
+ SUBDIRS = src doc
+ 
+-xsudocdir = ${prefix}/doc/gnomesu
++xsudocdir = ${prefix}/share/doc/gnomesu
+ xsudoc_DATA = \
+ 	README\
+ 	COPYING\
+@@ -373,7 +373,7 @@
+ install-exec-am:
+ install-exec: install-exec-recursive
+ 
+-install-data-am: install-gnomemenuDATA install-xsudocDATA
++install-data-am: install-gnomemenuDATA
+ install-data: install-data-recursive
+ 
+ install-am: all-am
