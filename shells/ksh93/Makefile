@@ -29,6 +29,8 @@ INSTALLROOT=	${WRKSRC}/arch/freebsd.${ARCH}
 
 .include <bsd.port.pre.mk>
 
+BROKEN=		"Does not fetch"
+
 .if ${ARCH} == "sparc64"
 BROKEN=		"Does not compile on sparc64"
 .endif
