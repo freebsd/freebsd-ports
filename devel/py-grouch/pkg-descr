@@ -1,0 +1,22 @@
+From the README:
+  Grouch is a system for describing and enforcing a Python object schema.
+  That is, it provides you with a language for describing the intended type
+  signatures of your objects (collectively, the "object schema"), and tools
+  to walk an object graph, checking that every value found matches your
+  object schema.
+
+From the PKG-INFO:
+  An object schema describes every class in a collection of objects -- in
+  particular, it specifies the type of every instance attribute of every
+  class.  Grouch includes a type language for specifying attribute types, a
+  tool to parse specially-formatted class docstrings and output a complete
+  object schema, and another tool for walking a persistent object graph and
+  ensuring that every scrap of data in it conforms to the object schema
+  extracted from your class docstrings.  The API for defining, querying, and
+  enforcing types is fairly complete and well-documented, so you can use
+  Grouch's type system in other ways as well.
+        
+Author: Greg Ward <gward@mems-exchange.org>
+WWW:    http://www.mems-exchange.org/software/grouch/
+
+-- Johann Visagie <wjv@FreeBSD.org>

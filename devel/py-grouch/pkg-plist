@@ -1,0 +1,37 @@
+%%PORTDOCS%%share/doc/grouch/README.txt
+%%PORTDOCS%%share/doc/grouch/checking.txt
+%%PORTDOCS%%share/doc/grouch/schema.txt
+%%PORTDOCS%%share/doc/grouch/type-system.txt
+%%PORTDOCS%%share/examples/grouch/animal.py
+%%PORTDOCS%%share/examples/grouch/make_things
+%%PORTDOCS%%share/examples/grouch/thing.py
+%%PORTDOCS%%share/examples/grouch/things.proj
+bin/check_data
+bin/gen_schema
+lib/%%PYTHON_VERSION%%/site-packages/grouch/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/grouch/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/grouch/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/grouch/context.py
+lib/%%PYTHON_VERSION%%/site-packages/grouch/context.pyc
+lib/%%PYTHON_VERSION%%/site-packages/grouch/context.pyo
+lib/%%PYTHON_VERSION%%/site-packages/grouch/schema.py
+lib/%%PYTHON_VERSION%%/site-packages/grouch/schema.pyc
+lib/%%PYTHON_VERSION%%/site-packages/grouch/schema.pyo
+lib/%%PYTHON_VERSION%%/site-packages/grouch/script_util.py
+lib/%%PYTHON_VERSION%%/site-packages/grouch/script_util.pyc
+lib/%%PYTHON_VERSION%%/site-packages/grouch/script_util.pyo
+lib/%%PYTHON_VERSION%%/site-packages/grouch/spark.py
+lib/%%PYTHON_VERSION%%/site-packages/grouch/spark.pyc
+lib/%%PYTHON_VERSION%%/site-packages/grouch/spark.pyo
+lib/%%PYTHON_VERSION%%/site-packages/grouch/type_parser.py
+lib/%%PYTHON_VERSION%%/site-packages/grouch/type_parser.pyc
+lib/%%PYTHON_VERSION%%/site-packages/grouch/type_parser.pyo
+lib/%%PYTHON_VERSION%%/site-packages/grouch/util.py
+lib/%%PYTHON_VERSION%%/site-packages/grouch/util.pyc
+lib/%%PYTHON_VERSION%%/site-packages/grouch/util.pyo
+lib/%%PYTHON_VERSION%%/site-packages/grouch/valuetype.py
+lib/%%PYTHON_VERSION%%/site-packages/grouch/valuetype.pyc
+lib/%%PYTHON_VERSION%%/site-packages/grouch/valuetype.pyo
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/grouch
+%%PORTDOCS%%@dirrm share/examples/grouch
+%%PORTDOCS%%@dirrm share/doc/grouch
