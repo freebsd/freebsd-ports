@@ -872,6 +872,7 @@ cidr		ports/net/cidr
 cil		ports/devel/cil
 cim		ports/lang/cim
 cinc		ports/emulators/cinc
+cinepaint	ports/graphics/cinepaint
 cingb		ports/emulators/cingb
 circuslinux	ports/games/circuslinux
 cisco_conf	ports/net/cisco_conf
