@@ -18,7 +18,7 @@ COMMENT=	Perl class capable of creating Markov chains and output based on them
 BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN3=		Algorithm::MarkovChain.3
 
