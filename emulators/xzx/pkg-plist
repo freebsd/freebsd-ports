@@ -5,7 +5,6 @@ lib/xzx/plus2.rom
 lib/xzx/plus3.rom
 lib/xzx/if1-v1.rom
 lib/xzx/if1-v2.rom
-lib/xzx/keyboard.scr
 lib/X11/app-defaults/Xzx
 share/doc/xzx/COPYRIGHT
 share/doc/xzx/README
