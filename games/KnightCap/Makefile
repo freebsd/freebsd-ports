@@ -26,6 +26,12 @@ DOCSDIR=	${PREFIX}/share/doc/KnightCap
 PORTDOCS=	README
 PLIST_FILES=	bin/KnightCap
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/KnightCap ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
@@ -33,4 +39,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

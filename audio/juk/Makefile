@@ -25,9 +25,15 @@ USE_REINPLACE=	yes
 
 CONFIGURE_TARGET=	--build=${ARCH}-portsbld-freebsd${OSREL}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g; s|-pedantic ||g; \
 		s|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
