@@ -25,6 +25,7 @@ MASTER_SITE_SUBDIR=	dinoex
 MAINTAINER=	dinoex@FreeBSD.org
 
 BUILD_DEPENDS=	${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libcallback.a:${PORTSDIR}/devel/ffcall
 RUN_DEPENDS=	${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base
 LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
 .if defined(GNUSTEP_GUI_DEVEL)
