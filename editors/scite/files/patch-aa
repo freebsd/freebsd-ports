@@ -1,25 +1,31 @@
 
 $FreeBSD$
 
---- makefile.orig	Thu Feb  6 10:52:36 2003
-+++ makefile	Thu Feb  6 10:56:10 2003
-@@ -10,34 +10,34 @@
+--- makefile.orig	Fri Aug 15 23:31:32 2003
++++ makefile	Sun Sep 28 13:23:50 2003
+@@ -5,7 +5,7 @@
+ # GNU make does not like \r\n line endings so should be saved to CVS in binary form.
  
- # For the Gnome desktop stuff to work, prefix must point to where Gnome thinks it is.
- # "h@h@" is printed here when gnome-config unavailable. Seems harmless.
+ .SUFFIXES: .cxx .o .h .a
+-CC = g++
++CC ?= g++
+ AR = ar
+ 
+ # If explicit setting of GTK1 or GTK2 then use that else look for
+@@ -27,9 +27,9 @@
+ CONFIGLIB=pkg-config --libs gtk+-2.0 gthread-2.0
+ gnomeprefix:=$(shell pkg-config --variable=prefix gtk+-2.0 2>/dev/null)
+ else
+-CONFIGFLAGS=gtk-config --cflags
+-CONFIGLIB=gtk-config --libs
 -gnomeprefix:=$(shell gnome-config --prefix 2>/dev/null)
++CONFIGFLAGS=pkg-config --cflags gtk+ gthread
++CONFIGLIB=pkg-config --libs gtk+ gthread
 +gnomeprefix:=$(PREFIX)
+ endif
  ifdef gnomeprefix
    prefix=$(gnomeprefix)
--  datadir=$(gnomeprefix)/share
-+  datadir=$(gnomeprefix)/share/gnome
-   pixmapdir=$(datadir)/pixmaps
- else
-   prefix=/usr/local
- endif
- bindir=$(prefix)/bin
--SYSCONF_PATH=$(prefix)/share/scite
-+SYSCONF_PATH=$(prefix)/share/gnome/scite
+@@ -43,17 +43,17 @@
  
  PROG	= ../bin/SciTE
  
@@ -34,58 +40,21 @@ $FreeBSD$
  
  ifdef DEBUG
 -CXXFLAGS=-DDEBUG -g $(CXXBASEFLAGS)
-+CXXFLAGS+=-DDEBUG -g $(CXXBASEFLAGS)
++CXXFLAGS+=-DDEBUG $(CXXBASEFLAGS)
  else
 -CXXFLAGS=-DNDEBUG -Os $(CXXBASEFLAGS)
 +CXXFLAGS+=-DNDEBUG $(CXXBASEFLAGS)
  endif
  
  .cxx.o:
--	$(CC) `gtk-config --cflags` $(CXXFLAGS) -c $< -o $@
-+	$(CC) $(shell $(GTK_CONFIG) --cflags) $(CXXFLAGS) -c $< -o $@
- 
- all: $(PROG)
- 
-@@ -45,14 +45,14 @@
- 	rm -f *.o $(PROG)
- 
- deps:
--	$(CC) -MM `gtk-config --cflags` $(CXXFLAGS) *.cxx ../src/*.cxx >deps.mak
-+	$(CC) -MM `$(GTK_CONFIG) --cflags` $(CXXFLAGS) *.cxx ../src/*.cxx >deps.mak
- 
- # make should be run in ../../scintilla/gtk to compile all the lexers.
+@@ -71,8 +71,8 @@
  LEXEROBJS=$(wildcard ../../scintilla/gtk/Lex*.o)
  
--$(PROG): SciTEGTK.o SciTEBase.o SciTEBuffers.o SciTEIO.o Exporters.o DirectorExtension.o \
+ $(PROG): SciTEGTK.o SciTEBase.o SciTEBuffers.o SciTEIO.o Exporters.o DirectorExtension.o \
 -SciTEProps.o Utf8_16.o $(LEXEROBJS) ../../scintilla/bin/scintilla.a
--	$(CC) `gtk-config --libs` `glib-config --libs gthread` -DGTK $^ -o $@
-+$(PROG): SciTEGTK.o SciTEBase.o SciTEBuffers.o SciTEIO.o Exporters.o DirectorExtension.o Utf8_16.o \
-+SciTEProps.o # $(LEXEROBJS) ../../scintilla/bin/scintilla.a
-+	$(CC) $(shell $(GTK_CONFIG) --libs) $(shell $(GLIB_CONFIG) --libs gthread) -DGTK $^ -L$(X11BASE)/lib -lscintilla -lscintilla_lexers -o $@
+-	$(CC) `$(CONFIGLIB)` `glib-config --libs gthread` -DGTK $^ -o $@
++SciTEProps.o Utf8_16.o
++	$(CC) `$(CONFIGLIB)` -lscintilla -lscintilla_lexers -DGTK $^ -o $@
  
  # SciTE-static no longer builds. Kept here in case of later need.
  SciTE-static: SciTEGTK.o SciTEBase.o SciTEBuffers.o SciTEIO.o Exporters.o SciTEProps.o \
-@@ -66,15 +66,15 @@
- # This is OK - just means no SciTE in the Gnome Applications menu
- # Dead:	install -D SciTEGTK.properties $(SYSCONF_PATH)/SciTEGlobal.properties
- install:
--	install -s $(PROG) $(bindir)
--	install -d $(SYSCONF_PATH)
--	install ../src/*.properties $(SYSCONF_PATH)
--	install ../doc/*.html $(SYSCONF_PATH)
--	install ../doc/SciTEIco.png $(SYSCONF_PATH)
--	install ../doc/PrintHi.png $(SYSCONF_PATH)
-+	$(BSD_INSTALL_PROGRAM) $(PROG) $(bindir)
-+	$(MKDIR) $(SYSCONF_PATH)
-+	$(BSD_INSTALL_DATA) ../src/*.properties $(SYSCONF_PATH)
-+	$(BSD_INSTALL_DATA) ../doc/*.html $(SYSCONF_PATH)
-+	$(BSD_INSTALL_DATA) ../doc/SciTEIco.png $(SYSCONF_PATH)
-+	$(BSD_INSTALL_DATA) ../doc/PrintHi.png $(SYSCONF_PATH)
- ifdef gnomeprefix
--	install SciTE.desktop $(datadir)/gnome/apps/Applications
--	install Sci48M.png $(pixmapdir)
-+	$(BSD_INSTALL_DATA) SciTE.desktop $(datadir)/apps/Applications
-+	$(BSD_INSTALL_DATA) Sci48M.png $(pixmapdir)
- endif
- 
- uninstall:
