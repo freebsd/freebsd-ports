@@ -12,6 +12,7 @@
     SUBDIR += blas
     SUBDIR += calc
     SUBDIR += calctool
+    SUBDIR += ccmath
     SUBDIR += cln
     SUBDIR += concorde
     SUBDIR += dcdflib

@@ -1,0 +1,14 @@
+--- non_intel.sh.orig	Wed Mar  7 16:13:59 2001
++++ non_intel.sh	Wed Mar  7 16:14:20 2001
+@@ -13,9 +13,5 @@
+ rm $MDR/simu/*.s
+ echo " .s code replaced in simu"
+ echo  
+-echo " bigendian byte order (y/n)"
+-read F
+-if [ $F = "y" ]
+-  then cp $MDR/xarm/supp/big-end/*.c $MDR/xarm
+-  echo " bigend code installed in xarm"
+-fi
++cp $MDR/xarm/supp/big-end/*.c $MDR/xarm
++echo " bigend code installed in xarm"
