@@ -1,5 +1,9 @@
 #! /bin/sh
 
-exec %%PREFIX%%/bin/javavm -cp "%%PREFIX%%/share/java/classes/jfc-%%JFC_VERSION%%/swingall.jar:%%PREFIX%%/share/airport/AirportBaseStationConfig.jar" AirportBaseStationConfigurator
+# Use this one for JDK 1.2 and beyond:
+# exec %%PREFIX%%/bin/javavm -jar %%PREFIX%%/share/airport/AirportBaseStationConfig.jar
+
+# Use this one for the default installation -- JDK 1.1.x + JFC:
+exec %%PREFIX%%/bin/javavm -classpath "%%PREFIX%%/jdk%%JDK_VERSION%%/lib/classes.zip:%%PREFIX%%/share/java/classes/jfc-%%JFC_VERSION%%/swingall.jar:%%PREFIX%%/share/airport/AirportBaseStationConfig.jar" AirportBaseStationConfigurator
 
 exit 1
