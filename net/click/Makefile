@@ -1,4 +1,4 @@
-# Updated ports collection makefile for:   click
+# Ports collection makefile for:	click
 # Date created:        3 Nov 2001
 # Whom:                gnn
 #
@@ -16,8 +16,10 @@ COMMENT=	The Click Modular Router
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_GCC=	2.95
 
 MANCOMPRESSED=	no
+INFO=	click
 MAN1=	click.1 click-align.1 click-combine.1 click-devirtualize.1 \
 	click-fastclassifier.1 click-flatten.1 click-install.1 \
 	click-mkmindriver.1 click-uncombine.1 click-undead.1 \
@@ -68,10 +70,6 @@ CONFDIR=	${PREFIX}/etc/click/conf
 BROKEN=		"Does not compile on alpha 4.x"
 .endif
 
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/click
 	@${STRIP_CMD} ${PREFIX}/bin/click-align
@@ -97,13 +95,13 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/conf/test2.click ${CONFDIR}
 	${INSTALL_DATA} ${WRKSRC}/conf/test3.click ${CONFDIR}
 	${INSTALL_DATA} ${WRKSRC}/conf/udpgen.click ${CONFDIR}
-	@echo
-	@echo "----------------------------------------------------"
-	@echo "Install complete, to try it out do the following:"
-	@echo "cd ${PREFIX}/etc/click/conf"
-	@echo "click test.click"
-	@echo "You should see some output.  Now go read the papers and manual."
-	@echo "----------------------------------------------------"
-	@echo
+	@${ECHO_CMD}
+	@${ECHO_CMD} "----------------------------------------------------"
+	@${ECHO_CMD} "Install complete, to try it out do the following:"
+	@${ECHO_CMD} "cd ${PREFIX}/etc/click/conf"
+	@${ECHO_CMD} "click test.click"
+	@${ECHO_CMD} "You should see some output.  Now go read the papers and manual."
+	@${ECHO_CMD} "----------------------------------------------------"
+	@${ECHO_CMD}
 
 .include <bsd.port.post.mk>

@@ -94,21 +94,13 @@ include/clicktool/lexertinfo.hh
 include/clicktool/processingt.hh
 include/clicktool/routert.hh
 include/clicktool/toolutils.hh
-@unexec install-info --delete %D/info/click.info %D/info/dir
-info/click.info
-info/click.info-1
-info/click.info-2
-info/click.info-3
-info/click.info-4
-info/click.info-5
-@exec install-info --section="Click Modular Router" --entry="* click: (click).        Click Modular Router" %D/info/click.info %D/info/dir
-@unexec rm -rf %D/etc/click
+@unexec rm -rf %D/etc/click 2>&1 >/dev/null || true
 lib/libclick.a
 lib/libclicktool.a
-share/click/elementmap
-share/click/srcdir
-share/click/src
+%%DATADIR%%/elementmap
+%%DATADIR%%/srcdir
+%%DATADIR%%/src
 @dirrm include/click/standard
 @dirrm include/click
 @dirrm include/clicktool
-@dirrm share/click
+@dirrm %%DATADIR%%
