@@ -1,11 +1,11 @@
---- getopt.c.orig	Thu Jun  6 17:43:00 2002
-+++ getopt.c	Thu Jun  6 17:43:12 2002
-@@ -270,7 +270,7 @@
-     MUCHelp20,MUCHelp21,"\n"};
-   int I;
-   for (I=0;I<sizeof(Help)/sizeof(Help[0]);I++)
--    mprintf(Help[I]);
-+    mprintf("%s", Help[I]);
- }
+--- rartypes.hpp.bak	Tue May 14 16:41:23 2002
++++ rartypes.hpp	Mon Aug 26 23:32:38 2002
+@@ -8,7 +8,7 @@
+ typedef unsigned int     uint32; //32 bits exactly
+ #define PRESENT_INT32
  
- 
+-#ifdef _WIN_32
++#if defined(_WIN_32) || defined(__FreeBSD__)
+ typedef wchar_t wchar;
+ #elif defined(__GNUC__)
+ typedef __wchar_t wchar;
