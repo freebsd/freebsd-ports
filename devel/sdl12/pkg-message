@@ -1,0 +1,9 @@
+------------------------------------------------------------------------------
+ Your SDL library has been built with libvgl support, which means that you
+ can run almost any SDL application straight on your console (VESA 2.0
+ compatible videocard is required). To do this you have to enable VESA
+ support in the kernel by adding "option VESA" into your kernel
+ configuration file and set environment variable "SDL_VIDEODRIVER=vgl".
+
+ Good luck!
+------------------------------------------------------------------------------

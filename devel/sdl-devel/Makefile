@@ -30,8 +30,11 @@ CFLAGS+=	-D_THREAD_SAFE
 
 .if exists(/usr/lib/libvgl.so.3)
 CONFIGURE_ARGS+=--enable-video-vgl
+DISPLAY_MSG=	${CAT} ${PKGMESSAGE}
 .else
 CONFIGURE_ARGS+=--disable-video-vgl
+PKGMESSAGE=
+DISPLAY_MSG=	${DO_NADA}
 .endif
 
 .if defined(WITHOUT_GL)
@@ -66,5 +69,6 @@ post-install:
 	@cd ${WRKSRC}/docs; tar cf - `${ECHO} [^Mm]*` | \
 		(cd ${PREFIX}/share/doc/SDL11/docs; ${TAR} --unlink -xf - )
 .endif
+	@${DISPLAY_MSG}
 
 .include <bsd.port.post.mk>
