@@ -1,0 +1,20 @@
+Allow the port to work with Python 2.0.  This should be fixed in the next
+release of Fnorb.  (Caveat:  There may be more broken calls to
+socket.connect.)
+
+Thanks to Mike Meyer <mwm@mired.org> for submitting this.
+
+-- Johann <johann@egenetics.com>
+
+
+--- ../orb/IIOPConnection.py.orig	Mon Apr  3 16:08:34 2000
++++ ../orb/IIOPConnection.py	Mon Nov  6 11:12:49 2000
+@@ -88,7 +88,7 @@
+ 	# Create a socket and connect to the remote object.
+ 	try:
+ 	    self.__socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+-	    self.__socket.connect(host, port)
++	    self.__socket.connect((host, port))
+ 
+ 	    # Set the socket by default to NON-blocking mode.
+ 	    self.__socket.setblocking(0)
