@@ -392,28 +392,20 @@ MASTER_SITE_GNU+=	\
 MASTER_SITE_GNUPG+= 	\
 	ftp://gd.tuwien.ac.at/privacy/gnupg/%SUBDIR%/ \
 	ftp://ftp.gnupg.org/gcrypt/%SUBDIR%/ \
-	http://sunsite.dk/pub/security/gcrypt/%SUBDIR%/ \
-	http://www.mirrors.wiretapped.net/security/cryptography/apps/pgp/GnuPG/%SUBDIR%/ \
-	http://public.ftp.planetmirror.com/pub/gnupg/%SUBDIR%/ \
+	http://ftp.sunsite.dk/pub/security/gcrypt/%SUBDIR%/ \
 	http://ftp.linux.it/pub/mirrors/gnupg/%SUBDIR%/ \
-	ftp://ftp.gnupg.org/gcrypt/%SUBDIR%/ \
 	ftp://ftp.demon.nl/pub/mirrors/gnupg/%SUBDIR%/ \
 	ftp://ftp.ayamura.org/pub/gnupg/%SUBDIR%/ \
-	ftp://ftp.planetmirror.com/pub/gnupg/%SUBDIR%/ \
 	ftp://sunsite.dk/pub/security/gcrypt/%SUBDIR%/ \
-	ftp://ftp.gnupg.cz/pub/gcrypt/%SUBDIR%/ \
-	ftp://gnupg.x-zone.org/pub/gnupg/%SUBDIR%/ \
 	ftp://ftp.jyu.fi/pub/crypt/gcrypt/%SUBDIR%/ \
 	ftp://ftp.freenet.de/pub/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
-	ftp://igloo.linux.gr/pub/crypto/gnupg/%SUBDIR%/ \
-	ftp://hal.csd.auth.gr/mirrors/gnupg/%SUBDIR%/ \
-	ftp://ftp.demon.nl/pub/mirrors/gnupg/%SUBDIR%/ \
 	ftp://ftp.surfnet.nl/pub/security/gnupg/%SUBDIR%/ \
-	ftp://sunsite.icm.edu.pl/pub/security/gnupg/%SUBDIR%/ \
 	ftp://ftp.mirror.ac.uk/sites/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
 	ftp://sunsite.cnlab-switch.ch/mirror/gcrypt/%SUBDIR%/ \
 	ftp://ftp.iasi.roedu.net/pub/mirrors/ftp.gnupg.org/%SUBDIR%/ \
-	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/gnupg/&,}
+	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/gnupg/&,} \
+	http://trumpetti.atm.tut.fi/gcrypt/%SUBDIR%/ \
+	ftp://igloo.linux.gr/pub/crypto/gnupg/%SUBDIR%/
 
 MASTER_SITE_GNU_ALPHA+=	\
 	ftp://alpha.gnu.org/pub/gnu/%SUBDIR%/ \
