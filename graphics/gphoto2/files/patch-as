@@ -1,0 +1,33 @@
+--- Makefile.in.orig	Tue Mar  7 07:06:33 2000
++++ Makefile.in	Thu Apr 20 03:00:00 2000
+@@ -85,12 +85,12 @@
+ driversdir = @driversdir@
+ gallerydir = @gallerydir@
+ 
+-CFLAGS = -O2 -Wall
++CFLAGS = @CFLAGS@
+ 
+ SUBDIRS = canon 	casio 	directory 	fuji 	gallery 	kodak 	kodak_generic 	konica 	konica_qmxxx 	man 	minolta 	mustek 	nikon 	philips 	photopc 	ricoh 	samsung 	sony 	src
+ 
+ 
+-gphotodocdir = $(datadir)/gphoto/doc
++gphotodocdir = $(datadir)/gphoto
+ 
+ gphotodoc_DATA = AUTHORS MANUAL
+ 
+@@ -365,13 +365,13 @@
+ install-exec-am:
+ install-exec: install-exec-recursive
+ 
+-install-data-am: install-gphotodocDATA install-sysDATA
++install-data-am: install-gphotodocDATA
+ install-data: install-data-recursive
+ 
+ install-am: all-am
+ 	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
+ install: install-recursive
+-uninstall-am: uninstall-gphotodocDATA uninstall-sysDATA
++uninstall-am: uninstall-gphotodocDATA
+ uninstall: uninstall-recursive
+ all-am: Makefile $(DATA) config.h
+ all-redirect: all-recursive-am

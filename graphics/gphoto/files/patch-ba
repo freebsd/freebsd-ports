@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Tue Mar  7 07:07:09 2000
++++ src/Makefile.in	Thu Apr 20 03:00:00 2000
+@@ -89,7 +89,7 @@
+ 
+ bin_PROGRAMS = gphoto
+ 
+-CFLAGS = @GTK_CFLAGS@ @GDK_IMLIB_CFLAGS@ -O2 -Wall -I$(srcdir)/icons
++CFLAGS = @GTK_CFLAGS@ @GDK_IMLIB_CFLAGS@ @CFLAGS@ -I$(srcdir)/icons
+ 
+ gphoto_LDADD = ../konica/libgphoto_konica_qm100.la 	../konica_qmxxx/libgphoto_konica_qmxxx.la 	../canon/libgphoto_canon.la 	../casio/libgphoto_casio_qv.la 	../nikon/libgphoto_coolpix600.la 	../philips/libgphoto_philips.la 	../fuji/libgphoto_fuji.la 	../photopc/libgphoto_photopc.la 	../kodak/libgphoto_kodak_dc2x.la 	../kodak_generic/libgphoto_kodak_generic.la 	../minolta/libgphoto_dimage_v.la 	../mustek/libgphoto_mustek_mdc800.la 	../ricoh/libgphoto_ricoh300z.la 	../samsung/libgphoto_samsung.la 	../sony/libgphoto_sony_dscf1.la 	../sony/dscf55/libgphoto_sony_dscf55.la 	../directory/libgphoto_dir.la 	@GTK_LIBS@ @GDK_IMLIB_LIBS@ -ljpeg 
+ 

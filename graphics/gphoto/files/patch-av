@@ -1,0 +1,11 @@
+--- kodak/dc21x/Makefile.in.orig	Tue Mar  7 07:06:48 2000
++++ kodak/dc21x/Makefile.in	Thu Apr 20 03:00:00 2000
+@@ -87,7 +87,7 @@
+ 
+ LIBDIR = 
+ LIBS = 
+-CFLAGS = -O2 -Wall
++CFLAGS = @CFLAGS@
+ 
+ bin_PROGRAMS = dc21x_cam
+ dc21x_cam_SOURCES = dc21x.h main.c lowlevel.c

@@ -1,0 +1,12 @@
+--- kodak/dc21x/main.c.orig	Fri Jan 21 06:42:18 2000
++++ kodak/dc21x/main.c	Thu Apr 20 03:00:00 2000
+@@ -2,7 +2,9 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <errno.h>
++#ifndef __FreeBSD__
+ #include <sys/select.h>
++#endif
+ #include <sys/time.h>
+ #include <time.h>
+ #include "dc21x.h"

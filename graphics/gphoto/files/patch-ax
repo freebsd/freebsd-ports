@@ -1,0 +1,10 @@
+--- philips/philips_io.c.orig	Sun Nov 21 01:28:41 1999
++++ philips/philips_io.c	Thu Apr 20 03:00:00 2000
+@@ -55,7 +55,6 @@
+ #include <errno.h>
+ #include <signal.h>
+ #include <time.h>
+-#include <malloc.h>
+ #include <unistd.h>
+ #include <string.h>
+ #include <sys/time.h>
