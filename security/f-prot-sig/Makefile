@@ -18,6 +18,9 @@ COMMENT=	F-Prot Antivirus Signatures
 # F-Prot does not version their .DEF files so the port always pulls the latest.
 IGNOREFILES=	${DISTFILES}
 
+# XXX 20040320 eik: ugly hack to work around PR 64485. Remove when fixed
+_CKSUMFILES=
+
 NO_PACKAGE=	Free for personal use only
 NO_CDROM=	Free for personal use only
 RESTRICTED=	Free for personal use only
