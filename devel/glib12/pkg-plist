@@ -18,5 +18,4 @@ libdata/pkgconfig/glib.pc
 libdata/pkgconfig/gmodule.pc
 libdata/pkgconfig/gthread.pc
 share/aclocal/glib.m4
-@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
 @dirrm include/glib12
