@@ -1,0 +1,61 @@
+diff -rc ./xfm/FmErrors.c ../xfm-1.3/xfm/FmErrors.c
+*** ./xfm/FmErrors.c	Sat Apr 30 22:03:13 1994
+--- ../xfm-1.3/xfm/FmErrors.c	Mon Dec 26 19:36:08 1994
+***************
+*** 21,31 ****
+  
+  #define LABEL_WIDTH 300
+  
+- /* Uggh ...... */
+- #ifndef linux
+- extern char *sys_errlist[];
+- #endif
+- 
+  /*-----------------------------------------------------------------------------
+    STAIC DATA
+  -----------------------------------------------------------------------------*/
+--- 21,26 ----
+diff -rc ./xfm/FmUtils.c ../xfm-1.3/xfm/FmUtils.c
+*** ./xfm/FmUtils.c	Sat May 14 08:42:10 1994
+--- ../xfm-1.3/xfm/FmUtils.c	Wed Dec 28 17:08:21 1994
+***************
+*** 518,523 ****
+--- 518,524 ----
+      dialog_questions = (QuestionRec *)XtMalloc(n_vars*sizeof(QuestionRec));
+      for (i = 0; i < n_vars; i++) {
+        vals[i] = (char *)XtMalloc(MAXVARSTRINGLEN);
++       bzero(vals[i], MAXVARSTRINGLEN);
+        dialog_questions[i].label = vars[i];
+        dialog_questions[i].value = vals[i];
+        dialog_questions[i].length = MAXVARSTRINGLEN;
+diff -rc ./xfm-apps ../xfm-1.3/xfm-apps
+*** ./xfm-apps	Mon May 16 16:20:35 1994
+--- ../xfm-1.3/xfm-apps	Wed Dec 28 17:16:42 1994
+***************
+*** 5,16 ****
+  ##########################################
+  
+  Terminal:::xterm.xpm:exec xterm:
+! Editor:::editor.xpm:exec emacs:exec emacs $*
+  Printer:::printer.xpm::exec lpr $*
+  Mail:::mail.xpm:exec xmailtool:
+  Calculator:::calc.xpm:exec xcalc:
+  Manual:::xman.xpm:exec xman:
+  Toolbox::.xfm/xfm-tools:xfm_appmgr.xpm:LOAD:
+! Trash::.trash:trash.xpm:OPEN:shift; mv -f -b -V numbered $* ~/.trash
+  A\::/disk:a:disk.xpm:OPEN:
+  B\::/disk:b:disk.xpm:OPEN:
+--- 5,17 ----
+  ##########################################
+  
+  Terminal:::xterm.xpm:exec xterm:
+! Emacs:::editor.xpm:exec emacs:exec emacs $*
+! Vi:::editor.xpm:exec xterm -geometry 80x30 -sb:exec xterm -geometry 80x30 -sb $*
+  Printer:::printer.xpm::exec lpr $*
+  Mail:::mail.xpm:exec xmailtool:
+  Calculator:::calc.xpm:exec xcalc:
+  Manual:::xman.xpm:exec xman:
+  Toolbox::.xfm/xfm-tools:xfm_appmgr.xpm:LOAD:
+! Trash::.trash:trash.xpm:OPEN:shift; mv -f numbered $* ~/.trash
+  A\::/disk:a:disk.xpm:OPEN:
+  B\::/disk:b:disk.xpm:OPEN:

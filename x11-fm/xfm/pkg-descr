@@ -1,0 +1,69 @@
+xfm-1.3
+
+Here is an extract from the source distribution xfm-1.3 README file:
+
+	XFM - The X File Manager (ver 1.3)
+	----------------------------------
+
+	(c) Simon Marlow 1990-1993 	simonm@dcs.glasgow.ac.uk
+	(c) Albert Graef 1994		ag@muwiinfa.geschichte.uni-mainz.de
+
+	This program is free software; you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published
+	by the Free Software Foundation; either version 2, or (at your option) 
+	any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the 
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program; if not, write to the Free Software
+	Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+------------------------------------------------------------------------------
+
+This is a powerful file and applications manager program written using the X
+toolkit. It contains virtually all of the features that you would expect in a
+file manager -- move around your directory tree in multiple windows, and move,
+copy or delete files with simple mouse operations. Directory displays are
+updated automatically in regular intervals when the contents of a diaplayed
+directory changes. The integrated application manager allows you to load files
+into your favourite applications from the file manager by dragging icons. It
+can also be used as a "shelf" onto which you can place files and directories
+you are currently working with. A special LOAD action for application files
+enables you to manage different application groups.
+
+User-definable file types allow you to specify a command to be executed when
+double-clicking on a file or dropping other files onto it. The command can
+also prompt you for required parameters. Xfm makes it easy to configure
+special kinds of actions such as, e.g., replacing the contents of a compressed
+tar archive with a collection of selected files. A lot of corresponding
+examples can be found in the distribution, including a fully functional
+trashcan feature. Last not least, xfm can automatically mount and unmount
+special devices like floppies as you open and close the corresponding
+directories (mount points). So you won't have to fiddle around with mount or
+mtools commands any more if all you want to do is copy some files between the
+hard disk and your floppy drive.
+
+The original version of this program was written by Simon Marlow at the
+University of Glasgow. I included Simon's README for reference purposes; see
+README-1.2. [Most of the information in this file is outdated; please refer to
+this README file and the man page for up-to-date installation and usage
+instructions.] The current release stems from my efforts to resolve some nasty
+bugs in the 1.2 beta version distributed with Linux slackware, and to add XPM
+support for displaying color icons in the file and application windows. As it
+came out, I also added a plethora of other features to make xfm the tool I was
+looking for; see the ChangeLog for details. Realizing that my private xfm
+version might be useful for others as well, I contacted Simon and he told me
+to put together a new release and make it available on the net. So here it is!
+I hope you will find it as useful as I do -- I am now using xfm regularly, and
+can't imagine how I ever did without it. I think that this program compares
+well to other free -- and even commercial -- file managers. It is fast,
+convenient to use, and offers a lot of built-in functionality and
+configuration options. If you are not addicted to the shell and like to
+shuffle around files with one hand in order to perform tasks such as moving,
+copying, deleting, compiling, formatting, archiving, compressing, etc. etc.,
+then xfm is certainly for you.
+
