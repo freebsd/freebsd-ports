@@ -1,0 +1,11 @@
+--- Imakefile.orig	Tue Jul 25 16:14:56 1995
++++ Imakefile	Sat Aug 19 22:00:04 1995
+@@ -21,7 +21,7 @@
+ CURSES = -lcurses -ltermcap
+ 
+ /* most X11 screens are rather large, you might wisht to use "double" mode */
+-/* CXXEXTRA_DEFINES = -DDOUBLE */
++CXXEXTRA_DEFINES = -DDOUBLE
+ 
+ NormalProgramTarget(pacman,$(OBJS),$(DEPXLIB),$(CURSES),$(XLIB))
+ InstallProgram(pacman,$(BINDIR))

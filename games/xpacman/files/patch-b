@@ -1,0 +1,8 @@
+--- Imakefile.orig	Sat Aug 19 22:00:04 1995
++++ Imakefile	Sat Aug 19 22:00:55 1995
+@@ -26,4 +26,5 @@
+ NormalProgramTarget(pacman,$(OBJS),$(DEPXLIB),$(CURSES),$(XLIB))
+ InstallProgram(pacman,$(BINDIR))
+ InstallManPage(pacman,$(MANDIR))
++AllTarget(pacman)
+ DependTarget()
