@@ -1,0 +1,27 @@
+# New ports collection makefile for:	dc20pack
+# Version required:	1.0
+# Date created:		Jul 31 1999
+# Whom:			Maurice Castro <maurice@serc.rmit.edu.au>
+#
+# $FreeBSD$
+#
+
+DISTNAME=		dc20pack-1.0
+CATEGORIES=		graphics
+MASTER_SITES=		${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	apps/graphics/capture
+EXTRACT_SUFX=		.tgz
+
+MAINTAINER=		maurice@serc.rmit.edu.au
+
+WRKSRC=			${WRKDIR}
+
+post-extract:
+	@ /usr/bin/find ${WRKSRC} -type f | xargs /usr/bin/perl -pi -e 's/\r//g'
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/dc20dump ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/dc20term ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/dc2totga ${PREFIX}/bin
+
+.include <bsd.port.mk>
