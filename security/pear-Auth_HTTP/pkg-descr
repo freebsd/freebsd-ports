@@ -1,0 +1,5 @@
+The PEAR::Auth_HTTP class provides methods for creating an HTTP
+authentication system using PHP, that is similar to Apache's
+realm-based .htaccess authentication.
+
+WWW: http://pear.php.net/package/Auth_HTTP/
