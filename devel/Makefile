@@ -38,6 +38,7 @@
     SUBDIR += astyle
     SUBDIR += atk
     SUBDIR += atlas
+    SUBDIR += autobook
     SUBDIR += autoconf
     SUBDIR += autoconf213
     SUBDIR += autodia
