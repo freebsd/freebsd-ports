@@ -1,12 +1,12 @@
 # New ports collection makefile for:	gaddr
-# Version required:		1.1.2
+# Version required:		1.1.3
 # Date created:			8 August 1999
 # Whom:				Jim Mock <jim@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gaddr-1.1.2
+DISTNAME=	gaddr-1.1.3
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.cse.unl.edu/~cluening/gaddr/
 
