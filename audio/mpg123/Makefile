@@ -74,7 +74,7 @@ pre-fetch:
 	@${ECHO_MSG}
 .endif
 .if ${MACHINE_ARCH} == "i386"
-.if ${OSVERSION} >= 500018
+.if ${OSVERSION} >= 430000
 .if ${MACHINE_CPU:M3dnow}
 OPT_ARCH=	3dnow
 .elif ${MACHINE_CPU:Mi586}
