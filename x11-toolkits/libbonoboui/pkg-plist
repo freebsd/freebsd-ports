@@ -150,6 +150,8 @@ share/locale/yi/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/zu/LC_MESSAGES/libbonoboui-2.0.mo
+@unexec rmdir %D/share/locale/zu/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/zu 2> /dev/null || true
 @dirrm lib/bonobo-2.0/samples
 @dirrm lib/bonobo-2.0
 @dirrm include/libbonoboui-2.0/bonobo
