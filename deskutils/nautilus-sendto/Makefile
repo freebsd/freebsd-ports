@@ -7,7 +7,7 @@
 
 PORTNAME=	nautilus-sendto
 DISTVERSION=	0.2-1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.es.gnome.org/~telemaco/
 
@@ -22,7 +22,7 @@ USE_X_PREFIX=	yes
 USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	intlhack gnomeprefix gnometarget nautilus2
+USE_GNOME=	intlhack gnomeprefix gnometarget nautilus2 gnomehack
 
 # Gnome 2.9 fix
 .if exists(${X11BASE}/libdata/pkgconfig/libebook-1.2.pc)
