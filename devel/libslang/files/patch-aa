@@ -1,5 +1,5 @@
-*** src/Makefile.in.orig	Tue Jun 18 08:25:37 1996
---- src/Makefile.in	Thu Jul 11 21:14:31 1996
+*** src/Makefile.in.orig	Tue Sep  3 09:19:09 1996
+--- src/Makefile.in	Tue Sep  3 13:50:25 1996
 ***************
 *** 2,15 ****
   #---------------------------------------------------------------------------
@@ -73,8 +73,8 @@
   	-$(MKDIR) $(OBJDIR)
   $(ELFDIR) :
 ***************
-*** 119,130 ****
-  install-elf: $(install_lib_dir) $(install_include_dir) $(ELFDIR_ELF_LIB)
+*** 121,132 ****
+  	$(INSTALL_DATA) $(SRCDIR)/slcurses.h $(install_include_dir)
   	@echo installing $(ELFLIB_MAJOR_MINOR) in $(install_lib_dir)
   	$(INSTALL_DATA) $(ELFDIR_ELF_LIB) $(install_lib_dir)
 - 	@echo creating symbolic links to $(ELFLIB_MAJOR_MINOR)
@@ -86,4 +86,4 @@
   #---------------------------------------------------------------------------
   # Housekeeping
   #---------------------------------------------------------------------------
---- 116,121 ----
+--- 118,123 ----
