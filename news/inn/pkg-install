@@ -6,13 +6,14 @@ case $2 in
     PRE-INSTALL)
 	;;
     POST-INSTALL)
-	NEWSBASE=${PREFIX:-/usr/local}/news
+	NEWSBASE=${PKG_PREFIX:-/usr/local}/news
         install -d -o news -g news -m 755 \
 	    ${NEWSBASE}/run \
 	    ${NEWSBASE}/spool \
 	    ${NEWSBASE}/spool/archive \
 	    ${NEWSBASE}/spool/articles \
 	    ${NEWSBASE}/spool/incoming \
+	    ${NEWSBASE}/spool/incoming/bad \
 	    ${NEWSBASE}/spool/innfeed \
 	    ${NEWSBASE}/spool/outgoing \
 	    ${NEWSBASE}/spool/overview \
