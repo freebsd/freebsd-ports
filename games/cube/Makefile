@@ -8,8 +8,7 @@
 PORTNAME=	cube
 PORTVERSION=	2002.10.20
 CATEGORIES=	games
-MASTER_SITES=	http://ludo.uib.no/cube/ \
-		http://tunes.org/~eihrul/ \
+MASTER_SITES=	http://tunes.org/~eihrul/ \
 		http://www.idi.ntnu.no/~jonasf/cube/
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/:S/./_/}
 
