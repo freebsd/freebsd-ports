@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	links
-PORTVERSION= 	0.84
+PORTVERSION= 	0.92
 CATEGORIES=	www
 MASTER_SITES=	http://artax.karlin.mff.cuni.cz/~mikulas/vyplody/links/download/ \
-		http://www.add.com.pl/links/download/
+		http://www.add.com.pl/links/download/ \
+		http://ice.dammit.lt/links/download/
 
 MAINTAINER=	dima@Chg.RU
 
 GNU_CONFIGURE=	yes
+
+MAN1=          links.1
 
 .include <bsd.port.mk>
