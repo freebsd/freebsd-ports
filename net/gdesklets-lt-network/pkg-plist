@@ -1,0 +1,32 @@
+share/gnome/gdesklets/Displays/lt-network/gfx/background.png
+share/gnome/gdesklets/Displays/lt-network/gfx/bg.png
+share/gnome/gdesklets/Displays/lt-network/gfx/bg/both.png
+share/gnome/gdesklets/Displays/lt-network/gfx/bg/bottom.png
+share/gnome/gdesklets/Displays/lt-network/gfx/bg/none.png
+share/gnome/gdesklets/Displays/lt-network/gfx/bg/top.png
+share/gnome/gdesklets/Displays/lt-network/gfx/bg/w-both.png
+share/gnome/gdesklets/Displays/lt-network/gfx/bg/w-bottom.png
+share/gnome/gdesklets/Displays/lt-network/gfx/bg/w-top.png
+share/gnome/gdesklets/Displays/lt-network/gfx/border-bottom.png
+share/gnome/gdesklets/Displays/lt-network/gfx/border-bottomleft.png
+share/gnome/gdesklets/Displays/lt-network/gfx/border-bottomright.png
+share/gnome/gdesklets/Displays/lt-network/gfx/border-left.png
+share/gnome/gdesklets/Displays/lt-network/gfx/border-right.png
+share/gnome/gdesklets/Displays/lt-network/gfx/border-top.png
+share/gnome/gdesklets/Displays/lt-network/gfx/border-topleft.png
+share/gnome/gdesklets/Displays/lt-network/gfx/border-topright.png
+share/gnome/gdesklets/Displays/lt-network/gfx/cpu-border.png
+share/gnome/gdesklets/Displays/lt-network/gfx/gauge-150.png
+share/gnome/gdesklets/Displays/lt-network/gfx/gauge-50.png
+share/gnome/gdesklets/Displays/lt-network/gfx/gauge-border.png
+share/gnome/gdesklets/Displays/lt-network/gfx/gauge.png
+share/gnome/gdesklets/Displays/lt-network/gfx/gnome-mouse.png
+share/gnome/gdesklets/Displays/lt-network/gfx/memory.png
+share/gnome/gdesklets/Displays/lt-network/gfx/net.png
+share/gnome/gdesklets/Displays/lt-network/gfx/top.png
+share/gnome/gdesklets/Displays/lt-network/gfx/trans.png
+share/gnome/gdesklets/Displays/lt-network/gfx/x.png
+share/gnome/gdesklets/Displays/lt-network/networkinfo-lt.display
+@dirrm share/gnome/gdesklets/Displays/lt-network/gfx/bg
+@dirrm share/gnome/gdesklets/Displays/lt-network/gfx
+@dirrm share/gnome/gdesklets/Displays/lt-network
