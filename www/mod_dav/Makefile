@@ -38,7 +38,7 @@ post-install:
 	@${ECHO_MSG} "*******************************************************"
 	@${ECHO_MSG} "* Please review the mod_dav configuration in the main"
 	@${ECHO_MSG} "* Apache configuration file."
-	@${ECHO_MSG} "* ${PREFIX}/etc/apache/apache.conf"
+	@${ECHO_MSG} "* ${PREFIX}/etc/apache/httpd.conf"
 	@${ECHO_MSG} "*"
 	@${ECHO_MSG} "* Look at the file ${PREFIX}/etc/apache/apache.conf.mod_dav"
 	@${ECHO_MSG} "* for indications on what to do."
