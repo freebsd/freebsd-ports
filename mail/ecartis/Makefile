@@ -38,9 +38,9 @@ post-install:
 	@${ECHO_MSG} "- package.  Please read the documentation located -"
 	@${ECHO_MSG} "- in ${PREFIX}/ecartis/, or online at:            -"
 	@${ECHO_MSG} "-                                                 -"
-	@${ECHO_MSG} "- http://www.listar.org/                          -"
+	@${ECHO_MSG} "- http://www.ecartis.org/                         -"
 	@${ECHO_MSG} "-                                                 -"
-	@${ECHO_MSG} "- -The Listar/Ecartis Developers                  -"
+	@${ECHO_MSG} "- -The Ecartis Developers                         -"
 	@${ECHO_MSG} "---------------------------------------------------"
 
 .include <bsd.port.mk>
