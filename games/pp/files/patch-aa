@@ -1,6 +1,6 @@
---- Makefile	Sat Apr  5 17:08:26 1997
-+++ /home/andy/tmp/wrk/Makefile	Mon Jun  8 22:35:44 1998
-@@ -1,10 +1,10 @@
+--- Makefile.orig	Sat Apr  5 11:08:26 1997
++++ Makefile	Sun Sep 27 15:25:36 1998
+@@ -1,10 +1,13 @@
  ####### This section was automatically generated from
  
 -INCDIR = $(QTDIR)/include
@@ -10,6 +10,9 @@
  YACCCFLAGS = -Wno-unused -Wno-parentheses
 -LFLAGS = -L$(QTDIR)/lib -lqt
 +LFLAGS = -L${X11BASE}/lib -lqt
++.if ${PORTOBJFORMAT} == "elf"
++LFLAGS+= -Wl,-rpath,${X11BASE}/lib
++.endif
  CC = gcc
  MOC = moc
  SHELL =	/bin/sh

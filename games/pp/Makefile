@@ -3,7 +3,7 @@
 # Date created:				21 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.3 1998/08/07 23:56:21 asami Exp $
+# $Id: Makefile,v 1.4 1998/08/12 06:29:28 asami Exp $
 #
 
 DISTNAME=	pp-0.01
@@ -19,7 +19,7 @@ USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/ppsrc
 
 pre-build:
-	@ cd ${WRKSRC}; make depend
+	@ cd ${WRKSRC}; ${MAKE} ${MAKE_ENV} depend
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/pp ${PREFIX}/bin/pp.bin
