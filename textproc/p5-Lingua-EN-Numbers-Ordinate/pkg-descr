@@ -1,0 +1,8 @@
+There are two kinds of numbers in English -- cardinals (1,
+2, 3...), and ordinals (1st, 2nd, 3rd...).  This library
+provides functions for giving the ordinal form of a number,
+given its cardinal value.
+
+WWW: http://search.cpan.org/search?dist=Lingua-EN-Numbers-Ordinate
+
+Seamus Venasse <svenasse@polaris.ca>
