@@ -3,14 +3,14 @@
 # Whom:					Glenn Johnson <glennpj@charter.net>
 #
 # $FreeBSD$
+#
 
 PORTNAME=	gnome-cups-manager
-PORTVERSION=	0.18
-PORTREVISION=	1
+PORTVERSION=	0.27
 PORTEPOCH=	1
 CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.18
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -21,7 +21,8 @@ LIB_DEPENDS=	gnomecups-1.0.1:${PORTSDIR}/print/libgnomecups
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeprintui libgnomeui
+USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeprintui libgnomeui \
+		desktopfileutils
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
@@ -36,6 +37,7 @@ post-patch:
 		"s|-D.*_DISABLE_DEPRECATED||g"
 
 post-install:
+	${MKDIR} ${PREFIX}/share/gnome/applications
 	${INSTALL_DATA} ${WRKSRC}/gnome-cups-manager.desktop \
 		${PREFIX}/share/gnome/applications
 
