@@ -1,0 +1,6 @@
+@cwd /usr/local/dgd
+lpmud-2.4.5
+lpmud
+runlpmud
+bin/hname
+bin/oconv
