@@ -6201,6 +6201,7 @@ p5-WordNet-QueryData	ports/textproc/p5-WordNet-QueryData
 p5-WordNet-Similarity	ports/textproc/p5-WordNet-Similarity
 p5-X11-IdleTime	ports/x11/p5-X11-IdleTime
 p5-X11-Protocol	ports/x11/p5-X11-Protocol
+p5-X500-DN	ports/net/p5-X500-DN
 p5-XML-Catalog	ports/textproc/p5-XML-Catalog
 p5-XML-DBMS	ports/textproc/p5-XML-DBMS
 p5-XML-DOM	ports/textproc/p5-XML-DOM
