@@ -11,5 +11,5 @@ include/jconfig.h
 include/jpeglib.h
 include/jmorecfg.h
 include/jerror.h
-lib/libjpeg.so.5.0
+lib/libjpeg.so.5.1
 lib/libjpeg.a
