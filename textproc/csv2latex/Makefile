@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.c
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts a well formed csv file to a LaTeX document
 
+BROKEN=		Size mismatch
+
 USE_GETOPT_LONG=	yes
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/csv2latex

@@ -16,6 +16,8 @@ EXTRACT_ONLY=	#empty
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A LaTeX package for the display of layout elements
 
+BROKEN=		Size mismatch
+
 BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX
 BUILD_DEPENDS+=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
 BUILD_DEPENDS+=	tex:${PORTSDIR}/print/teTeX
