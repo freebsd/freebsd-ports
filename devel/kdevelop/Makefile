@@ -16,6 +16,7 @@ MAINTAINER=	demon@FreeBSD.org
 
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=	kdeui.4:${PORTSDIR}/x11/kdelibs2
+RUN_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
 .if defined(WITH_OPTIONAL_DEPENDS)
 RUN_DEPENDS+=	autoconf:${PORTSDIR}/devel/autoconf \
 		automake:${PORTSDIR}/devel/automake \
