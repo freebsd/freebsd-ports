@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sitecopy
-PORTVERSION=	0.10.15
-PORTREVISION=	1
+PORTVERSION=	0.11.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.lyra.org/sitecopy/
 
@@ -15,6 +14,8 @@ MAINTAINER=	olgeni@FreeBSD.org
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext \
 		xml.5:${PORTSDIR}/textproc/libxml
+BUILD_DEPENDS=	${LOCALBASE}/bin/neon-config:${PORTSDIR}/www/neon
+RUN_DEPENDS=	${LOCALBASE}/bin/neon-config:${PORTSDIR}/www/neon
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib -lintl"
