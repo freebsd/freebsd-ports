@@ -4,7 +4,6 @@ bin/geo-nearest
 bin/geocache2way
 bin/gpsd
 bin/gpsdrive
-bin/gpsfetchmap
 bin/gpsfetchmap.pl
 bin/gpspoint2gpsdrive.pl
 bin/gpsreplay
@@ -31,11 +30,16 @@ share/gpsdrive/README.FreeBSD
 share/gpsdrive/README.SQL
 share/gpsdrive/README.gpspoint2gspdrive
 share/gpsdrive/README.kismet
+share/gpsdrive/README.nasamaps
 share/gpsdrive/TODO
 share/gpsdrive/create.sql
 share/gpsdrive/friendsicon.png
+share/gpsdrive/gpsdriveanim.gif
+share/gpsdrive/gpsdrivemini.png
 share/gpsdrive/gpsdrivesplash.png
-share/gpsdrive/map_GPSWORLD.jpg
+share/gpsdrive/gpsicon.png
+share/gpsdrive/gpsiconbt.png
+share/gpsdrive/top_GPSWORLD.jpg
 share/gpsdrive/wp2sql
 share/locale/da/LC_MESSAGES/gpsdrive.mo
 share/locale/de/LC_MESSAGES/gpsdrive.mo
