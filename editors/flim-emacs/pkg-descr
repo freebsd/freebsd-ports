@@ -13,7 +13,7 @@ FLIM, message representation or encoding emacs lisp library for emacs.
 
 To use flim, put the following setup into your ~/.emacs:
 
-	(require 'apel-setup)
-	(require 'flim-setup)
+	(require 'apel-setupel)
+	(require 'flim-setupel)
 
 --- Porting by shige <shige@FreeBSD.ORG>

@@ -3,7 +3,7 @@
 # Date created:		9 May 1999
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1999/05/10 13:23:42 shige Exp $
+# $Id: Makefile,v 1.3 1999/05/21 13:25:30 shige Exp $
 #
 
 DISTNAME=	flim-${FLIM_VER}
@@ -17,7 +17,7 @@ PORTCLASS?=	master
 # distfile version
 FLIM_VER=	1.9.2
 FLIMDOCDIR=	share/doc/flim
-FLIM_SETUPEL=	flim-setup.el
+FLIM_SETUPEL=	flim-setupel.el
 
 .if (${PORTCLASS} == "master")
 # for emacs
@@ -49,9 +49,10 @@ RUN_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}-common
 .else
 RUN_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}
 .endif
-SCRIPTS_ENV=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER}
+SCRIPTS_ENV=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER} \
+		TARGETS="${FLIM_SETUPEL}"
 PLIST_SUB=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER} \
-		FLIMDOCDIR=${FLIMDOCDIR}
+		FLIMDOCDIR=${FLIMDOCDIR} FLIM_SETUPEL=${FLIM_SETUPEL}
 MAKE_FLAGS=	EMACS=${EMACS_CMD}
 .if (${EMACS_VER} == "19.34")
 # depends on custom: emacs-19.34 or mule-19.34
