@@ -41,17 +41,18 @@ share/Eterm/themes/tn3270/pixmaps.list
 share/Eterm/themes/trans/MAIN
 share/Eterm/themes/trans/pixmaps.list
 share/Eterm/themes/trans/trans.menu
-share/doc/Eterm/Eterm.tcap
-share/doc/Eterm/Eterm.ti
-share/doc/Eterm/ReleaseNotes
-@dirrm share/doc/Eterm
-@dirrm share/Eterm/themes/Eterm
-@dirrm share/Eterm/themes/chooser
-@dirrm share/Eterm/themes/emacs
-@dirrm share/Eterm/themes/irc
-@dirrm share/Eterm/themes/mutt
-@dirrm share/Eterm/themes/tn3270
+%%PORTDOCS%%share/doc/Eterm/Eterm.1.html
+%%PORTDOCS%%share/doc/Eterm/Eterm.tcap
+%%PORTDOCS%%share/doc/Eterm/Eterm.ti
+%%PORTDOCS%%share/doc/Eterm/ReleaseNotes
 @dirrm share/Eterm/themes/trans
-@dirrm share/Eterm/themes
+@dirrm share/Eterm/themes/tn3270
+@dirrm share/Eterm/themes/mutt
+@dirrm share/Eterm/themes/irc
+@dirrm share/Eterm/themes/emacs
+@dirrm share/Eterm/themes/chooser
+@dirrm share/Eterm/themes/Eterm
 @dirrm share/Eterm/pix
+@dirrm share/Eterm/themes
+%%PORTDOCS%%@dirrm share/doc/Eterm
 @dirrm share/Eterm
