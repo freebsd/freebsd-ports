@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bogosort
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.lysator.liu.se/~qha/bogosort/ \
 		ftp://l82.ryd.student.liu.se/pub/unix/bogosort/
