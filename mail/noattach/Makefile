@@ -7,7 +7,7 @@
 
 PORTNAME=	noattach
 PORTVERSION=	1.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.rhnet.is/pub/noattach/
 DISTNAME=	${PORTNAME}-1.1p1
@@ -19,7 +19,7 @@ COMMENT=	An attachment filter for Sendmail
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/${SENDMAIL_PORT}
 .endif
 
-SENDMAIL_PORT?=	sendmail812
+SENDMAIL_PORT?=	sendmail
 CFLAGS+=	${PTHREAD_CFLAGS:S=""==}
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
@@ -31,6 +31,8 @@ CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=	--enable-ldap
 .endif
 .if !defined(SENDMAIL_MILTER_IN_BASE)
+CONFIGURE_ENV+=	MILTER_INCLUDES="-I${LOCALBASE}/include"
+MAKE_ENV+=	MILTER_INCLUDES="-I${LOCALBASE}/include"
 LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
