@@ -1,19 +1,19 @@
 bin/yadex
-bin/yadex-1.5.1
+bin/yadex-1.5.2
 bin/ybsp
-bin/ybsp-1.5.1
-etc/yadex/1.5.1/yadex.cfg
-share/yadex/1.5.1/doom.ygd
-share/yadex/1.5.1/doom02.ygd
-share/yadex/1.5.1/doom04.ygd
-share/yadex/1.5.1/doom05.ygd
-share/yadex/1.5.1/doom2.ygd
-share/yadex/1.5.1/doompr.ygd
-share/yadex/1.5.1/heretic.ygd
-share/yadex/1.5.1/hexen.ygd
-share/yadex/1.5.1/strife.ygd
-share/yadex/1.5.1/strife10.ygd
-@dirrm share/yadex/1.5.1
+bin/ybsp-1.5.2
+etc/yadex/1.5.2/yadex.cfg
+share/yadex/1.5.2/doom.ygd
+share/yadex/1.5.2/doom02.ygd
+share/yadex/1.5.2/doom04.ygd
+share/yadex/1.5.2/doom05.ygd
+share/yadex/1.5.2/doom2.ygd
+share/yadex/1.5.2/doompr.ygd
+share/yadex/1.5.2/heretic.ygd
+share/yadex/1.5.2/hexen.ygd
+share/yadex/1.5.2/strife.ygd
+share/yadex/1.5.2/strife10.ygd
+@dirrm share/yadex/1.5.2
 @dirrm share/yadex
-@dirrm etc/yadex/1.5.1
+@dirrm etc/yadex/1.5.2
 @dirrm etc/yadex
