@@ -412,6 +412,7 @@
     SUBDIR += xpx
     SUBDIR += xrml
     SUBDIR += xsane
+    SUBDIR += xtexcad
     SUBDIR += xv
     SUBDIR += xv-m17n
     SUBDIR += xwpick
