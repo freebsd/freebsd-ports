@@ -1,6 +1,6 @@
 bin/ah-tty
 bin/ah-tty.static
 share/ah-tty.conf
-info/ah-tty.info
 @unexec install-info --delete %D/info/ah-tty.info %D/info/dir
+info/ah-tty.info
 @exec install-info %D/info/ah-tty.info %D/info/dir

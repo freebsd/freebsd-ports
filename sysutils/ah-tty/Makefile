@@ -21,5 +21,7 @@ MAN1=		ah-tty.1
 post-patch:
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' \
 		${WRKSRC}/dillib/vty/vtlabel.c
+	@${REINPLACE_CMD} -e 's|##x|x|' \
+		${WRKSRC}/include/platform.h
 
 .include <bsd.port.mk>
