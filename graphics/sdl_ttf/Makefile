@@ -7,6 +7,7 @@
 
 PORTNAME=	sdl_ttf
 PORTVERSION=	2.0.5
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_ttf/release/
 DISTNAME=	SDL_ttf-${PORTVERSION}
@@ -14,25 +15,22 @@ DISTNAME=	SDL_ttf-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library to use TrueType fonts to render text in SDL applications
 
-BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
-SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
-
-USE_LIBTOOL=	yes
+USE_SDL=	yes
+USE_MESA=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
+USE_LIBTOOL=	yes
+LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype2 \
+			  -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
-CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
-		CPPFLAGS="-I${LOCALBASE}/include/freetype2 \
-			  -I${LOCALBASE}/include"
-
-post-extract:
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
-		's|-release \$$\(LT_RELEASE\)||g'
 
 post-configure:
-	@${PERL} -pi -e 's|^deplibs_check_method=.*|deplibs_check_method=pass_all|' \
-		${WRKSRC}/libtool
+	@${REINPLACE_CMD} -e \
+		's|^deplibs_check_method=.*|deplibs_check_method=pass_all|' \
+			${WRKSRC}/libtool
 
 .include <bsd.port.mk>
