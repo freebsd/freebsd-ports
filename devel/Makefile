@@ -829,6 +829,7 @@
     SUBDIR += p5-PV
     SUBDIR += p5-Parallel-ForkManager
     SUBDIR += p5-Params-Validate
+    SUBDIR += p5-Parse-CPAN-Packages
     SUBDIR += p5-Parse-PerlConfig
     SUBDIR += p5-Parse-RecDescent
     SUBDIR += p5-Parse-Yapp
