@@ -1,0 +1,4 @@
+@unexec install-info --delete --section="Miscellaneous" --entry="* Jargon: (jargon).             The hacker's dictionary." %D/info/jargon.info %D/info/dir
+info/jargon.info
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info --section="Miscellaneous" --entry="* Jargon: (jargon).             The hacker's dictionary." %D/info/jargon.info %D/info/dir
