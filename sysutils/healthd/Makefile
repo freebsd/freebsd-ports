@@ -31,6 +31,12 @@ PLIST_SUB=	HDDOCS=''
 PLIST_SUB=	HDDOCS='@comment '
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 400014
+CONFIGURE_ARGS+=	--disable-ipv6
+.endif
+
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/healthd.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/healthd.sh startup file."; \
@@ -48,4 +54,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/PROTOCOL ${HDDOCDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
