@@ -5,6 +5,7 @@ lib/erlang/lib/xmlrpc/ebin/xmlrpc_encode.beam
 lib/erlang/lib/xmlrpc/ebin/xmlrpc_http.beam
 lib/erlang/lib/xmlrpc/ebin/xmlrpc_util.beam
 lib/erlang/lib/xmlrpc/src/Makefile
+lib/erlang/lib/xmlrpc/src/example_serv.erl
 lib/erlang/lib/xmlrpc/src/log.hrl
 lib/erlang/lib/xmlrpc/src/tcp_serv.erl
 lib/erlang/lib/xmlrpc/src/xmlrpc.erl
