@@ -1,11 +1,11 @@
---- af/gr/unix/Makefile.orig	Fri Apr  9 08:47:46 1999
-+++ af/gr/unix/Makefile	Sun May  9 10:40:19 1999
-@@ -25,7 +25,7 @@
- CPPSRCS=		gr_UnixGraphics.cpp	\
- 			gr_UnixImage.cpp
- 
--INCLUDES=		-I/usr/X11R6/include
-+INCLUDES=		-I/usr/local/include -I/usr/X11R6/include
- 
- TARGETS=		$(OBJS)
- 
+--- wp/impexp/xp/ie_imp_MsWord_97.h	Sun Oct 31 14:05:06 1999
++++ wp/impexp/xp/ie_imp_MsWord_97.h.new	Sun Oct 31 14:05:27 1999
+@@ -24,7 +24,7 @@
+ //#include <stdlib.h>
+ #include <stdio.h>
+ #include "wv.h"
+-#include "xmlparse.h"
++#include <xmlparse.h>
+ #include "ut_vector.h"
+ #include "ut_stack.h"
+ #include "ie_imp.h"
