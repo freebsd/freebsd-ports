@@ -57,3 +57,8 @@
 
 # Dictionaries should have no extra noise in them
 ^src/share/dict/*
+
+# OpenSSL Generated manpages
+^src/secure/lib/libcrypto/man
+^src/secure/lib/libssl/man
+^src/secure/usr.bin/openssl/man
