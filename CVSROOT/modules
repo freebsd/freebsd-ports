@@ -6978,6 +6978,7 @@ smalleiffel-devel	ports/lang/smalleiffel-devel
 smalltalk	ports/lang/smalltalk
 smapi		ports/mail/smapi
 smartdoc	ports/textproc/smartdoc
+smartdoc-devel	ports/textproc/smartdoc-devel
 smarty		ports/www/smarty
 smb2www		ports/www/smb2www
 smb_auth	ports/www/smb_auth
