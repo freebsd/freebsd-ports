@@ -63,6 +63,7 @@
     SUBDIR += mupen64-base
     SUBDIR += mupen64-dummyaudio
     SUBDIR += mupen64-glide
+    SUBDIR += mupen64-gln64
     SUBDIR += osf1_base
     SUBDIR += p-interp
     SUBDIR += pcemu
