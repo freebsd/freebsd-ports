@@ -27,8 +27,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 	
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_EXIF) || exists(${LOCALBASE}/lib/libexif.so.8)
-LIB_DEPENDS+=	exif.8:${PORTSDIR}/graphics/libexif
+.if defined(WITH_EXIF) || exists(${LOCALBASE}/lib/libexif.so.10)
+LIB_DEPENDS+=	exif.10:${PORTSDIR}/graphics/libexif
 .endif
 
 .include <bsd.port.post.mk>
