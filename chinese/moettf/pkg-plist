@@ -1,6 +1,7 @@
-lib/X11/fonts/TrueType/moe_kai.ttf
-lib/X11/fonts/TrueType/moe_lishu.ttf
-lib/X11/fonts/TrueType/moe_sung.ttf
-@unexec if [ `wc -c %D/lib/X11/fonts/TrueType/fonts.dir | awk '{print $1}'` = 2 ]; then rm -f %D/lib/X11/fonts/TrueType/fonts.dir; fi
-@unexec if [ ! -s %D/lib/X11/fonts/TrueType/fonts.alias ]; then rm -f %D/lib/X11/fonts/TrueType/fonts.alias; fi
-@unexec rmdir %D/lib/X11/fonts/TrueType 2>/dev/null || true
+share/fonts/TrueType/moe_kai.ttf
+share/fonts/TrueType/moe_lishu.ttf
+share/fonts/TrueType/moe_sung.ttf
+share/fonts/TrueType/moe_sungext.ttf
+share/fonts/TrueType/moe_sungsym.ttf
+@unexec rmdir %D/share/fonts/TrueType 2>/dev/null || true
+@unexec rmdir %D/share/fonts 2>/dev/null || true
