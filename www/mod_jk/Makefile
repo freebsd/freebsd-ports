@@ -6,9 +6,12 @@
 #
 
 PORTNAME=	mod_jk
-PORTVERSION=	3.2.3
+PORTVERSION=	3.2.4
 CATEGORIES=	www
-MASTER_SITES=	http://www.apache.org/dist/jakarta/jakarta-tomcat/release/v${PORTVERSION}/src/
+MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-tomcat/release/v${PORTVERSION}/src/ \
+		http://www.metaverse.nl/~ernst/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	znerd
 DISTNAME=	jakarta-tomcat-${PORTVERSION}-src
 
 MAINTAINER=	znerd@FreeBSD.org
@@ -16,9 +19,9 @@ MAINTAINER=	znerd@FreeBSD.org
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13 \
 		${LOCALBASE}/jdk1.1.8/bin/javac:${PORTSDIR}/java/jdk
 RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13 \
-		${LOCALBASE}/tomcat/lib/webserver.jar:${PORTSDIR}/www/jakarta-tomcat
+		${LOCALBASE}/jakarta-tomcat${PORTVERSION}/lib/webserver.jar:${PORTSDIR}/www/jakarta-tomcat
 
-USE_GMAKE=	yes
+USE_GMAKE=	YES
 MAKEFILE=	Makefile.freebsd
 WRKSRC=		${WRKDIR}/jakarta-tomcat-${PORTVERSION}-src/src/native/apache1.3
 
