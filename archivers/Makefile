@@ -12,6 +12,7 @@
     SUBDIR += lha
     SUBDIR += linux_rar
     SUBDIR += lzo
+    SUBDIR += makeself
     SUBDIR += nulib
     SUBDIR += p5-Compress-Zlib
     SUBDIR += pkzip
