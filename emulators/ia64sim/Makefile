@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.pacificsites.com/~ccrayne/  \
 		http://odin.asgard/
 DISTFILES=	${PORTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ia64@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 EXTRACT_BEFORE_ARGS=	-qLa
 WRKSRC=		${WRKDIR}/home/chuck/ia64simcc
