@@ -19,7 +19,7 @@
 -	# Start the program in the background from a sub-shell
 -	# so that process will appear in the ps output immediately.
 -	sh -c "$PROGRAM $OPTIONS &"
-+	cd $STATE_DIR && daemon -f $PROGRAM $OPTIONS
++	cd $STATE_DIR && /usr/sbin/daemon -f $PROGRAM $OPTIONS &
  
 -	pid=`getpid "$PROGRAM"`
 -	if [ X"$pid" = X ]; then
