@@ -7,6 +7,8 @@
 
 MASTERDIR=		${.CURDIR}/../horde
 
+IGNORE=			"Cannot package: conflict between PHP4 and PHP5"
+
 DEFAULT_PHP_VER=	5
 WITH_PHP5=		yes
 
