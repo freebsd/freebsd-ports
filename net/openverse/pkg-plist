@@ -101,4 +101,4 @@ lib/OpenVerse/icons/unlocked.gif~
 @dirrm lib/OpenVerse/rooms
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/help
 @dirrm lib/OpenVerse/
-%%PORTDOCS%%@dirrm %%DOCSDIR%% 
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
