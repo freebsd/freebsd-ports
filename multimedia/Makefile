@@ -114,6 +114,7 @@
     SUBDIR += p5-RIFF-Info
     SUBDIR += p5-Video-Info
     SUBDIR += p5-Video-OpenQuicktime
+    SUBDIR += pitivi
     SUBDIR += ppm2fli
     SUBDIR += pvr250
     SUBDIR += py-gstreamer
