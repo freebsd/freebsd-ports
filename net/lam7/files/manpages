@@ -9,11 +9,13 @@ lamclean.1 \
 lamd.1 \
 lamexec.1 \
 lamgrow.1 \
+laminfo.1 \
 lamshrink.1 \
 lamtrace.1 \
 mpiCC.1 \
 mpic++.1 \
 mpicc.1 \
+mpiexec.1 \
 mpif77.1 \
 mpimsg.1 \
 mpirun.1 \
@@ -26,13 +28,12 @@ wipe.1
 MAN3= \
 MPIL_Comm_gps.3 \
 MPIL_Comm_id.3 \
-MPIL_Comm_parent.3 \
+MPIL_Request_get_name.3 \
+MPIL_Request_set_name.3 \
 MPIL_Signal.3 \
-MPIL_Spawn.3 \
 MPIL_Trace_off.3 \
 MPIL_Trace_on.3 \
 MPIL_Type_id.3 \
-MPIL_Universe_size.3 \
 MPIO_Request_c2f.3 \
 MPIO_Request_f2c.3 \
 MPIO_Test.3 \
@@ -297,7 +298,10 @@ MPI_Wait.3 \
 MPI_Waitall.3 \
 MPI_Waitany.3 \
 MPI_Waitsome.3 \
+MPI_Win_Lock.3 \
+MPI_Win_Test.3 \
 MPI_Win_c2f.3 \
+MPI_Win_call_errhandler.3 \
 MPI_Win_complete.3 \
 MPI_Win_create.3 \
 MPI_Win_create_errhandler.3 \
@@ -316,6 +320,7 @@ MPI_Win_set_attr.3 \
 MPI_Win_set_errhandler.3 \
 MPI_Win_set_name.3 \
 MPI_Win_start.3 \
+MPI_Win_unlock.3 \
 MPI_Win_wait.3 \
 MPI_Wtick.3 \
 MPI_Wtime.3 \
@@ -336,4 +341,9 @@ MAN7= \
 LAM.7 \
 MPI.7 \
 lam.7 \
+lamssi.7 \
+lamssi_boot.7 \
+lamssi_coll.7 \
+lamssi_cr.7 \
+lamssi_rpi.7 \
 mpi.7
