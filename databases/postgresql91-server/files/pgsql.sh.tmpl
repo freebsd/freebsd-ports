@@ -11,7 +11,7 @@ start)
     [ -d %%PREFIX%%/%%PG_PREFIX%%lib ] && /sbin/ldconfig -m %%PREFIX%%/%%PG_PREFIX%%lib
     [ -x ${PGBIN}/pg_ctl ] && {
 	su -l pgsql -c \
-	    'exec %%PREFIX%%/%%PG_PREFIX%%bin/pg_ctl start -w -l ~pgsql/errlog'
+	    '[ -d ${PGDATA} ] && exec %%PREFIX%%/%%PG_PREFIX%%bin/pg_ctl start -s -w -l ~pgsql/errlog'
 	echo -n ' pgsql'
     }
     ;;
