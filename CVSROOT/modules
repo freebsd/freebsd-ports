@@ -1479,6 +1479,7 @@ en-ooodict-CA	ports/editors/ooodict-en_CA
 en-ooodict-GB	ports/editors/ooodict-en_GB
 en-ooodict-US	ports/editors/ooodict-en_US
 en-porters-handbook	doc/en_US.ISO8859-1/books/porters-handbook
+enca		ports/converters/enca
 encompass	ports/www/encompass
 endeavour	ports/x11-fm/endeavour
 enfle		ports/graphics/enfle
