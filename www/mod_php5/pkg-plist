@@ -239,7 +239,7 @@ lib/php/build/rules.mk
 lib/php/build/rules_common.mk
 lib/php/build/rules_pear.mk
 lib/php/build/shtool
-libexec/apache/libphp4.so
+%%MOD_DIR%%/libphp4.so
 @exec %D/sbin/apxs -e -a -n php4 %f
 @unexec %D/sbin/apxs -e -A -n php4 %f
 @dirrm include/php/TSRM
