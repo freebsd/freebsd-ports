@@ -24,7 +24,8 @@ MAN3=	lcrzo.3 lcrzo_address.3 lcrzo_conf.3 lcrzo_data.3 lcrzo_device.3 \
 	lcrzo_icmp.3 lcrzo_ipc.3 lcrzo_ipopt.3 lcrzo_list.3 lcrzo_misc.3 \
 	lcrzo_obso.3 lcrzo_packet.3 lcrzo_print.3 lcrzo_process.3 \
 	lcrzo_record.3 lcrzo_sniff.3 lcrzo_sock.3 lcrzo_spoof.3 \
-	lcrzo_string.3 lcrzo_tcpopt.3 lcrzo_time.3 lcrzo_types.3 lcrzo_wait.3
+	lcrzo_string.3 lcrzo_tcpopt.3 lcrzo_time.3 lcrzo_types.3 lcrzo_wait.3 \
+	lcrzo_fd2.3 lcrzo_winhandle.3 lcrzo_kbd.3
 
 post-patch:
 	cd ${WRKSRC} && ${SH} ${WRKSRC}/genemake
