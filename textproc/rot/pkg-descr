@@ -1,0 +1,2 @@
+Rot rotates a file so that lines become columns and vice versa. This allows
+line-oriented Unix filters like grep to operate on columns instead.

@@ -165,6 +165,7 @@
     SUBDIR += rand
     SUBDIR += replaceit
     SUBDIR += rman
+    SUBDIR += rot
     SUBDIR += rtf2htm
     SUBDIR += ruby-csv
     SUBDIR += ruby-erb
