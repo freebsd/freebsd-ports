@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	star
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.berlios.de/pub/star/
 

@@ -1,10 +1,10 @@
---- RULES/i386-freebsd-cc.rul.orig	Thu May  6 02:48:51 1999
-+++ RULES/i386-freebsd-cc.rul	Thu May  6 02:50:11 1999
+--- RULES/i386-freebsd-cc.rul.orig	Wed Oct 16 05:43:39 2002
++++ RULES/i386-freebsd-cc.rul	Tue Nov 26 03:09:44 2002
 @@ -24,7 +24,7 @@
  ###########################################################################
  
  CPPFLAGS=	$(CPPOPTS) $(CPPOPTX)
--CFLAGS=		$(COPTS) $(CWARNOPTS) $(COPTOPT) $(COPTX)
+-CFLAGS=		$(COPTS) $(CWARNOPTS) $(COPTOPT) $(GCCOPTOPT) $(COPTX)
 +CFLAGS+=	-static $(COPTS) $(CWARNOPTS) $(COPTX)
  
  CPPOPTS=	-I. -I$(ARCHDIR) -I$(OINCSDIR) $(INCDIRS:%=-I%) $(OSDEFS)
@@ -34,6 +34,6 @@
  TSORT=		tsort
  
  RMDEP=		:
--MKDEP=		@echo "	==> MAKE DEPENDENCIES \"$@\""; $(RMDEP); gcc -M
-+MKDEP=		@echo "	==> MAKE DEPENDENCIES \"$@\""; $(RMDEP); ${CCOM} -M
+-MKDEP=		@echo "	==> MAKING DEPENDENCIES \"$@\""; $(RMDEP); gcc -M
++MKDEP=		@echo "	==> MAKING DEPENDENCIES \"$@\""; $(RMDEP); ${CCOM} -M
  MKDEP_OUT=
