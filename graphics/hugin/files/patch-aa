@@ -1,0 +1,456 @@
+diff -ur --new-file hugin/configure hugin.mod/configure
+--- configure	Sat Dec 13 08:32:10 2003
++++ configure	Fri Sep 17 17:52:37 2004
+@@ -47,7 +47,7 @@
+ }
+ 
+ print "checking for wxwin32 2.4 or greater: ";
+-$_ = `wx-config --version`;
++$_ = `wxgtk2-2.4-config --version`;
+ 
+ chomp;
+ m/^(\d).(\d).(\d)/;
+@@ -58,8 +58,8 @@
+     exit(1);
+ }
+ 
+-my $WXWIN_CFLAGS=`wx-config --cxxflags`;
+-my $WXWIN_LFLAGS=`wx-config --libs`;
++my $WXWIN_CFLAGS=`wxgtk2-2.4-config --cxxflags`;
++my $WXWIN_LFLAGS=`wxgtk2-2.4-config --libs`;
+ chomp($WXWIN_CFLAGS);
+ chomp($WXWIN_LFLAGS);
+ 
+@@ -76,7 +76,7 @@
+ if ($platform eq "win32") {
+     $XRC_LFLAGS="-lwx_msw_xrc-2.4";
+ } elsif ($platform eq "unix") {
+-    $XRC_LFLAGS="-lwx_gtk_xrc-2.4";
++    $XRC_LFLAGS="-lwx_gtk2_xrc-2.4";
+ }
+ 
+ # check for external vigra
+diff -ur --new-file hugin/src/PanoImage/makefile.unx hugin.mod/src/PanoImage/makefile.unx
+--- src/PanoImage/makefile.unx	Thu Jul 31 10:43:28 2003
++++ src/PanoImage/makefile.unx	Fri Sep 17 17:52:37 2004
+@@ -27,18 +27,18 @@
+ .SUFFIXES:	.o .cpp
+ 
+ .cpp.o :
+-	$(CC) $(CC_ARGS) -c `wx-config --cflags` -o $@ $<
++	$(CC) $(CC_ARGS) -c `wxgtk2-2.4-config --cflags` -o $@ $<
+ 
+ all:    $(PROGRAM)
+ 
+ apps:	$(PROGRAM)
+ 
+ $(PROGRAM):	$(OBJECTS)
+-	$(CC) -o $(PROGRAM) $(OBJECTS) `wx-config --libs`
++	$(CC) -o $(PROGRAM) $(OBJECTS) `wxgtk2-2.4-config --libs`
+ 
+ clean: 
+ 	rm -f *.o $(PROGRAM)
+ 
+ install: $(PROGRAM)
+ 	mkdir -p $(INSTALL_BIN_DIR)
+-	-cp -a $(PROGRAM) $(INSTALL_BIN_DIR)
++	-cp $(PROGRAM) $(INSTALL_BIN_DIR)
+diff -ur --new-file hugin/src/PanoImage/makefile.unx.tmpl hugin.mod/src/PanoImage/makefile.unx.tmpl
+--- src/PanoImage/makefile.unx.tmpl	Mon Aug  4 15:06:47 2003
++++ src/PanoImage/makefile.unx.tmpl	Fri Sep 17 17:52:37 2004
+@@ -27,18 +27,18 @@
+ .SUFFIXES:	.o .cpp
+ 
+ .cpp.o :
+-	$(CC) $(CC_ARGS) -c `wx-config --cflags` -o $@ $<
++	$(CC) $(CC_ARGS) -c `wxgtk2-2.4-config --cflags` -o $@ $<
+ 
+ all:    $(PROGRAM)
+ 
+ apps:	$(PROGRAM)
+ 
+ $(PROGRAM):	$(OBJECTS)
+-	$(CC) -o $(PROGRAM) $(OBJECTS) `wx-config --libs`
++	$(CC) -o $(PROGRAM) $(OBJECTS) `wxgtk2-2.4-config --libs`
+ 
+ clean:
+ 	rm -f *.o $(PROGRAM)
+ 
+ install: $(PROGRAM)
+ 	mkdir -p $(INSTALL_BIN_DIR)
+-	-cp -a $(PROGRAM) $(INSTALL_BIN_DIR)
++	-cp $(PROGRAM) $(INSTALL_BIN_DIR)
+diff -ur --new-file hugin/src/PanoImage/utils.cpp hugin.mod/src/PanoImage/utils.cpp
+--- src/PanoImage/utils.cpp	Sun Jul 13 04:47:41 2003
++++ src/PanoImage/utils.cpp	Fri Sep 17 17:17:57 2004
+@@ -35,7 +35,7 @@
+   struct tm t;
+   struct timeval tv;
+   gettimeofday(&tv,NULL);
+-  localtime_r(&tv.tv_sec, &t);
++  localtime_r((time_t *)&tv.tv_sec, &t);
+   strftime(tmp,99,"%H:%M:%S",&t);
+   sprintf(tmp+8,".%06ld",tv.tv_usec);
+   return tmp;
+diff -ur --new-file hugin/src/Panorama/Panorama.cpp hugin.mod/src/Panorama/Panorama.cpp
+--- src/Panorama/Panorama.cpp	Mon Dec 29 06:48:04 2003
++++ src/Panorama/Panorama.cpp	Fri Sep 17 17:17:57 2004
+@@ -304,9 +304,9 @@
+         // create suitable transform, pano -> image
+         double ratio =  ((double) state.images[i].getWidth())/state.images[i].getHeight();
+         int w = 20;
+-        int h = (int) round(20*ratio);
++        int h = (int) rint(20*ratio);
+         if (ratio > 1) {
+-            w = (int) round(20*ratio);
++            w = (int) rint(20*ratio);
+             h = 20;
+         }
+         T.createInvTransform(Diff2D(w, h),
+diff -ur --new-file hugin/src/Panorama/utils.cpp hugin.mod/src/Panorama/utils.cpp
+--- src/Panorama/utils.cpp	Thu Nov 27 16:15:23 2003
++++ src/Panorama/utils.cpp	Fri Sep 17 17:17:57 2004
+@@ -38,7 +38,7 @@
+   struct tm t;
+   struct timeval tv;
+   gettimeofday(&tv,NULL);
+-  localtime_r(&tv.tv_sec, &t);
++  localtime_r((time_t *)&tv.tv_sec, &t);
+   strftime(tmp,99,"%H:%M:%S",&t);
+   sprintf(tmp+8,".%06ld",tv.tv_usec);
+   return tmp;
+diff -ur --new-file hugin/src/hugin/CPEditorPanel.cpp hugin.mod/src/hugin/CPEditorPanel.cpp
+--- src/hugin/CPEditorPanel.cpp	Fri Jan  2 17:58:05 2004
++++ src/hugin/CPEditorPanel.cpp	Fri Sep 17 17:17:57 2004
+@@ -494,7 +494,7 @@
+     if (p.x < (int) pImg.getWidth() && p.x >= 0
+         && p.y < (int) pImg.getHeight() && p.y >= 0)
+     {
+-        otherImg->setNewPoint(wxPoint((int) round(op.x), (int) round(op.y)));
++        otherImg->setNewPoint(wxPoint((int) rint(op.x), (int) rint(op.y)));
+         // if fine tune is checked, run a fine tune session as well.
+         // hmm probably there should be another separate function for this..
+         if (m_fineTuneCB->IsChecked()) {
+@@ -514,8 +514,8 @@
+                                          sWidth,
+                                          p2);
+             wxString str = wxConfigBase::Get()->Read("/CPEditorPanel/finetuneThreshold","0.8");
+-            wxPoint corrPoint((int)round(p2.x),
+-                              (int)round(p2.y) );
++            wxPoint corrPoint((int)rint(p2.x),
++                              (int)rint(p2.y) );
+             double thresh = utils::lexical_cast<double>(str);
+             if (xcorr < thresh) {
+                 // low xcorr
+@@ -648,8 +648,8 @@
+                     // zoom to 100 percent. & set second stage
+                     // to abandon finetune this time.
+                     thisImg->setScale(1);
+-                    thisImg->setNewPoint(wxPoint((int)round(p2.x),
+-                                                 (int)round(p2.y) ));
++                    thisImg->setNewPoint(wxPoint((int)rint(p2.x),
++                                                 (int)rint(p2.y) ));
+                     thisImg->update();
+                     // Bad correlation result.
+                     int answer = wxMessageBox(
+@@ -669,8 +669,8 @@
+                     if (!m_autoAddCB->IsChecked()) {
+                         thisImg->setScale(1);
+                     }
+-                    thisImg->setNewPoint(wxPoint((int)round(p2.x),
+-                                                 (int)round(p2.y) ));
++                    thisImg->setNewPoint(wxPoint((int)rint(p2.x),
++                                                 (int)rint(p2.y) ));
+                 }
+ 
+                 MainFrame::Get()->SetStatusText(wxString::Format("found corrosponding point, mean xcorr coefficient: %f",xcorr),0);
+@@ -1580,13 +1580,13 @@
+ 
+     unsigned int srcNr = cp.image1Nr;
+     unsigned int moveNr = cp.image2Nr;
+-    Diff2D srcPnt((int) round(cp.x1), (int) round(cp.y1));
+-    Diff2D movePnt((int) round(cp.x2), (int) round(cp.y2));
++    Diff2D srcPnt((int) rint(cp.x1), (int) rint(cp.y1));
++    Diff2D movePnt((int) rint(cp.x2), (int) rint(cp.y2));
+     if (left) {
+         srcNr = cp.image2Nr;
+         moveNr = cp.image1Nr;
+-	srcPnt = Diff2D((int) round(cp.x2), (int) round(cp.y2));
+-	movePnt = Diff2D((int) round(cp.x1), (int) round(cp.y1));
++	srcPnt = Diff2D((int) rint(cp.x2), (int) rint(cp.y2));
++	movePnt = Diff2D((int) rint(cp.x1), (int) rint(cp.y1));
+     }
+ 
+     FDiff2D result = LocalFineTunePoint(srcNr, srcPnt, moveNr, movePnt);
+@@ -1628,13 +1628,13 @@
+     FDiff2D result = LocalFineTunePoint(srcNr, srcPnt, moveNr, movePnt);
+ 
+     if (left) {
+-        m_leftImg->setNewPoint(wxPoint((int) round(result.x),
+-                                        (int) round(result.y)));
++        m_leftImg->setNewPoint(wxPoint((int) rint(result.x),
++                                        (int) rint(result.y)));
+         m_leftImg->update();
+ 
+     } else {
+-        m_rightImg->setNewPoint(wxPoint((int) round(result.x),
+-                                        (int) round(result.y)));
++        m_rightImg->setNewPoint(wxPoint((int) rint(result.x),
++                                        (int) rint(result.y)));
+         m_rightImg->update();
+     }
+ }
+diff -ur --new-file hugin/src/hugin/ImageOrientationPanel.cpp hugin.mod/src/hugin/ImageOrientationPanel.cpp
+--- src/hugin/ImageOrientationPanel.cpp	Thu Nov 27 15:30:27 2003
++++ src/hugin/ImageOrientationPanel.cpp	Fri Sep 17 17:17:57 2004
+@@ -224,10 +224,10 @@
+ //            DEBUG_DEBUG("line point "<< i << ":" << pos.x << ", " << pos.y);
+             if (fabs(pos.x) < 32000 && fabs(pos.y) < 32000 &&
+                 fabs(old_pos.x) < 32000 && fabs(pos.y) < 32000) {
+-                dc.DrawLine((int) round(m_offsetX + (old_pos.x * m_scaleFactor)),
+-                            (int) round(m_offsetY + (old_pos.y * m_scaleFactor)),
+-                            (int) round(m_offsetX + (pos.x * m_scaleFactor)),
+-                            (int) round(m_offsetY + (pos.y * m_scaleFactor)));
++                dc.DrawLine((int) rint(m_offsetX + (old_pos.x * m_scaleFactor)),
++                            (int) rint(m_offsetY + (old_pos.y * m_scaleFactor)),
++                            (int) rint(m_offsetX + (pos.x * m_scaleFactor)),
++                            (int) rint(m_offsetY + (pos.y * m_scaleFactor)));
+             } else {
+                 DEBUG_DEBUG("discarting point, too far outside");
+             }
+@@ -249,10 +249,10 @@
+             m_transform.transform(pos,pos);
+             m_tCartToImg(pos,pos);
+ //            DEBUG_DEBUG("line point "<< i << ":" << pos.x << ", " << pos.y);
+-            dc.DrawLine((int) round(m_offsetX + (old_pos.x * m_scaleFactor)),
+-                        (int) round(m_offsetY + (old_pos.y * m_scaleFactor)),
+-                        (int) round(m_offsetX + (pos.x * m_scaleFactor)),
+-                        (int) round(m_offsetY + (pos.y * m_scaleFactor)));
++            dc.DrawLine((int) rint(m_offsetX + (old_pos.x * m_scaleFactor)),
++                        (int) rint(m_offsetY + (old_pos.y * m_scaleFactor)),
++                        (int) rint(m_offsetX + (pos.x * m_scaleFactor)),
++                        (int) rint(m_offsetY + (pos.y * m_scaleFactor)));
+             old_pos = pos;
+         }
+     }
+diff -ur --new-file hugin/src/hugin/ImagesList.cpp hugin.mod/src/hugin/ImagesList.cpp
+--- src/hugin/ImagesList.cpp	Sat Dec 27 13:50:26 2003
++++ src/hugin/ImagesList.cpp	Fri Sep 17 17:17:57 2004
+@@ -141,11 +141,11 @@
+ 
+     if ( h > w ) {
+         // protrait
+-        bW = (int) nearbyint(h/w * size);
++        bW = (int) rint(h/w * size);
+         bH = size;
+     } else {
+         bW = size;
+-        bH = (int) nearbyint(h/w * size);
++        bH = (int) rint(h/w * size);
+     }
+     wxImage img = s_img->Scale(bW, bH);
+     img.SaveFile("test.pnm");
+diff -ur --new-file hugin/src/hugin/MainFrame.cpp hugin.mod/src/hugin/MainFrame.cpp
+--- src/hugin/MainFrame.cpp	Fri Jan  2 17:55:18 2004
++++ src/hugin/MainFrame.cpp	Fri Sep 17 17:17:57 2004
+@@ -847,10 +847,10 @@
+                         "/CPEditorPanel/smallSearchWidth",14);
+                     vigra_ext::CorrelationResult res;
+                     res = vigra_ext::PointFineTune(templImg,
+-                                                   vigra::Diff2D((int)round(cps[*it].x1), (int)round(cps[*it].y1)),
++                                                   vigra::Diff2D((int)rint(cps[*it].x1), (int)rint(cps[*it].y1)),
+                                                    templWidth,
+                                                    searchImg,
+-                                                   vigra::Diff2D((int) round(cps[*it].x2), (int) round(cps[*it].y2)),
++                                                   vigra::Diff2D((int) rint(cps[*it].x2), (int) rint(cps[*it].y2)),
+                                                    sWidth);
+                     if (res.maxi > 0.75) {
+                         // only update if a good correlation was found
+diff -ur --new-file hugin/src/hugin/PreviewFrame.cpp hugin.mod/src/hugin/PreviewFrame.cpp
+--- src/hugin/PreviewFrame.cpp	Thu Nov 27 15:30:27 2003
++++ src/hugin/PreviewFrame.cpp	Fri Sep 17 17:17:57 2004
+@@ -198,8 +198,8 @@
+     }
+     SetStatusText(wxString::Format("%.1f x %.1f, %s", opts.HFOV, opts.VFOV,
+                                    projection.c_str()),1);
+-    m_HFOVSlider->SetValue((int) round(opts.HFOV));
+-    m_VFOVSlider->SetValue((int) round(opts.VFOV));
++    m_HFOVSlider->SetValue((int) rint(opts.HFOV));
++    m_VFOVSlider->SetValue((int) rint(opts.VFOV));
+ 	m_druid.Update(m_pano);
+ }
+ 
+diff -ur --new-file hugin/src/hugin/PreviewPanel.cpp hugin.mod/src/hugin/PreviewPanel.cpp
+--- src/hugin/PreviewPanel.cpp	Sat Dec 27 13:50:26 2003
++++ src/hugin/PreviewPanel.cpp	Fri Sep 17 17:17:57 2004
+@@ -381,6 +381,6 @@
+             point.x = m_panoImgSize.GetWidth()-1;
+         if (point.y >= m_panoImgSize.GetHeight())
+             point.y = m_panoImgSize.GetHeight() -1;
+-        dc.DrawPoint((int)round(offX + point.x), (int)round(offY + point.y));
++        dc.DrawPoint((int)rint(offX + point.x), (int)rint(offY + point.y));
+     }
+ }
+diff -ur --new-file hugin/src/makefiles/config.mk hugin.mod/src/makefiles/config.mk
+--- src/makefiles/config.mk	Wed Dec 31 21:00:00 1969
++++ src/makefiles/config.mk	Fri Sep 17 17:17:57 2004
+@@ -0,0 +1,125 @@
++# ========================================================================
++#
++#  config.mk
++#
++#  Author: Patric Jensfelt
++#
++#  Changes by Pablo d'Angelo
++#   - removed CORBA stuff
++#   - added LIBS, APPS and TESTS expansion (written by Boris Kluge)
++#   - make static instead of shared libraries
++#
++#  This library is free software; you can redistribute it and/or
++#  modify it under the terms of the GNU Lesser General Public
++#  License as published by the Free Software Foundation; either
++#  version 2.1 of the License, or (at your option) any later version.
++#
++#
++#  This library is distributed in the hope that it will be useful,
++#  but WITHOUT ANY WARRANTY; without even the implied warranty of
++#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++#  Lesser General Public License for more details.
++#
++#  You should have received a copy of the GNU Lesser General Public
++#  License along with this library; if not, write to the Free Software
++#  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
++#
++# ========================================================================
++
++# this is set by the individual makefiles. it is not the install prefix!
++# do not change
++CODE_ROOT = $(PREFIX)
++
++# ========================================================================
++# install locations
++# ========================================================================
++
++INSTALL_PREFIX=/usr/local
++INSTALL_ETC_DIR=/etc
++INSTALL_BIN_DIR=$(INSTALL_PREFIX)/bin
++INSTALL_DOC_DIR=$(INSTALL_PREFIX)/share/doc/hugin
++INSTALL_DATA_DIR=$(INSTALL_PREFIX)/share/hugin
++INSTALL_XRC_DIR=$(INSTALL_DATA_DIR)/xrc
++INSTALL_XRC_DATA_DIR=$(INSTALL_XRC_DIR)/data
++INSTALL_LOCALE_DIR=$(INSTALL_PREFIX)/share/locale
++INSTALL_DESKTOP_DIR=$(INSTALL_PREFIX)/share/applications
++
++
++# ========================================================================
++# General settings
++# ========================================================================
++
++PLATFORM = unix
++
++# the programs we use (TODO: use configure to detect them)
++CC            = gcc
++CXX           = g++
++CPP	      = gcc -E
++PERL	      = perl
++AR            = ar r
++RANLIB        = ranlib
++ECHO          = @echo
++RM	      = rm -rf
++MKDIR         = install -d
++
++INSTALL       = install -c -p
++INSTALL_PROGRAM= ${INSTALL} $(INSTALL_STRIP_FLAG)
++INSTALL_DATA  = ${INSTALL} -m 644
++INSTALL_SCRIPT= ${INSTALL}
++INSTALL_HEADER= $(INSTALL_DATA)
++
++MSGFMT        = msgfmt -v
++MSGMERGE      = msgmerge
++XGETTEXT      = xgettext
++XARGS         = xargs
++
++# common xgettext args: C++ syntax, use the specified macro names as markers
++XGETTEXT_ARGS=-C -k_ -s -j
++
++
++OBJ_DIR       = .obj
++
++DEPEND	      = Makefile.depend
++
++# ========================================================================
++# Define path to different types of files
++# ========================================================================
++
++INC_DIR   = $(CODE_ROOT)/include
++LIB_DIR   = $(CODE_ROOT)/lib
++BIN_DIR   = $(CODE_ROOT)/bin
++TST_DIR   = $(CODE_ROOT)/test-bin
++
++# ========================================================================
++# Command line argument and flags for make
++# ========================================================================
++
++ARFLAGS		= rv
++
++CXXFLAGS   +=
++LFLAGS     += -L$(LIB_DIR)
++
++CFLAGS	   += -I. -I$(INC_DIR)
++CFLAGS     += -Wall
++CFLAGS     +=  -O2
++
++WXWIN_CFLAGS = -I/usr/X11R6/include/wx/gtk2-2.4 -I/usr/X11R6/include -DGTK_NO_CHECK_CASTS -D__WXGTK__ -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES
++WXWIN_LFLAGS = -L/usr/X11R6/lib -L/usr/local/lib -liconv -L/usr/X11R6/lib -lc_r -lwx_gtk2-2.4
++XRC_LFLAGS = -L/usr/X11R6/lib -lwx_gtk2_xrc-2.4
++
++VIGRA_CFLAGS = -I/usr/local/include -I/usr/local/include 
++
++VIGRA_LFLAGS = -L/usr/local/lib -lvigraimpex -lm  -L/usr/local/lib -ltiff -L/usr/local/lib -ljpeg -L/usr/local/lib -lpng  -lz
++
++HAS_FULL_VIGRA = 1
++
++# ========================================================================
++# set to @ if compile commands shouldn't be printed
++# ========================================================================
++
++ifeq ($(QUIET),1)
++SILENT=@
++else
++SILENT=
++endif
++
+diff -ur --new-file hugin/src/tests/Makefile hugin.mod/src/tests/Makefile
+--- src/tests/Makefile	Fri Jan  2 09:43:51 2004
++++ src/tests/Makefile	Fri Sep 17 17:51:37 2004
+@@ -55,8 +55,8 @@
+ # special compiler and linker flags for this directory
+ # ====================================================================
+ 
+-CFLAGS += $(shell wx-config --cxxflags)
+-LFLAGS += $(shell wx-config --libs) -lwximageproc -lpanorama -ljhead -lpano12 $(VIGRA_LFLAGS)
++CFLAGS += $(shell wxgtk2-2.4-config --cxxflags)
++LFLAGS += $(shell wxgtk2-2.4-config --libs) -lwximageproc -lpanorama -ljhead -lpano12 $(VIGRA_LFLAGS)
+ 
+ # ====================================================================
+ # The applications that should be build in this directory.
+diff -ur --new-file hugin/src/tools/autopano.cpp hugin.mod/src/tools/autopano.cpp
+--- src/tools/autopano.cpp	Fri Jan  2 17:58:05 2004
++++ src/tools/autopano.cpp	Fri Sep 17 17:17:57 2004
+@@ -339,12 +339,12 @@
+                     // currently disabled, ther must be an error somewhere
+                     if (doFinetune) {
+                         res = vigra_ext::PointFineTune(*firstImg,
+-                                                       Diff2D ((int) round(flFirst->feature[i]->x),
+-                                                               (int) round(flFirst->feature[i]->y)),
++                                                       Diff2D ((int) rint(flFirst->feature[i]->x),
++                                                               (int) rint(flFirst->feature[i]->y)),
+                                                        11,
+                                                        *secondImg,
+-                                                       Diff2D ((int) round(fl->feature[i]->x),
+-                                                               (int) round(fl->feature[i]->y)),
++                                                       Diff2D ((int) rint(fl->feature[i]->x),
++                                                               (int) rint(fl->feature[i]->y)),
+                                                        defaultKLTWindowSize);
+                     
+                     }
