@@ -1,11 +1,29 @@
---- mindy/comp/Makefile.in.orig	Fri May  9 20:45:36 1997
-+++ mindy/comp/Makefile.in	Sun Jul 12 00:32:35 1998
-@@ -147,7 +147,7 @@
- 
- lexer-tab.o:  ${SRCDIR}/lexer-tab.c ${SRCDIR}/lexer.h ${SRCDIR}/src.h \
-                 ${SRCDIR}/parser-tab.h
--	${CC} -c ${CFLAGS} ${SRCDIR}/lexer-tab.c
-+	${CC} -c -D_ANSI_SOURCE ${CFLAGS} ${SRCDIR}/lexer-tab.c
- 
- literal.o:  ${SRCDIR}/literal.c ${SRCDIR}/../compat/std-c.h ${SRCDIR}/mindycomp.h \
-               ${SRCDIR}/literal.h ${SRCDIR}/lose.h
+--- configure~ Tue Apr 20 10:16:07 1999
++++ configure Tue Apr 20 10:16:42 1999
+@@ -772,7 +772,7 @@
+     hppa*-hp-hpux*) d2c_build=hppa-hpux ;;
+     sparc*-solaris*) d2c_build=sparc-solaris ;;
+     i*86-*-freebsd2*) d2c_build=x86-freebsd-aout ;;
+-    i*86-*-freebsd3*) d2c_build=x86-freebsd-elf ;;
++    i*86-*-freebsd*) d2c_build=x86-freebsd-elf ;;
+     i*86-pc-cygwin32) d2c_build=x86-win32-gcc ;;
+     i*86-pc-none) d2c_build=x86-win32-vc ;;
+     *) d2c_build=unknown-unix ;;
+@@ -789,7 +789,7 @@
+     hppa*-hp-hpux*) d2c_host=hppa-hpux ;;
+     sparc*-solaris*) d2c_host=sparc-solaris ;;
+     i*86-*-freebsd2*) d2c_host=x86-freebsd-aout ;;
+-    i*86-*-freebsd3*) d2c_host=x86-freebsd-elf ;;
++    i*86-*-freebsd*) d2c_host=x86-freebsd-elf ;;
+     i*86-pc-cygwin32) d2c_host=x86-win32-gcc ;;
+     i*86-pc-none) d2c_host=x86-win32-vc ;;
+     *) d2c_host=unknown-unix ;;
+@@ -806,7 +806,7 @@
+     hppa*-hp-hpux*) d2c_target=hppa-hpux ;;
+     sparc*-solaris*) d2c_target=sparc-solaris ;;
+     i*86-*-freebsd2*) d2c_target=x86-freebsd-aout ;;
+-    i*86-*-freebsd3*) d2c_target=x86-freebsd-elf ;;
++    i*86-*-freebsd*) d2c_target=x86-freebsd-elf ;;
+     i*86-pc-cygwin32) d2c_target=x86-win32-gcc ;;
+     i*86-pc-none) d2c_target=x86-win32-vc ;;
+     *) d2c_target=unknown-unix ;;

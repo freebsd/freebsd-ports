@@ -3,32 +3,35 @@
 # Date created:         23 Jan 1998
 # Whom:                 housel@acm.org
 #
-# $Id: Makefile,v 1.3 1998/07/15 07:43:38 hsu Exp $
+# $Id: Makefile,v 1.4 1998/10/14 00:08:48 jseger Exp $
 #
 
-DISTNAME=	gd20-source
-PKGNAME=	dylan-2.0
+DISTNAME=	gd-2.2.0
+PKGNAME=	dylan-2.2.0
 CATEGORIES=	lang
-MASTER_SITES=	http://legend.gwydion.cs.cmu.edu/gwydion/dylan/release/ http://www.freebsd.org/~hsu/ports/files/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} d2c_2_0-FreeBSD.gz
+MASTER_SITES=	ftp://berlin.ccc.de/pub/gd/src/ \
+		ftp://berlin.ccc.de/pub/gd/FreeBSD/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} d2c-2.2.0-FreeBSD.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER= 	housel@acm.org
 
-WRKSRC=		$(WRKDIR)/src
-
-BROKEN_ELF=	yes
+WRKSRC=		$(WRKDIR)/gd/src
 
 GNU_CONFIGURE=  yes
 CONFIGURE_ARGS= --prefix=$(PREFIX) --srcdir=$(WRKSRC)
-CONFIGURE_ENV=	D2C="$(WRKDIR)/d2c -p$(WRKSRC)/d2c/compiler/platforms.descr"
+CONFIGURE_ENV=	D2C="$(WRKDIR)/d2c"
 
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 ALL_TARGET=	default
 
+MAN1=		d2c.1 make-dylan-app.1 melange.1 mindy.1 mindycomp.1
+MAN5=		platforms.descr.5
+MAN7=		dylan.7 gwydion.7
+
 post-extract:
-	$(GUNZIP_CMD) -c $(DISTDIR)/d2c_2_0-FreeBSD.gz > $(WRKDIR)/d2c
+	$(GUNZIP_CMD) -c $(DISTDIR)/d2c-2.2.0-FreeBSD.gz > $(WRKDIR)/d2c
 	chmod ugo+x $(WRKDIR)/d2c
 
 .include <bsd.port.mk>
