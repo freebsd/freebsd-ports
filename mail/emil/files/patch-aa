@@ -1,0 +1,10 @@
+--- charset/dfopen.c~	Tue Nov 29 07:10:29 1994
++++ charset/dfopen.c	Tue Apr 21 02:35:35 1998
+@@ -1,7 +1,6 @@
+ #include "iso646.h"
+ #include <stdio.h>
+ #include <errno.h>
+-#include <malloc.h>
+ #include <stdlib.h>	/* TW 941114 */
+ #include <memory.h>	/* TW 941114 */
+ #include <unistd.h>	/* TW 941114 */

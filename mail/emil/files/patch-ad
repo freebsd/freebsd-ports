@@ -1,0 +1,38 @@
+--- emil.cf.man~	Sat Feb 10 05:16:17 1996
++++ emil.cf.man	Tue Apr 21 04:10:45 1998
+@@ -1,6 +1,6 @@
+-.TH EMIL.CF 8 "19 December 1994"
++.TH EMIL.CF 1 "19 December 1994"
+ .SH NAME
+-emil.cf \- configuration file for emil(8)
++emil.cf \- configuration file for emil(1)
+ .SH SYNOPSIS
+ .B group
+ .IR  "Group_Name" ":" 
+@@ -45,7 +45,7 @@
+ .SH DESCRIPTION
+ The file 
+ MAINCF
+-is used by emil(8) to decide which conversions should be applied to a specific
++is used by emil(1) to decide which conversions should be applied to a specific
+ Internet 
+ message. Conversion is controlled by the combination of 
+ .IR Sender,
+@@ -127,7 +127,7 @@
+ Pick one of Base64, Quoted-printable, 8bit or Se, 7bit.
+ 7bit is default. If BAse64 or Quoted-Printable is selected
+ headers are converted according to RFC1522 (MIME-II).
+-7bit and Se behaives like in the textenc field.
++7bit and Se behaves like in the textenc field.
+ 
+ .TP
+ .B "match"
+@@ -205,7 +205,7 @@
+ Martin Wendel (Martin.Wendel@its.uu.se) and
+ Torbjorn Wictorin (Torbjorn.Wictorin@its.uu.se)
+ .SH "SEE ALSO"
+-emil(8)
++emil(1)
+ .SH BUGS
+ None
+ 

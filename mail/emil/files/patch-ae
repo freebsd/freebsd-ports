@@ -1,0 +1,43 @@
+--- mimeparse.c~	Tue Jun  4 06:36:59 1996
++++ mimeparse.c	Tue Apr 21 05:02:15 1998
+@@ -219,8 +219,39 @@
+ 	    inbuf->bodystart,
+ 	    inbuf->bodyend);
+ #endif
++  /* FIX */
++  if (m->sd->encoding == EMULTI && m->sd->endbound != NULL)
++    {
++      int tttt;
++      move_past_boundary(m, m->sd->endbound);
++      for (;;)
++      {
++        tttt = getline(m->sd);
++#ifdef DEBUG
++          if (edebug)
++            fprintf(stderr," getline = %d\n", tttt);
++#endif
++        if (tttt == 1)
++          {
++            inbuf->offset += tttt;
++            inbuf->loffset += 1;
++            continue;
++          }
++        if (tttt == 2 && *(m->sd->contents + m->sd->offset) == '\r')
++          {
++            inbuf->offset += tttt;
++            inbuf->loffset += 1;
++            continue;
++          }
++        break;
++      }
++
++    }
++  else
++  /* END_FIX */
++    m->sd->offset = m->sd->bodyend;
++
+ 
+-  m->sd->offset = m->sd->bodyend;
+   if (getline(m->sd) == 0)
+     return(OK);
+   if (m->sd->offset < m->sd->end)
