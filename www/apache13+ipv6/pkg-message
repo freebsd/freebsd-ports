@@ -1,0 +1,4 @@
+===>  COMPATIBILITY NOTE:
+      As of version 1.3.24, the RedirectMatch directive requires an
+      absolute URL target location per RFC 2068. Uses of RedirectMatch that
+      specify a relative URL will fail and must be corrected to function.

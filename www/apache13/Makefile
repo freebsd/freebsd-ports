@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	apache
-PORTVERSION=    1.3.24
-PORTREVISION=   7
+PORTVERSION=    1.3.26
+PORTREVISION=   3
 CATEGORIES=	www
 MASTER_SITES=   http://www.apache.org/dist/httpd/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/httpd/ \
@@ -26,9 +26,9 @@ MASTER_SITES=   http://www.apache.org/dist/httpd/ \
 		ftp://apache.nextpath.com/pub/apache/dist/httpd/
 DISTNAME=	apache_${PORTVERSION}
 
-PATCH_SITES=    http://www.apache.org/dist/httpd/patches/apply_to_1.3.24/
-PATCHFILES=     proxy_http1.1_chunking.patch
-PATCH_DIST_ARGS= -d ${WRKSRC}/src --forward --quiet -E ${PATCH_DIST_STRIP}
+#PATCH_SITES=    http://www.apache.org/dist/httpd/patches/apply_to_1.3.26/
+#PATCHFILES=
+#PATCH_DIST_ARGS= -d ${WRKSRC}/src --forward --quiet -E ${PATCH_DIST_STRIP}
 
 MAINTAINER=	ache@freebsd.org
 
@@ -117,7 +117,7 @@ pre-install:
 	PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/apache.sh ${PREFIX}/etc/rc.d/apache.sh.default
+	${INSTALL_DATA} ${WRKSRC}/apache.sh ${PREFIX}/etc/rc.d/apache.sh-dist
 	@if [ ! -f ${PREFIX}/etc/rc.d/apache.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/apache.sh startup file."; \
 		${INSTALL_SCRIPT} ${WRKSRC}/apache.sh ${PREFIX}/etc/rc.d/apache.sh; \

@@ -1,9 +1,0 @@
---- libav/Makefile.orig	Tue Aug 14 19:32:28 2001
-+++ libav/Makefile	Tue Sep 25 15:05:38 2001
-@@ -1,5 +1,5 @@
- include ../config.mak
--CFLAGS= $(OPTFLAGS) -Wall -g -I../libavcodec -DHAVE_AV_CONFIG_H
-+CFLAGS= $(OPTFLAGS) -Wall -I../libavcodec -I$(LOCALBASE)/include -DHAVE_AV_CONFIG_H
- 
- OBJS= rm.o mpeg.o asf.o avienc.o jpeg.o swf.o wav.o raw.o \
- 	 avidec.o ffm.o \

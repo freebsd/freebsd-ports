@@ -7,7 +7,7 @@ start)
 	[ -x ${PREFIX}/sbin/apachectl ] && ${PREFIX}/sbin/apachectl start${SSL} > /dev/null && echo -n ' apache2'
 	;;
 stop)
-	[ -r @@DESTDIR@@/var/run/httpd.pid ] && ${PREFIX}/sbin/apachectl stop > /dev/null && echo -n ' apache2'
+	[ -r /var/run/httpd.pid ] && ${PREFIX}/sbin/apachectl stop > /dev/null && echo -n ' apache2'
 	;;
 *)
 	echo "Usage: `basename $0` {start|stop}" >&2

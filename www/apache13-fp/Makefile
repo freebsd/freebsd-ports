@@ -7,7 +7,8 @@
 
 PORTNAME=	apache
 PKGNAMESUFFIX=	_fp
-PORTVERSION=	1.3.23
+PORTVERSION=	1.3.26
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.apache.org/dist/httpd/ \
 		http://www.freebsd.org/gifs/ \
@@ -68,7 +69,8 @@ CONFIGURE_ARGS=	 \
 		  --prefix=${PREFIX} \
 		  --server-gid=nogroup \
 		  --with-perl=${PERL} \
-		  --with-layout=${FILESDIR}/FreeBSD.layout:FreeBSD \
+		  --with-layout=FreeBSD \
+		  --manualdir=${DOCSDIR}/manual \
 		  --server-uid=${HTTPD_USER} \
 		  --server-gid=${HTTPD_GROUP} \
 		  --without-confadjust \
