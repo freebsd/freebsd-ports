@@ -21,9 +21,9 @@ WRKSRC=		${PYTHON_WRKSRC}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-fpectl
 CONFIGURE_ENV=	OPT="${CFLAGS}"
-INSTALL_TARGET=	install
+INSTALL_TARGET=	altinstall
 PLIST=		${WRKDIR}/PLIST
-MAN1=		python.1
+MAN1=		${PYTHON_VERSION}.1
 NO_LATEST_LINK=	yes
 
 USE_PYTHON=	yes
@@ -122,10 +122,9 @@ pre-install:
 	@sort -r -o ${PLIST} ${PLIST_GMP} ${PLIST_TOOLS} ${PLIST_DEMO} ${PKGDIR}/pkg-plist
 
 post-install:
-	strip ${PREFIX}/bin/python
-	@${MKDIR} ${PREFIX}/share/emacs/site-lisp
-	${INSTALL_DATA} ${WRKSRC}/Misc/python-mode.el \
-		${PREFIX}/share/emacs/site-lisp
+	@${MKDIR} ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/Misc/python.man \
+		${MANPREFIX}/man/man1/${PYTHON_VERSION}.1
 	@${MKDIR} ${PYTHON_SITELIBDIR}
 .if !defined(WITHOUT_TOOLS)
 	@cd ${WRKSRC}; tar -c --exclude='*CVS*' -f - Tools | \

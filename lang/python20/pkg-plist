@@ -1,5 +1,4 @@
 bin/%%PYTHON_VERSION%%
-bin/python
 include/%%PYTHON_VERSION%%/Python.h
 include/%%PYTHON_VERSION%%/abstract.h
 include/%%PYTHON_VERSION%%/bitset.h
@@ -1550,7 +1549,6 @@ lib/%%PYTHON_VERSION%%/xmllib.pyo
 lib/%%PYTHON_VERSION%%/zipfile.py
 lib/%%PYTHON_VERSION%%/zipfile.pyc
 lib/%%PYTHON_VERSION%%/zipfile.pyo
-share/emacs/site-lisp/python-mode.el
 @dirrm lib/%%PYTHON_VERSION%%/xml/parsers
 @dirrm lib/%%PYTHON_VERSION%%/xml/sax
 @dirrm lib/%%PYTHON_VERSION%%/xml/dom
