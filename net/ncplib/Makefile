@@ -9,7 +9,7 @@ PORTNAME=	ncplib
 PORTVERSION=	1.3.4
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.butya.kz/pub/nwlib/ \
-		http://www.chat.ru/~rbp/pub/nwlib/
+		http://rbp.chat.ru/pub/nwlib/
 
 MAINTAINER=	bp@butya.kz
 
