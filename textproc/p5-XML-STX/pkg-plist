@@ -1,0 +1,24 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/STX/.packlist
+bin/stxcmd.pl
+bin/stxview.pl
+%%SITE_PERL%%/XML/STX.pm
+%%SITE_PERL%%/XML/STX/Base.pm
+%%SITE_PERL%%/XML/STX/Buffer.pm
+%%SITE_PERL%%/XML/STX/Functions.pm
+%%SITE_PERL%%/XML/STX/Parser.pm
+%%SITE_PERL%%/XML/STX/Runtime.pm
+%%SITE_PERL%%/XML/STX/STXPath.pm
+%%SITE_PERL%%/XML/STX/Stylesheet.pm
+%%SITE_PERL%%/XML/STX/TrAX.pm
+%%SITE_PERL%%/XML/STX/Writer.pm
+@dirrm %%SITE_PERL%%/XML/STX
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/STX
+@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
+%%PORTDOCS%%%%EXAMPLESDIR%%/stx-filter.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/tester.pl
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/STX.html
+%%PORTDOCS%%%%DOCSDIR%%/TrAXref.html
+%%PORTDOCS%%%%DOCSDIR%%/TrAXref.pod
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
