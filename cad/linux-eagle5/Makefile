@@ -5,22 +5,23 @@
 # $FreeBSD$
 #
 
-PORTNAME=	eagle
-PKGNAMEPREFIX=	linux-
-EAGLEVERSION=	4.09r2
+PORTNAME=	linux-eagle
+EAGLEVERSION?=	4.09r2
+EAGLELANG?=	e
 PORTVERSION=	${EAGLEVERSION:S/r/./}
-CATEGORIES=	cad
+CATEGORIES?=	cad linux
 MASTER_SITES=	ftp://ftp.cadsoft.de/pub/program/${EAGLEVERSION}/
-DISTNAME=	${PORTNAME}-${EAGLEVERSION}e
+DISTNAME=	${PORTNAME:S/linux-//}-${EAGLEVERSION}${EAGLELANG}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	riggs@rrr.de
+MAINTAINER?=	riggs@rrr.de
 
 RUN_DEPENDS=	${LINUXBASE}/lib/ld-linux.so.2:${PORTSDIR}/emulators/linux_base
 
 ONLY_FOR_ARCHS=	i386
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${EAGLEVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME:S/linux-//}-${EAGLEVERSION}
+DATADIR=	${PREFIX}/share/${PORTNAME:S/linux-//}
 
 RESTRICTED=	"Usage permitted for non-commercial purposes only"
 NO_CDROM=	"Sale for profit is not permitted"
