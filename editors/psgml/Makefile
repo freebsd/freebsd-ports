@@ -7,7 +7,7 @@
 
 PORTNAME=	psgml
 PORTVERSION=	${PSGML_VER}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors elisp
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/sgml/ \
 		${MASTER_SITE_SOURCEFORGE}
