@@ -21,4 +21,9 @@ cdb is designed to be used in mission-critical applications like e-mail.
 Database replacement is safe against system crashes. Readers don't have
 to pause during a rewrite.
 
+Note for developers:
+    Packages that need to read cdb files should incorporate the
+    necessary portions of the cdb library rather than relying on
+    an external cdb library. (See WWW)
+
 WWW: http://cr.yp.to/cdb.html

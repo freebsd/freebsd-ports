@@ -30,6 +30,5 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${file} ${PREFIX}/bin
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/cdb.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/cdb.a ${PREFIX}/lib/libcdb.a
 
 .include <bsd.port.mk>
