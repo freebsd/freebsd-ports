@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Generates a Ruby parser class from a Bison-like specification file
 
 RUN_DEPENDS=	bison:${PORTSDIR}/devel/bison
 

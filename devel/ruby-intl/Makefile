@@ -15,6 +15,7 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A simple wrapper of GNU gettext for Ruby
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

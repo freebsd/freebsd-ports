@@ -16,6 +16,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A Ruby interface to the GNUstep development environment
 
 BUILD_DEPENDS=	${GNUSTEP_PREFIX}/System/Makefiles/GNUstep.sh:${PORTSDIR}/devel/gnustep-make \
 		${LOCALBASE}/lib/libcallback.a:${PORTSDIR}/devel/ffcall \

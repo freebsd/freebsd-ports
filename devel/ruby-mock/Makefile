@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	An RUnit extention that makes it very easy to implement Mock Objects
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/runit/error.rb:${.CURDIR}/../ruby-testunit
 

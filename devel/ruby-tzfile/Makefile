@@ -14,6 +14,7 @@ DISTNAME=	TZFile-${PORTVERSION}${EXTRACT_SUFX}\?tarball=1\&only_with_tag=${PORTN
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	TZFile handling library for Ruby
 
 USE_RUBY=	yes
 

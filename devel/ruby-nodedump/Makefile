@@ -15,6 +15,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Displays the internal structure of a parsed Ruby program
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

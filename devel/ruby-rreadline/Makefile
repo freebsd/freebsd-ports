@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A pure Ruby implementation of the Readline library
 
 USE_RUBY=	yes
 RUBY_NO_BUILD_DEPENDS=	yes
