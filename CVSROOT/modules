@@ -387,6 +387,7 @@ artemis		ports/biology/artemis
 arts		ports/audio/arts
 arts++		ports/net/arts++
 artwiz-fonts	ports/x11-fonts/artwiz-fonts
+as31		ports/devel/as31
 as80		ports/devel/as80
 asapm		ports/sysutils/asapm
 asbutton	ports/misc/asbutton
