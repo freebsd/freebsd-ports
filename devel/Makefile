@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.29 1996/09/16 00:30:01 asami Exp $
+# $Id: Makefile,v 1.30 1996/09/16 00:31:05 asami Exp $
 #
 
     SUBDIR += SWIG
@@ -6,7 +6,6 @@
     SUBDIR += bcc
     SUBDIR += cflow
     SUBDIR += dmake
-    SUBDIR += flex
     SUBDIR += gcc11
     SUBDIR += gdb
     SUBDIR += gmake
