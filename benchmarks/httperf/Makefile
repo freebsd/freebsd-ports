@@ -6,28 +6,26 @@
 #
 
 PORTNAME=	httperf
-PORTVERSION=	0.6
+PORTVERSION=	0.8
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.hpl.hp.com/pub/httperf/
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_GMAKE=	yes
+USE_OPENSSL=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
+
 MAN1=		httperf.1
 
-# there is no "install" target in the Makefile.
-# chmod'ing httperf as it could be exploited by normal users to overload
-# a webserver, instead of for its actual purpose.
-
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/httperf ${PREFIX}/bin
+post-install:
 	${CHMOD} 750 ${PREFIX}/bin/httperf
-	@${INSTALL_MAN} ${WRKSRC}/httperf.man ${PREFIX}/man/man1/httperf.1
-	@${MKDIR} ${PREFIX}/share/doc/httperf
-	@${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/httperf
-	@${INSTALL_MAN} ${WRKSRC}/COPYRIGHT ${PREFIX}/share/doc/httperf
-	@${INSTALL_MAN} ${WRKSRC}/NEWS ${PREFIX}/share/doc/httperf
-	@${INSTALL_MAN} ${WRKSRC}/TODO ${PREFIX}/share/doc/httperf
-	@${INSTALL_MAN} ${WRKSRC}/ChangeLog ${PREFIX}/share/doc/httperf
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in ChangeLog NEWS README TODO
+	@${INSTALL_MAN} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>

@@ -1,7 +1,6 @@
 bin/httperf
-share/doc/httperf/COPYRIGHT
-share/doc/httperf/ChangeLog
-share/doc/httperf/NEWS
-share/doc/httperf/README
-share/doc/httperf/TODO
-@dirrm share/doc/httperf
+%%PORTDOCS%%share/doc/httperf/ChangeLog
+%%PORTDOCS%%share/doc/httperf/NEWS
+%%PORTDOCS%%share/doc/httperf/README
+%%PORTDOCS%%share/doc/httperf/TODO
+%%PORTDOCS%%@dirrm share/doc/httperf
