@@ -17,8 +17,6 @@ MASTER_SITES=	${CUPS_MASTER_SITES}
 MAINTAINER=	asa@gascom.ru
 COMMENT=	The CUPS BSD and system V compatibility binaries (lp* commands)
 
-FORBIDDEN=	"Changes ownership of system directories"
-
 USE_REINPLACE=	yes
 
 MANLANG=	"" fr
@@ -43,7 +41,7 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e '/SILENT/d' \
 		${WRKSRC}/Makedefs.in
-	@${REINPLACE_CMD} -e '/LN/d' \
+	@${REINPLACE_CMD} -e '/LN/d' -e '/cat/d' \
 		${WRKSRC}/man/Makefile ${WRKSRC}/man/fr/Makefile
 
 post-install:

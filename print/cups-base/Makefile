@@ -17,8 +17,6 @@ MASTER_SITES=	${CUPS_MASTER_SITES}
 MAINTAINER=	asa@gascom.ru
 COMMENT=	The Common UNIX Printing System: headers, libs, & daemons
 
-FORBIDDEN=	"Changes ownership of system directories"
-
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
@@ -27,7 +25,7 @@ MANLANG=	"" fr
 post-patch:
 	@${REINPLACE_CMD} -e '/SILENT/d' \
 		${WRKSRC}/Makedefs.in
-	@${REINPLACE_CMD} -e '/LN/d' \
+	@${REINPLACE_CMD} -e '/LN/d' -e '/cat/d' \
 		${WRKSRC}/man/Makefile ${WRKSRC}/man/fr/Makefile
 
 pre-install:
