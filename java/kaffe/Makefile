@@ -3,18 +3,18 @@
 # Date created:         6 January 1997
 # Whom:                 Mark Huizer <xaa@stack.nl>
 #
-# $Id: Makefile,v 1.15 1997/01/24 23:58:12 chuckr Exp $
+# $Id: Makefile,v 1.16 1997/01/26 07:07:23 asami Exp $
 #
 
 DISTNAME=	kaffe-0.7.1
-CATEGORIES=	www
+CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.sarc.city.ac.uk/pub/kaffe/ \
 		ftp://alterego.stack.nl/pub/kaffe/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	xaa@stack.nl
 
-RUN_DEPENDS=	${PREFIX}/share/java/classes.zip:${PORTSDIR}/www/jdk
+RUN_DEPENDS=	${PREFIX}/share/java/classes.zip:${PORTSDIR}/lang/jdk
 
 GNU_CONFIGURE=	yes
 MAN1=		kaffe.1
@@ -24,7 +24,7 @@ do-configure:
 
 pre-install:
 	@( if test "`${MD5} ${PREFIX}/share/java/classes.zip | ${AWK} '{print $$4}'`" != "`cat ${FILESDIR}/classes.zip.1.02.md5`" ; then \
-	echo "kaffe REQUIRES the classes.zip file from ports/www/jdk, version 1.02"; \
+	echo "kaffe REQUIRES the classes.zip file from ports/lang/jdk, version 1.02"; \
 	exit 1 ; \
 	fi)
 
