@@ -26,6 +26,12 @@ INSTALLS_SHLIB=	yes
 PORTDOCS=	*
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 post-configure:
 	@${TOUCH} ${WRKSRC}/inti-config.h.in
 
@@ -45,4 +51,4 @@ post-install:
 	@${FIND} ${PREFIX}/share/gnome/inti -type d | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

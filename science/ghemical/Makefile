@@ -28,6 +28,12 @@ CONFIGURE_ARGS=	--enable-mpqc
 
 USE_AUTOCONF_VER=	253
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 pre-configure:
 	@cd ${WRKDIR}/${DISTNAME} ; ${AUTOCONF}
 
@@ -41,4 +47,4 @@ pre-build:
 	(cd ${WRKSRC}/miniMOPAC ; ${SH} ${FILESDIR}/ghemical-f2c.sh)
 	@${REINPLACE_CMD} -e 's|f2c.h|g2c.h|g;' ${WRKSRC}/miniMOPAC/*.c
 	@${REINPLACE_CMD} -e 's|f2c.h|g2c.h|g;' ${WRKSRC}/src/common/qm1e_mopac.cpp
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

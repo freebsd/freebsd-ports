@@ -26,6 +26,10 @@ INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 pre-configure:
 	@echo "CPPFLAGS=${CPPFLAGS} CXXFLAGS=${CXXFLAGS}"
 

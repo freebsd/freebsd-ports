@@ -38,10 +38,16 @@ USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's| -mcpu=.*"|"|g' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|pixmaps/\$$(PACKAGE)|\$$(PACKAGE)/pixmaps|g ; \
 		 s|-lglib||g'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

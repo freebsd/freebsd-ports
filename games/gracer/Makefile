@@ -34,8 +34,14 @@ CONFIGURE_ARGS+= --with-plib=${X11BASE}/plib
 
 MAN6=		gracer.6
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 pre-patch:
 	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
 		${WRKSRC}/common/gr_memory.h
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

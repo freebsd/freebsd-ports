@@ -25,6 +25,12 @@ ALL_TARGET=	ftrack
 MAKEFILE=	${WRKSRC}/MakeFiles/FreeBSD/Makefile
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 pre-patch:
 	${REINPLACE_CMD} -e "s@-I../../hpp -I../../.. -O3@-Ihpp -I${LOCALBASE}/include ${CFLAGS}@g; \
 			s@../../src/@src/@g; s@g\+\+@${CC}@g; \
@@ -50,4 +56,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/samples/${FILE} ${PREFIX}/etc/ftrack
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

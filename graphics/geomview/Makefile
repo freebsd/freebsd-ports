@@ -42,6 +42,12 @@ MAKE_ENV=	CPU=FreeBSD MAPLE_LIB=${MAPLE_LIB}
 
 AC_FAKE_FILES=	aclocal.m4 config.h.in stamp-h stamp-h.in
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 post-configure:
 	cd ${WRKSRC}; ${TOUCH} ${AC_FAKE_FILES}
 	${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${TOUCH}
@@ -68,4 +74,4 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/html/pix/*.gif ${DOCSDIR}/html/pix
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

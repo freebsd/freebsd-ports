@@ -19,9 +19,15 @@ COMMENT=	An Input Line Editor that wraps itself around programs
 MAN1=		ile.1
 PLIST_FILES=	bin/ile
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 do-configure:
 	@(cd ${WRKSRC}; ${MV} Makefile Makefile.old; \
 	${SED} -e s:/usr/local:${PREFIX}: <Makefile.old > Makefile; \
 	${ECHO_CMD} all: ile >> Makefile; ${ECHO_CMD} CC=cc ${CFLAGS} >> Makefile)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
