@@ -13,7 +13,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}j
 
 MAINTAINER=	mita@jp.FreeBSD.org
 
-BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
+BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf \
+		${PREFIX}/lib/libkpathsea.a:${PORTSDIR}/japanese/ptex-common
 LIB_DEPENDS=	VFlib2.24:${PORTSDIR}/japanese/vflib
 
 MAN1=		dvi2ps.1 ../ja/man1/dvi2ps.1
