@@ -1,7 +1,7 @@
 @comment Package is not complete without minimal /var/news installation :-(
 @comment Basically just in.* and out.*    /var/news might be a symbolic link
 @comment and it might not exist yet :-(
-@exec ln -s /usr/local/newsspool /var/news
+@exec ln -sf /usr/local/newsspool /var/news
 @exec mkdir -p /usr/local/newsspool/in.coming/bad
 @exec cd /usr/local/newsspool; mkdir -p out.going out.master out.nntp
 bin/checknews
