@@ -7549,6 +7549,7 @@ tamago-emacs20	ports/editors/tamago-emacs20
 tank		ports/games/tank
 tar		src/gnu/usr.bin/tar
 tas		ports/net/tas
+task		ports/sysutils/task
 tcb		ports/misc/tcb
 tcl-Mysql	ports/databases/tcl-Mysql
 tcl-manual	ports/lang/tcl-manual
