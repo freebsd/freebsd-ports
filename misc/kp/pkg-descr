@@ -1,6 +1,17 @@
-This is kp, the Keyboard Practicer.  It's a rewrite of a Motif version
-of the program with the same name.  It's still very incomplete, but it
-at least runs so it's included here for your convenience. :)
+This is kp, the Keyboard Practicer.  
+
+Kp shows a keyboard and practice text.  If you hit the right keys, the
+cursor advances.  The keys you hit appear to be pushed in for your
+amusement.
+
+It also shows the next key you have to hit in reverse-video so that
+you don't have to watch your fingers.  After you get rid of the habit
+of watching your fingers, you can turn off the next-key showing to
+perfect your typing.
+
+Kp has a "filter" feature which will let you select the keys you want
+to practice.  When this is enabled, only words entirely consisting of
+those characters are displayed.
 
 Satoshi
 asami@cs.berkeley.edu
