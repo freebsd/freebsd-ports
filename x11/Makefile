@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.215 1998/07/12 22:55:08 steve Exp $
+# $Id: Makefile,v 1.216 1998/07/12 23:15:01 steve Exp $
 #
 
     SUBDIR += FWF
@@ -20,6 +20,7 @@
     SUBDIR += ctwm
     SUBDIR += dclock
     SUBDIR += dfm
+    SUBDIR += dgs
     SUBDIR += dxpc
     SUBDIR += emiclock
     SUBDIR += emu
