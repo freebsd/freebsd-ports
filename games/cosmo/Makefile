@@ -7,6 +7,7 @@
 
 PORTNAME=	cosmo
 PORTVERSION=	2.0.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://taraco.u-aizu.ac.jp/~eiju/cosmo/ \
 		ftp://ftp.jinr.ru/pub/PD/cosmo/
