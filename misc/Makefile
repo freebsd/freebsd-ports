@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.171 1998/10/23 14:45:34 vanilla Exp $
+# $Id: Makefile,v 1.172 1998/10/26 11:58:59 vanilla Exp $
 #
 
     SUBDIR += acron
@@ -47,6 +47,7 @@
     SUBDIR += p5-Locale-Codes
     SUBDIR += p5-Search
     SUBDIR += qclock
+    SUBDIR += rc5des
     SUBDIR += rpm
     SUBDIR += screen
     SUBDIR += scriptkit
