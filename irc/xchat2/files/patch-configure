@@ -1,51 +1,28 @@
---- configure.orig	Sat Aug 17 23:42:13 2002
-+++ configure	Sat Aug 17 23:42:55 2002
-@@ -3211,10 +3211,10 @@
+--- configure.orig	Sun Nov 24 20:59:19 2002
++++ configure	Sun Dec  8 18:13:53 2002
+@@ -7358,6 +7358,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -10381,7 +10382,7 @@
  #include "confdefs.h"
  #include <libintl.h>
  extern int _nl_msg_cat_cntr;
 -extern int *_nl_domain_bindings;
 +extern int *libintl_nl_domain_bindings;
- int main() {
+ #ifdef F77_DUMMY_MAIN
+ #  ifdef __cplusplus
+      extern "C"
+@@ -10392,7 +10393,7 @@
+ main ()
+ {
  bindtextdomain ("", "");
 -return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings
 +return (int) gettext ("") + _nl_msg_cat_cntr + *libintl_nl_domain_bindings
- ; return 0; }
- EOF
- if { (eval echo configure:3221: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
-@@ -3600,7 +3600,7 @@
- #include "confdefs.h"
- #include <libintl.h>
- extern int _nl_msg_cat_cntr;
--extern int *_nl_domain_bindings;
-+extern int *libintl_nl_domain_bindings;
- extern
- #ifdef __cplusplus
- "C"
-@@ -3608,7 +3608,7 @@
- const char *_nl_expand_alias ();
- int main() {
- bindtextdomain ("", "");
--return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings + *_nl_expand_alias (0)
-+return (int) gettext ("") + _nl_msg_cat_cntr + *libintl_nl_domain_bindings + *_nl_expand_alias (0)
- ; return 0; }
- EOF
- if { (eval echo configure:3615: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
-@@ -3628,7 +3628,7 @@
- #include "confdefs.h"
- #include <libintl.h>
- extern int _nl_msg_cat_cntr;
--extern int *_nl_domain_bindings;
-+extern int *libintl_nl_domain_bindings;
- extern
- #ifdef __cplusplus
- "C"
-@@ -3636,7 +3636,7 @@
- const char *_nl_expand_alias ();
- int main() {
- bindtextdomain ("", "");
--return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings + *_nl_expand_alias (0)
-+return (int) gettext ("") + _nl_msg_cat_cntr + *libintl_nl_domain_bindings + *_nl_expand_alias (0)
- ; return 0; }
- EOF
- if { (eval echo configure:3643: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+   ;
+   return 0;
+ }
