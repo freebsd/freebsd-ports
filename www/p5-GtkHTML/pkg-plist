@@ -1,0 +1,15 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/HTML.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/HTML/Install/Files.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/HTML/Install/GtkHTMLDefs.h
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/HTML/Install/GtkHTMLTypemap
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/HTML/Install/PerlGtkHTMLInt.h
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/HTML/Install/pkg.typemap
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/HTML/Simple.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/HTML/Types.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/HTML/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/HTML/HTML.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/HTML/HTML.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/HTML/autosplit.ix
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/HTML/Install
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/HTML
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/HTML
