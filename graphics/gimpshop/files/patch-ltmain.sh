@@ -1,15 +1,15 @@
---- ltmain.sh.orig	Tue Aug 26 17:35:19 2003
-+++ ltmain.sh	Fri Aug 29 09:09:07 2003
-@@ -1072,7 +1072,7 @@
+--- ltmain.sh.orig	Sun Sep  7 16:23:57 2003
++++ ltmain.sh	Sat Sep 13 01:29:14 2003
+@@ -1278,7 +1278,7 @@
  	  esac
- 	 elif test "X$arg" = "X-lc_r"; then
- 	  case $host in
+ 	elif test "X$arg" = "X-lc_r"; then
+ 	 case $host in
 -	 *-*-openbsd* | *-*-freebsd*)
 +	 *-*-openbsd* | *-*-freebsd4*)
- 	    # Do not include libc_r directly, use -pthread flag.
- 	    continue
- 	    ;;
-@@ -1082,8 +1082,16 @@
+ 	   # Do not include libc_r directly, use -pthread flag.
+ 	   continue
+ 	   ;;
+@@ -1288,8 +1288,16 @@
  	continue
  	;;
  
@@ -26,7 +26,7 @@
  	continue
  	;;
  
-@@ -4330,10 +4338,12 @@
+@@ -5457,10 +5465,12 @@
  	fi
  
  	# Install the pseudo-library for information purposes.
