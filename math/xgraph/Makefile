@@ -1,15 +1,18 @@
 # New ports collection makefile for:	xgraph
-# Version required:	11
+# Version required:	11.3.2
 # Date created:		24 November 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.2 1994/12/12 04:32:02 gpalmer Exp $
+# $Id: Makefile,v 1.3 1995/03/24 11:10:25 asami Exp $
 #
 
 DISTNAME=	xgraph-11
-USE_IMAKE=	yes
+PKGNAME=	xgraph-11.3.2
 MASTER_SITES=	ftp://ftp.cs.orst.edu/pub/src/Xclients.local/
-MAINTAINER=	asami@FreeBSD.ORG
 EXTRACT_SUFX=	.tar.Z
+
+MAINTAINER=	asami@FreeBSD.ORG
+
+USE_IMAKE=	yes
 
 .include <bsd.port.mk>

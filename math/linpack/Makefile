@@ -1,13 +1,24 @@
+# New ports collection makefile for:    linpack
+# Version required:     ?
+# Date created:         31 October 1994
+# Whom:                 ljo
+#
+# $Id$
+#
+
 DISTNAME=	linpack
+
 DISTDIR=${PORTSDIR}/distfiles/${DISTNAME}
 MASTER_SITES=	ftp://netlib.att.com/netlib/linpack/
 .if defined(MASTER_SITE_OVERRIDE)
 MASTER_SITES:= ${MASTER_SITE_OVERRIDE}/linpack/
 .undef MASTER_SITE_OVERRIDE
 .endif
+
 EXTRACT_CMD=${.CURDIR}/scripts/uncomp
 EXTRACT_SUFX=.Z
 EXTRACT_ARGS= ${WRKDIR}
+
 WRKSRC=${WRKDIR}
 
 SRCS =	cchdc.f cchdd.f cchex.f cchud.f cgbco.f cgbdi.f cgbfa.f cgbsl.f \
