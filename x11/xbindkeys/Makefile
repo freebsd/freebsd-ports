@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	xbindkeys
-PORTVERSION=	1.6.4
-PORTREVISION=	0
+PORTVERSION=	1.6.5
 CATEGORIES=	x11
 MASTER_SITES=	http://hocwp.free.fr/xbindkeys/
 
@@ -16,17 +15,20 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows you to launch shell commands under X with your keyboard
 
 USE_XLIB=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-binPROGRAMS
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=	xbindkeys.1
 
+WISH=		${LOCALBASE}/bin/wish8.4
+
 .if defined(WITH_GUI)
-RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
+RUN_DEPENDS+=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 MAN1+=		xbindkeys_show.1
 PLIST_SUB+=	WITH_GUI=""
-SCRIPTS_ENV+=	WITH_GUI="YES"
 .else
+CONFIGURE_ARGS+=	--disable-tk
 PLIST_SUB+=	WITH_GUI="@comment "
 .endif
 
@@ -37,11 +39,10 @@ pre-everything::
 	@${ECHO_MSG} ""
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's| wish | ${WISH} |g' ${WRKSRC}/xbindkeys_show
+
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/xbindkeys.1 ${MANPREFIX}/man/man1
-.if defined(WITH_GUI)
-	${INSTALL_MAN} ${WRKSRC}/xbindkeys_show.1 ${MANPREFIX}/man/man1
-.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/xbindkeysrc ${EXAMPLESDIR}
