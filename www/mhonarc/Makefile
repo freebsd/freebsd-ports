@@ -11,9 +11,9 @@ CATEGORIES=	www mail
 MASTER_SITES=	http://www.oac.uci.edu/indiv/ehood/tar/ \
 		http://mirror.ncsa.uiuc.edu/mhonarc.org/\
 		ftp://hhobel.phl.univie.ac.at/MHonArc/ \
-		ftp://ftp.redhat.com/contrib/noarch/noarch/ \
+		ftp://ftp.redhat.com/pub/contrib/noarch/noarch/ \
 		ftp://ftp.plig.org/pub/CPAN/authors/id/EHOOD/ \
-		http://www.perl.com/CPAN/authors/id/EHOOD/
+		http://www.perl.com/CPAN-local/authors/id/EHOOD/
 DISTNAME=	MHonArc2.4.9
 
 MAINTAINER=	jkoshy@freebsd.org
