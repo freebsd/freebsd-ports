@@ -3,7 +3,7 @@
 # Date created:		15 November 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.60 1998/12/12 21:03:35 jseger Exp $
+# $Id: Makefile,v 1.61 1998/12/13 02:07:12 jseger Exp $
 #
 
 DISTNAME=       ImageMagick-4.1.6
@@ -18,6 +18,8 @@ MASTER_SITES=	http://www.freebsd.org/~jseger/ \
 		ftp://ftp.oce.nl/pub/Internet/audio+video/ImageMagick/
 
 MAINTAINER=	jseger@FreeBSD.org
+
+BROKEN= 'depends on BROKEN freetype'
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		mpeg.1:${PORTSDIR}/graphics/mpeg-lib \
