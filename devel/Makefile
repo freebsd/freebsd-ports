@@ -169,6 +169,7 @@
     SUBDIR += kdevelop
     SUBDIR += kelp
     SUBDIR += kimwitu
+    SUBDIR += kimwitu++
     SUBDIR += kpp
     SUBDIR += ktranslator
     SUBDIR += lclint
