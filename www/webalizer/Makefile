@@ -8,7 +8,7 @@
 PORTNAME=	webalizer
 PORTVERSION=	2.1.6
 PORTREVISION=	2
-CATEGORIES=	www
+CATEGORIES+=	www
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/ \
 		ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/
 DISTNAME=	${PORTNAME}-2.01-06-src
@@ -19,26 +19,29 @@ LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+
+.if defined(BATCH)
+# no cosmetique spaces allowed
+WEBALIZER_LANG?=english
+.endif
+
+.include <bsd.port.pre.mk>
+
 CONFIGURE_ARGS+=	--enable-dns \
 			--with-etcdir=${PREFIX}/etc \
 			--with-gdlib=${PREFIX}/lib \
 			--with-gd=${PREFIX}/include/gd
 CONFIGURE_ENV+=	LDFLAGS="-L${PREFIX}/lib"
-
-MAN1=		webalizer.1
+MAKE_ARGS+=	CFLAGS="${CFLAGS}"
+MAN1=		${PKGNAMEPREFIX}webalizer.1
 DOC1=		CHANGES COPYING Copyright INSTALL \
 		README README.FIRST DNS.README country-codes.txt
+WRKSRC=		${WRKDIR}/${DISTNAME:S/-src$//}
+PLIST_SUB+=	PKGNAMEPREFIX=${PKGNAMEPREFIX}
 SUPP_LANG=	catalan chinese czech danish dutch english estonian \
 		finnish french german greek hungarian indonesian \
 		italian korean polish portuguese portuguese_brazil \
 		romanian russain slowak slovene spanish swedish turkish
-WRKSRC=		${WRKDIR}/${DISTNAME:S/-src$//}
-MAKE_ARGS+=	CFLAGS="${CFLAGS}"
-
-.if defined(BATCH)
-# no cosmetique spaces allowed
-WEBALIZER_LANG=english
-.endif
 
 .if defined(WEBALIZER_LANG)
 CONFIGURE_ARGS+=	--with-language=${WEBALIZER_LANG}
@@ -46,6 +49,8 @@ CONFIGURE_ARGS+=	--with-language=${WEBALIZER_LANG}
 
 pre-configure:
 	@${PERL5} -pi -e "s=/etc=${PREFIX}/etc=" ${WRKSRC}/webalizer.1
+	@${PERL5} -pi -e "s=webalizer.conf=${PKGNAMEPREFIX}webalizer.conf=" \
+		${WRKSRC}/webalizer.c
 .if !defined(WEBALIZER_LANG)
 	@${ECHO_MSG} "You can customize the language by typing"
 	@${ECHO_MSG} "       make WEBALIZER_LANG=<lang>"
@@ -54,26 +59,28 @@ pre-configure:
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/webalizer ${PREFIX}/bin
-	${LN} -sf webalizer ${PREFIX}/bin/webazolver
+	${INSTALL_PROGRAM} ${WRKSRC}/webalizer \
+		${PREFIX}/bin/${PKGNAMEPREFIX}webalizer
+	${LN} -sf ${PKGNAMEPREFIX}webalizer \
+		${PREFIX}/bin/${PKGNAMEPREFIX}webazolver
+	${INSTALL_DATA} ${WRKSRC}/sample.conf \
+		${PREFIX}/etc/${PKGNAMEPREFIX}webalizer.conf-dist ;
 
 post-install:
 .for i in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/${i} ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/webalizer.1 ${PREFIX}/man/man1/${i}
 .endfor
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/webalizer
+	${MKDIR} ${PREFIX}/share/doc/${PKGNAMEPREFIX}webalizer
 .for i in ${DOC1}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/webalizer/${i}
+	@${INSTALL_DATA} ${WRKSRC}/${i} \
+		${PREFIX}/share/doc/${PKGNAMEPREFIX}webalizer/${i}
+.endfor
+	${MKDIR} ${PREFIX}/share/examples/${PKGNAMEPREFIX}webalizer
+.for i in msfree.png sample.conf webalizer.png
+	@${INSTALL_DATA} ${WRKSRC}/${i} \
+		${PREFIX}/share/examples/${PKGNAMEPREFIX}webalizer/${i}
 .endfor
 .endif
-	${MKDIR} ${PREFIX}/share/examples/webalizer
-.for i in msfree.png sample.conf webalizer.png
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/examples/webalizer/${i}
-.endfor
-	@if [ ! -f ${PREFIX}/etc/webalizer.conf-dist ]; then \
-		${INSTALL_DATA} ${WRKSRC}/sample.conf \
-			${PREFIX}/etc/webalizer.conf-dist ; \
-	fi
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
