@@ -6,8 +6,7 @@
 #
 
 PORTNAME?=	nmap
-PORTVERSION=	3.48
-PORTREVISION=	1
+PORTVERSION=	3.50
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://download.insecure.org/nmap/dist/ \
 		http://www.mirrors.wiretapped.net/security/network-mapping/nmap/
