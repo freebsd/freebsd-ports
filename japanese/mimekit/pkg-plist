@@ -1,6 +1,3 @@
 bin/deMime
 bin/enMime
 lib/libmimekit.a
-share/doc/mimekit/README.LIB
-share/doc/mimekit/README.PGP
-@dirrm share/doc/mimekit
