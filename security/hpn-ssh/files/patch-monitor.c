@@ -1,6 +1,6 @@
 --- monitor.c.orig	Wed Jun 26 15:27:11 2002
-+++ monitor.c	Wed Jul  3 06:24:31 2002
-@@ -118,6 +127,10 @@
++++ monitor.c	Mon Jul 15 21:33:45 2002
+@@ -118,6 +118,10 @@
  
  #ifdef USE_PAM
  int mm_answer_pam_start(int, Buffer *);
@@ -11,7 +11,7 @@
  #endif
  
  static Authctxt *authctxt;
-@@ -156,6 +169,10 @@
+@@ -156,6 +160,10 @@
      {MONITOR_REQ_AUTHPASSWORD, MON_AUTH, mm_answer_authpassword},
  #ifdef USE_PAM
      {MONITOR_REQ_PAM_START, MON_ONCE, mm_answer_pam_start},
@@ -22,7 +22,7 @@
  #endif
  #ifdef BSD_AUTH
      {MONITOR_REQ_BSDAUTHQUERY, MON_ISAUTH, mm_answer_bsdauthquery},
-@@ -198,6 +215,10 @@
+@@ -198,6 +206,10 @@
  #endif
  #ifdef USE_PAM
      {MONITOR_REQ_PAM_START, MON_ONCE, mm_answer_pam_start},
@@ -33,7 +33,7 @@
  #endif
      {0, 0, NULL}
  };
-@@ -732,6 +749,100 @@
+@@ -732,6 +744,101 @@
  	xfree(user);
  
  	return (0);
@@ -73,6 +73,7 @@
 +	ret = (pam_device.query)(pam_ctxt, &name, &info, &num, &prompts, &echo_on);
 +	if (num > 1 || name == NULL || info == NULL)
 +		ret = -1;
++	buffer_clear(m);
 +	buffer_put_int(m, ret);
 +	buffer_put_cstring(m, name);
 +	xfree(name);
