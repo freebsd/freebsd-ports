@@ -1,0 +1,15 @@
+Test::Class provides a simple way of creating classes and
+objects to test your code in an xUnit style.
+
+Built using Test::Builder it is designing to work with
+other Test::Builder based modules (Test::More,
+Test::Differences, Test::Exception, etc.)
+
+Note: This module will make more sense if you are already
+familiar with the "standard" mechanisms for testing perl code.
+Those unfamiliar with Test::Harness, Test::Simple, Test::More
+and friends should go take a look at them now.
+
+Note: This is an early release. Things may change. Be warned. 
+
+WWW: http://search.cpan.org/dist/Test-Class/
