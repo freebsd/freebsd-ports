@@ -1,0 +1,36 @@
+
+$FreeBSD$
+
+--- Makefile.in.orig	Tue Jul 13 02:41:24 2004
++++ Makefile.in	Wed Jul 28 10:59:16 2004
+@@ -141,9 +141,9 @@
+ TRANSFORM = sed 's/$x$$//'|sed '$(transform)'|sed 's/$$/$x/'
+ actual_xterm  = `echo xterm|    sed '$(transform)'`
+ actual_resize = `echo resize|   sed '$(transform)'`
+-binary_xterm  = `echo xterm$x|  $(TRANSFORM)`
+-binary_resize = `echo resize$x| $(TRANSFORM)`
+-binary_uxterm = `echo uxterm|   $(TRANSFORM)`
++binary_xterm  = `echo xterm-static$x|  $(TRANSFORM)`
++binary_resize = `echo resize-static$x| $(TRANSFORM)`
++binary_uxterm = `echo uxterm-static|   $(TRANSFORM)`
+ 
+ install \
+ install-bin \
+@@ -163,13 +163,13 @@
+ install-full :: $(APPSDIR)
+ 	@echo installing $(APPSDIR)/$(CLASS)
+ 	@sed -e s/XTerm/$(CLASS)/ $(srcdir)/XTerm.ad >XTerm.tmp
+-	@$(INSTALL_DATA) XTerm.tmp $(APPSDIR)/$(CLASS)
++	@$(INSTALL_DATA) XTerm.tmp $(APPSDIR)/XTerm-static
+ 	@echo installing $(APPSDIR)/$(CLASS)-color
+ 	@sed -e s/XTerm/$(CLASS)/ $(srcdir)/XTerm-col.ad >XTerm.tmp
+-	@$(INSTALL_DATA) XTerm.tmp $(APPSDIR)/$(CLASS)-color
+-	@echo installing $(APPSDIR)/UXTerm
++	@$(INSTALL_DATA) XTerm.tmp $(APPSDIR)/$(CLASS)-color-static
++	@echo installing $(APPSDIR)/UXTerm-static
+ 	@sed -e s/XTerm/$(CLASS)/ $(srcdir)/UXTerm.ad >XTerm.tmp
+-	@$(INSTALL_DATA) XTerm.tmp $(APPSDIR)/UXTerm
++	@$(INSTALL_DATA) XTerm.tmp $(APPSDIR)/UXTerm-static
+ 	@rm -f XTerm.tmp
+ 
+ install ::
