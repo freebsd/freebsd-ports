@@ -1,6 +1,6 @@
---- break_filelist.org	Sat Jan 19 22:42:44 2002
-+++ break_filelist	Sat Jan 19 22:42:20 2002
-@@ -558,7 +558,7 @@
+--- break_filelist.orig	Wed Feb 27 00:39:24 2002
++++ break_filelist	Thu Feb 28 14:42:14 2002
+@@ -562,7 +562,7 @@
     return $cached_digest;  # We did, so here's what it was.
   }
  
