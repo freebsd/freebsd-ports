@@ -19,6 +19,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		audiofile.0:${PORTSDIR}/audio/libaudiofile \
 		mimelib.3:${PORTSDIR}/converters/kdesupport2
 
+USE_OPENSSL=	yes
 USE_QT2=	yes
 MOC?=		${X11BASE}/bin/moc2
 SOMAJOR=	4
@@ -37,6 +38,18 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${PREFIX}/include" \
 USE_GMAKE=	yes
 MAKE_ENV=	SOMAJOR="${SOMAJOR}" SOMINOR="${SOMINOR}"
 PLIST_SUB+=	LIBVER="${SOMAJOR}"
+
+pre-fetch:
+.if ${OSVERSION} <= 410002
+	@${ECHO}
+	@${ECHO} "			NOTICE"
+	@${ECHO}
+	@${ECHO} "Your OpenSSL installation could be out of date.  This is"
+	@${ECHO} "just a warning, but if your system's world was built on"
+	@${ECHO} "sources earlier than August 20 along RELENG_4 or older,"
+	@${ECHO} "then KDE2 will not build with SSL support."
+	@${ECHO}
+.endif
 
 pre-configure:
 .for NUM in 1 3
