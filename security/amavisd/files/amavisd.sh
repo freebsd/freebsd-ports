@@ -1,28 +1,41 @@
 #!/bin/sh
+#
+# $FreeBSD$
+#
+ 
+# PROVIDE: amavisd
+# BEFORE: mail
+# KEYWORD: FreeBSD shutdown
 
-if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/$(basename $0)\$"); then
-	echo "$0: Cannot determine the PREFIX" >&2
-	exit 1
-fi
+prefix=%%PREFIX%%
 
-case "$1" in
-start)
-	( [ -x ${PREFIX}/sbin/amavisd ] || [ -x ${PREFIX}/sbin/amavis-milter ] ) || exit 1
-	AMAVISD=$(/bin/ps -xU %%AMAVISUSER%% | grep amavisd | awk '{ print $1 }')
-	( /bin/test "$AMAVISD" ) && \
-	su - %%AMAVISUSER%% -c "/bin/kill $AMAVISD" > /dev/null
-	rm -rf /var/amavis/amavis*.sock
-	su - %%AMAVISUSER%% -c ${PREFIX}/sbin/amavisd > /dev/null 2>&1 && echo -n ' amavisd'
-	;;
-stop)
-	( [ -x ${PREFIX}/sbin/amavisd ] || [ -x ${PREFIX}/sbin/amavis-milter ] ) || exit 1
-	AMAVISD=$(/bin/ps -xU %%AMAVISUSER%% | grep amavisd | awk '{ print $1 }')
-	( /bin/test "$AMAVISD") && \
-	su - %%AMAVISUSER%% -c "/bin/kill $AMAVISD" > /dev/null && echo -n ' amavisd'
-	;;
-*)
-	echo "Usage: `basename $0` {start|stop}" >&2
-	;;
-esac
+# Define these amavisd_* variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+amavisd_enable=no
+amavisd_flags=""
+amavisd_user=%%AMAVISUSER%%
 
-exit 0
+. %%RC_SUBR%%
+
+name="amavisd"
+rcvar=`set_rcvar`
+start_precmd="remove_socket"
+stop_postcmd="remove_socket"
+command=${prefix}/sbin/amavisd
+command_arg="> /dev/null 2>&1"
+command_interpreter="%%PERL%%"
+pidfile="/var/amavis/amavisd.pid"
+
+# Remove the AMaViSd Socket
+remove_socket()
+{
+	if [ -S /var/amavis/amavisd.sock ]; then
+		rm -f /var/amavis/amavisd.sock
+	fi
+}
+
+load_rc_config $name
+run_rc_command "$1"

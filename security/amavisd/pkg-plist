@@ -13,6 +13,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/amavis.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 etc/amavisd.conf
-etc/rc.d/amavisd.sh
-sbin/amavis
+sbin/%%SBIN_AMAVIS%%
 sbin/amavisd
+%%MILTER%%etc/rc.d/amavisd-milter.sh
+etc/rc.d/amavisd.sh

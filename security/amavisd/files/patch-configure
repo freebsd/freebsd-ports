@@ -1,0 +1,15 @@
+--- configure-orig	Wed Feb 19 08:22:25 2003
++++ configure	Wed Sep 10 19:34:30 2003
+@@ -3083,11 +3083,11 @@
+ #define HAVE_SM_SM_STRLCPY 1
+ EOF
+ 
++                   LIBS="-lsm $LIBS"
+ else
+   echo "$ac_t""no" 1>&6
+ fi
+ 
+-                   LIBS="-lsm $LIBS"
+ fi
+ 
+ 
