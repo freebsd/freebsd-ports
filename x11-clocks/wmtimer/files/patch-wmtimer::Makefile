@@ -1,27 +1,26 @@
---- Makefile.orig	Sat Sep 29 12:35:39 2001
-+++ Makefile	Sat Sep 29 12:37:20 2001
-@@ -1,19 +1,19 @@
+--- Makefile.orig	Sat Nov 20 18:19:07 2004
++++ Makefile	Sat Nov 20 18:22:11 2004
+@@ -1,7 +1,6 @@
+-CC     = gcc
 -LIBDIR = -L/usr/X11R6/lib -L/usr/lib
--LIBS   = -lXpm -lXext -lX11 -lm `gtk-config --libs` -lpthread 
+-LIBS   = -lXpm -lXext -lX11 -lpthread `pkg-config --libs gtk+-2.0`
+-CFLAGS = `pkg-config --cflags gtk+-2.0`
 +LIBDIR = -L${X11BASE}/lib -L${LOCALBASE}/lib
-+LIBS   = -lXpm -lXext -lX11 -lm `${GTK_CONFIG} --libs` ${PTHREAD_LIBS}
++LIBS   = -lXpm -lXext -lX11 `pkg-config --libs gtk+-2.0` ${PTHREAD_LIBS}
++CFLAGS += `pkg-config --cflags gtk+-2.0` ${PTHREAD_CFLAGS}
  
--CFLAGS = -g -I/usr/X11R6/include `gtk-config --cflags` 
-+CFLAGS += -I${X11BASE}/include `${GTK_CONFIG} --cflags` ${PTHREAD_CFLAGS}
  OBJS =	wmtimer.o \
- 		../wmgeneral/wmgeneral.o \
- 		../wmgeneral/misc.o \
- 		../wmgeneral/list.o
- 
- .c.o:
--	$(CC) -c -O2 -Wall $< -o $*.o $(CFLAGS)
-+	$(CC) -c $< -o $*.o $(CFLAGS)
+ 	../wmgeneral/wmgeneral.o \
+@@ -10,10 +9,10 @@
  
  all: wmtimer
+ .c.o:
+-	$(CC) -g -c -O2 -Wall $< -o $*.o $(CFLAGS)
++	$(CC) -c $< -o $*.o $(CFLAGS)
  
  wmtimer: $(OBJS)
 -	$(CC) -Wall -g -o wmtimer $^ $(LIBDIR) $(LIBS)
 +	$(CC) -o wmtimer $^ $(LIBDIR) $(LIBS)
  
- clean::
- 	for i in $(OBJS) ; do \
+ install:
+ 	cp wmtimer /usr/local/bin/
