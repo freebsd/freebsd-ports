@@ -1,69 +1,73 @@
-share/doc/xincluder/com/elharo/xml/xinclude/test/class-use/SAXXIncluderTest.html
-share/doc/xincluder/com/elharo/xml/xinclude/test/package-use.html
-share/doc/xincluder/com/elharo/xml/xinclude/test/package-summary.html
-share/doc/xincluder/com/elharo/xml/xinclude/test/package-tree.html
-share/doc/xincluder/com/elharo/xml/xinclude/test/package-frame.html
-share/doc/xincluder/com/elharo/xml/xinclude/test/SAXXIncluderTest.html
-share/doc/xincluder/com/elharo/xml/xinclude/class-use/MissingHrefException.html
-share/doc/xincluder/com/elharo/xml/xinclude/class-use/UnavailableResourceException.html
-share/doc/xincluder/com/elharo/xml/xinclude/class-use/XIncludeFilter.html
-share/doc/xincluder/com/elharo/xml/xinclude/class-use/JDOMXIncluder.html
-share/doc/xincluder/com/elharo/xml/xinclude/class-use/MalformedResourceException.html
-share/doc/xincluder/com/elharo/xml/xinclude/class-use/SAXXIncluder.html
-share/doc/xincluder/com/elharo/xml/xinclude/class-use/EncodingHeuristics.html
-share/doc/xincluder/com/elharo/xml/xinclude/class-use/BadParseAttributeException.html
-share/doc/xincluder/com/elharo/xml/xinclude/class-use/DOMXIncluder.html
-share/doc/xincluder/com/elharo/xml/xinclude/class-use/XPointerException.html
-share/doc/xincluder/com/elharo/xml/xinclude/class-use/CircularIncludeException.html
-share/doc/xincluder/com/elharo/xml/xinclude/class-use/XIncludeException.html
-share/doc/xincluder/com/elharo/xml/xinclude/package-summary.html
-share/doc/xincluder/com/elharo/xml/xinclude/package-tree.html
-share/doc/xincluder/com/elharo/xml/xinclude/package-frame.html
-share/doc/xincluder/com/elharo/xml/xinclude/DOMXIncluder.html
-share/doc/xincluder/com/elharo/xml/xinclude/EncodingHeuristics.html
-share/doc/xincluder/com/elharo/xml/xinclude/JDOMXIncluder.html
-share/doc/xincluder/com/elharo/xml/xinclude/SAXXIncluder.html
-share/doc/xincluder/com/elharo/xml/xinclude/XIncludeFilter.html
-share/doc/xincluder/com/elharo/xml/xinclude/BadParseAttributeException.html
-share/doc/xincluder/com/elharo/xml/xinclude/CircularIncludeException.html
-share/doc/xincluder/com/elharo/xml/xinclude/MalformedResourceException.html
-share/doc/xincluder/com/elharo/xml/xinclude/MissingHrefException.html
-share/doc/xincluder/com/elharo/xml/xinclude/XIncludeException.html
-share/doc/xincluder/com/elharo/xml/xinclude/XPointerException.html
-share/doc/xincluder/com/elharo/xml/xinclude/UnavailableResourceException.html
-share/doc/xincluder/com/elharo/xml/xinclude/package-use.html
-share/doc/xincluder/index-files/index-14.html
-share/doc/xincluder/index-files/index-2.html
-share/doc/xincluder/index-files/index-3.html
-share/doc/xincluder/index-files/index-4.html
-share/doc/xincluder/index-files/index-5.html
-share/doc/xincluder/index-files/index-6.html
-share/doc/xincluder/index-files/index-7.html
-share/doc/xincluder/index-files/index-8.html
-share/doc/xincluder/index-files/index-9.html
-share/doc/xincluder/index-files/index-10.html
-share/doc/xincluder/index-files/index-11.html
-share/doc/xincluder/index-files/index-12.html
-share/doc/xincluder/index-files/index-13.html
-share/doc/xincluder/index-files/index-1.html
-share/doc/xincluder/packages.html
-share/doc/xincluder/package-list
-share/doc/xincluder/overview-tree.html
-share/doc/xincluder/overview-summary.html
-share/doc/xincluder/overview-frame.html
-share/doc/xincluder/index.html
-share/doc/xincluder/help-doc.html
-share/doc/xincluder/deprecated-list.html
-share/doc/xincluder/stylesheet.css
-share/doc/xincluder/allclasses-frame.html
-share/doc/xincluder/serialized-form.html
+%%DOCSDIR%%/com/elharo/xml/xinclude/test/class-use/SAXXIncluderTest.html
+%%DOCSDIR%%/com/elharo/xml/xinclude/test/package-use.html
+%%DOCSDIR%%/com/elharo/xml/xinclude/test/package-summary.html
+%%DOCSDIR%%/com/elharo/xml/xinclude/test/package-tree.html
+%%DOCSDIR%%/com/elharo/xml/xinclude/test/package-frame.html
+%%DOCSDIR%%/com/elharo/xml/xinclude/test/SAXXIncluderTest.html
+%%DOCSDIR%%/com/elharo/xml/xinclude/class-use/MissingHrefException.html
+%%DOCSDIR%%/com/elharo/xml/xinclude/class-use/UnavailableResourceException.html
+%%DOCSDIR%%/com/elharo/xml/xinclude/class-use/XIncludeFilter.html
+%%DOCSDIR%%/com/elharo/xml/xinclude/class-use/JDOMXIncluder.html
+%%DOCSDIR%%/com/elharo/xml/xinclude/class-use/MalformedResourceException.html
+%%DOCSDIR%%/com/elharo/xml/xinclude/class-use/SAXXIncluder.html
+%%DOCSDIR%%/com/elharo/xml/xinclude/class-use/EncodingHeuristics.html
+%%DOCSDIR%%/com/elharo/xml/xinclude/class-use/BadParseAttributeException.html
+%%DOCSDIR%%/com/elharo/xml/xinclude/class-use/DOMXIncluder.html
+%%DOCSDIR%%/com/elharo/xml/xinclude/class-use/XPointerException.html
+%%DOCSDIR%%/com/elharo/xml/xinclude/class-use/CircularIncludeException.html
+%%DOCSDIR%%/com/elharo/xml/xinclude/class-use/XIncludeException.html
+%%DOCSDIR%%/com/elharo/xml/xinclude/package-summary.html
+%%DOCSDIR%%/com/elharo/xml/xinclude/package-tree.html
+%%DOCSDIR%%/com/elharo/xml/xinclude/package-frame.html
+%%DOCSDIR%%/com/elharo/xml/xinclude/DOMXIncluder.html
+%%DOCSDIR%%/com/elharo/xml/xinclude/EncodingHeuristics.html
+%%DOCSDIR%%/com/elharo/xml/xinclude/JDOMXIncluder.html
+%%DOCSDIR%%/com/elharo/xml/xinclude/SAXXIncluder.html
+%%DOCSDIR%%/com/elharo/xml/xinclude/XIncludeFilter.html
+%%DOCSDIR%%/com/elharo/xml/xinclude/BadParseAttributeException.html
+%%DOCSDIR%%/com/elharo/xml/xinclude/CircularIncludeException.html
+%%DOCSDIR%%/com/elharo/xml/xinclude/MalformedResourceException.html
+%%DOCSDIR%%/com/elharo/xml/xinclude/MissingHrefException.html
+%%DOCSDIR%%/com/elharo/xml/xinclude/XIncludeException.html
+%%DOCSDIR%%/com/elharo/xml/xinclude/XPointerException.html
+%%DOCSDIR%%/com/elharo/xml/xinclude/UnavailableResourceException.html
+%%DOCSDIR%%/com/elharo/xml/xinclude/package-use.html
+%%DOCSDIR%%/index-files/index-14.html
+%%DOCSDIR%%/index-files/index-2.html
+%%DOCSDIR%%/index-files/index-3.html
+%%DOCSDIR%%/index-files/index-4.html
+%%DOCSDIR%%/index-files/index-5.html
+%%DOCSDIR%%/index-files/index-6.html
+%%DOCSDIR%%/index-files/index-7.html
+%%DOCSDIR%%/index-files/index-8.html
+%%DOCSDIR%%/index-files/index-9.html
+%%DOCSDIR%%/index-files/index-10.html
+%%DOCSDIR%%/index-files/index-11.html
+%%DOCSDIR%%/index-files/index-12.html
+%%DOCSDIR%%/index-files/index-13.html
+%%DOCSDIR%%/index-files/index-1.html
+%%DOCSDIR%%/packages.html
+%%DOCSDIR%%/package-list
+%%DOCSDIR%%/resources/inherit.gif
+%%DOCSDIR%%/overview-tree.html
+%%DOCSDIR%%/overview-summary.html
+%%DOCSDIR%%/overview-frame.html
+%%DOCSDIR%%/index.html
+%%DOCSDIR%%/help-doc.html
+%%DOCSDIR%%/deprecated-list.html
+%%DOCSDIR%%/stylesheet.css
+%%DOCSDIR%%/allclasses-frame.html
+%%DOCSDIR%%/allclasses-noframe.html
+%%DOCSDIR%%/constant-values.html
+%%DOCSDIR%%/serialized-form.html
 share/java/classes/xincluder.jar
-@dirrm share/doc/xincluder/com/elharo/xml/xinclude/test/class-use
-@dirrm share/doc/xincluder/com/elharo/xml/xinclude/test
-@dirrm share/doc/xincluder/com/elharo/xml/xinclude/class-use
-@dirrm share/doc/xincluder/com/elharo/xml/xinclude
-@dirrm share/doc/xincluder/com/elharo/xml
-@dirrm share/doc/xincluder/com/elharo
-@dirrm share/doc/xincluder/com
-@dirrm share/doc/xincluder/index-files
-@dirrm share/doc/xincluder
+@dirrm %%DOCSDIR%%/com/elharo/xml/xinclude/test/class-use
+@dirrm %%DOCSDIR%%/com/elharo/xml/xinclude/test
+@dirrm %%DOCSDIR%%/com/elharo/xml/xinclude/class-use
+@dirrm %%DOCSDIR%%/com/elharo/xml/xinclude
+@dirrm %%DOCSDIR%%/com/elharo/xml
+@dirrm %%DOCSDIR%%/com/elharo
+@dirrm %%DOCSDIR%%/com
+@dirrm %%DOCSDIR%%/index-files
+@dirrm %%DOCSDIR%%/resources
+@dirrm %%DOCSDIR%%
