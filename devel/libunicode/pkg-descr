@@ -1,0 +1,5 @@
+libunicode is a library for manipulating Unicode characters and
+strings.  It understands both the UTF-8 and UCS-2 encodings, and has a
+framework for adding support for new encodings.
+
+WWW: http://www.gnome.org/
