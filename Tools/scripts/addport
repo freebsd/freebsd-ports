@@ -50,7 +50,7 @@ my $distdir = $opts{'s'} if ($opts{'s'} ne "");
 my $dir = $opts{'d'};
 my $h = "freefall.FreeBSD.org";
 $h = $opts{'h'} if ($opts{'h'} ne "");
-my $n = ""; $n = "-n " if $opts{'n'};
+my $n = ""; $n = "-n" if $opts{'n'};
 my $u = $ENV{USER};
 $u = $opts{'u'} if ($opts{'u'} ne "");
 my $more_testing = $opts{'t'};
@@ -83,7 +83,7 @@ if ($myhost ne lc($h)) {
 	$repo = "/home/ncvs" if !$ENV{CVSROOT};
 }
 $repo = "$ENV{CVSROOT}" if $ENV{CVSROOT};
-my $cvs = "cvs $n-d $repo";
+my $cvs = "cvs -d $repo";
 
 # stuff that always happens when we start
 BEGIN {
@@ -234,7 +234,7 @@ foreach my $thisdir (@dirs) {
 
 	# commit the actual port.
 	chdir "$tmpdir/$category" or err(1, "$tmpdir/$category");
-	system("$cvs ci Makefile $portname") && errx(1, "cvs commit failed, aborting.");
+	system("$cvs $n ci Makefile $portname") && errx(1, "cvs commit failed, aborting.");
 	system("$ssh $perl /usr/local/bin/modulesupdate $module ports/$category/$portname") && errx(1, "adding port to modules failed, aborting.");
 }
 
