@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	a2ps
-PORTVERSION=	4.13
-PORTREVISION=	2
+PORTVERSION=	4.13b
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.enst.fr/pub/unix/a2ps/ \
 		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMESUFFIX=	-${PAPERSIZE}
-DISTFILES=	a2ps-${PORTVERSION}${EXTRACT_SUFX} sheets.map
+DISTFILES=	a2ps-${PORTVERSION}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -23,6 +22,7 @@ USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 MAN1=		a2ps.1 ogonkify.1 card.1 psmandup.1 fixps.1 pdiff.1 psset.1 texi2dvi4a2ps.1
+WRKSRC=		${WRKDIR}/${PORTNAME}-4.13
 
 PAPERSIZE?=	letter
 PAPERSIZECNF=	${PAPERSIZE:S/l/L/:S/a/A/}
@@ -44,9 +44,6 @@ PLIST_SUB+=	WITHEMACS=""
 .else
 PLIST_SUB+=	WITHEMACS="@comment "
 .endif
-
-post-extract:
-	$(CP) $(DISTDIR)/sheets.map $(WRKSRC)/sheets/sheets.map
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/a2ps
