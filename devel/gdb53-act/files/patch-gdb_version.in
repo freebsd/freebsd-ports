@@ -1,0 +1,5 @@
+--- gdb/version.in	Fri Apr 26 18:04:22 2002
++++ gdb/version.in	Mon Jun  3 08:14:54 2002
+@@ -1 +1 @@
+-5.2.90
++5.3 (FreeBSD)

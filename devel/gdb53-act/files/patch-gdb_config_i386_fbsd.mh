@@ -1,0 +1,10 @@
+--- gdb/config/i386/fbsd.mh	Sat May 11 10:22:27 2002
++++ gdb/config/i386/fbsd.mh	Sun Oct 13 11:50:47 2002
+@@ -4,4 +4,6 @@
+ 
+ NAT_FILE= nm-fbsd.h
+ # NOTE: Do not spread NATDEPFILES over several lines - it hurts BSD make.
+-NATDEPFILES= fork-child.o infptrace.o inftarg.o solib.o solib-svr4.o solib-legacy.o corelow.o core-aout.o core-regset.o i386-nat.o i386bsd-nat.o i386fbsd-nat.o gcore.o fbsd-proc.o
++NATDEPFILES= fork-child.o infptrace.o inftarg.o solib.o solib-svr4.o solib-legacy.o corelow.o core-aout.o core-regset.o i386-nat.o i386bsd-nat.o i386fbsd-nat.o gcore.o fbsd-proc.o kvm-fbsd.o freebsd-uthread.o
++
++NAT_CLIBS= -lkvm

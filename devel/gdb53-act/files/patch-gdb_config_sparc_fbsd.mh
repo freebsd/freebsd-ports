@@ -1,0 +1,13 @@
+--- gdb/config/sparc/fbsd.mh.orig	Wed Mar 13 03:20:24 2002
++++ gdb/config/sparc/fbsd.mh	Thu Oct 17 05:59:25 2002
+@@ -19,7 +19,7 @@
+ #  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  */
+ 
+ # Host: FreeBSD/sparc64
+-NATDEPFILES= sparc-nat.o \
+-	corelow.o fork-child.o infptrace.o inftarg.o \
+-	solib.o solib-svr4.o solib-legacy.o
++NATDEPFILES= fork-child.o infptrace.o inftarg.o sparc64nbsd-nat.o \
++	solib.o solib-svr4.o solib-legacy.o kvm-fbsd.o
+ NAT_FILE= nm-fbsd.h
++NAT_CLIBS= -lkvm
