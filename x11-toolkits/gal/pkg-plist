@@ -87,11 +87,13 @@ include/gal/unicode/gunicode.h
 include/gal/util/e-bit-array.h
 include/gal/util/e-cache.h
 include/gal/util/e-i18n.h
+include/gal/util/e-iconv.h
 include/gal/util/e-sorter-array.h
 include/gal/util/e-sorter.h
 include/gal/util/e-text-event-processor-emacs-like.h
 include/gal/util/e-text-event-processor-types.h
 include/gal/util/e-text-event-processor.h
+include/gal/util/e-unicode-i18n.h
 include/gal/util/e-util.h
 include/gal/util/e-xml-utils.h
 include/gal/widgets/color-group.h
@@ -128,7 +130,7 @@ include/gal/widgets/widget-color-combo.h
 include/gal/widgets/widget-pixmap-combo.h
 lib/libgal.a
 lib/libgal.so
-lib/libgal.so.14
+lib/libgal.so.18
 share/gnome/etable/%%VERSION%%/glade/e-table-config-no-group.glade
 share/gnome/etable/%%VERSION%%/glade/e-table-config.glade
 share/gnome/etable/%%VERSION%%/glade/e-table-field-chooser.glade
@@ -179,6 +181,7 @@ share/locale/lt/LC_MESSAGES/gal.mo
 share/locale/nn/LC_MESSAGES/gal.mo
 share/locale/no/LC_MESSAGES/gal.mo
 share/locale/pl/LC_MESSAGES/gal.mo
+share/locale/pt/LC_MESSAGES/gal.mo
 share/locale/pt_BR/LC_MESSAGES/gal.mo
 share/locale/ro/LC_MESSAGES/gal.mo
 share/locale/ru/LC_MESSAGES/gal.mo
