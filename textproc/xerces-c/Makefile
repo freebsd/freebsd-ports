@@ -38,6 +38,12 @@ CONFIGURE_ARGS+=	-r none
 
 PLIST_SUB+=	XERCESC_VER=${PORTVERSION:S/./_/g} \
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502102
+FORBIDDEN=	"Does not respect PTHREAD_{CFLAGS,LIBS}"
+.endif
+
 pre-configure:
 	${CHMOD} 700 ${CONFIGURE_WRKSRC}/runConfigure
 	${CHMOD} 700 ${CONFIGURE_WRKSRC}/configure
@@ -45,4 +51,4 @@ pre-configure:
 post-install:
 	${STRIP_CMD} ${PREFIX}/lib/libxerces-c${PORTVERSION:S/./_/g}.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
