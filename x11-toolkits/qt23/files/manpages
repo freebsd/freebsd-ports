@@ -327,4 +327,5 @@ qxmlparseexception.3qt \
 qxmlreader.3qt \
 qxmlsimplereader.3qt \
 qxtapplication.3qt \
-qxtwidget.3qt
+qxtwidget.3qt \
+qscreencursor.3qt
