@@ -18,12 +18,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAN1=		guavac.1
 STRIP=
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
+USE_GCC=	2.95
 
 pre-install:
 	@${CHMOD} +x ${WRKSRC}/mkinstalldirs
@@ -31,4 +26,4 @@ pre-install:
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/guavac ${PREFIX}/bin/guavad
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
