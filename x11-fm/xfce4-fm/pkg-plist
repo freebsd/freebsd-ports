@@ -42,6 +42,7 @@ lib/libxffmsmb.so.0
 lib/xfce4/mcs-plugins/libxffmsettings.la
 lib/xfce4/mcs-plugins/libxffmsettings.so
 libdata/pkgconfig/xffm-1.0.pc
+share/locale/az/LC_MESSAGES/xffm.mo
 share/locale/ca/LC_MESSAGES/xffm.mo
 share/locale/cs/LC_MESSAGES/xffm.mo
 share/locale/de/LC_MESSAGES/xffm.mo
@@ -54,7 +55,10 @@ share/locale/ja/LC_MESSAGES/xffm.mo
 share/locale/lt/LC_MESSAGES/xffm.mo
 share/locale/ms/LC_MESSAGES/xffm.mo
 share/locale/nl/LC_MESSAGES/xffm.mo
+share/locale/no/LC_MESSAGES/xffm.mo
+share/locale/pl/LC_MESSAGES/xffm.mo
 share/locale/pt_PT/LC_MESSAGES/xffm.mo
+share/locale/sv/LC_MESSAGES/xffm.mo
 share/locale/ta/LC_MESSAGES/xffm.mo
 share/locale/tr/LC_MESSAGES/xffm.mo
 share/locale/uk/LC_MESSAGES/xffm.mo

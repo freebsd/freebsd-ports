@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	xfce4-wm
-PORTVERSION=	4.0.1
+PORTVERSION=	4.0.3
 PORTREVISION=	0
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	http://www.xfce.org/archive/xfce-${PORTVERSION}/src/ \
-		http://linux.imp.mx/xfce4/xfce_${PORTVERSION}/src/
+                ftp://ftp.berlios.de/pub/xfce-goodies/${PORTVERSION}/xfce-${PORTVERSION}/src/ \
+                http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/${PORTVERSION}/ \
+                http://www.efd.lth.se/~c03bk/xfce4/mirror/tarballs/${PORTVERSION}/
 DISTNAME=	xfwm4-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
