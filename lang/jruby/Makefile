@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	jruby
-PORTVERSION=	0.1.5
+PORTVERSION=	0.1.6b
 CATEGORIES=	lang ruby java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	${PORTNAME}-${PORTVERSION:S/./_/g}${EXTRACT_SUFX}
+DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
@@ -24,7 +25,7 @@ NO_WRKSUBDIR=	yes
 .if !defined(NOPORTDOCS)
 DISTFILES+=	${PORTNAME}-src-${PORTVERSION:S/./_/g}${EXTRACT_SUFX}
 
-FILES=		README build.xml jruby.mf org test.rb
+FILES=		README build.xml jruby.mf org test.rb samples
 .endif
 
 do-build:
