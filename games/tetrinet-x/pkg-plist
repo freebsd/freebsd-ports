@@ -1,0 +1,8 @@
+tetrinet-x/tetrix.freebsd
+tetrinet-x/server-query
+tetrinet-x/game.conf
+tetrinet-x/game.log
+tetrinet-x/game.secure
+tetrinet-x/game.winlist
+etc/rc.d/tetrinet-x.sh
+@dirrm tetrinet-x
