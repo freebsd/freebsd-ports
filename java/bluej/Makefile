@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.bluej.org/pub/bluej/ \
 		http://www.metaverse.nl/~ernst/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	znerd
-DISTNAME=	bluej-116
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.jar
 
 MAINTAINER=	karlj000@unbc.ca
