@@ -7,11 +7,15 @@
 
 PORTNAME=	thefish
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.energyhq.es.eu.org/files/
 
 MAINTAINER=	flynn@energyhq.es.eu.org
 COMMENT=	Qt/Gtk+/ncurses rc.conf editor/management tool
+
+MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
+		LOCALBASE="${LOCALBASE}"
 
 .if defined(WITHOUT_X11) || defined(NO_GUI)
 NO_GUI=		yes
