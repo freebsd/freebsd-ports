@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gdick
-PORTVERSION=	0.7
+PORTVERSION=	0.8.1
 CATEGORIES=	korean python
 MASTER_SITES=	http://ddt.mirstyle.org/data/
 
@@ -28,21 +28,20 @@ PLIST_SUB=	${OPTPLIST_SUB}
 USE_GNOME=	gnomehier
 RUN_DEPENDS+=	${PYTHONPREFIX_SITELIBDIR}/gtk-2.0/gconfmodule.so:${PORTSDIR}/x11-toolkits/py-gnome2
 OPTPLIST_SUB=	GNOMEONLY=""
-PYDISTUTILS_INSTALLARGS+=	--bonobo-dir="${X11BASE}/libdata/bonobo"
 .else
 OPTPLIST_SUB=	GNOMEONLY="@comment "
-PYDISTUTILS_INSTALLARGS+=	--without-gnome
 .endif
 
 post-patch:
-.for f in gdick.py gdick_applet
 	${REINPLACE_CMD} -e \
 		's,/usr/share/gdick/gdick.glade,${PREFIX}/share/gdick/gdick.glade,g' \
-		${WRKSRC}/$f
-.endfor
+		${WRKSRC}/lib/gdick/gdick.py
 	${REINPLACE_CMD} -e 's,/usr/bin/gdick,${PREFIX}/bin/gdick,g' \
 		${WRKSRC}/GNOME_GDick.server
-	${REINPLACE_CMD} -e 's,(sys\.argv),("--without-gnome"),g' \
+.if !defined(WITH_GNOME)
+	${REINPLACE_CMD} -e 's/, "gdick_applet"//g' \
+		-e 's|, ("lib/bonobo/servers/", ("GNOME_GDick.server",))||g' \
 		${WRKSRC}/setup.py
+.endif
 
 .include <bsd.port.post.mk>

@@ -1,12 +1,26 @@
 bin/gdick
-bin/gdick_applet
-%%PYTHON_SITELIBDIR%%/YahooDict.py
-%%PYTHON_SITELIBDIR%%/YahooDict.pyc
-%%PYTHON_SITELIBDIR%%/YahooDict.pyo
-%%PYTHON_SITELIBDIR%%/YahooView.py
-%%PYTHON_SITELIBDIR%%/YahooView.pyc
-%%PYTHON_SITELIBDIR%%/YahooView.pyo
+%%GNOMEONLY%%bin/gdick_applet
+%%PYTHON_SITELIBDIR%%/gdick/DictResult.py
+%%PYTHON_SITELIBDIR%%/gdick/DictResult.pyc
+%%PYTHON_SITELIBDIR%%/gdick/DictResult.pyo
+%%PYTHON_SITELIBDIR%%/gdick/Utils.py
+%%PYTHON_SITELIBDIR%%/gdick/Utils.pyc
+%%PYTHON_SITELIBDIR%%/gdick/Utils.pyo
+%%PYTHON_SITELIBDIR%%/gdick/YahooDict.py
+%%PYTHON_SITELIBDIR%%/gdick/YahooDict.pyc
+%%PYTHON_SITELIBDIR%%/gdick/YahooDict.pyo
+%%PYTHON_SITELIBDIR%%/gdick/YahooView.py
+%%PYTHON_SITELIBDIR%%/gdick/YahooView.pyc
+%%PYTHON_SITELIBDIR%%/gdick/YahooView.pyo
+%%PYTHON_SITELIBDIR%%/gdick/__init__.py
+%%PYTHON_SITELIBDIR%%/gdick/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gdick/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdick/gdick.py
+%%PYTHON_SITELIBDIR%%/gdick/gdick.pyc
+%%PYTHON_SITELIBDIR%%/gdick/gdick.pyo
 share/gdick/gdick.glade
+share/gdick/gdick.png
+share/gdick/gdick_icon.png
 @dirrm share/gdick
 %%GNOMEONLY%%@cwd %%X11BASE%%
 %%GNOMEONLY%%libdata/bonobo/servers/GNOME_GDick.server
