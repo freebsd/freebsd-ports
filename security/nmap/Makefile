@@ -27,7 +27,7 @@ CFLAGS+=	-DDLT_RAW=12 # for obsoleted <net/bpf.h>
 .endif
 MAN1?=		nmap.1
 
-.if !target(post-install)
+.if !target(post-install) && (${PORTNAME} == "nmap")
 post-install:
 	@strip ${PREFIX}/bin/nmap
 .endif
