@@ -307,6 +307,7 @@
     SUBDIR += sqlrelay
     SUBDIR += sqsh
     SUBDIR += sybase-ocsd
+    SUBDIR += sybase_ase
     SUBDIR += sybtcl
     SUBDIR += tcl-Mysql
     SUBDIR += tdb

@@ -1,0 +1,44 @@
+#!/bin/sh 
+export SYBASE=`grep -e "^sybase" /etc/passwd | cut -d: -f 6`
+if [ -n "${SYBASE}" -a -d "${SYBASE}" ]; then
+  export PATH="${SYBASE}/bin:${SYBASE}/install:${PATH}"
+
+  unset LANG
+  unset LC_ALL
+
+  case "$1" in
+    start)
+      echo -n "Sybase ASE "
+      cd ${SYBASE}/install
+      for run_server in RUN_* ; do
+        su sybase -c "startserver -f ${run_server}" > /dev/null 2>&1
+        echo -n "${run_server} "
+      done
+      echo -n "done"
+      ;;
+
+    stop)
+      echo -n "Sybase ASE "
+      killall dataserver
+      killall backupserver
+      ;;
+
+    status)
+      showserver
+      ;;
+
+    restart)
+      $0 stop
+      $0 start
+      ;;
+
+    *)
+      echo "usage - $0 {start|stop|status|restart}"
+      exit 1
+  esac
+else
+  echo "Sybase home directory not set, cannot continue"
+  exit 1
+fi
+
+exit 0
