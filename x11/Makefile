@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.202 1998/05/16 03:08:09 dburr Exp $
+# $Id: Makefile,v 1.203 1998/05/17 04:45:45 mph Exp $
 #
 
     SUBDIR += FWF
@@ -17,6 +17,7 @@
     SUBDIR += camltk41
     SUBDIR += ctwm
     SUBDIR += dclock
+    SUBDIR += dxpc
     SUBDIR += emiclock
     SUBDIR += emu
     SUBDIR += enlightenment
