@@ -7,7 +7,7 @@ DISTNAME=	# nonexistent
 DISTFILES=	# empty
 
 MAINTAINER?=	mita@FreeBSD.org
-COMMENT?=	GNU ghostscript with Japanese Font support
+COMMENT?=	GNU ghostscript with CJK font support
 
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu \
 		${LOCALBASE}/share/ghostscript/Resource/ai0/CMap/Identity-H:${PORTSDIR}/print/adobe-cmaps
@@ -26,12 +26,14 @@ RUN_DEPENDS+=	${LOCALBASE}/share/ghostscript/${PORTVERSION}/lib/gs_init.ps.pre_s
 PLIST_SUB+=	CIDFNMAP="${CIDFNMAP}"
 .if defined(JPNFONT)
 CATEGORIES:=	japanese ${CATEGORIES}
+COMMENT=	GNU ghostscript with Japanese font support
 PKGNAMEPREFIX=	ja-
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-jpnfont
 RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/TrueType/kochi-mincho-subst.ttf:${PORTSDIR}/japanese/kochi-ttfonts
 CIDFNMAP=	CIDFnmap.jp
 .elif defined(KORFONT)
 CATEGORIES:=	korean ${CATEGORIES}
+COMMENT=	GNU ghostscript with Korean font support
 PKGNAMEPREFIX=	ko-
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-korfont
 RUN_DEPENDS+=	${LOCALBASE}/share/ghostscript/fonts/Munhwa-Bold:${PORTSDIR}/korean/munhwafonts-cid
