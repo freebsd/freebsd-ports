@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_extract_forwarded
-PORTVERSION=	1.2
+PORTVERSION=	1.4
 CATEGORIES=	www
 MASTER_SITES=	http://web.warhound.org/mod_extract_forwarded/ \
 		http://atreides.freenix.no/~anders/
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 APXS?=		${LOCALBASE}/sbin/apxs
-DOCS=		mod_extract_forwarded.html README
+DOCS=		doc.html README
 
 do-build:
 	cd ${WRKSRC} && ${APXS} -c ${PORTNAME}.c
