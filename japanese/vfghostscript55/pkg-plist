@@ -1,5 +1,6 @@
 bin/bdftops
 bin/dvipdf
+bin/ert
 bin/font2c
 bin/gs
 bin/gsbj

@@ -1,4 +1,5 @@
 bin/bdftops
+bin/ert
 bin/font2c
 bin/gs
 bin/gsbj
