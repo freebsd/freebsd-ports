@@ -1,5 +1,5 @@
 bin/irc
-bin/irc-20010612
+bin/irc-%%VERSION%%
 bin/ircbug
 bin/ircflush
 bin/ircio
@@ -275,6 +275,7 @@ share/irc/help/on/public_msg
 share/irc/help/on/public_notice
 share/irc/help/on/public_other
 share/irc/help/on/raw_irc
+share/irc/help/on/raw_send
 share/irc/help/on/send_action
 share/irc/help/on/send_dcc_chat
 share/irc/help/on/send_msg

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ircii
-PORTVERSION=	20010612
+PORTVERSION=	20011210
 CATEGORIES=	irc ipv6
 MASTER_SITES=	ftp://ftp.warped.com/pub/ircII/ \
 		ftp://ircftp.au.eterna.com.au/pub/ircII/ \
@@ -20,5 +20,7 @@ CONFIGURE_ENV=	IRCLIB=${PREFIX}/share/irc
 USE_BZIP2=	yes
 
 MAN1=		ircII.1 ircbug.1
+
+PLIST_SUB=	VERSION="${PORTVERSION}"
 
 .include <bsd.port.mk>
