@@ -19,6 +19,8 @@ BUILD_DEPENDS=	abook:${PORTSDIR}/mail/abook \
 RUN_DEPENDS=	abook:${PORTSDIR}/mail/abook \
 		gpg:${PORTSDIR}/security/gnupg
 
+BROKEN=		"Does not fetch"
+
 WRKSRC=		${WRKDIR}/lbdb-${PORTVERSION}
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS+=	--libdir=${PREFIX}/libexec --enable-lbdb-dotlock
