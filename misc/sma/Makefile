@@ -1,13 +1,13 @@
 # New ports collection makefile for:    sma
-# Version required:     0.9.7
+# Version required:     0.9.13
 # Date created:         8 May 1998
 # Whom:                 Donald Burr <dburr@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/10 22:21:36 steve Exp $
+# $Id: Makefile,v 1.2 1998/05/30 12:36:19 dburr Exp $
 #
 
-DISTNAME=	SMA2
-PKGNAME=	sma-0.9.7
+DISTNAME=	SMA
+PKGNAME=	sma-0.9.13
 CATEGORIES=	misc
 MASTER_SITES=	http://www.scour.net/sma/
 EXTRACT_SUFX=	.pl
@@ -26,7 +26,8 @@ do-extract:
 
 pre-configure:
 	@${SED} -e '1,1s:/usr/bin/perl:${PREFIX}/bin/perl5.00404:' \
-		${DISTDIR}/SMA2.pl > ${WRKDIR}/sma
+		-e '/\$debug = 3/s//\$debug = 0/' \
+		${DISTDIR}/SMA.pl > ${WRKDIR}/sma
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/sma ${PREFIX}/bin
