@@ -8,6 +8,7 @@
 
 PORTNAME=	magicpoint
 PORTVERSION=	1.10a
+PORTREVISION=	1
 CATEGORIES+=	misc
 MASTER_SITES=	ftp://ftp.mew.org/pub/mgp/
 
