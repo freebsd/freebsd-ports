@@ -1,1 +1,1 @@
-Apache module for integrating Python
+Apache module that embeds the Python interpreter within the server

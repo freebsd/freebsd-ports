@@ -1,64 +1,36 @@
 # New ports collection makefile for:	mod_python
 # Date created:				28 August 2000
-# Whom:					Hye-Shik Chang <perky@python.or.kr>
+# Whom:					Hye-Shik Chang
 #
 # $FreeBSD$
 #
 
 PORTNAME=	mod_python
-PORTVERSION=	2.7.8
+PORTVERSION=	3.0.1
 CATEGORIES=	www python
-MASTER_SITES=	http://www.modpython.org/dist/ \
-		ftp://ftp.nuug.no/pub/anders/distfiles/
-DIST_SUBDIR=	python
+MASTER_SITES=	http://www.apache.org/dist/httpd/%SUBDIR%/ \
+		http://apache.mirrorcentral.com/dist/httpd/%SUBDIR%/ \
+		http://apache.missouri.edu/dist/httpd/%SUBDIR%/ \
+		http://ftp.epix.net/apache/dist/httpd/%SUBDIR%/ \
+		ftp://ftp.digex.net/pub/packages/network/apache/httpd/%SUBDIR%/ \
+		ftp://ftp.cuckoo.com/pub/mirrors/apache/dist/httpd/%SUBDIR%/
+MASTER_SITE_SUBDIR=	modpython
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perky@FreeBSD.org
 
-BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
-RUN_DEPENDS=	${APXS}:${APACHE_PORT}
+BUILD_DEPENDS=	${LOCALBASE}/include/apache2/httpd.h:${PORTSDIR}/www/apache2
+RUN_DEPENDS=	${LOCALBASE}/include/apache2/httpd.h:${PORTSDIR}/www/apache2
 
-NO_PACKAGE=	"Requires Python without threads support"
 USE_PYTHON=	yes
 
-.include <bsd.port.pre.mk>
-
 APXS?=		${LOCALBASE}/sbin/apxs
-APACHE_PORT?=	${PORTSDIR}/www/apache13
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-apxs=${APXS}
-CONFIGURE_ENV=	PYTHON_BIN=${PYTHON_CMD}
-PLIST_SUB+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S/^${LOCALBASE}\///g}
-
-STRIP_CMD?=	strip
-
-pre-fetch:
-	@${ECHO} ""
-	@${ECHO} "You may use the following build option:"
-	@${ECHO} ""
-	@${ECHO} "  WANT_EAPI=yes  build as apache EAPI module (for apache13-modssl)"
-	@${ECHO} ""
-
-pre-patch:
-.if defined(WANT_EAPI)
-	cd ${WRKSRC} && ${PATCH} -p2 -s < ${PATCHDIR}/optpatch-WANT_EAPI
-.endif
-
-post-configure:
-	@${SH} ${PKGREQ}.threads ${PYTHON_CMD}
-.if defined(OPTIONAL_LIBS)
-	${SED} 's/^\(LIBS=.*\)/\1 ${OPTIONAL_LIBS}/' ${WRKSRC}/src/Makefile \
-		> ${WRKSRC}/src/Makefile.tmp && \
-		${MV} -f ${WRKSRC}/src/Makefile.tmp ${WRKSRC}/src/Makefile
-.endif
-
-post-build:
-.if !defined(DONT_STRIP) && exists(${STRIP_CMD})
-	${STRIP_CMD} ${WRKSRC}/src/mod_python.so
-.endif
+CONFIGURE_ARGS+=--with-apxs="${APXS}" --with-python="${PYTHON_CMD}"
+MAKE_ENV=	EXPR_COMPAT=yes
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

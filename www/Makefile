@@ -193,6 +193,7 @@
     SUBDIR += mod_proxy_add_forward
     SUBDIR += mod_put
     SUBDIR += mod_python
+    SUBDIR += mod_python3
     SUBDIR += mod_roaming
     SUBDIR += mod_ruby
     SUBDIR += mod_scgi
