@@ -240,6 +240,7 @@
     SUBDIR += wwwcount
     SUBDIR += wwwoffle
     SUBDIR += wwwstat
+    SUBDIR += wyvern
     SUBDIR += xitami
     SUBDIR += xswallow
     SUBDIR += znavigator

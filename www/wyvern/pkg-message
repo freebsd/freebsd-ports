@@ -1,0 +1,7 @@
+************************************************************
+To create an SSL certificate, go to /usr/ports/www/wyvern
+and type:
+
+	make certificate
+
+************************************************************
