@@ -10293,6 +10293,7 @@ spread		ports/net/spread
 spread-j	ports/net/spread-j
 springgraph	ports/graphics/springgraph
 spruce		ports/mail/spruce
+sqldjbdns	ports/dns/sqldjbdns
 sqlite		ports/databases/sqlite
 sqlite3		ports/databases/sqlite3
 sqlrelay	ports/databases/sqlrelay
