@@ -1,0 +1,16 @@
+--- src/ui_init.c.orig	Wed Aug  1 15:25:41 2001
++++ src/ui_init.c	Wed Aug  1 15:26:27 2001
+@@ -167,11 +167,11 @@
+       }
+     Tcl_SetVar(interp, "argv", buf, TCL_GLOBAL_ONLY);
+ #ifndef WIN32
+-    if(Tk_Init(interp)!=TCL_OK)
++    if(Tcl_Init(interp)!=TCL_OK || Tk_Init(interp)!=TCL_OK)
+       {
+ 	/*I'd like to check this, but can't do anything sensible because
+ 	  Tk_Init trys to read the TK_LIBRARY files, and I don't want it to!*/
+-	fprintf(stderr, "nt: error opening display: %s\n", interp->result);
++	fprintf(stderr, "nt: error initializing tcl/tk: %s\n", interp->result);
+ 	exit(1);
+       }
+ #else
