@@ -71,9 +71,11 @@
     SUBDIR += oqtencoder
     SUBDIR += oqtplayer
     SUBDIR += ppm2fli
+    SUBDIR += recmpeg
     SUBDIR += slideshow
     SUBDIR += smpeg
     SUBDIR += smpeg-xmms
+    SUBDIR += spigot
     SUBDIR += splitmpg
     SUBDIR += subconv
     SUBDIR += tkxanim

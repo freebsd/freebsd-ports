@@ -295,7 +295,6 @@
     SUBDIR += ray++
     SUBDIR += rayshade
     SUBDIR += reallyslick
-    SUBDIR += recmpeg
     SUBDIR += renderpark
     SUBDIR += ruby-evas
     SUBDIR += ruby-gd
@@ -336,7 +335,6 @@
     SUBDIR += sketch
     SUBDIR += sng
     SUBDIR += sodipodi
-    SUBDIR += spigot
     SUBDIR += springgraph
     SUBDIR += stamp
     SUBDIR += svg2swf
