@@ -56,10 +56,9 @@ include/assa/UDPSocket.h
 include/assa/UNIXAddress.h
 include/assa/UnConUDPSocket.h
 include/assa/xdrIOBuffer.h
-@dirrm include/assa
 lib/libassa.a
 lib/libassa.so
 lib/libassa.so.3
 libdata/pkgconfig/assa.pc
 share/aclocal/assa.m4
-@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
+@dirrm include/assa
