@@ -8,9 +8,8 @@
 PORTNAME=	pycodec
 PORTVERSION=	1.2.0
 CATEGORIES=	chinese python converters
-MASTER_SITES=	http://www3.kr.freebsd.org/~perky/distfiles/ \
-		http://fallin.lv/distfiles/ \
-		#ftp://python-codecs.sourceforge.net/pub/python-codecs/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	perky
 DISTNAME=	ChineseCodecs${PORTVERSION}
 
 MAINTAINER=	perky@FreeBSD.org

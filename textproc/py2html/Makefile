@@ -8,8 +8,8 @@
 PORTNAME=	py2html
 PORTVERSION=	0.7
 CATEGORIES=	textproc www python
-MASTER_SITES=	http://www3.kr.freebsd.org/~perky/distfiles/ \
-		http://cvsup3.kr.freebsd.org/~perky/distfiles/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	perky
 PKGNAMESUFFIX=	-${PYTHON_PKGNAMEPREFIX:S/-//}
 
 MAINTAINER=	perky@FreeBSD.org
