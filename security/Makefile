@@ -273,6 +273,7 @@
     SUBDIR += swatch
     SUBDIR += tcp_wrapper
     SUBDIR += tea-total
+    SUBDIR += termlog
     SUBDIR += tinc
     SUBDIR += trinokiller
     SUBDIR += tripwire
