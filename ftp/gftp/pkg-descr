@@ -1,7 +1,7 @@
-gFTP is a free multithreaded ftp client for *NIX based machines running 
-X11R6 or later. It has the following features: 
+gFTP is a free multithreaded ftp client for *NIX based machines.
+It has the following features: 
   Distributed under the terms of the GNU Public License Agreement 
-  Written in C and uses GTK+ 1.2.x+ for the GUI 
+  Written in C and Can use GTK+ 1.2.x+ or GTK 2.x for the GUI (or text mode)
   Multithreaded to allow for simultaneous downloads 
   File transfer queues to allow for downloading multiple files 
   Supports downloading entire directories and subdirectories 
@@ -18,8 +18,4 @@ X11R6 or later. It has the following features:
   Allows for passive and non-passive file transfers 
   Eliminates buffer overruns from malicious ftp sites 
 
-gFTP is copyright (c) 1998 by Brian Masney <masneyb@newwave.net>.
-
 WWW: http://gftp.seul.org/
-
-- Damjan Marion <dmarion@open.hr>

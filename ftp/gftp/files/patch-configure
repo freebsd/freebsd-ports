@@ -1,0 +1,14 @@
+--- configure.orig	Wed Nov 27 17:25:51 2002
++++ configure	Wed Nov 27 17:30:47 2002
+@@ -4725,9 +4725,9 @@
+   
+   rm -f conf.gtktest
+ 
+-    GTHREAD_LIBS="-lgthread"
++    GTHREAD_LIBS="$_GTHREAD_LIBS"
+   else
+-    GTHREAD_LIBS="-lgthread-2.0"
++    GTHREAD_LIBS="$_GTHREAD_LIBS"
+   fi
+ 
+   if test "x$GFTP_GTK" = xgftp-gtk; then
