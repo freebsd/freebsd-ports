@@ -7323,6 +7323,7 @@ tornado		ports/games/tornado
 tosha		ports/audio/tosha
 totd		ports/net/totd
 touch		src/usr.bin/touch
+towitoko	ports/devel/towitoko
 tpg		ports/devel/tpg
 tpop3d		ports/mail/tpop3d
 tput		src/usr.bin/tput
