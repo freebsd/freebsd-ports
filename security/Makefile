@@ -36,6 +36,7 @@
     SUBDIR += fakebo
     SUBDIR += find_ddos
     SUBDIR += firewalk
+    SUBDIR += flawfinder
     SUBDIR += fpm
     SUBDIR += fragrouter
     SUBDIR += fressh

@@ -117,7 +117,6 @@
     SUBDIR += fastcrc
     SUBDIR += ffcall
     SUBDIR += fhist
-    SUBDIR += flawfinder
     SUBDIR += flick
     SUBDIR += flux
     SUBDIR += fnccheck
