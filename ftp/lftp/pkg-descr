@@ -1,10 +1,8 @@
-   LFTP is a shell-like command line ftp client. 
-   The main two advantages over other ftp clients are reliability
-and ability to perform tasks in background. It will reconnect and
-reget the file being transferred if the connection broke.
-   You can start a transfer in background and continue browsing 
-on the ftp site.  It does this all in one process. When you have
-started background jobs and feel you are done, you can just exit
-lftp and it automatically moves to nohup mode and completes the
-transfers.
-   It has also such nice features as reput and mirror.
+LFTP is a shell-like command line ftp client. It is
+reliable: can retry operations and does reget automatically.
+It can do several transfers simultaneously in background.
+You can start a transfer in background and continue browsing
+the ftp site or another one. This all is done in one process.
+Background jobs will be completed in nohup mode if you exit
+or close modem connection. Lftp has reput, mirror, reverse
+mirror among its features.
