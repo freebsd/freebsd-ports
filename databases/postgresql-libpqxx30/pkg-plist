@@ -12,6 +12,8 @@ include/pqxx/connection_base
 include/pqxx/connection_base.hxx
 include/pqxx/connection_base.h
 include/pqxx/connectionitf.h
+include/pqxx/cursor
+include/pqxx/cursor.hxx
 include/pqxx/cursor.h
 include/pqxx/dbtransaction
 include/pqxx/dbtransaction.hxx
@@ -68,6 +70,5 @@ lib/libpqxx.a
 lib/libpqxx.la
 lib/libpqxx.so
 lib/libpqxx-%%PORTVERSION%%.so
-lib/libdata/pkgconfig/libpqxx.pc
+libdata/pkgconfig/libpqxx.pc
 @dirrm include/pqxx
-@unexec rmdir %D/lib/libdata/pkgconfig 2>/dev/null || true
