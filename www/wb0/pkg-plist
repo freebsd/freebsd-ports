@@ -1,0 +1,11 @@
+bin/wb0
+etc/wb0.config
+share/wb0/iso_8859-2.bit
+share/wb0/kamen.encoding
+share/wb0/iso_8859-2.encoding
+share/wb0/pc-latin-2.encoding
+share/wb0/iso_8859-1.encoding
+share/wb0/cp1250.encoding
+share/wb0/cork.encoding
+@dirrm share/wb0
+%%PORTDOCS%%%%DOCSDIR%%/wb0.config.README
