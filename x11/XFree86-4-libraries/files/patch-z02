@@ -1,0 +1,104 @@
+--- Imakefile.orig	Tue Oct  6 20:26:47 1998
++++ Imakefile	Wed May 31 14:11:50 2000
+@@ -18,8 +18,27 @@
+ #endif
+ #endif
+ 
++#if defined(FreeBSDBuildXlib) && FreeBSDBuildXlib
++        SUBDIRS = include config lib $(NLSSUBDIR) \
++		programs/Xserver/include \
++		programs/Xserver/hw/xfree86/parser \
++		programs/mkfontdir \
++		programs/bdftopcf
++#else
++#if defined(FreeBSDBuildXbin) && FreeBSDBuildXbin
++        SUBDIRS = include config lib $(NLSSUBDIR) \
++		programs/Xserver/include \
++		programs
++#else
++#if defined(FreeBSDBuildXfs) && FreeBSDBuildXfs
++        SUBDIRS = include config lib $(NLSSUBDIR) \
++                  programs programs/xfs
++#else
+         SUBDIRS = include config lib $(NLSSUBDIR) \
+                   programs $(FONTSDIR) $(DOCSDIR)
++#endif
++#endif
++#endif
+   LNINSTALLDIRS = lib
+ 
+ #if HasParallelMake
+@@ -202,3 +221,73 @@
+ #undef BootstrapCleanSubdirs
+ #define BootstrapCleanSubdirs BOOTSTRAPSUBDIRS="$(BOOTSTRAPSUBDIRS)"
+ BOOTSTRAPSUBDIRS = imake makedepend
++
++#if defined(FreeBSDBuildXlib) && FreeBSDBuildXlib
++FreeBSDPortsInstallDir = include lib programs/Xserver/include \
++			programs/Xserver/hw/xfree86/parser \
++			programs/bdftopcf programs/mkfontdir
++#else
++#if defined(FreeBSDBuildXbin) && FreeBSDBuildXbin
++FreeBSDPortsInstallDir = lib nls programs
++#else
++#if defined(FreeBSDBuildXxserv) && FreeBSDBuildXxserv
++FreeBSDPortsInstallDir = programs
++#else
++#if defined(FreeBSDBuildXfs) && FreeBSDBuildXfs
++FreeBSDPortsInstallDir = programs/xfs
++#else
++#if defined(FreeBSDBuildXnest) && FreeBSDBuildXnest
++FreeBSDPortsInstallDir = programs/Xserver
++#else
++FreeBSDPortsInstallDir = $(SUBDIRS)
++#endif
++#endif
++#endif
++#endif
++#endif
++
++FreeBSDPortsBuild::
++	@for dir in $(SUBDIRS); do \
++	   (cd $$dir && $(MAKE) $(MFLAGS) $(PARALLELMFLAGS) all); \
++	done	
++
++FreeBSDPortsInstall::
++	@for dir in $(FreeBSDPortsInstallDir); do \
++	   (cd $$dir && $(MAKE) $(MFLAGS) $(PARALLELMFLAGS) install); \
++	done
++
++FreeBSDPortsInstall.man::
++	@for dir in $(FreeBSDPortsInstallDir); do \
++	   (cd $$dir && $(MAKE) $(MFLAGS) $(PARALLELMFLAGS) install.man); \
++	done
++
++installXlib::
++	(cd programs/proxymngr && \
++	  $(INSTALL) -c $(INSTINCFLAGS) PM.h $(INCROOT)/X11/PM && \
++	  $(INSTALL) -c $(INSTINCFLAGS) PMproto.h $(INCROOT)/X11/PM)
++
++installXnest::
++	(cd programs/Xserver && \
++	  $(INSTALL) -c $(INSTALLFLAGS) $(INSTPGMFLAGS) Xnest $(DESTDIR)$(BINDIR)/Xnest)
++
++installXnest.man::
++	(cd programs/Xserver/hw/xnest && \
++	  $(RM) $(DESTDIR)$(MANDIR)/Xnest.$(MANSUFFIX)*; \
++	  $(INSTALL) -c $(INSTMANFLAGS) Xnest.man \
++		$(DESTDIR)$(MANDIR)/Xnest.$(MANSUFFIX); \
++	  $(COMPRESSMANCMD) $(DESTDIR)$(MANDIR)/Xnest.$(MANSUFFIX))
++
++installXprt::
++	(cd programs/Xserver && \
++	  $(INSTALL) -c $(INSTALLFLAGS) $(INSTPGMFLAGS) Xprt $(DESTDIR)$(BINDIR)/Xprt)
++
++installXvfb::
++	(cd programs/Xserver && \
++	  $(INSTALL) -c $(INSTALLFLAGS) $(INSTPGMFLAGS) Xvfb $(DESTDIR)$(BINDIR)/Xvfb)
++
++installXvfb.man::
++	(cd programs/Xserver/hw/vfb && \
++	  $(RM) $(DESTDIR)$(MANDIR)/Xvfb.$(MANSUFFIX)*; \
++	  $(INSTALL) -c $(INSTMANFLAGS) Xvfb.man \
++		$(DESTDIR)$(MANDIR)/Xvfb.$(MANSUFFIX); \
++	  $(COMPRESSMANCMD) $(DESTDIR)$(MANDIR)/Xvfb.$(MANSUFFIX))

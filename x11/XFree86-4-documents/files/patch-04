@@ -1,0 +1,13 @@
+--- specs/Imakefile~	Sat Mar  4 13:35:49 2000
++++ specs/Imakefile	Wed May 10 16:17:32 2000
+@@ -8,8 +8,8 @@
+ SUBDIRS = SpecsDocDirs
+ #else
+ SUBDIRS = BDF CTEXT FSProtocol ICCCM XProtocol Xserver X11 XDMCP XLFD \
+-          Xaw Xmu Xt Xext Xi xfs PEX5 ICE SM xtrans XIM xterm rstart \
+-          GL Xv i18n programs
++          Xaw Xmu Xt Xext xfs ICE SM xtrans xterm rstart \
++          GL Xv i18n
+ #endif
+ 
+ all::

@@ -1,0 +1,17 @@
+--- config/cf/Library.tmpl.ORIG	Sun May  7 21:06:16 2000
++++ config/cf/Library.tmpl	Sun May  7 21:11:44 2000
+@@ -434,10 +434,14 @@
+ # ifdef IncSubdir
+ #  ifdef IncSubSubdir
+ BuildIncludes($(HEADERS),IncSubdir/IncSubSubdir,../..)
++#   if !defined(LibHeaders) || LibHeaders
+ InstallMultipleFlags($(HEADERS),$(INCDIR)/IncSubdir/IncSubSubdir,$(INSTINCFLAGS))
++#   endif
+ #  else
+ BuildIncludes($(HEADERS),IncSubdir,..)
++#   if !defined(LibHeaders) || LibHeaders
+ InstallMultipleFlags($(HEADERS),$(INCDIR)/IncSubdir,$(INSTINCFLAGS))
++#   endif
+ #  endif
+ # else
+ #  ifndef CplusplusSource

@@ -1,0 +1,10 @@
+--- specs/i18n/Framework.ms.orig	Wed May 10 16:13:03 2000
++++ specs/i18n/Framework.ms	Wed May 10 16:13:25 2000
+@@ -298,7 +298,6 @@
+ .sp 1+4.344i
+ .PE
+ .if \n(00 .fi
+-.in -1c
+ .\" figure end
+ .LP
+ .ce

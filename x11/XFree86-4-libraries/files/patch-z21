@@ -1,0 +1,12 @@
+--- programs/Xserver/hw/xnest/Imakefile.ORIG	Mon May  8 16:57:25 2000
++++ programs/Xserver/hw/xnest/Imakefile	Mon May  8 16:58:49 2000
+@@ -52,7 +52,8 @@
+ 
+ INCLUDES = -I. -I$(XBUILDINCDIR) -I$(FONTINCSRC) \
+ 	   -I../../mi -I../../include -I../../os \
+-           -I$(EXTINCSRC) -I$(XINCLUDESRC)
++           -I$(EXTINCSRC) -I$(XINCLUDESRC) \
++	   -I../xfree86/loader
+ 
+ all:: $(OBJS)
+ 

@@ -1,6 +1,13 @@
 # $FreeBSD$
 #
 
+    SUBDIR += XFree86-4-font100dpi
+    SUBDIR += XFree86-4-font75dpi
+    SUBDIR += XFree86-4-fontCyrillic
+    SUBDIR += XFree86-4-fontDefaultBitmaps
+    SUBDIR += XFree86-4-fontEncodings
+    SUBDIR += XFree86-4-fontLatin2
+    SUBDIR += XFree86-4-fontScalable
     SUBDIR += Xg
     SUBDIR += bitmap-font
     SUBDIR += etlfonts

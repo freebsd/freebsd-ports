@@ -1,0 +1,14 @@
+--- programs/Imakefile.orig	Sat Feb 26 14:37:07 2000
++++ programs/Imakefile	Wed May 31 15:13:17 2000
+@@ -63,7 +63,11 @@
+    XPMCLIENTDIRS = cxpm sxpm
+ 
+ #if BuildServersOnly
++#if FreeBSDBuildXxserv
++SUBDIRS = $(XSSRCDIR) $(RGBSRCDIR)
++#else
+ SUBDIRS = $(XSSRCDIR)
++#endif
+ #else
+ SUBDIRS = \
+ 	appres bdftopcf bitmap \

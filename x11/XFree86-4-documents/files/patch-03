@@ -1,0 +1,1392 @@
+--- specs/XProtocol/X11.protocol.orig	Wed May 10 15:48:38 2000
++++ specs/XProtocol/X11.protocol	Wed May 10 15:49:24 2000
+@@ -1471,7 +1471,6 @@
+ .PN Pixmap , 
+ .PN Value , 
+ .PN Window
+-.in -.2i
+ .eM
+ .LP
+ This request creates an unmapped window and assigns the identifier wid to it.
+@@ -1961,7 +1960,6 @@
+ .PN Pixmap , 
+ .PN Value , 
+ .PN Window
+-.in -.2i
+ .eM
+ .LP
+ The value-mask and value-list specify which attributes are to be changed.
+@@ -2036,7 +2034,6 @@
+ .in +.2i
+ .LP
+ \fIwindow\fP\^: WINDOW
+-.in -.2i
+ .LP
+    \(->
+ .in +.2i
+@@ -2080,7 +2077,6 @@
+ .LP
+ Errors: 
+ .PN Window
+-.in -.2i
+ .eM
+ .LP
+ This request returns the current attributes of the window.
+@@ -2101,7 +2097,6 @@
+ .LP
+ Errors: 
+ .PN Window
+-.in -.2i
+ .eM
+ .LP
+ If the argument window is mapped, 
+@@ -2135,7 +2130,6 @@
+ .LP
+ Errors: 
+ .PN Window
+-.in -.2i
+ .eM
+ .LP
+ This request performs a
+@@ -2158,7 +2152,6 @@
+ .PN Match , 
+ .PN Value ,
+ .PN Window
+-.in -.2i
+ .eM
+ .LP
+ This request adds or removes the specified window from the client's 
+@@ -2185,7 +2178,6 @@
+ Errors: 
+ .PN Match ,
+ .PN Window
+-.in -.2i
+ .eM
+ .LP
+ If the window is mapped, 
+@@ -2240,7 +2232,6 @@
+ .LP
+ Errors: 
+ .PN Window
+-.in -.2i
+ .eM
+ .LP
+ If the window is already mapped, this request has no effect.
+@@ -2278,7 +2269,6 @@
+ .LP
+ Errors: 
+ .PN Window
+-.in -.2i
+ .eM
+ .LP
+ This request performs a 
+@@ -2296,7 +2286,6 @@
+ .LP
+ Errors: 
+ .PN Window
+-.in -.2i
+ .eM
+ .LP
+ If the window is already unmapped, this request has no effect.
+@@ -2315,7 +2304,6 @@
+ .LP
+ Errors: 
+ .PN Window
+-.in -.2i
+ .eM
+ .LP
+ This request performs an 
+@@ -2339,7 +2327,6 @@
+ .PN Match , 
+ .PN Value ,
+ .PN Window
+-.in -.2i
+ .eM
+ .LP
+ This request changes the configuration of the window.
+@@ -2686,7 +2673,6 @@
+ Errors: 
+ .PN Value ,
+ .PN Window
+-.in -.2i
+ .eM
+ .LP
+ If some other client has selected 
+@@ -2717,7 +2703,6 @@
+ .in +.2i
+ .LP
+ \fIdrawable\fP\^: DRAWABLE
+-.in -.2i
+ .LP
+    \(->
+ .in +.2i
+@@ -2732,7 +2717,6 @@
+ .LP
+ Errors: 
+ .PN Drawable
+-.in -.2i
+ .eM
+ .LP
+ This request returns the root and current geometry of the drawable.
+@@ -2755,7 +2739,6 @@
+ .LP
+ \fIwindow\fP\^: WINDOW
+ .LP
+-.in -.2i
+    \(->
+ .in +.2i
+ .LP
+@@ -2768,7 +2751,6 @@
+ .LP
+ Errors: 
+ .PN Window
+-.in -.2i
+ .eM
+ .LP
+ This request returns the root, the parent, and the children of the window.
+@@ -2783,7 +2765,6 @@
+ \fIname\fP\^: STRING8
+ .br
+ \fIonly-if-exists\fP\^: BOOL
+-.in -.2i
+ .LP
+    \(->
+ .in +.2i
+@@ -2794,7 +2775,6 @@
+ Errors:
+ .PN Alloc ,
+ .PN Value
+-.in -.2i
+ .eM
+ .LP
+ This request returns the atom for the given name.
+@@ -2814,7 +2794,6 @@
+ .in +.2i
+ .LP
+ \fIatom\fP\^: ATOM
+-.in -.2i
+ .LP
+    \(->
+ .in +.2i
+@@ -2823,7 +2802,6 @@
+ .LP
+ Errors: 
+ .PN Atom
+-.in -.2i
+ .eM
+ .LP
+ This request returns the name for the given atom.
+@@ -2853,7 +2831,6 @@
+ .PN Match , 
+ .PN Value , 
+ .PN Window
+-.in -.2i
+ .eM
+ .LP
+ This request alters the property for the specified window.
+@@ -2904,7 +2881,6 @@
+ Errors: 
+ .PN Atom ,
+ .PN Window
+-.in -.2i
+ .eM
+ .LP
+ This request deletes the property from the specified window 
+@@ -2928,7 +2904,6 @@
+ \fIlong-offset\fP, \fIlong-length\fP\^: CARD32
+ .br
+ \fIdelete\fP\^: BOOL
+-.in -.2i
+ .LP
+    \(->
+ .in +.2i
+@@ -2946,7 +2921,6 @@
+ .PN Atom , 
+ .PN Value ,
+ .PN Window
+-.in -.2i
+ .eM
+ .LP
+ If the specified property does not exist for the specified window, 
+@@ -3009,7 +2983,6 @@
+ .PN Atom , 
+ .PN Match ,
+ .PN Window
+-.in -.2i
+ .eM
+ .LP
+ If the property names in the list are viewed as being numbered starting
+@@ -3042,7 +3015,6 @@
+ .in +.2i
+ .LP
+ \fIwindow\fP\^: WINDOW
+-.in -.2i
+ .LP
+    \(->
+ .in +.2i
+@@ -3051,7 +3023,6 @@
+ .LP
+ Errors: 
+ .PN Window
+-.in -.2i
+ .eM
+ .LP
+ This request returns the atoms of properties currently defined on the window.
+@@ -3073,7 +3044,6 @@
+ Errors: 
+ .PN Atom , 
+ .PN Window
+-.in -.2i
+ .eM
+ .LP
+ This request changes the owner, owner window, 
+@@ -3125,7 +3095,6 @@
+ .in +.2i
+ .LP
+ \fIselection\fP\^: ATOM
+-.in -.2i
+ .LP
+    \(->
+ .in +.2i
+@@ -3135,7 +3104,6 @@
+ .LP
+ Errors: 
+ .PN Atom
+-.in -.2i
+ .eM
+ .LP
+ This request returns the current owner window of the specified selection, 
+@@ -3163,7 +3131,6 @@
+ Errors: 
+ .PN Atom , 
+ .PN Window
+-.in -.2i
+ .eM
+ .LP
+ If the specified selection has an owner, 
+@@ -3197,7 +3164,6 @@
+ Errors: 
+ .PN Value ,
+ .PN Window
+-.in -.2i
+ .eM
+ .LP
+ If 
+@@ -3270,7 +3236,6 @@
+ .br
+ \fItime\fP\^: TIMESTAMP or 
+ .PN CurrentTime
+-.in -.2i
+ .LP
+    \(->
+ .in +.2i
+@@ -3286,7 +3251,6 @@
+ .PN Cursor , 
+ .PN Value ,
+ .PN Window
+-.in -.2i
+ .eM
+ .LP
+ This request actively grabs control of the pointer.
+@@ -3384,7 +3348,6 @@
+ .LP
+ \fItime\fP\^: TIMESTAMP or 
+ .PN CurrentTime
+-.in -.2i
+ .eM
+ .LP
+ This request releases the pointer if this client has it actively grabbed (from
+@@ -3442,7 +3405,6 @@
+ .PN Cursor , 
+ .PN Value , 
+ .PN Window
+-.in -.2i
+ .eM
+ .LP
+ This request establishes a passive grab.
+@@ -3520,7 +3482,6 @@
+ Errors: 
+ .PN Value ,
+ .PN Window
+-.in -.2i
+ .eM
+ .LP
+ This request releases the passive button/key combination 
+@@ -3551,7 +3512,6 @@
+ Errors: 
+ .PN Cursor ,
+ .PN Value
+-.in -.2i
+ .eM
+ .LP
+ This request changes the specified dynamic parameters if the pointer is 
+@@ -3579,7 +3539,6 @@
+ .br
+ \fItime\fP\^: TIMESTAMP or 
+ .PN CurrentTime
+-.in -.2i
+ .LP
+    \(->
+ .in +.2i
+@@ -3594,7 +3553,6 @@
+ Errors: 
+ .PN Value ,
+ .PN Window
+-.in -.2i
+ .eM
+ .LP
+ This request actively grabs control of the keyboard.
+@@ -3675,7 +3633,6 @@
+ .LP
+ \fItime\fP\^: TIMESTAMP or 
+ .PN CurrentTime
+-.in -.2i
+ .eM
+ .LP
+ This request releases the keyboard if this client has it actively grabbed 
+@@ -3722,7 +3679,6 @@
+ .PN Access ,
+ .PN Value , 
+ .PN Window
+-.in -.2i
+ .eM
+ .LP
+ This request establishes a passive grab on the keyboard.
+@@ -3802,7 +3758,6 @@
+ Errors: 
+ .PN Value ,
+ .PN Window
+-.in -.2i
+ .eM
+ .LP
+ This request releases the key combination on the specified window 
+@@ -3839,7 +3794,6 @@
+ .LP
+ Errors: 
+ .PN Value
+-.in -.2i
+ .eM
+ .LP
+ This request releases some queued events if the client has caused a device to
+@@ -4018,7 +3972,6 @@
+ .in +.2i
+ .LP
+ \fIwindow\fP\^: WINDOW
+-.in -.2i
+ .LP
+    \(->
+ .in +.2i
+@@ -4036,7 +3989,6 @@
+ .LP
+ Errors: 
+ .PN Window
+-.in -.2i
+ .eM
+ .LP
+ The root window the pointer is logically on and the pointer coordinates
+@@ -4067,7 +4019,6 @@
+ .PN CurrentTime
+ .br
+ \fIwindow\fP\^: WINDOW
+-.in -.2i
+ .LP
+    \(->
+ .in +.2i
+@@ -4084,7 +4035,6 @@
+ .LP
+ Errors: 
+ .PN Window
+-.in -.2i
+ .eM
+ .LP
+ This request returns all events in the motion history buffer that fall 
+@@ -4107,7 +4057,6 @@
+ \fIsrc-window\fP, \fIdst-window\fP: WINDOW
+ .br
+ \fIsrc-x\fP, \fIsrc-y\fP\^: INT16
+-.in -.2i
+ .LP
+    \(->
+ .in +.2i
+@@ -4121,7 +4070,6 @@
+ .LP
+ Errors: 
+ .PN Window
+-.in -.2i
+ .eM
+ .LP
+ The src-x and src-y coordinates are taken relative to src-window's
+@@ -4154,7 +4102,6 @@
+ .LP
+ Errors: 
+ .PN Window
+-.in -.2i
+ .eM
+ .LP
+ If dst-window is 
+@@ -4206,7 +4153,6 @@
+ .PN Match ,
+ .PN Value , 
+ .PN Window
+-.in -.2i
+ .eM
+ .LP
+ This request changes the input focus and the last-focus-change time.
+@@ -4282,7 +4228,6 @@
+ .Pn { Parent , 
+ .PN PointerRoot , 
+ .PN None }
+-.in -.2i
+ .eM
+ .LP
+ This request returns the current focus state.
+@@ -4296,7 +4241,6 @@
+ .in +.2i
+ .LP
+ keys: LISTofCARD8
+-.in -.2i
+ .eM
+ .LP
+ This request returns a bit vector for the logical state of the keyboard.
+@@ -4321,7 +4265,6 @@
+ .PN Alloc ,
+ .PN IDChoice , 
+ .PN Name
+-.in -.2i
+ .eM
+ .LP
+ This request loads the specified font, if necessary, 
+@@ -4350,7 +4293,6 @@
+ .LP
+ Errors: 
+ .PN Font
+-.in -.2i
+ .eM
+ .LP
+ This request deletes the association between the resource ID and the font.
+@@ -4363,7 +4305,6 @@
+ .in +.2i
+ .LP
+ \fIfont\fP\^: FONTABLE
+-.in -.2i
+ .LP
+    \(->
+ .in +.2i
+@@ -4404,7 +4345,6 @@
+ .LP
+ Errors: 
+ .PN Font
+-.in -.2i
+ .eM
+ .LP
+ This request returns logical information about a font.
+@@ -4544,7 +4484,6 @@
+ \fIfont\fP\^: FONTABLE
+ .br
+ \fIstring\fP\^: STRING16
+-.in -.2i
+ .LP
+    \(->
+ .in +.2i
+@@ -4569,7 +4508,6 @@
+ .LP
+ Errors: 
+ .PN Font
+-.in -.2i
+ .eM
+ .LP
+ This request returns the logical extents of the specified string of characters 
+@@ -4609,13 +4547,11 @@
+ \fIpattern\fP\^: STRING8
+ .br
+ \fImax-names\fP\^: CARD16
+-.in -.2i
+ .LP
+    \(->
+ .in +.2i
+ .LP
+ names: LISTofSTRING8
+-.in -.2i
+ .eM
+ .LP
+ This request returns a list
+@@ -4641,7 +4577,6 @@
+ \fIpattern\fP\^: STRING8
+ .br
+ \fImax-names\fP\^: CARD16
+-.in -.2i
+ .LP
+    \(->+
+ .in +.2i
+@@ -4656,7 +4591,6 @@
+ .LP
+ FONTINFO: <same type definition as in 
+ .PN QueryFont >
+-.in -.2i
+ .eM
+ .LP
+ This request is similar to
+@@ -4685,7 +4619,6 @@
+ .LP
+ Errors: 
+ .PN Value
+-.in -.2i
+ .eM
+ .LP
+ This request defines the search path for font lookup.
+@@ -4712,7 +4645,6 @@
+ .in +.2i
+ .LP
+ path: LISTofSTRING8
+-.in -.2i
+ .eM
+ .LP
+ This request returns the current search path for fonts.
+@@ -4736,7 +4668,6 @@
+ .PN Drawable , 
+ .PN IDChoice , 
+ .PN Value
+-.in -.2i
+ .eM
+ .LP
+ This request creates a pixmap and assigns the identifier pid to it.
+@@ -4763,7 +4694,6 @@
+ .LP
+ Errors: 
+ .PN Pixmap
+-.in -.2i
+ .eM
+ .LP
+ This request deletes the association between the resource ID and the pixmap.
+@@ -4791,7 +4721,6 @@
+ .PN Match , 
+ .PN Pixmap , 
+ .PN Value
+-.in -.2i
+ .eM
+ .LP
+ This request creates a graphics context 
+@@ -5670,7 +5599,6 @@
+ .PN Match , 
+ .PN Pixmap , 
+ .PN Value
+-.in -.2i
+ .eM
+ .LP
+ This request changes components in gc.
+@@ -5705,7 +5633,6 @@
+ .PN GContext , 
+ .PN Match , 
+ .PN Value
+-.in -.2i
+ .eM
+ .LP
+ This request copies components from src-gc to dst-gc.
+@@ -5731,7 +5658,6 @@
+ .PN Alloc ,
+ .PN GContext , 
+ .PN Value
+-.in -.2i
+ .eM
+ .LP
+ This request sets dash-offset and dashes in gc for dashed line styles.
+@@ -5810,7 +5736,6 @@
+ .PN GContext , 
+ .PN Match ,
+ .PN Value
+-.in -.2i
+ .eM
+ .LP
+ This request changes clip-mask in gc to the specified list of rectangles 
+@@ -5866,7 +5791,6 @@
+ .LP
+ Errors: 
+ .PN GContext
+-.in -.2i
+ .eM
+ .LP
+ This request deletes the association between the resource ID and the gcontext 
+@@ -5890,7 +5814,6 @@
+ .PN Match ,
+ .PN Value , 
+ .PN Window 
+-.in -.2i
+ .eM
+ .LP
+ The x and y coordinates are relative to the window's origin
+@@ -5939,7 +5862,6 @@
+ .PN Drawable , 
+ .PN GContext , 
+ .PN Match
+-.in -.2i
+ .eM
+ .LP
+ This request combines the specified rectangle of src-drawable with the 
+@@ -6006,7 +5928,6 @@
+ .PN GContext , 
+ .PN Match ,
+ .PN Value
+-.in -.2i
+ .eM
+ .LP
+ The src-drawable must have the same root as dst-drawable (or a 
+@@ -6053,7 +5974,6 @@
+ .PN GContext , 
+ .PN Match ,
+ .PN Value
+-.in -.2i
+ .eM
+ .LP
+ This request combines the foreground pixel in gc with the pixel 
+@@ -6088,7 +6008,6 @@
+ .PN GContext , 
+ .PN Match ,
+ .PN Value
+-.in -.2i
+ .eM
+ .LP
+ This request draws lines between each pair of points (point[i], point[i+1]).
+@@ -6145,7 +6064,6 @@
+ .PN Drawable , 
+ .PN GContext , 
+ .PN Match
+-.in -.2i
+ .eM
+ .LP
+ For each segment, 
+@@ -6180,7 +6098,6 @@
+ .PN Drawable , 
+ .PN GContext , 
+ .PN Match
+-.in -.2i
+ .eM
+ .LP
+ This request draws the outlines of the specified rectangles, as if a five-point
+@@ -6223,7 +6140,6 @@
+ .PN Drawable , 
+ .PN GContext , 
+ .PN Match
+-.in -.2i
+ .eM
+ .LP
+ This request draws circular or elliptical arcs.
+@@ -6362,7 +6278,6 @@
+ .PN GContext , 
+ .PN Match , 
+ .PN Value
+-.in -.2i
+ .eM
+ .LP
+ This request fills the region closed by the specified path.
+@@ -6428,7 +6343,6 @@
+ .PN Drawable , 
+ .PN GContext , 
+ .PN Match
+-.in -.2i
+ .eM
+ .LP
+ This request fills the specified rectangles, as if a four-point 
+@@ -6469,7 +6383,6 @@
+ .PN Drawable , 
+ .PN GContext , 
+ .PN Match
+-.in -.2i
+ .eM
+ .LP
+ For each arc, 
+@@ -6547,7 +6460,6 @@
+ .PN GContext , 
+ .PN Match , 
+ .PN Value
+-.in -.2i
+ .eM
+ .LP
+ This request combines an image with a rectangle of the drawable.
+@@ -6617,7 +6529,6 @@
+ \fIformat\fP\^:
+ .Pn { XYPixmap , 
+ .PN ZPixmap }
+-.in -.2i
+ .LP
+    \(->
+ .in +.2i
+@@ -6633,7 +6544,6 @@
+ .PN Drawable , 
+ .PN Match ,
+ .PN Value
+-.in -.2i
+ .eM
+ .LP
+ This request returns the contents of the given rectangle of the drawable in the
+@@ -6715,7 +6625,6 @@
+ .PN Font ,
+ .PN GContext , 
+ .PN Match 
+-.in -.2i
+ .eM
+ .LP
+ The x and y coordinates are relative to the drawable's origin 
+@@ -6776,7 +6685,6 @@
+ .PN Font ,
+ .PN GContext , 
+ .PN Match
+-.in -.2i
+ .eM
+ .LP
+ This request is similar to
+@@ -6805,7 +6713,6 @@
+ .PN Drawable , 
+ .PN GContext , 
+ .PN Match
+-.in -.2i
+ .eM
+ .LP
+ The x and y coordinates are relative to the drawable's origin 
+@@ -6863,7 +6770,6 @@
+ .PN Drawable , 
+ .PN GContext , 
+ .PN Match
+-.in -.2i
+ .eM
+ .LP
+ This request is similar to
+@@ -6896,7 +6802,6 @@
+ .PN Match , 
+ .PN Value , 
+ .PN Window 
+-.in -.2i
+ .eM
+ .LP
+ This request creates a colormap of the specified visual type for the screen 
+@@ -6965,7 +6870,6 @@
+ .LP
+ Errors: 
+ .PN Colormap
+-.in -.2i
+ .eM
+ .LP
+ This request deletes the association between the resource ID and the colormap
+@@ -7000,7 +6904,6 @@
+ .PN Alloc ,
+ .PN Colormap , 
+ .PN IDChoice
+-.in -.2i
+ .eM
+ .LP
+ This request creates a colormap of the same visual type 
+@@ -7041,7 +6944,6 @@
+ .LP
+ Errors: 
+ .PN Colormap
+-.in -.2i
+ .eM
+ .LP
+ This request makes this colormap an installed map for its screen.
+@@ -7091,7 +6993,6 @@
+ .LP
+ Errors: 
+ .PN Colormap
+-.in -.2i
+ .eM
+ .LP
+ If cmap is on the required list for its screen (see 
+@@ -7120,7 +7021,6 @@
+ .in +.2i
+ .LP
+ \fIwindow\fP\^: WINDOW
+-.in -.2i
+ .LP
+    \(->
+ .in +.2i
+@@ -7129,7 +7029,6 @@
+ .LP
+ Errors: 
+ .PN Window
+-.in -.2i
+ .eM
+ .LP
+ This request returns a list of the currently installed colormaps for the 
+@@ -7148,7 +7047,6 @@
+ \fIcmap\fP\^: COLORMAP
+ .br
+ \fIred\fP, \fIgreen\fP, \fIblue\fP\^: CARD16
+-.in -.2i
+ .LP
+    \(->
+ .in +.2i
+@@ -7160,7 +7058,6 @@
+ Errors: 
+ .PN Alloc ,
+ .PN Colormap 
+-.in -.2i
+ .eM
+ .LP
+ This request allocates a read-only colormap entry corresponding to the closest 
+@@ -7178,7 +7075,6 @@
+ \fIcmap\fP\^: COLORMAP
+ .br
+ \fIname\fP\^: STRING8
+-.in -.2i
+ .LP
+    \(->
+ .in +.2i
+@@ -7193,7 +7089,6 @@
+ .PN Alloc ,
+ .PN Colormap , 
+ .PN Name
+-.in -.2i
+ .eM
+ .LP
+ This request looks up the named color with respect to the screen associated 
+@@ -7217,7 +7112,6 @@
+ \fIcolors\fP, \fIplanes\fP\^: CARD16
+ .br
+ \fIcontiguous\fP\^: BOOL
+-.in -.2i
+ .LP
+    \(->
+ .in +.2i
+@@ -7228,7 +7122,6 @@
+ .PN Alloc ,
+ .PN Colormap , 
+ .PN Value
+-.in -.2i
+ .eM
+ .LP
+ The number of colors must be positive, 
+@@ -7271,7 +7164,6 @@
+ \fIcolors\fP, \fIreds\fP, \fIgreens\fP, \fIblues\fP\^: CARD16
+ .br
+ \fIcontiguous\fP\^: BOOL
+-.in -.2i
+ .LP
+    \(->
+ .in +.2i
+@@ -7284,7 +7176,6 @@
+ .PN Alloc ,
+ .PN Colormap , 
+ .PN Value
+-.in -.2i
+ .eM
+ .LP
+ The number of colors must be positive, 
+@@ -7335,7 +7226,6 @@
+ .PN Access , 
+ .PN Colormap , 
+ .PN Value
+-.in -.2i
+ .eM
+ .LP
+ The plane-mask should not have any bits in common with any of the
+@@ -7400,7 +7290,6 @@
+ .PN Access , 
+ .PN Colormap , 
+ .PN Value
+-.in -.2i
+ .eM
+ .LP
+ This request changes the colormap entries of the specified pixels.
+@@ -7439,7 +7328,6 @@
+ .PN Colormap ,
+ .PN Name , 
+ .PN Value
+-.in -.2i
+ .eM
+ .LP
+ This request looks up the named color with respect to the screen associated 
+@@ -7464,7 +7352,6 @@
+ \fIcmap\fP\^: COLORMAP
+ .br
+ \fIpixels\fP\^: LISTofCARD32
+-.in -.2i
+ .LP
+    \(->
+ .in +.2i
+@@ -7479,7 +7366,6 @@
+ Errors: 
+ .PN Colormap , 
+ .PN Value
+-.in -.2i
+ .eM
+ .LP
+ This request returns the hardware-specific color values stored in cmap for
+@@ -7500,7 +7386,6 @@
+ \fIcmap\fP\^: COLORMAP
+ .br
+ \fIname\fP\^: STRING8
+-.in -.2i
+ .LP
+    \(->
+ .in +.2i
+@@ -7512,7 +7397,6 @@
+ Errors: 
+ .PN Colormap , 
+ .PN Name
+-.in -.2i
+ .eM
+ .LP
+ This request looks up the string name of a color with respect to the screen
+@@ -7546,7 +7430,6 @@
+ .PN IDChoice , 
+ .PN Match , 
+ .PN Pixmap
+-.in -.2i
+ .eM
+ .LP
+ This request creates a cursor and associates identifier cid with it.
+@@ -7610,7 +7493,6 @@
+ .PN Font , 
+ .PN IDChoice , 
+ .PN Value
+-.in -.2i
+ .eM
+ .LP
+ This request is similar to 
+@@ -7650,7 +7532,6 @@
+ .LP
+ Errors: 
+ .PN Cursor
+-.in -.2i
+ .eM
+ .LP
+ This request deletes the association between the resource ID and the cursor.
+@@ -7670,7 +7551,6 @@
+ .LP
+ Errors: 
+ .PN Cursor
+-.in -.2i
+ .eM
+ .LP
+ This request changes the color of a cursor.
+@@ -7691,7 +7571,6 @@
+ \fIdrawable\fP\^: DRAWABLE
+ .br
+ \fIwidth\fP, \fIheight\fP\^: CARD16
+-.in -.2i
+ .LP
+    \(->
+ .in +.2i
+@@ -7702,7 +7581,6 @@
+ .PN Drawable , 
+ .PN Match ,
+ .PN Value
+-.in -.2i
+ .eM
+ .LP
+ This request returns the best size that is closest to the argument size.
+@@ -7741,7 +7619,6 @@
+ .in +.2i
+ .LP
+ \fIname\fP\^: STRING8
+-.in -.2i
+ .LP
+    \(->
+ .in +.2i
+@@ -7753,7 +7630,6 @@
+ first-event: CARD8
+ .br
+ first-error: CARD8
+-.in -.2i
+ .eM
+ .LP
+ This request determines if the named extension is present.
+@@ -7782,7 +7658,6 @@
+ .in +.2i
+ .LP
+ names: LISTofSTRING8
+-.in -.2i
+ .eM
+ .LP
+ This request returns a list of all extensions supported by the server.
+@@ -7795,7 +7670,6 @@
+ \fIkeycodes-per-modifier\fP\^: CARD8
+ .br
+ \fIkeycodes\fP\^: LISTofKEYCODE
+-.in -.2i
+ .LP
+    \(->
+ .in +.2i
+@@ -7808,7 +7682,6 @@
+ Errors: 
+ .PN Alloc ,
+ .PN Value
+-.in -.2i
+ .eM
+ .LP
+ This request specifies the keycodes (if any) of the keys to be used as 
+@@ -7875,7 +7748,6 @@
+ keycodes-per-modifier: CARD8
+ .br
+ keycodes: LISTofKEYCODE
+-.in -.2i
+ .eM
+ .LP
+ This request returns the keycodes of the keys being used as modifiers.
+@@ -7914,7 +7786,6 @@
+ Errors: 
+ .PN Alloc ,
+ .PN Value
+-.in -.2i
+ .eM
+ .LP
+ This request defines the symbols for the specified number of keycodes, 
+@@ -7968,7 +7839,6 @@
+ \fIfirst-keycode\fP\^: KEYCODE
+ .br
+ \fIcount\fP\^: CARD8
+-.in -.2i
+ .LP
+    \(->
+ .in +.2i
+@@ -7979,7 +7849,6 @@
+ .LP
+ Errors: 
+ .PN Value
+-.in -.2i
+ .eM
+ .LP
+ This request returns the symbols for the specified number of keycodes, 
+@@ -8027,7 +7896,6 @@
+ Errors: 
+ .PN Match , 
+ .PN Value
+-.in -.2i
+ .eM
+ .LP
+ This request controls various aspects of the keyboard.
+@@ -8185,7 +8053,6 @@
+ .PN Off }
+ .br
+ auto-repeats: LISTofCARD8
+-.in -.2i
+ .eM
+ .LP
+ This request returns the current control values for the keyboard.
+@@ -8208,7 +8075,6 @@
+ .LP
+ Errors: 
+ .PN Value
+-.in -.2i
+ .eM
+ .LP
+ This request rings the bell on the keyboard at a volume relative to the 
+@@ -8233,7 +8099,6 @@
+ .in +.2i
+ .LP
+ \fImap\fP\^: LISTofCARD8
+-.in -.2i
+ .LP
+    \(->
+ .in +.2i
+@@ -8244,7 +8109,6 @@
+ .LP
+ Errors: 
+ .PN Value
+-.in -.2i
+ .eM
+ .LP
+ This request sets the mapping of the pointer.
+@@ -8283,7 +8147,6 @@
+ .in +.2i
+ .LP
+ map: LISTofCARD8
+-.in -.2i
+ .eM
+ .LP
+ This request returns the current mapping of the pointer.
+@@ -8306,7 +8169,6 @@
+ .LP
+ Errors: 
+ .PN Value
+-.in -.2i
+ .eM
+ .LP
+ This request defines how the pointer moves.
+@@ -8332,7 +8194,6 @@
+ acceleration-numerator, acceleration-denominator: CARD16
+ .br
+ threshold: CARD16
+-.in -.2i
+ .eM
+ .LP
+ This request returns the current acceleration and threshold for the pointer.
+@@ -8357,7 +8218,6 @@
+ .LP
+ Errors: 
+ .PN Value
+-.in -.2i
+ .eM
+ .LP
+ The timeout and interval are specified in seconds; 
+@@ -8412,7 +8272,6 @@
+ allow-exposures: 
+ .Pn { Yes , 
+ .PN No }
+-.in -.2i
+ .eM
+ .LP
+ This request returns the current screen-saver control values.
+@@ -8429,7 +8288,6 @@
+ .LP
+ Errors: 
+ .PN Value
+-.in -.2i
+ .eM
+ .LP
+ If the mode is 
+@@ -8459,7 +8317,6 @@
+ Errors: 
+ .PN Access , 
+ .PN Value
+-.in -.2i
+ .eM
+ .LP
+ This request adds or removes the specified host from the access control list.
+@@ -8526,7 +8383,6 @@
+ .PN Disabled }
+ .br
+ hosts: LISTofHOST
+-.in -.2i
+ .eM
+ .LP
+ This request returns the hosts on the access control list 
+@@ -8548,7 +8404,6 @@
+ Errors: 
+ .PN Access ,
+ .PN Value
+-.in -.2i
+ .eM
+ .LP
+ This request enables or disables the use of the access control list 
+@@ -8573,7 +8428,6 @@
+ .LP
+ Errors: 
+ .PN Value
+-.in -.2i
+ .eM
+ .LP
+ This request defines what will happen to the client's resources 
+@@ -8594,7 +8448,6 @@
+ .LP
+ Errors: 
+ .PN Value
+-.in -.2i
+ .eM
+ .LP
+ If a valid resource is specified, 
+@@ -8811,7 +8664,6 @@
+ \fIstate\fP\^: SETofKEYBUTMASK
+ .br
+ \fItime\fP\^: TIMESTAMP
+-.in -.2i
+ .eM
+ .LP
+ These events are generated either when a key or button logically changes state
+@@ -8953,7 +8805,6 @@
+ \fIstate\fP\^: SETofKEYBUTMASK
+ .br
+ \fItime\fP\^: TIMESTAMP
+-.in -.2i
+ .eM
+ .LP
+ If pointer motion or window hierarchy change causes the pointer to be
+@@ -9181,7 +9032,6 @@
+ \ \ \ \ \ \ \ \ \ \ \ 
+ .PN PointerRoot , 
+ .PN None }
+-.in -.2i
+ .eM
+ .LP
+ These events are generated when the input focus changes 
+@@ -9487,7 +9337,6 @@
+ .in +.2i
+ .LP
+ \fIkeys\fP\^: LISTofCARD8
+-.in -.2i
+ .eM
+ .LP
+ The value is a bit vector as described in 
+@@ -9510,7 +9359,6 @@
+ \fIx\fP, \fIy\fP, \fIwidth\fP, \fIheight\fP\^: CARD16
+ .br
+ \fIcount\fP\^: CARD16
+-.in -.2i
+ .eM
+ .LP
+ This event is reported to clients selecting 
+@@ -9592,7 +9440,6 @@
+ \fImajor-opcode\fP\^: CARD8
+ .br
+ \fIminor-opcode\fP\^: CARD16
+-.in -.2i
+ .eM
+ .LP
+ This event is reported to a client using a graphics context 
+@@ -9632,7 +9479,6 @@
+ \fImajor-opcode\fP\^: CARD8
+ .br
+ \fIminor-opcode:\fP\^ CARD16
+-.in -.2i
+ .eM
+ .LP
+ This event is reported to a client using a graphics context
+@@ -9663,7 +9509,6 @@
+ .Pn { Unobscured , 
+ .PN PartiallyObscured , 
+ .PN FullyObscured }
+-.in -.2i
+ .eM
+ .LP
+ This event is reported to clients selecting 
+@@ -9735,7 +9580,6 @@
+ \fIwidth\fP, \fIheight\fP, \fIborder-width\fP\^: CARD16
+ .br
+ \fIoverride-redirect\fP\^: BOOL
+-.in -.2i
+ .eM
+ .LP
+ This event is reported to clients selecting 
+@@ -9753,7 +9597,6 @@
+ .in +.2i
+ .LP
+ \fIevent\fP, \fIwindow\fP\^: WINDOW
+-.in -.2i
+ .eM
+ .LP
+ This event is reported to clients selecting 
+@@ -9783,7 +9626,6 @@
+ \fIevent\fP, \fIwindow\fP\^: WINDOW
+ .br
+ \fIfrom-configure\fP\^: BOOL
+-.in -.2i
+ .eM
+ .LP
+ This event is reported to clients selecting 
+@@ -9809,7 +9651,6 @@
+ \fIevent\fP, \fIwindow\fP\^: WINDOW
+ .br
+ \fIoverride-redirect\fP\^: BOOL
+-.in -.2i
+ .eM
+ .LP
+ This event is reported to clients selecting 
+@@ -9829,7 +9670,6 @@
+ .in +.2i
+ .LP
+ \fIparent\fP, \fIwindow\fP\^: WINDOW
+-.in -.2i
+ .eM
+ .LP
+ This event is reported to the client selecting 
+@@ -9850,7 +9690,6 @@
+ \fIx\fP, \fIy\fP\^: INT16
+ .br
+ \fIoverride-redirect\fP\^: BOOL
+-.in -.2i
+ .eM
+ .LP
+ This event is reported to clients selecting 
+@@ -9882,7 +9721,6 @@
+ .PN None
+ .br
+ \fIoverride-redirect\fP\^: BOOL
+-.in -.2i
+ .eM
+ .LP
+ This event is reported to clients selecting 
+@@ -9913,7 +9751,6 @@
+ \fIevent\fP, \fIwindow\fP\^: WINDOW
+ .br
+ \fIx\fP, \fIy\fP\^: INT16
+-.in -.2i
+ .eM
+ .LP
+ This event is reported to clients selecting 
+@@ -9937,7 +9774,6 @@
+ \fIwindow\fP\^: WINDOW
+ .br
+ \fIwidth\fP, \fIheight\fP\^: CARD16
+-.in -.2i
+ .eM
+ .LP
+ This event is reported to the client selecting 
+@@ -9971,7 +9807,6 @@
+ .PN Opposite }
+ .br
+ \fIvalue-mask\fP\^: BITMASK
+-.in -.2i
+ .eM
+ .LP
+ This event is reported to the client selecting 
+@@ -10001,7 +9836,6 @@
+ \fIplace\fP\^: 
+ .Pn { Top , 
+ .PN Bottom }
+-.in -.2i
+ .eM
+ .LP
+ This event is reported to clients selecting 
+@@ -10030,7 +9864,6 @@
+ \fIplace\fP: 
+ .Pn { Top , 
+ .PN Bottom }
+-.in -.2i
+ .eM
+ .LP
+ This event is reported to the client selecting 
+@@ -10056,7 +9889,6 @@
+ .PN Deleted }
+ .br
+ \fItime\fP\^: TIMESTAMP
+-.in -.2i
+ .eM
+ .LP
+ This event is reported to clients selecting 
+@@ -10093,7 +9925,6 @@
+ \fIselection\fP\^: ATOM
+ .br
+ \fItime\fP\^: TIMESTAMP
+-.in -.2i
+ .eM
+ .LP
+ This event is reported to the current owner of a selection
+@@ -10123,7 +9954,6 @@
+ .br
+ \fItime\fP\^: TIMESTAMP or 
+ .PN CurrentTime
+-.in -.2i
+ .eM
+ .LP
+ This event is reported to the owner of a selection 
+@@ -10159,7 +9989,6 @@
+ .br
+ \fItime\fP\^: TIMESTAMP or 
+ .PN CurrentTime
+-.in -.2i
+ .eM
+ .LP
+ This event is generated by the server in response to a 
+@@ -10189,7 +10018,6 @@
+ \fIstate\fP\^: 
+ .Pn { Installed , 
+ .PN Uninstalled }
+-.in -.2i
+ .eM
+ .LP
+ This event is reported to clients selecting 
+@@ -10216,7 +10044,6 @@
+ .PN Pointer }
+ .br
+ \fIfirst-keycode\fP, \fIcount\fP\^: CARD8
+-.in -.2i
+ .eM
+ .LP
+ This event is sent to all clients.
+@@ -10249,7 +10076,6 @@
+ \fIformat\fP\^: {8, 16, 32}
+ .br
+ \fIdata\fP\^: LISTofINT8 or LISTofINT16 or LISTofINT32
+-.in -.2i
+ .eM
+ .LP
+ This event is only generated by clients using 

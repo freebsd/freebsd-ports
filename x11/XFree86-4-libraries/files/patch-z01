@@ -1,0 +1,36 @@
+--- Makefile.orig	Sun Aug 15 22:19:32 1999
++++ Makefile	Tue May  9 16:01:21 2000
+@@ -192,3 +192,33 @@
+ 	    $(MAKE_CMD) $@
+ VerifyOS:
+ 	    $(MAKE_CMD) $@
++
++#####
++FreeBSDPortsBuild:
++	@echo ""
++	@echo Building $(RELEASE) of the X Window System: $@ distribution
++	@echo ""
++	@date
++	@echo ""
++	cd $(IMAKESRC) && $(MAKE) $(FLAGS) clean
++	$(MAKE) $(MFLAGS) Makefile.boot
++	$(MAKE_CMD) $(MFLAGS) VerifyOS
++	$(MAKE_CMD) $(MFLAGS) Makefiles
++	$(MAKE_CMD) $(MFLAGS) clean BOOTSTRAPSUBDIRS=
++	$(MAKE_CMD) $(MFLAGS) includes
++	$(MAKE_CMD) $(MFLAGS) depend
++	$(MAKE_CMD) $(MFLAGS) $(WORLDOPTS) $@
++	@echo ""
++	@date
++	@echo ""
++	@echo build of X Window System: $@ distribution complete.
++	@echo ""
++
++FreeBSDPortsInstall FreeBSDPortsInstall.man installXlib:
++	$(MAKE_CMD) $@
++
++installXnest installXnest.man installXprt:
++	$(MAKE_CMD) $@
++
++installXvfb installXvfb.man:
++	$(MAKE_CMD) $@

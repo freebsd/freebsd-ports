@@ -1,0 +1,12 @@
+--- programs/Xserver/hw/xfree86/loader/Imakefile~	Sat Feb 26 14:39:05 2000
++++ programs/Xserver/hw/xfree86/loader/Imakefile	Mon May  8 16:32:00 2000
+@@ -35,7 +35,8 @@
+ 		-I$(SERVERSRC)/mfb -I$(SERVERSRC)/mi -I$(SERVERSRC)/include \
+ 		-I$(SERVERSRC)/os -I$(XINCLUDESRC) -I$(FONTINCSRC) \
+ 		-I$(FONTLIBSRC)/include -I$(FONTLIBSRC)/fontcache \
+-		-I$(EXTINCSRC) -I$(XF86SRC)/ddc -I$(XF86SRC)/i2c
++		-I$(EXTINCSRC) -I$(XF86SRC)/ddc -I$(XF86SRC)/i2c \
++		-I$(XF86SRC)/parser
+ 
+ #ifdef OS2Architecture
+ SRCS1 = os2funcs.c

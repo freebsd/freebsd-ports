@@ -1,113 +1,91 @@
-# New ports collection makefile for:    XFree86
-# Date created:         5 January 1995
-# Whom:                 jmz
+# New ports collection makefile for:	XFree86Xclients-4.0
+# Date created:		10 Oct 1999
+# Whom:			taguchi@tohoku.iij.ad.jp
 #
 # $FreeBSD$
 #
 
-PORTNAME=	XFree86
-PORTVERSION= 	4.0
+PORTNAME=	clients
+PORTVERSION=	4.0
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/4.0/source/ \
 		ftp://ftp.freesoftware.com/pub/XFree86/4.0/source/ \
 		ftp://ftp.lip6.fr/pub/X11/XFree86/XFree86-4.0/source/ \
 		ftp://ftp.cs.tu-berlin.de/pub/X/XFree86/4.0/source/ \
 		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/4.0/source/
-DISTFILES=	X400src-1.tgz X400src-2.tgz
+PKGNAMEPREFIX=	XFree86-
+DISTFILES=	X400src-1.tgz
 
-MAINTAINER=	jmz@FreeBSD.org
+MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
-FORBIDDEN=	"Root hole in X server, XFree86 developers seem to be ignoring us"
+BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
 
-WRKSRC=		${WRKDIR}/${DIST_SUBDIR}
-.if (${MACHINE} != "alpha")
-#NO_PACKAGE=	package available from XFree86
-.endif
-ALL_TARGET=	World
-INSTALL_TARGET=	install install.man
-DIST_SUBDIR=	xc
-PATCH_DIST_ARGS=-p0 -E -d ${WRKDIR} --quiet
-SCRIPTS_ENV=	OSVERSION=${OSVERSION}
-.ifdef DISTRIB
-DESTDIR=	${WRKDIR}/distrib
-MAKE_ENV+=	DESTDIR=${DESTDIR}
-NO_PKG_REGISTER=yes
-SCRIPTS_ENV+=	NO_INPUT=yes
-.endif
-# can't use USE_X_PREFIX here -- it will cause a circular dependency
-PREFIX=		${X11BASE}
-.if defined(DISTRIB) || defined(PACKAGE_BUILDING)
-#IS_INTERACTIVE is boolean -- "no" is the same as defining it "yes"!
-#IS_INTERACTIVE=	no
-.else
-IS_INTERACTIVE=	yes	# configure script asks questions
-.endif
+PREFIX?=	${X11BASE}
 MTREE_FILE=	/etc/mtree/BSD.x11.dist
-.if (${MACHINE} == "pc98")
-SCRIPTS_ENV+=	MACHINE=pc98
-PLIST=		${PKGDIR}/PLIST.pc98
-.endif
-.if (${MACHINE} == "alpha")
-SCRIPTS_ENV+=	MACHINE=alpha
-PLIST=		${PKGDIR}/PLIST.alpha
+DIST_SUBDIR=	xc
+WRKSRC=		${WRKDIR}/xc
+PATCHDIR=	${PORTSDIR}/x11/XFree86-4-libraries/patches
+SCRIPTS_ENV+=	PREFIX=${PREFIX} \
+		X11BASE=${X11BASE} \
+		WRKDIR=${WRKDIR} \
+		DISTDIR=${DISTDIR} \
+		InstallXdmConfig=${InstallXdmConfig} \
+		InstallXinitConfig=${InstallXinitConfig} \
+		InstallAppDefFiles=${InstallAppDefFiles} \
+		BuildAoutLibraries=${BuildAoutLibraries}
+ALL_TARGET=	FreeBSDPortsBuild
+.if defined(NO_INSTALL_MANPAGES)
+INSTALL_TARGET= FreeBSDPortsInstall
+.else
+INSTALL_TARGET= FreeBSDPortsInstall FreeBSDPortsInstall.man
+MANCOMPRESSED=	yes
+MAN1=		appres.1 atobm.1 bdftopcf.1 beforelight.1 bitmap.1 \
+		bmtoa.1 cxpm.1 dga.1 editres.1 fsinfo.1 fslsfonts.1 \
+		fstobdf.1 iceauth.1 ico.1 lbxproxy.1 libxrx.1 \
+		listres.1 makepsres.1 mkcfm.1 mkfontdir.1 oclock.1 \
+		proxymngr.1 resize.1 rstart.1 rstartd.1 sessreg.1 \
+		setxkbmap.1 showfont.1 smproxy.1 startx.1 sxpm.1 \
+		twm.1 viewres.1 x11perf.1 x11perfcomp.1 xauth.1 \
+		xbiff.1 xcalc.1 xclipboard.1 xclock.1 xcmsdb.1 \
+		xconsole.1 xcutsel.1 xditview.1 xdm.1 xdpyinfo.1 \
+		xedit.1 xev.1 xeyes.1 xfd.1 xfindproxy.1 xfontsel.1 \
+		xfwp.1 xgamma.1 xgc.1 xhost.1 xieperf.1 xinit.1 \
+		xkbcomp.1 xkbevd.1 xkbprint.1 xkill.1 xload.1 \
+		xlogo.1 xlsatoms.1 xlsclients.1 xlsfonts.1 xmag.1 \
+		xman.1 xmessage.1 xmodmap.1 xon.1 xprop.1 xrdb.1 \
+		xrefresh.1 xset.1 xsetmode.1 xsetpointer.1 xsetroot.1 \
+		xsm.1 xstdcmap.1 xterm.1 xvidtune.1 xwd.1 xwininfo.1 \
+		xwud.1
 .endif
 
-.if defined(XDM_DES) && (${USA_RESIDENT} != YES && ${USA_RESIDENT} != NO)
-pre-fetch:
-	@${ECHO}
-	@${ECHO} You must set variable USA_RESIDENT to YES or NO.
-	@${FALSE}
-.elif defined(USA_RESIDENT)
-.if ${USA_RESIDENT} == NO
-pre-fetch:
-MASTER_SITES+=	ftp://psych.psy.uq.oz.au/pub/X11R5/ \
-		ftp://ftp.internat.freebsd.org/pub/FreeBSD/X11-Crypto/ \
-		ftp://ftp3.za.freebsd.org/pub/FreeBSD/X11-Crypto/
-EXTRACT_ONLY=	X400src-1.tgz X400src-2.tgz
-DISTFILES+=	Wraphelp.c
-IGNOREFILES=	Wraphelp.c
-.endif
+.if defined(XDM_DES)
 .if ${USA_RESIDENT} == YES
 pre-fetch:
 	@${ECHO}
 	@${ECHO} Assuming that you have fetched a USA-Legal Wraphelp.c.
+.else
+MASTER_SITES+=	ftp://psych.psy.uq.oz.au/pub/X11R5/ \
+		ftp://ftp.internat.freebsd.org/pub/FreeBSD/X11-Crypto/ \
+		ftp://ftp3.za.freebsd.org/pub/FreeBSD/X11-Crypto/
+EXTRACT_ONLY=	X400src-1.tgz
+DISTFILES+=	Wraphelp.c
+IGNOREFILES=	Wraphelp.c
 .endif
 .endif
 
-.include <bsd.port.pre.mk>
-
-pre-install:
-	${MKDIR} ${PREFIX}
+# User Config:
+# If you want to save your current config files for Xdm, set following as NO
+InstallXdmConfig?=	YES
+# If you want to save your current config files for Xinit, set following as NO
+InstallXinitConfig?=	YES
+# If you want to save your current apprication default files (aka. resource
+# files), set following as NO
+InstallAppDefFiles?=	YES
+# If you want to build Aout libraries (for some application which use legacy
+# aout libs, such as Netscape), then set following as YES
+BuildAoutLibraries?=	NO
 
 post-install:
-.ifndef DISTRIB
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
-.endif
 
-.ifdef DISTRIB
-distrib: all install
-	@cd ../XFree86-contrib && \
-	    ${MAKE} NO_PKG_REGISTER=yes WRKDIR=${WRKDIR}/contrib-work \
-	    PREFIX=${X11BASE} PREFIX=${DESTDIR}/${PREFIX} all install
-	@${MKDIR} ${WRKDIR}/bindist
-	@${CP} ${WRKSRC}/programs/Xserver/hw/xfree86/etc/bindist/FreeBSD-ELF/* \
-	    ${WRKDIR}/bindist
-	@${SED} -e 's:TAR="gnu-tar":TAR="${TAR}":g' \
-	    -e 's/EXTRACTLOPTS="-t -v"/TARLOPTS="-t -v -z"/g' \
-	    -e 's/\(#\)\(      echo $$i >> $$LISTFILE\)/\2/g' \
-	    -e 's/\(#\)\(      echo "------------" >> $$LISTFILE\)/\2/g' \
-	    -e 's/\(#\)\(      $$TAR $$TARLOPTS -f $$i >> $$LISTFILE\)/\2/g' \
-	    -e 's/\(#\)\(      echo "" >> $$LISTFILE\)/\2/g' \
-	    -e 's/\(      $$EXTRACT $$EXTRACTLOPTS $$i >> $$LISTFILE\)/#\1/g' \
-	    < ${WRKSRC}/programs/Xserver/hw/xfree86/etc/bindist/build-bindist \
-	    > ${WRKDIR}/build-bindist
-	@${CHMOD} 0555 ${WRKDIR}/build-bindist
-	@${WRKDIR}/build-bindist X ${WRKDIR}/distrib ${WRKDIR}/bindist
-.else
-distrib:
-	@${ECHO_MSG} '>> The DISTRIB variable must be set when building ' \
-	    '"distrib".'
-	@exit 1
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

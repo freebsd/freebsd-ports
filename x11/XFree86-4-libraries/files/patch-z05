@@ -1,0 +1,14 @@
+--- lib/font/X-TrueType/Imakefile.inc~	Fri Feb 18 02:13:25 2000
++++ lib/font/X-TrueType/Imakefile.inc	Tue Apr 18 17:13:40 2000
+@@ -12,7 +12,11 @@
+            ARMSCII8 ARABIC MULEENCODING DOSENCODING
+ #endif
+ 
++#if !defined(FreeBSDBuildXlib) || !FreeBSDBuildXlib
+ SUBDIRS = $(MODULE_SUBDIRS) $(DEFAULT_CCONV_SUBDIR) $(CCONV_SUBDIRS)
++#else
++SUBDIRS = $(MODULE_SUBDIRS)
++#endif
+ 
+ #if XTrueTypeDebugXTT
+   XTT_DEBUG_SRCS = xttdump.c
