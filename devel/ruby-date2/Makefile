@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	date2
-PORTVERSION=	3
+PORTVERSION=	2.5.1
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.funaba.org/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -15,15 +15,22 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 
 USE_RUBY=	yes
-USE_RUBY_SETUP=	yes
-RUBY_SETUP=	install.rb
+
+NO_BUILD=	yes
+
+MODULES=	date2.rb date3.rb holiday.rb odate.rb \
+		parsedate2.rb parsedate2.ry parsedate3.rb \
+		qholiday.rb strftime.rb strptime.rb
 
 DOCS_EN=	MANUAL.en MANUAL.en.rd MANUAL.en.html README.en
 DOCS_JA=	MANUAL MANUAL.rd MANUAL.html README
 EXAMPLES_EN=	cal.rb daylight.rb goodfriday.rb
 EXAMPLES_JA=	ncal.rb
 
-post-install:
+do-install:
+.for f in ${MODULES}
+	${INSTALL_DATA} ${WRKSRC}/lib/${f} ${RUBY_SITELIBDIR}
+.endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_EXAMPLESDIR}/date2/ja
 .for f in ${EXAMPLES_EN}
