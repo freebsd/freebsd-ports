@@ -1,0 +1,200 @@
+--- Makefile.in.orig	Wed Mar 19 14:11:36 2003
++++ Makefile.in	Thu Mar 20 08:22:23 2003
+@@ -496,190 +496,11 @@
+ 	  fi; \
+ 	done
+ 	$(MAKE) $(AM_MAKEFLAGS) top_distdir="$(top_distdir)" distdir="$(distdir)" dist-hook
+-info-am:
+-info: info-recursive
+-dvi-am:
+-dvi: dvi-recursive
+-check-am: all-am
+-check: check-recursive
+-installcheck-am:
+-installcheck: installcheck-recursive
+-all-recursive-am: config.h
+-	$(MAKE) $(AM_MAKEFLAGS) all-recursive
+ 
+-install-exec-am: install-binPROGRAMS install-binSCRIPTS \
+-		install-exec-local
+-install-exec: install-exec-recursive
+-
+-install-data-am: install-data-local
+-install-data: install-data-recursive
+-
+-install-am: all-am
+-	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
+-install: install-recursive
+-uninstall-am: uninstall-binPROGRAMS uninstall-binSCRIPTS
+-uninstall: uninstall-recursive
+-all-am: Makefile $(PROGRAMS) $(SCRIPTS) config.h
+-all-redirect: all-recursive-am
+-install-strip:
+-	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
+-installdirs: installdirs-recursive
+-installdirs-am:
+-	$(mkinstalldirs)  $(DESTDIR)$(bindir) $(DESTDIR)$(bindir)
+-
+-
+-mostlyclean-generic:
+-
+-clean-generic:
+-	-test -z "$(CLEANFILES)" || rm -f $(CLEANFILES)
+-
+-distclean-generic:
+-	-rm -f Makefile $(CONFIG_CLEAN_FILES)
+-	-rm -f config.cache config.log stamp-h stamp-h[0-9]*
+-
+-maintainer-clean-generic:
+-	-test -z "$(BUILT_SOURCES)" || rm -f $(BUILT_SOURCES)
+-mostlyclean-am:  mostlyclean-hdr mostlyclean-binPROGRAMS \
+-		mostlyclean-compile mostlyclean-tags \
+-		mostlyclean-generic
+-
+-mostlyclean: mostlyclean-recursive
+-
+-clean-am:  clean-hdr clean-binPROGRAMS clean-compile clean-tags \
+-		clean-generic mostlyclean-am
+-
+-clean: clean-recursive
+-
+-distclean-am:  distclean-hdr distclean-binPROGRAMS distclean-compile \
+-		distclean-tags distclean-generic clean-am
+-
+-distclean: distclean-recursive
+-	-rm -f config.status
+-
+-maintainer-clean-am:  maintainer-clean-hdr maintainer-clean-binPROGRAMS \
+-		maintainer-clean-compile maintainer-clean-tags \
+-		maintainer-clean-generic distclean-am
+-	@echo "This command is intended for maintainers to use;"
+-	@echo "it deletes files that may require special tools to rebuild."
+-
+-maintainer-clean: maintainer-clean-recursive
+-	-rm -f config.status
+-
+-.PHONY: mostlyclean-hdr distclean-hdr clean-hdr maintainer-clean-hdr \
+-mostlyclean-binPROGRAMS distclean-binPROGRAMS clean-binPROGRAMS \
+-maintainer-clean-binPROGRAMS uninstall-binPROGRAMS install-binPROGRAMS \
+-mostlyclean-compile distclean-compile clean-compile \
+-maintainer-clean-compile uninstall-binSCRIPTS install-binSCRIPTS \
+-install-data-recursive uninstall-data-recursive install-exec-recursive \
+-uninstall-exec-recursive installdirs-recursive uninstalldirs-recursive \
+-all-recursive check-recursive installcheck-recursive info-recursive \
+-dvi-recursive mostlyclean-recursive distclean-recursive clean-recursive \
+-maintainer-clean-recursive tags tags-recursive mostlyclean-tags \
+-distclean-tags clean-tags maintainer-clean-tags distdir info-am info \
+-dvi-am dvi check check-am installcheck-am installcheck all-recursive-am \
+-install-exec-local install-exec-am install-exec install-data-local \
+-install-data-am install-data install-am install uninstall-am uninstall \
+-all-redirect all-am all installdirs-am installdirs mostlyclean-generic \
+-distclean-generic clean-generic maintainer-clean-generic clean \
+-mostlyclean distclean maintainer-clean
+-
+-
+-mutt_dotlock.c: dotlock.c
+-	cp $(srcdir)/dotlock.c mutt_dotlock.c
+-
+-flea:	muttbug.sh
+-	cp muttbug.sh flea
+-	chmod +x flea
+-
+-Makefile: $(BUILT_SOURCES)
+-
+-keymap_defs.h: $(OPS) $(srcdir)/gen_defs
+-	$(srcdir)/gen_defs $(OPS) > keymap_defs.h
+-
+-keymap_alldefs.h: $(srcdir)/OPS $(srcdir)/OPS.PGP $(srcdir)/OPS.MIX $(srcdir)/gen_defs
+-	$(srcdir)/gen_defs $(srcdir)/OPS $(srcdir)/OPS.PGP $(srcdir)/OPS.MIX > keymap_alldefs.h
+-
+-reldate:
+-	echo 'const char *ReleaseDate = "'`date +%Y-%m-%d`'";' > $(srcdir)/reldate.h
+-
+-patchlist.c: $(srcdir)/PATCHES $(srcdir)/patchlist.sh
+-	$(srcdir)/patchlist.sh < $(srcdir)/PATCHES > patchlist.c
+-
+-install-exec-local:
+-	if test -f $(DESTDIR)$(bindir)/mutt.dotlock && test -f $(DESTDIR)$(bindir)/mutt_dotlock ; then	\
+-		rm -f $(DESTDIR)$(bindir)/mutt.dotlock ;		\
+-		ln -sf $(DESTDIR)$(bindir)/mutt_dotlock $(DESTDIR)$(bindir)/mutt.dotlock ; \
+-	fi
+-	if test -f $(DESTDIR)$(bindir)/mutt_dotlock && test x@DOTLOCK_GROUP@ != x ; then \
+-		chgrp @DOTLOCK_GROUP@ $(DESTDIR)$(bindir)/mutt_dotlock && \
+-		chmod @DOTLOCK_PERMISSION@ $(DESTDIR)$(bindir)/mutt_dotlock || \
+-		{ echo "Can't fix mutt_dotlock's permissions!" >&2 ; exit 1 ; } \
+-	fi
+-
+-install-data-local: Muttrc
+-	$(srcdir)/mkinstalldirs $(DESTDIR)$(sysconfdir)
+-	-if [ -f $(DESTDIR)$(pkgdatadir)/Muttrc ] ; then \
+-		mv $(DESTDIR)$(pkgdatadir)/Muttrc* $(DESTDIR)$(sysconfdir) ; \
+-	elif [ -f $(DESTDIR)$(pkgdatadir)/../Muttrc ] ; then \
+-	 	mv $(DESTDIR)$(pkgdatadir)/../Muttrc* $(DESTDIR)$(sysconfdir) ; \
+-	elif [ ! -f $(DESTDIR)$(sysconfdir)/Muttrc ] ; then \
+-		$(INSTALL) -m 644 $(srcdir)/Muttrc $(DESTDIR)$(sysconfdir) ; \
+-	fi
+-	-if [ ! -f $(DESTDIR)$(sysconfdir)/mime.types ]; then \
+-		$(INSTALL) -m 644 $(srcdir)/mime.types $(DESTDIR)$(sysconfdir); \
+-	fi
+-
+-# Don't make this one ChangeLog - it's intended to be
+-# used manually.
+-
+-changelog:
+-	rcs2log | cat - ChangeLog > ChangeLog.$$$$ && mv ChangeLog.$$$$ ChangeLog
+-	$(VISUAL) ChangeLog
+-
+-# kluge around automake problems.
+-
+-dist-hook:
+-	-for file in $(BUILT_SOURCES) ; do rm -f $(distdir)/$$file ; done
+-
+-us-distdir: distdir dist-hook
+-	mv $(distdir) $(distdir)-us
+-	find $(distdir)-us -type f -print | while read f ; do 		\
+-		cp $$f `dirname $$f`/_`basename $$f`.$$$$ &&   		\
+-		rm $$f && mv `dirname $$f`/_`basename $$f`.$$$$ $$f ;	\
+-	done
+-
+-us-dist: us-distdir
+-	for file in $(distdir)-us/*.c $(distdir)-us/*.h ; do \
+-		$(srcdir)/reap.pl HAVE_PGP < $$file | $(srcdir)/reap.pl MIXMASTER | $(srcdir)/reap.pl USE_SSL > $$file.n && rm $$file && mv $$file.n $$file ; \
+-	done
+-	for file in $(non_us_sources) ; do \
+-		echo "/* This file is only available in the international mutt version */" \
+-			> $(distdir)-us/$$file ; \
+-	done
+-	echo "This version of mutt may be exported from the US.">  $(distdir)-us/EXPORTABLE
+-	-chmod -R a+r $(distdir)-us
+-	GZIP=$(GZIP) $(TAR) chozf $(distdir)-us.tar.gz $(distdir)-us
+-	-rm -rf $(distdir)-us
+-
+-mutt-dist:
+-	(cd $(srcdir) && ./build-release )
+-
+-update-doc: stamp-doc-rc
+-	(cd doc && $(MAKE) update-doc)
+-
+-Muttrc: stamp-doc-rc
+-
+-stamp-doc-rc: $(srcdir)/init.h makedoc Muttrc.head
+-	-rm -f Muttrc stamp-doc-rc
+-	$(CPP) $(INCLUDES) $(DEFS) $(CPPFLAGS) -D_MAKEDOC -C \
+-		$(srcdir)/init.h | ./makedoc -c | cat Muttrc.head - > Muttrc
+-	touch stamp-doc-rc
+-
+-jtags:	TAGS mkjtags
+-	( ./mkjtags TAGS > tags.$$$$ && mv tags.$$$$ tags )
+-
+-.PHONY: jtags
+-
+-# Tell versions [3.59,3.63) of GNU make to not export all variables.
+-# Otherwise a system limit (for SysV at least) may be exceeded.
+-.NOEXPORT:
++compose.o: compose.c mutt.h config.h rfc822.h hash.h charset.h \
++	mutt_regex.h ascii.h protos.h mbyte.h lib.h globals.h \
++	mutt_curses.h mutt_menu.h keymap.h keymap_defs.h rfc1524.h \
++	mime.h attach.h mapping.h mailbox.h sort.h pgp.h pgplib.h
++copy.o: copy.c mutt.h config.h rfc822.h hash.h charset.h mutt_regex.h \
++	ascii.h protos.h mbyte.h lib.h globals.h mailbox.h mx.h copy.h \
++	rfc2047.h mime.h pgp.h pgplib.h

@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mutt
-PORTVERSION=	1.4
+PORTVERSION=	1.4.1
 PORTREVISION=	0
 CATEGORIES+=	mail
 MASTER_SITES=	ftp://ftp.mutt.org/mutt/ \
@@ -23,8 +23,8 @@ PATCH_SITES=	http://www.spinnaker.de/mutt/compressed/:spinnaker \
 		http://www2.mutt.org.ua/download/mutt-${PORTVERSION}/:vvv \
 		ftp://ftp.mutt.org.ua/pub/mutt/mutt-${PORTVERSION}/:vvv \
 		ftp://ftp2.mutt.org.ua/pub/mutt/mutt-${PORTVERSION}/:vvv
-PATCHFILES=	patch-${PORTVERSION}.rr.compressed.1.gz:spinnaker \
-		patch-${PORTVERSION}.vvv.initials.gz:vvv
+PATCHFILES=	patch-${PORTVERSION:C/\.[0-9]*$//}.rr.compressed.1.gz:spinnaker \
+		patch-${PORTVERSION:C/\.[0-9]*$//}.vvv.initials.gz:vvv
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER?=	udo.schweigert@siemens.com
@@ -86,6 +86,9 @@ CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
 .endif
 MAN1=		flea.1 mutt.1 mutt_dotlock.1 muttbug.1
 MAN5=		mbox.5 muttrc.5
+
+pre-patch:
+	cd ${WRKSRC} ; patch < ${FILESDIR}/pre-patch-Makefile.in
 
 .if defined(WITH_MUTT_XFACE)
 post-patch:
