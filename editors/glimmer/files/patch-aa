@@ -1,5 +1,5 @@
---- src/build.C	2000/08/01 09:43:29	1.1
-+++ src/build.C	2000/08/01 09:44:08
+--- src/build.c	2000/08/21 07:37:15	1.1
++++ src/build.c	2000/08/21 07:37:26
 @@ -2,7 +2,7 @@
  #include <sys/types.h>
  #include <unistd.h>

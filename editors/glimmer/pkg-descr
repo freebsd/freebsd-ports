@@ -1,6 +1,10 @@
-CodeCommander is a simple code editor for use with just about any programming
-language. It is still in the development stages, but is fairly useful
-as a C/C++ editor with all the frills.  The project's number one goal is
-stability. What good does a program do you if it crashes all the time?
+LATTE is the Lazy hAcker's exTensible Text Editor, formerly known as
+CodeCommander. It is a full featured code editor with many advanced features,
+including full scripting integration with either Python or Guile.
 
-WWW: http://codecommander.sourceforge.net/
+At the current time, LATTE has syntax highlighting support for the following
+languages: Bash/Sh, C/C++, HTML, Java, Latex, GNU Make, Perl, PHP, PO (Language
+Translation), Python, Scheme (guile, lisp, etc), SGML, WML, XML, and Z80
+Assembly.
+
+WWW: http://latte.sourceforge.net/
