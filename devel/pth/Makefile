@@ -1,12 +1,12 @@
 # New ports collection makefile for:   pth
-# Version required:		1.1.2
+# Version required:		1.1.3
 # Date Created:			23 May 1999
 # Whom:				Ralf S. Engelschall
 #
-# $Id: Makefile,v 1.31 1999/08/21 12:47:32 rse Exp $
+# $Id: Makefile,v 1.32 1999/08/23 12:29:56 rse Exp $
 #
 
-DISTNAME=	pth-1.1.2
+DISTNAME=	pth-1.1.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.engelschall.com/sw/pth/
@@ -14,10 +14,11 @@ MASTER_SITE_SUBDIR=	pth
 
 MAINTAINER=	rse@engelschall.com
 
-GNU_CONFIGURE=	yes
+HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--enable-pthread \
 		--enable-syscall-soft \
+		--enable-optimize \
 		--enable-batch
 
 MAN1=		pth-config.1 pthread-config.1
