@@ -185,6 +185,7 @@
     SUBDIR += ruby-qt2xml
     SUBDIR += ruby-rd-mode.el
     SUBDIR += ruby-rdtool
+    SUBDIR += ruby-rexml
     SUBDIR += ruby-rss
     SUBDIR += ruby-sablot
     SUBDIR += ruby-xmlparser
