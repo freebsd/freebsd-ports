@@ -18,7 +18,7 @@ BUILD_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt
 RUN_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt
 
 USE_X_PREFIX=	yes
-USE_PYTHON=	yes
+USE_PYTHON=	2.3
 USE_REINPLACE=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/FlyWay

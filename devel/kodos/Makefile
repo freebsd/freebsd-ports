@@ -19,7 +19,7 @@ COMMENT=	The Python Regular Expression Debugger
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/qt.so:${PORTSDIR}/x11-toolkits/py-qt
 
 USE_REINPLACE=	yes
-USE_PYTHON=	1.5+
+USE_PYTHON=	1.5-2.3
 USE_PYDISTUTILS=	yes
 
 PLIST_FILES=	bin/kodos ${PYTHON_SITELIBDIR:S,^${PREFIX}/,,}/kodos.pth

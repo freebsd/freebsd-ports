@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_ldap.so:${PORTSDIR}/net/py-ldap2 \
 		pyuic:${PORTSDIR}/x11-toolkits/py-qt
 
 USE_BZIP2=		yes
-USE_PYTHON=		yes
+USE_PYTHON=		2.3
 USE_PYDISTUTILS=	yes
 PYSETUP=		install.py
 PYDISTUTILS_BUILDARGS=		build

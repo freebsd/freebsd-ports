@@ -21,7 +21,7 @@ BROKEN=		"Does not compile with KDE >= 3.3.1"
 BUILD_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_PYTHON=	yes
+USE_PYTHON=	2.3
 USE_KDELIBS_VER=3
 USE_REINPLACE=	yes
 

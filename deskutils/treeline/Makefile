@@ -33,7 +33,7 @@ LIB_DEPENDS+=	expat.5:${PORTSDIR}/textproc/expat2
 
 WRKSRC=		${WRKDIR}/TreeLine
 USE_QT_VER=	3
-USE_PYTHON=	2.3+
+USE_PYTHON=	2.3
 NO_BUILD=	yes
 
 pre-everything::

@@ -17,7 +17,7 @@ BUILD_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt
 RUN_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt
 
 USE_BZIP2=	yes
-USE_PYTHON=	yes
+USE_PYTHON=	2.3
 USE_PYDISTUTILS=yes
 
 pre-everything::
