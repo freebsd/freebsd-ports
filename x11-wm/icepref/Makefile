@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp:ftp@ftp.mxlab.com/x/wm/
 
 MAINTAINER=	ports@FreeBSD.Org
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/GTK.py:${PORTSDIR}/x11-toolkits/py-gtk
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/GTK.py:${PORTSDIR}/x11-toolkits/py-gtk
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_X_PREFIX=	yes

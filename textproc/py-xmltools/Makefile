@@ -26,7 +26,7 @@ XMLDIR=		_xmlplus
 .endif
 
 RUN_DEPENDS=	${PYXML} \
-		${PYTHON_SITELIBDIR}/GDK.py:${PORTSDIR}/x11-toolkits/py-gtk \
+		${PYTHON_SITELIBDIR}/gtk-1.2/GDK.py:${PORTSDIR}/x11-toolkits/py-gtk \
 		${PYTHON_SITELIBDIR}/${XMLDIR}/xpath/__init__.py:${PORTSDIR}/textproc/py-4suite
 
 .include <bsd.port.post.mk>

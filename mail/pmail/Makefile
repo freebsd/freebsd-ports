@@ -14,8 +14,8 @@ MASTER_SITES=	http://www.toad.net/~sbender/pmail/ \
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/_gnomemodule.so:${PORTSDIR}/x11-toolkits/py-gnome
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_gnomemodule.so:${PORTSDIR}/x11-toolkits/py-gnome
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/_gnomemodule.so:${PORTSDIR}/x11-toolkits/py-gnome
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/_gnomemodule.so:${PORTSDIR}/x11-toolkits/py-gnome
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

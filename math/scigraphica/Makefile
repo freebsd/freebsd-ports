@@ -18,7 +18,7 @@ MAINTAINER=	sobomax@FreeBSD.org
 BUILD_DEPENDS=	${PYNUMERIC}
 LIB_DEPENDS=	gtkextra.17:${PORTSDIR}/x11-toolkits/gtkextra
 RUN_DEPENDS=	${PYNUMERIC} \
-		${PYTHON_SITELIBDIR}/_gtkmodule.so:${PORTSDIR}/x11-toolkits/py-gtk
+		${PYTHON_SITELIBDIR}/gtk-1.2/_gtkmodule.so:${PORTSDIR}/x11-toolkits/py-gtk
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

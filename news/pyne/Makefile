@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.yikesstation.freeserve.co.uk/pyne/
 
 MAINTAINER=	ports@FreeBSD.org
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/GTK.py:${PORTSDIR}/x11-toolkits/py-gtk
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/GTK.py:${PORTSDIR}/x11-toolkits/py-gtk
 
 USE_REINPLACE=	yes
 USE_PYTHON=	yes
