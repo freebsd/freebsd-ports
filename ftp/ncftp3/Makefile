@@ -1,14 +1,14 @@
 # ex:ts=8
-# New ports collection makefile for:    ncftp2
+# New ports collection makefile for:    ncftp3
 # Version required:     3.0
 # Date created:         4 Nov 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.63 1999/02/18 09:26:52 obrien Exp $
+# $Id: Makefile,v 1.64 1999/02/20 20:54:29 obrien Exp $
 #
 
-DISTNAME=	ncftp-3.0beta18-src
-PKGNAME=	ncftp-3.0b18
+DISTNAME=       ncftp-3.0beta19-src
+PKGNAME=        ncftp-3.0b19
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.ncftp.com/ncftp/3.0BETA/
 
