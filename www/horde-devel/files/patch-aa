@@ -1,0 +1,68 @@
+--- scripts/set_perms.sh.orig	Sun Apr 15 03:55:32 2001
++++ scripts/set_perms.sh	Wed Oct 24 23:48:43 2001
+@@ -1,6 +1,7 @@
+ #!/bin/sh
+ #
+ # set_perms.sh - Jon Parise <jon@csh.rit.edu>
++# patched by the FreeBSD port - Th. Thomas <thierry@thomas.as>
+ #
+ # $Horde: horde/scripts/set_perms.sh,v 1.7 2001/04/15 01:55:32 chuck Exp $
+ 
+@@ -10,7 +11,7 @@
+ 
+ # Default non-web server user who will own the tree.
+ #
+-OWNER=root
++OWNER=www
+ 
+ # Introductory text
+ #
+@@ -26,29 +27,30 @@
+ 
+ # Verify that we're at the top of the Horde tree.
+ #
+-pwd
+-echo
+-echo -n "Is this directory the top of your Horde installation? [y,N] "
+-read RESPONSE 
+-if [ "$RESPONSE" != "y" -a "$RESPONSE" != "Y" ]; then
+-    echo
+-    echo -n "Enter your Horde directory: "
+-    read DIR  
+-	if [ "x$DIR" = "x" ]; then
+-		echo "Exiting..."
+-		exit
+-	else
+-    	cd $DIR
+-	fi
+-fi
+-echo
++#pwd
++#echo
++#echo -n "Is this directory the top of your Horde installation? [y,N] "
++#read RESPONSE 
++#if [ "$RESPONSE" != "y" -a "$RESPONSE" != "Y" ]; then
++#    echo
++#    echo -n "Enter your Horde directory: "
++#    read DIR  
++#	if [ "x$DIR" = "x" ]; then
++#		echo "Exiting..."
++#		exit
++#	else
++#    	cd $DIR
++#	fi
++#fi
++#echo
++cd UPDATED_BY_THE_PORT
+ 
+ # Get the web server's group.
+ #
+-echo -n "Under what group does the web process run? [nobody] "
++echo -n "Under what group does the web process run? [www] "
+ read WEB_GROUP
+ if [ "x$WEB_GROUP" = "x" ]; then
+-    WEB_GROUP="nobody" 
++    WEB_GROUP="www" 
+ fi
+ 
+ # Ask before proceeding.
