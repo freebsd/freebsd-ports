@@ -15,10 +15,6 @@ MASTER_SITES=	ftp://ftp.cs.hut.fi/pub/ssh/
 
 MAINTAINER=	kris@FreeBSD.org
 
-USE_AUTOCONF=	YES	# unfortunately... see comments in patch-xa for details
-
-# You can set USA_RESIDENT appropriately in /etc/make.conf if this bugs you..
-
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
 MASTER_SITES+=	\
 	ftp://ftp.replay.com/pub/replay/crypto/SSH/ \
@@ -33,20 +29,25 @@ LIB_DEPENDS+=	rsaref.2:${PORTSDIR}/security/rsaref
 BUILD_DEPENDS+=	/nonexistent:${PORTSDIR}/security/rsaref:extract
 .endif
 
-RESTRICTED=	"Crypto; export-controlled"
-IS_INTERACTIVE=	YES
+RESTRICTED=	"Crypto: export-controlled"
 
+USE_AUTOCONF=	YES
 GNU_CONFIGURE=	YES
+USE_PERL5=	YES
+CONFIGURE_ENV+= PERL=${PERL5}
 
 CONFIGURE_ARGS+= --with-etcdir=${PREFIX}/etc
 
-#Uncomment if all your users are in their own group and their homedir
-#is writeable by that group.  Beware the security implications!
+# Uncomment if all your users are in their own group and their homedir
+# is writeable by that group.  Beware the security implications!
+#
 #CONFIGURE_ARGS+= --enable-group-writeability
 
-#Uncomment if you want to allow ssh to emulate an unencrypted rsh connection
-#over a secure medium.  This is normally dangerous since it can lead to the
-#disclosure keys and passwords.
+# Uncomment if you want to allow ssh to emulate an unencrypted rsh connection
+# over a secure medium (i.e. allow SSH connections without encryption).
+# This is normally dangerous since it can lead to the disclosure of keys
+# and passwords.
+#
 #CONFIGURE_ARGS+= --with-none
 
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
@@ -56,13 +57,17 @@ CONFIGURE_ARGS+=--with-kerberos5=${KRB5_HOME} --enable-kerberos-tgt-passing \
 
 # Include support for the SecureID card
 # Warning: untested !
+#
 .if defined(WITH_SECUREID)
 CONFIGURE_ARGS+= --with-secureid
 .endif
 
 # Don't use IDEA. IDEA can be freely used for non-commercial use. However,
-# commercial use may require a licence in a number of countries
-# Warning: untested !
+# commercial use may require a licence in a number of countries. Since SSH
+# itself may not be used for commercial purposes without a license, we
+# enable IDEA by default since the user would already be getting himself
+# into trouble.
+#
 .if defined(WITHOUT_IDEA)
 CONFIGURE_ARGS+= --without-idea
 .endif
@@ -110,13 +115,6 @@ post-install:
 	fi
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_PERL) || (exists(${PERL5}) && (!defined(WITHOUT_PERL)))
-USE_PERL5=	yes
-CONFIGURE_ENV+= PERL=${PERL5}
-.else
-CONFIGURE_ENV+= PERL=/replace_it_with_PERL_path
-.endif
 
 # Include tcp-wrapper support (call remote identd)
 .if exists(/usr/include/tcpd.h)
