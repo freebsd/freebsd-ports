@@ -27,7 +27,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/portsentry ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/portsentry
-	${INSTALL_DATA} ${WRKSRC}/README.install ${WRKSRC}/README.methods \
+	${INSTALL_DATA} ${WRKSRC}/README.install ${WRKSRC}/README.methods ${WRKSRC}/README.stealth \
 	  ${PREFIX}/share/doc/portsentry
 .endif
 	@${CAT} ${PKGDIR}/MESSAGE
