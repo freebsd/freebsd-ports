@@ -41,8 +41,9 @@ pre-extract:
 
 pre-install:
 	${RM} -f ${PLIST}
-	cd ${WRKDIR}/manual && find -s . -type f | cut -c3-999 >> ${PLIST} \
-	&& find * -type d | ${SED} -e 's:^:@dirrm :' >> ${PLIST}
+	cd ${WRKDIR}/manual && ${FIND} -s . -type f | \
+		${CUT} -c3-999 >> ${PLIST} \
+		&& ${FIND} * -type d | ${SED} -e 's:^:@dirrm :' >> ${PLIST}
 
 do-install:
 	cd ${WRKSRC} && pax -r -w * ${PREFIX}
