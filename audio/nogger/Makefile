@@ -23,8 +23,9 @@ pre-install:
 	${ECHO_CMD} bin/nogger > ${PLIST}
 .ifndef(NOPORTDOCS)
 .for ii in COPYING README Thanks
-	${ECHO_CMD} share/doc/nogger/${ii} ${DOCSDIR}
+	${ECHO_CMD} share/doc/nogger/${ii} >> ${PLIST}
 .endfor
+	${ECHO_CMD} @dirrm share/doc/nogger >> ${PLIST}
 .endif
 
 do-install:
