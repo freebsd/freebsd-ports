@@ -1,5 +1,4 @@
 bin/xearth
-lib/X11/xearth/freebsd.core.markers
 lib/X11/xearth/freebsd.committers.markers
 lib/X11/xearth/freebsd.ftp.markers
 @dirrm lib/X11/xearth
