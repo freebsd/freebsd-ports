@@ -91,6 +91,8 @@ XINCLUDE_DIRS=		lib/xkbfile lib/xtrans
 XINSTALL_DIRS=		lib/font programs/Xserver
 XINSTALL_MAN_DIRS=	programs/Xserver
 
+NOT_FOR_ARCHS=		ia64
+
 .include "${.CURDIR}/../../x11/XFree86-4-libraries/Makefile.inc"
 .include <bsd.port.pre.mk>
 
