@@ -1,7 +1,7 @@
 #!/bin/sh -
 #
 #	pre-configure script for Elm port to FreeBSD 2.0
-#	$Id: pre-configure,v 1.4 1995/11/19 21:11:57 ache Exp $
+#	$Id: pre-configure,v 1.5 1995/11/29 19:07:16 ache Exp $
 
 PortsDir=$PORTSDIR
   CurDir=$CURDIR
@@ -103,7 +103,7 @@ vi
 '
 test='test'
 inews=''
-ispell='ispell'
+ispell='/usr/local/bin/ispell'
 egrep=''
 more='/usr/bin/more'
 pg='pg'
@@ -175,8 +175,8 @@ d_havetlib='define'
 termlib='-ltermlib'
 d_index='undef'
 d_internet='define'
-d_ispell='undef'
-ispell_path=''
+d_ispell='define'
+ispell_path='/usr/local/bin/ispell'
 ispell_options=''
 d_locale='define'
 d_nl_types='define'
@@ -294,7 +294,7 @@ xencf=''
 xenlf=''
 d_xenix='undef'
 d_bsd='define'
-d_pgp='undef'
+d_pgp='define'
 pgp='/usr/local/bin/pgp'
 pgp_path='/usr/local/bin/pgp'
 d_remailer='define'
@@ -304,7 +304,7 @@ CONFIG=true
 EOF
 
 cd ${WrkSrc}
-yes "" | ./Configure
+yes "" | ./Configure -d
 cd ${CurDir}
 
 exit 0
