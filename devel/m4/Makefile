@@ -3,13 +3,15 @@
 # Date created:		25 October 1994
 # Whom:			mr
 #
-# $Id: Makefile,v 1.2 1995/01/12 02:41:11 ache Exp $
+# $Id: Makefile,v 1.3 1995/04/01 12:44:39 jkh Exp $
 #
 
 DISTNAME=       m4-1.4
-MASTER_SITES=   ftp://gatekeeper.dec.com/pub/GNU/ ftp://prep.ai.mit.edu/pub/gnu/
 CATEGORIES+=	development programming
-CONFIGURE_ARGS= --program-prefix=g --prefix=${PREFIX}
+MASTER_SITES=   ftp://gatekeeper.dec.com/pub/GNU/ \
+		ftp://prep.ai.mit.edu/pub/gnu/
+
 GNU_CONFIGURE=yes
+CONFIGURE_ARGS= --program-prefix=g --prefix=${PREFIX}
 
 .include <bsd.port.mk>
