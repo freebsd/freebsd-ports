@@ -7,7 +7,7 @@
 
 PORTNAME=		heimdal
 PORTVERSION=	0.3d
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=		security ipv6
 MASTER_SITES=	ftp://ftp.pdc.kth.se/pub/heimdal/src/ \
 				ftp://ftp.replay.com/pub/replay/crypto/APPS/kerberos/heimdal/ \
@@ -93,6 +93,7 @@ pre-configure:
 	(cd ${WRKSRC} && ${PERL} -i.orig -p \
 		-e 's/(SHA1|MD5|MD4)(Init|Update|Final)/$$1_$$2/g;' \
 		-e 's/SHA1_CTX/SHA_CTX/g;' \
+		-e 's/des_set_odd_parity/des_fixup_key_parity/g;' \
 		${CRYPTO_FIXUP})
 
 pre-install:
