@@ -107,6 +107,7 @@
     SUBDIR += ruboard
     SUBDIR += screem
     SUBDIR += sitecopy
+    SUBDIR += smb_auth
     SUBDIR += snarf
     SUBDIR += squid11
     SUBDIR += squid11-novm

@@ -1,0 +1,33 @@
+--- Makefile.orig	Thu Jan 13 11:58:13 2000
++++ Makefile	Thu Jan 13 12:07:21 2000
+@@ -5,25 +5,25 @@
+ # by using the --prefix option when configuring Samba, you need to change
+ # SAMBAPREFIX accordingly.
+ 
+-SAMBAPREFIX=/usr/local/samba
++SAMBAPREFIX=$(LOCALBASE)
+ 
+ # INSTALLBIN is the directory in which both smb_auth and its helper script
+ # smb_auth.sh, will be installed. smb_auth uses this value to find its
+ # helper script, so change this before compiling smb_auth.
+ 
+-INSTALLBIN=/usr/local/bin
++INSTALLBIN=$(PREFIX)/bin
+ 
+ # End of configuration section
+ 
+ OBJECTS = smb_auth.o
+ SCRIPT  = smb_auth.sh
+ 
+-CC      = gcc
+-CFLAGS  = -O2 -Wall \
++CC     ?= gcc
++CFLAGS += -Wall \
+ 	  -DSAMBAPREFIX=\"$(SAMBAPREFIX)\" -DHELPERSCRIPT=\"$(INSTALLBIN)/$(SCRIPT)\"
+ 
+ smb_auth: $(OBJECTS)
+-	$(CC) -o smb_auth $(OBJECTS)
++	$(CC) $(CFLAGS) -o smb_auth $(OBJECTS)
+ 
+ install: smb_auth
+ 	install smb_auth $(SCRIPT) $(INSTALLBIN)
