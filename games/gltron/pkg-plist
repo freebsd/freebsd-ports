@@ -2,4 +2,16 @@ bin/gltron
 share/doc/gltron/CHANGELOG
 share/doc/gltron/CREDITS
 share/doc/gltron/README
+share/gltron/gltron.sgi
+share/gltron/gltron_crash.sgi
+share/gltron/gltron_floor.sgi
+share/gltron/gltron_wall.sgi
+share/gltron/menu.txt
+share/gltron/settings.txt
+share/gltron/t-u-low.obj
+share/gltron/tron.mtl
+share/gltron/xenotron.0.sgi
+share/gltron/xenotron.1.sgi
+share/gltron/xenotron.ftx
 @dirrm share/doc/gltron
+@dirrm share/gltron
