@@ -4,3 +4,16 @@ This is a release of the Internet Software Consortium
 DHCP Server (ISC dhcpd).  In this release, support for the core
 DHCP protocol is provided.  BOOTP support is also provided for
 backwards compatibility. 
+
+Version 3 of the ISC DHCP Distribution adds conditional behaviour,
+address pools with access control, and client classing.  An interim
+implementation of dynamic DNS updates for the server only is
+included, but is not supported. 
+
+Features in upcoming releases, starting with 3.1, will include the
+final asynchronous Dynamic DNS Support, DHCPv4 16-bit option codes,
+asynchronous DNS query resolution, DHCP Authentication, and support
+for a DHCP Interserver Protocol and live querying and update of the
+DHCP database.
+
+WWW: http://www.isc.org/products/DHCP/
