@@ -1,0 +1,18 @@
+@cd /usr/local
+@owner bin
+@mode 755
+bin/fudgit
+@mode 644
+lib/fudgit/advance.ft      
+lib/fudgit/avg.ft          
+lib/fudgit/bessel.ft       
+lib/fudgit/fac.ft          
+lib/fudgit/fft.ft          
+lib/fudgit/fib.ft          
+lib/fudgit/fib2.ft         
+lib/fudgit/fit.ft          
+lib/fudgit/fudgitrc        
+lib/fudgit/if.ft           
+@mode 444
+lib/fudgit/fudgit.help
+man/man1/fudgit.1
