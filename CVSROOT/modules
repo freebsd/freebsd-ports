@@ -3052,6 +3052,7 @@ gview		ports/graphics/gview
 gwave		ports/cad/gwave
 gweled		ports/games/gweled
 gwenview	ports/graphics/gwenview
+gwget		ports/ftp/gwget
 gwhich		ports/misc/gwhich
 gwm		ports/x11-wm/gwm
 gworkspace	ports/deskutils/gworkspace
