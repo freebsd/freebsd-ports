@@ -1,0 +1,49 @@
+--- usr/local/bin/manual~	Sat Mar 19 21:47:46 2005
++++ usr/local/bin/manual	Sat Mar 19 22:43:32 2005
+@@ -1,3 +1,3 @@
+ #!/bin/sh -f
+ # start the MuPAD manual
+-exec /usr/local/MuPAD/share/bin/manual "$@"
++exec %%PREFIX%%/MuPAD/share/bin/manual "$@"
+--- usr/local/bin/mmg~	Sat Mar 19 21:47:46 2005
++++ usr/local/bin/mmg	Sat Mar 19 22:43:44 2005
+@@ -1,3 +1,3 @@
+ #!/bin/sh -f
+ # The MuPAD module generator mmg
+-exec /usr/local/MuPAD/share/bin/mmg "$@"
++exec %%PREFIX%%/MuPAD/share/bin/mmg "$@"
+--- usr/local/bin/mupad~	Sat Mar 19 21:47:46 2005
++++ usr/local/bin/mupad	Sat Mar 19 22:43:53 2005
+@@ -1,3 +1,3 @@
+ #!/bin/sh -f
+ # start the MuPAD terminal version
+-exec /usr/local/MuPAD/share/bin/mupad "$@"
++exec %%PREFIX%%/MuPAD/share/bin/mupad "$@"
+--- usr/local/bin/mxdvi~	Sat Mar 19 21:47:46 2005
++++ usr/local/bin/mxdvi	Sat Mar 19 22:44:05 2005
+@@ -1,3 +1,3 @@
+ #!/bin/sh -f
+ # start the MuPAD manual
+-exec /usr/local/MuPAD/share/bin/manual "$@"
++exec %%PREFIX%%/MuPAD/share/bin/manual "$@"
+--- usr/local/bin/xmupad~	Sat Mar 19 21:47:46 2005
++++ usr/local/bin/xmupad	Sat Mar 19 22:44:14 2005
+@@ -1,3 +1,3 @@
+ #!/bin/sh -f
+ # start the MuPAD frontend
+-exec /usr/local/MuPAD/share/bin/xmupad "$@"
++exec %%PREFIX%%/MuPAD/share/bin/xmupad "$@"
+--- usr/local/bin/xvc2jvx~	Sat Mar 19 21:47:46 2005
++++ usr/local/bin/xvc2jvx	Sat Mar 19 22:44:31 2005
+@@ -1,3 +1,3 @@
+ #!/bin/sh -f
+ # start the MuPAD grahics to JVX converter
+-exec /usr/local/MuPAD/share/bin/xvc2jvx "$@"
++exec %%PREFIX%%/MuPAD/share/bin/xvc2jvx "$@"
+--- usr/local/bin/vcam~	Sat Mar 19 21:47:46 2005
++++ usr/local/bin/vcam	Sat Mar 19 22:46:45 2005
+@@ -1,3 +1,3 @@
+ #!/bin/sh -f
+ # start the MuPAD graphics tool
+-exec /usr/local/MuPAD/share/bin/vcam "$@"
++exec %%PREFIX%%/MuPAD/share/bin/vcam "$@"
