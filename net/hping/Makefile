@@ -7,6 +7,7 @@
 
 PORTNAME=	hping
 PORTVERSION=	2.0.0r1
+PORTEPOCH=	1
 CATEGORIES=	security net
 MASTER_SITES=	http://www.hping.org/
 DISTNAME=	hping2.0.0-rc1
