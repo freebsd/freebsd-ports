@@ -3,7 +3,7 @@
 # Date created:         5 October 1995
 # Whom:                 Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
 #
-# $Id: Makefile,v 1.6 1997/07/13 18:49:16 max Exp $
+# $Id: Makefile,v 1.7 1997/09/14 21:34:34 max Exp $
 #
 
 DISTNAME=       elvis-1.8
@@ -22,14 +22,14 @@ LIB_DEPENDS=	canna\\.1\\.:${PORTSDIR}/japanese/Canna
 
 NO_WRKSUBDIR=	yes
 
-STARTUP_SCRIPT= ${PREFIX}/etc/rc.d/jp-elvis.sh
+STARTUP_SCRIPT= ${PREFIX}/etc/rc.d/ja-elvis.sh
 
 do-configure:
 	@${CP} ${WRKSRC}/Makefile.mix ${WRKSRC}/Makefile
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/doc/jp-elvis
-	${INSTALL_DATA} ${WRKSRC}/README.j18 ${PREFIX}/share/doc/jp-elvis
+	@${MKDIR} ${PREFIX}/share/doc/ja-elvis
+	${INSTALL_DATA} ${WRKSRC}/README.j18 ${PREFIX}/share/doc/ja-elvis
 	@${SH} ${PKGDIR}/REQ ${PKGNAME} INSTALL
 	@if [ ! -f ${STARTUP_SCRIPT} ]; then				\
 		echo "Installing ${STARTUP_SCRIPT} startup file.";	\
@@ -38,7 +38,7 @@ post-install:
 			>> ${STARTUP_SCRIPT};				\
 		echo 'if [ "$$virecovery" != '"'/var/tmp/elv_*' ]; then"	\
 			>> ${STARTUP_SCRIPT};				\
-		echo "	echo 'Recovering jp-elvis editor sessions'"	\
+		echo "	echo 'Recovering ja-elvis editor sessions'"	\
 			>> ${STARTUP_SCRIPT};				\
 		echo '	for i in $$virecovery; do'			\
 			>> ${STARTUP_SCRIPT};				\
