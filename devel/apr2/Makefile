@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	apr
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2.a
+INTERNALPORTVERSION=	0.9.2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.apache.org/dist/apr/
-DISTFILES=	apr-${PORTVERSION}.tar.gz apr-util-${PORTVERSION}.tar.gz
+DISTFILES=	apr-${INTERNALPORTVERSION}-alpha.tar.gz apr-util-${INTERNALPORTVERSION}-alpha.tar.gz
 
 MAINTAINER=	rodrigc@attbi.com
 COMMENT=	The Apache Group's Portability Library
@@ -35,28 +36,31 @@ APR_UTIL_CONF_ENV=${CONFIGURE_ENV} \
 		CPPFLAGS="-I${PREFIX}/include" \
 		LDFLAGS="-L${PREFIX}/lib"
 
-APR_UTIL_CONF_ARGS=	--with-apr=../apr-${PORTVERSION} --with-expat=${PREFIX}
+APR_UTIL_CONF_ARGS=	--with-apr=../apr-${INTERNALPORTVERSION} \
+			--with-expat=${PREFIX} \
+			--with-iconv=${PREFIX}
 
 pre-fetch:
 	${SH} pkg-install apr PRE-INSTALL
 
 pre-configure:
-	cd ${WRKDIR}/apr-${PORTVERSION}; ./buildconf
-	cd ${WRKDIR}/apr-util-${PORTVERSION}; ./buildconf
+	cd ${WRKDIR}/apr-${INTERNALPORTVERSION}; ./buildconf
+	cd ${WRKDIR}/apr-util-${INTERNALPORTVERSION}; ./buildconf \
+		--with-apr=../apr-${INTERNALPORTVERSION}
 
 do-configure:
-	cd ${WRKDIR}/apr-${PORTVERSION}; \
+	cd ${WRKDIR}/apr-${INTERNALPORTVERSION}; \
 		${SETENV} ${APR_CONF_ENV} ./configure ${CONFIGURE_ARGS}
-	cd ${WRKDIR}/apr-util-${PORTVERSION}; \
+	cd ${WRKDIR}/apr-util-${INTERNALPORTVERSION}; \
 		${SETENV} ${APR_UTIL_CONF_ENV} \
 		./configure ${CONFIGURE_ARGS} ${APR_UTIL_CONF_ARGS} 
 
 do-build:
-	cd ${WRKDIR}/apr-${PORTVERSION}; ${SETENV} ${MAKE_ENV} make
-	cd ${WRKDIR}/apr-util-${PORTVERSION}; ${SETENV} ${MAKE_ENV} make
+	cd ${WRKDIR}/apr-${INTERNALPORTVERSION}; ${SETENV} ${MAKE_ENV} make
+	cd ${WRKDIR}/apr-util-${INTERNALPORTVERSION}; ${SETENV} ${MAKE_ENV} make
 
 do-install:
-	cd ${WRKDIR}/apr-${PORTVERSION}; ${SETENV} ${MAKE_ENV} make install
-	cd ${WRKDIR}/apr-util-${PORTVERSION}; ${SETENV} ${MAKE_ENV} make install
+	cd ${WRKDIR}/apr-${INTERNALPORTVERSION}; ${SETENV} ${MAKE_ENV} make install
+	cd ${WRKDIR}/apr-util-${INTERNALPORTVERSION}; ${SETENV} ${MAKE_ENV} make install
 
 .include <bsd.port.mk>

@@ -1,5 +1,6 @@
 bin/apr-config
 bin/apu-config
+build/apr_rules.mk
 build/libtool
 include/apr-0/apr.h
 include/apr-0/apr_allocator.h
@@ -11,6 +12,7 @@ include/apr-0/apr_compat.h
 include/apr-0/apr_date.h
 include/apr-0/apr_dbm.h
 include/apr-0/apr_dso.h
+include/apr-0/apr_env.h
 include/apr-0/apr_errno.h
 include/apr-0/apr_file_info.h
 include/apr-0/apr_file_io.h
@@ -22,6 +24,7 @@ include/apr-0/apr_hash.h
 include/apr-0/apr_hooks.h
 include/apr-0/apr_inherit.h
 include/apr-0/apr_ldap.h
+include/apr-0/apr_ldap_url.h
 include/apr-0/apr_lib.h
 include/apr-0/apr_md4.h
 include/apr-0/apr_md5.h
