@@ -1,12 +1,19 @@
 -----
-You should use X-tt Server for comfortable play.
+o 1st, copy /usr/X11R6/share/example/xsystem35/xsys35rc.sample
+	to ~/.xsys35rc and fit it to your environment.
+i.e.)
+cdrom_device: /dev/cd0c
 
-If you use over 16bpp mode, you should add following line
-to your kernel configuration file and rebuild kernel.
+o 2nd, install data from cdrom with
+	/usr/X11R6/share/example/xsystem35/instgame.
+
+o 3rd, install X-tt for your real pleasure(optional).
+
+o and, play it!
+
+********************* IMPORTANT *********************
+If you use over 16bpp mode, you must add
 	options	SHMMAXPGS=4096
-
-If you have CD-ROM drive, please make symbolic link
-from /dev/cdrom to actual CD-ROM device name.
-For example, type
-	# ln -s /dev/cdrom /dev/cd0c
+to your kernel configuration file and rebuild kernel.
+*****************************************************
 -----
