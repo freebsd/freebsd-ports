@@ -3,6 +3,8 @@ include/gdchart.h
 include/gdcpie.h
 include/gifencode.h
 lib/libgdc.a
+lib/libgdc.so
+lib/libgdc.so.1
 %%PROFILE%%lib/libgdc_p.a
 %%PORTDOCS%%share/doc/gdchart/README
 %%PORTDOCS%%@dirrm share/doc/gdchart
