@@ -6651,6 +6651,7 @@ ru-koi8r-ps	ports/russian/koi8r-ps
 ru-ksocrat	ports/russian/ksocrat
 ru-messarge	ports/russian/messarge
 ru-mtc		ports/russian/mtc
+ru-ooodict-RU	ports/russian/ooodict-ru_RU
 ru-openoffice	ports/russian/openoffice
 ru-p5-Lingua-RU-Charset	ports/russian/p5-Lingua-RU-Charset
 ru-p5-XML-Parser-encodings	ports/russian/p5-XML-Parser-encodings
