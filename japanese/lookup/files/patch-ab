@@ -1,0 +1,14 @@
+--- lisp/lookup-vars.el.in~	Sat Jun 17 09:55:39 2000
++++ lisp/lookup-vars.el.in	Wed Jun 21 16:57:28 2000
+@@ -167,8 +167,9 @@
+   :type 'boolean
+   :group 'lookup-general-options)
+ 
+-(defcustom lookup-use-kakasi (or (locate-library "kakasi" nil exec-path)
+-				 (locate-library "kakasi.exe" nil exec-path))
++(defcustom lookup-use-kakasi (let ((load-path exec-path))
++			       (or (locate-library "kakasi")
++				   (locate-library "kakasi.exe")))
+   "*Non-nil を指定すると、いくつかの局面で KAKASI が利用される。
+ これは現在、具体的には日本語のデフォルトの検索語の切り出しに用いている。"
+   :type 'boolean
