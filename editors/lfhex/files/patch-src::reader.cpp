@@ -1,6 +1,14 @@
---- src/reader.cpp.orig	Sat Jul  7 04:16:01 2001
-+++ src/reader.cpp	Sun Feb 23 00:46:53 2003
-@@ -227,7 +227,7 @@
+--- src/reader.cpp.orig	Sat Jul  7 11:16:01 2001
++++ src/reader.cpp	Thu Oct 16 20:54:13 2003
+@@ -13,6 +13,7 @@
+ #include <stdexcept>
+ #include <algorithm>
+ #include <new>
++#include <cassert>
+ 
+ // for stat:
+ #include <sys/types.h>
+@@ -227,7 +228,7 @@
      // free the page which is the furthest away from the page we are loading
  
      // this could be trouble if off_t is unsigned!
@@ -9,7 +17,7 @@
        while(!freePage(_firstPage++));
      else
        while(!freePage(_lastPage--));
-@@ -285,7 +285,7 @@
+@@ -285,7 +286,7 @@
  #ifdef LFHEX_IOS_BASE_FMTFLAGS
  ostream& operator<< (ostream&out, const ReadBuffer& buff)
  {
