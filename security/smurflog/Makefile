@@ -3,7 +3,7 @@
 # Date created:				7/06/1998
 # Whom:					nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.3 1998/11/29 03:20:10 nectar Exp $
+# $Id: Makefile,v 1.4 1998/12/01 04:04:06 nectar Exp $
 #
 
 DISTNAME=	smurflog-2.1
@@ -17,6 +17,6 @@ GNU_CONFIGURE=	YES
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/README.smurflog
-	${INSTALL_PROGRAM} ${WRKSRC}/smurflog ${PREFIX}/bin/smurflog
+	${INSTALL_PROGRAM} ${WRKSRC}/smurflog ${PREFIX}/sbin/smurflog
 
 .include <bsd.port.mk>
