@@ -18,7 +18,7 @@ USE_BZIP2=	yes
 
 .if !exists(/usr/lib/libssl.a) || !exists(/usr/lib/libcrypto.a)
 .if exists(${LOCALBASE}/lib/libssl.a) && exists(${LOCALBASE}/lib/libcrypto.a)
-LIB_DEPENDS+=	ssl.2:${PORTSDIR}/security/openssl
+LIB_DEPENDS+=	ssl.3:${PORTSDIR}/security/openssl
 MAKE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		RSAGLUE="${RSAGLUE}"
