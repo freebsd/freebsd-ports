@@ -1,0 +1,4 @@
+-----------------------------------------------------------------------------
+  IMPORTANT: KNemo is not an executable but an KDED service. Therefore
+  it has to be started using Control Center/KDE Components/Service Manager.
+-----------------------------------------------------------------------------
