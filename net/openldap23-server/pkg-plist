@@ -8,12 +8,16 @@ etc/openldap/slapd.conf.default
 %%SLAPI%%lib/libslapi.a
 %%SLAPI%%lib/libslapi.so
 %%SLAPI%%lib/libslapi.so.202
+@comment %%SLAPI%%lib/libslapi-2.2.so
+@comment %%SLAPI%%lib/libslapi-2.2.so.7
 libexec/slapd
 libexec/slurpd
 sbin/slapadd
 sbin/slapcat
+sbin/slapdn
 sbin/slapindex
 sbin/slappasswd
+sbin/slaptest
 @exec mkdir -p %%LDAP_RUN_DIR%%
 @unexec rmdir %%LDAP_RUN_DIR%% 2>/dev/null || true
 @exec mkdir -p %%DATABASEDIR%%

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		openldap
-PORTVERSION=		2.2.7
+PORTVERSION=		2.2.8
 PORTREVISION=		${OPENLDAP_PORTREVISION}
 CATEGORIES=		net databases
 MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
@@ -33,17 +33,25 @@ MAINTAINER=		eik@FreeBSD.org
 COMMENT?=		Open source LDAP server implementation
 
 LATEST_LINK=		${PKGNAMEPREFIX}openldap22${PKGNAMESUFFIX}
-CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-client-2.[013-9].*
 
 WANT_OPENLDAP_VER?=	22
 .if ${WANT_OPENLDAP_VER} != 22
 BROKEN=			"incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}"
 .endif
 
+PORTREVISION_CLIENT=	0
+PORTREVISION_SERVER=	0
+
+PKGNAMESUFFIX_CLIENT=	-client
+PKGNAMESUFFIX_SERVER=	-server
+
 .if defined(CLIENT_ONLY)
-OPENLDAP_PORTREVISION=	3
-OPENLDAP_PKGNAMESUFFIX?=-client
-OPENLDAP_PKGFILESUFX?=	.client
+OPENLDAP_PORTREVISION=	${PORTREVISION_CLIENT}
+OPENLDAP_PKGNAMESUFFIX=	${PKGNAMESUFFIX_CLIENT}
+OPENLDAP_PKGFILESUFX=	.client
+
+CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-client-2.[013-9].* \
+			${PKGNAMEPREFIX}${PORTNAME}-sasl-client-2.[013-9].*
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=		drafts rfc
@@ -53,12 +61,20 @@ PORTDOCS=		drafts rfc
 .error You have `USE_OPENLDAP' defined either in your environment or in make(1) arguments.
 .endif
 .else
-OPENLDAP_PORTREVISION=	2
-OPENLDAP_PKGNAMESUFFIX?=-server
-OPENLDAP_PKGFILESUFX?=
+OPENLDAP_PORTREVISION=	${PORTREVISION_SERVER}
+OPENLDAP_PKGNAMESUFFIX=	${PKGNAMESUFFIX_SERVER}
+OPENLDAP_PKGFILESUFX=
 
 RUN_DEPENDS=		${LOCALBASE}/lib/libldap.so.202:${PORTSDIR}/net/openldap22-client
-CONFLICTS+=		${PKGNAMEPREFIX}${PORTNAME}-server-2.[013-9].*
+#RUN_DEPENDS=		${LOCALBASE}/lib/libldap-2.2.so.7:${PORTSDIR}/net/openldap22-client
+CONFLICTS+=		${PKGNAMEPREFIX}${PORTNAME}-server-2.[013-9].* \
+			${PKGNAMEPREFIX}${PORTNAME}-sasl-server-2.[013-9].*
+
+.if ${PORTREVISION_CLIENT} != 0
+SUF1_CLIENT=		_${PORTREVISION_CLIENT}
+.endif
+
+PKGNAME_CLIENT=		${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX_CLIENT}-${PORTVERSION}${SUF1_CLIENT}
 .endif
 
 USE_OPENSSL=		yes
@@ -84,7 +100,8 @@ PLIST_SUB+=		LDAP_RUN_DIR=${LDAP_RUN_DIR} \
 			DATABASEDIR=${DATABASEDIR} \
 			SLURPDIR=${SLURPDIR} \
 
-SED_SCRIPT=		-e 's,%%PREFIX%%,${PREFIX},g' \
+SED_SCRIPT=		-e 's,%%PKGNAME%%,${PKGNAME},g' \
+			-e 's,%%PREFIX%%,${PREFIX},g' \
 			-e 's,%%LDAP_RUN_DIR%%,${LDAP_RUN_DIR},g' \
 			-e 's,%%DATABASEDIR%%,${DATABASEDIR},g' \
 			-e 's,%%SLURPDIR%%,${SLURPDIR},g'
@@ -94,6 +111,8 @@ CONFIGURE_ARGS=		--with-threads=posix \
 			--enable-dynamic
 
 .if defined(WITH_SASL)
+PKGNAMESUFFIX_CLIENT:=	-sasl${PKGNAMESUFFIX_CLIENT}
+PKGNAMESUFFIX_SERVER:=	-sasl${PKGNAMESUFFIX_SERVER}
 LIB_DEPENDS+=		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 CONFIGURE_ARGS+=	--with-cyrus-sasl
 .else
@@ -109,6 +128,15 @@ INSTALLS_SHLIB=		yes
 
 .else
 # server specific configuration
+
+USE_RC_SUBR=		yes
+
+SED_SCRIPT+=		-e 's,%%PKGNAME_CLIENT%%,${PKGNAME_CLIENT},g' \
+			-e 's,%%RC_SUBR%%,${RC_SUBR},g' \
+			-e 's,%%RC_DIR%%,${RC_DIR},g' \
+			-e 's,%%RC_SUFX%%,${RC_SUFX},g'
+PLIST_SUB+=		RC_DIR=${RC_DIR} \
+			RC_SUFX=${RC_SUFX}
 
 EXTRA_PATCHES+=		${FILESDIR}/extrapatch-Makefile.in
 
@@ -126,31 +154,30 @@ CONFIGURE_ARGS+=	--localstatedir=${LOCALSTATEDIR} \
 CONFIGURE_ARGS+=	--with-ldbm-api=bcompat \
 			--disable-bdb
 .else
-CONFIGURE_ARGS+=	--with-ldbm-api=berkeley
-
 WITH_BDB_VER?=		42
 
 .if ${WITH_BDB_VER} == 42
-LIB_DEPENDS+=		db-4.2.2:${PORTSDIR}/databases/db42
 CONFIGURE_ARGS+=	--enable-bdb
+BDBLIB=			db-4.2.2
 .elif ${WITH_BDB_VER} == 41
-LIB_DEPENDS+=		db41.1:${PORTSDIR}/databases/db41
 CONFIGURE_ARGS+=	--enable-bdb
+BDBLIB=			db41.1
 .elif ${WITH_BDB_VER} == 4
-LIB_DEPENDS+=		db4.0:${PORTSDIR}/databases/db4
 CONFIGURE_ARGS+=	--disable-bdb
+BDBLIB=			db4.0
 .elif ${WITH_BDB_VER} == 3
-LIB_DEPENDS+=		db3.3:${PORTSDIR}/databases/db3
 CONFIGURE_ARGS+=	--disable-bdb
+BDBLIB=			db3.3
 .else
 .error WITH_BDB_VER must be 3, 4, 41 or 42
 .endif
-.if ${WITH_BDB_VER} == 42
-LIBS+=			-ldb-4.2
-.else
-LIBS+=			-ldb${WITH_BDB_VER}
-.endif
+
+LIB_DEPENDS+=		${BDBLIB}:${PORTSDIR}/databases/db${WITH_BDB_VER}
 CPPFLAGS+=		-I${LOCALBASE}/include/db${WITH_BDB_VER}
+CONFIGURE_ARGS+=	--with-ldbm-api=berkeley \
+			--enable-hdb
+CONFIGURE_SED+=		-e 's,ol_DB_LIB=$$,&-l${BDBLIB:R},' \
+			-e 's,(ol_cv_lib_db=)yes$$,\1-l${BDBLIB:R},'
 .endif
 
 .if defined(WITH_SHELL)
@@ -170,12 +197,11 @@ CONFIGURE_ARGS+=	--enable-spasswd
 WITH_ODBC_TYPE?=	iODBC
 .endif
 .if defined(WITH_ODBC_TYPE)
+CONFIGURE_ARGS+=	--enable-sql
 .if ${WITH_ODBC_TYPE:L} == iodbc
 LIB_DEPENDS+=		iodbc.3:${PORTSDIR}/databases/libiodbc
-CONFIGURE_ARGS+=	--enable-sql
 .elif ${WITH_ODBC_TYPE:L} == unixodbc
 LIB_DEPENDS+=		odbc.1:${PORTSDIR}/databases/unixODBC
-CONFIGURE_ARGS+=	--enable-sql
 .else
 .error WITH_ODBC_TYPE must be iODBC or unixODBC
 .endif
@@ -202,7 +228,7 @@ CONFIGURE_ARGS+=	--enable-wrappers
 CPPFLAGS+=		${PTHREAD_CFLAGS} \
 			-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
-LIBS+=			${PTHREAD_LIBS}
+#LIBS+=			${PTHREAD_LIBS}
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" \
@@ -215,20 +241,12 @@ CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" \
 .include "${FILESDIR}/manpages"
 .else
 .if ${OSVERSION} >= 500038
-RC_SUBR?=	${DESTDIR}/etc/rc.subr
 RC_DIR=		${DESTDIR}/etc/rc.d
 RC_SUFX=
 .else
-USE_RC_SUBR=	yes
 RC_DIR=		${PREFIX}/etc/rc.d
 RC_SUFX=	.sh
 .endif
-
-SED_SCRIPT+=	-e 's,%%RC_SUBR%%,${RC_SUBR},g' \
-		-e 's,%%RC_DIR%%,${RC_DIR},g' \
-		-e 's,%%RC_SUFX%%,${RC_SUFX},g'
-PLIST_SUB+=	RC_DIR=${RC_DIR} \
-		RC_SUFX=${RC_SUFX}
 .endif
 
 pre-everything::
@@ -256,8 +274,10 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e 's,%LOCALSTATEDIR%/run/,${LDAP_RUN_DIR}/,g' \
 		${WRKSRC}/servers/slapd/slapd.conf
-	@${REINPLACE_CMD} -Ee 's,^(ol_api_lib=)2\.2\.([0-9]+)$$,\1202:\2:200,' \
-		${WRKSRC}/build/version.var
+.if defined(CONFIGURE_SED)
+	@${REINPLACE_CMD} -E ${CONFIGURE_SED} \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+.endif
 
 pre-configure:
 	@if [ -n "`${PKG_INFO} -xI '^bind\(84\)\{0,1\}-base-8\.' 2>/dev/null`" ]; then \
