@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Thu Dec  9 00:26:37 2004
++++ Makefile.in	Thu Dec  9 00:26:53 2004
+@@ -1885,7 +1885,7 @@
+ 	$(UTILITIES_EXTRA_DIST) \
+ 	$(WAND_EXTRA_DIST)
+ 
+-lib_LTLIBRARIES = $(LIBLTDL) $(LIBMAGICK) $(LIBWAND) $(LIBMAGICKPP)
++lib_LTLIBRARIES = $(LIBMAGICK) $(LIBWAND) $(LIBMAGICKPP)
+ 
+ # Where architecture-independent configuration files get installed
+ # (share/ImageMagick-version)
