@@ -7,7 +7,7 @@
 
 PORTNAME=	sbcl
 PORTVERSION=	0.8.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sbcl
@@ -18,8 +18,6 @@ DISTFILES+=	${DISTNAME}-html${EXTRACT_SUFX}
 
 MAINTAINER=	des@FreeBSD.org
 COMMENT=	A Common Lisp development system derived from the CMU CL system
-
-FORBIDDEN=	"Creates /almost-certainly-does-not-exist"
 
 # If you have a previous version of SBCL installed, you can use it
 # instead of CMUCL to build the port, then deinstall it before
