@@ -4,7 +4,7 @@
  /*********************************************************
  ** find string in string - ignore case **/
  
-+/*
++#ifdef NEED_STRCASESTR
  char *strcasestr( char *_s1, char *_s2 )
  {
  	char *s1;
@@ -13,7 +13,7 @@
  		return _s1 + (ptr - s1);
  }
 -
-+*/
++#endif
  
  
  
