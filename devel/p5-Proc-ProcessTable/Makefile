@@ -15,8 +15,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ahze@rgv.net
 COMMENT=	Perl interface to the unix process table
 
-BROKEN=		"Broken pkg-plist"
-
 PERL_CONFIGURE=	YES
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
