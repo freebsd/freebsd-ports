@@ -7,9 +7,8 @@
 
 PORTNAME=	manpages-de
 PORTVERSION=	0.4
-
 CATEGORIES=	german
-MASTER_SITES=   http://www.infodrom.org/projects/manpages-de/download/ \
+MASTER_SITES=	http://www.infodrom.org/projects/manpages-de/download/ \
 		http://wolfram.schneider.org/src/
 
 MAINTAINER=	wosch@FreeBSD.org

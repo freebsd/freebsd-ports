@@ -54,8 +54,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
-post-install:
-	@${SED} 's!%%PREFIX%%!${PREFIX}!g; s!%%EZMLM_DIR%%!${PREFIX}${EZMLM_DIR:S/^\///}!g' ${PKGMESSAGE}
-	@${ECHO}
 
 .include <bsd.port.mk>

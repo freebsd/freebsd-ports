@@ -165,7 +165,7 @@ MAN3=	glDisable.3 glDisableClientState.3 glEdgeFlag.3 \
 
 do-install:
 	@for file in ${MAN3} ; do \
-		$(INSTALL_MAN) $(WRKSRC)/man3/$$file $(PREFIX)/man/man3/. ; \
+		${INSTALL_MAN} ${WRKSRC}/man3/$$file ${PREFIX}/man/man3/. ; \
 	done
 
 .include <bsd.port.post.mk>
