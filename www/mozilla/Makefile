@@ -250,8 +250,8 @@ post-patch:
 	@${REINPLACE_CMD} -E -e 's|libfreetype\.so\.[0-9]+|${FREETYPE_LIB}|g' \
 		${WRKSRC}/modules/libpref/src/init/all.js
 	@for pcfile in ${PKGCONFIG_FILES}; do \
-		${REINPLACE_CMD} -e 's|mozilla-xpcom|mozilla-xpcom${MOZ_SUFX}${PKGNAMESUFFIX}|g ; \
-			s|mozilla-nspr|mozilla-nspr${MOZ_SUFX}${PKGNAMESUFFIX}|g' \
+		${REINPLACE_CMD} -e 's|mozilla-xpcom|mozilla-xpcom${MOZ_SUFX}|g ; \
+			s|mozilla-nspr|mozilla-nspr${MOZ_SUFX}|g' \
 			${WRKSRC}/build/unix/$${pcfile}.pc.in; \
 	done
 	@${SED} -e 's|%%MOZDIR%%|${PREFIX}/lib/${MOZILLA}|g' \
@@ -297,7 +297,7 @@ pre-install:
 			${SED} -e 's:^:@dirrm lib/${MOZILLA}/:' >> ${PLIST}
 	${ECHO_CMD} @dirrm lib/${MOZILLA} >> ${PLIST}
 	for pcfile in ${PKGCONFIG_FILES}; do \
-		${ECHO_CMD} libdata/pkgconfig/$${pcfile}${MOZ_SUFX}${PKGNAMESUFFIX}.pc >> ${PLIST} ; \
+		${ECHO_CMD} libdata/pkgconfig/$${pcfile}${MOZ_SUFX}.pc >> ${PLIST} ; \
 	done
 	cd ${FAKEDIR}/include/${MOZILLA} && ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's:^:include/${MOZILLA}/:' >> ${PLIST} \
@@ -335,7 +335,7 @@ do-install:
 		${REINPLACE_CMD} -e 's|${FAKEDIR}|${PREFIX}|g' \
 			${WRKSRC}/build/unix/$${pcfile}.pc; \
 		${INSTALL_DATA} ${WRKSRC}/build/unix/$${pcfile}.pc \
-			${PREFIX}/libdata/pkgconfig/$${pcfile}${MOZ_SUFX}${PKGNAMESUFFIX}.pc ; \
+			${PREFIX}/libdata/pkgconfig/$${pcfile}${MOZ_SUFX}.pc ; \
 	done
 	-${RM} -fr ${PREFIX}/include/${MOZILLA}
 	${MKDIR} ${PREFIX}/include/${MOZILLA}
