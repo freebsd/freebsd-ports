@@ -8,17 +8,25 @@ bin/hasktags
 bin/hsc2hs
 bin/hp2ps
 bin/ghcprof
+bin/runghc
+bin/runhaskell
 bin/stat2resid
+lib/ghc-%%GHC_VERSION%%/HSCabal.o
+lib/ghc-%%GHC_VERSION%%/HSHUnit.o
+lib/ghc-%%GHC_VERSION%%/HSOpenGL.o
+lib/ghc-%%GHC_VERSION%%/HSOpenGL_cbits.o
 lib/ghc-%%GHC_VERSION%%/HSQuickCheck.o
 lib/ghc-%%GHC_VERSION%%/HSbase.o
 lib/ghc-%%GHC_VERSION%%/HSbase_cbits.o
 lib/ghc-%%GHC_VERSION%%/HSconcurrent.o
 lib/ghc-%%GHC_VERSION%%/HSdata.o
+lib/ghc-%%GHC_VERSION%%/HSfgl.o
 lib/ghc-%%GHC_VERSION%%/HShaskell-src.o
 lib/ghc-%%GHC_VERSION%%/HShaskell98.o
 lib/ghc-%%GHC_VERSION%%/HShssource.o
 lib/ghc-%%GHC_VERSION%%/HSlang.o
 lib/ghc-%%GHC_VERSION%%/HSlang_cbits.o
+lib/ghc-%%GHC_VERSION%%/HSmtl.o
 lib/ghc-%%GHC_VERSION%%/HSnet.o
 lib/ghc-%%GHC_VERSION%%/HSnetwork.o
 lib/ghc-%%GHC_VERSION%%/HSparsec.o
@@ -26,6 +34,8 @@ lib/ghc-%%GHC_VERSION%%/HSposix.o
 lib/ghc-%%GHC_VERSION%%/HSposix_cbits.o
 lib/ghc-%%GHC_VERSION%%/HSreadline.o
 lib/ghc-%%GHC_VERSION%%/HSrts.o
+lib/ghc-%%GHC_VERSION%%/HSstm.o
+lib/ghc-%%GHC_VERSION%%/HStemplate-haskell.o
 lib/ghc-%%GHC_VERSION%%/HStext.o
 lib/ghc-%%GHC_VERSION%%/HSunix.o
 lib/ghc-%%GHC_VERSION%%/HSunix_cbits.o
@@ -432,8 +442,6 @@ lib/ghc-%%GHC_VERSION%%/imports/Data/Generics/Aliases.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Generics/Aliases.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Data/Generics/Basics.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Generics/Basics.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Generics/Reify.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Generics/Reify.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Data/Generics/Schemes.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Generics/Schemes.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Data/Generics/Text.hi
@@ -604,8 +612,6 @@ lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/Pretty.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/Pretty.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/Syntax.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/Syntax.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/THSyntax.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/THSyntax.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/List.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/List.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Locale.hi
@@ -768,18 +774,384 @@ lib/ghc-%%GHC_VERSION%%/imports/Time.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Time.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Word.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Word.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Control/Concurrent/STM/TChan.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Concurrent/STM/TChan.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Control/Concurrent/STM/TMVar.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Concurrent/STM/TMVar.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Control/Concurrent/STM/TVar.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Concurrent/STM/TVar.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Control/Concurrent/STM.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Concurrent/STM.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Control/Parallel/Strategies.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Parallel/Strategies.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/FunctorM.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/FunctorM.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/Generics/Instances.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Generics/Instances.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Basic.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Basic.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Example.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Example.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Graph.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Graph.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Graphviz.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Graphviz.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Internal/FiniteMap.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Internal/FiniteMap.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Internal/Heap.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Internal/Heap.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Internal/Queue.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Internal/Queue.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Internal/RootPath.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Internal/RootPath.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Internal/Thread.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Internal/Thread.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Monad/IOArray.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Monad/IOArray.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Monad.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Monad.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/NodeMap.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/NodeMap.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/ArtPoint.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/ArtPoint.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/BCC.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/BCC.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/BFS.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/BFS.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/DFS.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/DFS.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/Dominators.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/Dominators.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/GVD.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/GVD.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/Indep.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/Indep.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/MST.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/MST.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/MaxFlow.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/MaxFlow.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/MaxFlow2.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/MaxFlow2.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/Monad.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/Monad.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/SP.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/SP.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/TransClos.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/TransClos.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Tree.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Tree.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/IntMap.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/IntMap.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/IntSet.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/IntSet.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/Map.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Map.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/Queue.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Queue.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/Version.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Version.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Distribution/Compat/Directory.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Compat/Directory.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Distribution/Compat/Exception.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Compat/Exception.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Distribution/Compat/FilePath.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Compat/FilePath.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Distribution/Compat/RawSystem.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Compat/RawSystem.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Distribution/Compat/ReadP.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Compat/ReadP.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Distribution/Extension.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Extension.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Distribution/GetOpt.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/GetOpt.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Distribution/InstalledPackageInfo.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/InstalledPackageInfo.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Distribution/License.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/License.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Distribution/Make.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Make.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Distribution/Package.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Package.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Distribution/PackageDescription.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/PackageDescription.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Distribution/ParseUtils.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/ParseUtils.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Distribution/PreProcess/Unlit.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/PreProcess/Unlit.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Distribution/PreProcess.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/PreProcess.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Distribution/Setup.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Setup.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple/Build.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple/Build.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple/Configure.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple/Configure.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple/GHCPackageConfig.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple/GHCPackageConfig.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple/Install.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple/Install.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple/LocalBuildInfo.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple/LocalBuildInfo.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple/Register.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple/Register.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple/SrcDist.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple/SrcDist.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple/Utils.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple/Utils.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Distribution/Version.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Version.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/GHC/ConsoleHandler.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/ConsoleHandler.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Antialiasing.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Antialiasing.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/BasicTypes.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/BasicTypes.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/BeginEnd.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/BeginEnd.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Bitmaps.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Bitmaps.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/BlendingFactor.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/BlendingFactor.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/BufferMode.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/BufferMode.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/BufferObjects.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/BufferObjects.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Capability.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Capability.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Clipping.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Clipping.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/ColorSum.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/ColorSum.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Colors.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Colors.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/ComparisonFunction.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/ComparisonFunction.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/CoordTrans.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/CoordTrans.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/DataType.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/DataType.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/DisplayLists.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/DisplayLists.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/EdgeFlag.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/EdgeFlag.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Evaluators.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Evaluators.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Exception.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Exception.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Extensions.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Extensions.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Face.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Face.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Feedback.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Feedback.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/FlushFinish.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/FlushFinish.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Fog.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Fog.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Framebuffer.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Framebuffer.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/GLboolean.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/GLboolean.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Hints.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Hints.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/IOState.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/IOState.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/LineSegments.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/LineSegments.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PeekPoke.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PeekPoke.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PerFragment.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PerFragment.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelData.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelData.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelFormat.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelFormat.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles/ColorTable.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles/ColorTable.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles/Convolution.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles/Convolution.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles/Histogram.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles/Histogram.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles/Minmax.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles/Minmax.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles/PixelMap.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles/PixelMap.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles/PixelStorage.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles/PixelStorage.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles/PixelTransfer.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles/PixelTransfer.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles/Rasterization.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles/Rasterization.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles/Reset.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles/Reset.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles/Sink.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles/Sink.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PointParameter.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PointParameter.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Points.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Points.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PolygonMode.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PolygonMode.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Polygons.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Polygons.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PrimitiveMode.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PrimitiveMode.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/QueryUtils.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/QueryUtils.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/RasterPos.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/RasterPos.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/ReadCopyPixels.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/ReadCopyPixels.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Rectangles.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Rectangles.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/RenderMode.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/RenderMode.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/SavingState.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/SavingState.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Selection.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Selection.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/StateVar.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/StateVar.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/StringQueries.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/StringQueries.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing/Application.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing/Application.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing/Environments.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing/Environments.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing/Objects.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing/Objects.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing/Parameters.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing/Parameters.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing/PixelInternalFormat.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing/PixelInternalFormat.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing/Queries.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing/Queries.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing/Specification.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing/Specification.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing/TexParameter.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing/TexParameter.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing/TextureTarget.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing/TextureTarget.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing/TextureUnit.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing/TextureUnit.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/VertexArrays.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/VertexArrays.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/VertexSpec.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/VertexSpec.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GLU/Errors.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GLU/Errors.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GLU/ErrorsInternal.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GLU/ErrorsInternal.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GLU/Initialization.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GLU/Initialization.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GLU/Matrix.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GLU/Matrix.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GLU/Mipmapping.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GLU/Mipmapping.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GLU/NURBS.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GLU/NURBS.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GLU/Quadrics.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GLU/Quadrics.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GLU/Tessellation.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GLU/Tessellation.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GLU.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GLU.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/TH/Lib.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/TH/Lib.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/TH/Ppr.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/TH/Ppr.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/TH/PprLib.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/TH/PprLib.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/TH/Syntax.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/TH/Syntax.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/TH.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/TH.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/System/Directory/Internals.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Directory/Internals.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Error.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Error.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Signals/Exts.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Signals/Exts.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/System/Process/Internals.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Process/Internals.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/System/Process.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Process.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Test/HUnit/Base.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Test/HUnit/Base.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Test/HUnit/Lang.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Test/HUnit/Lang.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Test/HUnit/Terminal.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Test/HUnit/Terminal.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Test/HUnit/Text.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Test/HUnit/Text.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Test/HUnit.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Test/HUnit.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Test/QuickCheck/Batch.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Test/QuickCheck/Batch.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Test/QuickCheck/Poly.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Test/QuickCheck/Poly.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Test/QuickCheck/Utils.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Test/QuickCheck/Utils.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Test/QuickCheck.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Test/QuickCheck.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Text/Printf.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/Printf.p_hi
+lib/ghc-%%GHC_VERSION%%/include/Cmm.h
+lib/ghc-%%GHC_VERSION%%/include/GHCConstants.h
+lib/ghc-%%GHC_VERSION%%/include/HsBaseConfig.h
+lib/ghc-%%GHC_VERSION%%/include/HsNetworkConfig.h
+lib/ghc-%%GHC_VERSION%%/include/HsOpenGL.h
+lib/ghc-%%GHC_VERSION%%/include/HsOpenGLExt.h
+lib/ghc-%%GHC_VERSION%%/include/HsOpenGLTypes.h
+lib/ghc-%%GHC_VERSION%%/include/HsUnixConfig.h
+lib/ghc-%%GHC_VERSION%%/include/Liveness.h
+lib/ghc-%%GHC_VERSION%%/include/RtsConfig.h
+lib/ghc-%%GHC_VERSION%%/include/RtsExternal.h
+lib/ghc-%%GHC_VERSION%%/include/RtsMessages.h
+lib/ghc-%%GHC_VERSION%%/include/STM.h
+lib/ghc-%%GHC_VERSION%%/include/Storage.h
+lib/ghc-%%GHC_VERSION%%/include/ghcautoconf.h
+lib/ghc-%%GHC_VERSION%%/include/ghcconfig.h
+lib/ghc-%%GHC_VERSION%%/include/ghcplatform.h
+lib/ghc-%%GHC_VERSION%%/include/runProcess.h
+lib/ghc-%%GHC_VERSION%%/libHSCabal.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSCabal_p.a
+lib/ghc-%%GHC_VERSION%%/libHSHUnit.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSHUnit_p.a
+lib/ghc-%%GHC_VERSION%%/libHSOpenGL.a
+lib/ghc-%%GHC_VERSION%%/libHSOpenGL_cbits.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSOpenGL_p.a
+lib/ghc-%%GHC_VERSION%%/libHSfgl.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSfgl_p.a
+lib/ghc-%%GHC_VERSION%%/libHSmtl.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSmtl_p.a
+lib/ghc-%%GHC_VERSION%%/libHSstm.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSstm_p.a
+lib/ghc-%%GHC_VERSION%%/libHStemplate-haskell.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHStemplate-haskell_p.a
 lib/ghc-%%GHC_VERSION%%/include/Block.h
 lib/ghc-%%GHC_VERSION%%/include/Bytecodes.h
-lib/ghc-%%GHC_VERSION%%/include/CCall.h
 lib/ghc-%%GHC_VERSION%%/include/CTypes.h
 lib/ghc-%%GHC_VERSION%%/include/ClosureMacros.h
 lib/ghc-%%GHC_VERSION%%/include/ClosureTypes.h
 lib/ghc-%%GHC_VERSION%%/include/Closures.h
 lib/ghc-%%GHC_VERSION%%/include/Constants.h
 lib/ghc-%%GHC_VERSION%%/include/DNInvoke.h
-lib/ghc-%%GHC_VERSION%%/include/Derived.h
 lib/ghc-%%GHC_VERSION%%/include/DerivedConstants.h
-lib/ghc-%%GHC_VERSION%%/include/DietHEP.h
 lib/ghc-%%GHC_VERSION%%/include/Dotnet.h
 lib/ghc-%%GHC_VERSION%%/include/GranSim.h
 lib/ghc-%%GHC_VERSION%%/include/Hooks.h
@@ -791,15 +1163,11 @@ lib/ghc-%%GHC_VERSION%%/include/HsPosix.h
 lib/ghc-%%GHC_VERSION%%/include/HsReadline.h
 lib/ghc-%%GHC_VERSION%%/include/HsUnix.h
 lib/ghc-%%GHC_VERSION%%/include/HsUtil.h
-lib/ghc-%%GHC_VERSION%%/include/InfoMacros.h
 lib/ghc-%%GHC_VERSION%%/include/InfoTables.h
 lib/ghc-%%GHC_VERSION%%/include/Linker.h
 lib/ghc-%%GHC_VERSION%%/include/MachDeps.h
 lib/ghc-%%GHC_VERSION%%/include/MachRegs.h
-lib/ghc-%%GHC_VERSION%%/include/NativeDefs.h
 lib/ghc-%%GHC_VERSION%%/include/Parallel.h
-lib/ghc-%%GHC_VERSION%%/include/PosixSource.h
-lib/ghc-%%GHC_VERSION%%/include/PrimOps.h
 lib/ghc-%%GHC_VERSION%%/include/Regs.h
 lib/ghc-%%GHC_VERSION%%/include/Rts.h
 lib/ghc-%%GHC_VERSION%%/include/RtsAPI.h
@@ -810,13 +1178,11 @@ lib/ghc-%%GHC_VERSION%%/include/SchedAPI.h
 lib/ghc-%%GHC_VERSION%%/include/Signals.h
 lib/ghc-%%GHC_VERSION%%/include/Stable.h
 lib/ghc-%%GHC_VERSION%%/include/Stg.h
+lib/ghc-%%GHC_VERSION%%/include/StgMiscClosures.h
 lib/ghc-%%GHC_VERSION%%/include/StgDLL.h
 lib/ghc-%%GHC_VERSION%%/include/StgFun.h
 lib/ghc-%%GHC_VERSION%%/include/StgLdvProf.h
-lib/ghc-%%GHC_VERSION%%/include/StgMacros.h
-lib/ghc-%%GHC_VERSION%%/include/StgMiscClosures.h
 lib/ghc-%%GHC_VERSION%%/include/StgProf.h
-lib/ghc-%%GHC_VERSION%%/include/StgStorage.h
 lib/ghc-%%GHC_VERSION%%/include/StgTicky.h
 lib/ghc-%%GHC_VERSION%%/include/StgTypes.h
 lib/ghc-%%GHC_VERSION%%/include/TSO.h
@@ -877,6 +1243,7 @@ lib/ghc-%%GHC_VERSION%%/parse-gcstats.prl
 lib/ghc-%%GHC_VERSION%%/process-gcstats.prl
 lib/ghc-%%GHC_VERSION%%/template-hsc.h
 lib/ghc-%%GHC_VERSION%%/unlit
+@dirrm lib/ghc-%%GHC_VERSION%%/include
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Text/Show
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Text/Regex
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Text/Read
@@ -885,28 +1252,53 @@ lib/ghc-%%GHC_VERSION%%/unlit
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Text/ParserCombinators
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Text/Html
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Text
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/Test/QuickCheck
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/Test/HUnit
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/Test
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/System/Process
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Signals
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/System/Posix/DynamicLinker
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/System/Posix
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/System/Mem
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/System/IO
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/System/Directory
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/System/Console
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/System
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Network
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/TH
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Language
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GLU
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/Texturing
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL/PixelRectangles
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL/GL
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering/OpenGL
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/Graphics/Rendering
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/Graphics
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/GHC
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Foreign/Marshal
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Foreign/C
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Foreign
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/Distribution/PreProcess
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/Distribution/Compat
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/Distribution
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Debug/QuickCheck
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Debug
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Data/STRef
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Monad
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Internal
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/Data/Graph
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Data/Generics
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Data/Array/IO
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Data/Array
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Data
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/Control/Parallel
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/ST
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Control/Monad
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/Control/Concurrent/STM
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Control/Concurrent
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Control
 @dirrm lib/ghc-%%GHC_VERSION%%/imports
@@ -920,5 +1312,4 @@ lib/ghc-%%GHC_VERSION%%/unlit
 @dirrm lib/ghc-%%GHC_VERSION%%/hslibs-imports/data
 @dirrm lib/ghc-%%GHC_VERSION%%/hslibs-imports/concurrent
 @dirrm lib/ghc-%%GHC_VERSION%%/hslibs-imports
-@dirrm lib/ghc-%%GHC_VERSION%%/include
 @dirrm lib/ghc-%%GHC_VERSION%%
