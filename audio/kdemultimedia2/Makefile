@@ -36,16 +36,16 @@ pre-configure:
 
 post-install:
 	@${ECHO_MSG}
-	@${ECHO_MSG} "To run kscd program, as root, please run"
+	@${ECHO_MSG} "In order to run the kscd program properly, please run as root:"
 	@${ECHO_MSG}
-	@${ECHO_MSG} " % ${LN} -sf <cdrom_device> /dev/cdrom"
-	@${ECHO_MSG} " % ${CHMOD} 666 <cdrom_device>"
+	@${ECHO_MSG} " # ${LN} -sf <cdrom_device> /dev/cdrom"
+	@${ECHO_MSG} " # ${CHMOD} 666 <cdrom_device>"
 	@${ECHO_MSG}
 	@${ECHO_MSG} "to link and give permission to access the CD-ROM device."
+	@${ECHO_MSG} "For example, if you have an IDE/ATAPI CD-ROM device:"
 	@${ECHO_MSG}
-	@${ECHO_MSG} "For example(IDE CD-ROM device):"
-	@${ECHO_MSG} " % ${LN} -sf /dev/racd0c /dev/cdrom"
-	@${ECHO_MSG} " % ${CHMOD} 666 /dev/racd0c"
+	@${ECHO_MSG} " # ${LN} -sf /dev/racd0c /dev/cdrom"
+	@${ECHO_MSG} " # ${CHMOD} 666 /dev/racd0c"
 	@${ECHO_MSG}
 
 .include <bsd.port.mk>
