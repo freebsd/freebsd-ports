@@ -33,7 +33,7 @@ use strict;
 use Fcntl;
 use Getopt::Long;
 
-my $VERSION	= "2.7.8";
+my $VERSION	= "2.7.9";
 my $COPYRIGHT	= "Copyright (c) 2000-2003 Dag-Erling Smørgrav. " .
 		  "All rights reserved.";
 
@@ -333,8 +333,8 @@ sub update_index() {
 	cvs("update", "-l")
 	    or bsd::errx(1, "error updating the index file");
     }
-    cvs("update", "Mk")
-	or bsd::errx(1, "error updating the Makefiles");
+    cvs("update", "Mk", "Templates")
+	or bsd::errx(1, "error updating the ports infrastructure");
     $index = "$portsdir/INDEX-" . substr($release, 0, 1);
     if (! -f $index) {
 	$index = "$portsdir/INDEX";
