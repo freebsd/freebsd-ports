@@ -180,6 +180,10 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Multimedia streaming server and player for various audio/video formats
 
+### BROKEN -- Needs newer verision of toolame ###
+WITHOUT_TOOLAME=	yes
+### BROKEN ###
+
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GETOPT_LONG=yes
