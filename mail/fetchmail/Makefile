@@ -1,5 +1,5 @@
 # New ports collection makefile for:	fetchmail
-# Version required:     5.1.2
+# Version required:     5.1.4
 # Date created:		26 Oct 1996
 # Whom:			Ville Eerola <ve@sci.fi>
 #
@@ -11,7 +11,7 @@
 # does not need Python, so there is no RUN_DEPENDS for Python in
 # this Makefile.
 
-DISTNAME=       fetchmail-5.1.2
+DISTNAME=       fetchmail-5.1.4
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.ccil.org/pub/esr/fetchmail/
 
