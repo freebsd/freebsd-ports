@@ -6,26 +6,25 @@
 #
 
 PORTNAME=	samba-tng
-PORTVERSION=	2.6.1c20020524
+PORTVERSION=	3.2
 CATEGORIES=	net
-MASTER_SITES=	http://www.samba-tng.org/download/tng/ \
-		http://something.inethouston.net/~poseiden/
-DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}_0.${PORTVERSION:S,c,cvs,}
+MASTER_SITES=	http://www.samba-tng.org/download/tng/
+DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-0.${PORTVERSION:S,c,cvs,}
 
 MAINTAINER=	dwcjr@FreeBSD.org
 COMMENT=	A free SMB and CIFS client and server for UNIX
 
-FORBIDDEN=	'Remote root compromise, http://www.digitaldefense.net/labs/advisories/DDI-1013.txt'
+#FORBIDDEN=	'Remote root compromise, http://www.digitaldefense.net/labs/advisories/DDI-1013.txt'
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 GNU_CONFIGURE=	YES
 INSTALLS_SHLIB=	YES
 USE_GMAKE=	YES
-USE_BZIP2=	YES
+#USE_BZIP2=	YES
 USE_SUBMAKE=	YES
 USE_AUTOCONF=	YES
-WRKSRC=		${WRKDIR}/tng-clean/source
+WRKSRC=		${WRKDIR}/${DISTNAME}/source
 
 # directories
 VARDIR=		/var
@@ -73,7 +72,7 @@ CONFIGURE_ARGS+=	--with-msdfs
 
 .if defined(WITH_LDAP)
 LIB_DEPENDS+=		ldap.2:${PORTSDIR}/net/openldap20
-CONFIGURE_ARGS+=	--with-ldapsam
+CONFIGURE_ARGS+=	--with-ldap
 CONFIGURE_ENV+=		CPPFLAGS=-I${LOCALBASE}/include \
 			LDFLAGS=-L${LOCALBASE}/lib
 .endif
