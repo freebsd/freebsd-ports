@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	dcc-dccd
-PORTVERSION=    1.1.15
-PORTREVISION=	1
+PORTVERSION=    1.2.4
 CATEGORIES=     mail
-MASTER_SITES=   http://www.rhyolite.com/anti-spam/dcc/source/old/ \
+MASTER_SITES=   http://www.rhyolite.com/anti-spam/dcc/source/ \
 		http://www.wa.apana.org.au/~dean/sources/ \
 		ftp://ftp.wa.apana.org.au/pub/pc/unix/packages/
-DISTFILES=	dcc-dccd-1.1.15.tar.Z
+DISTFILES=	dcc-dccd-1.2.4.tar.Z
 
 MAINTAINER=     dean@odyssey.apana.org.au
 COMMENT=	Distributed Checksum Clearinghouse procmail, sendmail support
@@ -22,14 +21,18 @@ USE_REINPLACE=	yes
 
 CONFIGURE_ARGS=	--prefix=${PREFIX}/dcc
 
-MAN8=		cdcc.8		dbclean.8	dblist.8 \
-		dcc.8		dccd.8		dccm.8 \
-		dccproc.8	dccsight.8
+MAN8=		cdcc.8		dcc.8		dccd.8 \
+		dccm.8 		dccproc.8	dccsight.8 \
+		dccifd.8	dbclean.8	dblist.8
+
+CAT8=		dccproc.8	cdcc.8
 
 MANCOMPRESSED=	yes
 
 post-patch:
 	${FIND} ${WRKSRC} -type f -exec \
 		${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' {} \;
+	${REINPLACE_CMD} -e 's,-pthread,${PTHREAD_LIBS},g' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>
