@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	zh-xcin
+PORTNAME=	xcin
 PORTVERSION=	2.5.2p3
 CATEGORIES=	chinese x11
 MASTER_SITES=	ftp://xcin.linux.org.tw/pub/xcin/xcin/devel/
