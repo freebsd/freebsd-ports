@@ -1,3 +1,4 @@
+bin/xmascot
 lib/X11/xmascot/pin.mag
 lib/X11/xmascot/chain.mag
 lib/X11/xmascot/mail_r.mag
@@ -19,5 +20,4 @@ lib/X11/xmascot/mi2.au
 lib/X11/xmascot/mi2.raw
 lib/X11/xmascot/mitime.au
 lib/X11/xmascot/mitime.raw
-bin/xmascot
 man/man1/xmascot.1.gz
