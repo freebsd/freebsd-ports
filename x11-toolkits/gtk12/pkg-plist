@@ -165,8 +165,11 @@ share/locale/uk/LC_MESSAGES/gtk+.mo
 share/locale/wa/LC_MESSAGES/gtk+.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/gtk+.mo
 share/themes/Default/gtk/gtkrc
+share/themes/Default/gtk/gtkrc.az
+share/themes/Default/gtk/gtkrc.be
 share/themes/Default/gtk/gtkrc.bg
 share/themes/Default/gtk/gtkrc.bg_BG.iso88595
+share/themes/Default/gtk/gtkrc.cp1251
 share/themes/Default/gtk/gtkrc.cp1255
 share/themes/Default/gtk/gtkrc.cs
 share/themes/Default/gtk/gtkrc.cy
@@ -192,6 +195,7 @@ share/themes/Default/gtk/gtkrc.ka_GE.georgianps
 share/themes/Default/gtk/gtkrc.ko
 share/themes/Default/gtk/gtkrc.lt
 share/themes/Default/gtk/gtkrc.lv
+share/themes/Default/gtk/gtkrc.mi
 share/themes/Default/gtk/gtkrc.mk
 share/themes/Default/gtk/gtkrc.pl
 share/themes/Default/gtk/gtkrc.ro
@@ -207,7 +211,6 @@ share/themes/Default/gtk/gtkrc.tr
 share/themes/Default/gtk/gtkrc.uk
 share/themes/Default/gtk/gtkrc.vi
 share/themes/Default/gtk/gtkrc.vi_VN.tcvn
-share/themes/Default/gtk/gtkrc.vi_VN.tcvn5712
 share/themes/Default/gtk/gtkrc.vi_VN.viscii
 share/themes/Default/gtk/gtkrc.vi_VN.viscii111
 share/themes/Default/gtk/gtkrc.yi

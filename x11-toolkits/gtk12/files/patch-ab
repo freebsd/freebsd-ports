@@ -1,5 +1,5 @@
---- gtk-config.in.orig	Thu Feb  4 17:06:44 1999
-+++ gtk-config.in	Wed Feb 17 21:22:48 1999
+--- gtk-config.in.orig	Sat Oct 21 18:20:40 2000
++++ gtk-config.in	Tue Mar  6 10:11:59 2001
 @@ -12,7 +12,7 @@
  usage()
  {
@@ -9,10 +9,20 @@
  Options:
  	[--prefix[=DIR]]
  	[--exec-prefix[=DIR]]
-@@ -115,6 +115,6 @@
+@@ -91,7 +91,7 @@
+ fi
+ 
+ if test "$echo_cflags" = "yes"; then
+-      echo -I@includedir@/gtk-1.2 $glib_cflags @x_cflags@ 
++      echo -I@includedir@ $glib_cflags @x_cflags@ 
+ fi
+ 
+ if test "$echo_libs" = "yes"; then
+@@ -107,6 +107,6 @@
          fi
        done
  
 -      echo $libdirs @x_ldflags@ -lgtk -lgdk $my_glib_libs @INTLLIBS@ @x_libs@ @GDK_WLIBS@ -lm
 +      echo $libdirs @x_ldflags@ -lgtk@LT_RELEASE@ -lgdk@LT_RELEASE@ $my_glib_libs @INTLLIBS@ @x_libs@ @GDK_WLIBS@ -lm
  fi      
+ 

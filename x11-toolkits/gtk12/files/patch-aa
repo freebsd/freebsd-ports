@@ -1,6 +1,6 @@
---- Makefile.in.orig	Fri Sep 24 09:12:11 1999
-+++ Makefile.in	Sat Oct  9 22:05:42 1999
-@@ -129,7 +129,7 @@
+--- Makefile.in.orig	Fri Mar  2 19:49:21 2001
++++ Makefile.in	Tue Mar  6 10:46:49 2001
+@@ -128,7 +128,7 @@
  SRC_SUBDIRS = gdk gtk
  SUBDIRS = po $(SRC_SUBDIRS) docs
  
@@ -9,28 +9,27 @@
  
  # require automake 1.4
  AUTOMAKE_OPTIONS = 1.4
-@@ -142,7 +142,7 @@
+@@ -144,7 +144,7 @@
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = config.h
--CONFIG_CLEAN_FILES =  gtk+.spec gtk-config
-+CONFIG_CLEAN_FILES =  gtk+.spec gtk@LT_RELEASE@-config
+-CONFIG_CLEAN_FILES =  gtk+.spec gtk-config gdk.pc gtk+.pc
++CONFIG_CLEAN_FILES =  gtk+.spec gtk@LT_RELEASE@-config gdk.pc gtk+.pc
  SCRIPTS =  $(bin_SCRIPTS)
  
- DATA =  $(m4data_DATA)
-@@ -204,7 +204,10 @@
+ DATA =  $(m4data_DATA) $(pkgconfig_DATA)
+@@ -206,7 +206,9 @@
  maintainer-clean-hdr:
  gtk+.spec: $(top_builddir)/config.status gtk+.spec.in
  	cd $(top_builddir) && CONFIG_FILES=$@ CONFIG_HEADERS= $(SHELL) ./config.status
 -gtk-config: $(top_builddir)/config.status gtk-config.in
 +gtk@LT_RELEASE@-config.in: gtk-config.in
 +	cp gtk-config.in gtk@LT_RELEASE@-config.in
-+
 +gtk@LT_RELEASE@-config: $(top_builddir)/config.status gtk@LT_RELEASE@-config.in
  	cd $(top_builddir) && CONFIG_FILES=$@ CONFIG_HEADERS= $(SHELL) ./config.status
- 
- install-binSCRIPTS: $(bin_SCRIPTS)
-@@ -413,7 +416,6 @@
+ gdk.pc: $(top_builddir)/config.status gdk.pc.in
+ 	cd $(top_builddir) && CONFIG_FILES=$@ CONFIG_HEADERS= $(SHELL) ./config.status
+@@ -438,7 +440,6 @@
  	      || exit 1; \
  	  fi; \
  	done
@@ -38,3 +37,12 @@
  info-am:
  info: info-recursive
  dvi-am:
+@@ -453,7 +454,7 @@
+ install-exec-am: install-binSCRIPTS
+ install-exec: install-exec-recursive
+ 
+-install-data-am: install-m4dataDATA install-pkgconfigDATA
++install-data-am: install-m4dataDATA
+ install-data: install-data-recursive
+ 
+ install-am: all-am
