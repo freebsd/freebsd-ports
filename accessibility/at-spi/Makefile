@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	at-spi
-PORTVERSION=	1.3.12
+PORTVERSION=	1.3.13
 CATEGORIES=	accessibility x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.3
@@ -17,12 +17,16 @@ COMMENT=	An Assistive Technology Service Provider Interface
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomehier intltool gail libbonobo
+USE_GNOME=	gnomeprefix gnomehack gnomehier intltool gail libbonobo lthack intlhack
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--enable-static
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+post-patch:
+	@${REINPLACE_CMD} -e "/^SUBDIRS =/s/test//" ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
