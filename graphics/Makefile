@@ -203,7 +203,6 @@
     SUBDIR += maverik
     SUBDIR += metapixel
     SUBDIR += ming
-    SUBDIR += miniscrib
     SUBDIR += mjpegtools
     SUBDIR += mmsclient
     SUBDIR += morpheus
