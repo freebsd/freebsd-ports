@@ -52,7 +52,7 @@ my $c = $opts{'c'} if ($opts{'c'} ne "");
 my $nomodules = $opts{'g'};
 my $distdir = $opts{'s'} if ($opts{'s'} ne "");
 my $dir = $opts{'d'};
-my $h = "ncvs.FreeBSD.org";
+my $h = "pcvs.FreeBSD.org";
 $h = $opts{'h'} if ($opts{'h'} ne "");
 my $n = ""; $n = "-n" if $opts{'n'};
 my $u = $ENV{USER};
@@ -101,10 +101,10 @@ $tmp = $tmp2 = $offset = 0;
 chomp(my $myhost = lc(hostname()));
 $moduleshost = "freefall.freebsd.org" if ($moduleshost eq "");
 
-# SSH is always required nowadays... ncvs.FreeBSD.org isn't shell accessible.
+# SSH is always required nowadays... pcvs.FreeBSD.org isn't shell accessible.
 $ssh = "$ENV{CVS_RSH} $h -l $u";
 $sshmod = "$ENV{CVS_RSH} -A $moduleshost -l $u";
-$repo= "$u\@$h:/home/ncvs" if !$ENV{ADDPCVSROOT};
+$repo= "$u\@$h:/home/pcvs" if !$ENV{ADDPCVSROOT};
 $repo = "$ENV{ADDPCVSROOT}" if $ENV{ADDPCVSROOT};
 
 my $cvs = "cvs -d $repo";
@@ -410,7 +410,7 @@ OPTIONS
 	-c file		Use file in place of normal log message.
 	-f		Do not fetch the distfile.
 	-g		Do not commit to CVSROOT/modules.
-	-h host		Use a cvshost besides ncvs.FreeBSD.org.
+	-h host		Use a cvshost besides pcvs.FreeBSD.org.
 	-i		Interactive mode; allow more control over
 			where things are placed.  This is required in
 			order to change things like module names etc.

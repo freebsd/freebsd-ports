@@ -10,7 +10,7 @@ use strict;
 my $tmpdir;
 
 if ($ENV{CVSROOT} eq "") {
-	$ENV{CVSROOT}="/home/ncvs";
+	$ENV{CVSROOT}="/home/pcvs";
 }
 
 sub goodbye
