@@ -1,0 +1,22 @@
+--- Makefile.orig	Mon Mar 29 09:41:40 1999
++++ Makefile	Sat May  1 21:48:22 1999
+@@ -1,9 +1,10 @@
+-LIBDIR = -L/usr/X11R6/lib
++INCLUDES = -I${X11BASE}/include
++LIBDIR = -L${X11BASE}/lib
+ LIBS   = -lXpm -lXext -lX11
+ OBJS =  wmtictactoe.o ../wmgeneral/wmgeneral.o
+ 
+ .c.o:
+-	cc -c -g -O2 -Wall $< -o $*.o
++	cc -c -g -O2 -Wall $(INCLUDES) $< -o $*.o
+ 
+ all: wmtictactoe
+ 
+@@ -17,5 +18,4 @@
+ 	rm wmtictactoe
+ 
+ install:
+-	/usr/bin/install -c -o 0 -g 0 -s -m 755 wmtictactoe /usr/local/bin/wmtictactoe
+-
++	/usr/bin/install -c -o 0 -g 0 -s -m 755 wmtictactoe ${PREFIX}/bin/wmtictactoe
