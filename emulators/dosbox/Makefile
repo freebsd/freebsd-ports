@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dosbox
-PORTVERSION=	0.61
-PORTREVISION=	1
+PORTVERSION=	0.62
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -30,7 +29,6 @@ CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--enable-core-inline
 
 post-patch:
-	@${REINPLACE_CMD} -e 's#SDL\/#SDL11\/#g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's#\/usr\/share\/doc\/dosbox#${DOCSDIR}#g' \
 		${WRKSRC}/docs/dosbox.1
 	@${SED} 's#%%DOCSDIR%%#${DOCSDIR}#' ${PKGDIR}/pkg-message > \
