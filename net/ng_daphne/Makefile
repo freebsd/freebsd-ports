@@ -15,8 +15,6 @@ COMMENT=	A simple netgraph module for multihop ad hoc networks
 
 .include <bsd.port.pre.mk>
 
-BROKEN=		"Does not compile"
-
 .if !exists(/usr/src/sys/netgraph/netgraph.h)
 IGNORE=		"Requires kernel source /usr/src/sys to build"
 .endif
@@ -24,6 +22,13 @@ IGNORE=		"Requires kernel source /usr/src/sys to build"
 .if ${OSVERSION} < 500000
 IGNORE=		"Requires new netgraph architecture ng_item to build"
 .endif
+
+.if ${OSVERSION} > 502010
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-ng_daphne.c
+.endif
+
+PLIST_FILES=	lib/ng_daphne.ko %%DOCSDIR%%/README
+PLIST_DIRS=	%%DOCSDIR%%
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ng_daphne.ko ${PREFIX}/lib
