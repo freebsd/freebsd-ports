@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File-Rsync
-PORTVERSION=	0.25
+PORTVERSION=	0.27
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	File
@@ -19,7 +19,6 @@ RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-MAN3=		File::Rsync.3
+MAN3=		File::Rsync.3 File::Rsync::Config.3
 
 .include <bsd.port.mk>
