@@ -1,0 +1,20 @@
+lib/ocaml/site-lib/classes/obuffer.cmi
+lib/ocaml/site-lib/classes/obuffer.mli
+lib/ocaml/site-lib/classes/ogenlex.mli
+lib/ocaml/site-lib/classes/ohashtbl.cmi
+lib/ocaml/site-lib/classes/ohashtbl.mli
+lib/ocaml/site-lib/classes/omap.cmi
+lib/ocaml/site-lib/classes/omap.mli
+lib/ocaml/site-lib/classes/omapping.cmi
+lib/ocaml/site-lib/classes/omapping.mli
+lib/ocaml/site-lib/classes/oqueue.cmi
+lib/ocaml/site-lib/classes/oqueue.mli
+lib/ocaml/site-lib/classes/oset.cmi
+lib/ocaml/site-lib/classes/oset.mli
+lib/ocaml/site-lib/classes/ostack.cmi
+lib/ocaml/site-lib/classes/ostack.mli
+lib/ocaml/site-lib/classes/ostream.cmi
+lib/ocaml/site-lib/classes/ostream.mli
+lib/ocaml/site-lib/classes/stdclass.cma
+lib/ocaml/site-lib/classes/META
+@dirrm lib/ocaml/site-lib/classes
