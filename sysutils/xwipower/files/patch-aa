@@ -1,0 +1,25 @@
+--- xwipower.c~	Wed Jul  5 21:08:34 2000
++++ xwipower.c	Wed Jul  5 21:13:11 2000
+@@ -93,7 +93,7 @@
+ 
+ Widget	toplevel;
+ Widget	base, strip_chart_obj;
+-char	*iface = NULL;
++char	*iface = "wi0";
+ 
+ 
+ unsigned	long	MyColor(display, color)
+@@ -223,10 +223,10 @@
+ static void usage(app)
+ char            *app;
+ {
+-    fprintf(stderr, "usage:  %s -i iface [-gd]\n", app);
++    fprintf(stderr, "usage:  %s [-i iface] [-gd]\n", app);
+ 	fprintf(stderr, "\tQuality of 802.11b-DS radio wave viewer.\n", app);
+-    fprintf(stderr, "\t%s -i iface -c  Chart mode\n", app);
+-    fprintf(stderr, "\t%s -i iface -a  Antena mode\n\n", app);
++    fprintf(stderr, "\t%s [-i iface] -c  Chart mode\n", app);
++    fprintf(stderr, "\t%s [-i iface] -a  Antena mode\n\n", app);
+     exit(1);
+ }
+ 
