@@ -8,6 +8,7 @@ include/glpgel.h
 include/glphbsm.h
 include/glpimg.h
 include/glpipm.h
+include/glpmip.h
 include/glpk.h
 include/glpmat.h
 include/glpmps.h
