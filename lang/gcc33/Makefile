@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2003-07-07
+SNAPDATE=	2003-07-28
 #CVS_DATE=	${SNAPDATE} 18:53:04 EDT
 
 PORTNAME=	gcc
@@ -19,12 +19,12 @@ MASTER_SITES=	${MASTER_SITE_GCC} \
 MASTER_SITE_SUBDIR=	snapshots/3.3-${PORTREVISION}
 .if !defined(CVS_DATE)
 DISTFILES=	\
-		gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-g++-${VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-g77-${VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-java-${VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-objc-${VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-testsuite-${VERSIONSTRING}${EXTRACT_SUFX}
+		gcc-core-3.3-${VERSIONSTRING}${EXTRACT_SUFX} \
+		gcc-g++-3.3-${VERSIONSTRING}${EXTRACT_SUFX} \
+		gcc-g77-3.3-${VERSIONSTRING}${EXTRACT_SUFX} \
+		gcc-java-3.3-${VERSIONSTRING}${EXTRACT_SUFX} \
+		gcc-objc-3.3-${VERSIONSTRING}${EXTRACT_SUFX} \
+		gcc-testsuite-3.3-${VERSIONSTRING}${EXTRACT_SUFX}
 .endif
 
 MAINTAINER?=	ports@FreeBSD.org
@@ -32,7 +32,7 @@ COMMENT?=	GNU Compiler Collection 3.3
 
 .if defined (WITH_BOUNDSCHECKING)
 # Fetch another file, but don't extract it.  Also add another patchfile.
-BCPATCH=	bounds-checking-gcc-3.3-1.00.patch.bz2
+BCPATCH=	bounds-checking-gcc-3.3-1.01.patch.bz2
 DISTFILES+=	${BCPATCH}:bc
 EXTRACT_ONLY=	${DISTFILES:S/${BCPATCH}:bc//}
 EXTRA_PATCHES=	${FILESDIR}/opt.patch-bc
@@ -53,7 +53,7 @@ NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 
 GCC_VER=	${PORTVERSION:C/\.0$//}
-SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
+SRCDIR=		${WRKDIR}/gcc-3.3-${VERSIONSTRING}
 WRKSRC=		${WRKDIR}/build
 TARGLIB=	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_VER}
 GCJINC=		${PREFIX}/include/gcj
@@ -192,9 +192,9 @@ post-install:
 .endfor
 # I am sick and tired of the anonyance that man pages can only be generated if
 # perl 5.6 is installed.  This is becoming a royal PITA on non-5-CURRENT systems
-.for mp in ${_MANPAGES}
-	( ${TEST} -e ${mp} && ${TOUCH} ${TOUCH_FLAGS} ${mp} )
-.endfor
+	for mp in ${_MANPAGES} ; do \
+	    ${TEST} -e $${mp} || ${TOUCH} ${TOUCH_FLAGS} $${mp} ;\
+	    done
 	cd ${PREFIX} ;\
 	    ${FIND} ${TARGLIB:S/^${PREFIX}\///} -type f -o -type l	\
 	    	>${WRKDIR}/PLIST.gcc-lib
