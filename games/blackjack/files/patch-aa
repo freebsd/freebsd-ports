@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Jun  2 19:28:44 1999
-+++ Makefile	Fri May 24 03:57:01 2002
+--- Makefile.orig	Thu Jun  3 04:28:44 1999
++++ Makefile	Sun Feb  2 01:46:29 2003
 @@ -1,9 +1,8 @@
  
 -CC=gcc
@@ -9,8 +9,8 @@
 -LDFLAGS=-L$(QTDIR)/lib -lqt
 +CC?=gcc
 +CXX?=g++
-+INCLUDES=-I$(X11BASE)/include/X11/qt1
-+LDFLAGS=-L$(X11BASE)/lib -lqt1
++INCLUDES=-I$(X11BASE)/include/ ${PTHREAD_CFLAGS}
++LDFLAGS=-L$(X11BASE)/lib -lqt-mt ${PTHREAD_LIBS}
  VERSION=1.2
  
  # For systems that don't have install, use this
@@ -28,7 +28,7 @@
       insurance_window.o $(METAOBJS)
  
 -MOC=$(QTDIR)/bin/moc
-+MOC=$(X11BASE)/bin/moc1
++MOC=$(X11BASE)/bin/moc
  
  .SUFFIXES: .cpp
  
