@@ -101,8 +101,10 @@
     SUBDIR += ruby-man
     SUBDIR += ruby-perl
     SUBDIR += ruby-python
+    SUBDIR += ruby-tcltklib
     SUBDIR += ruby-usersguide
     SUBDIR += ruby14
+    SUBDIR += ruby14-tcltklib
     SUBDIR += scheme48
     SUBDIR += schemetoc
     SUBDIR += scm

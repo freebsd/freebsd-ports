@@ -9,10 +9,9 @@ CATEGORIES=	japanese
 
 MAINTAINER=	yasuf@bsdclub.org
 
-TCL_VERSION?=	80
 TK_VERSION?=	80
-WITH_TCL_JP=	yes
+WITH_TCLTK_JP=	yes
 
-MASTERDIR=	${.CURDIR}/../../x11-toolkits/rubytk
+MASTERDIR=	${.CURDIR}/../../x11-toolkits/ruby14-tk
 
 .include "${MASTERDIR}/Makefile"

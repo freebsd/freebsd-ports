@@ -68,7 +68,8 @@
     SUBDIR += ruby-gtk
     SUBDIR += ruby-qt
     SUBDIR += ruby-qt-i18n
-    SUBDIR += rubytk
+    SUBDIR += ruby-tk
+    SUBDIR += ruby14-tk
     SUBDIR += slingshot
     SUBDIR += thinice
     SUBDIR += tix

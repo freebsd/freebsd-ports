@@ -11,8 +11,8 @@ MAINTAINER=	yasuf@bsdclub.org
 
 TCL_VERSION?=	80
 TK_VERSION?=	80
-WITH_TCL_JP=	yes
+WITH_TCLTK_JP=	yes
 
-MASTERDIR=	${.CURDIR}/../../x11-toolkits/rubytk
+MASTERDIR=	${.CURDIR}/../../lang/ruby14-tcltklib
 
 .include "${MASTERDIR}/Makefile"
