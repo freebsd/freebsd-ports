@@ -8,10 +8,10 @@
 PORTNAME=	gensig
 PORTVERSION=	2.2
 CATEGORIES=	mail
-MASTER_SITES=	http://www.geeks.com/~robf/ware/gensig/ \
+MASTER_SITES=	http://www.geekthing.com/~robf/ware/gensig/ \
 		http://www.ooblick.com/software/gensig/
 
-MAINTAINER=	arensb@ooblick.com
+MAINTAINER=	arensb+freebsd-ports@ooblick.com
 
 GNU_CONFIGURE=	yes
 
