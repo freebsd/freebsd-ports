@@ -1,29 +1,30 @@
---- xzx.config.ORIG	Sun Nov  2 14:21:34 1997
-+++ xzx.config	Thu Nov 13 01:50:08 1997
-@@ -33,13 +33,13 @@
-  */
+--- xzx.config.orig	Sun Feb  8 22:17:34 1998
++++ xzx.config	Wed Mar 11 15:38:12 1998
+@@ -37,13 +37,13 @@
+ /* #define REGISTERED /**/
  
  /* Where the configuraion files and ROM images are installed */
 -ZXLIBDIR = /usr/local/lib/xzx
 +ZXLIBDIR = /usr/X11R6/lib/X11/xzx
  
  /* Where the binary files are installed */
--BINDIR=/usr/local/bin
-+BINDIR=/usr/X11R6/bin
+-BINDIR   = /usr/local/bin
++BINDIR   = /usr/X11R6/bin
  
  /* Where the manual pages are installed */
--MANDIR=/usr/local/man/man1
-+MANDIR=/usr/X11R6/man/man1
+-MANDIR   = /usr/local/man/man1
++MANDIR   = /usr/X11R6/man/man1
  
  
  /*******************************************************************************
-@@ -85,7 +85,8 @@
-  */
- #if defined(i386Architecture) || defined(AlphaArchitecture) || \
- 				 defined(add_your_machine_here)
--END_DEF = -DLITTLE_ENDIAN
-+#FreeBSD has its own LITTLE_ENDIAN
-+#END_DEF = -DLITTLE_ENDIAN
+--- src/config.h.orig	Wed Mar 11 15:38:42 1998
++++ src/config.h	Wed Mar 11 15:40:36 1998
+@@ -179,7 +179,7 @@
+ /* Byte order of your CPU.  Intel is little-endian, Sparc is big-endian. */
+ #if !defined(LITTLE_ENDIAN) &&  !defined(BIG_ENDIAN)
+ #if defined(i386) || defined(add_your_machine_here)
+-#define LITTLE_ENDIAN
++/* #define LITTLE_ENDIAN */
  #else
- END_DEF = -DBIG_ENDIAN
+ #define BIG_ENDIAN
  #endif
