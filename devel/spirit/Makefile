@@ -27,10 +27,18 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-spirit-threadsafe
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+IGNORE=		does not build: cc1plus hangs forever (gcc bug)
+.elif ${ARCH} != "i386" && ${ARCH} != "alpha"
+BROKEN=		"Internal compiler error during build on !i386 and !alpha"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} \
 		${GREP} -lR "^htmldir" | ${XARGS} ${REINPLACE_CMD} \
 		-e "s@libs/@share/doc/spirit/@"
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
