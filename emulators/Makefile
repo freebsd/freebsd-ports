@@ -29,6 +29,7 @@
     SUBDIR += hfsutils
     SUBDIR += ia64sim
     SUBDIR += ines
+    SUBDIR += klh10
     SUBDIR += kmamerun
     SUBDIR += libvm68k
     SUBDIR += linux-ePSXe

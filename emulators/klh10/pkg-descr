@@ -1,0 +1,22 @@
+This is a port of Kenneth L. Harrenstien's KLH10 DEC PDP-10 mainframe
+emulator.
+
+For information about PDP-10 see WWW: http://www.inwap.com/pdp10/
+
+This port currently only builds klh10 in the ksits configuration for
+running MIT Incompatible Timesharing System (ITS.)  Future release
+will configure KLH10 for additional systems.
+
+Warning: to make use of KLH10 over a LAN the network driver
+subprocesses (currently only dpimp is built and installed
+automatically) must run as root in order use the tun(4) network
+interface and to insert proxy ARP table entries.  If you do not want
+dpimp to be setuid root you must run the emulator from the root
+account to use networking.  KLH10 may be run without networking and
+only provide console access to a single user without using any root
+privileges.  We do not know if KLH10's network driver subprocesses
+have been audited for buffer overflows, etc only that they accept
+incoming TCP connections and require root privileges.  You take your
+chances running this in the default configuration.  Consider using a
+firewall to limit access to klh-10.  See the pub-its/adm directory for
+firewall documentation.

@@ -1,0 +1,32 @@
+Year  18-bitters     12-bitters         16-bitters                36-bitters
+
+1960    PDP-1 --------------------------------------------------------
+1961      |                                                           \
+1962    PDP-4 <--- LINC --------                                       \
+1963      |        PDP-5   \    \                                       |
+1964    PDP-7        |      \    \                                   PDP-6
+1965      |        PDP-8 --\ |    \                                     |
+1966      |        PDP-8/S LINC-8  |                                    |
+1967      |          |       |     |                                 KA10
+1968    PDP-9      PDP-8/I,L |     |                                    |
+1969      |          |     PDP-12  |                                    |
+1970    PDP-15       |           PDP-14  PDP-11(/20)                    |
+1971      |        PDP-8/E                /   |  \                      |
+1972    PDP-15/76  PDP-8/M        - PDP-11/05 | PDP-11/45 --         KI10
+1973                 |           /   |    PDP-11/40  |      \           |
+1974                 |          /    |         |     |       \          |
+1975               PDP-8/A PDP-11/03 PDP-11/04 |     |    PDP-11/70  KL10
+1976                 |            PDP-11/34    | PDP-11/55    |         |
+1977               VT78              |    PDP-11/60           |         |
+1978                              PDP-11/34C              VAX-11/780 KS10
+
+The first DEC 36-bit system, the PDP-6, came out in 1964.  The PDP-10
+line consisted of the KA which arrived in 1967, the KI in 1972.  The
+KL came out early in 1974; the KS was a 1978 entry.  In 1984 the
+unreleased KC was canceled.
+
+Source: C.G. Bell, et al's "Computer Engineering" 1978 (mostly)
+
+More at
+
+http://groups.google.com/groups?selm=346s0s%24icv%40tardis.Tymnet.COM
