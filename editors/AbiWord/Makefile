@@ -1,0 +1,50 @@
+# New ports collection makefile for:    AbiWord
+# Version required:     0.5.5
+# Date created:         3 Mar 1999
+# Whom:                 Donald Burr <dburr@FreeBSD.ORG>
+#
+# $Id$
+#
+
+DISTNAME=	abi-0.5.5-src
+PKGNAME=	AbiWord-0.5.5
+CATEGORIES=	editors
+MASTER_SITES=	http://www.abisource.com/downloads/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} expat.tar.gz \
+		unixfonts-0.5.4.tar.gz
+
+MAINTAINER=	dburr@FreeBSD.ORG
+
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2
+LIB_DEPENDS=	gtk12.1:${PORTSDIR}/x11-toolkits/gtk12 \
+		png.3:${PORTSDIR}/graphics/png
+RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
+
+DIST_SUBDIR=	AbiWord
+
+WWW_SITE=	http://www.abisource.com/
+
+WRKSRC=		${WRKDIR}/abi-0.5.5/src
+USE_XLIB=	YES
+USE_GMAKE=	YES
+PATCH_STRIP=	-p1
+
+# the build is placed in a directory name of the form
+# FreeBSD_3.1-RELEASE_i386_OBJ.  This variable makes it
+# a bit easier to type this whenever it's needed in the
+# do-install target.
+OSDISTDIR=	`uname -s`_`uname -r`_`uname -m`_OBJ
+
+post-patch:
+	cd ${WRKDIR} && ln -sf abi-0.5.5 abi
+
+do-install:
+	${MKDIR} ${PREFIX}/AbiSuite/bin
+	${MKDIR} ${PREFIX}/AbiSuite/lib
+	( cd ${WRKDIR}/abi-0.5.5/dist/${OSDISTDIR}/bin ; for BIN in *; do ${INSTALL_PROGRAM} $${BIN} ${PREFIX}/AbiSuite/bin ; done )
+	( cd ${WRKDIR}/abi-0.5.5/dist/${OSDISTDIR}/lib ; for LIB in *; do ${INSTALL_DATA} $${LIB} ${PREFIX}/AbiSuite/lib ; done )
+	( cd ${WRKDIR}/unixfonts-0.5.4 ; yes "" | bash ./install.sh )
+	for BIN in ${PREFIX}/AbiSuite/bin/* ; do ln -sf $${BIN} ${PREFIX}/bin ; done
+	@${CAT} ${PKGDIR}/MESSAGE
+
+.include <bsd.port.mk>
