@@ -12,10 +12,9 @@ MASTER_SITES=	ftp://ftp.ora.com/pub/examples/nutshell/cjkv/adobe/ \
 		ftp://ftp.ora.com/pub/examples/nutshell/cjkv/adobe/samples/
 DISTNAME=	${PORTNAME}
 DISTFILES=	${CID_FONTS_KO} ${CID_CMAP_KO}
+EXTRACT_ONLY=	${CID_CMAP_KO}
 
-MAINTAINER=	cjh@kr.freebsd.org
-
-BUILD_DEPENDS=	${PREFIX}/share/ghostscript/fonts/Fontmap:${PORTSDIR}/print/gsfonts
+MAINTAINER=	cjh@FreeBSD.org
 
 # sample fonts(cid, free Korean fonts is just only one.. :< )
 CID_FONTS_KO=   Munhwa-Regular Munhwa-Bold \
@@ -25,11 +24,9 @@ CID_CMAP_KO=    ak11.tar.Z
 
 NO_BUILD=	YES
 
-do-extract:
-	${MKDIR} ${WRKDIR}
-	cd ${WRKDIR} && tar -xzf ${DISTDIR}/${CID_CMAP_KO}
-
 do-install:
+	${MKDIR} ${PREFIX}/share/ghostscript/fonts
+	${MKDIR} ${PREFIX}/share/ghostscript/fonts/CMap
 	${INSTALL_DATA} ${FILESDIR}/Munhwa-Regular-KSC-EUC-H.gsf \
 			${FILESDIR}/MunhwaGothic-Regular-KSC-EUC-H.gsf \
 			${FILESDIR}/Munhwa-Bold-KSC-EUC-H.gsf \
@@ -39,7 +36,6 @@ do-install:
 		${INSTALL_DATA} ${DISTDIR}/$$file \
 			${PREFIX}/share/ghostscript/fonts; \
 	done
-	${MKDIR} ${PREFIX}/share/ghostscript/fonts/CMap; &&\
 	${INSTALL_DATA} ${WRKDIR}/ak11/CMap/* \
 			${PREFIX}/share/ghostscript/fonts/CMap
 
