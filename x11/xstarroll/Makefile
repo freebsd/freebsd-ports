@@ -3,7 +3,7 @@
 # Date created:        14 January 1999
 # Whom:                Sakai Hiroaki <sakai@miya.ee.kagu.sut.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.2 1999/01/18 04:54:37 steve Exp $
 #
 
 DISTNAME=	xstarroll-1.04
