@@ -5,7 +5,7 @@
 
 PORTNAME=	sdl
 PORTVERSION=	1.20.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://bloodgate.com/perl/sdl/pub/
 PKGNAMEPREFIX=	p5-
