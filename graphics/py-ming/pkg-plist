@@ -20,7 +20,6 @@ lib/%%PYTHON_VERSION%%/site-packages/ming.py
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/ming/shape.py
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/ming/sprite.py
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/ming/streammp3.py
-%%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/ming/test.py
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/ming/text.py
 %%PORTDOCS%%@dirrm share/examples/%%PYTHON_VERSION%%/ming
 %%PORTDOCS%%@unexec rmdir %D/share/examples/%%PYTHON_VERSION%% 2>/dev/null || true
