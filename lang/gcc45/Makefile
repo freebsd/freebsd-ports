@@ -26,7 +26,7 @@ DISTFILES=	\
 .endif
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	GNU Compiler Collection 3.3 (inprogress version)
+COMMENT?=	GNU Compiler Collection 3.3 (inprogress version)
 
 NO_CDROM=	'dated material'
 LATEST_LINK?=	gcc33${PKGNAMESUFFIX}
@@ -69,6 +69,9 @@ CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 .if defined(WANT_SHAREDLIBS)
 CONFIGURE_ARGS+=	--enable-shared
+INSTALLS_SHLIB=	yes
+LDCONFIG_DIRS=	%%PREFIX%%/lib ${TARGLIB}
+EXTRA_SHLIB=	libgcc_s
 .else
 CONFIGURE_ARGS+=	--disable-shared
 .endif
@@ -78,10 +81,11 @@ CONFIGURE_ARGS+=	--enable-threads
 CONFIGURE_ARGS+=	--enable-threads=posix
 .endif
 ALL_TARGET=	bootstrap
-MAN1=		cpp33.1 g++33.1 g77-33.1 gcc33.1 gcov33.1 \
-		gcj33.1 gcjh33.1 gij33.1 grepjar33.1 jar33.1 \
-		jcf-dump33.1 jv-scan33.1 jv-convert33.1
-MAN7=		fsf-funding.7 gfdl.7 gpl.7
+#MAN1=		cpp33.1 g++33.1 g77-33.1 gcc33.1 gcov33.1 \
+#		gcj33.1 gcjh33.1 gij33.1 grepjar33.1 jar33.1 \
+#		jcf-dump33.1 jv-scan33.1 jv-convert33.1
+MAN1=		g++33.1 grepjar33.1 jar33.1
+#MAN7=		fsf-funding.7 gfdl.7 gpl.7
 
 pre-fetch:
 	@${ECHO} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL} ${PORTOBJFORMAT}	target ${CONFIGURE_TARGET}"
@@ -157,7 +161,7 @@ post-install:
 	${MV} -f ${PREFIX}/bin/gccbug ${PREFIX}/bin/gccbug-${PORTVERSION}
 	# These 3 libraries are moved from PREFIX/lib to avoid conflicts
 	# 	with the stock compiler.
-.for file in libstdc++ libsupc++ libg2c libfrtbegin libobjc
+.for file in libstdc++ libsupc++ libg2c libfrtbegin libobjc ${EXTRA_SHLIB}
 	${MV} -f ${PREFIX}/lib/${file}.* ${TARGLIB}
 .endfor
 	-${MV} -f ${PREFIX}/lib/ieee ${TARGLIB}
@@ -165,7 +169,7 @@ post-install:
 	-${MV} -f ${PREFIX}/lib/libgcj.* ${TARGLIB}
 	${RM} -f ${PREFIX}/lib/libiberty.a
 	${RM} -f ${TARGLIB}/*.la
-.for info in cpp cppinternals g77 gcc gcj
+.for info in cpp cppinternals g77 gcc gccint gcj fastjar
 	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
 .endfor
 # I am sick and tired of the anonyance that man pages can only be generated if
