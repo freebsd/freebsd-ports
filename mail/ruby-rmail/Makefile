@@ -16,17 +16,15 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 
 USE_RUBY=	yes
-
-NO_BUILD=	yes
+USE_RUBY_SETUP=	yes
+RUBY_SETUP=	install.rb
 
 DOCS=		NEWS NOTES README THANKS TODO doc
 
 post-extract:
 	${FIND} ${WRKSRC} -name '*~' -delete
 
-do-install:
-	${MKDIR} ${RUBY_SITELIBDIR}/${PORTNAME}
-	${CP} -R ${WRKSRC}/lib/* ${RUBY_SITELIBDIR}/
+post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}
 .for f in ${DOCS}
