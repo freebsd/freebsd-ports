@@ -41,6 +41,7 @@
     SUBDIR += plplot
     SUBDIR += py-scientific
     SUBDIR += pygist
+    SUBDIR += rcalc
     SUBDIR += rng
     SUBDIR += sc
     SUBDIR += siag
@@ -49,6 +50,7 @@
     SUBDIR += spin
     SUBDIR += ss
     SUBDIR += superlu
+    SUBDIR += topaz
     SUBDIR += umatrix
     SUBDIR += umfpack
     SUBDIR += vtk
