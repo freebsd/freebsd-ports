@@ -1,7 +1,6 @@
 bin/vtcl
 lib/vtcl/Announce
 lib/vtcl/ChangeLog
-lib/vtcl/LICENSE
 lib/vtcl/README
 lib/vtcl/vt.tcl
 lib/vtcl/images/anchor.gif
