@@ -8744,3 +8744,4 @@ ztrack		ports/games/ztrack
 zziplib		ports/devel/zziplib
 lft		ports/net/lft
 qmail-conf	ports/mail/qmail-conf
+prozilla	ports/ftp/prozilla
