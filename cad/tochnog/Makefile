@@ -17,23 +17,17 @@ COMMENT=	A free explicit/implicit Finite Element Program
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libf2c.a:${PORTSDIR}/lang/f2c \
 		${LOCALBASE}/lib/libf77blas.a:${PORTSDIR}/math/atlas
-.ifdef USE_THREADS
+.ifdef WITH_THREADS
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libsuperlu_mt.a:${PORTSDIR}/math/superlu_mt
 .else
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libsuperlu.a:${PORTSDIR}/math/superlu
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-USE_GCC=	2.95	# 3.2 should also work !!
 .endif
 
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 MAKEFILE=	makefile
 
-.ifdef USE_THREADS
+.ifdef WITH_THREADS
 BLAS_LIBS=	-L${LOCALBASE}/lib -lptf77blas -latlas_r
 SUPERLU=	superlu_mt
 ALL_TARGET=	freebsd_parallel
@@ -43,9 +37,9 @@ SUPERLU=	superlu
 ALL_TARGET=	freebsd_old
 .endif
 
-.ifndef USE_THREADS
+.ifndef WITH_THREADS
 pre-everything::
-	@${ECHO_MSG} "make USE_THREADS=yes for threaded version"
+	@${ECHO_MSG} "make WITH_THREADS=yes for threaded version"
 .endif
 
 post-patch:
@@ -54,7 +48,7 @@ post-patch:
 	s,%%SUPERLU%%,${SUPERLU},g ; \
 	s,%%BLAS_LIBS%%,${BLAS_LIBS},g' \
 	${WRKSRC}/makefile
-.ifdef USE_THREADS
+.ifdef WITH_THREADS
 	@${REINPLACE_CMD} -e 's,SUPERLU_MT_USE 0,SUPERLU_MT_USE 1,' \
 	${WRKSRC}/tnsuplu.h
 .else
@@ -75,4 +69,4 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/tochnog/test/* ${DOCSDIR}/test
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
