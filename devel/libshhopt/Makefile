@@ -8,7 +8,7 @@
 PORTNAME=		libshhopt
 PORTVERSION=		1.1.6
 CATEGORIES=		devel
-MASTER_SITES=		http://home.sol.no/~sverrehu/pub-unix/files/
+MASTER_SITES=		http://shh.thathost.com/pub-unix/files/
 DISTNAME=		shhopt-${PORTVERSION}
 
 MAINTAINER=		obrien@FreeBSD.org

@@ -8,7 +8,7 @@
 PORTNAME=	libshhmsg
 PORTVERSION=	1.4.0
 CATEGORIES=	devel
-MASTER_SITES=   http://home.sol.no/~sverrehu/pub-unix/files/
+MASTER_SITES=   http://shh.thathost.com/pub-unix/files/
 DISTNAME=	shhmsg-${PORTVERSION}
 
 MAINTAINER=	obrien@FreeBSD.org
