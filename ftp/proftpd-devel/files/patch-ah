@@ -1,0 +1,10 @@
+--- modules/mod_unixpw.c.orig	Sat Aug 28 15:42:13 1999
++++ modules/mod_unixpw.c	Sat Aug 28 15:42:23 1999
+@@ -37,6 +37,7 @@
+ #endif
+ #ifdef HAVE_PROT_H
+ #include <prot.h>
++#include <krb.h>
+ #endif
+ 
+ #include "privs.h"
