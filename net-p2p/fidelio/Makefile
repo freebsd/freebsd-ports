@@ -28,6 +28,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libxml2 \
 		LDFLAGS="-L${LOCALBASE}/lib `${GLIB_CONFIG} --libs gthread`" \
 		XML_CONFIG="${XML_CONFIG}"
 CONFIGURE_ARGS=	--without-included-gettext
+CFLAGS+=	-DHAVE_STRCASESTR
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
@@ -37,5 +38,7 @@ pre-patch:
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 	@${PERL} -pi -e 's|-lxml|-lxml2|g' \
 		${WRKSRC}/configure
+	@${PERL} -pi -e 's|extern int strcasestr|//extern int strcasestr|' \
+		${WRKSRC}/src/trackers.c
 
 .include <bsd.port.mk>
