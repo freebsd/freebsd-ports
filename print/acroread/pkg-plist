@@ -47,6 +47,7 @@ Acrobat3/Reader/res/splashScreen21.xbm
 Acrobat3/Reader/res/splashScreen28.xpm
 Acrobat3/bin/acroread
 bin/acroread
+bin/acroread3
 @exec ln -sf ../../Fonts %D/Acrobat3/Reader/%%ARCHDIR%%/fonts
 @unexec rm -f %D/Acrobat3/Reader/%%ARCHDIR%%/fonts
 @exec ln -sf ../../res %D/Acrobat3/Reader/%%ARCHDIR%%/res
