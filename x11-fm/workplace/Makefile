@@ -3,7 +3,7 @@
 # Date created:				7 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.7 1998/08/20 07:56:20 asami Exp $
+# $Id: Makefile,v 1.8 1998/08/20 11:18:07 vanilla Exp $
 #
 
 DISTNAME=	workplace-1.0.a3
@@ -13,7 +13,7 @@ MASTER_SITES=	http://www2.osk.3web.ne.jp/~hideki70/src/
 
 MAINTAINER=	andy@icc.surw.chel.su
 
-LIB_DEPENDS=	gtk\\.1\\.:${PORTSDIR}/x11-toolkits/gtk
+LIB_DEPENDS=	gtk.1:${PORTSDIR}/x11-toolkits/gtk
 
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes

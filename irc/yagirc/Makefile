@@ -3,7 +3,7 @@
 # Date created:				6 July 1998
 # Whom:					mph
 #
-# $Id: Makefile,v 1.6 1998/08/25 04:09:28 vanilla Exp $
+# $Id: Makefile,v 1.7 1998/08/27 05:15:05 mph Exp $
 #
 
 DISTNAME=	yagirc-0.65.7
@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.elpaso.net/~spoon/yagirc/
 
 MAINTAINER=	mph@freebsd.org
 
-LIB_DEPENDS=	gtk11\\.1\\.:${PORTSDIR}/x11-toolkits/gtk11 \
+LIB_DEPENDS=	gtk11.1:${PORTSDIR}/x11-toolkits/gtk11 \
 		Imlib\\.1\\.7:${PORTSDIR}/graphics/imlib \
 		esd\\.0\\.0:${PORTSDIR}/audio/esound
 

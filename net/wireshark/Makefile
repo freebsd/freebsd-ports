@@ -3,7 +3,7 @@
 # Date created:        10 August 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: $
+# $Id: Makefile,v 1.1.1.1 1998/09/18 21:53:24 vanilla Exp $
 #
 
 DISTNAME=	ethereal-0.3.16
@@ -13,7 +13,7 @@ MASTER_SITES=	http://ethereal.zing.org/distribution/ \
 
 MAINTAINER=	billf@chc-chimes.com
 
-LIB_DEPENDS=	gtk\\.1\\.5:${PORTSDIR}/x11-toolkits/gtk
+LIB_DEPENDS=	gtk.1:${PORTSDIR}/x11-toolkits/gtk
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

@@ -3,7 +3,7 @@
 # Date created:        11 May 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.1.1.1 1998/08/31 22:01:46 kuriyama Exp $
+# $Id: Makefile,v 1.2 1998/09/15 09:39:00 asami Exp $
 #
 
 DISTNAME=	Gtk---0.9.14
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/gtk--/
 
 MAINTAINER=	Nakai@technologist.com
 
-LIB_DEPENDS=	gtk11\\.1\\.:${PORTSDIR}/x11-toolkits/gtk11
+LIB_DEPENDS=	gtk11.1:${PORTSDIR}/x11-toolkits/gtk11
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 # Why gtk11 port renames gtk-config to gtk11-config? (patch-ae)

@@ -3,7 +3,7 @@
 # Date created:        11 July 1998
 # Whom:                Marc G. Fournier <scrappy@freebsd.org>
 #
-# $Id: Makefile,v 1.7 1998/08/12 06:29:25 asami Exp $
+# $Id: Makefile,v 1.6 1998/08/23 04:36:04 scrappy Exp $
 #
 
 DISTNAME=	mico-2.1.0
@@ -12,7 +12,7 @@ MASTER_SITES=	http://diamant-atm.vsb.cs.uni-frankfurt.de/~mico/
 
 MAINTAINER=	scrappy@freebsd.org
 
-LIB_DEPENDS=	gtk\\.1\\.5:${PORTSDIR}/x11-toolkits/gtk
+LIB_DEPENDS=	gtk.1:${PORTSDIR}/x11-toolkits/gtk
 BUILD_DEPENDS=	g++28:${PORTSDIR}/lang/gcc28 \
 		${PREFIX}/lib/gcc-lib/i386-unknown-freebsd${OSREL}/2.8.1/libstdc++.a:${PORTSDIR}/lang/glibstdc++28
 
