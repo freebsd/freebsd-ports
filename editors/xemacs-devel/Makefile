@@ -79,7 +79,7 @@ WITH_OFFIX?=	--with-offix=no
 .endif
 
 post-install:
-	${LN} -s xemacs-${XEMACS_VER} ${PREFIX}/bin/xemacs21
+	${LN} -sf xemacs-${XEMACS_VER} ${PREFIX}/bin/xemacs21
 .for file in b2m ctags etags gnuclient xemacs-${XEMACS_VER}
 	strip ${PREFIX}/bin/${file}
 .endfor
