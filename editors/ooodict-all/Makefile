@@ -105,6 +105,8 @@ post-install:
 			${ECHO_CMD} "DICT $${LANGUAGE} $${COUNTRY} $${ABRV}" >> ${DICT_LIST_INST} ; \
 			cd ${PREFIX} && ${FIND} -s ${DICT_DIR} -type f | \
 			    ${GREP} $${LANGUAGE}_$${COUNTRY} >> ${TMPPLIST} ; \
+			cd ${PREFIX} && ${FIND} -s ${DICT_DIR} -type f | \
+			    ${GREP} $${LANGUAGE}_$${COUNTRY} | xargs chmod 755 ; \
 			${ECHO} "@unexec ${CP} ${DICT_LIST} \
 			    ${DICT_LIST}.$${LANGUAGE}_$${COUNTRY}" >> ${TMPPLIST} ; \
 			${ECHO} "@unexec \
@@ -162,6 +164,8 @@ post-install:
 			${ECHO_CMD} "HYPH $${LANGUAGE} $${COUNTRY} hyph_$${ABRV}" >> ${DICT_LIST_INST} ; \
 			cd ${PREFIX} && ${FIND} -s ${DICT_DIR} -type f | \
 			    ${GREP} hyph_$${ABRV}.dic >> ${TMPPLIST} ; \
+			cd ${PREFIX} && ${FIND} -s ${DICT_DIR} -type f | \
+			    ${GREP} hyph_$${ABRV}.dic | xargs chmod 755 ; \
 			${ECHO} "@unexec ${CP} ${DICT_LIST} \
 			    ${DICT_LIST}.hyph_$${LANGUAGE}_$${COUNTRY}" >> ${TMPPLIST} ; \
 			${ECHO} "@unexec \
