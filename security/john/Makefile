@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.ca.openwall.com/pub/projects/john/ \
 		ftp://ftp.false.com/pub/security/projects/ \
 		http://www.false.com/security/john/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dominic_marks@btinternet.com
 
 .include <bsd.port.pre.mk>
 
