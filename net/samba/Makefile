@@ -7,7 +7,7 @@
 
 PORTNAME=	samba
 PORTVERSION=	2.2.5.p1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.samba.org/pub/samba/pre/ \
 		ftp://samba.anu.edu.au/pub/samba/pre/ \
@@ -26,15 +26,18 @@ USE_GMAKE=	YES
 AUDIT=		"@comment "
 RECYCLE=	"@comment "
 LIBSAMBA=	"@comment "
+BUILD_VFS=	"@comment "
 
 .if defined(WITH_AUDIT)
 AUDIT=		""
 LIBSAMBA=	""
+BUILD_VFS=	""
 .endif
 
 .if defined(WITH_RECYCLE)
 RECYCLE=	""
 LIBSAMBA=	""
+BUILD_VFS=	""
 .endif
 
 # directories
@@ -145,7 +148,8 @@ SED_PLIST=	${SED} -e 's!${PREFIX}!%D!g'
 
 PLIST_SUB=      AUDIT=${AUDIT} \
 		RECYCLE=${RECYCLE} \
-		LIBSAMBA=${LIBSAMBA}
+		LIBSAMBA=${LIBSAMBA} \
+		BUILD_VFS=${BUILD_VFS}
 
 .if defined(WITH_RECYCLE) || defined(WITH_AUDIT)
 post-build:
