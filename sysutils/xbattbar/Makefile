@@ -7,7 +7,7 @@
 
 PORTNAME=	xbattbar
 PORTVERSION=	1.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://iplab.aist-nara.ac.jp/member/suguru/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
