@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vobcopy
-PORTVERSION=	0.5.11
+PORTVERSION=	0.5.12
 CATEGORIES=	sysutils
 MASTER_SITES=	http://lpn.rnbhq.org/download/
 
