@@ -2,9 +2,7 @@ bin/nautilus
 bin/nautilus-adapter
 bin/nautilus-content-loser
 bin/nautilus-hardware-view
-bin/nautilus-history-view
 bin/nautilus-music-view
-bin/nautilus-notes
 bin/nautilus-sample-content-view
 bin/nautilus-sidebar-loser
 bin/nautilus-text-view
@@ -44,6 +42,8 @@ include/libnautilus/nautilus-view.h
 lib/libnautilus-adapter.a
 lib/libnautilus-adapter.so
 lib/libnautilus-adapter.so.2
+lib/libnautilus-history-view.so
+lib/libnautilus-notes-view.so
 lib/libnautilus-private.a
 lib/libnautilus-private.so
 lib/libnautilus-private.so.2

@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	gnomepanel
-PORTVERSION=	1.5.21
-PORTREVISION=	1
+PORTVERSION=	1.5.22
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta5
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-20020525
 DISTNAME=	gnome-panel-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	wnck-1.2:${PORTSDIR}/x11-toolkits/libwnck \
+LIB_DEPENDS=	wnck-1.4:${PORTSDIR}/x11-toolkits/libwnck \
 		gnome-desktop-2.0:${PORTSDIR}/x11/gnomedesktop
 
 USE_BZIP2=	yes

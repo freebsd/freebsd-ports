@@ -7,7 +7,6 @@ etc/gconf/gconf.xml.defaults/desktop/gnome/accessibility/%gconf.xml
 etc/gconf/gconf.xml.defaults/desktop/gnome/accessibility/keyboard/%gconf.xml
 etc/gconf/gconf.xml.defaults/desktop/gnome/applications/%gconf.xml
 etc/gconf/gconf.xml.defaults/desktop/gnome/applications/browser/%gconf.xml
-etc/gconf/gconf.xml.defaults/desktop/gnome/applications/editor/%gconf.xml
 etc/gconf/gconf.xml.defaults/desktop/gnome/applications/help_viewer/%gconf.xml
 etc/gconf/gconf.xml.defaults/desktop/gnome/applications/terminal/%gconf.xml
 etc/gconf/gconf.xml.defaults/desktop/gnome/applications/window_manager/%gconf.xml
@@ -19,9 +18,7 @@ etc/gconf/gconf.xml.defaults/desktop/gnome/peripherals/keyboard/%gconf.xml
 etc/gconf/gconf.xml.defaults/desktop/gnome/peripherals/mouse/%gconf.xml
 etc/gconf/gconf.xml.defaults/desktop/gnome/sound/%gconf.xml
 etc/gconf/gconf.xml.defaults/desktop/gnome/url-handlers/%gconf.xml
-etc/gconf/gconf.xml.defaults/desktop/gnome/url-handlers/ftp/%gconf.xml
 etc/gconf/gconf.xml.defaults/desktop/gnome/url-handlers/ghelp/%gconf.xml
-etc/gconf/gconf.xml.defaults/desktop/gnome/url-handlers/http/%gconf.xml
 etc/gconf/gconf.xml.defaults/desktop/gnome/url-handlers/info/%gconf.xml
 etc/gconf/gconf.xml.defaults/desktop/gnome/url-handlers/man/%gconf.xml
 etc/gconf/gconf.xml.defaults/desktop/gnome/url-handlers/unknown/%gconf.xml
@@ -31,7 +28,6 @@ etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/accessibility/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/accessibility/keyboard/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/applications/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/applications/browser/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/applications/editor/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/applications/help_viewer/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/applications/terminal/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/applications/window_manager/%gconf.xml
@@ -43,15 +39,12 @@ etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/peripherals/keyboard/%gconf.x
 etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/peripherals/mouse/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/sound/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/url-handlers/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/url-handlers/ftp/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/url-handlers/ghelp/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/url-handlers/http/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/url-handlers/info/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/url-handlers/man/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/url-handlers/unknown/%gconf.xml
 etc/gconf/schemas/desktop_gnome_accessibility_keyboard.schemas
 etc/gconf/schemas/desktop_gnome_applications_browser.schemas
-etc/gconf/schemas/desktop_gnome_applications_editor.schemas
 etc/gconf/schemas/desktop_gnome_applications_help_viewer.schemas
 etc/gconf/schemas/desktop_gnome_applications_terminal.schemas
 etc/gconf/schemas/desktop_gnome_applications_window_manager.schemas
@@ -127,9 +120,7 @@ share/locale/zh_TW/LC_MESSAGES/libgnome-2.0.mo
 @dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/url-handlers/unknown
 @dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/url-handlers/man
 @dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/url-handlers/info
-@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/url-handlers/http
 @dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/url-handlers/ghelp
-@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/url-handlers/ftp
 @dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/url-handlers
 @dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/sound
 @dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/peripherals/mouse
@@ -141,7 +132,6 @@ share/locale/zh_TW/LC_MESSAGES/libgnome-2.0.mo
 @dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/applications/window_manager
 @dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/applications/terminal
 @dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/applications/help_viewer
-@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/applications/editor
 @dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/applications/browser
 @dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/applications
 @dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/accessibility/keyboard
@@ -151,9 +141,7 @@ share/locale/zh_TW/LC_MESSAGES/libgnome-2.0.mo
 @dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/url-handlers/unknown
 @dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/url-handlers/man
 @dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/url-handlers/info
-@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/url-handlers/http
 @dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/url-handlers/ghelp
-@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/url-handlers/ftp
 @dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/url-handlers
 @dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/sound
 @dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/peripherals/mouse
@@ -165,7 +153,6 @@ share/locale/zh_TW/LC_MESSAGES/libgnome-2.0.mo
 @dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/applications/window_manager
 @dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/applications/terminal
 @dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/applications/help_viewer
-@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/applications/editor
 @dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/applications/browser
 @dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/applications
 @dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/accessibility/keyboard

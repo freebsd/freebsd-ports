@@ -87,6 +87,7 @@ share/locale/sl/LC_MESSAGES/sawfish.mo
 share/locale/sv/LC_MESSAGES/sawfish.mo
 share/locale/tr/LC_MESSAGES/sawfish.mo
 share/locale/uk/LC_MESSAGES/sawfish.mo
+share/locale/vi/LC_MESSAGES/sawfish.mo
 share/locale/wa/LC_MESSAGES/sawfish.mo
 share/locale/zh_CN/LC_MESSAGES/sawfish.mo
 share/locale/zh_TW/LC_MESSAGES/sawfish.mo
@@ -391,6 +392,8 @@ share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/window-outline.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/window-outline.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/with-output.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/with-output.jlc
+share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/workarea.jl
+share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/workarea.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/viewport.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/viewport.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/window-anim.jl

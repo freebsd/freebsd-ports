@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gnomesystemmonitor
-PORTVERSION=	1.1.6
+PORTVERSION=	1.1.7
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-20020501
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-20020525
 DISTNAME=	gnome-system-monitor-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -17,7 +17,7 @@ MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui \
 		gtop-2.0.2:${PORTSDIR}/devel/libgtop2 \
-		wnck-1.2:${PORTSDIR}/x11-toolkits/libwnck
+		wnck-1.4:${PORTSDIR}/x11-toolkits/libwnck
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
