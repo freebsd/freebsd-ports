@@ -1,12 +1,16 @@
---- Makefile.orig	Sun Feb  6 16:38:57 2000
-+++ Makefile	Sun Feb  6 16:40:45 2000
-@@ -6,12 +6,12 @@
+--- Makefile.unix	Sat Feb 21 10:39:13 1998
++++ Makefile	Wed Nov  8 01:54:54 2000
+@@ -4,14 +4,14 @@
+ #       if they cause a problem on your system.
+ #
  
- CC		= gcc
+-CC		= gcc
++CC		?= gcc
  CPPFLAGS	= $(OTHER)
 -CFLAGS		= -c -O6 -DGNU_C
-+CFLAGS+=	  -c -DGNU_C
- LD		= gcc
+-LD		= gcc
++CFLAGS		+= -c -DGNU_C
++LD		= $(CC)
  LDFLAGS		=
  LDLIBS		= -lm
  
@@ -15,6 +19,29 @@
  BIN_PATH	= ${PREFIX}/bin
  LIB_PATH	= ${PREFIX}/lib
  MAN_PATH	= ${PREFIX}/man
+@@ -195,16 +195,16 @@
+ 		OBJ="atari_curses.o"
+ 
+ freebsd-x11 :
+-	make atari800 \
+-		CPPFLAGS="-I/usr/X11R6/include" \
+-		LDFLAGS="-L/usr/X11R6/lib" \
++	$(MAKE) atari800 \
++		CPPFLAGS="-I${X11BASE}/include" \
++		LDFLAGS="-L${X11BASE}/lib" \
+ 		LDLIBS="-lX11 -lm" \
+ 		OBJ="atari_x11.o"
+ 
+ freebsd-x11-shm :
+-	make atari800 \
+-		CPPFLAGS="-I/usr/X11R6/include -DSHM" \
+-		LDFLAGS="-L/usr/X11R6/lib" \
++	$(MAKE) atari800 \
++		CPPFLAGS="-I${X11BASE}/include -DSHM" \
++		LDFLAGS="-L${X11BASE}/lib" \
+ 		LDLIBS="-lX11 -lXext -lm" \
+ 		OBJ="atari_x11.o"
+ 
 @@ -246,7 +246,6 @@
  			platform.h
  
@@ -23,3 +50,11 @@
  
  configure	:	configure.o prompts.o
  	$(LD) $(LDFLAGS) configure.o prompts.o $(LDLIBS) -o configure
+@@ -348,5 +347,5 @@
+ 	chmod 4755 ${BIN_PATH}/atari800
+ 
+ install :
+-	cp atari800 ${BIN_PATH}/atari800
+-	cp atari800.man ${MAN_PATH}/man1/atari800.1
++	${BSD_INSTALL_PROGRAM} atari800 ${BIN_PATH}/atari800
++	${BSD_INSTALL_MAN} atari800.man ${MAN_PATH}/man1/atari800.1

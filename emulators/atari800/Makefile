@@ -7,13 +7,14 @@
 
 PORTNAME=	atari800
 PORTVERSION=	0.8.6
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.signus.demon.co.uk/Software/Portable/Atari800e/ \
 		http://cas3.zlin.vutbr.cz/~stehlik/a800/
 DISTNAME=	Atari800-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${EXTRA_FILES}
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
@@ -29,22 +30,21 @@ NO_PACKAGE=	${RESTRICTED}
 ATARI_DOC=	${PREFIX}/share/doc/atari
 ATARI_XF=	ataribas.rom atariosb.rom atarixl.rom demos1.xfd \
 		demos2.xfd dos25.xfd mydos45d.atr
-ATARI_LIB=	${PREFIX}/lib/atari
+ATARI_LIB=	${PREFIX}/share/atari
 SED_CONFIG=	${ATARI_LIB:S/\//\\\//g}
-DOC_FILES= 	BUGS CHANGES COPYING CREDITS INSTALL README TODO USAGE
+DOC_FILES= 	BUGS CHANGES CREDITS INSTALL README TODO USAGE
 
 MAN1=		atari800.1
 
 post-extract:
 	@${ECHO_MSG} "===>  Unzipping ROM files"
-	unzip -Lo ${DISTDIR}/${DIST_SUBDIR}/${EXTRA_FILES} ${ATARI_XF}\
-		-d ${WRKSRC}/
+	unzip -q -L -o ${_DISTDIR}/${EXTRA_FILES} ${ATARI_XF} -d ${WRKSRC}
 	@${ECHO_MSG} "===>  Processing configuration file"
 	${SED} "s/GUMBY/${SED_CONFIG}/g" < ${FILESDIR}/atari800.cfg \
 		> ${WRKSRC}/atari800.cfg
 
 	@${ECHO_MSG} "===>  Copying config.h to work directory"
-	${CP} ${FILESDIR}/config.h ${WRKSRC}/
+	${CP} ${FILESDIR}/config.h ${WRKSRC}
 
 	@${ECHO_MSG} "===>  Copying UNIX makefile"
 	${CP} ${WRKSRC}/Makefile.unix ${WRKSRC}/Makefile
@@ -60,20 +60,19 @@ post-patch:
 post-install:
 	@${ECHO_MSG} "===>  Installing files from xf25.zip"
 	-${MKDIR} ${ATARI_LIB}
-	for file in ${ATARI_XF} ; do \
-		${INSTALL_DATA} ${WRKSRC}/$$file ${ATARI_LIB}/ ;\
-	done
+.for file in ${ATARI_XF}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${ATARI_LIB}
+.endfor
 
 	@${ECHO_MSG} "===>  Installing configuration file"
-	${INSTALL} -c -o root -g wheel -m 664 ${WRKSRC}/atari800.cfg \
-		${ATARI_LIB}/
+	${INSTALL_DATA} -m 664 ${WRKSRC}/atari800.cfg ${ATARI_LIB}
 
-.if (!defined(NOPORTDOCS))
+.if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "===>  Installing distribution document files"
 	-${MKDIR} ${ATARI_DOC}
-	for file in ${DOC_FILES} ; do \
-		${INSTALL_DATA} ${WRKSRC}/$$file ${ATARI_DOC}/ ;\
-	done
+.for file in ${DOC_FILES}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${ATARI_DOC}
+.endfor
 	${INSTALL_DATA} ${DESCR} ${ATARI_DOC}/README.FreeBSD
 .endif
 
