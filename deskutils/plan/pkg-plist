@@ -27,6 +27,7 @@ share/doc/plan/examples/holiday_japan
 share/doc/plan/examples/holiday_norway
 share/doc/plan/examples/holiday_portugal
 share/doc/plan/examples/holiday_quebec
+share/doc/plan/examples/holiday_slovak
 share/doc/plan/examples/holiday_spain
 share/doc/plan/examples/holiday_swedish
 share/doc/plan/examples/holiday_uk
@@ -38,9 +39,9 @@ share/doc/plan/plan.lang.dutch
 share/doc/plan/plan.lang.english
 share/doc/plan/plan.lang.french
 share/doc/plan/plan.lang.german
+share/doc/plan/plan.lang.italian
 share/doc/plan/plan.lang.spanish
 @exec /bin/mkdir -p %D/share/netplan.dir
 @dirrm share/netplan.dir
 @dirrm share/doc/plan/examples
 @dirrm share/doc/plan
-@dirrm share/plan

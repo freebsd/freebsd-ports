@@ -7,10 +7,10 @@
 # Also update	ports/japanese/plan/ (ja-plan) when this port is updated
 
 PORTNAME=	plan
-PORTVERSION=	1.8.4
+PORTVERSION=	1.8.6
 CATEGORIES+=	deskutils
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}  \
-		ftp://ftp.fu-berlin.de/pub/unix/graphics/plan/
+		ftp://plan.ftp.fu-berlin.de/
 MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=	deischen@freebsd.org
@@ -26,8 +26,7 @@ post-patch:
 	cd ${WRKSRC} && ${MV} config.h config.h.orig && ${SED} -e 's,%%PREFIX%%,$(PREFIX),' \
 		< config.h.orig > config.h
 do-install:
-	@${MKDIR} ${PREFIX}/share/plan ;\
-	${MKDIR} ${PREFIX}/share/doc/plan/examples ;\
+	@${MKDIR} ${PREFIX}/share/doc/plan/examples ;\
 	cd ${WRKSRC} ; ${INSTALL_PROGRAM} plan pland netplan notifier ${PREFIX}/bin ;\
 	${INSTALL_SCRIPT}  ../misc/Killpland ${PREFIX}/bin ;\
 	${INSTALL_MAN} ../misc/netplan.1 ../misc/plan.1 ${MAN1PREFIX}/man/man1 ;\
@@ -40,8 +39,8 @@ do-install:
 		holiday_canada holiday_combi holiday_czech holiday_denmark holiday_dutch \
 		holiday_finnish holiday_french holiday_frswiss holiday_german holiday_greek \
 		holiday_hungary holiday_italy holiday_japan holiday_norway holiday_portugal \
-		holiday_quebec holiday_spain holiday_swedish holiday_uk holiday_us \
-			${PREFIX}/share/doc/plan/examples
+		holiday_quebec holiday_slovak holiday_spain holiday_swedish holiday_uk \
+			holiday_us ${PREFIX}/share/doc/plan/examples
 
 .if !target(post-install)
 post-install:
