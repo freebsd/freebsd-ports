@@ -7,6 +7,7 @@
 
 PORTNAME=	martel
 PORTVERSION=	0.4
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	textproc biology python
 MASTER_SITES=	http://www.biopython.org/~dalke/Martel/
