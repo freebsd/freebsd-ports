@@ -1,0 +1,11 @@
+This module was inspired by the excellent DBIx::Abstract. However, in
+using the module I found that what I wanted to do was generate SQL, but
+still retain complete control over my statement handles and use the DBI
+interface. So, I set out to create an abstract SQL generation module.
+
+This module is based largely on DBIx::Abstract. However, there are
+several important differences, especially when it comes to WHERE
+clauses. I have modified the concepts used to make the SQL easier to
+generate from Perl data structures and, IMO, more intuitive. 
+
+WWW: http://search.cpan.org/search?dist=SQL-Abstract
