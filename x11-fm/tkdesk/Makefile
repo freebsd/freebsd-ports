@@ -3,7 +3,7 @@
 # Date created:         30 Jul 1996
 # Whom:                 shanee@rabbit.augusta.de
 #
-# $Id: Makefile,v 1.5 1998/02/21 23:16:55 steve Exp $
+# $Id: Makefile,v 1.6 1998/02/27 23:13:39 steve Exp $
 #
 
 DISTNAME=	tkdesk-1.0
@@ -18,6 +18,10 @@ USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
 
 MAN1=		tkdesk.1 cd-tkdesk.1 ed-tkdesk.1 od-tkdesk.1
+
+.ifndef DISPLAY
+BROKEN=		Requires an X Display to install
+.endif
 
 post-install:
 	strip ${PREFIX}/bin/tkdesksh
