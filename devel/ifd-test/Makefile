@@ -7,6 +7,7 @@
 
 PORTNAME=	ifd-test
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	devel security
 MASTER_SITES=	http://www.linuxnet.com/drivers/readers/files/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	NetSpades
 PORTVERSION=	4.2.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.ece.rice.edu/~brentmh/spades/
 

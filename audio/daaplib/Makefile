@@ -7,6 +7,7 @@
 
 PORTNAME=	daaplib
 PORTVERSION=	0.1.1a
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.deleet.de/projekte/daap/daaplib/
 DISTNAME=	${PORTNAME}.${PORTVERSION}

@@ -7,6 +7,7 @@
 
 PORTNAME=	mizifonts
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	korean x11-fonts
 MASTER_SITES=	ftp://ftp.mizi.co.kr/pub/hanIM/
 DISTNAME=	xfntmizi-1.1-2.noarch

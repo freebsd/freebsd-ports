@@ -7,6 +7,7 @@
 
 PORTNAME=	as31
 PORTVERSION=	2.0.b3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.pjrc.com/tech/8051/tools/
 DISTNAME=	${PORTNAME}_beta3

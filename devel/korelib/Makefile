@@ -7,6 +7,7 @@
 
 PORTNAME=	korelib
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://host33.ipowerweb.com/~smga3000/thekompany/Korelib/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	calendar
 PORTVERSION=	0.2.5.2
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-

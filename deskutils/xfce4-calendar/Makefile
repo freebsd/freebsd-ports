@@ -7,6 +7,7 @@
 
 PORTNAME=	xfce4-calendar
 PORTVERSION=	0.1.5
+PORTREVISION=	1
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	http://xfce.org/archive/xfce-4.0.3.1/src/
 DISTNAME=	xfcalendar-${PORTVERSION}

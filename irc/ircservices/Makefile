@@ -8,6 +8,7 @@
 PORTNAME=	ircservices
 PATCHLEVEL=	22
 PORTVERSION=	5.0.${PATCHLEVEL}
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.ircservices.za.net/pub/ircservices/ \
 		ftp://ftp.esper.net/ircservices/

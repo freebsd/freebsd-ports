@@ -7,6 +7,7 @@
 
 PORTNAME=	firebird
 PORTVERSION=	2.0.a0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.aims.net.au/chris/firebird/
 MASTER_SITE_SUBDIR=firebird

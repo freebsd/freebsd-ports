@@ -7,7 +7,7 @@
 
 PORTNAME=	mob
 PORTVERSION=	0.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://steamboat.cs.ucsb.edu/mob/src/
 DISTNAME=	${PORTNAME}-1.0-BETA

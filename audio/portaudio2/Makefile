@@ -7,7 +7,7 @@
 
 PORTNAME=	portaudio
 PORTVERSION=	18.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.portaudio.com/archives/
 DISTNAME=	${PORTNAME}_v${PORTVERSION:S/./_/}

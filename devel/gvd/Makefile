@@ -7,6 +7,7 @@
 
 PORTNAME=		gvd
 PORTVERSION=		1.2.5
+PORTREVISION=	1
 CATEGORIES=		devel
 MASTER_SITES=		http://libre.act-europe.fr/gvd/
 DISTNAME=		${PORTNAME}-${PORTVERSION}-src

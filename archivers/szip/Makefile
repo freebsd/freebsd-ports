@@ -7,6 +7,7 @@
 
 PORTNAME=	szip
 PORTVERSION=	1.12b
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.compressconsult.com/szip/
 DISTNAME=	sz${PORTVERSION:S/.//}_src

@@ -7,6 +7,7 @@
 
 PORTNAME=	qe
 PORTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	chinese
 MASTER_SITES=	http://www.cc.ncu.edu.tw/~center5/product/qe/ \
 		ftp://freebsd.sinica.edu.tw/pub/statue/qe/

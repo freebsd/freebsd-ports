@@ -7,6 +7,7 @@
 
 PORTNAME=	xmms-sndfile
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.zipworld.com.au/~erikd/XMMS/
 DISTNAME=	xmms_sndfile-${PORTVERSION}

@@ -7,6 +7,7 @@
 
 PORTNAME=	bluej
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	java editors
 MASTER_SITES=	ftp://ftp.bluej.org/pub/bluej/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}

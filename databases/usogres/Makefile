@@ -7,6 +7,7 @@
 
 PORTNAME=	usogres
 PORTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://usogres.good-day.net/download/
 

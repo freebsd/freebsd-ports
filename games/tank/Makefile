@@ -7,6 +7,7 @@
 
 PORTNAME=	tank
 PORTVERSION=	0.4a
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://step.polymtl.ca/~coyote/tank/
 DISTFILES=	${DISTNAME}-src.tar.gz

@@ -7,6 +7,7 @@
 
 PORTNAME=	med
 PORTVERSION=	2.1.5
+PORTREVISION=	1
 CATEGORIES=	french cad converters
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 DISTNAME=	${PORTNAME}hdf-src-${PORTVERSION}-1.noarch

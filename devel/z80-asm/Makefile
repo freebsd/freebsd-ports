@@ -7,6 +7,7 @@
 
 PORTNAME=      z80-asm
 PORTVERSION=   0.1
+PORTREVISION=	1
 CATEGORIES=    devel
 MASTER_SITES=  http://www.kerneled.com/projects/z80-asm/
 DISTNAME=      z80-asm

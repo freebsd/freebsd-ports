@@ -7,6 +7,7 @@
 
 PORTNAME=	glide3
 PORTVERSION=	20020113
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://people.freebsd.org/~anholt/dri/files/
 .ifdef WITH_VOODOO3

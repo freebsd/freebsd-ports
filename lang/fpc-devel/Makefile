@@ -7,6 +7,7 @@
 
 PORTNAME=	fpc-devel
 PORTVERSION=	1.9.2
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://freepascal.stack.nl/pub/fpc/beta/freebsd-${PORTVERSION}-ports/  \
 		ftp://ftp.freepascal.org/pub/fpc/beta/freebsd-${PORTVERSION}-ports/

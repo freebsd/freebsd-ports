@@ -7,6 +7,7 @@
 
 PORTNAME=	generator
 PORTVERSION=	0.35
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.squish.net/generator/files/
 

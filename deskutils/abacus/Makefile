@@ -7,7 +7,7 @@
 
 PORTNAME=	abacus
 PORTVERSION=	0.9.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www-cad.eecs.berkeley.edu/HomePages/aml/abacus/ \
 		http://tahoe.inesc.pt/~aml/abacus/

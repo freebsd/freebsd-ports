@@ -7,6 +7,7 @@
 
 PORTNAME=	ImageMagick
 PORTVERSION=	5.5.7.15
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://gd.tuwien.ac.at/pub/graphics/%SUBDIR%/ \

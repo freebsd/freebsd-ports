@@ -7,6 +7,7 @@
 
 PORTNAME=	adns
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.chiark.greenend.org.uk/users/ian/adns/

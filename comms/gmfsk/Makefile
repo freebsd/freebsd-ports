@@ -7,6 +7,7 @@
 
 PORTNAME=	gmfsk
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	comms audio
 MASTER_SITES=	http://hes.iki.fi/pub/ham/unix/linux/hfmodems/
 

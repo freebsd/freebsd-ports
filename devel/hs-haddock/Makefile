@@ -6,6 +6,7 @@
 
 PORTNAME=	haddock
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.haskell.org/haddock/
 PKGNAMEPREFIX=	hs-

@@ -9,6 +9,7 @@
 
 PORTNAME=	cyclone
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.cs.cornell.edu/projects/cyclone/software/
 # Can't conditionalise fetching of docs due to distinfo:

@@ -7,6 +7,7 @@
 
 PORTNAME=      jrtplib
 PORTVERSION=   2.7
+PORTREVISION=	1
 CATEGORIES=    devel
 MASTER_SITES=  http://lumumba.luc.ac.be/jori/jrtplib/
 

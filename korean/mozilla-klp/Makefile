@@ -7,6 +7,7 @@
 
 PORTNAME=	mozilla
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	korean www
 MASTER_SITES=	http://www.mozilla.pe.kr/archive/m1.1/
 PKGNAMESUFFIX=	-klp

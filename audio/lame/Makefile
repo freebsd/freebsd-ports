@@ -7,6 +7,7 @@
 
 PORTNAME=	lame
 PORTVERSION=	3.95.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.fu-berlin.de/unix/sound/%SUBDIR%/

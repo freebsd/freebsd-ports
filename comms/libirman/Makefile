@@ -7,6 +7,7 @@
 
 PORTNAME=	libirman
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://mars.wiwi.uni-halle.de/lirc/software/snapshots/
 

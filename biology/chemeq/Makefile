@@ -6,7 +6,7 @@
 
 PORTNAME=	chemeq
 PORTVERSION=	1.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology textproc
 MASTER_SITES=	ftp://boltz.univ-littoral.fr/pub/chemeq/
 DISTNAME=	chemeq-V110-1

@@ -7,6 +7,7 @@
 
 PORTNAME=	linux-j
 PORTVERSION=	502a
+PORTREVISION=	1
 CATEGORIES=	lang linux
 MASTER_SITES=	http://www.jsoftware.com/download/
 DISTNAME=	j${PORTVERSION}_linux

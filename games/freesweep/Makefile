@@ -7,6 +7,7 @@
 
 PORTNAME=	freesweep
 PORTVERSION=	0.90
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.upl.cs.wisc.edu/~hartmann/sweep/
 

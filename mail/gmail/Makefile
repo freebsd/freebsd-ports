@@ -7,6 +7,7 @@
 
 PORTNAME=	gmail
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://bsltwr.dnsalias.org/ftp/pub/gmail/
 

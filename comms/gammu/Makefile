@@ -7,6 +7,7 @@
 
 PORTNAME=	gammu
 PORTVERSION=	0.92.0
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://www.mwiacek.com/zips/gsm/gammu/older/ \
 		http://www.kirill.spb.ru/gammu/

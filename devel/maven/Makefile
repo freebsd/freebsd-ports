@@ -7,6 +7,7 @@
 
 PORTNAME=	maven
 PORTVERSION=	1.0.r1
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	http://nagoya.apache.org/mirror/%SUBDIR%/binaries/
 MASTER_SITE_SUBDIR=	${PORTNAME}

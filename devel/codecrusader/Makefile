@@ -7,7 +7,7 @@
 
 PORTNAME=	code_crusader
 PORTVERSION=	2.1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.krasnodar.ru/pub/unix/IDE/CodeCrusader/
 DISTNAME=	${PORTNAME}_source-${PORTVERSION}

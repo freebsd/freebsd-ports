@@ -7,6 +7,7 @@
 
 PORTNAME=	mkisofs
 PORTVERSION=	1.13
+PORTREVISION=	1
 CATEGORIES=	korean sysutils
 MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/mkisofs/ \
 		ftp://ftp.gwdg.de/pub/linux/misc/cdrecord/mkisofs/ \

@@ -7,6 +7,7 @@
 
 PORTNAME=	rpc2
 PORTVERSION=	1.15
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/rpc2/src/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	gnomespeech
 PORTVERSION=	0.2.8
+PORTREVISION=	1
 CATEGORIES=	accessibility audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-speech/0.2

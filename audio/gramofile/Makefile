@@ -7,6 +7,7 @@
 
 PORTNAME=	gramofile
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://panic.et.tudelft.nl/~costar/gramofile/
 

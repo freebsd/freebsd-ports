@@ -8,6 +8,7 @@
 
 PORTNAME=	sircd
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.sircd.org/files/

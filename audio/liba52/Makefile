@@ -7,6 +7,7 @@
 
 PORTNAME=	liba52
 PORTVERSION=	0.7.4
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://liba52.sourceforge.net/files/
 DISTNAME=	a52dec-${PORTVERSION:S/.b/b/}

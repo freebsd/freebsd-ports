@@ -7,6 +7,7 @@
 
 PORTNAME=	dopewars
 PORTVERSION=	1.5.9
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://bellatrix.pcl.ox.ac.uk/~ben/dopewars/

@@ -7,6 +7,7 @@
 
 PORTNAME=	ecawave
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://ecasound.seul.org/download/
 

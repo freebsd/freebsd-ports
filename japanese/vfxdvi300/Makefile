@@ -7,7 +7,7 @@
 
 PORTNAME=	vfxdvi
 PORTVERSION=	17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_PORTS_JP} \
 		ftp://ftp.hipecs.hokudai.ac.jp/pub/news-archive/fj.comp.texhax/volume95/Sep/ \

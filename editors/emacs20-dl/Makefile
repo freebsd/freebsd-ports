@@ -7,7 +7,7 @@
 
 PORTNAME=	emacs-dl
 PORTVERSION=	${EMACS_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors ipv6
 MASTER_SITES=	http://www.ainet.or.jp/~inoue/software/emacs-xim/ \
 		${MASTER_SITE_GNU}

@@ -7,6 +7,7 @@
 
 PORTNAME=	cc65
 PORTVERSION=	2.9.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.musoftware.de/pub/uz/cc65/ \
 		http://www.funet.fi/pub/cbm/programming/cc65/ \

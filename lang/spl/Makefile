@@ -7,6 +7,7 @@
 
 PORTNAME=	spl
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://shakespearelang.sourceforge.net/download/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	gnomebreakout
 PORTVERSION=	0.5.2
+PORTREVISION=	1
 CATEGORIES=	games gnome
 MASTER_SITES=	http://users.senet.com.au/~alcaron/
 DISTNAME=	gnome-breakout-${PORTVERSION}

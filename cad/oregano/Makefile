@@ -7,6 +7,7 @@
 
 PORTNAME=	oregano
 PORTVERSION=	0.23
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.codefactory.se/pub/CodeFactory/software/oregano/
 

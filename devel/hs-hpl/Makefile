@@ -7,7 +7,7 @@
 
 PORTNAME=	hpl
 PORTVERSION=	0.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.cse.unsw.edu.au/~chak/haskell/ports/
 PKGNAMEPREFIX=	hs-

@@ -7,6 +7,7 @@
 
 PORTNAME=	gnomekiss
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	games gnome
 MASTER_SITES=	http://www.ecs.soton.ac.uk/~njl98r/code/kiss/
 

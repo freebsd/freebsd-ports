@@ -7,6 +7,7 @@
 
 PORTNAME=	crossfire-client
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.ifi.uio.no/pub/crossfire/ \

@@ -7,6 +7,7 @@
 
 PORTNAME=	ftpq
 PORTVERSION=	1.06
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://tranchant.plus.com/software/

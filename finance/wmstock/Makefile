@@ -7,6 +7,7 @@
 
 PORTNAME=	wmstock
 PORTVERSION=	0.11
+PORTREVISION=	1
 CATEGORIES=	finance windowmaker
 MASTER_SITES=	http://mattfischer.com/wmstock/src/
 

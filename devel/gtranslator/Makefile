@@ -7,6 +7,7 @@
 
 PORTNAME=	gtranslator
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://www.gtranslator.org/download/releases/${PORTVERSION}/ \
 		${MASTER_SITE_SOURCEFORGE}

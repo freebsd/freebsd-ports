@@ -7,6 +7,7 @@
 
 PORTNAME=	doxygen
 PORTVERSION=	1.3.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/
 EXTRACT_SUFX=	.src.tar.gz

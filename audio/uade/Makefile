@@ -7,6 +7,7 @@
 
 PORTNAME=	xmms-uade
 PORTVERSION=	0.81
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://uade.ton.tut.fi/uade/
 DISTNAME=	uade-${PORTVERSION}

@@ -7,6 +7,7 @@
 
 PORTNAME=	xfrisk
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://cvs.morphy.iki.fi/xfrisk/files/
 DISTNAME=	XFrisk-${PORTVERSION}

@@ -6,6 +6,7 @@
 
 PORTNAME=	tictactoe3d
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.che.iitm.ac.in/~ch99057/software/
 DISTNAME=	ttt3d

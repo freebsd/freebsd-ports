@@ -7,6 +7,7 @@
 
 PORTNAME=	ha
 PORTVERSION=	0.999b
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/arcers/
 DISTNAME=	ha0999

@@ -8,6 +8,7 @@
 
 PORTNAME=	libmba
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ioplex.com/~miallen/libmba/dl/
 

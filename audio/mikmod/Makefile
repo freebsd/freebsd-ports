@@ -7,6 +7,7 @@
 
 PORTNAME=	mikmod
 PORTVERSION=	3.2.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://mikmod.raphnet.net/files/
 

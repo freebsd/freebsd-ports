@@ -7,6 +7,7 @@
 
 PORTNAME=	xnibbles
 PORTVERSION=	1.0.b3
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://tinton.braschka.org/Files/pub/games/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/BETA/}

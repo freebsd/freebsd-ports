@@ -7,7 +7,7 @@
 
 PORTNAME=	QuakeForge
 PORTVERSION=	0.5.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:qf/} \
 		ftp://ftp.idsoftware.com/idstuff/quakeworld/unix/:qw

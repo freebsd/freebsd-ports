@@ -7,6 +7,7 @@
 
 PORTNAME=	wmsolar
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	astro windowmaker
 MASTER_SITES=	http://www.inxsoft.net/wmsolar/
 

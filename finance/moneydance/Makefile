@@ -7,6 +7,7 @@
 
 PORTNAME=	moneydance
 PORTVERSION=	3.2
+PORTREVISION=	1
 CATEGORIES=	finance deskutils
 MASTER_SITES=	http://moneydance.com/download/3/Unix/
 DISTNAME=	${PORTNAME}_other

@@ -7,7 +7,7 @@
 
 PORTNAME=	slib
 PORTVERSION=	3a1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://swissnet.ai.mit.edu/ftpdir/scm/ \
 		http://swissnet.ai.mit.edu/ftpdir/scm/OLD/:old

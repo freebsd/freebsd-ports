@@ -7,6 +7,7 @@
 
 PORTNAME=	florist
 PORTVERSION=	3.15p
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://cs.nyu.edu/pub/gnat/${PORTVERSION}/
 DISTNAME=	florist-${PORTVERSION}-src

@@ -7,6 +7,7 @@
 
 PORTNAME=	fluidsynth
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://resonance.org/~josh/fluidsynth/
 

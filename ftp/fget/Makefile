@@ -7,6 +7,7 @@
 
 PORTNAME=	fget
 PORTVERSION=	1.2.9
+PORTREVISION=	1
 CATEGORIES=	ftp www
 MASTER_SITES=	ftp://ftp-dev.cso.uiuc.edu/pub/fget/
 

@@ -6,6 +6,7 @@
 
 PORTNAME=	kpicframer
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	games kde
 MASTER_SITES=	http://www.norbs.de/kpicframer/download/
 

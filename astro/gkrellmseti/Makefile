@@ -7,6 +7,7 @@
 
 PORTNAME=	seti
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	http://xavier.serpaggi.free.fr/seti/
 PKGNAMEPREFIX=	gkrellm

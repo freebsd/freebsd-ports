@@ -7,6 +7,7 @@
 
 PORTNAME=	dbXML
 PORTVERSION=	1.0b2
+PORTREVISION=	1
 CATEGORIES=	databases java
 MASTER_SITES=	http://www.dbxml.com/files/
 DISTNAME=	dbXML-Core-${PORTVERSION}

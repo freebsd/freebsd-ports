@@ -7,6 +7,7 @@
 
 PORTNAME=	abcmidi
 PORTVERSION=	2004.01.03
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://ifdo.pugmarks.com/~seymour/runabc/
 DISTNAME=	abcMIDI-${PORTVERSION:S/./-/g}

@@ -7,6 +7,7 @@
 
 PORTNAME=	mnemo
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	deskutils www
 MASTER_SITES=	ftp://ftp.horde.org/pub/mnemo/				\
 		ftp://ftp.au.horde.org/pub/horde/mnemo/			\

@@ -7,6 +7,7 @@
 
 PORTNAME=	quasi88
 PORTVERSION=	0.5.4
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.117.ne.jp/~show/pc8801/
 EXTRACT_SUFX=	.tgz

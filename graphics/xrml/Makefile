@@ -7,6 +7,7 @@
 
 PORTNAME=	xrml
 PORTVERSION=	0.5.3
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.cs.kuleuven.ac.be/pub/graphics/software/RenderPark/
 DISTNAME=	${PORTNAME}

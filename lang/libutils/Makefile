@@ -8,7 +8,7 @@
 
 PORTNAME=	libutils
 PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://savannah.gnu.org/download/nsl/ \
 		http://iling.nw.ru/~artem/downloads/ \

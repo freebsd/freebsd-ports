@@ -8,6 +8,7 @@
 
 PORTNAME=	midimountain
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.midimountain.com/download/ \
 		${MASTER_SITE_SOURCEFORGE}

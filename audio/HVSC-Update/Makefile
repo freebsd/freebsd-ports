@@ -7,6 +7,7 @@
 
 PORTNAME=	HVSC-Update
 PORTVERSION=	2.8.2
+PORTREVISION=	1
 CATEGORIES=	audio emulators
 MASTER_SITES=	http://sidplay2.sourceforge.net/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/

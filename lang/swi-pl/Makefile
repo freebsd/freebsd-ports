@@ -7,7 +7,7 @@
 
 PORTNAME=	swi-pl
 PORTVERSION=	5.2.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.swi.psy.uva.nl/pub/SWI-Prolog/
 DISTNAME=	pl-${PORTVERSION}

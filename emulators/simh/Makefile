@@ -7,6 +7,7 @@
 
 PORTNAME=	sim
 PORTVERSION=	3.0.2
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://simh.trailing-edge.com/sources/ \
 		${MASTER_SITE_LOCAL}

@@ -7,6 +7,7 @@
 
 PORTNAME=	gmanedit
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	editors gnome
 MASTER_SITES=	http://gmanedit.sourceforge.net/files/ \
 		${MASTER_SITE_SOURCEFORGE}

@@ -7,6 +7,7 @@
 
 PORTNAME=	cdparanoia
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www008.upp.so-net.ne.jp/kzmi/
 PKGNAMEPREFIX=	xmms-

@@ -7,6 +7,7 @@
 
 PORTNAME=	squeak
 PORTVERSION=	2.7
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/SOR/users/piumarta/squeak/ \
 		ftp://ftp.cs.uni-magdeburg.de/pub/Smalltalk/free/squeak/unix/

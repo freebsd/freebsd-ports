@@ -7,6 +7,7 @@
 
 PORTNAME=	hanmiscutils
 PORTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	korean
 MASTER_SITES=	ftp://ftp.kr.FreeBSD.org/pub/FreeBSD-kr/distfiles/
 

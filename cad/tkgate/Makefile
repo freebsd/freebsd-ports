@@ -7,6 +7,7 @@
 
 PORTNAME=		tkgate
 PORTVERSION=		1.6i
+PORTREVISION=	1
 CATEGORIES=		cad
 MASTER_SITES=		ftp://gadoid.ices.cmu.edu/pub/tkgate/
 EXTRACT_SUFX=		.tgz

@@ -7,6 +7,7 @@
 
 PORTNAME=	Pg
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	ftp://gborg.postgresql.org/pub/pgperl/stable/

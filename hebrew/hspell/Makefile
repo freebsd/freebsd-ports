@@ -7,6 +7,7 @@
 
 PORTNAME=	hspell
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	hebrew
 MASTER_SITES=	http://www.ivrix.org.il/projects/spell-checker/
 

@@ -8,6 +8,7 @@
 
 PORTNAME=	sxm
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.malgil.com/sxm/
 

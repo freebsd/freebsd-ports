@@ -7,7 +7,7 @@
 
 PORTNAME=		gnats
 PORTVERSION=		4.0
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		databases devel
 MASTER_SITES=		http://home.pacific.net.au/~meganandaj/ \
 			http://www.yngve.com/%SUBDIR%/ \

@@ -7,6 +7,7 @@
 
 PORTNAME=	L-Breeder
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://pixie.oum.ox.ac.uk/L-Breeder/
 DISTNAME=	LBreeder

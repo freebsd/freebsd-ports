@@ -7,6 +7,7 @@
 
 PORTNAME=	show
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ugrad.cs.ubc.ca/~i6a2/show/
 

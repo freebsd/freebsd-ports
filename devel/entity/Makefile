@@ -7,6 +7,7 @@
 
 PORTNAME=	entity
 PORTVERSION=	0.7.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.entity.cx/Download/files/all-versions/
 

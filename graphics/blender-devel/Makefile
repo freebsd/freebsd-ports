@@ -6,6 +6,7 @@
 
 PORTNAME=	blender
 PORTVERSION=	2.31a
+PORTREVISION=	1
 CATEGORIES=	graphics games
 MASTER_SITES=	http://download.blender.org/source/
 PKGNAMESUFFIX=	-devel

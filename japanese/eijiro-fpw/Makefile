@@ -7,6 +7,7 @@
 
 PORTNAME=	eijiro-fpw
 PORTVERSION=	1.0b
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/eijiro/
 DISTNAME=	${PORTNAME}${PORTVERSION}-src

@@ -7,6 +7,7 @@
 
 PORTNAME=	glacier
 PORTVERSION=	0.0.2
+PORTREVISION=	1
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://linuxberg.tele.net/files/gnome/network/
 # http://glacier.linuxave.net/

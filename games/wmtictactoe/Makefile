@@ -7,6 +7,7 @@
 
 PORTNAME=	wmtictactoe
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	games windowmaker afterstep
 MASTER_SITES=	http://atlas.ucpel.tche.br/~acamargo/ \
 		${MASTER_SITE_LOCAL}

@@ -7,6 +7,7 @@
 
 PORTNAME=	aileron
 PORTVERSION=	0.1.3
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://ucsu.colorado.edu/~nwanua/Aileron/
 DISTNAME=	Aileron-${PORTVERSION}

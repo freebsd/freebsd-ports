@@ -8,6 +8,7 @@
 
 PORTNAME=	tensile
 PORTVERSION=	0.9
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://savannah.gnu.org/download/nsl/ \

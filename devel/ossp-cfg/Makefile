@@ -9,7 +9,7 @@
 
 PORTNAME=	cfg
 PORTVERSION=	0.9.0
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	0
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/cfg/

@@ -7,6 +7,7 @@
 
 PORTNAME=	clanlib
 PORTVERSION=	0.6.5.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://clanlib.org/~sphair/download/

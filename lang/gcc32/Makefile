@@ -8,6 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	3.2.3
+PORTREVISION=	1
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC} \
 		http://web.inter.NL.net/hcc/Haj.Ten.Brugge/:bc

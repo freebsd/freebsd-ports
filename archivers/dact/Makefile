@@ -8,7 +8,7 @@
 
 PORTNAME=	dact
 PORTVERSION=	0.8.35
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.rkeene.org/files/oss/dact/
 

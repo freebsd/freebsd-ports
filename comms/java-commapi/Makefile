@@ -7,6 +7,7 @@
 
 PORTNAME=	java-commapi
 PORTVERSION=	2.0.3
+PORTREVISION=	1
 CATEGORIES=	comms java
 MASTER_SITES=	#
 DISTNAME=	javax_comm-${PORTVERSION:S/./_/g}-solsparc

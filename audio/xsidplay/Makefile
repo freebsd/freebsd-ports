@@ -7,6 +7,7 @@
 
 PORTNAME=	xsidplay
 PORTVERSION=	1.6.5.1a
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	audio emulators
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Lakes/5147/sidplay/packages/

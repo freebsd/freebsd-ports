@@ -8,6 +8,7 @@
 
 PORTNAME=	ragel
 PORTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.essemage.com/ragel/
 

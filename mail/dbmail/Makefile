@@ -7,6 +7,7 @@
 
 PORTNAME=	dbmail
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dbmail.org/tgz/
 PKGNAMESUFFIX=	-${DATABASE}

@@ -7,6 +7,7 @@
 
 PORTNAME=	xzgv
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://xzgv.browser.org/ \
 		${MASTER_SITE_SUNSITE}

@@ -7,6 +7,7 @@
 
 PORTNAME=	wmtune
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	audio windowmaker
 MASTER_SITES=	http://www.fxp.org/~jedgar/distfiles/:diff \
 		http://www.rostock.igd.fhg.de/private/runge/radio/:wmtune \

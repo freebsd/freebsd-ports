@@ -7,6 +7,7 @@
 
 PORTNAME=	cdoc
 PORTVERSION=	0.9.7
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.annexia.org/freeware/${PORTNAME}/
 

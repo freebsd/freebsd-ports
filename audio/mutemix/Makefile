@@ -7,6 +7,7 @@
 
 PORTNAME=	mutemix
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://stud.fbi.fh-darmstadt.de/~koenig/pub/
 EXTRACT_SUFX=	.py

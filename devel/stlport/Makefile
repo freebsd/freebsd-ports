@@ -8,7 +8,7 @@
 
 PORTNAME=	stlport
 PORTVERSION=	4.5.3
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.stlport.com/archive/
 PKGNAMESUFFIX=	-${COMPILER}

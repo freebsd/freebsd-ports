@@ -8,6 +8,7 @@
 
 PORTNAME=	pcre++
 PORTVERSION=	0.9.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.daemon.de/scip/Apps/pcre++/
 

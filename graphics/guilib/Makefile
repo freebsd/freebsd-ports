@@ -7,6 +7,7 @@
 
 PORTNAME=	guilib
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libsdl.org/projects/GUIlib/src/
 DISTNAME=	GUIlib-${PORTVERSION}

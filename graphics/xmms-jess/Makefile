@@ -7,6 +7,7 @@
 
 PORTNAME=	xmms-jess
 PORTVERSION=	2.9.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://arquier.free.fr/
 DISTNAME=	JESS-${PORTVERSION}

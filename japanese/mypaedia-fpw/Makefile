@@ -7,6 +7,7 @@
 
 PORTNAME=	mypaedia-fpw
 PORTVERSION=	1.4.3
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/mypaedia/
 DISTNAME=	mypaedia-fpw${PORTVERSION}-src

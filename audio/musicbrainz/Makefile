@@ -7,6 +7,7 @@
 
 PORTNAME=	musicbrainz
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	guavac
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	java
 MASTER_SITES=	ftp://ftp.yggdrasil.com/pub/dist/devel/compilers/guavac/
 

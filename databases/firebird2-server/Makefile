@@ -7,6 +7,7 @@
 
 PORTNAME=	firebird
 PORTVERSION=	1.5.r8
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}	\
 		http://www.aims.net.au/chris/firebird/

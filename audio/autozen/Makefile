@@ -7,7 +7,7 @@
 
 PORTNAME=	autozen
 PORTVERSION=	1.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.linuxlabs.com/software/download/
 DISTNAME=	AutoZen-${PORTVERSION}

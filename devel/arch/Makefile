@@ -7,6 +7,7 @@
 
 PORTNAME=	arch
 PORTVERSION=	1.0.p25
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://regexps.srparish.net/src/${PORTNAME}/ \
 		http://arch.quackerhead.com/~lord/releases/${PORTNAME}/

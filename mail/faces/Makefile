@@ -8,7 +8,7 @@
 
 PORTNAME=	faces
 PORTVERSION=	1.7.7
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/faces/faces/
 

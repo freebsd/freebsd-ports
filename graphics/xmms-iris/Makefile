@@ -7,6 +7,7 @@
 
 PORTNAME=	iris
 PORTVERSION=	0.10
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://cdelfosse.free.fr/xmms-iris/
 PKGNAMEPREFIX=	xmms-

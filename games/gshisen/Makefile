@@ -7,6 +7,7 @@
 
 PORTNAME=	gshisen
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	games
 # not up to date:	http://www.gnustep.it/enrico/gshisen/
 MASTER_SITES=	http://www.imago.ro/gshisen/ \

@@ -7,6 +7,7 @@
 
 PORTNAME=	amp
 PORTVERSION=	0.7.6
+PORTREVISION=	1
 CATEGORIES=	audio
 #MASTER_SITES=	ftp://ftp.rasip.fer.hr/pub/mpeg/
 # the author's site seems dead.

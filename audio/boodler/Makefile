@@ -7,6 +7,7 @@
 
 PORTNAME=	boodler
 PORTVERSION=	1.5.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.eblong.com/zarf/boodler/ \
 		http://s89813419.onlinehome.us/

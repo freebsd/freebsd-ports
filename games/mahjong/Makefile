@@ -8,7 +8,7 @@
 
 PORTNAME=	mahjong
 PORTVERSION=	1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games net
 MASTER_SITES=	http://www.stevens-bradfield.com/MahJong/Source/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. OLD

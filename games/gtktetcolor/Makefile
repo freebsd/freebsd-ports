@@ -7,6 +7,7 @@
 
 PORTNAME=	gtktetcolor
 PORTVERSION=	0.6.2
+PORTREVISION=	1
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		ftp://canopus.iacp.dvo.ru/pub/Games/gtktetcolor/

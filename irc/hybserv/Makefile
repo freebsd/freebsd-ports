@@ -7,6 +7,7 @@
 
 PORTNAME=	hybserv
 PORTVERSION=	1.8.0
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://www.srce.hr/~kreator/projects/tarballs/
 

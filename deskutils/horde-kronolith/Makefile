@@ -7,7 +7,7 @@
 
 PORTNAME=	kronolith
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils www
 MASTER_SITES=	ftp://ftp.horde.org/pub/kronolith/			\
 		ftp://ftp.au.horde.org/pub/horde/kronolith/		\

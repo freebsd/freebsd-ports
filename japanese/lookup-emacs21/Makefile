@@ -7,6 +7,7 @@
 
 PORTNAME=	lookup
 PORTVERSION=	1.3
+PORTREVISION=	1
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 CATEGORIES=	japanese elisp
 MASTER_SITES=	http://download.sourceforge.net/lookup/

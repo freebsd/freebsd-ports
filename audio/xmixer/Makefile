@@ -7,6 +7,7 @@
 
 PORTNAME=	xmixer
 PORTVERSION=	0.9.4
+PORTREVISION=	1
 CATEGORIES=	audio
 # Master site seems to be MIA and no replacement could be found
 MASTER_SITES=	#http://www.hdk-berlin.de/~rasca/

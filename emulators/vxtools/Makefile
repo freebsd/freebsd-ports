@@ -7,6 +7,7 @@
 
 PORTNAME=	vxtools
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.penguin.cz/pub/users/mhi/vxfs/
 

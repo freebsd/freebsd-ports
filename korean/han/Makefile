@@ -7,6 +7,7 @@
 
 PORTNAME=	han
 PORTVERSION=	1.0fb
+PORTREVISION=	1
 CATEGORIES=	korean
 MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/
 

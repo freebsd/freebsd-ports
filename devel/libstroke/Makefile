@@ -7,6 +7,7 @@
 
 PORTNAME=	libstroke
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.etla.net/libstroke/
 

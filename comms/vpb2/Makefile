@@ -7,6 +7,7 @@
 
 PORTNAME=	vpb2
 PORTVERSION=	2.0.3
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	ftp://www.voxilla.org/pub/vpb/
 

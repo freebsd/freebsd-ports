@@ -7,6 +7,7 @@
 
 PORTNAME=	volnorm
 PORTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://volnorm.sourceforge.net/
 PKGNAMEPREFIX=	xmms-

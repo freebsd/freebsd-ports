@@ -7,7 +7,7 @@
 
 PORTNAME=	cqcam
 PORTVERSION=	0.91
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.cs.duke.edu/~reynolds/cqcam/
 

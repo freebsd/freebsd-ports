@@ -7,6 +7,7 @@
 
 PORTNAME=	nethack
 PORTVERSION=	1.0.5.19970924
+PORTREVISION=	1
 CATEGORIES=	japanese games
 MASTER_SITES=	ftp://ftp.nethack.org/pub/nethack/nh322/src/ \
 		ftp://ftp.wtower.com/nethack/sources/

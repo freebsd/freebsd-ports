@@ -7,6 +7,7 @@
 
 PORTNAME=	seti
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	astro gnome
 MASTER_SITES=	http://www.webonaut.com/distfiles/
 PKGNAMEPREFIX=	gdesklets-

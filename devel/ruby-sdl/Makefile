@@ -7,6 +7,7 @@
 
 PORTNAME=	sdl
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	devel graphics audio ruby
 MASTER_SITES=	http://www.kmc.gr.jp/~ohai/rubysdl/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

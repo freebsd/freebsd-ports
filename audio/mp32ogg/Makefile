@@ -8,6 +8,7 @@
 
 PORTNAME=	mp32ogg
 PORTVERSION=	0.11
+PORTREVISION=	1
 CATEGORIES=	audio perl5
 MASTER_SITES=	ftp://ftp.faceprint.com/pub/software/scripts/
 EXTRACT_SUFX=	# empty

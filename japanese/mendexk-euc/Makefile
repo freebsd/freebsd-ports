@@ -7,6 +7,7 @@
 
 PORTNAME=	mendexk
 PORTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/mendex/
 PKGNAMESUFFIX=	-${KANJICODE}

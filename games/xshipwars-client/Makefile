@@ -7,6 +7,7 @@
 
 PORTNAME=	xshipwars-client
 PORTVERSION=	1.23
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://fox.mit.edu/pub/xsw/
 DISTFILES=	xsw1.23.tgz stimages1.3.tgz

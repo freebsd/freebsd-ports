@@ -7,6 +7,7 @@
 
 PORTNAME=	linux-gtk
 PORTVERSION=	1.2.6
+PORTREVISION=	1
 CATEGORIES?=	chinese x11-toolkits linux
 MASTER_SITES=	ftp://cle.linux.org.tw/pub/CLE/stable/v0.9p1/i386/RedHat/RPMS/ \
 		ftp://freebsd.sinica.edu.tw/pub/keith/zh-rpm/

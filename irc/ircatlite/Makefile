@@ -7,6 +7,7 @@
 
 PORTNAME=	ircatlite
 PORTVERSION=	2000.03.08
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://www.pp.iij4u.or.jp/~tagami/gtk/
 DISTNAME=	IRcatLite-r20000308

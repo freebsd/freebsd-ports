@@ -7,6 +7,7 @@
 
 PORTNAME=	dmake
 PORTVERSION=	4.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.internat.freebsd.org/pub/FreeBSD/distfiles/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}-src-export.all-unknown-all

@@ -7,6 +7,7 @@
 
 PORTNAME=	libtar
 PORTVERSION=	1.2.11
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp-dev.cso.uiuc.edu/pub/libtar/
 

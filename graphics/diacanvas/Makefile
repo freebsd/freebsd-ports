@@ -7,6 +7,7 @@
 
 PORTNAME=	diacanvas
 PORTVERSION=	0.40.1
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 # mastersite disappeared in December 2000
 MASTER_SITES=	# http://www.linuxstart.com/~arjan/diacanvas/download/

@@ -9,7 +9,7 @@
 
 PORTNAME=	var
 PORTVERSION=	1.0.0
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	0
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/var/

@@ -7,6 +7,7 @@
 
 PORTNAME=	libgrass5
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://gdal.velocet.ca/projects/grass/
 

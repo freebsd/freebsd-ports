@@ -7,7 +7,7 @@
 
 PORTNAME=	logjam2
 PORTVERSION=	4.2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://logjam.danga.com/download/
 DISTNAME=	logjam-${PORTVERSION}

@@ -7,6 +7,7 @@
 
 PORTNAME=	dancer-ircd
 PORTVERSION=	1.0.32
+PORTREVISION=	1
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://freenode.net/ \
 		http://source.freenode.net/~asuffield/dancer/dancer-oper-guide/:doc1 \

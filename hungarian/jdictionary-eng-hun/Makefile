@@ -7,6 +7,7 @@
 
 PORTNAME=	jdictionary-eng-hun
 PORTVERSION=    1.4
+PORTREVISION=	1
 CATEGORIES=	hungarian textproc
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=jdictionary

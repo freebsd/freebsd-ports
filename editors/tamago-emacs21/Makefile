@@ -7,6 +7,7 @@
 
 PORTNAME=	tamago
 PORTVERSION=	4.0.6
+PORTREVISION=	1
 CATEGORIES=	editors elisp
 MASTER_SITES=	ftp://ftp.m17n.org/pub/tamago/ \
 		ftp://ftp.kddlabs.co.jp/Japan/m17n.org/tamago/

@@ -7,7 +7,7 @@
 
 PORTNAME=	scite
 PORTVERSION=	1.58
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.scintilla.org/

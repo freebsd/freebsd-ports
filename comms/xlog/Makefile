@@ -6,6 +6,7 @@
 
 PORTNAME=	xlog
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=   http://people.debian.org/~pa3aba/download/
 

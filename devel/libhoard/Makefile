@@ -7,7 +7,7 @@
 
 PORTNAME=	libhoard
 PORTVERSION=	2.1.2d
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cs.umass.edu/~emery/software/
 

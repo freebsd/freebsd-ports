@@ -7,7 +7,7 @@
 
 PORTNAME=	erserver
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	ftp://gborg.postgresql.org/pub/erserver/stable/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}

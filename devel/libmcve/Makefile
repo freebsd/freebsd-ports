@@ -7,6 +7,7 @@
 
 PORTNAME=	libmcve
 PORTVERSION=	3.2.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.mcve.com/pub/libmcve/
 

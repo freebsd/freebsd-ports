@@ -8,6 +8,7 @@
 
 PORTNAME=	lafontaine
 PORTVERSION=	0.3R3
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.nongnu.org/lafontaine/archives/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-20020715

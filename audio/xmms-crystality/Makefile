@@ -7,7 +7,7 @@
 
 PORTNAME=	crystality
 PORTVERSION=	0.92
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://fanthom.math.put.poznan.pl/~gyver/crystality/
 PKGNAMEPREFIX=	xmms-

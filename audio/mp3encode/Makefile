@@ -7,7 +7,7 @@
 
 PORTNAME=	mp3encode
 PORTVERSION=	1.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.sunet.se/pub/multimedia/Berkeley/mpeg2/conformance-bitstreams/audio/mpeg2/software/technical_report/ \
 		ftp://ftp.isc.org/FreeBSD/ports/distfiles/

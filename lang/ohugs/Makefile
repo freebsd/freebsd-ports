@@ -6,7 +6,7 @@
 
 PORTNAME=	ohugs
 PORTVERSION=	0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.math.chalmers.se/~nordland/ohugs/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src

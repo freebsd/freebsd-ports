@@ -7,6 +7,7 @@
 
 PORTNAME=	hex
 PORTVERSION=	0.0.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.earth.li/projectpurple/files/
 

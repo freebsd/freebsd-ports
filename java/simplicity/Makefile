@@ -7,6 +7,7 @@
 
 PORTNAME=	simplicity
 PORTVERSION=	1.2.6b
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	# http://www.datarepresentations.com/products/simplicity/
 DISTNAME=	simpjava

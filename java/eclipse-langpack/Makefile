@@ -7,7 +7,7 @@
 
 PORTNAME=	eclipse
 PORTVERSION=	2.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	http://download2.eclipse.org/downloads/drops/L-${PORTVERSION}_Translations-200312151300/:langpack
 PKGNAMESUFFIX=	-langpack

@@ -7,6 +7,7 @@
 
 PORTNAME=	pho
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://shallowsky.com/software/pho/
 

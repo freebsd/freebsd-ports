@@ -7,6 +7,7 @@
 
 PORTNAME=	xaric
 PORTVERSION=	0.12.0
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.xaric.org/pub/xaric/
 

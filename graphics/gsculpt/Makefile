@@ -8,7 +8,7 @@
 
 PORTNAME=	gsculpt
 PORTVERSION=	0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://gsculpt.sourceforge.net/downloads/
 DISTNAME=	gSculpt-${PORTVERSION}-src

@@ -7,6 +7,7 @@
 
 PORTNAME=	ispell
 PORTVERSION=	0.99.3
+PORTREVISION=	1
 CATEGORIES=	hungarian textproc
 #MASTER_SITES=	http://www.szofi.hu/gnu/magyarispell/
 MASTER_SITES=	http://magyarispell.sourceforge.net/

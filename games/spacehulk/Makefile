@@ -6,6 +6,7 @@
 
 PORTNAME=	spacehulk
 PORTVERSION=	1.5.b1
+PORTREVISION=	1
 CATEGORIES=	games kde
 MASTER_SITES=	http://r.vinot.free.fr/spacehulk/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b1/-beta1/}

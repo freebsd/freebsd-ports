@@ -7,6 +7,7 @@
 
 PORTNAME=	gdb
 PORTVERSION=	${GDBVERSION}.${PATCHVERSION}
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE} \
 		http://lev.serebryakov.spb.ru/download/msp430/:patches

@@ -7,7 +7,7 @@
 
 PORTNAME=	robot
 PORTVERSION=	4.93.89
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://lheaftp.gsfc.nasa.gov/pub/corbet/robot/
 DISTNAME=	robot-beta

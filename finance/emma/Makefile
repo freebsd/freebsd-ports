@@ -7,6 +7,7 @@
 
 PORTNAME=	emma
 PORTVERSION=	0.8.2
+PORTREVISION=	1
 CATEGORIES=	finance gnome python
 MASTER_SITES=	http://rainbow.mimuw.edu.pl/~la181249/emma/packages/
 

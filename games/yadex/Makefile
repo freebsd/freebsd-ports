@@ -7,6 +7,7 @@
 
 PORTNAME=	yadex
 PORTVERSION=	1.5.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.teaser.fr/~amajorel/yadex/
 

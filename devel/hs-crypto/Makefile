@@ -7,6 +7,7 @@
 
 PORTNAME=	crypto
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.haskell.org/crypto/downloads/
 PKGNAMEPREFIX=	hs-

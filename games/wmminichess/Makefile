@@ -7,6 +7,7 @@
 
 PORTNAME=	wmminichess
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.foobargeek.com/miniCHESS/
 DISTNAME=	miniCHESS-${PORTVERSION}

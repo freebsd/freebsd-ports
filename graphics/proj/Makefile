@@ -6,6 +6,7 @@
 
 PORTNAME=       proj
 PORTVERSION=	4.4.5
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/proj/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${NADFILES}

@@ -7,7 +7,7 @@
 
 PORTNAME=	libtabe
 PORTVERSION=	0.2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://xcin.linux.org.tw/pub/xcin/libtabe/devel/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	wmfortune
 PORTVERSION=	0.241
+PORTREVISION=	1
 CATEGORIES=	games windowmaker afterstep
 MASTER_SITES=	http://www.01.246.ne.jp/~m-sugano/
 

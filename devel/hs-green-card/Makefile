@@ -7,6 +7,7 @@
 
 PORTNAME=	green-card
 PORTVERSION=	2.05
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.galois.com/~sof/
 PKGNAMEPREFIX=	hs-

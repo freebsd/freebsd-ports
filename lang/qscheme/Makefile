@@ -7,6 +7,7 @@
 
 PORTNAME=	qscheme
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.sof.ch/dan/qscheme/files/
 

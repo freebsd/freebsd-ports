@@ -7,6 +7,7 @@
 
 PORTNAME=	externalinterval
 PORTVERSION=	0.1.4
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-sensor-psi_

@@ -7,7 +7,7 @@
 
 PORTNAME=		fam
 PORTVERSION=		2.6.9
-PORTREVISION=		3
+PORTREVISION=		4
 CATEGORIES=		devel
 MASTER_SITES=		ftp://oss.sgi.com/projects/fam/download/
 PATCH_SITES=		ftp://oss.sgi.com/projects/fam/download/patches/

@@ -7,6 +7,7 @@
 
 PORTNAME=	pike
 PORTVERSION=	7.0.361
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.oav.net/pike/7.0/	\
 		ftp://ftp.oav.net/caudium/pkg/FreeBSD/distfiles/ \

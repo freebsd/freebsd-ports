@@ -7,7 +7,7 @@
 
 PORTNAME=	magic
 PORTVERSION=	7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 MASTER_SITES=	http://vlsi.cornell.edu/magic/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	tla
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://regexps.srparish.net/src/${PORTNAME}/ \
 		http://arch.quackerhead.com/~lord/releases/${PORTNAME}/

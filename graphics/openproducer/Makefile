@@ -7,6 +7,7 @@
 
 PORTNAME=	openproducer
 PORTVERSION=	0.8.4.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.andesengineering.com/Producer/Download/
 DISTNAME=	Producer-${PORTVERSION:R}-${PORTVERSION:E}

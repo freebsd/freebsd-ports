@@ -8,7 +8,7 @@
 
 PORTNAME=	mp3stat
 PORTVERSION=	2.5.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.cronyx.ru/pub/FreeBSD/ports/distfiles/
 DISTNAME=	${PORTNAME}_${PORTVERSION}

@@ -7,6 +7,7 @@
 
 PORTNAME=	xmms-infinity
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://julien.carme.free.fr/
 DISTNAME=	infinity-${PORTVERSION}

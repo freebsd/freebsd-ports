@@ -7,6 +7,7 @@
 
 PORTNAME=	zoom
 PORTVERSION=	1.0.1a
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.logicalshift.demon.co.uk/unix/${PORTNAME}/
 DISTFILES=	${DISTFILE_SRC} ${DISTFILE_PATCH}

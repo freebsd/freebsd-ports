@@ -7,6 +7,7 @@
 
 PORTNAME=	dylan
 PORTVERSION=	2.3.11
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://ftp.gwydiondylan.org/downloads/src/tar/         \
 		ftp://ftp.gwydiondylan.org/pub/gd/src/                 \

@@ -7,6 +7,7 @@
 
 PORTNAME=	skk
 PORTVERSION=	9.6
+PORTREVISION=	1
 CATEGORIES=	japanese elisp
 MASTER_SITES=	# empty
 DISTFILES=	# empty

@@ -7,6 +7,7 @@
 
 PORTNAME=	varkon
 PORTVERSION=	1.17D
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://www.tech.oru.se/cad/varkon/pub/linux/:sources \
 		http://www.tech.oru.se/cad/varkon/:docs

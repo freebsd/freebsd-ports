@@ -7,6 +7,7 @@
 
 PORTNAME=	glui
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	devel graphics
 MASTER_SITES=	http://www.cs.unc.edu/~rademach/glui/src/release/
 DISTNAME=	glui_v2_1_beta

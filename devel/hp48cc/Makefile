@@ -7,6 +7,7 @@
 
 PORTNAME=	hp48cc
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	http://www.sigala.it/sandro/files/
 

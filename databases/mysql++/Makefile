@@ -7,7 +7,7 @@
 
 PORTNAME=	mysql++
 PORTVERSION=	1.7.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases devel
 MASTER_SITES=	ftp://ftp.free.fr/pub/MySQL/Downloads/mysql++/ \
 		ftp://gd.tuwien.ac.at/db/mysql/Downloads/mysql++/ \

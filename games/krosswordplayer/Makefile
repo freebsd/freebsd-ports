@@ -6,6 +6,7 @@
 
 PORTNAME=	KrossWordPlayer
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://home.houston.rr.com/epasveer/
 EXTRACT_SUFX=	.tgz

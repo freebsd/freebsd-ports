@@ -8,6 +8,7 @@
 
 PORTNAME=	styx
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.speculate.de/styx/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	staticcharge
 PORTVERSION=	0.7.3
+PORTREVISION=	1
 CATEGORIES=	dns misc
 MASTER_SITES=	http://www.staticcling.org/clients/
 DISTNAME=	ChargeGTK-${PORTVERSION}

@@ -7,7 +7,7 @@
 
 PORTNAME=	BitchX
 PORTVERSION=	1.0c16
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	korean irc
 MASTER_SITES=	ftp://ftp.holywar.net/pub/FreeBSD/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	artemis
 PORTVERSION=	4.0
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://www.sanger.ac.uk/Software/Artemis/v4/
 DISTNAME=	artemis_compiled_v4

@@ -7,6 +7,7 @@
 
 PORTNAME=	gview
 PORTVERSION=	0.1.15
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://homepages.petech.ac.za/~bruces/
 

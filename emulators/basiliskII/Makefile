@@ -7,6 +7,7 @@
 
 PORTNAME=	basiliskII
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 	      	http://iphcip1.physik.uni-mainz.de/~cbauer/

@@ -7,6 +7,7 @@
 
 PORTNAME?=	xmame
 PORTVERSION?=	0.78.1
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/:xmame \
 		http://www.sys2064.com/files/util/:history \

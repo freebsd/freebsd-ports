@@ -7,7 +7,7 @@
 
 # This port does not work with another version of master port.
 #PORTVERSION=	2.3.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese x11-toolkits
 
 MASTERDIR=	${.CURDIR}/../../x11-toolkits/qt23

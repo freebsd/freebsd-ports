@@ -7,6 +7,7 @@
 
 PORTNAME=	epstool
 PORTVERSION=	3.04
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/ghostgum/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	cxref
 PORTVERSION=	1.5e
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		ftp://ftp.demon.co.uk/pub/unix/tools/

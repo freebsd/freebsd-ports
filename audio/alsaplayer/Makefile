@@ -7,7 +7,7 @@
 
 PORTNAME=	alsaplayer
 PORTVERSION=	0.99.75
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.alsa-project.org/pub/people/andy/ \
 		http://www.alsaplayer.org/

@@ -7,6 +7,7 @@
 
 PORTNAME=	defendguin
 PORTVERSION=	0.0.10
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.nbswebfx.com/downloads/
 

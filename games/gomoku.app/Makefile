@@ -7,7 +7,7 @@
 
 PORTNAME=	gomoku.app
 PORTVERSION=	1.2.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.gnustep.it/nicola/Applications/Gomoku/
 DISTNAME=	Gomoku-${PORTVERSION}

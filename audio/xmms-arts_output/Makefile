@@ -8,6 +8,7 @@
 PKGNAMEPREFIX=	xmms-
 PORTNAME=	arts_output
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://havardk.xmms.org/plugins/arts_output/
 

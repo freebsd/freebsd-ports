@@ -7,6 +7,7 @@
 
 PORTNAME=	jyuroku
 PORTVERSION=	1.32
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://member.nifty.ne.jp/seto-yoneji/
 DISTNAME=	${PORTNAME}-${PORTVERSION}

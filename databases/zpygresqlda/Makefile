@@ -7,7 +7,7 @@
 
 PORTNAME=	zpygresqlda
 PORTVERSION=	0.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases www zope
 MASTER_SITES=	http://www.zope.org/Members/reedstrm/ZPyGreSQLDA-rjr/
 DISTNAME=	ZPyGreSQLDA-0.3-rjr2

@@ -6,6 +6,7 @@
 
 PORTNAME=	xmms-midi
 PORTVERSION=	0.03
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://ban.joh.cam.ac.uk/~cr212/xmms-midi/
 

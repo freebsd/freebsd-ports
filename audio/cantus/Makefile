@@ -7,6 +7,7 @@
 
 PORTNAME=	cantus
 PORTVERSION=	1.07
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://sam.homeunix.com/software.manicsadness.com-step4/releases/cantus/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1

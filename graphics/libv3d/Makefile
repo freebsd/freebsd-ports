@@ -8,6 +8,7 @@
 
 PORTNAME=	libv3d
 PORTVERSION=	0.1.14
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://wolfpack.twu.net/users/wolfpack/
 EXTRACT_SUFX=	.tgz

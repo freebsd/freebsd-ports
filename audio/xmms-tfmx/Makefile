@@ -7,6 +7,7 @@
 
 PORTNAME=	xmms-tfmx
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.nuug.no/pub/anders/distfiles/ \
 		http://atreides.freenix.no/~anders/

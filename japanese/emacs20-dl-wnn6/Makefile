@@ -7,7 +7,7 @@
 
 PORTNAME=	emacs20-dl-wnn6
 PORTVERSION=	0.3.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese editors
 MASTER_SITES=	http://tokuda-www.cs.titech.ac.jp/~katsuya/emacs/
 DISTNAME=	dl-wnn-${PORTVERSION}

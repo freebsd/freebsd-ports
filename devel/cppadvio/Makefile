@@ -7,6 +7,7 @@
 
 PORTNAME=	cppadvio
 PORTVERSION=	2.6
+PORTREVISION=	1
 CATEGORIES=	devel net
 MASTER_SITES=	http://okmij.org/ftp/packages/ \
 		${MASTER_SITE_LOCAL}

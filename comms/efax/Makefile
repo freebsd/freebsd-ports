@@ -7,6 +7,7 @@
 
 PORTNAME=	efax-0.9a
 PORTVERSION=	001114a7
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://shino.pos.to/linux/
 

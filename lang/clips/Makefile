@@ -7,6 +7,7 @@
 
 PORTNAME=	clips
 PORTVERSION=	6.1
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.ghgcorp.com/clips/download/other/
 DISTNAME=	clips6

@@ -7,7 +7,7 @@
 
 PORTNAME=	emboss
 PORTVERSION=	2.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.uk.embnet.org/pub/EMBOSS/old/ \
 		ftp://ftp.es.embnet.org/pub/software/emboss/EMBOSS/old \

@@ -6,6 +6,7 @@
 
 PORTNAME=	mpatrol
 PORTVERSION=	1.4.8
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cbmamiga.demon.co.uk/mpatrol/files/
 DISTNAME=	${PORTNAME}_${PORTVERSION}

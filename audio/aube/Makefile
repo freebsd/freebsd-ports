@@ -7,6 +7,7 @@
 
 PORTNAME=	aube
 PORTVERSION=	0.30.2
+PORTREVISION=	1
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://www.metadecks.org/software/aube/download/
 
