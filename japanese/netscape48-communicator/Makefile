@@ -18,7 +18,7 @@ MAINTAINER?=	sada@FreeBSD.org
 RUN_DEPENDS?=	${PREFIX}/bin/${BROWSER_ARC}-${BROWSER_VERSION}:${PORTSDIR}/www/netscape${BROWSER_VER}-${BROWSER}
 RUN_DEPENDS+=	${PKG_DBDIR}/ja-netscape-fonts-1.0:${PORTSDIR}/japanese/netscape-fonts
 
-.if (${PORTVERSION} == "4.76")
+.if (!defined(BROWSER_VERSION) || ${PORTVERSION} == "4.76")
 BROKEN=		"has a serious security hole, use 4.77 instead"
 .endif
 

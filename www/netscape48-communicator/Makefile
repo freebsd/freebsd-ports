@@ -15,7 +15,7 @@ MAINTAINER?=	sada@FreeBSD.org
 
 RUN_DEPENDS+=	netscape:${PORTSDIR}/www/netscape-wrapper
 
-.if (${PORTVERSION} == "4.76")
+.if (!defined(BROWSER_VER) || ${PORTVERSION} == "4.76")
 BROKEN=		"Has a serious security hole, use 4.77 instead"
 .endif
 
