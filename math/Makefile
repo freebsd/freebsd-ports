@@ -36,6 +36,7 @@
     SUBDIR += fftw
     SUBDIR += freefem
     SUBDIR += fudgit
+    SUBDIR += fung-calc
     SUBDIR += fxt
     SUBDIR += gambit
     SUBDIR += gap
