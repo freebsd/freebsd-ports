@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	lynx
-PORTVERSION=	2.8.4d16
-CATEGORIES=	www ipv6
+PORTVERSION=    2.8.4d19
+CATEGORIES=     www ipv6
 MASTER_SITES=	http://lynx.isc.org/current/
-DISTNAME=	${PORTNAME}2.8.4dev.16
+DISTNAME=       ${PORTNAME}2.8.4dev.19
 
 MAINTAINER=	ache@FreeBSD.org
 
@@ -26,9 +26,9 @@ CONFIGURE_ARGS=	--with-screen=ncurses --with-zlib --libdir="${L_LIB}" \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 400014
-CONFIGURE_ARGS+=--enable-ipv6
+CONFIGURE_ARGS+= --enable-ipv6
 .else
-CONFIGURE_ARGS+=--disable-ipv6
+CONFIGURE_ARGS+= --disable-ipv6
 .endif
 CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" LDFLAGS=-L${LOCALBASE}/lib
 MAKE_FLAGS=	helpdir=${L_HELP} docdir=${L_DOC} -f
