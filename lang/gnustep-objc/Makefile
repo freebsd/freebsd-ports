@@ -17,6 +17,9 @@ MASTERDIR?=	${.CURDIR}/../../lang/gcc32
 INSTALLS_SHLIB=		yes
 LDCONFIG_DIRS=		%%PREFIX%%/lib ${TARGLIB}
 
+# does not build on:
+NOT_FOR_ARCHS=		amd64
+
 .if exists(${.CURDIR}/Makefile.local)
 .include "${.CURDIR}/Makefile.local"
 .endif
