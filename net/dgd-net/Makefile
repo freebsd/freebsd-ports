@@ -15,6 +15,8 @@ DISTFILES=	dgd-1.1p8.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dworkin's Generic Driver + extra networking support + regexps
 
+BROKEN=		"Unfetchable"
+
 NO_CDROM=	"no distribution to corporate environment"
 RESTRICTED=	"license required for commercial use"
 

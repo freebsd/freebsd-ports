@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-snapshot-2004-06-06_23-40
 MAINTAINER=	nox@jelal.kn-bremen.de
 COMMENT=	QEMU CPU Emulator
 
+BROKEN=		"Unfetchable"
+
 BUILD_DEPENDS+=	texi2html:${PORTSDIR}/textproc/texi2html
 
 HAS_CONFIGURE=	yes
