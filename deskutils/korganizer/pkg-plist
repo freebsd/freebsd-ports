@@ -1,5 +1,6 @@
 bin/korganizer
 bin/alarmd
+share/config/korganizerrc
 share/doc/HTML/en/korganizer/korganizer.html
 share/doc/HTML/en/korganizer/korganizer-1.html
 share/doc/HTML/en/korganizer/korganizer-2.html
@@ -57,6 +58,14 @@ share/apps/korganizer/toolbar/search.xpm
 share/apps/korganizer/toolbar/checkedclipboard.xpm
 share/apps/korganizer/toolbar/send.xpm
 share/apps/korganizer/toolbar/findf.xpm
+share/apps/korganizer/toolbar/todolist.xpm
+share/apps/korganizer/holiday_poland
+share/apps/korganizer/holiday_catalan
+share/apps/korganizer/sounds/alert.wav
+share/apps/korganizer/sounds/icemag.wav
+share/apps/korganizer/sounds/lightmag.wav
+share/apps/korganizer/sounds/onscreen.wav
+share/apps/korganizer/sounds/spinout.wav
 share/apps/korganizer/ical2vcal
 share/apps/korganizer/holiday_dutch
 share/apps/korganizer/holiday_japan
@@ -82,16 +91,19 @@ share/apps/korganizer/holiday_portugal
 share/apps/korganizer/holiday_thailand
 share/apps/korganizer/holiday_czechia
 share/apps/korganizer/holiday_iceland
-share/locale/de/LC_MESSAGES/korganizer.mo
-share/locale/fr/LC_MESSAGES/korganizer.mo
 share/locale/cs/LC_MESSAGES/korganizer.mo
-share/locale/es/LC_MESSAGES/korganizer.mo
 share/locale/da/LC_MESSAGES/korganizer.mo
+share/locale/de/LC_MESSAGES/korganizer.mo
+share/locale/es/LC_MESSAGES/korganizer.mo
+share/locale/fi/LC_MESSAGES/korganizer.mo
+share/locale/fr/LC_MESSAGES/korganizer.mo
+share/locale/is/LC_MESSAGES/korganizer.mo
+share/locale/ja/LC_MESSAGES/korganizer.mo
 share/locale/no/LC_MESSAGES/korganizer.mo
 share/locale/pl/LC_MESSAGES/korganizer.mo
-share/locale/fi/LC_MESSAGES/korganizer.mo
-share/locale/is/LC_MESSAGES/korganizer.mo
+share/locale/pt_BR/LC_MESSAGES/korganizer.mo
 share/icons/korganizer.xpm
+share/icons/large/korganizer.xpm
 share/icons/mini/alarmd.xpm
 share/icons/mini/alarmd-disabled.xpm
 share/icons/mini/korganizer.xpm
@@ -100,5 +112,6 @@ share/applnk/Applications/korganizer.kdelnk
 @dirrm share/apps/korganizer/pics
 @dirrm share/apps/korganizer/toolbar
 @dirrm share/doc/HTML/en/korganizer
-@unexec if [ -d %D/share/apps/korganizer/sounds ]; then rmdir %D/share/apps/korganizer/sounds; fi
+@dirrm share/apps/korganizer/sounds
 @dirrm share/apps/korganizer
+@unexec rmdir share/config > /dev/null 2>&1 || true
