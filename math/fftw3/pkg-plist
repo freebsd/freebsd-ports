@@ -1,8 +1,14 @@
 bin/fftw-wisdom
 bin/fftw-wisdom-to-conf
+bin/fftwf-wisdom
 include/fftw3.f
 include/fftw3.h
 lib/libfftw3.a
 lib/libfftw3.so
 lib/libfftw3.so.3
+lib/libfftw3f.a
+lib/libfftw3f.la
+lib/libfftw3f.so
+lib/libfftw3f.so.3
 libdata/pkgconfig/fftw3.pc
+libdata/pkgconfig/fftw3f.pc
