@@ -108,6 +108,7 @@
     SUBDIR += horde2
     SUBDIR += hotjava
     SUBDIR += htdump
+    SUBDIR += html2hdml
     SUBDIR += html2wml
     SUBDIR += htmlobject
     SUBDIR += htmlpp
