@@ -28,9 +28,7 @@ MANLANG=	ja
 MAN1=		xemacs-ja.1
 DESCR=		${.CURDIR}/../xemacs${XEMACS_MAJOR_VER}-canna/pkg/DESCR
 
-.include	<bsd.port.pre.mk>
-
-XEMACS_MAJOR_VER?=	${.CURDIR:S!^${PORTSDIR}/japanese/xemacs!!:S!-canna$!!}
+XEMACS_MAJOR_VER?=	21
 LANGPREFIX=		ja-
 DESCR_TMPL=		${.CURDIR}/../xemacs${XEMACS_MAJOR_VER}-canna/files/DESCR.tmpl
 .if defined(CANNA) && defined(WNN4)
