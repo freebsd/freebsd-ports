@@ -1,0 +1,50 @@
+--- Makefile.orig	Sun Mar  5 11:18:06 2000
++++ Makefile	Sun Mar  5 11:29:57 2000
+@@ -1,6 +1,9 @@
+ # Compiler, flags, etc...
+-CC = gcc
+-CFLAGS = -ansi -pedantic -Wall -O3 #-DDEBUG2 -DDEBUG1
++#CC = gcc
++#CFLAGS = -ansi -pedantic -Wall -O3 #-DDEBUG2 -DDEBUG1
++CFLAGS+= -DETCDIR=\"$(PREFIX)/etc/\"
++
++all: bsd
+ 
+ # platform dependant stuff has the appropriate suffix :)
+ OBJ1 = read_conf.o usage.o unp_error.o encode.o unp_sock_wrappers.o \
+@@ -24,23 +27,23 @@
+ linux_funcs.o get_ut_proc.o get_ut_bsd.o : yaunc.h my_hdrs.h 
+ 
+ # housekeeping
+-.PHONY : clean distclean install uninstall package backup
+-clean : 
+-	rm -f *.o core
+-distclean : clean
+-	rm -f yaunc
++#.PHONY : clean distclean install uninstall package backup
++#clean : 
++#	rm -f *.o core
++#distclean : clean
++#	rm -f yaunc
+ 	
+ install :
+-	cp yaunc /usr/local/bin ; \
+-	cp yaunc.1 /usr/local/man/man1 ; \
+-	cp yaunc.conf /etc/
++	${INSTALL_PROGRAM} yaunc $(PREFIX)/bin
++	${INSTALL_MAN} yaunc.1 $(PREFIX)/man/man1
++	${INSTALL_DATA} yaunc.conf $(PREFIX)/etc
+ 
+ uninstall : 
+ 	rm /usr/local/bin/yaunc ; \
+ 	rm /usr/local/man/man1/yaunc.1 ; \
+ 	rm /etc/yaunc.conf
+ 
+-package : distclean
+-	cd .. ; tar -cf - yaunc | gzip -9 > yaunc-`cat yaunc/VERSION`.tar.gz
+-backup : distclean
+-	cp -a . ../src_backup
++#package : distclean
++#	cd .. ; tar -cf - yaunc | gzip -9 > yaunc-`cat yaunc/VERSION`.tar.gz
++#backup : distclean
++#	cp -a . ../src_backup

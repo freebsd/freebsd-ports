@@ -1,0 +1,11 @@
+--- main.c.orig	Sun Mar  5 11:26:38 2000
++++ main.c	Sun Mar  5 11:26:57 2000
+@@ -13,7 +13,7 @@
+ 	struct utsname sys_info;
+ 	struct info info;
+ 	time_t uptime;
+-	char * path = "/etc/yaunc.conf";
++	char * path = ETCDIR"yaunc.conf";
+ 	char * data_ptr;
+ 
+ 	/* read data from the conf file */
