@@ -1,16 +1,16 @@
 # ex:ts=8
 # Ports collection makefile for:  trinokiller
-# Version required:		  1.0
 # Date created:			  Sun Feb 12, 2000
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	trinokiller
-PKGNAME=	trinokiller-1.0
+PORTNAME=	trinokiller
+PORTVERSION= 	1.0
 CATEGORIES=	security
 MASTER_SITES=	http://www.afro-productions.com/
+DISTNAME=	trinokiller
 EXTRACT_SUFX=	.c
 
 MAINTAINER=     obrien@FreeBSD.org

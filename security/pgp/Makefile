@@ -1,7 +1,4 @@
 # New ports collection makefile for: pgp
-# Version required:     MIT 2.6.2 / International 2.6.3ia
-# International PGP homepage is http://www.ifi.uio.no/pgp/
-#
 # Date created:         8 Jul 1995
 # Whom:                 ache
 #
@@ -45,10 +42,12 @@ pre-fetch:
 	@${FALSE}
 .elif defined(USA_RESIDENT)
 .if ${USA_RESIDENT} == YES
-DISTNAME=       pgp262s
-PKGNAME=	pgp-2.6.2
+PORTNAME=	pgp
+PORTVERSION=	2.6.2
 MASTER_SITES=   ftp://utopia.hacktic.nl/pub/replay/pub/pgp/unix/ \
 		ftp://sable.ox.ac.uk/pub/crypto/pgp/unix/
+DISTNAME=	pgp262s
+
 WRKSRC=         ${WRKDIR}/src
 BUILD_DEPENDS+= gmake:${PORTSDIR}/devel/gmake
 LIB_DEPENDS+=   rsaref.2:${PORTSDIR}/security/rsaref
@@ -62,10 +61,12 @@ post-extract:
 	cd ${WRKDIR}; ${RM} -f *.zip
 
 .else
-DISTNAME=       pgp263is
-PKGNAME=        pgp-2.6.3ia
+PORTNAME=	pgp	
+PORTVERSION=	2.6.3ia
 MASTER_SITES=   ftp://ftp.ifi.uio.no/pub/pgp/2.x/src/ \
 		ftp://ftp.kiarchive.ru/pub/unix/crypto/pgp/
+DISTNAME=	pgp263is
+
 WRKSRC=         ${WRKDIR}/src
 FILESDIR=       ${.CURDIR}/files.non_usa
 PATCHDIR=       ${.CURDIR}/patches.non_usa

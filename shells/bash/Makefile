@@ -1,12 +1,12 @@
 # New ports collection makefile for:	bash
-# Version required:     2.*
 # Date created:		21 August 1994
 # Whom:			jkh
 #
 # $FreeBSD$
 #
 
-DISTNAME=       bash-2.03
+PORTNAME=	bash
+PORTVERSION= 	2.03
 CATEGORIES=	shells
 MASTER_SITES=   ${MASTER_SITE_GNU} \
 		ftp://ftp.cwru.edu/pub/bash/

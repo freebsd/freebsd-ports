@@ -1,12 +1,12 @@
 # New ports collection makefile for:	cyrus-sasl
-# Version required:			1.5.13
 # Date created:				Nov 1 1999
 # Whom:					hetzels@westbend.net
 #
 # $FreeBSD$
 #
 
-DISTNAME=	cyrus-sasl-${SASL_VER}
+PORTNAME=	cyrus-sasl
+PORTVERSION=	1.5.15	
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		http://people.FreeBSD.org/~stb/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/ \
@@ -18,7 +18,7 @@ USE_OPENSSL=	NORSA
 
 .include <bsd.port.pre.mk>
 
-SASL_VER=	1.5.15
+SASL_VER=	${PORTVERSION} #note, may not be needed any more	
 
 Y2K=		http://asg.web.cmu.edu/cyrus/imapd/y2k.html
 

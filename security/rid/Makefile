@@ -1,17 +1,17 @@
 # ex:ts=8
 # Ports collection makefile for:  ddos_scan
-# Version required: 0.0
 # Date created:			  Sun Feb 12, 2000
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	rid-1_0
-PKGNAME=	rid-1.0
+PORTNAME=	rid
+PORTVERSION= 	1.0
 CATEGORIES=	security
 MASTER_SITES=	http://packetstorm.securify.com/distributed/  \
 		ftp://ftp.ntua.gr/pub/security/technotronic/denial/
+DISTNAME=	${PORTNAME}-1_0
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	obrien@FreeBSD.org

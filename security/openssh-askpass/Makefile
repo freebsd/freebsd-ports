@@ -1,16 +1,16 @@
 # New ports collection makefile for:	OpenSSH-askpass
-# Version required:	1.2.2
 # Date created:		27 February 2000
 # Whom:			Kris Kennaway <kris@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	X11/xc/programs/ssh-askpass
-PKGNAME=	OpenSSH-askpass-1.2.2
+PORTNAME=	OpenSSH-askpass
+PORTVERSION=	1.2.2
 CATEGORIES=	security
 # ${MASTER_SITES} is only for if CVS won't work, period.
 MASTER_SITES=	http://people.FreeBSD.org/~kris/distfiles/
+DISTNAME=	X11/xc/programs/ssh-askpass
 
 MAINTAINER=	kris@FreeBSD.org
 

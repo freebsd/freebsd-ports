@@ -1,16 +1,16 @@
 # New ports collection makefile for:	ident2
-# Version required:			1.0
 # Date created:				30 Nov 1999
 # Whom:					rod@zort.on.ca
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ident2-v1.0_FINAL
-PKGNAME=	ident2-1.0
+PORTNAME=	ident2
+PORTVERSION=	1.0
 CATEGORIES=	security net
 MASTER_SITES=	http://www.nyct.net/~defile/programs/ident2/ \
 		http://www.oscentral.org/files/software/
+DISTNAME=	ident2-v1.0_FINAL
 
 MAINTAINER=    rod@zort.on.ca
 

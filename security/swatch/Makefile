@@ -1,13 +1,13 @@
 # New ports collection makefile for:		swatch
-# Version required:    				2.2
 # Date created:					May 2 97
 # Whom:						jfitz
 #
 # $FreeBSD$
 #
 
-DISTNAME=      	swatch-2.2
-CATEGORIES=	security sysutils 
+PORTNAME=	swatch
+PORTVERSION= 	2.2
+CATEGORIES=	security sysutils
 MASTER_SITES=	ftp://ftp.stanford.edu/general/security-tools/swatch/ \
 		ftp://ftp.cert.dfn.de/pub/tools/audit/swatch/
 

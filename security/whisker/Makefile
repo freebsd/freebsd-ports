@@ -1,14 +1,15 @@
 # New ports collection makefile for:	whisker
-# Version required:	1.3
 # Date created:		7 Jan 2000
 # Whom:			kris@FreeBSD.ORG
 #
 # $FreeBSD$
+#
 
-DISTNAME=	whisker
-PKGNAME=	whisker-1.3
+PORTNAME=	whisker
+PORTVERSION= 	1.3
 CATEGORIES=	security
 MASTER_SITES=	http://www.wiretrip.net/rfp/bins/whisker/
+DISTNAME=	${PORTNAME}
 
 MAINTAINER=	kris@FreeBSD.ORG
 

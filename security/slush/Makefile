@@ -1,12 +1,12 @@
 # Ports collection makefile for:  slush
-# Version required:     	  0.1.0
 # Date created:			  Sun May 3, 1999
 # Whom:                 	shipley@dis.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	slush-0.1.1
+PORTNAME=	slush
+PORTVERSION= 	0.1.1
 CATEGORIES=	security net
 MASTER_SITES=	http://violet.ibs.com.au/slush/files/ \
 		ftp://www.dis.org/pub/Security/

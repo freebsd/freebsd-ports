@@ -1,12 +1,12 @@
 # New ports collection makefile for:	pgpgpg
-# Version required:			0.13
 # Date created:				16 December 1999
 # Whom:					Matt Behrens <matt@zigg.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	pgpgpg-0.13
+PORTNAME=	pgpgpg
+PORTVERSION=	0.13
 CATEGORIES=	security
 MASTER_SITES=	http://www.nessie.de/mroth/pgpgpg/ \
 		ftp://ftp.gnupg.org/pub/gcrypt/pgpgpg/

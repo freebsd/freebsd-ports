@@ -1,16 +1,16 @@
 # New ports collection makefile for:	p5-PGP
-# Version required:			0.3a
 # Date created:				October 21st 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	PGP-0.3a
-PKGNAME=	p5-PGP-0.3a
+PORTNAME=	p5-PGP
+PORTVERSION= 	0.3a
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	PGP
+DISTNAME=	PGP-0.3a
 
 MAINTAINER=	jfitz@FreeBSD.org
 

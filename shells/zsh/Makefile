@@ -1,12 +1,12 @@
 # New ports collection makefile for:	zsh
-# Version required:     	3.0.7
 # Date created:			11 Feb. 1995
 # Whom:				torstenb
 #
 # $FreeBSD$
 #
 
-DISTNAME=       zsh-3.0.7
+PORTNAME=	zsh
+PORTVERSION= 	3.0.7
 CATEGORIES=	shells
 MASTER_SITES=	ftp://ftp.sterling.com/zsh/ \
 		ftp://ftp.rge.com/pub/shells/zsh/ \

@@ -1,15 +1,15 @@
 # New ports collection makefile for:  slush
-# Version required:	0.1.0
 # Date created:		Sun May 3, 1999
 # Whom:			shipley@dis.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	firewalk-0.99beta
-PKGNAME=	firewalk-0.9.9b
+PORTNAME=	firewalk
+PORTVERSION= 	0.9.9b
 CATEGORIES=	security net
 MASTER_SITES=	http://www.packetfactory.net/firewalk/
+DISTNAME=	firewalk-0.99beta
 
 MAINTAINER=	shipley@dis.org
 

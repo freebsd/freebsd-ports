@@ -1,16 +1,16 @@
 # New ports collection makefile for:   portscanner
-# Version required:    1.0
 # Date created:        11 August 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	PortScanner-1.0
-PKGNAME=	portscanner-1.0
+PORTNAME=	portscanner
+PORTVERSION= 	1.0
 CATEGORIES=	security net
 MASTER_SITES=	http://www.ameth.org/~veilleux/ \
 		http://people.FreeBSD.org/~billf/
+DISTNAME=	PortScanner-1.0
 
 MAINTAINER=	billf@FreeBSD.org
 

@@ -1,17 +1,17 @@
 # New ports collection makefile for:	SAINT
-# Version required:	2.0.beta2
 # Date created:		27 Jan 2000
 # Whom:			Carl Johan Madestrand <calle.madestrand@norrgarden.se>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	saint-2.0.beta2
-PKGNAME=	saint-2.0
+PORTNAME=	saint
+PORTVERSION=	2.0
 CATEGORIES=	security
 MASTER_SITES=	http://www.wwdsi.com/saint/downloads/	\
 		ftp://ukug.uk.freebsd.org/pub/lord_cj/	\
 		ftp://ftp.wwdsi.com/pub/saint/
+DISTNAME=	${PKGNAME}.beta2
 
 MAINTAINER=	calle.madestrand@norrgarden.se
 

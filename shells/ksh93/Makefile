@@ -1,17 +1,17 @@
 # New ports collection makefile for:	ksh93
-# Version required:	98
 # Date created:		1999-10-24
 # Whom:			Christian Weisgerber <naddy@mips.rhein-neckar.de>
 #
 # $FreeBSD$
 #
-
 # ast-base-99 is linked dynamically for BSD/OS and will not work
-DISTNAME=		ast-base-98.bsd.i386
-PKGNAME=		ksh-19931228
+
+PORTNAME=		ksh
+PORTVERSION=		19931228
 CATEGORIES=     	shells
 # Users must register with AT&T before downloading tarball.
 #MASTER_SITES=		http://www.research.att.com/sw/tools/reuse/
+DISTNAME=		ast-base-98.bsd.i386
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		naddy@mips.rhein-neckar.de

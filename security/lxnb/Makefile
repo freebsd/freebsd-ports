@@ -1,14 +1,15 @@
 # New ports collection makefile for:	lxnb
-# Version required:	0.4
 # Date created:		04 March 2000
 # Whom:			Kris Kennaway <kris@FreeBSD.org>
 #
 # $FreeBSD$
+#
 
-DISTNAME=	linux-netbus-client-v0.4
-PKGNAME=	lxnb-0.4
+PORTNAME=	lxnb
+PORTVERSION=	0.4
 CATEGORIES=	security
 MASTER_SITES=	http://ns2.crw.se/~tm/projects/lxnb/
+DISTNAME=	linux-netbus-client-v0.4
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	kris@FreeBSD.org

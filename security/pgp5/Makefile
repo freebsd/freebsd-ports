@@ -1,18 +1,16 @@
 # New ports collection makefile for: pgp5
-# Version required:     International PGP 5.0
-# International PGP homepage is http://www.ifi.uio.no/pgp/
-#
 # Date created:         10 Feb 1998
 # Whom:                 markm
 #
 # $FreeBSD$
 #
 
-DISTNAME=	pgp50i
-PKGNAME=	pgp-5.0i
+PORTNAME=	pgp
+PORTVERSION=	5.0i
 CATEGORIES=	security
 MASTER_SITES=   ftp://ftp.ifi.uio.no/pub/pgp/5.0/unix/ \
 		ftp://ftp.doc.ic.ac.uk/pub/Mirrors/ftp.ifi.uio.no/pub/pgp/5.0/unix/
+DISTNAME=	pgp50i
 EXTRACT_SUFX=   -unix-src.tar.gz
 
 MAINTAINER=	markm@FreeBSD.org
