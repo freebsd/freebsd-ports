@@ -7,7 +7,7 @@
 
 PORTNAME=	cvstrac
 PORTVERSION=	1.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.cvstrac.org/cvstrac/
 
