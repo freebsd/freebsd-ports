@@ -1,0 +1,21 @@
+bin/genericseq.pl
+bin/seq2svg.pl
+%%SITE_PERL%%/Devel/CallSeq.pm
+%%SITE_PERL%%/Devel/OOCallSeq.pm
+%%SITE_PERL%%/UML/genericseq.pl
+%%SITE_PERL%%/UML/seq2svg.pl
+%%SITE_PERL%%/UML/Sequence.pm
+%%SITE_PERL%%/UML/Sequence/Activation.pm
+%%SITE_PERL%%/UML/Sequence/JavaSeq.pm
+%%SITE_PERL%%/UML/Sequence/PerlOOSeq.pm
+%%SITE_PERL%%/UML/Sequence/PerlSeq.pm
+%%SITE_PERL%%/UML/Sequence/SimpleSeq.pm
+%%SITE_PERL%%/UML/Sequence/Svg.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/UML/Sequence/.packlist
+@dirrm %%SITE_PERL%%/UML/Sequence
+@dirrm %%SITE_PERL%%/UML
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/UML/Sequence
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH/auto/UML/Sequence 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/UML/Sequence 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/UML 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Devel 2>/dev/null || true
