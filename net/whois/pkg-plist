@@ -1,0 +1,25 @@
+bin/whois
+share/locale/de/LC_MESSAGES/whois.mo
+share/locale/el/LC_MESSAGES/whois.mo
+share/locale/es/LC_MESSAGES/whois.mo
+share/locale/fr/LC_MESSAGES/whois.mo
+share/locale/it/LC_MESSAGES/whois.mo
+share/locale/no/LC_MESSAGES/whois.mo
+share/locale/pl/LC_MESSAGES/whois.mo
+@dirrm share/nls/en_US.US-ASCII
+@dirrm share/nls/POSIX
+@dirrm share/locale/pl/LC_MESSAGES
+@dirrm share/locale/pl
+@dirrm share/locale/no/LC_MESSAGES
+@dirrm share/locale/no
+@dirrm share/locale/it/LC_MESSAGES
+@dirrm share/locale/it
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/fr
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/es
+@dirrm share/locale/el/LC_MESSAGES
+@dirrm share/locale/el
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/de
+@dirrm share/locale

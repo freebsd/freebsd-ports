@@ -1,0 +1,38 @@
+*** work/whois-4.6.6/Makefile	Thu Dec  5 01:22:15 2002
+--- Makefile	Thu Oct  2 10:53:29 2003
+***************
+*** 9,16 ****
+  #LDFLAGS=-lintl
+  
+  # FreeBSD
+! #LDFLAGS=-L/usr/local/lib -lgnugetopt -lintl
+! #CFLAGS=-I/usr/local/include
+  
+  # OS/2 EMX
+  #LDFLAGS=-lsocket -Zexe -Dstrncasecmp=strnicmp
+--- 9,16 ----
+  #LDFLAGS=-lintl
+  
+  # FreeBSD
+! LDFLAGS=-L/usr/local/lib -lgnugetopt -lintl
+! CFLAGS=-I/usr/local/include
+  
+  # OS/2 EMX
+  #LDFLAGS=-lsocket -Zexe -Dstrncasecmp=strnicmp
+***************
+*** 35,41 ****
+  install: whois
+  	install -m 0755 whois $(BASEDIR)$(prefix)/bin/
+  	strip $(BASEDIR)$(prefix)/bin/whois
+! 	install -m 0644 whois.1 $(BASEDIR)$(prefix)/share/man/man1/
+  	cd po && $(MAKE) $@
+  
+  
+--- 35,41 ----
+  install: whois
+  	install -m 0755 whois $(BASEDIR)$(prefix)/bin/
+  	strip $(BASEDIR)$(prefix)/bin/whois
+! 	install -m 0644 whois.1 $(BASEDIR)$(prefix)/man/man1/
+  	cd po && $(MAKE) $@
+  
+  
