@@ -1,0 +1,22 @@
+--- srclib/apr/Makefile.in.orig	Wed Apr  4 05:32:06 2001
++++ srclib/apr/Makefile.in	Sun Apr  8 03:33:43 2001
+@@ -37,8 +37,8 @@
+ 
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
+-libdir=@libdir@
+-includedir=@includedir@
++libdir=$(prefix)/lib
++includedir=$(prefix)/include/apache
+ 
+ delete-lib:
+ 	@if test -f $(TARGET_LIB); then \
+@@ -58,7 +58,7 @@
+ 	if [ ! -d $(libdir) ]; then \
+ 	    ./build/mkdir.sh $(libdir); \
+ 	fi; \
+-	libtool --mode=install cp $(TARGET_LIB) $(libdir)
++	../../libtool --mode=install cp $(TARGET_LIB) $(libdir)
+ 
+ $(TARGET_LIB):
+ 	@for i in $(SUBDIRS); do objects="$$objects $$i/*.lo"; done ; \

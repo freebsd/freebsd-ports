@@ -1,0 +1,123 @@
+--- Makefile.in.orig	Wed Apr  4 02:03:35 2001
++++ Makefile.in	Sun Apr  8 06:06:58 2001
+@@ -16,7 +16,7 @@
+ targets         = $(PROGRAMS) $(other_targets)
+ phony_targets   = $(srcdir)/buildmark.c
+ install_targets = install-conf install-htdocs install-icons install-other \
+-	install-cgi install-include install-support install-suexec
++	install-cgi install-include install-support install-manpages install-suexec
+ DISTCLEAN_TARGETS  = include/config_auto.h modules.c aclocal.m4 buildmk.stamp \
+ 	configure generated_lists include/ap_config_auto.h \
+ 	include/ap_config_auto.h.in include/ap_config_path.h install-sh \
+@@ -28,25 +28,32 @@
+ install-conf:
+ 	@echo Installing configuration files
+ 	@test -d $(sysconfdir) || $(MKINSTALLDIRS) $(sysconfdir)
++
+ 	@cd docs/conf; \
+ 	for i in mime.types magic; do \
+-		$(INSTALL_DATA) $$i $(sysconfdir); \
++		$(INSTALL_DATA) $$i $(sysconfdir)/$$i.default; \
++		test -f $(sysconfdir)/$$i || cp -fp $(sysconfdir)/$$i.default $(sysconfdir)/$$i; \
+ 	done; \
+ 	for i in *-std*; do \
+ 		sed -e 's#@@ServerRoot@@#$(prefix)#g' \
+ 		    -e 's#@@Port@@#$(PORT)#g' \
+-			< $$i > $(sysconfdir)/$$i; \
+-		chmod 0644 $(sysconfdir)/$$i; \
++			< $$i > $(sysconfdir)/$$i.default; \
++		chmod 0644 $(sysconfdir)/$$i.default; \
++		test -f $(sysconfdir)/$$i || cp -fp $(sysconfdir)/$$i.default $(sysconfdir)/$$i; \
+ 		file=`echo $$i|sed s/-std//`; \
+ 		if [ "$$file" = "httpd.conf" ]; then \
+ 			file=`echo $$file|sed s/.*.conf/$(PROGRAM_NAME).conf/`; \
+ 		fi; \
+ 		if test "$$file" != "$$i" && test ! -f $(sysconfdir)/$$file; then \
+-			$(INSTALL_DATA) $(sysconfdir)/$$i $(sysconfdir)/$$file; \
++			$(INSTALL_DATA) $(sysconfdir)/$$i.default $(sysconfdir)/$$file.default; \
++			test -f $(sysconfdir)/$$file || cp -fp $(sysconfdir)/$$file.default $(sysconfdir)/$$file; \
+ 		fi; \
+ 	done
+ 
+ htdocs-srcdir = docs/docroot
++htman-srcdir = docs/manual
++doc_prefix = $(prefix)/share/doc/apache
++man-srcdir = docs/man
+ 
+ docs::
+ 	mkdir -p ./docs/api
+@@ -57,11 +64,14 @@
+ 
+ install-htdocs:
+ 	@echo Installing HTML documents
+-	@test -d $(htdocsdir) || $(MKINSTALLDIRS) $(htdocsdir)
+-	@test -d $(htdocs-srcdir) && (cd $(htdocs-srcdir) && cp -rp * $(htdocsdir))
+-	@test -d $(htdocsdir)/manual || $(MKINSTALLDIRS) $(htdocsdir)/manual
+-	@test -d docs/manual && (cd docs/manual && cp -rp * $(htdocsdir)/manual)
+-	@(cd $(htdocsdir) && find . -name "CVS" -print | xargs rm -rf {} \;)
++	@test -d $(doc_prefix) || $(MKINSTALLDIRS) $(doc_prefix)
++	@test -d $(htdocs-srcdir) && (cd $(htdocs-srcdir) && cp -rp * $(doc_prefix))
++	@test -d $(doc_prefix)/manual || $(MKINSTALLDIRS) $(doc_prefix)/manual
++	@test -d $(htman-srcdir) && (cd $(htman-srcdir) && cp -rp * $(doc_prefix)/manual)
++	@test -d $(htdocsdir) || ($(MKINSTALLDIRS) $(htdocsdir) && rm -rf $(htdocsdir))
++	@test -d $(htdocsdir) || ln -s $(doc_prefix) $(htdocsdir)
++	@test -d $(htdocsdir).default || ln -s $(doc_prefix) $(htdocsdir).default
++	@(cd $(doc_prefix) && find . -name "CVS" -print | xargs rm -rf {} \;)
+ 
+ install-icons:
+ 	@echo Installing icons
+@@ -71,24 +81,27 @@
+ 
+ install-cgi:
+ 	@echo Installing CGIs
+-	@test -d $(cgidir) || $(MKINSTALLDIRS) $(cgidir)
+-	@(cd docs/cgi-examples && cp -rp * $(cgidir))
+-	@(cd $(cgidir) && find . -name "CVS" -print | xargs rm -rf {} \;)
++	@test -d $(cgidir).default || $(MKINSTALLDIRS) $(cgidir).default
++	@(cd docs/cgi-examples && cp -rp * $(cgidir).default)
++	@test -d $(cgidir) || ln -s $(cgidir).default $(cgidir)
++	@(cd $(cgidir).default && find . -name "CVS" -print | xargs rm -rf {} \;)
+ 
+ install-support:
+ 	@echo Installing Support Binaries
+ 	@test -d $(bindir) || $(MKINSTALLDIRS) $(bindir)
+-	@cp -p $(srcdir)/support/httpd.exp $(bindir)
++	@test -d $(sbindir) || $(MKINSTALLDIRS) $(sbindir)
++	@test -d $(libexecdir) || $(MKINSTALLDIRS) $(libexecdir)
++	@cp -p $(srcdir)/support/httpd.exp $(libexecdir)
+ 	@cp -p $(builddir)/support/htpasswd $(bindir)
+ 	@cp -p $(builddir)/support/htdigest $(bindir)
+-	@cp -p $(builddir)/support/rotatelogs $(bindir)
+-	@cp -p $(builddir)/support/logresolve $(bindir)
+-	@cp -p $(builddir)/support/ab $(bindir)
+-	@cp -p $(builddir)/support/apachectl $(bindir)
+-	chmod 755 $(bindir)/apachectl
++	@cp -p $(builddir)/support/rotatelogs $(sbindir)
++	@cp -p $(builddir)/support/logresolve $(sbindir)
++	@cp -p $(builddir)/support/ab $(sbindir)
++	@cp -p $(builddir)/support/apachectl $(sbindir)
++	chmod 755 $(sbindir)/apachectl
+ 	@if test -f $(builddir)/support/apxs; then \
+-	    cp -p $(builddir)/support/apxs $(bindir); \
+-	    chmod 755 $(bindir)/apxs; \
++	    cp -p $(builddir)/support/apxs $(sbindir); \
++	    chmod 755 $(sbindir)/apxs; \
+ 	fi
+ 
+ 
+@@ -117,6 +130,15 @@
+ 	@cp -p $(srcdir)/srclib/apr-util/include/*.h $(includedir)
+ 	@cp -p $(srcdir)/os/$(OS_DIR)/*.h $(includedir)
+ 	@chmod 644 $(includedir)/*.h
++
++install-manpages:
++	@echo Installing manual pages
++	@test -d $(mandir) || $(MKINSTALLDIRS) $(mandir)
++	@for sect in 1 8; do \
++		test -d $(mandir)/man$$sect || $(MKINSTALLDIRS) $(mandir)/man$$sect; \
++		test -d $(man-srcdir) && (cd $(man-srcdir) && cp -p *.$$sect $(mandir)/man$$sect); \
++	done;
++	@(cd $(mandir) && find . -name "CVS" -print | xargs rm -rf {} \;)
+ 
+ install-suexec:
+ 	@if test -f $(builddir)/support/suexec; then \

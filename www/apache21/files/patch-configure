@@ -1,0 +1,32 @@
+--- configure.orig	Wed Apr  4 12:45:36 2001
++++ configure	Sun Apr  8 03:25:31 2001
+@@ -3760,7 +3760,9 @@
+       -e "s/[ 	]*$/'/g" \
+       $srcdir/config.layout > $pldconf
+   layout_name=$LAYOUT
++  prefix_backup=$prefix # poor patch to prevent override prefix arg with default
+   . $pldconf
++  prefix=$prefix_backup
+   rm $pldconf
+   for var in prefix exec_prefix bindir sbindir libexecdir mandir \
+              sysconfdir datadir iconsdir htdocsdir cgidir includedir \
+@@ -9678,6 +9680,10 @@
+ 
+   
+   APACHE_VAR_SUBST="$APACHE_VAR_SUBST sysconfdir"
++  APACHE_VAR_SUBST="$APACHE_VAR_SUBST runtimedir"
++  APACHE_VAR_SUBST="$APACHE_VAR_SUBST logfiledir"
++  APACHE_VAR_SUBST="$APACHE_VAR_SUBST mandir"
++  APACHE_VAR_SUBST="$APACHE_VAR_SUBST libdir"
+   
+ 
+   
+@@ -9814,7 +9820,7 @@
+ EOF
+ 
+ cat >> confdefs.h <<EOF
+-#define SERVER_CONFIG_FILE "conf/$progname.conf"
++#define SERVER_CONFIG_FILE "etc/apache/$progname.conf"
+ EOF
+ 
+ cat >> confdefs.h <<EOF

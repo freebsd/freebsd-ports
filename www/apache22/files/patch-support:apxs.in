@@ -1,0 +1,11 @@
+--- support/apxs.in.orig	Sat Apr  7 11:56:15 2001
++++ support/apxs.in	Sat Apr  7 11:55:28 2001
+@@ -73,7 +73,7 @@
+ my $prefix            = "$CFG_PREFIX";
+ my $CFG_EXEC_PREFIX   = "@exec_prefix@";
+ my $exec_prefix       = "$CFG_EXEC_PREFIX";
+-my $CFG_SBINDIR       = "@bindir@";
++my $CFG_SBINDIR       = "@sbindir@";
+ my $CFG_INCLUDEDIR    = "@includedir@";
+ my $CFG_LIBEXECDIR    = "@libexecdir@";
+ my $CFG_SYSCONFDIR    = "@sysconfdir@";
