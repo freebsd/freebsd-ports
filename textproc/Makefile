@@ -77,6 +77,7 @@
     SUBDIR += fop
     SUBDIR += freegrep
     SUBDIR += galax
+    SUBDIR += gauche-sxml
     SUBDIR += gdict
     SUBDIR += gdome2
     SUBDIR += glark
