@@ -1,0 +1,14 @@
+************************************************************
+You've installed mod_mp3, a MP3 streaming module for Apache.
+
+Edit your apache.conf or httpd.conf to enable and setup this
+module. Have a look at the files in
+${PREFIX}/share/doc/mod_mp3 for information on how to
+configure it etc.
+
+Then do this to make it work effective:
+
+# apachectl configtest (see if there are any config errors)
+# apachectl restart
+
+************************************************************
