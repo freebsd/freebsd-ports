@@ -7,6 +7,7 @@
 
 PORTNAME=	Mail-SpamAssassin
 PORTVERSION=	2.61
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://spamassassin.org/released/ \
 		${MASTER_SITE_PERL_CPAN}
@@ -51,6 +52,17 @@ MAN1=		spamd.1 spamassassin.1 spamc.1 sa-learn.1
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
+SED_SCRIPT=     -e 's|%%PREFIX%%|${PREFIX}|g'
+
+USE_RC_SUBR=	yes
+RC_DIR=		${PREFIX}/etc/rc.d
+RC_SUFX=	.sh
+SED_SCRIPT+=	-e 's|%%RC_SUBR%%|${RC_SUBR}|g' \
+		-e 's|%%RC_DIR%%|${RC_DIR}|g' \
+		-e 's|%%RC_SUFX%%|${RC_SUFX}|g'
+PLIST_SUB+=	RC_DIR=${RC_DIR} \
+		RC_SUFX=${RC_SUFX}
+
 post-patch:
 	@${FIND} ${WRKSRC} -name \*.orig -delete
 
@@ -59,9 +71,12 @@ post-patch:
 		${WRKSRC}/Makefile.PL > ${WRKSRC}/Makefile.PL.sed
 	@${MV} ${WRKSRC}/Makefile.PL.sed ${WRKSRC}/Makefile.PL
 
+post-build:
+	@${SED} ${SED_SCRIPT} ${FILESDIR}/spamd.sh > ${WRKSRC}/spamd.sh
+
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/spamc
-	${INSTALL_SCRIPT} ${FILESDIR}/spamd.sh ${PREFIX}/etc/rc.d/spamd.sh-dist
+	${INSTALL_SCRIPT} ${WRKSRC}/spamd.sh ${PREFIX}/etc/rc.d/spamd${RC_SUFX}
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

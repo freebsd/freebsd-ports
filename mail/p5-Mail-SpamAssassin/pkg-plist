@@ -3,7 +3,7 @@ bin/spamassassin
 bin/spamc
 bin/spamd
 etc/mail/spamassassin/local.cf.sample
-etc/rc.d/spamd.sh-dist
+etc/rc.d/spamd%%RC_SUFX%%
 %%SITE_PERL%%/Mail/SpamAssassin.pm
 %%SITE_PERL%%/Mail/SpamAssassin/ArchiveIterator.pm
 %%SITE_PERL%%/Mail/SpamAssassin/AuditMessage.pm
