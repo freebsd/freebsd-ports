@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.24 1998/02/21 21:25:03 steve Exp $
+# $Id: Makefile,v 1.25 1998/07/12 11:14:41 dburr Exp $
 #
 
     SUBDIR += aftp
@@ -12,7 +12,9 @@
     SUBDIR += hfs
     SUBDIR += hfsutils
     SUBDIR += ines
+    SUBDIR += linux_glide
     SUBDIR += linux_lib
+    SUBDIR += linux_mesa
     SUBDIR += macutils
     SUBDIR += mastergear
     SUBDIR += mtools
