@@ -8,8 +8,8 @@
 PORTNAME=	gxanim
 PORTVERSION=	0.50
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.iag.net/~aleris/ \
-		http://www.zort.on.ca/software/
+MASTER_SITES=		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	fenner
 
 MAINTAINER=	rbt@zort.on.ca
 
