@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	cdrtools
-PORTVERSION=	2.0.3
-PORTREVISION=	3
-CATEGORIES=	sysutils audio
+PORTVERSION?=	2.0.3
+PORTREVISION?=	3
+CATEGORIES?=	sysutils audio
 MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/ \
 		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/ \
 		ftp://ftp.gwdg.de/pub/linux/misc/cdrecord/
@@ -17,7 +17,7 @@ DISTNAME=	cdrtools-2.00.3
 MAINTAINER=	marius@FreeBSD.org
 COMMENT=	CD/CD-R[W] and ISO-9660 image creation and extraction tools
 
-CONFLICTS=	cdrtools-devel-*
+CONFLICTS?=	cdrtools-devel-* cjk-cdrtools-*
 
 MAN1=		cdda2wav.1 cdrecord.1 readcd.1 scgcheck.1
 MAN8=		isoinfo.8 mkisofs.8
