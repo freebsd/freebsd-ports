@@ -1,35 +1,10 @@
---- configure.in.orig	Thu Dec  2 14:10:30 1999
-+++ configure.in	Sat Dec  4 17:59:13 1999
-@@ -213,6 +213,7 @@
+--- configure.in.orig	Thu Jan 13 23:00:16 2000
++++ configure.in	Fri Jan 14 17:56:41 2000
+@@ -222,6 +222,7 @@
    AC_CHECK_LIB(crypt, crypt,
  	       LIB_CRYPT="-lcrypt"; cmu_have_crypt=yes,
  	       cmu_have_crypt=no))
 +AC_SUBST(LIB_CRYPT)
  
  CMU_SOCKETS
- 
-@@ -503,15 +504,22 @@
- 	    with_rc4=no)
- 
-   if test "$with_rc4" = no; then
-+
-+	  dnl if openssl has been compiled with the rsaref2 libraries,
-+	  dnl we need to include the rsaref libraries in the crypto check
-+	  LIB_RSAREF=""
-+	  AC_CHECK_LIB(rsaref, RSAPublicEncrypt,
-+		  LIB_RSAREF="-lRSAglue -lrsaref"; cmu_have_rsaref=yes,
-+		  cmu_have_rsaref=no)
-+
- 	  AC_CHECK_LIB(crypto, RC4_set_key,
- 		  AC_CHECK_HEADER(openssl/rc4.h, [AC_DEFINE(WITH_SSL_RC4)
-                                                   LIB_RC4="-lcrypto";
- 						  with_rc4="openssl"],
- 			          AC_WARN([SSL: Disabling rc4 support]); 
-                                   with_rc4=no),
--		       AC_WARN([SSL2: Disabling rc4 support]); with_rc4=no)
-+		       AC_WARN([SSL2: Disabling rc4 support]); with_rc4=no, $LIB_RSAREF)
-   fi
--
-   LIBS="$cmu_save_LIBS"
- fi
  

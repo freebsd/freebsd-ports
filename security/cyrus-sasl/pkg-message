@@ -1,0 +1,4 @@
+Start the pwcheck program to have clients use the SASL libraries
+as a non-root user:
+
+	/usr/local/etc/rc.d/pwcheck.sh [start|stop]

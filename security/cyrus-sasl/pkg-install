@@ -1,0 +1,73 @@
+#!/bin/sh
+#
+#	$FreeBSD$
+#
+# Created by: stb@FreeBSD.org for the cyrus imap server
+# Added to the cyrus-sasl port by hetzel@westbend.net
+
+#set -vx
+
+#
+# create 'cyrus' user and group before installing
+#
+
+create() {
+	if [ ! -x /usr/sbin/pw ]; then
+		echo "*** Please add a user and a group named \`cyrus' before installing this package."
+		exit 69
+	fi
+
+	if ! pw show group cyrus -q >/dev/null; then
+		gid=60
+		while pw show group -g ${gid} -q >/dev/null; do
+			gid=`expr ${gid} + 1`
+		done
+		if ! pw add group cyrus -g ${gid}; then
+			e=$?
+			echo "*** Failed to add group \`cyrus'. Please add it manually."
+			exit ${e}
+		fi
+		echo "*** Added group \`cyrus' (id ${gid})"
+	else
+		gid=`pw show group cyrus 2>/dev/null | cut -d: -f3`
+	fi
+
+	if [ -x /sbin/nologin ]; then
+		shell=/sbin/nologin
+	else
+		shell=/nonexistent
+	fi
+	if ! pw show user cyrus -q >/dev/null; then
+		uid=60
+		while pw show user -u ${uid} -q >/dev/null; do
+			uid=`expr ${uid} + 1`
+		done
+		if ! pw add user cyrus -u ${uid} -g ${gid} -d "/nonexistent" \
+				-c "the cyrus mail server" -s "${shell}" -p "*" \
+				; then
+			e=$?
+			echo "*** Failed to add user \`cyrus'. Please add it manually."
+			exit ${e}
+		fi
+		echo "*** Added user \`cyrus' (id ${uid})"
+	else
+		if ! pw mod user cyrus -g ${gid} -d "/nonexistent" \
+				-c "the cyrus mail server" -s "${shell}" -p "*" \
+				; then
+			e=$?
+			echo "*** Failed to update user \`cyrus'."
+			exit ${e}
+		fi
+		echo "*** Updated user \`cyrus'."
+	fi
+	if ! pw group mod cyrus -m daemon; then
+		echo "*** can't add user \`daemon' to group \`cyrus'"
+	fi
+}
+
+case $2 in
+	PRE-INSTALL)
+		create
+		;;
+
+esac

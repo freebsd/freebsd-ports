@@ -1,7 +1,9 @@
 #!/bin/sh
 #
+# $FreeBSD$
+#
 
-PREFIX=/usr/local
+PREFIX=%%PREFIX%%
 
 case "$1" in
 
@@ -16,6 +18,7 @@ stop)
 	if [ -r /var/run/pwcheck.pid ]
 	then
 		kill `cat /var/run/pwcheck.pid` && echo -n " pwcheck"
+		rm /var/run/pwcheck.pid
 	fi
 	;;
 
