@@ -1,7 +1,7 @@
 @unexec kldunload ixj || true
 modules/ixj.ko
-include/telephony.h
-include/ixjuser.h
+include/sys/telephony.h
+include/sys/ixjuser.h
 etc/rc.d/ixj.sh
 @exec rm -f /dev/phone0
 @exec rm -f /dev/phone1
