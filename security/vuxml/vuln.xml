@@ -32,6 +32,39 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f4428842-a583-4a4c-89b7-297c3459a1c3">
+    <topic>bogofilter -- RFC 2047 decoder denial-of-service vulnerability</topic>
+    <affects>
+      <package>
+	<name>bogofilter</name>
+	<name>bogofilter-qdbm</name>
+	<name>bogofilter-tdb</name>
+	<name>ru-bogofilter</name>
+	<range><gt>0.16.4</gt><lt>0.92.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The bogofilter team has been provided with a test case of a
+	   malformatted (non-conformant) RFC-2047 encoded word that can cause
+	   bogofilter versions 0.92.7 and prior to try to write a NUL byte into
+	   a memory location that is either one byte past the end of a flex
+	   buffer or to a location that is the negative of the encoded word's
+	   start of payload data, causing a segmentation fault.</p>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>73144</freebsdpr>
+      <mlist msgid="20041008143604.GA14934@scowler.net">http://article.gmane.org/gmane.mail.bogofilter.devel/3308</mlist>
+      <mlist msgid="m3r7o892vj.fsf@merlin.emma.line.org">http://article.gmane.org/gmane.mail.bogofilter.devel/3317</mlist>
+      <url>http://bugs.debian.org/275373</url>
+    </references>
+    <dates>
+      <discovery>2004-10-09</discovery>
+      <entry>2004-10-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ad2f3337-26bf-11d9-9289-000c41e2cdad">
     <topic>xpdf -- integer overflow vulnerabilities</topic>
     <affects>
