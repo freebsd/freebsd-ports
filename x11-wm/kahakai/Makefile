@@ -7,7 +7,7 @@
 
 PORTNAME=	kahakai
 PORTVERSION=	0.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -49,5 +49,13 @@ BROKEN=		"Does not compile on alpha 4.x"
 post-patch:
 	@${REINPLACE_CMD} -e 's|/tmp/ktest|${X11BASE}|' \
 		${WRKSRC}/data/styles/Default.kastyle.in
+	@${REINPLACE_CMD} -e 's|bool max|bool wmax|' \
+		${WRKSRC}/src/Window.hh
+	@${REINPLACE_CMD} -e 's|flags.max|flags.wmax|g' \
+		${WRKSRC}/src/*.cc
+
+pre-install:
+	@${REINPLACE_CMD} -e 's|^None|globals()["None"]|' \
+		${WRKSRC}/src/kahakai.py
 
 .include <bsd.port.post.mk>
