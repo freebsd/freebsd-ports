@@ -1,6 +1,6 @@
---- fd.h.orig	Wed May 12 00:00:00 2004
-+++ fd.h	Wed May 26 19:07:10 2004
-@@ -171,11 +171,11 @@
+--- fd.h.orig	Wed Jun 23 00:00:00 2004
++++ fd.h	Fri Jun 25 01:18:25 2004
+@@ -159,11 +159,11 @@
   ****************************************************************/
  #define	MAXBINDTABLE	256
  #define	MAXMACROTABLE	64
@@ -15,3 +15,12 @@
  #if	MSDOS
  #define	MAXCOMMSTR	(128 - 2)
  #endif
+@@ -171,7 +171,7 @@
+ #define	MAXSTACK	5
+ #define	MAXWINDOWS	2
+ #define	MAXHISTNO	MAXTYPE(short)
+-#define	MAXINVOKEARGS	1
++#define	MAXINVOKEARGS	MAXWINDOWS
+ 
+ #ifdef	_NOSPLITWIN
+ #undef	MAXWINDOWS
