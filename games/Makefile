@@ -133,6 +133,7 @@
     SUBDIR += ggz-txt-client
     SUBDIR += gl-117
     SUBDIR += glasteroids
+    SUBDIR += glbsp
     SUBDIR += glchess
     SUBDIR += gleyes
     SUBDIR += glife

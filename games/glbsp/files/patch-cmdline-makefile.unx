@@ -1,0 +1,13 @@
+--- cmdline/makefile.unx.orig	Thu Jan 22 12:16:08 2004
++++ cmdline/makefile.unx	Thu Jan 22 12:18:10 2004
+@@ -8,8 +8,8 @@
+ 
+ PROGNAME=glbsp
+ 
+-CC=cc
+-CFLAGS=-O3 -Wall -DGLBSP_TEXT -DUNIX -DINLINE_G=inline
++CC?=gcc
++CFLAGS+=-O3 -Wall -DGLBSP_TEXT -DUNIX -DINLINE_G=inline
+ LIBS=-lm
+ 
+ OBJS=$(SYSDIR)/main.o     \
