@@ -1,4 +1,5 @@
 bin/starlogo
+share/java/starlogo/README
 share/java/starlogo/documentation.html
 share/java/starlogo/documentation/documentation.html
 share/java/starlogo/documentation/documentation/all_commands.htm
@@ -522,24 +523,24 @@ share/java/starlogo/documentation/projects/samples/tree_source.htm
 share/java/starlogo/documentation/projects/samples/turtle.htm
 share/java/starlogo/documentation/projects/samples/turtle_source.htm
 share/java/starlogo/documentation/style.css
-share/java/starlogo/sample-projects/Biology/bees.slogo
-share/java/starlogo/sample-projects/Biology/firefly.slogo
-share/java/starlogo/sample-projects/Biology/rabbits.slogo
-share/java/starlogo/sample-projects/Biology/slime.slogo
-share/java/starlogo/sample-projects/Biology/termites.slogo
-share/java/starlogo/sample-projects/Graphics/ant-trails.slogo
-share/java/starlogo/sample-projects/Graphics/graphics.slogo
-share/java/starlogo/sample-projects/Graphics/horn.slogo
-share/java/starlogo/sample-projects/Math/circle.slogo
-share/java/starlogo/sample-projects/Math/gaussian.slogo
-share/java/starlogo/sample-projects/Math/sirpinksi.slogo
-share/java/starlogo/sample-projects/Math/tree.slogo
-share/java/starlogo/sample-projects/Physics/collisions.slogo
-share/java/starlogo/sample-projects/Physics/dla.slogo
-share/java/starlogo/sample-projects/Physics/perfume.slogo
-share/java/starlogo/sample-projects/Physics/rope.slogo
-share/java/starlogo/sample-projects/Social-Systems/sugarscape.slogo
-share/java/starlogo/sample-projects/Social-Systems/traffic.slogo
+share/java/starlogo/sample-projects/biology/bees.slogo
+share/java/starlogo/sample-projects/biology/firefly.slogo
+share/java/starlogo/sample-projects/biology/rabbits.slogo
+share/java/starlogo/sample-projects/biology/slime.slogo
+share/java/starlogo/sample-projects/biology/termites.slogo
+share/java/starlogo/sample-projects/graphics/ant-trails.slogo
+share/java/starlogo/sample-projects/graphics/graphics.slogo
+share/java/starlogo/sample-projects/graphics/horn.slogo
+share/java/starlogo/sample-projects/math/circle.slogo
+share/java/starlogo/sample-projects/math/gaussian.slogo
+share/java/starlogo/sample-projects/math/sirpinksi.slogo
+share/java/starlogo/sample-projects/math/tree.slogo
+share/java/starlogo/sample-projects/physics/collisions.slogo
+share/java/starlogo/sample-projects/physics/dla.slogo
+share/java/starlogo/sample-projects/physics/perfume.slogo
+share/java/starlogo/sample-projects/physics/rope.slogo
+share/java/starlogo/sample-projects/social-systems/sugarscape.slogo
+share/java/starlogo/sample-projects/social-systems/traffic.slogo
 share/java/starlogo/sounds/applause.au
 share/java/starlogo/sounds/bark.au
 share/java/starlogo/sounds/bong.au
@@ -568,11 +569,11 @@ share/java/starlogo/starlogo-unix
 share/java/starlogo/starlogo-unix.orig
 share/java/starlogo/starlogo.jar
 @dirrm share/java/starlogo/sounds
-@dirrm share/java/starlogo/sample-projects/Social-Systems
-@dirrm share/java/starlogo/sample-projects/Physics
-@dirrm share/java/starlogo/sample-projects/Math
-@dirrm share/java/starlogo/sample-projects/Graphics
-@dirrm share/java/starlogo/sample-projects/Biology
+@dirrm share/java/starlogo/sample-projects/social-systems
+@dirrm share/java/starlogo/sample-projects/physics
+@dirrm share/java/starlogo/sample-projects/math
+@dirrm share/java/starlogo/sample-projects/graphics
+@dirrm share/java/starlogo/sample-projects/biology
 @dirrm share/java/starlogo/sample-projects
 @dirrm share/java/starlogo/documentation/projects/samples/images
 @dirrm share/java/starlogo/documentation/projects/samples
@@ -586,3 +587,4 @@ share/java/starlogo/starlogo.jar
 @dirrm share/java/starlogo/documentation/documentation
 @dirrm share/java/starlogo/documentation
 @dirrm share/java/starlogo
+@unexec rmdir %D/share/java > /dev/null 2>&1 || true
