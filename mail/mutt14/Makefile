@@ -80,12 +80,12 @@ CONFIGURE_ARGS+=	${MUTT_CONFIGURE_ARGS}
 .endif
 .if defined(WITH_LOCALES_FIX)
 CONFIGURE_ARGS+=	--enable-locales-fix
-.endif                                                                         
-.if defined(WITHOUT_NLS)                                                       
-CONFIGURE_ARGS+=	--disable-nls                                           
-PLIST_SUB+=	NLS="@comment "                                         
+.endif
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .else
-PLIST_SUB+=	NLS="" 
+PLIST_SUB+=	NLS=""
 .endif
 .if defined(WITH_SLANG)
 CONFIGURE_ARGS+=	--with-slang=${PREFIX}
@@ -145,6 +145,7 @@ pre-install:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/Muttrc ${PREFIX}/etc/Muttrc.dist
+	${INSTALL_DATA} ${WRKSRC}/mime.types ${PREFIX}/etc/mime.types.dist
 .if !defined(NOPORTDOCS)
 	@${ECHO} "===>   Installing Mutt documentation"
 	@${MKDIR} ${DOCSDIR} && ${CHMOD} a+rx ${DOCSDIR}
