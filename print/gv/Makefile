@@ -17,6 +17,8 @@ MAINTAINER=	ports@freebsd.org
 
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 
+FORBIDDEN=	"Security vulnerability, see bugtraq id 5808"
+
 USE_IMAKE=	yes
 MAN1=		gv.1
 
