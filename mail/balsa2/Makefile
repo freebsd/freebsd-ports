@@ -6,20 +6,19 @@
 #
 
 PORTNAME=	balsa
-PORTVERSION=	1.1.4
-PORTREVISION=	2
+PORTVERSION=	1.1.7
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.theochem.kth.se/~pawsa/balsa/ \
 		ftp://ftp.newton.cx/pub/balsa/
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList
+LIB_DEPENDS=	esmtp.5:${PORTSDIR}/mail/libesmtp
 
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
 USE_LIBTOOL=	yes
-LIBTOOLFILES=	configure libmutt/configure
+LIBTOOLFILES=	libmutt/configure
 CONFIGURE_ARGS=	--enable-threads \
 		--enable-gtkhtml \
 		--disable-more-warnings
