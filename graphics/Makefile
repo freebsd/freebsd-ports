@@ -344,6 +344,7 @@
     SUBDIR += qtutils
     SUBDIR += quat
     SUBDIR += quat-gui
+    SUBDIR += quesa
     SUBDIR += quickpics
     SUBDIR += qvplay
     SUBDIR += ray++
