@@ -1,0 +1,7 @@
+Japanese latex2html with latex2html-98.1jpatch-2.1 patch
+
+This program can be used to convert LaTeX to HTML.  It has many configuration
+options configurable by editing a configuration file.  It can handle equations
+and postscript images as well.
+
+Package Maintainer: Sugimoto Sadahiro <ixtl@utmc.or.jp>
