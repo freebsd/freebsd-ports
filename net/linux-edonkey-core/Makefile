@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	edonkey
-PORTVERSION=	16.16.58.2
+PORTVERSION=	16.16.58.3
 CATEGORIES=	net linux
 MASTER_SITES=	http://users.aber.ac.uk/tpm01/
 PKGNAMESUFFIX=	-core
-DISTNAME=	donkey_s_1658-gaps-2
+DISTNAME=	donkey_s_1658-gaps-3
 
 MAINTAINER=	lioux@FreeBSD.org
 
@@ -28,7 +28,7 @@ BRANDELF?=	/usr/bin/brandelf
 BRANDELF?=	brandelf
 .endif
 
-BINARY_NAME_OLD=	donkey_s_1658-gaps-2b
+BINARY_NAME_OLD?=	${DISTNAME}
 BINARY_NAME=	donkey
 
 post-patch:
