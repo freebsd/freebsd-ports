@@ -17,6 +17,8 @@ COMMENT=	A publicly available virtual reality (VR) system
 
 LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 
+BROKEN=		"Changes its PORTNAME at install-time (maverik -> maverik-gtk)"
+
 USE_REINPLACE=	yes
 USE_SUBMAKE=	yes
 USE_MESA=	yes
