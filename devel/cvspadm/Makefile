@@ -8,7 +8,7 @@
 PORTNAME=	cvspadm
 PORTVERSION=	0.1.2
 CATEGORIES=	devel
-MASTER_SITES=	http://hackfoo.net/projs/
+MASTER_SITES=	http://www.securityfoo.net/ray/projs/
 
 MAINTAINER=	petef@FreeBSD.org
 
