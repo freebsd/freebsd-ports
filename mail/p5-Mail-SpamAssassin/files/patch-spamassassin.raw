@@ -1,0 +1,11 @@
+--- spamassassin.raw~	Tue Sep 14 01:34:05 2004
++++ spamassassin.raw	Wed Sep 22 18:03:37 2004
+@@ -329,7 +329,7 @@
+ # Let folks know how many messages were handled, as long as the handling
+ # didn't produce output (ala: check, test, or remove_markup ...)
+ if ( $opt{'report'} || $opt{'revoke'} || $doing_whitelist_operation ) {
+-  print "$count message(s) examined.\n";
++  print "$count message(s) examined.\n" unless $opt{'quiet'};
+ }
+ 
+ # if the eval died from something, report it here and return an error.

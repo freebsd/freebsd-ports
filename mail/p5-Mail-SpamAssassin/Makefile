@@ -6,15 +6,12 @@
 #
 
 PORTNAME=	Mail-SpamAssassin
-PORTVERSION=	2.64
+PORTVERSION=	3.0.0
 CATEGORIES=	mail perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Mail
+MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:apache/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/}
+MASTER_SITE_SUBDIR=	spamassassin/:apache Mail/:cpan
 PKGNAMEPREFIX=	p5-
-
-PATCH_SITES=	http://www.habeas.com/files/
-PATCHFILES=	SA-2.63-Habeas.diff
-PATCH_DIST_STRIP=	-p0
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:apache,cpan
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A highly efficient mail filter for identifying spam
@@ -26,57 +23,86 @@ RUN_DEPENDS=	${BUILD_DEPENDS} \
 		razor-client:${PORTSDIR}/mail/razor-agents
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS+=	SYSCONFDIR="${PREFIX}/etc" \
-			RUN_RAZOR_TESTS="no" RUN_RAZOR2_TESTS="no" \
-			CONTACT_ADDRESS="the administrator of that system"
+CONFIGURE_ARGS=	SYSCONFDIR="${PREFIX}/etc" \
+	       	CONTACT_ADDRESS="the administrator of that system" \
+		BUILD_SPAMC=yes RUN_NET_TESTS=yes
 
-MAN3=		Mail::SpamAssassin.3 Mail::SpamAssassin::PerMsgStatus.3 \
-		Mail::SpamAssassin::Conf.3 \
-		Mail::SpamAssassin::PersistentAddrList.3 \
-		Mail::SpamAssassin::PerMsgLearner.3 \
-		Mail::SpamAssassin::Bayes.3 \
+.if !defined(WITHOUT_OPENSSL)
+USE_OPENSSL=	yes
+CONFIGURE_ARGS+=	ENABLE_SSL=yes
+.else
+CONFIGURE_ARGS+=	ENABLE_SSL=no
+.endif
+
+MAN3=		Mail::SpamAssassin.3 \
+		Mail::SpamAssassin::ArchiveIterator.3 \
 		Mail::SpamAssassin::AutoWhitelist.3 \
-		Mail::SpamAssassin::ConfSourceSQL.3
+		Mail::SpamAssassin::Bayes.3 \
+		Mail::SpamAssassin::BayesStore.3 \
+		Mail::SpamAssassin::BayesStore::SQL.3 \
+		Mail::SpamAssassin::Conf.3 \
+		Mail::SpamAssassin::Conf::LDAP.3 \
+		Mail::SpamAssassin::Conf::Parser.3 \
+		Mail::SpamAssassin::Conf::SQL.3 \
+		Mail::SpamAssassin::Message.3 \
+		Mail::SpamAssassin::Message::Metadata.3 \
+		Mail::SpamAssassin::Message::Node.3 \
+		Mail::SpamAssassin::PerMsgLearner.3 \
+		Mail::SpamAssassin::PerMsgStatus.3 \
+		Mail::SpamAssassin::PersistentAddrList.3 \
+		Mail::SpamAssassin::Plugin.3 \
+		Mail::SpamAssassin::Plugin::Hashcash.3 \
+		Mail::SpamAssassin::Plugin::RelayCountry.3 \
+		Mail::SpamAssassin::Plugin::SPF.3 \
+		Mail::SpamAssassin::Plugin::URIDNSBL.3 \
+		Mail::SpamAssassin::PluginHandler.3 \
+		Mail::SpamAssassin::SQLBasedAddrList.3
 
 MAN1=		spamd.1 spamassassin.1 spamc.1 sa-learn.1
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 DATADIR=	${PREFIX}/share/spamassassin
+DOCS=		BUGS CREDITS Changes INSTALL LICENSE NOTICE PACKAGING README STATUS TRADEMARK UPGRADE USAGE procmailrc.example
+DOCSSQL=	README README.awl README.bayes awl_mysql.sql awl_pg.sql bayes_mysql.sql bayes_pg.sql userpref_mysql.sql userpref_pg.sql
+DOCSCONTRIB=	mbox-to-check run-corpora run-masses 
+DOCSLDAP=	README README.testing sa_test.ldif 
+PORTDOCS=	${DOCS} ${DOCSSQL:S|^|sql/|} ${DOCSCONTRIB:S|^|contrib/|} ${DOCSLDAP:S|^|ldap/|}
 
 USE_RC_SUBR=	yes
 SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g' \
 		-e 's|%%RC_SUBR%%|${RC_SUBR}|g'
 post-patch:
 	@${FIND} ${WRKSRC} -name \*.orig -delete
-	@${MV} ${WRKSRC}/rules/local.cf ${WRKSRC}/rules/local.cf.sample
-	@${SED} -e 's#local.cf#local.cf.sample#g' \
+	@${SED} -e 's#B_CONFDIR)/local.cf#B_CONFDIR)/local.cf.sample#g' \
+		-e 's#B_CONFDIR)/init.pre#B_CONFDIR)/init.pre.sample#g' \
 		${WRKSRC}/Makefile.PL > ${WRKSRC}/Makefile.PL.sed
 	@${MV} ${WRKSRC}/Makefile.PL.sed ${WRKSRC}/Makefile.PL
 
 post-build:
-	@${SED} ${SED_SCRIPT} ${FILESDIR}/spamd.sh > ${WRKDIR}/spamd.sh
+	@${SED} ${SED_SCRIPT} ${FILESDIR}/spamd.sh > ${WRKDIR}/sa-spamd.sh
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/spamc
-	${INSTALL_SCRIPT} ${WRKDIR}/spamd.sh ${PREFIX}/etc/rc.d/spamd.sh
+	@${INSTALL_SCRIPT} ${WRKDIR}/sa-spamd.sh ${PREFIX}/etc/rc.d/sa-spamd.sh
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/sql/README ${DOCSDIR}/README.sql
-	cd ${WRKSRC} ; ${INSTALL_DATA} INSTALL USAGE \
-	    BUGS COPYRIGHT Changes README TRADEMARK procmailrc.example sample* \
-	    spamd/README* sql/spamassassin.sql ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR} ${DOCSDIR}/sql ${DOCSDIR}/contrib ${DOCSDIR}/ldap
+	@${INSTALL_DATA} ${DOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${INSTALL_DATA} ${DOCSSQL:S|^|${WRKSRC}/sql/|} ${DOCSDIR}/sql
+	@${INSTALL_DATA} ${DOCSCONTRIB:S|^|${WRKSRC}/contrib/|} ${DOCSDIR}/contrib
+	@${INSTALL_DATA} ${DOCSLDAP:S|^|${WRKSRC}/ldap/|} ${DOCSDIR}/ldap
+
 .endif
 	@${SED} -e 's#PREFIX#${PREFIX}#' ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-RUN_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
-BUILD_DEPENDS+=	${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-PodParser
+IGNORE=	Needs perl 5.6.1 or higher, install lang/perl5.8 and try again
 .endif
 
 .if ${PERL_LEVEL} < 500800
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
+		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
 .endif
 
 .include <bsd.port.post.mk>

@@ -1,4 +1,2 @@
-MD5 (Mail-SpamAssassin-2.64.tar.gz) = a82a9dab95462d102e253edb99091fdd
-SIZE (Mail-SpamAssassin-2.64.tar.gz) = 826989
-MD5 (SA-2.63-Habeas.diff) = dd9f6c6edaec123b0bb236ab638554bb
-SIZE (SA-2.63-Habeas.diff) = 2933
+MD5 (Mail-SpamAssassin-3.0.0.tar.gz) = e38035c260310e18158d95a41cadae93
+SIZE (Mail-SpamAssassin-3.0.0.tar.gz) = 1072046

@@ -6,7 +6,9 @@
 *	/_/   \_\_|   |_| |_____|_| \_| |_| |___\___/|_| \_|		*
 *									*
 *	See PREFIX/share/doc/p5-Mail-SpamAssassin/INSTALL,		*
-*	or http://spamassassin.org/dist/INSTALL BEFORE enabling		*
+*	and PREFIX/share/doc/p5-Mail-SpamAssassin/UPGRADE,		*
+*	or http://spamassassin.org/dist/INSTALL and			*
+*	http://spamassassin.org/dist/UPGRADE BEFORE enabling		*
 *	this version of SpamAssassin for important information		*
 *	regarding changes in this version.				*
 *									*
