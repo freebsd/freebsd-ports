@@ -1,13 +1,13 @@
 --- generic/md5dig.c	Wed Aug  9 15:13:17 2000
-+++ generic/md5dig.c	Fri Jul  9 16:23:11 2004
-@@ -29,5 +29,5 @@
- 
++++ generic/md5dig.c	Sat Jul 10 16:40:44 2004
+@@ -30,4 +30,6 @@
  #include "loadman.h"
--
-+#include <md5.h>
+ 
++#include <sys/types.h>
++#include <openssl/md5.h>
  /*
   * Generator description
-@@ -38,7 +38,4 @@
+@@ -38,7 +39,4 @@
   */
  
 -#define MD5_CTX  struct md5_ctx
@@ -15,7 +15,7 @@
 -
  #ifndef OTP
  #define DIGEST_SIZE               (16)
-@@ -52,10 +49,6 @@
+@@ -52,10 +50,6 @@
   */
  
 -static void MDmd5_Start     _ANSI_ARGS_ ((VOID* context));
@@ -26,20 +26,20 @@
 -static int  MDmd5_Check     _ANSI_ARGS_ ((Tcl_Interp* interp));
  
  /*
-@@ -72,9 +65,9 @@
+@@ -72,9 +66,9 @@
    sizeof (CTX_TYPE),
    DIGEST_SIZE,
 -  MDmd5_Start,
-+  (Trf_MDStart *)MD5Init,
++  (Trf_MDStart *)MD5_Init,
    MDmd5_Update,
 -  MDmd5_UpdateBuf,
-+  (Trf_MDUpdateBuf *)MD5Update,
++  (Trf_MDUpdateBuf *)MD5_Update,
    MDmd5_Final,
 -  MDmd5_Check
 +  NULL,
  };
  
-@@ -111,38 +104,4 @@
+@@ -111,38 +105,4 @@
   *------------------------------------------------------*
   *
 - *	MDmd5_Start --
@@ -78,7 +78,7 @@
 - *
   *	MDmd5_Update --
   *
-@@ -168,52 +127,5 @@
+@@ -168,52 +128,5 @@
    unsigned char buf = character;
  
 -  /*  MD5Update ((MD5_CTX*) context, &buf, 1); */
@@ -129,25 +129,25 @@
 -    PRINT ("Upd2 ABCD = %d %d %d %d\n", c->A, c->B, c->C, c->D); FL;
 -  }
 -#endif
-+  MD5Update ((MD5_CTX*) context, &buf, 1);
++  MD5_Update ((MD5_CTX*) context, &buf, 1);
  }
  
-@@ -243,6 +155,5 @@
+@@ -243,6 +156,5 @@
  {
  #ifndef OTP
 -  /*  MD5Final ((unsigned char*) digest, (MD5_CTX*) context); */
 -  md5f.final (MD5_CTXP context, (unsigned char*) digest);
-+  MD5Final ((unsigned char*) digest, (MD5_CTX*) context);
++  MD5_Final ((unsigned char*) digest, (MD5_CTX*) context);
  #else
      int    i;
-@@ -250,5 +161,5 @@
+@@ -250,5 +162,5 @@
  
      /*    MD5Final ((unsigned char*) result, (MD5_CTX*) context);*/
 -    md5f.final (MD5_CTXP context, (unsigned char*) result);
-+    MD5Final ((unsigned char*) result, (MD5_CTX*) context);
++    MD5_Final ((unsigned char*) result, (MD5_CTX*) context);
  
      for (i = 0; i < 8; i++)
-@@ -265,54 +176,2 @@
+@@ -265,54 +177,2 @@
  #endif
  }
 -

@@ -7,7 +7,7 @@
 
 PORTNAME=	Trf
 PORTVERSION=	2.1p2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel tcl${TCL_VER:S/.//}
 MASTER_SITES=	http://www.oche.de/~akupries/soft/trf/download/
 PKGNAMEPREFIX=	tcl-
@@ -51,6 +51,25 @@ post-patch:
 	# Make direct calls to -lz
 	${REINPLACE_CMD} -E 's,zf\.([^(]+),\1,g' ${WRKSRC}/generic/adler.c \
 		${WRKSRC}/generic/crc_zlib.c ${WRKSRC}/generic/zip.c
+	# Don't re-invent the dynamic linker:
+	${REINPLACE_CMD} 's,"loadman\.h","transformInt.h",' ${WRKSRC}/generic/*.c
+.ifdef TRF_USE_MD
+	#
+	# Using FreeBSD's own -lmd instead of OpenSSL's -lcrypto
+	#
+	${REINPLACE_CMD} -E -e 's,openssl/,,'		\
+		-e 's,(MD[25])_([A-Z][a-z]),\1\2,g'	\
+		${WRKSRC}/generic/*.[ch]
+	${REINPLACE_CMD} 's,-lcrypto,-lmd,' ${WRKSRC}/Makefile.in
+.else
+	#
+	# Using OpenSSL's impelemtations of for message digests (-lcrypto)
+	# To use FreeBSD's own -lmd, stop now and restart make with:
+	#
+	#	-DTRF_USE_MD
+	#
+USE_OPENSSL=	yes
+.endif
 
 post-install:
 	${LN} -sf ${SHLIB_NAME} ${PREFIX}/lib/${SHLIB_LINK}

@@ -13,27 +13,6 @@
 +  NULL
  };
  
-@@ -121,5 +120,5 @@
-   /* call md specific initialization here */
- 
--  ADLER = zf.adler32 (0L, Z_NULL, 0);
-+  ADLER = adler32 (0L, Z_NULL, 0);
- 
-   DONE (MDAdler_Start);
-@@ -154,5 +153,5 @@
-   unsigned char buf = character;
- 
--  ADLER = zf.adler32 (ADLER, &buf, 1);
-+  ADLER = adler32 (ADLER, &buf, 1);
- }
- 
-@@ -184,5 +183,5 @@
-   /* call md specific update here */
- 
--  ADLER = zf.adler32 (ADLER, buffer, bufLen);
-+  ADLER = adler32 (ADLER, buffer, bufLen);
- }
- 
 @@ -222,36 +221,2 @@
    out [3] = (char) ((adler >>  0) & 0xff);
  }
@@ -86,27 +65,6 @@
 +  NULL
  };
  
-@@ -118,5 +117,5 @@
-   /* call md specific initialization here */
- 
--  CRC = zf.crc32 (0L, Z_NULL, 0);
-+  CRC = crc32 (0L, Z_NULL, 0);
- }
- 
-@@ -149,5 +148,5 @@
-   unsigned char buf = character;
- 
--  CRC = zf.crc32 (CRC, &buf, 1);
-+  CRC = crc32 (CRC, &buf, 1);
- }
- 
-@@ -179,5 +178,5 @@
-   /* call md specific update here */
- 
--  CRC = zf.crc32 (CRC, buffer, bufLen);
-+  CRC = crc32 (CRC, buffer, bufLen);
- }
- 
 @@ -217,28 +216,2 @@
    out [0] = (char) ((crc >>  0) & 0xff);
  }

@@ -1,23 +1,20 @@
 --- generic/md2.c	Wed Aug  9 15:13:17 2000
-+++ generic/md2.c	Fri Jul  9 16:36:33 2004
-@@ -30,13 +30,8 @@
++++ generic/md2.c	Sat Jul 10 17:43:07 2004
+@@ -28,4 +28,6 @@
+  */
+ 
++#include <sys/types.h>
++#include <openssl/md2.h>
  #include "loadman.h"
  
--/*
-- * Generator description
-- * ---------------------
-- *
-- * The MD2 alogrithm is used to compute a cryptographically strong
-- * message digest.
-- */
-+#include <sys/types.h>
-+#include <md2.h>
+@@ -38,5 +40,5 @@
+  */
  
 -#define DIGEST_SIZE               (MD2_DIGEST_LENGTH)
-+#define DIGEST_SIZE               16
++#define DIGEST_SIZE               (16)
  #define CTX_TYPE                  MD2_CTX
  
-@@ -45,9 +40,6 @@
+@@ -45,9 +47,6 @@
   */
  
 -static void MDmd2_Start     _ANSI_ARGS_ ((VOID* context));
@@ -27,20 +24,20 @@
 -static int  MDmd2_Check     _ANSI_ARGS_ ((Tcl_Interp* interp));
  
  /*
-@@ -59,9 +51,9 @@
+@@ -59,9 +58,9 @@
    sizeof (CTX_TYPE),
    DIGEST_SIZE,
 -  MDmd2_Start,
-+  (Trf_MDStart *)MD2Init,
++  (Trf_MDStart *)MD2_Init,
    MDmd2_Update,
 -  MDmd2_UpdateBuf,
-+  (Trf_MDUpdateBuf *)MD2Update,
++  (Trf_MDUpdateBuf *)MD2_Update,
    MDmd2_Final,
 -  MDmd2_Check
 +  NULL
  };
  
-@@ -94,30 +86,4 @@
+@@ -94,30 +93,4 @@
   *------------------------------------------------------*
   *
 - *	MDmd2_Start --
@@ -71,7 +68,7 @@
 - *
   *	MDmd2_Update --
   *
-@@ -143,33 +109,5 @@
+@@ -143,33 +116,5 @@
    unsigned char buf = character;
  
 -  md2f.update ((MD2_CTX*) context, &buf, 1);
@@ -103,10 +100,10 @@
 -int   bufLen;
 -{
 -  md2f.update ((MD2_CTX*) context, (unsigned char*) buffer, bufLen);
-+  MD2Update ((MD2_CTX*) context, &buf, 1);
++  MD2_Update ((MD2_CTX*) context, &buf, 1);
  }
  
-@@ -198,31 +136,4 @@
+@@ -198,31 +143,4 @@
  VOID* digest;
  {
 -  md2f.final ((unsigned char*) digest, (MD2_CTX*) context);
@@ -137,5 +134,5 @@
 -Tcl_Interp* interp;
 -{
 -  return TrfLoadMD2 (interp);
-+  MD2Final ((unsigned char*) digest, (MD2_CTX*) context);
++  MD2_Final ((unsigned char*) digest, (MD2_CTX*) context);
  }
