@@ -1,0 +1,11 @@
+--- xv.c.orig	Mon Mar 21 22:00:43 2005
++++ xv.c	Mon Mar 21 22:21:53 2005
+@@ -2197,7 +2197,7 @@
+   SetISTR(ISTR_INFO,formatStr);
+ 	
+   SetInfoMode(INF_PART);
+-  SetISTR(ISTR_FILENAME, 
++  SetISTR(ISTR_FILENAME, "%s",
+ 	  (filenum==DFLTPIC || filenum==GRABBED || frompipe)
+ 	  ? "<none>" : basefname);
+ 
