@@ -1050,6 +1050,7 @@
     SUBDIR += php5-pcntl
     SUBDIR += php5-pcre
     SUBDIR += php5-pear
+    SUBDIR += php5-readline
     SUBDIR += phptags
     SUBDIR += physfs
     SUBDIR += picasm
