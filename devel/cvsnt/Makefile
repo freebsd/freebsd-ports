@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.cvsnt.org/archive/ \
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	CVS clone
 
+CONFLICTS=	cvs-1*
+
 USE_LIBLTDL=	yes
 USE_INC_LIBTOOL_VER=	13
 USE_RC_SUBR=	yes
