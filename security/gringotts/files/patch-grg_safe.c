@@ -36,14 +36,3 @@
  
  		//drop root privileges
  		setuid(getuid());
-@@ -181,8 +184,8 @@
- 
- 	if (ulimit != '0')
- 	{
--		g_critical ("%s", _("Your shell is configured to produce core dumps. I cannot go on. Please run gringotts via its shell script."));
--		return FALSE;
-+		g_critical ("%s", _("Your shell is configured to produce core dumps."));
-+//		return FALSE;
- 	}
- 
- 	//checks that stderr, stdin & stdout are opened
