@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	quantlib
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.5
 CATEGORIES=	finance
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	QuantLib-${PORTVERSION}-src
+DISTNAME=	QuantLib-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A comprehensive software framework for quantitative finance
@@ -19,21 +19,22 @@ COMMENT=	A comprehensive software framework for quantitative finance
 WRKSRC=		${WRKDIR}/QuantLib-${PORTVERSION}
 
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=	13
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_GCC=	3.3
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
 INSTALLS_SHLIB=	yes
 
-MAN1=		DiscreteHedging.1 EuropeanOption.1 SwapValuation.1 \
-		quantlib-config.1
+MAN1=	quantlib-config.1 quantlib-test-suite.1
+PLIST_FILES=	bin/quantlib-config \
+		lib/libQuantLib.a \
+		lib/libQuantLib.so \
+		lib/libQuantLib.so.0 \
+		share/aclocal/quantlib.m4
 
-.include <bsd.port.pre.mk>
+post-install:
+	@${FIND} ${PREFIX}/include/ql -type f | \
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${PREFIX}/include/ql -type d | ${SORT} -r | \
+		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 
-.if ${OSVERSION} < 500035
-CFLAGS+=	-O0
-.endif
-
-post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|(prefix)/aclocal|(datadir)/aclocal|g'
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
