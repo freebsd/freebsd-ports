@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	diablo
-PORTVERSION=	3.0
+PORTVERSION=	4.2
 CATEGORIES=	news
 MASTER_SITES=	http://www.openusenet.org/diablo/download/
 DISTNAME=	${PKGNAME}-REL
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dominic_marks@btinternet.com
 
 BUILD_DEPENDS=	xmake:${PORTSDIR}/devel/xmake
 
@@ -27,11 +27,11 @@ MAN8=		dicmd.8 didump.8 dexpireover.8 dfeedinfo.8 dgrpctl.8 \
 DOCDIR=		${PREFIX}/share/doc/diablo
 
 post-extract:
-	${CP} ${SCRIPTDIR}/diablo.sh ${WRKDIR}
+	${CP} ${SCRIPTDIR}/diablo.sh-sample ${WRKDIR}
 
 do-configure:
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
-		${WRKDIR}/diablo.sh ${WRKSRC}/XMakefile.inc
+		${WRKDIR}/diablo.sh-sample ${WRKSRC}/XMakefile.inc
 .ifndef WITH_DES
 	${REINPLACE_CMD} -e 's| -ldes||g' ${WRKSRC}/XMakefile.inc
 .endif
@@ -47,7 +47,7 @@ do-install:
 .for file in COPYRIGHT INSTALL README.READER README.SERVER RELEASE_NOTES
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCDIR}
 .endfor
-	${INSTALL_SCRIPT} ${WRKDIR}/diablo.sh ${PREFIX}/etc/rc.d
+	${INSTALL_SCRIPT} ${WRKDIR}/diablo.sh-sample ${PREFIX}/etc/rc.d
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
