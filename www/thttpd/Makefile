@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	thttpd-2.05
+DISTNAME=	thttpd-2.07
 CATEGORIES=	www
 MASTER_SITES=	http://www.acme.com/software/thttpd/ \
 		http://www.freenix.no/~anders/
