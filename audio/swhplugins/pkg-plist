@@ -1,4 +1,5 @@
 lib/ladspa/alias_1407.so
+lib/ladspa/allpass_1895.so
 lib/ladspa/am_pitchshift_1433.so
 lib/ladspa/amp_1181.so
 lib/ladspa/analogue_osc_1416.so
@@ -6,16 +7,21 @@ lib/ladspa/bandpass_a_iir_1893.so
 lib/ladspa/bandpass_iir_1892.so
 lib/ladspa/bode_shifter_1431.so
 lib/ladspa/bode_shifter_cv_1432.so
+lib/ladspa/butterworth_1902.so
 lib/ladspa/chebstortion_1430.so
 lib/ladspa/comb_1190.so
+lib/ladspa/comb_1887.so
 lib/ladspa/comb_splitter_1411.so
 lib/ladspa/crossover_dist_1404.so
 lib/ladspa/dc_remove_1207.so
 lib/ladspa/decimator_1202.so
 lib/ladspa/declip_1195.so
+lib/ladspa/decay_1886.so
+lib/ladspa/delay_1898.so
 lib/ladspa/delayorama_1402.so
 lib/ladspa/diode_1185.so
 lib/ladspa/divider_1186.so
+lib/ladspa/dj_eq_1901.so
 lib/ladspa/dj_flanger_1438.so
 lib/ladspa/dyson_compress_1403.so
 lib/ladspa/fad_delay_1192.so
@@ -24,7 +30,7 @@ lib/ladspa/fm_osc_1415.so
 lib/ladspa/foldover_1213.so
 lib/ladspa/foverdrive_1196.so
 lib/ladspa/freq_tracker_1418.so
-lib/ladspa/gate_1921.so
+lib/ladspa/gate_1410.so
 lib/ladspa/giant_flange_1437.so
 lib/ladspa/gong_1424.so
 lib/ladspa/gong_beater_1439.so
@@ -36,6 +42,7 @@ lib/ladspa/hermes_filter_1200.so
 lib/ladspa/highpass_iir_1890.so
 lib/ladspa/hilbert_1440.so
 lib/ladspa/imp_1199.so
+lib/ladspa/impulse_1885.so
 lib/ladspa/inv_1429.so
 lib/ladspa/karaoke_1409.so
 lib/ladspa/lcr_delay_1436.so
@@ -54,12 +61,14 @@ lib/ladspa/pitch_scale_1194.so
 lib/ladspa/plate_1423.so
 lib/ladspa/rate_shifter_1417.so
 lib/ladspa/retro_flange_1208.so
+lib/ladspa/revdelay_1605.so
 lib/ladspa/ringmod_1188.so
 lib/ladspa/satan_maximiser_1408.so
 lib/ladspa/sc1_1425.so
 lib/ladspa/sc2_1426.so
 lib/ladspa/sc3_1427.so
 lib/ladspa/sc4_1882.so
+lib/ladspa/se4_1883.so
 lib/ladspa/shaper_1187.so
 lib/ladspa/sifter_1210.so
 lib/ladspa/sin_cos_1881.so
@@ -75,6 +84,7 @@ lib/ladspa/transient_1206.so
 lib/ladspa/triple_para_1204.so
 lib/ladspa/valve_1209.so
 lib/ladspa/valve_rect_1405.so
+lib/ladspa/vynil_1905.so
 lib/ladspa/wave_terrain_1412.so
 lib/ladspa/zm1_1428.so
 share/ladspa/rdf/swh-aux.rdf

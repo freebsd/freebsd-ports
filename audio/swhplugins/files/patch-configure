@@ -1,0 +1,12 @@
+--- configure.orig	Sat Feb 28 11:17:58 2004
++++ configure	Sat Feb 28 11:18:25 2004
+@@ -4440,9 +4440,6 @@
+   echo "configure: warning: May result in non-portable code" 1>&2
+     MACHINE="-mcpu=${build_cpu} -march=${build_cpu}"
+   if test ${build_cpu} = "powerpc"; then MACHINE=""; fi
+-
+-  CFLAGS="$CFLAGS -Wall -O6 -fomit-frame-pointer -fstrength-reduce -funroll-loops -fmove-all-movables -ffast-math -fPIC -DPIC ${MACHINE} ${USE_SSE}"
+-
+         
+     fi
+ 
