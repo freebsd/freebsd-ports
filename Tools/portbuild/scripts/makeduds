@@ -1,7 +1,43 @@
 #!/bin/sh
-export PORTOBJFORMAT=aout
-export OSVERSION=228001
+# usage: $0 branch
+usage () {
+  echo "usage: makeduds branch"
+  exit 1
+}
+if [ $# != 1 ]; then
+  usage
+fi
+case "x$1" in
+  x2.2)
+    branch=2.2
+    export PORTOBJFORMAT=aout
+    export OSREL=2.2.8
+    export OSVERSION=228001
+    ;;
+  x3)
+    branch=3
+    export PORTOBJFORMAT=elf
+    # export OSREL=3.1
+    # export OSVERSION=310002
+    ;;
+  x4)
+    branch=4
+    export PORTOBJFORMAT=elf
+    export OSREL=4.0
+    export OSVERSION=400002
+    ;;
+  *)
+    usage
+    ;;
+esac
+
+export PORTSDIR=$(pwd)
+
 unset DISPLAY
+export BATCH=t
 export HAVE_MOTIF=t
+export PACKAGE_BUILDING=t
 export PARALLEL_PACKAGE_BUILD=t
-make ignorelist ECHO_MSG=true > ../../2.2/duds
+export NO_RESTRICTED=t
+#export FOR_CDROM=t
+make ignorelist ECHO_MSG=true > ../../${branch}/duds
