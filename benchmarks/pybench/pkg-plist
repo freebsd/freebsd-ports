@@ -51,6 +51,9 @@ share/pybench/package/__init__.pyo
 share/pybench/package/submodule.py
 share/pybench/package/submodule.pyc
 share/pybench/package/submodule.pyo
+share/pybench/platform.py
+share/pybench/platform.pyc
+share/pybench/platform.pyo
 share/pybench/pybench.py
 share/pybench/pybench.pyc
 share/pybench/pybench.pyo
