@@ -10,7 +10,7 @@ PORTVERSION=	20${DIST_VER}
 CATEGORIES=	print
 MASTER_SITES=	http://pfaedit.sourceforge.net/ \
 		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	./ libuninameslist
+MASTER_SITE_SUBDIR =	libuninameslist
 DISTFILES=	${EXTRACT_ONLY}
 .if !defined(NOPORTDOCS)
 DISTFILES+=	${DOCFILE}
@@ -38,7 +38,7 @@ INSTALLS_SHLIB=	yes
 
 MAN1=		pfaedit.1 sfddiff.1
 
-DIST_VER=	030125
+DIST_VER=	030130
 LIBUNINAMESLIST_VER=	030116
 
 .if !defined(NOPORTDOCS)

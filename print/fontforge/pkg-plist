@@ -64,6 +64,7 @@ lib/libuninameslist.so.0
 %%PORTDOCS%%share/doc/pfaedit/MultiPrint.png
 %%PORTDOCS%%share/doc/pfaedit/NoPointHint.png
 %%PORTDOCS%%share/doc/pfaedit/PageSetup.png
+%%PORTDOCS%%share/doc/pfaedit/PfaEdit-TeX.html
 %%PORTDOCS%%share/doc/pfaedit/PfaEdits.gif
 %%PORTDOCS%%share/doc/pfaedit/Print.png
 %%PORTDOCS%%share/doc/pfaedit/Problems-MacOSX.html
@@ -96,6 +97,7 @@ lib/libuninameslist.so.0
 %%PORTDOCS%%share/doc/pfaedit/bvlayers.png
 %%PORTDOCS%%share/doc/pfaedit/bvtools.png
 %%PORTDOCS%%share/doc/pfaedit/cap-height.png
+%%PORTDOCS%%share/doc/pfaedit/charinfo-akhn.png
 %%PORTDOCS%%share/doc/pfaedit/charinfo-comment.png
 %%PORTDOCS%%share/doc/pfaedit/charinfo-comp.png
 %%PORTDOCS%%share/doc/pfaedit/charinfo-lig.png
@@ -116,6 +118,12 @@ lib/libuninameslist.so.0
 %%PORTDOCS%%share/doc/pfaedit/display.html
 %%PORTDOCS%%share/doc/pfaedit/document.nvd
 %%PORTDOCS%%share/doc/pfaedit/editexample.html
+%%PORTDOCS%%share/doc/pfaedit/editexample2.html
+%%PORTDOCS%%share/doc/pfaedit/editexample3.html
+%%PORTDOCS%%share/doc/pfaedit/editexample4.html
+%%PORTDOCS%%share/doc/pfaedit/editexample5.html
+%%PORTDOCS%%share/doc/pfaedit/editexample6.html
+%%PORTDOCS%%share/doc/pfaedit/editexample7.html
 %%PORTDOCS%%share/doc/pfaedit/editmenu.html
 %%PORTDOCS%%share/doc/pfaedit/elementmenu.html
 %%PORTDOCS%%share/doc/pfaedit/englishkernpairs.txt
@@ -126,6 +134,11 @@ lib/libuninameslist.so.0
 %%PORTDOCS%%share/doc/pfaedit/faq.html
 %%PORTDOCS%%share/doc/pfaedit/faqFS.html
 %%PORTDOCS%%share/doc/pfaedit/faqFrame.html
+%%PORTDOCS%%share/doc/pfaedit/ffi-caret.png
+%%PORTDOCS%%share/doc/pfaedit/ffi-moved.png
+%%PORTDOCS%%share/doc/pfaedit/ffi-refs.png
+%%PORTDOCS%%share/doc/pfaedit/ffi-rmoverlap.png
+%%PORTDOCS%%share/doc/pfaedit/ffi-unlink.png
 %%PORTDOCS%%share/doc/pfaedit/fi.png
 %%PORTDOCS%%share/doc/pfaedit/filemenu.html
 %%PORTDOCS%%share/doc/pfaedit/files.html
@@ -207,6 +220,7 @@ lib/libuninameslist.so.0
 %%PORTDOCS%%share/doc/pfaedit/rplserifs.png
 %%PORTDOCS%%share/doc/pfaedit/sans-serif-def.png
 %%PORTDOCS%%share/doc/pfaedit/scripting.html
+%%PORTDOCS%%share/doc/pfaedit/scriptnotes.html
 %%PORTDOCS%%share/doc/pfaedit/search.html
 %%PORTDOCS%%share/doc/pfaedit/selections.html
 %%PORTDOCS%%share/doc/pfaedit/serif-def.png
