@@ -7,7 +7,7 @@
 
 PORTNAME=	CGI-SpeedyCGI
 PORTVERSION=	2.21
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	CGI
@@ -17,6 +17,9 @@ MAINTAINER=	lars@thegler.dk
 COMMENT=	Speed up perl CGI scripts by running them persistently
 
 PERL_CONFIGURE=	yes
+
+post-configure:
+	@${PERL} -pi.bak -e 's,^PREFIX = /usr$$,PREFIX = ${PREFIX},g' ${WRKSRC}/*/Makefile
 
 post-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/speedy/speedy ${PREFIX}/bin/speedy_suid
