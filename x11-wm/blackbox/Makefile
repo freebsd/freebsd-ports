@@ -23,6 +23,7 @@ GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
 pre-patch:
+	${REINPLACE_CMD} -e 's#-pedantic##' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's#nls src util#nls src#' ${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -E 's/^SUBDIRS/#SUBDIRS/' ${WRKSRC}/doc/Makefile.in
 	${REINPLACE_CMD} -e 's# bsetroot.1 bsetbg.1##' ${WRKSRC}/doc/Makefile.in
