@@ -7,6 +7,7 @@
 
 PORTNAME=	ruby-usersguide
 PORTVERSION=	${VERSION}
+PORTREVISION=	1
 CATEGORIES+=	lang ruby
 MASTER_SITES?=	http://www.cs.iastate.edu/~slagell/ruby/
 DISTNAME?=	${SHORTNAME}-${VERSION}
