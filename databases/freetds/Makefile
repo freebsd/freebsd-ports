@@ -6,7 +6,6 @@
 # $FreeBSD$
 
 DISTNAME=	freetds-0.50
-PKGNAME=	freetds-0.50
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	ALPHA/freetds
@@ -19,7 +18,7 @@ WRKSRC=		${WRKDIR}/freetds
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-tdsver=7.0 \
-		--enable-dmbfix
+		--enable-dbmfix
 USE_GMAKE=	yes
 
 .include <bsd.port.mk>
