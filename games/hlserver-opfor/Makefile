@@ -7,7 +7,8 @@
 
 PORTNAME=	opfor
 PORTVERSION=	1.1.0.6
-MASTER_SITES=	http://fileplanet.games-world.net/dl/ftp1.gamespy.com/fpnew/action/half-life/official/ \
+MASTER_SITES=	http://www.planetmirror.com/pub/bluesnews/half-life/opfor/ \
+		http://fileplanet.games-world.net/dl/ftp1.gamespy.com/fpnew/action/half-life/official/ \
 		http://ftp1download.gamespy.com/fileplanet/fpnew/action/half-life/official/
 DISTNAME=	op4-linux-${PORTVERSION:S/.//g}
 
