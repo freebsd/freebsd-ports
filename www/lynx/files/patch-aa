@@ -1,55 +1,19 @@
-*** Makefile.orig	Wed Dec 31 17:11:19 1997
---- Makefile	Wed Jan 14 02:01:23 1998
+*** makefile.in.bak	Sun Dec 14 02:30:40 1997
+--- makefile.in	Mon Dec 15 17:48:54 1997
 ***************
-*** 1,6 ****
---- 1,7 ----
-  ##makefile for lynx
+*** 37,43 ****
+  libdir= @libdir@
   
-  SHELL = /bin/sh
-+ PREFIX ?= /usr/local
+  ## Where you want the help-files installed
+! helpdir= @libdir@/lynx_help
   
-  ##uncomment the next line if your make fails to set $(MAKE)
-  #MAKE= make
-***************
-*** 14,28 ****
+  installbin= @INSTALL_PROGRAM@ -s -m 755
+  installdoc= @INSTALL_DATA@
+--- 37,43 ----
+  libdir= @libdir@
   
-  ##change the next line if you want lynx installed somewhere
-  ##besides /usr/local/bin
-! exec= /usr/local/bin
+  ## Where you want the help-files installed
+! helpdir= $(prefix)/lib/lynx_help
   
-  ##change the next line if you want the lynx man file installed somewhere
-  ##besides /usr/local/man/man1
-! doc= /usr/local/man/man1
-  
-  ##change the next line if you want the lynx.cfg file installed somewhere
-  ##besides /usr/local/lib
-! cfg= /usr/local/lib
-  
-  installbin= install -c -s -m 755
-  installdoc= install -c -m 444
---- 15,29 ----
-  
-  ##change the next line if you want lynx installed somewhere
-  ##besides /usr/local/bin
-! exec= ${PREFIX}/bin
-  
-  ##change the next line if you want the lynx man file installed somewhere
-  ##besides /usr/local/man/man1
-! doc= ${PREFIX}/man/man1
-  
-  ##change the next line if you want the lynx.cfg file installed somewhere
-  ##besides /usr/local/lib
-! cfg= ${PREFIX}/etc
-  
-  installbin= install -c -s -m 755
-  installdoc= install -c -m 444
-***************
-*** 274,279 ****
---- 275,281 ----
-  
-  # Set SITE_DEFS to one or more of the defines for lynx below:
-  SITE_DEFS = $(DIR_DEFS) # Your defines here
-+ SITE_DEFS += -DLYNX_CFG_FILE='\"'$(PREFIX)/etc/lynx.cfg'\"'
-  
-  # if you are compiling on a previously unsupported system, modify
-  # this generic entry!!
+  installbin= @INSTALL_PROGRAM@ -s -m 755
+  installdoc= @INSTALL_DATA@
