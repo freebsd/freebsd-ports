@@ -1,0 +1,15 @@
+ASV is a popular Python module to parse or write simple text file formats
+such as comma-separated values (CSV), tab-separated values (TSV) and
+colon-separated values.  It can easily be extended to cope with other
+related file formats.
+
+This port installs both a Python module ("ASV"), and an executable
+command-line script ("asv").
+
+This release of ASV requires Python 2.0 or later, and is still to be regarded
+as a beta version.
+
+Author: Laurence Tratt <laurie@tratt.net>
+WWW:    http://tratt.net/~laurie/python/asv/
+
+-- Johann Visagie <johann@egenetics.com>

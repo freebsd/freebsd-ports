@@ -1,0 +1,13 @@
+bin/asv
+lib/%%PYTHON_VERSION%%/site-packages/ASV.py
+lib/%%PYTHON_VERSION%%/site-packages/ASV.pyc
+lib/%%PYTHON_VERSION%%/site-packages/ASV.pyo
+%%PORTDOCS%%share/doc/py-asv/INSTALL
+%%PORTDOCS%%share/doc/py-asv/README
+%%PORTDOCS%%share/doc/py-asv/THANKS
+%%PORTDOCS%%share/examples/py-asv/asv_example.py
+%%PORTDOCS%%share/examples/py-asv/asv_example.pyc
+%%PORTDOCS%%share/examples/py-asv/asv_example.pyo
+%%PORTDOCS%%share/examples/py-asv/example_data.csv
+%%PORTDOCS%%@dirrm share/examples/py-asv
+%%PORTDOCS%%@dirrm share/doc/py-asv

@@ -124,6 +124,7 @@
     SUBDIR += pspell-ispell
     SUBDIR += py-4suite
     SUBDIR += py-HyperText
+    SUBDIR += py-asv
     SUBDIR += py-csv
     SUBDIR += py-expat
     SUBDIR += py-martel
