@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.101 1996/09/17 07:46:30 asami Exp $
+# $Id: Makefile,v 1.102 1996/10/08 15:07:06 pst Exp $
 #
 
     SUBDIR += FWF
@@ -24,8 +24,6 @@
     SUBDIR += qt
     SUBDIR += rxvt
     SUBDIR += specJava
-    SUBDIR += stars
-    SUBDIR += sunclock
     SUBDIR += swisswatch
     SUBDIR += sxpc
     SUBDIR += tk
@@ -41,7 +39,6 @@
     SUBDIR += xcolors
     SUBDIR += xdaliclock
     SUBDIR += xdtm
-    SUBDIR += xearth
     SUBDIR += xfed
     SUBDIR += xfedor
     SUBDIR += xfm
@@ -50,7 +47,6 @@
     SUBDIR += xkeycaps
     SUBDIR += xloadimage
     SUBDIR += xlockmore
-    SUBDIR += xphoon
     SUBDIR += xpostit
     SUBDIR += xscreensaver
     SUBDIR += xsnow
