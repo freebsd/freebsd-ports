@@ -8,7 +8,7 @@
 
 PORTNAME?=	vim
 PORTVERSION=	6.0h
-CATEGORIES=	editors
+CATEGORIES?=	editors
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unreleased/unix/ \
 		ftp://ftp.nuxi.com/pub/vim/unreleased/unix/ \
 		ftp://ftp.freesoftware.com/pub/vim/unreleased/unix/ \
@@ -30,17 +30,16 @@ Y2K=		http://www.vim.org/y2k.html
 SLAVEDIRS=	editors/vim-lite
 
 .if defined(PACKAGE_BUILDING) && !defined(LITE)
-BUILD_DEPENDS=	tclsh8.0:${PORTSDIR}/lang/tcl80 \
-		python:${PORTSDIR}/lang/python
+BUILD_DEPENDS=	tclsh8.0:${PORTSDIR}/lang/tcl80
 LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80
-RUN_DEPENDS=	python:${PORTSDIR}/lang/python
 USE_PERL5=	yes
+USE_PYTHON=	yes
 .endif
 
 DIST_SUBDIR=	vim
 WRKSRC=		${WRKDIR}/vim${PORTVERSION:S/.//g}/src
-PATCH_DIST_ARGS=	-d ${WRKDIR}/${DISTNAME} --forward --quiet -E ${PATCH_DIST_STRIP}
-MAKE_FLAGS=	CONF_ARGS="--prefix=${PREFIX} --with-tlib=termlib" -f
+PATCH_DIST_ARGS=	-d ${WRKDIR}/${PORTNAME}${PORTVERSION:S/.//g} --forward --quiet -E ${PATCH_DIST_STRIP}
+MAKE_ARGS+=	CONF_ARGS="--prefix=${PREFIX} --with-tlib=termlib"
 ALL_TARGET=	#
 PLIST_SUB=	VIM_VER=${DISTNAME:S/-//:S/.//}
 MAN1=		vim.1 vimtutor.1 xxd.1 ectags.1
@@ -49,28 +48,28 @@ MLINKS=		vim.1 rvim.1  vim.1 rview.1  ectags.1 etags.1
 .if !defined(LITE)
 MLINKS+=	vim.1 gvim.1  vim.1 gview.1  vim.1 rgvim.1  vim.1 rgview.1
 
-MAKE_FLAGS:=	X_LIBS=-lxpg4 CONF_OPT_MAX="--enable-max-features" ${MAKE_FLAGS}
+MAKE_ARGS+=	X_LIBS=-lxpg4 CONF_OPT_MAX="--enable-max-features"
 
 .if defined(HAVE_GTK)
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-CONFIGURE=	GTK_CONFIG="${GTK_CONFIG}"
-MAKE_FLAGS:=	CONF_OPT_GUI="--enable-gui=gtk --with-gtk-prefix=${X11BASE} --enable-multibyte --enable-fontset --enable-multibyte --enable-xim" ${MAKE_FLAGS}
+CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
+MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=gtk --with-gtk-prefix=${X11BASE} --enable-multibyte --enable-fontset --enable-multibyte --enable-xim"
 .elif defined(HAVE_MOTIF)
 REQUIRES_MOTIF=	yes
-MAKE_FLAGS:=	CONF_OPT_GUI="--enable-gui=motif --with-motif-lib=\"${MOTIFLIB}\" --enable-multibyte --enable-fontset --enable-multibyte --enable-xim" MOTIFHOME=${X11BASE} ${MAKE_FLAGS}
+MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=motif --with-motif-lib=\"${MOTIFLIB}\" --enable-multibyte --enable-fontset --enable-multibyte --enable-xim" MOTIFHOME=${X11BASE}
 .else
-MAKE_FLAGS:=	CONF_OPT_GUI="--enable-gui=athena --enable-multibyte --enable-fontset --enable-multibyte --enable-xim" ${MAKE_FLAGS}
+MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=athena --enable-multibyte --enable-fontset --enable-multibyte --enable-xim"
 .endif
 
 .if defined(PACKAGE_BUILDING)
-MAKE_FLAGS:=	CONF_OPT_PERL="--enable-perlinterp --enable-pythoninterp --enable-tclinterp --enable-cscope" ${MAKE_FLAGS}
+MAKE_ARGS+=	CONF_OPT_PERL="--enable-perlinterp --enable-pythoninterp --enable-tclinterp --enable-cscope"
 .endif
 
 .else	# LITE
 PLIST=		${WRKDIR}/PLIST.nogui
-MAKE_FLAGS:=	CONF_OPT_GUI="--enable-gui=no --without-x" ${MAKE_FLAGS}
-MAKE_FLAGS:=	CONF_OPT_PERL="--disable-perlinterp --disable-pythoninterp --disable-tclinterp" ${MAKE_FLAGS}
+MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=no --without-x"
+MAKE_ARGS+=	CONF_OPT_PERL="--disable-perlinterp --disable-pythoninterp --disable-tclinterp"
 .endif	# LITE
 
 pre-build:
