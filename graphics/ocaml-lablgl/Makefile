@@ -19,18 +19,14 @@ COMMENT=	OpenGL interface for Objective Caml
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 RUN_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
+BROKEN=		"Does not compile"
+
 USE_MESA=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/lablGL-${PORTVERSION}
 ALL_TARGET=	all opt
 EXAMPLESDIR=	${PREFIX}/share/examples/ocaml/${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502000
-BROKEN=		"Does not compile"
-.endif
 
 post-extract:
 	@${CP} ${WRKSRC}/Makefile.config.ex ${WRKSRC}/Makefile.config
@@ -43,4 +39,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
