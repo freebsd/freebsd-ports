@@ -61,7 +61,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   </vuln>
 
   <vuln vid="8f86d8b5-6025-11d9-a9e7-0001020eed82">
-    <topic>tiff -- tiffdump interger overflow vulnerability</topic>
+    <topic>tiff -- tiffdump integer overflow vulnerability</topic>
     <affects>
       <package>
 	<name>tiff</name>
@@ -83,6 +83,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2005-01-06</discovery>
       <entry>2005-01-06</entry>
+      <modified>2005-01-08</modified>
     </dates>
   </vuln>
 
