@@ -39,4 +39,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/4DEVELOPERS.jp ${WRKSRC}/README.jp ${DOCDIR}
 .endif
 
+post-install: 
+	@${CAT} ${PKGDIR}/MESSAGE 
+
 .include <bsd.port.mk>
