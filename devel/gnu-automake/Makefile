@@ -1,6 +1,6 @@
-# New ports collection makefile for:	automake
-# Date created:		15 March 1997
-# Whom:			FUJIMOTO Kensaku <fujimoto@oscar.elec.waseda.ac.jp>
+# New ports collection makefile for:	automake17
+# Date created:		15 Feb 2003
+# Whom:			Udo Schweigert
 #
 # $FreeBSD$
 #
@@ -14,15 +14,14 @@ MASTER_SITE_SUBDIR=	automake
 DISTNAME=	automake-${PORTVERSION}
 
 MAINTAINER=	alane@FreeBSD.org
+COMMENT=	GNU automake generates input files for GNU autoconf
 
-.undef		NO_IGNORE
-BORKED=		"DON'T EVEN THINK ABOUT IT."
-BROKEN=		${BORKED}
-IGNORE=		"DAMN YOU BENTO. LEAVE THIS ALONE!"
+BROKEN=		Needs autoconf >= 254 to build.
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PERL=${PERL5}
+USE_REINPLACE=	yes
 
 STRIP=		# none
 
@@ -36,10 +35,20 @@ pre-everything:
 	@${FALSE}
 .endif # defined(USE_AUTOMAKE) || defined(USE_AUTOMAKE_VER)
 
-do-build:
-	${ECHO_MSG} This port is not ready yet.
+pre-configure:
+	@${REINPLACE_CMD} -i -e "s,%%X11BASE%%,${X11BASE}," \
+		${WRKSRC}/aclocal.in
 
-do-install:
-	${ECHO_MSG} I told you this port is not ready yet. Now go away.
+pre-install:
+	${RM} -fr ${PREFIX}/libexec/automake17
+	${MKDIR} ${PREFIX}/libexec/automake17
+
+post-install:
+.for i in aclocal automake
+	${LN} -sf ${PREFIX}/bin/${i}17 \
+		${PREFIX}/libexec/automake17/${i}
+.endfor
+	@install-info ${PREFIX}/info/automake17.info \
+		${PREFIX}/info/dir
 
 .include <bsd.port.mk>
