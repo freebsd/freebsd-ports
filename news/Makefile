@@ -63,6 +63,7 @@
     SUBDIR += p5-NNTPClient
     SUBDIR += p5-News-Article
     SUBDIR += p5-News-Newsrc
+    SUBDIR += p5-NewsLib
     SUBDIR += p5-POE-Component-Client-NNTP
     SUBDIR += pan2
     SUBDIR += papercut

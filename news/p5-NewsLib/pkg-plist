@@ -1,0 +1,14 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/NewsLib/.packlist
+%%SITE_PERL%%/News/NNTPAuth.pm
+%%SITE_PERL%%/News/Article/Cancel.pm
+%%SITE_PERL%%/News/Article/Ref.pm
+%%SITE_PERL%%/News/Article/Clean.pm
+%%SITE_PERL%%/News/Article/Response.pm
+%%SITE_PERL%%/Net/NNTP/Auth.pm
+%%SITE_PERL%%/Net/NNTP/Proxy.pm
+%%SITE_PERL%%/Net/NNTP/Client.pm
+%%SITE_PERL%%/Net/NNTP/Functions.pm
+@dirrm %%SITE_PERL%%/News/Article
+@unexec rmdir %D/%%SITE_PERL%%/News 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Net/NNTP
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/NewsLib

@@ -1,0 +1,18 @@
+NewsLib - a News Library for Perl
+=================================
+
+NewsLib is a library of perl modules for managing Network News services.
+It's meant to be used for code-reuse and sharing when writing news-based
+applications.  It currently includes:
+
+News::Article::Response		Create responses to News::Article articles
+News::Article::Ref		Reference functions for news articles	
+News::Article::Clean		Subroutines to clean News::Article headers
+News::Article::Cancel		Generate accurate cancel messages
+News::NNTPAuth			Deprecated for Net::NNTP::Auth
+Net::NNTP::Auth			A standard NNTP authentication method
+Net::NNTP::Proxy		A news server in perl
+Net::NNTP::Client		Simulate an entire NNTP client
+Net::NNTP::Functions		Code to implement NNTP-standard functions
+
+WWW: http://search.cpan.org/dist/newslib/
