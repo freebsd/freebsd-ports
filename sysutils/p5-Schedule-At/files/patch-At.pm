@@ -1,6 +1,14 @@
 --- At.pm.orig	Mon Mar 25 20:52:01 2002
-+++ At.pm	Tue May 14 17:17:41 2002
-@@ -258,6 +258,7 @@
++++ At.pm	Tue May 14 18:15:55 2002
+@@ -55,6 +55,7 @@
+ 		print ATCMD "$TAGID$params{TAG}\n" if $params{TAG};
+ 		print ATCMD $params{COMMAND};
+ 		close (ATCMD);
++		return 1 if ($?);
+ 	}
+ 
+ 	0;
+@@ -258,6 +259,7 @@
  Jose A. Rodriguez (josear@ac.upc.es)
  
  =cut
@@ -8,7 +16,7 @@
  
  ###############################################################################
  # OS dependent code
-@@ -327,6 +328,25 @@
+@@ -327,6 +329,25 @@
  		my @fields = split("\t", $_[0]);
  		($fields[0], substr($fields[1], 0, 16)) 
  	};
