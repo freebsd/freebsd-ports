@@ -26,10 +26,10 @@ MLINKS=		compface.1 uncompface.1 \
 		compface.3 uncompface.3
 
 .if defined(WITHOUT_X11)
-PLIST_SUB+=     X11="@comment "
+PLIST_SUB+=	X11="@comment "
 WITH_AUDIO=	# none
 .else # with X11
-PLIST_SUB+=     X11=""
+PLIST_SUB+=	X11=""
 USE_GNOME=	gnomehack gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
