@@ -1,5 +1,5 @@
---- src/gdevmjc.c.orig	Tue May 23 19:16:52 2000
-+++ src/gdevmjc.c	Tue May 23 19:17:44 2000
+--- gdevmjc/gdevmjc.c.orig	Tue May 23 19:16:52 2000
++++ gdevmjc/gdevmjc.c	Tue May 23 19:17:44 2000
 @@ -43,7 +43,8 @@
  #include <limits.h>
  #include "gdevprn.h"
