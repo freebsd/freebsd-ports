@@ -92,9 +92,12 @@ share/xvile/vile/perl/winops.pm
 share/xvile/vile/color-ls.rc
 share/xvile/vile/dates.rc
 share/xvile/vile/digraphs.rc
+share/xvile/vile/gnugpg.rc
+share/xvile/vile/loaderrs.rc
 share/xvile/vile/manpage.rc
 share/xvile/vile/palettes.rc
 share/xvile/vile/pictmode.rc
+share/xvile/vile/search.rc
 share/xvile/vile/shifts.rc
 share/xvile/vile/vileinit.rc
 share/xvile/vile/vileperl.rc

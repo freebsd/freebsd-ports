@@ -18,9 +18,12 @@ share/vile/color-ls.rc
 share/vile/dates.rc
 share/vile/digraphs.rc
 share/vile/filters.rc
+share/vile/gnugpg.rc
+share/vile/loaderrs.rc
 share/vile/manpage.rc
 share/vile/palettes.rc
 share/vile/pictmode.rc
+share/vile/search.rc
 share/vile/shifts.rc
 share/vile/spell.rc
 share/vile/vileinit.rc
