@@ -1,4 +1,20 @@
 #!/bin/sh
+#
+# Runs in the background on the server.  This script keeps track of
+# the relative loads of the client machines, and specifies which machine(s)
+# should be handed new jobs, according to the following algorithm:
+#
+# For each machine listed in ${buildroot}/mlist, check whether its load
+# information has been updated in the last 15 seconds (should be updated by
+# the reportload script every 5 seconds).  If so, then divide the number of
+# running jobs on the client by its weighting in mlist, and output the
+# machine(s) with the minimum value to ${buildroot}/ulist. 
+#
+# Dividing by the weight has the effect of grouping machines with similar
+# job load (e.g. a weight of 5 will rank machines with job loads 0, 1, 2, 3, 4
+# as the same; if the machines all had a weight of 1 then it would only
+# choose the machine with the least value of the job load, and would probably
+# choose a single machine most of the time).
 
 buildroot=/var/portbuild
 mlist=${buildroot}/mlist
@@ -24,6 +40,13 @@ while true; do
     else
       num=99
     fi
+#xxx
+#xxx Need to figure out how this is happening and fix this script
+#xxx accordingly.  This is what causes this script to go away on
+#xxx occasion.
+#xxx
+#xxx arith: syntax error: "7:53AM / 5"
+#xxx
     num=$(($num / $l))
     if [ $num -lt $min ]; then
       mach=$m
