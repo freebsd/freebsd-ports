@@ -4,27 +4,48 @@
 # Date created:			  Sun Mar 09, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.5 1998/07/28 01:49:59 obrien Exp $
+# $Id: Makefile,v 1.6 1998/07/28 01:56:02 obrien Exp $
 #
 
-DISTNAME=	john-1.5
+DISTNAME=	john-1.6
 CATEGORIES=	security
 MASTER_SITES=	http://www.false.com/security/john/ \
 		ftp://ftp.false.com/pub/security/john/
 
 MAINTAINER=     obrien@FreeBSD.org
 
-PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	john-1.5-bugfix.diff
-
 RESTRICTED=	"contains crypto (crypt())"
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
-.if defined(HAVE_K6)
-ALL_TARGET=	${OSNAME}-${ARCHNAME}-k6
+.include <bsd.port.pre.mk>
+
+OSNAME=		${OPSYS:S/F/f/:S/N/n/:S/O/o/:S/B/b/:S/S/s/:S/D/d/}
+
+.if (${ARCH} == "i386")
+ARCHNAME=	x86
 .else
-ALL_TARGET=	${OSNAME}-${ARCHNAME}-any
+ARCHNAME=	${ARCH}
 .endif
+
+#	could do something w/
+#	if sysctl -n hw.model | grep AMD >/dev/null ; then echo AMD ; fi
+.if defined(HAVE_K6)
+ALL_TARGET=	${OSNAME}-${ARCHNAME}-k6-BINFMT
+.elif defined(HAVE_MMX)
+ALL_TARGET=	${OSNAME}-${ARCHNAME}-mmx-BINFMT
+.else
+ALL_TARGET=	${OSNAME}-${ARCHNAME}-any-BINFMT
+.endif
+
+.if ${PORTOBJFORMAT} == "elf"
+ALL_TARGET:=	${ALL_TARGET:S/BINFMT$/${PORTOBJFORMAT}/}
+.else
+ALL_TARGET:=	${ALL_TARGET:S/BINFMT$/a.out/}
+.endif
+
+WRKSRC=		${WRKDIR}/${DISTNAME}/src
+
+pre-fetch:
+	@${ECHO} "Building for ${ALL_TARGET}"
 
 do-configure:
 	@${MV} ${WRKDIR}/${DISTNAME}/run/john.ini ${WRKDIR}/${DISTNAME}/run/john.ini.in
@@ -50,11 +71,4 @@ do-install:
 	@${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/doc/* ${PREFIX}/share/doc/john
 .endif
 
-.include <bsd.port.mk>
-
-OSNAME!=	/usr/bin/uname -s | ${TR} [A-Z] [a-z]
-.if (${ARCH} == "i386")
-ARCHNAME=	x86
-.else
-ARCHNAME=	${ARCH}
-.endif
+.include <bsd.port.post.mk>
