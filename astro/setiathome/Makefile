@@ -3,7 +3,7 @@
 # Date created:         22 Apr 1999
 # Whom:                 stb@freebsd.org
 #
-# $Id: Makefile,v 1.4 1999/04/22 10:35:25 stb Exp $
+# $Id: Makefile,v 1.5 1999/04/22 12:24:23 stb Exp $
 #
 
 PKGNAME=	setiathome-0.46
@@ -14,6 +14,8 @@ MASTER_SITES=   http://setiathome.ssl.berkeley.edu/software/ \
 MAINTAINER=	stb@freebsd.org
 
 ONLY_FOR_ARCHS=	i386
+
+RESTRICTED=	"Binary redistribution not authorized."
 
 EXTRACT_CMD=		tar
 EXTRACT_BEFORE_ARGS=	-xf
