@@ -40,7 +40,7 @@ MAN8+=		x-gw.8
 
 .if !exists(${DISTDIR}/fwtk2.1${EXTRACT_SUFX}) \
 	&& !exists(${DISTDIR}/fwtk-doc-only${EXTRACT_SUFX})
-IGNORE='Please read ftp://ftp.tis.com/pub/firewalls/toolkit/README for details of how to obtain the FTWK source.  Put the files fwtk2.1${EXTRACT_SUFX} and fwtk-doc-only${EXTRACT_SUFX} into the directory ${DISTDIR} and run make again.'
+IGNORE='Please read http://www.tis.com/research/software/fwtk_readme.html for details of how to obtain the FTWK source.  Put the files fwtk2.1${EXTRACT_SUFX} and fwtk-doc-only${EXTRACT_SUFX} into the directory ${DISTDIR} and run make again.'
 .endif
 
 pre-configure:
