@@ -30,6 +30,7 @@
     SUBDIR += newsgrab
     SUBDIR += newsx
     SUBDIR += nn
+    SUBDIR += nnap
     SUBDIR += nntp
     SUBDIR += nntpbtr
     SUBDIR += nntpcache
