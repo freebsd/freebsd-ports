@@ -5,6 +5,7 @@ specified in /usr/local/lib/dserver/dserver_access file.
 Refer /usr/local/lib/dserver/doc/README.FreeBSD-setup.euc (in Japanese)
 for configuration.
 
-'kenjiro', and 'diclookup-mule.el' are installed for client programs.
-type 'kenjiro' on command line, or 'ESC-x online-dictionary' on mule.
+'kenjiro', is installed for client programs. Type 'kenjiro' on command line.
+Dictionary looking up program for Mule is also available.  
+Install diclookup-mule package.
 Look at /usr/local/lib/dserver/doc/* for more information.

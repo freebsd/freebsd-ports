@@ -1,18 +1,15 @@
---- Makefile.orig	Wed Nov  6 13:01:50 1996
-+++ Makefile	Wed Nov  6 13:02:12 1996
-@@ -0,0 +1,15 @@
+--- /dev/null	Sat Jan 31 09:42:25 1998
++++ Makefile	Sat Jan 31 09:43:12 1998
+@@ -0,0 +1,12 @@
 +PREFIX?=/usr/local
 +DOCDIR=${PREFIX}/lib/dserver/doc
 +all:
 +	(cd server2.2-pl2; ${MAKE} all)
 +	(cd clients/kenjiro; ${MAKE} all)
-+	(cd clients/diclookup-mule-2.3.0; ${MAKE} all)
 +install:
 +	if  [ ! -d ${DOCDIR} ] ; then mkdir -p ${DOCDIR} ; fi
 +	(cd server2.2-pl2; ${MAKE} install)
 +	(cd clients/kenjiro; ${MAKE} install)
-+	(cd clients/diclookup-mule-2.3.0; ${MAKE} install)
 +	cp ACKNOWLEDGMENT DICTIONARIES doc/*  ${PREFIX}/lib/dserver/doc
-+	cp clients/diclookup-mule-2.3.0/README ${DOCDIR}/README.diclookup-mule
 +	cp clients/kenjiro/Copyright ${DOCDIR}/Copyright.kenjiro
 +	cp clients/kenjiro/README ${DOCDIR}/README.kenjiro

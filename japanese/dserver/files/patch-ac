@@ -1,15 +1,4 @@
 patch files for kenjiro
---- clients/kenjiro/kenjiro.h.orig	Tue Jun 27 01:21:31 1995
-+++ clients/kenjiro/kenjiro.h	Tue Jan 28 15:39:36 1997
-@@ -41,7 +41,7 @@
- #define F(n) (1 << n)
- 
- typedef struct {
--	char name[10];
-+	char name[16];
- 	unsigned char prompt[25];
- 	int inputmode;
- 	int filter;
 --- clients/kenjiro/sub.c.orig	Tue Jun 27 01:21:31 1995
 +++ clients/kenjiro/sub.c	Tue Jan 28 15:39:36 1997
 @@ -1,6 +1,11 @@
@@ -105,29 +94,6 @@ patch files for kenjiro
  	struct winsize ws;
  
  	ioctl(0, TIOCGWINSZ, &ws);
---- clients/kenjiro/config.h.orig	Tue Jun 27 01:21:34 1995
-+++ clients/kenjiro/config.h	Tue Jan 28 15:39:36 1997
-@@ -1,7 +1,7 @@
--#define PAGER		"/usr/local/bin/less"	/* pager program */
-+#define PAGER		"/usr/local/bin/jless"	/* pager program */
- #define HISTSIZE	20		/* history size */
- #define	KOUHO		10		/* number of kouho  (0 < n <= 10) */
--#define SERVER		"dserver"	/* hostname with server */
-+#define SERVER		"localhost"	/* hostname with server */
- #define SERVICE		"ndtp"		/* service name */
- #define KANJICODE	JIS		/* default kanji code (JIS,EUC,SJIS)*/
- /*#define PORT		2010*/		/* port of service */
-@@ -15,6 +15,9 @@
- 	{ "eiwa"   , "¸¦µæ¼Ò±ÑÏÂ"	, ENG ,  },
- 	{ "waei"   , "¸¦µæ¼ÒÏÂ±Ñ"	, JPN ,  },
- 	{ "kojien" , "¹­¼­±ñ"		, JPN ,  },
-+	{ "kojien-furoku" , "¹­¼­±ñÉÕÏ¿", JPN ,  },
- 	{ "CDkojien" , "CD¹­¼­±ñ"		, JPN ,  },
--	{ "readers" , "¥ê¡¼¥À¡¼¤º±ÑÏÂ"		, ENG ,  },
-+	{ "readers" , "¥ê¡¼¥À¡¼¥º±ÑÏÂ"		, ENG ,  },
-+	{ "crfre"   , "»°¾ÊÆ²¥¯¥é¥¦¥óÊ©ÏÂ"	, ENG ,  },
-+	{ "crger"   , "»°¾ÊÆ²¥¯¥é¥¦¥óÆÈÏÂ"	, ENG ,  },
- };
 --- clients/kenjiro/Makefile.orig	Tue Jun 27 01:21:31 1995
 +++ clients/kenjiro/Makefile	Tue Jan 28 15:39:36 1997
 @@ -1,5 +1,6 @@
@@ -158,31 +124,15 @@ patch files for kenjiro
 +	rm -f *.o *.out kenjiro.l* kenjiro core typescript
  
  # DO NOT DELETE
---- clients/diclookup-mule-2.3.0/Makefile.orig	Mon Jul 24 16:01:57 1995
-+++ clients/diclookup-mule-2.3.0/Makefile	Tue Jan 28 15:39:36 1997
-@@ -1,13 +1,13 @@
- EMACS = mule
- 
--LISPDIR = /usr/local/lib/mule/site-lisp
-+LISPDIR = ${PREFIX}/lib/mule/site-lisp
- 
- RM = rm -f
- 
- UTILS = cclc.elc
- 
- ELCS = diclookup-mule.elc \
--	od-eiwa.elc od-chujiten.elc od-kojien.elc
-+	od-eiwa.elc od-chujiten.elc od-kojien.elc od-crown.elc od-oxford.elc od-italian.elc od-readers.elc
- 
- PROGRAMS = $(UTILS) $(ELCS)
- 
-@@ -19,7 +19,9 @@
- all: $(PROGRAMS)
- 
- install: $(ELCS)
-+	cp *.el $(LISPDIR)
- 	cp $(ELCS) $(LISPDIR)
-+	cp README ${PREFIX}/lib/dserver/doc/README.diclookup-mule
- 
- clean:
- 	$(RM) $(PROGRAMS)
+--- clients/kenjiro/config.h.orig	Wed Jul 22 08:53:06 1998
++++ clients/kenjiro/config.h	Wed Jul 22 08:53:22 1998
+@@ -1,7 +1,7 @@
+-#define PAGER		"/usr/local/bin/less"	/* pager program */
++#define PAGER		"/usr/local/bin/jless"	/* pager program */
+ #define HISTSIZE	20		/* history size */
+ #define	KOUHO		10		/* number of kouho  (0 < n <= 10) */
+-#define SERVER		"dserver"	/* hostname with server */
++#define SERVER		"localhost"	/* hostname with server */
+ #define SERVICE		"ndtp"		/* service name */
+ #define KANJICODE	JIS		/* default kanji code (JIS,EUC,SJIS)*/
+ /*#define PORT		2010*/		/* port of service */
