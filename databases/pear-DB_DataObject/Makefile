@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DB_DataObject
-PORTVERSION=	1.7.9
+PORTVERSION=	1.7.10
 CATEGORIES=	databases pear
 
 MAINTAINER=	antonio@php.net
