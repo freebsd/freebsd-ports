@@ -91,11 +91,12 @@
 %%LIBC_TARG%%/lib/crt430x155.o
 %%LIBC_TARG%%/lib/crt430x156.o
 %%LIBC_TARG%%/lib/crt430x157.o
-%%LIBC_TARG%%/lib/crt430x1610.o
-%%LIBC_TARG%%/lib/crt430x1611.o
 %%LIBC_TARG%%/lib/crt430x167.o
 %%LIBC_TARG%%/lib/crt430x168.o
 %%LIBC_TARG%%/lib/crt430x169.o
+%%LIBC_TARG%%/lib/crt430x1610.o
+%%LIBC_TARG%%/lib/crt430x1611.o
+%%LIBC_TARG%%/lib/crt430x1612.o
 %%LIBC_TARG%%/lib/crt430x311.o
 %%LIBC_TARG%%/lib/crt430x312.o
 %%LIBC_TARG%%/lib/crt430x313.o
@@ -132,8 +133,6 @@
 %%LIBC_TARG%%/share/mspgcc/doc/FAQ
 %%LIBC_TARG%%/share/mspgcc/doc/volatil
 %%LIBC_TARG%%/share/mspgcc/examples/bufferedUSART/config.h
-%%LIBC_TARG%%/share/mspgcc/examples/bufferedUSART/depend.mak
-%%LIBC_TARG%%/share/mspgcc/examples/bufferedUSART/environ.mak
 %%LIBC_TARG%%/share/mspgcc/examples/bufferedUSART/Makefile
 %%LIBC_TARG%%/share/mspgcc/examples/bufferedUSART/README.txt
 %%LIBC_TARG%%/share/mspgcc/examples/bufferedUSART/test.c
@@ -678,8 +677,6 @@
 %%LIBC_TARG%%/share/mspgcc/examples/slac019/fet440_wdt02.c
 %%LIBC_TARG%%/share/mspgcc/examples/slac019/Makefile
 %%LIBC_TARG%%/share/mspgcc/examples/tasker/config.h
-%%LIBC_TARG%%/share/mspgcc/examples/tasker/depend.mak
-%%LIBC_TARG%%/share/mspgcc/examples/tasker/environ.mak
 %%LIBC_TARG%%/share/mspgcc/examples/tasker/main.c
 %%LIBC_TARG%%/share/mspgcc/examples/tasker/Makefile
 %%LIBC_TARG%%/share/mspgcc/examples/tasker/README.txt
