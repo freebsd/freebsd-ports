@@ -175,6 +175,7 @@
     SUBDIR += pips3500
     SUBDIR += pips670
     SUBDIR += pips740
+    SUBDIR += pips740-cups
     SUBDIR += pips750_2000
     SUBDIR += pips760
     SUBDIR += pips770
