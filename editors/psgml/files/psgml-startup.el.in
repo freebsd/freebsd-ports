@@ -44,11 +44,11 @@
     ("HTML 4.01 Frameset"
      "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Frameset//EN\">")
     ("XHTML 1.0 Strict"
-     "<!DOCTYPE XHTML PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\">")
+     "<?xml version=\"1.0\"?><!-- -*- xml -*- -->\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">")
     ("XHTML 1.0 Transitional"
-     "<!DOCTYPE XHTML PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\">")
+     "<?xml version=\"1.0\"?><!-- -*- xml -*- -->\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">")
     ("XHTML 1.0 Frameset"
-     "<!DOCTYPE XHTML PUBLIC \"-//W3C//DTD XHTML 1.0 Frameset//EN\">")
+     "<?xml version=\"1.0\"?><!-- -*- xml -*- -->\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Frameset//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd\">")
     ("DocBook V2.4.1"
      "<!DOCTYPE DOCBOOK PUBLIC \"-//Davenport//DTD DocBook V2.4.1//EN\">")
     ("DocBook V3.0"
