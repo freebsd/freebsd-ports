@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ethereal
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.6
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.ethereal.com/pub/ethereal/%SUBDIR%/ \
 		ftp://gd.tuwien.ac.at/infosys/security/ethereal/%SUBDIR%/ \
@@ -16,8 +16,6 @@ MASTER_SITES=	ftp://ftp.ethereal.com/pub/ethereal/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	. old-versions
 
 MAINTAINER=	billf@FreeBSD.org
-
-FORBIDDEN=	"possible security bug--see <URL:http://www.ethereal.com/appnotes/enpa-sa-00006.html>"
 
 .if !defined(WITHOUT_SNMP)
 LIB_DEPENDS=	snmp.4:${PORTSDIR}/net/net-snmp4
