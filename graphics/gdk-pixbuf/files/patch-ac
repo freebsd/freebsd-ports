@@ -1,21 +1,21 @@
---- gdk-pixbuf/Makefile.in.orig	Mon Feb 21 18:25:11 2000
-+++ gdk-pixbuf/Makefile.in	Mon Feb 21 23:55:30 2000
-@@ -216,14 +216,14 @@
+--- gdk-pixbuf/Makefile.in.orig	Wed Apr 12 21:00:11 2000
++++ gdk-pixbuf/Makefile.in	Thu Apr 13 11:39:26 2000
+@@ -211,14 +211,14 @@
  AM_CPPFLAGS = "-DPIXBUF_LIBDIR=\"$(libexecdir)\""
  
- LDADDS = libgdk_pixbuf.la $(LIBART_LIBS) $(GLIB_LIBS) $(GTK_LIBS) $(STATIC_LIB_DEPS)
--@INSIDE_GNOME_LIBS_TRUE@testpixbuf_LDADD = $(LDADDS) $(LIBART_LIBS) -lgmodule
--@INSIDE_GNOME_LIBS_FALSE@testpixbuf_LDADD = $(LDADDS) $(LIBART_LIBS) $(GNOME_LIBS) -lgmodule
-+@INSIDE_GNOME_LIBS_TRUE@testpixbuf_LDADD = $(LDADDS) $(LIBART_LIBS)
-+@INSIDE_GNOME_LIBS_FALSE@testpixbuf_LDADD = $(LDADDS) $(LIBART_LIBS) $(GNOME_LIBS)
+ LDADDS = libgdk_pixbuf.la $(GLIB_LIBS) $(GTK_LIBS) $(STATIC_LIB_DEPS)
+-@INSIDE_GNOME_LIBS_TRUE@testpixbuf_LDADD = $(LDADDS) -lgmodule
+-@INSIDE_GNOME_LIBS_FALSE@testpixbuf_LDADD = $(LDADDS) $(GNOME_LIBS) -lgmodule
++@INSIDE_GNOME_LIBS_TRUE@testpixbuf_LDADD = $(LDADDS) -lgmodule12
++@INSIDE_GNOME_LIBS_FALSE@testpixbuf_LDADD = $(LDADDS) $(GNOME_LIBS) -lgmodule12
  @INSIDE_GNOME_LIBS_TRUE@testpixbuf_drawable_LDADD = $(LDADDS)
  @INSIDE_GNOME_LIBS_FALSE@testpixbuf_drawable_LDADD = $(LDADDS) $(GNOME_LIBS)
  @INSIDE_GNOME_LIBS_TRUE@testpixbuf_scale_LDADD = $(LDADDS)
  @INSIDE_GNOME_LIBS_FALSE@testpixbuf_scale_LDADD = $(LDADDS) $(GNOME_LIBS)
--@INSIDE_GNOME_LIBS_TRUE@testanimation_LDADD = $(LDADDS) $(LIBART_LIBS) -lgmodule
--@INSIDE_GNOME_LIBS_FALSE@testanimation_LDADD = $(LDADDS) $(LIBART_LIBS) $(GNOME_LIBS) -lgmodule
-+@INSIDE_GNOME_LIBS_TRUE@testanimation_LDADD = $(LDADDS) $(LIBART_LIBS)
-+@INSIDE_GNOME_LIBS_FALSE@testanimation_LDADD = $(LDADDS) $(LIBART_LIBS) $(GNOME_LIBS)
+-@INSIDE_GNOME_LIBS_TRUE@testanimation_LDADD = $(LDADDS) -lgmodule
+-@INSIDE_GNOME_LIBS_FALSE@testanimation_LDADD = $(LDADDS) $(GNOME_LIBS) -lgmodule
++@INSIDE_GNOME_LIBS_TRUE@testanimation_LDADD = $(LDADDS) -lgmodule12
++@INSIDE_GNOME_LIBS_FALSE@testanimation_LDADD = $(LDADDS) $(GNOME_LIBS) -lgmodule12
  
- GDK_PIXBUF_LIBS = $(LIBART_LIBS) $(GLIB_LIBS) $(GTK_LIBS)
+ GDK_PIXBUF_LIBS = $(GLIB_LIBS) $(GTK_LIBS)
  
