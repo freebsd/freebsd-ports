@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.36 1997/07/10 09:50:26 max Exp $
+# $Id: Makefile,v 1.37 1997/08/31 22:24:32 max Exp $
 #
 
     SUBDIR += amp
@@ -7,6 +7,7 @@
     SUBDIR += gmod
     SUBDIR += gsm
     SUBDIR += maplay
+    SUBDIR += mikmod
     SUBDIR += mpegaudio
     SUBDIR += mpg123
     SUBDIR += mxv
