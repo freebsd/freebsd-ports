@@ -5,7 +5,7 @@
 #
 # $FreeBSD$
 
-DISTNAME=	inn-STABLE_2_2-1999-12-26_03-02
+DISTNAME=	inn-STABLE_2_2-2000-02-25_03-09
 PKGNAME=	inn-stable-v22
 CATEGORIES=	news
 MASTER_SITES=	http://people.FreeBSD.org/~andreas/download/ \
