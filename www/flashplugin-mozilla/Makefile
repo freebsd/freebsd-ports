@@ -7,7 +7,7 @@
 
 PORTNAME?=	flashplugin-mozilla
 PORTVERSION=	0.4.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://www.swift-tools.net/Flash/
 DISTNAME=	flash-${PORTVERSION}
@@ -22,7 +22,7 @@ RUN_DEPENDS?=	mozilla:${PORTSDIR}/www/mozilla
 USE_X_PREFIX=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/Plugin
-PLUGIN_DIR?=	lib/mozilla/plugins
+PLUGIN_DIR?=	lib/browser_plugins
 PLIST_SUB+=	PLUGIN_DIR=${PLUGIN_DIR}
 
 do-install:
