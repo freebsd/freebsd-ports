@@ -56,6 +56,9 @@ video/*; xanim %s > /dev/null 2>&1
 # use this to display postscript files
 application/postscript; ghostview %s
 
+# use this to display pdf files
+application/pdf; xpdf %s 2>/dev/null
+
 # this is the default for non GIF or JPEG images
 image/*; xv %s
 
