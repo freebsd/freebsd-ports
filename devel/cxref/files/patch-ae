@@ -1,5 +1,5 @@
---- query/Makefile.in.orig	Sun Mar 18 19:29:26 2001
-+++ query/Makefile.in	Fri May 18 05:55:49 2001
+--- query/Makefile.in.orig	Wed Jun 23 02:31:53 2004
++++ query/Makefile.in	Fri Oct  1 21:01:20 2004
 @@ -27,6 +27,9 @@
  # The installation program.
  
@@ -10,14 +10,15 @@
  
  # The C compiler and linker
  
-@@ -59,8 +62,8 @@
- ########
+@@ -49,9 +52,9 @@
  
  install : cxref-query
+ 	[ -d $(bindir) ] || $(INSTALL) -d $(bindir)
 -	$(INSTALL) -m 755 cxref-query $(bindir)
--	$(INSTALL) -m 644 $(srcdir)/README.man $(mandir)/man1/cxref-query.1
 +	$(INSTALL_PROGRAM) cxref-query $(bindir)
+ 	[ -d $(mandir)/man1 ] || $(INSTALL) -d $(mandir)/man1
+-	$(INSTALL) -m 644 $(srcdir)/README.man $(mandir)/man1/cxref-query.1
 +	$(INSTALL_DATA) $(srcdir)/README.man $(mandir)/man1/cxref-query.1
  
  install-win32 : cxref-query
- 	$(INSTALL) -m 755 cxref-query.exe $(bindir)
+ 	[ -d $(bindir) ] || $(INSTALL) -d $(bindir)

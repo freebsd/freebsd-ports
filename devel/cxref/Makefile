@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	cxref
-PORTVERSION=	1.5g
-PORTREVISION=	1
+PORTVERSION=	1.6
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		http://www.gedanken.demon.co.uk/download-cxref/
+MASTER_SITES=	http://www.gedanken.demon.co.uk/download-cxref/ \
+		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	devel/lang/c
 EXTRACT_SUFX=	.tgz
 
@@ -21,6 +20,8 @@ USE_BISON=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--without-cxref-cpp
+ALL_TARGET=	programs
 
 MAN1=		cxref.1 cxref-query.1
 PLIST_FILES=	bin/cxref bin/cxref-cc bin/cxref-query
