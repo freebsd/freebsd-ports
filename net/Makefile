@@ -207,6 +207,7 @@
     SUBDIR += lam
     SUBDIR += lambdamoo
     SUBDIR += ldapsdk
+    SUBDIR += ldapmodule
     SUBDIR += libfreenet
     SUBDIR += libicq
     SUBDIR += libkmsn
