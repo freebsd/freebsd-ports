@@ -3,6 +3,7 @@ bin/rmsgfmt
 %%RUBY_SITEARCHLIBDIR%%/gettext/_locale.so
 @dirrm %%RUBY_SITEARCHLIBDIR%%/gettext
 %%RUBY_SITELIBDIR%%/gettext.rb
+%%RUBY_SITELIBDIR%%/gettext/iconv.rb
 %%RUBY_SITELIBDIR%%/gettext/locale.rb
 %%RUBY_SITELIBDIR%%/gettext/locale_default.rb
 %%RUBY_SITELIBDIR%%/gettext/locale_table_win32.rb
@@ -10,6 +11,7 @@ bin/rmsgfmt
 %%RUBY_SITELIBDIR%%/gettext/mo.rb
 %%RUBY_SITELIBDIR%%/gettext/parser/glade.rb
 %%RUBY_SITELIBDIR%%/gettext/parser/ruby.rb
+%%RUBY_SITELIBDIR%%/gettext/textdomain.rb
 @dirrm %%RUBY_SITELIBDIR%%/gettext/parser
 @dirrm %%RUBY_SITELIBDIR%%/gettext
 share/locale/ja/LC_MESSAGES/rgettext.mo
@@ -52,12 +54,8 @@ share/locale/ja/LC_MESSAGES/rmsgfmt.mo
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/locale/ja
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/locale
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
-%%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/html/en/ruby-gettext.html
-%%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/html/ja/ruby-gettext.html
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rd/ja
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rd/en
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rd
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/html/ja
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/html/en
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
