@@ -1,0 +1,14 @@
+--- Imakefile.orig	Fri Mar 27 04:57:00 1998
++++ Imakefile	Mon Jul 30 12:51:43 2001
+@@ -21,11 +21,5 @@
+            HDRS = $(PROGNAME).h dsimple.h
+            MANS = $(PROGNAME).man
+-	   SPEC = $(PROGNAME).spec
+-	   LSMS = $(PROGNAME).lsm
+ 	   
+-	 TARDIR = $(PROGNAME)-$(VERSION)
+-	 TARSFX = .tar.gz
+-	 TARBAL = $(TARDIR)$(TARSFX)
+-
+ ComplexProgramTarget($(PROGNAME))
+ 
