@@ -13,6 +13,8 @@ DISTFILES=	nam-src-${PORTVERSION}.tar.gz
 
 MAINTAINER=	obonilla@fisicc-ufm.edu
 
+BROKEN=		"Cannot find TCL"
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libtclcl.a:${PORTSDIR}/devel/tclcl
 
 MAN1=		nam.1
