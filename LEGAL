@@ -122,6 +122,10 @@ jdk-tutorial-*		ports/java/jdk-tutorial	This software is under license and expor
 JRE-*			ports/java/jre		Put copyright on packaging!
 kaffe-*			ports/java/kaffe	Restrictive copyright
 librc4-*		ports/security/librc4	Crypto; export-controlled
+l0phtcrack		ports/security/l0phtcrack	Parts are under GPL, so
+						binaries should not be
+						distributed.  Contains crypto
+						from OpenSSL.
 lsh*			ports/security/lsh	Crypto; export-controlled
 mew-1.70.tar.gz		ports/mail/mew		ITAR export-controlled
 						(hooks to pgp)
