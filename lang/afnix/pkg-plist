@@ -6,6 +6,8 @@ include/aleph/eng/Builtin.hpp
 include/aleph/eng/Class.hpp
 include/aleph/eng/Closure.hpp
 include/aleph/eng/Constant.hpp
+include/aleph/eng/Engsid.hpp
+include/aleph/eng/Extracter.hpp
 include/aleph/eng/Former.hpp
 include/aleph/eng/Function.hpp
 include/aleph/eng/Globalset.hpp
@@ -23,12 +25,14 @@ include/aleph/eng/Promise.hpp
 include/aleph/eng/Qualified.hpp
 include/aleph/eng/Reader.hpp
 include/aleph/eng/Reserved.hpp
+include/aleph/eng/Resolver.hpp
 include/aleph/eng/Return.hpp
 include/aleph/eng/Symbol.hpp
 include/aleph/eng/Token.hpp
 include/aleph/net/Address.hpp
 include/aleph/net/Datagram.hpp
 include/aleph/net/Libanet.hpp
+include/aleph/net/Mail.hpp
 include/aleph/net/Multicast.hpp
 include/aleph/net/Netcalls.hpp
 include/aleph/net/Predanet.hpp
@@ -57,6 +61,7 @@ include/aleph/sio/Directory.hpp
 include/aleph/sio/Libasio.hpp
 include/aleph/sio/Pathasio.hpp
 include/aleph/sio/Predasio.hpp
+include/aleph/sio/Selector.hpp
 include/aleph/std/BitSet.hpp
 include/aleph/std/Boolean.hpp
 include/aleph/std/Buffer.hpp
@@ -71,12 +76,14 @@ include/aleph/std/Graph.hpp
 include/aleph/std/HashTable.hpp
 include/aleph/std/Input.hpp
 include/aleph/std/InputFile.hpp
+include/aleph/std/InputMapped.hpp
 include/aleph/std/InputString.hpp
 include/aleph/std/InputTerm.hpp
 include/aleph/std/Integer.hpp
 include/aleph/std/Iterable.hpp
 include/aleph/std/Iterator.hpp
 include/aleph/std/Library.hpp
+include/aleph/std/Librarian.hpp
 include/aleph/std/List.hpp
 include/aleph/std/Literal.hpp
 include/aleph/std/Lockrw.hpp
@@ -94,8 +101,11 @@ include/aleph/std/QuarkTable.hpp
 include/aleph/std/Queue.hpp
 include/aleph/std/Reactor.hpp
 include/aleph/std/Real.hpp
+include/aleph/std/Recycle.hpp
 include/aleph/std/Regex.hpp
+include/aleph/std/Relatif.hpp
 include/aleph/std/Runnable.hpp
+include/aleph/std/Serial.hpp
 include/aleph/std/Stack.hpp
 include/aleph/std/String.hpp
 include/aleph/std/Strvec.hpp
@@ -109,6 +119,7 @@ include/aleph/sys/Predasys.hpp
 include/aleph/sys/Syscalls.hpp
 include/aleph/sys/Time.hpp
 include/aleph/www/CgiQuery.hpp
+include/aleph/www/Cookie.hpp
 include/aleph/www/HtmlPage.hpp
 include/aleph/www/Libawww.hpp
 include/aleph/www/Predawww.hpp
