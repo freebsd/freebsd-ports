@@ -1,0 +1,9 @@
+--- dragstack/dragiface.kidl.orig	Sat Nov 29 16:26:23 2003
++++ dragstack/dragiface.kidl	Sat Nov 29 16:26:41 2003
+@@ -1,5 +1,5 @@
+ <!DOCTYPE DCOP-IDL><DCOP-IDL>
+-<SOURCE>/home/dominik/Desktop/Programming/dragstack/dragstack/dragiface.h</SOURCE>
++<SOURCE>dragiface.h</SOURCE>
+ <INCLUDE>kurl.h</INCLUDE>
+ <INCLUDE>dcopobject.h</INCLUDE>
+ <CLASS>

@@ -2,10 +2,10 @@ lib/libdragstack.la
 lib/libdragstack.so
 lib/libdragstack.so.1
 share/apps/kicker/applets/dragstack.desktop
-share/icons/locolor/32x32/apps/dragstack.png
-@unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor/32x32 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor 2>/dev/null || true
+share/icons/hicolor/32x32/apps/dragstack.png
+@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
 @unexec rmdir %D/share/icons 2>/dev/null || true
 @unexec rmdir %D/share/apps/kicker/applets 2>/dev/null || true
 @unexec rmdir %D/share/apps/kicker 2>/dev/null || true
