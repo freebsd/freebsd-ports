@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.52 1999/04/19 19:40:15 mharo Exp $
+# $Id: Makefile,v 1.53 1999/05/09 17:34:55 nsayer Exp $
 #
 
     SUBDIR += bjorb
@@ -37,6 +37,7 @@
     SUBDIR += raproxy
     SUBDIR += rsaref
     SUBDIR += skip
+    SUBDIR += slush
     SUBDIR += smurflog
     SUBDIR += sniff
     SUBDIR += ssh
