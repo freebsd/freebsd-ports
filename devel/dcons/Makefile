@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dcons
-PORTVERSION=	20031022
+PORTVERSION=	20031023
 PORTREVISION=	0
 CATEGORIES=	devel sysutils
 MASTER_SITES=	http://people.FreeBSD.org/~simokawa/firewire/
@@ -18,7 +18,7 @@ NO_WRKSUBDIR=	yes
 MANCOMPRESSED=	yes
 
 MAN4=		dcons.4 dcons_crom.4
-MAN8=		fwchat.8
+MAN8=		dconschat.8
 
 PKGMESSAGE=	${WRKSRC}/pkg-message
 
@@ -52,8 +52,7 @@ pre-install:
 	@${INSTALL_SCRIPT} ${FILESDIR}/dcons.sh ${PREFIX}/etc/rc.d/
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README.dcons ${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/usr.sbin/fwchat/gdb-usage ${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/usr.sbin/fwchat/sample-script ${DOCSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/usr.sbin/dconschat/gdb-usage ${DOCSDIR}/
 	if [ -x ${MAKEDEV} ]; then \
 		${RM} -f ${DCONS_DEV}; \
 		${MKNOD} ${DCONS_DEV} c ${DCONS_MAJOR} ${DCONS_MINOR}; \
