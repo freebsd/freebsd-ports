@@ -129,6 +129,7 @@
     SUBDIR += ipsc
     SUBDIR += jailer
     SUBDIR += jailutils
+    SUBDIR += jdiskreport
     SUBDIR += kcpuload
     SUBDIR += kdeadmin3
     SUBDIR += kdirstat
