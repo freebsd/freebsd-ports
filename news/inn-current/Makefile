@@ -6,10 +6,14 @@
 # $Id: Makefile,v 1.13 1995/10/25 02:12:08 torstenb Exp $
 #
 
-DISTNAME=	inn1.4unoff4
-PKGNAME=	inn-1.4u4
+DISTNAME=	inn1.4sec
+PKGNAME=	inn-1.4
 CATEGORIES+=	news
-MASTER_SITES=	ftp://ftp.math.psu.edu/pub/INN
+MASTER_SITES=	ftp://ftp.uu.net/networking/news/nntp/inn/
+EXTRACT_SUFX=	.tar.Z
+
+PATCH_SITES=	ftp://ftp.math.psu.edu/pub/INN/patches/OLD/
+PATCHFILES=	select-loop-bug.patch innxmit-long-lines
 
 MAINTAINER=	torstenb@FreeBSD.ORG
 
