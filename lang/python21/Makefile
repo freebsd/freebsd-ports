@@ -7,7 +7,7 @@
 
 PORTNAME=	python
 PORTVERSION=	2.1.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	lang python
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -28,6 +28,7 @@ USE_PYTHON=	yes
 PYTHON_VERSION=	python2.1
 PYTHON_NO_DEPENDS=	yes
 LATEST_LINK=	${PYTHON_VERSION:S/.//}
+USE_REINPLACE=	yes
 
 #
 # If you don't want to use Python's thread module, you need to set
@@ -71,6 +72,14 @@ PLATFORMS=plat-freebsd3 plat-freebsd4 plat-freebsd5
 post-extract:
 	${SED} -e '1s,^.*$$,#!${PREFIX}/bin/${PYTHON_VERSION},' \
 		${WRKSRC}/Tools/scripts/pydoc > ${WRKDIR}/pydoc2.1
+
+pre-patch:
+	${REINPLACE_CMD} -e \
+		's,/usr/doc/python-docs-,${PREFIX}/share/doc/python,g' \
+		${WRKSRC}/Lib/pydoc.py
+	${REINPLACE_CMD} -e \
+		's|^\(prefixes = .*\)\]$$|\1, "${X11BASE}"]|g' \
+		${WRKSRC}/Lib/site.py
 
 pre-su-install:
 .for platform in ${PLATFORMS}

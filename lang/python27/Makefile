@@ -6,6 +6,7 @@
 
 PORTNAME=	python
 PORTVERSION=	2.4.a1
+PORTREVISION=	1
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -118,10 +119,13 @@ post-extract:
 	${SED} -e '1s,^.*$$,#!${PREFIX}/bin/${PYTHON_VERSION},' \
 		${WRKSRC}/Lib/smtpd.py > ${WRKDIR}/smtpd2.4.py
 
-post-patch:
-	${REINPLACE_CMD} -e 's,\(PY_VERSION.*\)2\.4a0,\1${PORTVERSION},g' \
-		${WRKSRC}/Include/patchlevel.h
-	${REINPLACE_CMD} -e 's,^.*freenet.*$$,,' ${WRKSRC}/Lib/base64.py
+pre-patch:
+	${REINPLACE_CMD} -e \
+		's,/usr/doc/python-docs-,${PREFIX}/share/doc/python,g' \
+		${WRKSRC}/Lib/pydoc.py
+	${REINPLACE_CMD} -e \
+		's|^\( *prefixes = .*\)\]$$|\1, "${X11BASE}"]|g' \
+		${WRKSRC}/Lib/site.py
 
 post-configure:
 	@# prepare a subdir for shared build

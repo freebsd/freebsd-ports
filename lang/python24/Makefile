@@ -7,6 +7,7 @@
 
 PORTNAME=	python
 PORTVERSION=	2.3.4
+PORTREVISION=	1
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -121,6 +122,9 @@ pre-patch:
 	${REINPLACE_CMD} -e \
 		's,/usr/doc/python-docs-,${PREFIX}/share/doc/python,g' \
 		${WRKSRC}/Lib/pydoc.py
+	${REINPLACE_CMD} -e \
+		's|^\(prefixes = .*\)\]$$|\1, "${X11BASE}"]|g' \
+		${WRKSRC}/Lib/site.py
 
 post-configure: ${STACKLESS_POST_CONFIGURE}
 	@# prepare a subdir for shared build
