@@ -23,6 +23,8 @@ rcvar=`set_rcvar`
 command=%%PREFIX%%/sbin/rbldnsd
 pidfile=/var/run/rbldnsd.pid
 
+load_rc_config $name
+
 stop_postcmd=stop_postcmd
 
 stop_postcmd()
@@ -36,6 +38,5 @@ rbldnsd_enable=${rbldnsd_enable:-"NO"}
 rbldnsd_flags=${rbldnsd_flags:-"-r /usr/local/etc/rbldnsd -b 127.0.0.1 bl.example.com:ip4set:example"}
 rbldnsd_flags="${rbldnsd_flags% *} -p $pidfile ${rbldnsd_flags##* }"
 
-load_rc_config $name
 run_rc_command "$1"
 
