@@ -3,7 +3,7 @@
 # Date created:				October 21st 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.2 1996/10/24 09:59:04 jfitz Exp $
+#   $Id: Makefile,v 1.3 1996/11/18 08:46:00 asami Exp $
 #
 
 DISTNAME=	Include-1.02a
@@ -17,7 +17,7 @@ MAINTAINER=	jfitz@FreeBSD.ORG
 BUILD_DEPENDS= 	perl5.003:${PORTSDIR}/lang/perl5
 RUN_DEPENDS=	perl5.003:${PORTSDIR}/lang/perl5
 
-MAN3=		Include
+MAN3=		Include.3
 MANPREFIX=	${PREFIX}/lib/perl5
 
 do-configure:
