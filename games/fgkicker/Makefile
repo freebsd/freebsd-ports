@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fgkicker
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	games
 MASTER_SITES=	http://users.pandora.be/ceppe/linux/
 EXTRACT_SUFX=	.tgz
