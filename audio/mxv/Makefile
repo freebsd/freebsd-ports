@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}-source
 
 MAINTAINER=	davidn@blaze.net.au
 
+BROKEN=		"Does not build"
+
 BUILD_DEPENDS=	${LOCALBASE}/interviews/bin/FREEBSD/ivmkmf:${PORTSDIR}/x11-toolkits/iv
 
 NO_WRKSUBDIR=	yes

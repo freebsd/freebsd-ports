@@ -13,6 +13,8 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	naiki@bfd.es.hokudai.ac.jp
 
+BROKEN=		"Does not build"
+
 RUN_DEPENDS=	${LOCALBASE}/libexec/atalkd:${PORTSDIR}/net/netatalk
 
 post-install:
