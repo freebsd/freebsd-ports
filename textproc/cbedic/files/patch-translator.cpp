@@ -1,5 +1,5 @@
---- src/translator.cpp.old	Fri Dec 12 03:19:37 2003
-+++ src/translator.cpp	Fri Dec 12 03:20:30 2003
+--- src/translator.cpp.orig	Sat Aug  9 19:24:42 2003
++++ src/translator.cpp	Sat Aug  9 19:26:11 2003
 @@ -119,7 +119,7 @@
  // Real construcor
  // Call the same method of Database, and return same result
@@ -14,7 +14,7 @@
  // Return pointer to new word that is legal dictionary word
  //========================================================================
 -bool Translator::isLatinInput(const char *word, char *buf, const bool ignoreSpace = false) {
-+bool Translator::isLatinInput(const char *word, char *buf, const bool ignoreSpace) {
++bool Translator::isLatinInput(const char *word, char *buf, const bool ignoreSpace ) {
  	int i = 0;
  	char *p;
  	while (word[i] != '\0') {
@@ -23,7 +23,7 @@
  // Change buffer and return pointer to new word
  //========================================================================
 -char *Translator::toLatin(const char *word, char *buf, const bool legalLatinInput = true) {
-+char *Translator::toLatin(const char *word, char *buf, const bool legalLatinInput) {
++char *Translator::toLatin(const char *word, char *buf, const bool legalLatinInput ) {
  	int i = 0;
  	int j = 0;
  	char *p;
@@ -32,7 +32,7 @@
  // But perform some operations
  //========================================================================
 -char *Translator::getWord(const bool lowerCase = true, const bool legalLatinInput = true) {
-+char *Translator::getWord(const bool lowerCase, const bool legalLatinInput) {
++char *Translator::getWord(const bool lowerCase, const bool legalLatinInput ) {
  	char *ret = NULL;
  	switch (currentDictionary) {
  		case ENG_BUL:

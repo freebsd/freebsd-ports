@@ -1,11 +1,11 @@
---- src/registry.cpp.old	Fri Dec 12 03:16:27 2003
-+++ src/registry.cpp	Fri Dec 12 03:16:48 2003
+--- src/registry.cpp.orig	Sat Aug  9 19:21:50 2003
++++ src/registry.cpp	Sat Aug  9 19:22:52 2003
 @@ -79,7 +79,7 @@
  //=== Get String =========================================================
  // Return the value of key, if missed return default value
  //========================================================================
 -char *Registry::getString(const char *property, const char *defaultValue = "") {
-+char *Registry::getString(const char *property, const char *defaultValue) {
++char *Registry::getString(const char *property, const char *defaultValue ) {
  	bool found = false;
  	char *ret = NULL;
  	FILE *f;
