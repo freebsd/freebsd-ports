@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	monafonts
-PORTVERSION=	2.2
+PORTVERSION=	2.21
 PORTEPOCH=	2
 CATEGORIES=	japanese x11-fonts
-MASTER_SITES=	http://members.tripod.co.jp/s42335/mona/dist/
-EXTRACT_SUFX=	.tar.bz2.bin
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	monafont
+DISTNAME=	monafont-${PORTVERSION}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 
@@ -27,6 +28,9 @@ RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
 .endif
 
 PLIST_SUB=	FONTSDIR=${FONTSDIR}
+
+post-extract:
+	@${MKDIR} ${WRKSRC}/dist
 
 pre-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \
