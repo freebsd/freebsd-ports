@@ -3,6 +3,3 @@ bin/add_items
 etc/chinput2.conf
 share/chinput2/README
 @dirrm share/chinput2
-
-
-

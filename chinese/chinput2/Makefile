@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	chinput2
-PORTVERSION=	1.0
+PORTVERSION=	1.2.1
 CATEGORIES=	chinese x11
 MASTER_SITES=	ftp://ftp.cn.freebsd.org/pub/ported/
-DISTNAME=	zh-chinput2-1.0
+DISTNAME=	zh-chinput2-1.2.1
 
 MAINTAINER=	phj@cn.FreeBSD.org
 
