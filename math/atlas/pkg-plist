@@ -3,19 +3,19 @@ lib/libalapack.a
 lib/libcblas.a
 lib/libf77blas.a
 lib/libtstatlas.a
-share/doc/atlas/AtlasCredits.txt
-share/doc/atlas/ChangeLog.txt
-share/doc/atlas/DirStruct.txt
-share/doc/atlas/INDEX.txt
-share/doc/atlas/LibReadme.txt
-share/doc/atlas/TestTime.txt
-share/doc/atlas/TroubleShoot.txt
-share/doc/atlas/Windows.txt
-share/doc/atlas/atlas_contrib.ps
-share/doc/atlas/atlas_devel.ps
-share/doc/atlas/atlas_over.ps
-share/doc/atlas/cblas.ps
-share/doc/atlas/cblasqref.ps
-share/doc/atlas/f77blasqref.ps
-share/doc/atlas/lapackqref.ps
-@dirrm share/doc/atlas
+%%PORTDOCS%%share/doc/atlas/AtlasCredits.txt
+%%PORTDOCS%%share/doc/atlas/ChangeLog.txt
+%%PORTDOCS%%share/doc/atlas/DirStruct.txt
+%%PORTDOCS%%share/doc/atlas/INDEX.txt
+%%PORTDOCS%%share/doc/atlas/LibReadme.txt
+%%PORTDOCS%%share/doc/atlas/TestTime.txt
+%%PORTDOCS%%share/doc/atlas/TroubleShoot.txt
+%%PORTDOCS%%share/doc/atlas/Windows.txt
+%%PORTDOCS%%share/doc/atlas/atlas_contrib.ps
+%%PORTDOCS%%share/doc/atlas/atlas_devel.ps
+%%PORTDOCS%%share/doc/atlas/atlas_over.ps
+%%PORTDOCS%%share/doc/atlas/cblas.ps
+%%PORTDOCS%%share/doc/atlas/cblasqref.ps
+%%PORTDOCS%%share/doc/atlas/f77blasqref.ps
+%%PORTDOCS%%share/doc/atlas/lapackqref.ps
+%%PORTDOCS%%@dirrm share/doc/atlas
