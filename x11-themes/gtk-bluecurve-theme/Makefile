@@ -31,7 +31,7 @@ THEMES_SUBDIRS= ${WRKSRC}/art/gtk/Bluecurve1
 .if defined(WITH_GTK2)
 USE_GNOME+=	gtk20
 THEMES_SUBDIRS+=	${WRKSRC}/art/gtk/Bluecurve
-PLIST_SUB+=	GTK2="" GTKVERSION="2.2.0"
+PLIST_SUB+=	GTK2="" GTKVERSION="2.4.0"
 .else
 PLIST_SUB+=	GTK2="@comment "
 .endif
@@ -69,9 +69,9 @@ do-build:
 do-install:
 	@${MKDIR} ${PREFIX}/share/themes/Bluecurve && ${CHMOD} a+rx ${PREFIX}/share/themes/Bluecurve
 .if defined(WITH_GTK2)
-	@${MKDIR} ${PREFIX}/lib/gtk-2.0/2.2.0/engines && ${CHMOD} a+rx ${PREFIX}/lib/gtk-2.0/2.2.0/engines
+	@${MKDIR} ${PREFIX}/lib/gtk-2.0/2.4.0/engines && ${CHMOD} a+rx ${PREFIX}/lib/gtk-2.0/2.4.0/engines
 	@${MKDIR} ${PREFIX}/share/themes/Bluecurve/gtk-2.0 && ${CHMOD} a+rx ${PREFIX}/share/themes/Bluecurve/gtk-2.0
-	@${INSTALL_PROGRAM} ${WRKSRC}/art/gtk/Bluecurve/.libs/libbluecurve.so ${PREFIX}/lib/gtk-2.0/2.2.0/engines
+	@${INSTALL_PROGRAM} ${WRKSRC}/art/gtk/Bluecurve/.libs/libbluecurve.so ${PREFIX}/lib/gtk-2.0/2.4.0/engines
 	@${INSTALL_DATA} ${WRKSRC}/art/gtk/Bluecurve/gtk-2.0/gtkrc ${PREFIX}/share/themes/Bluecurve/gtk-2.0
 .endif
 	@${MKDIR} ${PREFIX}/lib/gtk/themes/engines && ${CHMOD} a+rx ${PREFIX}/lib/gtk/themes/engines
