@@ -1668,6 +1668,7 @@ ferite		ports/lang/ferite
 fesi		ports/lang/fesi
 festdoc		ports/audio/festdoc
 festival	ports/audio/festival
+festival+OGI	ports/audio/festival+OGI
 festlex-cmu	ports/audio/festlex-cmu
 festlex-oald	ports/audio/festlex-oald
 festlex-ogi	ports/audio/festlex-ogi
