@@ -1,16 +1,39 @@
-include/cairo/cairo-atsui.h
 include/cairo/cairo-features.h
 include/cairo/cairo-ft.h
-include/cairo/cairo-glitz.h
+%%GLITZ%%include/cairo/cairo-glitz.h
 include/cairo/cairo-pdf.h
 include/cairo/cairo-png.h
 include/cairo/cairo-ps.h
-include/cairo/cairo-quartz.h
-include/cairo/cairo-xcb.h
 include/cairo/cairo-xlib.h
 include/cairo/cairo.h
 lib/libcairo.a
 lib/libcairo.so
 lib/libcairo.so.1
 libdata/pkgconfig/cairo.pc
+%%DOCSDIR%%/cairo/cairo-ATSUI-Fonts.html
+%%DOCSDIR%%/cairo/cairo-FreeType-Fonts.html
+%%DOCSDIR%%/cairo/cairo-Glitz-backend.html
+%%DOCSDIR%%/cairo/cairo-Microsoft-Windows-Backend.html
+%%DOCSDIR%%/cairo/cairo-PDF-Backend.html
+%%DOCSDIR%%/cairo/cairo-PNG-Backend.html
+%%DOCSDIR%%/cairo/cairo-PS-Backend.html
+%%DOCSDIR%%/cairo/cairo-Quartz-Backend.html
+%%DOCSDIR%%/cairo/cairo-XCB-Backend.html
+%%DOCSDIR%%/cairo/cairo-XLib-Backend.html
+%%DOCSDIR%%/cairo/cairo-cairo-matrix-t.html
+%%DOCSDIR%%/cairo/cairo-cairo-pattern-t.html
+%%DOCSDIR%%/cairo/cairo-cairo-surface-t.html
+%%DOCSDIR%%/cairo/cairo-cairo-t.html
+%%DOCSDIR%%/cairo/cairo.devhelp
+%%DOCSDIR%%/cairo/home.png
+%%DOCSDIR%%/cairo/index.html
+%%DOCSDIR%%/cairo/index.sgml
+%%DOCSDIR%%/cairo/left.png
+%%DOCSDIR%%/cairo/pt01.html
+%%DOCSDIR%%/cairo/pt02.html
+%%DOCSDIR%%/cairo/right.png
+%%DOCSDIR%%/cairo/style.css
+%%DOCSDIR%%/cairo/up.png
+@dirrm %%DOCSDIR%%/cairo
+@dirrm %%DOCSDIR%%
 @dirrm include/cairo
