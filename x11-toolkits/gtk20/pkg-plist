@@ -172,10 +172,8 @@ share/themes/Default/gtk/gtkrc.pl
 share/themes/Default/gtk/gtkrc.ru
 share/themes/Default/gtk/gtkrc.sk
 share/themes/Default/gtk/gtkrc.sl
-@exec mkdir -p %D/share/themes/engines
 @dirrm share/themes/Default/gtk
 @dirrm share/themes/Default
-@dirrm share/themes/engines
 @dirrm share/themes
 @dirrm include/gtk12/gdk
 @dirrm include/gtk12/gtk
