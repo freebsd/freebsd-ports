@@ -70,6 +70,7 @@ _REQUIRES_mixer=sdl
 _VERSION_mm=	8
 _SUBDIR_mm=		devel
 _LIB_mm=		SDLmm
+_PORTDIR_mm=	sdlmm
 _REQUIRES_mm=	sdl
 
 _VERSION_net=	0
