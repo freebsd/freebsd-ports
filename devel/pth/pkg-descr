@@ -1,7 +1,7 @@
 NPS - Non-Preemtive Thread Scheduling Library
 Copyright (c) 1999 Ralf S. Engelschall.
 
-NPS is a POSIX/ANSI-C based library for Unix platforms which
+NPS is a portable POSIX/ANSI-C based library for Unix platforms which
 provides non-preemtive scheduling for multiple threads of execution
 ("multi-threading") inside server applications. All threads run in the
 same address space of the server application, but each thread has it's
