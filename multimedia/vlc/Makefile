@@ -7,9 +7,9 @@
 
 PORTNAME=	vlc
 PORTVERSION=	0.6.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
-MASTER_SITES=	http://www.videolan.org/pub/videolan/vlc/${PORTVERSION}/
+MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An X11 video streaming client/server solution
@@ -26,6 +26,9 @@ LIB_DEPENDS=	dvdcss.2:${PORTSDIR}/multimedia/libdvdcss \
 		faad.0:${PORTSDIR}/audio/faad \
 		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2 \
 		slp.1:${PORTSDIR}/net/openslp
+.if defined(WITH_LIBDVBPSI)
+LIB_DEPENDS+=	dvbpsi.3:${PORTSDIR}/multimedia/libdvbpsi
+.endif
 
 # After libmpeg2 release 0.3.2
 #		mpeg2.0:${PORTSDIR}/multimedia/libmpeg2 \
@@ -46,7 +49,6 @@ CONFIGURE_ARGS+=--with-dvdcss=${LOCALBASE} \
 		--with-dvdread=${LOCALBASE} \
 		--with-mad=${LOCALBASE} \
 		--with-faad=${LOCALBASE} \
-		--disable-dvbpsi \
 		--with-a52=${LOCALBASE} \
 		--enable-ffmpeg \
 		--with-ffmpeg=${LOCALBASE} \
@@ -55,7 +57,21 @@ CONFIGURE_ARGS+=--with-dvdcss=${LOCALBASE} \
 		--without-libintl-prefix \
 		--without-libiconv-prefix \
 
+.if defined(WITH_LIBDVBPSI)
+CONFIGURE_ARGS+=	--with-dvbpsi=${LOCALBASE}
+PLIST_SUB+=		LIBDVBPSI=""
+.else
+CONFIGURE_ARGS+=	--disable-dvbpsi
+PLIST_SUB+=		LIBDVBPSI="@comment "
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's/-lc_r/${PTHREAD_LIBS}/' ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+CONFIGURE_ENV+=		LIBS="-L/usr/lib -lcipher"
+.endif
+
+.include <bsd.port.post.mk>
