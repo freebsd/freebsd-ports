@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	diacanvas2
-PORTVERSION=	0.9.2
-PORTREVISION=	1
+PORTVERSION=	0.10.0
+PORTREVISION=	0
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	diacanvas
@@ -20,17 +20,32 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gnome/__init__.py:${PORTSDIR}/x11-to
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gnome/__init__.py:${PORTSDIR}/x11-toolkits/py-gnome2
 
 USE_REINPLACE=	yes
-USE_PYTHON=	yes
-USE_GNOME=	gtk20 libgnomeprintui gnomeprefix gnomehack
+USE_PYTHON=	2.2+
+USE_GNOME=	gtk20 libgnomeprint libgnomeprintui gnomeprefix gnomehack \
+		libartlgpl2 libgnomecanvas
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--disable-gnome-print	# supporting libgnomeprint too old (1.x)
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 
-#post-patch:
-#	@${REINPLACE_CMD} -e "s|gnomeprint-2.0|gnomeprint-2.2|g" \
-#		-e "s|gnomeprintui-2.0|gnomeprintui-2.2|g" ${WRKSRC}/configure
+PORTDOCS=	*
+PLIST_FILES=	lib/libdiacanvas2.so lib/libdiacanvas2.so.0 \
+		libdata/pkgconfig/diacanvas2.pc \
+		share/locale/nl/LC_MESSAGES/diacanvas.mo \
+		share/pygtk/2.0/defs/dia-boxed.defs \
+		share/pygtk/2.0/defs/diacanvas.defs \
+		share/pygtk/2.0/defs/diageometry.defs \
+		share/pygtk/2.0/defs/diashape.defs \
+		share/pygtk/2.0/defs/diaview.defs
+
+post-install:
+	@${FIND} ${PREFIX}/include/diacanvas -type f | \
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${ECHO_CMD} '@dirrm include/diacanvas' >> ${TMPPLIST}
+	@${FIND} ${PYTHON_SITELIBDIR}/diacanvas -type f | \
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${PYTHON_SITELIBDIR}/diacanvas -type d | ${SORT} -r | \
+		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
