@@ -9,7 +9,7 @@ POST-INSTALL)
     echo
     echo "===>  To check your installed ports for known vulnerabilities now do:"
     echo
-    echo "      %%PREFIX%%/bin/portaudit -F -a"
+    echo "      %%PREFIX%%/bin/portaudit -Fda"
     echo
   fi
   ;;
