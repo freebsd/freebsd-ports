@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	penguin-command
-PORTVERSION=	1.6.2
+PORTVERSION=	1.6.5
 CATEGORIES=	games
-MASTER_SITES=	http://www.linux-games.com/penguin-command/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	markp@FreeBSD.org
 
@@ -18,7 +19,8 @@ LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 MAN6=		penguin-command.6
 
 post-patch:
