@@ -7,6 +7,7 @@
 
 PORTNAME=	exuserfolder
 PORTVERSION=	0.20.0
+PORTREVISION=	1
 CATEGORIES=	www zope
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	exuserfolder
@@ -17,20 +18,12 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	x@Vex.Net
 COMMENT=	Extensible User Folder - Custom & database authenticatoin for Zope
 
-RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/z2.py:${PORTSDIR}/www/zope
-
+USE_ZOPE=	yes
 USE_PYTHON=	yes
 DIST_SUBDIR=	zope
 
-# You can change this in the environment if you like.
-SZOPEBASEDIR?=		www/Zope
-
-# Don't change these
-ZOPEBASEDIR=		${PREFIX}/${SZOPEBASEDIR}
 ZOPEPRODUCTNAME=	exUserFolder
-ZOPEPRODUCTDIR=		lib/python/Products
 
-PLIST_SUB=	ZOPEBASEDIR=${SZOPEBASEDIR}
 WRKSRC=		${WRKDIR}/${ZOPEPRODUCTNAME}
 CPIO=		cpio --quiet -pdum -R
 

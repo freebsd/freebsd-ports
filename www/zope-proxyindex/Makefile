@@ -7,6 +7,7 @@
 
 PORTNAME=	proxyindex
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	www zope
 MASTER_SITES=	http://zope.org/Members/infrae/ProxyIndex/ProxyIndex-${PORTVERSION}/
 PKGNAMEPREFIX=	zope-
@@ -22,13 +23,6 @@ DIST_SUBDIR=	zope
 
 ZOPEPRODUCTNAME=ProxyIndex
 
-# yes, some of us are running zope on python 2.3
-#PYTHON_VERSION=	python2.3
-
-# You can change this in the environment if you like.
-#SZOPEBASEDIR?=		www/Zope
-
-PLIST_SUB=	ZOPEBASEDIR=${SZOPEBASEDIR}
 WRKSRC=		${WRKDIR}/${ZOPEPRODUCTNAME}
 CPIO=		cpio --quiet -pdum -R
 
