@@ -1,0 +1,12 @@
+bin/gtkgrepmail
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/gtkgrepmail/.packlist
+%%PORTDOCS%%share/doc/gtkgrepmail/COPYING
+%%PORTDOCS%%share/doc/gtkgrepmail/FAQ
+%%PORTDOCS%%share/doc/gtkgrepmail/NEWS
+%%PORTDOCS%%share/doc/gtkgrepmail/ROADMAP
+%%PORTDOCS%%share/doc/gtkgrepmail/changelog
+%%PORTDOCS%%share/doc/gtkgrepmail/INSTALL
+%%PORTDOCS%%share/doc/gtkgrepmail/README
+%%PORTDOCS%%share/doc/gtkgrepmail/TODO
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/gtkgrepmail
+%%PORTDOCS%%@dirrm share/doc/gtkgrepmail

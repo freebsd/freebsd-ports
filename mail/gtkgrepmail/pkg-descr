@@ -1,0 +1,7 @@
+Gtkgrepmail is a gtk front end to grepmail.  Support is provided for both local
+mailboxes and remote mailboxes that are accessible via IMAP and ssh/rsh.
+
+WWW: http://malcolm.wattle.id.au/software.html
+
+- Oliver Braun
+obraun@informatik.unibw-muenchen.de
