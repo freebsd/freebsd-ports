@@ -1,0 +1,3 @@
+lib/%%PYTHON_VERSION%%/site-packages/pyclamav.so
+%%EXAMPLES%%%%EXAMPLESDIR%%/example.py
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%

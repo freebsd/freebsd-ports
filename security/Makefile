@@ -368,6 +368,7 @@
     SUBDIR += pwauth
     SUBDIR += pwman
     SUBDIR += pxytest
+    SUBDIR += py-clamav
     SUBDIR += py-cryptkit
     SUBDIR += py-fchksum
     SUBDIR += py-gnupg
