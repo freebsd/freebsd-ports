@@ -9,7 +9,7 @@ PORTVERSION=	0.6
 CATEGORIES=	graphics python
 MASTER_SITES=	http://athani.pair.com/msteed/software/gdchart/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-${PKGNAMEPREFIX}${PORTVERSION}
+DISTNAME=	${PORTNAME}-py-${PORTVERSION}
 
 MAINTAINER=	perky@python.or.kr
 
