@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	pcgen
-PORTVERSION=	5.7.8
+PORTVERSION=	5.7.9
 CATEGORIES=	games java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pcgen
@@ -13,6 +13,8 @@ DISTNAME=	pcgen${PORTVERSION:S/.//g}_partial
 
 MAINTAINER=	hq@FreeBSD.org
 COMMENT=	A Java-based RPG character generator and maintenance program
+
+RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
 USE_ZIP=	YES
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:S/.//g}
@@ -36,15 +38,18 @@ post-extract:
 
 do-configure:
 	@${ECHO_MSG} "pcgen.filepaths=user" > ${WRKSRC}/filepaths.ini
-	@cd ${WRKSRC} && ${SED} "s|^java|${JAVA}|" pcgen.sh | ${SED} 's|`dirname $$0`|${DATADIR}|' > pcgen.sh.bsd
+	@${SED} \
+	  -e 's|^java|JAVA_VERSION="1.4+" "${LOCALBASE}/bin/java"|' \
+	  -e 's|`dirname $$0`|"${DATADIR}"|' \
+	  ${WRKSRC}/pcgen.sh > ${WRKSRC}/pcgen.sh.bsd
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing in ${DATADIR}..."
 	@cd ${WRKSRC} && ${FIND} ${DATAFILES} -type d -exec ${MKDIR} ${DATADIR}/{} ";"
 	@cd ${WRKSRC} && ${FIND} ${DATAFILES} -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} ";"
 	@${ECHO_MSG} " [ DONE ]"
-	@${ECHO_MSG} -n ">> Installing script as ${PREFIX}/bin/pcgen..."
-	@cd ${WRKSRC} && ${INSTALL_SCRIPT} pcgen.sh.bsd ${PREFIX}/bin/pcgen
+	@${ECHO_MSG} -n ">> Installing launcher script as ${PREFIX}/bin/pcgen..."
+	@${INSTALL_SCRIPT} ${WRKSRC}/pcgen.sh.bsd ${PREFIX}/bin/pcgen
 	@${ECHO_MSG} " [ DONE ]"
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
