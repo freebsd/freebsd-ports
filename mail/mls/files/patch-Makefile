@@ -1,0 +1,29 @@
+--- Makefile.orig	Sat Feb 15 05:16:21 2003
++++ Makefile	Mon Apr 21 23:18:27 2003
+@@ -5,13 +5,13 @@
+ 
+ # -m386 (486,pentium,pentiumpro)
+ #OPTIMIZE=-O7 -mpentiumpro
+-OPTIMIZE=-O3
++#OPTIMIZE=-O3
+ 
+ # debug symbols will be stripped anyway during 'make install'
+ DEBUG=-g
+ 
+ #### DON'T CHANGE ANYTHING BELOW ####
+-DESTDIR=/usr/local
++DESTDIR?=/usr/local
+ CFLAGS=-Wall $(OPTIMIZE) $(DEBUG)
+ LIBS=-lm
+ CC=gcc
+@@ -31,8 +31,8 @@
+ 	$(CC) $(CFLAGS) -c mls_text.c -o mls_text.o
+ 
+ install: mls
+-	install -m 755 -g root -o root -s mls $(DESTDIR)/bin
+-	install -m 644 -g root -o root mls.1 $(DESTDIR)/man/man1
++	install -m 755 -g wheel -o root -s mls $(DESTDIR)/bin
++	install -m 644 -g wheel -o root mls.1 $(DESTDIR)/man/man1
+ 	gzip -9f $(DESTDIR)/man/man1/mls.1
+ 	@echo "**************************************************************"
+ 	@echo "*** To use HTML feature or PHP wrapper, copy contents of   ***"

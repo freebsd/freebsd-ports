@@ -159,6 +159,7 @@
     SUBDIR += mini_sendmail
     SUBDIR += minimalist
     SUBDIR += ml
+    SUBDIR += mls
     SUBDIR += mmc
     SUBDIR += mmr
     SUBDIR += movemail
