@@ -17,6 +17,6 @@ From the README:
   CORBA. The applet can launch the program, request for a new download
   or accept drops of URLs from netscape and give this URLs to GTM.
 
-WWW:http://camoes.rnl.ist.utl.pt/~bapm/gtm/
+WWW: http://camoes.rnl.ist.utl.pt/~bapm/gtm/
 
 Jacques Vidrine <nectar@FreeBSD.ORG>
