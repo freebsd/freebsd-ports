@@ -1,0 +1,15 @@
+#!/bin/sh
+
+if [ "x$1" = "x" ]; then
+	exit 1;
+fi
+if [ "x$2" != "xINSTALL" -a "x$2" != "xDEINSTALL" ]; then
+	exit 1;
+fi
+
+echo "**********************************************************"
+echo "You should restart X server or do 'xset fp rehash' command"
+echo "to enable this update."
+echo "**********************************************************"
+
+exit 0;
