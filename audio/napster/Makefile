@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.gis.net/~nite/
 
 MAINTAINER=	dburr@FreeBSD.org
 
+RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
+
 ONLY_FOR_ARCHS=	i386
 WRKSRC=		${WRKDIR}/nap
 NO_BUILD=	yes
