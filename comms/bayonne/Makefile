@@ -17,7 +17,7 @@ COMMENT=	Multi-line general purpose voice telephony server
 
 BROKEN=		"Port is outdated and there is no known working Hardware for FreeBSD > 4.4"
 
-LIB_DEPENDS=	ccstd-1.4.0:${PORTSDIR}/devel/commoncpp \
+LIB_DEPENDS=	ccgnu2-1.0.0:${PORTSDIR}/devel/commoncpp \
 		ccscript-1.4.0:${PORTSDIR}/lang/ccscript \
 		ccaudio.0:${PORTSDIR}/audio/ccaudio \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
