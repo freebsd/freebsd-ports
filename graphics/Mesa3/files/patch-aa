@@ -1,13 +1,26 @@
-*** samples/speed.c.0	Fri Jan 27 18:41:09 1995
---- samples/speed.c	Sun Feb  5 15:43:42 1995
+*** samples/speed.c.0	Fri Mar  3 16:38:42 1995
+--- samples/speed.c	Sun Mar  5 18:59:23 1995
+***************
+*** 35,40 ****
+--- 35,44 ----
+  #include <sys/param.h>
+  #endif
+  
++ #ifdef __STDC__
++ #include <time.h>
++ #endif
++ 
+  
+  #define GAP 10
+  #define ROWS 1
 ***************
 *** 122,128 ****
---- 122,132 ----
+--- 126,136 ----
       clock_t clk;
   
       clk = times(&tm);
-+ #ifdef __FreeBSD__
-+     return (double) clk / (double) sysconf(_SC_CLK_TCK);
++ #ifdef __STDC__
++     return (double)clk / (double)CLOCKS_PER_SEC;
 + #else
       return (double)clk / (double)HZ;
 + #endif
