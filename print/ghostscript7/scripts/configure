@@ -24,7 +24,7 @@ else
 		$svgalibdevs \
 		md2k md5k \
 		md50Mono md50Eco md1xMono \
-		appledmp iwhi iwlo iwlq hl7x0 bj10e \
+		appledmp iwhi iwlo iwlq hl7x0 hl1240 hl1250 bj10e \
 		bj10v bj10vh bj200 bjc600 bjc800 \
 		bjccmyk bjccolor bjcgray bjcmono \
 		lbp8 \
@@ -38,9 +38,9 @@ else
 		alc8600 alc8500 alc2000 alc4000 alc1900 \
 		lp9500c lp8800c lp8300c lp8500c lp3000c lp8200c lp8000c \
 		epl6100 epl5900 epl5800 epl2050 epl2050p epl2120 epl2750 \
-		lp7500 lp2400 lp2200 lp9400 lp8900 lp8700 lp8100 lp7700 \
-		lp8600f lp8400f lp8300f lp1900 lp9600s lp9300 lp9600 lp8600 \
-		lp1800 \
+		lp9100 lp7900 lp7500 lp2400 lp2200 lp9400 lp8900 lp8700 \
+		lp8100 lp7700 lp8600f lp8400f lp8300f lp1900 lp9600s lp9300 \
+		lp9600 lp8600 lp1800 \
 		lq850 epsonc \
 		mjc180 mjc360 mjc720 mj500c \
 		st800 stcolor photoex lp2563 dnj650c deskjet djet500 cdeskjet \
@@ -115,6 +115,8 @@ Have fun with this new configuration style !     -andreas \n\n\
   "iwlo"     "Apple Imagewriter, low-resolution mode" "$status_iwlo" \
   "iwlq"     "Apple Imagewriter LQ in 320 x 216 dpi mode" "$status_iwlq" \
   "hl7x0"    "Brother HL720 and HL730 (HL760=PCL), MFC6550MC Fax Machine" "$status_hl7x0" \
+  "hl1240"   "Brother HL1030/1240" "$status_hl1240" \
+  "hl1250"   "Brother HLHL1050/1070/1250/1270N" "$status_hl1250" \
   "bj10e"    "Canon BubbleJet BJ-10e" "$status_bj10e" \
   "bj10v"    "Canon BubbleJet BJ-10v [BJ10V]" "$status_bj10v" \
   "bj10vh"   "Canon BubbleJet BJ-10v, high-mergin [BJ10V]" "$status_bj10vh" \
@@ -172,6 +174,8 @@ Have fun with this new configuration style !     -andreas \n\n\
   "epl2050p" "Epson EPL-N2050+ laser printer [EPLASER]" "$status_epl2050p" \
   "epl2120"  "Epson EPL-N2120 laser printer [EPLASER]" "$status_epl2120" \
   "epl2750"  "Epson EPL-N2750 laser printer [EPLASER]" "$status_epl2750" \
+  "lp9100"   "Epson LP-9100(R) laser printer [EPLASER]" "$status_lp9100" \
+  "lp7900"   "Epson LP-7900(R) laser printer [EPLASER]" "$status_lp7900" \
   "lp7500"   "Epson LP-7500(R) laser printer [EPLASER]" "$status_lp7500" \
   "lp2400"   "Epson LP-2400 laser printer [EPLASER]" "$status_lp2400" \
   "lp2200"   "Epson LP-2200 laser printer [EPLASER]" "$status_lp2200" \
@@ -179,6 +183,7 @@ Have fun with this new configuration style !     -andreas \n\n\
   "lp8900"   "Epson LP-8900(R) laser printer [EPLASER]" "$status_lp8900" \
   "lp8700"   "Epson LP-8700(R) laser printer [EPLASER]" "$status_lp8700" \
   "lp8100"   "Epson LP-8100(R) laser printer [EPLASER]" "$status_lp8100" \
+  "lp7700"   "Epson LP-7700(R) laser printer [EPLASER]" "$status_lp7700" \
   "lp8600f"  "Epson LP-8600FX(N) laser printer [EPLASER]" "$status_lp8600f" \
   "lp8400f"  "Epson LP-8400FX(N) laser printer [EPLASER]" "$status_lp8400f" \
   "lp8300f"  "Epson LP-8300F laser printer [EPLASER]" "$status_lp8300f" \
