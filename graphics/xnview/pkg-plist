@@ -1,0 +1,10 @@
+bin/nconvert
+bin/nv
+bin/xnview
+lib/X11/app-defaults/XnView
+lib/libformat.so
+share/doc/xnview/Formats.txt
+share/doc/xnview/ReadMe.txt
+share/doc/xnview/Usage.txt
+share/doc/xnview/WhatsNew.txt
+@dirrm share/doc/xnview
