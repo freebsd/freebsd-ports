@@ -1,9 +1,0 @@
---------------------------------------------------------------------
-Please check the following files:
-
-${PREFIX}/etc/bg5ps.conf.sample
-${PREFIX}/etc/gb2312-bg5ps.conf.sample
-
-Copy one of them to ~/.bg5ps.conf(depend on which encoding you use),
-then modify it to suit your needs.  Type `bg5ps -h` for help.
---------------------------------------------------------------------
