@@ -16,6 +16,9 @@ COMMENT=	A Unix SOCKS 4 and 5 proxy server
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent
 
+USE_RC_SUBR=	yes
+RC_SCRIPTS_SUB=PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
+
 GNU_CONFIGURE=	yes
 # Necessary for $PREFIX to work:
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -23,7 +26,14 @@ CONFIGURE_ARGS=	--with-libevent=${LOCALBASE}
 
 MAN1=		nylon.1
 
+PLIST_FILES=	bin/nylon etc/nylon.conf etc/rc.d/nylon.sh
+
+post-extract:
+	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/nylon.sh.in > ${WRKSRC}/nylon.sh
+
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/nylon.conf ${PREFIX}/etc
+	${INSTALL_SCRIPT} ${WRKSRC}/nylon.sh ${PREFIX}/etc/rc.d
 
 .include <bsd.port.mk>
