@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ddclient
-PORTVERSION=	3.6.2
+PORTVERSION=	3.6.3
 CATEGORIES=	dns
 MASTER_SITES=	http://members.rogers.com/ddclient/pub/
 
@@ -17,18 +17,19 @@ USE_PERL5=	yes
 NO_BUILD=	yes
 
 do-install:
-	@/usr/bin/perl -pi -e 's|%%PREFIX%%|${PREFIX}|g; s|%%PERL%%|${PERL}|g' ${WRKSRC}/ddclient
+	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g; s|%%PERL%%|${PERL}|g' ${WRKSRC}/ddclient
 	@${INSTALL_SCRIPT} ${WRKSRC}/ddclient ${PREFIX}/sbin
 	@${INSTALL_DATA} ${WRKSRC}/sample-etc_ddclient.conf ${PREFIX}/etc/ddclient.conf.sample
 	@${MKDIR} ${PREFIX}/share/ddclient
 .for i in COPYING COPYRIGHT README README.cisco sample-etc_cron.d_ddclient \
-	sample-etc_dhclient-enter-hooks sample-etc_dhcpc_dhcpcd-eth0.exe \
+	sample-etc_dhclient-exit-hooks sample-etc_dhcpc_dhcpcd-eth0.exe \
 	sample-etc_ppp_ip-up.local
-	@${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/ddclient
+	@${PERL} -pe 's|%%PREFIX%%|${PREFIX}|g' < ${WRKSRC}/$i > ${WRKDIR}/$i
+	@${INSTALL_DATA} ${WRKDIR}/$i ${PREFIX}/share/ddclient
 .endfor
-	@/usr/bin/perl -pe 's|%%PREFIX%%|${PREFIX}|g' < ${FILESDIR}/ddclient.sh.sample > ${WRKDIR}/ddclient.sh.sample
+	@${PERL} -pe 's|%%PREFIX%%|${PREFIX}|g' < ${FILESDIR}/ddclient.sh.sample > ${WRKDIR}/ddclient.sh.sample
 	@${INSTALL_SCRIPT} ${WRKDIR}/ddclient.sh.sample ${PREFIX}/etc/rc.d
 
-	@/usr/bin/perl -pe 's|/usr/local|${PREFIX}|g' < ${PKGMESSAGE}
+	@${PERL} -pe 's|/usr/local|${PREFIX}|g' < ${PKGMESSAGE}
 
 .include <bsd.port.mk>
