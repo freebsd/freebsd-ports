@@ -6,18 +6,27 @@
 #
 
 PORTNAME=	blue
-PORTVERSION=	2.6
+PORTVERSION=	2.7
 CATEGORIES=	games
-MASTER_SITES=	http://www.catb.org/~esr/blue/
+MASTER_SITES=	http://www.catb.org/~esr/bluemoon/
+DISTNAME=	bluemoon-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Blue Moon card solitaire
 
-ALL_TARGET=	# empty
-MAN6=		blue.6
+USE_REINPLACE=	yes
+ALL_TARGET=	bluemoon
+
+MAN6=		bluemoon.6
+MLINKS=		bluemoon.6 blue.6
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|^CFLAGS=|CFLAGS?=|g ; \
+		 s|cc |$$(CC) |g' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/blue ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/blue.6 ${MANPREFIX}/man/man6
+	${INSTALL_PROGRAM} ${WRKSRC}/bluemoon ${PREFIX}/bin
+	@${LN} -sf bluemoon ${PREFIX}/bin/blue
+	${INSTALL_MAN} ${WRKSRC}/bluemoon.6 ${MANPREFIX}/man/man6
 
 .include <bsd.port.mk>
