@@ -55,6 +55,8 @@ share/gnome/gramps/plugins/rel_fr.pyo
 share/gnome/gramps/plugins/rel_fr.py
 share/gnome/gramps/plugins/rel_fi.pyo
 share/gnome/gramps/plugins/rel_fi.py
+share/gnome/gramps/plugins/rel_es.pyo
+share/gnome/gramps/plugins/rel_es.py
 share/gnome/gramps/plugins/rel_de.pyo
 share/gnome/gramps/plugins/rel_de.py
 share/gnome/gramps/plugins/rel_da.pyo
@@ -94,6 +96,8 @@ share/gnome/gramps/plugins/TimeLine.pyo
 share/gnome/gramps/plugins/TimeLine.py
 share/gnome/gramps/plugins/Summary.pyo
 share/gnome/gramps/plugins/Summary.py
+share/gnome/gramps/plugins/StatisticsChart.pyo
+share/gnome/gramps/plugins/StatisticsChart.py
 share/gnome/gramps/plugins/SimpleBookTitle.pyo
 share/gnome/gramps/plugins/SimpleBookTitle.py
 share/gnome/gramps/plugins/ReorderIds.pyo
@@ -668,9 +672,10 @@ share/gnome/gramps/AddSpouse.pyo
 share/gnome/gramps/AddSpouse.py
 share/gnome/gramps/AddMedia.pyo
 share/gnome/gramps/AddMedia.py
-share/gnome/apps/Applications/gramps.desktop
+share/applications/gramps.desktop
 lib/gramps/grampslib.so
 bin/gramps
+@dirrm share/pixmaps
 @dirrm share/gnome/omf/gramps
 @dirrm share/gnome/gramps/plugins
 @dirrm share/gnome/gramps/help/gramps/C/figures
