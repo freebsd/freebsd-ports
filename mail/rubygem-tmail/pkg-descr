@@ -1,5 +1,5 @@
 TMail is a mail manipulating library for Ruby, with RFC822 and MIME
 multipart support.
 
-Author:	Minero Aoki <aamine@cd.xdsl.ne.jp>
-WWW:	http://www.xdsl.ne.jp/Cd/aamine/en/index.html
+Author:	Minero Aoki <aamine@loveruby.net>
+WWW:	http://www.loveruby.net/en/tmail.html
