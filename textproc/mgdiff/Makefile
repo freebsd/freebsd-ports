@@ -3,7 +3,7 @@
 # Date created:         		22 October 1996
 # Whom:                 		andreas@marvin.robin.de
 #
-# $Id: Makefile,v 1.3 1997/04/11 09:39:54 obrien Exp $
+# $Id: Makefile,v 1.4 1997/04/27 00:11:48 asami Exp $
 #
 
 DISTNAME=	mgdiff
@@ -16,6 +16,7 @@ MAINTAINER=	andreas@marvin.robin.de
 
 REQUIRES_MOTIF=	yes
 USE_IMAKE=      yes
+MAN1=		mgdiff.1
 
 post-install:
 	@${MKDIR} ${PREFIX}/lib/X11/mgdiff

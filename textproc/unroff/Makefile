@@ -3,7 +3,7 @@
 # Date created:		18 Feb 1996
 # Whom:			Thomas Gellekum <tg@freebsd.org>
 #
-# $Id: Makefile,v 1.5 1997/03/06 12:24:49 wosch Exp $
+# $Id: Makefile,v 1.6 1997/04/27 00:11:48 asami Exp $
 #
 
 DISTNAME=	unroff-1.0
@@ -25,6 +25,9 @@ PATCH_STRIP=	-p1
 UNROFF_SITE=	http://www-rn.informatik.uni-bremen.de/software/unroff
 PATCH1=		me-misc-patch
 PATCH2=		misc-patch-2
+
+MAN1=		unroff.1 unroff-html.1 unroff-html-man.1 unroff-html-ms.1
+MANCOMPRESSED=	yes
 
 pre-patch:
 	@${ECHO_MSG} "===>  Applying distribution patches for ${PKGNAME}"

@@ -1,14 +1,21 @@
 bin/unroff
-man/man1/unroff.1.gz
-man/man1/unroff-html.1.gz
-man/man1/unroff-html-man.1.gz
-man/man1/unroff-html-ms.1.gz
 share/unroff/doc/manual.ms
 share/unroff/misc/sample.unroff
 share/unroff/misc/tmac.hyper
 share/unroff/scm/troff.scm
+share/unroff/scm/troff.scm.orig
 share/unroff/scm/html/common.scm
+share/unroff/scm/html/common.scm.orig
 share/unroff/scm/html/m.scm
 share/unroff/scm/html/man.scm
+share/unroff/scm/html/me.scm
+share/unroff/scm/html/me.scm.orig
 share/unroff/scm/html/ms.scm
+share/unroff/scm/html/ms.scm.orig
 share/unroff/scm/misc/hyper.scm
+share/unroff/scm/misc/hyper.scm.orig
+@dirrm share/unroff/doc
+@dirrm share/unroff/misc
+@dirrm share/unroff/scm/html
+@dirrm share/unroff/scm/misc
+@dirrm share/unroff/scm

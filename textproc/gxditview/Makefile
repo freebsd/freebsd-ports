@@ -3,20 +3,22 @@
 # Date created:                24 June 1998
 # Whom:                        Dom Mitchell <dom@myrddin.demon.co.uk>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/07/20 03:45:24 steve Exp $
 #
 
 # Same version as the contrib groff sources...
-DISTNAME=      gxditview-1.10
-CATEGORIES=    textproc
-DISTFILES=     # none
+DISTNAME=	gxditview-1.10
+CATEGORIES=	textproc
+DISTFILES=	# none
 
 MAINTAINER=     dom@myrddin.demon.co.uk
 
-USE_IMAKE=     yes
-WRKSRC=                ${WRKDIR}/${DISTNAME}
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
-GXDVSRC?=      /usr/src/contrib/groff/xditview
+USE_IMAKE=	yes
+MAN1=		gxditview.1
+
+GXDVSRC?=	/usr/src/contrib/groff/xditview
 
 do-extract:
 	@if [ ! -d ${GXDVSRC} ]; then \
