@@ -1,7 +1,7 @@
 # New ports collection makefile for:   macutils
 # Version required:	2.0b3
 # Date created:		14th April 1997
-# Whom:			Joel Sutton <sutton@aardvark.apana.org.au>
+# Whom:			Joel Sutton <jsutton@bbcon.com.au>
 # FreeBSD Version:	2.1.5-RELEASE
 #
 # $FreeBSD$
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://sunsite.unc.edu/pub/Linux/distributions/debian/main/source/o
 # ${MASTER_SITE_SUNSITE} isn't appropriate because distributions/ isn't
 # mirrored.
 
-MAINTAINER=	sutton@aardvark.apana.org.au
+MAINTAINER=	jsutton@bbcon.com.au
 
 WRKSRC=		${WRKDIR}/macutils
 MAKEFILE=	makefile
