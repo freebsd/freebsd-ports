@@ -1,0 +1,26 @@
+*** lib/db.c.orig	Sat Aug 26 19:56:39 1995
+--- lib/db.c	Sat Apr 27 16:40:25 1996
+***************
+*** 259,268 ****
+      close(fid);
+  }
+  
+! void main()
+  {
+      set_binom();
+      set_naufm();
+      set_offset();
+      set_V_Werte();
+  }
+--- 259,269 ----
+      close(fid);
+  }
+  
+! main()
+  {
+      set_binom();
+      set_naufm();
+      set_offset();
+      set_V_Werte();
++     return 0;
+  }

@@ -1,0 +1,22 @@
+--- xgammon.c.orig	Tue Aug 29 07:28:41 1995
++++ xgammon.c	Thu Jan  2 20:26:43 1997
+@@ -179,7 +179,7 @@
+ 
+ FILE*		protokol_file = NULL;
+ 
+-char * greetings = "Wellcome to xgammon  version 0.98\n   (C) 1994   Lambert Klasen   Detlef Steuer\n    We hope you enjoy it\n\n";
++char * greetings = "Welcome to xgammon  version 0.98\n   (C) 1994   Lambert Klasen   Detlef Steuer\n    We hope you enjoy it\n\n";
+ 
+ XtActionsRec gammon_actions[] = {
+ 	{"PipCount",		PipCount},
+@@ -227,8 +227,8 @@
+ {"rollout",         "Rollout",         XtRBoolean, sizeof (int),     offset (rollout),           XtRString, "0"},
+ {"numrollouts",     "NumRollouts",     XtRInt,     sizeof (int),     offset (num_rollouts),      XtRString, "100"},
+ {"positionfile",    "PositionFile",    XtRString,  sizeof (char *),  offset (position_file),     XtRString, "xgammon.save"},
+-{"database",        "Database",        XtRString,  sizeof (char *),  offset (database),          XtRString, "lib/xgammon.db"},
+-{"server",          "Server",          XtRString,  sizeof (char *),  offset (server),            XtRString, "fraggel65.mdstud.chalmers.se"},
++{"database",        "Database",        XtRString,  sizeof (char *),  offset (database),          XtRString, DATABASE},
++{"server",          "Server",          XtRString,  sizeof (char *),  offset (server),            XtRString, "fibs.com"},
+ {"port",            "Port",            XtRInt,     sizeof (int),     offset (port),              XtRString, "4321"},
+ {"buttonmove",      "ButtonMove",      XtRBoolean, sizeof (int),     offset (button_move),       XtRString, "0"}
+ 

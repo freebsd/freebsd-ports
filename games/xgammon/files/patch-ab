@@ -1,0 +1,13 @@
+*** xgammon.ad.orig	Tue Aug 29 07:35:39 1995
+--- xgammon.ad	Fri Apr 26 19:52:55 1996
+***************
+*** 67,70 ****
+  xgammon.buttonmove:			false
+  xgammon.stonesteps:			5
+  xgammon.delaytime:			5
+! xgammon.database:			/usr/X11R6/lib/X11/xgammon/xgammon.db
+--- 67,70 ----
+  xgammon.buttonmove:			false
+  xgammon.stonesteps:			5
+  xgammon.delaytime:			5
+! !xgammon.database:			/usr/X11R6/lib/X11/xgammon/xgammon.db

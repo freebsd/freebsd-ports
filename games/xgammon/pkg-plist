@@ -1,0 +1,4 @@
+bin/xgammon
+man/man6/xgammon.6.gz
+lib/X11/app-defaults/XGammon
+lib/X11/xgammon/xgammon.db

@@ -1,0 +1,61 @@
+--- xgammon.c.orig	Thu Jan  2 20:28:24 1997
++++ xgammon.c	Thu Jan  2 20:28:37 1997
+@@ -306,7 +306,7 @@
+ 	set_binom   ();						/* decision ... */
+ 	set_naufm   ();
+ 
+-	srand (time (NULL));					/* rolling */
++	srandom (time (NULL));					/* rolling */
+ 
+ 	delaytime = ((unsigned long) gammon_resource.delaytime) * 100000;
+ 
+--- edit.c.orig	Sat Aug 26 13:09:41 1995
++++ edit.c	Thu Jan  2 20:30:14 1997
+@@ -266,8 +266,8 @@
+ 	}
+ 
+ 	if (ignore_dice) {
+-		roll[0] = (rand ()%6 + 1) * direction;
+-		roll[1] = (rand ()%6 + 1) * direction;
++		roll[0] = (random ()%6 + 1) * direction;
++		roll[1] = (random ()%6 + 1) * direction;
+ 	}
+ 	if (roll[0] == roll[1]) {
+ 		roll[3] = roll[2] = roll[0]; 
+--- misc.c.orig	Sun Aug 27 15:20:15 1995
++++ misc.c	Thu Jan  2 20:30:33 1997
+@@ -99,8 +99,8 @@
+ 
+ void RollDice (void)
+ {
+-	roll[0] = (rand ()%6 + 1) * direction;
+-	roll[1] = (rand ()%6 + 1) * direction;
++	roll[0] = (random ()%6 + 1) * direction;
++	roll[1] = (random ()%6 + 1) * direction;
+ 
+         if (roll[0] != roll[1]) {
+                 roll[2] = 0;		/* sure and necessary */
+@@ -253,8 +253,8 @@
+ 
+ 		direction = 1; 		/* get beginner of game */
+ 		do {
+-			roll[0] = (rand ()%6 + 1);
+-			roll[1] = (rand ()%6 + 1);
++			roll[0] = (random ()%6 + 1);
++			roll[1] = (random ()%6 + 1);
+ 		} while (roll[0] == roll[1]);
+ 
+ 		roll[2] = 0;
+--- rollout.c.orig	Sat Aug 26 19:58:11 1995
++++ rollout.c	Thu Jan  2 20:30:44 1997
+@@ -238,8 +238,8 @@
+ 
+ void rollout_roll_dice (void)
+ {
+-	roll[0] = (rand()%6 + 1) * direction;
+-	roll[1] = (rand()%6 + 1) * direction;
++	roll[0] = (random()%6 + 1) * direction;
++	roll[1] = (random()%6 + 1) * direction;
+ 
+         if (roll[0] != roll[1]) {
+                 roll[2] = 0;		/* sure and necessary */
