@@ -1,0 +1,13 @@
+--- psrev.c.orig	Wed Sep 11 03:12:11 1996
++++ psrev.c	Wed Sep 11 03:13:12 1996
+@@ -24,8 +24,8 @@
+ void sys_error(message, arg)
+ char *message, *arg;
+ {
+-  extern char *sys_errlist[];
+-  extern int sys_nerr;
++  /* extern char *sys_errlist[]; */
++  /* extern int sys_nerr; */
+   int en;
+ 
+   en = errno;

@@ -1,0 +1,11 @@
+--- psof.c.orig	Wed Sep 11 03:12:36 1996
++++ psof.c	Wed Sep 11 03:15:16 1996
+@@ -216,7 +216,7 @@
+     if ((status & 0xff) != 0) {
+       int sig = status & 0x7f;
+       if (sig < NSIG) {
+-	extern char *sys_siglist[];
++	/* extern char *sys_siglist[]; */
+ 	syslog(LOG_ERR, "%s: %s%s", LPRPS, sys_siglist[sig],
+ 	       (status & 0x80) ? " (core dumped)" : "");
+       }
