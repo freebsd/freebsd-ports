@@ -16,7 +16,7 @@ DISTNAME=	CMFPhoto-${PORTVERSION}
 MAINTAINER=	kaeru@inigo-tech.com
 COMMENT=	CMFPhoto product for Zope/CMF
 
-RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/lib/python/Products/CMFDefault/__init__.py:${PORTSDIR}/www/zope-cmf \
+RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFDefault/__init__.py:${PORTSDIR}/www/zope-cmf \
 		${PYTHON_SITELIBDIR}/PIL/_imaging.so:${PORTSDIR}/graphics/py-imaging
 
 USE_PYTHON=	yes
