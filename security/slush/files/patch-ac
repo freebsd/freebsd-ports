@@ -1,25 +1,22 @@
-*** slushd.c.orig	Tue Apr  6 05:14:04 1999
---- slushd.c	Sat May  8 23:53:40 1999
+*** slushd.c-	Mon Oct 27 06:19:54 2003
+--- slushd.c	Mon Oct 27 06:22:02 2003
 ***************
 *** 40,46 ****
+--- 40,50 ----
   #include <ctype.h>
   #include <stdlib.h>
   #include <netdb.h>
-! #include <getopt.h>
-  #include <pwd.h>
-  #include <grp.h>
-  #include <fcntl.h>
---- 40,46 ----
-  #include <ctype.h>
-  #include <stdlib.h>
-  #include <netdb.h>
-! #include <libutil.h>
++ #include <sys/param.h>
++ #if __FreeBSD_version >= 500000
+  #include <getopt.h>
++ #endif
++ #include <libutil.h>
   #include <pwd.h>
   #include <grp.h>
   #include <fcntl.h>
 ***************
 *** 51,56 ****
---- 51,57 ----
+--- 55,61 ----
   #include <sys/stat.h>
   #include <sys/ioctl.h>
   #include <sys/file.h>
@@ -87,7 +84,7 @@
   }
   
   /* Retrieve client X509 certificate and test authentication */
---- 655,684 ----
+--- 659,688 ----
   void log_uwtmp(struct passwd *pw, struct in_addr *i, char *tty, int is_logout)
   {
   	struct utmp ut;
