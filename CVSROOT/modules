@@ -5251,6 +5251,7 @@ patch		src/gnu/usr.bin/patch
 patchutils	ports/misc/patchutils
 pathalias	ports/mail/pathalias
 pathchar	ports/net/pathchar
+pathchk		src/usr.bin/pathchk
 pavuk		ports/ftp/pavuk
 pax		src/bin/pax
 pbasic		ports/lang/pbasic
