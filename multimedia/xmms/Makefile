@@ -96,9 +96,10 @@ CONFIGURE_ARGS+=	--enable-simd
 post-extract:
 	(cd ${WRKSRC}/Input/mpg123 && ${MV} decode_i586.s decode_i586.S && \
 	  cd ${WRKSRC}/Visualization/blur_scope && ${MV} blur_8.s blur_8.S);
-	${REINPLACE_CMD} -e 's:\.s :\.S :g' ${WRKSRC}/Input/mpg123/Makefile.in
-	${REINPLACE_CMD} -e 's:blur_8.s:blur_8.S:g' \
-	  ${WRKSRC}/Visualization/blur_scope/Makefile.in
+	${REINPLACE_CMD} -e 's:\.s :.S :g' -e 's:\.s$$:.S:g' \
+	  -e 's:^\.s\.:.S.:g' ${WRKSRC}/Input/mpg123/Makefile.in
+	${REINPLACE_CMD} -e 's:\.s :.S :g' -e 's:\.s$$:.S:g' \
+	  -e 's:^\.s\.:.S.:g' ${WRKSRC}/Visualization/blur_scope/Makefile.in
 .endif
 
 pre-extract:
