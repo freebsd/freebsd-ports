@@ -1,8 +1,0 @@
-Samba-TNG (i.e. The Next Generation) is a fork of the Samba codebase
-whose goal is to provide the complete functionality of a Windows NT
-domain controller.  Like Samba, Samba-TNG can also act as a file and
-print server for LanManager clients such as MS-DOS, OS/2, MS-Windows,
-Windows NT and Windows 2000, and as a WINS (Windows Internet Name
-Service) server.
-
-WWW: http://www.samba-tng.org/
