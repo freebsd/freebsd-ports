@@ -21,7 +21,6 @@ etc/mimedefang/sa-mimedefang.cf.example
 %%PORTDOCS%%%%EXAMPLESDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-@dirrm etc/mimedefang/spamassassin
 @dirrm etc/mimedefang
 @cwd /var/spool
 @dirrm MIMEDefang
