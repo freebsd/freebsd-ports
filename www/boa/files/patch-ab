@@ -1,5 +1,5 @@
---- defines.h.orig	Fri Feb 18 13:18:42 2000
-+++ defines.h	Thu Mar 30 20:31:43 2000
+--- defines.h.orig	Thu Nov  1 23:37:46 2001
++++ defines.h	Sun Feb 17 13:40:30 2002
 @@ -27,7 +27,7 @@
  /***** Change this, or use -c on the command line to specify it *****/
  
