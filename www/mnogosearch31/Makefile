@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mnogosearch
-PORTVERSION=    3.1.20
-PORTREVISION=   3
+PORTVERSION=    3.1.21
 CATEGORIES=	www databases
 MASTER_SITES=   http://www.mnogosearch.org/Download/
 
@@ -19,18 +18,29 @@ RUN_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 MAN1=		indexer.1
 MAN5=		indexer.conf.5
 
-USE_LIBTOOL_VER=13
 INSTALLS_SHLIB= yes
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=--enable-phrase \
 		--enable-shared \
 		--sysconfdir=${PREFIX}/etc/mnogosearch \
 		--localstatedir=/var/mnogosearch
 
+OPTIONS=        MNOGO_THREADS "Enable pthreads"                   on  \
+		MNOGO_SSL     "Enable SSL"                        on  \
+		MNOGO_GUESSER "Enable Cyrillic charset guesser"   off \
+		MNOGO_PGSQL   "Use PGSQL (mutually exclusive)"    off \
+		MNOGO_MSQL    "Use MSQL (mutually exclusive)"     off \
+		MNOGO_MYSQL   "Use MySQL (mutually exclusive)"    off \
+		MNOGO_BUILTIN "Use built-in (mutually exclusive)" on
+
+.include <bsd.port.pre.mk>
+
 .if !defined(WITHOUT_MNOGO_THREADS)
-CONFIGURE_ARGS+= --enable-freebsd-pthreads
+CONFIGURE_ARGS+=	--enable-freebsd-pthreads
 CFLAGS+=        ${PTHREAD_CFLAGS}
-CONFIGURE_ENV=  LIBS="${PTHREAD_LIBS}"
+CONFIGURE_ENV+=	LIBS="${PTHREAD_LIBS}"
 .endif
 
 .if !defined(NO_OPENSSL) && !defined(WITHOUT_MNOGO_SSL)
@@ -41,7 +51,6 @@ USE_OPENSSL=    yes
 CONFIGURE_ARGS+= --with-openssl=${OPENSSLBASE}
 .endif
 
-# To enable Cyrillic charset guesser, define this
 # Guesser mode ignores charsets comes from HTTP header or <META> tag
 .if defined(WITH_MNOGO_GUESSER)
 CONFIGURE_ARGS+= --enable-charset-guesser
@@ -60,17 +69,14 @@ CONFIGURE_ARGS+=	--with-msql=${LOCALBASE}
 LIB_DEPENDS=            mysqlclient:${PORTSDIR}/databases/mysql323-client
 CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
 
-.else
+.elif defined(WITH_MNOGO_BUILTIN)
 CONFIGURE_ARGS+=        --with-built-in
 
+.else
 pre-fetch:
 	@${ECHO}
-	@${ECHO} "Defaulting to mnoGoSearch with built-in database."
-	@${ECHO}
-	@${ECHO} "You may alternately build mnoGoSearch with either msql, mysql or"
-	@${ECHO} "postgresql support by invoking make with WITH_MNOGO_MSQL=yes,"
-	@${ECHO} "WITH_MNOGO_MYSQL=yes or WITH_MNOGO_PGSQL=yes respectively."
-	@${ECHO}
+	@${ECHO} "One of databases should be choosed."
+	@exit 1
 .endif
 
 pre-install:
@@ -85,4 +91,4 @@ post-install:
 	@${ECHO}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

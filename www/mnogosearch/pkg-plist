@@ -11,6 +11,7 @@ include/udm_common.h
 include/udm_conf.h
 include/udm_config.h
 include/udm_crc32.h
+include/udm_crossword.h
 include/udm_db.h
 include/udm_env.h
 include/udm_execget.h
@@ -24,6 +25,7 @@ include/udm_indexer.h
 include/udm_log.h
 include/udm_mimetype.h
 include/udm_mutex.h
+include/udm_parsedate.h
 include/udm_parsehtml.h
 include/udm_parser.h
 include/udm_parseurl.h
