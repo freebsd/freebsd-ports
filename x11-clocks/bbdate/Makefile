@@ -10,7 +10,7 @@ PORTVERSION= 	0.2.1
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://bbtools.windsofstorm.net/sources/
 
-MAINTAINER=	cpiazza@FreeBSD.org
+MAINTAINER=	patseal@hyperhost.net
 
 GNU_CONFIGURE=	yes
 USE_XLIB=	yes
