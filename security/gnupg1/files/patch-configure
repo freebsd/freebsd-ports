@@ -1,0 +1,28 @@
+--- configure.orig	Fri Aug 22 04:50:00 2003
++++ configure	Mon Oct 27 04:14:29 2003
+@@ -9208,7 +9208,7 @@
+ echo "$as_me:$LINENO: result: $ac_cv_func_dlopen" >&5
+ echo "${ECHO_T}$ac_cv_func_dlopen" >&6
+ if test $ac_cv_func_dlopen = yes; then
+-  :
++  found_dlopen=yes
+ else
+   echo "$as_me:$LINENO: checking for dlopen in -ldl" >&5
+ echo $ECHO_N "checking for dlopen in -ldl... $ECHO_C" >&6
+@@ -9266,6 +9266,7 @@
+ echo "${ECHO_T}$ac_cv_lib_dl_dlopen" >&6
+ if test $ac_cv_lib_dl_dlopen = yes; then
+   found_dlopen=yes
++  need_libdl=yes
+ fi
+ 
+ fi
+@@ -9281,6 +9282,8 @@
+ #define HAVE_DL_DLOPEN 1
+ _ACEOF
+ 
++  fi
++  if test x"$need_libdl" = "xyes" ; then
+     DLLIBS="-ldl"
+ 
+   fi
