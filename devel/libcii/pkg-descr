@@ -1,4 +1,4 @@
-This hierarchy contains all the source code from my book
+This hierarchy contains all the source code from
 "C Interfaces and Implementations: Techniques for Creating Reusable
 Software (Addison-Wesley Professional Computing Series, 1997,
 ISBN 0-201-49841-3).
@@ -7,11 +7,10 @@ For installation instructions, see install.html.
 
 For a summary of the distribution's revision history, see history.html.
 
-For more information, visit http://www.cs.princeton.edu/software/cii/.
+WWW: http://www.cs.princeton.edu/software/cii/
 -----
-David R. Hanson
+Author: David R. Hanson
 drh@microsoft.com / http://www.research.microsoft.com/~drh/
-$FreeBSD$
 ---
 FreeBSD note: in /usr/local
 lib/libcii.a	->	lib/cii/1/libcii.a
