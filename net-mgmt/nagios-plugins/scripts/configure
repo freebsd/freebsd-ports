@@ -65,10 +65,10 @@ while [ "$1" ]; do
 			SUB_FPING=""
 			;;
 		\"NetSNMP\")
-			echo "BUILD_DEPENDS+=	snmpcheck:\${PORTSDIR}/net/net-snmp"
-			echo "RUN_DEPENDS+=	snmpcheck:\${PORTSDIR}/net/net-snmp"
-			echo "BUILD_DEPENDS+=	\${LOCALBASE}/lib/perl5/site_perl/\${PERL_VER}/Net/SNMP.pm:\${PORTSDIR}/net/p5-Net-SNMP"
-			echo "RUN_DEPENDS+=	\${LOCALBASE}/lib/perl5/site_perl/\${PERL_VER}/Net/SNMP.pm:\${PORTSDIR}/net/p5-Net-SNMP"
+			echo "BUILD_DEPENDS+=	snmpcheck:\${PORTSDIR}/net-mgmt/net-snmp"
+			echo "RUN_DEPENDS+=	snmpcheck:\${PORTSDIR}/net-mgmt/net-snmp"
+			echo "BUILD_DEPENDS+=	\${LOCALBASE}/lib/perl5/site_perl/\${PERL_VER}/Net/SNMP.pm:\${PORTSDIR}/net-mgmt/p5-Net-SNMP"
+			echo "RUN_DEPENDS+=	\${LOCALBASE}/lib/perl5/site_perl/\${PERL_VER}/Net/SNMP.pm:\${PORTSDIR}/net-mgmt/p5-Net-SNMP"
 			echo "CONFIGURE_ARGS+=	--enable-snmp"
 			SUB_SNMP=""
 			;;
