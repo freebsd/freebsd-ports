@@ -7,7 +7,7 @@
 
 PORTNAME=	firebird
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://firebird.sourceforge.net/download/ \
 		http://www.aims.com.au/chris/ \
