@@ -11,7 +11,7 @@ CATEGORIES=	x11-servers
 MASTER_SITES=	$(MASTER_SITE_SUNSITE)
 MASTER_SITE_SUBDIR=	X11/fonts
 
-MAINTAINER=	jabley@clear.co.nz
+MAINTAINER=	rip@pinetec.co.za
 
 WRKSRC=		$(WRKDIR)/xfstt-1.0
 
