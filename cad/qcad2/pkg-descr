@@ -3,16 +3,13 @@ What Is QCad?
    QCad is a professional CAD System. With QCad you can easily construct
    and change drawings with ISO-texts and many other features and save
    them as DXF-files. These DXF-files are the interface to many
-   CAD-systems such as AutoCAD® and many others.
+   CAD-systems such as AutoCAD (c) and many others.
 
 What is QCad not?
 
    QCad is no designer tool. That means you can not create any filled
    shapes nor any crazy freehand forms. Also you can not drag and drop
-   the objects in the drawing with the mouse. If you're searching for
-   such a tool you may take a look at KIllustrator (part of KOffice) or
-   CorelDraw® from Corel, which comes out in the beginning of the year
-   2000 for Linux.
+   the objects in the drawing with the mouse.
 
 If you find any bugs, send a report to bugs@qcad.org.
 
