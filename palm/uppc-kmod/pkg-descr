@@ -1,0 +1,6 @@
+UPPC is a USB device driver that presents a tty style serial interface to
+Windows CE devices like Pocket PCs. This lets programs like those from the
+SynCE project access your device much faster than the standard serial
+interface.
+
+- Sam Lawrance <boris@brooknet.com.au>

@@ -1,0 +1,39 @@
+# New ports collection makefile for:	uppc-kmod
+# Date created:				31 August 2003
+# Whom:					Sam Lawrance <boris@brooknet.com.au>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	uppc
+PORTVERSION=	0.4
+CATEGORIES=	palm
+MASTER_SITES=	http://sam.stral.net/freebsd/
+PKGNAMESUFFIX=	-kmod
+
+MAINTAINER=	boris@brooknet.com.au
+COMMENT=	USB device driver for Windows CE handhelds
+
+MAN4=	uppc.4
+WRKSRC=		${WRKDIR}/${PORTNAME}
+USE_REINPLACE=	yes
+
+.if !exists(/usr/src/sys/dev/usb/usb.h)
+BROKEN=		"Requires kernel source (/usr/src/sys) to build"
+.endif
+
+post-build:
+	@${REINPLACE_CMD} -e 's|%%INITIAL_INSTALLDIR%%|${PREFIX}/lib|g' ${BUILD_WRKSRC}/uppcsetup
+	@${REINPLACE_CMD} -e 's|%%INITIAL_MODDIR%%|${KMODDIR}|g' ${WRKSRC}/uppcsetup
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/uppc.ko ${PREFIX}/lib
+	${INSTALL_SCRIPT} ${WRKSRC}/uppcsetup ${PREFIX}/sbin
+	cd ${WRKSRC} && ${INSTALL_MAN} ${MAN4} ${MANPREFIX}/man/man4
+
+post-install:
+	@${ECHO_CMD} "       ****************************************************************"
+	@${ECHO_CMD} "       * You can run 'uppcsetup' to help configure the device driver. *"
+	@${ECHO_CMD} "       ****************************************************************"
+
+.include <bsd.port.mk>
