@@ -18,6 +18,8 @@ RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/javavmwrapper \
 		${LOCALBASE}/etc/javavms:${PORTSDIR}/java/jre \
 		${LOCALBASE}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk12-beta
 
+BROKEN=		'Does not currently work'
+
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 BUILD_WRKSRC=	${WRKSRC}/classes

@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME:L}
 
 MAINTAINER=	lioux@FreeBSD.org
 
+BROKEN=		'Does not currently work'
+
 GNU_CONFIGURE=	yes
 
 DOC_FILES=	AUTHORS COPYING ChangeLog \
