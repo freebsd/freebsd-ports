@@ -1,0 +1,5 @@
+
+The plasma_saver.ko module has been installed to %%PREFIX%%/lib. You
+may wish to add this to your kern.module_path sysctl string or copy it
+to another location.
+
