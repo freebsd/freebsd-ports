@@ -1,0 +1,34 @@
+%%PORTDOCS%%share/doc/ja/navi2ch/README
+%%PORTDOCS%%share/doc/ja/navi2ch/TODO
+%%PORTDOCS%%@dirrm share/doc/ja/navi2ch
+%%EMACS_LIBDIR%%/site-lisp/navi2ch/navi2ch-article.el
+%%EMACS_LIBDIR%%/site-lisp/navi2ch/navi2ch-article.elc
+%%EMACS_LIBDIR%%/site-lisp/navi2ch/navi2ch-articles.el
+%%EMACS_LIBDIR%%/site-lisp/navi2ch/navi2ch-articles.elc
+%%EMACS_LIBDIR%%/site-lisp/navi2ch/navi2ch-board-misc.el
+%%EMACS_LIBDIR%%/site-lisp/navi2ch/navi2ch-board-misc.elc
+%%EMACS_LIBDIR%%/site-lisp/navi2ch/navi2ch-board.el
+%%EMACS_LIBDIR%%/site-lisp/navi2ch/navi2ch-board.elc
+%%EMACS_LIBDIR%%/site-lisp/navi2ch/navi2ch-bookmark.el
+%%EMACS_LIBDIR%%/site-lisp/navi2ch/navi2ch-bookmark.elc
+%%EMACS_LIBDIR%%/site-lisp/navi2ch/navi2ch-face.el
+%%EMACS_LIBDIR%%/site-lisp/navi2ch/navi2ch-face.elc
+%%EMACS_LIBDIR%%/site-lisp/navi2ch/navi2ch-history.el
+%%EMACS_LIBDIR%%/site-lisp/navi2ch/navi2ch-history.elc
+%%EMACS_LIBDIR%%/site-lisp/navi2ch/navi2ch-list.el
+%%EMACS_LIBDIR%%/site-lisp/navi2ch/navi2ch-list.elc
+%%EMACS_LIBDIR%%/site-lisp/navi2ch/navi2ch-message.el
+%%EMACS_LIBDIR%%/site-lisp/navi2ch/navi2ch-message.elc
+%%EMACS_LIBDIR%%/site-lisp/navi2ch/navi2ch-mona.el
+%%EMACS_LIBDIR%%/site-lisp/navi2ch/navi2ch-mona.elc
+%%EMACS_LIBDIR%%/site-lisp/navi2ch/navi2ch-net.el
+%%EMACS_LIBDIR%%/site-lisp/navi2ch/navi2ch-net.elc
+%%EMACS_LIBDIR%%/site-lisp/navi2ch/navi2ch-search.el
+%%EMACS_LIBDIR%%/site-lisp/navi2ch/navi2ch-search.elc
+%%EMACS_LIBDIR%%/site-lisp/navi2ch/navi2ch-util.el
+%%EMACS_LIBDIR%%/site-lisp/navi2ch/navi2ch-util.elc
+%%EMACS_LIBDIR%%/site-lisp/navi2ch/navi2ch-vars.el
+%%EMACS_LIBDIR%%/site-lisp/navi2ch/navi2ch-vars.elc
+%%EMACS_LIBDIR%%/site-lisp/navi2ch/navi2ch.el
+%%EMACS_LIBDIR%%/site-lisp/navi2ch/navi2ch.elc
+@dirrm %%EMACS_LIBDIR%%/site-lisp/navi2ch
