@@ -5,5 +5,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/GD.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/qd.pl
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/GD 2>/dev/null || true
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/GD
