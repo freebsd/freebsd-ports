@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	zaptel
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	misc
 MASTER_SITES=	http://www.portaone.com/~sobomax/
 DISTNAME=	${PORTNAME}-freebsd-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
-COMMENT=	A FreeBSD Driver for Digium X100P Telephony Cards
+COMMENT=	A FreeBSD Driver for Digium X100P/TDM400P Telephony Cards
+
+LIB_DEPENDS=	newt.51:${PORTSDIR}/devel/newt
 
 NO_PACKAGE=	Should be in sync with the kernel to work correctly
 
