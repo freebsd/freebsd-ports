@@ -10,7 +10,7 @@ PORTVERSION=	1.2.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.cc.jyu.fi/~tjko/src/
 
-MAINTAINER=	fab@gcu.info
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An utility to optimize jpeg files
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
