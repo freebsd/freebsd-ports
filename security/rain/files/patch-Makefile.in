@@ -1,8 +1,8 @@
---- Makefile.in.orig	Tue Jul 31 19:07:24 2001
-+++ Makefile.in	Tue Jul 31 19:07:38 2001
+--- Makefile.in.orig	Tue Nov 20 03:56:37 2001
++++ Makefile.in	Sun Dec 16 21:08:14 2001
 @@ -6,7 +6,7 @@
  RAIN_PLATFORM=@host@
- RAIN_VERSION="1.2.8"
+ RAIN_VERSION="1.2.9beta1"
  RAIN_URL=http://www.tenebrous.com/rain/
 -CFLAGS= -g -Wall $(LIBS) -I./include -DHAVE_CONFIG_H -D_GNU_SOURCE -DRAIN_PLATFORM=\"$(RAIN_PLATFORM)\" -DRAIN_VERSION=\"$(RAIN_VERSION)\" -DRAIN_URL=\"$(RAIN_URL)\"
 +CFLAGS+= -Wall $(LIBS) -I./include -DHAVE_CONFIG_H -D_GNU_SOURCE -DRAIN_PLATFORM=\"$(RAIN_PLATFORM)\" -DRAIN_VERSION=\"$(RAIN_VERSION)\" -DRAIN_URL=\"$(RAIN_URL)\"
