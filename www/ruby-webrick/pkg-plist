@@ -1,9 +1,17 @@
 %%RUBY_SITELIBDIR%%/webrick.rb
+%%RUBY_SITELIBDIR%%/webrick/accesslog.rb
 %%RUBY_SITELIBDIR%%/webrick/compat.rb
 %%RUBY_SITELIBDIR%%/webrick/config.rb
 %%RUBY_SITELIBDIR%%/webrick/cookie.rb
 %%RUBY_SITELIBDIR%%/webrick/htmlutils.rb
 %%RUBY_SITELIBDIR%%/webrick/httpauth.rb
+%%RUBY_SITELIBDIR%%/webrick/httpauth/authenticator.rb
+%%RUBY_SITELIBDIR%%/webrick/httpauth/basicauth.rb
+%%RUBY_SITELIBDIR%%/webrick/httpauth/digestauth.rb
+%%RUBY_SITELIBDIR%%/webrick/httpauth/htdigest.rb
+%%RUBY_SITELIBDIR%%/webrick/httpauth/htgroup.rb
+%%RUBY_SITELIBDIR%%/webrick/httpauth/htpasswd.rb
+%%RUBY_SITELIBDIR%%/webrick/httpauth/userdb.rb
 %%RUBY_SITELIBDIR%%/webrick/httpproxy.rb
 %%RUBY_SITELIBDIR%%/webrick/httprequest.rb
 %%RUBY_SITELIBDIR%%/webrick/httpresponse.rb
@@ -25,21 +33,36 @@
 %%RUBY_SITELIBDIR%%/webrick/utils.rb
 %%RUBY_SITELIBDIR%%/webrick/version.rb
 @dirrm %%RUBY_SITELIBDIR%%/webrick/httpservlet
+@dirrm %%RUBY_SITELIBDIR%%/webrick/httpauth
 @dirrm %%RUBY_SITELIBDIR%%/webrick
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/httpd/README
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/httpd/conf/hosts.allow
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/httpd/conf/hosts.deny
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/httpd/conf/htdigest
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/httpd/conf/htgroup
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/httpd/conf/htpasswd
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/httpd/conf/sample.crt
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/httpd/conf/sample.key
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/httpd/htdocs/.htaccess
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/httpd/htdocs/.htpasswd
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/httpd/htdocs/test.cgi
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/httpd/htdocs/test.rhtml
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/httpd/htproxy.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/httpd/httpd-auth.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/httpd/httpd-tcpwrap.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/httpd/httpd.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/httpd/httpsd.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rfc/cache/.keep_me
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/leakproxy/README
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/leakproxy/leakproxy.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rfc/rfc.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rfc/rfc/.keep_me
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/webdic/gaiji_setup.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/webdic/ndtp.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/webdic/webdic.rb
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/webdic
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rfc/cache
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rfc/rfc
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/rfc
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/leakproxy
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/httpd/htdocs
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/httpd/conf
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/httpd
