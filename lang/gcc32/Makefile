@@ -127,11 +127,10 @@ do-extract:
 .if defined(WITH_BOUNDSCHECKING)
 # Extract bounds-checking patch, removing the ada parts of the patch with sed.
 pre-patch:
-	(	cd ${_DISTDIR} && \
-		${BZCAT} ${BCPATCH} | \
-			${SED} -e '/^--- .*ada/,/^diff/d' | \
-			${PATCH} -d ${PATCH_WRKSRC} -E -p1 --quiet \
-	)
+	cd ${_DISTDIR} ; \
+	${BZCAT} ${BCPATCH} | \
+		${SED} -e '/^--- .*ada/,/^diff/d' | \
+		${PATCH} -d ${PATCH_WRKSRC} -E -p1 --quiet
 .endif
 
 pre-configure:
