@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	jakarta-tomcat
-PORTVERSION=	3.3.1
-PORTREVISION=	5
+PORTVERSION=	4.0.3
 CATEGORIES=	www java
-MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-tomcat/release/v${PORTVERSION}/bin/ \
+MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-tomcat-4.0/release/v${PORTVERSION}/bin/ \
 		http://www.metaverse.nl/~ernst/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	znerd
@@ -24,28 +23,31 @@ APP_HOME?=	${PREFIX}/${PKGBASE}${PORTVERSION}
 LOG_DIR=	${APP_HOME}/logs
 PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///}
 APP_TITLE=	Jakarta Tomcat
-APP_SHORTNAME=	tomcat
+APP_SHORTNAME=	tomcat4
 CONTROL_SCRIPT_NAME=	${APP_SHORTNAME}ctl
 CONTROL_SCRIPT=	${PREFIX}/bin/${CONTROL_SCRIPT_NAME}
 STARTUP_ORDER?=	020
-STARTUP_SCRIPT_NAME=	${PORTNAME}.sh
+STARTUP_SCRIPT_NAME=	${PORTNAME}4.sh
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/${STARTUP_ORDER}.${STARTUP_SCRIPT_NAME}
 USER=		www
 GROUP=		www
 PW?=		/usr/sbin/pw
-HTTP_PORT?=	8080
+HTTP_PORT?=	8180
+SHUTDOWN_PORT?=	8005
+WARP_PORT?=	8008
+AJP_1_3_PORT?=	8009
 STDOUT_LOG=	${LOG_DIR}/stdout.log
 STDERR_LOG=	${LOG_DIR}/stderr.log
 AUTO_START?=	NO
 PID_FILE=	/var/run/${APP_SHORTNAME}.pid
 REPLACE_FILES=	${FILESDIR}/daemonctl.c \
-		${FILESDIR}/${CONTROL_SCRIPT_NAME}.1 \
-		${FILESDIR}/${STARTUP_SCRIPT_NAME} \
+		${FILESDIR}/tomcatctl.1 \
+		${FILESDIR}/jakarta-tomcat.sh \
 		${WRKSRC}/conf/server.xml
-JAR_FILE=	lib/${APP_SHORTNAME}.jar
-JAVA_ARGS=	'"-Dtomcat.install=${APP_HOME}"'
-JAR_ARGS=	'"run"'
-CONTROL_SCRIPT_MANPAGE_TITLE=	TOMCATCTL
+JAR_FILE=	bin/bootstrap.jar
+JAVA_ARGS=	'"-Dcatalina.home=${APP_HOME}"'
+JAR_ARGS=	'"start"'
+CONTROL_SCRIPT_MANPAGE_TITLE=	TOMCAT4CTL
 WRKDIR?=	work
 
 .include <bsd.port.pre.mk>
@@ -59,6 +61,9 @@ pre-install:
 	@${ECHO_CMD} "   Location of Java port:   ${JAVA_PORT}"
 	@${ECHO_CMD} "   Running as (user/group): ${USER}/${GROUP}"
 	@${ECHO_CMD} "   HTTP port:               ${HTTP_PORT}"
+	@${ECHO_CMD} "   Shutdown listener port:  ${SHUTDOWN_PORT}"
+	@${ECHO_CMD} "   WARP port:               ${WARP_PORT}"
+	@${ECHO_CMD} "   AJP 1.3 connector port:  ${AJP_1_3_PORT}"
 	@${ECHO_CMD} "   Logfile stdout:          ${STDOUT_LOG}"
 	@${ECHO_CMD} "   Logfile stderr:          ${STDERR_LOG}"
 	@${ECHO_CMD} "   Starting after install:  ${AUTO_START}"
@@ -66,12 +71,13 @@ pre-install:
 
 do-install:
 	@${ECHO_CMD} -n ">> Removing unneeded files..."
-	@${RM} -f `${FIND} ${WRKSRC} -name '*.bat'` `${FIND} ${WRKSRC} -name '*.orig'`
+	@${RM} -f `${FIND} ${WRKSRC} -name '*.bat'` `${FIND} ${WRKSRC} -name '*.orig'` `${FIND} ${WRKSRC} -name '*.exe'` ${WRKSRC}/bin/*.sh
 	@${ECHO_CMD} " [ DONE ]"
 
 .for f in ${REPLACE_FILES}
 	@${ECHO_CMD} -n ">> Customizing `basename $f`..."
 	@${SED} \
+	-e "/%%AJP_1_3_PORT%%/s//${AJP_1_3_PORT}/g" \
 	-e "/%%APP_HOME%%/s//${APP_HOME:S/\//\\\//g}/g" \
 	-e "/%%APP_SHORTNAME%%/s//${APP_SHORTNAME}/g" \
 	-e "/%%APP_TITLE%%/s//${APP_TITLE}/g" \
@@ -88,11 +94,13 @@ do-install:
 	-e "/%%PORTNAME%%/s//${PORTNAME}/g" \
 	-e "/%%PORTVERSION%%/s//${PORTVERSION}/g" \
 	-e "/%%PREFIX%%/s//${PREFIX:S/\//\\\//g}/g" \
+	-e "/%%SHUTDOWN_PORT%%/s//${SHUTDOWN_PORT}/g" \
 	-e "/%%STARTUP_SCRIPT_NAME%%/s//${STARTUP_SCRIPT_NAME}/g" \
 	-e "/%%STARTUP_SCRIPT%%/s//${STARTUP_SCRIPT:S/\//\\\//g}/g" \
 	-e "/%%STDERR_LOG%%/s//${STDERR_LOG:S/\//\\\//g}/g" \
 	-e "/%%STDOUT_LOG%%/s//${STDOUT_LOG:S/\//\\\//g}/g" \
 	-e "/%%USER%%/s//${USER}/g" \
+	-e "/%%WARP_PORT%%/s//${WARP_PORT}/g" \
 	$f > ${WRKDIR}/`basename $f`
 	@${ECHO_CMD} " [ DONE ]"
 .endfor
@@ -115,12 +123,13 @@ do-install:
 	@${ECHO_CMD} " [ DONE ]"
 
 	@${ECHO_CMD} -n ">> Installing startup script..."
-	@${CP} ${WRKDIR}/${STARTUP_SCRIPT_NAME} ${STARTUP_SCRIPT}
+	@${CP} ${WRKDIR}/jakarta-tomcat.sh ${STARTUP_SCRIPT}
 	@${CHMOD} 0544 ${STARTUP_SCRIPT}
 	@${ECHO_CMD} " [ DONE ]"
 
 .if !defined(NOPORTDOCS)
 	@${ECHO_CMD} -n ">> Installing man pages..."
+	@${CP} ${WRKDIR}/tomcatctl.1 ${WRKDIR}/${CONTROL_SCRIPT_NAME}.1
 	@${INSTALL_MAN} ${WRKDIR}/${CONTROL_SCRIPT_NAME}.1 ${MANPREFIX}/man/man1
 	@${ECHO_CMD} " [ DONE ]"
 .endif
