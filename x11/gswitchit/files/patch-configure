@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- configure.orig	Fri May 31 14:03:58 2002
-+++ configure	Fri May 31 14:04:45 2002
-@@ -5925,6 +5925,7 @@
+--- configure.orig	Fri May  9 18:17:04 2003
++++ configure	Thu May 15 01:54:40 2003
+@@ -7865,6 +7865,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -11,52 +8,14 @@ $FreeBSD$
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -8524,10 +8525,10 @@
- #include "confdefs.h"
- #include <libintl.h>
- extern int _nl_msg_cat_cntr;
--extern int *_nl_domain_bindings;
-+extern int *_nl_domain_bindings__;
- int main() {
- bindtextdomain ("", "");
--return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings
-+return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings__
- ; return 0; }
- EOF
- if { (eval echo configure:8534: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
-@@ -8913,7 +8914,7 @@
- #include "confdefs.h"
- #include <libintl.h>
- extern int _nl_msg_cat_cntr;
--extern int *_nl_domain_bindings;
-+extern int *_nl_domain_bindings__;
- extern
- #ifdef __cplusplus
- "C"
-@@ -8921,7 +8922,7 @@
- const char *_nl_expand_alias ();
- int main() {
- bindtextdomain ("", "");
--return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings + *_nl_expand_alias (0)
-+return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings__ + *_nl_expand_alias (0)
- ; return 0; }
- EOF
- if { (eval echo configure:8928: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
-@@ -8941,7 +8942,7 @@
- #include "confdefs.h"
- #include <libintl.h>
- extern int _nl_msg_cat_cntr;
--extern int *_nl_domain_bindings;
-+extern int *_nl_domain_bindings__;
- extern
- #ifdef __cplusplus
- "C"
-@@ -8949,7 +8950,7 @@
- const char *_nl_expand_alias ();
- int main() {
- bindtextdomain ("", "");
--return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings + *_nl_expand_alias (0)
-+return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings__ + *_nl_expand_alias (0)
- ; return 0; }
- EOF
- if { (eval echo configure:8956: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+@@ -8082,8 +8083,8 @@
+ 
+ 
+ 
+-prefix=`$PKG_CONFIG --variable=prefix libgnome-2.0`
+-exec_prefix=`$PKG_CONFIG --variable=exec_prefix libgnome-2.0`
++#prefix=`$PKG_CONFIG --variable=prefix libgnome-2.0`
++#exec_prefix=`$PKG_CONFIG --variable=exec_prefix libgnome-2.0`
+ 
+ # Check whether --enable-install_schemas or --disable-install_schemas was given.
+ if test "${enable_install_schemas+set}" = set; then
