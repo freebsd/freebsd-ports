@@ -1,0 +1,11 @@
+The GnomeSword GUI is a frontend to the SWORD project.
+
+The SWORD Project is an effort to create an ever expanding software package
+for research and study of God and His Word. The SWORD Bible Framework allows
+easy manipulation of Bible texts, commentaries, lexicons, dictionaries, etc.
+Many frontends are build using this framework. An installed module set may be
+shared between any frontend using the framework.
+
+WWW: http://www.crosswire.org/
+
+// J Shoemaker <shoemaker@softhome.net>

@@ -94,6 +94,7 @@
     SUBDIR += gnomehier
     SUBDIR += gnomemimedata
     SUBDIR += gnomepm
+    SUBDIR += gnomesword
     SUBDIR += gnomeuserdocs
     SUBDIR += gnomeuserdocs2
     SUBDIR += gnomeutils
