@@ -7,6 +7,7 @@
 
 PORTNAME=	gsfonts
 PORTVERSION=	8.11
+PORTREVISION=	1
 CATEGORIES=	print x11-fonts
 MASTER_SITES=	ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/fonts/
 DISTFILES=	${GS_FONTS_STD} ${GS_FONTS_OTHER}
@@ -14,8 +15,6 @@ DIST_SUBDIR=	ghostscript
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fonts used by GNU Ghostscript (or X)
-
-BUILD_DEPENDS=	type1inst:${PORTSDIR}/x11-fonts/p5-type1inst
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
@@ -66,7 +65,7 @@ install-fonts:
 	${INSTALL_DATA} ${WRKSRC}/fonts/*.pfm ${FONTSDIR}
 	${INSTALL_DATA} ${WRKSRC}/fonts/fonts.dir ${FONTSDIR}
 	${INSTALL_DATA} ${WRKSRC}/fonts/fonts.scale ${FONTSDIR}
-	(cd ${FONTSDIR}; ${LOCALBASE}/bin/type1inst -nox -nolog -q)
+	${INSTALL_DATA} ${FILESDIR}/Fontmap ${FONTSDIR}
 
 install-docs:
 .if !defined(NOPORTDOCS)
