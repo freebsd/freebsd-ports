@@ -10,6 +10,7 @@
     SUBDIR += aclgen
     SUBDIR += acron
     SUBDIR += afbackup
+    SUBDIR += afbackup-client
     SUBDIR += alevt
     SUBDIR += amanda
     SUBDIR += amanda24-client
