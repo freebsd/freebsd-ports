@@ -1,5 +1,4 @@
 /*	$NetBSD: rmd160.c,v 1.1.1.1 2001/03/06 11:21:05 agc Exp $	*/
-/*	$FreeBSD$ */
 
 /********************************************************************\
  *
@@ -38,7 +37,7 @@ __RCSID("$NetBSD: rmd160.c,v 1.1.1.1 2001/03/06 11:21:05 agc Exp $");
 /* #include "namespace.h" */
 
 #include <assert.h>
-#include "rmd160.h"
+#include <rmd160.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -47,11 +46,13 @@ __RCSID("$NetBSD: rmd160.c,v 1.1.1.1 2001/03/06 11:21:05 agc Exp $");
 #define _DIAGASSERT(cond)	assert(cond)
 #endif
 
+#if 0
 #if !defined(_KERNEL) && defined(__weak_alias)
 __weak_alias(RMD160Transform,_RMD160Transform)
 __weak_alias(RMD160Init,_RMD160Init)
 __weak_alias(RMD160Update,_RMD160Update)
 __weak_alias(RMD160Final,_RMD160Final)
+#endif
 #endif
 
 /********************************************************************/

@@ -1,15 +1,16 @@
 /*	$NetBSD: md5hl.c,v 1.1.1.1 2001/03/06 11:21:05 agc Exp $	*/
-/*	$FreeBSD$ */
 
 /*
  * Written by Jason R. Thorpe <thorpej@netbsd.org>, April 29, 1997.
  * Public domain.
  */
 
+#include <sys/cdefs.h>		/* hfpkg */
+
 #define	MDALGORITHM	MD5
 
 /* #include "namespace.h" */
-#include "md5.h"
+#include <md5.h>
 
 #ifndef _DIAGASSERT
 #define _DIAGASSERT(cond)	assert(cond)

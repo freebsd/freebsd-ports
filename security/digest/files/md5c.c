@@ -1,5 +1,4 @@
 /*	$NetBSD: md5c.c,v 1.1.1.1 2001/03/06 11:21:05 agc Exp $	*/
-/*	$FreeBSD$ */
 
 /*
  * This file is derived from the RSA Data Security, Inc. MD5 Message-Digest
@@ -30,6 +29,8 @@
  * documentation and/or software.
  */
 
+#include <sys/cdefs.h>		/* hfpkg */
+
 #if defined(_KERNEL) || defined(_STANDALONE)
 #include <lib/libkern/libkern.h>
 #include <sys/param.h>
@@ -40,7 +41,7 @@
 #include <sys/types.h>
 #include <assert.h>
 #include <string.h>
-#include "md5.h"
+#include <md5.h>
 #endif /* _KERNEL || _STANDALONE */
 
 #define	ZEROIZE(d, l)		memset((d), 0, (l))

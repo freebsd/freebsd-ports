@@ -1,6 +1,5 @@
-/*	$NetBSD: sha1.c,v 1.1.1.1 2001/03/06 11:21:05 agc Exp $	*/
+/*	$NetBSD: sha1.c,v 1.3 2001/03/26 12:57:32 agc Exp $	*/
 /*	$OpenBSD: sha1.c,v 1.9 1997/07/23 21:12:32 kstailey Exp $	*/
-/*	$FreeBSD$ */
 
 /*
  * SHA-1 in C
@@ -16,6 +15,8 @@
  *   34AA973C D4C4DAA4 F61EEB2B DBAD2731 6534016F
  */
 
+#include <sys/cdefs.h>		/* hfpkg */
+
 #define SHA1HANDSOFF		/* Copies data before messing with it. */
 
 #if defined(_KERNEL) || defined(_STANDALONE)
@@ -29,7 +30,7 @@
 #include <string.h>
 #endif
 
-#include "sha1.h"
+#include <sha1.h>
 
 #ifndef _DIAGASSERT
 #define _DIAGASSERT(cond)	assert(cond)
@@ -68,7 +69,7 @@
 #define R4(v,w,x,y,z,i) z+=(w^x^y)+blk(i)+0xCA62C1D6+rol(v,5);w=rol(w,30);
 
 
-#if !defined(_KERNEL) && defined(__weak_alias)
+#if 0
 __weak_alias(SHA1Transform,_SHA1Transform)
 __weak_alias(SHA1Init,_SHA1Init)
 __weak_alias(SHA1Update,_SHA1Update)
@@ -144,14 +145,14 @@ void SHA1Transform(state, buffer)
     CHAR64LONG16 *block;
 
 #ifdef SHA1HANDSOFF
-    static u_char workspace[64];
+    CHAR64LONG16 workspace;
 #endif
 
     _DIAGASSERT(buffer != 0);
     _DIAGASSERT(state != 0);
 
 #ifdef SHA1HANDSOFF
-    block = (CHAR64LONG16 *)(void *)workspace;
+    block = &workspace;
     (void)memcpy(block, buffer, 64);
 #else
     block = (CHAR64LONG16 *)(void *)buffer;
