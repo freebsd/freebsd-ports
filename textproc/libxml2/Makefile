@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libxml2
-PORTVERSION=	2.4.10
+PORTVERSION=	2.4.11
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/libxml
@@ -20,7 +20,7 @@ RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
-CONFIGURE_ARGS=	--with-iconv \
+CONFIGURE_ARGS=	--with-iconv=${LOCALBASE} \
 		--with-html-dir=${PREFIX}/share/doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
