@@ -5490,6 +5490,7 @@ ooodict_PL	ports/polish/ooodict_PL
 oooqs		ports/x11/oooqs
 oops		ports/www/oops
 op		ports/security/op
+open		ports/sysutils/open
 open-cobol	ports/lang/open-cobol
 open-motif	ports/x11-toolkits/open-motif
 openal		ports/audio/openal
