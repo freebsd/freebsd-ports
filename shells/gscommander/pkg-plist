@@ -14,8 +14,3 @@ Local/Applications/GSCommander.app/stamp.make
 @dirrm Local/Applications/GSCommander.app/Resources
 @dirrm Local/Applications/GSCommander.app
 @dirrm Local/Applications
-@cwd /root
-GNUstep/Defaults/.GNUstepDefaults
-@dirrm GNUstep/Defaults
-@dirrm GNUstep/Library
-@dirrm GNUstep

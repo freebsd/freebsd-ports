@@ -162,8 +162,3 @@ System/Library/ProjectCenter/PCToolProj.bundle/stamp.make
 @dirrm System/Applications/ProjectCenter.app/Resources
 @dirrm System/Applications/ProjectCenter.app
 @dirrm System/Applications
-@cwd /root
-GNUstep/Defaults/.GNUstepDefaults
-@dirrm GNUstep/Defaults
-@dirrm GNUstep/Library
-@dirrm GNUstep
