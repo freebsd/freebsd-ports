@@ -3,14 +3,14 @@
 # Date created:         31 October 1994
 # Whom:                 ljo
 #
-# $Id: Makefile,v 1.15 1998/09/27 05:39:33 steve Exp $
+# $Id: Makefile,v 1.16 1998/09/28 10:49:21 asami Exp $
 #
 
 DISTNAME=	eispack
 PKGNAME=	eispack-1.0
 CATEGORIES=	math
 MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/eispack/ \
-		ftp://www.hensa.ac.uk/mirrors/netlib//eispack/ \
+		ftp://www.hensa.ac.uk/mirrors/netlib/eispack/ \
 		ftp://elib.zib-berlin.de/pub/netlib/eispack/
 
 DIST_SUBDIR=	${DISTNAME}
