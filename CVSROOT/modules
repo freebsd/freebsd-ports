@@ -7891,6 +7891,7 @@ py-fcgi		ports/www/py-fcgi
 py-fchksum	ports/security/py-fchksum
 py-feedparser	ports/textproc/py-feedparser
 py-fileutils	ports/devel/py-fileutils
+py-fltk		ports/x11-toolkits/py-fltk
 py-fngrab	ports/net/py-fngrab
 py-fonttools	ports/print/py-fonttools
 py-fortran	ports/devel/py-fortran
