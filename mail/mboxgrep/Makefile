@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mboxgrep
-PORTVERSION=	0.7.8
+PORTVERSION=	0.7.9
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,15 +18,14 @@ COMMENT=	Utility to scan mailboxes for messages matching a regular expression
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 .endif
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
-MAN1=	mboxgrep.1
+MAN1=		mboxgrep.1
+INFO=		mboxgrep
 
-DOCS=	ChangeLog NEWS README TODO
+DOCS=		ChangeLog NEWS README TODO
 
 post-install:
 	install-info ${PREFIX}/info/mboxgrep.info ${PREFIX}/info/dir
