@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cvsutils
-PORTVERSION=	2001.07.05
+PORTVERSION=	2003.02.03
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	knu
@@ -14,10 +14,15 @@ MASTER_SITE_SUBDIR=	knu
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	CVS utilities which facilitate working with local working directories
 
+USE_BZIP2=	yes
+USE_PERL5=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_AUTOMAKE_VER=15
 AUTOMAKE_ARGS=	--add-missing
-USE_PERL5=	YES
-WRKSRC=		${WRKDIR}/${PORTNAME}
+
+MAN1=		cvsutils.1
+MANCOMPRESSED=	no
 
 pre-configure:
 	cd ${WRKSRC} ; ${ACLOCAL}
