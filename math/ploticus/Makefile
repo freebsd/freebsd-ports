@@ -7,11 +7,10 @@
 #
 
 PORTNAME=	ploticus
-PORTVERSION=	2.11
-PORTREVISION=	2
+PORTVERSION=	2.20
 CATEGORIES=	math
 MASTER_SITES=	http://ploticus.sourceforge.net/download/
-DISTNAME=	plsrc${PORTVERSION:S/.//}
+DISTNAME=	pl${PORTVERSION:S/.//}src
 
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Generates plots and graphs from data
@@ -45,16 +44,15 @@ PKGNAMESUFFIX=	-nox11
 USE_XPM=	yes
 .endif
 
-MAN1=	pl.1
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pl ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/../prefabs/* ${DATADIR}
-	${INSTALL_MAN} ${WRKSRC}/../man/man1/${MAN1} ${MANPREFIX}/man/man1
+	cd ${WRKSRC}/../prefabs && ${FIND} . | \
+		cpio -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/../doc/* ${DOCSDIR}
+	@${MKDIR} ${EXAMPLESDIR}
+	cd ${WRKSRC}/../pltestsuite && ${FIND} . | \
+		cpio -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
