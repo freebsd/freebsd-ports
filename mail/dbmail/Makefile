@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dbmail
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dbmail.org/tgz/
 PKGNAMESUFFIX=	-${DATABASE}
@@ -19,23 +19,26 @@ USE_REINPLACE=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 USE_GMAKE=	YES
+USE_OPENSSL=	YES
 
 .if defined(WITH_PGSQL)
 CONFIGURE_ARGS+=	--with-pgsql
-LIB_DEPENDS+=		pq:${PORTSDIR}/databases/postgresql7
+LIB_DEPENDS+=		pq:${PORTSDIR}/databases/postgresql-client
 DATABASE=		postgresql
 PLIST_SUB+=		PGSQL=""
 PLIST_SUB+=		MYSQL="@comment "
+LDFLAGS+=		-L${LOCALBASE}/lib/
 .else
 USE_MYSQL=		YES
 CONFIGURE_ARGS+=	--with-mysql
 DATABASE=		mysql
 PLIST_SUB+=		MYSQL=""
 PLIST_SUB+=		PGSQL="@comment "
+CFLAGS+=		-I${LOCALBASE}/include/mysql
+LDFLAGS+=		-L${LOCALBASE}/lib/mysql
 .endif
 
-CFLAGS+=		-I${LOCALBASE}/include/mysql
-CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib/ -L${LOCALBASE}/lib/${DATABASE}"
+CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}" LOCALBASE=${LOCALBASE}
 FILES_TO_PATCH=		imapd.c main.c maintenance.c pop3d.c user.c
 DOCS=			INSTALL README
 
