@@ -1,4 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Ispell/.packlist
 %%SITE_PERL%%/Lingua/Ispell.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Lingua/Ispell
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Ispell
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua 2>/dev/null || true
 @dirrm %%SITE_PERL%%/Lingua
