@@ -1,7 +1,7 @@
+apps/ROX-Session/%%BINARIES%%/ROX-Session
 apps/ROX-Session/.DirIcon
 apps/ROX-Session/AppInfo.xml
 apps/ROX-Session/AppRun
-apps/ROX-Session/%%BINARIES%%/ROX-Session
 apps/ROX-Session/Help/COPYING
 apps/ROX-Session/Help/Changes
 apps/ROX-Session/Help/Guide/.DirIcon
@@ -23,6 +23,22 @@ apps/ROX-Session/Help/Guide/de/newdir.png
 apps/ROX-Session/Help/Guide/de/shortcut.png
 apps/ROX-Session/Help/Guide/edit.png
 apps/ROX-Session/Help/Guide/help.png
+apps/ROX-Session/Help/Guide/it/Guida.html
+apps/ROX-Session/Help/Guide/it/Tutorial.html
+apps/ROX-Session/Help/Guide/it/Tutorial2.html
+apps/ROX-Session/Help/Guide/it/applets.png
+apps/ROX-Session/Help/Guide/it/apps.png
+apps/ROX-Session/Help/Guide/it/archive.png
+apps/ROX-Session/Help/Guide/it/edit.png
+apps/ROX-Session/Help/Guide/it/help.png
+apps/ROX-Session/Help/Guide/it/logout.png
+apps/ROX-Session/Help/Guide/it/mount.png
+apps/ROX-Session/Help/Guide/it/newdir.png
+apps/ROX-Session/Help/Guide/it/panel1.png
+apps/ROX-Session/Help/Guide/it/runaction.png
+apps/ROX-Session/Help/Guide/it/save.png
+apps/ROX-Session/Help/Guide/it/shortcut.png
+apps/ROX-Session/Help/Guide/it/style.css
 apps/ROX-Session/Help/Guide/logout.png
 apps/ROX-Session/Help/Guide/mount.png
 apps/ROX-Session/Help/Guide/newdir.png
@@ -36,6 +52,7 @@ apps/ROX-Session/Login
 apps/ROX-Session/MakeDefault.sh
 apps/ROX-Session/Messages/da.gmo
 apps/ROX-Session/Messages/de.gmo
+apps/ROX-Session/Messages/es.gmo
 apps/ROX-Session/Messages/it.gmo
 apps/ROX-Session/Messages/ja.gmo
 apps/ROX-Session/Messages/nl.gmo
@@ -51,6 +68,7 @@ apps/ROX-Session/images/rox-suspend.png
 bin/rox-session
 @dirrm apps/ROX-Session/images
 @dirrm apps/ROX-Session/Messages
+@dirrm apps/ROX-Session/Help/Guide/it
 @dirrm apps/ROX-Session/Help/Guide/de
 @dirrm apps/ROX-Session/Help/Guide
 @dirrm apps/ROX-Session/Help
