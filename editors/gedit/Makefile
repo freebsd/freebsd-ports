@@ -13,7 +13,8 @@ MASTER_SITES=	http://download.sourceforge.net/gedit/
 MAINTAINER=	ade@FreeBSD.org
 
 LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
-		gnomeprint.9:${PORTSDIR}/print/gnomeprint
+		gnomeprint.9:${PORTSDIR}/print/gnomeprint \
+		glade.3:${PORTSDIR}/devel/libglade
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
