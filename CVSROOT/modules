@@ -2990,6 +2990,7 @@ ksamba		ports/net/ksamba
 kseg		ports/math/kseg
 ksetiwatch	ports/astro/ksetiwatch
 ksh93		ports/shells/ksh93
+ksmp3play	ports/audio/ksmp3play
 ksnes9x		ports/emulators/ksnes9x
 ksrvtgt		src/eBones/ksrvtgt
 kssh		ports/security/kssh
