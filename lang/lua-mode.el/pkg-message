@@ -1,0 +1,4 @@
+To use lua-mode in Emacs/XEmacs, add the following lines to your ~/.emacs:
+
+(autoload 'lua-mode "lua-mode" "Mode for editing Lua source files")
+(add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
