@@ -78,6 +78,13 @@ MASTER_SITES=	ftp://ftp.demon.co.uk/pub/mirrors/mutt/devel/ \
 		ftp://ftp.mutt.org/mutt/devel/
 DISTNAME=	mutt-${PORTVERSION}i
 
+PATCH_SITES=	http://www.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
+		http://www2.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
+		ftp://ftp.mutt.org.ua/pub/mutt/mutt-${VVV_PATCH_VERSION}/:vvv \
+		ftp://ftp2.mutt.org.ua/pub/mutt/mutt-${VVV_PATCH_VERSION}/:vvv \
+		http://cedricduval.free.fr/download/mutt/:cd \
+		http://home.woolridge.ca/mutt/patches/:dw
+
 MAINTAINER?=	udo.schweigert@siemens.com
 COMMENT?=	The Mongrel of Mail User Agents (part Elm, Pine, Mush, mh, etc.)
 
@@ -109,22 +116,6 @@ CD_PATCH_VERSION=	${PORTVERSION}
 .endif
 .if !defined(DW_PATCH_VERSION)
 DW_PATCH_VERSION=	${PORTVERSION}
-.endif
-
-.if defined(WITH_MUTT_COMPRESSED_FOLDERS) || defined(WITH_MUTT_NNTP) || \
-	defined(WITH_MUTT_QUOTE_PATCH)
-PATCH_SITES+=	http://www.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
-		http://www2.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
-		ftp://ftp.mutt.org.ua/pub/mutt/mutt-${VVV_PATCH_VERSION}/:vvv \
-		ftp://ftp2.mutt.org.ua/pub/mutt/mutt-${VVV_PATCH_VERSION}/:vvv
-.endif
-
-.if defined(WITH_MUTT_EDIT_THREADS) || defined(WITH_MUTT_SIGNATURE_MENU) || \
-		defined(WITH_MUTT_IFDEF_PATCH)
-PATCH_SITES+=	http://cedricduval.free.fr/download/mutt/:cd
-.endif
-.if defined(WITH_MUTT_MBOX_HOOK_PATCH)
-PATCH_SITES+=	http://home.woolridge.ca/mutt/patches/:dw
 .endif
 
 # XXX
