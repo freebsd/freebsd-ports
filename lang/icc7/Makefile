@@ -195,6 +195,11 @@ post-install:
 	@${ECHO_CMD} "prefered scripting language), please include a description about the"
 	@${ECHO_CMD} "benchmark too."
 	@${ECHO_CMD}
+	@${ECHO_CMD} "Please use FreeBSD as the name of your OS in communications with the support,"
+	@${ECHO_CMD} "the larger the FreeBSD userbase is, the more work gets done on FreeBSD"
+	@${ECHO_CMD} "specific issues by Intel. And please thank them for the FreeBSD support,"
+	@${ECHO_CMD} "they are already spending some time to improve icc on FreeBSD."
+	@${ECHO_CMD}
 	@${ECHO_CMD} "To read the entire post install message again, just run"
 	@${ECHO_CMD} "'make post-install | less'."
 
