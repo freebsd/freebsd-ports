@@ -7,6 +7,7 @@
 
 PORTNAME=	automake
 PORTVERSION=	1.7.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	automake
@@ -18,13 +19,13 @@ COMMENT=	GNU automake generates input files for GNU autoconf
 BUILD_DEPENDS=	autoconf257:${PORTSDIR}/devel/autoconf257
 RUN_DEPENDS=	autoconf257:${PORTSDIR}/devel/autoconf257
 
-BUILD_VERSION=	-1.7
+BUILD_VERSION=	17
 PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}
 LATEST_LINK=	automake${BUILD_VERSION}
 USE_BZIP2=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	AUTOCONF=autoconf257 AUTOHEADER=autoheader257
+CONFIGURE_ENV=	AUTOCONF=autoconf257 AUTOHEADER=autoheader257 MAKEINFO=makeinfo
 CONFIGURE_ARGS=	--program-suffix=${BUILD_VERSION}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_REINPLACE=	yes
@@ -44,7 +45,7 @@ post-patch:
 		${RM} -f *.info && \
 		${MV} automake.texi automake${BUILD_VERSION}.texi && \
 		${REINPLACE_CMD} -E 's,(automake)\.(info),\1${BUILD_VERSION}\.\2,g' automake${BUILD_VERSION}.texi && \
-		${REINPLACE_CMD} -E 's,(automake)\.(info|texi),\1${BUILD_VERSION}\.\2,g ; \
-					s,^.+ install-exec-hook$$,,' Makefile.in)
+		${REINPLACE_CMD} -E 's,(automake)\.(info|texi),\1${BUILD_VERSION}\.\2,g' Makefile.in \
+	)
 
 .include <bsd.port.mk>

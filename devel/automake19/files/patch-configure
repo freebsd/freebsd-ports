@@ -1,0 +1,20 @@
+--- configure.orig	Sun May 18 07:22:17 2003
++++ configure	Sun Jun 29 03:35:27 2003
+@@ -275,3 +275,3 @@
+ ac_unique_file="automake.in"
+-ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA CYGPATH_W PACKAGE VERSION ACLOCAL AUTOCONF AUTOMAKE AUTOHEADER MAKEINFO AMTAR install_sh STRIP ac_ct_STRIP INSTALL_STRIP_PROGRAM AWK SET_MAKE am__leading_dot APIVERSION pkgvdatadir PERL TEX LN EGREP FGREP LIBOBJS LTLIBOBJS'
++ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA CYGPATH_W PACKAGE VERSION ACLOCAL AUTOCONF AUTOMAKE AUTOHEADER MAKEINFO AMTAR install_sh STRIP ac_ct_STRIP INSTALL_STRIP_PROGRAM AWK SET_MAKE am__leading_dot APIPVERSION APIVERSION pkgvdatadir PERL TEX LN EGREP FGREP LIBOBJS LTLIBOBJS'
+ ac_subst_files=''
+@@ -1622,2 +1622,3 @@
+ APIVERSION=`echo "$VERSION" | sed -e 's/^\([0-9]*\.[0-9]*[a-z]*\).*$/\1/'`
++APIPVERSION=`echo "$VERSION" | sed -e 's/^\([0-9]*\)\.\([0-9]*[a-z]*\).*$/\1\2/'`
+ 
+@@ -1625,3 +1626,3 @@
+ # A versioned directory, defined here for convenience.
+-pkgvdatadir="\${datadir}/automake-${APIVERSION}"
++pkgvdatadir="\${datadir}/automake${APIPVERSION}"
+ 
+@@ -2460,2 +2461,3 @@
+ s,@APIVERSION@,$APIVERSION,;t t
++s,@APIPVERSION@,$APIPVERSION,;t t
+ s,@pkgvdatadir@,$pkgvdatadir,;t t

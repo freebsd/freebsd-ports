@@ -1,0 +1,19 @@
+--- m4/Makefile.in.orig	Wed Oct 16 20:14:23 2002
++++ m4/Makefile.in	Thu Feb 13 13:14:39 2003
+@@ -38,6 +38,7 @@
+ ACLOCAL = @ACLOCAL@
+ AMTAR = @AMTAR@
+ APIVERSION = @APIVERSION@
++APIPVERSION = @APIPVERSION@
+ AUTOCONF = @AUTOCONF@
+ AUTOHEADER = @AUTOHEADER@
+ AUTOMAKE = @AUTOMAKE@
+@@ -92,7 +93,7 @@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ 
+-m4datadir = $(datadir)/aclocal-$(APIVERSION)
++m4datadir = $(datadir)/aclocal$(APIPVERSION)
+ 
+ dist_m4data_DATA = \
+ as.m4 \
