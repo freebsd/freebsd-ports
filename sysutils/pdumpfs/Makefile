@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pdumpfs
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	sysutils
 MASTER_SITES=	http://namazu.org/~satoru/pdumpfs/
 
@@ -15,10 +15,9 @@ COMMENT=	A daily backup system similar to Plan9's dumpfs
 
 USE_RUBY=	yes
 
-NO_BUILD=	yes
-
-RUBY_SHEBANG_FILES=	${WRKSRC}/pdumpfs
-DOCS_EN=	ChangeLog pdumpfs-en.html
+RUBY_SHEBANG_FILES=	${WRKSRC}/pdumpfs.in
+ALL_TARGET=	pdumpfs
+DOCS_EN=	ChangeLog README pdumpfs.html
 DOCS_JA=	pdumpfs-ja.html
 
 MANLANG=	"" ja
