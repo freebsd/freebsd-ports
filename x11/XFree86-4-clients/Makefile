@@ -70,7 +70,8 @@ InstallAppDefFiles?=	DEFAULT
 .if !defined(WITH_SETUID_LUIT)
 pre-everything::
 	@${ECHO_MSG} "If you want to use xterm with locales in a secure manner, luit must be installed"
-	@${ECHO_MSG} "setuid.  If you want to do this, hit Ctrl-C now and use \"make WITH_SETUID_LUIT=yes\""
+	@${ECHO_MSG} "setuid.  If you want to do this, define WITH_SETUID_LUIT when installing this"
+	@${ECHO_MSG} "port (either in /etc/make.conf or on command line with install target)."
 .endif
 
 post-install:
