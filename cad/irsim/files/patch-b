@@ -1,0 +1,22 @@
+*** src/irsim/fio.c.orig	Tue Sep 10 19:06:20 1996
+--- src/irsim/fio.c	Thu Dec  5 18:43:16 1996
+***************
+*** 46,52 ****
+      register char  *buff = bp;
+      register int  c;
+  
+-     contline = 0;
+      while( --len > 0 )
+        {
+        again :
+--- 46,51 ----
+***************
+*** 74,80 ****
+          } else {
+            if((c == '\\') && (*bp != '|')){
+               c = getc(fp); 
+- 	     contline++;
+               if( isatty( (int) fileno( fp ) ) ) {
+  		printf("cont>"); 
+  		fflush(stdout);
+--- 73,78 ----
