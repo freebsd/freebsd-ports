@@ -15,7 +15,7 @@ MASTER_SITES=	http://home.edo.uni-dortmund.de/~chripo/download/ \
 DISTFILES=      ${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} ${FRONTPAGE}
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	mb@imp.ch
+MAINTAINER=	mbr@FreeBSD.org
 
 AP_PORT?=	apache13
 
