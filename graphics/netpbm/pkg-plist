@@ -89,6 +89,7 @@ bin/pnmenlarge
 bin/pnmfile
 bin/pnmflip
 bin/pnmgamma
+bin/pnmhisteq
 bin/pnmhistmap
 bin/pnmindex
 bin/pnminvert
