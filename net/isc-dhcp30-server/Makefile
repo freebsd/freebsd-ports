@@ -83,7 +83,7 @@ STRIP_CMD?=	strip
 
 post-patch: patch-scripts patch-makefile-conf \
 	    patch-makefiles-dist patch-man-pages \
-	    patch-message
+	    patch-pkgmessage
 
 patch-scripts:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
@@ -103,7 +103,7 @@ patch-makefiles-dist:
 patch-man-pages:
 	@${REINPLACE_CMD} -e '/^\.Fd$$/d' ${WRKSRC}/dhcpctl/dhcpctl.3
 
-patch-message:
+patch-pkgmessage:
 	@${SED} 's|%%PREFIX%%|${PREFIX}|g;s|%%MAN1PREFIX%%|${MAN1PREFIX}|g' \
 		${MSG_FILE} > ${PKGMESSAGE}
 
