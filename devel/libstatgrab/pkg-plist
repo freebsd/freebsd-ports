@@ -1,3 +1,6 @@
+bin/statgrab
+bin/statgrab-make-mrtg-config
+bin/statgrab-make-mrtg-index
 include/statgrab.h
 lib/libstatgrab.a
 lib/libstatgrab.so
