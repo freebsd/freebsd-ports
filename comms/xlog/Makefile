@@ -6,6 +6,7 @@
 
 PORTNAME=	xlog
 PORTVERSION=	0.9.10
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://pg4i.mattsnetwork.co.uk/download/
 

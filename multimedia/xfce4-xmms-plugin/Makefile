@@ -7,6 +7,7 @@
 
 PORTNAME=	xfce4-xmms-plugin
 PORTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	multimedia audio xfce
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/
 

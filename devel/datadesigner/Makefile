@@ -8,6 +8,7 @@
 
 PORTNAME=	datadesigner
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.danny.cz/

@@ -7,6 +7,7 @@
 
 PORTNAME=	kino
 PORTVERSION=	0.7.5
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://kino.schirmacher.de/filemanager/download/42/	\
 		http://perso.enst.fr/~beyssac/mirrors/

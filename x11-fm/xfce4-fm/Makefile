@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-fm
 PORTVERSION=	4.0.6
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11-fm xfce
 MASTER_SITES=	ftp://ftp.berlios.de/pub/xfce-goodies/${PORTVERSION}/ \
 		http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-${PORTVERSION}/src/

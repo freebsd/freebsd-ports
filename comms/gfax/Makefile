@@ -7,6 +7,7 @@
 
 PORTNAME=	gfax
 PORTVERSION=	0.6.4
+PORTREVISION=	1
 CATEGORIES=	comms print gnome
 MASTER_SITES=	http://gfax.cowlug.org/
 

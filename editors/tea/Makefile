@@ -7,6 +7,7 @@
 
 PORTNAME=		tea
 PORTVERSION=		2.0
+PORTREVISION=	1
 CATEGORIES=		editors
 MASTER_SITES=		http://tea.linux.kiev.ua/
 DISTNAME=		${PORTNAME}

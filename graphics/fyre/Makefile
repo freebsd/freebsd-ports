@@ -7,6 +7,7 @@
 
 PORTNAME=	fyre
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.kerneled.org/files/FreeBSD-ports/ \
 		http://navi.cx/releases/

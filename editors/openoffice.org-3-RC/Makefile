@@ -7,6 +7,7 @@
 
 PORTNAME=	openoffice
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES+=	editors
 MASTER_SITES+=	${MASTER_SITE_LOCAL} \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \

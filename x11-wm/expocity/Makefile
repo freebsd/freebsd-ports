@@ -7,6 +7,7 @@
 
 PORTNAME=	expocity
 PORTVERSION=	2.6.2
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.pycage.de/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1

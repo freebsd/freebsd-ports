@@ -7,6 +7,7 @@
 
 PORTNAME=	xvid4conf
 PORTVERSION=	1.10
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://zebra.fh-weingarten.de/~transcode/xvid4conf/
 

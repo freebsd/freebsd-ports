@@ -8,7 +8,7 @@
 
 PORTNAME=	gkrellmmultiping
 PORTVERSION=	2.0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://kmlinux.fjfi.cvut.cz/~makovick/gkrellm/
 DISTNAME=	gkrellm-multiping-${PORTVERSION}

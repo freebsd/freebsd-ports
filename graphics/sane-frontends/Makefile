@@ -7,6 +7,7 @@
 
 PORTNAME=	sane-frontends
 PORTVERSION=	1.0.13
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.sane-project.org/pub/sane/%SUBDIR%/ \
 		ftp://ftp2.sane-project.org/pub/sane/%SUBDIR%/ \

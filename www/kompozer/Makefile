@@ -7,6 +7,7 @@
 
 PORTNAME=	nvu
 PORTVERSION=	0.50
+PORTREVISION=	1
 CATEGORIES=	www
 # vtel.rgv.net is a temp mirror, nvu.com is SLOW
 MASTER_SITES=	http://vtel.rgv.net/~ahze/ \

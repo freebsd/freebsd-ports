@@ -7,6 +7,7 @@
 
 PORTNAME=	gyach
 PORTVERSION=	0.9.8
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www4.infi.net/~cpinkham/gyach/code/
 

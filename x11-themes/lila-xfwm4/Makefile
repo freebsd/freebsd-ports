@@ -7,6 +7,7 @@
 
 PORTNAME=	Lila-xfwm4
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	x11-themes xfce
 MASTER_SITES=	http://stief.tnux.net/Lila/
 DIST_SUBDIR=	xfce4

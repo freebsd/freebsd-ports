@@ -8,6 +8,7 @@
 
 PORTNAME=		monodoc
 PORTVERSION=		1.0
+PORTREVISION=	1
 CATEGORIES=		devel gnome
 MASTER_SITES=		http://mono.ximian.com/archive/${PORTVERSION}/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	uml
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download1.eclipse.org/tools/uml2/downloads/drops/1.0.1/R200409171820/
 PKGNAMEPREFIX=	eclipse-

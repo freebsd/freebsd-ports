@@ -7,7 +7,7 @@
 
 PORTNAME=	tsclient
 PORTVERSION=	0.132
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net gnome
 MASTER_SITES=	http://www.gnomepro.com/tsclient/
 

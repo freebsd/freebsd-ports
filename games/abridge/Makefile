@@ -6,7 +6,7 @@
 
 PORTNAME=	abridge
 PORTVERSION=	0.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 PORTREVISON=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.abridgegame.org/src/
