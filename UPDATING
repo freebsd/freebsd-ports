@@ -23,16 +23,16 @@ to /usr/local/aster/ASTK/ASTK_SERV/bin (or you can remove $HOME/.astkrc).
   users should remove /etc/pam.d/gnomesu-pam, and 5.x users should
   replace it with the version in the updated libgnomesu port (ensure
   that you're using the most current revision of the libgnomesu port).
-  
+
   4.x users: listen up! The presence of the /etc/pam.d/ directory (and
   anything in that directory) presents a Very Bad Thing. Unless you've
   manually tweaked your PAM settings, you must run:
-  
+
   	# rm /etc/pam.d/gnomesu-pam
   	# rmdir /etc/pam.d/
 	
   or all users will be locked out of your system!
-  
+
 20050110:
   AFFECTS: users of irc/iip
   AUTHOR: lioux@FreeBSD.org
@@ -100,7 +100,7 @@ to /usr/local/aster/ASTK/ASTK_SERV/bin (or you can remove $HOME/.astkrc).
   Sqwebmail now installs it's files directly under PREFIX. That means for
   instance that files that were formerly found under
   PREFIX/share/sqwebmail/etc/ are now located under PREFIX/etc/sqwebmail.
-  Furthermore you need to set sqwebmaild_enable=YES in your rc.conf 
+  Furthermore you need to set sqwebmaild_enable=YES in your rc.conf
   because the rc.d script has been migrated to use the rc.subr Subsystem
 
 20050108:
