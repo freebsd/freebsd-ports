@@ -719,6 +719,7 @@ BZIP2_CMD?=	/usr/bin/bzip2
 .else
 BZCAT?=		${LOCALBASE}/bin/bzcat
 BZIP2_CMD?=	${LOCALBASE}/bin/bzip2
+BZIP2DEPENDS=	yes
 .endif
 CAT?=		/bin/cat
 CHGRP?=		/usr/bin/chgrp
@@ -745,6 +746,7 @@ LN?=		/bin/ln
 LS?=		/bin/ls
 MKDIR?=		/bin/mkdir -p
 MV?=		/bin/mv
+REALPATH?=	/bin/realpath
 RM?=		/bin/rm
 RMDIR?=		/bin/rmdir
 SED?=		/usr/bin/sed
@@ -1056,7 +1058,7 @@ MANCOMPRESSED?=	no
 .endif
 
 .if defined(PATCHFILES)
-.if ${PATCHFILES:M*.bz2}x != x
+.if ${PATCHFILES:M*.bz2}x != x && defined(BZIP2DEPENDS)
 PATCH_DEPENDS+=		bzip2:${PORTSDIR}/archivers/bzip2
 .endif
 .if ${PATCHFILES:M*.zip}x != x
@@ -1064,7 +1066,7 @@ PATCH_DEPENDS+=		unzip:${PORTSDIR}/archivers/unzip
 .endif
 .endif
 
-.if defined(USE_BZIP2) && !exists(/usr/bin/bzip2)
+.if defined(USE_BZIP2) && defined(BZIP2DEPENDS)
 EXTRACT_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
 .endif
 .if defined(USE_ZIP)
@@ -3492,12 +3494,13 @@ ${deptype:L}-depends:
 			if [ ! -d "$$dir" ]; then \
 				${ECHO_MSG} "     >> No directory for $$prog.  Skipping.."; \
 			else \
-				(cd $$dir; ${MAKE} -DINSTALLS_DEPENDS $$target $$depends_args) ; \
 				if [ X${USE_PACKAGE_DEPENDS} != "X" ]; then \
 					subpkgfile=`(cd $$dir; ${MAKE} $$depends_args -V PKGFILE)`; \
 					if [ -r "$${subpkgfile}" ]; then \
 						${ECHO_MSG} "===>   Installing existing package $${subpkgfile}"; \
 						${PKG_ADD} $${subpkgfile}; \
+					else \
+					  (cd $$dir; ${MAKE} -DINSTALLS_DEPENDS $$target $$depends_args) ; \
 					fi; \
 				else \
 					(cd $$dir; ${MAKE} -DINSTALLS_DEPENDS $$target $$depends_args) ; \
@@ -3713,6 +3716,7 @@ PACKAGE-DEPENDS-LIST?= \
 	fi; \
 	checked="${PARENT_CHECKED}"; \
 	for dir in $$(${ECHO_CMD} "${LIB_DEPENDS} ${RUN_DEPENDS}" | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//') $$(${ECHO_CMD} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//'); do \
+		dir=$$(${REALPATH} $$dir); \
 		if [ -d $$dir ]; then \
 			if (${ECHO_CMD} $$checked | ${GREP} -qwv "$$dir"); then \
 				childout=$$(cd $$dir; ${MAKE} CHILD_DEPENDS=yes PARENT_CHECKED="$$checked" package-depends-list); \
