@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/xml_grep
 bin/xml_merge
 bin/xml_pp
