@@ -1,7 +1,8 @@
 @cd /usr/local
+@owner games
 @mode 644
 man/man6/jetpack.6
 lib/jetpack/jetpack.lev000
-@owner bin
 @mode 4755
 bin/jetpack
+@exec chown games lib/jetpack
