@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nessus-plugins
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.2a
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${PORTVERSION}/src/ \
@@ -23,8 +23,7 @@ CONFLICTS=	nessus-plugins-devel-[0-9]*
 
 BUILD_DEPENDS=	${LOCALBASE}/include/nessus/nessus-devel.h:${PORTSDIR}/security/nessus
 RUN_DEPENDS=	${LOCALBASE}/include/nessus/nessus-devel.h:${PORTSDIR}/security/nessus \
-		nmap:${PORTSDIR}/security/nmap \
-		wget:${PORTSDIR}/ftp/wget
+		nmap:${PORTSDIR}/security/nmap
 
 DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/nessus-plugins
