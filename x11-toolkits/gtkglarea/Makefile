@@ -19,6 +19,6 @@ GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
-CONFIGURE_ARGS=	--with-lib-MesaGL
+CONFIGURE_ARGS=	--with-lib-GL
 
 .include <bsd.port.mk>
