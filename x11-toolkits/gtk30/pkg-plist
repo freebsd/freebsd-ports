@@ -112,12 +112,15 @@ info/gtk.info-4
 info/gtk.info-5
 lib/libgdk.a
 lib/libgdk.la
+lib/libgdk.so
 lib/libgdk.so.1.0
 lib/libglib.a
 lib/libglib.la
+lib/libglib.so
 lib/libglib.so.1.0
 lib/libgtk.a
 lib/libgtk.la
+lib/libgtk.so
 lib/libgtk.so.1.0
 @unexec /sbin/ldconfig -R
 @exec /sbin/ldconfig -m %D/lib
