@@ -4946,6 +4946,7 @@ p5-libwww	ports/www/p5-libwww
 p5-libxml	ports/textproc/p5-libxml
 p5-ming		ports/graphics/p5-ming
 p5-perl-ldap	ports/net/p5-perl-ldap
+p5-postgresql-plperl	ports/databases/p5-postgresql-plperl
 p5-sqlrelay	ports/databases/p5-sqlrelay
 p5-tagged	ports/audio/p5-tagged
 p5-type1inst	ports/x11-fonts/p5-type1inst
