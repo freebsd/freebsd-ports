@@ -5,7 +5,7 @@
  
  ! version of netscape
 -Netscape.version:               4.76
-+Netscape.version:               4.78
++Netscape.version:               4.79
  
  ! Language localization:
  *versionLocale: ko
