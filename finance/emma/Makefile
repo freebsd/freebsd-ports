@@ -6,37 +6,24 @@
 #
 
 PORTNAME=	emma
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	misc gnome python
 MASTER_SITES=	http://rainbow.mimuw.edu.pl/~la181249/emma/packages/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.1/-1/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A personal finance manager for Gnome
 
-BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mx/DateTime/DateTime.py:${PORTSDIR}/lang/py-mx-base
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.1//}
-
 USE_X_PREFIX=	yes
-USE_GMAKE=	yes
-USE_GNOME=	yes
-USE_LIBTOOL=	yes
 USE_PYTHON=	yes
+USE_GNOME=	gnomehack gnomelibs gnomeprefix
+USE_GMAKE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
-		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
-
 pre-configure:
-.for file in install-sh missing mkinstalldirs
-	${LN} -sf ${LOCALBASE}/share/automake/${file} ${WRKSRC}/${file}
-.endfor
+	@${RM} -f ${WRKSRC}/config.cache
 
 .include <bsd.port.mk>
