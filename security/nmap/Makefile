@@ -7,7 +7,7 @@
 #
 
 PORTNAME?=	nmap
-PORTVERSION=	3.20
+PORTVERSION=	3.25
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://download.insecure.org/nmap/dist/
 DISTNAME=	nmap-${PORTVERSION:S/.b/BETA/}
