@@ -5992,6 +5992,7 @@ pspell-ispell	ports/textproc/pspell-ispell
 pspp		ports/math/pspp
 pstat		src/usr.sbin/pstat
 pstoedit	ports/graphics/pstoedit
+pstoepsi	ports/graphics/pstoepsi
 pstotext	ports/print/pstotext
 pstree		ports/sysutils/pstree
 psutils-a4	ports/print/psutils-a4
