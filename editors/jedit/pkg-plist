@@ -113,14 +113,6 @@ share/java/jedit/doc/users-guide/word-index.html
 share/java/jedit/doc/users-guide/words.html
 share/java/jedit/doc/users-guide/writing-modes.html
 share/java/jedit/jars/Firewall.jar
-share/java/jedit/jars/Firewall/AUTHORS.txt
-share/java/jedit/jars/Firewall/CHANGELOG.txt
-share/java/jedit/jars/Firewall/Firewall.props
-share/java/jedit/jars/Firewall/FirewallOptionPane.java
-share/java/jedit/jars/Firewall/FirewallPlugin.java
-share/java/jedit/jars/Firewall/TODO.txt
-share/java/jedit/jars/Firewall/index.html
-share/java/jedit/jars/Firewall/makefile.jmk
 share/java/jedit/jars/LatestVersion.jar
 share/java/jedit/jars/PluginManager.jar
 share/java/jedit/jedit.jar
@@ -200,7 +192,6 @@ share/java/jedit/swingall.jar
 @dirrm share/java/jedit/macros/HTML
 @dirrm share/java/jedit/macros/Console
 @dirrm share/java/jedit/macros
-@dirrm share/java/jedit/jars/Firewall
 @dirrm share/java/jedit/jars
 @dirrm share/java/jedit/doc/users-guide
 @dirrm share/java/jedit/doc/images
