@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	placelesstranslationservice
-PORTVERSION=	1.0r1
+PORTVERSION=	1.0r7
 CATEGORIES=	www zope
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	collective
 PKGNAMEPREFIX=	zope-
-DISTNAME=	PlacelessTranslationService-1.0fork-rc1
+DISTNAME=	PlacelessTranslationService-1.0fork-rc7
 
 MAINTAINER=	kaeru@inigo-tech.com
 COMMENT=	PlacelessTranslationService product for Zope/CMF
