@@ -23,9 +23,11 @@ LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao \
 		intl.5:${PORTSDIR}/devel/gettext \
 		vorbis.2:${PORTSDIR}/audio/libvorbis
 
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 MAN1=		ogg123.1 oggdec.1 oggenc.1 ogginfo.1 vcut.1 vorbiscomment.1
 
