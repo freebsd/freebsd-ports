@@ -1,0 +1,5 @@
+SISC is an extensible Java based interpreter of the algorithmic
+language Scheme.  SISC uses modern interpretation techniques, and
+handily outperforms all existing Java interpreters.
+
+WWW: http://sisc.sourceforge.net/

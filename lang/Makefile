@@ -196,6 +196,7 @@
     SUBDIR += scriba
     SUBDIR += scsh
     SUBDIR += siod
+    SUBDIR += sisc
     SUBDIR += slib
     SUBDIR += slisp
     SUBDIR += smalltalk
