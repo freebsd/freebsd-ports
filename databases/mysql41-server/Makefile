@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	4.0.10
+PORTVERSION=	4.0.12
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	ftp://mysql.secsup.org/pub/software/mysql/Downloads/MySQL-4.0/ \
@@ -23,7 +23,6 @@ MASTER_SITES=	ftp://mysql.secsup.org/pub/software/mysql/Downloads/MySQL-4.0/ \
 		http://mysql.oms-net.nl/Downloads/MySQL-4.0/ \
 		ftp://ftp.free.fr/pub/MySQL/Downloads/MySQL-4.0/
 PKGNAMESUFFIX?=	-server
-DISTNAME=	${PORTNAME}-${PORTVERSION}-gamma
 
 MAINTAINER=	sysadmin@alexdupre.com
 COMMENT?=	Multithreaded SQL database (server)
@@ -32,8 +31,10 @@ SLAVEDIRS=	databases/mysql40-client
 DB_DIR?=	/var/db/mysql
 USE_PERL5_RUN=	yes
 USE_LIBTOOL=	yes
+USE_REINPLACE=	yes
 
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--localstatedir=${DB_DIR} \
 		--without-debug \
 		--without-readline \
@@ -43,9 +44,7 @@ CONFIGURE_ARGS=	--localstatedir=${DB_DIR} \
 		--with-mysqlfs \
 		--with-vio \
 		--with-low-memory \
-		--with-comment='FreeBSD port: ${PKGNAME}' \
-		--with-server-suffix='' \
-		--program-prefix=''
+		--with-comment='FreeBSD port: ${PKGNAME}'
 
 .include <bsd.port.pre.mk>
 
@@ -99,12 +98,11 @@ CXX=		${CC}
 RUN_DEPENDS=	mysql:${PORTSDIR}/databases/mysql40-client \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-Mysql
 
-PLIST_SUB=	MYSQL_VERSION=${PORTVERSION}-gamma
+PLIST_SUB=	MYSQL_VERSION=${PORTVERSION}
 
 ONLY_FOR_ARCHS=	i386 alpha sparc64
 
-DOCS=		manual.html manual.ps manual_toc.html manual.txt manual.texi \
-		include.texi
+DOCS=		manual.html manual.txt manual_toc.html
 
 pre-fetch:
 	@${ECHO} ""
@@ -115,15 +113,19 @@ pre-fetch:
 	@${ECHO} "	WITH_OPENSSL=yes	Enable secure connections."
 	@${ECHO} "	DB_DIR=directory	Set alternate directory for database files"
 	@${ECHO} "				(default is /var/db/mysql)."
-	@${ECHO} "      WITH_LINUXTHREADS=yes	Use the linuxthreads pthread library."
-	@${ECHO} "	OVERWRITE_DB=yes	Re-initialize default databases"
-	@${ECHO} "	SKIP_DNS_CHECK=yes	Don't run resolveip to do an additional"
-	@${ECHO} "				DNS check before inserting local hostname to"
-	@${ECHO} "				mysql database"
+	@${ECHO} "	WITH_LINUXTHREADS=yes	Use the linuxthreads pthread library."
+	@${ECHO} "	OVERWRITE_DB=yes	Re-initialize default databases."
+	@${ECHO} "	SKIP_DNS_CHECK=yes	Don't run resolveip to do an additional DNS"
+	@${ECHO} "				reverse lookup  before inserting local"
+	@${ECHO} "				hostname into mysql database"
 	@${ECHO} "				(use if your machine has no official DNS entry)."
 	@${ECHO} "	BUILD_STATIC=yes	Build a static version of mysqld."
 	@${ECHO} "	BUILD_OPTIMIZED=yes	Add -mcpu=i686 to CFLAGS."
 	@${ECHO} ""
+
+post-patch:
+	 @${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = include @sql_server_dirs@ scripts support-files|g" ${WRKSRC}/Makefile.in
+	 @${REINPLACE_CMD} -e "s|install: install-am|install:|g" ${WRKSRC}/include/Makefile.in
 
 .if defined(WITH_OPENSSL) && defined(BUILD_STATIC)
 pre-configure:
@@ -147,13 +149,14 @@ post-install:
 .endif
 	@${SED} "s|%%PREFIX%%|${PREFIX}|g; s|%%DB_DIR%%|${DB_DIR}|g" < ${FILESDIR}/mysql-server.sh > ${PREFIX}/etc/rc.d/mysql-server.sh
 	@${CHMOD} 750 ${PREFIX}/etc/rc.d/mysql-server.sh
-
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}/Flags
+	@${MKDIR} ${DOCSDIR}/Flags
 .for doc in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/Docs/${doc} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/Docs/${doc} ${DOCSDIR}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/Docs/Flags/*.gif ${DOCSDIR}/Flags
+	@${INSTALL_DATA} ${WRKSRC}/Docs/Flags/*.gif ${DOCSDIR}/Flags
+	@${INSTALL_DATA} ${WRKSRC}/Docs/mysql.info ${PREFIX}/info
+	@install-info ${PREFIX}/info/mysql.info ${PREFIX}/info/dir
 .endif
 
 # MySQL-Client part
@@ -166,12 +169,13 @@ INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/mysql
 
 CONFIGURE_ARGS+=--without-server
-MAKE_ENV=	CLIENT_ONLY="${CLIENT_ONLY}"
+
+post-patch:
+	 @${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = include @sql_client_dirs@ tests man|g" ${WRKSRC}/Makefile.in
 
 post-install:
 	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/mysql-client.sh > ${PREFIX}/etc/rc.d/000.mysql-client.sh
 	@${CHMOD} 750 ${PREFIX}/etc/rc.d/000.mysql-client.sh
-
 .endif
 
 .include <bsd.port.post.mk>

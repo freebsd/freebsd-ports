@@ -1,14 +1,16 @@
---- configure.orig	Wed Jan 29 12:29:38 2003
-+++ configure	Tue Feb  4 14:07:39 2003
-@@ -8104,6 +8104,7 @@
+--- configure.orig	Tue Feb 25 21:30:07 2003
++++ configure	Thu Feb 27 12:42:12 2003
+@@ -8101,7 +8101,8 @@
+ 
  
  # This can be used to rebuild libtool when needed
- LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+-LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++LIBTOOL_DEPS="--disable-ltlibs /usr/local/share/libtool/ltmain.sh"
++/usr/local/share/libtool/ltconfig $LIBTOOL_DEPS
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -9046,7 +9047,7 @@
+@@ -9044,7 +9045,7 @@
    ;;
  esac
  fi
@@ -17,7 +19,7 @@
  
  if test -n "$HOSTNAME"; then
    echo "$as_me:$LINENO: result: $HOSTNAME" >&5
-@@ -9238,43 +9239,8 @@
+@@ -9236,43 +9237,8 @@
  echo "$as_me:$LINENO: checking \"how to check if pid exists\"" >&5
  echo $ECHO_N "checking \"how to check if pid exists\"... $ECHO_C" >&6
  PS=$ac_cv_path_PS
@@ -61,3 +63,12 @@
  
  echo "$as_me:$LINENO: result: \"$FIND_PROC\"" >&5
  echo "${ECHO_T}\"$FIND_PROC\"" >&6
+@@ -22310,7 +22276,7 @@
+ 	/* ) rel_srcdir="$srcdir" ;;
+ 	* )  rel_srcdir="../$srcdir" ;;
+     esac
+-    if test "x$enable_dependency_tracking" == xno
++    if test "x$enable_dependency_tracking" = xno
+     then
+       innodb_conf_flags=--disable-dependency-tracking
+     fi
