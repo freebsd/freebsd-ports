@@ -8,7 +8,6 @@ bin/m68k-rtems-addr2line
 bin/m68k-rtems-readelf
 bin/m68k-rtems-nm
 bin/m68k-rtems-strip
-bin/m68k-rtems-c++filt
 bin/m68k-rtems-as
 bin/m68k-rtems-gasp
 bin/m68k-rtems-ld

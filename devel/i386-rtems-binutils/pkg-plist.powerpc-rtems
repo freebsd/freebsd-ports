@@ -8,7 +8,6 @@ bin/powerpc-rtems-addr2line
 bin/powerpc-rtems-readelf
 bin/powerpc-rtems-nm
 bin/powerpc-rtems-strip
-bin/powerpc-rtems-c++filt
 bin/powerpc-rtems-as
 bin/powerpc-rtems-gasp
 bin/powerpc-rtems-ld

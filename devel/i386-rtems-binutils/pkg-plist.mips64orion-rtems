@@ -8,7 +8,6 @@ bin/mips64orion-rtems-addr2line
 bin/mips64orion-rtems-readelf
 bin/mips64orion-rtems-nm
 bin/mips64orion-rtems-strip
-bin/mips64orion-rtems-c++filt
 bin/mips64orion-rtems-as
 bin/mips64orion-rtems-gasp
 bin/mips64orion-rtems-ld

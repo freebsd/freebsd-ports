@@ -8,7 +8,6 @@ bin/sh-rtems-addr2line
 bin/sh-rtems-readelf
 bin/sh-rtems-nm
 bin/sh-rtems-strip
-bin/sh-rtems-c++filt
 bin/sh-rtems-as
 bin/sh-rtems-gasp
 bin/sh-rtems-ld

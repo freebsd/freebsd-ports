@@ -8,7 +8,6 @@ bin/i960-rtems-addr2line
 bin/i960-rtems-readelf
 bin/i960-rtems-nm
 bin/i960-rtems-strip
-bin/i960-rtems-c++filt
 bin/i960-rtems-as
 bin/i960-rtems-gasp
 bin/i960-rtems-ld
