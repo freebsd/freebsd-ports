@@ -1,0 +1,18 @@
+This library was created to allow a Ruby application to connect to an
+existing Jabber account as an additional resource.
+
+This is not meant to be a library to create a complete Ruby-based
+Jabber IM client. It was written for ease of use, not completeness. It
+does support:
+
+* Account registration
+* Connection to an account (plain-text/digest)
+* Access to Roster (buddy list)
+* Tracking of presence of resources in the Roster (including local
+  account resources)
+* Sending and receiving messages
+* Managing subscriptions
+* Pluggable xml parsers (rexml/xmlparser)
+
+Author:	Richard Kilmer <rich@infoether.com>
+WWW:	http://www.infoether.com/ruby/jabber4r/
