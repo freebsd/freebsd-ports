@@ -106,13 +106,13 @@ www/nocc/themes/standard/img/new.gif
 www/nocc/themes/standard/img/right_arrow.gif
 www/nocc/themes/standard/img/spacer.gif
 www/nocc/themes/standard/img/up.gif
-%%PORTDOCS%%share/doc/nocc/CREDITS
-%%PORTDOCS%%share/doc/nocc/FAQ
-%%PORTDOCS%%share/doc/nocc/INSTALL
-%%PORTDOCS%%share/doc/nocc/KNOWN_BUGS
-%%PORTDOCS%%share/doc/nocc/NEWS
-%%PORTDOCS%%share/doc/nocc/README
-%%PORTDOCS%%share/doc/nocc/TODO
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/KNOWN_BUGS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 @dirrm www/nocc/themes/standard/img
 @dirrm www/nocc/themes/standard
 @dirrm www/nocc/themes/newlook/img
@@ -123,4 +123,4 @@ www/nocc/themes/standard/img/up.gif
 @dirrm www/nocc/lang
 @dirrm www/nocc/html
 @dirrm www/nocc
-%%PORTDOCS%%@dirrm share/doc/nocc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

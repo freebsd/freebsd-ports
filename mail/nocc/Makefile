@@ -14,10 +14,13 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A web-based e-mail system which access POP3 and IMAP mail servers
 
-RUN_DEPENDS=	${LOCALBASE}/bin/php-config:${PORTSDIR}/www/mod_php4
+WANT_PHP_WEB=	yes
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 NO_BUILD=	yes
+
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/lang/php4/bsd.php.mk"
 
 pre-everything::
 	@${ECHO} ""
@@ -30,7 +33,7 @@ pre-everything::
 
 pre-patch:
 	@${SED} 's|%%PREFIX%%|${PREFIX}|g' \
-		${.CURDIR}/pkg-message > ${PKGMESSAGE}
+		${PKGDIR}/pkg-message > ${PKGMESSAGE}
 
 do-install:
 	${MKDIR} ${PREFIX}/www/nocc
@@ -51,4 +54,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
