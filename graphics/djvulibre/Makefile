@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	djvu
 
 MAINTAINER=	john_m_cooper@yahoo.com
 
+BROKEN=		"Does not compile"
+
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		iconv.3:${PORTSDIR}/converters/libiconv
 .ifndef WITHOUT_X11
