@@ -1,28 +1,11 @@
-*** configure.orig	Wed Dec 23 19:24:45 1998
---- configure	Wed Dec 23 19:26:33 1998
+*** configure~	Mon Apr 26 16:58:58 1999
+--- configure	Mon May  3 22:05:42 1999
 ***************
-*** 2616,2620 ****
-  ; return 0; }
-  EOF
-! if { (eval echo configure:3304: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
-    rm -rf conftest*
-    ac_cv_c_extern_prefix="yes"
---- 2616,2620 ----
-  ; return 0; }
-  EOF
-! if { (eval echo configure:3304: \"$ac_link\") 1>&5; (eval $ac_link) </dev/null 2>&5; } && test -s conftest; then
-    rm -rf conftest*
-    ac_cv_c_extern_prefix="yes"
-***************
-*** 2657,2661 ****
-  ; return 0; }
-  EOF
-! if { (eval echo configure:3345: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
-    rm -rf conftest*
-    ac_cv_c_asm_string="yes"
---- 2657,2661 ----
-  ; return 0; }
-  EOF
-! if { (eval echo configure:3345: \"$ac_link\") 1>&5; (eval $ac_link) </dev/null 2>&5; } && test -s conftest; then
-    rm -rf conftest*
-    ac_cv_c_asm_string="yes"
+*** 9,12 ****
+--- 9,14 ----
+  # gives unlimited permission to copy, distribute and modify it.
+  
++ exec < /dev/null
++ 
+  # Defaults:
+  ac_help=
