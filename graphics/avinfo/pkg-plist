@@ -1,0 +1,10 @@
+bin/avinfo
+%%PORTDOCS%%%%DOCSDIR%%/Readme
+%%PORTDOCS%%%%DOCSDIR%%/Readme.ru
+%%PORTDOCS%%%%DOCSDIR%%/meta
+%%PORTDOCS%%%%DOCSDIR%%/reklama.txt
+%%PORTDOCS%%%%DOCSDIR%%/tech_note
+%%PORTDOCS%%%%DOCSDIR%%/todo
+%%PORTDOCS%%%%DOCSDIR%%/whatsnew
+%%PORTDOCS%%%%DOCSDIR%%/whatsnew.ru
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

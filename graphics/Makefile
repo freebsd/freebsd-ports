@@ -18,6 +18,7 @@
     SUBDIR += autotrace
     SUBDIR += avidemux
     SUBDIR += aview
+    SUBDIR += avinfo
     SUBDIR += backfract
     SUBDIR += barcode
     SUBDIR += bbrb
