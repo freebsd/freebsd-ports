@@ -7,7 +7,7 @@
 
 PORTNAME=	clients
 PORTVERSION=	4.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XFREE}
 MASTER_SITE_SUBDIR=	4.3.0
@@ -25,17 +25,10 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		png.5:${PORTSDIR}/graphics/png \
 		Xft.2:${PORTSDIR}/x11-fonts/Xft
 
-XFREE86_VERSION=	4
-USE_IMAKE=		YES
-DIST_SUBDIR=		xc
-WRKSRC=			${WRKDIR}/xc
-PATCHDIR=		${.CURDIR}/../XFree86-4-libraries/files
 SCRIPTS_ENV=		InstallXdmConfig=${InstallXdmConfig} \
 			InstallXinitConfig=${InstallXinitConfig} \
-			InstallAppDefFiles=${InstallAppDefFiles} \
-			CC="${CC}" \
-			CXX="${CXX}" \
-			CFLAGS="${CFLAGS}"
+			InstallAppDefFiles=${InstallAppDefFiles}
+			
 MAKE_ENV=		PKGNAMEPREFIX=${PKGNAMEPREFIX} \
 			PORTNAME=${PORTNAME} \
 			PORTVERSION=${PORTVERSION}

@@ -7,7 +7,7 @@
 
 PORTNAME=	Server
 PORTVERSION=	4.3.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
@@ -25,12 +25,6 @@ EXTRACT_ONLY=	X430src-1.tgz \
 MAINTAINER=	anholt@freebsd.org
 COMMENT=	XFree86-4 X server and related programs
 
-XFREE86_VERSION=	4
-USE_IMAKE=		YES
-INSTALLS_SHLIB=		YES
-DIST_SUBDIR=		xc
-WRKSRC=			${WRKDIR}/xc
-PATCHDIR=		${.CURDIR}/../../x11/XFree86-4-libraries/files
 .for pf in patch-savage-pci-id patch-alpha_video.c patch-Pci.h patch-radeondri \
 	patch-r128_driver.c patch-mga_driver.c patch-xkbInit.c patch-radeon_dri.c \
 	patch-mga_dri.c patch-nv_driver.c patch-nv_setup.c patch-int10-generic.c \
@@ -39,10 +33,7 @@ EXTRA_PATCHES+=		${FILESDIR}/${pf}
 .endfor
 SCRIPTS_ENV=		OSVERSION=${OSVERSION} \
 			BuildXF86DRI=${BuildXF86DRI} \
-			WITH_DEBUG="${WITH_DEBUG}" \
-			CC="${CC}" \
-			CXX="${CXX}" \
-			CFLAGS="${CFLAGS}"
+			WITH_DEBUG="${WITH_DEBUG}"
 MAN1=			XFree86.1 \
 			Xserver.1 \
 			gtf.1 \
@@ -101,6 +92,7 @@ XINCLUDE_DIRS=		lib/xkbfile lib/xtrans
 XINSTALL_DIRS=		lib/font programs/Xserver
 XINSTALL_MAN_DIRS=	programs/Xserver
 
+.include "${.CURDIR}/../../x11/XFree86-4-libraries/Makefile.inc"
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == i386 ||  ${ARCH} == alpha
@@ -166,5 +158,4 @@ post-install::
 	${LN} -sf Xwrapper-4 ${PREFIX}/bin/X; \
 	fi;
 
-.include "${.CURDIR}/../../x11/XFree86-4-libraries/Makefile.inc"
 .include <bsd.port.post.mk>

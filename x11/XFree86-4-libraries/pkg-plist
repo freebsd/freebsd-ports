@@ -619,4 +619,4 @@ lib/libpsres.so.1
 lib/libxf86config.a
 lib/libxkbfile.a
 lib/libxkbui.a
-lib/pkgconfig/xcursor.pc
+libdata/pkgconfig/xcursor.pc

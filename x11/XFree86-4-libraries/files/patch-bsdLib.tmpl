@@ -1,0 +1,11 @@
+--- config/cf/bsdLib.tmpl.orig	Tue May 13 12:37:22 2003
++++ config/cf/bsdLib.tmpl	Tue May 13 12:37:23 2003
+@@ -65,7 +65,7 @@
+ #define SharedXieReqs	$(LDPRELIBS) $(XLIBONLY)
+ #define SharedXvReqs	$(LDPRELIB) $(XLIB)
+ #define SharedSMReqs	$(LDPRELIBS) $(ICELIB)
+-#define SharedGLReqs	$(LDPRELIBS) $(XLIB) -lc
++#define SharedGLReqs	$(LDPRELIBS) $(XLIB)
+ #define SharedGLUReqs	$(LDPRELIB) $(XLIB) $(GLXLIB)
+ #define SharedXcursorReqs   $(LDPRELIB) $(XRENDERLIB) $(XLIB)
+ 

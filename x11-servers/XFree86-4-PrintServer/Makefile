@@ -24,14 +24,6 @@ EXTRACT_ONLY=	X430src-1.tgz \
 MAINTAINER=	anholt@freebsd.org
 COMMENT=	XFree86-4 print server
 
-XFREE86_VERSION=	4
-USE_IMAKE=		YES
-DIST_SUBDIR=		xc
-WRKSRC=			${WRKDIR}/xc
-SCRIPTS_ENV=		CC="${CC}" \
-			CXX="${CXX}" \
-			CFLAGS="${CFLAGS}"
-PATCHDIR=		${.CURDIR}/../../x11/XFree86-4-libraries/files
 XBUILD_DIRS=		lib/font lib/lbxutil lib/Xdmcp lib/Xau programs/Xserver
 XINCLUDE_DIRS=		lib/xkbfile lib/xtrans
 XINSTALL_DIRS=		programs/Xserver
