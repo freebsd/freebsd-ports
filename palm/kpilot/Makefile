@@ -3,7 +3,7 @@
 # Date created:        09 April 1998
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.1.1.1 1998/03/07 15:31:52 se Exp $
+# $Id: Makefile,v 1.2 1998/03/17 06:02:58 asami Exp $
 #
 
 DISTNAME=	kpilot-2.0
@@ -15,7 +15,7 @@ MAINTAINER=	se@freebsd.org
 BUILD_DEPENDS=	moc:${PORTSDIR}/x11/qt
 LIB_DEPENDS=	qt\\.1\\.3[1-9]:${PORTSDIR}/x11/qt \
 		gif\\.[23]\\.:${PORTSDIR}/graphics/giflib \
-		jpeg\\.[67]\\.:${PORTSDIR}/graphics/jpeg \
+		jpeg\\.8\\.:${PORTSDIR}/graphics/jpeg \
 		kdecore\\.0\\.9[0-9]:${PORTSDIR}/x11/kdelibs \
 		kdeui\\.0\\.9[1-9]:${PORTSDIR}/x11/kdelibs \
 		jscript\\.0\\.9[0-9]:${PORTSDIR}/x11/kdelibs \

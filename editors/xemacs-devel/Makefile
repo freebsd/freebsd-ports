@@ -3,7 +3,7 @@
 # Date created:		26 August 1997
 # Whom:			Michael Elbel (me)
 #
-# $Id: Makefile,v 1.10 1998/03/02 01:38:47 obrien Exp $
+# $Id: Makefile,v 1.11 1998/03/28 19:42:15 ache Exp $
 #
 
 DISTNAME=	xemacs-20.3
@@ -22,7 +22,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${MULEDISTFILE}
 MAINTAINER=	me@FreeBSD.org
 
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm \
-		jpeg\\.7\\.:${PORTSDIR}/graphics/jpeg \
+		jpeg\\.8\\.:${PORTSDIR}/graphics/jpeg \
 		png\\.2\\.:${PORTSDIR}/graphics/png
 
 USE_GMAKE=	yes
