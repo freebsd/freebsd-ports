@@ -8,6 +8,7 @@
 
 PORTNAME=	jpilot
 PORTVERSION=	0.99
+PORTREVISION?=	1
 CATEGORIES+=	palm comms
 MASTER_SITES=	http://jpilot.org/
 
@@ -21,6 +22,7 @@ USE_GTK=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS+=--with-pilot-prefix=${PREFIX}
 INSTALLS_SHLIB=	yes
+USE_AUTOCONF=	yes
 
 post-install:
 .if !defined(NOPORTDOCS)
