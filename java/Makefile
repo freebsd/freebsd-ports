@@ -16,6 +16,7 @@
     SUBDIR += diablo-jdk13
     SUBDIR += diablo-jre13
     SUBDIR += eclipse
+    SUBDIR += eclipse-EPIC
     SUBDIR += eclipse-cdt
     SUBDIR += eclipse-checkstyle
     SUBDIR += eclipse-clay-core
