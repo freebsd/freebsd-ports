@@ -1,4 +1,5 @@
 /* convert old LPmud .o files to new DGD .o format */
+/* $FreeBSD$ */
 # include <ctype.h>
 # include <string.h>
 # include <stdio.h>
@@ -129,7 +130,7 @@ main()
     char *p;
 
     puts("#");
-    while (gets(buffer) != (char *) NULL) {
+    while (fgets(buffer, sizeof(buffer), stdin) != (char *) NULL) {
 	p = strchr(buffer, ' ');
 	if (p == (char *) NULL) {
 	    fprintf(stderr, "variable name expected\n");
