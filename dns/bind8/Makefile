@@ -8,7 +8,8 @@
 PORTNAME=	bind
 PORTVERSION=	8.2.3
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.isc.org/isc/bind/src/8.2.3/
+MASTER_SITES=	ftp://ftp.isc.org/isc/bind/src/8.2.3/ \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/bind/src/8.2.3/,}
 DISTFILES=	bind-src.tar.gz bind-doc.tar.gz
 
 MAINTAINER=	DougB@FreeBSD.org
