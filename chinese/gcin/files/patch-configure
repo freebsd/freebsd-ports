@@ -1,0 +1,11 @@
+--- configure.orig	Sat Jul 17 16:26:48 2004
++++ configure	Sun Jul 25 19:48:05 2004
+@@ -38,7 +38,7 @@
+ GCIN_VERSION=`cat VERSION.gcin`
+ sed -e "s/__gcin_version__/$GCIN_VERSION/" < gcin.spec.in > gcin.spec
+ 
+-OPTFLAGS="-g"
++OPTFLAGS=$CFLAGS
+ if [ $prefix = /usr ]; then
+   OPTFLAGS="-O"
+ fi
