@@ -1,0 +1,16 @@
+--- src/Makefile.in.orig	Sat Sep  9 14:38:02 2000
++++ src/Makefile.in	Tue Sep 12 12:53:37 2000
+@@ -341,12 +341,7 @@
+ 	else \
+ 	   echo "WARNING : Couldn't install $(srcdir)/gnome--.h in $(DESTDIR)$(gnomemm_includedir) : can't write in $(DESTDIR)$(gnomemm_includedir)"; \
+ 	fi ; \
+-        gnomedir=`gnome-config --libdir`;  \
+-	if [ -w "$(DESTDIR)$$gnomedir" ]; then \
+-	   $(INSTALL_DATA) $(srcdir)/gnomemmConf.sh $(DESTDIR)$$gnomedir; \
+-	else \
+-	   echo "WARNING : Couldn't install $(srcdir)/gnomemmConf.sh in $(DESTDIR)$$gnomedir : can't write in $(DESTDIR)$$gnomedir"; \
+-	fi
++	   $(INSTALL_DATA) $(srcdir)/gnomemmConf.sh $(DESTDIR)$(sysconfdir)
+ 
+ all-local:
+ 	@echo "*** gnome-- finished ***"
