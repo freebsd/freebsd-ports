@@ -15,8 +15,6 @@ DISTFILES=	m3gdb-4.17.tar.gz \
 
 MAINTAINER=	jdp@FreeBSD.org
 
-BROKEN=		"Does not compile"
-
 MAN1=		m3gdb.1
 MANCOMPRESSED=	yes
 ONLY_FOR_ARCHS=	i386

@@ -1,5 +1,5 @@
 --- src/gnu/usr.bin/gdb/gdb/freebsd-nat.c.orig	Mon Sep 14 15:49:02 1998
-+++ src/gnu/usr.bin/gdb/gdb/freebsd-nat.c	Wed Sep  8 10:33:06 1999
++++ src/gnu/usr.bin/gdb/gdb/freebsd-nat.c	Thu May 23 21:36:56 2002
 @@ -115,9 +115,7 @@
    for (regno = 0; regno < NUM_REGS; regno++)
      {
@@ -11,3 +11,60 @@
          addr = offsetof (struct user, u_pcb) + offsetof (struct pcb, pcb_gs);
        else
          addr = offset + 4 * cregno;
+@@ -136,7 +134,7 @@
+       error ("Register %s not found in core file.", reg_names[bad_reg]);
+     }
+ 
+-  addr = offsetof (struct user, u_pcb) + offsetof (struct pcb, pcb_savefpu);
++  addr = offsetof (struct user, u_pcb) + offsetof (struct pcb, pcb_save);
+   memcpy (&pcb_savefpu, core_reg_sect + addr, sizeof pcb_savefpu);
+ }
+ 
+@@ -166,7 +164,6 @@
+ extern void print_387_status_word ();
+ 
+ #define	fpstate		save87
+-#define	U_FPSTATE(u)	u.u_pcb.pcb_savefpu
+ 
+ static void
+ i387_to_double (from, to)
+@@ -331,36 +328,14 @@
+ void
+ i386_float_info ()
+ {
+-  struct user u; /* just for address computations */
+-  int i;
+-  /* fpstate defined in <sys/user.h> */
++  struct fpstate fps;
+   struct fpstate *fpstatep;
+-  char buf[sizeof (struct fpstate) + 2 * sizeof (int)];
+-  unsigned int uaddr;
+-  char fpvalid;
+-  unsigned int rounded_addr;
+-  unsigned int rounded_size;
+-  /*extern int corechan;*/
+-  int skip;
+   extern int inferior_pid;
+   
+-  uaddr = (char *)&U_FPSTATE(u) - (char *)&u;
+   if (inferior_pid != 0 && core_bfd == NULL) 
+     {
+-      int *ip;
+-      
+-      rounded_addr = uaddr & -sizeof (int);
+-      rounded_size = (((uaddr + sizeof (struct fpstate)) - uaddr) +
+-		      sizeof (int) - 1) / sizeof (int);
+-      skip = uaddr - rounded_addr;
+-      
+-      ip = (int *)buf;
+-      for (i = 0; i < rounded_size; i++) 
+-	{
+-	  *ip++ = ptrace (PT_READ_U, inferior_pid, (caddr_t)rounded_addr, 0);
+-	  rounded_addr += sizeof (int);
+-	}
+-      fpstatep = (struct fpstate *)(buf + skip);
++      ptrace(PT_GETFPREGS, inferior_pid, (caddr_t)&fps, 0);
++      fpstatep = &fps;
+     } 
+   else 
+     fpstatep = &pcb_savefpu;
