@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	smarty
-PORTVERSION=	2.6.5
+PORTVERSION=	2.6.6
 CATEGORIES=	www
 MASTER_SITES=	http://smarty.php.net/distributions/ \
 		http://smarty.php.net/distributions/manual/en/:manual
 DISTFILES=	Smarty-${PORTVERSION}${EXTRACT_SUFX}
 .if !defined(NOPORTDOCS)
-DISTFILES+=	Smarty-2.6.4-docs${EXTRACT_SUFX}:manual
+DISTFILES+=	Smarty-2.6.5-docs${EXTRACT_SUFX}:manual
 .endif
 
-MAINTAINER=	zaa@ulstu.ru
+MAINTAINER=	zaa@zaa.pp.ru
 COMMENT=	The PHP compiling template engine
 
 WRKSRC=	${WRKDIR}/Smarty-${PORTVERSION}
@@ -34,8 +34,8 @@ do-install:
 .for f in Config_File.class.php Smarty.class.php Smarty_Compiler.class.php debug.tpl
 	@${INSTALL_DATA} ${WRKSRC}/libs/$f ${DATADIR}
 .endfor
-	@${MKDIR} ${DATADIR}/core
-	@${INSTALL_DATA} ${WRKSRC}/libs/core/* ${DATADIR}/core
+	@${MKDIR} ${DATADIR}/internals
+	@${INSTALL_DATA} ${WRKSRC}/libs/internals/* ${DATADIR}/internals
 	@${MKDIR} ${DATADIR}/plugins
 	@${INSTALL_DATA} ${WRKSRC}/libs/plugins/* ${DATADIR}/plugins
 .if !defined(NOPORTDOCS)
