@@ -12581,7 +12581,7 @@ zh-qe		ports/chinese/qe
 zh-qterm	ports/chinese/qterm
 zh-reciteword	ports/chinese/reciteword
 zh-scim-chewing	ports/chinese/scim-chewing
-zh-scim-chinese	ports/chinese/scim-chinese
+zh-scim-pinyin	ports/chinese/scim-pinyin
 zh-scim-tables	ports/chinese/scim-tables
 zh-srecite	ports/chinese/srecite
 zh-tcl		ports/chinese/tcl83
