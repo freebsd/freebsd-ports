@@ -39,6 +39,6 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/../${file} ${PREFIX}/share/doc/${PORTNAME}
 .endfor
 .endif # !NOPORTDOCS
-	${SED} -e "s|/usr/X11R6/|${PREFIX}|" ${PKGMESSAGE}
+	@${SED} -e "s|/usr/X11R6|${PREFIX}|" ${PKGMESSAGE}
 
 .include <bsd.port.mk>
