@@ -2155,6 +2155,7 @@ gawk		ports/lang/gawk
 gbase		ports/converters/gbase
 gbe		ports/emulators/gbe
 gbib		ports/databases/gbib
+gbottler	ports/games/gbottler
 gbuffy		ports/mail/gbuffy
 gcal		ports/deskutils/gcal
 gcalctool	ports/math/gcalctool
