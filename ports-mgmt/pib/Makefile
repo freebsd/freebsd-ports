@@ -7,13 +7,13 @@
 #
 
 DISTNAME=	pib-1.1
-CATEGORIES=	sysutils tk80
+CATEGORIES=	sysutils tk82
 MASTER_SITES=	http://www.freebsd.org/~msmith/pib/
 
 MAINTAINER=	msmith@freebsd.org
 
-BUILD_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
-RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
+BUILD_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
+RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/pib
