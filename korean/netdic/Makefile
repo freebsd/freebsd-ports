@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.c
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A network English dictionary utility for Korean
 
+BROKEN=		"Doesn't working at all"
+
 do-extract:
 	@${RM} -rf ${WRKDIR} && \
 	${MKDIR} ${WRKDIR} && \
