@@ -45,8 +45,6 @@ post-install:
 	${MKDIR} ${PREFIX}/share/doc/esecanna
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/esecanna/
 .endif
-
-post-install:
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	esecanna-module-vje25
-PORTVERSION=	0.14.3
+PORTVERSION=	0.14.4
 CATEGORIES=	japanese
 MASTER_SITES=	http://esecanna.netfort.gr.jp/ \
 		http://people.FreeBSD.org/~knu/ports/distfiles/
