@@ -14,7 +14,7 @@ DISTNAME=	gdancer-$(PORTVERSION)
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	XMMS Visualization plugin, displays dancing figures
 
-LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12 gdkpixbuf

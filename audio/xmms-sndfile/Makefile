@@ -15,7 +15,7 @@ MAINTAINER=	dyeske@yahoo.com
 COMMENT=	XMMS plugin to allow playing libsndfile supported files
 
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
-		xmms.3:${PORTSDIR}/multimedia/xmms
+		xmms.4:${PORTSDIR}/multimedia/xmms
 
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 

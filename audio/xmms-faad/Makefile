@@ -16,7 +16,7 @@ COMMENT=	XMMS plugin for faad
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 LIB_DEPENDS=	id3-3.8.2:${PORTSDIR}/audio/id3lib \
-		xmms.3:${PORTSDIR}/multimedia/xmms \
+		xmms.4:${PORTSDIR}/multimedia/xmms \
 		faad.0:${PORTSDIR}/audio/faad
 
 USE_X_PREFIX=	yes

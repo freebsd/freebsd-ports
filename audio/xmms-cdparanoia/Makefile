@@ -16,7 +16,7 @@ MAINTAINER=	dyeske@yahoo.com
 COMMENT=	Cdparanoia plugin for XMMS
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
-LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms \
+LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 		cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia
 
 USE_X_PREFIX=	yes

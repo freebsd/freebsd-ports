@@ -17,7 +17,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	XMMS bindings for Ruby
 
-LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

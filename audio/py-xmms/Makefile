@@ -16,7 +16,7 @@ MAINTAINER=	perky@FreeBSD.org
 COMMENT=	XMMS Remote Control Library for Python
 
 BUILD_DEPENDS=	${XMMS_CONFIG}:${PORTSDIR}/multimedia/xmms
-LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
