@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.sc.sri.com/pub/FreeBSD/JDK/ \
 
 MAINTAINER=	nate@FreeBSD.org
 
+RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
+
 NO_CDROM=	"License doesn't allow distribution with fee"
 
 ONLY_FOR_ARCHS=	i386
@@ -36,5 +38,8 @@ do-install:
 		| (cd ${PREFIX}/jdk${JDK_VERSION} && ${TAR} --unlink -x -f -)
 	${MKDIR} ${PREFIX}/share/java/classes
 	${MKDIR} ${PREFIX}/share/doc/java
+
+post-install:
+	${LOCALBASE}/bin/registervm "${PREFIX}/jdk${JDK_VERSION}/bin/java # JDK${JDK_VERSION}"
 
 .include <bsd.port.post.mk>
