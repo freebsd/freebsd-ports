@@ -427,6 +427,7 @@ aterm		ports/x11/aterm
 atitd		ports/games/atitd
 atk		ports/devel/atk
 atlas		ports/devel/atlas
+atlas-devel	ports/math/atlas-devel
 atlast		ports/lang/atlast
 atlc		ports/cad/atlc
 atomix		ports/games/atomix
