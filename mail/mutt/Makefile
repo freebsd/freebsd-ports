@@ -4,7 +4,7 @@
 # Date created:         Thur July 25, 1996
 # Whom:                 David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.55 1999/01/07 18:43:20 obrien Exp $
+# $Id: Makefile,v 1.56 1999/02/12 22:32:37 obrien Exp $
 
 DISTNAME=	mutt-0.95.3i
 PKGNAME=	mutt-0.95.3
@@ -53,6 +53,8 @@ CONFIGURE_ARGS+=	--with-curses=${PREFIX}
 WRKSRC=		${WRKDIR}/${PKGNAME}
 MAN1=		mutt.1 mutt_dotlock.1
 
+post-patch:
+	uudecode -p ${FILESDIR}/ru.gmo.uu > ${WRKSRC}/po/ru.gmo
 
 .if !defined(NOPORTDOCS)
 post-build:
