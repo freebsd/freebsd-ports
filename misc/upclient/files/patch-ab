@@ -1,0 +1,9 @@
+--- upclient.conf.orig	Fri Aug 20 11:22:32 1999
++++ upclient.conf	Fri Aug 20 11:25:12 1999
+@@ -3,5 +3,5 @@
+ HostID <HostID>
+ Login <Loginname>
+ Pass <Password>
+-Interval 60
++Interval 550
+ UptimeServer uptime.hexon.cx
