@@ -28,8 +28,8 @@ MAN7=		pilot-link.7
 
 CFLAGS+=		-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.3
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-perl5=${PERL5} --with-libiconv=${LOCALBASE}
-CONFIGURE_ENV=	LIBS="-lgnugetopt" LDFLAGS="-L${LOCALBASE}/lib"
-MAKE_ARGS=	LIBTOOL=libtool
+CONFIGURE_ARGS+=--with-perl5=${PERL5} --with-libiconv=${LOCALBASE}
+CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
+MAKE_ARGS+=	LIBTOOL=libtool
 
 .include <bsd.port.mk>
