@@ -500,6 +500,8 @@ share/apache21/build/special.mk
 @dirrm %%EXAMPLESDIR%%
 @dirrm share/apache21/build
 @dirrm share/apache21
+%%APR_PORTS%%@dirrm include/apr-1
+%%APR_PORTS%%@dirrm build-1
 @unexec rmdir %D/libexec/apache21 2> /dev/null || true
 @dirrm include/apache21
 @exec mkdir -p %D/etc/apache21/Includes 2> /dev/null || true
