@@ -212,7 +212,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
         <name>mpg123</name>
-        <range><le>0.59s</le></range>
+        <range><le>0.59r</le></range>
       </package>
     </affects>
     <description>
