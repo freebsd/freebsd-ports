@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mp3blaster
-PORTVERSION=	3.0p4
+PORTVERSION=	3.0p5
 CATEGORIES=	audio
 MASTER_SITES=	ftp://mud.stack.nl/pub/mp3blaster/ \
 		http://mp3blaster.linuxave.net/src/
