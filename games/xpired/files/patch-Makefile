@@ -1,0 +1,13 @@
+--- Makefile.orig	Mon Aug  5 14:41:31 2002
++++ Makefile	Mon Aug  5 14:43:38 2002
+@@ -1,8 +1,6 @@
+-PREFIX=/usr/local
+ SHARE_PREFIX=$(PREFIX)/share/xpired
+-CFLAGS=`sdl-config --cflags` -DUNIX -DPREFIX=\"$(PREFIX)\" -DSHARE_PREFIX=\"$(SHARE_PREFIX)\"
+-LDFLAGS=`sdl-config --libs` -lSDL -lSDL_mixer -lSDL_image -lSDL_gfx
+-CC=gcc
++CFLAGS=`sdl11-config --cflags` -DUNIX -DPREFIX=\"$(PREFIX)\" -DSHARE_PREFIX=\"$(SHARE_PREFIX)\"
++LDFLAGS=`sdl11-config --libs` -lSDL_mixer -lSDL_image -lSDL_gfx
+ 
+ BINARIES = xpired xpiredit
+ 
