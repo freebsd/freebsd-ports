@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	roottail
-PORTVERSION=	0.0.6
+PORTVERSION=	0.0.9
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.goof.com/pcg/marc/data/ \
-		ftp://www.goof.com/pub/pcg/marc/
-DISTNAME=	root-tail-0.0.6
+		ftp://ftp.goof.com/pub/pcg/marc/
+DISTNAME=	root-tail-${PORTVERSION}
 
 MAINTAINER=	jedgar@FreeBSD.org
 

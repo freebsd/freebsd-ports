@@ -1,0 +1,11 @@
+--- root-tail.man.orig	Tue Nov 14 14:27:07 2000
++++ root-tail.man	Tue Nov 14 14:27:15 2000
+@@ -3,7 +3,7 @@
+ .SH NAME
+ root-tail \- print text directly to X11 root window
+ .SH SYNOPSIS
+-.B /usr/X11R6/bin/root-tail
++.B root-tail
+ .RB [ \-g \|| -geometry
+ .IR GEOMETRY ]
+ .RB [ \-font \|| -font
