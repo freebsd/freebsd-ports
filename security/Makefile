@@ -99,6 +99,7 @@
     SUBDIR += gag
     SUBDIR += gcipher
     SUBDIR += gnome-ssh-askpass
+    SUBDIR += gnomekeyring
     SUBDIR += gnupg
     SUBDIR += gnupg-idea
     SUBDIR += gnutls
