@@ -15,6 +15,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby extension to use libbz2
 
+BROKEN=		Broken pkg-plist
+
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 USE_RUBY_RDOC=		yes
