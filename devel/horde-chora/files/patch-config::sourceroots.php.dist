@@ -1,0 +1,45 @@
+--- config/sourceroots.php.dist.orig	Wed Aug 27 16:08:21 2003
++++ config/sourceroots.php.dist	Thu Dec  2 23:30:08 2004
+@@ -11,7 +11,7 @@
+  * 'name'     [M] : Short name for the repository.
+  *
+  * 'location' [M] : Location on the filesystem of the repository.
+- * 
++ *
+  * 'title'    [M] : Long title for the repository.
+  *
+  * 'type'     [M] : Indicates software used, either 'cvs' or 'svn'.
+@@ -31,6 +31,17 @@
+  *                  whose contents should be protected and not displayed.
+  */
+ 
++$sourceroots['myprojects'] = array(
++    'name' => 'Here',
++    'location' => '%%CVSROOT%%',
++    'title' => 'To be configured in %%CONFDIR%%/sourceroots.php',
++    'intro' => 'longIntro.txt',
++    'default' => true,
++    'type' => 'cvs',
++);
++
++/*
++
+ $sourceroots['php4'] = array(
+     'name' => 'PHP4',
+     'location' => '/home/cvs/php4',
+@@ -64,9 +75,11 @@
+     'type' => 'svn',
+ );
+ 
+-$sourceroots['openbsd'] = array(
+-    'name' => 'OpenBSD',
+-    'location' => '/home/cvs/openbsd',
+-    'title' => 'OpenBSD CVS Repository',
++$sourceroots['freebsd'] = array(
++    'name' => 'FreeBSD',
++    'location' => '/home/cvs/freebsd',
++    'title' => 'FreeBSD CVS Repository',
+     'type' => 'cvs',
+ );
++
++*/
