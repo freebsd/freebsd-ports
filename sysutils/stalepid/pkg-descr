@@ -1,0 +1,18 @@
+The stalepid utility was developed to facilitate the startup of servers
+that write their process ID to a file and refuse to start if that file
+exists (e.g. when the process was last terminated by an unclean shutdown,
+or simply killed without given the chance to clean up the process ID
+file).  The stalepid utility is used to check for and possibly remove
+those stale process ID files.  Upon its invocation, stalepid checks for
+the following conditions:
+-   the file specified by the pidfile argument exists;
+-   it contains a single line, and the line contains a single number;
+-   there is no process with the process ID specified in the file, or if
+    there is one, it is not named processname.
+
+If all those conditions are met, the stalepid utility will remove the
+file specified by the pidfile argument, thus allowing the next invocation
+of the server to proceed normally.
+
+Author:		Peter Pentchev <roam@ringlet.net>
+WWW:		http://devel.ringlet.net/sysutils/stalepid/
