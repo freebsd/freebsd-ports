@@ -159,6 +159,7 @@
     SUBDIR += sgmltools
     SUBDIR += sgmltools-lite
     SUBDIR += sgrep
+    SUBDIR += shot2txt
     SUBDIR += smartdoc
     SUBDIR += sp
     SUBDIR += tclExpat
