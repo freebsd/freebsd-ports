@@ -47,9 +47,12 @@ my @pkgdb_args = ("/usr/local/sbin/pkgdb", "-F");
 my ($opt_comments, $opt_listonly, $opt_excludelist, $opt_recursive, $opt_pkgdb);
 my $exclpattern;
 
+#
 # Read the exclude list if the file exists
+# Parameter: path of the exclude file
+#
 sub get_excl_pattern {
-	my $excl_file = $_[0];
+	my $excl_file = shift;
 	my $excl_pattern;
 	# Does the exclude file exist?
 	if (($excl_file) && (-f $excl_file) && (-T $excl_file)) {
@@ -62,11 +65,12 @@ sub get_excl_pattern {
 			# Ignore comments and empty lines, add others as regular expressions
 			unless (($exclude =~ m/(^ *#)|(^ *$)/)) {
 				$exclude = "^" . $exclude . ".*";
-				@excludes = (@excludes, $exclude);
+				push @excludes, $exclude;
 			}
 		}
 		close(EXCLFILE);
-		$excl_pattern = join("|", @excludes);
+		# Provide a dummy exclusion pattern if @excludes is empty
+		$excl_pattern = scalar(@excludes) ? join("|", @excludes) : " ";
 	} else {
 		# Dummy exclusion pattern -> doesn't exclude anything
 		$excl_pattern = " ";
@@ -74,10 +78,14 @@ sub get_excl_pattern {
 	return $excl_pattern;
 }
 
+#
 # Get a hash (name => comment) of all leaves
+# Parameters: - path to package database
+#             - pattern of packages to exclude
+#
 sub get_leaves {
-	my $db_dir = $_[0];
-	my $excl_pattern = $_[1];
+	my $db_dir = shift;
+	my $excl_pattern = shift;
 	my %leaves;
 	opendir(DBDIR, $db_dir)
 		or die "Can't open package db directory $db_dir!";
@@ -151,6 +159,7 @@ if ($opt_listonly) {
 	my %leavestokeep;
 	my %leavestocut;
 	my @cutleaves;
+	my ($nleaves, $i);
 	# Loop while the user wants to
 	my $again = "y";
 	ROUND: while($again eq "y") {
@@ -163,15 +172,19 @@ if ($opt_listonly) {
 			}
 		}
 		# Any leaves left?
-		if (keys(%leaves) == 0) {
+		$nleaves = keys %leaves;
+		if ($nleaves == 0) {
 			# If not, don't go on, there's nothing left to do.
 			print "Didn't find any new leaves, exiting.\n";
 			last ROUND;
 		}
 		# Always start with an empty list of leaves to cut
 		%leavestocut = ();
+		# Initialize counter for progress status
+		$i = 1;
 
 		LEAVESLOOP: foreach my $leaf (sort keys %leaves) {
+			print "Package $i of $nleaves:\n";
 			print "$leaf - $leaves{$leaf}\n";
 			print "$leaf - [keep]/(d)elete/(f)lush marked pkgs/(a)bort? ";
 			# Get first character of input, without leading whitespace
@@ -192,6 +205,7 @@ if ($opt_listonly) {
 				print "** Keeping $leaf.\n\n";
 				$leavestokeep{$leaf} = 1;
 			}
+			$i++;
 		} # LEAVESLOOP
 
 		# Initialize 'progress meter'
@@ -211,7 +225,7 @@ if ($opt_listonly) {
 				print STDERR "\n\n$0: pkg_deinstall returned $status - exiting, fix this first.\n\n";
 				last ROUND;
 			}
-			@cutleaves = (@cutleaves, $leaf);
+			push @cutleaves, $leaf;
 		}
 
 		# Run 'pkgdb -F' if requested
