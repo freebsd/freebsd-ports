@@ -1,5 +1,5 @@
---- set_soenv.1.orig	Tue Nov 20 18:26:33 2001
-+++ set_soenv.1	Tue Mar  5 00:12:09 2002
+--- set_soenv.1.orig	Thu Mar  7 16:23:57 2002
++++ set_soenv.1	Thu Mar  7 16:24:14 2002
 @@ -954,7 +954,7 @@
                          $ps.$USR.$LIB.
                          $ps.$USR_LOCAL.$BIN;
@@ -32,3 +32,33 @@
  elsif ($platform eq "$Winnt")
  {  $COMPATH_ROOT      = $COMPATH;
     $COMPATH_ROOT      =~ s/\/vc98$//;
+@@ -1067,25 +1083,19 @@
+ {
+ $SOLARINC            .= $I.$USR.$INCLUDE.
+ 			$STLPORT_stlport;
+-if ($platform eq "$Linux")
+-{
+-# This simply adds an include path, so even cases that break the FHS work
+-$SOLARINC            .= $STLPORT_inc_stlport;
+-}
++
+ if ($platform eq "$Solaris")
+ {
+ $SOLARINC            .= '/SC5 ';
+-}
+-# Platform dependent include path at the top of this list of include paths
+-if ($platform eq "$Solaris") 
+-{  $SOLARINC         .= $I.'$COMPATH'.$ds."include";
++$SOLARINC         .= $I.'$COMPATH'.$ds."include";
+ }
+ 
+-if ($platform eq "$Linux")
++if (($platform eq "$Linux") or ($platform eq "$FreeBSD"))
+ {
+ # This simply adds an include path, so even cases that break the FHS work
+ $SOLARINC            .= $STLPORT_inc_stlport;
+ }
++
+ $SOLARINC            .= $I.'$SOLARENV'.$INC.$ds."Xp31".
+                         $I.'$JAVA_HOME'.$INCLUDE;
+ 
