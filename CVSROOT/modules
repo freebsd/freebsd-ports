@@ -853,6 +853,7 @@ cjk-lyx		ports/print/cjk-lyx
 ckdist		src/usr.sbin/ckdist
 cksfv		ports/security/cksfv
 cksum		src/usr.bin/cksum
+clamav		ports/security/clamav
 clanbomber	ports/games/clanbomber
 clanlib		ports/devel/clanlib
 claraocr	ports/graphics/claraocr
