@@ -1,14 +1,17 @@
---- hzconvert/Makefile.orig	Wed Jan  5 14:33:47 2000
-+++ hzconvert/Makefile	Wed Jan  5 14:34:35 2000
-@@ -2,10 +2,10 @@
- CFLAGS+=-O2
- #OBJS=b2g.o b2u.o g2u.o hztogb.o b2g_tables.o b2u_tables.o g2u_tables.o io.o unicode.o
- OBJS=b2g.o b2u.o g2u.o hz2gb.o b2g_tables.o b2u_tables.o g2u_tables.o io.o unicode.o
-+all:libhzconvert.a
+--- hzconvert/Makefile.orig	Wed Jan  5 13:12:31 2000
++++ hzconvert/Makefile	Sun Mar 12 18:39:46 2000
+@@ -1,12 +1,12 @@
+ CC=gcc -I../include
+ CFLAGS=-O2
+ OBJS=b2g.o b2u.o g2u.o hz2gb.o b2g_tables.o b2u_tables.o g2u_tables.o io.o unicode.o judge.o
++all:libhzconvert
  %.o:%c
  	$(CC) $(CFLAGS) -c $<
  
--all:libhzconvert.a
- libhzconvert.a:$(OBJS)
- 	ar rs  libhzconvert.a $(OBJS)
+-all:libhzconvert
+ libhzconvert:$(OBJS)
+ 	ar rs  ../lib/libhz.a $(OBJS)
+-	gcc -shared  -o ../lib/libhz.so  $(OBJS) -ldl
++	gcc -shared  -o ../lib/libhz.so  $(OBJS)
  clean:
+ 	rm -f *.o *~ ../lib/libhz.a ../lib/libhz.so
