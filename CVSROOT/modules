@@ -1679,6 +1679,7 @@ freeciv-gtk	ports/games/freeciv-gtk
 freedialog	ports/misc/freedialog
 freefem		ports/math/freefem
 freefonts	ports/x11-fonts/freefonts
+freeglut	ports/x11-toolkits/freeglut
 freegrep	ports/textproc/freegrep
 freelibiberty	ports/devel/freelibiberty
 freenet		ports/net/freenet
