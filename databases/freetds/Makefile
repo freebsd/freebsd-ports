@@ -6,6 +6,7 @@
 
 PORTNAME=	freetds
 PORTVERSION=	0.60
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	ALPHA/freetds
@@ -46,7 +47,8 @@ post-extract:
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|/freetds.conf|/freetds.conf.dist|g ; \
+		's|<malloc.h>|<stdlib.h>| ; \
+		 s|/freetds.conf|/freetds.conf.dist|g ; \
 		 s| common.h||g'
 
 post-install:
