@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		tet
-PORTVERSION=		3.3d
+PORTVERSION=		3.3f
 CATEGORIES=		misc
 MASTER_SITES=		ftp://ftp.rdg.opengroup.org/pub/TET/TET3/ \
 			${MASTER_SITE_LOCAL}
