@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	LPRng
-PORTVERSION=	3.7.5
+PORTVERSION=	3.7.6
 CATEGORIES=	sysutils print
 MASTER_SITES=	ftp://ftp.lprng.com/pub/%SUBDIR%/ \
 		ftp://ftp.astart.com/pub/%SUBDIR%/ \
@@ -38,9 +38,13 @@ MAN5=		lpd.conf.5 lpd.perms.5 printcap.5
 MAN8=		checkpc.8 lpc.8 lpd.8
 MANCOMPRESSED=	yes
 
+DOC_FILES=	CHANGES LPRng-HOWTO.* *.jpg LISA98.ppt
+
 post-install:
-	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 0555 ${DOCSDIR}
-	${INSTALL} -c -o ${SHAREOWN} -g ${SHAREGRP} -m 0444 ${WRKSRC}/HOWTO/* ${DOCSDIR}
+	@${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 0555 ${DOCSDIR}
+.for file in ${DOC_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/HOWTO/${file} ${DOCSDIR}
+.endfor
 	@${CAT} ${PKGMESSAGE} | ${SED} -e "s|@@PREFIX@@|${PREFIX}|g"
 
 .include <bsd.port.mk>

@@ -9,7 +9,6 @@ etc/lpd.conf.sample
 @unexec if [ -f %D/etc/lpd.perms ]; then cmp -s %D/etc/lpd.perms.sample %D/etc/lpd.perms && rm -f %D/etc/lpd.perms || echo "If you are permanently removing this port, you should do a ``rm ${PKG_PREFIX}/etc/lpd.perms`` to remove config files left." | fmt ; fi
 etc/lpd.perms.sample
 etc/lprng.sh
-etc/printcap.sample
 etc/rc.d/lprng.sh
 libexec/filters/lpbanner
 libexec/filters/lpf
@@ -28,18 +27,5 @@ share/doc/LPRng/LPRng-HOWTO.sgml
 share/doc/LPRng/LPRng.jpg
 share/doc/LPRng/LPRngT-L.jpg
 share/doc/LPRng/LPRngT-S.jpg
-share/doc/LPRng/Makefile
-share/doc/LPRng/Makefile.in
-share/doc/LPRng/REDIRECT.LPRng.html
-share/doc/LPRng/collateindex.pl
-share/doc/LPRng/dict
-share/doc/LPRng/genindex.sgml
-share/doc/LPRng/license.enc
-share/doc/LPRng/license.txt
-share/doc/LPRng/rfc1179.txt
-share/doc/LPRng/updateheader
-share/doc/LPRng/updatesgmlmirrors
-share/doc/LPRng/updateversion
-share/doc/LPRng/y2k.txt
 @dirrm libexec/filters
 @dirrm share/doc/LPRng
