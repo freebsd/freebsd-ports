@@ -1,16 +1,20 @@
-Orion is a J2EE (Java 2 Enterprise Edition) compliant Application Server. It
-supports all major standards including HTTP/1.1, JSP 1.1, EJB 1.1, Servlet
-2.2, JNDI 1.2 and others. It also offers clustering support and some unique
-auto-deployment features.
+Orion, a J2EE (Java 2 Enterprise Edition) compliant
+Application Server (stable version). It supports all major
+standards including HTTP 1.1, JSP 1.1, EJB 1.1, Servlet 2.2,
+JNDI 1.2 and others. It also offers clustering support and
+some unique auto-deployment features.
 
-This version is only for development use or for non-commercial
-use. You need to purchase a license from http://www.orionserver.com/
-if you would like to use this server commercially.
+This version is only for development use or for
+non-commercial use.  You need to purchase a license from
+http://www.orionserver.com/ if you would like to use this
+server commercially.
 
-This port will install an 'orionctl' script in ${PREFIX}/bin that can be used
-to start and stop the server. A man page for this script is installed.
+This port will install an 'orionctl' script in ${PREFIX}/bin
+that can be used to start and stop the server. A man page
+for this script is installed.
 
-A script in ${PREFIX}/etc/rc.d/orion.sh typically causes Orion to be started
-at boot time. This script is in fact a symlink to the orionctl script.
+A script in ${PREFIX}/etc/rc.d typically causes Orion to be
+started at boot time. This script is in fact a symlink to
+the orionctl script.
 
 WWW: http://www.orionserver.com/
