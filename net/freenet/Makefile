@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	freenet
-PORTVERSION=	0.5.2.1.5074
+PORTVERSION=	0.5.2.1.5076
 CATEGORIES=	net java security
 MASTER_SITES=	http://freenetproject.org/snapshots/
-DISTNAME=	${PORTNAME}-20040313
+DISTNAME=	${PORTNAME}-20040318
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lioux@FreeBSD.org
