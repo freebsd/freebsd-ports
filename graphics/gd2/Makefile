@@ -33,7 +33,7 @@ LATEST_LINK=	gd2
 .ifndef WITHOUT_X11
 USE_XPM=	yes
 .else
-LIB_DEPENDS+=	xpm:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS+=	Xpm:${PORTSDIR}/graphics/xpm
 .endif
 .else
 MAKE_ARGS+=	-DWITHOUT_XPM
