@@ -8,6 +8,7 @@
 PORTNAME=	ftrack
 PORTVERSION=	3.1
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://ufm.kgb.ru/files/
 DISTNAME=	ftr${PORTVERSION:S/.//g}sr
@@ -32,8 +33,7 @@ pre-patch:
 	${REINPLACE_CMD} -e "s@-I../../hpp -I../../.. -O3@-Ihpp -I${LOCALBASE}/include ${CFLAGS}@g; \
 			s@../../src/@src/@g; s@g\+\+@${CC}@g; \
 			s@-L../../../smapi -lsmapibsd@-L${LOCALBASE}/lib -lsmapi@g" ${WRKSRC}/MakeFiles/FreeBSD/Makefile
-	${REINPLACE_CMD} -e "s@PREFIXGOESHERE@${PREFIX}@g" ${FILESDIR}/patch-hpp::constant.hpp
-	${RM} ${FILESDIR}/patch-hpp::constant.hpp.bak
+	${REINPLACE_CMD} -e "s@ftrack.cfg@${PREFIX}/etc/ftrack/ftrack.cfg@g" ${WRKSRC}/hpp/constant.hpp
 .for DIR in MakeFiles/FreeBSD src hpp doc/eng samples/tpl
 	for FILE in ${WRKSRC}/${DIR}/*; do \
 		${TR} -d '\015' < $${FILE} > $${FILE}.new; \
