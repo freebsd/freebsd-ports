@@ -1,6 +1,6 @@
---- xlock/XLock.ad.orig	Fri Oct 29 15:16:40 1999
-+++ xlock/XLock.ad	Tue Nov  2 09:59:11 1999
-@@ -54,10 +54,10 @@
+--- xlock/XLock.ad.orig	Fri Dec 14 17:51:13 2001
++++ xlock/XLock.ad	Mon Apr 15 16:08:11 2002
+@@ -60,10 +60,10 @@
  
  ! For marquee & nose modes
  !XLock.program: fortune -o
@@ -13,3 +13,12 @@
  !XLock.program: /usr/games/fortune
  !XLock.program: finger
  !XLock.messagesfile: fortune.dat
+@@ -75,7 +75,7 @@
+ ! For modes with images
+ !XLock.*.bitmap: bitmaps/m-xlock.xbm
+ !XLock.*.bitmap: pixmaps/m-xlock.xpm
+-XLock.*.bitmap: /usr/share/pixmaps/redhat/redhat-292.xbm
++!XLock.*.bitmap: /usr/share/pixmaps/redhat/redhat-292.xbm
+ 
+ ! For mailbox check application
+ !XLock.mailCmd: /usr/ucb/mail -e
