@@ -354,7 +354,6 @@
     SUBDIR += libPropList
     SUBDIR += libU77
     SUBDIR += libafterbase
-    SUBDIR += libargparse
     SUBDIR += libassa
     SUBDIR += libassetml
     SUBDIR += libast
