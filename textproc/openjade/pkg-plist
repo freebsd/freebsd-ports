@@ -140,13 +140,13 @@ include/sp/sptchar.h
 include/sp/types.h
 include/sp/xnew.h
 lib/libgrove.a
-lib/libgrove.so.1.4
+@comment lib/libgrove.so.1.4
 lib/libspgrove.a
-lib/libspgrove.so.1.4
+@comment lib/libspgrove.so.1.4
 lib/libstyle.a
-lib/libstyle.so.1.4
+@comment lib/libstyle.so.1.4
 lib/libsp.a
-lib/libsp.so.1.4
+@comment lib/libsp.so.1.4
 share/doc/jade/TeX.htm
 share/doc/jade/archform.htm
 share/doc/jade/build.htm
@@ -176,7 +176,7 @@ share/sgml/jade/demoMaster.tex
 share/sgml/jade/dsssl.dtd
 share/sgml/jade/fot.dtd
 share/sgml/jade/style-sheet.dtd
-@exec /sbin/ldconfig -m %D/lib
+@comment @exec /sbin/ldconfig -m %D/lib
 @dirrm include/sp
 @dirrm share/doc/jade
 @dirrm share/sgml/jade
