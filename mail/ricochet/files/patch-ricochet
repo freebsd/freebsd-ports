@@ -1,12 +1,46 @@
---- ricochet.orig	Fri Feb  9 03:23:19 2001
-+++ ricochet	Fri Sep  7 09:03:59 2001
-@@ -574,7 +574,8 @@
+--- ricochet.orig	Wed Mar  6 06:10:54 2002
++++ ricochet	Wed Mar  6 06:12:13 2002
+@@ -233,7 +233,15 @@
+         unless ($hdata eq '') {
+             $hdata =~ s/\n*$//; 
+             $self->debug (1,"o [$_] -- $hdata"); 
+-            my $host = _host ($hdata); my ($NS, $MX); 
++	    my $host = _host ($hdata);
++	    if ($host =~ /^(.*\.)?hotmail\.(msn\.)?com$/i) {
++		my $ip = $header->get ('X-Originating-IP');
++		if ($ip eq '') {
++		    $self->debug (2,"- FAKE hotmail.com, NO X-Originating-IP.\n");
++		    goto EXTFAKE;
++		}
++	    }
++	    my ($NS, $MX);
+             if ((_nslookup ($host) && ($NS = 1)) || (_mxlookup ($host) && ($MX = 1))) { 
+                 $self->debug (2,"+ $host EXISTS.\n") if $NS; 
+                 $self->debug (2,"+ $host HAS A MX RECORD.\n") if $MX; 
+@@ -244,6 +252,7 @@
+                 }  
+             } else { $self->debug (2,"- POSSIBLY FAKED HEADER. $host DOESN'T EXIST.\n") } 
+         }
++EXTFAKE:
+     } @{$self->{EXTRA_HEADERS}}; 
  
- sub initialize { 
-     my $self = shift; 
--    my $rc = "$ENV{RICOCHET}" || "$ENV{HOME}/.ricochet"; $rc .= "/ricochetrc"; 
-+    my $rc = "$ENV{RICOCHET}" || -d "$ENV{HOME}/.ricochet" ? "$ENV{HOME}/.ricochet" : "%%PREFIX%%/share/ricochet";
-+    $rc .= "/ricochetrc"; 
-     Carp::croak "** Ricochet configuration file $rc doesn't exist. Aborting.\n" unless -e $rc; 
-     open (RC, $rc); 
+     while ($match == 0) {
+@@ -406,6 +415,18 @@
+     my @transmit_hosts = $by =~ /($HOSTRE)/gs; 
+ 
+     my @ips = $by =~ /($IPRE)/gs; 
++
++    grep {
++	if (/^(.*\.)?hotmail\.(msn\.)?com$/i) {
++	    my $header = $self->{MAIL}->head;
++	    my $ip = $header->get ('X-Originating-IP');
++	    if ($ip eq '') {
++		$self->debug (2,"- FAKE hotmail.com, NO X-Originating-IP.\n");
++		return undef;
++	    }
++	}
++    } (@transmit_hosts, @orig_hosts);
++
      grep { 
+         if (_nslookup ($_)) { 
+             $auth = 1;

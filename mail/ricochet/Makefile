@@ -7,7 +7,7 @@
 
 PORTNAME=	ricochet
 PORTVERSION=	0.97
-PORTREVISION=	3
+PORTREVISION=   4
 CATEGORIES=	mail
 MASTER_SITES=	http://vipul.net/perl/sources/spamcontrol/ricochet/
 
