@@ -1,6 +1,13 @@
---- Makefile.in.orig	Tue Dec  9 16:18:33 1997
-+++ Makefile.in	Sat Dec 13 11:19:12 1997
-@@ -131,8 +131,8 @@
+--- Makefile.in.orig	Tue Feb 23 10:43:15 1999
++++ Makefile.in	Sun Aug 13 21:28:59 2000
+@@ -125,14 +125,14 @@
+ # Modes for directories, executables and data files created by the
+ # install process.  Default to group-writable directories but
+ # user-only-writable for executables and data files.
+-DIRMODE=	775
++DIRMODE=	755
+ EXEMODE=	755
+ FILEMODE=	644
  
  # Portable install script (configure doesn't always guess right)
  INSTALL=	@srcdir@/install-sh -c
@@ -9,5 +16,5 @@
 +INSTALL_PROGRAM=${BSD_INSTALL_SCRIPT}
 +INSTALL_DATA=	${BSD_INSTALL_DATA}
  
- # --with-PACKAGE options for configure script
- # e.g. --with-readline --with-svr5 --with-solaris --with-thread
+ # Use this to make a link between python$(VERSION) and python in $(BINDIR)
+ LN=@LN@
