@@ -6,8 +6,8 @@
  IMAGE = -lSDL_image
 -MIXER = -lSDL_mixer
 -SMPEG = -lsmpeg
-+MIXER = -lSDL_mixer -lgcc_r
-+SMPEG = -lsmpeg -lgcc_r
++MIXER = -lSDL_mixer
++SMPEG = -lsmpeg
  #--EndConfig
  
  

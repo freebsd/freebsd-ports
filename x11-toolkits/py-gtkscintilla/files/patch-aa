@@ -20,7 +20,7 @@ $FreeBSD$
 -CFLAGS = `gtk-config --cflags` -I$(PYTHON_PREFIX)/include/python1.5
 +GTK_LDFLAGS != $(GTK_CONFIG) --libs
 +GTK_CFLAGS != $(GTK_CONFIG) --cflags
-+LDFLAGS = -pthread -shared $(GTK_LDFLAGS) -lgtkscintilla -lgcc_r
++LDFLAGS = -pthread -shared $(GTK_LDFLAGS) -lgtkscintilla
 +CFLAGS = -D_THREAD_SAFE $(GTK_CFLAGS) -I$(PYTHON_INCLUDEDIR) -I${X11BASE}/include/scintilla
  
  all: _gtkscintillamodule.so
