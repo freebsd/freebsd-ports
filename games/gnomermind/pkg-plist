@@ -1,12 +1,11 @@
 bin/gnomermind
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/HACKING
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 share/gnome/apps/Games/gnomermind.desktop
-share/gnome/gnomermind/doc/AUTHORS
-share/gnome/gnomermind/doc/COPYING
-share/gnome/gnomermind/doc/ChangeLog
-share/gnome/gnomermind/doc/HACKING
-share/gnome/gnomermind/doc/NEWS
-share/gnome/gnomermind/doc/README
-share/gnome/gnomermind/doc/TODO
 share/gnome/gnomermind/themes/Classic/ABOUT
 share/gnome/gnomermind/themes/Classic/b.png
 share/gnome/gnomermind/themes/Classic/bl.png
@@ -202,5 +201,5 @@ share/locale/zh_TW/LC_MESSAGES/gnomermind.mo
 @dirrm share/gnome/gnomermind/themes/Pingus
 @dirrm share/gnome/gnomermind/themes/Classic
 @dirrm share/gnome/gnomermind/themes
-@dirrm share/gnome/gnomermind/doc
 @dirrm share/gnome/gnomermind
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
