@@ -7,6 +7,7 @@
 
 PORTNAME=	nicotine
 PORTVERSION=	1.0.4.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://nicotine.thegraveyard.org/
 
@@ -22,7 +23,7 @@ USE_PYDISTUTILS=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(${PYTHON_SITELIBDIR}/ogg/vorbis.so) || defined(WITH_VORBIS)
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ogg/vorbis.so:${PORTSDIR}/audio/py-vorbis
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/ogg/vorbis.so:${PORTSDIR}/audio/py-vorbis
 .else
 pre-everything::
 	@${ECHO_MSG} ""
