@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gkrellm
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://web.wt.net/~billw/gkrellm/ \
 		${MASTER_SITE_LOCAL}
@@ -45,7 +45,7 @@ BINMODE=	4111
 BINMODE=	2111
 .endif
 
-MAKE_ENV+=	enable_nls=1 LOCALEDIR=${PREFIX}/share/locale
+MAKE_ENV+=	LOCALEDIR=${PREFIX}/share/locale
 CFLAGS+=	-DSYSTEM_THEMES_DIR='\"${PREFIX}/share/gkrellm/themes\"' \
 		-DSYSTEM_PLUGINS_DIR='\"${PREFIX}/libexec/gkrellm/plugins\"'
 
