@@ -11823,6 +11823,7 @@ xgame		ports/games/xgame
 xgammon		ports/games/xgammon
 xgas		ports/misc/xgas
 xgfe		ports/math/xgfe
+xglk		ports/games/xglk
 xglobe		ports/astro/xglobe
 xglurbules	ports/graphics/xglurbules
 xgobi		ports/math/xgobi
