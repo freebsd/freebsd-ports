@@ -48,6 +48,12 @@ STATIC=shared
 INSTALLS_SHLIB=yes
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${MACHINE_ARCH} == "alpha"
+CFLAGS+=	-O0
+.endif
+
 pre-fetch:
 .if exists(${X11BASE}/lib/libqt2.so.3)
 .if !defined(WANT_STATIC)
@@ -124,4 +130,4 @@ post-install:
 .endif
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
