@@ -3,7 +3,7 @@
 # Date created:		23.Feb.1996
 # Whom:			sanpei@yy.cs.keio.ac.jp
 #
-# $Id: Makefile,v 1.2 1997/09/14 21:34:42 max Exp $
+# $Id: Makefile,v 1.3 1998/05/13 03:33:42 itojun Exp $
 #
 
 DISTNAME=	iv-3.1
@@ -61,10 +61,10 @@ pre-patch:
 	${PATCH} ${PATCH_DIST_ARGS} < ${WRKDIR}/diff-2.0gamma
 
 post-install:
-	@${INSTALL_DATA} ${WRKDIR}/idraw-3_1j.ad ${PREFIX}/interviews/lib/all/app-defaults/idraw 
+	@${INSTALL_DATA} ${WRKDIR}/idraw-3_1j.ad ${PREFIX}/interviews/lib/all/app-defaults/idraw
 # need these in ${PREFIX}/lib so that ldconfig can find them
-	@ln -fs ../interviews/lib/libIV.so.3.1 ${PREFIX}/lib
-	@ln -fs ../interviews/lib/libUnidraw.so.3.1 ${PREFIX}/lib
+	@${LN} -fs ../interviews/lib/libIV.so.3.1 ${PREFIX}/lib
+	@${LN} -fs ../interviews/lib/libUnidraw.so.3.1 ${PREFIX}/lib
 	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
