@@ -1,0 +1,7 @@
+wmlmmon v0.50
+
+This program displays information gathered from LM78/79 chipsets
+onboard many motherboards onto a [standard] WindowMaker dock app.
+Displayed values include fan speeds, motherboard temperature,
+and various voltages.  Currently, this is only supported in
+FreeBSD 4.0.
