@@ -4,7 +4,6 @@ bin/razor-client
 bin/razor-report
 bin/razor-revoke
 %%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Client/Agent.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Client/Agent.pm.orig
 %%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Client/Config.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Client/Core.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Client/Engine.pm
