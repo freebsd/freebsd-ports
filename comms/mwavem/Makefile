@@ -36,9 +36,11 @@ pre-install:
 	${MKDIR} ${DATADIR}
 
 post-install:
+.if !defined(PACKAGE_BUILDING)
 	@${RM} -f /dev/mwave
 	@${ECHO} "Creating /dev/mwave"
 	mknod /dev/mwave c 96 0
+.endif
 	@${ECHO} "Installing ${PREFIX}/etc/rc.d/${STARTUP} startup file."
 	@${INSTALL_SCRIPT} ${FILESDIR}/${STARTUP} ${PREFIX}/etc/rc.d/
 	@${ECHO} "******************************************************************************"; \
