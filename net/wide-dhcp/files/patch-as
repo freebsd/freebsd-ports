@@ -1,5 +1,5 @@
 --- client/dhcpc.c.orig	Fri Jan  1 05:20:08 1999
-+++ client/dhcpc.c	Sun Feb  7 11:17:59 1999
++++ client/dhcpc.c	Thu Jan 20 13:21:05 2000
 @@ -88,6 +88,7 @@
  struct dhcp_reqspec reqspec;
  struct if_info intface;
@@ -41,7 +41,204 @@
    if (ntohs(rcv.ip->ip_len) < MINDHCPLEN + UDPHL + IPHL)
      return(0);
    if (ntohs(rcv.udp->uh_ulen) < MINDHCPLEN + UDPHL)
-@@ -1789,7 +1798,11 @@
+@@ -398,11 +407,14 @@
+ 
+   bzero(&tmp_reqspec, sizeof(tmp_reqspec));
+   bzero(errmsg, sizeof(errmsg));
+-  bzero(&newsigmask, sizeof(newsigmask));
+-  bzero(&oldsigmask, sizeof(oldsigmask));
+ 
+-  newsigmask = sigmask(SIGUSR1) | sigmask(SIGALRM);
+-  oldsigmask = sigblock(newsigmask); /* begin critical */
++  sigemptyset(&newsigmask);
++
++  sigprocmask(0, NULL, &oldsigmask);
++  memcpy(&newsigmask, &oldsigmask, sizeof(sigset_t));
++  sigaddset(&newsigmask, SIGUSR1);
++  sigaddset(&newsigmask, SIGALRM);
++  sigprocmask(SIG_SETMASK, &newsigmask, NULL);
+ 
+   switch (curr_state) {
+   case BOUND:
+@@ -423,7 +435,7 @@
+   default:
+     break;
+   }
+-  sigsetmask(oldsigmask); /* end critical */
++  sigprocmask(SIG_SETMASK, &oldsigmask, NULL); /* end critical */
+ 
+   unlink(pid_filename);
+ 
+@@ -1157,8 +1169,8 @@
+   struct dhcp_param tmpparam;
+ 
+   bzero(errmsg, sizeof(errmsg));
+-  bzero(&newsigmask, sizeof(newsigmask));
+-  bzero(&oldsigmask, sizeof(oldsigmask));
++  sigemptyset(&newsigmask);
++  sigemptyset(&oldsigmask);
+   bzero(&tmpparam, sizeof(tmpparam));
+ 
+   if (prev_state != RENEWING) {
+@@ -1247,12 +1259,15 @@
+ 		   errmsg);
+ 	  }
+ 
+-	  newsigmask = sigmask(SIGUSR1) | sigmask(SIGUSR2);
+-	  oldsigmask = sigblock(newsigmask); /* begin critical */
++	  sigprocmask(0, NULL, &oldsigmask); /* begin critical */
++	  memcpy(&newsigmask, &oldsigmask, sizeof(sigset_t));
++	  sigaddset(&newsigmask, SIGUSR1);
++	  sigaddset(&newsigmask, SIGUSR2);
++	  sigprocmask(SIG_SETMASK, &newsigmask, NULL);
+ 	  clean_param(param_list);
+ 	  free(param_list);
+ 	  param_list = NULL;
+-	  sigsetmask(oldsigmask); /* end critical */
++	  sigprocmask(SIG_SETMASK, &oldsigmask, NULL); /* end critical */
+ 
+ 	  return(INIT);               /* Next state is INIT */
+ 	}
+@@ -1260,13 +1275,16 @@
+ 		 dhcp_msgtoparam(rcv.dhcp, DHCPLEN(rcv.udp),
+ 				 &tmpparam) == OK) {
+ 
+-	  newsigmask = sigmask(SIGUSR1) | sigmask(SIGUSR2);
+-	  oldsigmask = sigblock(newsigmask); /* begin critical */
++	  sigprocmask(0, NULL, &oldsigmask);
++	  memcpy(&newsigmask, &oldsigmask, sizeof(sigset_t));
++	  sigaddset(&newsigmask, SIGUSR1);
++	  sigaddset(&newsigmask, SIGUSR2);
++	  sigprocmask(SIG_SETMASK, &newsigmask, NULL); /* begin critical */
+ 	  merge_param(param_list, &tmpparam);
+ 	  *param_list = tmpparam;
+ 	  param_list->lease_origin = send_epoch;
+ 	  param_list->next = NULL;
+-	  sigsetmask(oldsigmask); /* end critical */
++	  sigprocmask(SIG_SETMASK, &oldsigmask, NULL); /* end critical */
+ 
+ 	  syslog(LOG_INFO, "Got DHCPACK (IP = %s, duration = %d secs)",
+ 		 inet_ntoa(param_list->yiaddr), param_list->lease_duration);
+@@ -1316,8 +1334,8 @@
+   struct dhcp_param tmpparam;
+ 
+   bzero(errmsg, sizeof(errmsg));
+-  bzero(&newsigmask, sizeof(newsigmask));
+-  bzero(&oldsigmask, sizeof(oldsigmask));
++  sigemptyset(&newsigmask);
++  sigemptyset(&oldsigmask);
+   bzero(&tmpparam, sizeof(tmpparam));
+ 
+   if (time(&curr_epoch) == -1) {
+@@ -1386,12 +1404,15 @@
+ 		   errmsg);
+ 	  }
+ 
+-	  newsigmask = sigmask(SIGUSR1) | sigmask(SIGUSR2);
+-	  oldsigmask = sigblock(newsigmask); /* begin critical */
++	  sigprocmask(0, NULL, &oldsigmask);
++	  memcpy(&newsigmask, &oldsigmask, sizeof(sigset_t));
++	  sigaddset(&newsigmask, SIGUSR1);
++	  sigaddset(&newsigmask, SIGUSR2);
++	  sigprocmask(SIG_SETMASK, &newsigmask, NULL); /* begin critical */
+ 	  clean_param(param_list);
+ 	  free(param_list);
+ 	  param_list = NULL;
+-	  sigsetmask(oldsigmask); /* end critical */
++	  sigprocmask(SIG_SETMASK, &oldsigmask, NULL); /* end critical */
+ 
+ 	  return(INIT);               /* Next state is INIT */
+ 	}
+@@ -1399,13 +1420,16 @@
+ 		 dhcp_msgtoparam(rcv.dhcp, DHCPLEN(rcv.udp),
+ 				 &tmpparam) == OK) {
+ 
+-	  newsigmask = sigmask(SIGUSR1) | sigmask(SIGUSR2);
+-	  oldsigmask = sigblock(newsigmask); /* begin critical */
++	  sigprocmask(0, NULL, &oldsigmask);
++	  memcpy(&newsigmask, &oldsigmask, sizeof(sigset_t));
++	  sigaddset(&newsigmask, SIGUSR1);
++	  sigaddset(&newsigmask, SIGUSR2);
++	  sigprocmask(SIG_SETMASK, &newsigmask, NULL); /* begin critical */
+ 	  merge_param(param_list, &tmpparam);
+ 	  *param_list = tmpparam;
+ 	  param_list->lease_origin = send_epoch;
+ 	  param_list->next = NULL;
+-	  sigsetmask(oldsigmask); /* end critical */
++	  sigprocmask(SIG_SETMASK, &oldsigmask, NULL); /* end critical */
+ 
+ 	  syslog(LOG_INFO, "Got DHCPACK (IP = %s, duration = %d secs)",
+ 		 inet_ntoa(param_list->yiaddr), param_list->lease_duration);
+@@ -1577,8 +1601,8 @@
+   struct dhcp_reqspec tmp_reqspec;
+ 
+   bzero(errmsg, sizeof(errmsg));
+-  bzero(&newsigmask, sizeof(newsigmask));
+-  bzero(&oldsigmask, sizeof(oldsigmask));
++  sigemptyset(&newsigmask);
++  sigemptyset(&oldsigmask);
+   bzero(&tmpparam, sizeof(tmpparam));
+   bzero(&tmp_reqspec, sizeof(tmp_reqspec));
+ 
+@@ -1666,12 +1690,15 @@
+ 		   errmsg);
+ 	  }
+ 
+-	  newsigmask = sigmask(SIGUSR1) | sigmask(SIGUSR2);
+-	  oldsigmask = sigblock(newsigmask); /* begin critical */
++	  sigprocmask(0, NULL, &oldsigmask);
++	  memcpy(&newsigmask, &oldsigmask, sizeof(sigset_t));
++	  sigaddset(&newsigmask, SIGUSR1);
++	  sigaddset(&newsigmask, SIGUSR2);
++	  sigprocmask(SIG_SETMASK, &newsigmask, NULL); /* begin critical */
+ 	  clean_param(param_list);
+ 	  free(param_list);
+ 	  param_list = NULL;
+-	  sigsetmask(oldsigmask); /* end critical */
++	  sigprocmask(SIG_SETMASK, &oldsigmask, NULL); /* end critical */
+ 
+ 	  return(INIT);               /* Next state is INIT */
+ 	}
+@@ -1679,13 +1706,16 @@
+ 		 dhcp_msgtoparam(rcv.dhcp, DHCPLEN(rcv.udp),
+ 				 &tmpparam) == OK) {
+ 	  if ((arpans = arp_check(&tmpparam.yiaddr, &arpif)) == OK) {
+-	    newsigmask = sigmask(SIGUSR1) | sigmask(SIGUSR2);
+-	    oldsigmask = sigblock(newsigmask); /* begin critical */
++	    sigprocmask(0, NULL, &oldsigmask);
++	    memcpy(&newsigmask, &oldsigmask, sizeof(sigset_t));
++	    sigaddset(&newsigmask, SIGUSR1);
++	    sigaddset(&newsigmask, SIGUSR2);
++	    sigprocmask(SIG_SETMASK, &newsigmask, NULL); /* begin critical */
+ 	    merge_param(param_list, &tmpparam);
+ 	    *param_list = tmpparam;
+ 	    param_list->lease_origin = init_epoch;
+ 	    param_list->next = NULL;
+-	    sigsetmask(oldsigmask); /* end critical */
++	    sigprocmask(SIG_SETMASK, &oldsigmask, NULL); /* end critical */
+ 
+ 	    syslog(LOG_INFO, "Got DHCPACK (IP = %s, duration = %d secs)",
+ 		   inet_ntoa(param_list->yiaddr), param_list->lease_duration);
+@@ -1697,12 +1727,15 @@
+ 	    set_declinfo(&tmp_reqspec, param_list, errmsg, arpans);
+ 	    dhcp_decline(&tmp_reqspec);
+ 
+-	    newsigmask = sigmask(SIGUSR1) | sigmask(SIGUSR2);
+-	    oldsigmask = sigblock(newsigmask); /* begin critical */
++	    sigprocmask(0, NULL, &oldsigmask);
++	    memcpy(&newsigmask, &oldsigmask, sizeof(sigset_t));
++	    sigaddset(&newsigmask, SIGUSR1);
++	    sigaddset(&newsigmask, SIGUSR2);
++	    sigprocmask(SIG_SETMASK, &newsigmask, NULL); /* begin critical */
+ 	    clean_param(param_list);
+ 	    free(param_list);
+ 	    param_list = NULL;
+-	    sigsetmask(oldsigmask); /* end critical */
++	    sigprocmask(SIG_SETMASK, &oldsigmask, NULL); /* end critical */
+ 
+ 	    syslog(LOG_NOTICE,
+ 		   "Got non-preferable DHCPACK, so go into INIT state");
+@@ -1789,7 +1822,11 @@
  void
  usage()
  {
@@ -54,7 +251,7 @@
    exit(1);
  }
  
-@@ -1809,26 +1822,39 @@
+@@ -1809,26 +1846,39 @@
  {
    int debug = 0;
    int n = 0;
@@ -108,7 +305,7 @@
    strcpy(ifinfo.name, argv[0]);
  
    /*
-@@ -1859,6 +1885,11 @@
+@@ -1859,6 +1909,11 @@
    reqspec.reqlist.list[reqspec.reqlist.len++] = SUBNET_MASK;
    reqspec.reqlist.list[reqspec.reqlist.len++] = ROUTER;
    reqspec.reqlist.list[reqspec.reqlist.len++] = BRDCAST_ADDR;
