@@ -4,6 +4,7 @@ include/systime.h
 include/uint16.h
 include/uint32.h
 include/uint64.h
+include/uintnn.h
 include/adt/common.h
 include/adt/ghash.h
 include/adt/gqueue.h
@@ -23,7 +24,8 @@ include/crc/crc64.h
 include/crypto/md5.h
 include/crypto/sha1.h
 include/crypto/sha256.h
-include/crypto/sha512a.h
+include/crypto/sha384.h
+include/crypto/sha512.h
 @dirrm include/crypto
 include/cvm/client.h
 include/cvm/errors.h
