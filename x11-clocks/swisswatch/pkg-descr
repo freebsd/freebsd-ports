@@ -9,4 +9,4 @@ swisswatch*customization:                 -color
 and exec `xrdb $HOME/.Xdefaults'.
 
 - Yoshiro MIHIRA
-(sanpei@yy.cs.keio.ac.jp)
+(sanpei@sanpei.org)
