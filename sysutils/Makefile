@@ -213,7 +213,6 @@
     SUBDIR += timelimit
     SUBDIR += tmpwatch
     SUBDIR += tree
-    SUBDIR += truncate
     SUBDIR += ttyload
     SUBDIR += tua
     SUBDIR += ucspi-tcp
