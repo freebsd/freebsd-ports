@@ -78,7 +78,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>cyrus-imapd</name>
-	<range><le>2.1.16</le></range>
+	<range><lt>2.1.17</lt></range>
 	<range><ge>2.2.*</ge><le>2.2.8</le></range>
       </package>
     </affects>
@@ -111,7 +111,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>cyrus-imapd</name>
-	<range><le>2.1.16</le></range>
+	<range><lt>2.1.17</lt></range>
 	<range><ge>2.2.*</ge><le>2.2.6</le></range>
       </package>
     </affects>
