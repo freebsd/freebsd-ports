@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- scripts/gnump3d-top.in.orig	Wed Aug 14 18:45:33 2002
++++ scripts/gnump3d-top.in	Wed Aug 14 18:46:04 2002
+@@ -16,7 +16,7 @@
+ 
+ #  The default logfile which we read if there is no
+ # --config options supplied on the command line.
+-my $DEFAULT_CONFIG = "/etc/mp3d/mp3d.conf";
++my $DEFAULT_CONFIG = "@prefix@/etc/gnump3d/gnump3d.conf";
+ 
+ #
+ #  Options set by the command line arguments.

@@ -1,6 +1,5 @@
 @comment $FreeBSD$
 bin/gnump3d
-bin/gnump3d-config
 bin/gnump3d-top
 etc/gnump3d/default/error.html
 etc/gnump3d/default/index.html
