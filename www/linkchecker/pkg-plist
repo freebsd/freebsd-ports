@@ -159,9 +159,9 @@ share/locale/nl/LC_MESSAGES/linkcheck.mo
 %%PYTHON_SITELIBDIR%%/linkcheck/test_support.py
 %%PYTHON_SITELIBDIR%%/linkcheck/test_support.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/test_support.pyo
-%%PYTHON_SITELIBDIR%%/linkcheck/linkcheck/url.py
-%%PYTHON_SITELIBDIR%%/linkcheck/linkcheck/url.pyc
-%%PYTHON_SITELIBDIR%%/linkcheck/linkcheck/url.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/url.py
+%%PYTHON_SITELIBDIR%%/linkcheck/url.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/url.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/util1.py
 %%PYTHON_SITELIBDIR%%/linkcheck/util1.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/util1.pyo
