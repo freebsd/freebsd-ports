@@ -4755,6 +4755,7 @@ pdq		ports/print/pdq
 pdumpfs		ports/sysutils/pdumpfs
 peacock		ports/www/peacock
 pedisassem	ports/devel/pedisassem
+pen		ports/net/pen
 pengpong	ports/games/pengpong
 penguin-command	ports/games/penguin-command
 pentix		ports/games/pentix
