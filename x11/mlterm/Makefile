@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mlterm
-PORTVERSION=	2.9.0
+PORTVERSION=	2.9.1
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +19,8 @@ USE_GNOME=	gtk20 lthack
 USE_INC_LIBTOOL_VER=13
 USE_REINPLACE=	yes
 USE_PERL5_BUILD=yes
-CONFIGURE_ARGS=	--with-imagelib=gdk-pixbuf --enable-utmp
+CONFIGURE_ARGS=	--with-imagelib=gdk-pixbuf --enable-utmp \
+		--with-tools="mlclient,mlconfig,mlterm-menu,mlcc,w3mmlconfig"
 CONFIGURE_ENV=	LIBS=-L${LOCALBASE}/lib CFLAGS=-I${LOCALBASE}/include
 
 OPTIONS=	FRIBIDI	"Use Fribidi for BiDi rendering" off \
@@ -77,15 +78,15 @@ CONFIGURE_ARGS+=	--enable-anti-alias
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 .endif
 
+pre-configure:
+	${REINPLACE_CMD} -e "s,%%PERL%%,${PERL}," \
+		${WRKSRC}/tool/w3mmlconfig/Makefile.in
+
 post-configure:
-	${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX}," \
-		-e "s,%%PERL%%,${PERL}," \
-		${WRKSRC}/tool/w3mmlconfig/Makefile
 	${CP} ${WRKSRC}/libtool ${WRKSRC}/kiklib/
 	${CP} ${WRKSRC}/libtool ${WRKSRC}/mkf/
-
-post-build:
-	(cd ${WRKSRC}/tool/w3mmlconfig; ${MAKE})
+	${REINPLACE_CMD} -e "s,@CGI_BIN@,${PREFIX}/libexec/w3mmlconfig," \
+		${WRKSRC}/tool/w3mmlconfig/mlconfig.cgi
 
 post-install:
 	(cd ${WRKSRC}/tool/w3mmlconfig; ${MAKE} install)

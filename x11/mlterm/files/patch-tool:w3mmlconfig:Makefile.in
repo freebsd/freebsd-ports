@@ -1,0 +1,11 @@
+--- tool/w3mmlconfig/Makefile.in.orig	Wed Dec  1 01:53:11 2004
++++ tool/w3mmlconfig/Makefile.in	Wed Dec  1 01:53:30 2004
+@@ -16,7 +16,7 @@
+ DATA_TARGETS	= mlconfig-data.pl
+ DATA		= mlconfig-data section/* key/*
+ 
+-PERL		= /usr/bin/perl
++PERL		= %%PERL%%
+ 
+ MKDIR		= mkdir -p
+ INSTALL		= @INSTALL@
