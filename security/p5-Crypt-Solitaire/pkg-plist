@@ -1,0 +1,8 @@
+lib/perl5/site_perl/%%PERL_VER%%/Crypt/Solitaire.pm
+lib/perl5/site_perl/%%PERL_VER%%/auto/Crypt/Solitaire/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/Solitaire/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/Solitaire
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Crypt/Solitaire
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/Crypt 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Crypt 2>/dev/null || true

@@ -1,0 +1,22 @@
+Solitaire is a top-notch pencil-and-paper encryption system developed
+by Bruce Schneier. Here is the description in Schneier's own words:
+
+"Solitaire gets its security from the inherent randomness in a
+shuffled deck of cards. By manipulating this deck, a communicant
+can create a string of "random" letters that he then combines with
+his message. Of course Solitaire can be simulated on a computer,
+but it is designed to be implemented by hand.
+
+"Solitaire may be low-tech, but its security is intended to be
+high-tech. I designed Solitaire to be secure even against the most
+well-funded military adversaries with the biggest computers and the
+smartest cryptanalysts. Of course, there is no guarantee that someone
+won't find a clever attack against Solitaire, but the algorithm is
+certainly better than any other pencil-and-paper cipher I've ever
+seen."
+
+Simple system, easy to use, and relatively fast.
+
+WWW: http://search.cpan.org/search?dist=Crypt-Solitaire
+
+Seamus Venasse <svenasse@polaris.ca>
