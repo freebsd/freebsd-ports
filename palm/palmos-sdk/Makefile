@@ -6,24 +6,24 @@
 #
 
 PORTNAME=	palmos-sdk
-PORTVERSION=	3.5
-PORTREVISION=	1
+PORTVERSION=	4.0
 CATEGORIES=	palm
-MASTER_SITES=	
-DISTFILES=	sdk35.tar.gz sdk35-update1.tar.gz
+MASTER_SITES=
+DISTFILES=	sdk40-core.tar.gz sdk40upd1.tar.gz
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
 RESTRICTED=	License agreement is required.
-WRKSRC=		${WRKDIR}/Palm\ OS\ 3.5\ Support
+WRKSRC=		${WRKDIR}/Palm\ OS\ Support
+UPDSRC=		${WRKDIR}/PalmOS-4.0-SDK-Update-1
 NO_BUILD=	YES
 
-INCDIR=		${PREFIX}/palmdev/sdk-3.5/include
-LIBDIR=		${PREFIX}/palmdev/sdk-3.5/lib
+INCDIR=		${PREFIX}/palmdev/sdk-4.0/include
+LIBDIR=		${PREFIX}/palmdev/sdk-4.0/lib
 
 .include <bsd.port.pre.mk>
 
-.if !exists(${DISTDIR}/sdk35.tar.gz) || !exists(${DISTDIR}/sdk35-update1.tar.gz)
+.if !exists(${DISTDIR}/sdk40-core.tar.gz) || !exists(${DISTDIR}/sdk40upd1.tar.gz)
 IGNORE='You must manually fetch tarball from http://www.palmos.com/dev/tech/tools/ and place it in ${DISTDIR} then run make again.'
 .endif
 
@@ -31,6 +31,8 @@ do-install:
 	${MKDIR} ${INCDIR} ${LIBDIR}
 	${CP} -Rp ${WRKSRC}/Incs/* ${INCDIR}
 	${CP} -Rp ${WRKSRC}/GCC\ Libraries/* ${LIBDIR}
+	${CP} -Rp ${UPDSRC}/PalmOS-Unix/PalmOS-Support/include/* ${INCDIR}
+	${CP} -Rp ${UPDSRC}/PalmOS-Unix/PalmOS-Support/lib/* ${LIBDIR}
 	${CHOWN} -R root:wheel ${INCDIR} ${LIBDIR}
 
 .include <bsd.port.post.mk>
