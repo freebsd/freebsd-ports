@@ -157,7 +157,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/md5
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/pty
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/readline
-%%PORTDOCS%%@unexec rmdir %D/%%RUBY_DOCDIR%% 2>/dev/null || true
+@unexec rmdir %D/%%RUBY_DOCDIR%% 2>/dev/null || true
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/README
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/biorhythm.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/cal.rb
@@ -216,4 +216,4 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pty/shl.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/curses
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/pty
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%
+@dirrm %%RUBY_EXAMPLESDIR%%
