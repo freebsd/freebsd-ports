@@ -15,7 +15,7 @@ DISTNAME=	pl-${PORTVERSION}
 MAINTAINER=	max@FreeBSD.org
 COMMENT=	Edinburgh-style Prolog compiler
 
-CONFLICTS=	ploticus-* slffea-*
+CONFLICTS=	ploticus-* slffea-* TenDRA-*
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--host=${MACHINE_ARCH}-${OPSYS:L} --disable-mt
