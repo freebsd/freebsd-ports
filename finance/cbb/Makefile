@@ -15,9 +15,9 @@ MAINTAINER=	kline@thought.org
 
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
-NO_BUILD=       yes
+NO_BUILD=	yes
 USE_PERL5=	yes
 MAKE_ENV=	PERL5=${PERL5}
-GNU_CONFIGURE=  yes
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

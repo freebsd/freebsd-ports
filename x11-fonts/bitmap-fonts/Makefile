@@ -19,12 +19,12 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86
 # distfile version
 BITMAP_FONTS_VER=	1.0
 BITMAP_FONTS_PREVER=	pre
-BITMAP_FONTS=		etl6x12-bitmap etl7x14-bitmap etl8x16-bitmap \
-			etl10x20-bitmap etl12x24-bitmap
-FONTSDIR=		lib/X11/fonts/local
-PKGINSTALL=     	${WRKDIR}/INSTALL
-PKGDEINSTALL=   	${WRKDIR}/DEINSTALL
-WRKSRC=			${WRKDIR}
+BITMAP_FONTS=	etl6x12-bitmap etl7x14-bitmap etl8x16-bitmap \
+		etl10x20-bitmap etl12x24-bitmap
+FONTSDIR=	lib/X11/fonts/local
+PKGINSTALL=	${WRKDIR}/INSTALL
+PKGDEINSTALL=	${WRKDIR}/DEINSTALL
+WRKSRC=		${WRKDIR}
 
 USE_X_PREFIX=	yes
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	ipfm
 PORTVERSION=	0.10.4
-CATEGORIES=     net
+CATEGORIES=	net
 MASTER_SITES=	http://www.via.ecp.fr/~tibob/ipfm/archive/
 EXTRACT_SUFX=	.tgz
 

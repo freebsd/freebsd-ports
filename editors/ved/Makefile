@@ -5,16 +5,16 @@
 # $FreeBSD$
 #
 
-PORTNAME=       	ved
-PORTVERSION=		1.5
-CATEGORIES=     	editors
-MASTER_SITES=   	ftp://ftp.fokus.gmd.de/pub/unix/ved/
+PORTNAME=	ved
+PORTVERSION=	1.5
+CATEGORIES=	editors
+MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/ved/
 
-MAINTAINER=		greid@ukug.uk.freebsd.org
+MAINTAINER=	greid@ukug.uk.freebsd.org
 
-USE_GMAKE=		yes
+USE_GMAKE=	yes
 
-MAN1=			ved.1
+MAN1=		ved.1
 
 post-patch:
 .for F in ved.h ved.1

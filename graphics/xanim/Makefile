@@ -5,12 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=       xanim
+PORTNAME=	xanim
 PORTVERSION=	2.80.2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://xanim.va.pubnix.com/ \
 		ftp://xanim.va.pubnix.com/dlls/
-DISTNAME=       xanim2801
+DISTNAME=	xanim2801
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${EXTRA_FILES}
 
 PATCH_SITES=	http://virtual-estates.net/port-stuff/
@@ -18,7 +18,7 @@ PATCHFILES=	xanim-2801-to-2802-patch.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
-EXTRA_FILES=    vid_cvid_2.1_freebsdELFx86.tgz \
+EXTRA_FILES=	vid_cvid_2.1_freebsdELFx86.tgz \
 		vid_cyuv_1.0_freebsdELFx86.tgz \
 		vid_h261_1.0_freebsdELFx86.tgz \
 		vid_h263_1.0_freebsdELFx86.tgz \

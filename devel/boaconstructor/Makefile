@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=       boaconstructor
+PORTNAME=	boaconstructor
 PORTVERSION=	0.0.4
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}

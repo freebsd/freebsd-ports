@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=       xkobo
+PORTNAME=	xkobo
 PORTVERSION=	1.11
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}  \

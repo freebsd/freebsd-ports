@@ -1,4 +1,3 @@
-# ex:ts=8
 # Ports collection makefile for:  ratfor
 # Date created:			  Sat Aug 26, 2000
 # Whom:				  David O'Brien (obrien@NUXI.com)
@@ -15,7 +14,7 @@ MASTER_SITES=	ftp://sepftp.stanford.edu/pub/sep-distr/  \
 MASTER_SITE_SUBDIR=	obrien
 DISTFILES=	ratfor.shar.2 local.ratfor77.shar
 
-MAINTAINER=     obrien@FreeBSD.org
+MAINTAINER=	obrien@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${CAT}

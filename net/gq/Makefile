@@ -7,7 +7,7 @@
 
 PORTNAME=	gq
 PORTVERSION=	0.3.0
-CATEGORIES=     net
+CATEGORIES=	net
 MASTER_SITES=	http://biot.com/gq/download/
 
 MAINTAINER=	roman@xpert.com

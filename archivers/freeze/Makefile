@@ -5,13 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=       freeze
+PORTNAME=	freeze
 PORTVERSION=	2.5
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.freesoftware.com/pub/unixfreeware/archive/ \
 		ftp://ftp.warwick.ac.uk/pub/compression/
 
-MAINTAINER=     lukin@okbmei.msk.su
+MAINTAINER=	lukin@okbmei.msk.su
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=	prog

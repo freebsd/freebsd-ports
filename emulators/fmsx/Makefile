@@ -9,15 +9,15 @@ PORTNAME=	fmsx
 PORTVERSION=	2.2
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.komkon.org/fms/fMSX/
-DISTNAME=       fMSX22
-EXTRACT_SUFX=   .tar.Z
+DISTNAME=	fMSX22
+EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	dk@farm.org
 
 USE_XLIB=	yes
 NO_PACKAGE=	${RESTRICTED}
 RESTRICTED=	Legal status of distributed ROM images unclear
-WRKSRC=         ${WRKDIR}/MSX
+WRKSRC=		${WRKDIR}/MSX
 
 do-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/fmsx ${PREFIX}/bin

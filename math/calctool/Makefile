@@ -5,16 +5,16 @@
 # $FreeBSD$
 #
 
-PORTNAME=       calctool
+PORTNAME=	calctool
 PORTVERSION=	2.4.13
-CATEGORIES=     math
-MASTER_SITES=   ${MASTER_SITE_LOCAL}
-DISTNAME=       calctool-2.4pl13
+CATEGORIES=	math
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+DISTNAME=	calctool-2.4pl13
 MASTER_SITE_SUBDIR=	nsayer
 
-MAINTAINER=     nsayer@freebsd.org
+MAINTAINER=	nsayer@freebsd.org
 
-USE_X_PREFIX=		yes
+USE_X_PREFIX=	yes
 MAN1=		calctool.1
 
 .include <bsd.port.mk>

@@ -12,13 +12,13 @@ DISTNAME=	gateway-${PORTVERSION}
 
 MAINTAINER=	midom@dammit.lt
 
-LIB_DEPENDS=    xml:${PORTSDIR}/textproc/libxml
+LIB_DEPENDS=	xml:${PORTSDIR}/textproc/libxml
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-WRKSRC=         ${WRKDIR}/gateway-0.10.2/
+WRKSRC=		${WRKDIR}/gateway-0.10.2/
 CFLAGS+=	-pthread
-CONFIGURE_ARGS += --with-malloc=native
+CONFIGURE_ARGS+=	--with-malloc=native
 
 do-install:
 .if !defined(NOPORTDOCS)

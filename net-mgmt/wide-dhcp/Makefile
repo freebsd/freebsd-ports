@@ -1,4 +1,3 @@
-# ex:ts=8
 # Ports collection makefile for:  dhcp
 # Date created:			  21 November 1995
 # Whom:				  Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
@@ -8,8 +7,8 @@
 
 PORTNAME=	wide-dhcp
 PORTVERSION=	1.4.0.6
-CATEGORIES=     net
-MASTER_SITES=   ftp://sh.wide.ad.jp/WIDE/free-ware/dhcp/ \
+CATEGORIES=	net
+MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/dhcp/ \
 		ftp://ftp.netlab.is.tsukuba.ac.jp/pub/network/wide-dhcp/ \
 		ftp://ftp.st.ryukoku.ac.jp/pub/network/dhcp/wide/ \
 		ftp://ftp.sage-au.org.au/pub/network/boot/wide-dhcp/

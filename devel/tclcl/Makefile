@@ -13,7 +13,7 @@ DISTFILES=	tclcl-src-${PORTVERSION}.tar.gz
 
 MAINTAINER=	obonilla@fisicc-ufm.edu
 
-LIB_DEPENDS=    tk82.1:${PORTSDIR}/x11-toolkits/tk82 \
+LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82 \
 		otcl.1:${PORTSDIR}/lang/otcl
 
 GNU_CONFIGURE=	yes

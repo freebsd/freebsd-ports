@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.gnucash.org/pub/gnucash/sources/stable/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gnucash
 
-MAINTAINER=     ade@FreeBSD.org
+MAINTAINER=	ade@FreeBSD.org
 
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/SWIG \
 		g-wrap:${PORTSDIR}/devel/g-wrap \

@@ -30,7 +30,7 @@ SCRIPTS_ENV+=		PREFIX=${PREFIX} \
 			WRKDIR=${WRKDIR} \
 			DISTDIR=${DISTDIR}
 ALL_TARGET=		FreeBSDPortsBuild
-INSTALL_TARGET= FreeBSDPortsInstall FreeBSDPortsInstall.man installXlib
+INSTALL_TARGET=	FreeBSDPortsInstall FreeBSDPortsInstall.man installXlib
 MANCOMPRESSED=	yes
 MAN1=		libxrx.1
 MAN3=		Xaw.3
@@ -39,9 +39,9 @@ MAN3=		Xaw.3
 
 # BuildXF86DRI is false for FreeBSD < 4.1
 .if ${OSVERSION} < 410000
-PLIST_SUB+=     OSMESA:="@comment "
+PLIST_SUB+=	OSMESA:="@comment "
 .else
-PLIST_SUB+=     OSMESA:=""
+PLIST_SUB+=	OSMESA:=""
 .endif
 
 .if defined(XDM_DES)

@@ -5,19 +5,19 @@
 # $FreeBSD$
 #
 
-PORTNAME=      web2ldap
-PORTVERSION=   0.8.1
-CATEGORIES=    www
-MASTER_SITES=  http://www.web2ldap.de/download/ \
-               http://www.tricknolgy.org/ports/
+PORTNAME=	web2ldap
+PORTVERSION=	0.8.1
+CATEGORIES=	www
+MASTER_SITES=	http://www.web2ldap.de/download/ \
+		http://www.tricknolgy.org/ports/
 
-MAINTAINER=    oddbjorn@tricknology.org
+MAINTAINER=	oddbjorn@tricknology.org
 
-RUN_DEPENDS=   ${PYTHON_SITELIBDIR}/_ldapmodule.so:${PORTSDIR}/net/ldapmodule
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_ldapmodule.so:${PORTSDIR}/net/ldapmodule
 
-NO_BUILD=      yes
-USE_PYTHON=    yes
-PYTHON_VERSION= python2.0
+NO_BUILD=	yes
+USE_PYTHON=	yes
+PYTHON_VERSION=	python2.0
 
 do-install:
 	@${MKDIR} ${PREFIX}/${PORTNAME}

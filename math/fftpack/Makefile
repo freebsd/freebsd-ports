@@ -14,11 +14,11 @@ EXTRACT_SUFX=	.tar
 
 MAINTAINER=	giffunip@asme.org
 
-LIB_DEPENDS=    linpack.1:${PORTSDIR}/math/linpack
+LIB_DEPENDS=	linpack.1:${PORTSDIR}/math/linpack
 
 # ${DISTFILES} is automatically created from the directory contents
 IGNOREFILES=	${DISTFILES}
-EXTRACT_CMD=		${TAR}
+EXTRACT_CMD=	${TAR}
 EXTRACT_BEFORE_ARGS=	-xf
 EXTRACT_AFTER_ARGS=	# empty
 

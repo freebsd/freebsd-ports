@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=       tksol
+PORTNAME=	tksol
 PORTVERSION=	1.0
 CATEGORIES=	games tk82
 MASTER_SITES=	ftp://ftp.cs.umd.edu/pub/misc_software/tksol/

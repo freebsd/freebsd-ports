@@ -10,9 +10,9 @@ PORTVERSION=	1.32
 CATEGORIES=	astro
 MASTER_SITES=	http://www.wsrcc.com/wolfgang/ftp/
 
-MAINTAINER=     dbaker@FreeBSD.org
+MAINTAINER=	dbaker@FreeBSD.org
 
-GNU_CONFIGURE=	YES
+GNU_CONFIGURE=	yes
 
 MAN1=	dgpsip.1
 

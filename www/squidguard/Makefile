@@ -5,16 +5,16 @@
 # $FreeBSD$
 #
 
-PORTNAME=      	squidGuard
-PORTVERSION=   	1.1.4
-CATEGORIES=    	www
-MASTER_SITES=  	http://ftp.ost.eltele.no/pub/www/proxy/squidGuard/ \
+PORTNAME=	squidGuard
+PORTVERSION=	1.1.4
+CATEGORIES=	www
+MASTER_SITES=	http://ftp.ost.eltele.no/pub/www/proxy/squidGuard/ \
 		ftp://ftp.ost.eltele.no/pub/www/proxy/squidGuard/
 
 MAINTAINER=	ports@tyfon.net
 
-BUILD_DEPENDS= 	${LOCALBASE}/lib/libdb2.a:${PORTSDIR}/databases/db
-RUN_DEPENDS=    ${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid23
+BUILD_DEPENDS=	${LOCALBASE}/lib/libdb2.a:${PORTSDIR}/databases/db
+RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid23
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-db-inc=${PREFIX}/include/db2 \

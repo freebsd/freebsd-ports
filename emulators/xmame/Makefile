@@ -14,7 +14,7 @@ MASTER_SITES=	http://x.mame.net/download/ \
 		http://www.ozemail.com.au/~knebauer/xmame/files/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=     c9710216@studentmail.newcastle.edu.au
+MAINTAINER=	c9710216@studentmail.newcastle.edu.au
 
 USE_XPM=	yes
 USE_X_PREFIX=	yes

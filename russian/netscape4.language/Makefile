@@ -6,21 +6,21 @@
 #
 
 PORTNAME=	netscape
-PORTVERSION=    4.7
+PORTVERSION=	4.7
 CATEGORIES=	russian www
-MASTER_SITES=   http://koi8.pp.ru/
-DISTNAME=       v4.7.subject.patch.txt
-EXTRACT_SUFX=   # empty
+MASTER_SITES=	http://koi8.pp.ru/
+DISTNAME=	v4.7.subject.patch.txt
+EXTRACT_SUFX=	# empty
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	ache@FreeBSD.org
 
 RUN_DEPENDS+=	${X11BASE}/lib/X11/nls/ru_SU.KOI8-R:${PORTSDIR}/russian/X.language
-RUN_DEPENDS+=   netscape:${PORTSDIR}/www/netscape47-communicator
+RUN_DEPENDS+=	netscape:${PORTSDIR}/www/netscape47-communicator
 
-NO_BUILD=	YES
-NO_WRKSUBDIR=	YES
-USE_X_PREFIX=	YES
+NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
+USE_X_PREFIX=	yes
 
 APPDEF=		${X11BASE}/lib/X11/app-defaults
 

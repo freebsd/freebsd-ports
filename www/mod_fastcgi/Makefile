@@ -13,8 +13,8 @@ DISTNAME=	mod_fastcgi_${PORTVERSION}
 
 MAINTAINER=	hollywar@mail.holywar.net
 
-BUILD_DEPENDS=  ${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
-RUN_DEPENDS=    ${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
+BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
+RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 
 do-patch:
 	cd ${WRKSRC} ; ${MV} Makefile.tmpl Makefile ;

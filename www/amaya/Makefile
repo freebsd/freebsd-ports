@@ -7,7 +7,7 @@
 
 PORTNAME=	amaya
 PORTVERSION=	4.2.1
-CATEGORIES= 	www
+CATEGORIES=	www
 MASTER_SITES=	http://www.w3.org/Amaya/Distribution/ \
 		ftp://ftp.w3.org/pub/amaya/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
@@ -25,15 +25,15 @@ DICT?=		none
 
 .if ${DICT} != "none"
 .if ${DICT} == "all"
-DISTFILES+=    Dutch.tgz
-DISTFILES+=    English.tgz
-DISTFILES+=    French.tgz
-DISTFILES+=    German.tgz
-DISTFILES+=    Italian.tgz
-DISTFILES+=    Spanish.tgz
-DISTFILES+=    Swedish.tgz
+DISTFILES+=	Dutch.tgz
+DISTFILES+=	English.tgz
+DISTFILES+=	French.tgz
+DISTFILES+=	German.tgz
+DISTFILES+=	Italian.tgz
+DISTFILES+=	Spanish.tgz
+DISTFILES+=	Swedish.tgz
 .else
-DISTFILES+=    ${DICT:S/$/.tgz/g}
+DISTFILES+=	${DICT:S/$/.tgz/g}
 .endif
 .endif
 

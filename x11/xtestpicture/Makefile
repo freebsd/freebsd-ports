@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	xtestpicture
-PORTVERSION= 	1.2
+PORTVERSION=	1.2
 CATEGORIES=	x11
-MASTER_SITES=   ftp://ftp.interface-business.de/pub/outgoing/
+MASTER_SITES=	ftp://ftp.interface-business.de/pub/outgoing/
 
-MAINTAINER=     joerg@FreeBSD.org
+MAINTAINER=	joerg@FreeBSD.org
 
 USE_IMAKE=	yes
 MAN1=		xtestpicture.1

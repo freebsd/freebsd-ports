@@ -7,26 +7,26 @@
 
 PORTNAME=	X11
 PORTVERSION=	3.3
-CATEGORIES=     russian x11
-MASTER_SITES=   http://koi8.pp.ru/dist/ \
+CATEGORIES=	russian x11
+MASTER_SITES=	http://koi8.pp.ru/dist/ \
 		ftp://ftp.kiarchive.ru/pub/misc/fonts/cyrillic/xwindows/
-DISTFILES=      x6rus-2.3.1-bin.tgz
+DISTFILES=	x6rus-2.3.1-bin.tgz
 
 .if defined(NON_FREE_FONTS)
-DISTFILES += Type1.koi8-r.tgz
+DISTFILES+=	Type1.koi8-r.tgz
 .else
-DISTFILES += Type1.koi8-r.free.tgz
+DISTFILES+=	Type1.koi8-r.free.tgz
 .endif
 
 MAINTAINER=	ache@FreeBSD.org
 
-NO_WRKSUBDIR=   YES
-NO_BUILD=       YES
-USE_X_PREFIX=   YES
+NO_WRKSUBDIR=	yes
+NO_BUILD=	yes
+USE_X_PREFIX=	yes
 
-PKGTMP = ${X11BASE}/.Xinstmp
-XLIB = ${X11BASE}/lib/X11
-CYRF = ${XLIB}/fonts/cyrillic
+PKGTMP=		${X11BASE}/.Xinstmp
+XLIB=		${X11BASE}/lib/X11
+CYRF=		${XLIB}/fonts/cyrillic
 
 #Be careful to not delete embedded tab characters
 do-install:

@@ -9,7 +9,7 @@ PORTNAME=	vgb
 PORTVERSION=	20
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.komkon.org/fms/VGB/
-PKGNAMESUFFIX= -bin
+PKGNAMESUFFIX=	-bin
 DISTNAME=	VGB${PORTVERSION}-FreeBSD-80x86-bin
 EXTRACT_SUFX=	.tar.Z
 
@@ -23,9 +23,9 @@ NO_WRKSUBDIR=	no
 INSTALL_DIR=	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP}
 
 .if defined(NOPORTDOCS)
-PLIST_SUB+=     PORTDOCS:="@comment "
+PLIST_SUB+=	PORTDOCS:="@comment "
 .else
-PLIST_SUB+=     PORTDOCS:=
+PLIST_SUB+=	PORTDOCS:=
 .endif # !defined(NOPORTDOCS)
 
 do-install:

@@ -5,16 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=       	zziplib
-PORTVERSION=		0.10.11
-CATEGORIES=     	devel
-MASTER_SITES=   	${MASTER_SITE_SOURCEFORGE}
+PORTNAME=	zziplib
+PORTVERSION=	0.10.11
+CATEGORIES=	devel
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=		greid@ukug.uk.freebsd.org
+MAINTAINER=	greid@ukug.uk.freebsd.org
 
-USE_LIBTOOL=		yes
-
-INSTALLS_SHLIB=		yes
+USE_LIBTOOL=	yes
+INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

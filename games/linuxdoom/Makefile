@@ -18,7 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 BROKEN=		"Linux dynamic linker problems"
 
 BUILD_DEPENDS=	/compat/linux/lib/ld.so:${PORTSDIR}/emulators/linux_base
-RUN_DEPENDS=    /compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
+RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
 
 USE_XLIB=	yes
 NO_WRKSUBDIR=	yes

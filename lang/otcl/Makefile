@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.isi.edu/nsnam/dist/
 
 MAINTAINER=	obonilla@fisicc-ufm.edu
 
-LIB_DEPENDS=    tk82.1:${PORTSDIR}/x11-toolkits/tk82
+LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes

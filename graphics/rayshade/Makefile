@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://graphics.stanford.edu/pub/rayshade/	\
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=     ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	$(LOCALBASE)/lib/librle.a:${PORTSDIR}/graphics/urt
 

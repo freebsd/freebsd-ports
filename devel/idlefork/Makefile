@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=       idle
+PORTNAME=	idle
 PORTVERSION=	0.5
 CATEGORIES=	devel
 MASTER_SITES=	http://www.python.org/idle/

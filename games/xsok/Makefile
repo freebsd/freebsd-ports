@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=       xsok
+PORTNAME=	xsok
 PORTVERSION=	1.02
 CATEGORIES=	games
 MASTER_SITES=	ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin.X11/ \

@@ -7,10 +7,10 @@
 
 PKGNAMESUFFIX=	-ssl
 
-MASTERDIR=     ${.CURDIR}/../../www/w3m
-PKGDIR=        ${.CURDIR}
-PLIST=         ${MASTERDIR}/pkg-plist
+MASTERDIR=	${.CURDIR}/../../www/w3m
+PKGDIR=		${.CURDIR}
+PLIST=		${MASTERDIR}/pkg-plist
 
-USE_OPENSSL=	YES
+USE_OPENSSL=	yes
 
 .include "${MASTERDIR}/Makefile"

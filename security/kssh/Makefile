@@ -18,7 +18,7 @@ BUILD_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
 USE_QT2=	yes
-MOC?=           ${X11BASE}/bin/moc2
+MOC?=		${X11BASE}/bin/moc2
 USE_GMAKE=	yes
 CONFIGURE_ARGS+=--prefix="${PREFIX}" \
 		--with-qt-includes=${X11BASE}/include/qt2 \

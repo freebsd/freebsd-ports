@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=       tripwire
+PORTNAME=	tripwire
 PORTVERSION=	1.3.1
 CATEGORIES=	security
 DISTNAME=	Tripwire-${PORTVERSION}-1

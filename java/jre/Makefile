@@ -42,7 +42,7 @@ STRIPFILES=	bin/i386/green_threads/jre \
 .if ${PORTOBJFORMAT} == "aout"
 DISTFILES=	jre${JRE_VERSION}i_AOUT.V1999-11-9.tar.gz
 .else
-DISTFILES=      jre${JRE_VERSION}i_ELF.V1999-11-9.tar.gz
+DISTFILES=	jre${JRE_VERSION}i_ELF.V1999-11-9.tar.gz
 .endif
 
 pre-extract:

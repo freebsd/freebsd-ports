@@ -13,14 +13,14 @@ MASTER_SITE_SUBDIR=	tiny-cobol
 
 MAINTAINER=	patrick@freebsd.org
 
-LIB_DEPENDS=    db2.0:${PORTSDIR}/databases/db
+LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db
 
-ONLY_FOR_ARCHS= i386
+ONLY_FOR_ARCHS=	i386
 HAS_CONFIGURE=	yes
-USE_GMAKE=      yes
+USE_GMAKE=	yes
 
 CONFIGURE_ARGS=	"--with-readline"
-CONFIGURE_ENV=  LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
 
 pre-build:
 	${CP} ${FILESDIR}/getopt.h ${WRKSRC}

@@ -5,18 +5,18 @@
 # $FreeBSD$
 #
 
-PORTNAME=       	firetalk
-PORTVERSION=		0.0.10
-CATEGORIES=     	net
-MASTER_SITES=   	http://www.penguinhosting.net/~ian/firetalk/
+PORTNAME=	firetalk
+PORTVERSION=	0.0.10
+CATEGORIES=	net
+MASTER_SITES=	http://www.penguinhosting.net/~ian/firetalk/
 
-MAINTAINER=		greid@ukug.uk.freebsd.org
+MAINTAINER=	greid@ukug.uk.freebsd.org
 
-WRKSRC=			${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
-INSTALLS_SHLIB=		yes
+INSTALLS_SHLIB=	yes
 
-FTHEADERS=		firetalk-int.h icqv5.h toc.h firetalk.h irc.h
+FTHEADERS=	firetalk-int.h icqv5.h toc.h firetalk.h irc.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/firetalk ${PREFIX}/bin

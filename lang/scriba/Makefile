@@ -5,20 +5,20 @@
 # $FreeBSD$
 #
 
-PORTNAME=       	scriba
-PORTVERSION=		10b21
-CATEGORIES=     	lang
-MASTER_SITES=   	http://www.scriptbasic.com/
-DISTNAME=		${PORTNAME}-v${PORTVERSION}
+PORTNAME=	scriba
+PORTVERSION=	10b21
+CATEGORIES=	lang
+MASTER_SITES=	http://www.scriptbasic.com/
+DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
-MAINTAINER=		greid@ukug.uk.freebsd.org
+MAINTAINER=	greid@ukug.uk.freebsd.org
 
-PRFXFILES=		variations/standard/basiccmd.c \
-			variations/standalone/basicc.c \
-			configurer.c scriba.c scriba.conf.unix.lsp \
-			testconf.c
+PRFXFILES=	variations/standard/basiccmd.c \
+		variations/standalone/basicc.c \
+		configurer.c scriba.c scriba.conf.unix.lsp \
+		testconf.c
 
-WRKSRC=			${WRKDIR}
+WRKSRC=		${WRKDIR}
 
 post-patch:
 .for P in ${PRFXFILES}

@@ -59,7 +59,7 @@ BROKEN=		"This software absolutely requires Linux procfs support"
 .endif
 
 .if !exists(/sys/Makefile)
-BROKEN=         "Kernel source files required"
+BROKEN=		"Kernel source files required"
 .endif
 
 .if exists(${WRKDIRPREFIX}${.CURDIR}/work/Makefile.inc.net)

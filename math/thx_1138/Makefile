@@ -41,8 +41,8 @@ INSTALL_DATA_DIR=	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755
 # program files
 PROGRAMFILES=		thx-1138/thx-1138
 # documents
-DOCFILES=       LICENSE README.binary
-DOCDIR_PREFIX=  ${PREFIX}/share/doc/${PORTNAME:S,_,-,}
+DOCFILES=	LICENSE README.binary
+DOCDIR_PREFIX=	${PREFIX}/share/doc/${PORTNAME:S,_,-,}
 # additional configuration and header files
 EXTRALIB_PREFIX=	${X11BASE}/lib/jx
 EXTRALIBFILES_MAKE_WRKSRC=	include/make

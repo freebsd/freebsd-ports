@@ -1,4 +1,3 @@
-# ex:ts=8
 # New ports collection makefile for:	tin
 # Date created:		25 July 1996
 # Whom:			obrien@cs.ucdavis.edu
@@ -7,19 +6,19 @@
 #
 
 PORTNAME=	tin
-PORTVERSION=    1.5.6
+PORTVERSION=	1.5.6
 CATEGORIES=	news
-MASTER_SITES=   ftp://ftp.tin.org/pub/news/clients/tin/v1.5/ \
+MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/v1.5/ \
 		ftp://nuxi.ucdavis.edu/pub/tin/v1.5/ \
 		ftp://ftp.nuxi.com/pub/tin/v1.5/
 
 MAINTAINER=	ache@FreeBSD.org
 
-LIB_DEPENDS=    uu.1:${PORTSDIR}/converters/uulib \
+LIB_DEPENDS=	uu.1:${PORTSDIR}/converters/uulib \
 		intl.1:${PORTSDIR}/devel/gettext
 
 USE_BZIP2=	yes
-USE_GMAKE=      yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--with-nntp-default-server=news \
@@ -36,7 +35,7 @@ CONFIGURE_ARGS=	--with-nntp-default-server=news \
 		--with-pgp=${PREFIX}/bin/pgp \
 		--with-ispell=${PREFIX}/bin/ispell \
 		--with-metamail=${PREFIX}/bin/metamail
-CONFIGURE_ENV=  CFLAGS='${CFLAGS} -DNNTP_SERVER_FILE="\"${PREFIX}/etc/nntpserver\""' \
+CONFIGURE_ENV=	CFLAGS='${CFLAGS} -DNNTP_SERVER_FILE="\"${PREFIX}/etc/nntpserver\""' \
 		CPPFLAGS='${CPPFLAGS} -I${LOCALBASE}/include' \
 		LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib'
 MAKEFILE=	makefile

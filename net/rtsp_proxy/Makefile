@@ -10,14 +10,14 @@ PORTVERSION=	1.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.streamingserver.org/priss/
 DISTNAME=	SS1.0.1
-EXTRACT_SUFX=   .tgz
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	richard@homemail.com
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/QTProxy/proxy_unix
 ALL_TARGET=
 
-proxyunix =     ${WRKSRC}/proxy_unix.c
+proxyunix=	${WRKSRC}/proxy_unix.c
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/rtsp_proxy ${PREFIX}/sbin

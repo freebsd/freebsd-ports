@@ -22,12 +22,12 @@ BUILD_DEPENDS=	aclocal:${PORTSDIR}/devel/automake
 USE_QT2=	yes
 USE_GMAKE=	yes
 USE_AUTOCONF=	yes
-USE_NEWGCC=     yes
+USE_NEWGCC=	yes
 USE_OPENSSL=	yes
-USE_PERL5=      yes
+USE_PERL5=	yes
 
 CONFIGURE_ARGS=	--with-qt-includes=${X11BASE}/include/qt2
-CONFIGURE_TARGET= $(ARCH)-unknown-freebsdelf$(OSREL)
+CONFIGURE_TARGET=	$(ARCH)-unknown-freebsdelf$(OSREL)
 
 post-configure:
 	@(cd ${WRKSRC}/plugins/qt-gui-${PORTVERSION} && ${AUTOCONF})

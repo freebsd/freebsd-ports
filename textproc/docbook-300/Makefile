@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	docbook
-PORTVERSION= 	3.0
+PORTVERSION=	3.0
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.ora.com/pub/davenport/
 DISTFILES=	docbk30.tar.Z
@@ -18,9 +18,9 @@ MAINTAINER=	nik@FreeBSD.org
 RUN_DEPENDS=	${ISOCAT}:${PORTSDIR}/textproc/iso8879 \
 		${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog
 
-NO_MTREE=       yes
+NO_MTREE=	yes
 EXTRACT_ONLY=	# empty
-NO_BUILD=       yes
+NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 PLIST_SUB=	DTD_NAME=${PORTNAME} DTD_VERSION=${PORTVERSION} \
 		MKCATALOG=${MKCATALOG}

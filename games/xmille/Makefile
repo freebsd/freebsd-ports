@@ -11,11 +11,11 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}  \
 		ftp://gatekeeper.dec.com/pub/X11-contrib/
 MASTER_SITE_SUBDIR=	games
-DISTFILES=       xmille.tar.Z
+DISTFILES=	xmille.tar.Z
 
 MAINTAINER=	swallace@FreeBSD.org
 
-USE_IMAKE=      yes
+USE_IMAKE=	yes
 NO_WRKSUBDIR=	yes
 MAN1=		xmille.1
 

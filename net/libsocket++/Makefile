@@ -1,4 +1,3 @@
-# ex:ts=8
 # Ports collection makefile for:  libsocket++
 # Date created:			  Sun Jan 19, 1997
 # Whom:				  Narvi <narvi@haldjas.folklore.ee>
@@ -9,7 +8,7 @@
 
 PORTNAME=	libsocket++
 PORTVERSION=	1.10
-CATEGORIES=     net
+CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.umsicht.fhg.de/pub/unix/language/C++/class-libraries/ \
 		ftp://ftp.par.univie.ac.at/pub/unix/c++/  \
 		ftp://jungfrau.ptf.hro.nl/pub/socket/

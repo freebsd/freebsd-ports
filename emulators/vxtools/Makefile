@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.penguin.cz/pub/users/mhi/vxfs/
 
 MAINTAINER=	mhi@penguin.cz
 
-USE_BZIP2=      yes
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 

@@ -18,10 +18,10 @@ RUN_DEPENDS=	/compat/linux/lib/ld-linux.so.2:${PORTSDIR}/emulators/linux_base
 WRKSRC=		${WRKDIR}/adom
 
 ONLY_FOR_ARCHS=	i386
-NO_CDROM=     Copy of CD must be sent to author
+NO_CDROM=	Copy of CD must be sent to author
 
-NO_WRKSUBDIR=   yes
-STRIP=			# empty: do not strip linux binary!
+NO_WRKSUBDIR=	yes
+STRIP=		# empty: do not strip linux binary!
 
 do-patch:
 do-configure:

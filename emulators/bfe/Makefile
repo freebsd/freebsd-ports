@@ -7,7 +7,7 @@
 
 PORTNAME=	bfe
 PORTVERSION=	991102
-CATEGORIES=     emulators
+CATEGORIES=	emulators
 MASTER_SITES=	http://www.qzx.com/bfe/
 EXTRACT_SUFX=	.tgz
 

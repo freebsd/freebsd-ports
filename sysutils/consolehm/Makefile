@@ -9,14 +9,14 @@ PORTNAME=	consolehm
 PORTVERSION=	1.31
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES= 	ftp://muir.yi.org/pub/consolehm/ \
+MASTER_SITES=	ftp://muir.yi.org/pub/consolehm/ \
 		http://www.es.co.nz/~mmuir/
 
-MAINTAINER=    mmuir@cwnet.com
+MAINTAINER=	mmuir@cwnet.com
 
 WRKSRC=		${WRKDIR}/consolehm/consolehm
 
-GNU_CONFIGURE=         yes
+GNU_CONFIGURE=	yes
 MAN8=		chm.8
 MANCOMPRESSED=	yes
 

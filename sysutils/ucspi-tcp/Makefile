@@ -10,7 +10,7 @@ PORTVERSION=	0.88
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://cr.yp.to/ucspi-tcp/
 
-MAINTAINER=     dom@myrddin.demon.co.uk
+MAINTAINER=	dom@myrddin.demon.co.uk
 
 NO_PACKAGE=	"Unsure of djb\'s license"
 

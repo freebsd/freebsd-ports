@@ -7,15 +7,15 @@
 # PLEASE update print/ghostscript5 (there's a symlink that uses a hardwired
 # version number) when updating this port.  Thank you.
 
-PORTNAME=       jpeg
+PORTNAME=	jpeg
 PORTVERSION=	6b
-CATEGORIES=     graphics
-MASTER_SITES=   ftp://ftp.uu.net/graphics/jpeg/
-DISTNAME=       jpegsrc.v${PORTVERSION}
+CATEGORIES=	graphics
+MASTER_SITES=	ftp://ftp.uu.net/graphics/jpeg/
+DISTNAME=	jpegsrc.v${PORTVERSION}
 
 MAINTAINER=	jseger@FreeBSD.org
 
-WRKSRC=         ${WRKDIR}/jpeg-6b
+WRKSRC=		${WRKDIR}/jpeg-6b
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

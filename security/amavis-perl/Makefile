@@ -7,7 +7,7 @@
 
 PORTNAME=	amavis-perl
 PORTVERSION=	10
-CATEGORIES=     security
+CATEGORIES=	security
 MASTER_SITES=	http://www.amavis.org/dist/perl/
 
 MAINTAINER=	roman@xpert.com

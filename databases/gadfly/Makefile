@@ -9,7 +9,7 @@ PORTNAME=	gadfly
 PORTVERSION=	1.0
 CATEGORIES=	databases
 MASTER_SITES=	http://www.chordate.com/kwParsing/
-DISTNAME=       kwP
+DISTNAME=	kwP
 
 MAINTAINER=	ports@FreeBSD.org
 

@@ -17,7 +17,7 @@ DISTFILES=	emacs-${EMACS_VERSION}b${EXTRACT_SUFX} \
 
 PATCH_SITES=	ftp://etlport.etl.go.jp/pub/mule/
 PATCHFILES=	mule-${MULE_VERSION:S/.//}-${EMACS_VERSION:S/.//}-alpha01.diff.gz
-PATCH_DIST_STRIP= -p1
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER?=	taoka@FreeBSD.org
 
@@ -42,7 +42,7 @@ INSTALL_COOKIE=	${WRKDIR}/.install_done-${PKGNAME}
 PACKAGE_COOKIE=	${WRKDIR}/.package_done-${PKGNAME}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-MAKE_ENV=      LIBDIR="${LIBDIR}"
+MAKE_ENV=	LIBDIR="${LIBDIR}"
 # /usr/bin/sed should be used because configure script includes 'Ctrl-L'
 CONFIGURE_ENV=	PATH=/usr/bin:$$PATH
 EMACS_PREFIX=	mule
@@ -59,28 +59,28 @@ INSTALL_TARGET=	install-arch-dep
 .if defined(CANNA)
 LIB_INPUT_METHOD+=	canna.1:${PORTSDIR}/japanese/Canna
 WITH_INPUT_METHOD+=	--with-canna --with-canna-libraries=${PREFIX}/lib \
-		--with-canna-includes=${PREFIX}/include
+			--with-canna-includes=${PREFIX}/include
 .endif
 .if defined(SJ3)
-BUILD_INPUT_METHOD+=sj3serv:${PORTSDIR}/japanese/sj3
-WITH_INPUT_METHOD+= --with-sj3
+BUILD_INPUT_METHOD+=	sj3serv:${PORTSDIR}/japanese/sj3
+WITH_INPUT_METHOD+=	--with-sj3
 .endif
 .if defined(FREEWNN)
-LIB_INPUT_METHOD+=wnn.0:${PORTSDIR}/japanese/FreeWnn-lib
+LIB_INPUT_METHOD+=	wnn.0:${PORTSDIR}/japanese/FreeWnn-lib
 WITH_INPUT_METHOD+=	--with-wnn4 --with-wnn-libraries=${LOCALBASE}/lib \
-		--with-wnn-includes=${LOCALBASE}/include/wnn
+			--with-wnn-includes=${LOCALBASE}/include/wnn
 .elif defined(CFREEWNN)
-LIB_INPUT_METHOD+=cwnn.0:${PORTSDIR}/chinese/FreeWnn-lib
+LIB_INPUT_METHOD+=	cwnn.0:${PORTSDIR}/chinese/FreeWnn-lib
 WITH_INPUT_METHOD+=	--with-wnn4 --with-cwnn4 --with-wnn-libraries=${LOCALBASE}/lib \
-		--with-wnn-includes=${LOCALBASE}/include/cwnn
+			--with-wnn-includes=${LOCALBASE}/include/cwnn
 .elif defined(KFREEWNN)
-LIB_INPUT_METHOD+=kwnn.0:${PORTSDIR}/korean/FreeWnn-lib
+LIB_INPUT_METHOD+=	kwnn.0:${PORTSDIR}/korean/FreeWnn-lib
 WITH_INPUT_METHOD+=	--with-wnn4 --with-kwnn4 --with-wnn-libraries=${LOCALBASE}/lib \
-		--with-wnn-includes=${LOCALBASE}/include/kwnn
+			--with-wnn-includes=${LOCALBASE}/include/kwnn
 .elif defined(WNN6)
-LIB_INPUT_METHOD+=wnn6.1:${PORTSDIR}/japanese/Wnn6-lib
+LIB_INPUT_METHOD+=	wnn6.1:${PORTSDIR}/japanese/Wnn6-lib
 WITH_INPUT_METHOD+=	--with-wnn6 --with-wnn-libraries=${LOCALBASE}/lib \
-		--with-wnn-includes=${LOCALBASE}/include/wnn6/wnn
+			--with-wnn-includes=${LOCALBASE}/include/wnn6/wnn
 .endif
 COMP_ELC=	egg.elc wnn-egg.elc sj3-client.elc sj3-egg.elc canna.elc
 ELC_DIR=	../lisp

@@ -19,7 +19,7 @@ RESTRICTED=	"No commercial redistribution"
 NO_CDROM=	${RESTRICTED}
 
 WRKSRC=		${WRKDIR}/PPUnpack
-MAKE_ARGS=     	CC="${CC}" COPTS="${CFLAGS}"
+MAKE_ARGS=	CC="${CC}" COPTS="${CFLAGS}"
 ALL_TARGET=	ppunpack
 
 do-install:

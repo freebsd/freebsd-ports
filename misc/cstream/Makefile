@@ -7,8 +7,8 @@
 
 PORTNAME=	cstream
 PORTVERSION=	2.0
-CATEGORIES=     misc
-MASTER_SITES=   http://www.cons.org/cracauer/download/ \
+CATEGORIES=	misc
+MASTER_SITES=	http://www.cons.org/cracauer/download/ \
 		http://www2.cons.org/cracauer/download/ \
 		http://www3.cons.org/cracauer/download/ \
 		http://www.hanse.de/~cracauer/homepage-mirror/download/ \

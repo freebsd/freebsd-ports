@@ -13,13 +13,13 @@ MASTER_SITES=	http://www.bluecherry.net/~edwinh/flexbackup/tarball/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/backup
 
-MAINTAINER=     jjreynold@home.com
+MAINTAINER=	jjreynold@home.com
 
 RUN_DEPENDS=	afio:${PORTSDIR}/sysutils/afio \
 		buffer:${PORTSDIR}/misc/buffer
 
-NO_BUILD  = yes
-USE_PERL5 = yes
+NO_BUILD=	yes
+USE_PERL5=	yes
 
 post-configure:
 	@${CP} ${WRKSRC}/flexbackup.conf ${WRKSRC}/flexbackup.conf.sample

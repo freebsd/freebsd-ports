@@ -35,11 +35,11 @@ MAN1=		xplanet.1 xplanetbg.1 tkxplanet.1 tzcoord.pl.1
 
 .if (!defined(WITH_TK80) && !defined(WITH_TK81) && !defined(WITH_TK82) && !defined(WITH_TK83))
 .if exists(${LOCALBASE}/bin/wish8.3)
-WITH_TK83=      yes
+WITH_TK83=	yes
 .elif exists(${LOCALBASE}/bin/wish8.2)
 WITH_TK82=	yes
 .elif exists(${LOCALBASE}/bin/wish8.1)
-WITH_TK81=      yes
+WITH_TK81=	yes
 .else
 WITH_TK80=	yes
 .endif

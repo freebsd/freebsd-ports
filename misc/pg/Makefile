@@ -5,15 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=       	pg
-PORTVERSION=		010103
-CATEGORIES=     	misc
-MASTER_SITES=   	http://omnibus.ruf.uni-freiburg.de/~gritter/archive/
+PORTNAME=	pg
+PORTVERSION=	010103
+CATEGORIES=	misc
+MASTER_SITES=	http://omnibus.ruf.uni-freiburg.de/~gritter/archive/
 
-MAINTAINER=		greid@ukug.uk.freebsd.org
+MAINTAINER=	greid@ukug.uk.freebsd.org
 
-MAKEFILE=		makefile
+MAKEFILE=	makefile
 
-MAN1=			pg.1
+MAN1=		pg.1
 
 .include <bsd.port.mk>

@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=       xpm
+PORTNAME=	xpm
 PORTVERSION=	3.4k
 CATEGORIES=	graphics x11
 MASTER_SITES=	ftp://avahi.inria.fr/pub/xpm/

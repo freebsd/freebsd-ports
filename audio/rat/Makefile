@@ -29,7 +29,7 @@ RAT_BUILD_DIRS=	common rat
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 400014
-ENABLE_IPv6=      --enable-ipv6
+ENABLE_IPv6=	--enable-ipv6
 .endif
 
 do-install:

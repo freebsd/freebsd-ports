@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XmHTML
-PORTVERSION= 	1.1.7
+PORTVERSION=	1.1.7
 PORTREVISION=	1
 CATEGORIES=	x11-toolkits www
 MASTER_SITES=	http://www.xs4all.nl/~ripley/XmHTML/dist/
@@ -14,11 +14,11 @@ MASTER_SITES=	http://www.xs4all.nl/~ripley/XmHTML/dist/
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.de
 
 BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
-LIB_DEPENDS=    png.4:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_MOTIF=	yes
-USE_X_PREFIX=   yes
+USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	CC="${LIBTOOL} ${CC}"
 INSTALLS_SHLIB=	yes

@@ -50,8 +50,8 @@ INSTALL_DATA_DIR=	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755
 PROGRAMFILES=		code_crusader/jcc
 PROGRAMFILES_SCRIPT=	code_crusader/dirdiff
 # documents
-DOCFILES=       FAQ LICENSE README.binary
-DOCDIR_PREFIX=  ${PREFIX}/share/doc/${PORTNAME}
+DOCFILES=	FAQ LICENSE README.binary
+DOCDIR_PREFIX=	${PREFIX}/share/doc/${PORTNAME}
 # additional configuration and header files
 EXTRALIB_PREFIX=	${X11BASE}/lib/jx
 EXTRALIBFILES_MAKE_WRKSRC=	include/make

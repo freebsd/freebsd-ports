@@ -1,4 +1,3 @@
-# ex:ts=8
 # New ports collection makefile for:    ical
 # Date created:         Mon Aug 28 13:35:31 CDT 1995
 # Whom:                 erich@rrnet.com
@@ -17,7 +16,7 @@ MASTER_SITES=	ftp://ftp.sco.com/skunkware/src/shellutil/ \
 
 MAINTAINER=	obrien@FreeBSD.org
 
-LIB_DEPENDS=    tk82.1:${PORTSDIR}/x11-toolkits/tk82
+LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tclconfig=${PREFIX}/lib/tcl8.2 \

@@ -55,13 +55,13 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 # ENABLE_* variables can be used by depending ports to enable options.
 
 # JavaSASL needs someone to look at to get it to build
-#JAVADIR=        jdk1.1.8
-#JAVALIBDIR=     ${PREFIX}/${JAVADIR}/lib/i386/green_threads/
+#JAVADIR=	jdk1.1.8
+#JAVALIBDIR=	${PREFIX}/${JAVADIR}/lib/i386/green_threads/
 
 #.if defined(USE_JAVA) || exists(${LOCALBASE}/${JAVADIR}/bin/java)
-#BUILD_DEPENDS=  ${LOCALBASE}/${JAVADIR}/bin/java:${PORTSDIR}/java/jdk
-#CONFIGURE_ARGS+= --with-java \
-#		 --with-javabase=${LOCALBASE}/include
+#BUILD_DEPENDS=	${LOCALBASE}/${JAVADIR}/bin/java:${PORTSDIR}/java/jdk
+#CONFIGURE_ARGS+=	--with-java \
+#			--with-javabase=${LOCALBASE}/include
 #
 #CONFIGURE_ENV=	JAVAC="${LOCALBASE}/${JAVADIR}/bin/javac" \
 #		JAVAH="${LOCALBASE}/${JAVADIR}/bin/javah" \

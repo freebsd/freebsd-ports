@@ -26,9 +26,9 @@ HOST_CFLAGS=	${CFLAGS} -DLIBDIR="\'\"${PREFIX}/share\"\'"
 MAKEFILE=	makefile
 
 .if ${OSVERSION} < 400010
-LIB_DEPENDS=    ncurses.5:${PORTSDIR}/devel/ncurses
-HOST_CFLAGS+=   -D__FreeBSD_version=${OSVERSION} -I${LOCALBASE}/include
-HOST_LD+=       -L${LOCALBASE}/lib
+LIB_DEPENDS=	ncurses.5:${PORTSDIR}/devel/ncurses
+HOST_CFLAGS+=	-D__FreeBSD_version=${OSVERSION} -I${LOCALBASE}/include
+HOST_LD+=	-L${LOCALBASE}/lib
 .endif
 
 MAKE_ARGS+=	HOST_CFLAGS="${HOST_CFLAGS}" CC="${CC}" LD="${CC}" \

@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	arena-i18n
-PORTVERSION= 	beta3b
-CATEGORIES=     www
-MASTER_SITES=   ftp://ftp-eu.w3.org/pub/Arena/beta-3/
+PORTVERSION=	beta3b
+CATEGORIES=	www
+MASTER_SITES=	ftp://ftp-eu.w3.org/pub/Arena/beta-3/
 DISTNAME=	arena-CJK-beta3a
 
-MAINTAINER=     ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS+=   jpeg.9:${PORTSDIR}/graphics/jpeg
-LIB_DEPENDS+=   png.4:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	png.4:${PORTSDIR}/graphics/png
 
 USE_XLIB=	yes
-WRKSRC=         ${WRKDIR}/WWW
+WRKSRC=		${WRKDIR}/WWW
 
 do-build:
 	cd ${WRKSRC}/Library/freebsd; ${MAKE}

@@ -17,7 +17,7 @@ MAINTAINER=	stephane.legrand@bigfoot.com
 RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/javavmwrapper \
 		${LOCALBASE}/etc/javavms:${PORTSDIR}/java/jre
 
-JAVAVM?=        ${LOCALBASE}/bin/javavm
+JAVAVM?=	${LOCALBASE}/bin/javavm
 NO_BUILD=	yes
 
 do-install:

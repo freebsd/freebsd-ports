@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	mosaic
-PORTVERSION= 	2.7b5
-CATEGORIES=     www
+PORTVERSION=	2.7b5
+CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.ncsa.uiuc.edu/Web/Mosaic/Unix/source/
 DISTNAME=	Mosaic-src-2.7b5
 

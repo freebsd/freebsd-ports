@@ -1,4 +1,3 @@
-# ex:ts=8
 # Ports collection makefile for:  tea-total
 # Date created:			  Tue Dec 19, 2000
 # Whom:				  David O'Brien (obrien@NUXI.com)
@@ -12,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.linuxhacker.org/pub/tea-total/  \
 		http://www.linuxhacker.org/tea-total/
 
-MAINTAINER=     obrien@FreeBSD.org
+MAINTAINER=	obrien@FreeBSD.org
 
 #	code is not 64-bit clean...
 ONLY_FOR_ARCHS=	i386

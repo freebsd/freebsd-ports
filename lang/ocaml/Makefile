@@ -16,10 +16,10 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-refman.html${EXTRACT_SUFX}
 MAINTAINER=	patrick@watson.org
 
 .if defined(WITH_TK)
-PLIST_SUB+=     LABLTK:=""
-LIB_DEPENDS=    tk82.1:${PORTSDIR}/x11-toolkits/tk82
+PLIST_SUB+=	LABLTK:=""
+LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 .else
-PLIST_SUB+=     LABLTK:="@comment "
+PLIST_SUB+=	LABLTK:="@comment "
 .endif
 
 USE_XLIB=	yes
@@ -27,9 +27,9 @@ HAS_CONFIGURE=	yes
 ALL_TARGET=	world bootstrap opt ocamlc.opt ocamlopt.opt
 
 .if ${MACHINE_ARCH} != "i386"
-PLIST_SUB+=     PROF:="@comment "
+PLIST_SUB+=	PROF:="@comment "
 .else
-PLIST_SUB+=     PROF:=""
+PLIST_SUB+=	PROF:=""
 .endif
 
 MAN1=		ocaml.1 ocamlc.1 ocamlcp.1 ocamldep.1 ocamllex.1 \
@@ -41,7 +41,7 @@ CONFIGURE_ARGS=	-prefix ${PREFIX} \
 		-x11lib ${X11BASE}/lib
 
 .if defined(WITH_TK)
-CONFIGURE_ARGS+= -tkdefs "-I${PREFIX}/include/tcl8.2 -I${PREFIX}/include/tk8.2"
+CONFIGURE_ARGS+=	-tkdefs "-I${PREFIX}/include/tcl8.2 -I${PREFIX}/include/tk8.2"
 .endif
 
 .if !defined(NOPORTDOCS)

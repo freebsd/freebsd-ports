@@ -1,4 +1,3 @@
-# ex:ts=8
 # Ports collection makefile for:  ia64sim
 # Date created:			  Tue Oct 10, 2000
 # Whom:				  David O'Brien (obrien@NUXI.com)
@@ -8,7 +7,7 @@
 
 PORTNAME=	ia64sim
 PORTVERSION=	0.2
-CATEGORIES=     emulators
+CATEGORIES=	emulators
 MASTER_SITES=	http://www.glue.umd.edu/~jasonp/  \
 		http://odin.asgard/
 DISTFILES=	${PORTNAME}${EXTRACT_SUFX}

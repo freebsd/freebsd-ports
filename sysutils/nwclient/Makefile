@@ -7,16 +7,16 @@
 
 PORTNAME=	nwclient
 PORTVERSION=	5.5.2
-CATEGORIES=     sysutils
-MASTER_SITES=   ftp://ftp.feral.com/pub/networker/freebsd/freebsd_40/ \
+CATEGORIES=	sysutils
+MASTER_SITES=	ftp://ftp.feral.com/pub/networker/freebsd/freebsd_40/ \
 		ftp://gw.feral.com/pub/networker/freebsd/freebsd_40/
 ARCH!=		uname -m
 DISTNAME=	nwclient-${PORTVERSION}-freebsd-${ARCH}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=     mjacob@freebsd.org
+MAINTAINER=	mjacob@freebsd.org
 
-NO_BUILD  = yes
+NO_BUILD=	yes
 
 post-patch:
 	@sed -e "s,^ROOTDIR.*$$,ROOTDIR=${PREFIX}," ${WRKSRC}/networker.sh >\

@@ -7,15 +7,15 @@
 
 PORTNAME=	gnu-finger
 PORTVERSION=	1.37
-CATEGORIES=     net
-MASTER_SITES=   ${MASTER_SITE_GNU}
+CATEGORIES=	net
+MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	finger
 DISTNAME=	finger-1.37
 
-MAINTAINER=     sanpei@FreeBSD.org
+MAINTAINER=	sanpei@FreeBSD.org
 
 HAS_CONFIGURE=	yes
-INSTALL_TARGET= server
+INSTALL_TARGET=	server
 
 post-install:
 	${MKDIR} ${PREFIX}/etc/fingerdir

@@ -11,10 +11,10 @@ MASTER_SITES=	http://www.i2pi.com/smunge/
 
 MAINTAINER=	midom@dammit.lt
 
-LIB_DEPENDS=    ldap:${PORTSDIR}/net/openldap
+LIB_DEPENDS=	ldap:${PORTSDIR}/net/openldap
 
 USE_GMAKE=	true
-WRKSRC=         ${WRKDIR}/
+WRKSRC=		${WRKDIR}
 ALL_TARGET=	smunged
 
 do-install:

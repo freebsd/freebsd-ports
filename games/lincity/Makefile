@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=       lincity
+PORTNAME=	lincity
 PORTVERSION=	1.11
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.demon.co.uk/pub/unix/linux/games/

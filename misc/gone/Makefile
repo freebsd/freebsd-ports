@@ -5,15 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=       gone
+PORTNAME=	gone
 PORTVERSION=	1.3.1
-CATEGORIES=     misc
-MASTER_SITES=   http://jaguar.ir.miami.edu/~marcus/
+CATEGORIES=	misc
+MASTER_SITES=	http://jaguar.ir.miami.edu/~marcus/
 
-MAINTAINER=     marcus@miami.edu
+MAINTAINER=	marcus@miami.edu
 
 MAN1=		gone.1
-GNU_CONFIGURE=  yes
+GNU_CONFIGURE=	yes
 
 #
 # If you would like to be able to use system passwords for gone

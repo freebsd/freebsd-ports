@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	xp
-PORTVERSION= 	0.5
+PORTVERSION=	0.5
 CATEGORIES=	textproc java
 MASTER_SITES=	ftp://ftp.jclark.com/pub/xml/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=     mike@vee.net
+MAINTAINER=	mike@vee.net
 
-RUN_DEPENDS=    ${LOCALBASE}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk
+RUN_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk
 
 PLIST_SUB+=	XP_VERSION=${PORTVERSION}
 

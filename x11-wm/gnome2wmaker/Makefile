@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	gnome2wmaker
-PORTVERSION= 	1.2
+PORTVERSION=	1.2
 CATEGORIES=	x11-wm gnome
 MASTER_SITES=	http://ulli.linuxave.net/gnome2wmaker/
 
-MAINTAINER=     reg@FreeBSD.org
+MAINTAINER=	reg@FreeBSD.org
 
 RUN_DEPENDS=	wmaker:${PORTSDIR}/x11-wm/windowmaker
 

@@ -5,11 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=       xrobots
+PORTNAME=	xrobots
 PORTVERSION=	1.0
 CATEGORIES=	games
 MASTER_SITES=	ftp://hpux.csc.liv.ac.uk/hpux/Games/Arcade/xrobots-1.0/
-DISTNAME=       ${PKGNAME}-ss-10.20
+DISTNAME=	${PKGNAME}-ss-10.20
 
 MAINTAINER=	jseger@FreeBSD.org
 

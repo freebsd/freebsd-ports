@@ -16,7 +16,7 @@ MAN3=		libnet.3
 
 GNU_CONFIGURE=	yes
 
-WRKSRC=         ${WRKDIR}/Libnet-${PORTVERSION}
+WRKSRC=		${WRKDIR}/Libnet-${PORTVERSION}
 MAN3=		libnet.3
 
 post-install:

@@ -51,9 +51,9 @@ LOGLEVEL?=	y
 APOPFILE?=	/etc/apop-secrets
 
 .if exists(${LOCALBASE}/qmail/bin/qmail-send)
-QMAIL_DIR?=     ${LOCALBASE}/qmail
+QMAIL_DIR?=	${LOCALBASE}/qmail
 .else
-QMAIL_DIR?=     /var/qmail
+QMAIL_DIR?=	/var/qmail
 .endif
 
 # Uncomment this, or set PREFIX to /home if you have an existing

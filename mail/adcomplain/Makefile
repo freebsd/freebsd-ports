@@ -6,21 +6,21 @@
 #
 
 PORTNAME=	adcomplain
-PORTVERSION= 	3.52
-CATEGORIES=     mail news
-MASTER_SITES=   http://www.rdrop.com/users/billmc/
+PORTVERSION=	3.52
+CATEGORIES=	mail news
+MASTER_SITES=	http://www.rdrop.com/users/billmc/
 DISTNAME=	${PORTNAME}.pl
 EXTRACT_SUFX=	.uu
 
-MAINTAINER=     ache@FreeBSD.org
+MAINTAINER=	ache@FreeBSD.org
 
-USE_PERL5=      yes
+USE_PERL5=	yes
 
-EXTRACT_CMD=    /usr/bin/uudecode
-EXTRACT_BEFORE_ARGS=    <
+EXTRACT_CMD=	/usr/bin/uudecode
+EXTRACT_BEFORE_ARGS=	<
 EXTRACT_AFTER_ARGS=	# empty
-NO_WRKSUBDIR=	YES
-NO_BUILD=       YES
+NO_WRKSUBDIR=	yes
+NO_BUILD=	yes
 
 post-patch:
 	cd ${WRKSRC}; \

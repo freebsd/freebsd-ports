@@ -20,7 +20,7 @@ MAKE_ENV=	BINDIR="${PREFIX}/bin" MANDIR="${PREFIX}/man/man" MKDIR="${MKDIR}" INS
 .include <bsd.port.pre.mk>
  
 .if ${OSVERSION} < 400012
-IGNORE=        'This port only works on 4.00012'
+IGNORE=		'This port only works on 4.00012'
 .endif
    
 .include <bsd.port.post.mk>

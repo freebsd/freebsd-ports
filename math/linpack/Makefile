@@ -14,7 +14,7 @@ DISTFILES=	${SRCS:.f=.f.gz}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=    blas.1:${PORTSDIR}/math/blas
+LIB_DEPENDS=	blas.1:${PORTSDIR}/math/blas
 
 INSTALLS_SHLIB=	yes
 DIST_SUBDIR=	${PORTNAME}

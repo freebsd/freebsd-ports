@@ -34,7 +34,7 @@ post-clean:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 400014
-PLIST:=         ${WRKDIR}/PLIST
+PLIST:=		${WRKDIR}/PLIST
 pre-install:
 	@${CAT} ${PKGDIR}/pkg-plist.v6 ${PKGDIR}/pkg-plist > ${PLIST}
 .else

@@ -16,7 +16,7 @@ DISTFILES=	openh323_1.1pl1.tar.gz \
 
 MAINTAINER=	roger@freebsd.org
 
-WRKSRC=         ${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_NEWGCC=	yes
 USE_BISON=	yes

@@ -8,10 +8,10 @@
 PORTNAME=	glademm
 PORTVERSION=	0.5.10
 CATEGORIES=	devel gnome
-MASTER_SITES=   http://home.wtal.de/petig/Gtk/
+MASTER_SITES=	http://home.wtal.de/petig/Gtk/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/5./5_/}
 
-MAINTAINER=     fujie@tk.elec.waseda.ac.jp
+MAINTAINER=	fujie@tk.elec.waseda.ac.jp
 
 RUN_DEPENDS=	glade:${PORTSDIR}/devel/glade
 LIB_DEPENDS=	gtkmm.1:${PORTSDIR}/x11-toolkits/gtk--

@@ -5,20 +5,20 @@
 # $FreeBSD$
 #
 
-PORTNAME=      moviedb
-PORTVERSION=   3.8
-CATEGORIES=    misc
-MASTER_SITES=  ftp://ftp.imdb.com/pub/interfaces/ \
+PORTNAME=	moviedb
+PORTVERSION=	3.8
+CATEGORIES=	misc
+MASTER_SITES=	ftp://ftp.imdb.com/pub/interfaces/ \
 		ftp://ftp.fu-berlin.de/pub/misc/movies/database/ \
 		ftp://ftp.funet.fi/pub/mirrors/ftp.imdb.com/pub/interfaces/ \
 		ftp://ftp.sunet.se/pub/tv+movies/imdb/
-DISTFILES=     tools/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} ${IGNOREFILES}
-DIST_SUBDIR=     moviedb
-EXTRACT_ONLY=    tools/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
+DISTFILES=	tools/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} ${IGNOREFILES}
+DIST_SUBDIR=	moviedb
+EXTRACT_ONLY=	tools/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=    user@unknown.nu
+MAINTAINER=	user@unknown.nu
 
-IGNOREFILES=     actors.list.gz actresses.list.gz aka-names.list.gz \
+IGNOREFILES=	actors.list.gz actresses.list.gz aka-names.list.gz \
 	aka-titles.list.gz alternate-versions.list.gz biographies.list.gz \
 	business.list.gz certificates.list.gz cinematographers.list.gz \
 	color-info.list.gz complete-cast.list.gz complete-crew.list.gz \
@@ -33,13 +33,13 @@ IGNOREFILES=     actors.list.gz actresses.list.gz aka-names.list.gz \
 	sound-mix.list.gz soundtracks.list.gz special-effects-companies.list.gz \
 	taglines.list.gz technical.list.gz trivia.list.gz writers.list.gz
 
-ALL_TARGET=    compile
-INSTALL_TARGET= installbin databases compress installman
-MAN1=          alist.1 lformat.1 lguide.1 lindex.1 list.1 listall.1 lseen.1 \
+ALL_TARGET=	compile
+INSTALL_TARGET=	installbin databases compress installman
+MAN1=		alist.1 lformat.1 lguide.1 lindex.1 list.1 listall.1 lseen.1 \
 		ltrace.1 mkballot.1 title.1
 
 NO_CDROM=	Cannot sell in any form
-NO_PACKAGE=     Libraries cannot be distributed, and change every day anyway
+NO_PACKAGE=	Libraries cannot be distributed, and change every day anyway
 RESTRICTED=	No commercial use
 
 pre-fetch:

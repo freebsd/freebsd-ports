@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	E-Run
-PORTVERSION= 	1.2
+PORTVERSION=	1.2
 CATEGORIES=	x11
 MASTER_SITES=	http://void.mapopolis.com/~jacob/c0de/
 
 MAINTAINER=	kbyanc@posi.net
 
-LIB_DEPENDS=    epplet.1:${PORTSDIR}/x11-wm/libepplet
+LIB_DEPENDS=	epplet.1:${PORTSDIR}/x11-wm/libepplet
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

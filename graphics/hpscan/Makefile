@@ -15,7 +15,7 @@ DISTNAME=	scanner
 
 MAINTAINER=	jkh@FreeBSD.org
 
-LIB_DEPENDS=    jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 NO_WRKSUBDIR=		yes
 USE_X_PREFIX=		yes

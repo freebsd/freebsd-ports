@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	qpopper
-PORTVERSION= 	2.53
+PORTVERSION=	2.53
 CATEGORIES=	mail
-MASTER_SITES=   ftp://ftp.qualcomm.com/eudora/servers/unix/popper/old/
+MASTER_SITES=	ftp://ftp.qualcomm.com/eudora/servers/unix/popper/old/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
@@ -23,33 +23,33 @@ MAINTAINER=	ache@freebsd.org
 # If FULL_POPD_DEBUG variable present in the environment, popper builds
 # with more verbose debugging.
 
-O_DEFS=         -DSETPROCTITLE -DKEEP_TEMP_DROP -DBSD44_DBM -DBIND43 \
+O_DEFS=		-DSETPROCTITLE -DKEEP_TEMP_DROP -DBSD44_DBM -DBIND43 \
 		-DBULLDB -DNONAUTHFILE='\"/etc/ftpusers\"'
 
 .if !defined(APOP_ONLY)
 .if exists(/usr/lib/libskey.a)
-P_LIBS=         -lskey
-O_DEFS+=        -DSKEY
+P_LIBS=		-lskey
+O_DEFS+=	-DSKEY
 .endif
 .else
-O_DEFS+=        -DAPOP_ONLY
+O_DEFS+=	-DAPOP_ONLY
 .endif
 
 .if defined(POPD_YOUBIN_SUPPORT)
-O_DEFS+=        -DYOUBIN -DCALLED_FROM_POPD
+O_DEFS+=	-DYOUBIN -DCALLED_FROM_POPD
 .endif
 
-P_LIBS+=        -lmd -lutil
+P_LIBS+=	-lmd -lutil
 
-GNU_CONFIGURE=          yes
-CONFIGURE_ARGS=         --enable-apop=${PREFIX}/etc/popper/pop.auth \
-			--with-apopuid=pop
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-apop=${PREFIX}/etc/popper/pop.auth \
+		--with-apopuid=pop
 .if defined(FULL_POPD_DEBUG)
-CONFIGURE_ARGS+=        --enable-debugging
+CONFIGURE_ARGS+=	--enable-debugging
 .endif
-CONFIGURE_ENV=          LIBS="${P_LIBS}" O_DEFS="${O_DEFS}"
+CONFIGURE_ENV=	LIBS="${P_LIBS}" O_DEFS="${O_DEFS}"
 
-MAN8=   popauth.8 popper.8
+MAN8=	popauth.8 popper.8
 
 post-patch:
 	$(RM) ${WRKSRC}/md5.h

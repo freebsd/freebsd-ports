@@ -5,12 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=       gif2png
+PORTNAME=	gif2png
 PORTVERSION=	2.3.2
 CATEGORIES=	graphics
-MASTER_SITES=   http://www.tuxedo.org/~esr/gif2png/
+MASTER_SITES=	http://www.tuxedo.org/~esr/gif2png/
 
-MAINTAINER=     saper@system.pl
+MAINTAINER=	saper@system.pl
 
 LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python

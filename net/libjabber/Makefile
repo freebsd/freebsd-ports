@@ -7,7 +7,7 @@
 
 PORTNAME=	libjabber
 PORTVERSION=	1.0
-CATEGORIES=     net
+CATEGORIES=	net
 MASTER_SITES=	http://download.jabber.org/dists/1.0/final/
 
 MAINTAINER=	lukin@okbmei.msk.su

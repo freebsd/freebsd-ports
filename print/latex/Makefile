@@ -7,8 +7,8 @@
 
 PORTNAME=	latex2e
 PORTVERSION=	99.12
-CATEGORIES=     print
-MASTER_SITES=   ftp://ftp.freesoftware.com/pub/tex/package/
+CATEGORIES=	print
+MASTER_SITES=	ftp://ftp.freesoftware.com/pub/tex/package/
 DISTFILES=	latex_mf-${PORTVERSION}.tar.gz latex_tfm-${PORTVERSION}.tar.gz \
 		latex_base-${PORTVERSION}.tar.gz latex_tools-${PORTVERSION}.tar.gz \
 		latex_graphics-${PORTVERSION}.tar.gz latex_psnfss-${PORTVERSION}.tar.gz

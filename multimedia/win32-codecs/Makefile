@@ -22,12 +22,12 @@ MAINTAINER=	holger@eit.uni-kl.de
 LIB_DEPENDS=	SDL-1.1.2:${PORTSDIR}/devel/sdl-devel
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
-WRKSRC=         ${WRKDIR}/${PORTNAME}-0.53
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.53
 RESTRICTED=	Unsure of codec\'s license
 RESTRICTED_FILES=	binaries-${CODEC_VERSION}.zip \
 			wmvds32.ax.gz
 
-ONLY_FOR_ARCHS= i386
+ONLY_FOR_ARCHS=	i386
 USE_QT2=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
@@ -39,7 +39,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
 		MOC="${MOC}" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib"
-CONFIGURE_ARGS= --with-qt-includes=${X11BASE}/include/qt2 \
+CONFIGURE_ARGS=	--with-qt-includes=${X11BASE}/include/qt2 \
 		--with-qt-libraries=${X11BASE}/lib \
 		--with-win32-path=${LOCALBASE}/lib/win32 \
 		--enable-release

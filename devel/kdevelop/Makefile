@@ -41,7 +41,7 @@ CONFIGURE_ARGS=	--with-qtdoc-dir=${X11BASE}/share/doc/qt/html \
 		--with-extra-includes=${LOCALBASE}/include \
 		--with-extra-libs=${LOCALBASE}/lib
 MAKE_ENV=	CXX="${CXX}" SOMAJOR="${SOMAJOR}"
-SOMAJOR=        1
+SOMAJOR=	1
 
 PLIST_SUB+=	LIBVER="${SOMAJOR}"
 

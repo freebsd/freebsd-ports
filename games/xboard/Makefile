@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=       xboard
+PORTNAME=	xboard
 PORTVERSION=	4.2.0
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.gnu.org/gnu/xboard/ \
@@ -15,7 +15,7 @@ DISTNAME=	xboard-4.2.0beta
 MAINTAINER=	xaa+ports@madison-gurkha.com
 
 USE_XLIB=	yes
-GNU_CONFIGURE=  yes
+GNU_CONFIGURE=	yes
 STRIP=
 MAN6=		xboard.6 cmail.6 zic2xpm.6
 
