@@ -1,6 +1,6 @@
---- fvwm/Makefile.in.orig	Thu Oct 31 18:34:30 2002
-+++ fvwm/Makefile.in	Thu Oct 31 18:34:51 2002
-@@ -936,9 +936,9 @@
+--- fvwm/Makefile.in.orig	Mon Dec  2 05:08:41 2002
++++ fvwm/Makefile.in	Tue Dec 17 11:31:56 2002
+@@ -645,9 +645,9 @@
  		echo "Minor warning: $(bindir)/fvwm2 symlink was not created"
  
  install-data-local:
@@ -10,6 +10,6 @@
 +	@rm -f $(DESTDIR)$(mandir)/man1/fvwm2.1.gz
 +	@$(LN_S) fvwm.1.gz $(DESTDIR)$(mandir)/man1/fvwm2.1.gz || \
 +	echo "Minor warning: $(mandir)/man1/fvwm2.1.gz symlink was not created"
- 
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
