@@ -7,12 +7,12 @@
 
 PORTNAME=	apsfilter
 PORTVERSION=	7.2.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	print
 MASTER_SITES=	http://www.apsfilter.org/download/
 
 MAINTAINER=	andreas@FreeBSD.org
-COMMENT=	Magic print filter with file type recognition, print preview, duplex printing
+COMMENT=	Magic print filter with print preview, duplex printing and more
 
 DIST_SUBDIR=	apsfilter
 
@@ -112,8 +112,12 @@ RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-${PAPERSIZE}
 RUN_DEPENDS+=	psnup:${PORTSDIR}/print/psutils-${PAPERSIZE}
 .endif
 
-# needed for aps2file :-/
+# needed for aps2file
+.if defined(WITH_BASH2)
 RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash2
+.else
+RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
+.endif
 
 # HP IJS driver is not automatically part of ghostscript port anymore
 RUN_DEPENDS+=	hpijs:${PORTSDIR}/print/hpijs
