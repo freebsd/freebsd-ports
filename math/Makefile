@@ -113,6 +113,7 @@
     SUBDIR += octave
     SUBDIR += octave-forge
     SUBDIR += oleo
+    SUBDIR += orpie
     SUBDIR += p5-AI-DecisionTree
     SUBDIR += p5-AI-NeuralNet-BackProp
     SUBDIR += p5-AI-NeuralNet-Mesh

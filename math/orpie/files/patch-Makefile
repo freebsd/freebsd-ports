@@ -1,0 +1,53 @@
+--- Makefile.in.orig	Thu Jul 22 11:33:41 2004
++++ Makefile.in	Thu Aug  5 11:49:03 2004
+@@ -41,8 +41,8 @@
+ INCLUDES = -I ./curses -I ./gsl
+ BFLAGS   = -pp camlp4o -g $(INCLUDES) -thread
+ OFLAGS   = -pp camlp4o $(INCLUDES) -thread
+-BLFLAGS  = -custom -cclib '$(CURSES_LIB) $(GSL_LIB) -lm'
+-OLFLAGS  = -cclib '$(CURSES_LIB) $(GSL_LIB) -lm'
++BLFLAGS  = -custom -cclib '@LDFLAGS@ $(CURSES_LIB) $(GSL_LIB) -lm'
++OLFLAGS  = -cclib '@LDFLAGS@ $(CURSES_LIB) $(GSL_LIB) -lm'
+ DEPFLAGS = -pp camlp4o
+ 
+ # main target
+@@ -144,21 +144,21 @@
+ 		mkdir -p $(DESTDIR)/$(prefix)/etc; \
+ 		install -m 644 orpierc $(DESTDIR)/$(prefix)/etc; \
+ 	fi
+-	install -m 644 -D doc/orpie.1 $(MANDIR)/man1/orpie.1
+-	install -m 644 -D doc/orpie-curses-keys.1 $(MANDIR)/man1/orpie-curses-keys.1
+-	install -m 644 -D doc/orpierc.5 $(MANDIR)/man5/orpierc.5
++	install -m 644 doc/orpie.1 $(MANDIR)/man1/orpie.1
++	install -m 644 doc/orpie-curses-keys.1 $(MANDIR)/man1/orpie-curses-keys.1
++	install -m 644 doc/orpierc.5 $(MANDIR)/man5/orpierc.5
+ 
+ install: install-indep
+-	install -m 755 -D $(NAME).$(OCAMLBEST) $(BINDIR)/$(NAME)$(EXE)
+-	install -m 755 -D $(NAME2).$(OCAMLBEST) $(BINDIR)/$(NAME2)$(EXE)
++	install -m 755 $(NAME).$(OCAMLBEST) $(BINDIR)/$(NAME)$(EXE)
++	install -m 755 $(NAME2).$(OCAMLBEST) $(BINDIR)/$(NAME2)$(EXE)
+ 
+ install-byte: install-indep
+-	install -m 755 -D $(NAME).byte $(BINDIR)/$(NAME)$(EXE)
+-	install -m 755 -D $(NAME2).byte $(BINDIR)/$(NAME2)$(EXE)
++	install -m 755 $(NAME).byte $(BINDIR)/$(NAME)$(EXE)
++	install -m 755 $(NAME2).byte $(BINDIR)/$(NAME2)$(EXE)
+ 
+ install-opt: install-indep
+-	install -m 755 -D $(NAME).opt $(BINDIR)/$(NAME)$(EXE)
+-	install -m 755 -D $(NAME2).opt $(BINDIR)/$(NAME2)$(EXE)
++	install -m 755 $(NAME).opt $(BINDIR)/$(NAME)$(EXE)
++	install -m 755 $(NAME2).opt $(BINDIR)/$(NAME2)$(EXE)
+ 
+ uninstall:
+ 	rm -f $(BINDIR)/$(NAME)$(EXE)
+@@ -185,7 +185,7 @@
+ GSL_INCLUDES = -I ./gsl
+ GSL_BFLAGS = -g $(GSL_INCLUDES) -thread
+ GSL_OFLAGS = $(GSL_INCLUDES) -thread
+-GSL_CFLAGS = -Wall -fPIC -DPIC
++GSL_CFLAGS = -Wall -fPIC -DPIC @CPPFLAGS@
+ 
+ gsl/%.cmi : gsl/%.mli
+ 	$(OCAMLC) -c $(GSL_BFLAGS) $<
