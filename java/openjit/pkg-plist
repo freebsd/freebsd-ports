@@ -1,5 +1,33 @@
-lib/OpenJIT/OpenJIT.jar
-lib/OpenJIT/libOpenJIT.so
-share/OpenJIT/README
-@dirrm share/OpenJIT
-@dirrm lib/OpenJIT
+%%JAVA11:%%lib/OpenJIT/OpenJIT.jar
+%%JAVA11:%%lib/OpenJIT/libOpenJIT.so
+%%JAVA2:%%%%JAVADIR%%/jre/lib/i386/libOpenJIT.so
+%%JAVA2:%%%%JAVADIR%%/jre/classes/org/OpenJIT/BCinfo.class
+%%JAVA2:%%%%JAVADIR%%/jre/classes/org/OpenJIT/Compile.class
+%%JAVA2:%%%%JAVADIR%%/jre/classes/org/OpenJIT/CompilerError.class
+%%JAVA2:%%%%JAVADIR%%/jre/classes/org/OpenJIT/Constants.class
+%%JAVA2:%%%%JAVADIR%%/jre/classes/org/OpenJIT/ConvertRTL.class
+%%JAVA2:%%%%JAVADIR%%/jre/classes/org/OpenJIT/Debug.class
+%%JAVA2:%%%%JAVADIR%%/jre/classes/org/OpenJIT/ExceptionHandler.class
+%%JAVA2:%%%%JAVADIR%%/jre/classes/org/OpenJIT/ILnode.class
+%%JAVA2:%%%%JAVADIR%%/jre/classes/org/OpenJIT/InlineInfo.class
+%%JAVA2:%%%%JAVADIR%%/jre/classes/org/OpenJIT/LinkageInfo.class
+%%JAVA2:%%%%JAVADIR%%/jre/classes/org/OpenJIT/LinkedList.class
+%%JAVA2:%%%%JAVADIR%%/jre/classes/org/OpenJIT/OpenJITLoader.class
+%%JAVA2:%%%%JAVADIR%%/jre/classes/org/OpenJIT/OptimizeRTL.class
+%%JAVA2:%%%%JAVADIR%%/jre/classes/org/OpenJIT/PCList.class
+%%JAVA2:%%%%JAVADIR%%/jre/classes/org/OpenJIT/PCReloc.class
+%%JAVA2:%%%%JAVADIR%%/jre/classes/org/OpenJIT/ParseBytecode.class
+%%JAVA2:%%%%JAVADIR%%/jre/classes/org/OpenJIT/Select.class
+%%JAVA2:%%%%JAVADIR%%/jre/classes/org/OpenJIT/SubrNode.class
+%%JAVA2:%%%%JAVADIR%%/jre/classes/org/OpenJIT/SubrNodeList.class
+%%JAVA2:%%%%JAVADIR%%/jre/classes/org/OpenJIT/Var.class
+%%JAVA2:%%%%JAVADIR%%/jre/classes/org/OpenJIT/X86.class
+%%JAVA2:%%%%JAVADIR%%/jre/classes/org/OpenJIT/X86code.class
+%%JAVA2:%%%%JAVADIR%%/jre/classes/org/OpenJIT/X86reg.class
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%JAVA11:%%@dirrm lib/OpenJIT
+%%JAVA2:%%@dirrm %%JAVADIR%%/jre/classes/org/OpenJIT
+%%JAVA2:%%@dirrm %%JAVADIR%%/jre/classes/org
+%%JAVA2:%%@dirrm %%JAVADIR%%/jre/classes

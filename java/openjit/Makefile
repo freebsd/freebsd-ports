@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openjit
-PORTVERSION=	1.1.15
+PORTVERSION=	1.1.16
 CATEGORIES=	java
 MASTER_SITES=	http://www.openjit.org/dist/
 DISTNAME=	OpenJIT-${PORTVERSION}
@@ -14,40 +14,56 @@ DISTNAME=	OpenJIT-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A high-performance reflective Java Just-In-Time (JIT) bytecode compiler
 
-BUILD_DEPENDS=	${JAVADIR}/bin/java:${PORTSDIR}/java/jdk11
+# Only native JDKs are allowed.  Default is java/diablo-jdk13
+.if defined(WITH_JDK13)
+JAVA_HOME=	${PREFIX}/jdk1.3.1
+BUILD_DEPENDS=	${JAVA_HOME}/bin/java:${PORTSDIR}/java/jdk13
+.elif defined(WITH_JDK12)
+JAVA_HOME=	${PREFIX}/jdk1.2.2
+BUILD_DEPENDS=	${JAVA_HOME}/bin/java:${PORTSDIR}/java/jdk12
+.elif defined(WITH_JDK11)
+JAVA_HOME=	${PREFIX}/jdk1.1.8
+BUILD_DEPENDS=	${JAVA_HOME}/bin/java:${PORTSDIR}/java/jdk11
+.else
+JAVA_HOME=	${PREFIX}/diablo-jdk1.3.1
+BUILD_DEPENDS=	${JAVA_HOME}/bin/java:${PORTSDIR}/java/diablo-jdk13
+.endif
 
 ONLY_FOR_ARCHS=	i386
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-jdk=${JAVADIR}
+CONFIGURE_ARGS+=	--with-jdk=${JAVA_HOME}
 
-ALL_TARGET=	OpenJIT.jar
+CPIO?=		/usr/bin/cpio
 
-JAVADIR=	${LOCALBASE}/jdk1.1.8
+.if defined(WITH_JDK11)
 JAVALIBDIR=	${PREFIX}/lib/OpenJIT
-DOCDIR=		${PREFIX}/share/OpenJIT
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
 .endif
 
 post-configure:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/INSTALL
 
 do-install:
+.if defined(WITH_JDK11)
 	@${MKDIR} ${JAVALIBDIR}
-	@${INSTALL_PROGRAM} ${WRKSRC}/libOpenJIT.so ${JAVALIBDIR}
+	@${INSTALL_DATA} ${WRKSRC}/libOpenJIT.so ${JAVALIBDIR}
 	@${INSTALL_DATA} ${WRKSRC}/OpenJIT.jar ${JAVALIBDIR}
-
-post-install:
-	@${MKDIR} ${DOCDIR}
-	@${INSTALL_MAN} ${WRKSRC}/INSTALL ${DOCDIR}/README
+.else
+	@${MKDIR} ${JAVA_HOME}/jre/classes
+	@${INSTALL_DATA} ${WRKSRC}/libOpenJIT.so ${JAVA_HOME}/jre/lib/i386
+	@cd ${WRKSRC} && ${FIND} org -name '*.class' \
+	  | ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${JAVA_HOME}/jre/classes
+	@${FIND} ${JAVA_HOME}/jre/classes -type d | ${XARGS} ${CHMOD} a+rx
+.endif
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
+	@${INSTALL_DATA} ${WRKSRC}/INSTALL ${DOCSDIR}/INSTALL
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "See ${DOCDIR}/README for usage instructions."
+	@${ECHO_MSG} "See ${DOCSDIR}/INSTALL for usage instructions."
 	@${ECHO_MSG} ""
+.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
