@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libvanessa_socket
-PORTVERSION=	0.0.5
+PORTVERSION=	0.0.6
 CATEGORIES=	devel
 MASTER_SITES=	http://www.vergenet.net/linux/vanessa/download/%SUBDIR%/
 MASTER_SITE_SUBDIR=	vanessa_socket/${PORTVERSION}
