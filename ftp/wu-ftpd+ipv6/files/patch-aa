@@ -1,0 +1,20 @@
+--- src/ftpd.c.orig	Tue Jan 18 19:35:30 2000
++++ src/ftpd.c	Tue Jan 18 19:38:50 2000
+@@ -6346,7 +6346,6 @@
+ 	    }
+ 	    goto globfree;
+ 	}
+-	if ((st.st_mode & S_IFMT) != S_IFDIR) {
+ 	    if (dout == NULL) {
+ 		dout = dataconn("file list", (off_t) - 1, "w");
+ 		if (dout == NULL)
+@@ -6369,7 +6368,6 @@
+ 		byte_count_out++;
+ 	    }
+ #endif
+-	}
+     }
+ 
+     if (dout != NULL) {
+
+
