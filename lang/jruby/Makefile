@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jruby
-PORTVERSION=	0.2.1
+PORTVERSION=	0.3.0
 CATEGORIES=	lang ruby java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,15 +18,18 @@ MAINTAINER=	knu@FreeBSD.org
 RUN_DEPENDS=	${JAVA}:${PORTSDIR}/java/javavmwrapper
 #RUN_DEPENDS=	${JAVA}:${PORTSDIR}/java/linux-jdk13
 
-WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION:S/./_/g}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/./_/g}
 
 JAVA?=		${LOCALBASE}/bin/javavm
 
 .if !defined(NOPORTDOCS)
 DISTFILES+=	${PORTNAME}-src-${PORTVERSION:S/./_/g}${EXTRACT_SUFX}
 
-FILES=		README test.rb samples
+FILES=		README README.test test.rb samples
 .endif
+
+post-extract:
+	${FIND} ${WRKSRC} -name '*.swp' -delete
 
 do-build:
 	( \
