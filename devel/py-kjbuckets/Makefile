@@ -18,8 +18,8 @@ MAINTAINER=		nectar@FreeBSD.org
 BUILD_DEPENDS=		python:${PORTSDIR}/lang/python
 RUN_DEPENDS=		python:${PORTSDIR}/lang/python
 
+NO_WRKSUBDIR=		yes
 MAKEFILE=		makefile
-WRKSRC=			${WRKDIR}
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/python1.5/site-packages

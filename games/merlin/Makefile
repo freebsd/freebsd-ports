@@ -15,9 +15,9 @@ MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
+NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_X_PREFIX=	yes
-WRKSRC=		${WRKDIR}
 
 post-extract:
 	@ ${MV} ${WRKSRC}/merlin.tcl ${WRKSRC}/merlin

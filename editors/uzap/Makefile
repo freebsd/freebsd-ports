@@ -15,7 +15,7 @@ MAINTAINER=	joerg@FreeBSD.org
 
 # restrictive Copyright; the author is no longer reachable, however :-(
 RESTRICTED=	"Restrictive copyright"
-WRKSRC=		${WRKDIR}
+NO_WRKSUBDIR=	yes
 MAN1=		uzap.1
 
 .include <bsd.port.mk>

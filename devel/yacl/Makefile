@@ -13,8 +13,8 @@ DISTNAME=		yacl-0170-beta
 
 MAINTAINER=		albast@xs4all.nl
 
+NO_WRKSUBDIR=		yes
 USE_ZIP=		yes
-WRKSRC=			${WRKDIR}
 MAKE_ENV=		YACLPATH=${WRKDIR}
 
 MAKEFILE=		gnuc.mak

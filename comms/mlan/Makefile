@@ -13,7 +13,7 @@ DISTNAME=	mlpb103
 
 MAINTAINER=	phk@FreeBSD.org
 
+NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
-WRKSRC=		${WRKDIR}
 
 .include <bsd.port.mk>

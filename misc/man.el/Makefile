@@ -15,8 +15,8 @@ MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
 
 # If you use Japanese manuals, install japanese/man as well.
 
+NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}
 
 ELISPDIR=	${PREFIX}/share/emacs/site-lisp
 SITEPKGDIR=	${PREFIX}/lib/xemacs/site-packages

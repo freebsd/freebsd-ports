@@ -16,7 +16,6 @@ MAINTAINER=	honda@kashio.info.mie-u.ac.jp
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-WRKSRC=		${WRKDIR}
 
 ELISPDIR=	${PREFIX}/share/emacs/site-lisp
 XELISPDIR=	${PREFIX}/lib/xemacs/site-lisp

@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PREFIX}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk \
 		${PREFIX}/bin/servletrunner:${PORTSDIR}/java/jsdk
 
 USE_ZIP=	yes
-WRKSRC=		${WRKDIR}
+NO_WRKSUBDIR=	yes
 JDK_VERSION=	1.1.8
 NO_BUILD=	yes
 RESTRICTED=	"Special conditions apply for commercial use, see licence"

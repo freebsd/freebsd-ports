@@ -20,7 +20,7 @@ MAN1=		pmapp.1 pmcanon.1 pmcheck.1 pmnewsgroups.1 \
 BIN1=		pmapp pmcanon pmcheck pmnewsgroups \
 		pmdaemon pmcancel
 
-WRKSRC=		${WRKDIR}
+NO_WRKSUBDIR=	yes
 
 do-install:
 .for i in ${BIN1}
