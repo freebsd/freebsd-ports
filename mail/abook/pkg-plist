@@ -1,11 +1,13 @@
 bin/abook
-%%PORTDOCS%%share/doc/abook/ANNOUNCE
-%%PORTDOCS%%share/doc/abook/AUTHORS
-%%PORTDOCS%%share/doc/abook/BUGS
-%%PORTDOCS%%share/doc/abook/COPYING
-%%PORTDOCS%%share/doc/abook/ChangeLog
-%%PORTDOCS%%share/doc/abook/FAQ
-%%PORTDOCS%%share/doc/abook/README
-%%PORTDOCS%%share/doc/abook/THANKS
-%%PORTDOCS%%share/doc/abook/TODO
-%%PORTDOCS%%@dirrm share/doc/abook
+%%PORTDOCS%%%%DOCSDIR%%/ANNOUNCE
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
