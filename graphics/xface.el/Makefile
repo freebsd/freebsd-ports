@@ -10,9 +10,9 @@ PORTVERSION=	1.3.6.15
 CATEGORIES=	graphics elisp
 MASTER_SITES=	ftp://ftp.jpl.org/pub/elisp/ \
 		ftp://ftp.opaopa.org/pub/mirror/elisp/jpl/elisp/
-DISTNAME=	${PORTNAME:S/.el//}-${PORTVERSION}
+DISTNAME=	x-face-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tar.gz \
-		${PORTNAME:S/.el/-e21.el.gz/}
+		x-face-e21.el.gz
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER=	yoichi@FreeBSD.org
