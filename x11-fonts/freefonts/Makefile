@@ -7,6 +7,7 @@
 
 PORTNAME=	freefonts
 PORTVERSION= 	0.10
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/fonts/
 
@@ -16,6 +17,7 @@ NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes
 
 post-install:
+	${RM} ${PREFIX}/lib/X11/fonts/freefont/fonts.dir.orig
 	@${CAT} ${PKGDIR}/DESCR
 
 .include <bsd.port.mk>
