@@ -1,0 +1,17 @@
+@unexec install-info --delete %D/info/emacs-lisp-intro.info %D/info/dir
+info/emacs-lisp-intro.info
+info/emacs-lisp-intro.info-1
+info/emacs-lisp-intro.info-2
+info/emacs-lisp-intro.info-3
+info/emacs-lisp-intro.info-4
+info/emacs-lisp-intro.info-5
+info/emacs-lisp-intro.info-6
+info/emacs-lisp-intro.info-7
+info/emacs-lisp-intro.info-8
+info/emacs-lisp-intro.info-9
+info/emacs-lisp-intro.info-10
+info/emacs-lisp-intro.info-11
+info/emacs-lisp-intro.info-12
+info/emacs-lisp-intro.info-13
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/emacs-lisp-intro.info %D/info/dir

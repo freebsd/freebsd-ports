@@ -1,0 +1,15 @@
+*** emacs-lisp-intro.texi.orig	Tue Oct 21 11:33:24 1997
+--- emacs-lisp-intro.texi	Tue Nov 18 20:34:18 1997
+***************
+*** 3,8 ****
+--- 3,12 ----
+  @setfilename emacs-lisp-intro.info
+  @c sethtmlfilename emacs-lisp-intro.html
+  @settitle Programming in Emacs Lisp
++ @dircategory Emacs Lisp programming
++ @direntry
++ * Emacs Lisp Intro: (emacs-lisp-intro.info).    Programming in Emacs Lisp.
++ @end direntry
+  @syncodeindex vr cp
+  @syncodeindex fn cp
+  @setchapternewpage odd
