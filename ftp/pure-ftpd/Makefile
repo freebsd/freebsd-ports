@@ -41,9 +41,11 @@ MAN8=		pure-ftpd.8 pure-ftpwho.8 pure-mrtginfo.8 pure-statsdecode.8 \
 
 OPTIONS=	LDAP	"Support for users in LDAP directories" off \
 		MYSQL	"Support for users in MySQL database" off \
+		PAM	"Support for PAM authentication" on \
 		PGSQL	"Support for users in PostgreSQL database" off \
 		PRIVSEP	"Enable privilege separation" off \
-		PERUSERLIMITS	"Per-user concurrency limits" off
+		PERUSERLIMITS	"Per-user concurrency limits" off \
+		THROTTLING	"Bandwidth throttling" off
 
 .include <bsd.port.pre.mk>
 
@@ -81,13 +83,18 @@ CONFIGURE_ARGS+=	--with-privsep
 CONFIGURE_ARGS+=	--with-peruserlimits
 .endif
 
+# throttling requested?
+.if defined(WITH_THROTTLING)
+CONFIGURE_ARGS+=	--with-throttling
+.endif
+
 # different certificate file location?
 .if defined(WITH_CERTFILE)
 CONFIGURE_ARGS+=	--with-certfile=${WITH_CERTFILE}
 .endif
 
 # if mysql or ldap are disabled, enable pam
-.if !defined(WITH_LDAP) && !defined(WITH_MYSQL) && !defined(WITH_PGSQL)
+.if !defined(WITHOUT_PAM)
 CONFIGURE_ARGS+=	--with-pam
 .endif
 
