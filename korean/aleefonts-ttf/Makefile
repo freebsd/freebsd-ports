@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	aleefonts
-PORTVERSION=	0.3
+PORTVERSION=	2.7
 CATEGORIES=	korean x11-fonts
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/t/ttf-alee
@@ -15,13 +15,11 @@ DISTNAME=	ttf-alee_${PORTVERSION}
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	A-Lee's Hangul truetype fonts
 
-BROKEN=		Unfetchable
-
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 FONTDIR=	${PREFIX}/lib/X11/fonts/TrueType
-FONTLIST=	Eunjin Hmfs Ongdalsam
+FONTLIST=	09t@quark Bandal Eunjin Ongdalsam
 
 do-install:
 	${MKDIR} ${FONTDIR}
