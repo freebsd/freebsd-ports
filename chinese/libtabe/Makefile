@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	libtabe
-PORTVERSION=	0.1.4
+PORTVERSION=	0.1.5
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://xcin.linux.org.tw/pub/xcin/libtabe/devel/
-DISTNAME=	libtabe-0.1-4
+DISTNAME=	libtabe-0.1-5
 
 MAINTAINER=	keith@freebsd.sinica.edu.tw
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libdb2.a:${PORTSDIR}/databases/db
+LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db
 
 WRKSRC=		${WRKDIR}/libtabe
 USE_XLIB=	yes
@@ -38,7 +38,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/${DOC} ${PREFIX}/share/doc/tabe
 .endfor
 .endif
-	${TOUCH} ${PREFIX}/share/tabe/libtabe-0.1-4
+	${TOUCH} ${PREFIX}/share/tabe/libtabe-0.1-5
 .if ${PORTOBJFORMAT} == "elf"
 	${RM} -f ${PREFIX}/lib/libbims.so ${PREFIX}/lib/libbims.so.0
 	${MV} ${PREFIX}/lib/libbims.so.0.1 ${PREFIX}/lib/libbims.so.0
