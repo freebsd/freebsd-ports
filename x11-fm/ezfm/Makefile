@@ -3,7 +3,7 @@
 # Date created:				27 July 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.2 1998/09/15 11:46:08 asami Exp $
+# $Id: Makefile,v 1.3 1998/10/05 02:53:32 steve Exp $
 #
 
 DISTNAME=	EZFM-0.1-src
@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.ma.utexas.edu/pub/mzou/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	andy@icc.surw.chel.su
+
+BROKEN_ELF=	yes
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		EZ.1:${PORTSDIR}/graphics/EZWGL
