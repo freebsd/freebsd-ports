@@ -15,13 +15,12 @@ DISTFILES=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}:0
 MAINTAINER=	paul+ports@it.ca
 COMMENT=	Small and fast DNS daemon especially for DNSBL zones
 
-BROKEN=		"Checksum mismatch"
-
 .if !defined(NOPORTDOCS)
 EXTRACT_ONLY=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}
 MASTER_SITES+=	http://www.corpit.ru/mjt/:1 \
 		http://www.it.ca/~paul/src/:1
 DISTFILES+=	rbldnsd.html:1
+IGNOREFILES+=	rbldnsd.html
 .endif
 
 MAN8=		rbldnsd.8
