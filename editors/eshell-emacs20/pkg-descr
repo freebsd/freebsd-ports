@@ -8,4 +8,4 @@ Put the expression below into your ~/.emacs.
 (require 'pcmpl-auto)
 (add-hook 'shell-mode-hook 'pcomplete-shell-setup)
 
-WWW: http://www.gci-net.com/~johnw/eshell.html
+WWW: http://emacswiki.org/johnw/eshell.html
