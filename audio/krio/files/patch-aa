@@ -1,8 +1,10 @@
 --- Makefile.orig	Wed Jul 21 21:39:27 1999
 +++ Makefile	Fri Feb 18 23:18:40 2000
-@@ -2,9 +2,12 @@
+@@ -1,10 +1,13 @@
+ # anyone waht to clean this up for me, and perhaps make it use autoconf?
  
- CC	= g++
+-CC	= g++
++CC	= $(CXX)
  RIODIR  = rio107
 -CFLAGS	= -Wall -O1 -I/usr/X11R6/include/qt -I/usr/include/kde -I/usr/include/qt -I$(RIODIR)
 -# CFLAGS	= -DDEBUG_MESSAGES -Wall -O1 -I/usr/X11R6/include/qt -I/usr/include/kde -I/usr/include/qt -I$(RIODIR)

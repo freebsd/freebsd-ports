@@ -1,16 +1,22 @@
 *** Makefile.orig	Fri Apr  2 19:52:27 1999
 --- Makefile	Fri Apr  2 19:51:11 1999
 ***************
-*** 7,13 ****
-  CC = g++
+*** 4,13 ****
+  VERSION = 0.7.1
+  
+  # Your C++ compiler
+! CC = g++
   
   # Flags to pass to the C++ compiler
 ! FLAGS = -O -Wall
   
   # Your tar
   TAR = tar
---- 7,13 ----
-  CC = g++
+--- 4,13 ----
+  VERSION = 0.7.1
+  
+  # Your C++ compiler
+! CC = $(CXX)
   
   # Flags to pass to the C++ compiler
 ! FLAGS = -DPREFIX=\"${PREFIX}\" ${CFLAGS} -L /usr/X11R6/lib -I /usr/X11R6/include
