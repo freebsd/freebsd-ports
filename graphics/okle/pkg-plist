@@ -1,5 +1,5 @@
 bin/okle
-lib/okle/ogle_gui
+bin/okle_gui
 share/applnk/Multimedia/okle.desktop
 share/apps/okle/okleui.rc
 share/apps/okle/pics/angleselect.png
@@ -38,4 +38,3 @@ share/locale/sv/LC_MESSAGES/okle.mo
 @unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
 @dirrm share/apps/okle/pics
 @dirrm share/apps/okle
-@dirrm lib/okle

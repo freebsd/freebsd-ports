@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	okle
-PORTVERSION=	0.2.2
-PORTREVISION=	1
+PORTVERSION=	0.2.3
 CATEGORIES=	graphics kde
 MASTER_SITES=	http://okle.sourceforge.net/
 
@@ -22,6 +21,7 @@ USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ogle-dir=${LOCALBASE}/bin \
 		--with-ogle-includes=${LOCALBASE}/include \
+		--program-transform-name="s|,|,|" \
 		--with-ogle-libs=${LOCALBASE}/lib/ogle
 
 # location of okle ogle_gui
@@ -39,11 +39,6 @@ pre-everything::
 pre-configure:
 	@cd ${WRKSRC} && ${LOCALBASE}/bin/autoconf && ${LOCALBASE}/bin/autoheader
 
-post-install:
-	@${MKDIR} ${PREFIX}/lib/okle
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/ogle_gui ${PREFIX}/lib/okle
-	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh ${PREFIX}/bin/${PORTNAME}
-
 .include <bsd.port.pre.mk>
 
 .ifdef(WITH_DVD_DEVICE)
@@ -53,15 +48,6 @@ DEFAULT_DVD_DEVICE=/dev/acd0c
 .endif
 
 post-patch:
-# wrapper hack to allow ogle to have both ogle-gui and oKle installed
-# at same time
-	@${SED} -e "s|%%DVDP_UI%%|${DVDP_UI}|; \
-		s|%%ENV%%|${SETENV}|; \
-		s|%%OGLE%%|${OGLE}|" \
-		${FILESDIR}/wrapper.sh > \
-		${WRKDIR}/wrapper.sh
-	@${REINPLACE_CMD} -E -e 's|^(Exec=).+$$|\1${PORTNAME}|' \
-		${WRKSRC}/src/okle.desktop
 # point to specific device
 	@${REINPLACE_CMD} -e "s|\"/dev/dvd\"|\"${DEFAULT_DVD_DEVICE}\"|" \
 		${WRKSRC}/src/okle_win.cpp
