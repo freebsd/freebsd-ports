@@ -1,8 +1,6 @@
 Please use bzip2, which is the successor of this older bzip version.
-This port stays for compatibility reasons. For a discussion of the
-advantages of bzip2 over bzip 0.21 see
-
-	http://www.muraroa.demon.co.uk/
+This port stays for compatibility reasons.  A discussion of the
+advantages of bzip2 over bzip 0.21 is given on the homepage.
 
 In short: bzip2 ist faster, more reliable and *patent free*
 
@@ -11,6 +9,8 @@ COMMERCIAL USE of bzip
 This program may or may not infringe certain US patents pertaining
 to arithmetic coding and to the block-sorting transformation itself.
 Opinions differ as to the precise legal status of some of the
-algorithms used. Nevertheless, you should be aware that commercial
+algorithms used.  Nevertheless, you should be aware that commercial
 use of this program could render you liable to unfriendly legal
 action.
+
+WWW: http://www.muraroa.demon.co.uk/
