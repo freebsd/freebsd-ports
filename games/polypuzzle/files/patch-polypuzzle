@@ -1,0 +1,13 @@
+--- polypuzzle.orig	Fri Jun 18 11:51:04 2004
++++ polypuzzle	Wed Jun 30 13:46:07 2004
+@@ -1,8 +1,8 @@
+ #/bin/sh
+ # the next line restarts using tclsh \
+-exec wish "$0" "$@"
++exec wish8.4 "$0" "$@"
+ 
+-if {[file isdirectory /usr/local/lib/polypuzzle]} {cd  /usr/local/lib/polypuzzle}
++if {[file isdirectory %%DATADIR%%]} {cd  %%DATADIR%%}
+ 
+ source pieces.colours
+ set colour(bg)  azure3		;# background colour

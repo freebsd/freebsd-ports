@@ -1,0 +1,25 @@
+bin/polypuzzle
+%%DATADIR%%/menus
+%%DATADIR%%/pieces.3x20
+%%DATADIR%%/pieces.783
+%%DATADIR%%/pieces.bonus
+%%DATADIR%%/pieces.colours
+%%DATADIR%%/pieces.flower
+%%DATADIR%%/pieces.large
+%%DATADIR%%/pieces.medium
+%%DATADIR%%/pieces.monster
+%%DATADIR%%/pieces.small
+%%DATADIR%%/pieces.square
+%%DATADIR%%/pieces.star
+%%DATADIR%%/pieces.triangle
+%%PORTDOCS%%%%DOCSDIR%%/About
+%%PORTDOCS%%%%DOCSDIR%%/Bugs
+%%PORTDOCS%%%%DOCSDIR%%/Changelog
+%%PORTDOCS%%%%DOCSDIR%%/Copyright
+%%PORTDOCS%%%%DOCSDIR%%/Install
+%%PORTDOCS%%%%DOCSDIR%%/Math
+%%PORTDOCS%%%%DOCSDIR%%/Readme
+%%PORTDOCS%%%%DOCSDIR%%/Thanks
+%%PORTDOCS%%%%DOCSDIR%%/Todo
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%

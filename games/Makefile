@@ -344,6 +344,7 @@
     SUBDIR += pinball
     SUBDIR += pipenightdreams
     SUBDIR += pmars
+    SUBDIR += polypuzzle
     SUBDIR += powermanga
     SUBDIR += powerpak
     SUBDIR += pp
