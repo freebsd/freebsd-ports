@@ -5,7 +5,7 @@
  # make procedure in the parent SAOimage directory.
  
 -CFLAGS  = -c -O
-+CFLAGS  = -c -O -I${X11BASE}/include
++CFLAGS  += -c -I${X11BASE}/include
  
  LINT   = lint
  RANLIB = ranlib

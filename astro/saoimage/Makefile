@@ -13,15 +13,13 @@ MASTER_SITES=	ftp://cfa-ftp.harvard.edu/pub/gsc/SAOimage/
 MAINTAINER=	ports@FreeBSD.org
 
 MAKEFILE=	makefile
-ALL_TARGET=	FreeBSD
-INSTALL_TARGET= -f makefile.$(ALL_TARGET) install_saobin install_saoman
-
-MANL=		saoimage.l
+ALL_TARGET=	${OPSYS}
 USE_X_PREFIX=	yes
+MAN1=		saoimage.1
 
-pre-build:
-	@(cd ${WRKSRC}/btnlib; ${MAKE})
-post-install:
-	strip $(PREFIX)/bin/saoimage
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/saoimage ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/imtoolrc ${PREFIX}/etc/imtoolrc.sample
+	${INSTALL_MAN} ${WRKSRC}/doc/saoimage.man ${PREFIX}/man/man1/saoimage.1
 
 .include <bsd.port.mk>
