@@ -1,0 +1,13 @@
+lib/perl5/site_perl/%%PERL_VER%%/GIFgraph/pie.pm
+lib/perl5/site_perl/%%PERL_VER%%/GIFgraph/utils.pm
+lib/perl5/site_perl/%%PERL_VER%%/GIFgraph/axestype.pm
+lib/perl5/site_perl/%%PERL_VER%%/GIFgraph/colour.pm
+lib/perl5/site_perl/%%PERL_VER%%/GIFgraph/bars.pm
+lib/perl5/site_perl/%%PERL_VER%%/GIFgraph/linespoints.pm
+lib/perl5/site_perl/%%PERL_VER%%/GIFgraph/area.pm
+lib/perl5/site_perl/%%PERL_VER%%/GIFgraph/lines.pm
+lib/perl5/site_perl/%%PERL_VER%%/GIFgraph/points.pm
+lib/perl5/site_perl/%%PERL_VER%%/GIFgraph.pm
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/GIFgraph/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/GIFgraph
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/GIFgraph
