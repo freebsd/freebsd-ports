@@ -70,7 +70,7 @@ CONFIGURE_ARGS+= --enable-threads
 CONFIGURE_ARGS+= --enable-threads=posix
 .endif
 ALL_TARGET=	bootstrap
-MAN1=		gcpp.1 gg++.1 gg77.1 ggcc.1 ggcov.1
+MAN1=		cpp30.1 g++30.1 g77-30.1 gcc30.1 gcov30.1
 
 pre-configure:
 	@(MAJ=`sysctl -n kern.osreldate | ${SED} -e '/.....$$/s///'` ; \
@@ -106,11 +106,11 @@ post-install:
 	do \
 		strip $$prog ; \
 	done )
-	${MV} -f ${PREFIX}/bin/gcc ${PREFIX}/bin/ggcc
-	${MV} -f ${PREFIX}/bin/g++ ${PREFIX}/bin/gg++
-	${MV} -f ${PREFIX}/bin/g77 ${PREFIX}/bin/gg77
-	${MV} -f ${PREFIX}/bin/g++filt ${PREFIX}/bin/gg++filt
-	${MV} -f ${PREFIX}/bin/gcov ${PREFIX}/bin/ggcov
+	${MV} -f ${PREFIX}/bin/gcc ${PREFIX}/bin/gcc30
+	${MV} -f ${PREFIX}/bin/g++ ${PREFIX}/bin/g++30
+	${MV} -f ${PREFIX}/bin/g77 ${PREFIX}/bin/g77-30
+	${MV} -f ${PREFIX}/bin/g++filt ${PREFIX}/bin/g++filt30
+	${MV} -f ${PREFIX}/bin/gcov ${PREFIX}/bin/gcov30
 	${MV} -f ${PREFIX}/bin/gccbug ${PREFIX}/bin/gccbug-${SNAPVER}
 	${RM} -f ${PREFIX}/bin/${GNU_HOST}-c++
 	${RM} -f ${PREFIX}/bin/cpp
@@ -119,11 +119,11 @@ post-install:
 	${MV} -f ${PREFIX}/lib/libiberty.a ${TARGLIB}
 	${MV} -f ${PREFIX}/lib/libstdc++.* ${PREFIX}/lib/libsupc++.* ${TARGLIB}
 	-${MV} -f ${PREFIX}/lib/ieee ${TARGLIB}
-	${MV} -f ${PREFIX}/man/man1/gcc.1 ${PREFIX}/man/man1/ggcc.1
-	${MV} -f ${PREFIX}/man/man1/g++.1 ${PREFIX}/man/man1/gg++.1
-	${MV} -f ${PREFIX}/man/man1/g77.1 ${PREFIX}/man/man1/gg77.1
-	${MV} -f ${PREFIX}/man/man1/cpp.1 ${PREFIX}/man/man1/gcpp.1
-	${MV} -f ${PREFIX}/man/man1/gcov.1 ${PREFIX}/man/man1/ggcov.1
+	${MV} -f ${PREFIX}/man/man1/gcc.1 ${PREFIX}/man/man1/gcc30.1
+	${MV} -f ${PREFIX}/man/man1/g++.1 ${PREFIX}/man/man1/g++30.1
+	${MV} -f ${PREFIX}/man/man1/g77.1 ${PREFIX}/man/man1/g77-30.1
+	${MV} -f ${PREFIX}/man/man1/cpp.1 ${PREFIX}/man/man1/cpp30.1
+	${MV} -f ${PREFIX}/man/man1/gcov.1 ${PREFIX}/man/man1/gcov30.1
 #.if defined(WANT_SHAREDLIBS)
 #	${MV} -f ${PREFIX}/lib/libstdc++.so* ${TARGLIB}
 #.endif
