@@ -3,9 +3,9 @@
 @@ -8,15 +8,42 @@
  #	 c++ interface to gc.a
  # cord/de - builds dumb editor based on cords.
- ABI_FLAG=
+ ABI_FLAG= 
 -CC=cc $(ABI_FLAG)
--CXX=CC $(ABI_FLAG)
+-CXX=g++ $(ABI_FLAG)
 +CC+= $(ABI_FLAG)
 +CXX+= $(ABI_FLAG)
  AS=as $(ABI_FLAG)
