@@ -3,7 +3,7 @@
 # Date created:		26 August 1997
 # Whom:			Michael Elbel (me)
 #
-# $Id: Makefile,v 1.1.1.1 1997/09/03 19:27:57 gj Exp $
+# $Id: Makefile,v 1.2 1997/11/08 22:15:37 gj Exp $
 #
 
 DISTNAME=	xemacs-20.2
@@ -31,7 +31,7 @@ CONFIGURE_ARGS=	i386--freebsd --prefix=${PREFIX} \
 		--with-sound=native \
 		--site-includes=/usr/local/include \
 		--site-libraries=/usr/local/lib \
-		--sitelispdir="${PREFIX}/lib/xemacs/site-lisp ${PREFIX}/share/xemacs/site-lisp" \
+		--sitelispdir="${PREFIX}/lib/xemacs/site-lisp ${PREFIX}/share/emacs/site-lisp" \
 		${WITH_MULE} ${WITH_DIALOGS}
 MAN1=		ctags.1 etags.1 gnuattach.1 gnuclient.1 gnudoit.1 \
 		gnuserv.1 xemacs.1
@@ -56,6 +56,6 @@ post-install:
 # ``make install'' does not set the permissions like pkg_add does.
 	chmod 1777 /var/run/xemacs/lock
 	chmod 755 ${PREFIX}/lib/xemacs/site-lisp
-	chmod 755 ${PREFIX}/share/xemacs/site-lisp
+	chmod 755 ${PREFIX}/share/emacs/site-lisp
 
 .include <bsd.port.mk>
