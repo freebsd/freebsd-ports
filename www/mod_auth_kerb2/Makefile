@@ -30,6 +30,12 @@ WRKSRC=		${WRKDIR}/src/modules/kerberos
 
 KRB5_HOME?=	${LOCALBASE}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Does not compile"
+.endif
+
 do-build:
 	cd ${WRKSRC} && \
 		${APXS} -I${KRB5_HOME}/include \
@@ -43,4 +49,4 @@ do-build:
 do-install:
 	${APXS} -i -A -n ${PORTNAME:S/mod_//g} ${WRKSRC}/${PORTNAME}.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
