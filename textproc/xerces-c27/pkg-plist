@@ -131,7 +131,8 @@ include/xercesc/util/Base64.hpp
 include/xercesc/util/AutoSense.hpp
 include/xercesc/util/XMLDeleterFor.c
 include/xercesc/util/Platforms/FreeBSD/FreeBSDDefs.hpp
-include/xercesc/util/Transcoders/IconvFBSD/IconvFBSDTransService.hpp
+%%TRANSICONV%%include/xercesc/util/Transcoders/IconvFBSD/IconvFBSDTransService.hpp
+%%TRANSICU%%include/xercesc/util/Transcoders/ICU/ICUTransService.hpp
 include/xercesc/util/MsgLoaders/InMemory/InMemMsgLoader.hpp
 include/xercesc/util/MsgLoaders/InMemory/CppErrMsgs_EN_US.hpp
 include/xercesc/util/Compilers/BorlandCDefs.hpp
@@ -392,7 +393,8 @@ lib/%%XERCESC_LIB%%
 @dirrm include/xercesc/util/Compilers
 @dirrm include/xercesc/util/MsgLoaders/InMemory
 @dirrm include/xercesc/util/MsgLoaders
-@dirrm include/xercesc/util/Transcoders/IconvFBSD
+%%TRANSICONV%%@dirrm include/xercesc/util/Transcoders/IconvFBSD
+%%TRANSICU%%@dirrm include/xercesc/util/Transcoders/ICU
 @dirrm include/xercesc/util/Transcoders
 @dirrm include/xercesc/util/Platforms/FreeBSD
 @dirrm include/xercesc/util/Platforms
