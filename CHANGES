@@ -11,7 +11,7 @@ in the release notes.
 All ports committers are allowed to commit to this file.
 
 20040129:
-        SIZE lines in distinfo files:  if you set USE_SIZE when you do "make
+	SIZE lines in distinfo files:  if you set USE_SIZE when you do "make
 	makesum", the byte sizes of the distfiles will be listed in the
 	distinfo file. Then, if a distfile is replaced on its master site with
 	one of a different size than that listed, "make fetch" will fail with a
