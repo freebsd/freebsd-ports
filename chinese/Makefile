@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.11 1997/09/10 08:49:11 asami Exp $
+# $Id: Makefile,v 1.12 1997/10/01 09:37:47 max Exp $
 #
 
     SUBDIR += Wnn
@@ -10,6 +10,7 @@
     SUBDIR += gb2ps
     SUBDIR += gbscript
     SUBDIR += hc
+    SUBDIR += hztty
     SUBDIR += lunar
     SUBDIR += mule-wnn4
     SUBDIR += nvi-big5
