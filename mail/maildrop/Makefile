@@ -43,7 +43,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 502010
+.if ${OSVERSION} <= 502010
 USE_GMAKE	=yes
 .endif
 
