@@ -42,5 +42,6 @@
     SUBDIR += wmthemeinstall
     SUBDIR += wmx
     SUBDIR += xfce
+    SUBDIR += xwmm
 
 .include <bsd.port.subdir.mk>
