@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amap
-PORTVERSION=	2.7
+PORTVERSION=	4.0
 CATEGORIES=	security
 MASTER_SITES=	http://www.thc.org/releases/
 
@@ -19,7 +19,7 @@ USE_REINPLACE=	yes
 MAN1=		amap.1
 
 post-patch:
-	${REINPLACE_CMD} -e 's|PREFIX|${PREFIX}|' ${WRKSRC}/amap.c
+	${REINPLACE_CMD} -e 's|PREFIX|${PREFIX}|' ${WRKSRC}/amap.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/amap ${PREFIX}/bin/
@@ -31,7 +31,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/amap.1 ${MANPREFIX}/man/man1/
 .	if !defined(NOPORTDOCS)
 		${MKDIR} ${DOCSDIR}
-.		for i in README BUGS TODO CHANGES LICENSE
+.		for i in README TODO CHANGES LICENSE IGNORE VOTE
 			${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
 .		endfor
 .	endif

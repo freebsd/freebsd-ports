@@ -4,10 +4,11 @@ bin/amapcrap
 share/amap/appdefs.resp
 share/amap/appdefs.rpc
 share/amap/appdefs.trig
-%%PORTDOCS%%share/doc/amap/README
-%%PORTDOCS%%share/doc/amap/BUGS
-%%PORTDOCS%%share/doc/amap/TODO
-%%PORTDOCS%%share/doc/amap/CHANGES
-%%PORTDOCS%%share/doc/amap/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/IGNORE
+%%PORTDOCS%%%%DOCSDIR%%/VOTE
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%@dirrm share/doc/amap
 @dirrm share/amap
