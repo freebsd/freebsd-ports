@@ -3,7 +3,7 @@
 # Date created:		2 Feb 1995
 # Whom:			Michael Elbel (me)
 #
-# $Id: Makefile,v 1.3 1995/04/01 12:50:15 jkh Exp $
+# $Id: Makefile,v 1.4 1995/04/11 02:34:03 asami Exp $
 #
 
 
@@ -29,7 +29,6 @@ fetch: pre-fetch
 			echo ">> `basename $$file` doesn't seem to exist on this system."; \
 			echo ">> Attempting to fetch it from a master site."; \
 			for site in ${MASTER_SITES}; do \
-CATEGORIES+=	utilities
 				pwd;\
 				if ${NCFTP} ${NCFTPFLAGS} $${site}$${file}; then \
 					break; \
