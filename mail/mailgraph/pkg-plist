@@ -1,5 +1,5 @@
-etc/rc.d/mailgraph.sh.sample
+etc/rc.d/mailgraph.sh
 www/cgi-bin/mailgraph.cgi
-www/cgi-bin/mailgraph.pl
+sbin/mailgraph.pl
 @unexec rmdir %D/www/cgi-bin 2>/dev/null || true
 @unexec rmdir %D/www 2>/dev/null || true
