@@ -1,0 +1,6 @@
+ARPACK++ is a collection of classes that offers c++ programmers an interface
+to ARPACK. It preserves the full capability, performance, accuracy and low
+memory requirements of the FORTRAN package, but takes advantage of the C++
+object-oriented programming environment.
+
+WWW:	http://www.ime.unicamp.br/~chico/arpack++/

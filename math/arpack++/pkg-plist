@@ -1,0 +1,398 @@
+include/ARPACK++/README
+include/ARPACK++/arbgcomp.h
+include/ARPACK++/arbgnsym.h
+include/ARPACK++/arbgsym.h
+include/ARPACK++/arbnsmat.h
+include/ARPACK++/arbnspen.h
+include/ARPACK++/arbscomp.h
+include/ARPACK++/arbsmat.h
+include/ARPACK++/arbsnsym.h
+include/ARPACK++/arbspen.h
+include/ARPACK++/arbssym.h
+include/ARPACK++/arch.h
+include/ARPACK++/arcomp.h
+include/ARPACK++/ardfmat.h
+include/ARPACK++/ardgcomp.h
+include/ARPACK++/ardgnsym.h
+include/ARPACK++/ardgsym.h
+include/ARPACK++/ardnsmat.h
+include/ARPACK++/ardnspen.h
+include/ARPACK++/ardscomp.h
+include/ARPACK++/ardsmat.h
+include/ARPACK++/ardsnsym.h
+include/ARPACK++/ardspen.h
+include/ARPACK++/ardssym.h
+include/ARPACK++/arerror.h
+include/ARPACK++/argcomp.h
+include/ARPACK++/argeig.h
+include/ARPACK++/argnsym.h
+include/ARPACK++/argsym.h
+include/ARPACK++/arhbmat.h
+include/ARPACK++/arlcomp.h
+include/ARPACK++/arlgcomp.h
+include/ARPACK++/arlgnsym.h
+include/ARPACK++/arlgsym.h
+include/ARPACK++/arlnames.h
+include/ARPACK++/arlnsmat.h
+include/ARPACK++/arlnspen.h
+include/ARPACK++/arlscomp.h
+include/ARPACK++/arlsmat.h
+include/ARPACK++/arlsnsym.h
+include/ARPACK++/arlspdef.h
+include/ARPACK++/arlspen.h
+include/ARPACK++/arlssym.h
+include/ARPACK++/arlsupm.h
+include/ARPACK++/arlutil.h
+include/ARPACK++/armat.h
+include/ARPACK++/arpackf.h
+include/ARPACK++/arrgcomp.h
+include/ARPACK++/arrgeig.h
+include/ARPACK++/arrgnsym.h
+include/ARPACK++/arrgsym.h
+include/ARPACK++/arrscomp.h
+include/ARPACK++/arrseig.h
+include/ARPACK++/arrsnsym.h
+include/ARPACK++/arrssym.h
+include/ARPACK++/arscomp.h
+include/ARPACK++/arseig.h
+include/ARPACK++/arsnsym.h
+include/ARPACK++/arssym.h
+include/ARPACK++/arugcomp.h
+include/ARPACK++/arugnsym.h
+include/ARPACK++/arugsym.h
+include/ARPACK++/arunsmat.h
+include/ARPACK++/arunspen.h
+include/ARPACK++/aruscomp.h
+include/ARPACK++/arusmat.h
+include/ARPACK++/arusnsym.h
+include/ARPACK++/aruspen.h
+include/ARPACK++/arussym.h
+include/ARPACK++/blas1c.h
+include/ARPACK++/blas1f.h
+include/ARPACK++/caupp.h
+include/ARPACK++/ceupp.h
+include/ARPACK++/debug.h
+include/ARPACK++/lapackc.h
+include/ARPACK++/lapackf.h
+include/ARPACK++/naupp.h
+include/ARPACK++/neupp.h
+include/ARPACK++/saupp.h
+include/ARPACK++/seupp.h
+include/ARPACK++/superluc.h
+include/ARPACK++/umfpackc.h
+include/ARPACK++/umfpackf.h
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/arpackpp.ps
+%%PORTDOCS%%%%DOCSDIR%%/bugs.txt
+%%PORTDOCS%%%%DOCSDIR%%/structure.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/Makefile.inc
+%%PORTDOCS%%%%EXAMPLESDIR%%/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/areig/areig.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/areig/complex/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/areig/complex/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/areig/complex/acompgre.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/areig/complex/acompgsh.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/areig/complex/acompreg.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/areig/complex/acompshf.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/areig/complex/acompsol.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/areig/nonsym/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/areig/nonsym/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/areig/nonsym/ansymgre.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/areig/nonsym/ansymgsc.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/areig/nonsym/ansymgsh.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/areig/nonsym/ansymreg.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/areig/nonsym/ansymshf.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/areig/nonsym/ansymsol.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/areig/nonsym/simple.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/areig/sym/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/areig/sym/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/areig/sym/asymgbkl.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/areig/sym/asymgcay.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/areig/sym/asymgreg.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/areig/sym/asymgshf.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/areig/sym/asymreg.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/areig/sym/asymshf.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/areig/sym/asymsol.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/band/complex/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/band/complex/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/band/complex/bcompgre.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/band/complex/bcompgsh.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/band/complex/bcompreg.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/band/complex/bcompshf.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/band/nonsym/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/band/nonsym/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/band/nonsym/bnsymgre.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/band/nonsym/bnsymgsc.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/band/nonsym/bnsymgsh.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/band/nonsym/bnsymreg.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/band/nonsym/bnsymshf.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/band/nonsym/bsvd.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/band/sym/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/band/sym/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/band/sym/bsymgbkl.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/band/sym/bsymgcay.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/band/sym/bsymgreg.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/band/sym/bsymgshf.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/band/sym/bsymreg.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/band/sym/bsymshf.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/dense/complex/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/dense/complex/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/dense/complex/dcompgre.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/dense/complex/dcompgsh.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/dense/complex/dcompreg.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/dense/complex/dcompshf.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/dense/nonsym/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/dense/nonsym/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/dense/nonsym/dnsymgre.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/dense/nonsym/dnsymgsc.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/dense/nonsym/dnsymgsh.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/dense/nonsym/dnsymreg.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/dense/nonsym/dnsymshf.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/dense/nonsym/dsvd.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/dense/nonsym/dsvd2.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/dense/nonsym/matrix.dat.gz
+%%PORTDOCS%%%%EXAMPLESDIR%%/dense/sym/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/dense/sym/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/dense/sym/dsymgbkl.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/dense/sym/dsymgcay.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/dense/sym/dsymgreg.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/dense/sym/dsymgshf.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/dense/sym/dsymreg.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/dense/sym/dsymshf.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/harwell/complex/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/harwell/complex/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/harwell/complex/hcompgen.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/harwell/complex/hcompstd.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/harwell/complex/mhd1280a.cua.gz
+%%PORTDOCS%%%%EXAMPLESDIR%%/harwell/complex/mhd1280b.cua.gz
+%%PORTDOCS%%%%EXAMPLESDIR%%/harwell/nonsym/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/harwell/nonsym/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/harwell/nonsym/hnsymgen.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/harwell/nonsym/hnsymstd.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/harwell/nonsym/mhd416a.rua
+%%PORTDOCS%%%%EXAMPLESDIR%%/harwell/nonsym/mhd416b.rua
+%%PORTDOCS%%%%EXAMPLESDIR%%/harwell/sym/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/harwell/sym/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/harwell/sym/hsymgen.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/harwell/sym/hsymstd.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/harwell/sym/lund_a.rsa
+%%PORTDOCS%%%%EXAMPLESDIR%%/harwell/sym/lund_b.rsa
+%%PORTDOCS%%%%EXAMPLESDIR%%/matprod/complex/cgenprba.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matprod/complex/cgenprbb.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matprod/complex/cmatrixa.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matprod/complex/cmatrixb.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matprod/complex/cmatrixc.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matprod/complex/cmatrixd.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matprod/complex/cmatrixe.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matprod/complex/cmatrixf.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matprod/matprod.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matprod/nonsym/ngenprba.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matprod/nonsym/ngenprbb.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matprod/nonsym/ngenprbc.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matprod/nonsym/nmatrixa.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matprod/nonsym/nmatrixb.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matprod/nonsym/nmatrixc.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matprod/nonsym/nmatrixd.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matprod/nonsym/nmatrixe.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matprod/nonsym/nmatrixf.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matprod/nonsym/nmatrixv.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matprod/sym/sgenprba.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matprod/sym/sgenprbb.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matprod/sym/smatrixa.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matprod/sym/smatrixb.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matprod/sym/smatrixc.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matprod/sym/smatrixd.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/complex/bcmatrxa.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/complex/bcmatrxb.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/complex/bcmatrxc.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/complex/dcmatrxa.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/complex/dcmatrxb.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/complex/dcmatrxc.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/complex/lcmatrxa.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/complex/lcmatrxb.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/complex/lcmatrxe.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/complex/lcmatrxf.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/complex/lcompsol.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/nonsym/bnmatrxa.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/nonsym/bnmatrxb.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/nonsym/bnmatrxc.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/nonsym/bnmatrxd.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/nonsym/bnmatrxe.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/nonsym/bnmatrxw.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/nonsym/dnmatrxa.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/nonsym/dnmatrxb.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/nonsym/dnmatrxc.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/nonsym/dnmatrxd.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/nonsym/dnmatrxe.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/nonsym/dnmatrxw.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/nonsym/lnmatrxa.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/nonsym/lnmatrxb.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/nonsym/lnmatrxc.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/nonsym/lnmatrxd.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/nonsym/lnmatrxe.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/nonsym/lnmatrxf.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/nonsym/lnmatrxv.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/nonsym/lnmatrxw.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/nonsym/lnsymsol.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/nonsym/lsvdsol.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/sym/bsmatrxa.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/sym/bsmatrxb.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/sym/bsmatrxc.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/sym/dsmatrxa.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/sym/dsmatrxb.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/sym/dsmatrxc.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/sym/lsmatrxa.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/sym/lsmatrxb.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/sym/lsmatrxc.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/sym/lsmatrxd.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/matrices/sym/lsymsol.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/product/complex/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/product/complex/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/product/complex/compgreg.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/product/complex/compgshf.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/product/complex/compgsol.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/product/complex/compreg.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/product/complex/compshf.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/product/complex/compsol.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/product/nonsym/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/product/nonsym/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/product/nonsym/nsymgreg.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/product/nonsym/nsymgsci.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/product/nonsym/nsymgscr.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/product/nonsym/nsymgshf.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/product/nonsym/nsymgsol.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/product/nonsym/nsymreg.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/product/nonsym/nsymshf.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/product/nonsym/nsymsol.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/product/nonsym/nsymvsol.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/product/nonsym/svd.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/product/simple/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/product/simple/symsimp.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/product/sym/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/product/sym/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/product/sym/symgbklg.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/product/sym/symgcayl.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/product/sym/symgreg.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/product/sym/symgshft.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/product/sym/symgsol.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/product/sym/symreg.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/product/sym/symshft.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/product/sym/symsol.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/reverse/complex/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/reverse/complex/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/reverse/complex/rcompgre.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/reverse/complex/rcompgsh.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/reverse/complex/rcompgsl.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/reverse/complex/rcompreg.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/reverse/complex/rcompshf.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/reverse/complex/rcompsol.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/reverse/nonsym/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/reverse/nonsym/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/reverse/nonsym/rnsymgre.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/reverse/nonsym/rnsymgsc.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/reverse/nonsym/rnsymgsh.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/reverse/nonsym/rnsymgsl.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/reverse/nonsym/rnsymreg.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/reverse/nonsym/rnsymshf.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/reverse/nonsym/rnsymsol.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/reverse/nonsym/rnsymvsl.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/reverse/nonsym/rsvd.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/reverse/sym/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/reverse/sym/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/reverse/sym/rsymgbkl.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/reverse/sym/rsymgcay.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/reverse/sym/rsymgreg.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/reverse/sym/rsymgshf.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/reverse/sym/rsymgsol.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/reverse/sym/rsymreg.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/reverse/sym/rsymshf.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/reverse/sym/rsymsol.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/superlu/complex/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/superlu/complex/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/superlu/complex/lcompgre.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/superlu/complex/lcompgsh.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/superlu/complex/lcompreg.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/superlu/complex/lcompshf.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/superlu/nonsym/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/superlu/nonsym/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/superlu/nonsym/lnsymgre.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/superlu/nonsym/lnsymgsc.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/superlu/nonsym/lnsymgsh.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/superlu/nonsym/lnsymreg.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/superlu/nonsym/lnsymshf.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/superlu/nonsym/lsvd.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/superlu/nonsym/lsvd2.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/superlu/sym/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/superlu/sym/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/superlu/sym/lsymgbkl.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/superlu/sym/lsymgcay.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/superlu/sym/lsymgreg.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/superlu/sym/lsymgshf.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/superlu/sym/lsymreg.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/superlu/sym/lsymshf.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack/complex/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack/complex/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack/complex/ucompgre.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack/complex/ucompgsh.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack/complex/ucompreg.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack/complex/ucompshf.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack/nonsym/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack/nonsym/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack/nonsym/unsymgre.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack/nonsym/unsymgsc.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack/nonsym/unsymgsh.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack/nonsym/unsymreg.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack/nonsym/unsymshf.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack/nonsym/usvd.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack/sym/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack/sym/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack/sym/usymgbkl.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack/sym/usymgcay.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack/sym/usymgreg.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack/sym/usymgshf.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack/sym/usymreg.cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/umfpack/sym/usymshf.cc
+@dirrm include/ARPACK++
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/areig/sym
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/areig/complex
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/areig/nonsym
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/areig
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/band/nonsym
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/band/complex
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/band/sym
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/band
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/dense/sym
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/dense/nonsym
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/dense/complex
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/dense
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/harwell/sym
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/harwell/complex
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/harwell/nonsym
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/harwell
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/matprod/sym
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/matprod/nonsym
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/matprod/complex
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/matprod
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/matrices/complex
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/matrices/nonsym
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/matrices/sym
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/matrices
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/product/nonsym
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/product/sym
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/product/complex
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/product/simple
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/product
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/reverse/sym
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/reverse/nonsym
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/reverse/complex
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/reverse
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/superlu/complex
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/superlu/sym
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/superlu/nonsym
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/superlu
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/umfpack/complex
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/umfpack/nonsym
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/umfpack/sym
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/umfpack
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

@@ -9,6 +9,7 @@
     SUBDIR += algae
     SUBDIR += apc
     SUBDIR += arpack
+    SUBDIR += arpack++
     SUBDIR += asir2000
     SUBDIR += atlas
     SUBDIR += atlas-devel
