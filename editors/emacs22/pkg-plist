@@ -15,9 +15,6 @@ bin/emacsclient
 man/man1/emacs.1.gz
 man/man1/etags.1.gz
 man/man1/ctags.1.gz
-@unexec cp %D/info/dir %D/info/dir.bak
-info/dir
-@unexec cp %D/info/dir.bak %D/info/dir
 info/cl
 info/cl-1
 info/cl-2
@@ -29,6 +26,7 @@ info/dired-x
 info/ediff
 info/ediff-1
 info/ediff-2
+@unexec install-info --delete %D/info/emacs %D/info/dir
 info/emacs
 info/emacs-1
 info/emacs-10
@@ -69,7 +67,6 @@ info/gnus-5
 info/gnus-6
 info/gnus-7
 info/gnus-8
-info/info
 info/mh-e
 info/mh-e-1
 info/mh-e-2
@@ -87,6 +84,8 @@ info/viper-1
 info/viper-2
 info/viper-3
 info/viper-4
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/emacs %D/info/dir
 libexec/emacs/19.34/i386--freebsd/cvtmail
 libexec/emacs/19.34/i386--freebsd/digest-doc
 libexec/emacs/19.34/i386--freebsd/emacsserver
