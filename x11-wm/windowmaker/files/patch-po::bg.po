@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- po/bg.po	2002/03/17 14:21:12	1.1
++++ po/bg.po	2002/03/17 14:21:50
+@@ -15,7 +15,7 @@
+ "Last-Translator:\n"
+ "Language-Team: Bulgarian <dict@linux.home.bg>\n"
+ "MIME-Version: 1.0\n"
+-"Content-Type: text/plain; charset=windows-1251\n"
++"Content-Type: text/plain; charset=cp1251\n"
+ "Content-Transfer-Encoding: 8bit\n"
+ 
+ #: ../src/appicon.c:550 ../src/dialog.c:230 ../src/dock.c:3291
