@@ -14,69 +14,69 @@ include/ude/ude-types.h
 include/ude/ude-vector.h
 include/ude/ude-wraparounds.h
 include/ude/ude.h
-%%PORTDOCS%%share/doc/ude/html/contents.gif
-%%PORTDOCS%%share/doc/ude/html/crossref.gif
-%%PORTDOCS%%share/doc/ude/html/index.html
-%%PORTDOCS%%share/doc/ude/html/manual.css
-%%PORTDOCS%%share/doc/ude/html/manual.html
-%%PORTDOCS%%share/doc/ude/html/next.gif
-%%PORTDOCS%%share/doc/ude/html/next_g.gif
-%%PORTDOCS%%share/doc/ude/html/node1.html
-%%PORTDOCS%%share/doc/ude/html/node10.html
-%%PORTDOCS%%share/doc/ude/html/node11.html
-%%PORTDOCS%%share/doc/ude/html/node12.html
-%%PORTDOCS%%share/doc/ude/html/node13.html
-%%PORTDOCS%%share/doc/ude/html/node14.html
-%%PORTDOCS%%share/doc/ude/html/node15.html
-%%PORTDOCS%%share/doc/ude/html/node2.html
-%%PORTDOCS%%share/doc/ude/html/node3.html
-%%PORTDOCS%%share/doc/ude/html/node4.html
-%%PORTDOCS%%share/doc/ude/html/node5.html
-%%PORTDOCS%%share/doc/ude/html/node6.html
-%%PORTDOCS%%share/doc/ude/html/node7.html
-%%PORTDOCS%%share/doc/ude/html/node8.html
-%%PORTDOCS%%share/doc/ude/html/node9.html
-%%PORTDOCS%%share/doc/ude/html/prev.gif
-%%PORTDOCS%%share/doc/ude/html/prev_g.gif
-%%PORTDOCS%%share/doc/ude/html/up.gif
-%%PORTDOCS%%share/doc/ude/html/up_g.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/contents.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/crossref.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual.css
+%%PORTDOCS%%%%DOCSDIR%%/html/manual.html
+%%PORTDOCS%%%%DOCSDIR%%/html/next.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/next_g.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/node1.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node10.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node11.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node12.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node13.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node14.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node15.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node2.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node3.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node4.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node5.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node6.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node7.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node8.html
+%%PORTDOCS%%%%DOCSDIR%%/html/node9.html
+%%PORTDOCS%%%%DOCSDIR%%/html/prev.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/prev_g.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/up.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/up_g.gif
 share/locale/de/LC_MESSAGES/ude.mo
 share/locale/es/LC_MESSAGES/ude.mo
 share/locale/pt_BR/LC_MESSAGES/ude.mo
 share/locale/sk/LC_MESSAGES/ude.mo
 share/locale/tr/LC_MESSAGES/ude.mo
-share/ude/config/StartScript
-share/ude/config/StopScript
-share/ude/config/appmenu
-share/ude/config/mountmenu
-share/ude/config/urdb
-share/ude/config/uwmrc
-share/ude/config/uwmrc-behaviour.hook
-share/ude/config/uwmrc-layout.hook
-share/ude/config/uwmrc-ws.hook
-share/ude/extras/tools/dirtomenu
-share/ude/extras/tools/dirtomenu-recursive
-share/ude/gfx/autorise.xpm
-share/ude/gfx/autorises.xpm
-share/ude/gfx/back.xpm
-share/ude/gfx/backs.xpm
-share/ude/gfx/bgr1.xpm
-share/ude/gfx/close.xpm
-share/ude/gfx/closes.xpm
-share/ude/gfx/iconify.xpm
-share/ude/gfx/iconifys.xpm
-share/ude/gfx/kill.xpm
-share/ude/gfx/kills.xpm
-share/ude/gfx/menu.xpm
-share/ude/gfx/menus.xpm
-share/ude/gfx/really.xpm
-share/ude/gfx/reallys.xpm
-share/ude/gfx/shape.xpm
-@dirrm share/ude/gfx
-@dirrm share/ude/extras/tools
-@dirrm share/ude/extras
-@dirrm share/ude/config
-@dirrm share/ude
-%%PORTDOCS%%@dirrm share/doc/ude/html
-%%PORTDOCS%%@dirrm share/doc/ude
+%%DATADIR%%/config/StartScript
+%%DATADIR%%/config/StopScript
+%%DATADIR%%/config/appmenu
+%%DATADIR%%/config/mountmenu
+%%DATADIR%%/config/urdb
+%%DATADIR%%/config/uwmrc
+%%DATADIR%%/config/uwmrc-behaviour.hook
+%%DATADIR%%/config/uwmrc-layout.hook
+%%DATADIR%%/config/uwmrc-ws.hook
+%%DATADIR%%/extras/tools/dirtomenu
+%%DATADIR%%/extras/tools/dirtomenu-recursive
+%%DATADIR%%/gfx/autorise.xpm
+%%DATADIR%%/gfx/autorises.xpm
+%%DATADIR%%/gfx/back.xpm
+%%DATADIR%%/gfx/backs.xpm
+%%DATADIR%%/gfx/bgr1.xpm
+%%DATADIR%%/gfx/close.xpm
+%%DATADIR%%/gfx/closes.xpm
+%%DATADIR%%/gfx/iconify.xpm
+%%DATADIR%%/gfx/iconifys.xpm
+%%DATADIR%%/gfx/kill.xpm
+%%DATADIR%%/gfx/kills.xpm
+%%DATADIR%%/gfx/menu.xpm
+%%DATADIR%%/gfx/menus.xpm
+%%DATADIR%%/gfx/really.xpm
+%%DATADIR%%/gfx/reallys.xpm
+%%DATADIR%%/gfx/shape.xpm
+@dirrm %%DATADIR%%/gfx
+@dirrm %%DATADIR%%/extras/tools
+@dirrm %%DATADIR%%/extras
+@dirrm %%DATADIR%%/config
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/ude
