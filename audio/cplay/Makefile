@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cplay
-PORTVERSION=	1.46
-PORTREVISION=	1
+PORTVERSION=	1.47
 CATEGORIES=	audio
 MASTER_SITES=	http://www.tf.hut.fi/~flu/cplay/ \
 		http://www.tf.hut.fi/~flu/cplay/old/
