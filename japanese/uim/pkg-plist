@@ -32,6 +32,7 @@ share/uim/prime.scm
 share/uim/rk.scm
 share/uim/skk-editor.scm
 share/uim/skk.scm
+share/uim/spellcheck.scm
 share/uim/tcode.scm
 share/uim/tutcode.scm
 share/uim/util.scm

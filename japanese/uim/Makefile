@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	uim
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	japanese x11
-MASTER_SITES=	http://downloads.sourceforge.jp/anthy/6318/
+MASTER_SITES=	http://downloads.sourceforge.jp/anthy/6364/
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Input method library
