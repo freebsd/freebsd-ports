@@ -1,12 +1,12 @@
 # New ports collection makefile for:    scsh
-# Version required:     0.4.4
-# Date created:         Nov, 11, 1996
+# Version required:     0.5.1
+# Date created:         Jul, 15, 1997
 # Whom:                 cracauer@cons.org "Martin Cracauer"
 #
-# $Id: Makefile,v 1.1 1996/11/28 16:18:38 cracauer Exp $
+# $Id: Makefile,v 1.1.1.1 1997/01/03 00:37:20 max Exp $
 #
 
-DISTNAME=	scsh-0.4.4
+DISTNAME=	scsh-0.5.1
 CATEGORIES=	shells lang
 MASTER_SITES=	ftp://ftp-swiss.ai.mit.edu/pub/su/scsh/
 
