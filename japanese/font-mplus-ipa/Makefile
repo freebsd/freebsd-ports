@@ -22,7 +22,7 @@ NO_WRKSUBDIR=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install
 
-LOCAL_FONTSDIR=	share/fonts/TrueType
+LOCAL_FONTSDIR=	share/fonts
 X_FONTSDIR=	lib/X11/fonts/TrueType
 GRASS_FONTSDIR=	grass5/fonts
 
@@ -39,11 +39,11 @@ pre-install:
 	${CHMOD} +x ${WRKDIR}/pkg-install
 
 do-install:
-	${MKDIR} ${PREFIX}/${LOCAL_FONTSDIR}
+	${MKDIR} ${PREFIX}/${LOCAL_FONTSDIR}/TrueType
 	${MKDIR} ${X11BASE}/${X_FONTSDIR}
 	${LN} -s -f \
 		${LOCALBASE}/${GRASS_FONTSDIR}/ipa*.ttf \
-		${PREFIX}/${LOCAL_FONTSDIR}/
+		${PREFIX}/${LOCAL_FONTSDIR}/TrueType/
 	${LN} -s -f \
 		${LOCALBASE}/${GRASS_FONTSDIR}/ipa*.ttf \
 		${X11BASE}/${X_FONTSDIR}/

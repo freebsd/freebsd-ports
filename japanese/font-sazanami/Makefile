@@ -20,7 +20,7 @@ USE_BZIP2=	yes
 NO_BUILD=	yes
 
 FONTSDIR=	lib/X11/fonts/TrueType
-LOCALFONTSDIR=	share/fonts/TrueType
+LOCALFONTSDIR=	share/fonts
 MAKE_ENV=	FONTSDIR=${FONTSDIR}
 PLIST_SUB=	FONTSDIR=${FONTSDIR} \
 		LOCALFONTSDIR=${LOCALBASE}/${LOCALFONTSDIR}
@@ -45,13 +45,13 @@ do-install:
 			${FILESDIR}/fonts.dir.sazanami \
 			${FILESDIR}/fonts.alias.sazanami \
 			${PREFIX}/${FONTSDIR}
-	${MKDIR} ${LOCALBASE}/${LOCALFONTSDIR}
+	${MKDIR} ${LOCALBASE}/${LOCALFONTSDIR}/TrueType
 	${LN} -s -f \
 		${PREFIX}/${FONTSDIR}/sazanami-gothic.ttf \
-		${LOCALBASE}/${LOCALFONTSDIR}/sazanami-gothic.ttf
+		${LOCALBASE}/${LOCALFONTSDIR}/TrueType/sazanami-gothic.ttf
 	${LN} -s -f \
 		${PREFIX}/${FONTSDIR}/sazanami-mincho.ttf \
-		${LOCALBASE}/${LOCALFONTSDIR}/sazanami-mincho.ttf
+		${LOCALBASE}/${LOCALFONTSDIR}/TrueType/sazanami-mincho.ttf
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for F in ${DOC_FILES:Mdoc/*}

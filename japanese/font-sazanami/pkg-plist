@@ -17,9 +17,10 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ayu
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/kappa
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@exec mkdir -p %%LOCALFONTSDIR%%
-@exec ln -s -f %D/%%FONTSDIR%%/sazanami-mincho.ttf %%LOCALFONTSDIR%%/sazanami-mincho.ttf
-@exec ln -s -f %D/%%FONTSDIR%%/sazanami-gothic.ttf %%LOCALFONTSDIR%%/sazanami-gothic.ttf
-@unexec rm -f %%LOCALFONTSDIR%%/sazanami-mincho.ttf
-@unexec rm -f %%LOCALFONTSDIR%%/sazanami-gothic.ttf
+@exec mkdir -p %%LOCALFONTSDIR%%/TrueType
+@exec ln -s -f %D/%%FONTSDIR%%/sazanami-mincho.ttf %%LOCALFONTSDIR%%/TrueType/sazanami-mincho.ttf
+@exec ln -s -f %D/%%FONTSDIR%%/sazanami-gothic.ttf %%LOCALFONTSDIR%%/TrueType/sazanami-gothic.ttf
+@unexec rm -f %%LOCALFONTSDIR%%/TrueType/sazanami-mincho.ttf
+@unexec rm -f %%LOCALFONTSDIR%%/TrueType/sazanami-gothic.ttf
+@unexec rmdir %%LOCALFONTSDIR%%/TrueType 2> /dev/null || true
 @unexec rmdir %%LOCALFONTSDIR%% 2> /dev/null || true
