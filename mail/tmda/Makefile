@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	tmda
-PORTVERSION=	0.46
+PORTVERSION=	0.48
 CATEGORIES=	mail python
 MASTER_SITES=	http://software.libertine.org/tmda/releases/ \
 		http://software.libertine.org/tmda/releases/old/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jason@mastaler.com
+MAINTAINER=	mwm@mired.org
 
 USE_PYTHON=	yes
 
@@ -34,7 +34,7 @@ post-install:
 	${MKDIR} ${PREFIX}/share/doc/tmda
 	${MKDIR} ${PREFIX}/share/doc/tmda/contrib
 	${MKDIR} ${PREFIX}/share/doc/tmda/htdocs
-.for f in ChangeLog COPYRIGHT CRYPTO INSTALL README THANKS UPGRADE
+.for f in ChangeLog CRYPTO INSTALL README THANKS UPGRADE
 	@${INSTALL_DATA} ${WRKSRC}/$f ${PREFIX}/share/doc/tmda
 .endfor
 	@${INSTALL_DATA} ${WRKSRC}/contrib/* ${PREFIX}/share/doc/tmda/contrib

@@ -1,6 +1,6 @@
 bin/tmda-address
 bin/tmda-check-address
-bin/tmda-clean
+bin/tmda-pending
 bin/tmda-filter
 bin/tmda-inject
 bin/tmda-keygen
@@ -10,6 +10,8 @@ lib/%%PYTHON_VERSION%%/site-packages/TMDA/Cookie.py
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/Cookie.pyc
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/Defaults.py
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/Defaults.pyc
+lib/%%PYTHON_VERSION%%/site-packages/TMDA/Deliver.py
+lib/%%PYTHON_VERSION%%/site-packages/TMDA/Deliver.pyc
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/Errors.py
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/Errors.pyc
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/FilterParser.py
@@ -24,7 +26,6 @@ lib/%%PYTHON_VERSION%%/site-packages/TMDA/Version.py
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/Version.pyc
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/__init__.pyc
-%%PORTDOCS%%share/doc/tmda/COPYRIGHT
 %%PORTDOCS%%share/doc/tmda/CRYPTO
 %%PORTDOCS%%share/doc/tmda/ChangeLog
 %%PORTDOCS%%share/doc/tmda/INSTALL
@@ -33,8 +34,6 @@ lib/%%PYTHON_VERSION%%/site-packages/TMDA/__init__.pyc
 %%PORTDOCS%%share/doc/tmda/UPGRADE
 %%PORTDOCS%%share/doc/tmda/contrib/ChangeLog
 %%PORTDOCS%%share/doc/tmda/contrib/README.RELAY
-%%PORTDOCS%%share/doc/tmda/contrib/list2cdb
-%%PORTDOCS%%share/doc/tmda/contrib/list2dbm
 %%PORTDOCS%%share/doc/tmda/contrib/printcdb
 %%PORTDOCS%%share/doc/tmda/contrib/printdbm
 %%PORTDOCS%%share/doc/tmda/contrib/qmail-smtpd_auth.patch
