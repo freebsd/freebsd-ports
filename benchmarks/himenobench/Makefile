@@ -27,8 +27,8 @@ EXTRACT_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 RESTRICTED=	"unsure to redistribute"
 
 .if defined(OPTIMIZED_FLAGS)
-FFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll -loops -fexpensive-optimizations -malign-double
-CFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll -loops -fexpensive-optimizations -malign-double
+FFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double
+CFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double
 .if (${MACHINE_ARCH} == "i386")
 CFLAGS+=	-mfancy-math-387 -mpreferred-stack-boundary=3
 CXXFLAGS+=	-mfancy-math-387 -mpreferred-stack-boundary=3
