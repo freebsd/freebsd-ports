@@ -1,5 +1,5 @@
 *** Makefile.orig	Sat Sep 25 18:29:52 1993
---- Makefile	Sun Mar  3 15:49:48 1996
+--- Makefile	Sun Mar  3 16:53:56 1996
 ***************
 *** 2,8 ****
   #
@@ -28,7 +28,7 @@
   INS_MANUAL_EXT	= 1
   
   # From: address in posted articles (don't use both - read the INSTALL file)
---- 11,29 ----
+--- 11,28 ----
   #YACC = bison -y
   #DEBUG	=
   DEBUG	= -g -DDEBUG
@@ -39,7 +39,6 @@
 ! SPOOLDIR= /var/news
 ! NOVROOTDIR= $(SPOOLDIR)/over.view
 ! NNTP_SERVER_FILE=${PREFIX}/etc/nntpserver
-! SMTP_SERVER_FILE=${PREFIX}/etc/smtpserver
   
   # Where do you want the binary & manual page installed?
 ! INS_BINARY_DIR  = ${PREFIX}/bin
@@ -58,7 +57,7 @@
   #BASE_VER= 1.21/tin-1.21
   BASE_VER= 170993
   VER = 1.22
---- 47,54 ----
+--- 46,53 ----
   SHELL	= /bin/sh
   STRIP	= strip
   STRIP2	= mcs -d
@@ -85,7 +84,7 @@
   
   # For IBM AIX
   aix:
---- 102,134 ----
+--- 101,132 ----
   	@echo "  make qnx     [ QNX 4.1 ]                 make sco       [ SCO Unix ]"
   	@echo "  make sinix   [ SNI Sinix ]               make tower     [ NCR Tower]"
   	@echo "  make xenix   [ SCO Xenix 386 ]"
@@ -112,7 +111,6 @@
 + 			-DLIBDIR=\"$(LIBDIR)\" \
 + 			-DSPOOLDIR=\"$(SPOOLDIR)\" \
 + 			-DNNTP_SERVER_FILE=\"$(NNTP_SERVER_FILE)\" \
-+ 			-DSMTP_SERVER_FILE=\"$(SMTP_SERVER_FILE)\" \
 + 			-DNOVROOTDIR=\"$(NOVROOTDIR)\"' \
 + 			LIBS="-ltermcap $(INN_NNTPLIB)" \
 + 			EXE=tin linkit
