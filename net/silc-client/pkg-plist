@@ -103,6 +103,27 @@ share/silc/help/whois
 share/silc/help/whowas
 share/silc/help/window
 share/silc/themes/default.theme
+share/silc/scripts/autoop.pl
+share/silc/scripts/beep.pl
+share/silc/scripts/clones.pl
+share/silc/scripts/dns.pl
+share/silc/scripts/hello.pl
+share/silc/scripts/mail-maildir.pl
+share/silc/scripts/mail.pl
+share/silc/scripts/silc-mime.pl
+lib/silc/perl/i386-freebsd/auto/Irssi/Irssi.so
+lib/silc/perl/i386-freebsd/auto/Irssi/Irssi.bs
+lib/silc/perl/i386-freebsd/auto/Irssi/.packlist
+lib/silc/perl/i386-freebsd/auto/Irssi/UI/UI.so
+lib/silc/perl/i386-freebsd/auto/Irssi/UI/UI.bs
+lib/silc/perl/i386-freebsd/auto/Irssi/UI/.packlist
+lib/silc/perl/i386-freebsd/auto/Irssi/TextUI/TextUI.so
+lib/silc/perl/i386-freebsd/auto/Irssi/TextUI/TextUI.bs
+lib/silc/perl/i386-freebsd/auto/Irssi/TextUI/.packlist
+lib/silc/perl/i386-freebsd/Irssi.pm
+lib/silc/perl/i386-freebsd/perllocal.pod
+lib/silc/perl/i386-freebsd/Irssi/UI.pm
+lib/silc/perl/i386-freebsd/Irssi/TextUI.pm
 %%PORTDOCS%%%%DOCSDIR%%/CodingStyle
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
@@ -114,8 +135,17 @@ share/silc/themes/default.theme
 %%PORTDOCS%%%%DOCSDIR%%/example_silc.conf
 @dirrm share/silc/themes
 @dirrm share/silc/help
+@dirrm share/silc/scripts
 @dirrm share/silc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/silcsim/client
 @unexec rmdir %D/lib/silcsim 2>/dev/null || true
 @unexec rmdir %D/etc/silc 2>/dev/null || true
+@dirrm lib/silc/perl/i386-freebsd/auto/Irssi/TextUI
+@dirrm lib/silc/perl/i386-freebsd/auto/Irssi/UI
+@dirrm lib/silc/perl/i386-freebsd/auto/Irssi
+@dirrm lib/silc/perl/i386-freebsd/auto
+@dirrm lib/silc/perl/i386-freebsd/Irssi
+@dirrm lib/silc/perl/i386-freebsd
+@dirrm lib/silc/perl
+@dirrm lib/silc
