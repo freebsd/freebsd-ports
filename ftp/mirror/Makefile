@@ -3,7 +3,7 @@
 # Date created:		15 May 1995
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.9 1999/01/02 00:12:20 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mirror-2.9

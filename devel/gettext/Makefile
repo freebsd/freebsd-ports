@@ -3,7 +3,7 @@
 # Date created:        16 March 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.10 1999/06/05 18:59:40 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gettext-0.10.35

@@ -3,7 +3,7 @@
 # Date created:		27 Mar 1999
 # Whom:			Jerry Hicks
 #
-# $Id: Makefile,v 1.2 1999/08/11 04:34:50 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		bison-1.28

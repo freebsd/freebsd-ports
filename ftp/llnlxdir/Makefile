@@ -4,7 +4,7 @@
 #
 # Whom: Dima Ruban <dima@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.5 1999/05/02 20:52:59 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	latest_xdir

@@ -3,7 +3,7 @@
 # Date created:		2 February 1999
 # Whom:			Dima Sivachenko <dima@chg.ru>
 #
-# $Id: $
+# $FreeBSD$
 #
 
 DISTNAME=	gaa-1.5

@@ -4,7 +4,7 @@
 # Date created:         Sat Nov  5 01:16:33 PST 1994
 # Whom:                 hsu
 #
-# $Id: Makefile,v 1.9 1997/06/09 02:06:31 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       mprof-3.0

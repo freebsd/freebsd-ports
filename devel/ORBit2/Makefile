@@ -3,7 +3,7 @@
 # Date Created:			16 Aug 1998
 # Whom:				Chia-liang Kao <clkao@CirX.ORG>
 #
-# $Id: Makefile,v 1.20 1999/08/22 03:39:33 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ORBit-0.4.93

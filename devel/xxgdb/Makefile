@@ -3,7 +3,7 @@
 # Date created:		2 May 1995
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.6 1997/12/25 22:29:15 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xxgdb-1.12

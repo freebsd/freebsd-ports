@@ -3,7 +3,7 @@
 # Date created:				May 28th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.2 1997/06/24 18:43:29 jfitz Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Penguin-3.00

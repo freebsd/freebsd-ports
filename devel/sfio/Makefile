@@ -3,7 +3,7 @@
 # Date created: 	8 November 1997
 # Whom:			jraynard
 #
-# $Id: Makefile,v 1.6 1998/11/10 21:00:14 wosch Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	sfio_1998

@@ -3,7 +3,7 @@
 # Date created:				April 28th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.7 1998/08/31 13:56:11 vanilla Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	DateManip-5.33

@@ -3,7 +3,7 @@
 # Date created:		07 Dec 1996
 # Whom:			Tor.Egge@idi.ntnu.no
 #
-# $Id: Makefile,v 1.5 1998/09/07 16:49:16 tegge Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ftpsearch-1.0

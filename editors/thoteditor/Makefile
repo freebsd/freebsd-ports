@@ -3,7 +3,7 @@
 # Date created:		1 Aug 1997
 # Whom:			Pedro Giffuni (orig)
 #
-# $Id: Makefile,v 1.8 1999/03/08 21:19:01 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	thoteditor

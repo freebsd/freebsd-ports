@@ -3,7 +3,7 @@
 # Date Created:			26 Sep 1998
 # Whom:				Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.19 1999/05/30 03:45:34 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	libgtop-1.1.0

@@ -4,7 +4,7 @@
 # Whom:			Joel Sutton <sutton@aardvark.apana.org.au>
 # FreeBSD Version:	2.2.1-RELEASE
 #
-# $Id: Makefile,v 1.6 1999/04/28 06:45:53 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	djcrx201

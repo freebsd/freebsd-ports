@@ -3,7 +3,7 @@
 # Date created:		29 October 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.41 1999/06/25 22:05:58 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	emacs-20.4

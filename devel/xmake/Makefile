@@ -3,7 +3,7 @@
 # Date created:		28 March 1997
 # Whom:			dlowe
 #
-# $Id: Makefile,v 1.1.1.1 1997/05/07 20:58:50 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xmake-1.05

@@ -4,7 +4,7 @@
 # Date created:         Sat June 29, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.46 1999/08/15 07:38:34 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	vim-5.4

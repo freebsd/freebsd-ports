@@ -5,7 +5,7 @@
 # Date updated: 	Sun Jun 22 16:11:40 EST 1997
 # Whom:			Joel Sutton <sutton@aardvark.apana.org.au>
 #
-# $Id: Makefile,v 1.4 1997/08/13 09:06:51 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	crosstree-1.3

@@ -3,7 +3,7 @@
 # Date created:				22 June 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.4 1999/07/05 02:42:22 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		pccts133mr

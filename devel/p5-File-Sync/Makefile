@@ -3,7 +3,7 @@
 # Date created:		6 March 1998
 # Whom:			Jun Kuriyama <kuriyama@opt.phys.waseda.ac.jp>
 #
-# $Id: Makefile,v 1.3 1998/08/12 09:57:51 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	File-Sync-0.06

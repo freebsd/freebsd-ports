@@ -3,7 +3,7 @@
 # Date created:		4 May 1998
 # Whom:			kargl@apl.washington.edu
 #
-# $Id: Makefile,v 1.3 1998/11/28 01:20:53 asami Exp $
+# $FreeBSD$
 
 DISTNAME=	ftnchek
 PKGNAME=	ftnchek-2.10.1

@@ -3,7 +3,7 @@
 # Date created:		28 June 1995
 # Whom:			janek@gaja.ipan.lublin.pl
 #
-# $Id: Makefile,v 1.10 1998/08/10 12:06:46 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	cpm-0.2

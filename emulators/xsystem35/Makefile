@@ -3,7 +3,7 @@
 # Date created:		24 Oct 1998
 # Whom:			Seiichirou Hiraoka
 #
-# $Id: Makefile,v 1.16 1999/05/01 02:21:08 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xsystem35-1.0.7

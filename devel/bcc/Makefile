@@ -3,7 +3,7 @@
 # Date created:		26 March 1995
 # Whom:			joerg
 #
-# $Id: Makefile,v 1.6 1996/11/18 11:22:35 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	bcc

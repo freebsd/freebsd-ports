@@ -3,7 +3,7 @@
 # Date created:        23 May 1998
 # Whom:                Hans Petter Bieker <hanspb@persbraten.vgs.no>
 #
-# $Id: Makefile,v 1.2 1999/05/05 14:07:39 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ktranslator-0.4.0

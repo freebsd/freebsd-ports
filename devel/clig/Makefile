@@ -3,7 +3,7 @@
 # Date created:        27 July 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: Makefile,v 1.6 1999/08/07 20:44:32 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	clig-1.1.3

@@ -3,7 +3,7 @@
 # Date created:				June 26th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1998/09/15 21:31:44 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	traceFunc-0.1

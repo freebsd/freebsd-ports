@@ -3,7 +3,7 @@
 # Date created:         Sa   9 Nov 1996 00:52:22 MET
 # Whom:			se
 #
-# $Id: Makefile,v 1.70 1999/03/30 20:09:53 billf Exp $
+# $FreeBSD$
 #
 
 DATE=		990426

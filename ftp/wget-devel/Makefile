@@ -3,7 +3,7 @@
 # Date created:		31 December 1996
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.17 1999/08/02 07:29:04 ache Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	wget-1.5.3

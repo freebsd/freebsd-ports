@@ -4,7 +4,7 @@
 # Date created:			  Mon Dec 23, 1998
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.2 1999/04/16 06:53:30 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	dlx

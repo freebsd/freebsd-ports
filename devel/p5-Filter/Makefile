@@ -3,7 +3,7 @@
 # Date created:				June 26th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1998/08/12 09:57:51 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Filter-1.14

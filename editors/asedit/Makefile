@@ -4,7 +4,7 @@
 #
 # Whom:	Andreas Kohout <shanee@augusta.de>
 #
-# $Id: Makefile,v 1.5 1996/11/19 12:41:20 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	asedit-1.3.2

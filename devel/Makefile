@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.212 1999/08/18 08:54:23 asami Exp $
+# $FreeBSD$
 #
 
     SUBDIR += ElectricFence

@@ -3,7 +3,7 @@
 # Date created:         16 Jan 1995
 # Whom:                 Thomas Gellekum <tg@FreeBSD.org>
 #
-# $Id: Makefile,v 1.11 1998/03/25 14:14:53 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ue400dev

@@ -4,7 +4,7 @@
 # Whom:			Joel Sutton <sutton@aardvark.apana.org.au>
 # FreeBSD Version:	2.1.5-RELEASE
 #
-# $Id: Makefile,v 1.4 1997/06/10 07:05:25 asami Exp $
+# $FreeBSD$
 #
 
 # This is the stable release of the xgs emulator. Sound support is

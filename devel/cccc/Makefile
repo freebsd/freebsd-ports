@@ -3,7 +3,7 @@
 # Date created:				12 September 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.5 1998/11/11 05:37:09 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		cccc-2.1.1.src

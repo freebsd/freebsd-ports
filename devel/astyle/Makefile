@@ -3,7 +3,7 @@
 # Date created:		31 Jan 1999
 # Whom:			Don Croyle <croyle@gelemna.ft-wayne.in.us>
 #
-# $Id: Makefile,v 1.2 1999/07/22 04:20:45 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	astyle_1.10.4_src

@@ -3,7 +3,7 @@
 # Date created:		23 January 1999
 # Whom:			shige
 #
-# $Id: Makefile,v 1.3 1999/03/01 09:18:27 shige Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	psgml-1.1.6

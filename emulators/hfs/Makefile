@@ -3,7 +3,7 @@
 # Date created:         17 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.8 1996/11/12 02:16:45 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	hfs0_37

@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.34 1999/07/21 11:21:59 marcel Exp $
+# $FreeBSD$
 #
 
     SUBDIR += aftp

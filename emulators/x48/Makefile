@@ -3,7 +3,7 @@
 # Date created:         Thu Oct 24 13:10:59 CDT 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.3 1996/11/18 10:35:50 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	x48-0.4.0

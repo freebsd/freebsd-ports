@@ -3,7 +3,7 @@
 # Date created:		29 June 1998
 # Whom:			Dom Mitchell <dom@myrddin.demon.co.uk>
 #
-# $Id: Makefile,v 1.12 1999/05/29 04:17:51 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	glade-0.4.1

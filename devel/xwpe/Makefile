@@ -4,7 +4,7 @@
 # Date created:			  Fri Jan 24, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.8 1999/02/28 10:00:07 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xwpe-1.5.18a

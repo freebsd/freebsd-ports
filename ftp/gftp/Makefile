@@ -3,7 +3,7 @@
 # Date Created:		21 Feb 1999
 # Whom:			Damjan Marion <dmarion@open.hr>
 #
-# $Id: Makefile,v 1.4 1999/05/29 03:55:22 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gftp-2.0.1

@@ -3,7 +3,7 @@
 # Date created:				7 April 1996
 # Whom:	Daniel Eischen <deischen@iworks.InterWorks.org>
 #
-# $Id: Makefile,v 1.14 1998/09/15 11:13:02 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	nedit-5.0.2

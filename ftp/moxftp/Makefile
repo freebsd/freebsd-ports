@@ -3,7 +3,7 @@
 # Date created:		19 December 1994
 # Whom:			janek
 #
-# $Id: Makefile,v 1.23 1999/05/02 22:26:03 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	moxftp-2.2

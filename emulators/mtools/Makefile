@@ -3,7 +3,7 @@
 # Date created:         5 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.28 1999/06/05 22:29:29 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mtools-3.9.6

@@ -3,7 +3,7 @@
 # Date created:		7 March 1995
 # Whom:			joerg
 #
-# $Id: Makefile,v 1.12 1998/11/28 00:44:33 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	pcemu1.01alpha

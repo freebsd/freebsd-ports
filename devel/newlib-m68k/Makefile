@@ -3,7 +3,7 @@
 # Date created:		7 July 1998
 # Whom:			Jerry Hicks <jhicks@glenatl.glenayre.com>
 #
-# $Id: Makefile,v 1.3 1998/11/21 17:55:47 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	newlib-1.8.1

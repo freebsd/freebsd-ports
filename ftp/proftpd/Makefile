@@ -3,7 +3,7 @@
 # Date created:		26 January 1998
 # Whom:			Stephane Legrand
 #
-# $Id: Makefile,v 1.13 1999/08/02 10:43:56 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	proftpd-1.2.0pre3

@@ -3,7 +3,7 @@
 # Date created:		20 May 1999
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	mxTools-1.0.0

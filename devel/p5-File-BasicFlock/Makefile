@@ -3,7 +3,7 @@
 # Date created:				
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.7 1998/08/12 09:57:50 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	File-BasicFLock-96.072401

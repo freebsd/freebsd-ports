@@ -3,7 +3,7 @@
 # Date created:        4 June 1996
 # Whom:                jkoshy
 #
-# $Id: Makefile,v 1.2 1999/06/07 04:47:06 jkoshy Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ctags-3.2.2

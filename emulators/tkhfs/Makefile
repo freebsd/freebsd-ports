@@ -3,7 +3,7 @@
 # Date created:         17 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.16 1998/07/27 23:24:18 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tkhfs

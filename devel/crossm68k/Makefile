@@ -3,7 +3,7 @@
 # Date created:        7 July 1997
 # Whom:                Jerry Hicks <jhicks@glenatl.glenayre.com>
 #
-# $Id: Makefile,v 1.2 1998/11/21 17:55:43 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	crossm68k-2.0

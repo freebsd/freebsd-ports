@@ -3,7 +3,7 @@
 # Date created:				24 Aug 1998
 # Whom:					jkoshy
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	cvslines-1.6.7

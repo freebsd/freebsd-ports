@@ -3,7 +3,7 @@
 # Date created:		30 July 1999
 # Whom:			Davec <davec@unforgettable.com>
 #
-# $Id: Makefile,v 1.3 1999/08/03 06:46:22 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	CodeCrusader-2.1.3

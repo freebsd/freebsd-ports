@@ -3,7 +3,7 @@
 # Date created:		10 Feb 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	cweb

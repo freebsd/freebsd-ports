@@ -3,7 +3,7 @@
 # Date created:         Oct, 8 1998
 # Whom:                 cracauer
 #
-# $Id: Makefile,v 1.4 1999/01/06 04:27:56 simokawa Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       MesaLib-2.6

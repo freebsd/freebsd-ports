@@ -3,7 +3,7 @@
 # Date created:		21 August 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.14 1996/11/11 05:07:11 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	jove-4.16

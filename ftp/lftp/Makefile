@@ -3,7 +3,7 @@
 # Date created:				11 September 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.15 1999/07/01 15:25:12 sheldonh Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	lftp-2.0.1

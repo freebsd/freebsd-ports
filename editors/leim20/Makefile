@@ -3,7 +3,7 @@
 # Date created:		10 September 1998
 # Whom:			Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
 #
-# $Id: Makefile,v 1.3 1999/03/01 09:37:32 shige Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	leim-20.4

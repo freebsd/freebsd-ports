@@ -3,7 +3,7 @@
 # Date Created:		2 December 1998
 # Whom:			Josh Gilliam <josh@quick.net>
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/18 03:09:05 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	STLport-3.01

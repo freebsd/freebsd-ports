@@ -3,7 +3,7 @@
 # Date created:         3rd August, 1997
 # Whom:                 Tobias Reifenberger <tr@freebsd.mayn.de>
 #
-# $Id: Makefile,v 1.1.1.1 1997/10/31 09:15:14 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       STonX-0.6.7-epsilon

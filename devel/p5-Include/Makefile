@@ -3,7 +3,7 @@
 # Date created:				October 21st 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.8 1998/08/12 09:57:53 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Include-1.02a

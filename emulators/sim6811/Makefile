@@ -3,7 +3,7 @@
 # Date created:         Thu Sep 14 11:10:01 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.2 1995/11/22 11:48:19 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	sim

@@ -3,7 +3,7 @@
 # Date created:				4 May 1999
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1999/06/06 17:55:41 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		gedit-0.5.4

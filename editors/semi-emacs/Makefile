@@ -3,7 +3,7 @@
 # Date created:		9 May 1999
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.5 1999/05/23 15:44:22 shige Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	semi-${SEMI_VER}

@@ -4,7 +4,7 @@
 # Last updated:		2nd August, 1998
 # Whom:			Joel Sutton <jsutton@webnet.com.au>
 #
-# $Id: Makefile,v 1.2 1997/06/30 11:01:08 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	aftp

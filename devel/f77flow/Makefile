@@ -3,7 +3,7 @@
 # Date created:				25 June 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=		f77flow-0.12

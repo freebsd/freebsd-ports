@@ -3,7 +3,7 @@
 # Date created:				May 28th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.3 1998/08/12 09:57:54 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Penguin-Easy-1.1

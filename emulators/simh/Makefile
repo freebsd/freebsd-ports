@@ -3,7 +3,7 @@
 # Date created:         7 November 1997
 # Whom:			jraynard
 #
-# $Id: Makefile,v 1.2 1997/11/10 09:17:57 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	sim_2.3

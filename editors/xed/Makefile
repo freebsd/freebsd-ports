@@ -3,7 +3,7 @@
 # Date created:		28 Jul 1996
 # Whom:			shanee
 #
-# $Id: Makefile,v 1.9 1998/09/17 00:32:30 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xed1.3

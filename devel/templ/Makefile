@@ -3,7 +3,7 @@
 # Date created:         14 Jun 1999
 # Whom:                 Oh Junseon <hollywar@mail.holywar.net>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME= 	templ-0.2

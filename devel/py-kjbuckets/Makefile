@@ -3,7 +3,7 @@
 # Date created:				03/27/1999
 # Whom:					nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.1.1.1 1999/03/28 02:53:03 nectar Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		kjb

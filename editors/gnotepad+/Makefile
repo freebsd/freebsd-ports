@@ -3,7 +3,7 @@
 # Date created:		08-March-1999
 # Whom:			brett@peloton.physics.montana.edu
 #
-# $Id: Makefile,v 1.2 1999/05/09 16:29:36 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gnotepad+-1.1.4

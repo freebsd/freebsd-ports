@@ -3,7 +3,7 @@
 # Date created:				14 October 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.3 1999/06/05 22:31:13 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	cftp-0.9.3

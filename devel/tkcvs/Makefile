@@ -3,7 +3,7 @@
 # Date created:         02 Aug 1996
 # Whom:                 shanee@augusta.de
 #
-# $Id: Makefile,v 1.14 1998/08/07 23:56:16 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tkcvs-6.0

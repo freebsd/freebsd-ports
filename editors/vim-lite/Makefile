@@ -4,7 +4,7 @@
 # Date created:			  Fri Jun 25, 1999
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.3 1999/07/16 07:10:09 mharo Exp $
+# $FreeBSD$
 #
 
 PKGNAME=	vim-lite-5.3

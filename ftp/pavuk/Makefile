@@ -3,7 +3,7 @@
 # Date created:				19 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.10 1999/08/02 10:43:55 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		pavuk-0.9pl18

@@ -3,7 +3,7 @@
 # Date created:		12 Dec 1997
 # Whom:			Ian Vaudrey <i.vaudrey@bigfoot.com>
 #
-# $Id: Makefile,v 1.1.1.1 1997/12/26 19:26:38 hoek Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	vilearn

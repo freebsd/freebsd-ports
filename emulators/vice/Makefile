@@ -3,7 +3,7 @@
 # Date created:		Mar 28, 1998
 # Whom:			dchapes@ddm.on.ca
 #
-# $Id: Makefile,v 1.9 1998/09/21 01:35:30 steve Exp $
+# $FreeBSD$
 
 DISTNAME=	vice-1.0
 CATEGORIES=	emulators

@@ -3,7 +3,7 @@
 # Date created:		19 March 1996
 # Whom:			janek@gaja.ipan.lublin.pl
 #
-# $Id: Makefile,v 1.6 1999/05/04 23:18:27 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ftptool-4.6

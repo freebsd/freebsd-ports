@@ -3,7 +3,7 @@
 # Date created:         15 Oct 1996
 # Whom:                 dk
 #
-# $Id: Makefile,v 1.5 1998/06/01 01:59:16 dburr Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       fMSX

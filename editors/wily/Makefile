@@ -3,7 +3,7 @@
 # Date created:   	23 September 1997
 # Whom: 		koshy
 #
-# $Id: Makefile,v 1.8 1998/11/28 09:07:19 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	wily-0.13.41

@@ -3,7 +3,7 @@
 # Date created:		03-Mar-1997
 # Whom:			tenser
 #
-# $Id: Makefile,v 1.8 1998/10/06 05:18:00 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	bsvc-2.0

@@ -3,7 +3,7 @@
 # Date created:		3 January 1998
 # Whom:			jraynard
 #
-# $Id: Makefile,v 1.6 1999/05/04 23:18:03 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	textedit-1.0

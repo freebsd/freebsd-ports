@@ -3,7 +3,7 @@
 # Date created:         19 April 1996
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.13 1998/12/07 05:34:37 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	swig1.1p5

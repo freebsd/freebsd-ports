@@ -3,7 +3,7 @@
 # Date created:		7 May 1999
 # Whom:			giffunip@asme.org
 #
-# $Id: $
+# $FreeBSD$
 #
 
 DISTNAME=       THE-2.7

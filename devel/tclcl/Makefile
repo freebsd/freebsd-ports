@@ -3,7 +3,7 @@
 # Date created:		23 April 1999
 # Whom:			obonilla
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	tclcl-src-1.0b8

@@ -3,7 +3,7 @@
 # Date created:				27 April 1999
 # Whom:					G. Adam Stanislav <adam@whizkidtech.net>
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/01 03:35:55 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	fastcrc-1.0

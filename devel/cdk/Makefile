@@ -3,7 +3,7 @@
 # Date created:				6 May 1999
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=		cdk-4.9.1

@@ -3,7 +3,7 @@
 # Date created:		12 May 1999
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	mxDateTime-1.3.0

@@ -3,7 +3,7 @@
 # Date Created:			14 March 1999
 # Whom:				Ralf S. Engelschall
 #
-# $Id: Makefile,v 1.10 1999/06/22 15:40:33 rse Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mm-1.0.9

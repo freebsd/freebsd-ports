@@ -3,7 +3,7 @@
 # Date created:         21 Jan 1998
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.1.1.1 1998/01/21 07:05:20 ache Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       patch-2.5

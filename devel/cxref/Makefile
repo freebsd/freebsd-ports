@@ -3,7 +3,7 @@
 # Date created:		23 October 1996
 # Whom:			Thomas Gellekum <tg@freebsd.org>
 #
-# $Id: Makefile,v 1.6 1997/08/10 09:03:11 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	cxref-1.4b

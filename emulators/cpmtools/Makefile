@@ -3,7 +3,7 @@
 # Date created:		25 December 1994
 # Whom:			joerg
 #
-# $Id: Makefile,v 1.15 1996/11/18 13:58:24 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	cpm-1.1

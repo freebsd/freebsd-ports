@@ -3,7 +3,7 @@
 # Date created:		October 3, 1998
 # Whom:			rch@richard.eu.org
 #
-# $Id: Makefile,v 1.3 1998/12/27 05:38:19 kuriyama Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	yudit-1.3

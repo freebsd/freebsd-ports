@@ -3,7 +3,7 @@
 # Date created:        20 August 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/15 21:30:02 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	vpce03f_freebsd

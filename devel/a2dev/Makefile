@@ -3,7 +3,7 @@
 # Date created:         		1 July 1998
 # Whom:                 		Archie L. Cobbs <archie@whistle.com>
 #
-# $Id: Makefile,v 1.1 1998/07/01 19:14:43 julian Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		a2dev-1.2

@@ -3,7 +3,7 @@
 # Date created:		18 Feb 1998
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.11 1999/05/07 17:01:52 itojun Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	nvi-1.79

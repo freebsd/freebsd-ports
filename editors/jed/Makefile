@@ -3,7 +3,7 @@
 # Date created:         22 APR 1997
 # Whom:                 eric
 #
-# $Id: Makefile,v 1.8 1998/11/29 12:43:08 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       jed0.98-7

@@ -3,7 +3,7 @@
 # Date created:		14 May 1999
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	mxStack-0.3.0

@@ -3,7 +3,7 @@
 # Date Created:				6 December 1998
 # Whom:					Glenn Johnson
 #
-# $Id: Makefile,v 1.4 1999/03/12 00:43:24 nectar Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	libPropList-0.8.3

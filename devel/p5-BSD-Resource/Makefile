@@ -3,7 +3,7 @@
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.10 1998/08/12 09:57:43 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	BSD-Resource-1.0701

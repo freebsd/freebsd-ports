@@ -3,7 +3,7 @@
 # Date created:		19 Jun 1995
 # Whom:			joerg
 #
-# $Id: Makefile,v 1.5 1996/12/08 01:44:37 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	uzap

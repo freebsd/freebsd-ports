@@ -3,7 +3,7 @@
 # Date created:		21 June 1995
 # Whom:			Satoshi Asami (asami)
 #
-# $Id: Makefile,v 1.20 1998/09/25 10:07:44 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	e93-1.2r7X

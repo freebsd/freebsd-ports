@@ -3,7 +3,7 @@
 # Date created:		29 July 1995
 # Whom:			Thomas Gellekum <tg@freebsd.org>
 #
-# $Id: Makefile,v 1.12 1998/09/19 02:29:22 hoek Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	noweb-2.9a

@@ -4,7 +4,7 @@
 # Whom:			Joel Sutton <sutton@aardvark.apana.org.au>
 # FreeBSD Version:	2.1.5-RELEASE
 #
-# $Id: Makefile,v 1.4 1999/04/18 10:17:01 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	macutils_2.0b3.orig

@@ -3,7 +3,7 @@
 # Date created:			26 November 1996
 # Whom:				Sandro Sigala
 #
-# $Id: Makefile,v 1.5 1997/04/30 03:17:57 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	cutils-1.4

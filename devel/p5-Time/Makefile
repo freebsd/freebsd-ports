@@ -3,7 +3,7 @@
 # Date created:				October 12th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.10 1998/09/15 21:31:44 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Time-modules-98.112901

@@ -3,7 +3,7 @@
 # Date created:				April 27 1998
 # Whom:	      				Eivind Eklund <eivind@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1998/08/12 09:57:52 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	IO-stringy-1.203

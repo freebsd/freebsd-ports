@@ -3,7 +3,7 @@
 # Date created:		10 July 1998
 # Whom:			Jeffrey Hsu <hsu@freebsd.org>
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/11 02:40:50 hsu Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	jam-2.2

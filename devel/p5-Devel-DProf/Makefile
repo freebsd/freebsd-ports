@@ -3,7 +3,7 @@
 # Date created:				June 15th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.7 1998/11/11 05:37:11 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	DProf-19990108

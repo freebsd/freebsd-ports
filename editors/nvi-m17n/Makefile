@@ -3,7 +3,7 @@
 # Date created:		6 Mar 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.10 1998/11/19 04:46:44 itojun Exp $
+# $FreeBSD$
 #
 
 

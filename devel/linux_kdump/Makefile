@@ -3,7 +3,7 @@
 # Date created:         Nov 26 1997
 # Whom:                 msmith@FreeBSD.org
 #
-# $Id: Makefile,v 1.7 1999/07/23 07:41:36 marcel Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	linux_kdump-1.2

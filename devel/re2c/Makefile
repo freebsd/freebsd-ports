@@ -3,7 +3,7 @@
 # Date created:		14 May 1998
 # Whom:			Eivind Eklund <eivind@FreeBSD.ORG>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	re2c.0.5

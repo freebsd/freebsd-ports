@@ -3,7 +3,7 @@
 # Date created:		14 Mar 1996
 # Whom:			se
 #
-# $Id: Makefile,v 1.4 1998/08/23 00:48:52 hoek Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mkmf

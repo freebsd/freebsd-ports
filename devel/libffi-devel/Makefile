@@ -3,7 +3,7 @@
 # Date created:			14, June, 1998
 # Whom:				Horance Chou <horance@freedom.ie.cycu.edu.tw>
 #
-# $Id: Makefile,v 1.8 1999/03/08 07:28:22 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       libffi-1.20

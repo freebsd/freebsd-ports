@@ -3,7 +3,7 @@
 # Date created:		7 July 1998
 # Whom:			Jerry Hicks <jhicks@glenatl.glenayre.com>
 #
-# $Id: Makefile,v 1.4 1998/11/24 03:36:47 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	binutils-2.9.1

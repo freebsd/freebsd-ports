@@ -3,7 +3,7 @@
 # Date created:         Wed Nov 26, 1996
 # Whom:                 pgf
 #
-# $Id: Makefile,v 1.16 1999/01/02 00:12:19 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	vile-8.2

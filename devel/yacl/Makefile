@@ -3,7 +3,7 @@
 # Date created:		6 March 1998
 # Whom:			Jeroen Hogeveen <albast@xs4all.nl>
 #
-# $Id: Makefile,v 1.2 1999/05/01 12:34:06 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		yacl-0170-beta

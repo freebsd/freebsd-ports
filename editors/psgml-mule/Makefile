@@ -3,7 +3,7 @@
 # Date created:		23 January 1999
 # Whom:			shige
 #
-# $Id: Makefile,v 1.1.1.1 1999/02/26 19:14:49 shige Exp $
+# $FreeBSD$
 #
 
 MAINTAINER=	shige@FreeBSD.ORG

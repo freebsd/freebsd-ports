@@ -3,7 +3,7 @@
 # Date created:        31 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.6 1999/01/12 16:51:11 vanilla Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	GB

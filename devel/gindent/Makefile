@@ -3,7 +3,7 @@
 # Date created:        28 August 1997
 # Whom:                Kapil Chowksey <kchowksey@hss.hns.com>
 #
-# $Id: Makefile,v 1.6 1999/07/16 04:45:47 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=      indent-2.2.0

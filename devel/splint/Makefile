@@ -3,7 +3,7 @@
 # Date created: 	9 September 1996
 # Whom:			moeding
 #
-# $Id: Makefile,v 1.5 1999/07/09 14:45:35 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	lclint-2.4b

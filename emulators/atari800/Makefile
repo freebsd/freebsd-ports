@@ -3,7 +3,7 @@
 # Date created:		29th April, 1997
 # Whom:			Joel Sutton <jsutton@webnet.com.au>
 #
-# $Id: Makefile,v 1.5 1999/05/04 23:18:05 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Atari800-0.8.6

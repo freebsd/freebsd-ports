@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.7 1998/08/26 09:57:06 wosch Exp $
+# $FreeBSD$
 #
 
     SUBDIR += BBBike

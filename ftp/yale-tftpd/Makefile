@@ -3,7 +3,7 @@
 # Date created:		Oct 8, 1994
 # Whom:			pst
 #
-# $Id: Makefile,v 1.11 1998/10/15 01:42:53 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	yale-tftpd-3.0

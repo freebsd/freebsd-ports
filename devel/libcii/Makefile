@@ -3,7 +3,7 @@
 # Date created:		21 April 1998
 # Whom:			J Han <hjh@photino.com>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	cii11

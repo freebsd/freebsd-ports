@@ -3,7 +3,7 @@
 # Date created:        11 July 1998
 # Whom:                Marc G. Fournier <scrappy@freebsd.org>
 #
-# $Id: Makefile,v 1.35 1999/08/17 19:37:09 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mico-2.2.7

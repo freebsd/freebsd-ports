@@ -3,7 +3,7 @@
 # Date created:		Fri Oct  3 18:50:53 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.6 1998/07/03 23:06:27 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	SpecTcl1.1

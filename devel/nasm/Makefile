@@ -3,7 +3,7 @@
 # Date created:        7 April 1998
 # Whom:                Murray Stokely <murray@cdrom.com>
 #
-# $Id: Makefile,v 1.4 1998/04/11 18:47:05 vanilla Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	nasm-0.98

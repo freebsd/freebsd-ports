@@ -3,7 +3,7 @@
 # Date created:		23 September 1998
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 #
-# $Id: Makefile,v 1.1.1.1 1999/08/18 14:04:58 shige Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	bitmap-mule-${BITMAP_ORIG_VER}

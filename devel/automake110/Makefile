@@ -3,7 +3,7 @@
 # Date created:		15 March 1997
 # Whom:			FUJIMOTO Kensaku <fujimoto@oscar.elec.waseda.ac.jp>
 #
-# $Id: Makefile,v 1.10 1999/01/30 19:11:20 sada Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	automake-1.4

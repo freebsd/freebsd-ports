@@ -3,7 +3,7 @@
 # Date created:		5 Dec 1997
 # Whom:			Kazuyuki IENAGA <ienaga@jsys.co.jp>
 #
-# $Id: Makefile,v 1.14 1999/01/23 07:05:33 vanilla Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xemacs-20.4

@@ -3,7 +3,7 @@
 # Date created:				05/28/1999
 # Whom:					nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.4 1999/08/02 10:43:45 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		gtm-0.3.1

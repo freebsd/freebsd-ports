@@ -3,7 +3,7 @@
 # Date created:		22 Aug 1996
 # Whom:			pst@freebsd.org
 #
-# $Id: Makefile,v 1.7 1999/03/11 21:47:09 scrappy Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	id-utils-3.2
