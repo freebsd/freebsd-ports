@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		poptop
-PORTVERSION=		1.1.4.b3
+PORTVERSION=		1.1.4.b4
 CATEGORIES=		net
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	poptop
@@ -28,7 +28,7 @@ MAN8=			pptpd.8 pptpctrl.8
 
 # fix broken timestamps that trigger autotools hell
 pre-patch:
-	@cd ${WRKSRC}; touch aclocal.m4 Makefile.in stamp-h.in
+	@cd ${WRKSRC}; ${TOUCH} aclocal.m4 Makefile.in stamp-h.in
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/samples/pptpd.conf \
