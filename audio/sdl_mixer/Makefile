@@ -14,20 +14,20 @@ DISTNAME=	SDL_mixer-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A sample multi-channel audio mixer library
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		smpeg.1:${PORTSDIR}/multimedia/smpeg \
-		vorbis.2:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	vorbis.2:${PORTSDIR}/audio/libvorbis \
+		smpeg.1:${PORTSDIR}/multimedia/smpeg
 
-SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
-
-USE_LIBTOOL=	yes
+USE_SDL=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 INSTALLS_SHLIB=	yes
-CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
-		CPPFLAGS="-I${X11BASE}/include"
 
 post-configure:
-	@${PERL} -pi -e 's|^deplibs_check_method=.*|deplibs_check_method=pass_all|' \
-		${WRKSRC}/libtool
+	@${REINPLACE_CMD} -e \
+		's|^deplibs_check_method=.*|deplibs_check_method=pass_all|' \
+			${WRKSRC}/libtool
 
 .include <bsd.port.mk>
