@@ -1,14 +1,11 @@
 # New ports collection makefile for:	Eric Young's SSL/Crypto Library
-# Version required:	0.6.6
-# Date created:		13 January 1997
-# Whom:			markm
+# Version required:	0.8.1
+# Date created:		15 Aug 1997
+# Whom:			markm@freebsd.org
 #
-# $Id: Makefile,v 1.9 1996/12/11 20:54:44 markm Exp $
-#
-# NOTE!!! To use this port, you must have FreeBSD 2.2 or later, and you
-#         must have the secure/ distribution loaded.
+# $Id$
 
-DISTNAME=		SSLeay-0.6.6
+DISTNAME=		SSLeay-0.8.1
 CATEGORIES=		devel security
 MASTER_SITES=		ftp://psych.psy.uq.oz.au/pub/Crypto/SSL/
 
@@ -17,8 +14,23 @@ MAINTAINER=		markm@FreeBSD.ORG
 RESTRICTED=		"Cryptography"
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	util/FreeBSD.sh
-MAKEFILE=		Makefile.FreeBSD
 
+.if !defined(USA_RESIDENT) || ${USA_RESIDENT} != YES && ${USA_RESIDENT} != NO
+pre-fetch:
+	@echo
+	@echo You must set variable USA_RESIDENT to YES, if you are USA resident
+	@echo or to NO, if you aren\'t USA resident to build this package.
+	@echo You must also have installed RSAREF if you are USA resident.
+	@false
+.elif defined(USA_RESIDENT)
+.if ${USA_RESIDENT} == YES
+LIB_DEPENDS             rsaref:${PORTSDIR}/security/rsaref
+
+post-configure:
+	${CP} ${WRKSRC}/rsaref/rsaref.h ${WRKSRC}/include/rsaref.h
+	(${PATCH} <${FILESDIR}/Makefile.patch)
+.endif
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
