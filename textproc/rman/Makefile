@@ -3,11 +3,11 @@
 # Date created:         27 Dec 1994
 # Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id: Makefile,v 1.8 1996/06/15 06:24:19 asami Exp $
+# $Id: Makefile,v 1.9 1996/10/08 07:48:09 pst Exp $
 #
 
 DISTNAME=       rman-2.5a6
-CATEGORIES+=	misc
+CATEGORIES=	misc
 MASTER_SITES=   ftp://ftp.cs.berkeley.edu/ucb/people/phelps/tcltk/
 EXTRACT_SUFX=	.tar.Z
 

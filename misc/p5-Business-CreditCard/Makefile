@@ -3,12 +3,12 @@
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.1.1.1 1996/10/24 08:23:42 jfitz Exp $
+#   $Id: Makefile,v 1.2 1996/10/24 09:57:50 jfitz Exp $
 #
 
 DISTNAME=	Business-CreditCard-0.1
 PKGNAME=	p5-Business-CreditCard-0.1
-CATEGORIES+=	misc
+CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.digital.com/pub/plan/perl/CPAN/modules/by-module/Business/ \
 		ftp://ftp.cdrom.com/pub/perl/CPAN/modules/by-module/Business/ \
 		ftp://ftp.cis.ufl.edu/pub/perl/CPAN/modules/by-module/Business/ \

@@ -3,22 +3,22 @@
 # Date created:				06 January 1996
 # Whom:					bmc@WillsCreek.COM
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/01/15 10:37:17 asami Exp $
 #
 
 DISTNAME=	fileutils-3.12
 PKGNAME=	linuxls-3.12.0.2
-CATEGORIES+=	misc
+CATEGORIES=	misc
 MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/ \
 		ftp://ftp.cdrom.com/pub/linux/slackware_source/a/bin/
 
 PATCHFILES=	color-ls-3.12.0.2.patch.gz
 PATCH_SITES=	ftp://sunsite.unc.edu/pub/Linux/distributions/slackware/source/a/bin/ \
 		ftp://ftp.cdrom.com/pub/linux/slackware_source/a/bin/
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	bmc@WillsCreek.COM
 
+PATCH_DIST_STRIP=	-p1
 GNU_CONFIGURE=	yes
 
 post-install:

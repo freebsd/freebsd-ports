@@ -3,11 +3,11 @@
 # Date created:		12 October 1996
 # Whom:			markm
 #
-# $Id: Makefile,v 1.1.1.1 1996/10/31 19:53:40 markm Exp $
+# $Id: Makefile,v 1.2 1996/11/01 06:10:22 markm Exp $
 #
 
 DISTNAME=	dejagnu-1.3
-CATEGORIES+=	misc
+CATEGORIES=	misc
 MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
 
 MAINTAINER=	markm@FreeBSD.ORG

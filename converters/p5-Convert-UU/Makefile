@@ -3,12 +3,12 @@
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.1.1.1 1996/10/24 08:25:20 jfitz Exp $
+#   $Id: Makefile,v 1.2 1996/10/24 09:58:09 jfitz Exp $
 #
 
 DISTNAME=	Convert-UU-0.01
 PKGNAME=	p5-Convert-UU-0.1
-CATEGORIES+=	misc
+CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.digital.com/pub/plan/perl/CPAN/modules/by-module/Convert/ \
 		ftp://ftp.cdrom.com/pub/perl/CPAN/modules/by-module/Convert/ \
 		ftp://ftp.cis.ufl.edu/pub/perl/CPAN/modules/by-module/Convert/ \

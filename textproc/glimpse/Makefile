@@ -3,12 +3,12 @@
 # Date created:		25 August 1996
 # Whom:			chuckr@freebsd.org
 #
-# $Id: Makefile,v 1.4 1996/05/20 08:17:37 asami Exp $
+# $Id: Makefile,v 1.5 1996/08/26 02:14:25 chuckr Exp $
 #
 
 DISTNAME=       glimpse-3.6.src
 PKGNAME=	glimpse-3.6
-CATEGORIES+=	misc
+CATEGORIES=	misc
 MASTER_SITES=   ftp://ftp.cs.arizona.edu/glimpse/
 EXTRACT_SUFX=	.tar.Z
 

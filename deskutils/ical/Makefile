@@ -3,11 +3,11 @@
 # Date created:         Mon Aug 28 13:35:31 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.4 1995/11/26 10:47:37 asami Exp $
+# $Id: Makefile,v 1.5 1996/10/08 07:06:27 pst Exp $
 #
 
 DISTNAME=	ical-2.1b2
-CATEGORIES+=	misc
+CATEGORIES=	misc
 MASTER_SITES=	http://www.research.digital.com/SRC/personal/Sanjay_Ghemawat/ical/icalbins/
 
 MAINTAINER=	erich@FreeBSD.org
@@ -20,8 +20,8 @@ CONFIGURE_ARGS=	--with-tclsh=/usr/bin/tclsh \
 		--with-tkconfig=${PREFIX}/lib
 
 .if !defined(NOMANCOMPRESS)
-afterinstall:
-	gzip -9nf ${PREFIX}/man/man1/ical.1
+post-install:
+	@gzip -9nf ${PREFIX}/man/man1/ical.1
 .endif
 
 .include <bsd.port.mk>
