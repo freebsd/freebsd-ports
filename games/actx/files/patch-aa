@@ -1,6 +1,6 @@
---- Imakefile.org       Fri Oct  8 00:41:34 1999
-+++ Imakefile   Fri Oct  8 00:22:35 1999
-@@ -29,7 +29,7 @@
+--- Imakefile.orig	Mon Jan 29 09:27:25 2001
++++ Imakefile	Mon Jan 29 09:29:06 2001
+@@ -42,7 +42,7 @@
  
  XCOMM -------------- ActX 本体 Install先 Directory ---------------
  
@@ -9,7 +9,7 @@
  XCOMM PREFIX = ${HOME}
  
  BINDIR = ${PREFIX}/bin
-@@ -37,9 +37,11 @@
+@@ -50,9 +50,11 @@
  
  XCOMM -------- ActX マスコットデータ Install先 Directory ----------
  
@@ -23,12 +23,11 @@
  
  
  
-@@ -59,7 +61,7 @@
- XPMLIB = -lXpm
+@@ -72,7 +74,7 @@
+ EXTRA_LIBRARIES += -lXpm
  
  AllTarget(actx)
 -NormalProgramTarget(actx,$(OBJS),,$(LOCAL_LIBRARIES),$(XPMLIB))
 +NormalProgramTarget(actx,$(OBJS),$(LOCAL_LIBRARIES),XawClientLibs,$(XPMLIB))
  
- #ifdef USE_I18N
- DEFINES_I18N = -DI18N
+ InstallManPage(actx,$(MANDIR))

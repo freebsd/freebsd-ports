@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	actx
-PORTVERSION=	0.99.2
+PORTVERSION=	1.01
 CATEGORIES=	games
-MASTER_SITES=	http://www.astr.tohoku.ac.jp/~taji/ActX/
+MASTER_SITES=	http://kurumi.sakura.ne.jp/~chimari/ActX/
 
 MAINTAINER=	esu@yk.rim.or.jp
 
 USE_IMAKE=	yes
 USE_XPM=	yes
-NO_INSTALL_MANPAGES=yes
+MAN1=		actx.1
+MANLANG=	"" ja
 NO_CDROM=	'contains commercial character data'
 ACTXDIR=	${PREFIX}/share/examples/actx
 
@@ -29,6 +30,11 @@ post-patch:
 .endfor
 
 post-install:
+# strip binary
+	@strip ${PREFIX}/bin/actx
+# install japanese manual
+	@${INSTALL_MAN} ${WRKSRC}/actx.jman ${PREFIX}/man/ja/man1/actx.1
+	@${GZIP_CMD} ${PREFIX}/man/ja/man1/actx.1
 .for i in sample.Xdefaults sample.actxrc
 	@ ${INSTALL_DATA} ${WRKSRC}/samples/$i ${ACTXDIR}
 .endfor
