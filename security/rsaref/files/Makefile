@@ -1,3 +1,5 @@
+# $FreeBSD$
+
 O= o
 SO= so
 LIB= ar
@@ -32,11 +34,6 @@ $(SORSAREFLIB) : desc.$(SO) digit.$(SO) md2c.$(SO) md5c.$(SO) nn.$(SO) prime.$(S
 .endif
 
 install:
-	install -c -m 444 -o bin -g bin rsa.h _des.h _md2.h _md5.h rsaref.h global.h ${PREFIX}/include
-.if ${PORTOBJFORMAT} == elf
-	install -c -m 644 -o bin -g bin librsaref.a librsaref.so.2 ${PREFIX}/lib
-	(cd ${PREFIX}/lib; ln -sf librsaref.so.2 librsaref.so)
-.else
-	install -c -m 644 -o bin -g bin librsaref.a librsaref.so.2.0 ${PREFIX}/lib
-	(cd ${PREFIX}/lib; ln -sf librsaref.so.2.0 librsaref.so)
-.endif
+	${INSTALL_DATA} rsa.h _des.h _md2.h _md5.h rsaref.h global.h ${PREFIX}/include
+	${INSTALL_DATA} ${RSAREFLIB} ${SORSAREFLIB} ${PREFIX}/lib
+	ln -sf ${SORSAREFLIB} ${PREFIX}/lib/librsaref.so
