@@ -1,5 +1,14 @@
 The workbench has been installed into ${PREFIX}/lib/uni.
 
 The two helper scripts ghchtk and ghcihtk have been installed into
-${PREFIX}/bin and can be used to easily add the Htk package-conf to the
+
+    %%PREFIX%%/bin 
+
+and can be used to easily add the Htk package-conf to the
 ghc(i) command line.
+
+You may need to set the UNIWISH environment variable to point to the
+version of wish that you are using. For example, for the tk83 port:
+
+export UNIWISH=wish8.3	    (sh)
+setenv UNIWISH wish8.3	    (csh)
