@@ -16,6 +16,7 @@ PATCHSETFILE=	bsd-jdk131-patches-${JDK_PATCHSET_VERSION}.tar.gz
 DISTFILES=	${SRCFILE} ${PATCHSETFILE}
 
 MAINTAINER=	glewis@FreeBSD.org
+COMMENT=	Java Development Kit 1.3
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		zip:${PORTSDIR}/archivers/zip \
