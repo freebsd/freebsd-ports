@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Mar 10 17:45:19 2000
-+++ Makefile	Tue Jul  4 21:40:24 2000
+--- Makefile.orig	Fri Mar 10 08:45:19 2000
++++ Makefile	Sun Apr 29 23:26:59 2001
 @@ -6,7 +6,7 @@
  VERSION		= $(VERMAJ).$(VERMIN).$(VERPAT)
  
@@ -25,8 +25,9 @@
 +MKDIRP		= mkdir -p
  
 -CC		= gcc
+-OPTIM		= -O2
 +#CC		= gcc
- OPTIM		= -O2
++OPTIM		= $(CFLAGS)
  
  INCDIR		= -I.
  
