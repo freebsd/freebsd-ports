@@ -1,9 +1,10 @@
-# $Id: Makefile,v 1.5 1998/11/23 02:56:40 flathill Exp $
+# $Id: Makefile,v 1.6 1998/11/24 08:53:54 flathill Exp $
 #
 
     SUBDIR += abacus
     SUBDIR += cal
     SUBDIR += cbb
+    SUBDIR += gnomepim
     SUBDIR += gnucash
     SUBDIR += ical
     SUBDIR += korganizer
