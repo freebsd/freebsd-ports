@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- sip/b2b/AuthAgent.cxx	2003/01/19 16:15:54	1.1
-+++ sip/b2b/AuthAgent.cxx	2003/01/19 18:03:43
-@@ -367,6 +367,31 @@
+--- sip/b2b/AuthAgent.cxx.orig	Fri Apr  4 12:18:19 2003
++++ sip/b2b/AuthAgent.cxx	Fri Apr  4 12:18:19 2003
+@@ -305,6 +305,31 @@
  AuthAgent::doCancel()
  {
      cpLog(LOG_DEBUG, "AuthAgent::doCancel()");
@@ -28,14 +28,14 @@ $FreeBSD$
 +
 +	Sptr<AAAEvent> aEvent = new AAAEvent(this);
 +	cpLog(LOG_DEBUG, "AuthAgent::Sending Acct Stop");
-+	B2bUa::instance().getAAATransceiver()->sendAcctStop(aEvent);
++	B2bFacade::instance().getAAATransceiver()->sendAcctStop(aEvent);
 +    }
 +
 +    ///Transit the controller state
      myState->cancel(*this);
  }
  
-@@ -424,6 +449,31 @@
+@@ -362,6 +387,31 @@
  AuthAgent::callFailed()
  {
      cpLog(LOG_DEBUG, "AuthAgent::callFailed()");
@@ -60,14 +60,14 @@ $FreeBSD$
 +
 +	Sptr<AAAEvent> aEvent = new AAAEvent(this);
 +	cpLog(LOG_DEBUG, "AuthAgent::Sending Acct Stop");
-+	B2bUa::instance().getAAATransceiver()->sendAcctStop(aEvent);
++	B2bFacade::instance().getAAATransceiver()->sendAcctStop(aEvent);
 +    }
 +
 +    ///Transit the controller state
      myState->fail(*this);
  }
  
-@@ -488,5 +538,37 @@
+@@ -426,5 +476,37 @@
  void 
  AuthAgent::receivedStatus(UaBase& agent, const Sptr<SipMsg>& msg)
  {
@@ -99,7 +99,7 @@ $FreeBSD$
 +
 +	    Sptr<AAAEvent> aEvent = new AAAEvent(this);
 +	    cpLog(LOG_DEBUG, "AuthAgent::Sending Acct Stop");
-+	    B2bUa::instance().getAAATransceiver()->sendAcctStop(aEvent);
++	    B2bFacade::instance().getAAATransceiver()->sendAcctStop(aEvent);
 +	}
 +    }
 +
