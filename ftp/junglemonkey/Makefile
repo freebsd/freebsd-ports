@@ -7,14 +7,14 @@
 
 PORTNAME=	junglemonkey
 PORTVERSION=	0.1.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp gnome
 MASTER_SITES=	http://www.junglemonkey.net/src/
 DISTNAME=	jm-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gnet.0:${PORTSDIR}/net/gnet
+LIB_DEPENDS=	gnet.1:${PORTSDIR}/net/gnet
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
