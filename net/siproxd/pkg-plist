@@ -1,9 +1,0 @@
-etc/rc.d/siproxd.sh
-etc/siproxd.conf.example
-etc/siproxd_passwd.cfg
-sbin/siproxd
-%%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/KNOWN_BUGS
-%%PORTDOCS%%%%DOCSDIR%%/RFC3261_compliance.txt
-%%PORTDOCS%%%%DOCSDIR%%/sample_cfg_budgetone.txt
-%%PORTDOCS%%%%DOCSDIR%%/sample_cfg_x-lite.txt
