@@ -13,7 +13,6 @@ MASTER_SITES=	http://webadmin.sourceforge.net/webmin/updates/ \
 		http://webadmin.sourceforge.net/webmin/download/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${WEBMIN_MODULES}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-IGNOREFILES=	${WEBMIN_MODULES}
 
 MAINTAINER=	olgeni@FreeBSD.org
 
