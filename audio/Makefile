@@ -11,6 +11,7 @@
     SUBDIR += ample
     SUBDIR += arts
     SUBDIR += ascd
+    SUBDIR += audacity
     SUBDIR += aumix
     SUBDIR += aureal-kmod
     SUBDIR += autozen

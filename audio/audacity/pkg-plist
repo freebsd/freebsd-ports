@@ -1,0 +1,3 @@
+bin/audacity
+%%PORTDOCS%%share/doc/audacity/audacity-help.htb
+%%PORTDOCS%%@dirrm share/doc/audacity
