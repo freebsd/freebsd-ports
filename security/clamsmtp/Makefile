@@ -13,7 +13,7 @@ MASTER_SITES=	http://memberwebs.com/nielsen/software/clamsmtp/
 MAINTAINER=	clsung@dragon2.net
 COMMENT=	An ClamAV anti-virus SMTP Filter
 
-RUN_DEPENDS=	clamd:${PORTSDIR}/security/clamav
+RUN_DEPENDS=	${LOCALBASE}/sbin/clamd:${PORTSDIR}/security/clamav
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
