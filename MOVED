@@ -1320,7 +1320,6 @@ java/phpeclipse_phphelp|java/phpeclipse|2004-11-28|merged
 java/phpeclipse_sql|java/phpeclipse|2004-11-28|merged
 java/phpeclipse_tidy|java/phpeclipse|2004-11-28|merged
 java/jakarta-log4j|devel/log4j|2004-11-28|no longer part of the Jakarta project
-sysutils/3dm||2004-11-28|obsolete
 textproc/ruby-wordnet||2004-11-28|deleted due to build failure
 textproc/se-ispell|textproc/ispell|2004-11-28|use textproc/ispell with ISPELL_SE=yes instead
 textproc/tei-xsl-fo||2004-11-28|removed due to checksum failure
