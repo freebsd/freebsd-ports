@@ -15,7 +15,7 @@ MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Library for parsing mms:// and mmsh:// type network streams
 
 USE_REINPLACE=	yes
-USE_GNOME=	gnomehack gnometarget pkgconfig
+USE_GNOME=	gnomehack gnometarget pkgconfig glib20
 GNU_CONFIGURE=	yes
 USE_LIBTOOL_VER=	15
 INSTALLS_SHLIB=	yes
