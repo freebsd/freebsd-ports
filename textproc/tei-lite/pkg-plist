@@ -1,0 +1,8 @@
+@unexec %%MKCATALOG%% -q -c %%CATALOG%% deinstall tei/lite
+share/sgml/tei/lite/teilite.dtd
+share/sgml/tei/lite/teilite.tag
+share/sgml/tei/lite/catalog
+@exec %%MKCATALOG%% -q -c %%CATALOG%% install tei/lite
+@dirrm share/sgml/tei/lite
+@unexec rmdir %D/share/sgml/tei 2>/dev/null || true
+@unexec rmdir %D/share/sgml 2>/dev/null || true
