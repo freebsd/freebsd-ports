@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	jde
-PORTVERSION=	2.2.8
-PORTREVISION=	1
+PORTVERSION=	2.2.9
 CATEGORIES=	java elisp
 MASTER_SITES=	http://jdee.sunsite.dk/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
-DISTNAME=	${PORTNAME}-latest
 
-MAINTAINER=	fuyuki@hadaly.org
+MAINTAINER=	ports@FreeBSD.org
 
 EMACS_PORT_NAME?=	emacs21
 
@@ -35,11 +33,9 @@ LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/jde
 JAVADIR=	${PREFIX}/share/java/jde
 
 post-patch:
-# An ugly patch for a troublesome varname change in the browse-url.
-.if ${EMACS_PORT_NAME} == "emacs21"
-	${REINPLACE_CMD} -e 's/browse-url-new-window-p/browse-url-new-window-flag/' \
-		${BUILD_WRKSRC}/*.el
-.endif
+	${REINPLACE_CMD} -e '/test -d/d' ${BUILD_WRKSRC}/${MAKEFILE}
+	${REINPLACE_CMD} -e 's|^      dir|"${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/jde/"|' \
+		${BUILD_WRKSRC}/jde.el
 
 do-install:
 	${MKDIR} ${LISPDIR}
@@ -48,7 +44,7 @@ do-install:
 .endfor
 	${MKDIR} ${JAVADIR}
 .for i in bsh-commands lib src
-	${CP} -pR ${WRKSRC}/java/${i} ${JAVADIR}
+	${CP} -R ${WRKSRC}/java/${i} ${JAVADIR}
 .endfor
 	${INSTALL_SCRIPT} ${BUILD_WRKSRC}/jtags ${PREFIX}/bin
 
@@ -60,7 +56,7 @@ post-install:
 	${CP} ${BUILD_WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .for i in html tli_rbl
-	${CP} -pR ${WRKSRC}/doc/${i} ${DOCSDIR}
+	${CP} -R ${WRKSRC}/doc/${i} ${DOCSDIR}
 .endfor
 	${LN} -sf ${DOCSDIR} ${LISPDIR}/doc
 .endif
