@@ -8,11 +8,11 @@
 -#define BE_LONG(x) __byte_swap_long(x)
 +#  include <osreldate.h>
 +#  if __FreeBSD_version <= 500000
-+#    define LE_SHORT(x) __byte_swap_word(x)
-+#    define LE_LONG(x) __byte_swap_long(x)
++#    define BE_SHORT(x) __byte_swap_word(x)
++#    define BE_LONG(x) __byte_swap_long(x)
 +#  else
-+#    define LE_SHORT(x) __uint8_swap_uint16(x)
-+#    define LE_LONG(x) __uint8_swap_uint32(x)
++#    define BE_SHORT(x) __uint8_swap_uint16(x)
++#    define BE_LONG(x) __uint8_swap_uint32(x)
 +#  endif
  #else
  #define BE_SHORT(x) XCHG_SHORT(x)
