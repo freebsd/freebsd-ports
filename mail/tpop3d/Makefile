@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tpop3d
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ex-parrot.com/~chris/tpop3d/
 
