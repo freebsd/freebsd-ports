@@ -168,7 +168,7 @@ if ($dir eq "") {
 chdir $currentdir;
 my @dirs = split(/\,/, $dir);
 foreach my $i (@dirs) { $i = abs_path($i); }
-my $portname; my $module;
+my $portname; my $module; my $wrapat;
 foreach my $thisdir (@dirs) {
 	# make double sure where we are..
 	chdir $thisdir;
@@ -232,7 +232,7 @@ foreach my $thisdir (@dirs) {
 	} else {
 		## Set up the autofill file.
 		# Read COMMENT for part of the commit message.
-		$pkgcomment = `$make $passenv -V COMMENT`;
+		chomp($pkgcomment = `$make $passenv -V COMMENT`);
 		# Change the first character to lowercase to make it fit with the
 		# rest of the commit message.
 		$pkgcomment =~ s/(^.)/\l$1/;
@@ -244,40 +244,21 @@ foreach my $thisdir (@dirs) {
 			($portversion) = (m/^PORTVERSION=\s+(\w.*)$/) if (/^PORTVERSION=/);
 		}
 		close(MAKEFILE);
-		# Obtain length of the current string so we can figure out where to
-		# insert the \n.  This is necessary to keep the commitfile under the
-		# limit for commit messages and such.
-		$tmp = length($portversion) + length($portname) + 10;
-		$offset = 72 - $tmp;
-		# If the comment string is longer than we have space for it, insert
-		# the \n after the last word that doesn't exceed the limit.
-		if (length($pkgcomment) > $offset) {
-			my @commentArr = split(/\s+/, $pkgcomment);
-			$tmp = 0;
-			# Until we reach the offset, record the number of words.
-			while ($tmp < $offset) {
-				$tmp += length($commentArr[$tmp2]) + 1;
-				$tmp2++;
-			}
-			$tmp2--;
-			$tmp = 0; $pkgcomment = "";
-			# Now reassemble the comment string.
-			while ($commentArr[$tmp]) {
-				if ($tmp == $tmp2 || $tmp == 0) {
-					$pkgcomment = $pkgcomment . "\n";
-					$pkgcomment = join("", $pkgcomment, $commentArr[$tmp]);
-				} else {
-					$pkgcomment = join(" ", $pkgcomment, $commentArr[$tmp]);
-				}
-				$tmp++;
-			}
-		}
-		chomp $pkgcomment;
-		$pkgcomment = $pkgcomment . ".";
-		$pkgcomment = $pkgcomment . "\n\n" if ($autofill != -1);
+		$pkgcomment .= ".";
+		$pkgcomment .= "\n\n" if ($autofill != -1);
 		# Write out the data to the comment file.
 		open(AUTOFILL, "> $tmpdir/commitfile") or die("Can't open $tmpdir/commitfile for writing: $!");
-		print AUTOFILL "Add $portname $portversion, $pkgcomment";
+		# pretty print; wrap @ 72 characters
+		$tmp = "Add $portname $portversion, $pkgcomment";
+		$wrapat = 72;
+		while($wrapat > 1) {
+			$tmp2 = $tmp;
+			$tmp =~ s/(.{$wrapat}([^ ]+)?) /$1\n/g;
+			last unless $tmp =~ /^[^\n]{73}/;
+			$wrapat--;
+			$tmp = $tmp2;
+		}
+		print AUTOFILL $tmp;
 		print AUTOFILL "PR:		$autofill\n" if ($autofill != -1);
 		print AUTOFILL "Submitted by:	$orig" if ($autofill != -1);
 		close(AUTOFILL);
