@@ -206,6 +206,7 @@
     SUBDIR += xrubik
     SUBDIR += xscavenger
     SUBDIR += xscrabble
+    SUBDIR += xshipwars-client
     SUBDIR += xshisen
     SUBDIR += xshogi
     SUBDIR += xskat
