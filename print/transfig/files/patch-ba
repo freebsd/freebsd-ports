@@ -1,0 +1,49 @@
+--- fig2dev/dev/korean.ps.orig	Sat Jul 15 02:23:17 2000
++++ fig2dev/dev/korean.ps	Sat Jul 15 02:27:58 2000
+@@ -9,14 +9,18 @@
+ % available, it try to use HLaTeX-Myoungjo-Regular-KSC-EUC-H
+ % and HLaTeX-Gothic-Regular-KSC-EUC-H instead.
+ % --- T.Sato, 1999/8/13
++%
++% Search Batang/Dotum-KSC-EUC-H instead Munhwa family.
++% --- CHOI Junho <cjh@FreeBSD.org> 2000/7/15
++%
+ 
+-/has_munhwa_font true def
+-FontDirectory /Munhwa-Regular-KSC-EUC-H known not {
++/has_baekmuk_font true def
++FontDirectory /Batang-Medium-KSC-EUC-H known not {
+   systemdict /resourcestatus known {
+-    /Munhwa-Regular-KSC-EUC-H /Font resourcestatus {
++    /Batang-Medium-KSC-EUC-H /Font resourcestatus {
+       pop pop
+     } {
+-      /has_munhwa_font false def
++      /has_baekmuk_font false def
+     } ifelse
+   } if
+ } if
+@@ -25,9 +29,9 @@
+   /FontName /CompositeRoman def  /FontType 0 def
+   /WMode 0 def    /FMapType 3 def  /FontMatrix matrix def
+   /Encoding [0 1] def
+-  has_munhwa_font {
++  has_baekmuk_font {
+     /FDepVector [ /Times-Roman findfont
+-        /Munhwa-Regular-KSC-EUC-H findfont ] def
++        /Batang-Medium-KSC-EUC-H findfont ] def
+   } {
+     /FDepVector [ /Times-Roman findfont
+         /HLaTeX-Myoungjo-Regular-KSC-EUC-H findfont ] def
+@@ -40,9 +44,9 @@
+   /FontName /CompositeBold def  /FontType 0 def
+   /WMode 0 def    /FMapType 3 def  /FontMatrix matrix def
+   /Encoding [0 1] def
+-  has_munhwa_font {
++  has_baekmuk_font {
+     /FDepVector [ /Times-Bold findfont
+-        /MunhwaGothic-Bold-KSC-EUC-H findfont ] def
++        /Dotum-Medium-KSC-EUC-H findfont ] def
+   } {
+     /FDepVector [ /Times-Bold findfont
+         /HLaTeX-Gothic-Regular-KSC-EUC-H findfont ] def
