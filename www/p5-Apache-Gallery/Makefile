@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	Apache
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	erwin@lansing.dk
+COMMENT=	Apache::Gallery - mod_perl handler to create an image gallery
 
 LIB_DEPENDS=	Imlib2.1:${PORTSDIR}/graphics/imlib2
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq \
@@ -22,7 +23,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Apache/
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/CGI/FastTemplate.pm:${PORTSDIR}/www/p5-CGI-FastTemplate \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Inline.pm:${PORTSDIR}/devel/p5-Inline \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Image/Size.pm:${PORTSDIR}/graphics/p5-Image-Size \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
@@ -60,4 +60,11 @@ post-install:
 	@ ${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+BUILD_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
+RUN_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
+.endif
+
+.include <bsd.port.post.mk>
