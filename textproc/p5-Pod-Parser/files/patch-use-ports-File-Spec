@@ -1,0 +1,98 @@
+diff -ur ../PodParser-1.18-clean/lib/Pod/Find.pm ./lib/Pod/Find.pm
+--- ../PodParser-1.18-clean/lib/Pod/Find.pm	Fri Sep  1 08:11:39 2000
++++ ./lib/Pod/Find.pm	Sun Jun 16 12:55:40 2002
+@@ -48,7 +48,13 @@
+ use strict;
+ #use diagnostics;
+ use Exporter;
++
++# Added by FreeBSD ports to make sure newer version of File::Spec is used
++use Config;
++use lib $Config{installsitelib}; # installsitearch will be added automatically
++
+ use File::Spec;
++
+ use File::Find;
+ use Cwd;
+ 
+diff -ur ../PodParser-1.18-clean/lib/Pod/Usage.pm ./lib/Pod/Usage.pm
+--- ../PodParser-1.18-clean/lib/Pod/Usage.pm	Thu Aug 10 14:39:45 2000
++++ ./lib/Pod/Usage.pm	Sun Jun 16 12:55:18 2002
+@@ -400,6 +400,11 @@
+ use Carp;
+ use Config;
+ use Exporter;
++
++# Added by FreeBSD ports to make sure newer version of File::Spec is used
++use Config;
++use lib $Config{installsitelib}; # installsitearch will be added automatically
++
+ use File::Spec;
+ 
+ use vars qw(@ISA @EXPORT);
+diff -ur ../PodParser-1.18-clean/t/pod/find.t ./t/pod/find.t
+--- ../PodParser-1.18-clean/t/pod/find.t	Fri Sep  1 08:25:41 2000
++++ ./t/pod/find.t	Sun Jun 16 12:56:32 2002
+@@ -8,6 +8,11 @@
+ BEGIN { plan tests => 4 }
+ 
+ use Pod::Find qw(pod_find pod_where);
++
++# Added by FreeBSD ports to make sure newer version of File::Spec is used
++use Config;
++use lib $Config{installsitelib}; # installsitearch will be added automatically
++
+ use File::Spec;
+ 
+ # load successful
+diff -ur ../PodParser-1.18-clean/t/pod/testcmp.pl ./t/pod/testcmp.pl
+--- ../PodParser-1.18-clean/t/pod/testcmp.pl	Thu Aug 10 14:05:40 2000
++++ ./t/pod/testcmp.pl	Sun Jun 16 12:56:50 2002
+@@ -6,7 +6,13 @@
+ use Carp;
+ use Exporter;
+ use File::Basename;
++
++# Added by FreeBSD ports to make sure newer version of File::Spec is used
++use Config;
++use lib $Config{installsitelib}; # installsitearch will be added automatically
++
+ use File::Spec;
++
+ use FileHandle;
+ 
+ @ISA = qw(Exporter);
+diff -ur ../PodParser-1.18-clean/t/pod/testp2pt.pl ./t/pod/testp2pt.pl
+--- ../PodParser-1.18-clean/t/pod/testp2pt.pl	Thu Aug 10 14:05:40 2000
++++ ./t/pod/testp2pt.pl	Sun Jun 16 12:57:11 2002
+@@ -2,7 +2,13 @@
+ 
+ BEGIN {
+    use File::Basename;
++
++   # Added by FreeBSD ports to make sure newer version of File::Spec is used
++   use Config;
++   use lib $Config{installsitelib}; # installsitearch will be added automatically
++
+    use File::Spec;
++
+    use Cwd qw(abs_path);
+    push @INC, '..';
+    my $THISDIR = abs_path(dirname $0);
+diff -ur ../PodParser-1.18-clean/t/pod/testpchk.pl ./t/pod/testpchk.pl
+--- ../PodParser-1.18-clean/t/pod/testpchk.pl	Thu Aug 10 14:05:40 2000
++++ ./t/pod/testpchk.pl	Sun Jun 16 12:56:17 2002
+@@ -2,7 +2,13 @@
+ 
+ BEGIN {
+    use File::Basename;
++
++   # Added by FreeBSD ports to make sure newer version of File::Spec is used
++   use Config;
++   use lib $Config{installsitelib}; # installsitearch will be added automatically
++
+    use File::Spec;
++
+    push @INC, '..';
+    my $THISDIR = dirname $0;
+    unshift @INC, $THISDIR;
