@@ -1,0 +1,52 @@
+--- configure.in.orig	Fri Aug 24 09:22:54 2001
++++ configure.in	Sat Sep 15 17:13:21 2001
+@@ -319,11 +319,6 @@
+   AC_CHECK_LIB(Xmu, XmuInternAtom)
+ fi
+ 
+-# check X11R6 for XIM
+-if test "$XIM" = "TRUE"; then
+-  AC_CHECK_LIB(X11, XRegisterIMInstantiateCallback, AC_DEFINE(USE_X11R6_XIM))
+-fi
+-
+ dnl#
+ dnl# FEATURES
+ dnl#
+@@ -607,16 +602,16 @@
+     AC_DEFINE(MULTI_CHARSET)
+     DEF_FONT_IDX=0
+     MULTICHAR_ENCODING="eucj"
+-    FONT0="fixed"
+-    FONT1="8x16"
+-    FONT2="9x18"
+-    FONT3="12x24"
+-    FONT4="13x26"
++    FONT0="7x14"
++    FONT1="a10"
++    FONT2="r12"
++    FONT3="8x16"
++    FONT4="12x14"
+     MFONT0="k14"
+-    MFONT1="jiskan16"
+-    MFONT2="jiskan18"
+-    MFONT3="jiskan24"
+-    MFONT4="jiskan26"
++    MFONT1="k10"
++    MFONT2="k12"
++    MFONT3="kanji16"
++    MFONT4="kanji24"
+   elif test "$MULTI_CHARSET_TYPE" = "euc-kr" -o "$MULTI_CHARSET_TYPE" = "euckr"; then 
+     AC_MSG_RESULT(euckr)
+     AC_DEFINE(MULTI_CHARSET)
+@@ -724,6 +719,11 @@
+ 	        AC_DEFINE(USE_XIM)
+ 	        XIM="TRUE"
+ )
++
++# check X11R6 for XIM
++if test "$XIM" = "TRUE"; then
++  AC_CHECK_LIB(X11, XRegisterIMInstantiateCallback, AC_DEFINE(USE_X11R6_XIM))
++fi
+ 
+ AC_MSG_CHECKING(for Greek keyboard support)
+ AC_ARG_ENABLE(greek,

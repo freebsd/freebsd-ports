@@ -4,7 +4,7 @@ supports Japanese input with XIM (X Input Method) protocol.
 If you want to input Japanese, use "--input-method" and 
 "--preedit-type" option. 
 
-WWW: http://eterm.sourceforge.net/
+WWW: http://www.eterm.org/
 
 --
 MANTANI Nobutaka <nobutaka@nobtaka.com>

@@ -5,39 +5,30 @@
 # $FreeBSD$
 #
 
-PORTNAME=	eterm
-PORTVERSION=	0.9
-CATEGORIES=	japanese x11
-MASTER_SITES=	ftp://ftp.enlightenment.org/pub/enlightenment/Eterm/ \
-		ftp://ftp.dti.ad.jp/pub/X/enlightenment/Eterm/ \
-		ftp://ftp.kddlabs.co.jp/.10/X11/window_manager/enlightenment/Eterm/ \
-		ftp://ftp.sogang.ac.kr/.c/tools/X11/Enlightenment/Eterm/
-DISTNAME=	Eterm-${PORTVERSION}
+MASTERDIR=      ${.CURDIR}/../../x11/eterm
 
 MAINTAINER=	nobutaka@nobutaka.com
 
-BUILD_DEPENDS=  man2html:${PORTSDIR}/textproc/man2html
+EXTRA_PATCHES=	${.CURDIR}/files/extra-patch-configure.in \
+		${.CURDIR}/files/extra-patch-src:command.c \
+		${.CURDIR}/files/extra-patch-src:feature.h
 
-USE_GMAKE=	yes
-USE_X_PREFIX=	yes
-USE_IMLIB=	yes
-USE_LIBTOOL=	yes
-CONFIGURE_ARGS=	--enable-trans=imlib --enable-utmp --enable-multi-charset=kanji \
-		--enable-xim --with-theme-update
-CONFIGURE_ENV=	LIBS="-lxpg4"
+USE_AUTOCONF=	yes
+CONFIGURE_ARGS=	--enable-trans --enable-utmp \
+		--enable-xim --with-theme-update \
+		--with-backspace=bs --without-terminfo \
+		--enable-multi-charset=kanji
 
-MAN1=		Eterm.1
-INSTALLS_SHLIB=	yes
+PKGDIR=		${.CURDIR}
+PLIST=		${MASTERDIR}/pkg-plist
 
-post-install:
-	@${CHMOD} 4711 ${PREFIX}/bin/Eterm
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/Eterm
-	@${INSTALL_DATA} ${WRKSRC}/ReleaseNotes ${PREFIX}/share/doc/Eterm
-	@${INSTALL_DATA} ${WRKSRC}/doc/Eterm.1.html ${PREFIX}/share/doc/Eterm
-	@${INSTALL_DATA} ${WRKSRC}/doc/Eterm_reference.html ${PREFIX}/share/doc/Eterm
-	@${INSTALL_DATA} ${WRKSRC}/doc/Eterm.tcap ${PREFIX}/share/doc/Eterm
-	@${INSTALL_DATA} ${WRKSRC}/doc/Eterm.ti ${PREFIX}/share/doc/Eterm
-.endif
+THEMES=		Eterm auto chooser trans
 
-.include <bsd.port.mk>
+post-configure:
+	for theme in ${THEMES} ; do \
+		${CP} ${WRKSRC}/themes/$$theme/theme.cfg ${WRKSRC}/themes/$$theme/theme.cfg.bak ; \
+		${SED} -e "s,term_name Eterm,term_name kterm," < ${WRKSRC}/themes/$$theme/theme.cfg.bak > ${WRKSRC}/themes/$$theme/theme.cfg ; \
+		${RM} ${WRKSRC}/themes/$$theme/theme.cfg.bak ; \
+	done
+
+.include "${MASTERDIR}/Makefile"
