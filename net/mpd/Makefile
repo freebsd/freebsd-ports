@@ -3,7 +3,7 @@
 # Date created:				16 May 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.3 1997/09/10 18:55:28 julian Exp $
+# $Id: Makefile,v 1.4 1997/09/11 00:12:17 max Exp $
 #
 
 DISTNAME=		mpd-1.0b4
@@ -14,9 +14,6 @@ EXTRACT_SUFX=		.tgz
 MAINTAINER=		andy@icc.surw.chel.su
 
 OSVERSION!=     sysctl -n kern.osreldate
-.if ${OSVERSION} >= 300000
-BROKEN=			if_tun.h
-.endif
 
 WRKSRC=			${WRKDIR}/mpd-1.0b4/src
 ALL_TARGET=		depend all
