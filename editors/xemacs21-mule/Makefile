@@ -43,6 +43,7 @@ XEMACS_ARCH=		${CONFIGURE_TARGET}
 
 USE_GETTEXT=	yes
 USE_XLIB=	yes
+USE_XPM=	yes
 STRIP=
 USE_AUTOCONF_VER=	213
 CONFIGURE_TARGET=${MACHINE_ARCH}--freebsd
@@ -55,17 +56,17 @@ CONFIGURE_ARGS=	--with-x11 \
 		--site-includes='${SITE_INCLUDES}' \
 		--with-xface \
 		--with-sound=native \
-		--with-site-lisp \
 		--with-pop \
 		--with-xfs \
 		--with-jpeg \
 		--with-png \
 		--with-tiff \
+		--with-xpm \
 		--with-ldap=no \
 		--infopath=${LOCALBASE}/lib/xemacs/info:${LOCALBASE}/info:${X11BASE}/info:/usr/info:${LOCALBASE}/lib/texmf/doc/info:/usr/lib/texmf/doc:/usr/share/info \
 		--with-clash-detection \
 		--with-database=berkdb \
-		${WITH_XPM} ${WITH_XIM} \
+		${WITH_XIM} \
 		${WITH_ATHENA} \
 		${WITH_MENUBARS} ${WITH_SCROLLBARS} ${WITH_DIALOGS} ${WITH_WIDGETS} \
 		${WITH_OFFIX} ${WITH_GTK} \
@@ -116,9 +117,7 @@ WITH_DIALOGS=	--with-dialogs=motif
 
 .if defined(WANT_GTK)
 WITH_GTK=	--with-gtk=yes
-WITH_XPM=	--with-xpm=no
 USE_GNOME+=	gtk12
-USE_XPM=	no
 .endif
 
 .if defined(PACKAGE_BUILDING)
@@ -129,8 +128,6 @@ WITH_MENUBARS?=	--with-menubars=lucid
 WITH_SCROLLBARS?=--with-scrollbars=motif
 WITH_WIDGETS?=	--with-widgets=motif
 .endif
-USE_XPM?=	yes
-WITH_XPM?=	--with-xpm
 WITH_XIM?=	--with-xim=xlib
 WITH_ATHENA?=	--with-athena=xaw
 WITH_MENUBARS?=	--with-menubars=athena
