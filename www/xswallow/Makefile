@@ -9,7 +9,7 @@ PORTNAME=	xswallow
 PORTVERSION=	1.0.18
 CATEGORIES=	www
 MASTER_SITES=	http://www.csn.ul.ie/~caolan/publink/X/
-DISTNAME=	XswallowSource-1.0.18
+DISTNAME=	XswallowSource-${PORTVERSION}
 
 MAINTAINER=	conrads@home.com
 
