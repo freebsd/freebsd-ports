@@ -1,11 +1,22 @@
 --- config/i386/freebsd-elf.h.orig	Fri Dec  5 04:15:34 1997
-+++ config/i386/freebsd-elf.h	Sun Apr 12 06:23:12 1998
-@@ -140,7 +140,7 @@
++++ config/i386/freebsd-elf.h	Tue Jan 12 02:13:15 1999
+@@ -26,8 +26,9 @@
+ 
+ /* The svr4 ABI for the i386 says that records and unions are returned
+    in memory.  */
++/* On FreeBSD, we do not. */
+ #undef DEFAULT_PCC_STRUCT_RETURN
+-#define DEFAULT_PCC_STRUCT_RETURN 1
++#define DEFAULT_PCC_STRUCT_RETURN 0
+ 
+ /* This is how to output an element of a case-vector that is relative.
+    This is only used for PIC code.  See comments by the `casesi' insn in
+@@ -140,7 +141,7 @@
  #define WCHAR_TYPE_SIZE BITS_PER_WORD
      
  #undef CPP_PREDEFINES
 -#define CPP_PREDEFINES "-Dunix -D__ELF__ -D__FreeBSD__=2 -Asystem(FreeBSD)"
-+#define CPP_PREDEFINES "-Di386 -Dunix -D__ELF__ -D__FreeBSD__=2 -Asystem(FreeBSD) -Asystem(FreeBSD) -Acpu(i386) -Amachine(i386)"
++#define CPP_PREDEFINES "-Di386 -Dunix -D__ELF__ -D__FreeBSD__=3 -Asystem(FreeBSD) -Asystem(FreeBSD) -Acpu(i386) -Amachine(i386)"
  
  #undef CPP_SPEC
  #define CPP_SPEC "%(cpp_cpu) %[cpp_cpu] %{fPIC:-D__PIC__ -D__pic__} %{fpic:-D__PIC__ -D__pic__} %{posix:-D_POSIX_SOURCE}"
