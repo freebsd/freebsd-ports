@@ -1748,7 +1748,7 @@ _MANPAGES+=	${MANN:S%^%${MANNPREFIX}/man/${lang}/mann/%}
 
 .endfor
 
-.if defined(_MLINKS) && make(generate-plist)
+.if defined(_MLINKS)
 _TMLINKS!=	${ECHO_CMD} ${_MLINKS} | ${AWK} '{for (i=2; i<=NF; i+=2) print $$i}'
 .else
 _TMLINKS=
