@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	centericq
-PORTVERSION=	4.5.1
+PORTVERSION=	4.6.0
 CATEGORIES=	net
 MASTER_SITES=	http://konst.org.ua/download/
 
