@@ -8,7 +8,8 @@
 PORTNAME=	gnupg-idea
 PORTVERSION=	1.0.4
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/%SUBDIR%/ \
+MASTER_SITES=	${MASTER_SITE_GNUPG} \
+		ftp://ftp.gnupg.org/gcrypt/%SUBDIR%/ \
 		http://www.gnupg.dk/contrib-dk/:idea \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/gnupg/&,}
 MASTER_SITE_SUBDIR=	contrib
