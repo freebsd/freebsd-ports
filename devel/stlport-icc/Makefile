@@ -6,7 +6,7 @@
 
 PORTNAME=	${MASTERPORTNAME}
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	marius@alchemy.franken.de
 
 BUILD_DEPENDS=	icc:${PORTSDIR}/lang/icc
 
