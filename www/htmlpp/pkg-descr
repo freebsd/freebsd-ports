@@ -7,4 +7,6 @@ Documentation is included in HTML format
 produced using htmlpp itself, you can take a look at the source file (also
 installed) to see an example of how to use htmlpp.
 
+WWW: http://www.imatix.com/html/htmlpp/index.htm
+
 [ This port is maintained by Donald Burr <dburr@FreeBSD.ORG>. ]
