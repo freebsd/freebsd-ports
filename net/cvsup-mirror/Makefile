@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cvsup-mirror
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	net
 DISTFILES=
 
@@ -36,8 +36,6 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/cvsupd.access ${base}
 	@${INSTALL_SCRIPT} ${FILESDIR}/update.sh ${base}
 	@${INSTALL_DATA} ${FILESDIR}/supfile ${base}
-	@${INSTALL_DATA} ${FILESDIR}/supfile.crypto ${base}
-	@${INSTALL_DATA} ${FILESDIR}/supfile.non-crypto ${base}
 	@${INSTALL_DATA} ${FILESDIR}/refuse.self ${distrib}
 	@${INSTALL_SCRIPT} ${FILESDIR}/cvsupd.sh ${rc}
 	@${CP} /dev/null ${base}/.start_server

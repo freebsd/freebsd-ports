@@ -1,7 +1,7 @@
 #! /bin/sh
 
 base=${PREFIX}/etc/cvsup
-variables="user group cuser cgroup host host_crypto interval \
+variables="user group cuser cgroup host interval \
     maxclients facility distribs"
 
 ask() {
@@ -87,34 +87,9 @@ your system until you type "make install".
 
 EOF
 
-if [ x${USA_RESIDENT} = xYES ]; then
-    dflt_domestic=y
-else
-    dflt_domestic=n
-fi
-if yesno "Is this host in the USA or Canada" ${dflt_domestic}; then
-    domestic=yes
-else
-    domestic=no
-fi
-
-host=$(ask "Master site for your non-crypto updates" cvsup-master.freebsd.org)
-if [ ${domestic} = yes ]; then
-    dflt_host_crypto=${host}
-else
-    dflt_host_crypto=cvsup.internat.freebsd.org
-fi
-
-cat <<EOF
-
-If you are not planning to mirror the crypto files, just accept
-the default answer for the next question.
-
-EOF
-host_crypto=$(ask "Master site for your crypto updates" ${dflt_host_crypto})
+host=$(ask "Master site for your updates" cvsup-master.freebsd.org)
 
 host=$(canonicalize ${host})
-host_crypto=$(canonicalize ${host_crypto})
 
 while :; do
     interval=$(ask "How many hours between updates of your files" 1)
@@ -130,15 +105,13 @@ Now you must decide which sets of files you wish to make available
 from your mirror site.  You can choose any combination, and you
 can put each set anywhere you want to on your disks.  Although each
 set is optional, we strongly encourage every mirror site to carry
-at least the main source tree.
+at least the main source repository.
 
 EOF
 
 distribs="distrib.self .. ."
 ask_distrib FreeBSD.cvs /home/ncvs . \
-    "main source tree, except crypto code"
-ask_distrib FreeBSD-crypto.cvs /home/ncvs . \
-    "crypto code"
+    "main source repository"
 ask_distrib FreeBSD-www.current /usr/local/www . \
     "installed World Wide Web data"
 ask_distrib FreeBSD-gnats.current /home/gnats gnats \
