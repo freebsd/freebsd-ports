@@ -7,7 +7,7 @@
 
 PORTNAME=	quagga
 PORTVERSION=	0.98.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://quagga.net/download/
 
@@ -28,6 +28,7 @@ USE_PERL5_BUILD=	yes
 
 MAN1=		vtysh.1
 MAN8=		bgpd.8 ospf6d.8 ospfd.8 ripd.8 ripngd.8 zebra.8
+INFO=		quagga
 
 OPTIONS=	ISISD		"Enable experimental ISIS daemon"	off \
 		PAM		"PAM authentication for vtysh"	off \
@@ -48,7 +49,33 @@ CONFIGURE_ARGS+=--includedir=${PREFIX}/include --enable-exampledir=${PREFIX}/sha
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
-SCRIPTS_ENV=	PREFIX=${PREFIX} \
+.if !defined(ENABLE_USER)
+ENABLE_USER=quagga
+.endif
+.if !defined(ENABLE_GROUP)
+ENABLE_GROUP=quagga
+.endif
+
+CONFIGURE_ARGS+=--enable-user=${ENABLE_USER}
+CONFIGURE_ARGS+=--enable-group=${ENABLE_GROUP}
+
+.if !defined(SYSCONF_DIR)
+SYSCONF_DIR=${PREFIX}/etc/quagga
+.endif
+.if !defined(LOCALSTATE_DIR)
+LOCALSTATE_DIR=/var/run/quagga
+.endif
+
+CONFIGURE_ARGS+=--sysconfdir=${SYSCONF_DIR}
+CONFIGURE_ARGS+=--localstatedir=${LOCALSTATE_DIR}
+
+.if defined(ENABLE_VTY_GROUP)
+CONFIGURE_ARGS+=--enable-vty-group=${ENABLE_VTY_GROUP}
+.endif
+
+CONFIGURE_ARGS+=--enable-vtysh
+
+SCRIPTS_ENV=	PREFIX=${PREFIX} PKG_PREFIX=${PREFIX} \
 		SYSCONF_DIR=${SYSCONF_DIR} SYSSTATE_DIR=${SYSSTATE_DIR} \
 		ENABLE_USER=${ENABLE_USER} ENABLE_GROUP=${ENABLE_GROUP}
 
@@ -108,32 +135,6 @@ CONFIGURE_ARGS+=--enable-tcp-signature
 EXTRA_PATCHES+=${PATCHDIR}/extra-tcpmd5-patch-bgpd::bgp_network.c ${PATCHDIR}/extra-tcpmd5-patch-bgpd::bgp_vty.c ${PATCHDIR}/extra-tcpmd5-patch-bgpd::bgpd.c ${PATCHDIR}/extra-tcpmd5-patch-bgpd::bgpd.h ${PATCHDIR}/extra-tcpmd5-patch-configure.ac ${PATCHDIR}/extra-tcpmd5-patch-lib::sockopt.c ${PATCHDIR}/extra-tcpmd5-patch-lib::sockopt.h
 .endif
 
-.if !defined(ENABLE_USER)
-ENABLE_USER=quagga
-.endif
-.if !defined(ENABLE_GROUP)
-ENABLE_GROUP=quagga
-.endif
-
-CONFIGURE_ARGS+=--enable-user=${ENABLE_USER}
-CONFIGURE_ARGS+=--enable-group=${ENABLE_GROUP}
-
-.if !defined(SYSCONF_DIR)
-SYSCONF_DIR=${PREFIX}/etc/quagga
-.endif
-.if !defined(LOCALSTATE_DIR)
-LOCALSTATE_DIR=/var/run/quagga
-.endif
-
-CONFIGURE_ARGS+=--sysconfdir=${SYSCONF_DIR}
-CONFIGURE_ARGS+=--localstatedir=${LOCALSTATE_DIR}
-
-.if defined(ENABLE_VTY_GROUP)
-CONFIGURE_ARGS+=--enable-vty-group=${ENABLE_VTY_GROUP}
-.endif
-
-CONFIGURE_ARGS+=--enable-vtysh
-
 .if ${OSVERSION} >= 500038
 RC_SUBR?=	${DESTDIR}/etc/rc.subr
 RC_DIR=		${DESTDIR}/etc/rc.d
@@ -155,7 +156,8 @@ PLIST_SUB+=	RC_DIR=${RC_DIR} \
 		RC_SUFX=${RC_SUFX} \
 		LOCALSTATE_DIR=${LOCALSTATE_DIR} \
 		ENABLE_USER=${ENABLE_USER} \
-		ENABLE_GROUP=${ENABLE_GROUP}
+		ENABLE_GROUP=${ENABLE_GROUP} \
+		CWD_TRICK=${PREFIX}
 
 pre-everything::
 	@${ECHO} "============================================================="

@@ -63,9 +63,6 @@ include/quagga/vty.h
 include/quagga/zassert.h
 include/quagga/zclient.h
 include/quagga/zebra.h
-info/quagga.info
-@unexec install-info --delete %D/info/quagga.info %D/info/dir
-@exec install-info %D/info/quagga.info %D/info/dir
 %%EXAMPLESDIR%%/bgpd.conf.sample
 %%EXAMPLESDIR%%/bgpd.conf.sample2
 %%ISISD_CONF%%
@@ -83,4 +80,5 @@ info/quagga.info
 @cwd %%RC_DIR%%
 quagga%%RC_SUFX%%
 watchquagga%%RC_SUFX%%
+@cwd %%CWD_TRICK%%
 @unexec rmdir %%LOCALSTATE_DIR%% 2>/dev/null || true
