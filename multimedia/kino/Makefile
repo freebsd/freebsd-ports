@@ -7,6 +7,7 @@
 
 PORTNAME=	kino
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://kino.schirmacher.de/filemanager/download/31/
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +17,7 @@ COMMENT=	A DV non-linear video editor
 
 LIB_DEPENDS=	dv.4:${PORTSDIR}/multimedia/libdv	\
 		Magick.6:${PORTSDIR}/graphics/ImageMagick	\
-		samplerate.0:${PORTSDIR}/audio/libsamplerate
+		samplerate.1:${PORTSDIR}/audio/libsamplerate
 
 USE_GETTEXT=	yes
 USE_GNOME=	libgnomeui libxml2
