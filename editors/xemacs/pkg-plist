@@ -1140,4 +1140,4 @@ lib/xemacs-%%XEMACS_VER%%/i386--freebsd/config.values
 @dirrm lib/xemacs-%%XEMACS_VER%%/lisp/x11
 @dirrm lib/xemacs-%%XEMACS_VER%%/lisp
 @dirrm lib/xemacs-%%XEMACS_VER%%
-@dirrm lib/xemacs
+@unexec rmdir %D/lib/xemacs 2>/dev/null || true
