@@ -11,7 +11,7 @@ CATEGORIES=	russian textproc perl5
 PKGNAMEPREFIX=	p5-
 DISTFILES=
 
-MAINTAINER=	skv@protey.ru
+MAINTAINER=	skv@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 BUILD_DEPENDS=	${RUN_DEPENDS} \
@@ -49,9 +49,7 @@ do-build:
 .endfor
 
 do-install:
-.for ENC in ${RUSSIANENC}
-	${INSTALL_DATA} ${WRKDIR}/${ENC}.enc \
+	${INSTALL_DATA} ${WRKSRC}/*.enc \
 		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/XML/Parser/Encodings/
-.endfor
 
 .include <bsd.port.mk>
