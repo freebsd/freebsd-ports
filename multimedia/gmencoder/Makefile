@@ -1,0 +1,43 @@
+# Ports collection makefile for:  gmencoder
+# Date created:			  Wed Feb 25 03:20:50 EST 2004
+# Whom:				  Michael Johnson <ahze@ahze.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gmencoder
+PORTVERSION=	0.1.0
+CATEGORIES=	multimedia
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	ahze@ahze.net
+COMMENT=	Gmencoder is Gnome2 front-end to mplayer/mencoder
+
+BUILD_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mplayer
+RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mplayer
+
+HAS_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
+USE_GMAKE=	yes
+USE_GNOME=	gnomehack gnomeprefix libgnomeui
+USE_REINPLACE=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/configure
+
+do-configure:
+	@cd ${WRKSRC}; \
+	${SH} ${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS} ${CONFIGURE_ENV}
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for i in README
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.endif
+
+.include <bsd.port.mk>
