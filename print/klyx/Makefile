@@ -11,7 +11,7 @@ CATEGORIES=	print kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR= unstable/apps/office
 
-MAINTAINER=	tom@eborcom.com
+MAINTAINER=	tom@FreeBSD.org
 
 USE_KDELIBS_VER=1
 GNU_CONFIGURE=	yes
