@@ -4,7 +4,10 @@ lib/fractint/blues.map
 lib/fractint/cellular.par
 lib/fractint/chroma.map
 lib/fractint/default.map
+lib/fractint/demo.par
 lib/fractint/firestrm.map
+lib/fractint/fract18.par
+lib/fractint/fract19.par
 lib/fractint/fractint.frm
 lib/fractint/fractint.hlp
 lib/fractint/fractint.ifs
@@ -26,12 +29,16 @@ lib/fractint/headache.map
 lib/fractint/icons.par
 lib/fractint/landscap.map
 lib/fractint/lyapunov.map
+lib/fractint/lyapunov.par
+lib/fractint/music.par
 lib/fractint/neon.map
 lib/fractint/paintjet.map
 lib/fractint/penrose.l
+lib/fractint/phctutor.frm
 lib/fractint/phoenix.par
 lib/fractint/royal.map
 lib/fractint/tiling.l
 lib/fractint/topo.map
 lib/fractint/volcano.map
 man/man1/xfractint.1.gz
+@dirrm lib/fractint
