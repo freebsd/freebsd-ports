@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.111 1997/06/24 08:10:25 obrien Exp $
+# $Id: Makefile,v 1.112 1997/06/27 02:00:33 jfitz Exp $
 #
 
     SUBDIR += archie
@@ -49,6 +49,7 @@
     SUBDIR += rdist6
     SUBDIR += ripetools
     SUBDIR += rmsg
+    SUBDIR += rshell
     SUBDIR += rsync
     SUBDIR += rwhois
     SUBDIR += samba
