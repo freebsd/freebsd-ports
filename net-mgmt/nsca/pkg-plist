@@ -1,0 +1,12 @@
+@comment $FreeBSD$
+%%PORTDOCS%%%%DOCSDIR%%/Changelog
+%%PORTDOCS%%%%DOCSDIR%%/LEGAL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/SECURITY
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@comment This port installs into LOCALBASE as opposed to PREFIX
+@cwd %%LOCALBASE%%
+etc/nagios/nsca.cfg.sample
+etc/nagios/send_nsca.cfg.sample
+libexec/nagios/nsca
+libexec/nagios/send_nsca
