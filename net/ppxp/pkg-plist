@@ -1,0 +1,165 @@
+bin/fppxp
+bin/plast
+bin/ppxp
+bin/qdial
+bin/tkppxp
+bin/xppxp
+bin/xppxpm
+etc/ppxp/catcap
+etc/ppxp/chat/justnet
+etc/ppxp/chat/modemlogin
+etc/ppxp/chat/nifty
+etc/ppxp/conf/debug
+etc/ppxp/conf/default
+etc/ppxp/conf/filter01
+etc/ppxp/conf/lcp.def
+etc/ppxp/conf/modem
+etc/ppxp/conf/qdial
+etc/ppxp/conf/report
+etc/ppxp/conf/serial
+etc/ppxp/conf/serial.os
+etc/ppxp/conf/server
+etc/ppxp/ip/droutedown
+etc/ppxp/ip/drouteup
+etc/ppxp/ip/drupmq
+etc/ppxp/ip/hroutedown
+etc/ppxp/ip/hrouteup
+etc/ppxp/keybind
+etc/ppxp/modem/3c563
+etc/ppxp/modem/MC-6500@isdn
+etc/ppxp/modem/MC-6500@modem
+etc/ppxp/modem/aterm
+etc/ppxp/modem/default
+etc/ppxp/modem/dn1280
+etc/ppxp/modem/ex336
+etc/ppxp/modem/generic
+etc/ppxp/modem/mc6500
+etc/ppxp/modem/mc6530
+etc/ppxp/modem/mn128
+etc/ppxp/modem/ms336
+etc/ppxp/modem/pcins128
+etc/ppxp/modem/pcmi336_128@64
+etc/ppxp/modem/rta50i
+etc/ppxp/modem/sta128
+etc/ppxp/modem/standard
+etc/ppxp/modem/ta777
+etc/ppxp/modem/tmad1280@128
+etc/ppxp/modem/tmad1280@64
+etc/ppxp/modem/v34es2
+etc/ppxp/modem/xj2144
+etc/ppxp/rc/fetchmail.rc
+etc/ppxp/rc/sendmail.rc
+etc/ppxp/rc/skeleton.rc
+etc/ppxp/rc/start
+etc/ppxp/rc/stop
+lib/ppxp/tcl/PPxP.so
+lib/ppxp/tcl/pkgIndex.tcl
+lib/ppxp/tkppxp/images/circle.xbm
+lib/ppxp/tkppxp/images/double-right.xbm
+lib/ppxp/tkppxp/images/down.xbm
+lib/ppxp/tkppxp/images/eject.gif
+lib/ppxp/tkppxp/images/in6x6.xbm
+lib/ppxp/tkppxp/images/mini-down.xbm
+lib/ppxp/tkppxp/images/mini-up.xbm
+lib/ppxp/tkppxp/images/open-folder.gif
+lib/ppxp/tkppxp/images/out6x6.xbm
+lib/ppxp/tkppxp/images/pause.gif
+lib/ppxp/tkppxp/images/rec.gif
+lib/ppxp/tkppxp/images/skip_fw.gif
+lib/ppxp/tkppxp/images/start.gif
+lib/ppxp/tkppxp/images/stop.gif
+lib/ppxp/tkppxp/images/up.xbm
+lib/ppxp/tkppxp/resources/default
+lib/ppxp/tkppxp/resources/qdial_message
+lib/ppxp/tkppxp/resources/qdial_message.ja
+lib/ppxp/tkppxp/scripts/conf.tcl
+lib/ppxp/tkppxp/scripts/icon.tcl
+lib/ppxp/tkppxp/scripts/indicator.tcl
+lib/ppxp/tkppxp/scripts/log.tcl
+lib/ppxp/tkppxp/scripts/modem.tcl
+lib/ppxp/tkppxp/scripts/panel.tcl
+lib/ppxp/tkppxp/scripts/popup.tcl
+lib/ppxp/tkppxp/scripts/ppxplink.tcl
+lib/ppxp/tkppxp/scripts/qdial.tcl
+lib/ppxp/tkppxp/scripts/tclutil.tcl
+lib/ppxp/tkppxp/scripts/terminal.tcl
+lib/ppxp/tkppxp/scripts/toplevel.tcl
+lib/ppxp/tkppxp/widgets/buttonbox.tcl
+lib/ppxp/tkppxp/widgets/buttonentry.tcl
+lib/ppxp/tkppxp/widgets/checkbox.tcl
+lib/ppxp/tkppxp/widgets/ipentry.tcl
+lib/ppxp/tkppxp/widgets/labelframe.tcl
+lib/ppxp/tkppxp/widgets/listboxmenu.tcl
+lib/ppxp/tkppxp/widgets/listframe.tcl
+lib/ppxp/tkppxp/widgets/menuentry.tcl
+lib/ppxp/tkppxp/widgets/notebook.tcl
+lib/ppxp/tkppxp/widgets/radiobox.tcl
+lib/ppxp/tkppxp/widgets/test.tcl
+lib/ppxp/tkppxp/widgets/updownentry.tcl
+lib/ppxp/tkppxp/widgets/widgetutil.tcl
+sbin/in.ppxp
+sbin/ppxpd
+share/doc/ppxp/C/QuickStart.txt
+share/doc/ppxp/ja/QuickStart.txt
+share/doc/ppxp/ja/guide-1.html
+share/doc/ppxp/ja/guide-10.html
+share/doc/ppxp/ja/guide-2.html
+share/doc/ppxp/ja/guide-3.html
+share/doc/ppxp/ja/guide-4.html
+share/doc/ppxp/ja/guide-5.html
+share/doc/ppxp/ja/guide-6.html
+share/doc/ppxp/ja/guide-7.html
+share/doc/ppxp/ja/guide-8.html
+share/doc/ppxp/ja/guide-9.html
+share/doc/ppxp/ja/guide.html
+share/doc/tkppxp/README
+share/doc/xppxp/README
+share/nls/ja_JP.EUC/ppxp.cat
+share/nls/ja_JP.EUC/ppxpd.cat
+share/ppxp/html/basic.html
+share/ppxp/html/help.html
+share/ppxp/html/index.html
+share/ppxp/html/line.html
+share/ppxp/html/log.html
+share/ppxp/html/logo.gif
+share/ppxp/html/menu.html
+share/ppxp/html/quick.html
+share/ppxp/label/asahi.xpm
+share/ppxp/label/base.xpm
+share/ppxp/label/bekkoame.xpm
+share/ppxp/label/biglobe.xpm
+share/ppxp/label/dti.xpm
+share/ppxp/label/iij.xpm
+share/ppxp/label/iij4u.xpm
+share/ppxp/label/infopepper.xpm
+share/ppxp/label/infosphere.xpm
+share/ppxp/label/nifty.xpm
+share/ppxp/label/ocn.xpm
+share/ppxp/label/ppxp.xpm
+share/ppxp/label/rim.xpm
+share/ppxp/label/so-net.xpm
+share/ppxp/label/worldnet.xpm
+share/ppxp/label/xaxon.xpm
+@exec mkdir -p /var/log/ppxp
+@unexec rm -rf /var/log/ppxp
+@dirrm share/ppxp/label
+@dirrm share/ppxp/html
+@dirrm share/ppxp
+@dirrm share/doc/xppxp
+@dirrm share/doc/tkppxp
+@dirrm share/doc/ppxp/ja
+@dirrm share/doc/ppxp/C
+@dirrm share/doc/ppxp
+@dirrm lib/ppxp/tkppxp/widgets
+@dirrm lib/ppxp/tkppxp/scripts
+@dirrm lib/ppxp/tkppxp/resources
+@dirrm lib/ppxp/tkppxp/images
+@dirrm lib/ppxp/tkppxp
+@dirrm lib/ppxp/tcl
+@dirrm lib/ppxp
+@dirrm etc/ppxp/rc
+@dirrm etc/ppxp/modem
+@dirrm etc/ppxp/ip
+@dirrm etc/ppxp/conf
+@dirrm etc/ppxp/chat
+@dirrm etc/ppxp

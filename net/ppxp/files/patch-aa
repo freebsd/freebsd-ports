@@ -1,0 +1,28 @@
+*** etc/modem/MC-6500@isdn	Thu Jan  1 09:00:00 1970
+--- etc/modem/MC-6500@isdn	Mon Jun 15 22:41:37 1998
+***************
+*** 0 ****
+--- 1,9 ----
++ include		standard
++ 
++ Name		"PHS alpha DATA MC-6500 @ ISDN"
++ MaxDTESpeed	115200
++ Initialize	"ATE1Q0@O2"
++ PulseDial	"ATD\p"
++ ToneDial	"ATD\p"
++ Dial		"ATD\p"
++ IsdnDial	"ATD\p"
+*** etc/modem/MC-6500@modem	Thu Jan  1 09:00:00 1970
+--- etc/modem/MC-6500@modem	Mon Jun 15 22:42:20 1998
+***************
+*** 0 ****
+--- 1,9 ----
++ include		standard
++ 
++ Name		"PHS alpha DATA MC-6500 @ modem"
++ MaxDTESpeed	115200
++ Initialize	"ATE1Q0@O1"
++ PulseDial	"ATD\p"
++ ToneDial	"ATD\p"
++ Dial		"ATD\p"
++ IsdnDial	"ATD\p"

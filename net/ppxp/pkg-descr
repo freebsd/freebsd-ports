@@ -1,0 +1,15 @@
+This is a new user process PPP software pakgae. It is easy to setup
+and has nice GUI to control connection. This PPP software make a
+connection on demand and can traslate IP address and port numbers as
+called as NAT. This spackage have many console programs, ppxp is
+standard terminal oriented console, xppxp is X client console, tkppxp
+is Tcl/Tk based console, and much more.
+
+There are more documentation under /usr/local/share/doc/ppxp.
+
+Ref. <URL:http://www.dsl.ics.tut.ac.jp/~manabe/PPxP/>
+
+Copyright (c) 1997, 1998 The PPxP Development Team. All rights reserved.
+-- 
+Norio Suzuki
+nosuzuki@e-mail.ne.jp
