@@ -6,18 +6,25 @@
 #
 
 PORTNAME=	${APP_TITLE:L}
-PORTVERSION=	3.2.2
+PORTVERSION=	3.2.3
 CATEGORIES=	java
-MASTER_SITES=  ${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	jonc@chen.org.nz
 COMMENT=	JBoss 3, an open-source J2EE application server
 
+BUILD_DEPENDS=	${JAVAJARDIR}/xdoclet-1.2b4.jar:${PORTSDIR}/java/xdoclet
+
 USE_JAVA=	1.3+
 
 USE_REINPLACE=	YES
-USE_ZIP=	YES
+USE_BZIP2=	YES
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
 
 APP_HOME?=	${PREFIX}/${PKGBASE}${PORTVERSION:R}
 DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}${PORTVERSION:R}
@@ -43,16 +50,12 @@ DAEMONCTL_DIR=	${PORTSDIR}/www/jakarta-tomcat4/files
 DAEMONCTL_FILES=daemonctl.c daemonctl.1 startup.sh
 MAN1=		${CONTROL_SCRIPT_NAME}.1
 
+JBOSSOUTPUT=	${WRKSRC}/build/output/${PORTNAME}-${PORTVERSION}
+
 CPIO?=		/usr/bin/cpio
 
-.include <bsd.port.pre.mk>
 
-post-patch:
-	${FIND} ${WRKSRC} -type f\
-		\( -name '*.ba[kt]' -or -name '*.orig' \) -print0 |\
-		${XARGS} -0 ${RM}
-	@${FIND} ${WRKSRC} -type d -print0 | ${XARGS} -0 ${CHMOD} 0755
-	@${FIND} ${WRKSRC} -type f -print0 | ${XARGS} -0 ${CHMOD} 0644
+.include <bsd.port.pre.mk>
 
 do-configure:
 	@(cd ${DAEMONCTL_DIR} && ${CP} ${DAEMONCTL_FILES} ${WRKDIR})
@@ -98,29 +101,26 @@ post-configure:
 
 do-build:
 	(cd ${WRKDIR} && ${CC} ${CFLAGS} -o ${CONTROL_SCRIPT_NAME} daemonctl.c)
+	(cd ${WRKSRC}/build && ${SETENV} JAVA_HOME=${JAVA_HOME} PATH=${PATH}:${JAVA_HOME}/bin ${SH} build.sh)
 
 pre-install:
 	@PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
 
 do-install:
-	${MKDIR} ${APP_HOME}
-	(cd ${WRKSRC} && ${FIND} . -type d \( -name docs -prune \) -or -print0 |\
-		(cd ${APP_HOME} && ${XARGS} -0 ${MKDIR}))
-	(cd ${WRKSRC} && ${FIND} . \( -type d -name docs -prune \) -or -type f |\
+	${MKDIR} ${APP_HOME} && ${CHOWN} ${USER}:${GROUP} ${APP_HOME}
+	${MKDIR} ${LOG_DIR} && ${CHOWN} ${USER}:${GROUP} ${LOG_DIR}
+	(cd ${JBOSSOUTPUT} && ${FIND} bin client lib server |\
 		${CPIO} -pdmu -R ${USER}:${GROUP} ${APP_HOME})
 	${INSTALL} -o ${USER} -g ${GROUP} -m 06754\
 		${WRKDIR}/${CONTROL_SCRIPT_NAME} ${CONTROL_SCRIPT}
 	${INSTALL_SCRIPT} ${WRKDIR}/startup.sh ${STARTUP_SCRIPT}
-	${MKDIR} ${LOG_DIR}
-	${FIND} ${APP_HOME} -type d -print | ${XARGS} ${CHOWN} ${USER}:${GROUP}
 	${INSTALL} -o ${USER} -g ${GROUP} -m 0640 /dev/null ${STDOUT_LOG}
 	${INSTALL} -o ${USER} -g ${GROUP} -m 0640 /dev/null ${STDERR_LOG}
 	${INSTALL} -o ${USER} -g ${GROUP} -m 0640 /dev/null ${PID_FILE}
 	${INSTALL_MAN} ${WRKDIR}/daemonctl.1 ${MANPREFIX}/man/man1/${CONTROL_SCRIPT_NAME}.1
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC}/docs && ${FIND} . -type f |\
-		${CPIO} -pdmu -R ${DOCOWN}:${DOCGRP} ${DOCSDIR})
+	${CP} -r ${JBOSSOUTPUT}/docs/* ${DOCSDIR}
 .endif
 
 post-install:
