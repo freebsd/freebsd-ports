@@ -9440,6 +9440,7 @@ zh-xemacs	ports/chinese/xemacs
 zh-xmms		ports/chinese/xmms
 zh-xpdf		ports/chinese/xpdf
 zh-zhcon	ports/chinese/zhcon
+ziarc		ports/cad/ziarc
 zic		src/usr.sbin/zic
 zile		ports/editors/zile
 zimg		ports/graphics/zimg
