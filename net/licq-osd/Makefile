@@ -17,7 +17,8 @@ DISTNAME=	licq_osd_plugin-${PORTVERSION}
 MAINTAINER=	nm@web.am
 COMMENT=	OnScreenDisplay messages in licq (like in SIM and more)
 
-BUILD_DEPENDS=${X11BASE}/lib/libxosd.so.4:${PORTSDIR}/misc/xosd
+BUILD_DEPENDS=	${X11BASE}/lib/libxosd.so.4:${PORTSDIR}/misc/xosd \
+		${LOCALBASE}/include/licq/licq_icqd.h:${PORTSDIR}/net/licq
 RUN_DEPENDS=${LOCALBASE}/lib/licq/licq_qt-gui.so:${PORTSDIR}/net/licq-qt-gui
 # run dependency may be too strict, delete it if you use another
 # plugin (gtk+) and wish run osd with it. i've not tested with
@@ -27,5 +28,7 @@ GNU_CONFIGURE=yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" LIBS="-liconv"
 USE_LIBTOOL_VER=13
+
+PLIST_FILES=	lib/licq/licq_osd.la lib/licq/licq_osd.so
 
 .include <bsd.port.mk>
