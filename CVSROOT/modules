@@ -4944,7 +4944,6 @@ netperf		ports/benchmarks/netperf
 netpipe		ports/benchmarks/netpipe
 netpipes	ports/net/netpipes
 netqc		ports/net/netqc
-netraider	ports/www/netraider
 netrek-BRMH-bin	ports/games/netrek-BRMH-bin
 netrek-COW3-bin	ports/games/netrek-COW3-bin
 netrexx		ports/java/netrexx
