@@ -306,18 +306,18 @@ share/latex2html/versions/table.pl
 share/latex2html/versions/techexpl.pl
 share/latex2html/versions/unicode.pl
 share/latex2html/versions/utf8.pl
-share/texmf/tex/latex/html/floatflt.ins
-share/texmf/tex/latex/html/frames.sty
-share/texmf/tex/latex/html/heqn.sty
-share/texmf/tex/latex/html/hthtml.sty
-share/texmf/tex/latex/html/html.sty
-share/texmf/tex/latex/html/htmllist.sty
-share/texmf/tex/latex/html/justify.sty
-share/texmf/tex/latex/html/latin9.def
-share/texmf/tex/latex/html/ldump.sty
-share/texmf/tex/latex/html/techexplHTML.tex
-share/texmf/tex/latex/html/url.sty
-share/texmf/tex/latex/html/verbatimfiles.sty
+share/texmf-var/tex/latex/html/floatflt.ins
+share/texmf-var/tex/latex/html/frames.sty
+share/texmf-var/tex/latex/html/heqn.sty
+share/texmf-var/tex/latex/html/hthtml.sty
+share/texmf-var/tex/latex/html/html.sty
+share/texmf-var/tex/latex/html/htmllist.sty
+share/texmf-var/tex/latex/html/justify.sty
+share/texmf-var/tex/latex/html/latin9.def
+share/texmf-var/tex/latex/html/ldump.sty
+share/texmf-var/tex/latex/html/techexplHTML.tex
+share/texmf-var/tex/latex/html/url.sty
+share/texmf-var/tex/latex/html/verbatimfiles.sty
 @exec /usr/local/bin/mktexlsr
 @unexec /usr/local/bin/mktexlsr
 @dirrm lib/latex2html
@@ -338,4 +338,4 @@ share/texmf/tex/latex/html/verbatimfiles.sty
 @dirrm share/latex2html/texinputs
 @dirrm share/latex2html/versions
 @dirrm share/latex2html
-@dirrm share/texmf/tex/latex/html
+@dirrm share/texmf-var/tex/latex/html
