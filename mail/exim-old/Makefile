@@ -3,7 +3,7 @@
 # Date created:		23 June 1996
 # Whom:			axl@iafrica.com
 #
-# $Id: Makefile,v 1.18 1998/10/13 04:16:21 jseger Exp $
+# $Id: Makefile,v 1.19 1998/11/16 09:45:23 markm Exp $
 #
 
 DISTNAME=	exim-2.053
@@ -12,6 +12,8 @@ MASTER_SITES=	ftp://ftp.cus.cam.ac.uk/pub/software/programs/exim/Testing/
 DISTFILES=	exim-testing-2.053.tar.gz exim-texinfo-2.00.tar.gz
 
 MAINTAINER=	axl@iafrica.com
+
+BROKEN=		fetch
 
 USE_PERL5=	YES
 
