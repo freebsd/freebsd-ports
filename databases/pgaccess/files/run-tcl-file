@@ -1,0 +1,13 @@
+#!/bin/sh
+
+PATH_TO_WISH='%%LOCALBASE%%/bin/wish%%TCL_VERSION%%'
+PGACCESS_HOME='%%PREFIX%%/share/postgresql/pgaccess'
+PGLIB='%%LOCALBASE%%/lib'
+PGPORT="${PGPORT:-5432}"
+
+export PATH_TO_WISH
+export PGACCESS_HOME
+export PGLIB
+export PGPORT
+
+exec "${PATH_TO_WISH}" "${PGACCESS_HOME}/%%PROGRAM%%" "$@" > /dev/null
