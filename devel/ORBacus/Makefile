@@ -3,7 +3,7 @@
 # Whom:			ejc@bazzle.com
 # Version required:	3.0
 #
-# $Id: Makefile,v 1.11 1998/08/09 22:38:13 asami Exp $
+# $Id: Makefile,v 1.12 1998/09/19 02:14:55 hoek Exp $
 #
 
 DISTNAME=	OB-3.0
@@ -16,6 +16,8 @@ MAINTAINER=	ejc@bazzle.com
 BUILD_DEPENDS=  gcc28:${PORTSDIR}/lang/gcc28 \
 		g++28:${PORTSDIR}/lang/gcc28 \
 		${PREFIX}/lib/gcc-lib/i386-unknown-freebsd${OSREL}/2.8.1/libstdc++.a:${PORTSDIR}/lang/glibstdc++28
+
+BROKEN_ELF=	depends on gcc28 and glibstdc++28
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	CXX=g++28 CXXFLAGS="-O -pipe"
