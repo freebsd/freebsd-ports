@@ -7,7 +7,7 @@
 
 PORTNAME=	dtd2relax
 PORTVERSION=	1.1.1
-CATEGORIES=	textproc
+CATEGORIES=	textproc java
 MASTER_SITES=	http://www.horobi.com/Projects/RELAX/Archive/
 DISTNAME=	${PORTNAME:U}_${PORTVERSION:S/./_/g}
 DISTFILES=	${JARFILE} ${DISTNAME}-src${EXTRACT_SUFX}
