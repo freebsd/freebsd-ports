@@ -369,6 +369,9 @@ eclipse/plugins/org.eclipse.ui.externaltools.nl1_2.1.1.1/fragment.xml
 eclipse/plugins/org.eclipse.ui.externaltools.nl1_2.1.1.1/nl1.jar
 eclipse/plugins/org.eclipse.ui.views.nl1_2.1.1.1/fragment.xml
 eclipse/plugins/org.eclipse.ui.views.nl1_2.1.1.1/nl1.jar
+eclipse/plugins/org.eclipse.ui.workbench.nl1_2.1.0/fragment.xml
+eclipse/plugins/org.eclipse.ui.workbench.nl1_2.1.0/nl1.jar
+@dirrm eclipse/plugins/org.eclipse.ui.workbench.nl1_2.1.0
 @dirrm eclipse/plugins/org.eclipse.ui.views.nl1_2.1.1.1
 @dirrm eclipse/plugins/org.eclipse.ui.externaltools.nl1_2.1.1.1
 @dirrm eclipse/plugins/org.eclipse.platform.doc.user.nl1_2.1.1.1/nl/zh/TW
