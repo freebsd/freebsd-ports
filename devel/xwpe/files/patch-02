@@ -1,14 +1,6 @@
---- Makefile.in.orig	Wed May  6 11:03:13 1998
-+++ Makefile.in	Fri May  8 10:10:38 1998
-@@ -1,6 +1,6 @@
- #C-Compiler (gcc if exist):
- CC=		@CC@
--CFLAGS=		@CFLAGS@ @X_CFLAGS@
-+CFLAGS=		@CFLAGS@ -DLIBRARY_DIR=\"$(XWPELIBDIR)\" -DINFO_DIR=\"$(INFODIR)\" -DX_INC=\"$(X_INC)\"@X_CFLAGS@
- #CFLAGS=		@CFLAGS@ @EXTRA_CFLAGS@ @X_CFLAGS@
- 
- #Source Directory:
-@@ -9,13 +9,16 @@
+--- Makefile.in.orig	Sat Sep  5 06:57:17 1998
++++ Makefile.in	Mon Nov  9 15:03:57 1998
+@@ -9,12 +9,13 @@
  #Destination Directory
  prefix=@prefix@
  DESTDIR=	$(prefix)/bin
@@ -16,13 +8,11 @@
 +LIBDIR=		$(prefix)/share
  XWPELIBDIR=	$(LIBDIR)/xwpe
  MANDIR=		$(prefix)/man
-+INFODIR=	$(prefix)/info
++#INFODIR=	$(prefix)/info
  
  LIBS=@X_LIBS@ @X_PRE_LIBS@ @LIBS@ @X_EXTRA_LIBS@
- DEFS=@DEFS@
+-DEFS=@DEFS@ -DLIBRARY_DIR=\"$(XWPELIBDIR)\"
++DEFS=@DEFS@ -DLIBRARY_DIR=\"$(XWPELIBDIR)\" -DINFO_DIR=\"$(INFODIR)\" -DX_INC=\"@X_INC@\"
  INSTALL=	cp
-+
-+X_INC=		@X_INC@
  
  # In case configure fails a description of many of the compilation options
- # are provided below so that administrators can determine the proper flags.

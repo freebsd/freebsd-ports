@@ -4,10 +4,10 @@
 # Date created:			  Fri Jan 24, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.5 1998/05/09 18:52:33 obrien Exp $
+# $Id: Makefile,v 1.6 1998/08/13 03:35:24 asami Exp $
 #
 
-DISTNAME=	xwpe-1.5.9a
+DISTNAME=	xwpe-1.5.12a
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.rpi.edu/~payned/xwpe/ \
