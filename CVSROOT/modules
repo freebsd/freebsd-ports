@@ -3388,6 +3388,7 @@ krb		src/eBones/krb
 krb5		ports/security/krb5
 krbinclude	src/eBones/include
 krbman		src/eBones/man
+krdesktop	ports/net/krdesktop
 kronolith	ports/deskutils/kronolith
 krss		ports/deskutils/krss
 kseg		ports/math/kseg
