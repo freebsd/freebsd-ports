@@ -50,7 +50,7 @@ do-configure:
 		${SETENV} ${APR_CONF_ENV} ./configure ${CONFIGURE_ARGS}
 	cd ${WRKDIR}/apr-util-${INTERNALPORTVERSION}; \
 		${SETENV} ${APR_UTIL_CONF_ENV} \
-		./configure ${CONFIGURE_ARGS} ${APR_UTIL_CONF_ARGS} 
+		./configure ${CONFIGURE_ARGS} ${APR_UTIL_CONF_ARGS}
 
 do-build:
 	cd ${WRKDIR}/apr-${INTERNALPORTVERSION}; ${SETENV} ${MAKE_ENV} make
