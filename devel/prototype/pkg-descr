@@ -1,0 +1,9 @@
+Prototype Makefiles is a collection of shared Makefiles which are installed
+globally, and Makefile templates that can be copied into project directories
+using a simple script. The shared Makefiles contain the rules for building a
+project, cleaning it and making dependencies etc. The Makefile templates
+contain the data that is specific for each project. This separation avoids
+duplication of code in Makefiles and is therefore extremely easy to maintain
+and extend.
+
+WWW: http://www.xs4all.nl/~carlo17/prototype/
