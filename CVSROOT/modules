@@ -2116,6 +2116,7 @@ gale		ports/net/gale
 galeon		ports/www/galeon
 galeon2		ports/www/galeon2
 gallery		ports/www/gallery
+gambas		ports/lang/gambas
 gambit		ports/math/gambit
 games_crimson	ports/games/crimson
 gammu		ports/comms/gammu
