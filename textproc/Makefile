@@ -108,6 +108,7 @@
     SUBDIR += p5-HTML-Format
     SUBDIR += p5-LJ-SpellCheck
     SUBDIR += p5-Lingua-Ispell
+    SUBDIR += p5-MARC
     SUBDIR += p5-Number-Format
     SUBDIR += p5-Orchard-Perl
     SUBDIR += p5-PDF-Create
