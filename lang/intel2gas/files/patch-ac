@@ -1,0 +1,78 @@
+--- DATAFILES.html.orig	Wed May  5 11:24:59 1999
++++ DATAFILES.html	Wed May 12 11:18:51 1999
+@@ -1,9 +1,10 @@
++<html><head><title>Intel2gas data files</title></head><body bgcolor="#FFFFFF"><pre>
+ This document tries to explain how the syntax matching works. You propably
+ don't want to know, but it's became so complex that I keep forgetting how
+ it works. 
+-
++</pre><h1>
+ 1.  How it Works(tm)
+---------------------
++</h1><pre>
+ Before parsing the program reads all .syntax files for parsing 
+ information, and .list files for list of registers etc. There 
+ is no limit for number of files, or syntaxes in them.
+@@ -16,7 +17,7 @@
+ Parsing rules:
+ - Normal characters are matched exactly.
+ - Space in parse description matches any amount of space in input line.
+-- `text´ inside '<>' is considered a special tag and parsed accordingly, 
++- `text´ inside '&lt;&gt;' is considered a special tag and parsed accordingly, 
+   after successfull match it's value is stored into a variable of the 
+   same name (`text´).
+ 
+@@ -25,12 +26,10 @@
+ 
+ Output rules:
+ - Normal characters (including space) are copied to output.
+-- `text´ inside '<>' is replaced with value of a variable called `text´.
+-
+-
+-
++- `text´ inside '&lt;&gt;' is replaced with value of a variable called `text´.
++</pre><h1>
+ 2. Files
+---------
++</h1><pre>
+ .syntax file syntax:
+ -
+ parse rule
+@@ -44,12 +43,10 @@
+ val1
+ val2
+ ...
+-
+-
+-
++</pre><h1>
+ 4. Tags
+--------
+-Format of a tag is following: <tagnameN:hh>c, where
++</h1><pre>
++Format of a tag is following: &lt;tagnameN:hh&gt;c, where
+ - tagname is the name of the tag and the variable where the result is stored.
+ - N	  an optional number (0-9) to store the result in different variable.
+ - hh	  an optional hex bitmask (00-ff) for list matches, defaults to ff.
+@@ -66,12 +63,11 @@
+   *  the output of amatching rule is stored in the variable.
+ 
+ Special tags:
+-<nl>	output a new line character
+-<cm>    matches a '#'
+-
+-
++&lt;nl&gt;	output a new line character
++&lt;cm&gt;    matches a '#'
++</pre><h1>
+ 5. Current set of files
+------------------------
++</h1><pre>
+ Syntax files:
+ main.syntax	the basic syntax file
+ num.syntax	converts hex,dec,oct,bin numbers
+@@ -85,3 +81,4 @@
+ size.nn.list	byte,dword... memory sizes, sets 'm' to match the proper b/w/l
+ data.nn.list	dd, db... sizes used in variable creation
+ discard.nn.list	short... discarded
++</pre></body></html>

@@ -1,0 +1,39 @@
+--- Makefile.in.orig	Tue May  4 11:56:19 1999
++++ Makefile.in	Wed May 12 10:03:30 1999
+@@ -9,11 +9,6 @@
+ CXXFLAGS = @CXXFLAGS@
+ OFILES = strhandle.o loaddata.o intel2gas.o
+ HFILES = strhandle.h loaddata.h intel2gas.h
+-DATADIRS = i2g g2i
+-
+-prefix = @prefix@
+-exec_prefix = @exec_prefix@
+-data_prefix = $(prefix)/share/intel2gas
+ 
+ all: warning intel2gas
+ 
+@@ -30,24 +25,3 @@
+ .cc.o:
+ 	$(CXX) -c $(CXXFLAGS) $<
+ 
+-clean:
+-	rm -f *.o *~ core
+-
+-distclean: clean
+-	rm -f intel2gas config.status config.log config.cache Makefile i2gconf.h
+-
+-
+-install:
+-	install -m 755 -d $(data_prefix)
+-	for datadir in $(DATADIRS); do \
+-  	  install -m 755 -d $(data_prefix)/$$datadir; \
+-  install -m 0644 $$datadir/* $(data_prefix)/$$datadir; \
+-	done
+-	install -m 755 intel2gas $(exec_prefix)/bin
+-
+-uninstall:
+-	for datadir in $(DATADIRS); do \
+-  	  rm -rf $(data_prefix)/$$datadir; \
+-	done
+-	rm -f $(exec_prefix)/bin/intel2gas
+-	rmdir $(data_prefix)
