@@ -9,8 +9,9 @@ PORTNAME=	moonlander
 PORTVERSION=	1.0
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	http://downloads.daveblood.com/lunar_lander/
-DISTNAME=	moon-lander-1.0
+MASTER_SITES=	${MASTER_SITE_DEBIAN}
+MASTER_SITE_SUBDIR=pool/main/m/moon-lander
+DISTNAME=	moon-lander_1.0.orig
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Land a spacecraft on the moon
@@ -40,9 +41,9 @@ do-configure:
 do-install:
 	@${MKDIR} ${PREFIX}/bin; \
 	${INSTALL_PROGRAM} ${WRKSRC}/moonlander ${PREFIX}/bin; \
-	${MKDIR} ${PREFIX}/share/moonlander
+	${MKDIR} ${DATADIR}
 .for i in ${install_dirs}
-	@cp -R ${WRKSRC}/${i} ${PREFIX}/share/moonlander
+	@${CP} -R ${WRKSRC}/${i} ${DATADIR}
 .endfor
 
 post-install:
