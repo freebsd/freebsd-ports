@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	diveintopython
-PORTVERSION=	4.0.1
+PORTVERSION=	4.0.2
 CATEGORIES=	lang python
 MASTER_SITES=	http://diveintopython.org/download/
 DISTNAME=	${PORTNAME}
