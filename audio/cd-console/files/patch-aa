@@ -1,0 +1,41 @@
+--- Makefile.orig	Sun Nov 28 20:08:56 1999
++++ Makefile	Sun Nov 28 20:14:20 1999
+@@ -5,17 +5,17 @@
+ # very welcome).
+ 
+ # for linux
+-DEFS = -DOS_LINUX
+-EXTRA_OBJS = cd_ll_linux.o
++#DEFS = -DOS_LINUX
++#EXTRA_OBJS = cd_ll_linux.o
+ 
+ # for bsd. only tested on freebsd
+-#DEFS = -DOS_BSD
+-#EXTRA_OBJS = cd_ll_bsd.o
+-
++DEFS = -DOS_BSD
++EXTRA_OBJS = cd_ll_bsd.o
++CDDEVICE=\"/dev/acd0c\"
+ 
+ # you shouldn't have to change anything below this line
+ 
+-
++BINPATH=${PREFIX}/bin/
+ OBJS=cd-console.o cd.o $(EXTRA_OBJS)
+ LIBS = -lncurses
+ 
+@@ -38,10 +38,13 @@
+ 	$(CC) -c cd_ll_linux.cpp $(CFLAGS)
+ 
+ cd_ll_bsd.o: cd_ll.h cd_ll_bsd.h cd_ll_bsd.cpp
+-	$(CC) -c cd_ll_bsd.cpp $(CFLAGS)
++	$(CC) -c -DDEVICE=$(CDDEVICE) cd_ll_bsd.cpp $(CFLAGS)
+ 
+ cd.o: cd.h cd.cpp
+ 	$(CC) -c cd.cpp $(CFLAGS)
+ 
+ clean:
+ 	rm -f $(OBJS) cd-console
++
++install:
++	@$(BSD_INSTALL_PROGRAM) cd-console $(BINPATH)
