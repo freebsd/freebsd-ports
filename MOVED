@@ -791,3 +791,9 @@ graphics/sketch|graphics/skencil|2004-01-28|Project renamed
 devel/linux-atk|accessibility/linux-atk|2004-01-29|new category
 lang/ifc8||2004-01-31|should be updated in ifc
 net/forgate|net/4g8|2004-02-01|Project renamed
+multimedia/WMxmms||2004-02-01|Port broken for >2 months
+devel/clo++||2004-02-01|Port broken for >2 months
+audio/evilbar||2004-02-01|Port broken for >2 months
+net/platero||2004-02-01|Port broken for >2 months
+math/ruby-gsl||2004-02-01|Port broken for >2 months
+x11-fm/vide||2004-02-01|Port broken for >2 months
