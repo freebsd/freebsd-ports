@@ -1,4 +1,5 @@
 # New ports collection makefile for: analog
+# http://www.analog.cx/
 # Date created:		October 21st 1996
 # Whom:			jfitz
 #
@@ -6,7 +7,7 @@
 #
 
 PORTNAME=	analog
-PORTVERSION= 	4.04
+PORTVERSION=    4.1
 CATEGORIES=	www
 MASTER_SITES=   http://www.analog.cx/ \
 		http://brendanr.simplenet.com/analog/ \

@@ -1,22 +1,29 @@
---- Makefile.orig	Tue Mar 21 12:58:01 2000
-+++ Makefile	Thu Mar 23 12:25:23 2000
-@@ -7,7 +7,11 @@
+--- Makefile.orig	Thu Mar 30 17:59:16 2000
++++ Makefile	Sat Apr 15 11:09:28 2000
+@@ -7,7 +7,7 @@
  #                    -Ae (HP/UX 10);       BS2000/OSD requires -XLLML -XLLMK;
  #                    NeXTSTEP apparently needs...
  #                    CEXTRAFLAGS = -O2 -pipe -no-precomp 
--DEFS =             # any of -DNOPIPES -DNODNS -DNODIRENT -DNOOPEN -DNOREGEX ...
-+#DEFS =             # any of -DNOPIPES -DNODNS -DNODIRENT -DNOOPEN -DNOREGEX ...
+-DEFS =             # any of -DNOPIPES -DNODNS -DNODIRENT -DNOOPEN ...
++#DEFS =             # any of -DNOPIPES -DNODNS -DNODIRENT -DNOOPEN ...
+ #                    ... -DEBCDIC -DNOGMTIME -DNEED_STRCMP -DNEED_MEMMOVE ...
+ #                    ... -DNEED_STRTOUL -DNEED_DIFFTIME -DNEED_FLOATINGPOINT_H
+ #                    Solaris 2 (SunOS 5) might need DEFS = -DNEED_STRCMP
+@@ -15,6 +15,10 @@
+ #   DEFS = -DNEED_MEMMOVE -DNEED_STRTOUL -DNEED_DIFFTIME -DNEED_FLOATINGPOINT_H
+ #                    DYNIX/ptx reportedly needs -D_SOCKET_VERSION=11
+ #                    All the options are explained at the bottom of this file.
 +DEFS =  -DANALOGDIR=\"$(PREFIX)/lib/analog/\" \
 +	-DLOGFILE=\"/var/log/httpd-access.log\" \
 +	-DIMAGEDIR=\"/images/\" \
 +	-DDEFAULTCONFIGFILE=\"$(PREFIX)/etc/analog.cfg\"
- #                    ... -DEBCDIC -DNOGMTIME -DNEED_STRCMP -DNEED_MEMMOVE ...
- #                    ... -DNEED_STRTOUL -DNEED_DIFFTIME -DNEED_FLOATINGPOINT_H
- #                    Solaris 2 (SunOS 5) might need DEFS = -DNEED_STRCMP
+ OS = UNIX          # Operating system: UNIX, DOS, WIN32, MAC, OS2, VMS
+ #                    RISCOS, BEOS, NEXTSTEP, BS2000
+ LIBS =       # extra libraries needed; Solaris 2 (SunOS 5) needs
 @@ -29,7 +33,7 @@
- 	input.o macinput.o macstuff.o output.o output2.o process.o settings.o \
- 	sort.o tree.o utils.o win32.o
- HEADERS = anlghead.h anlghea2.h anlghea3.h anlghea4.h macdir.h
+ 	input.o macinput.o macstuff.o output.o output2.o pcre.o process.o \
+ 	settings.o sort.o tree.o utils.o win32.o
+ HEADERS = anlghead.h anlghea2.h anlghea3.h anlghea4.h macdir.h pcre.h
 -CFLAGS = $(CEXTRAFLAGS) $(DEFS) -D$(OS)
 +CFLAGS += $(DEFS) -D$(OS)
  
