@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipex
-PORTVERSION=	2.4.2
+PORTVERSION=	2.4.3
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ipex
@@ -20,10 +20,4 @@ PLIST_FILES=	bin/ipex
 
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not compile on amd64"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
