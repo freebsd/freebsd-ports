@@ -1,0 +1,13 @@
+--- doc/xmorph.texinfo.orig	Tue May 27 15:58:55 2003
++++ doc/xmorph.texinfo	Wed Nov 19 18:54:32 2003
+@@ -2,6 +2,10 @@
+ @c %**start of header
+ @setfilename xmorph.info
+ @settitle Xmorph documentation
++@dircategory Applications
++@direntry
++* Xmorph: (xmorph).	A digital image warping and dissolving, or morphing, program.
++@end direntry
+ @setchapternewpage odd
+ @c %**end of header
+ 
