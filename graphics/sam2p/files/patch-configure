@@ -1,9 +1,9 @@
---- configure.orig	Fri Feb  7 02:07:46 2003
-+++ configure	Fri Feb  7 02:08:00 2003
-@@ -7420,7 +7420,7 @@
+--- configure.orig	Wed Oct  1 19:19:53 2003
++++ configure	Sun Jan 11 20:48:06 2004
+@@ -7502,7 +7502,7 @@
  ac_n="${ac_n:-$ECHO_N}"
  echo $ac_n "running make Makedep""... $ac_c" 1>&6
- echo "configure:7422: running make Makedep" >&5
+ echo "configure:7504: running make Makedep" >&5
 -if >&5 2>&5 make Makedep; then :
 +if >&5 2>&5 gmake Makedep; then :
    echo "$as_me:$LINENO: result: ok" >&5
