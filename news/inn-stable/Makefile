@@ -3,7 +3,7 @@
 # Date created:		20 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.18 1996/12/07 11:26:46 max Exp $
+# $Id: Makefile,v 1.19 1996/12/08 01:45:08 max Exp $
 #
 
 DISTNAME=	inn1.4sec
@@ -19,61 +19,41 @@ MAINTAINER=	torstenb@FreeBSD.ORG
 
 NO_PACKAGE=	"Too many compile-time options"
 NO_WRKSUBDIR=	yes
+MAN1=	convdate.1 getlist.1 grephistory.1 inews.1 innconfval.1 installit.1 \
+	nntpget.1 rnews.1 shlock.1 shrinkfile.1 subst.1 
+MAN3=	clientlib.3 ddbz.3 inndcomm.3 libinn.3 parsedate.3 qio.3 wildmat.3 
+MAN5=	active.5 control.ctl.5 expire.ctl.5 history.5 hosts.nntp.5 \
+	inn.conf.5 innwatch.ctl.5 moderators.5 newsfeeds.5 newslog.5 \
+	nnrp.access.5 nntpsend.ctl.5 overview.fmt.5 distrib.pats.5 \
+	passwd.nntp.5 
+MAN8=	archive.8 batcher.8 buffchan.8 ctlinnd.8 cvtbatch.8 expire.8 
+	expireover.8 fastrm.8 filechan.8 innd.8 innxmit.8 news-recovery.8 \
+	news.daily.8 newslog.8 nnrpd.8 nntpsend.8 overchan.8 prunehistory.8
 
 pre-configure:
 	echo "${CFLAGS}" >/tmp/build-ports-news-inn-cflags
 
 pre-install:
-	mkdir -p ${PREFIX}/news
+	${MKDIR} ${PREFIX}/news
 
 update: build
 	@(cd ${WRKSRC} ; ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} update)
 	@${MAKE} ${.MAKEFLAGS} post-install
 
 post-install:
-	install -c -o bin -g bin -m 0444 ${WRKSRC}/lib/libinn.a \
-		${PREFIX}/lib/
-	install -c -o bin -g bin -m 0444 ${WRKSRC}/include/inndcomm.h \
-		${PREFIX}/include/
-	install -c -o bin -g bin -m 0444 ${WRKSRC}/include/libinn.h \
-		${PREFIX}/include/
-	install -c -o bin -g bin -m 0444 ${WRKSRC}/include/qio.h \
-		${PREFIX}/include/
+	${INSTALL_DATA} ${WRKSRC}/lib/libinn.a ${PREFIX}/lib/
+	${INSTALL_DATA} ${WRKSRC}/include/inndcomm.h ${PREFIX}/include/
+	${INSTALL_DATA} ${WRKSRC}/include/libinn.h ${PREFIX}/include/
+	${INSTALL_DATA} ${WRKSRC}/include/qio.h ${PREFIX}/include/
 	if [ -d /var/spool/news ] && [ ! -d /var/news ]; then \
-		mkdir -m 0775 -p /var/spool/news/over.view; \
+		${MKDIR} -m 0775 /var/spool/news/over.view; \
 		chown news.news /var/spool/news/over.view; \
 	else \
-		mkdir -m 0775 -p /var/news/over.view; \
+		${MKDIR} -m 0775 /var/news/over.view; \
 		chown news.news /var/news/over.view; \
 	fi
-	-mkdir ${PREFIX}/news/locks
+	${MKDIR} ${PREFIX}/news/locks
 	chown news.news ${PREFIX}/news/locks
 	chmod 0755 ${PREFIX}/news/locks
-	gzip -9nf ${PREFIX}/man/man1/convdate.1 ${PREFIX}/man/man1/getlist.1 \
-	${PREFIX}/man/man1/grephistory.1 ${PREFIX}/man/man1/inews.1 \
-	${PREFIX}/man/man1/innconfval.1 ${PREFIX}/man/man1/installit.1 \
-	${PREFIX}/man/man1/nntpget.1 ${PREFIX}/man/man1/rnews.1 \
-	${PREFIX}/man/man1/shlock.1 ${PREFIX}/man/man1/shrinkfile.1 \
-	${PREFIX}/man/man1/subst.1 ${PREFIX}/man/man3/clientlib.3 \
-	${PREFIX}/man/man3/dbz.3 ${PREFIX}/man/man3/inndcomm.3 \
-	${PREFIX}/man/man3/libinn.3 ${PREFIX}/man/man3/parsedate.3 \
-	${PREFIX}/man/man3/qio.3 ${PREFIX}/man/man3/wildmat.3 \
-	${PREFIX}/man/man5/active.5 ${PREFIX}/man/man5/control.ctl.5 \
-	${PREFIX}/man/man5/expire.ctl.5 ${PREFIX}/man/man5/history.5 \
-	${PREFIX}/man/man5/hosts.nntp.5 ${PREFIX}/man/man5/inn.conf.5 \
-	${PREFIX}/man/man5/innwatch.ctl.5 ${PREFIX}/man/man5/moderators.5 \
-	${PREFIX}/man/man5/newsfeeds.5 ${PREFIX}/man/man5/newslog.5 \
-	${PREFIX}/man/man5/nnrp.access.5 ${PREFIX}/man/man5/nntpsend.ctl.5 \
-	${PREFIX}/man/man5/overview.fmt.5 \
-	${PREFIX}/man/man5/distrib.pats.5 ${PREFIX}/man/man5/passwd.nntp.5 \
-	${PREFIX}/man/man8/archive.8 ${PREFIX}/man/man8/batcher.8 \
-	${PREFIX}/man/man8/buffchan.8 ${PREFIX}/man/man8/ctlinnd.8 \
-	${PREFIX}/man/man8/cvtbatch.8 ${PREFIX}/man/man8/expire.8 \
-	${PREFIX}/man/man8/expireover.8 ${PREFIX}/man/man8/fastrm.8 \
-	${PREFIX}/man/man8/filechan.8 ${PREFIX}/man/man8/innd.8 \
-	${PREFIX}/man/man8/innxmit.8 ${PREFIX}/man/man8/news-recovery.8 \
-	${PREFIX}/man/man8/news.daily.8 ${PREFIX}/man/man8/newslog.8 \
-	${PREFIX}/man/man8/nnrpd.8 ${PREFIX}/man/man8/nntpsend.8 \
-	${PREFIX}/man/man8/overchan.8 ${PREFIX}/man/man8/prunehistory.8
 
 .include <bsd.port.mk>
