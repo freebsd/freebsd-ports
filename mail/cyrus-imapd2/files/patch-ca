@@ -1,0 +1,10 @@
+--- sieve/comparator.h.orig	Sun Nov 12 18:00:13 2000
++++ sieve/comparator.h	Sun Nov 12 18:00:19 2000
+@@ -31,6 +31,7 @@
+ #ifdef HAVE_RX
+ #include <rxposix.h>
+ #else
++#include <sys/types.h>
+ #include <regex.h>
+ #endif
+ #endif
