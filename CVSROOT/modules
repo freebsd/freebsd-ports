@@ -9892,6 +9892,7 @@ unlzx		ports/archivers/unlzx
 unpost		ports/news/unpost
 unquote		ports/sysutils/unquote
 unrar		ports/archivers/unrar
+unreal		ports/irc/unreal
 unroff		ports/textproc/unroff
 unrtf		ports/textproc/unrtf
 unshield	ports/archivers/unshield
