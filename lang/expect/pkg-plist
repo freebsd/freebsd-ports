@@ -24,9 +24,9 @@ include/Dbg.h
 include/expect.h
 include/expect_comm.h
 include/expect_tcl.h
-lib/expect5.22/pkgIndex.tcl
-lib/libexpect522.a
-lib/libexpect522.so.1.0
+lib/expect5.25/pkgIndex.tcl
+lib/libexpect525.a
+lib/libexpect525.so.1.0
 man/man1/autoexpect.1.gz
 man/man1/cryptdir.1.gz
 man/man1/decryptdir.1.gz
@@ -40,4 +40,4 @@ man/man1/tknewsbiff.1.gz
 man/man1/unbuffer.1.gz
 man/man1/xkibitz.1.gz
 man/man3/libexpect.3.gz
-@dirrm lib/expect5.22
+@dirrm lib/expect5.25
