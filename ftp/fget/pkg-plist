@@ -1,0 +1,3 @@
+bin/fget
+include/libfget.h
+lib/libfget.a
