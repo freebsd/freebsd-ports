@@ -5,7 +5,7 @@
 #
 # Please view me with 4 column tabs!
 
-# Please make sure all changes to this file are past through the maintainer. 
+# Please make sure all changes to this file are past through the maintainer.
 # Do not commit them yourself (unless of course you're the Port's Wraith ;).
 KDE_MAINTAINER=		will@FreeBSD.org
 

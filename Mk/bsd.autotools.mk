@@ -13,7 +13,7 @@ Autotools_Include_MAINTAINER=	ade@FreeBSD.org
 #---------------------------------------------------------------------------
 # Entry points into the autotools system
 #---------------------------------------------------------------------------
-#       
+#
 # USE_AUTOMAKE_VER=<value>
 #	- Port wishes to use automake, including the configuration step
 #	- Implies GNU_CONFIGURE?=yes and WANT_AUTOMAKE_VER=<value>
@@ -259,7 +259,7 @@ WANT_LIBTOOL_VER?=	${USE_INC_LIBTOOL_VER}
 LIBTOOL_SUFFIX=	${WANT_LIBTOOL_VER}
 
 # Make sure we specified a legal version of libtool
-# 
+#
 . if !exists(${PORTSDIR}/devel/libtool${LIBTOOL_SUFFIX}/Makefile)
 BROKEN=	"Unknown LIBTOOL version: ${WANT_LIBTOOL_VER}"
 . endif
@@ -285,7 +285,7 @@ LIBTOOL_DEPENDS=	${LIBTOOL}:${PORTSDIR}/devel/libtool${LIBTOOL_SUFFIX}
 BUILD_DEPENDS+=		${LIBTOOL_DEPENDS}
 . if defined(WANT_LIBTOOL_RUN)
 RUN_DEPENDS+=		${LIBTOOL_DEPENDS}
-. endif 
+. endif
 
 LIBTOOLFLAGS?=		--disable-ltlibs		# XXX: probably not useful
 . if defined(USE_AUTOCONF_VER)

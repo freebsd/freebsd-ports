@@ -35,7 +35,7 @@
 #
 # USE_GNUSTEP_INSTALL=yes
 #	call install target with GNUstep.sh sourced in the current shell
-# 
+#
 
 # ---------------------------------------------------------------------------
 .if !defined(_POSTMKINCLUDED)

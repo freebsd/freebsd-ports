@@ -53,9 +53,9 @@ Python_Include_MAINTAINER=	perky@FreeBSD.org
 #						default: -py${PYTHON_SUFFIX}
 #
 # PYTHON_PLATFORM:	Python's idea of the OS release.
-#					XXX This is faked with ${OPSYS} and ${OSREL} until I  
-#					find out how to delay defining a variable until after 
-#					a certain target has been built. 
+#					XXX This is faked with ${OPSYS} and ${OSREL} until I
+#					find out how to delay defining a variable until after
+#					a certain target has been built.
 #
 # PYTHON_PORTSDIR:	The source of your binary's port. Needed for the
 #					RUN_DEPENDS.
@@ -72,7 +72,7 @@ Python_Include_MAINTAINER=	perky@FreeBSD.org
 # PYTHON_SUFFIX:	Yet another short version number, primarily intended
 #					for ${PYTHON_PKGNAMEPREFIX}.
 #
-# PYTHON_VERSION:	Version of the python binary in your ${PATH}, in the 
+# PYTHON_VERSION:	Version of the python binary in your ${PATH}, in the
 #					format "python2.0".	Set this in your makefile in case you
 #					want to build extensions with an older binary.
 #					default: depends on the version of your python binary

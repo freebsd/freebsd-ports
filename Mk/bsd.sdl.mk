@@ -46,7 +46,7 @@ _USE_SDL_ALL=	gfx gui image mixer mm net sdl sound ttf
 # _PORTDIR_xxx	subdirectory below ${PORTSDIR}/${_SUBDIR_xxx}, default sdl_xxx
 # _LIB_xxx		name of the shared lib, default SDL_xxx
 # _REQUIRES_xxx	also needs these SDL libraries
-# 
+#
 
 _VERSION_gfx=	13
 _SUBDIR_gfx=	graphics
