@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	pornview
-PORTVERSION=	0.1.5
+PORTVERSION=	0.2.0.p.1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p./pre/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PornView is an image viewer/manager
@@ -25,8 +26,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 .if defined(WITH_LIBXINE)
-LIB_DEPENDS+=	xine.3:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS+=	xine.5:${PORTSDIR}/multimedia/libxine
 CONFIGURE_ARGS+=	--enable-xine
+.elseif defined(WITH_MPLAYER)
+RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
+CONFIGURE_ARGS+=	--enable-mplayer
 .endif
 
 post-patch:
