@@ -24,7 +24,7 @@
  # See libpng.mak for more information.
  
 -PSRCDIR=libpng
-+PSRCDIR=${PORTSDIR}/graphics/png/work/libpng-0.89c
++PSRCDIR=${PORTSDIR}/graphics/png/work/libpng-0.96
  PVERSION=89
  
  # Choose whether to use a shared version of the PNG library, and if so,
