@@ -21,12 +21,12 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 
 pre-install:
-	${ECHO} bin/aewm > ${PLIST}
+	${ECHO_CMD} bin/aewm > ${PLIST}
 .if !defined(NOPORTDOCS)
 	for i in ${DOCS}; \
-		do ${ECHO} ${DOCDIR}/$${i} >> ${PLIST}; \
+		do ${ECHO_CMD} ${DOCDIR}/$${i} >> ${PLIST}; \
 	done
-	${ECHO} @dirrm ${DOCDIR} >> ${PLIST}
+	${ECHO_CMD} @dirrm ${DOCDIR} >> ${PLIST}
 .endif
 
 do-install:

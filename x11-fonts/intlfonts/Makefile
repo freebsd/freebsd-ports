@@ -43,8 +43,8 @@ do-build:
 	cd ${WRKSRC}; \
 	for dir in ${NORMAL_FONTS} ${BIG_FONTS}; do \
 		for bdf in $$dir/*.bdf ; do \
-			${ECHO} $$bdf; \
-			pcf_gz=`${ECHO} $$bdf | ${SED} 's/.bdf$$/.pcf.gz/'`; \
+			${ECHO_CMD} $$bdf; \
+			pcf_gz=`${ECHO_CMD} $$bdf | ${SED} 's/.bdf$$/.pcf.gz/'`; \
 			${CAT} $$bdf | bdftopcf | ${GZIP_CMD} \
 				> $$pcf_gz; \
 		done \

@@ -76,6 +76,6 @@ post-install:
 
 update-LINGUAS: extract
 	cd ${WRKSRC}/po && \
-		${ECHO} *.po | ${SED} 's|\.po||g' > ${FILESDIR}/LINGUAS
+		${ECHO_CMD} *.po | ${SED} 's|\.po||g' > ${FILESDIR}/LINGUAS
 
 .include <bsd.port.post.mk>

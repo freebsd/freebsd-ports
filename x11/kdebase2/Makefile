@@ -55,8 +55,8 @@ pre-everything::
 .endif
 
 post-extract:
-	@${ECHO} "#!/bin/sh" > ${WRKSRC}/mkpamserv
-	@${ECHO} "exit 0" >> ${WRKSRC}/mkpamserv
+	@${ECHO_CMD} "#!/bin/sh" > ${WRKSRC}/mkpamserv
+	@${ECHO_CMD} "exit 0" >> ${WRKSRC}/mkpamserv
 
 post-patch:
 .if !defined(WITH_MOTIF)

@@ -29,21 +29,21 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src/src
 pre-install:
 	${RM} -f ${PLIST}
 	for i in ${BINS} ${SCRIPTS}; \
-		do ${ECHO} bin/$${i} >> ${PLIST}; \
+		do ${ECHO_CMD} bin/$${i} >> ${PLIST}; \
 	done
 .if !defined(NOPORTDOCS)
 	for i in ${DOCS}; \
-		do ${ECHO} ${DOCDIR}/$${i} >> ${PLIST}; \
+		do ${ECHO_CMD} ${DOCDIR}/$${i} >> ${PLIST}; \
 	done
 	for i in 1 2 3; \
-		do ${ECHO} ${DOCDIR}/examples/.swm/button$${i} >> ${PLIST}; \
+		do ${ECHO_CMD} ${DOCDIR}/examples/.swm/button$${i} >> ${PLIST}; \
 	done
 	for i in ${EXAMPLES}; \
-		do ${ECHO} ${DOCDIR}/examples/$${i} >> ${PLIST}; \
+		do ${ECHO_CMD} ${DOCDIR}/examples/$${i} >> ${PLIST}; \
 	done
-	${ECHO} @dirrm ${DOCDIR}/examples/.swm >> ${PLIST}
-	${ECHO} @dirrm ${DOCDIR}/examples >> ${PLIST}
-	${ECHO} @dirrm ${DOCDIR} >> ${PLIST}
+	${ECHO_CMD} @dirrm ${DOCDIR}/examples/.swm >> ${PLIST}
+	${ECHO_CMD} @dirrm ${DOCDIR}/examples >> ${PLIST}
+	${ECHO_CMD} @dirrm ${DOCDIR} >> ${PLIST}
 .endif
 
 do-install:

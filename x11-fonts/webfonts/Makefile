@@ -153,11 +153,11 @@ make-fonts.alias:
 	[ -t 0 ] && tty=/dev/tty || tty=/dev/null; \
 	${TAIL} +2 ${WRKSRC}/fonts.scale | ${CUT} -f 2- -d" " | \
 	while read font; do \
-		${ECHO} \"$${font}\" \"$${font}\"; \
+		${ECHO_CMD} \"$${font}\" \"$${font}\"; \
 		for nsize in ${FONTSIZES}; do \
 			tsize=$${nsize}; \
 			[ $${tsize} -lt ${FONTLIMIT} ] && tsize=${FONTLIMIT}; \
-			${ECHO} \"$${font}\" \"$${font}\" | \
+			${ECHO_CMD} \"$${font}\" \"$${font}\" | \
 			${SED}	-e "s,--0-0-0-0-,--$${nsize}-$${nsize}0-0-0-," \
 			      -e "s,--0-0-0-0-,--$${tsize}-$${tsize}0-75-75-," \
 			      -e "s,^\"-${FONTNAME},\"-netscape,"; \

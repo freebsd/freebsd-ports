@@ -33,7 +33,7 @@ do-build:
 do-install:
 .for i in ${SUB_STUBS}
 	@cd ${WRKDIR}/${i} ; \
-	${INSTALL_PROGRAM} `${ECHO} '${i}' | ${SED} -e 's,-\(.*\),,'` \
+	${INSTALL_PROGRAM} `${ECHO_CMD} '${i}' | ${SED} -e 's,-\(.*\),,'` \
 	${PREFIX}/bin
 .endfor
 

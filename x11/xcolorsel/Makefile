@@ -22,7 +22,7 @@ USE_XPM=	yes
 MAN1=		xcolorsel.1
 
 post-patch:
-	${ECHO} "*.file: ${X11BASE}/lib/X11/rgb.txt" >> ${WRKSRC}/Xcolorsel.ad
+	${ECHO_CMD} "*.file: ${X11BASE}/lib/X11/rgb.txt" >> ${WRKSRC}/Xcolorsel.ad
 	${PERL} -pi -e "s|#include <malloc.h>||g; s|/Xaw/|/Xaw3d/|g;" \
 		${WRKSRC}/*.[ch]
 	${PERL} -pi -e "s|app2head|./app2head|g; \
