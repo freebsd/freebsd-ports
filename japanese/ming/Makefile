@@ -7,9 +7,10 @@
 
 PORTNAME=	ming
 PORTVERSION=	0.1.5
+PORTREVISION=	1
 CATEGORIES=	japanese graphics
 MASTER_SITES=	http://blue.ribbon.to/~harpy/ming/jaming/
-DISTFILES=	jaming-${PORTVERSION}${EXTRACT_SUFX}
+DISTNAME=	jaming-${PORTVERSION}
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	LGPL'ed Flash 4/5 movie output library with Japanese languages support

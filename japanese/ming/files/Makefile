@@ -45,15 +45,18 @@ SRCS=		blocklist.c \
 		method.c \
 		morph.c \
 		mp3.c \
+		mpeg.c \
 		output.c \
 		outputblock.c \
 		placeobject.c \
 		rect.c \
 		shape.c \
+		sound.c \
 		soundstream.c \
 		sprite.c \
 		text.c \
-		textfield.c
+		textfield.c \
+		utf8.c
 INCSGROUPS=	INCS BLKS
 INCS=		blocklist.h \
 		blocktypes.h \
@@ -81,7 +84,7 @@ BLKS=		block.h cxform.h \
 		swf.h blocktypes.h \
 		character.h libswf.h \
 		method.h output.h \
-		rect.h
+		rect.h mpeg.h utf8.h
 BLKS:=		${BLKS:S;^;${.CURDIR}/blocks/;}
 BLKSDIR=	${INCSDIR}/blocks
 
