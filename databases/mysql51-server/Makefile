@@ -139,6 +139,9 @@ post-install:
 .else
 MAN1=		mysql.1
 
+INSTALLS_SHLIB=	yes
+LDCONFIG_DIRS=	%%PREFIX%%/lib/mysql
+
 CONFIGURE_ARGS+=--without-server
 MAKE_ENV=	CLIENT_ONLY="${CLIENT_ONLY}"
 
@@ -147,8 +150,6 @@ post-install:
 	@${ECHO} "" >> ${PREFIX}/etc/rc.d/mysql-client.sh
 	@${ECHO} "${LDCONFIG} -m ${PREFIX}/lib/mysql" >> ${PREFIX}/etc/rc.d/mysql-client.sh
 	@${CHMOD} 750 ${PREFIX}/etc/rc.d/mysql-client.sh
-
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib/mysql
 
 .include <bsd.port.mk>
 .endif
