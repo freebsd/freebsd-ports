@@ -7439,6 +7439,7 @@ tvision		ports/devel/tvision
 tvmet		ports/math/tvmet
 tvp		ports/games/tvp
 tvtwm		ports/x11-wm/tvtwm
+twander		ports/x11-fm/twander
 twhttpd		ports/www/twhttpd
 twig		ports/www/twig
 twin		ports/emulators/twin
