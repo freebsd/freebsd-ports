@@ -11,7 +11,7 @@ CATEGORIES=	archivers linux
 MASTER_SITES=	http://ace.imptech.net/ \
 		http://www.shedz.com/winace/ \
 		http://hem.passagen.se/vanlid/winace/ \
-		http://ace.edskes.com/winace/ \
+		http://w1.314.telia.com/~u31412016/dload/ \
 		http://www.maxeline.com/winace/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	linunace22
