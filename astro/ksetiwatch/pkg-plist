@@ -1,0 +1,27 @@
+bin/ksetiwatch
+share/applnk/Applications/ksetiwatch.desktop
+share/apps/ksetiwatch/pics/MadeWithKDev.png
+share/apps/ksetiwatch/pics/mini-seti.png
+share/apps/ksetiwatch/pics/mini-setidockfinished.png
+share/apps/ksetiwatch/pics/mini-setidockgrey.png
+share/apps/ksetiwatch/pics/mini-setidockloading.png
+share/apps/ksetiwatch/pics/mini-setidockstopped.png
+share/apps/ksetiwatch/pics/mini-setifinished.png
+share/apps/ksetiwatch/pics/mini-setiloading.png
+share/apps/ksetiwatch/pics/mini-setirunning.png
+share/apps/ksetiwatch/pics/mini-setistopped.png
+share/apps/ksetiwatch/pics/starmap.png
+share/doc/HTML/en/ksetiwatch/index.html
+share/doc/HTML/en/ksetiwatch/index-1.html
+share/doc/HTML/en/ksetiwatch/index-2.html
+share/doc/HTML/en/ksetiwatch/index-3.html
+share/doc/HTML/en/ksetiwatch/index-4.html
+share/doc/HTML/en/ksetiwatch/index-5.html
+share/doc/HTML/en/ksetiwatch/index-6.html
+share/doc/HTML/en/ksetiwatch/logotp3.png
+share/icons/locolor/16x16/apps/ksetiwatch.png
+share/icons/locolor/32x32/apps/ksetiwatch.png
+share/locale/de/LC_MESSAGES/ksetiwatch.mo
+share/locale/hr/LC_MESSAGES/ksetiwatch.mo
+@dirrm share/apps/ksetiwatch/pics
+@dirrm share/doc/HTML/en/ksetiwatch
