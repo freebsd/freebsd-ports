@@ -1,7 +1,22 @@
 bin/pgp
+bin/pgpe
+bin/pgps
+bin/pgpv
+bin/pgp_old
+bin/pgpk
+lib/libbn.a
+@exec ranlib %D/%F
+lib/libpgp.a
+@exec ranlib %D/%F
+lib/libpgptty.a
+@exec ranlib %D/%F
+lib/libsimple.a
+@exec ranlib %D/%F
 man/man1/pgp.1.gz
-lib/pgp/pgp.hlp
-lib/pgp/pgpdoc1.txt
-lib/pgp/pgpdoc2.txt
-lib/pgp/language.txt
-lib/pgp/config.txt
+man/man1/pgpe.1.gz
+man/man1/pgpk.1.gz
+man/man1/pgps.1.gz
+man/man1/pgpv.1.gz
+man/man5/pgp.cfg.5.gz
+man/man7/pgp-integration.7.gz
+man/man7/pgp-intro.7.gz

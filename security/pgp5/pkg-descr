@@ -1,7 +1,18 @@
-PGP (Pretty Good Privacy) is a public key encryption pack-
-age to protect E-mail and data files.  It lets you  commu-
-nicate  securely  with  people  you've  never met, with no
-secure channels needed for prior exchange of  keys.   It's
-well featured and fast, with sophisticated key management,
-digital signatures, data compression, and  good  ergonomic
-design.
+This is PGP 5.0, a significant step forward from 2.6.*
+
+CHANGES:
+
+There are a number of large changes from the 2.6.2 distribution.  Most
+notable is that the command line has changed substantially.  See
+the pgp(1) man page for a discussion of how to use the new command
+line.
+
+Also, to allow easy interoperation with older versions on the same
+system, a number of filename changes have been made.
+
+NEW FEATURES:
+
+PGP 5.0 contains support for new encryption methods (most notably
+DSS/Diffie-Hellman), and built-in keyserver support.  Also, the
+command line has been redesigned to be more Unix and scripting
+friendly.
