@@ -14,6 +14,8 @@ MASTER_SITES=	${RPM_MIRRORS:S/__DIR__/${UPDDIR}/g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RPM of the PNG lib
 
+CONFLICTS=	linux-png-1.0.*
+
 # no alpha rpm is available
 ONLY_FOR_ARCHS=	i386
 
