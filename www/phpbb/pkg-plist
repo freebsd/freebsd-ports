@@ -302,7 +302,7 @@ share/phpbb/upgrade.php
 %%PHPBBDIR%%/viewtopic.php
 @exec touch %B/config.php
 @exec chown -R %%WWWOWN%%:%%WWWGRP%% %B
-@dirrm share/doc/phpbb
+%%PORTDOCS%%@dirrm share/doc/phpbb
 @unexec rmdir %D/share/doc 2>/dev/null || true
 @dirrm share/phpbb/contrib
 @dirrm share/phpbb
