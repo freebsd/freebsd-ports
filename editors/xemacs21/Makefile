@@ -28,7 +28,7 @@ SLAVEDIRS+=	editors/xemacs21-mule
 USE_XLIB=	yes
 USE_XPM=	yes
 STRIP=
-USE_AUTOCONF= 	yes
+USE_AUTOCONF_VER=213
 CONFIGURE_TARGET=${MACHINE_ARCH}--freebsd
 
 CONFIGURE_ARGS?=--with-clash-detection \

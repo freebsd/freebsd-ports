@@ -20,7 +20,7 @@ LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 		tcl82.1:${PORTSDIR}/lang/tcl82
 
 USE_MESA=	YES
-USE_AUTOCONF=	YES
+USE_AUTOCONF_VER=213
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 			  -I${LOCALBASE}/include/tcl8.2 \
 			  -I${X11BASE}/include" \

@@ -30,7 +30,7 @@ PATCHFILES=		emacs-21.1-fontset-20011109.patch.gz
 PATCH_DIST_STRIP=	-p1
 .endif
 
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=213
 USE_GMAKE=	yes
 ALL_TARGET=	bootstrap
 

@@ -13,13 +13,13 @@ MASTER_SITE_SUBDIR=	knu
 
 MAINTAINER=	knu@FreeBSD.org
 
-USE_AUTOMAKE=	YES
+USE_AUTOMAKE_VER=15
 AUTOMAKE_ARGS=	--add-missing
 USE_PERL5=	YES
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 pre-configure:
-	cd ${WRKSRC} ; aclocal14
+	cd ${WRKSRC} ; ${ACLOCAL}
 
 post-install:
 .if !defined(NOPORTDOCS)

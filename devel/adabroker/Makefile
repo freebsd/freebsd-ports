@@ -17,7 +17,7 @@ BUILD_DEPENDS=	adagcc:${PORTSDIR}/lang/gnat
 LIB_DEPENDS=	adasockets.0:${PORTSDIR}/net/adasockets
 
 USE_LIBTOOL=	yes
-USE_AUTOMAKE=	yes
+USE_AUTOMAKE_VER=14
 CONFIGURE_ARGS=	--enable-adasockets
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes

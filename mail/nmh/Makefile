@@ -56,7 +56,7 @@ MASTER_SITE_SUBDIR=	jkoshy
 
 MAINTAINER=	Scott.Blachowicz@seaslug.org
 
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=213
 CONFIGURE_ARGS=	--libdir=${PREFIX}/libexec/nmh \
 		--sysconfdir=${PREFIX}/etc/nmh --enable-nmh-pop
 .ifdef NMH_MTS

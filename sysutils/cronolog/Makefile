@@ -14,6 +14,6 @@ MAINTAINER=	tmb_ports@maddog.u-net.com
 
 MAN1=		cronolog.1m cronosplit.1m
 
-USE_AUTOCONF=	yes
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

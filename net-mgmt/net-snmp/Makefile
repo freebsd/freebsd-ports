@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR= net-snmp
 
 MAINTAINER=	billf@FreeBSD.org
 
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=213
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore

@@ -20,7 +20,7 @@ LIB_DEPENDS=	wraster.4:${PORTSDIR}/x11-wm/windowmaker \
 
 DIST_SUBDIR=	wdm
 USE_X_PREFIX=	yes
-USE_AUTOMAKE=	yes
+USE_AUTOMAKE_VER=14
 AUTOMAKE_ARGS=	--include-deps
 DEF_SERVER?=	${X11BASE}/bin/X
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \

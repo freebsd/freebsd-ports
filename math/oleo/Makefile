@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
 USE_BISON=	yes
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=213
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 CONFIGURE_ARGS=	--with-x --without-xlt --without-SciPlot

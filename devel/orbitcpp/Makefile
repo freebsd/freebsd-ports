@@ -18,7 +18,7 @@ LIB_DEPENDS=	ORBit.2:${PORTSDIR}/devel/ORBit
 
 USE_GMAKE=	yes
 USE_GLIB=	yes
-USE_AUTOMAKE=	yes
+USE_AUTOMAKE_VER=14
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

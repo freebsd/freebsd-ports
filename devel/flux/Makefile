@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.copyleft.no/projects/fluxlib/ \
 MAINTAINER=	ports@FreeBSD.org
 
 USE_GMAKE=	yes
-USE_AUTOMAKE=	yes
+USE_AUOTMAKE_VER=14
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 

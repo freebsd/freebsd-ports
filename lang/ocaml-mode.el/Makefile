@@ -15,6 +15,9 @@ DISTNAME=	ocaml-mode-3.01
 
 MAINTAINER=	jkoshy@FreeBSD.org
 
+BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs21
+RUN_DEPENDS=	emacs:${PORTSDIR}/editors/emacs21
+
 NO_BUILD=	yes
 
 #

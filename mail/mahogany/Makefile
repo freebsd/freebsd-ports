@@ -21,7 +21,7 @@ BUILD_DEPENDS+=		latex2html:${PORTSDIR}/textproc/latex2html
 .endif
 
 PYTHON_VERSION=		python1.5
-USE_AUTOCONF=		yes
+USE_AUTOCONF_VER=	213
 USE_GMAKE=		yes
 CONFIGURE_ENV+=		OSTYPE=${OPSYS}
 
