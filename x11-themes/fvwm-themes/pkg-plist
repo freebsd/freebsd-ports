@@ -2,6 +2,7 @@ bin/fvwm-themes-com
 bin/fvwm-themes-config
 bin/fvwm-themes-images
 bin/fvwm-themes-menuapp
+bin/fvwm-themes-root
 bin/fvwm-themes-script
 bin/fvwm-themes-start
 bin/fvwm-themes-xrdb
@@ -10,6 +11,7 @@ share/fvwm/FvwmApplet-Day
 share/fvwm/FvwmApplet-DayClock
 share/fvwm/FvwmApplet-DigitalClock
 share/fvwm/FvwmApplet-Mixer
+share/fvwm/FvwmButtons-Colorsets
 share/fvwm/FvwmForm-ThemeSettings
 share/fvwm/FvwmGtk-Themes
 share/fvwm/FvwmScript-Browser
@@ -241,6 +243,12 @@ share/fvwm/images/winXX-startmenu/run.xpm
 share/fvwm/images/winXX-startmenu/screen.xpm
 share/fvwm/images/winXX-startmenu/settings.xpm
 share/fvwm/images/winXX-startmenu/shutdown.xpm
+share/fvwm/locale/de/FvwmScript-ColorSelector.html
+share/fvwm/locale/de/FvwmScript-ColorSelector.msg
+share/fvwm/locale/de/FvwmScript-ComponentProperties.msg
+share/fvwm/locale/de/FvwmScript-GlobalFeel.msg
+share/fvwm/locale/de/FvwmScript-ThemesCenter.html
+share/fvwm/locale/de/FvwmScript-ThemesCenter.msg
 share/fvwm/locale/en/FvwmScript-ColorSelector.html
 share/fvwm/locale/en/FvwmScript-ColorSelector.msg
 share/fvwm/locale/en/FvwmScript-ComponentProperties.msg
@@ -254,6 +262,12 @@ share/fvwm/locale/fr/FvwmScript-GlobalFeel.msg
 share/fvwm/locale/fr/FvwmScript-ThemesCenter.html
 share/fvwm/locale/fr/FvwmScript-ThemesCenter.msg
 share/fvwm/locale/ja/FvwmScript-ColorSelector.msg
+share/fvwm/locale/pl/FvwmScript-ColorSelector.html
+share/fvwm/locale/pl/FvwmScript-ColorSelector.msg
+share/fvwm/locale/pl/FvwmScript-ComponentProperties.msg
+share/fvwm/locale/pl/FvwmScript-GlobalFeel.msg
+share/fvwm/locale/pl/FvwmScript-ThemesCenter.html
+share/fvwm/locale/pl/FvwmScript-ThemesCenter.msg
 share/fvwm/locale/ru/FvwmScript-ColorSelector.html
 share/fvwm/locale/ru/FvwmScript-ColorSelector.msg
 share/fvwm/locale/ru/FvwmScript-ComponentProperties.msg
@@ -268,12 +282,16 @@ share/fvwm/sounds/iconify.au
 share/fvwm/sounds/new_desk.au
 share/fvwm/sounds/new_page.au
 share/fvwm/sounds/windowshade.au
+share/fvwm/themes-rc
+share/fvwm/themes-rc-2
+share/fvwm/themes-rc-3
 share/fvwm/themes/afterstep/README
 share/fvwm/themes/afterstep/background
 share/fvwm/themes/afterstep/buttons
 share/fvwm/themes/afterstep/colors
 share/fvwm/themes/afterstep/globalfeel
 share/fvwm/themes/afterstep/menustyle
+share/fvwm/themes/afterstep/modules.cfg
 share/fvwm/themes/afterstep/modules/FvwmButtons-As
 share/fvwm/themes/afterstep/modules/FvwmIconMan
 share/fvwm/themes/afterstep/modules/FvwmPager-Desker
@@ -291,31 +309,49 @@ share/fvwm/themes/afterstep/modules/normal-icons/yes
 share/fvwm/themes/afterstep/modules/pager/desker
 share/fvwm/themes/afterstep/modules/pager/none
 share/fvwm/themes/afterstep/modules/styles
-share/fvwm/themes/afterstep/modules.cfg
 share/fvwm/themes/afterstep/windowlook
 share/fvwm/themes/awol/README
 share/fvwm/themes/awol/background
 share/fvwm/themes/awol/buttons
 share/fvwm/themes/awol/colors
 share/fvwm/themes/awol/images/background/bckgnd1.xpm
+share/fvwm/themes/awol/images/background/bckgnd2.xpm
 share/fvwm/themes/awol/images/background/bckgnd3.xpm
+share/fvwm/themes/awol/images/background/bckgnd4.xpm
+share/fvwm/themes/awol/images/background/bckgnd5.xpm
+share/fvwm/themes/awol/images/background/bckgnd6.xpm
+share/fvwm/themes/awol/images/module/Daemon.xpm
 share/fvwm/themes/awol/images/module/Pinky.xpm
+share/fvwm/themes/awol/images/module/fvwm-themes.xpm
 share/fvwm/themes/awol/images/module/fvwm3.xpm
-share/fvwm/themes/awol/images/module/isn_next.xpm
-share/fvwm/themes/awol/images/module/isn_prev.xpm
+share/fvwm/themes/awol/images/module/gnome.xpm
+share/fvwm/themes/awol/images/module/isn_next.png
+share/fvwm/themes/awol/images/module/isn_prev.png
+share/fvwm/themes/awol/images/module/mini-Daemon.xpm
+share/fvwm/themes/awol/images/module/mini-fvwm-themes.xpm
+share/fvwm/themes/awol/images/module/mini-gnome.xpm
 share/fvwm/themes/awol/images/module/mini-grab.xpm
 share/fvwm/themes/awol/images/module/mini-isp.xpm
+share/fvwm/themes/awol/images/module/mini-shadowman-round.xpm
+share/fvwm/themes/awol/images/module/mini-sound.xpm
 share/fvwm/themes/awol/images/module/mini-start.xpm
 share/fvwm/themes/awol/images/module/mini-tools.xpm
 share/fvwm/themes/awol/images/module/mini-windows.xpm
+share/fvwm/themes/awol/images/module/shadowman-round-48.xpm
+share/fvwm/themes/awol/images/module/todo.xpm
 share/fvwm/themes/awol/menustyle
-share/fvwm/themes/awol/modules/FvwmButtons-DaLo
+share/fvwm/themes/awol/menustyle.cfg
+share/fvwm/themes/awol/menustyle.size.large
+share/fvwm/themes/awol/menustyle.size.medium
+share/fvwm/themes/awol/menustyle.size.small
+share/fvwm/themes/awol/modules.cfg
 share/fvwm/themes/awol/modules/FvwmButtons-Default
+share/fvwm/themes/awol/modules/FvwmButtons-XtMix
 share/fvwm/themes/awol/modules/FvwmIconMan
 share/fvwm/themes/awol/modules/FvwmPager
-share/fvwm/themes/awol/modules/buttonbar/dalo
 share/fvwm/themes/awol/modules/buttonbar/none
 share/fvwm/themes/awol/modules/buttonbar/standard
+share/fvwm/themes/awol/modules/buttonbar/xtmix
 share/fvwm/themes/awol/modules/fonts
 share/fvwm/themes/awol/modules/iconman/desk
 share/fvwm/themes/awol/modules/iconman/global
@@ -326,19 +362,53 @@ share/fvwm/themes/awol/modules/normal-icons/yes
 share/fvwm/themes/awol/modules/pager/desker
 share/fvwm/themes/awol/modules/pager/none
 share/fvwm/themes/awol/modules/styles
-share/fvwm/themes/awol/modules.cfg
-share/fvwm/themes/awol/sound
-share/fvwm/themes/awol/sounds/Bubbles.wav
-share/fvwm/themes/awol/sounds/Eeeooop.wav
-share/fvwm/themes/awol/sounds/NoTime.wav
-share/fvwm/themes/awol/sounds/Wooeep.wav
-share/fvwm/themes/awol/sounds/boingiggig.wav
-share/fvwm/themes/awol/sounds/cannotsave.au
-share/fvwm/themes/awol/sounds/drip.wav
-share/fvwm/themes/awol/sounds/error.wav
-share/fvwm/themes/awol/sounds/rubberband.wav
-share/fvwm/themes/awol/sounds/thereson.wav
-share/fvwm/themes/awol/sounds/yesb.wav
+share/fvwm/themes/awol/sound.cfg
+share/fvwm/themes/awol/sound.d/computer
+share/fvwm/themes/awol/sound.d/computer2
+share/fvwm/themes/awol/sound.d/computer3
+share/fvwm/themes/awol/sound.d/homer
+share/fvwm/themes/awol/sound.d/random
+share/fvwm/themes/awol/sound.d/robot
+share/fvwm/themes/awol/sounds/computer/add_window.wav
+share/fvwm/themes/awol/sounds/computer/add_window2.wav
+share/fvwm/themes/awol/sounds/computer/deiconify.wav
+share/fvwm/themes/awol/sounds/computer/deiconify2.wav
+share/fvwm/themes/awol/sounds/computer/destroy_window.wav
+share/fvwm/themes/awol/sounds/computer/destroy_window2.wav
+share/fvwm/themes/awol/sounds/computer/dewindowshade.wav
+share/fvwm/themes/awol/sounds/computer/error.wav
+share/fvwm/themes/awol/sounds/computer/error2.wav
+share/fvwm/themes/awol/sounds/computer/iconify.wav
+share/fvwm/themes/awol/sounds/computer/iconify2.wav
+share/fvwm/themes/awol/sounds/computer/new_desk.wav
+share/fvwm/themes/awol/sounds/computer/new_page.wav
+share/fvwm/themes/awol/sounds/computer/startup.wav
+share/fvwm/themes/awol/sounds/computer/startup2.wav
+share/fvwm/themes/awol/sounds/computer/windowshade.wav
+share/fvwm/themes/awol/sounds/homer/AhHa.wav
+share/fvwm/themes/awol/sounds/homer/AnyKey.wav
+share/fvwm/themes/awol/sounds/homer/Belch.wav
+share/fvwm/themes/awol/sounds/homer/Boring.wav
+share/fvwm/themes/awol/sounds/homer/Doh2.wav
+share/fvwm/themes/awol/sounds/homer/NoTime.wav
+share/fvwm/themes/awol/sounds/homer/Shutup.wav
+share/fvwm/themes/awol/sounds/homer/Wahoo.wav
+share/fvwm/themes/awol/sounds/homer/WhyYouLittle.wav
+share/fvwm/themes/awol/sounds/homer/carramba.wav
+share/fvwm/themes/awol/sounds/random/Bubbles.wav
+share/fvwm/themes/awol/sounds/random/Eeeooop.wav
+share/fvwm/themes/awol/sounds/random/Wooeep.wav
+share/fvwm/themes/awol/sounds/random/arpeggio.wav
+share/fvwm/themes/awol/sounds/random/boingiggig.wav
+share/fvwm/themes/awol/sounds/random/drip.wav
+share/fvwm/themes/awol/sounds/random/error.wav
+share/fvwm/themes/awol/sounds/random/fingersnap.wav
+share/fvwm/themes/awol/sounds/random/laser.wav
+share/fvwm/themes/awol/sounds/random/rubberband.wav
+share/fvwm/themes/awol/sounds/random/thereson.wav
+share/fvwm/themes/awol/sounds/random/yesb.wav
+share/fvwm/themes/awol/sounds/robot/cannotsave.au
+share/fvwm/themes/awol/sounds/robot/complete.wav
 share/fvwm/themes/awol/windowlook
 share/fvwm/themes/blackbox/README
 share/fvwm/themes/blackbox/background
@@ -367,6 +437,7 @@ share/fvwm/themes/blackbox/images/module/toolbarbutton1.xpm
 share/fvwm/themes/blackbox/images/module/toolbarbutton2.xpm
 share/fvwm/themes/blackbox/menustyle
 share/fvwm/themes/blackbox/menustyle.cfg
+share/fvwm/themes/blackbox/modules.cfg
 share/fvwm/themes/blackbox/modules/FvwmButtons-XX
 share/fvwm/themes/blackbox/modules/FvwmIconMan
 share/fvwm/themes/blackbox/modules/FvwmPager-Desker
@@ -383,7 +454,6 @@ share/fvwm/themes/blackbox/modules/normal-icons/yes
 share/fvwm/themes/blackbox/modules/pager/desker
 share/fvwm/themes/blackbox/modules/pager/none
 share/fvwm/themes/blackbox/modules/styles
-share/fvwm/themes/blackbox/modules.cfg
 share/fvwm/themes/blackbox/windowlook
 share/fvwm/themes/brushedmetal/README
 share/fvwm/themes/brushedmetal/background
@@ -423,10 +493,11 @@ share/fvwm/themes/brushedmetal/images/decor/title-inactive.xpm
 share/fvwm/themes/brushedmetal/theme-name.cfg
 share/fvwm/themes/brushedmetal/windowlook
 share/fvwm/themes/cde/README
+share/fvwm/themes/cde/background.cfg
 share/fvwm/themes/cde/background/main
 share/fvwm/themes/cde/background/pattern
-share/fvwm/themes/cde/background.cfg
 share/fvwm/themes/cde/buttons
+share/fvwm/themes/cde/colors.cfg
 share/fvwm/themes/cde/colors/main
 share/fvwm/themes/cde/colors/schemes/Alpine.dp
 share/fvwm/themes/cde/colors/schemes/Arizona.dp
@@ -469,7 +540,6 @@ share/fvwm/themes/cde/colors/schemes/Urchin.dp
 share/fvwm/themes/cde/colors/schemes/Wheat.dp
 share/fvwm/themes/cde/colors/schemes/White.dp
 share/fvwm/themes/cde/colors/schemes/WhiteBlack.dp
-share/fvwm/themes/cde/colors.cfg
 share/fvwm/themes/cde/images/module/large/clock.xpm
 share/fvwm/themes/cde/images/module/large/configuration.xpm
 share/fvwm/themes/cde/images/module/large/date.xpm
@@ -501,6 +571,7 @@ share/fvwm/themes/cde/images/module/small/panel-lock.xpm
 share/fvwm/themes/cde/images/module/small/panel-menu.xpm
 share/fvwm/themes/cde/images/module/small/terminal.xpm
 share/fvwm/themes/cde/menustyle
+share/fvwm/themes/cde/modules.cfg
 share/fvwm/themes/cde/modules/FvwmPager
 share/fvwm/themes/cde/modules/buttonbar/disabled
 share/fvwm/themes/cde/modules/buttonbar/large
@@ -509,11 +580,40 @@ share/fvwm/themes/cde/modules/create-buttonbar-config
 share/fvwm/themes/cde/modules/fonts
 share/fvwm/themes/cde/modules/main
 share/fvwm/themes/cde/modules/styles
-share/fvwm/themes/cde/modules.cfg
 share/fvwm/themes/cde/scripts/FvwmApplet-CDEDayLarge
 share/fvwm/themes/cde/scripts/FvwmApplet-CDEDaySmall
 share/fvwm/themes/cde/theme-name.cfg
 share/fvwm/themes/cde/windowlook
+share/fvwm/themes/celticbow/README
+share/fvwm/themes/celticbow/background
+share/fvwm/themes/celticbow/background.cpp
+share/fvwm/themes/celticbow/buttons
+share/fvwm/themes/celticbow/colors
+share/fvwm/themes/celticbow/colors.cpp
+share/fvwm/themes/celticbow/images/background/red_lace10.png
+share/fvwm/themes/celticbow/images/button/carr_down.xpm
+share/fvwm/themes/celticbow/images/button/carr_down_flat.xpm
+share/fvwm/themes/celticbow/images/button/carr_down_in.xpm
+share/fvwm/themes/celticbow/images/button/carr_left.xpm
+share/fvwm/themes/celticbow/images/button/carr_left_flat.xpm
+share/fvwm/themes/celticbow/images/button/carr_left_in.xpm
+share/fvwm/themes/celticbow/images/button/carr_right.xpm
+share/fvwm/themes/celticbow/images/button/carr_right_flat.xpm
+share/fvwm/themes/celticbow/images/button/carr_right_in.xpm
+share/fvwm/themes/celticbow/images/button/carr_up.xpm
+share/fvwm/themes/celticbow/images/button/carr_up_flat.xpm
+share/fvwm/themes/celticbow/images/button/carr_up_in.xpm
+share/fvwm/themes/celticbow/images/button/knot.xpm
+share/fvwm/themes/celticbow/images/button/knot_flat.xpm
+share/fvwm/themes/celticbow/images/button/knot_in.xpm
+share/fvwm/themes/celticbow/images/button/spin.xpm
+share/fvwm/themes/celticbow/images/button/spin2.xpm
+share/fvwm/themes/celticbow/images/button/spin2_flat.xpm
+share/fvwm/themes/celticbow/images/button/spin2_in.xpm
+share/fvwm/themes/celticbow/images/button/spin_in.xpm
+share/fvwm/themes/celticbow/images/decor/knots.png
+share/fvwm/themes/celticbow/theme-name.cfg
+share/fvwm/themes/celticbow/windowlook
 share/fvwm/themes/current/theme.cfg
 share/fvwm/themes/default/README
 share/fvwm/themes/default/background
@@ -531,9 +631,14 @@ share/fvwm/themes/default/functions
 share/fvwm/themes/default/functions-appbind
 share/fvwm/themes/default/globalfeel
 share/fvwm/themes/default/globallook
+share/fvwm/themes/default/images/background/fvwm-wallpaper-tigerskin.jpg
+share/fvwm/themes/default/images/banner/fvwm-logo-clearglass-alpha.png
+share/fvwm/themes/default/images/banner/fvwm-logo-clearglass.png
+share/fvwm/themes/default/images/banner/fvwm-logo-clearglass.xpm
 share/fvwm/themes/default/menus
 share/fvwm/themes/default/menus-programs
 share/fvwm/themes/default/menustyle
+share/fvwm/themes/default/modules.cfg
 share/fvwm/themes/default/modules/FvwmButtons
 share/fvwm/themes/default/modules/FvwmIconBox
 share/fvwm/themes/default/modules/FvwmIconMan
@@ -562,7 +667,7 @@ share/fvwm/themes/default/modules/winlist/HideDeskTaskBar
 share/fvwm/themes/default/modules/winlist/HideGlobalTaskBar
 share/fvwm/themes/default/modules/winlist/PageIconMan
 share/fvwm/themes/default/modules/winlist/none
-share/fvwm/themes/default/modules.cfg
+share/fvwm/themes/default/settings.cfg
 share/fvwm/themes/default/settings/animation/disabled
 share/fvwm/themes/default/settings/animation/enabled
 share/fvwm/themes/default/settings/automenus/headlines/disabled
@@ -575,6 +680,8 @@ share/fvwm/themes/default/settings/background/disabled
 share/fvwm/themes/default/settings/background/theme
 share/fvwm/themes/default/settings/banner/disabled
 share/fvwm/themes/default/settings/banner/enabled
+share/fvwm/themes/default/settings/events-handler/disabled
+share/fvwm/themes/default/settings/events-handler/enabled
 share/fvwm/themes/default/settings/ewmh/disabled
 share/fvwm/themes/default/settings/ewmh/enabled
 share/fvwm/themes/default/settings/ewmh/ft-fnh-desktop-start
@@ -636,16 +743,62 @@ share/fvwm/themes/default/settings/wheel/enabled
 share/fvwm/themes/default/settings/xinerama/disabled
 share/fvwm/themes/default/settings/xinerama/sls
 share/fvwm/themes/default/settings/xinerama/true
-share/fvwm/themes/default/settings.cfg
 share/fvwm/themes/default/sound
 share/fvwm/themes/default/startup
 share/fvwm/themes/default/styles
 share/fvwm/themes/default/theme.cfg
 share/fvwm/themes/default/windowlook
+share/fvwm/themes/e17/README
+share/fvwm/themes/e17/buttons
+share/fvwm/themes/e17/colors-decor
+share/fvwm/themes/e17/images/button/close-activeup.xpm
+share/fvwm/themes/e17/images/button/iconify-activeup.xpm
+share/fvwm/themes/e17/images/button/maximize-activeup.xpm
+share/fvwm/themes/e17/images/button/options-activeup.xpm
+share/fvwm/themes/e17/images/decor/title-leftend-active.xpm
+share/fvwm/themes/e17/images/decor/title-leftend-inactive.xpm
+share/fvwm/themes/e17/images/decor/title-main-active.xpm
+share/fvwm/themes/e17/images/decor/title-main-inactive.xpm
+share/fvwm/themes/e17/images/decor/title-rightend-active.xpm
+share/fvwm/themes/e17/images/decor/title-rightend-inactive.xpm
+share/fvwm/themes/e17/windowlook
+share/fvwm/themes/ice/README
+share/fvwm/themes/ice/buttons
+share/fvwm/themes/ice/colors-decor
+share/fvwm/themes/ice/images/button/close-activedown.xpm
+share/fvwm/themes/ice/images/button/close-activeup.xpm
+share/fvwm/themes/ice/images/button/close-inactivedown.xpm
+share/fvwm/themes/ice/images/button/close-inactiveup.xpm
+share/fvwm/themes/ice/images/button/iconify-activedown.xpm
+share/fvwm/themes/ice/images/button/iconify-activeup.xpm
+share/fvwm/themes/ice/images/button/iconify-inactivedown.xpm
+share/fvwm/themes/ice/images/button/iconify-inactiveup.xpm
+share/fvwm/themes/ice/images/button/maximize-activedown.xpm
+share/fvwm/themes/ice/images/button/maximize-activeup.xpm
+share/fvwm/themes/ice/images/button/maximize-inactivedown.xpm
+share/fvwm/themes/ice/images/button/maximize-inactiveup.xpm
+share/fvwm/themes/ice/images/button/options-activedown.xpm
+share/fvwm/themes/ice/images/button/options-activeup.xpm
+share/fvwm/themes/ice/images/button/options-inactivedown.xpm
+share/fvwm/themes/ice/images/button/options-inactiveup.xpm
+share/fvwm/themes/ice/images/decor/title-leftend-active.xpm
+share/fvwm/themes/ice/images/decor/title-leftend-inactive.xpm
+share/fvwm/themes/ice/images/decor/title-leftoftext-active.xpm
+share/fvwm/themes/ice/images/decor/title-leftoftext-inactive.xpm
+share/fvwm/themes/ice/images/decor/title-main-active.xpm
+share/fvwm/themes/ice/images/decor/title-main-inactive.xpm
+share/fvwm/themes/ice/images/decor/title-rightend-active.xpm
+share/fvwm/themes/ice/images/decor/title-rightend-inactive.xpm
+share/fvwm/themes/ice/images/decor/title-rightoftext-active.xpm
+share/fvwm/themes/ice/images/decor/title-rightoftext-inactive.xpm
+share/fvwm/themes/ice/images/decor/title-undertext-active.xpm
+share/fvwm/themes/ice/images/decor/title-undertext-inactive.xpm
+share/fvwm/themes/ice/windowlook
 share/fvwm/themes/luthien/README
 share/fvwm/themes/luthien/background/images/Granite.bg.gif
 share/fvwm/themes/luthien/background/main
 share/fvwm/themes/luthien/buttons
+share/fvwm/themes/luthien/colors.cfg
 share/fvwm/themes/luthien/colors/main
 share/fvwm/themes/luthien/colors/palettes/Africa.dp
 share/fvwm/themes/luthien/colors/palettes/Ashes.dp
@@ -661,6 +814,7 @@ share/fvwm/themes/luthien/colors/palettes/Gray.dp
 share/fvwm/themes/luthien/colors/palettes/Martini.dp
 share/fvwm/themes/luthien/colors/palettes/Mountain.dp
 share/fvwm/themes/luthien/colors/palettes/Ocean.dp
+share/fvwm/themes/luthien/colors/palettes/OldMigo.dp
 share/fvwm/themes/luthien/colors/palettes/Orient.dp
 share/fvwm/themes/luthien/colors/palettes/Pastel.dp
 share/fvwm/themes/luthien/colors/palettes/PolarSky.dp
@@ -679,9 +833,9 @@ share/fvwm/themes/luthien/colors/palettes/Walnut.dp
 share/fvwm/themes/luthien/colors/palettes/Water.dp
 share/fvwm/themes/luthien/colors/palettes/White.dp
 share/fvwm/themes/luthien/colors/palettes/WildWest.dp
-share/fvwm/themes/luthien/colors.cfg
 share/fvwm/themes/luthien/globalfeel
 share/fvwm/themes/luthien/menustyle
+share/fvwm/themes/luthien/modules.cfg
 share/fvwm/themes/luthien/modules/FvwmButtons
 share/fvwm/themes/luthien/modules/FvwmIconMan
 share/fvwm/themes/luthien/modules/FvwmPager
@@ -694,7 +848,6 @@ share/fvwm/themes/luthien/modules/styles
 share/fvwm/themes/luthien/modules/winlist/DeskWinList
 share/fvwm/themes/luthien/modules/winlist/GlobalWinList
 share/fvwm/themes/luthien/modules/winlist/disabled
-share/fvwm/themes/luthien/modules.cfg
 share/fvwm/themes/luthien/windowlook
 share/fvwm/themes/mech/README
 share/fvwm/themes/mech/buttons
@@ -751,10 +904,18 @@ share/fvwm/themes/migo/buttons
 share/fvwm/themes/migo/colors
 share/fvwm/themes/migo/cursors
 share/fvwm/themes/migo/globalfeel
-share/fvwm/themes/migo/images/background/circle-energy.xpm
-share/fvwm/themes/migo/images/decor/title-active.xpm
-share/fvwm/themes/migo/images/decor/title-inactive.xpm
+share/fvwm/themes/migo/images/background/trefoil.xpm
+share/fvwm/themes/migo/images/decor/rose.xpm
+share/fvwm/themes/migo/images/decor/text-left.png
+share/fvwm/themes/migo/images/decor/text-right.png
+share/fvwm/themes/migo/images/decor/text-under.png
+share/fvwm/themes/migo/images/modcolor/plast-blue.png
+share/fvwm/themes/migo/images/modcolor/plast-brown.png
+share/fvwm/themes/migo/images/modcolor/plast-inverted-green.png
+share/fvwm/themes/migo/images/module/plast-green.png
+share/fvwm/themes/migo/images/module/plast-magenta.png
 share/fvwm/themes/migo/menustyle
+share/fvwm/themes/migo/modules.cfg
 share/fvwm/themes/migo/modules/FvwmButtons-Compact
 share/fvwm/themes/migo/modules/FvwmButtons-Pager
 share/fvwm/themes/migo/modules/FvwmPager-Compact
@@ -778,7 +939,6 @@ share/fvwm/themes/migo/modules/pager/none
 share/fvwm/themes/migo/modules/pager/pager
 share/fvwm/themes/migo/modules/pager/pager-desker
 share/fvwm/themes/migo/modules/styles
-share/fvwm/themes/migo/modules.cfg
 share/fvwm/themes/migo/theme.cfg
 share/fvwm/themes/migo/windowlook
 share/fvwm/themes/minimal/README
@@ -788,12 +948,12 @@ share/fvwm/themes/minimal/menus
 share/fvwm/themes/minimal/menus-programs
 share/fvwm/themes/minimal/menustyle
 share/fvwm/themes/minimal/menustyle.cfg
+share/fvwm/themes/minimal/modules.cfg
 share/fvwm/themes/minimal/modules/Buttons/desktop
 share/fvwm/themes/minimal/modules/Buttons/disabled
 share/fvwm/themes/minimal/modules/Buttons/laptop
 share/fvwm/themes/minimal/modules/main
 share/fvwm/themes/minimal/modules/styles
-share/fvwm/themes/minimal/modules.cfg
 share/fvwm/themes/minimal/windowlook
 share/fvwm/themes/minimal/windowlook.cfg
 share/fvwm/themes/multichoice/README
@@ -820,6 +980,7 @@ share/fvwm/themes/multichoice/background/6
 share/fvwm/themes/multichoice/background/7
 share/fvwm/themes/multichoice/background/8
 share/fvwm/themes/multichoice/background/9
+share/fvwm/themes/multichoice/buttons.cfg
 share/fvwm/themes/multichoice/buttons/faces/_images
 share/fvwm/themes/multichoice/buttons/faces/aron
 share/fvwm/themes/multichoice/buttons/faces/default
@@ -832,7 +993,6 @@ share/fvwm/themes/multichoice/buttons/images/osx.tar.gz
 share/fvwm/themes/multichoice/buttons/images/shinymetal.tar.gz
 share/fvwm/themes/multichoice/buttons/images/warpluc.tar.gz
 share/fvwm/themes/multichoice/buttons/main
-share/fvwm/themes/multichoice/buttons.cfg
 share/fvwm/themes/multichoice/cursors/color/black-white
 share/fvwm/themes/multichoice/cursors/color/cyan-lightcyan
 share/fvwm/themes/multichoice/cursors/color/default
@@ -860,6 +1020,7 @@ share/fvwm/themes/multichoice/cursors/images/pixmap1/x_cross.xpm
 share/fvwm/themes/multichoice/cursors/pixmap1
 share/fvwm/themes/multichoice/cursors/pixmap1-bigger
 share/fvwm/themes/multichoice/cursors/pixmap1-smaller
+share/fvwm/themes/multichoice/fonts.cfg
 share/fvwm/themes/multichoice/fonts/admono
 share/fvwm/themes/multichoice/fonts/big5
 share/fvwm/themes/multichoice/fonts/default
@@ -868,7 +1029,6 @@ share/fvwm/themes/multichoice/fonts/iso8859-8
 share/fvwm/themes/multichoice/fonts/jisx0208
 share/fvwm/themes/multichoice/fonts/koi8-r
 share/fvwm/themes/multichoice/fonts/ksc5601
-share/fvwm/themes/multichoice/fonts.cfg
 share/fvwm/themes/multichoice/images/background/fvwm-tiger-tail.xpm
 share/fvwm/themes/multichoice/images/banner/fvwm-red.xpm
 share/fvwm/themes/multichoice/theme.cfg
@@ -915,6 +1075,7 @@ share/fvwm/themes/olicha/colors
 share/fvwm/themes/olicha/cursors
 share/fvwm/themes/olicha/images/background/freon_mist.xpm
 share/fvwm/themes/olicha/menustyle
+share/fvwm/themes/olicha/modules.cfg
 share/fvwm/themes/olicha/modules/AppButtons/disabled
 share/fvwm/themes/olicha/modules/AppButtons/enabled
 share/fvwm/themes/olicha/modules/AppMan/DeskIconBox
@@ -952,7 +1113,6 @@ share/fvwm/themes/olicha/modules/fonts
 share/fvwm/themes/olicha/modules/main
 share/fvwm/themes/olicha/modules/reload
 share/fvwm/themes/olicha/modules/styles
-share/fvwm/themes/olicha/modules.cfg
 share/fvwm/themes/olicha/windowlook
 share/fvwm/themes/osx/README
 share/fvwm/themes/osx/background
@@ -970,10 +1130,12 @@ share/fvwm/themes/osx/images/button/options-activeup.xpm
 share/fvwm/themes/osx/images/decor/title-active.xpm
 share/fvwm/themes/osx/images/decor/title-inactive.xpm
 share/fvwm/themes/osx/images/menuback/face.xpm
+share/fvwm/themes/osx/images/modcolor/face.xpm
 share/fvwm/themes/osx/menustyle
+share/fvwm/themes/osx/modules.cfg
+share/fvwm/themes/osx/modules/FvwmButtons-MainBar
 share/fvwm/themes/osx/modules/FvwmButtons-MenuBar
 share/fvwm/themes/osx/modules/FvwmButtons-OsxApps
-share/fvwm/themes/osx/modules/FvwmButtons-OsxCentral
 share/fvwm/themes/osx/modules/FvwmButtons-OsxStartApplets
 share/fvwm/themes/osx/modules/FvwmPager-Desker
 share/fvwm/themes/osx/modules/FvwmPager-Single
@@ -993,10 +1155,87 @@ share/fvwm/themes/osx/modules/main
 share/fvwm/themes/osx/modules/menubar/menubar
 share/fvwm/themes/osx/modules/menubar/none
 share/fvwm/themes/osx/modules/styles
-share/fvwm/themes/osx/modules.cfg
 share/fvwm/themes/osx/theme-name.cfg
 share/fvwm/themes/osx/windowlook
+share/fvwm/themes/plainbow/README
+share/fvwm/themes/plainbow/background
+share/fvwm/themes/plainbow/background.cpp
+share/fvwm/themes/plainbow/buttons
+share/fvwm/themes/plainbow/colors
+share/fvwm/themes/plainbow/colors.cpp
+share/fvwm/themes/plainbow/globalfeel
+share/fvwm/themes/plainbow/images/decor/3bars.xpm
+share/fvwm/themes/plainbow/images/decor/3bars2.xpm
+share/fvwm/themes/plainbow/images/decor/act_dark_3bars.xpm
+share/fvwm/themes/plainbow/images/decor/act_dark_3bars2.xpm
+share/fvwm/themes/plainbow/images/decor/act_light_3bars.xpm
+share/fvwm/themes/plainbow/images/decor/act_light_3bars2.xpm
+share/fvwm/themes/plainbow/images/decor/act_mid_3bars.xpm
+share/fvwm/themes/plainbow/images/decor/act_mid_3bars2.xpm
+share/fvwm/themes/plainbow/images/decor/dark_3bars.xpm
+share/fvwm/themes/plainbow/images/decor/dark_3bars2.xpm
+share/fvwm/themes/plainbow/images/decor/light_3bars.xpm
+share/fvwm/themes/plainbow/images/decor/light_3bars2.xpm
+share/fvwm/themes/plainbow/images/decor/mid_3bars.xpm
+share/fvwm/themes/plainbow/images/decor/mid_3bars2.xpm
+share/fvwm/themes/plainbow/menustyle
+share/fvwm/themes/plainbow/modules.cfg
+share/fvwm/themes/plainbow/modules/FvwmButtons
+share/fvwm/themes/plainbow/modules/FvwmIconBox
+share/fvwm/themes/plainbow/modules/FvwmIconMan-Desker
+share/fvwm/themes/plainbow/modules/FvwmIconMan-Single
+share/fvwm/themes/plainbow/modules/FvwmPager-Desker
+share/fvwm/themes/plainbow/modules/FvwmPager-Single
+share/fvwm/themes/plainbow/modules/FvwmTaskBar
+share/fvwm/themes/plainbow/modules/FvwmWinList
+share/fvwm/themes/plainbow/modules/buttonbar/disabled
+share/fvwm/themes/plainbow/modules/buttonbar/enabled
+share/fvwm/themes/plainbow/modules/fonts
+share/fvwm/themes/plainbow/modules/main
+share/fvwm/themes/plainbow/modules/normal-icons/no
+share/fvwm/themes/plainbow/modules/normal-icons/yes
+share/fvwm/themes/plainbow/modules/pager/desker
+share/fvwm/themes/plainbow/modules/pager/none
+share/fvwm/themes/plainbow/modules/styles
+share/fvwm/themes/plainbow/modules/winlist/DeskIconBox
+share/fvwm/themes/plainbow/modules/winlist/DeskIconMan
+share/fvwm/themes/plainbow/modules/winlist/DeskTaskBar
+share/fvwm/themes/plainbow/modules/winlist/DeskWinList
+share/fvwm/themes/plainbow/modules/winlist/GlobalIconBox
+share/fvwm/themes/plainbow/modules/winlist/GlobalIconMan
+share/fvwm/themes/plainbow/modules/winlist/GlobalTaskBar
+share/fvwm/themes/plainbow/modules/winlist/GlobalWinList
+share/fvwm/themes/plainbow/modules/winlist/HideDeskTaskBar
+share/fvwm/themes/plainbow/modules/winlist/HideGlobalTaskBar
+share/fvwm/themes/plainbow/modules/winlist/PageIconMan
+share/fvwm/themes/plainbow/modules/winlist/none
+share/fvwm/themes/plainbow/theme-name.cfg
+share/fvwm/themes/plainbow/windowlook
+share/fvwm/themes/qnx/README
+share/fvwm/themes/qnx/buttons
+share/fvwm/themes/qnx/colors-decor
+share/fvwm/themes/qnx/images/button/close-activedown.xpm
+share/fvwm/themes/qnx/images/button/close-activeup.xpm
+share/fvwm/themes/qnx/images/button/close-inactive.xpm
+share/fvwm/themes/qnx/images/button/iconify-activedown.xpm
+share/fvwm/themes/qnx/images/button/iconify-activeup.xpm
+share/fvwm/themes/qnx/images/button/iconify-inactive.xpm
+share/fvwm/themes/qnx/images/button/maximize-activedown.xpm
+share/fvwm/themes/qnx/images/button/maximize-activeup.xpm
+share/fvwm/themes/qnx/images/button/maximize-inactive.xpm
+share/fvwm/themes/qnx/images/button/options-activedown.xpm
+share/fvwm/themes/qnx/images/button/options-activeup.xpm
+share/fvwm/themes/qnx/images/button/options-inactive.xpm
+share/fvwm/themes/qnx/images/decor/title-leftend-active.xpm
+share/fvwm/themes/qnx/images/decor/title-leftend-inactive.xpm
+share/fvwm/themes/qnx/images/decor/title-main-active.xpm
+share/fvwm/themes/qnx/images/decor/title-main-inactive.xpm
+share/fvwm/themes/qnx/images/decor/title-rightend-active.xpm
+share/fvwm/themes/qnx/images/decor/title-rightend-inactive.xpm
+share/fvwm/themes/qnx/theme-name.cfg
+share/fvwm/themes/qnx/windowlook
 share/fvwm/themes/redmond98/README
+share/fvwm/themes/redmond98/background.cfg
 share/fvwm/themes/redmond98/background/black
 share/fvwm/themes/redmond98/background/blue
 share/fvwm/themes/redmond98/background/default
@@ -1009,11 +1248,11 @@ share/fvwm/themes/redmond98/background/random2
 share/fvwm/themes/redmond98/background/red
 share/fvwm/themes/redmond98/background/sea
 share/fvwm/themes/redmond98/background/yellow
-share/fvwm/themes/redmond98/background.cfg
 share/fvwm/themes/redmond98/buttons
 share/fvwm/themes/redmond98/colors
 share/fvwm/themes/redmond98/globalfeel
 share/fvwm/themes/redmond98/menustyle
+share/fvwm/themes/redmond98/modules.cfg
 share/fvwm/themes/redmond98/modules/FvwmButtons-Bar
 share/fvwm/themes/redmond98/modules/FvwmButtons-Pager
 share/fvwm/themes/redmond98/modules/FvwmPager-Desker
@@ -1034,8 +1273,71 @@ share/fvwm/themes/redmond98/modules/taskbar/hideglobal
 share/fvwm/themes/redmond98/modules/taskbar/none
 share/fvwm/themes/redmond98/modules/taskbarpos/bottom
 share/fvwm/themes/redmond98/modules/taskbarpos/top
-share/fvwm/themes/redmond98/modules.cfg
 share/fvwm/themes/redmond98/windowlook
+share/fvwm/themes/redmondxp/README
+share/fvwm/themes/redmondxp/background
+share/fvwm/themes/redmondxp/buttons
+share/fvwm/themes/redmondxp/colors
+share/fvwm/themes/redmondxp/fonts
+share/fvwm/themes/redmondxp/images/background/x-xp-sky.jpg
+share/fvwm/themes/redmondxp/images/button/close-activedown.png
+share/fvwm/themes/redmondxp/images/button/close-activeup.png
+share/fvwm/themes/redmondxp/images/button/close-inactive.png
+share/fvwm/themes/redmondxp/images/button/iconify-activedown.png
+share/fvwm/themes/redmondxp/images/button/iconify-activeup.png
+share/fvwm/themes/redmondxp/images/button/iconify-inactive.png
+share/fvwm/themes/redmondxp/images/button/maximize-activedown.png
+share/fvwm/themes/redmondxp/images/button/maximize-activeup.png
+share/fvwm/themes/redmondxp/images/button/maximize-inactive.png
+share/fvwm/themes/redmondxp/images/button/unmaximize-activedown.png
+share/fvwm/themes/redmondxp/images/button/unmaximize-activeup.png
+share/fvwm/themes/redmondxp/images/button/unmaximize-inactive.png
+share/fvwm/themes/redmondxp/images/decor/title-active.xpm
+share/fvwm/themes/redmondxp/images/decor/title-inactive.xpm
+share/fvwm/themes/redmondxp/images/module/panel-bg.png
+share/fvwm/themes/redmondxp/images/module/panel-bg.xpm
+share/fvwm/themes/redmondxp/images/module/panel-clockarea.png
+share/fvwm/themes/redmondxp/images/module/panel-holder.png
+share/fvwm/themes/redmondxp/images/module/panel-holder.xcf
+share/fvwm/themes/redmondxp/images/module/panel-start.png
+share/fvwm/themes/redmondxp/images/module/panel-start.xcf
+share/fvwm/themes/redmondxp/menustyle
+share/fvwm/themes/redmondxp/modules.cfg
+share/fvwm/themes/redmondxp/modules/FvwmButtons-Panel
+share/fvwm/themes/redmondxp/modules/FvwmIconMan
+share/fvwm/themes/redmondxp/modules/FvwmPager-Desker
+share/fvwm/themes/redmondxp/modules/FvwmPager-Single
+share/fvwm/themes/redmondxp/modules/FvwmThemesPanelManager
+share/fvwm/themes/redmondxp/modules/fonts
+share/fvwm/themes/redmondxp/modules/main
+share/fvwm/themes/redmondxp/modules/styles
+share/fvwm/themes/redmondxp/theme-name.cfg
+share/fvwm/themes/redmondxp/windowlook
+share/fvwm/themes/sa/README
+share/fvwm/themes/sa/buttons
+share/fvwm/themes/sa/colors
+share/fvwm/themes/sa/images/button/close.png
+share/fvwm/themes/sa/images/button/iconify.png
+share/fvwm/themes/sa/images/button/maximize.png
+share/fvwm/themes/sa/images/button/maxxed.png
+share/fvwm/themes/sa/images/button/title_bottom.png
+share/fvwm/themes/sa/images/button/title_left.png
+share/fvwm/themes/sa/images/button/title_right.png
+share/fvwm/themes/sa/images/button/title_top.png
+share/fvwm/themes/sa/images/decor/blue.png
+share/fvwm/themes/sa/images/decor/grey.png
+share/fvwm/themes/sa/images/decor/stripe.png
+share/fvwm/themes/sa/menustyle
+share/fvwm/themes/sa/modules.cfg
+share/fvwm/themes/sa/modules/FvwmPager
+share/fvwm/themes/sa/modules/fonts
+share/fvwm/themes/sa/modules/main
+share/fvwm/themes/sa/modules/normal-icons/no
+share/fvwm/themes/sa/modules/normal-icons/yes
+share/fvwm/themes/sa/modules/pager/no
+share/fvwm/themes/sa/modules/pager/yes
+share/fvwm/themes/sa/modules/styles
+share/fvwm/themes/sa/windowlook
 share/fvwm/themes/spruce/README
 share/fvwm/themes/spruce/background
 share/fvwm/themes/spruce/buttons
@@ -1049,6 +1351,21 @@ share/fvwm/themes/spruce/images/decor/titlebutton-mod-dark.xpm
 share/fvwm/themes/spruce/images/decor/titlebutton-mod.xpm
 share/fvwm/themes/spruce/menustyle
 share/fvwm/themes/spruce/windowlook
+share/fvwm/themes/underground/README
+share/fvwm/themes/underground/background.cfg
+share/fvwm/themes/underground/background/images/Cosmos.jpg
+share/fvwm/themes/underground/background/images/Epidemic_of_Human_Nature-Blue.jpg
+share/fvwm/themes/underground/background/images/Epidemic_of_Human_Nature-Orange.jpg
+share/fvwm/themes/underground/background/images/Fishing_for_Doubloons-Green_and_Yellow.jpg
+share/fvwm/themes/underground/background/images/Jam_Gel-Red.jpg
+share/fvwm/themes/underground/background/images/Military_Grade_Psychotropics-Aqua.jpg
+share/fvwm/themes/underground/background/images/Odd_Place_For_A_Fire_Hydrant.jpg
+share/fvwm/themes/underground/background/images/Sample_Bosonic_Hadron.jpg
+share/fvwm/themes/underground/background/images/Square_Bars.jpg
+share/fvwm/themes/underground/background/images/Zen_Rock_Garden-Green.jpg
+share/fvwm/themes/underground/background/images/Zen_Rock_Garden-Rose.jpg
+share/fvwm/themes/underground/background/main
+share/fvwm/themes/underground/menustyle
 share/fvwm/themes/unsafe/README
 share/fvwm/themes/unsafe/background
 share/fvwm/themes/unsafe/buttons
@@ -1069,19 +1386,33 @@ share/fvwm/themes/unsafe/images/decor/bar.xpm
 share/fvwm/themes/unsafe/images/menuback/unsafe_menu.xpm
 share/fvwm/themes/unsafe/menustyle
 share/fvwm/themes/unsafe/menustyle.cfg
-share/fvwm/themes-rc
-share/fvwm/themes-rc-2
-share/fvwm/themes-rc-3
 @dirrm share/fvwm/themes/unsafe/images/menuback
 @dirrm share/fvwm/themes/unsafe/images/decor
 @dirrm share/fvwm/themes/unsafe/images/button
 @dirrm share/fvwm/themes/unsafe/images/background
 @dirrm share/fvwm/themes/unsafe/images
 @dirrm share/fvwm/themes/unsafe
+@dirrm share/fvwm/themes/underground/background/images
+@dirrm share/fvwm/themes/underground/background
+@dirrm share/fvwm/themes/underground
 @dirrm share/fvwm/themes/spruce/images/decor
 @dirrm share/fvwm/themes/spruce/images/background
 @dirrm share/fvwm/themes/spruce/images
 @dirrm share/fvwm/themes/spruce
+@dirrm share/fvwm/themes/sa/modules/pager
+@dirrm share/fvwm/themes/sa/modules/normal-icons
+@dirrm share/fvwm/themes/sa/modules
+@dirrm share/fvwm/themes/sa/images/decor
+@dirrm share/fvwm/themes/sa/images/button
+@dirrm share/fvwm/themes/sa/images
+@dirrm share/fvwm/themes/sa
+@dirrm share/fvwm/themes/redmondxp/modules
+@dirrm share/fvwm/themes/redmondxp/images/module
+@dirrm share/fvwm/themes/redmondxp/images/decor
+@dirrm share/fvwm/themes/redmondxp/images/button
+@dirrm share/fvwm/themes/redmondxp/images/background
+@dirrm share/fvwm/themes/redmondxp/images
+@dirrm share/fvwm/themes/redmondxp
 @dirrm share/fvwm/themes/redmond98/modules/taskbarpos
 @dirrm share/fvwm/themes/redmond98/modules/taskbar
 @dirrm share/fvwm/themes/redmond98/modules/pager
@@ -1089,12 +1420,25 @@ share/fvwm/themes-rc-3
 @dirrm share/fvwm/themes/redmond98/modules
 @dirrm share/fvwm/themes/redmond98/background
 @dirrm share/fvwm/themes/redmond98
+@dirrm share/fvwm/themes/qnx/images/decor
+@dirrm share/fvwm/themes/qnx/images/button
+@dirrm share/fvwm/themes/qnx/images
+@dirrm share/fvwm/themes/qnx
+@dirrm share/fvwm/themes/plainbow/modules/winlist
+@dirrm share/fvwm/themes/plainbow/modules/pager
+@dirrm share/fvwm/themes/plainbow/modules/normal-icons
+@dirrm share/fvwm/themes/plainbow/modules/buttonbar
+@dirrm share/fvwm/themes/plainbow/modules
+@dirrm share/fvwm/themes/plainbow/images/decor
+@dirrm share/fvwm/themes/plainbow/images
+@dirrm share/fvwm/themes/plainbow
 @dirrm share/fvwm/themes/osx/modules/menubar
 @dirrm share/fvwm/themes/osx/modules/buttonbar
 @dirrm share/fvwm/themes/osx/modules/appsman
 @dirrm share/fvwm/themes/osx/modules/appsbuttons
 @dirrm share/fvwm/themes/osx/modules/applets
 @dirrm share/fvwm/themes/osx/modules
+@dirrm share/fvwm/themes/osx/images/modcolor
 @dirrm share/fvwm/themes/osx/images/menuback
 @dirrm share/fvwm/themes/osx/images/decor
 @dirrm share/fvwm/themes/osx/images/button
@@ -1133,6 +1477,8 @@ share/fvwm/themes-rc-3
 @dirrm share/fvwm/themes/migo/modules/normal-icons
 @dirrm share/fvwm/themes/migo/modules/buttonbar
 @dirrm share/fvwm/themes/migo/modules
+@dirrm share/fvwm/themes/migo/images/module
+@dirrm share/fvwm/themes/migo/images/modcolor
 @dirrm share/fvwm/themes/migo/images/decor
 @dirrm share/fvwm/themes/migo/images/background
 @dirrm share/fvwm/themes/migo/images
@@ -1154,6 +1500,14 @@ share/fvwm/themes-rc-3
 @dirrm share/fvwm/themes/luthien/background/images
 @dirrm share/fvwm/themes/luthien/background
 @dirrm share/fvwm/themes/luthien
+@dirrm share/fvwm/themes/ice/images/decor
+@dirrm share/fvwm/themes/ice/images/button
+@dirrm share/fvwm/themes/ice/images
+@dirrm share/fvwm/themes/ice
+@dirrm share/fvwm/themes/e17/images/decor
+@dirrm share/fvwm/themes/e17/images/button
+@dirrm share/fvwm/themes/e17/images
+@dirrm share/fvwm/themes/e17
 @dirrm share/fvwm/themes/default/settings/xinerama
 @dirrm share/fvwm/themes/default/settings/wheel
 @dirrm share/fvwm/themes/default/settings/stroke
@@ -1172,6 +1526,7 @@ share/fvwm/themes-rc-3
 @dirrm share/fvwm/themes/default/settings/gnome/anotherlevel-menu
 @dirrm share/fvwm/themes/default/settings/gnome
 @dirrm share/fvwm/themes/default/settings/ewmh
+@dirrm share/fvwm/themes/default/settings/events-handler
 @dirrm share/fvwm/themes/default/settings/banner
 @dirrm share/fvwm/themes/default/settings/background
 @dirrm share/fvwm/themes/default/settings/autoraise
@@ -1184,8 +1539,16 @@ share/fvwm/themes-rc-3
 @dirrm share/fvwm/themes/default/modules/normal-icons
 @dirrm share/fvwm/themes/default/modules/buttonbar
 @dirrm share/fvwm/themes/default/modules
+@dirrm share/fvwm/themes/default/images/banner
+@dirrm share/fvwm/themes/default/images/background
+@dirrm share/fvwm/themes/default/images
 @dirrm share/fvwm/themes/default
 @dirrm share/fvwm/themes/current
+@dirrm share/fvwm/themes/celticbow/images/decor
+@dirrm share/fvwm/themes/celticbow/images/button
+@dirrm share/fvwm/themes/celticbow/images/background
+@dirrm share/fvwm/themes/celticbow/images
+@dirrm share/fvwm/themes/celticbow
 @dirrm share/fvwm/themes/cde/scripts
 @dirrm share/fvwm/themes/cde/modules/buttonbar
 @dirrm share/fvwm/themes/cde/modules
@@ -1213,7 +1576,12 @@ share/fvwm/themes-rc-3
 @dirrm share/fvwm/themes/blackbox/images/button
 @dirrm share/fvwm/themes/blackbox/images
 @dirrm share/fvwm/themes/blackbox
+@dirrm share/fvwm/themes/awol/sounds/robot
+@dirrm share/fvwm/themes/awol/sounds/random
+@dirrm share/fvwm/themes/awol/sounds/homer
+@dirrm share/fvwm/themes/awol/sounds/computer
 @dirrm share/fvwm/themes/awol/sounds
+@dirrm share/fvwm/themes/awol/sound.d
 @dirrm share/fvwm/themes/awol/modules/pager
 @dirrm share/fvwm/themes/awol/modules/normal-icons
 @dirrm share/fvwm/themes/awol/modules/iconman
@@ -1232,9 +1600,11 @@ share/fvwm/themes-rc-3
 @dirrm share/fvwm/themes
 @dirrm share/fvwm/sounds
 @dirrm share/fvwm/locale/ru
+@dirrm share/fvwm/locale/pl
 @dirrm share/fvwm/locale/ja
 @dirrm share/fvwm/locale/fr
 @dirrm share/fvwm/locale/en
+@dirrm share/fvwm/locale/de
 @dirrm share/fvwm/locale
 @dirrm share/fvwm/images/winXX-startmenu
 @dirrm share/fvwm/images/menuback
