@@ -16,7 +16,6 @@ MAINTAINER=	znerd@FreeBSD.org
 NO_CDROM=	"License does not allow distribution with fee."
 RESTRICTED=	"This documentation is under license and export control."
 
-PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
 TARGET_DIR?=	${PREFIX}/share/doc/jdk${JDK_MAJOR_VER}
 
 WRKSRC=		${WRKDIR}/docs
@@ -33,8 +32,26 @@ USE_ZIP=	yes
 IGNORE=You must manually fetch ${DISTNAME}${EXTRACT_SUFX} from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
 .endif
 
+pre-install:
+	@${ECHO_CMD} -n ">> Removing ${PLIST}..."
+	@${RM} -f ${PLIST}
+	@${TOUCH} ${PLIST}
+	@${ECHO_CMD} " [ DONE ]"
+ 
 do-install:
-	${MKDIR} ${TARGET_DIR}
-	${CP} -r ${WRKSRC}/* ${TARGET_DIR}
+	@${ECHO_CMD} -n ">> Creating directory ${TARGET_DIR}..."
+	@${MKDIR} ${TARGET_DIR}
+	@${ECHO_CMD} " [ DONE ]"
+
+	@${ECHO_CMD} -n ">> Copying files..."
+	@${CP} -r ${WRKSRC}/* ${TARGET_DIR}
+	@${ECHO_CMD} " [ DONE ]"
+
+	@${ECHO_CMD} -n ">> Creating packing list..."
+	@${FIND} ${TARGET_DIR} -type f -print | \
+		${SED} "s,${PREFIX}/*,," >> ${PLIST}
+	@${FIND} ${TARGET_DIR} -type d -print | sort -r | \
+		${SED} -e "s,${PREFIX}/*,," -e "s,^,@dirrm ,g" >> ${PLIST}
+	@${ECHO_CMD} " [ DONE ]"
 
 .include <bsd.port.post.mk>
