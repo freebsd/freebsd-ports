@@ -10,7 +10,7 @@
 -GC_LINK:		"-lgc";
 +VERSION:		"1.2.1";
 +C_COMPILER:		"%%CC%% ";
-+CC_OPTIONS:		"-I$%%LOCALBASE%%/include";
++CC_OPTIONS:		"-I%%LOCALBASE%%/include";
 +GC_LINK:		"-lgc -L%%LOCALBASE%%/lib";
  LINK_OPTIONS:		"-lm";
 -MAKE_COMMAND:		"make";
