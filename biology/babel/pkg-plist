@@ -1,7 +1,8 @@
 bin/babel
-share/babel/README.1ST
 share/babel/element.lis
 share/babel/new.lis
 share/babel/quanta.lis
 share/babel/types.lis
+%%PORTDOCS%%share/doc/babel/README.1ST
+%%PORTDOCS%%@dirrm share/doc/babel
 @dirrm share/babel
