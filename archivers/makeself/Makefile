@@ -14,13 +14,13 @@ EXTRACT_SUFX=	.run
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A neat script to make self-extracting archives
 
+RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2
+
 EXTRACT_CMD=	${SH}
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	--nox11 --target ${WRKSRC}
 
 NO_BUILD=	yes
-
-RUN_DEPENDS=	/usr/local/bin/bash:/usr/ports/shells/bash2
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/makeself.sh ${PREFIX}/bin/makeself
