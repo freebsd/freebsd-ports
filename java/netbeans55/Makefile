@@ -22,7 +22,7 @@ RESTRICTED=	"Restrictive license"
 
 WRKSRC=		${WRKDIR}/netbeans
 
-DOWNLOAD_URL?=	http://www.netbeans.org/download/release35/night/build200306022350/release35-build-tar-bz2.html
+DOWNLOAD_URL?=	http://www.netbeans.org/download/release351/night/build200307252351/release351-build-tar-bz2.html
 
 .include <bsd.port.pre.mk>
 
