@@ -18,15 +18,15 @@ Put documentation in share/doc/xzx instead of lib/xzx:
  pkglibdir = $(libdir)/@PACKAGE@
  pkgincludedir = $(includedir)/@PACKAGE@
  
-@@ -260,9 +262,9 @@
+@@ -259,9 +261,9 @@
  	sed -e "s,/usr/local/lib/xzx,$(pkglibdir)," < Xzx.ad > Xzx
  
  install-data-local: Xzx
--	$(mkinstalldirs) $(pkglibdir)
-+	$(mkinstalldirs) $(pkgdocdir)
+-	$(mkinstalldirs) $(DESTDIR)$(pkglibdir)
++	$(mkinstalldirs) $(DESTDIR)$(pkgdocdir)
  	for f in $(DOC_FILES); do \
--	  $(INSTALL_DATA) $$f $(pkglibdir); \
-+	  $(INSTALL_DATA) $$f $(pkgdocdir); \
+-	  $(INSTALL_DATA) $$f $(DESTDIR)$(pkglibdir); \
++	  $(INSTALL_DATA) $$f $(DESTDIR)$(pkgdocdir); \
  	done
  	$(INSTALL_DATA) Xzx @XAPPLOADDIR@/Xzx
  	rm -f Xzx
