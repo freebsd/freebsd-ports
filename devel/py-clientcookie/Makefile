@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clientcookie
-PORTVERSION=	0.4.4a
+PORTVERSION=	0.4.18
 CATEGORIES=	devel python
 MASTER_SITES=	http://wwwsearch.sourceforge.net/ClientCookie/src/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
