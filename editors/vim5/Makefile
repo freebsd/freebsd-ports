@@ -4,7 +4,7 @@
 # Date created:         Sat June 29, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.1.1.1 1997/05/25 02:59:06 obrien Exp $
+# $Id: Makefile,v 1.2 1997/05/28 10:04:34 obrien Exp $
 #
 
 DISTNAME=	vim-5.0i
@@ -21,7 +21,7 @@ MAINTAINER=     obrien@FreeBSD.org
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 USE_GMAKE=	yes
 ALL_TARGET=	
-MAN1=		vim.1 xxd.1 ctags.1 etags.1
+MAN1=		vim.1 xxd.1 ctags.1
 
 .if defined(HAVE_MOTIF)
 REQUIRES_MOTIF=	yes
@@ -35,6 +35,8 @@ pre-build:
 
 post-install:
 	[ -e ${PREFIX}/bin/gvim ] || /bin/ln -s ${PREFIX}/bin/vim ${PREFIX}/bin/gvim
+	@/bin/rm -f ${PREFIX}/man/man1/etags.1
+	@/bin/ln -sf ${PREFIX}/man/man1/ctags.1.gz ${PREFIX}/man/man1/etags.1.gz
 
 
 .include <bsd.port.mk>
