@@ -1,10 +1,11 @@
-Kinput2 is an input server for X11 applications that want Japanese
-text input.
+Kinput2 is an Japanese text input server for X11 applications.
 
-A client that wants kana-kanji conversion service for Japanese text
+A client that require kana-kanji conversion service for Japanese text
 sends a request to kinput2.  Kinput2 receives the request, does
 kana-kanji conversion, and sends the converted text back to the
 client.
 
-The port was done by NIIMI Satoshi (sa2c@and.or.jp).  It supports
-Canna.
+The port supports Canna.
+
+-- S. Taoka
+<taoka@FreeBSD.org>
