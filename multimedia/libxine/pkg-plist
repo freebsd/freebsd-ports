@@ -70,6 +70,7 @@ lib/xine/plugins/1.0.0/xineplug_decode_roqaudio.so
 lib/xine/plugins/1.0.0/xineplug_decode_roqvideo.so
 lib/xine/plugins/1.0.0/xineplug_decode_spu.so
 lib/xine/plugins/1.0.0/xineplug_decode_spucc.so
+lib/xine/plugins/1.0.0/xineplug_decode_spuogm.so
 lib/xine/plugins/1.0.0/xineplug_decode_sputext.so
 lib/xine/plugins/1.0.0/xineplug_decode_svq1.so
 lib/xine/plugins/1.0.0/xineplug_decode_yuv_frames.so
