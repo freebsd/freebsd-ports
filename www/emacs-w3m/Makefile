@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	emacs-w3m
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.5
 CATEGORIES=	www elisp
 MASTER_SITES=	http://emacs-w3m.namazu.org/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -23,23 +23,14 @@ LISPDIR?=	${EMACS_VERSION_SITE_LISPDIR}/w3m
 ICONDIR?=	${EMACS_LIBDIR_WITH_VER}/etc/w3m/icons
 ETCDIR?=	${EMACS_LIBDIR_WITH_VER}/etc/w3m
 INFODIR?=	info
-PKGINFODIR?=	"@comment "
 
 USE_AUTOCONF=	yes
 ALL_TARGET=	default
 
-PLIST_SUB+=	EMACS_NAME=${EMACS_NAME} \
-		XEMACS=${XEMACS} \
-		EMACS20=${EMACS20} \
-		EMACS21=${EMACS21} \
-		EMACS=${EMACS} \
-		LISPDIR=${LISPDIR} \
+PLIST_SUB+=	LISPDIR=${LISPDIR} \
 		ICONDIR=${ICONDIR} \
-		ETCDIR=${ETCDIR} \
 		INFODIR=${INFODIR} \
-		PKGINFODIR=${PKGINFODIR} \
-		ICONS=${ICONS} \
-		ETC=${ETC} \
+		ETCDIR=${ETCDIR} \
 		SHIMBUN=${SHIMBUN}
 
 DOCS=		README
@@ -47,32 +38,6 @@ DOCS_JA=	README.ja
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
 DOCSDIR_JA=	${PREFIX}/share/doc/ja/${PORTNAME}
-
-.if (${EMACS_PORT_NAME} == "xemacs21-mule")
-XEMACS=		""
-EMACS=		"@comment "
-EMACS20=	"@comment "
-EMACS21=	"@comment "
-ICONS=		""
-ETC=		"@comment "
-.else
-.if (${EMACS_PORT_NAME} == "emacs20")
-XEMACS=		"@comment "
-EMACS=		""
-EMACS20=	""
-EMACS21=	"@comment "
-ICONS=		"@comment "
-ETC=		"@comment "
-.else
-XEMACS=		"@comment "
-EMACS=		""
-EMACS20=	"@comment "
-EMACS21=	""
-ICONS=		""
-ETC=		""
-INSTALL_TARGET=	install install-icons
-.endif
-.endif
 
 .if defined(WITHOUT_SHIMBUN)
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-Makefile.in
@@ -86,6 +51,7 @@ SHIMBUN=	""
 FLIM_PORT=	${PORTSDIR}/editors/flim
 SEMI_PORT=	${PORTSDIR}/editors/semi
 MULE_UCS_PORT=	${PORTSDIR}/converters/mule-ucs
+INSTALL_TARGET=	install install-icons
 .endif
 
 FLIM_TRUNK=	1.14
