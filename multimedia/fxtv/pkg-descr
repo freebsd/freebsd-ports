@@ -10,3 +10,14 @@
    Refer to the README for details on usage
 
    URL:  http://www.freebsd.org/~rhh/fxtv
+
+
+   Note on Bt848/Bt878 bktr driver:
+   FXTV 1.00 requires release 1.66 (or later) of the Bt848/Bt878 driver.
+   (Note, this is the driver release, not the CVS version)
+
+   Newer versions of the Bt848/Bt878 driver for FreeBSD 2.2.x, 3.x and 4.x
+   can be found 
+   at  http://www.freebsd.org/~roger
+   or  http://telepresence.dmem.strath.ac.uk/bt848
+
