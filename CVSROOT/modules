@@ -9066,6 +9066,7 @@ savelogs	ports/sysutils/savelogs
 sawfish-themes	ports/x11-themes/sawfish-themes
 sawfish2	ports/x11-wm/sawfish2
 saxon		ports/textproc/saxon
+saxon-devel	ports/textproc/saxon-devel
 sb16config	ports/sysutils/sb16config
 sbagen		ports/audio/sbagen
 sbcl		ports/lang/sbcl
