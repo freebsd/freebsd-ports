@@ -8,8 +8,7 @@
 PORTNAME=	twig
 PORTVERSION=	2.7.7
 CATEGORIES=	www mail
-MASTER_SITES=	http://twig.info/download/ \
-		http://twig.screwdriver.net/download/
+MASTER_SITES=	http://www.informationgateway.org/download/
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Web Based Email Client and Scheduler
