@@ -21,26 +21,17 @@ MAINTAINER=	dominic_marks@btinternet.com
 
 OSNAME=		${OPSYS:S/F/f/:S/N/n/:S/O/o/:S/B/b/:S/S/s/:S/D/d/}
 
-.if (${ARCH} == "i386")
+.if ${MACHINE_ARCH} == "i386"
 ARCHNAME=	x86
+. if ${MACHINE_CPU:Mk6}
+ALL_TARGET=	${OSNAME}-${ARCHNAME}-k6-elf
+. elif ${MACHINE_CPU:Mmmx}
+ALL_TARGET=	${OSNAME}-${ARCHNAME}-mmx-elf
+. else
+ALL_TARGET=	${OSNAME}-${ARCHNAME}-any-elf
+. endif
 .else
-ARCHNAME=	${ARCH}
-.endif
-
-#	could do something w/
-#	if sysctl -n hw.model | grep AMD >/dev/null ; then echo AMD ; fi
-.if defined(HAVE_K6)
-ALL_TARGET=	${OSNAME}-${ARCHNAME}-k6-BINFMT
-.elif defined(HAVE_MMX)
-ALL_TARGET=	${OSNAME}-${ARCHNAME}-mmx-BINFMT
-.else
-ALL_TARGET=	${OSNAME}-${ARCHNAME}-any-BINFMT
-.endif
-
-.if ${PORTOBJFORMAT} == "elf"
-ALL_TARGET:=	${ALL_TARGET:S/BINFMT$/${PORTOBJFORMAT}/}
-.else
-ALL_TARGET:=	${ALL_TARGET:S/BINFMT$/a.out/}
+ARCHNAME=	${MACHINE_ARCH}
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
