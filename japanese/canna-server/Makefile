@@ -7,21 +7,29 @@
 #
 
 PORTNAME=	Canna
-PORTVERSION=	3.2.2
+PORTVERSION=	3.5.b2
 CATEGORIES=	japanese
-MASTER_SITES=	ftp://ftp.nec.co.jp/pub/Canna/Canna32/
-DISTNAME=	${PORTNAME}${PORTVERSION:S/.//:S/./p/}
+MASTER_SITES=	ftp://ftp.tokyonet.ad.jp/pub/misc/Canna/Canna35/ \
+		ftp://ftp.meshnet.or.jp/pub/tool/Canna/Canna35/ \
+		ftp://ftp.sra.co.jp/pub/misc/canna/ \
+		ftp://ftp.habi.or.jp/pub/Tools/Canna/Canna35/ \
+		ftp://ftp.hans.or.jp/pub/Tools/Canna/Canna35/
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
+
+PATCH_SITES=	http://www.jaist.ac.jp/~fujieda/canna/
+PATCHFILES=	Canna35b2-unoff1.patch.gz Canna35b2-unoff2.patch.gz \
+		Canna35b2-hack1.patch.gz
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	max@FreeBSD.org
 
-BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
-
+USE_IMAKE=	yes
+USE_X_PREFIX=	no
+ALL_TARGET=	canna
 INSTALLS_SHLIB=	yes
 
-ALL_TARGET=	canna
-INSTALL_TARGET=	install install.man
 MAN1=	addwords.1 cannacheck.1 cannakill.1 cannaserver.1 cannastat.1 \
-	canvert.1 catdic.1 cpdic.1 cshost.1 ctow.1 delwords.1 dicar.1 \
+	catdic.1 cpdic.1 cshost.1 ctow.1 delwords.1 dicar.1 \
 	dpbindic.1 dpromdic.1 lsdic.1 mkbindic.1 mkdic.1 mkromdic.1 \
 	mvdic.1 rmdic.1 splitword.1 wtoc.1
 MAN3=	RkCloseRoma.3 RkCvtEuc.3 RkCvtHan.3 RkCvtHira.3 RkCvtKana.3 \
@@ -30,36 +38,27 @@ MAN3=	RkCloseRoma.3 RkCvtEuc.3 RkCvtHan.3 RkCvtHira.3 RkCvtKana.3 \
 	RkGetStat.3 RkGetYomi.3 RkGoto.3 RkInitialize.3 RkIntro.3 RkLeft.3 \
 	RkMapPhonogram.3 RkMapRoma.3 RkMountD.3 RkNext.3 RkNfer.3 \
 	RkOpenRoma.3 RkPrev.3 RkRemountDic.3 RkResize.3 RkRgnBun.3 RkRight.3 \
-	RkShorten.3 RkStoreYomi.3 RkUnmountDic.3 RkXfer.3 \
-	XKanjiControl.3 XLookupKanjiString.3 cannalib.3 uilib.3 \
-	jrKanjiControl.3 jrKanjiString.3
+	RkShorten.3 RkStoreYomi.3 RkUnmountDic.3 RkXfer.3 cannalib.3 uilib.3
+MANCOMPRESSED=	no
+XFREE86_HTML_MAN=	no
+
+MLINKS=		uilibs.3 XKanjiControl.3  uilibs.3 XLookupKanjiString.3 \
+		uilibs.3 jrKanjiControl.3  uilibs.3 jrKanjiString.3
 
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/canna.sh
 
-.SILENT:
-
-.include <bsd.port.pre.mk>
-
-do-configure:
-	@(cd ${WRKSRC}; ${XMKMF})
+pre-install:
+	${MKDIR} /var/run/canna
+	${CHOWN} bin.bin /var/run/canna
 	@${SED} -e "s;@PREFIX@;${PREFIX};g" ${FILESDIR}/canna.sh.in \
 		>${WRKDIR}/canna.sh
 
-pre-install:
-	${MKDIR} /var/run/canna
-	${CHOWN} bin:bin /var/run/canna
-
 post-install:
-.if ${PORTOBJFORMAT} == "aout"
-	${LN} -sf libRKC.so.1.0 ${PREFIX}/lib/libRKC.so
-	${LN} -sf libRKC16.so.1.0 ${PREFIX}/lib/libRKC16.so
-	${LN} -sf libcanna.so.1.0 ${PREFIX}/lib/libcanna.so
-	${LN} -sf libcanna16.so.1.0 ${PREFIX}/lib/libcanna16.so
-.endif
+#	@${LDCONFIG} -m ${PREFIX}/lib
 	if [ ! -f ${STARTUP_SCRIPT} ]; then 				\
 		${ECHO} "Installing ${STARTUP_SCRIPT} startup file."; 	\
 		${INSTALL_SCRIPT} ${WRKDIR}/canna.sh ${STARTUP_SCRIPT};	\
 	fi
-	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
