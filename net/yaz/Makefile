@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	yaz
-PORTVERSION=	1.8.3
-PORTREVISION=	1
+PORTVERSION=	1.8.4
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/yaz/
 
 MAINTAINER=	demon@FreeBSD.org
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--enable-shared
+CONFIGURE_ARGS+=	--enable-shared
 INSTALLS_SHLIB=	yes
 
 post-install:
