@@ -5,6 +5,7 @@
     SUBDIR += bzip
     SUBDIR += bzip2
     SUBDIR += deepforest
+    SUBDIR += fastjar
     SUBDIR += freeze
     SUBDIR += gshar+gunshar
     SUBDIR += ha
