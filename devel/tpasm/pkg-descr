@@ -1,0 +1,24 @@
+Tpasm is a command line based cross assembler for a variety of common
+microprocessors and controllers, currently supporting:
+
+Rockwell 6502 (6502, 65c02)
+Motorola 6805 (6805, 68705), 6809, 68hc11
+Intel 8051 (8031, 8032, 8051, 8052, 80c390)
+Atmel AVR (avt, attiny, at90, atmega series)
+Core Technologies CTXP-1
+Microchip PIC (12xxx, 14xxx, 16xxx, 17xxx series)
+Sunplus SPCxxx series
+Zilog Z80 (z80, z180)
+
+Features are:
+
+    * True multi-pass assembly (will take as many passes as needed)
+    * Multiple segments
+    * Sophisticated expressions
+    * Macros, repeats, conditionals
+    * Arbitrary length labels
+    * Local labels
+    * Supporting new processors is reasonably straightforward
+    * Can switch between processors during assembly
+
+WWW: http://www.sqrt.com/
