@@ -182,6 +182,7 @@
     SUBDIR += gpkgdep
     SUBDIR += gpte
     SUBDIR += graft
+    SUBDIR += graveman
     SUBDIR += growspd
     SUBDIR += grub
     SUBDIR += gstopd
