@@ -35,6 +35,8 @@
 ^src/sys/contrib/dev/acpica
 ^src/usr.bin/doscmd/fonts.dir
 ^src/usr.bin/more/more.help
+^src/usr.bin/mail/misc/mail.help
+^src/usr.bin/mail/misc/mail.tildehelp
 ^src/usr.sbin/sysinstall/help/.*\.hlp
 ^src/.*\.ps
 
