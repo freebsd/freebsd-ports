@@ -1,5 +1,5 @@
 # New ports collection makefile for:    rubytk
-# Version required:     1.4.2
+# Version required:     1.4.3
 # Date created:         15 March 1999
 # Whom:                 Yasuhiro Fukuma <yasuf@big.or.jp>
 #
@@ -33,7 +33,7 @@ CONFIGURE_ARGS+= --with-tcllib="${TCL_LIB}" --with-tklib="${TK_LIB}" \
 		--with-X11-dir="${X11BASE}"
 PLIST_SUB+=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
 
-VERSION=	1.4.2
+VERSION=	1.4.3
 BRANCH_NAME=	1.4
 
 RUBY_VER=	1.4
