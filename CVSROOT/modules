@@ -5679,6 +5679,7 @@ phoenix		ports/www/phoenix
 photopc		ports/graphics/photopc
 php-dbg		ports/devel/php-dbg
 php-dyn		ports/www/php-dyn
+php-gtk		ports/x11-toolkits/php-gtk
 php-mode.el	ports/lang/php-mode.el
 php-screw	ports/www/php-screw
 php-sqlrelay	ports/databases/php-sqlrelay
