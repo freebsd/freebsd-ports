@@ -1,0 +1,16 @@
+
+$FreeBSD$
+
+--- po/es.po	2002/09/25 09:39:31	1.1
++++ po/es.po	2002/09/25 09:40:09
+@@ -3115,10 +3115,6 @@
+ "Falló la inicialización del plugin\n"
+ "%s"
+ 
+-#: /usr/build/kvirc/cvs/src/kvirc/kvi_dlgoptions.cpp:1724
+-msgid "Name"
+-msgstr "Nombre"
+-
+ #: /usr/build/kvirc/cvs/src/kvirc/kvi_dlgoptions.cpp:1725
+ msgid "File mask"
+ msgstr "Máscara de archivo"
