@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.145 1998/06/07 11:13:05 dburr Exp $
+# $Id: Makefile,v 1.146 1998/06/25 08:05:20 obrien Exp $
 #
 
     SUBDIR += 3dc
@@ -146,6 +146,7 @@
     SUBDIR += xvier
     SUBDIR += xvmahjongg
     SUBDIR += xvmines
+    SUBDIR += xzip
     SUBDIR += yahtzee
     SUBDIR += yamsweeper
     SUBDIR += ztrack
