@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	php
-PORTVERSION= 	3.0.16
+PORTVERSION= 	3.0.18
 CATEGORIES=	lang www
 MASTER_SITES=	ftp://ftp.php.net/pub/${PHP_DISTDIR}/ \
 		http://us.php.net/${PHP_DISTDIR}/ \
@@ -19,7 +19,7 @@ MASTER_SITES=	ftp://ftp.php.net/pub/${PHP_DISTDIR}/ \
 		http://www.php.cz/${PHP_DISTDIR}/ \
 		http://php3.globe.de/${PHP_DISTDIR}/
 
-MAINTAINER=	roam@orbitel.bg
+MAINTAINER=	roam@FreeBSD.org
 
 PHP_DISTDIR=	distributions
 
@@ -37,6 +37,11 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 
 PHPDOCDIR=	${PREFIX}/share/doc/php
 PLIST_SUB=	PHPDOCDIR=${PHPDOCDIR:S/^${PREFIX}\///}
+.if		defined(NOPORTDOCS)
+PLIST_SUB+=	PORTDOCS:="@comment "
+.else
+PLIST_SUB+=	PORTDOCS:=
+.endif
 
 pre-fetch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.php
@@ -44,11 +49,14 @@ pre-fetch:
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/php3.ini-dist ${PREFIX}/etc
 
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${PHPDOCDIR}
+.if	!defined(NOPORTDOCS)
+	@${MKDIR} ${PHPDOCDIR}/html
 .for i in CODING_STANDARDS LICENSE
 	@${INSTALL_DATA} ${WRKSRC}/$i ${PHPDOCDIR}
 .endfor
+	@for i in ${WRKSRC}/doc/*; do				\
+		${INSTALL_DATA} $$i ${PHPDOCDIR}/html/ ;	\
+	done
 .endif
 
 post-clean:
