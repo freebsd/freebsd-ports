@@ -7,6 +7,7 @@
 
 PORTNAME=		afaapps
 PORTVERSION=		2.7
+PORTREVISION=		1
 CATEGORIES=		sysutils linux
 MASTER_SITES=		ftp://ftp.us.dell.com/scsi-raid/
 PKGNAMEPREFIX=		linux-
