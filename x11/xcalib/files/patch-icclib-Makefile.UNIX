@@ -1,0 +1,11 @@
+--- icclib/Makefile.UNIX	Tue Jan  4 00:31:42 2005
++++ icclib/Makefile.UNIX.orig	Wed Apr  6 11:10:31 2005
+@@ -19,7 +19,7 @@
+ 
+ MAKEU     = make
+ LIBU      = ar -r
+-LIBOF     = -o  
++LIBOF     = 
+ RANLIB    = echo
+ AS        = as
+ CCFLAGSDEF   = -DUNIX -c
