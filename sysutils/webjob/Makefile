@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		webjob
-PORTVERSION=		1.3.0
+PORTVERSION=		1.4.0
 CATEGORIES=		sysutils security
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	webjob
@@ -27,7 +27,7 @@ CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
 .if defined(NO_STATIC)
 CFLAGS+=
 .else
-CFLAGS+=       		-static
+CFLAGS+=		-static
 .endif
 
 MAN1=			webjob.1
