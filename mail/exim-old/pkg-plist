@@ -3,6 +3,7 @@ sbin/eximon
 sbin/eximon.bin
 sbin/exim_dumpdb
 sbin/exim_fixdb
+sbin/exim_lock
 sbin/exim_tidydb
 sbin/exinext
 sbin/exiwhat

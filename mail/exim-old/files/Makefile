@@ -101,7 +101,7 @@ COMPRESS_SUFFIX=gz
 # location of all other runtime files and directories can be changed in the
 # runtime configuration file.
 
-CONFIGURE_FILE=XX_PREFIX_XX/etc/exim/configure.sample
+CONFIGURE_FILE=XX_PREFIX_XX/etc/exim/configure
 
 
 # In some installations there may be multiple machines sharing file systems,
