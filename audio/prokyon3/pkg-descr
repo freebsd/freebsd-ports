@@ -1,10 +1,8 @@
-prokyon3 is a multithreaded MP3 manager and tag editor for Linux.
-It was written in C++ using the Qt3 widget set and the MySQL database.
-prokyon3 can access MP3 files on harddisk, CDROM, SMB and NFS. Files
-can be played using XMMS, and can even be played when the files are on
-CD as prokyon3 identifies CDs by content. The files view is customizable
-and favorite artists are supported. prokyon3 also offers an editor for
-ID3 tags and has been designed to support tagging for multiple files en
+prokyon3 is a multithreaded MP3 manager and tag editor for Linux. 
+It was written in C++ using the Qt3 widget set and the MySQL database. 
+prokyon3 can access MP3 files on harddisk, CDROM, SMB and NFS. Files 
+can be played using XMMS, and can even be played when the files are on 
+CD as prokyon3 identifies CDs by content. The files view is customizable 
+and favorite artists are supported. prokyon3 also offers an editor for 
+ID3 tags and has been designed to support tagging for multiple files en 
 masse.
-
-WWW: http://prokyon3.sourceforge.net/

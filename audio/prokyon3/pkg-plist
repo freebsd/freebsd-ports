@@ -29,5 +29,19 @@ share/prokyon3/images/madsmiley.png
 share/prokyon3/images/pink_marble.png
 share/prokyon3/images/smiley.png
 share/prokyon3/images/splash4.png
+share/locale/de/LC_MESSAGES/prokyon3.mo
+share/locale/fr/LC_MESSAGES/prokyon3.mo
+share/locale/nl/LC_MESSAGES/prokyon3.mo
+share/prokyon3/images/action_burncd.png
+share/prokyon3/images/action_documentation.png
+share/prokyon3/html/manual_one_file/images/docbook/important.png
+share/prokyon3/html/manual_one_file/images/docbook/note.png
+share/prokyon3/html/manual_one_file/images/docbook/tip.png
+share/prokyon3/html/manual_one_file/images/docbook/warning.png
+share/prokyon3/html/manual_one_file/index.html
 @dirrm share/prokyon3/images
+@dirrm share/prokyon3/html/manual_one_file/images/docbook
+@dirrm share/prokyon3/html/manual_one_file/images
+@dirrm share/prokyon3/html/manual_one_file
+@dirrm share/prokyon3/html
 @dirrm share/prokyon3
