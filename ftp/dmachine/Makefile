@@ -17,8 +17,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A non interactive, non graphical, batch download manager
 
 USE_JAVA=	1.1+
+NEED_JAVAC=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 ALL_TARGET=	dmachine
+MAKE_ARGS=	JAVAC=${JAVAC}
 
 do-install:
 	@${SED} 's|%%DATADIR%%|${DATADIR}|' ${FILESDIR}/dmachine > ${WRKSRC}/dmachine
