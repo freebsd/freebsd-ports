@@ -1,0 +1,29 @@
+--- configure.orig	Mon Dec 18 23:08:59 2000
++++ configure	Thu Mar 22 11:46:53 2001
+@@ -4456,7 +4456,7 @@
+ 
+ 
+ 
+-LIBQT="-lqt"
++LIBQT="-lqt2"
+ if test $kde_qtver = 2; then
+ 
+   
+@@ -4675,7 +4675,7 @@
+ 
+ CXXFLAGS="$CXXFLAGS -I$qt_includes"
+ LDFLAGS="$X_LDFLAGS"
+-LIBS="-lqt -lXext -lX11 $LIBSOCKET"
++LIBS="-lqt2 -lXext -lX11 $LIBSOCKET"
+ LD_LIBRARY_PATH=
+ export LD_LIBRARY_PATH
+ LIBRARY_PATH=
+@@ -4866,7 +4866,7 @@
+    
+ 
+ 
+-LIB_QT='-lqt $(LIBPNG) -lXext $(LIB_X11) $(X_PRE_LIBS)'
++LIB_QT='-lqt2 $(LIBPNG) -lXext $(LIB_X11) $(X_PRE_LIBS)'
+ 
+ 
+ 
