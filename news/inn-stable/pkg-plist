@@ -79,6 +79,7 @@ news/bin/rnews
 news/bin/rnews.libexec/c7unbatch
 news/bin/rnews.libexec/decode
 news/bin/rnews.libexec/encode
+news/bin/rnews.libexec/gunbatch
 news/bin/scanlogs
 news/bin/scanspool
 news/bin/send-ihave
@@ -93,7 +94,6 @@ news/bin/sm
 news/bin/startinnfeed
 news/bin/tally.control
 news/bin/writelog
-news/db/control.ctl
 news/etc/actsync.cfg
 news/etc/actsync.ign
 news/etc/control.ctl
