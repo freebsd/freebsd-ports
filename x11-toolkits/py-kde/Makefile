@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	kde
-PORTVERSION=	3.11.1
+PORTVERSION=	3.11.3
 CATEGORIES=	x11-toolkits kde python
-MASTER_SITES=	http://www.river-bank.demon.co.uk/download/PyKDE2/ \
-		http://www.river-bank.demon.co.uk/download/PyQt/:qt
+MASTER_SITES=	http://www.river-bank.demon.co.uk/download/PyKDE2/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	PyKDE-3.11.1
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} PyQt-x11-gpl-${PYQTVERSION}${EXTRACT_SUFX}:qt
+DISTNAME=	PyKDE-${PORTVERSION}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Python Bindings for KDE
+COMMENT=	Python Bindings for KDE3
 
 BUILD_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt
 RUN_DEPENDS=	${BUILD_DEPENDS}
@@ -24,9 +23,8 @@ USE_PYTHON=	yes
 USE_KDELIBS_VER=3
 USE_REINPLACE=	yes
 
-PYQTVERSION=	3.11
+PYQTVERSION=	3.13
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGBASE}
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 NO_FILTER_SHLIBS=	yes
 
@@ -34,8 +32,6 @@ NO_FILTER_SHLIBS=	yes
 
 .if ${OSVERSION} < 500000
 BROKEN=		"Does not run on 4.x"
-.else
-BROKEN=		"Unfetchable"
 .endif
 
 post-patch:
@@ -59,12 +55,9 @@ post-install:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${EXAMPLESDIR}
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${EXAMPLESDIR}
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
-	@${SED} -e "s|%%EXAMPLESDIR%%|${EXAMPLESDIR}|" < ${FILESDIR}/pkg-message.in \
-		> ${PKGMESSAGE}
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
 .endif
 	@${INSTALL_SCRIPT} ${WRKSRC}/contrib/kdepyuic ${PREFIX}/bin
+	@${PYTHON_CMD} -c "import pykdeconfig, dcopexport"
+	@${PYTHON_CMD} -O -c "import pykdeconfig, dcopexport"
 
 .include <bsd.port.post.mk>
