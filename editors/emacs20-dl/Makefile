@@ -3,7 +3,7 @@
 # Date created:		10 October 1998
 # Whom:			shige
 #
-# $Id: Makefile,v 1.4 1999/01/23 14:28:24 simokawa Exp $
+# $Id: Makefile,v 1.5 1999/01/27 07:41:11 fenner Exp $
 #
 
 DISTNAME=	emacs-20.3
@@ -16,11 +16,11 @@ PATCH_SITES=	ftp://ftp.jaist.ac.jp/pub/GNU/elisp/emacs-20-dl/
 PATCHFILES=	emacs-20.3-dl.diff
 PATCH_DIST_STRIP= -p1
 
-MAINTAINER=	shige@kuis.kyoto-u.ac.jp
+MAINTAINER=	shige@FreeBSD.ORG
 
 RUN_DEPENDS=	emacs-20.3:${PORTSDIR}/editors/emacs20
 
-GNU_CONFIGURE=	yes
+USE_AUTOCONF=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
