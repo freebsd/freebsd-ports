@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	libgii
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.ggi-project.org/pub/ggi/ggi/2_0_beta_2.1/
+MASTER_SITES=	ftp://ftp.ggi-project.org/pub/ggi/ggi/2_0_beta_3/
 
 MAINTAINER=	mwest@uct.ac.za
 
@@ -21,9 +21,11 @@ GNU_CONFIGURE=	yes
 CFLAGS+=	${PTHREAD_LIBS}
 
 MAN1=		mhub.1
-MAN3=		giiEventPoll.3gii giiInit.3gii giiOpen.3gii \
-		giiPanic.3gii giiSetEventMask.3gii
-MLINKS=		giiEventPoll.3gii giiEventRead.3gii - giiEventSend.3gii \
+MAN3=		giiEventPoll.3gii giiEventSend.3gii giiInit.3gii \
+		giiOpen.3gii giiPanic.3gii giiSetEventMask.3gii
+MAN7=		libgii.7gii
+MLINKS=		giiEventPoll.3gii giiEventRead.3gii \
+		- giiEventSelect.3gii - giiEventsQueued.3gii \
 		giiInit.3gii giiExit.3gii \
 		giiOpen.3gii giiClose.3gii - giiJoinInputs.3gii \
 		giiSetEventMask.3gii giiAddEventMask.3gii \
@@ -31,7 +33,7 @@ MLINKS=		giiEventPoll.3gii giiEventRead.3gii - giiEventSend.3gii \
 
 DOCSDIR=	share/doc/libgii
 DOCS=		ChangeLog NEWS README \
-		doc/env.txt doc/inputs.txt doc/libgii-api.sgml
+		doc/env.txt doc/inputs.txt
 EXAMPLESDIR=	share/examples/libgii
 EXAMPLES=	demos/demo.c demos/filter.c \
 		demos/mhub.c demos/xsendbut.c
