@@ -3,7 +3,7 @@
 # Date created:		18 July 1997
 # Whom:			jseger@scds.com
 #
-# $Id: Makefile,v 1.1.1.1 1997/11/26 00:24:18 jseger Exp $
+# $Id: Makefile,v 1.2 1998/01/12 19:17:22 markm Exp $
 #
 
 DISTNAME=	bind-8.1.1
@@ -22,6 +22,12 @@ MAN7=		hostname.7 mailaddr.7
 MAN8=		named-xfer.8 named.8 ndc.8 nslookup.8
 
 PATCH_ARGS?=	-d ${WRKDIR} -E ${PATCH_STRIP}
+
+PA_H=	${WRKSRC}/port/freebsd/include/port_after.h
+
+post-configure:
+	${MV} ${PA_H} ${PA_H}.orig
+	sed "s,/usr,${PREFIX}," ${PA_H}.orig >${PA_H}
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/named/named-bootconf.pl ${PREFIX}/bin/
