@@ -1,0 +1,42 @@
+Here are the two extra patch files that will allow PostgreSQL to
+compile and run on Alpha.  The DB is 64-bit capable so really only a few
+bits of configuration for FreeBSD were needed. 
+
+--- backend/main/main.c.orig    Wed Aug 30 16:05:39 2000
++++ backend/main/main.c Wed Aug 30 16:06:10 2000
+@@ -14,7 +14,7 @@
+  */
+ #include <unistd.h>
+ 
+-#if defined(__alpha__) && !defined(linux)
++#if defined(__alpha__) && !defined(linux) && !defined(__FreeBSD__)
+ #include <sys/sysinfo.h>
+ #include "machine/hal_sysinfo.h"
+ #define ASSEMBLER
+
+
+
+
+
+
+
+--- include/port/freebsd.h.orig Tue Jul 13 16:12:49 1999
++++ include/port/freebsd.h      Wed Aug 30 21:12:51 2000
+@@ -3,6 +3,12 @@
+ #if defined(__i386__)
+ #define NEED_I386_TAS_ASM
+ #define HAS_TEST_AND_SET
++typedef unsigned char slock_t;
++#endif
++
++#if defined (__alpha__)
++#define HAS_TEST_AND_SET
++typedef long int slock_t;
+ #endif
+ 
+ #if defined(__sparc__)
+@@ -28,4 +34,3 @@
+ /* #   undef HAS_TEST_AND_SET */
+ #endif
+ 
+-typedef unsigned char slock_t;
