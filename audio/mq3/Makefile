@@ -31,7 +31,7 @@ CONFIGURE_ARGS=	-prefix ${PREFIX} -platform FreeBSD
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
-BROKEN=         "Does not build"
+BROKEN=		"Does not build"
 .endif
 
 .include <bsd.port.post.mk>

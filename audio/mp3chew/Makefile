@@ -5,9 +5,9 @@
 # $FreeBSD$
 #
 
-PORTNAME=       mp3chew
+PORTNAME=	mp3chew
 PORTVERSION=	0.51.0
-CATEGORIES=     audio
+CATEGORIES=	audio
 MASTER_SITES=	# none left
 # http://owl.yi.org/ is never available
 # http://froek.yi.org/ (a replacement) is never available

@@ -28,11 +28,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libogg.so.4)
-WITH_LIBOGG=     yes
+WITH_LIBOGG=	yes
 .endif
 
 .if defined(WITH_LIBOGG)
-LIB_DEPENDS+=   ogg.4:${PORTSDIR}/audio/libogg
+LIB_DEPENDS+=	ogg.4:${PORTSDIR}/audio/libogg
 .endif
 
 pre-everything::

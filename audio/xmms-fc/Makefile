@@ -14,8 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	dyeske@yahoo.com
 COMMENT=	A XMMS future composer input plugin
 
-BUILD_DEPENDS=  xmms-config:${PORTSDIR}/multimedia/xmms
-RUN_DEPENDS=    xmms:${PORTSDIR}/multimedia/xmms
+BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
+RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

@@ -18,14 +18,14 @@ COMMENT=	Front-end to mpg123/ogg123 audio player for Emacsen
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
-FETCH_BEFORE_ARGS = -o ${DISTDIR}/${PORTNAME}-${PORTVERSION}
+FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${PORTNAME}-${PORTVERSION}
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
 ELISPDIR=	${PREFIX}/share/emacs/site-lisp
 XELISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 
-myFETCH_CMD = /usr/bin/fetch -AR
+myFETCH_CMD=	/usr/bin/fetch -AR
 
 do-fetch:
 	${myFETCH_CMD} ${FETCH_BEFORE_ARGS} ${MASTER_SITES}/mpg123el.cgi?${PORTVERSION}

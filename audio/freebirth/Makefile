@@ -21,7 +21,7 @@ USE_REINPLACE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500000
-BROKEN=         "too unstable on FreeBSD 5.x"
+BROKEN=		"too unstable on FreeBSD 5.x"
 .endif
 
 pre-build:

@@ -40,7 +40,7 @@ MAN1=		abxtest.1 madplay.1
 USE_GNOME+=	esound
 PKGNAMESUFFIX=	-esound
 .else
-CONFIGURE_ARGS+= --without-esd
+CONFIGURE_ARGS+=	--without-esd
 .endif
 
 post-patch:

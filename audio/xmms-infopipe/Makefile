@@ -25,7 +25,7 @@ GNU_CONFIGURE=	yes
 LIBDIR?=	${PREFIX}/lib/xmms/General
 SRCLIBDIR?=	src/.libs
 
-INSTALLS_SHLIB= yes
+INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%X11BASE%%/lib/xmms/General
 
 do-install:

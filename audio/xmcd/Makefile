@@ -28,7 +28,7 @@ RMAN=		${X11BASE}/bin/rman
 
 .include <bsd.port.pre.mk>
 
-LIBBINDIR=     ${PREFIX}/lib/X11/xmcd/bin-FreeBSD_${OSREL:R}-${ARCH}
+LIBBINDIR=	${PREFIX}/lib/X11/xmcd/bin-FreeBSD_${OSREL:R}-${ARCH}
 
 post-extract:
 	@${CHMOD} -R u+w ${WRKSRC}

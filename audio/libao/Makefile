@@ -31,7 +31,7 @@ MAN5=		libao.conf.5
 LIB_DEPENDS=	artsc.0:${PORTSDIR}/audio/arts
 PLIST_SUB+=	ARTS=""
 .else
-CONFIGURE_ARGS+= --disable-arts
+CONFIGURE_ARGS+=	--disable-arts
 PLIST_SUB+=	ARTS="@comment "
 pre-everything::
 	@${ECHO_MSG} "Define WITH_ARTS to enable the aRts module."
@@ -41,7 +41,7 @@ pre-everything::
 LIB_DEPENDS=	audio.2:${PORTSDIR}/audio/nas
 PLIST_SUB+=	NAS=""
 .else
-CONFIGURE_ARGS+= --disable-nas
+CONFIGURE_ARGS+=	--disable-nas
 PLIST_SUB+=	NAS="@comment "
 pre-everything::
 	@${ECHO_MSG} "Define WITH_NAS to enable the NAS module."
@@ -54,7 +54,7 @@ USE_GNOME+=	esound
 PLIST_SUB+=	ESOUND=""
 PKGNAMESUFFIX=	-esound
 .else
-CONFIGURE_ARGS+= --disable-esd
+CONFIGURE_ARGS+=	--disable-esd
 PLIST_SUB+=	ESOUND="@comment "
 .endif
 

@@ -15,7 +15,7 @@ COMMENT=	A simple audio file player
 
 MANLANG=	ja
 MAN1=		play.1
-MANCOMPRESSED = yes
+MANCOMPRESSED=	yes
 
 post-patch:
 .for file in play_audio.c mixer_ctl.c encode_sun.c encode_riff.c speed.c

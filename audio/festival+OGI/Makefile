@@ -48,7 +48,7 @@ PLIST=		${WRKDIR}/pkg-plist
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
-BROKEN=         "Does not build"
+BROKEN=		"Does not build"
 .endif
 
 WRKSRC=		${WRKDIR}
