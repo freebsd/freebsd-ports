@@ -1,7 +1,6 @@
 bin/easytag
 share/easytag/ChangeLog
 share/easytag/EasyTAG_logo.xpm
-share/gnome/apps/Multimedia/easytag.desktop
 share/locale/cs/LC_MESSAGES/easytag.mo
 share/locale/de/LC_MESSAGES/easytag.mo
 share/locale/es/LC_MESSAGES/easytag.mo
@@ -15,4 +14,5 @@ share/locale/ro/LC_MESSAGES/easytag.mo
 share/locale/ru/LC_MESSAGES/easytag.mo
 share/locale/sv/LC_MESSAGES/easytag.mo
 share/locale/uk/LC_MESSAGES/easytag.mo
+share/pixmaps/EasyTAG.xpm
 @dirrm share/easytag
