@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ImageMagick
-PORTVERSION=	5.3.1
+PORTVERSION=	5.3.4
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%,imagemagick,} \
 		ftp://ftp.yggdrasil.com/mirrors/site/ftp.simplesystems.org/pub/%SUBDIR%/ \
@@ -21,7 +21,6 @@ MAINTAINER=	ports@FreeBSD.org
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2	# XXX
 LIB_DEPENDS=	bz2.1:${PORTSDIR}/archivers/bzip2 \
 		fpx.1:${PORTSDIR}/graphics/libfpx \
-		df.1:${PORTSDIR}/graphics/hdf \
 		jbig.1:${PORTSDIR}/graphics/jbigkit \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		lcms.1:${PORTSDIR}/graphics/lcms \
@@ -35,11 +34,12 @@ USE_LIBTOOL=	yes
 USE_AUTOCONF=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--enable-shared --with-perl=${PERL5}
+CONFIGURE_ARGS=	--enable-shared --with-perl=${PERL5} \
+		--without-gslib --without-hdf
 INSTALLS_SHLIB=	yes
 
 MAN1=		ImageMagick.1 Magick++-config.1 Magick-config.1 \
-		combine.1 convert.1 identify.1 mogrify.1 montage.1
+		composite.1 convert.1 identify.1 mogrify.1 montage.1
 MAN3=		Image::Magick.3
 MAN4=		miff.4
 MAN5=		quantize.5

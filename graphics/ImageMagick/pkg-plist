@@ -2,7 +2,7 @@ bin/Magick++-config
 bin/Magick-config
 %%X11%%bin/animate
 bin/cgimagick
-bin/combine
+bin/composite
 bin/convert
 %%X11%%bin/display
 bin/identify
@@ -37,8 +37,10 @@ include/magick/config.h
 include/magick/delegates.h
 include/magick/draw.h
 include/magick/error.h
+include/magick/font.h
 include/magick/gems.h
 include/magick/image.h
+include/magick/magic.h
 include/magick/magick.h
 include/magick/monitor.h
 include/magick/quantize.h
@@ -228,6 +230,7 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Image/Magick/autosplit.ix
 share/ImageMagick/Copyright.txt
 share/ImageMagick/ImageMagick.html
 share/ImageMagick/QuickStart.txt
+share/ImageMagick/fonts.mgk
 share/ImageMagick/images/appligent.jpg
 share/ImageMagick/images/authentica.jpg
 share/ImageMagick/images/ball.png
@@ -326,6 +329,7 @@ share/ImageMagick/www/api/types/MagickInfo.html
 share/ImageMagick/www/api/types/PixelPacket.html
 share/ImageMagick/www/api/types/PointInfo.html
 share/ImageMagick/www/api/types/ProfileInfo.html
+share/ImageMagick/www/api/types/QuantizeInfo.html
 share/ImageMagick/www/api/types/RectangleInfo.html
 share/ImageMagick/www/api/utility.html
 share/ImageMagick/www/api/vms.html
@@ -336,7 +340,7 @@ share/ImageMagick/www/api.html
 share/ImageMagick/www/archives.html
 share/ImageMagick/www/cd.html
 share/ImageMagick/www/color.html
-share/ImageMagick/www/combine.html
+share/ImageMagick/www/composite.html
 share/ImageMagick/www/convert.html
 share/ImageMagick/www/cvs.html
 share/ImageMagick/www/display.html
