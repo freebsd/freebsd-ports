@@ -151,6 +151,7 @@
     SUBDIR += linux-libxml
     SUBDIR += linuxdoc
     SUBDIR += ltxml
+    SUBDIR += makefaq
     SUBDIR += makepatch
     SUBDIR += maketeidtd
     SUBDIR += man2html
