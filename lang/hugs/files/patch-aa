@@ -1,6 +1,6 @@
---- MkInstal.in.ORIG	Sun Apr 30 01:09:58 2000
-+++ MkInstal.in	Sun Apr 30 01:10:23 2000
-@@ -10,8 +10,8 @@
+--- MkInstal.in.orig	Sat Dec 15 22:07:04 2001
++++ MkInstal.in	Sat Dec 15 22:07:34 2001
+@@ -10,15 +10,15 @@
  # multiple files at once.
  ################################################################
  
@@ -11,3 +11,11 @@
  
  install		:: install_bin install_lib            # the bare minimum
  install		:: install_libs                       # lotsa libraries
+ install		:: install_demos		      # goodies
+ install		:: install_man                        # manual page
+ install		:: install_include                    # FFI headers
+-install		:: install_notes                      # Readme, etc
++#install		:: install_notes                      # Readme, etc
+ 
+ install_libs    :: install_libhugs 		      # Hugs libraries
+ install_libs    :: install_libexts  		      # ghc compatability
