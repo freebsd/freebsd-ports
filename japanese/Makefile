@@ -145,7 +145,6 @@
     SUBDIR += kbanner
     SUBDIR += kcc
     SUBDIR += kde3-i18n
-    SUBDIR += koffice-i18n
     SUBDIR += kdrill
     SUBDIR += kinput2-canna
     SUBDIR += kinput2-canna+freewnn
@@ -164,6 +163,7 @@
     SUBDIR += kinput2-wnn7
     SUBDIR += kochi-cidfonts
     SUBDIR += kochi-ttfonts
+    SUBDIR += koffice-i18n
     SUBDIR += kon2-14dot
     SUBDIR += kon2-16dot
     SUBDIR += kpcal
@@ -351,6 +351,7 @@
     SUBDIR += skkserv
     SUBDIR += slirc
     SUBDIR += slrn
+    SUBDIR += squirrelmail
     SUBDIR += srd-fpw
     SUBDIR += srd-fpw-package
     SUBDIR += t2ps
