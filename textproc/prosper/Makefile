@@ -17,9 +17,15 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	thierry@pompo.net
 COMMENT=	Prosper is a LaTeX class for writing transparencies
 
+.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
+GSPORT?=	print/ghostscript-afpl
+.else
+GSPORT?=	print/ghostscript-gnu
+.endif
+
 BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
-		ps2pdf:${PORTSDIR}/print/ghostscript-gnu
+		ps2pdf:${PORTSDIR}/${GSPORT}
 
 NO_BUILD=	yes
 
@@ -38,6 +44,14 @@ DOCS=		AUTHORS ChangeLog FAQ INSTALL NEWS README TODO \
 		doc/prosper-tour.pdf doc/prosper-tour.ps doc/prosper-tour.tex \
 		doc/rotation.ps doc/rotation.tex
 EXAMPLES_DIR=	doc/doc-examples
+
+pre-fetch:
+.if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
+	@${ECHO} ""
+	@${ECHO} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
+	@${ECHO} "      AFPL Postscript interpreter instead of GNU one"
+	@${ECHO} ""
+.endif
 
 post-extract:
 	@${GZCAT} -c ${DISTDIR}/PPRblends.sty.gz > \
