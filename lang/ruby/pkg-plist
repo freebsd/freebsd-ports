@@ -1,6 +1,6 @@
 bin/irb
-bin/%%RUBY_NAME%%
-@unexec if [ -f %D/bin/ruby ]; then rm %D/bin/ruby; fi
+bin/ruby
+bin/ruby%%_RUBY_SUFFIX%%
 lib/lib%%RUBY_NAME%%.so
 lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_ARCHLIBDIR%%/config.h
