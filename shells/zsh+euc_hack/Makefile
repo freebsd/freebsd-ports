@@ -8,7 +8,6 @@
 MASTERDIR=	${.CURDIR}/../zsh
 
 PKGNAMESUFFIX=	+euc_hack
-PORTREVISION=	1
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	The Z shell with EUC encoding support
