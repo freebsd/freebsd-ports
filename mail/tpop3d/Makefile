@@ -7,14 +7,13 @@
 
 PORTNAME=	tpop3d
 PORTVERSION=	1.5.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ex-parrot.com/~chris/tpop3d/
 
 MAINTAINER=	boris@tagnet.ru
 COMMENT=	Virtual-domain capable POP3 server supporting MySQL,PgSQL etc auth
 
-IS_INTERACTIVE=	yes
 USE_OPENSSL=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
