@@ -1,0 +1,476 @@
+--- Makefile	Fri Apr 23 05:40:24 1993
++++ Makefile	Thu Aug 17 19:18:42 2000
+@@ -28,10 +28,10 @@
+ #
+ # CSLIP and PPP work only under BPF.					
+ #
+-DEFINES = 
++DEFINES = -DCSLIP -DPPP
+ CCOPT = -O2
+-INCLUDES = -I..
+-LIB =
++INCLUDES = -I.. -I/usr/X11R6/include
++LIB =-ll
+ 
+ # These are for the Sun4 version
+ #CCOPT = -O2 -Bstatic
+@@ -41,20 +41,20 @@
+ XLIB= -lXm -lXt -lX11
+ 
+ # The installed binary is owned by this group.
+-GROUP = staff
++GROUP = wheel
+ 
+ # Full pathname of where to install the binaries
+ BINDEST = /usr/local/bin
+ TCPSLICE_BINDEST = /usr/local/bin
+ 
+ # Full pathname of where to install tcpview support files
+-TCPVIEW_DIR = /usr/local/tcpview
+-FILTER_DIR = /usr/local/tcpview/filters
++TCPVIEW_DIR = /usr/local/lib/tcpview
++FILTER_DIR = /usr/local/lib/tcpview/filters
+ 
+ # Full pathname of where to install the manual entries
+-TCPDUMP_MANDEST = /usr/man/manl/tcpdump.l
+-TCPVIEW_MANDEST = /usr/man/manl/tcpview.l
+-TCPSLICE_MANDEST = /usr/man/manl/tcpslice.l
++TCPDUMP_MANDEST = /usr/local/man/man1/tcpdump.1
++TCPVIEW_MANDEST = /usr/local/man/man1/tcpview.1
++TCPSLICE_MANDEST = /usr/local/man/man1/tcpslice.1
+ 
+ # Standard CFLAGS
+ STANDARD_CFLAGS = $(CCOPT) $(DEFINES) $(INCLUDES)
+@@ -92,7 +92,8 @@
+ # Also, gcc does not remove the .o before forking 'as', which can be a
+ # problem if you don't own the file but can write to the directory.
+ .c.o:
+-	rm -f $@; $(CC) $(CFLAGS) -c $*.c
++#	rm -f $@; $(CC) $(CFLAGS) -c $*.c
++	$(CC) $(CFLAGS) -c $*.c
+ 
+ # List all C source files here
+ 
+@@ -189,7 +190,7 @@
+ 	$(CC) $(CFLAGS) -o $@ $(TCPDUMP_OBJ) $(LIB)
+ 
+ tcpview: $(TCPVIEW_OBJ)
+-	$(CC) $(CFLAGS) -o $@ $(TCPVIEW_OBJ) $(XLIB) $(LIB)
++	$(CC) $(CFLAGS) -o $@ $(TCPVIEW_OBJ) -L/usr/X11R6/lib $(XLIB) $(LIB)
+ 
+ tcpslice: $(TCPSLICE_OBJ)
+ 	$(CC) $(CFLAGS) -o $@ $(TCPSLICE_OBJ)
+@@ -261,20 +262,21 @@
+ 	cd $$dir ; ${MAKE} ${MFLAGS} depend2
+ 
+ tcplex.c: tcplex.l
+-	rm -f $@
++#	rm -f $@
+ 	$(LEX) $<
+ 	mv -f lex.yy.c tcplex.c
+ 
+ tokdefs.h: tcpgram.c
+ tcpgram.c: tcpgram.y
+-	rm -f tcpgram.c tokdefs.h
++#	rm -f tcpgram.c tokdefs.h
+ 	$(YACC) -d $<
+ 	mv y.tab.c tcpgram.c
+ 	mv y.tab.h tokdefs.h
+ 
+ version.o: version.c
+ version.c version.h: VERSION TCPVIEW_VERSION
+-	rm -f version.c ; sed 's/.*/char version[] = "&";/' VERSION > version.c
++#	rm -f version.c ; 
++	sed 's/.*/char version[] = "&";/' VERSION > version.c
+ 	sed 's/.*/char tcpview_version[] = "&";/' TCPVIEW_VERSION >> version.c
+ 	set `sed 's/\([0-9]*\)\.\([0-9]*\).*/\1 \2/' VERSION` ; \
+ 		{ echo '#define VERSION_MAJOR' $$1 ; \
+@@ -287,22 +289,22 @@
+ install: force
+ 	-mkdir -p $(TCPVIEW_DIR)
+ 	-mkdir -p $(FILTER_DIR) 
+-	@dir=$(MD)-$(OS)-tcpdump; set -x; \
+-	cd $$dir ; \
+-	    install -m 755 -g $(GROUP) tcpdump $(DESTDIR)$(BINDEST); \
+-	    install -m 755 tcpslice $(DESTDIR)$(TCPSLICE_BINDEST)
++#	@dir=$(MD)-$(OS)-tcpdump; set -x; \
++#	cd $$dir ; \
++#	    install -m 755 -g $(GROUP) -c tcpdump $(DESTDIR)$(BINDEST); \
++#	    install -m 755 -c tcpslice $(DESTDIR)$(TCPSLICE_BINDEST)
+ 	@dir=$(MD)-$(OS)-tcpview; set -x; \
+ 	cd $$dir ; \
+-	    install -m 755 -g $(GROUP) tcpview $(DESTDIR)$(BINDEST); \
+-	    install -m 755 -g $(GROUP) BGP $(FILTER_DIR); \
+-	    install -m 755 -g $(GROUP) telnet $(FILTER_DIR); \
+-	    install -m 755 -g $(GROUP) generic $(FILTER_DIR); \
++	    install -m 755 -g $(GROUP) -c tcpview $(DESTDIR)$(BINDEST); \
++	    install -m 755 -g $(GROUP) -c BGP $(FILTER_DIR); \
++	    install -m 755 -g $(GROUP) -c telnet $(FILTER_DIR); \
++	    install -m 755 -g $(GROUP) -c generic $(FILTER_DIR); \
+ 	cd ../DOC ; \
+ 	install -m 666 -c hosts $(TCPVIEW_DIR); \
+ 	install -m 666 -c manuf $(TCPVIEW_DIR); \
+-	install -c tcpdump.1 $(DESTDIR)$(TCPDUMP_MANDEST); \
+-	install -c tcpview.1 $(DESTDIR)$(TCPVIEW_MANDEST); \
+-	install -c tcpslice.1 $(DESTDIR)$(TCPSLICE_MANDEST)
++	install -m 444 -c tcpview.1 $(DESTDIR)$(TCPVIEW_MANDEST); \
++#	install -m 444 -c tcpdump.1 $(DESTDIR)$(TCPDUMP_MANDEST); \
++#	install -m 444 -c tcpslice.1 $(DESTDIR)$(TCPSLICE_MANDEST)
+ 
+ lint:	force
+ 	lint -hbxn $(CSRC) | \
+@@ -367,8 +369,3 @@
+ 	-../mkdep $(DEFINES) $(INCLUDES) $(TCPVIEW_CSRC) \
+ 		tcpgram.c tcplex.c
+ 	rm -f $(GEN)
+-
+-
+-
+-
+-
+--- callbacks.c	Fri Apr 23 05:22:59 1993
++++ callbacks.c	Tue Feb 25 22:14:56 1997
+@@ -66,7 +66,9 @@
+ extern Widget hex_text_widget;        /* hex (bottom) window */
+ extern Widget packet_label;
+ 
++/*
+ extern char *sys_errlist[];
++*/
+ 
+ #ifdef __STDC__
+ void redisplay_current_list(void);
+--- detail-domain.c	Fri Apr 23 04:39:51 1993
++++ detail-domain.c	Mon Mar  8 23:30:02 1999
+@@ -199,6 +199,7 @@
+       case T_ANY:		/* matches any type */
+ 	strcpy(type_buf, "ANY");
+ 	break;
++#ifdef T_UNSPEC	
+       case T_UINFO:
+ 	strcpy(type_buf, "UINFO");
+ 	break;
+@@ -211,6 +212,7 @@
+       case T_UNSPEC:
+ 	strcpy(type_buf, "UNSPEC");
+         break;
++#endif        
+       default:
+ 	sprintf(type_buf, "%d", type);
+         break;
+@@ -633,6 +635,7 @@
+ 	printf("; errors = %s\n", str);
+ 	MARK_WINDOW();
+ 
++#ifdef T_UNSPEC
+       case T_UINFO:
+         printf("    UINFO: ");
+         printf("%s\n", cp);
+@@ -654,6 +657,12 @@
+ 	MARK_WINDOW();
+         break;
+ 
++      case T_UNSPEC:
++	printf("    <binary data, see hex dump below>\n");
++	INCR_PTRS(rdlength);
++	MARK_WINDOW();
++	break;
++#endif
+       case T_WKS:
+         if (rdlength < (int)(sizeof(u_long) + 1))
+             break;
+@@ -730,11 +739,6 @@
+ 	break;
+ 
+ 
+-      case T_UNSPEC:
+-	printf("    <binary data, see hex dump below>\n");
+-	INCR_PTRS(rdlength);
+-	MARK_WINDOW();
+-	break;
+ 
+ 
+       default:
+--- detail-tcp.c	Fri Apr 23 04:39:55 1993
++++ detail-tcp.c	Mon Mar  8 23:27:08 1999
+@@ -37,6 +37,7 @@
+ #endif
+ 
+ #include <sys/types.h>
++#include <sys/param.h>
+ #include <netinet/in.h>
+ #include <netinet/in_systm.h>
+ #include <netinet/ip.h>
+--- detail-udp.c	Fri Apr 23 04:39:55 1993
++++ detail-udp.c	Mon Mar  8 23:27:39 1999
+@@ -37,6 +37,7 @@
+ #endif
+ 
+ #include <sys/types.h>
++#include <sys/param.h>
+ #include <sys/socket.h>
+ #include <netinet/in.h>
+ #include <netinet/in_systm.h>
+@@ -50,11 +51,15 @@
+ #include <errno.h>
+ #include <sys/time.h>
+ #include <rpc/types.h>
++#include <rpc/xdr.h>
+ #include <rpc/auth.h>
+ #include <rpc/auth_unix.h>
+ #include <rpc/svc.h>
+-#include <rpc/xdr.h>
+ #include <rpc/rpc_msg.h>
++#include <sys/ucred.h> 
++#include <sys/mount.h>
++#include <nfs/rpcv2.h>
++#include <nfs/nfsv2.h>
+ #include <nfs/nfs.h>
+ 
+ #include "interface.h"
+--- md-386.c	Thu Jan  1 08:00:00 1970
++++ md-386.c	Thu Aug 17 19:15:37 2000
+@@ -0,0 +1,6 @@
++int
++clock_sigfigs()
++{
++	return 3;
++}
++
+--- md-386.h	Thu Jan  1 08:00:00 1970
++++ md-386.h	Thu Aug 17 19:15:33 2000
+@@ -0,0 +1,16 @@
++#define TCPDUMP_ALIGN
++
++#include <machine/endian.h>
++
++/* 32-bit data types */
++/* N.B.: this doesn't address printf()'s %d vs. %ld formats */
++/*
++typedef	long	int32;		
++*/
++/* signed 32-bit integer */
++#ifndef	AUTH_UNIX
++/*
++typedef	u_long	u_int32;	
++*/
++/* unsigned 32-bit integer */
++#endif
+--- mdtype	Mon Feb 17 13:29:48 1992
++++ mdtype	Tue Feb 25 23:35:31 1997
+@@ -7,10 +7,18 @@
+ if ( -f /bin/arch ) set mach=`/bin/arch`
+ if ($mach == "UNKNOWN") then
+ 	set temp=`machine`
+-	if ($temp != "") set mach=$temp
+-endif
++	if ($temp != "") set mach=$temp 
++endif 
++
+ # Hack, hack...
+ if ($mach == "sparc") set mach=sun4
++
++# Hack for FreeBSD
++if ($mach == "UNKNOWN") then
++	set temp=`uname|grep FreeBSD`
++	if ($temp != "") set mach=386
++endif
++
+ echo $mach
+ if ($mach == "UNKNOWN") exit 1
+ exit 0
+--- ostype.awk	Tue Jan 28 04:37:30 1992
++++ ostype.awk	Tue Feb 25 21:16:42 1997
+@@ -12,7 +12,7 @@
+ 	os = "sunos4"
+ }
+ 
+-$0 ~ /^4.[1-9]\ ?BSD / {
++$0 ~ /BSD / {
+ 	os = "bsd"
+ }
+ 
+--- print-domain.c	Fri Apr 23 04:40:15 1993
++++ print-domain.c	Mon Mar  8 23:20:34 1999
+@@ -137,10 +137,10 @@
+ 	case T_HINFO:	printf(" HINFO"); break;
+ 	case T_MINFO:	printf(" MINFO"); break;
+ 	case T_MX:	printf(" MX"); break;
++#ifdef T_UNSPEC
+ 	case T_UINFO:	printf(" UINFO"); break;
+ 	case T_UID:	printf(" UID"); break;
+ 	case T_GID:	printf(" GID"); break;
+-#ifdef T_UNSPEC
+ 	case T_UNSPEC:	printf(" UNSPEC"); break;
+ #endif
+ 	case T_AXFR:	printf(" AXFR"); break;
+@@ -213,10 +213,10 @@
+ 			}
+ #endif
+ 			break;
++#ifdef T_UNSPEC
+ 	case T_UINFO:	printf(" UINFO"); break;
+ 	case T_UID:	printf(" UID"); break;
+ 	case T_GID:	printf(" GID"); break;
+-#ifdef T_UNSPEC
+ 	case T_UNSPEC:	printf(" UNSPEC"); break;
+ #endif
+ 	case T_AXFR:	printf(" AXFR"); break;
+--- print-fddi.c	Fri Apr 23 04:40:16 1993
++++ print-fddi.c	Tue Feb 25 22:21:53 1997
+@@ -54,6 +54,10 @@
+ #include "interface.h"
+ #include "addrtoname.h"
+ 
++
++int     fddipad = 0;      /* for proper alignment of header */   
++
++
+ /*
+  * NOTE:  This is a very preliminary hack for FDDI support.
+  * There are all sorts of wired in constants & nothing (yet)
+--- print-nfs.c	Fri Apr 23 04:40:18 1993
++++ print-nfs.c	Mon Mar  8 23:24:45 1999
+@@ -38,10 +38,10 @@
+ #include <sys/time.h>
+ #include <errno.h>
+ #include <rpc/types.h>
++#include <rpc/xdr.h>
+ #include <rpc/auth.h>
+ #include <rpc/auth_unix.h>
+ #include <rpc/svc.h>
+-#include <rpc/xdr.h>
+ #include <rpc/rpc_msg.h>
+ 
+ #include <ctype.h>
+@@ -54,6 +54,13 @@
+ /* These must come after interface.h for BSD. */
+ #if BSD >= 199006
+ #include <sys/ucred.h>
++#include <sys/mount.h>
++/*#include <rpcsvc/nfs_prot.h>*/
++#define	NFSPROC_WRITECACHE ((unsigned long)(7))
++#define	NFSPROC_ROOT ((unsigned long)(3))
++#define	NFSPROC_STATFS ((unsigned long)(17))
++
++#include <nfs/rpcv2.h>
+ #include <nfs/nfsv2.h>
+ #endif
+ #include <nfs/nfs.h>
+@@ -250,11 +257,13 @@
+ 			return;
+ 		break;
+ 
++/*
+ #if RFS_ROOT != NFSPROC_NOOP
+ 	case RFS_ROOT:
+ 		printf(" root");
+ 		break;
+ #endif
++*/
+ 	case RFS_LOOKUP:
+ 		printf(" lookup");
+ 		if ((dp = parsereq(rp, length)) != 0 && parsefhn(dp) != 0)
+@@ -277,7 +286,7 @@
+ 			return;
+ 		}
+ 		break;
+-
++/*
+ #if RFS_WRITECACHE != NFSPROC_NOOP
+ 	case RFS_WRITECACHE:
+ 		printf(" writecache");
+@@ -291,6 +300,7 @@
+ 		}
+ 		break;
+ #endif
++*/
+ 	case RFS_WRITE:
+ 		printf(" write");
+ 		if ((dp = parsereq(rp, length)) != 0 &&
+--- print-snmp.c	Fri Apr 23 04:40:27 1993
++++ print-snmp.c	Wed Feb 26 00:13:29 1997
+@@ -1045,7 +1045,7 @@
+   if (!Mib)
+     Mib = read_mib("mib.txt");
+   if (!Mib)
+-    Mib = read_mib("/usr/local/mib/mib.txt");
++    Mib = read_mib("/usr/local/lib/tcpview/mib/mib.txt");
+   if (!Mib){
+     err_print("Couldn't find mib file\n");
+     exit(2);
+--- print-sunrpc.c	Fri Apr 23 04:40:27 1993
++++ print-sunrpc.c	Tue Feb 25 21:33:36 1997
+@@ -38,10 +38,10 @@
+ #include <sys/time.h>
+ #include <errno.h>
+ #include <rpc/types.h>
++#include <rpc/xdr.h>
+ #include <rpc/auth.h>
+ #include <rpc/auth_unix.h>
+ #include <rpc/svc.h>
+-#include <rpc/xdr.h>
+ #include <rpc/rpc_msg.h>
+ 
+ #include <rpc/pmap_prot.h>
+--- print-udp.c	Fri Apr 23 04:40:29 1993
++++ print-udp.c	Mon Mar  8 23:02:08 1999
+@@ -39,10 +39,10 @@
+ #include <errno.h>
+ #include <sys/time.h>
+ #include <rpc/types.h>
++#include <rpc/xdr.h>
+ #include <rpc/auth.h>
+ #include <rpc/auth_unix.h>
+ #include <rpc/svc.h>
+-#include <rpc/xdr.h>
+ #include <rpc/rpc_msg.h>
+ 
+ #ifdef TCPVIEW
+@@ -53,6 +53,8 @@
+ /* These must come after interface.h for BSD. */
+ #if BSD >= 199006
+ #include <sys/ucred.h>
++#include <sys/mount.h>
++#include <nfs/rpcv2.h>
+ #include <nfs/nfsv2.h>
+ #endif
+ #include <nfs/nfs.h>
+--- tcpview.c	Fri Apr 23 04:40:33 1993
++++ tcpview.c	Tue Feb 25 23:48:35 1997
+@@ -33,7 +33,7 @@
+ 
+ #include <stdio.h>
+ #include <sys/types.h>
+-#include <sys/limits.h>
++#include <limits.h>
+ #include  <X11/Xlib.h>
+ #include  <X11/Intrinsic.h>
+ #include  <X11/StringDefs.h>
+@@ -155,13 +155,13 @@
+ 
+ static XtResource resources[] = {
+   { "hostnames", "Hostnames", XtRString, sizeof(String), 
+-      XtOffset(params_ptr, hostnames), XtRString, "/usr/local/tcpview/hosts" },
++      XtOffset(params_ptr, hostnames), XtRString, "/usr/local/lib/tcpview/hosts" },
+   { "manuf", "Manuf", XtRString, sizeof(String), 
+-      XtOffset(params_ptr, manuf), XtRString, "/usr/local/tcpview/manuf" },
++      XtOffset(params_ptr, manuf), XtRString, "/usr/local/lib/tcpview/manuf" },
+   { "services", "Services", XtRString, sizeof(String), 
+       XtOffset(params_ptr, services), XtRString, "/etc/services" },
+   { "filters", "Filters", XtRString, sizeof(String), 
+-      XtOffset(params_ptr, filters), XtRString, "/usr/local/tcpview/filters" },
++      XtOffset(params_ptr, filters), XtRString, "/usr/local/lib/tcpview/filters" },
+   { "viewer", "Viewer", XtRString, sizeof(String), 
+       XtOffset(params_ptr, viewer), XtRString, "*" },
+   { "printcommand", "Printcommand", XtRString, sizeof(String), 
+--- tv_addrtoname.c	Fri Apr 23 04:40:35 1993
++++ tv_addrtoname.c	Tue Feb 25 22:05:49 1997
+@@ -110,6 +110,7 @@
+   u_short p;
+ };
+ 
++#define IPPROTO_HELLO           63              /* "hello" routing protocol */
+ struct ipproto ipproto_db[] = {
+   { "IP", IPPROTO_IP },
+   { "ICMP", IPPROTO_ICMP },
