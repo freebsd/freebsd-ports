@@ -3,7 +3,7 @@
 # Date created:		25 December 1994
 # Whom:			joerg
 #
-# $Id: Makefile,v 1.10 1996/11/18 11:26:03 asami Exp $
+# $Id: Makefile,v 1.11 1996/11/18 13:59:23 asami Exp $
 #
 
 DISTNAME=	xmine-1.0.3-Xaw
@@ -16,6 +16,6 @@ MAINTAINER=	joerg@FreeBSD.org
 LIB_DEPENDS=    Xaw3d\\.:${PORTSDIR}/x11/Xaw3d
 
 USE_IMAKE=      yes
-MAN1=		xmine.1
+MAN6=		xmine.6
 
 .include <bsd.port.mk>

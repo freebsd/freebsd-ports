@@ -1,0 +1,8 @@
+--- xmine.man.orig	Mon Mar 28 10:15:52 1994
++++ xmine.man	Fri Jan  3 03:27:40 1997
+@@ -1,4 +1,4 @@
+-.TH XMINE 1
++.TH XMINE 6
+ .SH NAME
+ xmine \- identify mines in a mine field without getting blown up
+ .SH SYNOPSIS

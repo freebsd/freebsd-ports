@@ -1,15 +1,11 @@
-*** Imakefile~	Mon Dec 26 12:50:19 1994
---- Imakefile	Mon Dec 26 12:53:45 1994
-***************
-*** 1,5 ****
-  /* if you have Xaw3d installed, you might wish to use this: */
-! #define UseXaw3d  0
-  
-  /* for debugging: */
-  /*  CDEBUGFLAGS = -g -O2 */
---- 1,5 ----
-  /* if you have Xaw3d installed, you might wish to use this: */
-! #define UseXaw3d  YES
-  
-  /* for debugging: */
-  /*  CDEBUGFLAGS = -g -O2 */
+--- Imakefile.orig	Fri Jan  3 03:25:27 1997
++++ Imakefile	Fri Jan  3 03:29:04 1997
+@@ -1,5 +1,7 @@
++MANSUFFIX=6
++
+ /* if you have Xaw3d installed, you might wish to use this: */
+-#define UseXaw3d  0
++#define UseXaw3d  YES
+ 
+ /* for debugging: */
+ /*  CDEBUGFLAGS = -g -O2 */
