@@ -3,10 +3,11 @@
 # Date created:		Thu Nov  7 00:53:18 WST 1996
 # Whom:			Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.3 1996/11/06 16:37:10 peter Exp $
+# $Id: Makefile,v 1.4 1996/11/06 17:20:53 peter Exp $
 #
 
 DISTNAME=	squid-1.1.beta13
+PKGNAME=	squid-1.1b13
 CATEGORIES+=	www
 MASTER_SITES=  \
 	ftp://squid.nlanr.net/pub/squid-1.1.beta/ \
@@ -34,7 +35,7 @@ post-install:
 		echo "Installing ${PREFIX}/etc/rc.d/squid.sh startup file."; \
 		echo "#!/bin/sh" > ${PREFIX}/etc/rc.d/squid.sh; \
 		echo "if [ -x /usr/local/sbin/RunCache -a -f /usr/local/etc/squid/squid.conf ]; then" >> ${PREFIX}/etc/rc.d/squid.sh; \
-		echo "	(cd /tmp; /usr/local/sbin/RunCache &) ; echo -n ' squid'" >> ${PREFIX}/etc/rc.d/squid.sh; \
+		echo "	(cd /tmp; /usr/local/sbin/RunCache >/dev/null 2>&1 &) ; echo -n ' squid'" >> ${PREFIX}/etc/rc.d/squid.sh; \
 		echo "fi" >> ${PREFIX}/etc/rc.d/squid.sh; \
 		chmod 751 ${PREFIX}/etc/rc.d/squid.sh; \
 	fi
