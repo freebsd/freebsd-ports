@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	yudit
-PORTVERSION=	1.5.p1
+PORTVERSION=	1.6
 CATEGORIES=	editors converters print
 MASTER_SITES=	http://yudit.org/download/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= apps/editors/X
-DISTNAME=	${PORTNAME}-1.5
+DISTNAME=	${PORTNAME}-1.6
 
 PATCH_SITES=	http://yudit.org/download/
-PATCHFILES=	yudit-1.5.patch1
-PATCH_DIST_STRIP=	-p1
+#PATCHFILES=	yudit-1.5.patch1
+#PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	rch@WriteMe.Com
 
