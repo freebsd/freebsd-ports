@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	criticalmass
 DISTNAME=	CriticalMass-${PORTVERSION}
 
-MAINTAINER=	nbm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An SDL/OpenGL space shoot\'em up game
 
 USE_SDL=	image mixer sdl
