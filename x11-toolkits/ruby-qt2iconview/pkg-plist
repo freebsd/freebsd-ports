@@ -1,0 +1,4 @@
+%%RUBY_SITEARCHLIBDIR%%/qt2iconview.so
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2iconview/iconview/iconview.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2iconview/iconview
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2iconview
