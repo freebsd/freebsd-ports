@@ -24,7 +24,7 @@ TARGET_DIR?=	${PREFIX}/share/java/${PORTNAME}-${PORTVERSION}
 ANT?=		${LOCALBASE}/bin/ant
 
 do-build:
-	@cd ${WRKDIR} && ${ANT}
+	@cd ${WRKSRC} && ${ANT}
 
 do-install:
 	@${ECHO} -n ">> Creating directory ${TARGET_DIR}..."
