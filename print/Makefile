@@ -175,6 +175,7 @@
     SUBDIR += teTeX
     SUBDIR += tex
     SUBDIR += tgif2tex
+    SUBDIR += tipograf
     SUBDIR += tr2latex
     SUBDIR += transfig
     SUBDIR += trueprint
