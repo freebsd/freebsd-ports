@@ -1540,7 +1540,6 @@ jdk%%JDK_VERSION%%/src.zip
 %%MINIMAL:%%%%DEBUG:%%jdk%%JDK_VERSION%%/jre/plugin/i386/ns610/libjavaplugin_oji_g.so
 %%DEBUG:%%jdk%%JDK_VERSION%%/lib/htmlconverter_g.jar
 @exec	mkdir -p %D/share/doc/java
-@unexec	rmdir %D/share/doc/java 2>/dev/null || true
 @exec	%%LOCALBASE%%/bin/registervm "%D/jdk%%JDK_VERSION%%/bin/java # FREEBSD-JDK%%JDK_VERSION%%"
 @unexec	%%LOCALBASE%%/bin/unregistervm "%D/jdk%%JDK_VERSION%%/bin/java"
 @dirrm jdk%%JDK_VERSION%%/bin
