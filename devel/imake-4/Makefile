@@ -7,7 +7,7 @@
 
 PORTNAME=	imake
 PORTVERSION=	4.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_XFREE}
 MASTER_SITE_SUBDIR=	4.1.0
@@ -116,4 +116,17 @@ ExtendedInputDevices?=	YES
 # InstallXserverSetUID=NO : use Xwrapper.
 # End of XFree86 configrations
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${HasXdmAuth} == YES
+.if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
+.if !exists(${DISTDIR}/${DIST_SUBDIR}/Wraphelp.c) &&\
+    !exists(${FILESDIR}/Wraphelp.c)
+pre-everything::
+	@${ECHO_MSG} "You don't have Wraphelp.c: HasXdmAuth disabled."
+HasXdmAuth=	NO
+.endif
+.endif
+.endif
+
+.include <bsd.port.post.mk>
