@@ -42,5 +42,3 @@ be approximated through one or several similarly looking characters.
 
 libiconv is for you if your application needs to support multiple character
 encodings, but that support lacks from your system.
-
-WWW: http://clisp.cons.org/~haible/packages-libiconv.html
