@@ -11,26 +11,20 @@ CATEGORIES=	games
 MASTER_SITES=	http://step.polymtl.ca/~coyote/tank/
 DISTFILES=	${DISTNAME}-src.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	erik@smluc.org
 COMMENT=	A 3-D network tank game that uses OpenGL/Mesa
 
 BUILD_DEPENDS=	${X11BASE}/lib/libaux.a:${PORTSDIR}/graphics/libaux
 
-USE_MESA=	yes
+USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
+MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"
 ALL_TARGET=	linux-mesa-elf
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 500000
-BROKEN=		"does not build on FreeBSD ${OSVERSION}"
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tank ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/share/tank
-	${INSTALL_DATA} ${WRKSRC}/*.tga ${PREFIX}/share/tank
-	${INSTALL_DATA} ${WRKSRC}/*.au ${PREFIX}/share/tank
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.tga ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.au ${DATADIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
