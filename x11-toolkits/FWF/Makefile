@@ -16,7 +16,7 @@ USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/FWF
 PATCH_STRIP=	-p1
 XMKMF=		env X11BASE=${X11BASE} WRKSRC=${WRKSRC} ${FILESDIR}/xmkmf
-X_NO_MAKE_MAKEFILES=	yes
+X_NO_MAKE_MAKEFILES=yes
 
 post-install:
 	ldconfig -m ${PREFIX}/lib
