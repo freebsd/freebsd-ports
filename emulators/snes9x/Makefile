@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	snes9x
-PORTVERSION=	1.41.1
-PORTREVISION=	1
+PORTVERSION=	1.42
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.lysator.liu.se/snes9x/
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}-src
+MASTER_SITES=	http://www.lysator.liu.se/snes9x/${PORTVERSION}/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	green@FreeBSD.org
 COMMENT=	Super Nintendo Entertainment System(SNES) Emulator
@@ -19,11 +18,12 @@ PLIST_FILES=	bin/snes9x
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 
 USE_X_PREFIX=	YES
-GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
-MAKE_ARGS=	CC="${CC} ${CFLAGS}" CCC="${CXX} ${CXXFLAGS}" \
-		INCLUDES="-I${X11BASE}/include ${PTHREAD_CFLAGS}" \
+GNU_CONFIGURE=	YES
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+MAKE_ARGS=	INCLUDES="-I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LDLIBS="-L${X11BASE}/lib ${PTHREAD_LIBS}" \
+		OPTIMISE="${CXXFLAGS}"
 
 .include <bsd.port.pre.mk>
 
@@ -33,9 +33,12 @@ CONFIGURE_ARGS+=	--with-assembler
 .if defined(WITH_MMX)
 CONFIGURE_ARGS+=	--with-mmx
 .endif
+.else
+CONFIGURE_ARGS+=	--without-assembler
 .endif
 
 .if defined(WITH_OPENGL)
+USE_GL=		yes
 CONFIGURE_ARGS+=	--with-opengl
 SNES9X_BIN=	osnes9x
 .else

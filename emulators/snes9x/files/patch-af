@@ -1,19 +1,6 @@
---- unix/unix.cpp.orig	Fri Jul 25 23:20:19 2003
-+++ unix/unix.cpp	Sat Aug  9 00:58:34 2003
-@@ -97,9 +97,11 @@
- #include <ctype.h>
- #include <dirent.h>
- 
--#if defined(__linux) || defined(__sun)
-+#if defined(__linux) || defined(__sun) || defined(__FreeBSD__)
-+#if !defined(__FreeBSD__)
- #undef USE_THREADS
- #define USE_THREADS
-+#endif
- #include <unistd.h>
- #include <sys/types.h>
- #include <sys/ioctl.h>
-@@ -114,8 +116,12 @@
+--- unix/unix.cpp.orig	Fri Dec  5 02:03:08 2003
++++ unix/unix.cpp	Sun Jan 25 00:52:36 2004
+@@ -109,8 +109,12 @@
  pthread_mutex_t mutex;
  #endif
  
@@ -27,7 +14,7 @@
  #include <sys/mman.h>
  #endif
  
-@@ -132,6 +138,11 @@
+@@ -127,6 +131,11 @@
  //typedef void (*SIG_PF)();
  //#endif
  
@@ -37,9 +24,9 @@
 +#endif
 +
  #include "snes9x.h"
- #include "MEMMAP.H"
+ #include "memmap.h"
  #include "debug.h"
-@@ -158,7 +169,10 @@
+@@ -153,7 +162,10 @@
  int NumControllers = 5;
  
  #ifdef JOYSTICK_SUPPORT
@@ -50,7 +37,7 @@
  #include <linux/joystick.h>
  int js_fd [4] = {-1, -1, -1, -1};
  int js_map_button [4][16] = {
-@@ -205,6 +219,68 @@
+@@ -200,6 +212,68 @@
  char *js_device [4] = {"/dev/js0", "/dev/js1", "/dev/js2", "/dev/js3"};
  #endif
  
@@ -119,16 +106,16 @@
  void InitJoysticks ();
  void ReadJoysticks ();
  #endif
-@@ -215,7 +291,7 @@
- char *rom_filename = NULL;
- char *snapshot_filename = NULL;
+@@ -212,7 +286,7 @@
+ char *SDD1_pack = NULL;
  
--#if defined(__linux) || defined(__sun)
-+#if defined(__linux) || defined(__sun) || defined(__FreeBSD__)
+ //FIXME: I see no reason not to configureenable this for all Unixen
+-#if defined(DEBUGGER) && (defined(__linux) || defined(__sun))
++#if defined(DEBUGGER) && (defined(__linux) || defined(__sun) || defined(__FreeBSD__))
  static void sigbrkhandler(int)
  {
- #ifdef DEBUGGER
-@@ -242,91 +318,43 @@
+     CPU.Flags |= DEBUG_MODE_FLAG;
+@@ -237,91 +311,43 @@
      if (strcmp (argv [i], "-j") == 0 ||
  	     strcasecmp (argv [i], "-nojoy") == 0)
  	Settings.JoystickEnabled = FALSE;
@@ -136,9 +123,23 @@
 -    {
 -	if (i + 1 < argc)
 -	    js_device[0] = argv[++i];
--	else
++#ifdef __FreeBSD__
++    else if (strcasecmp(argv[i], "-joyshift") == 0)
++	JoystickShift = 1;
++#endif
++    else if (strncasecmp(argv[i], "-joydev", sizeof("-joydev") - 1) == 0) {
++	char *end, *snum = argv[i] + sizeof("-joydev") - 1;
++	unsigned long num;
++
++	if (*snum == '\0' || argc < i + 1)
++		S9xUsage();
++	if ((num = strtoul(snum, &end, 10)) < JOYSTICK_MAX_DEVICES &&
++	    num > 0 && *end == '\0')
++		js_device[num - 1] = argv[++i];
+ 	else
 -	    S9xUsage ();
--    }
++		S9xUsage();
+     }
 -    else if (strcasecmp (argv [i], "-joydev2") == 0)
 -    {
 -	if (i + 1 < argc)
@@ -197,23 +198,9 @@
 -	    if ((t = atoi (argv [++i])) < 15) js_map_button [2][t] = SNES_START_MASK;
 -	    if ((t = atoi (argv [++i])) < 15) js_map_button [2][t] = SNES_SELECT_MASK;
 -	}
-+#ifdef __FreeBSD__
-+    else if (strcasecmp(argv[i], "-joyshift") == 0)
-+	JoystickShift = 1;
-+#endif
-+    else if (strncasecmp(argv[i], "-joydev", sizeof("-joydev") - 1) == 0) {
-+	char *end, *snum = argv[i] + sizeof("-joydev") - 1;
-+	unsigned long num;
-+
-+	if (*snum == '\0' || argc < i + 1)
-+		S9xUsage();
-+	if ((num = strtoul(snum, &end, 10)) < JOYSTICK_MAX_DEVICES &&
-+	    num > 0 && *end == '\0')
-+		js_device[num - 1] = argv[++i];
- 	else
+-	else
 -	    S9xUsage ();
-+		S9xUsage();
-     }
+-    }
 -    else if (strcasecmp (argv [i], "-joymap4") == 0)
 -    {
 -	if (i + 8 < argc)
@@ -255,7 +242,7 @@
      }
      else 
  #endif
-@@ -469,7 +497,7 @@
+@@ -472,7 +498,7 @@
  #if !defined(__MSDOS) && defined(DEBUGGER)
  #if defined(__unix) && !defined(__NeXT__)
      struct sigaction sa;
@@ -264,7 +251,7 @@
      sa.sa_handler = sigbrkhandler;
  #else
      sa.sa_handler = (SIG_PF) sigbrkhandler;
-@@ -661,6 +689,7 @@
+@@ -664,6 +690,7 @@
  }
  
  #ifdef JOYSTICK_SUPPORT
@@ -272,7 +259,7 @@
  void InitJoysticks ()
  {
  #ifdef JSIOCGVERSION
-@@ -781,6 +810,189 @@
+@@ -784,6 +811,189 @@
      }
  #endif
  }
@@ -462,7 +449,7 @@
  #endif // defined (JOYSTICK_SUPPORT)
  
  const char *GetHomeDirectory ()
-@@ -1568,7 +1780,7 @@
+@@ -1575,7 +1785,7 @@
  }
  #endif
  
@@ -471,7 +458,7 @@
  static int Rates[8] =
  {
      0, 8000, 11025, 16000, 22050, 32000, 44100, 48000
-@@ -1688,7 +1900,7 @@
+@@ -1696,7 +1906,7 @@
  #endif
  
  
@@ -480,7 +467,7 @@
  void S9xUnixProcessSound (void)
  {
  }
-@@ -1729,7 +1941,7 @@
+@@ -1737,7 +1947,7 @@
  }
  #endif
  
@@ -489,7 +476,7 @@
  void S9xGenerateSound ()
  {
      int bytes_so_far = so.sixteen_bit ? (so.samples_mixed_so_far << 1) :
-@@ -1814,7 +2026,7 @@
+@@ -1822,7 +2032,7 @@
  
  void *S9xProcessSound (void *)
  {

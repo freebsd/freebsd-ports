@@ -1,5 +1,5 @@
---- MEMMAP.CPP.orig	Fri Jul 25 23:20:19 2003
-+++ MEMMAP.CPP	Sat Aug  9 01:08:05 2003
+--- memmap.cpp.orig	Fri Jul 25 23:20:19 2003
++++ memmap.cpp	Sat Aug  9 01:08:05 2003
 @@ -79,7 +79,7 @@
  #endif
  #include <ctype.h>
