@@ -7,6 +7,7 @@ and Java with the use of the FreeBSD native Java plug-in.
 This version of mozilla is used by other vendors for browser development.
 It contains many fixes for security, stability, and dataloss as well 
 as some performance problems.  If you want the most stable release of
-Mozilla, this is the port to install.
+Mozilla with no new features from version to version, this is the port to 
+install.
 
 WWW: http://www.mozilla.org/
