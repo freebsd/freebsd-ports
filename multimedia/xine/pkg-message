@@ -6,7 +6,7 @@
 * kern.ipc.shmall=32768                                *
 *                                                      *
 * To suppress many xitk warnings, please put following *
-* setting to ~/.xitkrc.                                *
+* setting in ~/.xitkrc.                                *
 *                                                      *
 * feature.shm = 0                                      *
 ********************************************************
