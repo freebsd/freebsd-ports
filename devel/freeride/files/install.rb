@@ -38,6 +38,39 @@ class File
   end
 end
 
+class String
+	attr_accessor :localDir
+	
+	def rmLocal
+		localDir = "/usr/local/" if localDir.nil?
+		gsub( Regexp.new( "^#{Regexp.escape(localDir)}" ), "" )
+    end
+end
+
+def dirmake( dir, noharm = false )
+  for f in dir.sort.reverse
+    next if f == "."
+    next if f == "CVS"
+    odn = File.libdirPath( f )
+    if noharm then
+      $stdout << "@dirrm #{odn.rmLocal}\n"
+    else
+      File::makedirs( odn )
+    end
+  end
+end
+
+def filecopy( path, noharm = false )
+  for f in path
+    ofn = File.libdirPath( f )
+    if noharm then
+      $stdout << "#{ofn.rmLocal}\n"
+    else
+      File::install( f, ofn, 0644, true)
+    end
+  end
+end
+
 def install_rb(noharm = false, srcdir = nil)
   libdir = $libdir
   libdir_excl = $libdir_excl
@@ -54,27 +87,16 @@ def install_rb(noharm = false, srcdir = nil)
       next if libdir_excl.contains? { |p| (f =~ p) }
       path.push File.join( ld, f )
       dir |= [File.join( ld, File.dirname(f) )]
-    end
-  }
-  for f in dir
-    next if f == "."
-    next if f == "CVS"
-    odn = File.libdirPath( f )
-    if noharm then
-      $stderr << "mkdir #{odn}\n"
-    else
-      File::makedirs( odn )
-    end
+      end
+    }
+  if noharm then
+	filecopy( path, noharm )
+	dirmake( dir, noharm )
+  else
+  	dirmake( dir, noharm )
+	filecopy( path, noharm )
   end
-  for f in path
-    ofn = File.libdirPath( f )
-    if noharm then
-      $stderr << "install #{f} #{ofn}\n"
-    else
-      File::install( f, ofn, 0644, true)
-    end
-    $stderr.flush
-  end
+  $stdout.flush
 end
 
 no_harm = (ARGV.include_like?(/\A^-[a-zA-Z0-9]*n/) or ARGV.include?("--no-harm"))

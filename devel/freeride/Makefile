@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	freeride
-PORTVERSION=	0.7.0
+PORTVERSION=	0.8.0
 CATEGORIES=	devel ruby
-MASTER_SITES=	http://rubyforge.org/frs/download.php/1208/
+MASTER_SITES=	http://rubyforge.org/frs/download.php/1641/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	alecn2002@yandex.ru
@@ -22,15 +21,8 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/fox.so:${PORTSDIR}/x11-toolkits/ruby-fox \
 USE_RUBY=	yes
 NO_BUILD=	yes
 
-.include <bsd.port.pre.mk>
-
-${WRKSRC}/install.rb: ${FILESDIR}/install.rb
+post-patch:
 	${CP} ${FILESDIR}/install.rb ${WRKSRC}/
-
-pre-install: ${WRKSRC}/install.rb
-
-install-noharm: pre-install
-	cd ${WRKSRC}; ${RUBY} install.rb --no-harm
 
 do-install:
 	cd ${WRKSRC}; ${RUBY} install.rb
@@ -38,5 +30,10 @@ do-install:
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/freeride ${PREFIX}/bin
 	${CHMOD} a+w ${RUBY_SITELIBDIR}/freeride/config
+#
+# For testing of installation, no real install
+#
+install-noharm: pre-install
+	cd ${WRKSRC}; ${RUBY} install.rb --no-harm
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
