@@ -12,16 +12,17 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	accessreferer
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An Apache module that provides access control based on Referer HTTP header
+COMMENT=	Provides access control based on Referer HTTP header for Apache
 
-USE_APACHE=	yes
+WANT_APACHE=	13
+AP_FAST_BUILD=	YES
+AP_GENPLIST=	YES
 PORTDOCS=		HACKING LICENSE.txt ChangeLog README TODO mod_access_referer.html
 
-do-build:
-	@(cd ${WRKSRC} && ${APXS} -c ${PORTNAME}.c)
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/www/apache2/Makefile.modules.3rd"
 
-do-install:
-	@(cd ${WRKSRC} && ${APXS} -i -A -n ${PORTNAME:S/mod_//} ${PORTNAME}.so)
+post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
@@ -30,4 +31,4 @@ do-install:
 .endif
 	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
