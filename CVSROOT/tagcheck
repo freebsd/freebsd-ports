@@ -14,7 +14,7 @@ case "$1" in
 esac
 
 case "$USER" in
-  jkh | peter | jdp | markm | obrien | murray)
+  jkh | peter | jdp | markm | obrien | murray | jhb)
     exit 0	# ok
     ;;
   *)
