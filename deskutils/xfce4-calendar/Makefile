@@ -7,6 +7,7 @@
 
 PORTNAME=	xfce4-calendar
 PORTVERSION=	0.1.9
+PORTREVISION=	1
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	ftp://ftp.berlios.de/pub/xfce-goodies/4.0.6/ \
 		http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-4.0.6/src/
@@ -26,5 +27,8 @@ USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_INC_LIBTOOL_VER=	15
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CFLAGS=-I${LOCALBASE}/include \
+		CPPFLAGS=-I${LOCALBASE}/include \
+		LIBS=-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
