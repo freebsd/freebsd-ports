@@ -47,8 +47,8 @@ share/applnk/Toys/.keep_me
 share/applnk/Utilities/.keep_me
 share/applnk/Utilities/More/.keep_me
 share/applnk/Utilities/XUtilities/.keep_me
-share/apps/kabc/formats/binary.desktop/.keep_me
-share/apps/kabc/plugins/dir.desktop/.keep_me
+share/apps/kabc/formats/.keep_me
+share/apps/kabc/plugins/.keep_me
 share/apps/kate/scripts/.keep_me
 share/apps/kdesktop/.keep_me
 share/apps/kdesktop/DesktopLinks/.keep_me
@@ -347,8 +347,8 @@ share/wallpapers/.keep_me
 @dirrm share/apps/kdesktop/DesktopLinks
 @dirrm share/apps/kdesktop
 @dirrm share/apps/kate/scripts
-@dirrm share/apps/kabc/plugins/dir.desktop
-@dirrm share/apps/kabc/formats/binary.desktop
+@dirrm share/apps/kabc/plugins
+@dirrm share/apps/kabc/formats
 @dirrm share/applnk/Utilities/XUtilities
 @dirrm share/applnk/Utilities/More
 @dirrm share/applnk/Utilities
