@@ -115,6 +115,7 @@
     SUBDIR += fping
     SUBDIR += freebsd-uucp
     SUBDIR += freenet6
+    SUBDIR += freeradius
     SUBDIR += freevrrpd
     SUBDIR += freewais-sf
     SUBDIR += fspclient
