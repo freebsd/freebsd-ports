@@ -1,4 +1,3 @@
-@cwd /usr/local
 bin/query-pr
 bin/edit-pr
 bin/send-pr
@@ -37,10 +36,6 @@ lib/gnats/queue-pr
 lib/gnats/gen-index
 lib/gnats/mail-query
 lib/gnats/cygnus
-lib/emacs/lisp/gnats.el
-lib/emacs/lisp/gnats.elc
-lib/emacs/lisp/send-pr.el
-lib/emacs/lisp/send-pr.elc
 man/man1/edit-pr.1
 man/man1/query-pr.1
 man/man1/send-pr.1
@@ -51,3 +46,7 @@ man/man8/queue-pr.8
 man/man8/file-pr.8
 man/man8/gen-index.8
 man/manl/gnats.l
+share/emacs/site-lisp/gnats.el
+share/emacs/site-lisp/gnats.elc
+share/emacs/site-lisp/send-pr.el
+share/emacs/site-lisp/send-pr.elc

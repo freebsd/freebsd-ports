@@ -1,59 +1,79 @@
-*** Makefile.in	Sat Oct 28 00:37:25 1995
---- Makefile.in	Sat Oct 28 00:37:33 1995
-***************
-*** 854,861 ****
-  
-  MAKEDIRS= \
-  	$(prefix) \
-! 	$(exec_prefix) \
-! 	$(tooldir)
-  
-  .PHONY: install-dirs
-  install-dirs:
---- 854,860 ----
-  
-  MAKEDIRS= \
-  	$(prefix) \
-! 	$(exec_prefix)
-  
-  .PHONY: install-dirs
-  install-dirs:
-*** gnats/Makefile.in	Fri Dec 10 14:29:14 1993
---- gnats/Makefile.in	Sat Oct 28 00:13:56 1995
-***************
-*** 402,408 ****
-  	  echo "*** Warning: Must make pr-edit suid gnats" ; \
-  	fi
-  
-! EXTRA_INSTALL =
-  
-  install-gnats: install-gnats-bin install-gnats-man $(EXTRA_INSTALL)
-  
---- 402,408 ----
-  	  echo "*** Warning: Must make pr-edit suid gnats" ; \
-  	fi
-  
-! EXTRA_INSTALL = install-info
-  
-  install-gnats: install-gnats-bin install-gnats-man $(EXTRA_INSTALL)
-
-
-*** send-pr/Makefile.in	Sat Oct 28 00:33:59 1995
---- send-pr/Makefile.in	Sat Oct 28 00:34:01 1995
-***************
-*** 146,152 ****
-  
-  install: $(SEND_PR_INSTALL)
-  install-tools: install-norm install-categories
-! install-gnats: install-norm install-gnats-dist install-categories
-  
-  install-norm all-gnats:
-  	$(INSTALL_PROGRAM) send-pr $(bindir)/send-pr
---- 146,152 ----
-  
-  install: $(SEND_PR_INSTALL)
-  install-tools: install-norm install-categories
-! install-gnats: install-norm install-gnats-dist install-categories install-info
-  
-  install-norm all-gnats:
-  	$(INSTALL_PROGRAM) send-pr $(bindir)/send-pr
+--- ./gnats/Makefile.in.org	Fri Dec 10 14:29:14 1993
++++ ./gnats/Makefile.in	Tue Jul  9 23:07:57 1996
+@@ -127,7 +127,7 @@
+ INSTALL_PROGRAM = $(INSTALL)
+ INSTALL_DATA = $(INSTALL) -m 644
+ 
+-CFLAGS = -g
++CFLAGS += -g
+ LDFLAGS = $(CFLAGS)
+ 
+ prefix = /usr/local
+@@ -141,7 +141,7 @@
+ program_transform_name =
+ 
+ # Edit this to be the location of your emacs lisp files.
+-lispdir = $(datadir)/emacs/lisp
++lispdir = $(exec_prefix)/share/emacs/site-lisp
+ 
+ datadir = $(prefix)/lib
+ mandir = $(prefix)/man
+@@ -402,7 +402,7 @@
+ 	  echo "*** Warning: Must make pr-edit suid gnats" ; \
+ 	fi
+ 
+-EXTRA_INSTALL =
++EXTRA_INSTALL = install-info
+ 
+ install-gnats: install-gnats-bin install-gnats-man $(EXTRA_INSTALL)
+ 
+--- ./send-pr/Makefile.in.org	Fri Dec 10 12:03:32 1993
++++ ./send-pr/Makefile.in	Tue Jul  9 23:12:14 1996
+@@ -64,7 +64,7 @@
+ INSTALL_PROGRAM = $(INSTALL)
+ INSTALL_DATA = $(INSTALL) -m 644
+ 
+-CFLAGS = -g
++CFLAGS += -g
+ LDFLAGS = -g
+ 
+ ECHON = @ECHON@
+@@ -79,7 +79,7 @@
+ program_transform_name =
+ 
+ # Edit this to be the location of your emacs lisp files.
+-lispdir = $(datadir)/emacs/lisp
++lispdir = $(exec_prefix)/share/emacs/site-lisp
+ 
+ datadir = $(prefix)/lib
+ mandir = $(prefix)/man
+@@ -146,7 +146,7 @@
+ 
+ install: $(SEND_PR_INSTALL)
+ install-tools: install-norm install-categories
+-install-gnats: install-norm install-gnats-dist install-categories
++install-gnats: install-norm install-gnats-dist install-categories install-info
+ 
+ install-norm all-gnats:
+ 	$(INSTALL_PROGRAM) send-pr $(bindir)/send-pr
+--- ./Makefile.in.org	Fri Dec 10 12:03:54 1993
++++ ./Makefile.in	Tue Jul  9 23:07:18 1996
+@@ -57,7 +57,7 @@
+ 
+ # We don't specify -g -O because many compilers don't support -g -O,
+ # and/or -O is broken in and of itself.
+-CFLAGS = -g
++CFLAGS += -g
+ 
+ CXX = gcc
+ 
+@@ -854,8 +854,7 @@
+ 
+ MAKEDIRS= \
+ 	$(prefix) \
+-	$(exec_prefix) \
+-	$(tooldir)
++	$(exec_prefix)
+ 
+ .PHONY: install-dirs
+ install-dirs:
