@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mimedefang
-PORTVERSION=	2.19
+PORTVERSION=	2.20
 CATEGORIES=	mail
 MASTER_SITES=	http://www.roaringpenguin.com/mimedefang/
 
@@ -23,7 +23,9 @@ BUILD_DEPENDS=	\
 USE_PERL5=	yes
 PERL_SITELIBDIR=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/mimedefang --with-confsubdir=
+CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/mimedefang \
+			--with-confsubdir= \
+			--with-user=mailnull
 
 MAN5=	mimedefang-filter.5
 MAN7=	mimedefang-protocol.7
@@ -43,8 +45,6 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/examples/README ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README* ${DOCSDIR}
 .endif
-	@${CHOWN} mailnull:mailnull /var/spool/MIMEDefang
-	@${CHMOD} 700 /var/spool/MIMEDefang
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -1,8 +1,11 @@
---- Makefile.in.orig	Thu Aug 22 10:50:20 2002
-+++ Makefile.in	Thu Aug 22 11:24:27 2002
-@@ -112,9 +112,8 @@
- 	-mkdir -p $(RPM_INSTALL_ROOT)@SPOOLDIR@ && chmod 700 $(RPM_INSTALL_ROOT)@SPOOLDIR@
- 	-mkdir -p $(RPM_INSTALL_ROOT)@QDIR@ && chmod 700 $(RPM_INSTALL_ROOT)@QDIR@
+--- Makefile.in.orig	Sat Sep  7 02:05:48 2002
++++ Makefile.in	Sat Sep  7 02:18:17 2002
+@@ -128,11 +128,10 @@
+ 	-mkdir -p $(RPM_INSTALL_ROOT)$(MANDIR)/man7
+ 	-mkdir -p $(RPM_INSTALL_ROOT)$(MANDIR)/man8
+ 	-test ! -d $(RPM_INSTALL_ROOT)@SPOOLDIR@ && mkdir -p $(RPM_INSTALL_ROOT)@SPOOLDIR@ && chmod 700 $(RPM_INSTALL_ROOT)@SPOOLDIR@
+-	-test ! -d $(RPM_INSTALL_ROOT)@QDIR@ mkdir -p $(RPM_INSTALL_ROOT)@QDIR@ && chmod 700 $(RPM_INSTALL_ROOT)@QDIR@
++	-test ! -d $(RPM_INSTALL_ROOT)@QDIR@ && mkdir -p $(RPM_INSTALL_ROOT)@QDIR@ && chmod 700 $(RPM_INSTALL_ROOT)@QDIR@
  
 -	if test -f $(RPM_INSTALL_ROOT)${CONFDIR}/mimedefang-filter ; then \
 -		@INSTALL@ -m 644 examples/suggested-minimum-filter-for-windows-clients $(RPM_INSTALL_ROOT)${CONFDIR}/mimedefang-filter.example || exit 1; \
@@ -12,7 +15,7 @@
  		@INSTALL@ -m 644 examples/suggested-minimum-filter-for-windows-clients $(RPM_INSTALL_ROOT)${CONFDIR}/mimedefang-filter || exit 1; \
  	fi
  
-@@ -127,10 +126,9 @@
+@@ -145,10 +144,9 @@
  	@INSTALL@ -m 644 mimedefang-filter.5      $(RPM_INSTALL_ROOT)$(MANDIR)/man5/mimedefang-filter.5
  	@INSTALL@ -m 644 mimedefang-protocol.7    $(RPM_INSTALL_ROOT)$(MANDIR)/man7/mimedefang-protocol.7
  	if test "$(HAVE_SPAM_ASSASSIN)" = "yes" ; then \
