@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/XPath/.packlist
+%%SITE_PERL%%/Class/XPath.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/XPath
+@unexec rmdir %D/%%SITE_PERL%%/Class 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class 2>/dev/null || true
