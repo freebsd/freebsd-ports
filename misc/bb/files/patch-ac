@@ -1,0 +1,11 @@
+--- mikunix/main_ux.c.orig	Sun Sep 19 10:52:35 1999
++++ mikunix/main_ux.c	Sun Sep 19 10:53:12 1999
+@@ -73,7 +73,7 @@
+     MD_RegisterDriver(&drv_sun);
+ #elif defined(SOLARIS)
+     MD_RegisterDriver(&drv_sun);
+-#elif defined(__alpha)
++#elif defined(__alpha) && !defined(__FreeBSD__)
+     MD_RegisterDriver(&drv_AF);
+ #elif defined(OSS)
+     MD_RegisterDriver(&drv_vox);
