@@ -2,7 +2,10 @@ bin/word
 share/doc/ja-word/Changes
 share/doc/ja-word/LICENSE
 share/doc/ja-word/README
-share/examples/ja-word/.wordfontrc
-share/examples/ja-word/richo.wordfontrc
+share/examples/ja-word/default-wordfontrc
+share/examples/ja-word/ricoh-VFlib.ps
+share/examples/ja-word/ricoh-wordfontrc
+share/examples/ja-word/vine-VFlib.ps
+share/examples/ja-word/vine-wordfontrc
 @dirrm share/examples/ja-word
 @dirrm share/doc/ja-word

@@ -1,12 +1,12 @@
 # New ports collection makefile for: word
-# Version required:	0.98
+# Version required:	0.99.12
 # Date created:		30 August 1999
 # Whom:			sada
 #
 # $FreeBSD$
 #
 
-DISTNAME=	word-0.98
+DISTNAME=	word-0.99.12
 PKGNAME=	ja-${DISTNAME}
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.linet.gr.jp/~mituiwa/
@@ -29,8 +29,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/$i ${DOCDIR}
 .endfor
 	${MKDIR} ${EXAMPLEDIR}
-.for i in .wordfontrc richo.wordfontrc
-	${INSTALL_DATA} ${WRKSRC}/$i ${EXAMPLEDIR}
+.for i in default-wordfontrc ricoh-VFlib.ps ricoh-wordfontrc vine-VFlib.ps vine-wordfontrc
+	${INSTALL_DATA} ${WRKSRC}/config/$i ${EXAMPLEDIR}
 .endfor
 
 .include <bsd.port.mk>
