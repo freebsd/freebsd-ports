@@ -118,10 +118,14 @@ share/neverball/data/mtrl/coin-blue
 share/neverball/data/mtrl/coin-blue.jpg
 share/neverball/data/mtrl/coin-red
 share/neverball/data/mtrl/coin-red.jpg
+share/neverball/data/mtrl/coin-shiny
+share/neverball/data/mtrl/coin-shiny.jpg
 share/neverball/data/mtrl/coin-small-green
 share/neverball/data/mtrl/coin-small-green.jpg
 share/neverball/data/mtrl/dark-glass
 share/neverball/data/mtrl/dark-glass.jpg
+share/neverball/data/mtrl/dark-mirror
+share/neverball/data/mtrl/dark-mirror.jpg
 share/neverball/data/mtrl/edge
 share/neverball/data/mtrl/edge-blue
 share/neverball/data/mtrl/edge-blue.jpg
@@ -142,6 +146,8 @@ share/neverball/data/mtrl/invisible
 share/neverball/data/mtrl/invisible.tga
 share/neverball/data/mtrl/jump
 share/neverball/data/mtrl/jump.tga
+share/neverball/data/mtrl/mirror
+share/neverball/data/mtrl/mirror.jpg
 share/neverball/data/mtrl/mtrl.shader
 share/neverball/data/mtrl/rail
 share/neverball/data/mtrl/rail.jpg
@@ -165,6 +171,10 @@ share/neverball/data/mtrl/turf-grey
 share/neverball/data/mtrl/turf-grey.jpg
 share/neverball/data/mtrl/turf-red
 share/neverball/data/mtrl/turf-red.jpg
+share/neverball/data/mtrl/turf-shiny
+share/neverball/data/mtrl/turf-shiny-bright
+share/neverball/data/mtrl/turf-shiny-bright.jpg
+share/neverball/data/mtrl/turf-shiny.jpg
 share/neverball/data/mtrl/turf-small-green
 share/neverball/data/mtrl/turf-small-green.jpg
 share/neverball/data/mtrl/white
