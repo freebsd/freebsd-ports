@@ -1,0 +1,11 @@
+--- config/system.xml.orig	Mon Sep 24 21:50:25 2001
++++ config/system.xml	Sun Oct 21 01:37:42 2001
+@@ -51,7 +51,7 @@
+             <aliases>
+                <alias name="icons" path="./icons" />
+                <alias name="doc" path="./docs" />
+-               <alias name="javadoc" path="./java/docs/api" />
++               <alias name="javadoc" path="./docs/api" />
+                <alias name="scripts" path="./scripts" />
+             </aliases>
+             <methods>

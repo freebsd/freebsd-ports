@@ -1,0 +1,1395 @@
+%%T%%/java/examples/Addressbook/src/java/addressbook/SearchContacts.java
+%%T%%/java/examples/Addressbook/src/java/addressbook/ListContacts.java
+%%T%%/java/examples/Addressbook/src/java/addressbook/AddContact.java
+%%T%%/java/examples/Addressbook/src/java/addressbook/Group.java
+%%T%%/java/examples/Addressbook/src/java/addressbook/Person.java
+%%T%%/java/examples/Addressbook/src/java/addressbook/EditContact.java
+%%T%%/java/examples/Addressbook/src/java/addressbook/DeleteContact.java
+%%T%%/java/examples/Addressbook/src/java/addressbook/Task.java
+%%T%%/java/examples/Addressbook/src/java/addressbook/DBConnection.java
+%%T%%/java/examples/Addressbook/src/java/addressbook/Action.java
+%%T%%/java/examples/Addressbook/src/jsp/addContact.jsp
+%%T%%/java/examples/Addressbook/src/jsp/header.jsp
+%%T%%/java/examples/Addressbook/src/jsp/showXMLInfo.jsp
+%%T%%/java/examples/Addressbook/src/jsp/footer.jsp
+%%T%%/java/examples/Addressbook/src/jsp/editContactForm.jsp
+%%T%%/java/examples/Addressbook/src/jsp/index.jsp
+%%T%%/java/examples/Addressbook/src/jsp/showXML.jsp
+%%T%%/java/examples/Addressbook/src/jsp/showAllContactInfo.jsp
+%%T%%/java/examples/Addressbook/src/jsp/listContacts.jsp
+%%T%%/java/examples/Addressbook/src/jsp/showContact.jsp
+%%T%%/java/examples/Addressbook/src/jsp/searchContacts.jsp
+%%T%%/java/examples/Addressbook/src/jsp/error.jsp
+%%T%%/java/examples/Addressbook/README
+%%T%%/java/examples/Addressbook/web.xml
+%%T%%/java/examples/Addressbook/build.xml
+%%T%%/java/examples/Addressbook/Addressbook.war
+%%T%%/java/examples/guide/xml/address2.xml
+%%T%%/java/examples/guide/xml/address1.xml
+%%T%%/java/examples/guide/src/org/dbxml/examples/XPathQueryInvoke.java
+%%T%%/java/examples/guide/src/org/dbxml/examples/CreateCollection.java
+%%T%%/java/examples/guide/src/org/dbxml/examples/DeleteDocument.java
+%%T%%/java/examples/guide/src/org/dbxml/examples/XUpdate.java
+%%T%%/java/examples/guide/src/org/dbxml/examples/AddDocument.java
+%%T%%/java/examples/guide/src/org/dbxml/examples/XPathQueryXMLObject.java
+%%T%%/java/examples/guide/src/org/dbxml/examples/Example1.java
+%%T%%/java/examples/guide/src/org/dbxml/examples/HelloWorldXMLObject.java
+%%T%%/java/examples/guide/src/org/dbxml/examples/RetrieveDocument.java
+%%T%%/java/examples/guide/run
+%%T%%/java/examples/guide/run.bat
+%%T%%/java/examples/guide/README
+%%T%%/java/examples/api/README
+%%T%%/java/examples/api/run
+%%T%%/java/examples/api/run.bat
+%%T%%/java/examples/api/src/org/dbxml/examples/CorbaAPIExample.java
+%%T%%/java/examples/api/src/org/dbxml/examples/APIExample.java
+%%T%%/java/src/org/dbxml/core/security/SecurityException.java
+%%T%%/java/src/org/dbxml/core/security/DBSecurityManager.java
+%%T%%/java/src/org/dbxml/core/security/LocalSecurityManager.java
+%%T%%/java/src/org/dbxml/core/security/InvalidCredentialsException.java
+%%T%%/java/src/org/dbxml/core/security/Permission.java
+%%T%%/java/src/org/dbxml/core/security/PasswordCredentials.java
+%%T%%/java/src/org/dbxml/core/security/UnknownUserException.java
+%%T%%/java/src/org/dbxml/core/security/ResourcePermissions.java
+%%T%%/java/src/org/dbxml/core/security/Credentials.java
+%%T%%/java/src/org/dbxml/core/security/InvalidPasswordException.java
+%%T%%/java/src/org/dbxml/core/security/package.html
+%%T%%/java/src/org/dbxml/core/security/AccessDeniedException.java
+%%T%%/java/src/org/dbxml/core/objects/MethodNotFoundException.java
+%%T%%/java/src/org/dbxml/core/objects/SimpleXMLObject.java
+%%T%%/java/src/org/dbxml/core/objects/DuplicateObjectException.java
+%%T%%/java/src/org/dbxml/core/objects/CannotCreateException.java
+%%T%%/java/src/org/dbxml/core/objects/XMLObjectManager.java
+%%T%%/java/src/org/dbxml/core/objects/Args.java
+%%T%%/java/src/org/dbxml/core/objects/XMLObjectRuntimeException.java
+%%T%%/java/src/org/dbxml/core/objects/Types.java
+%%T%%/java/src/org/dbxml/core/objects/package.html
+%%T%%/java/src/org/dbxml/core/objects/Variant.java
+%%T%%/java/src/org/dbxml/core/objects/MapArgs.java
+%%T%%/java/src/org/dbxml/core/objects/ThreadPolicy.java
+%%T%%/java/src/org/dbxml/core/objects/Reflectable.java
+%%T%%/java/src/org/dbxml/core/objects/ClassFormatException.java
+%%T%%/java/src/org/dbxml/core/objects/XMLObject.java
+%%T%%/java/src/org/dbxml/core/objects/ElementArgs.java
+%%T%%/java/src/org/dbxml/core/objects/XMLObjectException.java
+%%T%%/java/src/org/dbxml/core/objects/Reflector.java
+%%T%%/java/src/org/dbxml/core/objects/SimpleReflectable.java
+%%T%%/java/src/org/dbxml/core/objects/InvalidContextException.java
+%%T%%/java/src/org/dbxml/core/data/Key.java
+%%T%%/java/src/org/dbxml/core/data/Record.java
+%%T%%/java/src/org/dbxml/core/data/EmptyRecordSet.java
+%%T%%/java/src/org/dbxml/core/data/Value.java
+%%T%%/java/src/org/dbxml/core/data/package.html
+%%T%%/java/src/org/dbxml/core/data/EmptyNodeSet.java
+%%T%%/java/src/org/dbxml/core/data/DocumentSet.java
+%%T%%/java/src/org/dbxml/core/data/RecordSet.java
+%%T%%/java/src/org/dbxml/core/data/EmptyDocumentSet.java
+%%T%%/java/src/org/dbxml/core/data/NodeSet.java
+%%T%%/java/src/org/dbxml/core/indexer/helpers/IndexQueryNBWX.java
+%%T%%/java/src/org/dbxml/core/indexer/helpers/IndexQueryIN.java
+%%T%%/java/src/org/dbxml/core/indexer/helpers/IndexQueryNSW.java
+%%T%%/java/src/org/dbxml/core/indexer/helpers/IndexQueryLT.java
+%%T%%/java/src/org/dbxml/core/indexer/helpers/IndexQueryGEQ.java
+%%T%%/java/src/org/dbxml/core/indexer/helpers/IndexQueryNBW.java
+%%T%%/java/src/org/dbxml/core/indexer/helpers/IndexQueryANY.java
+%%T%%/java/src/org/dbxml/core/indexer/helpers/IndexQueryGT.java
+%%T%%/java/src/org/dbxml/core/indexer/helpers/IndexQueryNEQ.java
+%%T%%/java/src/org/dbxml/core/indexer/helpers/IndexQueryLEQ.java
+%%T%%/java/src/org/dbxml/core/indexer/helpers/IndexQuerySW.java
+%%T%%/java/src/org/dbxml/core/indexer/helpers/IndexQueryBW.java
+%%T%%/java/src/org/dbxml/core/indexer/helpers/IndexQueryEQ.java
+%%T%%/java/src/org/dbxml/core/indexer/helpers/IndexQueryNIN.java
+%%T%%/java/src/org/dbxml/core/indexer/helpers/package.html
+%%T%%/java/src/org/dbxml/core/indexer/helpers/IndexQueryBWX.java
+%%T%%/java/src/org/dbxml/core/indexer/NameIndexer.java
+%%T%%/java/src/org/dbxml/core/indexer/DuplicateIndexException.java
+%%T%%/java/src/org/dbxml/core/indexer/IndexMatch.java
+%%T%%/java/src/org/dbxml/core/indexer/Indexer.java
+%%T%%/java/src/org/dbxml/core/indexer/CannotCreateException.java
+%%T%%/java/src/org/dbxml/core/indexer/ValueIndexer.java
+%%T%%/java/src/org/dbxml/core/indexer/package.html
+%%T%%/java/src/org/dbxml/core/indexer/IndexQuery.java
+%%T%%/java/src/org/dbxml/core/indexer/IndexManager.java
+%%T%%/java/src/org/dbxml/core/indexer/IndexerException.java
+%%T%%/java/src/org/dbxml/core/indexer/IndexPattern.java
+%%T%%/java/src/org/dbxml/core/filer/FilerException.java
+%%T%%/java/src/org/dbxml/core/filer/Paged.java
+%%T%%/java/src/org/dbxml/core/filer/FSFiler.java
+%%T%%/java/src/org/dbxml/core/filer/BTree.java
+%%T%%/java/src/org/dbxml/core/filer/BTreeFiler.java
+%%T%%/java/src/org/dbxml/core/filer/BTreeCallback.java
+%%T%%/java/src/org/dbxml/core/filer/MemFiler.java
+%%T%%/java/src/org/dbxml/core/filer/Filer.java
+%%T%%/java/src/org/dbxml/core/filer/package.html
+%%T%%/java/src/org/dbxml/core/filer/BTreeCorruptException.java
+%%T%%/java/src/org/dbxml/core/filer/BTreeException.java
+%%T%%/java/src/org/dbxml/core/filer/Streamable.java
+%%T%%/java/src/org/dbxml/core/filer/BTreeNotFoundException.java
+%%T%%/java/src/org/dbxml/core/filer/HashFiler.java
+%%T%%/java/src/org/dbxml/core/corba/db/KeyHelper.java
+%%T%%/java/src/org/dbxml/core/corba/db/NameHelper.java
+%%T%%/java/src/org/dbxml/core/corba/db/_ServantManagementStub.java
+%%T%%/java/src/org/dbxml/core/corba/db/_CollectionStub.java
+%%T%%/java/src/org/dbxml/core/corba/db/FaultCodes.java
+%%T%%/java/src/org/dbxml/core/corba/db/CollectionHolder.java
+%%T%%/java/src/org/dbxml/core/corba/db/NamedValsHolder.java
+%%T%%/java/src/org/dbxml/core/corba/db/NamedValHolder.java
+%%T%%/java/src/org/dbxml/core/corba/db/EncodedBufferHolder.java
+%%T%%/java/src/org/dbxml/core/corba/db/DatabaseManager.java
+%%T%%/java/src/org/dbxml/core/corba/db/_DatabaseManagerStub.java
+%%T%%/java/src/org/dbxml/core/corba/db/CollectionPOATie.java
+%%T%%/java/src/org/dbxml/core/corba/db/CollectionManagerHolder.java
+%%T%%/java/src/org/dbxml/core/corba/db/APIException.java
+%%T%%/java/src/org/dbxml/core/corba/db/DocumentSetPOA.java
+%%T%%/java/src/org/dbxml/core/corba/db/DataHelper.java
+%%T%%/java/src/org/dbxml/core/corba/db/NamedVal.java
+%%T%%/java/src/org/dbxml/core/corba/db/ServantManagementOperations.java
+%%T%%/java/src/org/dbxml/core/corba/db/CollectionManagerPOATie.java
+%%T%%/java/src/org/dbxml/core/corba/db/TimestampHelper.java
+%%T%%/java/src/org/dbxml/core/corba/db/FaultCodesHelper.java
+%%T%%/java/src/org/dbxml/core/corba/db/ServantManagementHolder.java
+%%T%%/java/src/org/dbxml/core/corba/db/DatabasePOA.java
+%%T%%/java/src/org/dbxml/core/corba/db/CollectionManagerPOA.java
+%%T%%/java/src/org/dbxml/core/corba/db/DataHolder.java
+%%T%%/java/src/org/dbxml/core/corba/db/DatabaseManagerHelper.java
+%%T%%/java/src/org/dbxml/core/corba/db/CollectionPOA.java
+%%T%%/java/src/org/dbxml/core/corba/db/KeyHolder.java
+%%T%%/java/src/org/dbxml/core/corba/db/ServantManagementPOATie.java
+%%T%%/java/src/org/dbxml/core/corba/db/DatabaseOperations.java
+%%T%%/java/src/org/dbxml/core/corba/db/ServantManagementPOA.java
+%%T%%/java/src/org/dbxml/core/corba/db/NamesHelper.java
+%%T%%/java/src/org/dbxml/core/corba/db/ServantManagement.java
+%%T%%/java/src/org/dbxml/core/corba/db/_FaultCodesStub.java
+%%T%%/java/src/org/dbxml/core/corba/db/CollectionManager.java
+%%T%%/java/src/org/dbxml/core/corba/db/STAMP_TEXT.java
+%%T%%/java/src/org/dbxml/core/corba/db/BufferHelper.java
+%%T%%/java/src/org/dbxml/core/corba/db/APIExceptionHelper.java
+%%T%%/java/src/org/dbxml/core/corba/db/NamesHolder.java
+%%T%%/java/src/org/dbxml/core/corba/db/FaultCodesPOA.java
+%%T%%/java/src/org/dbxml/core/corba/db/DatabaseHelper.java
+%%T%%/java/src/org/dbxml/core/corba/db/DocumentSetHelper.java
+%%T%%/java/src/org/dbxml/core/corba/db/NamedValHelper.java
+%%T%%/java/src/org/dbxml/core/corba/db/EncodedBufferHelper.java
+%%T%%/java/src/org/dbxml/core/corba/db/FaultCodesOperations.java
+%%T%%/java/src/org/dbxml/core/corba/db/BufferHolder.java
+%%T%%/java/src/org/dbxml/core/corba/db/APIExceptionHolder.java
+%%T%%/java/src/org/dbxml/core/corba/db/_DatabaseStub.java
+%%T%%/java/src/org/dbxml/core/corba/db/FaultCodesHolder.java
+%%T%%/java/src/org/dbxml/core/corba/db/_DocumentSetStub.java
+%%T%%/java/src/org/dbxml/core/corba/db/CollectionManagerHelper.java
+%%T%%/java/src/org/dbxml/core/corba/db/DatabaseHolder.java
+%%T%%/java/src/org/dbxml/core/corba/db/DocumentSetHolder.java
+%%T%%/java/src/org/dbxml/core/corba/db/Database.java
+%%T%%/java/src/org/dbxml/core/corba/db/_CollectionManagerStub.java
+%%T%%/java/src/org/dbxml/core/corba/db/DocumentSet.java
+%%T%%/java/src/org/dbxml/core/corba/db/DatabaseManagerHolder.java
+%%T%%/java/src/org/dbxml/core/corba/db/Collection.java
+%%T%%/java/src/org/dbxml/core/corba/db/FaultCodesPOATie.java
+%%T%%/java/src/org/dbxml/core/corba/db/DatabaseManagerOperations.java
+%%T%%/java/src/org/dbxml/core/corba/db/DocumentSetOperations.java
+%%T%%/java/src/org/dbxml/core/corba/db/DatabaseManagerPOA.java
+%%T%%/java/src/org/dbxml/core/corba/db/ServantManagementHelper.java
+%%T%%/java/src/org/dbxml/core/corba/db/DatabasePOATie.java
+%%T%%/java/src/org/dbxml/core/corba/db/DocumentSetPOATie.java
+%%T%%/java/src/org/dbxml/core/corba/db/CollectionManagerOperations.java
+%%T%%/java/src/org/dbxml/core/corba/db/CollectionHelper.java
+%%T%%/java/src/org/dbxml/core/corba/db/NamedValsHelper.java
+%%T%%/java/src/org/dbxml/core/corba/db/CollectionOperations.java
+%%T%%/java/src/org/dbxml/core/corba/db/DatabaseManagerPOATie.java
+%%T%%/java/src/org/dbxml/core/corba/db/EncodedBuffer.java
+%%T%%/java/src/org/dbxml/core/corba/db/ValueHelper.java
+%%T%%/java/src/org/dbxml/core/corba/SymbolSerializer.java
+%%T%%/java/src/org/dbxml/core/corba/SymbolDeserializer.java
+%%T%%/java/src/org/dbxml/core/corba/CollectionServant.java
+%%T%%/java/src/org/dbxml/core/corba/DatabaseManagerServant.java
+%%T%%/java/src/org/dbxml/core/corba/EncodedBufferConverter.java
+%%T%%/java/src/org/dbxml/core/corba/package.html
+%%T%%/java/src/org/dbxml/core/corba/DatabaseServant.java
+%%T%%/java/src/org/dbxml/core/corba/CollectionManagerServant.java
+%%T%%/java/src/org/dbxml/core/corba/DocumentSetServant.java
+%%T%%/java/src/org/dbxml/core/server/services/GopherServer.java
+%%T%%/java/src/org/dbxml/core/server/services/APIService.java
+%%T%%/java/src/org/dbxml/core/server/services/dbXMLService.java
+%%T%%/java/src/org/dbxml/core/server/services/package.html
+%%T%%/java/src/org/dbxml/core/server/dbXML.java
+%%T%%/java/src/org/dbxml/core/server/package.html
+%%T%%/java/src/org/dbxml/core/query/QueryEngine.java
+%%T%%/java/src/org/dbxml/core/query/QueryException.java
+%%T%%/java/src/org/dbxml/core/query/XPathQueryResolver.java
+%%T%%/java/src/org/dbxml/core/query/QueryResolver.java
+%%T%%/java/src/org/dbxml/core/query/NodeListSet.java
+%%T%%/java/src/org/dbxml/core/query/CompilationException.java
+%%T%%/java/src/org/dbxml/core/query/package.html
+%%T%%/java/src/org/dbxml/core/query/StyleNotFoundException.java
+%%T%%/java/src/org/dbxml/core/query/ProcessingException.java
+%%T%%/java/src/org/dbxml/core/query/Query.java
+%%T%%/java/src/org/dbxml/core/DocumentCache.java
+%%T%%/java/src/org/dbxml/core/xupdate/XUpdateQueryResolver.java
+%%T%%/java/src/org/dbxml/core/xupdate/XPathQueryFactoryImpl.java
+%%T%%/java/src/org/dbxml/core/xupdate/package.html
+%%T%%/java/src/org/dbxml/core/xupdate/XUpdateImpl.java
+%%T%%/java/src/org/dbxml/core/xupdate/XPathQueryImpl.java
+%%T%%/java/src/org/dbxml/core/xupdate/XObjectImpl.java
+%%T%%/java/src/org/dbxml/core/request/package.html
+%%T%%/java/src/org/dbxml/core/request/DbxmlStreamHandlerFactory.java
+%%T%%/java/src/org/dbxml/core/request/DbxmlStreamHandler.java
+%%T%%/java/src/org/dbxml/core/request/URIMapper.java
+%%T%%/java/src/org/dbxml/core/package.html
+%%T%%/java/src/org/dbxml/core/system/Sequencer.java
+%%T%%/java/src/org/dbxml/core/system/package.html
+%%T%%/java/src/org/dbxml/core/DBException.java
+%%T%%/java/src/org/dbxml/core/SystemCollection.java
+%%T%%/java/src/org/dbxml/core/Collection.java
+%%T%%/java/src/org/dbxml/core/Container.java
+%%T%%/java/src/org/dbxml/core/FaultCodes.java
+%%T%%/java/src/org/dbxml/core/Database.java
+%%T%%/java/src/org/dbxml/core/CollectionManager.java
+%%T%%/java/src/org/dbxml/core/DBObject.java
+%%T%%/java/src/org/dbxml/client/xmldb/resources/XMLResourceImpl.java
+%%T%%/java/src/org/dbxml/client/xmldb/resources/package.html
+%%T%%/java/src/org/dbxml/client/xmldb/package.html
+%%T%%/java/src/org/dbxml/client/xmldb/services/package.html
+%%T%%/java/src/org/dbxml/client/xmldb/services/XUpdateQueryServiceImpl.java
+%%T%%/java/src/org/dbxml/client/xmldb/services/XPathQueryServiceImpl.java
+%%T%%/java/src/org/dbxml/client/xmldb/services/DatabaseInstanceManager.java
+%%T%%/java/src/org/dbxml/client/xmldb/services/XMLObjectService.java
+%%T%%/java/src/org/dbxml/client/xmldb/services/CollectionManager.java
+%%T%%/java/src/org/dbxml/client/xmldb/ResourceSetImpl.java
+%%T%%/java/src/org/dbxml/client/xmldb/ResourceIteratorImpl.java
+%%T%%/java/src/org/dbxml/client/xmldb/DatabaseImpl.java
+%%T%%/java/src/org/dbxml/client/xmldb/ManagedObject.java
+%%T%%/java/src/org/dbxml/client/xmldb/CollectionImpl.java
+%%T%%/java/src/org/dbxml/client/xmldb/CommonConfigurable.java
+%%T%%/java/src/org/dbxml/client/package.html
+%%T%%/java/src/org/dbxml/tools/command/ExportTree.java
+%%T%%/java/src/org/dbxml/tools/command/ListIndexers.java
+%%T%%/java/src/org/dbxml/tools/command/Shutdown.java
+%%T%%/java/src/org/dbxml/tools/command/AddCollectionXMLObject.java
+%%T%%/java/src/org/dbxml/tools/command/DeleteIndexer.java
+%%T%%/java/src/org/dbxml/tools/command/ListCollections.java
+%%T%%/java/src/org/dbxml/tools/command/ImportTree.java
+%%T%%/java/src/org/dbxml/tools/command/AddIndexer.java
+%%T%%/java/src/org/dbxml/tools/command/AddDocument.java
+%%T%%/java/src/org/dbxml/tools/command/ListCollectionXMLObjects.java
+%%T%%/java/src/org/dbxml/tools/command/AddMultipleDocuments.java
+%%T%%/java/src/org/dbxml/tools/command/RetrieveDocument.java
+%%T%%/java/src/org/dbxml/tools/command/ListCollectionDocuments.java
+%%T%%/java/src/org/dbxml/tools/command/AddCollection.java
+%%T%%/java/src/org/dbxml/tools/command/XPathQuery.java
+%%T%%/java/src/org/dbxml/tools/command/package.html
+%%T%%/java/src/org/dbxml/tools/command/DeleteCollection.java
+%%T%%/java/src/org/dbxml/tools/command/DeleteDocument.java
+%%T%%/java/src/org/dbxml/tools/command/InvokeXmlObject.java
+%%T%%/java/src/org/dbxml/tools/command/Command.java
+%%T%%/java/src/org/dbxml/tools/command/DeleteCollectionXMLObject.java
+%%T%%/java/src/org/dbxml/tools/XMLUserTools.java
+%%T%%/java/src/org/dbxml/tools/XMLAdminTools.java
+%%T%%/java/src/org/dbxml/tools/DeploymentTask.java
+%%T%%/java/src/org/dbxml/tools/ArgTokenizer.java
+%%T%%/java/src/org/dbxml/tools/package.html
+%%T%%/java/src/org/dbxml/tools/XMLTools.java
+%%T%%/java/src/org/dbxml/xml/Signatures.java
+%%T%%/java/src/org/dbxml/xml/sax/CompressionHandler.java
+%%T%%/java/src/org/dbxml/xml/sax/package.html
+%%T%%/java/src/org/dbxml/xml/sax/SAXEventGenerator.java
+%%T%%/java/src/org/dbxml/xml/TextWriter.java
+%%T%%/java/src/org/dbxml/xml/dom/TextImpl.java
+%%T%%/java/src/org/dbxml/xml/dom/DBNode.java
+%%T%%/java/src/org/dbxml/xml/dom/NodeImpl.java
+%%T%%/java/src/org/dbxml/xml/dom/EntityReferenceImpl.java
+%%T%%/java/src/org/dbxml/xml/dom/NodeListImpl.java
+%%T%%/java/src/org/dbxml/xml/dom/CharacterDataImpl.java
+%%T%%/java/src/org/dbxml/xml/dom/traversal/TreeWalkerImpl.java
+%%T%%/java/src/org/dbxml/xml/dom/traversal/package.html
+%%T%%/java/src/org/dbxml/xml/dom/DOMImplementationImpl.java
+%%T%%/java/src/org/dbxml/xml/dom/ProcessingInstructionImpl.java
+%%T%%/java/src/org/dbxml/xml/dom/CompressedNode.java
+%%T%%/java/src/org/dbxml/xml/dom/CDATASectionImpl.java
+%%T%%/java/src/org/dbxml/xml/dom/NotationImpl.java
+%%T%%/java/src/org/dbxml/xml/dom/DOMCompressor.java
+%%T%%/java/src/org/dbxml/xml/dom/DOMParser.java
+%%T%%/java/src/org/dbxml/xml/dom/ContainerNodeImpl.java
+%%T%%/java/src/org/dbxml/xml/dom/package.html
+%%T%%/java/src/org/dbxml/xml/dom/NamedNodeMapImpl.java
+%%T%%/java/src/org/dbxml/xml/dom/ElementImpl.java
+%%T%%/java/src/org/dbxml/xml/dom/EntityImpl.java
+%%T%%/java/src/org/dbxml/xml/dom/DocumentImpl.java
+%%T%%/java/src/org/dbxml/xml/dom/DocumentTypeImpl.java
+%%T%%/java/src/org/dbxml/xml/dom/CompressedDocument.java
+%%T%%/java/src/org/dbxml/xml/dom/DocumentFragmentImpl.java
+%%T%%/java/src/org/dbxml/xml/dom/DBDocument.java
+%%T%%/java/src/org/dbxml/xml/dom/AttrImpl.java
+%%T%%/java/src/org/dbxml/xml/dom/CommentImpl.java
+%%T%%/java/src/org/dbxml/xml/NamespaceMap.java
+%%T%%/java/src/org/dbxml/xml/NodeSource.java
+%%T%%/java/src/org/dbxml/xml/SymbolTableSymbols.java
+%%T%%/java/src/org/dbxml/xml/XMLSerializable.java
+%%T%%/java/src/org/dbxml/xml/package.html
+%%T%%/java/src/org/dbxml/xml/jaxp/DocumentBuilderFactoryImpl.java
+%%T%%/java/src/org/dbxml/xml/jaxp/DocumentBuilderImpl.java
+%%T%%/java/src/org/dbxml/xml/jaxp/package.html
+%%T%%/java/src/org/dbxml/xml/SymbolTable.java
+%%T%%/java/src/org/dbxml/xml/XMLCompressedInput.java
+%%T%%/java/src/org/dbxml/xml/XMLCompressedOutput.java
+%%T%%/java/src/org/dbxml/Stopwatch.java
+%%T%%/java/src/org/dbxml/tests/BTreeTest.java
+%%T%%/java/src/org/dbxml/tests/TestSecurity.java
+%%T%%/java/src/org/dbxml/tests/TestXmlObject.java
+%%T%%/java/src/org/dbxml/tests/package.html
+%%T%%/java/src/org/dbxml/package.html
+%%T%%/java/lib/infozone-lexus.jar
+%%T%%/java/lib/juggernaut-1.0.jar
+%%T%%/java/lib/xerces-1.4.3.jar
+%%T%%/java/lib/examples.jar
+%%T%%/java/lib/openorb-1.2.0.jar
+%%T%%/java/lib/ant-1_3.jar
+%%T%%/java/lib/idl-1.3.30.jar
+%%T%%/java/lib/dbxml-naming.jar
+%%T%%/java/lib/junit-3_7.jar
+%%T%%/java/lib/infozone-tools.jar
+%%T%%/java/lib/dbXML.jar
+%%T%%/java/lib/xmldb.jar
+%%T%%/java/lib/xmldb-sdk.jar
+%%T%%/java/lib/xalan-2.0.1.jar
+%%T%%/java/tests/src/DatabaseTest.java
+%%T%%/java/tests/src/CollectionTest.java
+%%T%%/java/tests/src/CollectionManagerTest.java
+%%T%%/java/tests/src/DatabaseManagerTest.java
+%%T%%/java/tests/src/CorbaAPITestCase.java
+%%T%%/java/tests/src/AllTests.java
+%%T%%/java/tests/src/CorbaAPITestSuite.java
+%%T%%/java/tests/build.xml
+%%T%%/docs/api/org/dbxml/core/server/services/GopherServer.html
+%%T%%/docs/api/org/dbxml/core/server/services/class-use/dbXMLService.html
+%%T%%/docs/api/org/dbxml/core/server/services/class-use/GopherServer.html
+%%T%%/docs/api/org/dbxml/core/server/services/class-use/APIService.html
+%%T%%/docs/api/org/dbxml/core/server/services/package-frame.html
+%%T%%/docs/api/org/dbxml/core/server/services/package-summary.html
+%%T%%/docs/api/org/dbxml/core/server/services/dbXMLService.html
+%%T%%/docs/api/org/dbxml/core/server/services/APIService.html
+%%T%%/docs/api/org/dbxml/core/server/services/package-tree.html
+%%T%%/docs/api/org/dbxml/core/server/services/package-use.html
+%%T%%/docs/api/org/dbxml/core/server/class-use/dbXML.html
+%%T%%/docs/api/org/dbxml/core/server/package-tree.html
+%%T%%/docs/api/org/dbxml/core/server/dbXML.html
+%%T%%/docs/api/org/dbxml/core/server/package-use.html
+%%T%%/docs/api/org/dbxml/core/server/package-frame.html
+%%T%%/docs/api/org/dbxml/core/server/package-summary.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/CollectionHolder.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/ServantManagement.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/Collection.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/EncodedBufferHolder.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/DatabaseManagerOperations.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/EncodedBuffer.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/ServantManagementPOA.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/_FaultCodesStub.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/CollectionPOATie.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/DocumentSetPOA.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/_ServantManagementStub.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/DatabasePOA.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/KeyHelper.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/NameHelper.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/CollectionManagerHelper.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/FaultCodes.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/FaultCodesHelper.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/NamesHelper.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/CollectionManagerPOA.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/DatabaseHelper.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/NamedValHelper.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/FaultCodesOperations.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/DocumentSetHolder.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/CollectionManagerHolder.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/ServantManagementHelper.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/APIException.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/Database.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/NamesHolder.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/APIExceptionHelper.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/DatabaseManagerPOA.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/DatabaseHolder.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/DocumentSetPOATie.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/DataHelper.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/CollectionManagerPOATie.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/BufferHelper.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/ServantManagementHolder.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/ServantManagementOperations.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/NamedValsHelper.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/CollectionPOA.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/DatabasePOATie.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/APIExceptionHolder.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/_DatabaseStub.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/DataHolder.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/ServantManagementPOATie.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/KeyHolder.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/DocumentSet.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/NamedValsHolder.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/FaultCodesHolder.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/DatabaseManagerHelper.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/_DocumentSetStub.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/DatabaseManager.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/NamedValHolder.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/FaultCodesPOA.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/STAMP_TEXT.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/CollectionManager.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/ValueHelper.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/_DatabaseManagerStub.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/FaultCodesPOATie.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/CollectionManagerOperations.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/DatabaseManagerHolder.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/DocumentSetOperations.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/CollectionHelper.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/NamedVal.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/CollectionOperations.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/DocumentSetHelper.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/BufferHolder.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/TimestampHelper.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/EncodedBufferHelper.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/_CollectionManagerStub.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/_CollectionStub.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/DatabaseManagerPOATie.html
+%%T%%/docs/api/org/dbxml/core/corba/db/class-use/DatabaseOperations.html
+%%T%%/docs/api/org/dbxml/core/corba/db/FaultCodesHolder.html
+%%T%%/docs/api/org/dbxml/core/corba/db/DocumentSetOperations.html
+%%T%%/docs/api/org/dbxml/core/corba/db/_FaultCodesStub.html
+%%T%%/docs/api/org/dbxml/core/corba/db/DatabasePOATie.html
+%%T%%/docs/api/org/dbxml/core/corba/db/DataHelper.html
+%%T%%/docs/api/org/dbxml/core/corba/db/STAMP_TEXT.html
+%%T%%/docs/api/org/dbxml/core/corba/db/package-frame.html
+%%T%%/docs/api/org/dbxml/core/corba/db/KeyHelper.html
+%%T%%/docs/api/org/dbxml/core/corba/db/DatabaseManagerPOATie.html
+%%T%%/docs/api/org/dbxml/core/corba/db/_ServantManagementStub.html
+%%T%%/docs/api/org/dbxml/core/corba/db/DatabaseOperations.html
+%%T%%/docs/api/org/dbxml/core/corba/db/CollectionOperations.html
+%%T%%/docs/api/org/dbxml/core/corba/db/EncodedBuffer.html
+%%T%%/docs/api/org/dbxml/core/corba/db/FaultCodesPOATie.html
+%%T%%/docs/api/org/dbxml/core/corba/db/ValueHelper.html
+%%T%%/docs/api/org/dbxml/core/corba/db/DataHolder.html
+%%T%%/docs/api/org/dbxml/core/corba/db/CollectionHelper.html
+%%T%%/docs/api/org/dbxml/core/corba/db/NamedValHolder.html
+%%T%%/docs/api/org/dbxml/core/corba/db/ServantManagementOperations.html
+%%T%%/docs/api/org/dbxml/core/corba/db/APIExceptionHelper.html
+%%T%%/docs/api/org/dbxml/core/corba/db/NamedVal.html
+%%T%%/docs/api/org/dbxml/core/corba/db/_DocumentSetStub.html
+%%T%%/docs/api/org/dbxml/core/corba/db/CollectionHolder.html
+%%T%%/docs/api/org/dbxml/core/corba/db/_DatabaseManagerStub.html
+%%T%%/docs/api/org/dbxml/core/corba/db/ServantManagementPOA.html
+%%T%%/docs/api/org/dbxml/core/corba/db/package-use.html
+%%T%%/docs/api/org/dbxml/core/corba/db/NamesHelper.html
+%%T%%/docs/api/org/dbxml/core/corba/db/APIExceptionHolder.html
+%%T%%/docs/api/org/dbxml/core/corba/db/APIException.html
+%%T%%/docs/api/org/dbxml/core/corba/db/CollectionPOATie.html
+%%T%%/docs/api/org/dbxml/core/corba/db/NamedValsHelper.html
+%%T%%/docs/api/org/dbxml/core/corba/db/BufferHelper.html
+%%T%%/docs/api/org/dbxml/core/corba/db/KeyHolder.html
+%%T%%/docs/api/org/dbxml/core/corba/db/CollectionManagerHelper.html
+%%T%%/docs/api/org/dbxml/core/corba/db/DatabasePOA.html
+%%T%%/docs/api/org/dbxml/core/corba/db/ServantManagement.html
+%%T%%/docs/api/org/dbxml/core/corba/db/package-tree.html
+%%T%%/docs/api/org/dbxml/core/corba/db/DatabaseManagerPOA.html
+%%T%%/docs/api/org/dbxml/core/corba/db/CollectionManagerOperations.html
+%%T%%/docs/api/org/dbxml/core/corba/db/CollectionManagerPOA.html
+%%T%%/docs/api/org/dbxml/core/corba/db/DatabaseManagerOperations.html
+%%T%%/docs/api/org/dbxml/core/corba/db/_CollectionStub.html
+%%T%%/docs/api/org/dbxml/core/corba/db/FaultCodesOperations.html
+%%T%%/docs/api/org/dbxml/core/corba/db/CollectionManager.html
+%%T%%/docs/api/org/dbxml/core/corba/db/CollectionPOA.html
+%%T%%/docs/api/org/dbxml/core/corba/db/NamedValsHolder.html
+%%T%%/docs/api/org/dbxml/core/corba/db/DocumentSetPOA.html
+%%T%%/docs/api/org/dbxml/core/corba/db/DatabaseManager.html
+%%T%%/docs/api/org/dbxml/core/corba/db/Collection.html
+%%T%%/docs/api/org/dbxml/core/corba/db/CollectionManagerHolder.html
+%%T%%/docs/api/org/dbxml/core/corba/db/ServantManagementHelper.html
+%%T%%/docs/api/org/dbxml/core/corba/db/EncodedBufferHelper.html
+%%T%%/docs/api/org/dbxml/core/corba/db/DocumentSetHelper.html
+%%T%%/docs/api/org/dbxml/core/corba/db/DocumentSet.html
+%%T%%/docs/api/org/dbxml/core/corba/db/Database.html
+%%T%%/docs/api/org/dbxml/core/corba/db/CollectionManagerPOATie.html
+%%T%%/docs/api/org/dbxml/core/corba/db/DatabaseHelper.html
+%%T%%/docs/api/org/dbxml/core/corba/db/ServantManagementHolder.html
+%%T%%/docs/api/org/dbxml/core/corba/db/NamedValHelper.html
+%%T%%/docs/api/org/dbxml/core/corba/db/EncodedBufferHolder.html
+%%T%%/docs/api/org/dbxml/core/corba/db/package-summary.html
+%%T%%/docs/api/org/dbxml/core/corba/db/NameHelper.html
+%%T%%/docs/api/org/dbxml/core/corba/db/NamesHolder.html
+%%T%%/docs/api/org/dbxml/core/corba/db/FaultCodesPOA.html
+%%T%%/docs/api/org/dbxml/core/corba/db/DocumentSetHolder.html
+%%T%%/docs/api/org/dbxml/core/corba/db/FaultCodes.html
+%%T%%/docs/api/org/dbxml/core/corba/db/TimestampHelper.html
+%%T%%/docs/api/org/dbxml/core/corba/db/DatabaseManagerHelper.html
+%%T%%/docs/api/org/dbxml/core/corba/db/FaultCodesHelper.html
+%%T%%/docs/api/org/dbxml/core/corba/db/_CollectionManagerStub.html
+%%T%%/docs/api/org/dbxml/core/corba/db/_DatabaseStub.html
+%%T%%/docs/api/org/dbxml/core/corba/db/ServantManagementPOATie.html
+%%T%%/docs/api/org/dbxml/core/corba/db/BufferHolder.html
+%%T%%/docs/api/org/dbxml/core/corba/db/DatabaseHolder.html
+%%T%%/docs/api/org/dbxml/core/corba/db/DocumentSetPOATie.html
+%%T%%/docs/api/org/dbxml/core/corba/db/DatabaseManagerHolder.html
+%%T%%/docs/api/org/dbxml/core/corba/CollectionManagerServant.html
+%%T%%/docs/api/org/dbxml/core/corba/class-use/DatabaseServant.html
+%%T%%/docs/api/org/dbxml/core/corba/class-use/CollectionServant.html
+%%T%%/docs/api/org/dbxml/core/corba/class-use/SymbolDeserializer.html
+%%T%%/docs/api/org/dbxml/core/corba/class-use/CollectionManagerServant.html
+%%T%%/docs/api/org/dbxml/core/corba/class-use/DatabaseManagerServant.html
+%%T%%/docs/api/org/dbxml/core/corba/class-use/EncodedBufferConverter.html
+%%T%%/docs/api/org/dbxml/core/corba/class-use/SymbolSerializer.html
+%%T%%/docs/api/org/dbxml/core/corba/class-use/DocumentSetServant.html
+%%T%%/docs/api/org/dbxml/core/corba/package-frame.html
+%%T%%/docs/api/org/dbxml/core/corba/SymbolSerializer.html
+%%T%%/docs/api/org/dbxml/core/corba/package-tree.html
+%%T%%/docs/api/org/dbxml/core/corba/CollectionServant.html
+%%T%%/docs/api/org/dbxml/core/corba/DocumentSetServant.html
+%%T%%/docs/api/org/dbxml/core/corba/DatabaseManagerServant.html
+%%T%%/docs/api/org/dbxml/core/corba/EncodedBufferConverter.html
+%%T%%/docs/api/org/dbxml/core/corba/DatabaseServant.html
+%%T%%/docs/api/org/dbxml/core/corba/SymbolDeserializer.html
+%%T%%/docs/api/org/dbxml/core/corba/package-use.html
+%%T%%/docs/api/org/dbxml/core/corba/package-summary.html
+%%T%%/docs/api/org/dbxml/core/indexer/helpers/IndexQueryNIN.html
+%%T%%/docs/api/org/dbxml/core/indexer/helpers/class-use/IndexQueryGT.html
+%%T%%/docs/api/org/dbxml/core/indexer/helpers/class-use/IndexQuerySW.html
+%%T%%/docs/api/org/dbxml/core/indexer/helpers/class-use/IndexQueryBW.html
+%%T%%/docs/api/org/dbxml/core/indexer/helpers/class-use/IndexQueryEQ.html
+%%T%%/docs/api/org/dbxml/core/indexer/helpers/class-use/IndexQueryNIN.html
+%%T%%/docs/api/org/dbxml/core/indexer/helpers/class-use/IndexQueryBWX.html
+%%T%%/docs/api/org/dbxml/core/indexer/helpers/class-use/IndexQueryNEQ.html
+%%T%%/docs/api/org/dbxml/core/indexer/helpers/class-use/IndexQueryNSW.html
+%%T%%/docs/api/org/dbxml/core/indexer/helpers/class-use/IndexQueryGEQ.html
+%%T%%/docs/api/org/dbxml/core/indexer/helpers/class-use/IndexQueryNBWX.html
+%%T%%/docs/api/org/dbxml/core/indexer/helpers/class-use/IndexQueryNBW.html
+%%T%%/docs/api/org/dbxml/core/indexer/helpers/class-use/IndexQueryIN.html
+%%T%%/docs/api/org/dbxml/core/indexer/helpers/class-use/IndexQueryANY.html
+%%T%%/docs/api/org/dbxml/core/indexer/helpers/class-use/IndexQueryLT.html
+%%T%%/docs/api/org/dbxml/core/indexer/helpers/class-use/IndexQueryLEQ.html
+%%T%%/docs/api/org/dbxml/core/indexer/helpers/IndexQueryIN.html
+%%T%%/docs/api/org/dbxml/core/indexer/helpers/IndexQueryNBWX.html
+%%T%%/docs/api/org/dbxml/core/indexer/helpers/IndexQueryBWX.html
+%%T%%/docs/api/org/dbxml/core/indexer/helpers/IndexQueryNEQ.html
+%%T%%/docs/api/org/dbxml/core/indexer/helpers/IndexQueryEQ.html
+%%T%%/docs/api/org/dbxml/core/indexer/helpers/IndexQueryGT.html
+%%T%%/docs/api/org/dbxml/core/indexer/helpers/IndexQueryNSW.html
+%%T%%/docs/api/org/dbxml/core/indexer/helpers/package-summary.html
+%%T%%/docs/api/org/dbxml/core/indexer/helpers/package-frame.html
+%%T%%/docs/api/org/dbxml/core/indexer/helpers/IndexQueryGEQ.html
+%%T%%/docs/api/org/dbxml/core/indexer/helpers/IndexQuerySW.html
+%%T%%/docs/api/org/dbxml/core/indexer/helpers/IndexQueryNBW.html
+%%T%%/docs/api/org/dbxml/core/indexer/helpers/IndexQueryANY.html
+%%T%%/docs/api/org/dbxml/core/indexer/helpers/package-tree.html
+%%T%%/docs/api/org/dbxml/core/indexer/helpers/IndexQueryBW.html
+%%T%%/docs/api/org/dbxml/core/indexer/helpers/IndexQueryLEQ.html
+%%T%%/docs/api/org/dbxml/core/indexer/helpers/IndexQueryLT.html
+%%T%%/docs/api/org/dbxml/core/indexer/helpers/package-use.html
+%%T%%/docs/api/org/dbxml/core/indexer/class-use/IndexMatch.html
+%%T%%/docs/api/org/dbxml/core/indexer/class-use/NameIndexer.html
+%%T%%/docs/api/org/dbxml/core/indexer/class-use/ValueIndexer.html
+%%T%%/docs/api/org/dbxml/core/indexer/class-use/IndexManager.html
+%%T%%/docs/api/org/dbxml/core/indexer/class-use/IndexPattern.html
+%%T%%/docs/api/org/dbxml/core/indexer/class-use/IndexerException.html
+%%T%%/docs/api/org/dbxml/core/indexer/class-use/IndexQuery.html
+%%T%%/docs/api/org/dbxml/core/indexer/class-use/CannotCreateException.html
+%%T%%/docs/api/org/dbxml/core/indexer/class-use/DuplicateIndexException.html
+%%T%%/docs/api/org/dbxml/core/indexer/class-use/Indexer.html
+%%T%%/docs/api/org/dbxml/core/indexer/package-use.html
+%%T%%/docs/api/org/dbxml/core/indexer/IndexMatch.html
+%%T%%/docs/api/org/dbxml/core/indexer/package-frame.html
+%%T%%/docs/api/org/dbxml/core/indexer/DuplicateIndexException.html
+%%T%%/docs/api/org/dbxml/core/indexer/package-summary.html
+%%T%%/docs/api/org/dbxml/core/indexer/Indexer.html
+%%T%%/docs/api/org/dbxml/core/indexer/IndexerException.html
+%%T%%/docs/api/org/dbxml/core/indexer/CannotCreateException.html
+%%T%%/docs/api/org/dbxml/core/indexer/ValueIndexer.html
+%%T%%/docs/api/org/dbxml/core/indexer/NameIndexer.html
+%%T%%/docs/api/org/dbxml/core/indexer/IndexManager.html
+%%T%%/docs/api/org/dbxml/core/indexer/IndexPattern.html
+%%T%%/docs/api/org/dbxml/core/indexer/IndexQuery.html
+%%T%%/docs/api/org/dbxml/core/indexer/package-tree.html
+%%T%%/docs/api/org/dbxml/core/objects/class-use/XMLObjectException.html
+%%T%%/docs/api/org/dbxml/core/objects/class-use/MapArgs.html
+%%T%%/docs/api/org/dbxml/core/objects/class-use/XMLObjectRuntimeException.html
+%%T%%/docs/api/org/dbxml/core/objects/class-use/Reflectable.html
+%%T%%/docs/api/org/dbxml/core/objects/class-use/Types.html
+%%T%%/docs/api/org/dbxml/core/objects/class-use/ClassFormatException.html
+%%T%%/docs/api/org/dbxml/core/objects/class-use/Reflector.html
+%%T%%/docs/api/org/dbxml/core/objects/class-use/ElementArgs.html
+%%T%%/docs/api/org/dbxml/core/objects/class-use/Args.html
+%%T%%/docs/api/org/dbxml/core/objects/class-use/ThreadPolicy.html
+%%T%%/docs/api/org/dbxml/core/objects/class-use/InvalidContextException.html
+%%T%%/docs/api/org/dbxml/core/objects/class-use/CannotCreateException.html
+%%T%%/docs/api/org/dbxml/core/objects/class-use/XMLObject.html
+%%T%%/docs/api/org/dbxml/core/objects/class-use/SimpleXMLObject.html
+%%T%%/docs/api/org/dbxml/core/objects/class-use/DuplicateObjectException.html
+%%T%%/docs/api/org/dbxml/core/objects/class-use/XMLObjectManager.html
+%%T%%/docs/api/org/dbxml/core/objects/class-use/MethodNotFoundException.html
+%%T%%/docs/api/org/dbxml/core/objects/class-use/SimpleReflectable.html
+%%T%%/docs/api/org/dbxml/core/objects/class-use/Variant.html
+%%T%%/docs/api/org/dbxml/core/objects/package-frame.html
+%%T%%/docs/api/org/dbxml/core/objects/InvalidContextException.html
+%%T%%/docs/api/org/dbxml/core/objects/MethodNotFoundException.html
+%%T%%/docs/api/org/dbxml/core/objects/package-use.html
+%%T%%/docs/api/org/dbxml/core/objects/SimpleXMLObject.html
+%%T%%/docs/api/org/dbxml/core/objects/package-summary.html
+%%T%%/docs/api/org/dbxml/core/objects/Variant.html
+%%T%%/docs/api/org/dbxml/core/objects/XMLObjectRuntimeException.html
+%%T%%/docs/api/org/dbxml/core/objects/Args.html
+%%T%%/docs/api/org/dbxml/core/objects/Reflectable.html
+%%T%%/docs/api/org/dbxml/core/objects/CannotCreateException.html
+%%T%%/docs/api/org/dbxml/core/objects/ThreadPolicy.html
+%%T%%/docs/api/org/dbxml/core/objects/SimpleReflectable.html
+%%T%%/docs/api/org/dbxml/core/objects/ElementArgs.html
+%%T%%/docs/api/org/dbxml/core/objects/MapArgs.html
+%%T%%/docs/api/org/dbxml/core/objects/ClassFormatException.html
+%%T%%/docs/api/org/dbxml/core/objects/XMLObject.html
+%%T%%/docs/api/org/dbxml/core/objects/package-tree.html
+%%T%%/docs/api/org/dbxml/core/objects/XMLObjectManager.html
+%%T%%/docs/api/org/dbxml/core/objects/Types.html
+%%T%%/docs/api/org/dbxml/core/objects/Reflector.html
+%%T%%/docs/api/org/dbxml/core/objects/DuplicateObjectException.html
+%%T%%/docs/api/org/dbxml/core/objects/XMLObjectException.html
+%%T%%/docs/api/org/dbxml/core/query/QueryEngine.html
+%%T%%/docs/api/org/dbxml/core/query/QueryException.html
+%%T%%/docs/api/org/dbxml/core/query/class-use/QueryException.html
+%%T%%/docs/api/org/dbxml/core/query/class-use/QueryResolver.html
+%%T%%/docs/api/org/dbxml/core/query/class-use/StyleNotFoundException.html
+%%T%%/docs/api/org/dbxml/core/query/class-use/NodeListSet.html
+%%T%%/docs/api/org/dbxml/core/query/class-use/XPathQueryResolver.html
+%%T%%/docs/api/org/dbxml/core/query/class-use/Query.html
+%%T%%/docs/api/org/dbxml/core/query/class-use/ProcessingException.html
+%%T%%/docs/api/org/dbxml/core/query/class-use/CompilationException.html
+%%T%%/docs/api/org/dbxml/core/query/class-use/QueryEngine.html
+%%T%%/docs/api/org/dbxml/core/query/ProcessingException.html
+%%T%%/docs/api/org/dbxml/core/query/package-frame.html
+%%T%%/docs/api/org/dbxml/core/query/NodeListSet.html
+%%T%%/docs/api/org/dbxml/core/query/CompilationException.html
+%%T%%/docs/api/org/dbxml/core/query/StyleNotFoundException.html
+%%T%%/docs/api/org/dbxml/core/query/XPathQueryResolver.html
+%%T%%/docs/api/org/dbxml/core/query/package-use.html
+%%T%%/docs/api/org/dbxml/core/query/package-tree.html
+%%T%%/docs/api/org/dbxml/core/query/Query.html
+%%T%%/docs/api/org/dbxml/core/query/QueryResolver.html
+%%T%%/docs/api/org/dbxml/core/query/package-summary.html
+%%T%%/docs/api/org/dbxml/core/request/package-use.html
+%%T%%/docs/api/org/dbxml/core/request/package-frame.html
+%%T%%/docs/api/org/dbxml/core/request/class-use/DbxmlStreamHandlerFactory.html
+%%T%%/docs/api/org/dbxml/core/request/class-use/DbxmlStreamHandler.html
+%%T%%/docs/api/org/dbxml/core/request/class-use/URIMapper.html
+%%T%%/docs/api/org/dbxml/core/request/DbxmlStreamHandlerFactory.html
+%%T%%/docs/api/org/dbxml/core/request/DbxmlStreamHandler.html
+%%T%%/docs/api/org/dbxml/core/request/URIMapper.html
+%%T%%/docs/api/org/dbxml/core/request/package-tree.html
+%%T%%/docs/api/org/dbxml/core/request/package-summary.html
+%%T%%/docs/api/org/dbxml/core/security/LocalSecurityManager.html
+%%T%%/docs/api/org/dbxml/core/security/Permission.html
+%%T%%/docs/api/org/dbxml/core/security/DBSecurityManager.html
+%%T%%/docs/api/org/dbxml/core/security/package-tree.html
+%%T%%/docs/api/org/dbxml/core/security/AccessDeniedException.html
+%%T%%/docs/api/org/dbxml/core/security/class-use/LocalSecurityManager.html
+%%T%%/docs/api/org/dbxml/core/security/class-use/ResourcePermissions.html
+%%T%%/docs/api/org/dbxml/core/security/class-use/Credentials.html
+%%T%%/docs/api/org/dbxml/core/security/class-use/InvalidCredentialsException.html
+%%T%%/docs/api/org/dbxml/core/security/class-use/DBSecurityManager.html
+%%T%%/docs/api/org/dbxml/core/security/class-use/UnknownUserException.html
+%%T%%/docs/api/org/dbxml/core/security/class-use/Permission.html
+%%T%%/docs/api/org/dbxml/core/security/class-use/PasswordCredentials.html
+%%T%%/docs/api/org/dbxml/core/security/class-use/AccessDeniedException.html
+%%T%%/docs/api/org/dbxml/core/security/class-use/InvalidPasswordException.html
+%%T%%/docs/api/org/dbxml/core/security/class-use/SecurityException.html
+%%T%%/docs/api/org/dbxml/core/security/PasswordCredentials.html
+%%T%%/docs/api/org/dbxml/core/security/SecurityException.html
+%%T%%/docs/api/org/dbxml/core/security/package-summary.html
+%%T%%/docs/api/org/dbxml/core/security/UnknownUserException.html
+%%T%%/docs/api/org/dbxml/core/security/InvalidPasswordException.html
+%%T%%/docs/api/org/dbxml/core/security/ResourcePermissions.html
+%%T%%/docs/api/org/dbxml/core/security/package-frame.html
+%%T%%/docs/api/org/dbxml/core/security/Credentials.html
+%%T%%/docs/api/org/dbxml/core/security/InvalidCredentialsException.html
+%%T%%/docs/api/org/dbxml/core/security/package-use.html
+%%T%%/docs/api/org/dbxml/core/filer/class-use/BTreeFiler.html
+%%T%%/docs/api/org/dbxml/core/filer/class-use/FSFiler.html
+%%T%%/docs/api/org/dbxml/core/filer/class-use/BTreeCallback.html
+%%T%%/docs/api/org/dbxml/core/filer/class-use/Paged.Page.html
+%%T%%/docs/api/org/dbxml/core/filer/class-use/Paged.FileHeader.html
+%%T%%/docs/api/org/dbxml/core/filer/class-use/BTreeCorruptException.html
+%%T%%/docs/api/org/dbxml/core/filer/class-use/BTreeException.html
+%%T%%/docs/api/org/dbxml/core/filer/class-use/BTreeNotFoundException.html
+%%T%%/docs/api/org/dbxml/core/filer/class-use/Streamable.html
+%%T%%/docs/api/org/dbxml/core/filer/class-use/MemFiler.html
+%%T%%/docs/api/org/dbxml/core/filer/class-use/HashFiler.html
+%%T%%/docs/api/org/dbxml/core/filer/class-use/FilerException.html
+%%T%%/docs/api/org/dbxml/core/filer/class-use/BTree.BTreeRootInfo.html
+%%T%%/docs/api/org/dbxml/core/filer/class-use/Paged.html
+%%T%%/docs/api/org/dbxml/core/filer/class-use/Paged.PageHeader.html
+%%T%%/docs/api/org/dbxml/core/filer/class-use/Filer.html
+%%T%%/docs/api/org/dbxml/core/filer/class-use/BTree.html
+%%T%%/docs/api/org/dbxml/core/filer/HashFiler.html
+%%T%%/docs/api/org/dbxml/core/filer/Paged.FileHeader.html
+%%T%%/docs/api/org/dbxml/core/filer/Filer.html
+%%T%%/docs/api/org/dbxml/core/filer/BTreeFiler.html
+%%T%%/docs/api/org/dbxml/core/filer/BTree.html
+%%T%%/docs/api/org/dbxml/core/filer/package-use.html
+%%T%%/docs/api/org/dbxml/core/filer/FilerException.html
+%%T%%/docs/api/org/dbxml/core/filer/BTreeCorruptException.html
+%%T%%/docs/api/org/dbxml/core/filer/Paged.Page.html
+%%T%%/docs/api/org/dbxml/core/filer/Paged.PageHeader.html
+%%T%%/docs/api/org/dbxml/core/filer/package-summary.html
+%%T%%/docs/api/org/dbxml/core/filer/Streamable.html
+%%T%%/docs/api/org/dbxml/core/filer/package-frame.html
+%%T%%/docs/api/org/dbxml/core/filer/FSFiler.html
+%%T%%/docs/api/org/dbxml/core/filer/MemFiler.html
+%%T%%/docs/api/org/dbxml/core/filer/package-tree.html
+%%T%%/docs/api/org/dbxml/core/filer/BTreeNotFoundException.html
+%%T%%/docs/api/org/dbxml/core/filer/BTreeException.html
+%%T%%/docs/api/org/dbxml/core/filer/BTreeCallback.html
+%%T%%/docs/api/org/dbxml/core/filer/Paged.html
+%%T%%/docs/api/org/dbxml/core/filer/BTree.BTreeRootInfo.html
+%%T%%/docs/api/org/dbxml/core/class-use/SystemCollection.html
+%%T%%/docs/api/org/dbxml/core/class-use/FaultCodes.html
+%%T%%/docs/api/org/dbxml/core/class-use/DocumentCache.html
+%%T%%/docs/api/org/dbxml/core/class-use/Database.html
+%%T%%/docs/api/org/dbxml/core/class-use/DBObject.html
+%%T%%/docs/api/org/dbxml/core/class-use/Container.html
+%%T%%/docs/api/org/dbxml/core/class-use/DBException.html
+%%T%%/docs/api/org/dbxml/core/class-use/CollectionManager.html
+%%T%%/docs/api/org/dbxml/core/class-use/Collection.html
+%%T%%/docs/api/org/dbxml/core/data/EmptyNodeSet.html
+%%T%%/docs/api/org/dbxml/core/data/package-use.html
+%%T%%/docs/api/org/dbxml/core/data/package-tree.html
+%%T%%/docs/api/org/dbxml/core/data/DocumentSet.html
+%%T%%/docs/api/org/dbxml/core/data/RecordSet.html
+%%T%%/docs/api/org/dbxml/core/data/class-use/Key.html
+%%T%%/docs/api/org/dbxml/core/data/class-use/EmptyRecordSet.html
+%%T%%/docs/api/org/dbxml/core/data/class-use/NodeSet.html
+%%T%%/docs/api/org/dbxml/core/data/class-use/EmptyDocumentSet.html
+%%T%%/docs/api/org/dbxml/core/data/class-use/DocumentSet.html
+%%T%%/docs/api/org/dbxml/core/data/class-use/Record.html
+%%T%%/docs/api/org/dbxml/core/data/class-use/RecordSet.html
+%%T%%/docs/api/org/dbxml/core/data/class-use/Value.html
+%%T%%/docs/api/org/dbxml/core/data/class-use/EmptyNodeSet.html
+%%T%%/docs/api/org/dbxml/core/data/Key.html
+%%T%%/docs/api/org/dbxml/core/data/EmptyDocumentSet.html
+%%T%%/docs/api/org/dbxml/core/data/Record.html
+%%T%%/docs/api/org/dbxml/core/data/package-frame.html
+%%T%%/docs/api/org/dbxml/core/data/NodeSet.html
+%%T%%/docs/api/org/dbxml/core/data/package-summary.html
+%%T%%/docs/api/org/dbxml/core/data/Value.html
+%%T%%/docs/api/org/dbxml/core/data/EmptyRecordSet.html
+%%T%%/docs/api/org/dbxml/core/SystemCollection.html
+%%T%%/docs/api/org/dbxml/core/Collection.html
+%%T%%/docs/api/org/dbxml/core/package-frame.html
+%%T%%/docs/api/org/dbxml/core/xupdate/package-frame.html
+%%T%%/docs/api/org/dbxml/core/xupdate/XUpdateQueryResolver.html
+%%T%%/docs/api/org/dbxml/core/xupdate/class-use/XObjectImpl.html
+%%T%%/docs/api/org/dbxml/core/xupdate/class-use/XUpdateQueryResolver.html
+%%T%%/docs/api/org/dbxml/core/xupdate/class-use/XPathQueryImpl.html
+%%T%%/docs/api/org/dbxml/core/xupdate/class-use/XPathQueryFactoryImpl.html
+%%T%%/docs/api/org/dbxml/core/xupdate/class-use/XUpdateImpl.html
+%%T%%/docs/api/org/dbxml/core/xupdate/XPathQueryFactoryImpl.html
+%%T%%/docs/api/org/dbxml/core/xupdate/XUpdateImpl.html
+%%T%%/docs/api/org/dbxml/core/xupdate/XObjectImpl.html
+%%T%%/docs/api/org/dbxml/core/xupdate/package-tree.html
+%%T%%/docs/api/org/dbxml/core/xupdate/package-use.html
+%%T%%/docs/api/org/dbxml/core/xupdate/package-summary.html
+%%T%%/docs/api/org/dbxml/core/xupdate/XPathQueryImpl.html
+%%T%%/docs/api/org/dbxml/core/system/package-summary.html
+%%T%%/docs/api/org/dbxml/core/system/class-use/Sequencer.html
+%%T%%/docs/api/org/dbxml/core/system/package-tree.html
+%%T%%/docs/api/org/dbxml/core/system/Sequencer.html
+%%T%%/docs/api/org/dbxml/core/system/package-frame.html
+%%T%%/docs/api/org/dbxml/core/system/package-use.html
+%%T%%/docs/api/org/dbxml/core/DBObject.html
+%%T%%/docs/api/org/dbxml/core/DBException.html
+%%T%%/docs/api/org/dbxml/core/Container.html
+%%T%%/docs/api/org/dbxml/core/DocumentCache.html
+%%T%%/docs/api/org/dbxml/core/CollectionManager.html
+%%T%%/docs/api/org/dbxml/core/package-summary.html
+%%T%%/docs/api/org/dbxml/core/package-use.html
+%%T%%/docs/api/org/dbxml/core/Database.html
+%%T%%/docs/api/org/dbxml/core/package-tree.html
+%%T%%/docs/api/org/dbxml/core/FaultCodes.html
+%%T%%/docs/api/org/dbxml/xml/dom/class-use/CommentImpl.html
+%%T%%/docs/api/org/dbxml/xml/dom/class-use/CompressedNode.html
+%%T%%/docs/api/org/dbxml/xml/dom/class-use/ProcessingInstructionImpl.html
+%%T%%/docs/api/org/dbxml/xml/dom/class-use/TextImpl.html
+%%T%%/docs/api/org/dbxml/xml/dom/class-use/NodeImpl.html
+%%T%%/docs/api/org/dbxml/xml/dom/class-use/NodeListImpl.html
+%%T%%/docs/api/org/dbxml/xml/dom/class-use/DOMImplementationImpl.html
+%%T%%/docs/api/org/dbxml/xml/dom/class-use/DOMParser.html
+%%T%%/docs/api/org/dbxml/xml/dom/class-use/CompressedDocument.html
+%%T%%/docs/api/org/dbxml/xml/dom/class-use/NotationImpl.html
+%%T%%/docs/api/org/dbxml/xml/dom/class-use/DBNode.html
+%%T%%/docs/api/org/dbxml/xml/dom/class-use/DBDocument.html
+%%T%%/docs/api/org/dbxml/xml/dom/class-use/EntityReferenceImpl.html
+%%T%%/docs/api/org/dbxml/xml/dom/class-use/ElementImpl.html
+%%T%%/docs/api/org/dbxml/xml/dom/class-use/CDATASectionImpl.html
+%%T%%/docs/api/org/dbxml/xml/dom/class-use/CharacterDataImpl.html
+%%T%%/docs/api/org/dbxml/xml/dom/class-use/EntityImpl.html
+%%T%%/docs/api/org/dbxml/xml/dom/class-use/DocumentImpl.html
+%%T%%/docs/api/org/dbxml/xml/dom/class-use/DOMCompressor.html
+%%T%%/docs/api/org/dbxml/xml/dom/class-use/NamedNodeMapImpl.html
+%%T%%/docs/api/org/dbxml/xml/dom/class-use/AttrImpl.html
+%%T%%/docs/api/org/dbxml/xml/dom/class-use/DocumentFragmentImpl.html
+%%T%%/docs/api/org/dbxml/xml/dom/class-use/DocumentTypeImpl.html
+%%T%%/docs/api/org/dbxml/xml/dom/class-use/ContainerNodeImpl.html
+%%T%%/docs/api/org/dbxml/xml/dom/package-frame.html
+%%T%%/docs/api/org/dbxml/xml/dom/CharacterDataImpl.html
+%%T%%/docs/api/org/dbxml/xml/dom/ElementImpl.html
+%%T%%/docs/api/org/dbxml/xml/dom/traversal/TreeWalkerImpl.html
+%%T%%/docs/api/org/dbxml/xml/dom/traversal/class-use/TreeWalkerImpl.html
+%%T%%/docs/api/org/dbxml/xml/dom/traversal/package-summary.html
+%%T%%/docs/api/org/dbxml/xml/dom/traversal/package-use.html
+%%T%%/docs/api/org/dbxml/xml/dom/traversal/package-frame.html
+%%T%%/docs/api/org/dbxml/xml/dom/traversal/package-tree.html
+%%T%%/docs/api/org/dbxml/xml/dom/DOMCompressor.html
+%%T%%/docs/api/org/dbxml/xml/dom/CDATASectionImpl.html
+%%T%%/docs/api/org/dbxml/xml/dom/NodeListImpl.html
+%%T%%/docs/api/org/dbxml/xml/dom/EntityReferenceImpl.html
+%%T%%/docs/api/org/dbxml/xml/dom/NamedNodeMapImpl.html
+%%T%%/docs/api/org/dbxml/xml/dom/ProcessingInstructionImpl.html
+%%T%%/docs/api/org/dbxml/xml/dom/CompressedNode.html
+%%T%%/docs/api/org/dbxml/xml/dom/package-summary.html
+%%T%%/docs/api/org/dbxml/xml/dom/ContainerNodeImpl.html
+%%T%%/docs/api/org/dbxml/xml/dom/EntityImpl.html
+%%T%%/docs/api/org/dbxml/xml/dom/DOMParser.html
+%%T%%/docs/api/org/dbxml/xml/dom/DBDocument.html
+%%T%%/docs/api/org/dbxml/xml/dom/DocumentTypeImpl.html
+%%T%%/docs/api/org/dbxml/xml/dom/NotationImpl.html
+%%T%%/docs/api/org/dbxml/xml/dom/CommentImpl.html
+%%T%%/docs/api/org/dbxml/xml/dom/package-tree.html
+%%T%%/docs/api/org/dbxml/xml/dom/AttrImpl.html
+%%T%%/docs/api/org/dbxml/xml/dom/DocumentImpl.html
+%%T%%/docs/api/org/dbxml/xml/dom/DOMImplementationImpl.html
+%%T%%/docs/api/org/dbxml/xml/dom/package-use.html
+%%T%%/docs/api/org/dbxml/xml/dom/DBNode.html
+%%T%%/docs/api/org/dbxml/xml/dom/CompressedDocument.html
+%%T%%/docs/api/org/dbxml/xml/dom/DocumentFragmentImpl.html
+%%T%%/docs/api/org/dbxml/xml/dom/TextImpl.html
+%%T%%/docs/api/org/dbxml/xml/dom/NodeImpl.html
+%%T%%/docs/api/org/dbxml/xml/class-use/XMLCompressedInput.html
+%%T%%/docs/api/org/dbxml/xml/class-use/NamespaceMap.html
+%%T%%/docs/api/org/dbxml/xml/class-use/SymbolTable.html
+%%T%%/docs/api/org/dbxml/xml/class-use/Signatures.html
+%%T%%/docs/api/org/dbxml/xml/class-use/XMLCompressedOutput.html
+%%T%%/docs/api/org/dbxml/xml/class-use/TextWriter.html
+%%T%%/docs/api/org/dbxml/xml/class-use/XMLSerializable.html
+%%T%%/docs/api/org/dbxml/xml/class-use/SymbolTableSymbols.html
+%%T%%/docs/api/org/dbxml/xml/class-use/NodeSource.html
+%%T%%/docs/api/org/dbxml/xml/class-use/SymbolTable.SymbolInfo.html
+%%T%%/docs/api/org/dbxml/xml/sax/class-use/SAXEventGenerator.html
+%%T%%/docs/api/org/dbxml/xml/sax/class-use/CompressionHandler.html
+%%T%%/docs/api/org/dbxml/xml/sax/CompressionHandler.html
+%%T%%/docs/api/org/dbxml/xml/sax/package-tree.html
+%%T%%/docs/api/org/dbxml/xml/sax/package-summary.html
+%%T%%/docs/api/org/dbxml/xml/sax/SAXEventGenerator.html
+%%T%%/docs/api/org/dbxml/xml/sax/package-frame.html
+%%T%%/docs/api/org/dbxml/xml/sax/package-use.html
+%%T%%/docs/api/org/dbxml/xml/SymbolTableSymbols.html
+%%T%%/docs/api/org/dbxml/xml/jaxp/class-use/DocumentBuilderFactoryImpl.html
+%%T%%/docs/api/org/dbxml/xml/jaxp/class-use/DocumentBuilderImpl.html
+%%T%%/docs/api/org/dbxml/xml/jaxp/package-summary.html
+%%T%%/docs/api/org/dbxml/xml/jaxp/package-use.html
+%%T%%/docs/api/org/dbxml/xml/jaxp/DocumentBuilderImpl.html
+%%T%%/docs/api/org/dbxml/xml/jaxp/package-frame.html
+%%T%%/docs/api/org/dbxml/xml/jaxp/package-tree.html
+%%T%%/docs/api/org/dbxml/xml/jaxp/DocumentBuilderFactoryImpl.html
+%%T%%/docs/api/org/dbxml/xml/package-tree.html
+%%T%%/docs/api/org/dbxml/xml/package-frame.html
+%%T%%/docs/api/org/dbxml/xml/XMLCompressedInput.html
+%%T%%/docs/api/org/dbxml/xml/package-use.html
+%%T%%/docs/api/org/dbxml/xml/NamespaceMap.html
+%%T%%/docs/api/org/dbxml/xml/XMLCompressedOutput.html
+%%T%%/docs/api/org/dbxml/xml/package-summary.html
+%%T%%/docs/api/org/dbxml/xml/SymbolTable.SymbolInfo.html
+%%T%%/docs/api/org/dbxml/xml/Signatures.html
+%%T%%/docs/api/org/dbxml/xml/SymbolTable.html
+%%T%%/docs/api/org/dbxml/xml/TextWriter.html
+%%T%%/docs/api/org/dbxml/xml/NodeSource.html
+%%T%%/docs/api/org/dbxml/xml/XMLSerializable.html
+%%T%%/docs/api/org/dbxml/tools/command/ImportTree.html
+%%T%%/docs/api/org/dbxml/tools/command/RetrieveDocument.html
+%%T%%/docs/api/org/dbxml/tools/command/class-use/ExportTree.html
+%%T%%/docs/api/org/dbxml/tools/command/class-use/Shutdown.html
+%%T%%/docs/api/org/dbxml/tools/command/class-use/AddCollectionXMLObject.html
+%%T%%/docs/api/org/dbxml/tools/command/class-use/AddMultipleDocuments.html
+%%T%%/docs/api/org/dbxml/tools/command/class-use/DeleteDocument.html
+%%T%%/docs/api/org/dbxml/tools/command/class-use/ImportTree.html
+%%T%%/docs/api/org/dbxml/tools/command/class-use/ListCollectionXMLObjects.html
+%%T%%/docs/api/org/dbxml/tools/command/class-use/XPathQuery.html
+%%T%%/docs/api/org/dbxml/tools/command/class-use/ListCollectionDocuments.html
+%%T%%/docs/api/org/dbxml/tools/command/class-use/AddIndexer.html
+%%T%%/docs/api/org/dbxml/tools/command/class-use/RetrieveDocument.html
+%%T%%/docs/api/org/dbxml/tools/command/class-use/DeleteIndexer.html
+%%T%%/docs/api/org/dbxml/tools/command/class-use/DeleteCollectionXMLObject.html
+%%T%%/docs/api/org/dbxml/tools/command/class-use/ListIndexers.html
+%%T%%/docs/api/org/dbxml/tools/command/class-use/Command.html
+%%T%%/docs/api/org/dbxml/tools/command/class-use/DeleteCollection.html
+%%T%%/docs/api/org/dbxml/tools/command/class-use/AddDocument.html
+%%T%%/docs/api/org/dbxml/tools/command/class-use/InvokeXmlObject.html
+%%T%%/docs/api/org/dbxml/tools/command/class-use/ListCollections.html
+%%T%%/docs/api/org/dbxml/tools/command/class-use/AddCollection.html
+%%T%%/docs/api/org/dbxml/tools/command/AddIndexer.html
+%%T%%/docs/api/org/dbxml/tools/command/AddCollectionXMLObject.html
+%%T%%/docs/api/org/dbxml/tools/command/package-frame.html
+%%T%%/docs/api/org/dbxml/tools/command/ListIndexers.html
+%%T%%/docs/api/org/dbxml/tools/command/ListCollectionDocuments.html
+%%T%%/docs/api/org/dbxml/tools/command/DeleteIndexer.html
+%%T%%/docs/api/org/dbxml/tools/command/InvokeXmlObject.html
+%%T%%/docs/api/org/dbxml/tools/command/package-summary.html
+%%T%%/docs/api/org/dbxml/tools/command/AddDocument.html
+%%T%%/docs/api/org/dbxml/tools/command/ExportTree.html
+%%T%%/docs/api/org/dbxml/tools/command/AddMultipleDocuments.html
+%%T%%/docs/api/org/dbxml/tools/command/DeleteCollectionXMLObject.html
+%%T%%/docs/api/org/dbxml/tools/command/AddCollection.html
+%%T%%/docs/api/org/dbxml/tools/command/package-tree.html
+%%T%%/docs/api/org/dbxml/tools/command/ListCollections.html
+%%T%%/docs/api/org/dbxml/tools/command/Shutdown.html
+%%T%%/docs/api/org/dbxml/tools/command/package-use.html
+%%T%%/docs/api/org/dbxml/tools/command/Command.html
+%%T%%/docs/api/org/dbxml/tools/command/DeleteDocument.html
+%%T%%/docs/api/org/dbxml/tools/command/XPathQuery.html
+%%T%%/docs/api/org/dbxml/tools/command/DeleteCollection.html
+%%T%%/docs/api/org/dbxml/tools/command/ListCollectionXMLObjects.html
+%%T%%/docs/api/org/dbxml/tools/ArgTokenizer.html
+%%T%%/docs/api/org/dbxml/tools/class-use/ArgTokenizer.html
+%%T%%/docs/api/org/dbxml/tools/class-use/XMLAdminTools.html
+%%T%%/docs/api/org/dbxml/tools/class-use/XMLUserTools.html
+%%T%%/docs/api/org/dbxml/tools/class-use/DeploymentTask.html
+%%T%%/docs/api/org/dbxml/tools/package-summary.html
+%%T%%/docs/api/org/dbxml/tools/package-use.html
+%%T%%/docs/api/org/dbxml/tools/DeploymentTask.html
+%%T%%/docs/api/org/dbxml/tools/XMLUserTools.html
+%%T%%/docs/api/org/dbxml/tools/package-frame.html
+%%T%%/docs/api/org/dbxml/tools/XMLAdminTools.html
+%%T%%/docs/api/org/dbxml/tools/package-tree.html
+%%T%%/docs/api/org/dbxml/client/xmldb/package-frame.html
+%%T%%/docs/api/org/dbxml/client/xmldb/package-use.html
+%%T%%/docs/api/org/dbxml/client/xmldb/services/class-use/XMLObjectService.html
+%%T%%/docs/api/org/dbxml/client/xmldb/services/class-use/XUpdateQueryServiceImpl.html
+%%T%%/docs/api/org/dbxml/client/xmldb/services/class-use/XPathQueryServiceImpl.html
+%%T%%/docs/api/org/dbxml/client/xmldb/services/class-use/DatabaseInstanceManager.html
+%%T%%/docs/api/org/dbxml/client/xmldb/services/class-use/CollectionManager.html
+%%T%%/docs/api/org/dbxml/client/xmldb/services/package-summary.html
+%%T%%/docs/api/org/dbxml/client/xmldb/services/XPathQueryServiceImpl.html
+%%T%%/docs/api/org/dbxml/client/xmldb/services/XMLObjectService.html
+%%T%%/docs/api/org/dbxml/client/xmldb/services/CollectionManager.html
+%%T%%/docs/api/org/dbxml/client/xmldb/services/package-use.html
+%%T%%/docs/api/org/dbxml/client/xmldb/services/XUpdateQueryServiceImpl.html
+%%T%%/docs/api/org/dbxml/client/xmldb/services/DatabaseInstanceManager.html
+%%T%%/docs/api/org/dbxml/client/xmldb/services/package-tree.html
+%%T%%/docs/api/org/dbxml/client/xmldb/services/package-frame.html
+%%T%%/docs/api/org/dbxml/client/xmldb/ResourceIteratorImpl.html
+%%T%%/docs/api/org/dbxml/client/xmldb/resources/package-summary.html
+%%T%%/docs/api/org/dbxml/client/xmldb/resources/package-frame.html
+%%T%%/docs/api/org/dbxml/client/xmldb/resources/class-use/XMLResourceImpl.html
+%%T%%/docs/api/org/dbxml/client/xmldb/resources/XMLResourceImpl.html
+%%T%%/docs/api/org/dbxml/client/xmldb/resources/package-use.html
+%%T%%/docs/api/org/dbxml/client/xmldb/resources/package-tree.html
+%%T%%/docs/api/org/dbxml/client/xmldb/class-use/CollectionImpl.html
+%%T%%/docs/api/org/dbxml/client/xmldb/class-use/CommonConfigurable.html
+%%T%%/docs/api/org/dbxml/client/xmldb/class-use/ResourceSetImpl.html
+%%T%%/docs/api/org/dbxml/client/xmldb/class-use/ManagedObject.html
+%%T%%/docs/api/org/dbxml/client/xmldb/class-use/DatabaseImpl.html
+%%T%%/docs/api/org/dbxml/client/xmldb/class-use/ResourceIteratorImpl.html
+%%T%%/docs/api/org/dbxml/client/xmldb/DatabaseImpl.html
+%%T%%/docs/api/org/dbxml/client/xmldb/ResourceSetImpl.html
+%%T%%/docs/api/org/dbxml/client/xmldb/ManagedObject.html
+%%T%%/docs/api/org/dbxml/client/xmldb/package-summary.html
+%%T%%/docs/api/org/dbxml/client/xmldb/CommonConfigurable.html
+%%T%%/docs/api/org/dbxml/client/xmldb/CollectionImpl.html
+%%T%%/docs/api/org/dbxml/client/xmldb/package-tree.html
+%%T%%/docs/api/org/dbxml/Stopwatch.html
+%%T%%/docs/api/org/dbxml/tests/TestXmlObject.html
+%%T%%/docs/api/org/dbxml/tests/BTreeTest.html
+%%T%%/docs/api/org/dbxml/tests/package-use.html
+%%T%%/docs/api/org/dbxml/tests/class-use/TestSecurity.html
+%%T%%/docs/api/org/dbxml/tests/class-use/TestXmlObject.html
+%%T%%/docs/api/org/dbxml/tests/class-use/BTreeTest.html
+%%T%%/docs/api/org/dbxml/tests/TestSecurity.html
+%%T%%/docs/api/org/dbxml/tests/package-summary.html
+%%T%%/docs/api/org/dbxml/tests/package-tree.html
+%%T%%/docs/api/org/dbxml/tests/package-frame.html
+%%T%%/docs/api/org/dbxml/package-use.html
+%%T%%/docs/api/org/dbxml/package-frame.html
+%%T%%/docs/api/org/dbxml/package-tree.html
+%%T%%/docs/api/org/dbxml/package-summary.html
+%%T%%/docs/api/org/dbxml/class-use/Stopwatch.html
+%%T%%/docs/api/org/xmldb/api/sdk/modules/package-frame.html
+%%T%%/docs/api/org/xmldb/api/sdk/modules/class-use/SetContentHandler.html
+%%T%%/docs/api/org/xmldb/api/sdk/modules/class-use/SimpleXMLResource.html
+%%T%%/docs/api/org/xmldb/api/sdk/modules/class-use/BaseResource.html
+%%T%%/docs/api/org/xmldb/api/sdk/modules/class-use/SimpleXPathQueryService.html
+%%T%%/docs/api/org/xmldb/api/sdk/modules/class-use/SimpleBinaryResource.html
+%%T%%/docs/api/org/xmldb/api/sdk/modules/class-use/SimpleTransactionService.html
+%%T%%/docs/api/org/xmldb/api/sdk/modules/package-use.html
+%%T%%/docs/api/org/xmldb/api/sdk/modules/BaseResource.html
+%%T%%/docs/api/org/xmldb/api/sdk/modules/SimpleTransactionService.html
+%%T%%/docs/api/org/xmldb/api/sdk/modules/SimpleXPathQueryService.html
+%%T%%/docs/api/org/xmldb/api/sdk/modules/SimpleBinaryResource.html
+%%T%%/docs/api/org/xmldb/api/sdk/modules/package-summary.html
+%%T%%/docs/api/org/xmldb/api/sdk/modules/package-tree.html
+%%T%%/docs/api/org/xmldb/api/sdk/modules/SimpleXMLResource.html
+%%T%%/docs/api/org/xmldb/api/sdk/modules/SetContentHandler.html
+%%T%%/docs/api/org/xmldb/api/sdk/package-frame.html
+%%T%%/docs/api/org/xmldb/api/sdk/class-use/SimpleConfigurable.html
+%%T%%/docs/api/org/xmldb/api/sdk/class-use/SimpleResourceIterator.html
+%%T%%/docs/api/org/xmldb/api/sdk/class-use/SimpleDatabase.html
+%%T%%/docs/api/org/xmldb/api/sdk/class-use/SimpleCollection.html
+%%T%%/docs/api/org/xmldb/api/sdk/package-use.html
+%%T%%/docs/api/org/xmldb/api/sdk/SimpleConfigurable.html
+%%T%%/docs/api/org/xmldb/api/sdk/SimpleCollection.html
+%%T%%/docs/api/org/xmldb/api/sdk/package-tree.html
+%%T%%/docs/api/org/xmldb/api/sdk/package-summary.html
+%%T%%/docs/api/org/xmldb/api/sdk/SimpleResourceIterator.html
+%%T%%/docs/api/org/xmldb/api/sdk/SimpleDatabase.html
+%%T%%/docs/api/org/xmldb/api/reference/DatabaseImpl.html
+%%T%%/docs/api/org/xmldb/api/reference/modules/class-use/TransactionServiceImpl.html
+%%T%%/docs/api/org/xmldb/api/reference/modules/class-use/XMLResourceImpl.html
+%%T%%/docs/api/org/xmldb/api/reference/modules/class-use/XPathQueryServiceImpl.html
+%%T%%/docs/api/org/xmldb/api/reference/modules/class-use/BinaryResourceImpl.html
+%%T%%/docs/api/org/xmldb/api/reference/modules/XMLResourceImpl.html
+%%T%%/docs/api/org/xmldb/api/reference/modules/package-frame.html
+%%T%%/docs/api/org/xmldb/api/reference/modules/package-use.html
+%%T%%/docs/api/org/xmldb/api/reference/modules/package-summary.html
+%%T%%/docs/api/org/xmldb/api/reference/modules/BinaryResourceImpl.html
+%%T%%/docs/api/org/xmldb/api/reference/modules/XPathQueryServiceImpl.html
+%%T%%/docs/api/org/xmldb/api/reference/modules/package-tree.html
+%%T%%/docs/api/org/xmldb/api/reference/modules/TransactionServiceImpl.html
+%%T%%/docs/api/org/xmldb/api/reference/ResourceIteratorImpl.html
+%%T%%/docs/api/org/xmldb/api/reference/class-use/ResourceIteratorImpl.html
+%%T%%/docs/api/org/xmldb/api/reference/class-use/DatabaseImpl.html
+%%T%%/docs/api/org/xmldb/api/reference/class-use/CollectionImpl.html
+%%T%%/docs/api/org/xmldb/api/reference/package-use.html
+%%T%%/docs/api/org/xmldb/api/reference/package-frame.html
+%%T%%/docs/api/org/xmldb/api/reference/CollectionImpl.html
+%%T%%/docs/api/org/xmldb/api/reference/package-summary.html
+%%T%%/docs/api/org/xmldb/api/reference/package-tree.html
+%%T%%/docs/api/org/xmldb/api/base/ErrorCodes.html
+%%T%%/docs/api/org/xmldb/api/base/package-summary.html
+%%T%%/docs/api/org/xmldb/api/base/ResourceIterator.html
+%%T%%/docs/api/org/xmldb/api/base/class-use/Collection.html
+%%T%%/docs/api/org/xmldb/api/base/class-use/Service.html
+%%T%%/docs/api/org/xmldb/api/base/class-use/Resource.html
+%%T%%/docs/api/org/xmldb/api/base/class-use/ErrorCodes.html
+%%T%%/docs/api/org/xmldb/api/base/class-use/ResourceIterator.html
+%%T%%/docs/api/org/xmldb/api/base/class-use/Database.html
+%%T%%/docs/api/org/xmldb/api/base/class-use/Configurable.html
+%%T%%/docs/api/org/xmldb/api/base/class-use/XMLDBException.html
+%%T%%/docs/api/org/xmldb/api/base/class-use/ResourceSet.html
+%%T%%/docs/api/org/xmldb/api/base/XMLDBException.html
+%%T%%/docs/api/org/xmldb/api/base/package-use.html
+%%T%%/docs/api/org/xmldb/api/base/Service.html
+%%T%%/docs/api/org/xmldb/api/base/Configurable.html
+%%T%%/docs/api/org/xmldb/api/base/Resource.html
+%%T%%/docs/api/org/xmldb/api/base/package-tree.html
+%%T%%/docs/api/org/xmldb/api/base/package-frame.html
+%%T%%/docs/api/org/xmldb/api/base/ResourceSet.html
+%%T%%/docs/api/org/xmldb/api/base/Database.html
+%%T%%/docs/api/org/xmldb/api/base/Collection.html
+%%T%%/docs/api/org/xmldb/api/modules/XPathQueryService.html
+%%T%%/docs/api/org/xmldb/api/modules/package-use.html
+%%T%%/docs/api/org/xmldb/api/modules/package-summary.html
+%%T%%/docs/api/org/xmldb/api/modules/class-use/XUpdateQueryService.html
+%%T%%/docs/api/org/xmldb/api/modules/class-use/TransactionService.html
+%%T%%/docs/api/org/xmldb/api/modules/class-use/CollectionManagementService.html
+%%T%%/docs/api/org/xmldb/api/modules/class-use/XPathQueryService.html
+%%T%%/docs/api/org/xmldb/api/modules/class-use/XMLResource.html
+%%T%%/docs/api/org/xmldb/api/modules/class-use/BinaryResource.html
+%%T%%/docs/api/org/xmldb/api/modules/XMLResource.html
+%%T%%/docs/api/org/xmldb/api/modules/TransactionService.html
+%%T%%/docs/api/org/xmldb/api/modules/BinaryResource.html
+%%T%%/docs/api/org/xmldb/api/modules/CollectionManagementService.html
+%%T%%/docs/api/org/xmldb/api/modules/package-tree.html
+%%T%%/docs/api/org/xmldb/api/modules/XUpdateQueryService.html
+%%T%%/docs/api/org/xmldb/api/modules/package-frame.html
+%%T%%/docs/api/org/xmldb/api/tests/class-use/XMLDBTestCase.html
+%%T%%/docs/api/org/xmldb/api/tests/class-use/CollectionTest.html
+%%T%%/docs/api/org/xmldb/api/tests/class-use/ResourceTest.html
+%%T%%/docs/api/org/xmldb/api/tests/class-use/AllTests.html
+%%T%%/docs/api/org/xmldb/api/tests/class-use/XMLDBTestSuite.html
+%%T%%/docs/api/org/xmldb/api/tests/AllTests.html
+%%T%%/docs/api/org/xmldb/api/tests/XMLDBTestSuite.html
+%%T%%/docs/api/org/xmldb/api/tests/package-frame.html
+%%T%%/docs/api/org/xmldb/api/tests/package-tree.html
+%%T%%/docs/api/org/xmldb/api/tests/XMLDBTestCase.html
+%%T%%/docs/api/org/xmldb/api/tests/package-use.html
+%%T%%/docs/api/org/xmldb/api/tests/ResourceTest.html
+%%T%%/docs/api/org/xmldb/api/tests/CollectionTest.html
+%%T%%/docs/api/org/xmldb/api/tests/package-summary.html
+%%T%%/docs/api/org/xmldb/api/package-use.html
+%%T%%/docs/api/org/xmldb/api/DatabaseManager.html
+%%T%%/docs/api/org/xmldb/api/package-frame.html
+%%T%%/docs/api/org/xmldb/api/class-use/DatabaseManager.html
+%%T%%/docs/api/org/xmldb/api/package-summary.html
+%%T%%/docs/api/org/xmldb/api/package-tree.html
+%%T%%/docs/api/serialized-form.html
+%%T%%/docs/api/package-list
+%%T%%/docs/api/deprecated-list.html
+%%T%%/docs/api/index.html
+%%T%%/docs/api/overview-tree.html
+%%T%%/docs/api/overview-summary.html
+%%T%%/docs/api/allclasses-frame.html
+%%T%%/docs/api/index-all.html
+%%T%%/docs/api/stylesheet.css
+%%T%%/docs/api/overview-frame.html
+%%T%%/docs/api/help-doc.html
+%%T%%/docs/api/packages.html
+%%T%%/docs/TODO
+%%T%%/docs/src/docbook/html/glossary.xsl
+%%T%%/docs/src/docbook/html/biblio.xsl
+%%T%%/docs/src/docbook/html/ebnf.xsl
+%%T%%/docs/src/docbook/html/xtchunk.xsl
+%%T%%/docs/src/docbook/html/pi.xsl
+%%T%%/docs/src/docbook/html/keywords.xsl
+%%T%%/docs/src/docbook/html/component.xsl
+%%T%%/docs/src/docbook/html/ChangeLog
+%%T%%/docs/src/docbook/html/titlepage.templates.xsl
+%%T%%/docs/src/docbook/html/formal.xsl
+%%T%%/docs/src/docbook/html/index.xsl
+%%T%%/docs/src/docbook/html/docbook.xsl
+%%T%%/docs/src/docbook/html/titlepage.templates.xml
+%%T%%/docs/src/docbook/html/footnote.xsl
+%%T%%/docs/src/docbook/html/titlepage.xsl
+%%T%%/docs/src/docbook/html/math.xsl
+%%T%%/docs/src/docbook/html/html.xsl
+%%T%%/docs/src/docbook/html/lists.xsl
+%%T%%/docs/src/docbook/html/admon.xsl
+%%T%%/docs/src/docbook/html/inline.xsl
+%%T%%/docs/src/docbook/html/callout.xsl
+%%T%%/docs/src/docbook/html/sections.xsl
+%%T%%/docs/src/docbook/html/chunk.xsl
+%%T%%/docs/src/docbook/html/toc.xsl
+%%T%%/docs/src/docbook/html/qandaset.xsl
+%%T%%/docs/src/docbook/html/division.xsl
+%%T%%/docs/src/docbook/html/param.xsl
+%%T%%/docs/src/docbook/html/verbatim.xsl
+%%T%%/docs/src/docbook/html/block.xsl
+%%T%%/docs/src/docbook/html/refentry.xsl
+%%T%%/docs/src/docbook/html/table.xsl
+%%T%%/docs/src/docbook/html/synop.xsl
+%%T%%/docs/src/docbook/html/graphics.xsl
+%%T%%/docs/src/docbook/html/xref.xsl
+%%T%%/docs/src/docbook/html/info.xsl
+%%T%%/docs/src/docbook/html/autotoc.xsl
+%%T%%/docs/src/docbook/common/common.xsl
+%%T%%/docs/src/docbook/common/l10n.xsl
+%%T%%/docs/src/docbook/common/l10n.xml
+%%T%%/docs/src/docbook/common/l10n.dtd
+%%T%%/docs/src/docbook/common/en.xml
+%%T%%/docs/src/docbook/lib/lib.xsl
+%%T%%/docs/src/docbook/lib/ChangeLog
+%%T%%/docs/src/docbook/VERSION
+%%T%%/docs/src/AdministratorsGuide.xml
+%%T%%/docs/src/ToolsReference.xml
+%%T%%/docs/src/DevelopersGuide.xml
+%%T%%/docs/src/UsersGuide.xml
+%%T%%/docs/nav_bar.gif
+%%T%%/docs/VERSIONS
+%%T%%/docs/licenses/LICENSE.xalan
+%%T%%/docs/licenses/LICENSE.xerces
+%%T%%/docs/licenses/LICENSE.ant
+%%T%%/docs/licenses/README
+%%T%%/docs/licenses/COPYING.jacorb
+%%T%%/docs/licenses/LICENSE.infozone
+%%T%%/docs/licenses/LICENSE.xmldb
+%%T%%/docs/licenses/LICENSE.openorb
+%%T%%/docs/INSTALL
+%%T%%/docs/UsersGuide.html
+%%T%%/docs/dbxml.gif
+%%T%%/docs/AdministratorsGuide.html
+%%T%%/docs/ToolsReference.html
+%%T%%/docs/README
+%%T%%/docs/notes/Indexing.txt
+%%T%%/docs/notes/QueryEngine.txt
+%%T%%/docs/LICENSE
+%%T%%/docs/FAQ
+%%T%%/docs/index.html
+%%T%%/docs/AUTHORS
+%%T%%/docs/DevelopersGuide.html
+%%T%%/docs/INSTALL.windows
+%%T%%/icons/docs_mini.gif
+%%T%%/icons/hsSearch.gif
+%%T%%/icons/server.gif
+%%T%%/icons/hsPreview.gif
+%%T%%/icons/text.gif
+%%T%%/icons/hsSave.gif
+%%T%%/icons/hsRemove.gif
+%%T%%/icons/spacer.gif
+%%T%%/icons/proc_mini.gif
+%%T%%/icons/server_mini.gif
+%%T%%/icons/database_mini.gif
+%%T%%/icons/folder.gif
+%%T%%/icons/procs_mini.gif
+%%T%%/icons/hsCut.gif
+%%T%%/icons/folderup.gif
+%%T%%/icons/file.gif
+%%T%%/icons/logo.gif
+%%T%%/icons/role_mini.gif
+%%T%%/icons/user.gif
+%%T%%/icons/roles_mini.gif
+%%T%%/icons/class_mini.gif
+%%T%%/icons/databases_mini.gif
+%%T%%/icons/hsInsert.gif
+%%T%%/icons/hsOpen.gif
+%%T%%/icons/servers_mini.gif
+%%T%%/icons/hsUndo.gif
+%%T%%/icons/group_mini.gif
+%%T%%/icons/schemas_mini.gif
+%%T%%/icons/classes_mini.gif
+%%T%%/icons/schema_mini.gif
+%%T%%/icons/hsPaste.gif
+%%T%%/icons/hsNew.gif
+%%T%%/icons/user_mini.gif
+%%T%%/icons/hsCopy.gif
+%%T%%/icons/users_mini.gif
+%%T%%/icons/doc_mini.gif
+%%T%%/icons/image.gif
+%%T%%/icons/database.gif
+%%T%%/icons/server_connect.gif
+%%T%%/config/symbols.xml
+%%T%%/config/commands.xml
+%%T%%/config/system.xml
+bin/dbxmladmin
+bin/dbxml
+%%T%%/idl/dbXML.idl
+%%T%%/LICENSE
+%%T%%/logs/Logs.txt
+%%T%%/xml/system.xsd
+%%T%%/xml/symbols.xsd
+%%T%%/xml/queryInterface.xsd
+%%T%%/README
+@dirrm %%T%%/java/examples/Addressbook/src/java/addressbook
+@dirrm %%T%%/java/examples/Addressbook/src/java
+@dirrm %%T%%/java/examples/Addressbook/src/jsp
+@dirrm %%T%%/java/examples/Addressbook/src
+@dirrm %%T%%/java/examples/Addressbook
+@dirrm %%T%%/java/examples/guide/xml
+@dirrm %%T%%/java/examples/guide/src/org/dbxml/examples
+@dirrm %%T%%/java/examples/guide/src/org/dbxml
+@dirrm %%T%%/java/examples/guide/src/org
+@dirrm %%T%%/java/examples/guide/src
+@dirrm %%T%%/java/examples/guide
+@dirrm %%T%%/java/examples/api/src/org/dbxml/examples
+@dirrm %%T%%/java/examples/api/src/org/dbxml
+@dirrm %%T%%/java/examples/api/src/org
+@dirrm %%T%%/java/examples/api/src
+@dirrm %%T%%/java/examples/api
+@dirrm %%T%%/java/examples
+@dirrm %%T%%/java/src/org/dbxml/core/security
+@dirrm %%T%%/java/src/org/dbxml/core/objects
+@dirrm %%T%%/java/src/org/dbxml/core/data
+@dirrm %%T%%/java/src/org/dbxml/core/indexer/helpers
+@dirrm %%T%%/java/src/org/dbxml/core/indexer
+@dirrm %%T%%/java/src/org/dbxml/core/filer
+@dirrm %%T%%/java/src/org/dbxml/core/corba/db
+@dirrm %%T%%/java/src/org/dbxml/core/corba
+@dirrm %%T%%/java/src/org/dbxml/core/server/services
+@dirrm %%T%%/java/src/org/dbxml/core/server
+@dirrm %%T%%/java/src/org/dbxml/core/query
+@dirrm %%T%%/java/src/org/dbxml/core/xupdate
+@dirrm %%T%%/java/src/org/dbxml/core/request
+@dirrm %%T%%/java/src/org/dbxml/core/system
+@dirrm %%T%%/java/src/org/dbxml/core
+@dirrm %%T%%/java/src/org/dbxml/client/xmldb/resources
+@dirrm %%T%%/java/src/org/dbxml/client/xmldb/services
+@dirrm %%T%%/java/src/org/dbxml/client/xmldb
+@dirrm %%T%%/java/src/org/dbxml/client
+@dirrm %%T%%/java/src/org/dbxml/tools/command
+@dirrm %%T%%/java/src/org/dbxml/tools
+@dirrm %%T%%/java/src/org/dbxml/xml/sax
+@dirrm %%T%%/java/src/org/dbxml/xml/dom/traversal
+@dirrm %%T%%/java/src/org/dbxml/xml/dom
+@dirrm %%T%%/java/src/org/dbxml/xml/jaxp
+@dirrm %%T%%/java/src/org/dbxml/xml
+@dirrm %%T%%/java/src/org/dbxml/tests
+@dirrm %%T%%/java/src/org/dbxml
+@dirrm %%T%%/java/src/org
+@dirrm %%T%%/java/src
+@dirrm %%T%%/java/lib
+@dirrm %%T%%/java/tests/src
+@dirrm %%T%%/java/tests
+@dirrm %%T%%/java
+@dirrm %%T%%/docs/api/org/dbxml/core/server/services/class-use
+@dirrm %%T%%/docs/api/org/dbxml/core/server/services
+@dirrm %%T%%/docs/api/org/dbxml/core/server/class-use
+@dirrm %%T%%/docs/api/org/dbxml/core/server
+@dirrm %%T%%/docs/api/org/dbxml/core/corba/db/class-use
+@dirrm %%T%%/docs/api/org/dbxml/core/corba/db
+@dirrm %%T%%/docs/api/org/dbxml/core/corba/class-use
+@dirrm %%T%%/docs/api/org/dbxml/core/corba
+@dirrm %%T%%/docs/api/org/dbxml/core/indexer/helpers/class-use
+@dirrm %%T%%/docs/api/org/dbxml/core/indexer/helpers
+@dirrm %%T%%/docs/api/org/dbxml/core/indexer/class-use
+@dirrm %%T%%/docs/api/org/dbxml/core/indexer
+@dirrm %%T%%/docs/api/org/dbxml/core/objects/class-use
+@dirrm %%T%%/docs/api/org/dbxml/core/objects
+@dirrm %%T%%/docs/api/org/dbxml/core/query/class-use
+@dirrm %%T%%/docs/api/org/dbxml/core/query
+@dirrm %%T%%/docs/api/org/dbxml/core/request/class-use
+@dirrm %%T%%/docs/api/org/dbxml/core/request
+@dirrm %%T%%/docs/api/org/dbxml/core/security/class-use
+@dirrm %%T%%/docs/api/org/dbxml/core/security
+@dirrm %%T%%/docs/api/org/dbxml/core/filer/class-use
+@dirrm %%T%%/docs/api/org/dbxml/core/filer
+@dirrm %%T%%/docs/api/org/dbxml/core/class-use
+@dirrm %%T%%/docs/api/org/dbxml/core/data/class-use
+@dirrm %%T%%/docs/api/org/dbxml/core/data
+@dirrm %%T%%/docs/api/org/dbxml/core/xupdate/class-use
+@dirrm %%T%%/docs/api/org/dbxml/core/xupdate
+@dirrm %%T%%/docs/api/org/dbxml/core/system/class-use
+@dirrm %%T%%/docs/api/org/dbxml/core/system
+@dirrm %%T%%/docs/api/org/dbxml/core
+@dirrm %%T%%/docs/api/org/dbxml/xml/dom/class-use
+@dirrm %%T%%/docs/api/org/dbxml/xml/dom/traversal/class-use
+@dirrm %%T%%/docs/api/org/dbxml/xml/dom/traversal
+@dirrm %%T%%/docs/api/org/dbxml/xml/dom
+@dirrm %%T%%/docs/api/org/dbxml/xml/class-use
+@dirrm %%T%%/docs/api/org/dbxml/xml/sax/class-use
+@dirrm %%T%%/docs/api/org/dbxml/xml/sax
+@dirrm %%T%%/docs/api/org/dbxml/xml/jaxp/class-use
+@dirrm %%T%%/docs/api/org/dbxml/xml/jaxp
+@dirrm %%T%%/docs/api/org/dbxml/xml
+@dirrm %%T%%/docs/api/org/dbxml/tools/command/class-use
+@dirrm %%T%%/docs/api/org/dbxml/tools/command
+@dirrm %%T%%/docs/api/org/dbxml/tools/class-use
+@dirrm %%T%%/docs/api/org/dbxml/tools
+@dirrm %%T%%/docs/api/org/dbxml/client/xmldb/services/class-use
+@dirrm %%T%%/docs/api/org/dbxml/client/xmldb/services
+@dirrm %%T%%/docs/api/org/dbxml/client/xmldb/resources/class-use
+@dirrm %%T%%/docs/api/org/dbxml/client/xmldb/resources
+@dirrm %%T%%/docs/api/org/dbxml/client/xmldb/class-use
+@dirrm %%T%%/docs/api/org/dbxml/client/xmldb
+@dirrm %%T%%/docs/api/org/dbxml/client
+@dirrm %%T%%/docs/api/org/dbxml/tests/class-use
+@dirrm %%T%%/docs/api/org/dbxml/tests
+@dirrm %%T%%/docs/api/org/dbxml/class-use
+@dirrm %%T%%/docs/api/org/dbxml
+@dirrm %%T%%/docs/api/org/xmldb/api/sdk/modules/class-use
+@dirrm %%T%%/docs/api/org/xmldb/api/sdk/modules
+@dirrm %%T%%/docs/api/org/xmldb/api/sdk/class-use
+@dirrm %%T%%/docs/api/org/xmldb/api/sdk
+@dirrm %%T%%/docs/api/org/xmldb/api/reference/modules/class-use
+@dirrm %%T%%/docs/api/org/xmldb/api/reference/modules
+@dirrm %%T%%/docs/api/org/xmldb/api/reference/class-use
+@dirrm %%T%%/docs/api/org/xmldb/api/reference
+@dirrm %%T%%/docs/api/org/xmldb/api/base/class-use
+@dirrm %%T%%/docs/api/org/xmldb/api/base
+@dirrm %%T%%/docs/api/org/xmldb/api/modules/class-use
+@dirrm %%T%%/docs/api/org/xmldb/api/modules
+@dirrm %%T%%/docs/api/org/xmldb/api/tests/class-use
+@dirrm %%T%%/docs/api/org/xmldb/api/tests
+@dirrm %%T%%/docs/api/org/xmldb/api/class-use
+@dirrm %%T%%/docs/api/org/xmldb/api
+@dirrm %%T%%/docs/api/org/xmldb
+@dirrm %%T%%/docs/api/org
+@dirrm %%T%%/docs/api
+@dirrm %%T%%/docs/src/docbook/html
+@dirrm %%T%%/docs/src/docbook/common
+@dirrm %%T%%/docs/src/docbook/lib
+@dirrm %%T%%/docs/src/docbook
+@dirrm %%T%%/docs/src
+@dirrm %%T%%/docs/licenses
+@dirrm %%T%%/docs/notes
+@unexec rmdir %D/%%T%%/docs > /dev/null 2>&1 || true
+@dirrm %%T%%/icons
+@unexec rmdir %D/%%T%%/config > /dev/null 2>&1 || true
+@dirrm %%T%%/idl
+@unexec rmdir %D/%%T%%/logs > /dev/null 2>&1 || true
+@dirrm %%T%%/xml
+@unexec rmdir %D/%%T%% > /dev/null 2>&1 || true
+
