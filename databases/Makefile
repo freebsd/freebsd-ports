@@ -120,6 +120,7 @@
     SUBDIR += p5-DBD-Sybase
     SUBDIR += p5-DBD-XBase
     SUBDIR += p5-DBD-mysql
+    SUBDIR += p5-DBD-mysql40
     SUBDIR += p5-DBI
     SUBDIR += p5-DBI-137
     SUBDIR += p5-DBIWrapper
