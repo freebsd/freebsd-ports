@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	loudmouth
-PORTVERSION=	0.13.2
+PORTVERSION=	0.14
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.13
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.14
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Lightweight Jabber client library
