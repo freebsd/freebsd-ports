@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Kwiki
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	elvis@sslab.cs.ccu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kwiki plugin for putting pretty graphs into your Kwiki pages
 
 BUILD_DEPENDS=	${SITE_PERL}/Kwiki.pm:${PORTSDIR}/www/p5-Kwiki \
