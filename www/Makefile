@@ -203,6 +203,7 @@
     SUBDIR += mod_hosts_access
     SUBDIR += mod_index_rss
     SUBDIR += mod_jk
+    SUBDIR += mod_jk2
     SUBDIR += mod_layout
     SUBDIR += mod_limitipconn
     SUBDIR += mod_log_mysql
