@@ -1,7 +1,7 @@
-share/xml/docbook/%%DTD_VERSION%%/40chg.txt
-share/xml/docbook/%%DTD_VERSION%%/41chg.txt
 share/xml/docbook/%%DTD_VERSION%%/ChangeLog
+share/xml/docbook/%%DTD_VERSION%%/README
 share/xml/docbook/%%DTD_VERSION%%/calstblx.dtd
+share/xml/docbook/%%DTD_VERSION%%/catalog.xml
 share/xml/docbook/%%DTD_VERSION%%/dbcentx.mod
 share/xml/docbook/%%DTD_VERSION%%/dbgenent.mod
 share/xml/docbook/%%DTD_VERSION%%/dbhierx.mod
@@ -30,8 +30,7 @@ share/xml/docbook/%%DTD_VERSION%%/ent/iso-lat2.ent
 share/xml/docbook/%%DTD_VERSION%%/ent/iso-num.ent
 share/xml/docbook/%%DTD_VERSION%%/ent/iso-pub.ent
 share/xml/docbook/%%DTD_VERSION%%/ent/iso-tech.ent
-share/xml/docbook/%%DTD_VERSION%%/readme.txt
 share/xml/docbook/%%DTD_VERSION%%/soextblx.dtd
 @dirrm share/xml/docbook/%%DTD_VERSION%%/ent
 @dirrm share/xml/docbook/%%DTD_VERSION%%
-@unexec rmdir %D/share/xml/docbook 2>/dev/null || true
+@dirrm share/xml/docbook
