@@ -1,0 +1,11 @@
+--- kpathsea/Makefile.in.orig	Sun Feb 16 02:21:42 2003
++++ kpathsea/Makefile.in	Fri Jun 11 20:45:58 2004
+@@ -126,7 +126,7 @@
+ 	| sed 's/^\([^ 	=]*\)[ 	]*=*[ 	]*\(.*\)/#ifndef DEFAULT_\1%#define DEFAULT_\1 "\2"%#endif/' \
+ 	| tr '%' '\012' \
+ 	| sed -e 's%\$$TEXMFMAIN%$(texmf)%g' \
+-	      -e 's%\$$TEXMF%$(texmf)%g' \
++	      -e 's%\$$TEXMF\([,}/]\)%$(texmf)\1%g' \
+ 	      -e 's%\$$VARTEXFONTS%$(vartexfonts)%g' \
+ 	      -e 's%\$$web2cdir%$(web2cdir)%g' \
+ 	      -e 's%\$$prefix%$(prefix)%g' \
