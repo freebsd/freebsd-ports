@@ -24,6 +24,8 @@ BUILD_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
 LIB_DEPENDS=	png:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
+LATEST_LINK=	gd2
+
 USE_FREETYPE2=	yes
 .ifndef WITHOUT_XPM
 # Temporary hack, until X-less XPM building is added to USE_XPM:
