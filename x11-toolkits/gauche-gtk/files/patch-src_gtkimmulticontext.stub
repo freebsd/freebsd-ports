@@ -1,0 +1,11 @@
+--- src/gtkimmulticontext.stub.orig	Sun Oct  5 13:47:06 2003
++++ src/gtkimmulticontext.stub	Sun Oct  5 13:47:19 2003
+@@ -10,7 +10,7 @@
+   ("Scm_GtkIMContextClass" "Scm_GObjectClass")
+   (
+    (slave :type <gtk-im-context>)
+-   (client-window :type <gdk-drawable>)
++   ;(client-window :type <gdk-drawable>)
+    )
+ (allocator (c "Scm_GtkObjectAllocate"))
+   )
