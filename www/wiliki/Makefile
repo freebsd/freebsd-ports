@@ -29,7 +29,7 @@ BROKEN=		"Does not build"
 .endif
 
 .if exists(${LOCALBASE}/bin/gauche-config)
-GAUCHE_VER=	`gauche-config -V`
+GAUCHE_VER!=	gauche-config -V
 .else
 GAUCHE_VER=	none
 .endif
