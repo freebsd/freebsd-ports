@@ -1,7 +1,6 @@
 bin/bonobo-application-x-mines
 bin/bonobo-audio-ulaw
 bin/bonobo-echo
-bin/bonobo-idl
 bin/bonobo-moniker-gunzip
 bin/bonobo-moniker-http
 bin/bonobo-sample-canvas-item
