@@ -3,7 +3,7 @@
 # Date created:		August 13, 1997
 # Whom:			handy@physics.montana.edu
 #
-# $Id: Makefile,v 1.26 1998/09/15 11:13:37 asami Exp $
+# $Id: Makefile,v 1.27 1998/09/15 11:46:12 asami Exp $
 
 DISTNAME=	WindowMaker-0.19.3
 PKGNAME=	windowmaker-0.19.3
@@ -18,7 +18,7 @@ RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
 LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm \
 		gif\\.3\\.:${PORTSDIR}/graphics/giflib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png\\.2\\.:${PORTSDIR}/graphics/png \
+		png.3:${PORTSDIR}/graphics/png \
 		tiff34\\.1:${PORTSDIR}/graphics/tiff34
 
 USE_X_PREFIX=	yes
