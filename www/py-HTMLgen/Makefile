@@ -13,8 +13,7 @@ DISTNAME=		HTMLgen
 
 MAINTAINER=		nectar@FreeBSD.org
 
-BUILD_DEPENDS=		python:${PORTSDIR}/lang/python
-RUN_DEPENDS=		python:${PORTSDIR}/lang/python
+USE_PYTHON=		yes
 
 WRKSRC=			${WRKDIR}/HTMLgen
 PLIST=			${WRKDIR}/PLIST
