@@ -1,0 +1,40 @@
+--- Makefile.in.old	Wed Jul 19 02:58:15 2000
++++ Makefile.in	Wed Jul 19 02:58:29 2000
+@@ -90,7 +90,7 @@
+ 
+ # Set this to something if you want all installed binaries to have a suffix.
+ # Version number if common.
+-suffix = -$(VERSION)
++# suffix = -$(VERSION)
+ 
+ #
+ # You probably don't need to touch anything below this, if you're just
+@@ -135,6 +135,8 @@
+ docs = $(docsrcs:.xml=.html) $(docsrcs:.xml=.ps)
+ DOCSTARGET=@DOCSTARGET@
+ 
++alldocs = doc/ $(shell ls [A-Z]*) 
++
+ figsrcs = $(shell echo doc/*/*.fig)
+ figs = $(figsrcs:.fig=.png)  $(figsrcs:.fig=.ps)
+ 
+@@ -177,7 +179,9 @@
+ no-docs:
+ figs: $(figs)
+ 
+-install: all
++install: install-main install-docs
++
++install-main: all
+ 	$(INSTALL) -d $(bindir)
+ 	for prog in $(progs); do \
+ 		$(INSTALL) $$prog $(bindir)/`basename $$prog`$(suffix); \
+@@ -185,7 +189,7 @@
+ 
+ install-docs:
+ 	$(INSTALL) -d $(docdir)
+-	cp -r $(docs) $(docsrcs) $(figs) $(figsrcs) $(docdir)
++	cp -r $(alldocs) $(docdir)
+ 
+ clean:
+ 	rm -f core $(progs) $(testprogs) $(objs) $(docs) *.a

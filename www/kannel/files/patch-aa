@@ -1,0 +1,21 @@
+--- configure.old	Wed Jul 19 02:40:15 2000
++++ configure		Wed Jul 19 02:41:42 2000
+@@ -542,7 +542,7 @@
+ 
+ 
+ 
+-docdir='${prefix}/doc/kannel'
++docdir='${prefix}/share/doc/kannel'
+ 
+ 
+ # Extract the first word of "gcc", so it can be a program name with args.
+@@ -1380,6 +1380,9 @@
+ EOF
+  ;; 
+ 	*1.8.7) ;; 
++	*1.8.8) ;; 
++	*1.8.9) ;; 
++	*1.8.??) ;; 
+ 	*2.0.0) ;; 
+ 	*) echo "Libxml is too old. You need at least 1.8.6." ; exit 1 ;; 
+ 	esac
