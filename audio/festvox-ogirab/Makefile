@@ -10,7 +10,8 @@
 PORTNAME=	festvox-ogirab
 PORTVERSION=	2.0
 CATEGORIES=	audio accessibility
-MASTER_SITES=	${MASTER_SITE_FESTIVAL_OGI}
+MASTER_SITES=	\
+	ftp://ftp.mayn.de/pub/linux/BLinux/festival/mirror.ogi-synth_home/
 DISTNAME=	voice_ogirab_di-2.0
 DIST_SUBDIR=	festival
 
@@ -20,8 +21,6 @@ COMMENT=British English male voice for Festival (non-commercial use only)
 RUN_DEPENDS=	\
 ${PREFIX}/share/festival/lib/ogi_token.scm:${PORTSDIR}/audio/festival+OGI \
 		${LOCALBASE}/share/festival/lib/dicts/ogi_lex.out:${PORTSDIR}/audio/festlex-ogi
-
-BROKEN=		"Checksum mismatch"
 
 RESTRICTED=	no-commercial-use
 
