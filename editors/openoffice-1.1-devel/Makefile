@@ -7,6 +7,7 @@
 
 PORTNAME=	openoffice
 PORTVERSION=	644
+SNAPDATE=	20030324
 CATEGORIES+=	editors
 MASTER_SITES+=	http://projects.imp.ch/openoffice/%SUBDIR%/ \
 		http://ny1.mirror.openoffice.org/developer/%SUBDIR%/ \
@@ -16,7 +17,7 @@ MASTER_SITES+=	http://projects.imp.ch/openoffice/%SUBDIR%/ \
 		http://ny1.mirror.openoffice.org/miscellaneous/helpcontent/:help \
 		http://people.freebsd.org/~mbr/ooo/:moz
 MASTER_SITE_SUBDIR=	${PORTVERSION}
-DISTFILES+=	oo_${PORTVERSION}_src.tar.bz2 \
+DISTFILES+=	oo_${PORTVERSION}_src_${SNAPDATE}.tar.bz2 \
 		gpc231.tar.Z:gpc patch-openoffice-mozilla101-2002-10-14:moz
 .if defined(L10NHELP)
 DISTFILES+=	${L10NHELP:S/$/:help/}
@@ -106,7 +107,7 @@ CXX=		g++32
 .endif
 .endif
 
-EXTRACT_ONLY=	oo_${PORTVERSION}_src.tar.bz2
+EXTRACT_ONLY=	oo_${PORTVERSION}_src_${SNAPDATE}.tar.bz2
 
 MAINTAINER=	openoffice@FreeBSD.org
 .if !defined(COMMENT)
