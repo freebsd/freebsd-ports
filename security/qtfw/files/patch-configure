@@ -1,0 +1,23 @@
+--- configure.orig	Tue Jan  8 21:54:19 2002
++++ configure	Tue Jan  8 21:56:06 2002
+@@ -790,7 +790,7 @@
+ QT_LIB_DIR=NO
+ 
+ i_dir=NO
+-for i in /usr/local/qt/include /usr/include/qt /usr/include /usr/X11R6/include/X11/qt /usr/X11R6/include/qt /usr/local/qt2/include /usr/include/qt2 /usr/X11R6/include/X11/qt2 /usr/X11R6/include/qt2;
++for i in ${X11BASE}/include/qt2;
+ do
+   for j in qapplication.h;
+   do
+@@ -803,9 +803,9 @@
+ 
+ 
+ l_dir=NO
+-for i in /usr/X11R6/lib /usr/lib /usr/local/qt/lib /usr/local/qt2/lib;
++for i in ${X11BASE}/lib;
+ do
+-  for j in libqt.so libqt2.so;
++  for j in libqt2.so;
+   do
+     if test -r "$i/$j"; then
+       l_dir=$i
