@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	guile-gtk
-PORTVERSION= 	0.17
+PORTVERSION= 	0.18
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://www.ping.de/sites/zagadka/guile-gtk/download/
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	unstable/sources/gnome-guile
+DISTNAME=	gnome-guile-0.10
 
 MAINTAINER=	mab@red-bean.com
 
@@ -25,6 +27,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GLIB_CONFIG="${GLIB_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"
 
-BROKEN=		"Build dies with \"guile-gtk.h:235: conflicting types for \`gdk_color_copy'\""
+WRKSRC=		${WRKDIR}/${DISTNAME}/guile-gtk
 
 .include <bsd.port.mk>

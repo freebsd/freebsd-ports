@@ -16,6 +16,7 @@ share/guile/gtk-1.2/gdk.scm
 share/guile/gtk-1.2/gtk.scm
 share/guile/gtk/config.scm
 share/guile/gtk/dynlink.scm
+share/guile/gtk/dynlink-old.scm
 share/guile/gtk/event-repl.scm
 share/guile/gtk/gdk.scm
 share/guile/gtk/gtk.scm
