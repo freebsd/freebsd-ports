@@ -312,6 +312,7 @@
     SUBDIR += p5-Mac-FileSpec-Unixish
     SUBDIR += p5-Make
     SUBDIR += p5-ORBit
+    SUBDIR += p5-POE
     SUBDIR += p5-PV
     SUBDIR += p5-Params-Validate
     SUBDIR += p5-Parse-RecDescent
