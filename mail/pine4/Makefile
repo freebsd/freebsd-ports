@@ -12,9 +12,13 @@ CATEGORIES=	mail news
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	DougB@FreeBSD.org
+.if defined(WITH_MAILDIR)
+PATCH_SITES+=	http://www.qmail.org/
+PATCHFILES+=	pine-maildir-4.33
+PATCH_DIST_STRIP=-p1
+.endif
 
-MAN1=		pine.1 pico.1 pilot.1
+MAINTAINER=	DougB@FreeBSD.org
 
 LIB_DEPENDS=	c-client4.8:${PORTSDIR}/mail/cclient
 
@@ -24,7 +28,7 @@ LIB_DEPENDS=	c-client4.8:${PORTSDIR}/mail/cclient
 #
 .if defined(WITH_LDAP)
 LDAP_PREFIX?=	${LOCALBASE}
-BUILD_DEPENDS+=	${LDAP_PREFIX}/lib/libldap.a:${PORTSDIR}/net/ldap
+BUILD_DEPENDS+=	${LDAP_PREFIX}/lib/libldap.a:${PORTSDIR}/net/openldap
 .endif
 
 .if defined(WITH_SSL)
@@ -32,11 +36,7 @@ USE_OPENSSL=	yes
 EXTRA_OPTS=	SSL_LINK="-L${OPENSSLLIB} -lssl -lcrypto"
 .endif
 
-.if defined(WITH_MAILDIR)
-PATCH_SITES+=	http://www.qmail.org/
-PATCHFILES+=	pine-maildir-4.33
-PATCH_DIST_STRIP=-p1
-.endif
+MAN1=		pine.1 pico.1 pilot.1
 
 pre-fetch:
 .if !defined(WITH_MAILDIR)
@@ -44,6 +44,7 @@ pre-fetch:
 	@${ECHO_MSG} "WITH_MAILDIR=yes enables support of Maildir"
 	@${ECHO_MSG} ""
 .endif
+
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 	${SH} pkg-install
 .endif
@@ -67,13 +68,13 @@ post-patch:
 		${RM} $$i.sed ; \
 	done
 .if defined(WITH_LDAP)
-	-mkdir ${WRKSRC}/ldap
-	ln -sf ${LDAP_PREFIX}/include ${WRKSRC}/ldap/include
-	ln -sf  ${LDAP_PREFIX}/lib ${WRKSRC}/ldap/libraries
+	${MKDIR} ${WRKSRC}/ldap
+	${LN} -sf ${LDAP_PREFIX}/include ${WRKSRC}/ldap/include
+	${LN} -sf ${LDAP_PREFIX}/lib ${WRKSRC}/ldap/libraries
 .endif
 
 do-build:
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ./build bsf $(EXTRA_OPTS))
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ./build bsf ${EXTRA_OPTS})
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/pico ${PREFIX}/bin/pico
