@@ -5,6 +5,3 @@ For VC users, PCL-CVS can be thought of as a VC-dired specially designed
 for CVS.  PCL-CVS is not a replacement for VC and is supposed to interact
 well with it.  It provides a global view of your project and allows
 execution of cvs commands on several files at a time.
-
-  PCL-CVS is installed the following directory tree:
-	PREFIX/share/emacs/site-lisp/pcl-cvs/	--- pcl-cvs

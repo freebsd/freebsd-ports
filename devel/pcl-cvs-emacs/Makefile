@@ -7,6 +7,7 @@
 
 PORTNAME=	pcl-cvs
 PORTVERSION=	2.9.9
+PORTREVISION=	1
 CATEGORIES=	devel elisp
 MASTER_SITES=	ftp://rum.cs.yale.edu/pub/monnier/pcl-cvs/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -18,19 +19,18 @@ PATCHFILES=	pcl-cvs-2.9.9-compat.patch
 
 MAINTAINER?=	okazaki@FreeBSD.org
 
-IGNORE=	"is broken until restructuring of the elib port finishes"
 # startup el filename
 PORT_SETUPEL=	pcl-cvs-setup.el
-# document install directory by install-doc target
-PORTDOCDIR?=	share/doc/pcl-cvs
 
 # This is a master port.
 PORTCLASS?=	master
 
 # emacs port setup
 .if (${PORTCLASS} == "master")
-EMACS_PORT_NAME=	emacs
+EMACS_PORT_NAME=	emacs19
+CUSTOM_PORT_SUFFIX=	-emacs
 .endif
+ELIB_PORT_SUFFIX?=	-${EMACS_PORT_NAME}
 
 # target name for make build
 ALL_TARGET?=		elcfiles info
@@ -46,24 +46,24 @@ DISTFILES=	${EXTRACT_ONLY} ${EASY_MMODE}
 ELIB_SETUP=	'(if (locate-library "elib-startup") (require '\''elib-startup))'
 .endif
 
-PLIST_SUB+=	PORTDOCDIR=${PORTDOCDIR} \
-		PORT_SETUPEL=${PORT_SETUPEL}
+PLIST_SUB+=	PORT_SETUPEL=${PORT_SETUPEL}
 MAKE_ARGS+=	EMACS="${EMACS_CMD} -q --no-site-file" \
 		CP="${INSTALL_DATA}" \
 		MAKEINFO="makeinfo --no-split" \
 		MKDIR="${MKDIR}" \
 		prefix="${PREFIX}" \
-		lispdir="${PREFIX}/${EMACS_SITE_LISPDIR}" \
+		lispdir="${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}" \
 		startupfile="${PORT_SETUPEL}"
 
 .if defined(EMACS_PORT_NAME)
-ELIB_PORTDIR=	${PORTSDIR}/devel/elib-${EMACS_PORT_NAME}
-BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_SITE_LISPDIR}/elib/cookie.el:${ELIB_PORTDIR}
-RUN_DEPENDS+=	${LOCALBASE}/${EMACS_SITE_LISPDIR}/elib/cookie.el:${ELIB_PORTDIR}
+ELIB_PORTDIR=	${PORTSDIR}/devel/elib${ELIB_PORT_SUFFIX}
+BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/elib/cookie.el:${ELIB_PORTDIR}
+RUN_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/elib/cookie.el:${ELIB_PORTDIR}
 .if (${EMACS_VER} == "19.34")
+CUSTOM_PORTDIR=	${PORTSDIR}/editors/custom${CUSTOM_PORT_SUFFIX}
 # depends on custom: emacs-19.34 or mule-2.3 based on emacs-19.34
-BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp/custom.el:${PORTSDIR}/editors/custom-${EMACS_PORT_NAME}
-RUN_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp/custom.el:${PORTSDIR}/editors/custom-${EMACS_PORT_NAME}
+BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/custom.el:${CUSTOM_PORTDIR}
+RUN_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/custom.el:${CUSTOM_PORTDIR}
 .else
 # diff-mode.el does not run on emacs-19.34
 RUN_DEPENDS+=	${LOCALBASE}/${EMACS_SITE_LISPDIR}/diff-mode.el:${PORTSDIR}/textproc/diff-mode.el
@@ -100,10 +100,10 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 
 doc-install:
-	${MKDIR} ${PREFIX}/${PORTDOCDIR}
+	${MKDIR} ${DOCSDIR}
 	cd ${INSTALL_WRKSRC} && \
 	for i in ChangeLog FAQ NEWS README TODO; do \
-		${INSTALL_DATA} $${i} ${PREFIX}/${PORTDOCDIR}/ ; \
+		${INSTALL_DATA} $${i} ${DOCSDIR} ; \
 	done
 
 setupel-install:
