@@ -5493,6 +5493,7 @@ py-cdb	ports/databases/py-cdb
 py-ciphon	ports/devel/py-ciphon
 py-compiler	ports/lang/py-compiler
 py-coro		ports/devel/py-coro
+py-cryptkit	ports/security/py-cryptkit
 py-csv		ports/textproc/py-csv
 py-curl		ports/ftp/py-curl
 py-cxx		ports/devel/py-cxx
