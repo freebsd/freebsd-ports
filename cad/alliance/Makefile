@@ -35,6 +35,10 @@ PKGMESSAGE_IN=	${FILESDIR}/pkg-message.in
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 ALLIANCE_TOP=	${PREFIX}/alliance
 SRCDIRLIST!=	${CAT} ${FILESDIR}/srcdirs.list
 CFLAGS+=	${SRCDIRLIST:S,^,-I${WRKSRC}/,}

@@ -21,6 +21,12 @@ ALL_TARGET=	x
 
 PROGDIR=	${PREFIX}/${PORTNAME}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 do-install:
 	${MKDIR} ${PROGDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/adamem ${PROGDIR}
@@ -34,4 +40,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/adamem.txt ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
