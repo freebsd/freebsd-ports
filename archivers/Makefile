@@ -1,10 +1,10 @@
-# $Id: Makefile,v 1.7 1995/10/03 11:44:59 asami Exp $
+# $Id: Makefile,v 1.8 1996/04/12 08:16:04 asami Exp $
 #
 
     SUBDIR += arc
     SUBDIR += gshar+gunshar
     SUBDIR += ha
-    SUBDIR += hpack.non-usa_only
+    SUBDIR += hpack.non-usa.only
     SUBDIR += lha
     SUBDIR += unarj
     SUBDIR += unrar
