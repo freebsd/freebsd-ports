@@ -1,0 +1,30 @@
+--- programs/xkbcomp/symbols/us_intl	Fri Aug 16 08:49:48 2002
++++ programs/xkbcomp/symbols/us_intl	Fri Aug 16 08:50:58 2002
+@@ -41,21 +41,21 @@
+     key <AC11> {	[ dead_acute,	dead_diaeresis	],
+ 			[ apostrophe,	quotedbl	]	};
+ 			
+-    key <AE09> {	[	  9,	parenleft	]
++    key <AE09> {	[	  9,	parenleft	],
+ 			[      dead_breve,	dead_breve	]	};
+-    key <AE10> {	[	  0,	parenright	]
++    key <AE10> {	[	  0,	parenright	],
+ 			[      dead_abovering, dead_abovering	]	};
+     key <AE11> {	[     minus,	underscore	],
+ 			[      dead_macron,	dead_belowdot	]	};
+     key <AE12> {	[     equal,	plus		],
+ 			[      dead_doubleacute,	dead_horn	]	};
+-    key <AC10> {	[ semicolon,	colon		]
++    key <AC10> {	[ semicolon,	colon		],
+ 			[      dead_ogonek,	dead_diaeresis	]	};
+-    key <AB08> {	[     comma,	less		]
++    key <AB08> {	[     comma,	less		],
+ 			[      dead_cedilla,	dead_caron	]	};
+-    key <AB09> {	[    period,	greater		]
++    key <AB09> {	[    period,	greater		],
+ 			[      dead_abovedot,	dead_circumflex	]	};
+-    key <AB10> {	[     slash,	question	]
++    key <AB10> {	[     slash,	question	],
+ 			[      dead_hook,	dead_hook	]	};
+ 
+ 
