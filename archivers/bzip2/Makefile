@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	bzip2
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.freesoftware.com/pub/sourceware/bzip2/v100/ \
 		ftp://sourceware.cygnus.com/pub/bzip2/v100/ \
