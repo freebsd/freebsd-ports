@@ -1,0 +1,11 @@
+Bicom is a data compressor in the PPM family.  It is freely available and
+Open Source.  It's most unique characteristic, is that compression with
+bicom is completely bijective -- any file is a possible bicom output that
+can be decompressed, and then recompressed back to its original form.  Of
+course, any file is also a possible bicom input that can be compressed,
+and then decompressed back to its original form.  To support encryption
+applications, bicom also includes a passphrase-protection option that
+will automatically encrypt after compressing, or decrypt before
+decompressing.
+
+WWW: http://www3.sympatico.ca/mt0000/bicom/
