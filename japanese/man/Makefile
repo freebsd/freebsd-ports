@@ -3,7 +3,7 @@
 # Date created:		4 December 1996
 # Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.4 1997/02/12 10:59:14 asami Exp $
+# $Id: Makefile,v 1.5 1997/02/14 05:20:11 asami Exp $
 #
 
 DISTNAME=	jp-man-1.1
@@ -14,7 +14,10 @@ MASTER_SITES=	ftp://jaz.jp.freebsd.org/pub/FreeBSD-jp/man-jp/ \
 MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
 
 RUN_DEPENDS=	${PREFIX}/bin/groff:${PORTSDIR}/japanese/groff \
-		jless:${PORTSDIR}/japanese/less
+		jless:${PORTSDIR}/japanese/less \
+		mule:${PORTSDIR}/editors/mule
+
+JMANELDIR=	${PREFIX}/lib/mule/site-lisp/jman
 
 # XPG4LIBPATH specifies the path name of the xpg4 library.
 # The xpg4 library include setlocale() function and etc. for I18N,
@@ -63,6 +66,8 @@ pre-patch:
 .endif
 
 post-install:
+	@${MKDIR} ${JMANELDIR}
+	@${INSTALL_DATA} ${FILESDIR}/jman.el ${JMANELDIR}
 	@${SETENV} CP=${CP} PKG_PREFIX=${PREFIX} /bin/sh ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
 
 pre-clean:
