@@ -47,6 +47,10 @@ NO_FILTER_SHLIBS=	yes
 
 PLIST_SUB+=	BASEVERSION=${PORTVERSION:C/[.][0-9]*$//1}
 
+.if !exists(/proc/1)
+IGNORE=		this ports requires procfs mounted to build or run
+.endif 
+
 pre-configure:
 .for file in config.guess config.sub install-sh
 	@${CP} ${PREFIX}/System/Makefiles/${file} ${WRKSRC}
