@@ -1,0 +1,6 @@
+-----------------------------------------------
+Remember to set environment varible XMODIFIERS:
+ csh/tcsh: setenv XMODIFIERS @im=Chinput
+ sh/bash:  export XMODIFIERS='@im=Chinput'
+and set LANG, LC_CTYPE to zh_CN.EUC.
+-----------------------------------------------
