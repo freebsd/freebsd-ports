@@ -1,0 +1,10 @@
+--- src/kino_av_pipe.h	Tue Nov 25 20:51:18 2003
++++ src/kino_av_pipe.h	Sat Apr 10 12:20:10 2004
+@@ -21,7 +21,6 @@
+ #define _KINO_AV_PIPE_H 1
+ 
+ #include <stdio.h>
+-#include <stdint.h>
+ #include <stdlib.h>
+ 
+ class KinoAudioInput

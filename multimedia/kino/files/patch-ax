@@ -1,0 +1,10 @@
+--- src/audio_filters.h.orig	Mon Dec 15 05:08:34 2003
++++ src/audio_filters.h	Sat Apr 10 12:17:38 2004
+@@ -27,7 +27,6 @@
+ 
+ // C Includes
+ 
+-#include <stdint.h>
+ #include <gtk/gtk.h>
+ 
+ /** Public interface for all audio filter classes.

@@ -1,0 +1,11 @@
+--- src/kino_common.h	Mon Dec 15 04:23:12 2003
++++ src/kino_common.h	Sat Apr 10 12:15:02 2004
+@@ -24,7 +24,7 @@
+ #include <stdlib.h>
+ 
+ #include <gnome.h>
+-#include <stdint.h>
++//#include <stdint.h>
+ #include "playlist.h"
+ #include "frame.h"
+ #include "preferences.h"

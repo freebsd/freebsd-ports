@@ -1,0 +1,19 @@
+--- scripts/exports/rawplay.sh	Sat Dec  6 05:24:33 2003
++++ scripts/exports/rawplay.sh	Fri Apr  9 18:09:31 2004
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ 
+-function usage
++usage()
+ {
+ 	# Title
+ 	echo "Title: rawplay playback"
+@@ -21,7 +21,7 @@
+ 	echo Profile: Windowed, ESD audio output
+ }
+ 
+-function execute
++execute()
+ {
+ 	# Arguments
+ 	normalisation="$1"

@@ -1,0 +1,6 @@
+Kino is an IEEE 1394 DV non-linear video editor.
+
+Note: IEEE 1394 and V4L are disabled in this port.
+
+WWW: http://kino.schirmacher.de/
+WWW: http://sourceforge.net/projects/kino/

@@ -1,0 +1,11 @@
+--- src/riff.cc	Wed Nov 26 00:01:24 2003
++++ src/riff.cc	Fri Apr  9 16:22:28 2004
+@@ -69,7 +69,7 @@
+ //#include <stdio.h>
+ #include <iostream>
+ #include <iomanip>
+-#include <byteswap.h>
++//#include <byteswap.h>
+ 
+ using std::cout;
+ using std::hex;

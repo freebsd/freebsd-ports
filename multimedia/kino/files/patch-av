@@ -1,0 +1,449 @@
+--- src/v4l.cc	Mon Dec 15 06:08:35 2003
++++ src/v4l.cc	Fri Apr  9 17:43:25 2004
+@@ -56,7 +56,7 @@
+ 
+ V4LCapability::V4LCapability( V4LDevice *device )
+ {
+-	device->request( VIDIOCGCAP, this );
++//	device->request( VIDIOCGCAP, this );
+ }
+ 
+ V4LCapability::~V4LCapability()
+@@ -66,82 +66,98 @@
+ 
+ void *V4LCapability::getStruct()
+ {
+-	return & capability;
++	//return & capability;
++	return NULL;
+ }
+ 
+ char *V4LCapability::getName()
+ {
+-	return capability.name;
++	//return capability.name;
++	return "";
+ }
+ 
+ int V4LCapability::getNumberOfChannels()
+ {
+-	return capability.channels;
++	//return capability.channels;
++	return 0;
+ }
+ 
+ int V4LCapability::getNumberOfAudioDevices()
+ {
+-	return capability.audios;
++//	return capability.audios;
++	return 0;
+ }
+ 
+ int V4LCapability::getMinWidth()
+ {
+-	return capability.minwidth;
++//	return capability.minwidth;
++	return 0;
+ }
+ 
+ int V4LCapability::getMinHeight()
+ {
+-	return capability.minheight;
++//	return capability.minheight;
++	return 0;
+ }
+ 
+ int V4LCapability::getMaxWidth()
+ {
+-	return capability.maxwidth;
++	//return capability.maxwidth;
++	return 0;
+ }
+ 
+ int V4LCapability::getMaxHeight()
+ {
+-	return capability.maxheight;
++	//return capability.maxheight;
++	return 0;
+ }
+ 
+ bool V4LCapability::canCapture()
+ {
+-	return capability.type & VID_TYPE_CAPTURE;
++	//return capability.type & VID_TYPE_CAPTURE;
++	return false;
+ }
+ 
+ bool V4LCapability::hasTuner()
+ {
+-	return capability.type & VID_TYPE_TUNER;
++	//return capability.type & VID_TYPE_TUNER;
++	return false;
+ }
+ 
+ bool V4LCapability::hasChromakey()
+ {
+-	return capability.type & VID_TYPE_CHROMAKEY;
++	//return capability.type & VID_TYPE_CHROMAKEY;
++	return false;
+ }
+ 
+ bool V4LCapability::hasClipping()
+ {
+-	return capability.type & VID_TYPE_CLIPPING;
++	//return capability.type & VID_TYPE_CLIPPING;
++	return false;
+ }
+ 
+ bool V4LCapability::hasOverwrite()
+ {
+-	return capability.type & VID_TYPE_FRAMERAM;
++	//return capability.type & VID_TYPE_FRAMERAM;
++	return false;
+ }
+ 
+ bool V4LCapability::hasScaling()
+ {
+-	return capability.type & VID_TYPE_SCALES;
++	//return capability.type & VID_TYPE_SCALES;
++	return false;
+ }
+ 
+ bool V4LCapability::isMonochrome()
+ {
+-	return capability.type & VID_TYPE_MONOCHROME;
++	//return capability.type & VID_TYPE_MONOCHROME;
++	return false;
+ }
+ 
+ bool V4LCapability::canSubCapture()
+ {
+-	return capability.type & VID_TYPE_SUBCAPTURE;
++	//return capability.type & VID_TYPE_SUBCAPTURE;
++	return false;
+ }
+ 
+ void V4LCapability::report()
+@@ -173,13 +189,14 @@
+ V4LTuner::V4LTuner( V4LDevice *device, int index )
+ {
+ 	this->device = device;
+-	this->tuner.tuner = index;
+-	this->device->request( VIDIOCGTUNER, this );
++	//this->tuner.tuner = index;
++	//this->device->request( VIDIOCGTUNER, this );
+ }
+ 
+ void *V4LTuner::getStruct()
+ {
+-	return & tuner;
++	//return & tuner;
++	return NULL;
+ }
+ 
+ void V4LTuner::report()
+@@ -187,61 +204,68 @@
+ 
+ int V4LTuner::getRangeLow()
+ {
+-	return tuner.rangelow;
++	//return tuner.rangelow;
++	return 0;
+ }
+ 
+ void V4LTuner::setRangeLow( int low )
+ {
+-	tuner.rangelow = low;
++	//tuner.rangelow = low;
+ }
+ 
+ int V4LTuner::getRangeHigh()
+ {
+-	return tuner.rangehigh;
++	//return tuner.rangehigh;
++	return 0;
+ }
+ 
+ void V4LTuner::setRangeHigh( int high )
+ {
+-	tuner.rangehigh = high;
++	//tuner.rangehigh = high;
+ }
+ 
+ int V4LTuner::getFlags()
+ {
+-	return tuner.flags;
++	//return tuner.flags;
++	return 0;
+ }
+ 
+ void V4LTuner::setFlags( int flags )
+ {
+-	tuner.flags = flags;
++	//tuner.flags = flags;
+ }
+ 
+ int V4LTuner::getMode()
+ {
+-	return tuner.mode;
++	//return tuner.mode;
++	return 0;
+ }
+ 
+ void V4LTuner::setMode( int mode )
+ {
+-	tuner.mode = mode;
++	//tuner.mode = mode;
+ }
+ 
+ int V4LTuner::getSignal()
+ {
+-	return tuner.signal;
++	//return tuner.signal;
++	return 0;
+ }
+ 
+ V4LChannel::V4LChannel( V4LDevice *device, int index )
+ {
++#if 0
+ 	memset( &channel, 0, sizeof( struct video_channel ) );
+ 	this->device = device;
+ 	this->channel.channel = index;
+-	device->request( VIDIOCGCHAN, this );
+-	device->request( VIDIOCSCHAN, this );
++	//device->request( VIDIOCGCHAN, this );
++	//device->request( VIDIOCSCHAN, this );
+ 	for ( unsigned int i = 0; i < getNumberOfTuners(); i ++ )
+ 	{
+ 		V4LTuner *tuner = new V4LTuner( this->device, i );
+ 		tuners.insert( tuners.end(), tuner );
+ 	}
++#endif
+ }
+ 
+ V4LChannel::~V4LChannel()
+@@ -251,12 +275,14 @@
+ 
+ void *V4LChannel::getStruct()
+ {
+-	return & channel;
++	//return & channel;
++	return NULL;
+ }
+ 
+ char *V4LChannel::getName()
+ {
+-	return channel.name;
++	//return channel.name;
++	return "";
+ }
+ 
+ bool V4LChannel::setTuner( unsigned int index )
+@@ -267,7 +293,8 @@
+ 		// FIXME: Hardcoded tuner settings
+ 		current->setRangeLow( 0 );
+ 		current->setRangeHigh( 0xffff );
+-		return device->request( VIDIOCSTUNER, current );
++		//return device->request( VIDIOCSTUNER, current );
++		return false;
+ 	}
+ 	else
+ 	{
+@@ -277,7 +304,8 @@
+ 
+ unsigned int V4LChannel::getNumberOfTuners()
+ {
+-	return channel.tuners;
++	//return channel.tuners;
++	return 0;
+ }
+ 
+ V4LTuner *V4LChannel::getTuner( unsigned int index )
+@@ -294,12 +322,13 @@
+ 
+ int V4LChannel::getSignal()
+ {
+-	device->request( VIDIOCGTUNER, current );
++	//device->request( VIDIOCGTUNER, current );
+ 	return current->getSignal();
+ }
+ 
+ void V4LChannel::report()
+ {
++#if 0
+ 	cout << ">>>> Channel # " << channel.channel << endl;
+ 	cout << ">>>> Name    : " << this->getName() << endl;
+ 	cout << ">>>> Tuners  : " << this->getNumberOfTuners() << endl;
+@@ -313,6 +342,7 @@
+ 		cout << "     TV" << endl;
+ 	if ( channel.type & VIDEO_TYPE_CAMERA )
+ 		cout << "     Camera" << endl;
++#endif
+ }
+ 
+ /** Constructor for the V4L class.
+@@ -416,7 +446,8 @@
+ 	if ( channel >= 0 && channel < channels.size() )
+ 	{
+ 		current = channels[ channel ];
+-		return this->request( VIDIOCSCHAN, current );
++		//return this->request( VIDIOCSCHAN, current );
++		return false;
+ 	}
+ 	else
+ 	{
+@@ -538,6 +569,7 @@
+ 
+ void V4L::startAudio()
+ {
++#if 0
+ 	struct video_audio audio;
+ 	ioctl( fd, VIDIOCGAUDIO, &audio );
+ 	if ( audio.flags & VIDEO_AUDIO_MUTE )
+@@ -545,6 +577,7 @@
+ 	cout << "Volume : " << audio.volume << endl;
+ 	audio.volume = 65535;
+ 	ioctl( fd, VIDIOCSAUDIO, &audio );
++#endif
+ }
+ 
+ /** Turn off audio.
+@@ -552,16 +585,19 @@
+ 
+ void V4L::stopAudio()
+ {
++#if 0
+ 	struct video_audio audio;
+ 	ioctl( fd, VIDIOCGAUDIO, &audio );
+ 	audio.flags |= VIDEO_AUDIO_MUTE;
+ 	cout << "Volume : " << audio.volume << endl;
+ 	audio.volume = 0;
+ 	ioctl( fd, VIDIOCSAUDIO, &audio );
++#endif
+ }
+ 
+ int V4L::mappedMemorySize( bool init )
+ {
++#if 0
+ 	static video_mbuf buf;
+ 	if ( init == true )
+ 	{
+@@ -571,6 +607,8 @@
+ 		frame_maps = buf.frames;
+ 	}
+ 	return buf.size;
++#endif
++	return 0;
+ }
+ 
+ /** Initialise capture.
+@@ -581,6 +619,7 @@
+ 
+ bool V4L::initialiseCapture( int format )
+ {
++#if 0
+ 	size = width * height * 4;
+ 
+ 	map = mmap( 0, mappedMemorySize( true ), PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0 );
+@@ -610,6 +649,8 @@
+ 	{
+ 		return false;
+ 	}
++#endif
++	return false;
+ }
+ 
+ /** Get the next frame.
+@@ -620,6 +661,7 @@
+ void *V4L::getNextFrame()
+ {
+ 	unsigned char * ret = NULL;
++#if 0
+ 
+ 	int current = frame_next;
+ 	frame_next = ( frame_next + 1 ) % frame_maps;
+@@ -632,6 +674,7 @@
+ 	
+ 	frames ++;
+ 
++#endif
+ 	return ( void * ) ret;
+ }
+ 
+@@ -640,6 +683,7 @@
+ 
+ void V4L::stopCapture()
+ {
++#if 0
+ 	if ( map != NULL )
+ 	{
+ 		struct timeval tv;
+@@ -652,6 +696,7 @@
+ 		int enable = 0;
+ 		ioctl( getHandle(), VIDIOCCAPTURE, &enable );
+ 	}
++#endif
+ }
+ 
+ /** Get the current frequency of the tuner.
+@@ -661,9 +706,12 @@
+ 
+ int V4L::getFrequency()
+ {
++#if 0
+ 	unsigned long current;
+ 	ioctl( fd, VIDIOCGFREQ, &current );
+ 	return ( int ) current;
++#endif
++	return 0;
+ }
+ 
+ /** Set the current frequency of the tuner.
+@@ -675,7 +723,8 @@
+ bool V4L::setFrequency( int frequency )
+ {
+ 	unsigned long val = ( unsigned long ) frequency & 0xffff;
+-	return ioctl( fd, VIDIOCSFREQ, &val ) != -1;
++	//return ioctl( fd, VIDIOCSFREQ, &val ) != -1;
++	return false;
+ }
+ 
+ /** Get the signal of the current tuned in frequency.
+@@ -983,12 +1032,12 @@
+ 
+ void GDKV4L::draw()
+ {
+-
+ 	if ( displayer == NULL )
+ 	{
+ 		gdk_threads_enter();
+ 		displayer = FindDisplayer::getDisplayer( widget, getWidth(), getHeight() );
+ 
++#if 0
+ 		switch ( displayer->format() )
+ 		{
+ 		case DISPLAY_YUV:
+@@ -1006,6 +1055,7 @@
+ 		default:
+ 			break;
+ 		}
++#endif
+ 		gdk_threads_leave();
+ 	}
+ 
+@@ -1031,6 +1081,7 @@
+ 		gdk_threads_enter();
+ 		displayer = FindDisplayer::getDisplayer( widget, getWidth(), getHeight() );
+ 
++#if 0
+ 		if ( ENCODE_YUV )
+ 		{
+ 			input = DISPLAY_YUV;	// Fake - YUV422P isn't supported by Displayer
+@@ -1041,6 +1092,7 @@
+ 			input = DISPLAY_RGB;	// Fake - YUV420P isn't supported by Displayer
+ 			initialiseCapture( VIDEO_PALETTE_YUV420P );
+ 		}
++#endif
+ 
+ 		// skip the first frame
+ 		f = getNextFrame();

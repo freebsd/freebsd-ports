@@ -1,0 +1,19 @@
+--- scripts/exports/ffmpeg_vcd.sh	Sun Nov 23 23:12:13 2003
++++ scripts/exports/ffmpeg_vcd.sh	Fri Apr  9 18:09:25 2004
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ 
+-function usage
++usage()
+ {
+ 	# Title
+ 	echo "Title: FFMPEG VCD Export"
+@@ -13,7 +13,7 @@
+ 	echo Flags: single-pass file-producer
+ }
+ 
+-function execute
++execute()
+ {
+ 	# Arguments
+ 	normalisation="$1"

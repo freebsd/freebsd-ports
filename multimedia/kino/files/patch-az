@@ -1,0 +1,11 @@
+--- src/filehandler.h	Tue Nov 25 20:51:14 2003
++++ src/filehandler.h	Sat Apr 10 12:14:37 2004
+@@ -33,7 +33,7 @@
+ #include "riff.h"
+ #include "avi.h"
+ #include <sys/types.h>
+-#include <stdint.h>
++//#include <stdint.h>
+ 
+ enum FileCaptureMode {
+     CAPTURE_IGNORE,

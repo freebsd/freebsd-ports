@@ -1,0 +1,10 @@
+--- src/image_filters.cc	Tue Nov 25 21:51:18 2003
++++ src/image_filters.cc	Sat Apr 10 00:48:34 2004
+@@ -519,6 +519,7 @@
+ GDKImageFilterRepository::GDKImageFilterRepository()
+ {
+ 	printf( ">> image filter repository created\n" );
++	selected_filter = NULL;
+ 
+ 	// Register an instance of each object (adapting raw filters to GDK filters where necessary)
+ 	Register( new ImageFilterKeep() );

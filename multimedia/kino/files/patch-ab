@@ -1,0 +1,19 @@
+--- scripts/exports/ffmpeg_divx.sh	Mon Nov 24 15:22:16 2003
++++ scripts/exports/ffmpeg_divx.sh	Fri Apr  9 18:09:10 2004
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ 
+-function usage
++usage()
+ {
+ 	# Title
+ 	echo "Title: FFMPEG DivX Export"
+@@ -19,7 +19,7 @@
+ 	echo Profile: Low Quality
+ }
+ 
+-function execute
++execute()
+ {
+ 	# Arguments
+ 	normalisation="$1"

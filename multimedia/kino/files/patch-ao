@@ -1,0 +1,16 @@
+--- src/page_capture.h	Wed Dec 10 05:17:38 2003
++++ src/page_capture.h	Fri Apr  9 16:40:51 2004
+@@ -26,10 +26,12 @@
+ 
+ #include "kino_common.h"
+ #include "page.h"
+-#include <libavc1394/avc1394.h>
++//#include <libavc1394/avc1394.h>
+ 
+ /** This class controls the firewire capture notebook page.
+ */
++
++typedef unsigned long quadlet_t;
+ 
+ class PageCapture : public Page
+ {

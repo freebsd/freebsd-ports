@@ -1,0 +1,10 @@
+--- src/image_filters.h	Mon Dec 15 05:08:34 2003
++++ src/image_filters.h	Sat Apr 10 12:17:12 2004
+@@ -27,7 +27,6 @@
+ 
+ // C Includes
+ 
+-#include <stdint.h>
+ #include <gnome.h>
+ 
+ /** Dummy interface for non-image encoding filters (only ImageFilterKeep should implement
