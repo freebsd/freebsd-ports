@@ -1,6 +1,6 @@
---- autoconf/Makefile.common.in.orig	Wed Dec  9 01:53:23 1998
-+++ autoconf/Makefile.common.in	Wed Dec  9 01:53:32 1998
-@@ -11,7 +11,7 @@
+--- autoconf/Makefile.common.in.orig	Thu Feb  4 17:44:50 1999
++++ autoconf/Makefile.common.in	Thu Feb  4 17:45:18 1999
+@@ -13,7 +13,7 @@
  		$(INSTALL_PROGRAM) $(PROG) $(AFTER_BIN_DIR)
  
  install.man:
