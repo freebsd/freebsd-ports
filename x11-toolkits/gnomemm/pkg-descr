@@ -1,0 +1,5 @@
+Gnomemm (Previously known as Gnome--) is a set of powerful C++ bindings
+for the GNOME libraries, which provide additional functionality
+above GTK+/gtkmm.
+
+WWW: http://gtkmm.sourceforge.net/
