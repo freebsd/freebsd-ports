@@ -6,7 +6,15 @@ bin/ogginfo
 bin/vcut
 bin/vorbiscomment
 share/examples/vorbis-tools/ogg123rc
+share/locale/be/LC_MESSAGES/vorbis-tools.mo
+share/locale/cs/LC_MESSAGES/vorbis-tools.mo
+share/locale/da/LC_MESSAGES/vorbis-tools.mo
+share/locale/es/LC_MESSAGES/vorbis-tools.mo
 share/locale/fr/LC_MESSAGES/vorbis-tools.mo
+share/locale/hr/LC_MESSAGES/vorbis-tools.mo
+share/locale/hu/LC_MESSAGES/vorbis-tools.mo
 share/locale/nl/LC_MESSAGES/vorbis-tools.mo
+share/locale/ro/LC_MESSAGES/vorbis-tools.mo
+share/locale/ru/LC_MESSAGES/vorbis-tools.mo
 share/locale/sv/LC_MESSAGES/vorbis-tools.mo
 @dirrm share/examples/vorbis-tools

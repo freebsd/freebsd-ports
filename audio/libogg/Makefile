@@ -6,19 +6,16 @@
 #
 
 PORTNAME=	libogg
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.1
 PORTEPOCH=	3
 CATEGORIES=	audio
-MASTER_SITES=	http://www.vorbis.com/files/1.0/unix/ \
-		ftp://ftp.wiles.org/pub/mirrors/Vorbis/unix/ \
-		http://www.casterclub.com/vorbis/unix/ \
-		http://www.math.utoledo.edu/~chaese/Vorbis/unix/
+MASTER_SITES=	http://www.vorbis.com/files/1.0.1/unix/
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Ogg bitstream library
 
 USE_LIBTOOL=	yes
+USE_GNOME=	gnomehack
 INSTALLS_SHLIB=	yes
 
 .if defined(NOPORTDOCS)

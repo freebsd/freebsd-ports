@@ -8,6 +8,7 @@
 
 PORTNAME=	speex
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.speex.org/download/
@@ -16,7 +17,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 MAINTAINER=	jre@vineyard.net
 COMMENT=	An open-source patent-free voice codec
 
-LIB_DEPENDS=	ogg.4:${PORTSDIR}/audio/libogg
+LIB_DEPENDS=	ogg.5:${PORTSDIR}/audio/libogg
 
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes

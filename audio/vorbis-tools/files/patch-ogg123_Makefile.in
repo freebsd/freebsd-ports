@@ -1,14 +1,23 @@
 
 $FreeBSD$
 
---- ogg123/Makefile.in.orig	Tue Aug 14 19:42:20 2001
-+++ ogg123/Makefile.in	Tue Aug 14 19:42:31 2001
-@@ -323,7 +323,7 @@
- install-exec-am: install-binPROGRAMS
- install-exec: install-exec-am
+--- ogg123/Makefile.in.orig	Mon Nov 17 17:50:56 2003
++++ ogg123/Makefile.in	Sun Dec 14 00:27:38 2003
+@@ -135,7 +135,7 @@
  
--install-data-am: install-man install-docDATA
+ AUTOMAKE_OPTIONS = foreign
+ localedir = $(datadir)/locale
+-DEFS = -DLOCALEDIR=\"$(localedir)\" @DEFS@
++DEFS = -DSYSCONFDIR=\"$(sysconfdir)\" -DLOCALEDIR=\"$(localedir)\" @DEFS@
+ 
+ docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
+ 
+@@ -486,7 +486,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-docDATA install-man
 +install-data-am: install-man
- install-data: install-data-am
  
- install-am: all-am
+ install-exec-am: install-binPROGRAMS
+ 

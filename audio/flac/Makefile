@@ -7,7 +7,7 @@
 
 PORTNAME=	flac
 PORTVERSION=	1.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +16,7 @@ MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Free lossless audio codec
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
-		ogg.4:${PORTSDIR}/audio/libogg
+		ogg.5:${PORTSDIR}/audio/libogg
 
 .if ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
