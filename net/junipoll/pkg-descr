@@ -4,7 +4,7 @@ with names matching the router and its filter counter names, each
 containing a bytes and a pkts data source suitable for graphing using
 RRGrapher or RRDTOOL.
 
-WWW: http://dave.plonka.us/junipoll/
+WWW: http://net.doit.wisc.edu/~plonka/junipoll/
 
 - Bill Fumerola
 billf@FreeBSD.org

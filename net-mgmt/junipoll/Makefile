@@ -8,7 +8,7 @@
 PORTNAME=	junipoll
 PORTVERSION=	1.015
 CATEGORIES=	net perl5
-MASTER_SITES=	http://dave.plonka.us/junipoll/%SUBDIR%/
+MASTER_SITES=	http://net.doit.wisc.edu/~plonka/junipoll/
 MASTER_SITE_SUBDIR=	. old
 
 MAINTAINER=	billf@FreeBSD.org
