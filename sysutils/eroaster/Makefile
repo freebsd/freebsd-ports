@@ -7,7 +7,7 @@
 
 PORTNAME=	eroaster
 PORTVERSION=	2.2.0.0.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	eroaster
@@ -17,7 +17,6 @@ MAINTAINER=	dave@gufi.org
 COMMENT=	A GNOME2 frontend to mkisofs/cdrecord
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gnome/_gnome.so:${PORTSDIR}/x11-toolkits/py-gnome2 \
-		mkisofs:${PORTSDIR}/sysutils/mkisofs \
 		cdrecord:${PORTSDIR}/sysutils/cdrtools
 
 .if defined(WITH_ADDITIONAL_PROGRAMS)

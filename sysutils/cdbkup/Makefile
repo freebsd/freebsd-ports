@@ -7,6 +7,7 @@
 
 PORTNAME=	cdbkup
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,10 +17,8 @@ MAINTAINER=	kay_lehmann@web.de
 COMMENT=	Simple but full-featured backup/restore perl scripts (uses gnu tar)
 
 BUILD_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools \
-		mkisofs:${PORTSDIR}/sysutils/mkisofs \
 		${LOCALBASE}/sbin/eject:${PORTSDIR}/sysutils/eject
 RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools \
-		mkisofs:${PORTSDIR}/sysutils/mkisofs \
 		${LOCALBASE}/sbin/eject:${PORTSDIR}/sysutils/eject
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

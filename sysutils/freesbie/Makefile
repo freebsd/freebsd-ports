@@ -7,6 +7,7 @@
 
 PORTNAME=	freesbie
 PORTVERSION=	0.0.20040207
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.stud.uni-karlsruhe.de/~uedc/freesbie/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/0.0.//}
@@ -14,7 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/0.0.//}
 MAINTAINER=	riggs@rrr.de
 COMMENT=	Yet another cool answer to the system-on-cd question
 
-RUN_DEPENDS=	mkisofs:${PORTSDIR}/sysutils/mkisofs \
+RUN_DEPENDS=	mkisofs:${PORTSDIR}/sysutils/cdrtools \
 		create_compressed_fs:${PORTSDIR}/sysutils/cloop-utils
 
 USE_BZIP2=	yes
