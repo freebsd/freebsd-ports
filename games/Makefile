@@ -340,6 +340,7 @@
     SUBDIR += xboing
     SUBDIR += xbomb
     SUBDIR += xbomber
+    SUBDIR += xbubble
     SUBDIR += xchadance
     SUBDIR += xchain
     SUBDIR += xchomp
