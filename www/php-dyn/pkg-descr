@@ -1,0 +1,10 @@
+PHP Dyn is PHP Extension to help debugging a PHP script.
+You can get execution trace of scripts not to need change them.
+HTTP request parameters can be printed.  Argument values of the
+function call and return value can be printed.  Each execution
+time will be printed with microseconds.
+
+WWW: http://sourceforge.net/projects/php-dyn/
+
+- Alex Dupre
+sysadmin@alexdupre.com
