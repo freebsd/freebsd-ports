@@ -3,10 +3,10 @@
 # Date created:		Tue Jun 10 21:58:54 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.4 1997/06/14 09:36:28 andreas Exp $
+# $Id: Makefile,v 1.5 1997/07/13 18:49:28 max Exp $
 #
 
-DISTNAME=	ghostscript-5.0
+DISTNAME=	ghostscript-5.03
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/aladdin/
 DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER}
@@ -19,13 +19,13 @@ DEPENDS_TARGET=	extract
 
 MAKE_ENV=	PORTSDIR=${PORTSDIR}
 EXTRACT_ONLY=	${GS_SOURCES}
-WRKSRC=		${WRKDIR}/gs5.0
+WRKSRC=		${WRKDIR}/gs5.03
 MAKEFILE=	unix-gcc.mak
 MAKE_FLAGS=	prefix=${PREFIX} zlibc_=-lz CFLAGS="${CFLAGS}" -f
 MAN1=		gs.1 pdf2dsc.1 pdf2ps.1 ps2ascii.1 ps2epsi.1 ps2pdf.1
 
-GS_SOURCES=	ghostscript-5.0.tar.gz
-GS_SOURCES+=	ghostscript-5.0gnu.tar.gz
+GS_SOURCES=	ghostscript-5.03.tar.gz
+GS_SOURCES+=	ghostscript-5.03gnu.tar.gz
 #  Note: the following two are real files that have symlinks with
 #  later version numbers pointing to them.  To avoid unnecessarily
 #  downloading distfiles, do not change these when upgrading the port
@@ -46,12 +46,14 @@ pre-fetch:
 
 
 post-extract:
-	touch $(WRKSRC)/adler32.c
-	touch $(WRKSRC)/deflate.c
-	touch $(WRKSRC)/trees.c
-	touch $(WRKSRC)/adler32.o
-	touch $(WRKSRC)/deflate.o
-	touch $(WRKSRC)/trees.o
+	touch ${WRKSRC}/adler32.c
+	touch ${WRKSRC}/deflate.c
+	touch ${WRKSRC}/trees.c
+	touch ${WRKSRC}/adler32.o
+	touch ${WRKSRC}/deflate.o
+	touch ${WRKSRC}/trees.o
+	ln -s ${PORTSDIR}/graphics/jpeg/work/jpeg-6a ${WRKSRC}/jpeg-6a
+	ln -s ${PORTSDIR}/graphics/png/work/libpng-0.96 ${WRKSRC}/libpng
 
 do-configure:
 .if defined(BATCH)
