@@ -10,3 +10,4 @@ lib/libICE.la
 lib/libICE.so
 lib/libICE.so.6
 libdata/pkgconfig/ice.pc
+%%NEWMTREE%%@dirrm include/X11/ICE

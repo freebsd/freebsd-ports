@@ -3,3 +3,4 @@ include/X11/extensions/randrproto.h
 libdata/pkgconfig/randr.pc
 %%DOCSDIR%%/protocol
 @dirrm %%DOCSDIR%%
+%%NEWMTREE%%@unexec rmdir %D/include/X11/extensions 2>/dev/null || true

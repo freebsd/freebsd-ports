@@ -4,3 +4,4 @@ lib/libXcursor.la
 lib/libXcursor.so
 lib/libXcursor.so.1
 libdata/pkgconfig/xcursor.pc
+%%NEWMTREE%%@dirrm include/X11/Xcursor
