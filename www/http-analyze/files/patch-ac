@@ -1,156 +1,147 @@
-*** images.c.orig	Sun May 31 08:06:53 1998
---- images.c	Thu Jan  6 11:30:16 2000
-***************
-*** 196,202 ****
-  			basey+(rangey/2), "No hits for this month!", black);
-  		gdImageInterlace(im, 1);		/* make it interlaced */
-  		if ((out = fopen(name, "wb")) != NULL) {
-! 			gdImageGif(im, out);
-  			(void) fclose(out);
-  		}
-  		gdImageDestroy(im);
---- 196,202 ----
-  			basey+(rangey/2), "No hits for this month!", black);
-  		gdImageInterlace(im, 1);		/* make it interlaced */
-  		if ((out = fopen(name, "wb")) != NULL) {
-! 			gdImagePng(im, out);
-  			(void) fclose(out);
-  		}
-  		gdImageDestroy(im);
-***************
-*** 286,292 ****
+--- images.c.orig	Sun May 31 15:06:53 1998
++++ images.c	Sat May 29 18:08:54 2004
+@@ -196,7 +196,7 @@
+ 			basey+(rangey/2), "No hits for this month!", black);
+ 		gdImageInterlace(im, 1);		/* make it interlaced */
+ 		if ((out = fopen(name, "wb")) != NULL) {
+-			gdImageGif(im, out);
++			gdImagePng(im, out);
+ 			(void) fclose(out);
+ 		}
+ 		gdImageDestroy(im);
+@@ -286,7 +286,7 @@
+ 
+ 	gdImageInterlace(im, 1);		/* make it interlaced */
+ 	if ((out = fopen(name, "wb")) != NULL) {
+-		gdImageGif(im, out);
++		gdImagePng(im, out);
+ 		(void) fclose(out);
+ 	}
+ 	gdImageDestroy(im);
+@@ -441,7 +441,7 @@
+ 
+ 	gdImageInterlace(im, 1);		/* make it interlaced */
+ 	if ((out = fopen(name, "wb")) != NULL) {
+-		gdImageGif(im, out);
++		gdImagePng(im, out);
+ 		(void) fclose(out);
+ 	}
+ 	gdImageDestroy(im);
+@@ -529,7 +529,7 @@
+ 
+ 	gdImageInterlace(im, 1);		/* make it interlaced */
+ 	if ((out = fopen(name, "wb")) != NULL) {
+-		gdImageGif(im, out);
++		gdImagePng(im, out);
+ 		(void) fclose(out);
+ 	}
+ 	gdImageDestroy(im);
+@@ -666,7 +666,7 @@
+ 		gdImageInterlace(im, 1);		/* make it interlaced */
+ 		gdImageInterlace(im, 1);		/* make it interlaced */
+ 		if ((out = fopen(name, "wb")) != NULL) {
+-			gdImageGif(im, out);
++			gdImagePng(im, out);
+ 			(void) fclose(out);
+ 		}
+ 		gdImageDestroy(im);
+@@ -752,7 +752,7 @@
+ 
+ 	gdImageInterlace(im, 1);		/* make it interlaced */
+ 	if ((out = fopen(name, "wb")) != NULL) {
+-		gdImageGif(im, out);
++		gdImagePng(im, out);
+ 		(void) fclose(out);
+ 	}
+ 	gdImageDestroy(im);
+@@ -988,7 +988,7 @@
+ 
+ 	gdImageInterlace(im, 1);		/* make it interlaced */
+ 	if ((out = fopen(name, "wb")) != NULL) {
+-		gdImageGif(im, out);
++		gdImagePng(im, out);
+ 		(void) fclose(out);
+ 	}
+ 	gdImageDestroy(im);
+@@ -996,37 +996,37 @@
+ }
   
-  	gdImageInterlace(im, 1);		/* make it interlaced */
-  	if ((out = fopen(name, "wb")) != NULL) {
-! 		gdImageGif(im, out);
-  		(void) fclose(out);
-  	}
-  	gdImageDestroy(im);
---- 286,292 ----
-  
-  	gdImageInterlace(im, 1);		/* make it interlaced */
-  	if ((out = fopen(name, "wb")) != NULL) {
-! 		gdImagePng(im, out);
-  		(void) fclose(out);
-  	}
-  	gdImageDestroy(im);
-***************
-*** 441,447 ****
-  
-  	gdImageInterlace(im, 1);		/* make it interlaced */
-  	if ((out = fopen(name, "wb")) != NULL) {
-! 		gdImageGif(im, out);
-  		(void) fclose(out);
-  	}
-  	gdImageDestroy(im);
---- 441,447 ----
-  
-  	gdImageInterlace(im, 1);		/* make it interlaced */
-  	if ((out = fopen(name, "wb")) != NULL) {
-! 		gdImagePng(im, out);
-  		(void) fclose(out);
-  	}
-  	gdImageDestroy(im);
-***************
-*** 529,535 ****
-  
-  	gdImageInterlace(im, 1);		/* make it interlaced */
-  	if ((out = fopen(name, "wb")) != NULL) {
-! 		gdImageGif(im, out);
-  		(void) fclose(out);
-  	}
-  	gdImageDestroy(im);
---- 529,535 ----
-  
-  	gdImageInterlace(im, 1);		/* make it interlaced */
-  	if ((out = fopen(name, "wb")) != NULL) {
-! 		gdImagePng(im, out);
-  		(void) fclose(out);
-  	}
-  	gdImageDestroy(im);
-***************
-*** 666,672 ****
-  		gdImageInterlace(im, 1);		/* make it interlaced */
-  		gdImageInterlace(im, 1);		/* make it interlaced */
-  		if ((out = fopen(name, "wb")) != NULL) {
-! 			gdImageGif(im, out);
-  			(void) fclose(out);
-  		}
-  		gdImageDestroy(im);
---- 666,672 ----
-  		gdImageInterlace(im, 1);		/* make it interlaced */
-  		gdImageInterlace(im, 1);		/* make it interlaced */
-  		if ((out = fopen(name, "wb")) != NULL) {
-! 			gdImagePng(im, out);
-  			(void) fclose(out);
-  		}
-  		gdImageDestroy(im);
-***************
-*** 752,758 ****
-  
-  	gdImageInterlace(im, 1);		/* make it interlaced */
-  	if ((out = fopen(name, "wb")) != NULL) {
-! 		gdImageGif(im, out);
-  		(void) fclose(out);
-  	}
-  	gdImageDestroy(im);
---- 752,758 ----
-  
-  	gdImageInterlace(im, 1);		/* make it interlaced */
-  	if ((out = fopen(name, "wb")) != NULL) {
-! 		gdImagePng(im, out);
-  		(void) fclose(out);
-  	}
-  	gdImageDestroy(im);
-***************
-*** 988,994 ****
-  
-  	gdImageInterlace(im, 1);		/* make it interlaced */
-  	if ((out = fopen(name, "wb")) != NULL) {
-! 		gdImageGif(im, out);
-  		(void) fclose(out);
-  	}
-  	gdImageDestroy(im);
---- 988,994 ----
-  
-  	gdImageInterlace(im, 1);		/* make it interlaced */
-  	if ((out = fopen(name, "wb")) != NULL) {
-! 		gdImagePng(im, out);
-  		(void) fclose(out);
-  	}
-  	gdImageDestroy(im);
-***************
-*** 1037,1043 ****
-  		(void) gdImageColorAllocate(im, tp->color[0], tp->color[1], tp->color[2]);
-  		gdImageInterlace(im, 1);
-  		if ((out=fopen(fname, "wb")) != NULL) {
-! 			gdImageGif(im, out);
-  			(void) fclose(out);
-  		}
-  		gdImageDestroy(im);
---- 1037,1043 ----
-  		(void) gdImageColorAllocate(im, tp->color[0], tp->color[1], tp->color[2]);
-  		gdImageInterlace(im, 1);
-  		if ((out=fopen(fname, "wb")) != NULL) {
-! 			gdImagePng(im, out);
-  			(void) fclose(out);
-  		}
-  		gdImageDestroy(im);
-***************
-*** 1071,1077 ****
-  		if (!buttons[idx].name)
-  			continue;
-  		if ((fp = fopen(buttons[idx].name, "rb")) != NULL) {
-! 			ip = gdImageCreateFromGif(fp);
-  			(void) fclose(fp);
-  			buttons[idx].wid = gdImageSX(ip);
-  			buttons[idx].ht = gdImageSY(ip);
---- 1071,1077 ----
-  		if (!buttons[idx].name)
-  			continue;
-  		if ((fp = fopen(buttons[idx].name, "rb")) != NULL) {
-! 			ip = gdImageCreateFromPng(fp);
-  			(void) fclose(fp);
-  			buttons[idx].wid = gdImageSX(ip);
-  			buttons[idx].ht = gdImageSY(ip);
-
+ ICON_TAB icon_tab[] = {
+-	{ "btn/sq_green.gif",     0, 204,   0 },
+-	{ "btn/sq_blue.gif",      0,   0, 255 },
+-	{ "btn/sq_red.gif",     255,   0,   0 },
+-	{ "btn/sq_orange.gif",  222, 102,   0 },
+-	{ "btn/sq_yellow.gif",  242, 242,   0 },
+-	{ "btn/sq_magenta.gif", 153,   0, 255 },
+-	{ "btn/sq_grey.gif",    204, 204, 204 }
++	{ "btn/sq_green.png",     0, 204,   0 },
++	{ "btn/sq_blue.png",      0,   0, 255 },
++	{ "btn/sq_red.png",     255,   0,   0 },
++	{ "btn/sq_orange.png",  222, 102,   0 },
++	{ "btn/sq_yellow.png",  242, 242,   0 },
++	{ "btn/sq_magenta.png", 153,   0, 255 },
++	{ "btn/sq_grey.png",    204, 204, 204 }
+ };
+ 
+ BTN_TAB buttons[] = {		/* various images */
+-	{ "btn/netstore_sw.gif", "Netstore", 0, 0 },
+-	{ "btn/netstore_sb.gif", "Netstore", 0, 0 },
+-	{ "btn/RAG_sw.gif",	NULL,		0, 0 },
+-	{ "btn/RAG_sb.gif",	NULL,		0, 0 },
+-	{ "btn/year_off.gif",	"summary",	0, 0 },
+-	{ "btn/totals_off.gif",	"totals",	0, 0 },
+-	{ "btn/days_off.gif",	"days",		0, 0 },
++	{ "btn/netstore_sw.png", "Netstore", 0, 0 },
++	{ "btn/netstore_sb.png", "Netstore", 0, 0 },
++	{ "btn/RAG_sw.png",	NULL,		0, 0 },
++	{ "btn/RAG_sb.png",	NULL,		0, 0 },
++	{ "btn/year_off.png",	"summary",	0, 0 },
++	{ "btn/totals_off.png",	"totals",	0, 0 },
++	{ "btn/days_off.png",	"days",		0, 0 },
+ 	{ NULL,			NULL,		0, 0 },
+ 	{ NULL,			NULL,		0, 0 },
+-	{ "btn/avload_off.gif",	"avload",	0, 0 },
+-	{ "btn/topurl_off.gif",	"topurl",	0, 0 },
+-	{ "btn/topdom_off.gif",	"topdom",	0, 0 },
+-	{ "btn/topuag_off.gif",	"topuag",	0, 0 },
+-	{ "btn/topref_off.gif",	"topref",	0, 0 },
+-	{ "btn/cntry_off.gif",	"country",	0, 0 },
+-	{ "btn/files_off.gif",	"files",	0, 0 },
+-	{ "btn/rfiles_off.gif",	"rfiles",	0, 0 },
+-	{ "btn/sites_off.gif",	"sites",	0, 0 },
+-	{ "btn/rsites_off.gif",	"rsites",	0, 0 },
+-	{ "btn/agents_off.gif",	"agents",	0, 0 },
+-	{ "btn/refers_off.gif",	"refers",	0, 0 }
++	{ "btn/avload_off.png",	"avload",	0, 0 },
++	{ "btn/topurl_off.png",	"topurl",	0, 0 },
++	{ "btn/topdom_off.png",	"topdom",	0, 0 },
++	{ "btn/topuag_off.png",	"topuag",	0, 0 },
++	{ "btn/topref_off.png",	"topref",	0, 0 },
++	{ "btn/cntry_off.png",	"country",	0, 0 },
++	{ "btn/files_off.png",	"files",	0, 0 },
++	{ "btn/rfiles_off.png",	"rfiles",	0, 0 },
++	{ "btn/sites_off.png",	"sites",	0, 0 },
++	{ "btn/rsites_off.png",	"rsites",	0, 0 },
++	{ "btn/agents_off.png",	"agents",	0, 0 },
++	{ "btn/refers_off.png",	"refers",	0, 0 }
+ };
+ 
+ static void mkIcon(char * const fname, ICON_TAB * const tp) {
+@@ -1037,7 +1037,7 @@
+ 		(void) gdImageColorAllocate(im, tp->color[0], tp->color[1], tp->color[2]);
+ 		gdImageInterlace(im, 1);
+ 		if ((out=fopen(fname, "wb")) != NULL) {
+-			gdImageGif(im, out);
++			gdImagePng(im, out);
+ 			(void) fclose(out);
+ 		}
+ 		gdImageDestroy(im);
+@@ -1071,7 +1071,7 @@
+ 		if (!buttons[idx].name)
+ 			continue;
+ 		if ((fp = fopen(buttons[idx].name, "rb")) != NULL) {
+-			ip = gdImageCreateFromGif(fp);
++			ip = gdImageCreateFromPng(fp);
+ 			(void) fclose(fp);
+ 			buttons[idx].wid = gdImageSX(ip);
+ 			buttons[idx].ht = gdImageSY(ip);
