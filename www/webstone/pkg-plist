@@ -35,6 +35,7 @@ webstone/conf/fileset
 webstone/conf/paths.pl
 webstone/conf/paths.sh
 webstone/conf/testbed
+webstone/webstone
 @dirrm webstone/bin
 @dirrm webstone/conf
 @dirrm webstone
