@@ -7,6 +7,7 @@ lib/libchasen.so
 lib/libchasen.so.0
 libexec/chasen/convary
 libexec/chasen/convdic
+libexec/chasen/makeda
 libexec/chasen/makeint
 libexec/chasen/makemat
 libexec/chasen/mkary
@@ -17,14 +18,5 @@ libexec/chasen/sortdic
 @dirrm share/chasen/dic
 share/chasen/doc/manual-j.pdf
 share/chasen/doc/manual-j.tex
-share/chasen/doc/manual.pdf
-share/chasen/doc/manual.tex
 @dirrm share/chasen/doc
-share/chasen/prolog/README.prolog
-share/chasen/prolog/chasen.pl
-share/chasen/prolog/chasen_user.pl
-share/chasen/prolog/jinput.pl
-share/chasen/prolog/juman.pl
-share/chasen/prolog/utils.pl
-@dirrm share/chasen/prolog
 @dirrm share/chasen
