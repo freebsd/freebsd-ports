@@ -3,7 +3,7 @@
 # Date created:		17 November 1997
 # Whom:			SADA Kenji
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/06/01 14:48:53 kuriyama Exp $
 #
 
 DISTNAME=	ja-netscape-3.04
@@ -18,7 +18,7 @@ MAINTAINER=	sada@e-mail.ne.jp
 
 RUN_DEPENDS+=	${PREFIX}/bin/netscape:${PORTSDIR}/www/netscape3 \
 		${X11BASE}/lib/X11/k12:${PORTSDIR}/japanese/k12 \
-		${X11BASE}/lib/X11/fonts/misc/elisau10.pcf.Z:${PORTSDIR}/japanese/k8
+		${X11BASE}/lib/X11/fonts/misc/elisau10.pcf.Z:${PORTSDIR}/japanese/elisa10x8
 
 RESTRICTED=	"Includes a copyrighted file from Netscape"
 NO_WRKSUBDIR=	YES
