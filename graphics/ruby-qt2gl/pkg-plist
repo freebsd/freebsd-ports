@@ -1,0 +1,39 @@
+%%RUBY_SITEARCHLIBDIR%%/qt2gl.so
+%%RUBY_EXAMPLESDIR%%/qt2gl/box/README.orig
+%%RUBY_EXAMPLESDIR%%/qt2gl/box/box.rb
+%%RUBY_EXAMPLESDIR%%/qt2gl/box/glbox.rb
+%%RUBY_EXAMPLESDIR%%/qt2gl/box/globjwin.rb
+%%RUBY_EXAMPLESDIR%%/qt2gl/gear/README.orig
+%%RUBY_EXAMPLESDIR%%/qt2gl/gear/gear.rb
+%%RUBY_EXAMPLESDIR%%/qt2gl/gear/gear2.rb
+%%RUBY_EXAMPLESDIR%%/qt2gl/glpixmap/README.orig
+%%RUBY_EXAMPLESDIR%%/qt2gl/glpixmap/glbox.rb
+%%RUBY_EXAMPLESDIR%%/qt2gl/glpixmap/globjwin.rb
+%%RUBY_EXAMPLESDIR%%/qt2gl/glpixmap/glpixmap.rb
+%%RUBY_EXAMPLESDIR%%/qt2gl/sharedbox/README.orig
+%%RUBY_EXAMPLESDIR%%/qt2gl/sharedbox/glbox.rb
+%%RUBY_EXAMPLESDIR%%/qt2gl/sharedbox/globjwin.rb
+%%RUBY_EXAMPLESDIR%%/qt2gl/sharedbox/sharedbox.rb
+%%RUBY_EXAMPLESDIR%%/qt2gl/texture/README.orig
+%%RUBY_EXAMPLESDIR%%/qt2gl/texture/gllogo.bmp
+%%RUBY_EXAMPLESDIR%%/qt2gl/texture/globjwin.rb
+%%RUBY_EXAMPLESDIR%%/qt2gl/texture/gltexobj.rb
+%%RUBY_EXAMPLESDIR%%/qt2gl/texture/qtlogo.bmp
+%%RUBY_EXAMPLESDIR%%/qt2gl/texture/texture.rb
+%%RUBY_EXAMPLESDIR%%/qt2gl/texture/texture_rb/book.bmp
+%%RUBY_EXAMPLESDIR%%/qt2gl/texture/texture_rb/book.gif
+%%RUBY_EXAMPLESDIR%%/qt2gl/texture/texture_rb/book.xpm
+%%RUBY_EXAMPLESDIR%%/qt2gl/texture/texture_rb/gllogo.bmp
+%%RUBY_EXAMPLESDIR%%/qt2gl/texture/texture_rb/globjwin.rb
+%%RUBY_EXAMPLESDIR%%/qt2gl/texture/texture_rb/gltexobj.rb
+%%RUBY_EXAMPLESDIR%%/qt2gl/texture/texture_rb/qtlogo.bmp
+%%RUBY_EXAMPLESDIR%%/qt2gl/texture/texture_rb/texture.rb
+@dirrm %%RUBY_EXAMPLESDIR%%/qt2gl/texture/texture_rb
+@dirrm %%RUBY_EXAMPLESDIR%%/qt2gl/texture
+@dirrm %%RUBY_EXAMPLESDIR%%/qt2gl/sharedbox
+@dirrm %%RUBY_EXAMPLESDIR%%/qt2gl/glpixmap
+@dirrm %%RUBY_EXAMPLESDIR%%/qt2gl/gear
+@dirrm %%RUBY_EXAMPLESDIR%%/qt2gl/box
+@dirrm %%RUBY_EXAMPLESDIR%%/qt2gl
+%%RUBY_DOCDIR%%/qt2gl/README
+@dirrm %%RUBY_DOCDIR%%/qt2gl
