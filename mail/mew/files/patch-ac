@@ -1,5 +1,5 @@
---- info/Makefile.orig	Wed Aug 25 17:56:29 1999
-+++ info/Makefile	Mon Aug 30 23:14:43 1999
+--- info/Makefile.orig	Wed Oct 20 20:20:56 1999
++++ info/Makefile	Fri Dec 10 22:45:46 1999
 @@ -32,6 +32,7 @@
  
  INFO  = mew.info mew.info-1 mew.info-2 mew.info-3
@@ -8,10 +8,10 @@
  
  info::
  	sed -e 's/@setfilename mew.jis.info/@setfilename mew.info/' \
-@@ -52,20 +53,25 @@
- 		-f batch-texinfo-format mew.texi
- 
- install-info:
+@@ -55,8 +56,8 @@
+ 	-@if [ ! -d $(INFODIR) ]; then \
+ 		$(MKDIR) $(INFODIR); \
+ 	fi; \
 -	cp $(INFO) $(INFODIR)
 -	-@if [ -x "$(INSTALLINFO)" ]; then \
 +	${BSD_INSTALL_DATA} $(INFO) $(INFODIR)
@@ -19,9 +19,10 @@
  		$(INSTALLINFO) mew.info $(INFODIR)/dir; \
  	else \
  		echo "Don't forget to edit $(INFODIR)/dir for Mew."; \
- 	fi
- 
- install-jinfo:
+@@ -66,12 +67,17 @@
+ 	-@if [ ! -d $(INFODIR) ]; then \
+ 		$(MKDIR) $(INFODIR); \
+ 	fi; \
 -	cp $(JINFO) $(INFODIR)
 -	-@if [ -x "$(INSTALLINFO)" ]; then \
 +	${BSD_INSTALL_DATA} $(JINFO) $(INFODIR)

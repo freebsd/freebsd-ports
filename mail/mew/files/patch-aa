@@ -1,6 +1,6 @@
---- Makefile.orig	Fri Aug 27 12:23:59 1999
-+++ Makefile	Mon Aug 30 23:09:10 1999
-@@ -88,12 +88,28 @@
+--- Makefile~	Wed Oct 20 20:20:51 1999
++++ Makefile	Fri Dec 10 22:42:06 1999
+@@ -88,12 +88,29 @@
  	mew-temacs.el   mew-xemacs.el  mew-addrbook.el \
  	mew.el
  
@@ -19,6 +19,7 @@
 +	etc/mew-curr.xpm	etc/mew-folder.xpm	etc/mew-inc2.xpm	\
 +	etc/mew-kill.xpm
 +
++
  TEMPFILE = temp.el
  
  CP = cp
@@ -29,10 +30,10 @@
  
  all: $(OBJS)
  	@echo 'Compiling EL files of Mew ... '
-@@ -111,8 +127,8 @@
- 	@echo ')))' >> $(TEMPFILE)
- 
- install: $(OBJS)
+@@ -114,8 +131,8 @@
+ 	-@if [ ! -d $(ELISPDIR) ]; then \
+ 		$(MKDIR) $(ELISPDIR); \
+ 	fi; \
 -	$(CP) $(SRCS) $(ELISPDIR)
 -	$(CP) $(OBJS) $(ELISPDIR)
 +	${BSD_INSTALL_DATA} $(SRCS) $(ELISPDIR)
@@ -40,7 +41,7 @@
  	cd $(BIN); $(MAKE) install CFLAGS="$(CFLAGS)" CC="$(CC)" BINDIR="$(BINDIR)"
  
  clean:
-@@ -123,19 +139,32 @@
+@@ -126,19 +143,32 @@
  	cd info; $(MAKE) info EMACS=$(EMACS)
  
  install-info:
