@@ -8,7 +8,9 @@
 PORTNAME=	onenetd
 PORTVERSION=	1.10
 CATEGORIES=	net
-MASTER_SITES=	http://offog.org/files/
+MASTER_SITES=	http://offog.org/files/ \
+		ftp://ftp.i-scream.org/pub/offog.org/files/ \
+		http://ftp.i-scream.org/pub/offog.org/files/
 
 MAINTAINER=	tim@bishnet.net
 COMMENT=	A single-server inetd
