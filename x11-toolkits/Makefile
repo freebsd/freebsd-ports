@@ -62,6 +62,7 @@
     SUBDIR += qt21
     SUBDIR += qt22
     SUBDIR += rep-gtk
+    SUBDIR += ruby-fltk
     SUBDIR += ruby-gtk
     SUBDIR += ruby-qt
     SUBDIR += ruby-qt-i18n
