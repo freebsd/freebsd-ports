@@ -1,0 +1,8 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/MusicBrainz/Queries.pm
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/MusicBrainz 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MusicBrainz/Queries/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MusicBrainz/Queries/Queries.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MusicBrainz/Queries/Queries.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MusicBrainz/Queries/autosplit.ix
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MusicBrainz/Queries
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/MusicBrainz 2>/dev/null || true
