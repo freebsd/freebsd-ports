@@ -2,10 +2,6 @@ AOLserver is a highly-optimized multi-threaded web server. Its main
 features include database connection-pooling and a powerful Tcl API
 for application development.
 
-The support for FreeBSD probably needs work, and I will gratefully
-(and, it is to be hoped, promptly) accept patches or suggestions for
-this port.
-
 More information is available at www.aolserver.com.
 
 - Matt Braithwaite <mab@red-bean.com>
