@@ -484,6 +484,7 @@
     SUBDIR += py-mt
     SUBDIR += py-scgi
     SUBDIR += py-websvcs
+    SUBDIR += py-webware
     SUBDIR += pyweblib
     SUBDIR += qdecoder
     SUBDIR += quanta

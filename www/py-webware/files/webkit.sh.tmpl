@@ -1,0 +1,38 @@
+#!/bin/sh
+
+# Warning
+# -------
+#
+# Please edit the files in
+#   %%WEBKIT_HOME_DIR%%/Configs/
+# to suit your needs. Using them as they are may cause problems.
+
+# This file is adapted from databases/postgresql7/files/pgsql.sh.tmpl
+#
+# $FreeBSD$
+
+WEBKIT_HOME_DIR=%%WEBKIT_HOME_DIR%%
+
+case $1 in
+start)
+    [ -x ${WEBKIT_HOME_DIR}/AppServer ] && {
+        su -l webware -c "exec ${WEBKIT_HOME_DIR}/AppServer" \
+            >/dev/null 2>&1 &
+        echo -n ' webkit'
+    }
+    ;;
+
+stop)
+    [ -f ${WEBKIT_HOME_DIR}/appserverpid.txt ] && {
+        su -l webware -c \
+            "/bin/kill `cat ${WEBKIT_HOME_DIR}/appserverpid.txt`" \
+                >/dev/null 2>&1
+        echo -n ' webkit'
+    }
+    ;;
+
+*)
+    echo "usage: `basename $0` {start|stop}" >&2
+    exit 1
+    ;;
+esac
