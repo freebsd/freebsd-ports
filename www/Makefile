@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.46 1997/06/02 15:25:03 fenner Exp $
+# $Id: Makefile,v 1.47 1997/06/04 05:47:25 asami Exp $
 #
 
     SUBDIR += Mosaic         # requires Motif
@@ -9,6 +9,7 @@
     SUBDIR += cgiparse
     SUBDIR += chimera
     SUBDIR += comline
+    SUBDIR += fxhtml
     SUBDIR += gn
     SUBDIR += gwstat
     SUBDIR += harvest
