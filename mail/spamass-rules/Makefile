@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spamass-rules
-PORTVERSION=	20050104
+PORTVERSION=	20050208
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ranner.jawa.at/stuff/ \
 		http://web.inforum.at/downloads/
