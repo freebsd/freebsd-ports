@@ -275,6 +275,12 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # LIBTOOLFLAGS	- Additional flags to pass to ltconfig
 #				  (default: --disable-ltlibs)
 ##
+# USE_GETOPT_LONG	- Says that the port uses getopt_long. If OSVERSION
+#				  less than 500041, automatically adds devel/libgnugeopt
+#				  to LIB_DEPENDS, and pass adjusted values of 
+#				  CPPFLAGS and LDFLAGS in CONFIGURE_ENV.
+#				  Default: not set.
+##
 # USE_PERL5		- Says that the port uses perl5 for building and running.
 # USE_PERL5_BUILD	- Says that the port uses perl5 for building.
 # USE_PERL5_RUN		- Says that the port uses perl5 for running.
@@ -543,12 +549,13 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # For fetch:
 #
 # FETCH_CMD		- Full path to ftp/http fetch command if not in $PATH
-#				  (default: "/usr/bin/fetch -A").
+#				  (default: "/usr/bin/fetch -ARr").
 # FETCH_BEFORE_ARGS -
 #				  Arguments to ${FETCH_CMD} before filename (default: none).
 # FETCH_AFTER_ARGS -
 #				  Arguments to ${FETCH_CMD} following filename (default: none).
 # FETCH_ENV		- Environment to pass to ${FETCH_CMD} (default: none).
+# FETCH_REGET	- Times to retry fetching of files on checksum errors (default: 1).
 #
 # For extract:
 #
@@ -968,7 +975,7 @@ MAKE_ENV+=		OPENSSLLIB=${OPENSSLLIB} OPENSSLINC=${OPENSSLINC} \
 .include "${PORTSDIR}/Mk/bsd.emacs.mk"
 .endif
 
-.if defined(USE_PYTHON) || defined(PYTHON_VERSION)
+.if defined(USE_PYTHON)
 .include "${PORTSDIR}/Mk/bsd.python.mk"
 .endif
 
@@ -1250,6 +1257,15 @@ CXX=			g++32
 BUILD_DEPENDS+=	gcc32:${PORTSDIR}/lang/gcc32
 .endif
 
+.if defined(USE_GETOPT_LONG)
+.if ${OSVERSION} < 500041
+LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+CPPFLAGS+=		-I${LOCALBASE}/include
+LDFLAGS+=		-L${LOCALBASE}/lib -lgnugetopt
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+.endif
+.endif
+
 .if defined(USE_LINUX)
 RUN_DEPENDS+=	${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base
 .endif
@@ -1372,7 +1388,7 @@ CONFIGURE_ARGS+=--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 
 .include "${PORTSDIR}/Mk/bsd.gnome.mk"
 
-.if defined(USE_PYTHON) || defined(PYTHON_VERSION)
+.if defined(USE_PYTHON)
 .include "${PORTSDIR}/Mk/bsd.python.mk"
 .endif
 
@@ -1439,11 +1455,13 @@ PTHREAD_LIBS=		-lc_r
 .if ${OSVERSION} < 300000
 FETCH_CMD?=		/usr/bin/fetch
 .else
-FETCH_CMD?=		/usr/bin/fetch -A
+FETCH_CMD?=		/usr/bin/fetch -ARr
+FETCH_REGET?=	1
 .endif
 #FETCH_BEFORE_ARGS+=	$${CKSIZE:+-S $$CKSIZE}
 .else
 FETCH_CMD?=		/usr/bin/ftp
+FETCH_REGET?=	0
 .endif
 
 TOUCH?=			/usr/bin/touch
@@ -2501,8 +2519,16 @@ do-fetch:
 	 for _file in ${DISTFILES}; do \
 		file=`echo $$_file | ${SED} -E -e 's/:[^:]+$$//'` ; \
 		select=`echo $${_file#$${file}} | ${SED} -e 's/^://' -e 's/,/ /g'` ; \
-		if [ ! -f $$file -a ! -f `${BASENAME} $$file` ]; then \
-			if [ -L $$file -o -L `${BASENAME} $$file` ]; then \
+		force_fetch=false; \
+		filebasename=`${BASENAME} $$file`; \
+		for afile in ${FORCE_FETCH}; do \
+			afile=`${BASENAME} $$afile`; \
+			if [ "x$$afile" = "x$$filebasename" ]; then \
+				force_fetch=true; \
+			fi; \
+		done; \
+		if [ ! -f $$file -a ! -f $$filebasename -o "$$force_fetch" = "true" ]; then \
+			if [ -L $$file -o -L $$filebasename ]; then \
 				${ECHO_MSG} ">> ${_DISTDIR}/$$file is a broken symlink."; \
 				${ECHO_MSG} ">> Perhaps a filesystem (most likely a CD) isn't mounted?"; \
 				${ECHO_MSG} ">> Please correct this problem and try again."; \
@@ -2558,7 +2584,15 @@ do-fetch:
 	 for _file in ${PATCHFILES}; do \
 		file=`echo $$_file | ${SED} -E -e 's/:[^:]+$$//'` ; \
 		select=`echo $${_file#$${file}} | ${SED} -e 's/^://' -e 's/,/ /g'` ; \
-		if [ ! -f $$file -a ! -f `${BASENAME} $$file` ]; then \
+		force_fetch=false; \
+		filebasename=`${BASENAME} $$file`; \
+		for afile in ${FORCE_FETCH}; do \
+			afile=`${BASENAME} $$afile`; \
+			if [ "x$$afile" = "x$$filebasename" ]; then \
+				force_fetch=true; \
+			fi; \
+		done; \
+		if [ ! -f $$file -a ! -f $$filebasename -o "$$force_fetch" = "true" ]; then \
 			if [ -L $$file -o -L `${BASENAME} $$file` ]; then \
 				${ECHO_MSG} ">> ${_DISTDIR}/$$file is a broken symlink."; \
 				${ECHO_MSG} ">> Perhaps a filesystem (most likely a CD) isn't mounted?"; \
@@ -2699,7 +2733,7 @@ do-configure:
 	@(cd ${CONFIGURE_WRKSRC} && \
 		if ! ${SETENV} CC="${CC}" CXX="${CXX}" \
 	    CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
-	    INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
+	    INSTALL="/usr/bin/install -c ${_BINOWNGRP}" \
 	    INSTALL_DATA="${INSTALL_DATA}" \
 	    INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 	    INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
@@ -2718,7 +2752,7 @@ do-configure:
 		${SETENV} ${CONFIGURE_ENV} \
 		${PERL5} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
 	@cd ${CONFIGURE_WRKSRC} && \
-		${REINPLACE_CMD} -e 's/perllocal.pod/&-${PORTNAME}/' Makefile
+		${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
 .endif
 .if defined(USE_IMAKE)
 	@(cd ${CONFIGURE_WRKSRC}; ${SETENV} ${MAKE_ENV} ${XMKMF})
@@ -2841,7 +2875,8 @@ delete-package-list: delete-package-links-list
 .if !target(check-already-installed)
 check-already-installed:
 .if !defined(NO_PKG_REGISTER) && !defined(FORCE_PKG_REGISTER)
-	@if [ -d ${PKG_DBDIR}/${PKGNAME} ]; then \
+	@if [ -d ${PKG_DBDIR}/${PKGNAME} -o \
+	    "x`${PKG_INFO} -q -O ${PKGORIGIN} 2> /dev/null`" != "x" ]; then \
 		${ECHO_CMD} "===>  ${PKGNAME} is already installed - perhaps an older version?"; \
 		${ECHO_CMD} "      If so, you may wish to \`\`make deinstall'' and install"; \
 		${ECHO_CMD} "      this port again by \`\`make reinstall'' to upgrade it properly."; \
@@ -2908,11 +2943,10 @@ security-check:
 #   2.  accept()/recvfrom() which indicates network listening capability
 #   3.  insecure functions (gets/mktemp/tempnam/[XXX])
 #   4.  startup scripts, in conjunction with 2.
-#
-#  TODO:  world-writable files/dirs
+#   5.  world-writable files/dirs
 #
 	-@rm -f ${WRKDIR}/.PLIST.setuid ${WRKDIR}/.PLIST.stupid \
-		${WRKDIR}/.PLIST.network; \
+		${WRKDIR}/.PLIST.network ${WRKDIR}/.PLIST.writable; \
 	if [ -n "$$PORTS_AUDIT" ]; then \
 		stupid_functions_regexp=' (gets|mktemp|tempnam|tmpnam|strcpy|strcat|sprintf)$$'; \
 	else \
@@ -2946,9 +2980,14 @@ security-check:
 				fi; \
 			fi; \
 		fi; \
+		if [ ! -L "${PREFIX}/$$i" ]; then \
+			if [ -n "`/usr/bin/find ${PREFIX}/$$i -prune -perm -0002 2>/dev/null`" ]; then \
+				 echo ${PREFIX}/$$i >> ${WRKDIR}/.PLIST.writable; \
+			fi; \
+		fi; \
 	done; \
 	${GREP} '^etc/rc.d/' ${TMPPLIST} > ${WRKDIR}/.PLIST.startup; \
-	if [ -s ${WRKDIR}/.PLIST.setuid -o -s ${WRKDIR}/.PLIST.network ]; then \
+	if [ -s ${WRKDIR}/.PLIST.setuid -o -s ${WRKDIR}/.PLIST.network -o -s ${WRKDIR}/.PLIST.writable ]; then \
 		if [ -n "$$PORTS_AUDIT" ]; then \
 			echo "===>  SECURITY REPORT (PARANOID MODE): "; \
 		else \
@@ -2971,6 +3010,11 @@ security-check:
 				${SED} s,^,${PREFIX}/, < ${WRKDIR}/.PLIST.startup; \
 				echo; \
 			fi; \
+		fi; \
+		if [ -s ${WRKDIR}/.PLIST.writable ] ; then \
+			echo "      This port has installed the following world-writable files/directories."; \
+			${CAT} ${WRKDIR}/.PLIST.writable; \
+			echo; \
 		fi; \
 		echo "      If there are vulnerabilities in these programs there may be a security"; \
 		echo "      risk to the system. FreeBSD makes no guarantee about the security of"; \
@@ -3132,7 +3176,7 @@ patch-libtool:
 		 ${ECHO_CMD} "and reinstall ${PORTSDIR}/devel/libtool."; \
 		 exit 1); \
 	  fi; \
-	 LIBTOOLDIR=`${WHICH} ${LIBTOOL} | ${SED} -e 's^/bin/libtool^/share/libtool^'` || ${LOCALBASE}/share/libtool; \
+	 LIBTOOLDIR=`${WHICH} ${LIBTOOL} | ${SED} -e 's^/bin//*libtool^/share/libtool^'` || ${LOCALBASE}/share/libtool; \
 	 cd ${PATCH_WRKSRC}; \
 	 for file in ${LIBTOOLFILES}; do \
 		${CP} $$file $$file.tmp; \
@@ -3184,11 +3228,13 @@ reinstall:
 
 .if !target(deinstall)
 deinstall:
-	@${ECHO_MSG} "===>  Deinstalling for ${PKGNAME}"
-	@if ${PKG_INFO} -e ${PKGNAME}; then \
-		${PKG_DELETE} -f ${PKGNAME}; \
+	@deinstall_name=`${PKG_INFO} -q -O ${PKGORIGIN} 2> /dev/null`; \
+	${TEST} -z $${deinstall_name} && deinstall_name=${PKGNAME}; \
+	${ECHO_MSG} "===>  Deinstalling for ${PKGORIGIN} ($${deinstall_name})"; \
+	if ${PKG_INFO} -e $${deinstall_name}; then \
+		${PKG_DELETE} -f $${deinstall_name}; \
 	 else \
-		${ECHO_MSG} "===>   ${PKGNAME} not installed, skipping"; \
+	    ${ECHO_MSG} "===>   ${PKGORIGIN} not installed, skipping"; \
 	 fi
 	@${RM} -f ${INSTALL_COOKIE} ${PACKAGE_COOKIE}
 .endif
@@ -3375,6 +3421,7 @@ checksum: fetch
 				${ECHO_MSG} ">> Checksum OK for $$file."; \
 			else \
 				${ECHO_MSG} ">> Checksum mismatch for $$file."; \
+				refetchlist="$$refetchlist$$file "; \
 				OK="false"; \
 			fi; \
 		  done; \
@@ -3389,12 +3436,26 @@ checksum: fetch
 				OK="false"; \
 			fi; \
 		  done; \
+		  if [ "$$OK" != "true" ] && [ ${FETCH_REGET} -gt 0 ]; then \
+			  ${ECHO_MSG} "===>  Refetch for ${FETCH_REGET} more times files: $$refetchlist"; \
+			  if ( cd ${.CURDIR} && \
+			    ${MAKE} ${.MAKEFLAGS} FORCE_FETCH="$$refetchlist" FETCH_REGET="`expr ${FETCH_REGET} - 1`" fetch); then \
+			  	  if ( cd ${.CURDIR} && \
+			        ${MAKE} ${.MAKEFLAGS} FETCH_REGET="`expr ${FETCH_REGET} - 1`" checksum ); then \
+			  	      OK="true"; \
+			  	  fi; \
+			  fi; \
+  		  fi ; \
+		  if [ "$$OK" != "true" -a ${FETCH_REGET} -eq 0 ]; then \
+			  ${ECHO_MSG} "===>  Giving up on fetching files: $$refetchlist"; \
+			  ${ECHO_MSG} "Make sure the Makefile and distinfo file (${MD5_FILE})"; \
+			  ${ECHO_MSG} "are up to date.  If you are absolutely sure you want to override this"; \
+			  ${ECHO_MSG} "check, type \"make NO_CHECKSUM=yes [other args]\"."; \
+			  exit 1; \
+		  fi; \
 		  if [ "$$OK" != "true" ]; then \
-			${ECHO_MSG} "Make sure the Makefile and distinfo file (${MD5_FILE})"; \
-			${ECHO_MSG} "are up to date.  If you are absolutely sure you want to override this"; \
-			${ECHO_MSG} "check, type \"make NO_CHECKSUM=yes [other args]\"."; \
-			exit 1; \
-		  fi) ; \
+			  exit 1; \
+		  fi); \
 	fi
 .endif
 
@@ -3492,7 +3553,7 @@ ${deptype:L}-depends:
 			else \
 				if [ X${USE_PACKAGE_DEPENDS} != "X" ]; then \
 					subpkgfile=`(cd $$dir; ${MAKE} $$depends_args -V PKGFILE)`; \
-					if [ -r "$${subpkgfile}" ]; then \
+					if [ -r "$${subpkgfile}" -a "$$target" = "${DEPENDS_TARGET}" ]; then \
 						${ECHO_MSG} "===>   Installing existing package $${subpkgfile}"; \
 						${PKG_ADD} $${subpkgfile}; \
 					else \
@@ -3546,7 +3607,17 @@ lib-depends:
 			if [ ! -d "$$dir" ]; then \
 				${ECHO_MSG} "     >> No directory for $$lib.  Skipping.."; \
 			else \
-				(cd $$dir; ${MAKE} -DINSTALLS_DEPENDS $$target $$depends_args) ; \
+				if [ X${USE_PACKAGE_DEPENDS} != "X" ]; then \
+					subpkgfile=`(cd $$dir; ${MAKE} $$depends_args -V PKGFILE)`; \
+					if [ -r "$${subpkgfile}" -a "$$target" = "${DEPENDS_TARGET}" ]; then \
+						${ECHO_MSG} "===>   Installing existing package $${subpkgfile}"; \
+						${PKG_ADD} $${subpkgfile}; \
+					else \
+					  (cd $$dir; ${MAKE} -DINSTALLS_DEPENDS $$target $$depends_args) ; \
+					fi; \
+				else \
+					(cd $$dir; ${MAKE} -DINSTALLS_DEPENDS $$target $$depends_args) ; \
+				fi ; \
 				${ECHO_MSG} "===>   Returning to build of ${PKGNAME}"; \
 				if ! ${LDCONFIG} -r | ${GREP} -qwE -e "-l$$pattern"; then \
 					${ECHO_MSG} "Error: shared library \"$$lib\" does not exist"; \
@@ -3634,26 +3705,60 @@ fetch-recursive-list:
 .endif
 
 .if !target(fetch-required)
-fetch-required:
+fetch-required: fetch
 	@${ECHO_MSG} "===> Fetching all required distfiles for ${PKGNAME} and dependencies"
-	@for dir in ${.CURDIR} $$(${ALL-DEPENDS-LIST}); do \
-		(cd $$dir; \
-		tmp=`${MAKE} -V PKGNAME`; \
-		if [ ! -d ${PKG_DBDIR}/$${tmp} ]; then \
-			${MAKE} fetch; \
-		fi );  \
+.for deptype in EXTRACT PATCH FETCH BUILD RUN
+.if defined(${deptype}_DEPENDS)
+.if !defined(NO_DEPENDS)
+	@for i in ${${deptype}_DEPENDS}; do \
+		prog=`${ECHO_CMD} $$i | ${SED} -e 's/:.*//'`; \
+		dir=`${ECHO_CMD} $$i | ${SED} -e 's/[^:]*://'`; \
+		if ${EXPR} "$$dir" : '.*:' > /dev/null; then \
+			dir=`${ECHO_CMD} $$dir | ${SED} -e 's/:.*//'`; \
+			if ${EXPR} "$$prog" : \\/ >/dev/null; then \
+				if [ ! -e "$$prog" ]; then \
+					(cd $$dir; ${MAKE} fetch); \
+				fi; \
+			fi; \
+		else \
+			(cd $$dir; \
+			tmp=`${MAKE} -V PKGNAME`; \
+			if [ ! -d ${PKG_DBDIR}/$${tmp} ]; then \
+				${MAKE} fetch; \
+			fi );  \
+		fi; \
 	done
+.endif
+.endif
+.endfor
 .endif
 
 .if !target(fetch-required-list)
-fetch-required-list:
-	@for dir in ${.CURDIR} $$(${ALL-DEPENDS-LIST}); do \
-		(cd $$dir; \
-		tmp=`${MAKE} -V PKGNAME`; \
-		if [ ! -d ${PKG_DBDIR}/$${tmp} ]; then \
-			${MAKE} fetch-list; \
-		fi );  \
+fetch-required-list: fetch-list
+.for deptype in EXTRACT PATCH FETCH BUILD RUN
+.if defined(${deptype}_DEPENDS)
+.if !defined(NO_DEPENDS)
+	@for i in ${${deptype}_DEPENDS}; do \
+		prog=`${ECHO_CMD} $$i | ${SED} -e 's/:.*//'`; \
+		dir=`${ECHO_CMD} $$i | ${SED} -e 's/[^:]*://'`; \
+		if ${EXPR} "$$dir" : '.*:' > /dev/null; then \
+			dir=`${ECHO_CMD} $$dir | ${SED} -e 's/:.*//'`; \
+			if ${EXPR} "$$prog" : \\/ >/dev/null; then \
+				if [ ! -e "$$prog" ]; then \
+					(cd $$dir; ${MAKE} fetch-list); \
+				fi; \
+			fi; \
+		else \
+			(cd $$dir; \
+			tmp=`${MAKE} -V PKGNAME`; \
+			if [ ! -d ${PKG_DBDIR}/$${tmp} ]; then \
+				${MAKE} fetch-list; \
+			fi );  \
+		fi; \
 	done
+.endif
+.endif
+.endfor
 .endif
 
 .if !target(checksum-recursive)
