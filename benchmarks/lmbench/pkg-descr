@@ -1,9 +1,12 @@
-This is lmbench-1.0, a system performance measurement tool.  You can
-go to /usr/local/lib/lmbench and do one of the followings:
+This is lmbench-1.0, a (sometimes controversial) system performance
+measurement tool.  You can go to /usr/local/lib/lmbench and do one
+of the followings:
 
 make results (to run the benchmarks)
 make rerun   (to rerun the benchmarks)
 make see     (to see how you did)
+
+http://www.bitmover.com/lmbench/lmbench.html
 
 - Satoshi
 asami@cs.berkeley.edu

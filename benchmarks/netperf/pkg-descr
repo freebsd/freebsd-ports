@@ -21,8 +21,6 @@ This port of netperf has been configured to support:
 	TCP and UDP via BSD sockets
 	Unix domain sockets
 
-For further information on Netperf, please lookup:
-
-	http://www.cup.hp.com/netperf/NetperfPage.html
+http://www.netperf.org/
 
 - Koshy
