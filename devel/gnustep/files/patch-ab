@@ -1,0 +1,11 @@
+--- xgps/Source/GNUmakefile.preamble.orig	Sun Oct 15 22:12:02 2000
++++ xgps/Source/GNUmakefile.preamble	Sun Oct 15 22:12:26 2000
+@@ -55,7 +55,7 @@
+ ADDITIONAL_CFLAGS = 
+ 
+ # Additional include directories the compiler should search
+-ADDITIONAL_INCLUDE_DIRS = -I../Headers \
++ADDITIONAL_INCLUDE_DIRS = -I../Headers -I${LOCALBASE}/include \
+ 	-I$(GNUSTEP_TARGET_CPU)/$(GNUSTEP_TARGET_OS) \
+ 	-I./SharedX
+ 

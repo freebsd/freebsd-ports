@@ -1,0 +1,11 @@
+--- gui/Source/GNUmakefile.preamble.orig	Sun Oct 15 21:47:59 2000
++++ gui/Source/GNUmakefile.preamble	Sun Oct 15 21:48:16 2000
+@@ -63,7 +63,7 @@
+ ADDITIONAL_CFLAGS =
+ 
+ # Additional include directories the compiler should search
+-ADDITIONAL_INCLUDE_DIRS = -I../Headers
++ADDITIONAL_INCLUDE_DIRS = -I../Headers -I${LOCALBASE}/include
+ 
+ # Additional LDFLAGS to pass to the linker
+ ADDITIONAL_LDFLAGS = 
