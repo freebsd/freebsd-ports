@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	tclcheck
-PORTVERSION=	1.1.11
+PORTVERSION=	1.1.13
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.neosoft.com/languages/tcl/sorted/devel/
+MASTER_SITES=	ftp://catless.ncl.ac.uk/pub/
 DISTNAME=	tclCheck-${PORTVERSION}
 
 MAINTAINER=	sander@haldjas.folklore.ee
