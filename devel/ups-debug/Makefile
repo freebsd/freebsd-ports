@@ -4,11 +4,11 @@
 # Date created:			  Mon Feb 03, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.10 1999/05/09 17:28:10 obrien Exp $
+# $Id: Makefile,v 1.11 1999/05/09 17:30:57 obrien Exp $
 #
 
-DISTNAME=	ups-3.33-03
-PKGNAME=	ups-3.33.3
+DISTNAME=	ups-3.34beta
+PKGNAME=	ups-3.34b
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}  \
 		ftp://unix.hensa.ac.uk/pub/misc/unix/ups/  \
