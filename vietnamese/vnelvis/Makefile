@@ -1,3 +1,4 @@
+# ex:ts=8
 # New ports collection makefile for:    vnelvis
 # Version required:     1.4
 # Date created:         Tue Dec 3, 1996
