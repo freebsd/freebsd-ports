@@ -181,6 +181,7 @@
     SUBDIR += py-gnupg
     SUBDIR += py-m2crypto
     SUBDIR += py-rijndael
+    SUBDIR += py-twofish
     SUBDIR += qident
     SUBDIR += qtfw
     SUBDIR += racoon
