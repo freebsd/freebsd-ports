@@ -7,6 +7,7 @@
 
 PORTNAME=	mpeg4ip
 PORTVERSION=	0.9.7
+PORTREVISION=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,9 +19,9 @@ BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool \
 		pkg-config:${PORTSDIR}/devel/pkgconfig
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		glib-2.0.0:${PORTSDIR}/devel/glib20 \
+		glib-2.0.200:${PORTSDIR}/devel/glib20 \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
-		gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
+		gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes

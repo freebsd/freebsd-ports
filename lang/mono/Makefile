@@ -7,13 +7,14 @@
 
 PORTNAME=	mono
 PORTVERSION=	0.19
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.go-mono.com/archive/
 
 MAINTAINER=	gnome@FreeBSD.org
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-LIB_DEPENDS=	glib-2.0.0:${PORTSDIR}/devel/glib20 \
+LIB_DEPENDS=	glib-2.0.200:${PORTSDIR}/devel/glib20 \
 		gc.1:${PORTSDIR}/devel/boehm-gc
 
 USE_LIBTOOL=	yes
