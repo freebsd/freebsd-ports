@@ -44,7 +44,6 @@ share/doc/mutt/manual_ja.sgml
 share/doc/mutt/manual_ja.tex
 share/doc/mutt/manual_ja.txt
 @dirrm share/doc/mutt
-@dirrm share/mutt
 share/locale/cs/LC_MESSAGES/mutt.mo
 share/locale/da/LC_MESSAGES/mutt.mo
 share/locale/de/LC_MESSAGES/mutt.mo

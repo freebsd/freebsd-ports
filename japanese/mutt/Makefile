@@ -41,7 +41,6 @@ ALL_TARGET=	all
 CONFIGURE_ARGS=	--with-slang --enable-locales-fix --with-included-gettext \
 		--enable-flock --disable-fcntl \
 		--sysconfdir=${PREFIX}/etc \
-		--with-sharedir=${PREFIX}/share/mutt \
 		--with-docdir=${PREFIX}/share/doc/mutt \
 		--enable-pop --enable-imap
 
