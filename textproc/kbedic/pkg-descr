@@ -1,0 +1,21 @@
+	KBE Dictionary has been first written for Linux.
+It resembles the popular dictionary SA Dictionary, but 
+after some time it has developed into an independent project.
+The words database of KBE Dictionary has been taken from the
+database of Otto Dictionary and changed with the database of 
+SA Dictionary. At the moment KBE Dictionary possesses maybe 
+the largest Bulgarian-to-English and English-to-Bulgarian database.
+ The abbreviation KBE is derived from the words - KDE Bulgarian
+English. When we add dictionary, the name becomes kbedic. To 
+use that program it is not necessary to have KDE installed,
+only the Qt libraries are required.
+ KBE dictionary 2.1 has been written in C/C++ and has many
+advantages and enhancements in comparison with the older 
+versions - it works faster, the database contains more words 
+and the bugs are less. There is also a console version of the
+product called cbedic.
+
+WWW: http://kbedic.sourceforge.net
+
+-Angel
+todorov_bg@gmx.net
