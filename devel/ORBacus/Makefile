@@ -3,7 +3,7 @@
 # Whom:			ejc@bazzle.com
 # Version required:	3.0
 #
-# $Id: Makefile,v 1.18 1999/04/20 03:36:02 jseger Exp $
+# $Id: Makefile,v 1.19 1999/04/23 11:34:53 asami Exp $
 #
 
 DISTNAME=	OB-3.1.2
@@ -40,4 +40,4 @@ post-install:
 	${MKDIR} ${PREFIX}/share/doc/ORBacus
 	${INSTALL_DATA} ${WRKSRC}/ob/LICENSE ${PREFIX}/share/doc/ORBacus
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
