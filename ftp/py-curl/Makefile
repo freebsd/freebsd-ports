@@ -14,12 +14,11 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	perky@fallin.lv
 
-BUILD_DEPENDS=	${PYDISTUTILS}
 LIB_DEPENDS=	curl.2:${PORTSDIR}/ftp/curl
 
 USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
 PLIST_SUB+=	PYTHON_SITELIBDIR="lib/${PYTHON_VERSION}/site-packages"
-PYDIST_SETUP=	cd ${WRKSRC} && ${PYTHON_CMD} setup.py
 
 post-patch:
 .for file in ${REPATCHFILES}
@@ -27,12 +26,8 @@ post-patch:
 		${WRKSRC}/setup.py
 .endfor
 
-do-build:
-	${PYDIST_SETUP} build
-
-do-install:
-	${PYDIST_SETUP} install -c -O1 --prefix=${PREFIX}
 .if !defined(NOPORTDOCS)
+post-install:
 	${MKDIR} ${PREFIX}/share/examples/py-curl
 	cd ${WRKSRC} && ${INSTALL_DATA} tests/* ${PREFIX}/share/examples/py-curl
 .endif
