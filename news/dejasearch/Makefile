@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	dejasearch
-PORTVERSION=	1.7.2
+PORTVERSION=	1.8.6
 CATEGORIES=	news
 MASTER_SITES=	http://homemade.hypermart.net/dejasearch/ \
-		http://homemade.virtualave.net/dejasearch/ \
-		http://people.FreeBSD.org/~kris/distfiles/
+		http://homemade.virtualave.net/dejasearch/
 
 MAINTAINER=	kris@FreeBSD.org
 
