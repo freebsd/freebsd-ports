@@ -18,6 +18,7 @@ MAINTAINER=	okazaki@FreeBSD.org
 
 EMACS_PORT_NAME=	emacs20
 EMACS_NO_RUN_DEPENDS=	YES
+USE_REINPLACE=	yes
 
 ERRATA_FILE=
 
@@ -53,7 +54,7 @@ pre-patch:
 
 post-patch:
 	cd ${WRKSRC} && \
-	${PERL} -pi -e 's/(@[^@]*ref{.*,.*,.*, *elisp),/$$1-ja,/;' *.texi
+	${REINPLACE_CMD} -E -e 's/(@[^@]*ref{.*,.*,.*, *elisp),/\1-ja,/;' *.texi
 
 pre-build:
 	@${ECHO_MSG} "===>   Now start formatting texinfo. Please wait."
