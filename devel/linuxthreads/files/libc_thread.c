@@ -35,19 +35,22 @@
 #define _THREAD_SAFE
 #endif
 
+#include <dlfcn.h>
+#include <stdlib.h>
 #include "pthread.h"
 /* Our internal pthreads definitions are here. Set as needed */
 #if defined(COMPILING_UTHREADS)
 #include "pthread_private.h"
 #endif
 #if defined(LINUXTHREADS)
+#include <errno.h>
 #include "internals.h"
+#include "spinlock.h"
 #else
 /* Your internal definition here */
 #endif
 
 /* These are from lib/libc/include */
-#include "libc_private.h"
 #if !defined(LINUXTHREADS)
 #include "spinlock.h"
 #endif
@@ -97,11 +100,19 @@ extern pthread_mutex_t	*localtime_mutex;
 extern pthread_mutex_t	*gmtime_mutex;
 #endif
 
+void *lock_create (void *context);
+void rlock_acquire (void *lock);
+void wlock_acquire (void *lock);
+void lock_release (void *lock);
+void lock_destroy (void *lock);
+
+
 /* Use the constructor attribute so this gets run before main does */
 static void _pthread_initialize(void) __attribute__((constructor));
 
 static void _pthread_initialize(void)
 {
+
 #if defined(LINUXTHREADS)
 	int mib[2];
 	size_t len;
@@ -116,6 +127,14 @@ static void _pthread_initialize(void)
 	/* This turns on thread safe behaviour in libc when we link with it */
 	__isthreaded = 1;
 
+	dllockinit (NULL,
+		    lock_create,
+		    rlock_acquire,
+		    wlock_acquire,
+		    lock_release,
+		    lock_destroy,
+		    NULL);
+
 #if defined(NEWLIBC)
 	/* Set up pointers for lib/libc/stdtime/localtime.c */
 	lcl_mutex       = &_lcl_mutex;
@@ -125,3 +144,42 @@ static void _pthread_initialize(void)
 #endif
 }
 
+void _spinlock (int * spinlock)
+{
+	__pthread_acquire(spinlock);
+}
+
+void * lock_create (void *context)
+{
+	pthread_rwlock_t *lock;
+
+	lock = malloc (sizeof (*lock));
+	if (lock == NULL)
+		return (NULL);
+
+	pthread_rwlock_init (lock, NULL);
+	return (lock);
+}
+
+void rlock_acquire (void *lock)
+{
+	pthread_rwlock_rdlock ((pthread_rwlock_t *)lock);
+
+}
+
+void wlock_acquire (void *lock)
+{
+	pthread_rwlock_wrlock ((pthread_rwlock_t *)lock);
+
+}
+
+void lock_release (void *lock)
+{
+	pthread_rwlock_unlock ((pthread_rwlock_t *)lock);
+}
+
+void lock_destroy (void *lock)
+{
+	if (pthread_rwlock_destroy ((pthread_rwlock_t *)lock) == 0)
+		free (lock);
+}

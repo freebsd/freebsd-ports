@@ -72,7 +72,7 @@ extern int __clone __P ((int (*__fn) (void *), void *__child_stack,
 		 * to do anything special in this case.
 		 */
 		break;
-	case SIGUSR2:
+	case SIGUSR1:
 		bsd_flags |= RFLINUXTHPN;
 		break;
 	default:

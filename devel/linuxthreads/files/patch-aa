@@ -1,18 +1,17 @@
 diff -ru ../linuxthreads/Examples/Makefile ./Examples/Makefile
 --- ../linuxthreads/Examples/Makefile	Wed Mar 11 04:42:23 1998
-+++ ./Examples/Makefile	Tue Dec 28 09:56:04 1999
-@@ -1,8 +1,13 @@
++++ ./Examples/Makefile	Mon Jan  3 15:35:00 2000
+@@ -1,8 +1,12 @@
  CC=gcc
 -CFLAGS=-g -O -Wall -I.. -D_REENTRANT
 -LIBPTHREAD=../libpthread.a
 +CFLAGS := -g -O -Wall 
-+CFLAGS += -I../sysdeps/${MACHINE_ARCH}
-+CFLAGS += -I../sysdeps/pthread
-+CFLAGS += -I../sysdeps/unix/sysv/linux
-+CFLAGS += -D_REENTRANT
++CFLAGS += -I/usr/local/include/pthread/linuxthreads
++CFLAGS += -D_REENTRANT -D_THREAD_SAFE
  
 -PROGS=ex1 ex2 ex3 ex4 ex5 proxy
-+LIBPTHREAD=../liblthread.a
++#LIBPTHREAD=../liblthread.a ../libgcc_r/liblgcc_r.a
++LIBPTHREAD=-L/usr/local/lib -llthread -llgcc_r
 +
 +PROGS=ex1 ex2 ex3 ex4 ex5 ex6
  
@@ -20,8 +19,8 @@ diff -ru ../linuxthreads/Examples/Makefile ./Examples/Makefile
  
 diff -ru ../linuxthreads/Makefile ./Makefile
 --- ../linuxthreads/Makefile	Fri Jul  9 21:00:32 1999
-+++ ./Makefile	Tue Dec 28 09:56:04 1999
-@@ -1,68 +1,72 @@
++++ ./Makefile	Mon Jan  3 15:35:00 2000
+@@ -1,68 +1,73 @@
 -# Copyright (C) 1996, 1997, 1998, 1999 Free Software Foundation, Inc.
 -# This file is part of the GNU C Library.
 +LIB=lthread
@@ -42,7 +41,7 @@ diff -ru ../linuxthreads/Makefile ./Makefile
 +
 +LIBDIR = ${PREFIX}/lib
 +
-+CFLAGS +=-Wall
++CFLAGS +=-g -O2 -Wall
 +#CFLAGS +=-g -O0 -Wall -DDEBUG 
 +CFLAGS +=-DCOMPILING_LINUXTHREADS
 +#CFLAGS += -D__NO_WEAK_PTHREAD_ALIASES
@@ -52,7 +51,7 @@ diff -ru ../linuxthreads/Makefile ./Makefile
 +CFLAGS += -I${.CURDIR}/sysdeps/pthread
 +CFLAGS += -I${.CURDIR}/sysdeps/unix/sysv/linux
 +CFLAGS += -I${LIBSRC_BASE}/libc/stdtime
-+CFLAGS += -I${LIBSRC_BASE}/libc/${MACHINE_ARCH}
++#CFLAGS += -I${LIBSRC_BASE}/libc/${MACHINE_ARCH}
 +CFLAGS += -DLIBC_RCS
 +CFLAGS += -DLINUXTHREADS 
 +CFLAGS += -D__USE_UNIX98
@@ -60,11 +59,12 @@ diff -ru ../linuxthreads/Makefile ./Makefile
 +AINC = -I${LIBSRC_BASE}/libc/${MACHINE_ARCH} -I${.CURDIR}/sysdeps/${MACHINE_ARCH}
 +
 +# Contents of the library.
-+SRCS := _atomic_lock.S attr.c cancel.c clone.S condvar.c errno.c getgr_r.c \
-+	join.c lclone.c libc_calls.c libc_spinlock.c libc_thread.c lockfile.c \
-+	manager.c mutex.c pt-machine.c ptfork.c pthread.c ptlongjmp.c rwlock.c \
-+	sched.c semaphore.c signals.c specific.c spinlock.c uthread_file.c \
-+	weaks.c wrapsyscall.
++SRCS := attr.c cancel.c clone.S condvar.c errno.c getgr_r.c gethostby_r.c \
++	getnetby_r.c getprotoby_r.c getpw_r.c getservby_r.c join.c lclone.c \
++	libc_calls.c libc_thread.c lockfile.c manager.c mutex.c pt-machine.c \
++	ptfork.c pthread.c ptlongjmp.c rwlock.c sched.c semaphore.c signals.c \
++	specific.c spinlock.c uthread_file.c wrapsyscall.c
++
 +
 +beforeinstall:
 +	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 0755 \
@@ -162,144 +162,58 @@ diff -ru ../linuxthreads/Makefile ./Makefile
 +
 +.include <bsd.lib.mk>
 Only in .: README.FreeBSD
-Only in .: _atomic_lock.S
 diff -ru ../linuxthreads/attr.c ./attr.c
 --- ../linuxthreads/attr.c	Tue Oct 27 05:51:54 1998
-+++ ./attr.c	Tue Dec 28 10:02:01 1999
-@@ -21,9 +21,9 @@
- #include "pthread.h"
- #include "internals.h"
- 
--int __pthread_attr_init_2_1(pthread_attr_t *attr)
-+int pthread_attr_init(pthread_attr_t *attr)
- {
--  size_t ps = __getpagesize ();
-+  size_t ps = getpagesize ();
++++ ./attr.c	Mon Jan  3 15:35:00 2000
+@@ -27,7 +27,7 @@
  
    attr->__detachstate = PTHREAD_CREATE_JOINABLE;
    attr->__schedpolicy = SCHED_OTHER;
-@@ -36,6 +36,7 @@
-   attr->__stacksize = STACK_SIZE - ps;
-   return 0;
- }
-+#if (0)
- #if defined HAVE_ELF && defined PIC && defined DO_VERSIONING
- default_symbol_version (__pthread_attr_init_2_1, pthread_attr_init, GLIBC_2.1);
- 
-@@ -52,6 +53,7 @@
- #else
- strong_alias (__pthread_attr_init_2_1, pthread_attr_init)
- #endif
-+#endif
- 
- int pthread_attr_destroy(pthread_attr_t *attr)
- {
-@@ -76,8 +78,8 @@
- int pthread_attr_setschedparam(pthread_attr_t *attr,
-                                const struct sched_param *param)
- {
--  int max_prio = __sched_get_priority_max(attr->__schedpolicy);
--  int min_prio = __sched_get_priority_min(attr->__schedpolicy);
-+  int max_prio = sched_get_priority_max(attr->__schedpolicy);
-+  int min_prio = sched_get_priority_min(attr->__schedpolicy);
- 
-   if (param->sched_priority < min_prio || param->sched_priority > max_prio)
-     return EINVAL;
-@@ -141,7 +143,7 @@
- 
- int __pthread_attr_setguardsize(pthread_attr_t *attr, size_t guardsize)
- {
--  size_t ps = __getpagesize ();
-+  size_t ps = getpagesize ();
- 
-   /* First round up the guard size.  */
-   guardsize = roundup (guardsize, ps);
+-  attr->__schedparam.sched_priority = 0;
++  attr->__schedparam.sched_priority = DEFAULT_PRIORITY;
+   attr->__inheritsched = PTHREAD_EXPLICIT_SCHED;
+   attr->__scope = PTHREAD_SCOPE_SYSTEM;
+   attr->__guardsize = ps;
 Only in .: clone.S
 Only in .: clone.h
-diff -ru ../linuxthreads/condvar.c ./condvar.c
---- ../linuxthreads/condvar.c	Thu Oct 29 06:34:17 1998
-+++ ./condvar.c	Tue Dec 28 09:56:04 1999
-@@ -77,7 +77,7 @@
-   __pthread_unlock(&cond->__c_lock);
-   pthread_mutex_unlock(mutex);
-   /* Set up a longjmp handler for the restart and cancel signals */
--  if (sigsetjmp(jmpbuf, 1) == 0) {
-+  if (__sigsetjmp(jmpbuf, 1) == 0) {
-     THREAD_SETMEM(self, p_signal_jmp, &jmpbuf);
-     THREAD_SETMEM(self, p_cancel_jmp, &jmpbuf);
-     THREAD_SETMEM(self, p_signal, 0);
-@@ -91,7 +91,7 @@
-       sigaddset(&unblock, __pthread_sig_restart);
-       sigprocmask(SIG_UNBLOCK, &unblock, &initial_mask);
-       /* Sleep for the required duration */
--      retsleep = __libc_nanosleep(reltime, NULL);
-+      retsleep = _nanosleep(reltime, NULL);
-       /* Block the restart signal again */
-       sigprocmask(SIG_SETMASK, &initial_mask, NULL);
-     }
-@@ -132,7 +132,7 @@
-   struct timeval now;
-   struct timespec reltime;
-   /* Compute a time offset relative to now */
--  __gettimeofday(&now, NULL);
-+  gettimeofday(&now, NULL);
-   reltime.tv_sec = abstime->tv_sec - now.tv_sec;
-   reltime.tv_nsec = abstime->tv_nsec - now.tv_usec * 1000;
-   if (reltime.tv_nsec < 0) {
+diff -ru ../linuxthreads/errno.c ./errno.c
+--- ../linuxthreads/errno.c	Wed Aug 26 08:57:28 1998
++++ ./errno.c	Mon Jan  3 15:35:00 2000
+@@ -19,6 +19,12 @@
+ #include "pthread.h"
+ #include "internals.h"
+ 
++int * __error()
++{
++  pthread_descr self = thread_self();
++  return &(self->p_errno);
++}
++
+ int * __errno_location()
+ {
+   pthread_descr self = thread_self();
+Only in .: freebsd-compat.h
 Only in .: getgr_r.c
+Only in .: gethostby_r.c
+Only in .: getnetby_r.c
+Only in .: getprotoby_r.c
+Only in .: getpw_r.c
+Only in .: getservby_r.c
 diff -ru ../linuxthreads/internals.h ./internals.h
 --- ../linuxthreads/internals.h	Fri Jul 16 16:18:19 1999
-+++ ./internals.h	Tue Dec 28 09:56:04 1999
-@@ -16,15 +16,48 @@
- 
- /* Includes */
- 
-+#ifndef __P
-+#  define __P(p) p
-+#endif
-+
-+#ifndef __PMT
-+#  define __PMT(p) p
-+#endif
-+
- #include <bits/libc-tsd.h> /* for _LIBC_TSD_KEY_N */
- #include <limits.h>
- #include <setjmp.h>
++++ ./internals.h	Mon Jan  3 15:35:00 2000
+@@ -22,8 +22,10 @@
  #include <signal.h>
  #include <unistd.h>
  #include <sys/types.h>
 +#include <sys/queue.h>
  
  #include "pt-machine.h"
++#include "freebsd-compat.h"
  
-+/* Hack to get rid of the glibc linker magic directives on FreeBSD. */
-+#define weak_alias(a, b)
-+#define strong_alias(a, b)
-+
-+/* Get around the fact that __builtin_expect is actually in glibc. */
-+#define __builtin_expect(expr, val) (expr)
-+
-+/* XXX Who knows what this was supposed to do... */
-+#define internal_function
-+
-+/* Linuxism --> FreeBSDism. */
-+# define __WCLONE WLINUXCLONE
-+
-+int _close(int d);
-+int _nanosleep(const struct timespec *rqtp, struct timespec *rmtp);
-+ssize_t _read(int d, void *buf, size_t nbytes);
-+int _sigaction(int sig, const struct sigaction *act, struct sigaction *oact);
-+pid_t _waitpid(pid_t wpid, int *status, int options);
-+ssize_t _write(int d, const void *buf, size_t nbytes);
-+
-+int __sigsetjmp(sigjmp_buf env, int savemask);
-+void __siglongjmp(sigjmp_buf env, int val);
-+void __longjmp (jmp_buf env, int val);
-+
  #ifndef THREAD_GETMEM
  # define THREAD_GETMEM(descr, member) descr->member
- #endif
-@@ -100,6 +133,9 @@
+@@ -100,6 +102,9 @@
    char p_sigwaiting;            /* true if a sigwait() is in progress */
    struct pthread_start_args p_start_args; /* arguments for thread creation */
    void ** p_specific[PTHREAD_KEY_1STLEVEL_SIZE]; /* thread-specific data */
@@ -309,91 +223,31 @@ diff -ru ../linuxthreads/internals.h ./internals.h
    void * p_libc_specific[_LIBC_TSD_KEY_N]; /* thread-specific data for libc */
    int p_userstack;		/* nonzero if the user provided the stack */
    void *p_guardaddr;		/* address of guard area or NULL */
-@@ -228,7 +264,7 @@
- /* The page size we can get from the system.  This should likely not be
-    changed by the machine file but, you never know.  */
- #ifndef PAGE_SIZE
--#define PAGE_SIZE  (sysconf (_SC_PAGE_SIZE))
-+#define PAGE_SIZE  (getpagesize())
- #endif
- 
- /* The max size of the thread stack segments.  If the default
-diff -ru ../linuxthreads/join.c ./join.c
---- ../linuxthreads/join.c	Thu Oct 29 06:34:18 1998
-+++ ./join.c	Tue Dec 28 09:56:04 1999
-@@ -50,7 +50,7 @@
-   if (self == __pthread_main_thread && __pthread_manager_request >= 0) {
-     request.req_thread = self;
-     request.req_kind = REQ_MAIN_THREAD_EXIT;
--    __libc_write(__pthread_manager_request, (char *)&request, sizeof(request));
-+    _write(__pthread_manager_request, (char *)&request, sizeof(request));
-     suspend(self);
-   }
-   /* Exit the process (but don't flush stdio streams, and don't run
-@@ -101,7 +101,7 @@
-     request.req_thread = self;
-     request.req_kind = REQ_FREE;
-     request.req_args.free.thread_id = thread_id;
--    __libc_write(__pthread_manager_request,
-+    _write(__pthread_manager_request,
- 		 (char *) &request, sizeof(request));
-   }
-   return 0;
-@@ -139,7 +139,7 @@
-     request.req_thread = thread_self();
-     request.req_kind = REQ_FREE;
-     request.req_args.free.thread_id = thread_id;
--    __libc_write(__pthread_manager_request,
-+    _write(__pthread_manager_request,
- 		 (char *) &request, sizeof(request));
-   }
-   return 0;
 Only in .: lclone.c
 Only in .: libc_calls.c
 Only in .: libc_private.h
-Only in .: libc_spinlock.c
-Only in .: libc_spinlock.h
 Only in .: libc_thread.c
+Only in .: libgcc_r
 diff -ru ../linuxthreads/lockfile.c ./lockfile.c
 --- ../linuxthreads/lockfile.c	Thu Jul  9 06:41:28 1998
-+++ ./lockfile.c	Tue Dec 28 09:56:04 1999
-@@ -25,11 +25,14 @@
- #include "../libio/libioP.h"
- #endif
++++ ./lockfile.c	Mon Jan  3 15:35:00 2000
+@@ -20,6 +20,7 @@
+ #include <bits/libc-lock.h>
+ #include <stdio.h>
+ #include <pthread.h>
++#include "internals.h"
  
-+/* Hack to get rid of the glibc linker magic directives on FreeBSD. */
-+#define weak_alias(a, b)
-+
- void
- __flockfile (FILE *stream)
- {
  #ifdef USE_IN_LIBIO
--  __pthread_mutex_lock (stream->_lock);
-+  pthread_mutex_lock (stream->_lock);
- #else
- #endif
- }
-@@ -44,7 +47,7 @@
- __funlockfile (FILE *stream)
- {
+ #include "../libio/libioP.h"
+@@ -61,6 +62,7 @@
  #ifdef USE_IN_LIBIO
--  __pthread_mutex_unlock (stream->_lock);
-+  pthread_mutex_unlock (stream->_lock);
- #else
- #endif
- }
-@@ -59,8 +62,9 @@
- __ftrylockfile (FILE *stream)
- {
- #ifdef USE_IN_LIBIO
--  return __pthread_mutex_trylock (stream->_lock);
-+  return pthread_mutex_trylock (stream->_lock);
+   return __pthread_mutex_trylock (stream->_lock);
  #else
 +  return 0;
  #endif
  }
  #ifdef USE_IN_LIBIO
-@@ -68,7 +72,7 @@
+@@ -68,7 +70,7 @@
  #endif
  weak_alias (__ftrylockfile, ftrylockfile);
  
@@ -402,63 +256,24 @@ diff -ru ../linuxthreads/lockfile.c ./lockfile.c
  void
  __fresetlockfiles (void)
  {
-@@ -76,12 +80,13 @@
-   _IO_FILE *fp;
-   pthread_mutexattr_t attr;
- 
--  __pthread_mutexattr_init (&attr);
--  __pthread_mutexattr_settype (&attr, PTHREAD_MUTEX_RECURSIVE_NP);
-+  pthread_mutexattr_init (&attr);
-+  pthread_mutexattr_settype (&attr, PTHREAD_MUTEX_RECURSIVE_NP);
- 
-   for (fp = _IO_list_all; fp != NULL; fp = fp->_chain)
--    __pthread_mutex_init (fp->_lock, &attr);
-+    pthread_mutex_init (fp->_lock, &attr);
- 
--  __pthread_mutexattr_destroy (&attr);
-+  pthread_mutexattr_destroy (&attr);
+@@ -85,3 +87,4 @@
+   __pthread_mutexattr_destroy (&attr);
  #endif
  }
 +#endif
 diff -ru ../linuxthreads/manager.c ./manager.c
 --- ../linuxthreads/manager.c	Wed Jul 28 23:42:42 1999
-+++ ./manager.c	Tue Dec 28 09:56:04 1999
-@@ -32,6 +32,7 @@
- #include "spinlock.h"
- #include "restart.h"
- #include "semaphore.h"
-+#include "clone.h"
- 
- /* Array of active threads. Entry 0 is reserved for the initial thread. */
- struct pthread_handle_struct __pthread_handles[PTHREAD_THREADS_MAX] =
-@@ -108,14 +109,14 @@
-   /* Raise our priority to match that of main thread */
-   __pthread_manager_adjust_prio(__pthread_main_thread->p_priority);
-   /* Synchronize debugging of the thread manager */
--  n = __libc_read(reqfd, (char *)&request, sizeof(request));
-+  n = _read(reqfd, (char *)&request, sizeof(request));
-   ASSERT(n == sizeof(request) && request.req_kind == REQ_DEBUG);
-   ufd.fd = reqfd;
-   ufd.events = POLLIN;
++++ ./manager.c	Mon Jan  3 15:35:00 2000
+@@ -115,7 +115,7 @@
    /* Enter server loop */
    while(1) {
--    n = __poll(&ufd, 1, 2000);
+     n = __poll(&ufd, 1, 2000);
 -
-+    n = poll(&ufd, 1, 2000);
 +    
      /* Check for termination of the main thread */
      if (getppid() == 1) {
        pthread_kill_all_threads(SIGKILL, 0);
-@@ -128,7 +129,7 @@
-     }
-     /* Read and execute request */
-     if (n == 1 && (ufd.revents & POLLIN)) {
--      n = __libc_read(reqfd, (char *)&request, sizeof(request));
-+      n = _read(reqfd, (char *)&request, sizeof(request));
-       ASSERT(n == sizeof(request));
-       switch(request.req_kind) {
-       case REQ_CREATE:
-@@ -176,36 +177,37 @@
+@@ -176,6 +176,7 @@
    pthread_descr self = (pthread_descr) arg;
    struct pthread_request request;
    void * outcome;
@@ -466,44 +281,27 @@ diff -ru ../linuxthreads/manager.c ./manager.c
    /* Initialize special thread_self processing, if any.  */
  #ifdef INIT_THREAD_SELF
    INIT_THREAD_SELF(self, self->p_nr);
- #endif
-   /* Make sure our pid field is initialized, just in case we get there
-      before our father has initialized it. */
--  THREAD_SETMEM(self, p_pid, __getpid());
-+  THREAD_SETMEM(self, p_pid, getpid());
-   /* Initial signal mask is that of the creating thread. (Otherwise,
-      we'd just inherit the mask of the thread manager.) */
-   sigprocmask(SIG_SETMASK, &self->p_start_args.mask, NULL);
-   /* Set the scheduling policy and priority for the new thread, if needed */
-   if (THREAD_GETMEM(self, p_start_args.schedpolicy) >= 0)
+@@ -191,15 +192,15 @@
      /* Explicit scheduling attributes were provided: apply them */
--    __sched_setscheduler(THREAD_GETMEM(self, p_pid),
--			 THREAD_GETMEM(self, p_start_args.schedpolicy),
+     __sched_setscheduler(THREAD_GETMEM(self, p_pid),
+ 			 THREAD_GETMEM(self, p_start_args.schedpolicy),
 -                         &self->p_start_args.schedparam);
-+    sched_setscheduler(THREAD_GETMEM(self, p_pid),
-+		       THREAD_GETMEM(self, p_start_args.schedpolicy),
-+		       &self->p_start_args.schedparam);
-   else if (__pthread_manager_thread.p_priority > 0)
+-  else if (__pthread_manager_thread.p_priority > 0)
++			 &self->p_start_args.schedparam);
++  else if (__pthread_manager_thread.p_priority > DEFAULT_PRIORITY)
      /* Default scheduling required, but thread manager runs in realtime
         scheduling: switch new thread to SCHED_OTHER policy */
      {
        struct sched_param default_params;
-       default_params.sched_priority = 0;
--      __sched_setscheduler(THREAD_GETMEM(self, p_pid),
+-      default_params.sched_priority = 0;
++      default_params.sched_priority = DEFAULT_PRIORITY;
+       __sched_setscheduler(THREAD_GETMEM(self, p_pid),
 -                           SCHED_OTHER, &default_params);
-+      sched_setscheduler(THREAD_GETMEM(self, p_pid),
-+			 SCHED_OTHER, &default_params);
++			   SCHED_OTHER, &default_params);
      }
    /* Make gdb aware of new thread */
    if (__pthread_threads_debug && __pthread_sig_debug > 0) {
-     request.req_thread = self;
-     request.req_kind = REQ_DEBUG;
--    __libc_write(__pthread_manager_request,
-+    _write(__pthread_manager_request,
-                  (char *) &request, sizeof(request));
-     suspend(self);
-   }
-@@ -247,7 +249,7 @@
+@@ -247,7 +248,7 @@
        new_thread_bottom = (char *) new_thread - STACK_SIZE;
        if (mmap((caddr_t)((char *)(new_thread + 1) - INITIAL_STACK_SIZE),
                 INITIAL_STACK_SIZE, PROT_READ | PROT_WRITE | PROT_EXEC,
@@ -512,27 +310,7 @@ diff -ru ../linuxthreads/manager.c ./manager.c
                 -1, 0) == MAP_FAILED)
          /* Bad luck, this segment is already mapped. */
          return -1;
-@@ -303,7 +305,7 @@
-   pthread_t new_thread_id;
-   char *guardaddr = NULL;
-   size_t guardsize = 0;
--  int pagesize = __getpagesize();
-+  int pagesize = getpagesize();
- 
-   /* First check whether we have to change the policy and if yes, whether
-      we can  do this.  Normally this should be done by examining the
-@@ -356,8 +358,8 @@
- 	      sizeof (struct sched_param));
-       break;
-     case PTHREAD_INHERIT_SCHED:
--      new_thread->p_start_args.schedpolicy = __sched_getscheduler(father_pid);
--      __sched_getparam(father_pid, &new_thread->p_start_args.schedparam);
-+      new_thread->p_start_args.schedpolicy = sched_getscheduler(father_pid);
-+      sched_getparam(father_pid, &new_thread->p_start_args.schedparam);
-       break;
-     }
-     new_thread->p_priority =
-@@ -371,7 +373,7 @@
+@@ -371,7 +372,7 @@
    __pthread_manager_adjust_prio(new_thread->p_priority);
    /* Do the cloning */
    pid = __clone(pthread_start_thread, (void **) new_thread,
@@ -541,157 +319,50 @@ diff -ru ../linuxthreads/manager.c ./manager.c
  		__pthread_sig_cancel, new_thread);
    /* Check if cloning succeeded */
    if (pid == -1) {
-@@ -469,7 +471,7 @@
-   pid_t pid;
-   int status;
- 
--  while ((pid = __libc_waitpid(-1, &status, WNOHANG | __WCLONE)) > 0) {
-+  while ((pid = waitpid(-1, &status, WNOHANG | WLINUXCLONE)) > 0) {
-     pthread_exited(pid);
-     if (WIFSIGNALED(status)) {
-       /* If a thread died due to a signal, send the same signal to
-@@ -566,8 +568,8 @@
- 
-   if (thread_prio <= __pthread_manager_thread.p_priority) return;
-   param.sched_priority =
--    thread_prio < __sched_get_priority_max(SCHED_FIFO)
-+    thread_prio < sched_get_priority_max(SCHED_FIFO)
-     ? thread_prio + 1 : thread_prio;
--  __sched_setscheduler(__pthread_manager_thread.p_pid, SCHED_FIFO, &param);
-+  sched_setscheduler(__pthread_manager_thread.p_pid, SCHED_FIFO, &param);
-   __pthread_manager_thread.p_priority = thread_prio;
- }
 diff -ru ../linuxthreads/mutex.c ./mutex.c
 --- ../linuxthreads/mutex.c	Wed Nov 18 08:59:53 1998
-+++ ./mutex.c	Tue Dec 28 09:56:04 1999
-@@ -23,7 +23,7 @@
- #include "queue.h"
++++ ./mutex.c	Mon Jan  3 15:35:00 2000
+@@ -24,7 +24,7 @@
  #include "restart.h"
  
--int __pthread_mutex_init(pthread_mutex_t * mutex,
-+int pthread_mutex_init(pthread_mutex_t * mutex,
-                        const pthread_mutexattr_t * mutex_attr)
+ int __pthread_mutex_init(pthread_mutex_t * mutex,
+-                       const pthread_mutexattr_t * mutex_attr)
++			 const pthread_mutexattr_t * mutex_attr)
  {
    __pthread_init_lock(&mutex->__m_lock);
-@@ -35,14 +35,14 @@
- }
- strong_alias (__pthread_mutex_init, pthread_mutex_init)
- 
--int __pthread_mutex_destroy(pthread_mutex_t * mutex)
-+int pthread_mutex_destroy(pthread_mutex_t * mutex)
- {
-   if (mutex->__m_lock.__status != 0) return EBUSY;
-   return 0;
- }
- strong_alias (__pthread_mutex_destroy, pthread_mutex_destroy)
- 
--int __pthread_mutex_trylock(pthread_mutex_t * mutex)
-+int pthread_mutex_trylock(pthread_mutex_t * mutex)
- {
-   pthread_descr self;
-   int retcode;
-@@ -75,7 +75,7 @@
- }
- strong_alias (__pthread_mutex_trylock, pthread_mutex_trylock)
- 
--int __pthread_mutex_lock(pthread_mutex_t * mutex)
-+int pthread_mutex_lock(pthread_mutex_t * mutex)
- {
-   pthread_descr self;
- 
-@@ -105,7 +105,7 @@
- }
- strong_alias (__pthread_mutex_lock, pthread_mutex_lock)
- 
--int __pthread_mutex_unlock(pthread_mutex_t * mutex)
-+int pthread_mutex_unlock(pthread_mutex_t * mutex)
- {
-   switch (mutex->__m_kind) {
-   case PTHREAD_MUTEX_FAST_NP:
-@@ -131,20 +131,20 @@
- }
- strong_alias (__pthread_mutex_unlock, pthread_mutex_unlock)
- 
--int __pthread_mutexattr_init(pthread_mutexattr_t *attr)
-+int pthread_mutexattr_init(pthread_mutexattr_t *attr)
- {
-   attr->__mutexkind = PTHREAD_MUTEX_FAST_NP;
-   return 0;
- }
- strong_alias (__pthread_mutexattr_init, pthread_mutexattr_init)
- 
--int __pthread_mutexattr_destroy(pthread_mutexattr_t *attr)
-+int pthread_mutexattr_destroy(pthread_mutexattr_t *attr)
- {
-   return 0;
- }
- strong_alias (__pthread_mutexattr_destroy, pthread_mutexattr_destroy)
- 
--int __pthread_mutexattr_settype(pthread_mutexattr_t *attr, int kind)
-+int pthread_mutexattr_settype(pthread_mutexattr_t *attr, int kind)
- {
-   if (kind != PTHREAD_MUTEX_FAST_NP
-       && kind != PTHREAD_MUTEX_RECURSIVE_NP
-@@ -157,7 +157,7 @@
- strong_alias ( __pthread_mutexattr_settype, __pthread_mutexattr_setkind_np)
- weak_alias (__pthread_mutexattr_setkind_np, pthread_mutexattr_setkind_np)
- 
--int __pthread_mutexattr_gettype(const pthread_mutexattr_t *attr, int *kind)
-+int pthread_mutexattr_gettype(const pthread_mutexattr_t *attr, int *kind)
- {
-   *kind = attr->__mutexkind;
-   return 0;
-@@ -173,7 +173,7 @@
- 
- enum { NEVER = 0, IN_PROGRESS = 1, DONE = 2 };
- 
--int __pthread_once(pthread_once_t * once_control, void (*init_routine)(void))
-+int pthread_once(pthread_once_t * once_control, void (*init_routine)(void))
- {
-   /* Test without locking first for speed */
-   if (*once_control == DONE) return 0;
+   mutex->__m_kind =
 Only in ../linuxthreads: no-tsd.c
 Only in .: no-tsd.c.unused
 Only in ../linuxthreads: oldsemaphore.c
 Only in .: oldsemaphore.c.unused
 diff -ru ../linuxthreads/ptfork.c ./ptfork.c
 --- ../linuxthreads/ptfork.c	Mon Sep  6 12:32:07 1999
-+++ ./ptfork.c	Tue Dec 28 09:56:04 1999
-@@ -73,9 +73,9 @@
-   for (/*nothing*/; list != NULL; list = list->next) (list->handler)();
- }
++++ ./ptfork.c	Mon Jan  3 15:35:00 2000
+@@ -75,7 +75,7 @@
  
--extern int __libc_fork(void);
-+extern int _fork(void);
+ extern int __libc_fork(void);
  
 -pid_t __fork(void)
 +pid_t fork(void)
  {
    pid_t pid;
    struct handler_list * prepare, * child, * parent;
-@@ -86,7 +86,7 @@
-   parent = pthread_atfork_parent;
-   pthread_mutex_unlock(&pthread_atfork_lock);
-   pthread_call_handlers(prepare);
--  pid = __libc_fork();
-+  pid = _fork();
-   if (pid == 0) {
-     __pthread_reset_main_thread();
-     __fresetlockfiles();
-@@ -98,8 +98,8 @@
+@@ -96,10 +96,8 @@
+   }
+   return pid;
  }
- weak_alias (__fork, fork);
+-weak_alias (__fork, fork);
  
 -pid_t __vfork(void)
 +pid_t vfork(void)
  {
 -  return __fork();
-+  return _fork();
++  return fork();
  }
- weak_alias (__vfork, vfork);
+-weak_alias (__vfork, vfork);
 diff -ru ../linuxthreads/pthread.c ./pthread.c
 --- ../linuxthreads/pthread.c	Fri Aug 20 12:00:47 1999
-+++ ./pthread.c	Tue Dec 28 09:56:04 1999
++++ ./pthread.c	Mon Jan  3 15:35:00 2000
 @@ -19,7 +19,10 @@
  #include <stdio.h>
  #include <stdlib.h>
@@ -703,15 +374,16 @@ diff -ru ../linuxthreads/pthread.c ./pthread.c
  #include <fcntl.h>
  #include <sys/wait.h>
  #include <sys/resource.h>
-@@ -27,6 +30,7 @@
- #include "internals.h"
- #include "spinlock.h"
- #include "restart.h"
-+#include "clone.h"
- 
- /* Descriptor of the initial thread */
- 
-@@ -59,7 +63,11 @@
+@@ -37,7 +40,7 @@
+   NULL,			      /* pthread_descr p_nextlock */
+   PTHREAD_THREADS_MAX,        /* pthread_t p_tid */
+   0,                          /* int p_pid */
+-  0,                          /* int p_priority */
++  DEFAULT_PRIORITY,           /* int p_priority */
+   &__pthread_handles[0].h_lock, /* struct _pthread_fastlock * p_lock */
+   0,                          /* int p_signal */
+   NULL,                       /* sigjmp_buf * p_signal_buf */
+@@ -59,7 +62,11 @@
    NULL,                       /* char * p_in_sighandler */
    0,                          /* char p_sigwaiting */
    PTHREAD_START_ARGS_INITIALIZER, /* struct pthread_start_args p_start_args */
@@ -724,7 +396,16 @@ diff -ru ../linuxthreads/pthread.c ./pthread.c
    {NULL},                     /* void * p_libc_specific[_LIBC_TSD_KEY_N] */
    0,                          /* int p_userstack */
    NULL,                       /* void * p_guardaddr */
-@@ -101,7 +109,11 @@
+@@ -79,7 +86,7 @@
+   NULL,			      /* pthread_descr p_nextlock */
+   0,                          /* int p_tid */
+   0,                          /* int p_pid */
+-  0,                          /* int p_priority */
++  DEFAULT_PRIORITY,           /* int p_priority */
+   NULL,                       /* struct _pthread_fastlock * p_lock */
+   0,                          /* int p_signal */
+   NULL,                       /* sigjmp_buf * p_signal_buf */
+@@ -101,7 +108,11 @@
    NULL,                       /* char * p_in_sighandler */
    0,                          /* char p_sigwaiting */
    PTHREAD_START_ARGS_INITIALIZER, /* struct pthread_start_args p_start_args */
@@ -737,14 +418,7 @@ diff -ru ../linuxthreads/pthread.c ./pthread.c
    {NULL},                     /* void * p_libc_specific[_LIBC_TSD_KEY_N] */
    0,                          /* int p_userstack */
    NULL,                       /* void * p_guardaddr */
-@@ -149,12 +161,12 @@
-                                             p_pid);
- 
- /* These variables are used by the setup code.  */
--extern int _errno;
--extern int _h_errno;
-+extern int errno;
-+extern int h_errno;
+@@ -154,13 +165,15 @@
  
  /* Forward declarations */
  
@@ -753,89 +427,68 @@ diff -ru ../linuxthreads/pthread.c ./pthread.c
  #ifndef __i386__
  static void pthread_handle_sigcancel(int sig);
  static void pthread_handle_sigrestart(int sig);
-@@ -223,7 +235,7 @@
- 
- /* Return number of available real-time signal with highest priority.  */
- int
--__libc_current_sigrtmin (void)
-+current_sigrtmin (void)
- {
- #ifdef __SIGRTMIN
-   if (!rtsigs_initialized)
-@@ -234,7 +246,7 @@
- 
- /* Return number of available real-time signal with lowest priority.  */
- int
--__libc_current_sigrtmax (void)
-+current_sigrtmax (void)
- {
- #ifdef __SIGRTMIN
-   if (!rtsigs_initialized)
-@@ -247,7 +259,7 @@
-    priority.  Please note that we don't use a lock since we assume
-    this function to be called at program start.  */
- int
--__libc_allocate_rtsig (int high)
-+allocate_rtsig (int high)
- {
- #ifndef __SIGRTMIN
-   return -1;
-@@ -293,21 +305,21 @@
-      beyond STACK_SIZE minus two pages (one page for the thread descriptor
-      immediately beyond, and one page to act as a guard page). */
-   getrlimit(RLIMIT_STACK, &limit);
--  max_stack = STACK_SIZE - 2 * __getpagesize();
-+  max_stack = STACK_SIZE - 2 * getpagesize();
-   if (limit.rlim_cur > max_stack) {
-     limit.rlim_cur = max_stack;
-     setrlimit(RLIMIT_STACK, &limit);
-   }
-   /* Update the descriptor for the initial thread. */
--  __pthread_initial_thread.p_pid = __getpid();
-+  __pthread_initial_thread.p_pid = getpid();
-   /* If we have special thread_self processing, initialize that for the
-      main thread now.  */
- #ifdef INIT_THREAD_SELF
-   INIT_THREAD_SELF(&__pthread_initial_thread, 0);
+ #else
+-static void pthread_handle_sigcancel(int sig, struct sigcontext ctx);
+-static void pthread_handle_sigrestart(int sig, struct sigcontext ctx);
++static void pthread_handle_sigcancel(int sig, int code,
++				     struct sigcontext * ctx);
++static void pthread_handle_sigrestart(int sig, int code,
++				      struct sigcontext * ctx);
  #endif
-   /* The errno/h_errno variable of the main thread are the global ones.  */
--  __pthread_initial_thread.p_errnop = &_errno;
--  __pthread_initial_thread.p_h_errnop = &_h_errno;
-+  __pthread_initial_thread.p_errnop = &errno;
-+  __pthread_initial_thread.p_h_errnop = &h_errno;
- #ifdef __SIGRTMIN
-   /* Initialize real-time signals. */
-   init_rtsigs ();
-@@ -318,23 +330,23 @@
+ static void pthread_handle_sigdebug(int sig);
+ 
+@@ -172,8 +185,8 @@
+ #ifndef __SIGRTMIN
+ static int current_rtmin = -1;
+ static int current_rtmax = -1;
+-int __pthread_sig_restart = SIGUSR1;
+-int __pthread_sig_cancel = SIGUSR2;
++int __pthread_sig_restart = SIGUSR2;
++int __pthread_sig_cancel = SIGUSR1;
+ int __pthread_sig_debug = 0;
+ #else
+ static int current_rtmin;
+@@ -184,8 +197,8 @@
+ int __pthread_sig_cancel = __SIGRTMIN + 1;
+ int __pthread_sig_debug = __SIGRTMIN + 2;
+ #else
+-int __pthread_sig_restart = SIGUSR1;
+-int __pthread_sig_cancel = SIGUSR2;
++int __pthread_sig_restart = SIGUSR2;
++int __pthread_sig_cancel = SIGUSR1;
+ int __pthread_sig_debug = 0;
+ #endif
+ 
+@@ -201,8 +214,8 @@
+       current_rtmin = -1;
+       current_rtmax = -1;
+ #if __SIGRTMAX - __SIGRTMIN >= 3
+-      __pthread_sig_restart = SIGUSR1;
+-      __pthread_sig_cancel = SIGUSR2;
++      __pthread_sig_restart = SIGUSR2;
++      __pthread_sig_cancel = SIGUSR1;
+       __pthread_sig_debug = 0;
+ #endif
+     }
+@@ -318,7 +331,7 @@
  #ifndef __i386__
    sa.sa_handler = pthread_handle_sigrestart;
  #else
 -  sa.sa_handler = (__sighandler_t) pthread_handle_sigrestart;
-+  sa.sa_handler = (void *) pthread_handle_sigrestart;
++  sa.sa_handler = (__sighandler_t *) pthread_handle_sigrestart;
  #endif
    sigemptyset(&sa.sa_mask);
    sa.sa_flags = 0;
--  __sigaction(__pthread_sig_restart, &sa, NULL);
-+  _sigaction(__pthread_sig_restart, &sa, NULL);
+@@ -326,7 +339,7 @@
  #ifndef __i386__
    sa.sa_handler = pthread_handle_sigcancel;
  #else
 -  sa.sa_handler = (__sighandler_t) pthread_handle_sigcancel;
-+  sa.sa_handler = (void *) pthread_handle_sigcancel;
++  sa.sa_handler = (__sighandler_t *) pthread_handle_sigcancel;
  #endif
    sa.sa_flags = 0;
--  __sigaction(__pthread_sig_cancel, &sa, NULL);
-+  _sigaction(__pthread_sig_cancel, &sa, NULL);
-   if (__pthread_sig_debug > 0) {
-     sa.sa_handler = pthread_handle_sigdebug;
-     sigemptyset(&sa.sa_mask);
-     sa.sa_flags = 0;
--    __sigaction(__pthread_sig_debug, &sa, NULL);
-+    _sigaction(__pthread_sig_debug, &sa, NULL);
-   }
-   /* Initially, block __pthread_sig_restart. Will be unblocked on demand. */
-   sigemptyset(&mask);
-@@ -343,7 +355,7 @@
+   __sigaction(__pthread_sig_cancel, &sa, NULL);
+@@ -343,7 +356,7 @@
    /* Register an exit function to kill all other threads. */
    /* Do it early so that user-registered atexit functions are called
       before pthread_exit_process. */
@@ -844,65 +497,26 @@ diff -ru ../linuxthreads/pthread.c ./pthread.c
  }
  
  void __pthread_initialize(void)
-@@ -376,8 +388,8 @@
+@@ -372,7 +385,8 @@
+   }
+   /* Start the thread manager */
+   pid = __clone(__pthread_manager, (void **) __pthread_manager_thread_tos,
+-                CLONE_VM | CLONE_FS | CLONE_FILES | CLONE_SIGHAND
++                CLONE_VM | CLONE_FS | CLONE_FILES | CLONE_SIGHAND |
++		__pthread_sig_cancel
  		, (void *)(long)manager_pipe[0]);
    if (pid == -1) {
      free(__pthread_manager_thread_bos);
--    __libc_close(manager_pipe[0]);
--    __libc_close(manager_pipe[1]);
-+    _close(manager_pipe[0]);
-+    _close(manager_pipe[1]);
-     return -1;
-   }
-   __pthread_manager_request = manager_pipe[1]; /* writing end */
-@@ -393,14 +405,14 @@
-     }
-   /* Synchronize debugging of the thread manager */
-   request.req_kind = REQ_DEBUG;
--  __libc_write(__pthread_manager_request, (char *) &request, sizeof(request));
-+  _write(__pthread_manager_request, (char *) &request, sizeof(request));
-   return 0;
- }
- 
- /* Thread creation */
- 
--int __pthread_create_2_1(pthread_t *thread, const pthread_attr_t *attr,
--			 void * (*start_routine)(void *), void *arg)
-+int pthread_create(pthread_t *thread, const pthread_attr_t *attr,
-+		   void * (*start_routine)(void *), void *arg)
- {
-   pthread_descr self = thread_self();
-   struct pthread_request request;
-@@ -414,7 +426,7 @@
-   request.req_args.create.arg = arg;
-   sigprocmask(SIG_SETMASK, (const sigset_t *) NULL,
-               &request.req_args.create.mask);
--  __libc_write(__pthread_manager_request, (char *) &request, sizeof(request));
-+  _write(__pthread_manager_request, (char *) &request, sizeof(request));
-   suspend(self);
-   if (THREAD_GETMEM(self, p_retcode) == 0)
-     *thread = (pthread_t) THREAD_GETMEM(self, p_retval);
-@@ -496,7 +508,7 @@
-     return ESRCH;
-   }
-   th = handle->h_descr;
--  if (__sched_setscheduler(th->p_pid, policy, param) == -1) {
-+  if (sched_setscheduler(th->p_pid, policy, param) == -1) {
+@@ -500,7 +514,7 @@
      __pthread_unlock(&handle->h_lock);
      return errno;
    }
-@@ -520,16 +532,16 @@
-   }
-   pid = handle->h_descr->p_pid;
+-  th->p_priority = policy == SCHED_OTHER ? 0 : param->sched_priority;
++  th->p_priority = param->sched_priority;
    __pthread_unlock(&handle->h_lock);
--  pol = __sched_getscheduler(pid);
-+  pol = sched_getscheduler(pid);
-   if (pol == -1) return errno;
--  if (__sched_getparam(pid, param) == -1) return errno;
-+  if (sched_getparam(pid, param) == -1) return errno;
-   *policy = pol;
-   return 0;
- }
+   if (__pthread_manager_request >= 0)
+     __pthread_manager_adjust_prio(th->p_priority);
+@@ -529,7 +543,7 @@
  
  /* Process-wide exit() request */
  
@@ -911,77 +525,44 @@ diff -ru ../linuxthreads/pthread.c ./pthread.c
  {
    struct pthread_request request;
    pthread_descr self = thread_self();
-@@ -537,8 +549,8 @@
+@@ -537,7 +551,7 @@
    if (__pthread_manager_request >= 0) {
      request.req_thread = self;
      request.req_kind = REQ_PROCESS_EXIT;
 -    request.req_args.exit.code = retcode;
--    __libc_write(__pthread_manager_request,
 +    request.req_args.exit.code = 0;
-+    _write(__pthread_manager_request,
+     __libc_write(__pthread_manager_request,
  		 (char *) &request, sizeof(request));
      suspend(self);
-     /* Main thread should accumulate times for thread manager and its
-@@ -560,12 +572,12 @@
- static void pthread_handle_sigrestart(int sig, struct sigcontext ctx)
+@@ -557,10 +571,11 @@
+ {
+   pthread_descr self = thread_self();
+ #else
+-static void pthread_handle_sigrestart(int sig, struct sigcontext ctx)
++static void pthread_handle_sigrestart(int sig, int code,
++				      struct sigcontext * ctx)
  {
    pthread_descr self;
 -  asm volatile ("movw %w0,%%gs" : : "r" (ctx.gs));
-+  asm volatile ("movw %w0,%%gs" : : "r" (ctx.sc_gs));
++  asm volatile ("movw %w0,%%gs" : : "r" (ctx->sc_gs));
    self = thread_self();
  #endif
    THREAD_SETMEM(self, p_signal, sig);
-   if (THREAD_GETMEM(self, p_signal_jmp) != NULL)
--    siglongjmp(*THREAD_GETMEM(self, p_signal_jmp), 1);
-+    __siglongjmp(*THREAD_GETMEM(self, p_signal_jmp), 1);
- }
- 
- /* The handler for the CANCEL signal checks for cancellation
-@@ -583,7 +595,7 @@
+@@ -579,11 +594,11 @@
+   pthread_descr self = thread_self();
+   sigjmp_buf * jmpbuf;
+ #else
+-static void pthread_handle_sigcancel(int sig, struct sigcontext ctx)
++static void pthread_handle_sigcancel(int sig, int code, struct sigcontext * ctx)
  {
    pthread_descr self;
    sigjmp_buf * jmpbuf;
 -  asm volatile ("movw %w0,%%gs" : : "r" (ctx.gs));
-+  asm volatile ("movw %w0,%%gs" : : "r" (ctx.sc_gs));
++  asm volatile ("movw %w0,%%gs" : : "r" (ctx->sc_gs));
    self = thread_self();
  #endif
  
-@@ -606,7 +618,7 @@
-     jmpbuf = THREAD_GETMEM(self, p_cancel_jmp);
-     if (jmpbuf != NULL) {
-       THREAD_SETMEM(self, p_cancel_jmp, NULL);
--      siglongjmp(*jmpbuf, 1);
-+      __siglongjmp(*jmpbuf, 1);
-     }
-   }
- }
-@@ -641,20 +653,20 @@
-     free(__pthread_manager_thread_bos);
-     __pthread_manager_thread_bos = __pthread_manager_thread_tos = NULL;
-     /* Close the two ends of the pipe */
--    __libc_close(__pthread_manager_request);
--    __libc_close(__pthread_manager_reader);
-+    _close(__pthread_manager_request);
-+    _close(__pthread_manager_reader);
-     __pthread_manager_request = __pthread_manager_reader = -1;
-   }
- 
-   /* Update the pid of the main thread */
--  THREAD_SETMEM(self, p_pid, __getpid());
-+  THREAD_SETMEM(self, p_pid, getpid());
-   /* Make the forked thread the main thread */
-   __pthread_main_thread = self;
-   THREAD_SETMEM(self, p_nextlive, self);
-   THREAD_SETMEM(self, p_prevlive, self);
-   /* Now this thread modifies the global variables.  */
--  THREAD_SETMEM(self, p_errnop, &_errno);
--  THREAD_SETMEM(self, p_h_errnop, &_h_errno);
-+  THREAD_SETMEM(self, p_errnop, &errno);
-+  THREAD_SETMEM(self, p_h_errnop, &h_errno);
- }
- 
- /* Process-wide exec() request */
-@@ -663,7 +675,7 @@
+@@ -663,7 +678,7 @@
  {
    struct sigaction sa;
    /* Terminate all other threads and thread manager */
@@ -990,33 +571,10 @@ diff -ru ../linuxthreads/pthread.c ./pthread.c
    /* Make current thread the main thread in case the calling thread
       changes its mind, does not exec(), and creates new threads instead. */
    __pthread_reset_main_thread();
-@@ -673,10 +685,10 @@
-   sigemptyset(&sa.sa_mask);
-   sa.sa_flags = 0;
-   sa.sa_handler = SIG_DFL;
--  __sigaction(__pthread_sig_restart, &sa, NULL);
--  __sigaction(__pthread_sig_cancel, &sa, NULL);
-+  _sigaction(__pthread_sig_restart, &sa, NULL);
-+  _sigaction(__pthread_sig_cancel, &sa, NULL);
-   if (__pthread_sig_debug > 0)
--    __sigaction(__pthread_sig_debug, &sa, NULL);
-+    _sigaction(__pthread_sig_debug, &sa, NULL);
- }
- weak_alias (__pthread_kill_other_threads_np, pthread_kill_other_threads_np)
- 
-@@ -710,7 +722,7 @@
-   va_start(args, fmt);
-   vsnprintf(buffer + 8, sizeof(buffer) - 8, fmt, args);
-   va_end(args);
--  __libc_write(2, buffer, strlen(buffer));
-+  _write(2, buffer, strlen(buffer));
- }
- 
- #endif
 diff -ru ../linuxthreads/ptlongjmp.c ./ptlongjmp.c
 --- ../linuxthreads/ptlongjmp.c	Tue Oct 27 05:52:00 1998
-+++ ./ptlongjmp.c	Tue Dec 28 09:56:04 1999
-@@ -19,15 +19,16 @@
++++ ./ptlongjmp.c	Mon Jan  3 15:35:00 2000
+@@ -19,13 +19,6 @@
  #include "pthread.h"
  #include "internals.h"
  
@@ -1026,107 +584,29 @@ diff -ru ../linuxthreads/ptlongjmp.c ./ptlongjmp.c
 -     __attribute__ ((noreturn));
 -extern void __libc_longjmp (sigjmp_buf env, int val)
 -     __attribute__ ((noreturn));
-+/* Test if longjmp to JMPBUF would unwind the frame
-+   containing a local variable at ADDRESS.  */
-+#ifndef JB_SP
-+# define JB_SP 4
-+#endif
-+#define _JMPBUF_UNWINDS(jmpbuf, address) \
-+  ((void *) (address) < (void *) &(jmpbuf)[JB_SP])
+-
  
- 
--static void pthread_cleanup_upto(__jmp_buf target)
-+static void pthread_cleanup_upto(jmp_buf target)
+ static void pthread_cleanup_upto(__jmp_buf target)
  {
-   pthread_descr self = thread_self();
-   struct _pthread_cleanup_buffer * c;
-@@ -44,12 +45,12 @@
+@@ -44,12 +37,12 @@
  
  void siglongjmp(sigjmp_buf env, int val)
  {
 -  pthread_cleanup_upto(env->__jmpbuf);
--  __libc_siglongjmp(env, val);
 +  pthread_cleanup_upto((void *) env);
-+  __siglongjmp(env, val);
+   __libc_siglongjmp(env, val);
  }
  
  void longjmp(jmp_buf env, int val)
  {
 -  pthread_cleanup_upto(env->__jmpbuf);
--  __libc_longjmp(env, val);
-+  pthread_cleanup_upto(env);
-+  __longjmp(env, val);
++  pthread_cleanup_upto((void *) env);
+   __libc_longjmp(env, val);
  }
 Only in .: sched.c
-diff -ru ../linuxthreads/semaphore.c ./semaphore.c
---- ../linuxthreads/semaphore.c	Fri Jul  9 21:00:32 1999
-+++ ./semaphore.c	Tue Dec 28 09:56:04 1999
-@@ -22,7 +22,11 @@
- #include "restart.h"
- #include "queue.h"
- 
--int __new_sem_init(sem_t *sem, int pshared, unsigned int value)
-+#ifndef __set_errno
-+# define __set_errno(val) errno = (val)
-+#endif
-+
-+int sem_init(sem_t *sem, int pshared, unsigned int value)
- {
-   if (value > SEM_VALUE_MAX) {
-     errno = EINVAL;
-@@ -38,7 +42,7 @@
-   return 0;
- }
- 
--int __new_sem_wait(sem_t * sem)
-+int sem_wait(sem_t * sem)
- {
-   volatile pthread_descr self = thread_self();
- 
-@@ -65,7 +69,7 @@
-   return 0;
- }
- 
--int __new_sem_trywait(sem_t * sem)
-+int sem_trywait(sem_t * sem)
- {
-   int retval;
- 
-@@ -81,7 +85,7 @@
-   return retval;
- }
- 
--int __new_sem_post(sem_t * sem)
-+int sem_post(sem_t * sem)
- {
-   pthread_descr self = thread_self();
-   pthread_descr th;
-@@ -114,19 +118,19 @@
-     }
-     request.req_kind = REQ_POST;
-     request.req_args.post = sem;
--    __libc_write(__pthread_manager_request,
-+    _write(__pthread_manager_request,
-                  (char *) &request, sizeof(request));
-   }
-   return 0;
- }
- 
--int __new_sem_getvalue(sem_t * sem, int * sval)
-+int sem_getvalue(sem_t * sem, int * sval)
- {
-   *sval = sem->__sem_value;
-   return 0;
- }
- 
--int __new_sem_destroy(sem_t * sem)
-+int sem_destroy(sem_t * sem)
- {
-   if (sem->__sem_waiting != NULL) {
-     __set_errno (EBUSY);
 diff -ru ../linuxthreads/semaphore.h ./semaphore.h
 --- ../linuxthreads/semaphore.h	Thu Apr 15 06:50:56 1999
-+++ ./semaphore.h	Tue Dec 28 09:56:04 1999
++++ ./semaphore.h	Mon Jan  3 15:35:00 2000
 @@ -15,7 +15,7 @@
  #ifndef _SEMAPHORE_H
  #define _SEMAPHORE_H    1
@@ -1138,24 +618,39 @@ diff -ru ../linuxthreads/semaphore.h ./semaphore.h
  #ifndef _PTHREAD_DESCR_DEFINED
 diff -ru ../linuxthreads/signals.c ./signals.c
 --- ../linuxthreads/signals.c	Mon Aug 23 10:46:35 1999
-+++ ./signals.c	Tue Dec 28 09:56:04 1999
-@@ -19,7 +19,14 @@
++++ ./signals.c	Mon Jan  3 15:35:00 2000
+@@ -19,7 +19,6 @@
  #include "pthread.h"
  #include "internals.h"
  #include "spinlock.h"
 -#include <sigcontextinfo.h>
-+
-+#ifndef SIGCONTEXT
-+# define SIGCONTEXT struct sigcontext *
-+#endif
-+
-+#ifndef SIGCONTEXT_EXTRA_ARGS
-+# define SIGCONTEXT_EXTRA_ARGS
-+#endif
  
  int pthread_sigmask(int how, const sigset_t * newmask, sigset_t * oldmask)
  {
-@@ -110,17 +117,17 @@
+@@ -68,11 +67,11 @@
+ }
+ 
+ /* User-provided signal handlers */
+-typedef void (*arch_sighandler_t) __PMT ((int, SIGCONTEXT));
++typedef void (*arch_sighandler_t) __PMT ((int, int, SIGCONTEXT));
+ static arch_sighandler_t sighandler[NSIG];
+ 
+ /* The wrapper around user-provided signal handlers */
+-static void pthread_sighandler(int signo, SIGCONTEXT ctx)
++static void pthread_sighandler(int signo, int code, SIGCONTEXT ctx)
+ {
+   pthread_descr self = thread_self();
+   char * in_sighandler;
+@@ -88,7 +87,7 @@
+   in_sighandler = THREAD_GETMEM(self, p_in_sighandler);
+   if (in_sighandler == NULL)
+     THREAD_SETMEM(self, p_in_sighandler, CURRENT_STACK_FRAME);
+-  sighandler[signo](signo, SIGCONTEXT_EXTRA_ARGS ctx);
++  sighandler[signo](signo, code, ctx);
+   if (in_sighandler == NULL)
+     THREAD_SETMEM(self, p_in_sighandler, NULL);
+ }
+@@ -110,7 +109,7 @@
        newact = *act;
        if (act->sa_handler != SIG_IGN && act->sa_handler != SIG_DFL
  	  && sig > 0 && sig < NSIG)
@@ -1164,10 +659,7 @@ diff -ru ../linuxthreads/signals.c ./signals.c
        newactp = &newact;
      }
    else
-     newactp = NULL;
--  if (__sigaction(sig, newactp, oact) == -1)
-+  if (_sigaction(sig, newactp, oact) == -1)
-     return -1;
+@@ -120,7 +119,7 @@
    if (sig > 0 && sig < NSIG)
      {
        if (oact != NULL)
@@ -1176,48 +668,48 @@ diff -ru ../linuxthreads/signals.c ./signals.c
        if (act)
  	sighandler[sig] = (arch_sighandler_t) act->sa_handler;
      }
-@@ -164,7 +171,7 @@
-     }
-   }
-   /* Test for cancellation */
--  if (sigsetjmp(jmpbuf, 1) == 0) {
-+  if (__sigsetjmp(jmpbuf, 1) == 0) {
-     THREAD_SETMEM(self, p_cancel_jmp, &jmpbuf);
-     if (! (THREAD_GETMEM(self, p_canceled)
- 	   && THREAD_GETMEM(self, p_cancelstate) == PTHREAD_CANCEL_ENABLE)) {
-diff -ru ../linuxthreads/specific.c ./specific.c
---- ../linuxthreads/specific.c	Wed Apr 14 16:48:13 1999
-+++ ./specific.c	Tue Dec 28 09:56:04 1999
-@@ -38,7 +38,7 @@
+diff -ru ../linuxthreads/spinlock.c ./spinlock.c
+--- ../linuxthreads/spinlock.c	Fri Jul  9 13:56:04 1999
++++ ./spinlock.c	Mon Jan  3 15:35:00 2000
+@@ -17,6 +17,7 @@
+ #include <errno.h>
+ #include <sched.h>
+ #include <time.h>
++#include <stdio.h>
+ #include "pthread.h"
+ #include "internals.h"
+ #include "spinlock.h"
+@@ -115,8 +116,6 @@
  
- /* Create a new key */
+ #if !defined HAS_COMPARE_AND_SWAP || defined TEST_FOR_COMPARE_AND_SWAP
  
--int __pthread_key_create(pthread_key_t * key, destr_function destr)
-+int pthread_key_create(pthread_key_t * key, destr_function destr)
+-static void __pthread_acquire(int * spinlock);
+-
+ int __pthread_compare_and_swap(long * ptr, long oldval, long newval,
+                                int * spinlock)
  {
-   int i;
+@@ -152,7 +151,7 @@
+    - When nanosleep() returns, we try again, doing MAX_SPIN_COUNT
+      sched_yield(), then sleeping again if needed. */
  
-@@ -91,7 +91,7 @@
- 
- /* Set the value of a key */
- 
--int __pthread_setspecific(pthread_key_t key, const void * pointer)
-+int pthread_setspecific(pthread_key_t key, const void * pointer)
+-static void __pthread_acquire(int * spinlock)
++void __pthread_acquire(int * spinlock)
  {
-   pthread_descr self = thread_self();
-   unsigned int idx1st, idx2nd;
-@@ -113,7 +113,7 @@
+   int cnt = 0;
+   struct timespec tm;
+diff -ru ../linuxthreads/spinlock.h ./spinlock.h
+--- ../linuxthreads/spinlock.h	Thu Oct 29 06:31:12 1998
++++ ./spinlock.h	Mon Jan  3 15:35:00 2000
+@@ -71,4 +71,6 @@
+   return 0;
+ }
  
- /* Get the value of a key */
- 
--void * __pthread_getspecific(pthread_key_t key)
-+void * pthread_getspecific(pthread_key_t key)
- {
-   pthread_descr self = thread_self();
-   unsigned int idx1st, idx2nd;
++void __pthread_acquire(int * spinlock);
++
+ #define LOCK_INITIALIZER {0, 0}
 diff -ru ../linuxthreads/sysdeps/pthread/bits/pthreadtypes.h ./sysdeps/pthread/bits/pthreadtypes.h
 --- ../linuxthreads/sysdeps/pthread/bits/pthreadtypes.h	Thu Apr 15 06:52:26 1999
-+++ ./sysdeps/pthread/bits/pthreadtypes.h	Tue Dec 28 09:56:04 1999
++++ ./sysdeps/pthread/bits/pthreadtypes.h	Mon Jan  3 15:35:00 2000
 @@ -20,7 +20,6 @@
  #define _BITS_PTHREADTYPES_H	1
  
@@ -1237,7 +729,7 @@ diff -ru ../linuxthreads/sysdeps/pthread/bits/pthreadtypes.h ./sysdeps/pthread/b
    size_t __guardsize;
 diff -ru ../linuxthreads/sysdeps/pthread/pthread.h ./sysdeps/pthread/pthread.h
 --- ../linuxthreads/sysdeps/pthread/pthread.h	Tue Dec  8 08:10:25 1998
-+++ ./sysdeps/pthread/pthread.h	Tue Dec 28 09:56:04 1999
++++ ./sysdeps/pthread/pthread.h	Mon Jan  3 15:35:00 2000
 @@ -15,7 +15,7 @@
  #ifndef _PTHREAD_H
  #define _PTHREAD_H	1
@@ -1255,21 +747,7 @@ diff -ru ../linuxthreads/sysdeps/pthread/pthread.h ./sysdeps/pthread/pthread.h
  
  
  __BEGIN_DECLS
-@@ -46,6 +47,13 @@
- 
- /* Values for attributes.  */
- 
-+/* pthread_attr_setscope() can return ENOTSUP, which is not listed in errno.h.
-+ * EINVAL is 22, and ENOSYS is 78, so 42 is a safe (though arbitrary) value for
-+ * ENOTSUP. */
-+#ifndef ENOTSUP
-+# define ENOTSUP 42
-+#endif
-+
- enum
- {
-   PTHREAD_CREATE_JOINABLE,
-@@ -107,7 +115,7 @@
+@@ -107,7 +108,7 @@
  
  struct _pthread_cleanup_buffer
  {
@@ -1282,7 +760,7 @@ Only in ../linuxthreads/sysdeps/pthread: semaphore.h
 Only in ./sysdeps/pthread: semaphore.h.unused
 diff -ru ../linuxthreads/sysdeps/unix/sysv/linux/bits/local_lim.h ./sysdeps/unix/sysv/linux/bits/local_lim.h
 --- ../linuxthreads/sysdeps/unix/sysv/linux/bits/local_lim.h	Thu Nov 12 10:03:14 1998
-+++ ./sysdeps/unix/sysv/linux/bits/local_lim.h	Tue Dec 28 09:56:04 1999
++++ ./sysdeps/unix/sysv/linux/bits/local_lim.h	Mon Jan  3 15:35:00 2000
 @@ -24,7 +24,7 @@
  #endif
  
@@ -1294,7 +772,7 @@ diff -ru ../linuxthreads/sysdeps/unix/sysv/linux/bits/local_lim.h ./sysdeps/unix
  #ifdef __undef_NR_OPEN
 diff -ru ../linuxthreads/sysdeps/unix/sysv/linux/bits/sigthread.h ./sysdeps/unix/sysv/linux/bits/sigthread.h
 --- ../linuxthreads/sysdeps/unix/sysv/linux/bits/sigthread.h	Sat Sep 12 14:33:14 1998
-+++ ./sysdeps/unix/sysv/linux/bits/sigthread.h	Tue Dec 28 09:56:04 1999
++++ ./sysdeps/unix/sysv/linux/bits/sigthread.h	Mon Jan  3 15:35:00 2000
 @@ -28,8 +28,8 @@
  
  /* Modify the signal mask for the calling thread.  The arguments have
@@ -1307,40 +785,11 @@ diff -ru ../linuxthreads/sysdeps/unix/sysv/linux/bits/sigthread.h ./sysdeps/unix
  /* Send signal SIGNO to the given thread. */
  extern int pthread_kill __P ((pthread_t __thread, int __signo));
 Only in .: uthread_file.c
-diff -ru ../linuxthreads/weaks.c ./weaks.c
---- ../linuxthreads/weaks.c	Fri Jul 24 05:57:24 1998
-+++ ./weaks.c	Tue Dec 28 09:56:04 1999
-@@ -21,6 +21,11 @@
- #include <limits.h>
- #include <stdlib.h>
- 
-+/* Hack to get rid of the glibc linker magic directives on FreeBSD. */
-+#define weak_alias(a, b)
-+#define strong_alias(a, b)
-+#define weak_function
-+
- extern int __pthread_return_0 __P ((void));
- extern int __pthread_return_1 __P ((void));
- extern void __pthread_return_void __P ((void));
-@@ -91,6 +96,7 @@
- /* Those are pthread functions which return 1 if successful. */
- weak_alias (__pthread_return_1, pthread_equal)
- 
-+#if (0)
- /* pthread_exit () is a special case. */
- void
- weak_function
-@@ -98,6 +104,7 @@
- {
-   exit (EXIT_SUCCESS);
- }
-+#endif
- 
- int
- __pthread_return_0 (void)
+Only in ../linuxthreads: weaks.c
+Only in .: weaks.c.unused
 diff -ru ../linuxthreads/wrapsyscall.c ./wrapsyscall.c
 --- ../linuxthreads/wrapsyscall.c	Tue Dec  1 11:34:20 1998
-+++ ./wrapsyscall.c	Tue Dec 28 09:56:04 1999
++++ ./wrapsyscall.c	Mon Jan  3 15:35:00 2000
 @@ -30,6 +30,10 @@
  #include <sys/wait.h>
  #include <sys/socket.h>
