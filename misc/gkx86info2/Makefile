@@ -17,6 +17,7 @@ COMMENT=	GKrellM2 plugin that simply prints the current clock speed
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
+ONLY_FOR_ARCHS=	i386
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 
