@@ -30,6 +30,10 @@ INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not compile on sparc64"
+.endif
+
 .if ${OSVERSION} < 500035
 CFLAGS+=	-O0
 .endif
