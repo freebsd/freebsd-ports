@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	epic4
-PORTVERSION=	0.9.15
+PORTVERSION=	0.9.16
 # Make CATEGORIES overridable for slave ports
 CATEGORIES?=	irc
 MASTER_SITES=	ftp://ftp.magenet.com/pub/epic/%SUBDIR%/ \

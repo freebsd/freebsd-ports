@@ -1,5 +1,5 @@
 bin/epic
-bin/epic-EPIC4-0.9.15
+bin/epic-EPIC4-0.9.16
 libexec/wserv
 share/epic/help/1_General/away
 share/epic/help/1_General/describe
@@ -906,6 +906,7 @@ share/epic/script/prefix
 share/epic/script/recursion
 share/epic/script/repeat
 share/epic/script/revdcc
+share/epic/script/scan
 share/epic/script/scandir
 share/epic/script/screen
 share/epic/script/sdiff
@@ -916,6 +917,7 @@ share/epic/script/starutils
 share/epic/script/stat
 share/epic/script/status_lag
 share/epic/script/tabkey
+share/epic/script/tabkey.th
 share/epic/script/tc
 share/epic/script/time
 share/epic/script/tls
