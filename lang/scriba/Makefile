@@ -8,8 +8,13 @@
 PORTNAME=	scriba
 PORTVERSION=	10b21
 CATEGORIES=	lang
-MASTER_SITES=	http://www.scriptbasic.com/
+MASTER_SITES=	http://www.scriptbasic.com/download/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
+# the filename of the current version has been re-styled as follows;
+# however, as of November 2003, the patches do not apply cleanly, so
+# this port needs further work.
+#PORTVERSION=	1.0b30
+#DISTNAME=	${PORTNAME}-v${PORTVERSION}-source
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scripting implementation of the BASIC language
