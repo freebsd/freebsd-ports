@@ -1,21 +1,24 @@
-bin/b-cstocs
-bin/b-map
-bin/b-piconv
-bin/b-recode
-bin/b-umap
 bin/enca
 bin/enconv
 include/enca.h
 lib/libenca.a
 lib/libenca.so
-lib/libenca.so.3
+lib/libenca.so.4
 libdata/pkgconfig/enca.pc
-%%PORTDOCS%%%%DOCSDIR%%/libenca/c4.html
+libexec/enca/extconv/cstocs
+libexec/enca/extconv/map
+libexec/enca/extconv/piconv
+libexec/enca/extconv/recode
+libexec/enca/extconv/umap
+%%PORTDOCS%%%%DOCSDIR%%/libenca/ch01.html
 %%PORTDOCS%%%%DOCSDIR%%/libenca/index.html
 %%PORTDOCS%%%%DOCSDIR%%/libenca/index.sgml
-%%PORTDOCS%%%%DOCSDIR%%/libenca/libenca-analyser.html
-%%PORTDOCS%%%%DOCSDIR%%/libenca/libenca-auxiliary-functions.html
-%%PORTDOCS%%%%DOCSDIR%%/libenca/libenca-charsets-and-surfaces.html
-%%PORTDOCS%%%%DOCSDIR%%/libenca/libenca-typedefs-and-constants.html
+%%PORTDOCS%%%%DOCSDIR%%/libenca/libenca-Analyser.html
+%%PORTDOCS%%%%DOCSDIR%%/libenca/libenca-Auxiliary-Functions.html
+%%PORTDOCS%%%%DOCSDIR%%/libenca/libenca-Charsets-and-Surfaces.html
+%%PORTDOCS%%%%DOCSDIR%%/libenca/libenca-Typedefs-and-Constants.html
+%%PORTDOCS%%%%DOCSDIR%%/libenca/libenca.devhelp
+%%PORTDOCS%%@dirrm libexec/enca/extconv
+%%PORTDOCS%%@dirrm libexec/enca
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/libenca
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
