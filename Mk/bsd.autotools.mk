@@ -2,362 +2,381 @@
 # ex:ts=4
 #
 # $FreeBSD$
+#
 # Please view me with 4 column tabs!
+#
 # Please make sure all changes to this file are passed either through
-# the maintainer, or portmgr
+# the maintainer, or portmgr@FreeBSD.org
 
 Autotools_Include_MAINTAINER=	ade@FreeBSD.org
 
-# USE_AUTOCONF_VER (PORT MAY SET THIS VALUE)
-#				- Implies USE_AUTOCONF.
-#				- Implies WANT_AUTOCONF_VER=(value)
-# USE_AUTOCONF (PORT MAY SET THIS VALUE)
-#				- Implies WANT_AUTOCONF_VER?=213.
-#				- Causes autoconf execution prior to configure step.
-# USE_AUTOHEADER (PORT MAY SET THIS VALUE)
-#				- Implies USE_AUTOCONF.
-# WANT_AUTOCONF_VER (PORT MAY SET THIS VALUE)
-#				- Implies GNU_CONFIGURE=yes.
-#				- Says that the port wants autoconf; legal values
-#				  are: 213, 253, 257.
-#				- Each specify a version of autoconf to use
-#				  and appropriatly set AUTOCONF{,_DIR} and other
-#				  autoconf-related program paths.
-#				- If set with an unknown value, the port is marked BROKEN.
-# AUTOCONF_ARGS (PORT MAY ALTER THIS VALUE)
-#				- Pass these args to ${AUTOCONF} if ${USE_AUTOCONF_VER}
-#				  is set. If an application sets this value, it should
-#				  use the += form of assignment to append, not overwrite.
-# AUTOHEADER_ARGS (PORT MAY ALTER THIS VALUE)
-#				- Pass these args to ${AUTOHEADER} if ${USE_AUTOHEADER}
-#				  is set. If an application sets this value, it should
-#				  use the += form of assignment to append, not overwrite.
-##
-# AUTOMAKE (READ-ONLY)
-#				- Set to path of GNU automake (default:
-#				  according to USE_AUTOMAKE_VER value)
-# AUTOMAKE_ENV (READ-ONLY)
-#				- Pass these env var=value pairs (shell-like)
-#				  to ${AUTOMAKE} if ${USE_AUTOMAKE_VER} is set.
-# ACLOCAL (READ-ONLY)
-#				- Set to path of GNU automake aclocal (default:
-#				  according to USE_AUTOMAKE_VER value)
-# ACLOCAL_DIR (READ-ONLY)
-#				- Set to path of GNU automake aclocal shared directory
-#                 (default:	according to USE_AUTOMAKE_VER value)
-# AUTOMAKE_DIR (READ-ONLY)
-#				- Set to path of GNU automake shared directory (default:
-#				  according to USE_AUTOMAKE_VER value)
-##
-# AUTOCONF (READ-ONLY)
-#				- Set to path of GNU autoconf (default:
-#				  according to USE_AUTOCONF_VER value)
-# AUTOCONF_ENV (READ-ONLY)
-#				- Pass these env var=value pairs (shell-like)
-#				  to ${AUTOCONF} if ${USE_AUTOCONF_VER} is set.
-# AUTOHEADER (READ-ONLY)
-#				- Set to path of GNU autoconf autoheader
-#				  (default: according to USE_AUTOCONF_VER value)
-# AUTORECONF (READ-ONLY)
-#				- Set to path of GNU autoconf autoreconf
-#				  (default: according to USE_AUTOCONF_VER value)
-# AUTOSCAN (READ-ONLY)
-#				- Set to path of GNU autoconf autoscan
-#				  (default: according to USE_AUTOCONF_VER value)
-# AUTOIFNAMES (READ-ONLY)
-#				- Set to path of GNU autoconf autoifnames
-#				  (default: according to USE_AUTOCONF_VER value)
-# AUTOCONF_DIR (READ-ONLY)
-#				- Set to path of GNU autoconf shared directory (default:
-#				  according to USE_AUTOCONF_VER value)
-##
-# USE_LIBTOOL_VER (PORT MAY SET THIS VALUE)
-#				- Implies USE_LIBTOOL.
-#				- Implies WANT_LIBTOOL_VER=(value)
-# USE_LIBTOOL (PORT MAY SET THIS VALUE)
-#				- Says that the port uses Libtool.
-#				- Implies GNU_CONFIGURE.
-#				- Implies WANT_LIBTOOL_VER?=13
-# LIBTOOL (READ-ONLY)
-#				- Set to path of libtool (default:
-#				  according to USE_LIBTOOL_VER value)
-# LIBTOOLIZE (READ-ONLY)
-#				- Set to path of libtoolize (default:
-#				  according to USE_LIBTOOL_VER value)
-# LIBTOOL_VERSION (READ-ONLY)
-#				- Exported version of USE_LIBTOOL_VER
-# LIBTOOL_SHAREDIR (READ-ONLY)
-#				- Set to path of GNU libtool shared directory (default:
-#				  according to USE_LIBTOOL_VER value)
-# LIBTOOL_LIBEXECDIR (READ-ONLY)
-#				- Set to path of GNU libtool libexec directory (default:
-#				  according to USE_LIBTOOL_VER value)
-# LIBTOOLFILES	- Files to patch for libtool (defaults: "aclocal.m4" if
-#				  USE_AUTOCONF is set, "configure" otherwise).
-# LIBTOOLFLAGS	- Additional flags to pass to ltconfig
-#				  (default: --disable-ltlibs)
-
-######################################################################
-# AUTOMAKE/AUTOCONF
-# current => non-renamed, non-relocated version
-
-########## private variables
-#	old_{am,ac}ver		==>	numeric version of "old" port[*]
-#	cur_{am,ac}ver		==>	numeric version of "current" port
-#	dev_{am,ac}ver		==>	numeric version of "devel" port
-#	use_{am,ac}path		==> numeric version we are using here
-#	{am,ac}path			==> path to non-suffixed binary, if any
-#	autotools_path		==> string to prepend to PATH, if any
+#---------------------------------------------------------------------------
+# Entry points into the autotools system
+#---------------------------------------------------------------------------
+#       
+# USE_AUTOMAKE_VER=<value>
+#	- Port wishes to use automake, including the configuration step
+#	- Implies GNU_CONFIGURE?=yes and WANT_AUTOMAKE_VER=<value>
 #
-# [*] "default" version in case of USE_AUTOMAKE or USE_AUTOCONF w/o version
+# WANT_AUTOMAKE_VER=<value>
+#	- Port needs access to the automake build environment
+#
+# WANT_AUTOMAKE_RUN=yes
+#	- Port also needs access to automake as a run-time dependency
+#	  This is a NULL-OP if neither {USE,WANT}_AUTOMAKE_VER are defined
+#
+# AUTOMAKE_ARGS=...
+#	- Extra arguments passed to automake during configure step
+#
+#---------------------------------------------------------------------------
+#
+# USE_AUTOCONF_VER=<value>
+#	- Port wishes to use autoconf, including the configuration step
+#	- Implies GNU_CONFIGURE?=yes and WANT_AUTOCONF_VER=<value>
+#
+# USE_AUTOHEADER_VER=<value>
+#	- Port wishes to use autoheader in the configuration step
+#	- Implies USE_AUTOCONF_VER=<value>
+#
+# WANT_AUTOCONF_VER=<value>
+#	- Port needs access to the autoconf build environment
+#
+# WANT_AUTOCONF_RUN=yes
+#	- Port also needs access to autoconf as a run-time dependency
+#	  This is a NULL-OP if neither {USE,WANT}_AUTOCONF_VER are defined
+#
+# AUTOCONF_ARGS=...
+#	- Extra arguments passed to autoconf during configure step
+#
+# AUTOHEADER_ARGS=...
+#	- Extra arguments passed to autoheader during configure step
+#
+#---------------------------------------------------------------------------
+#
+# USE_LIBLTDL=yes
+#	- Convenience knob to depend on the library from devel/libltdl
+#
+# USE_LIBTOOL_VER=<value>
+#	- Port wishes to use libtool, including the configuration step
+#	- Implies GNU_CONFIGURE?=yes and WANT_LIBTOOL_VER=<value>
+#
+# WANT_LIBTOOL_VER=<value>
+#	- Port needs access to the libtool build environment
+#
+# WANT_LIBTOOL_RUN=yes
+#	- Port also needs access to autoconf as a run-time dependency
+#	  This is a NULL-OP if neither {USE,WANT}_LIBTOOL_VER are defined
+#
+# LIBTOOLFLAGS=<value>
+#	- Arguments passed to libtool during configure step
+#	  Currently defaults to "--disable-ltlibs", but this will be going
+#	  away when libtool .la files are brought back
+#
+# LIBTOOLFILES=<list-of-files>
+#	- A list of files to patch during libtool pre-configuration
+#	  Defaults to "aclocal.m4" if autoconf is in use, otherwise "configure"
+#
+#---------------------------------------------------------------------------
+# Major changes:
+#
+# -	USE_AUTOMAKE, USE_AUTOCONF, USE_AUTOHEADER, and USE_LIBTOOL have
+#	been deprecated in favor of USE_<x>_VER=...
+#   As of 4/21/2004, changes should be made as follows:
+#		USE_AUTOMAKE		-> USE_AUTOMAKE_VER=14
+#		USE_AUTOCONF		-> USE_AUTOCONF_VER=213
+#		USE_AUTOHEADER		-> USE_AUTOHEADER_VER=213
+#		USE_LIBTOOL			-> USE_LIBTOOL_VER=13
+#	Currently, an error message is kicked out, and make(1) will stop
+#	if any of these deprecated variables are used.
+#
+# - additional variables WANT_{AUTOMAKE,AUTOCONF,AUTOHEADER,LIBTOOL}_RUN
+#	have been added to include a run-time dependency on the appropriate
+#	autotools port, as part of work in progress to remove ALL explicit
+#	dependencies on autotools in port Makefiles, in favor of using the
+#	autotools knobs
+#
+# - USE_LIBLTDL has been added as a convenience function to provide
+#	a lib dependency on devel/libltdl, so that if the major version
+#	number changes in future, only one item has to be updated
+#
+# - {WANT,USE}_AUTOMAKE_VER no longer automatically brings in
+#	autoconf as before, to allow for greater flexibility in version
+#	matching, and to simplify bsd.autotools.mk
+#	It is now the port Makefile responsibility to specifically bring
+#	in the "appropriate" version of autoconf if automake is specified.
+#	The mappings are as follows (automake,autoconf pairs):
+#		(14,213) (15,253) (17,257) (18,259)
+#
+# - Only set GNU_CONFIGURE automatically if USE_<x>_VER is specified,
+#	since WANT_<x>_VER implies that we want the environment, but not
+#	the configuration steps.  XXX: this may break some ports
+#
+# Things to do:
+# - Move both autoconf and automake to true versioned ports
+#	(devel/autoconf253 and devel/automake14 respectively).  This is
+#	likely to break a number of ports that make assumptions about
+#	"autoconf", "automake", et al. but is required if we are to move
+#	to strictly-versioned autotools.
+#
+# -	Work on killing off as many "old" autotools ports as possible
+#
+# - Bring back the installation of libtool .la files by default, removing
+#	those FreeBSD-specific knobs added to prevent this
+#
+# - Migrate the myriad of autotools-related knobs into a single
+#	USE_AUTOTOOLS=... (to be defined) variable, akin to USE_GNOME=...
 
-##########
-#.if defined(AUTOMAKE) || defined(AUTOCONF)
-#BROKEN="AUTOMAKE and AUTOCONF are read-only values. \
-#	You may not assign to them"
-#.endif # defined(AUTOMAKE) || defined(AUTOCONF)
+#---------------------------------------------------------------------------
+# DEPRECATED ENTRY POINTS
+#---------------------------------------------------------------------------
 
-########## versions
-old_amver=	14
-cur_amver=	15
-dev_amver=	17
-old_acver=	213
-cur_acver=	253
-dev_acver=	257
+.for i in AUTOMAKE AUTOCONF AUTOHEADER LIBTOOL
+. if defined(USE_${i})
+. error USE_${i} deprecated: replace with USE_${i}_VER=...
+. endif
+.endfor
 
-########## automake setup
+#---------------------------------------------------------------------------
+# AUTOMAKE
+#---------------------------------------------------------------------------
+
 .if defined(USE_AUTOMAKE_VER)
-USE_AUTOMAKE?=		yes
 WANT_AUTOMAKE_VER?=	${USE_AUTOMAKE_VER}
-.endif # defined(USE_AUTOMAKE_VER)
-.if defined(USE_AUTOMAKE)
-USE_AUTOCONF?=		yes
-WANT_AUTOMAKE_VER?=	${old_amver}
-.endif # defined(USE_AUTOMAKE)
+GNU_CONFIGURE?=		yes
+.endif
+
 .if defined(WANT_AUTOMAKE_VER)
-GNU_CONFIGURE?=		yes
-use_amver=			${WANT_AUTOMAKE_VER:L}
-.if ${use_amver} == ${cur_amver}
-ACLOCAL_DIR=		${LOCALBASE}/share/aclocal
-AUTOMAKE_DIR=		${LOCALBASE}/share/automake
-BUILD_DEPENDS+=		${LOCALBASE}/bin/automake:${PORTSDIR}/devel/automake
-WANT_AUTOCONF_VER?=	${cur_acver}
-.elif ${use_amver} == ${old_amver} || ${use_amver} == ${dev_amver}
-ACLOCAL_DIR=	${LOCALBASE}/share/aclocal${use_amver}
-AUTOMAKE_DIR=	${LOCALBASE}/share/automake${use_amver}
-.if ${use_amver} == ${old_amver}
-ampath=			${LOCALBASE}/libexec/automake${use_amver}:
-BUILD_DEPENDS+=	${ampath:S/://}/automake:${PORTSDIR}/devel/automake${use_amver}
-AUTOMAKE_ARGS+=	-i
-WANT_AUTOCONF_VER?=${old_acver}
-.else
-BUILD_DEPENDS+=         ${LOCALBASE}/bin/automake${dev_amver}:${PORTSDIR}/devel/automake${dev_amver}
-WANT_AUTOCONF_VER?=${dev_acver}
-.endif # ${use_amver} == ${old_amver}
-.else # bad automake version
-BROKEN="unknown AUTOMAKE version: ${use_amver}"
-.endif # ${use_amver} == ${cur_amver}
-.endif # defined(WANT_AUTOMAKE_VER)
 
-########## autoconf setup
+# XXX: hackery to handle non-versioned "legacy" ports
+#	   destined to die
+#
+. if ${WANT_AUTOMAKE_VER} == 15
+AUTOMAKE_SUFFIX=	# empty
+. else
+AUTOMAKE_SUFFIX=	${WANT_AUTOMAKE_VER}
+. endif
+
+# Make sure we specified a legal version of automake
+#
+. if !exists(${PORTSDIR}/devel/automake${AUTOMAKE_SUFFIX}/Makefile)
+. error Unknown AUTOMAKE version: ${WANT_AUTOMAKE_VER}
+. endif
+
+# Set up the automake environment
+#
+AUTOMAKE=			${LOCALBASE}/bin/automake${AUTOMAKE_SUFFIX}
+AUTOMAKE_DIR=		${LOCALBASE}/share/automake${AUTOMAKE_SUFFIX}
+ACLOCAL=			${LOCALBASE}/bin/aclocal${AUTOMAKE_SUFFIX}
+ACLOCAL_DIR=		${LOCALBASE}/share/aclocal${AUTOMAKE_SUFFIX}
+AUTOMAKE_PATH=		${LOCALBASE}/libexec/automake${AUTOMAKE_SUFFIX}:
+AUTOMAKE_VARS=		ACLOCAL=${ACLOCAL} AUTOMAKE=${AUTOMAKE}
+AUTOMAKE_VERSION=	${WANT_AUTOMAKE_VER}
+
+AUTOMAKE_DEPENDS=	${AUTOMAKE}:${PORTSDIR}/devel/automake${AUTOMAKE_SUFFIX}
+BUILD_DEPENDS+=		${AUTOMAKE_DEPENDS}
+. if defined(WANT_AUTOMAKE_RUN)
+RUN_DEPENDS+=		${AUTOMAKE_DEPENDS}
+. endif
+
+# XXX: here be dragons, for some reason
+#
+. if ${WANT_AUTOMAKE_VER} == 14
+AUTOMAKE_ARGS+=		-i
+. endif
+
+.endif
+
+#---------------------------------------------------------------------------
+# AUTOCONF/AUTOHEADER
+#---------------------------------------------------------------------------
+
+.if defined(USE_AUTOHEADER_VER)
+USE_AUTOCONF_VER?=	${USE_AUTOHEADER_VER}
+.endif
+
 .if defined(USE_AUTOCONF_VER)
-USE_AUTOCONF?=		yes
 WANT_AUTOCONF_VER?=	${USE_AUTOCONF_VER}
-.endif # defined(USE_AUTOCONF_VER)
-.if defined(USE_AUTOHEADER)
-USE_AUTOCONF?=		yes
-.endif # defined(USE_AUTOHEADER)
-.if defined(USE_AUTOCONF)
-WANT_AUTOCONF_VER?=	${old_acver}
-.endif # defined(USE_AUTOCONF)
-.if defined(WANT_AUTOCONF_VER)
 GNU_CONFIGURE?=		yes
-use_acver=			${WANT_AUTOCONF_VER:L}
-.if ${use_acver} == ${cur_acver}
-AUTOCONF_DIR=		${LOCALBASE}/share/autoconf
-BUILD_DEPENDS+=		${LOCALBASE}/bin/autoconf:${PORTSDIR}/devel/autoconf
-.elif ${use_acver} == ${old_acver}
-AUTOCONF_DIR=	${LOCALBASE}/share/autoconf${use_acver}
-acpath=			${LOCALBASE}/libexec/autoconf${use_acver}
-BUILD_DEPENDS+=	${acpath}/autoconf:${PORTSDIR}/devel/autoconf${use_acver}
-.elif ${use_acver} == ${dev_acver}
-AUTOCONF_DIR=		${LOCALBASE}/share/autoconf${dev_acver}
-BUILD_DEPENDS+=		${LOCALBASE}/bin/autoconf${dev_acver}:${PORTSDIR}/devel/autoconf${dev_acver}
-.else # bad autoconf version
-BROKEN="unknown AUTOCONF version: ${use_acver}"
-.endif # ${use_acver} == ${cur_acver}
-.endif # defined(WANT_AUTOCONF_VER)
-
-########## set up paths to tools
-.if defined(ampath)
-autotools_path=${ampath}${acpath}
-.elif defined(acpath)
-autotools_path=${acpath}
-.endif # defined(ampath)
-
-########## prefix to path, add to env vars
-.if defined(autotools_path)
-MAKE_ENV+=	PATH=${autotools_path}:${PATH}
-CONFIGURE_ENV+=	PATH=${autotools_path}:${PATH}
-SCRIPTS_ENV+=	PATH=${autotools_path}:${PATH}
-AUTOCONF_ENV+=	PATH=${autotools_path}:${PATH}
-AUTOMAKE_ENV+=	PATH=${autotools_path}:${PATH}
-AUTOHEADER_ENV+=	PATH=${autotools_path}:${PATH}
-AUTOTOOLS_ENV+=	PATH=${autotools_path}:${PATH}
-.endif # defined(autotools_path)
-
-########## set up automake "names"
-.if defined(use_amver)
-.if !defined(ampath)
-.if ${use_amver} == ${cur_amver}
-ACLOCAL?=	aclocal
-AUTOMAKE?=	automake
-.else
-ACLOCAL?=	aclocal${dev_amver}
-AUTOMAKE?=	automake${dev_amver}
 .endif
-.else # defined(ampath)
-ACLOCAL?=	${ampath:S/://}/aclocal
-AUTOMAKE?=	${ampath:S/://}/automake
-.endif # !defined(ampath)
-.endif # defined(use_amver)
 
-########## set up autoconf "names"
-.if defined(use_acver)
-.if !defined(acpath)
-.if ${use_acver} == ${cur_acver}
-AUTOCONF?=		autoconf
-AUTOHEADER?=	autoheader
-AUTOIFNAMES?=	ifnames
-AUTORECONF?=	autoreconf
-AUTOSCAN?=		autoscan
-AUTOUPDATE?=	autoupdate
-.else
-AUTOCONF?=		autoconf${dev_acver}
-AUTOHEADER?=	autoheader${dev_acver}
-AUTOIFNAMES?=	ifnames${dev_acver}
-AUTORECONF?=	autoreconf${dev_acver}
-AUTOSCAN?=		autoscan${dev_acver}
-AUTOUPDATE?=	autoupdate${dev_acver}
+# Sanity checking - we can't use a different version of
+# autoheader and autoconf
+#
+.if defined(USE_AUTOHEADER_VER) && defined(USE_AUTOCONF_VER) && \
+    ${USE_AUTOHEADER_VER} != ${USE_AUTOCONF_VER}
+.error Incompatible autoheader ${USE_AUTOHEADER_VER} and autoconf ${USE_AUTOCONF_VER}
 .endif
-.else # defined(acpath)
-AUTOCONF?=		${acpath}/autoconf
-AUTOHEADER?=	${acpath}/autoheader
-AUTOIFNAMES?=	${acpath}/ifnames
-AUTORECONF?=	${acpath}/autoreconf
-AUTOSCAN?=		${acpath}/autoscan
-AUTOUPDATE?=	${acpath}/autoupdate
-.endif # !defined(acpath)
-.endif # defined(use_acver)
 
-########## stupid port error checking
-# Set all unset vars for the programs to ${FALSE}. This way
-# we can catch a certain class of port Makefile errors quickly.
-ACLOCAL?=	${FALSE}
-AUTOMAKE?=	${FALSE}
-AUTOCONF?=	${FALSE}
-AUTOHEADER?=${FALSE}
-AUTOIFNAMES?=${FALSE}
-AUTORECONF?=${FALSE}
-AUTOSCAN?=	${FALSE}
-AUTOUPDATE?=${FALSE}
-ACLOCAL_DIR?=${NONEXISTENT}
-AUTOMAKE_DIR?=${NONEXISTENT}
-AUTOCONF_DIR?=${NONEXISTENT}
+.if defined(WANT_AUTOHEADER_VER) && defined(WANT_AUTOCONF_VER) && \
+	${WANT_AUTOHEADER_VER} != ${WANT_AUTOCONF_VER}
+.error Incompatible autoheader ${WANT_AUTOHEADER_VER} and autoconf ${WANT_AUTOCONF_VER}
+.endif
 
-# END AUTOMAKE/AUTOCONF
-######################################################################
+.if defined(WANT_AUTOCONF_VER)
 
-######################################################################
-# LIBTOOL
+# XXX: hackery to handle non-versioned "legacy" ports
+#	   destined to die
+#
+. if ${WANT_AUTOCONF_VER} == 253
+AUTOCONF_SUFFIX=	# empty
+. else
+AUTOCONF_SUFFIX=	${WANT_AUTOCONF_VER}
+. endif
+
+# Make sure we specified a legal version of autoconf
+#
+. if !exists(${PORTSDIR}/devel/autoconf${AUTOCONF_SUFFIX}/Makefile)
+. error Unknown AUTOCONF version: ${WANT_AUTOCONF_VER}
+. endif
+
+# Set up the autoconf/autoheader environment
+#
+AUTOCONF=			${LOCALBASE}/bin/autoconf${AUTOCONF_SUFFIX}
+AUTOCONF_DIR=		${LOCALBASE}/share/autoconf${AUTOCONF_SUFFIX}
+AUTOHEADER=			${LOCALBASE}/bin/autoheader${AUTOCONF_SUFFIX}
+AUTOIFNAMES=		${LOCALBASE}/bin/ifnames${AUTOCONF_SUFFIX}
+AUTOM4TE=			${LOCALBASE}/bin/autom4te${AUTOCONF_SUFFIX}
+AUTORECONF=			${LOCALBASE}/bin/autoreconf${AUTOCONF_SUFFIX}
+AUTOSCAN=			${LOCALBASE}/bin/autoscan${AUTOCONF_SUFFIX}
+AUTOUPDATE=			${LOCALBASE}/bin/autoupdate${AUTOCONF_SUFFIX}
+AUTOCONF_PATH=		${LOCALBASE}/libexec/autoconf${AUTOCONF_SUFFIX}:
+AUTOCONF_VARS=		AUTOCONF=${AUTOCONF} AUTOHEADER=${AUTOHEADER} AUTOIFNAMES=${AUTOIFNAMES} AUTOM4TE=${AUTOM4TE} AUTORECONF=${AUTORECONF} AUTOSCAN=${AUTOSCAN} AUTOUPDATE=${AUTOUPDATE}
+AUTOCONF_VERSION=	${WANT_AUTOCONF_VER}
+
+AUTOCONF_DEPENDS=	${AUTOCONF}:${PORTSDIR}/devel/autoconf${AUTOCONF_SUFFIX}
+BUILD_DEPENDS+=		${AUTOCONF_DEPENDS}
+. if defined(WANT_AUTOCONF_RUN) || defined(WANT_AUTOHEADER_RUN)
+RUN_DEPENDS+=		${AUTOCONF_DEPENDS}
+. endif
+
+.endif
+
+#---------------------------------------------------------------------------
+# LIBTOOL/LIBLTDL
+#---------------------------------------------------------------------------
+
+# Convenience function to save people having to depend directly on
+# devel/libltdl
+#
+.if defined(USE_LIBLTDL)
+LIB_DEPENDS+=	ltdl.4:${PORTSDIR}/devel/libltdl
+.endif
 
 .if defined(USE_LIBTOOL_VER)
-USE_LIBTOOL?=		yes
+GNU_CONFIGURE?=		yes
 WANT_LIBTOOL_VER?=	${USE_LIBTOOL_VER}
 .endif
 
-.if defined(USE_LIBTOOL)
-GNU_CONFIGURE=	yes
-WANT_LIBTOOL_VER?=	13
-.endif
-
+# Note that there aren't any non-versioned libtools, so we can skip
+# a little bit of cruft that exists in automake/autoconf above
+#
 .if defined(WANT_LIBTOOL_VER)
-LIBTOOL_VERSION=	${WANT_LIBTOOL_VER:L}
+LIBTOOL_SUFFIX=	${WANT_LIBTOOL_VER}
 
-.if exists(${PORTSDIR}/devel/libtool${LIBTOOL_VERSION}/Makefile)
-LIBTOOL_SHAREDIR=	${LOCALBASE}/share/libtool${LIBTOOL_VERSION}
-LIBTOOL_LIBEXECDIR=	${LOCALBASE}/libexec/libtool${LIBTOOL_VERSION}
-BUILD_DEPENDS+=		${LIBTOOL_LIBEXECDIR}/libtool:${PORTSDIR}/devel/libtool${LIBTOOL_VERSION}
-.else
-BROKEN="unknown LIBTOOL version: ${USE_LIBTOOL_VER}"
-.endif
+# Make sure we specified a legal version of libtool
+# 
+. if !exists(${PORTSDIR}/devel/libtool${LIBTOOL_SUFFIX}/Makefile)
+. error Unknown LIBTOOL version: ${WANT_LIBTOOL_VER}
+. endif
 
-.if defined(USE_AUTOCONF)
+# Set up the libtool environment
+#
+LIBTOOL=			${LOCALBASE}/bin/libtool${LIBTOOL_SUFFIX}
+LIBTOOLIZE=			${LOCALBASE}/bin/libtoolize${LIBTOOL_SUFFIX}
+LIBTOOL_LIBEXECDIR=	${LOCALBASE}/libexec/libtool${LIBTOOL_SUFFIX}
+LIBTOOL_SHAREDIR=	${LOCALBASE}/share/libtool${LIBTOOL_SUFFIX}
+LIBTOOL_PATH=		${LIBTOOL_LIBEXECDIR}:
+LIBTOOL_VARS=		LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE}
+LIBTOOL_VERSION=	${WANT_LIBTOOL_VER}
+
+LIBTOOL_DEPENDS=	${LIBTOOL}:${PORTSDIR}/devel/libtool${LIBTOOL_SUFFIX}
+BUILD_DEPENDS+=		${LIBTOOL_DEPENDS}
+. if defined(WANT_LIBTOOL_RUN)
+RUN_DEPENDS+=		${LIBTOOL_DEPENDS}
+. endif 
+
+LIBTOOLFLAGS?=		--disable-ltlibs		# XXX: probably not useful
+. if defined(USE_AUTOCONF_VER)
 LIBTOOLFILES?=		aclocal.m4
-.else
+. else
 LIBTOOLFILES?=		configure
+. endif
+
 .endif
 
-LIBTOOLFLAGS?=		--disable-ltlibs
+#---------------------------------------------------------------------------
+# Environmental handling
+# Now that we've got our environments defined for autotools, add them
+# in so that the rest of the world can handle them
+#
+AUTOTOOLS_PATH=	${AUTOMAKE_PATH}${AUTOCONF_PATH}${LIBTOOL_PATH}
+AUTOTOOLS_VARS=	${AUTOMAKE_VARS} ${AUTOCONF_VARS} ${LIBTOOL_VARS}
+
+.if defined(AUTOTOOLS_PATH) && (${AUTOTOOLS_PATH} != "")
+AUTOTOOLS_ENV+=	PATH=${AUTOTOOLS_PATH}${PATH}
+CONFIGURE_ENV+=	PATH=${AUTOTOOLS_PATH}${PATH}
+MAKE_ENV+=		PATH=${AUTOTOOLS_PATH}${PATH}
+SCRIPTS_ENV+=	PATH=${AUTOTOOLS_PATH}${PATH}
+. if defined(WANT_AUTOMAKE_VER)
+AUTOMAKE_ENV+=	PATH=${AUTOTOOLS_PATH}${PATH}
+. endif
+. if defined(WANT_AUTOCONF_VER)
+AUTOCONF_ENV+=	PATH=${AUTOTOOLS_PATH}${PATH}
+. endif
+. if defined(WANT_AUTOHEADER_VER)
+AUTOHEADER_ENV+=PATH=${AUTOTOOLS_PATH}${PATH}
+. endif
 .endif
 
-########## prefix to path, add to env vars
-.if defined(LIBTOOL_LIBEXECDIR)
-MAKE_ENV+=	PATH=${LIBTOOL_LIBEXECDIR}:${PATH}
-CONFIGURE_ENV+=	PATH=${LIBTOOL_LIBEXECDIR}:${PATH}
-SCRIPTS_ENV+=	PATH=${LIBTOOL_LIBEXECDIR}:${PATH}
-AUTOCONF_ENV+=	PATH=${LIBTOOL_LIBEXECDIR}:${PATH}
-AUTOMAKE_ENV+=	PATH=${LIBTOOL_LIBEXECDIR}:${PATH}
-AUTOTOOLS_ENV+=	PATH=${LIBTOOL_LIBEXECDIR}:${PATH}
-.endif # defined(ltpath)
+.if defined(AUTOTOOLS_VARS) && (${AUTOTOOLS_VARS} != "")
+AUTOTOOLS_ENV+=	${AUTOTOOLS_VARS}
+CONFIGURE_ENV+=	${AUTOTOOLS_VARS}
+MAKE_ENV+=		${AUTOTOOLS_VARS}
+SCRIPTS_ENV+=	${AUTOTOOLS_VARS}
+. if defined(WANT_AUTOMAKE_VER)
+AUTOMAKE_ENV+=	${AUTOTOOLS_VARS}
+. endif
+. if defined(WANT_AUTOCONF_VER)
+AUTOCONF_ENV+=	${AUTOTOOLS_VARS}
+. endif
+. if defined(WANT_AUTOHEADER_VER)
+AUTOHEADER_ENV+=${AUTOTOOLS_VARS}
+. endif
+.endif
 
-LIBTOOL?=	${LIBTOOL_LIBEXECDIR}/libtool
-LIBTOOLIZE?=	${LIBTOOL_LIBEXECDIR}/libtoolize
+#---------------------------------------------------------------------------
+# Make targets
+#---------------------------------------------------------------------------
 
-# END LIBTOOL
-######################################################################
-
+# run-autotools
+#
+# Part of the configure set - run appropriate programs prior to
+# the actual configure target if autotools are in use
+#
 .if !target(run-autotools)
 run-autotools:
-.if defined(USE_AUTOMAKE)
-	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOMAKE_ENV} ${AUTOMAKE} \
+.if defined(USE_AUTOMAKE_VER)
+	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOMAKE} \
 		${AUTOMAKE_ARGS})
 .endif
-.if defined(USE_AUTOCONF)
-	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF} \
+.if defined(USE_AUTOCONF_VER)
+	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOCONF} \
 		${AUTOCONF_ARGS})
 .endif
-.if defined(USE_AUTOHEADER)
-	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOHEADER_ENV} ${AUTOHEADER} \
+.if defined(USE_AUTOHEADER_VER)
+	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOHEADER} \
 		${AUTOHEADER_ARGS})
 .endif
 .endif
 
-# patch-autools
+# patch-autotools
 #
 # Special target to automatically make libtool using ports use the
 # libtool port.  See above for default values of LIBTOOLFILES.
 #
-# This target works by first checking the version of the installed
-# libtool shell script, which is not actually used.  Rather its path
-# is determined, and used to find the path to ltconfig and ltmain.sh
-# (which is ../share/libtool/).  Then the configure script is copied
-# and the default paths for ltconfig and ltmain.sh (normally ./) is
-# replaced.  The port's configure script therefore uses the files
-# installed by the libtool port in place of it's own.
-#
-# Also passed to ltconfig are ${LIBTOOLFLAGS}, which can be used to
-# customise the behaviour of the port.  Besides the normal flags the
-# freebsd port of libtool supports three special flags:
-#  --disable-ltlibs		Don't install the .la files. (on by default)
-#  --release-ignore		Ignore any -release flags. (off by default)
-#  --release-suffix		Add the -release to all libraries, not just
-#						the shared library. (off by default)
-#
-
 .if !target(patch-autotools)
 patch-autotools:
-.if defined(USE_LIBTOOL)
+.if defined(USE_LIBTOOL_VER)
 	 @(cd ${PATCH_WRKSRC}; \
 	 for file in ${LIBTOOLFILES}; do \
 		${CP} $$file $$file.tmp; \
