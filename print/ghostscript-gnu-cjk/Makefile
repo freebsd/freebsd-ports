@@ -26,6 +26,8 @@ EXTRACT_ONLY=	${GS_SRC}
 
 MAINTAINER=	saito@a2z.co.jp
 
+BROKEN=		"DOes not build"
+
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/graphics/jpeg:extract
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
