@@ -1,42 +1,40 @@
 bin/mmucl
-@unexec install-info --delete %D/info/mmucl.info %D/info/dir
-info/mmucl.info
-@exec install-info %D/info/mmucl.info %D/info/dir
-lib/mmucl/images/action.gif
-lib/mmucl/images/alias.gif
-lib/mmucl/images/bind.gif
-lib/mmucl/images/char.gif
-lib/mmucl/images/connect.gif
-lib/mmucl/images/help.gif
-lib/mmucl/images/load.gif
-lib/mmucl/images/mmucl.gif
-lib/mmucl/images/quit.gif
-lib/mmucl/images/save.gif
-lib/mmucl/images/send.gif
-lib/mmucl/images/sub.gif
-@dirrm lib/mmucl/images
-lib/mmucl/interface/console.tcl
-lib/mmucl/interface/gtk.tcl
-lib/mmucl/interface/text.tcl
-lib/mmucl/interface/tk.tcl
-lib/mmucl/interface/xterm.tcl
-@dirrm lib/mmucl/interface
-lib/mmucl/lib/balloon.tcl
-lib/mmucl/lib/misc.tcl
-lib/mmucl/lib/mmucl.tcl
-lib/mmucl/lib/mmucl_tk.tcl
-lib/mmucl/lib/ntkinfo.tcl
-lib/mmucl/lib/term.tcl
-lib/mmucl/lib/tkconf.tcl
-@dirrm lib/mmucl/lib
-lib/mmucl/.tkconf
-@dirrm lib/mmucl
-share/doc/mmucl-1.4.1/examples/Arithon
-share/doc/mmucl-1.4.1/examples/edit.tcl
-share/doc/mmucl-1.4.1/examples/map.tcl
-share/doc/mmucl-1.4.1/examples/mmucl.rc
-@dirrm share/doc/mmucl-1.4.1/examples
-share/doc/mmucl-1.4.1/CHANGES
-share/doc/mmucl-1.4.1/FAQ
-share/doc/mmucl-1.4.1/README
-@dirrm share/doc/mmucl-1.4.1
+lib/mmucl2/images/action.gif
+lib/mmucl2/images/alias.gif
+lib/mmucl2/images/bind.gif
+lib/mmucl2/images/char.gif
+lib/mmucl2/images/connect.gif
+lib/mmucl2/images/help.gif
+lib/mmucl2/images/load.gif
+lib/mmucl2/images/mmucl.gif
+lib/mmucl2/images/quit.gif
+lib/mmucl2/images/save.gif
+lib/mmucl2/images/send.gif
+lib/mmucl2/images/sub.gif
+@dirrm lib/mmucl2/images
+lib/mmucl2/interface/gnome.tcl
+lib/mmucl2/interface/readline.tcl
+lib/mmucl2/interface/text.tcl
+lib/mmucl2/interface/tk.tcl
+@dirrm lib/mmucl2/interface
+lib/mmucl2/examples/mmucl.rc
+@dirrm lib/mmucl2/examples
+lib/mmucl2/lib/connect.tcl
+lib/mmucl2/lib/connect_test.tcl
+lib/mmucl2/lib/misc.tcl
+lib/mmucl2/lib/mmucl.tcl
+lib/mmucl2/lib/ntkinfo.tcl
+@dirrm lib/mmucl2/lib
+@dirrm lib/mmucl2
+share/doc/mmucl-1.5.1/CHANGES
+share/doc/mmucl-1.5.1/README
+share/doc/mmucl-1.5.1/examples/Arithon
+share/doc/mmucl-1.5.1/examples/channel.tcl
+share/doc/mmucl-1.5.1/examples/email.tcl
+share/doc/mmucl-1.5.1/examples/map.tcl
+share/doc/mmucl-1.5.1/examples/mmucl.rc
+share/doc/mmucl-1.5.1/examples/monitor.tcl
+share/doc/mmucl-1.5.1/examples/msp.tcl
+share/doc/mmucl-1.5.1/examples/robot.tcl
+@dirrm share/doc/mmucl-1.5.1/examples
+@dirrm share/doc/mmucl-1.5.1
