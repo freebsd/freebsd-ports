@@ -106,6 +106,7 @@
     SUBDIR += kdegraphics2
     SUBDIR += killustrator
     SUBDIR += kplot3d
+    SUBDIR += landscape
     SUBDIR += lcms
     SUBDIR += leafpak
     SUBDIR += lfview
