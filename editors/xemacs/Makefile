@@ -3,7 +3,7 @@
 # Date created:		26 August 1997
 # Whom:			Michael Elbel (me)
 #
-# $Id: Makefile,v 1.7 1998/01/01 21:06:35 gj Exp $
+# $Id: Makefile,v 1.8 1998/02/15 15:43:42 steve Exp $
 #
 
 DISTNAME=	xemacs-20.3
@@ -34,8 +34,7 @@ CONFIGURE_ARGS=	i386--freebsd --prefix=${PREFIX} \
 		--site-includes=${PREFIX}/include \
 		--site-libraries=${PREFIX}/lib \
 		--sitelispdir="${PREFIX}/lib/xemacs/site-lisp ${PREFIX}/share/emacs/site-lisp" \
-		--with-xface=no \
-		${WITH_MULE} ${WITH_DIALOGS}
+		${WITH_XFACE} ${WITH_MULE} ${WITH_DIALOGS}
 MAN1=		ctags.1 etags.1 gnuattach.1 gnuclient.1 gnudoit.1 \
 		gnuserv.1 xemacs.1
 ALL_TARGET=	all dist
@@ -60,6 +59,11 @@ PLIST=		${PKGDIR}/PLIST.mule
 # hack to avoid shipping binaries linked with Motif
 .if defined(MOTIF_STATIC)
 WITH_DIALOGS=	--with-dialogs=athena
+.endif
+
+# Drop faces if building package, autodetect otherwise
+.if defined(PACKAGE_BUILDING)
+WITH_XFACE?=	--with-xface=no
 .endif
 
 post-install:
