@@ -7,16 +7,16 @@
 
 PORTNAME=	auth_ldap
 PORTVERSION=	1.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.rudedog.org/auth_ldap/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache module to authenticate against an LDAP directory
 
-BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
+BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
 LIB_DEPENDS=	lber.2:${PORTSDIR}/net/openldap20
-RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
+RUN_DEPENDS=	${APXS}:${APACHE_PORT}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	LIBS="-llber"
@@ -28,10 +28,14 @@ CONFIGURE_ARGS= --with-sdk-headers=${LOCALBASE}/include \
 USE_GMAKE=	yes
 
 APXS?=		${LOCALBASE}/sbin/apxs
+APACHE_PORT?=	${PORTSDIR}/www/apache13
 
 MAKE_ARGS+=	APXS=${APXS}
 
+post-patch:
+	${CP} -p ${WRKSRC}/auth_ldap.c ${WRKSRC}/mod_auth_ldap.c
+
 do-install:
-	${APXS} -i -A -n ldap ${WRKSRC}/auth_ldap.so
+	${APXS} -i -a -n auth_ldap ${WRKSRC}/mod_auth_ldap.so
 
 .include <bsd.port.mk>
