@@ -15,10 +15,10 @@ MAINTAINER=	taoka@FreeBSD.org
 
 RUN_DEPENDS+=	eblook:${PORTSDIR}/japanese/eblook
 
-FILESDIR=	${.CURDIR}/../lookup-mule/files
-PKGDIR=		${.CURDIR}/../lookup-mule
+FILESDIR=	${.CURDIR}/../lookup/files
+PKGDIR=		${.CURDIR}/../lookup
 PLIST=		${.CURDIR}/pkg-plist
-EMACS_PORT_NAME?=	mule
+EMACS_PORT_NAME?=	emacs21
 
 .if (${EMACS_PORT_NAME} == "xemacs21-mule")
 EMACSDIR=	${PREFIX}/lib/xemacs/site-packages
@@ -26,9 +26,9 @@ ELISPDIR=	${EMACSDIR}/lisp/lookup
 PORTINFODIR=	${EMACSDIR}/info
 MANIFEST=	MANIFEST.lookup
 .else
-EMACSDIR=	${PREFIX}/share/${EMACS_NAME}/site-lisp
-ELISPDIR=	${EMACSDIR}/lookup
+ELISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/lookup
 PORTINFODIR=	${PREFIX}/info
+PLIST_SUB=	ELISPDIR=${EMACS_VERSION_SITE_LISPDIR}
 .endif
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS= --with-emacs=${EMACS_CMD} \

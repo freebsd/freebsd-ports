@@ -183,6 +183,7 @@
     SUBDIR += linux-netscape47-navigator
     SUBDIR += linux_locale
     SUBDIR += lipsf
+    SUBDIR += lookup
     SUBDIR += lookup-emacs20
     SUBDIR += lookup-mule
     SUBDIR += lookup-xemacs
