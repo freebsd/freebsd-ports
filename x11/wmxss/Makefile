@@ -8,7 +8,8 @@
 PORTNAME=	wmxss
 PORTVERSION=	0.1
 CATEGORIES=	x11
-MASTER_SITES=	http://nis-www.lanl.gov/~mgh/WindowMaker/
+MASTER_SITES=	http://nis-www.lanl.gov/~mgh/WindowMaker/ \
+		http://www.cs.mun.ca/~gstarkes/wmaker/dockapps/files/
 
 MAINTAINER=	bms@FreeBSD.org
 COMMENT=	Run xscreensaver modules inside a WindowMaker dock
