@@ -123,6 +123,7 @@ pre-extract:
 post-patch:
 .if defined(WITH_ENCODING_PATCH)
 	@${PATCH} -s -p1 -d ${WRKSRC} < ${WRKDIR}/xmms-ds-recode.patch
+	@${PATCH} -s -p0 -d ${WRKSRC} < ${FILESDIR}/Input-vorbis-fileinfo.c.diff
 .endif
 	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
 		 's|\(datadir\)/aclocal|(prefix)/share/aclocal|g'
