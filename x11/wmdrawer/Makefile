@@ -24,7 +24,7 @@ LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 gdkpixbuf
 USE_GMAKE=	yes
 CFLAGS+=	-I${LOCALBASE}/include `gdk-pixbuf-config --cflags`
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt `gdk-pixbuf-config --libs` -lgdk_pixbuf_xlib" DOCSDIR=${DOCSDIR}
