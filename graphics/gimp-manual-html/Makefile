@@ -36,19 +36,20 @@ pre-fetch:
 	@${ECHO} "This manual is available in two formats: HTML and PDF."
 	@${ECHO} "Note that the manual is pretty darn big."
 
-.if ${DOCFORMAT} == "HTML"
-DISTFILES=	GimpUsersManual_SecondEdition-HTML_Color.tar.gz \
-		GimpUsersManual_SecondEdition-HTML_Search.tar.gz
-
 PREFIX?=	${X11BASE}	# This port itself does not require Xlib
 EXTRACT_ONLY=	#empty
 NO_BUILD=	yes
+
+.if ${DOCFORMAT} == "HTML"
+DISTFILES=	GimpUsersManual_SecondEdition-HTML_Color.tar.gz \
+		GimpUsersManual_SecondEdition-HTML_Search.tar.gz
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/doc/gimp
 	for file in ${DISTFILES} ; do \
 		cd ${PREFIX}/share/doc/gimp; \
 		${TAR} -zxf ${DISTDIR}/$${file}; \
+		@${CHOWN} -R root:wheel ${PREFIX}/share/doc/gimp \
 	done
 .endif
 
@@ -62,7 +63,7 @@ NO_BUILD=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/share/doc/gimp
 	for file in ${DISTFILES} ; do \
-		${CP} ${DISTDIR}/$${file} ${PREFIX}/share/doc/gimp/; \
+		${INSTALL_DATA} ${DISTDIR}/$${file} ${PREFIX}/share/doc/gimp/ ; \
 	done
 .endif
 
