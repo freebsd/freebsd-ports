@@ -1,15 +1,18 @@
 @comment $FreeBSD$
 bin/bison
-share/bison.hairy
-share/bison.simple
+share/bison/bison.hairy
+share/bison/bison.simple
 @unexec install-info --delete %D/info/bison.info %D/info/dir
 info/bison.info
 @exec install-info %D/info/bison.info %D/info/dir
 share/locale/de/LC_MESSAGES/bison.mo
 share/locale/es/LC_MESSAGES/bison.mo
+share/locale/et/LC_MESSAGES/bison.mo
 share/locale/fr/LC_MESSAGES/bison.mo
+share/locale/ja/LC_MESSAGES/bison.mo
 share/locale/nl/LC_MESSAGES/bison.mo
 share/locale/ru/LC_MESSAGES/bison.mo
+@dirrm share/bison
 @unexec rmdir %D/share/locale/*/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/* 2>/dev/null || true
 @unexec rmdir %D/share/locale 2>/dev/null || true

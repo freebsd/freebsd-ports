@@ -7,12 +7,11 @@
 #
 
 PORTNAME=		bison
-PORTVERSION=		1.28
+PORTVERSION=		1.29
 CATEGORIES=		devel
 MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	bison
 
-MAINTAINER=		wghicks@bellsouth.net
 MAINTAINER=		obrien@NUXI.com
 
 LIB_DEPENDS=		intl.1:${PORTSDIR}/devel/gettext
@@ -22,9 +21,6 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -lintl"
 
 MAN1=			bison.1
-
-pre-configure:
-	@${CP} ${FILESDIR}/ru.po ${WRKSRC}/po/
 
 post-install:
 	@if [ ! -f ${PREFIX}/info/dir ]; then \
