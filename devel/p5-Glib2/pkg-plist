@@ -13,6 +13,13 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/MakeHelper.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Object.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Object/Subclass.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/Param/Boolean.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/Param/Double.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/Param/Enum.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/Param/Flags.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/Param/Int.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/Param/String.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/Param/UInt.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/ParamSpec.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/ParseXSDoc.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Signal.pod
@@ -28,7 +35,5 @@
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Glib
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Install
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Object
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Glib
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Glib/Install 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Glib/Object 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Param
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Glib 2>/dev/null || true
