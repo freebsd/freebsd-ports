@@ -1,0 +1,5 @@
+@cwd /usr/X11R6
+bin/xinvaders
+man/man6/xinvaders.6.gz
+lib/X11/app-defaults/Vaders
+lib/X11/xinvaders

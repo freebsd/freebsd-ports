@@ -1,0 +1,18 @@
+Vaders*BitmapDirectory:        /usr/X11R6/lib/X11/xinvaders/
+Vaders*Scale:                  2
+Vaders*defaultfore:            white
+Vaders*defaultback:            black
+Vaders*Vader1Color:            blue
+Vaders*Vader2Color:            green
+Vaders*Vader3Color:            red
+Vaders*BaseColor:              cyan
+Vaders*BuildingColor:          yellow
+Vaders*SpacerColor:            gray
+Vaders*ShotColor:              lavender
+Vaders*VshotColor:             orange
+Vaders*BaseWait:               10
+Vaders*VaderWait:              300
+Vaders*SpacerWait:             50
+Vaders*ShotWait:               10
+Vaders*VshotWait:              30
+
