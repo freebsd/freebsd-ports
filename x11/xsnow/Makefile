@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xsnow
-PORTVERSION=	1.41
+PORTVERSION=	1.42
 PORTREVISION=	0
 CATEGORIES=	x11
 MASTER_SITES=	http://www.euronet.nl/~rja/Xsnow/
