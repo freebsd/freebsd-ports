@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- configure.orig	Mon Nov 29 13:50:41 2004
++++ configure	Mon Nov 29 13:52:11 2004
+@@ -25861,6 +25861,8 @@
+                 ac_cv_java_include="-I$java_include -I$java_include/osf" ;;
+               solaris*)
+                 ac_cv_java_include="-I$java_include -I$java_include/solaris" ;;
++              freebsd*)
++                ac_cv_java_include="-I$java_include -I$java_include/freebsd" ;;
+               *)
+                 { echo "$as_me:$LINENO: WARNING: please add appropriate -I$java_include/<operating system> flag" >&5
+ echo "$as_me: WARNING: please add appropriate -I$java_include/<operating system> flag" >&2;}
