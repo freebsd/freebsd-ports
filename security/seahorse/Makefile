@@ -26,6 +26,7 @@ USE_GNOME=	gnomehack intlhack gnomeprefix eel2
 USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
 INSTALLS_OMF=	yes
+CONFIGURE_ARGS=	--disable-gpg-check
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
