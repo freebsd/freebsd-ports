@@ -30,8 +30,8 @@ LIB_DEPENDS+=	mcal.0:${PORTSDIR}/misc/libmcal
 .if !defined(WITHOUT_SSL)
 RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libssl.so:${PORTSDIR}/www/apache13-modssl
 .endif
-RUN_DEPENDS+=	${LOCALBASE}/lib/php/Cache/DB.php:${PORTSDIR}/devel/pear
-#RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
+#RUN_DEPENDS+=	${LOCALBASE}/lib/php/Cache/DB.php:${PORTSDIR}/devel/pear
+RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
 
 NO_BUILD=	yes
 DOCS=		COPYING README docs/CHANGES docs/CODING_STANDARDS docs/CREDITS \
