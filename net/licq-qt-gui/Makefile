@@ -16,7 +16,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \
 		LIBS="${PTHREAD_LIBS}"
-INCDIR=		${PORTSDIR}/net
+LICQ_PORT?=	${PORTSDIR}/net/licq
 
 .if defined(WITH_KDE)
 USE_KDELIBS_VER=3
@@ -46,5 +46,5 @@ post-install:
 .endif
 
 .include <bsd.port.pre.mk>
-.include "${INCDIR}/licq/Makefile.inc"
+.include "${LICQ_PORT}/Makefile.inc"
 .include <bsd.port.post.mk>

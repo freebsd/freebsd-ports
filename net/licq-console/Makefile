@@ -15,8 +15,8 @@ USE_AUTOCONF_VER=	253
 USE_AUTOMAKE_VER=	15
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \
 		LIBS="${PTHREAD_LIBS}"
-INCDIR=		${PORTSDIR}/net
+LICQ_PORT?=	${PORTSDIR}/net/licq
 
 .include <bsd.port.pre.mk>
-.include "${INCDIR}/licq/Makefile.inc"
+.include "${LICQ_PORT}/Makefile.inc"
 .include <bsd.port.post.mk>
