@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	mplayerplug-in
-PORTVERSION=	0.71
+PORTVERSION=	0.80
 CATEGORIES=	www multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mplayerplug-in
-DISTNAME=	${PORTNAME}_v${PORTVERSION}
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	A Mozilla plugin for the MPlayer media player
