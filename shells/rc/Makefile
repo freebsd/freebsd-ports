@@ -6,13 +6,20 @@
 #
 
 PORTNAME=	rc
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	shells plan9
 MASTER_SITES=	http://www.star.le.ac.uk/~tjg/rc/release/ \
 		ftp://ftp.sys.utoronto.ca/pub/rc/
 
 MAINTAINER=	saken@hotel.rmta.org
 COMMENT=	A unix incarnation of the plan9 shell
+
+.if defined(WITH_READLINE)
+CONFIGURE_ARGS+=	--with-readline
+.endif
+.if !defined(WITH_READLINE)
+MAKE_ARGS+=	CFLAGS="$(CFLAGS) -static"
+.endif
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-history
