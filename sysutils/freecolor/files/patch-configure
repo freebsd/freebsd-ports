@@ -1,0 +1,34 @@
+--- configure.bak	Wed May 19 22:46:01 2004
++++ configure	Wed May 19 22:46:41 2004
+@@ -2940,6 +2940,7 @@
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ $ac_includes_default
++#define SG_ENABLE_DEPRECATED
+ #include <statgrab.h>
+ _ACEOF
+ rm -f conftest.$ac_objext
+@@ -2983,6 +2984,7 @@
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
++#define SG_ENABLE_DEPRECATED
+ #include <statgrab.h>
+ _ACEOF
+ if { (eval echo "$as_me:$LINENO: \"$ac_cpp conftest.$ac_ext\"") >&5
+@@ -3179,6 +3181,7 @@
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ $ac_includes_default
++#define SG_ENABLE_DEPRECATED
+ #include <statgrab.h>
+ _ACEOF
+ rm -f conftest.$ac_objext
+@@ -3222,6 +3225,7 @@
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
++#define SG_ENABLE_DEPRECATED
+ #include <statgrab.h>
+ _ACEOF
+ if { (eval echo "$as_me:$LINENO: \"$ac_cpp conftest.$ac_ext\"") >&5
