@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vgb
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://fms.komkon.org/VGB/
