@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.dtek.chalmers.se/groups/dvd/dist/
 MAINTAINER=	lioux@FreeBSD.org
 
 LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52 \
-		dvdcss.1:${PORTSDIR}/graphics/libdvdcss \
+		dvdcss.2:${PORTSDIR}/graphics/libdvdcss \
 		dvdread.2:${PORTSDIR}/graphics/libdvdread \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		xml2.5:${PORTSDIR}/textproc/libxml2

@@ -76,7 +76,7 @@ SKIN_DETECTION_FILE!=  ${MAKE} -f ${SKIN_PORT}/Makefile -V SKIN_DETECTION_FILE
 .endif
 
 .if defined(WITH_DVD)
-LIB_DEPENDS+=	dvdcss.1:${PORTSDIR}/graphics/libdvdcss \
+LIB_DEPENDS+=	dvdcss.2:${PORTSDIR}/graphics/libdvdcss \
 		dvdread.2:${PORTSDIR}/graphics/libdvdread
 .endif
 
