@@ -21,11 +21,12 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=		james@netinertia.co.uk
 COMMENT=		An open source, completely automatic on-line backup system for UNIX
 
-RUN_DEPENDS=	openssl:${PORTSDIR}/security/openssl
-
+USE_OPENSSL=	yes
 HAS_CONFIGURE=	yes
 USE_REINPLACE=	yes
 USE_RC_SUBR=	yes
+
+PKGMESSAGE=		${WRKDIR}/pkg-message
 
 .if defined(CLIENT_ONLY) && !defined(SERVER_ONLY)
 CONFLICTS=	boxbackup-[0-9]* boxbackup-server-[0-9]*
@@ -80,12 +81,11 @@ post-patch:
 		${WRKSRC}/bbstored.sh
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' <${FILESDIR}/bbackupd.sh >\
 		${WRKSRC}/bbackupd.sh
-	@${RM} -f ${PKGDIR}/pkg-message
 .if defined(CLIENT_ONLY) || !defined(SERVER_ONLY)
-	@${CAT} ${FILESDIR}/pkg-message.client >>${PKGDIR}/pkg-message
+	@${CAT} ${FILESDIR}/pkg-message.client >> ${PKGMESSAGE}
 .endif
 .if defined(SERVER_ONLY) || !defined(CLIENT_ONLY)
-	@${CAT} ${FILESDIR}/pkg-message.server >>${PKGDIR}/pkg-message
+	@${CAT} ${FILESDIR}/pkg-message.server >> ${PKGMESSAGE}
 .endif
 
 .if defined(SERVER_ONLY) || !defined(CLIENT_ONLY)
