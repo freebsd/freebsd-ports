@@ -1,0 +1,7 @@
+bin/dis
+share/examples/dis/666.dis
+share/examples/dis/cat.dis
+share/examples/dis/cat_expl.dis
+@dirrm share/examples/dis
+%%PORTDOCS%%share/doc/dis/dis.txt
+%%PORTDOCS%%@dirrm share/doc/dis
