@@ -1,12 +1,23 @@
 #!/bin/sh
 
-PATH=/bin:/usr/sbin
+PATH=/bin:/usr/bin:/usr/sbin
 if [ -z "${BACULA_DIR}" ]; then
 	BACULA_DIR=/var/db/bacula
 fi
 
+# Always add lines in /etc/services
+grep -q "bacula-dir" /etc/services
+if [ "$?" != "0" ]; then
+    echo "# Bacula port start
+bacula-dir      9101/tcp   #Bacula director daemon
+bacula-fd       9102/tcp   #Bacula file daemon
+bacula-sd       9103/tcp   #Bacula storage daemon
+# Bacule port end" >> /etc/services
+fi
+
 case $2 in
-PRE-INSTALL)
+POST-INSTALL)
+	# Install UID/GID
 	USER=bacula
 	GROUP=${USER}
 	UID=910
@@ -42,7 +53,6 @@ PRE-INSTALL)
 			exit 1
 		fi
 	fi
-
 	chown -R ${USER}:${GROUP} ${BACULA_DIR}
 	;;
 esac

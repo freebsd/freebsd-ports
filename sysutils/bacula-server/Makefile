@@ -7,7 +7,7 @@
 
 PORTNAME=	bacula
 PORTVERSION=	1.32f
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bacula
@@ -81,17 +81,18 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_CFLAGS}|g' ${WRKSRC}/configure
 
-pre-install:
-.if !defined(WITH_CLIENT_ONLY)
-	@ ${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
-.endif
-
 post-install:
 .if defined(WITH_CLIENT_ONLY)
+	# Extend only /etc/services
+	@ ${SETENV} PKG_PREFIX=${PREFIX} \
+		${SH} ${PKGINSTALL} ${PORTNAME}
 	# don't know how to make it better
 	${RM} -f ${PREFIX}/etc/rc.d/bacula.sh.sample
 .else
+	# Extend /etc/services and install UID/GID
+	@ ${SETENV} PKG_PREFIX=${PREFIX} \
+		${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
+	# Install config files and preserve existing ones
 	${INSTALL_SCRIPT} ${FILESDIR}/chio-bacula ${PREFIX}/sbin
 	if [ -f ${PREFIX}/etc/bacula-barcodes ]; then \
 		${INSTALL_DATA} ${FILESDIR}/bacula-barcodes ${PREFIX}/etc/bacula-barcodes.new ; \
