@@ -68,8 +68,6 @@ share/locale/sv/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/ta/LC_MESSAGES/akregator.mo
 share/locale/tr/LC_MESSAGES/akregator.mo
 share/locale/tr/LC_MESSAGES/akregator_konqplugin.mo
-share/locale/xx/LC_MESSAGES/akregator.mo
-share/locale/xx/LC_MESSAGES/akregator_konqplugin.mo
 share/services/akregator_konqplugin.desktop
 share/services/akregator_part.desktop
 share/services/feed.protocol
@@ -77,8 +75,6 @@ share/services/kontact/akregatorplugin.desktop
 share/services/kontact/akregatorplugin3.2.desktop
 @dirrm share/services/kontact
 @dirrm share/services
-@dirrm share/locale/xx/LC_MESSAGES
-@dirrm share/locale/xx
 @dirrm share/locale/tr/LC_MESSAGES
 @dirrm share/locale/ta/LC_MESSAGES
 @dirrm share/locale/ta
