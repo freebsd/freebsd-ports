@@ -1,16 +1,17 @@
 # New ports collection makefile for:	WindowMaker
-# Version required:	0.20.0
+# Version required:	0.20.1
 # Date created:		August 13, 1997
 # Whom:			handy@physics.montana.edu
 #
-# $Id: Makefile,v 1.32 1998/09/24 15:13:35 tg Exp $
+# $Id: Makefile,v 1.33 1998/09/27 20:59:11 steve Exp $
 
-DISTNAME=	WindowMaker-0.20.0
-PKGNAME=	windowmaker-0.20.0
+DISTNAME=	WindowMaker-0.20.1
+PKGNAME=	windowmaker-0.20.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.windowmaker.org/pub/beta/srcs/ \
 		ftp://ftp.io.com/pub/mirror/windowmaker/beta/srcs/ \
 		http://jgo.local.net/cool_downloads/wm/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DATAFILES}
 
 MAINTAINER=	handy@physics.montana.edu
 
@@ -29,8 +30,10 @@ CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 	--with-gfx-libs="-L${LOCALBASE}/lib" \
 	--with-gfx-incs="-I${LOCALBASE}/include/tiff34 -I${LOCALBASE}/include"
 
-MAN1=	convertstyle.1 geticonset.1x getstyle.1x seticons.1x setstyle.1x \
+MAN1=	geticonset.1x getstyle.1x seticons.1x setstyle.1x \
 	wdwrite.1x wmaker.1x wmsetbg.1x wxcopy.1x wxpaste.1x
+
+DATAFILES=	WindowMaker-data.tar.gz
 
 post-extract:
 	cd ${WRKSRC}; ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} libPropList.tar.gz
@@ -49,6 +52,9 @@ pre-install:
 	@(cd ${WRKSRC}/libPropList; ${MAKE} ${MAKE_ENV} install)
 
 post-install:
+	${MKDIR} ${PREFIX}/share/WindowMaker/Pixmaps/
+	${INSTALL_DATA} ${WRKDIR}/WindowMaker-data/pixmaps/* \
+		${PREFIX}/share/WindowMaker/Pixmaps/
 	if [ "${PORTOBJFORMAT}" = "elf" ]; then \
 		${LN} -sf libPropList.so.0 ${PREFIX}/lib/libPropList.so; \
 	else \
