@@ -133,14 +133,12 @@ ask_distrib FreeBSD.cvs /home/ncvs . \
     "main source tree, except crypto code (350 MB)"
 ask_distrib FreeBSD-crypto.cvs /home/ncvs . \
     "crypto code (7 MB)"
-ask_distrib FreeBSD.lite2 /home/lite2 . \
-    "BSD-4.4lite2 merge source tree (45 MB)"
-ask_distrib FreeBSD.smp /home/smp . \
-    "SMP support source tree (25 MB)"
 ask_distrib FreeBSD-www.current /usr/local/www . \
     "installed World Wide Web data (16 MB)"
 ask_distrib FreeBSD-gnats.current /home/gnats gnats \
     "GNATS bug tracking database (12 MB)"
+ask_distrib FreeBSD-mail.current /home/mail . \
+    "mailing list archive (150 MB)"
 
 cat <<EOF
 
