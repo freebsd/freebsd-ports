@@ -1,0 +1,36 @@
+bin/rbbr
+%%RUBY_SITELIBDIR%%/rbbr.rb
+%%RUBY_SITELIBDIR%%/rbbr/config.rb
+%%RUBY_SITELIBDIR%%/rbbr/doc.rb
+%%RUBY_SITELIBDIR%%/rbbr/doc/gtkdoc.rb
+%%RUBY_SITELIBDIR%%/rbbr/doc/refe.rb
+%%RUBY_SITELIBDIR%%/rbbr/doc/ri.rb
+%%RUBY_SITELIBDIR%%/rbbr/doc/rubyapi.rb
+%%RUBY_SITELIBDIR%%/rbbr/metainfo.rb
+%%RUBY_SITELIBDIR%%/rbbr/plugin.rb
+%%RUBY_SITELIBDIR%%/rbbr/ui.rb
+%%RUBY_SITELIBDIR%%/rbbr/ui/gtk.rb
+%%RUBY_SITELIBDIR%%/rbbr/ui/gtk/aboutdialog.rb
+%%RUBY_SITELIBDIR%%/rbbr/ui/gtk/browselist.rb
+%%RUBY_SITELIBDIR%%/rbbr/ui/gtk/browser.rb
+%%RUBY_SITELIBDIR%%/rbbr/ui/gtk/docviewer.rb
+%%RUBY_SITELIBDIR%%/rbbr/ui/gtk/libselectiondialog.rb
+%%RUBY_SITELIBDIR%%/rbbr/ui/gtk/moduledisplay.rb
+%%RUBY_SITELIBDIR%%/rbbr/ui/gtk/moduleindex.rb
+%%RUBY_SITELIBDIR%%/rbbr/ui/gtk/modulelabel.rb
+%%RUBY_SITELIBDIR%%/rbbr/ui/gtk/modulenestingtree.rb
+%%RUBY_SITELIBDIR%%/rbbr/ui/gtk/stockbrowser.rb
+%%RUBY_SITELIBDIR%%/rbbr/ui/gtk/windowutils.rb
+@dirrm %%RUBY_SITELIBDIR%%/rbbr/ui/gtk
+@dirrm %%RUBY_SITELIBDIR%%/rbbr/ui
+@dirrm %%RUBY_SITELIBDIR%%/rbbr/doc
+@dirrm %%RUBY_SITELIBDIR%%/rbbr
+share/rbbr/icon.xpm
+share/rbbr/rubyapi.db
+@dirrm share/rbbr
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/AUTHORS
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
