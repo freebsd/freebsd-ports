@@ -16,11 +16,11 @@ Please select desired options:" -1 -1 16 \
 PCRE		"Perl Compatible Regular Expressions" ON \
 SASL		"Cyrus SASL (Simple Authentication and Security Layer)" OFF \
 DB3		"Berkeley DB3 (required if SASL also built with DB3)" OFF \
-TLS		"Secure Sockets Layer and Transport Layer Security" OFF \
 MySQL		"MySQL map lookups" OFF \
 OpenLDAP	"OpenLDAP map lookups" OFF \
 Test		"SMTP/LMTP test server and generator" OFF \
 2> $tempfile
+#TLS		"Secure Sockets Layer and Transport Layer Security" OFF \
 
 	retval=$?
 
