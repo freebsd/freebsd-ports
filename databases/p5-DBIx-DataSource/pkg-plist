@@ -1,0 +1,9 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBIx/DataSource/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/DBIx/DataSource.pm
+lib/perl5/site_perl/%%PERL_VER%%/DBIx/DataSource/Driver.pm
+lib/perl5/site_perl/%%PERL_VER%%/DBIx/DataSource/mysql.pm
+lib/perl5/site_perl/%%PERL_VER%%/DBIx/DataSource/Pg.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBIx/DataSource
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/DBIx/DataSource
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBIx 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/DBIx 2>/dev/null || true
