@@ -1,0 +1,7 @@
+Ftrace logs files created and/or modified by some process (typically
+`make install') and its children. It consists of a shell wrapper and
+library that is preloaded to the target program. Ftrace is basically
+an 'installwatch' clone, but has some additional features.
+
+- George Reid
+greid@ukug.uk.freebsd.org
