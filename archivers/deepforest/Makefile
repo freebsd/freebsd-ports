@@ -8,7 +8,9 @@
 PORTNAME=	deepforest
 PORTVERSION=	1.0a
 CATEGORIES=	${CATEGORY_LIST}
-MASTER_SITES=	http://www.aaa-int.or.jp/~jfactory/JDE/dist/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+# http://www.aaa-int.or.jp/~jfactory/JDE/dist/
+MASTER_SITE_SUBDIR=	trevor
 DISTNAME=	DeepForest-${PORTVERSION}
 EXTRACT_ONLY=	# extracted directly in install target
 
