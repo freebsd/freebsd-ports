@@ -16,18 +16,22 @@ etc/webmin/help/config
 etc/webmin/hpuxexports/config
 etc/webmin/inetd/config
 etc/webmin/init/config
+etc/webmin/inittab/config
 etc/webmin/lilo/config
 etc/webmin/lpadmin/config
 etc/webmin/majordomo/config
+etc/webmin/man/config
 etc/webmin/miniserv.conf
 etc/webmin/miniserv.pem
 etc/webmin/miniserv.users
 etc/webmin/mount/config
+etc/webmin/mysql/config
 etc/webmin/net/config
 etc/webmin/pap/config
 etc/webmin/perl-path
 etc/webmin/proc/config
 etc/webmin/quota/config
+etc/webmin/raid/config
 etc/webmin/samba/config
 etc/webmin/sendmail/config
 etc/webmin/servers/config
@@ -35,6 +39,7 @@ etc/webmin/software/config
 etc/webmin/squid/config
 etc/webmin/start
 etc/webmin/stop
+etc/webmin/syslog/config
 etc/webmin/telnet/config
 etc/webmin/time/config
 etc/webmin/uninstall.sh
@@ -48,6 +53,11 @@ lib/webmin/LICENCE
 lib/webmin/README
 lib/webmin/acl/acl-lib.pl
 lib/webmin/acl/acl_security.pl
+lib/webmin/acl/cert_form.cgi
+lib/webmin/acl/cert_issue.cgi
+lib/webmin/acl/cert_output.cgi
+lib/webmin/acl/config
+lib/webmin/acl/config.info
 lib/webmin/acl/defaultacl
 lib/webmin/acl/delete_user.cgi
 lib/webmin/acl/edit_acl.cgi
@@ -61,8 +71,10 @@ lib/webmin/acl/lang/de
 lib/webmin/acl/lang/en
 lib/webmin/acl/lang/es
 lib/webmin/acl/lang/fr
+lib/webmin/acl/lang/pt
 lib/webmin/acl/lang/ru_SU
 lib/webmin/acl/module.info
+lib/webmin/acl/openssl.cnf
 lib/webmin/acl/save_acl.cgi
 lib/webmin/acl/save_user.cgi
 lib/webmin/acl/useradmin_update.pl
@@ -74,6 +86,7 @@ lib/webmin/apache/browsermatch.pl
 lib/webmin/apache/change_dir.cgi
 lib/webmin/apache/change_files.cgi
 lib/webmin/apache/config-aix
+lib/webmin/apache/config-cobalt-linux
 lib/webmin/apache/config-corel-linux
 lib/webmin/apache/config-debian-linux
 lib/webmin/apache/config-freebsd
@@ -82,7 +95,7 @@ lib/webmin/apache/config-irix
 lib/webmin/apache/config-macos
 lib/webmin/apache/config-open-linux-2.3
 lib/webmin/apache/config-open-linux-2.3e
-lib/webmin/apache/config-open-linux-3.0
+lib/webmin/apache/config-open-linux-2.4
 lib/webmin/apache/config-openbsd
 lib/webmin/apache/config-openserver
 lib/webmin/apache/config-osf1
@@ -93,11 +106,12 @@ lib/webmin/apache/config-solaris
 lib/webmin/apache/config-suse-linux
 lib/webmin/apache/config-turbo-linux
 lib/webmin/apache/config-unixware
-lib/webmin/apache/config_solaris.txt.1.25
 lib/webmin/apache/config.info
 lib/webmin/apache/config.info.de
+lib/webmin/apache/config.info.es
 lib/webmin/apache/config.info.fr
 lib/webmin/apache/config.info.ru_SU
+lib/webmin/apache/config_solaris.txt.1.25
 lib/webmin/apache/core.pl
 lib/webmin/apache/create_dir.cgi
 lib/webmin/apache/create_files.cgi
@@ -149,9 +163,12 @@ lib/webmin/apache/lang/de
 lib/webmin/apache/lang/en
 lib/webmin/apache/lang/es
 lib/webmin/apache/lang/fr
+lib/webmin/apache/lang/pt
 lib/webmin/apache/lang/ru_SU
 lib/webmin/apache/list_authgroups.cgi
 lib/webmin/apache/list_authusers.cgi
+lib/webmin/apache/manual_form.cgi
+lib/webmin/apache/manual_save.cgi
 lib/webmin/apache/mod_access.pl
 lib/webmin/apache/mod_actions.pl
 lib/webmin/apache/mod_alias.pl
@@ -197,14 +214,17 @@ lib/webmin/apache/save_files.cgi
 lib/webmin/apache/save_global.cgi
 lib/webmin/apache/save_gmime_type.cgi
 lib/webmin/apache/save_htaccess.cgi
+lib/webmin/apache/save_sync.cgi
 lib/webmin/apache/save_virt.cgi
 lib/webmin/apache/save_vserv.cgi
+lib/webmin/apache/show.cgi
 lib/webmin/apache/show_dir.cgi
 lib/webmin/apache/show_files.cgi
 lib/webmin/apache/show_htaccess.cgi
 lib/webmin/apache/show_virt.cgi
 lib/webmin/apache/start.cgi
 lib/webmin/apache/stop.cgi
+lib/webmin/apache/useradmin_update.pl
 lib/webmin/apache/virt_index.cgi
 lib/webmin/bind8/acl_security.pl
 lib/webmin/bind8/bind8-lib.pl
@@ -216,8 +236,10 @@ lib/webmin/bind8/conf_misc.cgi
 lib/webmin/bind8/conf_net.cgi
 lib/webmin/bind8/conf_servers.cgi
 lib/webmin/bind8/conf_zonedef.cgi
+lib/webmin/bind8/config-cobalt-linux
 lib/webmin/bind8/config-corel-linux
 lib/webmin/bind8/config-debian-linux
+lib/webmin/bind8/config-debian-linux-2.2
 lib/webmin/bind8/config-freebsd-2.1
 lib/webmin/bind8/config-freebsd-2.2
 lib/webmin/bind8/config-freebsd-3.0
@@ -225,23 +247,27 @@ lib/webmin/bind8/config-freebsd-3.1
 lib/webmin/bind8/config-freebsd-3.2
 lib/webmin/bind8/config-freebsd-3.3
 lib/webmin/bind8/config-freebsd-3.4
+lib/webmin/bind8/config-freebsd-4.0
 lib/webmin/bind8/config-hpux
 lib/webmin/bind8/config-irix
 lib/webmin/bind8/config-macos
 lib/webmin/bind8/config-open-linux
 lib/webmin/bind8/config-openbsd-2.5
 lib/webmin/bind8/config-openbsd-2.6
+lib/webmin/bind8/config-openbsd-2.7
 lib/webmin/bind8/config-openserver
 lib/webmin/bind8/config-osf1
 lib/webmin/bind8/config-redhat-linux
 lib/webmin/bind8/config-slackware-linux
 lib/webmin/bind8/config-solaris
 lib/webmin/bind8/config-solaris-7
+lib/webmin/bind8/config-solaris-8
 lib/webmin/bind8/config-suse-linux
 lib/webmin/bind8/config-turbo-linux
 lib/webmin/bind8/config-unixware
 lib/webmin/bind8/config.info
 lib/webmin/bind8/config.info.de
+lib/webmin/bind8/config.info.es
 lib/webmin/bind8/config.info.fr
 lib/webmin/bind8/config.info.ru_SU
 lib/webmin/bind8/create_forward.cgi
@@ -292,6 +318,7 @@ lib/webmin/bind8/lang/de
 lib/webmin/bind8/lang/en
 lib/webmin/bind8/lang/es
 lib/webmin/bind8/lang/fr
+lib/webmin/bind8/lang/pt
 lib/webmin/bind8/lang/ru_SU
 lib/webmin/bind8/master_form.cgi
 lib/webmin/bind8/module.info
@@ -318,10 +345,10 @@ lib/webmin/bsdexports/bsdexports-lib.pl
 lib/webmin/bsdexports/config-freebsd
 lib/webmin/bsdexports/config-openbsd
 lib/webmin/bsdexports/config.info
+lib/webmin/bsdexports/config.info.es
 lib/webmin/bsdexports/config.info.fr
 lib/webmin/bsdexports/delete_export.cgi
 lib/webmin/bsdexports/edit_export.cgi
-lib/webmin/bsdexports/exports.man
 lib/webmin/bsdexports/images/icon.gif
 lib/webmin/bsdexports/index.cgi
 lib/webmin/bsdexports/module.info
@@ -331,6 +358,7 @@ lib/webmin/bsdexports/save_export.cgi
 lib/webmin/changepass.pl
 lib/webmin/chooser.cgi
 lib/webmin/config-aix
+lib/webmin/config-cobalt-linux
 lib/webmin/config-corel-linux
 lib/webmin/config-debian-linux
 lib/webmin/config-freebsd
@@ -351,6 +379,7 @@ lib/webmin/config.cgi
 lib/webmin/config_save.cgi
 lib/webmin/copyconfig.pl
 lib/webmin/cron/acl_security.pl
+lib/webmin/cron/config-cobalt-linux
 lib/webmin/cron/config-corel-linux
 lib/webmin/cron/config-debian-linux
 lib/webmin/cron/config-freebsd
@@ -369,6 +398,7 @@ lib/webmin/cron/config-turbo-linux
 lib/webmin/cron/config-unixware
 lib/webmin/cron/config.info
 lib/webmin/cron/config.info.de
+lib/webmin/cron/config.info.es
 lib/webmin/cron/config.info.fr
 lib/webmin/cron/config.info.ru_SU
 lib/webmin/cron/cron-lib.pl
@@ -379,16 +409,18 @@ lib/webmin/cron/edit_allow.cgi
 lib/webmin/cron/edit_cron.cgi
 lib/webmin/cron/edit_env.cgi
 lib/webmin/cron/exec_cron.cgi
-lib/webmin/cron/help.html
-lib/webmin/cron/help/intro.html
+lib/webmin/cron/help/help.fr.html
+lib/webmin/cron/help/help.html
 lib/webmin/cron/help/intro.es.html
 lib/webmin/cron/help/intro.fr.html
+lib/webmin/cron/help/intro.html
 lib/webmin/cron/images/icon.gif
 lib/webmin/cron/index.cgi
 lib/webmin/cron/lang/de
 lib/webmin/cron/lang/en
 lib/webmin/cron/lang/es
 lib/webmin/cron/lang/fr
+lib/webmin/cron/lang/pt
 lib/webmin/cron/lang/ru_SU
 lib/webmin/cron/module.info
 lib/webmin/cron/save_allow.cgi
@@ -399,21 +431,31 @@ lib/webmin/custom/acl_security.pl
 lib/webmin/custom/custom-lib.pl
 lib/webmin/custom/defaultacl
 lib/webmin/custom/edit_cmd.cgi
+lib/webmin/custom/help/cmd.fr.html
+lib/webmin/custom/help/cmd.html
+lib/webmin/custom/help/command.fr.html
+lib/webmin/custom/help/command.html
+lib/webmin/custom/help/create.fr.html
+lib/webmin/custom/help/create.html
+lib/webmin/custom/help/desc.fr.html
+lib/webmin/custom/help/desc.html
+lib/webmin/custom/help/edit.fr.html
+lib/webmin/custom/help/edit.html
+lib/webmin/custom/help/intro.fr.html
+lib/webmin/custom/help/intro.html
+lib/webmin/custom/help/raw.fr.html
+lib/webmin/custom/help/raw.html
+lib/webmin/custom/help/run.fr.html
+lib/webmin/custom/help/run.html
+lib/webmin/custom/help/user.fr.html
+lib/webmin/custom/help/user.html
 lib/webmin/custom/images/icon.gif
 lib/webmin/custom/index.cgi
-lib/webmin/custom/help/cmd.html
-lib/webmin/custom/help/command.html
-lib/webmin/custom/help/create.html
-lib/webmin/custom/help/desc.html
-lib/webmin/custom/help/edit.html
-lib/webmin/custom/help/intro.html
-lib/webmin/custom/help/raw.html
-lib/webmin/custom/help/run.html
-lib/webmin/custom/help/user.html
 lib/webmin/custom/lang/de
 lib/webmin/custom/lang/en
 lib/webmin/custom/lang/es
 lib/webmin/custom/lang/fr
+lib/webmin/custom/lang/pt
 lib/webmin/custom/lang/ru_SU
 lib/webmin/custom/module.info
 lib/webmin/custom/run.cgi
@@ -422,6 +464,7 @@ lib/webmin/dfsadmin/config-openserver
 lib/webmin/dfsadmin/config-solaris
 lib/webmin/dfsadmin/config-unixware
 lib/webmin/dfsadmin/config.info
+lib/webmin/dfsadmin/config.info.es
 lib/webmin/dfsadmin/config.info.fr
 lib/webmin/dfsadmin/delete_share.cgi
 lib/webmin/dfsadmin/dfs-lib.pl
@@ -486,6 +529,7 @@ lib/webmin/dfsadmin/index.cgi
 lib/webmin/dfsadmin/module.info
 lib/webmin/dfsadmin/restart_sharing.cgi
 lib/webmin/dfsadmin/save_share.cgi
+lib/webmin/dhcpd/config-cobalt-linux
 lib/webmin/dhcpd/config-corel-linux
 lib/webmin/dhcpd/config-debian-linux
 lib/webmin/dhcpd/config-freebsd
@@ -494,12 +538,17 @@ lib/webmin/dhcpd/config-openbsd
 lib/webmin/dhcpd/config-openserver
 lib/webmin/dhcpd/config-osf1
 lib/webmin/dhcpd/config-redhat-linux
+lib/webmin/dhcpd/config-redhat-linux-6.0
+lib/webmin/dhcpd/config-redhat-linux-6.1
+lib/webmin/dhcpd/config-redhat-linux-6.2
 lib/webmin/dhcpd/config-slackware-linux
+lib/webmin/dhcpd/config-slackware-linux-4.0
 lib/webmin/dhcpd/config-solaris
 lib/webmin/dhcpd/config-suse-linux
 lib/webmin/dhcpd/config-turbo-linux
 lib/webmin/dhcpd/config-unixware
 lib/webmin/dhcpd/config.info
+lib/webmin/dhcpd/config.info.es
 lib/webmin/dhcpd/config.info.fr
 lib/webmin/dhcpd/config.info.ru_SU
 lib/webmin/dhcpd/dhcpd-lib.pl
@@ -517,6 +566,7 @@ lib/webmin/dhcpd/index.cgi
 lib/webmin/dhcpd/lang/en
 lib/webmin/dhcpd/lang/es
 lib/webmin/dhcpd/lang/fr
+lib/webmin/dhcpd/lang/pt
 lib/webmin/dhcpd/lang/ru_SU
 lib/webmin/dhcpd/list_leases.cgi
 lib/webmin/dhcpd/module.info
@@ -530,7 +580,10 @@ lib/webmin/dhcpd/save_subnet.cgi
 lib/webmin/dhcpd/start.cgi
 lib/webmin/dnsadmin/acl_security.pl
 lib/webmin/dnsadmin/change_soa.cgi
+lib/webmin/dnsadmin/config-aix
+lib/webmin/dnsadmin/config-cobalt-linux
 lib/webmin/dnsadmin/config-debian-linux
+lib/webmin/dnsadmin/config-debian-linux-2.2
 lib/webmin/dnsadmin/config-freebsd
 lib/webmin/dnsadmin/config-hpux
 lib/webmin/dnsadmin/config-irix
@@ -545,6 +598,7 @@ lib/webmin/dnsadmin/config-suse-linux
 lib/webmin/dnsadmin/config-turbo-linux
 lib/webmin/dnsadmin/config-unixware
 lib/webmin/dnsadmin/config.info
+lib/webmin/dnsadmin/config.info.es
 lib/webmin/dnsadmin/config.info.fr
 lib/webmin/dnsadmin/config.info.ru_SU
 lib/webmin/dnsadmin/create_master.cgi
@@ -559,7 +613,7 @@ lib/webmin/dnsadmin/edit_record.cgi
 lib/webmin/dnsadmin/edit_recs.cgi
 lib/webmin/dnsadmin/edit_slave.cgi
 lib/webmin/dnsadmin/edit_text.cgi
-lib/webmin/dnsadmin/help.html.old
+lib/webmin/dnsadmin/help/intro.html
 lib/webmin/dnsadmin/images/dnsadmin.gif
 lib/webmin/dnsadmin/images/icon.gif
 lib/webmin/dnsadmin/index.cgi
@@ -573,6 +627,7 @@ lib/webmin/dnsadmin/save_text.cgi
 lib/webmin/dnsadmin/save_zonedef.cgi
 lib/webmin/dnsadmin/slave_form.cgi
 lib/webmin/dnsadmin/start.cgi
+lib/webmin/exports/config-cobalt-linux
 lib/webmin/exports/config-corel-linux
 lib/webmin/exports/config-debian-linux
 lib/webmin/exports/config-open-linux
@@ -582,10 +637,12 @@ lib/webmin/exports/config-suse-linux
 lib/webmin/exports/config-turbo-linux
 lib/webmin/exports/config.info
 lib/webmin/exports/config.info.de
+lib/webmin/exports/config.info.es
 lib/webmin/exports/config.info.fr
 lib/webmin/exports/config.info.ru_SU
 lib/webmin/exports/edit_export.cgi
 lib/webmin/exports/exports-lib.pl
+lib/webmin/exports/help/active.html
 lib/webmin/exports/help/anongid.es.html
 lib/webmin/exports/help/anongid.fr.html
 lib/webmin/exports/help/anongid.html
@@ -639,6 +696,7 @@ lib/webmin/exports/lang/de
 lib/webmin/exports/lang/en
 lib/webmin/exports/lang/es
 lib/webmin/exports/lang/fr
+lib/webmin/exports/lang/pt
 lib/webmin/exports/lang/ru_SU
 lib/webmin/exports/module.info
 lib/webmin/exports/restart_mountd.cgi
@@ -647,8 +705,8 @@ lib/webmin/fdisk/acl_security.pl
 lib/webmin/fdisk/apply_hdparm.cgi
 lib/webmin/fdisk/config
 lib/webmin/fdisk/defaultacl
-lib/webmin/fdisk/edit_part.cgi
 lib/webmin/fdisk/edit_hdparm.cgi
+lib/webmin/fdisk/edit_part.cgi
 lib/webmin/fdisk/fdisk-lib.pl
 lib/webmin/fdisk/fsck.cgi
 lib/webmin/fdisk/fsck_form.cgi
@@ -690,6 +748,7 @@ lib/webmin/fdisk/lang/de
 lib/webmin/fdisk/lang/en
 lib/webmin/fdisk/lang/es
 lib/webmin/fdisk/lang/fr
+lib/webmin/fdisk/lang/pt
 lib/webmin/fdisk/lang/ru_SU
 lib/webmin/fdisk/make_tags.pl
 lib/webmin/fdisk/mkfs.cgi
@@ -800,6 +859,7 @@ lib/webmin/file/lang/de
 lib/webmin/file/lang/en
 lib/webmin/file/lang/es
 lib/webmin/file/lang/fr
+lib/webmin/file/lang/pt
 lib/webmin/file/lang/ru_SU
 lib/webmin/file/list.cgi
 lib/webmin/file/makelink.cgi
@@ -815,6 +875,7 @@ lib/webmin/file/upload.cgi
 lib/webmin/format/acl_security.pl
 lib/webmin/format/config
 lib/webmin/format/config.info
+lib/webmin/format/config.info.es
 lib/webmin/format/config.info.fr
 lib/webmin/format/copy_part_form.cgi
 lib/webmin/format/defaultacl
@@ -823,7 +884,7 @@ lib/webmin/format/edit_part.cgi
 lib/webmin/format/format-lib.pl
 lib/webmin/format/fsck.cgi
 lib/webmin/format/fsck_form.cgi
-lib/webmin/format/help.html
+lib/webmin/format/help/help.html
 lib/webmin/format/images/gap.gif
 lib/webmin/format/images/icon.gif
 lib/webmin/format/images/use.gif
@@ -837,20 +898,31 @@ lib/webmin/format/tunefs_form.cgi
 lib/webmin/group_chooser.cgi
 lib/webmin/help.cgi
 lib/webmin/help/help-lib.pl
+lib/webmin/help/help/intro.es.html
+lib/webmin/help/help/intro.fr.html
 lib/webmin/help/help/intro.html
+lib/webmin/help/help/intro.ru_SU.html
+lib/webmin/help/help/search.es.html
+lib/webmin/help/help/search.fr.html
 lib/webmin/help/help/search.html
+lib/webmin/help/help/search.ru_SU.html
 lib/webmin/help/images/icon.gif
 lib/webmin/help/index.cgi
 lib/webmin/help/lang/de
 lib/webmin/help/lang/en
+lib/webmin/help/lang/es
+lib/webmin/help/lang/fr
+lib/webmin/help/lang/ru_SU
 lib/webmin/help/module.info
 lib/webmin/help/search.cgi
 lib/webmin/hpuxexports/config-hpux
 lib/webmin/hpuxexports/config.info
+lib/webmin/hpuxexports/config.info.es
 lib/webmin/hpuxexports/config.info.fr
+lib/webmin/hpuxexports/config.info.ru_SU
 lib/webmin/hpuxexports/delete_export.cgi
 lib/webmin/hpuxexports/edit_export.cgi
-lib/webmin/hpuxexports/help.html
+lib/webmin/hpuxexports/help/help.html
 lib/webmin/hpuxexports/hpuxexports-lib.pl
 lib/webmin/hpuxexports/images/icon.gif
 lib/webmin/hpuxexports/index.cgi
@@ -1024,16 +1096,22 @@ lib/webmin/images/letters/96.gif
 lib/webmin/images/letters/97.gif
 lib/webmin/images/letters/98.gif
 lib/webmin/images/letters/99.gif
+lib/webmin/images/newlogo.jpg
 lib/webmin/images/rc1.gif
 lib/webmin/images/rc2.gif
 lib/webmin/images/right.gif
 lib/webmin/images/text.gif
 lib/webmin/images/unknown.gif
+lib/webmin/images/webmin-mini.xpm
 lib/webmin/images/webmin.gif
+lib/webmin/images/webmin.xpm
 lib/webmin/index.cgi
+lib/webmin/inetd/config-cobalt-linux
 lib/webmin/inetd/config-corel-linux
 lib/webmin/inetd/config-debian-linux
 lib/webmin/inetd/config-freebsd
+lib/webmin/inetd/config-freebsd-2.1
+lib/webmin/inetd/config-freebsd-2.2
 lib/webmin/inetd/config-hpux
 lib/webmin/inetd/config-macos
 lib/webmin/inetd/config-open-linux
@@ -1047,13 +1125,14 @@ lib/webmin/inetd/config-suse-linux
 lib/webmin/inetd/config-turbo-linux
 lib/webmin/inetd/config-unixware
 lib/webmin/inetd/config.info
+lib/webmin/inetd/config.info.es
 lib/webmin/inetd/config.info.fr
 lib/webmin/inetd/config.info.ru_SU
 lib/webmin/inetd/delete_rpc.cgi
 lib/webmin/inetd/delete_serv.cgi
 lib/webmin/inetd/edit_rpc.cgi
 lib/webmin/inetd/edit_serv.cgi
-lib/webmin/inetd/help.html
+lib/webmin/inetd/help/help.html
 lib/webmin/inetd/images/icon.gif
 lib/webmin/inetd/index.cgi
 lib/webmin/inetd/inetd-lib.pl
@@ -1064,6 +1143,8 @@ lib/webmin/inetd/save_rpc.cgi
 lib/webmin/inetd/save_serv.cgi
 lib/webmin/init/acl_security.pl
 lib/webmin/init/atboot.pl
+lib/webmin/init/config-cobalt-linux-2.2
+lib/webmin/init/config-cobalt-linux-5.0
 lib/webmin/init/config-corel-linux
 lib/webmin/init/config-debian-linux
 lib/webmin/init/config-freebsd
@@ -1079,6 +1160,7 @@ lib/webmin/init/config-turbo-linux
 lib/webmin/init/config-unixware
 lib/webmin/init/config.info
 lib/webmin/init/config.info.de
+lib/webmin/init/config.info.es
 lib/webmin/init/config.info.fr
 lib/webmin/init/config.info.ru_SU
 lib/webmin/init/defaultacl
@@ -1086,7 +1168,8 @@ lib/webmin/init/delboot.pl
 lib/webmin/init/delete_action.cgi
 lib/webmin/init/edit_action.cgi
 lib/webmin/init/fix_action.cgi
-lib/webmin/init/help.html
+lib/webmin/init/help/help.html
+lib/webmin/init/help/proc.html
 lib/webmin/init/images/icon.gif
 lib/webmin/init/index.cgi
 lib/webmin/init/init-lib.pl
@@ -1094,25 +1177,58 @@ lib/webmin/init/lang/de
 lib/webmin/init/lang/en
 lib/webmin/init/lang/es
 lib/webmin/init/lang/fr
+lib/webmin/init/lang/pt
 lib/webmin/init/lang/ru_SU
 lib/webmin/init/module.info
-lib/webmin/init/proc.html
 lib/webmin/init/reboot.cgi
 lib/webmin/init/save_action.cgi
 lib/webmin/init/save_local.cgi
 lib/webmin/init/shutdown.cgi
 lib/webmin/init/start_stop.cgi
+lib/webmin/inittab/config
+lib/webmin/inittab/config.info
+lib/webmin/inittab/config.info.es
+lib/webmin/inittab/config.info.fr
+lib/webmin/inittab/config.info.ru_SU
+lib/webmin/inittab/defaultacl
+lib/webmin/inittab/edit_inittab.cgi
+lib/webmin/inittab/help/action.fr.html
+lib/webmin/inittab/help/action.html
+lib/webmin/inittab/help/action.ru_SU.html
+lib/webmin/inittab/help/id.fr.html
+lib/webmin/inittab/help/id.html
+lib/webmin/inittab/help/id.ru_SU.html
+lib/webmin/inittab/help/index.fr.html
+lib/webmin/inittab/help/index.html
+lib/webmin/inittab/help/index.ru_SU.html
+lib/webmin/inittab/help/process.fr.html
+lib/webmin/inittab/help/process.html
+lib/webmin/inittab/help/process.ru_SU.html
+lib/webmin/inittab/help/runlevels.fr.html
+lib/webmin/inittab/help/runlevels.html
+lib/webmin/inittab/help/runlevels.ru_SU.html
+lib/webmin/inittab/images/icon.gif
+lib/webmin/inittab/index.cgi
+lib/webmin/inittab/inittab-lib.pl
+lib/webmin/inittab/lang/en
+lib/webmin/inittab/lang/fr
+lib/webmin/inittab/lang/ru_SU
+lib/webmin/inittab/module.info
+lib/webmin/inittab/new_inittab.cgi
+lib/webmin/inittab/save_inittab.cgi
 lib/webmin/lang/big5
 lib/webmin/lang/de
 lib/webmin/lang/en
 lib/webmin/lang/es
 lib/webmin/lang/fr
+lib/webmin/lang/pt
 lib/webmin/lang/ru_SU
 lib/webmin/lang_list.txt
 lib/webmin/lilo/apply.cgi
 lib/webmin/lilo/config
 lib/webmin/lilo/config.info
 lib/webmin/lilo/config.info.de
+lib/webmin/lilo/config.info.es
 lib/webmin/lilo/config.info.fr
 lib/webmin/lilo/config.info.ru_SU
 lib/webmin/lilo/edit_global.cgi
@@ -1126,6 +1242,7 @@ lib/webmin/lilo/lang/de
 lib/webmin/lilo/lang/en
 lib/webmin/lilo/lang/es
 lib/webmin/lilo/lang/fr
+lib/webmin/lilo/lang/pt
 lib/webmin/lilo/lang/ru_SU
 lib/webmin/lilo/lilo-lib.pl
 lib/webmin/lilo/module.info
@@ -1151,6 +1268,7 @@ lib/webmin/lpadmin/config-suse-linux
 lib/webmin/lpadmin/config-turbo-linux
 lib/webmin/lpadmin/config-unixware
 lib/webmin/lpadmin/config.info
+lib/webmin/lpadmin/config.info.es
 lib/webmin/lpadmin/config.info.fr
 lib/webmin/lpadmin/config.info.ru_SU
 lib/webmin/lpadmin/defaultacl
@@ -1167,12 +1285,14 @@ lib/webmin/lpadmin/lang/de
 lib/webmin/lpadmin/lang/en
 lib/webmin/lpadmin/lang/es
 lib/webmin/lpadmin/lang/fr
+lib/webmin/lpadmin/lang/pt
 lib/webmin/lpadmin/lang/ru_SU
 lib/webmin/lpadmin/linux-lib.pl
 lib/webmin/lpadmin/list_jobs.cgi
 lib/webmin/lpadmin/lpadmin-lib.pl
 lib/webmin/lpadmin/lprng-lib.pl
 lib/webmin/lpadmin/module.info
+lib/webmin/lpadmin/openbsd-lib.pl
 lib/webmin/lpadmin/redhat-driver.pl
 lib/webmin/lpadmin/save_printer.cgi
 lib/webmin/lpadmin/solaris-lib.pl
@@ -1189,14 +1309,20 @@ lib/webmin/majordomo/config-debian-linux-2.2
 lib/webmin/majordomo/config-open-linux
 lib/webmin/majordomo/config-suse-linux-6.1
 lib/webmin/majordomo/config-suse-linux-6.2
+lib/webmin/majordomo/config-suse-linux-6.3
+lib/webmin/majordomo/config-suse-linux-6.4
 lib/webmin/majordomo/config.info
+lib/webmin/majordomo/config.info.es
 lib/webmin/majordomo/config.info.fr
 lib/webmin/majordomo/config.info.ru_SU
+lib/webmin/majordomo/create_digest.cgi
 lib/webmin/majordomo/create_form.cgi
 lib/webmin/majordomo/create_list.cgi
 lib/webmin/majordomo/defaultacl
 lib/webmin/majordomo/delete_list.cgi
+lib/webmin/majordomo/digest_form.cgi
 lib/webmin/majordomo/edit_access.cgi
+lib/webmin/majordomo/edit_digest.cgi
 lib/webmin/majordomo/edit_global.cgi
 lib/webmin/majordomo/edit_head.cgi
 lib/webmin/majordomo/edit_info.cgi
@@ -1207,6 +1333,7 @@ lib/webmin/majordomo/edit_misc.cgi
 lib/webmin/majordomo/edit_subs.cgi
 lib/webmin/majordomo/images/access.gif
 lib/webmin/majordomo/images/dig.gif
+lib/webmin/majordomo/images/digest.gif
 lib/webmin/majordomo/images/head.gif
 lib/webmin/majordomo/images/icon.gif
 lib/webmin/majordomo/images/info.gif
@@ -1221,6 +1348,7 @@ lib/webmin/majordomo/majordomo-lib.pl
 lib/webmin/majordomo/module.info
 lib/webmin/majordomo/save_access.cgi
 lib/webmin/majordomo/save_auto.cgi
+lib/webmin/majordomo/save_digest.cgi
 lib/webmin/majordomo/save_global.cgi
 lib/webmin/majordomo/save_head.cgi
 lib/webmin/majordomo/save_info.cgi
@@ -1229,9 +1357,39 @@ lib/webmin/majordomo/save_mesg.cgi
 lib/webmin/majordomo/save_misc.cgi
 lib/webmin/majordomo/save_subs.cgi
 lib/webmin/majordomo/useradmin_update.pl
+lib/webmin/man/config-cobalt-linux
+lib/webmin/man/config-corel-linux
+lib/webmin/man/config-debian-linux
+lib/webmin/man/config-freebsd
+lib/webmin/man/config-macos
+lib/webmin/man/config-open-linux
+lib/webmin/man/config-openbsd
+lib/webmin/man/config-redhat-linux
+lib/webmin/man/config-slackware-linux
+lib/webmin/man/config-solaris
+lib/webmin/man/config-suse-linux
+lib/webmin/man/config-turbo-linux
+lib/webmin/man/config.info
+lib/webmin/man/config.info.es
+lib/webmin/man/config.info.fr
+lib/webmin/man/config.info.ru_SU
+lib/webmin/man/help/intro.fr.html
+lib/webmin/man/help/intro.html
+lib/webmin/man/help/intro.ru_SU.html
+lib/webmin/man/images/icon.gif
+lib/webmin/man/index.cgi
+lib/webmin/man/lang/de
+lib/webmin/man/lang/en
+lib/webmin/man/lang/fr
+lib/webmin/man/lang/ru_SU
+lib/webmin/man/man-lib.pl
+lib/webmin/man/module.info
+lib/webmin/man/search.cgi
 lib/webmin/mime.types
 lib/webmin/miniserv.pem
 lib/webmin/miniserv.pl
+lib/webmin/mount/cobalt-linux-lib.pl
+lib/webmin/mount/config-cobalt-linux
 lib/webmin/mount/config-corel-linux
 lib/webmin/mount/config-debian-linux
 lib/webmin/mount/config-freebsd
@@ -1246,6 +1404,7 @@ lib/webmin/mount/config-redhat-linux-5.1
 lib/webmin/mount/config-redhat-linux-5.2
 lib/webmin/mount/config-redhat-linux-6.0
 lib/webmin/mount/config-redhat-linux-6.1
+lib/webmin/mount/config-redhat-linux-6.2
 lib/webmin/mount/config-slackware-linux
 lib/webmin/mount/config-solaris
 lib/webmin/mount/config-suse-linux
@@ -1253,6 +1412,7 @@ lib/webmin/mount/config-turbo-linux-4.0
 lib/webmin/mount/config-unixware
 lib/webmin/mount/config.info
 lib/webmin/mount/config.info.de
+lib/webmin/mount/config.info.es
 lib/webmin/mount/config.info.fr
 lib/webmin/mount/config.info.ru_SU
 lib/webmin/mount/corel-linux-lib.pl
@@ -1264,18 +1424,21 @@ lib/webmin/mount/freebsd-mounts-2
 lib/webmin/mount/freebsd-mounts-2.c
 lib/webmin/mount/freebsd-mounts-3
 lib/webmin/mount/freebsd-mounts-3.c
-lib/webmin/mount/help.html
+lib/webmin/mount/freebsd-mounts-4
+lib/webmin/mount/freebsd-mounts-4.c
+lib/webmin/mount/help/help.html
 lib/webmin/mount/hpux-lib.pl
 lib/webmin/mount/images/icon.gif
 lib/webmin/mount/index.cgi
 lib/webmin/mount/irix-lib.pl
 lib/webmin/mount/lang/de
 lib/webmin/mount/lang/en
+lib/webmin/mount/lang/es
+lib/webmin/mount/lang/fr
+lib/webmin/mount/lang/ru_SU
 lib/webmin/mount/linux-lib.pl
 lib/webmin/mount/module.info
 lib/webmin/mount/mount-lib.pl
-lib/webmin/mount/mount-lib.pl.old
-lib/webmin/mount/mount_nfs.man
 lib/webmin/mount/nfs_export.cgi
 lib/webmin/mount/nfs_server.cgi
 lib/webmin/mount/open-linux-lib.pl
@@ -1292,6 +1455,90 @@ lib/webmin/mount/solaris-lib.pl
 lib/webmin/mount/suse-linux-lib.pl
 lib/webmin/mount/turbo-linux-lib.pl
 lib/webmin/mount/unixware-lib.pl
+lib/webmin/mysql/acl_security.pl
+lib/webmin/mysql/config
+lib/webmin/mysql/config-cobalt-linux
+lib/webmin/mysql/config-debian-linux
+lib/webmin/mysql/config-freebsd
+lib/webmin/mysql/config-open-linux
+lib/webmin/mysql/config-redhat-linux
+lib/webmin/mysql/config-suse-linux
+lib/webmin/mysql/config-turbo-linux
+lib/webmin/mysql/config.info
+lib/webmin/mysql/config.info.de
+lib/webmin/mysql/config.info.es
+lib/webmin/mysql/create_table.cgi
+lib/webmin/mysql/defaultacl
+lib/webmin/mysql/drop_dbase.cgi
+lib/webmin/mysql/drop_table.cgi
+lib/webmin/mysql/edit_cpriv.cgi
+lib/webmin/mysql/edit_db.cgi
+lib/webmin/mysql/edit_dbase.cgi
+lib/webmin/mysql/edit_field.cgi
+lib/webmin/mysql/edit_host.cgi
+lib/webmin/mysql/edit_table.cgi
+lib/webmin/mysql/edit_tpriv.cgi
+lib/webmin/mysql/edit_user.cgi
+lib/webmin/mysql/exec.cgi
+lib/webmin/mysql/exec_form.cgi
+lib/webmin/mysql/help/cpriv.html
+lib/webmin/mysql/help/cprivs.html
+lib/webmin/mysql/help/create_cpriv.html
+lib/webmin/mysql/help/create_db.html
+lib/webmin/mysql/help/create_field.html
+lib/webmin/mysql/help/create_tpriv.html
+lib/webmin/mysql/help/create_user.html
+lib/webmin/mysql/help/db.html
+lib/webmin/mysql/help/dbs.html
+lib/webmin/mysql/help/edit_cpriv.html
+lib/webmin/mysql/help/edit_db.html
+lib/webmin/mysql/help/edit_dbase.html
+lib/webmin/mysql/help/edit_field.html
+lib/webmin/mysql/help/edit_table.html
+lib/webmin/mysql/help/edit_tpriv.html
+lib/webmin/mysql/help/edit_user.html
+lib/webmin/mysql/help/exec_form.html
+lib/webmin/mysql/help/field.html
+lib/webmin/mysql/help/intro.html
+lib/webmin/mysql/help/newdb_form.html
+lib/webmin/mysql/help/table_form.html
+lib/webmin/mysql/help/tpriv.html
+lib/webmin/mysql/help/tprivs.html
+lib/webmin/mysql/help/user.html
+lib/webmin/mysql/help/users.html
+lib/webmin/mysql/images/cprivs.gif
+lib/webmin/mysql/images/db.gif
+lib/webmin/mysql/images/dbs.gif
+lib/webmin/mysql/images/hosts.gif
+lib/webmin/mysql/images/icon.gif
+lib/webmin/mysql/images/mysql.gif
+lib/webmin/mysql/images/table.gif
+lib/webmin/mysql/images/tprivs.gif
+lib/webmin/mysql/images/users.gif
+lib/webmin/mysql/index.cgi
+lib/webmin/mysql/lang/de
+lib/webmin/mysql/lang/en
+lib/webmin/mysql/list_cprivs.cgi
+lib/webmin/mysql/list_dbs.cgi
+lib/webmin/mysql/list_hosts.cgi
+lib/webmin/mysql/list_tprivs.cgi
+lib/webmin/mysql/list_users.cgi
+lib/webmin/mysql/login.cgi
+lib/webmin/mysql/module.info
+lib/webmin/mysql/mysql-lib.pl
+lib/webmin/mysql/newdb.cgi
+lib/webmin/mysql/newdb_form.cgi
+lib/webmin/mysql/save_cpriv.cgi
+lib/webmin/mysql/save_db.cgi
+lib/webmin/mysql/save_field.cgi
+lib/webmin/mysql/save_host.cgi
+lib/webmin/mysql/save_tpriv.cgi
+lib/webmin/mysql/save_user.cgi
+lib/webmin/mysql/start.cgi
+lib/webmin/mysql/stop.cgi
+lib/webmin/mysql/table_form.cgi
+lib/webmin/mysql/view_table.cgi
+lib/webmin/net/config-freebsd
 lib/webmin/net/config-open-linux
 lib/webmin/net/config-redhat-linux
 lib/webmin/net/config-solaris
@@ -1299,6 +1546,7 @@ lib/webmin/net/config-suse-linux
 lib/webmin/net/config-turbo-linux
 lib/webmin/net/config-unixware
 lib/webmin/net/config.info
+lib/webmin/net/config.info.es
 lib/webmin/net/config.info.fr
 lib/webmin/net/config.info.ru_SU
 lib/webmin/net/debian-linux-lib.pl
@@ -1306,6 +1554,7 @@ lib/webmin/net/edit_aifc.cgi
 lib/webmin/net/edit_bifc.cgi
 lib/webmin/net/edit_dns.cgi
 lib/webmin/net/edit_host.cgi
+lib/webmin/net/freebsd-lib.pl
 lib/webmin/net/images/dns.gif
 lib/webmin/net/images/hosts.gif
 lib/webmin/net/images/icon.gif
@@ -1316,6 +1565,7 @@ lib/webmin/net/lang/de
 lib/webmin/net/lang/en
 lib/webmin/net/lang/es
 lib/webmin/net/lang/fr
+lib/webmin/net/lang/pt
 lib/webmin/net/lang/ru_SU
 lib/webmin/net/list_hosts.cgi
 lib/webmin/net/list_ifcs.cgi
@@ -1346,6 +1596,7 @@ lib/webmin/pap/config-slackware-linux
 lib/webmin/pap/config-suse-linux
 lib/webmin/pap/config-turbo-linux
 lib/webmin/pap/config.info
+lib/webmin/pap/config.info.es
 lib/webmin/pap/config.info.fr
 lib/webmin/pap/edit_secret.cgi
 lib/webmin/pap/images/icon.gif
@@ -1357,6 +1608,7 @@ lib/webmin/pap/save_sync.cgi
 lib/webmin/pap/useradmin_update.pl
 lib/webmin/perlpath.pl
 lib/webmin/proc/acl_security.pl
+lib/webmin/proc/config-cobalt-linux
 lib/webmin/proc/config-corel-linux
 lib/webmin/proc/config-debian-linux
 lib/webmin/proc/config-freebsd
@@ -1374,6 +1626,7 @@ lib/webmin/proc/config-turbo-linux
 lib/webmin/proc/config-unixware
 lib/webmin/proc/config.info
 lib/webmin/proc/config.info.de
+lib/webmin/proc/config.info.es
 lib/webmin/proc/config.info.fr
 lib/webmin/proc/config.info.ru_SU
 lib/webmin/proc/defaultacl
@@ -1425,8 +1678,8 @@ lib/webmin/proc/help/smatch.es.html
 lib/webmin/proc/help/smatch.fr.html
 lib/webmin/proc/help/smatch.html
 lib/webmin/proc/help/suser.es.html
+lib/webmin/proc/help/suser.fr.html
 lib/webmin/proc/help/suser.html
-lib/webmin/proc/help/susers.fr.html
 lib/webmin/proc/help/tree.es.html
 lib/webmin/proc/help/tree.fr.html
 lib/webmin/proc/help/tree.html
@@ -1448,6 +1701,7 @@ lib/webmin/proc/lang/de
 lib/webmin/proc/lang/en
 lib/webmin/proc/lang/es
 lib/webmin/proc/lang/fr
+lib/webmin/proc/lang/pt
 lib/webmin/proc/lang/ru_SU
 lib/webmin/proc/linux-lib.pl
 lib/webmin/proc/macos-lib.pl
@@ -1460,6 +1714,8 @@ lib/webmin/proc/sysv-lib.pl
 lib/webmin/quota/acl_security.pl
 lib/webmin/quota/activate.cgi
 lib/webmin/quota/check_quotas.cgi
+lib/webmin/quota/cobalt-linux-lib.pl
+lib/webmin/quota/config-cobalt-linux
 lib/webmin/quota/config-corel-linux
 lib/webmin/quota/config-debian-linux
 lib/webmin/quota/config-freebsd
@@ -1473,6 +1729,7 @@ lib/webmin/quota/config-suse-linux
 lib/webmin/quota/config-turbo-linux
 lib/webmin/quota/config-unixware
 lib/webmin/quota/config.info
+lib/webmin/quota/config.info.es
 lib/webmin/quota/config.info.fr
 lib/webmin/quota/config.info.ru_SU
 lib/webmin/quota/copy_group.cgi
@@ -1527,6 +1784,7 @@ lib/webmin/quota/hpux-lib.pl
 lib/webmin/quota/images/icon.gif
 lib/webmin/quota/index.cgi
 lib/webmin/quota/lang/es
+lib/webmin/quota/lang/pt
 lib/webmin/quota/linux-lib.pl
 lib/webmin/quota/list_groups.cgi
 lib/webmin/quota/list_users.cgi
@@ -1548,6 +1806,31 @@ lib/webmin/quota/user_filesys.cgi
 lib/webmin/quota/user_grace_form.cgi
 lib/webmin/quota/user_grace_save.cgi
 lib/webmin/quota/useradmin_update.pl
+lib/webmin/raid/config
+lib/webmin/raid/config.info
+lib/webmin/raid/config.info.ru_SU
+lib/webmin/raid/create_raid.cgi
+lib/webmin/raid/images/0.gif
+lib/webmin/raid/images/0.ia.gif
+lib/webmin/raid/images/1.gif
+lib/webmin/raid/images/1.ia.gif
+lib/webmin/raid/images/4.gif
+lib/webmin/raid/images/4.ia.gif
+lib/webmin/raid/images/5.gif
+lib/webmin/raid/images/5.ia.gif
+lib/webmin/raid/images/disk.gif
+lib/webmin/raid/images/icon.gif
+lib/webmin/raid/images/linear.gif
+lib/webmin/raid/images/linear.ia.gif
+lib/webmin/raid/index.cgi
+lib/webmin/raid/lang/en
+lib/webmin/raid/lang/ru_SU
+lib/webmin/raid/mkfs.cgi
+lib/webmin/raid/module.info
+lib/webmin/raid/raid-lib.pl
+lib/webmin/raid/raid_form.cgi
+lib/webmin/raid/save_raid.cgi
+lib/webmin/raid/view_raid.cgi
 lib/webmin/samba/ask_epass.cgi
 lib/webmin/samba/conf_misc.cgi
 lib/webmin/samba/conf_net.cgi
@@ -1555,6 +1838,7 @@ lib/webmin/samba/conf_pass.cgi
 lib/webmin/samba/conf_print.cgi
 lib/webmin/samba/conf_smb.cgi
 lib/webmin/samba/config-aix
+lib/webmin/samba/config-cobalt-linux
 lib/webmin/samba/config-corel-linux
 lib/webmin/samba/config-debian-linux
 lib/webmin/samba/config-debian-linux-2.1
@@ -1574,6 +1858,7 @@ lib/webmin/samba/config-suse-linux
 lib/webmin/samba/config-turbo-linux
 lib/webmin/samba/config-unixware
 lib/webmin/samba/config.info
+lib/webmin/samba/config.info.es
 lib/webmin/samba/config.info.fr
 lib/webmin/samba/config.info.ru_SU
 lib/webmin/samba/create_copy.cgi
@@ -1589,7 +1874,7 @@ lib/webmin/samba/edit_popts.cgi
 lib/webmin/samba/edit_pshare.cgi
 lib/webmin/samba/edit_sec.cgi
 lib/webmin/samba/edit_sync.cgi
-lib/webmin/samba/help.html
+lib/webmin/samba/help/help.html
 lib/webmin/samba/images/icon.gif
 lib/webmin/samba/images/icon_0.gif
 lib/webmin/samba/images/icon_1.gif
@@ -1631,12 +1916,15 @@ lib/webmin/samba/view_users.cgi
 lib/webmin/sendmail/access-lib.pl
 lib/webmin/sendmail/acl_security.pl
 lib/webmin/sendmail/aliases-lib.pl
+lib/webmin/sendmail/autoreply.pl
 lib/webmin/sendmail/boxes-lib.pl
+lib/webmin/sendmail/config-cobalt-linux
 lib/webmin/sendmail/config-corel-linux
 lib/webmin/sendmail/config-debian-linux
 lib/webmin/sendmail/config-debian-linux-2.1
 lib/webmin/sendmail/config-debian-linux-2.2
 lib/webmin/sendmail/config-freebsd
+lib/webmin/sendmail/config-freebsd-4.0
 lib/webmin/sendmail/config-hpux
 lib/webmin/sendmail/config-irix
 lib/webmin/sendmail/config-macos
@@ -1647,13 +1935,15 @@ lib/webmin/sendmail/config-redhat-linux
 lib/webmin/sendmail/config-slackware-linux
 lib/webmin/sendmail/config-solaris
 lib/webmin/sendmail/config-solaris-7
+lib/webmin/sendmail/config-solaris-8
 lib/webmin/sendmail/config-suse-linux
 lib/webmin/sendmail/config-turbo-linux
 lib/webmin/sendmail/config-unixware
+lib/webmin/sendmail/config.info
 lib/webmin/sendmail/config.info.de
+lib/webmin/sendmail/config.info.es
 lib/webmin/sendmail/config.info.fr
 lib/webmin/sendmail/config.info.ru_SU
-lib/webmin/sendmail/config.info
 lib/webmin/sendmail/defaultacl
 lib/webmin/sendmail/del_mailq.cgi
 lib/webmin/sendmail/delete_mail.cgi
@@ -1788,6 +2078,7 @@ lib/webmin/sendmail/lang/de
 lib/webmin/sendmail/lang/en
 lib/webmin/sendmail/lang/es
 lib/webmin/sendmail/lang/fr
+lib/webmin/sendmail/lang/pt
 lib/webmin/sendmail/lang/ru_SU
 lib/webmin/sendmail/list_access.cgi
 lib/webmin/sendmail/list_aliases.cgi
@@ -1803,7 +2094,9 @@ lib/webmin/sendmail/list_masq.cgi
 lib/webmin/sendmail/list_opts.cgi
 lib/webmin/sendmail/list_relay.cgi
 lib/webmin/sendmail/list_trusts.cgi
+lib/webmin/sendmail/list_us
 lib/webmin/sendmail/list_virtusers.cgi
+lib/webmin/sendmail/mail_search.cgi
 lib/webmin/sendmail/mailers-lib.pl
 lib/webmin/sendmail/module.info
 lib/webmin/sendmail/qdetach.cgi
@@ -1828,6 +2121,8 @@ lib/webmin/sendmail/useradmin_update.pl
 lib/webmin/sendmail/view_mail.cgi
 lib/webmin/sendmail/view_mailq.cgi
 lib/webmin/sendmail/virtusers-lib.pl
+lib/webmin/servers/config
+lib/webmin/servers/config.info
 lib/webmin/servers/edit_serv.cgi
 lib/webmin/servers/find.cgi
 lib/webmin/servers/images/cal_spin.gif
@@ -1846,6 +2141,7 @@ lib/webmin/servers/lang/de
 lib/webmin/servers/lang/en
 lib/webmin/servers/lang/es
 lib/webmin/servers/lang/fr
+lib/webmin/servers/lang/pt
 lib/webmin/servers/lang/ru_SU
 lib/webmin/servers/link.cgi
 lib/webmin/servers/module.info
@@ -1854,6 +2150,7 @@ lib/webmin/servers/servers-lib.pl
 lib/webmin/setup.sh
 lib/webmin/software/close.cgi
 lib/webmin/software/closeall.cgi
+lib/webmin/software/config-cobalt-linux
 lib/webmin/software/config-corel-linux
 lib/webmin/software/config-debian-linux
 lib/webmin/software/config-freebsd
@@ -1867,10 +2164,11 @@ lib/webmin/software/config-solaris
 lib/webmin/software/config-suse-linux
 lib/webmin/software/config-turbo-linux
 lib/webmin/software/config-unixware
+lib/webmin/software/config.info
 lib/webmin/software/config.info.de
+lib/webmin/software/config.info.es
 lib/webmin/software/config.info.fr
 lib/webmin/software/config.info.ru_SU
-lib/webmin/software/config.info
 lib/webmin/software/debian-lib.pl
 lib/webmin/software/delete_file.cgi
 lib/webmin/software/delete_pack.cgi
@@ -1934,6 +2232,7 @@ lib/webmin/software/lang/de
 lib/webmin/software/lang/en
 lib/webmin/software/lang/es
 lib/webmin/software/lang/fr
+lib/webmin/software/lang/pt
 lib/webmin/software/lang/ru_SU
 lib/webmin/software/list_pack.cgi
 lib/webmin/software/module.info
@@ -1951,6 +2250,7 @@ lib/webmin/squid/cachemgr.cgi
 lib/webmin/squid/chown.cgi
 lib/webmin/squid/clear.cgi
 lib/webmin/squid/config-aix
+lib/webmin/squid/config-cobalt-linux
 lib/webmin/squid/config-corel-linux
 lib/webmin/squid/config-debian-linux
 lib/webmin/squid/config-freebsd
@@ -1963,14 +2263,16 @@ lib/webmin/squid/config-osf1
 lib/webmin/squid/config-redhat-linux
 lib/webmin/squid/config-redhat-linux-6.0
 lib/webmin/squid/config-redhat-linux-6.1
+lib/webmin/squid/config-redhat-linux-6.2
 lib/webmin/squid/config-slackware-linux
 lib/webmin/squid/config-solaris
 lib/webmin/squid/config-suse-linux
 lib/webmin/squid/config-turbo-linux
 lib/webmin/squid/config-unixware
+lib/webmin/squid/config.info
+lib/webmin/squid/config.info.es
 lib/webmin/squid/config.info.fr
 lib/webmin/squid/config.info.ru_SU
-lib/webmin/squid/config.info
 lib/webmin/squid/edit_acl.cgi
 lib/webmin/squid/edit_admin.cgi
 lib/webmin/squid/edit_auth.cgi
@@ -1983,6 +2285,16 @@ lib/webmin/squid/edit_misc.cgi
 lib/webmin/squid/edit_ports.cgi
 lib/webmin/squid/edit_progs.cgi
 lib/webmin/squid/edit_user.cgi
+lib/webmin/squid/help/edit_acl.html
+lib/webmin/squid/help/edit_admin.html
+lib/webmin/squid/help/edit_cache.html
+lib/webmin/squid/help/edit_icp.html
+lib/webmin/squid/help/edit_logs.html
+lib/webmin/squid/help/edit_mem.html
+lib/webmin/squid/help/edit_misc.html
+lib/webmin/squid/help/edit_ports.html
+lib/webmin/squid/help/edit_progs.html
+lib/webmin/squid/help/intro.html
 lib/webmin/squid/http_access.cgi
 lib/webmin/squid/http_access_save.cgi
 lib/webmin/squid/icp_access.cgi
@@ -2005,9 +2317,13 @@ lib/webmin/squid/images/progs.gif
 lib/webmin/squid/images/up.gif
 lib/webmin/squid/index.cgi
 lib/webmin/squid/init_cache.cgi
+lib/webmin/squid/lang/de
+lib/webmin/squid/lang/en
+lib/webmin/squid/lang/ru_SU
 lib/webmin/squid/module.info
 lib/webmin/squid/move_http.cgi
 lib/webmin/squid/move_icp.cgi
+lib/webmin/squid/parser-lib.pl
 lib/webmin/squid/restart.cgi
 lib/webmin/squid/save_admin.cgi
 lib/webmin/squid/save_auth.cgi
@@ -2023,46 +2339,91 @@ lib/webmin/squid/save_user.cgi
 lib/webmin/squid/squid-lib.pl
 lib/webmin/squid/start.cgi
 lib/webmin/squid/stop.cgi
+lib/webmin/syslog/config-cobalt-linux
+lib/webmin/syslog/config-corel-linux
+lib/webmin/syslog/config-debian-linux
+lib/webmin/syslog/config-freebsd
+lib/webmin/syslog/config-hpux
+lib/webmin/syslog/config-macos
+lib/webmin/syslog/config-open-linux
+lib/webmin/syslog/config-openbsd
+lib/webmin/syslog/config-redhat-linux
+lib/webmin/syslog/config-slackware-linux
+lib/webmin/syslog/config-solaris
+lib/webmin/syslog/config-suse-linux
+lib/webmin/syslog/config-turbo-linux
+lib/webmin/syslog/config.info
+lib/webmin/syslog/config.info.de
+lib/webmin/syslog/config.info.es
+lib/webmin/syslog/config.info.ru_SU
+lib/webmin/syslog/edit_log.cgi
+lib/webmin/syslog/images/icon.gif
+lib/webmin/syslog/index.cgi
+lib/webmin/syslog/lang/de
+lib/webmin/syslog/lang/en
+lib/webmin/syslog/lang/ru_SU
+lib/webmin/syslog/m4.cgi
+lib/webmin/syslog/module.info
+lib/webmin/syslog/restart.cgi
+lib/webmin/syslog/save_log.cgi
+lib/webmin/syslog/start.cgi
+lib/webmin/syslog/syslog-lib.pl
 lib/webmin/telnet/config
+lib/webmin/telnet/config.info
 lib/webmin/telnet/config.info.de
+lib/webmin/telnet/config.info.es
 lib/webmin/telnet/config.info.fr
 lib/webmin/telnet/config.info.ru_SU
-lib/webmin/telnet/config.info
 lib/webmin/telnet/images/icon.gif
 lib/webmin/telnet/index.cgi
 lib/webmin/telnet/lang/de
 lib/webmin/telnet/lang/en
 lib/webmin/telnet/lang/es
 lib/webmin/telnet/lang/fr
+lib/webmin/telnet/lang/pt
 lib/webmin/telnet/lang/ru_SU
 lib/webmin/telnet/module.info
 lib/webmin/telnet/telnet.zip
+lib/webmin/thirdparty.pl
 lib/webmin/time/acl_security.pl
 lib/webmin/time/apply.cgi
 lib/webmin/time/config
 lib/webmin/time/config.info
 lib/webmin/time/config.info.de
+lib/webmin/time/config.info.es
 lib/webmin/time/config.info.fr
+lib/webmin/time/config.info.ru_SU
 lib/webmin/time/defaultacl
+lib/webmin/time/help/hardware_time.es.html
 lib/webmin/time/help/hardware_time.fr.html
 lib/webmin/time/help/hardware_time.html
+lib/webmin/time/help/hardware_time.ru_SU.html
+lib/webmin/time/help/index.es.html
 lib/webmin/time/help/index.fr.html
 lib/webmin/time/help/index.html
+lib/webmin/time/help/index.ru_SU.html
+lib/webmin/time/help/system_time.es.html
 lib/webmin/time/help/system_time.fr.html
 lib/webmin/time/help/system_time.html
+lib/webmin/time/help/system_time.ru_SU.html
+lib/webmin/time/help/timeserver.es.html
 lib/webmin/time/help/timeserver.fr.html
 lib/webmin/time/help/timeserver.html
+lib/webmin/time/help/timeserver.ru_SU.html
 lib/webmin/time/images/icon.gif
 lib/webmin/time/index.cgi
 lib/webmin/time/lang/de
 lib/webmin/time/lang/en
+lib/webmin/time/lang/es
 lib/webmin/time/lang/fr
+lib/webmin/time/lang/ru_SU
 lib/webmin/time/module.info
 lib/webmin/time/time-lib.pl
 lib/webmin/time/try.cgi
-lib/webmin/thirdparty.pl
 lib/webmin/user_chooser.cgi
 lib/webmin/useradmin/acl_security.pl
+lib/webmin/useradmin/cobalt-linux-lib.pl
+lib/webmin/useradmin/config-cobalt-linux
 lib/webmin/useradmin/config-corel-linux
 lib/webmin/useradmin/config-debian-linux
 lib/webmin/useradmin/config-freebsd
@@ -2076,10 +2437,11 @@ lib/webmin/useradmin/config-solaris
 lib/webmin/useradmin/config-suse-linux
 lib/webmin/useradmin/config-turbo-linux
 lib/webmin/useradmin/config-unixware
+lib/webmin/useradmin/config.info
 lib/webmin/useradmin/config.info.de
+lib/webmin/useradmin/config.info.es
 lib/webmin/useradmin/config.info.fr
 lib/webmin/useradmin/config.info.ru_SU
-lib/webmin/useradmin/config.info
 lib/webmin/useradmin/corel-linux-lib.pl
 lib/webmin/useradmin/debian-linux-lib.pl
 lib/webmin/useradmin/defaultacl
@@ -2232,6 +2594,7 @@ lib/webmin/useradmin/lang/de
 lib/webmin/useradmin/lang/en
 lib/webmin/useradmin/lang/es
 lib/webmin/useradmin/lang/fr
+lib/webmin/useradmin/lang/pt
 lib/webmin/useradmin/lang/ru_SU
 lib/webmin/useradmin/linux-lib.pl
 lib/webmin/useradmin/list_logins.cgi
@@ -2239,6 +2602,7 @@ lib/webmin/useradmin/many_create.cgi
 lib/webmin/useradmin/many_form.cgi
 lib/webmin/useradmin/module.info
 lib/webmin/useradmin/open-linux-lib.pl
+lib/webmin/useradmin/openbsd-lib.pl
 lib/webmin/useradmin/osf1-lib.pl
 lib/webmin/useradmin/redhat-linux-lib.pl
 lib/webmin/useradmin/save_group.cgi
@@ -2257,44 +2621,53 @@ lib/webmin/webmin-daemon
 lib/webmin/webmin-init
 lib/webmin/webmin/change_access.cgi
 lib/webmin/webmin/change_bind.cgi
-lib/webmin/webmin/change_colours.cgi
+lib/webmin/webmin/change_ca.cgi
 lib/webmin/webmin/change_lang.cgi
 lib/webmin/webmin/change_log.cgi
 lib/webmin/webmin/change_os.cgi
 lib/webmin/webmin/change_proxy.cgi
-lib/webmin/webmin/change_startpage.cgi
 lib/webmin/webmin/change_ssl.cgi
+lib/webmin/webmin/change_startpage.cgi
+lib/webmin/webmin/change_ui.cgi
 lib/webmin/webmin/clone_mod.cgi
 lib/webmin/webmin/delete_mod.cgi
 lib/webmin/webmin/edit_access.cgi
 lib/webmin/webmin/edit_bind.cgi
-lib/webmin/webmin/edit_colours.cgi
+lib/webmin/webmin/edit_ca.cgi
 lib/webmin/webmin/edit_lang.cgi
 lib/webmin/webmin/edit_log.cgi
 lib/webmin/webmin/edit_mods.cgi
 lib/webmin/webmin/edit_os.cgi
 lib/webmin/webmin/edit_proxy.cgi
-lib/webmin/webmin/edit_startpage.cgi
 lib/webmin/webmin/edit_ssl.cgi
+lib/webmin/webmin/edit_startpage.cgi
+lib/webmin/webmin/edit_ui.cgi
+lib/webmin/webmin/edit_upgrade.cgi
 lib/webmin/webmin/images/access.gif
 lib/webmin/webmin/images/bind.gif
-lib/webmin/webmin/images/colours.gif
+lib/webmin/webmin/images/ca.gif
 lib/webmin/webmin/images/icon.gif
 lib/webmin/webmin/images/lang.gif
 lib/webmin/webmin/images/log.gif
 lib/webmin/webmin/images/mods.gif
 lib/webmin/webmin/images/os.gif
 lib/webmin/webmin/images/proxy.gif
-lib/webmin/webmin/images/startpage.gif
 lib/webmin/webmin/images/ssl.gif
+lib/webmin/webmin/images/startpage.gif
+lib/webmin/webmin/images/ui.gif
+lib/webmin/webmin/images/upgrade.gif
 lib/webmin/webmin/index.cgi
 lib/webmin/webmin/install_mod.cgi
 lib/webmin/webmin/lang/de
 lib/webmin/webmin/lang/en
 lib/webmin/webmin/lang/es
 lib/webmin/webmin/lang/fr
+lib/webmin/webmin/lang/pt
 lib/webmin/webmin/lang/ru_SU
 lib/webmin/webmin/module.info
+lib/webmin/webmin/setup_ca.cgi
+lib/webmin/webmin/stop_ca.cgi
+lib/webmin/webmin/upgrade.cgi
 lib/webmin/webmin/webmin-lib.pl
 lib/webmin/wuftpd/config-aix
 lib/webmin/wuftpd/config-corel-linux
@@ -2312,6 +2685,9 @@ lib/webmin/wuftpd/config-suse-linux
 lib/webmin/wuftpd/config-turbo-linux
 lib/webmin/wuftpd/config.info
 lib/webmin/wuftpd/config.info.de
+lib/webmin/wuftpd/config.info.es
+lib/webmin/wuftpd/config.info.fr
+lib/webmin/wuftpd/config.info.ru_SU
 lib/webmin/wuftpd/edit_acl.cgi
 lib/webmin/wuftpd/edit_alias.cgi
 lib/webmin/wuftpd/edit_anon.cgi
@@ -2321,16 +2697,46 @@ lib/webmin/wuftpd/edit_message.cgi
 lib/webmin/wuftpd/edit_misc.cgi
 lib/webmin/wuftpd/edit_net.cgi
 lib/webmin/wuftpd/edit_perm.cgi
+lib/webmin/wuftpd/help/acl.es.html
+lib/webmin/wuftpd/help/acl.fr.html
 lib/webmin/wuftpd/help/acl.html
+lib/webmin/wuftpd/help/acl.ru_SU.html
+lib/webmin/wuftpd/help/alias.es.html
+lib/webmin/wuftpd/help/alias.fr.html
 lib/webmin/wuftpd/help/alias.html
+lib/webmin/wuftpd/help/alias.ru_SU.html
+lib/webmin/wuftpd/help/anon.es.html
+lib/webmin/wuftpd/help/anon.fr.html
 lib/webmin/wuftpd/help/anon.html
+lib/webmin/wuftpd/help/anon.ru_SU.html
+lib/webmin/wuftpd/help/class.es.html
+lib/webmin/wuftpd/help/class.fr.html
 lib/webmin/wuftpd/help/class.html
+lib/webmin/wuftpd/help/class.ru_SU.html
+lib/webmin/wuftpd/help/intro.es.html
+lib/webmin/wuftpd/help/intro.fr.html
 lib/webmin/wuftpd/help/intro.html
+lib/webmin/wuftpd/help/intro.ru_SU.html
+lib/webmin/wuftpd/help/log.es.html
+lib/webmin/wuftpd/help/log.fr.html
 lib/webmin/wuftpd/help/log.html
+lib/webmin/wuftpd/help/log.ru_SU.html
+lib/webmin/wuftpd/help/message.es.html
+lib/webmin/wuftpd/help/message.fr.html
 lib/webmin/wuftpd/help/message.html
+lib/webmin/wuftpd/help/message.ru_SU.html
+lib/webmin/wuftpd/help/misc.es.html
+lib/webmin/wuftpd/help/misc.fr.html
 lib/webmin/wuftpd/help/misc.html
+lib/webmin/wuftpd/help/misc.ru_SU.html
+lib/webmin/wuftpd/help/net.es.html
+lib/webmin/wuftpd/help/net.fr.html
 lib/webmin/wuftpd/help/net.html
+lib/webmin/wuftpd/help/net.ru_SU.html
+lib/webmin/wuftpd/help/perm.es.html
+lib/webmin/wuftpd/help/perm.fr.html
 lib/webmin/wuftpd/help/perm.html
+lib/webmin/wuftpd/help/perm.ru_SU.html
 lib/webmin/wuftpd/images/acl.gif
 lib/webmin/wuftpd/images/alias.gif
 lib/webmin/wuftpd/images/aliases.gif
@@ -2345,6 +2751,9 @@ lib/webmin/wuftpd/images/perm.gif
 lib/webmin/wuftpd/index.cgi
 lib/webmin/wuftpd/lang/de
 lib/webmin/wuftpd/lang/en
+lib/webmin/wuftpd/lang/es
+lib/webmin/wuftpd/lang/fr
+lib/webmin/wuftpd/lang/ru_SU
 lib/webmin/wuftpd/module.info
 lib/webmin/wuftpd/restart.cgi
 lib/webmin/wuftpd/save_acl.cgi
@@ -2375,135 +2784,166 @@ lib/webmin/wuftpd/wuftpd-lib.pl
 @dirrm etc/webmin/hpuxexports
 @dirrm etc/webmin/inetd
 @dirrm etc/webmin/init
+@dirrm etc/webmin/inittab
 @dirrm etc/webmin/lilo
 @dirrm etc/webmin/lpadmin
 @dirrm etc/webmin/majordomo
+@dirrm etc/webmin/man
 @dirrm etc/webmin/mount
+@dirrm etc/webmin/mysql
 @dirrm etc/webmin/net
 @dirrm etc/webmin/pap
 @dirrm etc/webmin/proc
 @dirrm etc/webmin/quota
+@dirrm etc/webmin/raid
 @dirrm etc/webmin/samba
 @dirrm etc/webmin/sendmail
 @dirrm etc/webmin/servers
 @dirrm etc/webmin/software
 @dirrm etc/webmin/squid
+@dirrm etc/webmin/syslog
 @dirrm etc/webmin/telnet
 @dirrm etc/webmin/time
 @dirrm etc/webmin/useradmin
 @dirrm etc/webmin/webmin
 @dirrm etc/webmin/wuftpd
 @dirrm etc/webmin
-@dirrm lib/webmin/sendmail/help
-@dirrm lib/webmin/sendmail/lang
-@dirrm lib/webmin/sendmail/images
-@dirrm lib/webmin/sendmail
-@dirrm lib/webmin/squid/images
-@dirrm lib/webmin/squid
-@dirrm lib/webmin/format/images
-@dirrm lib/webmin/format
-@dirrm lib/webmin/file/lang
-@dirrm lib/webmin/file/images
-@dirrm lib/webmin/file
-@dirrm lib/webmin/fdisk/images
-@dirrm lib/webmin/fdisk/help
-@dirrm lib/webmin/fdisk/lang
-@dirrm lib/webmin/fdisk
-@dirrm lib/webmin/exports/help
-@dirrm lib/webmin/exports/lang
-@dirrm lib/webmin/exports/images
-@dirrm lib/webmin/exports
-@dirrm lib/webmin/dnsadmin/help
-@dirrm lib/webmin/dnsadmin/images
-@dirrm lib/webmin/dnsadmin
-@dirrm lib/webmin/dhcpd/images
-@dirrm lib/webmin/dhcpd/lang
-@dirrm lib/webmin/dhcpd
-@dirrm lib/webmin/dfsadmin/help
-@dirrm lib/webmin/dfsadmin/images
-@dirrm lib/webmin/dfsadmin
-@dirrm lib/webmin/custom/help
-@dirrm lib/webmin/custom/images
-@dirrm lib/webmin/custom/lang
-@dirrm lib/webmin/custom
+@dirrm lib/webmin/raid/lang
+@dirrm lib/webmin/raid/images
+@dirrm lib/webmin/raid
+@dirrm lib/webmin/acl/images
+@dirrm lib/webmin/acl/lang
+@dirrm lib/webmin/acl
+@dirrm lib/webmin/apache/lang
+@dirrm lib/webmin/apache/images
+@dirrm lib/webmin/apache
+@dirrm lib/webmin/bind8/images
+@dirrm lib/webmin/bind8/lang
+@dirrm lib/webmin/bind8
+@dirrm lib/webmin/webmin/lang
+@dirrm lib/webmin/webmin/images
+@dirrm lib/webmin/webmin
+@dirrm lib/webmin/bsdexports/images
+@dirrm lib/webmin/bsdexports
 @dirrm lib/webmin/cron/lang
 @dirrm lib/webmin/cron/help
 @dirrm lib/webmin/cron/images
 @dirrm lib/webmin/cron
+@dirrm lib/webmin/useradmin/help
+@dirrm lib/webmin/useradmin/lang
+@dirrm lib/webmin/useradmin/images
+@dirrm lib/webmin/useradmin
+@dirrm lib/webmin/custom/help
+@dirrm lib/webmin/custom/images
+@dirrm lib/webmin/custom/lang
+@dirrm lib/webmin/custom
+@dirrm lib/webmin/time/images
+@dirrm lib/webmin/time/lang
+@dirrm lib/webmin/time/help
+@dirrm lib/webmin/time
+@dirrm lib/webmin/dfsadmin/help
+@dirrm lib/webmin/dfsadmin/images
+@dirrm lib/webmin/dfsadmin
+@dirrm lib/webmin/telnet/images
+@dirrm lib/webmin/telnet/lang
+@dirrm lib/webmin/telnet
+@dirrm lib/webmin/syslog/images
+@dirrm lib/webmin/syslog/lang
+@dirrm lib/webmin/syslog
+@dirrm lib/webmin/squid/images
+@dirrm lib/webmin/squid/lang
+@dirrm lib/webmin/squid/help
+@dirrm lib/webmin/squid
 @dirrm lib/webmin/software/lang
 @dirrm lib/webmin/software/help
 @dirrm lib/webmin/software/images
 @dirrm lib/webmin/software
-@dirrm lib/webmin/webmin/images
-@dirrm lib/webmin/webmin/lang
-@dirrm lib/webmin/webmin
-@dirrm lib/webmin/useradmin/images
-@dirrm lib/webmin/useradmin/lang
-@dirrm lib/webmin/useradmin/help
-@dirrm lib/webmin/useradmin
-@dirrm lib/webmin/net/lang
-@dirrm lib/webmin/net/images
-@dirrm lib/webmin/net
-@dirrm lib/webmin/mount/images
-@dirrm lib/webmin/mount/lang
-@dirrm lib/webmin/mount
-@dirrm lib/webmin/servers/images
+@dirrm lib/webmin/dhcpd/images
+@dirrm lib/webmin/dhcpd/lang
+@dirrm lib/webmin/dhcpd
+@dirrm lib/webmin/wuftpd/lang
+@dirrm lib/webmin/wuftpd/help
+@dirrm lib/webmin/wuftpd/images
+@dirrm lib/webmin/wuftpd
 @dirrm lib/webmin/servers/lang
+@dirrm lib/webmin/servers/images
 @dirrm lib/webmin/servers
-@dirrm lib/webmin/pap/images
-@dirrm lib/webmin/pap
+@dirrm lib/webmin/sendmail/lang
+@dirrm lib/webmin/sendmail/help
+@dirrm lib/webmin/sendmail/images
+@dirrm lib/webmin/sendmail
+@dirrm lib/webmin/samba/help
 @dirrm lib/webmin/samba/images
 @dirrm lib/webmin/samba
+@dirrm lib/webmin/lang
+@dirrm lib/webmin/quota/lang
+@dirrm lib/webmin/quota/help
+@dirrm lib/webmin/quota/images
+@dirrm lib/webmin/quota
+@dirrm lib/webmin/proc/help
+@dirrm lib/webmin/proc/images
+@dirrm lib/webmin/proc/lang
+@dirrm lib/webmin/proc
+@dirrm lib/webmin/exports/lang
+@dirrm lib/webmin/exports/help
+@dirrm lib/webmin/exports/images
+@dirrm lib/webmin/exports
+@dirrm lib/webmin/pap/images
+@dirrm lib/webmin/pap
+@dirrm lib/webmin/fdisk/help
+@dirrm lib/webmin/fdisk/lang
+@dirrm lib/webmin/fdisk/images
+@dirrm lib/webmin/fdisk
+@dirrm lib/webmin/file/lang
+@dirrm lib/webmin/file/images
+@dirrm lib/webmin/file
+@dirrm lib/webmin/format/help
+@dirrm lib/webmin/format/images
+@dirrm lib/webmin/format
+@dirrm lib/webmin/help/lang
+@dirrm lib/webmin/help/help
+@dirrm lib/webmin/help/images
+@dirrm lib/webmin/help
+@dirrm lib/webmin/net/images
+@dirrm lib/webmin/net/lang
+@dirrm lib/webmin/net
+@dirrm lib/webmin/mysql/help
+@dirrm lib/webmin/mysql/images
+@dirrm lib/webmin/mysql/lang
+@dirrm lib/webmin/mysql
+@dirrm lib/webmin/mount/images
+@dirrm lib/webmin/mount/help
+@dirrm lib/webmin/mount/lang
+@dirrm lib/webmin/mount
+@dirrm lib/webmin/hpuxexports/help
+@dirrm lib/webmin/hpuxexports/images
+@dirrm lib/webmin/hpuxexports
+@dirrm lib/webmin/images/letters
+@dirrm lib/webmin/images
+@dirrm lib/webmin/inetd/images
+@dirrm lib/webmin/inetd/help
+@dirrm lib/webmin/inetd
+@dirrm lib/webmin/man/lang
+@dirrm lib/webmin/man/help
+@dirrm lib/webmin/man/images
+@dirrm lib/webmin/man
 @dirrm lib/webmin/majordomo/images
 @dirrm lib/webmin/majordomo
 @dirrm lib/webmin/lpadmin/images
 @dirrm lib/webmin/lpadmin/lang
 @dirrm lib/webmin/lpadmin
-@dirrm lib/webmin/quota/help
-@dirrm lib/webmin/quota/images
-@dirrm lib/webmin/quota/lang
-@dirrm lib/webmin/quota
-@dirrm lib/webmin/lilo/images
-@dirrm lib/webmin/lilo/lang
-@dirrm lib/webmin/lilo
-@dirrm lib/webmin/proc/images
-@dirrm lib/webmin/proc/lang
-@dirrm lib/webmin/proc/help
-@dirrm lib/webmin/proc
-@dirrm lib/webmin/lang
 @dirrm lib/webmin/init/lang
+@dirrm lib/webmin/init/help
 @dirrm lib/webmin/init/images
 @dirrm lib/webmin/init
-@dirrm lib/webmin/inetd/images
-@dirrm lib/webmin/inetd
-@dirrm lib/webmin/telnet/images
-@dirrm lib/webmin/telnet/lang
-@dirrm lib/webmin/telnet
-@dirrm lib/webmin/images/letters
-@dirrm lib/webmin/images
-@dirrm lib/webmin/bsdexports/images
-@dirrm lib/webmin/bsdexports
-@dirrm lib/webmin/bind8/images
-@dirrm lib/webmin/bind8/lang
-@dirrm lib/webmin/bind8
-@dirrm lib/webmin/apache/lang
-@dirrm lib/webmin/apache/images
-@dirrm lib/webmin/apache
-@dirrm lib/webmin/acl/images
-@dirrm lib/webmin/acl/lang
-@dirrm lib/webmin/acl
-@dirrm lib/webmin/hpuxexports/images
-@dirrm lib/webmin/hpuxexports
-@dirrm lib/webmin/help/lang
-@dirrm lib/webmin/help/images
-@dirrm lib/webmin/help/help
-@dirrm lib/webmin/help
-@dirrm lib/webmin/time/lang
-@dirrm lib/webmin/time/images
-@dirrm lib/webmin/time/help
-@dirrm lib/webmin/time
-@dirrm lib/webmin/wuftpd/lang
-@dirrm lib/webmin/wuftpd/images
-@dirrm lib/webmin/wuftpd/help
-@dirrm lib/webmin/wuftpd
+@dirrm lib/webmin/lilo/lang
+@dirrm lib/webmin/lilo/images
+@dirrm lib/webmin/lilo
+@dirrm lib/webmin/inittab/images
+@dirrm lib/webmin/inittab/lang
+@dirrm lib/webmin/inittab/help
+@dirrm lib/webmin/inittab
+@dirrm lib/webmin/dnsadmin/help
+@dirrm lib/webmin/dnsadmin/images
+@dirrm lib/webmin/dnsadmin
 @dirrm lib/webmin
