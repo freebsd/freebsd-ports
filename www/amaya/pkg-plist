@@ -10,6 +10,8 @@ Amaya/amaya/HTML.STR
 Amaya/amaya/HTML.conf
 Amaya/amaya/HTML.en
 Amaya/amaya/HTML.trans
+Amaya/amaya/HTML.trans.es
+Amaya/amaya/HTML.trans.fr
 Amaya/amaya/HTMLP.PRS
 Amaya/amaya/HTMLPBW.PRS
 Amaya/amaya/HTMLPL.PRS
@@ -28,6 +30,8 @@ Amaya/amaya/MathML.STR
 Amaya/amaya/MathML.conf
 Amaya/amaya/MathML.en
 Amaya/amaya/MathML.trans
+Amaya/amaya/MathML.trans.es
+Amaya/amaya/MathML.trans.fr
 Amaya/amaya/MathMLP.PRS
 Amaya/amaya/MathMLT.TRA
 Amaya/amaya/MathMLTX.TRA
@@ -337,6 +341,7 @@ Amaya/doc/html/Tables.html.es
 Amaya/doc/html/Tables.html.fr
 Amaya/doc/html/Transform.html
 Amaya/doc/html/Transform.html.es
+Amaya/doc/html/Tutorial.html.fr
 Amaya/doc/html/Views.html
 Amaya/doc/html/Views.html.de
 Amaya/doc/html/Views.html.es
@@ -707,7 +712,6 @@ Amaya/doc/images/ColorMenu-fr.gif
 Amaya/doc/images/ColorMenu.gif
 Amaya/doc/images/CooperationMenu.gif
 Amaya/doc/images/CooperationPreferences.gif
-Amaya/doc/images/Cour.gif
 Amaya/doc/images/DL.gif
 Amaya/doc/images/Editor.gif
 Amaya/doc/images/Em.gif
@@ -721,6 +725,7 @@ Amaya/doc/images/H2.gif
 Amaya/doc/images/H3.gif
 Amaya/doc/images/IDMenu.png
 Amaya/doc/images/Image.gif
+Amaya/doc/images/Langue.png
 Amaya/doc/images/LangueNegotiation-fr.gif
 Amaya/doc/images/LangueNegotiation.gif
 Amaya/doc/images/LibraryDocDefaultStyle.gif
@@ -745,10 +750,12 @@ Amaya/doc/images/SaveAs.gif
 Amaya/doc/images/Strong.gif
 Amaya/doc/images/TemplatesMenu-fr.gif
 Amaya/doc/images/TemplatesMenu.gif
+Amaya/doc/images/View.png
 Amaya/doc/images/align-de.png
 Amaya/doc/images/alternateview-de.jpg
 Amaya/doc/images/alternateview.jpg
 Amaya/doc/images/amaya.gif
+Amaya/doc/images/anim.gif
 Amaya/doc/images/annot.png
 Amaya/doc/images/annotationicon-de.png
 Amaya/doc/images/annotationicon-es.png
@@ -786,6 +793,9 @@ Amaya/doc/images/configuration_for_annotations.png
 Amaya/doc/images/configurebox-fr.png
 Amaya/doc/images/configurebox.png
 Amaya/doc/images/createRule-de.png
+Amaya/doc/images/create_image-fr.png
+Amaya/doc/images/create_link-fr.png
+Amaya/doc/images/create_table-fr.png
 Amaya/doc/images/css-fr.gif
 Amaya/doc/images/css.gif
 Amaya/doc/images/dialog_save_as-de.png
@@ -803,17 +813,21 @@ Amaya/doc/images/geometry_preferences-de.png
 Amaya/doc/images/geometry_preferences-es.png
 Amaya/doc/images/geometry_preferences.png
 Amaya/doc/images/graphics_palette-de.png
+Amaya/doc/images/home.gif
 Amaya/doc/images/image_button.gif
+Amaya/doc/images/invalid_profile-fr.png
 Amaya/doc/images/language_negotiation-de.png
 Amaya/doc/images/language_negotiation-es.png
 Amaya/doc/images/language_negotiation.png
 Amaya/doc/images/left.gif
+Amaya/doc/images/libsvg.gif
 Amaya/doc/images/linksview-de.jpg
 Amaya/doc/images/linksview.jpg
 Amaya/doc/images/linkwindow.png
 Amaya/doc/images/localfilter-es.png
 Amaya/doc/images/localfilter.png
 Amaya/doc/images/math_palette-de.png
+Amaya/doc/images/not_well_formed-fr.png
 Amaya/doc/images/open.png
 Amaya/doc/images/printoptions_w32-de.png
 Amaya/doc/images/profiles_preferences-de.png
@@ -829,9 +843,12 @@ Amaya/doc/images/put.gif
 Amaya/doc/images/right.gif
 Amaya/doc/images/scenario_graphique.png
 Amaya/doc/images/search_and_replace-de.png
+Amaya/doc/images/search_and_replace-fr.png
 Amaya/doc/images/sourceview-de.jpg
 Amaya/doc/images/sourceview.jpg
 Amaya/doc/images/spellchecking-de.png
+Amaya/doc/images/spellchecking-fr.png
+Amaya/doc/images/stop.gif
 Amaya/doc/images/structureview-de.jpg
 Amaya/doc/images/structureview.jpg
 Amaya/doc/images/table.gif
@@ -851,6 +868,7 @@ Amaya/fonts/icones.ff
 Amaya/fonts/icones.pcf
 Amaya/fonts/icones1.fb
 Amaya/fonts/icones11.fb
+Amaya/resources/xrc/InitConfirmDlgWX.xrc
 @dirrm Amaya/fonts
 @dirrm Amaya/doc/images
 @dirrm Amaya/doc/html/viewing

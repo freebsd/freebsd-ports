@@ -1,15 +1,6 @@
---- ../Options.in.orig	Fri Sep 15 23:24:26 2000
-+++ ../Options.in	Sat Mar 17 08:53:21 2001
-@@ -9,7 +9,7 @@
- SHELL	= /bin/sh
- 
- CC	= @CC@
--CFLAGS	= @CFLAGS@
-+CFLAGS	= @CFLAGS@ @CPPFLAGS@
- CPP     = @CPP@
- LD	= @CC@
- LDFLAGS	= @LDFLAGS@
-@@ -24,8 +24,8 @@
+--- ../Options.in.orig	Fri Jan 30 01:06:42 2004
++++ ../Options.in	Wed Mar 10 14:37:42 2004
+@@ -27,8 +27,8 @@
  DIFF	= @DIFF@
  INSTALL	= @INSTALL@
  

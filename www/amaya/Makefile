@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	amaya
-PORTVERSION=	8.2
-PORTREVISION=	1
+PORTVERSION=	8.3
 CATEGORIES=	www
 MASTER_SITES=	http://www.w3.org/Amaya/Distribution/ \
 		ftp://ftp.w3.org/pub/amaya/ \
@@ -20,7 +19,7 @@ MASTER_SITES=	http://www.w3.org/Amaya/Distribution/ \
 		ftp://nic.funet.fi/index/WWW/W3/amaya/ \
 		http://www.nic.funet.fi/index/WWW/W3/amaya/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
-DISTFILES=	${DISTNAME}.tgz
+EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	amaya
 
 MAINTAINER=	adam-ports@blacktabby.org
@@ -34,7 +33,8 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	../configure
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LIBS="${LDFLAGS}"
-CONFIGURE_ARGS=	--without-graphic-libs
+
+CFLAGS+=	-fpermissive
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
@@ -59,9 +59,10 @@ DISTFILES+=	${DICT:S/$/.tgz/g}
 
 .if ${XFREE86_VERSION} >= 4 && defined(WITH_OPENGL)
 LIB_DEPENDS+=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
-USE_MESA=	yes
+USE_GL=		yes
 CONFIGURE_ARGS+=	--with-gl
-LDFLAGS+=	-lcompat
+CFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	-lcompat ${PTHREAD_LIBS}
 .endif
 
 pre-everything::
