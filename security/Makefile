@@ -354,6 +354,7 @@
     SUBDIR += rats
     SUBDIR += rc5pipe
     SUBDIR += rid
+    SUBDIR += rkhunter
     SUBDIR += rng_82802
     SUBDIR += ruby-acl
     SUBDIR += ruby-aes
