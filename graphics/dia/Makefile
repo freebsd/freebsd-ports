@@ -1,14 +1,15 @@
 # New ports collection makefile for:	dia
-# Version required:    0.81
-# Date created:        2 November 1999
+# Version required:    0.82
+# Date created:        21 December 1999
 # Whom:                saper@system.pl
 #
 # $FreeBSD$
 #
 
-DISTNAME=	dia-0.81
+DISTNAME=	dia-0.82
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.lysator.liu.se/~alla/dia/files/
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	stable/sources/dia
 
 MAINTAINER=	saper@system.pl
 
