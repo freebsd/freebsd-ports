@@ -9,12 +9,8 @@ PORTNAME=	smb2www
 PORTVERSION=	0.0.980804
 PORTREVISION=	2
 CATEGORIES=	www
-MASTER_SITES=	http://us1.samba.org/samba/smb2www/ \
-		http://us2.samba.org/samba/smb2www/ \
-		http://us3.samba.org/samba/smb2www/ \
-		http://us4.samba.org/samba/smb2www/ \
-		http://uk.samba.org/samba/smb2www/ \
-		http://sunsite.auc.dk/samba/smb2www/
+MASTER_SITES=	${MASTER_SITE_SAMBA}
+MASTER_SITE_SUBDIR=	smb2www
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/0.0.//g}
 
 MAINTAINER=	roman@xpert.com
