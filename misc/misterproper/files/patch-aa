@@ -2,8 +2,16 @@
 $FreeBSD$
 
 --- src/main.c.orig	Sat Mar  3 15:03:28 2001
-+++ src/main.c	Tue Apr 17 10:16:55 2001
-@@ -230,7 +230,7 @@
++++ src/main.c	Fri Aug 31 15:28:37 2001
+@@ -2,7 +2,6 @@
+ # include <config.h>
+ #endif
+ 
+-#include <getopt.h>
+ #include <gnome.h>
+ 
+ #include "interface.h"
+@@ -230,7 +229,7 @@
  					g_free(thing);
  					continue;
  				}
@@ -12,7 +20,7 @@ $FreeBSD$
  					== (time_t) 0ULL) {
  					g_warning(_("Corrupted database : null frequency\n"));
  					g_free(thing);
-@@ -247,7 +247,7 @@
+@@ -247,7 +246,7 @@
  						(rand() % (thing->frequency * 4)) - 
  						(thing->frequency * 2) + thing->frequency / 2;
  				} else {
