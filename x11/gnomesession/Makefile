@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gnomesession
-PORTVERSION=	2.0.5
+PORTVERSION=	2.0.6
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	2.0.0/sources/gnome-session
+MASTER_SITE_SUBDIR=	2.0.1/sources/gnome-session
 DISTNAME=	gnome-session-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
