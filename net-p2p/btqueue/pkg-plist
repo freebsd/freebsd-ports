@@ -65,9 +65,6 @@ bin/btshowmetainfo.py
 %%PYTHON_SITELIBDIR%%/BitQueue/scrape.py
 %%PYTHON_SITELIBDIR%%/BitQueue/scrape.pyc
 %%PYTHON_SITELIBDIR%%/BitQueue/scrape.pyo
-%%PYTHON_SITELIBDIR%%/BitQueue/table.py
-%%PYTHON_SITELIBDIR%%/BitQueue/table.pyc
-%%PYTHON_SITELIBDIR%%/BitQueue/table.pyo
 %%PYTHON_SITELIBDIR%%/BitQueue/timeoutsocket.py
 %%PYTHON_SITELIBDIR%%/BitQueue/timeoutsocket.pyc
 %%PYTHON_SITELIBDIR%%/BitQueue/timeoutsocket.pyo
