@@ -11,7 +11,7 @@ CATEGORIES=		japanese net
 PKGNAMEPREFIX=		ja-
 
 PATCH_SITES=		http://dist.bsdlab.org/
-PATCHFILES=		samba-3.0.9-i18n-20041219.bz2
+PATCHFILES=		samba-3.0.10-i18n-20041221.bz2
 PATCH_DIST_STRIP=	-p0
 
 MAINTAINER=		kuriyama@FreeBSD.org
