@@ -6,17 +6,19 @@
 #
 
 PORTNAME=	gnomecontrolcenter
-PORTVERSION=	1.4.0.3
+PORTVERSION=	1.4.0.4
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/control-center
 DISTNAME=	control-center-${PORTVERSION}
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	gnomecanvaspixbuf.1:${PORTSDIR}/graphics/gnomecanvas \
 		gnomevfs.0:${PORTSDIR}/devel/gnomevfs
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOMELIBS=	yes
