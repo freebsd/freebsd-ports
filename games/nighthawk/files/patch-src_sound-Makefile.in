@@ -1,0 +1,23 @@
+--- src_sound/Makefile.in.orig	Wed Apr  4 15:30:06 2001
++++ src_sound/Makefile.in	Wed Apr  4 15:30:23 2001
+@@ -298,19 +298,7 @@
+ -include $(srcdir)/Make.common
+ 
+ host_safe:
+-	@if [ $(HOST_SAFE) = '1' ]; then \
+-	  echo "host is safe" >host_safe; \
+-	else \
+-	  echo "***********************************************"; \
+-	  echo "This is not an INTEL based machine. As the Funktracker"; \
+-	  echo "format is in Intel byte sex (and i haven't yet made"; \
+-	  echo "provisions for other processors), trying to play"; \
+-	  echo "funktracker songs on this machine will be dangerous."; \
+-	  echo ""; \
+-	  echo "Refer to INSTALL file."; \
+-	  echo "***********************************************"; \
+-	  false; \
+-	fi
++	echo "host is safe" >host_safe
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
