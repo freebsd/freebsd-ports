@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	gonvert
-PORTVERSION=	0.0.5
+PORTVERSION=	0.0.7
 CATEGORIES=	misc python gnome
 MASTER_SITES=	http://webhome.idirect.com/~tekatch/anthony/ucu/
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/GTK.py:${PORTSDIR}/x11-toolkits/py-gtk \
 		${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/gnome/ui.py:${PORTSDIR}/x11-toolkits/py-gnome
