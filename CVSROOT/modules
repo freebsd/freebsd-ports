@@ -7414,6 +7414,7 @@ pear-HTML_BBCodeParser	ports/devel/pear-HTML_BBCodeParser
 pear-HTML_Common	ports/devel/pear-HTML_Common
 pear-HTML_QuickForm	ports/devel/pear-HTML_QuickForm
 pear-HTML_Select_Common	ports/devel/pear-HTML_Select_Common
+pear-HTML_Table	ports/devel/pear-HTML_Table
 pear-HTML_Template_IT	ports/devel/pear-HTML_Template_IT
 pear-HTML_Template_PHPLIB	ports/devel/pear-HTML_Template_PHPLIB
 pear-HTTP	ports/www/pear-HTTP
