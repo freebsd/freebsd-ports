@@ -1,22 +1,24 @@
 # New ports collection makefile for:	JDK documentation
-# Version required:	1.1.7
+# Version required:	1.1.8
 # Date created:		Mon Mar  8 10:10:42 EET 1999
 # Whom:			Martti Kuparinen <martti.kuparinen@ericsson.com>
 #
-# $Id: Makefile,v 1.3 1999/05/05 15:07:34 taoka Exp $
+# $Id: Makefile,v 1.4 1999/05/06 00:13:56 taoka Exp $
 #
 
-DISTNAME=	jdk117B-doc
-PKGNAME=	jdk-doc-1.1.7
+DISTNAME=	jdk118-doc
+PKGNAME=	jdk-doc-1.1.8
 CATEGORIES=	lang
 
 MAINTAINER=	martti.kuparinen@ericsson.com
 
 RESTRICTED=	"This software is under license and export control."
 IS_INTERACTIVE=	"Requires manual fetch"
-WRKSRC=		${WRKDIR}/jdk1.1.7B
+VERSION=	1.1.8
+WRKSRC=		${WRKDIR}/jdk${VERSION}
 NO_BUILD=	yes
 PKGMESSAGE=	${WRKDIR}/MESSAGE
+PLIST_SUB+=	VERSION=${VERSION}
 
 .include <bsd.port.pre.mk>
 
@@ -36,9 +38,9 @@ do-fetch:
 .endif
 
 do-install:
-	${MKDIR} ${PREFIX}/jdk1.1.7
+	${MKDIR} ${PREFIX}/jdk${VERSION}
 	(cd ${WRKSRC} && ${TAR} -cf - docs) \
-		| (cd ${PREFIX}/jdk1.1.7 && ${TAR} -xf -)
+		| (cd ${PREFIX}/jdk${VERSION} && ${TAR} -xf -)
 	@${SED} s+!!PREFIX!!+${PREFIX}+g < ${PKGDIR}/MESSAGE > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
