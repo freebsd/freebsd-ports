@@ -1,12 +1,12 @@
 bin/racc
 bin/racc2y
 bin/y2racc
-%%RUBY_SITELIBDIR%%/racc/facade.rb
-%%RUBY_SITELIBDIR%%/racc/format.rb
+%%RUBY_SITELIBDIR%%/racc/compiler.rb
 %%RUBY_SITELIBDIR%%/racc/grammer.rb
 %%RUBY_SITELIBDIR%%/racc/info.rb
 %%RUBY_SITELIBDIR%%/racc/iset.rb
-%%RUBY_SITELIBDIR%%/racc/libracc.rb
+%%RUBY_SITELIBDIR%%/racc/output.rb
+%%RUBY_SITELIBDIR%%/racc/parser.rb
 %%RUBY_SITELIBDIR%%/racc/raccp.rb
 %%RUBY_SITELIBDIR%%/racc/raccs.rb
 %%RUBY_SITELIBDIR%%/racc/state.rb
