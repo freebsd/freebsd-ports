@@ -7,6 +7,7 @@
 
 PORTNAME=	freenet6
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	# fetch manually
 DISTNAME=	${PORTNAME}-client-${PORTVERSION}
@@ -24,7 +25,7 @@ USE_REINPLACE=	yes
 MAN8=		tspc.8
 MAN5=		tspc.conf.5
 
-PKGMESSAGE=	${WRKSRC}/pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
 
@@ -69,8 +70,8 @@ post-patch:
 	@${CP} ${FILESDIR}/freenet6.sh.in ${WRKSRC}/freenet6.sh
 	@${REINPLACE_CMD} -e "s|@@PREFIX@@|${PREFIX}|g" ${WRKSRC}/freenet6.sh
 
-	@${CP} ${FILESDIR}/pkg-message.in ${WRKSRC}/pkg-message
-	@${REINPLACE_CMD} -e "s|@@PREFIX@@|${PREFIX}|g" ${WRKSRC}/pkg-message
+	@${CP} ${FILESDIR}/pkg-message.in ${WRKDIR}/pkg-message
+	@${REINPLACE_CMD} -e "s|@@PREFIX@@|${PREFIX}|g" ${WRKDIR}/pkg-message
 
 	@${REINPLACE_CMD} -e "s|@@PREFIX@@|${PREFIX}|g" \
 		${WRKSRC}/man/man8/tspc.8
