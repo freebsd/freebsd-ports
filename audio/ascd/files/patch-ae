@@ -1,29 +1,11 @@
---- ascd/Imakefile.orig	Tue May  4 20:24:25 1999
-+++ ascd/Imakefile	Tue May  4 20:26:00 1999
-@@ -5,7 +5,7 @@
- BINDIR		= CBINDIR
- MANDIR		= CMANDIR
- THEMESDIR	= CTHDIR
--MOREFLAGS	= -I/usr/local/include -I.
-+MOREFLAGS	= -I/usr/X11R6/include -I.
+--- Imakefile.orig	Sun Aug  8 21:25:29 1999
++++ Imakefile	Sun Aug  8 21:25:53 1999
+@@ -9,7 +9,7 @@
  CCOPTIONS	= $(MOREFLAGS)
  SYS_LIBRARIES	= $(XLIB) -lXpm
- 
-@@ -15,7 +15,7 @@
- WM_LIB = 
- #endif
  
 -LOCAL_LIBRARIES = -L../libworkman -lworkman -L/usr/local/lib
 +LOCAL_LIBRARIES = -L../libworkman -lworkman -L/usr/X11R6/lib
  
- SRCS = cdcontrol.c ascd.c
- OBJS = cdcontrol.o ascd.o
-@@ -43,7 +43,5 @@
- 	@cd $(THEMESDIR) ; rm clean.tar
- 	@cd $(THEMESDIR) ; rm vintage.tar
- 	@cd $(THEMESDIR) ; rm night.tar
--	@cd $(THEMESDIR) ; rm .dir
--	@cd $(THEMESDIR) ; /bin/ls -1 > /tmp/.dir
--	@cd $(THEMESDIR) ; cp /tmp/.dir .
-+	@cd $(THEMESDIR) ; rmdir sands/.xvpics
- 	@echo "Done."
+ SRCS_OPT1 =
+ SRCS_OPT2 =
