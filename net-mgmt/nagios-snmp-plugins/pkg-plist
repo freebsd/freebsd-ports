@@ -1,4 +1,4 @@
-@exec mkdir -p %D/libexec/nagios 2>/dev/null || true
+@exec mkdir -p %D/libexec/nagios
 libexec/nagios/check_snmp_disk
 libexec/nagios/check_snmp_proc
 @unexec rmdir %D/libexec/nagios 2>/dev/null || true
