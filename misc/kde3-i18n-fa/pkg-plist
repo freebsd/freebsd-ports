@@ -3,10 +3,6 @@ share/locale/fa/LC_MESSAGES/appletproxy.mo
 share/locale/fa/LC_MESSAGES/childpanelextension.mo
 share/locale/fa/LC_MESSAGES/clockapplet.mo
 share/locale/fa/LC_MESSAGES/cupsdconf.mo
-share/locale/fa/LC_MESSAGES/desktop_kde-i18n.mo
-share/locale/fa/LC_MESSAGES/desktop_kdebase.mo
-share/locale/fa/LC_MESSAGES/desktop_kdelibs.mo
-share/locale/fa/LC_MESSAGES/desktop_quanta.mo
 share/locale/fa/LC_MESSAGES/devicesapplet.mo
 share/locale/fa/LC_MESSAGES/display.mo
 share/locale/fa/LC_MESSAGES/dockbarextension.mo
@@ -102,6 +98,7 @@ share/locale/fa/LC_MESSAGES/kfindpart.mo
 share/locale/fa/LC_MESSAGES/kfmclient.mo
 share/locale/fa/LC_MESSAGES/kfontinst.mo
 share/locale/fa/LC_MESSAGES/kfontviewpart.mo
+share/locale/fa/LC_MESSAGES/kgreet_classic.mo
 share/locale/fa/LC_MESSAGES/khelpcenter.mo
 share/locale/fa/LC_MESSAGES/khotkeys.mo
 share/locale/fa/LC_MESSAGES/kicker.mo

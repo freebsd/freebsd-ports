@@ -44,11 +44,11 @@ OPTIONS=	ARTSWRAPPER "Suid wrapper for aRts, req'd for realtime prio" on \
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_ARTSWRAPPER)
+.if !defined(WITHOUT_ARTSWRAPPER)
 RUN_DEPENDS+=	artswrapper:${PORTSDIR}/audio/artswrapper
 .endif
 
-.if defined(WITH_MOTIF)
+.if !defined(WITHOUT_MOTIF)
 USE_MOTIF=	yes
 PLIST_APPEND+=	plist.motif
 .elseif defined(WITHOUT_MOTIF)

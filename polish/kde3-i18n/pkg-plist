@@ -19,24 +19,6 @@ share/locale/pl/LC_MESSAGES/crashesplugin.mo
 share/locale/pl/LC_MESSAGES/cupsdconf.mo
 share/locale/pl/LC_MESSAGES/cvsservice.mo
 share/locale/pl/LC_MESSAGES/dcopservice.mo
-share/locale/pl/LC_MESSAGES/desktop_kde-i18n.mo
-share/locale/pl/LC_MESSAGES/desktop_kdeaccessibility.mo
-share/locale/pl/LC_MESSAGES/desktop_kdeaddons.mo
-share/locale/pl/LC_MESSAGES/desktop_kdeadmin.mo
-share/locale/pl/LC_MESSAGES/desktop_kdeartwork.mo
-share/locale/pl/LC_MESSAGES/desktop_kdebase.mo
-share/locale/pl/LC_MESSAGES/desktop_kdeedu.mo
-share/locale/pl/LC_MESSAGES/desktop_kdegames.mo
-share/locale/pl/LC_MESSAGES/desktop_kdegraphics.mo
-share/locale/pl/LC_MESSAGES/desktop_kdelibs.mo
-share/locale/pl/LC_MESSAGES/desktop_kdemultimedia.mo
-share/locale/pl/LC_MESSAGES/desktop_kdenetwork.mo
-share/locale/pl/LC_MESSAGES/desktop_kdepim.mo
-share/locale/pl/LC_MESSAGES/desktop_kdesdk.mo
-share/locale/pl/LC_MESSAGES/desktop_kdetoys.mo
-share/locale/pl/LC_MESSAGES/desktop_kdeutils.mo
-share/locale/pl/LC_MESSAGES/desktop_kdevelop.mo
-share/locale/pl/LC_MESSAGES/desktop_quanta.mo
 share/locale/pl/LC_MESSAGES/devicesapplet.mo
 share/locale/pl/LC_MESSAGES/dirfilterplugin.mo
 share/locale/pl/LC_MESSAGES/display.mo
@@ -178,6 +160,7 @@ share/locale/pl/LC_MESSAGES/kcmtaskbar.mo
 share/locale/pl/LC_MESSAGES/kcmusb.mo
 share/locale/pl/LC_MESSAGES/kcmview1394.mo
 share/locale/pl/LC_MESSAGES/kcmvim.mo
+share/locale/pl/LC_MESSAGES/kcmwifi.mo
 share/locale/pl/LC_MESSAGES/kcmxinerama.mo
 share/locale/pl/LC_MESSAGES/kcoloredit.mo
 share/locale/pl/LC_MESSAGES/kcontrol.mo
@@ -196,6 +179,7 @@ share/locale/pl/LC_MESSAGES/kdesktop.mo
 share/locale/pl/LC_MESSAGES/kdessh.mo
 share/locale/pl/LC_MESSAGES/kdesu.mo
 share/locale/pl/LC_MESSAGES/kdesud.mo
+share/locale/pl/LC_MESSAGES/kdevelop.mo
 share/locale/pl/LC_MESSAGES/kdevtipofday.mo
 share/locale/pl/LC_MESSAGES/kdf.mo
 share/locale/pl/LC_MESSAGES/kdgantt.mo
@@ -258,6 +242,7 @@ share/locale/pl/LC_MESSAGES/kghostview.mo
 share/locale/pl/LC_MESSAGES/kgoldrunner.mo
 share/locale/pl/LC_MESSAGES/kgpg.mo
 share/locale/pl/LC_MESSAGES/kgpgcertmanager.mo
+share/locale/pl/LC_MESSAGES/kgreet_classic.mo
 share/locale/pl/LC_MESSAGES/khangman.mo
 share/locale/pl/LC_MESSAGES/khelpcenter.mo
 share/locale/pl/LC_MESSAGES/khexedit.mo
@@ -410,6 +395,7 @@ share/locale/pl/LC_MESSAGES/ktuberling.mo
 share/locale/pl/LC_MESSAGES/ktux.mo
 share/locale/pl/LC_MESSAGES/kuick_plugin.mo
 share/locale/pl/LC_MESSAGES/kuickshow.mo
+share/locale/pl/LC_MESSAGES/kuiviewer.mo
 share/locale/pl/LC_MESSAGES/kuser.mo
 share/locale/pl/LC_MESSAGES/kverbos.mo
 share/locale/pl/LC_MESSAGES/kview.mo
@@ -423,6 +409,7 @@ share/locale/pl/LC_MESSAGES/kviewshell.mo
 share/locale/pl/LC_MESSAGES/kviewtemplateplugin.mo
 share/locale/pl/LC_MESSAGES/kviewviewer.mo
 share/locale/pl/LC_MESSAGES/kvoctrain.mo
+share/locale/pl/LC_MESSAGES/kwalletmanager.mo
 share/locale/pl/LC_MESSAGES/kweather.mo
 share/locale/pl/LC_MESSAGES/kwifimanager.mo
 share/locale/pl/LC_MESSAGES/kwin.mo

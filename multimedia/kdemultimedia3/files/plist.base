@@ -47,6 +47,7 @@ include/libkcddb/cddb.h
 include/libkcddb/cdinfo.h
 include/libkcddb/client.h
 include/libkcddb/config.h
+include/libkcddb/configbase.h
 include/libwm/wm_cdrom.h
 include/libwm/wm_cdtext.h
 include/mimetypetree.h

@@ -3,14 +3,6 @@ share/locale/se/LC_MESSAGES/appletproxy.mo
 share/locale/se/LC_MESSAGES/childpanelextension.mo
 share/locale/se/LC_MESSAGES/clockapplet.mo
 share/locale/se/LC_MESSAGES/cupsdconf.mo
-share/locale/se/LC_MESSAGES/desktop_kde-i18n.mo
-share/locale/se/LC_MESSAGES/desktop_kdeadmin.mo
-share/locale/se/LC_MESSAGES/desktop_kdebase.mo
-share/locale/se/LC_MESSAGES/desktop_kdeedu.mo
-share/locale/se/LC_MESSAGES/desktop_kdegraphics.mo
-share/locale/se/LC_MESSAGES/desktop_kdelibs.mo
-share/locale/se/LC_MESSAGES/desktop_kdemultimedia.mo
-share/locale/se/LC_MESSAGES/desktop_kdenetwork.mo
 share/locale/se/LC_MESSAGES/devicesapplet.mo
 share/locale/se/LC_MESSAGES/dockbarextension.mo
 share/locale/se/LC_MESSAGES/drkonqi.mo

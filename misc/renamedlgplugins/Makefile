@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	"Plugins for Konqueror's rename dialog"
+COMMENT=	Plugins for Konqueror's rename dialog
 
 KDE_SPLIT=	renamedlgplugins
 KDE_DOC_SPLIT=	# none

@@ -206,9 +206,12 @@ share/doc/HTML/fr/katomic/common
 share/doc/HTML/fr/katomic/index.cache.bz2
 share/doc/HTML/fr/katomic/index.docbook
 share/doc/HTML/fr/kbabel/catman.docbook
+share/doc/HTML/fr/kbabel/common
 share/doc/HTML/fr/kbabel/dictionaries.docbook
 share/doc/HTML/fr/kbabel/faq.docbook
 share/doc/HTML/fr/kbabel/glossary.docbook
+share/doc/HTML/fr/kbabel/index.cache.bz2
+share/doc/HTML/fr/kbabel/index.docbook
 share/doc/HTML/fr/kbabel/kbabeldict.docbook
 share/doc/HTML/fr/kbabel/menu.docbook
 share/doc/HTML/fr/kbabel/preferences.docbook
@@ -475,6 +478,7 @@ share/doc/HTML/fr/kdeprint/theory.docbook
 share/doc/HTML/fr/kdesu/common
 share/doc/HTML/fr/kdesu/index.cache.bz2
 share/doc/HTML/fr/kdesu/index.docbook
+share/doc/HTML/fr/kdevelop/tip.database
 share/doc/HTML/fr/kdf/common
 share/doc/HTML/fr/kdf/index.cache.bz2
 share/doc/HTML/fr/kdf/index.docbook
@@ -483,6 +487,7 @@ share/doc/HTML/fr/kdf/kdf_config.png
 share/doc/HTML/fr/kdm/common
 share/doc/HTML/fr/kdm/index.cache.bz2
 share/doc/HTML/fr/kdm/index.docbook
+share/doc/HTML/fr/kdm/kdmrc-ref.docbook
 share/doc/HTML/fr/kdvi/common
 share/doc/HTML/fr/kdvi/index.cache.bz2
 share/doc/HTML/fr/kdvi/index.docbook
@@ -986,6 +991,9 @@ share/doc/HTML/fr/konsole/common
 share/doc/HTML/fr/konsole/index.cache.bz2
 share/doc/HTML/fr/konsole/index.docbook
 share/doc/HTML/fr/konsole/konsole.png
+share/doc/HTML/fr/konsolekalendar/common
+share/doc/HTML/fr/konsolekalendar/index.cache.bz2
+share/doc/HTML/fr/konsolekalendar/index.docbook
 share/doc/HTML/fr/kontact/common
 share/doc/HTML/fr/kontact/index.cache.bz2
 share/doc/HTML/fr/kontact/index.docbook
@@ -1380,6 +1388,9 @@ share/doc/HTML/fr/kwallet/index.docbook
 share/doc/HTML/fr/kweather/common
 share/doc/HTML/fr/kweather/index.cache.bz2
 share/doc/HTML/fr/kweather/index.docbook
+share/doc/HTML/fr/kwifimanager/common
+share/doc/HTML/fr/kwifimanager/index.cache.bz2
+share/doc/HTML/fr/kwifimanager/index.docbook
 share/doc/HTML/fr/kwin4/common
 share/doc/HTML/fr/kwin4/index.cache.bz2
 share/doc/HTML/fr/kwin4/index.docbook
@@ -1403,6 +1414,9 @@ share/doc/HTML/fr/kwuftpd/virtual.png
 share/doc/HTML/fr/kxconfig/common
 share/doc/HTML/fr/kxconfig/index.cache.bz2
 share/doc/HTML/fr/kxconfig/index.docbook
+share/doc/HTML/fr/kxkb/common
+share/doc/HTML/fr/kxkb/index.cache.bz2
+share/doc/HTML/fr/kxkb/index.docbook
 share/doc/HTML/fr/kxsldbg/callstack.docbook
 share/doc/HTML/fr/kxsldbg/common
 share/doc/HTML/fr/kxsldbg/credits.docbook
@@ -1447,24 +1461,6 @@ share/locale/fr/LC_MESSAGES/crashesplugin.mo
 share/locale/fr/LC_MESSAGES/cupsdconf.mo
 share/locale/fr/LC_MESSAGES/cvsservice.mo
 share/locale/fr/LC_MESSAGES/dcopservice.mo
-share/locale/fr/LC_MESSAGES/desktop_kde-i18n.mo
-share/locale/fr/LC_MESSAGES/desktop_kdeaccessibility.mo
-share/locale/fr/LC_MESSAGES/desktop_kdeaddons.mo
-share/locale/fr/LC_MESSAGES/desktop_kdeadmin.mo
-share/locale/fr/LC_MESSAGES/desktop_kdeartwork.mo
-share/locale/fr/LC_MESSAGES/desktop_kdebase.mo
-share/locale/fr/LC_MESSAGES/desktop_kdeedu.mo
-share/locale/fr/LC_MESSAGES/desktop_kdegames.mo
-share/locale/fr/LC_MESSAGES/desktop_kdegraphics.mo
-share/locale/fr/LC_MESSAGES/desktop_kdelibs.mo
-share/locale/fr/LC_MESSAGES/desktop_kdemultimedia.mo
-share/locale/fr/LC_MESSAGES/desktop_kdenetwork.mo
-share/locale/fr/LC_MESSAGES/desktop_kdepim.mo
-share/locale/fr/LC_MESSAGES/desktop_kdesdk.mo
-share/locale/fr/LC_MESSAGES/desktop_kdetoys.mo
-share/locale/fr/LC_MESSAGES/desktop_kdeutils.mo
-share/locale/fr/LC_MESSAGES/desktop_kdevelop.mo
-share/locale/fr/LC_MESSAGES/desktop_quanta.mo
 share/locale/fr/LC_MESSAGES/devicesapplet.mo
 share/locale/fr/LC_MESSAGES/dirfilterplugin.mo
 share/locale/fr/LC_MESSAGES/display.mo
@@ -1627,6 +1623,7 @@ share/locale/fr/LC_MESSAGES/kdesktop.mo
 share/locale/fr/LC_MESSAGES/kdessh.mo
 share/locale/fr/LC_MESSAGES/kdesu.mo
 share/locale/fr/LC_MESSAGES/kdesud.mo
+share/locale/fr/LC_MESSAGES/kdevelop.mo
 share/locale/fr/LC_MESSAGES/kdevtipofday.mo
 share/locale/fr/LC_MESSAGES/kdf.mo
 share/locale/fr/LC_MESSAGES/kdgantt.mo
@@ -1689,6 +1686,7 @@ share/locale/fr/LC_MESSAGES/kghostview.mo
 share/locale/fr/LC_MESSAGES/kgoldrunner.mo
 share/locale/fr/LC_MESSAGES/kgpg.mo
 share/locale/fr/LC_MESSAGES/kgpgcertmanager.mo
+share/locale/fr/LC_MESSAGES/kgreet_classic.mo
 share/locale/fr/LC_MESSAGES/khangman.mo
 share/locale/fr/LC_MESSAGES/khelpcenter.mo
 share/locale/fr/LC_MESSAGES/khexedit.mo
@@ -1744,6 +1742,10 @@ share/locale/fr/LC_MESSAGES/kmenuedit.mo
 share/locale/fr/LC_MESSAGES/kmessedwords.mo
 share/locale/fr/LC_MESSAGES/kmid.mo
 share/locale/fr/LC_MESSAGES/kmidi.mo
+share/locale/fr/LC_MESSAGES/kmilo_generic.mo
+share/locale/fr/LC_MESSAGES/kmilo_kvaio.mo
+share/locale/fr/LC_MESSAGES/kmilo_powerbook.mo
+share/locale/fr/LC_MESSAGES/kmilod.mo
 share/locale/fr/LC_MESSAGES/kmines.mo
 share/locale/fr/LC_MESSAGES/kminipagerapplet.mo
 share/locale/fr/LC_MESSAGES/kmix.mo
@@ -1761,6 +1763,7 @@ share/locale/fr/LC_MESSAGES/knotify.mo
 share/locale/fr/LC_MESSAGES/kodo.mo
 share/locale/fr/LC_MESSAGES/kolf.mo
 share/locale/fr/LC_MESSAGES/kolourpicker.mo
+share/locale/fr/LC_MESSAGES/kommander.mo
 share/locale/fr/LC_MESSAGES/kompare.mo
 share/locale/fr/LC_MESSAGES/konq_smbmounterplugin.mo
 share/locale/fr/LC_MESSAGES/konqsidebar_mediaplayer.mo
@@ -1941,11 +1944,13 @@ share/locale/fr/relecture_gui
 @dirrm share/doc/HTML/fr/lskat
 @dirrm share/doc/HTML/fr/lisa
 @dirrm share/doc/HTML/fr/kxsldbg
+@dirrm share/doc/HTML/fr/kxkb
 @dirrm share/doc/HTML/fr/kxconfig
 @dirrm share/doc/HTML/fr/kwuftpd
 @dirrm share/doc/HTML/fr/kwrite
 @dirrm share/doc/HTML/fr/kworldclock
 @dirrm share/doc/HTML/fr/kwin4
+@dirrm share/doc/HTML/fr/kwifimanager
 @dirrm share/doc/HTML/fr/kweather
 @dirrm share/doc/HTML/fr/kwallet
 @dirrm share/doc/HTML/fr/kvoctrain
@@ -1993,6 +1998,7 @@ share/locale/fr/relecture_gui
 @dirrm share/doc/HTML/fr/kopete
 @dirrm share/doc/HTML/fr/kooka
 @dirrm share/doc/HTML/fr/kontact
+@dirrm share/doc/HTML/fr/konsolekalendar
 @dirrm share/doc/HTML/fr/konsole
 @dirrm share/doc/HTML/fr/konquest
 @dirrm share/doc/HTML/fr/konqueror
@@ -2082,6 +2088,7 @@ share/locale/fr/relecture_gui
 @dirrm share/doc/HTML/fr/kdvi
 @dirrm share/doc/HTML/fr/kdm
 @dirrm share/doc/HTML/fr/kdf
+@dirrm share/doc/HTML/fr/kdevelop
 @dirrm share/doc/HTML/fr/kdesu
 @dirrm share/doc/HTML/fr/kdeprint
 @dirrm share/doc/HTML/fr/kdebugdialog

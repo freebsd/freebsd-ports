@@ -945,8 +945,10 @@ share/apps/kppp/Rules/Portugal/PT_Regional.rst
 share/apps/kppp/Rules/Portugal/PT_Regional_Ilhas.rst
 share/apps/kppp/Rules/Portugal/PT_YesNET.rst
 share/apps/kppp/Rules/Portugal/PT_YesNET_Ilhas.rst
+share/apps/kppp/Rules/Romania/Easynet.rst
+share/apps/kppp/Rules/Romania/RomTelecom_GSM.rst
 share/apps/kppp/Rules/Romania/Romtelecom_Acces_Special_Internet.rst
-share/apps/kppp/Rules/Romania/Romtelecom_Interurban.rst
+share/apps/kppp/Rules/Romania/Romtelecom_Interjudetean.rst
 share/apps/kppp/Rules/Romania/Romtelecom_Local.rst
 share/apps/kppp/Rules/Romania/Zapp-Mobile.rst
 share/apps/kppp/Rules/Russia/TEMPLATE.ru

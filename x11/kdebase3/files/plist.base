@@ -56,6 +56,7 @@ bin/kpersonalizer
 bin/kpm
 bin/kprinter
 bin/krandom.kss
+bin/krandrinithack
 bin/krandrtray
 bin/krdb
 bin/kreadconfig
@@ -398,6 +399,8 @@ lib/kde3/konsole.la
 lib/kde3/konsole.so
 lib/kde3/kprinter.la
 lib/kde3/kprinter.so
+lib/kde3/krandrinithack.la
+lib/kde3/krandrinithack.so
 lib/kde3/ksmserver.la
 lib/kde3/ksmserver.so
 lib/kde3/ksplashdefault.la
@@ -486,8 +489,6 @@ lib/kde3/taskbar_panelextension.la
 lib/kde3/taskbar_panelextension.so
 lib/kde3/textthumbnail.la
 lib/kde3/textthumbnail.so
-lib/krandrinithack.la
-lib/krandrinithack.so
 lib/libkateinterfaces.la
 lib/libkateinterfaces.so
 lib/libkateinterfaces.so.0
@@ -535,6 +536,8 @@ lib/libkdeinit_konsole.la
 lib/libkdeinit_konsole.so
 lib/libkdeinit_kprinter.la
 lib/libkdeinit_kprinter.so
+lib/libkdeinit_krandrinithack.la
+lib/libkdeinit_krandrinithack.so
 lib/libkdeinit_ksmserver.la
 lib/libkdeinit_ksmserver.so
 lib/libkdeinit_kwin.la
@@ -1424,7 +1427,6 @@ share/apps/konqueror/pics/indicator_noconnect.png
 share/apps/konqueror/pics/indicator_viewactive.png
 share/apps/konqueror/pics/thumbnailfont_7x4.png
 share/apps/konqueror/profiles/filemanagement
-share/apps/konqueror/profiles/filepreview
 share/apps/konqueror/profiles/midnightcommander
 share/apps/konqueror/profiles/webbrowsing
 share/apps/konqueror/servicemenus/cdrom_mounted_konqy.desktop
@@ -2209,6 +2211,7 @@ share/icons/crystalsvg/128x128/apps/wp.png
 share/icons/crystalsvg/128x128/apps/xclock.png
 share/icons/crystalsvg/128x128/apps/xfmail.png
 share/icons/crystalsvg/128x128/apps/xmag.png
+share/icons/crystalsvg/16x16/actions/newfont.png
 share/icons/crystalsvg/16x16/apps/access.png
 share/icons/crystalsvg/16x16/apps/acroread.png
 share/icons/crystalsvg/16x16/apps/agent.png
@@ -2365,12 +2368,14 @@ share/icons/crystalsvg/16x16/apps/xpaint.png
 share/icons/crystalsvg/16x16/apps/xv.png
 share/icons/crystalsvg/16x16/devices/print_printer.png
 share/icons/crystalsvg/16x16/filesystems/folder_print2.png
+share/icons/crystalsvg/22x22/actions/newfont.png
 share/icons/crystalsvg/22x22/apps/klipper.png
 share/icons/crystalsvg/22x22/apps/konqueror.png
 share/icons/crystalsvg/22x22/apps/ksplash.png
 share/icons/crystalsvg/22x22/apps/kvirc.png
 share/icons/crystalsvg/22x22/apps/nedit.png
 share/icons/crystalsvg/22x22/apps/randr.png
+share/icons/crystalsvg/32x32/actions/newfont.png
 share/icons/crystalsvg/32x32/apps/access.png
 share/icons/crystalsvg/32x32/apps/acroread.png
 share/icons/crystalsvg/32x32/apps/agent.png

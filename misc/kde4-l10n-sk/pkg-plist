@@ -674,22 +674,6 @@ share/locale/sk/LC_MESSAGES/crashesplugin.mo
 share/locale/sk/LC_MESSAGES/cupsdconf.mo
 share/locale/sk/LC_MESSAGES/cvsservice.mo
 share/locale/sk/LC_MESSAGES/dcopservice.mo
-share/locale/sk/LC_MESSAGES/desktop_kde-i18n.mo
-share/locale/sk/LC_MESSAGES/desktop_kdeaccessibility.mo
-share/locale/sk/LC_MESSAGES/desktop_kdeaddons.mo
-share/locale/sk/LC_MESSAGES/desktop_kdeadmin.mo
-share/locale/sk/LC_MESSAGES/desktop_kdeartwork.mo
-share/locale/sk/LC_MESSAGES/desktop_kdebase.mo
-share/locale/sk/LC_MESSAGES/desktop_kdeedu.mo
-share/locale/sk/LC_MESSAGES/desktop_kdegames.mo
-share/locale/sk/LC_MESSAGES/desktop_kdegraphics.mo
-share/locale/sk/LC_MESSAGES/desktop_kdelibs.mo
-share/locale/sk/LC_MESSAGES/desktop_kdemultimedia.mo
-share/locale/sk/LC_MESSAGES/desktop_kdenetwork.mo
-share/locale/sk/LC_MESSAGES/desktop_kdepim.mo
-share/locale/sk/LC_MESSAGES/desktop_kdesdk.mo
-share/locale/sk/LC_MESSAGES/desktop_kdetoys.mo
-share/locale/sk/LC_MESSAGES/desktop_kdeutils.mo
 share/locale/sk/LC_MESSAGES/devicesapplet.mo
 share/locale/sk/LC_MESSAGES/dirfilterplugin.mo
 share/locale/sk/LC_MESSAGES/display.mo
@@ -851,6 +835,7 @@ share/locale/sk/LC_MESSAGES/kdesktop.mo
 share/locale/sk/LC_MESSAGES/kdessh.mo
 share/locale/sk/LC_MESSAGES/kdesu.mo
 share/locale/sk/LC_MESSAGES/kdesud.mo
+share/locale/sk/LC_MESSAGES/kdevelop.mo
 share/locale/sk/LC_MESSAGES/kdevtipofday.mo
 share/locale/sk/LC_MESSAGES/kdf.mo
 share/locale/sk/LC_MESSAGES/kdgantt.mo
@@ -993,6 +978,7 @@ share/locale/sk/LC_MESSAGES/konsole.mo
 share/locale/sk/LC_MESSAGES/konsolekalendar.mo
 share/locale/sk/LC_MESSAGES/kontact.mo
 share/locale/sk/LC_MESSAGES/kooka.mo
+share/locale/sk/LC_MESSAGES/kopete.mo
 share/locale/sk/LC_MESSAGES/korganizer.mo
 share/locale/sk/LC_MESSAGES/korn.mo
 share/locale/sk/LC_MESSAGES/kpackage.mo
@@ -1064,6 +1050,7 @@ share/locale/sk/LC_MESSAGES/ktuberling.mo
 share/locale/sk/LC_MESSAGES/ktux.mo
 share/locale/sk/LC_MESSAGES/kuick_plugin.mo
 share/locale/sk/LC_MESSAGES/kuickshow.mo
+share/locale/sk/LC_MESSAGES/kuiviewer.mo
 share/locale/sk/LC_MESSAGES/kuser.mo
 share/locale/sk/LC_MESSAGES/kverbos.mo
 share/locale/sk/LC_MESSAGES/kview.mo

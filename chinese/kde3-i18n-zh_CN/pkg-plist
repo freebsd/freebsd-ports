@@ -49,6 +49,7 @@ share/doc/HTML/zh_CN/common/web-docbottom.png
 share/doc/HTML/zh_CN/common/web-doctop.png
 share/doc/HTML/zh_CN/common/x11-license.html
 share/doc/HTML/zh_CN/common/xml.dcl
+share/doc/HTML/zh_CN/kdevelop/tip.database
 share/locale/zh_CN/LC_MESSAGES/alarmdaemonctrl.mo
 share/locale/zh_CN/LC_MESSAGES/alsaplayerui.mo
 share/locale/zh_CN/LC_MESSAGES/amor.mo
@@ -70,24 +71,6 @@ share/locale/zh_CN/LC_MESSAGES/crashesplugin.mo
 share/locale/zh_CN/LC_MESSAGES/cupsdconf.mo
 share/locale/zh_CN/LC_MESSAGES/cvsservice.mo
 share/locale/zh_CN/LC_MESSAGES/dcopservice.mo
-share/locale/zh_CN/LC_MESSAGES/desktop_kde-i18n.mo
-share/locale/zh_CN/LC_MESSAGES/desktop_kdeaccessibility.mo
-share/locale/zh_CN/LC_MESSAGES/desktop_kdeaddons.mo
-share/locale/zh_CN/LC_MESSAGES/desktop_kdeadmin.mo
-share/locale/zh_CN/LC_MESSAGES/desktop_kdeartwork.mo
-share/locale/zh_CN/LC_MESSAGES/desktop_kdebase.mo
-share/locale/zh_CN/LC_MESSAGES/desktop_kdeedu.mo
-share/locale/zh_CN/LC_MESSAGES/desktop_kdegames.mo
-share/locale/zh_CN/LC_MESSAGES/desktop_kdegraphics.mo
-share/locale/zh_CN/LC_MESSAGES/desktop_kdelibs.mo
-share/locale/zh_CN/LC_MESSAGES/desktop_kdemultimedia.mo
-share/locale/zh_CN/LC_MESSAGES/desktop_kdenetwork.mo
-share/locale/zh_CN/LC_MESSAGES/desktop_kdepim.mo
-share/locale/zh_CN/LC_MESSAGES/desktop_kdesdk.mo
-share/locale/zh_CN/LC_MESSAGES/desktop_kdetoys.mo
-share/locale/zh_CN/LC_MESSAGES/desktop_kdeutils.mo
-share/locale/zh_CN/LC_MESSAGES/desktop_kdevelop.mo
-share/locale/zh_CN/LC_MESSAGES/desktop_quanta.mo
 share/locale/zh_CN/LC_MESSAGES/devicesapplet.mo
 share/locale/zh_CN/LC_MESSAGES/dirfilterplugin.mo
 share/locale/zh_CN/LC_MESSAGES/display.mo
@@ -248,6 +231,7 @@ share/locale/zh_CN/LC_MESSAGES/kdesktop.mo
 share/locale/zh_CN/LC_MESSAGES/kdessh.mo
 share/locale/zh_CN/LC_MESSAGES/kdesu.mo
 share/locale/zh_CN/LC_MESSAGES/kdesud.mo
+share/locale/zh_CN/LC_MESSAGES/kdevelop.mo
 share/locale/zh_CN/LC_MESSAGES/kdevtipofday.mo
 share/locale/zh_CN/LC_MESSAGES/kdf.mo
 share/locale/zh_CN/LC_MESSAGES/kdgantt.mo
@@ -549,5 +533,6 @@ share/locale/zh_CN/LC_MESSAGES/webarchiver.mo
 share/locale/zh_CN/charset
 share/locale/zh_CN/entry.desktop
 share/locale/zh_CN/flag.png
+@dirrm share/doc/HTML/zh_CN/kdevelop
 @dirrm share/doc/HTML/zh_CN/common
 @dirrm share/doc/HTML/zh_CN

@@ -8,7 +8,6 @@
 
 PORTNAME=	kdegraphics
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -65,7 +64,7 @@ LIB_DEPENDS+=	sane.1:${PORTSDIR}/graphics/sane-backends
 PLIST_APPEND+=	plist.sane
 RUN_DEPENDS+=	${LOCALBASE}/bin/gocr:${PORTSDIR}/graphics/gocr
 .elseif defined(WITHOUT_SANE)
-DO_NOT_COMPILE+=kooka
+DO_NOT_COMPILE+=kooka libkscan
 .endif
 
 .if defined(DO_NOT_COMPILE)

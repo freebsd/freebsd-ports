@@ -666,10 +666,10 @@ share/autostart/kalarm.tray.desktop
 share/autostart/kalarmd.autostart.desktop
 share/autostart/korgac.desktop
 share/config.kcfg/kandy.kcfg
+share/config.kcfg/knotes.kcfg
 share/config.kcfg/kontact.kcfg
 share/config.kcfg/korganizer.kcfg
 share/config/khotnewstuffrc
-share/config/knotesrc
 share/doc/HTML/en/kaddressbook/common
 share/doc/HTML/en/kaddressbook/conf.png
 share/doc/HTML/en/kaddressbook/contactdlg.png

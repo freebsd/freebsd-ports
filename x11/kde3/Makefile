@@ -8,7 +8,6 @@
 
 PORTNAME?=	kde
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	# empty
 DISTFILES=	# none
@@ -34,7 +33,7 @@ CONFIG_FILE=	${LOCALBASE}/etc/kde-meta.conf
 ## The list of all modules that make up KDE, excluding the base modules
 ## arts, kdebase and kdelibs
 
-ALL_MODULES=	KDEACCESSIBILITY KDEADDONS KDEADMIN KDEARTWORK KDEVELOP KDEEDU\
+ALL_MODULES=	KDEACCESSIBILITY KDEADMIN KDEARTWORK KDEVELOP KDEEDU\
 		KDEGAMES KDEGRAPHICS KDEMULTIMEDIA KDENETWORK KOFFICE KDEPIM\
 		KDESDK KDETOYS KDEUTILS QUANTA
 
@@ -134,9 +133,6 @@ RUN_DEPENDS+=	cervisia:${PORTSDIR}/devel/kdesdk3
 .endif
 .if !defined(WITHOUT_KDEVELOP)
 RUN_DEPENDS+=	kdevelop:${PORTSDIR}/devel/kdevelop
-.endif
-.if !defined(WITHOUT_KDEADDONS)
-DEPENDS+=	${PORTSDIR}/misc/kdeaddons3
 .endif
 .if !defined(WITHOUT_KDEEDU)
 RUN_DEPENDS+=	khangman:${PORTSDIR}/misc/kdeedu3
