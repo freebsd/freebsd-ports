@@ -1877,6 +1877,7 @@ fixesext	ports/x11/fixesext
 fkiss		ports/games/fkiss
 fl_editor	ports/x11-toolkits/fl_editor
 flac		ports/audio/flac
+flac123		ports/audio/flac123
 flash		ports/shells/flash
 flasher		ports/sysutils/flasher
 flashplayer	ports/graphics/flashplayer
