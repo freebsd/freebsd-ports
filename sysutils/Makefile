@@ -59,6 +59,7 @@
     SUBDIR += pib
     SUBDIR += pkg_remove
     SUBDIR += prips
+    SUBDIR += procmap
     SUBDIR += psmisc
     SUBDIR += rdate
     SUBDIR += rtty
