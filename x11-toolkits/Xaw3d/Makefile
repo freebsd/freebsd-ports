@@ -3,7 +3,7 @@
 # Date created:		18 November 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.14 1997/06/19 09:33:26 asami Exp $
+# $Id: Makefile,v 1.15 1997/12/25 22:29:48 asami Exp $
 #
 
 DISTNAME=	Xaw3d-1.3
@@ -22,5 +22,7 @@ post-extract:
 
 post-install:
 	${LDCONFIG} -m ${PREFIX}/lib
+	${MKDIR} ${PREFIX}/share/doc/Xaw3d
+	${CP} ${WRKSRC}/README.XAW3D ${PREFIX}/share/doc/Xaw3d
 
 .include <bsd.port.mk>
