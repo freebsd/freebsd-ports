@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	bonnie++
-PORTVERSION=	1.02c
+PORTVERSION=	1.03
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.coker.com.au/bonnie++/
 EXTRACT_SUFX=	.tgz
@@ -15,8 +15,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
-
-CONFIGURE_ENV+=	CPPFLAGS="-U__DEPRECATED"
 
 MAN1=	bon_csv2html.1 bon_csv2txt.1
 MAN8=	bonnie++.8 zcav.8
