@@ -1,0 +1,11 @@
+Gri is a language for scientific graphics applications.  By 'language' I mean
+that it is a command-driven application, as opposed to a click/point
+application.  It is analogous to latex or tex, and shares the property that
+extensive power is the reward for tolerating a modest learning curve.  Gri
+output is in industry-standard PostScript, suitable for incorporation in
+documents prepared by various text processors. Gri can make x-y graphs,
+contour-graphs, and image graphs.  In addition to high-level capabilities, it
+has enough low-level capabilities to allow users to achieve a high degree of
+customization. Precise control is extended to all aspects of drawing, including
+line-widths, colors, and fonts.  Text includes a subset of the tex language, so
+that it is easy to incorporate Greek letters and mathematical symbols in labels.

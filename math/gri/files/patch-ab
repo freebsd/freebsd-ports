@@ -1,0 +1,88 @@
+*** doc/Makefile.orig	Sun May  7 11:44:08 2000
+--- doc/Makefile	Sat Sep 23 12:49:29 2000
+***************
+*** 1,6 ****
+  # Makefile for Gri documentation files.
+  
+!             GRI_DIR = /opt/gri
+             DEST_BIN = /doc/info
+                   RM = rm -f
+              REFCARD = refcard
+--- 1,6 ----
+  # Makefile for Gri documentation files.
+  
+!             GRI_DIR = $(PREFIX)/share/doc/gri
+             DEST_BIN = /doc/info
+                   RM = rm -f
+              REFCARD = refcard
+***************
+*** 11,22 ****
+  FORCE:
+  
+  all:
+- 	make info
+  	make html
+  
+! install:
+! 	make info-install
+! 	make html-install
+  
+  read:
+  	chmod a+r Makefile
+--- 11,27 ----
+  FORCE:
+  
+  all:
+  	make html
+  
+! #	make info
+! #	make html
+! 
+! man-install:
+! 	gzip -nfc -9 gri-manpage.1 > gri.1.gz
+! 	${INSTALL_MAN} gri.1.gz   ${PREFIX}/man/man1
+! 
+! #	make info-install
+! #	make html-install
+  
+  read:
+  	chmod a+r Makefile
+***************
+*** 48,69 ****
+  	perl archive-to-html.pl > Newsgroup.html
+  
+  html-install:
+! 	# GRI_DIR = /opt/gri
+! 	if test ! -d $(GRI_DIR)                    ; then mkdir -m 755 -p $(GRI_DIR)                    ; fi
+! 	if test ! -d $(GRI_DIR)/doc                ; then mkdir -m 755 -p $(GRI_DIR)/doc                ; fi
+! 	if test ! -d $(GRI_DIR)/doc/html           ; then mkdir -m 755 -p $(GRI_DIR)/doc/html           ; fi
+! 	if test ! -d $(GRI_DIR)/doc/html/examples  ; then mkdir -m 755 -p $(GRI_DIR)/doc/html/examples  ; fi
+! 	if test ! -d $(GRI_DIR)/doc/html/resources ; then mkdir -m 755 -p $(GRI_DIR)/doc/html/resources ; fi
+! 	-cp ./resources/*.gif    $(GRI_DIR)/doc/html/resources
+! 	-chmod a+r               $(GRI_DIR)/doc/html/resources/*
+! 	-cp ./examples/*         $(GRI_DIR)/doc/html/examples
+! 	-chmod a+r               $(GRI_DIR)/doc/html/examples/*
+! 	-cp ./*.html             $(GRI_DIR)/doc/html
+! 	-cp ./resources/logo.ps  $(GRI_DIR)/doc/html/resources
+! 	-cp ./resources/logo.gif $(GRI_DIR)/doc/html/resources
+! 	-cp ./resources/logo.gri $(GRI_DIR)/doc/html/resources
+  	-chmod a+r               $(GRI_DIR)/*
+- 	-make html-clean
+  
+  html-clean:
+  	-cp FAQ.html save
+--- 53,66 ----
+  	perl archive-to-html.pl > Newsgroup.html
+  
+  html-install:
+! 	-cp ./resources/*.gif    $(GRI_DIR)/html/resources
+! 	-chmod a+r               $(GRI_DIR)/html/resources/*
+! 	-cp ./examples/*         $(GRI_DIR)/html/examples
+! 	-chmod a+r               $(GRI_DIR)/html/examples/*
+! 	-cp ./*.html             $(GRI_DIR)/html
+! 	-cp ./resources/logo.eps $(GRI_DIR)/html/resources
+! 	-cp ./resources/logo.gif $(GRI_DIR)/html/resources
+  	-chmod a+r               $(GRI_DIR)/*
+  
+  html-clean:
+  	-cp FAQ.html save
