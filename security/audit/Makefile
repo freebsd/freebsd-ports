@@ -9,7 +9,8 @@ PORTNAME=	audit
 PORTVERSION=	1.0
 PORTREVISION=	2
 CATEGORIES=	security
-MASTER_SITES=	http://www.corest.com/download/audit/ \
+MASTER_SITES=	http://www1.corest.com/download/audit/ \
+		http://www2.corest.com/download/audit/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}beta-src
 
