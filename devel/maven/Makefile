@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	maven
-PORTVERSION=	1.0
+PORTVERSION=	1.0.1
 CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	${PORTNAME}/binaries
@@ -17,7 +17,7 @@ COMMENT=	Java project management and project comprehension tool
 USE_BZIP2=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.3+
-NO_BUILD=	YES
+NO_BUILD=	yes
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
