@@ -5847,6 +5847,7 @@ p5-DBD-mysql40	ports/databases/p5-DBD-mysql40
 p5-DBD-mysql41	ports/databases/p5-DBD-mysql41
 p5-DBI		ports/databases/p5-DBI
 p5-DBI-137	ports/databases/p5-DBI-137
+p5-DBI-Shell	ports/databases/p5-DBI-Shell
 p5-DBIWrapper	ports/databases/p5-DBIWrapper
 p5-DBIx-AnyDBD	ports/databases/p5-DBIx-AnyDBD
 p5-DBIx-Browse	ports/databases/p5-DBIx-Browse
@@ -6125,6 +6126,7 @@ p5-IO-Socket-Multicast	ports/net/p5-IO-Socket-Multicast
 p5-IO-Socket-SSL	ports/security/p5-IO-Socket-SSL
 p5-IO-String	ports/devel/p5-IO-String
 p5-IO-Stty	ports/devel/p5-IO-Stty
+p5-IO-Tee	ports/devel/p5-IO-Tee
 p5-IO-Tty	ports/devel/p5-IO-Tty
 p5-IO-Zlib	ports/archivers/p5-IO-Zlib
 p5-IO-stringy	ports/devel/p5-IO-stringy
