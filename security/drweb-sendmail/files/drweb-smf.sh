@@ -6,7 +6,7 @@ drwebfilter='!!PREFIX!!/sbin/drweb-smf'
 
 case "$1" in
 start)
-	if [ -x $drwebd ]; then
+	if [ -x $drwebfilter ]; then
 	    echo -n ' drweb-smf'
 	    $drwebfilter -u/var/run/drwebd -m/var/run/drweb-smf.sock -a/var/spool/drweb_infected -f/var/spool/drweb-smf -r -x -h -l -ba -gpostmaster -epostmaster
 	fi
