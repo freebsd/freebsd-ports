@@ -510,6 +510,8 @@ include/xview_private/xv_color.h
 include/xview_private/xv_debug.h
 include/xview_private/xv_list.h
 include/xview_private/xv_path_util.h
+@dirrm include/bitmaps
+@dirrm include/images
 @dirrm include/olgx
 @dirrm include/olgx_private
 @dirrm include/pixrect
@@ -519,6 +521,7 @@ lib/libolgx.a
 lib/libolgx.so
 lib/libolgx.so.3.2
 lib/libxview.a
+lib/libxview.sa.3
 lib/libxview.so
 lib/libxview.so.3.2
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
@@ -529,9 +532,14 @@ lib/.ttyswrc
 lib/text_extras_menu
 lib/textswrc
 lib/ttyswrc
+lib/help/clock.info
+lib/help/olwm.info
+lib/help/props.info
+lib/help/textedit.info
 lib/help/textsw.info
 lib/help/ttysw.info
 lib/help/xview.info
+@dirrm lib/help
 lib/X11/config/XView.cf
 lib/X11/config/XView.lib
 lib/X11/config/XView.obj
@@ -546,3 +554,4 @@ share/doc/xview/paper.ms
 share/doc/xview/sel_api.txt
 share/doc/xview/whats_new.ps
 share/doc/xview/xview-info
+@dirrm share/doc/xview
