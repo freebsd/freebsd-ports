@@ -6,15 +6,15 @@
 #
 
 PORTNAME=		live365
-PORTVERSION=		0.3.0
+PORTVERSION=		0.3.2
 CATEGORIES=		audio www
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	streamtuner
+MASTER_SITES=		${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	streamtuner/${PKGNAMEPREFIX}${PORTNAME}.pkg/${PORTVERSION}
 PKGNAMEPREFIX=		streamtuner-
 DISTNAME=		${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=		jylefort@brutele.be
-COMMENT=	A Live365 plugin for streamtuner
+COMMENT=		A Live365 plugin for streamtuner
 
 BUILD_DEPENDS=		${X11BASE}/include/streamtuner/streamtuner.h:${PORTSDIR}/audio/streamtuner
 RUN_DEPENDS=		${X11BASE}/bin/streamtuner:${PORTSDIR}/audio/streamtuner
