@@ -105,6 +105,7 @@
     SUBDIR += i960-rtems-gcc
     SUBDIR += i960-rtems-gdb
     SUBDIR += id-utils
+    SUBDIR += idle
     SUBDIR += ilu
     SUBDIR += imake
     SUBDIR += imake-4
