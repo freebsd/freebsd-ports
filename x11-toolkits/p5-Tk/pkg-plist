@@ -218,6 +218,7 @@ bin/widget
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/images/face
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/images/flagdown
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/images/flagup
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/images/flower2.png
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/images/grey.25
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/images/grey.5
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/images/letters
@@ -262,6 +263,7 @@ bin/widget
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widget_lib/msgBox.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widget_lib/paned1.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widget_lib/paned2.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widget_lib/photo1.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widget_lib/plot.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widget_lib/puzzle.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widget_lib/radio.pl

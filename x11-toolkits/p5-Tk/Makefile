@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	Tk
-PORTVERSION=	804.025.b5
+PORTVERSION=	804.025.b6
 CATEGORIES=	x11-toolkits tk84 perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Tk
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}_beta5
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}_beta6
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
@@ -49,17 +49,21 @@ MAN3=		Tie::Watch.3 \
 		Tk::Entry.3 \
 		Tk::Error.3 \
 		Tk::Eventloop.3 \
+		Tk::FBox.3 \
 		Tk::FileSelect.3 \
 		Tk::Font.3 \
 		Tk::Frame.3 \
 		Tk::HList.3 \
 		Tk::IO.3 \
+		Tk::IconList.3 \
 		Tk::Image.3 \
 		Tk::InputO.3 \
 		Tk::Internals.3 \
 		Tk::Item.3 \
+		Tk::JPEG.3 \
 		Tk::LabFrame.3 \
 		Tk::Label.3 \
+		Tk::Labelframe.3 \
 		Tk::Listbox.3 \
 		Tk::MainWindow.3 \
 		Tk::Menu.3 \
@@ -68,9 +72,12 @@ MAN3=		Tie::Watch.3 \
 		Tk::Mwm.3 \
 		Tk::NoteBook.3 \
 		Tk::Optionmenu.3 \
+		Tk::PNG.3 \
 		Tk::Pane.3 \
+		Tk::Panedwindow.3 \
 		Tk::Photo.3 \
 		Tk::Pixmap.3 \
+		Tk::Popup.3 \
 		Tk::ProgressBar.3 \
 		Tk::ROText.3 \
 		Tk::Radiobutton.3 \
@@ -78,6 +85,7 @@ MAN3=		Tie::Watch.3 \
 		Tk::Scale.3 \
 		Tk::Scrollbar.3 \
 		Tk::Scrolled.3 \
+		Tk::Spinbox.3 \
 		Tk::Submethods.3 \
 		Tk::SunConst.3 \
 		Tk::TList.3 \
@@ -103,6 +111,7 @@ MAN3=		Tie::Watch.3 \
 		Tk::bindtags.3 \
 		Tk::callbacks.3 \
 		Tk::chooseColor.3 \
+		Tk::chooseDirectory.3 \
 		Tk::composite.3 \
 		Tk::event.3 \
 		Tk::exit.3 \
