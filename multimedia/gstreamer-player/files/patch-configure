@@ -1,14 +1,16 @@
---- configure.orig	Mon Apr 21 06:01:46 2003
-+++ configure	Sat May 10 23:21:51 2003
-@@ -7814,6 +7814,7 @@
+--- configure.orig	Tue Oct  7 15:28:39 2003
++++ configure	Tue Oct  7 15:30:47 2003
+@@ -18452,7 +18452,8 @@
+ 
  
  # This can be used to rebuild libtool when needed
- LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+-LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++LIBTOOL_DEPS="--disable-ltlibs /usr/local/share/libtool13/ltmain.sh"
++/usr/local/share/libtool13/ltconfig13 $LIBTOOL_DEPS
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -9305,7 +9306,11 @@
+@@ -20126,7 +20127,11 @@
    fi
    exec_prefix_save=$exec_prefix
    if test "x$exec_prefix" = "xNONE"; then
@@ -20,3 +22,12 @@
    fi
  
    full_var="$FROM_VAR"
+@@ -21793,7 +21798,7 @@
+ else
+   HAVE_MOZILLA="yes"
+ fi
+-_mozilla_include_dir=`mozilla-config --cflags|sed 's/-I\(.*\) .*/\1/'`
++_mozilla_include_dir=`$MOZILLA_CONFIG --cflags|sed 's/-I\(.*\) .*/\1/'`
+ MOZILLA_CFLAGS="-I$_mozilla_include_dir/plugin -I$_mozilla_include_dir/java -I$_mozilla_include_dir/nspr"
+ 
+ 
