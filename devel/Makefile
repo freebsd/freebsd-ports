@@ -144,6 +144,7 @@
     SUBDIR += libcii
     SUBDIR += libcoro
     SUBDIR += libdlmalloc
+    SUBDIR += libdsp
     SUBDIR += libffi
     SUBDIR += libg++
     SUBDIR += libgetline
