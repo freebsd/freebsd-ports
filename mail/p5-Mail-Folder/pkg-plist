@@ -4,9 +4,4 @@ lib/perl5/site_perl/Mail/Folder/Maildir.pm
 lib/perl5/site_perl/Mail/Folder/Mbox.pm
 lib/perl5/site_perl/Mail/Folder/NNTP.pm
 lib/perl5/site_perl/i386-freebsd/auto/Mail/.packlist
-lib/perl5/man/man3/Mail::Folder.3.gz
-lib/perl5/man/man3/Mail::Folder::Emaul.3.gz
-lib/perl5/man/man3/Mail::Folder::Maildir.3.gz
-lib/perl5/man/man3/Mail::Folder::Mbox.3.gz
-lib/perl5/man/man3/Mail::Folder::NNTP.3.gz
 @dirrm lib/perl5/site_perl/Mail/Folder

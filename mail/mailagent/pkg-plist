@@ -31,12 +31,6 @@ lib/mailagent/help/set
 lib/mailagent/help/setauth
 lib/mailagent/help/user
 man/man1/mailhelp.1
-man/man1/mailpatch.1.gz
-man/man1/package.1.gz
-man/man1/edusers.1.gz
-man/man1/mailagent.1.gz
-man/man1/maildist.1.gz
-man/man1/maillist.1.gz
 share/examples/mailagent/agent/README
 share/examples/mailagent/agent/daemon
 share/examples/mailagent/agent/mailfolders

@@ -2,7 +2,3 @@ lib/pgpsendmail
 bin/pgpdaemon
 bin/pgppipe
 bin/sendpgppass
-man/man8/pgpsendmail.8.gz
-man/man8/pgpdaemon.8.gz
-man/man1/pgppipe.1.gz
-man/man1/sendpgppass.1.gz
