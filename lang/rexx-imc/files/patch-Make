@@ -1,5 +1,5 @@
 --- Make	Wed Nov  1 10:04:27 2000
-+++ Make.new	Fri Sep  7 16:39:54 2001
++++ Make.new	Tue Sep 25 09:15:11 2001
 @@ -18,7 +18,7 @@
  LD=ld                      # linker for shared objects
  COMPILEFLAG=""             # general compilation flags for cc
@@ -76,12 +76,12 @@
 +        DLLFLAG="-shared --export-dynamic"
 +        case $CC in
 +            gcc)
-+                CCFLAG="${CFLAGS} -DHAS_TTYCOM -D_REQUIRED -DHAS_GMTOFF"
++                CCFLAG="${CFLAGS} -DHAS_TTYCOM -DRENAME_UNDELETE -DHAS_GMTOFF"
 +                PIC="-fPIC"
 +                ;;
 +            *)  echo "Warning: I don't know the options for $CC"\
 +                      "- trying the gcc ones" >&2
-+                CCFLAG="${CFLAGS} -DHAS_TTYCOM -D_REQUIRED -DHAS_GMTOFF"
++                CCFLAG="${CFLAGS} -DHAS_TTYCOM -DRENAME_UNDELETE -DHAS_GMTOFF"
                  PIC="-fPIC"
                  ;;
          esac
