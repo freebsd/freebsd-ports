@@ -1,11 +1,15 @@
---- ../vcl/workben/officeacceptthread.cxx.orig	Wed Mar  5 20:25:36 2003
-+++ ../vcl/workben/officeacceptthread.cxx	Wed Mar  5 20:26:03 2003
-@@ -125,7 +125,7 @@
- #if defined (SOLARIS)
+--- ../vcl/workben/officeacceptthread.cxx.orig	Tue Jun  3 11:27:35 2003
++++ ../vcl/workben/officeacceptthread.cxx	Tue Jun  3 11:27:38 2003
+@@ -122,10 +122,10 @@
+ 			sal_Bool static isProcessRunning( ::vos::OProcess::TProcessInfo& aProcessInfo )
+ 			{
+ 				int nRet;
+-#if defined (SOLARIS)
++#if defined (SOLARIS) || defined (FREEBSD)
  				int status;
  				nRet = waitpid(aProcessInfo.Ident, &status,WNOHANG);
--#elif defined(LINUX)
-+#elif defined(LINUX) || defined (FREEBSD)
+-#elif defined(LINUX) || defined (FREEBSD)
++#elif defined(LINUX)
  				nRet = kill(aProcessInfo.Ident, 0);
  #endif
  #if defined (UNX)

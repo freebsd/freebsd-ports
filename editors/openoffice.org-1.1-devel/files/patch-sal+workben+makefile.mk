@@ -1,6 +1,6 @@
---- ../sal/workben/makefile.mk.orig	Tue May 15 14:11:20 2001
-+++ ../sal/workben/makefile.mk	Sun Mar 10 23:46:59 2002
-@@ -113,7 +113,7 @@
+--- ../sal/workben/makefile.mk.orig	Tue Apr  8 17:54:30 2003
++++ ../sal/workben/makefile.mk	Sat May 31 23:35:21 2003
+@@ -167,7 +167,7 @@
  
  .IF "$(TESTAPP)" == "salstattest"
  
@@ -9,7 +9,7 @@
  
  	OBJFILES=	$(OBJ)$/salstattest.obj
  
-@@ -325,7 +325,7 @@
+@@ -379,7 +379,7 @@
  # tgetpwnam
  #
  .IF "$(TESTAPP)" == "tgetpwnam"
@@ -18,7 +18,7 @@
  
  CXXFILES=	tgetpwnam.cxx
  OBJFILES=	$(OBJ)$/tgetpwnam.obj
-@@ -335,7 +335,7 @@
+@@ -389,7 +389,7 @@
  APP5STDLIBS=$(SALLIB)
  APP5DEPN=	$(SLB)$/sal.lib
  

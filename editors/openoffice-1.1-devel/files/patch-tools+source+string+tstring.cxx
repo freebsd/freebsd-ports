@@ -1,5 +1,5 @@
---- ../tools/source/string/tstring.cxx.orig	Sat Aug 10 12:53:42 2002
-+++ ../tools/source/string/tstring.cxx	Sat Aug 10 12:54:16 2002
+--- ../tools/source/string/tstring.cxx.orig	Thu Mar 27 18:04:53 2003
++++ ../tools/source/string/tstring.cxx	Sat May 31 23:04:05 2003
 @@ -103,6 +103,9 @@
  xub_StrLen ImplStringLen( const sal_Char* pStr )
  {
@@ -8,7 +8,7 @@
 +	if (pStr == NULL)
 +		return(0);
  	while( *pTempStr )
- 		pTempStr++;
+ 		++pTempStr;
  	return (xub_StrLen)(pTempStr-pStr);
 @@ -113,6 +116,9 @@
  xub_StrLen ImplStringLen( const sal_Unicode* pStr )
@@ -18,5 +18,5 @@
 +	if (pStr == NULL)
 +		return(0);
  	while( *pTempStr )
- 		pTempStr++;
+ 		++pTempStr;
  	return (xub_StrLen)(pTempStr-pStr);

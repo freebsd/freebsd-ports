@@ -1,6 +1,6 @@
---- ../setup2/mow/source/loader/loader.c.orig2	Thu Jun  6 11:23:17 2002
-+++ ../setup2/mow/source/loader/loader.c	Thu Jun  6 11:24:14 2002
-@@ -1055,6 +1055,7 @@
+--- ../setup2/mow/source/loader/loader.c.orig	Mon Jun  2 08:25:13 2003
++++ ../setup2/mow/source/loader/loader.c	Tue Jun  3 07:58:22 2003
+@@ -1069,6 +1069,7 @@
  
  void KillSetupDir()
  {
@@ -8,7 +8,7 @@
      DIR* pDir;
      struct dirent* pFile;
  
-@@ -1074,6 +1075,10 @@
+@@ -1088,6 +1089,10 @@
      closedir( pDir );
      chdir( strInitPath );
      rmdir( strTmpPath );
