@@ -1,5 +1,5 @@
 # New ports collection makefile for:	inform
-# Version required:			6.21 (Library: 6/9)
+# Version required:			6.21 (Library: 6/10)
 # Date created:				28 June 1998
 # Whom:					Matthew Hunt <mph@FreeBSD.org>
 #
@@ -10,7 +10,7 @@ DISTNAME=	inform-6.21
 CATEGORIES=	games
 MASTER_SITES=  	ftp://ftp.gmd.de/if-archive/infocom/compilers/inform6/source/ \
 		ftp://ftp.gmd.de/if-archive/infocom/compilers/inform6/library/
-DISTFILES=	inform621_source.zip inform_library69.zip
+DISTFILES=	inform621_source.zip inform_library610.zip
 
 MAINTAINER=	mph@freebsd.org
 
@@ -45,7 +45,7 @@ post-extract:
 post-install:
 	@${MKDIR} ${PREFIX}/share/inform
 	@(cd ${PREFIX}/share/inform && \
-		unzip -qq -o ${DISTDIR}/${DIST_SUBDIR}/inform_library69.zip)
+		unzip -qq -o ${DISTDIR}/${DIST_SUBDIR}/inform_library610.zip)
 .for file in English Grammar Parser Verblib infix linklpa linklv parserm \
 		verblibm
 	@${MV} ${PREFIX}/share/inform/${file} ${PREFIX}/share/inform/${file}.h
@@ -54,13 +54,17 @@ post-install:
 .endfor
 	@${LN} -fs Verblib.h ${PREFIX}/share/inform/VerbLib.h
 	@ ${CHOWN} ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/inform/VerbLib.h
-.if !defined(NOPORTDOCS)
+.if defined(NOPORTDOCS)
+	@${RM} ${PREFIX}/share/inform/Relnote ${PREFIX}/share/inform/Relnote2
+.else
 	@ (umask 222 && unzip -qq -o -d ${PREFIX}/share/doc \
 		${DISTDIR}/${DIST_SUBDIR}/designers_manual_html.zip)
 	@${MKDIR} ${PREFIX}/share/doc/inform
 	@${MV} ${PREFIX}/share/doc/dman/* ${PREFIX}/share/doc/inform
 	@${RMDIR} ${PREFIX}/share/doc/dman
+	@${MV} ${PREFIX}/share/inform/Relnote ${PREFIX}/share/inform/Relnote2 ${PREFIX}/share/doc/inform
 	@ ${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/inform
+	
 .endif
 
 .include <bsd.port.mk>

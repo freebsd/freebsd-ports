@@ -9,6 +9,8 @@ share/inform/parserm.h
 share/inform/Verblib.h
 share/inform/verblibm.h
 share/inform/VerbLib.h
+share/doc/inform/Relnote
+share/doc/inform/Relnote2
 share/doc/inform/answers1/answer10.html
 share/doc/inform/answers1/answer11.html
 share/doc/inform/answers1/answer12.html
