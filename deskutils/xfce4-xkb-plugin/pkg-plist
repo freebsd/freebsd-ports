@@ -75,7 +75,6 @@ share/xfce4/xkb/flags/ye.png
 share/xfce4/xkb/flags/yu.png
 @dirrm share/xfce4/xkb/flags
 @dirrm share/xfce4/xkb
-@dirrm share/xfce4
 @unexec rmdir %D/share/xfce4 2>/dev/null || true
 @unexec rmdir %D/lib/xfce4/panel-plugins 2>/dev/null || true
 @unexec rmdir %D/lib/xfce4 2>/dev/null || true
