@@ -1,5 +1,5 @@
---- src/eggdrop.h.orig	Mon Jun  2 11:39:45 2003
-+++ src/eggdrop.h	Mon Jun  2 11:40:17 2003
+--- eggdrop1.6.15/src/eggdrop.h.orig	Mon Jun  2 11:39:45 2003
++++ eggdrop1.6.15/src/eggdrop.h	Mon Jun  2 11:40:17 2003
 @@ -85,7 +85,7 @@
  
  
