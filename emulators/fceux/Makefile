@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	fceu
-PORTVERSION=	0.98.10
+PORTVERSION=	0.98.11
 CATEGORIES=	emulators
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://fceultra.sourceforge.net/releases/
+MASTER_SITES=	http://fceultra.sourceforge.net/releases/
 MASTER_SITE_SUBDIR=	fceultra
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
