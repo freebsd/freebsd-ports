@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ "$2" = "POST-INSTALL" -o -n "${PACKAGE_BUILDING}" ]; then
+  exit 0
+fi
+
+/usr/bin/dialog --yesno "SECURITY NOTE: This port is not safe to install on multi-user systems containing untrusted users - it is vulnerable to a local buffer overflow and format string vulnerability which allow an attacker to obtain access to the uucp user.  Do you wish to proceed with the installation of the software anyway?" 9 70 || /usr/bin/false
+
+
