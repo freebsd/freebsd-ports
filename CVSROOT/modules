@@ -3361,7 +3361,6 @@ kget		src/sbin/kget
 kgmon		src/usr.sbin/kgmon
 kgzip		src/usr.sbin/kgzip
 kgzldr		src/sys/boot/i386/kgzldr
-khordpro	ports/audio/khordpro
 kile		ports/editors/kile
 kill		src/bin/kill
 killall		src/usr.bin/killall
@@ -3511,7 +3510,6 @@ koffice-kde3	ports/editors/koffice-kde3
 koi8r-ps	ports/russian/koi8r-ps
 koncd		ports/sysutils/koncd
 konverse	ports/net/konverse
-koog		ports/audio/koog
 kopete		ports/net/kopete
 korelib		ports/devel/korelib
 kp		ports/misc/kp
