@@ -1,16 +1,16 @@
 # New ports collection makefile for:	wmpinboard
 # Version required:		0.9
 # Date created:			17 January 1999
-# Whom:				Jim Mock <jim@blues.ghis.net>
+# Whom:				Jim Mock <jim@FreeBSD.org>
 #
-# $Id: Makefile,v 1.4 1999/06/10 08:51:56 tg Exp $
+# $Id: Makefile,v 1.5 1999/08/07 08:01:04 cpiazza Exp $
 #
 
 DISTNAME=	wmpinboard-0.9
 CATEGORIES=	deskutils afterstep windowmaker
 MASTER_SITES=	http://www.tu-ilmenau.de/~gomar/stuff/wmpinboard/
 
-MAINTAINER=	jim@blues.ghis.net
+MAINTAINER=	jim@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
