@@ -1871,6 +1871,7 @@ ezm3		ports/lang/ezm3
 ezmlm		ports/mail/ezmlm
 ezmlm-idx	ports/mail/ezmlm-idx
 ezmlm-web	ports/mail/ezmlm-web
+ezstream	ports/audio/ezstream
 f-prot		ports/security/f-prot
 f-prot-sig	ports/security/f-prot-sig
 f2py		ports/lang/f2py
