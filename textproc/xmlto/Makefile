@@ -9,7 +9,7 @@
 # WITH_PASSIVETEX	Enable PassiveTex support for DVI/PDF/PS output
 
 PORTNAME=	xmlto
-PORTVERSION=	0.0.15.p1
+PORTVERSION=	0.0.16.p1
 CATEGORIES=	textproc
 MASTER_SITES=	http://cyberelk.net/tim/data/xmlto/stable/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/pre/}
