@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	unix2tcp
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	net
 MASTER_SITES=	http://ahriman.bucharest.roedu.net/unix2tcp/
 
