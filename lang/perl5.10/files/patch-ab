@@ -1,3 +1,5 @@
+$FreeBSD$
+
 --- installperl.ORIG	Thu Jul 30 15:58:50 1998
 +++ installperl	Thu Jul 30 16:02:16 1998
 @@ -269,7 +269,7 @@

@@ -1,5 +1,7 @@
---- hints/freebsd.sh.ORIG	Tue Apr 10 20:24:51 2001
-+++ hints/freebsd.sh	Tue Apr 10 20:27:45 2001
+$FreeBSD$
+
+--- hints/freebsd.sh.orig	Sun Apr  8 06:09:16 2001
++++ hints/freebsd.sh	Sat Jun  1 23:41:18 2002
 @@ -85,10 +85,16 @@
  	d_setreuid='define'
  	d_setegid='undef'
@@ -17,3 +19,12 @@
  	;;
  esac
  
+@@ -115,7 +121,8 @@
+             fi
+             lddlflags='-Bshareable'
+         fi
+-        cccdlflags='-DPIC -fpic'
++        cccdlflags='-DPIC -fPIC'
++        libswanted=`echo $libswanted | sed 's/ iconv / /'`
+         ;;
+ esac
