@@ -1,9 +1,9 @@
-# New ports collection makefile for:	netscape
+# New ports collection makefile for:	netscape (navigator only)
 # Version required:     4.04
 # Date created:         24 Feb 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.10 1997/11/15 01:10:45 asami Exp $
+# $Id: Makefile,v 1.11 1997/11/15 13:09:30 asami Exp $
 #
 
 DISTNAME=       netscape-navigator-4.04
