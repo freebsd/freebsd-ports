@@ -8,7 +8,7 @@
 PORTNAME=	qt
 PORTVERSION=	1.45
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	ftp://ftp.troll.no/qt/source/
+MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/
 
 MAINTAINER=	will@FreeBSD.org
 
