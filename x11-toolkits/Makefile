@@ -3,6 +3,7 @@
 
     SUBDIR += Motif-dummy
     SUBDIR += Xaw3d
+    SUBDIR += at-spi
     SUBDIR += bakery
     SUBDIR += blt
     SUBDIR += buffy

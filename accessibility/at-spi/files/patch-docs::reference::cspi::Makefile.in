@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- docs/reference/cspi/Makefile.in	2002/04/12 10:18:10	1.1
++++ docs/reference/cspi/Makefile.in	2002/04/12 10:18:49
+@@ -146,7 +146,7 @@
+ 
+ INSTALLDIR = $(prefix)/share/gtk-doc
+ 
+-HTML_DIR = ${datadir}/gtk-doc/html
++HTML_DIR = ${prefix}/share/doc
+ 
+ TARGET_DIR = $(HTML_DIR)/$(DOC_MODULE)
+ 
