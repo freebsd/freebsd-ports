@@ -6457,6 +6457,7 @@ stty		src/bin/stty
 stuffit		ports/archivers/stuffit
 stunnel		ports/security/stunnel
 stuphead	ports/mail/stuphead
+stvef-server	ports/games/stvef-server
 styx		ports/devel/styx
 su		src/usr.bin/su
 su2		ports/sysutils/su2
