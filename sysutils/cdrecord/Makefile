@@ -1,23 +1,22 @@
 # New ports collection makefile for:    cdrecord
-# Version required:     1.8a40
+# Version required:     1.8
 # Date created:         2 November 1997
 # Whom:                 jmz
 #
 # $FreeBSD$
 #
 
-DISTNAME=	cdrecord-1.8a40
+DISTNAME=	cdrecord-1.8
 CATEGORIES=	sysutils audio
-MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/alpha/ \
-		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/alpha/ \
-		ftp://ftp.gwdg.de/pub/linux/misc/cdrecord/alpha/
+MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/ \
+		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/ \
+		ftp://ftp.gwdg.de/pub/linux/misc/cdrecord/
 
 MAINTAINER=	dirk@FreeBSD.org
 
-WRKSRC=         ${WRKDIR}/cdrecord-1.8
 MAN1=		cdrecord.1 cdda2wav.1
 USE_GMAKE=	yes
-MAKE_ENV=	COPTX="-DBSD_SCSI_SENSE_BUG -DHAVE_SIZE_T"
+MAKE_ENV=	COPTX="-DBSD_SCSI_SENSE_BUG"
 
 .if ${MACHINE_ARCH} == "alpha"
 post-extract:
