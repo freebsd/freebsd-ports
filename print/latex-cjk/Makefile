@@ -14,7 +14,7 @@ DISTNAME=	cjk-20001003
 MAINTAINER=	keith@FreeBSD.org
 
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
-		${X11BASE}/lib/X11/fonts/TrueType/bsmi00lp.ttf:${PORTSDIR}/chinese/arphicttf \
+		${LOCALBASE}/share/fonts/TrueType/bsmi00lp.ttf:${PORTSDIR}/chinese/arphicttf \
 		ttf2pk:${PORTSDIR}/print/freetype:build
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 
@@ -33,10 +33,10 @@ post-install:
 	${RM} -fr ${PREFIX}/share/examples/CJK
 	${CP} -R ${WRKSRC}/examples ${PREFIX}/share/examples/CJK
 	@${MKDIR} ${ARPHICDIR}	# Install Arphic fonts
-	@${LN} -s ${X11BASE}/lib/X11/fonts/TrueType/bkai00mp.ttf ${ARPHICDIR}/arb5_kai.ttf
-	@${LN} -s ${X11BASE}/lib/X11/fonts/TrueType/bsmi00lp.ttf ${ARPHICDIR}/arb5_sung.ttf
-	@${LN} -s ${X11BASE}/lib/X11/fonts/TrueType/gbsn00lp.ttf ${ARPHICDIR}/argb_sung.ttf
-	@${LN} -s ${X11BASE}/lib/X11/fonts/TrueType/gkai00mp.ttf ${ARPHICDIR}/argb_kai.ttf
+	@${LN} -s ${PREFIX}/share/fonts/TrueType/bkai00mp.ttf ${ARPHICDIR}/arb5_kai.ttf
+	@${LN} -s ${PREFIX}/share/fonts/TrueType/bsmi00lp.ttf ${ARPHICDIR}/arb5_sung.ttf
+	@${LN} -s ${PREFIX}/share/fonts/TrueType/gbsn00lp.ttf ${ARPHICDIR}/argb_sung.ttf
+	@${LN} -s ${PREFIX}/share/fonts/TrueType/gkai00mp.ttf ${ARPHICDIR}/argb_kai.ttf
 	@${LN} -s ttf2pk ${PREFIX}/share/texmf/ttf2tfm
 
 MAN1=		bg5conv.1 cef5conv.1 cefconv.1 cefsconv.1 extconv.1 \
