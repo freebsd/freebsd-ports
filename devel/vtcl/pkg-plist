@@ -1,9 +1,8 @@
 bin/vtcl
-lib/vtcl/ANNOUNCE
-lib/vtcl/CHANGES
+lib/vtcl/Announce
+lib/vtcl/ChangeLog
 lib/vtcl/LICENSE
 lib/vtcl/README
-lib/vtcl/TODO
 lib/vtcl/vt.tcl
 lib/vtcl/images/anchor.gif
 lib/vtcl/images/anchor_c.ppm
@@ -29,6 +28,8 @@ lib/vtcl/images/icon_canvas.gif
 lib/vtcl/images/icon_checkbutton.gif
 lib/vtcl/images/icon_entry.gif
 lib/vtcl/images/icon_frame.gif
+lib/vtcl/images/icon_graph.gif
+lib/vtcl/images/icon_hierbox.gif
 lib/vtcl/images/icon_label.gif
 lib/vtcl/images/icon_listbox.gif
 lib/vtcl/images/icon_menu.gif
@@ -39,6 +40,7 @@ lib/vtcl/images/icon_scale_h.gif
 lib/vtcl/images/icon_scale_v.gif
 lib/vtcl/images/icon_scrollbar_h.gif
 lib/vtcl/images/icon_scrollbar_v.gif
+lib/vtcl/images/icon_stripchart.gif
 lib/vtcl/images/icon_text.gif
 lib/vtcl/images/icon_tixComboBox.gif
 lib/vtcl/images/icon_tixFileEntry.gif
@@ -107,7 +109,6 @@ lib/vtcl/lib/prefs.tcl
 lib/vtcl/lib/proc.tcl
 lib/vtcl/lib/propmgr.tcl
 lib/vtcl/lib/remove.sh
-lib/vtcl/lib/replace.sh
 lib/vtcl/lib/tabpanel.tcl
 lib/vtcl/lib/tclet.tcl
 lib/vtcl/lib/toolbar.tcl
