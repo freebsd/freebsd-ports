@@ -3,10 +3,10 @@
 # Date created:		30 May 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.8 1998/11/16 08:54:41 tg Exp $
+# $Id: Makefile,v 1.9 1998/12/29 14:44:49 tg Exp $
 #
 
-DISTNAME=	LLNLPython8
+DISTNAME=	LLNLDistribution11
 PKGNAME=	py-gist-1.5
 CATEGORIES=	math python
 MASTER_SITES=	ftp://ftp-icf.llnl.gov/pub/python/
@@ -29,7 +29,7 @@ MAKE_FLAGS+=	'OPT=${CFLAGS}'
 
 PYTHONSCRIPTDIR=	${PREFIX}/lib/python1.5
 GISTDIR=	${PYTHONSCRIPTDIR}/site-packages/PyGist
-NUMPYDIR=	${PYTHONSCRIPTDIR}/site-packages/NumPy
+NUMPYDIR=	${PYTHONSCRIPTDIR}/site-packages/numerical
 RNGDIR=		${PYTHONSCRIPTDIR}/site-packages/RNG
 EXAMPLEDIR=	${PREFIX}/share/examples/PyGist
 

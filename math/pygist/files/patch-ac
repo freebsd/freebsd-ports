@@ -1,0 +1,11 @@
+--- Gist/Src/gistCmodule.c.orig	Fri Apr  2 02:14:43 1999
++++ Gist/Src/gistCmodule.c	Wed May  5 11:19:38 1999
+@@ -72,7 +72,7 @@
+ #endif
+ 
+ #include "Python.h"
+-#include "arrayobject.h"
++#include "numerical/arrayobject.h"
+ #include "hlevel.h"
+ #ifndef NO_XLIB
+ #  include "dispas.h"
