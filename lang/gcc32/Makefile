@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	3.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC} \
 		http://web.inter.NL.net/hcc/Haj.Ten.Brugge/:bc
@@ -35,6 +35,10 @@ NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 502101
+EXTRA_PATCHES=	${FILESDIR}/extrapatch-gcc__config__freebsd-spec.h \
+		${FILESDIR}/extrapatch-libjava__configure
+.endif
 
 .if ${ARCH} == "sparc64" || ${ARCH} == "ia64" || ${ARCH} == "amd64"
 # libgcj is built on all platforms except sparc64 and ia64 and amd64
