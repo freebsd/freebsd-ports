@@ -1,0 +1,35 @@
+bin/doc2txt
+bin/dtd2xsc
+bin/xscmake
+lib/%%PYTHON_VERSION%%/site-packages/xist/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/xist/converters.pyc
+lib/%%PYTHON_VERSION%%/site-packages/xist/drv_sgmlop.pyc
+lib/%%PYTHON_VERSION%%/site-packages/xist/errors.pyc
+lib/%%PYTHON_VERSION%%/site-packages/xist/ns/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/xist/ns/abbr.pyc
+lib/%%PYTHON_VERSION%%/site-packages/xist/ns/code.pyc
+lib/%%PYTHON_VERSION%%/site-packages/xist/ns/cond.pyc
+lib/%%PYTHON_VERSION%%/site-packages/xist/ns/doc.pyc
+lib/%%PYTHON_VERSION%%/site-packages/xist/ns/docbook.pyc
+lib/%%PYTHON_VERSION%%/site-packages/xist/ns/form.pyc
+lib/%%PYTHON_VERSION%%/site-packages/xist/ns/html.pyc
+lib/%%PYTHON_VERSION%%/site-packages/xist/ns/jsp.pyc
+lib/%%PYTHON_VERSION%%/site-packages/xist/ns/meta.pyc
+lib/%%PYTHON_VERSION%%/site-packages/xist/ns/php.pyc
+lib/%%PYTHON_VERSION%%/site-packages/xist/ns/ruby.pyc
+lib/%%PYTHON_VERSION%%/site-packages/xist/ns/specials.pyc
+lib/%%PYTHON_VERSION%%/site-packages/xist/ns/struts_config.pyc
+lib/%%PYTHON_VERSION%%/site-packages/xist/ns/struts_html.pyc
+lib/%%PYTHON_VERSION%%/site-packages/xist/ns/wml.pyc
+lib/%%PYTHON_VERSION%%/site-packages/xist/options.pyc
+lib/%%PYTHON_VERSION%%/site-packages/xist/parsers.pyc
+lib/%%PYTHON_VERSION%%/site-packages/xist/presenters.pyc
+lib/%%PYTHON_VERSION%%/site-packages/xist/publishers.pyc
+lib/%%PYTHON_VERSION%%/site-packages/xist/sandbox.pyc
+lib/%%PYTHON_VERSION%%/site-packages/xist/url.pyc
+lib/%%PYTHON_VERSION%%/site-packages/xist/urlnix.pyc
+lib/%%PYTHON_VERSION%%/site-packages/xist/utils.pyc
+lib/%%PYTHON_VERSION%%/site-packages/xist/wwi.pyc
+lib/%%PYTHON_VERSION%%/site-packages/xist/xsc.pyc
+@dirrm lib/%%PYTHON_VERSION%%/xist/ns
+@dirrm lib/%%PYTHON_VERSION%%/xist

@@ -1,0 +1,6 @@
+XIST is an XML-based extensible HTML generator written in Python. It was
+developed as a replacement for an HTML preprocessor named HSC, and borrows
+some features and ideas from it. It also borrows the basic ideas (XML/HTML
+elements as Python objects) from HTMLgen or HyperText.
+
+WWW: http://www.livinglogic.de/Python/xist/
