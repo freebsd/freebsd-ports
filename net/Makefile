@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.198 1998/11/23 00:37:08 flathill Exp $
+# $Id: Makefile,v 1.199 1998/11/29 13:47:59 asami Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -36,6 +36,7 @@
     SUBDIR += dict
     SUBDIR += dip
     SUBDIR += dnswalk
+    SUBDIR += dnsutl
     SUBDIR += echoping
     SUBDIR += epic4
     SUBDIR += ethereal
