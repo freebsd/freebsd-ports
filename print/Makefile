@@ -234,6 +234,7 @@
     SUBDIR += rprint
     SUBDIR += rtf2latex
     SUBDIR += ruby-clibpdf
+    SUBDIR += ruby-gnomeprint
     SUBDIR += ruby-panda
     SUBDIR += ruby-pdflib
     SUBDIR += scribus
