@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.81 1999/07/01 15:02:11 shige Exp $
+# $Id: Makefile,v 1.82 1999/07/14 18:52:42 obrien Exp $
 #
 
     SUBDIR += AbiWord
@@ -6,8 +6,8 @@
     SUBDIR += apel-emacs20
     SUBDIR += apel-mule
     SUBDIR += apel-xemacs
-    SUBDIR += apel-xemacs20
     SUBDIR += apel-xemacs-mule
+    SUBDIR += apel-xemacs20
     SUBDIR += asedit
     SUBDIR += axe
     SUBDIR += beav
@@ -25,6 +25,12 @@
     SUBDIR += flim-emacs20-current
     SUBDIR += flim-mule
     SUBDIR += flim-mule-current
+    SUBDIR += flim-xemacs
+    SUBDIR += flim-xemacs-current
+    SUBDIR += flim-xemacs-mule
+    SUBDIR += flim-xemacs-mule-current
+    SUBDIR += flim-xemacs20
+    SUBDIR += flim-xemacs20-current
     SUBDIR += gedit
     SUBDIR += gnotepad+
     SUBDIR += gxedit
@@ -53,6 +59,12 @@
     SUBDIR += semi-emacs20-current
     SUBDIR += semi-mule
     SUBDIR += semi-mule-current
+    SUBDIR += semi-xemacs
+    SUBDIR += semi-xemacs-current
+    SUBDIR += semi-xemacs-mule
+    SUBDIR += semi-xemacs-mule-current
+    SUBDIR += semi-xemacs20
+    SUBDIR += semi-xemacs20-current
     SUBDIR += staroffice
     SUBDIR += sted
     SUBDIR += textedit
@@ -62,14 +74,20 @@
     SUBDIR += uzap
     SUBDIR += vile
     SUBDIR += vilearn
-    SUBDIR += vim5
     SUBDIR += vim-lite
+    SUBDIR += vim5
     SUBDIR += wemi-emacs
     SUBDIR += wemi-emacs-current
     SUBDIR += wemi-emacs20
     SUBDIR += wemi-emacs20-current
     SUBDIR += wemi-mule
     SUBDIR += wemi-mule-current
+    SUBDIR += wemi-xemacs
+    SUBDIR += wemi-xemacs-current
+    SUBDIR += wemi-xemacs-mule
+    SUBDIR += wemi-xemacs-mule-current
+    SUBDIR += wemi-xemacs20
+    SUBDIR += wemi-xemacs20-current
     SUBDIR += wily
     SUBDIR += wordperfect
     SUBDIR += xcoral
