@@ -3,7 +3,7 @@
 # Date created:		15 April 1997
 # Whom:			Kiriyama Kazuhiko<kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/06/04 02:13:17 asami Exp $
 #
 
 DISTNAME=	GP-2.01jp
@@ -37,7 +37,7 @@ do-install:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} -p ${DOCDIR}
+	@${MKDIR} ${DOCDIR}
 	@${INSTALL_DATA} ${WRKSRC}/Doc/README ${WRKSRC}/Doc/Variables \
 		 ${DOCDIR}
 .endif
