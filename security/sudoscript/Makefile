@@ -7,7 +7,7 @@
 
 PORTNAME=	sudoscript
 PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://download.sourceforge.net/sudoscript/ \
 		http://egbok.com/sudoscript/
@@ -15,7 +15,7 @@ MASTER_SITES=	http://download.sourceforge.net/sudoscript/ \
 MAINTAINER=	hbo@egbok.com
 COMMENT=	Audited shells in Perl with sudo(8) and script(1)
 
-MAN1=		sudoshell.1
+MAN1=		ss.1 sudoshell.1
 MAN3=		Sudoscript.3pm
 MAN8=		sudoscriptd.8 sudoscript.8
 MANCOMPRESSED=	no
