@@ -23,6 +23,7 @@ GST_ALL_PLUGINS= \
 		faac \
 		faad \
 		flac \
+		gconf \
 		gdk_pixbuf \
 		gnome_vfs \
 		gsm \
@@ -88,8 +89,9 @@ CONFIGURE_ARGS+=--disable-tests \
 		--disable-alsa \
 		--disable-http \
 		--enable-cdrom \
-		--enable-gconf \
-		--enable-gconftool \
+		--disable-gconf \
+		--disable-gconftool \
+		--disable-schemas-install \
 		--enable-oss \
 		--disable-osx_audio \
 		--disable-osx_video \
@@ -176,6 +178,22 @@ LIB_DEPENDS+=	faad.0:${PORTSDIR}/audio/faad
 # flac
 .if ${GST_PLUGIN}=="flac"
 LIB_DEPENDS+=	FLAC.7:${PORTSDIR}/audio/flac
+.endif
+
+# gconf
+.if ${GST_PLUGIN}=="gconf"
+USE_GNOME+=	gconf2
+GST_PLUGIN_DIR=	gst-libs/gst/gconf \
+		ext/gconf \
+		gconf
+GCONF_SCHEMAS=	gstreamer-0.8.schemas
+
+PLIST_FILES=	include/gstreamer-0.8/gst/gconf/gconf.h \
+		lib/gstreamer-0.8/libgstgconfelements.so \
+		lib/libgstgconf-0.8.a \
+		lib/libgstgconf-0.8.so \
+		lib/libgstgconf-0.8.so.1 \
+		libdata/pkgconfig/gstreamer-gconf-0.8.pc
 .endif
 
 # gdkpixbuf
@@ -433,12 +451,15 @@ LIB_DEPENDS+=	xine.12:${PORTSDIR}/multimedia/libxine
 LIB_DEPENDS+=	xvidcore.4:${PORTSDIR}/multimedia/xvid
 .endif
 
-LIB_DEPENDS+=	gstgconf-${VERSION}.${SHLIB_VERSION}:${PORTSDIR}/multimedia/gstreamer-plugins
+LIB_DEPENDS+=	gstplay-${VERSION}.${SHLIB_VERSION}:${PORTSDIR}/multimedia/gstreamer-plugins
 
 PLIST_FILES+=	'@exec %D/bin/gst-register --gst-registry=%D/share/gnome/cache/gstreamer-${VERSION}/registry.xml 2>/dev/null || true'
 PLIST_FILES+=	'@unexec %D/bin/gst-register --gst-registry=%D/share/gnome/cache/gstreamer-${VERSION}/registry.xml 2>/dev/null || true'
 
 do-build:
+.if ${GST_PLUGIN} == "gconf"
+	@cd ${WRKSRC}/pkgconfig && ../config.status &
+.endif
 .for dir in ${GST_PREBUILD_DIR} ${GST_PLUGIN_DIR} ${GST_POSTBUILD_DIR}
 	@cd ${WRKSRC}/${dir}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET}
@@ -449,5 +470,10 @@ do-install:
 	@cd ${WRKSRC}/${dir}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET}
 .endfor
+.if ${GST_PLUGIN} == "gconf"
+	@cd ${WRKSRC}/pkgconfig && ${GMAKE} gstreamer-gconf-0.8.pc
+	@${INSTALL_SCRIPT} ${WRKSRC}/pkgconfig/gstreamer-gconf-0.8.pc \
+		${PREFIX}/libdata/pkgconfig/gstreamer-gconf-0.8.pc
+.endif
 
 .endif

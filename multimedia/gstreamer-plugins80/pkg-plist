@@ -9,7 +9,6 @@ include/gstreamer-%%VERSION%%/gst/colorbalance/colorbalance-enumtypes.h
 include/gstreamer-%%VERSION%%/gst/colorbalance/colorbalance.h
 include/gstreamer-%%VERSION%%/gst/colorbalance/colorbalancechannel.h
 include/gstreamer-%%VERSION%%/gst/floatcast/floatcast.h
-include/gstreamer-%%VERSION%%/gst/gconf/gconf.h
 include/gstreamer-%%VERSION%%/gst/idct/idct.h
 include/gstreamer-%%VERSION%%/gst/media-info/media-info.h
 include/gstreamer-%%VERSION%%/gst/mixer/mixer-enumtypes.h
@@ -65,7 +64,6 @@ lib/gstreamer-%%VERSION%%/libgstffmpegcolorspace.so
 lib/gstreamer-%%VERSION%%/libgstfilter.so
 lib/gstreamer-%%VERSION%%/libgstflxdec.so
 lib/gstreamer-%%VERSION%%/libgstgamma.so
-lib/gstreamer-%%VERSION%%/libgstgconfelements.so
 lib/gstreamer-%%VERSION%%/libgstgoom.so
 lib/gstreamer-%%VERSION%%/libgstidct.so
 lib/gstreamer-%%VERSION%%/libgstinterleave.so
@@ -134,9 +132,6 @@ lib/gstreamer-%%VERSION%%/libgstximagesink.so
 lib/gstreamer-%%VERSION%%/libgstxvimagesink.so
 lib/gstreamer-%%VERSION%%/libgstxwindowlistener.so
 lib/gstreamer-%%VERSION%%/libgsty4menc.so
-lib/libgstgconf-%%VERSION%%.a
-lib/libgstgconf-%%VERSION%%.so
-lib/libgstgconf-%%VERSION%%.so.%%SHLIB_VERSION%%
 lib/libgstinterfaces-%%VERSION%%.a
 lib/libgstinterfaces-%%VERSION%%.so
 lib/libgstinterfaces-%%VERSION%%.so.%%SHLIB_VERSION%%
@@ -146,7 +141,6 @@ lib/libgstmedia-info-%%VERSION%%.so.%%SHLIB_VERSION%%
 lib/libgstplay-%%VERSION%%.a
 lib/libgstplay-%%VERSION%%.so
 lib/libgstplay-%%VERSION%%.so.%%SHLIB_VERSION%%
-libdata/pkgconfig/gstreamer-gconf-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-interfaces-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-libs-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-media-info-%%VERSION%%.pc
@@ -180,7 +174,7 @@ share/locale/vi/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 @dirrm include/gstreamer-%%VERSION%%/gst/mixer
 @dirrm include/gstreamer-%%VERSION%%/gst/media-info
 @dirrm include/gstreamer-%%VERSION%%/gst/idct
-@dirrm include/gstreamer-%%VERSION%%/gst/gconf
+@dirrm include/gstreamer-%%VERSION%%/gst/gconf 2>/dev/null || true
 @dirrm include/gstreamer-%%VERSION%%/gst/floatcast
 @dirrm include/gstreamer-%%VERSION%%/gst/colorbalance
 @dirrm include/gstreamer-%%VERSION%%/gst/audio

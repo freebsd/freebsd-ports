@@ -7,7 +7,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.8.8
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES?=	multimedia audio
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://gstreamer.freedesktop.org/src/gst-plugins/
@@ -31,8 +31,8 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME+=	gnomehack \
 		gnomeprefix \
-		pkgconfig \
-		gconf2
+		gnometarget \
+		pkgconfig
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=15
 GST_PLUGIN?=	base
@@ -45,12 +45,11 @@ CONFIGURE_ENV=	PKG_CONFIG=${PKG_CONFIG} \
 .include <bsd.port.pre.mk>
 .include "${MASTERDIR}/Makefile.common"
 
-#.if !defined(WITH_CPUFLAGS)
+.if !defined(WITH_CPUFLAGS)
 WITHOUT_CPU_CFLAGS=	yes
-#.endif
+.endif
 
 .if ${GST_PLUGIN} == "base"
-GCONF_SCHEMAS=	gstreamer-0.8.schemas
 
 INSTALLS_SHLIB=	yes
 
