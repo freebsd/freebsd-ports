@@ -7,19 +7,21 @@
 
 PORTNAME=	qmail
 PORTVERSION=	${QMAIL_VERSION}.${LDAP_PATCH_DATE}
-PORTREVISION=	1
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-ldap
 
 PATCH_SITES=	http://www.nrg4u.com/qmail/
 PATCHFILES=	qmail-ldap-1.03-${LDAP_PATCH_DATE}.patch.gz
+PATCH_DIST_STRIP+=	-p1
 
 MAINTAINER=	lioux@FreeBSD.org
 
 LIB_DEPENDS+=	ldap.1:${PORTSDIR}/net/openldap
 
-NO_PACKAGE=	djb\'s packaging license does not allow non-standard\
-		qmail distributions
+# Patches from the main qmail port are not wanted
+MAIN_QMAIL_PORT_PATCH_BARRIER=	yes
+
+LDAP_PATCH_DATE=	20010201
 
 .if !defined(PRE_MK_INCLUDED)
 .include <bsd.port.pre.mk>
@@ -31,32 +33,48 @@ DOCFILES+=	${WRKSRC}/QLDAPINSTALL ${WRKSRC}/QLDAPNEWS \
 		${WRKSRC}/QLDAPTODO ${WRKSRC}/QLDAPPICTURE \
 		${WRKSRC}/ANTISPAM
 
-LDAP_PATCH_DATE=	20001201
+yetanotherone-pre-fetch: tls-pre-fetch
 
+tls-pre-fetch:
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "You may use the following build options:"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "WITH_LDAP_CLUSTER=yes	enable cluster support"
+	@${ECHO_MSG} "WITH_AUTOMAILDIRMAKE=yes	enable the auto-maildir-make feature"
+	@${ECHO_MSG} "WITH_AUTOHOMEDIRMAKE=yes	enable the auto-homedir-make feature"
+	@${ECHO_MSG} "WITH_LDAP_DEBUG=yes	enable the possibility to log and debug imap and pop"
+	@${ECHO_MSG} "WITH_CLEARTEXTPASSWD=yes	use cleartext passwords"
+	@${ECHO_MSG} ""
+
+yetanotherone-post-patch: tls-post-patch
+
+tls-post-patch:
 .if defined(WITH_LDAP_CLUSTER)
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ldap-cluster
+	@${PERL} -pi -ne "s|#LDAPFLAGS=-DQLDAP_CLUSTER|LDAPFLAGS\+=-DQLDAP_CLUSTER|" ${WRKSRC}/Makefile
 .endif # WITH_LDAP_CLUSTER
-#
 .if defined(WITH_AUTOMAILDIRMAKE)
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-automaildirmake
+	@${PERL} -pi -ne "s|#MDIRMAKE=-DAUTOMAILDIRMAKE|MDIRMAKE=-DAUTOMAILDIRMAKE|" ${WRKSRC}/Makefile
 .endif # WITH_AUTOMAILDIRMAKE
-#
 .if defined(WITH_AUTOHOMEDIRMAKE)
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-autohomedirmake
+	@${PERL} -pi -ne "s|#HDIRMAKE=-DAUTOHOMEDIRMAKE|HDIRMAKE=-DAUTOHOMEDIRMAKE|" ${WRKSRC}/Makefile
 .endif # WITH_AUTOHOMEDIRMAKE
-#
 .if defined(WITH_LDAP_DEBUG)
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-debug
+	@${PERL} -pi -ne "s|#DEBUG=-DDEBUG|DEBUG=-DDEBUG|" ${WRKSRC}/Makefile
 .endif # WITH_LDAP_DEBUG
+.if defined(WITH_CLEARTEXTPASSWD)
+	@${PERL} -pi -ne "s|# -DCLEARTEXTPASSWD to the LDAPFLAGS|LDAPFLAGS\+=-DCLEARTEXTPASSWD|" \
+		${WRKSRC}/Makefile
+.endif # WITH_CLEARTEXTPASSWD
 
 # Local overrides
 MASTERDIR=	${PORTSDIR}/mail/qmail
 #MASTERDIR=	${.CURDIR}/../qmail
 PATCHDIR=	${.CURDIR}/files
 PKGDIR_LOCAL=	${.CURDIR}
+COMMENT=	${PKGDIR_LOCAL}/pkg-comment
 DESCR=		${PKGDIR_LOCAL}/pkg-descr
-PLIST=		${PKGDIR_LOCAL}/pkg-plist
 PKGMESSAGE=	${PKGDIR_LOCAL}/pkg-message
+PLIST=		${PKGDIR_LOCAL}/pkg-plist
 
 PRE_MK_INCLUDED=	yes
 
