@@ -5,7 +5,7 @@
 +#!/bin/sh
 +
 +JAVA_HOME=%%JAVA_HOME%%
-+POSEIDONCE_HOME=$HOME/.poseidonCE
++POSEIDONPE_HOME=$HOME/.poseidon
  
  RealPath() {
  	cmd=`basename $0`
@@ -21,10 +21,3 @@
  
  if [ -z "$JAVA_HOME" ] ; then
      echo "Could not find a JDK."
-@@ -38,5 +41,5 @@
- 
- export CLASSPATH
- 
--"$JAVACMD" -Xms64m -Xmx160m -Dposeidon.java.home="$JAVA_HOME" -Dposeidon.user.dir.PE="$POSEIDONPE_HOME" com.gentleware.poseidon.Poseidon $project
-+"$JAVACMD" -Xms64m -Xmx160m -Dposeidon.java.home="$JAVA_HOME" -Dposeidon.user.dir.CE="$POSEIDONCE_HOME" com.gentleware.poseidon.Poseidon $project
- 
