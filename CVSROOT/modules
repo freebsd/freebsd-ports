@@ -4350,6 +4350,7 @@ p5-Data-FormValidator	ports/textproc/p5-Data-FormValidator
 p5-Data-HexDump	ports/devel/p5-Data-HexDump
 p5-Data-JavaScript	ports/lang/p5-Data-JavaScript
 p5-Data-ShowTable	ports/devel/p5-Data-ShowTable
+p5-Data-TemporaryBag	ports/devel/p5-Data-TemporaryBag
 p5-Date-Calc	ports/devel/p5-Date-Calc
 p5-Date-DayOfWeek	ports/devel/p5-Date-DayOfWeek
 p5-Date-Handler	ports/math/p5-Date-Handler
