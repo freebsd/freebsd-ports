@@ -1,15 +1,16 @@
---- makefile.orig	Mon Jan 12 09:15:06 1998
-+++ makefile	Fri Mar 23 13:41:03 2001
-@@ -79,7 +79,7 @@
+--- makefile.orig	Fri Mar 23 02:44:58 2001
++++ makefile	Sun Dec  8 09:28:08 2002
+@@ -79,7 +79,8 @@
  	@echo "where <system> can be:"
  	@echo "	386bsd, 3b1, 3b1_asm, aix370, aix386, amix-68k-gcc, apollo,"
  	@echo "	apollo-gcc, atari,aux(*), aux-gcc, bsd, bsdgcc, convexos,"
 -	@echo "	dgux, djgpp, encore, freebsd, hpux-68k(*), hpux-68k-ansi,"
-+	@echo "	dgux, djgpp, encore, freebsd-{alpha,i386}, hpux-68k(*), hpux-68k-ansi,"
++	@echo "	dgux, djgpp, encore, freebsd-{alpha,i386,sparc64},"
++	@echo " hpux-68k(*), hpux-68k-ansi,"
  	@echo "	hpux-68k-gcc, hpux-pa(*), hpux-pa-ansi, hpux-pa-gcc, hpux9-pa-ansi,"
  	@echo "	irix, irix_asm, isc, isc_asm, linux, linux-aout, linux-68k,"
  	@echo "	machten, mach_386, mips-ultrix, netbsd, netbsd_68k, newsasm,"
-@@ -175,9 +175,14 @@
+@@ -175,9 +176,19 @@
  	$(MAKE) all CC=gcc LD=gcc \
  	CFLAGS="$(RSAINCDIR) -O2 -DHIGHFIRST -DUNIX -DPORTABLE -DIDEA32"
  
@@ -21,6 +22,11 @@
 +	-DMAX_NAMELEN=255"
 +
 +freebsd-alpha:
++	$(MAKE) all LD="$(CC) -s" \
++	CFLAGS="$(RSAINCDIR) $(OS_CFLAGS) -DPORTABLE -DUNIX -DIDEA32 \
++	-DMAX_NAMELEN=255"
++
++freebsd-sparc64:
 +	$(MAKE) all LD="$(CC) -s" \
 +	CFLAGS="$(RSAINCDIR) $(OS_CFLAGS) -DPORTABLE -DUNIX -DIDEA32 \
  	-DMAX_NAMELEN=255"
