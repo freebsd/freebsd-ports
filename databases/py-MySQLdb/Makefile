@@ -7,7 +7,7 @@
 
 PORTNAME=	MySQLdb
 PORTVERSION=	1.2.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mysql-python
@@ -27,12 +27,13 @@ pre-fetch:
 	@${ECHO} ""
 	@${ECHO} "You may use the following build options:"
 	@${ECHO} ""
-	@${ECHO} "	WITH_MYSQLCLIENT_R=yes	Use mysqlclient_r lib"
+	@${ECHO} "	WITHOUT_MYSQLCLIENT_R=yes	Don't use mysqlclient_r lib"
+	@${ECHO} "					but is not guarantee thread-safe."
+	@${ECHO} ""
+	@${ECHO} "	Default use mysqlclient_r"
 	@${ECHO} ""
 
-.if defined(WITH_MYSQLCLIENT_R)
-MAKE_ENV+=	mysqlclient="mysqlclient_r"
-.else
+.if defined(WITHOUT_MYSQLCLIENT_R)
 MAKE_ENV+=	mysqlclient="mysqlclient"
 .endif
 
