@@ -68,6 +68,8 @@ Option "XkbRules" "xfree86"
   If you have a previous php.ini configuration file, be sure to comment out
   the extension_dir parameter, since the correct path is statically compiled
   into the PHP binary.
+  For an overview of the modules used with the old PHP binary, use
+  the command "php -m".
 
 20040717:
   AFFECTS: users of net/openldap2[12]{,-sasl}-client
