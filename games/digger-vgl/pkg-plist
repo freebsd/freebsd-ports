@@ -1,3 +1,5 @@
 bin/digger
-share/doc/digger/digger.txt
-@dirrm share/doc/digger
+%%PORTDOCS%%%%DOCSDIR%%/digger.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@unexec rmdir /var/games/digger 2>/dev/null || true
+@exec mkdir -p /var/games/digger
