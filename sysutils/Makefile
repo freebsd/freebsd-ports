@@ -15,6 +15,7 @@
     SUBDIR += bchunk
     SUBDIR += bkpupsd
     SUBDIR += blimitd
+    SUBDIR += bsdsar
     SUBDIR += bubblemon-dockapp
     SUBDIR += cd-write
     SUBDIR += cd9660_unicode

@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+
+# Verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { DEINSTALL | POST-DEINSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    DEINSTALL)
+	cat /etc/crontab | /usr/bin/sed -e '/bsdsar/d' > /tmp/crontab.bsdsar
+	mv /tmp/crontab.bsdsar /etc/crontab
+        ;;
+    POST-DEINSTALL)
+        : nothing to post-deinstall for this port
+        ;;
+    *)
+        echo "usage: $0 distname { DEINSTALL | POST-DEINSTALL }" >&2
+        exit 1
+        ;;
+esac
+
+exit 0
+
