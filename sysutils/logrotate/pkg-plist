@@ -1,0 +1,4 @@
+sbin/logrotate
+etc/logrotate.conf.sample
+etc/logrotate.d/syslog.sample
+@dirrm etc/logrotate.d
