@@ -3,7 +3,7 @@
 # Date created:		31 Oct 1998
 # Whom:			Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/15 15:22:45 kuriyama Exp $
+# $Id: Makefile,v 1.2 1998/12/23 08:50:12 kuriyama Exp $
 #
 
 DISTNAME=	skk9.6
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PREFIX}/share/skk/${SKKJISYO}:${SKK_MASTERDIR}
 SKKJISYO_SIZE?=	L
 SKKJISYO?=	SKK-JISYO.${SKKJISYO_SIZE}
 SKK_MASTERDIR=	${.CURDIR}/../../japanese/skk-jisyo
-WRKSRC=		${SKK_MASTERDIR}/work/skk-9.6
+WRKSRC=		${WRKDIRPREFIX}${SKK_MASTERDIR}/work/skk-9.6
 
 # we cannot use skk-9.6 on emacs20
 EMACS=		mule
