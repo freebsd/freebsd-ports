@@ -15,8 +15,8 @@ MASTER_SITE_SUBDIR=	trevor
 DISTNAME=	invitationtoruby
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	trevor@FreeBSD.org
-COMMENT=	A talk given by Jim Weirich, a brief introduction to Ruby
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Talk given by Jim Weirich, a brief introduction to Ruby
 
 NO_BUILD=	yes
 NO_CDROM=	\
