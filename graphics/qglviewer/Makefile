@@ -8,24 +8,40 @@
 
 PORTNAME=	qglviewer
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.qglviewer.de/
 
-MAINTAINER=	kde@freebsd.org
+MAINTAINER=	ports@freebsd.org
+COMMENT=	Use OpenGL to play around with three dimensional scenes
 
+USE_QT_VER=	3
 USE_REINPLACE=	yes
-USE_LIBTOOL=	yes
-USE_QT_VER=	2
-GNU_CONFIGURE=	yes
-QTCPPFLAGS=	${CXXFLAGS} ${PTHREAD_CFLAGS}
-QTCFGLIBS=	${PTHREAD_LIBS} -L${X11BASE}/lib -lqtgl
-CONFIGURE_ENV=	QTDIR="${X11BASE}"
 USE_GMAKE=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_ENV=	QTDIR="${X11BASE}"
 INSTALLS_SHLIB=	yes
 
+QTCPPFLAGS+=	${PTHREAD_CFLAGS}
+QTCFGLIBS+=	${PTHREAD_LIBS}
+
 post-patch:
-	@${REINPLACE_CMD} -e "s,-lqt,-lqt2,g ; \
-		s,-lqgl,-lqtgl,g ; \
-		s,/moc,/moc2,g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-lqt"|-lqt-mt ${PTHREAD_LIBS}"|g ; \
+		 s|-lqt -lqgl"|-lqt-mt -lqtgl ${PTHREAD_LIBS}"|g ; \
+		 s|/moc|/${MOC:T}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|^SUBDIRS =.*$$|SUBDIRS = src include|g ; \
+		 s| install-pkgdocDATA||g' ${WRKSRC}/Makefile.in
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/NEWS ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/html
+	${INSTALL_DATA} ${WRKSRC}/doc/html/*.css ${DOCSDIR}/html
+	${INSTALL_DATA} ${WRKSRC}/doc/html/*.gif ${DOCSDIR}/html
+	${INSTALL_DATA} ${WRKSRC}/doc/html/*.html ${DOCSDIR}/html
+.endif
 
 .include <bsd.port.mk>
