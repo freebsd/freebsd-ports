@@ -136,6 +136,7 @@
     SUBDIR += geolizer
     SUBDIR += gforge
     SUBDIR += glibwww
+    SUBDIR += gnome-user-share
     SUBDIR += gnuinfo
     SUBDIR += goose
     SUBDIR += grail

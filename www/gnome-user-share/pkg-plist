@@ -1,0 +1,5 @@
+bin/gnome-file-share-properties
+libexec/gnome-user-share
+share/gnome/gnome-user-share/dav_user.conf
+share/gnome/gnome-user-share/file-share-properties.glade
+@dirrm share/gnome/gnome-user-share
