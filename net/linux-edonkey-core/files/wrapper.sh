@@ -11,7 +11,7 @@ fi
 
 if [ ! -h ${DIRNAME}/${PROGRAM##*/} ]
 then
-	ln -sf ${PREFIX}/bin/${PROGRAM##*/}-real ${DIRNAME}/${PROGRAM##*/}
+	ln -sf ${PREFIX}/sbin/${PROGRAM##*/}-real ${DIRNAME}/${PROGRAM##*/}
 fi
 
 echo " ${*} " | grep " \-createdironly " ||
