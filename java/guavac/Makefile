@@ -3,7 +3,7 @@
 # Date created:        10 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.11 1999/01/12 16:50:46 vanilla Exp $
+# $Id: Makefile,v 1.12 1999/05/04 12:00:21 asami Exp $
 #
 
 DISTNAME=	guavac-1.2
@@ -12,9 +12,13 @@ MASTER_SITES=	ftp://ftp.yggdrasil.com/pub/dist/devel/compilers/guavac/
 
 MAINTAINER=	nacai@iname.com
 
-CC=		gcc28
-CXX=		g++28
-BUILD_DEPENDS=	${LOCALBASE}/i386-portbld-freebsd${OSREL}/lib/libiberty.a:${PORTSDIR}/lang/glibstdc++28
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 400004
+CC=		egcc
+CXX=		eg++
+BUILD_DEPENDS=	egcc:${PORTSDIR}/lang/egcs
+.endif
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -27,4 +31,4 @@ pre-install:
 post-install:
 	@strip ${PREFIX}/bin/guavac ${PREFIX}/bin/guavad
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
