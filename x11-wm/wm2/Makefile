@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A very simple window manager for X
 
+BUILD_DEPENDS=	makedepend:${X_IMAKE_PORT}
+
 USE_X_PREFIX=	yes
 ALL_TARGET=	depend wm2
 
