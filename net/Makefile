@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.113 1997/07/02 15:12:22 wosch Exp $
+# $Id: Makefile,v 1.114 1997/07/15 14:10:34 tg Exp $
 #
 
     SUBDIR += archie
@@ -36,6 +36,7 @@
     SUBDIR += moxftp
     SUBDIR += ncftp
     SUBDIR += ncftp2
+    SUBDIR += netatalk
     SUBDIR += netcat
     SUBDIR += p5-Archie
     SUBDIR += p5-Net
