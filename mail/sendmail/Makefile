@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sendmail
-PORTVERSION=	8.12.4
+PORTVERSION=	8.12.5
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/sendmail/&,}
@@ -102,8 +102,8 @@ pre-install:
 .if ! defined(SENDMAIL_WITHOUT_MILTER)
 	@${CAT} ${FILESDIR}/pkg-milter >>${PLIST}
 .endif
-	if ! pw groupshow smmsp; then pw groupadd smmsp -g 90; fi
-	if ! pw usershow smmsp; then pw useradd smmsp -g smmsp -u 90 \
+	if ! pw groupshow smmsp; then pw groupadd smmsp -g 25; fi
+	if ! pw usershow smmsp; then pw useradd smmsp -g smmsp -u 25 \
 		-h - -d /nonexistent -s /nonexistent -c "Sendmail Queue"; fi
 .if !defined(NOPORTDOCS)
 	@cd ${WRKSRC} && find cf -type f | \
