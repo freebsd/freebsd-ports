@@ -1,0 +1,105 @@
+include/simgear/bucket/newbucket.hxx
+include/simgear/compiler.h
+include/simgear/constants.h
+include/simgear/debug/debug_types.h
+include/simgear/debug/logstream.hxx
+include/simgear/ephemeris/celestialBody.hxx
+include/simgear/ephemeris/ephemeris.hxx
+include/simgear/ephemeris/jupiter.hxx
+include/simgear/ephemeris/mars.hxx
+include/simgear/ephemeris/mercury.hxx
+include/simgear/ephemeris/moonpos.hxx
+include/simgear/ephemeris/neptune.hxx
+include/simgear/ephemeris/saturn.hxx
+include/simgear/ephemeris/star.hxx
+include/simgear/ephemeris/stardata.hxx
+include/simgear/ephemeris/uranus.hxx
+include/simgear/ephemeris/venus.hxx
+include/simgear/io/iochannel.hxx
+include/simgear/io/lowlevel.hxx
+include/simgear/io/sg_binobj.hxx
+include/simgear/io/sg_file.hxx
+include/simgear/io/sg_serial.hxx
+include/simgear/io/sg_socket.hxx
+include/simgear/io/sg_socket_udp.hxx
+include/simgear/magvar/magvar.hxx
+include/simgear/math/interpolater.hxx
+include/simgear/math/leastsqs.hxx
+include/simgear/math/localconsts.hxx
+include/simgear/math/point3d.hxx
+include/simgear/math/polar3d.hxx
+include/simgear/math/sg_geodesy.hxx
+include/simgear/math/sg_memory.h
+include/simgear/math/sg_random.h
+include/simgear/math/sg_types.hxx
+include/simgear/math/vector.hxx
+include/simgear/metar/MetarReport.h
+include/simgear/metar/MetarStation.h
+include/simgear/misc/commands.hxx
+include/simgear/misc/exception.hxx
+include/simgear/misc/props.hxx
+include/simgear/misc/props_io.hxx
+include/simgear/misc/sg_path.hxx
+include/simgear/misc/sgstream.hxx
+include/simgear/misc/stopwatch.hxx
+include/simgear/misc/strutils.hxx
+include/simgear/misc/texcoord.hxx
+include/simgear/misc/zfstream.hxx
+include/simgear/route/route.hxx
+include/simgear/route/waypoint.hxx
+include/simgear/screen/screen-dump.hxx
+include/simgear/screen/tr.h
+include/simgear/serial/serial.hxx
+include/simgear/sg_inlines.h
+include/simgear/sg_traits.hxx
+include/simgear/sg_zlib.h
+include/simgear/sky/cloud.hxx
+include/simgear/sky/clouds3d/SkySceneLoader.hpp
+include/simgear/sky/clouds3d/SkyUtil.hpp
+include/simgear/sky/dome.hxx
+include/simgear/sky/moon.hxx
+include/simgear/sky/oursun.hxx
+include/simgear/sky/sky.hxx
+include/simgear/sky/sphere.hxx
+include/simgear/sky/stars.hxx
+include/simgear/timing/geocoord.h
+include/simgear/timing/lowleveltime.h
+include/simgear/timing/sg_time.hxx
+include/simgear/timing/timestamp.hxx
+include/simgear/timing/timezone.h
+include/simgear/version.h
+include/simgear/xgl/xgl.h
+include/simgear/xml/easyxml.hxx
+lib/libsgbucket.a
+lib/libsgclouds3d.a
+lib/libsgdebug.a
+lib/libsgephem.a
+lib/libsgio.a
+lib/libsgmagvar.a
+lib/libsgmath.a
+lib/libsgmetar.a
+lib/libsgmisc.a
+lib/libsgroute.a
+lib/libsgscreen.a
+lib/libsgserial.a
+lib/libsgsky.a
+lib/libsgtiming.a
+lib/libsgxgl.a
+lib/libsgxml.a
+@dirrm include/simgear/xml
+@dirrm include/simgear/xgl
+@dirrm include/simgear/timing
+@dirrm include/simgear/sky/clouds3d
+@dirrm include/simgear/sky
+@dirrm include/simgear/serial
+@dirrm include/simgear/screen
+@dirrm include/simgear/route
+@dirrm include/simgear/misc
+@dirrm include/simgear/metar
+@dirrm include/simgear/math
+@dirrm include/simgear/magvar
+@dirrm include/simgear/io
+@dirrm include/simgear/ephemeris
+@dirrm include/simgear/debug
+@dirrm include/simgear/bucket
+@dirrm include/simgear
