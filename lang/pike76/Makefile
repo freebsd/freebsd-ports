@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pike76
-PORTVERSION=	7.6.9
+PORTVERSION=	7.6.13
 CATEGORIES=	lang
 MASTER_SITES=	ftp://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
 		ftp://ftp.oav.net/pike/7.6/ \
