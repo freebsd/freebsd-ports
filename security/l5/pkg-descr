@@ -1,0 +1,15 @@
+After examining Tripwire and deciding that it was *way* overkill for my
+own purposes...
+
+...L5 simply walks down Unix or DOS filesystems, sort of like "ls -R" or
+"find" would, generating listings of anything it finds there.  It tells
+you everything it can about a file's status, and adds on an MD5 hash of
+it.  Its output is rather "numeric", but it is a very simple format and
+is designed to be post-treated by scripts that call L5...
+
+...Unlike Tripwire itself, this is NOT a complete toolkit -- one is
+expected to use it as a small, reliable part of a larger system...
+
+_H*
+
+Andrew McNaughton <andrew@scoop.co.nz>
