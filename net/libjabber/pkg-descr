@@ -1,0 +1,8 @@
+Currently, libjabber provides Jabber transports with various library functions.
+
+For general information about Jabber, including a quick introduction
+to Jabber concepts, see the FAQ at
+WWW: http://docs.jabber.org/
+
+You may want to delve into the internals of the Jabber project at
+http://docs.jabber.org/ and http://protocol.jabber.org/
