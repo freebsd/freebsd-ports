@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	bochs
-PORTVERSION=	1.1.2
+PORTVERSION=	1.2
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
@@ -19,7 +19,8 @@ MAINTAINER=	clefevre@poboxes.com
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-cpu-level=5 \
-		--enable-cdrom
+		--enable-cdrom \
+		--disable-split-hd
 CFLAGS+=	-fno-rtti -fno-exceptions -fomit-frame-pointer
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
@@ -47,6 +48,7 @@ post-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bochs ${PREFIX}/bin/bochs-bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bximage ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKDIR}/bochs.sh ${PREFIX}/bin/bochs
 	@${MKDIR} ${PREFIX}/share/bochs
 	${INSTALL_DATA} ${WRKSRC}/.bochsrc ${PREFIX}/share/bochs/dot.bochsrc
