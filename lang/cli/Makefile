@@ -45,12 +45,12 @@ do-build:
 	@${CHMOD} 700 ${WRKSRC} # <- we need this because build system creates world-writeable dirs
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${SH} env.sh ./buildall)
 
-.if !defined(I_AGREE_TO_A_LICENSE_TERMS)
+.if !defined(I_AGREE_TO_LICENSE_TERMS)
 pre-install:
 	@${ECHO_MSG} "Please make sure that you have read and understood license terms contained in"
 	@${ECHO_MSG} "the ${WRKSRC}/license.txt file and if you"
-	@${ECHO_MSG} "agree with them then add -DI_AGREE_TO_A_LICENSE_TERMS to command line to"
-	@${ECHO_MSG} "install the software (i.e. 'make -DI_AGREE_TO_A_LICENSE_TERMS install')."
+	@${ECHO_MSG} "agree with them then add -DI_AGREE_TO_LICENSE_TERMS to command line to"
+	@${ECHO_MSG} "install the software (i.e. 'make -DI_AGREE_TO_LICENSE_TERMS install')."
 	@${FALSE}
 .endif
 
