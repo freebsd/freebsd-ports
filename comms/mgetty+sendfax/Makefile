@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	mgetty
-PORTVERSION=	1.1.28.01.10
+PORTVERSION=	1.1.30.12.16
 CATEGORIES=	comms
 MASTER_SITES=	ftp://alpha.greenie.net/pub/mgetty/source/1.1/
-DISTNAME=	mgetty1.1.28-Jan10
+DISTNAME=	mgetty1.1.30-Dec16
 
 MAINTAINER=	jmz@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/mgetty-1.1.28
+WRKSRC=		${WRKDIR}/mgetty-1.1.30
 MAKE_FLAGS=	prefix=${PREFIX} -f
 MAN1=		autopvf.1 \
 		basictopvf.1 \
@@ -57,6 +57,18 @@ MLINKS=		pvf.1 pvfamp.1 \
 		pvf.1 rmdtopvf.1 \
 		pvf.1 voctopvf.1 \
 		pvf.1 wavtopvf.1
+
+CFLAGS+=	-DAUTO_PPP
+.if defined(WITH_FIDO) && ${WITH_FIDO:L} != no
+CFLAGS+=	-DFIDO
+.endif
+
+pre-everything::
+.if !defined(WITH_FIDO)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "If you need FIDO EMSI support, use \"make WITH_FIDO=yes\""
+	@${ECHO_MSG}
+.endif
 
 pre-install:
 	@(cd ${WRKSRC}/doc; ${MAKE} manpages)

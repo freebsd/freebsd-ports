@@ -86,6 +86,7 @@ lib/mgetty+sendfax/samples/new_fax.tiff
 lib/mgetty+sendfax/samples/new_fax.vacation
 lib/mgetty+sendfax/samples/printfax
 lib/mgetty+sendfax/samples/printfax.ps
+sbin/callback
 sbin/faxrunqd
 sbin/mgetty
 sbin/sendfax
