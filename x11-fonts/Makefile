@@ -33,6 +33,7 @@
     SUBDIR += p5-type1inst
     SUBDIR += sgifonts
     SUBDIR += sharefonts
+    SUBDIR += terminus-font
     SUBDIR += tkfont
     SUBDIR += ttmkfdir
     SUBDIR += urwfonts
