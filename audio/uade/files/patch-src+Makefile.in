@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Sun Feb 16 01:15:38 2003
++++ src/Makefile.in	Sun Feb 16 01:15:48 2003
+@@ -3,7 +3,7 @@
+ ARCHFLAGS = 
+ 
+ CTFLAGS	= -fomit-frame-pointer  -Wall -Wno-unused -Wno-format -W -Wmissing-prototypes -Wstrict-prototypes -DGCCCONSTFUNC="__attribute__((const))" -D_REENTRANT -fno-exceptions -fno-strength-reduce -DREGPARAM= -D__inline__=inline $(ARCHFLAGS)
+-CFLAGS	= -O2 $(CTFLAGS)
++CFLAGS	+= -O2 $(CTFLAGS)
+ 
+ SDLLIBS= 
+ SDLFLAGS= 

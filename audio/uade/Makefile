@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmms-uade
-PORTVERSION=	0.73
+PORTVERSION=	0.80-pre3-antiwar
 CATEGORIES=	audio
 MASTER_SITES=	http://www.ee.tut.fi/%7Eheikki/uade/
 DISTFILES=	uade-${PORTVERSION}${EXTRACT_SUFX}
@@ -27,6 +27,8 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${X11BASE}/lib/xmms \
 		--mymods=/ \
 		--docprefix=${X11BASE}/lib/xmms \
+
+CONFIGURE_ENV=	SYSCFLAGS='${CFLAGS}'
 
 WRKSRC=		${WRKDIR}/uade-${PORTVERSION}
 
