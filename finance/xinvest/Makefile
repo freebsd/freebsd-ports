@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xinvest
-PORTVERSION=	2.6
+PORTVERSION=	2.6.9
 CATEGORIES=	finance deskutils
 MASTER_SITES=	http://xinvest.sunsite.dk/
 
@@ -19,8 +19,8 @@ NO_INSTALL_MANPAGES=	yes
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/examples/Xinvest
-	${INSTALL_DATA} ${WRKSRC}/samples/*.inv ${PREFIX}/share/examples/Xinvest
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/samples/*.inv ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
