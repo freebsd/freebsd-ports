@@ -12,7 +12,7 @@ PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.bnro.de/~schmidjo/download/
 
-MAINTAINER=	h.eichmann@gmx.de
+MAINTAINER=	barner@gmx.de
 COMMENT=	GTK+ gui for browsing and mounting SMB filesystems
 
 RUN_DEPENDS=	smbclient:${PORTSDIR}/net/samba
