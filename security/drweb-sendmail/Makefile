@@ -16,6 +16,8 @@ MAINTAINER=	anton@urc.ac.ru
 
 RUN_DEPENDS=	${LOCALBASE}/drweb/drwebd:${PORTSDIR}/security/drweb
 
+IS_INTERACTIVE= yes     # require sendmail rebuilding
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/clients/drwebdc
 MAKEFILE=	Makefile.unix
 
@@ -47,6 +49,9 @@ post-extract:
 	cd ${WRKDIR}/${DISTNAME} && ${TAR} -xvzf ${WRKDIR}/${DISTNAME}/${DISTNAME}.tar.gz clients/drwebdc clients/sendmail
 
 pre-build:
+	@${CAT} pkg-message
+	@echo
+	@read -p "Press Enter to continue or ^C to abort: " x
 	${MKDIR} ${WRKSRC}/libmilter
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}/libmilter
 .if ${SENDMAIL_VERSION} == "8.11.1"
