@@ -17,6 +17,8 @@ MAINTAINER=	patseal@hyperhost.net
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		png.4:${PORTSDIR}/graphics/png
 
+IGNOREFILES=	harmonics.world.gz
+
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 MAN1=	xtide.1 tide.1
