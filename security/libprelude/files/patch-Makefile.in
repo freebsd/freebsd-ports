@@ -1,0 +1,21 @@
+--- Makefile.in.orig	Sat Jun  7 09:55:05 2003
++++ Makefile.in	Sat Jun  7 09:56:20 2003
+@@ -429,17 +429,7 @@
+ 	$(INSTALL) -d -m 755 $(DESTDIR)/$(sensors_config_dir);
+ 	$(INSTALL) -d -m 755 $(DESTDIR)/$(sensors_config_dir)/ssl;
+ 	$(INSTALL) -d -m 755 $(DESTDIR)/$(sensors_config_dir)/plaintext;
+-	@if test -f $(DESTDIR)/$(sensors_config_dir)/sensors-default.conf; then                                   		\
+-		echo "********************************************************************************";          		\
+-                echo;                                                                                             		\
+-                echo "$(DESTDIR)/$(sensors_config_dir)/sensors-default.conf already exist...";					\
+-                echo "Installing default configuration in $(DESTDIR)/$(sensors_config_dir)/sensors-default.conf-dist";		\
+-                echo;                                                                                             		\
+-                echo "********************************************************************************";          		\
+-		$(INSTALL) -m 644 $(top_srcdir)/sensors-default.conf $(DESTDIR)/$(sensors_config_dir)/sensors-default.conf-dist;\
+-        else                                                                                                      		\
+-                $(INSTALL) -m 644 $(top_srcdir)/sensors-default.conf $(DESTDIR)/$(sensors_config_dir)/;        			\
+-        fi
++	$(INSTALL) -m 644 $(top_srcdir)/sensors-default.conf $(DESTDIR)/$(sensors_config_dir)/sensors-default.conf-dist;
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

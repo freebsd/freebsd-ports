@@ -1,0 +1,86 @@
+bin/sensor-adduser
+bin/libprelude-config
+@unexec [ -f %D/etc/prelude-sensors/sensors-default.conf-dist ] && rm %D/etc/prelude-sensors/sensors-default.conf-dist || true
+include/libprelude/config-engine.h
+include/libprelude/idmef-message-id.h
+include/libprelude/idmef-tree.h
+include/libprelude/idmef-tree-func.h
+include/libprelude/idmef-msg-send.h
+include/libprelude/plugin-common.h
+include/libprelude/plugin-common-prv.h
+include/libprelude/ssl-gencrypto.h
+include/libprelude/ssl-settings.h
+include/libprelude/ssl-registration-msg.h
+include/libprelude/daemonize.h
+include/libprelude/string-matching.h
+include/libprelude/timer.h
+include/libprelude/list.h
+include/libprelude/variable.h
+include/libprelude/prelude-auth.h
+include/libprelude/prelude-list.h
+include/libprelude/prelude-client.h
+include/libprelude/prelude-client-mgr.h
+include/libprelude/prelude-getopt.h
+include/libprelude/prelude-getopt-wide.h
+include/libprelude/prelude-io.h
+include/libprelude/prelude-message.h
+include/libprelude/prelude-message-buffered.h
+include/libprelude/prelude-message-id.h
+include/libprelude/prelude-async.h
+include/libprelude/prelude-ident.h
+include/libprelude/prelude-path.h
+include/libprelude/prelude-log.h
+include/libprelude/sensor.h
+include/libprelude/threads.h
+include/libprelude/extract.h
+include/libprelude/common.h
+include/libprelude/config.h
+lib/libprelude.so.0
+lib/libprelude.so
+lib/libprelude.la
+share/doc/libprelude/c4.html
+share/doc/libprelude/index.html
+share/doc/libprelude/libprelude-client-ident.html
+share/doc/libprelude/libprelude-common.html
+share/doc/libprelude/libprelude-config-engine.html
+share/doc/libprelude/libprelude-daemonize.html
+share/doc/libprelude/libprelude-extract.html
+share/doc/libprelude/libprelude-idmef-message-id.html
+share/doc/libprelude/libprelude-idmef-msg-send.html
+share/doc/libprelude/libprelude-idmef-tree-func.html
+share/doc/libprelude/libprelude-idmef-tree.html
+share/doc/libprelude/libprelude-list.html
+share/doc/libprelude/libprelude-plugin-common-prv.html
+share/doc/libprelude/libprelude-prelude-io.html
+share/doc/libprelude/libprelude-plugin-common.html
+share/doc/libprelude/libprelude-prelude-async.html
+share/doc/libprelude/libprelude-prelude-auth.html
+share/doc/libprelude/libprelude-prelude-client-mgr.html
+share/doc/libprelude/libprelude-prelude-client.html
+share/doc/libprelude/libprelude-prelude-getopt-wide.html
+share/doc/libprelude/libprelude-prelude-getopt.html
+share/doc/libprelude/libprelude-prelude-ident.html
+share/doc/libprelude/libprelude-prelude-list.html
+share/doc/libprelude/libprelude-prelude-log.html
+share/doc/libprelude/libprelude-prelude-message-buffered.html
+share/doc/libprelude/libprelude-prelude-message-id.html
+share/doc/libprelude/libprelude-prelude-message.html
+share/doc/libprelude/libprelude-prelude-path.html
+share/doc/libprelude/libprelude-sensor.html
+share/doc/libprelude/libprelude-ssl-gencrypto.html
+share/doc/libprelude/libprelude-ssl-registration-msg.html
+share/doc/libprelude/libprelude-ssl-settings.html
+share/doc/libprelude/libprelude-ssl.html
+share/doc/libprelude/libprelude-string-matching.html
+share/doc/libprelude/libprelude-threads.html
+share/doc/libprelude/libprelude-timer.html
+share/doc/libprelude/libprelude-variable.html
+share/doc/libprelude/index.sgml
+@unexec rmdir %D/etc/prelude-sensors/ssl 2>/dev/null || true
+@unexec rmdir %D/etc/prelude-sensors/plaintext 2>/dev/null || true
+@unexec rmdir %D/etc/prelude-sensors 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/etc/prelude-sensors`` to remove any configuration files left." | fmt
+@dirrm include/libprelude
+@dirrm share/doc/libprelude
+@unexec rmdir /var/spool/prelude-sensors 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf /var/spool/prelude-sensors`` to remove any files left." | fmt
+@exec /sbin/ldconfig -m 
+@unexec /sbin/ldconfig  -R

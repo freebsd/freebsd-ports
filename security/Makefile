@@ -133,6 +133,7 @@
     SUBDIR += libksba
     SUBDIR += libmcrypt
     SUBDIR += libparanoia
+    SUBDIR += libprelude
     SUBDIR += libtasn1
     SUBDIR += liedentd
     SUBDIR += logcheck
