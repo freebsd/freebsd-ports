@@ -6,6 +6,7 @@
 
 PORTNAME=	File-Tail
 PORTVERSION=	0.98
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	File
@@ -14,6 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	jeremy@external.org
 
 BUILD_DEPENDS=	${site_perl}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 site_perl=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}
 
