@@ -7,6 +7,7 @@
     SUBDIR += clustalw
     SUBDIR += deft
     SUBDIR += emboss
+    SUBDIR += fasta
     SUBDIR += fastdnaml
     SUBDIR += gaussian98
     SUBDIR += gperiodic

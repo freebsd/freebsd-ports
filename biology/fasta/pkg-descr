@@ -1,0 +1,20 @@
+Version 2 of the FASTA packages contains many programs for searching DNA and
+protein databases, performing sequence comparisons, producing local
+alignments, and other related tasks.
+
+Currently, the FASTA2 suite is in maintenance mode.  Updated versions of ONLY
+the searching programs are available in version 3 of the FASTA packages,
+which may be found in the port biology/fasta3.
+
+FASTA is described in:  W. R. Pearson and D. J. Lipman (1988), "Improved
+Tools for Biological Sequence Analysis", PNAS 85:2444- 2448, and W. R.
+Pearson (1990) "Rapid and Sensitive Sequence Comparison with FASTP and FASTA"
+Methods in Enzymology 183:63- 98).
+
+The FASTA2 suite is distributed freely subject to the condition that it may
+not be sold or incorporated into a commercial product.
+
+Author: William R Pearson <wrp@virginia.edu>
+WWW:    http://fasta.bioch.virginia.edu/
+
+-- Johann Visagie <johann@egenetics.com>

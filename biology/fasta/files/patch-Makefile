@@ -1,0 +1,28 @@
+--- Makefile.orig	Mon Jan 29 15:10:42 2001
++++ Makefile	Mon Jan 29 15:15:08 2001
+@@ -3,13 +3,13 @@
+ # for mips, also use: -mips2 -O2
+ #
+ 
+-CC= cc -O
++#CC= cc -O
+ #CC=cc -g
+ 
+-CFLAGS= -DUNIX -DBIGMEM -DSFCHAR="':'" -DEXPM1 -DPROGRESS
++CFLAGS+= -DUNIX -DBIGMEM -DSFCHAR="':'" -DEXPM1 -DPROGRESS
+ LFLAGS= -lm -o
+ 
+-BIN = /seqprg/slib/bin
++BIN = $(PREFIX)/bin
+ #NRAND= nrand
+ #IBM RS/6000
+ NRAND= nrand48
+@@ -29,7 +29,7 @@
+ sall : $(SPROGS)
+ 
+ install : 
+-	cp $(PROGS) $(BIN)
++	$(BSD_INSTALL_PROGRAM) $(PROGS) $(BIN)
+ 
+ clean-up : 
+ 	rm *.o $(PROGS)
