@@ -46,6 +46,8 @@ exec >/dev/null
 case $1 in
 start)
     kldstat -v | grep vmmon >/dev/null || kldload ${vmware_libdir}/modules/vmmon_${suffix}.ko
+    echo -n > /dev/vmnet1
+    echo -n > /dev/vmnet1
     if [ $networking -eq 1 ]; then
 	kldstat -v | grep if_tap >/dev/null || kldload if_tap.ko
 	if [ ! -e $dev_vmnet1 ]; then
