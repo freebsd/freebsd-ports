@@ -11,6 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sleepycat.com/update/${PORTVERSION}/
 DISTNAME=	db-${PORTVERSION}
+DIST_SUBDIR=	bdb
 
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	patch.3.2.9.1 patch.3.2.9.2
@@ -29,7 +30,7 @@ CONFIGURE_ARGS=		--enable-compat185 \
 			--enable-dynamic \
 			--prefix=${PREFIX} \
 			--includedir=${PREFIX}/include/db3 \
-			--target=$(ARCH)-unknown-freebsd$(OSREL)
+			--target=${ARCH}-unknown-freebsd${OSREL}
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/${CONFIGURE_SCRIPT}
