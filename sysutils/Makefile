@@ -19,6 +19,7 @@
     SUBDIR += cfengine
     SUBDIR += checkservice
     SUBDIR += clockspeed
+    SUBDIR += colorize
     SUBDIR += comconsole
     SUBDIR += consolehm 
     SUBDIR += contool

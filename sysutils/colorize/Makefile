@@ -1,0 +1,37 @@
+# New ports collection makefile for:	colorize
+# Date created:				12 June 2001
+# Whom:					petef@databits.net
+#
+# $FreeBSD$
+#
+
+PORTNAME=	colorize
+PORTVERSION=	0.3.0
+CATEGORIES=	sysutils
+MASTER_SITES=	http://nrg.martos.bme.hu/release/colorize/download/gz/
+DISTNAME=	${PORTNAME}_${PORTVERSION}
+
+MAINTAINER=	petef@databits.net
+
+RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Term/ANSIColor.pm:${PORTSDIR}/devel/p5-Term-ANSIColor
+
+WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
+NO_BUILD=	yes
+USE_PERL5=	yes
+MAN1=		colorize.1
+
+post-patch:
+	@${PERL} -pi -e "s|/etc/colorizerc|${PREFIX}/etc/colorizerc|; \
+		s|#!/usr/bin/perl|#!${PERL}|g" ${WRKSRC}/colorize.pl
+	@${GZIP_CMD} -d ${WRKSRC}/colorize.pl.1.gz
+	@${PERL} -pi -e 's!colorize.pl!colorize!g' ${WRKSRC}/colorize.pl.1
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/colorize.pl ${PREFIX}/bin/colorize
+	${INSTALL_DATA} ${WRKSRC}/colorizerc ${PREFIX}/etc/colorizerc.sample
+	${INSTALL_MAN} ${WRKSRC}/colorize.pl.1 ${PREFIX}/man/man1/colorize.1
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.mk>
