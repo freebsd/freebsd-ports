@@ -14,22 +14,21 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses based MIME Mail Reader
 
 ALL_TARGET=	# empty
+USE_GCC=	2.95
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile with gcc 3.4.2"
-.endif
+PORTDOCS=	BUGS CHANGES Features README TODO
+PLIST_FILES=	bin/mmr ${EXAMPLESDIR:S,${PREFIX}/,,}/dot.mmrc.sample
+PLIST_DIRS=	${EXAMPLESDIR:S,${PREFIX}/,,}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mmr ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/share/examples/mmr
-	${INSTALL_DATA} ${WRKSRC}/DOT-mmrc ${PREFIX}/share/examples/mmr/dot.mmrc.sample
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/DOT-mmrc ${EXAMPLESDIR}/dot.mmrc.sample
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/mmr
-.for file in BUGS CHANGES Features README TODO
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/mmr
+	@${MKDIR} ${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
