@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	livecd
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.4b
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.primeirospassos.org/
 
