@@ -1,0 +1,18 @@
+bin/noffle
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/INTERNALS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/noffle.lsm
+%%PORTDOCS%%%%DOCSDIR%%/testing.txt
+etc/noffle.conf.sample
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@cwd /
+@exec mkdir -p %%SPOOL_DIR%%
+@exec mkdir -p %%SPOOL_DIR%%/data
+@exec mkdir -p %%SPOOL_DIR%%/lock
+@exec mkdir -p %%SPOOL_DIR%%/outgoing
+@exec mkdir -p %%SPOOL_DIR%%/overview
+@exec mkdir -p %%SPOOL_DIR%%/requested
+@unexec rm -rf %%SPOOL_DIR%%
