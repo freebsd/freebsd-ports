@@ -1,0 +1,17 @@
+--- src/common/dcc.c.orig	Fri Oct 12 08:13:04 2001
++++ src/common/dcc.c	Sat Nov 24 16:47:39 2001
+@@ -1292,8 +1292,12 @@
+ 					while (list)
+ 					{
+ 						d = list->data;
+-						if (d != dcc && strcmp (d->destfile, dcc->destfile) == 0)
+-							goto dontresume;
++						if (d->type == TYPE_RECV && d->dccstat != STAT_ABORTED &&
++							 d->dccstat != STAT_DONE && d->dccstat != STAT_FAILED)
++						{
++							if (d != dcc && strcmp (d->destfile, dcc->destfile) == 0)
++								goto dontresume;
++						}
+ 						list = list->next;
+ 					}
+ 					dcc_resume (dcc);

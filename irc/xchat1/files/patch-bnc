@@ -1,0 +1,46 @@
+--- src/common/xchat.c.orig	Sun Oct 14 07:46:36 2001
++++ src/common/xchat.c	Sat Nov 24 16:48:41 2001
+@@ -69,6 +69,7 @@
+ GSList *urlhandler_list = 0;
+ static GSList *away_list = 0;
+ 
++static int in_xchat_exit = FALSE;
+ int xchat_is_quitting = FALSE;
+ int auto_connect = TRUE;
+ 
+@@ -730,7 +731,7 @@
+ 	free (killsess->current_modes);
+ 	free (killsess);
+ 
+-	if (!sess_list && !xchat_is_quitting)
++	if (!sess_list && !in_xchat_exit)
+ 		xchat_exit ();						/* sess_list is empty, quit! */
+ 
+ 	list = sess_list;
+@@ -1051,6 +1052,7 @@
+ xchat_exit (void)
+ {
+ 	xchat_is_quitting = TRUE;
++	in_xchat_exit = TRUE;
+ #ifdef USE_PERL
+ 	perl_end ();
+ #endif
+
+--- src/fe-gtk/maingui.c.orig	Thu Oct 25 00:19:29 2001
++++ src/fe-gtk/maingui.c	Sat Nov 24 16:48:41 2001
+@@ -923,7 +923,6 @@
+ static void
+ gui_main_window_kill (gpointer userdata)
+ {
+-#if 0
+ 	GSList *list;
+ 	session *sess;
+ 
+@@ -941,7 +940,6 @@
+ 		}
+ 		list = list->next;
+ 	}
+-#endif
+ 
+ 	main_window = 0;
+ 	current_tab = 0;
