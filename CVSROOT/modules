@@ -762,6 +762,7 @@ bubblemon2	ports/sysutils/bubblemon2
 buffer		ports/misc/buffer
 buffy		ports/x11-themes/buffy
 bugbuddy2	ports/devel/bugbuddy2
+bugle		ports/graphics/bugle
 bugs		ports/security/bugs
 bugseeker	ports/java/bugseeker
 bugseeker-demo	ports/java/bugseeker-demo
