@@ -18,10 +18,9 @@ DISTNAME=	twofishmodule-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Twofish cryptographic module for Python
 
-BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
-
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
+CFLAGS+=	-fPIC
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/_twofish.so ${PYTHON_SITELIBDIR}
