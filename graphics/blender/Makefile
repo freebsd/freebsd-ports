@@ -7,6 +7,7 @@
 
 PORTNAME=	blender
 PORTVERSION=	2.25
+PORTREVISION=	1
 CATEGORIES=	graphics games
 MASTER_SITES=	http://download.blender.org/release/Publisher${PORTVERSION}/
 DISTNAME=	blender-publisher-${PORTVERSION}-freebsd-4.2-i386
@@ -19,6 +20,12 @@ USE_X_PREFIX=	YES
 NO_BUILD=	YES
 ONLY_FOR_ARCHS=	i386
 USE_MESA=	YES
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/blenderplayer ${PREFIX}/bin
@@ -39,4 +46,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/copyright.txt ${PREFIX}/share/doc/blender
 	${INSTALL_DATA} ${WRKSRC}/playerlicense.txt ${PREFIX}/share/doc/blender
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

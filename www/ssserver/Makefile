@@ -18,6 +18,12 @@ NO_BUILD=	yes
 
 INSTALL_RWDATA=	${INSTALL} ${COPY} -o ${SHAREOWN} -g ${SHAREGRP} -m 666
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
+.endif
+
 do-install:
 	@${MKDIR} ${PREFIX}/www/cgi-bin/ssserverdata
 	@${INSTALL_PROGRAM} ${WRKSRC}/ssserver ${PREFIX}/www/cgi-bin
@@ -83,4 +89,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

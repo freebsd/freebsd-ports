@@ -53,6 +53,10 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 500000
+LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
+.endif
+
 .if ${OSVERSION} < 400000
 IGNORE=		"Systems prior to 4.x are not supported"
 .endif
