@@ -7,18 +7,18 @@
 
 PORTNAME=	pinball
 PORTVERSION=	0.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	thierry@pompo.net
+MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Emilia Pinball is a free pinball game
 
 .if !defined(WITH_ALLEGRO)
 BUILD_DEPENDS=	${SDL_CONFIG}:${PORTSDIR}/devel/sdl12
 .else
-BROKEN=		"support with Allegro is (temporarily) broken as of version 0.31"
+BROKEN=		"support with Allegro is (temporarily) broken as of version 0.3.1"
 BUILD_DEPENDS=	${ALLEGRO_CONFIG}:${PORTSDIR}/devel/allegro
 LIB_DEPENDS=	alleg.41:${PORTSDIR}/devel/allegro
 .endif
@@ -26,8 +26,8 @@ LIB_DEPENDS=	alleg.41:${PORTSDIR}/devel/allegro
 USE_SDL=	image mixer sdl
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_MESA=	yes
-USE_LIBTOOL_VER=13
+USE_GL=	yes
+USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
