@@ -1,0 +1,24 @@
+Pixie is a RenderMan like photorealistic renderer. It is being developed
+in the hope that it will be useful for graphics research and for people
+who can not afford a commercial renderer.
+
+Some of supported features:
+* All RenderMan 3.4 primitives
+* Programmable shading (RenderMan Shading Language)
+* High quality texture/shadow/environment mapping
+* High dynamic range input/output
+* Raytracing
+* Motion blur
+* Depth of field
+* Reyes style rendering (very fast)
+* Occlusion culling
+* Area light sources
+* Network parallel rendering
+* DSO shaders
+* Global illumination
+* Photon mapping
+
+WWW:	http://pixie.sourceforge.net/
+
+- Igor Pokrovsky
+tiamat@comset.net
