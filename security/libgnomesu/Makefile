@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	libgnomesu
-PORTVERSION=	0.9.6
-PORTREVISION=	2
+PORTVERSION=	0.9.7
 CATEGORIES=	security gnome
 MASTER_SITES=	http://members1.chello.nl/~h.lai/libgnomesu/
 
 MAINTAINER=	adamw@FreeBSD.org
-COMMENT=	Library for and frontend for running commands as root
+COMMENT=	Library and frontend for running commands as root
 
 USE_X_PREFIX=	yes
 USE_GETOPT_LONG=yes
