@@ -6,7 +6,7 @@
 
 PORTNAME=	metapixel
 PORTVERSION=	0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.complang.tuwien.ac.at/~schani/metapixel/
 
@@ -25,7 +25,7 @@ MAKE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 post-patch:
 	@${RM} ${WRKSRC}/getopt.h
 	@${REINPLACE_CMD} -e 's,values.h,limits.h,'  ${WRKSRC}/libzoom/simple.h
-	@${REINPLACE_CMD} -e 's,MINSHORT,SHRT_MAX,; \
+	@${REINPLACE_CMD} -e 's,MINSHORT,SHRT_MIN,; \
  			    s,MAXSHORT,SHRT_MAX,' ${WRKSRC}/libzoom/zoom.c
 
 do-install:
