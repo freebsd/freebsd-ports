@@ -5,11 +5,10 @@
 #
 # $FreeBSD$
 #
-SNAPDATE=	2004-06-11
 
 PORTNAME=	gcc
 PORTVERSION=	3.4.1
-PORTREVISION=	${SNAPDATE:S/-//g}
+PORTREVISION=	20040702
 CATEGORIES=	lang java
 VERSIONSTRING=	3.4-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC} \
@@ -110,9 +109,9 @@ pre-configure:
 	@${MKDIR} ${CONFIGURE_WRKSRC}
 
 post-build:
-	@${ECHO} "Consider running 'make check' before 'make install', especially
-	@${ECHO} "if you have not performed this build on -STABLE or -CURRENT."
-	@${ECHO} "This assumes that you have the dejagnu port installed."
+	@${ECHO_MSG} "Consider running 'make check' before 'make install', especially
+	@${ECHO_MSG} "if you have not performed this build on -STABLE or -CURRENT."
+	@${ECHO_MSG} "This assumes that you have the dejagnu port installed."
 
 check: build
 	cd ${WRKSRC}; export RUNTESTFLAGS='--target_board ''unix{-pthread}'''; ${GMAKE} -sk check
