@@ -26,6 +26,7 @@
     SUBDIR += expect
     SUBDIR += f2c
     SUBDIR += f77
+    SUBDIR += fesi
     SUBDIR += forth
     SUBDIR += gawk
     SUBDIR += gcc-devel

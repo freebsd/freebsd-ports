@@ -1,0 +1,10 @@
+FESI (Free EcmaScript Interpreter) implements few language extensions and try 
+to follow the standard as much as possible. 
+This is unlike most implementation of JavaScript, which are unfortunately very
+incompatible between them. 
+For the core language definition you can refer to the ECMA 262 standard. 
+
+WWW: http://home.worldcom.ch/jmlugrin/fesi/
+
+- Leo Kim
+leo@florida.sarang.net
