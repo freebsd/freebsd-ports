@@ -218,6 +218,7 @@ aee		ports/editors/aee
 aero		ports/graphics/aero
 aescrypt	ports/security/aescrypt
 aewm		ports/x11-wm/aewm
+aewm++		ports/x11-wm/aewm++
 afbackup	ports/misc/afbackup
 afbackup-client	ports/misc/afbackup-client
 afbackup-server	ports/misc/afbackup-server
