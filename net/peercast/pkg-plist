@@ -1,0 +1,64 @@
+bin/peercast
+libexec/peercast
+share/peercast/html/de/broadcast.html
+share/peercast/html/de/chaninfo.html
+share/peercast/html/de/connections.html
+share/peercast/html/de/images/play.png
+share/peercast/html/de/images/small-logo.png
+share/peercast/html/de/index.html
+share/peercast/html/de/login.html
+share/peercast/html/de/logout.html
+share/peercast/html/de/peercast.css
+share/peercast/html/de/relayinfo.html
+share/peercast/html/de/relays.html
+share/peercast/html/de/settings.html
+share/peercast/html/de/viewlog.html
+share/peercast/html/en/broadcast.html
+share/peercast/html/en/chaninfo.html
+share/peercast/html/en/connections.html
+share/peercast/html/en/images/play.png
+share/peercast/html/en/images/small-logo.png
+share/peercast/html/en/index.html
+share/peercast/html/en/login.html
+share/peercast/html/en/logout.html
+share/peercast/html/en/peercast.css
+share/peercast/html/en/relayinfo.html
+share/peercast/html/en/relays.html
+share/peercast/html/en/settings.html
+share/peercast/html/en/viewlog.html
+share/peercast/html/fr/broadcast.html
+share/peercast/html/fr/chaninfo.html
+share/peercast/html/fr/connections.html
+share/peercast/html/fr/images/play.png
+share/peercast/html/fr/images/small-logo.png
+share/peercast/html/fr/index.html
+share/peercast/html/fr/login.html
+share/peercast/html/fr/logout.html
+share/peercast/html/fr/peercast.css
+share/peercast/html/fr/relayinfo.html
+share/peercast/html/fr/relays.html
+share/peercast/html/fr/settings.html
+share/peercast/html/fr/viewlog.html
+share/peercast/html/ja/broadcast.html
+share/peercast/html/ja/chaninfo.html
+share/peercast/html/ja/connections.html
+share/peercast/html/ja/images/play.png
+share/peercast/html/ja/images/small-logo.png
+share/peercast/html/ja/index.html
+share/peercast/html/ja/login.html
+share/peercast/html/ja/logout.html
+share/peercast/html/ja/peercast.css
+share/peercast/html/ja/relayinfo.html
+share/peercast/html/ja/relays.html
+share/peercast/html/ja/settings.html
+share/peercast/html/ja/viewlog.html
+@dirrm share/peercast/html/de/images
+@dirrm share/peercast/html/de
+@dirrm share/peercast/html/en/images
+@dirrm share/peercast/html/en
+@dirrm share/peercast/html/fr/images
+@dirrm share/peercast/html/fr
+@dirrm share/peercast/html/ja/images
+@dirrm share/peercast/html/ja
+@dirrm share/peercast/html
+@dirrm share/peercast

@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ ! -d "$HOME/.peercast" ]; then
+	mkdir "$HOME/.peercast" || exit 1
+	ln -s "@DATADIR@/html" "@PREFIX@/libexec/peercast" "$HOME/.peercast" || exit 1
+fi
+
+cd "$HOME/.peercast" || exit 1
+exec ./peercast "$@"
