@@ -17,14 +17,14 @@ DISTNAME=	nvi-1.79
 PATCH_SITES=	ftp://ftp.foretune.co.jp/pub/tools/nvi-m17n/
 PATCHFILES=	nvi-1.79.m17n-19991117.diff.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER?=   ports@FreeBSD.org
 
 PATCH_DIST_ARGS=-d ${WRKSRC}/.. --forward --quiet -E -p1 -f
 WRKSRC=		${WRKDIR}/${DISTNAME}/build
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	OPTFLAG='-D_PATH_SYSEXRC=\"${PREFIX}/etc/vi.exrc\"'
-CONFIGURE_ARGS=	--enable-multibyte --program-prefix=n
+CONFIGURE_ARGS?=       --enable-multibyte --program-prefix=n
 
 MAN1=		nvi.1
 MLINKS=		nvi.1 nex.1  nvi.1 nview.1

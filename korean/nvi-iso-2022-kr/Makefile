@@ -10,10 +10,10 @@ PKGNAMESUFFIX=	-iso2022kr
 MASTERDIR=	${.CURDIR}/../../editors/nvi-m17n
 COMMENT=	${.CURDIR}/pkg-comment
 
-.include "${MASTERDIR}/Makefile"
-
 CATEGORIES=	korean editors
 
 MAINTAINER=	ports@freebsd.org
 
-CONFIGURE_ARGS+=	--enable-multibyte=iso-2022-kr --program-prefix=n
+CONFIGURE_ARGS=        --enable-multibyte=iso-2022-kr --program-prefix=n
+
+.include "${MASTERDIR}/Makefile"

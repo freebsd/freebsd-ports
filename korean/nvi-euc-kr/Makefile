@@ -10,10 +10,10 @@ PKGNAMESUFFIX=	-euckr
 MASTERDIR=	${.CURDIR}/../../editors/nvi-m17n
 COMMENT=	${.CURDIR}/pkg-comment
 
-.include "${MASTERDIR}/Makefile"
-
 CATEGORIES=	korean editors
 
 MAINTAINER=	ports@freebsd.org
 
-CONFIGURE_ARGS+=	--enable-multibyte=euc-kr --program-prefix=n
+CONFIGURE_ARGS=        --enable-multibyte=euc-kr --program-prefix=n
+
+.include "${MASTERDIR}/Makefile"
