@@ -1,2 +1,3 @@
 lib/%%PYTHON_VERSION%%/site-packages/jaxml.py
 lib/%%PYTHON_VERSION%%/site-packages/jaxml.pyc
+lib/%%PYTHON_VERSION%%/site-packages/jaxml.pyo

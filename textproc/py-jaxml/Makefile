@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	jaxml
-PORTVERSION=	2.23
+PORTVERSION=	2.24
 CATEGORIES=	textproc python
-MASTER_SITES=	http://cortex.unice.fr/~jerome/jaxml/
+MASTER_SITES=	http://www.librelogiciel.com/software/jaxml/tarballs/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
