@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	multitail
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.3
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-
@@ -20,7 +20,6 @@ RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutil
 
 WRKSRC=		${WRKDIR}/${NAME}-${PORTVERSION}
 
-USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_PYTHON=	yes
 DATADIR=	${PREFIX}/share/gnome

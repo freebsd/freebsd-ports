@@ -4,14 +4,14 @@ share/gnome/gdesklets/Displays/MultiTail/light-theme/gfx/bg.png
 share/gnome/gdesklets/Displays/MultiTail/light-theme/multitail.display
 share/gnome/gdesklets/Displays/MultiTail/trans-theme/multitail.display
 share/gnome/gdesklets/Sensors/MultiTail/__init__.py
-share/gnome/gdesklets/Sensors/MultiTail/filter.py
-share/gnome/gdesklets/Sensors/MultiTail/screenbuffer.py
-share/gnome/gdesklets/Sensors/MultiTail/tailbook.py
-share/gnome/gdesklets/Sensors/MultiTail/watchlist.py
 share/gnome/gdesklets/Sensors/MultiTail/__init__.pyc
+share/gnome/gdesklets/Sensors/MultiTail/filter.py
 share/gnome/gdesklets/Sensors/MultiTail/filter.pyc
+share/gnome/gdesklets/Sensors/MultiTail/screenbuffer.py
 share/gnome/gdesklets/Sensors/MultiTail/screenbuffer.pyc
+share/gnome/gdesklets/Sensors/MultiTail/tailbook.py
 share/gnome/gdesklets/Sensors/MultiTail/tailbook.pyc
+share/gnome/gdesklets/Sensors/MultiTail/watchlist.py
 share/gnome/gdesklets/Sensors/MultiTail/watchlist.pyc
 @dirrm share/gnome/gdesklets/Displays/MultiTail/dark-theme/gfx
 @dirrm share/gnome/gdesklets/Displays/MultiTail/dark-theme
