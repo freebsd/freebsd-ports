@@ -1,0 +1,15 @@
+--- Makefile.orig	Sun Oct 22 04:09:35 2000
++++ Makefile	Sun Oct 22 04:11:27 2000
+@@ -2,10 +2,9 @@
+ # Makefile for LinPlasma
+ #
+ 
+-CC=gcc
++CC?=gcc
+ 
+-# optimize a lot
+-CFLAGS=-O3
++CFLAGS += -L%%PREFIX%%/lib -I%%PREFIX%%/include
+ 
+ LIBS=-lvga -lvgagl -lm
+ 

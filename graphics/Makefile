@@ -99,6 +99,7 @@
     SUBDIR += libmorph
     SUBDIR += libungif
     SUBDIR += libwmf
+    SUBDIR += linplasma
     SUBDIR += linux-bmrt
     SUBDIR += linux-jpeg
     SUBDIR += linux-png
