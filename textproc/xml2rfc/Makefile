@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	xml2rfc
-PORTVERSION=	1.28
+PORTVERSION=	1.29
 CATEGORIES=	textproc tcl83
 MASTER_SITES=	http://xml.resource.org/authoring/
 EXTRACT_SUFX=	.tgz
@@ -24,19 +24,20 @@ NO_BUILD=	yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/xml2rfc.tcl ${PREFIX}/bin/xml2rfc
-	${LN} ${PREFIX}/bin/xml2rfc ${PREFIX}/bin/xml2txt
-	${LN} ${PREFIX}/bin/xml2rfc ${PREFIX}/bin/xml2html
-	${LN} ${PREFIX}/bin/xml2rfc ${PREFIX}/bin/xml2nroff
+	${LN} -f ${PREFIX}/bin/xml2rfc ${PREFIX}/bin/xml2txt
+	${LN} -f ${PREFIX}/bin/xml2rfc ${PREFIX}/bin/xml2html
+	${LN} -f ${PREFIX}/bin/xml2rfc ${PREFIX}/bin/xml2nroff
 .if !defined (NOPORTDOCS)
 	${MKDIR} ${DOCSDIR} ${DOCSDIR}/contrib
 .for doc in LICENSE README.html README.txt README.xml \
 	    draft-mrose-writing-rfcs.html draft-mrose-writing-rfcs.txt \
 	    rfc2629.dtd rfc2629.html rfc2629.rnc rfc2629.txt rfc2629.xml \
-	    rfc2629.xsd sample.txt sample.xml
+	    rfc2629.xsd sample.html sample.txt sample.xml xml2rfc-win.png
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
 .for doc in \
 	alex.rousskov/xml2rfcpp.pl \
+	fred.baker/new-draft.xml \
 	pekka.savola/template.xml \
 	pekka.savola/template0.xml \
 	pekka.savola/template1b.xml \
@@ -44,10 +45,6 @@ do-install:
 	rob.austein/fast-sync.sh
 	${INSTALL_DATA} ${WRKSRC}/contrib/${doc} ${DOCSDIR}/contrib
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/contrib/fred.baker/new-draft.xml \
-		${DOCSDIR}/contrib/new-draft-1.xml
-	${INSTALL_DATA} ${WRKSRC}/contrib/pekka.savola/new-draft.xml \
-		${DOCSDIR}/contrib/new-draft-2.xml
 	${INSTALL_DATA} ${WRKSRC}/.xml2rfc.rc ${DOCSDIR}/dot.xml2rfc.rc
 .endif
 
