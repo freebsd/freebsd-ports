@@ -5959,6 +5959,7 @@ mtrxmath	ports/math/mtrxmath
 mtv		ports/multimedia/mtv
 mtx		ports/misc/mtx
 mtxorbd		ports/sysutils/mtxorbd
+mu-conference	ports/net/mu-conference
 muddleftpd	ports/ftp/muddleftpd
 mudix		ports/net/mudix
 mudsh		ports/shells/mudsh
