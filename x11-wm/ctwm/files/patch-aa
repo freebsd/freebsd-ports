@@ -1,5 +1,5 @@
-*** Imakefile.orig	Sat Nov 15 16:09:18 1997
---- Imakefile	Sat Nov 15 16:09:09 1997
+*** Imakefile.orig	Mon Oct  4 15:51:08 1999
+--- Imakefile	Sun Feb 13 19:01:33 2000
 ***************
 *** 11,17 ****
   #undef  USE_SOUND
@@ -36,3 +36,25 @@
   
        XPMDEFINES = -DXPM
            XPMLIB = $(XPMLIBDIR) -lXpm
+***************
+*** 44,52 ****
+  #endif
+  
+  #ifdef USEM4
+     M4LIBDIR =
+     M4INCDIR =
+!   M4DEFINES = -DUSEM4
+        M4LIB = $(M4LIBDIR)
+  #else
+     M4LIBDIR = 
+--- 44,53 ----
+  #endif
+  
+  #ifdef USEM4
++      M4PROG = ${LOCALBASE}/bin/gm4
+     M4LIBDIR =
+     M4INCDIR =
+!   M4DEFINES = -DUSEM4 -DM4PROG=\"${M4PROG}\"
+        M4LIB = $(M4LIBDIR)
+  #else
+     M4LIBDIR = 

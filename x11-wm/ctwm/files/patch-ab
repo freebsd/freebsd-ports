@@ -1,0 +1,19 @@
+*** parse.c.orig	Sun Feb 13 19:00:24 2000
+--- parse.c	Sun Feb 13 19:02:13 2000
+***************
+*** 2070,2076 ****
+                  dup2(fids[1], 1);       /* stdout = pipe to parent */
+                  /* get_defs("m4", dpy, display_name) */
+                  tmp_file = m4_defs(dpy, display_name);
+!                 execlp("m4", "m4", "-s", tmp_file, "-", NULL);
+                  /* If we get here we are screwed... */
+                  perror("Can't execlp() m4");
+                  exit(124);
+--- 2070,2076 ----
+                  dup2(fids[1], 1);       /* stdout = pipe to parent */
+                  /* get_defs("m4", dpy, display_name) */
+                  tmp_file = m4_defs(dpy, display_name);
+!                 execlp(M4PROG, "-s", tmp_file, "-", NULL);
+                  /* If we get here we are screwed... */
+                  perror("Can't execlp() m4");
+                  exit(124);
