@@ -1,5 +1,5 @@
---- config.h.orig	Tue Sep 28 10:58:56 1999
-+++ config.h	Fri Oct  8 02:26:28 1999
+--- config.h.orig	Tue Sep 28 03:58:56 1999
++++ config.h	Mon Oct 11 17:35:48 1999
 @@ -28,13 +28,13 @@
  /**********************************************************/
  #ifdef makefile_parameter
@@ -13,8 +13,9 @@
 +HELP_FILE = w3mhelp_en.html
 +SYS_LIBRARIES =  -ltermcap
  LOCAL_LIBRARIES = 
- CC = gcc
+-CC = gcc
 -MYCFLAGS = -g -I./gc 
++#CC = gcc
 +MYCFLAGS = -I./gc 
  KEYBIND_SRC = keybind.c
  KEYBIND_OBJ = keybind.o
