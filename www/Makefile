@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.125 1999/04/13 22:51:31 dirk Exp $
+# $Id: Makefile,v 1.126 1999/05/03 03:10:52 steve Exp $
 #
 
     SUBDIR += Mosaic         # requires Motif
@@ -70,6 +70,7 @@
     SUBDIR += p5-WWW-Search
     SUBDIR += p5-libwww
     SUBDIR += py-HTMLgen
+    SUBDIR += roxen
     SUBDIR += ruboard
     SUBDIR += sitecopy
     SUBDIR += snarf
