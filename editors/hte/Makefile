@@ -28,10 +28,6 @@ PLIST_FILES=	bin/ht
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not build on FreeBSD >= 5.x"
-.endif
-
 .if ${OSVERSION} < 400000
 LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
 .endif
@@ -57,7 +53,8 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|#include <malloc.h>||g' ${WRKSRC}/cp-demangle.c
 
-post-install:
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/ht ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
