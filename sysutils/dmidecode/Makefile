@@ -22,6 +22,8 @@ USE_REINPLACE=	yes
 
 DOCS=	AUTHORS CHANGELOG README
 
+MAN8=		biosdecode.8 dmidecode.8 ownership.8 vpddecode.8
+
 post-patch:
 	${REINPLACE_CMD} -e "s@^(CC|PREFIX).*@@" ${WRKSRC}/Makefile
 
