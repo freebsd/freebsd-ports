@@ -21,4 +21,7 @@ USE_IMAKE=	yes
 MAN1=		workman.1
 MAN5=		workmandb.5
 
+post-install:
+		/usr/bin/gzip ${X11BASE}/man/man5/workmandb.5
+
 .include <bsd.port.mk>
