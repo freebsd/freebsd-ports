@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-Default
-PORTVERSION=	0.2
+PORTVERSION=	1.0
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
@@ -20,7 +20,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Class::Default.3
 
 .include <bsd.port.mk>
