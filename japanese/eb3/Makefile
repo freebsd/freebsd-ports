@@ -26,6 +26,7 @@ APPENDIXFILES=	cencro-1.0.tar.gz \
 		chujiten6-2.3.tar.gz \
 		colloc-2.0.tar.gz \
 		crownfj-2.0.tar.gz \
+		daihyakka-1.0.tar.gz \
 		daijirin-2.0.tar.gz \
 		dd75-2.0.tar.gz \
 		genius-1.0.tar.gz \
