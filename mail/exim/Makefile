@@ -81,7 +81,7 @@ PKGMESSAGE=	${WRKDIR}/POST-INSTALL-NOTES
 PKGMESSAGE=	${WRKDIR}/pkg-message
 .endif
 
-MAKE_ENV+=	OSTYPE=${OPSYS} ARCHTYPE=${MACHINE_ARCH} LOCALBASE=${LOCALBASE}
+MAKE_ENV+=	OSTYPE="${OPSYS}" ARCHTYPE="${ARCH}"
 .if defined(EXIMON_ONLY)
 MAKE_ENV+=	INSTALL_ARG="eximon eximon.bin"
 .endif
@@ -492,6 +492,8 @@ do-configure:
 	@${REINPLACE_CMD} -e 's/"(Exim $$version_number)\\n\\t"/"(Exim $$version_number (${OPSYS}))\\n\\t"/' \
 		${WRKSRC}/src/globals.c
 	@${REINPLACE_CMD} -e 's/^#include "cnumber\.h"$$/${PORTREVISION}/' ${WRKSRC}/src/version.c
+	@${REINPLACE_CMD} -e 's/^PERL_COMMAND=.*/PERL_COMMAND=${PERL:S,/,\/,g}/' \
+		-e 's/^CC=.*/CC=${CC:S,/,\/,g}/' ${WRKSRC}/OS/Makefile-Default
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} configure)
 
 post-build:
@@ -538,7 +540,7 @@ post-install:
 .endfor
 	@${MKDIR} ${DESTDIR}${EXAMPLESDIR}
 .for example in ${PORT_EXAMPLES}
-	@${INSTALL_SCRIPT} ${WRKSRC}/build-${OPSYS}-${MACHINE_ARCH}/${example} ${DESTDIR}${EXAMPLESDIR}
+	@${INSTALL_SCRIPT} ${WRKSRC}/build-${OPSYS}-${ARCH}/${example} ${DESTDIR}${EXAMPLESDIR}
 .endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
