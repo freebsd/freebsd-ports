@@ -6,7 +6,7 @@
 #
 
 PORTNAME=       ipsorc
-PORTVERSION=    1.5
+PORTVERSION=    1.6
 CATEGORIES=     net security
 MASTER_SITES=   http://www.legions.org/~phric/
 MASTER_SITE_SUBDIR=     ${PORTNAME}
