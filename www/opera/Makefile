@@ -28,14 +28,15 @@ DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_DATE}.1-static-qt.i386.freebsd-en
 MAINTAINER=	avleeuwen@piwebs.com
 COMMENT=	A blazingly fast, full-featured, standards-compliant browser
 
-OPERA_VER=	7.50
+OPERA_VER=	7.51
 OPERA_REL=	final
-OPERA_DATE=	20040511
+OPERA_DATE=	20040602
 
 DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 
 USE_BZIP2=	yes
+WANT_GNOME=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 ONLY_FOR_ARCHS=	i386
@@ -49,39 +50,24 @@ NO_FILTER_SHLIBS=yes
 LIB_DEPENDS+=	c_r.4:${PORTSDIR}/misc/compat4x
 .endif
 
-.if exists(/etc/X11/applnk)
-PLIST_SUB+=	APPLNK=""
-.else
-PLIST_SUB+=	APPLNK="@comment "
-.endif
-
-.if exists(${X11BASE}/share/gnome)
+.if ${HAVE_GNOME:Mgnomehier}!=""
 PLIST_SUB+=	GNOME=""
 .else
 PLIST_SUB+=	GNOME="@comment "
 .endif
 
-.if exists(${X11BASE}/share/applnk/Internet)
+.if exists(${LOCALBASE}/bin/kde-config)
 PLIST_SUB+=	KDE=""
 .else
 PLIST_SUB+=	KDE="@comment "
 .endif
 
-.if exists(${X11BASE}/share/applnk/Networking)
-PLIST_SUB+=	KDE2=""
-.else
-PLIST_SUB+=	KDE2="@comment "
-.endif
-
-.if exists(${X11BASE}/share/gnome/apps)
-PLIST_SUB+=	GNOMELNK=""
-.else
-PLIST_SUB+=	GNOMELNK="@comment "
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%X11PREFIX%%|${X11BASE}|g ; \
-		s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/install.sh
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \
+		s|%%LOCALBASE%%|${LOCALBASE}|g ; s|%%X11BASE%%|${X11BASE}|g' \
+			${WRKSRC}/install.sh \
+			${WRKSRC}/ini/spellcheck.ini
+	@${RM} ${WRKSRC}/ini/spellcheck.ini.*
 
 do-install:
 	(cd ${WRKSRC} && ./install.sh --prefix=${PREFIX})
