@@ -2519,6 +2519,7 @@ hs-haddock	ports/devel/hs-haddock
 hs-happy	ports/devel/hs-happy
 hs-hat		ports/devel/hs-hat
 hs-haxml	ports/textproc/hs-haxml
+hs-hdoc		ports/devel/hs-hdoc
 hs-hgl		ports/graphics/hs-hgl
 hs-hmake		ports/devel/hs-hmake
 hs-hpl		ports/devel/hs-hpl
