@@ -1,0 +1,7 @@
+Monkey HTTP Daemon is a small, powerful, and fast Web server written in C. Its 
+features include language support, GET, POST, and HEAD methods, CGI, PHP4 , a 
+config file (optional for every user), a mime.types file, virtual hosts, the 
+ability to deny URLs and IPs, to run as a different user (such as nobody), 
+serve users home directories, resume, and more.
+
+WWW: http://monkeyd.sourceforge.net/

@@ -1,0 +1,31 @@
+@unexec if cmp -s %D/etc/monkey/mime.types %D/etc/monkey/mime.types-dist; then rm -f %D/etc/monkey/mime.types; fi
+etc/monkey/mime.types-dist
+@exec [ -f %B/mime.types ] || cp %B/%f %B/mime.types
+@unexec if cmp -s %D/etc/monkey/modules.conf %D/etc/monkey/modules.conf-dist; then rm -f %D/etc/monkey/modules.conf; fi
+etc/monkey/modules.conf-dist
+@exec [ -f %B/modules.conf ] || cp %B/%f %B/modules.conf
+@unexec if cmp -s %D/etc/monkey/monkey.conf %D/etc/monkey/monkey.conf-dist; then rm -f %D/etc/monkey/monkey.conf; fi
+etc/monkey/monkey.conf-dist
+@exec [ -f %B/monkey.conf ] || cp %B/%f %B/monkey.conf
+@unexec if cmp -s %D/etc/monkey/monkey.deny %D/etc/monkey/monkey.deny-dist; then rm -f %D/etc/monkey/monkey.deny; fi
+etc/monkey/monkey.deny-dist
+@exec [ -f %B/monkey.deny ] || cp %B/%f %B/monkey.deny
+etc/rc.d/monkey.sh.sample
+sbin/monkey
+sbin/banana
+www/cgi-bin/test.pl
+www/data/imgs/logonooficial.jpg
+www/data/imgs/titulo.jpg
+www/data/php/index.php
+www/data/docs/monkey+php.en.html
+www/data/docs/monkey+php.es.html
+www/data/docs/monkey+php.ru.html
+www/data/docs/monkey+php.sv.html
+www/data/index.html
+@dirrm etc/monkey
+@dirrm www/cgi-bin
+@dirrm www/data/docs
+@dirrm www/data/imgs
+@dirrm www/data/php
+@dirrm www/data
+@dirrm www/
