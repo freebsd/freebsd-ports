@@ -7,3 +7,4 @@ lib/perl5/site_perl/%%PERL_VER%%/Convert/ASN1/parser.pm
 lib/perl5/site_perl/%%PERL_VER%%/Convert/ASN1/IO.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Convert/ASN1/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Convert/ASN1
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Convert/ASN1
