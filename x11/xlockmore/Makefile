@@ -3,7 +3,7 @@
 # Date created:		9 November 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.34 1998/06/29 07:55:35 tg Exp $
+# $Id: Makefile,v 1.35 1998/07/20 16:37:51 asami Exp $
 #
 
 DISTNAME=       xlockmore-4.11
@@ -25,6 +25,11 @@ CONFIGURE_ARGS+= --enable-kerberos4
 .endif
 USE_X11=	yes
 MAN1=		xlock.1
+
+OSVERSION!=     sysctl -n kern.osreldate
+.if ${OSVERSION} > 300000
+CONFIGURE_ARGS+= --with-libraries=/usr/lib/aout
+.endif
 
 #
 # MesaGL has a security hole. Don't use it in setuid binaries.
