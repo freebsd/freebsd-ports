@@ -197,6 +197,7 @@ share/locale/zh_CN/LC_MESSAGES/libgda-2.mo
 @dirrm share/gnome/omf/libgda
 @dirrm share/gnome/libgda/dtd
 @dirrm share/gnome/libgda
+@dirrm share/gnome/idl/libgda
 @dirrm lib/libgda/providers
 @dirrm lib/libgda
 @dirrm include/libgda/sql
