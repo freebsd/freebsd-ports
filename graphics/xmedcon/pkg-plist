@@ -28,6 +28,7 @@ include/xmedcon/m-inw.h
 include/xmedcon/m-matrix.h
 include/xmedcon/m-pixels.h
 include/xmedcon/m-png.h
+include/xmedcon/m-progress.h
 include/xmedcon/m-qmedian.h
 include/xmedcon/m-raw.h
 include/xmedcon/m-rslice.h
@@ -36,7 +37,6 @@ include/xmedcon/m-stack.h
 include/xmedcon/m-structs.h
 include/xmedcon/m-transf.h
 include/xmedcon/m-vifi.h
-include/xmedcon/m-xdummy.h
 include/xmedcon/m-xtract.h
 include/xmedcon/medcon.h
 @dirrm include/xmedcon
