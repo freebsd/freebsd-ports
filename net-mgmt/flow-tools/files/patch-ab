@@ -1,0 +1,65 @@
+--- Makefile.orig	Mon May  1 22:54:20 2000
++++ Makefile	Tue Jul 25 19:30:16 2000
+@@ -32,22 +32,29 @@
+ FL="flow-tools"
+ DIST=flow-tools-0.34
+ SHELL=/bin/sh
+-BINDIR=/usr/local/netflow/bin
++PREFIX		?= /usr/local
++BINDIR		?= ${PREFIX}/bin
++MANDIR		?= ${PREFIX}/man
+ 
+ LEX=flex
+ CC=gcc
+-INSTALL=install -c -m0755
++
++BINMODE         ?= 0555
++MANMODE         ?= 0444
++INSTALL_PROGRAM ?= install -c -s -o root -g wheel -m ${BINMODE}
++INSTALL_MAN     ?= install -c -o root -g wheel -m ${MANMODE}
++
+ 
+ YACC=yacc -t -v
+ #YACC=bison -y
+ 
+ POD2MAN=pod2man
+ POD2HTML=pod2html
+-P2MFLAGS = --center="OSU FLOW TOOLS" --date="2000-04-26"
++P2MFLAGS = --center="OSU FLOW TOOLS" --date="2000-04-26" --release="OSU flow tools 0.34"
+ 
+ 
+ #CFLAGS = -g -DPOSIX_SIGNALS -DDEBUG -DLIBWRAP -I/usr/local/include -L/usr/local/lib 
+-CFLAGS = -O2 -funroll-all-loops -ffast-math -I/usr/local/include -L/usr/local/lib -DPOSIX_SIGNALS -DLIBWRAP
++CFLAGS+= -O2 -funroll-all-loops -ffast-math -I/usr/local/include -L/usr/local/lib -DPOSIX_SIGNALS -DLIBWRAP
+ 
+ LIBS = -L. -lz 
+ 
+@@ -94,20 +101,23 @@
+ #flow-test
+ 
+ MAN = flow-capture.1 flow-export.1 flow-stat.1 flow-cat.1 \
+-	flow-fanout.1 flow-mirror.1 flow-tools.1 flow-dscan.1 flow-filter.1 \
+-	flow-print.1 flow-expire.1 flow-gen.1 flow-search.1 flow-profile.1
++	flow-fanout.1 flow-tools.1 flow-dscan.1 flow-filter.1 \
++	flow-print.1 flow-expire.1 flow-gen.1 flow-profile.1
+ 
+ HTML = flow-capture.html flow-export.html flow-stat.html \
+-	flow-cat.html flow-fanout.html flow-mirror.html flow-tools.html \
++	flow-cat.html flow-fanout.html flow-tools.html \
+ 	flow-dscan.html flow-filter.html flow-print.html flow-expire.html \
+-	flow-gen.html flow-search.html flow-profile.html
++	flow-gen.html flow-profile.html
+ 
+ all: ${BINS}
+ 
+ install:
+ 	mkdir -p ${BINDIR}
+-	${INSTALL} ${BINS} flow-mirror ${BINDIR}
++	${INSTALL_PROGRAM} ${BINS} ${BINDIR}
+ 	@echo files installed in ${BINDIR}
++	mkdir -p ${MANDIR}/man1
++	${INSTALL_MAN}  ${MAN} ${MANDIR}/man1
++	@echo files installed in ${MANDIR}/man1
+ 
+ clean:
+ 	/bin/rm -f ${BINS} *.o sym_asn.c *.1 *.html

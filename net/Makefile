@@ -62,6 +62,7 @@
     SUBDIR += etherboot
     SUBDIR += ethereal
     SUBDIR += everybuddy
+    SUBDIR += flow-tools
     SUBDIR += fping
     SUBDIR += freewais-sf
     SUBDIR += fspclient
