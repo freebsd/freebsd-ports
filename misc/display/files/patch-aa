@@ -35,11 +35,3 @@
  	char	ch;
  
  	if (!(fp = popen(Command, "r"))) {
-@@ -83,7 +81,6 @@
- 		addch(ch);
- 	}
- 	clrtoeol();
--	clrtobot();
- 	refresh();
- 	pclose(fp);
- }
