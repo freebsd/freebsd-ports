@@ -1,0 +1,11 @@
+--- gnome-session/Makefile.in.orig	Wed May  8 14:36:22 2002
++++ gnome-session/Makefile.in	Wed May  8 14:36:34 2002
+@@ -129,7 +129,7 @@
+ 
+ NULL = 
+ 
+-defaultdir = $(datadir)/gnome
++defaultdir = $(datadir)
+ 
+ INCLUDES =  	$(GNOME_SESSION_CFLAGS)					$(DISABLE_DEPRECATED_CFLAGS)				$(STANDARD_PROPERTIES_CFLAGS)				$(WARN_CFLAGS)						-DGNOMELOCALEDIR=\""$(prefix)/share/locale\""		-DGNOME_ICONDIR=\""$(datadir)/pixmaps\""		-DREBOOT_COMMAND=\""$(REBOOT_COMMAND)\""		-DHALT_COMMAND=\""$(HALT_COMMAND)\""			-DDEFAULTDIR="\"$(defaultdir)\""
+ 
