@@ -1,0 +1,28 @@
+--- Makefile.orig	Sat Dec 18 13:47:40 2004
++++ Makefile	Wed Feb 23 22:28:56 2005
+@@ -11,19 +11,19 @@
+ 
+ #=========================== C compiler configuration ==========================
+ 
+-CC     = gcc
+-CFLAGS = -I/usr/X11R6/include -O2
++#CC     = gcc
++CFLAGS += -I$(X11BASE)/include
+ 
+ #============================= Linker configuration ============================
+ 
+-LINK   = gcc
+-LFLAGS = -L/usr/X11R6/lib
++LINK   = $(CC)
++LFLAGS = -L$(X11BASE)/lib
+ LIBS   = -lm -lX11 -lXext
+ 
+ #============================ Installer configuration ==========================
+ 
+-BINDIR  = /usr/X11R6/bin
+-MAN1DIR = /usr/X11R6/man/man1
++BINDIR  = $(X11BASE)/bin
++MAN1DIR = $(X11BASE)/man/man1
+ INSTALL = install
+ RM      = rm -f -v
+ 

@@ -548,6 +548,7 @@
     SUBDIR += xcubes
     SUBDIR += xdeblock
     SUBDIR += xdemineur
+    SUBDIR += xdesktopwaves
     SUBDIR += xdigger
     SUBDIR += xdino
     SUBDIR += xeji
