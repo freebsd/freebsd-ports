@@ -7,6 +7,7 @@
 
 PORTNAME=	solarwolf
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.pygame.org/shredwheat/solarwolf/
 
@@ -15,6 +16,9 @@ MAINTAINER=	sobomax@FreeBSD.org
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
 
 USE_PYTHON=	yes
+
+post-extract:
+	${FIND} ${WRKSRC}/data -type f | ${XARGS} ${CHMOD} 644
 
 do-build:
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
