@@ -1,69 +1,212 @@
 share/icons/hicolor/index.theme
-@dirrm share/icons/hicolor/scalable/mimetypes
-@dirrm share/icons/hicolor/scalable/filesystems
-@dirrm share/icons/hicolor/scalable/devices
-@dirrm share/icons/hicolor/scalable/apps
-@dirrm share/icons/hicolor/scalable/actions
-@dirrm share/icons/hicolor/scalable
-@dirrm share/icons/hicolor/96x96/mimetypes
-@dirrm share/icons/hicolor/96x96/filesystems
-@dirrm share/icons/hicolor/96x96/devices
-@dirrm share/icons/hicolor/96x96/apps
-@dirrm share/icons/hicolor/96x96/actions
-@dirrm share/icons/hicolor/96x96
-@dirrm share/icons/hicolor/72x72/mimetypes
-@dirrm share/icons/hicolor/72x72/filesystems
-@dirrm share/icons/hicolor/72x72/devices
-@dirrm share/icons/hicolor/72x72/apps
-@dirrm share/icons/hicolor/72x72/actions
-@dirrm share/icons/hicolor/72x72
-@dirrm share/icons/hicolor/64x64/mimetypes
-@dirrm share/icons/hicolor/64x64/filesystems
-@dirrm share/icons/hicolor/64x64/devices
-@dirrm share/icons/hicolor/64x64/apps
-@dirrm share/icons/hicolor/64x64/actions
-@dirrm share/icons/hicolor/64x64
-@dirrm share/icons/hicolor/48x48/mimetypes
-@dirrm share/icons/hicolor/48x48/filesystems
-@dirrm share/icons/hicolor/48x48/devices
-@dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/48x48/actions
-@dirrm share/icons/hicolor/48x48
-@dirrm share/icons/hicolor/36x36/mimetypes
-@dirrm share/icons/hicolor/36x36/filesystems
-@dirrm share/icons/hicolor/36x36/devices
-@dirrm share/icons/hicolor/36x36/apps
-@dirrm share/icons/hicolor/36x36/actions
-@dirrm share/icons/hicolor/36x36
-@dirrm share/icons/hicolor/32x32/mimetypes
-@dirrm share/icons/hicolor/32x32/filesystems
-@dirrm share/icons/hicolor/32x32/devices
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/32x32/actions
-@dirrm share/icons/hicolor/32x32
-@dirrm share/icons/hicolor/22x22/mimetypes
-@dirrm share/icons/hicolor/22x22/filesystems
-@dirrm share/icons/hicolor/22x22/devices
-@dirrm share/icons/hicolor/22x22/apps
-@dirrm share/icons/hicolor/22x22/actions
-@dirrm share/icons/hicolor/22x22
-@dirrm share/icons/hicolor/192x192/mimetypes
-@dirrm share/icons/hicolor/192x192/filesystems
-@dirrm share/icons/hicolor/192x192/devices
-@dirrm share/icons/hicolor/192x192/apps
-@dirrm share/icons/hicolor/192x192/actions
-@dirrm share/icons/hicolor/192x192
-@dirrm share/icons/hicolor/16x16/mimetypes
-@dirrm share/icons/hicolor/16x16/filesystems
-@dirrm share/icons/hicolor/16x16/devices
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16/actions
-@dirrm share/icons/hicolor/16x16
-@dirrm share/icons/hicolor/128x128/mimetypes
-@dirrm share/icons/hicolor/128x128/filesystems
-@dirrm share/icons/hicolor/128x128/devices
-@dirrm share/icons/hicolor/128x128/apps
-@dirrm share/icons/hicolor/128x128/actions
-@dirrm share/icons/hicolor/128x128
-@dirrm share/icons/hicolor
+@unexec /bin/rmdir %D/share/icons/hicolor/scalable/stock/text 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/scalable/stock/table 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/scalable/stock/object 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/scalable/stock/net 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/scalable/stock/navigation 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/scalable/stock/media 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/scalable/stock/io 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/scalable/stock/image 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/scalable/stock/form 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/scalable/stock/data 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/scalable/stock/code 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/scalable/stock/chart 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/scalable/stock 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/scalable/mimetypes 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/scalable/filesystems 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/scalable/devices 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/scalable/apps 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/scalable/actions 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/scalable 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/96x96/stock/text 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/96x96/stock/table 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/96x96/stock/object 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/96x96/stock/net 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/96x96/stock/navigation 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/96x96/stock/media 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/96x96/stock/io 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/96x96/stock/image 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/96x96/stock/form 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/96x96/stock/data 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/96x96/stock/code 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/96x96/stock/chart 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/96x96/stock 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/96x96/mimetypes 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/96x96/filesystems 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/96x96/devices 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/96x96/apps 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/96x96/actions 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/96x96 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/72x72/stock/text 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/72x72/stock/table 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/72x72/stock/object 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/72x72/stock/net 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/72x72/stock/navigation 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/72x72/stock/media 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/72x72/stock/io 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/72x72/stock/image 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/72x72/stock/form 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/72x72/stock/data 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/72x72/stock/code 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/72x72/stock/chart 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/72x72/stock 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/72x72/mimetypes 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/72x72/filesystems 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/72x72/devices 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/72x72/apps 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/72x72/actions 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/72x72 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/64x64/stock/text 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/64x64/stock/table 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/64x64/stock/object 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/64x64/stock/net 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/64x64/stock/navigation 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/64x64/stock/media 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/64x64/stock/io 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/64x64/stock/image 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/64x64/stock/form 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/64x64/stock/data 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/64x64/stock/code 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/64x64/stock/chart 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/64x64/stock 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/64x64/mimetypes 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/64x64/filesystems 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/64x64/devices 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/64x64/apps 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/64x64/actions 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/64x64 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/48x48/stock/text 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/48x48/stock/table 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/48x48/stock/object 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/48x48/stock/net 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/48x48/stock/navigation 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/48x48/stock/media 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/48x48/stock/io 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/48x48/stock/image 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/48x48/stock/form 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/48x48/stock/data 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/48x48/stock/code 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/48x48/stock/chart 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/48x48/stock 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/48x48/mimetypes 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/48x48/filesystems 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/48x48/devices 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/48x48/apps 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/48x48/actions 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/48x48 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/36x36/stock/text 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/36x36/stock/table 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/36x36/stock/object 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/36x36/stock/net 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/36x36/stock/navigation 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/36x36/stock/media 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/36x36/stock/io 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/36x36/stock/image 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/36x36/stock/form 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/36x36/stock/data 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/36x36/stock/code 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/36x36/stock/chart 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/36x36/stock 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/36x36/mimetypes 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/36x36/filesystems 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/36x36/devices 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/36x36/apps 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/36x36/actions 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/36x36 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/32x32/stock/text 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/32x32/stock/table 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/32x32/stock/object 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/32x32/stock/net 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/32x32/stock/navigation 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/32x32/stock/media 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/32x32/stock/io 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/32x32/stock/image 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/32x32/stock/form 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/32x32/stock/data 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/32x32/stock/code 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/32x32/stock/chart 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/32x32/stock 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/32x32/mimetypes 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/32x32/filesystems 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/32x32/devices 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/32x32/apps 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/32x32/actions 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/32x32 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/22x22/stock/text 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/22x22/stock/table 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/22x22/stock/object 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/22x22/stock/net 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/22x22/stock/navigation 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/22x22/stock/media 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/22x22/stock/io 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/22x22/stock/image 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/22x22/stock/form 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/22x22/stock/data 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/22x22/stock/code 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/22x22/stock/chart 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/22x22/stock 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/22x22/mimetypes 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/22x22/filesystems 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/22x22/devices 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/22x22/apps 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/22x22/actions 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/22x22 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/192x192/stock/text 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/192x192/stock/table 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/192x192/stock/object 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/192x192/stock/net 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/192x192/stock/navigation 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/192x192/stock/media 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/192x192/stock/io 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/192x192/stock/image 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/192x192/stock/form 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/192x192/stock/data 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/192x192/stock/code 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/192x192/stock/chart 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/192x192/stock 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/192x192/mimetypes 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/192x192/filesystems 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/192x192/devices 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/192x192/apps 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/192x192/actions 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/192x192 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/16x16/stock/text 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/16x16/stock/table 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/16x16/stock/object 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/16x16/stock/net 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/16x16/stock/navigation 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/16x16/stock/media 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/16x16/stock/io 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/16x16/stock/image 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/16x16/stock/form 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/16x16/stock/data 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/16x16/stock/code 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/16x16/stock/chart 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/16x16/stock 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/16x16/mimetypes 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/16x16/filesystems 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/16x16/devices 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/16x16/apps 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/16x16/actions 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/16x16 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/128x128/stock/text 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/128x128/stock/table 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/128x128/stock/object 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/128x128/stock/net 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/128x128/stock/navigation 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/128x128/stock/media 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/128x128/stock/io 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/128x128/stock/image 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/128x128/stock/form 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/128x128/stock/data 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/128x128/stock/code 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/128x128/stock/chart 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/128x128/stock 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/128x128/mimetypes 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/128x128/filesystems 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/128x128/devices 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/128x128/apps 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/128x128/actions 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/128x128 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor 2> /dev/null || /usr/bin/true
 @unexec /bin/rmdir %D/share/icons 2> /dev/null || /usr/bin/true
