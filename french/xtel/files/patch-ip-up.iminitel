@@ -1,0 +1,8 @@
+--- iminitel/ip-up.iminitel.orig	Fri Jan  4 21:59:14 2002
++++ iminitel/ip-up.iminitel	Fri Jan  4 23:01:04 2002
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!%%LOCALBASE%%/bin/bash
+ # $Id: ip-up.iminitel,v 1.1 2001/02/05 09:34:59 pierre Exp $
+ # I-Minitel
+ if [ "$6" = "iminitel" ]; then
