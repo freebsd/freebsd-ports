@@ -1,0 +1,9 @@
+Crystal Space is a free (LGPL) and portable 3D Game Development Kit written in 
+C++. It supports: true six degree's of freedom, colored lighting, mipmapping, 
+portals, mirrors, alpha transparency, reflective surfaces, 3D sprites (frame 
+based or with skeletal animation), procedural textures, radiosity, particle 
+systems, halos, volumetric fog, scripting (using Python or other languages), 
+8-bit, 16-bit, and 32-bit display support, Direct3D, OpenGL, Glide, and 
+software renderer, font support, hierarchical transformations.
+
+WWW: http://crystal.sourceforge.net/
