@@ -1,6 +1,9 @@
+@comment $FreeBSD$
 include/trio.h
 include/triodef.h
 include/triop.h
+include/trionan.h
+include/triostr.h
 lib/libtrio.a
 %%PORTDOCS%%share/doc/trio/doc/doc.h
 %%PORTDOCS%%share/doc/trio/doc/doc_dynamic.h
