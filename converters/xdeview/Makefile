@@ -3,7 +3,7 @@
 # Date Created:		9 Feb 1997
 # Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 #
-# $Id: Makefile,v 1.14 1998/08/07 23:56:12 asami Exp $
+# $Id: Makefile,v 1.15 1998/09/25 10:05:06 asami Exp $
 #
 
 DISTNAME=	uudeview-0.5.13
@@ -14,8 +14,8 @@ MASTER_SITES=	ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/ \
 
 MAINTAINER=	hoek@FreeBSD.ORG
 
-LIB_DEPENDS=    tk80.1:${PORTSDIR}/x11-toolkits/tk80 \
-		uu\\.1\\.:${PORTSDIR}/converters/uulib
+LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80 \
+		uu.1:${PORTSDIR}/converters/uulib
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-tcl="${PREFIX}" --enable-tk="${PREFIX}"
