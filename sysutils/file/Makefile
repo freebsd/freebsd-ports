@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	file
-PORTVERSION=	3.38
+PORTVERSION=	3.39
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.astron.com/pub/file/ \
 		ftp://ftp.gw.com/mirrors/pub/unix/file/ \
@@ -19,6 +19,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-fsect-man5
 MAN1=		file.1
 MAN5=		magic.5
+
+# The rules below are required to suppress invocations of aclocal, automake,
+# autoconf and autoheader at `make build' and `make install'.
 
 post-extract:
 	${TOUCH} ${TOUCH_FLAGS} ${WRKSRC}/aclocal.m4
