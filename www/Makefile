@@ -587,6 +587,7 @@
     SUBDIR += scout
     SUBDIR += screem
     SUBDIR += sidplug
+    SUBDIR += simplog
     SUBDIR += sitebar
     SUBDIR += sitecopy
     SUBDIR += slash
