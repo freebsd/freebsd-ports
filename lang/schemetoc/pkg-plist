@@ -1,4 +1,3 @@
-@cwd /usr/local
 bin/sci
 bin/scc
 bin/sccomp
@@ -8,7 +7,7 @@ man/man1/scc.1.gz
 lib/schemetoc
 lib/libsc.so.1.0
 lib/libscxl.so.1.0
-@exec ldconfig -m %B
-@exec ranlib lib/schemetoc/libsc.a
-@exec ranlib lib/schemetoc/libsc_p.a
-@exec ranlib lib/schemetoc/scxl.a
+@exec /sbin/ldconfig -m %B
+@exec /usr/bin/ranlib %D/lib/schemetoc/libsc.a
+@exec /usr/bin/ranlib %D/lib/schemetoc/libsc_p.a
+@exec /usr/bin/ranlib %D/lib/schemetoc/scxl.a
