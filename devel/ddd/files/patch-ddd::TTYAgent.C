@@ -1,5 +1,5 @@
---- ddd/TTYAgent.C.orig	Thu Aug 19 20:41:45 2004
-+++ ddd/TTYAgent.C	Thu Aug 19 20:45:56 2004
+--- ddd/TTYAgent.C.orig	Sat Nov  6 19:05:52 2004
++++ ddd/TTYAgent.C	Sat Nov  6 19:08:23 2004
 @@ -715,8 +715,19 @@
      }
      else
