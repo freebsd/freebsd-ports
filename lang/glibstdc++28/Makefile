@@ -4,7 +4,7 @@
 # Date created:				03 Mar 1998
 # Whom:					David O'Brien <obrien@NUXI.com>
 #
-# $Id: Makefile,v 1.17 1999/03/11 21:47:12 scrappy Exp $
+# $Id: Makefile,v 1.18 1999/03/31 10:42:21 obrien Exp $
 #
 
 DISTNAME=	libstdc++-2.8.1.1
@@ -14,6 +14,8 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	libstdc++
 
 MAINTAINER=	obrien@FreeBSD.org
+
+NO_CDROM=	'old version, not worth the cost in real estate'
 
 Y2K=		http://www.gnu.org/software/year2000.html
 

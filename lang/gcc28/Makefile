@@ -4,7 +4,7 @@
 # Date created:				17 Jan 1998
 # Whom:					David O'Brien <obrien@NUXI.com>
 #
-# $Id: Makefile,v 1.22 1999/03/08 07:28:29 asami Exp $
+# $Id: Makefile,v 1.23 1999/03/31 10:42:20 obrien Exp $
 #
 
 DISTNAME=	gcc-2.8.1
@@ -13,6 +13,8 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gcc
 
 MAINTAINER=	obrien@FreeBSD.org
+
+NO_CDROM=	'old version, not worth the cost in real estate'
 
 .include <bsd.port.pre.mk>
 
