@@ -30,6 +30,7 @@
     SUBDIR += docproj
     SUBDIR += dsssl-docbook-modular
     SUBDIR += dtd-catalogs
+    SUBDIR += eruby
     SUBDIR += expat
     SUBDIR += fr-ispell
     SUBDIR += freegrep

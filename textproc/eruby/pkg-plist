@@ -1,0 +1,6 @@
+bin/eruby
+share/doc/ruby/eruby/ChangeLog
+share/doc/ruby/eruby/README.en
+share/doc/ruby/eruby/ja/README.ja
+@dirrm share/doc/ruby/eruby/ja
+@dirrm share/doc/ruby/eruby

@@ -1,0 +1,6 @@
+eruby interprets Ruby code embedded in a text file just like PHP,
+ePerl, ASP, or JSP.  For example, eruby enables you to embed a Ruby
+code in a HTML file.
+
+Author:	Shugo Maeda <shugo@netlab.co.jp>
+WWW:	http://www.ruby-lang.org/en/raa-list.rhtml?name=eruby
