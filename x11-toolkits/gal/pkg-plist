@@ -98,6 +98,7 @@ include/gal/util/e-util.h
 include/gal/util/e-xml-utils.h
 include/gal/widgets/color-group.h
 include/gal/widgets/color-palette.h
+include/gal/widgets/e-canvas-background.h
 include/gal/widgets/e-canvas-utils.h
 include/gal/widgets/e-canvas-vbox.h
 include/gal/widgets/e-canvas.h
@@ -130,7 +131,7 @@ include/gal/widgets/widget-color-combo.h
 include/gal/widgets/widget-pixmap-combo.h
 lib/libgal.a
 lib/libgal.so
-lib/libgal.so.18
+lib/libgal.so.19
 share/gnome/etable/%%VERSION%%/glade/e-table-config-no-group.glade
 share/gnome/etable/%%VERSION%%/glade/e-table-config.glade
 share/gnome/etable/%%VERSION%%/glade/e-table-field-chooser.glade
