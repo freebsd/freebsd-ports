@@ -3,12 +3,12 @@
 # Date created:		7 March 1995
 # Whom:			joerg
 #
-# $Id: Makefile,v 1.4 1995/04/15 03:45:51 asami Exp $
+# $Id: Makefile,v 1.5 1995/04/16 13:07:26 joerg Exp $
 #
 
 DISTNAME=	pcemu1.01alpha
 PKGNAME=	pcemu-1.01a
-CATEGORIES+=	utilities emulation
+CATEGORIES+=	emulation
 
 # Warning notice:  by now, you'll have to live with those warnings:
 #
