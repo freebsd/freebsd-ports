@@ -3,7 +3,7 @@
 # Date created:		18 Mar 1996
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.17 1997/07/17 15:12:48 max Exp $
+# $Id: Makefile,v 1.18 1997/07/26 00:24:53 jdp Exp $
 #
 
 DISTNAME=	modula-3-3.6
@@ -24,8 +24,8 @@ MAN1=		analyze_coverage.1 formsedit.1 m3browser.1 \
 		replayheap.1 showheap.1 shownew.1 showthread.1
 
 # Keep these in sync with the PLIST and with the library version numbers
-# in the modula-3-lib port.
-major=		5
+# in the modula-3-lib port (PLIST and patch-ah there).
+major=		6
 minor=		0
 
 # The Modula-3 build process insists on installing each individual

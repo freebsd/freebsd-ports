@@ -2,8 +2,8 @@ bin/analyze_coverage
 bin/formsedit
 bin/m3browser
 bin/m3build
-bin/m3build-5
-bin/m3build-5.0
+bin/m3build-6
+bin/m3build-6.0
 bin/m3bundle
 bin/m3pp
 bin/m3ship
@@ -16,7 +16,7 @@ bin/replayheap
 bin/showheap
 bin/shownew
 bin/showthread
-lib/m3/FreeBSD2/libm3configvars.so.5.0
+lib/m3/FreeBSD2/libm3configvars.so.6.0
 lib/m3/FreeBSD2/m3
 lib/m3/FreeBSD2/m3cgc1
 lib/m3/FreeBSD2/m3mkdir
@@ -313,7 +313,7 @@ lib/m3/pkg/m3configvars/FreeBSD2/.M3IMPTAB
 lib/m3/pkg/m3configvars/FreeBSD2/.M3WEB
 lib/m3/pkg/m3configvars/FreeBSD2/libm3configvars.a
 lib/m3/pkg/m3configvars/FreeBSD2/libm3configvars.m3x
-lib/m3/pkg/m3configvars/FreeBSD2/libm3configvars.so.5.0
+lib/m3/pkg/m3configvars/FreeBSD2/libm3configvars.so.6.0
 lib/m3/pkg/m3configvars/src/M3ConfigVars.i3
 lib/m3/pkg/m3core/FreeBSD2/.M3EXPORTS
 lib/m3/pkg/m3core/FreeBSD2/.M3IMPTAB
