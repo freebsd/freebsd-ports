@@ -74,6 +74,7 @@
     SUBDIR += lavaps
     SUBDIR += libretto-config
     SUBDIR += lmmon
+    SUBDIR += log_analysis
     SUBDIR += logrotate
     SUBDIR += logtool
     SUBDIR += lsof
