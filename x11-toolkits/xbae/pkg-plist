@@ -14,3 +14,4 @@ include/Xbae-4.7/Matrix.h
 include/Xbae-4.7/MatrixP.h
 include/Xbae-4.7/patchlevel.h
 @dirrm include/Xbae-4.7
+include/Xbae
