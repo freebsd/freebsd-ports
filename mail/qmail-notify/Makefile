@@ -13,7 +13,7 @@ MASTER_SITES=	http://untroubled.org/qmail-notify/
 MAINTAINER=	sergei@kolobov.com
 
 EXAMPLES=	cron.hourly message.txt
-DOCS=		ANNOUNCEMENT COPYING NEWS README TODO
+DOCS=		ANNOUNCEMENT NEWS README TODO
 
 pre-build:
 	${ECHO_CMD} ${PREFIX}/bin   > ${WRKSRC}/conf-bin
@@ -21,12 +21,12 @@ pre-build:
 
 do-install:
 	cd ${WRKSRC} && ./installer
-	${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${EXAMPLESDIR}
 .for file in ${EXAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${EXAMPLESDIR}
 .endfor
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 .for file in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
