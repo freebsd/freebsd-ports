@@ -14,7 +14,6 @@ DISTNAME=	opera-5.0-b6-20010212.017-static.i386
 MAINTAINER=	des@FreeBSD.org
 
 IS_INTERACTIVE=	YES
-NO_PACKAGE=	"User must agree to license prior to installation."
 
 RUN_DEPENDS=	${LINUXBASE}/lib/ld.so:${PORTSDIR}/emulators/linux_base \
 		${LINUXBASE}/usr/lib/libpng.so.2:${PORTSDIR}/graphics/linux-png \
