@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	openntpd
-PORTVERSION=	20040719p
+PORTVERSION=	20040824p
 CATEGORIES=	net
-MASTER_SITES=	http://www.zip.com.au/~dtucker/openntpd/ \
+MASTER_SITES=	http://www.openntpd.org/dist/portable/ \
+		http://www.zip.com.au/~dtucker/openntpd/ \
 		http://dtucker.freeshell.org/openntpd/
 
 MAINTAINER=	naddy@FreeBSD.org
