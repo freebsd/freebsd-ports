@@ -1,0 +1,15 @@
+--- Makefile.orig	Mon Nov  5 17:12:58 2001
++++ Makefile	Mon Nov  5 17:12:35 2001
+@@ -18,8 +18,11 @@
+ 
+ all: nomarch
+ 
++main.o: main.c
++	${CC} ${CFLAGS} -I%%LOCALBASE%%/include -o main.o -c main.c
++
+ nomarch: $(OBJ)
+-	$(CC) $(CFLAGS) -o nomarch $(OBJ)
++	$(CC) $(CFLAGS) -o nomarch $(OBJ) -L%%LOCALBASE%%/lib -lgnugetopt
+ 
+ installdirs:
+ 	/bin/sh ./mkinstalldirs $(BINDIR) $(MANDIR)
