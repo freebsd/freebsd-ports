@@ -1,0 +1,245 @@
+--- iohandler.cc.orig	Wed Jan 15 16:44:05 1997
++++ iohandler.cc	Tue Nov  2 17:06:47 1999
+@@ -37,13 +37,13 @@
+ void IOHandler::link(int fd, int mask)
+ {
+ 	fd_ = fd;
+-	Tk_CreateFileHandler((ClientData) fd, mask, callback, (ClientData)this);
++	Tk_CreateFileHandler(fd, mask, callback, (ClientData)this);
+ }
+ 
+ void IOHandler::unlink()
+ {
+ 	if (fd_ >= 0) {
+-		Tk_DeleteFileHandler((ClientData) fd_);
++		Tk_DeleteFileHandler(fd_);
+ 		fd_ = -1;
+ 	}
+ }
+--- main.cc.orig	Wed Jan 15 16:44:05 1997
++++ main.cc	Tue Nov  2 17:07:41 1999
+@@ -28,10 +28,8 @@
+ #endif
+ #include <X11/Xlib.h>
+ 
+-#ifdef _AIX
+ #include <stdlib.h>
+ #include <unistd.h>
+-#endif
+ 
+ /* Get FD_SETSIZE */
+ #if defined(linux)
+@@ -79,7 +77,7 @@
+ 	else {
+ 	    Tk_Window tk = t.tkmain();
+ 	    Tk_Uid uid = Tk_GetUid((char*)argv[1]);
+-	    XFontStruct* p = Tk_GetFontStruct(t.interp(), tk, uid);
++	    Tk_Font p = Tk_GetFont(t.interp(), tk, uid);
+ 	    t.result(p != 0 ? "1" : "0");
+ 	}
+ 	return (TCL_OK);
+--- member.cc.orig	Wed Jan 15 16:44:05 1997
++++ member.cc	Tue Nov  2 17:08:40 1999
+@@ -31,6 +31,8 @@
+ #include "Tcl.h"
+ #include "member.h"
+ 
++#include <stdlib.h>
++
+ #ifndef HAVE_SNPRINTF
+ extern "C" {
+     int snprintf(char* buf, int s, const char* fmt, ...);
+--- monitor.cc.orig	Wed Jan 15 16:44:05 1997
++++ monitor.cc	Tue Nov  2 17:09:04 1999
+@@ -922,7 +922,7 @@
+ 	    sprintf(val, "%u ms", j);
+ 	    break;
+ 	}
+-	Tcl_SetVar2(interp, "median", s->name(), val, TCL_GLOBAL_ONLY);
++	Tcl_SetVar2(interp, "median", (char*)s->name(), val, TCL_GLOBAL_ONLY);
+     }
+ }
+ 
+--- tkStripchart.c.orig	Wed Jan 15 16:44:06 1997
++++ tkStripchart.c	Tue Nov  2 17:18:48 1999
+@@ -30,10 +30,6 @@
+ #include <math.h>
+ #include "tk.h"
+ 
+-#if TK_MINOR_VERSION<1
+-#define Tk_Cursor Cursor
+-#endif
+-
+ #define BLACK		"Black"
+ #define WHITE		"White"
+ #define GRAY		"#b0b0b0"
+@@ -145,7 +141,7 @@
+ 	int scrollrequired;
+ 	int guarantee_draw;
+ 	int grow_up;
+-	XFontStruct *fontPtr;	/* Information about text font, or NULL. */
++	Tk_Font font;		/* TK font */
+ 	XColor *textColorPtr;	/* Color for drawing text. */
+ 	GC textGC;		/* GC for drawing text. */
+ 	XColor *tickColorPtr;	/* Color for drawing ticks. */
+@@ -254,7 +250,7 @@
+ 	{TK_CONFIG_SYNONYM, "-fg", "stripcolor", 0,
+ 	 0, 0, 0},
+ 	{TK_CONFIG_FONT, "-font", "font", "Font",
+-	 DEF_STRIPCHART_FONT, Tk_Offset(Stripchart, fontPtr),
++	 DEF_STRIPCHART_FONT, Tk_Offset(Stripchart, font),
+ 	 0},
+ 	{TK_CONFIG_BOOLEAN, "-guaranteedrawing", "guaranteedrawing",
+ 	 "Guaranteedrawing", DEF_GUARANTEE_DRAW,
+@@ -567,8 +563,8 @@
+ 	if (StripchartPtr->value != NULL)
+ 		free(StripchartPtr->value);
+ 
+-	if (StripchartPtr->fontPtr != NULL)
+-		Tk_FreeFontStruct(StripchartPtr->fontPtr);
++	if (StripchartPtr->font != NULL)
++		Tk_FreeFont(StripchartPtr->font);
+ 
+ 	if (StripchartPtr->textColorPtr != NULL)
+ 		Tk_FreeColor(StripchartPtr->textColorPtr);
+@@ -628,7 +624,7 @@
+ 
+ 	Tk_SetBackgroundFromBorder(StripchartPtr->tkwin, StripchartPtr->border);
+ 
+-	gcValues.font = StripchartPtr->fontPtr->fid;
++	gcValues.font = Tk_FontId(StripchartPtr->font);
+ 	gcValues.foreground = StripchartPtr->textColorPtr->pixel;
+ 	newGC = Tk_GetGC(StripchartPtr->tkwin, GCForeground|GCFont, &gcValues);
+ 	if (StripchartPtr->textGC != None && StripchartPtr->tkwin) {
+@@ -689,9 +685,11 @@
+  {
+ 	int tt = hasatitle(StripchartPtr);
+ 	int bd = StripchartPtr->borderWidth;
+-	int lineHeight = StripchartPtr->fontPtr->ascent +
+-	StripchartPtr->fontPtr->descent;
++	int lineHeight;
++	Tk_FontMetrics metrics;
+ 
++	Tk_GetFontMetrics(StripchartPtr->font, &metrics);
++	lineHeight = metrics.ascent + metrics.descent;
+ 	Tk_GeometryRequest(StripchartPtr->tkwin,
+ 			   2 * (bd + PADDING) + StripchartPtr->num_strips *
+ 			   StripchartPtr->strip_width,
+@@ -723,11 +721,14 @@
+ 	/*
+ 	 * Variable declarations used in the title drawing routines
+ 	 */
+-	XFontStruct *fp = StripchartPtr->fontPtr;
+ 	XCharStruct bbox;
+ 	int x, dummy;
+-	int lineHeight = StripchartPtr->fontPtr->ascent +
+-	StripchartPtr->fontPtr->descent;
++	Tk_Font tkf = StripchartPtr->font;
++	int lineHeight;
++	Tk_FontMetrics fm;
++
++	Tk_GetFontMetrics(tkf, &fm);
++	lineHeight = fm.ascent + fm.descent;
+ 
+ 	StripchartPtr->displaybits &= ~REDRAW_PENDING;
+ 	if ((StripchartPtr->tkwin == NULL) || !Tk_IsMapped(tkwin))
+@@ -744,19 +745,20 @@
+ 	 * space. Otherwise left justified and clipped on the right.
+ 	 */
+ 	if (tt && StripchartPtr->displaybits & DISPLAY_TITLE) {
+-		XTextExtents(fp, StripchartPtr->title,
+-			     strlen(StripchartPtr->title),
+-			     &dummy, &dummy, &dummy, &bbox);
+-		if (bbox.lbearing + bbox.rbearing < Tk_Width(tkwin) - 2 * bd)
+-			x = (Tk_Width(tkwin) - bbox.lbearing - bbox.rbearing)/2;
++		int width = Tk_TextWidth(tkf, StripchartPtr->title,
++					 strlen(StripchartPtr->title));
++		if (width < Tk_Width(tkwin) - 2 * bd)
++		    x = (Tk_Width(tkwin) - width)/2;
+ 		else
+-			x = bd + PADDING;
+-
++		    x = bd + PADDING;
+ 		XClearArea(Tk_Display(tkwin), Tk_WindowId(tkwin), bd, bd,
+-		     Tk_Width(tkwin) - 2 * bd, lineHeight + PADDING, False);
++			   Tk_Width(tkwin) - 2*bd,
++			   lineHeight + PADDING, False);
++		/* XXX In the absence of max_bounds, approximate... */
+ 		XDrawString(Tk_Display(tkwin), Tk_WindowId(tkwin),
+-		       StripchartPtr->textGC, x, fp->max_bounds.ascent + bd,
+-			StripchartPtr->title, strlen(StripchartPtr->title));
++			    StripchartPtr->textGC, x, fm.ascent + bd,
++			    StripchartPtr->title,
++			    strlen(StripchartPtr->title));
+ 	}
+ 	/*
+ 	 * draw the strips
+@@ -827,7 +829,8 @@
+ 			Tk_CancelIdleCall(DisplayStripchart,
+ 					  (ClientData)StripchartPtr);
+ 		}
+-		Tk_EventuallyFree((ClientData)StripchartPtr, DestroyStripchart);
++		Tk_EventuallyFree((ClientData)StripchartPtr,
++				  (Tcl_FreeProc*)DestroyStripchart);
+ 	} else if (eventPtr->type == ConfigureNotify) {
+ 		int n = eventPtr->xconfigure.width;
+ 		n -= 2 * (StripchartPtr->borderWidth + PADDING);
+@@ -1056,14 +1059,20 @@
+ DrawStripi(Stripchart* SPtr, int i)
+ {
+ 	Tk_Window tkwin = SPtr->tkwin;
+-	int lineHeight = SPtr->fontPtr->ascent + SPtr->fontPtr->descent;
++	int lineHeight;
+ 	int x = SPtr->borderWidth + PADDING + (i - 1) * SPtr->strip_width;
+-	int y = SPtr->borderWidth + PADDING +
+-		hasatitle(SPtr) * (lineHeight + PADDING);
++	int y;
+ 	int w = SPtr->strip_width;
+ 	int h;
+ 	double maxv = SPtr->max_value;
+ 	double minv = SPtr->min_value;
++	Tk_FontMetrics metrics;
++
++	Tk_GetFontMetrics(SPtr->font, &metrics);
++	lineHeight = metrics.ascent + metrics.descent;
++
++	y = SPtr->borderWidth + PADDING +
++		hasatitle(SPtr) * (lineHeight + PADDING);
+ 
+ 	if (i < 1 || i > SPtr->num_strips)
+ 		return;
+@@ -1135,14 +1144,20 @@
+ ScrollStrips(Stripchart* SPtr)
+ {
+ 	Tk_Window tkwin = SPtr->tkwin;
+-	int lineHeight = SPtr->fontPtr->ascent + SPtr->fontPtr->descent;
++	int lineHeight;
+ 	int src_x = SPtr->borderWidth + PADDING + SPtr->strip_width;
+-	int src_y = SPtr->borderWidth + PADDING +
+-		    hasatitle(SPtr) * (lineHeight + PADDING);
++	int src_y;
+ 	int dest_x = src_x - SPtr->strip_width;
+ 	int dest_y = src_y;
+ 	int w = (SPtr->num_strips - 1) * SPtr->strip_width;
+ 	int h = SPtr->max_height;
++	Tk_FontMetrics metrics;
++
++	Tk_GetFontMetrics(SPtr->font, &metrics);
++	lineHeight = metrics.ascent = metrics.descent;
++
++	src_y = SPtr->borderWidth + PADDING +
++		hasatitle(SPtr) * (lineHeight + PADDING);
+ 
+ 	XCopyArea(Tk_Display(tkwin), Tk_WindowId(tkwin), Tk_WindowId(tkwin),
+ 	          Tk_GetGC(tkwin, 0, NULL), src_x, src_y, w, h, dest_x, dest_y);
+--- ui-display.tcl.orig	Wed Jan 15 16:44:06 1997
++++ ui-display.tcl	Tue Nov  2 17:19:30 1999
+@@ -307,7 +307,7 @@
+     bind $b <Leave> "$b conf -bg [option get . background Rtpmon]"
+     bind $b <Button-1> "CreateInfoWindow $s"
+ 
+-    menu $b.menu -transient yes
++    menu $b.menu
+     $b.menu add command -label "Site Info" -font [resource smallfont] \
+ 	-command "CreateInfoWindow $s"
+     $b.menu add command -label "Ignore" -font [resource smallfont] \
