@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tcl
-PORTVERSION=	8.3.0
+PORTVERSION=	8.3.1
 CATEGORIES=	lang tcl83
 MASTER_SITES=	${MASTER_SITE_TCLTK}
 MASTER_SITE_SUBDIR=	tcl8_3
@@ -43,9 +43,9 @@ MAN3=	Access.3 AddErrInfo.3 Alloc.3 AllowExc.3 AppInit.3 AssocData.3 \
 	InitStubs.3 IntObj.3 Interp.3 LinkVar.3 ListObj.3 MainLoop.3 Notifier.3\
 	Object.3 ObjectType.3 OpenFileChnl.3 OpenTcp.3 ParseCmd.3 PkgRequire.3 \
 	Preserve.3 PrintDbl.3 RecEvalObj.3 RecordEval.3 RegExp.3 SaveResult.3 \
-	SetErrno.3 SetRecLmt.3 SetResult.3 SetVar.3 Sleep.3 SplitList.3 \
-	SplitPath.3 StaticPkg.3 StrMatch.3 StringObj.3 Tcl_Main.3 Thread.3 \
-	ToUpper.3 TraceVar.3 Translate.3 UpVar.3 Utf.3 WrongNumArgs.3
+	SetErrno.3 SetRecLmt.3 SetResult.3 SetVar.3 Sleep.3 SourceRCFile.3 \
+	SplitList.3 SplitPath.3 StaticPkg.3 StrMatch.3 StringObj.3 Tcl_Main.3 \
+	Thread.3 ToUpper.3 TraceVar.3 Translate.3 UpVar.3 Utf.3 WrongNumArgs.3
 
 MANN=	Tcl.n after.n append.n array.n bgerror.n binary.n break.n case.n \
 	catch.n cd.n clock.n close.n concat.n continue.n dde.n encoding.n \
