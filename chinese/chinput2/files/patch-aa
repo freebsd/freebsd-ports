@@ -8,4 +8,3 @@
 +LDFLAGS=-static -L/usr/lib -L/usr/local/lib -L/usr/local/lib/mysql -lmysqlclient -lmd -lm -lz
  
  all:  $(PROGRAM)
- 
