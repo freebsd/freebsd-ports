@@ -16,30 +16,30 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	netchild@FreeBSD.org
 
 BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio
-RUN_DEPENDS=	\
-	${LINUXBASE}/lib/libc-2.2.2.so:${PORTSDIR}/emulators/linux_base-7
+RUN_DEPENDS=	${LINUXBASE}/lib/libc-2.2.2.so:${PORTSDIR}/emulators/linux_base-7
 
 RESTRICTED=	Intel forbids any redistribution
+NO_PACKAGE=	${RESTRICTED}
+NO_CDROM=	${RESTRICTED}
 
-NO_WRKSUBDIR=		yes
 ONLY_FOR_ARCHS=		i386
 
+#USE_LINUX=		yes
+NO_WRKSUBDIR=		yes
 NO_BUILD=		yes
 NO_FILTER_SHLIBS=	yes
-
-NO_PACKAGE=		${RESTRICTED}
-NO_CDROM=		yes
 
 .include <bsd.port.pre.mk>
 
 ICCCFGVAL!=	${UNAME} -r | ${SED} -e 's/\..*//'
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=	"Please manually download the version for RedHat 7.1 from ${MASTER_SITES}, put it into ${DISTDIR} and run make again"
+IGNORE=	"Please manually download the version for RedHat 7.1 from ${MASTER_SITES} (e.g. http://www.intel.com/software/products/compilers/c50/linux/noncom.htm), put it into ${DISTDIR} and run make again. WARNING: this will lead to a mixed up installation if you already use the default linux emulation. This port uses the linux_base-7 port instead of the default linux_base port"
 .endif
 
 post-extract:
-.for i in intel-icc-5.0.1-129.i386.rpm \
+.for i in \
+	intel-icc-5.0.1-129.i386.rpm \
 #	intel-ecc64-5.0.1-71.ia64.rpm \
 #	intel-ldb-5.0.1-119.i386.rpm \
 #	intel-subh-5.0.1-118.i386.rpm \
