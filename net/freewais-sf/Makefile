@@ -1,13 +1,13 @@
 # New ports collection makefile for:	FreeWAIS-sf
-# Version required:	2.2.12
+# Version required:	2.2.13
 # Date created:		19 November 1996
 # Whom:			Pedro Giffuni
 #
 # $FreeBSD$
 #
 
-DISTNAME=	freeWAIS-sf-2.2.12
-PKGNAME=	freewais-sf-2.2.12
+DISTNAME=	freeWAIS-sf-2.2.13
+PKGNAME=	freewais-sf-2.2.13
 CATEGORIES=	net databases
 MASTER_SITES=	ftp://ls6-ftp.cs.uni-dortmund.de/pub/src/freeWAIS-sf/
 
@@ -28,8 +28,8 @@ pre-configure:
 		${FILESDIR}/configure.ans.skel > ${WRKDIR}/configure.ans
 
 post-configure:
-	@find ${WRKSRC} -type f -exec \
-		${PERL} -pi -e "s:%%PREFIX%%:${PREFIX}:g" \{} \;
+	@find ${WRKSRC} -type f | \
+		xargs ${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g"
 
 post-install:
 .if !defined(NOPORTDOCS)
