@@ -255,3 +255,4 @@ share/gnome/pixmaps/pitivi/volume.xpm
 @dirrm share/gnome/pitivi
 @dirrm share/doc/gnonlin
 @dirrm include/gnl
+@dirrm etc/pitivi
