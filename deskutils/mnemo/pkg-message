@@ -1,0 +1,21 @@
+************************************************************************
+Mnemo has been installed in %%MNEMODIR%% with your blank
+configuration files.
+
+Horde and IMP must be configured; if not, see:
+- %%PORTSDIR%%/www/horde2/pkg-message
+- %%PORTSDIR%%/mail/imp3/pkg-message
+
+Then, you have to create the table mnemo_memos, from the SQL script
+%%MNEMODIR%%/scripts/drivers/mnemo_memos.sql.
+For example, if your database is MySQL, you may run
+mysql --user=hordemgr --password=yourpass horde < mnemo_memos.sql
+(If you run another database server, see
+ %%HORDEDIR%%/scripts/db/README
+ for more explanations.)
+
+Finally, you may have to tune the configuration files located in
+%%CONFDIR%%/, specially the files conf.php.
+
+To protect your configuration files, you have to restart Apache.
+************************************************************************

@@ -34,6 +34,7 @@
     SUBDIR += mhc
     SUBDIR += mhc-emacs20
     SUBDIR += mhc-xemacs21-mule
+    SUBDIR += mnemo
     SUBDIR += moneydance
     SUBDIR += mrproject
     SUBDIR += nag
