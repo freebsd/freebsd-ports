@@ -1,0 +1,7 @@
+The Net::DNS::ZoneFile::Fast module provides an ability to parse zone
+files that BIND8 and BIND9 use, fast.  Currently it provides a single
+function, parse(), which returns a reference to an array of traditional
+Net::DNS::RR objects, so that no new API has to be learned in order to
+manipulate zone records.
+
+WWW: http://search.cpan.org/dist/Net-DNS-ZoneFile-Fast
