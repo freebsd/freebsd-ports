@@ -7,15 +7,17 @@
 #
 
 PORTNAME=	find_ddos
-PORTVERSION=	3.1
+PORTVERSION=	4.2
 CATEGORIES=	security
-MASTER_SITES=	http://www.fbi.gov/nipc/
-DISTNAME=	find_ddos_v31_linux
+MASTER_SITES=	http://ftp.cert.org.tw/tools/Security_Scanner/DDOS/  \
+		http://www.fbi.gov/nipc/
+DISTNAME=	find_ddos_v42_linux
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	obrien@FreeBSD.org
 
 ONLY_FOR_ARCHS=	i386
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-build:
 	@brandelf -t Linux ${WRKSRC}/find_ddos
