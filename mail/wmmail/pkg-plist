@@ -1,4 +1,52 @@
 GNUstep/Apps/WMMail.app/WMMail
-share/doc/WMMail/WMMail.defaults
+GNUstep/Apps/WMMail.app/README
+GNUstep/Apps/WMMail.app/Anims/NeXT/Mail1.xpm
+GNUstep/Apps/WMMail.app/Anims/NeXT/Mail2.xpm
+GNUstep/Apps/WMMail.app/Anims/NeXT/Mail3.xpm
+GNUstep/Apps/WMMail.app/Anims/asmail/asmail-new.xpm
+GNUstep/Apps/WMMail.app/Anims/asmail/asmail-no.xpm
+GNUstep/Apps/WMMail.app/Anims/asmail/asmail-old.xpm
+GNUstep/Apps/WMMail.app/Anims/e/e-no.xpm
+GNUstep/Apps/WMMail.app/Anims/e/e0.xpm
+GNUstep/Apps/WMMail.app/Anims/e/e1.xpm
+GNUstep/Apps/WMMail.app/Anims/e/e2.xpm
+GNUstep/Apps/WMMail.app/Anims/e/e3.xpm
+GNUstep/Apps/WMMail.app/Anims/e/e4.xpm
+GNUstep/Apps/WMMail.app/Anims/e/e5.xpm
+GNUstep/Apps/WMMail.app/Anims/e/e6.xpm
+GNUstep/Apps/WMMail.app/Anims/e/e7.xpm
+GNUstep/Apps/WMMail.app/Anims/e/e8.xpm
+GNUstep/Apps/WMMail.app/Anims/e/e9.xpm
+GNUstep/Apps/WMMail.app/Anims/e/e10.xpm
+GNUstep/Apps/WMMail.app/Anims/e/e11.xpm
+GNUstep/Apps/WMMail.app/Anims/monitor-e/monitor-no.xpm
+GNUstep/Apps/WMMail.app/Anims/monitor-e/monitor-e0.xpm
+GNUstep/Apps/WMMail.app/Anims/monitor-e/monitor-e1.xpm
+GNUstep/Apps/WMMail.app/Anims/monitor-e/monitor-e2.xpm
+GNUstep/Apps/WMMail.app/Anims/monitor-e/monitor-e3.xpm
+GNUstep/Apps/WMMail.app/Anims/monitor-e/monitor-e4.xpm
+GNUstep/Apps/WMMail.app/Anims/monitor-e/monitor-e5.xpm
+GNUstep/Apps/WMMail.app/Anims/monitor-e/monitor-e6.xpm
+GNUstep/Apps/WMMail.app/Anims/monitor-e/monitor-e7.xpm
+GNUstep/Apps/WMMail.app/Anims/monitor-e/monitor-e8.xpm
+GNUstep/Apps/WMMail.app/Anims/monitor-e/monitor-e9.xpm
+GNUstep/Apps/WMMail.app/Anims/monitor-e/monitor-e10.xpm
+GNUstep/Apps/WMMail.app/Anims/monitor-e/monitor-e11.xpm
+GNUstep/Apps/WMMail.app/Defaults/WMMail
+GNUstep/Apps/WMMail.app/Sounds/NewMail.au
+GNUstep/Apps/WMMail.app/Sounds/NoMail.au
+GNUstep/Apps/WMMail.app/Sounds/bark.au
+GNUstep/Apps/WMMail.app/Sounds/bass_snap.au
+GNUstep/Apps/WMMail.app/Sounds/clink.au
+GNUstep/Apps/WMMail.app/Sounds/doorbell.au
+GNUstep/Apps/WMMail.app/Sounds/drip.au
+GNUstep/Apps/WMMail.app/Sounds/hammer.au
+GNUstep/Apps/WMMail.app/Sounds/monkey.au
+@dirrm GNUstep/Apps/WMMail.app/Anims/NeXT
+@dirrm GNUstep/Apps/WMMail.app/Anims/asmail
+@dirrm GNUstep/Apps/WMMail.app/Anims/e
+@dirrm GNUstep/Apps/WMMail.app/Anims/monitor-e
+@dirrm GNUstep/Apps/WMMail.app/Anims
+@dirrm GNUstep/Apps/WMMail.app/Defaults
+@dirrm GNUstep/Apps/WMMail.app/Sounds
 @dirrm GNUstep/Apps/WMMail.app
-@dirrm share/doc/WMMail
