@@ -1,0 +1,14 @@
+libchk is a tool to help users obtain the following information:
+
+  - A list of executables that have unresolvable shared library links
+
+  - A list of shared libraries that are not referenced by any binary
+
+  - A list of binaries for each shared library that are linked with
+    the library
+
+This will help to get a hint as to if you can safely remove shared
+libraries that look obsolete.
+
+Author: Akinori MUSHA <knu@FreeBSD.org>
+WWW:	http://www.iDaemons.org/cgi-bin/cvsweb.cgi/libchk/
