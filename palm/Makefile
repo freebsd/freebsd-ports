@@ -2,6 +2,7 @@
 #
 
     SUBDIR += imgvtopgm
+    SUBDIR += jpilot
     SUBDIR += kpilot
     SUBDIR += pilot-link
     SUBDIR += pilot_makedoc
