@@ -1,5 +1,5 @@
---- gcc/config/i386/freebsd-elf.h.orig	Mon Jul 13 15:38:36 1998
-+++ gcc/config/i386/freebsd-elf.h	Fri Jan 22 04:11:03 1999
+--- gcc/config/i386/freebsd.h.orig	Mon Jul 13 15:38:36 1998
++++ gcc/config/i386/freebsd.h	Fri Jan 22 04:11:03 1999
 @@ -26,8 +26,13 @@
  
  /* The svr4 ABI for the i386 says that records and unions are returned

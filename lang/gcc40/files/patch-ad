@@ -1,5 +1,5 @@
---- gcc/config/i386/freebsd.h.orig	Tue Jun 30 15:52:18 1998
-+++ gcc/config/i386/freebsd.h	Fri Jan 22 04:08:44 1999
+--- gcc/config/i386/freebsd-aout.h.orig	Tue Jun 30 15:52:18 1998
++++ gcc/config/i386/freebsd-aout.h	Fri Jan 22 04:08:44 1999
 @@ -89,6 +89,10 @@
  /* Don't default to pcc-struct-return, because gcc is the only compiler, and
     we want to retain compatibility with older gcc versions.  */

@@ -4,7 +4,7 @@
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.42 1998/12/26 20:10:02 obrien Exp $
+# $Id: Makefile,v 1.43 1999/02/03 11:11:52 asami Exp $
 #
 
 DISTNAME=	egcs-1.1.1
@@ -26,11 +26,11 @@ LIBSTDCPP_REV=	2.9.0
 
 .if ${PORTOBJFORMAT} == "elf"
 PLIST=		${WRKDIR}/PLIST
-#GNUHOST=	${ARCH}-unknown-freebsdelf${OSREL}
-GNUHOST=	${ARCH}-unknown-freebsdelf
-.else
 #GNUHOST=	${ARCH}-unknown-freebsd${OSREL}
 GNUHOST=	${ARCH}-unknown-freebsd
+.else
+#GNUHOST=	${ARCH}-unknown-freebsdaout${OSREL}
+GNUHOST=	${ARCH}-unknown-freebsdaout
 .endif
 
 PLIST_SUB=	EGCS_REV=${EGCS_REV} GNU_HOST=${GNUHOST}
@@ -41,13 +41,26 @@ CONFIGURE_ARGS=	--with-gnu-as --with-gnu-ld ${GNUHOST} \
 ALL_TARGET=	bootstrap
 MAN1=		cccp.1 g++.1 g77.1 gcc.1
 
+pre-patch:
+	@${MV} ${WRKSRC}/gcc/config/i386/freebsd.h ${WRKSRC}/gcc/config/i386/freebsd-aout.h
+	@${MV} ${WRKSRC}/gcc/config/i386/freebsd-elf.h ${WRKSRC}/gcc/config/i386/freebsd.h
+	# If I touch configure.in in any way, the build scafolding wants to
+	# run `autoconf' to regenerate `configure'.  I thought a simple `touch'
+	# of `configure' would do the trick, but it didn't.
+	##${CP} -p ${WRKSRC}/gcc/configure.in ${WRKSRC}/gcc/configure.in-changed
+
 pre-configure:
+	@# Keep from running `autoconf' and `autoheader' since we modified
+	@# configure.in by patching it.
+	touch ${WRKSRC}/gcc/configure
+	touch ${WRKSRC}/gcc/cstamp-h.in
 	@(cd ${WRKSRC}/gcc/config/${ARCH}/ ; \
 	MAJ=`sysctl -n kern.osreldate | ${SED} -e '/.....$$/s///'` ; \
+	${MV} freebsd-aout.h freebsd-aout.h.in ; \
+	${SED} -e "s:__FreeBSD__:__FreeBSD__=$${MAJ}:" freebsd-aout.h.in \
+		>freebsd-aout.h ; \
 	${MV} freebsd.h freebsd.h.in ; \
-	${SED} -e "s:__FreeBSD__:__FreeBSD__=$${MAJ}:" freebsd.h.in >freebsd.h ; \
-	${MV} freebsd-elf.h freebsd-elf.h.in ; \
-	${SED} -e "s:__FreeBSD__:__FreeBSD__=$${MAJ}:" freebsd-elf.h.in >freebsd-elf.h)
+	${SED} -e "s:__FreeBSD__:__FreeBSD__=$${MAJ}:" freebsd.h.in >freebsd.h )
 .if ${PORTOBJFORMAT} == "elf"
 	@${SED} -e 's/^@comment ELF-only://' ${PKGDIR}/PLIST >${PLIST}
 .endif
