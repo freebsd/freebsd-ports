@@ -45,6 +45,8 @@ lib/gauche/site/%%VERSION%%/%%TARGET%%/example.so
 @dirrm lib/gauche/%%VERSION%%/%%TARGET%%
 @dirrm lib/gauche/%%VERSION%%
 @dirrm lib/gauche
+lib/libgauche.a
+lib/libgauche.so
 share/gauche/%%VERSION%%/aclocal.m4
 share/gauche/%%VERSION%%/lib/dbm.scm
 share/gauche/%%VERSION%%/lib/dbm/ndbm.scm
