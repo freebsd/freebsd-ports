@@ -183,6 +183,7 @@
     SUBDIR += global
     SUBDIR += glui
     SUBDIR += gmake
+    SUBDIR += gnome2-devel
     SUBDIR += gnomebuild
     SUBDIR += gnomecommon
     SUBDIR += gnomecrash
