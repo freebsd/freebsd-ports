@@ -1,0 +1,4 @@
+libzvt is the library backend of zterm, yet another virtual terminal
+program.  It is needed for the application side of the GNOME 2.0 desktop.
+
+WWW: http://www.gnome.org/
