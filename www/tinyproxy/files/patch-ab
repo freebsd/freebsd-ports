@@ -1,22 +1,11 @@
---- src/tinyproxy.h.dist	Fri Oct 26 02:27:17 2001
-+++ src/tinyproxy.h	Thu Feb  7 18:34:32 2002
-@@ -27,9 +27,6 @@
-  * Include standard headers which are used through-out tinyproxy
-  */
- #include        <sys/types.h>
--#ifdef HAVE_SYS_RESOURCE_H
--#  include      <sys/resource.h>
--#endif
- #ifdef HAVE_SYS_SELECT_H
- #  include	<sys/select.h>
- #endif
-@@ -44,6 +41,9 @@
- #  else
- #    include	<time.h>
- #  endif
-+#endif
-+#ifdef HAVE_SYS_RESOURCE_H
-+#  include      <sys/resource.h>
- #endif
- #include	<sys/uio.h>
- #include	<netinet/in.h>
+--- src/reqs.c.dist	Fri May 17 15:37:16 2002
++++ src/reqs.c	Fri May 17 15:38:04 2002
+@@ -783,7 +783,7 @@
+ 					     &data,
+ 					     (void**)&header);
+ 
+-			if (!is_anonymous_enabled() || anonymous_search(data) <= 0) {
++			if (!is_anonymous_enabled() || anonymous_search(data) > 0) {
+ 				ret = write_message(connptr->server_fd,
+ 						    "%s: %s\r\n",
+ 						    data, header);
