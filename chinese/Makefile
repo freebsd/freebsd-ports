@@ -73,6 +73,7 @@
     SUBDIR += nvi-big5
     SUBDIR += nvi-euc-cn
     SUBDIR += nvi-euc-tw
+    SUBDIR += oicq
     SUBDIR += openoffice-1.0-zh_CN
     SUBDIR += openoffice-1.0-zh_TW
     SUBDIR += openoffice-1.1-zh_CN
