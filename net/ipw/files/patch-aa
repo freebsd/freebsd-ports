@@ -1,0 +1,22 @@
+--- Makefile.orig	Fri Jan 29 13:15:44 1999
++++ Makefile	Fri Jan 29 13:16:24 1999
+@@ -1,7 +1,7 @@
+-CC = gcc
++# CC = gcc
+ # CFLAGS = -Wall -Wmissing-prototypes -g # -O
+-CFLAGS = -Wall -Wmissing-prototypes -O
+-LDFLAGS =
++# CFLAGS = -Wall -Wmissing-prototypes -O
++# LDFLAGS =
+ 
+ # Use -lsocket -lnsl for Solaris
+ #LIBS = -lsocket -lnsl
+@@ -17,7 +17,7 @@
+ 	$(CC) $(CFLAGS) -c ipw.c
+ 
+ install: all
+-	cp $(PROGS) /usr/local/bin
++	${BSD_INSTALL_PROGRAM} $(PROGS) $(PREFIX)/bin
+ 
+ clean:
+ 	-rm -f *.o
