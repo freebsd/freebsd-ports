@@ -1,0 +1,6 @@
+listener is a typical security-related program like the motion package
+(which detects motion on a Webcam): it listens for sound. If it detects
+any, it starts recording until the sound stops (or a bit later, which is
+configurable). It stores the audio in .WAV files.
+
+WWW: http://www.vanheusden.com/listener/

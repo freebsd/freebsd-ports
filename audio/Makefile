@@ -196,6 +196,7 @@
     SUBDIR += linux-libaudiofile
     SUBDIR += linux-mbrola
     SUBDIR += linux-vsound
+    SUBDIR += listener
     SUBDIR += liteamp
     SUBDIR += lopster
     SUBDIR += lplayer

@@ -1,0 +1,34 @@
+--- /tmp/Makefile	Wed Nov 24 15:33:50 2004
++++ Makefile	Wed Nov 24 16:11:51 2004
+@@ -1,8 +1,8 @@
+ VERSION=0.6
+ 
+-INSTALL_PREFIX=/usr/local
++INSTALL_PREFIX=${PREFIX}
+ 
+-CFLAGS=-O2 -Wall -DVERSION=\"$(VERSION)\"
++CFLAGS+=-L${LOCALBASE}/lib -I${LOCALBASE}/include -Wall -DVERSION=\"$(VERSION)\"
+ 
+ OBJSsl=sl.o snd_dev.o error.o utils.o
+ OBJSli=listener.o snd_dev.o error.o utils.o
+@@ -10,17 +10,17 @@
+ all: setlistener listener
+ 
+ setlistener: $(OBJSsl)
+-	$(CC) -g -Wall -W $(OBJSsl) -lncurses -o setlistener
++	$(CC) $(CFLAGS) -g -Wall -W $(OBJSsl) -lncurses -o setlistener
+ 	strip setlistener
+ 
+ listener: $(OBJSli)
+-	$(CC) -g -Wall -W $(OBJSli) -lsndfile -o listener -DCONFIGFILE=$(INSTALL_PREFIX)/etc/listener.conf
++	$(CC) $(CFLAGS) -g -Wall -W $(OBJSli) -lsndfile -o listener -DCONFIGFILE=$(INSTALL_PREFIX)/etc/listener.conf
+ 	strip listener
+ 
+ install: setlistener listener
+ 	cp setlistener $(INSTALL_PREFIX)/bin
+ 	cp listener $(INSTALL_PREFIX)/bin
+-	cp listener.conf $(INSTALL_PREFIX)/etc/
++	cp listener.conf $(INSTALL_PREFIX)/etc/listener.conf.sample
+ 
+ uninstall: clean
+ 	rm -f $(INSTALL_PREFIX)/bin/setlistener
