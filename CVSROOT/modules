@@ -2439,6 +2439,7 @@ gnome-clipboard-daemon	ports/x11/gnome-clipboard-daemon
 gnome-commander	ports/x11-fm/gnome-commander
 gnome-cups-manager	ports/print/gnome-cups-manager
 gnome-icon-theme	ports/misc/gnome-icon-theme
+gnome-icons	ports/x11-themes/gnome-icons
 gnome-icons-aqua-fusion	ports/x11-themes/gnome-icons-aqua-fusion
 gnome-icons-cool-gorilla	ports/x11-themes/gnome-icons-cool-gorilla
 gnome-icons-crystal	ports/x11-themes/gnome-icons-crystal
