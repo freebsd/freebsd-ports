@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_zap
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.indexdata.dk/pub/zap/
 DISTNAME=	zap-${PORTVERSION}
@@ -23,6 +23,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-yazconfig=${LOCALBASE}/bin \
 		--with-apxs=${LOCALBASE}/sbin/apxs \
 		--with-tclconfig=${LOCALBASE}/lib/tcl8.3
+
+post-patch:
+		${FIND} ${WRKSRC} -name CVS -type d -print | ${XARGS} ${RM} -rf
 
 post-install:
 		@${MKDIR} ${PREFIX}/share/mod_zap
