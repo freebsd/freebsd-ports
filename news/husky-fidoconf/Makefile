@@ -13,8 +13,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-release
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Configuration library for Husky Fidosoft Project
 
-BROKEN=		Does not build
-
 LIB_DEPENDS=	smapi.2:${PORTSDIR}/news/husky-smapi
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
