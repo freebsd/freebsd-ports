@@ -48,6 +48,7 @@
     SUBDIR += linux-jdk
     SUBDIR += linux-jdk13
     SUBDIR += linux-jdk14
+    SUBDIR += linux-sun-jdk12
     SUBDIR += mmake
     SUBDIR += netrexx
     SUBDIR += openjit
