@@ -17,12 +17,6 @@ MAINTAINER=	olgeni@uli.it
 USE_X_PREFIX=	yes
 MAN1=		xfstt.1
 
-.if defined(NOPORTDOCS)
-NODOCS=	"@comment "
-.endif
-
-PLIST_SUB=	NOPORTDOCS=${NODOCS}
-
 do-install:
 	$(INSTALL_PROGRAM) $(WRKSRC)/xfstt $(PREFIX)/bin
 	$(INSTALL_MAN) $(WRKSRC)/xfstt.1x $(PREFIX)/man/man1/xfstt.1

@@ -22,12 +22,6 @@ NO_WRKSUBDIR=	no
 
 INSTALL_DIR=	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP}
 
-.if defined(NOPORTDOCS)
-PLIST_SUB+=	PORTDOCS:="@comment "
-.else
-PLIST_SUB+=	PORTDOCS:=
-.endif # !defined(NOPORTDOCS)
-
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/vgb ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/vgb-debug ${PREFIX}/bin

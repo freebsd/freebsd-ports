@@ -34,12 +34,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-qmail --disable-postfix --disable-exim --with-virusdir=/var/spool/quarantine --enable-relay
 
-.if defined(NOPORTDOCS)
-PLIST_SUB+=	NOPORTDOCS="@comment "
-.else
-PLIST_SUB+=	NOPORTDOCS=""
-.endif
-
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/amavis/amavis ${PREFIX}/sbin
 .if !defined(NOPORTDOCS)

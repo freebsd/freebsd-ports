@@ -1,10 +1,10 @@
 etc/rc.d/xfstt.sh
 bin/xfstt
-%%NOPORTDOCS%%share/doc/xfstt/FAQ
-%%NOPORTDOCS%%share/doc/xfstt/CHANGES
-%%NOPORTDOCS%%share/doc/xfstt/INSTALL
-%%NOPORTDOCS%%share/doc/xfstt/THANKS.txt
-%%NOPORTDOCS%%@dirrm share/doc/xfstt
+%%PORTDOCS%%share/doc/xfstt/FAQ
+%%PORTDOCS%%share/doc/xfstt/CHANGES
+%%PORTDOCS%%share/doc/xfstt/INSTALL
+%%PORTDOCS%%share/doc/xfstt/THANKS.txt
+%%PORTDOCS%%@dirrm share/doc/xfstt
 @exec mkdir -p %D/lib/X11/fonts/TrueType
 @unexec rm -f %D/lib/X11/fonts/TrueType/ttname.dir
 @unexec rm -f %D/lib/X11/fonts/TrueType/ttinfo.dir

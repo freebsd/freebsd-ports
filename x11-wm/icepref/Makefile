@@ -21,11 +21,6 @@ USE_PYTHON=	yes
 NO_BUILD=	yes
 MAN1=		icepref.1
 FETCH_BEFORE_ARGS=	-b
-.if defined(NOPORTDOCS)
-PLIST_SUB+=	PORTDOCS="@comment "
-.else
-PLIST_SUB+=	PORTDOCS=""
-.endif
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/icepref ${PREFIX}/bin
