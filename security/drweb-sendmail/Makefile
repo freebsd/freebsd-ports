@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	drweb_sendmail
-PORTVERSION=    4.26c
-PORTREVISION=   1
+PORTVERSION=    4.27
 CATEGORIES=	security mail
 MASTER_SITES=	http://www.drweb.ru/ftp/web_pub/
 DISTNAME=	drwebd-${PORTVERSION}-freebsd4
@@ -90,7 +89,7 @@ do-install:
 		${ECHO} u; \
 		${ECHO} "${PREFIX}/drweb/run/drweb-smf.sock"; \
 		${ECHO} drweb; \
-		${ECHO} "${PREFIX}/drweb/infected.!!!"; \
+		${ECHO} "${PREFIX}/drweb/infected"; \
 		${ECHO} y; \
 		${ECHO} /tmp; \
 		${ECHO} y; \
