@@ -1,0 +1,6 @@
+This is a "Standard MIDI File" module, which handles encoding and
+decoding SMF.  This includes a simple MML as an example of
+application.
+
+Author:	Tadayoshi Funaba <tadf@funaba.org>
+WWW:	http://www.funaba.org/en/ruby.html#smf
