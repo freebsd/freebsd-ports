@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.50 1996/07/28 14:43:05 chuckr Exp $
+# $Id: Makefile,v 1.51 1996/09/23 15:55:44 jfitz Exp $
 #
 
     SUBDIR += Gofer
@@ -19,6 +19,7 @@
     SUBDIR += mit-scheme
     SUBDIR += modula-3
     SUBDIR += moscow_ml
+    SUBDIR =+ msqlperl
     SUBDIR += p2c
     SUBDIR += pTk
     SUBDIR += pbasic
