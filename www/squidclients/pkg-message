@@ -1,0 +1,10 @@
+--------------------------------------------------------------------------------
+Usage: squidclients [-o2bhHdi] < access.log > squidclients.{txt,html}
+-o = omit browsers hostnames (to protect users' privacy)
+-b = omit any client hostname (browser or server)
+-2 = group by second level domain
+-d # = number of domain name components to summarise by
+-i # = number of domain name components to summarise by (include hostnames if components < x)
+-H = html output
+-h = help
+--------------------------------------------------------------------------------
