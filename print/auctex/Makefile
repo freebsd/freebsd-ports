@@ -11,7 +11,7 @@ CATEGORIES=		print elisp
 MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		hrs@FreeBSD.org
 COMMENT=	Integrated environment for writing LaTeX using GNU Emacs
 
 EMACS_PORT_NAME?=	emacs21
