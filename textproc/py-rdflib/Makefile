@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	rdflib
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 CATEGORIES=	textproc python
-MASTER_SITES=	http://rdflib.net/2004/04/21/
+MASTER_SITES=	http://rdflib.net/2004/10/14/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 EXTRACT_SUFX=	.tgz
 
@@ -18,5 +18,11 @@ COMMENT=	A Python library for RDF manipulation
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+
+post-install:
+	@${FIND} ${PYTHON_SITELIBDIR}/${PORTNAME} ! -type d | \
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${PYTHON_SITELIBDIR}/${PORTNAME} -type d | ${SORT} -r | \
+		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
