@@ -25,7 +25,8 @@ LIB_DEPENDS=	ldap.1:${PORTSDIR}/net/openldap \
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ldap-lib=openldap \
 		--with-ldap-dir=${LOCALBASE} \
-		--with-ldap-conf-file=${PREFIX}/etc/ldap.conf
+		--with-ldap-conf-file=${PREFIX}/etc/ldap.conf \
+		--with-ldap-secret-file=${PREFIX}/etc/ldap.secret
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 USE_GMAKE=	yes
