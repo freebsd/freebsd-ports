@@ -1,5 +1,5 @@
---- suck.c.orig	Wed Mar  6 14:58:34 1996
-+++ suck.c	Sat Mar 30 01:10:57 1996
+--- suck.c.orig	Sat Mar 30 11:27:51 1996
++++ suck.c	Fri Apr  5 23:01:42 1996
 @@ -11,6 +11,10 @@
  #include "suck.h"
  #include "suckutils.h"
@@ -11,7 +11,7 @@
  #ifdef KILLFILE
  #include "killfile.h"
  #endif
-@@ -501,7 +505,9 @@
+@@ -511,7 +515,9 @@
  			}
  #endif				
  		}
@@ -22,7 +22,7 @@
  	}
  #ifdef KILLFILE
  	free_killfile(killp);
-@@ -768,7 +774,11 @@
+@@ -783,7 +789,11 @@
  					}
  					if(retval == RETVAL_OK) {
  						/* first put #! rnews size */
@@ -35,7 +35,7 @@
  						/* use fread/fwrite in case lines are longer than MAXLINLEN */
  						while((i = fread(buf, 1, MAXLINLEN, fpin)) > 0) {
 --- suckutils.c.orig	Wed Mar  6 14:48:18 1996
-+++ suckutils.c	Sat Mar 30 01:12:01 1996
++++ suckutils.c	Fri Apr  5 23:01:42 1996
 @@ -13,6 +13,10 @@
  #include "both.h"
  #include "suckutils.h"
@@ -98,7 +98,7 @@
  		}
  		else {
 --- both.c.orig	Wed Mar  6 14:48:28 1996
-+++ both.c	Sat Mar 30 01:18:19 1996
++++ both.c	Fri Apr  5 23:01:42 1996
 @@ -12,6 +12,10 @@
  #include "config.h"
  #include "both.h"
