@@ -7,7 +7,7 @@
 
 PORTNAME=	openoffice
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	editors
 MASTER_SITES+=	http://sf1.mirror.openoffice.org/${PORTVERSION}/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/ \
