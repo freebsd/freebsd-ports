@@ -3,7 +3,7 @@
 # Date created:		10 October 1998
 # Whom:			shige
 #
-# $Id: Makefile,v 1.2 1999/01/21 07:56:05 asami Exp $
+# $Id: Makefile,v 1.3 1999/03/01 09:38:03 shige Exp $
 #
 
 DISTNAME=	dl-wnn-0.2.2
@@ -23,7 +23,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-wnn-includes=${PREFIX}/include/wnn --with-wnn6 \
 		--with-emacs-src=${WRKDIRPREFIX}${EMACSDL_DIR}/work/emacs-${EMACS_VER}
 CONFIGURE_ENV=	EMACS=emacs-dl-${EMACS_VER}
-PLIST_SUB=	EMACS_VER=${EMACS_VER} DOCDIR=${DOCDIR}
+PLIST_SUB=	EMACS_VER=${EMACS_VER} EMACS_ARCH=${MACHINE_ARCH}--freebsd \
+		DOCDIR=${DOCDIR}
 
 DOCDIR=		share/doc/emacs20-dl-wnn6
 EMACS_VER=	20.3
