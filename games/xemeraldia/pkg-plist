@@ -1,0 +1,8 @@
+@cd ${X11BASE}
+@owner games
+@mode 755
+bin/xemeraldia
+@exec touch -f %D/lib/X11/.xemeraldia.scores
+@exec chmod 666 %D/lib/X11/.xemeraldia.scores
+@exec chown games %D/lib/X11/.xemeraldia.scores
+@unexec rm -f %D/lib/X11/.xemeraldia.scores
