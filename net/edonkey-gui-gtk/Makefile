@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	edonkey
-PORTVERSION=	0.2.0.a.2002061600
+PORTVERSION=	0.2.0.a.2002070400
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	lioux
@@ -16,6 +16,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	lioux@FreeBSD.org
 
+LIB_DEPENDS=	gnet.1:${PORTSDIR}/net/gnet
 RUN_DEPENDS=	donkey:${PORTSDIR}/net/edonkey-core
 
 ONLY_FOR_ARCHS=	i386
@@ -25,17 +26,19 @@ USE_X_PREFIX=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
+DOC_VERSION=	0.2.0.a.2002061600
+
 BINARY_NAME=	ed2k_gui
 DOC_FILES=	faq.html faq_german.html
 
 .ifndef(NOPORTDOCS)
-DISTFILES+=	ed2k_gui-${PORTVERSION}.doc.tar.gz
+DISTFILES+=	ed2k_gui-${DOC_VERSION}.doc.tar.gz
 .endif
 
 post-extract:
 .ifndef(NOPORTDOCS)
 	@cd ${WRKSRC} && ${TAR} xzf \
-		${DISTDIR}/ed2k_gui-${PORTVERSION}.doc.tar.gz
+		${DISTDIR}/ed2k_gui-${DOC_VERSION}.doc.tar.gz
 .endif
 	@${GZCAT} ${DISTDIR}/ed2k_gui-${PORTVERSION}.freebsd-stable-i386.gz \
 		> ${WRKSRC}/${BINARY_NAME}
