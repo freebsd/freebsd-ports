@@ -7,7 +7,7 @@
 
 PORTNAME=	Server
 PORTVERSION=	4.2.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
@@ -30,7 +30,8 @@ USE_IMAKE=		YES
 DIST_SUBDIR=		xc
 WRKSRC=			${WRKDIR}/xc
 PATCHDIR=		${.CURDIR}/../../x11/XFree86-4-libraries/files
-.for pf in patch-text-mode.c patch-xf86Configure.c patch-xf86config.c patch-mga_driver.c
+.for pf in patch-text-mode.c patch-xf86Configure.c patch-xf86config.c \
+	patch-mga_driver.c patch-common_x86.c patch-alp_xaam.c
 EXTRA_PATCHES+=		${.CURDIR}/files/${pf}
 .endfor
 SCRIPTS_ENV=		OSVERSION=${OSVERSION} \
