@@ -1,11 +1,11 @@
---- ./Makefile.in.org	Fri Jun  3 21:58:09 1994
-+++ ./Makefile.in	Wed Oct 18 22:06:28 1995
-@@ -28,7 +28,7 @@
- # Directory to install `oleo' in.
- bindir = $(exec_prefix)/bin
+--- Makefile.in.orig	Sat Jul 10 16:46:45 1999
++++ Makefile.in	Sat Sep 18 04:16:54 1999
+@@ -123,7 +123,7 @@
+ EXTRA_DIST = oleobug.in FAQ oleo.spec.in oleo.spec 		ftp.gnudist ftp.alpha ftp.dist
  
--CFLAGS = -g -D_XOPEN_SOURCE
-+CFLAGS += -D_XOPEN_SOURCE
- BISONFLAGS =
- optional_libs = @LIBS@ @wlibs@
- extra_objs =@LIBOBJS@ @ALLOCA@
+ 
+-docdir = $(prefix)/Oleo
++docdir = $(datadir)/doc/Oleo
+ doc_DATA = AUTHORS FAQ
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
