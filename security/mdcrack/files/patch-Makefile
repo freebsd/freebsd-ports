@@ -1,33 +1,30 @@
---- Makefile.orig	Mon Apr  9 10:12:24 2001
-+++ Makefile	Fri Apr 20 01:04:09 2001
-@@ -9,7 +9,6 @@
- # Security, Inc. MD5 Message-Digest Algorithm
- #
+--- Makefile.orig	Mon Jul 16 12:07:16 2001
++++ Makefile	Mon Jul 16 12:10:33 2001
+@@ -10,7 +10,6 @@
+ 
+ 
  
 -CC = gcc
  
  # Please set RESUME_FILE and choose a secure place for the resume file 
  # before using mdcrack as root.
-@@ -45,12 +44,10 @@
+@@ -47,7 +46,7 @@
  BLOCK=-DBLOCKSIZE=50
  
+ #full optimization
+-CFLAGS =  -O3 -fforce-addr -funroll-loops -fomit-frame-pointer -ffast-math 
++CFLAGS +=  -fforce-addr -funroll-loops -fomit-frame-pointer -ffast-math 
  
--CFLAGS = -O3 -fforce-addr -funroll-loops 
  
- # static linkage will suppress a little overhead due to obj search/mountage.
- # useless for big sessions.
  
--LDFLAGS = -static
- 
- mdcrack: md5c.o mdcrack.o stats.o errors.o
- 	$(CC) $(LDFLAGS) -o mdcrack md5c.o mdcrack.o stats.o errors.o
-@@ -80,7 +77,7 @@
- 	rm -f *.o mdcrack 
- 
- install:
--	@echo -e "\nInstalling mdcrack in /usr/sbin/mdcrack\n"
--	cp ./mdcrack /usr/sbin/mdcrack
-+	@echo -e "\nInstalling mdcrack in ${PREFIX}/bin/mdcrack\n"
-+	cp ./mdcrack ${PREFIX}/bin/mdcrack
- 	@echo -e "\nok.\n"
- 
+@@ -284,8 +283,8 @@
+ install: 
+ 	@make default
+ 	@echo
+-	@echo  "Installing mdcrack in /usr/sbin/mdcrack"
+-	cp bin/mdcrack /usr/sbin/mdcrack
++	@echo  "Installing mdcrack in ${PREFIX}/bin/mdcrack"
++	cp bin/mdcrack ${PREFIX}/bin/mdcrack
+ 	@echo
+ 	@echo "ok."
+ 	@echo
