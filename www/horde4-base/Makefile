@@ -46,8 +46,15 @@ PHPLIBDIR=	${PREFIX}/${LPHPLIBDIR}
 HORDESBIN=	${PREFIX}/${LHORDESBIN}
 
 APACHE_CNFDIR?=	${LOCALBASE}/etc/apache
+PHP_DIR?=	${LOCALBASE}/etc
 APACHE_CONF=	${APACHE_CNFDIR}/httpd.conf
 MIMETYPES=	${APACHE_CNFDIR}/mime.types
+
+.if defined(WITH_PHP3)
+PHP_INI=	${PHP_DIR}/php3.ini
+.else
+PHP_INI=	${PHP_DIR}/php.ini
+.endif
 
 pre-everything::
 .if !defined(WITHOUT_SSL)
@@ -124,6 +131,15 @@ do-install:
 		${GREP} -qw 'phplib' ${APACHE_CONF} || ${CAT} ${WRKDIR}/httpd.conf.phplib >> ${APACHE_CONF} ; \
 	    fi) ; \
 	fi)
+	@if [ ! -f ${PHP_INI} ]; then \
+		${ECHO_MSG} "===> Creating ${PHP_INI} for PHP" ; \
+		${CP} ${PHP_INI}-dist ${PHP_INI} ; \
+	fi
+	@if ! ${GREP} -q -e '^upload_tmp_dir' ${PHP_INI} ; then \
+		${ECHO_MSG} "===> Configuring ${PHP_INI} for imp" ; \
+		${CP} -p ${PHP_INI} ${PHP_INI}.beforeHorde1 ; \
+		${PERL} -pi -e 's!;upload_tmp_dir =!upload_tmp_dir = /tmp!' ${PHP_INI} ; \
+	fi
 	${CHOWN} -R www:www ${HORDEDIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
