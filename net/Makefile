@@ -154,7 +154,6 @@
     SUBDIR += fugu
     SUBDIR += gabber
     SUBDIR += gaim
-    SUBDIR += gaim-snapshot
     SUBDIR += gale
     SUBDIR += gatekeeper
     SUBDIR += generic-nqs
