@@ -1,5 +1,5 @@
---- x11/Subdir.mk.orig	Wed Oct 30 21:15:02 2002
-+++ x11/Subdir.mk	Wed Oct 30 21:15:26 2002
+--- x11/Subdir.mk.orig	Tue Jan  7 16:17:05 2003
++++ x11/Subdir.mk	Sat Jan 18 00:46:26 2003
 @@ -110,8 +110,8 @@
  x11/pia          : LDFLAGS := $(DLFLAGS)
  
@@ -13,13 +13,13 @@
  # i18n
 @@ -122,12 +122,12 @@
  # local targets
- x11/complete-xaw.o:: x11/complete.c
+ x11/complete-xaw.o: x11/complete.c
  	@$(echo_compile_c)
 -	@$(compile_c)
 +	@$(compile_c) -DATHENA=1
  	@$(fixup_deps)
  
- x11/complete-motif.o:: x11/complete.c
+ x11/complete-motif.o: x11/complete.c
  	@$(echo_compile_c)
 -	@$(compile_c)
 +	@$(compile_c) -DMOTIF=1

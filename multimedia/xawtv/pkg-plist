@@ -15,6 +15,7 @@ bin/webcam
 bin/xawtv
 bin/xawtv-remote
 lib/xawtv/bilinear.so
+lib/xawtv/conv-audio.so
 lib/xawtv/conv-mjpeg.so
 lib/xawtv/cubic.so
 lib/xawtv/drv0-bsd.so
