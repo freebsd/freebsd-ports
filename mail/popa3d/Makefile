@@ -12,25 +12,59 @@ MASTER_SITES=	http://www.openwall.com/popa3d/ \
 		ftp://ftp.openwall.com/popa3d/ \
 		ftp://ftp.dataforce.net/pub/solar/ \
 		ftp://ftp.false.com/pub/security/popa3d/
+.if defined(SMTP_AFTER_POP3)
+PKGNAMESUFFIX?=	-before-sendmail
+.endif
+
+.if defined(SMTP_AFTER_POP3)
+PATCH_SITES= 	http://www.openwall.com/popa3d/contrib/
+PATCHFILES= 	popa3d-0.4-before-sendmail.tar.gz
+PATCH_DIST_STRIP=	-p1
+.endif
 
 MAINTAINER=	gonza@techline.ru
 
 ALL_TARGET=	popa3d
 
-do-install:
-	${INSTALL} ${COPY} -o root -g wheel -m 500 \
-	    ${WRKSRC}/popa3d ${PREFIX}/libexec/popa3d
+.if defined(SMTP_AFTER_POP3)
+PATCHDIR=	${MASTERDIR}/files.smtp
+PLIST=		${WRKDIR}/.PLIST.more
 
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/popa3d
-	${INSTALL_MAN} ${WRKSRC}/DESIGN ${PREFIX}/share/doc/popa3d
-	${INSTALL_MAN} ${WRKSRC}/COPYING ${PREFIX}/share/doc/popa3d
+pre-configure:
+	@${ECHO} "%%PORTDOCS%%share/doc/popa3d/POPAUTH" >${PLIST}
+	@${CAT} ${PKGDIR}/pkg-plist >>${PLIST}
+	@${ECHO} "share/sendmail/cf/hack/popauth.m4" >>${PLIST}
+
+post-patch:
+	@${PERL5} -pi -e "s=LOG_MAIL=LOG_DAEMON=" ${WRKSRC}/params.h
+	@${PERL5} -pi -e "s=db1/db.h=db.h=" ${WRKSRC}/pop_root.c
 .endif
 
 pre-install:
 	@ ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
+do-install:
+	${INSTALL} ${COPY} -o root -g wheel -m 500 \
+	    ${WRKSRC}/popa3d ${PREFIX}/libexec/popa3d
+.if defined(SMTP_AFTER_POP3)
+	${INSTALL_DATA} ${PATCHDIR}/popauth.m4 ${CFDIR}/hack
+.endif
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/popa3d
+	${INSTALL_MAN} ${WRKSRC}/DESIGN ${PREFIX}/share/doc/popa3d
+	${INSTALL_MAN} ${WRKSRC}/COPYING ${PREFIX}/share/doc/popa3d
+.if defined(SMTP_AFTER_POP3)
+	${INSTALL_DATA} ${PATCHDIR}/POPAUTH ${PREFIX}/share/doc/popa3d
+.endif
+.endif
+
 post-install:
 	@ ${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
+
+.if exists(${DESTDIR}/${LOCALBASE}/share/sendmail/cf/mailer/uucp.m4)
+CFDIR=		${DESTDIR}${LOCALBASE}/share/sendmail/cf
+.else
+CFDIR=		${DESTDIR}/usr/share/sendmail/cf
+.endif
