@@ -1,0 +1,7 @@
+bin/gschem
+share/gEDA/system-gschemrc
+share/gEDA/scheme/gschem.scm
+share/gEDA/scheme/list-keys.scm
+share/gEDA/scheme/auto-uref.scm
+share/gEDA/scheme/print-NB-attribs.scm
+share/gEDA/scheme/generate_netlist.scm
