@@ -1,0 +1,13 @@
+--- ../doc/install.texinfo	Fri Feb  6 21:40:56 1998
++++ install.texinfo	Fri Jun 19 15:13:45 1998
+@@ -5,6 +5,10 @@
+ @c guide
+ @setfilename krb5-install.info
+ @settitle Kerberos V5 Installation Guide
++@dircategory Kerberos V5
++@direntry
++* Installation Guide: (krb5-install).    Kerberos V5 Installation Guide
++@end direntry
+ @setchapternewpage odd                  @c chapter begins on next odd page
+ @c @setchapternewpage on                   @c chapter begins on next page
+ @c @smallbook                              @c Format for 7" X 9.25" paper

@@ -1,0 +1,13 @@
+--- ../doc/admin.texinfo	Fri Feb  6 21:40:56 1998
++++ admin.texinfo	Fri Jun 19 15:13:45 1998
+@@ -5,6 +5,10 @@
+ @c guide
+ @setfilename krb5-admin.info
+ @settitle Kerberos V5 System Administrator's Guide
++@dircategory Kerberos V5
++@direntry
++* Admin Guide: (krb5-admin).            Kerberos V5 System Admin's Guide
++@end direntry
+ @setchapternewpage odd                  @c chapter begins on next odd page
+ @c @setchapternewpage on                   @c chapter begins on next page
+ @c @smallbook                              @c Format for 7" X 9.25" paper
