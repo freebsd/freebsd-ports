@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_DNSBL
-PORTVERSION=	0.5.4
+PORTVERSION=	1.0.0
 CATEGORIES=	net pear
 
 MAINTAINER=	antonio@php.net
@@ -27,7 +27,7 @@ TESTS=		testNetDNSBL.php testNetDNSBLSURBL.php
 
 PHP_VERS=	${PHP_VERSION:S/.//g}
 
-.if defined(PHP_VERS) && ${PHP_VERS} < 420
+.if defined(PHP_VERS) && ${PHP_VERS} < 436
 IGNORE=		"You need PHP 4.3.6 or later to install PEAR::Net_DNSBL"
 .endif
 
