@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mozilla
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 PORTEPOCH=	1
 CATEGORIES=	japanese www
 MASTER_SITES=	http://www33.ocn.ne.jp/~snip/mozilla/jlp/
