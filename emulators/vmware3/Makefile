@@ -93,6 +93,10 @@ post-patch:
 	${PERL} -i -pe 's,i386(/linux/linux_ioctl\.h),compat$$1,' \
 		${WRKSRC}/vmnet-only/freebsd/vmnet_linux.c
 .endif
+.if exists(/usr/include/sys/selinfo.h)
+	${PERL} -i -pe 's,<sys/select\.h>,<sys/selinfo.h>,' \
+		${WRKSRC}/vmmon-only/freebsd/*.c
+.endif
 
 setoptions:
 	${SED} 	-e 's;@@PREFIX@@;${PREFIX};' \
