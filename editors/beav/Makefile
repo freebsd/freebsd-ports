@@ -3,16 +3,14 @@
 # Date created:		01 July 1995
 # Whom:			thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id: Makefile,v 1.2 1995/11/26 10:47:20 asami Exp $
+# $Id: Makefile,v 1.3 1996/02/23 10:55:09 adam Exp $
 #
 
-DISTNAME=	beav-140-4
-PKGNAME=	beav-1.40.4
+DISTNAME=	beav-140-6
+PKGNAME=	beav-1.40.6
 CATEGORIES+=	editors
-MASTER_SITES=	ftp://ftp.debian.org/debian/debian-0.93/source/editors/ \\
-		ftp://ftp.uni-heidelberg.de/pub/linux/mirror.tsx11/distributions/debian/debian-0.93/source/editors/ \\
-		ftp://extro.ucc.su.oz.au/linux/debian/debian-0.93/source/editors/ \\
-		ftp://theta.iis.u-tokyo.ac.jp/pub2/Linux/distributions/debian/debian-0.93/source/editors/
+MASTER_SITES=	ftp://ftp.debian.org/debian/buzz/source/editors/ \\
+		ftp://theta.iis.u-tokyo.ac.jp/pub2/Linux/distributions/debian/buzz/source/editors/
 
 MAINTAINER=	thomas@ghpc8.ihf.rwth-aachen.de
 
