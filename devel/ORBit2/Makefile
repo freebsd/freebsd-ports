@@ -24,7 +24,6 @@ RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GLIB=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --disable-indent
