@@ -1,0 +1,17 @@
+# $FreeBSD$
+#
+
+#WITH_CYRUS_IMAPD_VER=	none, 22, 21, 20
+# Use the Cyrus IMAP and Sieve perl modules.
+# The Cyrus perl modules do not support SSL, but better
+# authentication mechanisms than cleartext PLAIN.
+
+
+## AUTOMATICALLY GENERATED FILE - DO NOT CHANGE ANYTHING BELOW THIS LINE ##
+# use `make config' to edit the local configuration
+# use `make makeconfig' to edit the defaults (MAINTAINER only)
+
+_OPTIONSNG_READ?=default
+.ifndef WITH_CYRUS_IMAPD_VER
+WITHOUT_CYRUS_IMAPD_VER?=yes
+.endif
