@@ -1,0 +1,65 @@
+--- configure.orig	Sun Jan 26 20:31:23 2003
++++ configure	Sun Jan 26 20:34:46 2003
+@@ -2706,13 +2706,13 @@
+   CFLAGS=$ac_save_CFLAGS
+ elif test $ac_cv_prog_cc_g = yes; then
+   if test "$GCC" = yes; then
+-    CFLAGS="-g -O2"
++#    CFLAGS="-g -O2"
+   else
+     CFLAGS="-g"
+   fi
+ else
+   if test "$GCC" = yes; then
+-    CFLAGS="-O2"
++    CFLAGS="$CFLAGS"
+   else
+     CFLAGS=
+   fi
+@@ -3116,10 +3116,10 @@
+       if test $kde_use_debug_code = "full"; then
+         CFLAGS="-g3 $CFLAGS"
+       else
+-        CFLAGS="-g -O2 $CFLAGS"
++        CFLAGS="-g $CFLAGS"
+       fi
+     else
+-      CFLAGS="-O2 $CFLAGS"
++      CFLAGS="$CFLAGS"
+     fi
+   fi
+ 
+@@ -3355,13 +3355,13 @@
+   CXXFLAGS=$ac_save_CXXFLAGS
+ elif test $ac_cv_prog_cxx_g = yes; then
+   if test "$GXX" = yes; then
+-    CXXFLAGS="-g -O2"
++#    CXXFLAGS="-g -O2"
+   else
+     CXXFLAGS="-g"
+   fi
+ else
+   if test "$GXX" = yes; then
+-    CXXFLAGS="-O2"
++    CXXFLAGS="$CXXFLAGS"
+   else
+     CXXFLAGS=
+   fi
+@@ -3541,7 +3541,7 @@
+         if test "$kde_use_debug_code" = "full"; then
+           CXXFLAGS="-g3 $CXXFLAGS"
+         else
+-          CXXFLAGS="-g -O2 $CXXFLAGS"
++          CXXFLAGS="-g $CXXFLAGS"
+         fi
+       fi
+ 
+@@ -3710,7 +3710,7 @@
+       if test "$CXX" = "KCC"; then
+         CXXFLAGS="+K3 $CXXFLAGS"
+       else
+-        CXXFLAGS="-O2 $CXXFLAGS"
++        CXXFLAGS="$CXXFLAGS"
+       fi
+     fi
+   fi
