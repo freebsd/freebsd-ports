@@ -11,8 +11,10 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.libspf.org/files/
 DISTNAME=	${PORTNAME}.${PORTVERSION}eta
 
-MAINTAINER=	daniel@roe.ch
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sender Policy Framework (SPF) library and client
+
+NOT_FOR_ARCHS=	amd64 alpha
 
 USE_GETOPT_LONG=yes
 USE_BZIP2=	yes
@@ -51,12 +53,6 @@ SPF_DEBUG_FILE=	/dev/null
 
 SPF_CFLAGS+=	-DDEBUG_LOG_FILE=\\\"${SPF_DEBUG_FILE}\\\" \
 		-DOUTPUT_LOG_FILE=\\\"${SPF_LOG_FILE}\\\"
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not compile on amd64"
-.endif
 
 # This is all a bit messy, but given the inconvenient original Makefile,
 # this seems to be the best way to make this port work in this version.
@@ -104,4 +100,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/spfquery-${PORTNAME} ${PREFIX}/bin
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
