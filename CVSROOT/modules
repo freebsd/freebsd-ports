@@ -6251,6 +6251,7 @@ p5-XML-NamespaceSupport	ports/textproc/p5-XML-NamespaceSupport
 p5-XML-Node	ports/textproc/p5-XML-Node
 p5-XML-NodeFilter	ports/textproc/p5-XML-NodeFilter
 p5-XML-Parser	ports/textproc/p5-XML-Parser
+p5-XML-Parser-EasyTree	ports/textproc/p5-XML-Parser-EasyTree
 p5-XML-Quote	ports/textproc/p5-XML-Quote
 p5-XML-RSS	ports/textproc/p5-XML-RSS
 p5-XML-RSS-Parser	ports/textproc/p5-XML-RSS-Parser
