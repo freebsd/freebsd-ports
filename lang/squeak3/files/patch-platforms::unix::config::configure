@@ -1,0 +1,17 @@
+--- platforms/unix/config/configure.orig	Tue Jul  1 18:53:26 2003
++++ platforms/unix/config/configure	Tue Jul  1 19:03:44 2003
+@@ -9852,7 +9852,12 @@
+   cat >conftest.$ac_ext <<_ACEOF
+ #line 9853 "configure"
+ #include "confdefs.h"
+-main(){ double d= 1.0; return *(int *)&d == 0;}
++int main(void)
++{
++	union { double d; int i[ sizeof(double) / sizeof(int) ]; } d;
++	d.d = 1.0;
++	return d.i[0] == 0;
++}
+ _ACEOF
+ rm -f conftest$ac_exeext
+ if { (eval echo "$as_me:9858: \"$ac_link\"") >&5
+

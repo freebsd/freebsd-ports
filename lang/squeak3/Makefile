@@ -7,6 +7,7 @@
 
 PORTNAME=	squeak
 PORTVERSION=	3.5
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://st.cs.uiuc.edu/Smalltalk/Squeak/3.5/ \
 		http://www-sor.inria.fr/~piumarta/squeak/unix/release/ \
@@ -21,7 +22,6 @@ COMMENT=	Full Smalltalk 80 with portability to UNIX, Mac, and Windows
 
 # Don't set USE_ZIP as this breaks EXTRACT_CMD, EXTRACT_SUFX, and what not.
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
-LIB_DEPENDS+=	audio.2:${PORTSDIR}/audio/nas
 
 SQUEAK_VERSION=	3.4-1
 SQUEAK_IMAGE_VERSION=	3.5
@@ -37,16 +37,26 @@ USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	${PREFIX}/share/squeak/${SQUEAK_VERSION}
 CONFIGURE_WRKSRC=	${WRKSRC}/build
 INSTALL_WRKSRC=	${CONFIGURE_WRKSRC}
 CONFIGURE_SCRIPT=	../platforms/unix/config/configure
-CONFIGURE_ARGS+=	--libdir=${PREFIX}/share --with-audio
+CONFIGURE_ARGS+=	--libdir=${PREFIX}/share
 # don't pass "-s" to install to avoid trying to strip a shell script
 CONFIGURE_ENV=	INSTALL_PROGRAM="${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}"
 BUILD_WRKSRC=	${WRKSRC}/build
 DIST_SUBDIR=	squeak
+
+.ifdef (WITHOUT_AUDIO)
+CONFIGURE_ARGS+=	--without-audio
+.else
+LIB_DEPENDS+=		audio.2:${PORTSDIR}/audio/nas
+CONFIGURE_ARGS+=	--with-audio=nas
+.endif
+
+.ifdef (WITH_MMX)
+CONFIGURE_ARGS+=	--enable-mpg-mmx
+.endif
 
 MAKEFILE=	Makefile
 .ifdef (CC)
@@ -75,7 +85,11 @@ post-install:
 	(cd ${PREFIX}/share/squeak && ${GZIP_CMD} ${file})
 .endfor
 # install inisqueak and change the build in version number on the fly
-	${SED} -e 's|VERSION=3.4-5170|VERSION=3.5-5180|' ${WRKSRC}/build/inisqueak > ${PREFIX}/bin/inisqueak
+	${SED} \
+		-e 's|VERSION=3.4-5170|VERSION=3.5-5180|' \
+		-e 's|IMAGE=squeak|IMAGE=Squeak3.5-5180|' \
+		-e 's|CHANGES=squeak|CHANGES=Squeak3.5-5180|' \
+		${WRKSRC}/build/inisqueak > ${PREFIX}/bin/inisqueak
 	${CHMOD} 755 ${PREFIX}/bin/inisqueak
 	${STRIP_CMD} ${PREFIX}/share/squeak/${SQUEAK_VERSION}/squeak
 	${CAT} ${PKGMESSAGE}
