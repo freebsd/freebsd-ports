@@ -7,19 +7,19 @@
 #
 
 PORTNAME=	splitvt
-PORTVERSION=	1.6.3
+PORTVERSION=	1.6.5
 CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	utils/console
+MASTER_SITES=	http://www.devolution.com/~slouken/projects/splitvt/
 
 MAINTAINER=	obrien@FreeBSD.org
 
-FORBIDDEN=	"Doesn't change permissions on pty, leaving it mode 666. Making it setuid isn't a solution because there's a buffer overflow."
-
 HAS_CONFIGURE=		yes
-CONFIGURE_SCRIPT=	Configure
 ALL_TARGET=
 MAN1=			splitvt.1
+
+post-patch:
+	@(cd ${WRKSRC} && ${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
+		config.c > foo && ${MV} foo config.c)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/splitvt ${PREFIX}/bin

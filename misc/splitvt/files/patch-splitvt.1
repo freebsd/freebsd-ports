@@ -1,0 +1,13 @@
+--- splitvt.1.orig	Sun Jan 14 11:36:23 2001
++++ splitvt.1	Sun Jan 14 11:39:03 2001
+@@ -173,8 +173,8 @@
+ splitvt will attempt to erase the current utmp entry, and replace it
+ with entries for the two windows.  This allows you to use programs
+ such as 'talk' within the splitvt windows.  If you do not have write
+-permission to the /etc/utmp file, you will not be able to modify the
+-utmp entries.
++permission to the /var/run/utmp file, you will not be able to modify
++the utmp entries.
+ 
+ splitvt can be made set-uid root.  splitvt will reset its user id to
+ that of the person running it, just before it exec()'s the shell under
