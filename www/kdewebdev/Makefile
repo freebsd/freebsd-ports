@@ -10,13 +10,12 @@
 
 PORTNAME=	quanta
 PORTVERSION= 	3.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2	# dammit! I hate this kludge.
 CATEGORIES=	www kde
 
-MASTER_SITES=		${MASTER_SITE_LOCAL} \
-			http://people.freebsd.org/~alane	# temp only
-MASTER_SITE_SUBDIR=	alane/quanta
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DIST_SUBDIR=		${PORTNAME}
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -40,8 +39,9 @@ USE_GMAKE=	yes
 
 DOCS=		css html javascript php
 
+KDOCSDIR=	share/doc/HTML/en
 QDOCSDIR=	share/apps/quanta/doc
-PLIST_SUB+=	QDOCSDIR=${QDOCSDIR} DOCSDIR=${DOCSDIR}
+PLIST_SUB+=	KDOCSDIR=${KDOCSDIR} QDOCSDIR=${QDOCSDIR}
 
 .include <bsd.port.pre.mk>
 
