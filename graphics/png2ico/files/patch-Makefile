@@ -1,15 +1,8 @@
---- Makefile.old	Mon Sep 23 16:45:44 2002
-+++ Makefile	Mon Sep 23 16:45:51 2002
-@@ -1,10 +1,10 @@
--CPPFLAGS=-W -Wall -O2
-+CPPFLAGS=-W -Wall -O2 -I/usr/local/include -L/usr/local/lib -lpng
+--- Makefile.orig	Sun Dec  8 14:50:10 2002
++++ Makefile	Sun Dec  8 14:50:17 2002
+@@ -1,4 +1,4 @@
+-CPPFLAGS=-W -Wall -O2 -finline-functions
++CPPFLAGS=-W -Wall -O2 -finline-functions -I/usr/local/include -L/usr/local/lib
+ #CPPFLAGS=-O0 -W -Wall
  DEBUG=-g
  
- all: png2ico
- 
- png2ico: png2ico.cpp
--	g++ $(CPPFLAGS) $(DEBUG) -o $@ $< -lpng
-+	g++ $(CPPFLAGS) $(DEBUG) -o $@ $< 
- 
- doc/png2ico.txt: doc/png2ico.1
- 	man $< |sed  -e $$'s/.\b\\(.\\)/\\1/g' -e 's/\(.*\)/\1'$$'\r/' >$@
