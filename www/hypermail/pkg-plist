@@ -1,0 +1,5 @@
+bin/hypermail
+man/man1/hypermail.1.gz
+share/doc/hypermail/hypermail.gif
+share/doc/hypermail/hypermail.html
+@dirrm share/doc/hypermail
