@@ -23,7 +23,7 @@ COMMENT=	A free SMB and CIFS client and server for UNIX
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 
 SAMBA_VERSION=		2.2.7a
-SAMBA_JA_VERSION=	1.0
+SAMBA_JA_VERSION=	1.1
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
