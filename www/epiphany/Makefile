@@ -40,7 +40,7 @@ HEADERS_SUFX=
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack libgnomeui
+USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui
 WANT_GNOME=	yes
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
