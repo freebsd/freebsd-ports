@@ -34,6 +34,10 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000 || ${ARCH} != "i386"
+BROKEN=		"Does not compile on 4.x or on !i386"
+.endif
+
 .if !defined(WITH_NOCLIENTS)
 .for command in ${CLIENTS}
 PLIST_FILES+=	bin/${command}
