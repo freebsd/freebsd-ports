@@ -3,8 +3,10 @@ etc/xfce4/menu.xml
 etc/xfce4/menu.xml.ca
 etc/xfce4/menu.xml.de
 etc/xfce4/menu.xml.fr
+etc/xfce4/menu.xml.hu
 etc/xfce4/menu.xml.nl
 etc/xfce4/menu.xml.zh_CN
+etc/xfce4/menu.xml.zh_TW
 lib/xfce4/mcs-plugins/backdrop_settings.a
 lib/xfce4/mcs-plugins/backdrop_settings.la
 lib/xfce4/mcs-plugins/backdrop_settings.so

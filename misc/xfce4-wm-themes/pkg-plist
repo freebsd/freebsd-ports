@@ -1864,6 +1864,9 @@ share/xfwm4/themes/redmond/left-inactive.xpm
 share/xfwm4/themes/redmond/maximize-active.xpm
 share/xfwm4/themes/redmond/maximize-inactive.xpm
 share/xfwm4/themes/redmond/maximize-pressed.xpm
+share/xfwm4/themes/redmond/maximize-toggled-active.xpm
+share/xfwm4/themes/redmond/maximize-toggled-inactive.xpm
+share/xfwm4/themes/redmond/maximize-toggled-pressed.xpm
 share/xfwm4/themes/redmond/menu-active.xpm
 share/xfwm4/themes/redmond/menu-inactive.xpm
 share/xfwm4/themes/redmond/menu-pressed.xpm
@@ -1908,6 +1911,9 @@ share/xfwm4/themes/redmondxp/left-inactive.xpm
 share/xfwm4/themes/redmondxp/maximize-active.xpm
 share/xfwm4/themes/redmondxp/maximize-inactive.xpm
 share/xfwm4/themes/redmondxp/maximize-pressed.xpm
+share/xfwm4/themes/redmondxp/maximize-toggled-active.xpm
+share/xfwm4/themes/redmondxp/maximize-toggled-inactive.xpm
+share/xfwm4/themes/redmondxp/maximize-toggled-pressed.xpm
 share/xfwm4/themes/redmondxp/menu-active.xpm
 share/xfwm4/themes/redmondxp/menu-inactive.xpm
 share/xfwm4/themes/redmondxp/menu-pressed.xpm
