@@ -7,6 +7,7 @@
 
 PORTNAME=	apache+ipv6
 PORTVERSION=	1.3.17
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.apache.org/dist/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/ \
