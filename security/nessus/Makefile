@@ -1,13 +1,13 @@
 # New ports collection makefile for: 	nessus
-# Version required:	alpha2-fix4
+# Version required:	0.99.2
 # Date created:		1 May 1999
 # Whom:			Anders Nordby <anders@fix.no>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	nessus-core-0.99.1
-PKGNAME=	nessus-0.99.1
+DISTNAME=	nessus-core-0.99.2
+PKGNAME=	nessus-0.99.2
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.cis.fed.gov/pub/nessus/nessus-${NESSUS_REV}/ \
 		ftp://ftp.nessus.org/pub/nessus/nessus-${NESSUS_REV}/ \
@@ -43,7 +43,7 @@ BROKEN=		"Can't be built successfully in -CURRENT"
 
 post-install:
 		@${ECHO} "=========================================================="
-		@${ECHO} "Be sure to erase your old ${PREFIX}/share/nessus!"
+		@${ECHO} "Be sure to erase your old ${PREFIX}/etc/nessus!"
 		@${ECHO} "The syntax of nessusd.users and nessusd.rules has changed!"
 		@${ECHO} "=========================================================="
 
