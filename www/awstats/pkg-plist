@@ -29,12 +29,18 @@
 %%PORTDOCS%%%%DOCSDIR%%/images/awstats_logo5.png
 %%PORTDOCS%%%%DOCSDIR%%/images/awstats_logo6.png
 %%PORTDOCS%%%%DOCSDIR%%/images/license_chart.png
+%%PORTDOCS%%%%DOCSDIR%%/images/screen_shot_1.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/screen_shot_1.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/screen_shot_1.png
 %%PORTDOCS%%%%DOCSDIR%%/images/screen_shot_2.png
-%%PORTDOCS%%%%DOCSDIR%%/images/screen_shot_3.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/screen_shot_3.png
 %%PORTDOCS%%%%DOCSDIR%%/images/screen_shot_4.png
+%%PORTDOCS%%%%DOCSDIR%%/images/screen_shot_5.png
+%%PORTDOCS%%%%DOCSDIR%%/images/screen_shot_large_1.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/screen_shot_large_2.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/screen_shot_large_3.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/screen_shot_large_4.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/screen_shot_large_5.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/star.png
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/pad_awstats.htm
@@ -81,8 +87,8 @@ www/awstats/cgi-bin/lang/awstats-se.txt
 www/awstats/cgi-bin/lang/awstats-si.txt
 www/awstats/cgi-bin/lang/awstats-sk.txt
 www/awstats/cgi-bin/lang/awstats-sr.txt
-www/awstats/cgi-bin/lang/awstats-tr.txt
 www/awstats/cgi-bin/lang/awstats-th.txt
+www/awstats/cgi-bin/lang/awstats-tr.txt
 www/awstats/cgi-bin/lang/awstats-tt-br.txt
 www/awstats/cgi-bin/lang/awstats-tw.txt
 www/awstats/cgi-bin/lang/awstats-ua.txt
@@ -575,7 +581,7 @@ www/awstats/tools/awstats_updateall.pl
 www/awstats/tools/logresolvemerge.pl
 www/awstats/tools/maillogconvert.pl
 www/awstats/tools/urlaliasbuilder.pl
-www/awstats/tools/webmin/awstats-1.4.wbm
+www/awstats/tools/webmin/awstats-1.5.wbm
 @dirrm www/awstats/tools/webmin
 @dirrm www/awstats/tools
 @dirrm www/awstats/js
@@ -598,5 +604,5 @@ www/awstats/tools/webmin/awstats-1.4.wbm
 @dirrm www/awstats/cgi-bin/lang
 @dirrm www/awstats/cgi-bin
 @dirrm www/awstats
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images  
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
