@@ -7,6 +7,7 @@
 
 PORTNAME=	Eficas
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	french cad python
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/eficas/
 DISTNAME=	${PORTNAME}V${PORTVERSION:C/\./_/}AsterSTA7
