@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
 
-MAINTAINER=	yds@CoolRat.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Helps to install application configuration files
 
 USE_BZIP2=	yes
