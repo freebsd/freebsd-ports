@@ -1,0 +1,18 @@
+bin/listchans
+bin/listnicks
+bin/services
+data/languages/de
+data/languages/en_us
+data/languages/it
+data/languages/nl
+data/languages/pt
+data/languages/pt_br
+data/languages/tr
+etc/create_tables.sql
+etc/domain.def
+etc/services.conf.sample
+share/nls/POSIX
+share/nls/en_US.US-ASCII
+@dirrm data/logs
+@dirrm data/languages
+@unexec rmdir %D/data 2>/dev/null || true

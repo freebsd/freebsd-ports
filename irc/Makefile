@@ -67,6 +67,7 @@
     SUBDIR += pisg
     SUBDIR += psybnc
     SUBDIR += ptlink-ircd
+    SUBDIR += ptlink-services
     SUBDIR += pure-emacs20
     SUBDIR += pure-emacs21
     SUBDIR += pure-xemacs21-mule
