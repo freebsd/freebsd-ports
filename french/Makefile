@@ -19,6 +19,7 @@
     SUBDIR += kde3-i18n
     SUBDIR += koffice-i18n
     SUBDIR += med
+    SUBDIR += mozilla-flp
     SUBDIR += netscape7
     SUBDIR += ooodict-fr_FR
     SUBDIR += openoffice-1.0
