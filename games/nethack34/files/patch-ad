@@ -1,5 +1,6 @@
---- sys/unix/Makefile.src.orig	Sat Aug 30 09:08:04 2003
-+++ sys/unix/Makefile.src	Mon Sep  1 23:12:45 2003
+diff -ruN sys.orig/unix/Makefile.src sys/unix/Makefile.src
+--- sys.orig/unix/Makefile.src	Sun Dec  7 15:39:13 2003
++++ sys/unix/Makefile.src	Wed Jun 30 08:27:32 2004
 @@ -146,19 +146,29 @@
  # directories.  The ones given below is the usual spot for linux systems.
  # The paths are for glibconfig.h and gnomesupport.h respectively.
@@ -61,7 +62,12 @@
  
  # on some systems the termcap library is in -ltermcap or -lcurses
  # on 386 Xenix, the -ltermlib tputs() seems not to work; use -lcurses instead
-@@ -235,19 +264,19 @@
+@@ -231,23 +260,23 @@
+ # WINTTYLIB = -lcurses
+ # WINTTYLIB = -lcurses16
+ # WINTTYLIB = -lncurses
+-WINTTYLIB = -ltermlib
++WINTTYLIB = -ltermlib ${LIBTTY}
  #
  # libraries for X11
  # If USE_XPM is defined in config.h, you will also need -lXpm here.
