@@ -4,11 +4,12 @@ bin/columns
 bin/getdefs
 bin/xml2ag
 include/options.h
+include/usage-txt.h
 lib/libguileopts.so
 lib/libguileopts.so.0
 lib/libopts.a
 lib/libopts.so
-lib/libopts.so.20
+lib/libopts.so.22
 share/aclocal/autoopts.m4
 share/autogen/aginfo.tpl
 share/autogen/aginfo3.tpl
@@ -20,7 +21,8 @@ share/autogen/conftest.tpl
 share/autogen/fsm-macro.tpl
 share/autogen/fsm-trans.tpl
 share/autogen/fsm.tpl
-share/autogen/libopts-20.0.11.tar.gz
+share/autogen/getopt.tpl
+share/autogen/libopts-22.0.13.tar.gz
 share/autogen/optcode.tpl
 share/autogen/opthead.tpl
 share/autogen/options.tpl
