@@ -22,10 +22,7 @@ LIB_DEPENDS+=	Xpm.4:${PORTSDIR}/graphics/xpm
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-
-.if defined(USE_I18N)
 CONFIGURE_ARGS+=	--enable-i18n
-.endif
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/bsd-daemon.xpm ${PREFIX}/share/icewm/taskbar
