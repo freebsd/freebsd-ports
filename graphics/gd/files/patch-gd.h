@@ -11,16 +11,6 @@
  BGD_DECLARE(gdImagePtr) gdImageCreateFromGd (FILE * in);
  BGD_DECLARE(gdImagePtr) gdImageCreateFromGdCtx (gdIOCtxPtr in);
  BGD_DECLARE(gdImagePtr) gdImageCreateFromGdPtr (int size, void *data);
-@@ -407,6 +411,9 @@
-   gdPoint, *gdPointPtr;
- 
- BGD_DECLARE(void) gdImagePolygon (gdImagePtr im, gdPointPtr p, int n, int c);
-+#ifdef __FreeBSD__
-+BGD_DECLARE(void) gdImageOpenPolygon (gdImagePtr im, gdPointPtr p, int n, int c);
-+#endif
- BGD_DECLARE(void) gdImageFilledPolygon (gdImagePtr im, gdPointPtr p, int n, int c);
- 
- /* These functions still work with truecolor images, 
 @@ -517,6 +524,16 @@
  /* Best to free this memory with gdFree(), not free() */
  BGD_DECLARE(void *) gdImageJpegPtr (gdImagePtr im, int *size, int quality);
