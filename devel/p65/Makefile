@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	p65
-PORTVERSION=	1.0a
+PORTVERSION=	1.1
 CATEGORIES=	devel
 MASTER_SITES=	http://hkn.berkeley.edu/~mcmartin/P65/pl/
 EXTRACT_SUFX=	# empty
