@@ -83,6 +83,12 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=		NLS:="@comment "
 .endif
 
+.if !defined(WITHOUT_REMEMBER)
+CONFIGURE_ARGS+=	--enable-remember
+.else
+CONFIGURE_ARGS+=	--disable-remember
+.endif
+
 .if !defined(WITHOUT_SLIT)
 CONFIGURE_ARGS+=	--enable-slit
 .else
@@ -93,6 +99,12 @@ CONFIGURE_ARGS+=	--disable-slit
 CONFIGURE_ARGS+=	--enable-toolbar
 .else
 CONFIGURE_ARGS+=	--disable-toolbar
+.endif
+
+.if !defined(WITHOUT_XRENDER)
+CONFIGURE_ARGS+=	--enable-xrender
+.else
+CONFIGURE_ARGS+=	--disable-xrender
 .endif
 
 .include <bsd.port.pre.mk>
@@ -131,11 +143,17 @@ pre-everything::
 .if !defined(WITHOUT_NLS)
 	@${ECHO_CMD} "WITHOUT_NLS=yes		Disable NLS support"
 .endif
+.if !defined(WITHOUT_REMEMBER)
+	@${ECHO_CMD} "WITHOUT_REMEMBER=yes	Disable remembering attributes support"
+.endif
 .if !defined(WITHOUT_SLIT)
 	@${ECHO_CMD} "WITHOUT_SLIT=yes	Disable slit"
 .endif
 .if !defined(WITHOUT_TOOLBAR)
 	@${ECHO_CMD} "WITHOUT_TOOLBAR=yes	Disable toolbar"
+.endif
+.if !defined(WITHOUT_XRENDER)
+	@${ECHO_CMD} "WITHOUT_XRENDER=yes	Disable Xrender (transparent) support"
 .endif
 
 post-patch:
