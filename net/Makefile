@@ -46,6 +46,7 @@
     SUBDIR += dnswalk
     SUBDIR += domtools
     SUBDIR += echoping
+    SUBDIR += elsa
     SUBDIR += etherboot
     SUBDIR += ethereal
     SUBDIR += fping
