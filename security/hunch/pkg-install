@@ -1,0 +1,229 @@
+#! /bin/sh
+
+#
+# Adapted from pkg-install in net/cvsup-mirror,
+# presumably by jdp@FreeBSD.org
+#
+
+user=hunch
+group=hunch
+
+interval=4
+
+ask() {
+    local question default answer
+
+    question=$1
+    default=$2
+    if [ -z "${PACKAGE_BUILDING}" ]; then
+	read -p "${question} [${default}]? " answer
+    fi
+    if [ x${answer} = x ]; then
+	answer=${default}
+    fi
+    echo ${answer}
+}
+
+yesno() {
+    local dflt question answer
+
+    question=$1
+    dflt=$2
+    while :; do
+	answer=$(ask "${question}" "${dflt}")
+	case "${answer}" in
+	[Yy]*)		return 0;;
+	[Nn]*)		return 1;;
+	esac
+	echo "Please answer yes or no."
+    done
+}
+
+make_account() {
+    local u g gcos homeopt home
+
+    u=$1
+    g=$2
+    gcos=$3
+    homeopt=${4:+"-d $4"}
+
+    if pw group show "${g}" >/dev/null 2>&1; then
+	echo "You already have a group \"${g}\", so I will use it."
+    else
+	echo "You need a group \"${g}\"."
+	if which -s pw && yesno "Would you like me to create it" y; then
+	    pw groupadd ${g} || exit
+	    echo "Done."
+	else
+	    echo "Please create it, and try again."
+	    if ! grep -q "^${u}:" /etc/passwd; then
+		echo "While you're at it, please create a user \"${u}\" too,"
+		echo "with a default group of \"${g}\"."
+	    fi
+	    exit 1
+	fi
+    fi
+    
+    if pw user show "${u}" >/dev/null 2>&1; then
+	echo "You already have a user \"${u}\", so I will use it."
+    else
+	echo "You need a user \"${u}\"."
+	if which -s pw && yesno "Would you like me to create it" y; then
+	    pw useradd ${u} -g ${g} -h - ${homeopt} \
+		-s /nonexistent -c "${gcos}" || exit
+	    echo "Done."
+	else
+	    echo "Please create it, and try again."
+	    exit 1
+	fi
+    fi
+
+    if [ x"$homeopt" = x ]; then
+	eval home=~${u}
+	if [ ! -d "${home}" ]; then
+	    if yesno \
+		"Would you like me to create ${u}'s home directory (${home})" y
+	    then
+		(umask 77 && \
+		    mkdir -p ${home}/) || exit
+		chown -R ${u}:${g} ${home} || exit
+	    else
+		echo "Please create it, and try again."
+		exit 1
+	    fi
+	fi
+    fi
+}
+
+case $2 in
+
+POST-INSTALL)
+    # . ${base}/config.sh || exit
+
+    if which -s pw && which -s lockf; then
+	:
+    else
+	cat <<EOF
+
+This system looks like a pre-2.2 version of FreeBSD.  I see that it
+is missing the "lockf" and/or "pw" utilities.  I need these utilities.
+Please get them and install them, and try again.  You can get the
+sources from:
+
+  ftp://ftp.freebsd.org/pub/FreeBSD/FreeBSD-current/src/usr.bin/lockf.tar.gz
+  ftp://ftp.freebsd.org/pub/FreeBSD/FreeBSD-current/src/usr.sbin/pw.tar.gz
+
+EOF
+	exit 1
+    fi
+
+    echo ""
+    make_account ${user} ${group} "Probe-griping user" "/nonexistent"
+ 
+    echo "Fixing ownerships and modes"
+    chown ${user}:${group} ${PREFIX}/etc/hunch-special
+    misc_files="/var/db/hunch-timestamp /var/log/hunch.log"
+    touch $misc_files
+    chown ${user}:${group} $misc_files
+    chmod 664 ${PREFIX}/etc/hunch-special $misc_files
+
+    echo ""
+    if grep -q "^[^#]*/var/log/hunch.log" /etc/newsyslog.conf; then
+	echo -n "It looks like you already have some logging set up, so I "
+	echo "will use it."
+    else
+	if yesno "Would you like me to set up log rotation" y; then
+	    echo "Adding hunch log entry to \"/etc/newsyslog.conf\"."
+	    cat <<EOF >>/etc/newsyslog.conf
+/var/log/hunch.log	hunch:hunch		644  3    100    *    Z
+EOF
+	    echo "Done."
+	else
+	    cat <<EOF
+OK, please remember to do it yourself.  You should add an entry to
+"/etc/newsyslog.conf".
+EOF
+	fi
+    fi
+
+    echo ""
+    if grep -q "^[^#]*${PREFIX}/bin/complain-httpd" /etc/crontab; then
+	echo "It looks like your crontab is already set up, so I'll use that."
+    else
+	if [ ${interval} -eq 1 ]; then
+	    updstr="hourly complaints"
+	else
+	    updstr="complaints every ${interval} hours"
+	fi
+	if yesno "Would you like me to set up your crontab for ${updstr}" y
+	then
+	    echo "Scheduling ${updstr} in \"/etc/crontab\"."
+	    delay=5
+	    now=$(date "+%s")
+	    start=$((${now} + ${delay}*60))
+	    hh=$(date -r ${start} "+%H")
+	    mm=$(date -r ${start} "+%M")
+	    h=$((${hh}))
+	    m=$((${mm}))
+	    if [ ${interval} -eq 1 ]; then
+		hstr="*"
+	    else
+		h0=$((${h} % ${interval}))
+		if [ ${interval} -eq 24 ]; then
+		    hstr=${h0}
+		else
+		    h1=$((${h0} + 24 - ${interval}))
+		    hstr=${h0}-${h1}/${interval}
+		fi
+	    fi
+	    cat <<EOF >>/etc/crontab
+${m}	${hstr}	*	*	*	${user} ${PREFIX}/bin/complain-httpd /var/log/httpd-access.log >> /var/log/hunch.log 2>&1
+EOF
+	    cat <<EOF
+Done.
+EOF
+	else
+	    cat <<EOF
+OK, please remember to do it yourself.  The crontab entry should run
+"${PREFIX}/bin/complain-httpd /var/log/htppd-access.log" as user ${user}
+EOF
+	fi
+    fi
+
+    echo ""
+	if yesno "Would you like me to set up the sender's address as it appears on outgoing complaints" y; then
+        host=`hostname`
+        sender=$(ask "Enter sender's email address" "root@$host" )
+        tmp="${PREFIX}/bin/#complain-httpd$$"
+        trap "rm -f ${tmp}" 0 1 2 3 15
+        sed "s/sender = ''/sender = '$sender'/" ${PREFIX}/bin/complain-httpd >${tmp} || exit
+        chmod 755 ${tmp}
+        mv ${tmp} ${PREFIX}/bin/complain-httpd || exit
+	    echo "Done."
+	else
+	    cat <<EOF
+OK, please remember to do it yourself.  You should modify the "my \$sender=''"
+line in "${PREFIX}/bin/complain-httpd".
+EOF
+    fi
+
+    echo ""
+    echo "I can enable hunch right now, or leave it in parse-only mode"
+    echo "which will scan the logs and determine the contacts, but"
+    echo "will not actually send any mail."
+	if yesno "Would you like me enable hunch in mail-sending mode" y; then
+        nomail=0
+    else
+        nomail=1
+    fi
+    tmp="${PREFIX}/bin/#complain-httpd$$"
+    trap "rm -f ${tmp}" 0 1 2 3 15
+    sed "s/no_mailing = .*;/no_mailing = $nomail;/" ${PREFIX}/bin/complain-httpd >${tmp} || exit
+    chmod 755 ${tmp}
+    mv ${tmp} ${PREFIX}/bin/complain-httpd || exit
+	echo "OK."
+
+    echo ""
+    echo "You are now hunch-enabled"
+    ;;
+esac

@@ -101,6 +101,7 @@
     SUBDIR += hlfl
     SUBDIR += hostsentry
     SUBDIR += hping
+    SUBDIR += hunch
     SUBDIR += hydra
     SUBDIR += ident2
     SUBDIR += identify
