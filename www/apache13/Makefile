@@ -28,8 +28,21 @@ CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.*
 USE_PERL5=      yes
 USE_RC_SUBR=	yes
 
+.if defined(APACHE_DATADIR)
+DATADIR=${APACHE_DATADIR}
+.else
 DATADIR=${PREFIX}/www
+.endif
+.if defined(APACHE_DOCUMENT_ROOT)
+DOCUMENT_ROOT=${APACHE_DOCUMENT_ROOT}
+.else
 DOCUMENT_ROOT=${DATADIR}/data
+.endif
+.if defined(APACHE_CGIBIN_ROOT)
+CGIBIN_ROOT=${APACHE_CGIBIN_ROOT}
+.else
+CGIBIN_ROOT=${DATADIR}/cgi-bin
+.endif
 DEFAULT_PATH=/bin:/usr/bin:${PREFIX}/bin
 RC_SCRIPTS_SUB=PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
@@ -85,6 +98,9 @@ CONFIGURE_ARGS+=	\
 		--server-gid=www \
 		--with-perl=${PERL} \
 		--with-layout=FreeBSD \
+		--datadir=${DATADIR} \
+		--htdocsdir=${DOCUMENT_ROOT} \
+		--cgidir=${CGIBIN_ROOT} \
 		--without-confadjust \
 		--enable-module=most \
 		--enable-module=auth_db \
@@ -137,8 +153,8 @@ pre-install:
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/apache.sh ${PREFIX}/etc/rc.d/apache.sh
-	@${TOUCH} ${PREFIX}/www/data-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
-	@${TOUCH} ${PREFIX}/www/cgi-bin-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
+	@${TOUCH} ${DOCUMENT_ROOT}-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
+	@${TOUCH} ${CGIBIN_ROOT}-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
