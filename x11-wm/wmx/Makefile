@@ -3,13 +3,15 @@
 # Date created:		11. Jan 1998
 # Whom:			Stefan Zehl <sec@42.org>
 #
-# $Id: Makefile,v 1.4 1998/09/15 11:13:37 asami Exp $
+# $Id: Makefile,v 1.5 1998/09/17 00:32:59 asami Exp $
 #
 
 DISTNAME=	wmx-4
 PKGNAME=        wmx-4.0
 CATEGORIES=	x11-wm
-MASTER_SITES=   http://www.netcomuk.co.uk/~cannam/
+MASTER_SITES=	http://www.all-day-breakfast.com/wmx/ \
+		ftp://ftp.tu-clausthal.de/pub/unix.new/x11-wm/ \
+		ftp://ftp.maths.tcd.ie/src/eoin-tmp/window_managers/
 
 MAINTAINER=	sec@42.org
 
