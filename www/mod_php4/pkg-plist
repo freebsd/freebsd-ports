@@ -323,8 +323,8 @@ share/apache/icons/world2.gif
 share/doc/apache/ABOUT_APACHE
 share/doc/apache/LICENSE
 share/doc/apache/README
-share/doc/php3/CODING_STANDARDS
-share/doc/php3/LICENSE
+share/doc/php/CODING_STANDARDS
+share/doc/php/LICENSE
 @dirrm etc/apache
 @dirrm include/apache
 @dirrm libexec/apache
@@ -340,4 +340,4 @@ share/doc/php3/LICENSE
 @dirrm share/apache/icons
 @dirrm share/apache
 @dirrm share/doc/apache
-@dirrm share/doc/php3
+@dirrm share/doc/php

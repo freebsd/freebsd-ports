@@ -1,5 +1,5 @@
-Apache 1.3 + PHP3
-=================
+Apache 1.3 + PHP
+================
 
 Apache is an HTTP server designed as a plug-in replacement for the
 NCSA server version 1.3 (or 1.4). It fixes numerous bugs in the
@@ -7,7 +7,7 @@ NCSA server and includes many frequently requested new features,
 and has an API which allows it to be extended to meet users' needs
 more easily.
 
-This version has PHP3 compiled in. PHP3 is a server-side, cross-platform,
+This version has PHP compiled in. PHP is a server-side, cross-platform,
 HTML embedded scripting language which offers easy database integration.
 SSL support (mod_ssl + OpenSSL) is available as an option.
 
@@ -15,6 +15,6 @@ Documentation
 =============
 
 Apache:		http://www.apache.org/
-PHP3:		http://www.php.net/
+PHP:		http://www.php.net/
 mod_ssl:	http://www.modssl.org/
 OpenSSL:	http://www.openssl.org/
