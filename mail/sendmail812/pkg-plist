@@ -1,16 +1,27 @@
-@comment $FreeBSD: /tmp/pcvs/ports/mail/sendmail812/Attic/pkg-plist,v 1.4 2001-10-03 12:45:31 dinoex Exp $
+@comment $FreeBSD: /tmp/pcvs/ports/mail/sendmail812/Attic/pkg-plist,v 1.5 2001-10-07 06:40:39 dinoex Exp $
+@exec if ! pw groupshow smmsp 2>/dev/null; then pw groupadd smmsp -g 501; fi
+@exec if ! pw usershow smmsp 2>/dev/null; then pw useradd smmsp -g smmsp -u 501 -h - -d /nonexistent -s /nonexistent -c "Sendmail Queue"; fi
+@exec mkdir -p /var/spool/clientmqueue
+@exec chown smmsp:smmsp /var/spool/clientmqueue
+@exec chmod 770 /var/spool/clientmqueue
+@unexec pw userdel smmsp
+@comment (removed by userdel) pw groupdel smmsp
 bin/hoststat
 bin/mailq
 bin/newaliases
 bin/purgestat
 bin/rmail
 bin/vacation
+etc/rc.d/sm-client.sh.sample
 libexec/mail.local
 libexec/smrsh
+sbin/editmap
 sbin/mailstats
 sbin/makemap
 sbin/praliases
 sbin/sendmail
+@exec chown root:smmsp sbin/sendmail
+@exec chmod 2555 sbin/sendmail
 %%PORTDOCS%%share/doc/sendmail/DEVTOOLS
 %%PORTDOCS%%share/doc/sendmail/SENDMAIL
 %%PORTDOCS%%share/doc/sendmail/MAIL.LOCAL

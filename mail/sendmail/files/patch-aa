@@ -1,14 +1,14 @@
-diff -ur cf/m4/cfhead.m4 src/contrib/sendmail/cf/m4/cfhead.m4
---- cf/m4/cfhead.m4	Thu Aug 24 19:09:50 2000
-+++ src/contrib/sendmail/cf/m4/cfhead.m4	Mon Nov  6 11:23:40 2000
-@@ -214,7 +215,8 @@
+diff -ur cf/m4/cfhead.m4.orig cf/m4/cfhead.m4
+--- cf/m4/cfhead.m4.orig	Sun Jun 10 03:45:13 2001
++++ cf/m4/cfhead.m4	Fri Jun 15 06:47:34 2001
+@@ -260,7 +261,8 @@
  define(`_REC_FULL_AUTH_', `$.$?{auth_type}(authenticated as ${auth_authen} $?{auth_author}for ${auth_author} $.with ${auth_type}')
  define(`_REC_HDR_', `$?sfrom $s $.$?_($?s$|from $.$_)')
  define(`_REC_END_', `for $u; $|;
 -	$.$b')
-+	$.$b$?g
++	$.$b?g
 +	(envelope-from $g)$.')
- define(`_REC_TLS_', `(using ${tls_version} with cipher ${cipher} (${cipher_bits} bits) verified ${verify})$.$?u')
+ define(`_REC_TLS_', `(version=${tls_version} cipher=${cipher} bits=${cipher_bits} verify=${verify})$.$?u')
  define(`_REC_BY_', `$.by $j ($v/$Z)$?r with $r$. id $i$?{tls_version}')
  define(`confRECEIVED_HEADER', `_REC_HDR_
 diff -ur cf/ostype/bsd4.4.m4 src/contrib/sendmail/cf/ostype/bsd4.4.m4
@@ -29,23 +29,38 @@ diff -ur cf/sh/makeinfo.sh src/contrib/sendmail/cf/sh/makeinfo.sh
  	host=`uname -n`
  fi
 -echo '#####' built by $user@$host on `date`
-+echo '#####' built by $user@$host on `LC_ALL=C LC_TIME=C date`
++echo '#####' built by $user@$host on `LC_TIME=C date`
  echo '#####' in `pwd` | sed 's/\/tmp_mnt//'
  echo '#####' using $1 as configuration include directory | sed 's/\/tmp_mnt//'
  echo "define(\`__HOST__', $host)dnl"
-diff -ur mail.local/mail.local.8 src/contrib/sendmail/mail.local/mail.local.8
---- mail.local/mail.local.8.orig	Fri Dec 29 19:12:16 2000
-+++ mail.local/mail.local.8	Sun Dec 31 10:27:40 2000
-@@ -16,7 +16,7 @@
+diff -ur include/sendmail/pathnames.h.orig include/sendmail/pathnames.h
+--- include/sendmail/pathnames.h.orig	Fri Mar 23 23:09:44 2001
++++ include/sendmail/pathnames.h	Mon May  7 08:32:45 2001
+@@ -41,7 +41,7 @@
+ #  endif /* ! _PATH_MAILDIR */
+ 
+ #  ifndef _PATH_LOCTMP
+-#   define _PATH_LOCTMP		"/tmp/local.XXXXXX"
++#   define _PATH_LOCTMP		"/var/tmp/local.XXXXXX"
+ #  endif /* ! _PATH_LOCTMP */
+ 
+ #  ifndef _PATH_HOSTS
+diff -ur mail.local/mail.local.8.orig mail.local/mail.local.8
+--- mail.local/mail.local.8.orig	Fri Apr  6 01:27:35 2001
++++ mail.local/mail.local.8	Thu May 31 07:36:03 2001
+@@ -16,9 +16,9 @@
  \- store mail in a mailbox
  .SH SYNOPSIS
  .B mail.local
--.RB [ \-7 "] [" \-b "] [" \-d "] [" \-l "] [" \-f
-+.RB [ \-7 "] [" \-B "] [" \-b "] [" \-d "] [" \-l "] [" \-s "] [" \-f
- .IR from "] "
- .RB [ \-r 
- .IR from "] " "user ..."
-@@ -34,6 +36,11 @@
+-.RB [ \-7 "] [" \-b "] [" \-d "] [" \-D
++.RB [ \-7 "] [" \-b "] [" \-B "] [" \-d "] [" \-D
+ .IR mbdb ]
+-.RB [ \-l "] [" \-f 
++.RB [ \-l "] [" \-s "] [" \-f 
+ \fIfrom\fR|\fB\-r\fR
+ .IR from ]
+ .RB [ \-h
+@@ -38,6 +41,11 @@
  .B \-7
  Do not advertise 8BITMIME support in LMTP mode.
  .TP 
@@ -57,7 +72,7 @@ diff -ur mail.local/mail.local.8 src/contrib/sendmail/mail.local/mail.local.8
  .B \-b
  Return a permanent error instead of a temporary error
  if a mailbox exceeds quota.
-@@ -46,6 +53,13 @@
+@@ -56,6 +64,13 @@
  .TP
  .B \-l
  Turn on LMTP mode.
@@ -71,7 +86,16 @@ diff -ur mail.local/mail.local.8 src/contrib/sendmail/mail.local/mail.local.8
  .TP 
  .BI \-r " from"
  Specify the sender's name (for backward compatibility).
-@@ -93,7 +107,6 @@
+@@ -97,7 +112,7 @@
+ .SH FILES
+ .PD 0.2v
+ .TP 2.2i
+-/tmp/local.XXXXXX
++/var/tmp/local.XXXXXX
+ temporary files
+ .TP
+ /var/mail/user
+@@ -108,7 +123,6 @@
  .PD
  .SH SEE ALSO
  mail(1), 
@@ -79,127 +103,92 @@ diff -ur mail.local/mail.local.8 src/contrib/sendmail/mail.local/mail.local.8
  flock(2), 
  getservbyname(3), 
  comsat(8), 
-diff -ur mail.local/mail.local.c src/contrib/sendmail/mail.local/mail.local.c
---- mail.local/mail.local.c	Sun Feb 11 21:08:20 2001
-+++ src/contrib/sendmail/mail.local/mail.local.c	Mon Mar  5 21:48:22 2001
-@@ -154,7 +156,7 @@
- 
- # if defined(BSD4_4) || defined(__GLIBC__)
- #   include <paths.h>
--#  define _PATH_LOCTMP	"/tmp/local.XXXXXX"
-+#  define _PATH_LOCTMP	"/var/tmp/local.XXXXXX"
- # endif /* defined(BSD4_4) || defined(__GLIBC__) */
- 
- # ifdef BSD4_4
-@@ -215,7 +217,7 @@
- # endif /* USE_SETRESUID */
- 
- # ifndef _PATH_LOCTMP
--#  define _PATH_LOCTMP	"/tmp/local.XXXXXX"
-+#  define _PATH_LOCTMP	"/var/tmp/local.XXXXXX"
- # endif /* ! _PATH_LOCTMP */
- #  ifndef _PATH_MAILDIR
- #   define _PATH_MAILDIR	"/var/spool/mail"
-@@ -252,6 +254,8 @@
- bool	HoldErrs = FALSE;		/* Hold errors in ErrBuf */
- bool	LMTPMode = FALSE;
- bool	BounceQuota = FALSE;		/* permanent error when over quota */
-+bool	nobiff = FALSE;
-+bool	nofsync = FALSE;
+diff -ur mail.local/mail.local.c.orig mail.local/mail.local.c
+--- mail.local/mail.local.c.orig	Thu May 10 02:58:31 2001
++++ mail.local/mail.local.c	Thu May 31 07:39:04 2001
+@@ -130,6 +132,8 @@
+ bool	HoldErrs = false;		/* Hold errors in ErrBuf */
+ bool	LMTPMode = false;
+ bool	BounceQuota = false;		/* permanent error when over quota */
++bool	NoBiff = false;
++bool	NoFsync = false;
+ char	*HomeMailFile = NULL;		/* store mail in homedir */
  
  void	deliver __P((int, char *));
- int	e_to_sys __P((int));
-@@ -291,7 +295,7 @@
+@@ -172,7 +176,7 @@
  # endif /* LOG_MAIL */
  
  	from = NULL;
--	while ((ch = getopt(argc, argv, "7bdf:r:l")) != -1)
-+	while ((ch = getopt(argc, argv, "7Bbdf:r:ls")) != -1)
+-	while ((ch = getopt(argc, argv, "7bdD:f:h:r:l")) != -1)
++	while ((ch = getopt(argc, argv, "7bBdD:f:h:r:ls")) != -1)
  	{
  		switch(ch)
  		{
-@@ -299,6 +303,10 @@
- 			EightBitMime = FALSE;
+@@ -180,6 +184,10 @@
+ 			EightBitMime = false;
  			break;
  
 +		  case 'B':
-+			nobiff = TRUE;
++			NoBiff = true;
 +			break;
 +
  		  case 'b':		/* bounce mail when over quota. */
- 			BounceQuota = TRUE;
+ 			BounceQuota = true;
  			break;
-@@ -320,6 +328,10 @@
- 			LMTPMode = TRUE;
+@@ -215,6 +223,10 @@
+ 			LMTPMode = true;
  			break;
  
 +		  case 's':
-+			nofsync++;
++			NoFsync = true;
 +			break;
 +
  		  case '?':
  		  default:
  			usage();
-@@ -329,7 +341,8 @@
+@@ -224,7 +236,8 @@
  	argv += optind;
  
  	/* initialize biff structures */
 -	notifybiff(NULL);
-+	if (!nobiff)
++	if (!NoBiff)
 +		notifybiff(NULL);
  
- 	if (LMTPMode)
- 	{
-@@ -1135,14 +1148,17 @@
- 		goto err1;
- 	}
+ 	err = sm_mbdb_initialize(mbdbname);
+ 	if (err != EX_OK)
+@@ -1128,6 +1141,7 @@
  
--	/* Get the starting offset of the new message for biff. */
--	curoff = lseek(mbfd, (off_t) 0, SEEK_END);
--	if (sizeof curoff > sizeof(long))
--		(void) snprintf(biffmsg, sizeof(biffmsg), "%s@%s\n",
--				name, quad_to_string(curoff));
--	else
--		(void) snprintf(biffmsg, sizeof(biffmsg), "%s@%ld\n",
--				name, (long) curoff);
-+	if (!nobiff)
-+	{
-+		/* Get the starting offset of the new message for biff. */
-+		curoff = lseek(mbfd, (off_t) 0, SEEK_END);
-+		if (sizeof curoff > sizeof(long))
-+			(void) snprintf(biffmsg, sizeof(biffmsg), "%s@%s\n",
-+					name, quad_to_string(curoff));
-+		else
-+			(void) snprintf(biffmsg, sizeof(biffmsg), "%s@%ld\n",
-+					name, (long) curoff);
-+	}
+ 	/* Get the starting offset of the new message for biff. */
+ 	curoff = lseek(mbfd, (off_t) 0, SEEK_END);
++	if (!NoBiff)
+ 	(void) sm_snprintf(biffmsg, sizeof(biffmsg), "%s@%lld\n",
+ 			   name, (LONGLONG_T) curoff);
  
- 	/* Copy the message into the file. */
- 	if (lseek(fd, (off_t) 0, SEEK_SET) == (off_t) -1)
-@@ -1203,7 +1219,7 @@
+@@ -1190,7 +1204,7 @@
  	}
  
  	/* Flush to disk, don't wait for update. */
 -	if (fsync(mbfd) < 0)
-+	if (!nofsync && fsync(mbfd) < 0)
++	if (!NoFsync && fsync(mbfd) < 0)
  	{
- 		mailerr("450 4.2.0", "%s: %s", path, errstring(errno));
+ 		mailerr("450 4.2.0", "%s: %s", path, sm_errstring(errno));
  err3:
-@@ -1229,7 +1245,7 @@
- 		mailerr(errcode, "%s: %s", path, errstring(errno));
+@@ -1216,7 +1230,7 @@
+ 		mailerr(errcode, "%s: %s", path, sm_errstring(errno));
  		(void) truncate(path, curoff);
  	}
 -	else
-+	else if (!nobiff)
++	else if (!NoBiff)
  		notifybiff(biffmsg);
  
  	if (setreuid(0, 0) < 0)
-@@ -1408,7 +1424,7 @@
+@@ -1395,7 +1409,8 @@
  usage()
  {
  	ExitVal = EX_USAGE;
--	mailerr(NULL, "usage: mail.local [-7] [-b] [-l] [-f from] user ...");
-+	mailerr(NULL, "usage: mail.local [-7] [-B] [-b] [-l] [-f from] [-s] user ...");
+-	mailerr(NULL, "usage: mail.local [-7] [-b] [-d] [-l] [-f from|-r from] [-h filename] user ...");
++	mailerr(NULL, "usage: mail.local [-7] [-b] [-B] [-d] [-l] [-s] [-f from|-r from] [-h filename] user ...");
++
  	exit(ExitVal);
  }
  
@@ -218,9 +207,9 @@ diff -ur rmail/rmail.c src/contrib/sendmail/rmail/rmail.c
  	args[i++] = "-oi";		/* Ignore '.' on a line by itself. */
  
  	/* set from system and protocol used */
-diff -ur smrsh/smrsh.8 src/contrib/sendmail/smrsh/smrsh.8
---- smrsh/smrsh.8.orig	Sat Dec 16 00:18:40 2000
-+++ smrsh/smrsh.8	Sun Dec 31 10:37:02 2000
+diff -ur smrsh/smrsh.8.orig smrsh/smrsh.8
+--- smrsh/smrsh.8.orig	Wed Jan 24 01:40:47 2001
++++ smrsh/smrsh.8	Mon May  7 08:32:45 2001
 @@ -39,7 +41,7 @@
  .I smrsh
  limits programs to be in a single directory,
@@ -246,18 +235,3 @@ diff -ur smrsh/smrsh.8 src/contrib/sendmail/smrsh/smrsh.8
  .PP
  System administrators should be conservative about populating
  the sm.bin directory.
-@@ -78,11 +79,11 @@
- Compilation should be trivial on most systems.
- You may need to use \-DPATH=\e"\fIpath\fP\e"
- to adjust the default search path
--(defaults to ``/bin:/usr/bin:/usr/ucb'')
-+(defaults to ``/bin:/usr/bin'')
- and/or \-DCMDBIN=\e"\fIdir\fP\e"
- to change the default program directory
--(defaults to ``/usr/adm/sm.bin'').
-+(defaults to ``/usr/libexec/sm.bin'').
- .SH FILES
--/usr/adm/sm.bin \- directory for restricted programs
-+/usr/libexec/sm.bin \- directory for restricted programs
- .SH SEE ALSO
- sendmail(8)
