@@ -1,0 +1,66 @@
+--- themes/Eterm/MAIN.in.orig	Sun Jun 13 00:26:37 1999
++++ themes/Eterm/MAIN.in	Sun Jun 13 00:28:40 1999
+@@ -94,7 +94,7 @@
+ # scale 100%, 0 to tile, any other number specifies W/H in pixels
+   begin pixmaps
+     background %random(`cat pixmaps.list 2>/dev/null`)
+-    path "./pix/:~/.Eterm/:~/.Eterm/themes/Eterm/pix:~/.Eterm/pix/:@DATADIR@/Eterm/pix/"
++    path "./pix/:~/.Eterm/:~/.Eterm/themes/Eterm/pix:~/.Eterm/pix/:@DATADIR@/Eterm/pix/:@DATADIR@/Eterm/bg/scale/:@DATADIR@/Eterm/bg/tile/"
+ 
+ # Support for these is forthcoming
+ #    scroll_up -1 -1 ~/.Eterm/up_arrow.ppm
+--- themes/emacs/MAIN.in.orig	Sun Jun 13 00:26:37 1999
++++ themes/emacs/MAIN.in	Sun Jun 13 00:29:06 1999
+@@ -94,7 +94,7 @@
+ # scale 100%, 0 to tile, any other number specifies W/H in pixels
+   begin pixmaps
+     background %random(`cat pixmaps.list 2>/dev/null`)
+-    path "./pix/:~/.Eterm/:~/.Eterm/themes/Eterm/pix:~/.Eterm/pix/:@DATADIR@/Eterm/pix/"
++    path "./pix/:~/.Eterm/:~/.Eterm/themes/Eterm/pix:~/.Eterm/pix/:@DATADIR@/Eterm/pix/:@DATADIR@/Eterm/bg/scale/:@DATADIR@/Eterm/bg/tile/"
+ 
+ # Support for these is forthcoming
+ #    scroll_up -1 -1 ~/.Eterm/up_arrow.ppm
+--- themes/irc/MAIN.in.orig	Sun Jun 13 00:26:37 1999
++++ themes/irc/MAIN.in	Sun Jun 13 00:29:24 1999
+@@ -94,7 +94,7 @@
+ # scale 100%, 0 to tile, any other number specifies W/H in pixels
+   begin pixmaps
+     background %random(`cat pixmaps.list 2>/dev/null`)
+-    path "./pix/:~/.Eterm/:~/.Eterm/themes/Eterm/pix:~/.Eterm/pix/:@DATADIR@/Eterm/pix/"
++    path "./pix/:~/.Eterm/:~/.Eterm/themes/Eterm/pix:~/.Eterm/pix/:@DATADIR@/Eterm/pix/:@DATADIR@/Eterm/bg/scale/:@DATADIR@/Eterm/bg/tile/"
+ 
+ # Support for these is forthcoming
+ #    scroll_up -1 -1 ~/.Eterm/up_arrow.ppm
+--- themes/mutt/MAIN.in.orig	Sun Jun 13 00:26:37 1999
++++ themes/mutt/MAIN.in	Sun Jun 13 00:30:14 1999
+@@ -94,7 +94,7 @@
+ # scale 100%, 0 to tile, any other number specifies W/H in pixels
+   begin pixmaps
+     background %random(`cat pixmaps.list 2>/dev/null`)
+-    path "~/.Eterm/:~/.Eterm/themes/Eterm/pix:~/.Eterm/pix/:@DATADIR@/Eterm/pix/"
++    path "./pix/:~/.Eterm/:~/.Eterm/themes/Eterm/pix:~/.Eterm/pix/:@DATADIR@/Eterm/pix/:@DATADIR@/Eterm/bg/scale/:@DATADIR@/Eterm/bg/tile/"
+ 
+ # Support for these is forthcoming
+ #    scroll_up -1 -1 ~/.Eterm/up_arrow.ppm
+--- themes/tn3270/MAIN.in.orig	Sun Jun 13 00:26:37 1999
++++ themes/tn3270/MAIN.in	Sun Jun 13 00:30:36 1999
+@@ -94,7 +94,7 @@
+ # scale 100%, 0 to tile, any other number specifies W/H in pixels
+   begin pixmaps
+     background %random(`cat pixmaps.list 2>/dev/null`)
+-    path "~/.Eterm/:~/.Eterm/themes/Eterm/pix:~/.Eterm/pix/:@DATADIR@/Eterm/pix/"
++    path "./pix/:~/.Eterm/:~/.Eterm/themes/Eterm/pix:~/.Eterm/pix/:@DATADIR@/Eterm/pix/:@DATADIR@/Eterm/bg/scale/:@DATADIR@/Eterm/bg/tile/"
+ 
+ # Support for these is forthcoming
+ #    scroll_up -1 -1 ~/.Eterm/up_arrow.ppm
+--- themes/trans/MAIN.in.orig	Sun Jun 13 00:26:37 1999
++++ themes/trans/MAIN.in	Sun Jun 13 00:33:48 1999
+@@ -96,7 +96,7 @@
+ # scale 100%, 0 to tile, any other number specifies W/H in pixels
+   begin pixmaps
+ #    background %random(`cat pixmaps.list 2>/dev/null`)
+-#    path "./pix/:~/.Eterm/:~/.Eterm/themes/Eterm/pix:~/.Eterm/pix/:@DATADIR@/Eterm/pix/"
++#    path "./pix/:~/.Eterm/:~/.Eterm/themes/Eterm/pix:~/.Eterm/pix/:@DATADIR@/Eterm/pix/:@DATADIR@/Eterm/bg/scale/:@DATADIR@/Eterm/bg/tile/"
+ 
+ # Support for these is forthcoming
+ #    scroll_up -1 -1 ~/.Eterm/up_arrow.ppm
