@@ -7,7 +7,7 @@
 
 PORTNAME=	gnupg
 PORTVERSION=	1.0.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.gnupg.org/pub/gcrypt/%SUBDIR%/ \
 		ftp://pgp.iijlab.net/pub/%SUBDIR%/ \
@@ -16,9 +16,10 @@ MASTER_SITE_SUBDIR=	gnupg
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
+
 #RESTRICTED=	"Crypto; export-controlled"
 GNU_CONFIGURE=	YES
-CONFIGURE_ARGS=	--with-included-gettext
 MAN1=		gpg.1 gpgv.1
 MLINKS=		gpg.1 gpgm.1
 
