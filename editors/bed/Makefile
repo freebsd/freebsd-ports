@@ -12,7 +12,7 @@ MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/editors/terminal
 EXTRACT_SUFX=		.src.tar.gz
 
-MAINTAINER=	jkaltes@hetnet.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Variable dataformat binary editor
 
 .if !defined(WITHOUT_X11)
