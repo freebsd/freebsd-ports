@@ -14,6 +14,8 @@ share/doc/wanderlust/wl.texi
 %%WL_LISPDIR%%/acap.elc
 %%WL_LISPDIR%%/bbdb-wl.el
 @unexec rm -f %D/%%WL_LISPDIR%%/bbdb-wl.elc
+%%WL_LISPDIR%%/elmo-access.el
+%%WL_LISPDIR%%/elmo-access.elc
 %%WL_LISPDIR%%/elmo-archive.el
 %%WL_LISPDIR%%/elmo-archive.elc
 %%WL_LISPDIR%%/elmo-cache.el
@@ -52,6 +54,8 @@ share/doc/wanderlust/wl.texi
 %%WL_LISPDIR%%/elmo-nmz.elc
 %%WL_LISPDIR%%/elmo-nntp.el
 %%WL_LISPDIR%%/elmo-nntp.elc
+%%WL_LISPDIR%%/elmo-null.el
+%%WL_LISPDIR%%/elmo-null.elc
 %%WL_LISPDIR%%/elmo-pipe.el
 %%WL_LISPDIR%%/elmo-pipe.elc
 %%WL_LISPDIR%%/elmo-pop3.el
@@ -60,6 +64,8 @@ share/doc/wanderlust/wl.texi
 %%WL_LISPDIR%%/elmo-sendlog.elc
 %%WL_LISPDIR%%/elmo-shimbun.el
 %%SHIMBUN%%%%WL_LISPDIR%%/elmo-shimbun.elc
+%%WL_LISPDIR%%/elmo-signal.el
+%%WL_LISPDIR%%/elmo-signal.elc
 %%WL_LISPDIR%%/elmo-spam.el
 %%WL_LISPDIR%%/elmo-spam.elc
 %%WL_LISPDIR%%/elmo-split.el

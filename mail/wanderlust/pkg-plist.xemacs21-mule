@@ -1,3 +1,4 @@
+%%EMACS_PACKAGESDIR%%/etc/wl/access.xpm
 %%EMACS_PACKAGESDIR%%/etc/wl/archive.xpm
 %%EMACS_PACKAGESDIR%%/etc/wl/closed.xpm
 %%EMACS_PACKAGESDIR%%/etc/wl/draft.xpm
@@ -84,6 +85,8 @@
 @unexec rm -f %D/%%EMACS_PACKAGESDIR%%/lisp/wl/bbdb-wl.elc
 %%EMACS_PACKAGESDIR%%/lisp/wl/custom-load.el
 %%EMACS_PACKAGESDIR%%/lisp/wl/custom-load.elc
+%%EMACS_PACKAGESDIR%%/lisp/wl/elmo-access.el
+%%EMACS_PACKAGESDIR%%/lisp/wl/elmo-access.elc
 %%EMACS_PACKAGESDIR%%/lisp/wl/elmo-archive.el
 %%EMACS_PACKAGESDIR%%/lisp/wl/elmo-archive.elc
 %%EMACS_PACKAGESDIR%%/lisp/wl/elmo-cache.el
@@ -124,6 +127,8 @@
 %%EMACS_PACKAGESDIR%%/lisp/wl/elmo-nmz.elc
 %%EMACS_PACKAGESDIR%%/lisp/wl/elmo-nntp.el
 %%EMACS_PACKAGESDIR%%/lisp/wl/elmo-nntp.elc
+%%EMACS_PACKAGESDIR%%/lisp/wl/elmo-null.el
+%%EMACS_PACKAGESDIR%%/lisp/wl/elmo-null.elc
 %%EMACS_PACKAGESDIR%%/lisp/wl/elmo-pipe.el
 %%EMACS_PACKAGESDIR%%/lisp/wl/elmo-pipe.elc
 %%EMACS_PACKAGESDIR%%/lisp/wl/elmo-pop3.el
@@ -132,6 +137,8 @@
 %%EMACS_PACKAGESDIR%%/lisp/wl/elmo-sendlog.elc
 %%EMACS_PACKAGESDIR%%/lisp/wl/elmo-shimbun.el
 %%SHIMBUN%%%%EMACS_PACKAGESDIR%%/lisp/wl/elmo-shimbun.elc
+%%EMACS_PACKAGESDIR%%/lisp/wl/elmo-signal.el
+%%EMACS_PACKAGESDIR%%/lisp/wl/elmo-signal.elc
 %%EMACS_PACKAGESDIR%%/lisp/wl/elmo-spam.el
 %%EMACS_PACKAGESDIR%%/lisp/wl/elmo-spam.elc
 %%EMACS_PACKAGESDIR%%/lisp/wl/elmo-split.el

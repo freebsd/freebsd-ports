@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wanderlust
-PORTVERSION=	2.12.2
+PORTVERSION=	2.14.0
 CATEGORIES=	mail elisp
 MASTER_SITES=	ftp://ftp.gohome.org/wl/stable/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,text/elisp/wl/stable/&,} \
@@ -64,7 +64,7 @@ DOCS_JA=	README.ja NEWS.ja doc/wl-ja.texi
 SAMPLESDIR=	share/examples/wanderlust
 SAMPLESLANG=	en ja
 SAMPLES=	dot.addresses dot.folders dot.wl
-UTILS=		bbdb-wl.el im-wl.el ssl.el
+UTILS=		bbdb-wl.el
 
 PLIST_SUB+=	EMACS_PACKAGESDIR=${EMACS_PACKAGESDIR} \
 		DIRSECTION=${DIRSECTION} \
