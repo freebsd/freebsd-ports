@@ -1,0 +1,5 @@
+A Python wrapping of the FreeType 1.2 rendering engine for TrueType fonts. 
+Most of this is a direct and nearly exhaustive translation of the FreeType
+API.  A few of the functions have been given more "Pythonic" wrappings for
+convenience.  There are also a couple of _de_novo_ convenience functions to
+access certain bits of data.

@@ -1,0 +1,7 @@
+lib/%%PYTHON_VERSION%%/site-packages/freetype.py
+lib/%%PYTHON_VERSION%%/site-packages/freetype.pyc
+lib/%%PYTHON_VERSION%%/site-packages/freetype.pyo
+lib/%%PYTHON_VERSION%%/site-packages/freetype_inc.py
+lib/%%PYTHON_VERSION%%/site-packages/freetype_inc.pyc
+lib/%%PYTHON_VERSION%%/site-packages/freetype_inc.pyo
+lib/%%PYTHON_VERSION%%/site-packages/freetypecmodule.so

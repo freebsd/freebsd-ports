@@ -1,0 +1,10 @@
+
+$FreeBSD$
+
+--- Setup.w32.orig	Thu Aug 19 23:41:30 1999
++++ Setup.w32	Sat Feb  3 01:49:45 2001
+@@ -1,2 +1,3 @@
+ #[MGW32]swig_options.extend(['-shadow', '-docstring'])
+-freetypec freetype_wrap.c -I../../lib -I../../lib/extend -L../../lib -lttf.dll
++*shared*
++freetypec freetype_wrap.c -I${LOCALBASE}/include/freetype -L${LOCALBASE}/lib -lttf
