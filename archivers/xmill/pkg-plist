@@ -2,9 +2,9 @@ bin/xmill
 bin/xdemill
 bin/xbmill
 bin/xbdemill
-%%PORTDOCS%%share/doc/xmill/COPYRIGHT.txt
-%%PORTDOCS%%share/doc/xmill/LICENSE.txt
-%%PORTDOCS%%share/doc/xmill/MANUAL.txt
-%%PORTDOCS%%share/doc/xmill/README.txt
-%%PORTDOCS%%share/doc/xmill/xmill.ps.gz
-%%PORTDOCS%%@dirrm share/doc/xmill
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
+%%PORTDOCS%%%%DOCSDIR%%/MANUAL.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/xmill.ps.gz
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

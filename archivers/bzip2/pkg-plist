@@ -13,16 +13,16 @@ include/bzlib.h
 lib/libbz2.a
 lib/libbz2.so
 lib/libbz2.so.1
-%%PORTDOCS%%share/doc/bzip2/manual.ps.bz2
-%%PORTDOCS%%share/doc/bzip2/manual.texi
-%%PORTDOCS%%share/doc/bzip2/manual_1.html
-%%PORTDOCS%%share/doc/bzip2/manual_2.html
-%%PORTDOCS%%share/doc/bzip2/manual_3.html
-%%PORTDOCS%%share/doc/bzip2/manual_4.html
-%%PORTDOCS%%share/doc/bzip2/manual_toc.html
-%%PORTDOCS%%share/doc/bzip2/manual.html
-%%PORTDOCS%%share/doc/bzip2/manual_abt.html
-%%PORTDOCS%%share/doc/bzip2/manual_ovr.html
-%%PORTDOCS%%share/doc/bzip2/manual.pdf
-%%PORTDOCS%%share/doc/bzip2/bzip2.txt
-%%PORTDOCS%%@dirrm share/doc/bzip2
+%%PORTDOCS%%%%DOCSDIR%%/manual.ps.bz2
+%%PORTDOCS%%%%DOCSDIR%%/manual.texi
+%%PORTDOCS%%%%DOCSDIR%%/manual_1.html
+%%PORTDOCS%%%%DOCSDIR%%/manual_2.html
+%%PORTDOCS%%%%DOCSDIR%%/manual_3.html
+%%PORTDOCS%%%%DOCSDIR%%/manual_4.html
+%%PORTDOCS%%%%DOCSDIR%%/manual_toc.html
+%%PORTDOCS%%%%DOCSDIR%%/manual.html
+%%PORTDOCS%%%%DOCSDIR%%/manual_abt.html
+%%PORTDOCS%%%%DOCSDIR%%/manual_ovr.html
+%%PORTDOCS%%%%DOCSDIR%%/manual.pdf
+%%PORTDOCS%%%%DOCSDIR%%/bzip2.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

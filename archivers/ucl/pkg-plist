@@ -5,7 +5,7 @@ include/ucl/uclutil.h
 lib/libucl.a
 lib/libucl.so
 lib/libucl.so.0
-%%PORTDOCS%%share/doc/ucl/COPYING
-%%PORTDOCS%%share/doc/ucl/README
-%%PORTDOCS%%@dirrm share/doc/ucl
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/ucl
