@@ -1,18 +1,18 @@
---- help-browser/gnome-info2html/utils.c.orig	Fri Jul 24 03:13:02 1998
-+++ help-browser/gnome-info2html/utils.c	Sat Sep 26 23:42:30 1998
-@@ -2,7 +2,7 @@
- 
+--- help-browser/gnome-info2html/utils.c.orig	Tue Dec 29 05:18:57 1998
++++ help-browser/gnome-info2html/utils.c	Tue Dec 29 05:19:04 1998
+@@ -3,7 +3,7 @@
  #include <stdio.h>
  #include <string.h>
+ #include <sys/types.h>
 -#include <regex.h>
 +#include <gnuregex.h>
  
  #include <glib.h>
  
---- help-browser/gnome-help-browser.c.orig	Fri Jul 24 03:13:01 1998
-+++ help-browser/gnome-help-browser.c	Sat Sep 26 23:42:30 1998
-@@ -65,13 +65,10 @@
- static int configCancel(GtkWidget *w, GtkWidget *window);
+--- help-browser/gnome-help-browser.c.orig	Tue Dec 29 05:19:41 1998
++++ help-browser/gnome-help-browser.c	Tue Dec 29 05:20:50 1998
+@@ -72,13 +72,10 @@
+ void destroy_server(HelpWindow win);
  
  /* MANPATH should probably come from somewhere */
 -#define DEFAULT_MANPATH "/usr/man:/usr/local/man:/usr/X11R6/man"
@@ -28,8 +28,8 @@
  #define DEFAULT_MEMCACHESIZE "1000000"
  #define DEFAULT_HISTORYLENGTH "1000"
  #define HELP_BROWSER_RC_DIR ".gnome-help-browser"
---- help-browser/toc.c.orig	Mon Aug 31 19:31:33 1998
-+++ help-browser/toc.c	Sat Sep 26 23:42:30 1998
+--- help-browser/toc.c.orig	Tue Dec 29 05:20:55 1998
++++ help-browser/toc.c	Tue Dec 29 05:21:48 1998
 @@ -19,14 +19,13 @@
  static int hideTocInt(GtkWidget *window);
  
@@ -46,7 +46,7 @@
 +    { "/usr/share/info",             TOC_INFO_TYPE  },
 +    { "/usr/local/info",             TOC_INFO_TYPE  },
 +    { "/usr/X11R6/info",             TOC_INFO_TYPE  },
-+    { "/usr/X11R6/share/gnome/help",       TOC_GHELP_TYPE },
++    { "/usr/X11R6/share/gnome/help",             TOC_GHELP_TYPE },
      { NULL, 0 }
  };
  
