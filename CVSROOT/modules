@@ -429,6 +429,7 @@ battstat-applet ports/sysutils/battstat-applet
 bayonne		ports/comms/bayonne
 bb		ports/net/bb
 bbbike		ports/german/BBBike
+bbconf		ports/x11-wm/bbconf
 bbdate		ports/x11-clocks/bbdate
 bbjd		ports/misc/bbjd
 bbkeys		ports/x11-wm/bbkeys
