@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		samba
-PORTVERSION=		3.0.8
+PORTVERSION=		3.0.9
 PORTREVISION?=		0
 PORTEPOCH?=		1
 CATEGORIES?=		net
@@ -17,7 +17,7 @@ DISTNAME=		${PORTNAME}-${PORTVERSION:S/.p/pre/:S/.r/rc/}
 MAINTAINER?=		timur@gnu.org
 COMMENT?=		A free SMB and CIFS client and server for UNIX
 
-CONFLICTS?=		ja-samba-2.* samba-2.* sharity-light-1.*
+CONFLICTS?=		ja-samba-2.* ja-samba-3.* samba-2.* sharity-light-1.*
 
 USE_ICONV=		yes
 USE_AUTOCONF_VER=	259
@@ -194,6 +194,14 @@ LIB_DEPENDS+=		popt.0:${PORTSDIR}/devel/popt
 .else
 CONFIGURE_ARGS+=	--with-included-popt
 .endif
+
+.if defined(WITH_MULTIBYTE)
+# Based on patch from miraclelinux.com.
+# http://www.miraclelinux.com/english/technet/samba30/index.html
+PLIST_SUB+=		MULTIBYTE=""
+.else
+PLIST_SUB+=		MULTIBYTE="@comment "
+.endif
 # !SAMBA_SUBPORT
 .endif
 
@@ -263,6 +271,15 @@ RC_SCRIPTS_SUB=		PREFIX=${PREFIX} \
 			SAMBA_LOCKDIR=${SAMBA_LOCKDIR} \
 			SAMBA_SPOOL=${SAMBA_SPOOL}
 
+pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "!!! Due to the bug in the deinstall procedure in port versions prior 3.0.9"
+	@${ECHO_MSG} "!!! you may loose your valuable ${SAMBA_LOCKDIR}/windbindd_* files."
+	@${ECHO_MSG} "!!! Please, BACKUP them before you continue the (re)installation."
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "***         Press ctrl-C *now* if you need this files         ***"
+	@sleep 5
+
 pre-fetch:
 	@${ECHO_MSG} "===>  -------------------------------------------"
 	@${ECHO_MSG} "===>  Run 'make config' to (re)configure the port"
@@ -314,7 +331,7 @@ post-install:
 	@${ECHO_CMD} "@exec ${CHMOD} 0755 ${SAMBA_LOCKDIR}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@exec ${CHOWN} root:wheel ${SAMBA_LOCKDIR}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${RM} -rf ${SAMBA_LOCKDIR}/printing" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec for f in \`${LS} ${SAMBA_LOCKDIR} | ${GREP} -v '^winbindd_'\`; do ${RM} -rf ${SAMBA_LOCKDIR}/${f}; done" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec for f in \`${LS} ${SAMBA_LOCKDIR} | ${GREP} -v '^winbindd_'\`; do ${RM} -f ${SAMBA_LOCKDIR}/\$${f}; done" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${RMDIR} ${SAMBA_LOCKDIR} 2>/dev/null || true" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${ECHO_CMD} \"Warning: If you will *NOT* use this package anymore, please remove ${SAMBA_LOCKDIR}/* manually.\"" >> ${TMPPLIST}
 # Private
