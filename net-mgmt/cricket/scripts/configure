@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# $FreeBSD$
+echo var set to ${PERL5} >/tmp/debug1
+
+FILES_PERLPATH="util/dump-targets util/generate-statics util/listInterfaces \
+	compile util/newsstats util/pmlines.pl util/rrd-dump util/rrd-tune \
+	util/test-url util/usrModemUsage collect-subtrees collector \
+	grapher.cgi mini-graph.cgi"
+FILES_PREFIX="sample-config/news-server/Defaults collect-subtrees collector \
+	compile grapher.cgi mini-graph.cgi util/dump-targets \
+	util/generate-statics util/listInterfaces util/rrd-dump \
+	util/rrd-tune util/usrModemUsage"
+
+for f in $FILES_PERLPATH ; do
+	mv ${WRKSRC}/${f} ${WRKSRC}/$f.bak && sed <${WRKSRC}/${f}.bak \
+		s+%%PATHPERLBIN%%+${PERL5}+g >${WRKSRC}/${f}
+done
+
+for f in $FILES_PREFIX ; do
+	mv ${WRKSRC}/${f} ${WRKSRC}/$f.bak && sed <${WRKSRC}/${f}.bak \
+		s+%%PREFIX%%+${PREFIX}+g >${WRKSRC}/${f}
+done

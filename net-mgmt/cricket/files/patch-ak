@@ -1,0 +1,31 @@
+*** collect-subtrees.orig	Mon Jan 24 03:24:13 2000
+--- collect-subtrees	Sun Feb 13 20:42:15 2000
+***************
+*** 1,4 ****
+! #!/usr/local/bin/perl -w
+  # -*- perl -*-
+  
+  # Cricket: a configuration, polling and data display wrapper for RRD files
+--- 1,4 ----
+! #!%%PATHPERLBIN%% -w
+  # -*- perl -*-
+  
+  # Cricket: a configuration, polling and data display wrapper for RRD files
+***************
+*** 30,36 ****
+  # to tell collect-subtrees where to find it.
+  
+  BEGIN {
+!     $gInstallRoot = (($0 =~ m:^(.*/):)[0] || "./") . ".";
+  }
+  
+  use Getopt::Long;
+--- 30,37 ----
+  # to tell collect-subtrees where to find it.
+  
+  BEGIN {
+! #    $gInstallRoot = (($0 =~ m:^(.*/):)[0] || "./") . ".";
+!     $gInstallRoot = '%%PREFIX%%/cricket';
+  }
+  
+  use Getopt::Long;

@@ -1,0 +1,31 @@
+*** util/rrd-tune.orig	Mon Jan 10 06:38:41 2000
+--- util/rrd-tune	Sun Feb 13 20:49:47 2000
+***************
+*** 1,4 ****
+! #!/usr/local/bin/perl -w
+  # -*- perl -*-
+  
+  # Cricket: a configuration, polling and data display wrapper for RRD files
+--- 1,4 ----
+! #!%%PATHPERLBIN%% -w
+  # -*- perl -*-
+  
+  # Cricket: a configuration, polling and data display wrapper for RRD files
+***************
+*** 20,26 ****
+  #    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+  
+  BEGIN {
+! 	$gInstallRoot = (($0 =~ m:^(.*/):)[0] || "./") . ".";
+  }
+  
+  use lib "$gInstallRoot/../lib";
+--- 20,27 ----
+  #    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+  
+  BEGIN {
+! #	$gInstallRoot = (($0 =~ m:^(.*/):)[0] || "./") . ".";
+! 	$gInstallRoot = '%%PREFIX%%/cricket';
+  }
+  
+  use lib "$gInstallRoot/../lib";

@@ -1,0 +1,19 @@
+*** sample-config/news-server/Defaults.orig	Sat Jan 22 12:39:37 2000
+--- sample-config/news-server/Defaults	Sat Jan 22 12:40:10 2000
+***************
+*** 11,17 ****
+  	# you'll probably want to change this... unless you
+  	# have Cricket in ~/cricket and your config tree in ~/config
+  	util-dir	=	%auto-base%/../cricket/util
+! 	remexec		=	"/usr/local/net/bin/ssh -l %user% %server%"
+  	user		=	news
+  	server		=	nntp-host
+  	target-type	=	news-server
+--- 11,17 ----
+  	# you'll probably want to change this... unless you
+  	# have Cricket in ~/cricket and your config tree in ~/config
+  	util-dir	=	%auto-base%/../cricket/util
+! 	remexec		=	"%%PREFIX%%/bin/ssh -l %user% %server%"
+  	user		=	news
+  	server		=	nntp-host
+  	target-type	=	news-server

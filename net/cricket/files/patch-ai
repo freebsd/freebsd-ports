@@ -1,0 +1,13 @@
+*** util/test-url.orig	Sat Jan 22 12:43:07 2000
+--- util/test-url	Sat Jan 22 12:43:15 2000
+***************
+*** 1,4 ****
+! #!/usr/local/bin/perl -w
+  # -*- perl -*-
+  
+  #	 test-url: a simple script to see how fast a webserver is
+--- 1,4 ----
+! #!%%PATHPERLBIN%% -w
+  # -*- perl -*-
+  
+  #	 test-url: a simple script to see how fast a webserver is

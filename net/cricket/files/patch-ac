@@ -1,0 +1,40 @@
+*** util/generate-statics.orig	Sun Jan  9 09:29:20 2000
+--- util/generate-statics	Sun Feb 13 20:47:27 2000
+***************
+*** 1,4 ****
+! #!/usr/local/bin/perl -w
+  # -*- perl -*-
+  
+  # Cricket: a configuration, polling and data display wrapper for RRD files
+--- 1,4 ----
+! #!%%PATHPERLBIN%% -w
+  # -*- perl -*-
+  
+  # Cricket: a configuration, polling and data display wrapper for RRD files
+***************
+*** 20,30 ****
+  #    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+  
+  BEGIN {
+! 	$gInstallRoot = (($0 =~ m:^(.*/):)[0] || "./") . ".";
+  
+  	# You need to update this to point to the URL
+  	# you use to access Cricket.
+! 	$gBaseURL = "http://localhost/~cricket/grapher.cgi";
+  }
+  
+  use lib "$gInstallRoot/../lib";
+--- 20,32 ----
+  #    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+  
+  BEGIN {
+! #	$gInstallRoot = (($0 =~ m:^(.*/):)[0] || "./") . ".";
+! 	$gInstallRoot = '%%PREFIX%%/cricket';
+  
+  	# You need to update this to point to the URL
+  	# you use to access Cricket.
+! #	$gBaseURL = "http://localhost/~cricket/grapher.cgi";
+! 	$gBaseURL = "http://localhost/cgi-bin/grapher.cgi";
+  }
+  
+  use lib "$gInstallRoot/../lib";

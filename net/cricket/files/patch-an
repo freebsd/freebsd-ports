@@ -1,0 +1,31 @@
+*** mini-graph.cgi.orig	Sat Jul 10 05:17:41 1999
+--- mini-graph.cgi	Sun Feb 13 20:44:34 2000
+***************
+*** 1,4 ****
+! #!/usr/local/bin/perl -w 
+  # -*- perl -*-
+  
+  # Cricket: a configuration, polling and data display wrapper for RRD files
+--- 1,4 ----
+! #!%%PATHPERLBIN%% -w 
+  # -*- perl -*-
+  
+  # Cricket: a configuration, polling and data display wrapper for RRD files
+***************
+*** 24,30 ****
+  	# on how the script was called. If it fails for you, just
+  	# hardcode it.
+  
+! 	$gInstallRoot = (($0 =~ m:^(.*/):)[0] || './') . '.';
+  
+  	# cached images are stored here... there will be no more than
+  	# 5 minutes worth of images, so it won't take too much space.
+--- 24,31 ----
+  	# on how the script was called. If it fails for you, just
+  	# hardcode it.
+  
+! #	$gInstallRoot = (($0 =~ m:^(.*/):)[0] || './') . '.';
+! 	$gInstallRoot = '%%PREFIX%%/cricket';
+  
+  	# cached images are stored here... there will be no more than
+  	# 5 minutes worth of images, so it won't take too much space.

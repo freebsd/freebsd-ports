@@ -1,0 +1,31 @@
+*** util/usrModemUsage.orig	Tue Jul 20 03:02:29 1999
+--- util/usrModemUsage	Sun Feb 13 20:50:34 2000
+***************
+*** 1,4 ****
+! #!/usr/local/bin/perl -w
+  # -*- perl -*-
+  
+  # usrModemUsage
+--- 1,4 ----
+! #!%%PATHPERLBIN%% -w
+  # -*- perl -*-
+  
+  # usrModemUsage
+***************
+*** 23,29 ****
+  # modem chassis.
+  
+  BEGIN {
+!     $gInstallRoot = (($0 =~ m:^(.*/):)[0] || "./") . "..";
+  }
+  
+  #
+--- 23,30 ----
+  # modem chassis.
+  
+  BEGIN {
+! #    $gInstallRoot = (($0 =~ m:^(.*/):)[0] || "./") . "..";
+!     $gInstallRoot = '%%PREFIX%%/cricket';
+  }
+  
+  #

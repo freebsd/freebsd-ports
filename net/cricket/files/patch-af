@@ -1,0 +1,13 @@
+*** util/pmlines.pl.orig	Sat Jan 22 12:41:27 2000
+--- util/pmlines.pl	Sat Jan 22 12:41:35 2000
+***************
+*** 1,4 ****
+! #!/usr/local/bin/perl
+  
+  # pmlines.pl
+  #
+--- 1,4 ----
+! #!%%PATHPERLBIN%%
+  
+  # pmlines.pl
+  #
