@@ -118,7 +118,12 @@ mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.var.dist -p ${chroot}/var \
 mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.usr.dist -p ${chroot}/usr \
   >/dev/null 2>&1
 
-mount -o -2 -r ${master}:${buildroot}/usr/ports ${chroot}/usr/ports
+# intentionally set up ${PORTSDIR} with symlink to catch broken ports
+mkdir -p ${chroot}/a/ports
+rm -rf ${chroot}/usr/ports
+mount -o -2 -r ${master}:${buildroot}/usr/ports ${chroot}/a/ports
+ln -sf ../a/ports ${chroot}/usr/ports
+
 mount -o -2 -r ${master}:${buildroot}/${branch}/src ${chroot}/usr/src
 mount -o -2 -r ${master}:${buildroot}/usr/opt/doc ${chroot}/usr/opt/doc
 
@@ -164,7 +169,7 @@ fi
 
 #umount ${chroot}/proc
 
-umount -f ${chroot}/usr/ports
+umount -f ${chroot}/a/ports
 umount -f ${chroot}/usr/opt/doc
 umount -f ${chroot}/usr/src
 
