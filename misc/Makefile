@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.134 1998/03/14 21:00:11 markm Exp $
+# $Id: Makefile,v 1.135 1998/03/16 13:32:39 tg Exp $
 #
 
     SUBDIR += acron
@@ -13,7 +13,6 @@
     SUBDIR += dejagnu
     SUBDIR += display
     SUBDIR += dotfile
-    SUBDIR += ecc
     SUBDIR += estic
     SUBDIR += ewipe
     SUBDIR += fd
