@@ -3377,7 +3377,6 @@ kimwitu		ports/devel/kimwitu
 kimwitu++	ports/devel/kimwitu++
 kinemage	ports/biology/kinemage
 kinit		src/eBones/kinit
-kio_fish	ports/net/kio_fish
 kisomandel	ports/graphics/kisomandel
 kld		src/sys/modules
 kld_atapi	src/sys/modules/atapi
