@@ -1,0 +1,107 @@
+#! /usr/bin/perl
+#
+# This code mostly stolen from easy-import written by J^vrg Wunsch
+#
+# $Id: modulesupdate,v 1.8 2000/04/02 05:42:12 mharo Exp $
+# $FreeBSD$
+
+use strict;
+
+my $tmpdir;
+
+if ($ENV{CVSROOT} eq "") {
+	$ENV{CVSROOT}="/home/ncvs";
+}
+
+sub goodbye
+{
+	my ($exitstatus)=@_;
+	chdir "/tmp";
+	print `rm -rf $tmpdir`;
+	exit $exitstatus;
+}
+
+sub contains
+{
+    # look if the first parameter is contained in the list following it
+    my($item, @list) = @_;
+
+    foreach my $i (@list) {
+	return 1 if $i eq $item;
+    }
+    return 0;
+}
+
+sub lsmodules
+{
+    # list all known CVS modules
+    my(%rv, $mname, $mpath);
+
+    %rv = ();
+
+    open(CVS, "cvs -R co -c|") || die "cvs: $!";
+    while(<CVS>) {
+	chomp;
+	chomp;
+	($mname,$mpath) = split;
+	next if $mname eq "";
+	$rv{$mname} = $mpath;
+    }
+    close(CVS);
+
+    return %rv;
+}
+
+my %cvsmods = &lsmodules;
+my $modulename = shift;
+my $modulepath = shift;
+my $dont_do_it = "";
+
+$tmpdir=`mktemp -d -t mu`;
+chomp $tmpdir;
+chdir $tmpdir or die "$tmpdir: $!";
+
+if ($modulepath eq "") {
+	print "Error: Must specify both modulename and modulepath\n";
+	&goodbye(1);
+}
+
+if (&contains($modulename, keys(%cvsmods))) {
+	print "Error: $modulename already exists in modules\n";
+	&goodbye(1);
+}
+
+my $mod = "";
+foreach my $tmp (sort(keys(%cvsmods))) {
+    if ($tmp gt $modulename) {
+        $mod = $tmp;
+        last;
+    }
+}
+
+my $cmd;
+if ($mod eq "") {
+    # we are going to append our module
+    $cmd = "\$\na\n";
+} else {
+    # we can insert it
+    $cmd = "/^" . $mod . "[ \t]/\ni\n";
+}
+
+print "Checking out the modules database...\n";
+system("cvs -R co modules") && die "failed.\n";
+
+my $len = length($modulename);
+print "Inserting new module...\n";
+open(ED, "|ed modules/modules") || die "Cannot start ed\n";
+print ED "$cmd$modulename" . "\t" x ($len < 8 ? 2 : 1) .
+      "$modulepath\n.\nw\nq\n";
+close(ED);
+
+print "Commiting new modules database...\n";
+system("cvs -R $dont_do_it commit -m \"  " .
+       "$modulename --> $modulepath\" modules")
+    && die "Commit failed\n";
+
+# cleanup
+&goodbye;
