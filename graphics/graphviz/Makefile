@@ -8,7 +8,7 @@
 PORTNAME=	graphviz
 PORTVERSION=	1.7c
 CATEGORIES=	graphics tk83
-MASTER_SITES=	http://www.research.att.com/sw/tools/graphviz/
+MASTER_SITES=	http://www.research.att.com/sw/tools/graphviz/dist/
 DISTNAME=	gviz${PORTVERSION:S/.//}
 EXTRACT_SUFX=	.tgz
 
