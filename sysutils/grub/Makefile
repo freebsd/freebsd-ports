@@ -15,6 +15,7 @@ MAINTAINER=	jedgar@FreeBSD.org
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_TARGET=	${MACHINE_ARCH}-freebsd-freebsd${OSREL}
+ONLY_FOR_ARCHS=	i386
 
 MAN1=		mbchk.1
 MAN8=		grub.8 grub-install.8 grub-md5-crypt.8
