@@ -3,11 +3,11 @@
 # Date created:		7 June 1995
 # Whom:			Takashi Ogura <ogura@st.rim.or.jp>
 #
-# $Id: Makefile,v 1.4 1995/08/05 18:19:04 ats Exp $
+# $Id: Makefile,v 1.5 1995/10/11 00:53:37 asami Exp $
 #
 
 DISTNAME=	kon
-PKGNAME=	kon-0994e
+PKGNAME=	jp-kon-0994e
 CATEGORIES+=	japanese
 # note kon is only in first directory and fonts are only in second directory
 MASTER_SITES=	ftp://ftp.iij.ad.jp/pub/linux-j/JE-sources/JE/ \
@@ -26,6 +26,8 @@ post-configure:
 	  files/dotconfig > ${WRKSRC}/.config
 
 post-install:
+.if !defined(NOMANCOMPRESS)
 	gzip -9nf ${PREFIX}/man/ja_JP.ujis/man1/kon.1
+.endif
 
 .include <bsd.port.mk>
