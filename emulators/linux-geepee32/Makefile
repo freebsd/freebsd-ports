@@ -12,7 +12,7 @@ MASTER_SITES=	http://users.skynet.be/firefly/gp32/project/geepee32/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}_linux_sdl_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	arundel@h3c.de
 COMMENT=	The only GP32 emulator for i386
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12
