@@ -6,30 +6,41 @@
 #
 
 PORTNAME=	gltron
-PORTVERSION=	0.53
+PORTVERSION=	0.59
 CATEGORIES=	games
-MASTER_SITES=	http://www.ards.net/Andreas/gltron/
+MASTER_SITES=	http://gltron.sourceforge.net/download/
 
 MAINTAINER=	will@FreeBSD.org
 
-LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/Mesa3
+LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
+		glut.3:${PORTSDIR}/graphics/Mesa3
+
+.if defined(NO_SOUND)
+SOUND=""
+.else
+SOUND="-DSOUND"
+.endif
 
 USE_X_PREFIX=	yes
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-MAKE_ENV+=	OPT="${CFLAGS}"
+MAKE_ENV+=	OPT="${CFLAGS}" SOUND="${SOUND}"
+
+pre-build:
+	${PERL} -pi -e "s+#include <SDL\/+#include <+g" ${WRKSRC}/*.[ch]
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/gltron/
-.for FILE in *.sgi *.txt t-u-low.obj tron.mtl xenotron.ftx
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${PREFIX}/share/gltron/
-.endfor
-	@${INSTALL_PROGRAM} ${WRKSRC}/gltron ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/share/gltron/ ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/data/*tx* ${WRKSRC}/data/*.png ${WRKSRC}/data/*.obj \
+			${WRKSRC}/data/*mtl ${WRKSRC}/data/*.it ${WRKSRC}/sounds/*wav \
+			${PREFIX}/share/gltron
+	${INSTALL_PROGRAM} ${WRKSRC}/gltron ${PREFIX}/bin
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/gltron
 .for file in CHANGELOG CREDITS README
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/gltron
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/gltron
 .endfor
 .endif
 

@@ -1,17 +1,38 @@
 bin/gltron
+share/gltron/babbage.0.png
+share/gltron/babbage.1.png
+share/gltron/babbage.ftx
+share/gltron/fonts.txt
+share/gltron/game_crash.wav
+share/gltron/game_engine.wav
+share/gltron/game_lose.wav
+share/gltron/game_start.wav
+share/gltron/game_win.wav
+share/gltron/gltron.it
+share/gltron/gltron.png
+share/gltron/gltron_crash.png
+share/gltron/gltron_floor.png
+share/gltron/gltron_logo.png
+share/gltron/gltron_trail.png
+share/gltron/gltron_traildecal.png
+share/gltron/gltron_wall_1.png
+share/gltron/gltron_wall_2.png
+share/gltron/gltron_wall_3.png
+share/gltron/gltron_wall_4.png
+share/gltron/lightcycle high.obj
+share/gltron/lightcycle low.obj
+share/gltron/lightcycle med.obj
+share/gltron/menu.txt
+share/gltron/menu_action.wav
+share/gltron/menu_highlight.wav
+share/gltron/settings.txt
+share/gltron/tron.mtl
+share/gltron/tron2.mtl
+share/gltron/xenotron.0.png
+share/gltron/xenotron.1.png
+share/gltron/xenotron.ftx
 share/doc/gltron/CHANGELOG
 share/doc/gltron/CREDITS
 share/doc/gltron/README
-share/gltron/gltron.sgi
-share/gltron/gltron_crash.sgi
-share/gltron/gltron_floor.sgi
-share/gltron/gltron_wall.sgi
-share/gltron/menu.txt
-share/gltron/settings.txt
-share/gltron/t-u-low.obj
-share/gltron/tron.mtl
-share/gltron/xenotron.0.sgi
-share/gltron/xenotron.1.sgi
-share/gltron/xenotron.ftx
-@dirrm share/doc/gltron
 @dirrm share/gltron
+@dirrm share/doc/gltron
