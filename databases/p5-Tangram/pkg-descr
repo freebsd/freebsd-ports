@@ -1,0 +1,11 @@
+Tangram is an object-relational mapper.  It makes objects persist in relational
+databases, and provides powerful facilities for retrieving and filtering them.
+Tangram fully supports object-oriented programming, including polymorphism,
+multiple inheritance and collections.  It does so in an orthogonal fashion,
+that is, it doesn't require your classes to implement support functions nor
+inherit from a utility class.
+
+WWW: http://search.cpan.org/search?dist=Tangram
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
