@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	webmin
-PORTVERSION=	1.090
-PORTREVISION=	3
+PORTVERSION=	1.100
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -25,17 +24,7 @@ NO_BUILD=	yes
 USE_PERL5=	yes
 SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
 
-WEBMIN_MODULES=	bind8-1.090-3.wbm.gz \
-		file-1.090-6.wbm.gz \
-		mount-1.090-2.wbm.gz \
-		mysql-1.090-6.wbm.gz \
-		net-1.090-1.wbm.gz \
-		postfix-1.090-1.wbm.gz \
-		qmailadmin-1.090-1.wbm.gz \
-		quota-1.090-2.wbm.gz \
-		sendmail-1.090-1.wbm.gz \
-		shorewall-1.090-1.wbm.gz \
-		usermin-1.090-3.wbm.gz
+WEBMIN_MODULES=
 
 WEBMIN_THEMES=
 
