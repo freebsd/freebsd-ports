@@ -1,5 +1,6 @@
 bin/tkp4
 %%SCRIPTS%%/combobox.tcl
+%%SCRIPTS%%/mclistbox.tcl
 %%SCRIPTS%%/tkp4.tcl
 %%SCRIPTS%%/tree.tcl
 @dirrm %%SCRIPTS%%
