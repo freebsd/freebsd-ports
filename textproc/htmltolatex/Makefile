@@ -15,17 +15,13 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML to LaTeX to PDF Converter
 
-LIB_DEPENDS=	Magick:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS=	Magick.5:${PORTSDIR}/graphics/ImageMagick
 
-USE_REINPLACE=	yes
 USE_BISON=	yes
-MAKEFILE=	GNUmakefile
-CXXFLAGS+=	-I${LOCALBASE}/include -DUNIX
 USE_GMAKE=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e "s,^CXXFLAGS,#CXXFLAGS,g ; \
-		s,^CXX,#CXX,g" ${WRKSRC}/${MAKEFILE}
+MAKEFILE=	GNUmakefile
+MAKE_ARGS=	CXX="${CXX}" \
+		CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include -DUNIX"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/h2l ${PREFIX}/bin

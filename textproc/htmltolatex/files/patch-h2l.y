@@ -1,6 +1,15 @@
---- h2l.y.orig	Sun Dec  1 22:57:58 2002
-+++ h2l.y	Sun Dec  1 22:58:30 2002
-@@ -136,6 +136,7 @@
+
+$FreeBSD$
+
+--- h2l.y.orig	Wed Oct 10 14:24:26 2001
++++ h2l.y	Fri Feb 21 03:11:01 2003
+@@ -1,4 +1,5 @@
+ %{
++using namespace std;
+ 
+ #include <iostream>
+ #include <stdio.h>
+@@ -136,6 +137,7 @@
  	;
  
  head_block_init:	TAG_HEAD_START	{ if (!gMainDataStart) InitiateMainData(); }
