@@ -7,6 +7,7 @@
 
 PORTNAME=	APC
 PORTVERSION=	2.0.4
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -26,10 +27,21 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 CONFIGURE_ARGS=	--enable-apc
 
-OPTIONS=	MMAP	"Enable mmap"	off
+OPTIONS=	MMAP       "Enable mmap memory support (default: IPC shm)" off \
+		SEMAPHORES "Enable sysv IPC semaphores (default: fcntl())" off \
+
+.include <bsd.port.pre.mk>
+
+.if ${PHP_VER} == 5
+BROKEN=		This port is not compatible with php${PHP_VER}
+.endif
 
 .if !defined(WITHOUT_MMAP)
 CONFIGURE_ARGS+=	--enable-mmap
+.endif
+
+.if !defined(WITHOUT_SEMAPHORES)
+CONFIGURE_ARGS+=	--enable-sem
 .endif
 
 .if !defined(NOPORTDOCS)
@@ -45,4 +57,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
