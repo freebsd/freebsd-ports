@@ -7,6 +7,7 @@
 
 PORTNAME=	News-Article
 PORTVERSION=	1.27
+PORTREVISION=	1
 CATEGORIES=	news perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	News
@@ -14,9 +15,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Object for handling Usenet articles in mail or news form
-
-RUN_DEPENDS=	${SITE_PERL}/Net/NNTP.pm:${PORTSDIR}/net/p5-Net \
-		${SITE_PERL}/PGP/Sign.pm:${PORTSDIR}/security/p5-PGP-Sign
 
 PERL_CONFIGURE=	yes
 
