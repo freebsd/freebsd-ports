@@ -7846,6 +7846,7 @@ tei-guidelines-p3	ports/textproc/tei-guidelines-p3
 tei-guidelines-p4	ports/textproc/tei-guidelines-p4
 tei-lite	ports/textproc/tei-lite
 tei-p3		ports/textproc/tei-p3
+tei-p4		ports/textproc/tei-p4
 tei-xlite	ports/textproc/tei-xlite
 teknap		ports/audio/teknap
 telnet		src/usr.bin/telnet
