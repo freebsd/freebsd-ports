@@ -1,4 +1,4 @@
-TCL_VERSION?=	tcl8.3
+TCL_VERSION?=	tcl8.4
 TCL_NODOT?=	${TCL_VERSION:S/.//}
 SHLIB_NAME?=	libTclMySQL.so.1
 
