@@ -3,7 +3,7 @@
 # Date created:				May 4th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.2 1997/05/05 10:48:08 jfitz Exp $
+# $Id: Makefile,v 1.3 1997/11/22 01:11:32 asami Exp $
 #
 
 DISTNAME=	RAToolSet-3.5.2
@@ -15,17 +15,16 @@ MAINTAINER=	jfitz@FreeBSD.ORG
 
 LIB_DEPENDS=	tk41\\.1\\.:${PORTSDIR}/x11/tk41
 
-BROKEN=		tcl
-
-HAS_CONFIGURE=	YES
-ALL_TARGET=	depend all
-
-CONFIGURE_ENV=	TCL_TK_INCLUDE_DIR=/usr/include/tcl:${PREFIX}/include \
+GNU_CONFIGURE=	Yes
+CONFIGURE_ENV=	TCL_TK_INCLUDE_DIR="${PREFIX}/include/tcl7.5: \
+			${PREFIX}/include/tk4.1" \
 		TCL_TK_LIBRARY_DIR=${PREFIX}/lib \
-		LD_TCL_TK_LIBS="-ltcl -ltk41"
+		LD_TCL_TK_LIBS="-ltcl75 -ltk41"
 
 MAN1=		CIDRAdvisor.1 aoe.1 pmatch.1 prpath.1 RtConfig.1 peval.1 \
 		prcheck.1 roe.1
 MAN8=		prtraceroute.8 relayd.8
+
+ALL_TARGET=	depend all
 
 .include <bsd.port.mk>
