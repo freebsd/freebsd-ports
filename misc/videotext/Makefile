@@ -17,7 +17,7 @@ LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png \
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-MAN1=		videotext.1 tunerctl.1
+MAN1=		videotext.1 tunerctl.1 vtxget.1
 
 .include <bsd.port.pre.mk>
 
