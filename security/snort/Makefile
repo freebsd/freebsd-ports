@@ -18,7 +18,7 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 #OPTIONS=	FLEXRESP "Flexible response to events" off \
 #		MYSQL "Enable MySQL support" off \
 #		ODBC "Enable ODBC support" off \
-#		POSTGRES "Enable PostgreSQL support" off
+#		POSTGRESQL "Enable PostgreSQL support" off
 
 USE_GPG=	yes
 SIG_SUFFIX=	.asc
@@ -49,7 +49,7 @@ LDFLAGS+=		${PTHREAD_LIBS}
 CONFIGURE_ARGS+=	--with-odbc=no
 .endif
 
-.if defined(WITH_POSTGRES)
+.if defined(WITH_POSTGRESQL)
 POSTGRESQL_PORT?=	databases/postgresql7
 LIB_DEPENDS+=		pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 CONFIGURE_ARGS+=	--with-postgresql=${LOCALBASE}
@@ -69,7 +69,7 @@ post-patch:
 
 pre-configure:
 	@${ECHO} ""
-	@${ECHO} "Set WITH_FLEXRESP, WITH_MYSQL, WITH_ODBC or WITH_POSTGRES"
+	@${ECHO} "Set WITH_FLEXRESP, WITH_MYSQL, WITH_ODBC or WITH_POSTGRESQL"
 	@${ECHO} "to get additional support."
 	@${ECHO} ""
 
