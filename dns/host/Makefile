@@ -8,8 +8,7 @@
 PORTNAME=	host
 PORTVERSION=	991529
 CATEGORIES=	dns
-MASTER_SITES=	http://www.dtek.chalmers.se/~d3august/xt/ \
-		ftp://ftp.nikhef.nl/pub/network/
+MASTER_SITES=	http://www.dtek.chalmers.se/~d3august/xt/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
