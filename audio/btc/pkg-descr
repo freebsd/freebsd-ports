@@ -1,0 +1,6 @@
+The Bass Tab Creator is a program designed to help create bass tablature.
+It was originally created to facilitate the reproduction of tab published
+in many music magazines and books.  It takes as input a file consisting of
+note information, and builds the tab staffs.
+
+-- Bill Fumerola <billf@FreeBSD.org>
