@@ -1,0 +1,15 @@
+--- tools/lzss/makefile.orig	Mon Sep 25 00:35:58 2000
++++ tools/lzss/makefile	Fri Nov 10 21:39:13 2000
+@@ -60,7 +60,11 @@
+ biewlib/pmalloc.o\
+ biewlib/bbio.o\
+ biewlib/biewlib.o\
+-biewlib/sysdep/$(MACHINE)/$(HOST)/fileio.o
++biewlib/sysdep/$(MACHINE)/$(HOST)/fileio.o\
++biewlib/sysdep/$(MACHINE)/$(HOST)/keyboard.o\
++biewlib/sysdep/$(MACHINE)/$(HOST)/nls.o\
++biewlib/sysdep/$(MACHINE)/$(HOST)/os_dep.o\
++biewlib/sysdep/$(MACHINE)/$(HOST)/vio.o
+ all: $(TARGET)
+ 
+ clean:
