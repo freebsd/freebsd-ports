@@ -7,7 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.070
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -26,6 +26,7 @@ USE_PERL5=	yes
 SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
 
 WEBMIN_MODULES=	init-1.070-1.wbm.gz \
+		sendmail-1.070-1.wbm.gz \
 		shell-1.070-1.wbm.gz
 
 WEBMIN_THEMES=
