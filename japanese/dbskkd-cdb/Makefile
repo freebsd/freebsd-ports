@@ -8,7 +8,7 @@
 PORTNAME=	dbskkd-cdb
 PORTVERSION=	1.01
 CATEGORIES=	japanese
-MASTER_SITES=	http://www.k2r.org/kenji/software/
+MASTER_SITES=	http://www.ne.jp/asahi/bdx/info/software/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${CDB_DISTNAME}${EXTRACT_SUFX}
 
