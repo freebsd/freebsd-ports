@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	samba
-PORTVERSION=	3.0.0.b1
+PORTVERSION=	3.0.0.b2
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://us4.samba.org/samba/ftp/%SUBDIR%/
@@ -94,11 +94,12 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/source
 
 MAN1=		findsmb.1 nmblookup.1 \
 		rpcclient.1 smbcacls.1 smbclient.1 smbcontrol.1 smbsh.1 \
-		smbstatus.1 smbtar.1 testparm.1 testprns.1 wbinfo.1 vfstest.1
+		smbstatus.1 smbtar.1 testparm.1 testprns.1 wbinfo.1 vfstest.1 \
+		editreg.1 ntlm_auth.1 profiles.1 smbcquotas.1 smbtree.1
 MAN5=		lmhosts.5 smb.conf.5 smbpasswd.5
-MAN7=		samba.7
+MAN7=		samba.7 Samba.7
 MAN8=		nmbd.8 smbd.8 smbmnt.8 smbmount.8 net.8 pdbedit.8 \
-		smbpasswd.8 smbspool.8 smbumount.8 swat.8 winbindd.8
+		smbpasswd.8 smbspool.8 smbumount.8 swat.8 winbindd.8 tdbbackup.8
 
 post-install:
 	${MKDIR} ${PREFIX}/share/examples/samba
