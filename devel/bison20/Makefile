@@ -23,6 +23,9 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAN1=			bison.1
 
+pre-configure:
+	@${CP} ${FILESDIR}/ru.po ${WRKSRC}/po/
+
 post-install:
 	@if [ ! -f ${PREFIX}/info/dir ]; then \
 	  ${SED} -ne '1,/Menu:/p' \/usr\/share\/info/dir > ${PREFIX}/info/dir; \
