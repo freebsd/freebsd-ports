@@ -148,13 +148,8 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -E -e 's|^(pkgconfigdir = )\$$\(libdir\)/(pkgconfig)|\1${PREFIX}/libdata/\2|' \
 		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -E -e 's@(-l(jpeg|openquicktime|png))@-L${LOCALBASE}/lib \1@; \
-		s|(-I) (\$$with_quicktime)|\1\2/include/openquicktime|; \
-		s|(-L\$$with_quicktime) |\1/lib |; \
-		s|(with_quicktime/)(openquicktime)(.h)|\1include/\2/\2\3|; \
+	@${REINPLACE_CMD} -E -e 's@(-l(jpeg|png))@-L${LOCALBASE}/lib \1@; \
 		s,-ldl([[:space:]]|"),\1,; \
-		s|-L/lib||g; \
-		s|(-L\$$with_dv)(\$$with_dv_l)|\1/lib|; \
 		s|(-ldv)|-L${LOCALBASE}/lib \1 ${PTHREAD_LIBS:S/"//g}|; \
 		s|-pthread||' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
@@ -164,15 +159,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|' \
 		${WRKSRC}/scripts/lav2avi.sh \
 		${WRKSRC}/scripts/lav2mpeg ${WRKSRC}/scripts/mpegtranscode
-.ifdef(WITH_QUICKTIME)
-	@${REINPLACE_CMD} -E -e 's|^(have_openquicktime=).+$$|\1true|' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-	@${REINPLACE_CMD} -E \
-		-e 's|(fileno.*)(lav_file->qt_fd)|\1(FILE *)\2|' \
-		${WRKSRC}/lavtools/lav_io.c
-	@${REINPLACE_CMD} -e 's|HAVE_OPENQUICKTIME|__FreeBSD__|' \
-		${WRKSRC}/lavtools/lav_io.h
-.endif
 # a bug that is happening with configure. It's not detecting that
 # FreeBSD has pthreads. It might happen in other OSes but I'm not
 # risking such a general patch
@@ -190,10 +176,5 @@ post-patch:
 
 post-configure:
 	@${CP} -f ${LIBTOOL} ${WRKSRC}
-
-pre-build:
-.ifdef(WITH_QUICKTIME)
-	@${ECHO_CMD} "#define HAVE_OPENQUICKTIME 1" >> ${WRKSRC}/config.h
-.endif
 
 .include <bsd.port.post.mk>
