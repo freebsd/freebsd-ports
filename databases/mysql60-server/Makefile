@@ -39,7 +39,6 @@ CONFIGURE_ARGS=	--localstatedir=${DB_DIR} \
 		--without-bench \
 		--without-extra-tools \
 		--with-libwrap \
-		--with-raid \
 		--with-mysqlfs \
 		--with-vio \
 		--with-low-memory \
@@ -102,8 +101,7 @@ pre-fetch:
 	@${ECHO} "	WITH_OPENSSL=yes	Enable secure connections."
 	@${ECHO} "	DB_DIR=directory	Set alternate directory for database files"
 	@${ECHO} "				(default is /var/db/mysql)."
-	@${ECHO} "	SKIP_INSTALL_DB=yes	Skip database initialization"
-	@${ECHO} "				(useful for upgrades)."
+	@${ECHO} "	OVERWRITE_DB=yes	Re-initialize default databases"
 	@${ECHO} "	SKIP_DNS_CHECK=yes	Don't run resolveip to do an additional"
 	@${ECHO} "				DNS check before inserting local hostname to"
 	@${ECHO} "				mysql database"
@@ -118,27 +116,12 @@ pre-configure:
 	@${FALSE}
 .endif
 
-.if exists(${DB_DIR}) && !defined(PACKAGE_BUILDING) && !defined(OVERWRITE_DB) && !defined(SKIP_INSTALL_DB)
-pre-install:
-	@${ECHO} "You appear to already have a mysql database directory in ${DB_DIR}."
-	@${ECHO} ""
-	@${ECHO} "In order to preserve your existing data, you should:"
-	@${ECHO} "	- dump all your databases"
-	@${ECHO} "	- kill mysql if it is running"
-	@${ECHO} "	- delete the ${DB_DIR} directory"
-	@${ECHO} "	- run 'make install'"
-	@${ECHO} "	- start up mysql"
-	@${ECHO} "	- re-create all of your database"
-	@${ECHO} "	- re-load your data"
-	@${ECHO} ""
-	@${ECHO} "If you understand the consequences of this upgrade, please re-build this"
-	@${ECHO} "port with the environment variable OVERWRITE_DB defined."
-	@${FALSE}
-.endif
-
 post-install:
 .if !defined(PACKAGE_BUILDING)
-.if !defined(SKIP_INSTALL_DB)
+.if exists(${DB_DIR}) && defined(OVERWRITE_DB)
+	@${RM} -r ${DB_DIR}/mysql ${DB_DIR}/test 2>/dev/null || true
+.endif
+.if !exists(${DB_DIR}) || defined(OVERWRITE_DB)
 .if defined(SKIP_DNS_CHECK)
 	${PREFIX}/bin/mysql_install_db --force
 .else
