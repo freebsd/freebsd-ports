@@ -3,7 +3,6 @@ include/dsp/DSPOp.hh
 include/dsp/Decimator.hh
 include/dsp/Filter.hh
 include/dsp/Hankel.hh
-include/dsp/PFAFFT.hh
 include/dsp/Transform4.hh
 include/dsp/Transform8.hh
 include/dsp/TransformS.hh
