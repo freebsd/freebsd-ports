@@ -9,7 +9,7 @@ PORTVERSION=	3.2
 PORTREVISION=	3
 CATEGORIES=	russian kde
 MASTER_SITES=	http://ksocrat.linux.kiev.ua/download/ \
-		http://voodoo.oberon.net/
+		http://voodoo.oberon.net/download/
 MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}-enru-dic-1.0.1${EXTRACT_SUFX} \
@@ -18,7 +18,6 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	KSocrat is the simple English/Russian Russian/English dictionary
 
-USE_SIZE=	yes
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
