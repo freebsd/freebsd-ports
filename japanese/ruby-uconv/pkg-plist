@@ -1,0 +1,13 @@
+lib/ruby/site_ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/uconv.so
+share/examples/ruby/uconv/ja/euc2unicode.rb
+share/examples/ruby/uconv/ja/test_euc.txt
+share/examples/ruby/uconv/ja/test_euc.xml
+share/examples/ruby/uconv/ja/trilang.xml
+share/examples/ruby/uconv/ja/unicode2euc.rb
+share/examples/ruby/uconv/ja/xmlconv.rb
+@dirrm share/examples/ruby/uconv/ja
+@dirrm share/examples/ruby/uconv
+share/doc/ruby/uconv/README
+share/doc/ruby/uconv/ja/README.ja
+@dirrm share/doc/ruby/uconv/ja
+@dirrm share/doc/ruby/uconv

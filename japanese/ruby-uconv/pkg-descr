@@ -1,0 +1,7 @@
+This is an Unicode conversion library with Japanese codesets support
+for Ruby.
+
+Supported character encoding schemes are UCS-4, UTF-16, UTF-8, EUC-JP,
+CP932 (a variant of Shift_JIS for Japanese Windows).
+
+WWW:	http://www.yoshidam.net/Ruby.html#uconv
