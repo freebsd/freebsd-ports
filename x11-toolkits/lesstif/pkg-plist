@@ -102,8 +102,8 @@ include/Xm/XmosP.h
 lib/X11/app-defaults/Mwm
 lib/X11/mwm/alt.map
 lib/X11/mwm/system.mwmrc
-lib/libMrm.so.0.0
-lib/libXm.so.0.0
+lib/libMrm.so.0.76
+lib/libXm.so.0.76
 lib/libltc.a
 @exec /sbin/ldconfig -m %D/lib
 @dirrm lib/X11/mwm
