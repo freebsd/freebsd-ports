@@ -1,0 +1,32 @@
+--- modules/xttfm.ttfm.orig	Sat Dec 21 22:56:45 2002
++++ modules/xttfm.ttfm	Sat Dec 21 23:01:09 2002
+@@ -129,18 +129,25 @@
+     fontproperties=$7
+     fontencoding=$8
+ 
++    if [ "$fontproperties" = "m" ] ; then
++       fontproperties="p"   
++       FONTFACE="fn=1:"
++    else
++       FONTFACE=""
++    fi
++
+     # Create and update fonts.scale
+     touch $XTTFFONTPATH/fonts.scale
+     # Delete the first line, and duplicate entries if exist.
+     # We can't use uniq(1) here, since filenames may start with numbers.
+     sed -e "1d" $XTTFFONTPATH/fonts.scale |grep -iv "$fontfoundry-$fontfamily.*-$fontencoding$" > $TEMPFILE
+ 
+-    echo "$targetname -$fontfoundry-$fontfamily-$fontweight-$fontslant-$fontwidth--0-0-0-0-$fontproperties-0-$fontencoding" >> $TEMPFILE
++    echo "${FONTFACE}$targetname -$fontfoundry-$fontfamily-$fontweight-$fontslant-$fontwidth--0-0-0-0-$fontproperties-0-$fontencoding" >> $TEMPFILE
+     # If it's medium-r, make a {medium,bold}-{i,r} full suite
+     if [ "X$fontweight" = "Xmedium" ] && [ "X$fontslant" = "Xr" ]; then
+-        echo "ai=0.3:$targetname -$fontfoundry-$fontfamily-medium-i-$fontwidth--0-0-0-0-$fontproperties-0-$fontencoding" >> $TEMPFILE
+-        echo "ds=y:$targetname -$fontfoundry-$fontfamily-bold-r-$fontwidth--0-0-0-0-$fontproperties-0-$fontencoding" >> $TEMPFILE
+-        echo "ds=y:ai=0.3:$targetname -$fontfoundry-$fontfamily-bold-i-$fontwidth--0-0-0-0-$fontproperties-0-$fontencoding" >> $TEMPFILE
++        echo "${FONTFACE}ai=0.3:$targetname -$fontfoundry-$fontfamily-medium-i-$fontwidth--0-0-0-0-$fontproperties-0-$fontencoding" >> $TEMPFILE
++        echo "${FONTFACE}ds=y:$targetname -$fontfoundry-$fontfamily-bold-r-$fontwidth--0-0-0-0-$fontproperties-0-$fontencoding" >> $TEMPFILE
++        echo "${FONTFACE}ds=y:ai=0.3:$targetname -$fontfoundry-$fontfamily-bold-i-$fontwidth--0-0-0-0-$fontproperties-0-$fontencoding" >> $TEMPFILE
+     fi
+     echo `cat $TEMPFILE |wc -l` > $XTTFFONTPATH/fonts.scale
+     cat $TEMPFILE >> $XTTFFONTPATH/fonts.scale
