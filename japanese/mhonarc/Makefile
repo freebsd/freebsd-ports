@@ -3,7 +3,7 @@
 # Date created:			17 March 1999
 # Whom:				Seiichirou Hiraoka
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/03/31 11:48:28 flathill Exp $
 #
 
 DISTNAME=	MHonArc2.3.3
@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.oac.uci.edu/indiv/ehood/tar/ \
 		ftp://ftp.plig.org/pub/CPAN/authors/id/EHOOD/ \
 		http://www.perl.com/CPAN/authors/id/EHOOD/ \
 		http://www.shiratori.riec.tohoku.ac.jp/~p-katoh/Hack/Docs/mhonarc-jp/ \
-		http://www.flathill.gr.jp/~flathill/distfiles/
+		http://www.freebsd.org/~flathill/distfiles/
 DISTFILES=	MHonArc2.3.3.tar.gz iso2022.pl
 
 MAINTAINER=	flathill@FreeBSD.ORG
