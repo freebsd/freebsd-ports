@@ -4,10 +4,10 @@
 # Date created:         Thur July 25, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.21 1997/03/05 23:39:01 obrien Exp $
+# $Id: Makefile,v 1.22 1997/03/10 00:32:49 obrien Exp $
 
 DISTNAME=	${PKGNAME}e
-PKGNAME=	mutt-0.65
+PKGNAME=	mutt-0.66
 CATEGORIES=	mail
 MASTER_SITES=	ftp://cs.hmc.edu/pub/me/mutt/  \
 		ftp://ftp.ibp.fr/pub/unix/mail/mutt/  \
@@ -20,15 +20,7 @@ PATCH_SITES=	ftp://ftp.nuxi.com/pub/mutt/${PKGNAME:S/^mutt-//}/  \
 		http://www.math.fu-berlin.de/~leitner/mutt/${PKGNAME:S/^mutt-//}/  \
 		http://www.efrei.fr/~parmelan/mutt/${PKGNAME:S/^mutt-//}/  \
 		ftp://www.frmug.org/pub/mutt/mutt/${PKGNAME:S/^mutt-//}/
-PATCHFILES=	02.rd_count.PATCH  \
-		11.cfg-files.PATCH.EXP  \
-		15.patchlist.PATCH  \
-		18.decode_64.PATCH  \
-		21.decode_quoted.PATCH  \
-		22.warning.PATCH  \
-		04.untag-all.PATCH  \
-		05.toggle-new.PATCH  \
-		07.alias-jumping.PATCH.EXP
+PATCHFILES=
 
 MAINTAINER=     obrien@FreeBSD.org
 
