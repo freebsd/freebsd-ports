@@ -1,0 +1,9 @@
+NDir is a console-based utility to display the contents of
+directories, just like 'ls' or 'dir'.
+
+NDir is designed to present its output in a more informative way to
+the user. This includes a summary line with some directory statistics,
+different levels of verbosity, colourized output and intelligent
+handling of very long file names.
+
+WWW: http://www.Informatik.Uni-Oldenburg.DE/~mw/software/ndir.html
