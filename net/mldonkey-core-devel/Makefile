@@ -10,6 +10,6 @@ WITHOUT_GUI=	yes
 
 COMMENT=	Client 'core' for the MLDonkey peer-to-peer network
 
-MASTERDIR=	${.CURDIR}/../mldonkey
+MASTERDIR=	${.CURDIR}/../mldonkey-devel
 
 .include "${MASTERDIR}/Makefile"
