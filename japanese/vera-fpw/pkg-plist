@@ -1,0 +1,8 @@
+share/dict/vera-fpw/vera/data/honmon
+share/dict/vera-fpw/catalogs
+share/doc/vera-fpw/README
+share/doc/vera-fpw/vera.texi
+@dirrm share/dict/vera-fpw/vera/data
+@dirrm share/dict/vera-fpw/vera
+@dirrm share/dict/vera-fpw
+@dirrm share/doc/vera-fpw
