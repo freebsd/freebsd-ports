@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openssl
-PORTVERSION=	0.2.0.p0
+PORTVERSION=	0.2.0.p2
 CATEGORIES=	security ruby
 MASTER_SITES=	http://savannah.nongnu.org/download/rubypki/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
