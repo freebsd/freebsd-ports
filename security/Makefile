@@ -115,6 +115,7 @@
     SUBDIR += gpa
     SUBDIR += gpasman
     SUBDIR += gpgme
+    SUBDIR += gpgme03
     SUBDIR += gringotts
     SUBDIR += gsasl
     SUBDIR += gsfv
