@@ -1,13 +1,19 @@
---- src/address.h	2000/07/21 13:28:27	1.1
-+++ src/address.h	2000/07/21 13:30:50
-@@ -23,8 +23,8 @@
- #ifndef __MMC_ADDRESS_H
- #define __MMC_ADDRESS_H
+
+$FreeBSD$
+
+--- src/address.h.orig	Sun Jan 14 01:12:18 2001
++++ src/address.h	Thu Jan 25 17:46:23 2001
+@@ -27,11 +27,12 @@
+ #include<config.h>
+ #endif
  
 -#include <alloca.h>
--#include <db1/db.h>
-+/*#include <alloca.h>*/
-+#include <db.h>
+ #if defined(HAVE_DB1_DB_H)
+ # include<db1/db.h>
+ #elif defined(HAVE_DB_185_H)
+ # include <db_185.h>
++#else
++# include <db.h>
+ #endif
  #include <errno.h>
  #include <fcntl.h>
- #include <stdio.h>

@@ -1,9 +1,12 @@
---- src/smtp.cc	2000/07/21 13:33:45	1.1
-+++ src/smtp.cc	2000/07/21 13:34:24
-@@ -20,6 +20,7 @@
-        For the complete License see the file COPYING.
- */
- 
+
+$FreeBSD$
+
+--- src/smtp.cc.orig	Fri Jan 19 18:06:46 2001
++++ src/smtp.cc	Thu Jan 25 17:44:11 2001
+@@ -23,6 +23,7 @@
+ #ifdef HAVE_CONFIG_H
+ # include<config.h>
+ #endif
 +#include <sys/types.h>
  #include<sys/socket.h>
  #include<gnome.h>
