@@ -1,14 +1,13 @@
 # New ports collection makefile for:    lynx
-# http://sol.slcc.edu/lynx/current/
 # Version required:     2.8.2*
 # Date created:         15 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.96 1999/02/19 12:34:03 ache Exp $
+# $Id: Makefile,v 1.97 1999/04/07 23:52:17 ache Exp $
 #
 
-DISTNAME=       lynx2.8.2dev.21
-PKGNAME=        lynx-2.8.2dev.21
+DISTNAME=       lynx2.8.2dev.22
+PKGNAME=        lynx-2.8.2dev.22
 CATEGORIES=	www
 MASTER_SITES=   http://sol.slcc.edu/lynx/current/
 
@@ -31,5 +30,6 @@ L_HELP=         ${PREFIX}/share/lynx_help
 post-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} ${L_HELP}
 	chown ${SHAREOWN}:${SHAREGRP} ${L_LIB}/lynx.cfg
+	${INSTALL_DATA} ${WRKSRC}/lynx.cfg ${PREFIX}/etc/lynx.cfg.default
 
 .include <bsd.port.mk>

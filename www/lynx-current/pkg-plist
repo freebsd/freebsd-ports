@@ -1,4 +1,6 @@
 bin/lynx
+etc/lynx.cfg.default
+@exec if [ ! -f %D/etc/lynx.cfg ] ; then cp -p %D/%F %B/lynx.cfg; fi
 share/lynx_help/Lynx_users_guide.html
 share/lynx_help/about_lynx.html
 share/lynx_help/keystrokes/alt_edit_help.html
