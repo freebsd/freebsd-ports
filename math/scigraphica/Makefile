@@ -30,7 +30,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_VERSION} == "python2.1"
+.if ${PYTHON_VERSION} == "python2.0" || ${PYTHON_VERSION} == "python2.1"
 PYNUMERIC=      ${LOCALBASE}/include/${PYTHON_VERSION}/Numeric/arrayobject.h:${PORTSDIR}/math/py-numeric
 .else
 PYNUMERIC=      ${LOCALBASE}/include/${PYTHON_VERSION}/Numeric/arrayobject.h:${PORTSDIR}/math/py-numeric17
