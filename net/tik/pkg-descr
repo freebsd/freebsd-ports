@@ -1,16 +1,10 @@
-TiK is a pure Tcl/Tk 8.0 version of AOL Instant Messenger (AIM).  The 
-TiK client began its life as a scaled down version of the native Windows 
-and Macintosh clients.  However, TiK now has most of the features the 
-native clients have, plus some extras.  TiK includes a graphical buddy 
-list display plus packages for away messages, buddy pounce, buddy 
-ticker, stock monitoring and IM capturing.  It is very easy for end users 
-to add new features to TiK, using Tcl/Tk.  TiK is meant to give UNIX 
-users an alternative to the Java client.
+From the README file:
 
-With TiK, you will be able to chat with AOL users.
-
-            TiK Homepage:  http://www.aim.aol.com/tik/
- Get your own screenname:  http://www.aol.com/aim/
-
-- Peter Doshi
-  pdoshi01@student.vill.edu
+  TiK is a pure Tcl/Tk 8.0 version of AOL Instant Messenger (AIM).  The 
+  TiK client began its life as a scaled down version of the native Windows 
+  and Macintosh clients.  However, TiK now has most of the features the 
+  native clients have, plus some extras.  TiK includes a graphical buddy 
+  list display plus packages for away messages, buddy pounce, buddy 
+  ticker, stock monitoring and im capturing.  It is very easy for end users 
+  to add new features to TiK, using Tcl/Tk.  TiK is meant to give UNIX 
+  users an alternative to the Java client.

@@ -1,0 +1,2 @@
+#!/bin/sh
+exec wish8.0 /usr/local/lib/tik-0.52/tik.tcl
