@@ -631,13 +631,27 @@ PLIST_SUB+=	GNOMEDESKTOP:="@comment " NOGNOMEDESKTOP:=""
 CONFIGURE_FAIL_MESSAGE=	"Please direct the output of the failure of the make command to a file, and then feed that file to the gnomelogalyzer, available from "http://www.freebsd.org/gnome/gnomelogalyzer.sh", which will diagnose the problem and suggest a solution.  If - and only if - the gnomelogalyzer cannot solve the problem, report the problem to the FreeBSD GNOME team at ${MAINTAINER}, and attach \"${CONFIGURE_WRKSRC}/${CONFIGURE_LOG}\" and the output of the failure of the make command.  Also, it might be a good idea to provide an overview of all packages installed on your system (e.g. an \`ls ${PKG_DBDIR}\`)."
 .endif
 
-_GCONF2_TEST=	${_USE_GNOME:Mgconf2}
-.if ${_GCONF2_TEST:S/gconf2//}!=${_GCONF2_TEST:S/  / /g}
+.if defined(_USE_GNOME)
+.  if ${_USE_GNOME:Mgconf}!="" || ${_USE_GNOME:Mgconf2}!=""
 pre-install: gnome-pre-install
 
 gnome-pre-install:
 	@${MKDIR} ${PREFIX}/etc/gconf/gconf.xml.defaults/
 
+.  endif
+.endif
+
+.if defined(GCONF_SCHEMAS)
+post-install: gnome-post-install
+
+gnome-post-install:
+.  for i in ${GCONF_SCHEMAS}
+	@${ECHO_CMD} "@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/$i > /dev/null || /usr/bin/true" \
+		>> ${TMPPLIST}
+	@${ECHO_CMD} "etc/gconf/schemas/$i" >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/$i > /dev/null || /usr/bin/true" \
+		>> ${TMPPLIST}
+.  endfor
 .endif
 
 .endif
