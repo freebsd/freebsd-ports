@@ -57,6 +57,19 @@
 #	      all files specified in a single commit must all appear in
 #	      third column of a single avail line.
 #
+# Additional (2001/11/16): I've added a group function for labelling
+# groups of users.  To define a group add a line in the avail file of
+# the form:
+#	group|grpname1|joe,fred,bob
+#	group|grpname2|pete,:grpname1,simon
+#	group|grpname2|sid,:grpname2,mike
+#
+# The group name can be used in any place a user name could be used in
+# an avail or unavail line.  Just precede the group name with a ':'
+# character.  In the example above you'll note that you can define a
+# group more than once.  Each definition overrides the previous one,
+# but can include itself to add to it.
+
 
 use strict;
 
@@ -66,6 +79,7 @@ my $CVSROOT = $ENV{'CVSROOT'} || die "Can't determine \$CVSROOT!";
 
 my $debug = $cfg::DEBUG;
 
+my %GROUPS;		# List of committer groups
 my $exit_val = 0;	# Good Exit value
 my $universal_off = 0;
 
@@ -96,11 +110,26 @@ print "$$ Repos: $repos\n","$$ ==== ",join("\n$$ ==== ",@ARGV),"\n" if $debug;
 # It is ok for the avail file not to exist.
 exit 0 unless -e $cfg::AVAIL_FILE;
 
+# Suck in a list of committer groups from the avail file.
+open (AVAIL, $cfg::AVAIL_FILE) || die "Can't open $cfg::AVAIL_FILE!\n";
+while (<AVAIL>) {
+	next unless /^group\|/;
+	chomp;
+
+	my ($keywrd, $gname, $members) = split /\|/, $_;
+	$GROUPS{$gname} = expand_users($members);
+}
+close(AVAIL);
+
+
 open (AVAIL, $cfg::AVAIL_FILE) || die "Can't open $cfg::AVAIL_FILE!\n";
 while (<AVAIL>) {
 	chomp;
 	next if /^\s*\#/;
 	next if /^\s*$/;
+	next if /^group\|/;
+
+	print "--------------------\n" if $debug;
 
 	my ($flagstr, $u, $m) = split(/[\s,]*\|[\s,]*/, $_);
 
@@ -116,6 +145,9 @@ while (<AVAIL>) {
 	# If we find a "universal off" flag (i.e. a simple "unavail")
 	# remember it
 	my $universal_off = 1 if ($flag && !$u && !$m);
+
+ 	# Expand any group names into a full user list.
+ 	$u = expand_users($u);
 
 	# $cfg::COMMITTER considered "in user list" if actually in list
 	# or is NULL
@@ -143,6 +175,8 @@ while (<AVAIL>) {
 	print "$$ \$repos($repos) in repository list: $_\n"
 	    if $debug && $in_repo;
 
+	print "$$ Expanded user list: $u\n" if $debug;
+
 	$exit_val = $flag if ($in_user && $in_repo);
 	print "$$ ==== \$exit_val = $exit_val\n$$ ==== \$flag = $flag\n"
 	    if $debug;
@@ -154,3 +188,31 @@ print "**** Access denied: Insufficient Karma ($cfg::COMMITTER|$repos)\n"
 print "**** Access allowed: Personal Karma exceeds Environmental Karma.\n"
     if $debug && $universal_off && !$exit_val;
 exit($exit_val);
+
+
+# Expand a user specification containing group names and deltas into
+# a definitive list of users.
+sub expand_users {
+	my $user_list = shift || "";
+
+	# Parse the members.
+	my @members = split /,/, $user_list;
+	my %members;
+	foreach my $m (@members) {
+		if ($m =~ s/^://) {
+			if (!defined($GROUPS{$m})) {
+				warn "Group '$m' not defined before use in " . 
+				    "$cfg::AVAIL_FILE.\n";
+				next;
+			}
+			# Add the specified group to the membership.
+			foreach my $u (split /,/, $GROUPS{$m}) {
+				$members{$u} = 1;
+			}
+		} else {
+			$members{$m} = 1;
+		}
+	}
+
+	return join("," , sort keys %members);
+}
