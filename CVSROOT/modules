@@ -3725,6 +3725,7 @@ mixer		src/usr.sbin/mixer
 mixer.app	ports/audio/mixer.app
 mk		src/share/mk
 mk_cmds		src/usr.bin/mk_cmds
+mkbold		ports/x11-fonts/mkbold
 mkcatalog	ports/textproc/mkcatalog
 mkcmd		ports/devel/mkcmd
 mkdep		src/usr.bin/mkdep
@@ -3733,6 +3734,7 @@ mkdosfs		src/usr.sbin/mkdosfs
 mkfifo		src/usr.bin/mkfifo
 mkfontalias	ports/x11-fonts/mkfontalias
 mkisofs		ports/sysutils/mkisofs
+mkitalic	ports/x11-fonts/mkitalic
 mklocale	src/usr.bin/mklocale
 mkmf		ports/devel/mkmf
 mknetid		src/libexec/mknetid
