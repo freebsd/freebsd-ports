@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgcrypt
-PORTVERSION=	1.1.12
+PORTVERSION=	1.1.91
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	alpha/libgcrypt
@@ -15,10 +15,17 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	"General purpose crypto library based on code used in GnuPG"
 
+LIB_DEPENDS=	gpg-error.1:${PORTSDIR}/security/libgpg-error \
+		pth.20:${PORTSDIR}/devel/pth
+
+CONFLICTS=	libgcrypt-1.1*
 USE_REINPLACE=	yes
 USE_PERL5=	yes
+USE_GNOME=	lthack
 USE_LIBTOOL=	yes
-CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
+CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split" \
+		CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include/pth" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib/pth"
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 
@@ -39,10 +46,9 @@ pre-extract:
 	@${ECHO_CMD} "===> GnuPG not installed. Signature can not be verified"
 .endif
 
-
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|" \
-		${WRKSRC}/scripts/ltmain.sh
+		${WRKSRC}/ltmain.sh
 
 pre-configure:
 	@${RM} -f ${WRKSRC}/doc/gcrypt.info*
