@@ -1,0 +1,8 @@
+bin/gtetrinet
+share/gtetrinet/themes/default/blocks.png
+share/gtetrinet/themes/default/theme.cfg
+share/pixmaps/gtetrinet.png
+share/gnome/apps/Games/gtetrinet.desktop
+@dirrm share/gtetrinet/themes/default
+@dirrm share/gtetrinet/themes
+@dirrm share/gtetrinet

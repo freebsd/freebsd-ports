@@ -1,0 +1,21 @@
+# New ports collection makefile for:	gtetrinet
+# Version required:			0.4
+# Date created:				27 Feb 2000
+# Whom:					Dan Papasian <bugg@bugg.strangled.net>
+#
+# $FreeBSD$
+
+DISTNAME=	gtetrinet-0.4
+CATEGORIES=	games
+MASTER_SITES=	http://gtetrinet.netpedia.net/cgi-bin/download.cgi/
+
+MAINTAINER=	bugg@bugg.strangled.net
+
+LIB_DEPENDS=	gnome.3:${PORTSDIR}/x11/gnomelibs
+
+GTK_CONFIG=	"${X11BASE}/bin/gtk12-config"
+USE_GMAKE=	yes
+CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
+GNU_CONFIGURE=	yes
+
+.include <bsd.port.mk>
