@@ -7,7 +7,6 @@
 
 PORTNAME=	bind9
 PORTVERSION=	${ISCVERSION}+${DLZVERSION}
-PORTREVISION=	2
 CATEGORIES=	dns ipv6
 MASTER_SITES=	${MASTER_SITE_ISC} \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,dns/bind9/${ISCVERSION}/,} \
@@ -30,7 +29,7 @@ POSTGRESQL_PORT?=	databases/postgresql7
 MASTER_SITES_DLZ=	${MASTER_SITE_SOURCEFORGE}
 
 ISCVERSION=	9.2.2
-DLZVERSION=	0.6.0
+DLZVERSION=	0.7.0
 USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
@@ -176,10 +175,6 @@ pre-install:
 	@${ECHO_CMD} `${BASENAME} ${i}` | \
 	${SED}  -e "s=^=%%EXTRA_DOCSDIR%%/=" >>${PLIST}
 .endfor
-	@(cd ${WRKSRC}/.. && ${FIND} dlz_docs -type f ) | \
-	${SED}  -e "s=^=%%EXTRA_DOCSDIR%%/=" >>${PLIST}
-	@(cd ${WRKSRC}/.. && ${FIND} -d dlz_docs -type d ) | \
-	${SED} -e "s=^=@dirrm %%EXTRA_DOCSDIR%%/=" >>${PLIST}
 	@${ECHO_CMD} "@dirrm %%EXTRA_DOCSDIR%%" >>${PLIST}
 .endif
 
@@ -193,8 +188,6 @@ post-install:
 	${CP} ${WRKSRC}/CHANGES ${WRKSRC}/COPYRIGHT ${WRKSRC}/FAQ \
 		${WRKSRC}/README ${DOCSDIR}/
 	${MKDIR} ${PREFIX}/${EXTRA_DOCSDIR}
-	@cd ${WRKDIR} && ${INSTALL_DATA} ${DOCS} ${PREFIX}/${EXTRA_DOCSDIR}/
-	${CP} -R ${WRKSRC}/../dlz_docs ${PREFIX}/${EXTRA_DOCSDIR}/dlz_docs
 	@cd ${WRKDIR} && ${INSTALL_DATA} ${DOCS} ${PREFIX}/${EXTRA_DOCSDIR}/
 .endif
 
