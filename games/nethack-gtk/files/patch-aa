@@ -1,0 +1,13 @@
+--- sys/unix/Makefile.top.orig	Thu Jun 15 15:58:10 2000
++++ sys/unix/Makefile.top	Thu Jun 15 15:58:23 2000
+@@ -32,8 +32,8 @@
+ # therefore there should not be anything in GAMEDIR that you want to keep
+ # (if there is, you'll have to do the installation by hand or modify the
+ # instructions)
+-GAMEDIR  = /usr/games/lib/$(GAME)dir
+-SHELLDIR = /usr/games
++GAMEDIR  = ${PREFIX}/share/$(GAME)
++SHELLDIR = ${PREFIX}/bin
+ 
+ # per discussion in Install.X11
+ VARDATND = 

@@ -1,0 +1,13 @@
+--- src/Makefile.orig	Wed Jun 14 22:37:10 2000
++++ src/Makefile	Wed Jun 14 22:38:40 2000
+@@ -124,8 +124,8 @@
+ # flags for debugging:
+ # CFLAGS = -g -I../include
+ 
+-CFLAGS = -O -I../include -I/usr/X11R6/include `gtk-config --cflags`
+-LFLAGS = -O -L/usr/X11R6/lib `gtk-config --libs`
++CFLAGS = -O -I../include -I/usr/X11R6/include `gtk12-config --cflags`
++LFLAGS = -O -L/usr/X11R6/lib `gtk12-config --libs`
+ 
+ # Set the WINSRC, WINOBJ, and WINLIB lines to correspond to your desired
+ # combination of windowing systems.  Also set windowing systems in config.h.

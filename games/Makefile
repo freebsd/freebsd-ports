@@ -103,6 +103,7 @@
     SUBDIR += mirrormagic
     SUBDIR += miscom
     SUBDIR += nethack
+    SUBDIR += nethack-gtk
     SUBDIR += nethack-qt
     SUBDIR += nethack3
     SUBDIR += netrek-BRMH-bin
