@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $Id: portlint.pl,v 1.44 2004/03/26 20:42:32 marcus Exp $
+# $Id: portlint.pl,v 1.46 2004/05/01 02:22:20 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -40,7 +40,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 6;
-my $micro = 0;
+my $micro = 1;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -250,12 +250,11 @@ close(IN);
 #
 # check for files.
 #
-my @checker = ($makevar{DESCR}, 'Makefile', 'distinfo', $makevar{MD5_FILE});
+my @checker = ($makevar{DESCR}, 'Makefile', $makevar{MD5_FILE});
 my %checker = (
 				$makevar{DESCR} => 'checkdescr',
 				'Makefile' => 'checkmakefile',
-				$makevar{MD5_FILE} => 'TRUE',
-				'distinfo' => 'checkdistinfo',
+				$makevar{MD5_FILE} => 'checkdistinfo',
 );
 if ($extrafile) {
 	my @files = (
@@ -584,6 +583,8 @@ sub checkplist {
 	my(@omffile) = ();
 	my(@infofile) = ();
 
+	my $seen_dirrm_docsdir;
+
 	open(IN, "< $file") || return 0;
 	while (<IN>) {
 		if ($_ =~ /[ \t]+\n?$/) {
@@ -603,6 +604,7 @@ sub checkplist {
 			&perror("WARN: $file [$.]: use \%\%SITE_PERL\%\% ".
 					"instead of lib/perl5/site_perl/\%\%PERL_VER\%\%.");
 		}
+		$seen_dirrm_docsdir++ if /^(\%\%PORTDOCS\%\%)?\@dirrm\s+\%\%DOCSDIR\%\%/;
 		if ($_ =~ /^\@/) {
 			if ($_ =~ /^\@(cwd|cd)[ \t]+(\S+)/) {
 				$curdir = $2;
@@ -764,6 +766,10 @@ sub checkplist {
 				"($curdir/$_)\n" if ($verbose);
 			$sharedocused++;
 		}
+	}
+
+	if ($sharedocused && !$seen_dirrm_docsdir) {
+		&perror("WARN: $file: \%\%PORTDOCS\%\%\@dirrm \%\%DOCSDIR\%\% is missing");
 	}
 
 	# Check that each OMF file has an install and deinstall line.
@@ -1024,6 +1030,18 @@ sub checkmakefile {
 			my $lineno = &linenumber($`);
 			&perror("WARN: $file [$lineno]: use \${VARIABLE}, instead of ".
 				"\$(VARIABLE).");
+		}
+	}
+
+	#
+	# whole file: PLIST_FILES and PLIST_DIRS
+	#
+	print "OK: checking PLIST_FILES and PLIST_DIRS.\n" if ($verbose);
+	if ($whole =~ /\nPLIST_FILES.?=/ || $whole =~ /\nPLIST_DIRS.?=/) {
+		if (-f 'pkg-plist') {
+			my $lineno = &linenumber($`);
+			&perror("WARN: $file [$lineno]: You may remove pkg-plist ".
+					"if you use PLIST_FILES and/or PLIST_DIRS.");
 		}
 	}
 
@@ -1845,6 +1863,20 @@ FETCH_DEPENDS DEPENDS DEPENDS_TARGET
 					&perror("WARN: $file: dependency to perl5 ".
 						"listed in $j. consider using ".
 						"USE_PERL5.");
+				}
+
+				# check USE_ICONV
+				if ($m{'dep'} =~ /^(iconv\.\d+)$/) {
+					&perror("WARN: $file: dependency to $1 ".
+						"listed in $j.  consider using ".
+						"USE_ICONV.");
+				}
+
+				# check USE_GETTEXT
+				if ($m{'dep'} =~ /^(intl\.\d+)$/) {
+					&perror("WARN: $file: dependency to $1 ".
+						"listed in $j.  consider using ".
+						"USE_GETTEXT.");
 				}
 
 				# check USE_GMAKE
