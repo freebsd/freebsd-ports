@@ -21,6 +21,7 @@
     SUBDIR += eggdrop
     SUBDIR += epic4
     SUBDIR += erc
+    SUBDIR += evangeline
     SUBDIR += ezbounce
     SUBDIR += fisg
     SUBDIR += garnaxfs
