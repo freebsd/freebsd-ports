@@ -1,10 +1,13 @@
+bin/xml-config
 etc/xmlConf.sh
+include/gnome-xml/debugXML.h
+include/gnome-xml/encoding.h
 include/gnome-xml/entities.h
 include/gnome-xml/parser.h
 include/gnome-xml/tree.h
 lib/libxml.a
-@exec ranlib %D/%F
 lib/libxml.la
+lib/libxml.so
 lib/libxml.so.0
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R

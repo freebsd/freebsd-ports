@@ -1,12 +1,12 @@
 # New ports collection makefile for:   libxml
-# Version required:    0.30
+# Version required:    0.99
 # Date created:        28 September 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/10/10 13:48:53 vanilla Exp $
 #
 
-DISTNAME=	libxml-0.30
+DISTNAME=	libxml-0.99
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/ \
 		ftp://ftp.gnome.org/pub/GNOME/sources/

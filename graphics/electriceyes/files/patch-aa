@@ -1,5 +1,5 @@
---- configure.orig	Fri Jan  1 14:56:12 1999
-+++ configure	Fri Jan  1 14:57:09 1999
+--- configure.orig	Tue Dec 15 02:19:21 1998
++++ configure	Tue Jan  5 12:06:13 1999
 @@ -1076,13 +1076,13 @@
  	    fi
  	
@@ -19,3 +19,14 @@
  	        
  	      else
  	        echo "$ac_t""not found" 1>&6
+@@ -3448,7 +3448,9 @@
+ if eval "test \"`echo '$''{'gt_cv_func_gettext_libintl'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+-  cat > conftest.$ac_ext <<EOF
++  ac_save_LIBS="$LIBS"
++LIBS="-lintl $LIBS"
++cat > conftest.$ac_ext <<EOF
+ #line 3453 "configure"
+ #include "confdefs.h"
+ 

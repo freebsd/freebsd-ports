@@ -1,20 +1,39 @@
---- configure.orig	Wed Sep 30 13:51:50 1998
-+++ configure	Fri Oct 23 00:46:12 1998
-@@ -930,12 +930,12 @@
- 
- 
- 	if test "$no_gnome_config" = "yes"; then
--          echo $ac_n "checking for gnomeConf.sh file in $gnome_prefix""... $ac_c" 1>&6
--echo "configure:935: checking for gnomeConf.sh file in $gnome_prefix" >&5
--	  if test -f $gnome_prefix/gnomeConf.sh; then
-+          echo $ac_n "checking for gnomeConf.sh file in $prefix/share/gnome""... $ac_c" 1>&6
-+echo "configure:935: checking for gnomeConf.sh file in $prefix/share/gnome" >&5
-+	  if test -f $prefix/share/gnome/gnomeConf.sh; then
- 	    echo "$ac_t""found" 1>&6
--	    echo "loading gnome configuration from $gnome_prefix/gnomeConf.sh"
--	    . $gnome_prefix/gnomeConf.sh
-+	    echo "loading gnome configuration from $prefix/share/gnome/gnomeConf.sh"
-+	    . $prefix/share/gnome/gnomeConf.sh
- 	    
- 	  else
- 	    echo "$ac_t""not found" 1>&6
+--- configure.orig	Thu Dec 31 03:05:56 1998
++++ configure	Tue Jan  5 13:38:32 1999
+@@ -1081,13 +1081,13 @@
+ 	    fi
+ 	
+ 	    if test "$no_gnome_config" = "yes"; then
+-              echo $ac_n "checking for gnomeConf.sh file in $gnome_prefix""... $ac_c" 1>&6
+-echo "configure:1086: checking for gnomeConf.sh file in $gnome_prefix" >&5
+-	      if test -f $gnome_prefix/gnomeConf.sh; then
++              echo $ac_n "checking for gnomeConf.sh file in $prefix/share/gnome""... $ac_c" 1>&6
++echo "configure:1086: checking for gnomeConf.sh file in $prefix/share/gnome" >&5
++	      if test -f $prefix/share/gnome/gnomeConf.sh; then
+ 	        echo "$ac_t""found" 1>&6
+ 	        echo "loading gnome configuration from" \
+-		     "$gnome_prefix/gnomeConf.sh"
+-	        . $gnome_prefix/gnomeConf.sh
++		     "$prefix/share/gnome/gnomeConf.sh"
++	        . $prefix/share/gnome/gnomeConf.sh
+ 	        
+ 	      else
+ 	        echo "$ac_t""not found" 1>&6
+@@ -2573,7 +2573,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lxml `gnome-config --libs xml` $LIBS"
++LIBS="-lxml -lz $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 2579 "configure"
+ #include "confdefs.h"
+@@ -2604,7 +2604,7 @@
+   
+ 		
+ 		
+-		GNOME_XML_LIB=`gnome-config --libs xml`
++		GNOME_XML_LIB=`xml-config --libs`
+ 	
+ else
+   echo "$ac_t""no" 1>&6

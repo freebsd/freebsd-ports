@@ -1,15 +1,36 @@
 bin/gnumeric
-share/gnome/apps/Productivity/gnumeric.desktop
-share/gnome/gnumeric/plugins/libsample.a
-share/gnome/gnumeric/plugins/libsample.la
-share/gnome/gnumeric/plugins/libsample.so
-share/gnome/gnumeric/plugins/libsample.so.0
+bin/gnumeric-corba
+share/gnome/apps/Applications/gnumeric.desktop
+share/gnome/gnumeric/guile/gnumeric_startup.scm
+share/gnome/gnumeric/plugins/libgnumguile.a
+share/gnome/gnumeric/plugins/libgnumguile.la
+share/gnome/gnumeric/plugins/libgnumguile.so
+share/gnome/gnumeric/plugins/libgnumguile.so.0
+share/gnome/gnumeric/plugins/libstat.a
+share/gnome/gnumeric/plugins/libstat.la
+share/gnome/gnumeric/plugins/libstat.so
+share/gnome/gnumeric/plugins/libstat.so.0
+share/gnome/mime-info/gnumeric.keys
+share/gnome/mime-info/gnumeric.mime
+share/gnome/pixmaps/gnome-gnumeric.png
+share/locale/cs/LC_MESSAGES/gnumeric.mo
+share/locale/de/LC_MESSAGES/gnumeric.mo
 share/locale/es/LC_MESSAGES/gnumeric.mo
-share/locale/es@mx/LC_MESSAGES/gnumeric.mo
+share/locale/es_DO/LC_MESSAGES/gnumeric.mo
+share/locale/es_GT/LC_MESSAGES/gnumeric.mo
+share/locale/es_HN/LC_MESSAGES/gnumeric.mo
+share/locale/es_MX/LC_MESSAGES/gnumeric.mo
+share/locale/es_PA/LC_MESSAGES/gnumeric.mo
+share/locale/es_PE/LC_MESSAGES/gnumeric.mo
+share/locale/es_SV/LC_MESSAGES/gnumeric.mo
 share/locale/fr/LC_MESSAGES/gnumeric.mo
 share/locale/hu/LC_MESSAGES/gnumeric.mo
 share/locale/it/LC_MESSAGES/gnumeric.mo
+share/locale/ja/LC_MESSAGES/gnumeric.mo
 share/locale/ko/LC_MESSAGES/gnumeric.mo
+share/locale/no/LC_MESSAGES/gnumeric.mo
+share/locale/no_NO/LC_MESSAGES/gnumeric.mo
 share/locale/pt/LC_MESSAGES/gnumeric.mo
+@dirrm share/gnome/gnumeric/guile
 @dirrm share/gnome/gnumeric/plugins
 @dirrm share/gnome/gnumeric

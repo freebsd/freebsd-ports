@@ -1,12 +1,12 @@
-# New ports collection makefile for:   gnumeric
-# Version required:    0.3
-# Date created:        08 October 1998
-# Whom:                Yukihiro Nakai <Nakai@technologist.com>
+# New ports collection makefile for:	gnumeric
+# Version required:			0.5
+# Date created:				08 October 1998
+# Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.2 1998/11/09 06:51:34 asami Exp $
+# $Id: Makefile,v 1.3 1998/11/18 12:09:05 asami Exp $
 #
 
-DISTNAME=	gnumeric-0.3
+DISTNAME=	gnumeric-0.5
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/ \
 		ftp://ftp.gnome.org/pub/GNOME/sources/
@@ -23,7 +23,8 @@ CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--with-gnome=${X11BASE}
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include \
 		-I${X11BASE}/include" \
-		GTK_CONFIG="${X11BASE}/bin/gtk11-config" \
+		GTK_CONFIG="${X11BASE}/bin/gtk11d-config" \
+		GLIB_CONFIG="${LOCALBASE}/bin/glib11d-config" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lxpg4"
 
 post-install:
