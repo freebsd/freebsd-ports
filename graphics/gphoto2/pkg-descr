@@ -1,7 +1,3 @@
-gphoto2 is a library that can be used by applications to access
-various digital cameras.
+gphoto2 is a command-line frontend to libgphoto2.
 
-Additionally, the command-line frontend, which is shipped with
-the library, is called gphoto2, too.
-
-WWW: http://www.gphoto.org/
+WWW: http://gphoto.sourceforge.net/
