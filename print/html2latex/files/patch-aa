@@ -1,0 +1,72 @@
+diff -u ../html2latex-0.9c.old/HTMLparse.c ./HTMLparse.c
+--- ../html2latex-0.9c.old/HTMLparse.c	Fri Mar 19 04:52:24 1993
++++ ./HTMLparse.c	Fri Mar 29 16:36:35 1996
+@@ -67,7 +67,8 @@
+   "title", "h1", "h2", "h3", "h4", "h5", "h6", "a", "p", "address",
+   "xmp", "ul", "li", "dl", "dt", "dd", "pre", "plaintext", "listing",
+   "isindex", "menu", "dir", "img", "ol", "em", "tt", "b", "i", "u",
+-  "strong", "code", "samp", "kbd", "var", "dfn", "cite", "gnat"
++  "strong", "code", "samp", "kbd", "var", "dfn", "cite", "gnat",
++  "!"
+   };
+ 
+ /*
+@@ -454,7 +455,8 @@
+ 	{
+ 		if (*ptr == '<')
+ 		{
+-			if (isalpha((int)(*(ptr + 1))))
++			if (isalpha((int)(*(ptr + 1))) ||
++			    *(ptr + 1) == '!')
+ 			{
+ 				break;
+ 			}
+diff -u ../html2latex-0.9c.old/HTMLparse.h ./HTMLparse.h
+--- ../html2latex-0.9c.old/HTMLparse.h	Fri Mar 19 04:43:34 1993
++++ ./HTMLparse.h	Fri Mar 29 16:25:48 1996
+@@ -52,7 +52,7 @@
+   M_DESC_TITLE, M_DESC_TEXT, M_PREFORMAT, M_PLAIN_FILE, M_LISTING_TEXT,
+   M_INDEX, M_MENU, M_DIRECTORY, M_IMAGE, M_NUM_LIST, M_EM,
+   M_TT, M_B, M_I, M_U, M_STRONG, M_CODE, M_SAMP, M_KBD, M_VAR, M_DFN,
+-  M_CITE, M_SENTINEL
++  M_CITE, M_SENTINEL, M_COMMENT
+   } mark_t;
+ 
+ /* amperstand escapes */
+diff -u ../html2latex-0.9c.old/Makefile ./Makefile
+--- ../html2latex-0.9c.old/Makefile	Fri Mar 19 05:02:36 1993
++++ ./Makefile	Fri Mar 29 16:40:56 1996
+@@ -12,9 +12,9 @@
+ 
+ # ----------------------------------------------------------------------------
+ # For SGI's:
+-CFLAGS = -g -cckr  -DXMOSAIC
++CFLAGS = -g -cckr  -DXMOSAIC -DNEED_GETOPT_H
+ # For testing:
+-# CFLAGS = -g -Wall -DXMOSAIC
++# CFLAGS = -g -Wall -DXMOSAIC -DNEED_GETOPT_H
+ # For HP's:
+ # CFLAGS = -g -DXMOSAIC -I/usr/include/Motif1.1 -I/usr/include/X11R4
+ # For everyone else:
+Only in .: diff
+diff -u ../html2latex-0.9c.old/html2latex.c ./html2latex.c
+--- ../html2latex-0.9c.old/html2latex.c	Wed Jun 16 05:55:10 1993
++++ ./html2latex.c	Fri Mar 29 16:41:17 1996
+@@ -9,7 +9,9 @@
+ #include "HTMLparse.h"
+ #include <stdio.h>
+ #include <stdlib.h>
++#if NEED_GETOPT_H
+ #include <getopt.h>
++#endif
+ #include <ctype.h>
+ #include <string.h>
+ 
+@@ -339,6 +341,7 @@
+       if (!mptr)
+ 	current = temp_s;
+       break;
++    case M_COMMENT:
+     default:
+       /* ignore things we know not wot of */
+       break;

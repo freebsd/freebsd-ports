@@ -1,0 +1,47 @@
+--- Makefile.orig	Fri Mar 29 17:18:06 1996
++++ Makefile	Fri Mar 29 17:22:06 1996
+@@ -3,7 +3,7 @@
+ 
+ # ----------------------------------------------------------------------------
+ # For normal machines with normal compilers:
+-CC = cc
++# CC = cc
+ # For testing:
+ # CC = gcc
+ # For Sun's and other non-at-least-pseudo-ANSI-C platforms:
+@@ -12,7 +12,7 @@
+ 
+ # ----------------------------------------------------------------------------
+ # For SGI's:
+-CFLAGS = -g -cckr  -DXMOSAIC -DNEED_GETOPT_H
++# CFLAGS = -g -cckr  -DXMOSAIC -DNEED_GETOPT_H
+ # For testing:
+ # CFLAGS = -g -Wall -DXMOSAIC -DNEED_GETOPT_H
+ # For HP's:
+@@ -20,12 +20,13 @@
+ # For everyone else:
+ # CFLAGS = -g -DXMOSAIC
+ # ----------------------------------------------------------------------------
++CFLAGS+= -DXMOSAIC
+ 
+ # ----------------------------------------------------------------------------
+ # For SGI's:
+-RANLIB = /bin/true
++# RANLIB = /bin/true
+ # For everyone else:
+-# RANLIB = ranlib
++RANLIB = ranlib
+ # ----------------------------------------------------------------------------
+ 
+ # You shouldn't need to edit below here.
+@@ -55,3 +56,10 @@
+ 
+ clean:
+ 	-rm $(EXETARGET) $(OBJS) $(LIBTARGET) $(DOCTARGET)
++
++PREFIX?=	/usr/local
++
++install: all
++	install -c -s $(EXETARGET) $(PREFIX)/bin
++	gzip -c < html2latex.1 > html2latex.1.gz
++	install -c html2latex.1.gz $(PREFIX)/man/man1
