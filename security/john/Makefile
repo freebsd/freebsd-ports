@@ -44,6 +44,7 @@ do-configure:
 	@${SED} -e "s:~/all.chr:${PREFIX}/share/john/all.chr:" \
 		-e "s:~/alpha.chr:${PREFIX}/share/john/alpha.chr:" \
 		-e "s:~/digits.chr:${PREFIX}/share/john/digits.chr:" \
+		-e "s:~/lanman.chr:${PREFIX}/share/john/lanman.chr:" \
 		${WRKDIR}/${DISTNAME}/run/john.ini.in > ${WRKDIR}/${DISTNAME}/run/john.ini
 
 do-install:
@@ -55,6 +56,7 @@ do-install:
 		${WRKDIR}/${DISTNAME}/run/all.chr \
 		${WRKDIR}/${DISTNAME}/run/alpha.chr \
 		${WRKDIR}/${DISTNAME}/run/digits.chr \
+		${WRKDIR}/${DISTNAME}/run/lanman.chr \
 		${WRKDIR}/${DISTNAME}/run/password.lst \
 		${WRKDIR}/${DISTNAME}/run/john.ini \
 		${DATADIR}
