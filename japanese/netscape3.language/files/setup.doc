@@ -1,0 +1,26 @@
+フォントサイズの指定方法
+
+	(1) メニューバーから「オプション」->「全般の設定」を選びます。
+	(2) 「フォント」のタブをクリックします。
+	(3) 「フォントを指定する文字セット」で「日本語 (jis_x0208-1983)」を指定
+	します。
+	(4) 「プロポーショナルフォント」で「Fixed(Netscape)」、サイズに「13.0」
+	を選びます。 X-VFlib を利用する場合には「スケーリングを有効にする」を
+	チェックしておきます。
+	(5) 「等幅フォント」で「Fixed(Netscape)」、サイズに「13.0」を選びます。
+	X-VFlib を利用する場合には「スケーリングを有効にする」をチェックしてお
+	きます。
+
+X-VFlib
+
+	X-VFlib で使用するときの設定例を以下に示します。
+
+	/usr/X11R6/lib/X11/fonts/VFlib/fonts.dir
+	- begin -
+	1
+	min.vflib -netscape-fixed-medium-r-normal--0-0-0-0-c-0-jisx0208.1983-0
+	- end -
+
+参考 URL
+
+	<http://cclub.tutcc.tut.ac.jp/netbsd/japanese/netbsd-jp19-0.html>
