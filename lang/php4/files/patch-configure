@@ -1,0 +1,38 @@
+--- configure.orig	Mon Oct 11 15:56:07 2004
++++ configure	Mon Oct 11 15:56:28 2004
+@@ -2672,7 +2672,7 @@
+   save_LIBS=$LIBS
+   
+ if test -n "$ac_cv_pthreads_lib"; then
+-  LIBS="$LIBS -l$ac_cv_pthreads_lib"
++  LIBS="$LIBS $ac_cv_pthreads_lib"
+ fi
+ 
+ if test -n "$ac_cv_pthreads_cflags"; then
+@@ -8934,7 +8934,7 @@
+ if test "$enable_experimental_zts" = "yes"; then
+   
+ if test -n "$ac_cv_pthreads_lib"; then
+-  LIBS="$LIBS -l$ac_cv_pthreads_lib"
++  LIBS="$LIBS $ac_cv_pthreads_lib"
+ fi
+ 
+ if test -n "$ac_cv_pthreads_cflags"; then
+@@ -8951,8 +8951,6 @@
+   case $host_alias in
+   *solaris*)
+     PTHREAD_FLAGS="-D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT";;
+-  *freebsd*)
+-    PTHREAD_FLAGS="-D_REENTRANT -D_THREAD_SAFE";;
+   *linux*)
+     PTHREAD_FLAGS=-D_REENTRANT;;
+   *aix*)
+@@ -89623,7 +89621,7 @@
+   save_LIBS=$LIBS
+   
+ if test -n "$ac_cv_pthreads_lib"; then
+-  LIBS="$LIBS -l$ac_cv_pthreads_lib"
++  LIBS="$LIBS $ac_cv_pthreads_lib"
+ fi
+ 
+ if test -n "$ac_cv_pthreads_cflags"; then

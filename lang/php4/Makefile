@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	php4
-PORTVERSION=	4.3.8
-PORTREVISION?=	2
+PORTVERSION=	4.3.9
+PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP:S,$,:release,} \
 		http://downloads.php.net/ilia/:rc \
@@ -106,12 +106,8 @@ SAPI_FILE=	bin/php
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500016
-WITH_PTHREAD_LIBS?=	${PTHREAD_LIBS:S/-l//}
-WITH_PTHREAD_CFLAGS?=	${PTHREAD_CFLAGS}
-CONFIGURE_ENV=	ac_cv_pthreads_lib=${WITH_PTHREAD_LIBS} \
-		ac_cv_pthreads_cflags=${WITH_PTHREAD_CFLAGS}
-.endif
+CONFIGURE_ENV=	ac_cv_pthreads_lib=${PTHREAD_LIBS} \
+		ac_cv_pthreads_cflags=${PTHREAD_CFLAGS}
 
 .if defined(WITH_APACHE)
 .if exists(${LOCALBASE}/include/apache2/httpd.h)
@@ -167,6 +163,7 @@ PHP_PORT=	${.CURDIR:S|^${_PORTSDIR}||:S|^/||}
 post-patch:
 	@${TOUCH} ${WRKSRC}/ext/php_config.h
 	@${REINPLACE_CMD} "s|^\(extension_dir\)|; \1|" ${WRKSRC}/php.ini-*
+	@${REINPLACE_CMD} "s|<crypt.h>|<unistd.h>|g" ${WRKSRC}/configure
 
 .if ${PHP_SAPI} == "full"
 pre-configure:
