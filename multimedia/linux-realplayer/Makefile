@@ -7,13 +7,13 @@
 
 PORTNAME=	linux-realplayer
 PORTVERSION=	8.cs2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia audio linux
 MASTER_SITES=	http://docs.real.com/docs/playerpatch/unix/:update
 DISTFILES=	${MAINDIST} ${UPDATEDIST:S/$/:update/}
 EXTRACT_ONLY=	${UPDATEDIST}
 
-MAINTAINER=	vns@delta.odessa.ua
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linux RealPlayer 8.0 from RealNetworks
 
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
@@ -49,7 +49,7 @@ NO_CDROM=	"Redistribution not allowed"
 NO_BUILD=	yes
 
 post-extract:
-	cd ${WRKDIR}; rpm2cpio.pl ${DISTDIR}/${MAINDIST} | cpio -id --quiet
+	cd ${WRKDIR}; rpm2cpio.pl ${DISTDIR}/${MAINDIST} | ${CPIO} -id --quiet
 
 post-patch:
 	${REINPLACE_CMD} -e \
