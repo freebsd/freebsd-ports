@@ -6,7 +6,7 @@
 #			and apache-ssl port by Mark Murray <mark@grondar.za>.
 #			Oh, and with a little bit of help from Ben :)
 #
-# $Id: Makefile,v 1.57 1999/06/02 07:20:36 dirk Exp $
+# $Id: Makefile,v 1.58 1999/06/28 09:00:47 asami Exp $
 
 APACHE= 	1.3.6
 APACHE-SSL=	1.35
@@ -80,7 +80,13 @@ RESTRICTED=     "Contains cryptography"
 MAN1= 		dbmmanage.1 htdigest.1 htpasswd.1
 MAN8= 		ab.8 httpsdctl.8 apxs.8 httpsd.8 logresolve.8 rotatelogs.8
 
-pre-fetch:
+post-extract:
+	@cd ${WRKSRC} && tar xzf ${DISTDIR}/apache_${APACHE}+ssl_${APACHE-SSL}${EXTRACT_SUFX}
+
+post-patch:
+	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} ./FixPatch
+
+pre-configure:
 .if !defined(USA_RESIDENT) || ${USA_RESIDENT} != YES
 	@${ECHO}
 	@${ECHO} "*** Warning!"
@@ -93,12 +99,6 @@ pre-fetch:
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
 CONFIGURE_ENV=LDFLAGS="${LDFLAGS} -L/usr/local/lib -lRSAglue -lrsaref"
 .endif
-
-post-extract:
-	@cd ${WRKSRC} && tar xzf ${DISTDIR}/apache_${APACHE}+ssl_${APACHE-SSL}${EXTRACT_SUFX}
-
-post-patch:
-	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} ./FixPatch
 
 certificate:
 	@if [ -f ${PREFIX}/lib/openssl.cnf ]; then \
