@@ -6,17 +6,13 @@
 #
 
 PORTNAME=	pike75
-PORTVERSION=	7.5.17
-PORTREVISION=	1
+PORTVERSION=	7.5.21
 CATEGORIES=	lang
 MASTER_SITES=	ftp://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
-		ftp://ftp.oav.net/pkg_freebsd/distfiles/ \
-		http://ftp.oav.net/pkg_freebsd/distfiles/ \
 		ftp://ftp.oav.net/pike/7.5/export/ \
-		http://ftp.oav.net/pike/7.5/export/ \
 		http://grendel.firewall.com/caudium-pkg/ \
 		ftp://ftp.caudium.net/pike/official_releases/${PORTVERSION}/
-DISTNAME=	Pike-v${PORTVERSION}-4
+DISTNAME=	Pike-v${PORTVERSION}
 
 MAINTAINER=	kiwi@oav.net
 COMMENT=	A dynamic programming language with a syntax similar to C++
@@ -26,9 +22,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		gdbm.3:${PORTSDIR}/databases/gdbm \
 		fftw.2:${PORTSDIR}/math/fftw \
 		pcre.0:${PORTSDIR}/devel/pcre \
+		nettle.1:${PORTSDIR}/security/nettle \
 		mird.1:${PORTSDIR}/databases/mird
-# Nettle doesn't work ;(
-#		nettle.1:${PORTSDIR}/security/nettle \
 
 OPTIONS=	TTF "Add FreeType 1 support" on \
 		FREETYPE "Add FreeType 2 support" on \
@@ -42,8 +37,9 @@ WRKSRC=		${WRKDIR}/Pike-v${PORTVERSION}/src/
 WANT_MESA=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS+=${PTHREAD_LIBS} CPPFLAGS+=${PTHREAD_CFLAGS}
+CONFIGURE_ENV=	CPPFLAGS+=${PTHREAD_CFLAGS}
 CONFIGURE_ARGS+=	--without-debug \
+		 --with-thread-library=${PTHREAD_LIBS} \
 		 --with-double-precision \
 		 --with-long-double-precision \
 		 --disable-rpath \
@@ -279,14 +275,9 @@ CONFIGURE_ARGS+=	--with-GL --with-GLUT
 CONFIGURE_ARGS+=	--without-GL --without-GLUT
 .endif
 
-#.if (${MACHINE} == "i386")
-#CONFIGURE_ARGS+= --with-poll
-#.else
-## Alpha seems to have problems with poll() with pike... :/
-#CONFIGURE_ARGS+= --without-poll
-#.endif
-
 USE_GMAKE=	yes
+
+INSTALL_TARGET=	install_nodoc
 
 pre-configure:
 	@${ECHO} ${CONFIGURE_ARGS}
