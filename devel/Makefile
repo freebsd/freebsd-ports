@@ -1071,6 +1071,7 @@
     SUBDIR += p5-Test-Deep
     SUBDIR += p5-Test-Differences
     SUBDIR += p5-Test-Exception
+    SUBDIR += p5-Test-File
     SUBDIR += p5-Test-Harness
     SUBDIR += p5-Test-Inline
     SUBDIR += p5-Test-LectroTest
