@@ -1,0 +1,10 @@
+--- Makefile.orig	Mon May 21 17:23:17 2001
++++ Makefile	Sat Nov 17 11:46:47 2001
+@@ -1,6 +1,4 @@
+-CC        = gcc
+-CFLAGS    = -g -O2 -Wall
+-XROOT     = /usr/X11
++XROOT     = %%X11BASE%%
+ INCLUDES  = -I$(XROOT)/include
+ LIBS      = -lX11 
+ LDPATH    = -L$(XROOT)/lib
