@@ -7,6 +7,6 @@
 APR_UTIL_WITH_BERKELEY_DB=	yes
 APR_UTIL_WITHOUT_THREADS=	yes
 MASTERDIR=			${.CURDIR}/../apr
-CONFLICT=			apr-*
+CONFLICTS=			apr-*
 
 .include "${MASTERDIR}/Makefile"
