@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIWrapper
-PORTVERSION=	0.19
+PORTVERSION=	0.20
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dbiwrapper
@@ -18,7 +18,6 @@ COMMENT=	Perl extension for generic DBI database access
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
 		${SITE_PERL}/XML/SAX.pm:${PORTSDIR}/textproc/p5-XML-SAX
-		
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
