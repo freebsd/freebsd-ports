@@ -1,0 +1,17 @@
+--- Imakefile.old	Fri Sep 13 00:19:22 1996
++++ Imakefile	Fri Sep 13 00:19:36 1996
+@@ -3,10 +3,10 @@
+ XCOMM written by Jörg Wunsch, 96/01/12.
+ XCOMM
+ 
+- EXTRA_INCLUDES = -I/sys
+-
+-        DEPLIBS = XawClientDepLibs
+-LOCAL_LIBRARIES = XawClientLibs MathLibrary
++ EXTRA_INCLUDES = -I/sys -I/usr/local/include
++ EXTRA_DEFINES  = -DJPEG
++        DEPLIBS = XawClientDepLibs /usr/local/lib/libjpeg.a
++LOCAL_LIBRARIES = XawClientLibs MathLibrary -L/usr/local/lib -ljpeg
+ 
+            SRCS = main.c scsi.c scanner.c scl.c gui.c colour.c Plain.c
+            OBJS = main.o scsi.o scanner.o scl.o gui.o colour.o Plain.o
