@@ -1,19 +1,22 @@
 #!/bin/sh
-canna=@PREFIX@/sbin/cannaserver
+
+if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/${0##*/}\$"); then
+    echo "$0: Cannot determine the PREFIX" >&2
+    exit 64
+fi
+
 
 case "$1" in
 start)
-	if [ -f $canna ]; then
-		rm -f /var/run/canna/Canna.pid
-		mkdir -p /var/run/canna
-		touch /var/log/CANNA0msgs
-		chown bin:bin /var/run/canna /var/log/CANNA0msgs
-		echo -n ' Canna'
-		$canna
+	if [ -x ${PREFIX}/sbin/cannaserver ]; then
+		@RM@ -f /tmp/.iroha_unix/IROHA
+		@TOUCH@ /var/log/CANNA0msgs
+		@CHOWN@ bin:bin /var/log/CANNA0msgs
+		${PREFIX}/sbin/cannaserver && echo -n ' canna'
 	fi
 	;;
 stop)
-	@PREFIX@/sbin/cannakill && echo -n ' Canna'
+	${PREFIX}/sbin/cannakill && echo -n ' canna'
 	;;
 *)
 	echo "Usage: `basename $0` {start|stop}" >&2
