@@ -1,0 +1,22 @@
+--- server/execute.c.orig	Mon Apr 13 07:20:22 1998
++++ server/execute.c	Fri Feb  2 19:47:07 2001
+@@ -105,7 +105,7 @@
+ 	i = strlen(dict_dir) + 1 + strlen(path) + 1;
+ 	if (i > sizeof(tmp)) return ERROR;
+ 
+-	strcpy(tmp, path);
++	strlcpy(tmp, path, sizeof(tmp));
+ 	index = strtok(tmp, "/");
+ 	do {
+ 		if (!strcmp(index, "..")) return ERROR;
+@@ -118,9 +118,7 @@
+ 			return ERROR;
+ 		}
+ 	}
+-	strcpy(tmp, dict_dir);
+-	strcat(tmp, "/");
+-	strcat(tmp, path);
++	snprintf(tmp, sizeof(tmp), "%s/%s", dict_dir, path);
+ 	strcpy(path, tmp);
+ 	return 0;
+ }
