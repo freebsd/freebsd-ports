@@ -1,5 +1,5 @@
 --- cgi-bin/webglimpse.orig	Mon Jul 27 22:59:49 1998
-+++ cgi-bin/webglimpse	Wed Nov 17 16:51:58 1999
++++ cgi-bin/webglimpse	Sat May  6 02:24:03 2000
 @@ -39,6 +39,9 @@
  # **** **** **** ****    CONFIGURABLE VARIABLES     **** **** **** ****
  # We need some of these to find our libraries, so wrap them in a BEGIN block
@@ -102,6 +102,24 @@
  
  	# Fool perl -T into accepting $cmd for execution.  (as per Peter Bigot) --GB 10/17/97
  	# We assume that we have sufficiently checked the parameters to be safe at this point.  
+@@ -399,7 +425,7 @@
+ 	# print "<br>now (after init): $hour:$min:$sec<br>\n";
+ 	
+ 
+-	# print "<!-- Glimpse command: $cmd -->\n";
++	print "<!-- Glimpse command: $cmd -->\n";
+ 	# Save pid of the pipe command so we can do cleanup later.
+ 	if (!($gpid = open(GOUT, $cmd ))) {
+ 	   &err_noglimpse($cmd);
+@@ -409,7 +435,7 @@
+ 
+ 	# check the return code
+ 	$rc = $? >> 8;
+-	if($rc!=0){
++	if($rc>1){
+ 	   # it's an error!
+ 	   &err_badglimpse(@glines);
+ 	}	
 @@ -510,12 +536,12 @@
  		$charcount = 0;
  		if ($fcount>=$maxfiles) {
