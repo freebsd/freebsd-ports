@@ -7,7 +7,7 @@
 #
 
 DISTNAME=	naim-0.9.5-nicer2
-PKGNAME=	naim-0.9.5.nicer2
+PKGNAME=	naim-0.9.5.2
 CATEGORIES=	net
 MASTER_SITES=	http://dev.n.ml.org/ \
 		ftp://ftp.netmug.org/pub/FreeBSD/distfiles/
