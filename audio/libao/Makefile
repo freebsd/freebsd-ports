@@ -7,6 +7,7 @@
 
 PORTNAME=	libao
 PORTVERSION=	0.8.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.linuxpowered.com/pub/Vorbis/unix/ \
 		ftp://ftp.wiles.org/pub/mirrors/Vorbis/unix/ \
@@ -32,7 +33,7 @@ MAN5=		libao.conf.5
 
 .include <bsd.port.pre.mk>
 
-.if ${HAVE_GNOME:Mesound}!=""
+.if ${HAVE_GNOME:Mesound}
 USE_GNOME+=	esound
 PLIST_SUB+=	ESOUND=""
 PKGNAMESUFFIX=	-esound
