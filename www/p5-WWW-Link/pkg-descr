@@ -1,0 +1,11 @@
+WWW::Link is a perl class which accepts and maintains information
+about links. For example, this would include urls which are referenced
+from a WWW page.
+
+The link class will be acted on by such programs as link checkers
+to give it information and by other programs to convert that
+information into something which can be used by humans.
+
+WWW: http://search.cpan.org/search?dist=WWW-Link
+
+Seamus Venasse <svenasse@polaris.ca>

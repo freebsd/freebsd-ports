@@ -282,6 +282,7 @@
     SUBDIR += p5-Template-Toolkit
     SUBDIR += p5-URI-Sequin
     SUBDIR += p5-WWW-Babelfish
+    SUBDIR += p5-WWW-Link
     SUBDIR += p5-WWW-Robot
     SUBDIR += p5-WWW-Search
     SUBDIR += p5-WWW-Search-AltaVista
