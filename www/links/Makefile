@@ -7,6 +7,7 @@
 
 PORTNAME=	links
 PORTVERSION=	0.97
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://artax.karlin.mff.cuni.cz/~mikulas/vyplody/links/download/ \
