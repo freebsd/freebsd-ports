@@ -1,5 +1,5 @@
-*** cpp-Makefile.orig	Thu Dec 22 23:36:46 1994
---- cpp-Makefile	Fri Dec 30 16:54:09 1994
+*** cpp-Makefile.orig	Tue Jan 31 00:48:36 1995
+--- cpp-Makefile	Fri Mar 17 03:24:29 1995
 ***************
 *** 138,144 ****
 --- 138,148 ----
@@ -51,6 +51,6 @@
 + #ifdef __FreeBSD__
 + LDFLAGS += -s
 + #endif
-  CCFLAGS	= $(PROFILE_FLAGS) $(CFLAGS) $(SYSTEM_FLAGS) -DSHELL $(ALLOCA_CFLAGS) \
-  	  $(MALLOC_CFLAGS)
+  CCFLAGS	= $(PROFILE_FLAGS) $(SYSTEM_FLAGS) -DSHELL $(ALLOCA_CFLAGS) \
+  	  $(MALLOC_CFLAGS) $(CFLAGS)
   CPPFLAGS= -I. -I$(srcdir) -I$(LIBSRC)
