@@ -1259,7 +1259,7 @@ BUILD_DEPENDS+=	gcc32:${PORTSDIR}/lang/gcc32
 
 .if defined(USE_GETOPT_LONG)
 .if ${OSVERSION} < 500041
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib -lgnugetopt
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
