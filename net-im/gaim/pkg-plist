@@ -4,7 +4,6 @@ bin/gaim
 lib/gaim/autorecon.so
 lib/gaim/chatlist.so
 lib/gaim/iconaway.so
-lib/gaim/lagmeter.so
 lib/gaim/libgg.so
 lib/gaim/libicq.so
 lib/gaim/libirc.so
@@ -31,6 +30,7 @@ share/locale/ko/LC_MESSAGES/gaim.mo
 share/locale/nl/LC_MESSAGES/gaim.mo
 share/locale/pl/LC_MESSAGES/gaim.mo
 share/locale/ru/LC_MESSAGES/gaim.mo
+share/locale/sv/LC_MESSAGES/gaim.mo
 share/locale/zh_CN/LC_MESSAGES/gaim.mo
 @dirrm %%DATADIR%%/pixmaps
 @dirrm lib/gaim
