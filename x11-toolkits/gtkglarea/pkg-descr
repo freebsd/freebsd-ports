@@ -1,0 +1,8 @@
+Just as GTK+ is build on top of GDK, GtkGLArea is built on top of gdkgl 
+which is basically wrapper around GLX functions. The widget itself is 
+derived from GtkDrawinigArea widget and adds only few extra functions. 
+Lower level gdkgl functions make it easy to render on any widget that has
+OpenGL capable visual, rendering to off-screen pixmaps is also supported. 
+
+Related project which may iterest those who use GTK-- is GtkGLArea--. It is a
+C++ wrapper for gtkglarea written by Karl Nelson <kenelson@ece.ucdavis.edu>. 
