@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	hydra
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.4
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.hellug.gr/pub/software/hydra/ \
 		http://hydra.hellug.gr/download/ \
@@ -21,6 +21,8 @@ LIB_DEPENDS=	gnutls.7:${PORTSDIR}/security/gnutls
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
+CFLAGS+=	-I${LOCALBASE}/include
+
 post-patch:
 	@${REINPLACE_CMD} -e "s,-pthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
 .for file in src/defines.h examples/hydra.conf
@@ -30,7 +32,9 @@ post-patch:
 post-install:
 	@${MKDIR} ${PREFIX}/etc/hydra
 .for file in hydra.conf mime.types
-	${INSTALL_DATA} ${WRKSRC}/examples/${file} ${PREFIX}/etc/hydra
+	${INSTALL_DATA} ${WRKSRC}/examples/${file} ${PREFIX}/etc/hydra/${file}-dist
+	[ -f ${PREFIX}/etc/hydra/${file} ] || \
+		${INSTALL_DATA} ${WRKSRC}/examples/${file} ${PREFIX}/etc/hydra/
 .endfor
 
 .include <bsd.port.mk>
