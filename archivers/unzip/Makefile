@@ -54,13 +54,13 @@ do-install:
 .endfor
 	${LN} -sf unzip ${PREFIX}/bin/zipinfo
 	${INSTALL_SCRIPT} ${WRKSRC}/unix/zipgrep ${PREFIX}/bin
-.for file in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/man/${file} ${PREFIX}/man/man1
+.for f in ${MAN1}
+	${INSTALL_MAN} ${WRKSRC}/man/${f} ${PREFIX}/man/man1
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/unzip
-.for file in README WHERE
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/unzip
+.for f in README WHERE
+	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/unzip
 .endfor
 .endif
 
