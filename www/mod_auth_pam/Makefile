@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_auth_pam
-PORTVERSION=	1.0a
+PORTVERSION=	1.1.1
 CATEGORIES=	www
 MASTER_SITES=	http://pam.sourceforge.net/mod_auth_pam/dist/ \
 		http://atreides.freenix.no/~anders/
@@ -25,12 +25,11 @@ do-build:
 do-install:
 	${APXS} -i -A -n auth_pam ${WRKSRC}/mod_auth_pam.so
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/mod_auth_pam
-	${MKDIR} ${PREFIX}/share/doc/mod_auth_pam/samples
-	${INSTALL_DATA} ${WRKSRC}/doc/configure.html ${PREFIX}/share/doc/mod_auth_pam/
-	${INSTALL_DATA} ${WRKSRC}/doc/faq.html ${PREFIX}/share/doc/mod_auth_pam/
-	${INSTALL_DATA} ${WRKSRC}/samples/dot-htaccess ${PREFIX}/share/doc/mod_auth_pam/samples/
-	${INSTALL_DATA} ${WRKSRC}/samples/httpd ${PREFIX}/share/doc/mod_auth_pam/samples/
+	${MKDIR} -p -m 0755 ${DOCSDIR}/samples
+	${INSTALL_DATA} ${WRKSRC}/doc/configure.txt ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/doc/faq.txt ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/samples/dot-htaccess ${DOCSDIR}/samples/
+	${INSTALL_DATA} ${WRKSRC}/samples/httpd- ${DOCSDIR}/samples/httpd
 .endif
 	${CAT} ${PKGMESSAGE}
 
