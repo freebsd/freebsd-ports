@@ -14,7 +14,7 @@ COMMENT=		A filesystem-based playlist for Noatun
 
 LIB_DEPENDS=		noatun.0:${PORTSDIR}/multimedia/kdemultimedia3
 
-USE_KDELIBS_VER=	3
+USE_KDEBASE_VER=	3
 USE_BZIP2=		yes
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
