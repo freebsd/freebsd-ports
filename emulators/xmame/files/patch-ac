@@ -1,11 +1,11 @@
---- src/unix/unix.mak.orig	Sat Mar 24 02:33:38 2001
-+++ src/unix/unix.mak	Mon Apr  2 12:32:36 2001
+--- src/unix/unix.mak.orig	Mon Apr  9 03:54:42 2001
++++ src/unix/unix.mak	Tue Apr 10 10:52:06 2001
 @@ -46,18 +46,18 @@
  LIBS.x11        = $(X11LIB) $(JOY_X11_LIBS) -lX11 -lXext 
  LIBS.svgalib    = $(X11LIB) -lvga -lvgagl
  LIBS.ggi        = $(X11LIB) -lggi
 -LIBS.xgl        = $(X11LIB) $(JOY_X11_LIBS) -lX11 -lXext $(GLLIBS) -ljpeg
-+LIBS.xgl        = $(X11LIB) $(JOY_X11_LIBS) -lX11 -lXext $(GLLIBS) -L/usr/local/lib -ljpeg $(PTHREAD_LIBS)
++LIBS.xgl        = $(X11LIB) $(JOY_X11_LIBS) -lX11 -lXext $(GLLIBS) -L/usr/local/lib -ljpeg
  LIBS.xfx        = $(X11LIB) $(JOY_X11_LIBS) -lX11 -lXext -lglide2x
  LIBS.svgafx     = $(X11LIB) -lvga -lvgagl -lglide2x
  LIBS.openstep	= -framework AppKit
@@ -14,8 +14,8 @@
  LIBS.photon2	= -L/usr/lib -lph -lphrender
  
  CFLAGS.x11      = $(X11INC) $(JOY_X11_CFLAGS)
--CFLAGS.xgl      = $(X11INC) $(JOY_X11_CFLAGS)
-+CFLAGS.xgl      = $(X11INC) $(JOY_X11_CFLAGS) -I/usr/local/include $(PTHREAD_CFLAGS)
+-CFLAGS.xgl      = $(X11INC) $(JOY_X11_CFLAGS) $(GLCFLAGS)
++CFLAGS.xgl      = -DGLU_VERSION_1_2 $(X11INC) $(JOY_X11_CFLAGS) $(GLCFLAGS) -I/usr/local/include $(PTHREAD_CFLAGS)
  CFLAGS.xfx      = $(X11INC) $(JOY_X11_CFLAGS) -I/usr/include/glide
  CFLAGS.svgafx   = -I/usr/include/glide
 -CFLAGS.SDL      = -D_REENTRANT
@@ -23,7 +23,7 @@
  CFLAGS.photon2	=
  
  INST.x11        = doinstall
-@@ -317,7 +317,7 @@
+@@ -322,7 +322,7 @@
  	
  doc/x$(TARGET)rc.dist: all src/unix/xmamerc-keybinding-notes.txt
  	./x$(TARGET).$(DISPLAY_METHOD) -noloadconfig -showconfig | \
@@ -32,7 +32,7 @@
  	cat src/unix/xmamerc-keybinding-notes.txt >> doc/x$(TARGET)rc.dist
  	
  doc/gamelist.$(TARGET): all
-@@ -326,7 +326,8 @@
+@@ -331,7 +331,8 @@
  
  doc/x$(TARGET).6: all src/unix/xmame.6-1 src/unix/xmame.6-3
  	cat src/unix/xmame.6-1 > doc/x$(TARGET).6
