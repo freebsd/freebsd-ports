@@ -9,7 +9,8 @@
 DISTNAME=	lynx2.8.3dev.8
 PKGNAME=	ja-lynx-2.8.3dev.8
 CATEGORIES=	japanese www
-MASTER_SITES=	http://sol.slcc.edu/lynx/current/
+MASTER_SITES=	${MASTER_SITE_PORTS_JP} \
+		http://sol.slcc.edu/lynx/current/
 
 MAINTAINER=	shige@FreeBSD.org
 
