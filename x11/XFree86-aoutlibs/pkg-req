@@ -2,9 +2,10 @@
 env=/usr/bin/env
 fgrep=/usr/bin/fgrep
 ldconfig=/sbin/ldconfig
-if [ x$2 = xINSTALL -a x$ARCH = xi386 ]; then
+ld_so=/usr/libexec/ld.so
+if [ x$2 = xINSTALL ]; then
 	$env OBJFORMAT=aout $ldconfig -r | $fgrep -q -e '-lc.3'
-	if [ $? -ne 0 ]; then
+	if [ $? -ne 0 -o ! -x $ld_so ]; then
 		cat <<END
 *********************************************************************
 

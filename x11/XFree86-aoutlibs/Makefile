@@ -23,7 +23,7 @@ PORTOBJFORMAT=	aout
 USE_X_PREFIX=	yes
 
 pre-configure:
-	@${SETENV} ${SCRIPTS_ENV} ARCH=${ARCH} ${SH} \
+	@${SETENV} ${SCRIPTS_ENV} ${SH} \
 		${PKGDIR}/REQ ${PKGNAME} INSTALL
 
 do-install:
