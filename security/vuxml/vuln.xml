@@ -59,10 +59,10 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   </vuln>
 
   <vuln vid="76301302-1d59-11d9-814e-0001020eed82">
-    <topic>xerces_c -- Attribute blowup denial-of-service</topic>
+    <topic>xerces-c2 -- Attribute blowup denial-of-service</topic>
     <affects>
       <package>
-	<name>xerces_c</name>
+	<name>xerces-c2</name>
         <range><lt>2.6.0</lt></range>
       </package>
     </affects>
@@ -85,6 +85,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-10-02</discovery>
       <entry>2004-10-13</entry>
+      <modified>2004-10-14</modified>
     </dates>
   </vuln>
 
