@@ -1,0 +1,3 @@
+bin/shmux
+%%EXAMPLESDIR%%/mcmd.sh
+@dirrm %%EXAMPLESDIR%%
