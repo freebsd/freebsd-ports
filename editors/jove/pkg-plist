@@ -21,3 +21,5 @@ share/jove/jove.rc.sun-cmd
 share/jove/keychart.sun
 share/jove/XTermresource
 share/jove/jove.rc
+@dirrm libexec/jove
+@dirrm share/jove
