@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xc-mail
-PORTVERSION=	20001016
+PORTVERSION=	20001018
 CATEGORIES=	mail
 MASTER_SITES=	ftp://trilug.fh-trier.de/pub/XCmail/cvs-snapshot/
 DISTNAME=	${PORTNAME}-1.3devel
