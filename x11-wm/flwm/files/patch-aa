@@ -5,7 +5,7 @@
  CXXFILES = main.C Frame.C Rotated.C Menu.C FrameWindow.C Desktop.C Hotkeys.C
  
 -LIBS = -lfltk
-+LIBS = -lfltk -lGL
++LIBS = -lfltk -lGL ${PTHREAD_LIBS}
  
  MANPAGE = 1
  
