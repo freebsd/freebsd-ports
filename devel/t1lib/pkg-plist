@@ -1,13 +1,13 @@
 bin/type1afm
-bin/xglyph
+%%X11%%bin/xglyph
 include/t1lib.h
-include/t1libx.h
+%%X11%%include/t1libx.h
 lib/libt1.a
 lib/libt1.so
 lib/libt1.so.5
-lib/libt1x.a
-lib/libt1x.so
-lib/libt1x.so.5
+%%X11%%lib/libt1x.a
+%%X11%%lib/libt1x.so
+%%X11%%lib/libt1x.so.5
 share/t1lib/doc/t1lib_doc.pdf
 share/t1lib/t1lib.config
 @dirrm share/t1lib/doc

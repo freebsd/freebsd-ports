@@ -22,8 +22,10 @@ INSTALLS_SHLIB=	yes
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
 CONFIGURE_ARGS+=	--with-x
+PLIST_SUB+=	X11=""
 .else
 CONFIGURE_ARGS+=	--without-x
+PLIST_SUB+=	X11="@comment "
 .endif
 
 # DOCS depends on LaTeX and LaTeX-babel module
