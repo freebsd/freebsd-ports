@@ -1,0 +1,5 @@
+xlibs is a metaport of core X11 libraries, based on the xlibs group from
+freedesktop.org but with additional libraries not yet included there.
+
+- Eric Anholt
+anholt@FreeBSD.org
