@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.103 1998/12/05 16:32:32 flathill Exp $
+# $Id: Makefile,v 1.104 1998/12/11 12:54:08 tg Exp $
 #
 
     SUBDIR += 4va
@@ -58,6 +58,7 @@
     SUBDIR += netpbm
     SUBDIR += netshow
     SUBDIR += p5-GD
+    SUBDIR += p5-GIFgraph
     SUBDIR += p5-Image-Size
     SUBDIR += p5-chart
     SUBDIR += pgperl
