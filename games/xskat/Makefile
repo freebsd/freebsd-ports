@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	xskat
-PORTVERSION=	3.2
+PORTVERSION=	3.3
 CATEGORIES=	games
 MASTER_SITES=	http://www.gulu.net/xskat/
 
 MAINTAINER=	tg@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/xskat
 USE_IMAKE=	yes
-MAN1=		xskat.1
+MANN=		xskat.n
+MANCOMPRESSED=	no
 
 .include <bsd.port.mk>
