@@ -1,0 +1,19 @@
+--- Configure.orig	Mon Nov  7 19:35:17 1994
++++ Configure	Mon Nov 23 21:55:23 1998
+@@ -65,11 +65,11 @@
+ done
+ export PATH
+ 
+-: Some sanity checks
+-if test ! -t 0; then
+-	echo "Say 'sh Configure', not 'sh <Configure'"
+-	exit 1
+-fi
++#: Some sanity checks
++#if test ! -t 0; then
++#	echo "Say 'sh Configure', not 'sh <Configure'"
++#	exit 1
++#fi
+ 
+ : On HP-UX, large Configure scripts may exercise a bug in /bin/sh
+ if test -f /hp-ux -a -f /bin/ksh; then
