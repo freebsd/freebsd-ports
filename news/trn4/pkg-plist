@@ -4,22 +4,27 @@ bin/Rnmail
 bin/nntplist
 bin/trn
 bin/trn-artchk
+lib/trn/norm.saver
+lib/trn/mbox.saver
+lib/trn/makedir
+lib/trn/filexp
+lib/trn/newsnews
+lib/trn/Speller
+lib/trn/Pnews.header
+lib/trn/INIT
+lib/trn/access.def
+lib/trn/HelpFiles/top
+lib/trn/HelpFiles/quickstart
 lib/trn/HelpFiles/changelog
 lib/trn/HelpFiles/hints
-lib/trn/HelpFiles/quickstart
-lib/trn/HelpFiles/samples/access
+lib/trn/HelpFiles/config/index
+lib/trn/HelpFiles/config/macros
+lib/trn/HelpFiles/config/options
+lib/trn/HelpFiles/config/environment
 lib/trn/HelpFiles/samples/index
+lib/trn/HelpFiles/samples/access
 lib/trn/HelpFiles/samples/trnrc
-lib/trn/HelpFiles/top
-lib/trn/INIT
-lib/trn/Pnews.header
-lib/trn/Speller
-lib/trn/access.def
-lib/trn/filexp
-lib/trn/makedir
-lib/trn/mbox.saver
-lib/trn/newsnews
-lib/trn/norm.saver
+@dirrm lib/trn/HelpFiles/config
 @dirrm lib/trn/HelpFiles/samples
 @dirrm lib/trn/HelpFiles
 @dirrm lib/trn
