@@ -8,27 +8,30 @@ Index: qemu/qemu-mkcow.c
  #include <stdlib.h>
  #include <stdio.h>
  #include <stdarg.h>
-@@ -36,6 +38,12 @@
+@@ -36,6 +38,13 @@
  #include <sys/stat.h>
  #include <netinet/in.h>
  
 +#ifdef _BSD
 +#include <sys/types.h>
 +#include <sys/ioctl.h>
++#include <sys/queue.h>
 +#include <sys/disk.h>
 +#endif
 +
  #include "cow.h"
  
  #include "bswap.h"
-@@ -56,6 +64,13 @@ int cow_create(int cow_fd, const char *i
+@@ -56,6 +64,15 @@ int cow_create(int cow_fd, const char *i
              perror(image_filename);
              exit(1);
          }
 +#ifdef _BSD
 +        struct stat sb;
 +        if (!fstat(fd,&sb) && (S_IFCHR & sb.st_mode)) {
++#ifdef DIOCGMEDIASIZE
 +            if (ioctl(fd, DIOCGMEDIASIZE, (off_t *)&image_sectors))
++#endif
 +                image_sectors = lseek(fd, 0LL, SEEK_END);
 +        } else
 +#endif                      
