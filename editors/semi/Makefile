@@ -23,7 +23,7 @@ PORTCLASS?=	master
 # distfile version
 FLIM_TRUNK=	1.14
 SEMI_TRUNK=	1.14
-SEMI_VER=	${SEMI_TRUNK}.5
+SEMI_VER=	${SEMI_TRUNK}.6
 # document install directory by install-doc target
 SEMIDOCDIR?=	share/doc/semi
 FLIM_COOKIE=	flim-${EMACS_PORT_NAME}-${FLIM_TRUNK}.FreeBSD-packages
