@@ -5,17 +5,17 @@
 #
 
 PORTNAME=	howl
-PORTVERSION=	0.9.8
-PORTREVISION=	1
+PORTVERSION=	0.9.10
 CATEGORIES?=	net devel
 MASTER_SITES=	http://www.porchdogsoft.com/download/
 
-MAINTAINER=	paul@aps.org
+MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Zeroconf/Rendezvous implementation
 
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget pkgconfig
 USE_LIBTOOL_VER=15
+USE_RC_SUBR=	yes
 CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
 CPPFLAGS+=	${PTHREAD_CFLAGS}
 USE_REINPLACE=	yes
@@ -24,16 +24,19 @@ INSTALLS_SHLIB=	yes
 MAN8=		mDNSResponder.8
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "alpha" && ${OSVERSION} < 500000
-CPPFLAGS+=	-D_LP64
-.endif
+RC_SCRIPTS_SUB=	RC_SUBR=${RC_SUBR} PREFIX=${PREFIX}
 
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}"
+
+post-extract:
+	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/mdnsresponder.sh > ${WRKSRC}/mdnsresponder.sh
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-pthread||g' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+post-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/mdnsresponder.sh \
+		${PREFIX}/etc/rc.d/mdnsresponder.sh
+
+.include <bsd.port.mk>
