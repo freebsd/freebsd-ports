@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2003-11-26
+SNAPDATE=	2003-12-10
 #CVS_DATE=	${SNAPDATE} 18:53:04 EDT
 
 PORTNAME=	gcc
@@ -41,14 +41,12 @@ NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 
 .include <bsd.port.pre.mk>
 
-BROKEN=		"Building libjava causes an Internal Compiler Error iff built within the ports tree"
-
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 
 GCC_VER=	${PORTVERSION:C/\.0$//}
 SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
 WRKSRC=		${WRKDIR}/build
-TARGLIB=	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_VER}
+TARGLIB=	${PREFIX}/lib/gcc/${CONFIGURE_TARGET}/${GCC_VER}
 PLIST_SUB=	GCC_VER=${GCC_VER} GNU_HOST=${CONFIGURE_TARGET}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -57,7 +55,7 @@ CONFIGURE_ARGS=	--disable-nls \
 		--with-gxx-include-dir=${TARGLIB}/include/c++/${GCC_REV}
 #CONFIGURE_ARGS+=	--program-suffix=34
 #	Java
-CONFIGURE_ARGS+=	--with-system-zlib #--includedir=${TARGLIB}/include/Java -libdir=${TARGLIB}
+CONFIGURE_ARGS+=	--with-system-zlib
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 .if defined(WANT_SHAREDLIBS)
 CONFIGURE_ARGS+=	--enable-shared
@@ -78,7 +76,7 @@ MAN1=		cpp34.1 g++34.1 g77-34.1 gcc34.1 gcov34.1 \
 		jcf-dump34.1 jv-scan34.1 jv-convert34.1 \
 		rmic34.1 rmiregistry34.1
 MAN7=		fsf-funding.7 gfdl.7 gpl.7
-INFO=		cpp cppinternals g77 gcc gccint gcj
+INFO=		cpp cppinternals g77 gcc gccinstall gccint gcj fastjar
 
 .if defined(CVS_DATE)
 NO_CHECKSUM=	yes
@@ -151,7 +149,7 @@ post-install:
 	-${MV} -f ${PREFIX}/lib/libgcj.* ${TARGLIB}
 	${RM} -f ${PREFIX}/lib/libiberty.a
 	${RM} -f ${TARGLIB}/*.la
-.for info in cpp cppinternals g77 gcc gccint gcj
+.for info in ${INFO}
 	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
 .endfor
 # I am sick and tired of the anonyance that man pages can only be generated if
@@ -161,11 +159,11 @@ post-install:
 .endfor
 	cd ${PREFIX} ;\
 	    ${FIND} ${TARGLIB:S/^${PREFIX}\///} -type f -o -type l	\
-	    	>${WRKDIR}/PLIST.gcc-lib
+	    	>${WRKDIR}/PLIST.lib
 	cd ${PREFIX} ;\
 	    ${FIND} ${TARGLIB:S/^${PREFIX}\///} -type d \
-	    	| sort -r | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.gcc-lib
-	(${ECHO_CMD} "@unexec rmdir %D/lib/gcc-lib/${CONFIGURE_TARGET} 2>&1 || true" ; ${ECHO_CMD} "@unexec rmdir %D/lib/gcc-lib 2>&1 || true") >> ${WRKDIR}/PLIST.gcc-lib
+	    	| sort -r | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.lib
+	(${ECHO_CMD} "@unexec rmdir %D/lib/gcc/${CONFIGURE_TARGET} 2>&1 || true" ; ${ECHO_CMD} "@unexec rmdir %D/lib/gcc 2>&1 || true") >> ${WRKDIR}/PLIST.lib
 	# Handle GCJ include files.
 	${RM} -f ${WRKDIR}/PLIST.gcj-inc
 .for inc in ${PREFIX}/include/gcj ${PREFIX}/include/gnu ${PREFIX}/include/java ${PREFIX}/include/javax
@@ -176,14 +174,14 @@ post-install:
 	    	| sort -r | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.gcj-inc
 .endfor
 	${ECHO_CMD} "r ${TMPPLIST}"		> ${WRKDIR}/ex.script
-	${ECHO_CMD} "/Insert PLIST.gcc-lib"	>> ${WRKDIR}/ex.script
+	${ECHO_CMD} "/Insert PLIST.lib"		>> ${WRKDIR}/ex.script
 	${ECHO_CMD} "d"				>> ${WRKDIR}/ex.script
-	${ECHO_CMD} "r ${WRKDIR}/PLIST.gcc-lib"	>> ${WRKDIR}/ex.script
+	${ECHO_CMD} "r ${WRKDIR}/PLIST.lib"	>> ${WRKDIR}/ex.script
 	${ECHO_CMD} "/Insert PLIST.gcj-inc"	>> ${WRKDIR}/ex.script
 	${ECHO_CMD} "d"				>> ${WRKDIR}/ex.script
 	${ECHO_CMD} "r ${WRKDIR}/PLIST.gcj-inc"	>> ${WRKDIR}/ex.script
 	${ECHO_CMD} "x!"			>> ${WRKDIR}/ex.script
-	${CP} -p ${TMPPLIST} ${TMPPLIST}.pre-gcc-lib
+	${CP} -p ${TMPPLIST} ${TMPPLIST}.pre
 	cd ${WRKDIR} ; ex < ex.script
 
 cklatest:

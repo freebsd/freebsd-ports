@@ -8,6 +8,7 @@ bin/%%GNU_HOST%%-gcc-%%GCC_VER%%
 bin/%%GNU_HOST%%-gcc34
 bin/%%GNU_HOST%%-g++34
 bin/%%GNU_HOST%%-gcj
+bin/%%GNU_HOST%%-gcjh
 bin/gccbug-%%GCC_VER%%
 bin/gcj34
 bin/gcjh34
@@ -25,6 +26,9 @@ include/jni.h
 include/jvmpi.h
 lib/libffi.la
 lib/libffi.a
+lib/logging.properties
+lib/pkgconfig/libgcj.pc
+@dirrm lib/pkgconfig
 lib/security/classpath.security
 lib/security/libgcj.security
 @dirrm lib/security
@@ -32,10 +36,22 @@ lib/lib-org-xml-sax.la
 lib/lib-org-xml-sax.a
 lib/lib-org-w3c-dom.la
 lib/lib-org-w3c-dom.a
+libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/cc1
+libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/cc1plus
+libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/f771
+libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/jc1
+libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/jvgenmain
+libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/cc1obj
+libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/collect2
+libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/install-tools/fixinc.sh
+libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/install-tools/fixincl
+libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/install-tools/mkheaders
+@dirrm libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%/install-tools
+@dirrm libexec/gcc/%%GNU_HOST%%/%%GCC_VER%%
 share/java/libgcj-%%GCC_VER%%.jar
-@comment Insert PLIST.gcc-lib here
-@comment -=[ begin PLIST.gcc-lib ]=-
-@comment -=[ end PLIST.gcc-lib ]=-
+@comment Insert PLIST.lib here
+@comment -=[ begin PLIST.lib ]=-
+@comment -=[ end PLIST.lib ]=-
 @comment Insert PLIST.gcj-inc here
 @comment -=[ begin PLIST.gcj-inc ]=-
 @comment -=[ end PLIST.gcj-inc ]=-
