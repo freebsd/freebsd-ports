@@ -1,24 +1,24 @@
---- src/hooks/msnhook.cc	Fri Dec 13 00:17:12 2002
-+++ src/hooks/msnhook.cc	Sun Jan  5 02:02:44 2003
-@@ -29,6 +29,7 @@
- #include "accountmanager.h"
+--- src/hooks/msnhook.cc.orig	Thu May  8 14:42:56 2003
++++ src/hooks/msnhook.cc	Thu May  8 14:47:52 2003
+@@ -30,6 +30,7 @@
  #include "eventmanager.h"
  #include "imlogger.h"
+ #include "connwrap.h"
 +#include "utf8conv.h"
  
  #include "msn_bittybits.h"
  
-@@ -225,7 +226,8 @@
+@@ -259,7 +260,8 @@
      }
  
      icqcontact *c = clist.get(ev.getcontact());
--    text = siconv(text, conf.getrussian() ? "koi8-u" : DEFAULT_CHARSET, "utf8");
-+//    text = siconv(text, conf.getrussian() ? "koi8-u" : DEFAULT_CHARSET, "utf8");
-+    text = StrToUtf8(text);
+-    text = siconv(text, conf.getrussian(msn) ? "koi8-u" : DEFAULT_CHARSET, "utf8");
++//    text = siconv(text, conf.getrussian(msn) ? "koi8-u" : DEFAULT_CHARSET, "utf8");
++	text = StrToUtf8(text);
  
      if(c)
      if(c->getstatus() != offline || !c->inlist()) {
-@@ -352,11 +354,11 @@
+@@ -389,11 +391,11 @@
  
  void msnhook::checkfriendly(icqcontact *c, const string friendlynick, bool forcefetch) {
      string oldnick = c->getnick();
@@ -32,17 +32,17 @@
  	c->setdispnick(newnick);
  	face.relaxedupdate();
      }
-@@ -556,7 +558,8 @@
+@@ -613,7 +615,8 @@
  
      mhook.checkinlist(ic);
  
--    string text = siconv(msg->body, "utf8", conf.getrussian() ? "koi8-u" : DEFAULT_CHARSET);
-+//    string text = siconv(msg->body, "utf8", conf.getrussian() ? "koi8-u" : DEFAULT_CHARSET);
-+    string text = Utf8ToStr(msg->body);
+-    string text = siconv(msg->body, "utf8", conf.getrussian(msn) ? "koi8-u" : DEFAULT_CHARSET);
++//    string text = siconv(msg->body, "utf8", conf.getrussian(msn) ? "koi8-u" : DEFAULT_CHARSET);
++	string text = Utf8ToStr(msg->body);
      em.store(immessage(ic, imevent::incoming, text));
  }
  
-@@ -717,3 +720,138 @@
+@@ -795,3 +798,137 @@
  	log(string("[OUT] ") + buf);
      }
  }
@@ -180,4 +180,3 @@
 +    };
 +}
 +#endif /* HAVE_ICONV_H */
-+
