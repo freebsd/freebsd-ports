@@ -11,7 +11,7 @@ CATEGORIES=	graphics kde
 MASTER_SITES=	ftp://ftp.kde.com/pub/Office/Organize_Track/KBarcode/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	andy@digitalspecies.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KBarcode creates, handles, manages and prints barcodes
 
 BUILD_DEPENDS=	barcode:${PORTSDIR}/graphics/barcode
