@@ -3,10 +3,10 @@
 # Date created:         24 Feb 1997
 # Whom:                 thepish
 #
-# $Id: Makefile,v 1.22 1998/08/30 03:10:14 thepish Exp $
+# $Id: Makefile,v 1.23 1998/08/31 08:43:01 asami Exp $
 #
 
-DISTNAME=       netscape-communicator-4.5
+DISTNAME=       netscape-communicator-4.5b1
 CATEGORIES=	www
 MASTER_SITES=   ftp://ftp.netscape.com/pub/communicator/4.5/4.5_PR1/english/unix/freebsd2/
 DISTFILES=      communicator-v45b1-export.x86-unknown-freebsd.tar.gz
