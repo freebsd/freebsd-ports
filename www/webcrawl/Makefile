@@ -1,12 +1,12 @@
 # New ports collection makefile for:	webcrawl
-# Version required:	1.00
+# Version required:	1.10
 # Date created:		31 January 1999
 # Whom:			Dima Sivachenko
 #
-# $Id:$
+# $Id: Makefile,v 1.1.1.1 1999/02/03 21:26:59 billf Exp $
 #
 
-DISTNAME=	webcrawl-1.00
+DISTNAME=	webcrawl-1.10
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/www/mirroring
@@ -19,7 +19,6 @@ ALL_TARGET=
 MAN1=		webcrawl.1
 
 do-install:
-
 		@ ${INSTALL_PROGRAM} ${WRKSRC}/webcrawl ${PREFIX}/bin/
 		@ ${INSTALL_MAN} ${WRKSRC}/webcrawl.1 ${MAN1PREFIX}/man/man1/
 
