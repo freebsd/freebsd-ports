@@ -1,11 +1,9 @@
 Some brief notes:
 
-1) This package is intended to run on FreeBSD 4.0-current or
-FreeBSD 3.X, with sources more recent than May 1, 1999, i386
-processors only.  If you are running an SMP kernel, you should
-be using FreeBSD 4.0-current only.
+1) This package is intended to run on FreeBSD 5.0-current or
+FreeBSD 4.X i386 processors only.
 
-Compile your applications that use Linux Threads with the following
+Compile your applications that use LinuxThreads with the following
 command line options:
 
   -D_THREAD_SAFE -I/usr/local/include/pthread/linuxthreads -llthread -llgcc_r
@@ -31,7 +29,7 @@ If you do this, you can instead use:
 or      
   -D_THREAD_SAFE -I/usr/local/include/pthread/linuxthreads -kthread -llgcc_r
 
-Do not use libc_r with Linux Threads, and do not compile/link with the -pthread
+Do not use libc_r with LinuxThreads, and do not compile/link with the -pthread
 option (which pulls in libc_r).  Rather, link with libc (which you will get by
 default).
 
@@ -60,15 +58,13 @@ set at 20 + 16 * MAXUSERS.
   functions are both thread safe and have "_r" versions.
 
   b) Not all of the libc calls that are supposed to be cancellation points are
-  implemented as such.  There is a lot of work that needs to be done on libc
-  before cancellation points will work correctly.  Therefore, while linux
-  threads has the cancel functions implemented, deferred cancellation will not
-  work as required by POSIX 1003.1c-1995, since the co-operation needed from
-  libc is not complete.
+  implemented as such.  While linux threads has the cancel functions
+  implemented, deferred cancellation will not work as required by POSIX
+  1003.1c-1995, since the co-operation needed from libc is not complete.
 
 5) Known problems and issues:
 
-  a) It is possible that the instructions given above for including liblgcc_r
+  It is possible that the instructions given above for including liblgcc_r
   are not sufficent.  liblgcc_r is a version of libgcc_r linked against this
   linuxthreads package.  It is intended that applications link against this,
   rather than libgcc_r (which is linked against libc_r) or libgcc (which is not
@@ -79,39 +75,5 @@ set at 20 + 16 * MAXUSERS.
   possible that a custom link line needs to be generated that specifically
   excludes the default libgcc and which includes liblgcc_r twice.  There are no
   known problems resulting from the link procedure suggested above.  However,
-  compiling/linking with the "-v" option will illustrate the issue, where lihgcc
+  compiling/linking with the "-v" option will illustrate the issue, where libgcc
   is included twice in addition to liblgcc_r.
-
-  b) Since some point around Auguest 30 or later, dynamically linked SMP
-  applications have experienced problems with the dynamic linker.  Statically
-  linked applications appear fine.
-
-  Specifically, some applications are not able to resolve dynamic links as in
-  this sample output:
-
-  root@chiricahua:/usr/ports/devel/linuxthreads/work/linuxthreads-0.71/Examples [119] ./ex4
-  Thread 400: allocated key 0
-  Thread 400: allocating buffer at 0x804b400
-  /usr/libexec/ld-elf.so.1: /usr/local/lib/liblthread.so.0: Undefined symbol "sigfillset"
-
-  The problem does not occur on every run, but rather intermittently, and the
-  undefined symbol is not always "sigfillset", thought this is common.
-
-  It is possible that ld-elf.so needs to be made thread safe, and that the
-  problem is not unique to SMP but only exposed by the higher concurrency of SMP
-  threads.  However, the problem has not been fully diagnosed.
-
-  c) Since August 30 or maybe later, neither this version of FreeBSD
-  linuxthreads nor FreeBSD user threads (libc_r) have been able to pass the ACE
-  Reactor_Exception_Test using FreeBSD-current.  See http://www.pinyon.org/ace
-  for information about ACE and compiling it under FreeBSD.  It is possible that
-  PR/15228 is another illustration of the same problem. In both cases the app
-  aborts at line 3314 in libgcc2.c in the __sjthrow function, because there is
-  no exception handler registered at that point.
-
-  Earlier, before August 30, both this version of linuxthreads as well] as
-  libc_r passed all the ACE thread tests.  The cutoff date for the onset of the
-  problem could be later than August 30.
-
-  There has not been time to fully diagnose this problem.  It occurs on both SMP
-  and UP systems.

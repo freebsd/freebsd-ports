@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	linuxthreads
-PORTVERSION=	2.1.2
+PORTVERSION=	2.1.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	glibc
@@ -34,6 +34,7 @@ LIBSRC_BASE=	${SRC_BASE}/lib
 
 post-extract:
 	@mv ${WRKDIR}/linuxthreads ${WRKDIR}/${PKGNAME}
+	@mv ${WRKDIR}/linuxthreads_db ${WRKDIR}/${PKGNAME}
 .for src in lockfile.c no-tsd.c oldsemaphore.c weaks.c \
 	sysdeps/pthread/semaphore.h
 	@mv ${WRKSRC}/$(src) ${WRKSRC}/$(src).unused

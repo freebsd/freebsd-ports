@@ -1,6 +1,9 @@
 #include <poll.h>
 #include <bits/local_lim.h>
 #include <sys/queue.h>
+#include <sched.h>
+#include <sys/types.h>
+#include <sys/time.h>
 
 
 #define __libc_close _close
@@ -28,6 +31,8 @@
 #define __sigaction _sigaction
 #define _errno errno
 #define _h_errno h_errno
+#define __ptr_t void *
+#define __pid_t pid_t
 
 #ifndef __P
 #   define __P(args)	args
