@@ -245,6 +245,7 @@
     SUBDIR += stamp
     SUBDIR += svgalib
     SUBDIR += synaesthesia
+    SUBDIR += tcm
     SUBDIR += tgif
     SUBDIR += tgif-nls
     SUBDIR += threeDS

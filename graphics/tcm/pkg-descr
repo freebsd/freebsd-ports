@@ -1,0 +1,23 @@
+The Toolkit for Conceptual Modeling is a collection of software tools to
+present conceptual models of software systems in the form of diagrams, tables,
+trees, and the like. A conceptual model of a system is a structure used to
+represent the requirements or architecture of the system. TCM is meant to be
+used for specifying and maintaining requirements for desired systems, in which
+a number of techniques and heuristics for problem analysis, function
+refinement, behavior specification, and architecture specification are used.
+
+TCM takes the form of a suite of graphical editors that can be used in these
+design tasks. These editors can be categorized into:
+
+* Generic editors for generic diagrams, generic tables and generic trees.
+* Structured Analysis (SA) editors for entity-relationship diagrams, data and
+event flow diagrams, state transition diagrams, function refinement trees,
+transaction-use tables and function-entity type tables.
+* Unified Modeling Language (UML) editors for static structure diagrams,
+use-case diagrams, activity diagrams, state charts, message sequence diagrams,
+collaboration diagrams, component diagrams and deployment diagrams (only the
+first three and last two UML editors are functional at this moment).
+* Miscellaneous editors such as for JSD (process structure and network
+diagrams), recursive process graphs and transaction decomposition tables.
+
+WWW: http://wwwhome.cs.utwente.nl/~tcm/
