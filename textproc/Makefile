@@ -132,6 +132,7 @@
     SUBDIR += nicetext
     SUBDIR += nl-aspell
     SUBDIR += nl-ispell
+    SUBDIR += no-aspell
     SUBDIR += no-ispell
     SUBDIR += openjade
     SUBDIR += opensched
