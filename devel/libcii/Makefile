@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.cs.princeton.edu/pub/packages/cii/
 DISTNAME=	cii11
 
-MAINTAINER=	hjh@photino.com
+MAINTAINER=	ports@FreeBSD.org
 
 NO_INSTALL_MANPAGES=	yes
 NO_WRKSUBDIR=	yes
