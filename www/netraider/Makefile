@@ -24,10 +24,11 @@ pre-configure:
 	find ${WRKSRC} -name Makefile.am | xargs ${PERL} -pi -e \
 		"s@-lqt@-lqt @g; s@ -lqt @ -lqt2@g"
 	${CP} ${WRKSRC}/konq-embed/src/konqueror ${WRKSRC}/konq-embed/src/konq-embedded
-	${CP} ${SUBST} ${SUBST}.bak && ${SED} -e \
-		's,^bindir = $$(prefix),bindir= ${PREFIX}/bin,g; \
-		s,bin_SCRIPTS = konqueror,bin_SCRIPTS= konq-embedded,g;
-		s,-lqt,-lqt ,g; s, -lqt , -lqt2@g' \
+	${CP} ${SUBST} ${SUBST}.bak && ${SED} \
+		-e 's,^bindir = $$(prefix),bindir= ${PREFIX}/bin,g' \
+		-e 's,bin_SCRIPTS = konqueror,bin_SCRIPTS= konq-embedded,g' \
+		-e 's,-lqt,-lqt ,g' \
+		-e 's, -lqt , -lqt2,g' \
 		${SUBST}.bak > ${SUBST}
 
 .include <bsd.port.mk>
