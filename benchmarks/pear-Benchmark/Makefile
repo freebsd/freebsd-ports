@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	Benchmark
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	benchmarks devel www pear
 
 MAINTAINER=	antonio@php.net
-COMMENT=	Framework to benchmark PHP scripts or function calls
+COMMENT=	PEAR framework to benchmark PHP scripts or function calls
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+USE_PHP=	bcmath
+
 CATEGORY=	Benchmark
 FILES=		Timer.php Iterate.php Profiler.php
 DOCS=		timer_example.php
-
 _DOCSDIR=	doc
 
 .include <bsd.port.pre.mk>
