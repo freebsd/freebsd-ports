@@ -627,7 +627,8 @@ LIB_DEPENDS+=	netsnmp.6:${PORTSDIR}/net-mgmt/net-snmp
 CONFIGURE_ARGS+=--with-snmp=${LOCALBASE} --enable-ucd-snmp-hack
 .endif
 
-PHP_PORT=	${.CURDIR:S|^${PORTSDIR}||:S|^/||}
+_PORTSDIR!=	${REALPATH} ${PORTSDIR}
+PHP_PORT=	${.CURDIR:S|^${_PORTSDIR}||:S|^/||}
 
 pre-patch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.php
