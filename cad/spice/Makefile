@@ -18,8 +18,6 @@ EXTRACT_ONLY=	sp3f4.kit${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A general-purpose circuit simulation program
 
-BROKEN=		"Does not install; will be removed after Feb 2"
-
 USE_XLIB=	yes
 USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
@@ -27,8 +25,12 @@ MAN1=		sconvert.1 nutmeg.1 spice.1
 MAN3=		mfb.3
 MAN5=		mfbcap.5
 MLINKS=		spice.1 spice3.1
+MAKE_ENV+=	STRIP_CMD=${STRIP_CMD}
 
 .include <bsd.port.pre.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/ucb|${LOCALBASE}/bin|' ${WRKSRC}/util/build
 
 post-configure:
 	@${REINPLACE_CMD} -e 's+@CC@+${CC}+ ; s+@CFLAGS@+${CFLAGS}+ ; \
