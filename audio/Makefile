@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.26 1996/07/06 09:28:34 gpalmer Exp $
+# $Id: Makefile,v 1.27 1996/08/06 17:39:25 chuckr Exp $
 #
 
     SUBDIR += gmod
@@ -19,5 +19,6 @@
     SUBDIR += xcdplayer
     SUBDIR += xmcd
     SUBDIR += xmix
+    SUBDIR += xmmix
 
 .include <bsd.port.subdir.mk>

@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.94 1996/08/16 07:40:50 asami Exp $
+# $Id: Makefile,v 1.95 1996/08/16 07:55:04 asami Exp $
 #
 
     SUBDIR += FWF
@@ -13,6 +13,7 @@
     SUBDIR += dclock
     SUBDIR += emiclock
     SUBDIR += emu
+    SUBDIR += freefonts
     SUBDIR += fvwm
     SUBDIR += fvwm2
     SUBDIR += fvwm95
