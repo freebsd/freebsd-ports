@@ -1,4 +1,4 @@
-# New ports collection makefile for:	p5-Apache-Filter
+# New ports collection makefile for:	p5-Image-Imlib2
 # Date created:				September 11th, 2003
 # Whom:	      				Erwin Lansing <erwin@FreeBSD.org>
 #
@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Image-Imlib2
-PORTVERSION=	0.12
+PORTVERSION=	1.01
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Image
@@ -17,15 +17,14 @@ COMMENT=	Perl interface to the Imlib2 image library
 
 LIB_DEPENDS=	Imlib2.2:${PORTSDIR}/graphics/imlib2
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN3=		Image::Imlib2.3
 
-.include "../../devel/p5-Module-Build/inc.build.mk"
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502000
-BROKEN=		'Does not compile'
+.if ${PERL_LEVEL} < 500600
+IGNORE=		Port requires perl 5.6.x or later. Install lang/perl5 then try again
 .endif
 
 .include <bsd.port.post.mk>
