@@ -132,7 +132,7 @@ post-build:
 check: build
 	cd ${WRKSRC}; export RUNTESTFLAGS='--target_board ''unix{-pthread}'''; ${GMAKE} -sk check
 
-post-install:
+post-install: fake-manpages
 	@(for prog in \
 		${TARGLIB}/cc1 ${TARGLIB}/cc1obj ${TARGLIB}/cc1plus \
 		${TARGLIB}/collect2 ${TARGLIB}/f771 ; \
@@ -150,11 +150,6 @@ post-install:
 .endfor
 	${MV} -f ${PREFIX}/bin/g7733 ${PREFIX}/bin/g77-33
 	-${MV} -f ${PREFIX}/man/man1/g7733.1 ${PREFIX}/man/man1/g77-33.1
-	# man pages can only be generated if Perl >= 5.6 is installed, so
-	# fake them on 4.x systems.
-.for mp in ${_MANPAGES}
-	( ${TEST} -e ${mp} || ${TOUCH} ${TOUCH_FLAGS} ${mp} )
-.endfor
 	# These libraries are moved from PREFIX/lib to avoid conflicts with
 	# the stock compiler.
 .for f in libstdc++ libsupc++ libg2c libfrtbegin libobjc ${EXTRA_SHLIB}
@@ -188,3 +183,10 @@ cklatest:
 .endfor
 
 .include <bsd.port.post.mk>
+
+fake-manpages:
+	# man pages can only be generated if Perl >= 5.6 is installed, so
+	# fake them on 4.x systems.
+.for mp in ${_MANPAGES}
+	( ${TEST} -e ${mp} || ${TOUCH} ${TOUCH_FLAGS} ${mp} )
+.endfor
