@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	encryption
-PORTVERSION=	2.26
+PORTVERSION=	2.27
 CATEGORIES=	security net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
@@ -16,7 +16,7 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@c0decafe.net
 COMMENT=	Provides transparent RSA encryption as a Gaim plugin
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/gaim:configure
+BUILD_DEPENDS=	${X11BASE}/include/gaim/config.h:${PORTSDIR}/net/gaim
 RUN_DEPENDS=	gaim:${PORTSDIR}/net/gaim
 LIB_DEPENDS=	nss3:${PORTSDIR}/security/nss
 
@@ -26,8 +26,7 @@ USE_GNOME=	lthack gtk20
 USE_LIBTOOL_VER=13
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \
 		LDFLAGS="${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--with-gaim=${WRKDIRPREFIX}${.CURDIR}/../../net/gaim/work/gaim* \
-		--with-nspr-includes=${LOCALBASE}/include/nspr \
+CONFIGURE_ARGS=	--with-nspr-includes=${LOCALBASE}/include/nspr \
 		--with-nspr-libs=${LOCALBASE}/lib \
 		--with-nss-includes=${LOCALBASE}/include/nss/nss \
 		--with-nss-libs=${LOCALBASE}/lib
