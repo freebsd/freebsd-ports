@@ -73,7 +73,6 @@ lib/exmh-%%EXMH_VERSION%%/folder.tcl
 lib/exmh-%%EXMH_VERSION%%/folderNew.tcl
 lib/exmh-%%EXMH_VERSION%%/fontsel.tcl
 lib/exmh-%%EXMH_VERSION%%/ftoc.tcl
-lib/exmh-%%EXMH_VERSION%%/ftocColor.tcl
 lib/exmh-%%EXMH_VERSION%%/ftocFind.tcl
 lib/exmh-%%EXMH_VERSION%%/ftp_get.tcl
 lib/exmh-%%EXMH_VERSION%%/getnews.tcl
@@ -84,6 +83,7 @@ lib/exmh-%%EXMH_VERSION%%/hourglass.mask
 lib/exmh-%%EXMH_VERSION%%/hourglass1.bitmap
 lib/exmh-%%EXMH_VERSION%%/hourglass2.bitmap
 lib/exmh-%%EXMH_VERSION%%/hourglass2.mask
+lib/exmh-%%EXMH_VERSION%%/html.tcl
 lib/exmh-%%EXMH_VERSION%%/html/AddrEdit.html
 lib/exmh-%%EXMH_VERSION%%/html/AddressBk.html
 lib/exmh-%%EXMH_VERSION%%/html/AliasAddr.html
@@ -127,7 +127,6 @@ lib/exmh-%%EXMH_VERSION%%/html/symlink.html
 lib/exmh-%%EXMH_VERSION%%/html/tutorial.html
 lib/exmh-%%EXMH_VERSION%%/html/whatis.html
 lib/exmh-%%EXMH_VERSION%%/html/yel-ball.gif
-lib/exmh-%%EXMH_VERSION%%/html.tcl
 lib/exmh-%%EXMH_VERSION%%/html_cache.tcl
 lib/exmh-%%EXMH_VERSION%%/html_content.tcl
 lib/exmh-%%EXMH_VERSION%%/html_dpackage.tcl
@@ -197,6 +196,8 @@ lib/exmh-%%EXMH_VERSION%%/seditQP.tcl
 lib/exmh-%%EXMH_VERSION%%/seditSel.tcl
 lib/exmh-%%EXMH_VERSION%%/select.tcl
 lib/exmh-%%EXMH_VERSION%%/send.tcl
+lib/exmh-%%EXMH_VERSION%%/sequences.tcl
+lib/exmh-%%EXMH_VERSION%%/seqwin.tcl
 lib/exmh-%%EXMH_VERSION%%/sound.tcl
 lib/exmh-%%EXMH_VERSION%%/source.tcl
 lib/exmh-%%EXMH_VERSION%%/tclIndex
@@ -206,7 +207,6 @@ lib/exmh-%%EXMH_VERSION%%/textSelect.tcl
 lib/exmh-%%EXMH_VERSION%%/thread.tcl
 lib/exmh-%%EXMH_VERSION%%/timer.bitmap
 lib/exmh-%%EXMH_VERSION%%/tioga.tcl
-lib/exmh-%%EXMH_VERSION%%/unseenwin.tcl
 lib/exmh-%%EXMH_VERSION%%/uri.tcl
 lib/exmh-%%EXMH_VERSION%%/url.bitmap
 lib/exmh-%%EXMH_VERSION%%/urlFace.tcl
