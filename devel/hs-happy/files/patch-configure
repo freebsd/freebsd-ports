@@ -1,0 +1,11 @@
+--- configure.orig	Wed Jan 26 18:01:50 2005
++++ configure	Wed Jan 26 18:02:28 2005
+@@ -4403,7 +4403,7 @@
+ EOF
+ 
+   fp_cv_dir_docbook_xsl=no
+-  for fp_var in /usr/share/xml/docbook/stylesheet/nwalsh/current /usr/share/xml/docbook/stylesheet/nwalsh /usr/share/sgml/docbook/docbook-xsl-stylesheets* /usr/share/sgml/docbook/xsl-stylesheets* /opt/kde?/share/apps/ksgmltools2/docbook/xsl /usr/share/docbook-xsl /usr/share/sgml/docbkxsl; do
++  for fp_var in %%LOCALBASE%%/share/xsl/docbook /usr/share/xml/docbook/stylesheet/nwalsh/current /usr/share/xml/docbook/stylesheet/nwalsh /usr/share/sgml/docbook/docbook-xsl-stylesheets* /usr/share/sgml/docbook/xsl-stylesheets* /opt/kde?/share/apps/ksgmltools2/docbook/xsl /usr/share/docbook-xsl /usr/share/sgml/docbkxsl; do
+      if $XsltprocCmd ${fp_var}/html/docbook.xsl conftest.xml > /dev/null 2>&1; then
+         fp_cv_dir_docbook_xsl=$fp_var
+         break

@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	happy
-PORTVERSION=	1.14
+PORTVERSION=	1.15
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.haskell.org/happy/dist/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -16,23 +16,25 @@ COMMENT=	An LALR(1) parser generator for the functional language Haskell
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 .if !defined(NOPORTDOCS)
-BUILD_DEPENDS+=	${LOCALBASE}/share/sgml/docbook/dsssl/modular:${PORTSDIR}/textproc/dsssl-docbook-modular \
-		${LOCALBASE}/share/sgml/docbook/catalog:${PORTSDIR}/textproc/docbook \
-		${LOCALBASE}/share/sgml/iso8879:${PORTSDIR}/textproc/iso8879 \
-		${LOCALBASE}/share/sgml/docbook/3.1:${PORTSDIR}/textproc/docbook-310 \
-		jade:${PORTSDIR}/textproc/jade
+BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/html:${PORTSDIR}/textproc/docbook-xsl \
+		${LOCALBASE}/bin/xsltproc:${PORTSDIR}/textproc/libxslt
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//g}
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 PLIST_SUB=	HAPPY_VERSION=${PORTVERSION}
+PORTDOCS=	*
 
 BOOT_COOKIE = ${WRKDIR}/.boot_done
 
 ${BOOT_COOKIE}:
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} boot)
+
+post-patch:
+	@${REINPLACE_CMD} -e 's+%%LOCALBASE%%+${LOCALBASE}+' ${WRKSRC}/configure
 
 pre-build: ${BOOT_COOKIE}
 
