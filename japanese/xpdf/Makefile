@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xpdf
-PORTVERSION=	2.02
+PORTVERSION=	3.00
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/
 DISTNAME=	xpdf-japanese
@@ -14,23 +14,26 @@ DISTNAME=	xpdf-japanese
 MAINTAINER=	mita@FreeBSD.org
 COMMENT=	Japanese xpdf font support
 
-RUN_DEPENDS=	xpdf:${PORTSDIR}/graphics/xpdf\
-		${LOCALBASE}/share/ghostscript/Resource/CMap/Adobe-Japan1-0:${PORTSDIR}/print/adobe-cmaps\
-		${PKG_DBDIR}/ja-alias-fonts-1.0:${PORTSDIR}/japanese/alias-fonts
+RUN_DEPENDS=	xpdf:${PORTSDIR}/graphics/xpdf \
+		${LOCALBASE}/share/ghostscript/Resource/CMap/Adobe-Japan1-0:${PORTSDIR}/print/adobe-cmaps \
+		${X11BASE}/lib/X11/fonts/TrueType/kochi-mincho-subst.ttf:${PORTSDIR}/japanese/kochi-ttfonts
 
-BROKEN=		"Checksum mismatch"
-
-NO_BUILD=	yes
 USE_X_PREFIX=	yes
 INSTALL_FILES=	Adobe-Japan1.cidToUnicode ISO-2022-JP.unicodeMap \
 		EUC-JP.unicodeMap Shift-JIS.unicodeMap \
-		README
+		README dot.xpdfrc
+
+do-build:
+	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
+	        -e 's|%%X11BASE%%|${X11BASE}|g' \
+	        -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+			${FILESDIR}/dot.xpdfrc > ${WRKSRC}/dot.xpdfrc
+
 do-install:
 	${MKDIR} ${PREFIX}/share/xpdf/japanese
 .for i in ${INSTALL_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/xpdf/japanese
 .endfor
-	${INSTALL_DATA} ${FILESDIR}/dot.xpdfrc ${PREFIX}/share/xpdf/japanese
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
