@@ -11,9 +11,11 @@ include/gdk_imlib.h
 include/gdk_imlib_private.h
 include/gdk_imlib_types.h
 lib/libImlib.a
+lib/libImlib.la
 lib/libImlib.so
 lib/libImlib.so.5
 lib/libgdk_imlib.a
+lib/libgdk_imlib.la
 lib/libgdk_imlib.so
 lib/libgdk_imlib.so.5
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
