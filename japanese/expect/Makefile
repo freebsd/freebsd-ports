@@ -3,7 +3,7 @@
 # Date created:		10 March 1997
 # Whom:			taguchi
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/03/11 11:52:41 asami Exp $
 #
 
 FILESDIR=	${.CURDIR}/../../lang/expect/files
@@ -12,6 +12,7 @@ FILESDIR=	${.CURDIR}/../../lang/expect/files
 
 PKGNAME=	jp-expect-5.22.0
 CATEGORIES=	japanese
+
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
 LIB_DEPENDS=	tk42jp\\.1\\.:${PORTSDIR}/japanese/tk42
