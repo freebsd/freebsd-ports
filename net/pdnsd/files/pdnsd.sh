@@ -2,9 +2,9 @@
 
 case $1 in
 start)
-	if [ -x /usr/local/sbin/pdnsd -a -f /usr/local/etc/pdnsd.conf ]; then
-		/usr/local/sbin/pdnsd -d
-		echo ' pdnsd'
+	if [ -x %%PREFIX%%/sbin/pdnsd -a -f %%PREFIX%%/etc/pdnsd.conf ]; then
+		%%PREFIX%%/sbin/pdnsd -d
+		echo -n ' pdnsd'
 	fi
 	;;
 stop)

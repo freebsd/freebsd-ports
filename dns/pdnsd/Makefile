@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pdnsd
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	net
 MASTER_SITES=	http://home.t-online.de/home/Moestl/
 
@@ -19,7 +19,8 @@ PDNSDB=		/var/db/pdnsd
 
 post-install:
 	@${MKDIR} ${PREFIX}/etc/rc.d
-	@${INSTALL} ${COPY} -m 744 -o root ${FILESDIR}/pdnsd.sh ${PREFIX}/etc/rc.d/pdnsd.sh
+	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/pdnsd.sh > ${PREFIX}/etc/rc.d/pdnsd.sh
+	@${CHMOD} 750 ${PREFIX}/etc/rc.d/pdnsd.sh
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
