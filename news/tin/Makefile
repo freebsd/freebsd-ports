@@ -13,12 +13,12 @@ CATEGORIES=	news
 MASTER_SITES=   ftp://ftp.tin.org/pub/news/clients/tin/current/ \
 		ftp://nuxi.ucdavis.edu/pub/tin/current/ \
 		ftp://ftp.nuxi.com/pub/tin/current/
-USE_BZIP2=      yes
 
 MAINTAINER=     ache@FreeBSD.org
 
 LIB_DEPENDS=    uu.1:${PORTSDIR}/converters/uulib
 
+USE_BZIP2=      yes
 WRKSRC=         ${WRKDIR}/${DISTNAME:S/pre-1.4//}
 GNU_CONFIGURE=	yes
 
