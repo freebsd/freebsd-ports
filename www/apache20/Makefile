@@ -30,9 +30,10 @@ CONFLICTS=	apache+ipv6-1.* apache+modssl-1.* apache+ssl-1.* apache-1.* apache_fp
 		ru-apache+mod_ssl-1.* ru-apache-1.* thttpd-2.*
 
 # patch files
-PATCH_SITES+=		http://www.cultdeadsheep.org/FreeBSD/ports/download/distfiles/:apache
-PATCHFILES+=		httpd-2.0.48-buildconf.patch:apache \
-			httpd-2.0.48-ldap-fix.patch:apache
+PATCH_SITES+=		http://sheepkiller.nerim.net/ports/apache2/:clement \
+			http://www.cultdeadsheep.org/FreeBSD/ports/download/distfiles/:clement
+PATCHFILES+=		httpd-2.0.48-buildconf.patch:clement \
+			httpd-2.0.48-ldap-fix.patch:clement
 PATCH_DIST_STRIP+=	-p1:apache-clem
 SCRIPTS_ENV+=		LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE} \
 			LIBTOOL_VERSION=${LIBTOOL_VERSION}
@@ -52,7 +53,8 @@ CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 CONFIGURE_ENV=	CC="${CC}" CPPFLAGS="${CPPFLAGS}" \
 		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 		LIBS="${PTHREAD_LIBS}" \
- 		LDFLAGS="${LDFLAGS}" CONFIG_SHELL="${SH}"
+ 		LDFLAGS="${LDFLAGS}" CONFIG_SHELL="${SH}" \
+		LOCALBASE="${LOCALBASE}"
 
 PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
 RC_SUB=		-e 's,@@PREFIX@@,${PREFIX_RELDEST},g'
@@ -72,6 +74,10 @@ USE_OPENSSL=	yes
 
 .if defined(WITH_STATIC_SUPPORT)
 CONFIGURE_ARGS+=	--enable-static-support
+.endif
+
+.if defined(WITH_SSL_EXPERIMENTAL_ENGINE)
+CFLAGS+=	-DSSL_EXPERIMENTAL_ENGINE
 .endif
 
 # for slave ports
@@ -132,6 +138,7 @@ show-modules:
 pre-everything::
 	@${ECHO_MSG}	""
 	@${ECHO_MSG}	"  To see all available knobs, type make show-options"
+	@${ECHO_MSG}    "  You can check your modules configuration by using show-modules"
 	@${ECHO_MSG}	""
 
 post-extract:
