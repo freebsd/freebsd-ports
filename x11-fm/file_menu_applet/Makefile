@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.zoned.net:8000/~xkahn/file_menu_applet/
 
 MAINTAINER=	klammer@webonaut.com
 
+BROKEN=		"Does not configure"
+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
