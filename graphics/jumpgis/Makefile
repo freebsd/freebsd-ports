@@ -10,15 +10,13 @@ PORTVERSION=	1.1.2
 PORTREVISION=	1
 CATEGORIES=	graphics java
 MASTER_SITES=	http://www.jump-project.org/downloads/jump/:main \
-		http://sam.stral.net/freebsd/:extra
+		http://people.tecnik93.com/~sam/ports/:extra
 DISTFILES=	jump-${PORTVERSION}.zip:main \
 		jump.png:extra jump.desktop:extra
 EXTRACT_ONLY=	jump-${PORTVERSION}.zip
 
 MAINTAINER=	boris@brooknet.com.au
 COMMENT=	A GUI based application for viewing and processing spatial data
-
-BROKEN=		Unfetchable
 
 WRKSRC=		${WRKDIR}/jump
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
