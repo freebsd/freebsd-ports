@@ -152,12 +152,12 @@ post-install:
 .endfor
 	@if [ ! -d ${PREFIX}/squid/logs ]; then			\
 		${MKDIR} ${PREFIX}/squid/logs;		  	\
+		${CHOWN} nobody:nogroup ${PREFIX}/squid/logs;   \
 	fi
-#		${CHOWN} nobody:nogroup ${PREFIX}/squid/logs;   \
 	@if [ ! -d ${PREFIX}/squid/cache ]; then		\
 		${MKDIR} ${PREFIX}/squid/cache;			\
+		${CHOWN} nobody:nogroup ${PREFIX}/squid/cache;  \
 	fi
-#		${CHOWN} nobody:nogroup ${PREFIX}/squid/cache;  \
 	@if [ ! -f ${PREFIX}/etc/rc.d/squid.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/squid.sh startup file."; \
 		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/squid.sh ${PREFIX}/etc/rc.d/squid.sh; \
