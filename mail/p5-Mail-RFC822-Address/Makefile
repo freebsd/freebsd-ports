@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	barner@in.tum.de
+MAINTAINER=	barner@gmx.de
 COMMENT=	Perl5 module to validate RFC822 conformance of email adresses
 
 PERL_CONFIGURE=	yes
