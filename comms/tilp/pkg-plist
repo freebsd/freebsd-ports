@@ -1,6 +1,9 @@
 bin/tilp
 include/tilp/tilp_plugin.h
+share/locale/de/LC_MESSAGES/tilp.mo
+share/locale/fr/LC_MESSAGES/tilp.mo
 share/tilp/COPYING
+share/tilp/Manpage.txt
 share/tilp/RELEASE
 share/tilp/glade/about-2.glade
 share/tilp/glade/about-2.gladep
@@ -104,7 +107,6 @@ share/tilp/icons/Zipped.ico
 share/tilp/icons/Zoom.ico
 share/tilp/icons/test.ico
 share/tilp/icons/up.ico
-share/tilp/Manpage.txt
 share/tilp/pixmaps/attr_archived.xpm
 share/tilp/pixmaps/attr_locked.xpm
 share/tilp/pixmaps/clist_dir.xpm
