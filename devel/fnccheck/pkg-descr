@@ -1,0 +1,10 @@
+FncCheck is a library which generates profiles for C/C++ programs.
+A profile is a list of informations about your functions, such as
+time spend in functions, number of calls and other things.
+
+In order to use FncCheck, you have to compile your .o files
+with '-finstrument-functions -g' switches (gcc V2.95.2 and higher).
+You have then to link your executable with the library 'libfnccheck.so'.
+
+- George Reid
+greid@ukug.uk.freebsd.org

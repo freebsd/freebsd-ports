@@ -1,0 +1,12 @@
+--- test/Makefile.orig	Mon Jan 22 17:06:25 2001
++++ test/Makefile	Mon Jan 22 17:06:52 2001
+@@ -1,6 +1,6 @@
+-CC	=	gcc
+-CFLAGS	=	-Wall -I/usr/include  -I/usr/local/include
+-LIBS	=	-L/lib -L/usr/lib -L/usr/local/lib -lm
++CC?	=	gcc
++CFLAGS+=	-Wall
++LIBS	=	-lm
+ 
+ .c.o:
+ 	$(CC) $(CFLAGS) $(INCLUDE) $(EXTS) -c $<
