@@ -13,3 +13,4 @@ share/opennap/examples/sample.users
 share/doc/opennap/README
 share/doc/opennap/napster.txt
 @dirrm share/doc/opennap
+etc/rc.d/opennap.sh
