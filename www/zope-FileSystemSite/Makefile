@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	FileSystemSite
-PORTVERSION=	1.3
-PORTREVISION=	1
+PORTVERSION=	1.4.1
 CATEGORIES=	www zope
-MASTER_SITES=	http://zope.org/Members/philikon/${PORTNAME}/${PORTVERSION}/
+MASTER_SITES=	http://zope.org/Members/infrae/FileSystemSite/${PORTNAME}-${PORTVERSION}/
 PKGNAMEPREFIX=	zope-
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
@@ -24,17 +23,14 @@ DIST_SUBDIR=	zope
 ZOPEPRODUCTNAME=${PORTNAME}
 
 WRKSRC=		${WRKDIR}/${ZOPEPRODUCTNAME}
-CPIO=		cpio --quiet -pdum -R
 
 do-build:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 
 do-install:
-	@ ${CHMOD} -R og+rX ${WRKSRC}/
-	@ ${MKDIR} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/${ZOPEPRODUCTNAME}
-	@ cd ${WRKSRC} && ${FIND} . \
-	  | ${CPIO} ${BINOWN}:${BINGRP} \
-	  ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/${ZOPEPRODUCTNAME}
+	@${MKDIR} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/
+	@${CHMOD} -R og+rX ${WRKSRC}/
+	@${CP} -R ${WRKSRC} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/
 
 post-install:
 .if !defined(BATCH)
