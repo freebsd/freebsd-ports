@@ -1,13 +1,13 @@
 # New ports collection makefile for:	gnomeaudio
-# Version required:			0.99.4
+# Version required:			0.99.8
 # Date created:				29 Dec 1998
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1999/01/27 08:31:48 fenner Exp $
+# $Id: Makefile,v 1.4 1999/01/31 19:08:54 vanilla Exp $
 #
 
-DISTNAME=	gnome-audio-0.99.4
-PKGNAME=	gnomeaudio-0.99.4
+DISTNAME=	gnome-audio-0.99.8
+PKGNAME=	gnomeaudio-0.99.8
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	gnome-audio

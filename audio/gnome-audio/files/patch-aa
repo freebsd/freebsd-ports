@@ -1,6 +1,6 @@
---- sounds/Makefile.orig	Tue Jan 26 23:56:12 1999
-+++ sounds/Makefile	Fri Jan 29 14:28:41 1999
-@@ -6,9 +6,9 @@
+--- sounds/Makefile.orig	Tue Feb 16 01:07:51 1999
++++ sounds/Makefile	Fri Feb 19 03:28:42 1999
+@@ -6,10 +6,10 @@
  
  install-files:
  	for I in $(shell find . -name '*.wav'); do \
@@ -11,5 +11,7 @@
  	done
  
  install-default-links:
--	ln -sf startup1.wav $(prefix)/share/sounds/startup.wav
+-	ln -sf startup2.wav $(prefix)/share/sounds/login.wav
+-	ln -sf shutdown1.wav $(prefix)/share/sounds/logout.wav
 +	ln -sf startup1.wav $(prefix)/share/gnome/sounds/startup.wav
++	ln -sf shutdown1.wav $(prefix)/share/gnome/sounds/logout.wav
