@@ -1,5 +1,5 @@
---- Netscape.ad-ja_euc.orig	Mon May  8 16:54:37 2000
-+++ Netscape.ad-ja_euc	Sat Jul  8 02:39:16 2000
+--- Netscape.ad-ja_euc.orig	Wed Jul 19 08:35:27 2000
++++ Netscape.ad-ja_euc	Wed Jul 19 08:43:31 2000
 @@ -60,7 +60,7 @@
  ! code. The directory and file listings are always maintained
  ! as equal size. We don't do this for SGI, as they have solved
@@ -20,15 +20,6 @@
  
  ! For those MIME content-encodings which are not directly understood
  ! internally, it is possible to specify another Unix program to use as
-@@ -1480,7 +1480,7 @@
- !
- 
- *menuBar.fileMenu.labelString:		ファイル
--*menuBar.fileMenu.mnemonic:		F
-+!*menuBar.fileMenu.mnemonic:		F
- 
- *menuBar.editMenu.labelString:		編集
- !*menuBar.editMenu.mnemonic:		E
 @@ -2226,7 +2226,7 @@
  *decreaseFont.documentationString:	\
  このページの表示に使用するフォント サイズを小さくします。

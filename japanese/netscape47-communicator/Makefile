@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	communicator-ja-euc-v473-export.generic-generic-generic
+DISTNAME=	communicator-ja-euc-v473-export.generic-generic-generic-20000715
 
 MASTERDIR=	${.CURDIR}/../netscape4-communicator
 SUBMASTERDIR=	${.CURDIR}/../netscape${BROWSER_VER}-communicator
