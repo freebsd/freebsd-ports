@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	encompass
-PORTVERSION=	0.3.3
-PORTREVISION=	1
+PORTVERSION=	0.4.2
 CATEGORIES=	www gnome
-MASTER_SITES=	http://dobey.free.fr/encompass/ \
-		http://zephyr.webhop.net/encompass/ \
-		ftp://ftp.one.net/pub/users/dobez/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	gtkhtml.10:${PORTSDIR}/www/gtkhtml
+LIB_DEPENDS=	gtkhtml.10:${PORTSDIR}/www/gtkhtml \
+		neon.15:${PORTSDIR}/www/neon
 
 USE_GNOME=	yes
 USE_X_PREFIX=	yes
