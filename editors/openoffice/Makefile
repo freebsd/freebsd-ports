@@ -63,9 +63,9 @@ WRKSRC=	${WRKDIR}/oo_1.0_src/config_office
 LD_PATH1=	${WRKSRC}/../vos/unxfbsd.pro/lib/:${WRKSRC}/../ucbhelper/unxfbsd.pro/lib/
 LD_PATH=	${LD_PATH1}:${WRKSRC}/../solver/641/unxfbsd.pro/lib/
 .if defined(WITH_DEBUG)
-DMAKE=		"dmake debug=true"
+DMAKE=		dmake debug="true"
 .else
-DMAKE=		"dmake strip=true"
+DMAKE=		dmake strip="true"
 .endif
 
 CONFIGURE_ENV=		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
