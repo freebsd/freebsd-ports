@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	httrack
-PORTVERSION=	3.05
+PORTVERSION=	3.10
 CATEGORIES=	www
 MASTER_SITES=	http://www.httrack.com/
 
@@ -16,8 +16,12 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	PREFIX=${PREFIX} BINPATH=${PREFIX}/bin
+INSTALLS_SHLIB=	yes
 .if defined(NOPORTDOCS)
 INSTALL_TARGET=	bininstall
 .endif
+
+post-install:
+	${LN} -sf libhttrack.so.1 ${PREFIX}/lib/libhttrack.so
 
 .include <bsd.port.mk>

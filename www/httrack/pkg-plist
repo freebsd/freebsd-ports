@@ -1,4 +1,6 @@
 bin/httrack
+lib/libhttrack.so
+lib/libhttrack.so.1
 %%PORTDOCS%%share/doc/httrack/COPYING
 %%PORTDOCS%%share/doc/httrack/HelpHtml/abuse.html
 %%PORTDOCS%%share/doc/httrack/HelpHtml/addurl.html
@@ -76,8 +78,15 @@ bin/httrack
 %%PORTDOCS%%share/doc/httrack/greetings.txt
 %%PORTDOCS%%share/doc/httrack/history.txt
 %%PORTDOCS%%share/doc/httrack/httrack-doc.html
+%%PORTDOCS%%share/doc/httrack/httrack/index-body.html
+%%PORTDOCS%%share/doc/httrack/httrack/index-footer.html
+%%PORTDOCS%%share/doc/httrack/httrack/index-header.html
+%%PORTDOCS%%share/doc/httrack/httrack/topindex-body.html
+%%PORTDOCS%%share/doc/httrack/httrack/topindex-footer.html
+%%PORTDOCS%%share/doc/httrack/httrack/topindex-header.html
 %%PORTDOCS%%share/doc/httrack/license.txt
 %%PORTDOCS%%@dirrm share/doc/httrack/HelpHtml/img
 %%PORTDOCS%%@dirrm share/doc/httrack/HelpHtml/div
 %%PORTDOCS%%@dirrm share/doc/httrack/HelpHtml
+%%PORTDOCS%%@dirrm share/doc/httrack/httrack
 %%PORTDOCS%%@dirrm share/doc/httrack
