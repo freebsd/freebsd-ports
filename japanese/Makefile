@@ -1,8 +1,9 @@
-# $Id: Makefile,v 1.58 1997/03/02 13:02:50 asami Exp $
+# $Id: Makefile,v 1.59 1997/03/02 14:56:35 asami Exp $
 #
 
     SUBDIR += Canna
     SUBDIR += Wnn
+    SUBDIR += a2ps
     SUBDIR += camltk41
     SUBDIR += cdrom2
     SUBDIR += chimera
@@ -48,6 +49,7 @@
     SUBDIR += mule-wnn
     SUBDIR += nethack
     SUBDIR += netscape.language
+    SUBDIR += newosaka
     SUBDIR += nkf
     SUBDIR += okphone
     SUBDIR += perl5
