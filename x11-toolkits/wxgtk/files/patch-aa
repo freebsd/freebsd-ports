@@ -1,6 +1,6 @@
---- configure.in.orig	Sun Aug 20 17:52:52 2000
-+++ configure.in	Sat Aug 26 02:03:38 2000
-@@ -1999,16 +1999,12 @@
+--- configure.in.orig	Tue Mar 13 00:29:09 2001
++++ configure.in	Mon May  7 07:12:45 2001
+@@ -1948,16 +1948,12 @@
  WX_LIBRARY_NAME_STATIC_GL="lib${WX_LIBRARY}_gl.a"
  
  dnl the name of the shared library
@@ -21,7 +21,7 @@
  
  dnl shared library settings
  SHARED_LD=
-@@ -2742,24 +2738,6 @@
+@@ -2729,24 +2725,6 @@
      fi
  fi
  
@@ -46,7 +46,7 @@
  dnl ---------------------------------------------------------------------------
  dnl Optional libraries
  dnl ---------------------------------------------------------------------------
-@@ -3784,8 +3762,6 @@
+@@ -3788,8 +3766,6 @@
  AC_SUBST(WX_LIBRARY)
  AC_SUBST(WX_TARGET_LIBRARY)
  AC_SUBST(WX_LIBRARY_LINK1)
@@ -55,7 +55,7 @@
  AC_SUBST(PROGRAM_EXT)
  
  dnl global gl options
-@@ -3795,8 +3771,6 @@
+@@ -3799,8 +3775,6 @@
  AC_SUBST(WX_LIBRARY_GL)
  AC_SUBST(WX_TARGET_LIBRARY_GL)
  AC_SUBST(WX_LIBRARY_LINK1_GL)
