@@ -89,6 +89,7 @@
     SUBDIR += keyprint
     SUBDIR += knocker
     SUBDIR += krb5
+    SUBDIR += krb5-beta
     SUBDIR += kssh
     SUBDIR += l0pht-watch
     SUBDIR += l0phtcrack

@@ -3575,6 +3575,7 @@ kpropd		src/eBones/kpropd
 kpsk		ports/comms/kpsk
 krb		src/eBones/krb
 krb5		ports/security/krb5
+krb5-beta	ports/security/krb5-beta
 krbinclude	src/eBones/include
 krbman		src/eBones/man
 krdesktop	ports/net/krdesktop

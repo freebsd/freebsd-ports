@@ -1,0 +1,125 @@
+@unexec install-info --delete %D/info/krb425.info %D/info/dir
+@unexec install-info --delete %D/info/krb5-admin.info %D/info/dir
+@unexec install-info --delete %D/info/krb5-install.info %D/info/dir
+@unexec install-info --delete %D/info/krb5-user.info %D/info/dir
+bin/ftp
+bin/gss-client
+bin/kdestroy
+bin/kinit
+bin/klist
+bin/kpasswd
+bin/krb5-config
+%%KRB4%%bin/krb524init
+bin/ksu
+bin/kvno
+bin/rcp
+bin/rlogin
+bin/rsh
+bin/sclient
+bin/sim_client
+bin/telnet
+bin/uuclient
+%%KRB4%%bin/v4rcp
+bin/v5passwd
+include/com_err.h
+include/gssapi/gssapi.h
+include/gssapi/gssapi_generic.h
+include/gssapi/gssapi_krb5.h
+include/kerberosIV/des.h
+include/kerberosIV/kadm.h
+include/kerberosIV/krb.h
+include/kerberosIV/krb_err.h
+include/kerberosIV/mit-copyright.h
+include/krb5.h
+include/libpty.h
+include/mit-sipb-copyright.h
+include/port-sockets.h
+include/profile.h
+info/krb425.info
+info/krb5-admin.info
+info/krb5-admin.info-1
+info/krb5-admin.info-2
+info/krb5-admin.info-3
+info/krb5-install.info
+info/krb5-install.info-1
+info/krb5-install.info-2
+info/krb5-user.info
+lib/libcom_err.a
+lib/libcom_err.so
+lib/libcom_err.so.3
+lib/libdes425.a
+lib/libdes425.so
+lib/libdes425.so.3
+lib/libdyn.a
+lib/libdyn.so
+lib/libdyn.so.1
+lib/libgssapi_krb5.a
+lib/libgssapi_krb5.so
+lib/libgssapi_krb5.so.2
+lib/libgssrpc.a
+lib/libgssrpc.so
+lib/libgssrpc.so.3
+lib/libk5crypto.a
+lib/libk5crypto.so
+lib/libk5crypto.so.3
+lib/libkadm5clnt.a
+lib/libkadm5clnt.so
+lib/libkadm5clnt.so.5
+lib/libkadm5srv.a
+lib/libkadm5srv.so
+lib/libkadm5srv.so.5
+lib/libkdb5.a
+lib/libkdb5.so
+lib/libkdb5.so.3
+%%KRB4%%lib/libkrb4.a
+%%KRB4%%lib/libkrb4.so
+%%KRB4%%lib/libkrb4.so.2
+lib/libkrb5.a
+lib/libkrb5.so
+lib/libkrb5.so.3
+%%KRB4%%lib/libkrb524.a
+lib/libpty.a
+lib/libpty.so
+lib/libpty.so.1
+lib/libss.a
+sbin/ftpd
+sbin/gss-server
+sbin/kadmin
+sbin/kadmin.local
+sbin/kadmind
+%%KRB4%%sbin/kadmind4
+sbin/kdb5_util
+sbin/klogind
+sbin/kprop
+sbin/kpropd
+sbin/krb5-send-pr
+%%KRB4%%sbin/krb524d
+sbin/krb5kdc
+sbin/kshd
+sbin/ktutil
+sbin/login.krb5
+sbin/sim_server
+sbin/sserver
+sbin/telnetd
+sbin/uuserver
+sbin/v5passwdd
+share/doc/krb5/README.FreeBSD
+share/doc/krb5/admin.html
+share/doc/krb5/admin_foot.html
+share/doc/krb5/admin_toc.html
+share/doc/krb5/install.html
+share/doc/krb5/install_foot.html
+share/doc/krb5/install_toc.html
+share/doc/krb5/krb425.html
+share/doc/krb5/krb425_toc.html
+share/doc/krb5/user-guide.html
+share/doc/krb5/user-guide_foot.html
+share/doc/krb5/user-guide_toc.html
+share/gnats/mit
+@dirrm include/gssapi
+@dirrm include/kerberosIV
+@dirrm share/doc/krb5
+@exec install-info %D/info/krb425.info %D/info/dir
+@exec install-info %D/info/krb5-admin.info %D/info/dir
+@exec install-info %D/info/krb5-install.info %D/info/dir
+@exec install-info %D/info/krb5-user.info %D/info/dir
