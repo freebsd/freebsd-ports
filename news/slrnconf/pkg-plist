@@ -1,17 +1,17 @@
 bin/slrnconf
-share/slrnconf/ABOUT
-share/slrnconf/COPYING
-share/slrnconf/README
+%%PORTDOCS%%%%DOCSDIR%%/ABOUT
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/README
 share/slrnconf/preferences.pm
 share/slrnconf/rc_grammar.pm
 share/slrnconf/ui.pm
-share/slrnconf/data/preferences_display_elements
+share/slrnconf/data/bitmaps
+share/slrnconf/data/colors
+share/slrnconf/data/display_elements
+share/slrnconf/data/menus
+share/slrnconf/data/monos
 share/slrnconf/data/rc_grammar
-share/slrnconf/data/ui_bitmaps
-share/slrnconf/data/ui_colors
-share/slrnconf/data/ui_menus
-share/slrnconf/data/ui_monos
-share/slrnconf/data/ui_tabs
+share/slrnconf/data/tabs
 share/slrnconf/help/Xbrowser
 share/slrnconf/help/abort_unmodified_edits
 share/slrnconf/help/art_help_line
@@ -172,6 +172,7 @@ share/slrnconf/help/warn_followup_to
 share/slrnconf/help/wrap_flags
 share/slrnconf/help/wrap_method
 share/slrnconf/help/write_newsrc_flags
-@dirrm share/slrnconf/data
 @dirrm share/slrnconf/help
+@dirrm share/slrnconf/data
 @dirrm share/slrnconf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
