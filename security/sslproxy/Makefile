@@ -13,7 +13,6 @@ MASTER_SITES=	ftp://ftp.obdev.at/pub/Products/sslproxy/
 
 MAINTAINER=	alexlh@funk.org
 
-BUILD_DEPENDS=	${PREFIX}/include/openssl/ssl.h:${PORTSDIR}/security/openssl
 LIB_DEPENDS=	crypto.1:${PORTSDIR}/security/openssl \
 		ssl.1:${PORTSDIR}/security/openssl
 
