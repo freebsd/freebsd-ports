@@ -1,22 +1,14 @@
---- include/Makefile.in	2000/11/15 09:53:28	1.1
-+++ include/Makefile.in	2000/11/15 10:12:23
-@@ -143,8 +143,8 @@
- 	$(mkinstalldirs) $(DESTDIR)$(xmlincdir)
- 	@list='$(xmlinc_HEADERS)'; for p in $$list; do \
- 	  if test -f "$$p"; then d= ; else d="$(srcdir)/"; fi; \
--	  echo " $(INSTALL_DATA) $$d$$p $(DESTDIR)$(xmlincdir)/$$p"; \
--	  $(INSTALL_DATA) $$d$$p $(DESTDIR)$(xmlincdir)/$$p; \
-+	  echo " $(INSTALL_DATA) $$d$$p $(DESTDIR)$(xmlincdir)/`echo $$p | sed 's|libxml/|libxml2/|'`"; \
-+	  $(INSTALL_DATA) $$d$$p $(DESTDIR)$(xmlincdir)/`echo $$p | sed 's|libxml/|libxml2/|'`; \
- 	done
+
+$FreeBSD$
+
+--- include/Makefile.in.orig	Thu Feb  8 13:47:30 2001
++++ include/Makefile.in	Fri Feb  9 02:04:41 2001
+@@ -111,7 +111,7 @@
+ Z_CFLAGS = @Z_CFLAGS@
+ Z_LIBS = @Z_LIBS@
  
- uninstall-xmlincHEADERS:
-@@ -266,7 +266,7 @@
+-xmlincdir = $(includedir)
++xmlincdir = $(includedir)/libxml2
  
+ xmlinc_HEADERS =  		libxml/SAX.h 		libxml/entities.h 		libxml/encoding.h 		libxml/parser.h 		libxml/parserInternals.h 		libxml/xmlerror.h 		libxml/HTMLparser.h 		libxml/HTMLtree.h 		libxml/debugXML.h 		libxml/tree.h 		libxml/hash.h 		libxml/xpath.h 		libxml/xpathInternals.h 		libxml/xpointer.h 		libxml/xinclude.h 		libxml/xmlIO.h 		libxml/xmlmemory.h 		libxml/nanohttp.h 		libxml/nanoftp.h 		libxml/uri.h 		libxml/valid.h 		libxml/xlink.h 		libxml/xmlversion.h
  
- install-exec-hook:
--	$(mkinstalldirs) $(DESTDIR)$(xmlincdir) $(DESTDIR)$(xmlincdir)/libxml
-+	$(mkinstalldirs) $(DESTDIR)$(xmlincdir) $(DESTDIR)$(xmlincdir)/libxml2
- 
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.

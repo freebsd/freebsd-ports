@@ -1,76 +1,59 @@
---- Makefile.in.orig	Sat Nov 25 04:00:19 2000
-+++ Makefile.in	Wed Nov 29 17:37:37 2000
-@@ -121,8 +121,8 @@
+
+$FreeBSD$
+
+--- Makefile.in.orig	Thu Feb  8 13:47:28 2001
++++ Makefile.in	Fri Feb  9 02:04:41 2001
+@@ -124,7 +124,7 @@
+ lib_LTLIBRARIES = libxml2.la
+ libxml2_la_LIBADD = @Z_LIBS@
  
--bin_SCRIPTS = xml-config
-+bin_SCRIPTS = xml2-config
+-libxml2_la_LDFLAGS = -version-info @LIBXML_VERSION_INFO@
++libxml2_la_LDFLAGS = -version-info 5:0:0
  
--lib_LTLIBRARIES = libxml.la
-+lib_LTLIBRARIES = libxml2.la
- libxml_la_LIBADD = @Z_LIBS@
+ libxml2_la_SOURCES =  		SAX.c 		entities.c 		encoding.c 		error.c 		parserInternals.c 		parser.c 		tree.c 		hash.c 		xmlIO.c 		xmlmemory.c 		uri.c 		valid.c 		xlink.c 		HTMLparser.c 		HTMLtree.c 		debugXML.c 		xpath.c 		xpointer.c 		xinclude.c 		nanohttp.c 		nanoftp.c
  
--libxml_la_LDFLAGS = -version-info @LIBXML_VERSION_INFO@
-+libxml_la_LDFLAGS = -version-info 5:0:0
- 
-@@ -131,6 +131,6 @@
- 
--DEPS = $(top_builddir)/libxml.la
--LDADDS = $(top_builddir)/libxml.la @Z_LIBS@ @M_LIBS@
-+DEPS = $(top_builddir)/libxml2.la
-+LDADDS = $(top_builddir)/libxml2.la @Z_LIBS@ @M_LIBS@
- 
--man_MANS = xmllint.1 xml-config.1 libxml.4
-+man_MANS = xmllint.1 xml2-config.1 libxml.4
- 
-@@ -164,6 +164,6 @@
+@@ -162,7 +162,7 @@
+ testURI_DEPENDENCIES = $(DEPS)
+ testURI_LDADD = $(LDADDS)
  
 -confexecdir = $(libdir)
--confexec_DATA = xmlConf.sh
 +confexecdir = $(sysconfdir)
-+confexec_DATA = xml2Conf.sh
+ confexec_DATA = xml2Conf.sh
  
--CLEANFILES = xmlConf.sh
-+CLEANFILES = xml2Conf.sh
- EXTRA_DIST = xmlConf.sh.in libxml.spec.in libxml.spec libxml.m4              example/Makefile.am example/gjobread.c example/gjobs.xml 	     $(man_MANS) libxml-2.0.pc.in xmlversion.h.in 	     win32/README.MSDev win32/Makefile.mingw win32/libxml2/libxml2.dsp
-@@ -207,3 +207,3 @@
+ CLEANFILES = xml2Conf.sh
+@@ -205,7 +205,7 @@
+ MANS = $(man_MANS)
+ 
  NROFF = nroff
 -DATA =  $(confexec_DATA) $(m4data_DATA) $(pkgconfig_DATA)
 +DATA =  $(confexec_DATA) $(m4data_DATA)
  
-@@ -273,2 +273,6 @@
- 	cd $(top_builddir) && CONFIG_FILES=$@ CONFIG_HEADERS= $(SHELL) ./config.status
-+xml2-config: xml-config
-+	cd $(top_builddir) && cp xml-config xml2-config
-+xml2-config.1: xml-config.1
-+	cd $(top_builddir) && cp xml-config.1 xml2-config.1
- 
-@@ -337,3 +341,3 @@
- 
--libxml.la: $(libxml_la_OBJECTS) $(libxml_la_DEPENDENCIES)
-+libxml2.la: $(libxml_la_OBJECTS) $(libxml_la_DEPENDENCIES)
- 	$(LINK) -rpath $(libdir) $(libxml_la_LDFLAGS) $(libxml_la_OBJECTS) $(libxml_la_LIBADD) $(LIBS)
-@@ -827,3 +831,3 @@
+ DIST_COMMON =  README ./stamp-h.in AUTHORS COPYING COPYING.LIB ChangeLog \
+ INSTALL Makefile.am Makefile.in NEWS TODO acconfig.h acinclude.m4 \
+@@ -825,7 +825,7 @@
+ 		install-binSCRIPTS install-confexecDATA
+ install-exec: install-exec-recursive
  
 -install-data-am: install-man install-m4dataDATA install-pkgconfigDATA
 +install-data-am: install-man install-m4dataDATA
  install-data: install-data-recursive
-@@ -838,3 +842,3 @@
+ 
+ install-am: all-am
+@@ -836,7 +836,7 @@
+ 		uninstall-confexecDATA uninstall-m4dataDATA \
+ 		uninstall-pkgconfigDATA
  uninstall: uninstall-recursive
 -all-am: Makefile $(LTLIBRARIES) $(PROGRAMS) $(SCRIPTS) $(MANS) $(DATA) \
 +all-am: Makefile $(LTLIBRARIES) $(SCRIPTS) $(MANS) $(DATA) \
  		config.h
-@@ -848,3 +852,3 @@
+ all-redirect: all-recursive-am
+ install-strip:
+@@ -846,7 +846,7 @@
+ 	$(mkinstalldirs)  $(DESTDIR)$(libdir) $(DESTDIR)$(bindir) \
+ 		$(DESTDIR)$(bindir) $(DESTDIR)$(mandir)/man1 \
  		$(DESTDIR)$(mandir)/man4 $(DESTDIR)$(confexecdir) \
 -		$(DESTDIR)$(m4datadir) $(DESTDIR)$(pkgconfigdir)
 +		$(DESTDIR)$(m4datadir)
  
-@@ -1219,3 +1223,3 @@
  
--xmlConf.sh: xmlConf.sh.in Makefile
-+xml2Conf.sh: xmlConf.sh.in Makefile
- 	sed -e 's?\@XML_LIBDIR\@?$(XML_LIBDIR)?g' \
-@@ -1225,3 +1229,3 @@
- 	      < $(srcdir)/xmlConf.sh.in > xmlConf.tmp \
--	  && mv xmlConf.tmp xmlConf.sh
-+	  && mv xmlConf.tmp xml2Conf.sh
- 
+ mostlyclean-generic:
