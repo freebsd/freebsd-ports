@@ -1,6 +1,9 @@
---- Makefile.in.orig	Wed Dec  6 09:49:28 2000
-+++ Makefile.in	Wed Dec  6 10:29:11 2000
-@@ -177,9 +177,9 @@
+
+$FreeBSD$
+
+--- Makefile.in.orig	Tue Apr 17 11:15:52 2001
++++ Makefile.in	Tue Apr 17 11:35:09 2001
+@@ -173,9 +173,9 @@
  		rm -f $(srcdir)/stamp-h.in; \
  		$(MAKE) $(srcdir)/stamp-h.in; \
  	else :; fi
@@ -13,17 +16,30 @@
  
  mostlyclean-hdr:
  
-@@ -487,11 +487,11 @@
+@@ -456,22 +456,22 @@
  	@$(NORMAL_INSTALL)
  	if test -d pixmaps; then \
- 	  $(mkinstalldirs) $(DESTDIR)$(pixmapdir); \
--	  cd pixmaps ; tar cf -  --exclude CVS * | ( cd $(DESTDIR)$(pixmapdir) ; tar xf -) ; cd .. ; \
-+	  cd pixmaps ; tar --exclude CVS -cf -  * | ( cd $(DESTDIR)$(pixmapdir) ; tar xf -) ; cd .. ; \
+ 	  $(mkinstalldirs) $(pixmapdir); \
+-	  cd pixmaps ; tar cf -  --exclude CVS --exclude .xvpics * | ( cd $(pixmapdir) ; tar xf -) ; cd .. ; \
++	  cd pixmaps ; tar --exclude CVS --exclude .xvpics -cf - * | ( cd $(pixmapdir) ; tar xf -) ; cd .. ; \
  	fi
  	if test -d data; then \
- 	  $(mkinstalldirs) $(DESTDIR)$(leveldatadir); \
--	  cd data ; tar cf -  --exclude CVS * | ( cd $(DESTDIR)$(leveldatadir) ; tar xf -) ; cd .. ; \
-+	  cd data ; tar --exclude CVS -cf -  * | ( cd $(DESTDIR)$(leveldatadir) ; tar xf -) ; cd .. ; \
+ 	  $(mkinstalldirs) $(leveldatadir); \
+-	  cd data ; tar cf -  --exclude CVS --exclude .xvpics * | ( cd $(leveldatadir) ; tar xf -) ; cd .. ; \
++	  cd data ; tar --exclude CVS --exclude .xvpics -cf - * | ( cd $(leveldatadir) ; tar xf -) ; cd .. ; \
  	fi
  
  dist-hook:
+ 	cp gcompris.spec $(distdir)
+ 	if test -d pixmaps; then \
+ 	  $(mkinstalldirs) $(distdir)/pixmaps; \
+-	  cd pixmaps ; tar cf -  --exclude CVS --exclude .xvpics * | ( cd ../$(distdir)/pixmaps ; tar xf -) ; cd .. ; \
++	  cd pixmaps ; tar --exclude CVS --exclude .xvpics -cf - * | ( cd ../$(distdir)/pixmaps ; tar xf -) ; cd .. ; \
+ 	fi
+ 	if test -d data; then \
+ 	  $(mkinstalldirs) $(distdir)/data; \
+-	  cd data ; tar cf -  --exclude CVS --exclude .xvpics * | ( cd ../$(distdir)/data ; tar xf -) ; cd .. ; \
++	  cd data ; tar --exclude CVS --exclude .xvpics -cf - * | ( cd ../$(distdir)/data ; tar xf -) ; cd .. ; \
+ 	fi
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
