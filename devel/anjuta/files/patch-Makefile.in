@@ -1,6 +1,6 @@
---- Makefile.in.orig	Tue Nov  5 15:12:07 2002
-+++ Makefile.in	Tue Nov  5 15:13:29 2002
-@@ -171,13 +171,13 @@
+--- Makefile.in.orig	Thu Feb 20 08:41:48 2003
++++ Makefile.in	Thu Feb 20 08:43:33 2003
+@@ -172,9 +172,9 @@
  am__quote = @am__quote@
  install_sh = @install_sh@
  
@@ -12,17 +12,12 @@
  
  
  anjutadocdir = ${prefix}/@NO_PREFIX_PACKAGE_DOC_DIR@
--anjutadoc_DATA = \
-+anjutadoc_DATA = # \
- 	README\
- 	COPYING\
- 	AUTHORS\
-@@ -563,7 +563,7 @@
+@@ -589,7 +589,7 @@
  
  info-am:
  
--install-data-am: install-anjutadocDATA install-gnomemenuDATA
-+install-data-am: install-gnomemenuDATA
+-install-data-am: install-anjuta_dataDATA install-anjutadocDATA \
++install-data-am: install-anjuta_dataDATA \
+ 	install-gnomemenuDATA
  
  install-exec-am:
- 

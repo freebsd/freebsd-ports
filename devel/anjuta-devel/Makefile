@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	anjuta
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	anjuta
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Integrated Development Environment for C and C++
 
 LIB_DEPENDS=	scintilla.1:${PORTSDIR}/x11-toolkits/scintilla
 
