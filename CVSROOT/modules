@@ -279,6 +279,7 @@ airport		ports/net-mgmt/airport
 aish		ports/converters/aish
 akpop3d		ports/mail/akpop3d
 ald		ports/devel/ald
+aldo		ports/comms/aldo
 ale		ports/graphics/ale
 aleph		ports/lang/aleph
 alephone	ports/games/alephone
