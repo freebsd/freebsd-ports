@@ -16,8 +16,7 @@ DISTFILES=	Wnn4.2.tar.gz ${WNN_EXTRA_PATCH}
 
 MAINTAINER=	taoka@FreeBSD.org
 
-BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
-
+USE_XLIB=	yes
 EXTRACT_ONLY=	Wnn4.2.tar.gz
 PATCHDIR=	${.CURDIR}/../../japanese/Wnn/patches
 FILESDIR=	${.CURDIR}/../../japanese/Wnn/files
