@@ -28,9 +28,6 @@ JAVASHAREDIR=	${PREFIX}/share/java
 JARDIR=		${JAVASHAREDIR}/classes
 JARFILE=	xalan.jar
 
-do-build:
-	@cd ${WRKSRC} && ${ANT} ${ANT_TARGET}
-
 do-configure:
 	${SED} 's|%%PREFIX%%|${PREFIX}|g' ${FILESDIR}/xalan.sh >${WRKDIR}/xalan
 
