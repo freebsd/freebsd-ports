@@ -19,6 +19,14 @@ OPENSSLDIR=		/etc/ssl
 	@${ECHO_CMD} "OpenSSL distribution."
 	@${FALSE}
 .endif
+.if exists(${LOCALBASE}/lib/libcrypto.so)
+.BEGIN:
+	@${ECHO_CMD} "This port wants the OpenSSL library from the FreeBSD"
+	@${ECHO_CMD} "base system. You can't build against it, while a newer"
+	@${ECHO_CMD} "Version is installed by a port."
+	@${ECHO_CMD} "Please deinstall the port or undefine USE_OPENSSL_BASE."
+	@${FALSE}
+.endif
 
 # OpenSSL in the base system may not include IDEA for patent licensing reasons.
 .if defined(MAKE_IDEA) && !defined(OPENSSL_IDEA)
