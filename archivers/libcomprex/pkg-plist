@@ -1,0 +1,18 @@
+bin/comprex-config
+include/comprex.h
+include/libcomprex/comprex.h
+include/libcomprex/fileio.h
+include/libcomprex/module.h
+include/libcomprex/status.h
+include/libcomprex/utils.h
+lib/comprex/file/ar.so
+lib/comprex/file/bzip2.so
+lib/comprex/file/zlib.so
+lib/comprex/scheme/curl.a
+lib/libcomprex.a
+lib/libcomprex.so.0
+share/aclocal/comprex.m4
+@dirrm include/libcomprex
+@dirrm lib/comprex/file
+@dirrm lib/comprex/scheme
+@dirrm lib/comprex

@@ -18,6 +18,7 @@
     SUBDIR += lha
     SUBDIR += libarc
     SUBDIR += libcabinet
+    SUBDIR += libcomprex
     SUBDIR += linux_rar
     SUBDIR += lzo
     SUBDIR += lzop
