@@ -4,11 +4,10 @@
 # Date created:		25 July 1996
 # Whom:			obrien@cs.ucdavis.edu
 #
-# $Id: Makefile,v 1.50 1997/12/04 21:46:36 ache Exp $
+# $Id: Makefile,v 1.51 1997/12/09 07:53:56 obrien Exp $
 #
 
-DISTNAME=       tinpre-1.4-971204
-PKGNAME=        tinpre-1.4-971204
+DISTNAME=       tinpre-1.4-980105
 CATEGORIES=	news
 MASTER_SITES=   ftp://nuxi.ucdavis.edu/pub/tin/ \
 		ftp://ftp.akk.uni-karlsruhe.de/pub/tin/ \
@@ -37,6 +36,13 @@ MAN1=		tin.1
 .if defined(NNTP_ONLY)
 CONFIGURE_ARGS+=	--enable-nntp-only
 .endif
+
+post-patch:
+	@${MV} ${WRKSRC}/doc/tin.1 ${WRKSRC}/doc/tin.1.dist
+	@${SED} -e 's:/var/spool/news:/var/news:' \
+		-e 's:/etc/nntpserver:${PREFIX}/etc/nntpserver:' \
+		-e 's:/usr/lib/news:${PREFIX}/news/lib:' \
+		<${WRKSRC}/doc/tin.1.dist >${WRKSRC}/doc/tin.1
 
 post-configure:
 	${ECHO} '#define NNTP_SERVER_FILE "${PREFIX}/etc/nntpserver"' >>${WRKSRC}/include/autoconf.h
