@@ -1,0 +1,50 @@
+--- configure.orig	Mon Feb  1 16:01:12 1999
++++ configure	Mon Mar 13 03:54:42 2000
+@@ -1108,8 +1108,8 @@
+ echo "configure:1109: checking if the compiler understands -pipe" >&5
+   OLDCC="$CC"
+   OLDCXX="$CXX"
+-  CC="$CC -pipe"
+-  CXX="$CXX -pipe"
++  CC="$CC"
++  CXX="$CXX"
+   cat > conftest.$ac_ext <<EOF
+ #line 1115 "configure"
+ #include "confdefs.h"
+@@ -1655,7 +1655,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lgtk `$gtkbin""gtk-config --libs` $LIBS"
++LIBS="`$gtkbin""$GTK_CONFIG --libs` $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 1661 "configure"
+ #include "confdefs.h"
+@@ -1694,7 +1694,7 @@
+ 
+   echo $ac_n "checking GTK+ version""... $ac_c" 1>&6
+ echo "configure:1697: checking GTK+ version" >&5
+-  GTKV=`$gtkbin""gtk-config --version`
++  GTKV=`$gtkbin""$GTK_CONFIG --version`
+   echo "$ac_t""$GTKV" 1>&6
+   case "$GTKV" in
+     1.0.*)
+@@ -1890,8 +1890,8 @@
+     OS_LIBCQCAM_OBJS=''
+   ;;
+   freebsd*)
+-    OS_CFLAGS='-O2 -I/usr/local/include -DFREEBSD'
+-    OS_LDFLAGS='-L/usr/local/lib'
++    OS_CFLAGS="$CXXFLAGS $CPPFLAGS -DFREEBSD"
++    OS_LDFLAGS="$LDFLAGS"
+     OS_LIBCQCAM_OBJS=''
+   ;;
+   bsdi*)
+@@ -2124,6 +2124,7 @@
+ s%@x_includes@%$x_includes%g
+ s%@bingroup@%$bingroup%g
+ s%@gtkbin@%$gtkbin%g
++s%@GTK_CONFIG@%$GTK_CONFIG%g
+ s%@GTK_CFLAGS@%$GTK_CFLAGS%g
+ s%@xviewlib@%$xviewlib%g
+ 

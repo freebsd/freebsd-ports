@@ -1,3 +1,14 @@
 bin/cqcam
-bin/xcqcam
+bin/gtkcam
 bin/webcam
+bin/xcqcam
+share/examples/cqcam/sample.cqcrc
+share/examples/cqcam/sample.nph-webcam
+share/doc/cqcam/APINOTES
+share/doc/cqcam/CHANGES
+share/doc/cqcam/README
+share/doc/cqcam/README.webcam
+share/doc/cqcam/refresh.html
+share/doc/cqcam/webcam.html
+@dirrm share/examples/cqcam
+@dirrm share/doc/cqcam

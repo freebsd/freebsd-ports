@@ -1,0 +1,22 @@
+--- gtkfe/Makefile.in.orig	Mon Feb  1 14:25:32 1999
++++ gtkfe/Makefile.in	Mon Mar 13 03:39:35 2000
+@@ -3,8 +3,8 @@
+ bindir = @bindir@
+ CC = @CC@
+ CXX = @CXX@
+-CFLAGS = -Wall @DEBUGFLAGS@ @OS_CFLAGS@ @GTK_CFLAGS@ @JPEG_CFLAGS@ `@gtkbin@gtk-config --cflags`
+-CXXFLAGS = -Wall @DEBUGFLAGS@ @OS_CFLAGS@ @GTK_CFLAGS@ @JPEG_CFLAGS@ @LOCKING@ -I../libcqcam `@gtkbin@gtk-config --cflags`
++CFLAGS = -Wall @DEBUGFLAGS@ @OS_CFLAGS@ @GTK_CFLAGS@ @JPEG_CFLAGS@ `@gtkbin@@GTK_CONFIG@ --cflags`
++CXXFLAGS = -Wall @DEBUGFLAGS@ @OS_CFLAGS@ @GTK_CFLAGS@ @JPEG_CFLAGS@ @LOCKING@ -I../libcqcam `@gtkbin@@GTK_CONFIG@ --cflags`
+ LDFLAGS = @OS_LDFLAGS@ -L../libcqcam
+ LIBS = -lcqcam @JPEG_LIBS@ @OS_LIBS@
+ INSTALL = @INSTALL@
+@@ -19,7 +19,7 @@
+ 	rm -f *.o core $(PROGRAMS)
+ 
+ gtkcam: $(OBJS) $(LIBCQCAM)
+-	$(CXX) -o $@ $(OBJS) `@gtkbin@gtk-config --libs` $(LDFLAGS) $(LIBS)
++	$(CXX) -o $@ $(OBJS) `@gtkbin@@GTK_CONFIG@ --libs` $(LDFLAGS) $(LIBS)
+ 
+ bininstall:
+ 	$(INSTALL) -o root -g @bingroup@ -m 4711 $(PROGRAMS) $(bindir)
