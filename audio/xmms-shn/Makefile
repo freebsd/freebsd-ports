@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmms-shn
-PORTVERSION=	2.2.3
+PORTVERSION=	2.2.4
 CATEGORIES=	audio
 MASTER_SITES=	http://shnutils.freeshell.org/xmms-shn/source/ \
 		${MASTER_SITE_LOCAL}
@@ -21,5 +21,11 @@ USE_X_PREFIX=	yes
 USE_GTK=	yes
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.endif #NOPORTDOCS
 
 .include <bsd.port.mk>
