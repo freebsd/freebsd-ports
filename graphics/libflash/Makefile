@@ -17,6 +17,8 @@ COMMENT=	GPL Flash (TM) Library
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
+BROKEN=		Master sites and distfile no longer available
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/Lib
 MAKE_ARGS=	NOPROFILE=true
 
