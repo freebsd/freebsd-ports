@@ -7,7 +7,7 @@
 
 PORTNAME=	irssi
 PORTVERSION=	0.7.98.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://irssi.org/files/
 
@@ -18,7 +18,8 @@ USE_PERL5=	yes
 USE_GLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-socks --with-bot --without-servertest \
-		--enable-perl-path=${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+		--enable-perl-path=${LOCALBASE}/lib/perl5/site_perl/${PERL_VER} \
+		--enable-perl=static
 CONFIGURE_ENV= LIBS="-L${LOCALBASE}/lib -lintl"
 
 .include <bsd.port.pre.mk>

@@ -27,8 +27,6 @@ lib/irssi/modules/libfe_irc_dcc.so
 lib/irssi/modules/libfe_irc_notifylist.a
 lib/irssi/modules/libfe_irc_notifylist.la
 lib/irssi/modules/libfe_irc_notifylist.so
-lib/irssi/modules/libfe_perl.la
-lib/irssi/modules/libfe_perl.so
 lib/irssi/modules/libirc_bot.so
 lib/irssi/modules/libirc_bot.la
 lib/irssi/modules/libirc_bot.a
@@ -41,8 +39,6 @@ lib/irssi/modules/libirc_flood.a
 lib/irssi/modules/libirc_notifylist.so
 lib/irssi/modules/libirc_notifylist.la
 lib/irssi/modules/libirc_notifylist.a
-lib/irssi/modules/libperl_core.la
-lib/irssi/modules/libperl_core.so
 share/locale/pl/LC_MESSAGES/irssi.mo
 share/locale/pt_BR/LC_MESSAGES/irssi.mo
 share/locale/fr/LC_MESSAGES/irssi.mo
