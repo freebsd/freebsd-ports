@@ -1,0 +1,11 @@
+--- Makefile.org	Wed Feb 17 23:06:51 1999
++++ Makefile	Wed Feb 17 23:39:11 1999
+@@ -5,7 +5,7 @@
+ CC    = cc
+ CFLAGS= -O
+ 
+-prefix = /usr/local
++prefix = $(PREFIX)
+ exec_prefix = $(prefix)/bin
+ man_prefix = $(prefix)/man/man$(manext)
+ manext = 1
