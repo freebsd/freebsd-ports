@@ -3,6 +3,15 @@ $FreeBSD$
 
 --- common/Defs-bsd.gmk.orig	Mon Sep 10 17:02:16 2001
 +++ common/Defs-bsd.gmk	Mon Sep 10 17:02:42 2001
+@@ -128,7 +128,7 @@
+ ifeq ($(TRUE_PLATFORM), NetBSD)
+ DEVTOOLS_PATH = /usr/pkg/bin/
+ else
+-DEVTOOLS_PATH = /usr/local/bin/
++DEVTOOLS_PATH = $(LOCALBASE)/bin/
+ endif
+ # Allow the user to override the default value...
+ ifdef ALT_DEVTOOLS_PATH
 @@ -221,10 +221,10 @@
  else # ARCH
  CFLAGS_COMMON   = $(GCC_WARNINGS)
