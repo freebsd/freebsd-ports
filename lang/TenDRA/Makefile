@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME:L}-${PORTVERSION:S/4.//}
 MAINTAINER=	stefan@fafoe.narf.at
 COMMENT=	A portable BSD-licensed compiler suite
 
+CONFLICTS=	swi-pl* ploticus-* slffea-*
 ONLY_FOR_ARCHS=	i386
 
 DIST_SUBDIR=	${PKGBASE}
