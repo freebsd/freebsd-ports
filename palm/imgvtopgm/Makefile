@@ -12,11 +12,13 @@ MASTER_SITES=	http://www.trends.net/~mu/srcs/
 
 MAINTAINER=	sumikawa@kame.net
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libpbm.a:${PORTSDIR}/graphics/netpbm
+LIB_DEPENDS=	pbm.1:${PORTSDIR}/graphics/netpbm
 
 GNU_CONFIGURE=	yes
 
 MAN1=		imgvinfo.1 imgvtopnm.1 imgvview.1 pbmtoimgv.1 \
 		pgmtoimgv.1 ppmimgvquant.1
+
+BROKEN=		"Looks for netpbm in the wrong place"
 
 .include <bsd.port.mk>
