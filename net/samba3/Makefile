@@ -7,7 +7,7 @@
 
 PORTNAME=	samba
 PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.samba.org/pub/samba/%SUBDIR%/ \
 		ftp://samba.anu.edu.au/pub/samba/%SUBDIR%/ \
@@ -20,6 +20,11 @@ DISTNAME=       samba-${PORTVERSION}
 MAINTAINER=	dwcjr@inethouston.net
 
 NO_LATEST_LINK=	yes
+USE_AUTOCONF=	yes
+
+.if defined(WITH_CUPS)
+LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups
+.endif
 
 # directories
 VARDIR=		/var
@@ -41,6 +46,11 @@ CONFIGURE_ARGS=	 --libdir=${SAMBA_CONFDIR} \
 
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
 CONFIGURE_ARGS+=--with-krb5=${KRB5_HOME}
+.endif
+
+.if defined(WITH_CUPS)
+# This enables CUPS printing support in Samba.
+CONFIGURE_ARGS+=--with-cups=${LOCALBASE}
 .endif
 
 .if defined(WITH_ACL_SUPPORT)
