@@ -54,8 +54,8 @@ CONFIGURE_ARGS+= --without-debug \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=		"Build fails on amd64"
+.if ${ARCH} != "i386"
+BROKEN=		"Build fails on !i386"
 .endif
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
