@@ -8,7 +8,8 @@
 PORTNAME=		streamtuner-xiph
 PORTVERSION=		0.0.1
 CATEGORIES=		audio www
-MASTER_SITES=		http://streamtuner.sourceforge.net/streamtuner/
+MASTER_SITES=		${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	streamtuner
 
 MAINTAINER=		jylefort@brutele.be
 COMMENT=		A dir.xiph.org plugin for streamtuner

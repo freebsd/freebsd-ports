@@ -8,7 +8,8 @@
 PORTNAME=		streamtuner-live365
 PORTVERSION=		0.3.3
 CATEGORIES=		audio www
-MASTER_SITES=		http://streamtuner.sourceforge.net/streamtuner/
+MASTER_SITES=		${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	streamtuner
 
 MAINTAINER=		jylefort@brutele.be
 COMMENT=		A Live365 plugin for streamtuner
