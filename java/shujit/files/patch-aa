@@ -1,11 +1,11 @@
---- compiler.h.orig	Mon Dec 27 23:24:53 1999
-+++ compiler.h	Sat Jan  8 08:07:30 2000
-@@ -203,7 +203,7 @@
+--- compiler.h.orig	Mon Aug 28 12:46:29 2000
++++ compiler.h	Tue Aug 29 18:15:12 2000
+@@ -138,7 +138,7 @@
  #    define SC_TRAPNO	trapno
  #    define SC_ERR	err
  #  elif defined(__FreeBSD__)
--#    include <machine/signal.h>	/* for struct sigcontext */
-+#    include <sys/signal.h>	/* for struct sigcontext */
+-#    include <machine/signal.h>	// for struct sigcontext
++#    include <sys/signal.h>	// for struct sigcontext
  #    define SC_EAX	sc_eax
  #    define SC_ECX	sc_ecx
  #    define SC_EDX	sc_edx
