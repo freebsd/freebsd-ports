@@ -7,6 +7,7 @@
 
 PORTNAME=	qinx
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	http://www.usermode.org/code/
 
@@ -18,7 +19,6 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=15
 LDCONFIG_DIRS+=	%%PREFIX%%/lib/kde3
 
 .include <bsd.port.mk>
