@@ -1,0 +1,22 @@
+--- bin/.java_wrapper.orig	Fri Apr 12 17:03:39 2002
++++ bin/.java_wrapper	Fri Apr 12 17:04:00 2002
+@@ -32,8 +32,8 @@
+ # Resolve symlinks. See 4152645.
+ while [ -L "$PRG" ]; do
+     ls=`ls -ld "$PRG"`
+-    link=`expr "$ls" : '.*-> \(.*\)$'`
+-    if expr "$link" : '/' > /dev/null; then
++    link=`/compat/linux/usr/bin/expr "$ls" : '.*-> \(.*\)$'`
++    if /compat/linux/usr/bin/expr "$link" : '/' > /dev/null; then
+ 	PRG="$link"
+     else
+ 	PRG="`dirname $PRG`/$link"
+@@ -65,7 +65,7 @@
+ # Select vm type (if classic vm, also select thread type).
+ unset vmtype
+ unset ttype
+-DEFAULT_THREADS_FLAG=native
++DEFAULT_THREADS_FLAG=green
+ if [ "x$1" = "x-hotspot" ]; then
+     vmtype=hotspot
+     ttype=native_threads
