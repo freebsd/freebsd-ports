@@ -5,10 +5,10 @@ bin/readcd
 bin/scgcheck
 %%RSCSI%%sbin/rscsi
 %%RSCSI%%@exec chmod u+s %B/%f
-@unexec if cmp -s %D/etc/cdrecord %D/etc/cdrecord.sample; then rm -f %D/etc/cdrecord; else echo "If permanently deleting this package, %D/etc/cdrecord must be removed manually."; fi
+@unexec if cmp -s %D/etc/cdrecord.sample %D/etc/cdrecord; then rm -f %D/etc/cdrecord; else echo "If permanently deleting this package, %D/etc/cdrecord must be removed manually."; fi
 etc/cdrecord.sample
 @exec [ -f %B/cdrecord ] || cp %B/%f %B/cdrecord
-%%RSCSI%%@unexec if cmp -s %D/etc/rscsi %D/etc/rscsi.sample; then rm -f %D/etc/rscsi; else echo "If permanently deleting this package, %D/etc/rscsi must be removed manually."; fi
+%%RSCSI%%@unexec if cmp -s %D/etc/rscsi.sample %D/etc/rscsi; then rm -f %D/etc/rscsi; else echo "If permanently deleting this package, %D/etc/rscsi must be removed manually."; fi
 %%RSCSI%%etc/rscsi.sample
 %%RSCSI%%@exec [ -f %B/rscsi ] || cp %B/%f %B/rscsi
 %%RSCSI%%@unexec if pw usershow rscsi >/dev/null 2>&1; then echo "If permanently deleting this package, user \"rscsi\" and its homedirectory must be removed manually."; fi
@@ -28,4 +28,12 @@ etc/cdrecord.sample
 %%PORTDOCS%%%%DOCSDIR%%/README.rscsi
 %%PORTDOCS%%%%DOCSDIR%%/README.sony
 %%PORTDOCS%%%%DOCSDIR%%/README.verify
+%%PORTDOCS%%%%DOCSDIR%%/cdda2wav/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/cdda2wav/Frontends
+%%PORTDOCS%%%%DOCSDIR%%/cdda2wav/HOWTOUSE
+%%PORTDOCS%%%%DOCSDIR%%/cdda2wav/OtherProgs
+%%PORTDOCS%%%%DOCSDIR%%/cdda2wav/README
+%%PORTDOCS%%%%DOCSDIR%%/cdda2wav/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/cdda2wav/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/cdda2wav
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -6,21 +6,18 @@
 #
 
 PORTNAME?=	cdrtools
-PORTVERSION?=	2.01a18
+PORTVERSION?=	2.01a19
 PORTREVISION?=	0
 CATEGORIES?=	sysutils audio
 MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/alpha/ \
-		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/alpha/ \
-		ftp://ftp.gwdg.de/pub/linux/misc/cdrecord/alpha/
+		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/alpha/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	cdrtools-2.01a18
+DISTNAME=	cdrtools-2.01a19
 
 MAINTAINER=	marius@alchemy.franken.de
 COMMENT?=	Cdrecord and other programs to extract and record CDs/CD-R[W]s
 
 CONFLICTS?=	cdrtools-[0-9]*
-
-NO_LATEST_LINK=	yes
 
 .if defined(MKISOFS)
 MAN8=		isoinfo.8 mkisofs.8
@@ -36,25 +33,31 @@ DOCS=		README README.DiskT@2 README.FreeBSD README.WORM README.cdplus \
 		README.cdrw README.cdtext README.clone README.copy \
 		README.mkisofs README.multi README.raw README.rscsi \
 		README.sony README.verify
+CDDA2WAVDOCS=	FAQ Frontends HOWTOUSE OtherProgs README THANKS TODO
 .endif
 
+NO_LATEST_LINK=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 MAKE_ENV=	CCOM=${CC}
 WRKSRC=		${WRKDIR}/${DISTNAME:C/a(.+)$//}
 
-.if !defined(MKISOFS)
-.if !defined(WITH_RSCSI)
-PLIST_SUB=	RSCSI="@comment "
+.if defined(MKISOFS)
+DOCSSRC=	${WRKSRC}/${PORTNAME}
+PKGMESSAGE=	""
 .else
+DOCSSRC=	${WRKSRC}
+PKGMESSAGE=	${WRKDIR}/pkg-message
+.if defined(WITH_RSCSI)
 PKGINSTALL=	${PKGDIR}/pkg-install.rscsi
 PLIST_SUB=	RSCSI=""
-.endif
-PKGMESSAGE=	${WRKDIR}/pkg-message
 .else
-PKGMESSAGE=	""
+PLIST_SUB=	RSCSI="@comment "
 .endif
+.endif
+
+.include <bsd.port.pre.mk>
 
 pre-everything::
 .if !defined(MKISOFS)
@@ -91,9 +94,9 @@ post-patch:
 .if !defined(WITH_RSCSI)
 	@${RM} ${WRKSRC}/TARGETS/55rscsi
 .endif
-.for i in README.rscsi include/deflts.h cdrecord/cdrecord.1 \
-	cdrecord/cdrecord.dfl cdrecord/defaults.c readcd/readcd.1 \
-	rscsi/rscsi.c rscsi/rscsi.dfl scgcheck/scgcheck.1
+.for i in README.rscsi include/deflts.h cdda2wav/cdda2wav.1 \
+	cdrecord/cdrecord.1 cdrecord/cdrecord.dfl cdrecord/defaults.c \
+	readcd/readcd.1 rscsi/rscsi.c rscsi/rscsi.dfl scgcheck/scgcheck.1
 	@${REINPLACE_CMD} -e 's|\/opt\/schily|${PREFIX}|g; \
 		s|\/usr\/local|${PREFIX}|g; s|\/etc\/default|${PREFIX}\/etc|g; \
 		s|\/var\/adm\/messages|\/var\/run\/dmesg.boot|g' ${WRKSRC}/${i}
@@ -113,18 +116,12 @@ do-install:
 .endfor
 	@${INSTALL_MAN} ${WRKSRC}/mkisofs/mkisofs.8 ${PREFIX}/man/man8
 	@${INSTALL_MAN} ${WRKSRC}/mkisofs/diag/isoinfo.8 ${PREFIX}/man/man8
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for i in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/mkisofs/${i} ${DOCSDIR}
-.endfor
-.endif
 .else
-	@${INSTALL_PROGRAM} ${WRKSRC}/cdrecord/OBJ/${ARCH}-freebsd-cc/cdrecord \
-		${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/cdda2wav/OBJ/${ARCH}-freebsd-cc/cdda2wav \
 		${PREFIX}/bin
 	@${LN} -sf cdda2wav ${PREFIX}/bin/list_audio_tracks
+	@${INSTALL_PROGRAM} ${WRKSRC}/cdrecord/OBJ/${ARCH}-freebsd-cc/cdrecord \
+		${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/readcd/OBJ/${ARCH}-freebsd-cc/readcd \
 		${PREFIX}/bin
 .if defined(WITH_RSCSI)
@@ -140,23 +137,25 @@ do-install:
 	@${INSTALL_MAN} ${WRKSRC}/scgcheck/scgcheck.1 ${PREFIX}/man/man1
 	@${INSTALL_DATA} ${WRKSRC}/cdrecord/cdrecord.dfl \
 		${PREFIX}/etc/cdrecord.sample
-#.if !exists(${PREFIX}/etc/cdrecord)
-#	@${INSTALL_DATA} ${WRKSRC}/cdrecord/cdrecord.dfl ${PREFIX}/etc/cdrecord
-#.endif
-	@if ! [ -f ${PREFIX}/etc/cdrecord ]; then ${INSTALL_DATA} \
-		${WRKSRC}/cdrecord/cdrecord.dfl ${PREFIX}/etc/cdrecord; fi
+.if !exists(${PREFIX}/etc/cdrecord)
+	@${INSTALL_DATA} ${WRKSRC}/cdrecord/cdrecord.dfl ${PREFIX}/etc/cdrecord
+.endif
 .if defined(WITH_RSCSI)
 	@${INSTALL_DATA} ${WRKSRC}/rscsi/rscsi.dfl ${PREFIX}/etc/rscsi.sample
-#.if !exists(${PREFIX}/etc/rscsi)
-#	@${INSTALL_DATA} ${WRKSRC}/rscsi/rscsi.dfl ${PREFIX}/etc/rscsi
-#.endif
-	@if ! [ -f ${PREFIX}/etc/rscsi ]; then ${INSTALL_DATA} \
-		${WRKSRC}/rscsi/rscsi.dfl ${PREFIX}/etc/rscsi; fi
+.if !exists(${PREFIX}/etc/rscsi)
+	@${INSTALL_DATA} ${WRKSRC}/rscsi/rscsi.dfl ${PREFIX}/etc/rscsi
+.endif
+.endif
 .endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for i in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	@${INSTALL_DATA} ${DOCSSRC}/${i} ${DOCSDIR}
+.endfor
+.if !defined(MKISOFS)
+	@${MKDIR} ${DOCSDIR}/cdda2wav
+.for i in ${CDDA2WAVDOCS}
+	@${INSTALL_DATA} ${DOCSSRC}/cdda2wav/${i} ${DOCSDIR}/cdda2wav
 .endfor
 .endif
 .endif
@@ -166,4 +165,4 @@ post-install:
 		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL; fi
 	@if [ -f ${WRKDIR}/pkg-message ]; then ${CAT} ${WRKDIR}/pkg-message; fi
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
