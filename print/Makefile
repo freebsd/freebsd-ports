@@ -18,6 +18,7 @@
     SUBDIR += auctex
     SUBDIR += bibcard
     SUBDIR += bibview
+    SUBDIR += bjfilter360
     SUBDIR += bjfilter850
     SUBDIR += bjfilter850ug
     SUBDIR += bjfilter860
