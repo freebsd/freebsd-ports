@@ -23,6 +23,7 @@ mcrypt		"Encryption support" OFF \
 mhash		"Crypto-hashing support" OFF \
 pdflib		"pdflib support" OFF \
 IMAP		"IMAP support" OFF \
+IMAP-SSL	"IMAP-SSL support (implies IMAP)" OFF \
 MySQL		"MySQL database support" ON \
 PostgreSQL	"PostgreSQL database support" OFF \
 SybaseDB	"Sybase/MS-SQL database support (DB-lib)" OFF \
@@ -113,6 +114,12 @@ while [ "$1" ]; do
 			echo "LIB_DEPENDS+=	c-client4.8:\${PORTSDIR}/mail/cclient"
 			echo "CONFIGURE_ARGS+=--with-imap=\${PREFIX}"
 			;;
+		\"IMAP-SSL\")
+			echo "CONFIGURE_ARGS+=--with-imap-ssl=\${PREFIX}"
+			if [ -z "$IMAP" ]; then
+				set $* \"IMAP\"
+			fi
+ 			;;
 		\"MySQL\")
 			echo "LIB_DEPENDS+=	mysqlclient.10:\${PORTSDIR}/databases/mysql323-client"
 			echo "CONFIGURE_ARGS+=--with-mysql=\${PREFIX}"
