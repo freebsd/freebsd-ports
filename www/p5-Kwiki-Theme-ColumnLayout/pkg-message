@@ -1,0 +1,16 @@
+/* ================================================================= */
+Note: 
+	Kwiki-Theme-ColumnLayout plugin installed! Now you should add
+	to your kwiki in kwiki installation directory:
+
+$ cd cgi-bin/my-kwiki
+$ kwiki -add Kwiki::Theme::ColumnLayout
+
+	Also you may need to remove other themes you've installed
+	before:
+
+$ kwiki -remove Kwiki::Theme::Basic (for example)
+
+	(Always) perldoc Kwiki::Theme::ColumnLayout for details.
+
+/* ================================================================= */
