@@ -1,0 +1,25 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/Gtk2.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/Gtk2.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Install/Files.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Install/gtk2perl.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Install/gtk.typemap
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Install/gtk2perl.typemap
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Install/gdk.typemap
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Install/gtk2perl-autogen.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/CodeGen.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Helper.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/SimpleList.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/SimpleMenu.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Pango.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Keysyms.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/api.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/devel.pod
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Install
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Install 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Gtk2 2>/dev/null || true

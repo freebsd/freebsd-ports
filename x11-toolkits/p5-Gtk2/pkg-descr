@@ -1,0 +1,15 @@
+Perl bindings to the 2.x series of the Gtk+ graphical user interface library.
+This module allows you to write graphical user interfaces in a perlish and
+object-oriented way, freeing you from the casting and memory management in C,
+yet remaining very close in spirit to original API.  Find out more about Gtk+
+at http://www.gtk.org.
+
+The GTK+ Reference Manual is also a handy companion when writing Gtk
+programs in any language.  http://developer.gnome.org/doc/API/2.0/gtk/
+The perl bindings follow the C API very closely, and the C reference
+documentation should be considered the canonical source.
+
+To discuss gtk2-perl, ask questions and flame/praise the authors,
+join gtk-perl-list@gnome.org at lists.gnome.org.
+
+WWW: http://gtk2-perl.sourceforge.net/
