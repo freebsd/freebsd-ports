@@ -3,11 +3,11 @@
 # Date created:		14 March 97
 # Whom:			Lars Koeller <Lars_Koeller@odie.physik2.uni-rostock.de>
 #
-# $Id: Makefile,v 1.11 1997/03/15 10:33:49 joerg Exp $
+# $Id: Makefile,v 1.12 1997/03/15 12:32:52 asami Exp $
 #
 
 DISTNAME=	xperfmon++
-PKGNAME=	xperfmon++v1.40
+PKGNAME=	xperfmon++-1.40
 CATEGORIES=     sysutils x11
 # In Germany try this
 #MASTER_SITES=	ftp://odie.physik2.uni-rostock.de/pub/
