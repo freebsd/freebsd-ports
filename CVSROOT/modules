@@ -7326,6 +7326,7 @@ p5-Locale-SubCountry	ports/misc/p5-Locale-SubCountry
 p5-Locale-gettext	ports/devel/p5-Locale-gettext
 p5-Locale-libintl	ports/devel/p5-Locale-libintl
 p5-LockFile-Simple	ports/devel/p5-LockFile-Simple
+p5-Log-Accounting-SVK	ports/devel/p5-Log-Accounting-SVK
 p5-Log-Agent	ports/devel/p5-Log-Agent
 p5-Log-Agent-Logger	ports/devel/p5-Log-Agent-Logger
 p5-Log-Dispatch	ports/devel/p5-Log-Dispatch
