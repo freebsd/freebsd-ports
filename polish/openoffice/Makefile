@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	editors
+CATEGORIES=	polish
 
 LANG_PKGNAME=	pl
 LANG_EXT=	48
