@@ -1,5 +1,5 @@
---- TAO/orbsvcs/Makefile.orig	Sat Dec  6 10:13:59 2003
-+++ TAO/orbsvcs/Makefile	Sat Dec  6 10:14:28 2003
+--- TAO/orbsvcs/Makefile.orig	Thu Jan 15 22:51:35 2004
++++ TAO/orbsvcs/Makefile	Thu Jan 15 22:52:27 2004
 @@ -43,10 +43,9 @@
  	Trading_Service \
  	LoadBalancer \

@@ -8,17 +8,18 @@
 PORTNAME?=	ace+tao
 PORTVERSION?=	${ACE_VERSION}+${TAO_VERSION}
 CATEGORIES=	devel
-MASTER_SITES=	http://deuce.doc.wustl.edu/old_distribution/ \
+MASTER_SITES=	ftp://deuce.doc.wustl.edu/pub/previous_versions/ \
+		http://deuce.doc.wustl.edu/old_distribution/ \
 		http://www.navicon.dk/mirrors/ace/deuce.doc.wustl.edu/old_distribution/
-DISTNAME=	ACE-${ACE_VERSION}+TAO-${TAO_VERSION}
+DISTNAME=	ACE-${ACE_VERSION:C/\.0$//}+TAO-${TAO_VERSION:C/\.0$//}
 
 MAINTAINER=	sem@ciam.ru
 COMMENT?=	The Adaptive Communication Environment (ACE) with The ACE ORB (TAO)
 
 CONFLICTS?=	ace-*
 
-ACE_VERSION=	5.3.6
-TAO_VERSION=	1.3.6
+ACE_VERSION=	5.4.0
+TAO_VERSION=	1.4.0
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -37,7 +38,8 @@ WRKSRC=		${WRKDIR}/ACE_wrappers
 ACE_ROOT=	${WRKSRC}
 TAO_ROOT=	${ACE_ROOT}/TAO
 
-PLIST_SUB+=	TAO=${TAO} TESTS=${TESTS}
+PLIST_SUB+=	TAO=${TAO} TESTS=${TESTS} \
+		ACE_VERSION=${ACE_VERSION} TAO_VERSION=${TAO_VERSION}
 
 .if defined(WITHOUT_TAO)
 TAO=	"@comment "
@@ -55,16 +57,12 @@ post-patch:
 	${CP} ${FILESDIR}/config.h ${ACE_ROOT}/ace; \
 	cd ${TAO_ROOT}/orbsvcs; \
 	${CHMOD} a-x default.bld; \
-	${CHMOD} a-x FTRT_Event_Service/Event_Service/*; \
-	${CHMOD} a-x FTRT_Event_Service/Factory_Service/*; \
-	${CHMOD} a-x FTRT_Event_Service/Gateway_Service/*; \
 	${CHMOD} a-x Logging_Service/Event_Logging_Service/*; \
 	${CHMOD} a-x Logging_Service/Notify_Logging_Service/*; \
 	${CHMOD} a-x Logging_Service/RTEvent_Logging_Service/*; \
-	${CHMOD} a-x orbsvcs/*.idl orbsvcs/*.mpc orbsvcs/*.mpb; \
-	${CHMOD} a-x orbsvcs/FaultTolerance/* orbsvcs/FtRtEvent/ClientORB/*; \
-	${CHMOD} a-x orbsvcs/FtRtEvent/EventChannel/*; \
-	${CHMOD} a-x orbsvcs/FtRtEvent/Utils/*
+	${CHMOD} a-x orbsvcs/*.mpb; \
+	${CHMOD} a-x orbsvcs/FaultTolerance/*; \
+	${CHMOD} a-x FT_ReplicationManager/*
 .if !defined(WITH_TESTS)
 	@${REINPLACE_CMD} -e "21d" ${ACE_ROOT}/Makefile
 	@${REINPLACE_CMD} -e "24d" ${TAO_ROOT}/Makefile
