@@ -6,16 +6,13 @@
 #
 
 PORTNAME=	lyx
-PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTVERSION=	1.2.1
 CATEGORIES=	print
 MASTER_SITES=	ftp://stone.phys.pusan.ac.kr/pub/CJK-LyX/
 PKGNAMEPREFIX=	cjk-
 DISTNAME=	CJK-LyX-${PORTVERSION}-src
 
 MAINTAINER=	cjh@FreeBSD.org
-
-BROKEN=		"Does not compile"
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		latex:${PORTSDIR}/print/teTeX
@@ -31,17 +28,18 @@ USE_REINPLACE=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_AUTOMAKE_VER=	15
-USE_XPM=	yes
 AUTOMAKE=	${WRKSRC}/autogen.sh
 AUTOCONF=	${TRUE}
 CONFIGURE_ENV=	CPPFLAGS="-DI18N"
-CONFIGURE_ARGS=	--with-extra-lib="${X11BASE}/lib ${LOCALBASE}/lib" \
-		--with-extra-inc="${X11BASE}/include ${LOCALBASE}/include"
+CONFIGURE_ARGS=	--with-extra-lib="${LOCALBASE}/lib" \
+		--with-extra-inc="${LOCALBASE}/include"
 MAN1=		lyx.1 reLyX.1
 
 .if defined(WITH_ASPELL)
 LIB_DEPENDS+=	aspell.15:${PORTSDIR}/textproc/aspell
-CONFIGURE_ARGS+=	--with-pspell
+CONFIGURE_ARGS+=	--with-pspell \
+			--with-pspell-lib="${LOCALBASE}/lib" \
+			--with-pspell-include="${LOCALBASE}/include" 
 .endif
 
 .if defined(WITH_ISPELL)
@@ -62,6 +60,9 @@ pre-everything::
 	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_ISPELL=yes\""
 	@${ECHO_MSG}
 .endif
+
+post-extract:
+	@${CP} -f ${FILESDIR}/xforms.m4 ${WRKSRC}/config
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "configure.in" | ${XARGS} ${REINPLACE_CMD} -e \
