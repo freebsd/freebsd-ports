@@ -7066,6 +7066,7 @@ replaceit	ports/textproc/replaceit
 replay		ports/audio/replay
 reportmagic	ports/www/reportmagic
 resid		ports/audio/resid
+resin3		ports/www/resin3
 resume		ports/textproc/resume
 retawq		ports/www/retawq
 rexima		ports/audio/rexima
