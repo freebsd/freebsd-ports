@@ -1,0 +1,9 @@
+@unexec %%MKCATALOG%% -c %%CATALOG%% -q deinstall jrefentry
+share/xml/docbook/jrefentry/catalog
+@exec %%MKCATALOG%% -c %%CATALOG%% -q install jrefentry
+share/xml/docbook/jrefentry/jrefentry.dtd
+@dirrm share/xml/docbook/jrefentry
+share/examples/jrefentry/jtest.xml
+@dirrm share/examples/jrefentry
+share/doc/jrefentry/README.html
+@dirrm share/doc/jrefentry

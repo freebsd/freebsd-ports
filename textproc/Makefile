@@ -79,6 +79,7 @@
     SUBDIR += ispell
     SUBDIR += jade
     SUBDIR += java2html
+    SUBDIR += jrefentry
     SUBDIR += kbedic
     SUBDIR += kdoc
     SUBDIR += latex2html
