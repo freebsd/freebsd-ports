@@ -883,6 +883,7 @@ contrib_diff	src/contrib/diff
 contrib_gcc	src/contrib/gcc
 contrib_gdb	src/contrib/gdb
 contrib_global	src/contrib/global
+contrib_gnu-sort	src/contrib/gnu-sort
 contrib_gperf	src/contrib/gperf
 contrib_grep	src/contrib/grep
 contrib_groff	src/contrib/groff
