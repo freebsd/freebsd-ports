@@ -7749,6 +7749,7 @@ php4-xslt	ports/textproc/php4-xslt
 php4-yp		ports/net/php4-yp
 php4-zlib	ports/archivers/php4-zlib
 php5		ports/lang/php5
+php5-bz2	ports/archivers/php5-bz2
 php5-cgi	ports/www/php5-cgi
 php5-cli	ports/lang/php5-cli
 php5-gd		ports/graphics/php5-gd
