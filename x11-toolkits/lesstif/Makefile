@@ -3,7 +3,7 @@
 # Date created:		December 10, 1996
 # Whom:			1wardd@airmail.net
 #
-# $Id: Makefile,v 1.34 1999/07/14 04:35:16 cpiazza Exp $
+# $Id: Makefile,v 1.35 1999/07/14 04:43:58 cpiazza Exp $
 #
 
 DISTNAME=	lesstif-0.88.9
@@ -45,7 +45,7 @@ MAN3 =	ApplicationShell.3 Composite.3 Constraint.3 Core.3 LessTifInternals.3 \
 
 MAN5 = mwmrc.5
 
-.if defined(HAVE_MOTIF)
+.if defined(HAVE_MOTIF) && !defined(PARALLEL_PACKAGE_BUILD)
 IS_INTERACTIVE= yes
 pre-extract:
 	@${ECHO} "***********************************************************"
