@@ -28,6 +28,9 @@ JAVADIR=	${LOCALBASE}/jdk1.1.8
 JAVALIBDIR=	${PREFIX}/lib/${PORTNAME}
 CONFIGURE_ARGS+=	--with-jdk="${JAVADIR}"
 
+post-configure:
+	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/README
+
 do-install:
 	@${MKDIR} ${JAVALIBDIR}
 	@${INSTALL_PROGRAM} ${WRKSRC}/libshujit.so ${JAVALIBDIR}
@@ -36,7 +39,7 @@ post-install:
 	@${MKDIR} ${PREFIX}/share/shujit
 	@${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/shujit
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "See ${PREFIX}/shujit/README for usage instructions."
+	@${ECHO_MSG} "See ${PREFIX}/share/shujit/README for usage instructions."
 	@${ECHO_MSG} ""
 
 .include <bsd.port.mk>
