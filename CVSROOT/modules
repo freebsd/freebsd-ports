@@ -6201,6 +6201,7 @@ olvwm		ports/x11-wm/olvwm
 omega		ports/games/omega
 omi		ports/ftp/omi
 omnetpp		ports/science/omnetpp
+omniNotify	ports/devel/omniNotify
 omniORB		ports/devel/omniORB
 oneko		ports/games/oneko
 oneko-sakura	ports/games/oneko-sakura
