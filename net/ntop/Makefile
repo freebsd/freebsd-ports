@@ -15,8 +15,6 @@ DISTNAME=	ntop-1.1-src
 
 MAINTAINER=	billf@FreeBSD.org
 
-FORBIDDEN=	"Shocking lack of security leading to multiple local and remote root exploits"
-
 HAS_CONFIGURE=	yes
 ALL_TARGET=
 INSTALL_TARGET=	install install-man
@@ -25,6 +23,7 @@ WRKSRC=		${WRKDIR}/${PKGNAME}
 MAN8=		ntop.8
 
 post-install:
+	${CHMOD} u-s,g-srx ${PREFIX}/sbin/ntop
 	strip ${PREFIX}/sbin/ntop
 
 .include <bsd.port.mk>
