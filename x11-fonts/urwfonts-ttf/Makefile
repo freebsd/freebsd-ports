@@ -1,0 +1,27 @@
+# New ports collection makefile for:	urwfonts-ttf
+# Date created:				18 February 2003
+# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	urwfonts-ttf
+PORTVERSION=	1.0.7b18
+CATEGORIES=	x11-fonts
+MASTER_SITES=	ftp://ftp.gnome.ru/fonts/urw/release/
+DISTNAME=	urw-fonts-${PORTVERSION:S/b/pre/}-ttf
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Unicode TrueType fonts from URW extended by Valek Filippov
+
+NO_WRKSUBDIR=	yes
+
+USE_BZIP2=	yes
+NO_BUILD=	yes
+
+do-install:
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.ttf ${WRKSRC}/fonts.* ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/COPYING ${WRKSRC}/README ${DATADIR}
+
+.include <bsd.port.mk>

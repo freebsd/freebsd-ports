@@ -41,6 +41,7 @@
     SUBDIR += tkfont
     SUBDIR += ttmkfdir
     SUBDIR += urwfonts
+    SUBDIR += urwfonts-ttf
     SUBDIR += webfonts
     SUBDIR += xfed
     SUBDIR += xfontselector
