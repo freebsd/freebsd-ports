@@ -14,7 +14,7 @@
  	TCL_LIBRARY=${TCL_UNIX_DIR}/../library; export TCL_LIBRARY; \
  	LD_LIBRARY_PATH=${TCL_UNIX_DIR}:${LD_LIBRARY_PATH}; export LD_LIBRARY_PATH; \
 -	${TCL_SHLIB_LD} -o ${TCLX_SHLIB_NAME} ${SOBJS} ${TCL_SHLIB_LD_LIBS}
-+	${TCL_SHLIB_LD} -o ${TCLX_SHLIB_NAME} ${SOBJS} @NEED_TCL_STUB@
++	${TCL_SHLIB_LD} -o ${TCLX_SHLIB_NAME} ${SOBJS} @NEED_TCL_STUB@ -lm
 +	ln -sf ${TCLX_SHLIB_NAME} `echo ${TCLX_SHLIB_NAME} | sed 's/\.so.*$$/.so/'`
  
  hello:	hello.c

@@ -7,7 +7,7 @@
 
 PORTNAME=	tclX
 PORTVERSION=	8.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang tcl${TCL_DVER} tk${TCL_DVER}
 MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/tclx-distrib/
 DISTNAME=	tclX8.2.0
@@ -27,7 +27,6 @@ TCL_DVER?=	${TCL_VER:S/.//}
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-ALL_TARGET=	all buildhelp
 CONFIGURE_ARGS= --enable-shared \
 		--with-tcl="${LOCALBASE}/lib/tcl${TCL_VER}" \
 		--with-tk="${LOCALBASE}/lib/tk${TCL_VER}"
@@ -41,6 +40,8 @@ CONFIGURE_ARGS+=--with-tk="${LOCALBASE}/lib/tk${TCL_VER}"
 PLIST_SUB+=	X11=''
 .endif
 
+MAKE_ENV=	LDFLAGS="-lm"
+
 MAN3=   CmdWrite.3 Handles.3 Keylist.3 ObjCmdWrite.3 TclXInit.3 \
 	TclCommandWriting.3 \
 	TclX_KeyedListDelete.3 TclX_KeyedListGet.3 TclX_KeyedListGetKeys.3 \
@@ -51,6 +52,13 @@ MAN3=   CmdWrite.3 Handles.3 Keylist.3 ObjCmdWrite.3 TclXInit.3 \
 
 MANN=	Memory.n TclX.n Tcl_DisplayMemory.n Tcl_InitMemory.n \
 	Tcl_ValidateAllMemory.n ckalloc.n ckfree.n memory.n
+
+post-build:
+	cd ${WRKSRC}/../tcl/unix && ${MAKE} buildhelp
+.ifndef WITHOUT_X11
+	cd ${WRKSRC}/../tk/unix && ${MAKE} buildhelp
+.endif
+
 
 .include <bsd.port.pre.mk>
 
