@@ -16,8 +16,8 @@ EXTRACT_SUFX=   .rpm
 MAINTAINER=	stoerte@dreamwarrior.net
 COMMENT=	Slick GNOME2 theme from Ximian
 
-BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio \
-		${X11BASE}/lib/gtk-2.0/2.2.0/engines/libindustrial.so:${PORTSDIR}/x11-toolkits/gnome-themes-extras
+EXTRACT_DEPENDS=rpm2cpio:${PORTSDIR}/archivers/rpm2cpio
+BUILD_DEPENDS=	${X11BASE}/lib/gtk-2.0/2.2.0/engines/libindustrial.so:${PORTSDIR}/x11-toolkits/gnome-themes-extras
 RUN_DEPENDS=    ${X11BASE}/lib/gtk-2.0/2.2.0/engines/libindustrial.so:${PORTSDIR}/x11-toolkits/gnome-themes-extras
 
 NO_BUILD=	yes
