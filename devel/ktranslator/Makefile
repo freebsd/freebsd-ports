@@ -3,11 +3,11 @@
 # Date created:        23 May 1998
 # Whom:                Hans Petter Bieker <hanspb@persbraten.vgs.no>
 #
-# $Id: Makefile,v 1.2 1999/03/30 19:50:10 taoka Exp $
+# $Id: Makefile,v 1.1.1.1 1999/05/01 01:13:16 taoka Exp $
 #
 
 DISTNAME=	ktranslator-0.4.0
-CATEGORIES=	x11 kde
+CATEGORIES=	devel kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
 MASTER_SITE_SUBDIR= stable/1.1/apps/utils
 
