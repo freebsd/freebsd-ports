@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libwmf
-PORTVERSION=	0.2.5
-PORTREVISION=	1
+PORTVERSION=	0.2.6
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wvware
@@ -20,9 +19,10 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--enable-magick --with-sys-gd=no \
+CONFIGURE_ARGS=	--with-sys-gd=no \
 		--with-png=${LOCALBASE} --with-jpeg=${LOCALBASE} \
 		--with-gsfontdir=${LOCALBASE}/share/ghostscript/fonts
 INSTALLS_SHLIB=	yes
@@ -37,10 +37,10 @@ PLIST_SUB+=	X11=''
 .endif
 
 pre-patch:
-	@${PERL} -pi -e 's|src include fonts doc|src include fonts|g' \
+	@${REINPLACE_CMD} -e 's|src include fonts doc|src include fonts|g' \
 		${WRKSRC}/Makefile.in
-	@${PERL} -pi -e 's|\@LT_CURRENT\@|2|g ; \
-		 s|-release \$$\(LT_RELEASE\)||g' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|\@LT_CURRENT\@|2|g ; \
+		 s|-release [\$$][(]LT_RELEASE[)]||g' ${WRKSRC}/src/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
