@@ -1,7 +1,7 @@
 bin/gdome-config
 lib/libgdome.a
 lib/libgdome.so
-lib/libgdome.so.7
+lib/libgdome.so.8
 lib/gdomeConf.sh
 include/libgdome/gdome.h
 include/libgdome/gdome-events.h
