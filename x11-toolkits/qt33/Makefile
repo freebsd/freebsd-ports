@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	qt
-PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTVERSION=	2.2.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/
-DISTNAME=	qt-x11-2.2.0
+DISTNAME=	qt-x11-${PORTVERSION}
 
 MAINTAINER=	will@FreeBSD.org
 
@@ -55,7 +54,7 @@ pre-fetch:
 	@${ECHO} "that installation, deinstall it and then install this port."
 	@${ECHO} "Note that this port contains beta-quality source code and"
 	@${ECHO} "must be used only wherever absolutely needed, such as for"
-	@${ECHO} "KDE2 snapshot 20000829A and later."
+	@${ECHO} "KDE 2.0 and later."
 	@${FALSE}
 .endif
 .endif

@@ -6,8 +6,6 @@ bin/kpixmap2bitmap
 bin/ksnapshot
 bin/kview
 bin/kviewshell
-bin/pixie
-include/ifplugin.h
 include/mini-magick/animate.h
 include/mini-magick/api.h
 include/mini-magick/blob.h
@@ -37,12 +35,6 @@ lib/libkfax.la
 lib/libkfax.so
 lib/libkghostview.la
 lib/libkghostview.so.1
-lib/libkif_kdeeffects.la
-lib/libkif_kdeeffects.so.1
-lib/libkif_magick.la
-lib/libkif_magick.so.1
-lib/libkifplugin.la
-lib/libkifplugin.so.3
 lib/libkmultipage.la
 lib/libkmultipage.so.0
 lib/libkpagetest.la
@@ -53,10 +45,6 @@ lib/libkviewpart.la
 lib/libkviewpart.so
 lib/libminimagick.la
 lib/libminimagick.so.5
-lib/libpixie_color.la
-lib/libpixie_color.so.1
-lib/libpixie_thumb.la
-lib/libpixie_thumb.so.1
 share/applnk/Graphics/kdvi.desktop
 share/applnk/Graphics/kfax.desktop
 share/applnk/Graphics/kfract.desktop
@@ -64,7 +52,6 @@ share/applnk/Graphics/kghostview.desktop
 share/applnk/Graphics/kpixmap2bitmap.desktop
 share/applnk/Graphics/ksnapshot.desktop
 share/applnk/Graphics/kview.desktop
-share/applnk/Graphics/pixie.desktop
 share/apps/kdvi/kdvi_part.rc
 share/apps/kdvi/toolbar/forwpage.xpm
 share/apps/kdvi/toolbar/largetext.xpm
@@ -77,35 +64,9 @@ share/apps/kghostview/kghostviewui.rc
 share/apps/kghostview/kgv_part.rc
 share/apps/kview/kview_part.rc
 share/apps/kview/toolbar/rotate.png
-share/apps/kviewpart/kviewerpart.rc
+share/apps/kviewerpart/kviewerpart.rc
 share/apps/kviewshell/kviewshell.rc
 share/apps/kviewshell/paper-formats
-share/apps/pixie/dec2.png
-share/apps/pixie/dec2high.png
-share/apps/pixie/inc2.png
-share/apps/pixie/inc2high.png
-share/apps/pixie/logo.png
-share/apps/pixie/plugins/kdeeffects.desktop
-share/apps/pixie/plugins/magick.desktop
-share/apps/pixie/progress1.png
-share/apps/pixie/progress2.png
-share/apps/pixie/thumbwallpaper.png
-share/apps/pixie/toolbar/back.png
-share/apps/pixie/toolbar/brightness+.png
-share/apps/pixie/toolbar/brightness-.png
-share/apps/pixie/toolbar/contrast+.png
-share/apps/pixie/toolbar/contrast-.png
-share/apps/pixie/toolbar/fliph.png
-share/apps/pixie/toolbar/flipv.png
-share/apps/pixie/toolbar/forward.png
-share/apps/pixie/toolbar/kwin.png
-share/apps/pixie/toolbar/mini-ray.png
-share/apps/pixie/toolbar/mini-run.png
-share/apps/pixie/toolbar/play.png
-share/apps/pixie/toolbar/scaledown.png
-share/apps/pixie/toolbar/scaleup.png
-share/apps/pixie/toolbar/stop.png
-share/apps/pixie/toolbar/thumb.png
 share/doc/HTML/en/kdvi/.anchors
 share/doc/HTML/en/kdvi/KDVI-features.dvi
 share/doc/HTML/en/kdvi/KDVI-features.tex
@@ -179,21 +140,12 @@ share/doc/HTML/en/kghostview/view-control.html
 share/doc/HTML/en/kghostview/view.html
 share/doc/HTML/en/ksnapshot/.anchors
 share/doc/HTML/en/ksnapshot/additional-features.html
-share/doc/HTML/en/ksnapshot/buttons.png
-share/doc/HTML/en/ksnapshot/compilation-installation.html
 share/doc/HTML/en/ksnapshot/credits.html
-share/doc/HTML/en/ksnapshot/delay_repeat.png
-share/doc/HTML/en/ksnapshot/filemenu.png
 share/doc/HTML/en/ksnapshot/index.docbook
 share/doc/HTML/en/ksnapshot/index.html
 share/doc/HTML/en/ksnapshot/installation.html
 share/doc/HTML/en/ksnapshot/introduction.html
-share/doc/HTML/en/ksnapshot/ksnapshot.png
-share/doc/HTML/en/ksnapshot/ksnapshot_full.png
-share/doc/HTML/en/ksnapshot/minicmd.png
-share/doc/HTML/en/ksnapshot/options.png
 share/doc/HTML/en/ksnapshot/preview.png
-share/doc/HTML/en/ksnapshot/requirements.html
 share/doc/HTML/en/ksnapshot/taking-snapshot.html
 share/doc/HTML/en/ksnapshot/using-ksapshot.html
 share/doc/HTML/en/kview/.anchors
@@ -213,24 +165,28 @@ share/icons/hicolor/32x32/apps/kdvi.png
 share/icons/hicolor/32x32/apps/kfax.png
 share/icons/hicolor/32x32/apps/kfract.png
 share/icons/hicolor/32x32/apps/kghostview.png
+share/icons/hicolor/32x32/apps/kpixmap2bitmap.png
 share/icons/hicolor/32x32/apps/ksnapshot.png
 share/icons/hicolor/32x32/apps/kview.png
 share/icons/hicolor/48x48/apps/kdvi.png
 share/icons/hicolor/48x48/apps/kfax.png
 share/icons/hicolor/48x48/apps/kfract.png
 share/icons/hicolor/48x48/apps/kghostview.png
+share/icons/hicolor/48x48/apps/kpixmap2bitmap.png
 share/icons/hicolor/48x48/apps/ksnapshot.png
 share/icons/hicolor/48x48/apps/kview.png
 share/icons/locolor/16x16/apps/kdvi.png
 share/icons/locolor/16x16/apps/kfax.png
 share/icons/locolor/16x16/apps/kfract.png
 share/icons/locolor/16x16/apps/kghostview.png
+share/icons/locolor/16x16/apps/kpixmap2bitmap.png
 share/icons/locolor/16x16/apps/ksnapshot.png
 share/icons/locolor/16x16/apps/kview.png
 share/icons/locolor/32x32/apps/kdvi.png
 share/icons/locolor/32x32/apps/kfax.png
 share/icons/locolor/32x32/apps/kfract.png
 share/icons/locolor/32x32/apps/kghostview.png
+share/icons/locolor/32x32/apps/kpixmap2bitmap.png
 share/icons/locolor/32x32/apps/ksnapshot.png
 share/icons/locolor/32x32/apps/kview.png
 @dirrm share/doc/HTML/en/pixie
@@ -240,11 +196,8 @@ share/icons/locolor/32x32/apps/kview.png
 @dirrm share/doc/HTML/en/kfract
 @dirrm share/doc/HTML/en/kfax
 @dirrm share/doc/HTML/en/kdvi
-@dirrm share/apps/pixie/toolbar
-@dirrm share/apps/pixie/plugins
-@dirrm share/apps/pixie
 @dirrm share/apps/kviewshell
-@dirrm share/apps/kviewpart
+@dirrm share/apps/kviewerpart
 @dirrm share/apps/kview/toolbar
 @dirrm share/apps/kview
 @dirrm share/apps/kghostview
@@ -253,5 +206,4 @@ share/icons/locolor/32x32/apps/kview.png
 @dirrm share/apps/kfax
 @dirrm share/apps/kdvi/toolbar
 @dirrm share/apps/kdvi
-@dirrm share/apps
 @dirrm include/mini-magick

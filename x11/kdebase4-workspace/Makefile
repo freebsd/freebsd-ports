@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	kdebase
-PORTVERSION= 	1.94
+PORTVERSION= 	2.0
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	unstable/distribution/2.0Beta5/tar/src
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/distribution/tar/generic/src
 
 MAINTAINER=	will@FreeBSD.org
 
-LIB_DEPENDS=	qt2.4:${PORTSDIR}/x11-toolkits/qt22 \
-		kdeui.4:${PORTSDIR}/x11/kdelibs2 \
+LIB_DEPENDS=	kdeui.4:${PORTSDIR}/x11/kdelibs2 \
 		intl.1:${PORTSDIR}/devel/gettext
 
+USE_QT2=	yes
 SOMAJOR=	4
 SOMINOR=	0
 MOC?=		${X11BASE}/bin/moc2

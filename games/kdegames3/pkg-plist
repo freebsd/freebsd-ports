@@ -1075,20 +1075,19 @@ share/apps/lskat/grafix/type1.png
 share/apps/lskat/grafix/type2.png
 share/apps/lskat/grafix/type3.png
 share/doc/HTML/en/kabalone/.anchors
-share/doc/HTML/en/kabalone/authors.html
-share/doc/HTML/en/kabalone/commandlineoptions.html
-share/doc/HTML/en/kabalone/common
-share/doc/HTML/en/kabalone/copyright.html
-share/doc/HTML/en/kabalone/epilogue.html
+share/doc/HTML/en/kabalone/command-line-options.html
+share/doc/HTML/en/kabalone/credits-and-licenses.html
+share/doc/HTML/en/kabalone/edit-menu.html
 share/doc/HTML/en/kabalone/index.cvlog
 share/doc/HTML/en/kabalone/index.docbook
 share/doc/HTML/en/kabalone/index.html
+share/doc/HTML/en/kabalone/installation.html
 share/doc/HTML/en/kabalone/introduction.html
-share/doc/HTML/en/kabalone/rulesofthegame.html
-share/doc/HTML/en/kabalone/theuserinterface.html
+share/doc/HTML/en/kabalone/rules-of-the-game.html
+share/doc/HTML/en/kabalone/settings-menu.html
+share/doc/HTML/en/kabalone/the-user-interface.html
 share/doc/HTML/en/kasteroids/.anchors
 share/doc/HTML/en/kasteroids/authors.html
-share/doc/HTML/en/kasteroids/common
 share/doc/HTML/en/kasteroids/controls.html
 share/doc/HTML/en/kasteroids/epilogue.html
 share/doc/HTML/en/kasteroids/index.cvlog
@@ -1098,37 +1097,49 @@ share/doc/HTML/en/kasteroids/introduction.html
 share/doc/HTML/en/kasteroids/ship.html
 share/doc/HTML/en/kasteroids/tips.html
 share/doc/HTML/en/kasteroids/upgrades.html
+share/doc/HTML/en/katomic/.anchors
+share/doc/HTML/en/katomic/compilation.html
+share/doc/HTML/en/katomic/configuration.html
+share/doc/HTML/en/katomic/credits.html
+share/doc/HTML/en/katomic/help.html
+share/doc/HTML/en/katomic/index.docbook
+share/doc/HTML/en/katomic/index.html
+share/doc/HTML/en/katomic/installation.html
+share/doc/HTML/en/katomic/introduction.html
+share/doc/HTML/en/katomic/keybindings.html
+share/doc/HTML/en/katomic/optmenu.html
+share/doc/HTML/en/katomic/playingkatomic.html
+share/doc/HTML/en/katomic/requirements.html
 share/doc/HTML/en/kblackbox/.anchors
-share/doc/HTML/en/kblackbox/common
-share/doc/HTML/en/kblackbox/copyright.html
-share/doc/HTML/en/kblackbox/epilogue.html
+share/doc/HTML/en/kblackbox/credits-and-license.html
+share/doc/HTML/en/kblackbox/game-description.html
 share/doc/HTML/en/kblackbox/game-rules.html
-share/doc/HTML/en/kblackbox/gamedescription.html
-share/doc/HTML/en/kblackbox/guidescription.html
-share/doc/HTML/en/kblackbox/index.cvlog
+share/doc/HTML/en/kblackbox/gui-description.html
+share/doc/HTML/en/kblackbox/help.html
 share/doc/HTML/en/kblackbox/index.docbook
 share/doc/HTML/en/kblackbox/index.html
 share/doc/HTML/en/kblackbox/installation.html
+share/doc/HTML/en/kblackbox/settings-menu.html
+share/doc/HTML/en/kblackbox/toolbar.html
 share/doc/HTML/en/kblackbox/user-interaction.html
-share/doc/HTML/en/kblackbox/whatiskblackbox.html
+share/doc/HTML/en/kblackbox/what-is-kblackbox.html
 share/doc/HTML/en/kfouleggs/.anchors
-share/doc/HTML/en/kfouleggs/common
 share/doc/HTML/en/kfouleggs/index.docbook
 share/doc/HTML/en/kfouleggs/index.html
 share/doc/HTML/en/kfouleggs/introduction.html
 share/doc/HTML/en/kjumpingcube/.anchors
-share/doc/HTML/en/kjumpingcube/common
 share/doc/HTML/en/kjumpingcube/compilation.html
 share/doc/HTML/en/kjumpingcube/credits.html
 share/doc/HTML/en/kjumpingcube/index.docbook
 share/doc/HTML/en/kjumpingcube/index.html
 share/doc/HTML/en/kjumpingcube/installation.html
 share/doc/HTML/en/kjumpingcube/introduction.html
-share/doc/HTML/en/kjumpingcube/playingkjumpingcube.html
-share/doc/HTML/en/kjumpingcube/questionsanswersandtips.html
+share/doc/HTML/en/kjumpingcube/menu-reference.html
+share/doc/HTML/en/kjumpingcube/playing-kjumpingcube.html
+share/doc/HTML/en/kjumpingcube/questions-answers-tips.html
 share/doc/HTML/en/kjumpingcube/requirements.html
+share/doc/HTML/en/kjumpingcube/toolbars.html
 share/doc/HTML/en/kmahjongg/.anchors
-share/doc/HTML/en/kmahjongg/common
 share/doc/HTML/en/kmahjongg/epilogue.html
 share/doc/HTML/en/kmahjongg/index.cvlog
 share/doc/HTML/en/kmahjongg/index.docbook
@@ -1136,7 +1147,6 @@ share/doc/HTML/en/kmahjongg/index.html
 share/doc/HTML/en/kmahjongg/introduction.html
 share/doc/HTML/en/kmines/.anchors
 share/doc/HTML/en/kmines/command.html
-share/doc/HTML/en/kmines/common
 share/doc/HTML/en/kmines/compilation.html
 share/doc/HTML/en/kmines/credits.html
 share/doc/HTML/en/kmines/help-menu.html
@@ -1151,7 +1161,6 @@ share/doc/HTML/en/kmines/kmines2.png
 share/doc/HTML/en/kmines/prefs.html
 share/doc/HTML/en/kmines/settings-menu.html
 share/doc/HTML/en/konquest/.anchors
-share/doc/HTML/en/konquest/common
 share/doc/HTML/en/konquest/epilogue.html
 share/doc/HTML/en/konquest/index.cvlog
 share/doc/HTML/en/konquest/index.docbook
@@ -1160,7 +1169,6 @@ share/doc/HTML/en/konquest/notes.html
 share/doc/HTML/en/konquest/playingthegame.html
 share/doc/HTML/en/kpat/.anchors
 share/doc/HTML/en/kpat/calculation.html
-share/doc/HTML/en/kpat/common
 share/doc/HTML/en/kpat/compilation.html
 share/doc/HTML/en/kpat/credits.html
 share/doc/HTML/en/kpat/edit-menu.html
@@ -1181,7 +1189,6 @@ share/doc/HTML/en/kpat/the-idiot.html
 share/doc/HTML/en/kpat/using-kpat.html
 share/doc/HTML/en/kpoker/.anchors
 share/doc/HTML/en/kpoker/command.html
-share/doc/HTML/en/kpoker/common
 share/doc/HTML/en/kpoker/compilation.html
 share/doc/HTML/en/kpoker/credits.html
 share/doc/HTML/en/kpoker/hands.html
@@ -1203,7 +1210,6 @@ share/doc/HTML/en/kpoker/where-do-i-get-the-latest-version-of-kpoker.html
 share/doc/HTML/en/kreversi/.anchors
 share/doc/HTML/en/kreversi/a-minute-to-learn.html
 share/doc/HTML/en/kreversi/authors.html
-share/doc/HTML/en/kreversi/common
 share/doc/HTML/en/kreversi/copyright.html
 share/doc/HTML/en/kreversi/epilogue.html
 share/doc/HTML/en/kreversi/index.cvlog
@@ -1213,7 +1219,6 @@ share/doc/HTML/en/kreversi/introduction.html
 share/doc/HTML/en/kreversi/rulesofthegame.html
 share/doc/HTML/en/kreversi/strategyhints.html
 share/doc/HTML/en/ksame/.anchors
-share/doc/HTML/en/ksame/common
 share/doc/HTML/en/ksame/copyright.html
 share/doc/HTML/en/ksame/epilogue.html
 share/doc/HTML/en/ksame/index.cvlog
@@ -1223,7 +1228,6 @@ share/doc/HTML/en/ksame/introduction.html
 share/doc/HTML/en/ksame/rules-of-the-game.html
 share/doc/HTML/en/ksame/strategy-hint.html
 share/doc/HTML/en/kshisen/.anchors
-share/doc/HTML/en/kshisen/common
 share/doc/HTML/en/kshisen/compilation.html
 share/doc/HTML/en/kshisen/configuration.html
 share/doc/HTML/en/kshisen/credits.html
@@ -1237,7 +1241,6 @@ share/doc/HTML/en/kshisen/playing-kshisen.html
 share/doc/HTML/en/kshisen/requirements.html
 share/doc/HTML/en/ksirtet/.anchors
 share/doc/HTML/en/ksirtet/authors.html
-share/doc/HTML/en/ksirtet/common
 share/doc/HTML/en/ksirtet/epilogue.html
 share/doc/HTML/en/ksirtet/how-to-gain-points.html
 share/doc/HTML/en/ksirtet/howtoplay.html
@@ -1249,7 +1252,6 @@ share/doc/HTML/en/ksirtet/multiplayer.html
 share/doc/HTML/en/ksirtet/options.html
 share/doc/HTML/en/ksmiletris/.anchors
 share/doc/HTML/en/ksmiletris/changes.html
-share/doc/HTML/en/ksmiletris/common
 share/doc/HTML/en/ksmiletris/credits.html
 share/doc/HTML/en/ksmiletris/developement.html
 share/doc/HTML/en/ksmiletris/epilogue.html
@@ -1262,7 +1264,6 @@ share/doc/HTML/en/ksmiletris/license.html
 share/doc/HTML/en/ksmiletris/to-do.html
 share/doc/HTML/en/ksnake/.anchors
 share/doc/HTML/en/ksnake/authors.html
-share/doc/HTML/en/ksnake/common
 share/doc/HTML/en/ksnake/customization.html
 share/doc/HTML/en/ksnake/epilogue.html
 share/doc/HTML/en/ksnake/index.cvlog
@@ -1272,20 +1273,30 @@ share/doc/HTML/en/ksnake/introduction.html
 share/doc/HTML/en/ksnake/rulesofthegame.html
 share/doc/HTML/en/ksnake/scoring.html
 share/doc/HTML/en/ksokoban/.anchors
-share/doc/HTML/en/ksokoban/common
 share/doc/HTML/en/ksokoban/credits.html
 share/doc/HTML/en/ksokoban/howtoplay.html
 share/doc/HTML/en/ksokoban/index.docbook
 share/doc/HTML/en/ksokoban/index.html
 share/doc/HTML/en/ksokoban/introduction.html
 share/doc/HTML/en/ksokoban/loadingexternallevels.html
-share/doc/HTML/en/kspaceduel/common
+share/doc/HTML/en/kspaceduel/.anchors
+share/doc/HTML/en/kspaceduel/ai.html
+share/doc/HTML/en/kspaceduel/command.html
+share/doc/HTML/en/kspaceduel/compilation.html
+share/doc/HTML/en/kspaceduel/credits.html
+share/doc/HTML/en/kspaceduel/help-menu.html
 share/doc/HTML/en/kspaceduel/index.docbook
+share/doc/HTML/en/kspaceduel/index.html
+share/doc/HTML/en/kspaceduel/installation.html
+share/doc/HTML/en/kspaceduel/introduction.html
+share/doc/HTML/en/kspaceduel/keys.html
 share/doc/HTML/en/kspaceduel/kspaceduel1.png
 share/doc/HTML/en/kspaceduel/kspaceduel2.png
 share/doc/HTML/en/kspaceduel/kspaceduel3.png
+share/doc/HTML/en/kspaceduel/options.html
+share/doc/HTML/en/kspaceduel/settings-menu.html
+share/doc/HTML/en/kspaceduel/thegame.html
 share/doc/HTML/en/ktron/.anchors
-share/doc/HTML/en/ktron/common
 share/doc/HTML/en/ktron/compilation.html
 share/doc/HTML/en/ktron/computerplayer.html
 share/doc/HTML/en/ktron/config-behaviour.html
@@ -1301,7 +1312,6 @@ share/doc/HTML/en/ktron/playingktron.html
 share/doc/HTML/en/ktron/requirements.html
 share/doc/HTML/en/ktron/usingkeyboard.html
 share/doc/HTML/en/ktuberling/.anchors
-share/doc/HTML/en/ktuberling/common
 share/doc/HTML/en/ktuberling/compilation-and-installation.html
 share/doc/HTML/en/ktuberling/epilogue.html
 share/doc/HTML/en/ktuberling/for-programmers.html
@@ -1318,7 +1328,6 @@ share/doc/HTML/en/ktuberling/technical-reference.html
 share/doc/HTML/en/ktuberling/the-menu-items.html
 share/doc/HTML/en/ktuberling/the-tool-bar.html
 share/doc/HTML/en/lskat/.anchors
-share/doc/HTML/en/lskat/common
 share/doc/HTML/en/lskat/compilation.html
 share/doc/HTML/en/lskat/credits.html
 share/doc/HTML/en/lskat/help.html
@@ -1423,6 +1432,7 @@ share/icons/locolor/32x32/apps/lskat.png
 @dirrm share/doc/HTML/en/kjumpingcube
 @dirrm share/doc/HTML/en/kfouleggs
 @dirrm share/doc/HTML/en/kblackbox
+@dirrm share/doc/HTML/en/katomic
 @dirrm share/doc/HTML/en/kasteroids
 @dirrm share/doc/HTML/en/kabalone
 @dirrm share/apps/lskat/grafix
@@ -1492,5 +1502,6 @@ share/icons/locolor/32x32/apps/lskat.png
 @dirrm share/apps/kasteroids/sprites/bits
 @dirrm share/apps/kasteroids/sprites
 @dirrm share/apps/kasteroids/sounds
+@dirrm share/apps/kasteroids
 @dirrm share/apps/kabalone/toolbar
 @dirrm share/apps/kabalone

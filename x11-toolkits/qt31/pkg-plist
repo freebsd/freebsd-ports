@@ -45,6 +45,7 @@ include/qt2/qcommonstyle.h
 include/qt2/qconfig-dist.h
 include/qt2/qconfig-embedded.h
 include/qt2/qconfig-minimal.h
+include/qt2/qconfig-qpim.h
 include/qt2/qconfig.h
 include/qt2/qconnect.h
 include/qt2/qconnection.h
@@ -1505,6 +1506,7 @@ share/doc/qt2/html/qworkspace-members.html
 share/doc/qt2/html/qworkspace.html
 share/doc/qt2/html/qwsdecoration-members.html
 share/doc/qt2/html/qwsdecoration.html
+share/doc/qt2/html/qwsdisplay_qws-h.html
 share/doc/qt2/html/qwsmanager_qws-h.html
 share/doc/qt2/html/qxml-h.html
 share/doc/qt2/html/qxmlattributes-members.html
