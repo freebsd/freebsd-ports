@@ -1,0 +1,32 @@
+--- Makefile.old	Sun Oct 26 12:10:35 2003
++++ Makefile	Sun Oct 26 12:13:14 2003
+@@ -4,24 +4,26 @@
+ 
+ # BINDEST should be the directory/filename where the cgi program needs
+ # to be installed.  This must be configured with your web server.
+-BINDEST = /ns/cgi-bin/trace
++BINDEST = $(PREFIX)/www/cgi-bin/trace
+ 
+ # CC and CCFLAGS should be set appropriately for your system
+ # or uncomment the one you need.
+ #
+ # HP-UX
+ CC = cc
+-CCFLAGS = -Aa +DA1.1 -D_HPUX_SOURCE
++#CCFLAGS = -Aa +DA1.1 -D_HPUX_SOURCE
+ #
+ # BSDI's BSD/OS (probably ok for any recent version of gcc)
+ # CC=gcc
+-# CCFLAGS = -O2
++CCFLAGS = $(CFLAGS)
+ 
+ DEFINES = -DLEAVE_DOMAIN_NAME
+ 
+ # normally traceroute must be setuid root
+ BINOWN  = root
+ BINMODE = 4555
++
++all:	html.h $(PROG)
+ 
+ $(PROG): $(PROG).c html.h
+ 	$(CC) $(CCFLAGS) $(DEFINES) -o $(PROG) $(PROG).c
