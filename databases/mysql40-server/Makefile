@@ -6,12 +6,10 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	4.0.15
+PORTVERSION=	4.0.16
 PORTREVISION?=	0
 CATEGORIES=	databases
-MASTER_SITES=	ftp://mysql.secsup.org/pub/software/mysql/Downloads/MySQL-4.0/ \
-		http://mysql.tzone.it/Downloads/MySQL-4.0/ \
-		ftp://planetmirror.com/pub/mysql/Downloads/MySQL-4.0/ \
+MASTER_SITES=	ftp://planetmirror.com/pub/mysql/Downloads/MySQL-4.0/ \
 		http://www.softagency.co.jp/MySQL/Downloads/MySQL-4.0/ \
 		ftp://sunsite.dk/mirrors/mysql/Downloads/MySQL-4.0/ \
 		http://mysql.mediatraffic.fi/Downloads/MySQL-4.0/ \
@@ -50,11 +48,6 @@ CONFIGURE_ARGS=	--localstatedir=${DB_DIR} \
 .error You have `USE_MYSQL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${MACHINE_ARCH} == "i386"
-CONFIGURE_ARGS+=--enable-assembler --with-berkeley-db
-.endif
 .if defined(WITH_CHARSET) && ${WITH_CHARSET} != ""
 CONFIGURE_ARGS+=--with-charset=${WITH_CHARSET}
 .endif
@@ -68,8 +61,11 @@ CONFIGURE_ARGS+=--with-openssl
 .if defined(BUILD_STATIC)
 CONFIGURE_ARGS+=--with-mysqld-ldflags=-all-static
 .endif
-.if defined(BUILD_OPTIMIZED)
-CFLAGS+=	-mcpu=i686
+
+.include <bsd.port.pre.mk>
+
+.if ${MACHINE_ARCH} == "i386"
+CONFIGURE_ARGS+=--enable-assembler --with-berkeley-db
 .endif
 .if defined(WITH_LINUXTHREADS)
 CONFIGURE_ARGS+=--with-named-thread-libs='-DHAVE_GLIBC2_STYLE_GETHOSTBYNAME_R
@@ -85,14 +81,18 @@ CONFIGURE_ARGS+=-L${LOCALBASE}/lib -llthread -llgcc_r'
 .endif
 .endif
 
+.if ${OSVERSION} < 500000
+CXX=		${CC}
+.endif
+.if defined(BUILD_OPTIMIZED)
 CFLAGS+=	-O3 -fno-omit-frame-pointer
-CXXFLAGS=	${CFLAGS} -felide-constructors -fno-rtti
-
+.if ${OSVERSION} > 500000 || (defined(USE_GCC) && (${USE_GCC} == 3.0 || ${USE_GCC} == 3.1 || ${USE_GCC} == 3.2 || ${USE_GCC} == 3.3))
+CFLAGS+=	-fno-gcse
+.endif
+CXXFLAGS+=	${CFLAGS} -felide-constructors -fno-rtti
 .if ${OSVERSION} >= 400002
 CXXFLAGS+=	-fno-exceptions
 .endif
-.if ${OSVERSION} < 500000
-CXX=		${CC}
 .endif
 
 # MySQL-Server part
@@ -122,9 +122,11 @@ pre-fetch:
 	@${ECHO} "	SKIP_DNS_CHECK=yes	Don't run resolveip to do an additional DNS"
 	@${ECHO} "				reverse lookup  before inserting local"
 	@${ECHO} "				hostname into mysql database"
-	@${ECHO} "				(use if your machine has no official DNS entry)."
+	@${ECHO} "				(use it if your machine has no official DNS entry)."
+	@${ECHO} "	BUILD_OPTIMIZED=yes	Enable compiler optimizations"
+	@${ECHO} "				(use it if you need speed)."
 	@${ECHO} "	BUILD_STATIC=yes	Build a static version of mysqld."
-	@${ECHO} "	BUILD_OPTIMIZED=yes	Add -mcpu=i686 to CFLAGS."
+	@${ECHO} "				(use it if you need even more speed)."
 	@${ECHO} ""
 
 post-patch:

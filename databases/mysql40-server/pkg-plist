@@ -102,6 +102,7 @@ share/mysql/Info.plist
 share/mysql/MySQL-shared-compat.spec
 share/mysql/StartupParameters.plist
 share/mysql/binary-configure
+share/mysql/make_sharedlib_distribution
 share/mysql/postinstall
 share/mysql/preinstall
 share/mysql/charsets/Index

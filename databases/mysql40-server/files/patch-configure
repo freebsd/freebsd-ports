@@ -1,6 +1,6 @@
---- configure.orig	Wed May 14 22:24:53 2003
-+++ configure	Fri May 23 00:29:06 2003
-@@ -8110,6 +8110,7 @@
+--- configure.orig	Fri Oct 17 07:29:41 2003
++++ configure	Wed Oct 22 15:12:52 2003
+@@ -8116,6 +8116,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -8,7 +8,7 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -9052,7 +9053,7 @@
+@@ -9058,7 +9059,7 @@
    ;;
  esac
  fi
@@ -17,7 +17,7 @@
  
  if test -n "$HOSTNAME"; then
    echo "$as_me:$LINENO: result: $HOSTNAME" >&5
-@@ -9244,43 +9245,8 @@
+@@ -9250,43 +9251,8 @@
  echo "$as_me:$LINENO: checking \"how to check if pid exists\"" >&5
  echo $ECHO_N "checking \"how to check if pid exists\"... $ECHO_C" >&6
  PS=$ac_cv_path_PS
@@ -61,7 +61,18 @@
  
  echo "$as_me:$LINENO: result: \"$FIND_PROC\"" >&5
  echo "${ECHO_T}\"$FIND_PROC\"" >&6
-@@ -22320,7 +22294,7 @@
+@@ -12667,8 +12633,8 @@
+ # Some system specific hacks
+ #
+ 
+-MAX_C_OPTIMIZE="-O3"
+-MAX_CXX_OPTIMIZE="-O3"
++MAX_C_OPTIMIZE=""
++MAX_CXX_OPTIMIZE=""
+ 
+ case $SYSTEM_TYPE in
+   *solaris2.7*)
+@@ -22458,7 +22424,7 @@
  	/* ) rel_srcdir="$srcdir" ;;
  	* )  rel_srcdir="../$srcdir" ;;
      esac
