@@ -6,29 +6,31 @@
 #
 
 PORTNAME=	libapreq
-PORTVERSION=	0.33
+PORTVERSION=	1.0
 CATEGORIES=	www perl5 devel
-MASTER_SITES=	http://www.cpan.org/authors/id/J/JI/JIMW/
+MASTER_SITES=   ${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=     ../../authors/id/J/JI/JIMW/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	frank@exit.com
+MAINTAINER=	skv@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/include/apache/httpd.h:${PORTSDIR}/www/apache13 \
-		${LOCALBASE}/include/apache/modules/perl/mod_perl.h:${PORTSDIR}/www/mod_perl
+#BUILD_DEPENDS=	${LOCALBASE}/include/apache/httpd.h:${PORTSDIR}/www/apache13 \
+#		${LOCALBASE}/include/apache/modules/perl/mod_perl.h:${PORTSDIR}/www/mod_perl
 
 PERL_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+PLIST_SUB=	EXAMPLESDIR="share/examples/${PORTNAME}"
 
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-MAN3=		Apache::Cookie.3 \
-		Apache::Request.3 \
-		Apache::libapreq.3 \
+MAN3=		Apache::Cookie.3 Apache::Request.3 Apache::libapreq.3 \
 		libapreq.3
 
-#post-configure:
-#	@${PERL} -i -p \
-#		-e 's/^(CC = ).*/$$1 ${CC}/;' \
-#		-e 's/^(CCFLAGS = ).*/$$1 ${CFLAGS}/' \
-#		`find ${WRKSRC} -name Makefile`
+post-install:
+.ifndef(NOPORTDOCS)
+	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
+	@${MKDIR} ${EXAMPLESDIR}/c/testapreq
+	@${MKDIR} ${EXAMPLESDIR}/perl
+	${INSTALL_DATA} ${WRKSRC}/eg/c/testapreq/* ${EXAMPLESDIR}/c/testapreq
+	${INSTALL_SCRIPT} ${WRKSRC}/eg/perl/* ${EXAMPLESDIR}/perl
+.endif
 
 .include <bsd.port.mk>
