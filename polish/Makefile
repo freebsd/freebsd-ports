@@ -16,6 +16,7 @@
     SUBDIR += openoffice-1.0
     SUBDIR += openoffice-1.1
     SUBDIR += php_doc
+    SUBDIR += sap
     SUBDIR += sms
     SUBDIR += sms2
     SUBDIR += tleenx2
