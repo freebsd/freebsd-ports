@@ -1,25 +1,30 @@
-*** Makefile.orig	Sun Mar  8 17:10:55 1998
---- Makefile	Sun Mar  8 17:11:37 1998
-***************
-*** 21,30 ****
-  ########
-  
-  CC=gcc
-! CFLAGS=-O2 -Wall -g
-  
-  LD=gcc
-! LDFLAGS=-g
-  
-  LEX=flex -i -L
-  
---- 21,30 ----
-  ########
-  
-  CC=gcc
-! CFLAGS=-O2 -Wall
-  
-  LD=gcc
-! LDFLAGS=-s
-  
-  LEX=flex -i -L
-  
+--- Makefile.orig	Thu Dec  3 19:19:46 1998
++++ Makefile	Sun Mar  7 09:13:34 1999
+@@ -16,9 +16,9 @@
+ 
+ LOCALHOST=localhost:8080
+ 
+-INSTDIR=/usr/local
+-SPOOLDIR=/var/spool/wwwoffle
+-CONFDIR=/var/spool/wwwoffle
++INSTDIR=$(PREFIX)
++SPOOLDIR=$(SPOOL)/wwwoffle
++CONFDIR=$(SPOOL)/wwwoffle
+ 
+ # For Cygwin (win32)
+ #INSTDIR=/wwwoffle
+@@ -28,13 +28,12 @@
+ ########
+ 
+ CC=gcc
+-CFLAGS=-O2 -Wall -g
+ 
+ # This is used in the FreeBSD port (http://www.freebsd.org/ports/)
+ #CFLAGS=-O2 -Wall
+ 
+ LD=gcc
+-LDFLAGS=-g
++LDFLAGS=-s
+ 
+ # For HP/UX this is a good idea.
+ #LDFLAGS=
