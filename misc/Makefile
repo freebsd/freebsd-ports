@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.142 1998/05/06 12:45:16 tg Exp $
+# $Id: Makefile,v 1.143 1998/05/10 22:23:14 steve Exp $
 #
 
     SUBDIR += acron
@@ -26,6 +26,7 @@
     SUBDIR += iselect
     SUBDIR += jive
     SUBDIR += kdeutils
+    SUBDIR += korganizer
     SUBDIR += kp
     SUBDIR += less
     SUBDIR += lile
