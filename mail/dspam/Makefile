@@ -332,7 +332,7 @@ DBDRV_COUNT:=	${DBDRV_COUNT:S/o//}
 .if ${DBDRV_TOTAL_COUNT}==${DBDRV_COUNT} || defined(WITH_SQLITE)
 # DBDRV_COUNT==!(defined(WITH_MYSQL) || defined(WITH_POSTGRESQL73) || defined(WITH_POSTGRESQL74) || defined(WITH_ORACLE) || defined(WITH_BDB))
 WITH_SQLITE=	on
-LIB_DEPENDS+=	sqlite.2:${PORTSDIR}/databases/sqlite2
+LIB_DEPENDS+=	sqlite.2:${PORTSDIR}/databases/sqlite
 CONFIGURE_ARGS+=	--with-storage-driver=sqlite_drv \
 	--with-sqlite-includes=${LOCALBASE}/include \
 	--with-sqlite-libraries=${LOCALBASE}/lib
