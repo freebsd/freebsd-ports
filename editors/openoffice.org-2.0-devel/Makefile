@@ -17,6 +17,9 @@ EXTRACT_ONLY=	oo_${PORTVERSION}_src.tar.bz2
 
 MAINTAINER=	mbr@FreeBSD.org
 
+# OO needs DISPLAY to be set and working
+RESTRICTED=	"No automated build possible"
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
 BUILD_DEPENDS+= ${LOCALBASE}/bin/gcc295:${PORTSDIR}/lang/gcc295
 BUILD_DEPENDS+= zip:${PORTSDIR}/archivers/zip
