@@ -1,0 +1,10 @@
+--- lib/posix/tty.c.orig	Sat Jun  7 20:21:57 2003
++++ lib/posix/tty.c	Sat Jun  7 20:22:21 2003
+@@ -1,6 +1,7 @@
+ /* $Id: tty.c,v 1.5 1996/10/27 05:37:51 phil Exp $ */
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ 
+ #ifdef USE_TERMIO
+ /* awful; but better than duplicating the whole file! */
