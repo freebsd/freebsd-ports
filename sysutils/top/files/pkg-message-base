@@ -1,7 +1,0 @@
-***************************************
-* You can always reinstall the older  *
-* top via the source directory of the *
-* base system:                        *
-* $ cd /usr/src/usr.bin/top           *
-* $ make && make install              *
-***************************************

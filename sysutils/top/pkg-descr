@@ -1,8 +1,0 @@
-Top displays the top processes on the system and  periodically
-updates this  information.   If standard output is an intelligent
-terminal (see below) then as many processes as will fit on the
-terminal  screen  are displayed  by  default.   Otherwise,  a  good
-number of them are shown (around 20).  Raw cpu percentage is used
-to  rank  the  processes.
-
-WWW: http://www.groupsys.com/top/
