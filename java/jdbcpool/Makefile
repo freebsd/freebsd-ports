@@ -10,7 +10,7 @@ PORTVERSION=	0.99
 CATEGORIES=	java
 MASTER_SITES=	http://www.bitmechanic.com/projects/jdbcpool/dist/
 
-MAINTAINER=	noway@nohow.demon.co.uk
+MAINTAINER=	java@freebsd.org
 COMMENT=	JDBC connection pool
 
 USE_JAVA=	1.2+
