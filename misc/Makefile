@@ -212,6 +212,7 @@
     SUBDIR += koffice-i18n-nb
     SUBDIR += koffice-i18n-nl
     SUBDIR += koffice-i18n-nn
+    SUBDIR += koffice-i18n-se
     SUBDIR += koffice-i18n-sk
     SUBDIR += koffice-i18n-sl
     SUBDIR += koffice-i18n-sv
