@@ -1,0 +1,71 @@
+--- columns.cc	Thu Aug  5 15:19:15 1999
++++ /home/andy/tmp/wrk/columns.cc	Thu Aug 26 12:05:16 1999
+@@ -2,7 +2,9 @@
+ 
+ #include <stdio.h>
+ #include <string.h>
++#ifndef __FreeBSD__
+ #include <malloc.h>
++#endif
+ #include <stdlib.h>
+ #include <sys/time.h>
+ #include <SDL/SDL.h>
+@@ -924,22 +926,22 @@
+ void init_sound ()
+ {
+   audio_init ();
+-  drop_wav = audio_load ("drop.wav");
+-  rotate_wav = audio_load ("rotate.wav");
+-  move_wav = audio_load ("move.wav");
+-  gameover_wav = audio_load ("gameover.wav");
+-  hello_wav = audio_load ("hello.wav");
+-  perfect_wav = audio_load ("perfect.wav");
+-  applause_wav = audio_load ("applause.wav");
+-  remove_wav = audio_load ("remove.wav");
+-  level_wav = audio_load ("level.wav");
+-  bye_wav = audio_load ("bye.wav");
++  drop_wav = audio_load (PREFIX "/share/columns/drop.wav");
++  rotate_wav = audio_load (PREFIX "/share/columns/rotate.wav");
++  move_wav = audio_load (PREFIX "/share/columns/move.wav");
++  gameover_wav = audio_load (PREFIX "/share/columns/gameover.wav");
++  hello_wav = audio_load (PREFIX "/share/columns/hello.wav");
++  perfect_wav = audio_load (PREFIX "/share/columns/perfect.wav");
++  applause_wav = audio_load (PREFIX "/share/columns/applause.wav");
++  remove_wav = audio_load (PREFIX "/share/columns/remove.wav");
++  level_wav = audio_load (PREFIX "/share/columns/level.wav");
++  bye_wav = audio_load (PREFIX "/share/columns/bye.wav");
+ }
+ 
+ /* load bitmaps */
+ void init_gfx ()
+ {
+-  SDL_Surface *img = SDL_LoadBMP ("tiles.bmp");
++  SDL_Surface *img = SDL_LoadBMP (PREFIX "/share/columns/tiles.bmp");
+   if (img == NULL) {
+     fprintf (stderr, "couldn't load 'tiles.bmp'\n");
+     exit (1);
+@@ -950,11 +952,11 @@
+   SDL_SetColorKey (tiles, SDL_SRCCOLORKEY, 0);
+ 
+   {
+-    FILE *fp = fopen("bg.bmp", "rb");
++    FILE *fp = fopen(PREFIX "/share/columns/bg.bmp", "rb");
+     background = NULL;
+     if (fp != NULL) {
+       fclose (fp);
+-      img = SDL_LoadBMP ("bg.bmp");
++      img = SDL_LoadBMP (PREFIX "/share/columns/bg.bmp");
+       if (img == NULL) {
+ 	fprintf (stderr, "couldn't load `bg.bmp': %s\n", SDL_GetError ());
+       } else {
+@@ -979,8 +981,8 @@
+ void init_fonts ()
+ {
+   /* Load font data.  */
+-  small_font = load_font ("small.ofn");
+-  big_font = load_font ("big.ofn");
++  small_font = load_font (PREFIX "/share/columns/small.ofn");
++  big_font = load_font (PREFIX "/share/columns/big.ofn");
+   if (small_font == NULL || big_font == NULL) {
+     fprintf (stderr, "couldn't load fonts\n");
+     exit (1);
