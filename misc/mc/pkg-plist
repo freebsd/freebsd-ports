@@ -21,7 +21,9 @@ share/mc/extfs/lslR
 share/mc/extfs/mailfs
 share/mc/extfs/patchfs
 share/mc/extfs/rpm
+share/mc/extfs/rpms
 share/mc/extfs/sfs.ini
+share/mc/extfs/trpm
 share/mc/extfs/uar
 share/mc/extfs/ucpio
 share/mc/extfs/ulha
