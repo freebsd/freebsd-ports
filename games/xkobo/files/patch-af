@@ -1,0 +1,20 @@
+--- file.C.old	Tue Jan 18 19:16:42 2000
++++ file.C	Tue Jan 18 19:17:07 2000
+@@ -42,7 +42,7 @@
+             ret = -2;
+             break;
+         }
+-        t += i;
++        t = (void *) ((int) t + i);
+         len -= i;
+     } while (len > 0);
+     for (;;){
+@@ -68,7 +68,7 @@
+             ret = -2;
+             break;
+         }
+-        t += i;
++        t = (void *) ((int) t + i);
+         len -= i;
+     } while (len > 0);
+     for (;;){
