@@ -17,7 +17,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/5.005/Net/IRC.pm:${PORTSDIR}/irc/p
 
 NO_BUILD=	yes
 USE_PERL5=	yes
-MAN1=		nethirc.1
+MAN1=		nethirc.1 nhirc.1
 
 do-install:
 	(cd ${WRKSRC} && ${SH} install.sh ${PREFIX})
