@@ -1,29 +1,22 @@
---- misc/Makefile.in.orig	Fri Oct 30 13:29:28 1998
-+++ misc/Makefile.in	Sun Nov  1 21:22:45 1998
-@@ -17,6 +17,7 @@
- INSTALL = @INSTALL@
- INSTALL_PROGRAM = @INSTALL_PROGRAM@
- INSTALL_DATA = @INSTALL_DATA@
-+INSTALL_SCRIPT = ${INSTALL} -c -o bin -g bin -m 555
+--- src/messagebox.cpp.old	Tue Mar  9 15:42:14 1999
++++ src/messagebox.cpp	Tue Mar  9 15:42:55 1999
+@@ -67,7 +67,7 @@
+    QColorGroup newNormal(normal.foreground(), normal.background(), normal.light(), normal.dark(),
+                          normal.mid(), normal.text(), QColor(192, 192, 192));
+    setPalette(QPalette(newNormal, pal.disabled(), newNormal));
+-   setStyle(WindowsStyle);
++   setStyle(MotifStyle);
+    setFrameStyle(QFrame::Panel | QFrame::Sunken);
  
- CONF_FILES = sample.uin users.conf licq.conf
- 
-@@ -31,9 +32,9 @@
- 	$(RM) Makefile
- 
- install:
--	${INSTALL_PROGRAM} licq.javaconvert ${bindir}
--	${INSTALL_PROGRAM} licq.micqconvert ${bindir}
--	${INSTALL_PROGRAM} licq.winconvert ${bindir}
-+	${INSTALL_SCRIPT} licq.javaconvert ${bindir}
-+	${INSTALL_SCRIPT} licq.micqconvert ${bindir}
-+	${INSTALL_SCRIPT} licq.winconvert ${bindir}
- 	${INSTALL} -d ${pkgdatadir}/data
- 	${INSTALL} -d ${pkgdatadir}/conf
- 	${INSTALL} -d ${pkgdatadir}/translations
-@@ -46,4 +47,5 @@
- 	for i in translations/*; do \
- 	  ${INSTALL_DATA} $$i ${pkgdatadir}/translations; \
- 	done
-+	${INSTALL} licq.1 ${prefix}/man/man1
- 
+ }
+--- src/searchuserdlg.cpp.old	Tue Mar  9 15:42:23 1999
++++ src/searchuserdlg.cpp	Tue Mar  9 15:42:48 1999
+@@ -115,7 +115,7 @@
+    QColorGroup normal(pal.normal());
+    QColorGroup newNormal(normal.foreground(), normal.background(), normal.light(), normal.dark(), normal.mid(), normal.text(), QColor(192, 192, 192));
+    foundView->setPalette(QPalette(newNormal, pal.disabled(), newNormal));*/
+-   foundView->setStyle(WindowsStyle);
++   foundView->setStyle(MotifStyle);
+    foundView->setFrameStyle(QFrame::Box | QFrame::Raised);
+  
+    connect (btnDone, SIGNAL(clicked()), this, SLOT(accept()));
