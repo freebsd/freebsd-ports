@@ -1,0 +1,23 @@
+The Unix Benchmark Utility "ubench" is an attempt to introduce a single measure
+of perfomance among computer systems running various flavors of Unix operation
+system.
+
+The current development release tests only CPU(s) and memory. In the future
+releases there will be tests added for disk and TCP/IP. Ubench is taking
+advantage of multiple CPUs on an SMP system and the results will reflect that.
+
+o Ubench is executing rather senseless mathematical integer and floating-point
+  calculations for 3 mins concurrently using several processes, and the result
+  Ubench CPU benchmark.
+
+o Ubench will spawn about 2 concurrent processes for each CPU available on the
+  system. This ensures all available raw CPU horsepower is used.
+
+o Ubench is executing rather senseless memory allocation and memory to memory
+  copying operations for another 3 mins concurrently using several processes,
+  and the result Ubench MEM benchmark.
+
+WWW: http://www.phystech.com/download/ubench.html
+
+--
+Sergei Viznyuk <sv@phystech.com>

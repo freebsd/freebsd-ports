@@ -1,0 +1,38 @@
+--- configure.orig	Mon May 29 04:46:09 2000
++++ configure	Tue Jun  6 16:21:42 2000
+@@ -12,7 +12,8 @@
+ ###############################################################################
+ 
+ #DEFINES=-DDEBUG
+-INSTALLDIR= /usr/local/bin
++INSTALLDIR= \$(PREFIX)/bin
++MANDIR= \$(PREFIX)/man/man8
+ 
+ !
+ 
+@@ -113,8 +114,8 @@
+     ;;
+   *)
+ cat <<! >> Makefile
+-CC = cc
+-CFLAGS = 
++CC ?= cc
++CFLAGS += -D${SYSTEM}
+ LDFLAGS = -lm
+ INCLUDES = -I.
+ 
+@@ -134,11 +135,11 @@
+ %.o:	%.c
+ 	\$(CC) \$(CFLAGS) \$(INCLUDES) -c \$<
+ 
+-default: ubench
++all: ubench
+ 
+ install: ubench
+-	mv -f \$(INSTALLDIR)/ubench \$(INSTALLDIR)/ubench.old
+-	install -c -m 0555 ubench \$(INSTALLDIR)
++	\$(BSD_INSTALL_MAN) ubench.8 \$(MANDIR)
++	\$(BSD_INSTALL_PROGRAM) ubench \$(INSTALLDIR)
+ 
+ utime:	\$(utimeobjects)
+ 	\$(CC) \$(CFLAGS) \$(LDFLAGS) -o \$@ \$^
