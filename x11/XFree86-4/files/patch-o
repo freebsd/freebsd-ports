@@ -1,0 +1,16 @@
+--- programs/xdm/Imakefile~	Sat Jun 17 20:48:22 2000
++++ programs/xdm/Imakefile	Tue Nov 14 00:14:56 2000
+@@ -68,6 +68,13 @@
+ 
+ XPM_DEFINES = -DXPM 
+ 
++#if defined(FreeBSDArchitecture)
++#if HasPam
++PAM_LIBRARIES = -lpam DlLibrary
++PAM_DEFINES = -DUSE_PAM
++#endif
++#endif
++
+ #if SystemV4 || HasShadowPasswd
+ #if !LinuxShadowSuite
+ PWD_DEFINES = -DUSESHADOW
