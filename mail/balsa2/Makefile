@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	balsa2
-PORTVERSION=	2.0.15
+PORTVERSION=	2.0.16
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.theochem.kth.se/~pawsa/balsa/
 DISTNAME=	balsa-${PORTVERSION}
@@ -29,7 +29,8 @@ USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--enable-threads \
 		--enable-gtkhtml \
 		--disable-more-warnings \
-		--with-ssl
+		--with-ssl \
+		--enable-gtkhtml=no
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib -liconv"
 
@@ -37,10 +38,10 @@ MAN1=		balsa.1
 
 CONFLICTS=	balsa-*
 
-.if defined(WITH_GPG)
-LIB_DEPENDS+=		gpgme.9:${PORTSDIR}/security/gpgme
-CONFIGURE_ARGS+=	--enable-gpgme
-.endif
+#.if defined(WITH_GPG)
+#LIB_DEPENDS+=		gpgme.9:${PORTSDIR}/security/gpgme
+#CONFIGURE_ARGS+=	--enable-gpgme
+#.endif
 
 .if !defined(WITHOUT_LDAP)
 USE_OPENLDAP=		yes
