@@ -8,6 +8,7 @@ bin/gsdj500
 bin/gslj
 bin/gslp
 bin/gsnd
+bin/lprsetup.sh
 bin/pdf2dsc
 bin/pdf2ps
 bin/printafm
@@ -15,6 +16,7 @@ bin/ps2ascii
 bin/ps2epsi
 bin/ps2pdf
 bin/ps2ps
+bin/unix-lpr.sh
 bin/wftopfa
 share/ghostscript/5.50/Fontmap
 share/ghostscript/5.50/acctest.ps

@@ -3,7 +3,7 @@
 # Date created:		Tue Jun 10 21:58:54 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.31 1999/01/21 18:08:50 vanilla Exp $
+# $Id: Makefile,v 1.32 1999/01/23 07:05:22 vanilla Exp $
 #
 
 DISTNAME=	ghostscript-5.50
@@ -83,6 +83,8 @@ pre-install:
 # install the readme and license file of the hp8xxx driver as well
 post-install:
 	strip ${PREFIX}/bin/gs
+	${INSTALL_SCRIPT} ${WRKSRC}/unix-lpr.sh ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/lprsetup.sh ${PREFIX}/bin
 	${INSTALL_DATA} ${DISTDIR}/${DECRYPT_PDF} \
 		${PREFIX}/share/ghostscript/5.50
 	${INSTALL_DATA} ${WRKSRC}/license.hp8 \
