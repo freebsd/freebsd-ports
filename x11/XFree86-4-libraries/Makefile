@@ -3,7 +3,7 @@
 # Date created:         5 January 1995
 # Whom:                 jmz
 #
-# $Id$
+# $Id: Makefile,v 1.5 1995/04/12 20:26:23 asami Exp $
 #
 
 #######################################################################
@@ -32,6 +32,7 @@ WRKDIR?=                ${.CURDIR}/work
 BUILD_COOKIE?=		${WRKDIR}/.build_done
 EXTRACT_COOKIE?=	${WRKDIR}/.extract_done
 IS_INTERACTIVE=		yes
+MAINTAINER=		jmz@FreeBSD.ORG
 
 .if defined(X11_ON_X_CDROM) || defined(X11_ON_OR_CDROM)
 X11_ON_CDROM	=	yes
