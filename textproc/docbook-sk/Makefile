@@ -14,9 +14,8 @@ DISTNAME=	docbkx412
 MAINTAINER=	kuriyama@FreeBSD.org
 
 USE_ZIP=	YES
-NO_MTREE=	yes
-NO_BUILD=	yes
-WRKSRC=		${WRKDIR}
+NO_BUILD=	YES
+NO_WRKSUBDIR=	YES
 
 INSTDIR=	${PREFIX}/share/xml
 DTDDIR=		${INSTDIR}/docbook
