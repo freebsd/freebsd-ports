@@ -19,6 +19,7 @@ bin/gnunet-tracekit
 bin/gnunet-transport-check
 bin/gnunet-update
 bin/gnunetd
+etc/gnunet.conf-dist
 include/gnunet_afs_esed2.h
 include/gnunet_core.h
 include/gnunet_dht.h
@@ -65,3 +66,7 @@ share/locale/de/LC_MESSAGES/GNUnet.mo
 %%WITH_IPV6%%lib/libgnunettransport_tcp6.so
 %%WITH_IPV6%%lib/libgnunettransport_udp6.so
 @dirrm share/GNUnet
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/gnunet.user
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
