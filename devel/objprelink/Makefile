@@ -8,11 +8,11 @@
 PORTNAME=	objprelink
 PORTVERSION=	1.0
 PORTREVISION=	2
-CATEGORIES=	devel kde
-MASTER_SITES=	http://leon.bottou.com/objprelink/ \
+CATEGORIES=	devel
+MASTER_SITES=	http://objprelink.sourceforge.net/ \
 		${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=     binutils/releases
-DISTFILES=	objprelink.c.gz binutils-${BINUTILS_VER}.tar.bz2
+DISTFILES=	objprelink-1.c binutils-${BINUTILS_VER}.tar.bz2
 
 MAINTAINER=	dominic_marks@btinternet.com
 
@@ -28,8 +28,7 @@ do-extract:
 	@${MKDIR} ${WRKSRC}
 	@cd ${WRKSRC} && ${TAR} xfy ${DISTDIR}/binutils-${BINUTILS_VER}.tar.bz2
 	@${MV} ${WRKSRC}/binutils-${BINUTILS_VER} ${WRKSRC}/binutils
-	@cd ${WRKSRC} && ${GZIP_CMD} -dc ${DISTDIR}/objprelink.c.gz \
-		> ${WRKSRC}/objprelink.c
+	@${CP} ${DISTDIR}/objprelink-1.c ${WRKSRC}
 
 do-configure:
 	@cd ${WRKSRC}/binutils/bfd/ && \
@@ -47,7 +46,7 @@ do-build:
 .for DIR in bfd libiberty
 	@cd ${WRKSRC}/binutils/${DIR}/ && ${GMAKE}
 .endfor
-	@${CC} ${CFLAGS} -static -o ${WRKSRC}/objprelink ${WRKSRC}/objprelink.c \
+	@${CC} ${CFLAGS} -static -o ${WRKSRC}/objprelink ${WRKSRC}/objprelink-1.c \
 		${WRKSRC}/binutils/bfd/libbfd.a \
 		${WRKSRC}/binutils/libiberty/libiberty.a \
 		-I${WRKSRC}/binutils/include -I${WRKSRC}/binutils/bfd \
