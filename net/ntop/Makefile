@@ -17,7 +17,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network monitoring tool with command line and web interfaces
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgdc.a:${PORTSDIR}/graphics/gdchart
-LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
+LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt \
+		gdbm:${PORTSDIR}/databases/gdbm
 
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 IS_INTERACTIVE=	yes
