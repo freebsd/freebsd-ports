@@ -1,0 +1,11 @@
+--- pixmaps/Makefile.in.orig	Sun Aug  8 13:52:53 2004
++++ pixmaps/Makefile.in	Sun Aug  8 13:53:08 2004
+@@ -103,7 +103,7 @@
+ EXTRA_DIST =  	xml.png
+ 
+ 
+-grrconfpixdir = $(datadir)/pixmaps/gaim/grr
++grrconfpixdir = $(datadir)/gnome/pixmaps/gaim/status/default
+ grrconfpix_DATA = xml.png
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../pre_config.h
