@@ -6,25 +6,30 @@
 #
 
 PORTNAME=	cleanfeed
-PORTVERSION=	0.95.7b
+PORTVERSION=	20010805
 CATEGORIES=	news
-MASTER_SITES=	http://www.exit109.com/~jeremy/news/
+MASTER_SITES=	http://www.bofh.it/~md/cleanfeed/
+EXTRACT_SUFX=	.tgz
 
-PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	inn2.3.patch
-
-MAINTAINER=	leeym@cae.ce.ntu.edu.tw
+MAINTAINER=	leeym@leeym.com
 
 RUN_DEPENDS=	${LOCALBASE}/news/bin/innd:${PORTSDIR}/news/inn
 
 NO_BUILD=	yes
-MAN8=		cleanfeed.8
+BINOWN=		news
+BINGRP=		news
+SHAREOWN=	news
+SHAREGRP=	news
+
+post-patch:
+.for file in cleanfeed cleanfeed.local.sample
+	@${PERL} -pi -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/${file}
+.endfor
 
 do-install:
-	@${PERL} -pi -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/cleanfeed
-	@${PERL} -pi -e "s,%%LOCALBASE%%,${LOCALBASE},g" ${PKGDEINSTALL}
-	@${INSTALL_SCRIPT} ${WRKSRC}/cleanfeed ${LOCALBASE}/news/bin/filter/filter_innd.pl
-	@${INSTALL_DATA} ${WRKSRC}/cleanfeed.conf ${LOCALBASE}/news/bin/filter/cleanfeed.conf
-	@${INSTALL_MAN} ${WRKSRC}/cleanfeed.8 ${LOCALBASE}/man/man8/
+.for file in bad_adult_paths bad_cancel_paths bad_hosts bad_paths cleanfeed cleanfeed.local.sample
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${LOCALBASE}/news/bin/filter
+.endfor
+	@cd ${LOCALBASE}/news/bin/filter; ${LN} -f cleanfeed filter_innd.pl
 
 .include <bsd.port.mk>

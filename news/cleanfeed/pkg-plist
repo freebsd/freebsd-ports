@@ -1,2 +1,7 @@
 news/bin/filter/filter_innd.pl
-news/bin/filter/cleanfeed.conf
+news/bin/filter/bad_adult_paths
+news/bin/filter/bad_cancel_paths
+news/bin/filter/bad_hosts
+news/bin/filter/bad_paths
+news/bin/filter/cleanfeed
+news/bin/filter/cleanfeed.local.sample
