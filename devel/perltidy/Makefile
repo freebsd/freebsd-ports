@@ -7,31 +7,19 @@
 #
 
 PORTNAME=	perltidy
-PORTVERSION=	20011231
+PORTVERSION=	20020225
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	Perl-Tidy-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
-USE_PERL5=	yes
-NO_BUILD=	yes
+PERL_CONFIGURE=	yes
 
-MAN1=	perltidy.1 perl2web.1
-
-post-patch:
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g ; \
-		s|%%MANPREFIX%%|${MANPREFIX}|g" ${WRKSRC}/Makefile
-
-.if !defined(NOPORTDOCS)
-post-install:
-	@${MKDIR} ${DOCSDIR}
-.for file in BUGS ChangeLog perl2web perltidy tutorial
-.for ext in html txt
-	${INSTALL_DATA} ${WRKSRC}/docs/${file}.${ext} ${DOCSDIR}
-.endfor
-.endfor
-.endif
+MAN1=	perltidy.1
+MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3=	Perl::Tidy.3
 
 .include <bsd.port.mk>
