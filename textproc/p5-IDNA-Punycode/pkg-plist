@@ -1,0 +1,5 @@
+%%SITE_PERL%%/mach/auto/IDNA/Punycode/.packlist
+%%SITE_PERL%%/IDNA/Punycode.pm
+@dirrm %%SITE_PERL%%/mach/auto/IDNA/Punycode
+@unexec rmdir %D/%%SITE_PERL%%/mach/auto/IDNA 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/IDNA 2>/dev/null || true
