@@ -33,6 +33,7 @@
     SUBDIR += divx4linux
     SUBDIR += dore
     SUBDIR += drm-kmod
+    SUBDIR += dtv
     SUBDIR += dumpmpeg
     SUBDIR += dynamechs
     SUBDIR += ecg2png

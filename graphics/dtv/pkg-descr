@@ -1,0 +1,4 @@
+This is the distribution of "dtv", a program which interfaces with
+tv-capture and audio cards and can generate a capture file and/or operate
+in a client/server environment.  It consists of a single program, dtv,
+which can act as both client and server.
