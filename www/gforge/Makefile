@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	gforge
-PORTVERSION=	3.1
-PORTREVISION=	1
+PORTVERSION=	4.0.1
 CATEGORIES=	www devel
-MASTER_SITES=	http://gforge.org/download.php/44/
+MASTER_SITES=	http://gforge.org/frs/download.php/85/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	Open Source collaborative software development tool
 
 RUN_DEPENDS=	${LOCALBASE}/bin/php:${PORTSDIR}/lang/php4 \
@@ -103,11 +102,10 @@ post-patch:
 	@${ECHO_MSG} "    ==> Patching perl scripts"
 	@${FIND} ${WRKSRC} -name "*.pl" | ${XARGS} ${REINPLACE_CMD} -e \
 		"s,/usr/bin/perl,${PERL},"
-.for f in utils/groupCreator utils/ldap/ldap-clean utils/ldap/ldap-del-user utils/ldap/ldap-dump utils/ldap/ldap-import utils/ldap/ldap-check-replica monitor/systemdaemon
+.for f in utils/ldap/ldap-clean utils/ldap/ldap-del-user utils/ldap/ldap-dump utils/ldap/ldap-import utils/ldap/ldap-check-replica monitor/systemdaemon
 	@${REINPLACE_CMD} -e "s,/usr/bin/perl,${PERL}," ${WRKSRC}/${f}
 .endfor
 	@${ECHO_MSG} "    ==> Setting correct path"
-	@${REINPLACE_CMD} -e "s,/usr/bin/wget,${LOCALBASE}/bin/wget," ${WRKSRC}/utils/mailing_lists_create.pl
 	@${REINPLACE_CMD} -e "s,/usr/bin:/usr/games:/bin,${PATH}," ${WRKSRC}/monitor/systemdaemon
 .for f in backend/include.pl utils/include.pl www/include/BaseLanguage.class www/include/pre.php www/include/squal_pre.php
 	@${REINPLACE_CMD} -e "s,/etc/gforge,${ETCDIR},g" ${WRKSRC}/${f}
@@ -115,7 +113,7 @@ post-patch:
 
 post-configure:
 	@${ECHO_MSG} "    ==> Preparing crontabs"
-.for CRONFILE in README README.root
+.for CRONFILE in README.root
 	@${REINPLACE_CMD} -e "s,~/alexandria,${BACKEND_DIR},g" ${WRKSRC}/cronjobs/${CRONFILE}
 .endfor
 	@${ECHO_MSG} "    ==> Cleaning useless file"
