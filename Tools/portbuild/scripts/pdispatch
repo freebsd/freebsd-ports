@@ -1,37 +1,37 @@
 #!/bin/sh
 #
-# pdispatch <branch> <command> <package.tgz> [<args> ...]
+# pdispatch <arch> <branch> <command> <package.tgz> [<args> ...]
 #
 # Choose a random machine from ${buildroot}/ulist and dispatch the
 # job to it via the ptimeout script.
 
 pb=/var/portbuild
-. ${pb}/portbuild.conf
-
+arch=$1
+shift
+. ${pb}/${arch}/portbuild.conf
 . ${pb}/scripts/buildenv
 
-# wait 4 hours maximum
-timeout=14400
+# wait 8 hours maximum
+timeout=28800
 
 branch=$1
 command=$2
 shift 2
 
-buildenv ${pb} ${branch}
+buildenv ${pb} ${arch} ${branch}
 
 # ssh -x doesn't work on some machines
 unset DISPLAY
 
 pkgname=$(basename $1 ${PKGSUFFIX})
-buildroot=$(dirname $(dirname $0))
 
-if grep -qxF $pkgname ${buildroot}/${branch}/duds; then
+if grep -qxF $pkgname ${pb}/${arch}/${branch}/duds; then
   echo "skipping $pkgname"
   exit 1
 fi
 
 args=${1+"$@"}
-mach=$(cat ${buildroot}/ulist)
+mach=$(cat ${pb}/${arch}/ulist)
 num=$(echo $(echo $mach | wc -w))
 set $mach
 shift $(echo "$$ $num" | awk '{srand($1); print(int(rand()*$2))}')
@@ -49,5 +49,5 @@ if [ "x$NODUMMY" != "x" ]; then
   flags="${flags} -nodummy"
 fi
 
-echo "dispatching: ssh -a -t -n $1 ${command} ${branch} $flags $args at $(date)"
-${buildroot}/scripts/ptimeout $timeout ssh -a -t -n $1 ${command} ${branch} ${flags} $args
+echo "dispatching: ssh -a -t -n root@$1 ${command} ${arch} ${branch} $flags $args at $(date)"
+${pb}/scripts/ptimeout.host $timeout ssh -a -t -n root@$1 ${command} ${arch} ${branch} ${flags} $args
