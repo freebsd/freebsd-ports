@@ -1,0 +1,17 @@
+--- viewcvs-install	Fri May 12 06:26:11 2000
++++ viewcvs-install.new	Sun Jul  2 19:59:28 2000
+@@ -159,10 +159,10 @@
+     print INFO_TEXT
+     
+     ## get the install path
+-    temp = raw_input("Installation Path [%s]: " % ROOT_DIR)
+-    temp = string.strip(temp)
+-    if len(temp):
+-        ROOT_DIR = temp
++    #temp = raw_input("Installation Path [%s]: " % ROOT_DIR)
++    #temp = string.strip(temp)
++    #if len(temp):
++    #    ROOT_DIR = temp
+         
+     ## install the files
+     print

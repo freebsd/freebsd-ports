@@ -248,6 +248,7 @@
     SUBDIR += tvision
     SUBDIR += uclmmbase
     SUBDIR += ups-debug
+    SUBDIR += viewcvs
     SUBDIR += vtcl
     SUBDIR += xmake
     SUBDIR += xwpe

@@ -1,0 +1,11 @@
+ViewCVS was inspired by cvsweb (Zeller's version).  ViewCVS
+can browse directories, change logs, and specific revisions
+of files. It can display diffs between versions and show
+selections of files based on tags or branches. In addition,
+ViewCVS has "annotation" or "blame" support, and the
+beginnings of Bonsai-like query facilities. 
+
+WWW: http://www.lyra.org/viewcvs/ 
+Author: Greg Stein <gstein@lyra.org>
+
+- Will <andrews@technologist.com>
