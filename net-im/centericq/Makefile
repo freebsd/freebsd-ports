@@ -8,7 +8,7 @@
 
 PORTNAME=	centericq
 PORTVERSION=	4.7.8
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://konst.org.ua/download/
 
@@ -16,8 +16,8 @@ MAINTAINER=	ijliao@FreeBSD.org
 
 LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext \
 		iconv.3:${PORTSDIR}/converters/libiconv \
-		sigc.1:${PORTSDIR}/devel/libsigc++ \
-		fribidi.0:${PORTSDIR}/converters/fribidi
+		sigc.1:${PORTSDIR}/devel/libsigc++
+#		fribidi.0:${PORTSDIR}/converters/fribidi
 
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
@@ -25,7 +25,7 @@ USE_GNOME=	glib12
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-fribidi
+#CONFIGURE_ARGS=	--with-fribidi
 
 MAN1=	centericq.1
 
