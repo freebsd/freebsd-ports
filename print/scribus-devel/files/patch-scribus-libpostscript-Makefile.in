@@ -1,0 +1,11 @@
+--- scribus/libpostscript/Makefile.in.orig	Sun Nov 10 06:26:45 2002
++++ scribus/libpostscript/Makefile.in	Wed Nov 13 17:32:03 2002
+@@ -226,7 +226,7 @@
+ x_libraries = @x_libraries@
+ 
+ libdir = $(prefix)/share/scribus/libs
+-CPPFLAGS = -I$(top_builddir)/scribus
++CPPFLAGS = -I$(top_builddir)/scribus @CPPFLAGS@
+ ####### kdevelop will overwrite this part!!! (begin)##########
+ lib_LTLIBRARIES = libpostscript.la
+ 

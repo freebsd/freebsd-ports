@@ -7,28 +7,31 @@
 #
 
 PORTNAME=		scribus
-PORTVERSION=		0.8
-PORTREVISION=		1
+PORTVERSION=		0.9.1
+PORTREVISION=		0
 CATEGORIES=		print editors
 MASTER_SITES=		http://web2.altmuehlnet.de/fschmid/
 DIST_SUBDIR=		${PORTNAME}
-PATCH_SITES=		${MASTER_SITES}
-PATCHFILES=		Fonts.diff Palette.diff
-PATCH_DIST_STRIP=	-p1
+#PATCH_SITES=		${MASTER_SITES}
+#PATCHFILES=		
+#PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=		alane@freebsd.org
+MAINTAINER=		freebsd-ports@freebsd.org
 
 RUN_DEPENDS+=		gs:${PORTSDIR}/print/ghostscript-gnu
+
+BROKEN=			"crashes on startup"
 
 USE_QT_VER=		3
 USE_REINPLACE=		yes
 GNU_CONFIGURE=		yes
+USE_GMAKE=		yes
 
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/share/scribus/libs \
 		%%PREFIX%%/share/scribus/plugins
 
-BROKEN=	"This program terminates with a SIGBUS or simply hangs"
+QTCFGLIBS+=	-lm
 
 post-patch::
 	${FIND} ${WRKSRC} -type f			\
@@ -42,8 +45,8 @@ post-patch::
 		${WRKSRC}/scribus/Makefile.in
 .endif # defined(NOPORTDOCS)
 
-post-configure::
-	${FIND} ${WRKSRC} -name Makefile	\
-		|${XARGS} -n 1 ${REINPLACE_CMD} -e 's|-O2||g'
+#post-configure::
+#	${FIND} ${WRKSRC} -name Makefile	\
+#		|${XARGS} -n 1 ${REINPLACE_CMD} -e 's|-O2||g'
 
 .include <bsd.port.mk>
