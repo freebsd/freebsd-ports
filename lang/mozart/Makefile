@@ -46,7 +46,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}/lib/oz --disable-doc \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
+USE_GCC=	2.95
 .endif
 
 .if ${ARCH} != "i386"
