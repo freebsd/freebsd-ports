@@ -29,6 +29,7 @@ share/algae/%%ALGAE_VERSION%%/tools/all.A
 share/algae/%%ALGAE_VERSION%%/tools/arg.A
 share/algae/%%ALGAE_VERSION%%/tools/autosrc.A
 share/algae/%%ALGAE_VERSION%%/tools/brent.A
+share/algae/%%ALGAE_VERSION%%/tools/circshift.A
 share/algae/%%ALGAE_VERSION%%/tools/combine.A
 share/algae/%%ALGAE_VERSION%%/tools/diff.A
 share/algae/%%ALGAE_VERSION%%/tools/equal.A
