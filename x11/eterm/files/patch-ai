@@ -1,0 +1,35 @@
+*** src/command.c.old	Thu Dec 23 01:39:37 1999
+--- src/command.c	Thu Dec 23 01:42:00 1999
+***************
+*** 40,45 ****
+--- 40,47 ----
+  #include "feature.h"
+  #include "config.h"
+  
++ #undef HAVE_SAVED_UIDS
++ 
+  /* System Headers */
+  #include <stdio.h>
+  #include <stdlib.h>
+***************
+*** 120,125 ****
+--- 122,128 ----
+  #endif
+  #ifdef HAVE_TERMIOS_H
+  # include <termios.h>
++ # include <sys/ttydefaults.h>
+  #else
+  # include <sgtty.h>
+  #endif
+***************
+*** 2100,2105 ****
+--- 2103,2111 ----
+  # endif
+  # if VTIME != VEOL
+    tio->c_cc[VTIME] = 0;
++ # endif
++ # ifdef VSTATUS
++   tio->c_cc[VSTATUS] = CSTATUS;
+  # endif
+  
+    /* input modes */
