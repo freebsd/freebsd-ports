@@ -1,0 +1,10 @@
+vcp is a tool for copying revision controlled files between various SCM
+repositories.  For example, using vcp, it is possible to copy the contents
+of a entire Perforce depot (or part of one) into a depot on a different
+Perforce server or to copy the contents of a CVS repository into a Perforce
+server (or vice-versa).
+
+This port is a private snapshot because p5-VCP's distribution files is
+gone from the MASTER_SITE, and does not currently work with svk.
+
+WWW: http://public.perforce.com/public/revml/index.html
