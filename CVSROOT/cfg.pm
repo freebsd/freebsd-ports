@@ -105,7 +105,7 @@ $MAILBANNER = "";
 $MAIL_ON_DIR_CREATION = 0;
 
 # Include the names of the branches committed to in the commit email,
-# using this header.  (leave off the trailing ':').  Use "" if you don't
+# using this header (leave off the trailing ':').  Use "" if you don't
 # want one.
 $MAIL_BRANCH_HDR  = "X-CVS-Branch";
 
@@ -132,7 +132,7 @@ if ($hostname =~ /^(freefall|internat)\.freebsd\.org$/i) {
 	$MAILADDRS = $meister if $DEBUG;
 
 
-	$MAIL_BRANCH_HDR  = "X-FreeBSD-CVS-Branch:";
+	$MAIL_BRANCH_HDR  = "X-FreeBSD-CVS-Branch";
 }
 
 
