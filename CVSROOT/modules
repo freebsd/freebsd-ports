@@ -79,7 +79,6 @@ taginfo		CVSROOT taginfo
 9wm		ports/x11-wm/9wm
 ADMsmb		ports/security/ADMsmb
 ADMsnmp		ports/security/ADMsnmp
-AbiWord2	ports/editors/AbiWord2
 AquaGatekeeper	ports/net/AquaGatekeeper
 BillardGL	ports/games/BillardGL
 CaribbeanStud	ports/games/CaribbeanStud
@@ -171,6 +170,7 @@ abcm2ps		ports/print/abcm2ps
 abcmidi		ports/audio/abcmidi
 abcselect	ports/audio/abcselect
 abinit		ports/science/abinit
+abiword		ports/editors/abiword
 abntex		ports/print/abntex
 abook		ports/mail/abook
 abridge		ports/games/abridge
