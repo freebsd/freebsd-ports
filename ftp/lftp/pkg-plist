@@ -26,4 +26,5 @@ share/lftp/import-netscape
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/lftp.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/lftp.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/lftp
 @dirrm share/lftp
