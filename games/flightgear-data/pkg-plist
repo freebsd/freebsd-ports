@@ -84,50 +84,11 @@
 %%DATADIR%%/Aircraft/737/Panels/README.txt
 %%DATADIR%%/Aircraft/737/Sounds/737-sound.xml
 %%DATADIR%%/Aircraft/737/Systems/737-autopilot.xml
-%%DATADIR%%/Aircraft/747/747-100-set.xml
-%%DATADIR%%/Aircraft/747/747-100.xml
-%%DATADIR%%/Aircraft/747/747-autopilot.xml
-%%DATADIR%%/Aircraft/747/747-base.xml
-%%DATADIR%%/Aircraft/747/747-panel.xml
-%%DATADIR%%/Aircraft/747/747-set.xml
-%%DATADIR%%/Aircraft/747/747-sound.xml
-%%DATADIR%%/Aircraft/747/747.xml
-%%DATADIR%%/Aircraft/747/Engines/JT9D-3.xml
-%%DATADIR%%/Aircraft/747/Engines/direct.xml
-%%DATADIR%%/Aircraft/747/Models/boeing747-400-ai-jw.ac
-%%DATADIR%%/Aircraft/747/Models/boeing747-400-ai-jw.rgb
-%%DATADIR%%/Aircraft/747/Models/boeing747-400-ai-jw.xml
-%%DATADIR%%/Aircraft/747/Models/boeing747-400-alt-jw.ac
-%%DATADIR%%/Aircraft/747/Models/boeing747-400-alt-jw.rgb
-%%DATADIR%%/Aircraft/747/Models/boeing747-400-alt-jw.xml
-%%DATADIR%%/Aircraft/747/Models/boeing747-400-asi-jw.ac
-%%DATADIR%%/Aircraft/747/Models/boeing747-400-asi-jw.rgb
-%%DATADIR%%/Aircraft/747/Models/boeing747-400-asi-jw.xml
-%%DATADIR%%/Aircraft/747/Models/boeing747-400-bezel-jw.rgb
-%%DATADIR%%/Aircraft/747/Models/boeing747-400-efis-common-jw-01.rgb
-%%DATADIR%%/Aircraft/747/Models/boeing747-400-efisp-jw.ac
-%%DATADIR%%/Aircraft/747/Models/boeing747-400-efisp-jw.rgb
-%%DATADIR%%/Aircraft/747/Models/boeing747-400-efisp-jw.xml
-%%DATADIR%%/Aircraft/747/Models/boeing747-400-enav-jw-01.rgb
-%%DATADIR%%/Aircraft/747/Models/boeing747-400-enav-jw-02.rgb
-%%DATADIR%%/Aircraft/747/Models/boeing747-400-enav-jw.ac
-%%DATADIR%%/Aircraft/747/Models/boeing747-400-enav-jw.xml
-%%DATADIR%%/Aircraft/747/Models/boeing747-400-jw-01.rgb
-%%DATADIR%%/Aircraft/747/Models/boeing747-400-jw-02.rgb
-%%DATADIR%%/Aircraft/747/Models/boeing747-400-jw-03.rgb
-%%DATADIR%%/Aircraft/747/Models/boeing747-400-jw.ac
-%%DATADIR%%/Aircraft/747/Models/boeing747-400-jw.xml
-%%DATADIR%%/Aircraft/747/Models/boeing747-400-mcp-jw.ac
-%%DATADIR%%/Aircraft/747/Models/boeing747-400-mcp-jw.rgb
-%%DATADIR%%/Aircraft/747/Models/boeing747-400-mcp-jw.xml
-%%DATADIR%%/Aircraft/747/Models/boeing747-400-pfd-jw-01.rgb
-%%DATADIR%%/Aircraft/747/Models/boeing747-400-pfd-jw-02.rgb
-%%DATADIR%%/Aircraft/747/Models/boeing747-400-pfd-jw-03.rgb
-%%DATADIR%%/Aircraft/747/Models/boeing747-400-pfd-jw-04.rgb
-%%DATADIR%%/Aircraft/747/Models/boeing747-400-pfd-jw.ac
-%%DATADIR%%/Aircraft/747/Models/boeing747-400-pfd-jw.xml
-%%DATADIR%%/Aircraft/747/Models/digits.rgb
+%%DATADIR%%/Aircraft/737/submodels.xml
+%%DATADIR%%/Aircraft/737/thumbnail.jpg
 %%DATADIR%%/Aircraft/A-10/A-10-readme.txt
+%%DATADIR%%/Aircraft/A-10/A-10-splash.rgb
+%%DATADIR%%/Aircraft/A-10/A-10-submodels.xml
 %%DATADIR%%/Aircraft/A-10/A-10-yasim.xml
 %%DATADIR%%/Aircraft/A-10/A-10cl-set.xml
 %%DATADIR%%/Aircraft/A-10/A-10fl-set.xml
@@ -140,6 +101,8 @@
 %%DATADIR%%/Aircraft/A-10/Models/A-10-000.rgb
 %%DATADIR%%/Aircraft/A-10/Models/A-10-model.xml
 %%DATADIR%%/Aircraft/A-10/Models/A10-004-014h.ac
+%%DATADIR%%/Aircraft/A-10/Models/Trajectory-Marker.ac
+%%DATADIR%%/Aircraft/A-10/Models/Trajectory-Marker.xml
 %%DATADIR%%/Aircraft/A-10/Nasal/A-10.nas
 %%DATADIR%%/Aircraft/A-10/Panels/A-10-mini-panel.xml
 %%DATADIR%%/Aircraft/A-10/Panels/A-10-vfr-panel.xml
@@ -171,204 +134,12 @@
 %%DATADIR%%/Aircraft/A-10/Sounds/A-10-sound.xml
 %%DATADIR%%/Aircraft/A-10/Systems/A-10-autopilot.xml
 %%DATADIR%%/Aircraft/A-10/Systems/A-10-electrical.xml
-%%DATADIR%%/Aircraft/A320/A320-set.xml
-%%DATADIR%%/Aircraft/A320/A320-sound.xml
-%%DATADIR%%/Aircraft/A320/A320.xml
-%%DATADIR%%/Aircraft/A320/Engines/CFM56_5.xml
-%%DATADIR%%/Aircraft/A320/Engines/direct.xml
-%%DATADIR%%/Aircraft/A320/Models/a320-fb-af-01.rgb
-%%DATADIR%%/Aircraft/A320/Models/a320-fb.ac
-%%DATADIR%%/Aircraft/A320/Models/a320-fb.xml
-%%DATADIR%%/Aircraft/A320/Sounds/gear-lock.wav
-%%DATADIR%%/Aircraft/AN-225/AN-225-readme.txt
-%%DATADIR%%/Aircraft/AN-225/AN-225-set.xml
-%%DATADIR%%/Aircraft/AN-225/AN-225-yasim.xml
-%%DATADIR%%/Aircraft/AN-225/COPYING
-%%DATADIR%%/Aircraft/AN-225/Huds/AN-225-fgtbi.xml
-%%DATADIR%%/Aircraft/AN-225/Huds/AN-225-hud1.xml
-%%DATADIR%%/Aircraft/AN-225/Huds/AN-225-hudcard.xml
-%%DATADIR%%/Aircraft/AN-225/Huds/AN-225-hudladder.xml
-%%DATADIR%%/Aircraft/AN-225/Huds/AN-225-instrlabel.xml
-%%DATADIR%%/Aircraft/AN-225/Models/AN-225-model.xml
-%%DATADIR%%/Aircraft/AN-225/Models/AN225-003-002d13.ac
-%%DATADIR%%/Aircraft/AN-225/Models/AN225-tx-001.rgb
-%%DATADIR%%/Aircraft/AN-225/Nasal/AN-225.nas
-%%DATADIR%%/Aircraft/AN-225/Panels/AN-225-mini-panel.xml
-%%DATADIR%%/Aircraft/AN-225/Panels/AN-225-vfr-panel.xml
-%%DATADIR%%/Aircraft/AN-225/Panels/Instruments/Textures/faces-LE-misc1.rgb
-%%DATADIR%%/Aircraft/AN-225/Panels/Instruments/Textures/trans-green-bg.rgb
-%%DATADIR%%/Aircraft/AN-225/Panels/Instruments/Textures/trans-orange-bg.rgb
-%%DATADIR%%/Aircraft/AN-225/Panels/Instruments/Textures/trans-purple-bg.rgb
-%%DATADIR%%/Aircraft/AN-225/Panels/Instruments/Textures/trans-yellow-bg.rgb
-%%DATADIR%%/Aircraft/AN-225/Panels/Instruments/attitude-indicator.xml
-%%DATADIR%%/Aircraft/AN-225/Panels/Instruments/digital-accl.xml
-%%DATADIR%%/Aircraft/AN-225/Panels/Instruments/digital-agl.xml
-%%DATADIR%%/Aircraft/AN-225/Panels/Instruments/digital-alt.xml
-%%DATADIR%%/Aircraft/AN-225/Panels/Instruments/digital-aoa.xml
-%%DATADIR%%/Aircraft/AN-225/Panels/Instruments/digital-ap-speed-kt.xml
-%%DATADIR%%/Aircraft/AN-225/Panels/Instruments/digital-engine.xml
-%%DATADIR%%/Aircraft/AN-225/Panels/Instruments/digital-flap.xml
-%%DATADIR%%/Aircraft/AN-225/Panels/Instruments/digital-fuel-tank.xml
-%%DATADIR%%/Aircraft/AN-225/Panels/Instruments/digital-fuel-tot.xml
-%%DATADIR%%/Aircraft/AN-225/Panels/Instruments/digital-kias.xml
-%%DATADIR%%/Aircraft/AN-225/Panels/Instruments/digital-mach.xml
-%%DATADIR%%/Aircraft/AN-225/Panels/Instruments/digital-roll.xml
-%%DATADIR%%/Aircraft/AN-225/Panels/Instruments/digital-vsi.xml
-%%DATADIR%%/Aircraft/AN-225/Panels/Instruments/digital-wgt.xml
-%%DATADIR%%/Aircraft/AN-225/Panels/Instruments/flap-quadrant.xml
-%%DATADIR%%/Aircraft/AN-225/Panels/Instruments/single-throttle-quadrant.xml
-%%DATADIR%%/Aircraft/AN-225/Panels/Instruments/text-autopilot.xml
-%%DATADIR%%/Aircraft/AN-225/Panels/Textures/AN-225-panel-bg.rgb
-%%DATADIR%%/Aircraft/AN-225/Panels/Textures/panel-trans-mini-bg.rgb
-%%DATADIR%%/Aircraft/AN-225/Sounds/AN-225-sound.xml
-%%DATADIR%%/Aircraft/AN-225/Systems/AN-225-autopilot.xml
-%%DATADIR%%/Aircraft/AN-225/Systems/AN-225-electrical.xml
-%%DATADIR%%/Aircraft/B-52F/B-52F-readme.txt
-%%DATADIR%%/Aircraft/B-52F/B-52F-set.xml
-%%DATADIR%%/Aircraft/B-52F/B-52F-yasim.xml
-%%DATADIR%%/Aircraft/B-52F/COPYING
-%%DATADIR%%/Aircraft/B-52F/Huds/B-52F-fgtbi.xml
-%%DATADIR%%/Aircraft/B-52F/Huds/B-52F-hud1.xml
-%%DATADIR%%/Aircraft/B-52F/Huds/B-52F-hudcard.xml
-%%DATADIR%%/Aircraft/B-52F/Huds/B-52F-hudladder.xml
-%%DATADIR%%/Aircraft/B-52F/Huds/B-52F-instrlabel.xml
-%%DATADIR%%/Aircraft/B-52F/Models/B-52F-002-026b.ac
-%%DATADIR%%/Aircraft/B-52F/Models/B-52F-model.xml
-%%DATADIR%%/Aircraft/B-52F/Models/B52-F-Side-01.rgb
-%%DATADIR%%/Aircraft/B-52F/Models/B52-F-Top-01.rgb
-%%DATADIR%%/Aircraft/B-52F/Nasal/B-52F.nas
-%%DATADIR%%/Aircraft/B-52F/Panels/B-52F-mini-panel.xml
-%%DATADIR%%/Aircraft/B-52F/Panels/B-52F-vfr-panel.xml
-%%DATADIR%%/Aircraft/B-52F/Panels/Instruments/Textures/faces-LE-misc1.rgb
-%%DATADIR%%/Aircraft/B-52F/Panels/Instruments/Textures/trans-green-bg.rgb
-%%DATADIR%%/Aircraft/B-52F/Panels/Instruments/Textures/trans-orange-bg.rgb
-%%DATADIR%%/Aircraft/B-52F/Panels/Instruments/Textures/trans-purple-bg.rgb
-%%DATADIR%%/Aircraft/B-52F/Panels/Instruments/Textures/trans-yellow-bg.rgb
-%%DATADIR%%/Aircraft/B-52F/Panels/Instruments/attitude-indicator.xml
-%%DATADIR%%/Aircraft/B-52F/Panels/Instruments/digital-accl.xml
-%%DATADIR%%/Aircraft/B-52F/Panels/Instruments/digital-agl.xml
-%%DATADIR%%/Aircraft/B-52F/Panels/Instruments/digital-alt.xml
-%%DATADIR%%/Aircraft/B-52F/Panels/Instruments/digital-aoa.xml
-%%DATADIR%%/Aircraft/B-52F/Panels/Instruments/digital-ap-speed-kt.xml
-%%DATADIR%%/Aircraft/B-52F/Panels/Instruments/digital-engine.xml
-%%DATADIR%%/Aircraft/B-52F/Panels/Instruments/digital-flap.xml
-%%DATADIR%%/Aircraft/B-52F/Panels/Instruments/digital-fuel-tank.xml
-%%DATADIR%%/Aircraft/B-52F/Panels/Instruments/digital-fuel-tot.xml
-%%DATADIR%%/Aircraft/B-52F/Panels/Instruments/digital-kias.xml
-%%DATADIR%%/Aircraft/B-52F/Panels/Instruments/digital-mach.xml
-%%DATADIR%%/Aircraft/B-52F/Panels/Instruments/digital-reheat.xml
-%%DATADIR%%/Aircraft/B-52F/Panels/Instruments/digital-roll.xml
-%%DATADIR%%/Aircraft/B-52F/Panels/Instruments/digital-vsi.xml
-%%DATADIR%%/Aircraft/B-52F/Panels/Instruments/digital-wgt.xml
-%%DATADIR%%/Aircraft/B-52F/Panels/Instruments/flap-quadrant.xml
-%%DATADIR%%/Aircraft/B-52F/Panels/Instruments/reheat-quadrant.xml
-%%DATADIR%%/Aircraft/B-52F/Panels/Instruments/text-autopilot.xml
-%%DATADIR%%/Aircraft/B-52F/Panels/Instruments/throttle-quadrant.xml
-%%DATADIR%%/Aircraft/B-52F/Panels/Textures/B-52F-panel-bg.rgb
-%%DATADIR%%/Aircraft/B-52F/Panels/Textures/panel-trans-mini-bg.rgb
-%%DATADIR%%/Aircraft/B-52F/Sounds/B-52F-sound.xml
-%%DATADIR%%/Aircraft/B-52F/Systems/B-52F-autopilot.xml
-%%DATADIR%%/Aircraft/B-52F/Systems/B-52F-electrical.xml
-%%DATADIR%%/Aircraft/BAC-TSR2/BAC-TSR2-readme.txt
-%%DATADIR%%/Aircraft/BAC-TSR2/BAC-TSR2-set.xml
-%%DATADIR%%/Aircraft/BAC-TSR2/BAC-TSR2-yasim.xml
-%%DATADIR%%/Aircraft/BAC-TSR2/COPYING
-%%DATADIR%%/Aircraft/BAC-TSR2/Huds/BAC-TSR2-fgtbi.xml
-%%DATADIR%%/Aircraft/BAC-TSR2/Huds/BAC-TSR2-hud1.xml
-%%DATADIR%%/Aircraft/BAC-TSR2/Huds/BAC-TSR2-hudcard.xml
-%%DATADIR%%/Aircraft/BAC-TSR2/Huds/BAC-TSR2-hudladder.xml
-%%DATADIR%%/Aircraft/BAC-TSR2/Huds/BAC-TSR2-instrlabel.xml
-%%DATADIR%%/Aircraft/BAC-TSR2/Models/BAC-TSR2-model.xml
-%%DATADIR%%/Aircraft/BAC-TSR2/Models/TSR2-009-041e.ac
-%%DATADIR%%/Aircraft/BAC-TSR2/Models/TSR2-tx-002.rgb
-%%DATADIR%%/Aircraft/BAC-TSR2/Nasal/BAC-TSR2.nas
-%%DATADIR%%/Aircraft/BAC-TSR2/Panels/BAC-TSR2-mini-panel.xml
-%%DATADIR%%/Aircraft/BAC-TSR2/Panels/BAC-TSR2-vfr-panel.xml
-%%DATADIR%%/Aircraft/BAC-TSR2/Panels/Instruments/Textures/faces-LE-misc1.rgb
-%%DATADIR%%/Aircraft/BAC-TSR2/Panels/Instruments/Textures/trans-green-bg.rgb
-%%DATADIR%%/Aircraft/BAC-TSR2/Panels/Instruments/Textures/trans-orange-bg.rgb
-%%DATADIR%%/Aircraft/BAC-TSR2/Panels/Instruments/Textures/trans-purple-bg.rgb
-%%DATADIR%%/Aircraft/BAC-TSR2/Panels/Instruments/Textures/trans-yellow-bg.rgb
-%%DATADIR%%/Aircraft/BAC-TSR2/Panels/Instruments/attitude-indicator.xml
-%%DATADIR%%/Aircraft/BAC-TSR2/Panels/Instruments/digital-accl.xml
-%%DATADIR%%/Aircraft/BAC-TSR2/Panels/Instruments/digital-agl.xml
-%%DATADIR%%/Aircraft/BAC-TSR2/Panels/Instruments/digital-alt.xml
-%%DATADIR%%/Aircraft/BAC-TSR2/Panels/Instruments/digital-aoa.xml
-%%DATADIR%%/Aircraft/BAC-TSR2/Panels/Instruments/digital-ap-speed-kt.xml
-%%DATADIR%%/Aircraft/BAC-TSR2/Panels/Instruments/digital-engine.xml
-%%DATADIR%%/Aircraft/BAC-TSR2/Panels/Instruments/digital-flap.xml
-%%DATADIR%%/Aircraft/BAC-TSR2/Panels/Instruments/digital-fuel-tank.xml
-%%DATADIR%%/Aircraft/BAC-TSR2/Panels/Instruments/digital-fuel-tot.xml
-%%DATADIR%%/Aircraft/BAC-TSR2/Panels/Instruments/digital-kias.xml
-%%DATADIR%%/Aircraft/BAC-TSR2/Panels/Instruments/digital-mach.xml
-%%DATADIR%%/Aircraft/BAC-TSR2/Panels/Instruments/digital-reheat.xml
-%%DATADIR%%/Aircraft/BAC-TSR2/Panels/Instruments/digital-roll.xml
-%%DATADIR%%/Aircraft/BAC-TSR2/Panels/Instruments/digital-vsi.xml
-%%DATADIR%%/Aircraft/BAC-TSR2/Panels/Instruments/digital-wgt.xml
-%%DATADIR%%/Aircraft/BAC-TSR2/Panels/Instruments/flap-quadrant.xml
-%%DATADIR%%/Aircraft/BAC-TSR2/Panels/Instruments/reheat-quadrant.xml
-%%DATADIR%%/Aircraft/BAC-TSR2/Panels/Instruments/text-autopilot.xml
-%%DATADIR%%/Aircraft/BAC-TSR2/Panels/Instruments/throttle-quadrant.xml
-%%DATADIR%%/Aircraft/BAC-TSR2/Panels/Textures/BAC-TSR2-panel-bg.rgb
-%%DATADIR%%/Aircraft/BAC-TSR2/Panels/Textures/panel-trans-mini-bg.rgb
-%%DATADIR%%/Aircraft/BAC-TSR2/Sounds/BAC-TSR2-sound.xml
-%%DATADIR%%/Aircraft/BAC-TSR2/Systems/BAC-TSR2-autopilot.xml
-%%DATADIR%%/Aircraft/BAC-TSR2/Systems/BAC-TSR2-electrical.xml
-%%DATADIR%%/Aircraft/ComperSwift/ComperSwift-readme.txt
-%%DATADIR%%/Aircraft/ComperSwift/ComperSwift-set.xml
-%%DATADIR%%/Aircraft/ComperSwift/ComperSwift-yasim.xml
-%%DATADIR%%/Aircraft/ComperSwift/Huds/ComperSwift-fgtbi.xml
-%%DATADIR%%/Aircraft/ComperSwift/Huds/ComperSwift-hud1.xml
-%%DATADIR%%/Aircraft/ComperSwift/Huds/ComperSwift-hudcard.xml
-%%DATADIR%%/Aircraft/ComperSwift/Huds/ComperSwift-hudladder.xml
-%%DATADIR%%/Aircraft/ComperSwift/Huds/ComperSwift-instrlabel.xml
-%%DATADIR%%/Aircraft/ComperSwift/Models/ComperSwift-000-038i.ac
-%%DATADIR%%/Aircraft/ComperSwift/Models/ComperSwift-model.xml
-%%DATADIR%%/Aircraft/ComperSwift/Models/ComperSwift-tx-00.rgb
-%%DATADIR%%/Aircraft/ComperSwift/Panels/ComperSwift-mini-panel.xml
-%%DATADIR%%/Aircraft/ComperSwift/Panels/Instruments/Textures/aoa-indexer.rgb
-%%DATADIR%%/Aircraft/ComperSwift/Panels/Instruments/Textures/attitude-indicator.rgb
-%%DATADIR%%/Aircraft/ComperSwift/Panels/Instruments/Textures/bezel.rgb
-%%DATADIR%%/Aircraft/ComperSwift/Panels/Instruments/Textures/bezel1.rgb
-%%DATADIR%%/Aircraft/ComperSwift/Panels/Instruments/Textures/blister.rgb
-%%DATADIR%%/Aircraft/ComperSwift/Panels/Instruments/Textures/faces-1.rgb
-%%DATADIR%%/Aircraft/ComperSwift/Panels/Instruments/Textures/faces-3-trans.rgb
-%%DATADIR%%/Aircraft/ComperSwift/Panels/Instruments/Textures/faces-LE-misc1-trans.rgb
-%%DATADIR%%/Aircraft/ComperSwift/Panels/Instruments/Textures/handles-trans.rgb
-%%DATADIR%%/Aircraft/ComperSwift/Panels/Instruments/Textures/hsi.rgb
-%%DATADIR%%/Aircraft/ComperSwift/Panels/Instruments/Textures/maintc.rgb
-%%DATADIR%%/Aircraft/ComperSwift/Panels/Instruments/Textures/misc-1-trans.rgb
-%%DATADIR%%/Aircraft/ComperSwift/Panels/Instruments/Textures/misc-1.rgb
-%%DATADIR%%/Aircraft/ComperSwift/Panels/Instruments/Textures/trans-green-bg.rgb
-%%DATADIR%%/Aircraft/ComperSwift/Panels/Instruments/Textures/trans-orange-bg.rgb
-%%DATADIR%%/Aircraft/ComperSwift/Panels/Instruments/Textures/trans-purple-bg.rgb
-%%DATADIR%%/Aircraft/ComperSwift/Panels/Instruments/Textures/trans-yellow-bg.rgb
-%%DATADIR%%/Aircraft/ComperSwift/Panels/Instruments/aoa-indexer.xml
-%%DATADIR%%/Aircraft/ComperSwift/Panels/Instruments/attitude-indicator.xml
-%%DATADIR%%/Aircraft/ComperSwift/Panels/Instruments/controls-trans.xml
-%%DATADIR%%/Aircraft/ComperSwift/Panels/Instruments/digital-accl.xml
-%%DATADIR%%/Aircraft/ComperSwift/Panels/Instruments/digital-agl.xml
-%%DATADIR%%/Aircraft/ComperSwift/Panels/Instruments/digital-aileron-trim.xml
-%%DATADIR%%/Aircraft/ComperSwift/Panels/Instruments/digital-alt.xml
-%%DATADIR%%/Aircraft/ComperSwift/Panels/Instruments/digital-aoa.xml
-%%DATADIR%%/Aircraft/ComperSwift/Panels/Instruments/digital-ap-speed-kt.xml
-%%DATADIR%%/Aircraft/ComperSwift/Panels/Instruments/digital-engine.xml
-%%DATADIR%%/Aircraft/ComperSwift/Panels/Instruments/digital-fuel-tot.xml
-%%DATADIR%%/Aircraft/ComperSwift/Panels/Instruments/digital-kias.xml
-%%DATADIR%%/Aircraft/ComperSwift/Panels/Instruments/digital-mach.xml
-%%DATADIR%%/Aircraft/ComperSwift/Panels/Instruments/digital-mixture.xml
-%%DATADIR%%/Aircraft/ComperSwift/Panels/Instruments/digital-vsi.xml
-%%DATADIR%%/Aircraft/ComperSwift/Panels/Instruments/digital-wgt.xml
-%%DATADIR%%/Aircraft/ComperSwift/Panels/Instruments/hsi.xml
-%%DATADIR%%/Aircraft/ComperSwift/Panels/Instruments/single-throttle-quadrant-trans.xml
-%%DATADIR%%/Aircraft/ComperSwift/Panels/Instruments/turn.xml
-%%DATADIR%%/Aircraft/ComperSwift/Panels/Textures/panel-trans-mini-bg.rgb
-%%DATADIR%%/Aircraft/ComperSwift/Sounds/ComperSwift-sound.xml
-%%DATADIR%%/Aircraft/ComperSwift/Systems/ComperSwift-autopilot.xml
-%%DATADIR%%/Aircraft/ComperSwift/Systems/ComperSwift-electrical.xml
+%%DATADIR%%/Aircraft/A-10/thumbnail.jpg
 %%DATADIR%%/Aircraft/Generic/README
 %%DATADIR%%/Aircraft/Generic/generic-autopilot.xml
 %%DATADIR%%/Aircraft/Generic/generic-electrical.xml
+%%DATADIR%%/Aircraft/Generic/generic-instrumentation.xml
+%%DATADIR%%/Aircraft/Generic/generic-systems.xml
 %%DATADIR%%/Aircraft/Hunter/Models/HelmetMk1a-ver6.rgb
 %%DATADIR%%/Aircraft/Hunter/Models/accel.ac
 %%DATADIR%%/Aircraft/Hunter/Models/adf.ac
@@ -482,6 +253,7 @@
 %%DATADIR%%/Aircraft/Hunter/hunter-yasim-2t.xml
 %%DATADIR%%/Aircraft/Hunter/hunter-yasim.xml
 %%DATADIR%%/Aircraft/Hunter/pilots-notes.txt
+%%DATADIR%%/Aircraft/Hunter/thumbnail.jpg
 %%DATADIR%%/Aircraft/Instruments-3d/adf/adf.ac
 %%DATADIR%%/Aircraft/Instruments-3d/adf/adf.xml
 %%DATADIR%%/Aircraft/Instruments-3d/adf/adf01.rgb
@@ -553,6 +325,7 @@
 %%DATADIR%%/Aircraft/Instruments-3d/vsi/vsi.rgb
 %%DATADIR%%/Aircraft/Instruments-3d/vsi/vsi.xml
 %%DATADIR%%/Aircraft/Instruments/KAP140TwoAxis.xml
+%%DATADIR%%/Aircraft/Instruments/KAP140TwoAxisAlt.xml
 %%DATADIR%%/Aircraft/Instruments/Textures/KAP140.rgb
 %%DATADIR%%/Aircraft/Instruments/Textures/accel.rgb
 %%DATADIR%%/Aircraft/Instruments/Textures/airsp1.rgb
@@ -734,213 +507,6 @@
 %%DATADIR%%/Aircraft/Instruments/vsi.xml
 %%DATADIR%%/Aircraft/Instruments/wxradar.xml
 %%DATADIR%%/Aircraft/Instruments/xpdr-kt76c.xml
-%%DATADIR%%/Aircraft/OV10/Engines/T76.xml
-%%DATADIR%%/Aircraft/OV10/Engines/direct.xml
-%%DATADIR%%/Aircraft/OV10/Models/OV10.ac
-%%DATADIR%%/Aircraft/OV10/Models/OV10.mdl
-%%DATADIR%%/Aircraft/OV10/Models/ov10.xml
-%%DATADIR%%/Aircraft/OV10/Models/ov10_0.rgb
-%%DATADIR%%/Aircraft/OV10/Models/ov10_1.rgb
-%%DATADIR%%/Aircraft/OV10/Models/ov10_2.rgb
-%%DATADIR%%/Aircraft/OV10/Models/ov10_3.rgb
-%%DATADIR%%/Aircraft/OV10/Models/ov10_4.rgb
-%%DATADIR%%/Aircraft/OV10/Models/ov10_5.rgb
-%%DATADIR%%/Aircraft/OV10/Models/ov10_6.rgb
-%%DATADIR%%/Aircraft/OV10/Models/ov10_7.rgb
-%%DATADIR%%/Aircraft/OV10/Models/ov10_8.rgb
-%%DATADIR%%/Aircraft/OV10/OV10-read-me.html
-%%DATADIR%%/Aircraft/OV10/OV10-set.xml
-%%DATADIR%%/Aircraft/OV10/OV10.xml
-%%DATADIR%%/Aircraft/OV10/Panels/T38-panel-with-wxradar.xml
-%%DATADIR%%/Aircraft/OV10/Sounds/OV10-sound.xml
-%%DATADIR%%/Aircraft/OV10/Sounds/turboprop1.wav
-%%DATADIR%%/Aircraft/OV10/ov10
-%%DATADIR%%/Aircraft/Spitfire/Electrical/electrical.xml
-%%DATADIR%%/Aircraft/Spitfire/Models/Pilot_1.rgb
-%%DATADIR%%/Aircraft/Spitfire/Models/Pilot_2.rgb
-%%DATADIR%%/Aircraft/Spitfire/Models/UC-up-down.rgb
-%%DATADIR%%/Aircraft/Spitfire/Models/altimeter.ac
-%%DATADIR%%/Aircraft/Spitfire/Models/altimeter.xml
-%%DATADIR%%/Aircraft/Spitfire/Models/asi.ac
-%%DATADIR%%/Aircraft/Spitfire/Models/asi.xml
-%%DATADIR%%/Aircraft/Spitfire/Models/attitude-bezel.rgb
-%%DATADIR%%/Aircraft/Spitfire/Models/attitude.ac
-%%DATADIR%%/Aircraft/Spitfire/Models/attitude.rgb
-%%DATADIR%%/Aircraft/Spitfire/Models/attitude.xml
-%%DATADIR%%/Aircraft/Spitfire/Models/boost.ac
-%%DATADIR%%/Aircraft/Spitfire/Models/boost.xml
-%%DATADIR%%/Aircraft/Spitfire/Models/clock.ac
-%%DATADIR%%/Aircraft/Spitfire/Models/clock.rgb
-%%DATADIR%%/Aircraft/Spitfire/Models/clock.xml
-%%DATADIR%%/Aircraft/Spitfire/Models/compass-bezel.rgb
-%%DATADIR%%/Aircraft/Spitfire/Models/compass.ac
-%%DATADIR%%/Aircraft/Spitfire/Models/compass.rgb
-%%DATADIR%%/Aircraft/Spitfire/Models/compass.xml
-%%DATADIR%%/Aircraft/Spitfire/Models/control-stick.ac
-%%DATADIR%%/Aircraft/Spitfire/Models/control-stick.xml
-%%DATADIR%%/Aircraft/Spitfire/Models/cut-off.ac
-%%DATADIR%%/Aircraft/Spitfire/Models/cut-off.xml
-%%DATADIR%%/Aircraft/Spitfire/Models/engine-start.rgb
-%%DATADIR%%/Aircraft/Spitfire/Models/flaps.ac
-%%DATADIR%%/Aircraft/Spitfire/Models/flaps.rgb
-%%DATADIR%%/Aircraft/Spitfire/Models/flaps.xml
-%%DATADIR%%/Aircraft/Spitfire/Models/fuel-cocks.ac
-%%DATADIR%%/Aircraft/Spitfire/Models/fuel-cocks.nas
-%%DATADIR%%/Aircraft/Spitfire/Models/fuel-cocks.xml
-%%DATADIR%%/Aircraft/Spitfire/Models/fuel-pressure.ac
-%%DATADIR%%/Aircraft/Spitfire/Models/fuel-pressure.rgb
-%%DATADIR%%/Aircraft/Spitfire/Models/fuel-pressure.xml
-%%DATADIR%%/Aircraft/Spitfire/Models/fuel.ac
-%%DATADIR%%/Aircraft/Spitfire/Models/fuel.rgb
-%%DATADIR%%/Aircraft/Spitfire/Models/fuel.xml
-%%DATADIR%%/Aircraft/Spitfire/Models/hotspotgrid.rgb
-%%DATADIR%%/Aircraft/Spitfire/Models/hunter-alt.rgb
-%%DATADIR%%/Aircraft/Spitfire/Models/hunter-altpress.rgb
-%%DATADIR%%/Aircraft/Spitfire/Models/hunter-turn-face.rgb
-%%DATADIR%%/Aircraft/Spitfire/Models/hunter-turn.rgb
-%%DATADIR%%/Aircraft/Spitfire/Models/hunter-vsi.rgb
-%%DATADIR%%/Aircraft/Spitfire/Models/large-bezel.rgb
-%%DATADIR%%/Aircraft/Spitfire/Models/magcompass.rgb
-%%DATADIR%%/Aircraft/Spitfire/Models/magneto.ac
-%%DATADIR%%/Aircraft/Spitfire/Models/magneto.rgb
-%%DATADIR%%/Aircraft/Spitfire/Models/magneto.xml
-%%DATADIR%%/Aircraft/Spitfire/Models/oil-pressure.ac
-%%DATADIR%%/Aircraft/Spitfire/Models/oil-pressure.rgb
-%%DATADIR%%/Aircraft/Spitfire/Models/oil-pressure.xml
-%%DATADIR%%/Aircraft/Spitfire/Models/panel-hotspots.xml
-%%DATADIR%%/Aircraft/Spitfire/Models/primer.ac
-%%DATADIR%%/Aircraft/Spitfire/Models/primer.xml
-%%DATADIR%%/Aircraft/Spitfire/Models/reflector_gun_sight-01.rgb
-%%DATADIR%%/Aircraft/Spitfire/Models/reflector_gun_sight.rgb
-%%DATADIR%%/Aircraft/Spitfire/Models/rgs-dimmer-switch.ac
-%%DATADIR%%/Aircraft/Spitfire/Models/rgs-dimmer-switch.rgb
-%%DATADIR%%/Aircraft/Spitfire/Models/rgs-dimmer-switch.xml
-%%DATADIR%%/Aircraft/Spitfire/Models/rgs-main-switch.ac
-%%DATADIR%%/Aircraft/Spitfire/Models/rgs-main-switch.rgb
-%%DATADIR%%/Aircraft/Spitfire/Models/rgs-main-switch.xml
-%%DATADIR%%/Aircraft/Spitfire/Models/rgs.ac
-%%DATADIR%%/Aircraft/Spitfire/Models/rgs.xml
-%%DATADIR%%/Aircraft/Spitfire/Models/ring-pull.ac
-%%DATADIR%%/Aircraft/Spitfire/Models/ring-pull.xml
-%%DATADIR%%/Aircraft/Spitfire/Models/rpm.ac
-%%DATADIR%%/Aircraft/Spitfire/Models/rpm.xml
-%%DATADIR%%/Aircraft/Spitfire/Models/spitfire-asi.rgb
-%%DATADIR%%/Aircraft/Spitfire/Models/spitfire-attitude.rgb
-%%DATADIR%%/Aircraft/Spitfire/Models/spitfire-boost.rgb
-%%DATADIR%%/Aircraft/Spitfire/Models/spitfire-rpm.rgb
-%%DATADIR%%/Aircraft/Spitfire/Models/spitfire-submodels.xml
-%%DATADIR%%/Aircraft/Spitfire/Models/spitfire-trim.rgb
-%%DATADIR%%/Aircraft/Spitfire/Models/spitfire-triple.rgb
-%%DATADIR%%/Aircraft/Spitfire/Models/spitfire-turn.rgb
-%%DATADIR%%/Aircraft/Spitfire/Models/spitfire-tx-00.rgb
-%%DATADIR%%/Aircraft/Spitfire/Models/spitfire-tx-01.rgb
-%%DATADIR%%/Aircraft/Spitfire/Models/spitfire-tx-02.rgb
-%%DATADIR%%/Aircraft/Spitfire/Models/spitfire-tx-03.rgb
-%%DATADIR%%/Aircraft/Spitfire/Models/spitfire-tx-04.rgb
-%%DATADIR%%/Aircraft/Spitfire/Models/spitfire-tx-05.rgb
-%%DATADIR%%/Aircraft/Spitfire/Models/spitfire-vsi.rgb
-%%DATADIR%%/Aircraft/Spitfire/Models/spitfire.nas
-%%DATADIR%%/Aircraft/Spitfire/Models/spitfireIIa.ac
-%%DATADIR%%/Aircraft/Spitfire/Models/spitfire_model.xml
-%%DATADIR%%/Aircraft/Spitfire/Models/starter.ac
-%%DATADIR%%/Aircraft/Spitfire/Models/starter.xml
-%%DATADIR%%/Aircraft/Spitfire/Models/submodels.xml
-%%DATADIR%%/Aircraft/Spitfire/Models/throttle.ac
-%%DATADIR%%/Aircraft/Spitfire/Models/throttle.xml
-%%DATADIR%%/Aircraft/Spitfire/Models/transparent-bg.rgb
-%%DATADIR%%/Aircraft/Spitfire/Models/trim-knob-rudder.ac
-%%DATADIR%%/Aircraft/Spitfire/Models/trim-knob-rudder.xml
-%%DATADIR%%/Aircraft/Spitfire/Models/trim-knob.rgb
-%%DATADIR%%/Aircraft/Spitfire/Models/trim-wheel-elev.ac
-%%DATADIR%%/Aircraft/Spitfire/Models/trim-wheel-elev.xml
-%%DATADIR%%/Aircraft/Spitfire/Models/trim.ac
-%%DATADIR%%/Aircraft/Spitfire/Models/trim.xml
-%%DATADIR%%/Aircraft/Spitfire/Models/triple.ac
-%%DATADIR%%/Aircraft/Spitfire/Models/triple.xml
-%%DATADIR%%/Aircraft/Spitfire/Models/turn.ac
-%%DATADIR%%/Aircraft/Spitfire/Models/turn.xml
-%%DATADIR%%/Aircraft/Spitfire/Models/undercarriage-up-down.ac
-%%DATADIR%%/Aircraft/Spitfire/Models/undercarriage-up-down.xml
-%%DATADIR%%/Aircraft/Spitfire/Models/vsi.ac
-%%DATADIR%%/Aircraft/Spitfire/Models/vsi.xml
-%%DATADIR%%/Aircraft/Spitfire/Sounds/Spitfire Flyby.wav
-%%DATADIR%%/Aircraft/Spitfire/Sounds/Spitfire MK IX.wav
-%%DATADIR%%/Aircraft/Spitfire/Sounds/canopy_slide.wav
-%%DATADIR%%/Aircraft/Spitfire/Sounds/click.wav
-%%DATADIR%%/Aircraft/Spitfire/Sounds/flaps.wav
-%%DATADIR%%/Aircraft/Spitfire/Sounds/gear.wav
-%%DATADIR%%/Aircraft/Spitfire/Sounds/gunfire_1.wav
-%%DATADIR%%/Aircraft/Spitfire/Sounds/merlin_rpm1.wav
-%%DATADIR%%/Aircraft/Spitfire/Sounds/merlin_rpm2.wav
-%%DATADIR%%/Aircraft/Spitfire/Sounds/merlin_rpm3.wav
-%%DATADIR%%/Aircraft/Spitfire/Sounds/merlin_rpm4.wav
-%%DATADIR%%/Aircraft/Spitfire/Sounds/merlin_shutdown.wav
-%%DATADIR%%/Aircraft/Spitfire/Sounds/merlin_starter.wav
-%%DATADIR%%/Aircraft/Spitfire/Sounds/spita.wav
-%%DATADIR%%/Aircraft/Spitfire/Sounds/spitfire-sound.xml
-%%DATADIR%%/Aircraft/Spitfire/Spitfire_Pilots_Notes.pdf
-%%DATADIR%%/Aircraft/Spitfire/Spitfire_Pilots_Notes.rtf
-%%DATADIR%%/Aircraft/Spitfire/spitfireIIa-set.xml
-%%DATADIR%%/Aircraft/Spitfire/spitfireIIa.xml
-%%DATADIR%%/Aircraft/T38/Engines/J85-GE-5.xml
-%%DATADIR%%/Aircraft/T38/Engines/direct.xml
-%%DATADIR%%/Aircraft/T38/Instruments/IVSI-6kfpm.xml
-%%DATADIR%%/Aircraft/T38/Instruments/T38-ADI.xml
-%%DATADIR%%/Aircraft/T38/Instruments/T38-HSI.xml
-%%DATADIR%%/Aircraft/T38/Instruments/T38-airspeed.xml
-%%DATADIR%%/Aircraft/T38/Instruments/T38-altimeter.xml
-%%DATADIR%%/Aircraft/T38/Instruments/T38-flaps.xml
-%%DATADIR%%/Aircraft/T38/Instruments/T38-gear.xml
-%%DATADIR%%/Aircraft/T38/Instruments/T38-throttle.xml
-%%DATADIR%%/Aircraft/T38/Instruments/Textures/ADI.rgb
-%%DATADIR%%/Aircraft/T38/Instruments/Textures/T38-altimeter.rgb
-%%DATADIR%%/Aircraft/T38/Instruments/Textures/aero.rgb
-%%DATADIR%%/Aircraft/T38/Instruments/Textures/airspeed.rgb
-%%DATADIR%%/Aircraft/T38/Instruments/Textures/altimeter.rgb
-%%DATADIR%%/Aircraft/T38/Instruments/Textures/egt.rgb
-%%DATADIR%%/Aircraft/T38/Instruments/Textures/engine.rgb
-%%DATADIR%%/Aircraft/T38/Instruments/Textures/fuel.rgb
-%%DATADIR%%/Aircraft/T38/Instruments/Textures/fuelflow.rgb
-%%DATADIR%%/Aircraft/T38/Instruments/Textures/gmeter.rgb
-%%DATADIR%%/Aircraft/T38/Instruments/Textures/hsi.rgb
-%%DATADIR%%/Aircraft/T38/Instruments/Textures/ivsi-6kfpm.rgb
-%%DATADIR%%/Aircraft/T38/Instruments/Textures/n1.rgb
-%%DATADIR%%/Aircraft/T38/Instruments/Textures/nozzle.rgb
-%%DATADIR%%/Aircraft/T38/Instruments/Textures/oilpressure.rgb
-%%DATADIR%%/Aircraft/T38/Instruments/Textures/t38-ADI.rgb
-%%DATADIR%%/Aircraft/T38/Instruments/Textures/t38-airspeed.rgb
-%%DATADIR%%/Aircraft/T38/Instruments/Textures/t38-flaps.rgb
-%%DATADIR%%/Aircraft/T38/Instruments/Textures/t38-gear.rgb
-%%DATADIR%%/Aircraft/T38/Instruments/Textures/t38-hsi.rgb
-%%DATADIR%%/Aircraft/T38/Instruments/Textures/throttle.rgb
-%%DATADIR%%/Aircraft/T38/Instruments/aero.xml
-%%DATADIR%%/Aircraft/T38/Instruments/egt-0.xml
-%%DATADIR%%/Aircraft/T38/Instruments/egt-1.xml
-%%DATADIR%%/Aircraft/T38/Instruments/engine.xml
-%%DATADIR%%/Aircraft/T38/Instruments/ff-0.xml
-%%DATADIR%%/Aircraft/T38/Instruments/ff-1.xml
-%%DATADIR%%/Aircraft/T38/Instruments/fuel-0.xml
-%%DATADIR%%/Aircraft/T38/Instruments/fuel-1.xml
-%%DATADIR%%/Aircraft/T38/Instruments/gmeter.xml
-%%DATADIR%%/Aircraft/T38/Instruments/n1-0.xml
-%%DATADIR%%/Aircraft/T38/Instruments/n1-1.xml
-%%DATADIR%%/Aircraft/T38/Instruments/nozzle-0.xml
-%%DATADIR%%/Aircraft/T38/Instruments/nozzle-1.xml
-%%DATADIR%%/Aircraft/T38/Instruments/oilpressure-0.xml
-%%DATADIR%%/Aircraft/T38/Instruments/oilpressure-1.xml
-%%DATADIR%%/Aircraft/T38/Instruments/refuel.xml
-%%DATADIR%%/Aircraft/T38/Models/T38-model.xml
-%%DATADIR%%/Aircraft/T38/Models/T38.ac
-%%DATADIR%%/Aircraft/T38/Models/t38.rgb
-%%DATADIR%%/Aircraft/T38/Panels/T38-panel.xml
-%%DATADIR%%/Aircraft/T38/Panels/Textures/T38-panel.rgb
-%%DATADIR%%/Aircraft/T38/Sounds/T38-engines.wav
-%%DATADIR%%/Aircraft/T38/Sounds/T38-sound.xml
-%%DATADIR%%/Aircraft/T38/T38-electrical.xml
-%%DATADIR%%/Aircraft/T38/T38-read-me.html
-%%DATADIR%%/Aircraft/T38/T38-set.xml
-%%DATADIR%%/Aircraft/T38/T38-splash.rgb
-%%DATADIR%%/Aircraft/T38/T38.xml
 %%DATADIR%%/Aircraft/UIUC/Models/opus/opus-model.xml
 %%DATADIR%%/Aircraft/UIUC/Models/opus/opus.mdl
 %%DATADIR%%/Aircraft/UIUC/README.uiuc.html
@@ -988,268 +554,6 @@
 %%DATADIR%%/Aircraft/UIUC/wrightFlyer1903-v1-nl/Cmfade6.dat
 %%DATADIR%%/Aircraft/UIUC/wrightFlyer1903-v1-nl/README.wrightFlyer1903.html
 %%DATADIR%%/Aircraft/UIUC/wrightFlyer1903-v1-nl/aircraft.dat
-%%DATADIR%%/Aircraft/X15/Engines/XLR99.xml
-%%DATADIR%%/Aircraft/X15/Engines/xlr99_nozzle.xml
-%%DATADIR%%/Aircraft/X15/Instruments/Textures/x15-faces-1.rgb
-%%DATADIR%%/Aircraft/X15/Instruments/Textures/x15-faces-2.rgb
-%%DATADIR%%/Aircraft/X15/Instruments/X15-accelerometer-face.xml
-%%DATADIR%%/Aircraft/X15/Instruments/X15-airspeed-face.xml
-%%DATADIR%%/Aircraft/X15/Instruments/X15-altimeter-face.xml
-%%DATADIR%%/Aircraft/X15/Instruments/X15-inertial-climb-face.xml
-%%DATADIR%%/Aircraft/X15/Instruments/X15-inertial-height-face.xml
-%%DATADIR%%/Aircraft/X15/Instruments/X15-inertial-speed-face.xml
-%%DATADIR%%/Aircraft/X15/Instruments/X15-roll-indicator-face.xml
-%%DATADIR%%/Aircraft/X15/Instruments/accelerometer.xml
-%%DATADIR%%/Aircraft/X15/Instruments/airspeed.xml
-%%DATADIR%%/Aircraft/X15/Instruments/altimeter.xml
-%%DATADIR%%/Aircraft/X15/Instruments/aoa-face.xml
-%%DATADIR%%/Aircraft/X15/Instruments/aoa.xml
-%%DATADIR%%/Aircraft/X15/Instruments/attitude-indicator.xml
-%%DATADIR%%/Aircraft/X15/Instruments/autopilot.xml
-%%DATADIR%%/Aircraft/X15/Instruments/center-cap.xml
-%%DATADIR%%/Aircraft/X15/Instruments/clock.xml
-%%DATADIR%%/Aircraft/X15/Instruments/controls.xml
-%%DATADIR%%/Aircraft/X15/Instruments/dynamic-pressure-face.xml
-%%DATADIR%%/Aircraft/X15/Instruments/dynamic_press.xml
-%%DATADIR%%/Aircraft/X15/Instruments/flaps.xml
-%%DATADIR%%/Aircraft/X15/Instruments/inertialclimb.xml
-%%DATADIR%%/Aircraft/X15/Instruments/inertialheight.xml
-%%DATADIR%%/Aircraft/X15/Instruments/inertialspeed.xml
-%%DATADIR%%/Aircraft/X15/Instruments/nav1.xml
-%%DATADIR%%/Aircraft/X15/Instruments/needle.xml
-%%DATADIR%%/Aircraft/X15/Instruments/roll.xml
-%%DATADIR%%/Aircraft/X15/Models/X15_flight.ac
-%%DATADIR%%/Aircraft/X15/Models/X15_landing.ac
-%%DATADIR%%/Aircraft/X15/Models/X15_readme.txt
-%%DATADIR%%/Aircraft/X15/Models/x150.rgb
-%%DATADIR%%/Aircraft/X15/Models/x151.rgb
-%%DATADIR%%/Aircraft/X15/Models/x152.rgb
-%%DATADIR%%/Aircraft/X15/Models/x153.rgb
-%%DATADIR%%/Aircraft/X15/Models/x154.rgb
-%%DATADIR%%/Aircraft/X15/Models/x155.rgb
-%%DATADIR%%/Aircraft/X15/Models/x156.rgb
-%%DATADIR%%/Aircraft/X15/Models/x157.rgb
-%%DATADIR%%/Aircraft/X15/Models/x158.rgb
-%%DATADIR%%/Aircraft/X15/Panels/Textures/x15-bg.rgb
-%%DATADIR%%/Aircraft/X15/Panels/X15-panel.xml
-%%DATADIR%%/Aircraft/X15/X15-set.xml
-%%DATADIR%%/Aircraft/X15/X15.xml
-%%DATADIR%%/Aircraft/YF-23/COPYING
-%%DATADIR%%/Aircraft/YF-23/Huds/YF-23-fgtbi.xml
-%%DATADIR%%/Aircraft/YF-23/Huds/YF-23-hud1.xml
-%%DATADIR%%/Aircraft/YF-23/Huds/YF-23-hudcard.xml
-%%DATADIR%%/Aircraft/YF-23/Huds/YF-23-hudladder.xml
-%%DATADIR%%/Aircraft/YF-23/Huds/YF-23-instrlabel.xml
-%%DATADIR%%/Aircraft/YF-23/Models/YF-23-model.xml
-%%DATADIR%%/Aircraft/YF-23/Models/YF23-5-1h7.ac
-%%DATADIR%%/Aircraft/YF-23/Models/YF23-tx-002.rgb
-%%DATADIR%%/Aircraft/YF-23/Panels/Instruments/Textures/faces-LE-misc1.rgb
-%%DATADIR%%/Aircraft/YF-23/Panels/Instruments/Textures/trans-green-bg.rgb
-%%DATADIR%%/Aircraft/YF-23/Panels/Instruments/Textures/trans-orange-bg.rgb
-%%DATADIR%%/Aircraft/YF-23/Panels/Instruments/Textures/trans-purple-bg.rgb
-%%DATADIR%%/Aircraft/YF-23/Panels/Instruments/Textures/trans-yellow-bg.rgb
-%%DATADIR%%/Aircraft/YF-23/Panels/Instruments/attitude-indicator.xml
-%%DATADIR%%/Aircraft/YF-23/Panels/Instruments/digital-accl.xml
-%%DATADIR%%/Aircraft/YF-23/Panels/Instruments/digital-agl.xml
-%%DATADIR%%/Aircraft/YF-23/Panels/Instruments/digital-alt.xml
-%%DATADIR%%/Aircraft/YF-23/Panels/Instruments/digital-aoa.xml
-%%DATADIR%%/Aircraft/YF-23/Panels/Instruments/digital-ap-speed-kt.xml
-%%DATADIR%%/Aircraft/YF-23/Panels/Instruments/digital-engine.xml
-%%DATADIR%%/Aircraft/YF-23/Panels/Instruments/digital-flap.xml
-%%DATADIR%%/Aircraft/YF-23/Panels/Instruments/digital-fuel-tank.xml
-%%DATADIR%%/Aircraft/YF-23/Panels/Instruments/digital-fuel-tot.xml
-%%DATADIR%%/Aircraft/YF-23/Panels/Instruments/digital-kias.xml
-%%DATADIR%%/Aircraft/YF-23/Panels/Instruments/digital-mach.xml
-%%DATADIR%%/Aircraft/YF-23/Panels/Instruments/digital-reheat.xml
-%%DATADIR%%/Aircraft/YF-23/Panels/Instruments/digital-roll.xml
-%%DATADIR%%/Aircraft/YF-23/Panels/Instruments/digital-vsi.xml
-%%DATADIR%%/Aircraft/YF-23/Panels/Instruments/digital-wgt.xml
-%%DATADIR%%/Aircraft/YF-23/Panels/Instruments/flap-quadrant.xml
-%%DATADIR%%/Aircraft/YF-23/Panels/Instruments/single-reheat-quadrant.xml
-%%DATADIR%%/Aircraft/YF-23/Panels/Instruments/single-throttle-quadrant.xml
-%%DATADIR%%/Aircraft/YF-23/Panels/Instruments/text-autopilot.xml
-%%DATADIR%%/Aircraft/YF-23/Panels/Textures/YF-23-panel-bg.rgb
-%%DATADIR%%/Aircraft/YF-23/Panels/Textures/panel-trans-mini-bg.rgb
-%%DATADIR%%/Aircraft/YF-23/Panels/YF-23-mini-panel.xml
-%%DATADIR%%/Aircraft/YF-23/Panels/YF-23-vfr-panel.xml
-%%DATADIR%%/Aircraft/YF-23/Sounds/Samples/flaps.wav
-%%DATADIR%%/Aircraft/YF-23/Sounds/Samples/gear-lck.wav
-%%DATADIR%%/Aircraft/YF-23/Sounds/Samples/gear.wav
-%%DATADIR%%/Aircraft/YF-23/Sounds/Samples/jet.wav
-%%DATADIR%%/Aircraft/YF-23/Sounds/Samples/rumble.wav
-%%DATADIR%%/Aircraft/YF-23/Sounds/Samples/squeal.wav
-%%DATADIR%%/Aircraft/YF-23/Sounds/Samples/stall.wav
-%%DATADIR%%/Aircraft/YF-23/Sounds/Samples/whine.wav
-%%DATADIR%%/Aircraft/YF-23/Sounds/Samples/wind.wav
-%%DATADIR%%/Aircraft/YF-23/Sounds/YF-23-sound.xml
-%%DATADIR%%/Aircraft/YF-23/Systems/YF-23-autopilot.xml
-%%DATADIR%%/Aircraft/YF-23/Systems/YF-23-electrical.xml
-%%DATADIR%%/Aircraft/YF-23/YF-23-readme.txt
-%%DATADIR%%/Aircraft/YF-23/YF-23-set.xml
-%%DATADIR%%/Aircraft/YF-23/YF-23-yasim-set.xml
-%%DATADIR%%/Aircraft/YF-23/YF-23-yasim.xml
-%%DATADIR%%/Aircraft/a4/Models/READMEmodel.txt
-%%DATADIR%%/Aircraft/a4/Models/a4-blue-0.rgb
-%%DATADIR%%/Aircraft/a4/Models/a4-blue-1.rgb
-%%DATADIR%%/Aircraft/a4/Models/a4-blue-2.rgb
-%%DATADIR%%/Aircraft/a4/Models/a4-blue-3.rgb
-%%DATADIR%%/Aircraft/a4/Models/a4-blue-4.rgb
-%%DATADIR%%/Aircraft/a4/Models/a4-blue-5.rgb
-%%DATADIR%%/Aircraft/a4/Models/a4-blue-6.rgb
-%%DATADIR%%/Aircraft/a4/Models/a4-blue-7.rgb
-%%DATADIR%%/Aircraft/a4/Models/a4-blue-8.rgb
-%%DATADIR%%/Aircraft/a4/Models/a4-blue-uiuc.xml
-%%DATADIR%%/Aircraft/a4/Models/a4-blue.ac
-%%DATADIR%%/Aircraft/a4/Models/a4-blue.xml
-%%DATADIR%%/Aircraft/a4/Models/attitude-detail.rgb
-%%DATADIR%%/Aircraft/a4/Models/attitude.ac
-%%DATADIR%%/Aircraft/a4/Models/attitude.rgb
-%%DATADIR%%/Aircraft/a4/Models/attitude.xml
-%%DATADIR%%/Aircraft/a4/Sounds/uiuc/a4-sound-uiuc.xml
-%%DATADIR%%/Aircraft/a4/a4-panel.xml
-%%DATADIR%%/Aircraft/a4/a4-set.xml
-%%DATADIR%%/Aircraft/a4/a4-sound.xml
-%%DATADIR%%/Aircraft/a4/a4-sound.xml.new
-%%DATADIR%%/Aircraft/a4/a4-uiuc-set.xml
-%%DATADIR%%/Aircraft/a4/a4.xml
-%%DATADIR%%/Aircraft/a4/aoa-panel.xml
-%%DATADIR%%/Aircraft/a4/fuel-gauge.rgb
-%%DATADIR%%/Aircraft/a4/fuel-gauge.xml
-%%DATADIR%%/Aircraft/a4/transparent-bg.rgb
-%%DATADIR%%/Aircraft/beech99/Instruments/Textures/b99-altimeter-256.rgb
-%%DATADIR%%/Aircraft/beech99/Instruments/Textures/b99-asi-256.rgb
-%%DATADIR%%/Aircraft/beech99/Instruments/Textures/b99-attitude-indicator.rgb
-%%DATADIR%%/Aircraft/beech99/Instruments/Textures/b99-bezel-256.rgb
-%%DATADIR%%/Aircraft/beech99/Instruments/Textures/b99-blister.rgb
-%%DATADIR%%/Aircraft/beech99/Instruments/Textures/b99-compass-256.rgb
-%%DATADIR%%/Aircraft/beech99/Instruments/Textures/b99-faces-3.rgb
-%%DATADIR%%/Aircraft/beech99/Instruments/Textures/b99-faces-6.rgb
-%%DATADIR%%/Aircraft/beech99/Instruments/Textures/b99-flaps-256.rgb
-%%DATADIR%%/Aircraft/beech99/Instruments/Textures/b99-fuelflow-256.rgb
-%%DATADIR%%/Aircraft/beech99/Instruments/Textures/b99-geardn-256.rgb
-%%DATADIR%%/Aircraft/beech99/Instruments/Textures/b99-gearind-256.rgb
-%%DATADIR%%/Aircraft/beech99/Instruments/Textures/b99-gearind-nslr-256.rgb
-%%DATADIR%%/Aircraft/beech99/Instruments/Textures/b99-gearup-256.rgb
-%%DATADIR%%/Aircraft/beech99/Instruments/Textures/b99-handles.rgb
-%%DATADIR%%/Aircraft/beech99/Instruments/Textures/b99-hsi1.rgb
-%%DATADIR%%/Aircraft/beech99/Instruments/Textures/b99-hsi2.rgb
-%%DATADIR%%/Aircraft/beech99/Instruments/Textures/b99-hsi3.rgb
-%%DATADIR%%/Aircraft/beech99/Instruments/Textures/b99-hsi4.rgb
-%%DATADIR%%/Aircraft/beech99/Instruments/Textures/b99-itt-256.rgb
-%%DATADIR%%/Aircraft/beech99/Instruments/Textures/b99-led.rgb
-%%DATADIR%%/Aircraft/beech99/Instruments/Textures/b99-maintc.rgb
-%%DATADIR%%/Aircraft/beech99/Instruments/Textures/b99-misc-1.rgb
-%%DATADIR%%/Aircraft/beech99/Instruments/Textures/b99-misc1.rgb
-%%DATADIR%%/Aircraft/beech99/Instruments/Textures/b99-navcom-radios.rgb
-%%DATADIR%%/Aircraft/beech99/Instruments/Textures/b99-omi-256.rgb
-%%DATADIR%%/Aircraft/beech99/Instruments/Textures/b99-omi-i-256.rgb
-%%DATADIR%%/Aircraft/beech99/Instruments/Textures/b99-omi-m-256.rgb
-%%DATADIR%%/Aircraft/beech99/Instruments/Textures/b99-omi-o-256.rgb
-%%DATADIR%%/Aircraft/beech99/Instruments/Textures/b99-prop-256.rgb
-%%DATADIR%%/Aircraft/beech99/Instruments/Textures/b99-quadrant-256.rgb
-%%DATADIR%%/Aircraft/beech99/Instruments/Textures/b99-rpm-256.rgb
-%%DATADIR%%/Aircraft/beech99/Instruments/Textures/b99-switcheddn-256.rgb
-%%DATADIR%%/Aircraft/beech99/Instruments/Textures/b99-switchedup-256.rgb
-%%DATADIR%%/Aircraft/beech99/Instruments/Textures/b99-tailnumber-256.rgb
-%%DATADIR%%/Aircraft/beech99/Instruments/Textures/b99-tc-256.rgb
-%%DATADIR%%/Aircraft/beech99/Instruments/Textures/b99-tc-needle-256.rgb
-%%DATADIR%%/Aircraft/beech99/Instruments/Textures/b99-temp-pressure-256.rgb
-%%DATADIR%%/Aircraft/beech99/Instruments/Textures/b99-torque-256.rgb
-%%DATADIR%%/Aircraft/beech99/Instruments/Textures/b99-trn1.rgb
-%%DATADIR%%/Aircraft/beech99/Instruments/Textures/b99-vsi-256.rgb
-%%DATADIR%%/Aircraft/beech99/Instruments/Textures/old_b99-asi-256.rgb
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-adf-radio.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-altimeter.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-antiice-0.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-antiice-1.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-asi.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-attitude-indicator.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-autopilot.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-brakes.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-clock.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-dme.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-enginerpm-0.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-enginerpm-1.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-flaps.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-fuelflow-0.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-fuelflow-1.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-gear-indicator.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-gear.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-hsi-bk-hi.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-itt-0.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-itt-1.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-landing-0.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-landing-1.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-markerbeacon.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-mixture-knob.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-nav2.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-navcom-kx155.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-navlight.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-oil-0.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-oil-1.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-pitot-0.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-pitot-1.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-prop-0.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-prop-1.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-prop-auto.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-prop-manual.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-propeller-knob.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-tailflood.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-tailnumber.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-taxilight.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-throttle-knob.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-throttle-quadrant.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-torque-0.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-torque-1.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-turn.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-vertical.xml
-%%DATADIR%%/Aircraft/beech99/Instruments/b99-xpdr-kt76c.xml
-%%DATADIR%%/Aircraft/beech99/Models.old/READMEmodel.txt
-%%DATADIR%%/Aircraft/beech99/Models.old/beech99-model.xml
-%%DATADIR%%/Aircraft/beech99/Models.old/beech99.ac
-%%DATADIR%%/Aircraft/beech99/Models.old/beech_990.rgb
-%%DATADIR%%/Aircraft/beech99/Models.old/beech_991.rgb
-%%DATADIR%%/Aircraft/beech99/Models.old/beech_992.rgb
-%%DATADIR%%/Aircraft/beech99/Models.old/beech_993.rgb
-%%DATADIR%%/Aircraft/beech99/Models.old/beech_994.rgb
-%%DATADIR%%/Aircraft/beech99/Models.old/beech_995.rgb
-%%DATADIR%%/Aircraft/beech99/Models.old/beech_996.rgb
-%%DATADIR%%/Aircraft/beech99/Models.old/beech_997.rgb
-%%DATADIR%%/Aircraft/beech99/Models.old/beech_998.rgb
-%%DATADIR%%/Aircraft/beech99/Models.old/beech_999.rgb
-%%DATADIR%%/Aircraft/beech99/Models.old/uiuc/beech99/beech99-model.xml
-%%DATADIR%%/Aircraft/beech99/Models/READMEmodel.txt
-%%DATADIR%%/Aircraft/beech99/Models/backup_beech99.ac
-%%DATADIR%%/Aircraft/beech99/Models/beech99-model.xml
-%%DATADIR%%/Aircraft/beech99/Models/beech99.ac
-%%DATADIR%%/Aircraft/beech99/Models/beech_990.rgb
-%%DATADIR%%/Aircraft/beech99/Models/beech_991.rgb
-%%DATADIR%%/Aircraft/beech99/Models/beech_992.rgb
-%%DATADIR%%/Aircraft/beech99/Models/beech_993.rgb
-%%DATADIR%%/Aircraft/beech99/Models/beech_994.rgb
-%%DATADIR%%/Aircraft/beech99/Models/beech_995.rgb
-%%DATADIR%%/Aircraft/beech99/Models/beech_996.rgb
-%%DATADIR%%/Aircraft/beech99/Models/beech_997.rgb
-%%DATADIR%%/Aircraft/beech99/Models/beech_998.rgb
-%%DATADIR%%/Aircraft/beech99/Models/beech_999.rgb
-%%DATADIR%%/Aircraft/beech99/Models/uiuc/beech99/beech99-model.xml
-%%DATADIR%%/Aircraft/beech99/Sounds/beech99-sound.xml
-%%DATADIR%%/Aircraft/beech99/b99p1.rgb
-%%DATADIR%%/Aircraft/beech99/b99p2.rgb
-%%DATADIR%%/Aircraft/beech99/b99p3.rgb
-%%DATADIR%%/Aircraft/beech99/b99p4.rgb
-%%DATADIR%%/Aircraft/beech99/b99p5.rgb
-%%DATADIR%%/Aircraft/beech99/b99p6.rgb
-%%DATADIR%%/Aircraft/beech99/b99p7.rgb
-%%DATADIR%%/Aircraft/beech99/b99p8.rgb
-%%DATADIR%%/Aircraft/beech99/b99panel.rgb
-%%DATADIR%%/Aircraft/beech99/beech99-electrical.xml
-%%DATADIR%%/Aircraft/beech99/beech99-electrical.xml.old
-%%DATADIR%%/Aircraft/beech99/beech99-panel.xml
-%%DATADIR%%/Aircraft/beech99/beech99-v1-uiuc-set.xml
-%%DATADIR%%/Aircraft/beech99/beech99-yasim-set.xml
-%%DATADIR%%/Aircraft/beech99/beech99-yasim.xml
-%%DATADIR%%/Aircraft/beech99/old_b99p1.rgb
 %%DATADIR%%/Aircraft/bo105/Instruments/asi/asi.ac
 %%DATADIR%%/Aircraft/bo105/Instruments/asi/asi.rgb
 %%DATADIR%%/Aircraft/bo105/Instruments/asi/asi.xml
@@ -1264,10 +568,7 @@
 %%DATADIR%%/Aircraft/bo105/bo105-set.xml
 %%DATADIR%%/Aircraft/bo105/bo105-sound.xml
 %%DATADIR%%/Aircraft/bo105/bo105.xml
-%%DATADIR%%/Aircraft/c172-fs-set.xml
-%%DATADIR%%/Aircraft/c172-le/Models/c172-le-02.ac
-%%DATADIR%%/Aircraft/c172-le/Models/c172-leee.xml
-%%DATADIR%%/Aircraft/c172-le/c172-le-set.xml
+%%DATADIR%%/Aircraft/bo105/thumbnail.jpg
 %%DATADIR%%/Aircraft/c172/610x-autopilot.xml
 %%DATADIR%%/Aircraft/c172/Engines/eng_io320.xml
 %%DATADIR%%/Aircraft/c172/Engines/prop_75in2f.xml
@@ -1306,12 +607,14 @@
 %%DATADIR%%/Aircraft/c172/c172-ifr-set.xml
 %%DATADIR%%/Aircraft/c172/c172-sound.xml
 %%DATADIR%%/Aircraft/c172/c172-yasim.xml
+%%DATADIR%%/Aircraft/c172/thumbnail.jpg
 %%DATADIR%%/Aircraft/c172p/Engines/eng_io320.xml
 %%DATADIR%%/Aircraft/c172p/Engines/prop_75in2f.xml
 %%DATADIR%%/Aircraft/c172p/Models/c172p-01.rgb
 %%DATADIR%%/Aircraft/c172p/Models/c172p-02.rgb
 %%DATADIR%%/Aircraft/c172p/Models/c172p-2d-panel.xml
 %%DATADIR%%/Aircraft/c172p/Models/c172p-int-01.rgb
+%%DATADIR%%/Aircraft/c172p/Models/c172p-int-02.rgb
 %%DATADIR%%/Aircraft/c172p/Models/c172p.ac
 %%DATADIR%%/Aircraft/c172p/Models/c172p.xml
 %%DATADIR%%/Aircraft/c172p/Models/labels/labelbcn.xml
@@ -1327,41 +630,8 @@
 %%DATADIR%%/Aircraft/c172p/c172p-2dpanel-set.xml
 %%DATADIR%%/Aircraft/c172p/c172p-set.xml
 %%DATADIR%%/Aircraft/c172p/c172p.xml
-%%DATADIR%%/Aircraft/c172r/Engines/engIO360C.xml
-%%DATADIR%%/Aircraft/c172r/Engines/prop_75in2f.xml
-%%DATADIR%%/Aircraft/c172r/README.c172r
-%%DATADIR%%/Aircraft/c172r/c172-3d-yasim-set.xml
-%%DATADIR%%/Aircraft/c172r/c172-610x-jsbsim-set.xml
-%%DATADIR%%/Aircraft/c172r/c172-610x-set.xml
-%%DATADIR%%/Aircraft/c172r/c172-yasim-set.xml
-%%DATADIR%%/Aircraft/c172r/c172r-3d-jsbsim-set.xml
-%%DATADIR%%/Aircraft/c172r/c172r-3d-set.xml
-%%DATADIR%%/Aircraft/c172r/c172r-3d-yasim-set.xml
-%%DATADIR%%/Aircraft/c172r/c172r-base.xml
-%%DATADIR%%/Aircraft/c172r/c172r-jsbsim-base.xml
-%%DATADIR%%/Aircraft/c172r/c172r-jsbsim-set.xml
-%%DATADIR%%/Aircraft/c172r/c172r-set.xml
-%%DATADIR%%/Aircraft/c172r/c172r-yasim-base.xml
-%%DATADIR%%/Aircraft/c172r/c172r-yasim-set.xml
-%%DATADIR%%/Aircraft/c172r/c172r.xml
-%%DATADIR%%/Aircraft/c172x/Engines/engIO360C.xml
-%%DATADIR%%/Aircraft/c172x/Engines/prop_75in2f.xml
-%%DATADIR%%/Aircraft/c172x/c172x-set.xml
-%%DATADIR%%/Aircraft/c172x/c172x.xml
-%%DATADIR%%/Aircraft/c182/Engines/engIO540AB1A5.xml
-%%DATADIR%%/Aircraft/c182/Engines/prop_81in2v.xml
-%%DATADIR%%/Aircraft/c182/Panels/Textures/c182s-panel-01.rgb
-%%DATADIR%%/Aircraft/c182/Panels/Textures/c182s-panel-02.rgb
-%%DATADIR%%/Aircraft/c182/Panels/Textures/c182s-panel-03.rgb
-%%DATADIR%%/Aircraft/c182/Panels/Textures/c182s-panel-04.rgb
-%%DATADIR%%/Aircraft/c182/Panels/Textures/c182s-panel-05.rgb
-%%DATADIR%%/Aircraft/c182/Panels/Textures/c182s-panel-06.rgb
-%%DATADIR%%/Aircraft/c182/Panels/c182s-panel.xml
-%%DATADIR%%/Aircraft/c182/README.c182
-%%DATADIR%%/Aircraft/c182/c182-2dpanel-set.xml
-%%DATADIR%%/Aircraft/c182/c182-set.xml
-%%DATADIR%%/Aircraft/c182/c182-sound.xml
-%%DATADIR%%/Aircraft/c182/c182.xml
+%%DATADIR%%/Aircraft/c172p/kap140.nas
+%%DATADIR%%/Aircraft/c172p/thumbnail.jpg
 %%DATADIR%%/Aircraft/c310/310-panel-bg.rgb
 %%DATADIR%%/Aircraft/c310/Engines/engIO470D.xml
 %%DATADIR%%/Aircraft/c310/Engines/propC10v.xml
@@ -1423,40 +693,26 @@
 %%DATADIR%%/Aircraft/c310u3a/c310u3a-panel-08.rgb
 %%DATADIR%%/Aircraft/c310u3a/c310u3a-panel.xml
 %%DATADIR%%/Aircraft/c310u3a/c310u3a-set.xml
+%%DATADIR%%/Aircraft/c310u3a/thumbnail.jpg
 %%DATADIR%%/Aircraft/c310u3a/transparent-bg.rgb
-%%DATADIR%%/Aircraft/dc3/Models/Image1.rgb
-%%DATADIR%%/Aircraft/dc3/Models/dc3-01.rgb
-%%DATADIR%%/Aircraft/dc3/Models/dc3-02.rgb
-%%DATADIR%%/Aircraft/dc3/Models/dc3-03.rgb
-%%DATADIR%%/Aircraft/dc3/Models/dc3-2d-panel.xml
-%%DATADIR%%/Aircraft/dc3/Models/dc3-cockpit.ac
-%%DATADIR%%/Aircraft/dc3/Models/dc3-cockpit.xml
-%%DATADIR%%/Aircraft/dc3/Models/dc3-dpm-3d-panel.xml
-%%DATADIR%%/Aircraft/dc3/Models/dc3-dpm.ac
-%%DATADIR%%/Aircraft/dc3/Models/dc3-dpm.xml
-%%DATADIR%%/Aircraft/dc3/Models/dc3-flaps-indicator.ac
-%%DATADIR%%/Aircraft/dc3/Models/dc3-flaps-indicator.xml
-%%DATADIR%%/Aircraft/dc3/Models/dc3-overhead-panel.ac
-%%DATADIR%%/Aircraft/dc3/Models/dc3-overhead-panel.xml
-%%DATADIR%%/Aircraft/dc3/Models/dc3-pedals.ac
-%%DATADIR%%/Aircraft/dc3/Models/dc3-pedals.xml
-%%DATADIR%%/Aircraft/dc3/Models/dc3-pilot-seat.ac
-%%DATADIR%%/Aircraft/dc3/Models/dc3-pilot-seat.xml
-%%DATADIR%%/Aircraft/dc3/Models/dc3-throttle.ac
-%%DATADIR%%/Aircraft/dc3/Models/dc3-throttle.xml
-%%DATADIR%%/Aircraft/dc3/Models/floor.rgb
-%%DATADIR%%/Aircraft/dc3/Models/seat.rgb
-%%DATADIR%%/Aircraft/dc3/Models/textur.rgb
-%%DATADIR%%/Aircraft/dc3/Sounds/engine_idle.wav
-%%DATADIR%%/Aircraft/dc3/Sounds/engine_running.wav
-%%DATADIR%%/Aircraft/dc3/Sounds/flap_move.wav
-%%DATADIR%%/Aircraft/dc3/Sounds/gear_move.wav
-%%DATADIR%%/Aircraft/dc3/Sounds/lock.wav
-%%DATADIR%%/Aircraft/dc3/Sounds/read-trev.txt
-%%DATADIR%%/Aircraft/dc3/Sounds/stall_horn.wav
-%%DATADIR%%/Aircraft/dc3/dc3-set.xml
-%%DATADIR%%/Aircraft/dc3/dc3-sound.xml
-%%DATADIR%%/Aircraft/dc3/dc3.xml
+%%DATADIR%%/Aircraft/dhc2/Models/dhc2.nas
+%%DATADIR%%/Aircraft/dhc2/Models/dhc2f.ac
+%%DATADIR%%/Aircraft/dhc2/Models/dhc2floats.xml
+%%DATADIR%%/Aircraft/dhc2/Models/dhc2livery.rgb
+%%DATADIR%%/Aircraft/dhc2/Models/gaugefaces.rgb
+%%DATADIR%%/Aircraft/dhc2/Models/gauges256.rgb
+%%DATADIR%%/Aircraft/dhc2/Models/panel.rgb
+%%DATADIR%%/Aircraft/dhc2/Models/tpalivery.rgb
+%%DATADIR%%/Aircraft/dhc2/Sound/click.wav
+%%DATADIR%%/Aircraft/dhc2/Sound/waspjr.wav
+%%DATADIR%%/Aircraft/dhc2/dhc-2.rgb
+%%DATADIR%%/Aircraft/dhc2/dhc-2splash.rgb
+%%DATADIR%%/Aircraft/dhc2/dhc2-electrical.xml
+%%DATADIR%%/Aircraft/dhc2/dhc2-sound.xml
+%%DATADIR%%/Aircraft/dhc2/dhc2F-set.xml
+%%DATADIR%%/Aircraft/dhc2/dhc2F.xml
+%%DATADIR%%/Aircraft/dhc2/keys.txt
+%%DATADIR%%/Aircraft/dhc2/thumbnail.jpg
 %%DATADIR%%/Aircraft/f16/Engines/F100-PW-229.xml
 %%DATADIR%%/Aircraft/f16/Engines/direct.xml
 %%DATADIR%%/Aircraft/f16/Hud/default.xml
@@ -1515,22 +771,7 @@
 %%DATADIR%%/Aircraft/f16/f16-splash.rgb
 %%DATADIR%%/Aircraft/f16/f16-submodels.xml
 %%DATADIR%%/Aircraft/f16/f16.xml
-%%DATADIR%%/Aircraft/j22/Huds/j22-fgtbi.xml
-%%DATADIR%%/Aircraft/j22/Huds/j22-hud1.xml
-%%DATADIR%%/Aircraft/j22/Huds/j22-hudcard.xml
-%%DATADIR%%/Aircraft/j22/Huds/j22-hudladder.xml
-%%DATADIR%%/Aircraft/j22/Huds/j22-instrlabel.xml
-%%DATADIR%%/Aircraft/j22/Models/gear.rgb
-%%DATADIR%%/Aircraft/j22/Models/interior.rgb
-%%DATADIR%%/Aircraft/j22/Models/j22.ac
-%%DATADIR%%/Aircraft/j22/Models/j22.xml
-%%DATADIR%%/Aircraft/j22/Models/pilot.head.rgb
-%%DATADIR%%/Aircraft/j22/Models/skin-green-gray-body.rgb
-%%DATADIR%%/Aircraft/j22/Models/skin-green-gray-tail.rgb
-%%DATADIR%%/Aircraft/j22/Models/skin-green-gray-wing.above.rgb
-%%DATADIR%%/Aircraft/j22/j22-readme.txt
-%%DATADIR%%/Aircraft/j22/j22-set.xml
-%%DATADIR%%/Aircraft/j22/j22-yasim.xml
+%%DATADIR%%/Aircraft/f16/thumbnail.jpg
 %%DATADIR%%/Aircraft/j3cub/Models/j3alt.ac
 %%DATADIR%%/Aircraft/j3cub/Models/j3alt.rgb
 %%DATADIR%%/Aircraft/j3cub/Models/j3alt.xml
@@ -1555,22 +796,7 @@
 %%DATADIR%%/Aircraft/j3cub/cub-electrical.xml
 %%DATADIR%%/Aircraft/j3cub/j3cub-set.xml
 %%DATADIR%%/Aircraft/j3cub/j3cub.xml
-%%DATADIR%%/Aircraft/ornithopter/Models/C-GPTR-003.rgb
-%%DATADIR%%/Aircraft/ornithopter/Models/C-GPTR-8-4.ac
-%%DATADIR%%/Aircraft/ornithopter/Models/alt.rgb
-%%DATADIR%%/Aircraft/ornithopter/Models/asi.rgb
-%%DATADIR%%/Aircraft/ornithopter/Models/bezelgrey.rgb
-%%DATADIR%%/Aircraft/ornithopter/Models/compass.ac
-%%DATADIR%%/Aircraft/ornithopter/Models/compass.rgb
-%%DATADIR%%/Aircraft/ornithopter/Models/compass.xml
-%%DATADIR%%/Aircraft/ornithopter/Models/ornithopter-8-4-model.xml
-%%DATADIR%%/Aircraft/ornithopter/Models/ornithopteralt.ac
-%%DATADIR%%/Aircraft/ornithopter/Models/ornithopteralt.xml
-%%DATADIR%%/Aircraft/ornithopter/Models/ornithopterasi.ac
-%%DATADIR%%/Aircraft/ornithopter/Models/ornithopterasi.xml
-%%DATADIR%%/Aircraft/ornithopter/Models/press.rgb
-%%DATADIR%%/Aircraft/ornithopter/Sounds/ornithopter-sound.xml
-%%DATADIR%%/Aircraft/ornithopter/ornithopter-set.xml
+%%DATADIR%%/Aircraft/j3cub/thumbnail.jpg
 %%DATADIR%%/Aircraft/p51d/Models/hotspotgrid.rgb
 %%DATADIR%%/Aircraft/p51d/Models/p51d-jw-01.rgb
 %%DATADIR%%/Aircraft/p51d/Models/p51d-jw-02.rgb
@@ -1659,6 +885,7 @@
 %%DATADIR%%/Aircraft/p51d/p51d-set.xml
 %%DATADIR%%/Aircraft/p51d/p51d-sound.xml
 %%DATADIR%%/Aircraft/p51d/p51d.xml
+%%DATADIR%%/Aircraft/p51d/thumbnail.jpg
 %%DATADIR%%/Aircraft/pa28-161/Models/bench-back.rgb
 %%DATADIR%%/Aircraft/pa28-161/Models/glareshield.rgb
 %%DATADIR%%/Aircraft/pa28-161/Models/pa28-161-01.rgb
@@ -1672,247 +899,10 @@
 %%DATADIR%%/Aircraft/pa28-161/README.pa28-161
 %%DATADIR%%/Aircraft/pa28-161/pa28-161-set.xml
 %%DATADIR%%/Aircraft/pa28-161/pa28-161.xml
-%%DATADIR%%/Aircraft/seahawk/Models/HelmetMk1a-ver6.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/SeaHawk-FGA6-WV859.ac
-%%DATADIR%%/Aircraft/seahawk/Models/adf.ac
-%%DATADIR%%/Aircraft/seahawk/Models/adf.xml
-%%DATADIR%%/Aircraft/seahawk/Models/airbrake-warning.ac
-%%DATADIR%%/Aircraft/seahawk/Models/airbrake-warning.xml
-%%DATADIR%%/Aircraft/seahawk/Models/airbrake.xml
-%%DATADIR%%/Aircraft/seahawk/Models/altimeter.ac
-%%DATADIR%%/Aircraft/seahawk/Models/altimeter.xml
-%%DATADIR%%/Aircraft/seahawk/Models/asi-deck.ac
-%%DATADIR%%/Aircraft/seahawk/Models/asi-deck.xml
-%%DATADIR%%/Aircraft/seahawk/Models/asi.ac
-%%DATADIR%%/Aircraft/seahawk/Models/asi.xml
-%%DATADIR%%/Aircraft/seahawk/Models/attitude-mod1.ac
-%%DATADIR%%/Aircraft/seahawk/Models/attitude.xml
-%%DATADIR%%/Aircraft/seahawk/Models/dme.ac
-%%DATADIR%%/Aircraft/seahawk/Models/dme.xml
-%%DATADIR%%/Aircraft/seahawk/Models/egt.ac
-%%DATADIR%%/Aircraft/seahawk/Models/egt.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/egt.xml
-%%DATADIR%%/Aircraft/seahawk/Models/flap-emrgy-lowering.xml
-%%DATADIR%%/Aircraft/seahawk/Models/flap.ac
-%%DATADIR%%/Aircraft/seahawk/Models/flap.xml
-%%DATADIR%%/Aircraft/seahawk/Models/flaps.ac
-%%DATADIR%%/Aircraft/seahawk/Models/flaps.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/flaps.xml
-%%DATADIR%%/Aircraft/seahawk/Models/fuel-aft.ac
-%%DATADIR%%/Aircraft/seahawk/Models/fuel-aft.xml
-%%DATADIR%%/Aircraft/seahawk/Models/fuel-fwd.ac
-%%DATADIR%%/Aircraft/seahawk/Models/fuel-fwd.xml
-%%DATADIR%%/Aircraft/seahawk/Models/fuel.ac
-%%DATADIR%%/Aircraft/seahawk/Models/gear.ac
-%%DATADIR%%/Aircraft/seahawk/Models/gear.xml
-%%DATADIR%%/Aircraft/seahawk/Models/ggs-mod1.ac
-%%DATADIR%%/Aircraft/seahawk/Models/ggs.xml
-%%DATADIR%%/Aircraft/seahawk/Models/handle-flap-emergy.ac
-%%DATADIR%%/Aircraft/seahawk/Models/helmet-Mk1a.ac
-%%DATADIR%%/Aircraft/seahawk/Models/hook-green.ac
-%%DATADIR%%/Aircraft/seahawk/Models/hook-green.xml
-%%DATADIR%%/Aircraft/seahawk/Models/hotspotgrid.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/hsi.ac
-%%DATADIR%%/Aircraft/seahawk/Models/hsi.xml
-%%DATADIR%%/Aircraft/seahawk/Models/hunter-adf.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/hunter-airbrake.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/hunter-alt.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/hunter-altpress.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/hunter-asi.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/hunter-attitude-bezel.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/hunter-attitude.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/hunter-dme.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/hunter-egt.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/hunter-emgy-flap.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/hunter-flap-emgy-lbl.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/hunter-flaps.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/hunter-fuel.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/hunter-gear.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/hunter-gearwarn.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/hunter-ggs-02.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/hunter-ggs.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/hunter-large-bezel.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/hunter-mach.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/hunter-remote.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/hunter-remotearrow.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/hunter-rpm.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/hunter-trim.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/hunter-turn-face.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/hunter-turn.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/hunter-vsi.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/hunter__a.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/mach.ac
-%%DATADIR%%/Aircraft/seahawk/Models/mach.xml
-%%DATADIR%%/Aircraft/seahawk/Models/rpm.ac
-%%DATADIR%%/Aircraft/seahawk/Models/rpm.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/rpm.xml
-%%DATADIR%%/Aircraft/seahawk/Models/seahawk-3d-model.xml
-%%DATADIR%%/Aircraft/seahawk/Models/seahawk-airbrake.ac
-%%DATADIR%%/Aircraft/seahawk/Models/seahawk-airbrakes.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/seahawk-deck-asi.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/seahawk-flap.ac
-%%DATADIR%%/Aircraft/seahawk/Models/seahawk-flaps.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/seahawk-gear.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/seahawk-hook-down.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/seahawk-mach.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/seahawk-panel-hotspots.xml
-%%DATADIR%%/Aircraft/seahawk/Models/seahawk-tx-00-1.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/seahawk-tx-01-1.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/sig.xml
-%%DATADIR%%/Aircraft/seahawk/Models/signature.ac
-%%DATADIR%%/Aircraft/seahawk/Models/signature.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/switch-hook.ac
-%%DATADIR%%/Aircraft/seahawk/Models/switch-hook.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/switch-hook.xml
-%%DATADIR%%/Aircraft/seahawk/Models/transparent-bg.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/trim.ac
-%%DATADIR%%/Aircraft/seahawk/Models/trim.xml
-%%DATADIR%%/Aircraft/seahawk/Models/turn.ac
-%%DATADIR%%/Aircraft/seahawk/Models/turn.xml
-%%DATADIR%%/Aircraft/seahawk/Models/undercarriage-up-down.ac
-%%DATADIR%%/Aircraft/seahawk/Models/undercarriage-up-down.rgb
-%%DATADIR%%/Aircraft/seahawk/Models/undercarriage-up-down.xml
-%%DATADIR%%/Aircraft/seahawk/Models/vsi.ac
-%%DATADIR%%/Aircraft/seahawk/Models/vsi.xml
-%%DATADIR%%/Aircraft/seahawk/Models/warning.ac
-%%DATADIR%%/Aircraft/seahawk/Panel/seahawk-mini-panel.xml
-%%DATADIR%%/Aircraft/seahawk/Panel/seahawk-panel-01.rgb
-%%DATADIR%%/Aircraft/seahawk/Panel/seahawk-panel-02.rgb
-%%DATADIR%%/Aircraft/seahawk/Panel/seahawk-panel-03.rgb
-%%DATADIR%%/Aircraft/seahawk/Panel/seahawk-panel-04.rgb
-%%DATADIR%%/Aircraft/seahawk/Panel/seahawk-panel-11.rgb
-%%DATADIR%%/Aircraft/seahawk/Panel/seahawk-panel-12.rgb
-%%DATADIR%%/Aircraft/seahawk/Panel/seahawk-panel-bg.rgb
-%%DATADIR%%/Aircraft/seahawk/Panel/seahawk-vfr-panel.xml
-%%DATADIR%%/Aircraft/seahawk/SeaHawk-WV908.ac
-%%DATADIR%%/Aircraft/seahawk/SeaHawk.3ds
-%%DATADIR%%/Aircraft/seahawk/SeaHawk.ac
-%%DATADIR%%/Aircraft/seahawk/SeaHawkpair.3ds
-%%DATADIR%%/Aircraft/seahawk/Sounds/Samples/flaps.wav
-%%DATADIR%%/Aircraft/seahawk/Sounds/Samples/gear-lck.wav
-%%DATADIR%%/Aircraft/seahawk/Sounds/Samples/gear.wav
-%%DATADIR%%/Aircraft/seahawk/Sounds/Samples/jet.wav
-%%DATADIR%%/Aircraft/seahawk/Sounds/Samples/rumble.wav
-%%DATADIR%%/Aircraft/seahawk/Sounds/Samples/squeal.wav
-%%DATADIR%%/Aircraft/seahawk/Sounds/Samples/stall.wav
-%%DATADIR%%/Aircraft/seahawk/Sounds/Samples/whine.wav
-%%DATADIR%%/Aircraft/seahawk/Sounds/Samples/wind.wav
-%%DATADIR%%/Aircraft/seahawk/Sounds/seahawk-sound.xml
-%%DATADIR%%/Aircraft/seahawk/Systems/seahawk-autopilot.xml
-%%DATADIR%%/Aircraft/seahawk/Systems/seahawk-electrical.xml
-%%DATADIR%%/Aircraft/seahawk/seahawk-3d-yasim.xml
-%%DATADIR%%/Aircraft/seahawk/seahawk-model.xml
-%%DATADIR%%/Aircraft/seahawk/seahawk-readme.txt
-%%DATADIR%%/Aircraft/seahawk/seahawk-set.xml
-%%DATADIR%%/Aircraft/seahawk/seahawk-yasim.xml
-%%DATADIR%%/Aircraft/sgs233/Instruments/Textures/glider-misc.rgb
-%%DATADIR%%/Aircraft/sgs233/Instruments/netto-vario.xml
-%%DATADIR%%/Aircraft/sgs233/Instruments/vario.xml
-%%DATADIR%%/Aircraft/sgs233/Instruments/yaw-string.xml
-%%DATADIR%%/Aircraft/sgs233/Models/readme.txt
-%%DATADIR%%/Aircraft/sgs233/Models/s2-33_00.rgb
-%%DATADIR%%/Aircraft/sgs233/Models/s2-33_01.rgb
-%%DATADIR%%/Aircraft/sgs233/Models/s2-33_02.rgb
-%%DATADIR%%/Aircraft/sgs233/Models/s2-33_03.rgb
-%%DATADIR%%/Aircraft/sgs233/Models/s2-33_04.rgb
-%%DATADIR%%/Aircraft/sgs233/Models/s2-33_05.rgb
-%%DATADIR%%/Aircraft/sgs233/Models/sgs233.ac
-%%DATADIR%%/Aircraft/sgs233/Panels/Textures/glider-panel.rgb
-%%DATADIR%%/Aircraft/sgs233/Panels/glider-panel.xml
-%%DATADIR%%/Aircraft/sgs233/glider-sound.xml
-%%DATADIR%%/Aircraft/sgs233/null-electrical.xml
-%%DATADIR%%/Aircraft/sgs233/sgs233-set.xml
-%%DATADIR%%/Aircraft/sgs233/sgs233.xml
-%%DATADIR%%/Aircraft/tu154/Models/3d-instruments.xml
-%%DATADIR%%/Aircraft/tu154/Models/alt-metric.ac
-%%DATADIR%%/Aircraft/tu154/Models/alt-metric.rgb
-%%DATADIR%%/Aircraft/tu154/Models/alt-metric.xml
-%%DATADIR%%/Aircraft/tu154/Models/asi-metric.ac
-%%DATADIR%%/Aircraft/tu154/Models/asi-metric.rgb
-%%DATADIR%%/Aircraft/tu154/Models/asi-metric.xml
-%%DATADIR%%/Aircraft/tu154/Models/main-ai.ac
-%%DATADIR%%/Aircraft/tu154/Models/main-ai.rgb
-%%DATADIR%%/Aircraft/tu154/Models/main-ai.xml
-%%DATADIR%%/Aircraft/tu154/Models/rud.ac
-%%DATADIR%%/Aircraft/tu154/Models/rud1.xml
-%%DATADIR%%/Aircraft/tu154/Models/rud2.xml
-%%DATADIR%%/Aircraft/tu154/Models/rud3.xml
-%%DATADIR%%/Aircraft/tu154/Models/tu154-cockpit.ac
-%%DATADIR%%/Aircraft/tu154/Models/tu154B-1.rgb
-%%DATADIR%%/Aircraft/tu154/Models/tu154B-2.rgb
-%%DATADIR%%/Aircraft/tu154/Models/tu154B.ac
-%%DATADIR%%/Aircraft/tu154/Models/tu154B.xml
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/Textures/asi-tu154.rgb
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/Textures/attitude-indicator.rgb
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/Textures/auasp-back.rgb
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/Textures/bezel.rgb
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/Textures/bezel1.rgb
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/Textures/bezel3.rgb
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/Textures/compass-ribbon.rgb
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/Textures/faces-1.rgb
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/Textures/faces-3.rgb
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/Textures/flaps.rgb
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/Textures/handles.rgb
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/Textures/hsi.rgb
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/Textures/mach-tu154.rgb
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/Textures/misc-1.rgb
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/Textures/misc1.rgb
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/Textures/radios-1.rgb
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/Textures/switches.rgb
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/Textures/tach-2700-redline.rgb
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/Textures/tach-tu154.rgb
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/Textures/warning-lamps.rgb
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/alt-switch.xml
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/altimeter-tu154-feet.xml
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/altimeter-tu154-metric.xml
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/asi-tu154.xml
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/attitude-indicator-tu154.xml
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/auasp.xml
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/autopilot.xml
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/brakes.xml
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/clock.xml
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/controls.xml
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/digi-clock.xml
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/flap-tu154.xml
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/gear-indicator.xml
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/gear.xml
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/horizon-tu154.xml
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/horizon.xml
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/hsi-tu154.xml
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/light.xml
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/mach-tu154.xml
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/magneto-switch.xml
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/n0-tu154.xml
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/n1-tu154.xml
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/n1.xml
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/n2-tu154.xml
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/nav1.xml
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/rpm-tu154.xml
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/rud-tu154.xml
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/switch.xml
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/tach-tu154.xml
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/turn.xml
-%%DATADIR%%/Aircraft/tu154/Panels/Instruments/vertical.xml
-%%DATADIR%%/Aircraft/tu154/Panels/panel-bg.rgb
-%%DATADIR%%/Aircraft/tu154/Panels/tu154-panel.xml
-%%DATADIR%%/Aircraft/tu154/Sounds/fan.wav
-%%DATADIR%%/Aircraft/tu154/Sounds/flaps.wav
-%%DATADIR%%/Aircraft/tu154/Sounds/gear-lck.wav
-%%DATADIR%%/Aircraft/tu154/Sounds/gear.wav
-%%DATADIR%%/Aircraft/tu154/Sounds/rumble.wav
-%%DATADIR%%/Aircraft/tu154/Sounds/squeal.wav
-%%DATADIR%%/Aircraft/tu154/Sounds/stall.wav
-%%DATADIR%%/Aircraft/tu154/Sounds/whine.wav
-%%DATADIR%%/Aircraft/tu154/Sounds/wind.wav
-%%DATADIR%%/Aircraft/tu154/Systems/tu154-electrical.xml
-%%DATADIR%%/Aircraft/tu154/changelog
-%%DATADIR%%/Aircraft/tu154/readme
-%%DATADIR%%/Aircraft/tu154/tu154-panel.xml
-%%DATADIR%%/Aircraft/tu154/tu154-set.xml
-%%DATADIR%%/Aircraft/tu154/tu154-sound.xml
-%%DATADIR%%/Aircraft/tu154/tu154.xml
+%%DATADIR%%/Aircraft/pa28-161/thumbnail.jpg
 %%DATADIR%%/Aircraft/ufo/Models/ufo.ac
 %%DATADIR%%/Aircraft/ufo/Models/ufo.xml
+%%DATADIR%%/Aircraft/ufo/thumbnail.jpg
 %%DATADIR%%/Aircraft/ufo/ufo-set.xml
 %%DATADIR%%/Aircraft/ufo/ufo-sound.xml
 %%DATADIR%%/Aircraft/wrightFlyer1903/Models/WrightFlyer-pb-jw-01.rgb
@@ -1923,10 +913,10 @@
 %%DATADIR%%/Aircraft/wrightFlyer1903/Models/WrightFlyer-pb-jw.xml
 %%DATADIR%%/Aircraft/wrightFlyer1903/Models/uiuc/03Flyer/03Flyer-model.xml
 %%DATADIR%%/Aircraft/wrightFlyer1903/Sounds/uiuc/wrightFlyer1903-sound.xml
+%%DATADIR%%/Aircraft/wrightFlyer1903/thumbnail.jpg
 %%DATADIR%%/Aircraft/wrightFlyer1903/wrightFlyer1903-set.xml
-%%DATADIR%%/Airports/basic.dat.gz
+%%DATADIR%%/Airports/apt.dat.gz
 %%DATADIR%%/Airports/metar.dat.gz
-%%DATADIR%%/Airports/runways.dat.gz
 %%DATADIR%%/Astro/planets.gz
 %%DATADIR%%/Astro/stars.gz
 %%DATADIR%%/COPYING
@@ -1940,7 +930,10 @@
 %%DATADIR%%/Data/AI/FlightPlans/KSFO_modesto28R.xml
 %%DATADIR%%/Data/AI/aircraft_demo.xml
 %%DATADIR%%/Data/AI/ballistic_demo.xml
+%%DATADIR%%/Data/AI/carrier_demo.xml
+%%DATADIR%%/Data/AI/nimitz_demo.xml
 %%DATADIR%%/Data/AI/refueling_demo.xml
+%%DATADIR%%/Data/AI/saratoga.xml
 %%DATADIR%%/Data/AI/ship_demo.xml
 %%DATADIR%%/Data/AI/thermal_demo.xml
 %%DATADIR%%/Data/AI/thunderstorm_demo.xml
@@ -1962,6 +955,7 @@
 %%DATADIR%%/Docs-mini/AptNavFAQ.FlightGear.html
 %%DATADIR%%/Docs-mini/FG-FAQ.v3
 %%DATADIR%%/Docs-mini/FlightGear-FAQ.html
+%%DATADIR%%/Docs-mini/Nasal.html
 %%DATADIR%%/Docs-mini/README.Cygwin
 %%DATADIR%%/Docs-mini/README.IO
 %%DATADIR%%/Docs-mini/README.IRIX
@@ -1981,6 +975,7 @@
 %%DATADIR%%/Docs-mini/README.commands
 %%DATADIR%%/Docs-mini/README.conditions
 %%DATADIR%%/Docs-mini/README.cygwin
+%%DATADIR%%/Docs-mini/README.digitalfilters
 %%DATADIR%%/Docs-mini/README.electrical
 %%DATADIR%%/Docs-mini/README.extensions
 %%DATADIR%%/Docs-mini/README.fgjs
@@ -2054,6 +1049,7 @@
 %%DATADIR%%/Docs/README.Joystick.html
 %%DATADIR%%/Docs/README.commands
 %%DATADIR%%/Docs/README.conditions
+%%DATADIR%%/Docs/README.digitalfilters
 %%DATADIR%%/Docs/README.electrical
 %%DATADIR%%/Docs/README.fgjs
 %%DATADIR%%/Docs/README.gui
@@ -2112,6 +1108,7 @@
 %%DATADIR%%/Huds/Instruments/Default/hudcard.xml
 %%DATADIR%%/Huds/Instruments/Default/hudladder.xml
 %%DATADIR%%/Huds/Instruments/Default/instrlabel.xml
+%%DATADIR%%/Huds/Instruments/Default/runwayinstr.xml
 %%DATADIR%%/Huds/Instruments/Engineering/fgtbi.xml
 %%DATADIR%%/Huds/Instruments/Engineering/hudcard.xml
 %%DATADIR%%/Huds/Instruments/Engineering/hudladder.xml
@@ -2149,6 +1146,7 @@
 %%DATADIR%%/Input/Joysticks/ThrustMaster/FCS.xml
 %%DATADIR%%/Input/Joysticks/ThrustMaster/Top-Gun-Afterburner.xml
 %%DATADIR%%/Input/Joysticks/ThrustMaster/Top-Gun-Fox2-Pro-USB.xml
+%%DATADIR%%/Input/Keyboard/carrier-bindings.xml
 %%DATADIR%%/Lighting/ambient
 %%DATADIR%%/Lighting/diffuse
 %%DATADIR%%/Lighting/sky
@@ -2259,11 +1257,34 @@
 %%DATADIR%%/Models/Fauna/cow.ac
 %%DATADIR%%/Models/Fauna/cow.rgb
 %%DATADIR%%/Models/Geometry/Aim91x.ac
+%%DATADIR%%/Models/Geometry/Nimitz/Models/deck-crane.ac
+%%DATADIR%%/Models/Geometry/Nimitz/Models/flols.ac
+%%DATADIR%%/Models/Geometry/Nimitz/Models/flols.xml
+%%DATADIR%%/Models/Geometry/Nimitz/Models/island2.rgb
+%%DATADIR%%/Models/Geometry/Nimitz/Models/island2_lm.rgb
+%%DATADIR%%/Models/Geometry/Nimitz/Models/mule-12.ac
+%%DATADIR%%/Models/Geometry/Nimitz/Models/mule-12.xml
+%%DATADIR%%/Models/Geometry/Nimitz/Models/mule-14.ac
+%%DATADIR%%/Models/Geometry/Nimitz/Models/mule-14.xml
+%%DATADIR%%/Models/Geometry/Nimitz/carrier.xml
+%%DATADIR%%/Models/Geometry/Nimitz/deck_tx.rgb
+%%DATADIR%%/Models/Geometry/Nimitz/flols.ac
+%%DATADIR%%/Models/Geometry/Nimitz/hull_left.rgb
+%%DATADIR%%/Models/Geometry/Nimitz/hull_left1.rgb
+%%DATADIR%%/Models/Geometry/Nimitz/hullright.rgb
+%%DATADIR%%/Models/Geometry/Nimitz/hullright2.rgb
+%%DATADIR%%/Models/Geometry/Nimitz/island1.rgb
+%%DATADIR%%/Models/Geometry/Nimitz/island2.rgb
+%%DATADIR%%/Models/Geometry/Nimitz/nimitz.ac
+%%DATADIR%%/Models/Geometry/Nimitz/saratoga.rgb
+%%DATADIR%%/Models/Geometry/Nimitz/wake.rgb
 %%DATADIR%%/Models/Geometry/Sunit1x.ac
 %%DATADIR%%/Models/Geometry/Tower1x.ac
 %%DATADIR%%/Models/Geometry/Towerax.ac
 %%DATADIR%%/Models/Geometry/container.rgb
 %%DATADIR%%/Models/Geometry/container_carrier.ac
+%%DATADIR%%/Models/Geometry/contrail.xml
+%%DATADIR%%/Models/Geometry/contrail_simple.ac
 %%DATADIR%%/Models/Geometry/crashtender.ac
 %%DATADIR%%/Models/Geometry/flare.ac
 %%DATADIR%%/Models/Geometry/flare.rgb
@@ -2307,13 +1328,16 @@
 %%DATADIR%%/Models/Trees/deciduous-tree2.ac
 %%DATADIR%%/Models/Trees/deciduous-tree2.rgb
 %%DATADIR%%/Models/Trees/deciduous-tree3.ac
+%%DATADIR%%/Models/Weather/rain.ac
+%%DATADIR%%/Models/Weather/rain.rgb
+%%DATADIR%%/Models/Weather/rain.xml
 %%DATADIR%%/NEWS
+%%DATADIR%%/Nasal/atcsim.nas
 %%DATADIR%%/Nasal/autopilot.nas
 %%DATADIR%%/Nasal/controls.nas
 %%DATADIR%%/Nasal/fuel.nas
 %%DATADIR%%/Nasal/globals.nas
 %%DATADIR%%/Nasal/gui.nas
-%%DATADIR%%/Nasal/kap140.nas
 %%DATADIR%%/Nasal/props.nas
 %%DATADIR%%/Nasal/view.nas
 %%DATADIR%%/Navaids/ReadMe.FG226.txt
@@ -2324,7 +1348,9 @@
 %%DATADIR%%/Navaids/range.low
 %%DATADIR%%/Navaids/range.term
 %%DATADIR%%/Protocol/README.Protocol
+%%DATADIR%%/Protocol/acms.xml
 %%DATADIR%%/Protocol/f1serial.xml
+%%DATADIR%%/Protocol/playback.xml
 %%DATADIR%%/README
 %%DATADIR%%/Scenery/Objects/w130n30/w123n37/1-cal-1.rgb
 %%DATADIR%%/Scenery/Objects/w130n30/w123n37/1-cal-2.rgb
@@ -2395,10 +1421,13 @@
 %%DATADIR%%/Scenery/Objects/w130n30/w123n37/747-static.ac
 %%DATADIR%%/Scenery/Objects/w130n30/w123n37/942049.stg
 %%DATADIR%%/Scenery/Objects/w130n30/w123n37/942050.stg
+%%DATADIR%%/Scenery/Objects/w130n30/w123n37/942051.stg
 %%DATADIR%%/Scenery/Objects/w130n30/w123n37/942058.stg
 %%DATADIR%%/Scenery/Objects/w130n30/w123n37/942066.stg
 %%DATADIR%%/Scenery/Objects/w130n30/w123n37/KSFO-maint-1-fb.ac
 %%DATADIR%%/Scenery/Objects/w130n30/w123n37/KSFO-terminal-fb.ac
+%%DATADIR%%/Scenery/Objects/w130n30/w123n37/alcatraz-fb.ac
+%%DATADIR%%/Scenery/Objects/w130n30/w123n37/alcatraz-fb.xml
 %%DATADIR%%/Scenery/Objects/w130n30/w123n37/baybridge-e-fb.ac
 %%DATADIR%%/Scenery/Objects/w130n30/w123n37/baybridge-e-fb.xml
 %%DATADIR%%/Scenery/Objects/w130n30/w123n37/baybridge-fb.ac
@@ -2428,6 +1457,9 @@
 %%DATADIR%%/Scenery/Objects/w130n30/w123n37/coit-top-1.rgb
 %%DATADIR%%/Scenery/Objects/w130n30/w123n37/coit-tower-fb.ac
 %%DATADIR%%/Scenery/Objects/w130n30/w123n37/coit-tower-fb.xml
+%%DATADIR%%/Scenery/Objects/w130n30/w123n37/db-road.rgb
+%%DATADIR%%/Scenery/Objects/w130n30/w123n37/dumbarton-bdg-fb.ac
+%%DATADIR%%/Scenery/Objects/w130n30/w123n37/dumbarton-bdg-fb.xml
 %%DATADIR%%/Scenery/Objects/w130n30/w123n37/emb-1-fb.ac
 %%DATADIR%%/Scenery/Objects/w130n30/w123n37/emb-1-fb.xml
 %%DATADIR%%/Scenery/Objects/w130n30/w123n37/emb-2-fb.ac
@@ -2458,6 +1490,27 @@
 %%DATADIR%%/Scenery/Objects/w130n30/w123n37/mac-kesson-plaza-fb.ac
 %%DATADIR%%/Scenery/Objects/w130n30/w123n37/mac-kesson-plaza-fb.xml
 %%DATADIR%%/Scenery/Objects/w130n30/w123n37/mc-kesson-1.rgb
+%%DATADIR%%/Scenery/Objects/w130n30/w123n37/ora-1.rgb
+%%DATADIR%%/Scenery/Objects/w130n30/w123n37/oracle-1-fb.ac
+%%DATADIR%%/Scenery/Objects/w130n30/w123n37/oracle-1-fb.xml
+%%DATADIR%%/Scenery/Objects/w130n30/w123n37/oracle-11-fb.ac
+%%DATADIR%%/Scenery/Objects/w130n30/w123n37/oracle-11-fb.xml
+%%DATADIR%%/Scenery/Objects/w130n30/w123n37/oracle-12-fb.ac
+%%DATADIR%%/Scenery/Objects/w130n30/w123n37/oracle-12-fb.xml
+%%DATADIR%%/Scenery/Objects/w130n30/w123n37/oracle-13-fb.ac
+%%DATADIR%%/Scenery/Objects/w130n30/w123n37/oracle-13-fb.xml
+%%DATADIR%%/Scenery/Objects/w130n30/w123n37/oracle-14-fb.ac
+%%DATADIR%%/Scenery/Objects/w130n30/w123n37/oracle-14-fb.xml
+%%DATADIR%%/Scenery/Objects/w130n30/w123n37/oracle-2-fb.ac
+%%DATADIR%%/Scenery/Objects/w130n30/w123n37/oracle-2-fb.xml
+%%DATADIR%%/Scenery/Objects/w130n30/w123n37/oracle-3-fb.ac
+%%DATADIR%%/Scenery/Objects/w130n30/w123n37/oracle-3-fb.xml
+%%DATADIR%%/Scenery/Objects/w130n30/w123n37/oracle-4-fb.ac
+%%DATADIR%%/Scenery/Objects/w130n30/w123n37/oracle-4-fb.xml
+%%DATADIR%%/Scenery/Objects/w130n30/w123n37/oracle-5-fb.ac
+%%DATADIR%%/Scenery/Objects/w130n30/w123n37/oracle-5-fb.xml
+%%DATADIR%%/Scenery/Objects/w130n30/w123n37/oracle-6-fb.ac
+%%DATADIR%%/Scenery/Objects/w130n30/w123n37/oracle-6-fb.xml
 %%DATADIR%%/Scenery/Objects/w130n30/w123n37/red-light.rgb
 %%DATADIR%%/Scenery/Objects/w130n30/w123n37/road-3-fb.rgb
 %%DATADIR%%/Scenery/Objects/w130n30/w123n37/russ-bld-fb.ac
@@ -2468,6 +1521,7 @@
 %%DATADIR%%/Scenery/Objects/w130n30/w123n37/russ-wall-4.rgb
 %%DATADIR%%/Scenery/Objects/w130n30/w123n37/sanmateo-fb.ac
 %%DATADIR%%/Scenery/Objects/w130n30/w123n37/sanmateo-fb.xml
+%%DATADIR%%/Scenery/Objects/w130n30/w123n37/sf-alcatraz-1.rgb
 %%DATADIR%%/Scenery/Objects/w130n30/w123n37/shacklee-wall-1.rgb
 %%DATADIR%%/Scenery/Objects/w130n30/w123n37/shacklee-wall-2.rgb
 %%DATADIR%%/Scenery/Objects/w130n30/w123n37/sutro-fb.ac
@@ -2566,6 +1620,9 @@
 %%DATADIR%%/Scenery/Terrain/w130n30/w122n37/CL52.btg.gz
 %%DATADIR%%/Scenery/Terrain/w130n30/w122n37/CL64.btg.gz
 %%DATADIR%%/Scenery/Terrain/w130n30/w122n37/CL86.btg.gz
+%%DATADIR%%/Scenery/Terrain/w130n30/w122n37/K1Q4.btg.gz
+%%DATADIR%%/Scenery/Terrain/w130n30/w122n37/KC83.btg.gz
+%%DATADIR%%/Scenery/Terrain/w130n30/w122n37/KE16.btg.gz
 %%DATADIR%%/Scenery/Terrain/w130n30/w122n37/KLVK.btg.gz
 %%DATADIR%%/Scenery/Terrain/w130n30/w122n37/KNRC.btg.gz
 %%DATADIR%%/Scenery/Terrain/w130n30/w122n37/KRHV.btg.gz
@@ -2579,6 +1636,7 @@
 %%DATADIR%%/Scenery/Terrain/w130n30/w123n37/15CA.btg.gz
 %%DATADIR%%/Scenery/Terrain/w130n30/w123n37/16CA.btg.gz
 %%DATADIR%%/Scenery/Terrain/w130n30/w123n37/17CA.btg.gz
+%%DATADIR%%/Scenery/Terrain/w130n30/w123n37/17CL.btg.gz
 %%DATADIR%%/Scenery/Terrain/w130n30/w123n37/1CL3.btg.gz
 %%DATADIR%%/Scenery/Terrain/w130n30/w123n37/44Q.btg.gz
 %%DATADIR%%/Scenery/Terrain/w130n30/w123n37/45Q.btg.gz
@@ -4503,6 +3561,7 @@
 %%DATADIR%%/mice.xml
 %%DATADIR%%/options.xml
 %%DATADIR%%/preferences.xml
+%%DATADIR%%/runfgfs.bat
 %%DATADIR%%/version
 @dirrm %%DATADIR%%/man
 @dirrm %%DATADIR%%/gui/dialogs
@@ -4598,9 +3657,12 @@
 @dirrm %%DATADIR%%/Protocol
 @dirrm %%DATADIR%%/Navaids
 @dirrm %%DATADIR%%/Nasal
+@dirrm %%DATADIR%%/Models/Weather
 @dirrm %%DATADIR%%/Models/Trees
 @dirrm %%DATADIR%%/Models/Textures
 @dirrm %%DATADIR%%/Models/Structures
+@dirrm %%DATADIR%%/Models/Geometry/Nimitz/Models
+@dirrm %%DATADIR%%/Models/Geometry/Nimitz
 @dirrm %%DATADIR%%/Models/Geometry
 @dirrm %%DATADIR%%/Models/Fauna
 @dirrm %%DATADIR%%/Models/Buildings
@@ -4609,6 +3671,7 @@
 @dirrm %%DATADIR%%/Models/3ds
 @dirrm %%DATADIR%%/Models
 @dirrm %%DATADIR%%/Lighting
+@dirrm %%DATADIR%%/Input/Keyboard
 @dirrm %%DATADIR%%/Input/Joysticks/ThrustMaster
 @dirrm %%DATADIR%%/Input/Joysticks/Saitek
 @dirrm %%DATADIR%%/Input/Joysticks/Microsoft
@@ -4655,64 +3718,28 @@
 @dirrm %%DATADIR%%/Aircraft/wrightFlyer1903
 @dirrm %%DATADIR%%/Aircraft/ufo/Models
 @dirrm %%DATADIR%%/Aircraft/ufo
-@dirrm %%DATADIR%%/Aircraft/tu154/Systems
-@dirrm %%DATADIR%%/Aircraft/tu154/Sounds
-@dirrm %%DATADIR%%/Aircraft/tu154/Panels/Instruments/Textures
-@dirrm %%DATADIR%%/Aircraft/tu154/Panels/Instruments
-@dirrm %%DATADIR%%/Aircraft/tu154/Panels
-@dirrm %%DATADIR%%/Aircraft/tu154/Models
-@dirrm %%DATADIR%%/Aircraft/tu154
-@dirrm %%DATADIR%%/Aircraft/t6texan2/Sounds
-@dirrm %%DATADIR%%/Aircraft/t6texan2/Models
-@dirrm %%DATADIR%%/Aircraft/t6texan2
-@dirrm %%DATADIR%%/Aircraft/sgs233/Panels/Textures
-@dirrm %%DATADIR%%/Aircraft/sgs233/Panels
-@dirrm %%DATADIR%%/Aircraft/sgs233/Models
-@dirrm %%DATADIR%%/Aircraft/sgs233/Instruments/Textures
-@dirrm %%DATADIR%%/Aircraft/sgs233/Instruments
-@dirrm %%DATADIR%%/Aircraft/sgs233
-@dirrm %%DATADIR%%/Aircraft/seahawk/Systems
-@dirrm %%DATADIR%%/Aircraft/seahawk/Sounds/Samples
-@dirrm %%DATADIR%%/Aircraft/seahawk/Sounds
-@dirrm %%DATADIR%%/Aircraft/seahawk/Panel
-@dirrm %%DATADIR%%/Aircraft/seahawk/Models
-@dirrm %%DATADIR%%/Aircraft/seahawk
 @dirrm %%DATADIR%%/Aircraft/pa28-161/Models
 @dirrm %%DATADIR%%/Aircraft/pa28-161
 @dirrm %%DATADIR%%/Aircraft/p51d/Sounds
 @dirrm %%DATADIR%%/Aircraft/p51d/Models
 @dirrm %%DATADIR%%/Aircraft/p51d
-@dirrm %%DATADIR%%/Aircraft/ornithopter/Sounds
-@dirrm %%DATADIR%%/Aircraft/ornithopter/Models
-@dirrm %%DATADIR%%/Aircraft/ornithopter
 @dirrm %%DATADIR%%/Aircraft/j3cub/Models
 @dirrm %%DATADIR%%/Aircraft/j3cub
-@dirrm %%DATADIR%%/Aircraft/j22/Models
-@dirrm %%DATADIR%%/Aircraft/j22/Huds
-@dirrm %%DATADIR%%/Aircraft/j22
 @dirrm %%DATADIR%%/Aircraft/f16/Panels/Textures
 @dirrm %%DATADIR%%/Aircraft/f16/Panels
 @dirrm %%DATADIR%%/Aircraft/f16/Models
 @dirrm %%DATADIR%%/Aircraft/f16/Hud
 @dirrm %%DATADIR%%/Aircraft/f16/Engines
 @dirrm %%DATADIR%%/Aircraft/f16
-@dirrm %%DATADIR%%/Aircraft/dc3/Sounds
-@dirrm %%DATADIR%%/Aircraft/dc3/Models
-@dirrm %%DATADIR%%/Aircraft/dc3
+@dirrm %%DATADIR%%/Aircraft/dhc2/Sound
+@dirrm %%DATADIR%%/Aircraft/dhc2/Models
+@dirrm %%DATADIR%%/Aircraft/dhc2
 @dirrm %%DATADIR%%/Aircraft/c310u3a/Models
 @dirrm %%DATADIR%%/Aircraft/c310u3a/Engines
 @dirrm %%DATADIR%%/Aircraft/c310u3a
 @dirrm %%DATADIR%%/Aircraft/c310/Models
 @dirrm %%DATADIR%%/Aircraft/c310/Engines
 @dirrm %%DATADIR%%/Aircraft/c310
-@dirrm %%DATADIR%%/Aircraft/c182/Panels/Textures
-@dirrm %%DATADIR%%/Aircraft/c182/Panels
-@dirrm %%DATADIR%%/Aircraft/c182/Engines
-@dirrm %%DATADIR%%/Aircraft/c182
-@dirrm %%DATADIR%%/Aircraft/c172x/Engines
-@dirrm %%DATADIR%%/Aircraft/c172x
-@dirrm %%DATADIR%%/Aircraft/c172r/Engines
-@dirrm %%DATADIR%%/Aircraft/c172r
 @dirrm %%DATADIR%%/Aircraft/c172p/Systems
 @dirrm %%DATADIR%%/Aircraft/c172p/Models/labels
 @dirrm %%DATADIR%%/Aircraft/c172p/Models
@@ -4722,46 +3749,12 @@
 @dirrm %%DATADIR%%/Aircraft/c172/Panels
 @dirrm %%DATADIR%%/Aircraft/c172/Models
 @dirrm %%DATADIR%%/Aircraft/c172/Engines
-@dirrm %%DATADIR%%/Aircraft/c172-le/Models
-@dirrm %%DATADIR%%/Aircraft/c172-le
 @dirrm %%DATADIR%%/Aircraft/c172
 @dirrm %%DATADIR%%/Aircraft/bo105/Models
 @dirrm %%DATADIR%%/Aircraft/bo105/Instruments/tach
 @dirrm %%DATADIR%%/Aircraft/bo105/Instruments/asi
 @dirrm %%DATADIR%%/Aircraft/bo105/Instruments
 @dirrm %%DATADIR%%/Aircraft/bo105
-@dirrm %%DATADIR%%/Aircraft/beech99/Sounds/uiuc
-@dirrm %%DATADIR%%/Aircraft/beech99/Sounds
-@dirrm %%DATADIR%%/Aircraft/beech99/Models/uiuc/beech99
-@dirrm %%DATADIR%%/Aircraft/beech99/Models/uiuc
-@dirrm %%DATADIR%%/Aircraft/beech99/Models.old/uiuc/beech99
-@dirrm %%DATADIR%%/Aircraft/beech99/Models.old/uiuc
-@dirrm %%DATADIR%%/Aircraft/beech99/Models.old
-@dirrm %%DATADIR%%/Aircraft/beech99/Models
-@dirrm %%DATADIR%%/Aircraft/beech99/Instruments/Textures
-@dirrm %%DATADIR%%/Aircraft/beech99/Instruments
-@dirrm %%DATADIR%%/Aircraft/beech99
-@dirrm %%DATADIR%%/Aircraft/a4/Sounds/uiuc
-@dirrm %%DATADIR%%/Aircraft/a4/Sounds
-@dirrm %%DATADIR%%/Aircraft/a4/Models
-@dirrm %%DATADIR%%/Aircraft/a4
-@dirrm %%DATADIR%%/Aircraft/YF-23/Systems
-@dirrm %%DATADIR%%/Aircraft/YF-23/Sounds/Samples
-@dirrm %%DATADIR%%/Aircraft/YF-23/Sounds
-@dirrm %%DATADIR%%/Aircraft/YF-23/Panels/Textures
-@dirrm %%DATADIR%%/Aircraft/YF-23/Panels/Instruments/Textures
-@dirrm %%DATADIR%%/Aircraft/YF-23/Panels/Instruments
-@dirrm %%DATADIR%%/Aircraft/YF-23/Panels
-@dirrm %%DATADIR%%/Aircraft/YF-23/Models
-@dirrm %%DATADIR%%/Aircraft/YF-23/Huds
-@dirrm %%DATADIR%%/Aircraft/YF-23
-@dirrm %%DATADIR%%/Aircraft/X15/Panels/Textures
-@dirrm %%DATADIR%%/Aircraft/X15/Panels
-@dirrm %%DATADIR%%/Aircraft/X15/Models
-@dirrm %%DATADIR%%/Aircraft/X15/Instruments/Textures
-@dirrm %%DATADIR%%/Aircraft/X15/Instruments
-@dirrm %%DATADIR%%/Aircraft/X15/Engines
-@dirrm %%DATADIR%%/Aircraft/X15
 @dirrm %%DATADIR%%/Aircraft/UIUC/wrightFlyer1903-v1-nl
 @dirrm %%DATADIR%%/Aircraft/UIUC/sopwithCamel-v1-nl
 @dirrm %%DATADIR%%/Aircraft/UIUC/ornithopter
@@ -4775,23 +3768,6 @@
 @dirrm %%DATADIR%%/Aircraft/UIUC/Models/opus
 @dirrm %%DATADIR%%/Aircraft/UIUC/Models
 @dirrm %%DATADIR%%/Aircraft/UIUC
-@dirrm %%DATADIR%%/Aircraft/T38/Sounds
-@dirrm %%DATADIR%%/Aircraft/T38/Panels/Textures
-@dirrm %%DATADIR%%/Aircraft/T38/Panels
-@dirrm %%DATADIR%%/Aircraft/T38/Models
-@dirrm %%DATADIR%%/Aircraft/T38/Instruments/Textures
-@dirrm %%DATADIR%%/Aircraft/T38/Instruments
-@dirrm %%DATADIR%%/Aircraft/T38/Engines
-@dirrm %%DATADIR%%/Aircraft/T38
-@dirrm %%DATADIR%%/Aircraft/Spitfire/Sounds
-@dirrm %%DATADIR%%/Aircraft/Spitfire/Models
-@dirrm %%DATADIR%%/Aircraft/Spitfire/Electrical
-@dirrm %%DATADIR%%/Aircraft/Spitfire
-@dirrm %%DATADIR%%/Aircraft/OV10/Sounds
-@dirrm %%DATADIR%%/Aircraft/OV10/Panels
-@dirrm %%DATADIR%%/Aircraft/OV10/Models
-@dirrm %%DATADIR%%/Aircraft/OV10/Engines
-@dirrm %%DATADIR%%/Aircraft/OV10
 @dirrm %%DATADIR%%/Aircraft/Instruments/Textures
 @dirrm %%DATADIR%%/Aircraft/Instruments-3d/vsi
 @dirrm %%DATADIR%%/Aircraft/Instruments-3d/vor
@@ -4815,49 +3791,6 @@
 @dirrm %%DATADIR%%/Aircraft/Hunter/Models
 @dirrm %%DATADIR%%/Aircraft/Hunter
 @dirrm %%DATADIR%%/Aircraft/Generic
-@dirrm %%DATADIR%%/Aircraft/ComperSwift/Systems
-@dirrm %%DATADIR%%/Aircraft/ComperSwift/Sounds
-@dirrm %%DATADIR%%/Aircraft/ComperSwift/Panels/Textures
-@dirrm %%DATADIR%%/Aircraft/ComperSwift/Panels/Instruments/Textures
-@dirrm %%DATADIR%%/Aircraft/ComperSwift/Panels/Instruments
-@dirrm %%DATADIR%%/Aircraft/ComperSwift/Panels
-@dirrm %%DATADIR%%/Aircraft/ComperSwift/Models
-@dirrm %%DATADIR%%/Aircraft/ComperSwift/Huds
-@dirrm %%DATADIR%%/Aircraft/ComperSwift
-@dirrm %%DATADIR%%/Aircraft/BAC-TSR2/Systems
-@dirrm %%DATADIR%%/Aircraft/BAC-TSR2/Sounds
-@dirrm %%DATADIR%%/Aircraft/BAC-TSR2/Panels/Textures
-@dirrm %%DATADIR%%/Aircraft/BAC-TSR2/Panels/Instruments/Textures
-@dirrm %%DATADIR%%/Aircraft/BAC-TSR2/Panels/Instruments
-@dirrm %%DATADIR%%/Aircraft/BAC-TSR2/Panels
-@dirrm %%DATADIR%%/Aircraft/BAC-TSR2/Nasal
-@dirrm %%DATADIR%%/Aircraft/BAC-TSR2/Models
-@dirrm %%DATADIR%%/Aircraft/BAC-TSR2/Huds
-@dirrm %%DATADIR%%/Aircraft/BAC-TSR2
-@dirrm %%DATADIR%%/Aircraft/B-52F/Systems
-@dirrm %%DATADIR%%/Aircraft/B-52F/Sounds
-@dirrm %%DATADIR%%/Aircraft/B-52F/Panels/Textures
-@dirrm %%DATADIR%%/Aircraft/B-52F/Panels/Instruments/Textures
-@dirrm %%DATADIR%%/Aircraft/B-52F/Panels/Instruments
-@dirrm %%DATADIR%%/Aircraft/B-52F/Panels
-@dirrm %%DATADIR%%/Aircraft/B-52F/Nasal
-@dirrm %%DATADIR%%/Aircraft/B-52F/Models
-@dirrm %%DATADIR%%/Aircraft/B-52F/Huds
-@dirrm %%DATADIR%%/Aircraft/B-52F
-@dirrm %%DATADIR%%/Aircraft/AN-225/Systems
-@dirrm %%DATADIR%%/Aircraft/AN-225/Sounds
-@dirrm %%DATADIR%%/Aircraft/AN-225/Panels/Textures
-@dirrm %%DATADIR%%/Aircraft/AN-225/Panels/Instruments/Textures
-@dirrm %%DATADIR%%/Aircraft/AN-225/Panels/Instruments
-@dirrm %%DATADIR%%/Aircraft/AN-225/Panels
-@dirrm %%DATADIR%%/Aircraft/AN-225/Nasal
-@dirrm %%DATADIR%%/Aircraft/AN-225/Models
-@dirrm %%DATADIR%%/Aircraft/AN-225/Huds
-@dirrm %%DATADIR%%/Aircraft/AN-225
-@dirrm %%DATADIR%%/Aircraft/A320/Sounds
-@dirrm %%DATADIR%%/Aircraft/A320/Models
-@dirrm %%DATADIR%%/Aircraft/A320/Engines
-@dirrm %%DATADIR%%/Aircraft/A320
 @dirrm %%DATADIR%%/Aircraft/A-10/Systems
 @dirrm %%DATADIR%%/Aircraft/A-10/Sounds
 @dirrm %%DATADIR%%/Aircraft/A-10/Panels/Textures
@@ -4868,9 +3801,6 @@
 @dirrm %%DATADIR%%/Aircraft/A-10/Models
 @dirrm %%DATADIR%%/Aircraft/A-10/Huds
 @dirrm %%DATADIR%%/Aircraft/A-10
-@dirrm %%DATADIR%%/Aircraft/747/Models
-@dirrm %%DATADIR%%/Aircraft/747/Engines
-@dirrm %%DATADIR%%/Aircraft/747
 @dirrm %%DATADIR%%/Aircraft/737/Systems
 @dirrm %%DATADIR%%/Aircraft/737/Sounds
 @dirrm %%DATADIR%%/Aircraft/737/Panels

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fgfs-base
-PORTVERSION=	0.9.6
-PORTREVISION=	1
+PORTVERSION=	0.9.8
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.flightgear.org/pub/fgfs/Shared/ \
 		ftp://ftp.de.flightgear.org/pub/fgfs/Shared/
