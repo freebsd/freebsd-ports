@@ -1,5 +1,0 @@
---- gdcache.h	Tue Feb  6 14:44:02 2001
-+++ gdcache.h	Fri Aug 24 08:10:41 2001
-@@ -43 +43 @@
--#include <malloc.h>
-+#include <stdlib.h>
