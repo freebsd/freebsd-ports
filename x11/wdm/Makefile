@@ -3,7 +3,7 @@
 # Date created:		August 31, 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.16 1998/11/25 09:01:25 asami Exp $
+# $Id: Makefile,v 1.17 1999/01/18 06:43:02 asami Exp $
 
 DISTNAME=	wdm-1.0
 CATEGORIES=	x11 windowmaker
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${PREFIX}/lib/libPropList.a:${PORTSDIR}/x11-wm/windowmaker
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		gif.3:${PORTSDIR}/graphics/giflib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.2:${PORTSDIR}/graphics/png \
+		png.3:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff34
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}

@@ -3,7 +3,7 @@
 # Date created:         2 Jan 1995
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.32 1998/12/11 09:01:40 tg Exp $
+# $Id: Makefile,v 1.33 1999/01/09 00:28:21 fenner Exp $
 #
 
 DISTNAME=       xpaint-2.5.6
@@ -16,7 +16,7 @@ MAINTAINER=	jseger@FreeBSD.org
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff34 \
 		Xpm.4:${PORTSDIR}/graphics/xpm   \
-		png.2:${PORTSDIR}/graphics/png
+		png.3:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/xpaint
 USE_IMAKE=      yes

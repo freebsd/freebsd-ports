@@ -3,7 +3,7 @@
 # Date created:		Tue Jun 10 21:58:54 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.30 1999/01/13 07:24:57 scrappy Exp $
+# $Id: Makefile,v 1.31 1999/01/21 18:08:50 vanilla Exp $
 #
 
 DISTNAME=	ghostscript-5.50
@@ -21,7 +21,7 @@ Y2K=		http://www.cs.wisc.edu/~ghost/aladdin/y2k.html
 BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/graphics/jpeg:extract \
 		/nonexistent:${PORTSDIR}/graphics/png:extract \
 		unzip:${PORTSDIR}/archivers/unzip
-LIB_DEPENDS=	png.2:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png
 
 USE_XLIB=	yes
 EXTRACT_ONLY=	${GS_SOURCES}

@@ -3,7 +3,7 @@
 # Date created:         20 February 1995
 # Whom:                 Tim Wilkinson <tim@sarc.city.ac.uk>
 #
-# $Id: Makefile,v 1.37 1998/11/15 22:23:42 steve Exp $
+# $Id: Makefile,v 1.38 1998/12/11 00:51:40 steve Exp $
 #
 
 DISTNAME=	kaffe-1.0.b3
@@ -14,7 +14,7 @@ MAINTAINER=	xaa@xaa.iae.nl
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		gif.3:${PORTSDIR}/graphics/giflib \
-		png.2:${PORTSDIR}/graphics/png
+		png.3:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="-L/usr/local/lib"
