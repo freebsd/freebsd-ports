@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mime
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	devel
 MASTER_SITES=	http://resnet.uoregon.edu/~gurney_j/jmpc/dist/
 
