@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		portmanager
-PORTVERSION=		0.1.8
+PORTVERSION=		0.1.9
 CATEGORIES=		sysutils
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	portmanager
@@ -36,7 +36,7 @@ PORTDOCS=		docbook.css index.html libPMGR.3.html libPMGR.h.html PMGRrDbCreate.3.
 			MGsDb.7.html MGsProperty.7.html libMG.3.html libMG.h.html mgmlParse.1.html	\
 			mgmlParse.c.html mgmlParse.h.html portmanager.1.html portmanager.c.html 	\
 			portmanager.h.html pmStatus.1.html pmStatus.c.html pmStatus.h.html 		\
-			pmUpgrade.1.html pmUpgrade.c.html pmUpgrade.h.html
+			pmupgrade.1.html pmupgrade.c.html pmupgrade.h.html
 INSTALL_TARGET=		install info
 
 .endif
@@ -50,6 +50,6 @@ post-install:
 	@${ECHO}	"*             -u   upgrade installed ports        *"
 	@${ECHO}	"*                                                 *"
 	@${ECHO}	"* all feedback is welcome, send to:               *"
-	@${ECHO}	"* ringworm@inbox.lv                               *"
+	@${ECHO}	"* Michael C. Shultz ringworm@inbox.lv             *"
 	@${ECHO}	"***************************************************"
 .include <bsd.port.mk>
