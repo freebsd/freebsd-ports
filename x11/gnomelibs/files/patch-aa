@@ -1,27 +1,27 @@
 
 $FreeBSD$
 
---- configure.orig	Fri Oct  5 10:53:42 2001
-+++ configure	Fri Oct  5 12:02:38 2001
-@@ -5416,7 +5416,7 @@
+--- configure.orig	Mon Jan 14 11:58:21 2002
++++ configure	Mon Jan 14 12:00:15 2002
+@@ -8775,7 +8775,7 @@
  else
    
-   save_LDFLAGS="$LDFLAGBS"
+   save_LDFLAGS="$LDFLAGS"
 -  LDFLAGS="$LDFLAGS `glib-config --libs gmodule`"
 +  LDFLAGS="$LDFLAGS `$GLIB_CONFIG --libs gmodule`"
    if test "$cross_compiling" = yes; then
    ac_cv_gmodule=yes
  else
-@@ -7035,7 +7035,7 @@
+@@ -10394,7 +10394,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-ltiff -lm $LIBS"
 +LIBS="-ltiff -ljpeg -lz -lm $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 7041 "configure"
+ #line 10400 "configure"
  #include "confdefs.h"
-@@ -10111,13 +10111,13 @@
+@@ -13483,13 +13483,13 @@
  SUPPORTINCS='-DNEED_GNOMESUPPORT_H -I$(top_builddir)/support -I$(top_srcdir)/support'
  
  ART_LIBS="-lart_lgpl"
@@ -32,12 +32,12 @@ $FreeBSD$
  ZVT_LIBS="-lzvt $UTIL_LIBS $GTK_LIBS"
  
  GNOME_LIBDIR='-L${libdir}'
--GNOME_INCLUDEDIR='-I${includedir} -DNEED_GNOMESUPPORT_H -I${pkglibdir}/include'
-+GNOME_INCLUDEDIR='-I${includedir}/gnome-1.0 -I${includedir} -DNEED_GNOMESUPPORT_H'
+-GNOME_INCLUDEDIR='-I${includedir}/gnome-1.0 -DNEED_GNOMESUPPORT_H -I${pkglibdir}/include'
++GNOME_INCLUDEDIR='-I${includedir}/gnome-1.0 -I${includedir} -DNEED_GNOMESUPPORT_H -I${pkglibdir}/include'
  GNOME_IDLDIR='-I${datadir}/idl'
  
  
-@@ -10511,6 +10511,7 @@
+@@ -13887,6 +13887,7 @@
  s%@MAINTAINER_MODE_FALSE@%$MAINTAINER_MODE_FALSE%g
  s%@MAINT@%$MAINT%g
  s%@cflags_set@%$cflags_set%g
@@ -45,7 +45,7 @@ $FreeBSD$
  s%@GTK_CONFIG@%$GTK_CONFIG%g
  s%@GTK_CFLAGS@%$GTK_CFLAGS%g
  s%@GTK_LIBS@%$GTK_LIBS%g
-@@ -10980,10 +10981,6 @@
+@@ -14356,10 +14357,6 @@
        *) # Relative path.
          ac_sub_cache_file="$ac_dots$cache_file" ;;
        esac
