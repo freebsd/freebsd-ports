@@ -29,6 +29,7 @@ lib/wml/include/des/lowsrc.wml
 lib/wml/include/des/imgbg.wml
 lib/wml/include/des/imgdot.wml
 lib/wml/include/des/navbar.wml
+lib/wml/include/des/preload.wml
 lib/wml/include/des/rollover.wml
 lib/wml/include/des/space.wml
 lib/wml/include/des/typography.wml
@@ -123,6 +124,7 @@ man/man3/wml::des::lowsrc.3.gz
 man/man3/wml::des::imgbg.3.gz
 man/man3/wml::des::imgdot.3.gz
 man/man3/wml::des::navbar.3.gz
+man/man3/wml::des::preload.3.gz
 man/man3/wml::des::rollover.3.gz
 man/man3/wml::des::space.3.gz
 man/man3/wml::des::typography.3.gz

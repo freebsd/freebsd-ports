@@ -1,15 +1,15 @@
 # New ports collection makefile for:	wml
-# Version required:	1.4.4
+# Version required:	1.4.5
 # Date created:		09-Sep-1997
 # Whom:			Ralf S. Engelschall <rse@engelschall.com>
 #
-# $Id: Makefile,v 1.9 1997/11/30 16:17:32 rse Exp $
+# $Id: Makefile,v 1.10 1997/12/02 14:05:58 rse Exp $
 #
 
-DISTNAME=	wml-1.4.4
+DISTNAME=	wml-1.4.5
 CATEGORIES=	www lang
 MASTER_SITES=	http://www.engelschall.com/sw/wml/distrib/ \
-		ftp://ftp.engelschall.com/sw/
+		ftp://ftp.engelschall.com/sw/wml/
 
 MAINTAINER=	rse@engelschall.com
 
@@ -28,17 +28,18 @@ MAN1=	wmd.1 wmk.1 wml.1 wml_aux_htmlinfo.1 wml_aux_iselect.1 \
 
 MAN3=	wml::all.3 wml::des::all.3 wml::des::gfont.3 \
 	wml::des::lowsrc.3 wml::des::imgdot.3 wml::des::imgbg.3 \
-	wml::des::navbar.3 wml::des::rollover.3 wml::des::space.3 \
-	wml::des::typography.3 wml::fmt::all.3 wml::fmt::isolatin.3 \
-	wml::fmt::pod.3 wml::fmt::sdf.3 wml::fmt::text.3 \
-	wml::fmt::url.3 wml::fmt::verbatim.3 wml::fmt::xtable.3 \
-	wml::imp::all.3 wml::imp::csmap.3 wml::imp::fsview.3 \
-	wml::imp::generic.3 wml::std::all.3 wml::std::box.3 \
-	wml::std::case.3 wml::std::grid.3 wml::std::href.3 \
-	wml::std::info.3 wml::std::page.3 wml::std::tags.3 \
-	wml::std::toc.3 wml::sup::all.3 wml::sup::hextriple.3 \
-	wml::sup::path.3 wml::sup::stack.3 wml::sys::all.3 \
-	wml::sys::boot.3 wml::usr::all.3 wml::usr::rse.3
+	wml::des::navbar.3 wml::des::preload.3 wml::des::rollover.3 \
+	wml::des::space.3 wml::des::typography.3 wml::fmt::all.3 \
+	wml::fmt::isolatin.3 wml::fmt::pod.3 wml::fmt::sdf.3 \
+	wml::fmt::text.3 wml::fmt::url.3 wml::fmt::verbatim.3 \
+	wml::fmt::xtable.3 wml::imp::all.3 wml::imp::csmap.3 \
+	wml::imp::fsview.3 wml::imp::generic.3 wml::std::all.3 \
+	wml::std::box.3 wml::std::case.3 wml::std::grid.3 \
+	wml::std::href.3 wml::std::info.3 wml::std::page.3 \
+	wml::std::tags.3 wml::std::toc.3 wml::sup::all.3 \
+	wml::sup::hextriple.3 wml::sup::path.3 wml::sup::stack.3 \
+	wml::sys::all.3 wml::sys::boot.3 wml::usr::all.3 \
+	wml::usr::rse.3
 
 MAN7=	wml_intro.7 wml_tutorial.7 wml_faq.7
 
