@@ -5,6 +5,7 @@ include/gtkextra/gtkcolorcombo.h
 include/gtkextra/gtkcombobox.h
 include/gtkextra/gtkdirtree.h
 include/gtkextra/gtkextra.h
+include/gtkextra/gtkextrafeatures.h
 include/gtkextra/gtkfileicons.h
 include/gtkextra/gtkfilelist.h
 include/gtkextra/gtkfontcombo.h
@@ -30,6 +31,6 @@ include/gtkextra/gtksheet.h
 include/gtkextra/gtktogglecombo.h
 lib/libgtkextra.a
 lib/libgtkextra.so
-lib/libgtkextra.so.13
-share/aclocal/gtk+extra.m4
+lib/libgtkextra.so.14
+share/aclocal/gtkextra.m4
 @dirrm include/gtkextra
