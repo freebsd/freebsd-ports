@@ -11,7 +11,7 @@ CATEGORIES=	benchmarks
 MASTER_SITES=	ftp://sid.joedog.org/pub/siege/ \
 		http://www.cus.org.uk/~dom/distfiles/siege/
 
-MAINTAINER=	dominic.marks@btinternet.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A http regression testing and benchmarking utility
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

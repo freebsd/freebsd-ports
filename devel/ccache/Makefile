@@ -10,7 +10,7 @@ PORTVERSION=	2.2
 CATEGORIES=	devel
 MASTER_SITES=	http://ccache.samba.org/ftp/ccache/
 
-MAINTAINER=	dominic.marks@btinternet.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool to minimize the compile time of C programs
 
 GNU_CONFIGURE=	yes

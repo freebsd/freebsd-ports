@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.dbox.handshake.de/download/ \
 		http://www-2.cs.cmu.edu/~kroening/dbox/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	dominic.marks@btinternet.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IMAP4rev1 and POP3 server from the DBOX BBS package
 
 USE_GMAKE=	yes

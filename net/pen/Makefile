@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://siag.nu/pub/pen/ \
 		http://siag.nu/pub/pen/
 
-MAINTAINER=	dominic.marks@btinternet.com
+MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	A load balancer for "simple" tcp based protocols
 
 GNU_CONFIGURE=	yes
