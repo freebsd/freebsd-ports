@@ -1,0 +1,13 @@
+--- tools/designer/designer/help.cpp	2000/11/18 17:43:54	1.1
++++ tools/designer/designer/help.cpp	2000/11/18 17:46:09
+@@ -84,8 +84,8 @@
+     browser = new TextBrowser( this );
+     browser->mimeSourceFactory()->setFilePath( home );
+     browser->setFrameStyle( QFrame::Panel | QFrame::Sunken );
+-    browser->mimeSourceFactory()->addFilePath( QString( getenv( "QTDIR" ) ) + "/tools/designer/manual" );
+-    browser->mimeSourceFactory()->addFilePath( QString( getenv( "QTDIR" ) ) + "/doc/html/designer" );
++    browser->mimeSourceFactory()->addFilePath( QT_PREFIX "/share/qt2/designer/manual" );
++    browser->mimeSourceFactory()->addFilePath( QT_PREFIX "/share/doc/qt2/html/designer" );
+     browser->mimeSourceFactory()->addFilePath( parent->documentationPath() );
+     connect( browser, SIGNAL( textChanged() ),
+ 	     this, SLOT( textChanged() ) );

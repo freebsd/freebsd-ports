@@ -1,0 +1,14 @@
+--- tools/designer/designer/helpdialogimpl.cpp	2000/11/18 19:37:35	1.1
++++ tools/designer/designer/helpdialogimpl.cpp	2000/11/18 19:38:57
+@@ -569,9 +569,9 @@
+     delete lst;
+ 
+ 
+-    QString manualdir = QString( getenv( "QTDIR" ) ) + "/tools/designer/manual/book1.html";
++    QString manualdir = QT_PREFIX "/share/qt2/designer/manual/book1.html";
+     if ( !QFile::exists( manualdir ) )
+-	manualdir = QString( getenv( "QTDIR" ) ) + "/doc/html/designer/book1.html";
++	manualdir = QT_PREFIX "/share/doc/qt2/html/designer/book1.html";
+     QFile file( manualdir );
+     if ( !file.open( IO_ReadOnly ) )
+ 	return;
