@@ -1,0 +1,46 @@
+$FreeBSD$
+
+--- Makefile.orig	Tue Nov 13 07:43:24 2001
++++ Makefile	Tue Dec 25 15:45:31 2001
+@@ -17,7 +17,7 @@
+ #
+ # wszystkie ww opcje nalezy dodawac do zmiennej CFLAGS
+ 
+-CFLAGS+=-O2
++#CFLAGS+=-O2
+ 
+ # dla starszych wersji Solarisa (tam gdzie nie ma snprintf, getdomainname,
+ # itd.) odkomentuj ponizsze dwie linie:
+@@ -38,15 +38,15 @@
+ 
+ # nw katalogi nie sa przeszukiwane automatycznie na FreeBSD, NetBSD i OpenBSD.
+ # Odkomentuj ponizsze linie jesli kompilujesz program na tych systemach
+-# BSD_INC=-I/usr/local/include -I/usr/pkg/include
+-# BSD_LIB=-L/usr/local/lib -L/usr/pkg/lib
++BSD_INC=-I/usr/local/include -I/usr/pkg/include
++BSD_LIB=-L/usr/local/lib -L/usr/pkg/lib
+ 
+ # katalog pod ktorym program zostanie zainstalowany po make install - binaria
+ # ida do $DIR/$BIN, reszta do $DIR/$DOC
+-PREFIX?=/usr/local
++PREFIX?=/usr/local/
+ INSTALL_PREFIX=$(PREFIX)
+ INSTALL_BIN=$(INSTALL_PREFIX)/bin
+-INSTALL_DOC=$(INSTALL_PREFIX)/doc/sms
++INSTALL_DOC=$(INSTALL_PREFIX)/share/doc/pl-sms
+ 
+ # ponizej juz nic nie powinno sie zmieniac
+ 
+@@ -101,10 +101,12 @@
+ install: all
+ 	mkdir -p -m 755 $(INSTALL_BIN)
+ 	install -s -m 755 $(TARGET) $(SMSADDR) $(INSTALL_BIN)
++ifndef NOPORTDOCS
+ 	mkdir -p $(INSTALL_DOC)/contrib
+ 	install -m 644 README* $(INSTALL_DOC)
+ 	install -m 644 contrib/* $(INSTALL_DOC)/contrib
+ 	chmod -R a+rX $(INSTALL_DOC)
++endif
+ 
+ archive: clean
+ 	./make_archive
