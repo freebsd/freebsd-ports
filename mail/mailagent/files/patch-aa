@@ -1,6 +1,6 @@
 --- agent/filter/logfile.c.orig	Fri Apr 18 16:20:26 1997
 +++ agent/filter/logfile.c	Fri Apr 18 16:41:06 1997
-@@ -65,6 +65,9 @@
+@@ -68,6 +68,9 @@
  #include <sys/fcntl.h>	/* Try this one in last resort */
  #endif
  #endif
@@ -10,7 +10,7 @@
  
  #include "confmagic.h"
  
-@@ -217,8 +220,10 @@
+@@ -220,8 +223,10 @@
  	 */
  
  #ifdef HAS_SYS_ERRLIST
