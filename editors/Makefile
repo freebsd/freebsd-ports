@@ -114,7 +114,6 @@
     SUBDIR += ooodict-en_US
     SUBDIR += ooodict-es_ES
     SUBDIR += ooodict-hr_HR
-    SUBDIR += ooodict-hu_HU
     SUBDIR += ooodict-it_IT
     SUBDIR += ooodict-nl_NL
     SUBDIR += ooodict-sk_SK
