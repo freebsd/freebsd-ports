@@ -7,10 +7,10 @@
 
 PORTNAME=	aster
 PORTVERSION=	7.4.0
+PORTREVISION=	1
 CATEGORIES=	french cad python
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
-DISTNAME=	${PORTNAME}-full-src-${PORTVERSION}-3
-EXTRACT_SUFX=	.tar
+DISTNAME=	${PORTNAME}-full-src-${PORTVERSION}-4
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Analyse des structures et thermo-mécanique
