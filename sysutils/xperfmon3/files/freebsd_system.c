@@ -5,7 +5,7 @@
  *
  * Work has started on 7th Sep 1998 on Northsea island Föhr.
  *
- *      $Id: freebsd_system.c,v 3.4 1998/11/15 16:50:04 lkoeller Exp lkoeller $
+ *      $Id: freebsd_system.c,v 1.7 1999/02/04 05:10:53 gj Exp $
  */
 
 /*
@@ -105,7 +105,7 @@
  */
 
 #ifndef LINT
-static char rcsid[] = "$Id: freebsd_system.c,v 3.4 1998/11/15 16:50:04 lkoeller Exp lkoeller $";
+static char rcsid[] = "$Id: freebsd_system.c,v 1.7 1999/02/04 05:10:53 gj Exp $";
 #endif
 
 #include "fbsd_vers.h"
@@ -507,6 +507,7 @@ get_interrupts(void)
 static void
 get_nfsstat(void)
 {
+#if __FreeBSD_version < 400001
     int name[3];
     size_t size = sizeof(nfsstats);
 
@@ -514,6 +515,10 @@ get_nfsstat(void)
     name[1] = vfc.vfc_typenum;
     name[2] = NFS_NFSSTATS;
     if (sysctl(name, 3, &nfsstats, &size, (void *)0, (size_t)0) < 0) {
+#else
+    size_t size = sizeof(nfsstats);
+    if (sysctlbyname("vfs.nfs.nfsstats", &nfsstats, &size, (void *)0, (size_t)0) < 0) {
+#endif
 	fprintf(stderr, "xperfmon++: get_nfsstat(): Can?%t get NFS statistics with sysctl()\n");
 	return;
     }
