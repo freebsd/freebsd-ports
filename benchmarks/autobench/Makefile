@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.xenoclast.org/autobench/downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automating the process of benchmarking a web server
 
-RUN_DEPENDS=	httperf:${PORTSDIR}/www/httperf
+RUN_DEPENDS=	httperf:${PORTSDIR}/benchmarks/httperf
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
