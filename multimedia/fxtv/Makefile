@@ -8,7 +8,7 @@
 PORTNAME=	fxtv
 PORTVERSION=	1.02
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.ipass.net/~dbhopper/aa8vb/fxtv/
+MASTER_SITES=	http://people.freebsd.org/~rhh/fxtv/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	aa8vb@nc.rr.com
