@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	workrave
-PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTVERSION=	1.4.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +15,8 @@ MAINTAINER=	einekoai@chello.nl
 COMMENT=	A Gnome RSI prevention tool
 
 LIB_DEPENDS=	gtkmm-2.0.6:${PORTSDIR}/x11-toolkits/gtk--2 \
-		gnomeuimm-1.3:${PORTSDIR}/x11-toolkits/libgnomeuimm
+		gnomeuimm-1.3:${PORTSDIR}/x11-toolkits/libgnomeuimm \
+		gnet-2.0.0:${PORTSDIR}/net/gnet2
 BUILD_DEPENDS=	intltool-extract:${PORTSDIR}/textproc/intltool
 
 USE_X_PREFIX=	yes
@@ -27,6 +27,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/gnome/workrave \
 		--enable-gconf \
-		--enable-gnome
+		--enable-gnome \
+		--enable-exercises
 
 .include <bsd.port.mk>

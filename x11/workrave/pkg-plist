@@ -8,10 +8,33 @@ share/gnome/pixmaps/workrave/workrave-icon-small.png
 share/gnome/sounds/workrave/break-ignored.wav
 share/gnome/sounds/workrave/break-prelude.wav
 share/gnome/sounds/workrave/daily-limit.wav
+share/gnome/sounds/workrave/exercise-ended.wav
+share/gnome/sounds/workrave/exercises-ended.wav
 share/gnome/sounds/workrave/micropause-ended.wav
 share/gnome/sounds/workrave/micropause-started.wav
 share/gnome/sounds/workrave/restbreak-ended.wav
 share/gnome/sounds/workrave/restbreak-started.wav
+share/gnome/workrave/exercises/backward-shoulder-stretch.png
+share/gnome/workrave/exercises/chair-pushup-1.png
+share/gnome/workrave/exercises/chair-pushup-2.png
+share/gnome/workrave/exercises/depth-focus-1.png
+share/gnome/workrave/exercises/depth-focus-2.png
+share/gnome/workrave/exercises/eye-darkness.png
+share/gnome/workrave/exercises/finger-stretch-1.png
+share/gnome/workrave/exercises/finger-stretch-2.png
+share/gnome/workrave/exercises/monitor-border-1.png
+share/gnome/workrave/exercises/monitor-border-2.png
+share/gnome/workrave/exercises/monitor-border-3.png
+share/gnome/workrave/exercises/monitor-border-4.png
+share/gnome/workrave/exercises/neck-tilt-stretch-1.png
+share/gnome/workrave/exercises/neck-tilt-stretch-2.png
+share/gnome/workrave/exercises/rotate-arm.png
+share/gnome/workrave/exercises/turn-head-1.png
+share/gnome/workrave/exercises/shoulder-arm-stretch.png
+share/gnome/workrave/exercises/turn-head-2.png
+share/gnome/workrave/exercises/wrist-lower-arm-desk-stretch-1.png
+share/gnome/workrave/exercises/wrist-lower-arm-desk-stretch-2.png
+share/gnome/workrave/exercises/exercises.xml
 share/gnome/workrave/images/daily-limit.png
 share/gnome/workrave/images/display.png
 share/gnome/workrave/images/micropause.png
@@ -29,16 +52,26 @@ share/gnome/workrave/images/workrave-icon-medium.png
 share/gnome/workrave/images/workrave-icon-small.png
 share/gnome/workrave/images/workrave.ico
 share/gnome/workrave/images/workrave.png
+share/locale/da/LC_MESSAGES/workrave.mo
 share/locale/de/LC_MESSAGES/workrave.mo
 share/locale/eo/LC_MESSAGES/workrave.mo
+share/locale/es/LC_MESSAGES/workrave.mo
 share/locale/nl/LC_MESSAGES/workrave.mo
+share/locale/pl/LC_MESSAGES/workrave.mo
+@unexec rmdir share/locale/pl/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir share/locale/pl 2>/dev/null || true
 @unexec rmdir share/locale/nl/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir share/locale/nl 2>/dev/null || true
+@unexec rmdir share/locale/es/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir share/locale/es 2>/dev/null || true
 @unexec rmdir share/locale/eo/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir share/locale/eo 2>/dev/null || true
 @unexec rmdir share/locale/de/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir share/locale/de 2>/dev/null || true
+@unexec rmdir share/locale/da/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir share/locale/da 2>/dev/null || true
 @dirrm share/gnome/workrave/images
+@dirrm share/gnome/workrave/exercises
 @dirrm share/gnome/workrave
 @dirrm share/gnome/pixmaps/workrave
 @dirrm share/gnome/sounds/workrave
