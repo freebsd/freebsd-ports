@@ -6,23 +6,20 @@
 #
 
 PORTNAME=	liece
-PORTVERSION=	1.4.6
+PORTVERSION=	1.4.7
 CATEGORIES=	irc elisp
 MASTER_SITES=	http://www.unixuser.org/~ueno/liece/dist/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	yoichi@FreeBSD.org
 
-BUILD_DEPENDS+=	${LOCALBASE}/share/flim/${FLIM_COOKIE}:${PORTSDIR}/editors/flim${DEPPORT_SUFFIX} \
+BUILD_DEPENDS+=	${LOCALBASE}/${LISPDIR}/apel/install.el:${PORTSDIR}/editors/apel${DEPPORT_SUFFIX} \
 		${LOCALBASE}/bin/msgfmt:${PORTSDIR}/devel/gettext-old
-RUN_DEPENDS+=	${LOCALBASE}/share/flim/${FLIM_COOKIE}:${PORTSDIR}/editors/flim${DEPPORT_SUFFIX} \
+RUN_DEPENDS+=	${LOCALBASE}/${LISPDIR}/apel/install.el:${PORTSDIR}/editors/apel${DEPPORT_SUFFIX} \
 		${LOCALBASE}/bin/ldcc:${PORTSDIR}/irc/liece-dcc
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
-
-FLIM_TRUNK=	1.14
-FLIM_COOKIE=	flim-${EMACS_PORT_NAME}-${FLIM_TRUNK}.FreeBSD-packages
 
 EMACS_PORT_NAME?=	emacs21
 
@@ -80,9 +77,7 @@ post-install:
 	(cd ${WRKSRC}/etc ; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install)
 	${MKDIR} ${PREFIX}/${LIECE_ETCDIR}/icons
 	${INSTALL_DATA} ${WRKSRC}/etc/icons/*.xpm ${PREFIX}/${LIECE_ETCDIR}/icons
-	${MKDIR} ${PREFIX}/${LIECE_ETCDIR}/po/ja_JP.EUC/LC_MESSAGES
-	${LN} -sf ja_JP.EUC ${PREFIX}/${LIECE_ETCDIR}/po/ja
-	${INSTALL_DATA} ${WRKSRC}/etc/po/liece.mo ${PREFIX}/${LIECE_ETCDIR}/po/ja_JP.EUC/LC_MESSAGES
+	${LN} -sf ja ${PREFIX}/${LIECE_ETCDIR}/locale/ja_JP.EUC
 .if !defined(NOPORTDOCS)
 #	${INSTALL_DATA} ${WRKSRC}/etc/sample.dot.emacs ${PREFIX}/${LIECE_ETCDIR}/
 	${MKDIR} ${PREFIX}/${LIECE_ETCDIR}/doc
