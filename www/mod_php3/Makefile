@@ -1,17 +1,17 @@
 # New ports collection makefile for:	apache HTTPD / php3
-# Version required:	1.3.0 / 3.0.2
+# Version required:	1.3.0 / 3.0.3
 # Date created:		So  21 Jun 1998 16:09:39 CEST
 # Whom:			Stefan Herrmann <stefan@asterix.webaffairs.net>
 #
-# $Id: Makefile,v 1.49 1998/07/25 11:30:12 andreas Exp $
+# $Id: Makefile,v 1.50 1998/08/27 14:08:20 kuriyama Exp $
 #
 
 DISTNAME=	apache_1.3.0
-PKGNAME=	apache-php3.0.2-1.3.0
+PKGNAME=	apache-php3.0.3-1.3.0
 CATEGORIES=	www
 MASTER_SITES=	ftp://www.apache.org/apache/dist/ \
 		http://www.php.net/distributions/
-DISTFILES=	apache_1.3.0.tar.gz php-3.0.2.tar.gz
+DISTFILES=	apache_1.3.0.tar.gz php-3.0.3.tar.gz
 
 MAINTAINER=	stefan@asterix.webaffairs.net
 
@@ -85,13 +85,13 @@ PHP3_CONF_ARGS+=	--with-pgsql=${PREFIX}/pgsql
 .endif
 
 post-patch:
-	@ ${PATCH} -s -d ${WRKDIR}/php-3.0.2 < ${FILESDIR}/configure.patch
+	@ ${PATCH} -s -d ${WRKDIR}/php-3.0.3 < ${FILESDIR}/configure.patch
 
 pre-configure:
-	@( cd ${WRKDIR}/php-3.0.2 \
-	&& ${ECHO_MSG} "===>  Configuring for PHP-3.0.2" \
+	@( cd ${WRKDIR}/php-3.0.3 \
+	&& ${ECHO_MSG} "===>  Configuring for PHP-3.0.3" \
 	&& CFLAGS= CPPFLAGS="-I${PREFIX}/include -I${PREFIX}/include/gd" LDFLAGS=-L${PREFIX}/lib ./configure ${PHP3_CONF_ARGS} \
-	&& ${ECHO_MSG} "===>  Building for PHP-3.0.2" \
+	&& ${ECHO_MSG} "===>  Building for PHP-3.0.3" \
 	&& ${MAKE} install \
 	&& ${ECHO_MSG} "===>  Configuring for Apache-1.3.0" )
 .if defined(PHP3_DBTYPE) && ${PHP3_DBTYPE} == msql
@@ -124,7 +124,7 @@ post-install:
 	/bin/ln -s ${PREFIX}/share/doc/apache/$i ${PREFIX}/www/data/$i
 .endfor
 .for i in CODING_STANDARDS EXTENSION_STATUS LICENSE
-	${INSTALL_DATA} ${WRKDIR}/php-3.0.2/$i ${PHP3DOCDIR}
+	${INSTALL_DATA} ${WRKDIR}/php-3.0.3/$i ${PHP3DOCDIR}
 .endfor
 	@ ${ECHO} "Docs reside in ${APACHEDOCDIR}"
 	@ ${ECHO} "and in ${PHP3DOCDIR}"
