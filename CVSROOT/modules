@@ -3393,6 +3393,7 @@ latte		ports/textproc/latte
 launch.app	ports/x11/launch.app
 lavaps		ports/sysutils/lavaps
 lbdb		ports/mail/lbdb
+lbpp		ports/devel/lbpp
 lbrate		ports/archivers/lbrate
 lbreakout	ports/games/lbreakout
 lc		ports/misc/lc
