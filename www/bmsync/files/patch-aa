@@ -1,0 +1,23 @@
+--- Makefile.orig	Fri Sep 22 11:34:42 2000
++++ Makefile	Fri Sep 22 16:55:27 2000
+@@ -15,16 +15,16 @@
+ all: bmsync.1 bmsync.html
+ 
+ bmsync.html: bmsync
+-	pod2html $< >$@
++	pod2html $> >$@
+ 
+ bmsync.1: bmsync
+-	pod2man --center=" " --release=$(VERSION) $< >$@
++	pod2man --center=" " --release=$(VERSION) $> >$@
+ 
+ install: all
+-	install -o root -g root -m 755 bmsync $(PREFIX)/bin
++	install -c -o root -g wheel -m 755 bmsync $(PREFIX)/bin
+ 	ln -s bmsync $(PREFIX)/bin/bmcopy
+ 	ln -s bmsync $(PREFIX)/bin/bmmerge
+-	install -o root -g root -m 644 bmsync.1 $(PREFIX)/man/man1
++	install -o root -g wheel -m 644 bmsync.1 $(PREFIX)/man/man1
+ 
+ list-install:
+ 	@list='$(INSTALLED_FILES)'; \

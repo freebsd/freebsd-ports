@@ -23,6 +23,7 @@
     SUBDIR += bluefish
     SUBDIR += bsdi-netscape47-communicator
     SUBDIR += bsdi-netscape47-navigator
+    SUBDIR += bmsync
     SUBDIR += boa
     SUBDIR += cadaver
     SUBDIR += calamaris

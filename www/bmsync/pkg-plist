@@ -1,0 +1,3 @@
+bin/bmsync
+bin/bmcopy
+bin/bmmerge
