@@ -22,6 +22,10 @@ MAN3=		Apache::DB.3 Apache::DProf.3 Apache::SmallProf.3 \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=		"Broken pkg-plist on 4.x"
+.endif
+
 .if ${PERL_LEVEL} < 500600
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Devel/DProf.pm:${PORTSDIR}/devel/p5-Devel-DProf
 .endif
