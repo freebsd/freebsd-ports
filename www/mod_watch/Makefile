@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	mod_watch
-PORTVERSION=	2.4
+PORTVERSION=	3.10
 CATEGORIES=	www
 MASTER_SITES=	http://www.snert.com/Software/mod_watch/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
-DISTNAME=	${PORTNAME}204
+DISTNAME=	${PORTNAME}310
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	anders@FreeBSD.org
@@ -23,37 +23,29 @@ USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 APXS?=		${LOCALBASE}/sbin/apxs
+MAKE_ARGS+=	APXS="${APXS}"
 
-DOCS=	apache2mrtg.html dbm-client.html dbm-server.html index.shtml \
-	mod_watch.html style.css
+ALL_TARGET=	build-dynamic
 
-FIXCONVERT=	CHANGES.TXT convert.pl index.shtml
+DOCS=	apache2mrtg.html index.shtml mailto.js mod_watch.html style.css
+DOCS_HTMLIMAGES=	apache-header-476-62.png mrpixel.gif mrtg-bar.png \
+			sun-logo.jpg wave1.jpg
 
 post-patch:
-.for f in ${FIXCONVERT}
-	@${SED} -e 's:convert.pl:convertdbm.pl:g' < ${WRKSRC}/${f} \
-		> ${WRKSRC}/${f}.tmp
-	@${MV} ${WRKSRC}/${f}.tmp ${WRKSRC}/${f}
-.endfor
-
-do-build:
-	@cd ${WRKSRC} && ${APXS} -c mod_watch.c
+	${PERL} -pi -e "s@^APXS.*@@" ${WRKSRC}/Makefile
 
 do-install:
 	${APXS} -i -A -n watch ${WRKSRC}/mod_watch.so
 	${INSTALL_SCRIPT} ${WRKSRC}/apache2mrtg.pl ${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/mod_watch.pl ${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKSRC}/convert.pl ${PREFIX}/sbin/convertdbm.pl
-	${INSTALL_SCRIPT} ${WRKSRC}/dbm-client.pl ${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKSRC}/dbm-server.pl ${PREFIX}/sbin
 .if !defined(NOPORTDOCS)
-	@${INSTALL} -d -m 0755 ${PREFIX}/share/doc/mod_watch/html/Img
-	${INSTALL_DATA} ${WRKSRC}/CHANGES.TXT ${PREFIX}/share/doc/mod_watch/
-	${INSTALL_DATA} ${WRKSRC}/Img/mrpixel.gif ${PREFIX}/share/doc/mod_watch/html/Img/
-	${INSTALL_DATA} ${WRKSRC}/Img/sun-logo.jpg ${PREFIX}/share/doc/mod_watch/html/Img/
-	${INSTALL_DATA} ${WRKSRC}/Img/wave1.jpg ${PREFIX}/share/doc/mod_watch/html/Img/
+	@${INSTALL} -d -m 0755 ${DOCSDIR}/html/Img
+	${INSTALL_DATA} ${WRKSRC}/CHANGES.TXT ${DOCSDIR}/
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/mod_watch/html/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/html/
+.endfor
+.for f in ${DOCS_HTMLIMAGES}
+	${INSTALL_DATA} ${WRKSRC}/Img/${f} ${DOCSDIR}/html/Img/
 .endfor
 .endif
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
