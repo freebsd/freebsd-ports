@@ -1,4 +1,4 @@
-# New ports collection makefile for:  oonsoo
+# New ports collection makefile for:	oonsoo 
 # Date created:		23rd June, 1997
 # Whom:			Joel Sutton <jsutton@bbcon.com.au>
 #
@@ -19,6 +19,6 @@ pre-patch:
 	@${CP} ${WRKSRC}/Makefile.Linux ${WRKSRC}/Makefile
 
 do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/oonsoo ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/oonsoo ${PREFIX}/bin
 
 .include <bsd.port.mk>

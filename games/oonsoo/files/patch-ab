@@ -1,0 +1,20 @@
+--- Makefile.common.orig	Tue Jan 11 08:36:39 2000
++++ Makefile.common	Thu Feb 24 04:14:30 2000
+@@ -33,7 +33,7 @@
+ 		echo ""; \
+ 		echo "------ Building: $$dir"; \
+ 		cd $$dir; \
+-		make $(MAKEPARMS) MAKEPARMS="$(MAKEPARMS)" all; \
++		$(MAKE) $(MAKEPARMS) MAKEPARMS="$(MAKEPARMS)" all; \
+ 		if [ $$? -eq 0 ] ; \
+ 		then \
+ 			cd ..; \
+@@ -48,7 +48,7 @@
+ 		echo ""; \
+ 		echo "------ Cleaning: $$dir"; \
+ 		cd $$dir; \
+-		make $(MAKEPARMS) MAKEPARMS="$(MAKEPARMS)" clean; \
++		$(MAKE) $(MAKEPARMS) MAKEPARMS="$(MAKEPARMS)" clean; \
+ 		if [ $$? -eq 0 ] ; \
+ 		then \
+ 			cd ..; \
