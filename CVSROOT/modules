@@ -5516,6 +5516,7 @@ p5-Schedule-Cron	ports/sysutils/p5-Schedule-Cron
 p5-Schedule-Match	ports/sysutils/p5-Schedule-Match
 p5-Search-Binary	ports/devel/p5-Search-Binary
 p5-Search-Namazu	ports/databases/p5-Search-Namazu
+p5-Search-Saryer	ports/textproc/p5-Search-Saryer
 p5-Server-FastPL	ports/devel/p5-Server-FastPL
 p5-Set-IntSpan	ports/math/p5-Set-IntSpan
 p5-Set-NestedGroups	ports/devel/p5-Set-NestedGroups
