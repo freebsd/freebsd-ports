@@ -1,0 +1,17 @@
+#! /bin/sh
+
+# Define the directories for the X11 library files.
+# This can be null if these files are in the default linker search path.
+
+sed -e "s;XINCLUDE=-I/usr/local/X/include;XINCLUDE=-I/usr/X11R6/include;" \
+    -e "s;XLIBDIRS=-L/usr/X11/lib;XLIBDIRS=-L/usr/X11R6/lib;" \
+    -e "s;JSRCDIR=jpeg-6a;JSRCDIR=\${PORTSDIR}/graphics/jpeg/work/jpeg-6a;" \
+    -e "s;PSRCDIR=libpng;PSRCDIR=\${PORTSDIR}/graphics/png/work/libpng-0.89c;" \
+    -e "s;ZSRCDIR=zlib;ZSRCDIR=.;" \
+    -e "s;CC=gcc;CC=cc;" \
+    -e "s;DEVICE_DEVS15=pdfwrite.dev;DEVICE_DEVS15=pdfwrite.dev stcolor.dev;" \
+    < ${WRKSRC}/unix-gcc.mak > ${WRKSRC}/unix-gcc.mak.bak && \
+    mv ${WRKSRC}/unix-gcc.mak.bak ${WRKSRC}/unix-gcc.mak
+
+# without that no way :)
+touch ${WRKSRC}/makefile

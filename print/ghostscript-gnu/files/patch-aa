@@ -1,0 +1,37 @@
+--- unix-gcc.mak.original	Thu Oct 17 07:48:54 1996
++++ unix-gcc.mak	Thu Oct 17 07:49:07 1996
+@@ -165,7 +165,7 @@
+ # SVR4 may need -lnsl.
+ # (Libraries required by individual drivers are handled automatically.)
+ 
+-EXTRALIBS=
++EXTRALIBS=-lz
+ 
+ # Define the include switch(es) for the X11 header files.
+ # This can be null if handled in some other way (e.g., the files are
+@@ -3352,7 +3352,7 @@
+ zlibe_1.dev: $(ZLIB_MAK) $(ECHOGS_XE)
+ 	$(SETMOD) zlibe_1 -lib gz
+ 
+-zlibe_=adler32.$(OBJ) deflate.$(OBJ) trees.$(OBJ)
++zlibe_=
+ zlibe_0.dev: $(ZLIB_MAK) $(ECHOGS_XE) zlibc.dev $(zlibe_)
+ 	$(SETMOD) zlibe_0 $(zlibe_)
+ 	$(ADDMOD) zlibe_0 -include zlibc
+@@ -3376,11 +3376,11 @@
+ 
+ zlibd1_=infblock.$(OBJ) infcodes.$(OBJ) inffast.$(OBJ)
+ zlibd2_=inflate.$(OBJ) inftrees.$(OBJ) infutil.$(OBJ)
+-zlibd_ = $(zlibd1_) $(zlibd2_)
+-zlibd_0.dev: $(ZLIB_MAK) $(ECHOGS_XE) zlibc.dev $(zlibd_)
+-	$(SETMOD) zlibd_0 $(zlibd1_)
+-	$(ADDMOD) zlibd_0 -obj $(zlibd2_)
+-	$(ADDMOD) zlibd_0 -include zlibc
++zlibd_ =
++zlibd_0.dev: $(ZLIB_MAK) $(ECHOGS_XE) zlibc.dev
++	$(SETMOD) zlibd_0
++	$(ADDMOD) zlibd_0
++	$(ADDMOD) zlibd_0
+ 
+ infblock.$(OBJ): $(ZSRC)infblock.c $(ZDEP)
+ 	$(CCCZ) $(ZSRC)infblock.c
