@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	WordNet-Similarity
-PORTVERSION=	0.05
+PORTVERSION=	0.06
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WordNet
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Modules and a CLI to determine semantic relatedness using the WordNet database
+MAINTAINER=	clsung@dragon2.net
+COMMENT=	Modules/CLI to determine semantic relatedness using the WordNet
 
-BUILD_DEPENDS=	${SITE_PERL}/WordNet/QueryData.pm:${PORTSDIR}/textproc/p5-WordNet-QueryData
+BUILD_DEPENDS=	${SITE_PERL}/WordNet/QueryData.pm:${PORTSDIR}/textproc/p5-WordNet-QueryData \
+		${SITE_PERL}/${PERL_ARCH}/BerkeleyDB.pm:${PORTSDIR}/databases/p5-BerkeleyDB
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 WNHOME?=	${LOCALBASE}/share/WordNet-1.7.1
@@ -28,7 +29,9 @@ MAN3=		WordNet::Similarity.3 WordNet::Similarity::jcn.3 \
 		WordNet::Similarity::hso.3 WordNet::Similarity::vector.3 \
 		WordNet::Similarity::random.3 WordNet::Similarity::res.3 \
 		WordNet::Similarity::lesk.3 WordNet::Similarity::edge.3 \
-		WordNet::Similarity::lin.3 WordNet::Similarity::lch.3
+		WordNet::Similarity::lin.3 WordNet::Similarity::lch.3 \
+		WordNet::Similarity::wup.3
+
 post-patch:
 	@${REINPLACE_CMD} -e  \
 		'/wnUnixPath/s|/usr/local/WordNet-1.7.1|${WNHOME}|; \

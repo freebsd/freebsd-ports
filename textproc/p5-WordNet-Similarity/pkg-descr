@@ -1,27 +1,23 @@
-From the README:
-
-This package consists of Perl modules along with supporting Perl programs that
-implement the semantic relatedness measures described by Leacock Chodorow
-(1998), Jiang Conrath (1997), Resnik (1995), Lin (1998), Hirst St Onge (1998)
-and the adapted gloss overlap measure by Banerjee and Pedersen (2002). The Perl
-modules are designed as object classes with methods that take as input two word
-senses. The semantic relatedness of these word senses is returned by these
-methods. A quantitative measure of the degree to which two word senses are
-related has wide ranging applications in numerous areas, such as word sense
-disambiguation, information retrieval, etc. For example, in order to determine
-which sense of a given word is being used in a particular context, the sense
-having the highest relatedness with its context word senses is most likely to
-be the sense being used. Similarly, in information retrieval, retrieving
-documents containing highly related concepts are more likely to have higher
-precision and recall values.
+This package consists of Perl modules along with supporting Perl programs
+that implement the semantic relatedness measures described by Leacock
+Chodorow (1998), Jiang Conrath (1997), Resnik (1995), Lin (1998), Hirst St
+Onge (1998), Wu Palmer (1994), the adapted gloss overlap measure by 
+Banerjee and Pedersen (2002), and a measure based on context vectors
+by Patwardhan (2003). The details of the Vector measure are described in the
+Master's thesis work done by Patwardhan (2003) at the University of Minnesota
+Duluth. The  Perl modules are designed as objects with methods that take as
+input two word senses. The semantic relatedness of these word senses is
+returned by these methods. A quantitative measure of the degree to which two
+word senses are related has wide ranging applications in numerous areas, such
+as word sense disambiguation, information retrieval, etc. For example, in
+order to determine which sense of a given word is being used in a particular
+context, the sense having the highest relatedness with its context word
+senses is most likely to be the sense being used. Similarly, in information
+retrieval, retrieving documents containing highly related concepts are more
+likely to have higher precision and recall values.
 
 A command line interface to these modules is also present in the package. The
 simple, user-friendly interface returns the relatedness measure of two given
-words. A number of switches and options have been provided to modify the output
-and enhance it with trace information and other useful output. Details of the
-usage are provided in other sections of this README. Supporting utilities for
-generating information content files from various corpora are also available in
-the package. The information content files are required by three of the
-measures for computing the relatedness of concepts.
+words. 
 
 WWW: http://search.cpan.org/dist/WordNet-Similarity/
