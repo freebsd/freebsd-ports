@@ -1,0 +1,82 @@
+diff -cr spice3f4/src/lib/cp/history.c src/lib/cp/history.c
+*** spice3f4/src/lib/cp/history.c	Thu Jun 17 17:32:40 1993
+--- src/lib/cp/history.c	Tue Nov  4 22:18:54 1997
+***************
+*** 11,16 ****
+--- 11,24 ----
+  #include "cpdefs.h"
+  #include "suffix.h"
+  
++ #ifdef HAS_GNUREADLINE
++ 
++ /* Added GNU Readline Support -- Andrew Veliath <veliaa@rpi.edu> */
++ #include <readline/readline.h>
++ #include <readline/history.h>
++ 
++ #endif /* HAS_GNUREADLINE */
++ 
+  static char *dohs();
+  static void freehist();
+  static wordlist *dohmod();
+***************
+*** 19,24 ****
+--- 27,33 ----
+  static wordlist *hpattern();
+  static wordlist *hprefix();
+  
++ 
+  struct histent *cp_lastone = NULL;
+  int cp_maxhistlength = 1000;
+  char cp_hat = '^';
+***************
+*** 345,352 ****
+--- 354,363 ----
+      cp_lastone->hi_next = NULL;
+      cp_lastone->hi_event = event;
+      cp_lastone->hi_wlist = wl_copy(wlist);
++ #ifndef HAS_GNUREADLINE
+      freehist(histlength - cp_maxhistlength);
+      histlength++;
++ #endif
+      return;
+  }
+  
+***************
+*** 483,492 ****
+--- 494,529 ----
+          wl = wl->wl_next;
+          rev = true;
+      }
++ #ifdef HAS_GNUREADLINE
++     /* Added GNU Readline Support -- Andrew Veliath <veliaa@rpi.edu> */
++     {
++ 	HIST_ENTRY *he;
++ 	int i, N;
++ 
++ 	N = (wl == NULL) ? history_length : atoi(wl->wl_word);
++ 
++ 	if (N < 0) N = 0;
++ 	if (N > history_length) N = history_length;
++ 
++ 	if (rev)
++ 	    for (i = history_length; i > 0 && N; --i, --N) {
++ 		he = history_get(i);
++ 		if (!he) return;
++ 		fprintf(cp_out, "%d\t%s\n", i, he->line);
++ 	    }
++ 	else
++ 	    for (i = history_length - N + 1; i <= history_length; ++i) {
++ 		he = history_get(i);
++ 		if (!he) return;
++ 		fprintf(cp_out, "%d\t%s\n", i, he->line);
++ 	    }
++     }
++ #else
+      if (wl == NULL)
+          cp_hprint(cp_event - 1, cp_event - histlength, rev);
+      else
+          cp_hprint(cp_event - 1, cp_event - 1 - atoi(wl->wl_word), rev);
++ #endif /* ifelse HAS_GNUREADLINE */
+      return;
+  }
+  

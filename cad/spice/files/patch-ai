@@ -1,0 +1,20 @@
+diff -cr spice3f4/src/lib/fte/x11.c src/lib/fte/x11.c
+*** spice3f4/src/lib/fte/x11.c	Thu Jun 17 17:32:59 1993
+--- src/lib/fte/x11.c	Tue Nov  4 22:18:54 1997
+***************
+*** 773,784 ****
+--- 773,787 ----
+  	        graph->commandline, fx0, fx1, fy0, fy1);
+  	}
+  
++ /* don't use the following if using GNU Readline - AV */
++ #ifndef HAS_GNUREADLINE
+  	/* hack for Gordon Jacobs */
+  	/* add to history list if plothistory is set */
+  	if (cp_getvar("plothistory", VT_BOOL, (char *) &dummy)) {
+  	  wl = cp_parse(buf);
+  	  (void) cp_addhistent(cp_event++, wl);
+  	}
++ #endif /* HAS_GNUREADLINE */
+  
+  	(void) cp_evloop(buf);

@@ -1,0 +1,191 @@
+--- src/bin/main.c.orig	Thu Jul 29 01:48:32 1993
++++ src/bin/main.c	Mon Mar  8 12:00:35 1999
+@@ -25,6 +25,13 @@
+ #include <pwd.h>
+ #endif
+ 
++#ifdef HAS_GNUREADLINE
++/* Added GNU Readline Support 11/3/97 -- Andrew Veliath <veliaa@rpi.edu> */
++#include <readline/readline.h>
++#include <readline/history.h>
++#include "fteinput.h"
++#endif
++
+ #ifdef HAS_UNIX_SIGS
+ #include <signal.h>
+ #endif
+@@ -36,6 +43,11 @@
+ #endif
+ 
+ #include "patchlev.h"
++
++#ifdef __FreeBSD__
++#include <floatingpoint.h>
++#endif
++
+ #include "suffix.h"
+ 
+ int Patch_Level = PATCHLEVEL;
+@@ -49,6 +61,11 @@
+ bool ft_intrpt = false;     /* Set by the (void) signal handlers. */
+ bool ft_setflag = false;    /* Don't abort after an interrupt. */
+ 
++#ifdef HAS_GNUREADLINE
++char gnu_history_file[512];
++static char *application_name;
++#endif
++
+ struct variable *(*if_getparam)( );
+ 
+ #ifdef BATCH
+@@ -181,6 +198,89 @@
+ 
+ #endif
+ 
++#ifdef HAS_GNUREADLINE
++/* Adapted ../lib/cp/lexical.c:prompt() for GNU Readline -- Andrew Veliath <veliaa@rpi.edu> */
++static char *
++prompt()
++{
++    static char pbuf[128];
++    char *p = pbuf, *s;
++
++    if (cp_interactive == false)
++        return;
++    if (cp_promptstring == NULL)
++        s = "-> ";
++    else
++        s = cp_promptstring;
++    if (cp_altprompt)
++        s = cp_altprompt;
++    while (*s) {
++        switch (strip(*s)) {
++	case '!':
++	    p += sprintf(p, "%d", where_history() + 1);
++	    break;
++	case '\\':
++	    if (*(s + 1)) 
++		p += sprintf(p, "%c", strip(*++s));
++	default:
++	    *p = strip(*s); ++p;
++	    break;
++        }
++        s++;
++    }
++    *p = 0;
++    return pbuf;
++}
++
++/* Process device events in Readline's hook since there is no where
++   else to do it now - AV */
++int rl_event_func()
++{
++    static REQUEST reqst = { checkup_option, 0 };
++    Input(&reqst, NULL);
++    return 0;
++}
++
++/* Added GNU Readline Support -- Andrew Veliath <veliaa@rpi.edu> */
++void app_rl_readlines()
++{
++    char *line, *expanded_line;
++
++    strcpy(gnu_history_file, getenv("HOME"));
++    strcat(gnu_history_file, "/.");
++    strcat(gnu_history_file, application_name);
++    strcat(gnu_history_file, "_history");
++
++    using_history();
++    read_history(gnu_history_file);
++
++    rl_readline_name = application_name;
++    rl_instream = cp_in;
++    rl_outstream = cp_out;
++    rl_event_hook = rl_event_func;
++	
++    while (1) {
++	history_set_pos(history_length);
++	line = readline(prompt());
++	if (line && *line) {
++	    int s = history_expand(line, &expanded_line);
++		    
++	    if (s == 2) {
++		fprintf(stderr, "-> %s\n", expanded_line);
++	    } else if (s == -1) {
++		fprintf(stderr, "readline: %s\n", expanded_line);
++	    } else {
++		cp_evloop(expanded_line);
++		add_history(expanded_line);
++	    }
++	    free(expanded_line);
++	}
++	if (line) free(line);
++    }
++    /* History gets written in ../fte/misccoms.c com_quit */
++}
++#endif /* HAS_GNUREADLINE */
++
+ char *hlp_filelist[] = { "spice", 0 };
+ 
+ void
+@@ -210,6 +310,10 @@
+ 
+ #endif
+ 
++#ifdef __FreeBSD__
++    fpsetmask(fpgetmask() & ~FP_X_INV);
++#endif
++
+     /* MFB tends to jump to 0 on errors.  This tends to catch it. */
+     if (started) {
+         fprintf(cp_err, "main: Internal Error: jump to zero\n");
+@@ -217,6 +321,13 @@
+     }
+     started = true;
+ 
++#ifdef HAS_GNUREADLINE
++    if (!(application_name = strrchr(av[0],'/')))
++        application_name = av[0];
++    else
++        ++application_name;
++#endif
++
+ #ifdef HAS_MAC_ARGCARGV
+     ac = initmac(&av);
+ #endif
+@@ -393,7 +504,11 @@
+ #  ifdef HAS_UNIX_SIGS
+     /* Set up (void) signal handling */
+     if (!ft_batchmode) {
++#    ifdef HAS_GNUREADLINE
++        (void) signal(SIGINT, SIG_IGN);
++#    else
+         (void) signal(SIGINT, ft_sigintr);
++#    endif
+         (void) signal(SIGFPE, sigfloat);
+ #    ifdef SIGTSTP
+         (void) signal(SIGTSTP, sigstop);
+@@ -588,7 +703,11 @@
+     } else {
+         (void) setjmp(jbuf);
+         cp_interactive = true;
++#ifdef HAS_GNUREADLINE
++	app_rl_readlines();
++#else
+ 	while (cp_evloop((char *) NULL) == 1) ;
++#endif /* ifelse HAS_GNUREADLINE */
+     }
+ 
+ #  else /* if BATCH */
+@@ -627,7 +746,11 @@
+     /* Nutmeg "main" */
+     (void) setjmp(jbuf);
+     cp_interactive = true;
++#ifdef HAS_GNUREADLINE
++    app_rl_readlines();
++#else
+     while (cp_evloop((char *) NULL) == 1) ;
++#endif /* ifelse HAS_GNUREADLINE */
+ 
+ #endif
+ 
