@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	jpgraph
-PORTVERSION=	1.16
+PORTVERSION=	1.17
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.aditus.nu/jpgraph/downloads/
+MASTER_SITES=	http://members.chello.se/jpgraph/jpgdownloads/
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Draw both "quick and dirty" graphs with a minimum of code
@@ -19,8 +19,9 @@ USE_PHP=	gd
 
 NO_CDROM=	"The free version cannot be used in a commercial context"
 
-post-extract:
-	${RM} -rf ${WRKSRC}/src/Examples/CVS
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
 
 do-install:
 	@${MKDIR} ${DATADIR}
