@@ -1,36 +1,20 @@
 bin/gnofract4d
+lib/libfract4d.a
+lib/libfract4d.so
+lib/libfract4d.so.0
 share/gnome/apps/Graphics/gnofract4d.desktop
 share/gnome/gnofract4d/compiler_template.cpp
 share/gnome/gnofract4d/pointFunc.h
 share/gnome/gnofract4d/state.h
-share/gnome/help/gnofract4d/C/about.html
-share/gnome/help/gnofract4d/C/docbook.css
-share/gnome/help/gnofract4d/C/filemenu.html
-share/gnome/help/gnofract4d/C/gnofract4d.html
-share/gnome/help/gnofract4d/C/hybrid.png
-share/gnome/help/gnofract4d/C/julia_perturbed.png
-share/gnome/help/gnofract4d/C/julia_standard.png
-share/gnome/help/gnofract4d/C/mandelbrot_perturbed.png
-share/gnome/help/gnofract4d/C/mandelbrot_standard.png
-share/gnome/help/gnofract4d/C/maths.html
-share/gnome/help/gnofract4d/C/mouse.html
-share/gnome/help/gnofract4d/C/preferences.html
-share/gnome/help/gnofract4d/C/stylesheet-images/caution.gif
-share/gnome/help/gnofract4d/C/stylesheet-images/home.gif
-share/gnome/help/gnofract4d/C/stylesheet-images/important.gif
-share/gnome/help/gnofract4d/C/stylesheet-images/next.gif
-share/gnome/help/gnofract4d/C/stylesheet-images/note.gif
-share/gnome/help/gnofract4d/C/stylesheet-images/prev.gif
-share/gnome/help/gnofract4d/C/stylesheet-images/tip.gif
-share/gnome/help/gnofract4d/C/stylesheet-images/toc-blank.gif
-share/gnome/help/gnofract4d/C/stylesheet-images/toc-minus.gif
-share/gnome/help/gnofract4d/C/stylesheet-images/toc-plus.gif
-share/gnome/help/gnofract4d/C/stylesheet-images/up.gif
-share/gnome/help/gnofract4d/C/stylesheet-images/warning.gif
-share/gnome/help/gnofract4d/C/toolbar.html
-share/gnome/help/gnofract4d/C/topic.dat
-share/gnome/help/gnofract4d/C/types.html
-share/gnome/help/gnofract4d/C/xw_plane.png
+share/gnome/help/gnofract4d/C/figures/hybrid.png
+share/gnome/help/gnofract4d/C/figures/julia_perturbed.png
+share/gnome/help/gnofract4d/C/figures/julia_standard.png
+share/gnome/help/gnofract4d/C/figures/mandelbrot_perturbed.png
+share/gnome/help/gnofract4d/C/figures/mandelbrot_standard.png
+share/gnome/help/gnofract4d/C/figures/xw_plane.png
+share/gnome/help/gnofract4d/C/figures/xz_plane.png
+share/gnome/help/gnofract4d/C/figures/yz_plane.png
+share/gnome/help/gnofract4d/C/gnofract4d-manual.xml
 share/gnome/maps/gnofract4d/4zebbowx.map
 share/gnome/maps/gnofract4d/Digiorg1.map
 share/gnome/maps/gnofract4d/Gallet02.map
@@ -109,12 +93,17 @@ share/gnome/maps/gnofract4d/vooon.map
 share/gnome/maps/gnofract4d/wild.map
 share/gnome/maps/gnofract4d/wine.map
 share/gnome/maps/gnofract4d/world.map
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnofract4d/gnofract4d-manual-C.omf 2>/dev/null || true
+share/gnome/omf/gnofract4d/gnofract4d-manual-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnofract4d/gnofract4d-manual-C.omf 2>/dev/null || true
 share/gnome/pixmaps/gnofract4d/deepen_now.png
+share/gnome/pixmaps/gnofract4d/explorer_mode.png
 share/gnome/pixmaps/gnofract4d/gnofract4d-logo.png
 @dirrm share/gnome/pixmaps/gnofract4d
+@dirrm share/gnome/omf/gnofract4d
 @dirrm share/gnome/maps/gnofract4d
 @dirrm share/gnome/maps
-@dirrm share/gnome/help/gnofract4d/C/stylesheet-images
+@dirrm share/gnome/help/gnofract4d/C/figures
 @dirrm share/gnome/help/gnofract4d/C
 @dirrm share/gnome/help/gnofract4d
 @dirrm share/gnome/gnofract4d
