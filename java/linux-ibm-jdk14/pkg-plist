@@ -1,5 +1,3 @@
-@exec %%LOCALBASE%%/bin/registervm "%D/%%T%%/bin/java"
-@unexec %%LOCALBASE%%/bin/unregistervm "%D/%%T%%/bin/java"
 %%T%%/bin/HtmlConverter
 %%T%%/bin/appletviewer
 %%T%%/bin/appletviewer_g
@@ -11,8 +9,8 @@
 %%T%%/bin/jar_g
 %%T%%/bin/jarsigner
 %%T%%/bin/jarsigner_g
-%%T%%/bin/java-rmi.cgi
 %%T%%/bin/java
+%%T%%/bin/java-rmi.cgi
 %%T%%/bin/java_g
 %%T%%/bin/javac
 %%T%%/bin/javac_g
@@ -26,6 +24,8 @@
 %%T%%/bin/javaw_g
 %%T%%/bin/jdb
 %%T%%/bin/jdb_g
+%%T%%/bin/jformat
+%%T%%/bin/jformat_g
 %%T%%/bin/jvmtcf
 %%T%%/bin/jvmtcf_g
 %%T%%/bin/keytool
@@ -268,7 +268,6 @@
 %%T%%/demo/jfc/FileChooserDemo/src/FileChooserDemo.java
 %%T%%/demo/jfc/Font2DTest/Font2DTest.html
 %%T%%/demo/jfc/Font2DTest/Font2DTest.jar
-%%T%%/demo/jfc/Font2DTest/Font2DTestPlugin.html
 %%T%%/demo/jfc/Font2DTest/README.txt
 %%T%%/demo/jfc/Font2DTest/src/Font2DTest.java
 %%T%%/demo/jfc/Font2DTest/src/Font2DTestApplet.java
@@ -378,7 +377,7 @@
 %%T%%/demo/jfc/Notepad/resources/Notepad.properties
 %%T%%/demo/jfc/Notepad/resources/Notepad_fr.properties
 %%T%%/demo/jfc/Notepad/resources/Notepad_sv.properties
-%%T%%/demo/jfc/Notepad/resources/Notepad_zh.properties
+%%T%%/demo/jfc/Notepad/resources/Notepad_zh_CN.properties
 %%T%%/demo/jfc/Notepad/resources/copy.gif
 %%T%%/demo/jfc/Notepad/resources/cut.gif
 %%T%%/demo/jfc/Notepad/resources/new.gif
@@ -396,9 +395,6 @@
 %%T%%/demo/jfc/SampleTree/src/SampleTree.java
 %%T%%/demo/jfc/SampleTree/src/SampleTreeCellRenderer.java
 %%T%%/demo/jfc/SampleTree/src/SampleTreeModel.java
-%%T%%/demo/jfc/SimpleExample/README.txt
-%%T%%/demo/jfc/SimpleExample/SimpleExample.jar
-%%T%%/demo/jfc/SimpleExample/src/SimpleExample.java
 %%T%%/demo/jfc/Stylepad/README.txt
 %%T%%/demo/jfc/Stylepad/Stylepad.jar
 %%T%%/demo/jfc/Stylepad/resources/Notepad.properties
@@ -407,7 +403,7 @@
 %%T%%/demo/jfc/Stylepad/resources/Notepad_zh.properties
 %%T%%/demo/jfc/Stylepad/resources/Stylepad.properties
 %%T%%/demo/jfc/Stylepad/resources/Stylepad_sv.properties
-%%T%%/demo/jfc/Stylepad/resources/Stylepad_zh.properties
+%%T%%/demo/jfc/Stylepad/resources/Stylepad_zh_CN.properties
 %%T%%/demo/jfc/Stylepad/resources/alice.gif
 %%T%%/demo/jfc/Stylepad/resources/bold.gif
 %%T%%/demo/jfc/Stylepad/resources/bullets.gif
@@ -439,7 +435,6 @@
 %%T%%/demo/jfc/SwingSet2/README.txt
 %%T%%/demo/jfc/SwingSet2/SwingSet2.html
 %%T%%/demo/jfc/SwingSet2/SwingSet2.jar
-%%T%%/demo/jfc/SwingSet2/SwingSet2Plugin.html
 %%T%%/demo/jfc/SwingSet2/src/AquaTheme.java
 %%T%%/demo/jfc/SwingSet2/src/BezierAnimationPanel.java
 %%T%%/demo/jfc/SwingSet2/src/ButtonDemo.java
@@ -523,25 +518,20 @@
 %%T%%/demo/sound/src/MidiSynth.java
 %%T%%/demo/sound/src/TempoDial.java
 %%T%%/docs/COPYRIGHT
-%%T%%/docs/jaas/jaasguide.lnxia32.htm
 %%T%%/docs/japaneseinfo.lnxia32.en.htm
 %%T%%/docs/japaneseinfo.lnxia32.jp.htm
-%%T%%/docs/jre/LICENSE_da.html
+%%T%%/docs/jre/LICENSE_cs.html
 %%T%%/docs/jre/LICENSE_de.html
 %%T%%/docs/jre/LICENSE_en.html
 %%T%%/docs/jre/LICENSE_es.html
-%%T%%/docs/jre/LICENSE_fi.html
 %%T%%/docs/jre/LICENSE_fr.html
 %%T%%/docs/jre/LICENSE_it.html
 %%T%%/docs/jre/LICENSE_ja.html
 %%T%%/docs/jre/LICENSE_ko.html
-%%T%%/docs/jre/LICENSE_nl.html
-%%T%%/docs/jre/LICENSE_no.html
 %%T%%/docs/jre/LICENSE_pl.html
 %%T%%/docs/jre/LICENSE_pt.html
-%%T%%/docs/jre/LICENSE_ru.html
-%%T%%/docs/jre/LICENSE_sv.html
 %%T%%/docs/jre/LICENSE_tc.html
+%%T%%/docs/jre/LICENSE_tr.html
 %%T%%/docs/jre/LICENSE_zh.html
 %%T%%/docs/jre/runtimeguide.lnxia32.br.htm
 %%T%%/docs/jre/runtimeguide.lnxia32.cn.htm
@@ -555,24 +545,21 @@
 %%T%%/docs/jre/runtimeguide.lnxia32.zh.htm
 %%T%%/docs/readmefirst.lnxia32.txt
 %%T%%/docs/rmi-iiop/rmi_iiop_pg.html
-%%T%%/docs/sdk/LICENSE_da.html
+%%T%%/docs/sdk/LICENSE_cs.html
 %%T%%/docs/sdk/LICENSE_de.html
 %%T%%/docs/sdk/LICENSE_en.html
 %%T%%/docs/sdk/LICENSE_es.html
-%%T%%/docs/sdk/LICENSE_fi.html
 %%T%%/docs/sdk/LICENSE_fr.html
 %%T%%/docs/sdk/LICENSE_it.html
 %%T%%/docs/sdk/LICENSE_ja.html
 %%T%%/docs/sdk/LICENSE_ko.html
-%%T%%/docs/sdk/LICENSE_nl.html
-%%T%%/docs/sdk/LICENSE_no.html
 %%T%%/docs/sdk/LICENSE_pl.html
 %%T%%/docs/sdk/LICENSE_pt.html
-%%T%%/docs/sdk/LICENSE_ru.html
-%%T%%/docs/sdk/LICENSE_sv.html
 %%T%%/docs/sdk/LICENSE_tc.html
+%%T%%/docs/sdk/LICENSE_tr.html
 %%T%%/docs/sdk/LICENSE_zh.html
 %%T%%/docs/sdk/sdkguide.lnxia32.htm
+%%T%%/docs/sdk/securityguide.lnx.htm
 %%T%%/include/jawt.h
 %%T%%/include/jawt_md.h
 %%T%%/include/jni.h
@@ -584,8 +571,12 @@
 %%T%%/jre/bin/JavaPluginControlPanel
 %%T%%/jre/bin/awt_robot
 %%T%%/jre/bin/awt_robot_g
+%%T%%/jre/bin/classic/libcore.so
+%%T%%/jre/bin/classic/libcore_g.so
 %%T%%/jre/bin/classic/libjvm.so
 %%T%%/jre/bin/classic/libjvm_g.so
+%%T%%/jre/bin/ikeyman
+%%T%%/jre/bin/ikeyman_g
 %%T%%/jre/bin/java
 %%T%%/jre/bin/java.properties
 %%T%%/jre/bin/java_ca.properties
@@ -604,18 +595,25 @@
 %%T%%/jre/bin/java_sk.properties
 %%T%%/jre/bin/java_tr.properties
 %%T%%/jre/bin/java_zh.properties
-%%T%%/jre/bin/java_zh_CN.properties
 %%T%%/jre/bin/java_zh_TW.properties
 %%T%%/jre/bin/javaplugin.so
 %%T%%/jre/bin/javaplugin_g.so
 %%T%%/jre/bin/javaw
 %%T%%/jre/bin/javaw_g
+%%T%%/jre/bin/jextract
+%%T%%/jre/bin/jextract_g
 %%T%%/jre/bin/jvmdcf
 %%T%%/jre/bin/jvmdcf_g
 %%T%%/jre/bin/jvmtcf
 %%T%%/jre/bin/jvmtcf_g
 %%T%%/jre/bin/keytool
 %%T%%/jre/bin/keytool_g
+%%T%%/jre/bin/kinit
+%%T%%/jre/bin/kinit_g
+%%T%%/jre/bin/klist
+%%T%%/jre/bin/klist_g
+%%T%%/jre/bin/ktab
+%%T%%/jre/bin/ktab_g
 %%T%%/jre/bin/libawt.so
 %%T%%/jre/bin/libawt_g.so
 %%T%%/jre/bin/libcmm.so
@@ -626,6 +624,8 @@
 %%T%%/jre/bin/libdt_socket_g.so
 %%T%%/jre/bin/libfontmanager.so
 %%T%%/jre/bin/libfontmanager_g.so
+%%T%%/jre/bin/libframe.so
+%%T%%/jre/bin/libframe_g.so
 %%T%%/jre/bin/libhpi.so
 %%T%%/jre/bin/libhpi_g.so
 %%T%%/jre/bin/libhprof.so
@@ -646,14 +646,14 @@
 %%T%%/jre/bin/libjitc_g.so
 %%T%%/jre/bin/libjpeg.so
 %%T%%/jre/bin/libjpeg_g.so
+%%T%%/jre/bin/libjsig.so
+%%T%%/jre/bin/libjsig_g.so
 %%T%%/jre/bin/libjsound.so
 %%T%%/jre/bin/libjsound_g.so
 %%T%%/jre/bin/libnet.so
 %%T%%/jre/bin/libnet_g.so
 %%T%%/jre/bin/libnio.so
 %%T%%/jre/bin/libnio_g.so
-%%T%%/jre/bin/liborb.so
-%%T%%/jre/bin/liborb_g.so
 %%T%%/jre/bin/librmi.so
 %%T%%/jre/bin/librmi_g.so
 %%T%%/jre/bin/libxhpi.so
@@ -668,7 +668,7 @@
 %%T%%/jre/bin/rmiregistry_g
 %%T%%/jre/bin/tnameserv
 %%T%%/jre/bin/tnameserv_g
-%%T%%/jre/bin/webstart_install.sh
+%%T%%/jre/bin/webstart_install_sdk.sh
 %%T%%/jre/lib/TraceFormat.dat
 %%T%%/jre/lib/audio/soundbank.gm
 %%T%%/jre/lib/charsets.jar
@@ -749,6 +749,7 @@
 %%T%%/jre/lib/images/cursors/motif_MoveDrop32x32.gif
 %%T%%/jre/lib/images/cursors/motif_MoveNoDrop32x32.gif
 %%T%%/jre/lib/javaplugin.jar
+%%T%%/jre/lib/jaxp.properties
 %%T%%/jre/lib/jvm.hprof.txt
 %%T%%/jre/lib/logging.properties
 %%T%%/jre/lib/psfont.properties
@@ -759,6 +760,7 @@
 %%T%%/jre/lib/security/java.security
 %%T%%/jre/lib/security/local_policy.jar
 %%T%%/jre/lib/server.jar
+%%T%%/jre/lib/xerces.properties
 %%T%%/jre/lib/xml.jar
 %%T%%/lib/dt.jar
 %%T%%/lib/htmlconverter.jar
@@ -766,6 +768,10 @@
 %%T%%/lib/orb.idl
 %%T%%/lib/tools.jar
 %%T%%/src.jar
+@exec   mkdir -p %D/share/doc/java
+@unexec rmdir %D/share/doc/java 2>/dev/null || true
+@exec %%LOCALBASE%%/bin/registervm "%D/%%T%%/bin/java # IBM-JDK%%PORTVERSION%%"
+@unexec %%LOCALBASE%%/bin/unregistervm "%D/%%T%%/bin/java"
 @dirrm %%T%%/lib
 @dirrm %%T%%/jre/lib/security
 @dirrm %%T%%/jre/lib/images/cursors
@@ -783,7 +789,6 @@
 @dirrm %%T%%/docs/sdk
 @dirrm %%T%%/docs/rmi-iiop
 @dirrm %%T%%/docs/jre
-@dirrm %%T%%/docs/jaas
 @dirrm %%T%%/docs
 @dirrm %%T%%/demo/sound/src
 @dirrm %%T%%/demo/sound/media
@@ -804,8 +809,6 @@
 @dirrm %%T%%/demo/jfc/Stylepad/src
 @dirrm %%T%%/demo/jfc/Stylepad/resources
 @dirrm %%T%%/demo/jfc/Stylepad
-@dirrm %%T%%/demo/jfc/SimpleExample/src
-@dirrm %%T%%/demo/jfc/SimpleExample
 @dirrm %%T%%/demo/jfc/SampleTree/src
 @dirrm %%T%%/demo/jfc/SampleTree/images
 @dirrm %%T%%/demo/jfc/SampleTree
