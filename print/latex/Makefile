@@ -3,6 +3,7 @@ DISTFILES=	latex_mf.tar.gz latex_tfm.tar.gz latex_base.tar.gz \
 DISTNAME=	latex
 
 FTPGET=		${FILESDIR}/ftpget
+BUILD_COOKIE=	${WRKDIR}/.build_done
 
 #other equivalent sites: ftp.shsu.edu ftp.dante.de
 CTAN=		ftp.tex.ac.uk
@@ -18,7 +19,9 @@ latex_tools.tar.gz:
 	@${FTPGET} ${CTAN} /tex-archive/macros latex/packages/tools.tar.gz ${DISTDIR}/$@
 
 
-build:
+build: ${BUILD_COOKIE}
+
+${BUILD_COOKIE}:
 	@echo "===>  Building for ${DISTNAME}"
 	@(cd ${WRKSRC}/base; initex unpack.ins)
 	@(cd ${WRKSRC}/base; TEXFONTS=${WRKSRC}/tfm:; export TEXFONTS; \
@@ -26,6 +29,7 @@ build:
 	@(cd ${WRKSRC}/packages/tools; TEXFORMATS=${WRKSRC}/base:; \
 		TEXINPUTS=${WRKSRC}/base: export TEXFORMATS TEXINPUTS;\
 		 ln -s /usr/local/bin/virtex latex; ./latex tools.ins)
+	@touch -f ${BUILD_COOKIE}
 
 install:
 	@echo "===>  Installing for ${DISTNAME}"
