@@ -9,9 +9,7 @@ PORTNAME=	nethack
 PORTVERSION=	3.2.3
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.nethack.org/pub/nethack/nh322/src/ \
-		ftp://ftp.wtower.com/nethack/sources/ \
-		${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	nethack
+		ftp://ftp.wtower.com/nethack/sources/
 DISTNAME=	nethack-3.2.2
 
 PATCH_SITES=	ftp://ftp.nethack.org/pub/nethack/nh323/src/
