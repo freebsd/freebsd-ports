@@ -98,6 +98,7 @@ lib/gstreamer-%%VERSION%%/libgstmonoscope.so
 lib/gstreamer-%%VERSION%%/libgstmp1videoparse.so
 lib/gstreamer-%%VERSION%%/libgstmpeg1systemencode.so
 %%LIBMPEG2%%lib/gstreamer-%%VERSION%%/libgstmpeg2dec.so
+%%MJPEGTOOLS%%lib/gstreamer-%%VERSION%%/libgstmpeg2enc.so
 lib/gstreamer-%%VERSION%%/libgstmpeg2subt.so
 lib/gstreamer-%%VERSION%%/libgstmpegaudio.so
 lib/gstreamer-%%VERSION%%/libgstmpegaudioparse.so
@@ -145,6 +146,7 @@ lib/gstreamer-%%VERSION%%/libgsttimeoverlay.so
 lib/gstreamer-%%VERSION%%/libgsttypefindfunctions.so
 lib/gstreamer-%%VERSION%%/libgstudp.so
 lib/gstreamer-%%VERSION%%/libgstvbidec.so
+lib/gstreamer-%%VERSION%%/libgstvcdsrc.so
 lib/gstreamer-%%VERSION%%/libgstvideo.so
 lib/gstreamer-%%VERSION%%/libgstvideobalance.so
 lib/gstreamer-%%VERSION%%/libgstvideobox.so
