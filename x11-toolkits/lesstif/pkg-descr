@@ -1,3 +1,11 @@
 LessTif is a API compatible clone of the Motif toolkit.  Currently
 LessTif is partially implemented with most of the API in place.
-Saying this a lot of the internal functionality is still missing.
+Both Motif 1.2 and Motif 2.0 libraries are built and installed.
+By default, the 1.2 library is used becuase it is a more complete
+implementation of the Motif 1.2 API.
+
+WWW: http://www.lesstif.org
+
+--
+Steve
+kargl@troutmask.apl.washington.edu

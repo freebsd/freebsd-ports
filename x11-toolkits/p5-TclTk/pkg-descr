@@ -15,4 +15,3 @@
        alter your namespace at all (hence the "require"). The
        Tcl::Tk extension imports the widget and other Tk commands
        into your namespace (hence the "use").
-
