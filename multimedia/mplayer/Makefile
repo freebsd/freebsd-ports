@@ -421,7 +421,7 @@ BUILD_DEPENDS+=		${LOCALBASE}/live/liveMedia/libliveMedia.a:${PORTSDIR}/net/live
 .if defined(WITH_XVID)
 CONFIGURE_ARGS+=	--enable-xvid \
 			--with-xvidcore=${LOCALBASE}/lib/libxvidcore.so
-LIB_DEPENDS+=		xvidcore.0:${PORTSDIR}/multimedia/xvid
+LIB_DEPENDS+=		xvidcore.2:${PORTSDIR}/multimedia/xvid
 .endif
 
 .if defined(WITH_LZO)

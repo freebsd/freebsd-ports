@@ -1,4 +1,4 @@
 include/xvid.h
 lib/libxvidcore.a
 lib/libxvidcore.so
-lib/libxvidcore.so.0
+lib/libxvidcore.so.2

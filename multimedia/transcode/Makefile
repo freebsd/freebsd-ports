@@ -175,7 +175,7 @@ PLIST_SUB+=	WITH_FAME="@comment "
 .endif
 
 .if defined(WITH_XVID)
-LIB_DEPENDS+=	xvidcore.0:${PORTSDIR}/multimedia/xvid
+LIB_DEPENDS+=	xvidcore.2:${PORTSDIR}/multimedia/xvid
 PLIST_SUB+=	WITH_XVID=""
 WITH_NASM=	YES
 .else

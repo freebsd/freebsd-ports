@@ -1,0 +1,11 @@
+--- configure.orig	Mon Aug 11 17:59:21 2003
++++ configure	Mon Aug 11 17:59:37 2003
+@@ -3660,7 +3660,7 @@
+ 	echo "$as_me:$LINENO: result: -Wl,-soname,libxvidcore.so -shared -lc -lm" >&5
+ echo "${ECHO_T}-Wl,-soname,libxvidcore.so -shared -lc -lm" >&6
+ 	STATIC_LIB="libxvidcore.\$(STATIC_EXTENSION)"
+-	SHARED_LIB="libxvidcore.\$(SHARED_EXTENSION).\$(API_MAJOR).\$(API_MINOR)"
++	SHARED_LIB="libxvidcore.\$(SHARED_EXTENSION).\$(API_MAJOR)"
+ 	SPECIFIC_LDFLAGS="-Wl,-soname,libxvidcore.\$(SHARED_EXTENSION).\$(API_MAJOR) -shared -lc -lm"
+ 	SPECIFIC_CFLAGS="-fPIC"
+ 	;;

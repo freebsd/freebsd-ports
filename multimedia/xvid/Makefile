@@ -6,24 +6,23 @@
 #
 
 PORTNAME=	xvid
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 PORTEPOCH=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://files.xvid.org/downloads/
 DISTNAME=	${PORTNAME}core-${PORTVERSION}
 
-MAINTAINER=	michaelnottebrock@gmx.net
+MAINTAINER=	lofi@freebsd.org
 COMMENT=	An opensource MPEG-4 codec, based on OpenDivx
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/nasm:${PORTSDIR}/devel/nasm
 
-HAS_CONFIGURE=	yes
-USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 WRKSRC=			${WRKDIR}/${DISTNAME}/build/generic
 
 post-install:
-	@ ${LN} -sf libxvidcore.so ${PREFIX}/lib/libxvidcore.so.0
+	@ ${LN} -sf ${PREFIX}/lib/libxvidcore.so.2 ${PREFIX}/lib/libxvidcore.so
 
 .include <bsd.port.mk>
