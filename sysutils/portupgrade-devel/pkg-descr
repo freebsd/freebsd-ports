@@ -16,6 +16,7 @@ portsdb:	Creates binary database from the ports INDEX, and
 		expands ports globs.
 pkg_deinstall:	Wraps pkg_delete(1) and provides wildcards and
 		dependency recursion support, plus some more.
+pkg_fetch:	Fetches packages from a remote site.
 pkg_glob:	Expands package globs.
 pkgdepfix:	Fixes the /var/db/pkg registry interactively.
 

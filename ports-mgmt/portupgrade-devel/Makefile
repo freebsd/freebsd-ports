@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	20010826a
+PORTVERSION=	20010827
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.iDaemons.org/distfiles/
@@ -17,12 +17,14 @@ MAINTAINER=	knu@FreeBSD.org
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/optparse.rb:${PORTSDIR}/devel/ruby-optparse \
 		${RUBY_SITEARCHLIBDIR}/fnmatch.so:${PORTSDIR}/devel/ruby-fnmatch \
+		${RUBY_SITELIBDIR}/uri.rb:${PORTSDIR}/net/ruby-uri \
 		${LOCALBASE}/sbin/pkg_tarup:${PORTSDIR}/misc/pkg_tarup \
 		${LOCALBASE}/bin/ruby_s:${PORTSDIR}/lang/ruby_static
 
 USE_RUBY=	yes
 
 RUBY_SHEBANG_FILES=	\
+		${WRKSRC}/pkg_fetch \
 		${WRKSRC}/pkg_glob \
 		${WRKSRC}/pkgdepfix \
 		${WRKSRC}/portcvsweb \
@@ -34,6 +36,7 @@ RUBY_SHEBANG_FILES=	\
 NO_BUILD=	yes
 
 MAN1=		pkg_deinstall.1 \
+		pkg_fetch.1 \
 		pkg_glob.1 \
 		pkgdepfix.1 \
 		portcvsweb.1 \

@@ -2,6 +2,7 @@ etc/rc.d/000.pkgtools.sh
 @exec /bin/mkdir -p %D/lib/compt/pkg
 @unexec /bin/rmdir %D/lib/compt/pkg 2>/dev/null || true
 sbin/pkg_deinstall
+sbin/pkg_fetch
 sbin/pkg_glob
 sbin/pkgdepfix
 sbin/portcvsweb
@@ -20,6 +21,7 @@ sbin/portversion
 %%RUBY_SITELIBDIR%%/portsdb.rb
 %%RUBY_SITELIBDIR%%/tsort.rb
 share/zsh/site-functions/_pkg_deinstall
+share/zsh/site-functions/_pkg_fetch
 share/zsh/site-functions/_pkg_glob
 share/zsh/site-functions/_pkgdepfix
 share/zsh/site-functions/_portsclean
