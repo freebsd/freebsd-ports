@@ -10,7 +10,6 @@ www/acid/acid_app_faq.php
 www/acid/acid_cache.inc
 www/acid/acid_common.php
 www/acid/acid_conf.php
-www/acid/acid_conf.php.orig
 www/acid/acid_constants.inc
 www/acid/acid_db.inc
 www/acid/acid_db_common.php
@@ -56,3 +55,4 @@ www/acid/create_acid_tbls_mysql.sql
 www/acid/create_acid_tbls_pgsql.sql
 www/acid/create_acid_tbls_pgsql_extra.sql
 www/acid/index.html
+@dirrm www/acid
