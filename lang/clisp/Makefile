@@ -8,8 +8,7 @@
 PORTNAME=	clisp
 PORTVERSION=	2.27
 CATEGORIES=	lang
-MASTER_SITES=	ftp://clisp.cons.org/pub/clisp/${PORTVERSION}/ \
-		ftp://clisp.sourceforge.net/pub/clisp/${PORTVERSION}/ \
+MASTER_SITES=	ftp://cvs2.cons.org/pub/lisp/clisp/source/${PORTVERSION}/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
