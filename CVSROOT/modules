@@ -6407,7 +6407,6 @@ rosegarden	ports/audio/rosegarden
 rot		ports/textproc/rot
 rotate		ports/sysutils/rotate
 rotix		ports/textproc/rotix
-rox-base	ports/x11-fm/rox-base
 rox-edit	ports/editors/rox-edit
 rox-filer	ports/x11-fm/rox-filer
 rox-memo	ports/deskutils/rox-memo
