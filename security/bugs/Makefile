@@ -8,7 +8,8 @@
 PORTNAME=		bugs
 PORTVERSION=		4.0.1
 CATEGORIES=		security
-MASTER_SITES=		http://www.bcrypt.com/english/download/
+MASTER_SITES=		http://www.encryptsolutions.com/english/download/ \
+			http://www.bcrypt.com/english/download/
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		stephane.legrand@bigfoot.com
