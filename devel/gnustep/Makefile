@@ -43,7 +43,6 @@ GNU_ARCH=	ix86
 GNU_ARCH=	${MACHINE_ARCH}
 .endif
 
-COMBOPATH=	${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu
 SYSLIBDIR=	${SYSTEMDIR}/Library/Libraries
 COMBOLIBDIR=	${SYSLIBDIR}
 BACKBUNDLEDIR=	${BUNDLEDIR}/libgnustep-back.bundle
