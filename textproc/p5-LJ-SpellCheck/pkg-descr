@@ -1,0 +1,10 @@
+The object constructor takes a 'spellcommand' argument. This has to be 
+some ispell compatible program, like aspell. Optionally, it also takes a 
+color to highlight mispelled words. 
+
+The only method on the object is check_html, which takes a reference to 
+the text to check and returns a bunch of HTML highlighting misspellings 
+and showing suggestions. If it returns nothing, then there no misspellings 
+found.
+ 
+WWW: http://livejournal.com/code/spellcheck/
