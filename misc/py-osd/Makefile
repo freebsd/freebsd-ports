@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	osd
-PORTVERSION=	0.2.11
+PORTVERSION=	0.2.12
 CATEGORIES=	misc python
 MASTER_SITES=	http://repose.cx/pyosd/ \
 		http://damien.kangaweb.com/moving/stuff/pyosd/
