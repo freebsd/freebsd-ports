@@ -6,25 +6,20 @@
 #
 
 PORTNAME=	oops
-PORTVERSION=	${OOPSVERSION}.${OOPSDATE}
-PORTREVISION=	1
+PORTVERSION=	${OOPSVERSION}
 CATEGORIES=	www
 MASTER_SITES=	http://oops-cache.org/
 DISTNAME=	${PORTNAME}-${OOPSVERSION}
-
-PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	${PORTNAME}-${OOPSVERSION}-${OOPSDATE}.patch.gz
-PATCH_DIST_STRIP=	-d ${WRKDIR}/${DISTNAME}
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	A caching web proxy server
 
 BUILD_DEPENDS+=	gawk:${PORTSDIR}/lang/gawk
 
-OOPSVERSION=	1.5.22
-OOPSDATE=	20030403
+OOPSVERSION=	1.5.23
 
 USE_SUBMAKE=	yes
+USE_REINPLACE=	yes
 USE_AUTOCONF=	yes
 CONFIGURE_ARGS?=--sbindir=${PREFIX}/sbin \
 		--sysconfdir=${PREFIX}/etc/oops \
@@ -32,7 +27,8 @@ CONFIGURE_ARGS?=--sbindir=${PREFIX}/sbin \
 		--libdir=${PREFIX}/libexec/oops \
 		--enable-oops-user=oops \
 		--enable-large-files
-MAKE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+MAKE_ENV+=	CXX="${CXX}" \
+		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 MAN8=		oops.8 oopsctl.8
@@ -48,6 +44,10 @@ pre-fetch:
 .if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|CXX=g++||g' \
+		${WRKSRC}/configure.in
 
 pre-configure:
 	@cd ${WRKSRC} && ${AUTOHEADER}
