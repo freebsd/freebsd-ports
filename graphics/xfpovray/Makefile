@@ -3,7 +3,7 @@
 # Date created:         20 Sep 1997
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.11 1999/04/13 07:17:06 mharo Exp $
+# $Id: Makefile,v 1.12 1999/04/15 16:05:56 mharo Exp $
 #
 
 DISTNAME=       xfpovray-1.3.1
@@ -17,9 +17,6 @@ MAINTAINER=	ports@FreeBSD.ORG
 
 LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms
 RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray
-
-# depends on xforms
-ONLY_FOR_ARCHS=	i386
 
 USE_IMAKE=	yes
 USE_GMAKE=	yes

@@ -3,7 +3,7 @@
 # Date created:		19 September 1997
 # Whom:			steve@farrell.org
 #
-# $Id: Makefile,v 1.5 1998/12/22 05:43:38 asami Exp $
+# $Id: Makefile,v 1.6 1999/01/07 08:19:51 simokawa Exp $
 #
 
 DISTNAME=	tycoon-1.07o
@@ -15,9 +15,6 @@ MAINTAINER=	steve@farrell.org
 
 LIB_DEPENDS=	xforms:${PORTSDIR}/x11-toolkits/xforms \
 		Xpm.4:${PORTSDIR}/graphics/xpm
-
-# depends on xforms
-ONLY_FOR_ARCHS=	i386
 
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
