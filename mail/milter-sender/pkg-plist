@@ -1,22 +1,25 @@
 etc/rc.d/milter-sender.sh-dist
 sbin/milter-sender
 @exec install -d -o smmsp -g smmsp -m 755 lib/milter-sender
-share/doc/milter-sender/CHANGES.TXT
-share/doc/milter-sender/Img/bg.gif
-share/doc/milter-sender/Img/dilbert2003071742312.gif
-share/doc/milter-sender/Img/dilbert2003228690821.gif
-share/doc/milter-sender/Img/mrpixel.gif
-share/doc/milter-sender/Img/overview.png
-share/doc/milter-sender/Img/sendmail-bat-left-142x38.png
-share/doc/milter-sender/Img/sendmail-bat-right-142x38.png
-share/doc/milter-sender/Img/sun.gif
-share/doc/milter-sender/LICENSE.TXT
-share/doc/milter-sender/index.shtml
-share/doc/milter-sender/license-body.html
-share/doc/milter-sender/mailto.js
-share/doc/milter-sender/milter-sender.mc
-share/doc/milter-sender/responses.txt
-share/doc/milter-sender/style.css
-@dirrm share/doc/milter-sender/Img
-@dirrm share/doc/milter-sender
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES.TXT
+%%PORTDOCS%%%%DOCSDIR%%/Img/bg.gif
+%%PORTDOCS%%%%DOCSDIR%%/Img/dilbert2003071742312.gif
+%%PORTDOCS%%%%DOCSDIR%%/Img/dilbert2003228690821.gif
+%%PORTDOCS%%%%DOCSDIR%%/Img/mrpixel.gif
+%%PORTDOCS%%%%DOCSDIR%%/Img/overview.png
+%%PORTDOCS%%%%DOCSDIR%%/Img/sendmail-bat-left-142x38.png
+%%PORTDOCS%%%%DOCSDIR%%/Img/sendmail-bat-right-142x38.png
+%%PORTDOCS%%%%DOCSDIR%%/Img/sun.gif
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.TXT
+%%PORTDOCS%%%%DOCSDIR%%/index.shtml
+%%PORTDOCS%%%%DOCSDIR%%/license-body.html
+%%PORTDOCS%%%%DOCSDIR%%/mailto.js
+%%PORTDOCS%%%%DOCSDIR%%/milter-sender.mc
+%%PORTDOCS%%%%DOCSDIR%%/responses.txt
+%%PORTDOCS%%%%DOCSDIR%%/style.css
+@unexec echo "If permanently deleting this package, don't forget to delete the filter"
+@unexec echo "description of milter-sender from /etc/mail/YOUR-CONF.mc and to rebuild"
+@unexec echo "sendmail.cf file!"
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Img
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/milter-sender
