@@ -1,9 +1,4 @@
 bin/qterm
-@exec /sbin/ldconfig -m
-@unexec /sbin/ldconfig -R
-lib/libssh.so.0
-lib/libssh.so
-lib/libssh.la
 share/qterm/cursor/end.xpm
 share/qterm/cursor/enter.xpm
 share/qterm/cursor/exit.xpm
@@ -46,6 +41,8 @@ share/qterm/schema/Linux.schema
 share/qterm/schema/VIM.schema
 share/qterm/schema/XTerm.schema
 share/qterm/schema/default.schema
+share/qterm/po/qterm_chs.qm
+share/qterm/po/qterm_cht.qm
 share/qterm/qterm.cfg
 share/qterm/address.cfg
 share/qterm/credits
@@ -55,4 +52,5 @@ share/icons/qterm.png
 @dirrm share/qterm/pic
 @dirrm share/qterm/script
 @dirrm share/qterm/schema
+@dirrm share/qterm/po
 @dirrm share/qterm
