@@ -1,12 +1,14 @@
 #!/bin/sh
 
 PROGRAM=@PREFIX@/sbin/jftpgw
+CFGFILE=@PREFIX@/etc/jftpgw.conf
+
 PIDFILE=/var/run/jftpgw.pid
 
 case "$1" in
 
 start)
-	if [ -x $PROGRAM ] && [ -r @PREFIX@/etc/jftpgw.conf ]
+	if [ -x $PROGRAM ] && [ -r $CFGFILE ]
 	then
 		$PROGRAM
 		echo -n "jftpgw "
@@ -14,8 +16,10 @@ start)
 	;;
 
 stop)
-	PID=`cat $PIDFILE 2>/dev/null`
-	ps -p "$PID" | tail +2 | grep -sqw $PROGRAM && kill $PID
+#	work around PID file creation problem
+	killall jftpgw
+#	PID=`cat $PIDFILE 2>/dev/null`
+#	ps -p "$PID" | tail +2 | grep -sqw $PROGRAM && kill $PID
 	;;
 
 *)
