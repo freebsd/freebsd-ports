@@ -35,5 +35,7 @@ CONFIGURE_ENV=	EROOT=${X11BASE}/share/enlightenment \
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|malloc.h|stdlib.h|" ${WRKSRC}/epplets/mbox.c
+	@${REINPLACE_CMD} -e "s|machine/soundcard.h|sys/soundcard.h|" \
+		${WRKSRC}/epplets/Emix.c
 
 .include <bsd.port.mk>
