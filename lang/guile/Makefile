@@ -1,18 +1,18 @@
-# New ports collection makefile for:    guile-iii
-# Version required:     snapshot iii
-# Date created:         29 Aug 1995
-# Whom:                 jkh@FreeBSD.ORG
+# New ports collection makefile for:	guile
+# Version required:	1.2
+# Date created:		2 November 1997
+# Whom:			jseger@FreeBSD.org
 #
-# $Id: Makefile,v 1.6 1996/11/12 02:18:26 obrien Exp $
+# $Id$
 #
 
-DISTNAME= 	guile-iii
-PKGNAME=	guile-iii
+DISTNAME=	guile-1.2
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.cygnus.com/pub/lord/guile-iii/
+MASTER_SITES=	${MASTER_SITE_GNU}
+MAINTAINER=	jseger@FreeBSD.org
 
-USE_GMAKE=	yes
-HAS_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/guile-src
+GNU_CONFIGURE=	YES
+CONFIGURE_ARGS=	--disable-shared
+MAKE_ENV+=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 
 .include <bsd.port.mk>
