@@ -7,6 +7,7 @@
 
 PORTNAME=	kdebase
 PORTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES?=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -64,6 +65,6 @@ post-configure:
 	${PERL} -pi -e "s@444@644@g" ${WRKSRC}/kdesktop/init/Templates/Makefile
 
 post-install:
-	@${CAT} ${PKGMESSAGE}
+	${CHMOD} u+s ${PREFIX}/bin/kcheckpass
 
 .include <bsd.port.post.mk>
