@@ -43,12 +43,3 @@
  
  	$(INSTALL) -m 0755 $(srcdir)/bin/argusbug $(BINDIR)/argusbug
  	$(INSTALL) -m 0755 $(srcdir)/support/Archive/argusarchive $(BINDIR)/argusarchive
-@@ -176,6 +159,8 @@
- 		$(MANDEST)/man1/racount.1
- 	$(INSTALL) -m 0644 $(srcdir)/man/man1/ragator.1 \
- 		$(MANDEST)/man1/ragator.1
-+	$(INSTALL) -m 0644 $(srcdir)/man/man1/ramon.1 \
-+		$(MANDEST)/man1/ramon.1
- 	$(INSTALL) -m 0644 $(srcdir)/man/man1/rasort.1 \
- 		$(MANDEST)/man1/rasort.1
- 	$(INSTALL) -m 0644 $(srcdir)/man/man1/raxml.1 \
