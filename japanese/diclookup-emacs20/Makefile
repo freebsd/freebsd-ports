@@ -3,7 +3,7 @@
 # Date created:		31 Jan 1998
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.2 1998/08/07 22:43:07 asami Exp $
+# $Id: Makefile,v 1.3 1998/10/16 02:04:48 jseger Exp $
 #
 
 DISTNAME=	diclookup-mule-2.3.3
@@ -16,7 +16,7 @@ PATCHFILES=	diclookup-mule-2.3.3-wave-patch.gz
 
 MAINTAINER=	mita@jp.FreeBSD.org
 
-BROKEN_ELF=	yes
+BROKEN=		tries to install in /usr/local/lib/mule/site-lisp
 
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/non-cjk/fonts.dir:${PORTSDIR}/x11-fonts/etlfonts
 BUILD_DEPENDS=	mule:${PORTSDIR}/japanese/mule-wnn4
