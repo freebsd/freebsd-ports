@@ -14,7 +14,9 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A general purpose molecular modelling package
 
-BROKEN=		Checksum mismatch
+BUILD_DEPENDS=	imake:${X_IMAKE_PORT}
+
+BROKEN=		Distfile has been updated to version 4.2.  Port needs update
 
 MAKE_ENV+=	HAVE_G2C=yes INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 
@@ -34,11 +36,6 @@ pre-fetch:
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_VIEWER)
-.if ${XFREE86_VERSION} == 3
-BUILD_DEPENDS+=	imake:${PORTSDIR}/devel/imake
-.elif ${XFREE86_VERSION} == 4
-BUILD_DEPENDS+=	imake:${PORTSDIR}/devel/imake-4
-.endif
 USE_XLIB=	yes
 PLIST_SUB+=	WITH_VIEWER=""
 post-build:
