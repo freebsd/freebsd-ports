@@ -65,7 +65,7 @@ MACHDESTLIB=$(BINLIBDEST)
 DESTPATH=:$(DESTLIB)
 
 # Site specific path insertions -- should begin with : if non-empty
-SITEPATH=
+SITEPATH=:$(DESTLIB)/NumPy
 
 # Standard enabled (tests are always available)
 TESTPATH=:$(DESTLIB)/test
