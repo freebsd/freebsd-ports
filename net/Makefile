@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.241 1999/04/03 01:51:12 steve Exp $
+# $Id: Makefile,v 1.242 1999/04/03 01:57:32 steve Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -123,6 +123,7 @@
     SUBDIR += p5-Net-Whois
     SUBDIR += p5-SNMP
     SUBDIR += p5-Socks
+    SUBDIR += p5-URI
     SUBDIR += p5-pRPC
     SUBDIR += pathchar
     SUBDIR += pavuk
