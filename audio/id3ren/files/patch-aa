@@ -1,0 +1,26 @@
+--- /lab/elepot/users/Others/jonny/tmp/tohome/mp3/util/id3ren/src/Makefile	Wed Mar 18 04:28:44 1998
++++ Makefile	Sun Feb 28 16:04:16 1999
+@@ -1,16 +1,18 @@
+-CFLAGS = -O2 -s -Wall
++CFLAGS += -O2 -s -Wall
+ CC = gcc
+ RM = rm -f
+-INSTALL = install -s -m 755
+-INSTALL_DIR = ..
++INSTALL = install -cs -m 755 -o root -g wheel
++INSTALL_DIR = ${PREFIX}/bin
+ INSTALL_NAME = id3ren
+ 
+ SOURCES = id3ren.c id3tag.c file.c misc.c
+ 
+-all:
++all:	${INSTALL_NAME}
++
++${INSTALL_NAME}:
+ 	${CC} ${CFLAGS} -o ${INSTALL_NAME} ${SOURCES}
+ 
+-install: all
++install: ${INSTALL_NAME}
+ 	${INSTALL} ${INSTALL_NAME} ${INSTALL_DIR}/${INSTALL_NAME}
+ 
+ clean:
