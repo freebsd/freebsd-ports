@@ -50,6 +50,7 @@ news/bin/filter/nnrpd_auth.py
 news/bin/filter/startup.tcl
 news/bin/filter/startup_innd.pl
 news/bin/getlist
+news/bin/gpgverify
 news/bin/grephistory
 news/bin/inews
 news/bin/inncheck
@@ -135,6 +136,11 @@ news/etc/radius.conf
 news/etc/readers.conf
 news/etc/sasl.conf
 news/etc/storage.conf
+news/etc/subscriptions
+news/include/clibrary.h
+news/include/config.h
+news/include/libinn.h
+news/include/storage.h
 news/lib/docheckgroups
 news/lib/innreport_inn.pm
 news/lib/innshellvars
@@ -157,6 +163,7 @@ share/doc/inn/LICENSE
 @dirrm news/spool
 @dirrm news/run
 @dirrm news/lib
+@dirrm news/include
 @dirrm news/etc
 @dirrm news/db
 @dirrm news/bin/rnews.libexec
@@ -166,4 +173,4 @@ share/doc/inn/LICENSE
 @dirrm news/bin/auth/passwd
 @dirrm news/bin/auth
 @dirrm news/bin
-@dirrm news   
+@dirrm news
