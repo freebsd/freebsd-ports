@@ -1,17 +1,5 @@
 bin/althea
 etc/althearc.example
-share/doc/althea/images/althea.png
-share/doc/althea/images/altheaRound.png
-share/doc/althea/images/fileMenu.png
-share/doc/althea/images/helpMenu.png
-share/doc/althea/images/messageMenu.png
-share/doc/althea/images/sf.gif
-share/doc/althea/images/toolbar.png
-share/doc/althea/images/typicalSession.png
-share/doc/althea/images/typicalSessionSmall.png
-@dirrm share/doc/althea/images
-share/doc/althea/help.html
-@dirrm share/doc/althea
 share/althea/address.xpm
 share/althea/althea.xpm
 share/althea/attach.xpm
@@ -26,4 +14,16 @@ share/althea/reply.xpm
 share/althea/save.xpm
 share/althea/send.xpm
 share/althea/server.xpm
+share/doc/althea/help.html
+share/doc/althea/images/althea.png
+share/doc/althea/images/altheaRound.png
+share/doc/althea/images/fileMenu.png
+share/doc/althea/images/helpMenu.png
+share/doc/althea/images/messageMenu.png
+share/doc/althea/images/sf.gif
+share/doc/althea/images/toolbar.png
+share/doc/althea/images/typicalSession.png
+share/doc/althea/images/typicalSessionSmall.png
+@dirrm share/doc/althea/images
+@dirrm share/doc/althea
 @dirrm share/althea
