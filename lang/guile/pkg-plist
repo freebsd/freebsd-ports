@@ -94,15 +94,12 @@ info/guile.info-1
 info/guile.info-2
 @exec install-info %D/info/guile.info %D/info/dir
 lib/libguile.a
-lib/libguile.la
 lib/libguile.so
 lib/libguile.so.10
 lib/libguilereadline.a
-lib/libguilereadline.la
 lib/libguilereadline.so
 lib/libguilereadline.so.0
 lib/libqthreads.a
-lib/libqthreads.la
 lib/libqthreads.so
 lib/libqthreads.so.0
 share/aclocal/guile.m4
