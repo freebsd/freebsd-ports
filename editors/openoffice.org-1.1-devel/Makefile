@@ -51,6 +51,15 @@ DICT_DIR=               ${PREFIX}/${INSTALLATION_BASEDIR}/share/dict/ooo/
 LANG_EXT=01
 .else
 #
+# Add pkg-descr and pkg-message if available 	 
+# 	 
+.if exists(${.CURDIR}/pkg-descr) 	 
+DESCR=  ${.CURDIR}/pkg-descr 	 
+.endif 	 
+.if exists(${.CURDIR}/pkg-message) 	 
+PKGMESSAGE=     ${.CURDIR}/pkg-message 	 
+.endif 	 
+#
 # Set prefix and suffix
 #
 .if defined(LANG_PKGNAME)
@@ -85,7 +94,9 @@ CC=	gcc32
 CXX=	g++32
 
 MAINTAINER=	openoffice@FreeBSD.org
+.if !defined(COMMENT)
 COMMENT=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser
+.endif
 
 #
 # The JDK dependency needs to be at the first place, so all
