@@ -120,8 +120,8 @@ do-install:
 	  ${PREFIX}/share/${MULE}${MULE_MAJOR_VER}/${EMACS_VER}/lisp/subdirs.el
 	@for i in site-lisp/subdirs.el ${EMACS_VER}/site-lisp/subdirs.el ; do \
 	  if [ ! -f ${PREFIX}/share/${MULE}${MULE_MAJOR_VER}/$${i} ]; then \
-	  (${ECHO} "(if (fboundp 'normal-top-level-add-subdirs-to-load-path)"; \
-	   ${ECHO} "    (normal-top-level-add-subdirs-to-load-path))") \
+	  (${ECHO_CMD} "(if (fboundp 'normal-top-level-add-subdirs-to-load-path)"; \
+	   ${ECHO_CMD} "    (normal-top-level-add-subdirs-to-load-path))") \
 	  > ${PREFIX}/share/${MULE}${MULE_MAJOR_VER}/$${i} ; \
 	  fi ; \
 	done

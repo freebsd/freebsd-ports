@@ -111,27 +111,27 @@ pre-build:
 post-install:
 	[ -e ${PREFIX}/bin/gvim ] || (cd ${PREFIX}/bin ; ${LN} -sf vim gvim)
 	#	below needed for `vim-lite' port
-	test -e ${PREFIX}/bin/rgvim  || (cd ${PREFIX}/bin ; ${LN} -s vim rgvim) 
-	test -e ${PREFIX}/bin/gview  || (cd ${PREFIX}/bin ; ${LN} -s vim gview)
-	test -e ${PREFIX}/bin/rgview || (cd ${PREFIX}/bin ; ${LN} -s vim rgview)
-	test -e ${PREFIX}/bin/evim   || (cd ${PREFIX}/bin ; ${LN} -s vim evim) 
-	test -e ${PREFIX}/bin/eview  || (cd ${PREFIX}/bin ; ${LN} -s vim eview)
-	test -e ${PREFIX}/bin/gvimdiff  \
+	${TEST} -e ${PREFIX}/bin/rgvim  || (cd ${PREFIX}/bin ; ${LN} -s vim rgvim) 
+	${TEST} -e ${PREFIX}/bin/gview  || (cd ${PREFIX}/bin ; ${LN} -s vim gview)
+	${TEST} -e ${PREFIX}/bin/rgview || (cd ${PREFIX}/bin ; ${LN} -s vim rgview)
+	${TEST} -e ${PREFIX}/bin/evim   || (cd ${PREFIX}/bin ; ${LN} -s vim evim) 
+	${TEST} -e ${PREFIX}/bin/eview  || (cd ${PREFIX}/bin ; ${LN} -s vim eview)
+	${TEST} -e ${PREFIX}/bin/gvimdiff  \
 		|| (cd ${PREFIX}/bin ; ${LN} -s vim gvimdiff)
 	${INSTALL_DATA} ${FILESDIR}/vietnamese_viscii.vim ${DATADIR}/keymap
 	cd ${PREFIX} ;\
-	    find share/vim/${DISTNAME:S/-//:S/.//}/ -type f -o -type l	\
+	    ${FIND} share/vim/${DISTNAME:S/-//:S/.//}/ -type f -o -type l	\
 	    	| sort \
 	    	>${WRKDIR}/PLIST.share-vim
 	cd ${PREFIX} ;\
-	    find share/vim/${DISTNAME:S/-//:S/.//}/ -type d \
+	    ${FIND} share/vim/${DISTNAME:S/-//:S/.//}/ -type d \
 	    	| sort -r | ${SED} -e 's/^/@dirrm /g' \
 		>>${WRKDIR}/PLIST.share-vim
-	${ECHO} "r ${TMPPLIST}"			> ${WRKDIR}/ex.script
-	${ECHO} "/Insert PLIST.share-vim"	>> ${WRKDIR}/ex.script
-	${ECHO} "d"				>> ${WRKDIR}/ex.script
-	${ECHO} "r ${WRKDIR}/PLIST.share-vim"	>> ${WRKDIR}/ex.script
-	${ECHO} "x!"				>> ${WRKDIR}/ex.script
+	${ECHO_CMD} "r ${TMPPLIST}"			> ${WRKDIR}/ex.script
+	${ECHO_CMD} "/Insert PLIST.share-vim"		>> ${WRKDIR}/ex.script
+	${ECHO_CMD} "d"					>> ${WRKDIR}/ex.script
+	${ECHO_CMD} "r ${WRKDIR}/PLIST.share-vim"	>> ${WRKDIR}/ex.script
+	${ECHO_CMD} "x!"				>> ${WRKDIR}/ex.script
 	${CP} -p ${TMPPLIST} ${TMPPLIST}.pre-share-vim
 	cd ${WRKDIR} ; ex < ex.script
 

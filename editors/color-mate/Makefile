@@ -34,10 +34,10 @@ do-build:
 	${SH} ${FILESDIR}/theme_build.sh
 	${SED} -e 's,@INSTALLPATH@,${XELISPDIR},' ${WRKSRC}/Dot.emacs.default.in \
 		> ${WRKDIR}/color-mate-startup.el
-	${ECHO} "(provide 'color-mate-startup)" >> ${WRKDIR}/color-mate-startup.el
+	${ECHO_CMD} "(provide 'color-mate-startup)" >> ${WRKDIR}/color-mate-startup.el
 	${SED} -e 's,@INSTALLPATH@,${XELISPDIR},' ${WRKSRC}/Dot.emacs.default.in \
 		> ${WRKDIR}/color-mate-startup.xemacs.el
-	${ECHO} "(provide 'color-mate-startup)" >> ${WRKDIR}/color-mate-startup.xemacs.el
+	${ECHO_CMD} "(provide 'color-mate-startup)" >> ${WRKDIR}/color-mate-startup.xemacs.el
 
 do-install:
 	${MKDIR} ${ELISPDIR} ${DOCDIR} ${THEME_DIR} ${XELISPDIR} ${ELISPDIR}/kanakan-cursor ${ELISPDIR}/contrib
@@ -65,7 +65,7 @@ do-install:
 # For XEmacs
 	cd ${XELISPDIR}; lndir ${ELISPDIR}
 	${RM} -f ${WRKDIR}/${MANIFEST}
-	emacsdir=`${ECHO} ${SITEPKGDIR} | ${SED} -e "s;^${PREFIX}/;;"`; \
+	emacsdir=`${ECHO_CMD} ${SITEPKGDIR} | ${SED} -e "s;^${PREFIX}/;;"`; \
 	${CAT} ${PLIST} | ${GREP} -e "^$${emacsdir}" | \
 		 ${SED} -e "s;^$${emacsdir}/;;" > ${WRKDIR}/${MANIFEST}
 	${MKDIR} ${SITEPKGDIR}/pkginfo

@@ -87,7 +87,7 @@ WITH_XIM?=		xlib
 
 .if defined(MULE_SLAVE)
 pre-build:
-	@find ${WRKSRC} \( -name \*.orig -o -name \*~ \) -exec ${RM} -f \{} \;
+	@${FIND} ${WRKSRC} \( -name \*.orig -o -name \*~ \) -exec ${RM} -f \{} \;
 	@${RM} -f ${WRKSRC}/lib-src/DOC* ${WRKSRC}/src/xemacs
 
 # for xemacs${XEMACS_MAJOR_VER}-mule-common in defining ${WRKDIRPREFIX}
@@ -107,7 +107,7 @@ post-package:
 ## for make DESCR and COMMENT (only maintainer use)
 #pre-arrange::
 #	@${MKDIR} ${PKGDIR}
-#	@${ECHO} "${COMMENT_TEXT}" > ${COMMENT}
+#	@${ECHO_CMD} "${COMMENT_TEXT}" > ${COMMENT}
 #.if (${PKGNAMESUFFIX} == "-canna") || (${PKGNAMESUFFIX} == "-mule") || (${PKGNAMESUFFIX} == "-mule-common")
 #	@${SED} -e "s/%%XEMACS_VER%%/${XEMACS_VER}/g" \
 #		-e "s/%%XEMACS_REL%%/${XEMACS_REL}/g" \
@@ -135,12 +135,12 @@ post-package:
 #		DIRRMDEPTH=1 plist
 #.for dirp in site mule xemacs
 #.for dir in etc info man pkginfo
-#	${ECHO} "@exec mkdir -p %D/lib/xemacs/${dirp}-packages/${dir}" >> ${WRKPLIST}.tmp
-#	${ECHO} "@unexec rmdir %D/lib/xemacs/${dirp}-packages/${dir} 2>/dev/null || true" >> ${WRKPLIST}.tmp
+#	${ECHO_CMD} "@exec mkdir -p %D/lib/xemacs/${dirp}-packages/${dir}" >> ${WRKPLIST}.tmp
+#	${ECHO_CMD} "@unexec rmdir %D/lib/xemacs/${dirp}-packages/${dir} 2>/dev/null || true" >> ${WRKPLIST}.tmp
 #.endfor
-#	${ECHO} "@unexec rmdir %D/lib/xemacs/${dirp}-packages 2>/dev/null || true" >> ${WRKPLIST}.tmp
+#	${ECHO_CMD} "@unexec rmdir %D/lib/xemacs/${dirp}-packages 2>/dev/null || true" >> ${WRKPLIST}.tmp
 #.endfor
-#	${ECHO} "@exec mkdir -p /var/run/emacs/lock ; chmod 1777 /var/run/emacs/lock" >> ${WRKPLIST}.tmp
+#	${ECHO_CMD} "@exec mkdir -p /var/run/emacs/lock ; chmod 1777 /var/run/emacs/lock" >> ${WRKPLIST}.tmp
 #	${CAT} ${WRKPLIST} >> ${WRKPLIST}.tmp
 #	${MV} ${WRKPLIST}.tmp ${WRKPLIST}
 #	${CHOWN} kiri:staff ${WRKPLIST}

@@ -94,7 +94,7 @@ COMP_ELC=	egg.elc wnn-egg.elc sj3-client.elc sj3-egg.elc canna.elc
 ELC_DIR=	../lisp
 # Make a value of INPUT_METHOD
 .if defined(INPUT_METHOD)
-INPUT_METHOD!=	${ECHO} ${INPUT_METHOD} | sed -e 's/^/-/' -e 's/ /+/g'
+INPUT_METHOD!=	${ECHO_CMD} ${INPUT_METHOD} | sed -e 's/^/-/' -e 's/ /+/g'
 .endif
 
 
