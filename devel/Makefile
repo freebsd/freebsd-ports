@@ -191,6 +191,7 @@
     SUBDIR += libdsp
     SUBDIR += libelf
     SUBDIR += libffi
+    SUBDIR += libformat
     SUBDIR += libg++
     SUBDIR += libgetline
     SUBDIR += libgii
