@@ -1,3 +1,5 @@
 bin/arc
 bin/marc
 man/man1/arc.1.gz
+share/doc/arc/Arc521.doc
+@dirrm share/doc/arc

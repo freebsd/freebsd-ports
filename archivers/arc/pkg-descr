@@ -1,1 +1,4 @@
-See the file work/Arc521.doc for more info .
+This package creates and extracts-from ARC archives.  An ARC archive
+contains files which are compressed according to the most efficient
+of three algorythms.  ARC archives are usually only used for compatibility
+with MS-DOS.
