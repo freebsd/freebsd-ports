@@ -7149,6 +7149,7 @@ p5-POE-Component-RSS	ports/devel/p5-POE-Component-RSS
 p5-POE-Component-SMTP	ports/mail/p5-POE-Component-SMTP
 p5-POE-Component-Server-HTTP	ports/www/p5-POE-Component-Server-HTTP
 p5-POE-Component-Server-XMLRPC	ports/devel/p5-POE-Component-Server-XMLRPC
+p5-POE-Component-Spread	ports/net/p5-POE-Component-Spread
 p5-POE-Component-TSTP	ports/devel/p5-POE-Component-TSTP
 p5-POE-Exceptions	ports/devel/p5-POE-Exceptions
 p5-POE-Filter-XML	ports/textproc/p5-POE-Filter-XML
