@@ -7,7 +7,7 @@
 
 PORTNAME=	polymake
 PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.math.tu-berlin.de/pub/combi/polymake/
 
@@ -18,8 +18,6 @@ MAINTAINER=	gawrilow@math.tu-berlin.de
 COMMENT=	A framework for experimental discrete mathematics
 
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
-
-BROKEN=		Size mismatch
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
@@ -44,6 +42,7 @@ do-configure:
 	  echo Cflags='${CFLAGS} -I${PREFIX}/include'; \
 	  echo CXXflags='${CXXFLAGS} -I${PREFIX}/include'; \
 	  echo LDflags='-L${PREFIX}/lib'; \
+	  echo PREFIX='${PREFIX}'; \
 	  echo InstallTop='$${PREFIX}/share/polymake'; \
 	  echo InstallArch='$${PREFIX}/libexec/polymake'; \
 	  echo InstallDoc='$${PREFIX}${DOCSDIR:S,^${PREFIX},,}'; \
@@ -55,9 +54,7 @@ pre-install:
 	rm -f `find ${WRKSRC} -name '*.orig'`
 
 post-install:
-	${AWK} '/InstallTop=/ { print "PREFIX=${PREFIX}" } { print }' \
-	   ${PREFIX}/libexec/polymake/Makefile >${PREFIX}/libexec/polymake/Makefile.devel
-	cp -p ${PREFIX}/libexec/polymake/Makefile.devel ${PREFIX}/libexec/polymake/Makefile
+	cp -p ${PREFIX}/libexec/polymake/Makefile ${PREFIX}/libexec/polymake/Makefile.devel
 	rm ${PREFIX}/bin/polymake
 	${SED} -e '/^use lib/ s|"[^"]*/perlx"|"${PREFIX}/libexec/polymake/perlx"|' \
 	   ${PREFIX}/share/polymake/perl/polymake >${PREFIX}/bin/polymake
