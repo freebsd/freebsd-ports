@@ -3371,4 +3371,3 @@ share/servicetypes/scriptinterface.desktop
 @dirrm include/kabc
 @dirrm include/dom
 @dirrm include/arts
-@dirrm etc/rc.d
