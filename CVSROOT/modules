@@ -4575,6 +4575,7 @@ nofgpg		ports/security/nofgpg
 nohup		src/usr.bin/nohup
 noip		ports/net/noip
 nologin		src/sbin/nologin
+nologinmsg	ports/shells/nologinmsg
 nomarch		ports/archivers/nomarch
 nonsense	ports/games/nonsense
 normalize	ports/audio/normalize
