@@ -1,0 +1,24 @@
+usr/doc/libxml-1.4.0/AUTHORS
+usr/doc/libxml-1.4.0/COPYING
+usr/doc/libxml-1.4.0/COPYING.LIB
+usr/doc/libxml-1.4.0/ChangeLog
+usr/doc/libxml-1.4.0/NEWS
+usr/doc/libxml-1.4.0/README
+usr/doc/libxml-1.4.0/TODO
+usr/doc/libxml-1.4.0/html/book1.html
+usr/doc/libxml-1.4.0/html/gnome-xml-entities.html
+usr/doc/libxml-1.4.0/html/gnome-xml-error.html
+usr/doc/libxml-1.4.0/html/gnome-xml-htmlparser.html
+usr/doc/libxml-1.4.0/html/gnome-xml-htmltree.html
+usr/doc/libxml-1.4.0/html/gnome-xml-parser.html
+usr/doc/libxml-1.4.0/html/gnome-xml-parserinternals.html
+usr/doc/libxml-1.4.0/html/gnome-xml-tree.html
+usr/doc/libxml-1.4.0/html/gnome-xml-valid.html
+usr/doc/libxml-1.4.0/html/gnome-xml-xml-error.html
+usr/doc/libxml-1.4.0/html/gnome-xml-xpath.html
+usr/doc/libxml-1.4.0/html/index.sgml
+usr/doc/libxml-1.4.0/html/libxml.html
+usr/lib/libxml.so.1
+usr/lib/libxml.so.1.4.0
+@dirrm usr/doc/libxml-1.4.0/html
+@dirrm usr/doc/libxml-1.4.0
