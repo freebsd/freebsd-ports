@@ -1,9 +1,22 @@
 bin/tea
+share/locale/de/LC_MESSAGES/tea.mo
+share/locale/ja/LC_MESSAGES/tea.mo
+share/locale/pl/LC_MESSAGES/tea.mo
 share/locale/ru/LC_MESSAGES/tea.mo
+share/locale/sr/LC_MESSAGES/tea.mo
 share/locale/uk/LC_MESSAGES/tea.mo
-%%DOCSDIR%%/doc/en/index.html
-%%DOCSDIR%%/doc/ru/index.html
-@dirrm %%DOCSDIR%%/doc/en
-@dirrm %%DOCSDIR%%/doc/ru
-@dirrm %%DOCSDIR%%/doc
+%%DATADIR%%/pixmaps/lgm.png
+%%DATADIR%%/pixmaps/tea_icon_v2.png
+%%DATADIR%%/pixmaps/tea_logo.jpg
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%
+%%DOCSDIR%%/ru/index.html
+%%DOCSDIR%%/en/index.html
+%%DOCSDIR%%/tea_doc.css
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/TODO
+@dirrm %%DOCSDIR%%/ru
+@dirrm %%DOCSDIR%%/en
 @dirrm %%DOCSDIR%%
