@@ -7,7 +7,7 @@
 
 PORTNAME?=	ispell
 PORTVERSION?=	3.2.06
-PORTREVISION?=	8
+PORTREVISION?=	9
 CATEGORIES+=	textproc
 MASTER_SITES=	http://fmg-www.cs.ucla.edu/geoff/tars/
 DISTNAME=	ispell-3.2.06		# needed for slave ports / options
@@ -289,9 +289,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/languages/american/english.med+ \
 		${DATADIR}/english.dict
 .endif
-.if defined(ISPELL_FR) || defined(ISPELL_DENEU) || defined(ISPELL_DEALT) || defined(ISPELL_FI) || defined(ISPELL_PL) || defined(ISPELL_NL)
 	@-${INSTALL_DATA} ${WRKDIR}/*/*.aff ${WRKDIR}/*/*.hash ${DATADIR}
-.endif
 .if defined(ISPELL_IT)
 	@${CAT} ${MASTERDIR}/pkg-plist.it >> ${TMPPLIST}
 .endif
