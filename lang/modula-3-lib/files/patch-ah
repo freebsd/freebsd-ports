@@ -193,7 +193,7 @@ Update the m3build templates for FreeBSD-2.1 and later.
  proc after_library_hooks(x) is
    local lib_a  = format ("lib%s.a", x)
 -  local lib_so = format ("lib%s.so.1.1", x)
-+  local lib_so = format ("lib%s.so.5.0", x)
++  local lib_so = format ("lib%s.so.6.0", x)
    local dest = format ("%s%s%s%s%s", PKG_INSTALL, SL, BUILD_PACKAGE,
                                                        SL, BUILD_DIR)
  
