@@ -1,0 +1,30 @@
+--- include/Xos_r.h.orig        Tue Dec 12 00:07:42 2000
++++ include/Xos_r.h     Tue Dec 12 00:09:15 2000
+@@ -248,7 +248,7 @@
+     ((p).len = strlen((p).pwp->pw_passwd)), \
+     strcpy((p).pws.pw_passwd,(p).pwp->pw_passwd), \
+     \
+-    ((p).pws.pw_class = (p).pws.pw_class + (p).len + 1), \
++    ((p).pws.pw_class = (p).pws.pw_passwd + (p).len + 1), \
+     ((p).len = strlen((p).pwp->pw_class)), \
+     strcpy((p).pws.pw_class, (p).pwp->pw_class), \
+     \
+@@ -256,7 +256,7 @@
+     ((p).len = strlen((p).pwp->pw_gecos)), \
+     strcpy((p).pws.pw_gecos, (p).pwp->pw_gecos), \
+     \
+-    ((p).pws.pw_dir = (p).pws.pw_class + (p).len + 1), \
++    ((p).pws.pw_dir = (p).pws.pw_gecos + (p).len + 1), \
+     ((p).len = strlen((p).pwp->pw_dir)), \
+     strcpy((p).pws.pw_dir, (p).pwp->pw_dir), \
+     \
+@@ -289,7 +289,7 @@
+     ((p).len = strlen((p).pwp->pw_gecos)), \
+     strcpy((p).pws.pw_gecos, (p).pwp->pw_gecos), \
+     \
+-    ((p).pws.pw_dir = (p).pws.pw_comment + (p).len + 1), \
++    ((p).pws.pw_dir = (p).pws.pw_gecos + (p).len + 1), \
+     ((p).len = strlen((p).pwp->pw_dir)), \
+     strcpy((p).pws.pw_dir, (p).pwp->pw_dir), \
+     \
+
