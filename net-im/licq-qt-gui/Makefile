@@ -17,6 +17,10 @@ USE_QT_VER=	2
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \
 		LIBS="${PTHREAD_LIBS}"
 
+.if exists(${X11BASE}/bin/XFree86)
+BROKEN=		hangs on startup with XFree84 4.x.x
+.endif
+
 post-patch:
 	@${PERL5} -pi -e 's|libqt-mt.so.2|libqt2-mt.so.4|g;' \
 		-e 's|-lqt-mt|-lqt2-mt|g;' -e 's|libqt.so|libqt2.so|g;' \
