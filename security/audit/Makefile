@@ -23,6 +23,8 @@ LIB_DEPENDS+=	pq.2:${PORTSDIR}/databases/postgresql7
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-v${PORTVERSION}beta
 
+USE_GMAKE=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-audit-libdir=${PREFIX}/lib/alat
 .if defined(WITH_MYSQL)
