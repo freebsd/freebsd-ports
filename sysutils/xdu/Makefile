@@ -3,11 +3,11 @@
 # Date created:		9 February 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.3 1995/04/01 12:50:37 jkh Exp $
+# $Id: Makefile,v 1.4 1995/04/15 03:46:04 asami Exp $
 #
 
 DISTNAME=	xdu-3.0
-CATEGORIES+=	utilities x11
+CATEGORIES+=	sysutils x11
 MASTER_SITES=	ftp://ftp.arl.mil/pub/
 EXTRACT_SUFX=	.tar.Z
 
