@@ -3,7 +3,7 @@
 # Date created:				28 May 1999
 # Whom:					Jeffery Hansen <hansen@cmu.edu>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/06/06 17:11:58 steve Exp $
 #
 
 DISTNAME=		tkgate-0.9
@@ -15,8 +15,12 @@ MAINTAINER=		hansen@cmu.edu
 
 LIB_DEPENDS=		tk80.1:${PORTSDIR}/x11-toolkits/tk80
 
+VERSION=		0.9
+PLIST_SUB+=		VERSION=${VERSION}
 USE_IMAKE=		yes
-# Need to fix PREFIX brokenness in config.h.
-PREFIX=			/usr/local
+
+post-patch:
+	@${PERL} -pi -e 's:__PREFIX__:${PREFIX}:g' ${WRKSRC}/config.h
+	@${PERL} -pi -e 's:__LOCALBASE__:${LOCALBASE}:g' ${WRKSRC}/config.h
 
 .include <bsd.port.mk>
