@@ -19,7 +19,7 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTVERSION}
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	SASL authentication server for cyrus-sasl2
 
-BROKEN=		Does not install, will be removed after Feb 2
+NO_PACKAGE=	package build failure on bento
 
 LIB_DEPENDS=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 
