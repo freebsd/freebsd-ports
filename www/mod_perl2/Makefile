@@ -38,10 +38,6 @@ PERLSITEDIR=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 400000
-BROKEN=		"see PR 14924; use p5-Apache instead"
-.endif
-
 do-configure:
 	@ cd ${WRKSRC}; \
 	${PERL5} Makefile.PL USE_APXS=1 EVERYTHING=1 \
