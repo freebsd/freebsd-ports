@@ -1,0 +1,19 @@
+--- src/xercesc/util/RefArrayOf.hpp	2004/01/29 11:48:46	1.6
++++ src/xercesc/util/RefArrayOf.hpp	2004/06/23 22:19:35	1.7
+@@ -56,6 +56,9 @@
+ 
+ /*
+  * $Log: RefArrayOf.hpp,v $
++ * Revision 1.7  2004/06/23 22:19:35  neilg
++ * fix for compilation under gcc 3.5
++ *
+  * Revision 1.6  2004/01/29 11:48:46  cargilld
+  * Code cleanup changes to get rid of various compiler diagnostic messages.
+  *
+@@ -101,6 +104,7 @@
+ #include <xercesc/util/ArrayIndexOutOfBoundsException.hpp>
+ #include <xercesc/util/IllegalArgumentException.hpp>
+ #include <xercesc/util/XMLEnumerator.hpp>
++#include <xercesc/framework/MemoryManager.hpp>
+ 
+ XERCES_CPP_NAMESPACE_BEGIN
