@@ -29,12 +29,14 @@
 */opt/intel/%%COMPILERDIR%%/ia32/include/list.h
 */opt/intel/%%COMPILERDIR%%/ia32/include/locale
 */opt/intel/%%COMPILERDIR%%/ia32/include/map
+*/opt/intel/%%COMPILERDIR%%/ia32/include/mathf.h
 */opt/intel/%%COMPILERDIR%%/ia32/include/memory
 */opt/intel/%%COMPILERDIR%%/ia32/include/numeric
 */opt/intel/%%COMPILERDIR%%/ia32/include/omp.h
 */opt/intel/%%COMPILERDIR%%/ia32/include/omp_lib.h
 */opt/intel/%%COMPILERDIR%%/ia32/include/ostream
 */opt/intel/%%COMPILERDIR%%/ia32/include/queue
+*/opt/intel/%%COMPILERDIR%%/ia32/include/regex.h
 */opt/intel/%%COMPILERDIR%%/ia32/include/set
 */opt/intel/%%COMPILERDIR%%/ia32/include/slist
 */opt/intel/%%COMPILERDIR%%/ia32/include/sstream
@@ -82,6 +84,7 @@
 */opt/intel/%%COMPILERDIR%%/ia32/lib/libguide.so
 */opt/intel/%%COMPILERDIR%%/ia32/lib/libguide_stats.a
 */opt/intel/%%COMPILERDIR%%/ia32/lib/libguide_stats.so
+*/opt/intel/%%COMPILERDIR%%/ia32/lib/libompstub.a
 */opt/intel/%%COMPILERDIR%%/ia32/lib/libunwind.so
 */opt/intel/%%COMPILERDIR%%/ia32/lib/libunwind.so.3
 */opt/intel/%%COMPILERDIR%%/man/man1/ecc.1

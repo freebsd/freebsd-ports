@@ -9,3 +9,16 @@
          #define EXPLICIT explicit
  #else
     #if (__INTEL_COMPILER)
+@@ -53,10 +53,10 @@
+ #endif
+ 
+ /* Figure out whether and how to define the output operators */
+-#if defined(_IOSTREAM_)
++#if defined(_IOSTREAM_) || defined(_STLP_IOSTREAM)
+ #define FVEC_DEFINE_OUTPUT_OPERATORS
+ #define FVEC_STD std::
+-#elif defined(_INC_IOSTREAM) || defined(_IOSTREAM_H_)
++#elif defined(_INC_IOSTREAM) || defined(_IOSTREAM_H_) || defined(_STLP_IOSTREAM_H)
+ #define FVEC_DEFINE_OUTPUT_OPERATORS
+ #define FVEC_STD
+ #endif
