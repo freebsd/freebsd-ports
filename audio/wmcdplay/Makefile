@@ -1,15 +1,15 @@
 # New ports collection makefile for:	wmcdplay
-# Version required:     0.8
+# Version required:     1.0b1
 # Date created:		7 December 1998
 # Whom:			Chia-liang Kao <clkao@CirX.ORG>
 #
-# $Id: Makefile,v 1.3 1998/12/16 04:43:27 flathill Exp $
+# $Id: Makefile,v 1.4 1999/01/18 06:42:58 asami Exp $
 #
 
-DISTNAME=	wmcdplay
+DISTNAME=	wmcdplay-1.0-beta1
 PKGNAME=	wmcdplay-1.0b1
 CATEGORIES=	audio windowmaker
-MASTER_SITES=	http://www.geocities.com/SiliconValley/Vista/2471/
+MASTER_SITES=	http://www.geocities.com/SiliconValley/Vista/2471/files/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	clkao@CirX.ORG
