@@ -33,7 +33,7 @@
  #    CCFLAGS line.
 -#CCFLAGS = -DM_LITTLE_ENDIAN
 -#LFLAGS = -lcurses -ltermcap -lcompat -lm
-+CCFLAGS = -DM_LITTLE_ENDIAN -DHALF_DUPLEX
++CCFLAGS = -DM_LITTLE_ENDIAN -DHALF_DUPLEX -DAUDIO_BLOCKING -DNEEDED_LINEAR -DLINUX_DSP_SMALL_BUFFER
 +LFLAGS = -lcurses -ltermcap -lcompat -lm
  
  #			   Hewlett-Packard
