@@ -1,20 +1,20 @@
 # New ports collection makefile for:	PostgreSQL-j
-# Version required:	6.4+Multibyte-patch
+# Version required:	6.4.2+Multibyte-patch
 # Date created:		25 Nov 1998
 # Whom:			Ichiro Fukuhara <ichiro@ichiro.org>
 #
-# $Id$
+# $Id: Makefile,v 1.4 1999/01/01 07:19:44 kuriyama Exp $
 #
 
-DISTNAME=	postgresql-v6.4
-PKGNAME=	ja-postgresql-6.4
+DISTNAME=	postgresql-6.4.2
+PKGNAME=	ja-postgresql-6.4.2
 CATEGORIES=	japanese databases
 MASTER_SITES=	ftp://ftp.postgresql.org/pub/ \
 		ftp://ftp.jaist.ac.jp/pub/dbms/PostgreSQL/ \
-		ftp://ftp.sra.co.jp/pub/cmd/postgres/6.4/
+		ftp://ftp.sra.co.jp/pub/cmd/postgres/6.4.2/
 
-PATCH_SITES=	ftp://ftp.sra.co.jp/pub/cmd/postgres/6.4/patches/
-PATCHFILES=	jumbo-981124.patch.gz
+PATCH_SITES=	ftp://ftp.sra.co.jp/pub/cmd/postgres/6.4.2/patches/
+PATCHFILES=	jumbo-990217.patch.gz
 
 MAINTAINER=	ichiro@ichiro.org
 
@@ -41,7 +41,6 @@ WITH_PERL=      --with-perl
 .endif
 .if defined(USE_ODBC)
 WITH_ODBC=      --with-odbc
-PLISTS+=	PLIST.odbc
 .endif
 
 NO_PACKAGE=	"Requires ${PGSQL_UID} uid"
@@ -158,6 +157,9 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/${INSTALL_DIR}
 	${CP} -r ${WRKDIR}/${DISTNAME}/doc/* ${PREFIX}/share/doc/${INSTALL_DIR}
+.for f in . src src/sgml src/sgml/ref src/graphics 
+	@${RM} -r ${PREFIX}/share/doc/${INSTALL_DIR}/$f/CVS
+.endfor
 .endif
 .if !defined(BATCH)
 	@ more -e ${FILESDIR}/post-install-notes
