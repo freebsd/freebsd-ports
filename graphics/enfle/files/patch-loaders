@@ -1,0 +1,154 @@
+--- plugins/loader/ald/Makefile.in.orig	Wed Oct 11 02:19:43 2000
++++ plugins/loader/ald/Makefile.in	Thu Dec  7 02:18:01 2000
+@@ -90,7 +90,7 @@
+ saver_dirs = @saver_dirs@
+ 
+ lib_LTLIBRARIES = loader_ald.la
+-loader_ald_la_LDFLAGS = -module
++loader_ald_la_LDFLAGS = -module -avoid-version
+ libdir = @Plugins_loader_dir@
+ LIBS = 
+ 
+--- plugins/loader/bmp/Makefile.in.orig	Wed Oct 11 02:19:44 2000
++++ plugins/loader/bmp/Makefile.in	Thu Dec  7 02:18:04 2000
+@@ -90,7 +90,7 @@
+ saver_dirs = @saver_dirs@
+ 
+ lib_LTLIBRARIES = loader_bmp.la
+-loader_bmp_la_LDFLAGS = -module
++loader_bmp_la_LDFLAGS = -module -avoid-version
+ libdir = @Plugins_loader_dir@
+ LIBS = 
+ 
+--- plugins/loader/grp/Makefile.in.orig	Wed Oct 11 02:19:45 2000
++++ plugins/loader/grp/Makefile.in	Thu Dec  7 02:18:07 2000
+@@ -90,7 +90,7 @@
+ saver_dirs = @saver_dirs@
+ 
+ lib_LTLIBRARIES = loader_grp.la
+-loader_grp_la_LDFLAGS = -module
++loader_grp_la_LDFLAGS = -module -avoid-version
+ libdir = @Plugins_loader_dir@
+ LIBS = 
+ 
+--- plugins/loader/jpeg/Makefile.in.orig	Wed Oct 11 02:19:46 2000
++++ plugins/loader/jpeg/Makefile.in	Thu Dec  7 02:18:09 2000
+@@ -90,7 +90,7 @@
+ saver_dirs = @saver_dirs@
+ 
+ lib_LTLIBRARIES = loader_jpeg.la
+-loader_jpeg_la_LDFLAGS = -module
++loader_jpeg_la_LDFLAGS = -module -avoid-version
+ libdir = @Plugins_loader_dir@
+ LIBS = -ljpeg
+ 
+--- plugins/loader/lfg/Makefile.in.orig	Wed Oct 11 02:19:47 2000
++++ plugins/loader/lfg/Makefile.in	Thu Dec  7 02:18:12 2000
+@@ -90,7 +90,7 @@
+ saver_dirs = @saver_dirs@
+ 
+ lib_LTLIBRARIES = loader_lfg.la
+-loader_lfg_la_LDFLAGS = -module
++loader_lfg_la_LDFLAGS = -module -avoid-version
+ libdir = @Plugins_loader_dir@
+ LIBS = 
+ 
+--- plugins/loader/mag/Makefile.in.orig	Wed Oct 11 02:19:48 2000
++++ plugins/loader/mag/Makefile.in	Thu Dec  7 02:18:17 2000
+@@ -90,7 +90,7 @@
+ saver_dirs = @saver_dirs@
+ 
+ lib_LTLIBRARIES = loader_mag.la
+-loader_mag_la_LDFLAGS = -module
++loader_mag_la_LDFLAGS = -module -avoid-version
+ libdir = @Plugins_loader_dir@
+ LIBS = 
+ 
+--- plugins/loader/mng/Makefile.in.orig	Wed Oct 11 02:19:49 2000
++++ plugins/loader/mng/Makefile.in	Thu Dec  7 02:18:19 2000
+@@ -90,7 +90,7 @@
+ saver_dirs = @saver_dirs@
+ 
+ lib_LTLIBRARIES = loader_mng.la
+-loader_mng_la_LDFLAGS = -module
++loader_mng_la_LDFLAGS = -module -avoid-version
+ libdir = @Plugins_loader_dir@
+ LIBS = -lmng -ljpeg -lz
+ 
+--- plugins/loader/p2/Makefile.in.orig	Wed Oct 11 02:19:50 2000
++++ plugins/loader/p2/Makefile.in	Thu Dec  7 02:18:21 2000
+@@ -90,7 +90,7 @@
+ saver_dirs = @saver_dirs@
+ 
+ lib_LTLIBRARIES = loader_p2.la
+-loader_p2_la_LDFLAGS = -module
++loader_p2_la_LDFLAGS = -module -avoid-version
+ libdir = @Plugins_loader_dir@
+ LIBS = 
+ 
+--- plugins/loader/pic/Makefile.in.orig	Wed Oct 11 02:19:51 2000
++++ plugins/loader/pic/Makefile.in	Thu Dec  7 02:18:24 2000
+@@ -90,7 +90,7 @@
+ saver_dirs = @saver_dirs@
+ 
+ lib_LTLIBRARIES = loader_pic.la
+-loader_pic_la_LDFLAGS = -module
++loader_pic_la_LDFLAGS = -module -avoid-version
+ libdir = @Plugins_loader_dir@
+ LIBS = 
+ 
+--- plugins/loader/png/Makefile.in.orig	Wed Oct 11 02:19:52 2000
++++ plugins/loader/png/Makefile.in	Thu Dec  7 02:18:27 2000
+@@ -90,7 +90,7 @@
+ saver_dirs = @saver_dirs@
+ 
+ lib_LTLIBRARIES = loader_png.la
+-loader_png_la_LDFLAGS = -module
++loader_png_la_LDFLAGS = -module -avoid-version
+ libdir = @Plugins_loader_dir@
+ LIBS = -lpng -lz -lm
+ 
+--- plugins/loader/pnm/Makefile.in.orig	Wed Oct 11 02:19:53 2000
++++ plugins/loader/pnm/Makefile.in	Thu Dec  7 02:18:29 2000
+@@ -90,7 +90,7 @@
+ saver_dirs = @saver_dirs@
+ 
+ lib_LTLIBRARIES = loader_pnm.la
+-loader_pnm_la_LDFLAGS = -module
++loader_pnm_la_LDFLAGS = -module -avoid-version
+ libdir = @Plugins_loader_dir@
+ LIBS = 
+ 
+--- plugins/loader/ungif/Makefile.in.orig	Wed Oct 11 02:19:54 2000
++++ plugins/loader/ungif/Makefile.in	Thu Dec  7 02:18:33 2000
+@@ -90,7 +90,7 @@
+ saver_dirs = @saver_dirs@
+ 
+ lib_LTLIBRARIES = loader_ungif.la
+-loader_ungif_la_LDFLAGS = -module
++loader_ungif_la_LDFLAGS = -module -avoid-version
+ libdir = @Plugins_loader_dir@
+ LIBS = -lungif
+ 
+--- plugins/loader/xbm/Makefile.in.orig	Wed Oct 11 02:19:55 2000
++++ plugins/loader/xbm/Makefile.in	Thu Dec  7 02:18:38 2000
+@@ -90,7 +90,7 @@
+ saver_dirs = @saver_dirs@
+ 
+ lib_LTLIBRARIES = loader_xbm.la
+-loader_xbm_la_LDFLAGS = -module
++loader_xbm_la_LDFLAGS = -module -avoid-version
+ libdir = @Plugins_loader_dir@
+ LIBS = 
+ 
+--- plugins/loader/xpm/Makefile.in.orig	Wed Oct 11 02:19:56 2000
++++ plugins/loader/xpm/Makefile.in	Thu Dec  7 02:18:42 2000
+@@ -90,7 +90,7 @@
+ saver_dirs = @saver_dirs@
+ 
+ lib_LTLIBRARIES = loader_xpm.la
+-loader_xpm_la_LDFLAGS = -module
++loader_xpm_la_LDFLAGS = -module -avoid-version
+ libdir = @Plugins_loader_dir@
+ LIBS = 
+ 
