@@ -6,6 +6,7 @@
 
 PORTNAME=	texfamily
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.math.s.chiba-u.ac.jp/tex/texfam-1.2/
 PKGNAMEPREFIX=	ja-
@@ -24,10 +25,10 @@ EXTRACT_ONLY=	teTeX-src-1.0.7${EXTRACT_SUFX} \
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A Japanese TeX, NTT JTeX (TeXfamily)
 
-BUILD_DEPENDS=	tetex-modesw:${PORTSDIR}/print/tex-texmflocal \
+BUILD_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
 		${LOCALBASE}/${TEXMFDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
 		mktexlsr:${PORTSDIR}/print/teTeX-base
-RUN_DEPENDS=	tetex-modesw:${PORTSDIR}/print/tex-texmflocal \
+RUN_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
 		${LOCALBASE}/${TEXMFDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
 		mktexlsr:${PORTSDIR}/print/teTeX-base
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
@@ -49,15 +50,15 @@ ALL_TARGET=	default
 PLIST_SUB=	MKTEXLSR=${MKTEXLSR} \
 		TEXMFDIR=${TEXMFDIR} \
 		TEXMFLOCAL=${TEXMFLOCAL}
-CONFLICTS=	ja-ptex-base*
+CONFLICTS=	ja-ptex-base-[0-9]*
 
 INSTALL_WRKSRC=	${WRKDIR}/teTeX-1.0/texk/web2c-j
 WRKSRC=		${WRKDIR}/teTeX-1.0
 
-TETEX_MODESW=	${LOCALBASE}/bin/tetex-modesw
-
 KANJICODE?=	euc
 TEXMFDIR?=	share/texmf
+TEXMFLOCAL?=	share/texmf-local
+TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
 TEXMFCNF_SRC=	${WRKDIR}/teTeX-1.0/texk/kpathsea/texmf.cnf
 TEXMFCNF_DST=	${PREFIX}/${TEXMFDIR}/web2c-jtex/texmf.cnf
 MKTEXLSR?=	${LOCALBASE}/bin/mktexlsr
@@ -67,10 +68,8 @@ LIBT1_PREFIX?=	${LOCALBASE}
 
 INSTDIRS=	doc fonts jbibtex jtex source tex
 DOC_FILES=	COPYRIGHT COPYRIGHT.jis Changes.txt README.txt
-TEXMFLOCAL=	share/texmf-local
 
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--enable-local-texmf=${TEXMFLOCAL} \
+CONFIGURE_ARGS=	--enable-local-texmf=${TEXMFLOCAL} \
 		--disable-multiplatform \
 		--without-texinfo --without-dialog \
 		--with-system-ncurses --with-system-zlib \

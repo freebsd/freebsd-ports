@@ -6,6 +6,7 @@
 
 PORTNAME=	texfamily-vfn2a
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.math.s.chiba-u.ac.jp/tex/
 DISTNAME=	vftool-${PORTVERSION}
@@ -13,12 +14,12 @@ DISTNAME=	vftool-${PORTVERSION}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Virtual fonts for NTT JTeX
 
-BUILD_DEPENDS=	tetex-modesw:${PORTSDIR}/print/tex-texmflocal \
+BUILD_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
 		${LOCALBASE}/${TEXMF}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
 		mktexlsr:${PORTSDIR}/print/teTeX-base \
 		${LOCALBASE}/${TEXMF}/fonts/tfm/ptex/min10.tfm:${PORTSDIR}/japanese/ptex-tetex \
 		jtex:${PORTSDIR}/japanese/texfamily
-RUN_DEPENDS=	tetex-modesw:${PORTSDIR}/print/tex-texmflocal \
+RUN_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
 		${LOCALBASE}/${TEXMF}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
 		mktexlsr:${PORTSDIR}/print/teTeX-base \
 		${LOCALBASE}/${TEXMF}/fonts/tfm/ptex/min10.tfm:${PORTSDIR}/japanese/ptex-tetex \

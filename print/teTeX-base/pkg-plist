@@ -189,35 +189,35 @@ include/kpathsea/variable.h
 include/kpathsea/xopendir.h
 include/kpathsea/xstat.h
 lib/libkpathsea.a
-%%TEXMF_TREE%%/doc/tetex/TETEXDOC.dvi
-%%TEXMF_TREE%%/doc/tetex/TETEXDOC.pdf
-%%TEXMF_TREE%%/doc/tetex/TETEXDOC.ps
-%%TEXMF_TREE%%/doc/tetex/teTeX-FAQ
-%%TEXMF_TREE%%/dvips/gsftopk/render.ps
-%%TEXMF_TREE%%/texconfig/README
-%%TEXMF_TREE%%/texconfig/g/generic
-%%TEXMF_TREE%%/texconfig/generic
-%%TEXMF_TREE%%/texconfig/v/vt100
-%%TEXMF_TREE%%/texconfig/x/xterm
-%%TEXMF_TREE%%/web2c/etex-pl.pool
-%%TEXMF_TREE%%/web2c/etex.pool
-%%TEXMF_TREE%%/web2c/fmtutil.cnf
-%%TEXMF_TREE%%/web2c/mf.pool
-%%TEXMF_TREE%%/web2c/mktex.opt
-%%TEXMF_TREE%%/web2c/mktexdir
-%%TEXMF_TREE%%/web2c/mktexdir.opt
-%%TEXMF_TREE%%/web2c/mktexnam
-%%TEXMF_TREE%%/web2c/mktexnam.opt
-%%TEXMF_TREE%%/web2c/mktexupd
-%%TEXMF_TREE%%/web2c/mp.pool
-%%TEXMF_TREE%%/web2c/omega.pool
-%%TEXMF_TREE%%/web2c/pdfetex-pl.pool
-%%TEXMF_TREE%%/web2c/pdfetex.pool
-%%TEXMF_TREE%%/web2c/pdftex-pl.pool
-%%TEXMF_TREE%%/web2c/pdftex.pool
-%%TEXMF_TREE%%/web2c/tex-pl.pool
-%%TEXMF_TREE%%/web2c/tex.pool
-%%TEXMF_TREE%%/web2c/texmf.cnf
+%%TEXMF%%/doc/tetex/TETEXDOC.dvi
+%%TEXMF%%/doc/tetex/TETEXDOC.pdf
+%%TEXMF%%/doc/tetex/TETEXDOC.ps
+%%TEXMF%%/doc/tetex/teTeX-FAQ
+%%TEXMF%%/dvips/gsftopk/render.ps
+%%TEXMF%%/texconfig/README
+%%TEXMF%%/texconfig/g/generic
+%%TEXMF%%/texconfig/generic
+%%TEXMF%%/texconfig/v/vt100
+%%TEXMF%%/texconfig/x/xterm
+%%TEXMF%%/web2c/etex-pl.pool
+%%TEXMF%%/web2c/etex.pool
+%%TEXMF%%/web2c/fmtutil.cnf
+%%TEXMF%%/web2c/mf.pool
+%%TEXMF%%/web2c/mktex.opt
+%%TEXMF%%/web2c/mktexdir
+%%TEXMF%%/web2c/mktexdir.opt
+%%TEXMF%%/web2c/mktexnam
+%%TEXMF%%/web2c/mktexnam.opt
+%%TEXMF%%/web2c/mktexupd
+%%TEXMF%%/web2c/mp.pool
+%%TEXMF%%/web2c/omega.pool
+%%TEXMF%%/web2c/pdfetex-pl.pool
+%%TEXMF%%/web2c/pdfetex.pool
+%%TEXMF%%/web2c/pdftex-pl.pool
+%%TEXMF%%/web2c/pdftex.pool
+%%TEXMF%%/web2c/tex-pl.pool
+%%TEXMF%%/web2c/tex.pool
+%%TEXMF%%/web2c/texmf.cnf
 %%TEXMFVAR%%/web2c/cont-en.log
 %%TEXMFVAR%%/web2c/cont-en.efmt
 %%TEXMFVAR%%/web2c/elatex.efmt
@@ -253,35 +253,35 @@ lib/libkpathsea.a
 %%TEXMFVAR%%/web2c/plain.mem
 %%TEXMFVAR%%/web2c/tex.fmt
 %%TEXMFVAR%%/web2c/tex.log
-%%XDVIK%%%%TEXMF_TREE%%/xdvi/xdvi.cfg
-@exec mkdir -p %D/%%TEXMF_TREE%%/fonts/afm/hoekwater
-@exec mkdir -p %D/%%TEXMF_TREE%%/fonts/bh
-@exec mkdir -p %D/%%TEXMF_TREE%%/fonts/bh/lucidabr
-@exec mkdir -p %D/%%TEXMF_TREE%%/fonts/bh/lumath
-@exec mkdir -p %D/%%TEXMF_TREE%%/fonts/ofm/public/ommincho
-@exec mkdir -p %D/%%TEXMF_TREE%%/fonts/ofm/uhc
-@exec mkdir -p %D/%%TEXMF_TREE%%/fonts/ofm/uhc/gothic
-@exec mkdir -p %D/%%TEXMF_TREE%%/fonts/ofm/uhc/myoungjo
-@exec mkdir -p %D/%%TEXMF_TREE%%/fonts/ofm/uhc/taza
-@exec mkdir -p %D/%%TEXMF_TREE%%/fonts/ovf/public/ommincho
-@exec mkdir -p %D/%%TEXMF_TREE%%/fonts/ovf/uhc
-@exec mkdir -p %D/%%TEXMF_TREE%%/fonts/ovf/uhc/gothic
-@exec mkdir -p %D/%%TEXMF_TREE%%/fonts/ovf/uhc/myoungjo
-@exec mkdir -p %D/%%TEXMF_TREE%%/fonts/ovf/uhc/taza
-@exec mkdir -p %D/%%TEXMF_TREE%%/fonts/ovp/public/ommincho
-@exec mkdir -p %D/%%TEXMF_TREE%%/fonts/pk
-@exec mkdir -p %D/%%TEXMF_TREE%%/fonts/tfm/monotype
-@exec mkdir -p %D/%%TEXMF_TREE%%/fonts/vf/monotype
-@exec mkdir -p %D/%%TEXMF_TREE%%/omega/generic
-@exec mkdir -p %D/%%TEXMF_TREE%%/omega/generic/config
-@exec mkdir -p %D/%%TEXMF_TREE%%/omega/ocp/omegajapanese
-@exec mkdir -p %D/%%TEXMF_TREE%%/omega/otp/omega-j
-@exec mkdir -p %D/%%TEXMF_TREE%%/omega/otp/omegajapanese
-@exec mkdir -p %D/%%TEXMF_TREE%%/xdvi
+%%XDVIK%%%%TEXMF%%/xdvi/xdvi.cfg
+@exec mkdir -p %D/%%TEXMF%%/fonts/afm/hoekwater
+@exec mkdir -p %D/%%TEXMF%%/fonts/bh
+@exec mkdir -p %D/%%TEXMF%%/fonts/bh/lucidabr
+@exec mkdir -p %D/%%TEXMF%%/fonts/bh/lumath
+@exec mkdir -p %D/%%TEXMF%%/fonts/ofm/public/ommincho
+@exec mkdir -p %D/%%TEXMF%%/fonts/ofm/uhc
+@exec mkdir -p %D/%%TEXMF%%/fonts/ofm/uhc/gothic
+@exec mkdir -p %D/%%TEXMF%%/fonts/ofm/uhc/myoungjo
+@exec mkdir -p %D/%%TEXMF%%/fonts/ofm/uhc/taza
+@exec mkdir -p %D/%%TEXMF%%/fonts/ovf/public/ommincho
+@exec mkdir -p %D/%%TEXMF%%/fonts/ovf/uhc
+@exec mkdir -p %D/%%TEXMF%%/fonts/ovf/uhc/gothic
+@exec mkdir -p %D/%%TEXMF%%/fonts/ovf/uhc/myoungjo
+@exec mkdir -p %D/%%TEXMF%%/fonts/ovf/uhc/taza
+@exec mkdir -p %D/%%TEXMF%%/fonts/ovp/public/ommincho
+@exec mkdir -p %D/%%TEXMF%%/fonts/pk
+@exec mkdir -p %D/%%TEXMF%%/fonts/tfm/monotype
+@exec mkdir -p %D/%%TEXMF%%/fonts/vf/monotype
+@exec mkdir -p %D/%%TEXMF%%/omega/generic
+@exec mkdir -p %D/%%TEXMF%%/omega/generic/config
+@exec mkdir -p %D/%%TEXMF%%/omega/ocp/omegajapanese
+@exec mkdir -p %D/%%TEXMF%%/omega/otp/omega-j
+@exec mkdir -p %D/%%TEXMF%%/omega/otp/omegajapanese
+@exec mkdir -p %D/%%TEXMF%%/xdvi
 @dirrm include/kpathsea
-@dirrm %%TEXMF_TREE%%/texconfig/x
-@dirrm %%TEXMF_TREE%%/texconfig/v
-@dirrm %%TEXMF_TREE%%/texconfig/g
-@dirrm %%TEXMF_TREE%%/texconfig
-@dirrm %%TEXMF_TREE%%/dvips/gsftopk
+@dirrm %%TEXMF%%/texconfig/x
+@dirrm %%TEXMF%%/texconfig/v
+@dirrm %%TEXMF%%/texconfig/g
+@dirrm %%TEXMF%%/texconfig
+@dirrm %%TEXMF%%/dvips/gsftopk
 @exec %%MKTEXLSR%%

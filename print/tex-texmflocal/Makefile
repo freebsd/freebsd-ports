@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	tex-texmflocal
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	print
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -26,23 +26,6 @@ TEXMFVAR=	share/texmf-var
 TEXMFVAR_LSR=	${LOCALBASE}/${TEXMFVAR}/ls-R
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 
-DEFAULT_MODE=	tetex
-TEXMFCNF=	web2c/texmf.cnf
-DVIPSKCNF=	dvips/config/config.ps
-XDVIKCNF=	xdvi/XDvi
-DVIPDFMCNF=	dvipdfm/config/config
-
-TETEX_MODESW_SUB= \
-		DEFAULT_MODE=${DEFAULT_MODE} \
-		TEXMFCNF=${TEXMFCNF} \
-		DVIPSKCNF=${DVIPSKCNF} \
-		XDVIKCNF=${XDVIKCNF} \
-		DVIPDFMCNF=${DVIPDFMCNF} \
-		PREFIX=${PREFIX} \
-		TEXMF=${TEXMF} \
-		TEXMFVAR=${TEXMFVAR} \
-		TEXMFLOCAL=${TEXMFLOCAL}
-
 DIRS=	bibtex/bib bibtex/bst bibtex\
 	context/config context \
 	dvipdfm/config dvipdfm dvips/config dvips \
@@ -61,31 +44,25 @@ DIRS=	bibtex/bib bibtex/bst bibtex\
 LSRMAGIC=${ECHO_CMD} "% ls-R -- filename database for kpathsea; do not change this line."
 
 pre-install:
-	${SED} ${TETEX_MODESW_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		< ${FILESDIR}/tetex-modesw.in > ${WRKDIR}/tetex-modesw
 	(${ECHO_CMD} "bin/tetex-modesw"; \
-		for dir in ${DIRS}; do \
-			${ECHO_CMD} "@unexec ${RMDIR} %D/${TEXMFLOCAL}/$${dir} > /dev/null 2>&1 || true"; \
-			${ECHO_CMD} "@unexec ${RMDIR} %D/${TEXMFVAR}/$${dir} > /dev/null 2>&1 || true"; \
-			${ECHO_CMD} "@exec ${MKDIR} %D/${TEXMFLOCAL}/$${dir}"; \
-			${ECHO_CMD} "@exec ${MKDIR} %D/${TEXMFVAR}/$${dir}"; \
-		done; \
-		${ECHO_CMD} '@exec ${LSRMAGIC:S,%,%%,g} > ${TEXMFLOCAL_LSR} && ${CHMOD} 0644 ${TEXMFLOCAL_LSR}'; \
-		${ECHO_CMD} '@exec ${LSRMAGIC:S,%,%%,g} > ${TEXMFVAR_LSR} && ${CHMOD} 0644 ${TEXMFVAR_LSR}'; \
-		${ECHO_CMD} '@exec ${TOUCH} ${PREFIX}/etc/tetex-modesw.conf'; \
-		${ECHO_CMD} '@unexec ${RM} -f ${PREFIX}/etc/tetex-modesw.conf > /dev/null 2>&1 || true'; \
-		${ECHO_CMD} '@unexec ${RM} -f ${TEXMFLOCAL_LSR} > /dev/null 2>&1 || true'; \
-		${ECHO_CMD} '@unexec ${RM} -f ${TEXMFVAR_LSR} > /dev/null 2>&1 || true'; \
-		${ECHO_CMD} "@unexec ${RMDIR} %D/${TEXMFLOCAL} > /dev/null 2>&1 || true"; \
-		${ECHO_CMD} "@unexec ${RMDIR} %D/${TEXMFVAR} > /dev/null 2>&1 || true"; \
-		${ECHO_CMD} '@exec if [ -x ${MKTEXLSR} ]; then ${MKTEXLSR}; fi'; \
-		${ECHO_CMD} '@unexec if [ -x ${MKTEXLSR} ]; then ${MKTEXLSR}; fi'; \
-		) > ${PLIST}
+	for dir in ${DIRS}; do \
+		${ECHO_CMD} "@unexec ${RMDIR} %D/${TEXMFLOCAL}/$${dir} > /dev/null 2>&1 || true"; \
+		${ECHO_CMD} "@unexec ${RMDIR} %D/${TEXMFVAR}/$${dir} > /dev/null 2>&1 || true"; \
+		${ECHO_CMD} "@exec ${MKDIR} %D/${TEXMFLOCAL}/$${dir}"; \
+		${ECHO_CMD} "@exec ${MKDIR} %D/${TEXMFVAR}/$${dir}"; \
+	done; \
+	${ECHO_CMD} '@exec ${LSRMAGIC:S,%,%%,g} > ${TEXMFLOCAL_LSR} && ${CHMOD} 0644 ${TEXMFLOCAL_LSR}'; \
+	${ECHO_CMD} '@exec ${LSRMAGIC:S,%,%%,g} > ${TEXMFVAR_LSR} && ${CHMOD} 0644 ${TEXMFVAR_LSR}'; \
+	${ECHO_CMD} '@unexec ${RM} -f ${TEXMFLOCAL_LSR} > /dev/null 2>&1 || true'; \
+	${ECHO_CMD} '@unexec ${RM} -f ${TEXMFVAR_LSR} > /dev/null 2>&1 || true'; \
+	${ECHO_CMD} "@unexec ${RMDIR} %D/${TEXMFLOCAL} > /dev/null 2>&1 || true"; \
+	${ECHO_CMD} "@unexec ${RMDIR} %D/${TEXMFVAR} > /dev/null 2>&1 || true"; \
+	${ECHO_CMD} '@exec if [ -x ${MKTEXLSR} ]; then ${MKTEXLSR}; fi'; \
+	${ECHO_CMD} '@unexec if [ -x ${MKTEXLSR} ]; then ${MKTEXLSR}; fi'; \
+	) > ${PLIST}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/tetex-modesw ${PREFIX}/bin
-	${TOUCH} ${PREFIX}/etc/tetex-modesw.conf
-	${CHMOD} 644 ${PREFIX}/etc/tetex-modesw.conf
+	${INSTALL_SCRIPT} ${FILESDIR}/tetex-modesw.in ${PREFIX}/bin/tetex-modesw
 	${MKDIR} ${DIRS:S,^,${PREFIX}/${TEXMFLOCAL}/,}
 	${MKDIR} ${DIRS:S,^,${PREFIX}/${TEXMFVAR}/,}
 	${LSRMAGIC} > ${TEXMFLOCAL_LSR}

@@ -6,7 +6,7 @@
 
 PORTNAME=	dvipsk-tetex
 PORTVERSION=	5.92b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	ftp://sunsite.informatik.rwth-aachen.de/pub/comp/tex/teTeX/2.0/distrib/ \
 		${MASTER_SITE_TEX_CTAN}
@@ -17,10 +17,10 @@ DIST_SUBDIR=	teTeX
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Convert a TeX DVI file to PostScript
 
-BUILD_DEPENDS=	tetex-modesw:${PORTSDIR}/print/tex-texmflocal \
+BUILD_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
 		${LOCALBASE}/${TEXMF}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
 		mktexlsr:${PORTSDIR}/print/teTeX-base
-RUN_DEPENDS=	tetex-modesw:${PORTSDIR}/print/tex-texmflocal \
+RUN_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
 		${LOCALBASE}/${TEXMF}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
 		mktexlsr:${PORTSDIR}/print/teTeX-base
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
@@ -45,23 +45,38 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-pnglib-include=${LIBPNG_PREFIX}/include \
 		--with-system-t1lib --with-t1lib-libdir=${LIBT1_PREFIX}/lib \
 		--with-t1lib-include=${LIBT1_PREFIX}/include
-CONFLICTS=	*-teTeX* ja-ptex-base* *-*dvips* *dvips-*
+CONFLICTS=	*-teTeX-[0-9]* ja-ptex-base-[0-9]* *-*dvips* *dvips-*
 
 MAN1=		dvips.1 afm2tfm.1
 INFO=		dvips
 
+.if defined(WITH_LETTERSIZE)
+FLAVOR+=	letter
+PAPERSIZE=	letter
+.else
+PAPERSIZE=	a4
+.endif
+
 TETEX_VER=	2.0.2
 MKTEXLSR?=	${LOCALBASE}/bin/mktexlsr
 TEXMF?=		share/texmf
+TEXMFLOCAL?=	share/texmf-local
+TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
+TEXCONFIG?=	${LOCALBASE}/bin/texconfig
+DVIPSDIR=	${LOCALBASE}/${TEXMF}/dvips/config
+DVIPSVARDIR=	${LOCALBASE}/${TEXMF}-var/dvips/config
 LIBPNG_PREFIX?=	${LOCALBASE}
 LIBWWW_PREFIX?=	${LOCALBASE}
 LIBT1_PREFIX?=	${LOCALBASE}
 
 PKGINSTALL=	${WRKDIR}/pkg-install.sh
 PKGDEINSTALL=	${WRKDIR}/pkg-install.sh
-TETEX_MODESW=	${PREFIX}/bin/tetex-modesw
-PKGINSTALL_SUB=	TETEX_MODESW=${TETEX_MODESW} \
-		MKTEXLSR=${MKTEXLSR}
+PKGINSTALL_SUB=	PAPERSIZE=${PAPERSIZE} \
+		MKTEXLSR=${MKTEXLSR} \
+		DVIPSDIR=${DVIPSDIR} \
+		DVIPSVARDIR=${DVIPSVARDIR} \
+		TEXCONFIG=${TEXCONFIG} \
+		LOCALBASE=${LOCALBASE}
 
 pre-build:
 	${SED} ${PKGINSTALL_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
