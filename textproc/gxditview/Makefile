@@ -9,7 +9,7 @@ PORTNAME=	gxditview
 CATEGORIES=	textproc
 DISTFILES=	# none
 
-MAINTAINER=	dom@happygiraffe.net
+MAINTAINER=	ru@FreeBSD.org
 COMMENT=	An X11 based previewer for groff output
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
