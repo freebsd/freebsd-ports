@@ -23,6 +23,8 @@ LDCONFIG_DIRS=	%%PREFIX%%/firebird/lib
 
 ONLY_FOR_ARCHS=	i386
 
+.include <bsd.port.pre.mk>
+
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@(								\
@@ -30,6 +32,11 @@ do-extract:
 	cd interbase; tar zxf ${DISTDIR}/firebird-boot-kit.tar.gz;	\
 	${CP} msgs/msg.gbak misc/msg.gbak				\
 	)
+
+.if ${OSVERSION} >= 500016
+post-patch:
+	${PERL} -pi -e 's,\-ldescrypt,\-lcrypt,g' ${WRKSRC}/builds/original/prefix.freebsd
+.endif
 
 do-configure:
 	@(								\
@@ -60,4 +67,4 @@ do-install:
 	${CP} ${FILESDIR}/RELNOTES ${PREFIX}/firebird/			\
 	)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
