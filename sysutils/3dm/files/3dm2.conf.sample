@@ -1,0 +1,15 @@
+Port 888
+EmailEnable 0
+EmailSender 3dm@localhost
+EmailServer localhost
+EmailRecipient root
+EmailSeverity 1
+ROpwd twOmwmsK8lKk2
+ADMINpwd twOmwmsK8lKk2
+RemoteAccess 1
+Language 0
+Logger 0
+Refresh 5
+BGRate 3333333333333333
+MsgPath /var/log/3dm2.log
+Help %%PREFIX%%/share/3dm2

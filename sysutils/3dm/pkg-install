@@ -1,0 +1,15 @@
+#!/bin/sh
+
+if [ "$2" != "PRE-INSTALL" ]; then
+	exit 0
+fi
+
+#
+# "3dm2" looks for the config file in /etc/3dm2, which is lame.  The file is
+# placed in ${PREFIX}/etc/ (usually /usr/local/etc) and symlinked in /etc/3dm2
+# so that the binary can find it.
+#
+	mkdir /etc/3dm2
+	ln -s ${PKG_PREFIX}/etc/3dm2.conf /etc/3dm2/3dm2.conf
+	ln -s ${PKG_PREFIX}/etc/3dm2.pem /etc/3dm2/3dm2.pem
+exit 0
