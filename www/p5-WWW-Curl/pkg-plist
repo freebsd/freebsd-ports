@@ -1,0 +1,14 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Curl/easy.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/WWW/Curl.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/WWW/Curl/easy.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/WWW/Curl/form.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Curl/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Curl/Curl.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Curl/Curl.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Curl/easy/autosplit.ix
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Curl/easy
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Curl
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/WWW/Curl
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/WWW 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Curl
