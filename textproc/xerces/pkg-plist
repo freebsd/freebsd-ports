@@ -190,7 +190,6 @@ share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xerces/dom/AttrNSImpl.
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xerces/dom/AttributeMap.html
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xerces/dom/CDATASectionImpl.html
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xerces/dom/CharacterDataImpl.html
-share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xerces/dom/ChildAndParentNode.html
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xerces/dom/ChildNode.html
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xerces/dom/CommentImpl.html
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xerces/dom/DOMImplementationImpl.html
@@ -258,6 +257,7 @@ share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xerces/parsers/package
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xerces/parsers/package-tree.html
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xml/serialize/BaseMarkupSerializer.html
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xml/serialize/DOMSerializer.html
+share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xml/serialize/EncodingInfo.html
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xml/serialize/HTMLSerializer.html
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xml/serialize/HTMLdtd.html
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xml/serialize/LineSeparator.html
@@ -268,6 +268,7 @@ share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xml/serialize/OutputFo
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xml/serialize/Printer.html
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xml/serialize/Serializer.html
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xml/serialize/SerializerFactory.html
+share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xml/serialize/SieveEncodingInfo.html
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xml/serialize/TextSerializer.html
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xml/serialize/XHTMLSerializer.html
 share/java/xerces-%%PORTVERSION%%/docs/apiDocs/org/apache/xml/serialize/XMLSerializer.html
@@ -446,6 +447,9 @@ share/java/xerces-%%PORTVERSION%%/docs/html/graphics/caveats-label-3.jpg
 share/java/xerces-%%PORTVERSION%%/docs/html/graphics/domcount-header.jpg
 share/java/xerces-%%PORTVERSION%%/docs/html/graphics/domfilter-header.jpg
 share/java/xerces-%%PORTVERSION%%/docs/html/graphics/domwriter-header.jpg
+share/java/xerces-%%PORTVERSION%%/docs/html/graphics/ext-10-label-1.jpg
+share/java/xerces-%%PORTVERSION%%/docs/html/graphics/ext-10-label-2.jpg
+share/java/xerces-%%PORTVERSION%%/docs/html/graphics/ext-10-label-3.jpg
 share/java/xerces-%%PORTVERSION%%/docs/html/graphics/ext-2-label-1.jpg
 share/java/xerces-%%PORTVERSION%%/docs/html/graphics/ext-2-label-2.jpg
 share/java/xerces-%%PORTVERSION%%/docs/html/graphics/ext-2-label-3.jpg
@@ -541,6 +545,7 @@ share/java/xerces-%%PORTVERSION%%/samples/dom/traversal/IteratorView.java
 share/java/xerces-%%PORTVERSION%%/samples/dom/traversal/NameNodeFilter.java
 share/java/xerces-%%PORTVERSION%%/samples/dom/traversal/TreeWalkerView.java
 share/java/xerces-%%PORTVERSION%%/samples/dom/wrappers/DOMParser.java
+share/java/xerces-%%PORTVERSION%%/samples/sax/DocumentTracer.java
 share/java/xerces-%%PORTVERSION%%/samples/sax/DTDReader.java
 share/java/xerces-%%PORTVERSION%%/samples/sax/SAX2Count.java
 share/java/xerces-%%PORTVERSION%%/samples/sax/SAX2Writer.java
