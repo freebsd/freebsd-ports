@@ -15,7 +15,8 @@ MASTER_SITES=	http://www.apache.org/dist/jakarta/tomcat-5/v${PORTVERSION}/bin/ \
 MAINTAINER=	liukang@bjpu.edu.cn
 COMMENT=	Open-source Java web server by Apache, 5.0.x branch
 
-USE_JAVA=	1.3+
+USE_JAVA=	yes
+JAVA_VERSION=	1.3+
 NO_BUILD=	YES
 
 MAJOR_VER=	${PORTVERSION:R}
