@@ -1,0 +1,26 @@
+--- doc/elvis.man.org	Sun Sep 22 17:14:17 1996
++++ doc/elvis.man	Sun Sep 22 17:17:46 1996
+@@ -70,11 +70,11 @@
+ .IP tags
+ This is the database used by the \fI:tags\fP command and the \fB-t\fP option.
+ It is usually created by the \fIctags(1)\fP program.
+-.IP ".exrc or elvis.rc"
+-On UNIX-like systems, a file called ".exrc" in your home directory
++.IP ".elvisrc or elvis.rc"
++On UNIX-like systems, a file called ".elvisrc" in your home directory
+ is executed as a series of \fIex\fR commands.
+ A file by the same name may be executed in the current directory, too.
+-On non-UNIX systems, ".exrc" is usually an invalid file name;
++On non-UNIX systems, ".elvisrc" is usually an invalid file name;
+ there, the initialization file is called "elvis.rc" instead.
+ .SH ENVIRONMENT
+ .IP TERM
+@@ -105,7 +105,7 @@
+ .IP EXINIT
+ Optional.
+ This variable can hold EX commands which will be executed instead of
+-the .exrc file in your home directory.
++the .elvisrc file in your home directory.
+ .IP SHELL
+ Optional.
+ The SHELL variable sets the default value for the "shell" option,
