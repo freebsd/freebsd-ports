@@ -8,7 +8,8 @@
 PORTNAME=	tcpslice
 PORTVERSION=	2002.04.15
 CATEGORIES=	net
-MASTER_SITES=	http://www.tcpdump.org/weekly/
+MASTER_SITES=	http://www.tcpdump.org/weekly/ \
+		http://www.jp.tcpdump.org/weekly/
 
 MAINTAINER=	smace@freebsd.org
 
