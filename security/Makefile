@@ -147,6 +147,7 @@
     SUBDIR += libmcrypt
     SUBDIR += libparanoia
     SUBDIR += libprelude
+    SUBDIR += libsectok
     SUBDIR += libtasn1
     SUBDIR += libwhisker
     SUBDIR += liedentd
