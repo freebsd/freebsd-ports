@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Thu Aug 28 07:25:31 2003
++++ Makefile.in	Sat Oct  4 11:16:42 2003
+@@ -5,7 +5,7 @@
+ mandir=@mandir@
+ kdedir=@kdemimedir@
+ gnomedir=@gnomemimedir@
+-CFLAGS=-O2 -Wall -Wunused -Wuninitialized -I. `gtk-config --cflags` @DEFS@ -DLOCALEDIR=\"${localedir}\"
++CFLAGS= @CFLAGS@ -I%%LOCALBASE%%/include -I%%LOCALBASE%%/include/libEMF -I. `gtk-config --cflags` @DEFS@ -DLOCALEDIR=\"${localedir}\"
+ 
+ CC=@CC@
+ CP=/bin/cp
+@@ -16,7 +16,7 @@
+ SRCS = main.c chemproc.c graph.c draw.c inout.c undo.c @MYGTKSRCS@
+ OBJS = main.o chemproc.o graph.o draw.o inout.o undo.o @MYGTKOBJS@
+ 
+-SYS_LIBRARIES = `gtk-config --libs` @EMFLIBS@ -lm
++SYS_LIBRARIES = `gtk-config --libs` -L%%LOCALBASE%%/lib @EMFLIBS@ -lm
+  
+ 
+ all: chemtool cht
