@@ -18,7 +18,7 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gdkpixbuf
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
-CONFIGURE_ARGS=	--with-imagelib=gdk-pixbuf2 --enable-utmp
+CONFIGURE_ARGS=	--with-imagelib=gdk-pixbuf1 --enable-utmp
 INSTALLS_SHLIB=	yes
 
 MAN1=	mlterm.1 mlclient.1
