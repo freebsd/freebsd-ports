@@ -22,6 +22,7 @@
     SUBDIR += eclipse-langpack
     SUBDIR += eclipse-pmd
     SUBDIR += eclipse-vep
+    SUBDIR += eclipse-vep-examples
     SUBDIR += forte
     SUBDIR += gj
     SUBDIR += gj-jdk11

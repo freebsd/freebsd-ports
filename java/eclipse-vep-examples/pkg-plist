@@ -1,0 +1,59 @@
+eclipse/plugins/org.eclipse.ve.examples.source_1.0.0/plugin.xml
+eclipse/plugins/org.eclipse.ve.examples.source_1.0.0/src/org.eclipse.ve.examples_1.0.0/vm/javaexamplebeaninfosrc.zip
+eclipse/plugins/org.eclipse.ve.examples.source_1.0.0/src/org.eclipse.ve.examples_1.0.0/vm/javaexamplebeanssrc.zip
+eclipse/plugins/org.eclipse.ve.examples.source_1.0.0/src/org.eclipse.ve.examples_1.0.0/javaexamplessrc.zip
+eclipse/plugins/org.eclipse.ve.examples.source_1.0.0/src/org.eclipse.ve.examples_1.0.0/deptsrc.zip
+eclipse/plugins/org.eclipse.ve.examples.source_1.0.0/src/org.eclipse.ve.examples_1.0.0/proxy.jars
+eclipse/plugins/org.eclipse.ve.examples.source_1.0.0/about.html
+eclipse/plugins/org.eclipse.ve.examples.source_1.0.0/plugin.properties
+eclipse/plugins/org.eclipse.ve.examples_1.0.0/dept.jar
+eclipse/plugins/org.eclipse.ve.examples_1.0.0/vm/javaexamplebeaninfo.jar
+eclipse/plugins/org.eclipse.ve.examples_1.0.0/vm/javaexamplebeans.jar
+eclipse/plugins/org.eclipse.ve.examples_1.0.0/vm/wizzowidgets.jar
+eclipse/plugins/org.eclipse.ve.examples_1.0.0/vm/wizzowidgets_dt.jar
+eclipse/plugins/org.eclipse.ve.examples_1.0.0/javaexamples.jar
+eclipse/plugins/org.eclipse.ve.examples_1.0.0/about.html
+eclipse/plugins/org.eclipse.ve.examples_1.0.0/plugin.xml
+eclipse/plugins/org.eclipse.ve.examples_1.0.0/icons/canvas16.gif
+eclipse/plugins/org.eclipse.ve.examples_1.0.0/icons/shape.gif
+eclipse/plugins/org.eclipse.ve.examples_1.0.0/icons/window16.gif
+eclipse/plugins/org.eclipse.ve.examples_1.0.0/src/wizzowidgets_src.zip
+eclipse/plugins/org.eclipse.ve.examples_1.0.0/images/graph.gif
+eclipse/plugins/org.eclipse.ve.examples_1.0.0/overrides/org/eclipse/ve/examples/java/vm/BasicTypes.override
+eclipse/plugins/org.eclipse.ve.examples_1.0.0/overrides/org/eclipse/ve/examples/java/vm/Area.override
+eclipse/plugins/org.eclipse.ve.examples_1.0.0/overrides/org/eclipse/ve/examples/java/vm/Continent.override
+eclipse/plugins/org.eclipse.ve.examples_1.0.0/examples/xmas.dinner
+eclipse/plugins/org.eclipse.ve.examples_1.0.0/examples/ibm.cdmcmp
+eclipse/plugins/org.eclipse.ve.examples_1.0.0/examples/ibmDialogData.xmi
+eclipse/plugins/org.eclipse.ve.examples_1.0.0/examplecats.xmi
+eclipse/plugins/org.eclipse.ve.examples_1.0.0/plugin.properties
+eclipse/plugins/org.eclipse.ve.examples_1.0.0/about.properties
+eclipse/plugins/org.eclipse.ve.examples_1.0.0/about.mappings
+eclipse/plugins/org.eclipse.ve.examples_1.0.0/eclipse32.gif
+eclipse/plugins/org.eclipse.ve.examples_1.0.0/about.ini
+eclipse/features/org.eclipse.ve.examples_1.0.0/feature.xml
+eclipse/features/org.eclipse.ve.examples_1.0.0/eclipse_update_120.jpg
+eclipse/features/org.eclipse.ve.examples_1.0.0/cpl-v10.html
+eclipse/features/org.eclipse.ve.examples_1.0.0/license.html
+eclipse/features/org.eclipse.ve.examples_1.0.0/feature.properties
+@dirrm eclipse/plugins/org.eclipse.ve.examples_1.0.0/vm
+@dirrm eclipse/plugins/org.eclipse.ve.examples_1.0.0/src
+@dirrm eclipse/plugins/org.eclipse.ve.examples_1.0.0/overrides/org/eclipse/ve/examples/java/vm
+@dirrm eclipse/plugins/org.eclipse.ve.examples_1.0.0/overrides/org/eclipse/ve/examples/java
+@dirrm eclipse/plugins/org.eclipse.ve.examples_1.0.0/overrides/org/eclipse/ve/examples
+@dirrm eclipse/plugins/org.eclipse.ve.examples_1.0.0/overrides/org/eclipse/ve
+@dirrm eclipse/plugins/org.eclipse.ve.examples_1.0.0/overrides/org/eclipse
+@dirrm eclipse/plugins/org.eclipse.ve.examples_1.0.0/overrides/org
+@dirrm eclipse/plugins/org.eclipse.ve.examples_1.0.0/overrides
+@dirrm eclipse/plugins/org.eclipse.ve.examples_1.0.0/images
+@dirrm eclipse/plugins/org.eclipse.ve.examples_1.0.0/icons
+@dirrm eclipse/plugins/org.eclipse.ve.examples_1.0.0/examples
+@dirrm eclipse/plugins/org.eclipse.ve.examples_1.0.0
+@dirrm eclipse/plugins/org.eclipse.ve.examples.source_1.0.0/src/org.eclipse.ve.examples_1.0.0/vm
+@dirrm eclipse/plugins/org.eclipse.ve.examples.source_1.0.0/src/org.eclipse.ve.examples_1.0.0
+@dirrm eclipse/plugins/org.eclipse.ve.examples.source_1.0.0/src
+@dirrm eclipse/plugins/org.eclipse.ve.examples.source_1.0.0
+@dirrm eclipse/features/org.eclipse.ve.examples_1.0.0
+@unexec rmdir %D/eclipse/plugins 2>/dev/null || true
+@unexec rmdir %D/eclipse/features 2>/dev/null || true
+@unexec rmdir %D/eclipse 2>/dev/null || true
