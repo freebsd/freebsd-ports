@@ -17,22 +17,3 @@
   
   /* Manual pages for games usually go to section 6. */
   MANSUFFIX = 6
-*** src/config.h.orig	Tue Oct  8 04:22:39 1996
---- src/config.h	Wed Feb 12 08:32:58 1997
-***************
-*** 46,52 ****
-  #        define LIBPREFIX	"lib_disk:[lib.xgames.xpilot341.lib"
-  #        define LIBDIR		LIBPREFIX "]"
-  #    else
-! #        define LIBDIR		"/usr/local/games/lib/xpilot/"
-  #    endif
-  #endif
-  
---- 46,52 ----
-  #        define LIBPREFIX	"lib_disk:[lib.xgames.xpilot341.lib"
-  #        define LIBDIR		LIBPREFIX "]"
-  #    else
-! #        define LIBDIR		"/usr/X11R6/lib/xpilot/"
-  #    endif
-  #endif
-  
