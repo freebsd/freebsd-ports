@@ -4296,7 +4296,6 @@ libafterimage	ports/graphics/libafterimage
 libao		ports/audio/libao
 libarc		ports/archivers/libarc
 libarchive	ports/archivers/libarchive
-libargparse	ports/devel/libargparse
 libart		ports/graphics/libart
 libart_lgpl2	ports/graphics/libart_lgpl2
 libassa		ports/devel/libassa
