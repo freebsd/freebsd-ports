@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	libusb
-PORTVERSION=	0.1.4
+PORTVERSION=	0.1.5
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	libusb
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	johnjen@reynoldsnet.org
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-build-docs
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>
