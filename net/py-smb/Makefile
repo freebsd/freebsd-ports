@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	smb
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	net python
 MASTER_SITES=	http://miketeo.net/projects/pysmb/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
