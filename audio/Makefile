@@ -79,6 +79,7 @@
     SUBDIR += esound
     SUBDIR += etktab
     SUBDIR += extace
+    SUBDIR += ezstream
     SUBDIR += faac
     SUBDIR += faad
     SUBDIR += fcplay
