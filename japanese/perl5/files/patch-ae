@@ -1,5 +1,14 @@
---- installperl.ORIG	Thu Jul 30 15:58:50 1998
-+++ installperl	Thu Jul 30 16:02:16 1998
+--- installperl.orig	Fri Jul 24 13:00:24 1998
++++ installperl	Sun Jan 17 04:32:45 1999
+@@ -217,7 +217,7 @@
+     @corefiles = <$coredir/*.*>;
+ }
+ else {
+-    @corefiles = <*.h libperl*.*>;
++    @corefiles = <*.h libperl.so.*>;
+     # AIX needs perl.exp installed as well.
+     push(@corefiles,'perl.exp') if $^O eq 'aix';
+     # If they have built sperl.o...
 @@ -269,7 +269,7 @@
  	      (-l $usrbinperl) &&
  	      ((readlink $usrbinperl) eq $expinstperl));

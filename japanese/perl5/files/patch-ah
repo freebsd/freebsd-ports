@@ -1,0 +1,42 @@
+--- Makefile.SH.orig	Wed Feb 10 19:02:00 1999
++++ Makefile.SH	Wed Feb 10 19:13:58 1999
+@@ -46,9 +46,18 @@
+ 	os2*)	# OS/2 doesn't need anything special for LD_LIBRARY_PATH.
+ 		ldlibpth=''
+ 		;;
+-	sunos*|freebsd[23]*|netbsd*)
++	sunos*|netbsd*)
+ 		linklibperl="-lperl"
+ 		;;
++	freebsd*)
++		linklibperl="-L. -lperl"
++		if [ -x /usr/bin/objformat ]; then
++			objformat=`objformat`
++		else
++			objformat=aout
++		fi
++		[ x$objformat = xelf ] && shrpldflags="${shrpldflags} -Wl,-soname,${libperl}"
++		;;
+ 	aix*)
+ 		shrpldflags="-H512 -T512 -bhalt:4 -bM:SRE -bE:perl.exp"
+ 		case "$osvers" in
+@@ -300,12 +309,17 @@
+ 		$spitshell >>Makefile <<'!NO!SUBS!'
+ 	$(LD) $(SHRPLDFLAGS) -o $@ perl$(OBJ_EXT) $(obj)
+ !NO!SUBS!
+-		case "$osname" in
+-		aix)
++		case "${osname}${osvers}" in
++		aix*)
+ 			$spitshell >>Makefile <<'!NO!SUBS!'
+ 	rm -f libperl$(OBJ_EXT)
+ 	mv $@ libperl$(OBJ_EXT)
+ 	$(AR) qv $(LIBPERL) libperl$(OBJ_EXT)
++!NO!SUBS!
++			;;
++		freebsd*)
++			$spitshell >>Makefile <<'!NO!SUBS!'
++	$(LNS) $(LIBPERL) libperl.so
+ !NO!SUBS!
+ 			;;
+ 		esac
