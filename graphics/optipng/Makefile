@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	optipng
-PORTVERSION=	0.4.2
+PORTVERSION=	0.4.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.cs.toronto.edu/~cosmin/pngtech/optipng/
 
