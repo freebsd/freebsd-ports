@@ -1,0 +1,4 @@
+bin/qmHandle
+%%PORTDOCS%%share/doc/qmHandle/HISTORY
+%%PORTDOCS%%share/doc/qmHandle/README
+%%PORTDOCS%%@dirrm share/doc/qmHandle
