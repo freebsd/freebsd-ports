@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fwanalog
-PORTVERSION=	0.5.1
+PORTVERSION=	0.6
 CATEGORIES=	security
 MASTER_SITES=	http://tud.at/programm/fwanalog/
 
