@@ -1,0 +1,11 @@
+*** po/fr/Makefile.am.orig	Fri Sep 20 15:13:14 2002
+--- po/fr/Makefile.am	Fri Sep 20 15:14:01 2002
+***************
+*** 2,4 ****
+  
+  
+! KDE_LANG = ar
+--- 2,4 ----
+  
+  
+! KDE_LANG = fr

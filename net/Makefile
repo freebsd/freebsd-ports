@@ -222,6 +222,7 @@
     SUBDIR += jumpgate
     SUBDIR += jwhois
     SUBDIR += kdenetwork3
+    SUBDIR += kmerlin
     SUBDIR += kmess
     SUBDIR += konverse
     SUBDIR += kopete

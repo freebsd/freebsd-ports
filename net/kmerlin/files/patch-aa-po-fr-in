@@ -1,0 +1,15 @@
+*** po/fr/Makefile.in.orig	Fri Sep 20 15:04:48 2002
+--- po/fr/Makefile.in	Fri Sep 20 15:05:06 2002
+***************
+*** 226,230 ****
+  GMOFILES = kmerlin.gmo
+  
+! KDE_LANG = ar
+  subdir = po/fr
+  mkinstalldirs = $(SHELL) $(top_srcdir)/admin/mkinstalldirs
+--- 226,230 ----
+  GMOFILES = kmerlin.gmo
+  
+! KDE_LANG = fr
+  subdir = po/fr
+  mkinstalldirs = $(SHELL) $(top_srcdir)/admin/mkinstalldirs
