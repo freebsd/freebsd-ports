@@ -1,0 +1,11 @@
+--- ../setup2/script/setupserver.orig	Sat Mar  2 17:57:36 2002
++++ ../setup2/script/setupserver	Sat Mar  2 17:58:43 2002
+@@ -234,6 +234,8 @@
+ sd_platform=`uname -s`
+ case $sd_platform in
+ 	SCO_SV) test=/bin/test     ;;
++	NetBSD) test=/bin/test     ;;
++	FreeBSD) test=/bin/test    ;;
+   	*)      test=/usr/bin/test ;;
+ esac
+ sd_cwd="`pwd`"
