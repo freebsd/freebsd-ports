@@ -10,6 +10,7 @@ PORTVERSION=	0.05
 CATEGORIES=	databases ruby
 MASTER_SITES=	http://www.rowlandresearch.com/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
+DIST_SUBDIR=	ruby
 
 MAINTAINER=	skv@FreeBSD.org
 
