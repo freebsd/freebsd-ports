@@ -3,7 +3,7 @@
 # Date created:		8 March 1995
 # Whom:			Satoshi Asami
 #
-# $Id: Makefile,v 1.13 1997/04/30 03:18:06 asami Exp $
+# $Id: Makefile,v 1.14 1997/10/16 06:26:14 asami Exp $
 #
 
 DISTNAME=	colorls
@@ -13,6 +13,9 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 DISTFILES=	ls-2.2.5.tar.gz
 
 MAINTAINER=	asami@FreeBSD.ORG
+
+MAN1=		colorls.1
+MANCOMPRESSED=	maybe
 
 WRKSRC=		${WRKDIR}/ls
 
