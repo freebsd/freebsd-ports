@@ -24,6 +24,7 @@
     SUBDIR += eclipse-pmd
     SUBDIR += eclipse-vep
     SUBDIR += eclipse-vep-examples
+    SUBDIR += eclipseme
     SUBDIR += forte
     SUBDIR += gj
     SUBDIR += gj-jdk11
