@@ -17,42 +17,23 @@ COMMENT=	An applet that displays current status of seti@home client
 LIB_DEPENDS=	gtop-2.0:${PORTSDIR}/devel/libgtop2
 RUN_DEPENDS=	${LOCALBASE}/sbin/setiathome:${PORTSDIR}/astro/setiathome
 
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
+USE_GNOME=	gnomehack gnomepanel gnomeprefix 
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomepanel
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=	15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-# Local variables
-#
+GCONF_SCHEMAS=	seti_applet.schemas
 
-MSG_FILE=	${PKGDIR}/pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
 
-REINPLACE_SUB=	LOCALBASE=${LOCALBASE}
-PKGMESSAGE_SUB=	LOCALBASE=${LOCALBASE}
-
-# Post-patch
-#
-
-post-patch: patch-seti_applet patch-pkgmessage
-
-patch-seti_applet:
-	@${REINPLACE_CMD} ${REINPLACE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+post-patch:
+	@${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/src/seti_applet.schemas
 
-patch-pkgmessage:
-	@${SED} ${REINPLACE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${MSG_FILE} > ${PKGMESSAGE}
-
-# Post-install
-#
-
-post-install: display-message
-
-display-message:
+post-install:
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
