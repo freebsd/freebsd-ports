@@ -1,5 +1,6 @@
 bin/shtool
 bin/shtoolize
+share/aclocal/shtool.m4
 share/shtool/sh.scpp
 share/shtool/sh.common
 share/shtool/sh.echo
@@ -12,6 +13,7 @@ share/shtool/sh.mkdir
 share/shtool/sh.mkln
 share/shtool/sh.mkshadow
 share/shtool/sh.fixperm
+share/shtool/sh.tarball
 share/shtool/sh.guessos
 share/shtool/sh.arx
 share/shtool/sh.slo
