@@ -3,7 +3,7 @@
 # Date created:		16 November 1996
 # Whom:			Thomas Gellekum <tg@freebsd.org>
 #
-# $Id: Makefile,v 1.9 1998/11/23 09:51:57 tg Exp $
+# $Id: Makefile,v 1.10 1998/11/23 12:05:50 asami Exp $
 #
 
 DISTNAME=	ar302lin
@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	tg@FreeBSD.ORG
 
 RUN_DEPENDS=	/compat/linux/lib/libc.so.5:${PORTSDIR}/emulators/linux_lib
+
+ONLY_FOR_ARCHS=	i386
 
 NO_FILTER_SHLIBS=	yes
 

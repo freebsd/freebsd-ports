@@ -3,7 +3,7 @@
 # Date created:         20 Sep 1998
 # Whom:                 msmith
 #
-# $Id: Makefile,v 1.4 1998/12/30 03:56:28 obrien Exp $
+# $Id: Makefile,v 1.5 1999/01/04 16:26:59 obrien Exp $
 #
 
 DISTNAME=       linux
@@ -16,11 +16,13 @@ MAINTAINER=     msmith@FreeBSD.ORG
 
 RUN_DEPENDS=    /compat/linux/lib/libc.so.6:${PORTSDIR}/emulators/linux_lib
 
+ONLY_FOR_ARCHS=	i386
+RESTRICTED=	"License prohibits redistribution"
+IS_INTERACTIVE=	"Noisy license agreement ignores stdin"
+
 DIST_SUBDIR=	citrix_ica
 NO_WRKSUBDIR=	Yes
 NO_BUILD=       Yes
-RESTRICTED=	"License prohibits redistribution"
-IS_INTERACTIVE=	"Noisy license agreement ignores stdin"
 
 CDIR=           ${PREFIX}/lib/ICAClient
 BINDIR=		${PREFIX}/bin
