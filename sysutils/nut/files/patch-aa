@@ -1,54 +1,57 @@
---- clients/Makefile.in.org	Wed Nov 10 01:36:44 1999
-+++ clients/Makefile.in	Mon Jan 10 16:43:44 2000
-@@ -53,8 +53,8 @@
+diff -ru ../431/clients/Makefile.in ./clients/Makefile.in
+--- ../431/clients/Makefile.in	Mon Feb 14 09:39:16 2000
++++ ./clients/Makefile.in	Mon Mar  6 17:29:46 2000
+@@ -57,10 +57,10 @@
+ distclean: clean
  
  install: all
- 	@for p in $(PROGS) ; do \
--		echo cp $$p $(BASEPATH)/bin; \
--		cp $$p $(BASEPATH)/bin; \
-+		echo cp $$p $(BASEPATH)/sbin; \
-+		cp $$p $(BASEPATH)/sbin; \
- 	done
+-	$(INSTALLCMD) -m $(INSTALLMODE) $(PROGS) $(BASEPATH)/bin
++	$(INSTALLCMD) -m $(INSTALLMODE) $(PROGS) $(BASEPATH)/sbin
  
  install-cgi: cgi
+-	$(INSTALLCMD) -m $(INSTALLMODE) $(CGIPROGS) $(BASEPATH)/cgi-bin
++	$(INSTALLCMD) -m $(INSTALLMODE) $(CGIPROGS) $(BASEPATH)/share/nut/cgi
  
---- conf/Makefile.in.org	Mon Oct 18 03:56:11 1999
-+++ conf/Makefile.in	Tue Jan 11 16:57:15 2000
-@@ -9,10 +9,6 @@
+ install-misc: upsfetch.o
+ 	$(INSTALLCMD) upsfetch.[oh] $(BASEPATH)/misc
+diff -ru ../431/conf/Makefile.in ./conf/Makefile.in
+--- ../431/conf/Makefile.in	Mon Feb 14 09:08:01 2000
++++ ./conf/Makefile.in	Mon Mar  6 17:30:39 2000
+@@ -12,17 +12,9 @@
  
  install:
- 	@for f in $(CONFFILES) ; do \
+ 	@for f in $(SECFILES) ; do \
 -		if [ -f $(CONFPATH)/$$f ]; then \
 -			echo "Preserving existing config file: $$f"; \
 -		else \
--			echo cp $$f $(CONFPATH); \
--			cp $$f $(CONFPATH); \
+-			$(INSTALLCMD) -m 0600 $$f $(BASEPATH)/etc; \
 -		fi; \
-+		echo cp $$f $(CONFPATH)/$$f.sample; \
-+		cp $$f $(CONFPATH)/$$f.sample; \
++		$(INSTALLCMD) -m 0600 $$f $(CONFPATH)/$$f.sample; \
  	done
  
---- server/Makefile.in.org	Wed Nov 10 01:37:01 1999
-+++ server/Makefile.in	Mon Jan 10 16:41:55 2000
-@@ -21,6 +21,6 @@
- 
- install: all
- 	@for p in $(PROGS) ; do \
--		echo cp $$p $(BASEPATH)/bin ; \
--		cp $$p $(BASEPATH)/bin; \
-+		echo cp $$p $(BASEPATH)/sbin ; \
-+		cp $$p $(BASEPATH)/sbin; \
+ 	@for f in $(PUBFILES) ; do \
+-		if [ -f $(CONFPATH)/$$f ]; then \
+-			echo "Preserving existing config file: $$f"; \
+-		else \
+-			$(INSTALLCMD) -m 0644 $$f $(BASEPATH)/etc; \
+-		fi; \
++		$(INSTALLCMD) -m 0644 $$f $(CONFPATH)/$$f.sample; \
  	done
-
---- models/Makefile.in.org	Wed Nov 10 01:36:44 1999
-+++ models/Makefile.in	Mon Jan 10 16:43:44 2000
-@@ -35,6 +35,6 @@
+diff -ru ../431/models/Makefile.in ./models/Makefile.in
+--- ../431/models/Makefile.in	Fri Feb 11 03:14:25 2000
++++ ./models/Makefile.in	Mon Mar  6 17:29:46 2000
+@@ -36,4 +36,4 @@
+ distclean: clean
  
  install: all
- 	@for p in $(PROGS) ; do \
--		echo cp $$p $(BASEPATH)/bin; \
--		cp $$p $(BASEPATH)/bin; \
-+		echo cp $$p $(BASEPATH)/sbin; \
-+		cp $$p $(BASEPATH)/sbin; \
- 	done
-
+-	$(INSTALLCMD) -m $(INSTALLMODE) $(PROGS) $(BASEPATH)/bin
++	$(INSTALLCMD) -m $(INSTALLMODE) $(PROGS) $(BASEPATH)/sbin
+diff -ru ../431/server/Makefile.in ./server/Makefile.in
+--- ../431/server/Makefile.in	Fri Feb 11 03:18:22 2000
++++ ./server/Makefile.in	Mon Mar  6 17:29:46 2000
+@@ -22,4 +22,4 @@
+ distclean: clean
+ 
+ install: all
+-	$(INSTALLCMD) $(PROGS) $(BASEPATH)/bin
++	$(INSTALLCMD) $(PROGS) $(BASEPATH)/sbin
