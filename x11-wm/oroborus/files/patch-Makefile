@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- Makefile.orig	Thu May 24 17:40:39 2001
-+++ Makefile	Mon May 28 14:04:46 2001
-@@ -1,12 +1,12 @@
+--- Makefile.orig	Thu Jun  7 00:44:43 2001
++++ Makefile	Fri Jun  8 11:19:26 2001
+@@ -1,13 +1,13 @@
 -CC        = gcc
 -CFLAGS    = -g -O2 -Wall
 -XROOT     = /usr/X11R6
@@ -15,28 +15,33 @@ $FreeBSD$
  LDPATH    = -L$(XROOT)/lib
  
  PROG      = oroborus
+ VERSION   = 1.13.0
 -PREFIX    = /usr
 +PREFIX    ?= /usr
  FONT      = *-helvetica-bold-r-normal-*-*-120-*
  THEME     = default
- RCFILE    = -DRCFILE=\".oroborusrc\"
-@@ -36,10 +36,15 @@
+ INTERVAL  = 1
+@@ -38,12 +38,17 @@
  	rm -f $(PROG) $(OBJS) core
  
  install:all
 -	install $(PROG) $(PREFIX)/bin
 -	install -d $(PREFIX)/share/$(PROG)
--	./install_rc $(PREFIX) $(PROG) $(THEME) $(FONT) > $(PREFIX)/share/$(PROG)/oroborusrc
--	cp -R pixmaps $(PREFIX)/share/$(PROG)
+-	install -d $(PREFIX)/doc/$(PROG)-$(VERSION)
+-	./install_rc $(PREFIX) $(PROG) $(THEME) $(FONT) $(INTERVAL) > $(PREFIX)/share/$(PROG)/oroborusrc
+-	cp -R themes $(PREFIX)/share/$(PROG)
+-	cp -R doc $(PREFIX)/doc/$(PROG)-$(VERSION)
 +	$(BSD_INSTALL_PROGRAM) $(PROG) $(PREFIX)/bin
 +	$(MKDIR) $(PREFIX)/share/$(PROG)
-+	./install_rc $(PREFIX) $(PROG) $(THEME) $(FONT) > oroborusrc
-+	$(BSD_INSTALL_DATA) oroborusrc $(PREFIX)/share/$(PROG)/oroborusrc
++	$(MKDIR) $(PREFIX)/share/doc/$(PROG)
++	./install_rc $(PREFIX) $(PROG) $(THEME) $(FONT) $(INTERVAL) > oroborusrc
++	$(BSD_INSTALL_DATA) oroborusrc $(PREFIX)/share/$(PROG)
 +	for dir in agua default defold mac next win95; do \
-+		$(MKDIR) $(PREFIX)/share/$(PROG)/pixmaps/$$dir; \
-+		$(BSD_INSTALL_DATA) pixmaps/$$dir/[^.]* \
-+			$(PREFIX)/share/$(PROG)/pixmaps/$$dir; \
++		$(MKDIR) $(PREFIX)/share/$(PROG)/themes/$$dir; \
++		$(BSD_INSTALL_DATA) themes/$$dir/[^.]* \
++			$(PREFIX)/share/$(PROG)/themes/$$dir; \
 +	done
++	$(BSD_INSTALL_MAN) doc/* $(PREFIX)/share/doc/$(PROG)
  
  uninstall:
  	rm -f $(PREFIX)/bin/$(PROG)
