@@ -9,7 +9,7 @@ PORTNAME=	mod_throttle
 PORTVERSION=	3.1.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.snert.com/Software/mod_throttle/ \
-		http://www.freenix.no/~anders/
+		http://atreides.freenix.no/~anders/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.tgz
 

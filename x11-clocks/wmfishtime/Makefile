@@ -9,7 +9,7 @@ PORTNAME=	wmfishtime
 PORTVERSION=	1.23
 CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	http://www.ne.jp/asahi/linux/timecop/software/ \
-		http://www.freenix.no/~anders/
+		http://atreides.freenix.no/~anders/
 
 MAINTAINER=	ports@FreeBSD.org
 

@@ -10,7 +10,7 @@ PORTVERSION= 	1.11
 PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cc.umanitoba.ca/src/ \
-		http://www.freenix.no/~anders/ \
+		http://atreides.freenix.no/~anders/ \
 		ftp://totem.fix.no/pub/mirrors/misc/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z

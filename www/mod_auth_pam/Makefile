@@ -9,7 +9,7 @@ PORTNAME=	mod_auth_pam
 PORTVERSION=	1.0a
 CATEGORIES=	www
 MASTER_SITES=	http://pam.sourceforge.net/mod_auth_pam/dist/ \
-		http://www.freenix.no/~anders/
+		http://atreides.freenix.no/~anders/
 
 MAINTAINER=	ports@FreeBSD.org
 

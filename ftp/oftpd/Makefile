@@ -10,7 +10,7 @@ PORTVERSION=	0.3.6
 PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.time-travellers.org/oftpd/ \
-		http://www.freenix.no/~anders/
+		http://atreides.freenix.no/~anders/
 
 MAINTAINER=	anders@FreeBSD.org
 
