@@ -1,15 +1,19 @@
 $FreeBSD$
 
---- hints/freebsd.sh.orig	Sun Apr  8 06:09:16 2001
-+++ hints/freebsd.sh	Sat Jun  1 23:41:18 2002
-@@ -85,10 +85,17 @@
+--- hints/freebsd.sh.orig	Sun Jul 28 09:37:51 2002
++++ hints/freebsd.sh	Sun Jul 28 09:39:23 2002
+@@ -85,10 +85,20 @@
  	d_setreuid='define'
  	d_setegid='undef'
  	d_seteuid='undef'
 +	d_dosuid='define'
  	;;
  *)	usevfork='true'
- 	usemymalloc='n'
+-	usemymalloc='n'
++	case "$usemymalloc" in
++	    "") usemymalloc='n'
++	    ;;
++	esac
  	libswanted=`echo $libswanted | sed 's/ malloc / /'`
 + 	libswanted=`echo $libswanted | sed 's/ bind / /'`
 +	d_setregid='define'
@@ -20,7 +24,7 @@ $FreeBSD$
  	;;
  esac
  
-@@ -115,7 +121,8 @@
+@@ -115,7 +125,8 @@
              fi
              lddlflags='-Bshareable'
          fi
