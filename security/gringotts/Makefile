@@ -37,7 +37,8 @@ PLIST_SUB+=	GNOMEHIER='@comment '
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -E -e "s|^(gringottsdocdir =).*|\1 $$\(datadir\)/doc/gringotts|;s|md5sum|md5|g" ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -E -e "s|^(gringottsdocdir =).*|\1 ${DOCSDIR}|;s|md5sum|md5|g" ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -E -e "s|^(pixmapdir =).*|\1 ${PREFIX}/share/gnome/pixmaps|" ${WRKSRC}/pixmaps/Makefile.in
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-D.*_DISABLE_DEPRECATED||g'
 .if defined(NOPORTDOCS)
