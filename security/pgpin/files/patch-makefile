@@ -1,5 +1,5 @@
 --- makefile.orig	Fri Mar 23 02:44:58 2001
-+++ makefile	Sun Dec  8 09:28:08 2002
++++ makefile	Sun Dec  8 09:39:12 2002
 @@ -79,7 +79,8 @@
  	@echo "where <system> can be:"
  	@echo "	386bsd, 3b1, 3b1_asm, aix370, aix386, amix-68k-gcc, apollo,"
@@ -10,7 +10,7 @@
  	@echo "	hpux-68k-gcc, hpux-pa(*), hpux-pa-ansi, hpux-pa-gcc, hpux9-pa-ansi,"
  	@echo "	irix, irix_asm, isc, isc_asm, linux, linux-aout, linux-68k,"
  	@echo "	machten, mach_386, mips-ultrix, netbsd, netbsd_68k, newsasm,"
-@@ -175,9 +176,19 @@
+@@ -175,10 +176,20 @@
  	$(MAKE) all CC=gcc LD=gcc \
  	CFLAGS="$(RSAINCDIR) -O2 -DHIGHFIRST -DUNIX -DPORTABLE -DIDEA32"
  
@@ -19,7 +19,7 @@
  	$(MAKE) all LD="$(CC) -s" OBJS_EXT="_80386.o _zmatch.o" \
 -	CFLAGS="$(RSAINCDIR) -O2 -fno-strength-reduce -DUNIX -DIDEA32 -DASM \
 +	CFLAGS="$(RSAINCDIR) $(OS_CFLAGS) -DUNIX -DIDEA32 -DASM \
-+	-DMAX_NAMELEN=255"
+ 	-DMAX_NAMELEN=255"
 +
 +freebsd-alpha:
 +	$(MAKE) all LD="$(CC) -s" \
@@ -29,6 +29,7 @@
 +freebsd-sparc64:
 +	$(MAKE) all LD="$(CC) -s" \
 +	CFLAGS="$(RSAINCDIR) $(OS_CFLAGS) -DPORTABLE -DUNIX -DIDEA32 \
- 	-DMAX_NAMELEN=255"
++	-DHIGHFIRST -DMAX_NAMELEN=255"
  
  386bsd:
+ 	$(MAKE) all CC=gcc LD=gcc OBJS_EXT="_80386.o _zmatch.o" \
