@@ -36,29 +36,30 @@ MAKE_ENV+=	OSTYPE=${OPSYS} ARCHTYPE=${MACHINE_ARCH}
 #WITH_MYSQL=		yes
 #WITH_PGSQL=		yes
 
-# Link against OpenSSL in the base system for STARTTLS support.
-WITH_TLS?=	yes
-
-# Enable the embedded Perl interpreter, allowing Perl subroutines to be
-# called during string expansion.
-WITH_PERL?=	yes
-
-# The following options control whether Exim is built with support for
-# PAM, RFC 2195 and RFC 2595 authentication mechanisms for SMTP AUTH.
-#
-WITH_PAM?=		yes
-WITH_AUTH_CRAM_MD5?=	yes
-WITH_AUTH_PLAINTEXT?=	yes
-
 # If WITH_LDAP is defined, LDAP_LIB_TYPE must be one of UMICHIGAN,
 # NETSCAPE or SOLARIS7.
 LDAP_LIB_TYPE=UMICHIGAN
 
-# The following options control whether Exim is built with support for
-# additional mailbox formats.
-WITH_MAILDIR?=		yes
-WITH_MAILSTORE?=	yes
-WITH_MBX?=		yes
+# The following options may be defined to turn off support for various
+# features that this port enables by default.
+#
+# Do not link against OpenSSL; disables STARTTLS.
+#WITHOUT_TLS=	yes
+#
+# Disable the embedded Perl interpreter, which allows Perl subroutines to
+# be called during string expansion.
+#WITHOUT_PERL=	yes
+#
+# Disable built-in Exim support for the PAM, RFC 2195 and RFC 2595
+# authentication mechanisms, used for SMTP AUTH.
+#WITHOUT_PAM=			yes
+#WITHOUT_AUTH_CRAM_MD5=		yes
+#WITHOUT_AUTH_PLAINTEXT=	yes
+#
+# Disable built-in Exim support for additional mailbox formats.
+#WITHOUT_MAILDIR=	yes
+#WITHOUT_MAILSTORE=	yes
+#WITHOUT_MBX=		yes
 
 # You should not need to fiddle with anything below this point.
 
@@ -68,18 +69,18 @@ SEDLIST=	-e 's,XX_PREFIX_XX,${PREFIX},' \
 SEDLIST+=	-e 's,^EXIM_MONITOR,\#EXIM_MONITOR,'
 .endif
 
-.if defined(WITH_TLS) && ${WITH_TLS} == "yes"
+.if !defined(WITHOUT_TLS)
 SEDLIST+=	-e 's,XX_TLS_LIBS_XX,-lssl -lcrypto,' \
 		-e 's,^\# SUPPORT_TLS=,SUPPORT_TLS=,'
 .else
 SEDLIST+=	-e 's,^TLS_LIBS,\#TLS_LIBS,'
 .endif
 
-.if defined(WITH_PERL) && ${WITH_PERL} == "yes"
+.if !defined(WITHOUT_PERL)
 SEDLIST+=	-e 's,^\# EXIM_PERL=,EXIM_PERL=,'
 .endif
 
-.if defined(WITH_TCP_WRAPPERS) && ${WITH_TCP_WRAPPERS} == "yes"
+.if defined(WITH_TCP_WRAPPERS)
 SEDLIST+=	-e 's,XX_TCP_WRAPPERS_LIBS_XX,-lwrap,' \
 		-e 's,^\# USE_TCP_WRAPPERS=,USE_TCP_WRAPPERS=,'
 .endif
@@ -104,18 +105,18 @@ SEDLIST+=	-e 's,XX_MYSQL_LIBS_XX,-L${PREFIX}/lib/mysql -lmysqlclient,' \
 SEDLIST+=	-e 's,XX_MYSQL_[^ ]*_XX,,'
 .endif
 
-.if defined(WITH_PAM) && ${WITH_PAM} == "yes"
+.if !defined(WITHOUT_PAM)
 SEDLIST+=	-e 's,XX_PAM_LIBS_XX,-lpam,' \
 		-e 's,^\# SUPPORT_PAM=,SUPPORT_PAM=,'
 .else
 SEDLIST+=	-e 's,XX_PAM_LIBS_XX,,'
 .endif
 
-.if defined(WITH_AUTH_CRAM_MD5) && ${WITH_AUTH_CRAM_MD5} == "yes"
+.if !defined(WITHOUT_AUTH_CRAM_MD5)
 SEDLIST+=	-e 's,^\# AUTH_CRAM_MD5=,AUTH_CRAM_MD5=,'
 .endif
 
-.if defined(WITH_AUTH_PLAINTEXT) && ${WITH_AUTH_PLAINTEXT} == "yes"
+.if !defined(WITHOUT_AUTH_PLAINTEXT)
 SEDLIST+=	-e 's,^\# AUTH_PLAINTEXT=,AUTH_PLAINTEXT=,'
 .endif
 
@@ -133,15 +134,15 @@ SEDLIST+=	-e 's,^LOOKUP_LIBS,\#LOOKUP_LIBS,' \
 		-e 's,^LOOKUP_INCLUDE,\#LOOKUP_INCLUDE,'
 .endif
 
-.if defined(WITH_MAILDIR) && ${WITH_MAILDIR} == "yes"
+.if !defined(WITHOUT_MAILDIR)
 SEDLIST+=	-e 's,^\# SUPPORT_MAILDIR=,SUPPORT_MAILDIR=,'
 .endif
 
-.if defined(WITH_MAILSTORE) && ${WITH_MAILSTORE} == "yes"
+.if !defined(WITH_MAILSTORE)
 SEDLIST+=	-e 's,^\# SUPPORT_MAILSTORE=,SUPPORT_MAILSTORE=,'
 .endif
 
-.if defined(WITH_MAILMBX) && ${WITH_MAILMBX} == "yes"
+.if !defined(WITH_MAILMBX)
 SEDLIST+=	-e 's,^\# SUPPORT_MBX=,SUPPORT_MBX=,'
 .endif
 
