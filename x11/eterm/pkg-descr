@@ -7,6 +7,5 @@ background for terminal windows, and much more!
 If you want the KANJI feature enable, use
 make -DKANJI install
 
-http://www.tcserv.com/Eterm
-http://www.rasterman.com
+http://www.eterm.org/
 ported by murray@cdrom.com

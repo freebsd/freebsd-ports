@@ -1,32 +1,60 @@
-bin/Esetroot
 bin/Eterm
-share/Eterm/themes/Eterm/Eterm.menu
-share/Eterm/themes/Eterm/MAIN
-share/Eterm/themes/chooser/MAIN
-share/Eterm/themes/chooser/chooser.menu
-share/Eterm/themes/emacs/MAIN
-share/Eterm/themes/emacs/emacs.menu
-share/Eterm/themes/irc/MAIN
-share/Eterm/themes/irc/irc.menu
-share/Eterm/themes/mutt/MAIN
-share/Eterm/themes/mutt/mutt.menu
-share/Eterm/themes/tn3270/MAIN
-share/Eterm/themes/trans/MAIN
-share/Eterm/themes/trans/trans.menu
-share/Eterm/Eterm.help
-share/Eterm/Eterm.ref
-share/Eterm/Eterm.tcap
-share/Eterm/Eterm.ti
-share/Eterm/FAQ.html
-share/Eterm/ReleaseNotes
+bin/Esetroot
+lib/libmej.so.8
+lib/libmej.so
+lib/libmej.la
+lib/libmej.a
+lib/libEterm.so.8
+lib/libEterm.so
+lib/libEterm.la
+lib/libEterm.a
+share/doc/Eterm/ReleaseNotes
+share/doc/Eterm/Eterm.help
+share/doc/Eterm/Eterm.ref
+share/doc/Eterm/Eterm.tcap
+share/doc/Eterm/Eterm.ti
+share/doc/Eterm/FAQ.html
+share/doc/Eterm/menu_cmd
+share/Eterm/pix/014.png
+share/Eterm/pix/backwave.jpg
+share/Eterm/pix/button1.jpg
+share/Eterm/pix/button5.jpg
+share/Eterm/pix/circuit.png
+share/Eterm/pix/nebula.jpg
+share/Eterm/pix/fourthday.jpg
+share/Eterm/pix/gaia.jpg
+share/Eterm/pix/galleon.jpg
+share/Eterm/pix/night_of_the_dragon.jpg
+share/Eterm/pix/pixmaps.list
 share/Eterm/colortest.sh
-share/Eterm/menu_cmd
-@dirrm share/Eterm/themes/trans
-@dirrm share/Eterm/themes/tn3270
-@dirrm share/Eterm/themes/mutt
-@dirrm share/Eterm/themes/irc
-@dirrm share/Eterm/themes/emacs
-@dirrm share/Eterm/themes/chooser
+share/Eterm/themes/Eterm/MAIN
+share/Eterm/themes/Eterm/Eterm.menu
+share/Eterm/themes/Eterm/pixmaps.list
+share/Eterm/themes/chooser/chooser.menu
+share/Eterm/themes/chooser/MAIN
+share/Eterm/themes/chooser/pixmaps.list
+share/Eterm/themes/emacs/emacs.menu
+share/Eterm/themes/emacs/MAIN
+share/Eterm/themes/emacs/pixmaps.list
+share/Eterm/themes/irc/irc.menu
+share/Eterm/themes/irc/MAIN
+share/Eterm/themes/irc/pixmaps.list
+share/Eterm/themes/mutt/mutt.menu
+share/Eterm/themes/mutt/MAIN
+share/Eterm/themes/mutt/pixmaps.list
+share/Eterm/themes/tn3270/MAIN
+share/Eterm/themes/tn3270/pixmaps.list
+share/Eterm/themes/trans/trans.menu
+share/Eterm/themes/trans/MAIN
+share/Eterm/themes/trans/pixmaps.list
+@dirrm share/doc/Eterm
 @dirrm share/Eterm/themes/Eterm
+@dirrm share/Eterm/themes/chooser
+@dirrm share/Eterm/themes/emacs
+@dirrm share/Eterm/themes/irc
+@dirrm share/Eterm/themes/mutt
+@dirrm share/Eterm/themes/tn3270
+@dirrm share/Eterm/themes/trans
 @dirrm share/Eterm/themes
+@dirrm share/Eterm/pix
 @dirrm share/Eterm

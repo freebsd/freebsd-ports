@@ -1,12 +1,14 @@
---- src/Makefile.in.orig	Fri Oct 23 01:09:50 1998
-+++ src/Makefile.in	Mon Oct 26 18:54:35 1998
-@@ -123,6 +123,9 @@
-              system.h threads.h graphics/Makefile.am graphics/Makefile.in \
-              graphics/README graphics/data graphics/grxlib.c graphics/grxlib.h \
-              graphics/qplot.c 
-+ifeq ($(PORTOBJFORMAT),elf)
-+LDFLAGS+=-Wl,-rpath,$(X11BASE)/lib
-+endif
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_HEADER = ../config.h
- CONFIG_CLEAN_FILES = 
+*** src/Makefile.in	Wed Jan 13 05:54:45 1999
+--- src/Makefile.in~	Sun Feb  7 23:00:35 1999
+***************
+*** 123,128 ****
+--- 123,131 ----
+               system.h threads.h graphics/Makefile.am graphics/Makefile.in \
+               graphics/README graphics/data graphics/grxlib.c graphics/grxlib.h \
+               graphics/qplot.c Eterm.xpm
++ ifeq ($(PORTOBJFORMAT),elf)
++ LDFLAGS+=-Wl,-rpath,$(X11BASE)/lib
++ endif
+  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+  CONFIG_HEADER = ../config.h
+  CONFIG_CLEAN_FILES = 
