@@ -14,16 +14,14 @@ DISTNAME=		kjb
 
 MAINTAINER=		nectar@FreeBSD.org
 
-BUILD_DEPENDS=		python1.5:${PORTSDIR}/lang/python15
-RUN_DEPENDS=		python1.5:${PORTSDIR}/lang/python15
-
+USE_PYTHON=		yes
 NO_WRKSUBDIR=		yes
+MAKE_ENV=		PYTHON_VERSION=${PYTHON_VERSION}
 MAKEFILE=		makefile
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/python1.5/site-packages
-	${INSTALL_DATA} ${WRKSRC}/kjbucketsmodule.so                   \
-		${PREFIX}/lib/python1.5/site-packages/
+	${MKDIR} ${PYTHON_SITELIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/kjbucketsmodule.so ${PYTHON_SITELIBDIR}
 .if !defined(NOPORTDOCS)
 	${INSTALL_DATA} ${WRKSRC}/kjbuckets.html ${PREFIX}/share/doc/
 .endif

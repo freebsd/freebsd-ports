@@ -1,37 +1,37 @@
 include/pygtk/pygdkimlib.h
 include/pygtk/pygtk.h
-lib/python1.5/site-packages/GDK.py
-lib/python1.5/site-packages/GDK.pyc
-lib/python1.5/site-packages/GDK.pyo
-lib/python1.5/site-packages/GTK.py
-lib/python1.5/site-packages/GTK.pyc
-lib/python1.5/site-packages/GTK.pyo
-lib/python1.5/site-packages/GdkImlib.py
-lib/python1.5/site-packages/GdkImlib.pyc
-lib/python1.5/site-packages/GdkImlib.pyo
-lib/python1.5/site-packages/GtkExtra.py
-lib/python1.5/site-packages/GtkExtra.pyc
-lib/python1.5/site-packages/GtkExtra.pyo
-lib/python1.5/site-packages/Gtkinter.py
-lib/python1.5/site-packages/Gtkinter.pyc
-lib/python1.5/site-packages/Gtkinter.pyo
-lib/python1.5/site-packages/_gdkimlibmodule.so
-lib/python1.5/site-packages/_gtkmodule.so
-lib/python1.5/site-packages/gtk.py
-lib/python1.5/site-packages/gtk.pyc
-lib/python1.5/site-packages/gtk.pyo
-lib/python1.5/site-packages/pyglade/__init__.py
-lib/python1.5/site-packages/pyglade/__init__.pyc
-lib/python1.5/site-packages/pyglade/__init__.pyo
-lib/python1.5/site-packages/pyglade/build.py
-lib/python1.5/site-packages/pyglade/build.pyc
-lib/python1.5/site-packages/pyglade/build.pyo
-lib/python1.5/site-packages/pyglade/style.py
-lib/python1.5/site-packages/pyglade/style.pyc
-lib/python1.5/site-packages/pyglade/style.pyo
-lib/python1.5/site-packages/pyglade/xmlparse.py
-lib/python1.5/site-packages/pyglade/xmlparse.pyc
-lib/python1.5/site-packages/pyglade/xmlparse.pyo
+lib/%%PYTHON_VERSION%%/site-packages/GDK.py
+lib/%%PYTHON_VERSION%%/site-packages/GDK.pyc
+lib/%%PYTHON_VERSION%%/site-packages/GDK.pyo
+lib/%%PYTHON_VERSION%%/site-packages/GTK.py
+lib/%%PYTHON_VERSION%%/site-packages/GTK.pyc
+lib/%%PYTHON_VERSION%%/site-packages/GTK.pyo
+lib/%%PYTHON_VERSION%%/site-packages/GdkImlib.py
+lib/%%PYTHON_VERSION%%/site-packages/GdkImlib.pyc
+lib/%%PYTHON_VERSION%%/site-packages/GdkImlib.pyo
+lib/%%PYTHON_VERSION%%/site-packages/GtkExtra.py
+lib/%%PYTHON_VERSION%%/site-packages/GtkExtra.pyc
+lib/%%PYTHON_VERSION%%/site-packages/GtkExtra.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Gtkinter.py
+lib/%%PYTHON_VERSION%%/site-packages/Gtkinter.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Gtkinter.pyo
+lib/%%PYTHON_VERSION%%/site-packages/_gdkimlibmodule.so
+lib/%%PYTHON_VERSION%%/site-packages/_gtkmodule.so
+lib/%%PYTHON_VERSION%%/site-packages/gtk.py
+lib/%%PYTHON_VERSION%%/site-packages/gtk.pyc
+lib/%%PYTHON_VERSION%%/site-packages/gtk.pyo
+lib/%%PYTHON_VERSION%%/site-packages/pyglade/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/pyglade/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/pyglade/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/pyglade/build.py
+lib/%%PYTHON_VERSION%%/site-packages/pyglade/build.pyc
+lib/%%PYTHON_VERSION%%/site-packages/pyglade/build.pyo
+lib/%%PYTHON_VERSION%%/site-packages/pyglade/style.py
+lib/%%PYTHON_VERSION%%/site-packages/pyglade/style.pyc
+lib/%%PYTHON_VERSION%%/site-packages/pyglade/style.pyo
+lib/%%PYTHON_VERSION%%/site-packages/pyglade/xmlparse.py
+lib/%%PYTHON_VERSION%%/site-packages/pyglade/xmlparse.pyc
+lib/%%PYTHON_VERSION%%/site-packages/pyglade/xmlparse.pyo
 share/doc/py-gtk/MAPPING
 share/examples/py-gtk/gl/README
 share/examples/py-gtk/gl/cone.py
@@ -83,7 +83,7 @@ share/examples/py-gtk/testgtk/test.xpm
 share/examples/py-gtk/testgtk/testgtk.py
 share/examples/py-gtk/testgtk/testgtkrc
 @dirrm include/pygtk
-@dirrm lib/python1.5/site-packages/pyglade
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/pyglade
 @dirrm share/doc/py-gtk
 @dirrm share/examples/py-gtk/gl
 @dirrm share/examples/py-gtk/glade
