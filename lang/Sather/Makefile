@@ -3,7 +3,7 @@
 # Date created:         Mon Oct 31 22:04:12 PST 1994
 # Whom:                 hsu
 #
-# $Id: Makefile,v 1.3 1994/12/31 02:21:20 hsu Exp $
+# $Id: Makefile,v 1.4 1995/02/25 19:42:36 hsu Exp $
 #
 
 DISTNAME=       Sather-1.0.5
@@ -16,6 +16,6 @@ install:
 	@if [ ! -e ${PREFIX}/man/man1 ]; then mkdir -p ${PREFIX}/man/man1; fi
 	install -c -m 555 ${WRKSRC}/Compiler/cs ${PREFIX}/bin
 	install -c -m 555 ${WRKSRC}/Doc/man/man1/cs.1 ${PREFIX}/man/man1
-	gzip -9 -f ${PREFIX}/man/man1
+	-gzip -9 -f ${PREFIX}/man/man1/cs.1
 
 .include <bsd.port.mk>
