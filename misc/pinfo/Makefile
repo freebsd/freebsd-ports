@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	pinfo
-PORTVERSION=	0.6.3
+PORTVERSION=	0.6.4
 CATEGORIES=	misc
 MASTER_SITES=	http://zeus.polsl.gliwice.pl/~pborys/stable-version/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	iconv.2:${PORTSDIR}/converters/iconv \
+LIB_DEPENDS=	giconv.2:${PORTSDIR}/converters/libiconv \
 		intl.1:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lgnuregex"
+		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-readline \
 		--with-localedir=${PREFIX}/share/locale
 
@@ -29,5 +29,9 @@ MAN1=	pinfo.1
 LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
 CONFIGURE_ARGS+=	--with-ncurses=${LOCALBASE}
 .endif
+
+pre-patch:
+	@${PERL} -pi -e 's|<iconv.h>|<giconv.h>|g ; \
+		 s|-liconv|-lgiconv|g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
