@@ -1,9 +1,6 @@
 include/libmilter/mfapi.h
 include/libmilter/mfdef.h
 lib/libmilter.a
-lib/libsm.a
-lib/libsmutil.a
-lib/libsmdb.a
 @dirrm include/libmilter
 %%PORTDOCS%%share/doc/sendmail/MILTER
 %%PORTDOCS%%share/doc/sendmail/libmilter/api.html
