@@ -1,0 +1,8 @@
+glean is a suite of tools for evaluating the quality of an OpenGL implementation
+and diagnosing any problems that are discovered. glean also has the ability to
+compare two OpenGL implementations and highlight the differences between them.
+
+WWW: http://glean.sourceforge.net/
+
+- Eric Anholt
+anholt@FreeBSD.org
