@@ -1,23 +1,25 @@
-*** Makefile.orig	Thu Feb  9 17:36:13 1995
---- Makefile	Thu Feb  9 23:57:16 1995
+*** Makefile.orig	Thu Feb 23 17:17:55 1995
+--- Makefile	Thu Feb 23 23:51:54 1995
 ***************
-*** 11,21 ****
+*** 11,22 ****
   #  hpalib, hplow, hp3, dec, solaris, sparc, linux, freebsd, sgi, 
   #  soundblaster, aix, next.
   # gmake needed to handle this file in FreeBSD and NeXTStep
 ! MACHINE = sparc
+  VERSION = 4.16
   
   # The name of your C compiler. For most machines this will be
   # either 'cc' or 'gcc'.
-! CC = acc
+! CC = gcc
   
   OPTS=-c
   
---- 11,21 ----
+--- 11,22 ----
   #  hpalib, hplow, hp3, dec, solaris, sparc, linux, freebsd, sgi, 
   #  soundblaster, aix, next.
   # gmake needed to handle this file in FreeBSD and NeXTStep
 ! MACHINE = freebsd
+  VERSION = 4.16
   
   # The name of your C compiler. For most machines this will be
   # either 'cc' or 'gcc'.
@@ -26,7 +28,7 @@
   OPTS=-c
   
 ***************
-*** 31,37 ****
+*** 32,38 ****
   MAN_DIR = $(PREFIX)/man
   
   # Where to put the compression methods description
@@ -34,7 +36,7 @@
   
   # How to install the binaries and manpage. If you have a unix system,
   # use the GNU install program if you have it, otherwise try 'cp'. For
---- 31,37 ----
+--- 32,38 ----
   MAN_DIR = $(PREFIX)/man
   
   # Where to put the compression methods description
@@ -43,7 +45,7 @@
   # How to install the binaries and manpage. If you have a unix system,
   # use the GNU install program if you have it, otherwise try 'cp'. For
 ***************
-*** 52,59 ****
+*** 53,60 ****
   #
   # If you don't wish to use the 'make install' and 'make install.man'
   # commands, you can ignore these.
@@ -52,7 +54,7 @@
   ###############################################################################
   #
   # C compiler flags and libraries for each machine.
---- 52,61 ----
+--- 53,62 ----
   #
   # If you don't wish to use the 'make install' and 'make install.man'
   # commands, you can ignore these.
