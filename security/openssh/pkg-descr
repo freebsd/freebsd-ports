@@ -4,5 +4,11 @@ rsh, rcp, etc. and provide secure encrypted communications between two
 untrusted hosts over an insecure network.  X11 connections and arbitrary
 TCP/IP ports can also be forwarded over the secure channel.
 
+OpenSSH is a version of Secure Shell based upon a much less encumbered
+SSH version 1.2.12, which has a BSD-style license.  Maintained by the
+OpenBSD project, this is the most free and secure SSH implementation
+in the world.  OpenSSH supports SSH protocol version 1.5 and has all
+known bugs from SSH fixed.
+
 - Brian Feldman
 green@FreeBSD.org
