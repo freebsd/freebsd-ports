@@ -6,6 +6,7 @@ the login data:
 
 * All databases supported by the PEAR database layer
 * All databases supported by the MDB database layer
+* All databases supported by the MDB2 database layer
 * Plaintext files
 * LDAP servers
 * POP3 servers
@@ -13,6 +14,6 @@ the login data:
 * vpopmail accounts
 * RADIUS
 * SAMBA password files
-* SOAP.
+* SOAP
 
 WWW: http://pear.php.net/package/Auth/
