@@ -3,7 +3,7 @@
 # Date created:		So   6 Apr 1997 04:25:57 MET DST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.3 1997/04/06 09:16:04 andreas Exp $
+# $Id: Makefile,v 1.4 1997/04/07 18:12:11 andreas Exp $
 #
 
 DISTNAME=	nethack-3.2.2
@@ -19,6 +19,8 @@ DISTFILES=	nethack-3.2.2.tar.gz ${QT_PATCH} ${QT_SOUND}
 
 MAINTAINER=	andreas@FreeBSD.ORG
 
+BUILD_DEPENDS=	auplay:${PORTSDIR}/audio/nas
+BUILD_DEPENDS=	xpmtoppm:${PORTSDIR}/graphics/netpbm
 LIB_DEPENDS=	qt\\.1\\.:${PORTSDIR}/x11/qt
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 RUN_DEPENDS=	auplay:${PORTSDIR}/audio/nas
