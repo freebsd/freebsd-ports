@@ -1,22 +1,22 @@
 # New ports collection makefile for:	p5-chart
-# Version required:	0.94
+# Version required:	0.99b
 # Date Created:		8 April 1998
 # Whom:			Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1998/08/19 12:38:40 vanilla Exp $
+# $Id: Makefile,v 1.4 1998/09/15 21:31:45 asami Exp $
 #
 
-DISTNAME=	chart-0.94
-PKGNAME=	p5-chart-0.94
+DISTNAME=	Chart-0.99b
+PKGNAME=	p5-chart-0.99b
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Chart
 
 MAINTAINER=	ports@FreeBSD.ORG
 
-BUILD_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/i386-freebsd/GD.pm:${PORTSDIR}/graphics/p5-GD
+BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/i386-freebsd/GD.pm:${PORTSDIR}/graphics/p5-GD
 
-WRKSRC=		${WRKDIR}/Chart-0.94
+WRKSRC=		${WRKDIR}/Chart-0.99b
 
 USE_PERL5=	YES
 
