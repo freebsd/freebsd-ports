@@ -290,6 +290,7 @@ share/garlic/residues.pdb
 %%PORTDOCS%%%%EXAMPLESDIR%%/patterns2.script
 %%PORTDOCS%%%%EXAMPLESDIR%%/patterns3.script
 %%PORTDOCS%%%%EXAMPLESDIR%%/phe.pdb
+%%PORTDOCS%%%%EXAMPLESDIR%%/porin.script
 %%PORTDOCS%%%%EXAMPLESDIR%%/porins.script
 %%PORTDOCS%%%%EXAMPLESDIR%%/porins2.script
 %%PORTDOCS%%%%EXAMPLESDIR%%/porins3.script
@@ -302,4 +303,5 @@ share/garlic/residues.pdb
 %%PORTDOCS%%%%EXAMPLESDIR%%/singlebond.pdb
 %%PORTDOCS%%%%EXAMPLESDIR%%/test.script
 %%PORTDOCS%%%%EXAMPLESDIR%%/trp.pdb
+%%PORTDOCS%%%%EXAMPLESDIR%%/water.pdb
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
