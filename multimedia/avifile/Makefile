@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	avifile
-PORTVERSION=	0.7.22.20021129
+PORTVERSION=	0.7.27.20030122
 PORTEPOCH=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://avifile.sourceforge.net/
@@ -34,7 +34,6 @@ CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib `${ECHO_CMD} ${PTHREAD_LIBS}`"
 CONFIGURE_ARGS= --with-gnu-ld --enable-iconv \
 		--disable-v4l \
-		--disable-vidix \
 		--disable-divx4
 CONFIGURE_TARGET=
 
@@ -51,6 +50,20 @@ VERSION=	0.7
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 DIFF?=		/usr/bin/diff
 FMT?=		/usr/bin/fmt
+
+# qt -- USE_QT_VER has to happen befor bsd.port.pre.mk
+.if !defined(WITHOUT_QT)
+. if exists(${X11BASE}/include/qt2/qapp.h)
+USE_QT_VER=	2
+. else
+USE_QT_VER=	3
+. endif
+PLIST_SUB+=	QT=""
+.else
+CONFIGURE_ARGS+=	--without-qt
+
+PLIST_SUB+=	QT="@comment "
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -103,20 +116,6 @@ CONFIGURE_ARGS+=	--disable-mad
 PLIST_SUB+=	MAD="@comment "
 .endif
 
-# qt
-.if !defined(WITHOUT_QT)
-. if exists(${X11BASE}/include/qt2/qapp.h)
-USE_QT_VER=	2
-. else
-USE_QT_VER=	3
-. endif
-PLIST_SUB+=	QT=""
-.else
-CONFIGURE_ARGS+=	--without-qt
-
-PLIST_SUB+=	QT="@comment "
-.endif
-
 # sdl
 .if !defined(WITHOUT_SDL)
 LIB_DEPENDS+=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
@@ -125,6 +124,15 @@ CONFIGURE_ARGS+=	--with-sdl-prefix=${LOCALBASE} \
 			--with-sdl-exec-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-sdl
+.endif
+
+# vidix support: requires root privileges
+.if defined(WITH_VIDIX)
+CONFIGURE_ARGS+=	--enable-vidix	
+PLIST_SUB+=	VIDIX=""
+.else
+CONFIGURE_ARGS+=	--disable-vidix
+PLIST_SUB+=	VIDIX="@comment "
 .endif
 
 # libvorbis; thus, libogg
@@ -170,6 +178,9 @@ pre-everything::
 .endif
 .if !defined(WITHOUT_SDL)
 	@${ECHO_MSG} "You can disable SDL supported tools by defining WITHOUT_SDL."
+.endif
+.if !defined(WITH_VIDIX)
+	@${ECHO_MSG} "You can enable VIDIX support by defining WITH_VIDIX."
 .endif
 .if !defined(WITHOUT_VORBIS)
 	@${ECHO_MSG} "You can disable vorbis support by defining WITHOUT_VORBIS."
@@ -231,11 +242,13 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|sighandler_t|sig_t|' \
 		${WRKSRC}/samples/misc/benchmark.cpp
 # fix breakage if either auto{conf,make} are installed
+# CFLAGS safeness
 # do not version library names
 # fix incorrect behavior of configure script
 	@${FIND} ${WRKSRC} \( -name Makefile.in -o -name configure \) | \
 		${XARGS} -n 10 ${REINPLACE_CMD} -E -e \
 		's|INSTALL = \@INSTALL\@|INSTALL = ${INSTALL}|; \
+		s!-O4!${CFLAGS}!; \
 		s!-release[[:space:]]+\$$\([^\)]+\)!!; \
 		s!ACLOCAL =!ACLOCAL = ${TRUE} || !; \
 		s!AUTOCONF =!AUTOCONF = ${TRUE} || !; \
