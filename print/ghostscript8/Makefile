@@ -134,7 +134,6 @@ post-extract:
 	${ECHO_MSG} ">>> in post-extract ..."
 	${LN} -sf ${WRKDIRPREFIX}${.CURDIR}/../../graphics/jpeg/work/jpeg-6b \
 		${WRKSRC}/jpeg
-	${RM} -f ${WRKSRC}/man/de/*.1
 # ** 3rd party driver **
 # Note: don't forget to add those devices in scripts/configure and
 # configure.batch, which update unix-gcc.mak to build gs with these
@@ -168,6 +167,8 @@ post-extract:
 post-patch:
 	${PERL} -pi -e 's|^DEVICE_DEVS|#DEVICE_DEVS|g' \
 		${WRKSRC}/src/unix-gcc.mak
+	${PERL} -pi -e 's|\. de|\.|g' \
+		${WRKSRC}/src/unixinst.mak
 # for HPinkjet driver
 	find ${WRKSRC}/${HPIJS_NAME} -name '*.h' | xargs ${PERL} -pi -e \
 		's|#include <malloc.h>||g; \
