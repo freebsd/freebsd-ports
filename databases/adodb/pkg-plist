@@ -2,6 +2,7 @@
 %%ADODB_DIR%%/adodb-ado.inc.php
 %%ADODB_DIR%%/adodb-ado_access.inc.php
 %%ADODB_DIR%%/adodb-ado_mssql.inc.php
+%%ADODB_DIR%%/adodb-borland_ibase.inc.php
 %%ADODB_DIR%%/adodb-cryptsession.php.sample
 %%ADODB_DIR%%/adodb-csv.inc.php
 %%ADODB_DIR%%/adodb-csvlib.inc.php
@@ -9,6 +10,7 @@
 %%ADODB_DIR%%/adodb-errorhandler.inc.php
 %%ADODB_DIR%%/adodb-errorpear.inc.php
 %%ADODB_DIR%%/adodb-fbsql.inc.php
+%%ADODB_DIR%%/adodb-firebird.inc.php
 %%ADODB_DIR%%/adodb-ibase.inc.php
 %%ADODB_DIR%%/adodb-lib.inc.php
 %%ADODB_DIR%%/adodb-mssql.inc.php

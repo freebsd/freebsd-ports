@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	adodb
-PORTVERSION=	1.63
+PORTVERSION=	1.64
 CATEGORIES=	databases www
 MASTER_SITES=	http://phplens.com/lens/dl/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
@@ -27,15 +27,16 @@ PLIST_SUB=	ADODB_DIR=${ADODB_DIR} \
 
 DOCS=	readme.htm tute.htm readme.txt
 LIBS=	adodb-access.inc.php adodb-ado.inc.php adodb-ado_access.inc.php \
-	adodb-ado_mssql.inc.php adodb-csv.inc.php adodb-csvlib.inc.php \
-	adodb-db2.inc.php adodb-errorhandler.inc.php adodb-errorpear.inc.php \
-	adodb-fbsql.inc.php adodb-ibase.inc.php adodb-lib.inc.php \
-	adodb-mssql.inc.php adodb-mysql.inc.php adodb-mysqlt.inc.php \
-	adodb-oci8.inc.php adodb-oci8po.inc.php adodb-odbc.inc.php \
-	adodb-odbc_mssql.inc.php adodb-odbc_oracle.inc.php \
-	adodb-oracle.inc.php adodb-pear.inc.php adodb-postgres.inc.php \
-	adodb-postgres7.inc.php adodb-proxy.inc.php adodb-sybase.inc.php \
-	adodb.inc.php adodb-vfp.inc.php crypt.inc.php tohtml.inc.php
+	adodb-ado_mssql.inc.php adodb-borland_ibase.inc.php adodb-csv.inc.php \
+	adodb-csvlib.inc.php adodb-db2.inc.php adodb-errorhandler.inc.php \
+	adodb-errorpear.inc.php adodb-fbsql.inc.php adodb-firebird.inc.php \
+	adodb-ibase.inc.php adodb-lib.inc.php adodb-mssql.inc.php \
+	adodb-mysql.inc.php adodb-mysqlt.inc.php adodb-oci8.inc.php \
+	adodb-oci8po.inc.php adodb-odbc.inc.php adodb-odbc_mssql.inc.php \
+	adodb-odbc_oracle.inc.php adodb-oracle.inc.php adodb-pear.inc.php \
+	adodb-postgres.inc.php adodb-postgres7.inc.php adodb-proxy.inc.php \
+	adodb-sybase.inc.php adodb.inc.php adodb-vfp.inc.php crypt.inc.php \
+	tohtml.inc.php
 PICS=	adodb.gif adodb.png adodb2.gif adodb2.png
 SAMPLES=adodb-cryptsession.php adodb-session.php server.php
 TESTS=	benchmark.php client.php test.php test2.php test3.php test4.php \
