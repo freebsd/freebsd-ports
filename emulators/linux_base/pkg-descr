@@ -1,0 +1,16 @@
+These libraries are part of the linux compatibility options
+for FreeBSD.  To get linux compat working you will need
+
+1) A linux binary such as doom, Wingz, or maple
+
+2) a kernel with ``options LINUX_COMPAT'' in the config file
+
+3) these libraries
+
+4) the linux compat lkm (ie run /usr/bin/linux)
+
+then run the linux binary. 
+
+
+eric.
+erich@FreeBSD.org
