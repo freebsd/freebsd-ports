@@ -24,6 +24,12 @@ INSTALLS_SHLIB=	yes
 
 MAKE_ARGS=	PREFIX="${PREFIX}" -j 2
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386" && ${ARCH} != "alpha"
+BROKEN=		"Does not compile on !i386 and !alpha"
+.endif
+
 post-patch:
 	${RM} -rf ${WRKSRC}/hdf/jpeg
 	${RM} -rf ${WRKSRC}/hdf/zlib
@@ -37,4 +43,4 @@ do-configure:
 test: build
 	cd ${WRKSRC}; ${MAKE} test
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
