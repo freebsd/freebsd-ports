@@ -9,24 +9,6 @@
  	;;
  
  *-bsdi4*)
-@@ -3121,7 +3123,7 @@
-   echo $ac_n "(cached) $ac_c" 1>&6
- else
-   ac_save_LIBS="$LIBS"
--LIBS="-lfltk -L$x_libraries -lXext -lX11 -lm $X_EXTRA_LIBS $LIBS"
-+LIBS="-lfltk -lGL -L$x_libraries -lXext -lX11 -lm $X_EXTRA_LIBS $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 3127 "configure"
- #include "confdefs.h"
-@@ -3155,7 +3157,7 @@
- #define $ac_tr_lib 1
- EOF
- 
--  LIBS="-lfltk $LIBS"
-+  LIBS="-lfltk -lGL $LIBS"
- 
- else
-   echo "$ac_t""no" 1>&6
 @@ -3188,7 +3190,6 @@
  
  

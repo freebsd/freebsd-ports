@@ -1,0 +1,158 @@
+diff -ru ../SrcUnix/EmDocumentUnix.cpp.orig ../SrcUnix/EmDocumentUnix.cpp
+--- ../SrcUnix/EmDocumentUnix.cpp.orig	Fri Mar 29 14:11:19 2002
++++ ../SrcUnix/EmDocumentUnix.cpp	Sat Apr 26 21:20:09 2003
+@@ -95,7 +95,7 @@
+ 	string	fullPath = destRef.GetFullPath ();
+ 	char*	fNameExt = (char*) malloc (fullPath.size () + 4);
+ 	strcpy (fNameExt, fullPath.c_str ());
+-	filename_setext (fNameExt, ".ppm");
++	fl_filename_setext (fNameExt, ".ppm");
+ 
+ 	FILE* f = fopen (fNameExt, "wb");
+ 	if (f)
+diff -ru ../SrcUnix/espws-2.0/FileBrowser.cxx.orig ../SrcUnix/espws-2.0/FileBrowser.cxx
+--- ../SrcUnix/espws-2.0/FileBrowser.cxx.orig	Fri Mar 29 14:11:11 2002
++++ ../SrcUnix/espws-2.0/FileBrowser.cxx	Sat Apr 26 21:11:45 2003
+@@ -467,7 +467,7 @@
+ 
+     num_files = filename_list(filename, &files);
+ #else
+-    num_files = filename_list(directory_, &files);
++    num_files = fl_filename_list(directory_, &files);
+ #endif /* WIN32 || __EMX__ */
+ 
+     if (num_files <= 0)
+@@ -480,8 +480,8 @@
+       {
+ 	sprintf(filename, "%s/%s", directory_, files[i]->d_name);
+ 
+-	if (filename_isdir(filename) ||
+-            filename_match(files[i]->d_name, pattern_))
++	if (fl_filename_isdir(filename) ||
++            fl_filename_match(files[i]->d_name, pattern_))
+           add(files[i]->d_name, FileIcon::find(filename));
+       }
+ 
+diff -ru ../SrcUnix/espws-2.0/FileChooser2.cxx.orig ../SrcUnix/espws-2.0/FileChooser2.cxx
+--- ../SrcUnix/espws-2.0/FileChooser2.cxx.orig	Fri Mar 29 14:11:11 2002
++++ ../SrcUnix/espws-2.0/FileChooser2.cxx	Sat Apr 26 21:15:56 2003
+@@ -83,7 +83,7 @@
+ #else
+     if (d[0] != '/' && d[0] != '\\')
+ #endif /* WIN32 || __EMX__ */
+-      filename_absolute(directory_, d);
++      fl_filename_absolute(directory_, d);
+     else
+     {
+       strncpy(directory_, d, sizeof(directory_) - 1);
+@@ -170,7 +170,7 @@
+       pathname[sizeof(pathname) - 1] = '\0';
+     }
+ 
+-    if (filename_isdir(pathname) && !directory_chooser_)
++    if (fl_filename_isdir(pathname) && !directory_chooser_)
+       return (0);
+     else
+       return (1);
+@@ -189,7 +189,7 @@
+ 	pathname[sizeof(pathname) - 1] = '\0';
+       }
+ 
+-      if (!filename_isdir(pathname) || directory_chooser_)
++      if (!fl_filename_isdir(pathname) || directory_chooser_)
+ 	count ++;
+     }
+ 
+@@ -237,7 +237,7 @@
+       name = fileList->text(i);
+       sprintf(pathname, "%s/%s", directory_, name);
+ 
+-      if (!filename_isdir(pathname) || directory_chooser_)
++      if (!fl_filename_isdir(pathname) || directory_chooser_)
+       {
+         // Nope, see if this this is "the one"...
+ 	count ++;
+@@ -264,7 +264,7 @@
+ 
+ 
+   // See if the filename is actually a directory...
+-  if (filename == NULL || filename_isdir(filename))
++  if (filename == NULL || fl_filename_isdir(filename))
+   {
+     // Yes, just change the current directory...
+     directory(filename);
+@@ -424,7 +424,7 @@
+     if ((strlen(pathname) == 2 && pathname[1] == ':') ||
+         filename_isdir(pathname))
+ #else
+-    if (filename_isdir(pathname))
++    if (fl_filename_isdir(pathname))
+ #endif /* WIN32 || __EMX__ */
+     {
+       directory(pathname);
+@@ -437,7 +437,7 @@
+   {
+     fileName->value(filename);
+ 
+-    if (!filename_isdir(pathname) || directory_chooser_)
++    if (!fl_filename_isdir(pathname) || directory_chooser_)
+       okButton->activate();
+   }
+ }
+@@ -500,7 +500,7 @@
+     if (((strlen(pathname) == 2 && pathname[1] == ':') ||
+         filename_isdir(pathname)) && !directory_chooser_)
+ #else
+-    if (filename_isdir(pathname) && !directory_chooser_)
++    if (fl_filename_isdir(pathname) && !directory_chooser_)
+ #endif /* WIN32 || __EMX__ */
+       directory(pathname);
+     else if (type_ == CREATE || access(pathname, 0) == 0)
+@@ -632,7 +632,7 @@
+     sprintf(pathname, "%s/%s", directory_, fileName->value());
+ 
+     if ((type_ == CREATE || access(pathname, 0) == 0) &&
+-        (!filename_isdir(pathname) || directory_chooser_))
++        (!fl_filename_isdir(pathname) || directory_chooser_))
+       okButton->activate();
+     else
+       okButton->deactivate();
+diff -ru ../SrcUnix/espws-2.0/FileIcon.cxx.orig ../SrcUnix/espws-2.0/FileIcon.cxx
+--- ../SrcUnix/espws-2.0/FileIcon.cxx.orig	Fri Mar 29 14:11:11 2002
++++ ../SrcUnix/espws-2.0/FileIcon.cxx	Sat Apr 26 21:18:04 2003
+@@ -230,7 +230,7 @@
+   // is found...
+   for (current = first_; current != (FileIcon *)0; current = current->next_)
+     if ((current->type_ == filetype || current->type_ == ANY) &&
+-        filename_match(filename, current->pattern_))
++        fl_filename_match(filename, current->pattern_))
+       break;
+ 
+   // Return the match (if any)...
+@@ -472,7 +472,7 @@
+   const char	*ext;		// File extension
+ 
+ 
+-  if ((ext = filename_ext(f)) == NULL)
++  if ((ext = fl_filename_ext(f)) == NULL)
+   {
+     fprintf(stderr, "FileIcon::load(): Unknown file type for \"%s\".\n", f);
+     return;
+@@ -1089,7 +1089,7 @@
+ 
+ 
+   entries = (dirent **)0;
+-  n       = filename_list(directory, &entries);
++  n       = fl_filename_list(directory, &entries);
+ 
+   for (i = 0; i < n; i ++)
+   {
+@@ -1099,7 +1099,7 @@
+       strcat(full,"/");
+       strcat(full, entries[i]->d_name);
+ 
+-      if (filename_isdir(full))
++      if (fl_filename_isdir(full))
+ 	load_kde_icons(full);
+       else
+ 	load_kde_mimelnk(full);				
