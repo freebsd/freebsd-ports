@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2003-04-28
+SNAPDATE=	2003-05-06
 SNAPVER=	${SNAPDATE:S/-//g}
 #CVS_DATE=	${SNAPDATE} 18:53:04 EDT
 
@@ -15,23 +15,23 @@ PORTVERSION=	3.3
 PORTREVISION=	${SNAPVER}
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
-MASTER_SITE_SUBDIR=	snapshots/${SNAPDATE}
+MASTER_SITE_SUBDIR=	snapshots
 .if !defined(CVS_DATE)
+EXTRACT_SUFX=	.tar.gz
 DISTFILES=	\
-		gcc-core-${SNAPVER}${EXTRACT_SUFX} \
-		gcc-g++-${SNAPVER}${EXTRACT_SUFX} \
-		gcc-g77-${SNAPVER}${EXTRACT_SUFX} \
-		gcc-java-${SNAPVER}${EXTRACT_SUFX} \
-		gcc-objc-${SNAPVER}${EXTRACT_SUFX}
+		gcc-core-${PORTVERSION}-${SNAPVER}${EXTRACT_SUFX} \
+		gcc-g++-${PORTVERSION}-${SNAPVER}${EXTRACT_SUFX} \
+		gcc-g77-${PORTVERSION}-${SNAPVER}${EXTRACT_SUFX} \
+		gcc-java-${PORTVERSION}-${SNAPVER}${EXTRACT_SUFX} \
+		gcc-objc-${PORTVERSION}-${SNAPVER}${EXTRACT_SUFX}
 .endif
 
 MAINTAINER?=	ports@FreeBSD.org
-COMMENT?=	GNU Compiler Collection 3.3 (inprogress version)
+COMMENT?=	GNU Compiler Collection 3.3
 
-NO_CDROM=	'dated material'
 LATEST_LINK?=	gcc33${PKGNAMESUFFIX}
 
-USE_BZIP2=	yes
+#USE_BZIP2=	yes
 USE_REINPLACE=	yes
 
 PATCH_WRKSRC=	${SRCDIR}
@@ -44,7 +44,7 @@ CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 
 GCC_REV=	${PORTVERSION:C/\.0$//}
 #SRCDIR=		${WRKDIR}/gcc-${GCC_REV}
-SRCDIR=		${WRKDIR}/gcc-${SNAPVER}
+SRCDIR=		${WRKDIR}/gcc-${PORTVERSION}-${SNAPVER}
 WRKSRC=		${WRKDIR}/build
 TARGLIB=	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}
 GCJINC=		${PREFIX}/include/gcj
@@ -77,11 +77,10 @@ CONFIGURE_ARGS+=	--enable-threads
 CONFIGURE_ARGS+=	--enable-threads=posix
 .endif
 ALL_TARGET=	bootstrap
-#MAN1=		cpp33.1 g++33.1 g77-33.1 gcc33.1 gcov33.1 \
-#		gcj33.1 gcjh33.1 gij33.1 grepjar33.1 jar33.1 \
-#		jcf-dump33.1 jv-scan33.1 jv-convert33.1
-MAN1=		g++33.1 grepjar33.1 jar33.1
-#MAN7=		fsf-funding.7 gfdl.7 gpl.7
+MAN1=		cpp33.1 g++33.1 g77-33.1 gcc33.1 gcov33.1 \
+		gcj33.1 gcjh33.1 gij33.1 grepjar33.1 jar33.1 \
+		jcf-dump33.1 jv-scan33.1 jv-convert33.1
+MAN7=		fsf-funding.7 gfdl.7 gpl.7
 
 pre-fetch:
 	@${ECHO} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL} ${PORTOBJFORMAT}	target ${CONFIGURE_TARGET}"
