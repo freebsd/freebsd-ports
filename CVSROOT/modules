@@ -1916,6 +1916,7 @@ fox		ports/x11-toolkits/fox
 fox-devel		ports/x11-toolkits/fox-devel
 fpc		ports/lang/fpc
 fpc-devel	ports/lang/fpc-devel
+fpc-gdb		ports/devel/fpc-gdb
 fpc-gdbint	ports/devel/fpc-gdbint
 fpc-inet	ports/net/fpc-inet
 fpc-odbc	ports/databases/fpc-odbc
