@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	micq
-PORTVERSION=	0.4.8.3
+PORTVERSION=	0.4.8.9
 PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	http://micq.org/source/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/3/pl3/}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/9/pl9/}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
@@ -27,7 +27,6 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/micq.7 ${MANPREFIX}/man/man7
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/commands.txt ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/icq091.txt ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/icqv7.txt ${DOCSDIR}
 .endif
