@@ -1,7 +1,8 @@
 The file avr-lib.pdf has been obtained from
 
-http://www.enteract.com/~rneswold/avr/avr-lib-beta.pdf
+http://www.enteract.com/~rneswold/avr/avr-tools.pdf
 
 It has been renamed to avr-lib.pdf to remain consistent
 with previous versions of the port.
-Rich's older avr-lib.pdf is fairly out of date now.
+
+Note that this file is not yet fully up-to-date.
