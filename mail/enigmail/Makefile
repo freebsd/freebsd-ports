@@ -19,15 +19,15 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=	ale@FreeBSD.org
 COMMENT?=	A GnuPG extension for the Mozilla mail client
 
-EXTRACT_DEPENDS?=	${WRKDIRPREFIX}${LOCAL_SRCDIR}/work/mozilla/Makefile:${LOCAL_SRCDIR}:configure
-RUN_DEPENDS?=	mozilla:${LOCAL_SRCDIR}
+EXTRACT_DEPENDS?=	${WRKDIR}/../../../${LOCAL_SRCDIR}/work/mozilla/Makefile:${PORTSDIR}/${LOCAL_SRCDIR}:configure
+RUN_DEPENDS?=	mozilla:${PORTSDIR}/${LOCAL_SRCDIR}
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 
 WRKSRC=		${WRKDIR}/mozilla
-LOCAL_SRCDIR?=	${PORTSDIR}/www/mozilla
-LOCAL_SUBDIR?=	lib/mozilla
+LOCAL_SRCDIR?=	www/mozilla
+LOCAL_SUBDIR?=	lib/mozilla-gtk2
 LOCAL_PREFIX=	${PREFIX}/${LOCAL_SUBDIR}
 
 COMPONENTS=	ipc.xpt enigmime.xpt libenigmime.so enigmail.xpt enigmail.js enigprefs-service.js
@@ -38,7 +38,7 @@ PLIST_SUB=	LOCAL_SUBDIR=${LOCAL_SUBDIR}
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
-	@${CP} -R ${WRKDIRPREFIX}${LOCAL_SRCDIR}/work/mozilla ${WRKSRC}
+	@${CP} -R ${WRKDIR}/../../../${LOCAL_SRCDIR}/work/mozilla ${WRKSRC}
 	@for file in ${EXTRACT_ONLY}; do \
 		cd ${WRKSRC}/extensions && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$file ${EXTRACT_AFTER_ARGS}; \
 	done
