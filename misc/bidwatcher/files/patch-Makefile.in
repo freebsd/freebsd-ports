@@ -1,0 +1,8 @@
+--- Makefile.in.orig	Fri Apr 23 13:30:42 2004
++++ Makefile.in	Tue Aug  3 08:57:03 2004
+@@ -83 +83 @@
+-bidwatcher_SOURCES = bidwatcher.cpp helpers.cpp netstuff.cpp bidwatcher.h
++bidwatcher_SOURCES = bidwatcher.cpp helpers.cpp netstuff.cpp bidwatcher.h bidgui.cpp bidgroup.cpp
+@@ -99 +99 @@
+-bidwatcher_OBJECTS =  bidwatcher.o helpers.o netstuff.o
++bidwatcher_OBJECTS =  bidwatcher.o helpers.o netstuff.o bidgui.o bidgroup.o
