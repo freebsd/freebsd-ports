@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	npadmin
-PORTVERSION=	0.7
+PORTVERSION=	0.8.7
 CATEGORIES=	sysutils print
-MASTER_SITES=	ftp://ftp.penguincomputing.com/pub/prtools/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	dom@happygiraffe.net
-
-ALL_TARGET=	npadmin
 
 MAN1=		npadmin.1
 
 GNU_CONFIGURE=	yes
 
-pre-build:
-	${CP} ${FILESDIR}/getopt* ${WRKSRC}
+pre-patch:
+	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
