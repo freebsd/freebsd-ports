@@ -143,14 +143,6 @@ share/gnome/html/gtkhtml-sections.txt
 share/gnome/html/gtkhtml.hierarchy
 share/gnome/html/gtkhtml.sgml
 share/gnome/html/gtkhtml.types
-share/gnome/html/gtkhtml/gtkhtml-gtkhtml-enums.html
-share/gnome/html/gtkhtml/gtkhtml-gtkhtml-stream.html
-share/gnome/html/gtkhtml/gtkhtml-gtkhtml-types.html
-share/gnome/html/gtkhtml/gtkhtml-gtkhtmlembedded.html
-share/gnome/html/gtkhtml/gtkhtml.html
-share/gnome/html/gtkhtml/index.html
-share/gnome/html/gtkhtml/license.html
-share/gnome/html/gtkhtml/r27.html
 share/gnome/oaf/GNOME_GtkHTML_EBrowser.oaf
 share/gnome/oaf/GNOME_GtkHTML_Editor.oaf
 share/gnome/ui/GNOME_GtkHTML_Editor.xml
@@ -160,6 +152,7 @@ share/locale/da/LC_MESSAGES/gtkhtml.mo
 share/locale/de/LC_MESSAGES/gtkhtml.mo
 share/locale/el/LC_MESSAGES/gtkhtml.mo
 share/locale/es/LC_MESSAGES/gtkhtml.mo
+share/locale/eu/LC_MESSAGES/gtkhtml.mo
 share/locale/fi/LC_MESSAGES/gtkhtml.mo
 share/locale/fr/LC_MESSAGES/gtkhtml.mo
 share/locale/gl/LC_MESSAGES/gtkhtml.mo
