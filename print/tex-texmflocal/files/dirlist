@@ -1,6 +1,9 @@
 xdvi
 web2c
 texdoctk
+ptex/plain
+ptex/platex
+ptex
 tex/texinfo
 tex/platex/config
 tex/platex

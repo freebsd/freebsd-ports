@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	tex-texmflocal
-PORTVERSION=	1.8
+PORTVERSION=	1.9
 CATEGORIES=	print
 MASTER_SITES=	# empty
 DISTFILES=	# empty
