@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	perl
-PORTVESION=	5.00502
+PORTVERSION=	5.00502
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	ftp://ftp.digital.com/pub/plan/perl/CPAN/src/5.0/ \
 		ftp://ftp.cdrom.com/pub/perl/CPAN/src/5.0/
