@@ -1,6 +1,38 @@
-share/examples/swish-e/user.config
-share/examples/swish-e/test.html
-share/examples/swish-e/swishspider
-share/examples/swish-e/README-SWISH-E
-bin/swish-e
+share/doc/swish-e/CHANGES.html
+share/doc/swish-e/INSTALL.html
+share/doc/swish-e/README.html
+share/doc/swish-e/SWISH-3.0.html
+share/doc/swish-e/SWISH-BUGS.html
+share/doc/swish-e/SWISH-CONFIG.html
+share/doc/swish-e/SWISH-FAQ.html
+share/doc/swish-e/SWISH-LIBRARY.html
+share/doc/swish-e/SWISH-PERL.html
+share/doc/swish-e/SWISH-RUN.html
+share/doc/swish-e/SWISH-SEARCH.html
+share/doc/swish-e/index.html
+share/doc/swish-e/index_long.html
+share/doc/swish-e/style.css
+share/doc/swish-e/images/dotrule1.gif
+share/doc/swish-e/images/swish.gif
+share/doc/swish-e/images/swish2.gif
+share/doc/swish-e/images/swish2b.gif
+share/doc/swish-e/images/swishbanner1.gif
+@dirrm share/doc/swish-e/images
+@dirrm share/doc/swish-e
+share/examples/swish-e/README
+share/examples/swish-e/example1.config
+share/examples/swish-e/example2.config
+share/examples/swish-e/example3.config
+share/examples/swish-e/example4.config
+share/examples/swish-e/example5.config
+share/examples/swish-e/example6.config
+share/examples/swish-e/example7.config
+share/examples/swish-e/example8.config
+share/examples/swish-e/example9.pl
+share/examples/swish-e/stopwords/dutch.txt
+share/examples/swish-e/stopwords/english.txt
+share/examples/swish-e/stopwords/german.txt
+share/examples/swish-e/stopwords/spanish.txt
+@dirrm share/examples/swish-e/stopwords
 @dirrm share/examples/swish-e
+bin/swish-e
