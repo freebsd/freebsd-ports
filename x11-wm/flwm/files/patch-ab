@@ -36,3 +36,14 @@
      CXXFLAGS_D="$CXXFLAGS -Wall -Wno-return-type -g -DDEBUG $X_CFLAGS"
  else
  if test "`(uname) 2>/dev/null`" = IRIX; then
+--- configure.orig	Fri Aug 27 21:44:46 2004
++++ configure	Fri Aug 27 21:49:27 2004
+@@ -1807,7 +1807,7 @@
+     # -Wno-return-type is necessary for Xlib header files on many systems:
+     CFLAGS="$CFLAGS -Wall -Wno-return-type $CFLAGS $X_CFLAGS"
+     CFLAGS_D="$CFLAGS -Wall -Wno-return-type -g -DDEBUG $X_CFLAGS"
+-    CXXFLAGS="$CXXFLAGS -Wall -Wno-return-type $CXXFLAGS $X_CFLAGS"
++    CXXFLAGS="$CXXFLAGS -Wall -Wno-return-type $includedir $CXXFLAGS $X_CFLAGS"
+     CXXFLAGS_D="$CXXFLAGS -Wall -Wno-return-type -g -DDEBUG $X_CFLAGS"
+ else
+ if test "`(uname) 2>/dev/null`" = IRIX; then
