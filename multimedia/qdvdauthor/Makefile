@@ -7,6 +7,7 @@
 
 PORTNAME=	qdvdauthor
 PORTVERSION=	0.0.8
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +18,7 @@ COMMENT=	QT graphical frontend for dvdauthor
 BUILD_DEPENDS=	dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
 		mpeg2enc:${PORTSDIR}/multimedia/mjpegtools \
 		qmake:${PORTSDIR}/devel/qmake
-LIB_DEPENDS=	xine.9:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS=	xine.12:${PORTSDIR}/multimedia/libxine
 RUN_DEPENDS=	dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
 		mpeg2enc:${PORTSDIR}/multimedia/mjpegtools
 

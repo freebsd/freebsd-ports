@@ -7,6 +7,7 @@
 
 PORTNAME=	konverter
 DISTVERSION=	0.92-beta1
+PORTREVISION=	1
 CATEGORIES=	multimedia kde
 MASTER_SITES=	http://www.kraus.tk/projects/konverter/sources/
 
@@ -15,7 +16,7 @@ COMMENT=	KDE MEncoder frontend
 
 BUILD_DEPENDS=	avimerge:${PORTSDIR}/multimedia/transcode \
 		mencoder:${PORTSDIR}/multimedia/mplayer
-LIB_DEPENDS=	xine.9:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS=	xine.12:${PORTSDIR}/multimedia/libxine
 
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes

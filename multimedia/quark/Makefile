@@ -6,7 +6,7 @@
 
 PORTNAME=	quark
 PORTVERSION=	3.21
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	http://quark.sunsite.dk/ \
 		http://demian.dyndns.org/src/
@@ -14,7 +14,7 @@ MASTER_SITES=	http://quark.sunsite.dk/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quark is an audio player, for geeks, by geeks
 
-LIB_DEPENDS=	xine.9:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS=	xine.12:${PORTSDIR}/multimedia/libxine
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
