@@ -1,0 +1,34 @@
+#!/bin/sh
+
+# Surely advice you to enable some of the below
+# control variables and the apropriate ulimit.
+# These are only examples.
+# Furthermore, you should think about additional
+# limits you might need.
+# Or, check login.conf(5) for a suitable
+# alternative
+#
+# I really do suggest you use /var/service as your
+# service spool directory. Check hier(7) for
+# reasons.
+
+# 10 Mb
+#MINSEGMENT=10240
+# 20 Mb
+#MAXSEGMENT=20480
+# 10 Mb
+#MAXFILESIZE=10240
+# 100
+#MAXFD=100
+# 40
+#MAXCHILD=40
+
+# ulimits
+#ulimit -d ${MINSEGMENT}
+#ulimit -f ${MAXFILESIZE}
+#ulimit -m ${MAXSEGMENT}
+#ulimit -n ${MAXFD}
+#ulimit -s ${MINSEGMENT}
+#ulimit -u ${MAXCHILD}
+
+exec /bin/csh -cf '/usr/local/bin/svscan /var/service &'

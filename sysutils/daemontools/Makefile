@@ -17,9 +17,22 @@ NO_PACKAGE=	Unsure of djb\'s license
 ALL_TARGET=	it
 INSTALL_TARGET=	setup check
 
+SAMPLERC=	svscan.sh.sample
+SERVICEDIR?=	/var/service/
+
 post-patch:
 	@echo "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
 	@echo "${CC} -s" > ${WRKSRC}/conf-ld
 	@echo "${PREFIX}" > ${WRKSRC}/conf-home
+
+post-build:
+	@${SED} "s!/usr/local/!${PREFIX}/!;s!/var/service!${SERVICEDIR}!g" \
+		${FILESDIR}/${SAMPLERC} > ${WRKDIR}/${SAMPLERC}
+
+post-install:
+	@${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755 \
+		${PREFIX}/share/examples/${PORTNAME}
+	@${INSTALL_DATA} ${WRKDIR}/${SAMPLERC} \
+		${PREFIX}/share/examples/${PORTNAME}
 
 .include <bsd.port.mk>
