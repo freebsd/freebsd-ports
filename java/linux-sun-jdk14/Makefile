@@ -39,7 +39,7 @@ INSTALL_JDK_VERSION=	${DL_JDK_VERSION:S/_/./g}
 ONLY_FOR_ARCHS=	i386
 DOWNLOAD_URL?=	http://java.sun.com/webapps/download/Display?BundleId=7039
 PORTTITLE=	Java 2 Development Kit ${INSTALL_JDK_VERSION} for Linux
-APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}${INSTALL_JDK_VERSION:R}
+APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}${INSTALL_JDK_VERSION}
 
 .include <bsd.port.pre.mk>
 
