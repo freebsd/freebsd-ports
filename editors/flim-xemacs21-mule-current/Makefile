@@ -15,7 +15,7 @@ MASTERDIR=	${.CURDIR}/../../editors/flim-emacs-current
 # emacs port setup
 EMACS_NAME=	xemacs
 EMACS_PORT=	xemacs21-mule
-EMACS_VER=	21.1.9
+EMACS_VER=	21.1.10
 EMACS_CMD=	${PREFIX}/bin/${EMACS_PORT}
 EMACS_PACKAGESDIR=	lib/${EMACS_NAME}/site-packages
 # packages-subdirectories which this port requires

@@ -22,7 +22,7 @@ NO_BUILD=	yes
 
 XEMACS_MAJOR_VER=	21
 XEMACS_REL=		21.1
-XEMACS_VER=		21.1.9
+XEMACS_VER=		21.1.10
 XEMACS_ARCH=		${MACHINE_ARCH}--freebsd
 
 .include <bsd.port.pre.mk>
