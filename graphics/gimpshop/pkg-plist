@@ -916,6 +916,7 @@ share/gimp/brushes/pixel.gbr
 share/gimp/brushes/thegimp.gbr
 share/gimp/brushes/vine.gih
 share/gimp/brushes/xcf.gbr
+@exec mkdir -p %D/share/gimp/fonts
 share/gimp/fractalexplorer/Asteroid_Field
 share/gimp/fractalexplorer/Bar_Code_Label
 share/gimp/fractalexplorer/Beauty_of_Nature
