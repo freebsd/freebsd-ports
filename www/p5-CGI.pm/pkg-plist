@@ -1,0 +1,12 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CGI/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/CGI.pm
+lib/perl5/site_perl/%%PERL_VER%%/CGI/Push.pm
+lib/perl5/site_perl/%%PERL_VER%%/CGI/Pretty.pm
+lib/perl5/site_perl/%%PERL_VER%%/CGI/Fast.pm
+lib/perl5/site_perl/%%PERL_VER%%/CGI/Switch.pm
+lib/perl5/site_perl/%%PERL_VER%%/CGI/Carp.pm
+lib/perl5/site_perl/%%PERL_VER%%/CGI/Apache.pm
+lib/perl5/site_perl/%%PERL_VER%%/CGI/Util.pm
+lib/perl5/site_perl/%%PERL_VER%%/CGI/Cookie.pm
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CGI 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/CGI 2>/dev/null || true
