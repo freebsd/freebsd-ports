@@ -28,6 +28,12 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 GNU_CONFIGURE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Broken pkg-plist"
+.endif
+
 post-install:
 
 .if !defined(NOPORTDOCS)
@@ -36,4 +42,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/javascript.txt ${PREFIX}/share/doc/camserv
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
