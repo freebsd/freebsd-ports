@@ -24,11 +24,11 @@ LIB_DEPENDS+=	tcl80jp.1:${PORTSDIR}/japanese/tcl80
 RUN_DEPENDS=	wish8.0jp:${PORTSDIR}/japanese/tk80 \
 		tclsh8.0jp:${PORTSDIR}/japanese/tcl80
 .else
-BUILD_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82 \
-		tclsh8.2:${PORTSDIR}/lang/tcl82
-LIB_DEPENDS+=	tcl82.1:${PORTSDIR}/lang/tcl82
-RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82 \
-		tclsh8.2:${PORTSDIR}/lang/tcl82
+BUILD_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83 \
+		tclsh8.3:${PORTSDIR}/lang/tcl83
+LIB_DEPENDS+=	tcl83.1:${PORTSDIR}/lang/tcl83
+RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83 \
+		tclsh8.3:${PORTSDIR}/lang/tcl83
 .endif
 
 USE_XPM=	yes
