@@ -10161,6 +10161,7 @@ tora		ports/databases/tora
 torcs		ports/games/torcs
 tornado		ports/games/tornado
 torrentsniff	ports/net/torrentsniff
+torsmo		ports/sysutils/torsmo
 tosha		ports/audio/tosha
 toshctl		ports/sysutils/toshctl
 tosvcd		ports/multimedia/tosvcd
