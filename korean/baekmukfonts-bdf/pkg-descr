@@ -1,0 +1,22 @@
+Hangul X11 fonts(baekmuk)
+-------------------------
+
+(c) Copyright 1986-1999, Wooderart Inc.
+You are hereby granted permission under all Wooderart propriety rights
+to use, copy, modify, sublicense, sell, and redistribute the 4 Baekmuk
+Hangul bitmap fonts for any purpose and without restriction;
+provided, that this notice is left intact on all copies of such fonts
+and that Wooderart's trademark is acknowledged as shown below on all
+copies of the 4 Baekmuk bitmap fonts.
+
+  BAEKMUK BATANG is a registered trademark of Wooderart Inc.
+  BAEKMUK GULIM is a registered trademark of Wooderart Inc.
+  BAEKMUK DOTUM is a registered trademark of Wooderart Inc.
+  BAEKMUK HEADLINE is a registered trademark of Wooderart Inc.
+
+For more information, please visit
+  http://www.mizi.co.kr/software/baekmuk/index.html
+
+--
+Ports by CHOI Junho <cjh@kr.freebsd.org>
+WWW: http://www.mizi.co.kr/software/baekmuk/index.html
