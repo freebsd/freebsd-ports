@@ -8,7 +8,8 @@
 PORTNAME?=	mozex
 PORTVERSION=	1.07
 CATEGORIES=	www mail news ftp
-MASTER_SITES=	http://mozex.mozdev.org/
+MASTER_SITES=	http://downloads.mozdev.org/mozex/	\
+		http://mozdev.sweetooth.org/mozex/
 
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Mozex allows Mozilla's users to use external programs for mail, news, etc.
