@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.200 1999/04/19 04:22:01 steve Exp $
+# $Id: Makefile,v 1.201 1999/04/27 03:25:14 taoka Exp $
 #
 
     SUBDIR += 3dc
@@ -68,6 +68,7 @@
     SUBDIR += merlin
     SUBDIR += mindfocus
     SUBDIR += mirrormagic
+    SUBDIR += miscom
     SUBDIR += nethack
     SUBDIR += nethack-qt
     SUBDIR += netrek-BRMH-bin
@@ -84,10 +85,12 @@
     SUBDIR += seabattle
     SUBDIR += seahaven
     SUBDIR += sokoban
+    SUBDIR += sol
     SUBDIR += spellcast
     SUBDIR += spider
     SUBDIR += starlanes
     SUBDIR += tank
+    SUBDIR += tetrinet-x
     SUBDIR += tinymux
     SUBDIR += tksol
     SUBDIR += tvp
@@ -126,6 +129,7 @@
     SUBDIR += xgalaga
     SUBDIR += xgammon
     SUBDIR += xgolgo
+    SUBDIR += xhexagons
     SUBDIR += xhime
     SUBDIR += xinfocom
     SUBDIR += xinvaders
