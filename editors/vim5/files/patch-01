@@ -1,6 +1,6 @@
---- Makefile.orig	Sun Nov  9 15:34:28 1997
-+++ Makefile	Tue Nov 11 06:51:53 1997
-@@ -249,6 +249,7 @@
+--- Makefile.orig	Sun Feb  8 12:18:57 1998
++++ Makefile	Mon Feb  9 02:07:52 1998
+@@ -260,6 +260,7 @@
  
  ### Extra configure arguments - just put anything here, just an example
  #CONF_ARGS = --exec-prefix=/usr
@@ -8,7 +8,7 @@
  
  ### For creating a plain Vim without any X11 related fancies use this one:
  ### (otherwise Vim configure will try to include xterm titlebar access)
-@@ -1018,31 +1019,31 @@
+@@ -1058,28 +1059,28 @@
  installinks: $(GUI_TARGETS) $(BINDIR)/$(EXTARGET) $(BINDIR)/$(VIEWTARGET) $(BINDIR)/$(RVIMTARGET) $(BINDIR)/$(RVIEWTARGET)
  
  $(BINDIR)/$(EXTARGET):
@@ -22,10 +22,6 @@
  $(BINDIR)/$(GVIMTARGET):
 -	cd $(BINDIR); ln -s $(VIMTARGET) $(GVIMTARGET)
 +	cd $(BINDIR); ln -sf $(VIMTARGET) $(GVIMTARGET)
- 
- $(BINDIR)/$(GEXTARGET):
--	cd $(BINDIR); ln -s $(VIMTARGET) $(GEXTARGET)
-+	cd $(BINDIR); ln -sf $(VIMTARGET) $(GEXTARGET)
  
  $(BINDIR)/$(GVIEWTARGET):
 -	cd $(BINDIR); ln -s $(VIMTARGET) $(GVIEWTARGET)
@@ -47,5 +43,5 @@
 -	cd $(BINDIR); ln -s $(VIMTARGET) $(RGVIEWTARGET)
 +	cd $(BINDIR); ln -sf $(VIMTARGET) $(RGVIEWTARGET)
  
- uninstall:
- 	-rm -f $(BINDIR)/$(VIMTARGET)$(SUFFIX) $(BINDIR)/$(GVIMTARGET)
+ # create links for the manual pages with various names to vim.  This is only
+ # done when the links (or manpages with the same name) don't exist yet.

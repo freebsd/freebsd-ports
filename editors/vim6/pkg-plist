@@ -3,7 +3,7 @@ bin/ctags
 bin/xxd
 bin/etags
 @comment bin/ex
-bin/gex
+@comment bin/gex
 bin/gview
 bin/gvim
 bin/rgview
@@ -21,10 +21,13 @@ share/vim/doc/cmdline.txt
 share/vim/doc/digraph.txt
 share/vim/doc/editing.txt
 share/vim/doc/eval.txt
+share/vim/doc/farsi.txt
 share/vim/doc/gui.txt
 share/vim/doc/gui_x11.txt
+share/vim/doc/gui_w32.txt
 share/vim/doc/help.txt
 share/vim/doc/howto.txt
+share/vim/doc/if_ole.txt
 share/vim/doc/if_perl.txt
 share/vim/doc/if_python.txt
 share/vim/doc/index.txt
@@ -34,7 +37,16 @@ share/vim/doc/map.txt
 share/vim/doc/message.txt
 share/vim/doc/motion.txt
 share/vim/doc/options.txt
+share/vim/doc/os_amiga.txt
+share/vim/doc/os_archi.txt
+share/vim/doc/os_beos.txt
+share/vim/doc/os_dos.txt
+share/vim/doc/os_mac.txt
+share/vim/doc/os_mint.txt
+share/vim/doc/os_msdos.txt
+share/vim/doc/os_os2.txt
 share/vim/doc/os_unix.txt
+share/vim/doc/os_win32.txt
 share/vim/doc/pattern.txt
 share/vim/doc/quickfix.txt
 share/vim/doc/recover.txt
@@ -61,9 +73,11 @@ share/vim/syntax/amiga.vim
 share/vim/syntax/asm.vim
 share/vim/syntax/asn.vim
 share/vim/syntax/asmh8300.vim
+share/vim/syntax/atlas.vim
 share/vim/syntax/awk.vim
 share/vim/syntax/bib.vim
 share/vim/syntax/c.vim
+share/vim/syntax/cobol.vim
 share/vim/syntax/colortest.vim
 share/vim/syntax/cpp.vim
 share/vim/syntax/csh.vim
@@ -72,12 +86,14 @@ share/vim/syntax/diff.vim
 share/vim/syntax/dosbatch.vim
 share/vim/syntax/dosini.vim
 share/vim/syntax/dracula.vim
+share/vim/syntax/eiffel.vim
 share/vim/syntax/elmfilt.vim
 share/vim/syntax/expect.vim
 share/vim/syntax/esqlc.vim
 share/vim/syntax/fortran.vim
 share/vim/syntax/gp.vim
 share/vim/syntax/help.vim
+share/vim/syntax/hitest.vim
 share/vim/syntax/html.vim
 share/vim/syntax/idl.vim
 share/vim/syntax/inform.vim
@@ -91,6 +107,7 @@ share/vim/syntax/mail.vim
 share/vim/syntax/make.vim
 share/vim/syntax/maple.vim
 share/vim/syntax/matlab.vim
+share/vim/syntax/mib.vim
 share/vim/syntax/model.vim
 share/vim/syntax/modula2.vim
 share/vim/syntax/muttrc.vim
@@ -98,6 +115,7 @@ share/vim/syntax/nosyntax.vim
 share/vim/syntax/objc.vim
 share/vim/syntax/pascal.vim
 share/vim/syntax/perl.vim
+share/vim/syntax/pike.vim
 share/vim/syntax/pod.vim
 share/vim/syntax/postscr.vim
 share/vim/syntax/pov.vim
