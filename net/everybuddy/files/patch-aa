@@ -1,11 +1,11 @@
---- configure	Sun Nov 12 20:26:46 2000
-+++ configure.orig	Mon Nov 13 22:26:38 2000
-@@ -2407,10 +2407,10 @@
+--- configure.orig	Sun Jan 21 00:36:28 2001
++++ configure	Sun Jan 21 00:37:27 2001
+@@ -2415,10 +2415,10 @@
  CFLAGS="$CFLAGS -I/usr/local/include -I/opt/include" 
  
  EB_CFLAGS="$CFLAGS -I../"
--EB_LIBS="$LIBS -L../libmsn -lmsn -L../libyahoo -lyahoo -L../libproxy -lproxy -L../libtoc -ltoc -lpthread -L../libicq -licq"
-+EB_LIBS="$LIBS -L../libmsn -lmsn -L../libyahoo -lyahoo -L../libproxy -lproxy -L../libtoc -ltoc -pthread -L../libicq -licq"
+-EB_LIBS="$LIBS -L../libmsn -lmsn -L../libyahoo -lyahoo -L../libproxy -lproxy -L../libtoc -ltoc -lpthread -L../libicq -licq -L../libjabber -lEBjabber -ljabber -L../libxode -lxode"
++EB_LIBS="$LIBS -L../libmsn -lmsn -L../libyahoo -lyahoo -L../libproxy -lproxy -L../libtoc -ltoc -pthread -L../libicq -licq -L../libjabber -lEBjabber -ljabber -L../libxode -lxode"
  EB_LDADD="$LDADD"
  
 -EB_CFLAGS="$EB_CFLAGS -D_REENTRANT -Wall -g "

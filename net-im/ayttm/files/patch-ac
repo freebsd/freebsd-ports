@@ -1,10 +1,18 @@
---- src/main.c.orig	Mon Nov 13 22:28:40 2000
-+++ src/main.c	Mon Nov 13 22:29:36 2000
-@@ -166,6 +166,7 @@
-     } 
- 
- #endif
+--- src/main.c.orig	Sun Jan 21 00:47:19 2001
++++ src/main.c	Sun Jan 21 00:48:42 2001
+@@ -130,6 +130,7 @@
+ #if defined( _WIN32 )
+ 	strcpy(config_dir, "C:\\.everybuddy\\");
+ #else
 +	gtk_set_locale ();
- 	g_snprintf(buff, 1024, "%s/.everybuddy",getenv("HOME"));
+ 	g_snprintf(config_dir, 1024, "%s/.everybuddy/",getenv("HOME"));
+ #endif
+ 
+@@ -263,6 +264,7 @@
+ 		close(sock);
+ 		exit(ret);
+ 	}
++	gtk_set_locale ();
+ 	g_snprintf(buff, 1024, "%s",config_dir);
  	services_init();
  		
