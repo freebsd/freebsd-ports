@@ -1,28 +1,18 @@
 @cwd /usr/X11R6
-@mode 555
 bin/clock
 bin/cmdtool
 bin/olwm
 bin/olwmslave
-bin/props
 bin/shelltool
-bin/textedit
-@mode 555
 lib/help
-@mode 444
 lib/help/clock.info
-lib/help/ftptool.info
-lib/help/olvwm.info
 lib/help/olwm.info
-lib/help/props.info
-lib/help/textedit.info
 lib/help/textsw.info
 lib/help/ttysw.info
 lib/help/workspace.info
 lib/help/xview.info
-man/man1/clock.1x
-man/man1/cmdtool.1x
-man/man1/olwm.1x
-man/man1/olwmslave.1x
-man/man1/shelltool.1x
-man/man1/textedit.1x
+man/man1/clock.1.gz
+man/man1/cmdtool.1.gz
+man/man1/olwm.1.gz
+man/man1/olwmslave.1.gz
+man/man1/shelltool.1.gz
