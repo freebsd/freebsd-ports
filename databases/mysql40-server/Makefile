@@ -22,15 +22,16 @@ MASTER_SITES=	ftp://planetmirror.com/pub/mysql/Downloads/MySQL-4.0/ \
 		ftp://ftp.free.fr/pub/MySQL/Downloads/MySQL-4.0/
 PKGNAMESUFFIX?=	-server
 
-MAINTAINER=	sysadmin@alexdupre.com
+MAINTAINER=	ale@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
 SLAVEDIRS=	databases/mysql40-client
+PKGINSTALL?=	${WRKDIR}/pkg-install
 DB_DIR?=	/var/db/mysql
+USE_GNOME=	lthack
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
 
-GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--localstatedir=${DB_DIR} \
 		--without-debug \
@@ -79,6 +80,9 @@ CONFIGURE_ARGS+=-L${LOCALBASE}/lib -llthread -llgcc_r -llstdc++ -llsupc++'
 LIB_DEPENDS+=	lthread.2:${PORTSDIR}/devel/linuxthreads
 CONFIGURE_ARGS+=-L${LOCALBASE}/lib -llthread -llgcc_r'
 .endif
+.else
+CONFIGURE_ARGS+=--with-named-thread-libs=${PTHREAD_LIBS}
+CFLAGS+=	${PTHREAD_CFLAGS}
 .endif
 
 .if ${OSVERSION} < 500000
@@ -103,7 +107,8 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-DBD-mys
 
 CONFLICTS=	mysql-server-3.* mysql-server-4.[1-9].* mysql-server-5.*
 
-PLIST_SUB=	MYSQL_VERSION=${PORTVERSION}
+PLIST_SUB=	DB_DIR=${DB_DIR} \
+		MYSQL_VERSION=${PORTVERSION}
 
 ONLY_FOR_ARCHS=	i386 alpha sparc64
 
@@ -135,7 +140,9 @@ pre-fetch:
 post-patch:
 	@${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = include @sql_server_dirs@ scripts support-files|g" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|install: install-am|install:|g" ${WRKSRC}/include/Makefile.in
-	@${FIND} ${WRKSRC} -name configure | ${XARGS} ${REINPLACE_CMD} "s|-pthread|${PTHREAD_LIBS}|g"
+
+post-build:
+	@${SED} "s|%%DB_DIR%%|${DB_DIR}|g" ${PKGDIR}/pkg-install > ${WRKDIR}/pkg-install
 
 .if defined(WITH_OPENSSL) && defined(BUILD_STATIC)
 pre-configure:
@@ -150,9 +157,9 @@ post-install:
 .endif
 .if !exists(${DB_DIR}) || (defined(OVERWRITE_DB) && ${OVERWRITE_DB:L} != "no")
 .if defined(SKIP_DNS_CHECK)
-	${PREFIX}/bin/mysql_install_db --force
+	${PREFIX}/bin/mysql_install_db --force --ldata=${DB_DIR}
 .else
-	${PREFIX}/bin/mysql_install_db
+	${PREFIX}/bin/mysql_install_db --ldata=${DB_DIR}
 .endif
 .endif
 	@${SETENV} DB_DIR=${DB_DIR} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
@@ -184,7 +191,6 @@ CONFIGURE_ARGS+=--without-server
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = include @sql_client_dirs@ tests man|g" ${WRKSRC}/Makefile.in
-	@${FIND} ${WRKSRC} -name configure | ${XARGS} ${REINPLACE_CMD} "s|-pthread|${PTHREAD_LIBS}|g"
 
 post-install:
 	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/mysql-client.sh > ${PREFIX}/etc/rc.d/000.mysql-client.sh
