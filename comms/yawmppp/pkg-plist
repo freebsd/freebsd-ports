@@ -1,0 +1,12 @@
+bin/yawmppp
+bin/yawmppp.log
+bin/yawmppp.pref
+bin/yawmppp.thin
+doc/yawmppp-%%PORTVERSION%%/CHANGELOG
+doc/yawmppp-%%PORTVERSION%%/COPYING
+doc/yawmppp-%%PORTVERSION%%/FAQ
+doc/yawmppp-%%PORTVERSION%%/INSTALL
+doc/yawmppp-%%PORTVERSION%%/README
+share/icons/pppdoc.xpm
+share/icons/stepphone.xpm
+@dirrm doc/yawmppp-%%PORTVERSION%%
