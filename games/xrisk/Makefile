@@ -8,7 +8,7 @@
 PORTNAME=	xrisk
 PORTVERSION=	2.15
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.pvv.unit.no/pvv/games/
+MASTER_SITES=	ftp://ftp.pvv.org/pvv/games/
 
 MAINTAINER=	ports@FreeBSD.org
 
