@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	luma
-PORTVERSION=	2.0
+PORTVERSION=	2.0.1
 CATEGORIES=	sysutils net-mgmt
-# MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITES=	http://home.tu-clausthal.de/~ifwd/luma/
-# MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+# MASTER_SITES=	http://home.tu-clausthal.de/~ifwd/luma/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	alecn2002@yandex.ru
 COMMENT=	A graphical tool for accessing and managing LDAP servers
