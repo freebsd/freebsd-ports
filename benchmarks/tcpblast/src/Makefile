@@ -1,6 +1,6 @@
 PROG=		tcpblast
 SRCS=		tcpblast.c
 NOMAN=		yes
-BINDIR=		/usr/local/bin
+BINDIR=		${PREFIX}/bin
 
 .include <bsd.prog.mk>
