@@ -13,8 +13,7 @@ DISTNAME=	GridPix-${PORTVERSION}
 
 MAINTAINER=	asami@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libpnm.a:${PORTSDIR}/graphics/netpbm \
-		${LOCALBASE}/include/shhopt.h:${PORTSDIR}/devel/libshhopt
+BUILD_DEPENDS=	${LOCALBASE}/lib/libpnm.a:${PORTSDIR}/graphics/netpbm
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 # create necessary directories -- don't want to depend on an http
