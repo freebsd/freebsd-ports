@@ -22,6 +22,7 @@
 
 use vars qw/ $opt_a $opt_b $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
 use Getopt::Std;
+use IPC::Open2;
 #use strict;
 
 my ($err, $warn);
@@ -60,19 +61,25 @@ my $automan = 1;
 my $manchapters = '123456789ln';
 my $localbase = '/usr/local';
 
-my @lang_cat = split(/\s+/, <<EOF);
-chinese german japanese korean russian vietnamese
-EOF
-my @lang_pref = split(/\s+/, <<EOF);
-de ja ko ru vi zh
-EOF
-my $re_lang_pref = '(' . join('|', @lang_pref) . ')';
+my %lang_pref = qw(
+	chinese		zh
+	french		fr
+	german		de
+	hebrew		iw
+	japanese	ja
+	korean		ko
+	russian		ru
+	vietnamese	vi
+);
+my @lang_cat = keys %lang_pref;
+my @lang_pref = values %lang_pref;
+my $re_lang_pref = '(' . join('|', @lang_pref) . ')-';
 
 my ($prog) = ($0 =~ /([^\/]+)$/);
 sub usage {
 	print STDERR <<EOF;
 usage: $prog [-abctvN] [-B#] [port_directory]
-	-a	additional check for scripts/* and pkg/*
+	-a	additional check for scripts/* and pkg-*
 	-b	warn \$(VARIABLE)
 	-c	committer mode
 	-v	verbose mode
@@ -146,17 +153,16 @@ if (! -d $portdir) {
 chdir "$portdir" || die "$portdir: $!";
 
 # get make vars
-my $cmd = "make $makeenv MASTER_SITE_BACKUP=''";
-my @varlist =  (split(/\s+/, <<EOF));
-PORTNAME PORTVERSION PORTREVISION PORTEPOCH PKGNAME PKGNAMEPREFIX
-PKGNAMESUFFIX DISTNAME DISTFILES CATEGORIES MASTERDIR MAINTAINER
-MASTER_SITES WRKDIR WRKSRC NO_WRKSUBDIR PATCHDIR SCRIPTDIR FILESDIR
-PKGDIR COMMENT DESCR PLIST MD5_FILE .CURDIR
-EOF
+my @varlist =  qw(
+	PORTNAME PORTVERSION PORTREVISION PORTEPOCH PKGNAME PKGNAMEPREFIX
+	PKGNAMESUFFIX DISTNAME DISTFILES CATEGORIES MASTERDIR MAINTAINER
+	MASTER_SITES WRKDIR WRKSRC NO_WRKSUBDIR PATCHDIR SCRIPTDIR FILESDIR
+	PKGDIR COMMENT DESCR PLIST PKGINSTALL PKGDEINSTALL PKGREQ PKGMESSAGE
+	MD5_FILE .CURDIR INSTALLS_SHLIB
+);
 
-for (@varlist) {
-	$cmd .= " -V $_";
-}
+my $cmd = join(' -V ', "make $makeenv MASTER_SITE_BACKUP=''", @varlist);
+
 my %makevar;
 my $i = 0;
 for (split(/\n/, `$cmd`)) {
@@ -176,182 +182,77 @@ my %manlangs = ();
 
 my %predefined = ();
 # historical, no longer in FreeBSD's bsd.sites.mk
-foreach my $i (split("\n", <<EOF)) {
-GNU 		ftp://prep.ai.mit.edu/pub/gnu/
-GNU		ftp://wuarchive.wustl.edu/systems/gnu/
-GNU		ftp://ftp.ecrc.net/pub/gnu/
-PERL_CPAN	ftp://ftp.cdrom.com/pub/perl/CPAN/modules/by-module/
-SUNSITE		ftp://sunsite.unc.edu/pub/Linux/
-SUNSITE		ftp://ftp.funet.fi/pub/mirrors/sunsite.unc.edu/pub/Linux/
-SUNSITE		ftp://ftp.infomagic.com/pub/mirrors/linux/sunsite/
-TEX_CTAN	ftp://ftp.cdrom.com/pub/tex/ctan/
-TEX_CTAN	ftp://ftp.tex.ac.uk/public/ctan/tex-archive/
-GNOME		ftp://ftp.cybertrails.com/pub/gnome/
-AFTERSTEP	ftp://ftp.alpha1.net/pub/mirrors/ftp.afterstep.org/
-AFTERSTEP	ftp://casper.yz.yamagata-u.ac.jp/pub/X11/apps/afterstep/
-WINDOWMAKER	ftp://ftp.io.com/pub/
+foreach my $i (split(/\n/, <<EOF)) {
+GNU 		ftp://prep.ai.mit.edu/pub/gnu/%SUBDIR%/
+GNU			ftp://wuarchive.wustl.edu/systems/gnu/%SUBDIR%/
+GNU			ftp://ftp.ecrc.net/pub/gnu/%SUBDIR%/
+PERL_CPAN	ftp://ftp.cdrom.com/pub/perl/CPAN/modules/by-module/%SUBDIR%/
+SUNSITE		ftp://sunsite.unc.edu/pub/Linux/%SUBDIR%/
+SUNSITE		ftp://ftp.funet.fi/pub/mirrors/sunsite.unc.edu/pub/Linux/%SUBDIR%/
+SUNSITE		ftp://ftp.infomagic.com/pub/mirrors/linux/sunsite/%SUBDIR%/
+TEX_CTAN	ftp://ftp.cdrom.com/pub/tex/ctan/%SUBDIR%/
+TEX_CTAN	ftp://ftp.tex.ac.uk/public/ctan/tex-archive/%SUBDIR%/
+GNOME		ftp://ftp.cybertrails.com/pub/gnome/%SUBDIR%/
+AFTERSTEP	ftp://ftp.alpha1.net/pub/mirrors/ftp.afterstep.org/%SUBDIR%/
+AFTERSTEP	ftp://casper.yz.yamagata-u.ac.jp/pub/X11/apps/afterstep/%SUBDIR%/
+WINDOWMAKER	ftp://ftp.io.com/pub/%SUBDIR%/
 EOF
 	my ($j, $k) = split(/\t+/, $i);
 	$predefined{$k} = $j;
 }
 
-# This list should be in sync with bsd.sites.mk
-foreach my $i (split("\n", <<EOF)) {
-XCONTRIB	ftp://crl.dec.com/pub/X11/contrib/
-XCONTRIB	ftp://uiarchive.uiuc.edu/pub/X11/contrib/
-XCONTRIB	ftp://ftp.gwdg.de/pub/x11/x.org/contrib/
-XCONTRIB	ftp://ftp.duke.edu/pub/X11/contrib/
-XCONTRIB	ftp://ftp.x.org/contrib/
-XCONTRIB	ftp://ftp.sunet.se/pub/X11/contrib/
-XCONTRIB	ftp://ftp.kddlabs.co.jp/X11/contrib/
-XCONTRIB	ftp://mirror.xmission.com/X/contrib/
-XCONTRIB	ftp://ftp2.x.org/contrib/
-XCONTRIB	ftp://sunsite.sut.ac.jp/pub/archives/X11/contrib/
-XCONTRIB	ftp://ftp.is.co.za/x/contrib/
-XCONTRIB	ftp://ftp.sunet.se/pub/X11/contrib/
-XCONTRIB	ftp://ftp.huji.ac.il/mirror/X11/contrib/
-XFREE	ftp://ftp.xfree86.org/pub/XFree86/
-XFREE	ftp://ftp.freesoftware.com/pub/XFree86/
-XFREE	ftp://ftp.lip6.fr/pub/X11/XFree86/XFree86-
-XFREE	ftp://ftp.cs.tu-berlin.de/pub/X/XFree86/
-XFREE	ftp://sunsite.doc.ic.ac.uk/packages/XFree86/
-XFREE	http://ftp-stud.fht-esslingen.de/pub/Mirrors/ftp.xfree86.org/XFree86/
-GNU	ftp://ftp.gnu.org/gnu/
-GNU	ftp://ftp.freesoftware.com/pub/gnu/
-GNU	ftp://ftp.digital.com/pub/GNU/
-GNU	ftp://ftp.uu.net/archive/systems/gnu/
-GNU	ftp://ftp.de.uu.net/pub/gnu/
-GNU	ftp://ftp.sourceforge.net/pub/mirrors/gnu/
-GNU	ftp://ftp.funet.fi/pub/gnu/prep/
-GNU	ftp://ftp.leo.org/pub/comp/os/unix/gnu/
-GNU	ftp://ftp.digex.net/pub/gnu/
-GNU	ftp://ftp.wustl.edu/systems/gnu/
-GNU	ftp://ftp.kddlabs.co.jp/pub/gnu/
-PERL_CPAN	ftp://ftp.digital.com/pub/plan/perl/CPAN/modules/by-module/
-PERL_CPAN	ftp://ftp.cpan.org/CPAN/modules/by-module/
-PERL_CPAN	ftp://ftp.freesoftware.com/pub/perl/CPAN/modules/by-module/
-PERL_CPAN	ftp://ftp.sourceforge.net/pub/mirrors/CPAN/modules/by-module/
-PERL_CPAN	ftp://ftp.funet.fi/pub/languages/perl/CPAN/modules/by-module/
-PERL_CPAN	ftp://bioinfo.weizmann.ac.il/pub/software/perl/CPAN/modules/by-module/
-PERL_CPAN	ftp://csociety-ftp.ecn.purdue.edu/archive0/CPAN/modules/by-module/
-PERL_CPAN	ftp://ftp.kddlabs.co.jp/lang/perl/CPAN/modules/by-module/
-PERL_CPAN	ftp://ftp.sunet.se/pub/lang/perl/CPAN/modules/by-module/
-PERL_CPAN	ftp://ftp.auckland.ac.nz/pub/perl/CPAN/modules/by-module/
-PERL_CPAN	ftp://mirror.hiwaay.net/CPAN/modules/by-module/
-PERL_CPAN	ftp://ftp.isu.net.sa/pub/CPAN/modules/by-module/
-PERL_CPAN	ftp://ftp.bora.net/pub/CPAN/modules/by-module/
-PERL_CPAN	ftp://uiarchive.uiuc.edu/pub/lang/perl/CPAN/modules/by-module/
-PERL_CPAN	ftp://ftp.ucr.ac.cr/pub/Unix/CPAN/modules/by-module/
-PERL_CPAN	http://www.cpan.dk/CPAN/modules/by-module/
-PERL_CPAN	ftp://ftp.cs.colorado.edu/pub/perl/CPAN/modules/by-module/
-PERL_CPAN	ftp://cpan.pop-mg.com.br/pub/CPAN/modules/by-module/
-PERL_CPAN	ftp://ftp.is.co.za/programming/perl/CPAN/modules/by-module/
-TEX_CTAN	ftp://ftp.freesoftware.com/pub/tex/ctan/
-TEX_CTAN	ftp://wuarchive.wustl.edu/packages/TeX/
-TEX_CTAN	ftp://ftp.funet.fi/pub/TeX/CTAN/
-TEX_CTAN	ftp://ctan.unsw.edu.au/tex-archive/
-TEX_CTAN	ftp://ftp.cise.ufl.edu/tex-archive/
-TEX_CTAN	ftp://ftp.tex.ac.uk/tex-archive/
-TEX_CTAN	ftp://shadowmere.student.utwente.nl/pub/CTAN/
-TEX_CTAN	ftp://ftp.kddlabs.co.jp/CTAN/
-TEX_CTAN	ftp://sunsite.auc.dk/pub/tex/ctan/
-TEX_CTAN	ftp://ctan.tug.org/tex-archive/
-TEX_CTAN	ftp://ftp.chg.ru/pub/TeX/CTAN/
-TEX_CTAN	ftp://ftp.dante.de/tex-archive/
-SUNSITE	ftp://metalab.unc.edu/pub/Linux/
-SUNSITE	ftp://ftp.freesoftware.com/pub/linux/sunsite/
-SUNSITE	ftp://ftp.sourceforge.net/pub/mirrors/metalab/Linux/
-SUNSITE	ftp://ftp.sun.ac.za/pub/linux/sunsite/
-SUNSITE	ftp://ftp.nuri.net/pub/Linux/
-SUNSITE	ftp://ftp.kddlabs.co.jp//Linux/metalab.unc.edu/
-SUNSITE	ftp://ftp.jaring.my/pub/Linux/
-SUNSITE	ftp://ftp.funet.fi/pub/Linux/mirrors/metalab/
-SUNSITE	ftp://ftp.archive.de.uu.net/pub/systems/Linux/Mirror.SunSITE/
-SUNSITE	ftp://sunsite.doc.ic.ac.uk/packages/linux/sunsite.unc-mirror/
-SUNSITE	ftp://uiarchive.cso.uiuc.edu/pub/systems/linux/sunsite/
-SUNSITE	ftp://ftp.cs.umn.edu/pub/Linux/sunsite/
-KDE	ftp://ftp.us.kde.org/pub/kde/
-KDE	ftp://ftp.sourceforge.net/pub/sourceforge/kde/
-KDE	ftp://ftp.kde.org/pub/kde/
-KDE	ftp://ftp.tuniv.szczecin.pl/pub/kde/
-KDE	ftp://ftp.kddlabs.co.jp/X11/kde/
-KDE	ftp://ftp2.sinica.edu.tw/pub5/wmgrs/kde/
-KDE	ftp://ftp.chg.ru/pub/X11/kde/
-KDE	ftp://ftp.synesis.net/pub/mirrors/kde/
-KDE	ftp://gd.tuwien.ac.at/hci/kde/
-KDE	ftp://ftp.fu-berlin.de/pub/unix/X11/gui/kde/
-KDE	ftp://ftp.twoguys.org/pub/kde/
-KDE	ftp://ftp.dataplus.se/pub/linux/kde/
-KDE	ftp://ftp.fu-berlin.de/pub/unix/X11/gui/kde/
-COMP_SOURCES	ftp://gatekeeper.dec.com/pub/usenet/comp.sources.
-COMP_SOURCES	ftp://ftp.kddlabs.co.jp/Unix/com.sources.
-COMP_SOURCES	ftp://ftp.uu.net/usenet/comp.sources.
-COMP_SOURCES	ftp://ftp.funet.fi/pub/archive/comp.sources.
-COMP_SOURCES	ftp://rtfm.mit.edu/pub/usenet/comp.sources.
-GNOME	ftp://ftp.gnome.org/pub/GNOME/
-GNOME	ftp://download.sourceforge.net/pub/mirrors/gnome/
-GNOME	ftp://rpmfind.net/linux/gnome.org/
-GNOME	ftp://ftp.mirror.ac.uk/sites/ftp.gnome.org/pub/GNOME/
-GNOME	ftp://slave.opensource.captech.com/gnome/
-GNOME	ftp://ftp.snoopy.net/pub/mirrors/GNOME/
-GNOME	ftp://ftp.kddlabs.co.jp/X11/GNOME/
-GNOME	ftp://ftp.sunet.se/pub/X11/GNOME/
-GNOME	ftp://ftp.cybertrails.com/pub/gnome/
-GNOME	ftp://ftp2.sinica.edu.tw/pub5/gnome/
-GNOME	ftp://gnomeftp.blue-labs.org/pub/gnome/
-GNOME	ftp://ftp.informatik.uni-bonn.de/pub/os/unix/gnome/
-GNOME	ftp://ftp.tas.gov.au/gnome/
-AFTERSTEP	ftp://ftp.afterstep.org/
-AFTERSTEP	ftp://ftp.digex.net/pub/X11/window-managers/afterstep/
-AFTERSTEP	ftp://ftp.kddlabs.co.jp/X11/AfterStep/
-AFTERSTEP	ftp://ftp.math.uni-bonn.de/pub/mirror/ftp.afterstep.org/pub/
-AFTERSTEP	ftp://ftp.dti.ad.jp/pub/X/AfterStep/
-WINDOWMAKER	ftp://ftp.windowmaker.org/pub/
-WINDOWMAKER	ftp://ftp.goldweb.com.au/pub/WindowMaker/
-WINDOWMAKER	ftp://ftp.kddlabs.co.jp/X11/window_managers/windowmaker/
-WINDOWMAKER	ftp://ftp.ameth.org/pub/mirrors/ftp.windowmaker.org/
-WINDOWMAKER	ftp://ftp.minet.net/pub/windowmaker/
-WINDOWMAKER	ftp://ftp.dti.ad.jp/pub/X/WindowMaker/
-PORTS_JP	ftp://ports.jp.FreeBSD.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/
-PORTS_JP	ftp://ftp4.jp.FreeBSD.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/
-PORTS_JP	ftp://ftp.ics.es.osaka-u.ac.jp/pub/mirrors/FreeBSD-jp/ports-jp/LOCAL_PORTS/
-TCLTK	ftp://ftp.scriptics.com/pub/tcl/
-TCLTK	ftp://mirror.neosoft.com/pub/tcl/mirror/ftp.scriptics.com/
-TCLTK	ftp://sunsite.utk.edu/pub/tcl/
-TCLTK	ftp://ftp.funet.fi/pub/languages/tcl/tcl/
-TCLTK	ftp://ftp.uu.net/languages/tcl/
-TCLTK	ftp://ftp.kddlabs.co.jp/lang/tcl/ftp.scriptics.com/
-TCLTK	ftp://ftp.cs.tu-berlin.de/pub/tcl/distrib/
-TCLTK	ftp://ftp.srcc.msu.su/mirror/ftp.scriptics.com/pub/tcl/
-TCLTK	ftp://ftp.lip6.fr/pub/tcl/distrib/
-SOURCEFORGE	ftp://download.sourceforge.net/pub/sourceforge/
-SOURCEFORGE	http://download.sourceforge.net/
-SOURCEFORGE	ftp://ftp.kddlabs.co.jp/sourceforge/
-RUBY	ftp://ftp.netlab.co.jp/pub/lang/ruby/
-RUBY	ftp://ftp.TokyoNet.AD.JP/pub/misc/ruby/
-RUBY	ftp://ftp.iij.ad.jp/pub/lang/ruby/
-RUBY	ftp://blade.nagaokaut.ac.jp/pub/lang/ruby/
-RUBY	ftp://ftp.krnet.ne.jp/pub/ruby/
-RUBY	ftp://mirror.nucba.ac.jp/mirror/ruby/
-THEMES	ftp://ftp.themes.org/pub/themes/
-THEMES	ftp://ftp.tuwien.ac.at/opsys/linux/themes.org/
+# Read bsd.sites.mk
+$sites_mk = "$portsdir/Mk/bsd.sites.mk";
+open(MK, $sites_mk) || die "$sites_mk: $!";
+my @site_groups = grep($_ = /^MASTER_SITE_(\w+)/ && $1, <MK>);
+close(MK);
+
+my $cmd = join(' -V MASTER_SITE_', "make $makeenv -f - all", @site_groups);
+
+my $i = 0;
+
+open2(IN, OUT, $cmd);
+
+print OUT <<EOF;
+all:
+	# do nothing
+
+.include "$sites_mk"
 EOF
-	my ($j, $k) = split(/\t+/, $i);
-	$predefined{$k} = $j;
+
+close(OUT);
+
+while (<IN>) {
+	my $g = $site_groups[$i];
+	for my $s (split()) {
+		$predefined{$s} = $g;
+	}
+	$i++;
 }
+
+close(IN);
 
 #
 # check for files.
 #
 my @checker = ($makevar{COMMENT}, $makevar{DESCR}, 'Makefile', $makevar{MD5_FILE});
-my %checker = ($makevar{COMMENT}, 'checkdescr', $makevar{DESCR}, 'checkdescr',
-		'Makefile', 'checkmakefile', $makevar{MD5_FILE}, 'TRUE');
+my %checker = (
+			   $makevar{COMMENT} => 'checkdescr',
+			   $makevar{DESCR} => 'checkdescr',
+			   'Makefile' => 'checkmakefile',
+			   $makevar{MD5_FILE} => 'TRUE'
+			  );
 if ($extrafile) {
-	foreach my $i ((<scripts/*>, <pkg/*>)) {
+	my @files = (
+				 <$makevar{SCRIPTDIR}/*>,
+				 @makevar{COMMENT,DESCR,PLIST,PKGINSTALL,PKGDEINSTALL,PKGREQ,PKGMESSAGE}
+				);
+
+	foreach my $i (@files) {
 		next if (! -T $i);
 		next if (defined $checker{$i});
-		if ($i =~ /pkg\/PLIST$/
-		 || ($multiplist && $i =~ /pkg\/PLIST/)) {
+		if ($i =~ /\bpkg-plist$/
+		 || ($multiplist && $i =~ /\bpkg-plist/)) {
 			unshift(@checker, $i);
 			$checker{$i} = 'checkplist';
 		} else {
@@ -360,7 +261,7 @@ if ($extrafile) {
 		}
 	}
 }
-foreach my $i (<patches/patch-??>) {
+foreach my $i (<$makevar{PATCHDIR}/patch-*>) {
 	next if (! -T $i);
 	next if (defined $checker{$i});
 	push(@checker, $i);
@@ -373,7 +274,7 @@ foreach my $i (@checker) {
 	} else {
 		my $proc = $checker{$i};
 		&$proc($i) || &perror("Cannot open the file $i\n");
-		if ($i !~ /^patches\//) {
+		if ($i !~ /^files\/patch-/) {
 			&checklastline($i)
 				|| &perror("Cannot open the file $i\n");
 		}
@@ -402,7 +303,7 @@ if ($err || $warn) {
 exit $err;
 
 #
-# pkg/COMMENT, pkg/DESCR
+# pkg-comment, pkg-descr
 #
 sub checkdescr {
 	my($file) = @_;
@@ -415,9 +316,10 @@ sub checkdescr {
 
 	open(IN, "< $file") || return 0;
 	while (<IN>) {
-		$linecnt++;
-		$longlines++ if ($maxchars{$file} < length(chomp($_)));
 		$tmp .= $_;
+		chomp || &perror("WARN: $file should terminate in '\n'.");
+		$linecnt++;
+		$longlines++ if ($maxchars{$file} < length);
 	}
 	if ($linecnt > $maxlines{$file}) {
 		&perror("WARN: $file $errmsg{$file}".
@@ -434,7 +336,7 @@ sub checkdescr {
 			"other local characters.  $file should be ".
 			"plain ascii file.");
 	}
-	if ($file =~ m/DESCR/ && $tmp =~ m,http://,) {
+	if ($file =~ /\bpkg-descr/ && $tmp =~ m,http://,) {
 		my $has_url = 0;
 		my $has_www = 0;
 		foreach my $line (grep($_ =~ "http://", split(/\n+/, $tmp))) {
@@ -448,16 +350,16 @@ sub checkdescr {
 			&perror("FATAL: $file: contains a URL but no WWW:");
 		}
 	}
-	if ($file =~ m/COMMENT/) {
-		if (($tmp !~ /^["0-9A-Z]/) || ($tmp =~ m/\.$/)) {
-			&perror("WARN: pkg/COMMENT should begin with a capital, and end without a period");
+	if ($file =~ /\bpkg-comment/) {
+		if (($tmp !~ /^["0-9A-Z]/) || ($tmp =~ m/\.$/)) { #"
+			&perror("WARN: pkg-comment should begin with a capital, and end without a period");
 		}
 	}
 	close(IN);
 }
 
 #
-# pkg/PLIST
+# pkg-plist
 #
 sub checkplist {
 	my($file) = @_;
@@ -501,22 +403,27 @@ sub checkplist {
 				$inforemoveseen = $.;
 				push(@unexec_info, $1);
 			} elsif ($_ =~ /^\@(exec|unexec)/) {
-				if ($ldconfigwithtrue
-				 && /ldconfig/
-				 && !/\/usr\/bin\/true/) {
-					&perror("FATAL: $file $.: ldconfig ".
-						"must be used with ".
-						"\"||/usr/bin/true\".");
+				if (/ldconfig/) {
+					if ($ldconfigwithtrue
+					 && !/\/usr\/bin\/true/) {
+						&perror("FATAL: $file $.: ldconfig ".
+							"must be used with ".
+							"\"||/usr/bin/true\".");
+					}
+				&perror("WARN: $file $.: possible ".
+					"direct use of ldconfig ".
+					"in PLIST found. use ".
+					"INSTALLS_SHLIB instead.");
 				}
 			} elsif ($_ =~ /^\@(comment)/) {
 				$rcsidseen++ if (/\$$rcsidstr[:\$]/);
 			} elsif ($_ =~ /^\@(owner|group)\s/) {
-				&perror("WARN: \@$1 should not be needed in PLIST");
+				&perror("WARN: \@$1 should not be needed in pkg-plist");
 			} elsif ($_ =~ /^\@(dirrm|option)/) {
 				; # no check made
 			} else {
 				&perror("WARN: $file $.: ".
-					"unknown PLIST directive \"$_\"");
+					"unknown pkg-plist directive \"$_\"");
 			}
 			next;
 		}
@@ -529,6 +436,11 @@ sub checkplist {
 		if ($_ =~ /\.la$/) {
 			&perror("WARN: $file $.: installing libtool archives, ".
 				"please use USE_LIBTOOL in Makefile if possible");
+		}
+
+		if ($_ =~ /\.so(\.\d+)?$/ && $makevar{INSTALLS_SHLIB} eq '') {
+			&perror("WARN: $file $.: installing shared libraries, ".
+				"please define INSTALLS_SHLIB as appropriate");
 		}
 
 		if ($_ =~ /^info\/.*info(-[0-9]+)?$/) {
@@ -591,10 +503,10 @@ sub checkplist {
 	foreach my $if (@infofile) {
 		next if ($if =~ m/info-/);
 		if ($exec_install !~ m/\%D\/\Q$if\E/) {
-			&perror("FATAL: you need an '\@exec install-info \%D/$if \%D/info/dir' line in your PLIST");
+			&perror("FATAL: you need an '\@exec install-info \%D/$if \%D/info/dir' line in your pkg-plist");
 		}
 		if ($unexec_install !~ m/\%D\/$if/) {
-			&perror("FATAL: you need an '\@unexec install-info --delete \%D/$if \%D/info/dir' line in your PLIST");
+			&perror("FATAL: you need an '\@unexec install-info --delete \%D/$if \%D/info/dir' line in your pkg-plist");
 		}
 	}
 
@@ -700,6 +612,7 @@ sub checkmakefile {
 	my($i, $j, $k, $l);
 	my @cat = ();
 	my $has_lang_cat = 0;
+	my $lang_pref = '';
 	my $tmp;
 	my $bogusdistfiles = 0;
 	my @varnames = ();
@@ -832,10 +745,10 @@ sub checkmakefile {
 	#
 	my %cmdnames = ();
 	print "OK: checking direct use of command names.\n" if ($verbose);
-	foreach my $i (split(/\s+/, <<EOF)) {
+	foreach my $i (qw(
 awk basename cat chmod chown cp echo expr false gmake grep gzcat
 ldconfig ln md5 mkdir mv patch rm rmdir sed sh touch tr which xmkmf
-EOF
+	)) {
 		$cmdnames{$i} = "\$\{\U$i\E\}";
 	}
 	$cmdnames{'env'} = '${SETENV}';
@@ -847,7 +760,7 @@ EOF
 	# note that we leave the command as is, since we need to check the
 	# use of echo itself.
 	$j = $whole;
-	$j =~ s/([ \t][\@-]?)(echo|\$[\{\(]ECHO[\}\)]|\$[\{\(]ECHO_MSG[\}\)])[ \t]+("(\\'|\\"|[^"])*"|'(\\'|\\"|[^'])*')[ \t]*[;\n]/$1$2;/;
+	$j =~ s/([ \t][\@-]?)(echo|\$[\{\(]ECHO[\}\)]|\$[\{\(]ECHO_MSG[\}\)])[ \t]+("(\\'|\\"|[^"])*"|'(\\'|\\"|[^'])*')[ \t]*[;\n]/$1$2;/; #"
 	foreach my $i (keys %cmdnames) {
 		if ($j =~ /[ \t\/]$i[ \t\n;]/
 		 && $j !~ /\n[A-Z]+_TARGET[?+]?=[^\n]+$i/) {
@@ -990,36 +903,32 @@ EOF
 	$tmp = $sections[$idx++];
 
 	# check the order of items.
-	&checkorder('PORTNAME', $tmp, split(/\s+/, <<EOF));
+	&checkorder('PORTNAME', $tmp, qw(
 PORTNAME PORTVERSION PORTREVISION PORTEPOCH CATEGORIES MASTER_SITES
 MASTER_SITE_SUBDIR PKGNAMEPREFIX PKGNAMESUFFIX DISTNAME EXTRACT_SUFX
 DISTFILES DIST_SUBDIR EXTRACT_ONLY
-EOF
+	));
 
 	# check the items that has to be there.
 	$tmp = "\n" . $tmp;
 	print "OK: checking PORTNAME/PORTVERSION.\n" if ($verbose);
 	if ($tmp !~ /\nPORTNAME(.)?=/) {
 		&perror("FATAL: PORTNAME has to be there.") unless ($slaveport && $makevar{PORTNAME} ne '');
-	}
-	if ($1 ne '') {
-		&perror("WARN: PORTNAME has to be set by \"=\", ".
+	} elsif ($1 ne '') {
+		&perror("WARN: unless this is a master port, PORTNAME has to be set by \"=\", ".
 			"not by \"$1=\".") unless ($masterport);
 	}
 	if ($tmp !~ /\nPORTVERSION(.)?=/) {
 		&perror("FATAL: PORTVERSION has to be there.") unless ($slaveport && $makevar{PORTVERSION} ne '');
-	}
-	if ($1 ne '') {
-		&perror("WARN: PORTVERSION has to be set by \"=\", ".
+	} elsif ($1 ne '') {
+		&perror("WARN: unless this is a master port, PORTVERSION has to be set by \"=\", ".
 			"not by \"$1=\".") unless ($masterport);
 	}
 	print "OK: checking CATEGORIES.\n" if ($verbose);
-	if ($tmp !~ /\nCATEGORIES(.)?=[ \t]*/) {
+	if ($tmp !~ /\nCATEGORIES(.)?=/) {
 		&perror("FATAL: CATEGORIES has to be there.") unless ($slaveport && $makevar{CATEGORIES} ne '');
-	}
-	$i = $1;
-	if ($i ne '' && $i =~ /[^?+]/) {
-		&perror("WARN: CATEGORIES should be set by \"=\", \"?=\", or \"+=\", ".
+	} elsif (($i = $1) ne '' && $i =~ /[^?+]/) {
+		&perror("WARN: unless this is a master port, CATEGORIES should be set by \"=\", \"?=\", or \"+=\", ".
 			"not by \"$i=\".") unless ($masterport);
 	}
 
@@ -1033,6 +942,7 @@ EOF
 	# skip the first category specification if it's a language specific one.
 	if (grep($_ eq $cat[0], @lang_cat)) {
 		$has_lang_cat = 1;
+		$lang_pref = $lang_pref{$cat[0]};
 		shift @cat;
 	}
 	
@@ -1061,8 +971,10 @@ EOF
 		shift @cat;
 	
 		# any language specific one after non language specific ones?
-		if (grep(do { my $cat = $_; grep($_ eq $cat, @cat) }, @lang_cat)) {
+		my $cat;
+		if (grep(do { $cat = $_; grep($_ eq $cat, @cat) }, @lang_cat)) {
 			$has_lang_cat = 1;
+			$lang_pref = $lang_pref{$cat};
 			&perror("WARN: when you specify multiple categories, ".
 			"language specific category should come first.");
 		}
@@ -1121,7 +1033,7 @@ EOF
 		&perror("WARN: DISTNAME is \${PORTNAME}-\${PORTVERSION} by default, ".
 			"you don't need to define DISTNAME.");
 	}
-	if ($portname =~ /^$re_lang_pref-/) {
+	if ($portname =~ /^$re_lang_pref/) {
 		&perror("FATAL: language prefix is automatically".
 			" set by PKGNAMEPREFIX.".
 			" you must remove it from PORTNAME.");
@@ -1181,7 +1093,7 @@ EOF
 
 	# additional checks for committer.
 	if ($committer && $has_lang_cat) {
-		&perror("WARN: be sure to include country code \"$1-\" ".
+		&perror("WARN: be sure to include language code \"$lang_pref-\" ".
 			"in the module alias name.");
 	}
 
@@ -1201,11 +1113,11 @@ EOF
 		}
 	}
 
-	push(@varnames, split(/\s+/, <<EOF));
+	push(@varnames, qw(
 PORTNAME PORTVERSION PORTREVISION PORTEPOCH CATEGORIES MASTER_SITES
 MASTER_SITE_SUBDIR PKGNAMEPREFIX PKGNAMESUFFIX DISTNAME EXTRACT_SUFX
 DISTFILES EXTRACT_ONLY
-EOF
+	));
 
 	#
 	# section 3: PATCH_SITES/PATCHFILES(optional)
@@ -1239,9 +1151,9 @@ EOF
 		$idx++;
 	}
 
-	push(@varnames, split(/\s+/, <<EOF));
+	push(@varnames, qw(
 PATCH_SITES PATCHFILES PATCH_DIST_STRIP
-EOF
+	));
 
 	#
 	# section 4: MAINTAINER
@@ -1271,9 +1183,10 @@ EOF
 	$tmp = $sections[$idx];
 
 	# NOTE: EXEC_DEPENDS is obsolete, so it should not be listed.
-	@linestocheck = split(/\s+/, <<EOF);
+	@linestocheck = qw(
 LIB_DEPENDS BUILD_DEPENDS RUN_DEPENDS FETCH_DEPENDS DEPENDS DEPENDS_TARGET
-EOF
+	);
+
 	if ($tmp =~ /(LIB_|BUILD_|RUN_|FETCH_)?DEPENDS/) {
 		&checkearlier($file, $tmp, @varnames);
 
@@ -1456,7 +1369,7 @@ EOF
 	# check MAN[1-9LN]
 	print "OK: checking MAN[0-9LN].\n" if ($verbose);
 	foreach my $i (keys %plistmanall) {
-		print "OK: PLIST MAN$i=$plistmanall{$i}\n" if ($verbose);
+		print "OK: pkg-plist MAN$i=$plistmanall{$i}\n" if ($verbose);
 	}
 	foreach my $i (split(//, $manchapters)) {
 		if ($tmp =~ /MAN\U$i\E=\s*([^\n]*)\n/) {
@@ -1476,16 +1389,16 @@ EOF
 					&perror("FATAL: duplicated manpage ".
 						"entry $j: content of ".
 						"MAN$i will be automatically ".
-						"added to PLIST.");
+						"added to pkg-plist.");
 				} elsif (!$automan && !grep($_ eq $j, @pman)) {
 					&perror("WARN: manpage $j in $file ".
-						"MAN$i but not in PLIST.");
+						"MAN$i but not in pkg-plist.");
 				}
 			}
 			foreach my $j (@pman) {
-				print "OK: checking $j (PLIST)\n" if ($verbose);
+				print "OK: checking $j (pkg-plist)\n" if ($verbose);
 				if (!grep($_ eq $j, @mman)) {
-					&perror("WARN: manpage $j in PLIST ".
+					&perror("WARN: manpage $j in pkg-plist ".
 						"but not in $file MAN$i.");
 				}
 			}
@@ -1641,13 +1554,13 @@ sub abspathname {
 	my($pre);
 
 	# ignore parameter string to echo command
-	$str =~ s/[ \t][\@-]?(echo|\$[\{\(]ECHO[\}\)]|\$[\{\(]ECHO_MSG[\}\)])[ \t]+("(\\'|\\"|[^"])*"|'(\\'|\\"|[^"])*')[ \t]*[;\n]//;
+	$str =~ s/[ \t][\@-]?(echo|\$[\{\(]ECHO[\}\)]|\$[\{\(]ECHO_MSG[\}\)])[ \t]+("(\\'|\\"|[^"])*"|'(\\'|\\"|[^"])*')[ \t]*[;\n]//; #'
 
 	print "OK: checking direct use of full pathnames in $file.\n"
 		if ($verbose);
 	foreach my $s (split(/\n+/, $str)) {
 		$i = '';
-		if ($s =~ /(^|[ \t\@'"-])(\/[\w\d])/) {
+		if ($s =~ /(^|[ \t\@'"-])(\/[\w\d])/) { #'
 			# suspected pathnames are recorded.
 			$i = $2 . $';
 			$pre = $` . $1;
@@ -1659,7 +1572,7 @@ sub abspathname {
 		}
 		if ($i ne '') {
 			$i =~ s/\s.*$//;
-			$i =~ s/['"].*$//;
+			$i =~ s/['"].*$//; #'
 			$i = substr($i, 0, 20) . '...' if (20 < length($i));
 			&perror("WARN: possible use of absolute pathname ".
 				"\"$i\", in $file.") unless ($i =~ m,^/compat/,);
@@ -1699,16 +1612,18 @@ EOF
 
 sub is_predefined {
 	my($url) = @_;
-	my($site);
-	my($subdir);
-	if ($site = (grep($url =~ $_, keys %predefined))[0]) {
-		$url =~ /$site/;
-		$subdir = $';
-		$subdir =~ s/\/$//;
-		&perror("WARN: how about using ".
-			"\${MASTER_SITE_$predefined{$site}} with ".
-			"\"MASTER_SITE_SUBDIR=$subdir\", instead of \"$url\?");
-		return &TRUE;
+	my($site, $site_re);
+	my $subdir_re = quotemeta quotemeta '/%SUBDIR%/';
+	for my $site (keys %predefined) {
+		$site_re = quotemeta $site;
+		$site_re =~ s,$subdir_re,/(.*)/,;
+
+		if ($url =~ /$site_re/) {
+			&perror("WARN: how about using ".
+				"\"\${MASTER_SITE_$predefined{$site}}\" with ".
+				"\"MASTER_SITE_SUBDIR=$1\", instead of \"$url\"?");
+			return &TRUE;
+		}
 	}
 	undef;
 }
@@ -1726,10 +1641,14 @@ sub urlcheck {
 	&perror("FATAL: URL \"$url\" contains ".
 				"extra \":\".");
 	}
-	if ($osname == 'FreeBSD' && $url =~ m#(www.freebsd.org)/~.+/#i) {
+	if ($osname == 'FreeBSD' && $url =~ m#(www\.freebsd\.org)/~.+/#i) {
 		&perror("WARN: URL \"$url\", ".
 			"$1 should be ".
 			"people.FreeBSD.org");
 	}
 }
 sub TRUE {1;}
+
+# Local variables:
+# tab-width: 4
+# End:
