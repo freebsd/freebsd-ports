@@ -3,7 +3,7 @@
 # Date created:		25 July 1999
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/08/06 19:32:39 shige Exp $
 #
 
 MAINTAINER=	shige@FreeBSD.ORG
@@ -23,8 +23,6 @@ EMACS_LIBDIR_WITH_VER=	${EMACS_LIBDIR}
 
 # RUN_DEPENDS port name's suffix is '-common'.
 HAVE_COMMON_PORT=	YES
-# emacs requires *-setupel.el
-REQUIRE_SETUPEL=	YES
 
 # use pkg/* files in ${.CURDIR}
 PKGDIR=		${.CURDIR}/pkg
