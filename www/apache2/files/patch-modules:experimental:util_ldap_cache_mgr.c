@@ -1,16 +1,11 @@
-Index: modules/experimental/util_ldap_cache_mgr.c
-===================================================================
-RCS file: /home/cvs/httpd-2.0/modules/experimental/Attic/util_ldap_cache_mgr.c,v
-retrieving revision 1.3.2.13
-diff -u -r1.3.2.13 util_ldap_cache_mgr.c
---- modules/experimental/util_ldap_cache_mgr.c	23 Sep 2004 16:55:37 -0000	1.3.2.13
-+++ modules/experimental/util_ldap_cache_mgr.c	24 Sep 2004 16:40:23 -0000
+--- modules/experimental/util_ldap_cache_mgr.c.orig	Thu Sep 23 18:55:37 2004
++++ modules/experimental/util_ldap_cache_mgr.c	Sat Oct 30 21:37:48 2004
 @@ -173,7 +173,7 @@
  void util_ald_cache_purge(util_ald_cache_t *cache)
  {
      unsigned long i;
 -    util_cache_node_t *p, *q;
-+    util_cache_node_t *p, *q, **pp;
++    util_cache_node_t *p, *q, *pp;
      apr_time_t t;
  
      if (!cache)
@@ -19,12 +14,12 @@ diff -u -r1.3.2.13 util_ldap_cache_mgr.c
  
      for (i=0; i < cache->size; ++i) {
 -        p = cache->nodes[i];
-+        pp = cache->nodes + i;
++        p = cache->nodes + i;
 +        p = *pp;
          while (p != NULL) {
              if (p->add_time < cache->marktime) {
                  q = p->next;
-@@ -192,10 +193,11 @@
+@@ -192,11 +193,12 @@
                  util_ald_free(cache, p);
                  cache->numentries--;
                  cache->npurged++;
@@ -33,18 +28,21 @@ diff -u -r1.3.2.13 util_ldap_cache_mgr.c
              }
              else {
 -                p = p->next;
-+                pp = &(p->next);
-+                p = *pp;
-             }
+-            }
++
++                 pp = &(p->next);
++                 p = *pp;            }
          }
      }
-@@ -687,6 +689,9 @@
+ 
+@@ -686,7 +688,9 @@
+                 default:
                      break;
              }
- 
-+        }
-+        else {
-+            buf = "";
+-
++         }
++         else {
++             buf = "";
          }
      }
      else {
