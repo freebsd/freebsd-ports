@@ -1,0 +1,12 @@
+PyMT is a simple Python module which allows you to easily connect to a Movable
+Type weblog, using it's built in XML-RPC API. PyMT is capable of handling every
+MT call available.
+
+This interface allows you to access most of the core functionality of Movable
+Type, including the ability to view, post, delete and edit weblog entries,
+fetch user information, apply categories to your posts and get information
+about trackback pings. Every XML-RPC method is accessed using a PyMT method
+with exactly the same name. PyMT is basically just a light wrapper, which
+hides the xml-rpc part of the work.
+
+WWW: http://pymt.sourceforge.net/
