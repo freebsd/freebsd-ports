@@ -11,13 +11,17 @@ PORTVERSION=	4.69
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/  \
 		ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/NEW/ \
-		ftp://ftp.cert.dfn.de/pub/tools/admin/lsof/  \
-		ftp://ftp.cert.dfn.de/pub/tools/admin/lsof/NEW/  \
-		ftp://ftp.auscert.org.au/pub/mirrors/vic.cc.purdue.edu/lsof/  \
-		ftp://ftp.web.ad.jp/pub/UNIX/tools/lsof/  \
-		ftp://ftp.web.ad.jp/pub/UNIX/tools/lsof/NEW/  \
+		ftp://ftp.ayamura.org/pub/lsof/ \
+		ftp://ftp.ayamura.org/pub/lsof/NEW/ \
+		ftp://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/lsof/ \
+		ftp://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/lsof/NEW/ \
+		ftp://gd.tuwien.ac.at/utils/admin-tools/lsof/ \
+		ftp://gd.tuwien.ac.at/utils/admin-tools/lsof/NEW/ \
 		ftp://ftp.sunet.se/pub/unix/admin/lsof/  \
-		ftp://ftp.sunet.se/pub/unix/admin/lsof/NEW/
+		ftp://ftp.sunet.se/pub/unix/admin/lsof/NEW/ \
+		ftp://ftp.cert.dfn.de/pub/tools/admin/lsof/  \
+		ftp://ftp.cert.dfn.de/pub/tools/admin/lsof/NEW/ \
+		ftp://ftp.tau.ac.il/pub/unix/admin/
 #FIXUP_RELEASE=	yes
 .if defined(FIXUP_RELEASE)
 DISTNAME=	${PORTNAME}_4.69B.freebsd
