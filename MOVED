@@ -1337,3 +1337,4 @@ textproc/tei-xsl-fo||2004-11-28|removed due to checksum failure
 textproc/tei-xsl-html||2004-11-28|removed due to checksum failure
 www/jonah||2004-11-28|did not run with horde2.x
 x11-fonts/mkfontalias||2004-11-28|master site disappeared
+games/quakeserver||2004-11-28|install and fetch problems
