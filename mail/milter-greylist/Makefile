@@ -7,6 +7,7 @@
 
 PORTNAME=	milter-greylist
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.espci.fr/pub/milter-greylist/
 EXTRACT_SUFX=	.tgz
@@ -31,15 +32,15 @@ post-extract:
 		${FILESDIR}/milter-greylist.sh > ${WRKSRC}/milter-greylist.sh
 
 post-install:
-	${MKDIR} /var/milter-greylist /var/db/milter-greylist
-	${CHOWN} smmsp /var/milter-greylist /var/db/milter-greylist
-	${MKDIR} ${PREFIX}/etc/rc.d
-	${INSTALL_SCRIPT} ${WRKSRC}/milter-greylist.sh ${PREFIX}/etc/rc.d/
+	@${MKDIR} /var/milter-greylist /var/db/milter-greylist
+	@${CHOWN} smmsp /var/milter-greylist /var/db/milter-greylist
+	@${MKDIR} ${PREFIX}/etc/rc.d
+	@${INSTALL_SCRIPT} ${WRKSRC}/milter-greylist.sh ${PREFIX}/etc/rc.d/
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/greylist.conf ${EXAMPLESDIR}
+	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/greylist.conf ${EXAMPLESDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
