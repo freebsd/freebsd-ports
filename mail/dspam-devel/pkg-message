@@ -2,61 +2,52 @@
 -------------------------------------------------------------------------------
 
  See the file %%DOCSDIR%%/README for advice about 
- how to configure DSPAM with your MTA and setting up the CGI with Apache.
- Examples are provided for sendmail, postfix, exim and courier MTAs.
+ how to configure DSPAM and
+ %%DOCSDIR%%/README.your_mta_name 
+ for MTA or pop3 integration; examples for:
+ courier, exim, pop3filter, postfix, qmail and sendmail.
+ Keep in mind that while this port obeys our hier(7) this thing is not
+ reflected in distributed files because I lack the time for patching them.
 
-%%POSTFIX_MBC%%
-%%POSTFIX_MBC%% Quick Postfix setup guide:
-%%POSTFIX_MBC%% Add root, postfix and cgiuser to %%PREFIX%%/etc/dspam/trusted.users
-%%POSTFIX_MBC%% In main.cf set 
-%%POSTFIX_MBC%%  mailbox_command = %%PREFIX%%/bin/dspam --user $USER --mode=teft --deliver=innocent,spam --feature=chained,noise -d %u
-%%POSTFIX_MBC%% And don't forget to set
-%%POSTFIX_MBC%% %%PREFIX%%/etc/dspam/untrusted.mailer_args
-%%POSTFIX_MBC%% (for mail.local it could be /usr/libexec/mail.local -s %u)
-%%POSTFIX_MBC%%
- Note that man entries have been added for all dspam binaries.
 %%MYSQL%%
 %%MYSQL%% See %%EXAMPLESDIR%%/mysql/README
-%%MYSQL%% for instructions on how to configure MySQL
-%%MYSQL%% for use with DSPAM.
+%%MYSQL%% for instructions on how to configure DSPAM - MySQL interaction.
 %%MYSQL%%
-%%MYSQL%% %%EXAMPLESDIR%%/mysql/mysql.data
-%%MYSQL%% contains an example configuration for use with MySQL.
-%%MYSQL%% Edit and install as
-%%MYSQL%% %%PREFIX%%/etc/dspam/mysql.data
-%%MYSQL%% To modify an 2.x database use and use it with dspam 3.x use:
+%%MYSQL%% BACKUP FIRST !!!
+%%MYSQL%%
+%%MYSQL%% To modify a 2.x database use and use it with dspam 3.x use:
 %%MYSQL%% %%EXAMPLESDIR%%/mysql/2x_to_3x_db.sql
+%%MYSQL%% To modify a 3.1.0  *mysql4.0* use :
+%%MYSQL%% %%EXAMPLESDIR%%/mysql/310_to_320.my.sql
 %%MYSQL%%
 %%PGSQL%%
 %%PGSQL%% See %%EXAMPLESDIR%%/pgsql/README
 %%PGSQL%% for instructions on how to configure PostrgreSQL
 %%PGSQL%% for use with DSPAM.
-%%PGSQL%% [ To add a nice tutorial on this ]
-%%PGSQL%% [ To add a nice turorial on converting a MySQL DB ]
-%%PGSQL%% %%EXAMPLESDIR%%/pgsql.data
-%%PGSQL%% contains an example configuration for use with PostgreSQL.
-%%PGSQL%% Edit and install as
-%%PGSQL%% %%PREFIX%%/etc/dspam/pgsql.data
 %%PGSQL%% 
 %%SQLITE%%
 %%SQLITE%% See %%EXAMPLESDIR%%/sqlite/README
 %%SQLITE%% for suggestion on SQLite back-end. It should work out-of-the-box.
 %%SQLITE%%
 %%SQLITE%% You'll always want to run dspam_clean -p0 and 
-%%SQLITE%% sqlite /path/to/user.sdb < vacuum after a corpusfeed.
-%%SQLITE%% where /path/to/user.sdb would by on a default install: 
-%%SQLITE%% %%LOCALBASE%%/etc/dspam/data/user/user.sdb
+%%SQLITE%% sqlite %%DSPAM_HOME%%/data/user/user.sdb < vacuum 
+%%SQLITE%% after a corpusfeed.
 %%SQLITE%% There are  most likely 70%+ junk tokens that need to be removed.
 %%SQLITE%% This will have a HUGE impact on the disk space your db uses.
 %%SQLITE%%
 %%CGI%%
-%%CGI%% The GCI files had been installed in
+%%CGI%% The CGI files had been installed in
 %%CGI%% %%CGI_PATH%%
 %%CGI%% Copy
 %%CGI%% %%CGI_PATH%%/default.prefs.sample
 %%CGI%% to
 %%CGI%% %%CGI_PATH%%/default.prefs
-%%CGI%% and edit it to your  needs.
+%%CGI%% and edit it to your needs.
+%%CGI%% Copy
+%%CGI%% %%CGI_PATH%%/configure.pl.sample
+%%CGI%% to
+%%CGI%% %%CGI_PATH%%/configure.pl
+%%CGI%% and edit it to your needs.
 %%CGI%% If you symlink this file in %%DSPAM_HOME%%/
 %%CGI%% an administrator can edit these options in the DSPAM Admin Suite.
 %%CGI%% Define administrators by copying 
@@ -66,23 +57,38 @@
 %%CGI%% and edit the file to your needs. 
 %%CGI%% See %%DOCSDIR%%/README 
 %%CGI%% especially the CGI and Trusted Users sections for more info.
+%%CGI%% If you have problems (after upgrading) check permissions.
 
   See %%DOCSDIR%%/RELEASE.NOTES 
-  for new things in this 3.1.0 and 
-  %%DOCSDIR%%/CHANGES 
-  for the full list from 3.0.0 stable.
+  for new things in this %%PKGNAME%% and 
+  %%DOCSDIR%%/CHANGELOG
+  for the full list of changes.
   Preference extensions are NOT yet integrated in this port, 
   feel free to test and send patches.
 
  ***************************** WARNING: ***************************************
- Command-line options (and MySQL database structure) has changed.
- If you are upgrading from 2.x be sure to change the way you are calling
- dspam binary (for delivery, submitting fp, etc.), otherwise mail
- will go to the bit-bucket with NO WARNING.
+ Almost everything regarding how dspam must be configured has changed.
+ If you are upgrading from 2.x or 3.x be sure to read
+ %%DOCSDIR%%/UPDATING
  ******************************************************************************
 
-     ------------    Version 3.1.0 is a DEVELOPMENT release.  ------------
-         All problems should be reported to the maintainer of the port 
-    	             and dspam development mailing list
+ ---- %%PKGNAME%% is considered to be a DEVELOPMENT release.  ---
+ Reporting problems, asking questions:
+ - small typos, etc. to the maintainer
+ - FreeBSD specific port-related problems/questions: ports@, maintainer cc'ed
+ - FreeBSD specific patches, doc enhancements: send-pr maintainer cc'ed
+ - dspam specific questions: dspam mailling list (maintainer cc'ed if you like)
+ - dspam specific patches: dspam/dspam-dev mailling list (maintainer cc'ed if you like)
+ Please be sure to include in your email/pr relevant information such as:
+ uname -a, dspam --version, /var/db/ports/dspam-devel/options, MTA setup.
+ If needed rebuild WITH_DEBUG and to turn on debugging see DebugOpt in dsapm.conf
 
+ Please send unified diff's (diff -u).
+ 
+ If you don't want to see in your maillog : 
+ "query error: verbose debug INFO ONLY: see sql.errors for more details"
+ please recompile withOUT verbose debug; those who will report this "error" will
+ be sent to spen their night in a room with a cardassian, a klingonian and a romulan.
+
+				-- Thanks for making both our lives easier.
 ------------------------------------------------------------------------------
