@@ -50,6 +50,7 @@ Have fun with this new configuration style !     -andreas \n\n\
   "laserjet" "HP LaserJet" ON \
   "la50"     "DEC LA50 printer" ON \
   "la70"     "DEC LA70 printer" ON \
+  "la70t"    "DEC LA70 printer with low resol. text enhancement" ON \
   "la75"     "DEC LA75 printer" ON \
   "la75plus" "DEC LA75plus printer" ON \
   "lbp8"     "Canon LBP-8II laser printer" ON \
@@ -66,6 +67,7 @@ Have fun with this new configuration style !     -andreas \n\n\
   "lj5gray"  "HP LaserJet 5 and 6 family, gray-scale bitmap" ON \
   "lp2563"   "HP 2563B line printer" ON \
   "lp8000"   "EPSON LP-8000 line printer" ON \
+  "lq850"    "EPSON LQ-850 (360x360), ok for Canon BJ300 in LQ850 emul" ON \
   "m8510"    "C.Itoh M8510 printer" ON \
   "necp6"    "NEC P6/P6+/P60, 360x360 DPI resol" ON \
   "oce9050"  "OCE 9050 printer" ON \
@@ -122,7 +124,6 @@ Have fun with this new configuration style !     -andreas \n\n\
   "mgrgray8" "8-bit gray scale MGR devices" ON \
   "mgr4"     "4-bit (VGA) color MGR devices" ON \
   "mgr8"     "8-bit color MGR devices" ON \
-  "pdfwrite" "Allow writting of pdf files" ON \
   "pcxmono"  "PCX file format, monochrome 1-bit b/w" ON \
   "pcxgray"  "PCX file format, 8-bit gray scale" ON \
   "pcx16"    "PCX file format, 4-bit planar EGA/VGA color" ON \
