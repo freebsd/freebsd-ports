@@ -9,7 +9,7 @@ PORTNAME=	ghostscript
 PORTVERSION=	${GS_VERSION}
 PORTEPOCH=	1
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs,gs_fonts,bjc250/} \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs,bjc250/} \
 		http://www.gelhaus.net/hp880c/1.4beta/:hp8xx \
 		http://www.harsch.net/Download/:dj970 \
 		http://plaza26.mbn.or.jp/~higamasa/gdevmd2k/:md2k \
@@ -23,7 +23,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs,gs_fonts,bjc250/} \
 		http://homepage.powerup.com.au/~pbwest/lexmark/:lx5000 \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/fonts/:gs_fonts \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/AFPL/gs${GS_VERSION:S/.//}/:gs_srcs
-MASTER_SITE_SUBDIR=	ghostscript/:gs_srcs,gs_fonts,ports_jp_gs \
+MASTER_SITE_SUBDIR=	ghostscript/:gs_srcs,ports_jp_gs \
 			bjc250gs/:bjc250 \
 			./:ports_jp
 PKGNAMESUFFIX=	-afpl
@@ -289,10 +289,10 @@ post-extract:
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/${LX5000_SRCS} ${WRKSRC}/src
 # for LEX7000 driver
 	${ECHO_MSG} ">>>   extracting ${LEX7000_SRCS} ..."
-	${MKDIR} ${WRKSRC}/${LEX7000}   
+	${MKDIR} ${WRKSRC}/${LEX7000}
 	${CAT} ${DISTDIR}/${DIST_SUBDIR}/${LEX7000_SRCS} | \
 		${PATCH} -d ${WRKSRC}/${LEX7000} -f -s -N -E -p1 \
-		2>/dev/null || ${TRUE}  
+		2>/dev/null || ${TRUE}
 
 post-patch:
 	${REINPLACE_CMD} -e 's|^DEVICE_DEVS|#DEVICE_DEVS|g' \
