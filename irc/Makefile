@@ -17,6 +17,7 @@
     SUBDIR += epic4
     SUBDIR += ezbounce
     SUBDIR += gruftistats
+    SUBDIR += hybserv
     SUBDIR += iip
     SUBDIR += infobot
     SUBDIR += irc
