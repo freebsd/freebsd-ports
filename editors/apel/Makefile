@@ -20,7 +20,7 @@ MAINTAINER?=	shige@FreeBSD.org
 COMMENT?=	A Portable Emacs Library for emacs21
 
 # distfile version
-APEL_VER=	10.5
+APEL_VER=	10.6
 # setupel filename
 APEL_SETUPEL=	apel-setupel.el
 # document install directory by install-doc target
