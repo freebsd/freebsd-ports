@@ -319,6 +319,7 @@ apr		ports/devel/apr
 apropos		src/gnu/usr.bin/man/apropos
 apsfilter	ports/print/apsfilter
 ar		src/usr.bin/ar
+ar-openoffice	ports/editors/openoffice-ar
 arc		ports/archivers/arc
 arcboot		src/sys/boot/arc
 arcexplorer	ports/databases/arcexplorer
@@ -1130,6 +1131,7 @@ de-kde3-i18n	ports/german/kde3-i18n
 de-koffice-i18n	ports/german/koffice-i18n
 de-linux-netscape6	ports/german/linux-netscape6
 de-manpages	ports/german/manpages
+de-openoffice	ports/german/openoffice
 de-phone	ports/german/phone
 de-staroffice52	ports/german/staroffice52
 de-webalizer2	ports/german/webalizer2
@@ -1227,6 +1229,7 @@ divxcalc	ports/graphics/divxcalc
 djbdns		ports/net/djbdns
 djbfft		ports/math/djbfft
 djvuplugin	ports/www/djvuplugin
+dk-openoffice	ports/editors/openoffice-dk
 dkimap4		ports/mail/dkimap4
 dlint		ports/net/dlint
 dlx		ports/emulators/dlx
@@ -1449,6 +1452,7 @@ error		ports/devel/error
 eruby		ports/textproc/eruby
 erun		ports/x11/erun
 erwn		ports/www/erwn
+es-openoffice	ports/editors/openoffice-es
 es		ports/shells/es
 esh		ports/shells/esh
 eshell-emacs20	ports/editors/eshell-emacs20
@@ -1698,6 +1702,7 @@ fr-kde2-i18n	ports/french/kde2-i18n
 fr-kde3-i18n	ports/french/kde3-i18n
 fr-koffice-i18n	ports/french/koffice-i18n
 fr-linux-netscape6	ports/french/linux-netscape6
+fr-openoffice	ports/french/openoffice
 fr-staroffice52	ports/french/staroffice52
 fr-xtel		ports/french/xtel
 frabs		ports/games/frabs
@@ -2182,6 +2187,7 @@ gputils		ports/devel/gputils
 gq		ports/net/gq
 gqmpeg		ports/audio/gqmpeg
 gqview		ports/graphics/gqview
+gr-openoffice	ports/editors/openoffice-gr
 grace		ports/math/grace
 gracer		ports/games/gracer
 gracula		ports/graphics/gracula
@@ -2597,6 +2603,7 @@ isoqlog		ports/mail/isoqlog
 ispell		ports/textproc/ispell
 isreal		ports/graphics/isreal
 isync		ports/mail/isync
+it-openoffice	ports/editors/openoffice-it
 itcl		ports/lang/itcl
 ithought	ports/deskutils/ithought
 itk		ports/x11-toolkits/itk
@@ -2892,6 +2899,7 @@ ja-onew-canna+wnn7	ports/japanese/onew-canna+wnn7
 ja-onew-freewnn	ports/japanese/onew-freewnn
 ja-onew-wnn6	ports/japanese/onew-wnn6
 ja-onew-wnn7	ports/japanese/onew-wnn7
+ja-openoffice	ports/japanese/openoffice
 ja-p5-Date-Japanese-Era	ports/japanese/p5-Date-Japanese-Era
 ja-p5-Jcode	ports/japanese/p5-Jcode
 ja-p5-Text-ChaSen	ports/japanese/p5-Text-ChaSen
@@ -3426,6 +3434,7 @@ ko-nhpf		ports/korean/nhpf
 ko-nhppf	ports/korean/nhppf
 ko-nvi-euc-kr	ports/korean/nvi-euc-kr
 ko-nvi-iso-2022-kr	ports/korean/nvi-iso-2022-kr
+ko-openoffice	ports/korean/openoffice
 ko-pgp.language	ports/korean/pgp.language
 ko-pine		ports/korean/pine
 ko-pinetreefonts	ports/korean/pinetreefonts
@@ -4611,6 +4620,7 @@ ninja		ports/irc/ninja
 njs		ports/lang/njs
 nl		src/usr.bin/nl
 nl-ispell	ports/textproc/nl-ispell
+nl-openoffice	ports/editors/openoffice-nl
 nload		ports/net/nload
 nm		src/usr.bin/nm
 nmap		ports/security/nmap
@@ -4742,17 +4752,6 @@ openldap2	ports/net/openldap2
 openmcu		ports/net/openmcu
 opennap		ports/audio/opennap
 openoffice	ports/editors/openoffice
-openoffice-ar	ports/editors/openoffice-ar
-openoffice-dk	ports/editors/openoffice-dk
-openoffice-es	ports/editors/openoffice-es
-openoffice-gr	ports/editors/openoffice-gr
-openoffice-it	ports/editors/openoffice-it
-openoffice-nl	ports/editors/openoffice-nl
-openoffice-pl	ports/editors/openoffice-pl
-openoffice-pt	ports/editors/openoffice-pt
-openoffice-se	ports/editors/openoffice-se
-openoffice-tr	ports/editors/openoffice-tr
-openoffice-zh_TW	ports/chinese/openoffice-zh_TW
 openquicktime	ports/graphics/openquicktime
 opensched	ports/textproc/opensched
 openslp		ports/net/openslp
@@ -5781,6 +5780,7 @@ pks		ports/security/pks
 pktrace		ports/print/pktrace
 pktsuckers	ports/security/pktsuckers
 pkzip		ports/archivers/pkzip
+pl-openoffice	ports/editors/openoffice-pl
 pl-sms		ports/misc/pl-sms
 plan		ports/deskutils/plan
 planets		ports/astro/planets
@@ -6020,6 +6020,8 @@ pstotext	ports/print/pstotext
 pstree		ports/sysutils/pstree
 psutils-a4	ports/print/psutils-a4
 psutils-letter	ports/print/psutils-letter
+pt-openoffice	ports/editors/openoffice-pt
+pt-staroffice52	ports/editors/staroffice52-pt
 pth		ports/devel/pth
 pth-devel	ports/devel/pth-devel
 ptkei		ports/games/ptkei
@@ -6496,6 +6498,7 @@ ru-kde2-i18n	ports/russian/kde2-i18n
 ru-kde3-i18n	ports/russian/kde3-i18n
 ru-koffice-i18n	ports/russian/koffice-i18n
 ru-netscape4	ports/russian/netscape4.language
+ru-openoffice	ports/russian/openoffice
 ru-p5-XML-Parser-encodings	ports/russian/p5-XML-Parser-encodings
 ru-p5-cyrillic	ports/russian/p5-cyrillic
 ru-pine		ports/russian/pine.language
@@ -6805,6 +6808,7 @@ sdocbook-xml	ports/textproc/sdocbook-xml
 sdr		ports/mbone/sdr
 sdts++		ports/devel/sdts++
 se-ispell	ports/textproc/se-ispell
+se-openoffice	ports/editors/openoffice-se
 seabattle	ports/games/seabattle
 seahaven	ports/games/seahaven
 seahorse	ports/security/seahorse
@@ -7149,7 +7153,6 @@ starlanes	ports/games/starlanes
 starlogo	ports/lang/starlogo
 staroffice5	ports/editors/staroffice5
 staroffice52	ports/editors/staroffice52
-staroffice52-pt	ports/editors/staroffice52-pt
 staroffice60	ports/editors/staroffice60
 starplot	ports/astro/starplot
 stars		ports/astro/stars
@@ -7532,6 +7535,7 @@ tpop3d		ports/mail/tpop3d
 tput		src/usr.bin/tput
 tr		src/usr.bin/tr
 tr-ircd		ports/irc/tr-ircd
+tr-openoffice	ports/editors/openoffice-tr
 tr2latex	ports/print/tr2latex
 traceroute	src/usr.sbin/traceroute
 traceroute6	src/usr.sbin/traceroute6
@@ -8616,6 +8620,8 @@ zh-netscape47-navigator	ports/chinese/netscape47-navigator
 zh-nvi-big5	ports/chinese/nvi-big5
 zh-nvi-euc-cn	ports/chinese/nvi-euc-cn
 zh-nvi-euc-tw	ports/chinese/nvi-euc-tw
+zh-openoffice-CN	ports/chinese/openoffice-zh_CN
+zh-openoffice-TW	ports/chinese/openoffice-zh_TW
 zh-p5-Date-Chinese	ports/chinese/p5-Date-Chinese
 zh-pine4	ports/chinese/pine4
 zh-pyDict	ports/chinese/pyDict
