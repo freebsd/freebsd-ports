@@ -3,7 +3,7 @@
 # Date created:		24 Nov 1998
 # Whom:			mac@jp.freebsd.org
 #
-# $Id: Makefile,v 1.51 1999/02/12 17:00:00 flathill Exp $
+# $Id: Makefile,v 1.52 1999/02/21 21:51:01 billf Exp $
 
 DISTNAME=	WindowMaker-0.51.0
 PKGNAME=	windowmaker-i18n-0.51.0
@@ -23,9 +23,9 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.3:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff34 \
-		PropList.1:${PORTSDIR}/devel/libPropList
-BUILD_DEPENDS=	${LOCALBASE}/lib/libintl.a:${PORTSDIR}/devel/gettext \
-		nkf:${PORTSDIR}/japanese/nkf
+		PropList.1:${PORTSDIR}/devel/libPropList \
+		intl.1:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 
 USE_PERL5=	yes
 USE_X_PREFIX=	yes

@@ -3,7 +3,7 @@
 # Date created:		15 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.28 1999/02/22 04:27:44 steve Exp $
+# $Id: Makefile,v 1.29 1999/03/15 04:39:10 nectar Exp $
 #
 
 DISTNAME=	mc-4.5.23
@@ -13,9 +13,8 @@ MASTER_SITE_SUBDIR=	gnome-1.0/sources
 
 MAINTAINER=	reg@shale.csir.co.za
 
-BUILD_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
-RUN_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
-LIB_DEPENDS=	glib12.1:${PORTSDIR}/devel/glib12
+LIB_DEPENDS=	glib12.1:${PORTSDIR}/devel/glib12 \
+		intl.1:${PORTSDIR}/devel/gettext
 
 .if defined(USE_NCURSES_PORT)
 LIB_DEPENDS+=	ncurses.4:${PORTSDIR}/devel/ncurses

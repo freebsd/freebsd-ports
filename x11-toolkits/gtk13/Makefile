@@ -3,7 +3,7 @@
 # Date Created:			28 Sep 1997
 # Whom:				Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.44 1999/02/18 04:49:25 vanilla Exp $
+# $Id: Makefile,v 1.46 1999/03/09 01:09:08 nectar Exp $
 #
 
 DISTNAME=	gtk+-1.2.0
@@ -15,9 +15,8 @@ MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.2/ \
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 
-BUILD_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
-RUN_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
-LIB_DEPENDS=	glib12.1:${PORTSDIR}/devel/glib12
+LIB_DEPENDS=	glib12.1:${PORTSDIR}/devel/glib12 \
+		intl.1:${PORTSDIR}/devel/gettext
 
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
