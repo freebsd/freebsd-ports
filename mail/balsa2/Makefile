@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	balsa2
-PORTVERSION=	2.0.11
-PORTREVISION=	3
+PORTVERSION=	2.0.12
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.theochem.kth.se/~pawsa/balsa/ \
 		ftp://ftp.newton.cx/pub/balsa/
@@ -44,7 +43,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 MAN1=		balsa.1
 
 .if defined(WITH_GPG)
-LIB_DEPENDS+=	gpgme.9:${PORTSDIR}/security/gpgme
+LIB_DEPENDS+=		gpgme.9:${PORTSDIR}/security/gpgme
 CONFIGURE_ARGS+=	--enable-gpgme
 .endif
 
