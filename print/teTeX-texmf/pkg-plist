@@ -133,6 +133,8 @@
 %%TEXMFDISTDIR%%/doc/fontinst/encspecs/omxdraft.etx
 %%TEXMFDISTDIR%%/doc/fontinst/encspecs/ot1draft.etx
 %%TEXMFDISTDIR%%/doc/fontinst/encspecs/t1draft.etx
+%%TEXMFDISTDIR%%/doc/fontinst/examples/basicex.tex
+%%TEXMFDISTDIR%%/doc/fontinst/examples/basicex2.tex
 %%TEXMFDISTDIR%%/doc/fontinst/fontinstallationguide.pdf
 %%TEXMFDISTDIR%%/doc/fontinst/manual/fontinst.dvi
 %%TEXMFDISTDIR%%/doc/fontinst/manual/fontinst.pdf
@@ -162,6 +164,7 @@
 %%TEXMFDISTDIR%%/doc/fonts/antt/testqxantt.tex
 %%TEXMFDISTDIR%%/doc/fonts/antt/testt1antt.tex
 %%TEXMFDISTDIR%%/doc/fonts/antt/testt2aantt.tex
+%%TEXMFDISTDIR%%/doc/fonts/antt/testt5antt.tex
 %%TEXMFDISTDIR%%/doc/fonts/belleek/README
 %%TEXMFDISTDIR%%/doc/fonts/bh/README.aliases
 %%TEXMFDISTDIR%%/doc/fonts/bh/lucida.txt
@@ -195,6 +198,7 @@
 %%TEXMFDISTDIR%%/doc/fonts/fontname/ChangeLog
 %%TEXMFDISTDIR%%/doc/fonts/fontname/README
 %%TEXMFDISTDIR%%/doc/fonts/fontname/fontname.dvi
+%%TEXMFDISTDIR%%/doc/fonts/fpl/COPYING
 %%TEXMFDISTDIR%%/doc/fonts/fpl/README
 %%TEXMFDISTDIR%%/doc/fonts/hoekwater/README
 %%TEXMFDISTDIR%%/doc/fonts/lh/beresta/beresta.tex
@@ -2017,6 +2021,7 @@
 %%TEXMFDISTDIR%%/doc/help/Catalogue/entries/rcsinfo.html
 %%TEXMFDISTDIR%%/doc/help/Catalogue/entries/realcalc.html
 %%TEXMFDISTDIR%%/doc/help/Catalogue/entries/recipe.html
+%%TEXMFDISTDIR%%/doc/help/Catalogue/entries/redit.html
 %%TEXMFDISTDIR%%/doc/help/Catalogue/entries/refcheck.html
 %%TEXMFDISTDIR%%/doc/help/Catalogue/entries/refcount.html
 %%TEXMFDISTDIR%%/doc/help/Catalogue/entries/refer2bibtex.html
@@ -2036,6 +2041,7 @@
 %%TEXMFDISTDIR%%/doc/help/Catalogue/entries/rlepsf.html
 %%TEXMFDISTDIR%%/doc/help/Catalogue/entries/rmligs.html
 %%TEXMFDISTDIR%%/doc/help/Catalogue/entries/rmpage.html
+%%TEXMFDISTDIR%%/doc/help/Catalogue/entries/rnototex.html
 %%TEXMFDISTDIR%%/doc/help/Catalogue/entries/romaniantex.html
 %%TEXMFDISTDIR%%/doc/help/Catalogue/entries/romanneg.html
 %%TEXMFDISTDIR%%/doc/help/Catalogue/entries/romannum.html
@@ -2380,6 +2386,7 @@
 %%TEXMFDISTDIR%%/doc/help/Catalogue/entries/universa.html
 %%TEXMFDISTDIR%%/doc/help/Catalogue/entries/unsupported.html
 %%TEXMFDISTDIR%%/doc/help/Catalogue/entries/upgreek.html
+%%TEXMFDISTDIR%%/doc/help/Catalogue/entries/upref.html
 %%TEXMFDISTDIR%%/doc/help/Catalogue/entries/url.html
 %%TEXMFDISTDIR%%/doc/help/Catalogue/entries/urlbst.html
 %%TEXMFDISTDIR%%/doc/help/Catalogue/entries/urw.html
@@ -3748,6 +3755,8 @@
 %%TEXMFDISTDIR%%/doc/programs/cwebman.dvi
 %%TEXMFDISTDIR%%/doc/programs/dvipdfm.dvi
 %%TEXMFDISTDIR%%/doc/programs/dvipdfm.pdf
+%%TEXMFDISTDIR%%/doc/programs/dvipng.dvi
+%%TEXMFDISTDIR%%/doc/programs/dvipng.pdf
 %%TEXMFDISTDIR%%/doc/programs/dvips.dvi
 %%TEXMFDISTDIR%%/doc/programs/dvips.pdf
 %%TEXMFDISTDIR%%/doc/programs/kpathsea.dvi
@@ -3772,6 +3781,7 @@
 %%TEXMFDISTDIR%%/dvipdfm/config/README.config
 %%TEXMFDISTDIR%%/dvipdfm/config/config
 %%TEXMFDISTDIR%%/dvips/antp/config.antp
+%%TEXMFDISTDIR%%/dvips/antt/config.antt
 %%TEXMFDISTDIR%%/dvips/bluesky/config.ams
 %%TEXMFDISTDIR%%/dvips/bluesky/config.amz
 %%TEXMFDISTDIR%%/dvips/bluesky/config.cm
@@ -3877,6 +3887,10 @@
 %%TEXMFDISTDIR%%/fonts/afm/public/antt/anttmi.afm
 %%TEXMFDISTDIR%%/fonts/afm/public/antt/anttr.afm
 %%TEXMFDISTDIR%%/fonts/afm/public/antt/anttri.afm
+%%TEXMFDISTDIR%%/fonts/afm/public/fpl/fplbij8a.afm
+%%TEXMFDISTDIR%%/fonts/afm/public/fpl/fplbj8a.afm
+%%TEXMFDISTDIR%%/fonts/afm/public/fpl/fplrc8a.afm
+%%TEXMFDISTDIR%%/fonts/afm/public/fpl/fplrij8a.afm
 %%TEXMFDISTDIR%%/fonts/afm/public/lm/lmb10.afm
 %%TEXMFDISTDIR%%/fonts/afm/public/lm/lmbo10.afm
 %%TEXMFDISTDIR%%/fonts/afm/public/lm/lmbx10.afm
@@ -4265,6 +4279,8 @@
 %%TEXMFDISTDIR%%/fonts/enc/dvips/antt/t2a-antt.enc
 %%TEXMFDISTDIR%%/fonts/enc/dvips/antt/t2b-antt.enc
 %%TEXMFDISTDIR%%/fonts/enc/dvips/antt/t2c-antt.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/antt/t5-antt.enc
+%%TEXMFDISTDIR%%/fonts/enc/dvips/antt/t5-anttcap.enc
 %%TEXMFDISTDIR%%/fonts/enc/dvips/antt/texnansi-antt.enc
 %%TEXMFDISTDIR%%/fonts/enc/dvips/antt/texnansi-anttcap.enc
 %%TEXMFDISTDIR%%/fonts/enc/dvips/antt/wncy-antt.enc
@@ -4341,6 +4357,7 @@
 %%TEXMFDISTDIR%%/fonts/map/dvips/antt/t2a-antt.map
 %%TEXMFDISTDIR%%/fonts/map/dvips/antt/t2b-antt.map
 %%TEXMFDISTDIR%%/fonts/map/dvips/antt/t2c-antt.map
+%%TEXMFDISTDIR%%/fonts/map/dvips/antt/t5-antt.map
 %%TEXMFDISTDIR%%/fonts/map/dvips/antt/texnansi-antt.map
 %%TEXMFDISTDIR%%/fonts/map/dvips/antt/wncy-antt.map
 %%TEXMFDISTDIR%%/fonts/map/dvips/cc-pl/ccpl.map
@@ -7412,6 +7429,38 @@
 %%TEXMFDISTDIR%%/fonts/tfm/public/antt/t2c-anttmi.tfm
 %%TEXMFDISTDIR%%/fonts/tfm/public/antt/t2c-anttr.tfm
 %%TEXMFDISTDIR%%/fonts/tfm/public/antt/t2c-anttri.tfm
+%%TEXMFDISTDIR%%/fonts/tfm/public/antt/t5-anttb.tfm
+%%TEXMFDISTDIR%%/fonts/tfm/public/antt/t5-anttbcap.tfm
+%%TEXMFDISTDIR%%/fonts/tfm/public/antt/t5-anttbi.tfm
+%%TEXMFDISTDIR%%/fonts/tfm/public/antt/t5-anttbicap.tfm
+%%TEXMFDISTDIR%%/fonts/tfm/public/antt/t5-anttcb.tfm
+%%TEXMFDISTDIR%%/fonts/tfm/public/antt/t5-anttcbcap.tfm
+%%TEXMFDISTDIR%%/fonts/tfm/public/antt/t5-anttcbi.tfm
+%%TEXMFDISTDIR%%/fonts/tfm/public/antt/t5-anttcbicap.tfm
+%%TEXMFDISTDIR%%/fonts/tfm/public/antt/t5-anttcl.tfm
+%%TEXMFDISTDIR%%/fonts/tfm/public/antt/t5-anttclcap.tfm
+%%TEXMFDISTDIR%%/fonts/tfm/public/antt/t5-anttcli.tfm
+%%TEXMFDISTDIR%%/fonts/tfm/public/antt/t5-anttclicap.tfm
+%%TEXMFDISTDIR%%/fonts/tfm/public/antt/t5-anttcm.tfm
+%%TEXMFDISTDIR%%/fonts/tfm/public/antt/t5-anttcmcap.tfm
+%%TEXMFDISTDIR%%/fonts/tfm/public/antt/t5-anttcmi.tfm
+%%TEXMFDISTDIR%%/fonts/tfm/public/antt/t5-anttcmicap.tfm
+%%TEXMFDISTDIR%%/fonts/tfm/public/antt/t5-anttcr.tfm
+%%TEXMFDISTDIR%%/fonts/tfm/public/antt/t5-anttcrcap.tfm
+%%TEXMFDISTDIR%%/fonts/tfm/public/antt/t5-anttcri.tfm
+%%TEXMFDISTDIR%%/fonts/tfm/public/antt/t5-anttcricap.tfm
+%%TEXMFDISTDIR%%/fonts/tfm/public/antt/t5-anttl.tfm
+%%TEXMFDISTDIR%%/fonts/tfm/public/antt/t5-anttlcap.tfm
+%%TEXMFDISTDIR%%/fonts/tfm/public/antt/t5-anttli.tfm
+%%TEXMFDISTDIR%%/fonts/tfm/public/antt/t5-anttlicap.tfm
+%%TEXMFDISTDIR%%/fonts/tfm/public/antt/t5-anttm.tfm
+%%TEXMFDISTDIR%%/fonts/tfm/public/antt/t5-anttmcap.tfm
+%%TEXMFDISTDIR%%/fonts/tfm/public/antt/t5-anttmi.tfm
+%%TEXMFDISTDIR%%/fonts/tfm/public/antt/t5-anttmicap.tfm
+%%TEXMFDISTDIR%%/fonts/tfm/public/antt/t5-anttr.tfm
+%%TEXMFDISTDIR%%/fonts/tfm/public/antt/t5-anttrcap.tfm
+%%TEXMFDISTDIR%%/fonts/tfm/public/antt/t5-anttri.tfm
+%%TEXMFDISTDIR%%/fonts/tfm/public/antt/t5-anttricap.tfm
 %%TEXMFDISTDIR%%/fonts/tfm/public/antt/texnansi-anttb.tfm
 %%TEXMFDISTDIR%%/fonts/tfm/public/antt/texnansi-anttbcap.tfm
 %%TEXMFDISTDIR%%/fonts/tfm/public/antt/texnansi-anttbi.tfm
@@ -12155,6 +12204,10 @@
 %%TEXMFDISTDIR%%/tex/latex/antt/t2canttc.fd
 %%TEXMFDISTDIR%%/tex/latex/antt/t2canttl.fd
 %%TEXMFDISTDIR%%/tex/latex/antt/t2canttlc.fd
+%%TEXMFDISTDIR%%/tex/latex/antt/t5antt.fd
+%%TEXMFDISTDIR%%/tex/latex/antt/t5anttc.fd
+%%TEXMFDISTDIR%%/tex/latex/antt/t5anttl.fd
+%%TEXMFDISTDIR%%/tex/latex/antt/t5anttlc.fd
 %%TEXMFDISTDIR%%/tex/latex/anysize/anysize.sty
 %%TEXMFDISTDIR%%/tex/latex/appendix/appendix.sty
 %%TEXMFDISTDIR%%/tex/latex/bar/bar.sty
@@ -12511,6 +12564,7 @@
 %%TEXMFDISTDIR%%/tex/latex/config/latex.ini
 %%TEXMFDISTDIR%%/tex/latex/config/pdfelatex.ini
 %%TEXMFDISTDIR%%/tex/latex/config/pdflatex.ini
+%%TEXMFDISTDIR%%/tex/latex/config/pdfxlatex.ini
 %%TEXMFDISTDIR%%/tex/latex/context/m-ch-de.sty
 %%TEXMFDISTDIR%%/tex/latex/context/m-ch-en.sty
 %%TEXMFDISTDIR%%/tex/latex/context/m-ch-nl.sty
@@ -13623,6 +13677,7 @@
 %%TEXMFDISTDIR%%/tex/plain/config/pdfbplain.ini
 %%TEXMFDISTDIR%%/tex/plain/config/pdfetex.ini
 %%TEXMFDISTDIR%%/tex/plain/config/pdftex.ini
+%%TEXMFDISTDIR%%/tex/plain/config/pdfxtex.ini
 %%TEXMFDISTDIR%%/tex/plain/config/tex.ini
 %%TEXMFDISTDIR%%/tex/plain/dvips/blackdvi.tex
 %%TEXMFDISTDIR%%/tex/plain/dvips/colordvi.tex
@@ -13721,6 +13776,19 @@
 %%TEXMFDISTDIR%%/web2c/updmap.cfg
 %%TEXMFDISTDIR%%/web2c/viscii-t5.tcx
 %%TEXMFDISTDIR%%/xdvi/XDvi
+@exec /bin/mkdir -p %D/%%TEXMFDISTDIR%%/fonts/type42
+@exec /bin/mkdir -p %D/%%TEXMFDISTDIR%%/fonts/type3
+@exec /bin/mkdir -p %D/%%TEXMFDISTDIR%%/fonts/truetype
+@exec /bin/mkdir -p %D/%%TEXMFDISTDIR%%/fonts/sfd
+@exec /bin/mkdir -p %D/%%TEXMFDISTDIR%%/fonts/pk
+@exec /bin/mkdir -p %D/%%TEXMFDISTDIR%%/fonts/opentype
+@exec /bin/mkdir -p %D/%%TEXMFDISTDIR%%/fonts/misc
+@exec /bin/mkdir -p %D/%%TEXMFDISTDIR%%/fonts/map/pdftex/updmap
+@exec /bin/mkdir -p %D/%%TEXMFDISTDIR%%/fonts/map/dvips/updmap
+@exec /bin/mkdir -p %D/%%TEXMFDISTDIR%%/fonts/map/dvipdfm/updmap
+@exec /bin/mkdir -p %D/%%TEXMFDISTDIR%%/fonts/lig
+@exec /bin/mkdir -p %D/%%TEXMFDISTDIR%%/fonts/cmap
+@exec /bin/mkdir -p %D/%%TEXMFDISTDIR%%/doc/generic/pdfcrop
 @dirrm %%TEXMFDISTDIR%%/xdvi
 @dirrm %%TEXMFDISTDIR%%/web2c
 @dirrm %%TEXMFDISTDIR%%/texdoctk
@@ -13838,10 +13906,10 @@
 @dirrm %%TEXMFDISTDIR%%/tex/latex/palatcm
 @dirrm %%TEXMFDISTDIR%%/tex/latex/overpic
 @dirrm %%TEXMFDISTDIR%%/tex/latex/optional
-@dirrm %%TEXMFDISTDIR%%/tex/latex/oberdiek
 @dirrm %%TEXMFDISTDIR%%/tex/latex/onlyamsmath
-@dirrm %%TEXMFDISTDIR%%/tex/latex/ntgclass
+@dirrm %%TEXMFDISTDIR%%/tex/latex/oberdiek
 @dirrm %%TEXMFDISTDIR%%/tex/latex/ntheorem
+@dirrm %%TEXMFDISTDIR%%/tex/latex/ntgclass
 @dirrm %%TEXMFDISTDIR%%/tex/latex/nomencl
 @dirrm %%TEXMFDISTDIR%%/tex/latex/nextpage
 @dirrm %%TEXMFDISTDIR%%/tex/latex/natbib
@@ -14134,9 +14202,7 @@
 @dirrm %%TEXMFDISTDIR%%/fonts/vf/adobe/avantgar
 @dirrm %%TEXMFDISTDIR%%/fonts/vf/adobe
 @dirrm %%TEXMFDISTDIR%%/fonts/vf
-@exec /bin/mkdir -p %D/%%TEXMFDISTDIR%%/fonts/type42
 @dirrm %%TEXMFDISTDIR%%/fonts/type42
-@exec /bin/mkdir -p %D/%%TEXMFDISTDIR%%/fonts/type3
 @dirrm %%TEXMFDISTDIR%%/fonts/type3
 @dirrm %%TEXMFDISTDIR%%/fonts/type1/urw/zapfding
 @dirrm %%TEXMFDISTDIR%%/fonts/type1/urw/zapfchan
@@ -14187,7 +14253,6 @@
 @dirrm %%TEXMFDISTDIR%%/fonts/type1/bitstrea/charter
 @dirrm %%TEXMFDISTDIR%%/fonts/type1/bitstrea
 @dirrm %%TEXMFDISTDIR%%/fonts/type1
-@exec /bin/mkdir -p %D/%%TEXMFDISTDIR%%/fonts/truetype
 @dirrm %%TEXMFDISTDIR%%/fonts/truetype
 @dirrm %%TEXMFDISTDIR%%/fonts/tfm/yandy/times
 @dirrm %%TEXMFDISTDIR%%/fonts/tfm/yandy/mathtime
@@ -14330,9 +14395,7 @@
 @dirrm %%TEXMFDISTDIR%%/fonts/source/ams/cmextra
 @dirrm %%TEXMFDISTDIR%%/fonts/source/ams
 @dirrm %%TEXMFDISTDIR%%/fonts/source
-@exec /bin/mkdir -p %D/%%TEXMFDISTDIR%%/fonts/sfd
 @dirrm %%TEXMFDISTDIR%%/fonts/sfd
-@exec /bin/mkdir -p %D/%%TEXMFDISTDIR%%/fonts/pk
 @dirrm %%TEXMFDISTDIR%%/fonts/pk
 @dirrm %%TEXMFDISTDIR%%/fonts/ovp/public/otibet
 @dirrm %%TEXMFDISTDIR%%/fonts/ovp/public/omega
@@ -14347,7 +14410,6 @@
 @dirrm %%TEXMFDISTDIR%%/fonts/ovf/public/ethiop
 @dirrm %%TEXMFDISTDIR%%/fonts/ovf/public
 @dirrm %%TEXMFDISTDIR%%/fonts/ovf
-@exec /bin/mkdir -p %D/%%TEXMFDISTDIR%%/fonts/opentype
 @dirrm %%TEXMFDISTDIR%%/fonts/opentype
 @dirrm %%TEXMFDISTDIR%%/fonts/ofm/public/otibet
 @dirrm %%TEXMFDISTDIR%%/fonts/ofm/public/omega
@@ -14356,9 +14418,7 @@
 @dirrm %%TEXMFDISTDIR%%/fonts/ofm/public/ethiop
 @dirrm %%TEXMFDISTDIR%%/fonts/ofm/public
 @dirrm %%TEXMFDISTDIR%%/fonts/ofm
-@exec /bin/mkdir -p %D/%%TEXMFDISTDIR%%/fonts/misc
 @dirrm %%TEXMFDISTDIR%%/fonts/misc
-@exec /bin/mkdir -p %D/%%TEXMFDISTDIR%%/fonts/map/pdftex/updmap
 @dirrm %%TEXMFDISTDIR%%/fonts/map/pdftex/updmap
 @dirrm %%TEXMFDISTDIR%%/fonts/map/pdftex/cmttf
 @dirrm %%TEXMFDISTDIR%%/fonts/map/pdftex
@@ -14366,7 +14426,6 @@
 @dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/xypic
 @dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/vntex
 @dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/urwvn
-@exec /bin/mkdir -p %D/%%TEXMFDISTDIR%%/fonts/map/dvips/updmap
 @dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/updmap
 @dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/tetex
 @dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/qfonts
@@ -14383,12 +14442,10 @@
 @dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/antp
 @dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/ams
 @dirrm %%TEXMFDISTDIR%%/fonts/map/dvips
-@exec /bin/mkdir -p %D/%%TEXMFDISTDIR%%/fonts/map/dvipdfm/updmap
 @dirrm %%TEXMFDISTDIR%%/fonts/map/dvipdfm/updmap
 @dirrm %%TEXMFDISTDIR%%/fonts/map/dvipdfm/tetex
 @dirrm %%TEXMFDISTDIR%%/fonts/map/dvipdfm
 @dirrm %%TEXMFDISTDIR%%/fonts/map
-@exec /bin/mkdir -p %D/%%TEXMFDISTDIR%%/fonts/lig
 @dirrm %%TEXMFDISTDIR%%/fonts/lig
 @dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/vntex
 @dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/tetex
@@ -14404,7 +14461,6 @@
 @dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips/antp
 @dirrm %%TEXMFDISTDIR%%/fonts/enc/dvips
 @dirrm %%TEXMFDISTDIR%%/fonts/enc
-@exec /bin/mkdir -p %D/%%TEXMFDISTDIR%%/fonts/cmap
 @dirrm %%TEXMFDISTDIR%%/fonts/cmap
 @dirrm %%TEXMFDISTDIR%%/fonts/afm/yandy/mathtime
 @dirrm %%TEXMFDISTDIR%%/fonts/afm/yandy/mathplus
@@ -14434,7 +14490,6 @@
 @dirrm %%TEXMFDISTDIR%%/fonts/afm/public/mathpazo
 @dirrm %%TEXMFDISTDIR%%/fonts/afm/public/marvosym
 @dirrm %%TEXMFDISTDIR%%/fonts/afm/public/lm
-@exec /bin/mkdir -p %D/%%TEXMFDISTDIR%%/fonts/afm/public/fpl
 @dirrm %%TEXMFDISTDIR%%/fonts/afm/public/fpl
 @dirrm %%TEXMFDISTDIR%%/fonts/afm/public/antt
 @dirrm %%TEXMFDISTDIR%%/fonts/afm/public/antp
@@ -14464,6 +14519,7 @@
 @dirrm %%TEXMFDISTDIR%%/dvips/misc
 @dirrm %%TEXMFDISTDIR%%/dvips/config
 @dirrm %%TEXMFDISTDIR%%/dvips/bluesky
+@dirrm %%TEXMFDISTDIR%%/dvips/antt
 @dirrm %%TEXMFDISTDIR%%/dvips/antp
 @dirrm %%TEXMFDISTDIR%%/dvips
 @dirrm %%TEXMFDISTDIR%%/dvipdfm/config
@@ -14507,7 +14563,6 @@
 @dirrm %%TEXMFDISTDIR%%/doc/latex/textmerg
 @dirrm %%TEXMFDISTDIR%%/doc/latex/textfit
 @dirrm %%TEXMFDISTDIR%%/doc/latex/tex-refs
-@dirrm %%TEXMFDISTDIR%%/doc/latex/onlyamsmath
 @dirrm %%TEXMFDISTDIR%%/doc/latex/supertab
 @dirrm %%TEXMFDISTDIR%%/doc/latex/subfigure
 @dirrm %%TEXMFDISTDIR%%/doc/latex/subfig
@@ -14543,9 +14598,10 @@
 @dirrm %%TEXMFDISTDIR%%/doc/latex/pb-diagram
 @dirrm %%TEXMFDISTDIR%%/doc/latex/paralist
 @dirrm %%TEXMFDISTDIR%%/doc/latex/overpic
+@dirrm %%TEXMFDISTDIR%%/doc/latex/onlyamsmath
 @dirrm %%TEXMFDISTDIR%%/doc/latex/oberdiek
-@dirrm %%TEXMFDISTDIR%%/doc/latex/ntgclass
 @dirrm %%TEXMFDISTDIR%%/doc/latex/ntheorem
+@dirrm %%TEXMFDISTDIR%%/doc/latex/ntgclass
 @dirrm %%TEXMFDISTDIR%%/doc/latex/nomencl
 @dirrm %%TEXMFDISTDIR%%/doc/latex/natbib
 @dirrm %%TEXMFDISTDIR%%/doc/latex/mwcls
@@ -14663,8 +14719,8 @@
 @dirrm %%TEXMFDISTDIR%%/doc/generic/ukrhyph
 @dirrm %%TEXMFDISTDIR%%/doc/generic/thumbpdf
 @dirrm %%TEXMFDISTDIR%%/doc/generic/texdraw
-@dirrm %%TEXMFDISTDIR%%/doc/generic/tex-ps/cmyk-hax
 @dirrm %%TEXMFDISTDIR%%/doc/generic/tex-ps/poligraf
+@dirrm %%TEXMFDISTDIR%%/doc/generic/tex-ps/cmyk-hax
 @dirrm %%TEXMFDISTDIR%%/doc/generic/tex-ps
 @dirrm %%TEXMFDISTDIR%%/doc/generic/tap
 @dirrm %%TEXMFDISTDIR%%/doc/generic/spanish
@@ -14673,7 +14729,6 @@
 @dirrm %%TEXMFDISTDIR%%/doc/generic/pstricks/lgc
 @dirrm %%TEXMFDISTDIR%%/doc/generic/pstricks/images
 @dirrm %%TEXMFDISTDIR%%/doc/generic/pstricks
-@exec /bin/mkdir -p %D/%%TEXMFDISTDIR%%/doc/generic/pdfcrop
 @dirrm %%TEXMFDISTDIR%%/doc/generic/pdfcrop
 @dirrm %%TEXMFDISTDIR%%/doc/generic/nohyph
 @dirrm %%TEXMFDISTDIR%%/doc/generic/multido
@@ -14728,6 +14783,7 @@
 @dirrm %%TEXMFDISTDIR%%/doc/fonts
 @dirrm %%TEXMFDISTDIR%%/doc/fontinst/talks
 @dirrm %%TEXMFDISTDIR%%/doc/fontinst/manual
+@dirrm %%TEXMFDISTDIR%%/doc/fontinst/examples
 @dirrm %%TEXMFDISTDIR%%/doc/fontinst/encspecs
 @dirrm %%TEXMFDISTDIR%%/doc/fontinst
 @dirrm %%TEXMFDISTDIR%%/doc/etex/base
@@ -14735,10 +14791,10 @@
 @dirrm %%TEXMFDISTDIR%%/doc/eplain
 @dirrm %%TEXMFDISTDIR%%/doc/cyrplain
 @dirrm %%TEXMFDISTDIR%%/doc/cstex
-@dirrm %%TEXMFDISTDIR%%/doc/context/general/allkind
-@dirrm %%TEXMFDISTDIR%%/doc/context/general
 @dirrm %%TEXMFDISTDIR%%/doc/context/ppchtex
 @dirrm %%TEXMFDISTDIR%%/doc/context/manual
+@dirrm %%TEXMFDISTDIR%%/doc/context/general/allkind
+@dirrm %%TEXMFDISTDIR%%/doc/context/general
 @dirrm %%TEXMFDISTDIR%%/doc/context/bib
 @dirrm %%TEXMFDISTDIR%%/doc/context/base
 @dirrm %%TEXMFDISTDIR%%/doc/context

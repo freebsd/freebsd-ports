@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	teTeX-base
-PORTVERSION=	2.99.13.20050204
+PORTVERSION=	3.0
 PORTREVISION=	0
 CATEGORIES=	print
-MASTER_SITES=	http://people.freebsd.org/~edwin/ \
-		ftp://ftp.dante.de/tex-archive/systems/unix/teTeX-beta/ \
-		${MASTER_SITE_TEX_CTAN}
-MASTER_SITE_SUBDIR=	systems/unix/teTeX-beta
+MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
+		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/:1
+MASTER_SITE_SUBDIR=	systems/unix/teTeX/3.0/distrib
 DISTNAME=	${TETEX_SRC}
 DIST_SUBDIR=	teTeX
 
@@ -29,7 +28,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		t1.5:${PORTSDIR}/devel/t1lib \
 		gd.4:${PORTSDIR}/graphics/gd
 
-WRKSRC=		${WRKDIR}/tetex-src-${PORTVERSION}-beta
+WRKSRC=		${WRKDIR}/tetex-src-${PORTVERSION}
 USE_LIBTOOL_VER=15
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -116,7 +115,7 @@ CONFIGURE_ARGS+=--without-x11
 PLIST_SUB+=	X11BITS="@comment "
 .endif
 
-TETEX_SRC=	tetex-src-${PORTVERSION}-beta
+TETEX_SRC=	tetex-src-${PORTVERSION}
 LIBGD_PREFIX?=	${LOCALBASE}
 LIBPNG_PREFIX?=	${LOCALBASE}
 LIBWWW_PREFIX?=	${LOCALBASE}
