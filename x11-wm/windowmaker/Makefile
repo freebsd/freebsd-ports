@@ -3,7 +3,7 @@
 # Date created:		August 13, 1997
 # Whom:			handy@physics.montana.edu
 #
-# $Id: Makefile,v 1.51 1999/05/27 07:32:49 tg Exp $
+# $Id: Makefile,v 1.52 1999/06/04 08:00:19 tg Exp $
 
 DISTNAME=	WindowMaker-0.60.0
 PKGNAME=	windowmaker-0.60.0
@@ -24,7 +24,7 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ENV=	X11BASE=${X11BASE} LIBS=-L${LOCALBASE}/lib \
 		CPPFLAGS=-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
