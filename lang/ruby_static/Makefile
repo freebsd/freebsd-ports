@@ -21,8 +21,7 @@ USE_RUBY=	yes
 # Beware, because gdbm is under GPL, you must treat the whole binary
 # as GPL says if you include gdbm in it.
 EXT_PORTS=	archivers/ruby-zlib \
-		databases/ruby-bdb1 \
-		devel/ruby-strscan
+		databases/ruby-bdb1
 _PORTSDIR=	${.CURDIR}/../..
 _RUBY_PORTDIR=	${_PORTSDIR}/${RUBY_PORT}
 
