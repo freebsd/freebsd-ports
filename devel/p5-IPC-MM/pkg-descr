@@ -8,6 +8,3 @@ as miscellaneous methods.  Additionally, it provides a tied interface
 for scalars and hashes.
 
 WWW: http://search.cpan.org/dist/IPC-MM/
-
--- Sergey Skvortsov
-skv@FreeBSD.org
