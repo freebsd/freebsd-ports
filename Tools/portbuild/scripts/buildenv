@@ -38,6 +38,8 @@ buildenv () {
     export PORTOBJFORMAT=elf
     export USA_RESIDENT=yes
 
+    export MASTER_SITE_OVERRIDE='ftp://ftp-master.freebsd.org/pub/FreeBSD/ports/distfiles/${DIST_SUBDIR}/'
+
     # XXX Are these supposed to be used for release CD builds?
     #export NO_RESTRICTED=1
     #export FOR_CDROM=1
