@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
 
+    SUBDIR += abclock
     SUBDIR += asclock
     SUBDIR += asclock-gtk
     SUBDIR += asclock-xlib
