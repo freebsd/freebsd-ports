@@ -14,14 +14,15 @@ MASTER_SITE_SUBDIR=	gnupdate
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	bz2:${PORTSDIR}/archivers/bzip2 \
-		curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.2:${PORTSDIR}/ftp/curl
+.if !exists(/usr/bin/bzip2) 
+LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
+.endif
 
 USE_LIBTOOL=	yes
-GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
 
-MAN1=	comprex-config.1
+MAN1=		comprex-config.1
 
 .include <bsd.port.mk>
