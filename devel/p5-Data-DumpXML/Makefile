@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Data-DumpXML
-PORTVERSION=	1.03
+PORTVERSION=	1.05
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Data
@@ -20,9 +20,11 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Array/RefElem.pm:${PORTSDIR}/misc/p5-Ar
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+
 PERL_CONFIGURE=	yes
 
-MAN3=	Data::DumpXML.3 Data::DumpXML::Parser.3
+MAN3=		Data::DumpXML.3 \
+		Data::DumpXML::Parser.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>
