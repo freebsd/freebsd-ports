@@ -7,6 +7,7 @@
 
 PORTNAME=	Class-DBI-Loader
 PORTVERSION=	0.11
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
@@ -17,7 +18,8 @@ COMMENT=	Dynamic definition of Class::DBI sub classes
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
-RUN_DEPENDS=	${SITE_PERL}/Class/DBI.pm:${PORTSDIR}/databases/p5-Class-DBI
+RUN_DEPENDS=	${SITE_PERL}/Class/DBI.pm:${PORTSDIR}/databases/p5-Class-DBI \
+		${SITE_PERL}/Lingua/EN/Inflect.pm:${PORTSDIR}/textproc/p5-Lingua-EN-Inflect
 
 PERL_CONFIGURE=	yes
 
