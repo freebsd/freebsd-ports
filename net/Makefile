@@ -390,6 +390,7 @@
     SUBDIR += vrrp
     SUBDIR += vtun
     SUBDIR += wais
+    SUBDIR += wakeonlan
     SUBDIR += walker
     SUBDIR += whatmask
     SUBDIR += wide-dhcp
