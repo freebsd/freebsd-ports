@@ -1,5 +1,5 @@
 --- configure.orig	Thu Aug 17 19:41:42 2000
-+++ configure	Sat Oct  7 06:30:04 2000
++++ configure	Fri Oct 13 00:52:28 2000
 @@ -1182,8 +1182,8 @@
  echo "configure:1183: checking if the compiler understands -pipe" >&5
    OLDCC="$CC"
@@ -16,7 +16,7 @@
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-lgtk `$gtkbin""gtk-config --libs` $LIBS"
-+LIBS="`$gtkbin""$GTK_CONFIG --libs` $LIBS"
++LIBS="`$GTK_CONFIG --libs` $LIBS"
  cat > conftest.$ac_ext <<EOF
  #line 1713 "configure"
  #include "confdefs.h"
@@ -25,11 +25,21 @@
    echo $ac_n "checking GTK+ version""... $ac_c" 1>&6
  echo "configure:1749: checking GTK+ version" >&5
 -  GTKV=`$gtkbin""gtk-config --version`
-+  GTKV=`$gtkbin""$GTK_CONFIG --version`
++  GTKV=`$GTK_CONFIG --version`
    echo "$ac_t""$GTKV" 1>&6
    case "$GTKV" in
      1.0.*)
-@@ -1942,8 +1942,8 @@
+@@ -1756,7 +1756,8 @@
+       GTK_CFLAGS='-DHAVE_GTK_1_1'
+       ;;
+     *)
+-      GTK_CFLAGS=''
++      GTK_CFLAGS=`$GTK_CONFIG --cflags`
++      GTK_LIBS=`$GTK_CONFIG --libs`
+       ;;
+   esac
+ fi
+@@ -1942,8 +1943,8 @@
      OS_LIBCQCAM_OBJS=''
    ;;
    freebsd*)
@@ -40,11 +50,11 @@
      OS_LIBCQCAM_OBJS=''
    ;;
    bsdi*)
-@@ -2178,6 +2178,7 @@
- s%@x_includes@%$x_includes%g
+@@ -2179,6 +2180,7 @@
  s%@bingroup@%$bingroup%g
  s%@gtkbin@%$gtkbin%g
-+s%@GTK_CONFIG@%$GTK_CONFIG%g
  s%@GTK_CFLAGS@%$GTK_CFLAGS%g
++s%@GTK_LIBS@%$GTK_LIBS%g
  
  CEOF
+ EOF

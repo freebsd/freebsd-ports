@@ -2,13 +2,14 @@ bin/cqcam
 bin/gtkcam
 bin/webcam
 bin/xcqcam
+%%PORTDOCS%%share/doc/cqcam/APINOTES
+%%PORTDOCS%%share/doc/cqcam/CHANGES
+%%PORTDOCS%%share/doc/cqcam/README
+%%PORTDOCS%%share/doc/cqcam/README.movies
+%%PORTDOCS%%share/doc/cqcam/README.webcam
+%%PORTDOCS%%share/doc/cqcam/refresh.html
+%%PORTDOCS%%share/doc/cqcam/webcam.html
 share/examples/cqcam/sample.cqcrc
 share/examples/cqcam/sample.nph-webcam
-share/doc/cqcam/APINOTES
-share/doc/cqcam/CHANGES
-share/doc/cqcam/README
-share/doc/cqcam/README.webcam
-share/doc/cqcam/refresh.html
-share/doc/cqcam/webcam.html
 @dirrm share/examples/cqcam
-@dirrm share/doc/cqcam
+%%PORTDOCS%%@dirrm share/doc/cqcam

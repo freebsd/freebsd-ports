@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	cqcam
-PORTVERSION=	0.90p11
+PORTVERSION=	0.91
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.cs.duke.edu/~reynolds/cqcam/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/pre/}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -23,7 +21,6 @@ USE_GTK=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--disable-asm
 INSTALL_TARGET=	bininstall
 
 MAN1=		cqcam.1
@@ -31,7 +28,7 @@ MLINKS=		cqcam.1 webcam.1 \
 		cqcam.1 xcqcam.1
 
 PORTDOCS=	README docs/APINOTES docs/CHANGES docs/README.webcam \
-		docs/refresh.html docs/webcam.html
+		docs/refresh.html docs/webcam.html docs/README.movies
 
 post-install:
 .for file in cqcam gtkcam webcam xcqcam
@@ -42,9 +39,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/.cqcrc ${PREFIX}/share/examples/cqcam/sample.cqcrc
 	${INSTALL_DATA} ${WRKSRC}/webcam/nph-webcam ${PREFIX}/share/examples/cqcam/sample.nph-webcam
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/cqcam
+	@${MKDIR} ${DOCSDIR}
 .for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/cqcam
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 	@${SED} -e "s:/usr/local:${PREFIX}:" ${PKGMESSAGE}
