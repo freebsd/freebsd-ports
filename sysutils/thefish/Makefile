@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	thefish
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.energyhq.es.eu.org/files/
 
@@ -19,11 +19,6 @@ MAKE_ENV+=	NO_GUI=yes
 .else
 USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
-.endif
-
-.if defined(WITH_CDK)
-LIB_DEPENDS=	cdk:${PORTSDIR}/devel/cdk
-MAKE_ENV+=	WITH_CDK=yes
 .endif
 
 MAN1=		thefish.1

@@ -1,4 +1,3 @@
 ***********************************************************************
 To build The Fish without the GTK+ UI, define NO_GUI or WITHOUT_X11
-To enable the new (experimental) CDK console UI, define WITH_CDK
 ***********************************************************************
