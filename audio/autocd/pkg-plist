@@ -3,3 +3,5 @@ bin/cdctl
 bin/pause
 bin/eject
 etc/rc.d/autocd.sh
+%%PORTDOCS%%share/doc/autocd/README.rus.html
+@dirrm share/doc/autocd
