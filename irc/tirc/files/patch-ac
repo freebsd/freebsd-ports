@@ -1,0 +1,11 @@
+--- configure.orig	Sun Aug 22 14:55:40 1999
++++ configure	Sun Aug 22 14:55:55 1999
+@@ -754,7 +754,7 @@
+ bsdi*)	CC=${CC-"shlicc"}
+ 	OPTFLAG=${OPTFLAG-"-O2"}
+ 	LINTFLAGS=${LINTFLAGS-"-g -s"} ;;
+-freebsd*) OPTFLAG=${OPTFLAG-"-O2"}
++freebsd*) OPTFLAG=${OPTFLAG-"${CFLAGS}"}
+ 	LINTFLAGS=${LINTFLAGS-"-g -s"}
+ 	CXFLAGS=${CXFLAGS-"-xref all -html"} ;;
+ netbsd*) OPTFLAG=${OPTFLAG-"-O2"}

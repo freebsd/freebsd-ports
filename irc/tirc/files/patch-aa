@@ -1,0 +1,11 @@
+--- main.c.orig	Sun Aug 22 14:44:04 1999
++++ main.c	Sun Aug 22 14:44:26 1999
+@@ -278,7 +278,7 @@
+ 	fprintf(stderr, "DEBUG: visual debug output active.\n");
+ #endif
+ 	/* Parse the startup file(s) */
+-	readrc("/usr/local/share/tircrc");
++	readrc("__PREFIX__/share/tirc/tircrc");
+ 
+ 	if ((home = getenv("HOME")) == NULL)
+ 		return 1;
