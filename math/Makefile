@@ -21,6 +21,7 @@
     SUBDIR += concorde
     SUBDIR += cxsc
     SUBDIR += dcdflib
+    SUBDIR += diehard
     SUBDIR += djbfft
     SUBDIR += eispack
     SUBDIR += eukleides
