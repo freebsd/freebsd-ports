@@ -109,20 +109,22 @@ getsrctag() {
     if dialog --title "Branch selection menu" --menu \
 "
 Please specify which branch of FreeBSD (as designated by branch tag)
-you would like to update your sources to.  If you want 3.x then
-this would typically be the RELENG_3 tag.  If you're running a 4.0
-system then RELENG_4 is the tag you want.  To follow -current, that
-being 5.0 right now, you want the HEAD (or .) tag.  If you want to be
-able to check out or compare sources from arbitrary branches at will,
-select the CVS repository tag (note: you will still need to use CVS
-in manually checking out and maintaining a /usr/src tree if you
+you would like to update your sources to.  On a production system, you
+want the patched branch of the release you installed.  If you want 3.x
+then this would typically be the RELENG_3 tag.  If you're running a
+4.x system then RELENG_4 is the tag you want.  To follow -current,
+that being 5.0 right now, you want the HEAD (or .) tag.  If you want
+to be able to check out or compare sources from arbitrary branches at
+will, select the CVS repository tag (note: you will still need to use
+CVS in manually checking out and maintaining a /usr/src tree if you
 choose to go this route).
 " -1 -1 5 \
-    "." "The 5.0-current branch (. = HEAD)" \
-    "RELENG_4" "The 4.0-stable branch" \
-    "RELENG_3" "The 3.0-stable branch" \
-    "RELENG_2_2" "The 2.2-stable branch" \
+    "RELENG_4_4" "The 4.4 point release / patch branch" \
+    "RELENG_4" "The 4.x-stable branch" \
+    "RELENG_3" "The 3.x-stable branch" \
+    "RELENG_2_2" "The 2.2.x-stable branch" \
     "cvs" "The CVS repository (all branches)" \
+    "." "The 5.0-current branch (. = HEAD)" \
     "none" "Skip the updating of /usr/src" 2>/tmp/menu.src.$$; then
 	C_RELEASETAG=`cat /tmp/menu.src.$$`
 	rm -f /tmp/menu.src.$$
@@ -145,16 +147,22 @@ These are the currently known CVSup servers at the time that
 this package was created (in alphabetical order by domain name).
 " -1 -1 11 \
     "other" "Specify your own cvsup server." \
-    "cvsup.FreeBSD.org" "U.S. server." \
-    "cvsup2.FreeBSD.org" "U.S. server." \
-    "cvsup3.FreeBSD.org" "U.S. server." \
-    "cvsup4.FreeBSD.org" "U.S. server." \
-    "cvsup5.FreeBSD.org" "U.S. server." \
-    "cvsup6.FreeBSD.org" "U.S. server." \
-    "cvsup7.FreeBSD.org" "U.S. server." \
-    "cvsup8.FreeBSD.org" "U.S. server." \
-    "cvsup9.FreeBSD.org" "U.S. server." \
-    "cvsup10.FreeBSD.org" "U.S. server." \
+    "cvsup.FreeBSD.org" "WA, U.S. server" \
+    "cvsup2.FreeBSD.org" "CA, U.S. server" \
+    "cvsup3.FreeBSD.org" "MA, U.S. server." \
+    "cvsup5.FreeBSD.org" "AZ, U.S. server." \
+    "cvsup6.FreeBSD.org" "IL, U.S. server." \
+    "cvsup7.FreeBSD.org" "WA, U.S. server." \
+    "cvsup8.FreeBSD.org" "WA, U.S. server." \
+    "cvsup9.FreeBSD.org" "MN, U.S. server." \
+    "cvsup10.FreeBSD.org" "CA, U.S. server." \
+    "cvsup11.FreeBSD.org" "VA, U.S. server." \
+    "cvsup12.FreeBSD.org" "IN, U.S. server." \
+    "cvsup13.FreeBSD.org" "CA, U.S. server." \
+    "cvsup14.FreeBSD.org" "CA, U.S. server." \
+    "cvsup15.FreeBSD.org" "IL, U.S. server." \
+    "cvsup16.FreeBSD.org" "VA, U.S. server." \
+    "cvsup17.FreeBSD.org" "WA, U.S. server." \
     "cvsup.ar.FreeBSD.org" "Argentina server." \
     "cvsup.au.FreeBSD.org" "Australia server." \
     "cvsup.br.FreeBSD.org" "Brazil server." \
@@ -300,11 +308,8 @@ if [ -r "${SUPFILE}" -a -x "${CVSUP_CMD}" ]; then
     if ! yesno "Do you wish to run the CVSup update now?"; then
 	infomsg "OK, to update your system later simply type:
      \"${CVSUP_CMD} ${CVSUP_ARGS} ${SUPFILE}\"
-or put the command in your /etc/daily.local file for automatic updates."
+or put the command in a file /etc/weekly.local file for automatic updates."
     else
-	if yesno "Are you behind a firewall?"; then
-	    CVSUP_ARGS="${CVSUP_ARGS} -P -"
-	fi
 	if yesno "Do you want to use compression (56K or slower, yes)?"; then
 	    CVSUP_ARGS="${CVSUP_ARGS} -z"
 	fi
