@@ -7,6 +7,7 @@
 
 PORTNAME=	enchant
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	abiword
@@ -14,6 +15,8 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Dictionary/spellchecking framework
+
+LIB_DEPENDS=	aspell.15:${PORTSDIR}/textproc/aspell
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
