@@ -108,6 +108,7 @@ post-install:
 		-e ' end;' \
 		-e 'end' \
 		${IRB_WITH_SUFFIX}
+	${CHMOD} ${BINMODE} ${IRB_WITH_SUFFIX}
 	${MKDIR} ${RUBY_ELISPDIR}
 	${TOUCH} ${RUBY_ELISPDIR}/.keep_me
 	${MKDIR} ${RUBY_EXAMPLESDIR}
