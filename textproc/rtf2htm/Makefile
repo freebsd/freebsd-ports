@@ -9,7 +9,7 @@
 PORTNAME=	rtf2htm
 PORTVERSION=	0.17.1
 CATEGORIES=	textproc
-MASTER_SITES=	http://recycle.50megs.com/
+MASTER_SITES=	http://www.geocities.com/tuorfa/
 
 MAINTAINER=	ports@FreeBSD.org
 
