@@ -77,6 +77,7 @@ lib/mozilla/TestXPTCInvoke
 lib/mozilla/UnicharSelfTest
 lib/mozilla/bloaturls.txt
 lib/mozilla/chrome/US.jar
+lib/mozilla/chrome/chatzilla.jar
 @unexec rm %D/lib/mozilla/chrome/chrome.rdf
 lib/mozilla/chrome/chromelist.txt
 lib/mozilla/chrome/classic.jar
@@ -110,6 +111,7 @@ lib/mozilla/components/autocomplete.xpt
 lib/mozilla/components/bookmarks.xpt
 lib/mozilla/components/caps.xpt
 lib/mozilla/components/chardet.xpt
+lib/mozilla/components/chatzilla-service.js
 lib/mozilla/components/chrome.xpt
 lib/mozilla/components/content_base.xpt
 lib/mozilla/components/content_xsl.xpt
