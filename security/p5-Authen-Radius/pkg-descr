@@ -1,3 +1,4 @@
-       The Authen::Radius module provides a simple class that
-       allows you to send/receive Radius requests/responses
-       to/from a Radius server.
+The Authen::Radius module provides a simple class that allows you to
+send/receive Radius requests/responses to/from a Radius server.
+
+WWW: http://search.cpan.org/dist/RadiusPerl/
