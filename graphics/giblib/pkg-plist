@@ -1,6 +1,7 @@
 @comment $FreeBSD$
 bin/giblib-config
 include/giblib/gib_btree.h
+include/giblib/gib_debug.h
 include/giblib/gib_hash.h
 include/giblib/gib_imlib.h
 include/giblib/gib_list.h
