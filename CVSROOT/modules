@@ -8401,6 +8401,7 @@ xmms-liveice	ports/audio/xmms-liveice
 xmms-musepack	ports/audio/xmms-musepack
 xmms-osssurround	ports/audio/xmms-osssurround
 xmms-paranormal	ports/graphics/xmms-paranormal
+xmms-pipe	ports/audio/xmms-pipe
 xmms-quix3dn	ports/audio/xmms-quix3dn
 xmms-shn	ports/audio/xmms-shn
 xmms-sndfile	ports/audio/xmms-sndfile
