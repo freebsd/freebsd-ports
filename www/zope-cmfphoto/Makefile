@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	cmfphoto
-PORTVERSION=	0.4.r2
+PORTVERSION=	0.4.2
 CATEGORIES=	www zope
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	collective
 PKGNAMEPREFIX=	zope-
-DISTNAME=	CMFPhoto-0.4rc2
+DISTNAME=	CMFPhoto-${PORTVERSION}
 
 MAINTAINER=	kaeru@inigo-tech.com
 COMMENT=	CMFPhoto product for Zope/CMF
@@ -20,18 +20,32 @@ RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/lib/python/Products/CMFDefault/__init_
 		${PYTHON_SITELIBDIR}/PIL/_imaging.so:${PORTSDIR}/graphics/py-imaging
 
 BROKEN=		"Broken dependency"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2004-04-17
+# Seems to be a problem in bsd.python.mk:
+#   <http://lists.freebsd.org/pipermail/freebsd-python/2004-February/000051.html>
 
 USE_PYTHON=	yes
 USE_ZOPE=	yes
 DIST_SUBDIR=	zope
 
-WRKSRC=		${WRKDIR}/CMFPhoto
+ZOPEPRODUCTNAME=	CMFPhoto
+
+PLIST=		${WRKDIR}/pkg-plist
+WRKSRC=		${WRKDIR}/${ZOPEPRODUCTNAME}
 
 do-build:
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/Extensions/
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -l ${WRKSRC}/Extensions
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -l ${WRKSRC}
+ 
+pre-install:
+	@${RM} -f ${PLIST}
+	@${TOUCH} ${PLIST}
+	@cd ${WRKDIR} && \
+	for f in `${FIND} ${ZOPEPRODUCTNAME} -type f`; do \
+		${ECHO_CMD} %%ZOPEPRODUCTDIR%%/$${f} >> ${PLIST}; \
+	done; \
+	for d in `${FIND} -d ${ZOPEPRODUCTNAME} -type d`; do \
+		${ECHO_CMD} @dirrm %%ZOPEPRODUCTDIR%%/$${d} >> ${PLIST}; \
+	done; \
 
 do-install:
 	@${MKDIR} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/
