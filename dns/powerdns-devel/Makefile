@@ -1,3 +1,4 @@
+# New ports collection makefile for:	powerdns
 # Date Created:				14.Jan 2003
 # Whom:					dirk.meyer@dinoex.sub.org
 #
@@ -6,6 +7,7 @@
 
 PORTNAME=	powerdns
 PORTVERSION=	2.9.16
+PORTREVISION=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${PORTVERSION}
@@ -127,7 +129,10 @@ post-install:
 .endif
 .if !exists(${STARTUP_SCRIPT})
 	${ECHO_MSG} "Installing ${STARTUP_SCRIPT} startup file."
-	${INSTALL_SCRIPT} ${FILESDIR}/pdns.sh.sample ${STARTUP_SCRIPT}
+	${SED} -e "s=%%PREFIX%%=${PREFIX}=" \
+		${FILESDIR}/pdns.sh.sample  \
+		> ${WRKSRC}/pdns.sh.sample
+	${INSTALL_SCRIPT} ${WRKSRC}/pdns.sh.sample ${STARTUP_SCRIPT}
 .endif
 
 .include <bsd.port.post.mk>
