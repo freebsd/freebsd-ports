@@ -157,6 +157,7 @@
     SUBDIR += netpbm
     SUBDIR += netshow
     SUBDIR += nurbs++
+    SUBDIR += opendis
     SUBDIR += opendx
     SUBDIR += opendx-samples
     SUBDIR += opengl-man

@@ -1,0 +1,17 @@
+ODS, the Open Digita Services project, is an effort to write Open Source tools
+for accessing Digita cameras from Linux and other unix operating systems.
+
+ODS has been tested with and is known to work with the following cameras:
+
+Kodak DC-220
+Kodak DC-260
+Kodak DC-265
+Kodak DC-290
+
+The Minolta EX-1500 has been reported to work with ODS, but the interface needs
+some debugging.
+
+ODS will not support cameras that don't use Digita; this includes the Kodak
+DC-200, DC-210, DC-240, DC-280, and earlier cameras.
+
+WWW: http://ods.sourceforge.net/
