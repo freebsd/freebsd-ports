@@ -32,6 +32,8 @@ BROKEN=		Not supported on versions earlier than 4.1-RELEASE
 .if ${ARCH} == "alpha"
 TARGET=		FBSD_ALPHA
 .elif ${ARCH} == "amd64"
+MASTER_SITE_SUBDIR=	obrien
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 DISTNAME=	cvsup-static.i386
 NO_WRKSUBDIR=	yes
 USE_REINPLACE=	yes
