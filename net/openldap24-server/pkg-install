@@ -13,7 +13,7 @@ FTPUSERS=/etc/ftpusers
 
 case $2 in
 PRE-INSTALL)
-  if ! ${PKG_INFO} -e '%%PKGNAME_CLIENT%%'; then
+  if [ -z "`${PKG_INFO} -I '%%PKGNAME_CLIENT%%' 2> /dev/null`" ]; then
     ${ECHO_CMD} "===>  %%PKGNAME%% requires %%PKGNAME_CLIENT%%."
     ${ECHO_CMD}
     ${ECHO_CMD} "      Please install %%PKGNAME_CLIENT%% manually."

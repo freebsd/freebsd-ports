@@ -50,8 +50,13 @@ OPENLDAP_PORTREVISION=	${PORTREVISION_CLIENT}
 OPENLDAP_PKGNAMESUFFIX=	${PKGNAMESUFFIX_CLIENT}
 OPENLDAP_PKGFILESUFX=	.client
 
-CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-client-2.[013-9].* \
-			${PKGNAMEPREFIX}${PORTNAME}-sasl-client-2.[013-9].*
+.if defined(WITH_SASL)
+CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-client-2.* \
+			${PKGNAMEPREFIX}${PORTNAME}-sasl-client-2.[!2].*
+.else
+CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-client-2.[!2].* \
+			${PKGNAMEPREFIX}${PORTNAME}-sasl-client-2.*
+.endif
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=		drafts rfc
@@ -65,10 +70,17 @@ OPENLDAP_PORTREVISION=	${PORTREVISION_SERVER}
 OPENLDAP_PKGNAMESUFFIX=	${PKGNAMESUFFIX_SERVER}
 OPENLDAP_PKGFILESUFX=
 
+.if defined(WITH_SASL)
+RUN_DEPENDS=		${LOCALBASE}/lib/libldap.so.202:${PORTSDIR}/net/openldap22-sasl-client
+#RUN_DEPENDS=		${LOCALBASE}/lib/libldap-2.2.so.7:${PORTSDIR}/net/openldap22-sasl-client
+CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-server-2.* \
+			${PKGNAMEPREFIX}${PORTNAME}-sasl-server-2.[!2].*
+.else
 RUN_DEPENDS=		${LOCALBASE}/lib/libldap.so.202:${PORTSDIR}/net/openldap22-client
 #RUN_DEPENDS=		${LOCALBASE}/lib/libldap-2.2.so.7:${PORTSDIR}/net/openldap22-client
-CONFLICTS+=		${PKGNAMEPREFIX}${PORTNAME}-server-2.[013-9].* \
-			${PKGNAMEPREFIX}${PORTNAME}-sasl-server-2.[013-9].*
+CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-server-2.[!2].* \
+			${PKGNAMEPREFIX}${PORTNAME}-sasl-server-2.*
+.endif
 
 .if ${PORTREVISION_CLIENT} != 0
 SUF1_CLIENT=		_${PORTREVISION_CLIENT}
@@ -131,7 +143,7 @@ INSTALLS_SHLIB=		yes
 
 USE_RC_SUBR=		yes
 
-SED_SCRIPT+=		-e 's,%%PKGNAME_CLIENT%%,${PKGNAME_CLIENT},g' \
+SED_SCRIPT+=		-e 's,%%PKGNAME_CLIENT%%,${PKGNAME_CLIENT:R}.*,g' \
 			-e 's,%%RC_SUBR%%,${RC_SUBR},g' \
 			-e 's,%%RC_DIR%%,${RC_DIR},g' \
 			-e 's,%%RC_SUFX%%,${RC_SUFX},g'
