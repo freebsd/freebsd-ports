@@ -1,7 +1,11 @@
-arm-rtems/lib/thumb/libobjc.la     
-arm-rtems/lib/thumb/libobjc.a        
+arm-rtems/lib/fpu/libobjc.la
+arm-rtems/lib/fpu/libobjc.a
 arm-rtems/lib/libobjc.la  
 arm-rtems/lib/libobjc.a  
+arm-rtems/lib/thumb/libobjc.la     
+arm-rtems/lib/thumb/libobjc.a        
+arm-rtems/lib/thumb/fpu/libobjc.la
+arm-rtems/lib/thumb/fpu/libobjc.a
 lib/gcc-lib/arm-rtems/%%GCCVERSION%%/include/objc/hash.h
 lib/gcc-lib/arm-rtems/%%GCCVERSION%%/include/objc/objc-list.h
 lib/gcc-lib/arm-rtems/%%GCCVERSION%%/include/objc/sarray.h
