@@ -2,24 +2,19 @@ bin/jpilot
 bin/jpilot-dump
 bin/jpilot-sync
 bin/jpilot-upgrade-99
-lib/jpilot/plugins/libexpense.a
 lib/jpilot/plugins/libexpense.la
 lib/jpilot/plugins/libexpense.so
-lib/jpilot/plugins/libexpense.so.1
-lib/jpilot/plugins/libkeyring.a
+lib/jpilot/plugins/libexpense.so.0
 lib/jpilot/plugins/libkeyring.la
 lib/jpilot/plugins/libkeyring.so
-lib/jpilot/plugins/libkeyring.so.1
-lib/jpilot/plugins/libsynctime.a
+lib/jpilot/plugins/libkeyring.so.0
 lib/jpilot/plugins/libsynctime.la
 lib/jpilot/plugins/libsynctime.so
-lib/jpilot/plugins/libsynctime.so.1
-%%PORTDOCS%%share/doc/jpilot/manual.html
-%%PORTDOCS%%share/doc/jpilot/plugin.html
+lib/jpilot/plugins/libsynctime.so.0
+%%PORTDOCS%%share/doc/jpilot/AUTHORS
 %%PORTDOCS%%share/doc/jpilot/BUGS
-%%PORTDOCS%%share/doc/jpilot/CHANGELOG
 %%PORTDOCS%%share/doc/jpilot/COPYING
-%%PORTDOCS%%share/doc/jpilot/CREDITS
+%%PORTDOCS%%share/doc/jpilot/ChangeLog
 %%PORTDOCS%%share/doc/jpilot/INSTALL
 %%PORTDOCS%%share/doc/jpilot/README
 %%PORTDOCS%%share/doc/jpilot/README.icons
@@ -35,6 +30,8 @@ lib/jpilot/plugins/libsynctime.so.1
 %%PORTDOCS%%share/doc/jpilot/jpilot-search.png
 %%PORTDOCS%%share/doc/jpilot/jpilot-todo.png
 %%PORTDOCS%%share/doc/jpilot/jpilot-toplogo.jpg
+%%PORTDOCS%%share/doc/jpilot/manual.html
+%%PORTDOCS%%share/doc/jpilot/plugin.html
 share/jpilot/AddressDB.pdb
 share/jpilot/DatebookDB.pdb
 share/jpilot/ExpenseDB.pdb
@@ -61,6 +58,9 @@ share/locale/ja/LC_MESSAGES/jpilot.mo
 share/locale/nl/LC_MESSAGES/jpilot.mo
 share/locale/no/LC_MESSAGES/jpilot.mo
 share/locale/sv/LC_MESSAGES/jpilot.mo
+share/locale/tr/LC_MESSAGES/jpilot.mo
+share/locale/zh_CN/LC_MESSAGES/jpilot.mo
+share/locale/zh_TW/LC_MESSAGES/jpilot.mo
 @dirrm share/jpilot/icons
 @dirrm share/jpilot
 %%PORTDOCS%%@dirrm share/doc/jpilot
@@ -78,6 +78,8 @@ share/locale/sv/LC_MESSAGES/jpilot.mo
 @unexec rmdir %D/share/locale/es 2>/dev/null || true
 @unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/fr 2>/dev/null || true
+@unexec rmdir %D/share/locale/it/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/it 2>/dev/null || true
 @unexec rmdir %D/share/locale/ja/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/ja 2>/dev/null || true
 @unexec rmdir %D/share/locale/nl/LC_MESSAGES 2>/dev/null || true
@@ -86,4 +88,10 @@ share/locale/sv/LC_MESSAGES/jpilot.mo
 @unexec rmdir %D/share/locale/no 2>/dev/null || true
 @unexec rmdir %D/share/locale/sv/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/sv 2>/dev/null || true
+@unexec rmdir %D/share/locale/tr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/tr 2>/dev/null || true
+@unexec rmdir %D/share/locale/zh_CN/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/zh_CN 2>/dev/null || true
+@unexec rmdir %D/share/locale/zh_TW/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/zh_TW 2>/dev/null || true
 @unexec rmdir %D/share/locale 2>/dev/null || true
