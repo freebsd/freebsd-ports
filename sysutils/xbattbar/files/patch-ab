@@ -1,0 +1,13 @@
+--- xbattbar.c.old	Mon Dec 31 03:32:04 2001
++++ xbattbar.c	Mon Dec 31 03:32:08 2001
+@@ -522,8 +522,8 @@
+   int fd, r, p;
+   struct apm_info     info;
+ 
+-  if ((fd = open(APMDEV21, O_RDWR)) == -1 &&
+-      (fd = open(APMDEV22, O_RDWR)) == -1) {
++  if ((fd = open(APMDEV21, O_RDONLY)) == -1 &&
++      (fd = open(APMDEV22, O_RDONLY)) == -1) {
+     fprintf(stderr, "xbattbar: cannot open apm device\n");
+     exit(1);
+   }
