@@ -37,8 +37,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/opmixer ${WRKSRC}/opmixer-load \
 		${WRKSRC}/volset ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/${DOCDIR}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
