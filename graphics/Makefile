@@ -347,6 +347,7 @@
     SUBDIR += ruby-opengl
     SUBDIR += ruby-pgplot
     SUBDIR += ruby-qt2gl
+    SUBDIR += ruby-rmagick
     SUBDIR += ruby-svg
     SUBDIR += ruby-tgif
     SUBDIR += s10sh
