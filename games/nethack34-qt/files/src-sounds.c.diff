@@ -1,0 +1,14 @@
+--- src/sounds.c.orig	Thu Mar 20 22:48:36 1997
++++ src/sounds.c	Thu Mar 20 22:50:00 1997
+@@ -5,7 +5,11 @@
+ #include "hack.h"
+ #include "edog.h"
+ #ifdef USER_SOUNDS
++#if defined(__FreeBSD__) || defined (__NetBSD__) || defined (__OpenBSD__)
++#include <gnuregex.h>
++#else
+ #include <regex.h>
++#endif
+ #endif
+ 
+ #ifdef OVLB

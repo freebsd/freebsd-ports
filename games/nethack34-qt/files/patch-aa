@@ -1,0 +1,127 @@
+--- ./include/system.h.org	Mon Mar 25 17:18:32 1996
++++ ./include/system.h	Sun Apr 21 18:10:01 1996
+@@ -78,7 +78,7 @@
+ # if !defined(SUNOS4) || defined(RANDOM)
+ E void FDECL(srandom, (unsigned int));
+ # else
+-#  ifndef bsdi
++#  if !defined(bsdi) && !defined(__FreeBSD__)
+ E int FDECL(srandom, (unsigned int));
+ #  endif
+ # endif
+--- ./include/unixconf.h.org	Mon Mar 25 12:47:47 1996
++++ ./include/unixconf.h	Sun Apr 21 18:10:02 1996
+@@ -31,7 +31,7 @@
+ 
+ /* define any of the following that are appropriate */
+ /* #define SVR4		/* use in addition to SYSV for System V Release 4 */
+-#define NETWORK		/* if running on a networked system */
++/* #define NETWORK		/* if running on a networked system */
+ 			/* e.g. Suns sharing a playground through NFS */
+ #define SUNOS4	/* SunOS 4.x */
+ /* #define LINUX	/* Another Unix clone */
+@@ -42,12 +42,12 @@
+ /* #define AIX_31	/* In AIX 3.1 (IBM RS/6000) use BSD ioctl's to gain
+ 			 * job control (note that AIX is SYSV otherwise)
+ 			 * Also define this for AIX 3.2 */
+-/* #define TEXTCOLOR	/* Use System V r3.2 terminfo color support */
++#define TEXTCOLOR	/* Use System V r3.2 terminfo color support */
+ 			/* and/or ANSI color support on termcap systems */
+ 			/* and/or X11 color */
+-/* #define POSIX_JOB_CONTROL	/* use System V / POSIX job control
++#define POSIX_JOB_CONTROL	/* use System V / POSIX job control
+ 			 * (e.g., VSUSP) */
+-/* #define POSIX_TYPES	/* use POSIX types for system calls and termios */
++#define POSIX_TYPES	/* use POSIX types for system calls and termios */
+ 			/* define for many recent OS releases, including
+ 			 * those with specific defines (since types are
+ 			 * changing toward the standard from earlier chaos).
+@@ -125,7 +125,7 @@
+  * A stat system call is done on the mailbox every MAILCKFREQ moves.
+  */
+ 
+-#define MAIL			/* Deliver mail during the game */
++/* #define MAIL			/* Deliver mail during the game */
+ 
+ /* The Andrew Message System does mail a little differently from normal
+  * UNIX.  Mail is deposited in the user's own directory in ~/Mailbox
+--- ./include/config.h.org	Thu Feb 29 11:00:26 1996
++++ ./include/config.h	Sun Apr 21 18:10:06 1996
+@@ -248,7 +248,7 @@
+  * would allow:
+  *  xpmtoppm <x11tiles.xpm | pnmscale 1.25 | ppmquant 90 >x11tiles_big.xpm
+  */
+-/* # define USE_XPM		/* Disable if you do not have the XPM library */
++# define USE_XPM		/* Disable if you do not have the XPM library */
+ # ifdef USE_XPM
+ #  define GRAPHIC_TOMBSTONE	/* Use graphical tombstone (rip.xpm) */
+ # endif
+@@ -288,12 +288,12 @@
+ 
+ #ifdef UNIX
+ /* path and file name extension for compression program */
+-# define COMPRESS "/usr/ucb/compress"	     /* Lempel-Ziv compression */
+-# define COMPRESS_EXTENSION ".Z"	     /* compress's extension */
++/* # define COMPRESS "/usr/ucb/compress"     /* Lempel-Ziv compression */
++/* # define COMPRESS_EXTENSION ".Z"	     /* compress's extension */
+ 
+ /* An example of one alternative you might want to use: */
+-/* # define COMPRESS "/usr/local/bin/gzip"   /* FSF gzip compression */
+-/* # define COMPRESS_EXTENSION ".gz"	     /* normal gzip extension */
++# define COMPRESS "/usr/bin/gzip"   /* FSF gzip compression */
++# define COMPRESS_EXTENSION ".gz"	     /* normal gzip extension */
+ #endif
+ #ifndef COMPRESS
+ # define INTERNAL_COMP	/* control use of NetHack's compression routines */
+@@ -323,7 +323,7 @@
+  * otherwise it will be the current directory.
+  */
+ # ifndef HACKDIR
+-#  define HACKDIR "/usr/games/lib/nethackdir"	/* nethack directory */
++#  define HACKDIR "/usr/local/lib/nethackdir"	/* nethack directory */
+ # endif
+ 
+ /*
+--- ./sys/unix/Makefile.doc.org	Wed Apr  3 21:17:35 1996
++++ ./sys/unix/Makefile.doc	Sun Apr 21 18:10:03 1996
+@@ -31,7 +31,7 @@
+ 
+ 
+ GAME	= nethack
+-MANDIR	= /usr/man/man6
++MANDIR	= ${PREFIX}/man/man6
+ MANEXT	= 6
+ 
+ # manual installation for most BSD-style systems
+--- ./sys/unix/Makefile.top.org	Mon Mar 25 17:22:00 1996
++++ ./sys/unix/Makefile.top	Sun Apr 21 18:28:09 1996
+@@ -16,14 +16,14 @@
+ # make NetHack
+ GAME     = nethack
+ GAMEUID  = games
+-GAMEGRP  = bin
++GAMEGRP  = games
+ 
+ # Permissions - some places use setgid instead of setuid, for instance
+ # See also the option "SECURE" in include/config.h
+-GAMEPERM = 04755
+-FILEPERM = 0644
++GAMEPERM = 02755
++FILEPERM = 0664
+ EXEPERM  = 0755
+-DIRPERM  = 0755
++DIRPERM  = 0775
+ 
+ # GAMEDIR also appears in config.h as "HACKDIR".
+ #
+@@ -32,8 +32,8 @@
+ # therefore there should not be anything in GAMEDIR that you want to keep
+ # (if there is, you'll have to do the installation by hand or modify the
+ # instructions)
+-GAMEDIR  = /usr/games/lib/$(GAME)dir
+-SHELLDIR = /usr/games
++GAMEDIR  = ${PREFIX}/lib/$(GAME)dir
++SHELLDIR = ${PREFIX}/bin
+ 
+ # per discussion in Install.X11
+ VARDATND = 

@@ -1,0 +1,11 @@
+--- include/unixconf.h.orig	Thu Mar 20 23:17:16 1997
++++ include/unixconf.h	Thu Mar 20 23:17:29 1997
+@@ -42,7 +42,7 @@
+ /* #define AIX_31	/* In AIX 3.1 (IBM RS/6000) use BSD ioctl's to gain
+ 			 * job control (note that AIX is SYSV otherwise)
+ 			 * Also define this for AIX 3.2 */
+-#define TEXTCOLOR	/* Use System V r3.2 terminfo color support */
++/* #define TEXTCOLOR	/* Use System V r3.2 terminfo color support */
+ 			/* and/or ANSI color support on termcap systems */
+ 			/* and/or X11 color */
+ #define POSIX_JOB_CONTROL	/* use System V / POSIX job control
