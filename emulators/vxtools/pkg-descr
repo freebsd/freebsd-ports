@@ -1,0 +1,5 @@
+This package allows you to read files from Veritas Journaled Filesystem.
+Current version seems to support versions 2 and 4 (and 3, but this version
+was never released, AFAIK). I don't plan a write version, because I don't
+know journal log structure and I have *no* time to play with it. But I plan
+a Linux kernel implementation.
