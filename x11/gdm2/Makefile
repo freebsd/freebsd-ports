@@ -41,7 +41,7 @@ post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
 	@${INSTALL_SCRIPT} ${WRKSRC}/config/gnomerc ${PREFIX}/etc/gdm
-	@${CHOWN} -R 91:91 ${PREFIX}/share/gnome/gdm ${PREFIX}/etc/gdm
+	@${CHOWN} -R gdm:gdm ${PREFIX}/share/gnome/gdm ${PREFIX}/etc/gdm
 	@${CHMOD} 0750 ${PREFIX}/share/gnome/gdm
 	@${CAT} ${PKGMESSAGE}
 
