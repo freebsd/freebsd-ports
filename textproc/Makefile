@@ -477,6 +477,7 @@
     SUBDIR += unrtf
     SUBDIR += urlview
     SUBDIR += wdiff
+    SUBDIR += website
     SUBDIR += whitespace.el
     SUBDIR += word2x
     SUBDIR += wordnet

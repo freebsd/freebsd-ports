@@ -1,0 +1,220 @@
+%%PORTDOCS%%%%EXAMPLESDIR%%/.tabular
+%%PORTDOCS%%%%EXAMPLESDIR%%/.textonly
+%%PORTDOCS%%%%EXAMPLESDIR%%/ChangeLog
+%%PORTDOCS%%%%EXAMPLESDIR%%/about.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/about.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/autolayout.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/bookmark/ChangeLog
+%%PORTDOCS%%%%EXAMPLESDIR%%/bookmark/bookmark.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/bookmark/catalog
+%%PORTDOCS%%%%EXAMPLESDIR%%/bookmark/xml.dcl
+%%PORTDOCS%%%%EXAMPLESDIR%%/build-ext.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/build-make.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/build-textonly.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/build.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/buildext.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/building.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/building.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/buildmake.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/catalog.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/custom.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/custom.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/dynxbel.js
+%%PORTDOCS%%%%EXAMPLESDIR%%/example.css
+%%PORTDOCS%%%%EXAMPLESDIR%%/formtest.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/full.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/full.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/.xvpics/spacer.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/ChangeLog
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/arrow.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/banner.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/blank.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/homebanner.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/icons/ChangeLog
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/icons/iconat.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/icons/iconhome.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/icons/iconsmallrightarrow.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/arrow/ChangeLog
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/arrow/added.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/arrow/changed.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/arrow/current/ChangeLog
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/arrow/current/leaf.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/arrow/current/open.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/arrow/current/pointer.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/arrow/other/ChangeLog
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/arrow/other/closed.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/arrow/other/leaf.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/arrow/other/open.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/folder/ChangeLog
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/folder/added.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/folder/changed.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/folder/current/ChangeLog
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/folder/current/leaf.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/folder/current/open.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/folder/current/pointer.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/folder/other/ChangeLog
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/folder/other/closed.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/folder/other/leaf.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/folder/other/open.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/folder16/ChangeLog
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/folder16/added.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/folder16/changed.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/folder16/current/ChangeLog
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/folder16/current/leaf.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/folder16/current/open.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/folder16/current/pointer.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/folder16/other/ChangeLog
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/folder16/other/closed.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/folder16/other/leaf.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/folder16/other/open.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/plusminus/ChangeLog
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/plusminus/added.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/plusminus/changed.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/plusminus/current/ChangeLog
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/plusminus/current/leaf.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/plusminus/current/open.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/plusminus/current/pointer.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/plusminus/other/ChangeLog
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/plusminus/other/closed.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/plusminus/other/leaf.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/plusminus/other/open.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/triangle/ChangeLog
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/triangle/added.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/triangle/changed.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/triangle/current/ChangeLog
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/triangle/current/leaf.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/triangle/current/open.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/triangle/current/pointer.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/triangle/other/ChangeLog
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/triangle/other/closed.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/triangle/other/leaf.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/navicons/triangle/other/open.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/graphics/spacer.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/index.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/layout.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/layout.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/linking.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/olink.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/param.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/php.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/php.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/rddl.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/rddl.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/revflag.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/revflag.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/rss.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/rss.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/subdir/ChangeLog
+%%PORTDOCS%%%%EXAMPLESDIR%%/subdir/test1a.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/subdir/test1b.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/subdir/txttest1a.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/subdir/txttest1b.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/test1.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/test1.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/test1a.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/test1b.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/test2.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/test3.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/test3.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/textonly.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/website.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/wslayout.xml
+share/nls/POSIX
+share/nls/en_US.US-ASCII
+share/xsl/website/VERSION
+share/xsl/website/catalog
+share/xsl/website/extensions/ChangeLog
+share/xsl/website/extensions/saxon64.jar
+share/xsl/website/extensions/saxon64/ChangeLog
+share/xsl/website/extensions/saxon64/com/nwalsh/saxon/ChangeLog
+share/xsl/website/extensions/saxon64/com/nwalsh/saxon/Website.java
+share/xsl/website/extensions/saxon64/prj.el
+share/xsl/website/extensions/xalan2.jar
+share/xsl/website/extensions/xalan2/ChangeLog
+share/xsl/website/extensions/xalan2/com/nwalsh/xalan/ChangeLog
+share/xsl/website/extensions/xalan2/com/nwalsh/xalan/Website.java
+share/xsl/website/extensions/xalan2/prj.el
+share/xsl/website/schema/ChangeLog
+share/xsl/website/schema/dtd/ChangeLog
+share/xsl/website/schema/dtd/autolayout.dtd
+share/xsl/website/schema/dtd/extensions.mod
+share/xsl/website/schema/dtd/forms.mod
+share/xsl/website/schema/dtd/layout.dtd
+share/xsl/website/schema/dtd/namespaces.mod
+share/xsl/website/schema/dtd/rddl.mod
+share/xsl/website/schema/dtd/website-custom.dtd
+share/xsl/website/schema/dtd/website-full.dtd
+share/xsl/website/schema/dtd/website.dtd
+share/xsl/website/schema/dtd/website.mod
+share/xsl/website/schema/relaxng/ChangeLog
+share/xsl/website/schema/relaxng/autolayout.rng
+share/xsl/website/schema/relaxng/config.xml
+share/xsl/website/schema/relaxng/extensions.rng
+share/xsl/website/schema/relaxng/forms.rng
+share/xsl/website/schema/relaxng/layout.rng
+share/xsl/website/schema/relaxng/rddl.rng
+share/xsl/website/schema/relaxng/union.xml
+share/xsl/website/schema/relaxng/website-full.rng
+share/xsl/website/schema/relaxng/website.rng
+share/xsl/website/schema/relaxng/websitedb.rng
+share/xsl/website/tests/ChangeLog
+share/xsl/website/tests/test.xml
+share/xsl/website/tests/testcust.xml
+share/xsl/website/tests/testfull.xml
+share/xsl/website/xsl/ChangeLog
+share/xsl/website/xsl/VERSION
+share/xsl/website/xsl/autolayout.xsl
+share/xsl/website/xsl/chunk-common.xsl
+share/xsl/website/xsl/chunk-tabular.xsl
+share/xsl/website/xsl/chunk-website.xsl
+share/xsl/website/xsl/head.xsl
+share/xsl/website/xsl/makefile-dep.xsl
+share/xsl/website/xsl/olink.xsl
+share/xsl/website/xsl/param.xsl
+share/xsl/website/xsl/rss.xsl
+share/xsl/website/xsl/tabular.xsl
+share/xsl/website/xsl/toc-tabular.xsl
+share/xsl/website/xsl/toc.xsl
+share/xsl/website/xsl/website-common.xsl
+share/xsl/website/xsl/website-targets.xsl
+share/xsl/website/xsl/website.xsl
+share/xsl/website/xsl/xbel.xsl
+@unexec rm -f %D/share/xsl/website/catalog 2>&1 >/dev/null || true
+@dirrm share/xsl/website/xsl
+@dirrm share/xsl/website/tests
+@dirrm share/xsl/website/schema/relaxng
+@dirrm share/xsl/website/schema/dtd
+@dirrm share/xsl/website/schema
+@dirrm share/xsl/website/extensions/xalan2/com/nwalsh/xalan
+@dirrm share/xsl/website/extensions/xalan2/com/nwalsh
+@dirrm share/xsl/website/extensions/xalan2/com
+@dirrm share/xsl/website/extensions/xalan2
+@dirrm share/xsl/website/extensions/saxon64/com/nwalsh/saxon
+@dirrm share/xsl/website/extensions/saxon64/com/nwalsh
+@dirrm share/xsl/website/extensions/saxon64/com
+@dirrm share/xsl/website/extensions/saxon64
+@dirrm share/xsl/website/extensions
+@dirrm share/xsl/website
+@dirrm share/xsl
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/subdir
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/graphics/navicons/triangle/other
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/graphics/navicons/triangle/current
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/graphics/navicons/triangle
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/graphics/navicons/plusminus/other
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/graphics/navicons/plusminus/current
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/graphics/navicons/plusminus
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/graphics/navicons/folder16/other
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/graphics/navicons/folder16/current
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/graphics/navicons/folder16
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/graphics/navicons/folder/other
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/graphics/navicons/folder/current
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/graphics/navicons/folder
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/graphics/navicons/arrow/other
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/graphics/navicons/arrow/current
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/graphics/navicons/arrow
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/graphics/navicons
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/graphics/icons
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/graphics/.xvpics
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/graphics
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/bookmark
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
