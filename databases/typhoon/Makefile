@@ -24,6 +24,10 @@ MAN3=	d_close.3 d_crget.3 d_crread.3 d_crset.3 d_dbdpath.3 d_dbfpath.3 \
 	d_keyread.3 d_open.3 d_recfrst.3 d_reclast.3 d_recnext.3 d_recprev.3 \
 	d_recread.3 d_recwrite.3 d_setfiles.3
 
+pre-patch:
+	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
+		${WRKSRC}/util/dbdview.c
+
 post-install:
 .for file in ${MAN1}
 	${INSTALL_MAN} ${WRKSRC}/man/${file} ${PREFIX}/man/man1
