@@ -22,6 +22,8 @@ BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/xproto.pc:${PORTSDIR}/x11/xproto \
 		${LIB_PC_DEPENDS}
 RUN_DEPENDS=	${LIB_PC_DEPENDS}
 
+CONFLICTS=	XFree86-libraries-* xorg-libraries-*
+
 USE_BZIP2=	yes
 PREFIX?=	${X11BASE}
 MTREE_FILE=	/etc/mtree/BSD.x11-4.dist

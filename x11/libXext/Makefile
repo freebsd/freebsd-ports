@@ -18,7 +18,7 @@ LIB_PC_DEPENDS=	${X11BASE}/libdata/pkgconfig/xextensions.pc:${PORTSDIR}/x11/xext
 BUILD_DEPENDS=	${LIB_PC_DEPENDS}
 RUN_DEPENDS=	${LIB_PC_DEPENDS}
 
-CONFLICTS=	XFree86-libraries-*
+CONFLICTS=	XFree86-libraries-* xorg-libraries-*
 
 USE_BZIP2=	yes
 PREFIX?=	${X11BASE}

@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/xextensions.pc:${PORTSDIR}/x11/xexte
 		${LIB_PC_DEPENDS}
 RUN_DEPENDS=	${LIB_PC_DEPENDS}
 
-CONFLICTS=	XFree86-libraries-*
+CONFLICTS=	XFree86-libraries-* xorg-libraries-*
 
 USE_IMAKE=	yes
 USE_X_PREFIX=	no

@@ -19,7 +19,7 @@ LIB_PC_DEPENDS=	${X11BASE}/include/X11/extensions/xf86dga.h:${PORTSDIR}/x11/xf86
 BUILD_DEPENDS=	${LIB_PC_DEPENDS}
 RUN_DEPENDS=	${LIB_PC_DEPENDS}
 
-CONFLICTS=	XFree86-libraries-*
+CONFLICTS=	XFree86-libraries-* xorg-libraries-*
 
 USE_IMAKE=	YES
 USE_X_PREFIX=	no

@@ -14,7 +14,7 @@ DISTNAME=	X11R6.7.0-src1
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Header files for the X Print Extension
 
-CONFLICTS=	XFree86-libraries-*
+CONFLICTS=	XFree86-libraries-* xorg-libraries-*
 
 PREFIX?=	${X11BASE}
 MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
