@@ -1,0 +1,9 @@
+==============================================================
+You may like to put the file hevea.sty in a place where latex
+can find it.  For example, if you are using teTeX from the
+ports, the following commands will do the job:
+
+mkdir -p /usr/local/share/texmf/tex/latex/hevea
+cp /usr/local/lib/hevea/hevea.sty /usr/local/share/texmf/tex/latex/hevea
+texhash
+==============================================================
