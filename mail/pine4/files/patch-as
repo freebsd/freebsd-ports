@@ -1,0 +1,25 @@
+*** pine/init.c.orig	Sat Jun 27 00:01:05 1998
+--- pine/init.c	Tue Jul 14 23:14:23 1998
+***************
+*** 579,584 ****
+--- 579,586 ----
+      GLO_SMTP_SERVER		= parse_list(DF_SMTP_SERVER, 1, NULL);
+  #endif
+  
++     F_TURN_ON(F_TCAP_WINS,ps);
++ 
+      /* Set the default mail directory */
+      build_path(buf, GLO_MAIL_DIRECTORY, "[]");
+      GLO_FOLDER_SPEC		= parse_list(buf, 1, NULL);
+*** pine/other.c.orig	Thu Jul  9 00:35:12 1998
+--- pine/other.c	Tue Jul 14 21:37:09 1998
+***************
+*** 696,702 ****
+  			 || (F) == F_DISABLE_DFLT_IN_BUG_RPT	\
+  			 || (F) == F_DISABLE_ALARM		\
+  			 || (F) == F_ALLOW_CHANGING_FROM	\
+- 			 || (F) == F_TCAP_WINS			\
+  			 || (F) == F_QUELL_PARTIAL_FETCH	\
+  			 || (F) == F_AGG_SEQ_COPY)
+  
+--- 696,701 ----

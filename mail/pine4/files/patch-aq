@@ -1,7 +1,7 @@
-*** pico/display.c.bak	Wed Jul 10 20:59:09 1996
---- pico/display.c	Thu Jan 29 23:06:07 1998
+*** pico/display.c.orig	Fri Jun 19 20:19:53 1998
+--- pico/display.c	Mon Jul 13 01:36:38 1998
 ***************
-*** 82,88 ****
+*** 77,83 ****
       {"^X", "Exit", KS_EXIT},		{"^J", "Justify", KS_JUSTIFY},
       {"^W", "Where is", KS_WHEREIS},	{"^V", "Next Pg", KS_NEXTPAGE},
       {"^U", NULL, KS_NONE},
@@ -9,7 +9,7 @@
       {"^T", "To Spell", KS_SPELLCHK}
   #else
       {"^D", "Del Char", KS_NONE}
---- 82,88 ----
+--- 77,83 ----
       {"^X", "Exit", KS_EXIT},		{"^J", "Justify", KS_JUSTIFY},
       {"^W", "Where is", KS_WHEREIS},	{"^V", "Next Pg", KS_NEXTPAGE},
       {"^U", NULL, KS_NONE},
@@ -17,8 +17,8 @@
       {"^T", "To Spell", KS_SPELLCHK}
   #else
       {"^D", "Del Char", KS_NONE}
-*** pico/ebind.h.bak	Fri Mar 15 10:41:58 1996
---- pico/ebind.h	Thu Jan 29 23:04:30 1998
+*** pico/ebind.h.orig	Sat Feb 28 02:10:31 1998
+--- pico/ebind.h	Mon Jul 13 01:36:39 1998
 ***************
 *** 145,151 ****
   	{CTRL|'O',		filewrite},
@@ -36,10 +36,10 @@
   	{CTRL|'T',		spell},
   #endif	/* SPELLER */
   	{CTRL|'U',		yank},
-*** pico/main.c.bak	Wed May 29 04:05:27 1996
---- pico/main.c	Thu Jan 29 23:04:30 1998
+*** pico/main.c.orig	Tue Apr 21 20:28:08 1998
+--- pico/main.c	Mon Jul 13 01:36:39 1998
 ***************
-*** 72,78 ****
+*** 66,72 ****
       { F9,  (CTRL|'K')},
       { F10, (CTRL|'U')},
       { F11, (CTRL|'C')},
@@ -47,7 +47,7 @@
       { F12, (CTRL|'T')}
   #else
       { F12, (CTRL|'D')}
---- 72,78 ----
+--- 66,72 ----
       { F9,  (CTRL|'K')},
       { F10, (CTRL|'U')},
       { F11, (CTRL|'C')},

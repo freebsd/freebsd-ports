@@ -1,32 +1,36 @@
-*** pico/os_unix.h.orig	Thu Jun 13 00:47:23 1996
---- pico/os_unix.h	Thu Jan 29 21:29:51 1998
+*** pico/osdep/os-bsf.h.orig	Wed Jul  8 19:37:28 1998
+--- pico/osdep/os-bsf.h	Fri Jul 10 12:57:37 1998
 ***************
-*** 122,133 ****
+*** 23,29 ****
+  
+  #define  USE_DIRENT
+  #include <sys/types.h>
+! #include <sys/dir.h>
+  #include <stdlib.h>
+  #include <string.h>
+  
+--- 23,29 ----
+  
+  #define  USE_DIRENT
+  #include <sys/types.h>
+! #include <dirent.h>
+  #include <stdlib.h>
+  #include <string.h>
+  
+***************
+*** 152,158 ****
   /*
    * Place where mail gets delivered (for pico's new mail checking)
    */
-  #if	defined(sv3) || defined(ct) || defined(isc) || defined(AUX) || defined(sgi)
-  #define	MAILDIR		"/usr/mail"
-  #else
-  #define	MAILDIR		"/usr/spool/mail"
-  #endif
-! 
+! #define MAILDIR		"/usr/spool/mail"
   
   /*
    * What and where the tool that checks spelling is located.  If this is
---- 122,136 ----
+--- 152,158 ----
   /*
    * Place where mail gets delivered (for pico's new mail checking)
    */
-+ #ifdef __FreeBSD__
-+ #define MAILDIR         "/var/mail"
-+ #else
-  #if	defined(sv3) || defined(ct) || defined(isc) || defined(AUX) || defined(sgi)
-  #define	MAILDIR		"/usr/mail"
-  #else
-  #define	MAILDIR		"/usr/spool/mail"
-  #endif
-! #endif
+! #define MAILDIR		"/var/mail"
   
   /*
    * What and where the tool that checks spelling is located.  If this is

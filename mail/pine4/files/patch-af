@@ -1,37 +1,36 @@
-*** imap/ANSI/c-client/Makefile.orig	Sat Jun 22 01:25:45 1996
---- imap/ANSI/c-client/Makefile	Sun Jan 12 19:41:38 1997
+*** imap/src/osdep/unix/Makefile.orig	Thu Jul  9 00:49:11 1998
+--- imap/src/osdep/unix/Makefile	Sun Jul 12 22:10:04 1998
 ***************
-*** 36,43 ****
-  BINARIES=mail.o bezerk.o mtx.o tenex2.o mbox.o mh.o mmdf.o imap2.o pop3.o \
-  	news.o nntpcunx.o phile.o dummy.o smtp.o nntp.o rfc822.o misc.o \
-  	osdep.o sm_unix.o newsrc.o
-! CC=cc
-! CFLAGS=$(EXTRACFLAGS)
-  DEFAULTDRIVERS=imap nntp pop3 mh tenex mtx mmdf bezerk news phile dummy
-  LN=ln -s
-  MAKE=make
---- 36,43 ----
-  BINARIES=mail.o bezerk.o mtx.o tenex2.o mbox.o mh.o mmdf.o imap2.o pop3.o \
-  	news.o nntpcunx.o phile.o dummy.o smtp.o nntp.o rfc822.o misc.o \
-  	osdep.o sm_unix.o newsrc.o
-! #CC=cc
-! #CFLAGS=$(EXTRACFLAGS)
-  DEFAULTDRIVERS=imap nntp pop3 mh tenex mtx mmdf bezerk news phile dummy
-  LN=ln -s
-  MAKE=make
-***************
-*** 118,123 ****
---- 118,130 ----
-  		STDPROTO=bezerkproto MAILSPOOL=/var/mail \
-  		ACTIVEFILE=/usr/lib/news/active NEWSSPOOL=/usr/spool/news \
-  		RSHPATH=/usr/bin/rsh CFLAGS="-g -O -pipe -DNFSKLUDGE $(EXTRACFLAGS)"
-+ 
-+ bsf:	# FreeBSD
-+ 	$(MAKE) $(ARCHIVE) OS=bsi EXTRADRIVERS="$(EXTRADRIVERS)" \
-+ 		STDPROTO=bezerkproto MAILSPOOL=/var/mail \
-+ 		ACTIVEFILE=/usr/local/news/lib/active NEWSSPOOL=/var/news \
-+               RSHPATH=/usr/bin/rsh CFLAGS="${CFLAGS} -DNFSKLUDGE $(EXTRACFLAGS)" \
-+ 		LDFLAGS="-lcrypt"
+*** 75,81 ****
+  # Commands possibly overriden by the individual port
   
-  cvx:	# Convex
-  	$(MAKE) mtest OS=$@ EXTRADRIVERS="$(EXTRADRIVERS)" \
+  ARRC=ar rc
+! CC=cc
+  LN=ln -s
+  RANLIB=ranlib
+  
+--- 75,81 ----
+  # Commands possibly overriden by the individual port
+  
+  ARRC=ar rc
+! #CC=cc
+  LN=ln -s
+  RANLIB=ranlib
+  
+***************
+*** 93,99 ****
+   dummy.o pseudo.o netmsg.o flstring.o fdstring.o \
+   rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
+   unix.o mbox.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o
+! CFLAGS=$(BASECFLAGS) $(EXTRACFLAGS)
+  MAKE=make
+  MV=mv
+  RM=rm -rf
+--- 93,99 ----
+   dummy.o pseudo.o netmsg.o flstring.o fdstring.o \
+   rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
+   unix.o mbox.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o
+! CFLAGS+=$(BASECFLAGS) $(EXTRACFLAGS)
+  MAKE=make
+  MV=mv
+  RM=rm -rf
