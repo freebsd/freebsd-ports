@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pth
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.2
 PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
@@ -18,6 +18,7 @@ COMMENT=	GNU Portable Threads
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/pth
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-pthread \
 		--enable-syscall-soft \
 		--enable-optimize \
