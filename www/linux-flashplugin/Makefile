@@ -15,6 +15,8 @@ DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	pat@FreeBSD.org
 
+FORBIDDEN=	"see http://www.macromedia.com/v1/developer/securityzone/"
+
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
 NO_CDROM=	"Redistribution not allowed"
