@@ -156,15 +156,6 @@ diff -ruN faxd/UUCPLock.c++.orig faxd/UUCPLock.c++
      }
  }
  uid_t UUCPLock::getUUCPUid() { setupIDs(); return UUCPuid; }
-@@ -307,7 +315,7 @@
- AsciiUUCPLock::setPID(pid_t pid)
- {
-     // XXX should this be %d or %ld? depends on pid_t
--    sprintf((char*) data, "%*d\n", UUCP_PIDDIGITS, pid);
-+    snprintf((char*) data, sizeof(data), "%*d\n", UUCP_PIDDIGITS, pid);
- }
- 
- bool
 diff -ruN faxd/faxApp.c++.orig faxd/faxApp.c++
 --- faxd/faxApp.c++.orig	Sun Jun 13 00:41:05 1999
 +++ faxd/faxApp.c++	Mon Jun 12 21:52:39 2000
