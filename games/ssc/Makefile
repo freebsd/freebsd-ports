@@ -29,6 +29,12 @@ CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${X11BASE}/include" \
 		LDFLAGS=-L${X11BASE}/lib
 ONLY_FOR_ARCHS=	i386
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		Does not compile with gcc 3.4
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|SDL\/||g; s|/usr/local|${PREFIX}|g" \
 		${WRKSRC}/src/*.h ${WRKSRC}/src/*.cc
@@ -39,4 +45,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
