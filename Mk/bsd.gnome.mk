@@ -6,11 +6,12 @@
 #
 # Please view me with 4 column tabs!
 
-.if !defined(_POSTMKINCLUDED)
+.if !defined(_POSTMKINCLUDED) && !defined(Gnome_Pre_Include)
 
 # Please make sure all changes to this file are passed through the maintainer.
 # Do not commit them yourself (unless of course you're the Port's Wraith ;).
 Gnome_Include_MAINTAINER=	gnome@FreeBSD.org
+Gnome_Pre_Include=			bsd.gnome.mk
 
 # This section defines possible names of GNOME components and all information
 # necessary for ports to use those components.
@@ -448,7 +449,7 @@ gtkhtml3_USE_GNOME_IMPL=gal2 gail
 # .endif
 
 # If the user has not defined GNOME_DESKTOP_VERSION, let's try to prevent
-# users from shooting themselves in the foot.  We will try to make an 
+# users from shooting themselves in the foot.  We will try to make an
 # intelligent choice on the user's behalf.
 .if exists(${gnomepanel_DETECT})
 GNOME_DESKTOP_VERSION?=	2
@@ -498,9 +499,11 @@ HAVE_GNOME+=	${component}
 .endif
 # End of optional part.
 
-.if defined(_POSTMKINCLUDED)
+.if defined(_POSTMKINCLUDED) && !defined(Gnome_Post_Include)
 
-# DO NOT USE THESE MACROS!  They are obsolete, and only provided for 
+Gnome_Post_Include=		bsd.gnome.mk
+
+# DO NOT USE THESE MACROS!  They are obsolete, and only provided for
 # backward compatibility with old ports that have not converted to the new
 # GNOME infrastructure.
 .if defined(USE_GTK)
@@ -531,8 +534,8 @@ ${component}_USE_GNOME_IMPL+=${${subcomponent}_USE_GNOME_IMPL}
 .      if defined(GNOME_DESKTOP_VERSION) && \
 	defined(${component}_GNOME_DESKTOP_VERSION)
 .         if ${GNOME_DESKTOP_VERSION}!=${${component}_GNOME_DESKTOP_VERSION}
-BROKEN=	${PORTNAME} wants to use the GNOME 
-BROKEN+=${${component}_GNOME_DESKTOP_VERSION} desktop, but you wish to use 
+BROKEN=	${PORTNAME} wants to use the GNOME
+BROKEN+=${${component}_GNOME_DESKTOP_VERSION} desktop, but you wish to use
 BROKEN+=the GNOME ${GNOME_DESKTOP_VERSION} desktop
 .         endif
 .      endif
