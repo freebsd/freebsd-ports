@@ -1,0 +1,156 @@
+bin/bitcp
+bin/dct2mstr
+bin/expgram
+bin/genmodel
+bin/gramtest
+bin/impkimmo
+bin/impmsc
+bin/impwbstr
+bin/listword
+bin/nicetext
+bin/nttpd
+bin/printint
+bin/qstart-nttpd
+bin/rinfo
+bin/scramble
+bin/sortdct
+bin/txt2dct
+share/doc/nicetext/README.TXT
+share/doc/nicetext/distribution.txt
+share/doc/nicetext/icics97.pdf
+share/doc/nicetext/icics97.ps
+share/doc/nicetext/icics97.txt
+share/doc/nicetext/thesis.pdf
+share/doc/nicetext/thesis.ps
+share/doc/nicetext/thesis.txt
+share/doc/nicetext/COPYRIGHT
+@dirrm share/doc/nicetext
+share/examples/nicetext/database/Makefile
+share/examples/nicetext/database/fabldict.alt
+share/examples/nicetext/database/fabldict.dat
+share/examples/nicetext/database/fabldict.jmp
+share/examples/nicetext/database/fablmodel.dat
+share/examples/nicetext/database/fablmodel.jmp
+share/examples/nicetext/database/fabltype.dat
+share/examples/nicetext/database/fabltype.jmp
+share/examples/nicetext/database/jfkdict.alt
+share/examples/nicetext/database/jfkdict.dat
+share/examples/nicetext/database/jfkdict.jmp
+share/examples/nicetext/database/jfkmodel.dat
+share/examples/nicetext/database/jfkmodel.jmp
+share/examples/nicetext/database/jfktype.dat
+share/examples/nicetext/database/jfktype.jmp
+share/examples/nicetext/database/wizozdict.alt
+share/examples/nicetext/database/wizozdict.dat
+share/examples/nicetext/database/wizozdict.jmp
+share/examples/nicetext/database/wizozmodel.dat
+share/examples/nicetext/database/wizozmodel.jmp
+share/examples/nicetext/database/wizoztype.dat
+share/examples/nicetext/database/wizoztype.jmp
+share/examples/nicetext/database/mstrdict.alt
+share/examples/nicetext/database/mstrdict.dat
+share/examples/nicetext/database/mstrdict.jmp
+share/examples/nicetext/database/mstrtype.dat
+share/examples/nicetext/database/mstrtype.jmp
+share/examples/nicetext/database/shakdict.alt
+share/examples/nicetext/database/shakdict.dat
+share/examples/nicetext/database/shakdict.jmp
+share/examples/nicetext/database/shakmodel.dat
+share/examples/nicetext/database/shakmodel.jmp
+share/examples/nicetext/database/shaktype.dat
+share/examples/nicetext/database/shaktype.jmp
+@dirrm share/examples/nicetext/database
+share/examples/nicetext/texts/fabl/Makefile
+share/examples/nicetext/texts/fabl/aesop11.txt.gz
+@dirrm share/examples/nicetext/texts/fabl
+share/examples/nicetext/texts/jfk/Makefile
+share/examples/nicetext/texts/jfk/jfk11.txt.gz
+@dirrm share/examples/nicetext/texts/jfk
+share/examples/nicetext/texts/wizoz/Makefile
+share/examples/nicetext/texts/wizoz/wizoz10.txt.gz
+@dirrm share/examples/nicetext/texts/wizoz
+share/examples/nicetext/texts/shak/Makefile
+share/examples/nicetext/texts/shak/shaks12.txt.gz
+@dirrm share/examples/nicetext/texts/shak
+share/examples/nicetext/texts/Makefile
+@dirrm share/examples/nicetext/texts
+share/examples/nicetext/tutorial/1/Makefile
+share/examples/nicetext/tutorial/1/README.TXT
+share/examples/nicetext/tutorial/1/dict.raw
+share/examples/nicetext/tutorial/1/sample.txt
+share/examples/nicetext/tutorial/1/secret.txt
+@dirrm share/examples/nicetext/tutorial/1
+share/examples/nicetext/tutorial/2/words/conjunction
+share/examples/nicetext/tutorial/2/words/name_family
+share/examples/nicetext/tutorial/2/words/name_female
+share/examples/nicetext/tutorial/2/words/name_male
+share/examples/nicetext/tutorial/2/words/name_other
+share/examples/nicetext/tutorial/2/words/num_cardinal_digits
+share/examples/nicetext/tutorial/2/words/num_cardinal_words
+share/examples/nicetext/tutorial/2/words/num_roman_digits
+share/examples/nicetext/tutorial/2/words/num_years_digits
+share/examples/nicetext/tutorial/2/words/place
+share/examples/nicetext/tutorial/2/words/prepin
+share/examples/nicetext/tutorial/2/words/prepto
+share/examples/nicetext/tutorial/2/words/verbmeet
+share/examples/nicetext/tutorial/2/words/verbmet
+share/examples/nicetext/tutorial/2/words/verbwent
+@dirrm share/examples/nicetext/tutorial/2/words
+share/examples/nicetext/tutorial/2/Makefile
+share/examples/nicetext/tutorial/2/README.TXT
+share/examples/nicetext/tutorial/2/sample.txt
+share/examples/nicetext/tutorial/2/secret.txt
+@dirrm share/examples/nicetext/tutorial/2
+share/examples/nicetext/tutorial/3/Makefile
+share/examples/nicetext/tutorial/3/README.TXT
+share/examples/nicetext/tutorial/3/gram1.def
+share/examples/nicetext/tutorial/3/gram2.inc
+share/examples/nicetext/tutorial/3/secret.txt
+@dirrm share/examples/nicetext/tutorial/3
+share/examples/nicetext/tutorial/Makefile
+share/examples/nicetext/tutorial/README.TXT
+@dirrm share/examples/nicetext/tutorial
+share/examples/nicetext/words/wlist/gutenberg/Makefile
+share/examples/nicetext/words/wlist/gutenberg/README.TXT
+share/examples/nicetext/words/wlist/gutenberg/create
+share/examples/nicetext/words/wlist/gutenberg/words.out.gz
+@dirrm share/examples/nicetext/words/wlist/gutenberg
+share/examples/nicetext/words/wlist/web2/Makefile
+share/examples/nicetext/words/wlist/web2/README.TXT
+share/examples/nicetext/words/wlist/web2/words.gz
+@dirrm share/examples/nicetext/words/wlist/web2
+share/examples/nicetext/words/wlist/Makefile
+@dirrm share/examples/nicetext/words/wlist
+share/examples/nicetext/words/twlist/impkimmo/Makefile
+share/examples/nicetext/words/twlist/impkimmo/README.TXT
+share/examples/nicetext/words/twlist/impkimmo/kimmo.twlist.gz
+@dirrm share/examples/nicetext/words/twlist/impkimmo
+share/examples/nicetext/words/twlist/mitlist/Makefile
+share/examples/nicetext/words/twlist/mitlist/name_family
+share/examples/nicetext/words/twlist/mitlist/name_female
+share/examples/nicetext/words/twlist/mitlist/name_male
+share/examples/nicetext/words/twlist/mitlist/name_other
+share/examples/nicetext/words/twlist/mitlist/place
+share/examples/nicetext/words/twlist/mitlist/pos.awk
+share/examples/nicetext/words/twlist/mitlist/posplr.awk
+@dirrm share/examples/nicetext/words/twlist/mitlist
+share/examples/nicetext/words/twlist/numeric/Makefile
+share/examples/nicetext/words/twlist/numeric/num_cardinal_digits
+share/examples/nicetext/words/twlist/numeric/num_cardinal_words
+share/examples/nicetext/words/twlist/numeric/num_roman_digits
+share/examples/nicetext/words/twlist/numeric/num_years_digits
+@dirrm share/examples/nicetext/words/twlist/numeric
+share/examples/nicetext/words/twlist/rhyme/Makefile
+share/examples/nicetext/words/twlist/rhyme/README.TXT
+share/examples/nicetext/words/twlist/rhyme/cmudict.0.4.gz
+share/examples/nicetext/words/twlist/rhyme/extract.awk
+share/examples/nicetext/words/twlist/rhyme/gt3.awk
+share/examples/nicetext/words/twlist/rhyme/rev2.awk
+share/examples/nicetext/words/twlist/rhyme/rhyme.twlist.gz
+@dirrm share/examples/nicetext/words/twlist/rhyme
+share/examples/nicetext/words/twlist/Makefile
+@dirrm share/examples/nicetext/words/twlist
+@dirrm share/examples/nicetext/words
+share/examples/nicetext/Makefile
+share/examples/nicetext/README.TXT
+@dirrm share/examples/nicetext
