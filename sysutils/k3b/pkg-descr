@@ -1,0 +1,23 @@
+K3b is a GUI frontend to the cd recording programs cdrdao and cdrecord.
+It's aim is to provide a very user friendly interface to all the tasks that
+come with cd recording.
+
+Features so far:
+    * Creating data cds (on-the-fly, rockridge, joliet, El-Torito)
+    * Creating audio cds (WAV, MP3, OGG, CD-TEXT)
+    * Creating Video CDs (VCD 1.1, 2.0, SVCD, CD-i support (Version 4))
+    * Creating mixed-mode cds (CD-Extra (CD-Plus, Enhanced Audio CD))
+    * Creating eMovix CDs
+    * DVD burning (DVD-R(W), DVD+R(W), eMovix, Formatting DVD-RWs and DVD+RWs)
+    * CD Ripping (CDDB, CD-TEXT reading)
+    * DVD Ripping and DivX/XviD encoding
+    * Save/load projects.
+    * Blanking of CDRWs.
+    * Retrieving Table of contents and cdr information.
+    * Writing existing iso images to CD and DVD.
+    * Writing cue/bin files created for CDRWIN
+    * CD Copy, CD Cloning 
+    * DVD copy (no video transcoding yet)
+    * Enhanced cd decive handling (max. writing and reading speed, BURN-PROOF)
+WWW: http://www.k3b.org
+WWW: http://k3b.sourceforge.net/

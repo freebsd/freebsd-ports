@@ -153,6 +153,7 @@
     SUBDIR += jailer
     SUBDIR += jailutils
     SUBDIR += jdiskreport
+    SUBDIR += k3b
     SUBDIR += kcpuload
     SUBDIR += kdeadmin3
     SUBDIR += kdirstat
