@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	ubh
-PORTVERSION=	1.0
+PORTVERSION=	1.3
 CATEGORIES=	news graphics
-MASTER_SITES=	http://www.lanois.com/ubh/download/
+MASTER_SITES=	http://ubh.sourceforge.net/download/
 
 MAINTAINER=	dburr@FreeBSD.ORG
 
@@ -20,8 +20,6 @@ pre-patch:
 	@${MV} ${WRKSRC}/ubh ${WRKSRC}/ubh.old
 	@${SED} -e '1,1s:/usr/bin/perl:${PERL5}:' \
 		${WRKSRC}/ubh.old > ${WRKSRC}/ubh
-	@${MV} ${WRKSRC}/examples/.ubhrc ${WRKSRC}/examples/dot.ubhrc
-	@${MV} ${WRKSRC}/examples/.newsrc ${WRKSRC}/examples/dot.newsrc
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/ubh ${PREFIX}/bin

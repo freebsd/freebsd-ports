@@ -1,6 +1,6 @@
 bin/ubh
-share/ubh/dot.ubhrc
-share/ubh/dot.newsrc
+share/ubh/ubhrc
+share/ubh/newsrc
 @dirrm share/ubh
 share/doc/ubh/documentation.html
 share/doc/ubh/download.html
