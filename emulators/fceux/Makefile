@@ -35,10 +35,6 @@ PLIST_DIRS=	%%DOCSDIR%%
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not configure"
-.endif
-
 .if ${ARCH} == "sparc64"
 BROKEN=		"Does not compile on sparc64"
 .endif
