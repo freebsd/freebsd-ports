@@ -1,0 +1,19 @@
+--- genkeys.c.orig	Wed Sep 12 12:13:07 2001
++++ genkeys.c	Sat Feb 19 21:27:32 2005
+@@ -46,12 +46,12 @@
+ 	static int seed=0;
+ 
+ 	if(!seed) { seed++; srandom(time(NULL)); }
+-	memset(buff,0,256);	
+-	memset(temp,0,128);	
++	memset(buff,0,sizeof(buff));	
++	memset(temp,0,sizeof(temp));	
+ 
+ 	do {
+-		sprintf(temp,"%lu",(unsigned long int)random());
+-		strcat(buff,temp);
++		snprintf(temp,sizeof(temp),"%lu",(unsigned long int)random());
++		strlcat(buff,temp,sizeof(buff));
+ 		
+ 	} while(strlen(buff) < n);
+ 	buff[n]='\0';

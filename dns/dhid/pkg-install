@@ -1,0 +1,37 @@
+#! /bin/sh
+
+# $FreeBSD: /tmp/pcvs/ports/dns/dhid/Attic/pkg-install,v 1.1 2005-02-19 20:42:39 pav Exp $
+
+PATH=/bin:/usr/sbin
+
+case $2 in
+PRE-INSTALL)
+       USER=dhis
+       GROUP=${USER}
+
+       if pw group show "${GROUP}" 2>/dev/null; then
+               echo "You already have a group \"${GROUP}\", so I will use it."
+       else
+               if pw groupadd ${GROUP} -g 114 -h -; then
+                       echo "Added group \"${GROUP}\"."
+               else
+                       echo "Adding group \"${GROUP}\" failed..."
+                       exit 1
+               fi
+       fi
+
+       if pw user show "${USER}" 2>/dev/null; then
+               echo "You already have a user \"${USER}\", so I will use it."
+       else
+               if pw useradd ${USER} -u 114 -g ${GROUP} -h - \
+                       -d /nonexistent -s /sbin/nologin \
+                       -c "DHIS Daemon"
+               then
+                       echo "Added user \"${USER}\"."
+               else
+                       echo "Adding user \"${USER}\" failed..."
+                       exit 1
+               fi
+       fi
+       ;;
+esac

@@ -1,0 +1,63 @@
+--- conf.c.orig	Wed Sep 12 12:32:09 2001
++++ conf.c	Sat Feb 19 21:26:06 2005
+@@ -155,7 +155,7 @@
+                 cp->id=atoi(line_entry(2,line));
+ 
+         if(!strcmp(line_entry(1,line),"hostpass")) {
+-                strcpy(cp->pass,line_entry(2,line));
++                strlcpy(cp->pass,line_entry(2,line),sizeof(cp->pass));
+                 cp->atype=APASS;
+         }
+         if(!strcmp(line_entry(1,line),"isaddr")) {
+@@ -180,32 +180,32 @@
+ 		sp->addr=0;
+ 		sp->hostname[0]='\0';
+ 	
+-		strcpy(str2,line_entry(2,line));
++		strlcpy(str2,line_entry(2,line),sizeof(str2));
+ 
+-		strcpy(str,dot_entry(1,str2));
+-		strcpy(str3,dot_entry(2,str2));
++		strlcpy(str,dot_entry(1,str2),sizeof(str));
++		strlcpy(str3,dot_entry(2,str2),sizeof(str3));
+ 
+                 if(isdigit(str[0])) sp->addr=inet_addr(str);
+-		else strcpy(sp->hostname,str);
++		else strlcpy(sp->hostname,str,sizeof(sp->hostname));
+ 		if(str3[0]!='\0') sp->port=atoi(str3);
+         }
+         if(!strcmp(line_entry(1,line),"refresh")) {
+-                strcpy(str,line_entry(2,line));
++                strlcpy(str,line_entry(2,line),sizeof(str));
+                 cp->refresh=atoi(str);
+         }
+         if(!strcmp(line_entry(1,line),"oncmd")) {
+-                strcpy(cp->on_cmd,line_entry(2,line));
+-                strcpy(cp->on_cmdp,line_ptr(3,line));
++                strlcpy(cp->on_cmd,line_entry(2,line),sizeof(cp->on_cmd));
++                strlcpy(cp->on_cmdp,line_ptr(3,line),sizeof(cp->on_cmdp));
+         }
+         if(!strcmp(line_entry(1,line),"offcmd")) {
+-                strcpy(cp->off_cmd,line_entry(2,line));
+-                strcpy(cp->off_cmdp,line_ptr(3,line));
++                strlcpy(cp->off_cmd,line_entry(2,line),sizeof(cp->off_cmd));
++                strlcpy(cp->off_cmdp,line_ptr(3,line),sizeof(cp->off_cmdp));
+         }
+ 
+ 
+         if(!strcmp(line_entry(1,line),"authp")) {
+ #ifdef  QRC
+-                strcat(keyp,line_entry(2,line));
++                strlcat(keyp,line_entry(2,line),sizeof(keyp));
+                 cp->atype=AQRC;
+ #else
+                 syslog(LOG_ERR,"QRC authentication not available in this client"
+@@ -216,7 +216,7 @@
+         }
+        if(!strcmp(line_entry(1,line),"authq")) {
+ #ifdef  QRC
+-                strcat(keyq,line_entry(2,line));
++                strlcat(keyq,line_entry(2,line),sizeof(keyq));
+                 cp->atype=AQRC;
+ #else
+                 syslog(LOG_ERR,"QRC authentication not available in this client"
