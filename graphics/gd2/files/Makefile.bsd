@@ -1,10 +1,9 @@
 PROGS!=	make -V BIN_PROGRAMS -f ${WRKSRC}/Makefile
 TESTS!=	make -V TEST_PROGRAMS -f ${WRKSRC}/Makefile
 OBJS!=	make -V LIBOBJS -f ${WRKSRC}/Makefile
-OBJS+=	gd_gif_in.o
 SRCS=	${OBJS:.o=.c}
 LIB=gd
-SHLIB_MAJOR=3
+SHLIB_MAJOR=4
 SHLIB_MINOR=0
 INCS=	gd.h gd_io.h gdcache.h gdfontg.h gdfontl.h gdfontmb.h \
 	gdfonts.h gdfontt.h
@@ -42,12 +41,12 @@ ${PROGS} ${TESTS}: ${SHLIB_NAME} lib${LIB}.a
 
 install:
 	mkdir -p ${PREFIX}/include
-	make LIB=${LIB} LIBDIR="${PREFIX}/lib" NOPROFILE=true \
+	make LIB=${LIB} LIBDIR=${PREFIX}/lib NOPROFILE=true \
 		SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR} \
 		-f bsd.lib.mk install
 	cd ${.CURDIR} && ${INSTALL_DATA} ${INCS} ${PREFIX}/include
-	cd ${.CURDIR} && ${INSTALL_PROGRAM} ${PROGS} "${PREFIX}/bin/"
-	${INSTALL_SCRIPT} "${.CURDIR}/bdftogd" "${PREFIX}/bin/"
+	cd ${.CURDIR} && ${INSTALL_PROGRAM} ${PROGS} ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${.CURDIR}/bdftogd ${PREFIX}/bin/
 
 .if exists(${.CURDIR}/Makefile.fonts)
 .include "Makefile.fonts"

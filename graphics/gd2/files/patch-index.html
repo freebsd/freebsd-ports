@@ -1,0 +1,320 @@
+--- index.html.orig	Thu Apr 25 14:17:36 2002
++++ index.html	Tue Nov  6 23:31:10 2001
+@@ -24,7 +24,12 @@
+ more compatible with the major Web browsers than even PNG is. WBMP is
+ intended for wireless devices (not regular web browsers). Existing
+ code will need modification to call gdImagePng or gdImageJpeg instead
+-of gdImageGif. <strong>Please do not ask us to send you the old GIF
++of gdImageGif.
++<p> 
++Note: The version at this site also supports GIF format, for those people
++who have not yet managed to move away from GIFs.
++<p>
++<strong>Please do not ask the original author to send you the old GIF
+ version of GD.</strong> Unisys holds a patent on the LZW compression
+ algorithm, which is used in fully compressed GIF images. The best
+ solution is to move to legally unencumbered, well-compressed,
+@@ -103,6 +108,18 @@
+ <p>
+ Portions relating to libttf copyright 1999, 2000 John Ellson (ellson@lucent.com).
+ <p>
++GIF decompression code copyright 1990, 1991, 1993, by David Koblas
++(koblas@netcom.com).
++<p>
++Non-LZW-based GIF compression code copyright 1998, by Hutchison Avenue
++Software Corporation (<a href="http://www.hasc.com">http://www.hasc.com/</a>,
++info@hasc.com).
++<p>
++LZW-based GIF compression code David Rowley.
++Obtaining a license for the Unisys LZW compression patent is
++entirely between the user and Unisys. The authors of gd can provide
++NO assistance in this matter.
++<p>
+ Portions relating to JPEG and to color quantization copyright 2000, Doug 
+ Becker and copyright (C) 1994-1998, Thomas G. Lane.  This software is based 
+ in part on the work of the Independent JPEG Group. See the file
+@@ -193,6 +210,26 @@
+ <li><a href="http://s27w007.pswfs.gov/tgd/">tgd</a>, by Bradley K. Sherman
+ <li><a href="http://www.unimelb.edu.au/fly/fly.html">fly</a>, by Martin Gleeson
+ </ul>
++
++<P><A NAME="gifpatch"><H3>What's new in the patched version?</H3></A>
++
++This version reinstates GIF support. Specifically, the following functions are added:
++<ul>
++<li><a href=#gdImageOpenPolygon>gdImageOpenPolygon</a>. This is basically the same as
++gdImagePolygon, but it does not join the start and end points. It is required by GD.pm.
++<li><a href=#gdImageGif>gdImageGif</a>
++<li><a href=#gdImageGifPtr>gdImageGifPtr</a>
++<li><a href=#gdImageGifCtx>gdImageGifCtx</a>
++<li><a href=#gdImageGifToSink>gdImageGifToSink</a>
++<li><a href=#gdImageCreateFromGif>gdImageCreateFromGif</a>
++<li><a href=#gdImageCreateFromGifCtx>gdImageCreateFromGifCtx</a>
++<li>Other functions added, but not documented, are: gdImageLzw, gdImageLzwPtr, 
++gdImageLzwCtx, gdImageBigGif, gdImageBigGifPtr, gdImageBigGifCtx.
++</ul>
++<p>
++Note: While every effort has been made to ensure that the _WinNT_ build works, it has not
++been tested.
++
+ <P><A NAME="whatsnew2.0.1"><H3>What's new in version 2.0.1?</H3></A>
+ <ul>
+ <li>Workaround for a bug in gcc, apparently found in gcc 2.7.2 and up.
+@@ -311,6 +348,7 @@
+ preprocessing them, this should not be a big problem. gd 2.0 should
+ read old .gd and .gd2 files correctly.
+ </ul>
++
+ <P><A NAME="whatsnew1.8.4"><H3>What's new in version 1.8.4?</H3></A>
+ <ul>
+ <li>Add support for FreeType2  (John Ellson  ellson@lucent.com)
+@@ -343,6 +381,7 @@
+ corrected
+ <li>Updated links to fast-moving, always dodging libpng and zlib web sites
+ </ul>
++
+ <P><A NAME="whatsnew1.8.1"><H3>What's new in version 1.8.1?</H3></A>
+ <ul>
+ <li>Optional components no longer built by default (following the
+@@ -420,6 +459,7 @@
+ <a href="#gdImageCreateFromXpm"><code>gdImageCreateFromXpm</code></a>
+ function, if the Xpm library is available. Thanks to Caolan McNamara.
+ </ul>
++
+ <P><A NAME="whatsnew1.6.3"><H3>What's new in version 1.6.3?</H3></A>
+ Version 1.6.3 corrects a memory leak in gd_png.c. This leak caused
+ a significant amount of memory to be allocated and not freed when
+@@ -911,7 +951,8 @@
+ <DT><A NAME="gdPoint">gdPoint</A> <strong>(TYPE)</strong>
+ <DD>
+ Represents a point in the coordinate space of the image; used
+-by <A HREF="#gdImagePolygon">gdImagePolygon</A> and
++by <A HREF="#gdImagePolygon">gdImagePolygon</A>,
++<A HREF="#gdImageOpenPolygon">gdImageOpenPolygon</A>, and
+ <A HREF="#gdImageFilledPolygon">gdImageFilledPolygon</A>.
+ <PRE>
+ typedef struct {
+@@ -921,7 +962,8 @@
+ <DT><A NAME="gdPointPtr">gdPointPtr</A> <strong>(TYPE)</strong>
+ <DD>
+ A pointer to a <A HREF="#gdPoint">gdPoint</A> structure; passed
+-as an argument to <A HREF="#gdImagePolygon">gdImagePolygon</A>
++as an argument to <A HREF="#gdImagePolygon">gdImagePolygon</A>,
++<A HREF="#gdImageOpenPolygon">gdImageOpenPolygon</A>, 
+ and <A HREF="#gdImageFilledPolygon">gdImageFilledPolygon</A>.
+ </DL>
+ <DT><A NAME="gdSource">gdSource</A> <strong>(TYPE)</strong>
+@@ -1024,6 +1066,75 @@
+ /* ... Use the image ... */
+ <A HREF="#gdImageDestroy">gdImageDestroy</A>(im);
+ </PRE>
++
++<DT><A NAME="gdImageCreateFromGif">gdImageCreateFromGif(FILE *in)</A>
++<strong>(FUNCTION)</strong>
++<BR><A NAME="gdImageCreateFromGifCtx">gdImageCreateFromGifCtx(<a href=#gdioctx>gdIOCtx</a> *in)</A>
++<strong>(FUNCTION)</strong>
++<p>
++<DD>
++gdImageCreateFromGif is called to load images from GIF format files.
++Invoke gdImageCreateFromGif with an already opened pointer to a file
++containing the desired image.
++gdImageCreateFromGif
++returns a <A HREF="#gdImagePtr">gdImagePtr</A> to the new image, or NULL
++if unable to load the image (most often because the file is corrupt or
++does not contain a GIF image). gdImageCreateFromGif does <em>not</em>
++close the file. You can inspect the sx and sy members of the
++image to determine its size. The image must eventually be destroyed
++using <A HREF="#gdImageDestroy">gdImageDestroy()</A>.
++<PRE>
++<A HREF="#gdImagePtr">gdImagePtr</A> im;
++... inside a function ...
++FILE *in;
++in = fopen("mygif.gif", "rb");
++im = gdImageCreateFromGif(in);
++fclose(in);
++/* ... Use the image ... */
++<A HREF="#gdImageDestroy">gdImageDestroy</A>(im);
++</PRE>
++<DT><A NAME="gdImageCreateFromGifSource">gdImageCreateFromGifSource(gdSourcePtr in)</A>
++<strong>(FUNCTION)</strong>
++<dd>
++gdImageCreateFromGifSource is called to load a GIF from
++a data source other than a file. Usage is very similar to
++the <a href="#gdImageCreateFromGif">gdImageCreateFromGif</a> function,
++except that the programmer provides a custom data source.
++<p>
++The programmer must write an input function which accepts
++a context pointer, a buffer, and a number of bytes to be
++read as arguments. This function must read the number of
++bytes requested, unless the end of the file has been reached,
++in which case the function should return zero, or an error
++has occurred, in which case the function should return
++<code>-1</code>. The programmer then creates a
++<a href="#gdSource">gdSource</a> structure and sets
++the <code>source</code> pointer to the input function and
++the context pointer to any value which is useful to the
++programmer.
++<p>
++The example below
++implements <a href="#gdImageCreateFromGif">gdImageCreateFromGif</a>
++by creating a custom data source and invoking gdImageCreateFromGifSource.
++<pre>
++static int freadWrapper(void *context, char *buf, int len);
++
++gdImagePtr gdImageCreateFromGif(FILE *in)
++{
++        gdSource s;
++        s.source = freadWrapper;
++        s.context = in;
++        return gdImageCreateFromGifSource(&s);
++}
++
++static int freadWrapper(void *context, char *buf, int len)
++{
++        int got = fread(buf, 1, len, (FILE *) context);
++        return got;
++}
++</pre>
++
++
+ <DT><A NAME="gdImageCreateFromPng">gdImageCreateFromPng(FILE *in)</A>
+ <strong>(FUNCTION)</strong>
+ <BR><A NAME="gdImageCreateFromPngCtx">gdImageCreateFromPngCtx(<a href=#gdioctx>gdIOCtx</a> *in)</A>
+@@ -1239,6 +1350,92 @@
+ /* Now destroy it */
+ <A HREF="#gdImageDestroy">gdImageDestroy</A>(im);
+ </PRE>
++
++<DT><A NAME="gdImageGif">
++void gdImageGif(gdImagePtr im, FILE *out)</A>
++<STRONG>(FUNCTION)</STRONG>
++<DD>
++gdImageGif outputs the specified image to the specified
++file in GIF format. The file must be open for writing. Under MSDOS
++and all versions of Windows, it is important to use "wb" as opposed
++to simply "w" as the mode when opening the file, and under Unix there
++is no penalty for doing so. gdImageGif does <em>not</em>
++close the file; your code must do so.
++<PRE>
++... inside a function ...
++<A HREF="#gdImagePtr">gdImagePtr</A> im;
++int black, white;
++FILE *out;
++/* Create the image */
++im = <A HREF="#gdImageCreate">gdImageCreate</A>(100, 100);
++/* Allocate background */
++white = <A HREF="#gdImageColorAllocate">gdImageColorAllocate</A>(im, 255, 255, 255);
++/* Allocate drawing color */
++black = <A HREF="#gdImageColorAllocate">gdImageColorAllocate</A>(im, 0, 0, 0);
++/* Draw rectangle */
++<A HREF="#gdImageRectangle">gdImageRectangle</A>(im, 0, 0, 99, 99, black);
++/* Open output file in binary mode */
++out = fopen("rect.gif", "wb");
++/* Write GIF */
++gdImageGif(im, out);
++/* Close file */
++fclose(out);
++/* Destroy image */
++<A HREF="#gdImageDestroy">gdImageDestroy</A>(im);
++</PRE>
++
++<DT><A NAME="gdImageGifCtx">
++void* gdImageGifCtx(gdImagePtr im, gdIOCtxPtr out)</A>
++<STRONG>(FUNCTION)</STRONG>
++<DD>Identical to gdImageGif except that it writes the GIF to a 
++<a href=#gdIOCtx>gdIOCtx</a>.
++<p>
++<DT><A NAME="gdImageGifPtr">
++void* gdImageGifPtr(gdImagePtr im, int *size)</A>
++<STRONG>(FUNCTION)</STRONG>
++<DD>Identical to gdImageGif except that it returns a pointer to a memory
++area with the GIF data. This memory must be freed by the caller when it is
++no longer needed. The 'size' parameter received the total size of the block
++of memory.
++<p>
++
++<DT><A NAME="gdImageGifToSink">gdImageGifToSink(gdImagePtr im, gdSinkPtr out)</A>
++<strong>(FUNCTION)</strong>
++<dd>
++gdImageGifToSink is called to write a GIF to
++a data "sink" (destination) other than a file. Usage is very similar to
++the <a href="#gdImageGif">gdImageGif</a> function,
++except that the programmer provides a custom data sink.
++<p>
++The programmer must write an output function which accepts
++a context pointer, a buffer, and a number of bytes to be
++written as arguments. This function must write the number of
++bytes requested and return that number, unless an error
++has occurred, in which case the function should return
++<code>-1</code>. The programmer then creates a
++<a href="#gdSink">gdSink</a> structure and sets
++the <code>sink</code> pointer to the output function and
++the context pointer to any value which is useful to the
++programmer.
++<p>
++The example below
++implements <a href="#gdImageGif">gdImageGif</a>
++by creating a custom data source and invoking gdImageGifFromSink.
++<pre>
++static int stdioSink(void *context, char *buffer, int len)
++{
++        return fwrite(buffer, 1, len, (FILE *) context);
++}
++
++void gdImageGif(gdImagePtr im, FILE *out)
++{
++        gdSink mySink;
++        mySink.context = (void *) out;
++        mySink.sink = stdioSink;
++        gdImageGifToSink(im, &mySink);
++}
++</pre>
++
+ <DT><A NAME="gdImageJpeg">
+ void gdImageJpeg(gdImagePtr im, FILE *out, int quality)</A>
+ <STRONG>(FUNCTION)</STRONG><BR>
+@@ -1642,6 +1839,15 @@
+ /* Destroy it */
+ <A HREF="#gdImageDestroy">gdImageDestroy</A>(im);
+ </PRE>
++
++<DT><A NAME="gdImageOpenPolygon">void gdImageOpenPolygon(gdImagePtr im, gdPointPtr points, int pointsTotal, int color)</A>
++<STRONG>(FUNCTION)</STRONG>
++<DD>
++gdImageOpenPolygon is used to draw an open polygon (ie. series of line segments). It is almost identical
++to <A HREF="#gdImagePolygon">gdImagePolygon</A>, except that it does not join the last point to the
++first point.
++<P>
++
+ <DT><A NAME="gdImageRectangle">void gdImageRectangle(gdImagePtr im, int x1, int y1, int x2, int y2, int color)</A>
+ <STRONG>(FUNCTION)</STRONG>
+ <DD>
+@@ -3552,6 +3758,9 @@
+ <A HREF="#gdImageCreateFromGd">gdImageCreateFromGd</A> |
+ <A HREF="#gdImageCreateFromGd2">gdImageCreateFromGd2</A> |
+ <A HREF="#gdImageCreateFromGd2Part">gdImageCreateFromGd2Part</A> |
++<A HREF="#gdImageCreateFromGif">gdImageCreateFromGif</A> |
++<A HREF="#gdImageCreateFromGifCtx">gdImageCreateFromGifCtx</A> |
++<A HREF="#gdImageCreateFromGifSource">gdImageCreateFromGifSource</A> |
+ <A HREF="#gdImageCreateFromJpeg">gdImageCreateFromJpeg</A> |
+ <A HREF="#gdImageCreateFromPng">gdImageCreateFromPng</A> |
+ <A HREF="#gdImageCreateFromPngSource">gdImageCreateFromPngSource</A> |
+@@ -3569,6 +3778,10 @@
+ <A HREF="#gdImageGetInterlaced">gdImageGetInterlaced</A> |
+ <A HREF="#gdImageGetPixel">gdImageGetPixel</A> |
+ <A HREF="#gdImageGetTransparent">gdImageGetTransparent</A> |
++<A HREF="#gdImageGif">gdImageGif</A> |
++<A HREF="#gdImageGifCtx">gdImageGifCtx</A> |
++<A HREF="#gdImageGifPtr">gdImageGifPtr</A> |
++<A HREF="#gdImageGifToSink">gdImageGifToSink</A> |
+ <A HREF="#gdImageGreen">gdImageGreen</A> |
+ <A HREF="#gdImageInterlace">gdImageInterlace</A> |
+ <A HREF="#gdImageJpeg">gdImageJpeg</A> |
+@@ -3578,6 +3791,7 @@
+ <A HREF="#gdImagePng">gdImagePng</A> |
+ <A HREF="#gdImagePngToSink">gdImagePngToSink</A> |
+ <A HREF="#gdImagePolygon">gdImagePolygon</A> |
++<A HREF="#gdImageOpenPolygon">gdImageOpenPolygon</A> |
+ <A HREF="#gdImagePtr">gdImagePtr</A> |
+ <A HREF="#gdImageWBMP">gdImageWBMP</A> |
+ <A HREF="#gdImageRectangle">gdImageRectangle</A> |

@@ -1,8 +1,11 @@
 bin/bdftogd
 bin/gd2copypal
+bin/gd2togif
 bin/gd2topng
+bin/gdcmpgif
 bin/gdparttopng
 bin/gdtopng
+bin/giftogd2
 bin/pngtogd
 bin/pngtogd2
 bin/webpng
@@ -16,4 +19,6 @@ include/gdfonts.h
 include/gdfontt.h
 lib/libgd.a
 lib/libgd.so
-lib/libgd.so.3.0
+lib/libgd.so.4
+%%PORTDOCS%%share/doc/gd/index.html
+%%PORTDOCS%%@dirrm share/doc/gd
