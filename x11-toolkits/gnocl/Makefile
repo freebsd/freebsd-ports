@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gnocl
-PORTVERSION=	0.5.16
-PORTREVISION=	2
+PORTVERSION=	0.5.17
 CATEGORIES=	x11-toolkits devel
-MASTER_SITES=	http://www.dr-baum.net/gnocl/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	gnocl
 
 MAINTAINER=	stephane@FreeBSD.org
 COMMENT=	GTK+ and Gnome extension for Tcl
