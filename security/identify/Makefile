@@ -3,7 +3,7 @@
 # Date created:		13 March 1999
 # Whom:			nsayer@quack.kfu.com
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/02 19:07:30 nsayer Exp $
+# $Id: Makefile,v 1.2 1999/04/02 19:19:55 nsayer Exp $
 #
 
 DISTNAME=	identify-0.7
@@ -12,6 +12,13 @@ MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/ident/tools/
 
 MAINTAINER=	nsayer@quack.kfu.com
 
-BUILD_DEPEND=	${PORTSDIR}/security/libident
+BUILD_DEPENDS=	${PREFIX}/lib/libident.a:${PORTSDIR}/security/libident
+
+do-install: 
+	${INSTALL_PROGRAM} ${WRKSRC}/identify ${PREFIX}/libexec
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/identify
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/identify
+.endif
 
 .include <bsd.port.mk>
