@@ -1,0 +1,222 @@
+This is the file README and belongs to version 0.9.4a of May 8, 1994
+of the portable Forth-environment.
+--------------------------------------------------------------------
+
+What is it?
+===========
+
+This package contains all neccessary ANSI-C source files to build a
+running Forth-environment on most UNIX machines, on DOS and on OS/2.
+
+The Forth-system is closely modeled along the new American National
+Standard for the programming language Forth. I implemented every word
+of every word set mentioned in the dpANS-6 document of june 1993.
+Additionally it is compatible to Forth-83.
+
+This set of source files is distributed under the GNU general public
+license for libraries. See the file COPYING.LIB for conditions.
+
+I chose that one to point out that I don't consider programs you write
+on top of it a 'derived work' of the portable Forth environment. To
+violate these conditions you have to do two things together:
+
+  - you use a modified pfe to run your program
+  - you keep these modification secret
+
+Should be easy to avoid.
+
+
+Why did I do it?
+================
+
+For fun. As an excercise in unix programming. And there was no such
+thing. See below, design objectives.
+
+
+Design objectives
+=================
+
+With two elaborate standards at hand, one for C, one for Forth, it
+should be possible to build one language in terms of the other and
+thus provide both where at least one is available.
+
+While I leave the writing of an ANSI-C compiler in Forth to those who
+really believe in Forth's superiority and universality, I concentrated
+on the manageable part: Providing a Forth-system in ANSI-C that is
+
+	- CORRECT	this means not just "no bugs" -- it means all
+			the interaction of all parts works as specified
+			by the standard AND by traditions.
+
+	- COMPLETE	with powerful computers on the desk and power-
+			ful programming environments there is no need
+			to and no use in strategies like "here kernel,
+			there xyz word set" that might be appropriate
+			on a microcontroller.
+
+	- PORTABLE	I hate to rewrite code because of environmental
+			dependencies. Most of the system should be a mere
+			interface between two well defined languages.
+			There are of course such dependencies. I tried
+			to resort to a common subset of all UNIX bahavior
+			known to me. Fortunately this in fact allowed
+			porting to DOS and OS/2 thanks to the great
+			emx-package.
+
+	- USABLE	A sole kernel helps noone. It should be a
+			development environment. You should be able
+			to manage multiple-source-file-projects from
+			within.
+
+	- SIMPLE	or transparent. At least to my taste.
+
+Maybe you miss the design objective SPEED. It was not my goal to
+provide the fastest C-based Forth-environment. This would have led to
+conflicts with much more important goals. We all have fast computers,
+haven't we?
+
+After all pfe isn't slow. With a little tuning using GNU-C's global
+register variable feature it is pretty fast. But obviously it cannot
+compete with assembler implementations.
+
+
+Status
+======
+
+Did I achieve the above objectives?
+Some of them. I'll continue working on it.
+
+The system is in use for fifteen month now.  Several quite obvious and
+several quite subtle bugs have been fixed. While there surely are some
+more, they are not as obvious since the system passes several test
+programs, some of them rather sophisticated.
+
+Once you get the system running, you'll have
+
+	- All ANSI Forth word sets with the exception of the assembler
+	  hooks `CODE', `END-CODE' etc. Nothing else is missing.
+
+	- Several more words provided for compatibility and convenience.
+
+	- An interface to a text editor to edit plain text sources
+	  and the ability to include them.
+
+	- A word star lookalike block file editor to write
+	  source in the old style block format.
+
+	- A simple source level debugger -- maybe I should better
+	  say "single stepper".
+
+Thus you'll be able to edit, compile an run programs in a moderately
+comfortable way. For the final design of the development environment
+your suggestions still are welcome!
+
+If you try this system, please keep in mind that it is still under
+development. Sometimes new --even stupid-- bugs are introduced while
+enhancing functionality or while fixing old ones. I appreciate every
+hint to a bug and I fixed every bug I've been told about in the last
+months. So please don't hesitate to tell me about whatever seems
+wrong. Please check for the latest version via anonymous ftp from
+
+	roxi.rz.fht-mannheim.de:/pub/languages/forth/pfe-?.?.?.tar.gz
+
+(accessible from germany only) or
+
+	sunsite.unc.edu:/pub/languages/forth/pfe-?.?.?.tar.gz
+
+Please send suggestions and bug reports via e-mail to
+
+	duz@roxi.rz.fht-mannheim.de
+
+
+Usage
+=====
+
+For installation refer to the files `install' and `tuning'.
+
+Once you have it running and see the "ok" prompt after typing return
+you can interactively type in forth words. If you mistype, you can
+edit the command line and recall old command lines with the arrow
+keys. (If you can't then your termcap doesn't work all right and you
+can resort to wordstar-like control keys.)
+
+To write some more statements try "EDIT-TEXT filename". This will
+invoke your favorite text-file editor on the given file. If it
+doesn't, first check the environment variable EDITOR, then check the
+file "const.h" for the #defined symbol "EDITOR".
+
+Having written some code you can load it by "INCLUDE filename".
+
+If you prefer the old style block files, give a file to use as
+block-file with the -b commandline option. Alternatively you can say
+`USING filename' or if the file doesn't exist yet: `USING-NEW
+filename'.  Then you can edit a block by `n EDIT-BLOCK'.
+
+If your termcap-mechanism works well, the arrow keys and some other
+function keys should be active. Quit the editor with ^U and load
+blocks with "n LOAD". If it doesn't work well you might not even get a
+picture.
+
+For more commandline options try the option -h.
+
+The interrupt key is remapped to ^U and leads back to the FORTH input
+loop. Use it to break out of infinite loops.
+To terminate the system, type BYE at the command-prompt or press the
+keyboard quit key of your system (usually ^\).
+
+
+Documentation
+=============
+
+I started writing a documentation in texinfo format. This will allow
+you to view it online or print it in good quality.  There's also an
+outdated and hopefully soon superseded man-page that explains some of
+the command line options.  All documentation is highly unfinished.
+
+For more information please try to get the dpANS-document, which is
+an EXCELLENT REFERENCE to this system!  You can (could?) ftp it at
+ftp.uu.net in the directory /vendor/minerva/x3j14.
+
+
+Contributions
+=============
+
+are welcome! After the kernel is finished now it makes much sense to
+share the burden of creating and improving a well rounded programming
+environment for all tasks a Forth programmer wants to do. PFE is YOUR
+tool. Get involved in it's design!
+
+There is a mailing list on pfe which you should subscribe to if you
+want to be up to date with the development of the system. Send e-mail
+to duz@roxi.rz.fht-mannheim.de if you want to subscribe to that
+mailing list.
+
+
+Acknowledgements
+================
+
+I want to express my gratitude to the people who put their efforts in
+the precise descriptions I found in these documents:
+
+ - draft proposed American National Standard -- Programming Languages
+   -- Forth (X3J14 dpANS-6, June 30, 1993)
+
+ - FORTH-83 Standard (August 1983)
+
+ - fig-FORTH Installation Manual -- Glossary, Model, Editor
+   (Version 1.3, November 1980)
+
+Thanks for providing superb development tools:
+
+ - Richard Stallman and the FSF, Linus Thorvalds and all who
+   contribute to Linux and Eberhard Mattes.
+
+Several nice people gave me valuable hints to bugs and possible
+improvements, were patient enough to try the very first releases, made
+ports to machines I never saw myself and kept me from frustration. If
+pfe is stable now it is thanks to it's users. Most notably:
+
+   Lennert Benschop, Sean Conner, Holger Dietze, Kevin Haddock,
+   Rob Hooft, Giorgio Richelli, Marko Teiste, Guenther Thomsen.
+
+Thank You.
