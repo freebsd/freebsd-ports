@@ -31,9 +31,9 @@ pre-install:
 
 post-install:
 	[ -e ${PREFIX}/bin/cl-spim ] &&  \
-		/bin/ln -f ${PREFIX}/bin/cl-spim ${PREFIX}/bin/spim
+		${LN} -f ${PREFIX}/bin/cl-spim ${PREFIX}/bin/spim
 	[ -e ${PREFIX}/bin/cl-xspim ] &&  \
-		/bin/ln -f ${PREFIX}/bin/cl-xspim ${PREFIX}/bin/xspim
+		${LN} -f ${PREFIX}/bin/cl-xspim ${PREFIX}/bin/xspim
 .if !defined(NOPORTDOCS)
 	@${ECHO} "Installing spim/xspim documentation"
 	@${MKDIR} ${PREFIX}/share/doc/spim  \

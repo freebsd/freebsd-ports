@@ -3,7 +3,7 @@
 # Date created:		28 September 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.21 1999/06/10 08:00:06 steve Exp $
+# $Id: Makefile,v 1.22 1999/08/22 18:59:39 mharo Exp $
 #
 
 DISTNAME=	c-news
@@ -56,7 +56,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/libdbz/dbz.h ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/libcnews.a ${PREFIX}/lib
 	${MKDIR} ${NEWSSPOOL} ${NEWSBIN} ${NEWSLIB}
-	-ln -s ${NEWSSPOOL} /var/news
+	-${LN} -s ${NEWSSPOOL} /var/news
 	${CHOWN} news.news ${NEWSSPOOL} ${NEWSLIB}
 	${CHOWN} bin.bin ${NEWSBIN}
 	${INSTALL_SCRIPT} ${WRKSRC}/${PGPVERIFY} ${NEWSBIN}/pgpverify

@@ -19,7 +19,7 @@ MANUAL_PACKAGE_BUILD=	installs malloc.h
 
 post-install:
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
-	@(cd ${PREFIX}/include ; ln -sf malloc.h libmalloc.h)
+	@(cd ${PREFIX}/include ; ${LN} -sf malloc.h libmalloc.h)
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/libmalloc
 	${INSTALL_DATA} ${WRKSRC}/malloc.doc ${PREFIX}/share/doc/libmalloc

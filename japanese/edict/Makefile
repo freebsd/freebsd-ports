@@ -115,7 +115,7 @@ do-install:
 		) ; \
 	done
 	${RM} -f ${PREFIX}/bin/xjdic
-	ln -s ${PREFIX}/bin/xjdic_sa ${PREFIX}/bin/xjdic
+	${LN} -s ${PREFIX}/bin/xjdic_sa ${PREFIX}/bin/xjdic
 	${INSTALL_DATA} ${WRKDIR}/radicals.tm ${DATADIR} ;
 	${INSTALL_DATA} ${WRKDIR}/radkfile ${DATADIR} ;
 	${INSTALL_DATA} ${WRKDIR}/kanjstroke ${DATADIR} ;

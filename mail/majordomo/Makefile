@@ -40,7 +40,7 @@ post-install:
 	@ ${INSTALL_MAN} ${WRKSRC}/Doc/man/${file} ${PREFIX}/man/man8
 .endfor
 
-		@ ln -sf archive2.pl ${PREFIX}/majordomo/archive
+		@ ${LN} -sf archive2.pl ${PREFIX}/majordomo/archive
 		@ for dir in tmp lists/test-l.archive lists/test-l-digest.archive digests/test-l-digest doc; do \
 			${MKDIR} ${PREFIX}/majordomo/$$dir; \
 		done
@@ -64,8 +64,8 @@ post-install:
 		@ for file in test-l test-l-digest test-l.passwd test-l.info; do \
 			${INSTALL_DATA} ${FILESDIR}/$$file ${PREFIX}/majordomo/lists; \
 		done
-		@ ln -sf test-l.info ${PREFIX}/majordomo/lists/test-l-digest.info
-		@ ln -sf test-l.passwd ${PREFIX}/majordomo/lists/test-l-digest.passwd
+		@ ${LN} -sf test-l.info ${PREFIX}/majordomo/lists/test-l-digest.info
+		@ ${LN} -sf test-l.passwd ${PREFIX}/majordomo/lists/test-l-digest.passwd
 		@ ${CHMOD} 660 ${PREFIX}/majordomo/lists/test-l.passwd
 		@ ${CHOWN} -R majordom.majordom ${PREFIX}/majordomo/lists
 		@ ${CHMOD} -R 664 ${PREFIX}/majordomo/lists

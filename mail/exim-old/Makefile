@@ -71,7 +71,7 @@ do-configure:
 	${CP} ${FILESDIR}/eximon.conf ${WRKSRC}/Local
 	cd ${WRKSRC}/doc && \
 	for i in ../../exim-texinfo-3.00/doc/* ; do \
-		ln -sf $$i ; \
+		${LN} -sf $$i ; \
 	done
 
 post-build:

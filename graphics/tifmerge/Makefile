@@ -29,7 +29,7 @@ post-extract:
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libtifmerge.so.1 ${PREFIX}/lib
-	ln -fs ${PREFIX}/lib/libtifmerge.so.1 ${PREFIX}/lib/libtifmerge.so
+	${LN} -fs ${PREFIX}/lib/libtifmerge.so.1 ${PREFIX}/lib/libtifmerge.so
 	${INSTALL_DATA} ${WRKSRC}/libtifmerge.a ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/tifmerge.h ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/tifmerge.3 ${PREFIX}/man/man3

@@ -4,7 +4,7 @@
 # Date created:			  Sun Mar 09, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.6 1998/07/28 01:56:02 obrien Exp $
+# $Id: Makefile,v 1.7 1998/12/07 08:59:21 obrien Exp $
 #
 
 DISTNAME=	john-1.6
@@ -57,8 +57,8 @@ do-configure:
 do-install:
 	@${MKDIR} ${PREFIX}/share/john
 	@${INSTALL_PROGRAM} ${WRKDIR}/${DISTNAME}/run/john ${PREFIX}/bin
-	@(cd ${PREFIX}/bin ; /bin/ln -sf john xtract)
-	@(cd ${PREFIX}/bin ; /bin/ln -sf john unshadow)
+	@(cd ${PREFIX}/bin ; ${LN} -sf john xtract)
+	@(cd ${PREFIX}/bin ; ${LN} -sf john unshadow)
 	@${INSTALL_DATA} \
 		${WRKDIR}/${DISTNAME}/run/all.chr \
 		${WRKDIR}/${DISTNAME}/run/alpha.chr \

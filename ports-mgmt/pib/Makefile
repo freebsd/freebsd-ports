@@ -3,7 +3,7 @@
 # Date created:         30 December 1996
 # Whom:                 Mike Smith <msmith@freebsd.org>
 #
-# $Id: Makefile,v 1.11 1998/11/09 01:12:08 steve Exp $
+# $Id: Makefile,v 1.12 1999/01/10 17:58:47 steve Exp $
 #
 
 DISTNAME=	pib-1.1
@@ -19,6 +19,6 @@ do-install:
 	${MKDIR} ${PREFIX}/lib/pib
 	${INSTALL_SCRIPT} ${WRKSRC}/*.tcl ${PREFIX}/lib/pib
 	${INSTALL_DATA} ${WRKSRC}/libTkSteal.so.2* ${PREFIX}/lib/pib
-	ln -fs ${PREFIX}/lib/pib/pib.tcl ${PREFIX}/bin/pib
+	${LN} -fs ${PREFIX}/lib/pib/pib.tcl ${PREFIX}/bin/pib
 
 .include <bsd.port.mk>

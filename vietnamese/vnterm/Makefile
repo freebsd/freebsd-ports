@@ -4,7 +4,7 @@
 # Date created:         Sat July 20, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.11 1998/11/07 04:26:03 obrien Exp $
+# $Id: Makefile,v 1.12 1999/08/22 19:00:23 mharo Exp $
 #
 
 DISTNAME=	vnterm3.3
@@ -21,8 +21,8 @@ XMKMF=		xmkmf
 CFLAGS+=	-I../../include
 
 post-patch:
-	@/bin/ln ${WRKSRC}/XTerm.ad ${WRKSRC}/VNTerm.ad
-	@/bin/ln ${WRKSRC}/vnterm.1V ${WRKSRC}/vnterm.man
+	@${LN} ${WRKSRC}/XTerm.ad ${WRKSRC}/VNTerm.ad
+	@${LN} ${WRKSRC}/vnterm.1V ${WRKSRC}/vnterm.man
 
 post-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/VNterm.sh ${PREFIX}/bin/VNterm

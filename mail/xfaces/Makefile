@@ -26,7 +26,7 @@ USE_IMAKE=	YES
 MAN1=		xfaces.1
 
 pre-configure:
-	@ln -sf ../sounds ${WRKSRC}
+	@${LN} -sf ../sounds ${WRKSRC}
 
 pre-install:
 	@${MKDIR} ${LOCALBASE}/share/sounds

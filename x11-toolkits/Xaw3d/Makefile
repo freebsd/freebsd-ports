@@ -3,7 +3,7 @@
 # Date created:		18 November 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.21 1999/01/05 06:55:19 asami Exp $
+# $Id: Makefile,v 1.22 1999/07/04 20:46:16 steve Exp $
 #
 
 DISTNAME=	Xaw3d-1.5
@@ -20,7 +20,7 @@ USE_IMAKE=	yes
 
 post-extract:
 	${MKDIR} ${WRKSRC}/X11/Xaw3d
-	cd ${WRKSRC}/X11/Xaw3d; ln -sf ../../*.h .
+	cd ${WRKSRC}/X11/Xaw3d; ${LN} -sf ../../*.h .
 
 # Workaround a bug in egcs on FreeBSD/Alpha.
 .if ${MACHINE_ARCH} == "alpha"

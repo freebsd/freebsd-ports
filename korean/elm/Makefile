@@ -3,7 +3,7 @@
 # Date created:         1 Apr 1997
 # Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.2 1997/09/22 16:21:36 max Exp $
+# $Id: Makefile,v 1.3 1998/03/16 07:32:08 steve Exp $
 #
 
 DISTNAME=	elm2.4h4.1
@@ -23,7 +23,7 @@ CONFIGURE_SCRIPT= elm-config
 CONFIGURE_ENV+= PREFIX="${PREFIX}"
 
 post-install:
-	ln -fs ${PREFIX}/man/man1/newmail.1.gz ${PREFIX}/man/man1/wnewmail.1.gz
-	ln -fs ${PREFIX}/man/man1/frm.1.gz ${PREFIX}/man/man1/nfrm.1.gz
+	${LN} -fs ${PREFIX}/man/man1/newmail.1.gz ${PREFIX}/man/man1/wnewmail.1.gz
+	${LN} -fs ${PREFIX}/man/man1/frm.1.gz ${PREFIX}/man/man1/nfrm.1.gz
 
 .include <bsd.port.mk>

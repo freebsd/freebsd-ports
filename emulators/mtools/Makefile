@@ -35,8 +35,8 @@ post-patch:
 
 post-install:
 	@#	mwrite has been removed by author, but we'll keep it just a bit longer
-	@ln -sf ${PREFIX}/bin/mtools ${PREFIX}/bin/mwrite
-	@ln -sf ${PREFIX}/man/man1/mcopy.1.gz ${PREFIX}/man/man1/mwrite.1.gz
+	@${LN} -sf ${PREFIX}/bin/mtools ${PREFIX}/bin/mwrite
+	@${LN} -sf ${PREFIX}/man/man1/mcopy.1.gz ${PREFIX}/man/man1/mwrite.1.gz
 	@${INSTALL_DATA} ${WRKSRC}/mtools.conf ${PREFIX}/etc
 	@${ECHO} "Please verify ${PREFIX}/etc/mtools.conf for your machine."
 	@install-info ${PREFIX}/info/mtools.info ${PREFIX}/info/dir

@@ -3,7 +3,7 @@
 # Date created:		13 September 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.13 1998/10/05 05:17:56 steve Exp $
+# $Id: Makefile,v 1.14 1999/07/23 05:34:54 dbaker Exp $
 #
 
 DISTNAME=	emu-1.31
@@ -23,6 +23,6 @@ WRKSRC=		${WRKDIR}/emu
 MAN1=		emu.1
 
 pre-configure:
-	cd ${WRKSRC}/client ; ln -s ../doc/emu.man .
+	cd ${WRKSRC}/client ; ${LN} -s ../doc/emu.man .
 
 .include <bsd.port.mk>

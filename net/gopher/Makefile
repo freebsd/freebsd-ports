@@ -3,7 +3,7 @@
 # Date created:		11 Dec 1994
 # Whom:			ats (original)
 #
-# $Id: Makefile,v 1.8 1998/07/05 23:17:09 steve Exp $
+# $Id: Makefile,v 1.9 1999/06/08 23:50:22 steve Exp $
 #
 
 DISTNAME=	gopher2_3
@@ -27,11 +27,11 @@ MAN8=	gopherd.8 gopherindex.8
 
 pre-configure:
 # This ones are for FreeWAIS-0.4 and >
-	ln -s ${WaisTop}/include $(WaisTop)/ir
-	ln -s ${WaisTop}/src/client/ui $(WaisTop)
-	ln -s ${WaisTop}/bin $(WRKSRC)
+	${LN} -s ${WaisTop}/include $(WaisTop)/ir
+	${LN} -s ${WaisTop}/src/client/ui $(WaisTop)
+	${LN} -s ${WaisTop}/bin $(WRKSRC)
 # This is the new configuration method
-	ln -s ${WaisTop} $(WRKSRC)/wais
+	${LN} -s ${WaisTop} $(WRKSRC)/wais
 pre-install:
 	$(MKDIR) $(DATADIR)
 

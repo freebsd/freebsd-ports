@@ -3,7 +3,7 @@
 # Date created:         Jul, 15, 1997
 # Whom:                 cracauer@cons.org "Martin Cracauer"
 #
-# $Id: Makefile,v 1.7 1999/02/23 02:20:21 jkoshy Exp $
+# $Id: Makefile,v 1.8 1999/05/31 04:52:27 steve Exp $
 #
 
 DISTNAME=	scsh-0.5.1
@@ -35,6 +35,6 @@ post-install:
 	(cd ${WRKSRC} ; \
 	 ${INSTALL_DATA} README RELEASE NEWS COPYING ${PREFIX}/lib/scsh/doc)
 	${RM} -f ${PREFIX}/share/doc/scsh
-	ln -fs ${PREFIX}/lib/scsh/doc ${PREFIX}/share/doc/scsh
+	${LN} -fs ${PREFIX}/lib/scsh/doc ${PREFIX}/share/doc/scsh
 
 .include <bsd.port.post.mk>

@@ -49,7 +49,7 @@ pre-install:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/${DISTNAME}/platon ${PREFIX}/bin
-	ln -s ${PREFIX}/bin/platon ${PREFIX}/bin/pluton
+	${LN} -s ${PREFIX}/bin/platon ${PREFIX}/bin/pluton
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/README* \
 		${PREFIX}/share/doc/platon
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/VALIDATION.DOC \

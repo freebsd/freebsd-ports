@@ -42,6 +42,6 @@ pre-install:
 	find ${WRKSRC} \( -name \*.orig -o -name \*~ \) -exec ${RM} \{} \;
 
 post-install:
-	ln -sf ${PREFIX}/ftpsearch/bin/gateway ${PREFIX}/bin/ftpsearch
+	${LN} -sf ${PREFIX}/ftpsearch/bin/gateway ${PREFIX}/bin/ftpsearch
 
 .include <bsd.port.mk>

@@ -58,7 +58,7 @@ post-build:
 		done; \
 	 fi; \
 	done|sort|uniq >>${PLIST}
-	@${ECHO} "@exec ln -sf %D/share/man/ja %D/share/man/ja_JP.EUC" >>${PLIST}
+	@${ECHO} "@exec ${LN} -sf %D/share/man/ja %D/share/man/ja_JP.EUC" >>${PLIST}
 	@${ECHO} "@unexec ${RM} -f %D/share/man/ja_JP.EUC" >>${PLIST}
 
 pre-install:

@@ -3,7 +3,7 @@
 # Date created:		3 Jun 1999
 # Whom:			hollywar
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/08/25 06:07:42 taoka Exp $
 #
 
 DISTNAME=	bitchx-kr-75p1
@@ -23,7 +23,7 @@ post-patch:
 do-install:
 	${MKDIR} ${PREFIX}/lib/bx
 	${INSTALL_PROGRAM} ${WRKSRC}/source/BitchX ${PREFIX}/bin
-	@(ln -sf ${PREFIX}/bin/BitchX ${PREFIX}/bin/bx)
+	@(${LN} -sf ${PREFIX}/bin/BitchX ${PREFIX}/bin/bx)
 	${INSTALL_PROGRAM} ${WRKSRC}/source/scr-bx ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/source/wserv ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/BitchX.help ${PREFIX}/lib/bx

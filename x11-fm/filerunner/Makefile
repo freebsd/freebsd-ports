@@ -3,7 +3,7 @@
 # Date created:		3 August 1996
 # Whom:			lukin
 #
-# $Id: Makefile,v 1.16 1998/08/07 23:56:49 asami Exp $
+# $Id: Makefile,v 1.17 1998/10/03 22:06:12 steve Exp $
 #
 
 DISTNAME=	FileRunner-2.5
@@ -26,7 +26,7 @@ pre-build:
 do-install:
 	@ ${MKDIR} ${PREFIX}/lib/FileRunner/bitmaps
 	@ ${INSTALL_SCRIPT} ${WRKSRC}/fr ${PREFIX}/lib/FileRunner
-	@ ln -sf ${PREFIX}/lib/FileRunner/fr ${PREFIX}/bin
+	@ ${LN} -sf ${PREFIX}/lib/FileRunner/fr ${PREFIX}/bin
 .for file in FAQ HISTORY QuickStart.txt Tips.txt Users_Guide.txt chmod.tcl cmd.tcl config.tcl dialog_about.tcl ext.so font.tcl frcolor frftp ftp.tcl http.tcl tclIndex
 		@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/lib/FileRunner
 .endfor

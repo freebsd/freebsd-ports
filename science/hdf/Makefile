@@ -42,8 +42,8 @@ pre-build:
 	printf '\nclean:\n\ttrue\n' >> ${WRKSRC}/hdf/jpeg/Makefile
 	printf '\ninstall-lib:\n\ttrue\n' >> ${WRKSRC}/hdf/jpeg/Makefile
 	printf '\ninstall:\n\ttrue\n' >> ${WRKSRC}/hdf/jpeg/Makefile
-	-ln -s ${PREFIX}/lib/libjpeg* ${WRKSRC}/hdf/jpeg/
-	-ln -s ${PREFIX}/include/j*.h ${WRKSRC}/hdf/jpeg/
+	-${LN} -s ${PREFIX}/lib/libjpeg* ${WRKSRC}/hdf/jpeg/
+	-${LN} -s ${PREFIX}/include/j*.h ${WRKSRC}/hdf/jpeg/
 	test -d ${WRKSRC}/hdf/zlib.came-with-HDF || \
 		${MV} -f ${WRKSRC}/hdf/zlib ${WRKSRC}/hdf/zlib.came-with-HDF
 	-${MKDIR} ${WRKSRC}/hdf/zlib
@@ -56,8 +56,8 @@ pre-build:
 	printf '\nclean:\n\ttrue\n' >> ${WRKSRC}/hdf/zlib/Makefile
 	printf '\ninstall-lib:\n\ttrue\n' >> ${WRKSRC}/hdf/zlib/Makefile
 	printf '\ninstall:\n\ttrue\n' >> ${WRKSRC}/hdf/zlib/Makefile
-	-ln -s /usr/lib/${BINFORMAT}/libz* ${WRKSRC}/hdf/zlib/
-	-ln -s /usr/include/zconf.h /usr/include/zlib.h ${WRKSRC}/hdf/zlib/
+	-${LN} -s /usr/lib/${BINFORMAT}/libz* ${WRKSRC}/hdf/zlib/
+	-${LN} -s /usr/include/zconf.h /usr/include/zlib.h ${WRKSRC}/hdf/zlib/
 
 post-install:
 	@for binary in `${GREP} ^bin/ ${PLIST}` ; do strip ${PREFIX}/$$binary; done

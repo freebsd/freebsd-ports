@@ -22,6 +22,6 @@ do-install:
 		@ ${CP} ${WRKSRC}/CreditCard.pm ${WRKSRC}/CreditCard-0.21.pm
 		@ ${MKDIR} ${PREFIX}/lib/perl5/site_perl/Business/
 		@ ${INSTALL_DATA} ${WRKSRC}/CreditCard-0.21.pm ${PREFIX}/lib/perl5/site_perl/Business/
-		@ ln -sf ${PREFIX}/lib/perl5/site_perl/Business/CreditCard-0.21.pm ${PREFIX}/lib/perl5/site_perl/Business/CreditCard.pm
+		@ ${LN} -sf ${PREFIX}/lib/perl5/site_perl/Business/CreditCard-0.21.pm ${PREFIX}/lib/perl5/site_perl/Business/CreditCard.pm
 
 .include <bsd.port.mk>

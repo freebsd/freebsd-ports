@@ -15,6 +15,6 @@ MAINTAINER=	max@FreeBSD.ORG
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bpl ${PREFIX}/bin
-	@ln -fs ${PREFIX}/bin/bpl ${PREFIX}/bin/bp
+	@${LN} -fs ${PREFIX}/bin/bpl ${PREFIX}/bin/bp
 
 .include <bsd.port.mk>

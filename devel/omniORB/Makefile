@@ -19,7 +19,7 @@ BROKEN_ELF=	yes
 
 pre-patch:
 	${TOUCH} ${WRKSRC}/mk/freebsd_3.0.mk
-	ln -s ${WRKSRC}/mk/freebsd_3.0.mk ${WRKDIR}/${DISTNAME}/mk/config.mk
+	${LN} -s ${WRKSRC}/mk/freebsd_3.0.mk ${WRKDIR}/${DISTNAME}/mk/config.mk
 	${MKDIR} ${WRKSRC}/src/tool/omniidl2/omniidl2
 	${TOUCH} ${WRKSRC}/src/tool/omniidl2/omniidl2/Makefile
 	${TOUCH} ${WRKSRC}/Makefile

@@ -85,7 +85,7 @@ test:
 
 post-install:
 	@strip ${PREFIX}/bin/perl ${PREFIX}/bin/suidperl
-	@ln -sf ${PREFIX}/bin/perl ${PREFIX}/bin/perl5
+	@${LN} -sf ${PREFIX}/bin/perl ${PREFIX}/bin/perl5
 	@(cd /usr/include && ${PREFIX}/bin/h2ph *.h machine/*.h sys/*.h)
 
 .include <bsd.port.post.mk>

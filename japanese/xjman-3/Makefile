@@ -52,7 +52,7 @@ post-build:
 		done; \
 	fi; \
 	done|sort|uniq >>${PLIST}
-	@${ECHO} "@exec ln -sf %D/man/ja %D/man/ja_JP.EUC" >>${PLIST}
+	@${ECHO} "@exec ${LN} -sf %D/man/ja %D/man/ja_JP.EUC" >>${PLIST}
 	@${ECHO} "@unexec ${RM} -f %D/man/ja_JP.EUC" >>${PLIST}
 	@${ECHO} "share/doc/xjman/COPYRIGHT" >>${PLIST}
 	@${ECHO} "share/doc/xjman/COPYRIGHT.XJDP" >>${PLIST}

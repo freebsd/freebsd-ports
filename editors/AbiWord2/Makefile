@@ -35,7 +35,7 @@ OSDISTDIR=	`uname -s`_`uname -r`_`uname -m`_OBJ
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@ cd ${WRKDIR} && ln -sf abi-0.5.5 abi
+	@ cd ${WRKDIR} && ${LN} -sf abi-0.5.5 abi
 .if ${OSVERSION} > 310000
 	@${CP} 	${WRKSRC}/config/platforms/freebsd.mk \
 		${WRKSRC}/config/platforms/freebsd.mk.version
@@ -55,7 +55,7 @@ do-install:
 		${WRKDIR}/unixfonts-0.5.4/install.sh.orig > \
 		${WRKDIR}/unixfonts-0.5.4/install.sh
 	( cd ${WRKDIR}/unixfonts-0.5.4 ; yes "" | bash ./install.sh )
-	for BIN in ${PREFIX}/AbiSuite/bin/* ; do ln -sf $${BIN} ${PREFIX}/bin ; done
+	for BIN in ${PREFIX}/AbiSuite/bin/* ; do ${LN} -sf $${BIN} ${PREFIX}/bin ; done
 	@${CAT} ${PKGDIR}/MESSAGE | ${SED} s,/usr/local,${PREFIX},
 
 .include <bsd.port.post.mk>

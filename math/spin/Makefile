@@ -30,7 +30,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/spin ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKDIR}/Xspin3.3/xspin333.tcl ${PREFIX}/bin
 	${RM} -f ${PREFIX}/bin/xspin
-	ln -s ${PREFIX}/bin/xspin333.tcl ${PREFIX}/bin/xspin
+	${LN} -s ${PREFIX}/bin/xspin333.tcl ${PREFIX}/bin/xspin
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/spin/Doc
