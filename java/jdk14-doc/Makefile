@@ -20,9 +20,9 @@ RESTRICTED=	"This documentation is under license and export control."
 TARGET_DIR?=	${PREFIX}/share/doc/jdk${JDK_MAJOR_VER}
 
 WRKSRC=		${WRKDIR}/docs
-JDK_VERSION=	1.4.1
+JDK_VERSION=	1.4.2
 JDK_MAJOR_VER=	${JDK_VERSION:R}
-BUNDLE_ID=	7065
+BUNDLE_ID=	8602
 DOWNLOAD_URL=	http://java.sun.com/webapps/download/Display?BundleId=${BUNDLE_ID}
 
 NO_BUILD=	yes
