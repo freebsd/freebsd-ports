@@ -75,8 +75,6 @@ do-extract:
 	@${CP} ${FILESDIR}/strlcpy.c ${WRKSRC}/lib/
 
 post-patch:
-	@${PERL} -pi.orig -e 's:(_PATH_STDPATH):$$1 "${PREFIX}/bin":g' \
-	    ${WRKSRC}/sshd.c
 	@${PERL} -pi.orig -e 's:__PREFIX__:${PREFIX}:g' ${WRKSRC}/ssh.h
 	@${PERL} -pi.orig -e 's:__PREFIX__:${PREFIX}:g' ${WRKSRC}/sshd_config
 	@${PERL} -pi.openssl -e \
