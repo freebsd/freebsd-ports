@@ -7,9 +7,12 @@
 #
 
 PORTNAME=	xmlsec
-PORTVERSION=	0.0.14
+PORTVERSION=	0.0.15
 CATEGORIES=	security
-MASTER_SITES=	http://www.aleksey.com/xmlsec/download/
+MASTER_SITES=	http://www.aleksey.com/xmlsec/download/ \
+		ftp://ftp.aleksey.com/pub/xmlsec/releases/ \
+		ftp://ftp.xmlsoft.org/xmlsec/releases \
+		ftp://ftp.rpmfind.net/pub/XML/xmlsec/releases
 
 MAINTAINER=	jim@corebsd.or.id
 COMMENT=	XML Security Library
