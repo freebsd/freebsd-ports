@@ -142,26 +142,4 @@ include/sp/xnew.h
 lib/libsp.a
 lib/libsp.so.1
 @comment lib/libsp.so.1.4
-share/doc/sp/Makefile
-share/doc/sp/archform.htm
-share/doc/sp/build.htm
-share/doc/sp/catalog
-share/doc/sp/catalog.htm
-share/doc/sp/charset.htm
-share/doc/sp/features.htm
-share/doc/sp/generic.htm
-share/doc/sp/ideas.htm
-share/doc/sp/index.htm
-share/doc/sp/new.htm
-share/doc/sp/nsgmls.htm
-share/doc/sp/sgmldecl.htm
-share/doc/sp/sgmlnorm.htm
-share/doc/sp/sgmlsout.htm
-share/doc/sp/spam.htm
-share/doc/sp/spent.htm
-share/doc/sp/sx.htm
-share/doc/sp/sysdecl.htm
-share/doc/sp/sysid.htm
-share/doc/sp/xml.htm
 @dirrm include/sp
-@dirrm share/doc/sp

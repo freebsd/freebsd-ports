@@ -13,24 +13,29 @@ MASTER_SITES=	ftp://ftp.jclark.com/pub/sp/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An object-oriented toolkit for SGML parsing and entity management
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
 .if ${MACHINE_ARCH} == sparc64
 BROKEN=		does not compile on ${MACHINE_ARCH}
 .endif
 
 USE_SUBMAKE=	yes
 INSTALLS_SHLIB=	yes
+USE_GCC=	2.95
+USE_REINPLACE=	yes
+PORTDOCS=	Makefile archform.htm build.htm catalog catalog.htm \
+		charset.htm features.htm generic.htm ideas.htm index.htm \
+		new.htm nsgmls.htm sgmldecl.htm sgmlnorm.htm sgmlsout.htm \
+		spam.htm spent.htm sx.htm sysdecl.htm sysid.htm xml.htm
+
+post-patch:
+	${REINPLACE_CMD} -e 's,=/usr/local,=${PREFIX},g' ${WRKSRC}/Makefile*
 
 post-install:
-	$(MKDIR) $(PREFIX)/include/sp
-	$(MKDIR) $(PREFIX)/share/doc/sp
-	$(RM) -f $(WRKSRC)/include/*.orig
-	for file in $(WRKSRC)/include/*;do $(INSTALL_DATA) $$file $(PREFIX)/include/sp;done
-	for file in $(WRKSRC)/doc/*;do $(INSTALL_DATA) $$file $(PREFIX)/share/doc/sp;done
+	${MKDIR} ${PREFIX}/include/sp
+	${RM} -f ${WRKSRC}/include/*.orig
+	for f in ${WRKSRC}/include/*;do ${INSTALL_DATA} $$f ${PREFIX}/include/sp;done
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
