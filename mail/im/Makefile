@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	im
-PORTVERSION=	140
+PORTVERSION=	144
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.mew.org/pub/Mew/ \
-		ftp://ftp.kyushu-u.ac.jp/pub/Misc/mew/ \
+MASTER_SITES=	http://tats.iris.ne.jp/im/ \
 		${MASTER_SITE_PORTS_JP}
 
-MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
+MAINTAINER=	kiri@FreeBSD.org
 COMMENT=	Set of user interfaces of Email and NetNews
 
 USE_PERL5=	yes

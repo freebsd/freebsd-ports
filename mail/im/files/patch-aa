@@ -1,11 +1,11 @@
---- IM/TcpTransaction.pm.orig	Sat Sep  5 08:04:33 1998
-+++ IM/TcpTransaction.pm	Wed Sep  9 17:47:55 1998
-@@ -437,7 +437,7 @@
- }
+--- configure.in~	Tue Feb 25 01:51:43 2003
++++ configure.in	Thu Apr 24 11:39:22 2003
+@@ -125,7 +125,7 @@
+ [im_hostname="${withval}"])
+ if test "x$im_hostname" = 'x'; then
+   AC_MSG_CHECKING([domain for mail-address])
+-  im_hostname=`hostname`
++  im_hostname="_domain_of_your_mail_address_"
+   AC_MSG_RESULT([$im_hostname])
+ fi
  
- sub inet6_family () {
--    return eval '&AF_INET6' || 24;
-+    return eval '&AF_INET6' || 28;
- }
- 
- 1;
