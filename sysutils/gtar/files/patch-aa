@@ -1,0 +1,20 @@
+--- src/Makefile.in.orig	Wed Sep 27 15:52:00 2000
++++ src/Makefile.in	Wed Sep 27 15:52:14 2000
+@@ -337,7 +337,7 @@
+ 	  fi; \
+ 	done
+ buffer.o: buffer.c system.h ../config.h ../lib/pathmax.h ../lib/error.h \
+-	../lib/xalloc.h ../lib/fnmatch.h ../lib/human.h \
++	../lib/xalloc.h ../lib/human.h \
+ 	../lib/quotearg.h common.h tar.h arith.h ../lib/backupfile.h \
+ 	../lib/basename.h ../lib/exclude.h ../lib/modechange.h \
+ 	../lib/safe-read.h rmt.h
+@@ -376,7 +376,7 @@
+ 	../lib/modechange.h ../lib/safe-read.h ../lib/quotearg.h \
+ 	../lib/save-cwd.h
+ names.o: names.c system.h ../config.h ../lib/pathmax.h ../lib/error.h \
+-	../lib/xalloc.h ../lib/fnmatch.h ../lib/quotearg.h common.h \
++	../lib/xalloc.h ../lib/quotearg.h common.h \
+ 	tar.h arith.h ../lib/backupfile.h ../lib/basename.h \
+ 	../lib/exclude.h ../lib/modechange.h ../lib/safe-read.h
+ open3.o: open3.c system.h ../config.h ../lib/pathmax.h ../lib/error.h \
