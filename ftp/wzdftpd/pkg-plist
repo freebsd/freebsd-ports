@@ -33,9 +33,6 @@ etc/file_groups.txt
 %%DATADIR%%/backends/libwzdplaintext.la
 %%DATADIR%%/modules/libwzd_sfv.la
 %%DATADIR%%/modules/libwzd_sfv.a
-%%DATADIR%%/modules/libwzd_test.la
-%%DATADIR%%/modules/libwzd_test.a
-%%DATADIR%%/modules/libwzd_test.so
 %%DATADIR%%/modules/libwzd_sfv.so
 @dirrm %%DATADIR%%/modules/
 @dirrm %%DATADIR%%/backends/
