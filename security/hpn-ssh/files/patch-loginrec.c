@@ -1,14 +1,16 @@
---- loginrec.c.orig	Tue Apr 23 15:09:19 2002
-+++ loginrec.c	Wed Jul 24 08:13:44 2002
-@@ -171,6 +171,7 @@
- 
+--- loginrec.c.orig	Thu Sep 26 02:38:49 2002
++++ loginrec.c	Mon Oct 21 06:51:34 2002
+@@ -172,6 +172,9 @@
  #ifdef HAVE_LIBUTIL_H
  #   include <libutil.h>
-+#   include <osreldate.h>
  #endif
++#ifdef __FreeBSD__
++#include <osreldate.h>
++#endif
  
  /**
-@@ -654,7 +655,12 @@
+  ** prototypes for helper functions in this file
+@@ -654,7 +657,12 @@
  	/* Use strncpy because we don't necessarily want null termination */
  	strncpy(ut->ut_name, li->username, MIN_SIZEOF(ut->ut_name, li->username));
  # ifdef HAVE_HOST_IN_UTMP

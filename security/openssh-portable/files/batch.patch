@@ -1,38 +1,36 @@
---- Makefile.in.orig	Wed Jun 26 01:45:42 2002
-+++ Makefile.in	Tue Sep 17 07:22:43 2002
-@@ -199,6 +199,7 @@
+--- Makefile.in.orig	Sun Jul 14 19:02:21 2002
++++ Makefile.in	Sat Oct 26 05:49:23 2002
+@@ -198,7 +198,7 @@
+ 	$(AUTORECONF)
  	(cd scard && $(MAKE) -f Makefile.in distprep)
  
- install: $(CONFIGFILES) $(MANPAGES) $(TARGETS) install-files host-key check-user
-+install: $(CONFIGFILES) $(MANPAGES) $(TARGETS) install-files check-user
+-install: $(CONFIGFILES) $(MANPAGES) $(TARGETS) install-files host-key check-config
++install: $(CONFIGFILES) $(MANPAGES) $(TARGETS) install-files check-config
  install-nokeys: $(CONFIGFILES) $(MANPAGES) $(TARGETS) install-files
  
- check-user:
-@@ -251,27 +252,6 @@
- 	ln -s ssh$(EXEEXT) $(DESTDIR)$(bindir)/slogin
- 	-rm -f $(DESTDIR)$(mandir)/$(mansubdir)1/slogin.1
- 	ln -s ssh.1 $(DESTDIR)$(mandir)/$(mansubdir)1/slogin.1
--	if [ ! -d $(DESTDIR)$(sysconfdir) ]; then \
--		$(srcdir)/mkinstalldirs $(DESTDIR)$(sysconfdir); \
+ check-config:
+@@ -251,24 +251,6 @@
+ 	ln -s ./ssh.1 $(DESTDIR)$(mandir)/$(mansubdir)1/slogin.1
+ 	if [ ! -d $(DESTDIR)$(sysconfdir) ]; then \
+ 		$(srcdir)/mkinstalldirs $(DESTDIR)$(sysconfdir); \
 -	fi
--	if [ ! -f $(DESTDIR)$(sysconfdir)/ssh_config ]; then \
+-	@if [ ! -f $(DESTDIR)$(sysconfdir)/ssh_config ]; then \
 -		$(INSTALL) -m 644 ssh_config.out $(DESTDIR)$(sysconfdir)/ssh_config; \
 -	else \
 -		echo "$(DESTDIR)$(sysconfdir)/ssh_config already exists, install will not overwrite"; \
 -	fi
--	if [ ! -f $(DESTDIR)$(sysconfdir)/sshd_config ]; then \
+-	@if [ ! -f $(DESTDIR)$(sysconfdir)/sshd_config ]; then \
 -		$(INSTALL) -m 644 sshd_config.out $(DESTDIR)$(sysconfdir)/sshd_config; \
 -	else \
 -		echo "$(DESTDIR)$(sysconfdir)/sshd_config already exists, install will not overwrite"; \
 -	fi
--	if [ -f ssh_prng_cmds -a ! -z "$(INSTALL_SSH_PRNG_CMDS)" ]; then \
+-	@if [ -f ssh_prng_cmds -a ! -z "$(INSTALL_SSH_PRNG_CMDS)" ]; then \
 -		$(PERL) $(srcdir)/fixprogs ssh_prng_cmds $(ENT); \
 -		if [ ! -f $(DESTDIR)$(sysconfdir)/ssh_prng_cmds ] ; then \
 -			$(INSTALL) -m 644 ssh_prng_cmds.out $(DESTDIR)$(sysconfdir)/ssh_prng_cmds; \
 -		else \
 -			echo "$(DESTDIR)$(sysconfdir)/ssh_prng_cmds already exists, install will not overwrite"; \
 -		fi ; \
--	fi
- 	if [ ! -f $(DESTDIR)$(sysconfdir)/moduli ]; then \
+ 	fi
+ 	@if [ ! -f $(DESTDIR)$(sysconfdir)/moduli ]; then \
  		if [ -f $(DESTDIR)$(sysconfdir)/primes ]; then \
- 			echo "moving $(DESTDIR)$(sysconfdir)/primes to $(DESTDIR)$(sysconfdir)/moduli"; \
