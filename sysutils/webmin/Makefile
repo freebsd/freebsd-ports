@@ -7,11 +7,11 @@
 
 PORTNAME=	webmin
 PORTVERSION=	0.85
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://webadmin.sourceforge.net/webmin/updates/ \
 		http://webadmin.sourceforge.net/webmin/download/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${WEBMIN_MODULES}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${WEBMIN_MODULES} ${WEBMIN_SERVER}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -27,6 +27,7 @@ WEBMIN_MODULES=	postgresql-0.85-1.wbm.gz squid-0.85-1.wbm.gz \
 		apache-0.85-2.wbm.gz quota-0.85-1.wbm.gz \
 		bind8-0.85-1.wbm.gz mysql-0.85-1.wbm.gz \
 		shell-0.85-1.wbm.gz man-0.85-1.wbm.gz
+WEBMIN_SERVER=	miniserv.pl
 
 post-extract:
 	if [ "${WEBMIN_MODULES}" != "" ]; then \
@@ -35,6 +36,7 @@ post-extract:
 			${TAR} xfz ${DISTDIR}/$${webmin_module} -C ${WRKSRC}; \
 		done; \
 	fi
+	@${CP} ${DISTDIR}/${WEBMIN_SERVER} ${WRKSRC}
 	@find ${WRKSRC} -name "*.bak" | xargs ${RM}
 
 post-patch:
