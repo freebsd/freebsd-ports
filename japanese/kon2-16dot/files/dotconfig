@@ -3,7 +3,7 @@ DISTDIR = %%DISTDIR%%
 TOPDIR	= %%PREFIX%%
 BINDIR	= $(TOPDIR)/bin
 LIBDIR	= $(TOPDIR)/etc
-MANDIR	= $(TOPDIR)/man/ja_JP.EUC/man1
+MANDIR	= $(TOPDIR)/man/ja/man1
 FONTDIR	= $(TOPDIR)/lib/fonts
 CONFIG_NAME = kon.cfg
 CFLAGS  += -DCONFIG_NAME=\"$(LIBDIR)/$(CONFIG_NAME)\"
