@@ -4,8 +4,9 @@
 # $FreeBSD$
 #
 
-PORTNAME=	${PKG_PRE}acroread-${DISTNAME}
+PORTNAME=	acroread
 PORTVERSION=	1999.7.20
+PKGNAMESUFFIX=	-${DISTNAME}
 CATEGORIES?=	japanese print linux
 MASTER_SITES=	ftp://ftp-pac.adobe.com/pub/adobe/acrobatreader/unix/4.x/
 DISTNAME?=	commfont # dummy
@@ -54,19 +55,15 @@ IS_INTERACTIVE= "You should manual-fetch Japanese pack of \"Asian Font Packs\" f
 IGNORE=		": ${RESTRICTED} ${IS_INTERACTIVE}"
 .endif
 WRKSRC=		${WRKDIR}/JPNKIT
-PKG_PRE=	ja-
 TAR_FILE=	${WRKSRC}/LANGJPN.TAR
 .elif ${DISTNAME} == "chsfont"
 WRKSRC=		${WRKDIR}/CHSKIT
-PKG_PRE=	zh-
 TAR_FILE=	${WRKSRC}/LANGCHS.TAR
 .elif ${DISTNAME} == "chtfont"
 WRKSRC=		${WRKDIR}/CHTKIT
-PKG_PRE=	zh-
 TAR_FILE=	${WRKSRC}/LANGCHT.TAR
 .elif ${DISTNAME} == "korfont"
 WRKSRC=		${WRKDIR}/KORKIT
-PKG_PRE=	ko-
 TAR_FILE=	${WRKSRC}/LANGKOR.TAR
 .endif
 .endif
