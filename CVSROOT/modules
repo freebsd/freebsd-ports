@@ -190,6 +190,7 @@ abuse_sdl	ports/games/abuse_sdl
 ac-archive	ports/devel/ac-archive
 ac3dec		ports/audio/ac3dec
 accessx		ports/x11/accessx
+accrete		ports/astro/accrete
 acfax		ports/comms/acfax
 achievo		ports/misc/achievo
 acid		ports/security/acid
