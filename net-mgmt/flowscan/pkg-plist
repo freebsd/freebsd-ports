@@ -27,5 +27,6 @@ share/doc/flowscan/flowscan.sample
 @dirrm var/db/flows/graphs
 @dirrm var/db/flows/bin
 @dirrm var/db/flows
-@dirrm var/db
+@unexec rmdir %D/var/db 2>/dev/null || true
+@unexec rmdir %D/var 2>/dev/null || true
 @dirrm share/doc/flowscan
