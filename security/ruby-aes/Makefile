@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aes
-PORTVERSION=	0.0.1
+PORTVERSION=	0.1.0
 CATEGORIES=	security ruby
 MASTER_SITES=	http://aescrypt.sourceforge.net/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -20,8 +20,10 @@ USE_RUBY_EXTCONF=	yes
 
 INSTALL_TARGET=	site-install
 
-DOCS=		README
-EXAMPLES=	aes-example.rb \
+DOCS=		CHANGES README
+EXAMPLES=	aes-ecb-tbl.txt \
+		aes-example.rb \
+		aes-test.rb \
 		modexp.rb
 
 post-install:

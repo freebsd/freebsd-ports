@@ -1,6 +1,9 @@
 %%RUBY_SITEARCHLIBDIR%%/aes.so
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/aes/aes-ecb-tbl.txt
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/aes/aes-example.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/aes/aes-test.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/aes/modexp.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/aes
+%%PORTDOCS%%%%RUBY_DOCDIR%%/aes/CHANGES
 %%PORTDOCS%%%%RUBY_DOCDIR%%/aes/README
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/aes
