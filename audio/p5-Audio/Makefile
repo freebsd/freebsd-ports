@@ -22,4 +22,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Audio::Play.3 Audio::Data.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile"
+.endif
+
+.include <bsd.port.post.mk>

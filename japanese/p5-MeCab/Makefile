@@ -22,6 +22,10 @@ PERL_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile"
+.endif
+
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-
 
 post-install:

@@ -24,6 +24,12 @@ HAS_CONFIGURE=	yes
 MAKEFILE=	makefile
 ALL_TARGET=
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile"
+.endif
+
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/lib/FreeBSD/libtaucs.a ${PREFIX}/lib
 	@${INSTALL_PROGRAM} ${WRKSRC}/bin/FreeBSD/direct ${PREFIX}/bin
@@ -34,4 +40,4 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/*.pdf ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

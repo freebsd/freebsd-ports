@@ -23,4 +23,10 @@ CONFIGURE_ARGS+=	--use-installed=${LOCALBASE}
 
 MAN3=		FCGI.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile"
+.endif
+
+.include <bsd.port.post.mk>
