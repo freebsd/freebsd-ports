@@ -1,0 +1,15 @@
+This is the Linux version of RealPlayer 5.0 from RealNetworks, the player
+for RealAudio and RealVideo streaming broadcasts from the net. It can be
+used as a standalone application, an external "helper" app from Netscape,
+or a plugin in the Linux version of netscape.
+
+Playing back video streams such as /usr/local/share/rvplayer5.0/welcome.rm
+doesn't seem to work too well on my 4.0-CURRENT machine.
+
+Due to license restrictions, this package must be manually downloaded
+from:
+
+http://www.real.com/products/player/50player/downloadrealplayer.html 
+?wp=dl1198&src=download
+
+Kris Kennaway <kkennawa@physics.adelaide.edu.au>
