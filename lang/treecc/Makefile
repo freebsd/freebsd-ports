@@ -14,6 +14,7 @@ MAINTAINER=	ahze@ahze.net
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_BISON=	yes
 MAN1=		treecc.1
 
 .include <bsd.port.mk>
