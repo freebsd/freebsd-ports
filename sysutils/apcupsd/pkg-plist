@@ -25,6 +25,7 @@ share/locale/it/LC_MESSAGES/apcupsd.mo
 %%PORTDOCS%%share/doc/apcupsd/apcupsd.pdf
 %%PORTDOCS%%share/doc/apcupsd/apcaccess.html
 %%PORTDOCS%%share/doc/apcupsd/apcnisd.html
+%%PORTDOCS%%share/doc/apcupsd/apctest.html
 %%PORTDOCS%%share/doc/apcupsd/apcupsd-styles.css
 %%PORTDOCS%%share/doc/apcupsd/apcupsd.apf
 %%PORTDOCS%%share/doc/apcupsd/apcupsd.book
@@ -55,6 +56,8 @@ share/locale/it/LC_MESSAGES/apcupsd.mo
 %%PORTDOCS%%share/doc/apcupsd/new_features_3_8_1.html
 %%PORTDOCS%%share/doc/apcupsd/new_features_3_8_2.html
 %%PORTDOCS%%share/doc/apcupsd/new_features_3_8_3.html
+%%PORTDOCS%%share/doc/apcupsd/new_features_3_8_4.html
+%%PORTDOCS%%share/doc/apcupsd/new_features_3_8_5.html
 %%PORTDOCS%%share/doc/apcupsd/oldversions.html
 %%PORTDOCS%%share/doc/apcupsd/onbatt.gif
 %%PORTDOCS%%share/doc/apcupsd/online.gif

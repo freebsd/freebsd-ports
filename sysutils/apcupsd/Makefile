@@ -7,7 +7,7 @@
 
 PORTNAME=	apcupsd
 PORTVERSION=	3.8.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.apcupsd.com/pub/apcupsd/stable/tar/
 
@@ -40,7 +40,7 @@ PLIST_SUB+=	POWERFL="@comment "
 
 MAN8=		"apcupsd.8"
 
-PORTDOCS=	apcupsd.pdf apcaccess.html apcnisd.html apcupsd-styles.css \
+PORTDOCS=	apcupsd.pdf apcaccess.html apcnisd.html apctest.html apcupsd-styles.css \
 		apcupsd.apf apcupsd.book apcupsd.gif apcupsd.html batteries.html \
 		bugs.html cables.html cgiprogs.html charging.gif \
 		config-examples.html configure.html data.html eprom.html \
@@ -49,13 +49,13 @@ PORTDOCS=	apcupsd.pdf apcaccess.html apcnisd.html apcupsd-styles.css \
 		multiUPS.html multimon.gif new_features_3_7_0.html \
 		new_features_3_8_0.html new_features_3_8_1.html \
 		new_features_3_8_2.html new_features_3_8_3.html \
+		new_features_3_8_4.html new_features_3_8_5.html \
 		oldversions.html onbatt.gif online.gif security.html \
 		shutdown.html status.gif status.html stopping.html testing.html \
 		thanks.gif thanks.html troubles.html upgrading_to_3_7_0.html \
 		upsbible.html usb.html win32.html wininstall1.gif wininstall2.gif \
 		wininstall3.gif wininstall4.gif wininstall5.gif wininstall6.gif \
 		wininstall7.gif
-
 
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/${STARTUP_SCRIPT} \
