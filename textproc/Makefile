@@ -311,6 +311,7 @@
     SUBDIR += p5-XML-Parser-EasyTree
     SUBDIR += p5-XML-Quote
     SUBDIR += p5-XML-RSS
+    SUBDIR += p5-XML-RSS-JavaScript
     SUBDIR += p5-XML-RSS-Parser
     SUBDIR += p5-XML-RegExp
     SUBDIR += p5-XML-SAX

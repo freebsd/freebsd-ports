@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RSS/JavaScript/.packlist
+%%SITE_PERL%%/XML/RSS/JavaScript.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RSS/JavaScript
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RSS 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/XML/RSS 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
