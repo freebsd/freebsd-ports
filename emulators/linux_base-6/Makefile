@@ -22,6 +22,9 @@ PATCHFILES=		${UPDATES}
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=	The base set of packages needed in Linux mode
+
+DEPRECATED=	"obsolete; has a minor security bug:  <URL:http://www.redhat.com/support/errata/archives/RHSA-2000-117.html> and probably others"
+
 .if (${MACHINE_ARCH} == "alpha")
 FORBIDDEN=	"see <URL:http://rhn.redhat.com/errata/RHSA-2003-089.html> or\
  <URL:http://www.cert.org/advisories/CA-2003-10.html>"
