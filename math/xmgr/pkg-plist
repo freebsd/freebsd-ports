@@ -1,11 +1,16 @@
+bin/fdf2fit
+bin/grbatch
+bin/grconvert
+bin/xmgr
+include/acegr_np.h
 lib/X11/xmgr/auxiliary/README
 lib/X11/xmgr/auxiliary/fdf2fit
 lib/X11/xmgr/auxiliary/greg2jul.c
 lib/X11/xmgr/auxiliary/jul2greg.c
 lib/X11/xmgr/auxiliary/magic.xmgr
-lib/X11/xmgr/bin/xmgr
 lib/X11/xmgr/bin/grbatch
 lib/X11/xmgr/bin/grconvert
+lib/X11/xmgr/bin/xmgr
 lib/X11/xmgr/doc/CHANGES.html
 lib/X11/xmgr/doc/FAQ.html
 lib/X11/xmgr/doc/acegr_np.html
@@ -77,10 +82,7 @@ lib/X11/xmgr/examples/tstack.dat
 lib/X11/xmgr/examples/txyr.dat
 lib/X11/xmgr/include/acegr_np.h
 lib/X11/xmgr/lib/libacegr_np.a
-bin/xmgr
-bin/grbatch
-bin/grconvert
-bin/fdf2fit
+lib/libacegr_np.a
 @dirrm lib/X11/xmgr/auxiliary
 @dirrm lib/X11/xmgr/bin
 @dirrm lib/X11/xmgr/doc
