@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pkgconfig
-PORTVERSION=	0.8.0
+PORTVERSION=	0.10.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.freedesktop.org/software/pkgconfig/releases/ \
 		${MASTER_SITE_SOURCEFORGE}
