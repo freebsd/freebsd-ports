@@ -23,6 +23,12 @@ LIB_DEPENDS=	sigc-1.2.5:${PORTSDIR}/devel/libsigc++12
 USE_QT_VER=	3
 MAKE_ENV=	QTDIR="${QT_PREFIX}"
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha"
+BROKEN=		"Does not compile on alpha"
+.endif
+
 post-patch:
 	@${CP} ${FILESDIR}/cheesetracker.pro ${WRKSRC}
 
@@ -38,4 +44,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/*.xm ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
