@@ -20,19 +20,16 @@ LIB_DEPENDS=		clanCore.2:${PORTSDIR}/devel/clanlib
 
 USE_X_PREFIX=		yes
 USE_GMAKE=		yes
+USE_REINPLACE=		yes
 BUILD_WRKSRC=		${WRKSRC}/trophy
 
 MAKE_ENV=		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
 			PTHREAD_LIBS=${PTHREAD_LIBS}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=			"Does not compile on FreeBSD >= 5.x"
-.endif
-
 post-extract:
 	@${FIND} ${BUILD_WRKSRC}/resources -name .cvsignore -exec ${RM} -f {} \;
+	@${REINPLACE_CMD} -e 's/std::sqrt/sqrt/' ${BUILD_WRKSRC}/caimagemanipulation.cpp \
+		${BUILD_WRKSRC}/catrophy.cpp ${BUILD_WRKSRC}/camath.cpp
 
 do-install:
 	${MKDIR} ${PREFIX}/bin
@@ -51,4 +48,4 @@ do-install:
 		${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
