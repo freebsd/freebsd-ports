@@ -26,13 +26,9 @@ DISTFILES=	${SRC_DIST}
 DISTFILES+=	${BOOT_DIST}
 .else
 DISTFILES+=	${BOOT_DIST5}
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-ghc-compiler-nativeGen-MachMisc.lhs \
-		${FILESDIR}/extra-patch-ghc-compiler-nativeGen-RegAllocInfo.lhs \
-		${FILESDIR}/extra-patch-ghc-rts-RtsFlags.c \
-		${FILESDIR}/extra-patch-ghc-rts-rts.conf.in \
-		${FILESDIR}/extra-patch-ghc-utils-prof-cgprof-cgprof.c
-LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 .endif
+
+LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 
 MAINTAINER=	simonmar@microsoft.com
 COMMENT=	A Compiler for the functional language Haskell
@@ -54,16 +50,11 @@ PLIST_SUB+=	PROFILE=""
 BOOT_DIR=	${WRKDIR}/ghc-${PORTVERSION}-boot
 BOOT_GHC=	${BOOT_DIR}/bin/i386-unknown-freebsd/ghc-${PORTVERSION}
 
-CONFIGURE_ARGS= --with-ghc=${BOOT_GHC}
+CONFIGURE_ARGS= --with-ghc=${BOOT_GHC}  --with-gcc=${CC}
 # specifying CONFIGURE_TARGET doesn't work for some reason.
 CONFIGURE_TARGET=
 # libgmp:
-.if ${OSVERSION} >= 500000
 CONFIGURE_ENV+=	CFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
-PLIST_SUB+=	GMP="@comment "
-.else
-PLIST_SUB+=	GMP=""
-.endif
 
 # override TMPDIR because /tmp often doesn't have enough space
 # to build some of the larger libraries.
@@ -83,9 +74,7 @@ post-extract:
 .if defined(WITHOUT_PROFILE)
 	@${ECHO} >>${WRKSRC}/mk/build.mk GhcLibWays=
 .endif
-.if ${OSVERSION} >= 500000
 	@${ECHO} >>${WRKSRC}/mk/build.mk SplitObjs=NO
-.endif
 
 post-patch:
 	@${PERL} -pi -e 's/DrIFT/DrIFT-ghc/g; \
