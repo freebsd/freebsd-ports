@@ -27,6 +27,10 @@ SUP_OS_VER=	450004
 BROKEN=		"OS versions prior to ${SUP_OS_VER} is not supported"
 .endif
 
+.if ${OSVERSION} >= 502112
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 .ifdef(IPSEC)
 #Compile for kernel with IPSEC support
 MAKE_ENV+=	CRYPTO_SRCS=""
