@@ -1,0 +1,54 @@
+This patch is taken from diff'ing links-2.1pre1 against links-2.0 and fixes
+possible mem_free(NULL) issues.
+
+diff -Nur x.c.orig x.c
+--- x.c.orig	Fri Jun  7 15:24:31 2002
++++ x.c	Tue Jun 11 14:08:26 2002
+@@ -998,7 +998,7 @@
+ 			}
+ 			
+ 		x_free_hash_table();
+-		mem_free(x_driver_param);
++		if (x_driver_param) mem_free(x_driver_param);
+ 		return stracpy("No supported color depth found.\n");
+ visual_found:;
+ 	}
+@@ -1030,7 +1030,7 @@
+ 			snprintf(nevidim_te_ani_te_neslysim_ale_smrdis_jako_lejno,MAX_STR_LEN,
+ 			"Unsupported graphics mode: x_depth=%d, bits_per_pixel=%d, bytes_per_pixel=%d\n",x_driver.depth, x_depth, x_bitmap_bpp);
+ 			x_free_hash_table();
+-			mem_free(x_driver_param);
++			if (x_driver_param) mem_free(x_driver_param);
+ 			return stracpy(nevidim_te_ani_te_neslysim_ale_smrdis_jako_lejno);
+ 		}
+ 		
+@@ -1053,7 +1053,7 @@
+ 		unsigned char *t;
+ 
+ 		x_have_palette=1;
+-		if((t=x_set_palette())){x_free_hash_table(); mem_free(x_driver_param); return t;}
++		if((t=x_set_palette())){x_free_hash_table(); if (x_driver_param) mem_free(x_driver_param); return t;}
+ 	}
+ 
+ 	x_black_pixel=BlackPixel(x_display,x_screen);
+@@ -1090,16 +1090,16 @@
+ 	);
+ 
+ 	x_normal_gc=XCreateGC(x_display,fake_window,GCFillStyle|GCBackground,&gcv);
+-	if (!x_normal_gc) {x_free_hash_table(); mem_free(x_driver_param); return stracpy("Cannot create graphic context.\n");}
++	if (!x_normal_gc) {x_free_hash_table(); if (x_driver_param) mem_free(x_driver_param); return stracpy("Cannot create graphic context.\n");}
+ 	
+ 	x_copy_gc=XCreateGC(x_display,fake_window,GCFunction,&gcv);
+-	if (!x_copy_gc) {x_free_hash_table(); mem_free(x_driver_param); return stracpy("Cannot create graphic context.\n");}
++	if (!x_copy_gc) {x_free_hash_table(); if (x_driver_param) mem_free(x_driver_param); return stracpy("Cannot create graphic context.\n");}
+ 	
+ 	x_drawbitmap_gc=XCreateGC(x_display,fake_window,GCFunction,&gcv);
+-	if (!x_drawbitmap_gc) {x_free_hash_table(); mem_free(x_driver_param); return stracpy("Cannot create graphic context.\n");}
++	if (!x_drawbitmap_gc) {x_free_hash_table(); if (x_driver_param) mem_free(x_driver_param); return stracpy("Cannot create graphic context.\n");}
+ 	
+ 	x_scroll_gc=XCreateGC(x_display,fake_window,GCGraphicsExposures|GCBackground,&gcv);
+-	if (!x_scroll_gc) {x_free_hash_table(); mem_free(x_driver_param); return stracpy("Cannot create graphic context.\n");}
++	if (!x_scroll_gc) {x_free_hash_table(); if (x_driver_param) mem_free(x_driver_param); return stracpy("Cannot create graphic context.\n");}
+ 
+ 	XSetLineAttributes(x_display,x_normal_gc,1,LineSolid,CapRound,JoinRound);
+ 
