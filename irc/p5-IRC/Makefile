@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Net-IRC
-PORTVERSION=	0.74
-PORTREVISION=	1
+PORTVERSION=	0.75
 CATEGORIES=	irc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net/JMUHLICH
@@ -28,6 +27,9 @@ MAN3=		Net::Connection.3 \
 .if ${PERL_LEVEL} < 500600
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/IO/Socket/INET.pm:${PORTSDIR}/devel/p5-IO
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/IO/Socket/INET.pm:${PORTSDIR}/devel/p5-IO
+post-patch:
+	@${PERL} -pi -e '$$_ = "" if /(use|no) warnings/' ${WRKSRC}/EventQueue.pm
+	@${PERL} -pi -e 's/^our (\S+);/use vars qw($$1);/' ${WRKSRC}/Event.pm
 .endif
 
 .include <bsd.port.post.mk>
