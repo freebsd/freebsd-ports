@@ -1,5 +1,5 @@
---- src/ftpd.c.orig	Sun Jul  2 01:17:39 2000
-+++ src/ftpd.c	Tue Sep  4 10:36:51 2001
+--- src/ftpd.c.orig	Sat Jul  1 22:17:39 2000
++++ src/ftpd.c	Fri Sep 28 06:46:35 2001
 @@ -1662,9 +1662,9 @@
      /* Display s/key challenge where appropriate. */
  
@@ -12,6 +12,15 @@
  		pwok ? "allowed" : "required", name);
      return (buf);
  }
+@@ -2107,7 +2107,7 @@
+ 	    char prompt[OPIE_CHALLENGE_MAX + 1];
+ 	    opiechallenge(&opiestate, name, prompt);
+ 
+-	    if (askpasswd == -1) {
++	    if (pw == NULL) {
+ 		syslog(LOG_WARNING, "Invalid FTP user name %s attempted from %s", name, remotehost);
+ 		pwok = 0;
+ 	    }
 @@ -2572,7 +2572,7 @@
  #ifdef BSD_AUTH
  	if (ext_auth) {
@@ -21,7 +30,36 @@
  #ifdef LOG_FAILED		/* 27-Apr-93      EHK/BM          */
  		syslog(LOG_INFO, "failed login from %s",
  		       remoteident);
-@@ -6274,7 +6274,7 @@
+@@ -2593,8 +2593,8 @@
+ 	    if (pw == NULL)
+ 		salt = "xx";
+ 	    else
+-#ifndef OPIE
+ 		salt = pw->pw_passwd;
++#ifndef OPIE
+ #ifdef SECUREOSF
+ 	    if ((pr = getprpwnam(pw->pw_name)) != NULL) {
+ 		if (pr->uflg.fg_newcrypt)
+@@ -2627,9 +2627,15 @@
+ 	    xpasswd = crypt(passwd, salt);
+ #endif /* SKEY */
+ #else /* OPIE */
+-	    if (!opieverify(&opiestate, passwd))
+-		rval = 0;
+-	    xpasswd = crypt(passwd, pw->pw_passwd);
++	    if (pw != NULL) {
++		if (!opieverify(&opiestate, passwd))
++		    xpasswd = pw->pw_passwd;
++		else if (pwok)
++		    xpasswd = crypt(passwd, salt);
++		else
++		    pw = NULL;
++	    }
++	    pwok = 0;
+ #endif /* OPIE */
+ #ifdef ULTRIX_AUTH
+ 	    if ((numfails = ultrix_check_pass(passwd, xpasswd)) >= 0) {
+@@ -6274,7 +6280,7 @@
  	if (s) {
  	    int i = ntohs(pasv_addr.sin_port);
  	    sprintf(s, "PASV port %i assigned to %s", i, remoteident);
@@ -30,7 +68,7 @@
  	    free(s);
  	}
      }
-@@ -6289,7 +6289,7 @@
+@@ -6289,7 +6295,7 @@
  	char *s = calloc(128 + strlen(remoteident), sizeof(char));
  	if (s) {
  	    sprintf(s, "PASV port assignment assigned for %s", remoteident);
@@ -39,7 +77,7 @@
  	    free(s);
  	}
      }
-@@ -6435,7 +6435,7 @@
+@@ -6435,7 +6441,7 @@
  	dirlist = ftpglob(whichfiles);
  	sdirlist = dirlist;	/* save to free later */
  	if (globerr != NULL) {
@@ -48,7 +86,7 @@
  	    goto globfree;
  	}
  	else if (dirlist == NULL) {
-@@ -6486,7 +6486,6 @@
+@@ -6486,7 +6492,6 @@
  	    }
  	    goto globfree;
  	}
@@ -56,7 +94,7 @@
  	    if (dout == NULL) {
  		dout = dataconn("file list", (off_t) - 1, "w");
  		if (dout == NULL)
-@@ -6509,7 +6508,6 @@
+@@ -6509,7 +6514,6 @@
  		byte_count_out++;
  	    }
  #endif
@@ -64,7 +102,7 @@
      }
  
      if (dout != NULL) {
-@@ -7274,7 +7272,7 @@
+@@ -7274,7 +7278,7 @@
      int which;
      struct aclmember *entry = NULL;
      (void) acl_getclass(class);
