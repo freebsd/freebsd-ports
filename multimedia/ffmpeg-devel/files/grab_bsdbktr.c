@@ -24,8 +24,13 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 #include "avformat.h"
+#if __FreeBSD__ >= 502100
+#include <dev/bktr/ioctl_meteor.h>
+#include <dev/bktr/ioctl_bt848.h>
+#else
 #include <machine/ioctl_meteor.h>
 #include <machine/ioctl_bt848.h>
+#endif
 #include <unistd.h>
 #include <fcntl.h>
 #include <sys/ioctl.h>
