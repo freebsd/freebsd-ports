@@ -1,33 +1,40 @@
 bin/bochs
-lib/bochs/bios/VGABIOS-elpin-2.20
-lib/bochs/bios/BIOS-bochs-990925a
-lib/bochs/bochsrc.sample
-share/doc/bochs/3rdparty.license.html
-share/doc/bochs/DOS.html
-share/doc/bochs/Linux.html
-share/doc/bochs/Minix.html
-share/doc/bochs/OldWindows95.html
-share/doc/bochs/Windows31.html
-share/doc/bochs/Windows95.html
-share/doc/bochs/changelog.html
-share/doc/bochs/codingguidelines.html
-share/doc/bochs/configure.html
-share/doc/bochs/construction.html
-share/doc/bochs/cosimulation.html
-share/doc/bochs/debugger.html
-share/doc/bochs/developers.html
-share/doc/bochs/faq.html
-share/doc/bochs/features.html
-share/doc/bochs/fpu.html
-share/doc/bochs/guestNT.html
-share/doc/bochs/index.html
-share/doc/bochs/install.html
-share/doc/bochs/instrumentation.html
-share/doc/bochs/mtools.html
-share/doc/bochs/sound.html
-share/doc/bochs/undercon.gif
-share/doc/bochs/whatisbochs.html
-share/doc/bochs/win32.html
-@dirrm lib/bochs/bios
-@dirrm lib/bochs
-@dirrm share/doc/bochs
+bin/bochs-bin
+share/bochs/bios/BIOS-bochs-990925a
+share/bochs/bios/VGABIOS-elpin-2.40
+share/bochs/bios/VGABIOS-elpin-LICENSE
+share/bochs/dot.bochsrc
+share/bochs/font/fonts.dir
+share/bochs/font/vga.pcf.gz
+%%PORTDOCS%%share/doc/bochs/00README
+%%PORTDOCS%%share/doc/bochs/3rdparty.license.html
+%%PORTDOCS%%share/doc/bochs/Linux.html
+%%PORTDOCS%%share/doc/bochs/Minix.html
+%%PORTDOCS%%share/doc/bochs/OldWindows95.html
+%%PORTDOCS%%share/doc/bochs/Windows95.html
+%%PORTDOCS%%share/doc/bochs/changelog.html
+%%PORTDOCS%%share/doc/bochs/codingguidelines.html
+%%PORTDOCS%%share/doc/bochs/configure.html
+%%PORTDOCS%%share/doc/bochs/construction.html
+%%PORTDOCS%%share/doc/bochs/cosimulation.html
+%%PORTDOCS%%share/doc/bochs/cvs-status.html
+%%PORTDOCS%%share/doc/bochs/cvs-structure.txt
+%%PORTDOCS%%share/doc/bochs/debugger.html
+%%PORTDOCS%%share/doc/bochs/developers.html
+%%PORTDOCS%%share/doc/bochs/faq.html
+%%PORTDOCS%%share/doc/bochs/features.html
+%%PORTDOCS%%share/doc/bochs/fpu.html
+%%PORTDOCS%%share/doc/bochs/guestNT.html
+%%PORTDOCS%%share/doc/bochs/index.html
+%%PORTDOCS%%share/doc/bochs/install.html
+%%PORTDOCS%%share/doc/bochs/instrumentation.html
+%%PORTDOCS%%share/doc/bochs/mtools.html
+%%PORTDOCS%%share/doc/bochs/random.txt
+%%PORTDOCS%%share/doc/bochs/sound.html
+%%PORTDOCS%%share/doc/bochs/undercon.gif
+%%PORTDOCS%%share/doc/bochs/whatisbochs.html
+%%PORTDOCS%%share/doc/bochs/win32.html
+%%PORTDOCS%%@dirrm share/doc/bochs
+@dirrm share/bochs/font
+@dirrm share/bochs/bios
+@dirrm share/bochs
