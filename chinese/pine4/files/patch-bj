@@ -1,0 +1,38 @@
+--- pine/signals.c.orig	Tue Jul  7 07:42:45 1998
++++ pine/signals.c	Tue Jul 28 08:35:07 1998
+@@ -386,7 +386,7 @@
+ 	ps_global->inbox_stream->rdonly = 1;	/* and become read-only */
+ 	mail_ping(ps_global->inbox_stream);
+ 	q_status_message(SM_ASYNC, 3, 7,
+-		   "Another Pine is accessing Inbox.  Session now Read-Only.");
++		   "另外一份 Pine 正在存取 Inbox。這個 session 進入唯讀狀態。");
+ 	dprint(1, (debugfile, "** INBOX went read-only **\n\n"));
+     }
+ 
+@@ -398,7 +398,7 @@
+ 	ps_global->mail_stream->rdonly = 1;	/* and become read-only */
+ 	mail_ping(ps_global->mail_stream);
+ 	q_status_message(SM_ASYNC, 3, 7,
+-		  "Another Pine is accessing folder.  Session now Read-Only.");
++		  "另外一份 Pine 正在存取資料匣。這個 session 進入唯讀狀態。");
+ 	dprint(1, (debugfile, "** secondary folder went read-only **\n\n"));
+     }
+ }
+@@ -536,7 +536,7 @@
+     int retval = 1;
+ 
+     dprint(9,(debugfile, "busy_alarm(%d, %s, %p, %d)\n",
+-	seconds, msg ? msg : "Busy", pc_func, init_msg));
++	seconds, msg ? msg : "請稍後", pc_func, init_msg));
+ 
+     /*
+      * If we're already busy'ing, and we don't have something special,
+@@ -560,7 +560,7 @@
+ 	    final_message = 1;
+ 	}
+ 	else{
+-	    strcpy(busy_message, "Busy");
++	    strcpy(busy_message, "請稍後");
+ 	    final_message = 0;
+ 	}
+ 

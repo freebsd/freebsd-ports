@@ -1,11 +1,12 @@
---- pico/osdep/unix.orig	Thu Jul  9 00:20:10 1998
-+++ pico/osdep/unix	Wed Jul 15 17:02:31 1998
-@@ -1952,7 +1952,7 @@
- 
-     errno = 0;			/* make sure previous error are cleared */
-     
--    switch(fexist(fn, "w", &filesize)){
-+    switch(fexist(fn, "w", (long *)&filesize)){
-       case FIOFNF :
- 	vapor = TRUE;
- 
+--- pico/osdep/term.cap.orig	Sat Feb 28 08:14:53 1998
++++ pico/osdep/term.cap	Tue Jul 28 08:35:00 1998
+@@ -270,7 +270,8 @@
+     _kppu		= tgetstr("kP", &p);
+     _kppd		= tgetstr("kN", &p);
+     _kphome		= tgetstr("kh", &p);
+-    _kpend		= tgetstr("kH", &p);
++    if((_kpend		= tgetstr("@7", &p)) == NULL)
++      _kpend		= tgetstr("kH",&p);
+     _kpdel		= tgetstr("kD", &p);
+     _kf1		= tgetstr("k1", &p);
+     _kf2		= tgetstr("k2", &p);

@@ -1,11 +1,11 @@
---- pico/estruct.h.orig	Fri May 29 06:56:52 1998
-+++ pico/estruct.h	Wed Jul 15 17:02:30 1998
-@@ -125,7 +125,7 @@
- #define	LOBIT_CHAR(C)	((C) > 0x1f && (C) < 0x7f)
- #define	HIBIT_CHAR(C)	((C) > 0x7f && (C) <= 0xff)
- #define	HIBIT_OK(C)	(!(gmode & MDHBTIGN))
--#define	VALID_KEY(C)	(LOBIT_CHAR(C) || (HIBIT_OK(C) && HIBIT_CHAR(C)))
-+#define	VALID_KEY(C)	(((C) & 0x80) ? 1 : LOBIT_CHAR(C))
- #define ctrl(c)         ((c) & 0x1f)    /* control character mapping */
- 
- #define STDIN_FD	0
+--- pico/ebind.h.orig	Sat Feb 28 08:10:31 1998
++++ pico/ebind.h	Tue Jul 28 08:35:00 1998
+@@ -145,7 +145,7 @@
+ 	{CTRL|'O',		filewrite},
+ 	{CTRL|'P',		backline},
+ 	{CTRL|'R',		insfile},
+-#ifdef	SPELLER
++#if defined(SPELLER) && !defined(__FreeBSD__)
+ 	{CTRL|'T',		spell},
+ #endif	/* SPELLER */
+ 	{CTRL|'U',		yank},

@@ -1,326 +1,695 @@
---- pine/mailindx.c.orig	Wed Jul  1 03:49:02 1998
-+++ pine/mailindx.c	Wed Jul 15 17:02:33 1998
-@@ -55,10 +55,10 @@
- /*
-  * Some common Command Bindings
-  */
--#define	VIEWMSG_MENU	{">", "[ViewMsg]", \
-+#define	VIEWMSG_MENU	{">", "[檢視信件]", \
- 			 {MC_VIEW_TEXT, 5,{'v','.','>',ctrl('M'),ctrl('J')}}, \
- 			 KS_VIEW}
--#define	FLDRSORT_MENU	{"$", "SortIndex", {MC_SORT,1,{'$'}}, KS_SORT}
-+#define	FLDRSORT_MENU	{"$", "排序索引", {MC_SORT,1,{'$'}}, KS_SORT}
- 
- 
- /*
-@@ -67,7 +67,7 @@
- static struct key index_keys[] = 
+--- pine/adrbkcmd.c.orig	Sat Jul 11 01:32:16 1998
++++ pine/adrbkcmd.c	Tue Jul 28 08:35:01 1998
+@@ -112,23 +112,23 @@
+ static struct key abook_view_keys[] =
         {HELP_MENU,
  	OTHER_MENU,
--	{"<", "FldrList", {MC_FOLDERS,2,{'<',','}}, KS_NONE},
-+	{"<", "信件匣列表", {MC_FOLDERS,2,{'<',','}}, KS_NONE},
- 	VIEWMSG_MENU,
- 	PREVMSG_MENU,
- 	NEXTMSG_MENU,
-@@ -94,9 +94,9 @@
- 	HELP_MENU,
- 	OTHER_MENU,
- 	{"X",NULL,{MC_EXPUNGE,1,{'x'}},KS_NONE},
--	{"&","unXclude",{MC_UNEXCLUDE,1,{'&'}},KS_NONE},
--	{";","Select",{MC_SELECT,1,{';'}},KS_SELECT},
--	{"A","Apply",{MC_APPLY,1,{'a'}},KS_APPLY},
-+	{"&","取消排除(exclude)",{MC_UNEXCLUDE,1,{'&'}},KS_NONE},
-+	{";","選擇",{MC_SELECT,1,{';'}},KS_SELECT},
-+	{"A","套用",{MC_APPLY,1,{'a'}},KS_APPLY},
- 	FLDRSORT_MENU,
- 	JUMP_MENU,
- 	HDRMODE_MENU,
-@@ -106,8 +106,8 @@
- 
- 	HELP_MENU,
- 	OTHER_MENU,
--	{":","SelectCur",{MC_SELCUR,1,{':'}},KS_SELECTCUR},
--	{"Z","ZoomMode",{MC_ZOOM,1,{'z'}},KS_NONE},
-+	{":","選擇",{MC_SELCUR,1,{':'}},KS_SELECTCUR},
-+	{"Z","縮放模式",{MC_ZOOM,1,{'z'}},KS_NONE},
- 	LISTFLD_MENU,
+-	{"<","Abook",{MC_EXIT,2,{'<',','}},KS_NONE},
+-	{"U","Update",{MC_EDIT,1,{'u'}},KS_NONE},
++	{"<","地址簿",{MC_EXIT,2,{'<',','}},KS_NONE},
++	{"U","更新",{MC_EDIT,1,{'u'}},KS_NONE},
  	NULL_MENU,
- 	NULL_MENU,
-@@ -175,9 +175,9 @@
-   
- static struct key simple_index_keys[] = 
-        {HELP_MENU,
--	{"E","ExitSelect",{MC_EXIT,1,{'e'}},KS_EXITMODE},
-+	{"E","離開",{MC_EXIT,1,{'e'}},KS_EXITMODE},
- 	NULL_MENU,
--	{"S","[Select]",{MC_SELECT,3,{'s',ctrl('M'),ctrl('J')}},KS_SELECT},
-+	{"S","[選擇]",{MC_SELECT,3,{'s',ctrl('M'),ctrl('J')}},KS_SELECT},
- 	PREVMSG_MENU,
- 	NEXTMSG_MENU,
+-	{"C","ComposeTo",{MC_COMPOSE,1,{'c'}},KS_COMPOSER},
++	{"C","編修",{MC_COMPOSE,1,{'c'}},KS_COMPOSER},
  	PREVPAGE_MENU,
-@@ -344,14 +344,14 @@
-     if(flags & INDX_HEADER)
-       set_titlebar((stream == ps_global->mail_stream)
- 		     ? (style == MsgIndex || style == MultiMsgIndex)
--		         ? "MESSAGE INDEX"
--			 : "ZOOMED MESSAGE INDEX"
-+		         ? "信件索引"
-+			 : "縮放後的信件索引"
- 		     : (!strcmp(folder, INTERRUPTED_MAIL))
--			 ? "COMPOSE: SELECT INTERRUPTED"
-+			 ? "編輯：選擇被中斷的"
- 			 : (ps_global->VAR_FORM_FOLDER
- 			    && !strcmp(ps_global->VAR_FORM_FOLDER, folder))
--			     ? "COMPOSE: SELECT FORM LETTER"
--			     : "COMPOSE: SELECT POSTPONED",
-+			     ? "編輯：選擇樣版信件"
-+			     : "編輯：選擇被暫緩的",
- 		   stream, cntxt, folder, msgmap, 1, MessageNumber, 0, 0);
+ 	NEXTPAGE_MENU,
+ 	PRYNTTXT_MENU,
+ 	WHEREIS_MENU,
+-	{"F", "Fwd Email", {MC_FORWARD, 1, {'f'}}, KS_FORWARD},
++	{"F", "信件轉寄", {MC_FORWARD, 1, {'f'}}, KS_FORWARD},
+ 	SAVE_MENU,
  
-     if(flags & INDX_FOOTER) {
-@@ -398,6 +398,7 @@
+ 	HELP_MENU,
+ 	OTHER_MENU,
+-	{"V","ViewLink",{MC_VIEW_HANDLE,3,{'v',ctrl('m'),ctrl('j')}},KS_NONE},
++	{"V","檢視連結",{MC_VIEW_HANDLE,3,{'v',ctrl('m'),ctrl('j')}},KS_NONE},
+ 	NULL_MENU,
+-	{"^B","PrevLink",{MC_PREV_HANDLE,1,{ctrl('B')}},KS_NONE},
+-	{"^F","NextLink",{MC_NEXT_HANDLE,1,{ctrl('F')}},KS_NONE},
++	{"^B","前一連結",{MC_PREV_HANDLE,1,{ctrl('B')}},KS_NONE},
++	{"^F","下一連結",{MC_NEXT_HANDLE,1,{ctrl('F')}},KS_NONE},
+ 	NULL_MENU,
+ 	NULL_MENU,
+ 	NULL_MENU,
+@@ -144,7 +144,7 @@
+ static struct key abook_text_keys[] =
+        {HELP_MENU,
+ 	NULL_MENU,
+-	{"E","Exit Viewer",{MC_EXIT,1,{'e'}},KS_NONE},
++	{"E","離開",{MC_EXIT,1,{'e'}},KS_NONE},
+ 	NULL_MENU,
+ 	NULL_MENU,
+ 	NULL_MENU,
+@@ -153,7 +153,7 @@
+ 	PRYNTTXT_MENU,
+ 	WHEREIS_MENU,
+ 	FWDEMAIL_MENU,
+-	{"S", "Save", {MC_SAVETEXT,1,{'s'}}, KS_SAVE}};
++	{"S", "存檔", {MC_SAVETEXT,1,{'s'}}, KS_SAVE}};
+ INST_KEY_MENU(abook_text_km, abook_text_keys);
  
- 	menu_clear_binding(km, KEY_LEFT);
- 	menu_clear_binding(km, KEY_RIGHT);
-+
- 	if(F_ON(F_ARROW_NAV, ps_global)){
- 	    if((cmd = menu_clear_binding(km, '<')) != MC_UNKNOWN){
- 		menu_add_binding(km, '<', cmd);
-@@ -443,7 +444,7 @@
+ #define	VIEW_ABOOK_NONE		0
+@@ -301,15 +301,15 @@
+ 	memset(&sargs, 0, sizeof(SCROLL_S));
+ 	sargs.text.text	   = so_text(out_store);
+ 	sargs.text.src	   = CharStar;
+-	sargs.text.desc	   = "expanded entry";
++	sargs.text.desc	   = "已展開的項目";
+ 	sargs.text.handles = handles;
+-	sargs.bar.title	  = "ADDRESS BOOK (View)";
++	sargs.bar.title	  = "地址簿 (檢視)";
+ 	sargs.bar.style	  = TextPercent;
+ 	sargs.proc.tool	  = process_abook_view_cmd;
+ 	sargs.proc.data.i = VIEW_ABOOK_NONE;
+ 	sargs.resize_exit = 1;
+ 	sargs.help.text	  = h_abook_view;
+-	sargs.help.title  = "HELP FOR ADDRESS BOOK VIEW";
++	sargs.help.title  = "檢視地址簿的輔助說明";
+ 	sargs.keys.menu	  = &abook_view_keymenu;
+ 	setbitmap(sargs.keys.bitmap);
+ 
+@@ -405,7 +405,7 @@
+ 	if(adrbk_check_all_validity_now()){
+ 	    if(resync_screen(pab, AddrBookScreen, 0)){
+ 		q_status_message(SM_ORDER | SM_DING, 3, 4,
+-		 "Address book changed. Update cancelled. Try again.");
++		 "地址簿已被更動。取消更新。請重試一遍。");
+ 		ps_global->mangled_screen = 1;
+ 		break;
+ 	    }
+@@ -433,7 +433,7 @@
+ 	    abe_copy = copy_ae(abe);
+ 	    dprint(9, (debugfile,"Calling edit_entry to edit from view\n"));
+ 	    edit_entry(pab->address_book, abe_copy, entry,
+-		       abe->tag, 0, &warped, "update");
++		       abe->tag, 0, &warped, "更新");
+ 	    /*
+ 	     * The ABOOK_EDITED case doesn't mean that we necessarily
+ 	     * changed something, just that we might have but we know
+@@ -478,7 +478,7 @@
+ 			  h_ab_text_or_vcard, RB_NORM);
+ 	switch(i){
+ 	  case 'x':
+-	    cancel_warning(NO_DING, "forward");
++	    cancel_warning(NO_DING, "轉寄");
+ 	    break;
+ 
+ 	  case 't':
+@@ -704,8 +704,8 @@
+     memset(&sargs, 0, sizeof(SCROLL_S));
+     sargs.text.text = so_text(store);
+     sargs.text.src  = CharStar;
+-    sargs.text.desc = "expanded entry";
+-    sargs.bar.title = "ADDRESS BOOK (Rich View)";
++    sargs.text.desc = "已展開的項目";
++    sargs.bar.title = "地址簿 (完整檢視)";
+     sargs.bar.style = TextPercent;
+     sargs.keys.menu = &abook_text_km;
+     setbitmap(sargs.keys.bitmap);
+@@ -772,8 +772,8 @@
+     memset(&sargs, 0, sizeof(SCROLL_S));
+     sargs.text.text = so_text(store);
+     sargs.text.src  = src;
+-    sargs.text.desc = "expanded entry";
+-    sargs.bar.title = "MESSAGE TEXT";
++    sargs.text.desc = "已展開的項目";
++    sargs.bar.title = "訊息文字";
+     sargs.bar.style = TextPercent;
+     sargs.keys.menu = &abook_text_km;
+     setbitmap(sargs.keys.bitmap);
+@@ -796,19 +796,19 @@
+ */
+ static struct headerentry headents_for_edit[]={
+   {"Nickname  : ",  "Nickname",  h_composer_abook_nick, 12, 0, NULL,
+-   verify_nick,   NULL, NULL, addr_book_nick_for_edit, "To AddrBk",
+-   1, 0, 0, 0, 0, 0, 0, 0, 0, 0, KS_NONE},
++   verify_nick,   NULL, NULL, addr_book_nick_for_edit, "地址簿",
++   1, 0, 0, 0, 0, 1, 0, 0, 0, 0, KS_NONE},
+   {"Fullname  : ",  "Fullname",  h_composer_abook_full, 12, 0, NULL,
+-   NULL,          NULL, NULL, view_message_for_pico,   "To Message",
++   NULL,          NULL, NULL, view_message_for_pico,   "資料匣",
+    1, 0, 0, 0, 0, 0, 0, 0, 0, 0, KS_NONE},
+   {"Fcc       : ",  "FileCopy",  h_composer_abook_fcc, 12, 0, NULL,
+-   NULL,          NULL, NULL, folders_for_fcc,         "To Fldrs",
+-   1, 0, 0, 0, 0, 0, 0, 0, 0, 0, KS_NONE},
++   NULL,          NULL, NULL, folders_for_fcc,         "資料匣",
++   1, 0, 0, 0, 1, 1, 0, 0, 0, 0, KS_NONE},
+   {"Comment   : ",  "Comment",   h_composer_abook_comment, 12, 0, NULL,
+-   NULL,          NULL, NULL, view_message_for_pico,   "To Message",
++   NULL,          NULL, NULL, view_message_for_pico,   "資料匣",
+    1, 0, 0, 0, 0, 0, 0, 0, 0, 0, KS_NONE},
+   {"Addresses : ",  "Addresses", h_composer_abook_addrs, 12, 0, NULL,
+-   verify_addr,   NULL, NULL, addr_book_change_list,   "To AddrBk",
++   verify_addr,   NULL, NULL, addr_book_change_list,   "地址簿",
+    1, 1, 0, 0, 0, 0, 0, 0, 0, 0, KS_NONE},
+   {NULL, NULL, NO_HELP, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, KS_NONE}
+@@ -923,7 +923,7 @@
+     pbuf.canceltest    = warped ? pico_cancel_for_adrbk_edit
+ 				: pico_cancel_for_adrbk_take;
+     pbuf.expander      = expand_addrs_for_pico;
+-    pbuf.ctrlr_label   = "RichView";
++    pbuf.ctrlr_label   = "完整表頭";//"RichView";
+     pbuf.resize	       = resize_for_pico;
+     pbuf.winch_cleanup = winch_cleanup;
+     pbuf.suspend       = do_suspend;
+@@ -938,7 +938,7 @@
+     pbuf.browse_help   = h_composer_browse;
+     pbuf.attach_help   = h_composer_ctrl_j;
+     pbuf.composer_help = h_composer;
+-    sprintf(titlebar, "ADDRESS BOOK (%c%s)",
++    sprintf(titlebar, "地址簿 (%c%s)",
+ 	    readonly ? 'V' : islower((unsigned char)(*cmd))
+ 				    ? toupper((unsigned char)*cmd)
+ 				    : *cmd,
+@@ -1523,12 +1523,12 @@
+     ps_global->redrawer = redraw_pico;
+     fix_windsize(ps_global);
+     
+-    switch(want_to("Exit and save changes ", 'y', 0, NO_HELP, WT_NORM)){
++    switch(want_to("存檔並離開 ", 'y', 0, NO_HELP, WT_NORM)){
+       case 'y':
+ 	break;
+ 
+       case 'n':
+-	rstr = "Use ^C to abandon changes you've made";
++	rstr = "以 ^C 放棄曾做過的改變";
+ 	break;
+     }
+ 
+@@ -1552,8 +1552,8 @@
+     char *rstr = NULL;
+     void (*redraw)() = ps_global->redrawer;
+ 
+-    strcat(strcat(strcpy(prompt, "Cancel "), word),
+-	   " (answering \"Yes\" will abandon any changes made) ");
++    strcat(strcat(strcpy(prompt, "取消"), word),
++	   " (回答 \"是\" 將放棄曾作過的改變) ");
+     ps_global->redrawer = redraw_pico;
+     fix_windsize(ps_global);
+     
+@@ -1576,7 +1576,7 @@
+ pico_cancel_for_adrbk_take(redraw_pico)
+     void (*redraw_pico)();
  {
-     dprint(1, (debugfile, "\n\n ---- MAIL INDEX ----\n"));
-     if(!state->mail_stream) {
--	q_status_message(SM_ORDER, 0, 3, "No folder is currently open");
-+	q_status_message(SM_ORDER, 0, 3, "目前尚無已開啟的信件匣");
-         state->prev_screen = mail_index_screen;
- 	state->next_screen = main_menu_screen;
- 	return;
-@@ -624,7 +625,7 @@
- 	if(F_ON(F_SHOW_CURSOR, state) && cur_row < 0){
- 	    q_status_message(SM_ORDER,
- 		(ch==NO_OP_IDLE || ch==NO_OP_COMMAND) ? 0 : 3, 5,
--		"No messages in folder");
-+		"信件匣中沒有信");
- 	    cur_row = state->ttyo->screen_rows - FOOTER_ROWS(state);
- 	    display_message(ch);
- 	}
-@@ -741,7 +742,7 @@
- 		    k = i;
- 		    if(++j >= id.lines_per_page){
- 			if((id.msg_at_top = i) == 1L)
--			  q_status_message(SM_ORDER, 0, 1, "First Index page");
-+			  q_status_message(SM_ORDER, 0, 1, "索引第一頁");
+-    return(pico_cancelexit_for_adrbk("take", redraw_pico));
++    return(pico_cancelexit_for_adrbk("擷取", redraw_pico));
+ }
  
- 			break;
- 		    }
-@@ -750,7 +751,7 @@
- 		if(i <= 1L){
- 		    if(mn_get_cur(msgmap) == 1L)
- 		      q_status_message(SM_ORDER, 0, 1,
--			  "Already at start of Index");
-+			  "已經在索引的起頭了");
  
- 		    break;
- 		}
-@@ -770,7 +771,7 @@
- 		    k = i;
- 		    if(++j >= id.lines_per_page){
- 			if(i+id.lines_per_page >= mn_get_total(msgmap))
--			  q_status_message(SM_ORDER, 0, 1, "Last Index page");
-+			  q_status_message(SM_ORDER, 0, 1, "索引最終頁");
+@@ -1584,7 +1584,7 @@
+ pico_cancel_for_adrbk_edit(redraw_pico)
+     void (*redraw_pico)();
+ {
+-    return(pico_cancelexit_for_adrbk("changes", redraw_pico));
++    return(pico_cancelexit_for_adrbk("修改", redraw_pico));
+ }
  
- 			id.msg_at_top = i;
- 			break;
-@@ -779,7 +780,7 @@
  
- 		if(i >= mn_get_total(msgmap)){
- 		    if(mn_get_cur(msgmap) == k)
--		      q_status_message(SM_ORDER,0,1,"Already at end of Index");
-+		      q_status_message(SM_ORDER,0,1,"已經在索引的結尾了");
+@@ -1701,16 +1701,16 @@
  
- 		    break;
- 		}
-@@ -961,9 +962,9 @@
- 			}
- 
- 			q_status_message2(SM_ORDER, 0, 1,
--					  "Message %s %sdeleted",
-+					  "信件 %s %s刪除",
- 					  long2string(mn_get_cur(msgmap)),
--					  (del) ? "" : "already ");
-+					  (del) ? "" : "已");
- 		    }
- 
- 		    break;
-@@ -985,9 +986,9 @@
- 			}
- 
- 			q_status_message2(SM_ORDER, 0, 1,
--					  "Message %s %sdeleted",
-+					  "信件 %s %s刪除",
- 					  long2string(mn_get_cur(msgmap)),
--					  (del) ? "UN" : "NOT ");
-+					  (del) ? "已遭復原" : "未被");
- 		    }
- 
- 		    break;
-@@ -1787,7 +1788,7 @@
- 	    dprint(1, (debugfile,
- 		       "parse_index_format: unrecognized token: %s\n", q));
- 	    q_status_message1(SM_ORDER | SM_DING, 0, 3,
--			      "Unrecognized string in index-format: %s", q);
-+			      "索引格式中出現無法辨識的字串：%s", q);
- 	    continue;
- 	}
- 
-@@ -1829,7 +1830,7 @@
-     if(!column){
- 	dprint(1, (debugfile, "Completely unrecognizable index-format\n"));
- 	q_status_message(SM_ORDER | SM_DING, 0, 3,
--		 "Configured \"index-format\" unrecognizable. Using default.");
-+		 "無法辨識已設定的 \"index-format\"。使用預設值。");
- 	return(0);
+     if(ps_global->readonly_pinerc){
+ 	q_status_message1(SM_ORDER, 0, 3,
+-			  "%s cancelled: config file not changeable",
+-			  edit ? "Change" : "Add");
++			  "取消%s：設定檔無法被修改",
++			  edit ? "修改" : "新增");
+ 	return -1;
      }
  
-@@ -2320,7 +2321,7 @@
- 		    sprintf(str, "%ld", idata->msgno);
- 		  else if(idata->bogus < 2 && cdesc->ctype == iSubject)
- 		    sprintf(str, "%-*.*s", width, width,
--			    "[ No Message Text Available ]");
-+			    "[ 無法取得信件 ]");
- 	      }
- 	      else
- 		switch(cdesc->ctype){
-@@ -2954,8 +2955,8 @@
-     HelpType	help;
-     static char search_string[MAX_SEARCH+1] = { '\0' };
-     static ESCKEY_S header_search_key[] = { {0, 0, NULL, NULL },
--					    {ctrl('Y'), 10, "^Y", "First Msg"},
--					    {ctrl('V'), 11, "^V", "Last Msg"},
-+					    {ctrl('Y'), 10, "^Y", "第一封信"},
-+					    {ctrl('V'), 11, "^V", "最後一封信"},
- 					    {-1, 0, NULL, NULL} };
- 
-     dprint(4, (debugfile, "\n - search headers - \n"));
-@@ -2964,7 +2965,7 @@
- 	return;
+     if(global && vars[V_GLOB_ADDRBOOK].is_fixed ||
+        !global && vars[V_ADDRESSBOOK].is_fixed){
+ 	q_status_message1(SM_ORDER, 0, 3,
+-	     "Cancelled: Sys. Mgmt. does not allow changing %saddress books",
+-	     global ? "global " : "");
++	     "動作取消：系統管理員不允許\改變%s地址簿",
++	     global ? "整體的" : "");
+ 	
+ 	return -1;
      }
-     else if(mn_total_cur(msgmap) > 1L){
--	q_status_message1(SM_ORDER, 0, 2, "%s msgs selected; Can't search",
-+	q_status_message1(SM_ORDER, 0, 2, "已選擇 %s 封信件；無法搜尋",
- 			  comatose(mn_total_cur(msgmap)));
- 	return;
+@@ -1759,7 +1759,7 @@
+     pbuf.browse_help   = h_composer_browse;
+     pbuf.attach_help   = h_composer_ctrl_j;
+     pbuf.composer_help = h_composer;
+-    sprintf(titlebar, "%s ADDRESS BOOK", edit ? "CHANGE" : "ADD");
++    sprintf(titlebar, "%s地址簿", edit ? "修改" : "新增");
+     pbuf.pine_anchor   = set_titlebar(titlebar,
+ 				      ps_global->mail_stream,
+ 				      ps_global->context_current,
+@@ -1828,8 +1828,8 @@
+     if(editor_result & COMP_CANCEL){
+ 	ret = -1;
+ 	q_status_message1(SM_ORDER, 0, 3,
+-			  "Address book %s is cancelled",
+-			  edit ? "change" : "add");
++			  "取消地址簿的%s",
++			  edit ? "修改" : "新增");
      }
-@@ -2975,13 +2976,13 @@
-     new_string[0] = '\0';
- 
-     while(1) {
--	sprintf(prompt, "Word to search for [%s] : ", search_string);
-+	sprintf(prompt, "搜尋[%s]：", search_string);
- 
- 	if(F_ON(F_ENABLE_AGG_OPS, ps_global)){
- 	    header_search_key[0].ch    = ctrl('X');
- 	    header_search_key[0].rval  = 12;
- 	    header_search_key[0].name  = "^X";
--	    header_search_key[0].label = "Select Matches";
-+	    header_search_key[0].label = "選取符合者";
+     else if(editor_result & COMP_EXIT){
+ 	if(!strcmp(server, def_serv ? def_serv : "") &&
+@@ -1837,8 +1837,8 @@
+ 	   !strcmp(nickname, def_nick ? def_nick : "")){
+ 	    ret = -1;
+ 	    q_status_message1(SM_ORDER, 0, 3,
+-			      "No change: Address book %s is cancelled",
+-			      edit ? "change" : "add");
++			      "沒有改變：取消地址簿的%s",
++			      edit ? "修改" : "新增");
  	}
  	else{
- 	    header_search_key[0].ch   = header_search_key[0].rval  = 0;
-@@ -3000,7 +3001,7 @@
-             continue;
-         }
- 	else if(rc == 10){
--	    q_status_message(SM_ORDER, 0, 3, "Searched to First Message.");
-+	    q_status_message(SM_ORDER, 0, 3, "搜尋至第一封信件。");
- 	    if(any_lflagged(msgmap, MN_HIDE)){
- 		do{
- 		    selected = sorted_msg;
-@@ -3016,7 +3017,7 @@
- 	    return;
- 	}
- 	else if(rc == 11){
--	    q_status_message(SM_ORDER, 0, 3, "Searched to Last Message.");
-+	    q_status_message(SM_ORDER, 0, 3, "搜尋至最後一封信件。");
- 	    if(any_lflagged(msgmap, MN_HIDE)){
- 		do{
- 		    selected = sorted_msg;
-@@ -3041,7 +3042,7 @@
-     }
  
-     if(rc == 1 || (new_string[0] == '\0' && search_string[0] == '\0')) {
--	cmd_cancelled("Search");
-+	cmd_cancelled("搜尋");
-         return;
-     }
+@@ -1898,8 +1898,8 @@
  
-@@ -3080,21 +3081,21 @@
- 	}
- 
-     if(ps_global->intr_pending){
--	q_status_message1(SM_ORDER, 0, 3, "Search cancelled.%s",
-+	q_status_message1(SM_ORDER, 0, 3, "取消搜尋。%s",
- 			  select_all ? " Selected set may be incomplete.":"");
-     }
-     else if(select_all){
--	q_status_message1(SM_ORDER, 0, 3, "%s messages found matching word",
-+	q_status_message1(SM_ORDER, 0, 3, "共 %s 封信件找到符合的字串",
- 			  long2string(selected));
-     }
-     else if(selected){
--	q_status_message1(SM_ORDER, 0, 3, "Word found%s",
-+	q_status_message1(SM_ORDER, 0, 3, "字串已找到%s",
- 			  (i <= sorted_msg)
--			    ? ". Search wrapped to beginning" : "");
-+			    ? "。重頭搜尋" : "");
- 	mn_set_cur(msgmap, i);
-     }
-     else
--      q_status_message(SM_ORDER, 0, 3, "Word not found");
-+      q_status_message(SM_ORDER, 0, 3, "找不到字串");
- 
- #ifndef	DOS
-     intr_handling_off();
-@@ -3232,7 +3233,7 @@
- 		 && LEVELSORT(ps_global->mail_stream)))
- 	      sort_func = percent_sorted;
- 
--	    sprintf(sort_msg, "Sorting \"%s\"",
-+	    sprintf(sort_msg, "正在排序 \"%s\"",
- 		    strsquish(tmp_20k_buf + 500, ps_global->cur_folder,
- 			      ps_global->ttyo->screen_cols - 20));
- 	    we_cancel = busy_alarm(1, sort_msg, sort_func, 1);
-@@ -3284,8 +3285,8 @@
- 		new_sort = mn_get_sort(msgmap);
- 		new_rev  = mn_get_revsort(msgmap);
- 		q_status_message2(SM_ORDER, 3, 3,
--				  "Sort %s!  Restored %s sort.",
--				  g_sort_prog->abort ? "Canceled" : "Failed",
-+				  "排序%s！回復至 %s 排序。",
-+				  g_sort_prog->abort ? "已取消" : "失敗",
- 				  sort_name(new_sort));
+ 	    if(*tmp == '\0'){
+ 		q_status_message1(SM_ORDER, 0, 3,
+-				 "Address book %s is cancelled",
+-				 edit ? "change" : "add");
++				 "取消地址簿的%s",
++				 edit ? "修改" : "新增");
+ 		ret = -1;
+ 		goto get_out;
  	    }
- 	    else if(mn_get_total(msgmap) < g_sort_prog->nmsgs)
-@@ -4043,7 +4044,7 @@
- 	      icache.name = temp_nam(NULL, "pi");
+@@ -1924,8 +1924,8 @@
+ 	    if(set_variable_list(global ? V_GLOB_ADDRBOOK : V_ADDRESSBOOK,
+ 				 new_list, TRUE)){
+ 		q_status_message1(SM_ORDER, 0, 3,
+-			"%s cancelled: couldn't save pine configuration file",
+-			edit ? "Change" : "Add");
++			"取消%s：無法存入 pine 的設定檔",
++			edit ? "修改" : "新增");
  
- 	    if((icache.cache = (void *)fopen(icache.name,"w+b")) == NULL){
--		sprintf(tmp_20k_buf, "Can't open index cache: %s",icache.name);
-+		sprintf(tmp_20k_buf, "無法開啟索引快取：%s",icache.name);
- 		fatal(tmp_20k_buf);
+ 		set_current_val(&vars[global ? V_GLOB_ADDRBOOK : V_ADDRESSBOOK],
+ 				TRUE, FALSE);
+@@ -2099,7 +2099,7 @@
+ 
+     if(ps_global->readonly_pinerc){
+ 	if(err)
+-	  *err = "Delete cancelled: config file not changeable";
++	  *err = "取消刪除：設定檔無法被改變";
+ 	
+ 	return -1;
+     }
+@@ -2116,10 +2116,10 @@
+ 	if(err){
+ 	    if(pab->type & GLOBAL)
+ 	      *err =
+-    "Cancelled: Sys. Mgmt. does not allow changing global address book config";
++    "動作取消：系統管理員不允許\改變整體的地址簿設定";
+ 	    else
+ 	      *err =
+-    "Cancelled: Sys. Mgmt. does not allow changing address book config";
++    "動作取消：系統管理員不允許\改變地址簿設定";
+ 	}
+ 
+ 	return -1;
+@@ -2172,8 +2172,8 @@
+ 	
+ 	if(cnt > 1){
+ 	    static ESCKEY_S opts[] = {
+-		{'i', 'i', "I", "Ignore All"},
+-		{'r', 'r', "R", "Remove One"},
++		{'i', 'i', "I", "忽略全部"},
++		{'r', 'r', "R", "移除一個"},
+ 		{-1, 0, NULL, NULL}};
+ 
+ 	    sprintf(tmp,
+@@ -2191,7 +2191,7 @@
+ 		
+ 	      case 'x':
+ 		if(err)
+-		  *err = "Delete cancelled";
++		  *err = "取消刪除";
+ 
+ 		return -1;
+ 	    }
+@@ -2202,7 +2202,7 @@
+ 	      case 'n':
+ 	      case 'x':
+ 	        if(err)
+-		  *err = "Delete cancelled";
++		  *err = "取消刪除";
+ 
+ 	        return -1;
+ 	    
+@@ -2247,7 +2247,7 @@
+ 	  case 'x':				/* Cancel */
+ 	  default:
+ 	    if(err)
+-	      *err = "Delete cancelled";
++	      *err = "取消刪除";
+ 
+ 	    return -1;
+ 	}
+@@ -2267,7 +2267,7 @@
+           case 'x':
+ 	  default:
+ 	    if(err)
+-	      *err = "Delete cancelled";
++	      *err = "取消刪除";
+ 
+ 	    return -1;
+ 	
+@@ -2328,7 +2328,7 @@
+ 		  case 'n':
+ 		  default:
+ 		    if(err)
+-		      *err = "Delete cancelled";
++		      *err = "取消刪除";
+ 
+ 		    return -1;
+ 		}
+@@ -2467,7 +2467,7 @@
+     /* this also frees old variable contents for us */
+     if(set_variable_list(varnum, new_list, TRUE)){
+ 	if(err)
+-	  *err = "Delete cancelled: couldn't save pine configuration file";
++	  *err = "取消刪除：無法存入 pine 的設定檔";
+ 
+ 	set_current_val(&vars[varnum], TRUE, FALSE);
+ 	free_list_array(&new_list);
+@@ -2534,7 +2534,7 @@
+ 
+     if(ps_global->readonly_pinerc){
+ 	if(msg)
+-	  *msg = cpystr("Shuffle cancelled: config file not changeable");
++	  *msg = cpystr("取消重整：設定檔無法被改變");
+ 	
+ 	return -1;
+     }
+@@ -2544,12 +2544,12 @@
+     opts[i].ch      = 'u';
+     opts[i].rval    = 'u';
+     opts[i].name    = "U";
+-    opts[i++].label = "Up";
++    opts[i++].label = "上移";
+ 
+     opts[i].ch      = 'd';
+     opts[i].rval    = 'd';
+     opts[i].name    = "D";
+-    opts[i++].label = "Down";
++    opts[i++].label = "下移";
+ 
+     opts[i].ch = -1;
+     deefault = 'u';
+@@ -2557,7 +2557,7 @@
+     if(pab->type & GLOBAL){
+ 	if(vars[V_GLOB_ADDRBOOK].is_fixed){
+ 	    if(msg)
+-	      *msg = cpystr("Cancelled: Sys. Mgmt. does not allow changing global address book config");
++	      *msg = cpystr("動作取消：系統管理員不允許\改變整體的地址簿設定");
+ 	    
+ 	    return -1;
+ 	}
+@@ -2577,7 +2577,7 @@
+     else{
+ 	if(vars[V_ADDRESSBOOK].is_fixed){
+ 	    if(msg)
+-	      *msg = cpystr("Cancelled: Sys. Mgmt. does not allow changing address book config");
++	      *msg = cpystr("動作取消：系統管理員不允許\改變地址簿設定");
+ 	    
+ 	    return -1;
+ 	}
+@@ -2616,7 +2616,7 @@
+ 
+     if(rv == 'x'){
+ 	if(msg)
+-	  *msg = cpystr("Shuffle cancelled");
++	  *msg = cpystr("取消重整");
+ 	
+ 	return -1;
+     }
+@@ -2659,7 +2659,7 @@
+     enum {NotSet, Pers, Glob, Empty} type1, type2;
+     int          i, j;
+     struct variable *vars = ps_global->vars;
+-    char *cancel_msg = "Shuffle cancelled: couldn't save configuration file";
++    char *cancel_msg = "取消重整：無法存入設定檔";
+ 
+     dprint(5, (debugfile, "- do_the_shuffle(%d, %d) -\n", anum1, anum2));
+ 
+@@ -2673,7 +2673,7 @@
+     if(type1 == Empty){
+ 	if(msg)
+ 	  *msg =
+-	      cpystr("Shuffle cancelled: highlight entry you wish to shuffle");
++	      cpystr("取消重整：請先標示欲重整的項目");
+ 
+ 	return -1;
+     }
+@@ -2690,14 +2690,14 @@
+ 
+     if((type1 == Pers || type2 == Pers) && vars[V_ADDRESSBOOK].is_fixed){
+ 	if(msg)
+-	  *msg = cpystr("Cancelled: Sys. Mgmt. does not allow changing address book configuration");
++	  *msg = cpystr("動作取消：系統管理員不允許\改變地址簿設定");
+ 
+ 	return -1;
+     }
+ 
+     if((type1 == Glob || type2 == Glob) && vars[V_GLOB_ADDRBOOK].is_fixed){
+ 	if(msg)
+-	  *msg = cpystr("Cancelled: Sys. Mgmt. does not allow changing global address book config");
++	  *msg = cpystr("動作取消：系統管理員不允許\改變整體的地址簿設定");
+ 
+ 	return -1;
+     }
+@@ -3167,7 +3167,7 @@
+     AdrBk_Entry *abe;
+     VCARD_INFO_S *vinfo;
+     static ESCKEY_S ab_export_opts[] = {
+-	{ctrl('T'), 10, "^T", "To Files"},
++	{ctrl('T'), 10, "^T", "檔案列表"},
+ 	{-1, 0, NULL, NULL},
+ 	{-1, 0, NULL, NULL}};
+     static ESCKEY_S vcard_or_addresses[] = {
+@@ -3190,7 +3190,7 @@
+ 
+     switch(i){
+       case 'x':
+-	cancel_warning(NO_DING, "export");
++	cancel_warning(NO_DING, "匯出");
+ 	return(ret);
+     
+       case 'a':
+@@ -3219,7 +3219,7 @@
+ 	ab_export_opts[++r].ch  =  ctrl('I');
+ 	ab_export_opts[r].rval  = 11;
+ 	ab_export_opts[r].name  = "TAB";
+-	ab_export_opts[r].label = "Complete";
++	ab_export_opts[r].label = "完成";
+     }
+ 
+     ab_export_opts[++r].ch = -1;
+@@ -3232,7 +3232,7 @@
+     if(r < 0){
+ 	switch(r){
+ 	  case -1:
+-	    cancel_warning(NO_DING, "export");
++	    cancel_warning(NO_DING, "匯出");
+ 	    break;
+ 
+ 	  case -2:
+@@ -3616,7 +3616,7 @@
+ 	    switch(want_to("Expand nicknames", 'y', 'x', h_ab_forward,WT_NORM)){
+ 	      case 'x':
+ 		gf_clear_so_writec((STORE_S *) pb->contents.text.data);
+-		cancel_warning(NO_DING, "forward");
++		cancel_warning(NO_DING, "轉寄");
+ 		goto bomb;
+ 		
+ 	      case 'y':
+@@ -3700,7 +3700,7 @@
+ 
+     gf_clear_so_writec((STORE_S *) pb->contents.text.data);
+ 
+-    pine_send(outgoing, &body, "FORWARDING ADDRESS BOOK ENTRY", NULL,
++    pine_send(outgoing, &body, "轉寄地址簿項目", NULL,
+  	      NULL, NULL, NULL, NULL, 0);
+     
+     ps->mangled_screen = 1;
+@@ -4165,8 +4165,8 @@
+     char           tmp[200];
+     ACTION_LIST_S *action_list = NULL, *al;
+     static ESCKEY_S save_or_export[] = {
+-	{'s', 's', "S", "Save"},
+-	{'e', 'e', "E", "Export"},
++	{'s', 's', "S", "存檔"},
++	{'e', 'e', "E", "匯出"},
+ 	{-1, 0, NULL, NULL}};
+ 
+     sprintf(tmp, "Save%s to address book or Export to filesystem ? ",
+@@ -4177,7 +4177,7 @@
+ 		      h_ab_save_exp, RB_NORM);
+     switch(i){
+       case 'x':
+-	cancel_warning(NO_DING, "save");
++	cancel_warning(NO_DING, "存檔");
+ 	return(0);
+ 
+       case 'e':
+@@ -4356,7 +4356,7 @@
+ 		if(action_list)
+ 		  fs_give((void **)&action_list);
+ 
+-		cancel_warning(NO_DING, "save");
++		cancel_warning(NO_DING, "存檔");
+ 		return(ret);
  	    }
  
-@@ -4396,10 +4397,10 @@
- 	   && format_message(mn_m2raw(ps_global->msgmap,
- 				      mn_get_cur(ps_global->msgmap)),
- 			     env, body, FM_NEW_MESS, pc)){
--	    sprintf(title, "Folder %s  --  Message %ld of %ld",
-+	    sprintf(title, "信件匣 %s  --  %ld 封信件中的第 %ld 封",
- 		    strsquish(tmp_20k_buf + 500, ps_global->cur_folder, 50),
--		    mn_get_cur(ps_global->msgmap),
--		    mn_get_total(ps_global->msgmap));
-+		    mn_get_total(ps_global->msgmap),
-+		    mn_get_cur(ps_global->msgmap));
- 	    *text  = so_text(so);
- 	    *l     = strlen((char *)so_text(so));
- 	    *style = GETTEXT_TEXT;
+@@ -4545,7 +4545,7 @@
+ 	  q_status_message(SM_ORDER | SM_DING, 3, 4,
+ 			   "Save only partially completed");
+ 	else
+-	  cancel_warning(NO_DING, "save");
++	  cancel_warning(NO_DING, "存檔");
+     }
+     else if (how_many_to_copy + how_many_no_action -
+ 	     (skip_dups ? how_many_dups : 0) > 0){
+@@ -4621,15 +4621,15 @@
+ 
+     if(!agg && as.opened){
+ 	static ESCKEY_S prt[] = {
+-	    {'a', 'a', "A", "AddressBook"},
+-	    {'e', 'e', "E", "Entry"},
++	    {'a', 'a', "A", "地址簿"},
++	    {'e', 'e', "E", "項目"},
+ 	    {-1, 0, NULL, NULL}};
+ 
+ 	prompt = "Print Address Book or just this Entry? ";
+ 	switch(radio_buttons(prompt, -FOOTER_ROWS(ps_global), prt, 'a', 'x',
+ 			     NO_HELP, RB_NORM)){
+ 	  case 'x' :
+-	    cancel_warning(NO_DING, "print");
++	    cancel_warning(NO_DING, "列印");
+ 	    ps_global->mangled_footer = 1;
+ 	    return 0;
+ 
+@@ -4700,7 +4700,7 @@
+ 		    switch(want_to("Expand nicknames", 'y', 'x', h_ab_forward,
+ 								    WT_NORM)){
+ 		      case 'x':
+-			cancel_warning(NO_DING, "print");
++			cancel_warning(NO_DING, "列印");
+ 			ps_global->mangled_footer = 1;
+ 			return 0;
+ 			
+@@ -4924,7 +4924,7 @@
+ 		lineno = 0L;
+ 
+ 		if(as.opened)
+-		  print_text1("      ADDRESS BOOK %s\n\n",
++		  print_text1("      地址簿 %s\n\n",
+ 			      as.adrbks[as.cur].nickname);
+ 
+ 
+@@ -4979,7 +4979,7 @@
+     dprint(2, (debugfile, "- ab_delete -\n"));
+ 
+     if(agg){
+-	sprintf(prompt, "Really delete %d selected entries", as.selections);
++	sprintf(prompt, "確定刪除 %d 選取的項目", as.selections);
+ 	ch = want_to(prompt, 'n', 'n', NO_HELP, WT_NORM);
+ 	if(ch == 'y'){
+ 	    adrbk_cntr_t   newelnum, flushelnum = NO_NEXT;
+@@ -5144,7 +5144,7 @@
+ 	    }
+ 	}
+ 	else
+-	  cmd_cancelled("Apply command");
++	  cmd_cancelled("套用命令");
+     }
+ 
+     return(ret);
+@@ -5192,7 +5192,7 @@
+ 			? (char *)rfc1522_decode((unsigned char *)tmp_20k_buf,
+ 						    abe->fullname, NULL)
+ 			: abe->nickname ? abe->nickname : "";
+-        cmd   = "Really delete \"%.50s\"";
++        cmd   = "確定刪除 \"%.50s\"";
+         break;
+ 
+       case ListHead:
+@@ -5200,13 +5200,13 @@
+ 			? (char *)rfc1522_decode((unsigned char *)tmp_20k_buf,
+ 						    abe->fullname, NULL)
+ 			: abe->nickname ? abe->nickname : "";
+-	cmd   = "Really delete ENTIRE list \"%.50s\"";
++	cmd   = "確定刪除「整個」列表 \"%.50s\"";
+         break;
+ 
+       case ListEnt:
+         dname = (char *)rfc1522_decode((unsigned char *)tmp_20k_buf,
+ 					    listmem_from_dl(abook, dl), NULL);
+-	cmd   = "Really delete \"%.100s\" from list";
++	cmd   = "確定自列表中刪除 \"%.100s\"";
+         break;
+     } 
+ 
+@@ -5305,7 +5305,7 @@
+ 	return 0;
+     }
+     else{
+-	q_status_message(SM_INFO, 0, 2, "Entry not deleted");
++	q_status_message(SM_INFO, 0, 2, "該項目未被刪除");
+ 	return 0;
+     }
+ }
+@@ -5441,7 +5441,7 @@
+     if(r == 1 || r != 10 && fbuf[0] == '\0'){
+ 	ps->mangled_footer = 1;
+ 	if(error)
+-	  *error = cpystr("Cancelled");
++	  *error = cpystr("取消");
+ 
+ 	return(ret);
+     }
+@@ -5480,7 +5480,7 @@
+ 	pbuf.browse_help   = h_composer_browse;
+ 	pbuf.attach_help   = h_composer_ctrl_j;
+ 	pbuf.composer_help = h_composer;
+-	pbuf.pine_anchor   = set_titlebar("SEARCH DIRECTORY SERVER",
++	pbuf.pine_anchor   = set_titlebar("搜尋地址伺服器",
+ 					  ps_global->mail_stream,
+ 					  ps_global->context_current,
+ 					  ps_global->cur_folder,
+@@ -5728,13 +5728,13 @@
+ static struct key ldap_view_keys[] =
+        {HELP_MENU,
+ 	NULL_MENU,
+-	{"<","Results Index",{MC_EXIT,2,{'<',','}},KS_NONE},
++	{"<","結果索引",{MC_EXIT,2,{'<',','}},KS_NONE},
+ 	PRYNTTXT_MENU,
+ 	NULL_MENU,
+ 	NULL_MENU,
+ 	PREVPAGE_MENU,
+ 	NEXTPAGE_MENU,
+-	{"C", "ComposeTo", {MC_COMPOSE,1,{'c'}}, KS_COMPOSER},
++	{"C", "編修", {MC_COMPOSE,1,{'c'}}, KS_COMPOSER},
+ 	FWDEMAIL_MENU,
+ 	SAVE_MENU,
+ 	WHEREIS_MENU};
+@@ -5763,12 +5763,12 @@
+ 	memset(&sargs, 0, sizeof(SCROLL_S));
+ 	sargs.text.text	  = so_text(srcstore);
+ 	sargs.text.src    = srctype;
+-	sargs.text.desc   = "expanded entry";
+-	sargs.bar.title   = "DIRECTORY ENTRY";
++	sargs.text.desc   = "已展開的項目";
++	sargs.bar.title   = "地址項目";
+ 	sargs.proc.tool   = process_ldap_cmd;
+ 	sargs.proc.data.p = (void *) winning_e;
+ 	sargs.help.text   = h_ldap_view;
+-	sargs.help.title  = "HELP FOR DIRECTORY VIEW";
++	sargs.help.title  = "地址項目的輔助說明";
+ 	sargs.keys.menu   = &ldap_view_keymenu;
+ 	setbitmap(sargs.keys.bitmap);
+ 
+@@ -6117,7 +6117,7 @@
+     struct headerentry *he;
+     void (*redraw_pico)();
+ {
+-    return("Cancelled");
++    return("取消");
+ }
+ 
+ 

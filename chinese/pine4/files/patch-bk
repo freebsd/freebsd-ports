@@ -1,0 +1,40 @@
+--- pine/status.c.orig	Sat Jun 27 07:36:34 1998
++++ pine/status.c	Tue Jul 28 08:35:07 1998
+@@ -72,7 +72,7 @@
+ static struct key modal_message_keys[] =
+        {NULL_MENU,
+ 	NULL_MENU,
+-	{"Ret","Finished",{MC_EXIT,2,{ctrl('m'),ctrl('j')}},KS_NONE},
++	{"Ret","完畢",{MC_EXIT,2,{ctrl('m'),ctrl('j')}},KS_NONE},
+ 	NULL_MENU,
+ 	NULL_MENU,
+ 	NULL_MENU,
+@@ -931,8 +931,8 @@
+  * want_to's array passed to radio_buttions...
+  */
+ static ESCKEY_S yorn[] = {
+-    {'y', 'y', "Y", "Yes"},
+-    {'n', 'n', "N", "No"},
++    {'y', 'y', "Y", "是"},
++    {'n', 'n', "N", "否"},
+     {-1, 0, NULL, NULL}
+ };
+ 
+@@ -1139,7 +1139,7 @@
+     memset(fkey_table, NO_OP_COMMAND, 12 * sizeof(int));
+     if(help_text != NO_HELP){		/* if shown, always at position 0 */
+ 	rb_keymenu.keys[0].name  = "?";
+-	rb_keymenu.keys[0].label = "Help";
++	rb_keymenu.keys[0].label = "輔助說明";
+ 	setbitn(0, bitmap);
+ 	fkey_table[0] = ctrl('G');
+ 	start++;
+@@ -1147,7 +1147,7 @@
+ 
+     if(on_ctrl_C){			/* if shown, always at position 1 */
+ 	rb_keymenu.keys[1].name  = "^C";
+-	rb_keymenu.keys[1].label = "Cancel";
++	rb_keymenu.keys[1].label = "取消";
+ 	setbitn(1, bitmap);
+ 	fkey_table[1] = ctrl('C');
+ 	start++;

@@ -1,5 +1,5 @@
 --- pico/composer.c.orig	Fri Jul  3 07:00:40 1998
-+++ pico/composer.c	Wed Jul 15 17:02:30 1998
++++ pico/composer.c	Tue Jul 28 08:34:59 1998
 @@ -136,12 +136,12 @@
  
  

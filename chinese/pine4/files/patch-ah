@@ -1,5 +1,5 @@
---- pico/browse.c.orig	Fri May 29 06:39:05 1998
-+++ pico/browse.c	Wed Jul 15 17:02:30 1998
+--- pico/browse.c.orig	Sat Jul 11 06:41:25 1998
++++ pico/browse.c	Tue Jul 28 08:34:59 1998
 @@ -126,12 +126,12 @@
  
  
@@ -111,7 +111,7 @@
 @@ -806,17 +806,17 @@
  	    while(i++ < 2){		/* verify twice!! */
  		if(i == 1){
- 		    if(fexist(child, "w", (long *)NULL) != FIOSUC)
+ 		    if(fexist(child, "w", (off_t *)NULL) != FIOSUC)
 -		      strcpy(tmp, "File is write protected! OVERRIDE");
 +		      strcpy(tmp, "檔案為防寫! 要跳過防寫保護");
  		    else
@@ -237,7 +237,7 @@
 @@ -995,7 +995,7 @@
  		    sprintf(child, "%s%c%s", gmp->dname, C_FILESEP, tmp);
  
- 		    if((status = fexist(child, "w", (long *)NULL)) == FIOSUC){
+ 		    if((status = fexist(child, "w", (off_t *)NULL)) == FIOSUC){
 -			sprintf(tmp,"File \"%.*s\" already exists!",
 +			sprintf(tmp,"檔案 \"%.*s\" 已存在!",
  				NLINE - 20, child);
@@ -307,7 +307,7 @@
 @@ -1108,12 +1108,12 @@
  		    sprintf(child, "%s%c%s", gmp->dname, C_FILESEP, tmp);
  
- 		    if((status = fexist(child, "w", (long *)NULL)) == FIOSUC){
+ 		    if((status = fexist(child, "w", (off_t *)NULL)) == FIOSUC){
 -			sprintf(tmp,"File \"%.*s\" exists! OVERWRITE",
 +			sprintf(tmp,"檔案 \"%.*s\" 已存在! 要覆蓋\嗎",
  				NLINE - 20, child);
@@ -367,7 +367,7 @@
  		    break;
  		  case FALSE:
 @@ -1216,13 +1216,13 @@
- 		    status = fexist(child, "w", (long *)NULL);
+ 		    status = fexist(child, "w", (off_t *)NULL);
  		    if(status == FIOSUC || status == FIOFNF){
  			if(status == FIOSUC){
 -			    sprintf(tmp,"File \"%.*s\" exists! OVERWRITE",
@@ -507,7 +507,7 @@
  	zotmaster(&mp);
  	return(NULL);
      }
-@@ -1608,7 +1608,7 @@
+@@ -1610,7 +1610,7 @@
      while(nentries--){				/* stat filtered files */
  	/* get a new cell */
  	if((ncp=(struct fcell *)malloc(sizeof(struct fcell))) == NULL){
@@ -516,7 +516,7 @@
  	    zotfcells(mp->head);		/* clean up cells */
  	    free((char *) filtnames);
  	    free((char *) mp);
-@@ -1778,22 +1778,22 @@
+@@ -1780,22 +1780,22 @@
  BrowserKeys()
  {
      menu_browse[QUIT_KEY].name  = (gmode&MDBRONLY) ? "Q" : "E";
@@ -546,7 +546,7 @@
      }
  
      wkeyhelp(menu_browse);
-@@ -1896,7 +1896,7 @@
+@@ -1898,7 +1898,7 @@
  
  	if((tp = tp->next) == NULL){		/* above top? */
  	    if(secondtry++){
@@ -555,7 +555,7 @@
  		return(-1);
  	    }
  	    else{
-@@ -2062,10 +2062,10 @@
+@@ -2064,10 +2064,10 @@
  	if(!p)					/* no suitable length! */
  	  p = &dir[l-(term.t_ncol-i-19)];
  
@@ -568,7 +568,7 @@
  
      if(i < j)					/* keep it centered */
        j = j - i;				/* as long as we can */
-@@ -2194,18 +2194,18 @@
+@@ -2196,18 +2196,18 @@
  	      if((line = (buf[i] == '\n') ? 0 : line + 1) >= LA_LINE_LIMIT
  		 || !buf[i]){
  		  rv = FALSE;

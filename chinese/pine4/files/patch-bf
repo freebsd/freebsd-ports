@@ -1,40 +1,141 @@
---- pine/status.c.orig	Sat Jun 27 07:36:34 1998
-+++ pine/status.c	Wed Jul 15 17:02:38 1998
-@@ -72,7 +72,7 @@
- static struct key modal_message_keys[] =
-        {NULL_MENU,
- 	NULL_MENU,
--	{"Ret","Finished",{MC_EXIT,2,{ctrl('m'),ctrl('j')}},KS_NONE},
-+	{"Ret","完畢",{MC_EXIT,2,{ctrl('m'),ctrl('j')}},KS_NONE},
- 	NULL_MENU,
- 	NULL_MENU,
- 	NULL_MENU,
-@@ -931,8 +931,8 @@
-  * want_to's array passed to radio_buttions...
+--- pine/pine.h.orig	Wed Jul 22 06:02:49 1998
++++ pine/pine.h	Tue Jul 28 08:35:06 1998
+@@ -348,7 +348,7 @@
+ 			   && (s) && !strucmp((s),"X-VCARD")))
+ #define	MIME_VCARD_A(a)	MIME_VCARD((a)->body->type, (a)->body->subtype)
+ 
+-#define STYLE_NAME(a)   ((a)->text.desc ? (a)->text.desc : "text")
++#define STYLE_NAME(a)   ((a)->text.desc ? (a)->text.desc : "文字")
+ 
+ 
+ /*
+@@ -1582,91 +1582,91 @@
+  * Some standard Key/Command Bindings 
   */
- static ESCKEY_S yorn[] = {
--    {'y', 'y', "Y", "Yes"},
--    {'n', 'n', "N", "No"},
-+    {'y', 'y', "Y", "是"},
-+    {'n', 'n', "N", "否"},
-     {-1, 0, NULL, NULL}
- };
+ #define	NULL_MENU	{NULL, NULL, {MC_NONE}, KS_NONE}
+-#define	HELP_MENU	{"?", "Help", \
++#define	HELP_MENU	{"?", "輔助說明", \
+ 			 {MC_HELP, 2, {'?',ctrl('G')}}, \
+ 			 KS_SCREENHELP}
+-#define	OTHER_MENU	{"O", "OTHER CMDS", \
++#define	OTHER_MENU	{"O", "其他命令", \
+ 			 {MC_OTHER, 1, {'o'}}, \
+ 			 KS_NONE}
+-#define	WHEREIS_MENU	{"W", "WhereIs", \
++#define	WHEREIS_MENU	{"W", "搜尋", \
+ 			 {MC_WHEREIS, 2, {'w',ctrl('W')}}, \
+ 			 KS_WHEREIS}
+-#define	MAIN_MENU	{"M", "Main Menu", \
++#define	MAIN_MENU	{"M", "主選單", \
+ 			 {MC_MAIN, 1, {'m'}}, \
+ 			 KS_MAINMENU}
+-#define	QUIT_MENU	{"Q", "Quit Pine", \
++#define	QUIT_MENU	{"Q", "離開 Pine", \
+ 			 {MC_QUIT, 1, {'q'}}, \
+ 			 KS_EXIT}
+-#define	PREVMSG_MENU	{"P", "PrevMsg", \
++#define	PREVMSG_MENU	{"P", "前一個", \
+ 			 {MC_PREVITEM, 1, {'p'}}, \
+ 			 KS_PREVMSG}
+-#define	NEXTMSG_MENU	{"N", "NextMsg", \
++#define	NEXTMSG_MENU	{"N", "下一個", \
+ 			 {MC_NEXTITEM, 1, {'n'}}, \
+ 			 KS_NEXTMSG}
+-#define	PREVPAGE_MENU	{"-", "PrevPage", \
++#define	PREVPAGE_MENU	{"-", "前一頁", \
+ 			 {MC_PAGEUP, 3, {'-',ctrl('Y'),KEY_PGUP}}, \
+ 			 KS_PREVPAGE}
+-#define	NEXTPAGE_MENU	{"Spc", "NextPage", \
++#define	NEXTPAGE_MENU	{"Spc", "下一頁", \
+ 			 {MC_PAGEDN, 4, {'+',' ',ctrl('V'),KEY_PGDN}}, \
+ 			 KS_NEXTPAGE}
+-#define	JUMP_MENU	{"J", "Jump", \
++#define	JUMP_MENU	{"J", "跳至", \
+ 			 {MC_JUMP, 1, {'j'}}, \
+ 			 KS_JUMPTOMSG}
+-#define	FWDEMAIL_MENU	{"F", "Fwd Email", \
++#define	FWDEMAIL_MENU	{"F", "信件轉寄", \
+ 			{MC_FWDTEXT,1,{'f'}}, \
+ 			 KS_FORWARD}
+-#define	PRYNTMSG_MENU	{"%", "Print", \
++#define	PRYNTMSG_MENU	{"%", "列印", \
+ 			 {MC_PRINTMSG,1,{'%'}}, \
+ 			 KS_PRINT}
+-#define	PRYNTTXT_MENU	{"%", "Print", \
++#define	PRYNTTXT_MENU	{"%", "列印", \
+ 			 {MC_PRINTTXT,1,{'%'}}, \
+ 			 KS_PRINT}
+-#define	SAVE_MENU	{"S", "Save", \
++#define	SAVE_MENU	{"S", "存檔", \
+ 			 {MC_SAVE,1,{'s'}}, \
+ 			 KS_SAVE}
+-#define	EXPORT_MENU	{"E", "Export", \
++#define	EXPORT_MENU	{"E", "匯出", \
+ 			 {MC_EXPORT, 1, {'e'}}, \
+ 			 KS_EXPORT}
+-#define	COMPOSE_MENU	{"C", "Compose", \
++#define	COMPOSE_MENU	{"C", "編修", \
+ 			 {MC_COMPOSE,1,{'c'}}, \
+ 			 KS_COMPOSER}
+-#define	DELETE_MENU	{"D", "Delete", \
++#define	DELETE_MENU	{"D", "刪除", \
+ 			 {MC_DELETE,2,{'d',KEY_DEL}}, \
+ 			 KS_DELETE}
+-#define	UNDELETE_MENU	{"U", "Undelete", \
++#define	UNDELETE_MENU	{"U", "復原刪除", \
+ 			 {MC_UNDELETE,1,{'u'}}, \
+ 			 KS_UNDELETE}
+-#define	REPLY_MENU	{"R", "Reply", \
++#define	REPLY_MENU	{"R", "回覆", \
+ 			 {MC_REPLY,1,{'r'}}, \
+ 			 KS_REPLY}
+-#define	FORWARD_MENU	{"F", "Forward", \
++#define	FORWARD_MENU	{"F", "轉寄", \
+ 			 {MC_FORWARD,1,{'f'}}, \
+ 			 KS_FORWARD}
+-#define	LISTFLD_MENU	{"L", "ListFldrs", \
++#define	LISTFLD_MENU	{"L", "資料匣列表", \
+ 			 {MC_COLLECTIONS,1,{'l'}}, \
+ 			 KS_FLDRLIST}
+-#define	INDEX_MENU	{"I", "Index", \
++#define	INDEX_MENU	{"I", "索引", \
+ 			 {MC_INDEX,1,{'i'}}, \
+ 			 KS_FLDRINDEX}
+-#define	GOTO_MENU	{"G", "GotoFldr", \
++#define	GOTO_MENU	{"G", "切換資料匣", \
+ 			 {MC_GOTO,1,{'g'}}, \
+ 			 KS_GOTOFLDR}
+-#define	TAKE_MENU	{"T", "TakeAddr", \
++#define	TAKE_MENU	{"T", "取得地址", \
+ 			 {MC_TAKE,1,{'t'}}, \
+ 			 KS_TAKEADDR}
+-#define	FLAG_MENU	{"*", "Flag", \
++#define	FLAG_MENU	{"*", "旗標", \
+ 			 {MC_FLAG,1,{'*'}}, \
+ 			 KS_FLAG}
+-#define	PIPE_MENU	{"|", "Pipe", \
++#define	PIPE_MENU	{"|", "轉向(Pipe)", \
+ 			 {MC_PIPE,1,{'|'}}, \
+ 			 KS_NONE}
+-#define	BOUNCE_MENU	{"B", "Bounce", \
++#define	BOUNCE_MENU	{"B", "退信", \
+ 			 {MC_BOUNCE,1,{'b'}}, \
+ 			 KS_BOUNCE}
+-#define	HDRMODE_MENU	{"H", "HdrMode", \
++#define	HDRMODE_MENU	{"H", "完整標頭", \
+ 			 {MC_FULLHDR,1,{'h'}}, \
+ 			 KS_HDRMODE}
+-#define	TAB_MENU	{"Tab", "NextNew", \
++#define	TAB_MENU	{"Tab", "下一個新的", \
+ 			 {MC_TAB,1,{TAB}}, \
+ 			 KS_NONE}
  
-@@ -1139,7 +1139,7 @@
-     memset(fkey_table, NO_OP_COMMAND, 12 * sizeof(int));
-     if(help_text != NO_HELP){		/* if shown, always at position 0 */
- 	rb_keymenu.keys[0].name  = "?";
--	rb_keymenu.keys[0].label = "Help";
-+	rb_keymenu.keys[0].label = "輔助說明";
- 	setbitn(0, bitmap);
- 	fkey_table[0] = ctrl('G');
- 	start++;
-@@ -1147,7 +1147,7 @@
+@@ -2304,7 +2304,7 @@
+ } ATABLE_S;
  
-     if(on_ctrl_C){			/* if shown, always at position 1 */
- 	rb_keymenu.keys[1].name  = "^C";
--	rb_keymenu.keys[1].label = "Cancel";
-+	rb_keymenu.keys[1].label = "取消";
- 	setbitn(1, bitmap);
- 	fkey_table[1] = ctrl('C');
- 	start++;
+ 
+-#define TAG_EMBED	'\377'	/* Announces embedded data in text string */
++#define TAG_EMBED	'\001'	/* Announces embedded data in text string */
+ #define	TAG_INVON	'\001'	/* Supported character attributes	  */
+ #define	TAG_INVOFF	'\002'
+ #define	TAG_BOLDON	'\003'
