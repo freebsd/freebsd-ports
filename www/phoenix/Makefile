@@ -19,7 +19,8 @@ MAINTAINER=		alane@freebsd.org # and trevor@freebsd.org
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		mng.1:${PORTSDIR}/graphics/libmng \
-		freetype.9:${PORTSDIR}/print/freetype2
+		freetype.9:${PORTSDIR}/print/freetype2 \
+		Xft2.2:${PORTSDIR}/x11-fonts/Xft
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		freetype-config:${PORTSDIR}/print/freetype2 \
@@ -38,7 +39,7 @@ WRKSRC=			${WRKDIR}/mozilla
 .include <bsd.port.pre.mk>
 
 .if !defined(PERL_VER) || ${PERL_VER} != 5.8.0
-.error This port requires Perl 5.8.0.
+BROKEN=	This port requires Perl 5.8.0.
 .endif
 
 post-extract:
