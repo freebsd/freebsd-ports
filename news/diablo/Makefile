@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	diablo
-PORTVERSION=	4.2
+PORTVERSION=	5.0
 CATEGORIES=	news
 MASTER_SITES=	http://www.openusenet.org/diablo/download/
 DISTNAME=	${PKGNAME}-REL
@@ -24,32 +24,35 @@ MAN8=		dicmd.8 didump.8 dexpireover.8 dfeedinfo.8 dgrpctl.8 \
 		dilookup.8 diloadfromspool.8 doutq.8 dreadart.8 \
 		dreaderd.8 dpath.8 drcmd.8 dsyncgroups.8 dreadover.8 \
 		dkp.8 diablo.8 dexpire.8 dspoolout.8 dnewslink.8 \
-		doverctl.8 drequeue.8
-
-DOCDIR=		${PREFIX}/share/doc/diablo
+		doverctl.8 drequeue.8 dhisexpire.8
+PORTDOCS=	COPYRIGHT INSTALL README.READER README.SERVER RELEASE_NOTES
 
 post-extract:
-	${CP} ${SCRIPTDIR}/diablo.sh-sample ${WRKDIR}
+	@${CP} ${SCRIPTDIR}/diablo.sh-sample ${WRKDIR}
 
 do-configure:
-	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g;\
+		s|-g -O2|${CFLAGS}|' \
 		${WRKDIR}/diablo.sh-sample ${WRKSRC}/XMakefile.inc
 .ifndef WITH_DES
-	${REINPLACE_CMD} -e 's| -ldes||g' ${WRKSRC}/XMakefile.inc
+	@${REINPLACE_CMD} -e 's| -ldes||g' ${WRKSRC}/XMakefile.inc
 .endif
 
 do-build:
-	cd ${WRKSRC} && xmake all
+	@cd ${WRKSRC} && xmake all
 
 pre-install:
-	${INSTALL} -d ${DOCDIR} ${PREFIX}/news ${PREFIX}/news/dbin
+	@${INSTALL} -d ${DOCDIR} ${PREFIX}/news ${PREFIX}/news/dbin
 
 do-install:
-	cd ${WRKSRC} && xmake install
-.for file in COPYRIGHT INSTALL README.READER README.SERVER RELEASE_NOTES
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCDIR}
+	@cd ${WRKSRC} && xmake install
+	@${INSTALL_SCRIPT} ${WRKDIR}/diablo.sh-sample ${PREFIX}/etc/rc.d
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
-	${INSTALL_SCRIPT} ${WRKDIR}/diablo.sh-sample ${PREFIX}/etc/rc.d
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
