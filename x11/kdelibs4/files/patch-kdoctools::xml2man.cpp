@@ -7,7 +7,7 @@
 -    QCString contents;
 -    contents.assign(xmlFile.readAll());
 -    contents.truncate(xmlFile.size());
-+    QCString contents(xmlFile.radAll(), xmlFile.size() + 1);
++    QCString contents(xmlFile.readAll(), xmlFile.size() + 1);
      xmlFile.close();
  
      contents.replace( QRegExp( "<!--[^-]*-->" ), "" );
