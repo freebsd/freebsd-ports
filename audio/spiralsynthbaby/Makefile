@@ -1,15 +1,15 @@
-# New ports collection makefile for:	spiralsynth
-# Date created:				2000-09-05
-# Whom:					Trevor Johnson <trevor@jpj.net>
+# New ports collection makefile for:	spiralsynthbaby
+# Date created:				2002-05-23
+# Whom:					trevor
 #
 # $FreeBSD$
 #
 
-PORTNAME=	spiralsynth
-PORTVERSION=	0.1.7
+PORTNAME=	spiralsynthbaby
+PORTVERSION=	0.0.2
 CATEGORIES=	audio
-MASTER_SITES=	http://www.pawfal.org/SpiralSynth/dload/
-DISTNAME=	SpiralSynth-${PORTVERSION}
+MASTER_SITES=	http://www.pawfal.org/Software/SpiralLoops/dload/
+DISTNAME=	SpiralSynthBaby-${PORTVERSION}
 
 MAINTAINER=	trevor@FreeBSD.org
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 GNU_CONFIGURE=	yes
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
-PLIST=		${WRKDIR}/pkg-plist
+PLIST=		${WRKSRC}/pkg-plist
 USE_X_PREFIX=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
@@ -30,41 +30,23 @@ post-patch:
 			s|CFLAGS =|CFLAGS +=|g ; \
 			s|CXXFLAGS=|CXXFLAGS+=|g ; \
 			s|-lm|${PTHREAD_LIBS} -lm|g ; \
-			s|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/Makefile.in \
-				${WRKSRC}/PluginLink.sh
-# Use as a plugin to SpiralLoops 2.0.0 results in "Can't open audio driver."
-.if defined(PLUGIN)
-	${PERL} -pi -e 's|^//#define PLUGIN|#define PLUGIN|g' \
-			${WRKSRC}/Synth.C
-
-post-build:
-	cd ${WRKSRC}; ${SH} ./PluginLink.sh
-.endif		# defined(PLUGIN)
+			s|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/Makefile.in
 
 pre-install:
-.if defined(PLUGIN)
-	${ECHO_CMD} lib/SpiralSynth.so > ${PLIST}
-.else
-	${ECHO_CMD} bin/SpiralSynth > ${PLIST}
-.endif
+	${ECHO_CMD} lib/SpiralSynthBaby.so > ${PLIST}
 .if !defined(NOPORTDOCS)
-.for ii in ${DOC_FILES}
-	${ECHO_CMD} share/doc/spiralsynth/${ii} >> ${PLIST}
+.for i in ${DOC_FILES}
+	${ECHO_CMD} share/doc/spiralsynthbaby/${ii} >> ${PLIST}
 .endfor
-	${ECHO_CMD} @dirrm share/doc/spiralsynth >> ${PLIST}
+	${ECHO_CMD} @dirrm share/doc/spiralsynthbaby >> ${PLIST}
 .endif
 
 do-install:
-.if defined(PLUGIN)
-	${INSTALL_PROGRAM} ${WRKSRC}/SpiralSynth.so ${PREFIX}/lib
-.else
-	${INSTALL_PROGRAM} ${WRKSRC}/SpiralSynth ${PREFIX}/bin
-.endif
-
+	${INSTALL_PROGRAM} ${WRKSRC}/SpiralSynthBaby.so ${PREFIX}/lib
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for ii in ${DOC_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${ii} ${DOCSDIR}
+.for i in ${DOC_FILES}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
 
