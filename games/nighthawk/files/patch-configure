@@ -1,0 +1,28 @@
+--- configure.orig	Wed Apr  4 14:35:14 2001
++++ configure	Wed Apr  4 14:35:41 2001
+@@ -3627,15 +3627,15 @@
+ ###
+ ### Status
+ ###
+-echo "$ac_t""### Compile Options ###" 1>&AC_FD_MSG
+-echo "$ac_t""# prefix:          $prefix" 1>&AC_FD_MSG
+-echo "$ac_t""# scores file:     $SCORES_FILE" 1>&AC_FD_MSG
+-echo "$ac_t""# reduced sprites: $enable_red_sprites" 1>&AC_FD_MSG
+-echo "$ac_t""# sound:           $enable_sound" 1>&AC_FD_MSG
++echo "$ac_t""### Compile Options ###"
++echo "$ac_t""# prefix:          $prefix"
++echo "$ac_t""# scores file:     $SCORES_FILE"
++echo "$ac_t""# reduced sprites: $enable_red_sprites"
++echo "$ac_t""# sound:           $enable_sound"
+ if test x"$enable_sound" = xyes; then
+-    echo "$ac_t""# mono/stereo:     $status_mono_stereo" 1>&AC_FD_MSG
+-    echo "$ac_t""# precision:       $DEFAULT_PRECISION bit" 1>&AC_FD_MSG
+-    echo "$ac_t""# sampling rate:   $DEFAULT_SAM_RATE Hz" 1>&AC_FD_MSG
+-    echo "$ac_t""# FX channels:     $NO_FX_CHANNELS" 1>&AC_FD_MSG
++    echo "$ac_t""# mono/stereo:     $status_mono_stereo"
++    echo "$ac_t""# precision:       $DEFAULT_PRECISION bit"
++    echo "$ac_t""# sampling rate:   $DEFAULT_SAM_RATE Hz"
++    echo "$ac_t""# FX channels:     $NO_FX_CHANNELS"
+ fi
+-echo "$ac_t""# make tools:      $enable_tools" 1>&AC_FD_MSG
++echo "$ac_t""# make tools:      $enable_tools"

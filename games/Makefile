@@ -195,6 +195,7 @@
     SUBDIR += trojka
     SUBDIR += tuxracer
     SUBDIR += tvp
+    SUBDIR += nighthawk
     SUBDIR += nil
     SUBDIR += nonsense
     SUBDIR += omega
