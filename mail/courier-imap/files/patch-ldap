@@ -1,0 +1,13 @@
+--- authlib/configure.orig	Mon Apr  8 23:36:04 2002
++++ authlib/configure	Mon Apr  8 23:35:24 2002
+@@ -554,6 +554,10 @@
+   > $cache_file
+ fi
+ 
++CFLAGS="$CFLAGS -I/usr/local/include"
++CPPFLAGS="$CPPFLAGS -I/usr/local/include"
++LDFLAGS="-L/usr/local/lib $LDFLAGS"
++
+ ac_ext=c
+ # CFLAGS is not in ac_cpp because -g, -O, etc. are not valid cpp options.
+ ac_cpp='$CPP $CPPFLAGS'
