@@ -1,6 +1,6 @@
---- config.h~	Tue Jun  6 23:35:58 2000
-+++ config.h	Wed Jun  7 09:56:31 2000
-@@ -124,7 +124,7 @@
+--- config.h.dist	Mon Jul 24 07:43:09 2000
++++ config.h	Tue Sep 12 19:49:46 2000
+@@ -126,7 +126,7 @@
  
  #define XKEYS		/* use numelic keypad (by Gen.KUROKI) */
  
