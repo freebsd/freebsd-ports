@@ -308,7 +308,6 @@ lib/mit-scheme/SRC/runtime/x11graph.bci
 lib/mit-scheme/SRC/runtime/xeval.bci
 lib/mit-scheme/SRC/runtime/ystep.bci
 lib/mit-scheme/all.com
-lib/mit-scheme/compiler.com
 lib/mit-scheme/doc/COPYING
 lib/mit-scheme/doc/imail.html
 lib/mit-scheme/doc/imail_1.html
@@ -404,7 +403,6 @@ lib/mit-scheme/doc/user_abt.html
 lib/mit-scheme/doc/user_fot.html
 lib/mit-scheme/doc/user_ovr.html
 lib/mit-scheme/doc/user_toc.html
-lib/mit-scheme/edwin.com
 lib/mit-scheme/edwin/autoload/debian-changelog.bci
 lib/mit-scheme/edwin/autoload/debian-changelog.com
 lib/mit-scheme/edwin/autoload/eystep.bci
@@ -568,15 +566,16 @@ lib/mit-scheme/sos/slot.com
 lib/mit-scheme/sos/sos.bco
 lib/mit-scheme/sos/sos.bld
 lib/mit-scheme/utabmd.bin
-@dirrm lib/mit-scheme/sos
-@dirrm lib/mit-scheme/options
+@dirrm lib/mit-scheme/doc
 @dirrm lib/mit-scheme/imail
 @dirrm lib/mit-scheme/edwin/info
 @dirrm lib/mit-scheme/edwin/etc
 @dirrm lib/mit-scheme/edwin/autoload
 @dirrm lib/mit-scheme/edwin
-@dirrm lib/mit-scheme/doc
-@dirrm lib/mit-scheme/SRC/runtime
+@dirrm lib/mit-scheme/sos
+@dirrm lib/mit-scheme/options
 @dirrm lib/mit-scheme/SRC/edwin
+@dirrm lib/mit-scheme/SRC/runtime
 @dirrm lib/mit-scheme/SRC
+@dirrm lib/mit-scheme/lib
 @dirrm lib/mit-scheme
