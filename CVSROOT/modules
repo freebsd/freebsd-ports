@@ -1934,6 +1934,7 @@ geda-symbols	ports/cad/geda-symbols
 geda-symcheck	ports/cad/geda-symcheck
 geda-utils	ports/cad/geda-utils
 gedit2		ports/editors/gedit2
+gedit-plugins	ports/editors/gedit-plugins
 geekcode	ports/misc/geekcode
 geeklog		ports/www/geeklog
 geg		ports/math/geg
