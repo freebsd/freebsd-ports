@@ -48,23 +48,25 @@
  
  # archiver definition
  #".lzh"		A "lha aq %C %TA"		"lha xq %C %TA"
---- ./Makefile.in.org	Sun Dec 17 20:39:36 1995
-+++ ./Makefile.in	Tue Mar 19 23:42:45 1996
-@@ -3,11 +3,11 @@
+--- Makefile.in.orig	Mon Dec 18 13:39:36 1995
++++ Makefile.in	Thu Dec 12 12:10:02 1996
+@@ -3,11 +3,12 @@
  #
  
  TITLE	= FD-
 -TOPDIR	= /usr/local
++PREFIX?=  /usr/local
 +TOPDIR	= $(PREFIX)
  BINDIR	= $(TOPDIR)/bin
- MANDIR	= $(TOPDIR)/man/man$(MANSEC)
+-MANDIR	= $(TOPDIR)/man/man$(MANSEC)
++MANDIR	= $(TOPDIR)/man/ja_JP.EUC/man$(MANSEC)
  CATDIR	= $(TOPDIR)/man/cat$(MANSEC)
 -DEFRC	= /etc/fdrc
 +DEFRC	= $(TOPDIR)/etc/fdrc
  SHELL	= /bin/sh
  INSTALL	= cp -p
  CHMOD	= chmod
-@@ -40,7 +40,7 @@
+@@ -40,7 +41,7 @@
  	kanji.o file.o apply.o archive.o tree.o command.o browse.o
  
  LDFLAGS	= __TERMLIBS__ __REGLIBS__ __OTHERLIBS__
