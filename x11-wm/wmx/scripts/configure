@@ -1,0 +1,3 @@
+#!/bin/sh
+
+/usr/bin/perl -pi -e 's|/usr/X11R6|'$X11BASE'|g' $WRKSRC/Makefile
