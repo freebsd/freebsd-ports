@@ -1,0 +1,33 @@
+*** /dev/null	Wed May 29 10:24:22 1996
+--- printers.jis	Wed May 29 11:42:36 1996
+***************
+*** 0 ****
+--- 1,28 ----
++ * jp-vfghostscript-2.6.2.tgz に付属するプリンタの使い方について、
++ 			1996年8月21日 三田吉郎 <mita@jp.FreeBSD.org>
++ 
++ とりあえず、私が見付けた範囲で使いそうだなと思われるプリンタドライバを
++ 全部くっつけておきました。
++ 当然使わないプリンタの方が多いでしょうから、余計なものがくっつくのが
++ 嫌な方は、portsから作り直して下さい。
++ 
++ 使い方は、それぞれ
++ 1.  Canon BJ-10V		gdev10v.jis
++ 2.  Canon BJC-600J		bjc600j.jis
++ 3.  HP DeskJet 500C		bjc600j.jis
++ 4.  HP DeskJet 550C		bjc600j.jis
++ 5.  HP DeskJet 505J		gdev505j.sj
++ 6.  generic dot impact printer	gdevdmpr.sj
++ 7.  Epson LP-8200 		gdevep82.jis
++ 8.  ESC/Page 300dpi generic	gdevepag.jis
++ 9.  Star JJ-100			gdevj100.jis
++ 10.  LIPS III generic		gdevlips4.euc
++ 11.  LIPS IV , IVc generic	gdevlips4.euc
++ 12.  MAG format			gdevmag.sj
++ 13. MJC720, 800, 900, 5000	gdevmjc.jis
++ 14. MJ-500C			gdevmjc.jis
++ 15. NEC PC-PR150		gdevp201.jis
++ 16. NEC PC-PR201		gdevp201.jis
++ 17. NEC PC-PR1000 /4		gdevp201.jis
++ 
++ を参考にして下さい。

@@ -1,0 +1,17 @@
+*** /dev/null	Thu Apr  9 18:23:13 1908
+--- bjc600j.mak	Thu Apr  9 18:36:07 1908
+***************
+*** 0 ****
+--- 1,12 ----
++ # -------HP Deskjet and Canon BJC-600J 
++ dj505j.dev: $(cdeskjet_)
++ 	$(SHP)gssetdev dj505j $(cdeskjet_)
++ 
++ dj505jc.dev: $(cdeskjet_)
++ 	$(SHP)gssetdev dj505jc $(cdeskjet_)
++ 
++ bjc600j.dev: $(cdeskjet_)
++ 	$(SHP)gssetdev bjc600j $(cdeskjet_)
++ 
++ bjc600jc.dev: $(cdeskjet_)
++ 	$(SHP)gssetdev bjc600jc $(cdeskjet_)
