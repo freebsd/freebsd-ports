@@ -19,8 +19,8 @@ USE_ZIP=	yes
 USE_JAVA=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-PLIST_FILES=	${JAVAJARDIR:S,^${PREFIX}/,,}/jcalendar.jar \
-		${JAVAJARDIR:S,^${PREFIX}/,,}/kunststoff.jar
+PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \
+		%%JAVAJARDIR%%/kunststoff.jar
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
