@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.11 1995/05/14 03:29:48 asami Exp $
+# $Id: Makefile,v 1.12 1995/07/01 09:17:15 asami Exp $
 #
 # RESTRICTED: maxima (license required)
 #
@@ -14,6 +14,7 @@
    SUBDIR += octave
    SUBDIR += oleo
    SUBDIR += xgraph
+   SUBDIR += xlispstat
    SUBDIR += xspread
 
 .include <bsd.port.subdir.mk>
