@@ -1,12 +1,12 @@
 # New ports collection makefile for:	pclprint
-# Version required:	1.0
 # Date created:		27 Aug 1999
 # Whom:			Will Andrews <andrews@technologist.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	pclprint-1.0
+PORTNAME=	pclprint 
+PORTVERSION=	1.0 
 CATEGORIES=	print
 MASTER_SITES=	ftp://andrsn.stanford.edu/pub/print/ \
 		http://www.psn.net/~andrews/dist/

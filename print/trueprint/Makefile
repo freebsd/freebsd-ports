@@ -1,12 +1,12 @@
 # New ports collection makefile for:	trueprint
-# Version required:		5.2
 # Date created:			17 February 2000
 # Whom:				Dmitry Sivachenko <dima@Chg.RU>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	trueprint-5.2
+PORTNAME=	trueprint 
+PORTVERSION=	5.2 
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	trueprint

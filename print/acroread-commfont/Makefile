@@ -1,15 +1,14 @@
 # New ports collection makefile for:	acroread-commfont
-# Version required:	1999.7.20
-# Date created:		99/06/16
 # Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME?=	commfont # dummy
-PKGNAME=	${PKG_PRE}acroread-${DISTNAME}-1999.7.20
+PORTNAME=	${PKG_PRE}acroread-${DISTNAME}
+PORTVERSION=	1999.7.20
 CATEGORIES?=	japanese print linux
 MASTER_SITES=	ftp://ftp-pac.adobe.com/pub/adobe/acrobatreader/unix/4.x/
+DISTNAME?=	commfont # dummy
 
 MAINTAINER=	taoka@FreeBSD.org
 

@@ -1,25 +1,23 @@
 # New ports collection makefile for:    latex
-# Version required:     ?
 # Date created:         29 September 1994
 # Whom:                 jmz
 #
 # $FreeBSD$
 #
 
-DISTNAME=	latex
-PKGNAME=	latex2e-${VERSION}
+PORTNAME=	latex2e 
+PORTVERSION=	99.12 
 CATEGORIES=     print
 MASTER_SITES=   ftp://ftp.freesoftware.com/pub/tex/package/
-DISTFILES=	latex_mf-${VERSION}.tar.gz latex_tfm-${VERSION}.tar.gz \
-		latex_base-${VERSION}.tar.gz latex_tools-${VERSION}.tar.gz \
-		latex_graphics-${VERSION}.tar.gz latex_psnfss-${VERSION}.tar.gz
+DISTFILES=	latex_mf-${PORTVERSION}.tar.gz latex_tfm-${PORTVERSION}.tar.gz \
+		latex_base-${PORTVERSION}.tar.gz latex_tools-${PORTVERSION}.tar.gz \
+		latex_graphics-${PORTVERSION}.tar.gz latex_psnfss-${PORTVERSION}.tar.gz
 
 MAINTAINER=	jmz@FreeBSD.org
 
 BUILD_DEPENDS=	tex:${PORTSDIR}/print/tex
 RUN_DEPENDS=	tex:${PORTSDIR}/print/tex
 
-VERSION=	99.12
 NO_WRKSUBDIR=	yes
 
 MANUAL_PACKAGE_BUILD=	has to be built with tex port

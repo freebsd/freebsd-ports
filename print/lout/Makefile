@@ -1,12 +1,12 @@
 # New ports collection makefile for: lout
-# Version required:  3.17
 # Date created:      10/22/96
 # Whom:              oly@world.std.com
 #
 # $FreeBSD$
 #
 
-DISTNAME=	lout-3.17
+PORTNAME=	lout 
+PORTVERSION=	3.17 
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.cs.usyd.edu.au/jeff/lout/

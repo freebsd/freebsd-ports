@@ -1,15 +1,15 @@
 # New ports collection makefile for: YaTeX
-# Version required:	1.67
 # Date created:		98/11/17
 # Whom:			Satoshi Taoka <taoka@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	yatex1.67
-PKGNAME?=	yatex-1.67
+PORTNAME?=	yatex 
+PORTVERSION?=	1.67 
 CATEGORIES?=	print elisp
 MASTER_SITES=	http://www.yatex.org/
+DISTNAME=	yatex1.67
 
 MAINTAINER=	taoka@FreeBSD.org
 

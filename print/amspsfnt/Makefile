@@ -1,15 +1,15 @@
 # New ports collection makefile for:	amspsfnt
-# Version required:	1.0
 # Date created:		11 September 1998
 # Whom:			giffunip
 #
 # $FreeBSD$
 #
 
-DISTNAME=	amsps
-PKGNAME=	amspsfnt-1.0
+PORTNAME=	amspsfnt 
+PORTVERSION=	1.0 
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.ams.org/pub/tex/psfonts/ams/
+DISTNAME=	amsps
 EXTRACT_SUFX=	-unix.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org

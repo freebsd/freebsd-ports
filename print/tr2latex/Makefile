@@ -1,16 +1,16 @@
 # New ports collection makefile for:	tr2latex
-# Version required:     2.2
 # Date created:         25 Jan 1995
 # Whom:                 Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tr2latex
-PKGNAME=	tr2latex-2.2
+PORTNAME=	tr2latex 
+PORTVERSION=	2.2 
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	support
+DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 

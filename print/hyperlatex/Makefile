@@ -1,12 +1,12 @@
 # New ports collection makefile for:	Hyperlatex
-# Version required:			2.3.1
 # Date created:				2 August 1994
 # Whom:					Robert Withrow <witr@rwwa.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	Hyperlatex-2.3.1
+PORTNAME=	Hyperlatex 
+PORTVERSION=	2.3.1 
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.cs.uni-magdeburg.de/pub/ipe/
 

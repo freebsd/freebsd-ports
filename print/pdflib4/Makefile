@@ -1,12 +1,12 @@
 # New ports collection makefile for:	pdflib
-# Version required:	2.0
 # Date created:		Mon Jan 18 17:03:33 CET 1999
 # Whom:			Dirk Froemberg <dirk@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	pdflib-2.01
+PORTNAME=	pdflib 
+PORTVERSION=	2.01 
 CATEGORIES=	print
 MASTER_SITES=	http://www.pdflib.com/pdflib/download/ \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/

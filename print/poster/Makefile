@@ -1,15 +1,15 @@
 # New ports collection makefile for:	poster
-# Version required:	1.0
 # Date created:		15 January 2000
 # Whom:			Yoshiro MIHIRA <sanpei@sanpei.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	poster
-PKGNAME=	poster-1.0
+PORTNAME=	poster 
+PORTVERSION=	1.0 
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.ics.ele.tue.nl/pub/users/jos/poster/
+DISTNAME=	poster
 
 MAINTAINER=	sanpei@sanpei.org
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	apsfilter
-# Version required: 	4.9.3
 # Date created: 	Tue Nov 14 18:29:48 MET 1995
 # Whom: 		Andreas Klemm <andreas@klemm.gtn.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	apsfilter-${VERSION}
+PORTNAME=	apsfilter 
+PORTVERSION=	5.3.3 
 CATEGORIES=	print
 MASTER_SITES=	http://people.FreeBSD.org/~andreas/apsfilter/download/
 
@@ -25,7 +25,6 @@ RUN_DEPENDS+=	psnup:${PORTSDIR}/print/psutils-letter
 RUN_DEPENDS+=	smbclient:${PORTSDIR}/net/samba
 .endif
 
-VERSION=	5.3.3
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/apsfilter
 

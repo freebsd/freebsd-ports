@@ -1,12 +1,12 @@
 # New ports collection makefile for:	auctex
-# Version required:			9.9p
 # Date created:				21 November 1999
 # Whom:					Martin Kammerhofer
 #
 # $FreeBSD$
 #
 
-DISTNAME=		auctex-9.9p
+PORTNAME=		auctex 
+PORTVERSION=		9.9p 
 CATEGORIES=		print elisp
 MASTER_SITES=		${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	support/auctex

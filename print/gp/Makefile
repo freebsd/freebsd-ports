@@ -1,15 +1,15 @@
 # New ports collection makefile for: GP
-# Version required:	2.5p1
 # Date created:		15 April 1997
 # Whom:			Kiriyama Kazuhiko<kiri@kiri.toba-cmt.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	GP-2.5p2
-PKGNAME?=	gp-2.5p2
+PORTNAME?=	gp 
+PORTVERSION?=	2.5.p2 
 CATEGORIES=	print tk42
 MASTER_SITES=	http://www.itbrain.co.jp/~ueda/GP/
+DISTNAME=	GP-2.5p2	
 
 MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
 
@@ -30,7 +30,7 @@ RUN_DEPENDS+=	${PREFIX}/bin/wish4.2:${PORTSDIR}/x11-toolkits/tk42
 LANGEXT=	en
 DOCDIRNAME=	Doc
 DOCEXT=
-PAPERSIZE=	letter
+pAPERSIZE=	letter
 .elif (${LANGUAGE} == "Japanese")
 ALL_TARGET=	ja filters
 LIB_DEPENDS=	tcl76jp.1:${PORTSDIR}/japanese/tcl76

@@ -1,13 +1,12 @@
 # New ports collection makefile for:    texinfo
-# Version required:     2.218
 # Date created:         2 October 1994
 # Whom:                 jmz
 #
 # $FreeBSD$
 #
 
-DISTNAME=	texinfo
-PKGNAME=	texinfo-2.218
+PORTNAME=	texinfo 
+PORTVERSION=	2.218 
 CATEGORIES=	print
 #other equivalent sites: ftp.shsu.edu ftp.dante.de
 MASTER_SITES=	ftp://ftp.tex.ac.uk/tex-archive/macros/eplain/doc/ \

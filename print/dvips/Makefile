@@ -1,15 +1,15 @@
 # New ports collection makefile for:    dvips
-# Version required:     5.76
 # Date created:         30 September 1994
 # Whom:                 jmz
 #
 # $FreeBSD$
 #
 
-DISTNAME=	dvips576
-PKGNAME=	dvips-5.76
+PORTNAME=	dvips 
+PORTVERSION=	5.76 
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.tex.ac.uk/tex-archive/dviware/dvips/
+DISTNAME=	dvips576
 
 MAINTAINER=	jmz@FreeBSD.org
 

@@ -1,13 +1,13 @@
 # ex:ts=8
 # Ports collection makefile for:  detex
-# Version required: 0.0
 # Date created:			  Mon Feb 17, 1997
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	detex-2.6
+PORTNAME=	detex 
+PORTVERSION=	2.6 
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.cs.purdue.edu/pub/trinkle/
 EXTRACT_SUFX=	.tar

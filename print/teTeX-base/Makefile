@@ -1,12 +1,12 @@
 # New ports collection makefile for:	teTeX
-# Version required:	1.0.7
 # Date created:		5 December 1996
 # Whom:			Bernd Rosauer <br@netland.inka.de>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	teTeX-1.0.7
+PORTNAME=	teTeX 
+PORTVERSION=	1.0.7 
 CATEGORIES=	print
 MASTER_SITES=	ftp://sunsite.informatik.rwth-aachen.de/pub/comp/tex/teTeX/1.0/distrib/sources/ \
 		${MASTER_SITE_TEX_CTAN}

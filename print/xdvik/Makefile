@@ -1,12 +1,12 @@
 # New ports collection makefile for:   xdvik
-# Version required:    20
 # Date created:        26 Feb 1998
 # Whom:                Kentaro Inagaki <JBD01226@niftyserve.ne.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xdvik-20a
+PORTNAME=	xdvik 
+PORTVERSION=	20a 
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.ipc.chiba-u.ac.jp/pub/pub.yamaga/xdvik-20/ \
 		${MASTER_SITE_LOCAL}

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	perlftlib
-# Version required:	1.2
 # Date created:		98/12/22
 # Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	perlftlib-1.2
+PORTNAME=	perlftlib 
+PORTVERSION=	1.2 
 CATEGORIES=	print perl5
 MASTER_SITES=	ftp://ftp.big.or.jp/pub/usr2/jam/ft/ \
 		${MASTER_SITE_PORTS_JP} \

@@ -1,13 +1,12 @@
 # New ports collection makefile for:	dvipdfm
-# Version required:	0.12.7
 # Date created:		16 January 2000
 # Whom:			Stephen Montgomery-Smith <stephen@math.missouri.edu>
 #
 # $FreeBSD$
 #
 
-DISTNAME=		dvipdfm-0.12.7b
-PKGNAME=		dvipdfm-0.12.7
+PORTNAME=		dvipdfm 
+PORTVERSION=		0.12.7b 
 CATEGORIES=		print
 MASTER_SITES=		http://odo.kettering.edu/dvipdfm/
 

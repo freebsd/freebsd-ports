@@ -1,12 +1,12 @@
 # New ports collection makefile for:	ghostscript
-# Version required:	6.01
 # Date created:		Tue Jun 10 21:58:54 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ghostscript-${GS_VERSION}
+PORTNAME=	ghostscript 
+PORTVERSION=	6.01 
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/aladdin/gs601/ \
 		ftp://ftp.cs.wisc.edu/ghost/aladdin/fonts/ \
@@ -22,11 +22,10 @@ Y2K=		http://www.cs.wisc.edu/~ghost/aladdin/y2k.html
 BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/graphics/jpeg:extract
 LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png
 
-GS_VERSION=	6.01
-PLIST_SUB=	GS_VERSION=${GS_VERSION}
+PLIST_SUB=	GS_VERSION=${PORTVERSION}
 USE_XLIB=	yes
 EXTRACT_ONLY=	${GS_SOURCES}
-WRKSRC=		${WRKDIR}/gs${GS_VERSION}
+WRKSRC=		${WRKDIR}/gs${PORTVERSION}
 USE_GMAKE=	yes
 MAKEFILE=	src/unix-gcc.mak
 CFLAGS+=	-I${PREFIX}/include
@@ -37,7 +36,7 @@ MAN1=		gs.1 dvipdf.1 font2c.1 eps2eps.1 gsbj.1 gsdj.1 gsdj500.1 \
 		pfbtopfa.1 printafm.1 ps2ascii.1 ps2epsi.1 ps2pdf12.1 \
 		ps2pdf13.1 ps2pdf.1 ps2pdfwr.1 ps2ps.1 wftopfa.1
 
-GS_SOURCES=	ghostscript-${GS_VERSION}.tar.gz
+GS_SOURCES=	ghostscript-${PORTVERSION}.tar.gz
 #  Note: the following two are real files that have symlinks with
 #  later version numbers pointing to them.  To avoid unnecessarily
 #  downloading distfiles, do not change these when upgrading the port
@@ -101,11 +100,11 @@ post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/lib/lprsetup.sh ${PREFIX}/bin
 .for i in ${CONTRIB_UPP}
 	@${INSTALL_DATA} ${FILESDIR}/$i \
-		${PREFIX}/share/ghostscript/${GS_VERSION}/lib
+		${PREFIX}/share/ghostscript/${PORTVERSION}/lib
 .endfor
 .if defined(PDFENCRYPT)
 	@${INSTALL_DATA} ${DISTDIR}/pdf_sec.ps \
-		${PREFIX}/share/ghostscript/${GS_VERSION}/lib
+		${PREFIX}/share/ghostscript/${PORTVERSION}/lib
 .endif
 
 .include <bsd.port.mk>

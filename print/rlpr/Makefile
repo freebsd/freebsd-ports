@@ -1,11 +1,12 @@
 # New ports collection makefile for:	rlpr
-# Version required:	2.0
 # Date created:		11 April 1999
 # Whom:			Mikhail Teterin
 #
 # $FreeBSD$
+#
 
-DISTNAME=	rlpr-2.02
+PORTNAME=	rlpr 
+PORTVERSION=	2.02 
 CATEGORIES=	print net
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/printing
