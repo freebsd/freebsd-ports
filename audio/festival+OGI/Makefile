@@ -39,9 +39,9 @@ LIB_DEPENDS=	audio.1:${PORTSDIR}/audio/nas \
 
 DIST_SUBDIR=	festival
 
-EXTRA_PATCHES=	${FILESDIR}/patch-aa
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-aa
 .if defined (WITH_OGI)
-EXTRA_PATCHES=	${FILESDIR}/patch-aa-ogi
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-aa-ogi
 RESTRICTED=	no-commercial-use
 .endif
 
