@@ -9,10 +9,10 @@
 #       before 2.8.3pre.5 has unacceptable security holes.
 
 PORTNAME=	lynx
-PORTVERSION=    2.8.3.p5
+PORTVERSION=    2.8.3.1
 CATEGORIES=	www
 MASTER_SITES=   http://lynx.isc.org/current/
-DISTNAME=	${PORTNAME}2.8.3pre.5
+DISTNAME=	${PORTNAME}2.8.3rel.1
 
 MAINTAINER=	jseger@FreeBSD.org
 
