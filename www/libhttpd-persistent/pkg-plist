@@ -5,3 +5,4 @@ lib/libhttpd-persistent.a
 %%PORTDOCS%%%%DOCSDIR%%/License
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.txt
 %%PORTDOCS%%%%DOCSDIR%%/libhttpd.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/
