@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	ImageMagick
-PORTVERSION=	5.3.4
+PORTVERSION=	5.3.5
 CATEGORIES=	graphics perl5
-MASTER_SITES=	ftp://ftp.yggdrasil.com/mirrors/site/ftp.simplesystems.org/pub/%SUBDIR%/ \
+MASTER_SITES=	http://imagemagick.sourceforge.net/http/ \
+		ftp://ftp.yggdrasil.com/mirrors/site/ftp.simplesystems.org/pub/%SUBDIR%/ \
 		ftp://gd.tuwien.ac.at/pub/graphics/%SUBDIR%/ \
 		ftp://ftp.sunet.se/pub/multimedia/graphics/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/ImageMagick,} \
-		ftp://ftp.simplesystems.org/pub/%SUBDIR%/ \
 		ftp://ftp.crc.ca/pub/packages/graphics/imagemagick/ \
 		ftp://ftp.imagemagick.org/pub/%SUBDIR%/ \
-		http://imagemagick.sourceforge.net/ \
 		ftp://ftp.planetmirror.com/pub/%SUBDIR%/ \
 		ftp://ftp.fu-berlin.de/unix/X11/graphics/%SUBDIR%/ \
 		ftp://zoffy.asahi-net.or.jp/pub/graphics/%SUBDIR%/ \
@@ -25,7 +24,7 @@ MASTER_SITES=	ftp://ftp.yggdrasil.com/mirrors/site/ftp.simplesystems.org/pub/%SU
 		ftp://ftp.icm.edu.pl/pub/graphics/%SUBDIR%/ \
 		ftp://giswitch.sggw.waw.pl/pub/graphics/%SUBDIR%/ \
 		ftp://ftp.fifi.org/pub/%SUBDIR%/ \
-		${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%,imagemagick,}
+		ftp://ftp.simplesystems.org/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
