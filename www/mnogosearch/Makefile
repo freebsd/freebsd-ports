@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mnogosearch
-PORTVERSION=    3.1.11
-PORTREVISION=   2
+PORTVERSION=    3.1.12
 CATEGORIES=	www databases
 MASTER_SITES=	http://search.mnogo.ru/Download/
 
@@ -57,9 +56,6 @@ pre-fetch:
 	@${ECHO} "WITH_MNOGO_MYSQL=yes or WITH_MNOGO_PGSQL=yes respectively."
 	@${ECHO}
 .endif
-
-post-patch:
-	cp ${FILESDIR}/cross*.txt ${WRKSRC}/create/msql
 
 pre-install:
 	@${MKDIR} ${PREFIX}/share/mnogosearch
