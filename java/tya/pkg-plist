@@ -1,0 +1,3 @@
+%%JAVADIR%%/lib/i386/green_threads/libtya.so
+%%JAVADIR%%/tya/README
+@dirrm %%JAVADIR%%/tya

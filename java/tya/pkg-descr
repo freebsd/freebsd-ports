@@ -1,0 +1,19 @@
+TYA is a ``100% unofficial'' JIT-compiler designed as an
+add-on to the Blackdown ports of JDK 1.1.x for Linux (x86),
+but currently experimental ported for usage with JDK 1.2.
+
+For the command line option, run Java using option "-Djava.compiler=",
+like this example:
+
+java    -Djava.compiler=tya       Iview          Valetta.jpg
+#         ^ set property ^        ^your pgm      ^ pgm's options
+
+But a better and easier way is setting the JAVA_COMPILER environment
+variable, as in
+
+      export JAVA_COMPILER=tya
+
+ftp://gonzalez.cyberus.ca/pub/Linux/java/
+
+- Jake
+jake@checker.org
