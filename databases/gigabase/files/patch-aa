@@ -1,22 +1,38 @@
---- Makefile.in.orig	Thu Aug 30 15:00:48 2001
-+++ Makefile.in	Thu Aug 30 15:01:32 2001
-@@ -41,8 +41,8 @@
+--- Makefile.in.orig	Wed Nov  6 01:30:34 2002
++++ Makefile.in	Mon Nov 11 20:07:30 2002
+@@ -7,6 +7,8 @@
+ VPATH = @srcdir@
+ LIBTOOL = $(srcdir)/libtool
+ INSTALL = @INSTALL@
++INSTALL_PROGRAM = @INSTALL_PROGRAM@
++INSTALL_DATA = @INSTALL_DATA@
+ 
+ # Coment this for AIX/xlC 5.0
+ LIBEXT=la
+@@ -49,7 +51,7 @@
+ 
  CXX = @CXX@
  CC = @CC@
- DEFS = @DEFS@
--CXXFLAGS = @CXXFLAGS@ $(DEFS)
--CFLAGS = @CFLAGS@ $(DEFS)
-+CXXFLAGS = @CXXFLAGS@ $(DEFS) -D_THREAD_SAFE
-+CFLAGS = @CFLAGS@ $(DEFS) -D_THREAD_SAFE
+-DEFS = @DEFS@
++DEFS = @DEFS@ @CPPFLAGS@
+ CXXFLAGS = @CXXFLAGS@ $(DEFS)
+ CFLAGS = @CFLAGS@ $(DEFS)
  LD = $(CXX)
- LDFLAGS = @LDFLAGS@ @TDEFS@ @LIBS@
- AR = ar
-@@ -126,7 +126,7 @@
- 	else \
- 		cp subsql $(bindir); \
- 	fi
--#	strip $(bindir)/subsql
-+	strip $(bindir)/subsql
+@@ -146,14 +148,14 @@
  
- clean:
- 	rm -f *.o *.lo core *~
+ install: subsql $(GB_LIB) $(CLI_LIB)
+ 	mkdir -p $(includedir)
+-	cp $(INCS) $(CLI_INCS) $(includedir)
++	$(INSTALL_DATA) $(INCS) $(CLI_INCS) $(includedir)
+ 	mkdir -p $(libdir)
+ 	$(LIBTOOL) --mode=install $(INSTALL) $(GB_LIB) $(CLI_LIB) $(libdir)
+ 	mkdir -p $(bindir)
+ 	if test -x .libs/subsql ; then \
+-		cp .libs/subsql $(bindir); \
++		$(INSTALL_PROGRAM) .libs/subsql $(bindir); \
+ 	else \
+-		cp subsql $(bindir); \
++		$(INSTALL_PROGRAM) subsql $(bindir); \
+ 	fi
+ #	strip $(bindir)/subsql
+ 
