@@ -83,6 +83,7 @@
     SUBDIR += firestring
     SUBDIR += floatator
     SUBDIR += flyway
+    SUBDIR += fortune-mod-bible
     SUBDIR += fortune-mod-bofh
     SUBDIR += fortune-mod-futurama
     SUBDIR += fortuneit
