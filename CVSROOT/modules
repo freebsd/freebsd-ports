@@ -1357,7 +1357,6 @@ de-ooodict-DE	ports/german/ooodict-de_DE
 de-openoffice-1.0	ports/german/openoffice-1.0
 de-openoffice-1.1	ports/german/openoffice-1.1
 de-phone	ports/german/phone
-de-php_doc	ports/german/php_doc
 de-staroffice5	ports/german/staroffice5
 de-staroffice52	ports/german/staroffice52
 de-steak	ports/german/steak
@@ -2133,7 +2132,6 @@ fr-netscape7	ports/french/netscape7
 fr-ooodict-FR	ports/french/ooodict-fr_FR
 fr-openoffice-1.0	ports/french/openoffice-1.0
 fr-openoffice-1.1	ports/french/openoffice-1.1
-fr-php_doc	ports/french/php_doc
 fr-plgrenouille	ports/french/plgrenouille
 fr-staroffice52	ports/french/staroffice52
 fr-xtel		ports/french/xtel
@@ -3790,7 +3788,6 @@ ja-paledit	ports/japanese/paledit
 ja-pejv-fpw	ports/japanese/pejv-fpw
 ja-perl5	ports/japanese/perl5
 ja-pgp.language	ports/japanese/pgp.language
-ja-php_doc	ports/japanese/php_doc
 ja-phpgroupware	ports/japanese/phpgroupware
 ja-plain2	ports/japanese/plain2
 ja-plan		ports/japanese/plan
@@ -8145,7 +8142,12 @@ php5-xsl	ports/textproc/php5-xsl
 php5-yp		ports/net/php5-yp
 php5-zlib	ports/archivers/php5-zlib
 phpSysInfo	ports/www/phpSysInfo
-php_doc		ports/lang/php_doc
+php_doc-de	ports/german/php_doc
+php_doc-en	ports/lang/php_doc
+php_doc-fr	ports/french/php_doc
+php_doc-ja	ports/japanese/php_doc
+php_doc-pl	ports/polish/php_doc
+php_doc-pt	ports/portuguese/php_doc-br
 phpbb		ports/www/phpbb
 phpeclipse	ports/java/phpeclipse
 phpeclipse_phphelp	ports/java/phpeclipse_phphelp
@@ -8633,7 +8635,6 @@ pt-ooodict-PT	ports/portuguese/ooodict-pt_PT
 pt-openoffice-1.0	ports/portuguese/openoffice-1.0
 pt-openoffice-1.1-pt_BR	ports/portuguese/openoffice-1.1-pt_BR
 pt-openoffice-1.1-pt_PT	ports/portuguese/openoffice-1.1-pt_PT
-pt-php_doc-br	ports/portuguese/php_doc-br
 pt-staroffice52	ports/portuguese/staroffice52
 pt-webalizer-pt_BR	ports/portuguese/webalizer-pt_BR
 pt-webalizer-pt_PT	ports/portuguese/webalizer-pt_PT
