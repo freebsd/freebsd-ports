@@ -14,6 +14,8 @@ DIST_SUBDIR=	stream-${PORTVERSION}
 MAINTAINER=	sf@slappy.org
 COMMENT=	Synthetic benchmark program that measures sustainable memory bandwidth
 
+BROKEN=		"Checksum mismatch"
+
 MAKEFILE=	${FILESDIR}/Makefile
 PLIST_FILES=	bin/stream
 
