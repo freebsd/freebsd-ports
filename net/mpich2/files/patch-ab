@@ -1,0 +1,13 @@
+--- mpid/server/configure.orig	Tue Sep 12 07:57:09 2000
++++ mpid/server/configure	Tue Sep 12 08:01:11 2000
+@@ -1589,8 +1589,8 @@
+ 	    ac_find_inc_dir=$dir
+ 	    break
+ 	fi
+-	if test -r $dir/include/ssl.h ; then
+-	    ac_find_inc_dir=$dir/include
++	if test -r $dir/include/openssl/ssl.h ; then
++	    ac_find_inc_dir=$dir/include/openssl
+ 	    break
+ 	fi
+ done
