@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/bash
 @exec echo "updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak; echo %D/%F) >/etc/shells
 @unexec echo "updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak) >/etc/shells
@@ -5,7 +6,7 @@ bin/bashbug
 @unexec install-info --delete %D/info/bash.info %D/info/dir
 info/bash.info
 @exec install-info %D/info/bash.info %D/info/dir
-share/doc/bash/article.ps.gz
-share/doc/bash/bashref.ps.gz
+share/doc/bash/article.ps.bz2
+share/doc/bash/bashref.ps.bz2
 share/doc/bash/article.txt
 @dirrm share/doc/bash
