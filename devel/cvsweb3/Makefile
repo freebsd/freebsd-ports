@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	knu
 
 MAINTAINER=	knu@FreeBSD.org
 
+FORBIDDEN=	"due to cross-site scripting vulnerabilities"
+
 NO_BUILD=	yes
 
 USE_PERL5=	yes
