@@ -42,8 +42,6 @@ bin/rmi2html.rb
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rd/rd-draft.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rd/rd-draft.rd
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rd/ja/README.ja.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rd/ja/dev-note.ja.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rd/ja/dev-note.rd.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rd/ja/rd-draft.ja.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rd/ja/rd-draft.rd.ja
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/rd/ja
