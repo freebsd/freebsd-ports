@@ -19,9 +19,7 @@ NO_CDROM=	Possible copyright infringement
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOCONF_VER=	252
-AUTOCONF=	autoconf
-AUTOCONF_DIR=	${LOCALBASE}/share/autoconf
+USE_AUTOCONF_VER=	253
 
 pre-install:
 	${MKDIR} ${PREFIX}/share/${PORTNAME}/score
