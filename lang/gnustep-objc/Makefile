@@ -21,6 +21,8 @@ LDFLAGS+=		-L${LOCALBASE}/lib
 # does not build on:
 NOT_FOR_ARCHS=		amd64
 
+CONFLICTS?=		gcc-3.2*
+
 .if exists(${.CURDIR}/Makefile.local)
 .include "${.CURDIR}/Makefile.local"
 .endif
