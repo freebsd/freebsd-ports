@@ -55,11 +55,14 @@ find.
      directories on the build machines.  Create a directory
      ${branch}/chroot on the build machines.
 
- (9) Create the directory ${buildroot}/distfiles, ${branch}/logs and
-     ${branch}/packages/All on the master.  Copy the XFree86 and Motif
-     tarballs to the latter directory.
+ (9) Create the directory ${buildroot}/distfiles, ${branch}/{errors,logs}
+     and ${branch}/packages/All on the master.  Copy the XFree86 and
+     Motif tarballs to the latter directory.
 
-(10) Run the "checkmachines" script on the master in the background.
+(10) Run the "reportload" script on the build machines in the
+     background (you can put reportload.sh in /usr/local/etc/rc.d to
+     run it automatically upon reboot), and then run the
+     "checkmachines" script on the master, again in the background.
      This will check all the machines listed in "mlist" periodically
      and print the list of least-loaded machines to "ulist".
 
@@ -81,3 +84,8 @@ find.
 
 (14) Go to ${branch}/packages/All on the master and type "make -k
      -j<whatever> -f ../../Makefile &".  Then wait. :)
+
+(15) Note that the new scheme will not clean up the chroot dirs under
+     ${buildroot}/${branch}/chroot on the build machines, but will
+     instead reuse them during the course of the build.  Make sure you
+     delete them all when your bindist.tar changes.

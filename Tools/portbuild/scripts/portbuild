@@ -19,6 +19,9 @@ export DEPENDS_TARGET=/usr/bin/true
 unset MAKEFLAGS
 unset PORTSDIR
 
+# directories to clean
+cleandirs="/usr/local /usr/X11R6"
+
 # 15 minutes
 export FTP_TIMEOUT=900
 export HTTP_TIMEOUT=900
@@ -57,30 +60,71 @@ shift 2
 
 echo "building $pkgname"
 
-chroot=${buildroot}/${branch}/chroot/${pkgname}
+chrootdir=${buildroot}/${branch}/chroot
 bakdir=${buildroot}/${branch}/tarballs
 bindist=${bakdir}/bindist.tar
 packages=${buildroot}/${branch}/packages
 
-rm -rf ${chroot}
-mkdir -p ${chroot}
-tar -C ${chroot} -xf ${bindist}
+found=0
+for dir in ${chrootdir}/*; do
+  if [ -d ${dir}/tmp -a ! -e ${dir}/used ]; then
+    mkdir ${dir}/used 2>/dev/null
+    touch ${dir}/used/${pkgname}
+    if [ $(echo $(echo ${dir}/used/* | wc -w)) = 1 ]; then
+      found=1
+      chroot=${dir}
+      break
+    else
+      rm ${dir}/used/${pkgname}
+      rmdir ${dir}/used 2>/dev/null
+    fi
+  fi
+done
 
-#cd ${chroot}/usr
-#portcheckout $pkgname | grep '^cvs co' | sh || exit 1
+if [ ${found} != 1 ]; then
+
+  chroot=${chrootdir}/$$
+  while [ -d ${chroot} ]; do
+    chroot=${chroot}-
+  done
+
+  mkdir -p ${chroot}/used
+  touch ${chroot}/used/${pkgname}
+  tar -C ${chroot} -xf ${bindist}
+
+  mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.root.dist -p ${chroot} \
+    >/dev/null 2>&1
+  mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.var.dist -p ${chroot}/var \
+    >/dev/null 2>&1
+  mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.usr.dist -p ${chroot}/usr \
+    >/dev/null 2>&1
+
+fi
+
+rm -rf ${chroot}/tmp/*
+cd ${chroot}/tmp
+mkdir -p depends distfiles packages
+
+echo "building ${pkgname} on $(hostname -s)" | tee ${chroot}/tmp/${pkgname}.log
+echo "in directory ${chroot}" | tee -a ${chroot}/tmp/${pkgname}.log
+echo "with arguments: ${args}" | tee -a ${chroot}/tmp/${pkgname}.log
 
 mount -o -2 -r ${master}:${buildroot}/usr/ports ${chroot}/usr/ports
 mount -o -2 -r ${master}:${buildroot}/${branch}/src ${chroot}/usr/src
 mount -o -2 -r ${master}:${buildroot}/usr/opt/doc ${chroot}/usr/opt/doc
 
-mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.root.dist -p ${chroot} >/dev/null 2>&1
-mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.var.dist -p ${chroot}/var >/dev/null 2>&1
-mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.usr.dist -p ${chroot}/usr >/dev/null 2>&1
+# just in case...
+for dir in ${cleandirs}; do
+  if ! rm -rf ${chroot}${dir} >/dev/null 2>&1; then
+    chflags -R noschg ${chroot}${dir}
+    rm -rf ${chroot}${dir} >/dev/null 2>&1
+  fi
+done
 
 while [ $# -gt 0 ]; do
   if ssh -a ${master} [ -f ${packages}/All/$1 ]; then
     if [ ! -f ${chroot}/tmp/depends/$1 ]; then
-      echo "copying package $1"
+      echo "copying package $1 for ${pkgname}"
       if [ -f ${bakdir}/$1 ]; then
 	cp -p ${bakdir}/$1 ${chroot}/tmp/depends
       else
@@ -95,10 +139,10 @@ scp -p ${master}:${buildroot}/scripts/buildscript ${chroot}
 
 #mount_procfs procfs ${chroot}/proc
 
-echo "${pkgname} built on $(hostname -s)" > ${chroot}/tmp/${pkgname}.log
-echo "with arguments: ${args}" >> ${chroot}/tmp/${pkgname}.log
 chroot ${chroot} /buildscript ${dirname} 2>&1 | tee -a ${chroot}/tmp/${pkgname}.log
 error=$(cat ${chroot}/tmp/status)
+
+scp ${chroot}/tmp/${pkgname}.log ${master}:${buildroot}/${branch}/logs/${pkgname}.log
 
 if [ "${error}" = 0 ]; then
   tar -C ${chroot}/tmp -cf - distfiles | \
@@ -106,9 +150,9 @@ if [ "${error}" = 0 ]; then
   tar -C ${chroot}/tmp -cf - packages | \
     ssh -a $master tar --unlink -C ${buildroot}/${branch} -xvf -
   ssh -a $master touch ${buildroot}/${branch}/packages/All/${pkgname}.tgz
-  ssh $master rm -f ${buildroot}/${branch}/logs/${pkgname}.log
+  ssh $master rm -f ${buildroot}/${branch}/errors/${pkgname}.log
 else
-  scp ${chroot}/tmp/${pkgname}.log ${master}:${buildroot}/${branch}/logs/${pkgname}.log
+  scp ${chroot}/tmp/${pkgname}.log ${master}:${buildroot}/${branch}/errors/${pkgname}.log
 fi
 
 #umount ${chroot}/proc
@@ -117,11 +161,17 @@ umount -f ${chroot}/usr/ports
 umount -f ${chroot}/usr/opt/doc
 umount -f ${chroot}/usr/src
 
-if [ $noclean != 1 ]; then
-  if ! rm -rf ${chroot} >/dev/null 2>&1; then
-    chflags -R noschg ${chroot}
-    rm -rf ${chroot} >/dev/null 2>&1
-  fi
+if [ $noclean = 0 -o $error = 0 ]; then
+  rm -rf ${chroot}/tmp/*
+  for dir in ${cleandirs}; do
+    if ! rm -rf ${chroot}${dir} >/dev/null 2>&1; then
+      chflags -R noschg ${chroot}${dir}
+      rm -rf ${chroot}${dir} >/dev/null 2>&1
+    fi
+  done
+  chroot ${chroot} /sbin/ldconfig -R
+  rm ${chroot}/used/${pkgname}
+  rmdir ${chroot}/used
 fi
 
 echo -n "$pkgname done on $(hostname -s) at "

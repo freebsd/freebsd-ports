@@ -2,16 +2,25 @@
 
 buildroot=/a/asami/portbuild
 mlist=${buildroot}/mlist
+stamp=${buildroot}/loads/.stamp
 
 unset DISPLAY
 
 while true; do
+  touch ${stamp}
+  sleep 15
   min=99
   set $(cat $mlist)
   while [ $# -gt 1 ]; do
     m=$1
     l=$2
-    num=$((($(echo $(ssh -n $m ls -1 ${buildroot}/*/chroot | wc -l)) - 3) * 10 / $l))
+    if [ -f ${buildroot}/loads/$m -a \
+      ! -z "$(find ${buildroot}/loads/$m -newer ${stamp})" ]; then
+      num=$(cat ${buildroot}/loads/$m)
+    else
+      num=99
+    fi
+    num=$(($num / $l))
     if [ $num -lt $min ]; then
       mach=$m
       min=$num
@@ -21,5 +30,4 @@ while true; do
     shift 2
   done
   echo "$mach" > ${buildroot}/ulist
-  sleep 5
 done

@@ -1,0 +1,13 @@
+#!/bin/sh
+
+me=$(hostname -s)
+master=bento
+buildroot=/a/asami/portbuild
+
+while true; do
+  num=$(echo $(ls -1d ${buildroot}/*/chroot/*/used 2>/dev/null| wc -l))
+  echo "$num" > /tmp/${me}
+  /usr/local/bin/scp -q /tmp/${me} $master:${buildroot}/loads/
+  rm -f /tmp/${me}
+  sleep 5
+done
