@@ -1,96 +1,58 @@
---- docs/Makefile.in.orig	Sat May 16 13:15:18 1998
-+++ docs/Makefile.in	Sun May 17 02:25:40 1998
-@@ -121,7 +121,7 @@
+--- Makefile.in.orig	Wed Aug  5 13:06:11 1998
++++ Makefile.in	Wed Aug 12 17:58:02 1998
+@@ -91,9 +91,9 @@
+ xinput_progs = @xinput_progs@
  
- TAR = tar
- GZIP = --best
--all: Makefile $(INFO_DEPS) $(MANS)
-+all: Makefile clean $(INFO_DEPS) $(MANS)
+ SRC_SUBDIRS = gdk gtk
+-SUBDIRS = $(SRC_SUBDIRS) docs
++SUBDIRS = $(SRC_SUBDIRS)
  
- .SUFFIXES:
- .SUFFIXES: .dvi .info .ps .texi .texinfo .txi
-@@ -150,7 +150,7 @@
- .texi.info:
- 	@cd $(srcdir) && rm -f $@ $@-[0-9] $@-[0-9][0-9]
- 	cd $(srcdir) \
--	  && $(MAKEINFO) `echo $< | sed 's,.*/,,'`
-+	  && $(MAKEINFO) --no-split `echo $< | sed 's,.*/,,'`
+-bin_SCRIPTS = gtk-config
++bin_SCRIPTS = gtk11-config
  
- .texi.dvi:
- 	TEXINPUTS=$(srcdir):$$TEXINPUTS \
-@@ -349,7 +349,7 @@
- 	-test -z "$(BUILT_SOURCES)" || rm -f $(BUILT_SOURCES)
- mostlyclean:  mostlyclean-aminfo mostlyclean-generic
+ EXTRA_DIST =	\
+ 	HACKING		\
+@@ -169,12 +169,12 @@
+ 	examples/wheelbarrow/wheelbarrow.c  \
+ 	examples/find-examples.sh
  
--clean:  clean-aminfo clean-generic mostlyclean
-+clean:  clean-aminfo clean-generic mostlyclean maintainer-clean-aminfo
+-m4datadir = $(datadir)/aclocal
+-m4data_DATA = gtk.m4
++m4datadir = $(PREFIX)/share/aclocal
++m4data_DATA = gtk11.m4
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = config.h
+-CONFIG_CLEAN_FILES =  gtk-config
++CONFIG_CLEAN_FILES =  gtk11-config
+ SCRIPTS =  $(bin_SCRIPTS)
  
- distclean:  distclean-aminfo distclean-generic clean
- 	-rm -f config.status
---- gtk/Makefile.in.orig	Tue Apr 14 11:22:14 1998
-+++ gtk/Makefile.in	Fri Apr 24 03:59:06 1998
-@@ -397,7 +397,7 @@
- SOURCES = $(libgtk_la_SOURCES) testgtk.c testinput.c testselection.c simple.c
- OBJECTS = $(libgtk_la_OBJECTS) testgtk.o testinput.o testselection.o simple.o
+ DATA =  $(m4data_DATA)
+@@ -227,8 +227,14 @@
+ 	-rm -f config.h
+ 
+ maintainer-clean-hdr:
+-gtk-config: $(top_builddir)/config.status gtk-config.in
+-	cd $(top_builddir) && CONFIG_FILES=$@ CONFIG_HEADERS= ./config.status
++gtk11.m4: gtk.m4
++	cp gtk.m4 gtk11.m4
++
++gtk11-config.in: gtk-config.in
++	cp gtk-config.in gtk11-config.in
++
++gtk11-config: $(top_builddir)/config.status gtk11-config.in
++	cd $(top_builddir) && CONFIG_FILES=gtk11-config CONFIG_HEADERS= ./config.status
+ 
+ install-binSCRIPTS: $(bin_SCRIPTS)
+ 	@$(NORMAL_INSTALL)
+--- gtk/Makefile.in.orig	Wed Aug  5 13:06:16 1998
++++ gtk/Makefile.in	Wed Aug 12 17:47:57 1998
+@@ -433,7 +433,7 @@
+ SOURCES = $(libgtk_1_1_la_SOURCES) testgtk.c testinput.c testselection.c testthreads.c simple.c
+ OBJECTS = $(libgtk_1_1_la_OBJECTS) testgtk.o testinput.o testselection.o testthreads.o simple.o
  
 -all: Makefile $(LTLIBRARIES) $(PROGRAMS) $(HEADERS)
 +all: Makefile $(LTLIBRARIES) $(HEADERS)
  
  .SUFFIXES:
  .SUFFIXES: .S .c .lo .o .s
---- glib/Makefile.am.orig	Sat Mar 28 00:50:30 1998
-+++ glib/Makefile.am	Sat Apr  4 16:18:47 1998
-@@ -1,7 +1,5 @@
- ## Process this file with automake to produce Makefile.in
- 
--configincludedir = $(pkglibdir)/include
--
- lib_LTLIBRARIES = libglib.la
- 
- libglib_la_SOURCES = \
-@@ -20,10 +18,7 @@
- 		gutils.c
- 
- include_HEADERS = \
--		glib.h
--
--configinclude_DATA = \
--		glibconfig.h
-+		glib.h glibconfig.h
- 
- libglib_la_LDFLAGS = -version-info 1:0:0
- 
---- glib/Makefile.in.orig	Sat Mar 28 09:02:29 1998
-+++ glib/Makefile.in	Sat Apr  4 16:19:26 1998
-@@ -68,8 +68,6 @@
- RANLIB = @RANLIB@
- VERSION = @VERSION@
- 
--configincludedir = $(pkglibdir)/include
--
- lib_LTLIBRARIES = libglib.la
- 
- libglib_la_SOURCES = \
-@@ -88,10 +86,7 @@
- 		gutils.c
- 
- include_HEADERS = \
--		glib.h
--
--configinclude_DATA = \
--		glibconfig.h
-+		glib.h glibconfig.h
- 
- libglib_la_LDFLAGS = -version-info 1:0:0
- 
---- Makefile.in.orig	Sun May 17 04:54:59 1998
-+++ Makefile.in	Sun May 17 04:56:17 1998
-@@ -149,7 +149,7 @@
- 	examples/wheelbarrow/wheelbarrow.c  \
- 	examples/find-examples.sh
- 
--m4datadir = $(datadir)/aclocal
-+m4datadir = $(LOCALBASE)/share/aclocal
- m4data_DATA = gtk.m4
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
