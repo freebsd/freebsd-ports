@@ -52,6 +52,7 @@ PLIST_SUB+=	HAVE_DOXYWIZARD="@comment "
 .endif # !WITHOUT_DOXYWIZARD
 
 USE_PERL5=	yes
+USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 QT_NONSTANDARD=	yes	# non-standard configure arguments
@@ -63,7 +64,7 @@ CONFIGURE_ARGS+=	--enable-langs no
 .endif
 
 pre-configure:
-	@${PERL} -pi -e "s:gcc:${CC}:g;		\
+	@${REINPLACE_CMD} -e "s:gcc:${CC}:g;	\
 		s:g\+\+:${CXX}:g;		\
 		s:%%LIBQT%%:-l${QTNAME}:g;	\
 		s:%%MOC%%:${MOC}:g;		\
@@ -76,7 +77,7 @@ pre-configure:
 	    ${WRKSRC}/tmake/lib/freebsd-g++/tmake.conf
 
 post-patch:
-	@${PERL} -pi.fbsd -e 's|<malloc.h>|<stdlib.h>|g' \
+	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g' \
 		${WRKSRC}/libpng/pngconf.h \
 		${WRKSRC}/libpng/zutil.h ${WRKSRC}/src/pngenc.cpp
 
