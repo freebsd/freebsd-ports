@@ -359,7 +359,7 @@ disable-sendmail: thereal-disable-sendmail
 	@${ECHO_MSG} "===> You just told your system to not"
 	@${ECHO_MSG} "===> automaticaly start sendmail on your"
 	@${ECHO_MSG} "===> next startup."
-	@${ECHO_MSG} "===> (i.e., added sendmail_enable=\¨NO\¨ to rc.conf)"
+	@${ECHO_MSG} "===> (i.e., added sendmail_enable=\"NO\" to rc.conf)"
 	@if [ -f ${RC_CONF_FILE} ]; \
 	then \
 		${ECHO_CMD} sendmail_enable=\"NO\" >> ${RC_CONF_FILE} ; \
@@ -370,7 +370,7 @@ enable-sendmail: thereal-disable-sendmail
 	@${ECHO_MSG} "===> You just told your system to"
 	@${ECHO_MSG} "===> automaticaly start sendmail on your"
 	@${ECHO_MSG} "===> next startup."
-	@${ECHO_MSG} "===> (i.e., removed sendmail_enable=\¨NO\¨ from rc.conf)"
+	@${ECHO_MSG} "===> (i.e., removed sendmail_enable=\"NO\" from rc.conf)"
 
 enable-qmail: install disable-sendmail
 	@if [ -f ${MAILER_CONF_FILE} ]; \
@@ -380,7 +380,7 @@ enable-qmail: install disable-sendmail
 	else \
 		${ECHO_MSG} "===> ERROR: YOU DO NOT HAVE A VALID ${MAILER_CONF_FILE}" ; \
 		${ECHO_MSG} "===> FIX this and try again" ; \
-		${ECHO_MSG} "===> or, do \¨make force_enable_qmail\¨ if you are sure" ; \
+		${ECHO_MSG} "===> or, do \"make force_enable_qmail\" if you are sure" ; \
 		${ECHO_MSG} "===> you want this port replacing some binaries" ; \
 		${ECHO_MSG} "===> IF THIS FEELS UNEASY, read ${PREFIX}/${DOCDIR}/REMOVE.sendmail and do it manually" ; \
 		${ECHO_MSG} "" ; \
@@ -398,7 +398,7 @@ enable-qmail: install disable-sendmail
 	@${ECHO_MSG} "===> Do not forget to choose an appropriate qmail startup"
 	@${ECHO_MSG} "===> script. Go through ${PREFIX}/boot, choose one"
 	@${ECHO_MSG} "===> and copy the chosen script as ${PREFIX}/rc"
-	@${ECHO_MSG} "===> For example, \¨cp ${PREFIX}/boot/proc+df ${PREFIX}/rc\¨"
+	@${ECHO_MSG} "===> For example, \"cp ${PREFIX}/boot/proc+df ${PREFIX}/rc\""
 
 # taken from mail/postfix idea
 force-enable-qmail: install disable-sendmail
